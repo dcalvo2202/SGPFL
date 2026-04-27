@@ -20,40 +20,28 @@ namespace Google\Service\Analytics;
 class ProfileSummary extends \Google\Model
 {
   /**
-   * View (profile) ID.
-   *
    * @var string
    */
   public $id;
   /**
-   * Resource type for Analytics ProfileSummary.
-   *
    * @var string
    */
   public $kind;
   /**
-   * View (profile) name.
-   *
    * @var string
    */
   public $name;
   /**
-   * Indicates whether this view (profile) is starred or not.
-   *
    * @var bool
    */
   public $starred;
   /**
-   * View (Profile) type. Supported types: WEB or APP.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * View (profile) ID.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -67,9 +55,7 @@ class ProfileSummary extends \Google\Model
     return $this->id;
   }
   /**
-   * Resource type for Analytics ProfileSummary.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -83,9 +69,7 @@ class ProfileSummary extends \Google\Model
     return $this->kind;
   }
   /**
-   * View (profile) name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -99,9 +83,7 @@ class ProfileSummary extends \Google\Model
     return $this->name;
   }
   /**
-   * Indicates whether this view (profile) is starred or not.
-   *
-   * @param bool $starred
+   * @param bool
    */
   public function setStarred($starred)
   {
@@ -115,9 +97,7 @@ class ProfileSummary extends \Google\Model
     return $this->starred;
   }
   /**
-   * View (Profile) type. Supported types: WEB or APP.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

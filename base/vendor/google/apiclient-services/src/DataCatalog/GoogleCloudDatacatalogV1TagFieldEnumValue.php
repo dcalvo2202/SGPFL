@@ -20,16 +20,12 @@ namespace Google\Service\DataCatalog;
 class GoogleCloudDatacatalogV1TagFieldEnumValue extends \Google\Model
 {
   /**
-   * The display name of the enum value.
-   *
    * @var string
    */
   public $displayName;
 
   /**
-   * The display name of the enum value.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {

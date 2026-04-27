@@ -20,53 +20,34 @@ namespace Google\Service\CloudRetail;
 class GoogleCloudRetailV2alphaImportMetadata extends \Google\Model
 {
   /**
-   * Operation create time.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Count of entries that encountered errors while processing.
-   *
    * @var string
    */
   public $failureCount;
   /**
-   * Pub/Sub topic for receiving notification. If this field is set, when the
-   * import is finished, a notification is sent to specified Pub/Sub topic. The
-   * message data is JSON string of a Operation. Format of the Pub/Sub topic is
-   * `projects/{project}/topics/{topic}`.
-   *
    * @var string
    */
   public $notificationPubsubTopic;
   /**
-   * Deprecated. This field is never set.
-   *
-   * @deprecated
    * @var string
    */
   public $requestId;
   /**
-   * Count of entries that were processed successfully.
-   *
    * @var string
    */
   public $successCount;
   protected $transformedUserEventsMetadataType = GoogleCloudRetailV2alphaTransformedUserEventsMetadata::class;
   protected $transformedUserEventsMetadataDataType = '';
   /**
-   * Operation last update time. If the operation is done, this is also the
-   * finish time.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Operation create time.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -80,9 +61,7 @@ class GoogleCloudRetailV2alphaImportMetadata extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Count of entries that encountered errors while processing.
-   *
-   * @param string $failureCount
+   * @param string
    */
   public function setFailureCount($failureCount)
   {
@@ -96,12 +75,7 @@ class GoogleCloudRetailV2alphaImportMetadata extends \Google\Model
     return $this->failureCount;
   }
   /**
-   * Pub/Sub topic for receiving notification. If this field is set, when the
-   * import is finished, a notification is sent to specified Pub/Sub topic. The
-   * message data is JSON string of a Operation. Format of the Pub/Sub topic is
-   * `projects/{project}/topics/{topic}`.
-   *
-   * @param string $notificationPubsubTopic
+   * @param string
    */
   public function setNotificationPubsubTopic($notificationPubsubTopic)
   {
@@ -115,17 +89,13 @@ class GoogleCloudRetailV2alphaImportMetadata extends \Google\Model
     return $this->notificationPubsubTopic;
   }
   /**
-   * Deprecated. This field is never set.
-   *
-   * @deprecated
-   * @param string $requestId
+   * @param string
    */
   public function setRequestId($requestId)
   {
     $this->requestId = $requestId;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getRequestId()
@@ -133,9 +103,7 @@ class GoogleCloudRetailV2alphaImportMetadata extends \Google\Model
     return $this->requestId;
   }
   /**
-   * Count of entries that were processed successfully.
-   *
-   * @param string $successCount
+   * @param string
    */
   public function setSuccessCount($successCount)
   {
@@ -149,9 +117,7 @@ class GoogleCloudRetailV2alphaImportMetadata extends \Google\Model
     return $this->successCount;
   }
   /**
-   * Metadata related to transform user events.
-   *
-   * @param GoogleCloudRetailV2alphaTransformedUserEventsMetadata $transformedUserEventsMetadata
+   * @param GoogleCloudRetailV2alphaTransformedUserEventsMetadata
    */
   public function setTransformedUserEventsMetadata(GoogleCloudRetailV2alphaTransformedUserEventsMetadata $transformedUserEventsMetadata)
   {
@@ -165,10 +131,7 @@ class GoogleCloudRetailV2alphaImportMetadata extends \Google\Model
     return $this->transformedUserEventsMetadata;
   }
   /**
-   * Operation last update time. If the operation is done, this is also the
-   * finish time.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

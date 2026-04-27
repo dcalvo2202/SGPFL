@@ -21,8 +21,6 @@ class ChromeOsDeviceSystemRamFreeReports extends \Google\Collection
 {
   protected $collection_key = 'systemRamFreeInfo';
   /**
-   * Date and time the report was received.
-   *
    * @var string
    */
   public $reportTime;
@@ -32,9 +30,7 @@ class ChromeOsDeviceSystemRamFreeReports extends \Google\Collection
   public $systemRamFreeInfo;
 
   /**
-   * Date and time the report was received.
-   *
-   * @param string $reportTime
+   * @param string
    */
   public function setReportTime($reportTime)
   {
@@ -48,7 +44,7 @@ class ChromeOsDeviceSystemRamFreeReports extends \Google\Collection
     return $this->reportTime;
   }
   /**
-   * @param string[] $systemRamFreeInfo
+   * @param string[]
    */
   public function setSystemRamFreeInfo($systemRamFreeInfo)
   {

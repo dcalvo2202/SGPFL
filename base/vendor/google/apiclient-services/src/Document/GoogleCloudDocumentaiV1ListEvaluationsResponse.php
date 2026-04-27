@@ -23,17 +23,12 @@ class GoogleCloudDocumentaiV1ListEvaluationsResponse extends \Google\Collection
   protected $evaluationsType = GoogleCloudDocumentaiV1Evaluation::class;
   protected $evaluationsDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The evaluations requested.
-   *
-   * @param GoogleCloudDocumentaiV1Evaluation[] $evaluations
+   * @param GoogleCloudDocumentaiV1Evaluation[]
    */
   public function setEvaluations($evaluations)
   {
@@ -47,10 +42,7 @@ class GoogleCloudDocumentaiV1ListEvaluationsResponse extends \Google\Collection
     return $this->evaluations;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

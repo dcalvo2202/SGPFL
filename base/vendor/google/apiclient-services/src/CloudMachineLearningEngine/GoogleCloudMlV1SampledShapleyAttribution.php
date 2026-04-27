@@ -20,18 +20,12 @@ namespace Google\Service\CloudMachineLearningEngine;
 class GoogleCloudMlV1SampledShapleyAttribution extends \Google\Model
 {
   /**
-   * The number of feature permutations to consider when approximating the
-   * Shapley values.
-   *
    * @var int
    */
   public $numPaths;
 
   /**
-   * The number of feature permutations to consider when approximating the
-   * Shapley values.
-   *
-   * @param int $numPaths
+   * @param int
    */
   public function setNumPaths($numPaths)
   {

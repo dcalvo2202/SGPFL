@@ -23,20 +23,12 @@ class GoogleMapsPlacesV1EVChargeOptions extends \Google\Collection
   protected $connectorAggregationType = GoogleMapsPlacesV1EVChargeOptionsConnectorAggregation::class;
   protected $connectorAggregationDataType = 'array';
   /**
-   * Number of connectors at this station. However, because some ports can have
-   * multiple connectors but only be able to charge one car at a time (e.g.) the
-   * number of connectors may be greater than the total number of cars which can
-   * charge simultaneously.
-   *
    * @var int
    */
   public $connectorCount;
 
   /**
-   * A list of EV charging connector aggregations that contain connectors of the
-   * same type and same charge rate.
-   *
-   * @param GoogleMapsPlacesV1EVChargeOptionsConnectorAggregation[] $connectorAggregation
+   * @param GoogleMapsPlacesV1EVChargeOptionsConnectorAggregation[]
    */
   public function setConnectorAggregation($connectorAggregation)
   {
@@ -50,12 +42,7 @@ class GoogleMapsPlacesV1EVChargeOptions extends \Google\Collection
     return $this->connectorAggregation;
   }
   /**
-   * Number of connectors at this station. However, because some ports can have
-   * multiple connectors but only be able to charge one car at a time (e.g.) the
-   * number of connectors may be greater than the total number of cars which can
-   * charge simultaneously.
-   *
-   * @param int $connectorCount
+   * @param int
    */
   public function setConnectorCount($connectorCount)
   {

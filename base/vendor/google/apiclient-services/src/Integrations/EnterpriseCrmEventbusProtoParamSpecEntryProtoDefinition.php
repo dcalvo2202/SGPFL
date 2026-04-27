@@ -20,24 +20,16 @@ namespace Google\Service\Integrations;
 class EnterpriseCrmEventbusProtoParamSpecEntryProtoDefinition extends \Google\Model
 {
   /**
-   * The fully-qualified proto name. This message, for example, would be
-   * "enterprise.crm.eventbus.proto.ParamSpecEntry.ProtoDefinition".
-   *
    * @var string
    */
   public $fullName;
   /**
-   * Path to the proto file that contains the message type's definition.
-   *
    * @var string
    */
   public $path;
 
   /**
-   * The fully-qualified proto name. This message, for example, would be
-   * "enterprise.crm.eventbus.proto.ParamSpecEntry.ProtoDefinition".
-   *
-   * @param string $fullName
+   * @param string
    */
   public function setFullName($fullName)
   {
@@ -51,9 +43,7 @@ class EnterpriseCrmEventbusProtoParamSpecEntryProtoDefinition extends \Google\Mo
     return $this->fullName;
   }
   /**
-   * Path to the proto file that contains the message type's definition.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {

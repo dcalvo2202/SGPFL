@@ -22,22 +22,12 @@ class GenerateUploadUrlResponse extends \Google\Model
   protected $storageSourceType = StorageSource::class;
   protected $storageSourceDataType = '';
   /**
-   * The generated Google Cloud Storage signed URL that should be used for a
-   * function source code upload. The uploaded file should be a zip archive
-   * which contains a function.
-   *
    * @var string
    */
   public $uploadUrl;
 
   /**
-   * The location of the source code in the upload bucket. Once the archive is
-   * uploaded using the `upload_url` use this field to set the
-   * `function.build_config.source.storage_source` during CreateFunction and
-   * UpdateFunction. Generation defaults to 0, as Cloud Storage provides a new
-   * generation only upon uploading a new object or version of an object.
-   *
-   * @param StorageSource $storageSource
+   * @param StorageSource
    */
   public function setStorageSource(StorageSource $storageSource)
   {
@@ -51,11 +41,7 @@ class GenerateUploadUrlResponse extends \Google\Model
     return $this->storageSource;
   }
   /**
-   * The generated Google Cloud Storage signed URL that should be used for a
-   * function source code upload. The uploaded file should be a zip archive
-   * which contains a function.
-   *
-   * @param string $uploadUrl
+   * @param string
    */
   public function setUploadUrl($uploadUrl)
   {

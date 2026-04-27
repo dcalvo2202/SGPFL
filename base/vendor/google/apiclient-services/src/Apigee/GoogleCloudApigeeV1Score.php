@@ -28,9 +28,7 @@ class GoogleCloudApigeeV1Score extends \Google\Collection
   protected $timeRangeDataType = '';
 
   /**
-   * Component containing score, recommendations and actions.
-   *
-   * @param GoogleCloudApigeeV1ScoreComponent $component
+   * @param GoogleCloudApigeeV1ScoreComponent
    */
   public function setComponent(GoogleCloudApigeeV1ScoreComponent $component)
   {
@@ -44,9 +42,7 @@ class GoogleCloudApigeeV1Score extends \Google\Collection
     return $this->component;
   }
   /**
-   * List of all the drilldown score components.
-   *
-   * @param GoogleCloudApigeeV1ScoreComponent[] $subcomponents
+   * @param GoogleCloudApigeeV1ScoreComponent[]
    */
   public function setSubcomponents($subcomponents)
   {
@@ -60,9 +56,7 @@ class GoogleCloudApigeeV1Score extends \Google\Collection
     return $this->subcomponents;
   }
   /**
-   * Start and end time for the score.
-   *
-   * @param GoogleTypeInterval $timeRange
+   * @param GoogleTypeInterval
    */
   public function setTimeRange(GoogleTypeInterval $timeRange)
   {

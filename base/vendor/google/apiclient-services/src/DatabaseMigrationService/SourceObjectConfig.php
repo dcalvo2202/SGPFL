@@ -23,9 +23,7 @@ class SourceObjectConfig extends \Google\Model
   protected $objectIdentifierDataType = '';
 
   /**
-   * Optional. The object identifier.
-   *
-   * @param SourceObjectIdentifier $objectIdentifier
+   * @param SourceObjectIdentifier
    */
   public function setObjectIdentifier(SourceObjectIdentifier $objectIdentifier)
   {

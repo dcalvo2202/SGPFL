@@ -25,12 +25,7 @@ class GoogleCloudConnectorsV1AuthConfigOauth2JwtBearer extends \Google\Model
   protected $jwtClaimsDataType = '';
 
   /**
-   * Optional. Secret version reference containing a PKCS#8 PEM-encoded private
-   * key associated with the Client Certificate. This private key will be used
-   * to sign JWTs used for the jwt-bearer authorization grant. Specified in the
-   * form as: `projects/secrets/versions`.
-   *
-   * @param GoogleCloudConnectorsV1Secret $clientKey
+   * @param GoogleCloudConnectorsV1Secret
    */
   public function setClientKey(GoogleCloudConnectorsV1Secret $clientKey)
   {
@@ -44,9 +39,7 @@ class GoogleCloudConnectorsV1AuthConfigOauth2JwtBearer extends \Google\Model
     return $this->clientKey;
   }
   /**
-   * Optional. JwtClaims providers fields to generate the token.
-   *
-   * @param GoogleCloudConnectorsV1AuthConfigOauth2JwtBearerJwtClaims $jwtClaims
+   * @param GoogleCloudConnectorsV1AuthConfigOauth2JwtBearerJwtClaims
    */
   public function setJwtClaims(GoogleCloudConnectorsV1AuthConfigOauth2JwtBearerJwtClaims $jwtClaims)
   {

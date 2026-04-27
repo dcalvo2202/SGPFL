@@ -23,41 +23,26 @@ class McfData extends \Google\Collection
   protected $columnHeadersType = McfDataColumnHeaders::class;
   protected $columnHeadersDataType = 'array';
   /**
-   * Determines if the Analytics data contains sampled data.
-   *
    * @var bool
    */
   public $containsSampledData;
   /**
-   * Unique ID for this data response.
-   *
    * @var string
    */
   public $id;
   /**
-   * The maximum number of rows the response can contain, regardless of the
-   * actual number of rows returned. Its value ranges from 1 to 10,000 with a
-   * value of 1000 by default, or otherwise specified by the max-results query
-   * parameter.
-   *
    * @var int
    */
   public $itemsPerPage;
   /**
-   * Resource type.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Link to next page for this Analytics data query.
-   *
    * @var string
    */
   public $nextLink;
   /**
-   * Link to previous page for this Analytics data query.
-   *
    * @var string
    */
   public $previousLink;
@@ -68,44 +53,28 @@ class McfData extends \Google\Collection
   protected $rowsType = McfDataRows::class;
   protected $rowsDataType = 'array';
   /**
-   * The number of samples used to calculate the result.
-   *
    * @var string
    */
   public $sampleSize;
   /**
-   * Total size of the sample space from which the samples were selected.
-   *
    * @var string
    */
   public $sampleSpace;
   /**
-   * Link to this page.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * The total number of rows for the query, regardless of the number of rows in
-   * the response.
-   *
    * @var int
    */
   public $totalResults;
   /**
-   * Total values for the requested metrics over all the results, not just the
-   * results returned in this response. The order of the metric totals is same
-   * as the metric order specified in the request.
-   *
    * @var string[]
    */
   public $totalsForAllResults;
 
   /**
-   * Column headers that list dimension names followed by the metric names. The
-   * order of dimensions and metrics is same as specified in the request.
-   *
-   * @param McfDataColumnHeaders[] $columnHeaders
+   * @param McfDataColumnHeaders[]
    */
   public function setColumnHeaders($columnHeaders)
   {
@@ -119,9 +88,7 @@ class McfData extends \Google\Collection
     return $this->columnHeaders;
   }
   /**
-   * Determines if the Analytics data contains sampled data.
-   *
-   * @param bool $containsSampledData
+   * @param bool
    */
   public function setContainsSampledData($containsSampledData)
   {
@@ -135,9 +102,7 @@ class McfData extends \Google\Collection
     return $this->containsSampledData;
   }
   /**
-   * Unique ID for this data response.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -151,12 +116,7 @@ class McfData extends \Google\Collection
     return $this->id;
   }
   /**
-   * The maximum number of rows the response can contain, regardless of the
-   * actual number of rows returned. Its value ranges from 1 to 10,000 with a
-   * value of 1000 by default, or otherwise specified by the max-results query
-   * parameter.
-   *
-   * @param int $itemsPerPage
+   * @param int
    */
   public function setItemsPerPage($itemsPerPage)
   {
@@ -170,9 +130,7 @@ class McfData extends \Google\Collection
     return $this->itemsPerPage;
   }
   /**
-   * Resource type.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -186,9 +144,7 @@ class McfData extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Link to next page for this Analytics data query.
-   *
-   * @param string $nextLink
+   * @param string
    */
   public function setNextLink($nextLink)
   {
@@ -202,9 +158,7 @@ class McfData extends \Google\Collection
     return $this->nextLink;
   }
   /**
-   * Link to previous page for this Analytics data query.
-   *
-   * @param string $previousLink
+   * @param string
    */
   public function setPreviousLink($previousLink)
   {
@@ -218,10 +172,7 @@ class McfData extends \Google\Collection
     return $this->previousLink;
   }
   /**
-   * Information for the view (profile), for which the Analytics data was
-   * requested.
-   *
-   * @param McfDataProfileInfo $profileInfo
+   * @param McfDataProfileInfo
    */
   public function setProfileInfo(McfDataProfileInfo $profileInfo)
   {
@@ -235,9 +186,7 @@ class McfData extends \Google\Collection
     return $this->profileInfo;
   }
   /**
-   * Analytics data request query parameters.
-   *
-   * @param McfDataQuery $query
+   * @param McfDataQuery
    */
   public function setQuery(McfDataQuery $query)
   {
@@ -251,11 +200,7 @@ class McfData extends \Google\Collection
     return $this->query;
   }
   /**
-   * Analytics data rows, where each row contains a list of dimension values
-   * followed by the metric values. The order of dimensions and metrics is same
-   * as specified in the request.
-   *
-   * @param McfDataRows[] $rows
+   * @param McfDataRows[]
    */
   public function setRows($rows)
   {
@@ -269,9 +214,7 @@ class McfData extends \Google\Collection
     return $this->rows;
   }
   /**
-   * The number of samples used to calculate the result.
-   *
-   * @param string $sampleSize
+   * @param string
    */
   public function setSampleSize($sampleSize)
   {
@@ -285,9 +228,7 @@ class McfData extends \Google\Collection
     return $this->sampleSize;
   }
   /**
-   * Total size of the sample space from which the samples were selected.
-   *
-   * @param string $sampleSpace
+   * @param string
    */
   public function setSampleSpace($sampleSpace)
   {
@@ -301,9 +242,7 @@ class McfData extends \Google\Collection
     return $this->sampleSpace;
   }
   /**
-   * Link to this page.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -317,10 +256,7 @@ class McfData extends \Google\Collection
     return $this->selfLink;
   }
   /**
-   * The total number of rows for the query, regardless of the number of rows in
-   * the response.
-   *
-   * @param int $totalResults
+   * @param int
    */
   public function setTotalResults($totalResults)
   {
@@ -334,11 +270,7 @@ class McfData extends \Google\Collection
     return $this->totalResults;
   }
   /**
-   * Total values for the requested metrics over all the results, not just the
-   * results returned in this response. The order of the metric totals is same
-   * as the metric order specified in the request.
-   *
-   * @param string[] $totalsForAllResults
+   * @param string[]
    */
   public function setTotalsForAllResults($totalsForAllResults)
   {

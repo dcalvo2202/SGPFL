@@ -27,9 +27,7 @@ class DataSplitResult extends \Google\Model
   protected $trainingTableDataType = '';
 
   /**
-   * Table reference of the evaluation data after split.
-   *
-   * @param TableReference $evaluationTable
+   * @param TableReference
    */
   public function setEvaluationTable(TableReference $evaluationTable)
   {
@@ -43,9 +41,7 @@ class DataSplitResult extends \Google\Model
     return $this->evaluationTable;
   }
   /**
-   * Table reference of the test data after split.
-   *
-   * @param TableReference $testTable
+   * @param TableReference
    */
   public function setTestTable(TableReference $testTable)
   {
@@ -59,9 +55,7 @@ class DataSplitResult extends \Google\Model
     return $this->testTable;
   }
   /**
-   * Table reference of the training data after split.
-   *
-   * @param TableReference $trainingTable
+   * @param TableReference
    */
   public function setTrainingTable(TableReference $trainingTable)
   {

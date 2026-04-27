@@ -45,7 +45,7 @@ class DiscoveryclustersClustersBannerWithContentContainer extends \Google\Model
   public $textColorArgb;
 
   /**
-   * @param string $fillColorArgb
+   * @param string
    */
   public function setFillColorArgb($fillColorArgb)
   {
@@ -59,7 +59,7 @@ class DiscoveryclustersClustersBannerWithContentContainer extends \Google\Model
     return $this->fillColorArgb;
   }
   /**
-   * @param string $imageUrl
+   * @param string
    */
   public function setImageUrl($imageUrl)
   {
@@ -73,7 +73,7 @@ class DiscoveryclustersClustersBannerWithContentContainer extends \Google\Model
     return $this->imageUrl;
   }
   /**
-   * @param string $maskColorArgb
+   * @param string
    */
   public function setMaskColorArgb($maskColorArgb)
   {
@@ -87,7 +87,7 @@ class DiscoveryclustersClustersBannerWithContentContainer extends \Google\Model
     return $this->maskColorArgb;
   }
   /**
-   * @param string $moreButtonText
+   * @param string
    */
   public function setMoreButtonText($moreButtonText)
   {
@@ -101,7 +101,7 @@ class DiscoveryclustersClustersBannerWithContentContainer extends \Google\Model
     return $this->moreButtonText;
   }
   /**
-   * @param string $moreButtonUrl
+   * @param string
    */
   public function setMoreButtonUrl($moreButtonUrl)
   {
@@ -115,7 +115,7 @@ class DiscoveryclustersClustersBannerWithContentContainer extends \Google\Model
     return $this->moreButtonUrl;
   }
   /**
-   * @param string $textColorArgb
+   * @param string
    */
   public function setTextColorArgb($textColorArgb)
   {

@@ -21,8 +21,6 @@ class ActionInput extends \Google\Collection
 {
   protected $collection_key = 'inputValues';
   /**
-   * Required. Id of the selected action flow.
-   *
    * @var string
    */
   public $actionFlowId;
@@ -30,9 +28,7 @@ class ActionInput extends \Google\Collection
   protected $inputValuesDataType = 'array';
 
   /**
-   * Required. Id of the selected action flow.
-   *
-   * @param string $actionFlowId
+   * @param string
    */
   public function setActionFlowId($actionFlowId)
   {
@@ -46,9 +42,7 @@ class ActionInput extends \Google\Collection
     return $this->actionFlowId;
   }
   /**
-   * Required. Values for input fields.
-   *
-   * @param InputValue[] $inputValues
+   * @param InputValue[]
    */
   public function setInputValues($inputValues)
   {

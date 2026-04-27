@@ -20,11 +20,6 @@ namespace Google\Service\CloudRetail;
 class GoogleCloudRetailV2DoubleList extends \Google\Collection
 {
   protected $collection_key = 'values';
-  /**
-   * The list of double values.
-   *
-   * @var []
-   */
   public $values;
 
   public function setValues($values)

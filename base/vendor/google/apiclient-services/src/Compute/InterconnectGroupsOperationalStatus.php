@@ -19,16 +19,10 @@ namespace Google\Service\Compute;
 
 class InterconnectGroupsOperationalStatus extends \Google\Collection
 {
-  public const GROUP_STATUS_DEGRADED = 'DEGRADED';
-  public const GROUP_STATUS_FULLY_DOWN = 'FULLY_DOWN';
-  public const GROUP_STATUS_FULLY_UP = 'FULLY_UP';
-  public const GROUP_STATUS_GROUPS_STATUS_UNSPECIFIED = 'GROUPS_STATUS_UNSPECIFIED';
   protected $collection_key = 'interconnectStatuses';
   protected $configuredType = InterconnectGroupConfigured::class;
   protected $configuredDataType = '';
   /**
-   * Output only. Summarizes the status of the group.
-   *
    * @var string
    */
   public $groupStatus;
@@ -40,9 +34,7 @@ class InterconnectGroupsOperationalStatus extends \Google\Collection
   protected $operationalDataType = '';
 
   /**
-   * Output only. The configuration analysis, as returned by Get.
-   *
-   * @param InterconnectGroupConfigured $configured
+   * @param InterconnectGroupConfigured
    */
   public function setConfigured(InterconnectGroupConfigured $configured)
   {
@@ -56,27 +48,21 @@ class InterconnectGroupsOperationalStatus extends \Google\Collection
     return $this->configured;
   }
   /**
-   * Output only. Summarizes the status of the group.
-   *
-   * Accepted values: DEGRADED, FULLY_DOWN, FULLY_UP, GROUPS_STATUS_UNSPECIFIED
-   *
-   * @param self::GROUP_STATUS_* $groupStatus
+   * @param string
    */
   public function setGroupStatus($groupStatus)
   {
     $this->groupStatus = $groupStatus;
   }
   /**
-   * @return self::GROUP_STATUS_*
+   * @return string
    */
   public function getGroupStatus()
   {
     return $this->groupStatus;
   }
   /**
-   * Output only. The intent of the resource, as returned by Get.
-   *
-   * @param InterconnectGroupIntent $intent
+   * @param InterconnectGroupIntent
    */
   public function setIntent(InterconnectGroupIntent $intent)
   {
@@ -90,7 +76,7 @@ class InterconnectGroupsOperationalStatus extends \Google\Collection
     return $this->intent;
   }
   /**
-   * @param InterconnectGroupsOperationalStatusInterconnectStatus[] $interconnectStatuses
+   * @param InterconnectGroupsOperationalStatusInterconnectStatus[]
    */
   public function setInterconnectStatuses($interconnectStatuses)
   {
@@ -104,10 +90,7 @@ class InterconnectGroupsOperationalStatus extends \Google\Collection
     return $this->interconnectStatuses;
   }
   /**
-   * Output only. The operational state of the group, including only active
-   * Interconnects.
-   *
-   * @param InterconnectGroupConfigured $operational
+   * @param InterconnectGroupConfigured
    */
   public function setOperational(InterconnectGroupConfigured $operational)
   {

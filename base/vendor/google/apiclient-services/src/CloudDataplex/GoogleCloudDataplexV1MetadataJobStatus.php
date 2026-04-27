@@ -20,66 +20,24 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1MetadataJobStatus extends \Google\Model
 {
   /**
-   * State unspecified.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The job is queued.
-   */
-  public const STATE_QUEUED = 'QUEUED';
-  /**
-   * The job is running.
-   */
-  public const STATE_RUNNING = 'RUNNING';
-  /**
-   * The job is being canceled.
-   */
-  public const STATE_CANCELING = 'CANCELING';
-  /**
-   * The job is canceled.
-   */
-  public const STATE_CANCELED = 'CANCELED';
-  /**
-   * The job succeeded.
-   */
-  public const STATE_SUCCEEDED = 'SUCCEEDED';
-  /**
-   * The job failed.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * The job completed with some errors.
-   */
-  public const STATE_SUCCEEDED_WITH_ERRORS = 'SUCCEEDED_WITH_ERRORS';
-  /**
-   * Output only. Progress tracking.
-   *
    * @var int
    */
   public $completionPercent;
   /**
-   * Output only. Message relating to the progression of a metadata job.
-   *
    * @var string
    */
   public $message;
   /**
-   * Output only. State of the metadata job.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. The time when the status was updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. Progress tracking.
-   *
-   * @param int $completionPercent
+   * @param int
    */
   public function setCompletionPercent($completionPercent)
   {
@@ -93,9 +51,7 @@ class GoogleCloudDataplexV1MetadataJobStatus extends \Google\Model
     return $this->completionPercent;
   }
   /**
-   * Output only. Message relating to the progression of a metadata job.
-   *
-   * @param string $message
+   * @param string
    */
   public function setMessage($message)
   {
@@ -109,28 +65,21 @@ class GoogleCloudDataplexV1MetadataJobStatus extends \Google\Model
     return $this->message;
   }
   /**
-   * Output only. State of the metadata job.
-   *
-   * Accepted values: STATE_UNSPECIFIED, QUEUED, RUNNING, CANCELING, CANCELED,
-   * SUCCEEDED, FAILED, SUCCEEDED_WITH_ERRORS
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. The time when the status was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

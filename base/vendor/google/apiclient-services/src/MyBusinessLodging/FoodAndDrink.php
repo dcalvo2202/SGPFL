@@ -20,381 +20,104 @@ namespace Google\Service\MyBusinessLodging;
 class FoodAndDrink extends \Google\Model
 {
   /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const BAR_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const BAR_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const BAR_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const BAR_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const BREAKFAST_AVAILABLE_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const BREAKFAST_AVAILABLE_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const BREAKFAST_AVAILABLE_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const BREAKFAST_AVAILABLE_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const BREAKFAST_BUFFET_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const BREAKFAST_BUFFET_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const BREAKFAST_BUFFET_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const BREAKFAST_BUFFET_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const BUFFET_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const BUFFET_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const BUFFET_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const BUFFET_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const DINNER_BUFFET_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const DINNER_BUFFET_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const DINNER_BUFFET_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const DINNER_BUFFET_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const FREE_BREAKFAST_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const FREE_BREAKFAST_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const FREE_BREAKFAST_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const FREE_BREAKFAST_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const RESTAURANT_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const RESTAURANT_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const RESTAURANT_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const RESTAURANT_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const RESTAURANTS_COUNT_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const RESTAURANTS_COUNT_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const RESTAURANTS_COUNT_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const RESTAURANTS_COUNT_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const ROOM_SERVICE_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const ROOM_SERVICE_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const ROOM_SERVICE_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const ROOM_SERVICE_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const TABLE_SERVICE_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const TABLE_SERVICE_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const TABLE_SERVICE_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const TABLE_SERVICE_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const TWENTY_FOUR_HOUR_ROOM_SERVICE_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const TWENTY_FOUR_HOUR_ROOM_SERVICE_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const TWENTY_FOUR_HOUR_ROOM_SERVICE_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const TWENTY_FOUR_HOUR_ROOM_SERVICE_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const VENDING_MACHINE_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const VENDING_MACHINE_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const VENDING_MACHINE_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const VENDING_MACHINE_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Bar. A designated room, lounge or area of an on-site restaurant with
-   * seating at a counter behind which a hotel staffer takes the guest's order
-   * and provides the requested alcoholic drink. Can be indoors or outdoors.
-   * Also known as Pub.
-   *
    * @var bool
    */
   public $bar;
   /**
-   * Bar exception.
-   *
    * @var string
    */
   public $barException;
   /**
-   * Breakfast available. The morning meal is offered to all guests. Can be free
-   * or for a fee.
-   *
    * @var bool
    */
   public $breakfastAvailable;
   /**
-   * Breakfast available exception.
-   *
    * @var string
    */
   public $breakfastAvailableException;
   /**
-   * Breakfast buffet. Breakfast meal service where guests serve themselves from
-   * a variety of dishes/foods that are put out on a table.
-   *
    * @var bool
    */
   public $breakfastBuffet;
   /**
-   * Breakfast buffet exception.
-   *
    * @var string
    */
   public $breakfastBuffetException;
   /**
-   * Buffet. A type of meal where guests serve themselves from a variety of
-   * dishes/foods that are put out on a table. Includes lunch and/or dinner
-   * meals. A breakfast-only buffet is not sufficient.
-   *
    * @var bool
    */
   public $buffet;
   /**
-   * Buffet exception.
-   *
    * @var string
    */
   public $buffetException;
   /**
-   * Dinner buffet. Dinner meal service where guests serve themselves from a
-   * variety of dishes/foods that are put out on a table.
-   *
    * @var bool
    */
   public $dinnerBuffet;
   /**
-   * Dinner buffet exception.
-   *
    * @var string
    */
   public $dinnerBuffetException;
   /**
-   * Free breakfast. Breakfast is offered for free to all guests. Does not apply
-   * if limited to certain room packages.
-   *
    * @var bool
    */
   public $freeBreakfast;
   /**
-   * Free breakfast exception.
-   *
    * @var string
    */
   public $freeBreakfastException;
   /**
-   * Restaurant. A business onsite at the hotel that is open to the public as
-   * well as guests, and offers meals and beverages to consume at tables or
-   * counters. May or may not include table service. Also known as cafe, buffet,
-   * eatery. A "breakfast room" where the hotel serves breakfast only to guests
-   * (not the general public) does not count as a restaurant.
-   *
    * @var bool
    */
   public $restaurant;
   /**
-   * Restaurant exception.
-   *
    * @var string
    */
   public $restaurantException;
   /**
-   * Restaurants count. The number of restaurants at the hotel.
-   *
    * @var int
    */
   public $restaurantsCount;
   /**
-   * Restaurants count exception.
-   *
    * @var string
    */
   public $restaurantsCountException;
   /**
-   * Room service. A hotel staffer delivers meals prepared onsite to a guest's
-   * room as per their request. May or may not be available during specific
-   * hours. Services should be available to all guests (not based on rate/room
-   * booked/reward program, etc).
-   *
    * @var bool
    */
   public $roomService;
   /**
-   * Room service exception.
-   *
    * @var string
    */
   public $roomServiceException;
   /**
-   * Table service. A restaurant in which a staff member is assigned to a
-   * guest's table to take their order, deliver and clear away food, and deliver
-   * the bill, if applicable. Also known as sit-down restaurant.
-   *
    * @var bool
    */
   public $tableService;
   /**
-   * Table service exception.
-   *
    * @var string
    */
   public $tableServiceException;
   /**
-   * 24hr room service. Room service is available 24 hours a day.
-   *
    * @var bool
    */
   public $twentyFourHourRoomService;
   /**
-   * 24hr room service exception.
-   *
    * @var string
    */
   public $twentyFourHourRoomServiceException;
   /**
-   * Vending machine. A glass-fronted mechanized cabinet displaying and
-   * dispensing snacks and beverages for purchase by coins, paper money and/or
-   * credit cards.
-   *
    * @var bool
    */
   public $vendingMachine;
   /**
-   * Vending machine exception.
-   *
    * @var string
    */
   public $vendingMachineException;
 
   /**
-   * Bar. A designated room, lounge or area of an on-site restaurant with
-   * seating at a counter behind which a hotel staffer takes the guest's order
-   * and provides the requested alcoholic drink. Can be indoors or outdoors.
-   * Also known as Pub.
-   *
-   * @param bool $bar
+   * @param bool
    */
   public function setBar($bar)
   {
@@ -408,29 +131,21 @@ class FoodAndDrink extends \Google\Model
     return $this->bar;
   }
   /**
-   * Bar exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::BAR_EXCEPTION_* $barException
+   * @param string
    */
   public function setBarException($barException)
   {
     $this->barException = $barException;
   }
   /**
-   * @return self::BAR_EXCEPTION_*
+   * @return string
    */
   public function getBarException()
   {
     return $this->barException;
   }
   /**
-   * Breakfast available. The morning meal is offered to all guests. Can be free
-   * or for a fee.
-   *
-   * @param bool $breakfastAvailable
+   * @param bool
    */
   public function setBreakfastAvailable($breakfastAvailable)
   {
@@ -444,29 +159,21 @@ class FoodAndDrink extends \Google\Model
     return $this->breakfastAvailable;
   }
   /**
-   * Breakfast available exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::BREAKFAST_AVAILABLE_EXCEPTION_* $breakfastAvailableException
+   * @param string
    */
   public function setBreakfastAvailableException($breakfastAvailableException)
   {
     $this->breakfastAvailableException = $breakfastAvailableException;
   }
   /**
-   * @return self::BREAKFAST_AVAILABLE_EXCEPTION_*
+   * @return string
    */
   public function getBreakfastAvailableException()
   {
     return $this->breakfastAvailableException;
   }
   /**
-   * Breakfast buffet. Breakfast meal service where guests serve themselves from
-   * a variety of dishes/foods that are put out on a table.
-   *
-   * @param bool $breakfastBuffet
+   * @param bool
    */
   public function setBreakfastBuffet($breakfastBuffet)
   {
@@ -480,30 +187,21 @@ class FoodAndDrink extends \Google\Model
     return $this->breakfastBuffet;
   }
   /**
-   * Breakfast buffet exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::BREAKFAST_BUFFET_EXCEPTION_* $breakfastBuffetException
+   * @param string
    */
   public function setBreakfastBuffetException($breakfastBuffetException)
   {
     $this->breakfastBuffetException = $breakfastBuffetException;
   }
   /**
-   * @return self::BREAKFAST_BUFFET_EXCEPTION_*
+   * @return string
    */
   public function getBreakfastBuffetException()
   {
     return $this->breakfastBuffetException;
   }
   /**
-   * Buffet. A type of meal where guests serve themselves from a variety of
-   * dishes/foods that are put out on a table. Includes lunch and/or dinner
-   * meals. A breakfast-only buffet is not sufficient.
-   *
-   * @param bool $buffet
+   * @param bool
    */
   public function setBuffet($buffet)
   {
@@ -517,29 +215,21 @@ class FoodAndDrink extends \Google\Model
     return $this->buffet;
   }
   /**
-   * Buffet exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::BUFFET_EXCEPTION_* $buffetException
+   * @param string
    */
   public function setBuffetException($buffetException)
   {
     $this->buffetException = $buffetException;
   }
   /**
-   * @return self::BUFFET_EXCEPTION_*
+   * @return string
    */
   public function getBuffetException()
   {
     return $this->buffetException;
   }
   /**
-   * Dinner buffet. Dinner meal service where guests serve themselves from a
-   * variety of dishes/foods that are put out on a table.
-   *
-   * @param bool $dinnerBuffet
+   * @param bool
    */
   public function setDinnerBuffet($dinnerBuffet)
   {
@@ -553,29 +243,21 @@ class FoodAndDrink extends \Google\Model
     return $this->dinnerBuffet;
   }
   /**
-   * Dinner buffet exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::DINNER_BUFFET_EXCEPTION_* $dinnerBuffetException
+   * @param string
    */
   public function setDinnerBuffetException($dinnerBuffetException)
   {
     $this->dinnerBuffetException = $dinnerBuffetException;
   }
   /**
-   * @return self::DINNER_BUFFET_EXCEPTION_*
+   * @return string
    */
   public function getDinnerBuffetException()
   {
     return $this->dinnerBuffetException;
   }
   /**
-   * Free breakfast. Breakfast is offered for free to all guests. Does not apply
-   * if limited to certain room packages.
-   *
-   * @param bool $freeBreakfast
+   * @param bool
    */
   public function setFreeBreakfast($freeBreakfast)
   {
@@ -589,32 +271,21 @@ class FoodAndDrink extends \Google\Model
     return $this->freeBreakfast;
   }
   /**
-   * Free breakfast exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::FREE_BREAKFAST_EXCEPTION_* $freeBreakfastException
+   * @param string
    */
   public function setFreeBreakfastException($freeBreakfastException)
   {
     $this->freeBreakfastException = $freeBreakfastException;
   }
   /**
-   * @return self::FREE_BREAKFAST_EXCEPTION_*
+   * @return string
    */
   public function getFreeBreakfastException()
   {
     return $this->freeBreakfastException;
   }
   /**
-   * Restaurant. A business onsite at the hotel that is open to the public as
-   * well as guests, and offers meals and beverages to consume at tables or
-   * counters. May or may not include table service. Also known as cafe, buffet,
-   * eatery. A "breakfast room" where the hotel serves breakfast only to guests
-   * (not the general public) does not count as a restaurant.
-   *
-   * @param bool $restaurant
+   * @param bool
    */
   public function setRestaurant($restaurant)
   {
@@ -628,28 +299,21 @@ class FoodAndDrink extends \Google\Model
     return $this->restaurant;
   }
   /**
-   * Restaurant exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::RESTAURANT_EXCEPTION_* $restaurantException
+   * @param string
    */
   public function setRestaurantException($restaurantException)
   {
     $this->restaurantException = $restaurantException;
   }
   /**
-   * @return self::RESTAURANT_EXCEPTION_*
+   * @return string
    */
   public function getRestaurantException()
   {
     return $this->restaurantException;
   }
   /**
-   * Restaurants count. The number of restaurants at the hotel.
-   *
-   * @param int $restaurantsCount
+   * @param int
    */
   public function setRestaurantsCount($restaurantsCount)
   {
@@ -663,31 +327,21 @@ class FoodAndDrink extends \Google\Model
     return $this->restaurantsCount;
   }
   /**
-   * Restaurants count exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::RESTAURANTS_COUNT_EXCEPTION_* $restaurantsCountException
+   * @param string
    */
   public function setRestaurantsCountException($restaurantsCountException)
   {
     $this->restaurantsCountException = $restaurantsCountException;
   }
   /**
-   * @return self::RESTAURANTS_COUNT_EXCEPTION_*
+   * @return string
    */
   public function getRestaurantsCountException()
   {
     return $this->restaurantsCountException;
   }
   /**
-   * Room service. A hotel staffer delivers meals prepared onsite to a guest's
-   * room as per their request. May or may not be available during specific
-   * hours. Services should be available to all guests (not based on rate/room
-   * booked/reward program, etc).
-   *
-   * @param bool $roomService
+   * @param bool
    */
   public function setRoomService($roomService)
   {
@@ -701,30 +355,21 @@ class FoodAndDrink extends \Google\Model
     return $this->roomService;
   }
   /**
-   * Room service exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::ROOM_SERVICE_EXCEPTION_* $roomServiceException
+   * @param string
    */
   public function setRoomServiceException($roomServiceException)
   {
     $this->roomServiceException = $roomServiceException;
   }
   /**
-   * @return self::ROOM_SERVICE_EXCEPTION_*
+   * @return string
    */
   public function getRoomServiceException()
   {
     return $this->roomServiceException;
   }
   /**
-   * Table service. A restaurant in which a staff member is assigned to a
-   * guest's table to take their order, deliver and clear away food, and deliver
-   * the bill, if applicable. Also known as sit-down restaurant.
-   *
-   * @param bool $tableService
+   * @param bool
    */
   public function setTableService($tableService)
   {
@@ -738,28 +383,21 @@ class FoodAndDrink extends \Google\Model
     return $this->tableService;
   }
   /**
-   * Table service exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::TABLE_SERVICE_EXCEPTION_* $tableServiceException
+   * @param string
    */
   public function setTableServiceException($tableServiceException)
   {
     $this->tableServiceException = $tableServiceException;
   }
   /**
-   * @return self::TABLE_SERVICE_EXCEPTION_*
+   * @return string
    */
   public function getTableServiceException()
   {
     return $this->tableServiceException;
   }
   /**
-   * 24hr room service. Room service is available 24 hours a day.
-   *
-   * @param bool $twentyFourHourRoomService
+   * @param bool
    */
   public function setTwentyFourHourRoomService($twentyFourHourRoomService)
   {
@@ -773,30 +411,21 @@ class FoodAndDrink extends \Google\Model
     return $this->twentyFourHourRoomService;
   }
   /**
-   * 24hr room service exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::TWENTY_FOUR_HOUR_ROOM_SERVICE_EXCEPTION_* $twentyFourHourRoomServiceException
+   * @param string
    */
   public function setTwentyFourHourRoomServiceException($twentyFourHourRoomServiceException)
   {
     $this->twentyFourHourRoomServiceException = $twentyFourHourRoomServiceException;
   }
   /**
-   * @return self::TWENTY_FOUR_HOUR_ROOM_SERVICE_EXCEPTION_*
+   * @return string
    */
   public function getTwentyFourHourRoomServiceException()
   {
     return $this->twentyFourHourRoomServiceException;
   }
   /**
-   * Vending machine. A glass-fronted mechanized cabinet displaying and
-   * dispensing snacks and beverages for purchase by coins, paper money and/or
-   * credit cards.
-   *
-   * @param bool $vendingMachine
+   * @param bool
    */
   public function setVendingMachine($vendingMachine)
   {
@@ -810,19 +439,14 @@ class FoodAndDrink extends \Google\Model
     return $this->vendingMachine;
   }
   /**
-   * Vending machine exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::VENDING_MACHINE_EXCEPTION_* $vendingMachineException
+   * @param string
    */
   public function setVendingMachineException($vendingMachineException)
   {
     $this->vendingMachineException = $vendingMachineException;
   }
   /**
-   * @return self::VENDING_MACHINE_EXCEPTION_*
+   * @return string
    */
   public function getVendingMachineException()
   {

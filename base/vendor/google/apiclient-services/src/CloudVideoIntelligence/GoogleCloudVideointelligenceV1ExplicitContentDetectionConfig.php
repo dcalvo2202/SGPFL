@@ -20,18 +20,12 @@ namespace Google\Service\CloudVideoIntelligence;
 class GoogleCloudVideointelligenceV1ExplicitContentDetectionConfig extends \Google\Model
 {
   /**
-   * Model to use for explicit content detection. Supported values:
-   * "builtin/stable" (the default if unset) and "builtin/latest".
-   *
    * @var string
    */
   public $model;
 
   /**
-   * Model to use for explicit content detection. Supported values:
-   * "builtin/stable" (the default if unset) and "builtin/latest".
-   *
-   * @param string $model
+   * @param string
    */
   public function setModel($model)
   {

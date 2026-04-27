@@ -20,23 +20,16 @@ namespace Google\Service\FactCheckTools;
 class GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewAuthor extends \Google\Model
 {
   /**
-   * Corresponds to `ClaimReview.author.image`.
-   *
    * @var string
    */
   public $imageUrl;
   /**
-   * Name of the organization that is publishing the fact check. Corresponds to
-   * `ClaimReview.author.name`.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Corresponds to `ClaimReview.author.image`.
-   *
-   * @param string $imageUrl
+   * @param string
    */
   public function setImageUrl($imageUrl)
   {
@@ -50,10 +43,7 @@ class GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewAuthor extends \Google\
     return $this->imageUrl;
   }
   /**
-   * Name of the organization that is publishing the fact check. Corresponds to
-   * `ClaimReview.author.name`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

@@ -20,55 +20,34 @@ namespace Google\Service\DatabaseMigrationService;
 class MySqlConnectionProfile extends \Google\Model
 {
   /**
-   * If the source is a Cloud SQL database, use this field to provide the Cloud
-   * SQL instance ID of the source.
-   *
    * @var string
    */
   public $cloudSqlId;
   /**
-   * Required. The IP or hostname of the source MySQL database.
-   *
    * @var string
    */
   public $host;
   /**
-   * Required. Input only. The password for the user that Database Migration
-   * Service will be using to connect to the database. This field is not
-   * returned on request, and the value is encrypted when stored in Database
-   * Migration Service.
-   *
    * @var string
    */
   public $password;
   /**
-   * Output only. Indicates If this connection profile password is stored.
-   *
    * @var bool
    */
   public $passwordSet;
   /**
-   * Required. The network port of the source MySQL database.
-   *
    * @var int
    */
   public $port;
   protected $sslType = SslConfig::class;
   protected $sslDataType = '';
   /**
-   * Required. The username that Database Migration Service will use to connect
-   * to the database. The value is encrypted when stored in Database Migration
-   * Service.
-   *
    * @var string
    */
   public $username;
 
   /**
-   * If the source is a Cloud SQL database, use this field to provide the Cloud
-   * SQL instance ID of the source.
-   *
-   * @param string $cloudSqlId
+   * @param string
    */
   public function setCloudSqlId($cloudSqlId)
   {
@@ -82,9 +61,7 @@ class MySqlConnectionProfile extends \Google\Model
     return $this->cloudSqlId;
   }
   /**
-   * Required. The IP or hostname of the source MySQL database.
-   *
-   * @param string $host
+   * @param string
    */
   public function setHost($host)
   {
@@ -98,12 +75,7 @@ class MySqlConnectionProfile extends \Google\Model
     return $this->host;
   }
   /**
-   * Required. Input only. The password for the user that Database Migration
-   * Service will be using to connect to the database. This field is not
-   * returned on request, and the value is encrypted when stored in Database
-   * Migration Service.
-   *
-   * @param string $password
+   * @param string
    */
   public function setPassword($password)
   {
@@ -117,9 +89,7 @@ class MySqlConnectionProfile extends \Google\Model
     return $this->password;
   }
   /**
-   * Output only. Indicates If this connection profile password is stored.
-   *
-   * @param bool $passwordSet
+   * @param bool
    */
   public function setPasswordSet($passwordSet)
   {
@@ -133,9 +103,7 @@ class MySqlConnectionProfile extends \Google\Model
     return $this->passwordSet;
   }
   /**
-   * Required. The network port of the source MySQL database.
-   *
-   * @param int $port
+   * @param int
    */
   public function setPort($port)
   {
@@ -149,9 +117,7 @@ class MySqlConnectionProfile extends \Google\Model
     return $this->port;
   }
   /**
-   * SSL configuration for the destination to connect to the source database.
-   *
-   * @param SslConfig $ssl
+   * @param SslConfig
    */
   public function setSsl(SslConfig $ssl)
   {
@@ -165,11 +131,7 @@ class MySqlConnectionProfile extends \Google\Model
     return $this->ssl;
   }
   /**
-   * Required. The username that Database Migration Service will use to connect
-   * to the database. The value is encrypted when stored in Database Migration
-   * Service.
-   *
-   * @param string $username
+   * @param string
    */
   public function setUsername($username)
   {

@@ -23,24 +23,16 @@ class ListNetworkPoliciesResponse extends \Google\Collection
   protected $networkPoliciesType = NetworkPolicy::class;
   protected $networkPoliciesDataType = 'array';
   /**
-   * A token, which can be send as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Locations that could not be reached when making an aggregated query using
-   * wildcards.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * A list of network policies.
-   *
-   * @param NetworkPolicy[] $networkPolicies
+   * @param NetworkPolicy[]
    */
   public function setNetworkPolicies($networkPolicies)
   {
@@ -54,10 +46,7 @@ class ListNetworkPoliciesResponse extends \Google\Collection
     return $this->networkPolicies;
   }
   /**
-   * A token, which can be send as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -71,10 +60,7 @@ class ListNetworkPoliciesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Locations that could not be reached when making an aggregated query using
-   * wildcards.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

@@ -19,101 +19,44 @@ namespace Google\Service\ServerlessVPCAccess;
 
 class Connector extends \Google\Collection
 {
-  /**
-   * Invalid state.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Connector is deployed and ready to receive traffic.
-   */
-  public const STATE_READY = 'READY';
-  /**
-   * An Insert operation is in progress. Transient condition.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * A Delete operation is in progress. Transient condition.
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * Connector is in a bad state, manual deletion recommended.
-   */
-  public const STATE_ERROR = 'ERROR';
-  /**
-   * The connector is being updated.
-   */
-  public const STATE_UPDATING = 'UPDATING';
   protected $collection_key = 'connectedProjects';
   /**
-   * Output only. List of projects using the connector.
-   *
    * @var string[]
    */
   public $connectedProjects;
   /**
-   * Optional. The range of internal addresses that follows RFC 4632 notation.
-   * Example: `10.132.0.0/28`.
-   *
    * @var string
    */
   public $ipCidrRange;
   /**
-   * Machine type of VM Instance underlying connector. Default is e2-micro
-   *
    * @var string
    */
   public $machineType;
   /**
-   * Maximum value of instances in autoscaling group underlying the connector.
-   *
    * @var int
    */
   public $maxInstances;
   /**
-   * Maximum throughput of the connector in Mbps. Refers to the expected
-   * throughput when using an `e2-micro` machine type. Value must be a multiple
-   * of 100 from 300 through 1000. Must be higher than the value specified by
-   * --min-throughput. If both max-throughput and max-instances are provided,
-   * max-instances takes precedence over max-throughput. The use of `max-
-   * throughput` is discouraged in favor of `max-instances`.
-   *
-   * @deprecated
    * @var int
    */
   public $maxThroughput;
   /**
-   * Minimum value of instances in autoscaling group underlying the connector.
-   *
    * @var int
    */
   public $minInstances;
   /**
-   * Minimum throughput of the connector in Mbps. Refers to the expected
-   * throughput when using an `e2-micro` machine type. Value must be a multiple
-   * of 100 from 200 through 900. Must be lower than the value specified by
-   * --max-throughput. If both min-throughput and min-instances are provided,
-   * min-instances takes precedence over min-throughput. The use of `min-
-   * throughput` is discouraged in favor of `min-instances`.
-   *
-   * @deprecated
    * @var int
    */
   public $minThroughput;
   /**
-   * The resource name in the format `projects/locations/connectors`.
-   *
    * @var string
    */
   public $name;
   /**
-   * Optional. Name of a VPC network.
-   *
    * @var string
    */
   public $network;
   /**
-   * Output only. State of the VPC access connector.
-   *
    * @var string
    */
   public $state;
@@ -121,9 +64,7 @@ class Connector extends \Google\Collection
   protected $subnetDataType = '';
 
   /**
-   * Output only. List of projects using the connector.
-   *
-   * @param string[] $connectedProjects
+   * @param string[]
    */
   public function setConnectedProjects($connectedProjects)
   {
@@ -137,10 +78,7 @@ class Connector extends \Google\Collection
     return $this->connectedProjects;
   }
   /**
-   * Optional. The range of internal addresses that follows RFC 4632 notation.
-   * Example: `10.132.0.0/28`.
-   *
-   * @param string $ipCidrRange
+   * @param string
    */
   public function setIpCidrRange($ipCidrRange)
   {
@@ -154,9 +92,7 @@ class Connector extends \Google\Collection
     return $this->ipCidrRange;
   }
   /**
-   * Machine type of VM Instance underlying connector. Default is e2-micro
-   *
-   * @param string $machineType
+   * @param string
    */
   public function setMachineType($machineType)
   {
@@ -170,9 +106,7 @@ class Connector extends \Google\Collection
     return $this->machineType;
   }
   /**
-   * Maximum value of instances in autoscaling group underlying the connector.
-   *
-   * @param int $maxInstances
+   * @param int
    */
   public function setMaxInstances($maxInstances)
   {
@@ -186,22 +120,13 @@ class Connector extends \Google\Collection
     return $this->maxInstances;
   }
   /**
-   * Maximum throughput of the connector in Mbps. Refers to the expected
-   * throughput when using an `e2-micro` machine type. Value must be a multiple
-   * of 100 from 300 through 1000. Must be higher than the value specified by
-   * --min-throughput. If both max-throughput and max-instances are provided,
-   * max-instances takes precedence over max-throughput. The use of `max-
-   * throughput` is discouraged in favor of `max-instances`.
-   *
-   * @deprecated
-   * @param int $maxThroughput
+   * @param int
    */
   public function setMaxThroughput($maxThroughput)
   {
     $this->maxThroughput = $maxThroughput;
   }
   /**
-   * @deprecated
    * @return int
    */
   public function getMaxThroughput()
@@ -209,9 +134,7 @@ class Connector extends \Google\Collection
     return $this->maxThroughput;
   }
   /**
-   * Minimum value of instances in autoscaling group underlying the connector.
-   *
-   * @param int $minInstances
+   * @param int
    */
   public function setMinInstances($minInstances)
   {
@@ -225,22 +148,13 @@ class Connector extends \Google\Collection
     return $this->minInstances;
   }
   /**
-   * Minimum throughput of the connector in Mbps. Refers to the expected
-   * throughput when using an `e2-micro` machine type. Value must be a multiple
-   * of 100 from 200 through 900. Must be lower than the value specified by
-   * --max-throughput. If both min-throughput and min-instances are provided,
-   * min-instances takes precedence over min-throughput. The use of `min-
-   * throughput` is discouraged in favor of `min-instances`.
-   *
-   * @deprecated
-   * @param int $minThroughput
+   * @param int
    */
   public function setMinThroughput($minThroughput)
   {
     $this->minThroughput = $minThroughput;
   }
   /**
-   * @deprecated
    * @return int
    */
   public function getMinThroughput()
@@ -248,9 +162,7 @@ class Connector extends \Google\Collection
     return $this->minThroughput;
   }
   /**
-   * The resource name in the format `projects/locations/connectors`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -264,9 +176,7 @@ class Connector extends \Google\Collection
     return $this->name;
   }
   /**
-   * Optional. Name of a VPC network.
-   *
-   * @param string $network
+   * @param string
    */
   public function setNetwork($network)
   {
@@ -280,28 +190,21 @@ class Connector extends \Google\Collection
     return $this->network;
   }
   /**
-   * Output only. State of the VPC access connector.
-   *
-   * Accepted values: STATE_UNSPECIFIED, READY, CREATING, DELETING, ERROR,
-   * UPDATING
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Optional. The subnet in which to house the VPC Access Connector.
-   *
-   * @param Subnet $subnet
+   * @param Subnet
    */
   public function setSubnet(Subnet $subnet)
   {

@@ -19,74 +19,28 @@ namespace Google\Service\Classroom;
 
 class Announcement extends \Google\Collection
 {
-  /**
-   * No mode specified. This is never returned.
-   */
-  public const ASSIGNEE_MODE_ASSIGNEE_MODE_UNSPECIFIED = 'ASSIGNEE_MODE_UNSPECIFIED';
-  /**
-   * All students can see the item. This is the default state.
-   */
-  public const ASSIGNEE_MODE_ALL_STUDENTS = 'ALL_STUDENTS';
-  /**
-   * A subset of the students can see the item.
-   */
-  public const ASSIGNEE_MODE_INDIVIDUAL_STUDENTS = 'INDIVIDUAL_STUDENTS';
-  /**
-   * No state specified. This is never returned.
-   */
-  public const STATE_ANNOUNCEMENT_STATE_UNSPECIFIED = 'ANNOUNCEMENT_STATE_UNSPECIFIED';
-  /**
-   * Status for announcement that has been published. This is the default state.
-   */
-  public const STATE_PUBLISHED = 'PUBLISHED';
-  /**
-   * Status for an announcement that is not yet published. Announcement in this
-   * state is visible only to course teachers and domain administrators.
-   */
-  public const STATE_DRAFT = 'DRAFT';
-  /**
-   * Status for announcement that was published but is now deleted. Announcement
-   * in this state is visible only to course teachers and domain administrators.
-   * Announcement in this state is deleted after some time.
-   */
-  public const STATE_DELETED = 'DELETED';
   protected $collection_key = 'materials';
   /**
-   * Absolute link to this announcement in the Classroom web UI. This is only
-   * populated if `state` is `PUBLISHED`. Read-only.
-   *
    * @var string
    */
   public $alternateLink;
   /**
-   * Assignee mode of the announcement. If unspecified, the default value is
-   * `ALL_STUDENTS`.
-   *
    * @var string
    */
   public $assigneeMode;
   /**
-   * Identifier of the course. Read-only.
-   *
    * @var string
    */
   public $courseId;
   /**
-   * Timestamp when this announcement was created. Read-only.
-   *
    * @var string
    */
   public $creationTime;
   /**
-   * Identifier for the user that created the announcement. Read-only.
-   *
    * @var string
    */
   public $creatorUserId;
   /**
-   * Classroom-assigned identifier of this announcement, unique per course.
-   * Read-only.
-   *
    * @var string
    */
   public $id;
@@ -95,36 +49,24 @@ class Announcement extends \Google\Collection
   protected $materialsType = Material::class;
   protected $materialsDataType = 'array';
   /**
-   * Optional timestamp when this announcement is scheduled to be published.
-   *
    * @var string
    */
   public $scheduledTime;
   /**
-   * Status of this announcement. If unspecified, the default state is `DRAFT`.
-   *
    * @var string
    */
   public $state;
   /**
-   * Description of this announcement. The text must be a valid UTF-8 string
-   * containing no more than 30,000 characters.
-   *
    * @var string
    */
   public $text;
   /**
-   * Timestamp of the most recent change to this announcement. Read-only.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Absolute link to this announcement in the Classroom web UI. This is only
-   * populated if `state` is `PUBLISHED`. Read-only.
-   *
-   * @param string $alternateLink
+   * @param string
    */
   public function setAlternateLink($alternateLink)
   {
@@ -138,29 +80,21 @@ class Announcement extends \Google\Collection
     return $this->alternateLink;
   }
   /**
-   * Assignee mode of the announcement. If unspecified, the default value is
-   * `ALL_STUDENTS`.
-   *
-   * Accepted values: ASSIGNEE_MODE_UNSPECIFIED, ALL_STUDENTS,
-   * INDIVIDUAL_STUDENTS
-   *
-   * @param self::ASSIGNEE_MODE_* $assigneeMode
+   * @param string
    */
   public function setAssigneeMode($assigneeMode)
   {
     $this->assigneeMode = $assigneeMode;
   }
   /**
-   * @return self::ASSIGNEE_MODE_*
+   * @return string
    */
   public function getAssigneeMode()
   {
     return $this->assigneeMode;
   }
   /**
-   * Identifier of the course. Read-only.
-   *
-   * @param string $courseId
+   * @param string
    */
   public function setCourseId($courseId)
   {
@@ -174,9 +108,7 @@ class Announcement extends \Google\Collection
     return $this->courseId;
   }
   /**
-   * Timestamp when this announcement was created. Read-only.
-   *
-   * @param string $creationTime
+   * @param string
    */
   public function setCreationTime($creationTime)
   {
@@ -190,9 +122,7 @@ class Announcement extends \Google\Collection
     return $this->creationTime;
   }
   /**
-   * Identifier for the user that created the announcement. Read-only.
-   *
-   * @param string $creatorUserId
+   * @param string
    */
   public function setCreatorUserId($creatorUserId)
   {
@@ -206,10 +136,7 @@ class Announcement extends \Google\Collection
     return $this->creatorUserId;
   }
   /**
-   * Classroom-assigned identifier of this announcement, unique per course.
-   * Read-only.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -223,12 +150,7 @@ class Announcement extends \Google\Collection
     return $this->id;
   }
   /**
-   * Identifiers of students with access to the announcement. This field is set
-   * only if `assigneeMode` is `INDIVIDUAL_STUDENTS`. If the `assigneeMode` is
-   * `INDIVIDUAL_STUDENTS`, then only students specified in this field can see
-   * the announcement.
-   *
-   * @param IndividualStudentsOptions $individualStudentsOptions
+   * @param IndividualStudentsOptions
    */
   public function setIndividualStudentsOptions(IndividualStudentsOptions $individualStudentsOptions)
   {
@@ -242,10 +164,7 @@ class Announcement extends \Google\Collection
     return $this->individualStudentsOptions;
   }
   /**
-   * Additional materials. Announcements must have no more than 20 material
-   * items.
-   *
-   * @param Material[] $materials
+   * @param Material[]
    */
   public function setMaterials($materials)
   {
@@ -259,9 +178,7 @@ class Announcement extends \Google\Collection
     return $this->materials;
   }
   /**
-   * Optional timestamp when this announcement is scheduled to be published.
-   *
-   * @param string $scheduledTime
+   * @param string
    */
   public function setScheduledTime($scheduledTime)
   {
@@ -275,28 +192,21 @@ class Announcement extends \Google\Collection
     return $this->scheduledTime;
   }
   /**
-   * Status of this announcement. If unspecified, the default state is `DRAFT`.
-   *
-   * Accepted values: ANNOUNCEMENT_STATE_UNSPECIFIED, PUBLISHED, DRAFT, DELETED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Description of this announcement. The text must be a valid UTF-8 string
-   * containing no more than 30,000 characters.
-   *
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {
@@ -310,9 +220,7 @@ class Announcement extends \Google\Collection
     return $this->text;
   }
   /**
-   * Timestamp of the most recent change to this announcement. Read-only.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

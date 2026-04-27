@@ -25,7 +25,7 @@ class BackendServiceLocalityLoadBalancingPolicyConfig extends \Google\Model
   protected $policyDataType = '';
 
   /**
-   * @param BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy $customPolicy
+   * @param BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy
    */
   public function setCustomPolicy(BackendServiceLocalityLoadBalancingPolicyConfigCustomPolicy $customPolicy)
   {
@@ -39,7 +39,7 @@ class BackendServiceLocalityLoadBalancingPolicyConfig extends \Google\Model
     return $this->customPolicy;
   }
   /**
-   * @param BackendServiceLocalityLoadBalancingPolicyConfigPolicy $policy
+   * @param BackendServiceLocalityLoadBalancingPolicyConfigPolicy
    */
   public function setPolicy(BackendServiceLocalityLoadBalancingPolicyConfigPolicy $policy)
   {

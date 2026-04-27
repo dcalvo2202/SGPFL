@@ -33,7 +33,7 @@ class BuildMetadata extends \Google\Model
   public $startedOn;
 
   /**
-   * @param string $finishedOn
+   * @param string
    */
   public function setFinishedOn($finishedOn)
   {
@@ -47,7 +47,7 @@ class BuildMetadata extends \Google\Model
     return $this->finishedOn;
   }
   /**
-   * @param string $invocationId
+   * @param string
    */
   public function setInvocationId($invocationId)
   {
@@ -61,7 +61,7 @@ class BuildMetadata extends \Google\Model
     return $this->invocationId;
   }
   /**
-   * @param string $startedOn
+   * @param string
    */
   public function setStartedOn($startedOn)
   {

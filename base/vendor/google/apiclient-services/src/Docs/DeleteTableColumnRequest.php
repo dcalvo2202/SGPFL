@@ -23,13 +23,7 @@ class DeleteTableColumnRequest extends \Google\Model
   protected $tableCellLocationDataType = '';
 
   /**
-   * The reference table cell location from which the column will be deleted.
-   * The column this cell spans will be deleted. If this is a merged cell that
-   * spans multiple columns, all columns that the cell spans will be deleted. If
-   * no columns remain in the table after this deletion, the whole table is
-   * deleted.
-   *
-   * @param TableCellLocation $tableCellLocation
+   * @param TableCellLocation
    */
   public function setTableCellLocation(TableCellLocation $tableCellLocation)
   {

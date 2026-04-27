@@ -21,37 +21,26 @@ class ProjectList extends \Google\Collection
 {
   protected $collection_key = 'projects';
   /**
-   * A hash of the page of results.
-   *
    * @var string
    */
   public $etag;
   /**
-   * The resource type of the response.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Use this token to request the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $projectsType = ProjectListProjects::class;
   protected $projectsDataType = 'array';
   /**
-   * The total number of projects in the page. A wrapper is used here because
-   * the field should still be in the response when the value is 0.
-   *
    * @var int
    */
   public $totalItems;
 
   /**
-   * A hash of the page of results.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -65,9 +54,7 @@ class ProjectList extends \Google\Collection
     return $this->etag;
   }
   /**
-   * The resource type of the response.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -81,9 +68,7 @@ class ProjectList extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Use this token to request the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -97,10 +82,7 @@ class ProjectList extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Projects to which the user has at least READ access. This field can be
-   * omitted if `totalItems` is 0.
-   *
-   * @param ProjectListProjects[] $projects
+   * @param ProjectListProjects[]
    */
   public function setProjects($projects)
   {
@@ -114,10 +96,7 @@ class ProjectList extends \Google\Collection
     return $this->projects;
   }
   /**
-   * The total number of projects in the page. A wrapper is used here because
-   * the field should still be in the response when the value is 0.
-   *
-   * @param int $totalItems
+   * @param int
    */
   public function setTotalItems($totalItems)
   {

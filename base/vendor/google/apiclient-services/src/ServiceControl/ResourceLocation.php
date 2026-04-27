@@ -21,31 +21,16 @@ class ResourceLocation extends \Google\Collection
 {
   protected $collection_key = 'originalLocations';
   /**
-   * The locations of a resource after the execution of the operation. Requests
-   * to create or delete a location based resource must populate the
-   * 'current_locations' field and not the 'original_locations' field. For
-   * example: "europe-west1-a" "us-east1" "nam3"
-   *
    * @var string[]
    */
   public $currentLocations;
   /**
-   * The locations of a resource prior to the execution of the operation.
-   * Requests that mutate the resource's location must populate both the
-   * 'original_locations' as well as the 'current_locations' fields. For
-   * example: "europe-west1-a" "us-east1" "nam3"
-   *
    * @var string[]
    */
   public $originalLocations;
 
   /**
-   * The locations of a resource after the execution of the operation. Requests
-   * to create or delete a location based resource must populate the
-   * 'current_locations' field and not the 'original_locations' field. For
-   * example: "europe-west1-a" "us-east1" "nam3"
-   *
-   * @param string[] $currentLocations
+   * @param string[]
    */
   public function setCurrentLocations($currentLocations)
   {
@@ -59,12 +44,7 @@ class ResourceLocation extends \Google\Collection
     return $this->currentLocations;
   }
   /**
-   * The locations of a resource prior to the execution of the operation.
-   * Requests that mutate the resource's location must populate both the
-   * 'original_locations' as well as the 'current_locations' fields. For
-   * example: "europe-west1-a" "us-east1" "nam3"
-   *
-   * @param string[] $originalLocations
+   * @param string[]
    */
   public function setOriginalLocations($originalLocations)
   {

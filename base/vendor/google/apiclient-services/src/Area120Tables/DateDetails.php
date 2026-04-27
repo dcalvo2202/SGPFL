@@ -20,16 +20,12 @@ namespace Google\Service\Area120Tables;
 class DateDetails extends \Google\Model
 {
   /**
-   * Whether the date column includes time.
-   *
    * @var bool
    */
   public $hasTime;
 
   /**
-   * Whether the date column includes time.
-   *
-   * @param bool $hasTime
+   * @param bool
    */
   public function setHasTime($hasTime)
   {

@@ -23,23 +23,16 @@ class GoogleCloudIntegrationsV1alphaListIntegrationVersionsResponse extends \Goo
   protected $integrationVersionsType = GoogleCloudIntegrationsV1alphaIntegrationVersion::class;
   protected $integrationVersionsDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Whether the user has no permission on the version or not.
-   *
    * @var bool
    */
   public $noPermission;
 
   /**
-   * The integrations which match the request.
-   *
-   * @param GoogleCloudIntegrationsV1alphaIntegrationVersion[] $integrationVersions
+   * @param GoogleCloudIntegrationsV1alphaIntegrationVersion[]
    */
   public function setIntegrationVersions($integrationVersions)
   {
@@ -53,10 +46,7 @@ class GoogleCloudIntegrationsV1alphaListIntegrationVersionsResponse extends \Goo
     return $this->integrationVersions;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -70,9 +60,7 @@ class GoogleCloudIntegrationsV1alphaListIntegrationVersionsResponse extends \Goo
     return $this->nextPageToken;
   }
   /**
-   * Whether the user has no permission on the version or not.
-   *
-   * @param bool $noPermission
+   * @param bool
    */
   public function setNoPermission($noPermission)
   {

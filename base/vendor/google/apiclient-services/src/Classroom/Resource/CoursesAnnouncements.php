@@ -182,8 +182,7 @@ class CoursesAnnouncements extends \Google\Service\Resource
    * returns the following error codes: * `PERMISSION_DENIED` if the requesting
    * user is not permitted to access the requested course or course work or for
    * access errors. * `INVALID_ARGUMENT` if the request is malformed. *
-   * `NOT_FOUND` if the requested course or course work does not exist. *
-   * `FAILED_PRECONDITION` for the following request error: * EmptyAssignees
+   * `NOT_FOUND` if the requested course or course work does not exist.
    * (announcements.modifyAssignees)
    *
    * @param string $courseId Identifier of the course. This identifier can be

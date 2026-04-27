@@ -20,16 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1TrajectoryRecallMetricValue extends \Google\Model
 {
   /**
-   * Output only. TrajectoryRecall score.
-   *
    * @var float
    */
   public $score;
 
   /**
-   * Output only. TrajectoryRecall score.
-   *
-   * @param float $score
+   * @param float
    */
   public function setScore($score)
   {

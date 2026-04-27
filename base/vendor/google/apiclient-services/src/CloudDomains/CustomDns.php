@@ -23,20 +23,12 @@ class CustomDns extends \Google\Collection
   protected $dsRecordsType = DsRecord::class;
   protected $dsRecordsDataType = 'array';
   /**
-   * Required. A list of name servers that store the DNS zone for this domain.
-   * Each name server is a domain name, with Unicode domain names expressed in
-   * Punycode format.
-   *
    * @var string[]
    */
   public $nameServers;
 
   /**
-   * The list of DS records for this domain, which are used to enable DNSSEC.
-   * The domain's DNS provider can provide the values to set here. If this field
-   * is empty, DNSSEC is disabled.
-   *
-   * @param DsRecord[] $dsRecords
+   * @param DsRecord[]
    */
   public function setDsRecords($dsRecords)
   {
@@ -50,11 +42,7 @@ class CustomDns extends \Google\Collection
     return $this->dsRecords;
   }
   /**
-   * Required. A list of name servers that store the DNS zone for this domain.
-   * Each name server is a domain name, with Unicode domain names expressed in
-   * Punycode format.
-   *
-   * @param string[] $nameServers
+   * @param string[]
    */
   public function setNameServers($nameServers)
   {

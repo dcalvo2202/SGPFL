@@ -20,27 +20,16 @@ namespace Google\Service\AccessContextManager;
 class MethodSelector extends \Google\Model
 {
   /**
-   * A valid method name for the corresponding `service_name` in ApiOperation.
-   * If `*` is used as the value for the `method`, then ALL methods and
-   * permissions are allowed.
-   *
    * @var string
    */
   public $method;
   /**
-   * A valid Cloud IAM permission for the corresponding `service_name` in
-   * ApiOperation.
-   *
    * @var string
    */
   public $permission;
 
   /**
-   * A valid method name for the corresponding `service_name` in ApiOperation.
-   * If `*` is used as the value for the `method`, then ALL methods and
-   * permissions are allowed.
-   *
-   * @param string $method
+   * @param string
    */
   public function setMethod($method)
   {
@@ -54,10 +43,7 @@ class MethodSelector extends \Google\Model
     return $this->method;
   }
   /**
-   * A valid Cloud IAM permission for the corresponding `service_name` in
-   * ApiOperation.
-   *
-   * @param string $permission
+   * @param string
    */
   public function setPermission($permission)
   {

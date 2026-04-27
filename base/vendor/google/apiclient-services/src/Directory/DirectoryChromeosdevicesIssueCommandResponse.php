@@ -20,16 +20,12 @@ namespace Google\Service\Directory;
 class DirectoryChromeosdevicesIssueCommandResponse extends \Google\Model
 {
   /**
-   * The unique ID of the issued command, used to retrieve the command status.
-   *
    * @var string
    */
   public $commandId;
 
   /**
-   * The unique ID of the issued command, used to retrieve the command status.
-   *
-   * @param string $commandId
+   * @param string
    */
   public function setCommandId($commandId)
   {

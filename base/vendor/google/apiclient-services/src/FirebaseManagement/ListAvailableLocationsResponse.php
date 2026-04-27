@@ -23,20 +23,12 @@ class ListAvailableLocationsResponse extends \Google\Collection
   protected $locationsType = Location::class;
   protected $locationsDataType = 'array';
   /**
-   * If the result list is too large to fit in a single response, then a token
-   * is returned. If the string is empty, then this response is the last page of
-   * results and all available locations have been listed. This token can be
-   * used in a subsequent call to `ListAvailableLocations` to find more
-   * locations. Page tokens are short-lived and should not be persisted.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * One page of results from a call to `ListAvailableLocations`.
-   *
-   * @param Location[] $locations
+   * @param Location[]
    */
   public function setLocations($locations)
   {
@@ -50,13 +42,7 @@ class ListAvailableLocationsResponse extends \Google\Collection
     return $this->locations;
   }
   /**
-   * If the result list is too large to fit in a single response, then a token
-   * is returned. If the string is empty, then this response is the last page of
-   * results and all available locations have been listed. This token can be
-   * used in a subsequent call to `ListAvailableLocations` to find more
-   * locations. Page tokens are short-lived and should not be persisted.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

@@ -20,48 +20,20 @@ namespace Google\Service\Cloudchannel;
 class GoogleCloudChannelV1ReportStatus extends \Google\Model
 {
   /**
-   * Not used.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Report processing started.
-   */
-  public const STATE_STARTED = 'STARTED';
-  /**
-   * Data generated from the report is being staged.
-   */
-  public const STATE_WRITING = 'WRITING';
-  /**
-   * Report data is available for access.
-   */
-  public const STATE_AVAILABLE = 'AVAILABLE';
-  /**
-   * Report failed.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * The report generation's completion time.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * The report generation's start time.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * The current state of the report generation process.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * The report generation's completion time.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -75,9 +47,7 @@ class GoogleCloudChannelV1ReportStatus extends \Google\Model
     return $this->endTime;
   }
   /**
-   * The report generation's start time.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -91,18 +61,14 @@ class GoogleCloudChannelV1ReportStatus extends \Google\Model
     return $this->startTime;
   }
   /**
-   * The current state of the report generation process.
-   *
-   * Accepted values: STATE_UNSPECIFIED, STARTED, WRITING, AVAILABLE, FAILED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

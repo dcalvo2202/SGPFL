@@ -28,9 +28,7 @@ class GoogleCloudMlV1Location extends \Google\Collection
   public $name;
 
   /**
-   * Capabilities available in the location.
-   *
-   * @param GoogleCloudMlV1Capability[] $capabilities
+   * @param GoogleCloudMlV1Capability[]
    */
   public function setCapabilities($capabilities)
   {
@@ -44,7 +42,7 @@ class GoogleCloudMlV1Location extends \Google\Collection
     return $this->capabilities;
   }
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

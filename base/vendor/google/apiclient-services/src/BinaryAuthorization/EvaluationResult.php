@@ -20,43 +20,19 @@ namespace Google\Service\BinaryAuthorization;
 class EvaluationResult extends \Google\Model
 {
   /**
-   * Not specified. This should never be used.
-   */
-  public const VERDICT_CHECK_VERDICT_UNSPECIFIED = 'CHECK_VERDICT_UNSPECIFIED';
-  /**
-   * The check was successfully evaluated and the image satisfied the check.
-   */
-  public const VERDICT_CONFORMANT = 'CONFORMANT';
-  /**
-   * The check was successfully evaluated and the image did not satisfy the
-   * check.
-   */
-  public const VERDICT_NON_CONFORMANT = 'NON_CONFORMANT';
-  /**
-   * The check was not successfully evaluated.
-   */
-  public const VERDICT_ERROR = 'ERROR';
-  /**
-   * The result of evaluating this check.
-   *
    * @var string
    */
   public $verdict;
 
   /**
-   * The result of evaluating this check.
-   *
-   * Accepted values: CHECK_VERDICT_UNSPECIFIED, CONFORMANT, NON_CONFORMANT,
-   * ERROR
-   *
-   * @param self::VERDICT_* $verdict
+   * @param string
    */
   public function setVerdict($verdict)
   {
     $this->verdict = $verdict;
   }
   /**
-   * @return self::VERDICT_*
+   * @return string
    */
   public function getVerdict()
   {

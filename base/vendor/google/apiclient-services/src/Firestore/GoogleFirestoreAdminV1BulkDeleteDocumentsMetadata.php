@@ -19,63 +19,20 @@ namespace Google\Service\Firestore;
 
 class GoogleFirestoreAdminV1BulkDeleteDocumentsMetadata extends \Google\Collection
 {
-  /**
-   * Unspecified.
-   */
-  public const OPERATION_STATE_OPERATION_STATE_UNSPECIFIED = 'OPERATION_STATE_UNSPECIFIED';
-  /**
-   * Request is being prepared for processing.
-   */
-  public const OPERATION_STATE_INITIALIZING = 'INITIALIZING';
-  /**
-   * Request is actively being processed.
-   */
-  public const OPERATION_STATE_PROCESSING = 'PROCESSING';
-  /**
-   * Request is in the process of being cancelled after user called
-   * google.longrunning.Operations.CancelOperation on the operation.
-   */
-  public const OPERATION_STATE_CANCELLING = 'CANCELLING';
-  /**
-   * Request has been processed and is in its finalization stage.
-   */
-  public const OPERATION_STATE_FINALIZING = 'FINALIZING';
-  /**
-   * Request has completed successfully.
-   */
-  public const OPERATION_STATE_SUCCESSFUL = 'SUCCESSFUL';
-  /**
-   * Request has finished being processed, but encountered an error.
-   */
-  public const OPERATION_STATE_FAILED = 'FAILED';
-  /**
-   * Request has finished being cancelled after user called
-   * google.longrunning.Operations.CancelOperation.
-   */
-  public const OPERATION_STATE_CANCELLED = 'CANCELLED';
   protected $collection_key = 'namespaceIds';
   /**
-   * The IDs of the collection groups that are being deleted.
-   *
    * @var string[]
    */
   public $collectionIds;
   /**
-   * The time this operation completed. Will be unset if operation still in
-   * progress.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * Which namespace IDs are being deleted.
-   *
    * @var string[]
    */
   public $namespaceIds;
   /**
-   * The state of the operation.
-   *
    * @var string
    */
   public $operationState;
@@ -84,25 +41,16 @@ class GoogleFirestoreAdminV1BulkDeleteDocumentsMetadata extends \Google\Collecti
   protected $progressDocumentsType = GoogleFirestoreAdminV1Progress::class;
   protected $progressDocumentsDataType = '';
   /**
-   * The timestamp that corresponds to the version of the database that is being
-   * read to get the list of documents to delete. This time can also be used as
-   * the timestamp of PITR in case of disaster recovery (subject to PITR window
-   * limit).
-   *
    * @var string
    */
   public $snapshotTime;
   /**
-   * The time this operation started.
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * The IDs of the collection groups that are being deleted.
-   *
-   * @param string[] $collectionIds
+   * @param string[]
    */
   public function setCollectionIds($collectionIds)
   {
@@ -116,10 +64,7 @@ class GoogleFirestoreAdminV1BulkDeleteDocumentsMetadata extends \Google\Collecti
     return $this->collectionIds;
   }
   /**
-   * The time this operation completed. Will be unset if operation still in
-   * progress.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -133,9 +78,7 @@ class GoogleFirestoreAdminV1BulkDeleteDocumentsMetadata extends \Google\Collecti
     return $this->endTime;
   }
   /**
-   * Which namespace IDs are being deleted.
-   *
-   * @param string[] $namespaceIds
+   * @param string[]
    */
   public function setNamespaceIds($namespaceIds)
   {
@@ -149,28 +92,21 @@ class GoogleFirestoreAdminV1BulkDeleteDocumentsMetadata extends \Google\Collecti
     return $this->namespaceIds;
   }
   /**
-   * The state of the operation.
-   *
-   * Accepted values: OPERATION_STATE_UNSPECIFIED, INITIALIZING, PROCESSING,
-   * CANCELLING, FINALIZING, SUCCESSFUL, FAILED, CANCELLED
-   *
-   * @param self::OPERATION_STATE_* $operationState
+   * @param string
    */
   public function setOperationState($operationState)
   {
     $this->operationState = $operationState;
   }
   /**
-   * @return self::OPERATION_STATE_*
+   * @return string
    */
   public function getOperationState()
   {
     return $this->operationState;
   }
   /**
-   * The progress, in bytes, of this operation.
-   *
-   * @param GoogleFirestoreAdminV1Progress $progressBytes
+   * @param GoogleFirestoreAdminV1Progress
    */
   public function setProgressBytes(GoogleFirestoreAdminV1Progress $progressBytes)
   {
@@ -184,9 +120,7 @@ class GoogleFirestoreAdminV1BulkDeleteDocumentsMetadata extends \Google\Collecti
     return $this->progressBytes;
   }
   /**
-   * The progress, in documents, of this operation.
-   *
-   * @param GoogleFirestoreAdminV1Progress $progressDocuments
+   * @param GoogleFirestoreAdminV1Progress
    */
   public function setProgressDocuments(GoogleFirestoreAdminV1Progress $progressDocuments)
   {
@@ -200,12 +134,7 @@ class GoogleFirestoreAdminV1BulkDeleteDocumentsMetadata extends \Google\Collecti
     return $this->progressDocuments;
   }
   /**
-   * The timestamp that corresponds to the version of the database that is being
-   * read to get the list of documents to delete. This time can also be used as
-   * the timestamp of PITR in case of disaster recovery (subject to PITR window
-   * limit).
-   *
-   * @param string $snapshotTime
+   * @param string
    */
   public function setSnapshotTime($snapshotTime)
   {
@@ -219,9 +148,7 @@ class GoogleFirestoreAdminV1BulkDeleteDocumentsMetadata extends \Google\Collecti
     return $this->snapshotTime;
   }
   /**
-   * The time this operation started.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

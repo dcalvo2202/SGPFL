@@ -19,17 +19,8 @@ namespace Google\Service\Transcoder;
 
 class Denoise extends \Google\Model
 {
-  /**
-   * Set strength of the denoise. Enter a value between 0 and 1. The higher the
-   * value, the smoother the image. 0 is no denoising. The default is 0.
-   *
-   * @var 
-   */
   public $strength;
   /**
-   * Set the denoiser mode. The default is `standard`. Supported denoiser modes:
-   * - `standard` - `grain`
-   *
    * @var string
    */
   public $tune;
@@ -43,10 +34,7 @@ class Denoise extends \Google\Model
     return $this->strength;
   }
   /**
-   * Set the denoiser mode. The default is `standard`. Supported denoiser modes:
-   * - `standard` - `grain`
-   *
-   * @param string $tune
+   * @param string
    */
   public function setTune($tune)
   {

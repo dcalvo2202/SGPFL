@@ -20,62 +20,30 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1SecurityProfileV2 extends \Google\Model
 {
   /**
-   * Risk assessment type is not specified.
-   */
-  public const RISK_ASSESSMENT_TYPE_RISK_ASSESSMENT_TYPE_UNSPECIFIED = 'RISK_ASSESSMENT_TYPE_UNSPECIFIED';
-  /**
-   * Risk assessment type is Apigee.
-   */
-  public const RISK_ASSESSMENT_TYPE_APIGEE = 'APIGEE';
-  /**
-   * Risk assessment type is API Hub.
-   */
-  public const RISK_ASSESSMENT_TYPE_API_HUB = 'API_HUB';
-  /**
-   * Output only. The time of the security profile creation.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. The description of the security profile.
-   *
    * @var string
    */
   public $description;
   /**
-   * Output only. Whether the security profile is google defined.
-   *
    * @var bool
    */
   public $googleDefined;
   /**
-   * Identifier. Name of the security profile v2 resource. Format:
-   * organizations/{org}/securityProfilesV2/{profile}
-   *
    * @var string
    */
   public $name;
   protected $profileAssessmentConfigsType = GoogleCloudApigeeV1SecurityProfileV2ProfileAssessmentConfig::class;
   protected $profileAssessmentConfigsDataType = 'map';
   /**
-   * Optional. The risk assessment type of the security profile. Defaults to
-   * ADVANCED_API_SECURITY.
-   *
-   * @var string
-   */
-  public $riskAssessmentType;
-  /**
-   * Output only. The time of the security profile update.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. The time of the security profile creation.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -89,9 +57,7 @@ class GoogleCloudApigeeV1SecurityProfileV2 extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Optional. The description of the security profile.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -105,9 +71,7 @@ class GoogleCloudApigeeV1SecurityProfileV2 extends \Google\Model
     return $this->description;
   }
   /**
-   * Output only. Whether the security profile is google defined.
-   *
-   * @param bool $googleDefined
+   * @param bool
    */
   public function setGoogleDefined($googleDefined)
   {
@@ -121,10 +85,7 @@ class GoogleCloudApigeeV1SecurityProfileV2 extends \Google\Model
     return $this->googleDefined;
   }
   /**
-   * Identifier. Name of the security profile v2 resource. Format:
-   * organizations/{org}/securityProfilesV2/{profile}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -138,10 +99,7 @@ class GoogleCloudApigeeV1SecurityProfileV2 extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. The configuration for each assessment in this profile. Key is the
-   * name/id of the assessment.
-   *
-   * @param GoogleCloudApigeeV1SecurityProfileV2ProfileAssessmentConfig[] $profileAssessmentConfigs
+   * @param GoogleCloudApigeeV1SecurityProfileV2ProfileAssessmentConfig[]
    */
   public function setProfileAssessmentConfigs($profileAssessmentConfigs)
   {
@@ -155,28 +113,7 @@ class GoogleCloudApigeeV1SecurityProfileV2 extends \Google\Model
     return $this->profileAssessmentConfigs;
   }
   /**
-   * Optional. The risk assessment type of the security profile. Defaults to
-   * ADVANCED_API_SECURITY.
-   *
-   * Accepted values: RISK_ASSESSMENT_TYPE_UNSPECIFIED, APIGEE, API_HUB
-   *
-   * @param self::RISK_ASSESSMENT_TYPE_* $riskAssessmentType
-   */
-  public function setRiskAssessmentType($riskAssessmentType)
-  {
-    $this->riskAssessmentType = $riskAssessmentType;
-  }
-  /**
-   * @return self::RISK_ASSESSMENT_TYPE_*
-   */
-  public function getRiskAssessmentType()
-  {
-    return $this->riskAssessmentType;
-  }
-  /**
-   * Output only. The time of the security profile update.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

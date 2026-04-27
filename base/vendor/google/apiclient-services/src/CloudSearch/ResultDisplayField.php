@@ -20,14 +20,10 @@ namespace Google\Service\CloudSearch;
 class ResultDisplayField extends \Google\Model
 {
   /**
-   * The display label for the property.
-   *
    * @var string
    */
   public $label;
   /**
-   * The operator name of the property.
-   *
    * @var string
    */
   public $operatorName;
@@ -35,9 +31,7 @@ class ResultDisplayField extends \Google\Model
   protected $propertyDataType = '';
 
   /**
-   * The display label for the property.
-   *
-   * @param string $label
+   * @param string
    */
   public function setLabel($label)
   {
@@ -51,9 +45,7 @@ class ResultDisplayField extends \Google\Model
     return $this->label;
   }
   /**
-   * The operator name of the property.
-   *
-   * @param string $operatorName
+   * @param string
    */
   public function setOperatorName($operatorName)
   {
@@ -67,9 +59,7 @@ class ResultDisplayField extends \Google\Model
     return $this->operatorName;
   }
   /**
-   * The name value pair for the property.
-   *
-   * @param NamedProperty $property
+   * @param NamedProperty
    */
   public function setProperty(NamedProperty $property)
   {

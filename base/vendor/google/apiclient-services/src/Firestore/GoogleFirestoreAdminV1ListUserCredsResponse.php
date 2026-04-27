@@ -24,9 +24,7 @@ class GoogleFirestoreAdminV1ListUserCredsResponse extends \Google\Collection
   protected $userCredsDataType = 'array';
 
   /**
-   * The user creds for the database.
-   *
-   * @param GoogleFirestoreAdminV1UserCreds[] $userCreds
+   * @param GoogleFirestoreAdminV1UserCreds[]
    */
   public function setUserCreds($userCreds)
   {

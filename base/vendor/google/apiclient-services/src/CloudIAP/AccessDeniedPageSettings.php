@@ -20,30 +20,20 @@ namespace Google\Service\CloudIAP;
 class AccessDeniedPageSettings extends \Google\Model
 {
   /**
-   * The URI to be redirected to when access is denied.
-   *
    * @var string
    */
   public $accessDeniedPageUri;
   /**
-   * Whether to generate a troubleshooting URL on access denied events to this
-   * application.
-   *
    * @var bool
    */
   public $generateTroubleshootingUri;
   /**
-   * Whether to generate remediation token on access denied events to this
-   * application.
-   *
    * @var bool
    */
   public $remediationTokenGenerationEnabled;
 
   /**
-   * The URI to be redirected to when access is denied.
-   *
-   * @param string $accessDeniedPageUri
+   * @param string
    */
   public function setAccessDeniedPageUri($accessDeniedPageUri)
   {
@@ -57,10 +47,7 @@ class AccessDeniedPageSettings extends \Google\Model
     return $this->accessDeniedPageUri;
   }
   /**
-   * Whether to generate a troubleshooting URL on access denied events to this
-   * application.
-   *
-   * @param bool $generateTroubleshootingUri
+   * @param bool
    */
   public function setGenerateTroubleshootingUri($generateTroubleshootingUri)
   {
@@ -74,10 +61,7 @@ class AccessDeniedPageSettings extends \Google\Model
     return $this->generateTroubleshootingUri;
   }
   /**
-   * Whether to generate remediation token on access denied events to this
-   * application.
-   *
-   * @param bool $remediationTokenGenerationEnabled
+   * @param bool
    */
   public function setRemediationTokenGenerationEnabled($remediationTokenGenerationEnabled)
   {

@@ -20,22 +20,16 @@ namespace Google\Service\Dataflow;
 class StateFamilyConfig extends \Google\Model
 {
   /**
-   * If true, this family corresponds to a read operation.
-   *
    * @var bool
    */
   public $isRead;
   /**
-   * The state family value.
-   *
    * @var string
    */
   public $stateFamily;
 
   /**
-   * If true, this family corresponds to a read operation.
-   *
-   * @param bool $isRead
+   * @param bool
    */
   public function setIsRead($isRead)
   {
@@ -49,9 +43,7 @@ class StateFamilyConfig extends \Google\Model
     return $this->isRead;
   }
   /**
-   * The state family value.
-   *
-   * @param string $stateFamily
+   * @param string
    */
   public function setStateFamily($stateFamily)
   {

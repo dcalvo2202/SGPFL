@@ -20,34 +20,24 @@ namespace Google\Service\CloudComposer;
 class ExecuteAirflowCommandResponse extends \Google\Model
 {
   /**
-   * Error message. Empty if there was no error.
-   *
    * @var string
    */
   public $error;
   /**
-   * The unique ID of the command execution for polling.
-   *
    * @var string
    */
   public $executionId;
   /**
-   * The name of the pod where the command is executed.
-   *
    * @var string
    */
   public $pod;
   /**
-   * The namespace of the pod where the command is executed.
-   *
    * @var string
    */
   public $podNamespace;
 
   /**
-   * Error message. Empty if there was no error.
-   *
-   * @param string $error
+   * @param string
    */
   public function setError($error)
   {
@@ -61,9 +51,7 @@ class ExecuteAirflowCommandResponse extends \Google\Model
     return $this->error;
   }
   /**
-   * The unique ID of the command execution for polling.
-   *
-   * @param string $executionId
+   * @param string
    */
   public function setExecutionId($executionId)
   {
@@ -77,9 +65,7 @@ class ExecuteAirflowCommandResponse extends \Google\Model
     return $this->executionId;
   }
   /**
-   * The name of the pod where the command is executed.
-   *
-   * @param string $pod
+   * @param string
    */
   public function setPod($pod)
   {
@@ -93,9 +79,7 @@ class ExecuteAirflowCommandResponse extends \Google\Model
     return $this->pod;
   }
   /**
-   * The namespace of the pod where the command is executed.
-   *
-   * @param string $podNamespace
+   * @param string
    */
   public function setPodNamespace($podNamespace)
   {

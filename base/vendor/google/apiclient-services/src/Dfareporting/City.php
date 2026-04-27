@@ -20,66 +20,44 @@ namespace Google\Service\Dfareporting;
 class City extends \Google\Model
 {
   /**
-   * Country code of the country to which this city belongs.
-   *
    * @var string
    */
   public $countryCode;
   /**
-   * DART ID of the country to which this city belongs.
-   *
    * @var string
    */
   public $countryDartId;
   /**
-   * DART ID of this city. This is the ID used for targeting and generating
-   * reports.
-   *
    * @var string
    */
   public $dartId;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#city".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Metro region code of the metro region (DMA) to which this city belongs.
-   *
    * @var string
    */
   public $metroCode;
   /**
-   * ID of the metro region (DMA) to which this city belongs.
-   *
    * @var string
    */
   public $metroDmaId;
   /**
-   * Name of this city.
-   *
    * @var string
    */
   public $name;
   /**
-   * Region code of the region to which this city belongs.
-   *
    * @var string
    */
   public $regionCode;
   /**
-   * DART ID of the region to which this city belongs.
-   *
    * @var string
    */
   public $regionDartId;
 
   /**
-   * Country code of the country to which this city belongs.
-   *
-   * @param string $countryCode
+   * @param string
    */
   public function setCountryCode($countryCode)
   {
@@ -93,9 +71,7 @@ class City extends \Google\Model
     return $this->countryCode;
   }
   /**
-   * DART ID of the country to which this city belongs.
-   *
-   * @param string $countryDartId
+   * @param string
    */
   public function setCountryDartId($countryDartId)
   {
@@ -109,10 +85,7 @@ class City extends \Google\Model
     return $this->countryDartId;
   }
   /**
-   * DART ID of this city. This is the ID used for targeting and generating
-   * reports.
-   *
-   * @param string $dartId
+   * @param string
    */
   public function setDartId($dartId)
   {
@@ -126,10 +99,7 @@ class City extends \Google\Model
     return $this->dartId;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#city".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -143,9 +113,7 @@ class City extends \Google\Model
     return $this->kind;
   }
   /**
-   * Metro region code of the metro region (DMA) to which this city belongs.
-   *
-   * @param string $metroCode
+   * @param string
    */
   public function setMetroCode($metroCode)
   {
@@ -159,9 +127,7 @@ class City extends \Google\Model
     return $this->metroCode;
   }
   /**
-   * ID of the metro region (DMA) to which this city belongs.
-   *
-   * @param string $metroDmaId
+   * @param string
    */
   public function setMetroDmaId($metroDmaId)
   {
@@ -175,9 +141,7 @@ class City extends \Google\Model
     return $this->metroDmaId;
   }
   /**
-   * Name of this city.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -191,9 +155,7 @@ class City extends \Google\Model
     return $this->name;
   }
   /**
-   * Region code of the region to which this city belongs.
-   *
-   * @param string $regionCode
+   * @param string
    */
   public function setRegionCode($regionCode)
   {
@@ -207,9 +169,7 @@ class City extends \Google\Model
     return $this->regionCode;
   }
   /**
-   * DART ID of the region to which this city belongs.
-   *
-   * @param string $regionDartId
+   * @param string
    */
   public function setRegionDartId($regionDartId)
   {

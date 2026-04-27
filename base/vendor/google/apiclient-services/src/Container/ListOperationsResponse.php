@@ -21,9 +21,6 @@ class ListOperationsResponse extends \Google\Collection
 {
   protected $collection_key = 'operations';
   /**
-   * If any zones are listed here, the list of operations returned may be
-   * missing the operations from those zones.
-   *
    * @var string[]
    */
   public $missingZones;
@@ -31,10 +28,7 @@ class ListOperationsResponse extends \Google\Collection
   protected $operationsDataType = 'array';
 
   /**
-   * If any zones are listed here, the list of operations returned may be
-   * missing the operations from those zones.
-   *
-   * @param string[] $missingZones
+   * @param string[]
    */
   public function setMissingZones($missingZones)
   {
@@ -48,9 +42,7 @@ class ListOperationsResponse extends \Google\Collection
     return $this->missingZones;
   }
   /**
-   * A list of operations in the project in the specified zone.
-   *
-   * @param Operation[] $operations
+   * @param Operation[]
    */
   public function setOperations($operations)
   {

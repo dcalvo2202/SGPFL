@@ -20,38 +20,26 @@ namespace Google\Service\CloudRun;
 class GoogleDevtoolsCloudbuildV1GitSourceDependency extends \Google\Model
 {
   /**
-   * Optional. How much history should be fetched for the build (default 1, -1
-   * for all history).
-   *
    * @var string
    */
   public $depth;
   /**
-   * Required. Where should the files be placed on the worker.
-   *
    * @var string
    */
   public $destPath;
   /**
-   * Optional. True if submodules should be fetched too (default false).
-   *
    * @var bool
    */
   public $recurseSubmodules;
   protected $repositoryType = GoogleDevtoolsCloudbuildV1GitSourceRepository::class;
   protected $repositoryDataType = '';
   /**
-   * Required. The revision that we will fetch the repo at.
-   *
    * @var string
    */
   public $revision;
 
   /**
-   * Optional. How much history should be fetched for the build (default 1, -1
-   * for all history).
-   *
-   * @param string $depth
+   * @param string
    */
   public function setDepth($depth)
   {
@@ -65,9 +53,7 @@ class GoogleDevtoolsCloudbuildV1GitSourceDependency extends \Google\Model
     return $this->depth;
   }
   /**
-   * Required. Where should the files be placed on the worker.
-   *
-   * @param string $destPath
+   * @param string
    */
   public function setDestPath($destPath)
   {
@@ -81,9 +67,7 @@ class GoogleDevtoolsCloudbuildV1GitSourceDependency extends \Google\Model
     return $this->destPath;
   }
   /**
-   * Optional. True if submodules should be fetched too (default false).
-   *
-   * @param bool $recurseSubmodules
+   * @param bool
    */
   public function setRecurseSubmodules($recurseSubmodules)
   {
@@ -97,9 +81,7 @@ class GoogleDevtoolsCloudbuildV1GitSourceDependency extends \Google\Model
     return $this->recurseSubmodules;
   }
   /**
-   * Required. The kind of repo (url or dev connect).
-   *
-   * @param GoogleDevtoolsCloudbuildV1GitSourceRepository $repository
+   * @param GoogleDevtoolsCloudbuildV1GitSourceRepository
    */
   public function setRepository(GoogleDevtoolsCloudbuildV1GitSourceRepository $repository)
   {
@@ -113,9 +95,7 @@ class GoogleDevtoolsCloudbuildV1GitSourceDependency extends \Google\Model
     return $this->repository;
   }
   /**
-   * Required. The revision that we will fetch the repo at.
-   *
-   * @param string $revision
+   * @param string
    */
   public function setRevision($revision)
   {

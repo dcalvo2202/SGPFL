@@ -20,33 +20,20 @@ namespace Google\Service\AndroidPublisher;
 class InternalAppSharingArtifact extends \Google\Model
 {
   /**
-   * The sha256 fingerprint of the certificate used to sign the generated
-   * artifact.
-   *
    * @var string
    */
   public $certificateFingerprint;
   /**
-   * The download URL generated for the uploaded artifact. Users that are
-   * authorized to download can follow the link to the Play Store app to install
-   * it.
-   *
    * @var string
    */
   public $downloadUrl;
   /**
-   * The sha256 hash of the artifact represented as a lowercase hexadecimal
-   * number, matching the output of the sha256sum command.
-   *
    * @var string
    */
   public $sha256;
 
   /**
-   * The sha256 fingerprint of the certificate used to sign the generated
-   * artifact.
-   *
-   * @param string $certificateFingerprint
+   * @param string
    */
   public function setCertificateFingerprint($certificateFingerprint)
   {
@@ -60,11 +47,7 @@ class InternalAppSharingArtifact extends \Google\Model
     return $this->certificateFingerprint;
   }
   /**
-   * The download URL generated for the uploaded artifact. Users that are
-   * authorized to download can follow the link to the Play Store app to install
-   * it.
-   *
-   * @param string $downloadUrl
+   * @param string
    */
   public function setDownloadUrl($downloadUrl)
   {
@@ -78,10 +61,7 @@ class InternalAppSharingArtifact extends \Google\Model
     return $this->downloadUrl;
   }
   /**
-   * The sha256 hash of the artifact represented as a lowercase hexadecimal
-   * number, matching the output of the sha256sum command.
-   *
-   * @param string $sha256
+   * @param string
    */
   public function setSha256($sha256)
   {

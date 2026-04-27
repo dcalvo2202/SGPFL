@@ -19,31 +19,16 @@ namespace Google\Service\Contactcenterinsights;
 
 class GoogleCloudContactcenterinsightsV1SmartReplyData extends \Google\Model
 {
-  /**
-   * The system's confidence score that this reply is a good match for this
-   * conversation, ranging from 0.0 (completely uncertain) to 1.0 (completely
-   * certain).
-   *
-   * @var 
-   */
   public $confidenceScore;
   /**
-   * Map that contains metadata about the Smart Reply and the document from
-   * which it originates.
-   *
    * @var string[]
    */
   public $metadata;
   /**
-   * The name of the answer record. Format:
-   * projects/{project}/locations/{location}/answerRecords/{answer_record}
-   *
    * @var string
    */
   public $queryRecord;
   /**
-   * The content of the reply.
-   *
    * @var string
    */
   public $reply;
@@ -57,10 +42,7 @@ class GoogleCloudContactcenterinsightsV1SmartReplyData extends \Google\Model
     return $this->confidenceScore;
   }
   /**
-   * Map that contains metadata about the Smart Reply and the document from
-   * which it originates.
-   *
-   * @param string[] $metadata
+   * @param string[]
    */
   public function setMetadata($metadata)
   {
@@ -74,10 +56,7 @@ class GoogleCloudContactcenterinsightsV1SmartReplyData extends \Google\Model
     return $this->metadata;
   }
   /**
-   * The name of the answer record. Format:
-   * projects/{project}/locations/{location}/answerRecords/{answer_record}
-   *
-   * @param string $queryRecord
+   * @param string
    */
   public function setQueryRecord($queryRecord)
   {
@@ -91,9 +70,7 @@ class GoogleCloudContactcenterinsightsV1SmartReplyData extends \Google\Model
     return $this->queryRecord;
   }
   /**
-   * The content of the reply.
-   *
-   * @param string $reply
+   * @param string
    */
   public function setReply($reply)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\Walletobjects;
 class SignUpInfo extends \Google\Model
 {
   /**
-   * ID of the class the user can sign up for.
-   *
    * @var string
    */
   public $classId;
 
   /**
-   * ID of the class the user can sign up for.
-   *
-   * @param string $classId
+   * @param string
    */
   public function setClassId($classId)
   {

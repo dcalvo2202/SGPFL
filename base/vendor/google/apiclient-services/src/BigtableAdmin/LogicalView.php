@@ -20,37 +20,24 @@ namespace Google\Service\BigtableAdmin;
 class LogicalView extends \Google\Model
 {
   /**
-   * Optional. Set to true to make the LogicalView protected against deletion.
-   *
    * @var bool
    */
   public $deletionProtection;
   /**
-   * Optional. The etag for this logical view. This may be sent on update
-   * requests to ensure that the client has an up-to-date value before
-   * proceeding. The server returns an ABORTED error on a mismatched etag.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Identifier. The unique name of the logical view. Format:
-   * `projects/{project}/instances/{instance}/logicalViews/{logical_view}`
-   *
    * @var string
    */
   public $name;
   /**
-   * Required. The logical view's select query.
-   *
    * @var string
    */
   public $query;
 
   /**
-   * Optional. Set to true to make the LogicalView protected against deletion.
-   *
-   * @param bool $deletionProtection
+   * @param bool
    */
   public function setDeletionProtection($deletionProtection)
   {
@@ -64,11 +51,7 @@ class LogicalView extends \Google\Model
     return $this->deletionProtection;
   }
   /**
-   * Optional. The etag for this logical view. This may be sent on update
-   * requests to ensure that the client has an up-to-date value before
-   * proceeding. The server returns an ABORTED error on a mismatched etag.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -82,10 +65,7 @@ class LogicalView extends \Google\Model
     return $this->etag;
   }
   /**
-   * Identifier. The unique name of the logical view. Format:
-   * `projects/{project}/instances/{instance}/logicalViews/{logical_view}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -99,9 +79,7 @@ class LogicalView extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. The logical view's select query.
-   *
-   * @param string $query
+   * @param string
    */
   public function setQuery($query)
   {

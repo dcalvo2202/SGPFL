@@ -20,43 +20,26 @@ namespace Google\Service\OracleDatabase;
 class CloudExadataInfrastructure extends \Google\Model
 {
   /**
-   * Output only. The date and time that the Exadata Infrastructure was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. User friendly name for this resource.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. Entitlement ID of the private offer against which this
-   * infrastructure resource is provisioned.
-   *
    * @var string
    */
   public $entitlementId;
   /**
-   * Optional. The GCP Oracle zone where Oracle Exadata Infrastructure is
-   * hosted. Example: us-east4-b-r2. If not specified, the system will pick a
-   * zone based on availability.
-   *
    * @var string
    */
   public $gcpOracleZone;
   /**
-   * Optional. Labels or tags associated with the resource.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Identifier. The name of the Exadata Infrastructure resource with the
-   * format: projects/{project}/locations/{region}/cloudExadataInfrastructures/{
-   * cloud_exadata_infrastructure}
-   *
    * @var string
    */
   public $name;
@@ -64,9 +47,7 @@ class CloudExadataInfrastructure extends \Google\Model
   protected $propertiesDataType = '';
 
   /**
-   * Output only. The date and time that the Exadata Infrastructure was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -80,9 +61,7 @@ class CloudExadataInfrastructure extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Optional. User friendly name for this resource.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -96,10 +75,7 @@ class CloudExadataInfrastructure extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Output only. Entitlement ID of the private offer against which this
-   * infrastructure resource is provisioned.
-   *
-   * @param string $entitlementId
+   * @param string
    */
   public function setEntitlementId($entitlementId)
   {
@@ -113,11 +89,7 @@ class CloudExadataInfrastructure extends \Google\Model
     return $this->entitlementId;
   }
   /**
-   * Optional. The GCP Oracle zone where Oracle Exadata Infrastructure is
-   * hosted. Example: us-east4-b-r2. If not specified, the system will pick a
-   * zone based on availability.
-   *
-   * @param string $gcpOracleZone
+   * @param string
    */
   public function setGcpOracleZone($gcpOracleZone)
   {
@@ -131,9 +103,7 @@ class CloudExadataInfrastructure extends \Google\Model
     return $this->gcpOracleZone;
   }
   /**
-   * Optional. Labels or tags associated with the resource.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -147,11 +117,7 @@ class CloudExadataInfrastructure extends \Google\Model
     return $this->labels;
   }
   /**
-   * Identifier. The name of the Exadata Infrastructure resource with the
-   * format: projects/{project}/locations/{region}/cloudExadataInfrastructures/{
-   * cloud_exadata_infrastructure}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -165,9 +131,7 @@ class CloudExadataInfrastructure extends \Google\Model
     return $this->name;
   }
   /**
-   * Optional. Various properties of the infra.
-   *
-   * @param CloudExadataInfrastructureProperties $properties
+   * @param CloudExadataInfrastructureProperties
    */
   public function setProperties(CloudExadataInfrastructureProperties $properties)
   {

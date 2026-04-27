@@ -23,17 +23,12 @@ class ListDnsPeeringsResponse extends \Google\Collection
   protected $dnsPeeringsType = DnsPeering::class;
   protected $dnsPeeringsDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * List of dns peering.
-   *
-   * @param DnsPeering[] $dnsPeerings
+   * @param DnsPeering[]
    */
   public function setDnsPeerings($dnsPeerings)
   {
@@ -47,10 +42,7 @@ class ListDnsPeeringsResponse extends \Google\Collection
     return $this->dnsPeerings;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

@@ -20,28 +20,20 @@ namespace Google\Service\AlertCenter;
 class PrimaryAdminChangedEvent extends \Google\Model
 {
   /**
-   * domain in which actioned occurred
-   *
    * @var string
    */
   public $domain;
   /**
-   * Email of person who was the primary admin before the action
-   *
    * @var string
    */
   public $previousAdminEmail;
   /**
-   * Email of person who is the primary admin after the action
-   *
    * @var string
    */
   public $updatedAdminEmail;
 
   /**
-   * domain in which actioned occurred
-   *
-   * @param string $domain
+   * @param string
    */
   public function setDomain($domain)
   {
@@ -55,9 +47,7 @@ class PrimaryAdminChangedEvent extends \Google\Model
     return $this->domain;
   }
   /**
-   * Email of person who was the primary admin before the action
-   *
-   * @param string $previousAdminEmail
+   * @param string
    */
   public function setPreviousAdminEmail($previousAdminEmail)
   {
@@ -71,9 +61,7 @@ class PrimaryAdminChangedEvent extends \Google\Model
     return $this->previousAdminEmail;
   }
   /**
-   * Email of person who is the primary admin after the action
-   *
-   * @param string $updatedAdminEmail
+   * @param string
    */
   public function setUpdatedAdminEmail($updatedAdminEmail)
   {

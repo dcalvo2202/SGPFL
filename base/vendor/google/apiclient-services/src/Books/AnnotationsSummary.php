@@ -28,7 +28,7 @@ class AnnotationsSummary extends \Google\Collection
   protected $layersDataType = 'array';
 
   /**
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -42,7 +42,7 @@ class AnnotationsSummary extends \Google\Collection
     return $this->kind;
   }
   /**
-   * @param AnnotationsSummaryLayers[] $layers
+   * @param AnnotationsSummaryLayers[]
    */
   public function setLayers($layers)
   {

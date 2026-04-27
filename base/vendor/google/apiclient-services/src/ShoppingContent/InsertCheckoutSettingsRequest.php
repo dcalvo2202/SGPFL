@@ -23,10 +23,7 @@ class InsertCheckoutSettingsRequest extends \Google\Model
   protected $uriSettingsDataType = '';
 
   /**
-   * Required. The `UrlSettings` for the request. The presence of URL settings
-   * indicates `Checkout` enrollment.
-   *
-   * @param UrlSettings $uriSettings
+   * @param UrlSettings
    */
   public function setUriSettings(UrlSettings $uriSettings)
   {

@@ -25,12 +25,7 @@ class AppStartTime extends \Google\Model
   protected $initialDisplayTimeDataType = '';
 
   /**
-   * Optional. The time from app start to reaching the developer-reported "fully
-   * drawn" time. This is only stored if the app includes a call to
-   * Activity.reportFullyDrawn(). See
-   * https://developer.android.com/topic/performance/launch-time.html#time-full
-   *
-   * @param Duration $fullyDrawnTime
+   * @param Duration
    */
   public function setFullyDrawnTime(Duration $fullyDrawnTime)
   {
@@ -44,12 +39,7 @@ class AppStartTime extends \Google\Model
     return $this->fullyDrawnTime;
   }
   /**
-   * The time from app start to the first displayed activity being drawn, as
-   * reported in Logcat. See
-   * https://developer.android.com/topic/performance/launch-time.html#time-
-   * initial
-   *
-   * @param Duration $initialDisplayTime
+   * @param Duration
    */
   public function setInitialDisplayTime(Duration $initialDisplayTime)
   {

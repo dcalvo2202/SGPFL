@@ -20,22 +20,16 @@ namespace Google\Service\CloudRetail;
 class GoogleCloudRetailV2ProductAttributeValue extends \Google\Model
 {
   /**
-   * The attribute name.
-   *
    * @var string
    */
   public $name;
   /**
-   * The attribute value.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * The attribute name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -49,9 +43,7 @@ class GoogleCloudRetailV2ProductAttributeValue extends \Google\Model
     return $this->name;
   }
   /**
-   * The attribute value.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

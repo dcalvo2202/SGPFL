@@ -20,9 +20,6 @@ namespace Google\Service\Testing;
 class IosRoboTest extends \Google\Model
 {
   /**
-   * The bundle ID for the app-under-test. This is determined by examining the
-   * application's "Info.plist" file.
-   *
    * @var string
    */
   public $appBundleId;
@@ -32,10 +29,7 @@ class IosRoboTest extends \Google\Model
   protected $roboScriptDataType = '';
 
   /**
-   * The bundle ID for the app-under-test. This is determined by examining the
-   * application's "Info.plist" file.
-   *
-   * @param string $appBundleId
+   * @param string
    */
   public function setAppBundleId($appBundleId)
   {
@@ -49,9 +43,7 @@ class IosRoboTest extends \Google\Model
     return $this->appBundleId;
   }
   /**
-   * Required. The ipa stored at this file should be used to run the test.
-   *
-   * @param FileReference $appIpa
+   * @param FileReference
    */
   public function setAppIpa(FileReference $appIpa)
   {
@@ -65,12 +57,7 @@ class IosRoboTest extends \Google\Model
     return $this->appIpa;
   }
   /**
-   * An optional Roboscript to customize the crawl. See
-   * https://firebase.google.com/docs/test-lab/android/robo-scripts-reference
-   * for more information about Roboscripts. The maximum allowed file size of
-   * the roboscript is 10MiB.
-   *
-   * @param FileReference $roboScript
+   * @param FileReference
    */
   public function setRoboScript(FileReference $roboScript)
   {

@@ -24,20 +24,16 @@ class VideoCategorySnippet extends \Google\Model
    */
   public $assignable;
   /**
-   * The YouTube channel that created the video category.
-   *
    * @var string
    */
   public $channelId;
   /**
-   * The video category's title.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * @param bool $assignable
+   * @param bool
    */
   public function setAssignable($assignable)
   {
@@ -51,9 +47,7 @@ class VideoCategorySnippet extends \Google\Model
     return $this->assignable;
   }
   /**
-   * The YouTube channel that created the video category.
-   *
-   * @param string $channelId
+   * @param string
    */
   public function setChannelId($channelId)
   {
@@ -67,9 +61,7 @@ class VideoCategorySnippet extends \Google\Model
     return $this->channelId;
   }
   /**
-   * The video category's title.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

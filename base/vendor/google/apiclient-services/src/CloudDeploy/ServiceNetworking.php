@@ -20,40 +20,24 @@ namespace Google\Service\CloudDeploy;
 class ServiceNetworking extends \Google\Model
 {
   /**
-   * Required. Name of the Kubernetes Deployment whose traffic is managed by the
-   * specified Service.
-   *
    * @var string
    */
   public $deployment;
   /**
-   * Optional. Whether to disable Pod overprovisioning. If Pod overprovisioning
-   * is disabled then Cloud Deploy will limit the number of total Pods used for
-   * the deployment strategy to the number of Pods the Deployment has on the
-   * cluster.
-   *
    * @var bool
    */
   public $disablePodOverprovisioning;
   /**
-   * Optional. The label to use when selecting Pods for the Deployment resource.
-   * This label must already be present in the Deployment.
-   *
    * @var string
    */
   public $podSelectorLabel;
   /**
-   * Required. Name of the Kubernetes Service.
-   *
    * @var string
    */
   public $service;
 
   /**
-   * Required. Name of the Kubernetes Deployment whose traffic is managed by the
-   * specified Service.
-   *
-   * @param string $deployment
+   * @param string
    */
   public function setDeployment($deployment)
   {
@@ -67,12 +51,7 @@ class ServiceNetworking extends \Google\Model
     return $this->deployment;
   }
   /**
-   * Optional. Whether to disable Pod overprovisioning. If Pod overprovisioning
-   * is disabled then Cloud Deploy will limit the number of total Pods used for
-   * the deployment strategy to the number of Pods the Deployment has on the
-   * cluster.
-   *
-   * @param bool $disablePodOverprovisioning
+   * @param bool
    */
   public function setDisablePodOverprovisioning($disablePodOverprovisioning)
   {
@@ -86,10 +65,7 @@ class ServiceNetworking extends \Google\Model
     return $this->disablePodOverprovisioning;
   }
   /**
-   * Optional. The label to use when selecting Pods for the Deployment resource.
-   * This label must already be present in the Deployment.
-   *
-   * @param string $podSelectorLabel
+   * @param string
    */
   public function setPodSelectorLabel($podSelectorLabel)
   {
@@ -103,9 +79,7 @@ class ServiceNetworking extends \Google\Model
     return $this->podSelectorLabel;
   }
   /**
-   * Required. Name of the Kubernetes Service.
-   *
-   * @param string $service
+   * @param string
    */
   public function setService($service)
   {

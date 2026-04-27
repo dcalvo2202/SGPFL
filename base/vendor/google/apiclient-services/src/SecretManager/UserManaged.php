@@ -24,9 +24,7 @@ class UserManaged extends \Google\Collection
   protected $replicasDataType = 'array';
 
   /**
-   * Required. The list of Replicas for this Secret. Cannot be empty.
-   *
-   * @param Replica[] $replicas
+   * @param Replica[]
    */
   public function setReplicas($replicas)
   {

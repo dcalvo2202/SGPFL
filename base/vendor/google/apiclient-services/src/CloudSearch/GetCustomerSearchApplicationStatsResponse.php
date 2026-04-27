@@ -21,8 +21,6 @@ class GetCustomerSearchApplicationStatsResponse extends \Google\Collection
 {
   protected $collection_key = 'stats';
   /**
-   * Average search application count for the given date range.
-   *
    * @var string
    */
   public $averageSearchApplicationCount;
@@ -30,9 +28,7 @@ class GetCustomerSearchApplicationStatsResponse extends \Google\Collection
   protected $statsDataType = 'array';
 
   /**
-   * Average search application count for the given date range.
-   *
-   * @param string $averageSearchApplicationCount
+   * @param string
    */
   public function setAverageSearchApplicationCount($averageSearchApplicationCount)
   {
@@ -46,9 +42,7 @@ class GetCustomerSearchApplicationStatsResponse extends \Google\Collection
     return $this->averageSearchApplicationCount;
   }
   /**
-   * Search application stats by date.
-   *
-   * @param CustomerSearchApplicationStats[] $stats
+   * @param CustomerSearchApplicationStats[]
    */
   public function setStats($stats)
   {

@@ -23,17 +23,12 @@ class ListExamplesResponse extends \Google\Collection
   protected $examplesType = Example::class;
   protected $examplesDataType = 'array';
   /**
-   * A token to retrieve next page of results. Pass this token to the page_token
-   * field in the ListExamplesRequest to obtain the corresponding page.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The sentence pairs.
-   *
-   * @param Example[] $examples
+   * @param Example[]
    */
   public function setExamples($examples)
   {
@@ -47,10 +42,7 @@ class ListExamplesResponse extends \Google\Collection
     return $this->examples;
   }
   /**
-   * A token to retrieve next page of results. Pass this token to the page_token
-   * field in the ListExamplesRequest to obtain the corresponding page.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\Dataflow;
 class WorkerThreadScalingReportResponse extends \Google\Model
 {
   /**
-   * Recommended number of threads for a worker.
-   *
    * @var int
    */
   public $recommendedThreadCount;
 
   /**
-   * Recommended number of threads for a worker.
-   *
-   * @param int $recommendedThreadCount
+   * @param int
    */
   public function setRecommendedThreadCount($recommendedThreadCount)
   {

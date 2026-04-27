@@ -20,22 +20,16 @@ namespace Google\Service\Looker;
 class ExportMetadataEncryptionKey extends \Google\Model
 {
   /**
-   * Name of the CMEK.
-   *
    * @var string
    */
   public $cmek;
   /**
-   * Version of the CMEK.
-   *
    * @var string
    */
   public $version;
 
   /**
-   * Name of the CMEK.
-   *
-   * @param string $cmek
+   * @param string
    */
   public function setCmek($cmek)
   {
@@ -49,9 +43,7 @@ class ExportMetadataEncryptionKey extends \Google\Model
     return $this->cmek;
   }
   /**
-   * Version of the CMEK.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

@@ -21,23 +21,14 @@ class EnterpriseCrmEventbusProtoScatterResponse extends \Google\Collection
 {
   protected $collection_key = 'responseParams';
   /**
-   * The error message of the failure if applicable.
-   *
    * @var string
    */
   public $errorMsg;
   /**
-   * The execution ids of each Subworkflow fired by this scatter.
-   *
    * @var string[]
    */
   public $executionIds;
   /**
-   * If execution is sync, this is true if the execution passed and false if it
-   * failed. If the execution is async, this is true if the WF was fired off
-   * successfully, and false if it failed to execute. The success or failure of
-   * the subworkflows executed are not captured.
-   *
    * @var bool
    */
   public $isSuccessful;
@@ -47,9 +38,7 @@ class EnterpriseCrmEventbusProtoScatterResponse extends \Google\Collection
   protected $scatterElementDataType = '';
 
   /**
-   * The error message of the failure if applicable.
-   *
-   * @param string $errorMsg
+   * @param string
    */
   public function setErrorMsg($errorMsg)
   {
@@ -63,9 +52,7 @@ class EnterpriseCrmEventbusProtoScatterResponse extends \Google\Collection
     return $this->errorMsg;
   }
   /**
-   * The execution ids of each Subworkflow fired by this scatter.
-   *
-   * @param string[] $executionIds
+   * @param string[]
    */
   public function setExecutionIds($executionIds)
   {
@@ -79,12 +66,7 @@ class EnterpriseCrmEventbusProtoScatterResponse extends \Google\Collection
     return $this->executionIds;
   }
   /**
-   * If execution is sync, this is true if the execution passed and false if it
-   * failed. If the execution is async, this is true if the WF was fired off
-   * successfully, and false if it failed to execute. The success or failure of
-   * the subworkflows executed are not captured.
-   *
-   * @param bool $isSuccessful
+   * @param bool
    */
   public function setIsSuccessful($isSuccessful)
   {
@@ -98,10 +80,7 @@ class EnterpriseCrmEventbusProtoScatterResponse extends \Google\Collection
     return $this->isSuccessful;
   }
   /**
-   * A list of all the response parameters in the aggregtorMap stored with the
-   * remapped key.
-   *
-   * @param EnterpriseCrmEventbusProtoParameterEntry[] $responseParams
+   * @param EnterpriseCrmEventbusProtoParameterEntry[]
    */
   public function setResponseParams($responseParams)
   {
@@ -115,9 +94,7 @@ class EnterpriseCrmEventbusProtoScatterResponse extends \Google\Collection
     return $this->responseParams;
   }
   /**
-   * The element that was scattered for this execution.
-   *
-   * @param EnterpriseCrmEventbusProtoParameterValueType $scatterElement
+   * @param EnterpriseCrmEventbusProtoParameterValueType
    */
   public function setScatterElement(EnterpriseCrmEventbusProtoParameterValueType $scatterElement)
   {

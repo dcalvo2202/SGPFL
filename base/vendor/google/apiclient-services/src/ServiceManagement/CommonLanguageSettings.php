@@ -21,16 +21,10 @@ class CommonLanguageSettings extends \Google\Collection
 {
   protected $collection_key = 'destinations';
   /**
-   * The destination where API teams want this client library to be published.
-   *
    * @var string[]
    */
   public $destinations;
   /**
-   * Link to automatically generated reference documentation. Example:
-   * https://cloud.google.com/nodejs/docs/reference/asset/latest
-   *
-   * @deprecated
    * @var string
    */
   public $referenceDocsUri;
@@ -38,9 +32,7 @@ class CommonLanguageSettings extends \Google\Collection
   protected $selectiveGapicGenerationDataType = '';
 
   /**
-   * The destination where API teams want this client library to be published.
-   *
-   * @param string[] $destinations
+   * @param string[]
    */
   public function setDestinations($destinations)
   {
@@ -54,18 +46,13 @@ class CommonLanguageSettings extends \Google\Collection
     return $this->destinations;
   }
   /**
-   * Link to automatically generated reference documentation. Example:
-   * https://cloud.google.com/nodejs/docs/reference/asset/latest
-   *
-   * @deprecated
-   * @param string $referenceDocsUri
+   * @param string
    */
   public function setReferenceDocsUri($referenceDocsUri)
   {
     $this->referenceDocsUri = $referenceDocsUri;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getReferenceDocsUri()
@@ -73,10 +60,7 @@ class CommonLanguageSettings extends \Google\Collection
     return $this->referenceDocsUri;
   }
   /**
-   * Configuration for which RPCs should be generated in the GAPIC client. Note:
-   * This field should not be used in most cases.
-   *
-   * @param SelectiveGapicGeneration $selectiveGapicGeneration
+   * @param SelectiveGapicGeneration
    */
   public function setSelectiveGapicGeneration(SelectiveGapicGeneration $selectiveGapicGeneration)
   {

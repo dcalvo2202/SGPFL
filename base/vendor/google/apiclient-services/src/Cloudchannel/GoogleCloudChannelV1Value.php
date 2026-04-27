@@ -20,40 +20,25 @@ namespace Google\Service\Cloudchannel;
 class GoogleCloudChannelV1Value extends \Google\Model
 {
   /**
-   * Represents a boolean value.
-   *
    * @var bool
    */
   public $boolValue;
-  /**
-   * Represents a double value.
-   *
-   * @var 
-   */
   public $doubleValue;
   /**
-   * Represents an int64 value.
-   *
    * @var string
    */
   public $int64Value;
   /**
-   * Represents an 'Any' proto value.
-   *
    * @var array[]
    */
   public $protoValue;
   /**
-   * Represents a string value.
-   *
    * @var string
    */
   public $stringValue;
 
   /**
-   * Represents a boolean value.
-   *
-   * @param bool $boolValue
+   * @param bool
    */
   public function setBoolValue($boolValue)
   {
@@ -75,9 +60,7 @@ class GoogleCloudChannelV1Value extends \Google\Model
     return $this->doubleValue;
   }
   /**
-   * Represents an int64 value.
-   *
-   * @param string $int64Value
+   * @param string
    */
   public function setInt64Value($int64Value)
   {
@@ -91,9 +74,7 @@ class GoogleCloudChannelV1Value extends \Google\Model
     return $this->int64Value;
   }
   /**
-   * Represents an 'Any' proto value.
-   *
-   * @param array[] $protoValue
+   * @param array[]
    */
   public function setProtoValue($protoValue)
   {
@@ -107,9 +88,7 @@ class GoogleCloudChannelV1Value extends \Google\Model
     return $this->protoValue;
   }
   /**
-   * Represents a string value.
-   *
-   * @param string $stringValue
+   * @param string
    */
   public function setStringValue($stringValue)
   {

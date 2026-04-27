@@ -22,29 +22,20 @@ class CustomerUserStats extends \Google\Model
   protected $dateType = Date::class;
   protected $dateDataType = '';
   /**
-   * The count of unique active users in the past one day
-   *
    * @var string
    */
   public $oneDayActiveUsersCount;
   /**
-   * The count of unique active users in the past seven days
-   *
    * @var string
    */
   public $sevenDaysActiveUsersCount;
   /**
-   * The count of unique active users in the past thirty days
-   *
    * @var string
    */
   public $thirtyDaysActiveUsersCount;
 
   /**
-   * The date for which session stats were calculated. Stats calculated on the
-   * next day close to midnight are returned.
-   *
-   * @param Date $date
+   * @param Date
    */
   public function setDate(Date $date)
   {
@@ -58,9 +49,7 @@ class CustomerUserStats extends \Google\Model
     return $this->date;
   }
   /**
-   * The count of unique active users in the past one day
-   *
-   * @param string $oneDayActiveUsersCount
+   * @param string
    */
   public function setOneDayActiveUsersCount($oneDayActiveUsersCount)
   {
@@ -74,9 +63,7 @@ class CustomerUserStats extends \Google\Model
     return $this->oneDayActiveUsersCount;
   }
   /**
-   * The count of unique active users in the past seven days
-   *
-   * @param string $sevenDaysActiveUsersCount
+   * @param string
    */
   public function setSevenDaysActiveUsersCount($sevenDaysActiveUsersCount)
   {
@@ -90,9 +77,7 @@ class CustomerUserStats extends \Google\Model
     return $this->sevenDaysActiveUsersCount;
   }
   /**
-   * The count of unique active users in the past thirty days
-   *
-   * @param string $thirtyDaysActiveUsersCount
+   * @param string
    */
   public function setThirtyDaysActiveUsersCount($thirtyDaysActiveUsersCount)
   {

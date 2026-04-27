@@ -20,23 +20,16 @@ namespace Google\Service\Analytics;
 class RemarketingAudienceStateBasedAudienceDefinitionExcludeConditions extends \Google\Model
 {
   /**
-   * Whether to make the exclusion TEMPORARY or PERMANENT.
-   *
    * @var string
    */
   public $exclusionDuration;
   /**
-   * The segment condition that will cause a user to be removed from an
-   * audience.
-   *
    * @var string
    */
   public $segment;
 
   /**
-   * Whether to make the exclusion TEMPORARY or PERMANENT.
-   *
-   * @param string $exclusionDuration
+   * @param string
    */
   public function setExclusionDuration($exclusionDuration)
   {
@@ -50,10 +43,7 @@ class RemarketingAudienceStateBasedAudienceDefinitionExcludeConditions extends \
     return $this->exclusionDuration;
   }
   /**
-   * The segment condition that will cause a user to be removed from an
-   * audience.
-   *
-   * @param string $segment
+   * @param string
    */
   public function setSegment($segment)
   {

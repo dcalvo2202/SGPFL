@@ -20,23 +20,11 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfo extends \Google\Collection
 {
   protected $collection_key = 'topNValues';
-  /**
-   * Output only. Ratio of rows with distinct values against total scanned rows.
-   * Not available for complex non-groupable field type, including RECORD,
-   * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
-   *
-   * @var 
-   */
   public $distinctRatio;
   protected $doubleProfileType = GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoDoubleFieldInfo::class;
   protected $doubleProfileDataType = '';
   protected $integerProfileType = GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoIntegerFieldInfo::class;
   protected $integerProfileDataType = '';
-  /**
-   * Output only. Ratio of rows with null value against total scanned rows.
-   *
-   * @var 
-   */
   public $nullRatio;
   protected $stringProfileType = GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoStringFieldInfo::class;
   protected $stringProfileDataType = '';
@@ -52,9 +40,7 @@ class GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfo extends \Goo
     return $this->distinctRatio;
   }
   /**
-   * Double type field information.
-   *
-   * @param GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoDoubleFieldInfo $doubleProfile
+   * @param GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoDoubleFieldInfo
    */
   public function setDoubleProfile(GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoDoubleFieldInfo $doubleProfile)
   {
@@ -68,9 +54,7 @@ class GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfo extends \Goo
     return $this->doubleProfile;
   }
   /**
-   * Integer type field information.
-   *
-   * @param GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoIntegerFieldInfo $integerProfile
+   * @param GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoIntegerFieldInfo
    */
   public function setIntegerProfile(GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoIntegerFieldInfo $integerProfile)
   {
@@ -92,9 +76,7 @@ class GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfo extends \Goo
     return $this->nullRatio;
   }
   /**
-   * String type field information.
-   *
-   * @param GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoStringFieldInfo $stringProfile
+   * @param GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoStringFieldInfo
    */
   public function setStringProfile(GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoStringFieldInfo $stringProfile)
   {
@@ -108,13 +90,7 @@ class GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfo extends \Goo
     return $this->stringProfile;
   }
   /**
-   * Output only. The list of top N non-null values, frequency and ratio with
-   * which they occur in the scanned data. N is 10 or equal to the number of
-   * distinct values in the field, whichever is smaller. Not available for
-   * complex non-groupable field type, including RECORD, ARRAY, GEOGRAPHY, and
-   * JSON, as well as fields with REPEATABLE mode.
-   *
-   * @param GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoTopNValue[] $topNValues
+   * @param GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoTopNValue[]
    */
   public function setTopNValues($topNValues)
   {

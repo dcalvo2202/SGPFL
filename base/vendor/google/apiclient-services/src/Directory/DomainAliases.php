@@ -23,22 +23,16 @@ class DomainAliases extends \Google\Collection
   protected $domainAliasesType = DomainAlias::class;
   protected $domainAliasesDataType = 'array';
   /**
-   * ETag of the resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Kind of resource this is.
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * A list of domain alias objects.
-   *
-   * @param DomainAlias[] $domainAliases
+   * @param DomainAlias[]
    */
   public function setDomainAliases($domainAliases)
   {
@@ -52,9 +46,7 @@ class DomainAliases extends \Google\Collection
     return $this->domainAliases;
   }
   /**
-   * ETag of the resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -68,9 +60,7 @@ class DomainAliases extends \Google\Collection
     return $this->etag;
   }
   /**
-   * Kind of resource this is.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

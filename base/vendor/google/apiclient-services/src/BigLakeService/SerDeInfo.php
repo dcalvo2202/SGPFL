@@ -20,16 +20,12 @@ namespace Google\Service\BigLakeService;
 class SerDeInfo extends \Google\Model
 {
   /**
-   * The fully qualified Java class name of the serialization library.
-   *
    * @var string
    */
   public $serializationLib;
 
   /**
-   * The fully qualified Java class name of the serialization library.
-   *
-   * @param string $serializationLib
+   * @param string
    */
   public function setSerializationLib($serializationLib)
   {

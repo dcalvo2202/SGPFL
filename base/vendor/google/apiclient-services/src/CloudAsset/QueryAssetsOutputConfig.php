@@ -23,9 +23,7 @@ class QueryAssetsOutputConfig extends \Google\Model
   protected $bigqueryDestinationDataType = '';
 
   /**
-   * BigQuery destination where the query results will be saved.
-   *
-   * @param GoogleCloudAssetV1QueryAssetsOutputConfigBigQueryDestination $bigqueryDestination
+   * @param GoogleCloudAssetV1QueryAssetsOutputConfigBigQueryDestination
    */
   public function setBigqueryDestination(GoogleCloudAssetV1QueryAssetsOutputConfigBigQueryDestination $bigqueryDestination)
   {

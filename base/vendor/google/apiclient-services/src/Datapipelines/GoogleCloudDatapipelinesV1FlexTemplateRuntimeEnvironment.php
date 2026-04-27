@@ -19,158 +19,74 @@ namespace Google\Service\Datapipelines;
 
 class GoogleCloudDatapipelinesV1FlexTemplateRuntimeEnvironment extends \Google\Collection
 {
-  /**
-   * Run in the default mode.
-   */
-  public const FLEXRS_GOAL_FLEXRS_UNSPECIFIED = 'FLEXRS_UNSPECIFIED';
-  /**
-   * Optimize for lower execution time.
-   */
-  public const FLEXRS_GOAL_FLEXRS_SPEED_OPTIMIZED = 'FLEXRS_SPEED_OPTIMIZED';
-  /**
-   * Optimize for lower cost.
-   */
-  public const FLEXRS_GOAL_FLEXRS_COST_OPTIMIZED = 'FLEXRS_COST_OPTIMIZED';
-  /**
-   * The configuration is unknown, or unspecified.
-   */
-  public const IP_CONFIGURATION_WORKER_IP_UNSPECIFIED = 'WORKER_IP_UNSPECIFIED';
-  /**
-   * Workers should have public IP addresses.
-   */
-  public const IP_CONFIGURATION_WORKER_IP_PUBLIC = 'WORKER_IP_PUBLIC';
-  /**
-   * Workers should have private IP addresses.
-   */
-  public const IP_CONFIGURATION_WORKER_IP_PRIVATE = 'WORKER_IP_PRIVATE';
   protected $collection_key = 'additionalExperiments';
   /**
-   * Additional experiment flags for the job.
-   *
    * @var string[]
    */
   public $additionalExperiments;
   /**
-   * Additional user labels to be specified for the job. Keys and values must
-   * follow the restrictions specified in the [labeling
-   * restrictions](https://cloud.google.com/compute/docs/labeling-
-   * resources#restrictions). An object containing a list of key/value pairs.
-   * Example: `{ "name": "wrench", "mass": "1kg", "count": "3" }`.
-   *
    * @var string[]
    */
   public $additionalUserLabels;
   /**
-   * Whether to enable Streaming Engine for the job.
-   *
    * @var bool
    */
   public $enableStreamingEngine;
   /**
-   * Set FlexRS goal for the job.
-   * https://cloud.google.com/dataflow/docs/guides/flexrs
-   *
    * @var string
    */
   public $flexrsGoal;
   /**
-   * Configuration for VM IPs.
-   *
    * @var string
    */
   public $ipConfiguration;
   /**
-   * Name for the Cloud KMS key for the job. Key format is:
-   * projects//locations//keyRings//cryptoKeys/
-   *
    * @var string
    */
   public $kmsKeyName;
   /**
-   * The machine type to use for the job. Defaults to the value from the
-   * template if not specified.
-   *
    * @var string
    */
   public $machineType;
   /**
-   * The maximum number of Compute Engine instances to be made available to your
-   * pipeline during execution, from 1 to 1000.
-   *
    * @var int
    */
   public $maxWorkers;
   /**
-   * Network to which VMs will be assigned. If empty or unspecified, the service
-   * will use the network "default".
-   *
    * @var string
    */
   public $network;
   /**
-   * The initial number of Compute Engine instances for the job.
-   *
    * @var int
    */
   public $numWorkers;
   /**
-   * The email address of the service account to run the job as.
-   *
    * @var string
    */
   public $serviceAccountEmail;
   /**
-   * Subnetwork to which VMs will be assigned, if desired. You can specify a
-   * subnetwork using either a complete URL or an abbreviated path. Expected to
-   * be of the form "https://www.googleapis.com/compute/v1/projects/HOST_PROJECT
-   * _ID/regions/REGION/subnetworks/SUBNETWORK" or
-   * "regions/REGION/subnetworks/SUBNETWORK". If the subnetwork is located in a
-   * Shared VPC network, you must use the complete URL.
-   *
    * @var string
    */
   public $subnetwork;
   /**
-   * The Cloud Storage path to use for temporary files. Must be a valid Cloud
-   * Storage URL, beginning with `gs://`.
-   *
    * @var string
    */
   public $tempLocation;
   /**
-   * The Compute Engine region (https://cloud.google.com/compute/docs/regions-
-   * zones/regions-zones) in which worker processing should occur, e.g. "us-
-   * west1". Mutually exclusive with worker_zone. If neither worker_region nor
-   * worker_zone is specified, defaults to the control plane region.
-   *
    * @var string
    */
   public $workerRegion;
   /**
-   * The Compute Engine zone (https://cloud.google.com/compute/docs/regions-
-   * zones/regions-zones) in which worker processing should occur, e.g. "us-
-   * west1-a". Mutually exclusive with worker_region. If neither worker_region
-   * nor worker_zone is specified, a zone in the control plane region is chosen
-   * based on available capacity. If both `worker_zone` and `zone` are set,
-   * `worker_zone` takes precedence.
-   *
    * @var string
    */
   public $workerZone;
   /**
-   * The Compute Engine [availability
-   * zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones)
-   * for launching worker instances to run your pipeline. In the future,
-   * worker_zone will take precedence.
-   *
    * @var string
    */
   public $zone;
 
   /**
-   * Additional experiment flags for the job.
-   *
-   * @param string[] $additionalExperiments
+   * @param string[]
    */
   public function setAdditionalExperiments($additionalExperiments)
   {
@@ -184,13 +100,7 @@ class GoogleCloudDatapipelinesV1FlexTemplateRuntimeEnvironment extends \Google\C
     return $this->additionalExperiments;
   }
   /**
-   * Additional user labels to be specified for the job. Keys and values must
-   * follow the restrictions specified in the [labeling
-   * restrictions](https://cloud.google.com/compute/docs/labeling-
-   * resources#restrictions). An object containing a list of key/value pairs.
-   * Example: `{ "name": "wrench", "mass": "1kg", "count": "3" }`.
-   *
-   * @param string[] $additionalUserLabels
+   * @param string[]
    */
   public function setAdditionalUserLabels($additionalUserLabels)
   {
@@ -204,9 +114,7 @@ class GoogleCloudDatapipelinesV1FlexTemplateRuntimeEnvironment extends \Google\C
     return $this->additionalUserLabels;
   }
   /**
-   * Whether to enable Streaming Engine for the job.
-   *
-   * @param bool $enableStreamingEngine
+   * @param bool
    */
   public function setEnableStreamingEngine($enableStreamingEngine)
   {
@@ -220,48 +128,35 @@ class GoogleCloudDatapipelinesV1FlexTemplateRuntimeEnvironment extends \Google\C
     return $this->enableStreamingEngine;
   }
   /**
-   * Set FlexRS goal for the job.
-   * https://cloud.google.com/dataflow/docs/guides/flexrs
-   *
-   * Accepted values: FLEXRS_UNSPECIFIED, FLEXRS_SPEED_OPTIMIZED,
-   * FLEXRS_COST_OPTIMIZED
-   *
-   * @param self::FLEXRS_GOAL_* $flexrsGoal
+   * @param string
    */
   public function setFlexrsGoal($flexrsGoal)
   {
     $this->flexrsGoal = $flexrsGoal;
   }
   /**
-   * @return self::FLEXRS_GOAL_*
+   * @return string
    */
   public function getFlexrsGoal()
   {
     return $this->flexrsGoal;
   }
   /**
-   * Configuration for VM IPs.
-   *
-   * Accepted values: WORKER_IP_UNSPECIFIED, WORKER_IP_PUBLIC, WORKER_IP_PRIVATE
-   *
-   * @param self::IP_CONFIGURATION_* $ipConfiguration
+   * @param string
    */
   public function setIpConfiguration($ipConfiguration)
   {
     $this->ipConfiguration = $ipConfiguration;
   }
   /**
-   * @return self::IP_CONFIGURATION_*
+   * @return string
    */
   public function getIpConfiguration()
   {
     return $this->ipConfiguration;
   }
   /**
-   * Name for the Cloud KMS key for the job. Key format is:
-   * projects//locations//keyRings//cryptoKeys/
-   *
-   * @param string $kmsKeyName
+   * @param string
    */
   public function setKmsKeyName($kmsKeyName)
   {
@@ -275,10 +170,7 @@ class GoogleCloudDatapipelinesV1FlexTemplateRuntimeEnvironment extends \Google\C
     return $this->kmsKeyName;
   }
   /**
-   * The machine type to use for the job. Defaults to the value from the
-   * template if not specified.
-   *
-   * @param string $machineType
+   * @param string
    */
   public function setMachineType($machineType)
   {
@@ -292,10 +184,7 @@ class GoogleCloudDatapipelinesV1FlexTemplateRuntimeEnvironment extends \Google\C
     return $this->machineType;
   }
   /**
-   * The maximum number of Compute Engine instances to be made available to your
-   * pipeline during execution, from 1 to 1000.
-   *
-   * @param int $maxWorkers
+   * @param int
    */
   public function setMaxWorkers($maxWorkers)
   {
@@ -309,10 +198,7 @@ class GoogleCloudDatapipelinesV1FlexTemplateRuntimeEnvironment extends \Google\C
     return $this->maxWorkers;
   }
   /**
-   * Network to which VMs will be assigned. If empty or unspecified, the service
-   * will use the network "default".
-   *
-   * @param string $network
+   * @param string
    */
   public function setNetwork($network)
   {
@@ -326,9 +212,7 @@ class GoogleCloudDatapipelinesV1FlexTemplateRuntimeEnvironment extends \Google\C
     return $this->network;
   }
   /**
-   * The initial number of Compute Engine instances for the job.
-   *
-   * @param int $numWorkers
+   * @param int
    */
   public function setNumWorkers($numWorkers)
   {
@@ -342,9 +226,7 @@ class GoogleCloudDatapipelinesV1FlexTemplateRuntimeEnvironment extends \Google\C
     return $this->numWorkers;
   }
   /**
-   * The email address of the service account to run the job as.
-   *
-   * @param string $serviceAccountEmail
+   * @param string
    */
   public function setServiceAccountEmail($serviceAccountEmail)
   {
@@ -358,14 +240,7 @@ class GoogleCloudDatapipelinesV1FlexTemplateRuntimeEnvironment extends \Google\C
     return $this->serviceAccountEmail;
   }
   /**
-   * Subnetwork to which VMs will be assigned, if desired. You can specify a
-   * subnetwork using either a complete URL or an abbreviated path. Expected to
-   * be of the form "https://www.googleapis.com/compute/v1/projects/HOST_PROJECT
-   * _ID/regions/REGION/subnetworks/SUBNETWORK" or
-   * "regions/REGION/subnetworks/SUBNETWORK". If the subnetwork is located in a
-   * Shared VPC network, you must use the complete URL.
-   *
-   * @param string $subnetwork
+   * @param string
    */
   public function setSubnetwork($subnetwork)
   {
@@ -379,10 +254,7 @@ class GoogleCloudDatapipelinesV1FlexTemplateRuntimeEnvironment extends \Google\C
     return $this->subnetwork;
   }
   /**
-   * The Cloud Storage path to use for temporary files. Must be a valid Cloud
-   * Storage URL, beginning with `gs://`.
-   *
-   * @param string $tempLocation
+   * @param string
    */
   public function setTempLocation($tempLocation)
   {
@@ -396,12 +268,7 @@ class GoogleCloudDatapipelinesV1FlexTemplateRuntimeEnvironment extends \Google\C
     return $this->tempLocation;
   }
   /**
-   * The Compute Engine region (https://cloud.google.com/compute/docs/regions-
-   * zones/regions-zones) in which worker processing should occur, e.g. "us-
-   * west1". Mutually exclusive with worker_zone. If neither worker_region nor
-   * worker_zone is specified, defaults to the control plane region.
-   *
-   * @param string $workerRegion
+   * @param string
    */
   public function setWorkerRegion($workerRegion)
   {
@@ -415,14 +282,7 @@ class GoogleCloudDatapipelinesV1FlexTemplateRuntimeEnvironment extends \Google\C
     return $this->workerRegion;
   }
   /**
-   * The Compute Engine zone (https://cloud.google.com/compute/docs/regions-
-   * zones/regions-zones) in which worker processing should occur, e.g. "us-
-   * west1-a". Mutually exclusive with worker_region. If neither worker_region
-   * nor worker_zone is specified, a zone in the control plane region is chosen
-   * based on available capacity. If both `worker_zone` and `zone` are set,
-   * `worker_zone` takes precedence.
-   *
-   * @param string $workerZone
+   * @param string
    */
   public function setWorkerZone($workerZone)
   {
@@ -436,12 +296,7 @@ class GoogleCloudDatapipelinesV1FlexTemplateRuntimeEnvironment extends \Google\C
     return $this->workerZone;
   }
   /**
-   * The Compute Engine [availability
-   * zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones)
-   * for launching worker instances to run your pipeline. In the future,
-   * worker_zone will take precedence.
-   *
-   * @param string $zone
+   * @param string
    */
   public function setZone($zone)
   {

@@ -23,17 +23,12 @@ class GoogleCloudConnectorsV1DestinationConfig extends \Google\Collection
   protected $destinationsType = GoogleCloudConnectorsV1Destination::class;
   protected $destinationsDataType = 'array';
   /**
-   * Optional. The key is the destination identifier that is supported by the
-   * Connector.
-   *
    * @var string
    */
   public $key;
 
   /**
-   * Optional. The destinations for the key.
-   *
-   * @param GoogleCloudConnectorsV1Destination[] $destinations
+   * @param GoogleCloudConnectorsV1Destination[]
    */
   public function setDestinations($destinations)
   {
@@ -47,10 +42,7 @@ class GoogleCloudConnectorsV1DestinationConfig extends \Google\Collection
     return $this->destinations;
   }
   /**
-   * Optional. The key is the destination identifier that is supported by the
-   * Connector.
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {

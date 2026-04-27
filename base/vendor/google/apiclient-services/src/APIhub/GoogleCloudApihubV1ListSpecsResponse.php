@@ -21,9 +21,6 @@ class GoogleCloudApihubV1ListSpecsResponse extends \Google\Collection
 {
   protected $collection_key = 'specs';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GoogleCloudApihubV1ListSpecsResponse extends \Google\Collection
   protected $specsDataType = 'array';
 
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class GoogleCloudApihubV1ListSpecsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The specs corresponding to an API Version.
-   *
-   * @param GoogleCloudApihubV1Spec[] $specs
+   * @param GoogleCloudApihubV1Spec[]
    */
   public function setSpecs($specs)
   {

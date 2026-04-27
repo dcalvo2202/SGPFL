@@ -19,47 +19,22 @@ namespace Google\Service\CloudIdentity;
 
 class GroupRelation extends \Google\Collection
 {
-  /**
-   * The relation type is undefined or undetermined.
-   */
-  public const RELATION_TYPE_RELATION_TYPE_UNSPECIFIED = 'RELATION_TYPE_UNSPECIFIED';
-  /**
-   * The two entities have only a direct membership with each other.
-   */
-  public const RELATION_TYPE_DIRECT = 'DIRECT';
-  /**
-   * The two entities have only an indirect membership with each other.
-   */
-  public const RELATION_TYPE_INDIRECT = 'INDIRECT';
-  /**
-   * The two entities have both a direct and an indirect membership with each
-   * other.
-   */
-  public const RELATION_TYPE_DIRECT_AND_INDIRECT = 'DIRECT_AND_INDIRECT';
   protected $collection_key = 'roles';
   /**
-   * Display name for this group.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Resource name for this group.
-   *
    * @var string
    */
   public $group;
   protected $groupKeyType = EntityKey::class;
   protected $groupKeyDataType = '';
   /**
-   * Labels for Group resource.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * The relation between the member and the transitive group.
-   *
    * @var string
    */
   public $relationType;
@@ -67,9 +42,7 @@ class GroupRelation extends \Google\Collection
   protected $rolesDataType = 'array';
 
   /**
-   * Display name for this group.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -83,9 +56,7 @@ class GroupRelation extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Resource name for this group.
-   *
-   * @param string $group
+   * @param string
    */
   public function setGroup($group)
   {
@@ -99,10 +70,7 @@ class GroupRelation extends \Google\Collection
     return $this->group;
   }
   /**
-   * Entity key has an id and a namespace. In case of discussion forums, the id
-   * will be an email address without a namespace.
-   *
-   * @param EntityKey $groupKey
+   * @param EntityKey
    */
   public function setGroupKey(EntityKey $groupKey)
   {
@@ -116,9 +84,7 @@ class GroupRelation extends \Google\Collection
     return $this->groupKey;
   }
   /**
-   * Labels for Group resource.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -132,28 +98,21 @@ class GroupRelation extends \Google\Collection
     return $this->labels;
   }
   /**
-   * The relation between the member and the transitive group.
-   *
-   * Accepted values: RELATION_TYPE_UNSPECIFIED, DIRECT, INDIRECT,
-   * DIRECT_AND_INDIRECT
-   *
-   * @param self::RELATION_TYPE_* $relationType
+   * @param string
    */
   public function setRelationType($relationType)
   {
     $this->relationType = $relationType;
   }
   /**
-   * @return self::RELATION_TYPE_*
+   * @return string
    */
   public function getRelationType()
   {
     return $this->relationType;
   }
   /**
-   * Membership roles of the member for the group.
-   *
-   * @param TransitiveMembershipRole[] $roles
+   * @param TransitiveMembershipRole[]
    */
   public function setRoles($roles)
   {

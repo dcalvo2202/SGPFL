@@ -21,24 +21,16 @@ class ErrorLogEntry extends \Google\Collection
 {
   protected $collection_key = 'errorDetails';
   /**
-   * Optional. Output only. At most 5 error log entries are recorded for a given
-   * error code for a job.
-   *
    * @var string[]
    */
   public $errorDetails;
   /**
-   * Required. Output only. Object URL. e.g. gs://my_bucket/object.txt
-   *
    * @var string
    */
   public $objectUri;
 
   /**
-   * Optional. Output only. At most 5 error log entries are recorded for a given
-   * error code for a job.
-   *
-   * @param string[] $errorDetails
+   * @param string[]
    */
   public function setErrorDetails($errorDetails)
   {
@@ -52,9 +44,7 @@ class ErrorLogEntry extends \Google\Collection
     return $this->errorDetails;
   }
   /**
-   * Required. Output only. Object URL. e.g. gs://my_bucket/object.txt
-   *
-   * @param string $objectUri
+   * @param string
    */
   public function setObjectUri($objectUri)
   {

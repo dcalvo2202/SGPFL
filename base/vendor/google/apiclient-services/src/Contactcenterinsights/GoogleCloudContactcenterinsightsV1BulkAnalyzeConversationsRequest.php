@@ -20,37 +20,22 @@ namespace Google\Service\Contactcenterinsights;
 class GoogleCloudContactcenterinsightsV1BulkAnalyzeConversationsRequest extends \Google\Model
 {
   /**
-   * Required. Percentage of selected conversation to analyze, between [0, 100].
-   *
    * @var float
    */
   public $analysisPercentage;
   protected $annotatorSelectorType = GoogleCloudContactcenterinsightsV1AnnotatorSelector::class;
   protected $annotatorSelectorDataType = '';
   /**
-   * Required. Filter used to select the subset of conversations to analyze.
-   *
    * @var string
    */
   public $filter;
   /**
-   * Required. The parent resource to create analyses in.
-   *
    * @var string
    */
   public $parent;
-  /**
-   * Optional. If true, the labeling rules will be re-evaluated for the
-   * conversations.
-   *
-   * @var bool
-   */
-  public $relabel;
 
   /**
-   * Required. Percentage of selected conversation to analyze, between [0, 100].
-   *
-   * @param float $analysisPercentage
+   * @param float
    */
   public function setAnalysisPercentage($analysisPercentage)
   {
@@ -64,10 +49,7 @@ class GoogleCloudContactcenterinsightsV1BulkAnalyzeConversationsRequest extends 
     return $this->analysisPercentage;
   }
   /**
-   * To select the annotators to run and the phrase matchers to use (if any). If
-   * not specified, all annotators will be run.
-   *
-   * @param GoogleCloudContactcenterinsightsV1AnnotatorSelector $annotatorSelector
+   * @param GoogleCloudContactcenterinsightsV1AnnotatorSelector
    */
   public function setAnnotatorSelector(GoogleCloudContactcenterinsightsV1AnnotatorSelector $annotatorSelector)
   {
@@ -81,9 +63,7 @@ class GoogleCloudContactcenterinsightsV1BulkAnalyzeConversationsRequest extends 
     return $this->annotatorSelector;
   }
   /**
-   * Required. Filter used to select the subset of conversations to analyze.
-   *
-   * @param string $filter
+   * @param string
    */
   public function setFilter($filter)
   {
@@ -97,9 +77,7 @@ class GoogleCloudContactcenterinsightsV1BulkAnalyzeConversationsRequest extends 
     return $this->filter;
   }
   /**
-   * Required. The parent resource to create analyses in.
-   *
-   * @param string $parent
+   * @param string
    */
   public function setParent($parent)
   {
@@ -111,23 +89,6 @@ class GoogleCloudContactcenterinsightsV1BulkAnalyzeConversationsRequest extends 
   public function getParent()
   {
     return $this->parent;
-  }
-  /**
-   * Optional. If true, the labeling rules will be re-evaluated for the
-   * conversations.
-   *
-   * @param bool $relabel
-   */
-  public function setRelabel($relabel)
-  {
-    $this->relabel = $relabel;
-  }
-  /**
-   * @return bool
-   */
-  public function getRelabel()
-  {
-    return $this->relabel;
   }
 }
 

@@ -19,181 +19,11 @@ namespace Google\Service\CloudSearch;
 
 class EnterpriseTopazSidekickAssistCardProto extends \Google\Model
 {
-  /**
-   * The default type, an unknown card type.
-   */
-  public const CARD_TYPE_UNKNOWN_TYPE = 'UNKNOWN_TYPE';
-  /**
-   * The user's agenda for the day.
-   *
-   * @deprecated
-   */
-  public const CARD_TYPE_AGENDA = 'AGENDA';
-  /**
-   * Changelists.
-   *
-   * @deprecated
-   */
-  public const CARD_TYPE_CHANGELISTS = 'CHANGELISTS';
-  /**
-   * Any group of meetings for the day that are overlapping.
-   *
-   * @deprecated
-   */
-  public const CARD_TYPE_CONFLICTING_MEETINGS = 'CONFLICTING_MEETINGS';
-  /**
-   * Create notes for a meeting specified in the request.
-   *
-   * @deprecated
-   */
-  public const CARD_TYPE_CREATE_NOTES_FOR_MEETING = 'CREATE_NOTES_FOR_MEETING';
-  /**
-   * Create notes for meeting query.
-   *
-   * @deprecated
-   */
-  public const CARD_TYPE_CREATE_NOTES_FOR_MEETING_REQUEST = 'CREATE_NOTES_FOR_MEETING_REQUEST';
-  /**
-   * News about your SFDC customers.
-   *
-   * @deprecated
-   */
-  public const CARD_TYPE_CUSTOMER_NEWS = 'CUSTOMER_NEWS';
-  /**
-   * Find a time for two people to meet.
-   */
-  public const CARD_TYPE_FIND_MEETING_TIME = 'FIND_MEETING_TIME';
-  /**
-   * The user's next non-declined meeting.
-   *
-   * @deprecated
-   */
-  public const CARD_TYPE_NEXT_MEETING = 'NEXT_MEETING';
-  /**
-   * Important documents for you since you have viewed them in the last month
-   * and there's some action going on.
-   *
-   * @deprecated
-   */
-  public const CARD_TYPE_PERSONALIZED_DOCS = 'PERSONALIZED_DOCS';
-  /**
-   * Documents that are trending in your company. A TRENDING_DOCS card can be of
-   * two types: TRENDING_IN_COLLABORATORS (i.e., Stay in the Loop) and
-   * TRENDING_IN_DOMAIN (i.e., Popular Content). Use
-   * DOMAIN_TRENDING_DOCS/TEAM_TRENDING_DOCS instead.
-   *
-   * @deprecated
-   */
-  public const CARD_TYPE_TRENDING_DOCS = 'TRENDING_DOCS';
-  /**
-   * An upcoming trip with all trip information along with calendar events in
-   * the destination timezone.
-   *
-   * @deprecated
-   */
-  public const CARD_TYPE_UPCOMING_TRIP = 'UPCOMING_TRIP';
-  /**
-   * The Morning/Evening Summary Card for the next working day.
-   *
-   * @deprecated
-   */
-  public const CARD_TYPE_SUMMARY = 'SUMMARY';
-  /**
-   * A meeting. When requesting meetings, the service will return a MEETING card
-   * for each meeting the user has in his agenda.
-   *
-   * @deprecated
-   */
-  public const CARD_TYPE_MEETINGS = 'MEETINGS';
-  /**
-   * All cards related to the homepage (agenda, conflicting-meetings, summary,
-   * etc...). This type should no longer be used. Use HOMEPAGE_V3 instead.
-   *
-   * @deprecated
-   */
-  public const CARD_TYPE_HOMEPAGE = 'HOMEPAGE';
-  /**
-   * A card to with specifics to share meeting documents with all attendees.
-   *
-   * @deprecated
-   */
-  public const CARD_TYPE_SHARE_MEETING_DOCS = 'SHARE_MEETING_DOCS';
-  /**
-   * Represents a set of users that the requesting user has low affinity with.
-   *
-   * @deprecated
-   */
-  public const CARD_TYPE_DISCOVER_PEOPLE = 'DISCOVER_PEOPLE';
-  /**
-   * All cards related to the homepage-v3 (agenda-group, WIP, etc...)
-   *
-   * @deprecated
-   */
-  public const CARD_TYPE_HOMEPAGE_V3 = 'HOMEPAGE_V3';
-  /**
-   * A group of agenda-events (meeting, conflicts)
-   */
-  public const CARD_TYPE_AGENDA_GROUP = 'AGENDA_GROUP';
-  /**
-   * The documents that you were recently working on.
-   */
-  public const CARD_TYPE_WORK_IN_PROGRESS = 'WORK_IN_PROGRESS';
-  /**
-   * (v3) The "get and keep ahead" card for today and tomorrow
-   */
-  public const CARD_TYPE_GET_AND_KEEP_AHEAD = 'GET_AND_KEEP_AHEAD';
-  /**
-   * Generic answer card.
-   */
-  public const CARD_TYPE_GENERIC_ANSWER_CARD = 'GENERIC_ANSWER_CARD';
-  /**
-   * Third party answer card.
-   */
-  public const CARD_TYPE_THIRD_PARTY_ANSWER_CARD = 'THIRD_PARTY_ANSWER_CARD';
-  /**
-   * Documents that are trending in your company/domain (i.e., Popular Content).
-   *
-   * @deprecated
-   */
-  public const CARD_TYPE_DOMAIN_TRENDING_DOCS = 'DOMAIN_TRENDING_DOCS';
-  /**
-   * Documents that are trending in your team (i.e., Stay in the Loop).
-   *
-   * @deprecated
-   */
-  public const CARD_TYPE_TEAM_TRENDING_DOCS = 'TEAM_TRENDING_DOCS';
-  /**
-   * Documents that match the user's query (e.g. sheets shared with me).
-   */
-  public const CARD_TYPE_DOCUMENT_LIST_ANSWER_CARD = 'DOCUMENT_LIST_ANSWER_CARD';
-  /**
-   * A help card that provides examples of queries the user can ask.
-   */
-  public const CARD_TYPE_SUGGESTED_QUERY_ANSWER_CARD = 'SUGGESTED_QUERY_ANSWER_CARD';
-  /**
-   * Answer card for a single person (e.g. what is x's phone number).
-   */
-  public const CARD_TYPE_PERSON_ANSWER_CARD = 'PERSON_ANSWER_CARD';
-  /**
-   * Answer card for a list of people related to the person that is the subject
-   * of the query (e.g. who reports to x).
-   */
-  public const CARD_TYPE_RELATED_PEOPLE_ANSWER_CARD = 'RELATED_PEOPLE_ANSWER_CARD';
-  /**
-   * Knowledge card for a single person and their related people.
-   */
-  public const CARD_TYPE_PERSON_KNOWLEDGE_CARD = 'PERSON_KNOWLEDGE_CARD';
-  /**
-   * People Search promotion card.
-   */
-  public const CARD_TYPE_PEOPLE_SEARCH_PROMOTION_CARD = 'PEOPLE_SEARCH_PROMOTION_CARD';
   protected $agendaGroupCardProtoType = EnterpriseTopazSidekickAgendaGroupCardProto::class;
   protected $agendaGroupCardProtoDataType = '';
   protected $cardMetadataType = EnterpriseTopazSidekickCardMetadata::class;
   protected $cardMetadataDataType = '';
   /**
-   * Card type.
-   *
    * @var string
    */
   public $cardType;
@@ -239,9 +69,7 @@ class EnterpriseTopazSidekickAssistCardProto extends \Google\Model
   protected $workInProgressCardProtoDataType = '';
 
   /**
-   * Agenda group card.
-   *
-   * @param EnterpriseTopazSidekickAgendaGroupCardProto $agendaGroupCardProto
+   * @param EnterpriseTopazSidekickAgendaGroupCardProto
    */
   public function setAgendaGroupCardProto(EnterpriseTopazSidekickAgendaGroupCardProto $agendaGroupCardProto)
   {
@@ -255,9 +83,7 @@ class EnterpriseTopazSidekickAssistCardProto extends \Google\Model
     return $this->agendaGroupCardProto;
   }
   /**
-   * Card metadata such as chronology and render mode of the card.
-   *
-   * @param EnterpriseTopazSidekickCardMetadata $cardMetadata
+   * @param EnterpriseTopazSidekickCardMetadata
    */
   public function setCardMetadata(EnterpriseTopazSidekickCardMetadata $cardMetadata)
   {
@@ -271,44 +97,27 @@ class EnterpriseTopazSidekickAssistCardProto extends \Google\Model
     return $this->cardMetadata;
   }
   /**
-   * Card type.
-   *
-   * Accepted values: UNKNOWN_TYPE, AGENDA, CHANGELISTS, CONFLICTING_MEETINGS,
-   * CREATE_NOTES_FOR_MEETING, CREATE_NOTES_FOR_MEETING_REQUEST, CUSTOMER_NEWS,
-   * FIND_MEETING_TIME, NEXT_MEETING, PERSONALIZED_DOCS, TRENDING_DOCS,
-   * UPCOMING_TRIP, SUMMARY, MEETINGS, HOMEPAGE, SHARE_MEETING_DOCS,
-   * DISCOVER_PEOPLE, HOMEPAGE_V3, AGENDA_GROUP, WORK_IN_PROGRESS,
-   * GET_AND_KEEP_AHEAD, GENERIC_ANSWER_CARD, THIRD_PARTY_ANSWER_CARD,
-   * DOMAIN_TRENDING_DOCS, TEAM_TRENDING_DOCS, DOCUMENT_LIST_ANSWER_CARD,
-   * SUGGESTED_QUERY_ANSWER_CARD, PERSON_ANSWER_CARD,
-   * RELATED_PEOPLE_ANSWER_CARD, PERSON_KNOWLEDGE_CARD,
-   * PEOPLE_SEARCH_PROMOTION_CARD
-   *
-   * @param self::CARD_TYPE_* $cardType
+   * @param string
    */
   public function setCardType($cardType)
   {
     $this->cardType = $cardType;
   }
   /**
-   * @return self::CARD_TYPE_*
+   * @return string
    */
   public function getCardType()
   {
     return $this->cardType;
   }
   /**
-   * Conflicting events card.
-   *
-   * @deprecated
-   * @param EnterpriseTopazSidekickConflictingEventsCardProto $conflictingMeetingsCard
+   * @param EnterpriseTopazSidekickConflictingEventsCardProto
    */
   public function setConflictingMeetingsCard(EnterpriseTopazSidekickConflictingEventsCardProto $conflictingMeetingsCard)
   {
     $this->conflictingMeetingsCard = $conflictingMeetingsCard;
   }
   /**
-   * @deprecated
    * @return EnterpriseTopazSidekickConflictingEventsCardProto
    */
   public function getConflictingMeetingsCard()
@@ -316,9 +125,7 @@ class EnterpriseTopazSidekickAssistCardProto extends \Google\Model
     return $this->conflictingMeetingsCard;
   }
   /**
-   * Answer card for documents that are applicable to the current query.
-   *
-   * @param EnterpriseTopazSidekickDocumentPerCategoryList $documentListCard
+   * @param EnterpriseTopazSidekickDocumentPerCategoryList
    */
   public function setDocumentListCard(EnterpriseTopazSidekickDocumentPerCategoryList $documentListCard)
   {
@@ -332,17 +139,13 @@ class EnterpriseTopazSidekickAssistCardProto extends \Google\Model
     return $this->documentListCard;
   }
   /**
-   * Documents with mentions.
-   *
-   * @deprecated
-   * @param EnterpriseTopazSidekickDocumentPerCategoryList $documentsWithMentions
+   * @param EnterpriseTopazSidekickDocumentPerCategoryList
    */
   public function setDocumentsWithMentions(EnterpriseTopazSidekickDocumentPerCategoryList $documentsWithMentions)
   {
     $this->documentsWithMentions = $documentsWithMentions;
   }
   /**
-   * @deprecated
    * @return EnterpriseTopazSidekickDocumentPerCategoryList
    */
   public function getDocumentsWithMentions()
@@ -350,9 +153,7 @@ class EnterpriseTopazSidekickAssistCardProto extends \Google\Model
     return $this->documentsWithMentions;
   }
   /**
-   * Find meeting time card.
-   *
-   * @param EnterpriseTopazSidekickFindMeetingTimeCardProto $findMeetingTimeCard
+   * @param EnterpriseTopazSidekickFindMeetingTimeCardProto
    */
   public function setFindMeetingTimeCard(EnterpriseTopazSidekickFindMeetingTimeCardProto $findMeetingTimeCard)
   {
@@ -366,9 +167,7 @@ class EnterpriseTopazSidekickAssistCardProto extends \Google\Model
     return $this->findMeetingTimeCard;
   }
   /**
-   * Generic answer card.
-   *
-   * @param EnterpriseTopazSidekickGenericAnswerCard $genericAnswerCard
+   * @param EnterpriseTopazSidekickGenericAnswerCard
    */
   public function setGenericAnswerCard(EnterpriseTopazSidekickGenericAnswerCard $genericAnswerCard)
   {
@@ -382,9 +181,7 @@ class EnterpriseTopazSidekickAssistCardProto extends \Google\Model
     return $this->genericAnswerCard;
   }
   /**
-   * Get and keep ahead card.
-   *
-   * @param EnterpriseTopazSidekickGetAndKeepAheadCardProto $getAndKeepAheadCard
+   * @param EnterpriseTopazSidekickGetAndKeepAheadCardProto
    */
   public function setGetAndKeepAheadCard(EnterpriseTopazSidekickGetAndKeepAheadCardProto $getAndKeepAheadCard)
   {
@@ -398,17 +195,13 @@ class EnterpriseTopazSidekickAssistCardProto extends \Google\Model
     return $this->getAndKeepAheadCard;
   }
   /**
-   * Meeting card.
-   *
-   * @deprecated
-   * @param EnterpriseTopazSidekickAgendaEntry $meeting
+   * @param EnterpriseTopazSidekickAgendaEntry
    */
   public function setMeeting(EnterpriseTopazSidekickAgendaEntry $meeting)
   {
     $this->meeting = $meeting;
   }
   /**
-   * @deprecated
    * @return EnterpriseTopazSidekickAgendaEntry
    */
   public function getMeeting()
@@ -416,9 +209,7 @@ class EnterpriseTopazSidekickAssistCardProto extends \Google\Model
     return $this->meeting;
   }
   /**
-   * Meeting notes card.
-   *
-   * @param EnterpriseTopazSidekickMeetingNotesCardProto $meetingNotesCard
+   * @param EnterpriseTopazSidekickMeetingNotesCardProto
    */
   public function setMeetingNotesCard(EnterpriseTopazSidekickMeetingNotesCardProto $meetingNotesCard)
   {
@@ -432,9 +223,7 @@ class EnterpriseTopazSidekickAssistCardProto extends \Google\Model
     return $this->meetingNotesCard;
   }
   /**
-   * Request for meeting notes card.
-   *
-   * @param EnterpriseTopazSidekickMeetingNotesCardRequest $meetingNotesCardRequest
+   * @param EnterpriseTopazSidekickMeetingNotesCardRequest
    */
   public function setMeetingNotesCardRequest(EnterpriseTopazSidekickMeetingNotesCardRequest $meetingNotesCardRequest)
   {
@@ -448,9 +237,7 @@ class EnterpriseTopazSidekickAssistCardProto extends \Google\Model
     return $this->meetingNotesCardRequest;
   }
   /**
-   * The people disambiguation card.
-   *
-   * @param EnterpriseTopazSidekickPeopleDisambiguationCard $peopleDisambiguationCard
+   * @param EnterpriseTopazSidekickPeopleDisambiguationCard
    */
   public function setPeopleDisambiguationCard(EnterpriseTopazSidekickPeopleDisambiguationCard $peopleDisambiguationCard)
   {
@@ -464,9 +251,7 @@ class EnterpriseTopazSidekickAssistCardProto extends \Google\Model
     return $this->peopleDisambiguationCard;
   }
   /**
-   * People Search promotion card.
-   *
-   * @param PeoplePromotionCard $peoplePromotionCard
+   * @param PeoplePromotionCard
    */
   public function setPeoplePromotionCard(PeoplePromotionCard $peoplePromotionCard)
   {
@@ -480,9 +265,7 @@ class EnterpriseTopazSidekickAssistCardProto extends \Google\Model
     return $this->peoplePromotionCard;
   }
   /**
-   * Answer card that represents a single person.
-   *
-   * @param EnterpriseTopazSidekickPeopleAnswerPersonAnswerCard $personAnswerCard
+   * @param EnterpriseTopazSidekickPeopleAnswerPersonAnswerCard
    */
   public function setPersonAnswerCard(EnterpriseTopazSidekickPeopleAnswerPersonAnswerCard $personAnswerCard)
   {
@@ -496,9 +279,7 @@ class EnterpriseTopazSidekickAssistCardProto extends \Google\Model
     return $this->personAnswerCard;
   }
   /**
-   * Full profile card.
-   *
-   * @param EnterpriseTopazSidekickPersonProfileCard $personProfileCard
+   * @param EnterpriseTopazSidekickPersonProfileCard
    */
   public function setPersonProfileCard(EnterpriseTopazSidekickPersonProfileCard $personProfileCard)
   {
@@ -512,17 +293,13 @@ class EnterpriseTopazSidekickAssistCardProto extends \Google\Model
     return $this->personProfileCard;
   }
   /**
-   * Card with recommended documents for the user.
-   *
-   * @deprecated
-   * @param EnterpriseTopazSidekickPersonalizedDocsCardProto $personalizedDocsCard
+   * @param EnterpriseTopazSidekickPersonalizedDocsCardProto
    */
   public function setPersonalizedDocsCard(EnterpriseTopazSidekickPersonalizedDocsCardProto $personalizedDocsCard)
   {
     $this->personalizedDocsCard = $personalizedDocsCard;
   }
   /**
-   * @deprecated
    * @return EnterpriseTopazSidekickPersonalizedDocsCardProto
    */
   public function getPersonalizedDocsCard()
@@ -530,9 +307,7 @@ class EnterpriseTopazSidekickAssistCardProto extends \Google\Model
     return $this->personalizedDocsCard;
   }
   /**
-   * Answer card that represents a list of people related to a person.
-   *
-   * @param EnterpriseTopazSidekickPeopleAnswerRelatedPeopleAnswerCard $relatedPeopleAnswerCard
+   * @param EnterpriseTopazSidekickPeopleAnswerRelatedPeopleAnswerCard
    */
   public function setRelatedPeopleAnswerCard(EnterpriseTopazSidekickPeopleAnswerRelatedPeopleAnswerCard $relatedPeopleAnswerCard)
   {
@@ -546,17 +321,13 @@ class EnterpriseTopazSidekickAssistCardProto extends \Google\Model
     return $this->relatedPeopleAnswerCard;
   }
   /**
-   * Sahre meeting docs card.
-   *
-   * @deprecated
-   * @param EnterpriseTopazSidekickShareMeetingDocsCardProto $shareMeetingDocsCard
+   * @param EnterpriseTopazSidekickShareMeetingDocsCardProto
    */
   public function setShareMeetingDocsCard(EnterpriseTopazSidekickShareMeetingDocsCardProto $shareMeetingDocsCard)
   {
     $this->shareMeetingDocsCard = $shareMeetingDocsCard;
   }
   /**
-   * @deprecated
    * @return EnterpriseTopazSidekickShareMeetingDocsCardProto
    */
   public function getShareMeetingDocsCard()
@@ -564,17 +335,13 @@ class EnterpriseTopazSidekickAssistCardProto extends \Google\Model
     return $this->shareMeetingDocsCard;
   }
   /**
-   * Shared documents.
-   *
-   * @deprecated
-   * @param EnterpriseTopazSidekickDocumentPerCategoryList $sharedDocuments
+   * @param EnterpriseTopazSidekickDocumentPerCategoryList
    */
   public function setSharedDocuments(EnterpriseTopazSidekickDocumentPerCategoryList $sharedDocuments)
   {
     $this->sharedDocuments = $sharedDocuments;
   }
   /**
-   * @deprecated
    * @return EnterpriseTopazSidekickDocumentPerCategoryList
    */
   public function getSharedDocuments()
@@ -582,9 +349,7 @@ class EnterpriseTopazSidekickAssistCardProto extends \Google\Model
     return $this->sharedDocuments;
   }
   /**
-   * Answer card for what natural language queries the user can ask.
-   *
-   * @param EnterpriseTopazSidekickAnswerSuggestedQueryAnswerCard $suggestedQueryAnswerCard
+   * @param EnterpriseTopazSidekickAnswerSuggestedQueryAnswerCard
    */
   public function setSuggestedQueryAnswerCard(EnterpriseTopazSidekickAnswerSuggestedQueryAnswerCard $suggestedQueryAnswerCard)
   {
@@ -598,9 +363,7 @@ class EnterpriseTopazSidekickAssistCardProto extends \Google\Model
     return $this->suggestedQueryAnswerCard;
   }
   /**
-   * Third party answer cards.
-   *
-   * @param ThirdPartyGenericCard $thirdPartyAnswerCard
+   * @param ThirdPartyGenericCard
    */
   public function setThirdPartyAnswerCard(ThirdPartyGenericCard $thirdPartyAnswerCard)
   {
@@ -614,9 +377,7 @@ class EnterpriseTopazSidekickAssistCardProto extends \Google\Model
     return $this->thirdPartyAnswerCard;
   }
   /**
-   * Work In Progress card.
-   *
-   * @param EnterpriseTopazSidekickRecentDocumentsCardProto $workInProgressCardProto
+   * @param EnterpriseTopazSidekickRecentDocumentsCardProto
    */
   public function setWorkInProgressCardProto(EnterpriseTopazSidekickRecentDocumentsCardProto $workInProgressCardProto)
   {

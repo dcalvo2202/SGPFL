@@ -20,25 +20,16 @@ namespace Google\Service\Datastore;
 class RollbackRequest extends \Google\Model
 {
   /**
-   * The ID of the database against which to make the request. '(default)' is
-   * not allowed; please use empty string '' to refer the default database.
-   *
    * @var string
    */
   public $databaseId;
   /**
-   * Required. The transaction identifier, returned by a call to
-   * Datastore.BeginTransaction.
-   *
    * @var string
    */
   public $transaction;
 
   /**
-   * The ID of the database against which to make the request. '(default)' is
-   * not allowed; please use empty string '' to refer the default database.
-   *
-   * @param string $databaseId
+   * @param string
    */
   public function setDatabaseId($databaseId)
   {
@@ -52,10 +43,7 @@ class RollbackRequest extends \Google\Model
     return $this->databaseId;
   }
   /**
-   * Required. The transaction identifier, returned by a call to
-   * Datastore.BeginTransaction.
-   *
-   * @param string $transaction
+   * @param string
    */
   public function setTransaction($transaction)
   {

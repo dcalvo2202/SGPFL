@@ -21,22 +21,16 @@ class GoogleCloudRecommenderV1ReliabilityProjection extends \Google\Collection
 {
   protected $collection_key = 'risks';
   /**
-   * Per-recommender projection.
-   *
    * @var array[]
    */
   public $details;
   /**
-   * Reliability risks mitigated by this recommendation.
-   *
    * @var string[]
    */
   public $risks;
 
   /**
-   * Per-recommender projection.
-   *
-   * @param array[] $details
+   * @param array[]
    */
   public function setDetails($details)
   {
@@ -50,9 +44,7 @@ class GoogleCloudRecommenderV1ReliabilityProjection extends \Google\Collection
     return $this->details;
   }
   /**
-   * Reliability risks mitigated by this recommendation.
-   *
-   * @param string[] $risks
+   * @param string[]
    */
   public function setRisks($risks)
   {

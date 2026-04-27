@@ -20,22 +20,16 @@ namespace Google\Service\ChromeManagement;
 class GoogleChromeManagementV1CpuTemperatureInfo extends \Google\Model
 {
   /**
-   * Output only. CPU label. Example: Core 0
-   *
    * @var string
    */
   public $label;
   /**
-   * Output only. CPU temperature in Celsius.
-   *
    * @var int
    */
   public $temperatureCelsius;
 
   /**
-   * Output only. CPU label. Example: Core 0
-   *
-   * @param string $label
+   * @param string
    */
   public function setLabel($label)
   {
@@ -49,9 +43,7 @@ class GoogleChromeManagementV1CpuTemperatureInfo extends \Google\Model
     return $this->label;
   }
   /**
-   * Output only. CPU temperature in Celsius.
-   *
-   * @param int $temperatureCelsius
+   * @param int
    */
   public function setTemperatureCelsius($temperatureCelsius)
   {

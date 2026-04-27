@@ -21,26 +21,16 @@ class ListLogsResponse extends \Google\Collection
 {
   protected $collection_key = 'logNames';
   /**
-   * A list of log names. For example, "projects/my-project/logs/syslog" or
-   * "organizations/123/logs/cloudresourcemanager.googleapis.com%2Factivity".
-   *
    * @var string[]
    */
   public $logNames;
   /**
-   * If there might be more results than those appearing in this response, then
-   * nextPageToken is included. To get the next set of results, call this method
-   * again using the value of nextPageToken as pageToken.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * A list of log names. For example, "projects/my-project/logs/syslog" or
-   * "organizations/123/logs/cloudresourcemanager.googleapis.com%2Factivity".
-   *
-   * @param string[] $logNames
+   * @param string[]
    */
   public function setLogNames($logNames)
   {
@@ -54,11 +44,7 @@ class ListLogsResponse extends \Google\Collection
     return $this->logNames;
   }
   /**
-   * If there might be more results than those appearing in this response, then
-   * nextPageToken is included. To get the next set of results, call this method
-   * again using the value of nextPageToken as pageToken.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

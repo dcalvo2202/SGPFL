@@ -20,18 +20,12 @@ namespace Google\Service\CloudIdentity;
 class AddIdpCredentialRequest extends \Google\Model
 {
   /**
-   * PEM encoded x509 certificate containing the public key for verifying IdP
-   * signatures.
-   *
    * @var string
    */
   public $pemData;
 
   /**
-   * PEM encoded x509 certificate containing the public key for verifying IdP
-   * signatures.
-   *
-   * @param string $pemData
+   * @param string
    */
   public function setPemData($pemData)
   {

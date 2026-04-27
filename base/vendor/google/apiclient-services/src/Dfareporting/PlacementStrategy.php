@@ -20,39 +20,24 @@ namespace Google\Service\Dfareporting;
 class PlacementStrategy extends \Google\Model
 {
   /**
-   * Account ID of this placement strategy.This is a read-only field that can be
-   * left blank.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * ID of this placement strategy. This is a read-only, auto-generated field.
-   *
    * @var string
    */
   public $id;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#placementStrategy".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Name of this placement strategy. This is a required field. It must be less
-   * than 256 characters long and unique among placement strategies of the same
-   * account.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Account ID of this placement strategy.This is a read-only field that can be
-   * left blank.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -66,9 +51,7 @@ class PlacementStrategy extends \Google\Model
     return $this->accountId;
   }
   /**
-   * ID of this placement strategy. This is a read-only, auto-generated field.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -82,10 +65,7 @@ class PlacementStrategy extends \Google\Model
     return $this->id;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#placementStrategy".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -99,11 +79,7 @@ class PlacementStrategy extends \Google\Model
     return $this->kind;
   }
   /**
-   * Name of this placement strategy. This is a required field. It must be less
-   * than 256 characters long and unique among placement strategies of the same
-   * account.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

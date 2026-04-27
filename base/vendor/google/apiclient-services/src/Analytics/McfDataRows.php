@@ -23,17 +23,12 @@ class McfDataRows extends \Google\Collection
   protected $conversionPathValueType = McfDataRowsConversionPathValue::class;
   protected $conversionPathValueDataType = 'array';
   /**
-   * A primitive dimension value. A primitive metric value.
-   *
    * @var string
    */
   public $primitiveValue;
 
   /**
-   * A conversion path dimension value, containing a list of interactions with
-   * their attributes.
-   *
-   * @param McfDataRowsConversionPathValue[] $conversionPathValue
+   * @param McfDataRowsConversionPathValue[]
    */
   public function setConversionPathValue($conversionPathValue)
   {
@@ -47,9 +42,7 @@ class McfDataRows extends \Google\Collection
     return $this->conversionPathValue;
   }
   /**
-   * A primitive dimension value. A primitive metric value.
-   *
-   * @param string $primitiveValue
+   * @param string
    */
   public function setPrimitiveValue($primitiveValue)
   {

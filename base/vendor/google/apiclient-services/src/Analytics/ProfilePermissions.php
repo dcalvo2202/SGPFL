@@ -21,20 +21,12 @@ class ProfilePermissions extends \Google\Collection
 {
   protected $collection_key = 'effective';
   /**
-   * All the permissions that the user has for this view (profile). These
-   * include any implied permissions (e.g., EDIT implies VIEW) or inherited
-   * permissions from the parent web property.
-   *
    * @var string[]
    */
   public $effective;
 
   /**
-   * All the permissions that the user has for this view (profile). These
-   * include any implied permissions (e.g., EDIT implies VIEW) or inherited
-   * permissions from the parent web property.
-   *
-   * @param string[] $effective
+   * @param string[]
    */
   public function setEffective($effective)
   {

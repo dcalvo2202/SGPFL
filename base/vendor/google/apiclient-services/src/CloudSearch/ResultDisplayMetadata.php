@@ -23,16 +23,12 @@ class ResultDisplayMetadata extends \Google\Collection
   protected $metalinesType = ResultDisplayLine::class;
   protected $metalinesDataType = 'array';
   /**
-   * The display label for the object.
-   *
    * @var string
    */
   public $objectTypeLabel;
 
   /**
-   * The metalines content to be displayed with the result.
-   *
-   * @param ResultDisplayLine[] $metalines
+   * @param ResultDisplayLine[]
    */
   public function setMetalines($metalines)
   {
@@ -46,9 +42,7 @@ class ResultDisplayMetadata extends \Google\Collection
     return $this->metalines;
   }
   /**
-   * The display label for the object.
-   *
-   * @param string $objectTypeLabel
+   * @param string
    */
   public function setObjectTypeLabel($objectTypeLabel)
   {

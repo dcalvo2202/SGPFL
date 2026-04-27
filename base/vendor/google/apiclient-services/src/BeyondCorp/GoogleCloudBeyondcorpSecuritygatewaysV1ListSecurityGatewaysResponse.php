@@ -21,26 +21,18 @@ class GoogleCloudBeyondcorpSecuritygatewaysV1ListSecurityGatewaysResponse extend
 {
   protected $collection_key = 'unreachable';
   /**
-   * A token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $securityGatewaysType = GoogleCloudBeyondcorpSecuritygatewaysV1SecurityGateway::class;
   protected $securityGatewaysDataType = 'array';
   /**
-   * A list of locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * A token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -54,9 +46,7 @@ class GoogleCloudBeyondcorpSecuritygatewaysV1ListSecurityGatewaysResponse extend
     return $this->nextPageToken;
   }
   /**
-   * A list of BeyondCorp SecurityGateway in the project.
-   *
-   * @param GoogleCloudBeyondcorpSecuritygatewaysV1SecurityGateway[] $securityGateways
+   * @param GoogleCloudBeyondcorpSecuritygatewaysV1SecurityGateway[]
    */
   public function setSecurityGateways($securityGateways)
   {
@@ -70,9 +60,7 @@ class GoogleCloudBeyondcorpSecuritygatewaysV1ListSecurityGatewaysResponse extend
     return $this->securityGateways;
   }
   /**
-   * A list of locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

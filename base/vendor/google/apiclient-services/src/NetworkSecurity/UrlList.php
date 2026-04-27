@@ -21,42 +21,28 @@ class UrlList extends \Google\Collection
 {
   protected $collection_key = 'values';
   /**
-   * Output only. Time when the security policy was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. Free-text description of the resource.
-   *
    * @var string
    */
   public $description;
   /**
-   * Required. Name of the resource provided by the user. Name is of the form
-   * projects/{project}/locations/{location}/urlLists/{url_list} url_list should
-   * match the pattern:(^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$).
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Time when the security policy was updated.
-   *
    * @var string
    */
   public $updateTime;
   /**
-   * Required. FQDNs and URLs.
-   *
    * @var string[]
    */
   public $values;
 
   /**
-   * Output only. Time when the security policy was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -70,9 +56,7 @@ class UrlList extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Optional. Free-text description of the resource.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -86,11 +70,7 @@ class UrlList extends \Google\Collection
     return $this->description;
   }
   /**
-   * Required. Name of the resource provided by the user. Name is of the form
-   * projects/{project}/locations/{location}/urlLists/{url_list} url_list should
-   * match the pattern:(^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$).
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -104,9 +84,7 @@ class UrlList extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. Time when the security policy was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -120,9 +98,7 @@ class UrlList extends \Google\Collection
     return $this->updateTime;
   }
   /**
-   * Required. FQDNs and URLs.
-   *
-   * @param string[] $values
+   * @param string[]
    */
   public function setValues($values)
   {

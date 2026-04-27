@@ -20,22 +20,16 @@ namespace Google\Service\Bigquery;
 class BigQueryModelTraining extends \Google\Model
 {
   /**
-   * Deprecated.
-   *
    * @var int
    */
   public $currentIteration;
   /**
-   * Deprecated.
-   *
    * @var string
    */
   public $expectedTotalIterations;
 
   /**
-   * Deprecated.
-   *
-   * @param int $currentIteration
+   * @param int
    */
   public function setCurrentIteration($currentIteration)
   {
@@ -49,9 +43,7 @@ class BigQueryModelTraining extends \Google\Model
     return $this->currentIteration;
   }
   /**
-   * Deprecated.
-   *
-   * @param string $expectedTotalIterations
+   * @param string
    */
   public function setExpectedTotalIterations($expectedTotalIterations)
   {

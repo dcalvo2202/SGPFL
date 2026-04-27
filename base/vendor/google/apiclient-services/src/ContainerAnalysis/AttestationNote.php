@@ -23,9 +23,7 @@ class AttestationNote extends \Google\Model
   protected $hintDataType = '';
 
   /**
-   * Hint hints at the purpose of the attestation authority.
-   *
-   * @param Hint $hint
+   * @param Hint
    */
   public function setHint(Hint $hint)
   {

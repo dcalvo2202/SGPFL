@@ -21,24 +21,12 @@ class BatchApprovePublisherConnectionsRequest extends \Google\Collection
 {
   protected $collection_key = 'names';
   /**
-   * Required. The names of the publishers with which connections will be
-   * approved. In the pattern
-   * `bidders/{bidder}/publisherConnections/{publisher}` where `{bidder}` is the
-   * account ID of the bidder, and `{publisher}` is the ads.txt/app-ads.txt
-   * publisher ID.
-   *
    * @var string[]
    */
   public $names;
 
   /**
-   * Required. The names of the publishers with which connections will be
-   * approved. In the pattern
-   * `bidders/{bidder}/publisherConnections/{publisher}` where `{bidder}` is the
-   * account ID of the bidder, and `{publisher}` is the ads.txt/app-ads.txt
-   * publisher ID.
-   *
-   * @param string[] $names
+   * @param string[]
    */
   public function setNames($names)
   {

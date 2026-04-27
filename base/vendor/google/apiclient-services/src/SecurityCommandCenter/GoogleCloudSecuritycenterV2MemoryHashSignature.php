@@ -21,8 +21,6 @@ class GoogleCloudSecuritycenterV2MemoryHashSignature extends \Google\Collection
 {
   protected $collection_key = 'detections';
   /**
-   * The binary family.
-   *
    * @var string
    */
   public $binaryFamily;
@@ -30,9 +28,7 @@ class GoogleCloudSecuritycenterV2MemoryHashSignature extends \Google\Collection
   protected $detectionsDataType = 'array';
 
   /**
-   * The binary family.
-   *
-   * @param string $binaryFamily
+   * @param string
    */
   public function setBinaryFamily($binaryFamily)
   {
@@ -46,9 +42,7 @@ class GoogleCloudSecuritycenterV2MemoryHashSignature extends \Google\Collection
     return $this->binaryFamily;
   }
   /**
-   * The list of memory hash detections contributing to the binary family match.
-   *
-   * @param GoogleCloudSecuritycenterV2Detection[] $detections
+   * @param GoogleCloudSecuritycenterV2Detection[]
    */
   public function setDetections($detections)
   {

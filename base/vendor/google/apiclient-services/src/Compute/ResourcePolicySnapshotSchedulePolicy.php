@@ -27,9 +27,7 @@ class ResourcePolicySnapshotSchedulePolicy extends \Google\Model
   protected $snapshotPropertiesDataType = '';
 
   /**
-   * Retention policy applied to snapshots created by this resource policy.
-   *
-   * @param ResourcePolicySnapshotSchedulePolicyRetentionPolicy $retentionPolicy
+   * @param ResourcePolicySnapshotSchedulePolicyRetentionPolicy
    */
   public function setRetentionPolicy(ResourcePolicySnapshotSchedulePolicyRetentionPolicy $retentionPolicy)
   {
@@ -43,11 +41,7 @@ class ResourcePolicySnapshotSchedulePolicy extends \Google\Model
     return $this->retentionPolicy;
   }
   /**
-   * A Vm Maintenance Policy specifies what kind of infrastructure maintenance
-   * we are allowed to perform on this VM and when. Schedule that is applied to
-   * disks covered by this policy.
-   *
-   * @param ResourcePolicySnapshotSchedulePolicySchedule $schedule
+   * @param ResourcePolicySnapshotSchedulePolicySchedule
    */
   public function setSchedule(ResourcePolicySnapshotSchedulePolicySchedule $schedule)
   {
@@ -61,10 +55,7 @@ class ResourcePolicySnapshotSchedulePolicy extends \Google\Model
     return $this->schedule;
   }
   /**
-   * Properties with which snapshots are created such as labels, encryption
-   * keys.
-   *
-   * @param ResourcePolicySnapshotSchedulePolicySnapshotProperties $snapshotProperties
+   * @param ResourcePolicySnapshotSchedulePolicySnapshotProperties
    */
   public function setSnapshotProperties(ResourcePolicySnapshotSchedulePolicySnapshotProperties $snapshotProperties)
   {

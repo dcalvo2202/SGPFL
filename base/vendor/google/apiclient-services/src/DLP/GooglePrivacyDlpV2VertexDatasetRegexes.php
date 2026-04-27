@@ -24,11 +24,7 @@ class GooglePrivacyDlpV2VertexDatasetRegexes extends \Google\Collection
   protected $patternsDataType = 'array';
 
   /**
-   * Required. The group of regular expression patterns to match against one or
-   * more datasets. Maximum of 100 entries. The sum of the lengths of all
-   * regular expressions can't exceed 10 KiB.
-   *
-   * @param GooglePrivacyDlpV2VertexDatasetRegex[] $patterns
+   * @param GooglePrivacyDlpV2VertexDatasetRegex[]
    */
   public function setPatterns($patterns)
   {

@@ -21,11 +21,6 @@ class GkeClusterConfig extends \Google\Collection
 {
   protected $collection_key = 'nodePoolTarget';
   /**
-   * Optional. A target GKE cluster to deploy to. It must be in the same project
-   * and region as the Dataproc cluster (the GKE cluster can be zonal or
-   * regional). Format:
-   * 'projects/{project}/locations/{location}/clusters/{cluster_id}'
-   *
    * @var string
    */
   public $gkeClusterTarget;
@@ -35,12 +30,7 @@ class GkeClusterConfig extends \Google\Collection
   protected $nodePoolTargetDataType = 'array';
 
   /**
-   * Optional. A target GKE cluster to deploy to. It must be in the same project
-   * and region as the Dataproc cluster (the GKE cluster can be zonal or
-   * regional). Format:
-   * 'projects/{project}/locations/{location}/clusters/{cluster_id}'
-   *
-   * @param string $gkeClusterTarget
+   * @param string
    */
   public function setGkeClusterTarget($gkeClusterTarget)
   {
@@ -54,18 +44,13 @@ class GkeClusterConfig extends \Google\Collection
     return $this->gkeClusterTarget;
   }
   /**
-   * Optional. Deprecated. Use gkeClusterTarget. Used only for the deprecated
-   * beta. A target for the deployment.
-   *
-   * @deprecated
-   * @param NamespacedGkeDeploymentTarget $namespacedGkeDeploymentTarget
+   * @param NamespacedGkeDeploymentTarget
    */
   public function setNamespacedGkeDeploymentTarget(NamespacedGkeDeploymentTarget $namespacedGkeDeploymentTarget)
   {
     $this->namespacedGkeDeploymentTarget = $namespacedGkeDeploymentTarget;
   }
   /**
-   * @deprecated
    * @return NamespacedGkeDeploymentTarget
    */
   public function getNamespacedGkeDeploymentTarget()
@@ -73,13 +58,7 @@ class GkeClusterConfig extends \Google\Collection
     return $this->namespacedGkeDeploymentTarget;
   }
   /**
-   * Optional. GKE node pools where workloads will be scheduled. At least one
-   * node pool must be assigned the DEFAULT GkeNodePoolTarget.Role. If a
-   * GkeNodePoolTarget is not specified, Dataproc constructs a DEFAULT
-   * GkeNodePoolTarget. Each role can be given to only one GkeNodePoolTarget.
-   * All node pools must have the same location settings.
-   *
-   * @param GkeNodePoolTarget[] $nodePoolTarget
+   * @param GkeNodePoolTarget[]
    */
   public function setNodePoolTarget($nodePoolTarget)
   {

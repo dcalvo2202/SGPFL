@@ -19,32 +19,16 @@ namespace Google\Service\AdExchangeBuyerII;
 
 class DayPartTargeting extends \Google\Collection
 {
-  /**
-   * A placeholder for an undefined time zone source.
-   */
-  public const TIME_ZONE_TYPE_TIME_ZONE_SOURCE_UNSPECIFIED = 'TIME_ZONE_SOURCE_UNSPECIFIED';
-  /**
-   * Use publisher's time zone setting.
-   */
-  public const TIME_ZONE_TYPE_PUBLISHER = 'PUBLISHER';
-  /**
-   * Use the user's time zone setting.
-   */
-  public const TIME_ZONE_TYPE_USER = 'USER';
   protected $collection_key = 'dayParts';
   protected $dayPartsType = DayPart::class;
   protected $dayPartsDataType = 'array';
   /**
-   * The timezone to use for interpreting the day part targeting.
-   *
    * @var string
    */
   public $timeZoneType;
 
   /**
-   * A list of day part targeting criterion.
-   *
-   * @param DayPart[] $dayParts
+   * @param DayPart[]
    */
   public function setDayParts($dayParts)
   {
@@ -58,18 +42,14 @@ class DayPartTargeting extends \Google\Collection
     return $this->dayParts;
   }
   /**
-   * The timezone to use for interpreting the day part targeting.
-   *
-   * Accepted values: TIME_ZONE_SOURCE_UNSPECIFIED, PUBLISHER, USER
-   *
-   * @param self::TIME_ZONE_TYPE_* $timeZoneType
+   * @param string
    */
   public function setTimeZoneType($timeZoneType)
   {
     $this->timeZoneType = $timeZoneType;
   }
   /**
-   * @return self::TIME_ZONE_TYPE_*
+   * @return string
    */
   public function getTimeZoneType()
   {

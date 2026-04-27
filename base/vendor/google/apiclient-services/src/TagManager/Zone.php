@@ -21,8 +21,6 @@ class Zone extends \Google\Collection
 {
   protected $collection_key = 'childContainer';
   /**
-   * GTM Account ID.
-   *
    * @var string
    */
   public $accountId;
@@ -31,61 +29,42 @@ class Zone extends \Google\Collection
   protected $childContainerType = ZoneChildContainer::class;
   protected $childContainerDataType = 'array';
   /**
-   * GTM Container ID.
-   *
    * @var string
    */
   public $containerId;
   /**
-   * The fingerprint of the GTM Zone as computed at storage time. This value is
-   * recomputed whenever the zone is modified.
-   *
    * @var string
    */
   public $fingerprint;
   /**
-   * Zone display name.
-   *
    * @var string
    */
   public $name;
   /**
-   * User notes on how to apply this zone in the container.
-   *
    * @var string
    */
   public $notes;
   /**
-   * GTM Zone's API relative path.
-   *
    * @var string
    */
   public $path;
   /**
-   * Auto generated link to the tag manager UI
-   *
    * @var string
    */
   public $tagManagerUrl;
   protected $typeRestrictionType = ZoneTypeRestriction::class;
   protected $typeRestrictionDataType = '';
   /**
-   * GTM Workspace ID.
-   *
    * @var string
    */
   public $workspaceId;
   /**
-   * The Zone ID uniquely identifies the GTM Zone.
-   *
    * @var string
    */
   public $zoneId;
 
   /**
-   * GTM Account ID.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -99,9 +78,7 @@ class Zone extends \Google\Collection
     return $this->accountId;
   }
   /**
-   * This Zone's boundary.
-   *
-   * @param ZoneBoundary $boundary
+   * @param ZoneBoundary
    */
   public function setBoundary(ZoneBoundary $boundary)
   {
@@ -115,9 +92,7 @@ class Zone extends \Google\Collection
     return $this->boundary;
   }
   /**
-   * Containers that are children of this Zone.
-   *
-   * @param ZoneChildContainer[] $childContainer
+   * @param ZoneChildContainer[]
    */
   public function setChildContainer($childContainer)
   {
@@ -131,9 +106,7 @@ class Zone extends \Google\Collection
     return $this->childContainer;
   }
   /**
-   * GTM Container ID.
-   *
-   * @param string $containerId
+   * @param string
    */
   public function setContainerId($containerId)
   {
@@ -147,10 +120,7 @@ class Zone extends \Google\Collection
     return $this->containerId;
   }
   /**
-   * The fingerprint of the GTM Zone as computed at storage time. This value is
-   * recomputed whenever the zone is modified.
-   *
-   * @param string $fingerprint
+   * @param string
    */
   public function setFingerprint($fingerprint)
   {
@@ -164,9 +134,7 @@ class Zone extends \Google\Collection
     return $this->fingerprint;
   }
   /**
-   * Zone display name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -180,9 +148,7 @@ class Zone extends \Google\Collection
     return $this->name;
   }
   /**
-   * User notes on how to apply this zone in the container.
-   *
-   * @param string $notes
+   * @param string
    */
   public function setNotes($notes)
   {
@@ -196,9 +162,7 @@ class Zone extends \Google\Collection
     return $this->notes;
   }
   /**
-   * GTM Zone's API relative path.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {
@@ -212,9 +176,7 @@ class Zone extends \Google\Collection
     return $this->path;
   }
   /**
-   * Auto generated link to the tag manager UI
-   *
-   * @param string $tagManagerUrl
+   * @param string
    */
   public function setTagManagerUrl($tagManagerUrl)
   {
@@ -228,9 +190,7 @@ class Zone extends \Google\Collection
     return $this->tagManagerUrl;
   }
   /**
-   * This Zone's type restrictions.
-   *
-   * @param ZoneTypeRestriction $typeRestriction
+   * @param ZoneTypeRestriction
    */
   public function setTypeRestriction(ZoneTypeRestriction $typeRestriction)
   {
@@ -244,9 +204,7 @@ class Zone extends \Google\Collection
     return $this->typeRestriction;
   }
   /**
-   * GTM Workspace ID.
-   *
-   * @param string $workspaceId
+   * @param string
    */
   public function setWorkspaceId($workspaceId)
   {
@@ -260,9 +218,7 @@ class Zone extends \Google\Collection
     return $this->workspaceId;
   }
   /**
-   * The Zone ID uniquely identifies the GTM Zone.
-   *
-   * @param string $zoneId
+   * @param string
    */
   public function setZoneId($zoneId)
   {

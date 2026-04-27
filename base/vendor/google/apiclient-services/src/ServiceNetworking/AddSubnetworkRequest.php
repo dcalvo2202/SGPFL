@@ -21,192 +21,86 @@ class AddSubnetworkRequest extends \Google\Collection
 {
   protected $collection_key = 'subnetworkUsers';
   /**
-   * Optional. Defines the allowSubnetCidrRoutesOverlap field of the subnet,
-   * e.g. Available in alpha and beta according to [Compute API documentation](h
-   * ttps://cloud.google.com/compute/docs/reference/rest/beta/subnetworks/insert
-   * )
-   *
    * @var bool
    */
   public $allowSubnetCidrRoutesOverlap;
   /**
-   * Optional. The IAM permission check determines whether the consumer project
-   * has 'servicenetworking.services.use' permission or not.
-   *
    * @var bool
    */
   public $checkServiceNetworkingUsePermission;
   /**
-   * Optional. Specifies a custom time bucket for GCE subnetwork request
-   * idempotency. If two equivalent concurrent requests are made, GCE will know
-   * to ignore the request if it has already been completed or is in progress.
-   * Only requests with matching compute_idempotency_window have guaranteed
-   * idempotency. Changing this time window between requests results in
-   * undefined behavior. Zero (or empty) value with
-   * custom_compute_idempotency_window=true specifies no idempotency (i.e. no
-   * request ID is provided to GCE). Maximum value of 14 days (enforced by GCE
-   * limit).
-   *
    * @var string
    */
   public $computeIdempotencyWindow;
   /**
-   * Required. A resource that represents the service consumer, such as
-   * `projects/123456`. The project number can be different from the value in
-   * the consumer network parameter. For example, the network might be part of a
-   * Shared VPC network. In those cases, Service Networking validates that this
-   * resource belongs to that Shared VPC.
-   *
    * @var string
    */
   public $consumer;
   /**
-   * Required. The name of the service consumer's VPC network. The network must
-   * have an existing private connection that was provisioned through the
-   * connections.create method. The name must be in the following format:
-   * `projects/{project}/global/networks/{network}`, where {project} is a
-   * project number, such as `12345`. {network} is the name of a VPC network in
-   * the project.
-   *
    * @var string
    */
   public $consumerNetwork;
   /**
-   * Optional. Description of the subnet.
-   *
    * @var string
    */
   public $description;
   /**
-   * Optional. The url of an Internal Range. Eg:
-   * `projects//locations/global/internalRanges/`. If specified, it means that
-   * the subnetwork cidr will be created using the combination of
-   * requested_address/ip_prefix_length. Note that the subnet cidr has to be
-   * within the cidr range of this Internal Range.
-   *
    * @var string
    */
   public $internalRange;
   /**
-   * Required. The prefix length of the subnet's IP address range. Use CIDR
-   * range notation, such as `29` to provision a subnet with an `x.x.x.x/29`
-   * CIDR range. The IP address range is drawn from a pool of available ranges
-   * in the service consumer's allocated range. GCE disallows subnets with
-   * prefix_length > 29
-   *
    * @var int
    */
   public $ipPrefixLength;
   /**
-   * Optional. Enable outside allocation using public IP addresses. Any public
-   * IP range may be specified. If this field is provided, we will not use
-   * customer reserved ranges for this primary IP range.
-   *
    * @var string
    */
   public $outsideAllocationPublicIpRange;
   /**
-   * Optional. The private IPv6 google access type for the VMs in this subnet.
-   * For information about the access types that can be set using this field,
-   * see [subnetwork](https://cloud.google.com/compute/docs/reference/rest/v1/su
-   * bnetworks) in the Compute API documentation.
-   *
    * @var string
    */
   public $privateIpv6GoogleAccess;
   /**
-   * Optional. Defines the purpose field of the subnet, e.g.
-   * 'PRIVATE_SERVICE_CONNECT'. For information about the purposes that can be
-   * set using this field, see [subnetwork](https://cloud.google.com/compute/doc
-   * s/reference/rest/v1/subnetworks) in the Compute API documentation.
-   *
    * @var string
    */
   public $purpose;
   /**
-   * Required. The name of a
-   * [region](https://cloud.google.com/compute/docs/regions-zones) for the
-   * subnet, such `europe-west1`.
-   *
    * @var string
    */
   public $region;
   /**
-   * Optional. The starting address of a range. The address must be a valid IPv4
-   * address in the x.x.x.x format. This value combined with the IP prefix range
-   * is the CIDR range for the subnet. The range must be within the allocated
-   * range that is assigned to the private connection. If the CIDR range isn't
-   * available, the call fails.
-   *
    * @var string
    */
   public $requestedAddress;
   /**
-   * Optional. The name of one or more allocated IP address ranges associated
-   * with this private service access connection. If no range names are provided
-   * all ranges associated with this connection will be considered. If a CIDR
-   * range with the specified IP prefix length is not available within these
-   * ranges, the call fails.
-   *
    * @var string[]
    */
   public $requestedRanges;
   /**
-   * Optional. Defines the role field of the subnet, e.g. 'ACTIVE'. For
-   * information about the roles that can be set using this field, see [subnetwo
-   * rk](https://cloud.google.com/compute/docs/reference/rest/v1/subnetworks) in
-   * the Compute API documentation.
-   *
    * @var string
    */
   public $role;
   protected $secondaryIpRangeSpecsType = SecondaryIpRangeSpec::class;
   protected $secondaryIpRangeSpecsDataType = 'array';
   /**
-   * Optional. Skips validating if the requested_address is in use by SN VPC’s
-   * peering group. Compute Engine will still perform this check and fail the
-   * request if the requested_address is in use. Note that Compute Engine does
-   * not check for the existence of dynamic routes when performing this check.
-   * Caller of this API should make sure that there are no dynamic routes
-   * overlapping with the requested_address/prefix_length IP address range
-   * otherwise the created subnet could cause misrouting.
-   *
    * @var bool
    */
   public $skipRequestedAddressValidation;
   /**
-   * Required. A name for the new subnet. For information about the naming
-   * requirements, see [subnetwork](https://cloud.google.com/compute/docs/refere
-   * nce/rest/v1/subnetworks) in the Compute API documentation.
-   *
    * @var string
    */
   public $subnetwork;
   /**
-   * A list of members that are granted the
-   * `roles/servicenetworking.subnetworkAdmin` role on the subnet.
-   *
    * @var string[]
    */
   public $subnetworkUsers;
   /**
-   * Optional. Specifies if Service Networking should use a custom time bucket
-   * for GCE idempotency. If false, Service Networking uses a 300 second (5
-   * minute) GCE idempotency window. If true, Service Networking uses a custom
-   * idempotency window provided by the user in field
-   * compute_idempotency_window.
-   *
    * @var bool
    */
   public $useCustomComputeIdempotencyWindow;
 
   /**
-   * Optional. Defines the allowSubnetCidrRoutesOverlap field of the subnet,
-   * e.g. Available in alpha and beta according to [Compute API documentation](h
-   * ttps://cloud.google.com/compute/docs/reference/rest/beta/subnetworks/insert
-   * )
-   *
-   * @param bool $allowSubnetCidrRoutesOverlap
+   * @param bool
    */
   public function setAllowSubnetCidrRoutesOverlap($allowSubnetCidrRoutesOverlap)
   {
@@ -220,10 +114,7 @@ class AddSubnetworkRequest extends \Google\Collection
     return $this->allowSubnetCidrRoutesOverlap;
   }
   /**
-   * Optional. The IAM permission check determines whether the consumer project
-   * has 'servicenetworking.services.use' permission or not.
-   *
-   * @param bool $checkServiceNetworkingUsePermission
+   * @param bool
    */
   public function setCheckServiceNetworkingUsePermission($checkServiceNetworkingUsePermission)
   {
@@ -237,17 +128,7 @@ class AddSubnetworkRequest extends \Google\Collection
     return $this->checkServiceNetworkingUsePermission;
   }
   /**
-   * Optional. Specifies a custom time bucket for GCE subnetwork request
-   * idempotency. If two equivalent concurrent requests are made, GCE will know
-   * to ignore the request if it has already been completed or is in progress.
-   * Only requests with matching compute_idempotency_window have guaranteed
-   * idempotency. Changing this time window between requests results in
-   * undefined behavior. Zero (or empty) value with
-   * custom_compute_idempotency_window=true specifies no idempotency (i.e. no
-   * request ID is provided to GCE). Maximum value of 14 days (enforced by GCE
-   * limit).
-   *
-   * @param string $computeIdempotencyWindow
+   * @param string
    */
   public function setComputeIdempotencyWindow($computeIdempotencyWindow)
   {
@@ -261,13 +142,7 @@ class AddSubnetworkRequest extends \Google\Collection
     return $this->computeIdempotencyWindow;
   }
   /**
-   * Required. A resource that represents the service consumer, such as
-   * `projects/123456`. The project number can be different from the value in
-   * the consumer network parameter. For example, the network might be part of a
-   * Shared VPC network. In those cases, Service Networking validates that this
-   * resource belongs to that Shared VPC.
-   *
-   * @param string $consumer
+   * @param string
    */
   public function setConsumer($consumer)
   {
@@ -281,14 +156,7 @@ class AddSubnetworkRequest extends \Google\Collection
     return $this->consumer;
   }
   /**
-   * Required. The name of the service consumer's VPC network. The network must
-   * have an existing private connection that was provisioned through the
-   * connections.create method. The name must be in the following format:
-   * `projects/{project}/global/networks/{network}`, where {project} is a
-   * project number, such as `12345`. {network} is the name of a VPC network in
-   * the project.
-   *
-   * @param string $consumerNetwork
+   * @param string
    */
   public function setConsumerNetwork($consumerNetwork)
   {
@@ -302,9 +170,7 @@ class AddSubnetworkRequest extends \Google\Collection
     return $this->consumerNetwork;
   }
   /**
-   * Optional. Description of the subnet.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -318,13 +184,7 @@ class AddSubnetworkRequest extends \Google\Collection
     return $this->description;
   }
   /**
-   * Optional. The url of an Internal Range. Eg:
-   * `projects//locations/global/internalRanges/`. If specified, it means that
-   * the subnetwork cidr will be created using the combination of
-   * requested_address/ip_prefix_length. Note that the subnet cidr has to be
-   * within the cidr range of this Internal Range.
-   *
-   * @param string $internalRange
+   * @param string
    */
   public function setInternalRange($internalRange)
   {
@@ -338,13 +198,7 @@ class AddSubnetworkRequest extends \Google\Collection
     return $this->internalRange;
   }
   /**
-   * Required. The prefix length of the subnet's IP address range. Use CIDR
-   * range notation, such as `29` to provision a subnet with an `x.x.x.x/29`
-   * CIDR range. The IP address range is drawn from a pool of available ranges
-   * in the service consumer's allocated range. GCE disallows subnets with
-   * prefix_length > 29
-   *
-   * @param int $ipPrefixLength
+   * @param int
    */
   public function setIpPrefixLength($ipPrefixLength)
   {
@@ -358,11 +212,7 @@ class AddSubnetworkRequest extends \Google\Collection
     return $this->ipPrefixLength;
   }
   /**
-   * Optional. Enable outside allocation using public IP addresses. Any public
-   * IP range may be specified. If this field is provided, we will not use
-   * customer reserved ranges for this primary IP range.
-   *
-   * @param string $outsideAllocationPublicIpRange
+   * @param string
    */
   public function setOutsideAllocationPublicIpRange($outsideAllocationPublicIpRange)
   {
@@ -376,12 +226,7 @@ class AddSubnetworkRequest extends \Google\Collection
     return $this->outsideAllocationPublicIpRange;
   }
   /**
-   * Optional. The private IPv6 google access type for the VMs in this subnet.
-   * For information about the access types that can be set using this field,
-   * see [subnetwork](https://cloud.google.com/compute/docs/reference/rest/v1/su
-   * bnetworks) in the Compute API documentation.
-   *
-   * @param string $privateIpv6GoogleAccess
+   * @param string
    */
   public function setPrivateIpv6GoogleAccess($privateIpv6GoogleAccess)
   {
@@ -395,12 +240,7 @@ class AddSubnetworkRequest extends \Google\Collection
     return $this->privateIpv6GoogleAccess;
   }
   /**
-   * Optional. Defines the purpose field of the subnet, e.g.
-   * 'PRIVATE_SERVICE_CONNECT'. For information about the purposes that can be
-   * set using this field, see [subnetwork](https://cloud.google.com/compute/doc
-   * s/reference/rest/v1/subnetworks) in the Compute API documentation.
-   *
-   * @param string $purpose
+   * @param string
    */
   public function setPurpose($purpose)
   {
@@ -414,11 +254,7 @@ class AddSubnetworkRequest extends \Google\Collection
     return $this->purpose;
   }
   /**
-   * Required. The name of a
-   * [region](https://cloud.google.com/compute/docs/regions-zones) for the
-   * subnet, such `europe-west1`.
-   *
-   * @param string $region
+   * @param string
    */
   public function setRegion($region)
   {
@@ -432,13 +268,7 @@ class AddSubnetworkRequest extends \Google\Collection
     return $this->region;
   }
   /**
-   * Optional. The starting address of a range. The address must be a valid IPv4
-   * address in the x.x.x.x format. This value combined with the IP prefix range
-   * is the CIDR range for the subnet. The range must be within the allocated
-   * range that is assigned to the private connection. If the CIDR range isn't
-   * available, the call fails.
-   *
-   * @param string $requestedAddress
+   * @param string
    */
   public function setRequestedAddress($requestedAddress)
   {
@@ -452,13 +282,7 @@ class AddSubnetworkRequest extends \Google\Collection
     return $this->requestedAddress;
   }
   /**
-   * Optional. The name of one or more allocated IP address ranges associated
-   * with this private service access connection. If no range names are provided
-   * all ranges associated with this connection will be considered. If a CIDR
-   * range with the specified IP prefix length is not available within these
-   * ranges, the call fails.
-   *
-   * @param string[] $requestedRanges
+   * @param string[]
    */
   public function setRequestedRanges($requestedRanges)
   {
@@ -472,12 +296,7 @@ class AddSubnetworkRequest extends \Google\Collection
     return $this->requestedRanges;
   }
   /**
-   * Optional. Defines the role field of the subnet, e.g. 'ACTIVE'. For
-   * information about the roles that can be set using this field, see [subnetwo
-   * rk](https://cloud.google.com/compute/docs/reference/rest/v1/subnetworks) in
-   * the Compute API documentation.
-   *
-   * @param string $role
+   * @param string
    */
   public function setRole($role)
   {
@@ -491,10 +310,7 @@ class AddSubnetworkRequest extends \Google\Collection
     return $this->role;
   }
   /**
-   * Optional. A list of secondary IP ranges to be created within the new
-   * subnetwork.
-   *
-   * @param SecondaryIpRangeSpec[] $secondaryIpRangeSpecs
+   * @param SecondaryIpRangeSpec[]
    */
   public function setSecondaryIpRangeSpecs($secondaryIpRangeSpecs)
   {
@@ -508,15 +324,7 @@ class AddSubnetworkRequest extends \Google\Collection
     return $this->secondaryIpRangeSpecs;
   }
   /**
-   * Optional. Skips validating if the requested_address is in use by SN VPC’s
-   * peering group. Compute Engine will still perform this check and fail the
-   * request if the requested_address is in use. Note that Compute Engine does
-   * not check for the existence of dynamic routes when performing this check.
-   * Caller of this API should make sure that there are no dynamic routes
-   * overlapping with the requested_address/prefix_length IP address range
-   * otherwise the created subnet could cause misrouting.
-   *
-   * @param bool $skipRequestedAddressValidation
+   * @param bool
    */
   public function setSkipRequestedAddressValidation($skipRequestedAddressValidation)
   {
@@ -530,11 +338,7 @@ class AddSubnetworkRequest extends \Google\Collection
     return $this->skipRequestedAddressValidation;
   }
   /**
-   * Required. A name for the new subnet. For information about the naming
-   * requirements, see [subnetwork](https://cloud.google.com/compute/docs/refere
-   * nce/rest/v1/subnetworks) in the Compute API documentation.
-   *
-   * @param string $subnetwork
+   * @param string
    */
   public function setSubnetwork($subnetwork)
   {
@@ -548,10 +352,7 @@ class AddSubnetworkRequest extends \Google\Collection
     return $this->subnetwork;
   }
   /**
-   * A list of members that are granted the
-   * `roles/servicenetworking.subnetworkAdmin` role on the subnet.
-   *
-   * @param string[] $subnetworkUsers
+   * @param string[]
    */
   public function setSubnetworkUsers($subnetworkUsers)
   {
@@ -565,13 +366,7 @@ class AddSubnetworkRequest extends \Google\Collection
     return $this->subnetworkUsers;
   }
   /**
-   * Optional. Specifies if Service Networking should use a custom time bucket
-   * for GCE idempotency. If false, Service Networking uses a 300 second (5
-   * minute) GCE idempotency window. If true, Service Networking uses a custom
-   * idempotency window provided by the user in field
-   * compute_idempotency_window.
-   *
-   * @param bool $useCustomComputeIdempotencyWindow
+   * @param bool
    */
   public function setUseCustomComputeIdempotencyWindow($useCustomComputeIdempotencyWindow)
   {

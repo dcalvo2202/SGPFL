@@ -21,37 +21,24 @@ class NavigationInfo extends \Google\Collection
 {
   protected $collection_key = 'children';
   /**
-   * Step entries that can be reached by "stepping into" e.g. a subworkflow
-   * call.
-   *
    * @var string[]
    */
   public $children;
   /**
-   * The index of the next step in the current workflow, if any.
-   *
    * @var string
    */
   public $next;
   /**
-   * The step entry, if any, that can be reached by "stepping out" of the
-   * current workflow being executed.
-   *
    * @var string
    */
   public $parent;
   /**
-   * The index of the previous step in the current workflow, if any.
-   *
    * @var string
    */
   public $previous;
 
   /**
-   * Step entries that can be reached by "stepping into" e.g. a subworkflow
-   * call.
-   *
-   * @param string[] $children
+   * @param string[]
    */
   public function setChildren($children)
   {
@@ -65,9 +52,7 @@ class NavigationInfo extends \Google\Collection
     return $this->children;
   }
   /**
-   * The index of the next step in the current workflow, if any.
-   *
-   * @param string $next
+   * @param string
    */
   public function setNext($next)
   {
@@ -81,10 +66,7 @@ class NavigationInfo extends \Google\Collection
     return $this->next;
   }
   /**
-   * The step entry, if any, that can be reached by "stepping out" of the
-   * current workflow being executed.
-   *
-   * @param string $parent
+   * @param string
    */
   public function setParent($parent)
   {
@@ -98,9 +80,7 @@ class NavigationInfo extends \Google\Collection
     return $this->parent;
   }
   /**
-   * The index of the previous step in the current workflow, if any.
-   *
-   * @param string $previous
+   * @param string
    */
   public function setPrevious($previous)
   {

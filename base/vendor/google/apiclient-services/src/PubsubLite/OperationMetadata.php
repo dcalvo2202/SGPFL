@@ -20,37 +20,24 @@ namespace Google\Service\PubsubLite;
 class OperationMetadata extends \Google\Model
 {
   /**
-   * The time the operation was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * The time the operation finished running. Not set if the operation has not
-   * completed.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * Resource path for the target of the operation. For example, targets of
-   * seeks are subscription resources, structured like: projects/{project_number
-   * }/locations/{location}/subscriptions/{subscription_id}
-   *
    * @var string
    */
   public $target;
   /**
-   * Name of the verb executed by the operation.
-   *
    * @var string
    */
   public $verb;
 
   /**
-   * The time the operation was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -64,10 +51,7 @@ class OperationMetadata extends \Google\Model
     return $this->createTime;
   }
   /**
-   * The time the operation finished running. Not set if the operation has not
-   * completed.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -81,11 +65,7 @@ class OperationMetadata extends \Google\Model
     return $this->endTime;
   }
   /**
-   * Resource path for the target of the operation. For example, targets of
-   * seeks are subscription resources, structured like: projects/{project_number
-   * }/locations/{location}/subscriptions/{subscription_id}
-   *
-   * @param string $target
+   * @param string
    */
   public function setTarget($target)
   {
@@ -99,9 +79,7 @@ class OperationMetadata extends \Google\Model
     return $this->target;
   }
   /**
-   * Name of the verb executed by the operation.
-   *
-   * @param string $verb
+   * @param string
    */
   public function setVerb($verb)
   {

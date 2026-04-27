@@ -25,9 +25,7 @@ class CloudAiLargeModelsVisionMedia extends \Google\Model
   protected $videoDataType = '';
 
   /**
-   * Image.
-   *
-   * @param CloudAiLargeModelsVisionImage $image
+   * @param CloudAiLargeModelsVisionImage
    */
   public function setImage(CloudAiLargeModelsVisionImage $image)
   {
@@ -41,9 +39,7 @@ class CloudAiLargeModelsVisionMedia extends \Google\Model
     return $this->image;
   }
   /**
-   * Video
-   *
-   * @param CloudAiLargeModelsVisionVideo $video
+   * @param CloudAiLargeModelsVisionVideo
    */
   public function setVideo(CloudAiLargeModelsVisionVideo $video)
   {

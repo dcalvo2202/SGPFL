@@ -26,12 +26,7 @@ class GoogleCloudAiplatformV1SlackSourceSlackChannels extends \Google\Collection
   protected $channelsDataType = 'array';
 
   /**
-   * Required. The SecretManager secret version resource name (e.g.
-   * projects/{project}/secrets/{secret}/versions/{version}) storing the Slack
-   * channel access token that has access to the slack channel IDs. See:
-   * https://api.slack.com/tutorials/tracks/getting-a-token.
-   *
-   * @param GoogleCloudAiplatformV1ApiAuthApiKeyConfig $apiKeyConfig
+   * @param GoogleCloudAiplatformV1ApiAuthApiKeyConfig
    */
   public function setApiKeyConfig(GoogleCloudAiplatformV1ApiAuthApiKeyConfig $apiKeyConfig)
   {
@@ -45,9 +40,7 @@ class GoogleCloudAiplatformV1SlackSourceSlackChannels extends \Google\Collection
     return $this->apiKeyConfig;
   }
   /**
-   * Required. The Slack channel IDs.
-   *
-   * @param GoogleCloudAiplatformV1SlackSourceSlackChannelsSlackChannel[] $channels
+   * @param GoogleCloudAiplatformV1SlackSourceSlackChannelsSlackChannel[]
    */
   public function setChannels($channels)
   {

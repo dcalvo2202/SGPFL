@@ -20,61 +20,42 @@ namespace Google\Service\Books;
 class DictionaryAnnotationdata extends \Google\Model
 {
   /**
-   * The type of annotation this data is for.
-   *
    * @var string
    */
   public $annotationType;
   protected $dataType = Dictlayerdata::class;
   protected $dataDataType = '';
   /**
-   * Base64 encoded data for this annotation data.
-   *
    * @var string
    */
   public $encodedData;
   /**
-   * Unique id for this annotation data.
-   *
    * @var string
    */
   public $id;
   /**
-   * Resource Type
-   *
    * @var string
    */
   public $kind;
   /**
-   * The Layer id for this data. *
-   *
    * @var string
    */
   public $layerId;
   /**
-   * URL for this resource. *
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * Timestamp for the last time this data was updated. (RFC 3339 UTC date-time
-   * format).
-   *
    * @var string
    */
   public $updated;
   /**
-   * The volume id for this data. *
-   *
    * @var string
    */
   public $volumeId;
 
   /**
-   * The type of annotation this data is for.
-   *
-   * @param string $annotationType
+   * @param string
    */
   public function setAnnotationType($annotationType)
   {
@@ -88,10 +69,7 @@ class DictionaryAnnotationdata extends \Google\Model
     return $this->annotationType;
   }
   /**
-   * JSON encoded data for this dictionary annotation data. Emitted with name
-   * 'data' in JSON output. Either this or geo_data will be populated.
-   *
-   * @param Dictlayerdata $data
+   * @param Dictlayerdata
    */
   public function setData(Dictlayerdata $data)
   {
@@ -105,9 +83,7 @@ class DictionaryAnnotationdata extends \Google\Model
     return $this->data;
   }
   /**
-   * Base64 encoded data for this annotation data.
-   *
-   * @param string $encodedData
+   * @param string
    */
   public function setEncodedData($encodedData)
   {
@@ -121,9 +97,7 @@ class DictionaryAnnotationdata extends \Google\Model
     return $this->encodedData;
   }
   /**
-   * Unique id for this annotation data.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -137,9 +111,7 @@ class DictionaryAnnotationdata extends \Google\Model
     return $this->id;
   }
   /**
-   * Resource Type
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -153,9 +125,7 @@ class DictionaryAnnotationdata extends \Google\Model
     return $this->kind;
   }
   /**
-   * The Layer id for this data. *
-   *
-   * @param string $layerId
+   * @param string
    */
   public function setLayerId($layerId)
   {
@@ -169,9 +139,7 @@ class DictionaryAnnotationdata extends \Google\Model
     return $this->layerId;
   }
   /**
-   * URL for this resource. *
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -185,10 +153,7 @@ class DictionaryAnnotationdata extends \Google\Model
     return $this->selfLink;
   }
   /**
-   * Timestamp for the last time this data was updated. (RFC 3339 UTC date-time
-   * format).
-   *
-   * @param string $updated
+   * @param string
    */
   public function setUpdated($updated)
   {
@@ -202,9 +167,7 @@ class DictionaryAnnotationdata extends \Google\Model
     return $this->updated;
   }
   /**
-   * The volume id for this data. *
-   *
-   * @param string $volumeId
+   * @param string
    */
   public function setVolumeId($volumeId)
   {

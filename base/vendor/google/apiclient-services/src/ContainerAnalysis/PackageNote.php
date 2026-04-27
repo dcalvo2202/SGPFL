@@ -19,37 +19,16 @@ namespace Google\Service\ContainerAnalysis;
 
 class PackageNote extends \Google\Collection
 {
-  /**
-   * Unknown architecture.
-   */
-  public const ARCHITECTURE_ARCHITECTURE_UNSPECIFIED = 'ARCHITECTURE_UNSPECIFIED';
-  /**
-   * X86 architecture.
-   */
-  public const ARCHITECTURE_X86 = 'X86';
-  /**
-   * X64 architecture.
-   */
-  public const ARCHITECTURE_X64 = 'X64';
   protected $collection_key = 'distribution';
   /**
-   * The CPU architecture for which packages in this distribution channel were
-   * built. Architecture will be blank for language packages.
-   *
    * @var string
    */
   public $architecture;
   /**
-   * The cpe_uri in [CPE format](https://cpe.mitre.org/specification/) denoting
-   * the package manager version distributing a package. The cpe_uri will be
-   * blank for language packages.
-   *
    * @var string
    */
   public $cpeUri;
   /**
-   * The description of this package.
-   *
    * @var string
    */
   public $description;
@@ -60,27 +39,18 @@ class PackageNote extends \Google\Collection
   protected $licenseType = License::class;
   protected $licenseDataType = '';
   /**
-   * A freeform text denoting the maintainer of this package.
-   *
    * @var string
    */
   public $maintainer;
   /**
-   * Required. Immutable. The name of the package.
-   *
    * @var string
    */
   public $name;
   /**
-   * The type of package; whether native or non native (e.g., ruby gems, node.js
-   * packages, etc.).
-   *
    * @var string
    */
   public $packageType;
   /**
-   * The homepage for this package.
-   *
    * @var string
    */
   public $url;
@@ -88,30 +58,21 @@ class PackageNote extends \Google\Collection
   protected $versionDataType = '';
 
   /**
-   * The CPU architecture for which packages in this distribution channel were
-   * built. Architecture will be blank for language packages.
-   *
-   * Accepted values: ARCHITECTURE_UNSPECIFIED, X86, X64
-   *
-   * @param self::ARCHITECTURE_* $architecture
+   * @param string
    */
   public function setArchitecture($architecture)
   {
     $this->architecture = $architecture;
   }
   /**
-   * @return self::ARCHITECTURE_*
+   * @return string
    */
   public function getArchitecture()
   {
     return $this->architecture;
   }
   /**
-   * The cpe_uri in [CPE format](https://cpe.mitre.org/specification/) denoting
-   * the package manager version distributing a package. The cpe_uri will be
-   * blank for language packages.
-   *
-   * @param string $cpeUri
+   * @param string
    */
   public function setCpeUri($cpeUri)
   {
@@ -125,9 +86,7 @@ class PackageNote extends \Google\Collection
     return $this->cpeUri;
   }
   /**
-   * The description of this package.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -141,10 +100,7 @@ class PackageNote extends \Google\Collection
     return $this->description;
   }
   /**
-   * Hash value, typically a file digest, that allows unique identification a
-   * specific package.
-   *
-   * @param Digest[] $digest
+   * @param Digest[]
    */
   public function setDigest($digest)
   {
@@ -158,9 +114,7 @@ class PackageNote extends \Google\Collection
     return $this->digest;
   }
   /**
-   * Deprecated. The various channels by which a package is distributed.
-   *
-   * @param Distribution[] $distribution
+   * @param Distribution[]
    */
   public function setDistribution($distribution)
   {
@@ -174,9 +128,7 @@ class PackageNote extends \Google\Collection
     return $this->distribution;
   }
   /**
-   * Licenses that have been declared by the authors of the package.
-   *
-   * @param License $license
+   * @param License
    */
   public function setLicense(License $license)
   {
@@ -190,9 +142,7 @@ class PackageNote extends \Google\Collection
     return $this->license;
   }
   /**
-   * A freeform text denoting the maintainer of this package.
-   *
-   * @param string $maintainer
+   * @param string
    */
   public function setMaintainer($maintainer)
   {
@@ -206,9 +156,7 @@ class PackageNote extends \Google\Collection
     return $this->maintainer;
   }
   /**
-   * Required. Immutable. The name of the package.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -222,10 +170,7 @@ class PackageNote extends \Google\Collection
     return $this->name;
   }
   /**
-   * The type of package; whether native or non native (e.g., ruby gems, node.js
-   * packages, etc.).
-   *
-   * @param string $packageType
+   * @param string
    */
   public function setPackageType($packageType)
   {
@@ -239,9 +184,7 @@ class PackageNote extends \Google\Collection
     return $this->packageType;
   }
   /**
-   * The homepage for this package.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {
@@ -255,9 +198,7 @@ class PackageNote extends \Google\Collection
     return $this->url;
   }
   /**
-   * The version of the package.
-   *
-   * @param Version $version
+   * @param Version
    */
   public function setVersion(Version $version)
   {

@@ -21,20 +21,12 @@ class WebpropertyPermissions extends \Google\Collection
 {
   protected $collection_key = 'effective';
   /**
-   * All the permissions that the user has for this web property. These include
-   * any implied permissions (e.g., EDIT implies VIEW) or inherited permissions
-   * from the parent account.
-   *
    * @var string[]
    */
   public $effective;
 
   /**
-   * All the permissions that the user has for this web property. These include
-   * any implied permissions (e.g., EDIT implies VIEW) or inherited permissions
-   * from the parent account.
-   *
-   * @param string[] $effective
+   * @param string[]
    */
   public function setEffective($effective)
   {

@@ -19,165 +19,78 @@ namespace Google\Service\RealTimeBidding;
 
 class Creative extends \Google\Collection
 {
-  /**
-   * The format is unknown.
-   */
-  public const CREATIVE_FORMAT_CREATIVE_FORMAT_UNSPECIFIED = 'CREATIVE_FORMAT_UNSPECIFIED';
-  /**
-   * HTML creative.
-   */
-  public const CREATIVE_FORMAT_HTML = 'HTML';
-  /**
-   * Video creative.
-   */
-  public const CREATIVE_FORMAT_VIDEO = 'VIDEO';
-  /**
-   * Native creative.
-   */
-  public const CREATIVE_FORMAT_NATIVE = 'NATIVE';
   protected $collection_key = 'restrictedCategories';
   /**
-   * Output only. ID of the buyer account that this creative is owned by. Can be
-   * used to filter the response of the creatives.list method with equality and
-   * inequality check.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * The link to AdChoices destination page. This is only supported for native
-   * ads.
-   *
    * @var string
    */
   public $adChoicesDestinationUrl;
   /**
-   * The name of the company being advertised in the creative. Can be used to
-   * filter the response of the creatives.list method.
-   *
    * @var string
    */
   public $advertiserName;
   /**
-   * The agency ID for this creative.
-   *
    * @var string
    */
   public $agencyId;
   /**
-   * Output only. The last update timestamp of the creative through the API.
-   *
    * @var string
    */
   public $apiUpdateTime;
   /**
-   * Output only. The format of this creative. Can be used to filter the
-   * response of the creatives.list method.
-   *
    * @var string
    */
   public $creativeFormat;
   /**
-   * Buyer-specific creative ID that references this creative in bid responses.
-   * This field is Ignored in update operations. Can be used to filter the
-   * response of the creatives.list method. The maximum length of the creative
-   * ID is 128 bytes.
-   *
    * @var string
    */
   public $creativeId;
   protected $creativeServingDecisionType = CreativeServingDecision::class;
   protected $creativeServingDecisionDataType = '';
   /**
-   * Output only. IDs of all of the deals with which this creative has been used
-   * in bidding. Can be used to filter the response of the creatives.list
-   * method.
-   *
    * @var string[]
    */
   public $dealIds;
   /**
-   * All declared attributes for the ads that may be shown from this creative.
-   * Can be used to filter the response of the creatives.list method. If the
-   * `excluded_attribute` field of a [bid
-   * request](https://developers.google.com/authorized-
-   * buyers/rtb/downloads/realtime-bidding-proto") contains one of the
-   * attributes that were declared or detected for a given creative, and a bid
-   * is submitted with that creative, the bid will be filtered before the
-   * auction.
-   *
    * @var string[]
    */
   public $declaredAttributes;
   /**
-   * The set of declared destination URLs for the creative. Can be used to
-   * filter the response of the creatives.list method.
-   *
    * @var string[]
    */
   public $declaredClickThroughUrls;
   /**
-   * All declared restricted categories for the ads that may be shown from this
-   * creative. Can be used to filter the response of the creatives.list method.
-   *
-   * @deprecated
    * @var string[]
    */
   public $declaredRestrictedCategories;
   /**
-   * IDs for the declared ad technology vendors that may be used by this
-   * creative. See https://storage.googleapis.com/adx-rtb-
-   * dictionaries/vendors.txt for possible values. Can be used to filter the
-   * response of the creatives.list method.
-   *
    * @var int[]
    */
   public $declaredVendorIds;
   protected $htmlType = HtmlContent::class;
   protected $htmlDataType = '';
   /**
-   * The set of URLs to be called to record an impression.
-   *
    * @var string[]
    */
   public $impressionTrackingUrls;
   /**
-   * Output only. Name of the creative. Follows the pattern
-   * `buyers/{buyer}/creatives/{creative}`, where `{buyer}` represents the
-   * account ID of the buyer who owns the creative, and `{creative}` is the
-   * buyer-specific creative ID that references this creative in the bid
-   * response.
-   *
    * @var string
    */
   public $name;
   protected $nativeType = NativeContent::class;
   protected $nativeDataType = '';
   /**
-   * Experimental field that can be used during the [FLEDGE Origin
-   * Trial](/authorized-buyers/rtb/fledge-origin-trial). The URL to fetch an
-   * interest group ad used in [TURTLEDOVE on-device
-   * auction](https://github.com/WICG/turtledove/blob/main/FLEDGE.md#1-browsers-
-   * record-interest-groups"). This should be unique among all creatives for a
-   * given `accountId`. This URL should be the same as the URL returned by [gene
-   * rateBid()](https://github.com/WICG/turtledove/blob/main/FLEDGE.md#32-on-
-   * device-bidding).
-   *
    * @var string
    */
   public $renderUrl;
   /**
-   * All restricted categories for the ads that may be shown from this creative.
-   *
-   * @deprecated
    * @var string[]
    */
   public $restrictedCategories;
   /**
-   * Output only. The version of the creative. Version for a new creative is 1
-   * and it increments during subsequent creative updates.
-   *
-   * @deprecated
    * @var int
    */
   public $version;
@@ -185,11 +98,7 @@ class Creative extends \Google\Collection
   protected $videoDataType = '';
 
   /**
-   * Output only. ID of the buyer account that this creative is owned by. Can be
-   * used to filter the response of the creatives.list method with equality and
-   * inequality check.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -203,10 +112,7 @@ class Creative extends \Google\Collection
     return $this->accountId;
   }
   /**
-   * The link to AdChoices destination page. This is only supported for native
-   * ads.
-   *
-   * @param string $adChoicesDestinationUrl
+   * @param string
    */
   public function setAdChoicesDestinationUrl($adChoicesDestinationUrl)
   {
@@ -220,10 +126,7 @@ class Creative extends \Google\Collection
     return $this->adChoicesDestinationUrl;
   }
   /**
-   * The name of the company being advertised in the creative. Can be used to
-   * filter the response of the creatives.list method.
-   *
-   * @param string $advertiserName
+   * @param string
    */
   public function setAdvertiserName($advertiserName)
   {
@@ -237,9 +140,7 @@ class Creative extends \Google\Collection
     return $this->advertiserName;
   }
   /**
-   * The agency ID for this creative.
-   *
-   * @param string $agencyId
+   * @param string
    */
   public function setAgencyId($agencyId)
   {
@@ -253,9 +154,7 @@ class Creative extends \Google\Collection
     return $this->agencyId;
   }
   /**
-   * Output only. The last update timestamp of the creative through the API.
-   *
-   * @param string $apiUpdateTime
+   * @param string
    */
   public function setApiUpdateTime($apiUpdateTime)
   {
@@ -269,31 +168,21 @@ class Creative extends \Google\Collection
     return $this->apiUpdateTime;
   }
   /**
-   * Output only. The format of this creative. Can be used to filter the
-   * response of the creatives.list method.
-   *
-   * Accepted values: CREATIVE_FORMAT_UNSPECIFIED, HTML, VIDEO, NATIVE
-   *
-   * @param self::CREATIVE_FORMAT_* $creativeFormat
+   * @param string
    */
   public function setCreativeFormat($creativeFormat)
   {
     $this->creativeFormat = $creativeFormat;
   }
   /**
-   * @return self::CREATIVE_FORMAT_*
+   * @return string
    */
   public function getCreativeFormat()
   {
     return $this->creativeFormat;
   }
   /**
-   * Buyer-specific creative ID that references this creative in bid responses.
-   * This field is Ignored in update operations. Can be used to filter the
-   * response of the creatives.list method. The maximum length of the creative
-   * ID is 128 bytes.
-   *
-   * @param string $creativeId
+   * @param string
    */
   public function setCreativeId($creativeId)
   {
@@ -307,11 +196,7 @@ class Creative extends \Google\Collection
     return $this->creativeId;
   }
   /**
-   * Output only. Top level status and detected attributes of a creative (for
-   * example domain, language, advertiser, product category, etc.) that affect
-   * whether (status) and where (context) a creative will be allowed to serve.
-   *
-   * @param CreativeServingDecision $creativeServingDecision
+   * @param CreativeServingDecision
    */
   public function setCreativeServingDecision(CreativeServingDecision $creativeServingDecision)
   {
@@ -325,11 +210,7 @@ class Creative extends \Google\Collection
     return $this->creativeServingDecision;
   }
   /**
-   * Output only. IDs of all of the deals with which this creative has been used
-   * in bidding. Can be used to filter the response of the creatives.list
-   * method.
-   *
-   * @param string[] $dealIds
+   * @param string[]
    */
   public function setDealIds($dealIds)
   {
@@ -343,16 +224,7 @@ class Creative extends \Google\Collection
     return $this->dealIds;
   }
   /**
-   * All declared attributes for the ads that may be shown from this creative.
-   * Can be used to filter the response of the creatives.list method. If the
-   * `excluded_attribute` field of a [bid
-   * request](https://developers.google.com/authorized-
-   * buyers/rtb/downloads/realtime-bidding-proto") contains one of the
-   * attributes that were declared or detected for a given creative, and a bid
-   * is submitted with that creative, the bid will be filtered before the
-   * auction.
-   *
-   * @param string[] $declaredAttributes
+   * @param string[]
    */
   public function setDeclaredAttributes($declaredAttributes)
   {
@@ -366,10 +238,7 @@ class Creative extends \Google\Collection
     return $this->declaredAttributes;
   }
   /**
-   * The set of declared destination URLs for the creative. Can be used to
-   * filter the response of the creatives.list method.
-   *
-   * @param string[] $declaredClickThroughUrls
+   * @param string[]
    */
   public function setDeclaredClickThroughUrls($declaredClickThroughUrls)
   {
@@ -383,18 +252,13 @@ class Creative extends \Google\Collection
     return $this->declaredClickThroughUrls;
   }
   /**
-   * All declared restricted categories for the ads that may be shown from this
-   * creative. Can be used to filter the response of the creatives.list method.
-   *
-   * @deprecated
-   * @param string[] $declaredRestrictedCategories
+   * @param string[]
    */
   public function setDeclaredRestrictedCategories($declaredRestrictedCategories)
   {
     $this->declaredRestrictedCategories = $declaredRestrictedCategories;
   }
   /**
-   * @deprecated
    * @return string[]
    */
   public function getDeclaredRestrictedCategories()
@@ -402,12 +266,7 @@ class Creative extends \Google\Collection
     return $this->declaredRestrictedCategories;
   }
   /**
-   * IDs for the declared ad technology vendors that may be used by this
-   * creative. See https://storage.googleapis.com/adx-rtb-
-   * dictionaries/vendors.txt for possible values. Can be used to filter the
-   * response of the creatives.list method.
-   *
-   * @param int[] $declaredVendorIds
+   * @param int[]
    */
   public function setDeclaredVendorIds($declaredVendorIds)
   {
@@ -421,9 +280,7 @@ class Creative extends \Google\Collection
     return $this->declaredVendorIds;
   }
   /**
-   * An HTML creative.
-   *
-   * @param HtmlContent $html
+   * @param HtmlContent
    */
   public function setHtml(HtmlContent $html)
   {
@@ -437,9 +294,7 @@ class Creative extends \Google\Collection
     return $this->html;
   }
   /**
-   * The set of URLs to be called to record an impression.
-   *
-   * @param string[] $impressionTrackingUrls
+   * @param string[]
    */
   public function setImpressionTrackingUrls($impressionTrackingUrls)
   {
@@ -453,13 +308,7 @@ class Creative extends \Google\Collection
     return $this->impressionTrackingUrls;
   }
   /**
-   * Output only. Name of the creative. Follows the pattern
-   * `buyers/{buyer}/creatives/{creative}`, where `{buyer}` represents the
-   * account ID of the buyer who owns the creative, and `{creative}` is the
-   * buyer-specific creative ID that references this creative in the bid
-   * response.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -473,9 +322,7 @@ class Creative extends \Google\Collection
     return $this->name;
   }
   /**
-   * A native creative.
-   *
-   * @param NativeContent $native
+   * @param NativeContent
    */
   public function setNative(NativeContent $native)
   {
@@ -489,16 +336,7 @@ class Creative extends \Google\Collection
     return $this->native;
   }
   /**
-   * Experimental field that can be used during the [FLEDGE Origin
-   * Trial](/authorized-buyers/rtb/fledge-origin-trial). The URL to fetch an
-   * interest group ad used in [TURTLEDOVE on-device
-   * auction](https://github.com/WICG/turtledove/blob/main/FLEDGE.md#1-browsers-
-   * record-interest-groups"). This should be unique among all creatives for a
-   * given `accountId`. This URL should be the same as the URL returned by [gene
-   * rateBid()](https://github.com/WICG/turtledove/blob/main/FLEDGE.md#32-on-
-   * device-bidding).
-   *
-   * @param string $renderUrl
+   * @param string
    */
   public function setRenderUrl($renderUrl)
   {
@@ -512,17 +350,13 @@ class Creative extends \Google\Collection
     return $this->renderUrl;
   }
   /**
-   * All restricted categories for the ads that may be shown from this creative.
-   *
-   * @deprecated
-   * @param string[] $restrictedCategories
+   * @param string[]
    */
   public function setRestrictedCategories($restrictedCategories)
   {
     $this->restrictedCategories = $restrictedCategories;
   }
   /**
-   * @deprecated
    * @return string[]
    */
   public function getRestrictedCategories()
@@ -530,18 +364,13 @@ class Creative extends \Google\Collection
     return $this->restrictedCategories;
   }
   /**
-   * Output only. The version of the creative. Version for a new creative is 1
-   * and it increments during subsequent creative updates.
-   *
-   * @deprecated
-   * @param int $version
+   * @param int
    */
   public function setVersion($version)
   {
     $this->version = $version;
   }
   /**
-   * @deprecated
    * @return int
    */
   public function getVersion()
@@ -549,9 +378,7 @@ class Creative extends \Google\Collection
     return $this->version;
   }
   /**
-   * A video creative.
-   *
-   * @param VideoContent $video
+   * @param VideoContent
    */
   public function setVideo(VideoContent $video)
   {

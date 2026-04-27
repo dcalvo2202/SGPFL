@@ -26,22 +26,16 @@ class GoogleCloudAiplatformV1SchemaPromptSpecTranslationPrompt extends \Google\M
   protected $promptMessageType = GoogleCloudAiplatformV1SchemaPromptSpecPromptMessage::class;
   protected $promptMessageDataType = '';
   /**
-   * The source language code.
-   *
    * @var string
    */
   public $sourceLanguageCode;
   /**
-   * The target language code.
-   *
    * @var string
    */
   public $targetLanguageCode;
 
   /**
-   * The translation example.
-   *
-   * @param GoogleCloudAiplatformV1SchemaPromptSpecTranslationExample $example
+   * @param GoogleCloudAiplatformV1SchemaPromptSpecTranslationExample
    */
   public function setExample(GoogleCloudAiplatformV1SchemaPromptSpecTranslationExample $example)
   {
@@ -55,9 +49,7 @@ class GoogleCloudAiplatformV1SchemaPromptSpecTranslationPrompt extends \Google\M
     return $this->example;
   }
   /**
-   * The translation option.
-   *
-   * @param GoogleCloudAiplatformV1SchemaPromptSpecTranslationOption $option
+   * @param GoogleCloudAiplatformV1SchemaPromptSpecTranslationOption
    */
   public function setOption(GoogleCloudAiplatformV1SchemaPromptSpecTranslationOption $option)
   {
@@ -71,9 +63,7 @@ class GoogleCloudAiplatformV1SchemaPromptSpecTranslationPrompt extends \Google\M
     return $this->option;
   }
   /**
-   * The prompt message.
-   *
-   * @param GoogleCloudAiplatformV1SchemaPromptSpecPromptMessage $promptMessage
+   * @param GoogleCloudAiplatformV1SchemaPromptSpecPromptMessage
    */
   public function setPromptMessage(GoogleCloudAiplatformV1SchemaPromptSpecPromptMessage $promptMessage)
   {
@@ -87,9 +77,7 @@ class GoogleCloudAiplatformV1SchemaPromptSpecTranslationPrompt extends \Google\M
     return $this->promptMessage;
   }
   /**
-   * The source language code.
-   *
-   * @param string $sourceLanguageCode
+   * @param string
    */
   public function setSourceLanguageCode($sourceLanguageCode)
   {
@@ -103,9 +91,7 @@ class GoogleCloudAiplatformV1SchemaPromptSpecTranslationPrompt extends \Google\M
     return $this->sourceLanguageCode;
   }
   /**
-   * The target language code.
-   *
-   * @param string $targetLanguageCode
+   * @param string
    */
   public function setTargetLanguageCode($targetLanguageCode)
   {

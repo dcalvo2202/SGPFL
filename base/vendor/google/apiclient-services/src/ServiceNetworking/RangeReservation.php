@@ -21,31 +21,14 @@ class RangeReservation extends \Google\Collection
 {
   protected $collection_key = 'subnetworkCandidates';
   /**
-   * Required. The size of the desired subnet. Use usual CIDR range notation.
-   * For example, '29' to find unused x.x.x.x/29 CIDR range. The goal is to
-   * determine if one of the allocated ranges has enough free space for a subnet
-   * of the requested size. GCE disallows subnets with prefix_length > 29
-   *
    * @var int
    */
   public $ipPrefixLength;
   /**
-   * Optional. The name of one or more allocated IP address ranges associated
-   * with this private service access connection. If no range names are provided
-   * all ranges associated with this connection will be considered. If a CIDR
-   * range with the specified IP prefix length is not available within these
-   * ranges the validation fails.
-   *
    * @var string[]
    */
   public $requestedRanges;
   /**
-   * Optional. The size of the desired secondary ranges for the subnet. Use
-   * usual CIDR range notation. For example, '29' to find unused x.x.x.x/29 CIDR
-   * range. The goal is to determine that the allocated ranges have enough free
-   * space for all the requested secondary ranges. GCE disallows subnets with
-   * prefix_length > 29
-   *
    * @var int[]
    */
   public $secondaryRangeIpPrefixLengths;
@@ -53,12 +36,7 @@ class RangeReservation extends \Google\Collection
   protected $subnetworkCandidatesDataType = 'array';
 
   /**
-   * Required. The size of the desired subnet. Use usual CIDR range notation.
-   * For example, '29' to find unused x.x.x.x/29 CIDR range. The goal is to
-   * determine if one of the allocated ranges has enough free space for a subnet
-   * of the requested size. GCE disallows subnets with prefix_length > 29
-   *
-   * @param int $ipPrefixLength
+   * @param int
    */
   public function setIpPrefixLength($ipPrefixLength)
   {
@@ -72,13 +50,7 @@ class RangeReservation extends \Google\Collection
     return $this->ipPrefixLength;
   }
   /**
-   * Optional. The name of one or more allocated IP address ranges associated
-   * with this private service access connection. If no range names are provided
-   * all ranges associated with this connection will be considered. If a CIDR
-   * range with the specified IP prefix length is not available within these
-   * ranges the validation fails.
-   *
-   * @param string[] $requestedRanges
+   * @param string[]
    */
   public function setRequestedRanges($requestedRanges)
   {
@@ -92,13 +64,7 @@ class RangeReservation extends \Google\Collection
     return $this->requestedRanges;
   }
   /**
-   * Optional. The size of the desired secondary ranges for the subnet. Use
-   * usual CIDR range notation. For example, '29' to find unused x.x.x.x/29 CIDR
-   * range. The goal is to determine that the allocated ranges have enough free
-   * space for all the requested secondary ranges. GCE disallows subnets with
-   * prefix_length > 29
-   *
-   * @param int[] $secondaryRangeIpPrefixLengths
+   * @param int[]
    */
   public function setSecondaryRangeIpPrefixLengths($secondaryRangeIpPrefixLengths)
   {
@@ -112,12 +78,7 @@ class RangeReservation extends \Google\Collection
     return $this->secondaryRangeIpPrefixLengths;
   }
   /**
-   * Optional. List of subnetwork candidates to validate. The required input
-   * fields are `name`, `network`, and `region`. Subnetworks from this list
-   * which exist will be returned in the response with the `ip_cidr_range`,
-   * `secondary_ip_cider_ranges`, and `outside_allocation` fields set.
-   *
-   * @param Subnetwork[] $subnetworkCandidates
+   * @param Subnetwork[]
    */
   public function setSubnetworkCandidates($subnetworkCandidates)
   {

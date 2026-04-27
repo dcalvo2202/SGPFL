@@ -20,41 +20,28 @@ namespace Google\Service\Games;
 class LeaderboardScoreRank extends \Google\Model
 {
   /**
-   * The number of scores in the leaderboard as a string.
-   *
    * @var string
    */
   public $formattedNumScores;
   /**
-   * The rank in the leaderboard as a string.
-   *
    * @var string
    */
   public $formattedRank;
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#leaderboardScoreRank`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The number of scores in the leaderboard.
-   *
    * @var string
    */
   public $numScores;
   /**
-   * The rank in the leaderboard.
-   *
    * @var string
    */
   public $rank;
 
   /**
-   * The number of scores in the leaderboard as a string.
-   *
-   * @param string $formattedNumScores
+   * @param string
    */
   public function setFormattedNumScores($formattedNumScores)
   {
@@ -68,9 +55,7 @@ class LeaderboardScoreRank extends \Google\Model
     return $this->formattedNumScores;
   }
   /**
-   * The rank in the leaderboard as a string.
-   *
-   * @param string $formattedRank
+   * @param string
    */
   public function setFormattedRank($formattedRank)
   {
@@ -84,10 +69,7 @@ class LeaderboardScoreRank extends \Google\Model
     return $this->formattedRank;
   }
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#leaderboardScoreRank`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -101,9 +83,7 @@ class LeaderboardScoreRank extends \Google\Model
     return $this->kind;
   }
   /**
-   * The number of scores in the leaderboard.
-   *
-   * @param string $numScores
+   * @param string
    */
   public function setNumScores($numScores)
   {
@@ -117,9 +97,7 @@ class LeaderboardScoreRank extends \Google\Model
     return $this->numScores;
   }
   /**
-   * The rank in the leaderboard.
-   *
-   * @param string $rank
+   * @param string
    */
   public function setRank($rank)
   {

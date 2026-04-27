@@ -24,9 +24,7 @@ class GoogleCloudIntegrationsV1alphaExecuteTestCasesResponse extends \Google\Col
   protected $executeTestCaseResponsesDataType = 'array';
 
   /**
-   * Results of each execution of test cases in an integration version.
-   *
-   * @param GoogleCloudIntegrationsV1alphaExecuteTestCaseResponse[] $executeTestCaseResponses
+   * @param GoogleCloudIntegrationsV1alphaExecuteTestCaseResponse[]
    */
   public function setExecuteTestCaseResponses($executeTestCaseResponses)
   {

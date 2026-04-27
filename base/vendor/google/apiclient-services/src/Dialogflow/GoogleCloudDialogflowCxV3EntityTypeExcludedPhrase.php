@@ -25,7 +25,7 @@ class GoogleCloudDialogflowCxV3EntityTypeExcludedPhrase extends \Google\Model
   public $value;
 
   /**
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

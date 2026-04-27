@@ -33,7 +33,7 @@ class CategoryItems extends \Google\Model
   public $name;
 
   /**
-   * @param string $badgeUrl
+   * @param string
    */
   public function setBadgeUrl($badgeUrl)
   {
@@ -47,7 +47,7 @@ class CategoryItems extends \Google\Model
     return $this->badgeUrl;
   }
   /**
-   * @param string $categoryId
+   * @param string
    */
   public function setCategoryId($categoryId)
   {
@@ -61,7 +61,7 @@ class CategoryItems extends \Google\Model
     return $this->categoryId;
   }
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

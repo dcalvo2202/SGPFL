@@ -19,12 +19,7 @@ namespace Google\Service\CloudSearch;
 
 class PhoneNumber extends \Google\Model
 {
-  public const TYPE_OTHER = 'OTHER';
-  public const TYPE_MOBILE = 'MOBILE';
-  public const TYPE_OFFICE = 'OFFICE';
   /**
-   * The phone number of the person.
-   *
    * @var string
    */
   public $phoneNumber;
@@ -34,9 +29,7 @@ class PhoneNumber extends \Google\Model
   public $type;
 
   /**
-   * The phone number of the person.
-   *
-   * @param string $phoneNumber
+   * @param string
    */
   public function setPhoneNumber($phoneNumber)
   {
@@ -50,14 +43,14 @@ class PhoneNumber extends \Google\Model
     return $this->phoneNumber;
   }
   /**
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

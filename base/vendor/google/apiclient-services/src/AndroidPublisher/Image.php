@@ -20,34 +20,24 @@ namespace Google\Service\AndroidPublisher;
 class Image extends \Google\Model
 {
   /**
-   * A unique id representing this image.
-   *
    * @var string
    */
   public $id;
   /**
-   * A sha1 hash of the image.
-   *
    * @var string
    */
   public $sha1;
   /**
-   * A sha256 hash of the image.
-   *
    * @var string
    */
   public $sha256;
   /**
-   * A URL that will serve a preview of the image.
-   *
    * @var string
    */
   public $url;
 
   /**
-   * A unique id representing this image.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -61,9 +51,7 @@ class Image extends \Google\Model
     return $this->id;
   }
   /**
-   * A sha1 hash of the image.
-   *
-   * @param string $sha1
+   * @param string
    */
   public function setSha1($sha1)
   {
@@ -77,9 +65,7 @@ class Image extends \Google\Model
     return $this->sha1;
   }
   /**
-   * A sha256 hash of the image.
-   *
-   * @param string $sha256
+   * @param string
    */
   public function setSha256($sha256)
   {
@@ -93,9 +79,7 @@ class Image extends \Google\Model
     return $this->sha256;
   }
   /**
-   * A URL that will serve a preview of the image.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

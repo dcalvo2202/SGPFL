@@ -20,59 +20,24 @@ namespace Google\Service\ContainerAnalysis;
 class FixableTotalByDigest extends \Google\Model
 {
   /**
-   * Unknown.
-   */
-  public const SEVERITY_SEVERITY_UNSPECIFIED = 'SEVERITY_UNSPECIFIED';
-  /**
-   * Minimal severity.
-   */
-  public const SEVERITY_MINIMAL = 'MINIMAL';
-  /**
-   * Low severity.
-   */
-  public const SEVERITY_LOW = 'LOW';
-  /**
-   * Medium severity.
-   */
-  public const SEVERITY_MEDIUM = 'MEDIUM';
-  /**
-   * High severity.
-   */
-  public const SEVERITY_HIGH = 'HIGH';
-  /**
-   * Critical severity.
-   */
-  public const SEVERITY_CRITICAL = 'CRITICAL';
-  /**
-   * The number of fixable vulnerabilities associated with this resource.
-   *
    * @var string
    */
   public $fixableCount;
   /**
-   * The affected resource.
-   *
    * @var string
    */
   public $resourceUri;
   /**
-   * The severity for this count. SEVERITY_UNSPECIFIED indicates total across
-   * all severities.
-   *
    * @var string
    */
   public $severity;
   /**
-   * The total number of vulnerabilities associated with this resource.
-   *
    * @var string
    */
   public $totalCount;
 
   /**
-   * The number of fixable vulnerabilities associated with this resource.
-   *
-   * @param string $fixableCount
+   * @param string
    */
   public function setFixableCount($fixableCount)
   {
@@ -86,9 +51,7 @@ class FixableTotalByDigest extends \Google\Model
     return $this->fixableCount;
   }
   /**
-   * The affected resource.
-   *
-   * @param string $resourceUri
+   * @param string
    */
   public function setResourceUri($resourceUri)
   {
@@ -102,28 +65,21 @@ class FixableTotalByDigest extends \Google\Model
     return $this->resourceUri;
   }
   /**
-   * The severity for this count. SEVERITY_UNSPECIFIED indicates total across
-   * all severities.
-   *
-   * Accepted values: SEVERITY_UNSPECIFIED, MINIMAL, LOW, MEDIUM, HIGH, CRITICAL
-   *
-   * @param self::SEVERITY_* $severity
+   * @param string
    */
   public function setSeverity($severity)
   {
     $this->severity = $severity;
   }
   /**
-   * @return self::SEVERITY_*
+   * @return string
    */
   public function getSeverity()
   {
     return $this->severity;
   }
   /**
-   * The total number of vulnerabilities associated with this resource.
-   *
-   * @param string $totalCount
+   * @param string
    */
   public function setTotalCount($totalCount)
   {

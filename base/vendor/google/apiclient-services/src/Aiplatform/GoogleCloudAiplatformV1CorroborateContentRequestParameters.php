@@ -19,11 +19,6 @@ namespace Google\Service\Aiplatform;
 
 class GoogleCloudAiplatformV1CorroborateContentRequestParameters extends \Google\Model
 {
-  /**
-   * Optional. Only return claims with citation score larger than the threshold.
-   *
-   * @var 
-   */
   public $citationThreshold;
 
   public function setCitationThreshold($citationThreshold)

@@ -21,29 +21,20 @@ class DeviceSpec extends \Google\Collection
 {
   protected $collection_key = 'supportedLocales';
   /**
-   * Screen dpi.
-   *
    * @var string
    */
   public $screenDensity;
   /**
-   * Supported ABI architectures in the order of preference. The values should
-   * be the string as reported by the platform, e.g. "armeabi-v7a", "x86_64".
-   *
    * @var string[]
    */
   public $supportedAbis;
   /**
-   * All installed locales represented as BCP-47 strings, e.g. "en-US".
-   *
    * @var string[]
    */
   public $supportedLocales;
 
   /**
-   * Screen dpi.
-   *
-   * @param string $screenDensity
+   * @param string
    */
   public function setScreenDensity($screenDensity)
   {
@@ -57,10 +48,7 @@ class DeviceSpec extends \Google\Collection
     return $this->screenDensity;
   }
   /**
-   * Supported ABI architectures in the order of preference. The values should
-   * be the string as reported by the platform, e.g. "armeabi-v7a", "x86_64".
-   *
-   * @param string[] $supportedAbis
+   * @param string[]
    */
   public function setSupportedAbis($supportedAbis)
   {
@@ -74,9 +62,7 @@ class DeviceSpec extends \Google\Collection
     return $this->supportedAbis;
   }
   /**
-   * All installed locales represented as BCP-47 strings, e.g. "en-US".
-   *
-   * @param string[] $supportedLocales
+   * @param string[]
    */
   public function setSupportedLocales($supportedLocales)
   {

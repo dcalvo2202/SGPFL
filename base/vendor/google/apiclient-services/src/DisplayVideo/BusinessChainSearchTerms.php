@@ -20,25 +20,16 @@ namespace Google\Service\DisplayVideo;
 class BusinessChainSearchTerms extends \Google\Model
 {
   /**
-   * The search query for the desired business chain. The query must be the full
-   * name of the business, e.g. "KFC", "mercedes-benz".
-   *
    * @var string
    */
   public $businessChainQuery;
   /**
-   * The search query for the desired geo region, e.g. "Seattle", "United
-   * State".
-   *
    * @var string
    */
   public $regionQuery;
 
   /**
-   * The search query for the desired business chain. The query must be the full
-   * name of the business, e.g. "KFC", "mercedes-benz".
-   *
-   * @param string $businessChainQuery
+   * @param string
    */
   public function setBusinessChainQuery($businessChainQuery)
   {
@@ -52,10 +43,7 @@ class BusinessChainSearchTerms extends \Google\Model
     return $this->businessChainQuery;
   }
   /**
-   * The search query for the desired geo region, e.g. "Seattle", "United
-   * State".
-   *
-   * @param string $regionQuery
+   * @param string
    */
   public function setRegionQuery($regionQuery)
   {

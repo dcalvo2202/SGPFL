@@ -22,58 +22,32 @@ class IPEndpointsConfig extends \Google\Model
   protected $authorizedNetworksConfigType = MasterAuthorizedNetworksConfig::class;
   protected $authorizedNetworksConfigDataType = '';
   /**
-   * Controls whether the control plane allows access through a public IP. It is
-   * invalid to specify both PrivateClusterConfig.enablePrivateEndpoint and this
-   * field at the same time.
-   *
    * @var bool
    */
   public $enablePublicEndpoint;
   /**
-   * Controls whether to allow direct IP access.
-   *
    * @var bool
    */
   public $enabled;
   /**
-   * Controls whether the control plane's private endpoint is accessible from
-   * sources in other regions. It is invalid to specify both
-   * PrivateClusterMasterGlobalAccessConfig.enabled and this field at the same
-   * time.
-   *
    * @var bool
    */
   public $globalAccess;
   /**
-   * Output only. The internal IP address of this cluster's control plane. Only
-   * populated if enabled.
-   *
    * @var string
    */
   public $privateEndpoint;
   /**
-   * Subnet to provision the master's private endpoint during cluster creation.
-   * Specified in projects/regions/subnetworks format. It is invalid to specify
-   * both PrivateClusterConfig.privateEndpointSubnetwork and this field at the
-   * same time.
-   *
    * @var string
    */
   public $privateEndpointSubnetwork;
   /**
-   * Output only. The external IP address of this cluster's control plane. Only
-   * populated if enabled.
-   *
    * @var string
    */
   public $publicEndpoint;
 
   /**
-   * Configuration of authorized networks. If enabled, restricts access to the
-   * control plane based on source IP. It is invalid to specify both
-   * Cluster.masterAuthorizedNetworksConfig and this field at the same time.
-   *
-   * @param MasterAuthorizedNetworksConfig $authorizedNetworksConfig
+   * @param MasterAuthorizedNetworksConfig
    */
   public function setAuthorizedNetworksConfig(MasterAuthorizedNetworksConfig $authorizedNetworksConfig)
   {
@@ -87,11 +61,7 @@ class IPEndpointsConfig extends \Google\Model
     return $this->authorizedNetworksConfig;
   }
   /**
-   * Controls whether the control plane allows access through a public IP. It is
-   * invalid to specify both PrivateClusterConfig.enablePrivateEndpoint and this
-   * field at the same time.
-   *
-   * @param bool $enablePublicEndpoint
+   * @param bool
    */
   public function setEnablePublicEndpoint($enablePublicEndpoint)
   {
@@ -105,9 +75,7 @@ class IPEndpointsConfig extends \Google\Model
     return $this->enablePublicEndpoint;
   }
   /**
-   * Controls whether to allow direct IP access.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {
@@ -121,12 +89,7 @@ class IPEndpointsConfig extends \Google\Model
     return $this->enabled;
   }
   /**
-   * Controls whether the control plane's private endpoint is accessible from
-   * sources in other regions. It is invalid to specify both
-   * PrivateClusterMasterGlobalAccessConfig.enabled and this field at the same
-   * time.
-   *
-   * @param bool $globalAccess
+   * @param bool
    */
   public function setGlobalAccess($globalAccess)
   {
@@ -140,10 +103,7 @@ class IPEndpointsConfig extends \Google\Model
     return $this->globalAccess;
   }
   /**
-   * Output only. The internal IP address of this cluster's control plane. Only
-   * populated if enabled.
-   *
-   * @param string $privateEndpoint
+   * @param string
    */
   public function setPrivateEndpoint($privateEndpoint)
   {
@@ -157,12 +117,7 @@ class IPEndpointsConfig extends \Google\Model
     return $this->privateEndpoint;
   }
   /**
-   * Subnet to provision the master's private endpoint during cluster creation.
-   * Specified in projects/regions/subnetworks format. It is invalid to specify
-   * both PrivateClusterConfig.privateEndpointSubnetwork and this field at the
-   * same time.
-   *
-   * @param string $privateEndpointSubnetwork
+   * @param string
    */
   public function setPrivateEndpointSubnetwork($privateEndpointSubnetwork)
   {
@@ -176,10 +131,7 @@ class IPEndpointsConfig extends \Google\Model
     return $this->privateEndpointSubnetwork;
   }
   /**
-   * Output only. The external IP address of this cluster's control plane. Only
-   * populated if enabled.
-   *
-   * @param string $publicEndpoint
+   * @param string
    */
   public function setPublicEndpoint($publicEndpoint)
   {

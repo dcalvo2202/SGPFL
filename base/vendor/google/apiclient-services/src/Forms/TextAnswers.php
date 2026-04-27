@@ -24,10 +24,7 @@ class TextAnswers extends \Google\Collection
   protected $answersDataType = 'array';
 
   /**
-   * Output only. Answers to a question. For multiple-value ChoiceQuestions,
-   * each answer is a separate value.
-   *
-   * @param TextAnswer[] $answers
+   * @param TextAnswer[]
    */
   public function setAnswers($answers)
   {

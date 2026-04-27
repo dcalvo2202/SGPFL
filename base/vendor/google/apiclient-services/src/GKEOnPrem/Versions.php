@@ -24,10 +24,7 @@ class Versions extends \Google\Collection
   protected $versionsDataType = 'array';
 
   /**
-   * Shows the mapping of a given version to the number of machines under this
-   * version.
-   *
-   * @param Version[] $versions
+   * @param Version[]
    */
   public function setVersions($versions)
   {

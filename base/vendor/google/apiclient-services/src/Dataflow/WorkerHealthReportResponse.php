@@ -20,20 +20,12 @@ namespace Google\Service\Dataflow;
 class WorkerHealthReportResponse extends \Google\Model
 {
   /**
-   * A positive value indicates the worker should change its reporting interval
-   * to the specified value. The default value of zero means no change in report
-   * rate is requested by the server.
-   *
    * @var string
    */
   public $reportInterval;
 
   /**
-   * A positive value indicates the worker should change its reporting interval
-   * to the specified value. The default value of zero means no change in report
-   * rate is requested by the server.
-   *
-   * @param string $reportInterval
+   * @param string
    */
   public function setReportInterval($reportInterval)
   {

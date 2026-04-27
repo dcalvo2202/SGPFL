@@ -20,14 +20,10 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1ActiveLearningConfig extends \Google\Model
 {
   /**
-   * Max number of human labeled DataItems.
-   *
    * @var string
    */
   public $maxDataItemCount;
   /**
-   * Max percent of total DataItems for human labeling.
-   *
    * @var int
    */
   public $maxDataItemPercentage;
@@ -37,9 +33,7 @@ class GoogleCloudAiplatformV1ActiveLearningConfig extends \Google\Model
   protected $trainingConfigDataType = '';
 
   /**
-   * Max number of human labeled DataItems.
-   *
-   * @param string $maxDataItemCount
+   * @param string
    */
   public function setMaxDataItemCount($maxDataItemCount)
   {
@@ -53,9 +47,7 @@ class GoogleCloudAiplatformV1ActiveLearningConfig extends \Google\Model
     return $this->maxDataItemCount;
   }
   /**
-   * Max percent of total DataItems for human labeling.
-   *
-   * @param int $maxDataItemPercentage
+   * @param int
    */
   public function setMaxDataItemPercentage($maxDataItemPercentage)
   {
@@ -69,10 +61,7 @@ class GoogleCloudAiplatformV1ActiveLearningConfig extends \Google\Model
     return $this->maxDataItemPercentage;
   }
   /**
-   * Active learning data sampling config. For every active learning labeling
-   * iteration, it will select a batch of data based on the sampling strategy.
-   *
-   * @param GoogleCloudAiplatformV1SampleConfig $sampleConfig
+   * @param GoogleCloudAiplatformV1SampleConfig
    */
   public function setSampleConfig(GoogleCloudAiplatformV1SampleConfig $sampleConfig)
   {
@@ -86,11 +75,7 @@ class GoogleCloudAiplatformV1ActiveLearningConfig extends \Google\Model
     return $this->sampleConfig;
   }
   /**
-   * CMLE training config. For every active learning labeling iteration, system
-   * will train a machine learning model on CMLE. The trained model will be used
-   * by data sampling algorithm to select DataItems.
-   *
-   * @param GoogleCloudAiplatformV1TrainingConfig $trainingConfig
+   * @param GoogleCloudAiplatformV1TrainingConfig
    */
   public function setTrainingConfig(GoogleCloudAiplatformV1TrainingConfig $trainingConfig)
   {

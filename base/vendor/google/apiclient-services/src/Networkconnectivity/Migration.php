@@ -20,30 +20,16 @@ namespace Google\Service\Networkconnectivity;
 class Migration extends \Google\Model
 {
   /**
-   * Immutable. Resource path as an URI of the source resource, for example a
-   * subnet. The project for the source resource should match the project for
-   * the InternalRange. An example:
-   * /projects/{project}/regions/{region}/subnetworks/{subnet}
-   *
    * @var string
    */
   public $source;
   /**
-   * Immutable. Resource path of the target resource. The target project can be
-   * different, as in the cases when migrating to peer networks. For example:
-   * /projects/{project}/regions/{region}/subnetworks/{subnet}
-   *
    * @var string
    */
   public $target;
 
   /**
-   * Immutable. Resource path as an URI of the source resource, for example a
-   * subnet. The project for the source resource should match the project for
-   * the InternalRange. An example:
-   * /projects/{project}/regions/{region}/subnetworks/{subnet}
-   *
-   * @param string $source
+   * @param string
    */
   public function setSource($source)
   {
@@ -57,11 +43,7 @@ class Migration extends \Google\Model
     return $this->source;
   }
   /**
-   * Immutable. Resource path of the target resource. The target project can be
-   * different, as in the cases when migrating to peer networks. For example:
-   * /projects/{project}/regions/{region}/subnetworks/{subnet}
-   *
-   * @param string $target
+   * @param string
    */
   public function setTarget($target)
   {

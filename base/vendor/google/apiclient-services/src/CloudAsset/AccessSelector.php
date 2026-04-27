@@ -21,22 +21,16 @@ class AccessSelector extends \Google\Collection
 {
   protected $collection_key = 'roles';
   /**
-   * Optional. The permissions to appear in result.
-   *
    * @var string[]
    */
   public $permissions;
   /**
-   * Optional. The roles to appear in result.
-   *
    * @var string[]
    */
   public $roles;
 
   /**
-   * Optional. The permissions to appear in result.
-   *
-   * @param string[] $permissions
+   * @param string[]
    */
   public function setPermissions($permissions)
   {
@@ -50,9 +44,7 @@ class AccessSelector extends \Google\Collection
     return $this->permissions;
   }
   /**
-   * Optional. The roles to appear in result.
-   *
-   * @param string[] $roles
+   * @param string[]
    */
   public function setRoles($roles)
   {

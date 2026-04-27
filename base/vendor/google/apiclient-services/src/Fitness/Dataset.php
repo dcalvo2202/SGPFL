@@ -21,34 +21,18 @@ class Dataset extends \Google\Collection
 {
   protected $collection_key = 'point';
   /**
-   * The data stream ID of the data source that created the points in this
-   * dataset.
-   *
    * @var string
    */
   public $dataSourceId;
   /**
-   * The largest end time of all data points in this possibly partial
-   * representation of the dataset. Time is in nanoseconds from epoch. This
-   * should also match the second part of the dataset identifier.
-   *
    * @var string
    */
   public $maxEndTimeNs;
   /**
-   * The smallest start time of all data points in this possibly partial
-   * representation of the dataset. Time is in nanoseconds from epoch. This
-   * should also match the first part of the dataset identifier.
-   *
    * @var string
    */
   public $minStartTimeNs;
   /**
-   * This token will be set when a dataset is received in response to a GET
-   * request and the dataset is too large to be included in a single response.
-   * Provide this value in a subsequent GET request to return the next page of
-   * data points within this dataset.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -56,10 +40,7 @@ class Dataset extends \Google\Collection
   protected $pointDataType = 'array';
 
   /**
-   * The data stream ID of the data source that created the points in this
-   * dataset.
-   *
-   * @param string $dataSourceId
+   * @param string
    */
   public function setDataSourceId($dataSourceId)
   {
@@ -73,11 +54,7 @@ class Dataset extends \Google\Collection
     return $this->dataSourceId;
   }
   /**
-   * The largest end time of all data points in this possibly partial
-   * representation of the dataset. Time is in nanoseconds from epoch. This
-   * should also match the second part of the dataset identifier.
-   *
-   * @param string $maxEndTimeNs
+   * @param string
    */
   public function setMaxEndTimeNs($maxEndTimeNs)
   {
@@ -91,11 +68,7 @@ class Dataset extends \Google\Collection
     return $this->maxEndTimeNs;
   }
   /**
-   * The smallest start time of all data points in this possibly partial
-   * representation of the dataset. Time is in nanoseconds from epoch. This
-   * should also match the first part of the dataset identifier.
-   *
-   * @param string $minStartTimeNs
+   * @param string
    */
   public function setMinStartTimeNs($minStartTimeNs)
   {
@@ -109,12 +82,7 @@ class Dataset extends \Google\Collection
     return $this->minStartTimeNs;
   }
   /**
-   * This token will be set when a dataset is received in response to a GET
-   * request and the dataset is too large to be included in a single response.
-   * Provide this value in a subsequent GET request to return the next page of
-   * data points within this dataset.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -128,12 +96,7 @@ class Dataset extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * A partial list of data points contained in the dataset, ordered by
-   * endTimeNanos. This list is considered complete when retrieving a small
-   * dataset and partial when patching a dataset or retrieving a dataset that is
-   * too large to include in a single response.
-   *
-   * @param DataPoint[] $point
+   * @param DataPoint[]
    */
   public function setPoint($point)
   {

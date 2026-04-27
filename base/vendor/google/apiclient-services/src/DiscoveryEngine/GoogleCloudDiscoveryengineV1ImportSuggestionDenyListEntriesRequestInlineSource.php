@@ -24,9 +24,7 @@ class GoogleCloudDiscoveryengineV1ImportSuggestionDenyListEntriesRequestInlineSo
   protected $entriesDataType = 'array';
 
   /**
-   * Required. A list of all denylist entries to import. Max of 1000 items.
-   *
-   * @param GoogleCloudDiscoveryengineV1SuggestionDenyListEntry[] $entries
+   * @param GoogleCloudDiscoveryengineV1SuggestionDenyListEntry[]
    */
   public function setEntries($entries)
   {

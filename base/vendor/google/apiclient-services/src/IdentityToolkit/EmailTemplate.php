@@ -20,46 +20,32 @@ namespace Google\Service\IdentityToolkit;
 class EmailTemplate extends \Google\Model
 {
   /**
-   * Email body.
-   *
    * @var string
    */
   public $body;
   /**
-   * Email body format.
-   *
    * @var string
    */
   public $format;
   /**
-   * From address of the email.
-   *
    * @var string
    */
   public $from;
   /**
-   * From display name.
-   *
    * @var string
    */
   public $fromDisplayName;
   /**
-   * Reply-to address.
-   *
    * @var string
    */
   public $replyTo;
   /**
-   * Subject of the email.
-   *
    * @var string
    */
   public $subject;
 
   /**
-   * Email body.
-   *
-   * @param string $body
+   * @param string
    */
   public function setBody($body)
   {
@@ -73,9 +59,7 @@ class EmailTemplate extends \Google\Model
     return $this->body;
   }
   /**
-   * Email body format.
-   *
-   * @param string $format
+   * @param string
    */
   public function setFormat($format)
   {
@@ -89,9 +73,7 @@ class EmailTemplate extends \Google\Model
     return $this->format;
   }
   /**
-   * From address of the email.
-   *
-   * @param string $from
+   * @param string
    */
   public function setFrom($from)
   {
@@ -105,9 +87,7 @@ class EmailTemplate extends \Google\Model
     return $this->from;
   }
   /**
-   * From display name.
-   *
-   * @param string $fromDisplayName
+   * @param string
    */
   public function setFromDisplayName($fromDisplayName)
   {
@@ -121,9 +101,7 @@ class EmailTemplate extends \Google\Model
     return $this->fromDisplayName;
   }
   /**
-   * Reply-to address.
-   *
-   * @param string $replyTo
+   * @param string
    */
   public function setReplyTo($replyTo)
   {
@@ -137,9 +115,7 @@ class EmailTemplate extends \Google\Model
     return $this->replyTo;
   }
   /**
-   * Subject of the email.
-   *
-   * @param string $subject
+   * @param string
    */
   public function setSubject($subject)
   {

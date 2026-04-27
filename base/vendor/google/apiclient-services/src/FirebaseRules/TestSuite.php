@@ -24,9 +24,7 @@ class TestSuite extends \Google\Collection
   protected $testCasesDataType = 'array';
 
   /**
-   * Collection of test cases associated with the `TestSuite`.
-   *
-   * @param TestCase[] $testCases
+   * @param TestCase[]
    */
   public function setTestCases($testCases)
   {

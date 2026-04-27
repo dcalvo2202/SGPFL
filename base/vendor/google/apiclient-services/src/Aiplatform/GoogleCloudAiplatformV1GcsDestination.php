@@ -20,20 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1GcsDestination extends \Google\Model
 {
   /**
-   * Required. Google Cloud Storage URI to output directory. If the uri doesn't
-   * end with '/', a '/' will be automatically appended. The directory is
-   * created if it doesn't exist.
-   *
    * @var string
    */
   public $outputUriPrefix;
 
   /**
-   * Required. Google Cloud Storage URI to output directory. If the uri doesn't
-   * end with '/', a '/' will be automatically appended. The directory is
-   * created if it doesn't exist.
-   *
-   * @param string $outputUriPrefix
+   * @param string
    */
   public function setOutputUriPrefix($outputUriPrefix)
   {

@@ -19,26 +19,20 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowCxV3FlowImportStrategy extends \Google\Model
 {
-  public const GLOBAL_IMPORT_STRATEGY_IMPORT_STRATEGY_UNSPECIFIED = 'IMPORT_STRATEGY_UNSPECIFIED';
-  public const GLOBAL_IMPORT_STRATEGY_IMPORT_STRATEGY_CREATE_NEW = 'IMPORT_STRATEGY_CREATE_NEW';
-  public const GLOBAL_IMPORT_STRATEGY_IMPORT_STRATEGY_REPLACE = 'IMPORT_STRATEGY_REPLACE';
-  public const GLOBAL_IMPORT_STRATEGY_IMPORT_STRATEGY_KEEP = 'IMPORT_STRATEGY_KEEP';
-  public const GLOBAL_IMPORT_STRATEGY_IMPORT_STRATEGY_MERGE = 'IMPORT_STRATEGY_MERGE';
-  public const GLOBAL_IMPORT_STRATEGY_IMPORT_STRATEGY_THROW_ERROR = 'IMPORT_STRATEGY_THROW_ERROR';
   /**
    * @var string
    */
   public $globalImportStrategy;
 
   /**
-   * @param self::GLOBAL_IMPORT_STRATEGY_* $globalImportStrategy
+   * @param string
    */
   public function setGlobalImportStrategy($globalImportStrategy)
   {
     $this->globalImportStrategy = $globalImportStrategy;
   }
   /**
-   * @return self::GLOBAL_IMPORT_STRATEGY_*
+   * @return string
    */
   public function getGlobalImportStrategy()
   {

@@ -20,18 +20,12 @@ namespace Google\Service\AIPlatformNotebooks;
 class UpgradeInstanceSystemRequest extends \Google\Model
 {
   /**
-   * Required. The VM hardware token for authenticating the VM.
-   * https://cloud.google.com/compute/docs/instances/verifying-instance-identity
-   *
    * @var string
    */
   public $vmId;
 
   /**
-   * Required. The VM hardware token for authenticating the VM.
-   * https://cloud.google.com/compute/docs/instances/verifying-instance-identity
-   *
-   * @param string $vmId
+   * @param string
    */
   public function setVmId($vmId)
   {

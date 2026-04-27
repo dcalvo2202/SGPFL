@@ -24,9 +24,7 @@ class GooglePrivacyDlpV2CategoricalStatsResult extends \Google\Collection
   protected $valueFrequencyHistogramBucketsDataType = 'array';
 
   /**
-   * Histogram of value frequencies in the column.
-   *
-   * @param GooglePrivacyDlpV2CategoricalStatsHistogramBucket[] $valueFrequencyHistogramBuckets
+   * @param GooglePrivacyDlpV2CategoricalStatsHistogramBucket[]
    */
   public function setValueFrequencyHistogramBuckets($valueFrequencyHistogramBuckets)
   {

@@ -23,22 +23,16 @@ class ListBlockchainNodesResponse extends \Google\Collection
   protected $blockchainNodesType = BlockchainNode::class;
   protected $blockchainNodesDataType = 'array';
   /**
-   * A token identifying a page of results the server should return.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * The list of nodes
-   *
-   * @param BlockchainNode[] $blockchainNodes
+   * @param BlockchainNode[]
    */
   public function setBlockchainNodes($blockchainNodes)
   {
@@ -52,9 +46,7 @@ class ListBlockchainNodesResponse extends \Google\Collection
     return $this->blockchainNodes;
   }
   /**
-   * A token identifying a page of results the server should return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -68,9 +60,7 @@ class ListBlockchainNodesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

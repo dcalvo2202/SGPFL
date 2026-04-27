@@ -24,9 +24,7 @@ class UploadAptArtifactResponse extends \Google\Collection
   protected $aptArtifactsDataType = 'array';
 
   /**
-   * The Apt artifacts updated.
-   *
-   * @param AptArtifact[] $aptArtifacts
+   * @param AptArtifact[]
    */
   public function setAptArtifacts($aptArtifacts)
   {

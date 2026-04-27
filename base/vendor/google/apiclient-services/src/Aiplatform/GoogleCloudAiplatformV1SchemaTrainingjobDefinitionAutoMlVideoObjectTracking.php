@@ -23,9 +23,7 @@ class GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlVideoObjectTrackin
   protected $inputsDataType = '';
 
   /**
-   * The input parameters of this TrainingJob.
-   *
-   * @param GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlVideoObjectTrackingInputs $inputs
+   * @param GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlVideoObjectTrackingInputs
    */
   public function setInputs(GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlVideoObjectTrackingInputs $inputs)
   {

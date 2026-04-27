@@ -23,17 +23,12 @@ class RetrieveImportableDomainsResponse extends \Google\Collection
   protected $domainsType = Domain::class;
   protected $domainsDataType = 'array';
   /**
-   * When present, there are more results to retrieve. Set `page_token` to this
-   * value on a subsequent call to get the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * A list of domains that the calling user manages in Google Domains.
-   *
-   * @param Domain[] $domains
+   * @param Domain[]
    */
   public function setDomains($domains)
   {
@@ -47,10 +42,7 @@ class RetrieveImportableDomainsResponse extends \Google\Collection
     return $this->domains;
   }
   /**
-   * When present, there are more results to retrieve. Set `page_token` to this
-   * value on a subsequent call to get the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

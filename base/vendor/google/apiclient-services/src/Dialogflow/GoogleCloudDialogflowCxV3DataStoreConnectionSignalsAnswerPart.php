@@ -30,7 +30,7 @@ class GoogleCloudDialogflowCxV3DataStoreConnectionSignalsAnswerPart extends \Goo
   public $text;
 
   /**
-   * @param int[] $supportingIndices
+   * @param int[]
    */
   public function setSupportingIndices($supportingIndices)
   {
@@ -44,7 +44,7 @@ class GoogleCloudDialogflowCxV3DataStoreConnectionSignalsAnswerPart extends \Goo
     return $this->supportingIndices;
   }
   /**
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {

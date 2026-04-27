@@ -21,23 +21,10 @@ class CacheInvalidationRule extends \Google\Collection
 {
   protected $collection_key = 'cacheTags';
   /**
-   * A list of cache tags used to identify cached objects.
-   *
-   *        - Cache tags are specified when the response is first cached, by
-   * setting    the `Cache-Tag` response header at the origin.    - Multiple
-   * cache tags in the same invalidation request are treated as    Boolean `OR`
-   * - for example, `tag1 OR tag2 OR tag3`.    - If other fields are also
-   * specified, these are treated as Boolean `AND`    with any tags.
-   *
-   * Up to 10 tags can be specified in a single invalidation request.
-   *
    * @var string[]
    */
   public $cacheTags;
   /**
-   * If set, this invalidation rule will only apply to requests with a Host
-   * header matching host.
-   *
    * @var string
    */
   public $host;
@@ -47,17 +34,7 @@ class CacheInvalidationRule extends \Google\Collection
   public $path;
 
   /**
-   * A list of cache tags used to identify cached objects.
-   *
-   *        - Cache tags are specified when the response is first cached, by
-   * setting    the `Cache-Tag` response header at the origin.    - Multiple
-   * cache tags in the same invalidation request are treated as    Boolean `OR`
-   * - for example, `tag1 OR tag2 OR tag3`.    - If other fields are also
-   * specified, these are treated as Boolean `AND`    with any tags.
-   *
-   * Up to 10 tags can be specified in a single invalidation request.
-   *
-   * @param string[] $cacheTags
+   * @param string[]
    */
   public function setCacheTags($cacheTags)
   {
@@ -71,10 +48,7 @@ class CacheInvalidationRule extends \Google\Collection
     return $this->cacheTags;
   }
   /**
-   * If set, this invalidation rule will only apply to requests with a Host
-   * header matching host.
-   *
-   * @param string $host
+   * @param string
    */
   public function setHost($host)
   {
@@ -88,7 +62,7 @@ class CacheInvalidationRule extends \Google\Collection
     return $this->host;
   }
   /**
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {

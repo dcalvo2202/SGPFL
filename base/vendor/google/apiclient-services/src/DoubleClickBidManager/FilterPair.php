@@ -20,24 +20,16 @@ namespace Google\Service\DoubleClickBidManager;
 class FilterPair extends \Google\Model
 {
   /**
-   * The type of value to filter by. Defined by a [Filter](/bid-
-   * manager/reference/rest/v2/filters-metrics#filters) value.
-   *
    * @var string
    */
   public $type;
   /**
-   * The identifying value to filter by, such as a relevant resource ID.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * The type of value to filter by. Defined by a [Filter](/bid-
-   * manager/reference/rest/v2/filters-metrics#filters) value.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {
@@ -51,9 +43,7 @@ class FilterPair extends \Google\Model
     return $this->type;
   }
   /**
-   * The identifying value to filter by, such as a relevant resource ID.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

@@ -24,9 +24,7 @@ class GoogleHomeEnterpriseSdmV1ListStructuresResponse extends \Google\Collection
   protected $structuresDataType = 'array';
 
   /**
-   * The list of structures.
-   *
-   * @param GoogleHomeEnterpriseSdmV1Structure[] $structures
+   * @param GoogleHomeEnterpriseSdmV1Structure[]
    */
   public function setStructures($structures)
   {

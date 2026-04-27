@@ -20,35 +20,20 @@ namespace Google\Service\CloudComposer;
 class MaintenanceWindow extends \Google\Model
 {
   /**
-   * Required. Maintenance window end time. It is used only to calculate the
-   * duration of the maintenance window. The value for end-time must be in the
-   * future, relative to `start_time`.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * Required. Maintenance window recurrence. Format is a subset of
-   * [RFC-5545](https://tools.ietf.org/html/rfc5545) `RRULE`. The only allowed
-   * values for `FREQ` field are `FREQ=DAILY` and `FREQ=WEEKLY;BYDAY=...`
-   * Example values: `FREQ=WEEKLY;BYDAY=TU,WE`, `FREQ=DAILY`.
-   *
    * @var string
    */
   public $recurrence;
   /**
-   * Required. Start time of the first recurrence of the maintenance window.
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * Required. Maintenance window end time. It is used only to calculate the
-   * duration of the maintenance window. The value for end-time must be in the
-   * future, relative to `start_time`.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -62,12 +47,7 @@ class MaintenanceWindow extends \Google\Model
     return $this->endTime;
   }
   /**
-   * Required. Maintenance window recurrence. Format is a subset of
-   * [RFC-5545](https://tools.ietf.org/html/rfc5545) `RRULE`. The only allowed
-   * values for `FREQ` field are `FREQ=DAILY` and `FREQ=WEEKLY;BYDAY=...`
-   * Example values: `FREQ=WEEKLY;BYDAY=TU,WE`, `FREQ=DAILY`.
-   *
-   * @param string $recurrence
+   * @param string
    */
   public function setRecurrence($recurrence)
   {
@@ -81,9 +61,7 @@ class MaintenanceWindow extends \Google\Model
     return $this->recurrence;
   }
   /**
-   * Required. Start time of the first recurrence of the maintenance window.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

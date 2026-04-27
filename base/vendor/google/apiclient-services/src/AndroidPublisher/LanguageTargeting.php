@@ -21,22 +21,16 @@ class LanguageTargeting extends \Google\Collection
 {
   protected $collection_key = 'value';
   /**
-   * Alternative languages.
-   *
    * @var string[]
    */
   public $alternatives;
   /**
-   * ISO-639: 2 or 3 letter language code.
-   *
    * @var string[]
    */
   public $value;
 
   /**
-   * Alternative languages.
-   *
-   * @param string[] $alternatives
+   * @param string[]
    */
   public function setAlternatives($alternatives)
   {
@@ -50,9 +44,7 @@ class LanguageTargeting extends \Google\Collection
     return $this->alternatives;
   }
   /**
-   * ISO-639: 2 or 3 letter language code.
-   *
-   * @param string[] $value
+   * @param string[]
    */
   public function setValue($value)
   {

@@ -21,56 +21,32 @@ class PySparkBatch extends \Google\Collection
 {
   protected $collection_key = 'pythonFileUris';
   /**
-   * Optional. HCFS URIs of archives to be extracted into the working directory
-   * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-   * .zip.
-   *
    * @var string[]
    */
   public $archiveUris;
   /**
-   * Optional. The arguments to pass to the driver. Do not include arguments
-   * that can be set as batch properties, such as --conf, since a collision can
-   * occur that causes an incorrect batch submission.
-   *
    * @var string[]
    */
   public $args;
   /**
-   * Optional. HCFS URIs of files to be placed in the working directory of each
-   * executor.
-   *
    * @var string[]
    */
   public $fileUris;
   /**
-   * Optional. HCFS URIs of jar files to add to the classpath of the Spark
-   * driver and tasks.
-   *
    * @var string[]
    */
   public $jarFileUris;
   /**
-   * Required. The HCFS URI of the main Python file to use as the Spark driver.
-   * Must be a .py file.
-   *
    * @var string
    */
   public $mainPythonFileUri;
   /**
-   * Optional. HCFS file URIs of Python files to pass to the PySpark framework.
-   * Supported file types: .py, .egg, and .zip.
-   *
    * @var string[]
    */
   public $pythonFileUris;
 
   /**
-   * Optional. HCFS URIs of archives to be extracted into the working directory
-   * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-   * .zip.
-   *
-   * @param string[] $archiveUris
+   * @param string[]
    */
   public function setArchiveUris($archiveUris)
   {
@@ -84,11 +60,7 @@ class PySparkBatch extends \Google\Collection
     return $this->archiveUris;
   }
   /**
-   * Optional. The arguments to pass to the driver. Do not include arguments
-   * that can be set as batch properties, such as --conf, since a collision can
-   * occur that causes an incorrect batch submission.
-   *
-   * @param string[] $args
+   * @param string[]
    */
   public function setArgs($args)
   {
@@ -102,10 +74,7 @@ class PySparkBatch extends \Google\Collection
     return $this->args;
   }
   /**
-   * Optional. HCFS URIs of files to be placed in the working directory of each
-   * executor.
-   *
-   * @param string[] $fileUris
+   * @param string[]
    */
   public function setFileUris($fileUris)
   {
@@ -119,10 +88,7 @@ class PySparkBatch extends \Google\Collection
     return $this->fileUris;
   }
   /**
-   * Optional. HCFS URIs of jar files to add to the classpath of the Spark
-   * driver and tasks.
-   *
-   * @param string[] $jarFileUris
+   * @param string[]
    */
   public function setJarFileUris($jarFileUris)
   {
@@ -136,10 +102,7 @@ class PySparkBatch extends \Google\Collection
     return $this->jarFileUris;
   }
   /**
-   * Required. The HCFS URI of the main Python file to use as the Spark driver.
-   * Must be a .py file.
-   *
-   * @param string $mainPythonFileUri
+   * @param string
    */
   public function setMainPythonFileUri($mainPythonFileUri)
   {
@@ -153,10 +116,7 @@ class PySparkBatch extends \Google\Collection
     return $this->mainPythonFileUri;
   }
   /**
-   * Optional. HCFS file URIs of Python files to pass to the PySpark framework.
-   * Supported file types: .py, .egg, and .zip.
-   *
-   * @param string[] $pythonFileUris
+   * @param string[]
    */
   public function setPythonFileUris($pythonFileUris)
   {

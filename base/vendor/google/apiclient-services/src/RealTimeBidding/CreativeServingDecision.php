@@ -19,22 +19,6 @@ namespace Google\Service\RealTimeBidding;
 
 class CreativeServingDecision extends \Google\Collection
 {
-  /**
-   * Default value that should never be used.
-   */
-  public const DETECTED_CATEGORIES_TAXONOMY_AD_CATEGORY_TAXONOMY_UNSPECIFIED = 'AD_CATEGORY_TAXONOMY_UNSPECIFIED';
-  /**
-   * Google ad categories taxonomy, including product categories and sensitive
-   * categories. Find the category lists at
-   * https://developers.google.com/authorized-buyers/rtb/data#reference-data
-   */
-  public const DETECTED_CATEGORIES_TAXONOMY_GOOGLE_AD_CATEGORY_TAXONOMY = 'GOOGLE_AD_CATEGORY_TAXONOMY';
-  /**
-   * IAB Content Taxonomy 1.0. See https://github.com/InteractiveAdvertisingBure
-   * au/Taxonomies/blob/main/Content%20Taxonomies/Content%20Taxonomy%201.0.tsv
-   * for more details.
-   */
-  public const DETECTED_CATEGORIES_TAXONOMY_IAB_CONTENT_1_0 = 'IAB_CONTENT_1_0';
   protected $collection_key = 'detectedVendorIds';
   protected $adTechnologyProvidersType = AdTechnologyProviders::class;
   protected $adTechnologyProvidersDataType = '';
@@ -45,93 +29,42 @@ class CreativeServingDecision extends \Google\Collection
   protected $detectedAdvertisersType = AdvertiserAndBrand::class;
   protected $detectedAdvertisersDataType = 'array';
   /**
-   * Publisher-excludable attributes that were detected for this creative. Can
-   * be used to filter the response of the creatives.list method. If the
-   * `excluded_attribute` field of a [bid
-   * request](https://developers.google.com/authorized-
-   * buyers/rtb/downloads/realtime-bidding-proto) contains one of the attributes
-   * that were declared or detected for a given creative, and a bid is submitted
-   * with that creative, the bid will be filtered before the auction.
-   *
    * @var string[]
    */
   public $detectedAttributes;
   /**
-   * Output only. IDs of the detected categories. The taxonomy in which the
-   * categories are expressed is specified by the detected_categories_taxonomy
-   * field. Use this in conjunction with BidRequest.bcat to avoid bidding on
-   * impressions where a given ad category is blocked, or to troubleshoot
-   * filtered bids. Can be used to filter the response of the creatives.list
-   * method.
-   *
    * @var string[]
    */
   public $detectedCategories;
   /**
-   * Output only. The taxonomy in which the detected_categories field is
-   * expressed.
-   *
    * @var string
    */
   public $detectedCategoriesTaxonomy;
   /**
-   * The set of detected destination URLs for the creative. Can be used to
-   * filter the response of the creatives.list method.
-   *
    * @var string[]
    */
   public $detectedClickThroughUrls;
   /**
-   * The detected domains for this creative.
-   *
    * @var string[]
    */
   public $detectedDomains;
   /**
-   * The detected languages for this creative. The order is arbitrary. The codes
-   * are 2 or 5 characters and are documented at
-   * https://developers.google.com/adwords/api/docs/appendix/languagecodes. Can
-   * be used to filter the response of the creatives.list method.
-   *
    * @var string[]
    */
   public $detectedLanguages;
   /**
-   * Detected product categories, if any. See the ad-product-categories.txt file
-   * in the technical documentation for a list of IDs. Can be used to filter the
-   * response of the creatives.list method.
-   *
    * @var int[]
    */
   public $detectedProductCategories;
   /**
-   * Detected sensitive categories, if any. Can be used to filter the response
-   * of the creatives.list method. See the ad-sensitive-categories.txt file in
-   * the technical documentation for a list of IDs. You should use these IDs
-   * along with the excluded-sensitive-category field in the bid request to
-   * filter your bids.
-   *
    * @var int[]
    */
   public $detectedSensitiveCategories;
   /**
-   * IDs of the ad technology vendors that were detected to be used by this
-   * creative. See https://storage.googleapis.com/adx-rtb-
-   * dictionaries/vendors.txt for possible values. Can be used to filter the
-   * response of the creatives.list method. If the `allowed_vendor_type` field
-   * of a [bid request](https://developers.google.com/authorized-
-   * buyers/rtb/downloads/realtime-bidding-proto) does not contain one of the
-   * vendor type IDs that were declared or detected for a given creative, and a
-   * bid is submitted with that creative, the bid will be filtered before the
-   * auction.
-   *
    * @var int[]
    */
   public $detectedVendorIds;
   /**
-   * The last time the creative status was updated. Can be used to filter the
-   * response of the creatives.list method.
-   *
    * @var string
    */
   public $lastStatusUpdate;
@@ -143,9 +76,7 @@ class CreativeServingDecision extends \Google\Collection
   protected $russiaPolicyComplianceDataType = '';
 
   /**
-   * The detected ad technology providers.
-   *
-   * @param AdTechnologyProviders $adTechnologyProviders
+   * @param AdTechnologyProviders
    */
   public function setAdTechnologyProviders(AdTechnologyProviders $adTechnologyProviders)
   {
@@ -159,12 +90,7 @@ class CreativeServingDecision extends \Google\Collection
     return $this->adTechnologyProviders;
   }
   /**
-   * The policy compliance of this creative in China. When approved or
-   * disapproved, this applies to both deals and open auction in China. When
-   * pending review, this creative is allowed to serve for deals but not for
-   * open auction.
-   *
-   * @param PolicyCompliance $chinaPolicyCompliance
+   * @param PolicyCompliance
    */
   public function setChinaPolicyCompliance(PolicyCompliance $chinaPolicyCompliance)
   {
@@ -178,10 +104,7 @@ class CreativeServingDecision extends \Google\Collection
     return $this->chinaPolicyCompliance;
   }
   /**
-   * Policy compliance of this creative when bidding on Programmatic Guaranteed
-   * and Preferred Deals (outside of Russia and China).
-   *
-   * @param PolicyCompliance $dealsPolicyCompliance
+   * @param PolicyCompliance
    */
   public function setDealsPolicyCompliance(PolicyCompliance $dealsPolicyCompliance)
   {
@@ -195,9 +118,7 @@ class CreativeServingDecision extends \Google\Collection
     return $this->dealsPolicyCompliance;
   }
   /**
-   * Detected advertisers and brands.
-   *
-   * @param AdvertiserAndBrand[] $detectedAdvertisers
+   * @param AdvertiserAndBrand[]
    */
   public function setDetectedAdvertisers($detectedAdvertisers)
   {
@@ -211,15 +132,7 @@ class CreativeServingDecision extends \Google\Collection
     return $this->detectedAdvertisers;
   }
   /**
-   * Publisher-excludable attributes that were detected for this creative. Can
-   * be used to filter the response of the creatives.list method. If the
-   * `excluded_attribute` field of a [bid
-   * request](https://developers.google.com/authorized-
-   * buyers/rtb/downloads/realtime-bidding-proto) contains one of the attributes
-   * that were declared or detected for a given creative, and a bid is submitted
-   * with that creative, the bid will be filtered before the auction.
-   *
-   * @param string[] $detectedAttributes
+   * @param string[]
    */
   public function setDetectedAttributes($detectedAttributes)
   {
@@ -233,14 +146,7 @@ class CreativeServingDecision extends \Google\Collection
     return $this->detectedAttributes;
   }
   /**
-   * Output only. IDs of the detected categories. The taxonomy in which the
-   * categories are expressed is specified by the detected_categories_taxonomy
-   * field. Use this in conjunction with BidRequest.bcat to avoid bidding on
-   * impressions where a given ad category is blocked, or to troubleshoot
-   * filtered bids. Can be used to filter the response of the creatives.list
-   * method.
-   *
-   * @param string[] $detectedCategories
+   * @param string[]
    */
   public function setDetectedCategories($detectedCategories)
   {
@@ -254,30 +160,21 @@ class CreativeServingDecision extends \Google\Collection
     return $this->detectedCategories;
   }
   /**
-   * Output only. The taxonomy in which the detected_categories field is
-   * expressed.
-   *
-   * Accepted values: AD_CATEGORY_TAXONOMY_UNSPECIFIED,
-   * GOOGLE_AD_CATEGORY_TAXONOMY, IAB_CONTENT_1_0
-   *
-   * @param self::DETECTED_CATEGORIES_TAXONOMY_* $detectedCategoriesTaxonomy
+   * @param string
    */
   public function setDetectedCategoriesTaxonomy($detectedCategoriesTaxonomy)
   {
     $this->detectedCategoriesTaxonomy = $detectedCategoriesTaxonomy;
   }
   /**
-   * @return self::DETECTED_CATEGORIES_TAXONOMY_*
+   * @return string
    */
   public function getDetectedCategoriesTaxonomy()
   {
     return $this->detectedCategoriesTaxonomy;
   }
   /**
-   * The set of detected destination URLs for the creative. Can be used to
-   * filter the response of the creatives.list method.
-   *
-   * @param string[] $detectedClickThroughUrls
+   * @param string[]
    */
   public function setDetectedClickThroughUrls($detectedClickThroughUrls)
   {
@@ -291,9 +188,7 @@ class CreativeServingDecision extends \Google\Collection
     return $this->detectedClickThroughUrls;
   }
   /**
-   * The detected domains for this creative.
-   *
-   * @param string[] $detectedDomains
+   * @param string[]
    */
   public function setDetectedDomains($detectedDomains)
   {
@@ -307,12 +202,7 @@ class CreativeServingDecision extends \Google\Collection
     return $this->detectedDomains;
   }
   /**
-   * The detected languages for this creative. The order is arbitrary. The codes
-   * are 2 or 5 characters and are documented at
-   * https://developers.google.com/adwords/api/docs/appendix/languagecodes. Can
-   * be used to filter the response of the creatives.list method.
-   *
-   * @param string[] $detectedLanguages
+   * @param string[]
    */
   public function setDetectedLanguages($detectedLanguages)
   {
@@ -326,11 +216,7 @@ class CreativeServingDecision extends \Google\Collection
     return $this->detectedLanguages;
   }
   /**
-   * Detected product categories, if any. See the ad-product-categories.txt file
-   * in the technical documentation for a list of IDs. Can be used to filter the
-   * response of the creatives.list method.
-   *
-   * @param int[] $detectedProductCategories
+   * @param int[]
    */
   public function setDetectedProductCategories($detectedProductCategories)
   {
@@ -344,13 +230,7 @@ class CreativeServingDecision extends \Google\Collection
     return $this->detectedProductCategories;
   }
   /**
-   * Detected sensitive categories, if any. Can be used to filter the response
-   * of the creatives.list method. See the ad-sensitive-categories.txt file in
-   * the technical documentation for a list of IDs. You should use these IDs
-   * along with the excluded-sensitive-category field in the bid request to
-   * filter your bids.
-   *
-   * @param int[] $detectedSensitiveCategories
+   * @param int[]
    */
   public function setDetectedSensitiveCategories($detectedSensitiveCategories)
   {
@@ -364,17 +244,7 @@ class CreativeServingDecision extends \Google\Collection
     return $this->detectedSensitiveCategories;
   }
   /**
-   * IDs of the ad technology vendors that were detected to be used by this
-   * creative. See https://storage.googleapis.com/adx-rtb-
-   * dictionaries/vendors.txt for possible values. Can be used to filter the
-   * response of the creatives.list method. If the `allowed_vendor_type` field
-   * of a [bid request](https://developers.google.com/authorized-
-   * buyers/rtb/downloads/realtime-bidding-proto) does not contain one of the
-   * vendor type IDs that were declared or detected for a given creative, and a
-   * bid is submitted with that creative, the bid will be filtered before the
-   * auction.
-   *
-   * @param int[] $detectedVendorIds
+   * @param int[]
    */
   public function setDetectedVendorIds($detectedVendorIds)
   {
@@ -388,10 +258,7 @@ class CreativeServingDecision extends \Google\Collection
     return $this->detectedVendorIds;
   }
   /**
-   * The last time the creative status was updated. Can be used to filter the
-   * response of the creatives.list method.
-   *
-   * @param string $lastStatusUpdate
+   * @param string
    */
   public function setLastStatusUpdate($lastStatusUpdate)
   {
@@ -405,10 +272,7 @@ class CreativeServingDecision extends \Google\Collection
     return $this->lastStatusUpdate;
   }
   /**
-   * Policy compliance of this creative when bidding in open auction, private
-   * auction, or auction packages (outside of Russia and China).
-   *
-   * @param PolicyCompliance $networkPolicyCompliance
+   * @param PolicyCompliance
    */
   public function setNetworkPolicyCompliance(PolicyCompliance $networkPolicyCompliance)
   {
@@ -422,11 +286,7 @@ class CreativeServingDecision extends \Google\Collection
     return $this->networkPolicyCompliance;
   }
   /**
-   * Policy compliance of this creative when bidding in Open Bidding (outside of
-   * Russia and China). For the list of platform policies, see:
-   * https://support.google.com/platformspolicy/answer/3013851.
-   *
-   * @param PolicyCompliance $platformPolicyCompliance
+   * @param PolicyCompliance
    */
   public function setPlatformPolicyCompliance(PolicyCompliance $platformPolicyCompliance)
   {
@@ -440,12 +300,7 @@ class CreativeServingDecision extends \Google\Collection
     return $this->platformPolicyCompliance;
   }
   /**
-   * The policy compliance of this creative in Russia. When approved or
-   * disapproved, this applies to both deals and open auction in Russia. When
-   * pending review, this creative is allowed to serve for deals but not for
-   * open auction.
-   *
-   * @param PolicyCompliance $russiaPolicyCompliance
+   * @param PolicyCompliance
    */
   public function setRussiaPolicyCompliance(PolicyCompliance $russiaPolicyCompliance)
   {

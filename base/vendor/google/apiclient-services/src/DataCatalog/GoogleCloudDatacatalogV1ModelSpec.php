@@ -23,9 +23,7 @@ class GoogleCloudDatacatalogV1ModelSpec extends \Google\Model
   protected $vertexModelSpecDataType = '';
 
   /**
-   * Specification for vertex model resources.
-   *
-   * @param GoogleCloudDatacatalogV1VertexModelSpec $vertexModelSpec
+   * @param GoogleCloudDatacatalogV1VertexModelSpec
    */
   public function setVertexModelSpec(GoogleCloudDatacatalogV1VertexModelSpec $vertexModelSpec)
   {

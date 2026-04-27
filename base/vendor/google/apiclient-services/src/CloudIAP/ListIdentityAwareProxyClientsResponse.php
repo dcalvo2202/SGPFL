@@ -23,17 +23,12 @@ class ListIdentityAwareProxyClientsResponse extends \Google\Collection
   protected $identityAwareProxyClientsType = IdentityAwareProxyClient::class;
   protected $identityAwareProxyClientsDataType = 'array';
   /**
-   * A token, which can be send as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Clients existing in the brand.
-   *
-   * @param IdentityAwareProxyClient[] $identityAwareProxyClients
+   * @param IdentityAwareProxyClient[]
    */
   public function setIdentityAwareProxyClients($identityAwareProxyClients)
   {
@@ -47,10 +42,7 @@ class ListIdentityAwareProxyClientsResponse extends \Google\Collection
     return $this->identityAwareProxyClients;
   }
   /**
-   * A token, which can be send as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

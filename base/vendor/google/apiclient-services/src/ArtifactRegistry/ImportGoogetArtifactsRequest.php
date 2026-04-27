@@ -23,9 +23,7 @@ class ImportGoogetArtifactsRequest extends \Google\Model
   protected $gcsSourceDataType = '';
 
   /**
-   * Google Cloud Storage location where input content is located.
-   *
-   * @param ImportGoogetArtifactsGcsSource $gcsSource
+   * @param ImportGoogetArtifactsGcsSource
    */
   public function setGcsSource(ImportGoogetArtifactsGcsSource $gcsSource)
   {

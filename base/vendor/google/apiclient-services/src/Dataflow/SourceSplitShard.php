@@ -20,24 +20,6 @@ namespace Google\Service\Dataflow;
 class SourceSplitShard extends \Google\Model
 {
   /**
-   * The source derivation is unknown, or unspecified.
-   */
-  public const DERIVATION_MODE_SOURCE_DERIVATION_MODE_UNKNOWN = 'SOURCE_DERIVATION_MODE_UNKNOWN';
-  /**
-   * Produce a completely independent Source with no base.
-   */
-  public const DERIVATION_MODE_SOURCE_DERIVATION_MODE_INDEPENDENT = 'SOURCE_DERIVATION_MODE_INDEPENDENT';
-  /**
-   * Produce a Source based on the Source being split.
-   */
-  public const DERIVATION_MODE_SOURCE_DERIVATION_MODE_CHILD_OF_CURRENT = 'SOURCE_DERIVATION_MODE_CHILD_OF_CURRENT';
-  /**
-   * Produce a Source based on the base of the Source being split.
-   */
-  public const DERIVATION_MODE_SOURCE_DERIVATION_MODE_SIBLING_OF_CURRENT = 'SOURCE_DERIVATION_MODE_SIBLING_OF_CURRENT';
-  /**
-   * DEPRECATED
-   *
    * @var string
    */
   public $derivationMode;
@@ -45,30 +27,21 @@ class SourceSplitShard extends \Google\Model
   protected $sourceDataType = '';
 
   /**
-   * DEPRECATED
-   *
-   * Accepted values: SOURCE_DERIVATION_MODE_UNKNOWN,
-   * SOURCE_DERIVATION_MODE_INDEPENDENT,
-   * SOURCE_DERIVATION_MODE_CHILD_OF_CURRENT,
-   * SOURCE_DERIVATION_MODE_SIBLING_OF_CURRENT
-   *
-   * @param self::DERIVATION_MODE_* $derivationMode
+   * @param string
    */
   public function setDerivationMode($derivationMode)
   {
     $this->derivationMode = $derivationMode;
   }
   /**
-   * @return self::DERIVATION_MODE_*
+   * @return string
    */
   public function getDerivationMode()
   {
     return $this->derivationMode;
   }
   /**
-   * DEPRECATED
-   *
-   * @param Source $source
+   * @param Source
    */
   public function setSource(Source $source)
   {

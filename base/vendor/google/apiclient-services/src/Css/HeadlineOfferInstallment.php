@@ -24,16 +24,12 @@ class HeadlineOfferInstallment extends \Google\Model
   protected $downpaymentType = Price::class;
   protected $downpaymentDataType = '';
   /**
-   * The number of installments the buyer has to pay.
-   *
    * @var string
    */
   public $months;
 
   /**
-   * The amount the buyer has to pay per month.
-   *
-   * @param Price $amount
+   * @param Price
    */
   public function setAmount(Price $amount)
   {
@@ -47,9 +43,7 @@ class HeadlineOfferInstallment extends \Google\Model
     return $this->amount;
   }
   /**
-   * The up-front down payment amount the buyer has to pay.
-   *
-   * @param Price $downpayment
+   * @param Price
    */
   public function setDownpayment(Price $downpayment)
   {
@@ -63,9 +57,7 @@ class HeadlineOfferInstallment extends \Google\Model
     return $this->downpayment;
   }
   /**
-   * The number of installments the buyer has to pay.
-   *
-   * @param string $months
+   * @param string
    */
   public function setMonths($months)
   {

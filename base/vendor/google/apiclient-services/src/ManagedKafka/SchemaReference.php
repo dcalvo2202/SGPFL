@@ -20,28 +20,20 @@ namespace Google\Service\ManagedKafka;
 class SchemaReference extends \Google\Model
 {
   /**
-   * Required. The name of the reference.
-   *
    * @var string
    */
   public $name;
   /**
-   * Required. The subject of the reference.
-   *
    * @var string
    */
   public $subject;
   /**
-   * Required. The version of the reference.
-   *
    * @var int
    */
   public $version;
 
   /**
-   * Required. The name of the reference.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -55,9 +47,7 @@ class SchemaReference extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. The subject of the reference.
-   *
-   * @param string $subject
+   * @param string
    */
   public function setSubject($subject)
   {
@@ -71,9 +61,7 @@ class SchemaReference extends \Google\Model
     return $this->subject;
   }
   /**
-   * Required. The version of the reference.
-   *
-   * @param int $version
+   * @param int
    */
   public function setVersion($version)
   {

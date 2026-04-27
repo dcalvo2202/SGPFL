@@ -29,7 +29,7 @@ class ResourceProfileInfo extends \Google\Model
   protected $taskResourcesDataType = 'map';
 
   /**
-   * @param ExecutorResourceRequest[] $executorResources
+   * @param ExecutorResourceRequest[]
    */
   public function setExecutorResources($executorResources)
   {
@@ -43,7 +43,7 @@ class ResourceProfileInfo extends \Google\Model
     return $this->executorResources;
   }
   /**
-   * @param int $resourceProfileId
+   * @param int
    */
   public function setResourceProfileId($resourceProfileId)
   {
@@ -57,7 +57,7 @@ class ResourceProfileInfo extends \Google\Model
     return $this->resourceProfileId;
   }
   /**
-   * @param TaskResourceRequest[] $taskResources
+   * @param TaskResourceRequest[]
    */
   public function setTaskResources($taskResources)
   {

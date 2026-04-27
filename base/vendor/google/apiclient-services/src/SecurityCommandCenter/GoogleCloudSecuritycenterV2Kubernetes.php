@@ -36,10 +36,7 @@ class GoogleCloudSecuritycenterV2Kubernetes extends \Google\Collection
   protected $rolesDataType = 'array';
 
   /**
-   * Provides information on any Kubernetes access reviews (privilege checks)
-   * relevant to the finding.
-   *
-   * @param GoogleCloudSecuritycenterV2AccessReview[] $accessReviews
+   * @param GoogleCloudSecuritycenterV2AccessReview[]
    */
   public function setAccessReviews($accessReviews)
   {
@@ -53,11 +50,7 @@ class GoogleCloudSecuritycenterV2Kubernetes extends \Google\Collection
     return $this->accessReviews;
   }
   /**
-   * Provides Kubernetes role binding information for findings that involve
-   * [RoleBindings or ClusterRoleBindings](https://cloud.google.com/kubernetes-
-   * engine/docs/how-to/role-based-access-control).
-   *
-   * @param GoogleCloudSecuritycenterV2Binding[] $bindings
+   * @param GoogleCloudSecuritycenterV2Binding[]
    */
   public function setBindings($bindings)
   {
@@ -71,11 +64,7 @@ class GoogleCloudSecuritycenterV2Kubernetes extends \Google\Collection
     return $this->bindings;
   }
   /**
-   * GKE [node pools](https://cloud.google.com/kubernetes-
-   * engine/docs/concepts/node-pools) associated with the finding. This field
-   * contains node pool information for each node, when it is available.
-   *
-   * @param GoogleCloudSecuritycenterV2NodePool[] $nodePools
+   * @param GoogleCloudSecuritycenterV2NodePool[]
    */
   public function setNodePools($nodePools)
   {
@@ -89,10 +78,7 @@ class GoogleCloudSecuritycenterV2Kubernetes extends \Google\Collection
     return $this->nodePools;
   }
   /**
-   * Provides Kubernetes [node](https://cloud.google.com/kubernetes-
-   * engine/docs/concepts/cluster-architecture#nodes) information.
-   *
-   * @param GoogleCloudSecuritycenterV2Node[] $nodes
+   * @param GoogleCloudSecuritycenterV2Node[]
    */
   public function setNodes($nodes)
   {
@@ -106,9 +92,7 @@ class GoogleCloudSecuritycenterV2Kubernetes extends \Google\Collection
     return $this->nodes;
   }
   /**
-   * Kubernetes objects related to the finding.
-   *
-   * @param GoogleCloudSecuritycenterV2Object[] $objects
+   * @param GoogleCloudSecuritycenterV2Object[]
    */
   public function setObjects($objects)
   {
@@ -122,11 +106,7 @@ class GoogleCloudSecuritycenterV2Kubernetes extends \Google\Collection
     return $this->objects;
   }
   /**
-   * Kubernetes [Pods](https://cloud.google.com/kubernetes-
-   * engine/docs/concepts/pod) associated with the finding. This field contains
-   * Pod records for each container that is owned by a Pod.
-   *
-   * @param GoogleCloudSecuritycenterV2Pod[] $pods
+   * @param GoogleCloudSecuritycenterV2Pod[]
    */
   public function setPods($pods)
   {
@@ -140,11 +120,7 @@ class GoogleCloudSecuritycenterV2Kubernetes extends \Google\Collection
     return $this->pods;
   }
   /**
-   * Provides Kubernetes role information for findings that involve [Roles or
-   * ClusterRoles](https://cloud.google.com/kubernetes-engine/docs/how-to/role-
-   * based-access-control).
-   *
-   * @param GoogleCloudSecuritycenterV2Role[] $roles
+   * @param GoogleCloudSecuritycenterV2Role[]
    */
   public function setRoles($roles)
   {

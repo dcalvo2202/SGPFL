@@ -24,10 +24,7 @@ class BulkEditAssignedLocationsResponse extends \Google\Collection
   protected $assignedLocationsDataType = 'array';
 
   /**
-   * The list of assigned locations that have been successfully created. This
-   * list will be absent if empty.
-   *
-   * @param AssignedLocation[] $assignedLocations
+   * @param AssignedLocation[]
    */
   public function setAssignedLocations($assignedLocations)
   {

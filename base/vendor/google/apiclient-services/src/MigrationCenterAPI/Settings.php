@@ -20,30 +20,20 @@ namespace Google\Service\MigrationCenterAPI;
 class Settings extends \Google\Model
 {
   /**
-   * Disable Cloud Logging for the Migration Center API. Users are billed for
-   * the logs.
-   *
    * @var bool
    */
   public $disableCloudLogging;
   /**
-   * Output only. The name of the resource.
-   *
    * @var string
    */
   public $name;
   /**
-   * The preference set used by default for a project.
-   *
    * @var string
    */
   public $preferenceSet;
 
   /**
-   * Disable Cloud Logging for the Migration Center API. Users are billed for
-   * the logs.
-   *
-   * @param bool $disableCloudLogging
+   * @param bool
    */
   public function setDisableCloudLogging($disableCloudLogging)
   {
@@ -57,9 +47,7 @@ class Settings extends \Google\Model
     return $this->disableCloudLogging;
   }
   /**
-   * Output only. The name of the resource.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -73,9 +61,7 @@ class Settings extends \Google\Model
     return $this->name;
   }
   /**
-   * The preference set used by default for a project.
-   *
-   * @param string $preferenceSet
+   * @param string
    */
   public function setPreferenceSet($preferenceSet)
   {

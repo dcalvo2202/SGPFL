@@ -24,9 +24,7 @@ class GoogleCloudMlV1ListStudiesResponse extends \Google\Collection
   protected $studiesDataType = 'array';
 
   /**
-   * The studies associated with the project.
-   *
-   * @param GoogleCloudMlV1Study[] $studies
+   * @param GoogleCloudMlV1Study[]
    */
   public function setStudies($studies)
   {

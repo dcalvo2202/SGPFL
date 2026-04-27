@@ -21,31 +21,16 @@ class GcipSettings extends \Google\Collection
 {
   protected $collection_key = 'tenantIds';
   /**
-   * Login page URI associated with the GCIP tenants. Typically, all resources
-   * within the same project share the same login page, though it could be
-   * overridden at the sub resource level.
-   *
    * @var string
    */
   public $loginPageUri;
   /**
-   * Optional. GCIP tenant IDs that are linked to the IAP resource. `tenant_ids`
-   * could be a string beginning with a number character to indicate
-   * authenticating with GCIP tenant flow, or in the format of `_` to indicate
-   * authenticating with GCIP agent flow. If agent flow is used, `tenant_ids`
-   * should only contain one single element, while for tenant flow, `tenant_ids`
-   * can contain multiple elements.
-   *
    * @var string[]
    */
   public $tenantIds;
 
   /**
-   * Login page URI associated with the GCIP tenants. Typically, all resources
-   * within the same project share the same login page, though it could be
-   * overridden at the sub resource level.
-   *
-   * @param string $loginPageUri
+   * @param string
    */
   public function setLoginPageUri($loginPageUri)
   {
@@ -59,14 +44,7 @@ class GcipSettings extends \Google\Collection
     return $this->loginPageUri;
   }
   /**
-   * Optional. GCIP tenant IDs that are linked to the IAP resource. `tenant_ids`
-   * could be a string beginning with a number character to indicate
-   * authenticating with GCIP tenant flow, or in the format of `_` to indicate
-   * authenticating with GCIP agent flow. If agent flow is used, `tenant_ids`
-   * should only contain one single element, while for tenant flow, `tenant_ids`
-   * can contain multiple elements.
-   *
-   * @param string[] $tenantIds
+   * @param string[]
    */
   public function setTenantIds($tenantIds)
   {

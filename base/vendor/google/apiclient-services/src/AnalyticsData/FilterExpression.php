@@ -29,9 +29,7 @@ class FilterExpression extends \Google\Model
   protected $orGroupDataType = '';
 
   /**
-   * The FilterExpressions in and_group have an AND relationship.
-   *
-   * @param FilterExpressionList $andGroup
+   * @param FilterExpressionList
    */
   public function setAndGroup(FilterExpressionList $andGroup)
   {
@@ -45,10 +43,7 @@ class FilterExpression extends \Google\Model
     return $this->andGroup;
   }
   /**
-   * A primitive filter. In the same FilterExpression, all of the filter's field
-   * names need to be either all dimensions or all metrics.
-   *
-   * @param Filter $filter
+   * @param Filter
    */
   public function setFilter(Filter $filter)
   {
@@ -62,9 +57,7 @@ class FilterExpression extends \Google\Model
     return $this->filter;
   }
   /**
-   * The FilterExpression is NOT of not_expression.
-   *
-   * @param FilterExpression $notExpression
+   * @param FilterExpression
    */
   public function setNotExpression(FilterExpression $notExpression)
   {
@@ -78,9 +71,7 @@ class FilterExpression extends \Google\Model
     return $this->notExpression;
   }
   /**
-   * The FilterExpressions in or_group have an OR relationship.
-   *
-   * @param FilterExpressionList $orGroup
+   * @param FilterExpressionList
    */
   public function setOrGroup(FilterExpressionList $orGroup)
   {

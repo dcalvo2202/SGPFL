@@ -37,7 +37,7 @@ class GoogleCloudDialogflowV2beta1SpeechWordInfo extends \Google\Model
   public $word;
 
   /**
-   * @param float $confidence
+   * @param float
    */
   public function setConfidence($confidence)
   {
@@ -51,7 +51,7 @@ class GoogleCloudDialogflowV2beta1SpeechWordInfo extends \Google\Model
     return $this->confidence;
   }
   /**
-   * @param string $endOffset
+   * @param string
    */
   public function setEndOffset($endOffset)
   {
@@ -65,7 +65,7 @@ class GoogleCloudDialogflowV2beta1SpeechWordInfo extends \Google\Model
     return $this->endOffset;
   }
   /**
-   * @param string $startOffset
+   * @param string
    */
   public function setStartOffset($startOffset)
   {
@@ -79,7 +79,7 @@ class GoogleCloudDialogflowV2beta1SpeechWordInfo extends \Google\Model
     return $this->startOffset;
   }
   /**
-   * @param string $word
+   * @param string
    */
   public function setWord($word)
   {

@@ -21,8 +21,6 @@ class DimensionValueRequest extends \Google\Collection
 {
   protected $collection_key = 'filters';
   /**
-   * The name of the dimension for which values should be requested.
-   *
    * @var string
    */
   public $dimensionName;
@@ -33,9 +31,6 @@ class DimensionValueRequest extends \Google\Collection
   protected $filtersType = DimensionFilter::class;
   protected $filtersDataType = 'array';
   /**
-   * The kind of request this is, in this case
-   * dfareporting#dimensionValueRequest .
-   *
    * @var string
    */
   public $kind;
@@ -45,9 +40,7 @@ class DimensionValueRequest extends \Google\Collection
   public $startDate;
 
   /**
-   * The name of the dimension for which values should be requested.
-   *
-   * @param string $dimensionName
+   * @param string
    */
   public function setDimensionName($dimensionName)
   {
@@ -61,7 +54,7 @@ class DimensionValueRequest extends \Google\Collection
     return $this->dimensionName;
   }
   /**
-   * @param string $endDate
+   * @param string
    */
   public function setEndDate($endDate)
   {
@@ -75,9 +68,7 @@ class DimensionValueRequest extends \Google\Collection
     return $this->endDate;
   }
   /**
-   * The list of filters by which to filter values. The filters are ANDed.
-   *
-   * @param DimensionFilter[] $filters
+   * @param DimensionFilter[]
    */
   public function setFilters($filters)
   {
@@ -91,10 +82,7 @@ class DimensionValueRequest extends \Google\Collection
     return $this->filters;
   }
   /**
-   * The kind of request this is, in this case
-   * dfareporting#dimensionValueRequest .
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -108,7 +96,7 @@ class DimensionValueRequest extends \Google\Collection
     return $this->kind;
   }
   /**
-   * @param string $startDate
+   * @param string
    */
   public function setStartDate($startDate)
   {

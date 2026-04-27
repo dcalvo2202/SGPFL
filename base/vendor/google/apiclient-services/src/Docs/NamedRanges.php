@@ -21,8 +21,6 @@ class NamedRanges extends \Google\Collection
 {
   protected $collection_key = 'namedRanges';
   /**
-   * The name that all the named ranges share.
-   *
    * @var string
    */
   public $name;
@@ -30,9 +28,7 @@ class NamedRanges extends \Google\Collection
   protected $namedRangesDataType = 'array';
 
   /**
-   * The name that all the named ranges share.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -46,9 +42,7 @@ class NamedRanges extends \Google\Collection
     return $this->name;
   }
   /**
-   * The NamedRanges that share the same name.
-   *
-   * @param NamedRange[] $namedRanges
+   * @param NamedRange[]
    */
   public function setNamedRanges($namedRanges)
   {

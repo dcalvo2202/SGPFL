@@ -20,32 +20,20 @@ namespace Google\Service\AndroidPublisher;
 class Bundle extends \Google\Model
 {
   /**
-   * A sha1 hash of the upload payload, encoded as a hex string and matching the
-   * output of the sha1sum command.
-   *
    * @var string
    */
   public $sha1;
   /**
-   * A sha256 hash of the upload payload, encoded as a hex string and matching
-   * the output of the sha256sum command.
-   *
    * @var string
    */
   public $sha256;
   /**
-   * The version code of the Android App Bundle, as specified in the Android App
-   * Bundle's base module APK manifest file.
-   *
    * @var int
    */
   public $versionCode;
 
   /**
-   * A sha1 hash of the upload payload, encoded as a hex string and matching the
-   * output of the sha1sum command.
-   *
-   * @param string $sha1
+   * @param string
    */
   public function setSha1($sha1)
   {
@@ -59,10 +47,7 @@ class Bundle extends \Google\Model
     return $this->sha1;
   }
   /**
-   * A sha256 hash of the upload payload, encoded as a hex string and matching
-   * the output of the sha256sum command.
-   *
-   * @param string $sha256
+   * @param string
    */
   public function setSha256($sha256)
   {
@@ -76,10 +61,7 @@ class Bundle extends \Google\Model
     return $this->sha256;
   }
   /**
-   * The version code of the Android App Bundle, as specified in the Android App
-   * Bundle's base module APK manifest file.
-   *
-   * @param int $versionCode
+   * @param int
    */
   public function setVersionCode($versionCode)
   {

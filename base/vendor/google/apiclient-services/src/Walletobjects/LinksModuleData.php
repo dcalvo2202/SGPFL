@@ -24,9 +24,7 @@ class LinksModuleData extends \Google\Collection
   protected $urisDataType = 'array';
 
   /**
-   * The list of URIs.
-   *
-   * @param Uri[] $uris
+   * @param Uri[]
    */
   public function setUris($uris)
   {

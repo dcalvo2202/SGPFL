@@ -20,16 +20,12 @@ namespace Google\Service\NetworkManagement;
 class StorageBucketInfo extends \Google\Model
 {
   /**
-   * Cloud Storage Bucket name.
-   *
    * @var string
    */
   public $bucket;
 
   /**
-   * Cloud Storage Bucket name.
-   *
-   * @param string $bucket
+   * @param string
    */
   public function setBucket($bucket)
   {

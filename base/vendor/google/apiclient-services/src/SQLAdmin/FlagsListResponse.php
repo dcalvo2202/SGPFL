@@ -23,16 +23,12 @@ class FlagsListResponse extends \Google\Collection
   protected $itemsType = Flag::class;
   protected $itemsDataType = 'array';
   /**
-   * This is always `sql#flagsList`.
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * List of flags.
-   *
-   * @param Flag[] $items
+   * @param Flag[]
    */
   public function setItems($items)
   {
@@ -46,9 +42,7 @@ class FlagsListResponse extends \Google\Collection
     return $this->items;
   }
   /**
-   * This is always `sql#flagsList`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

@@ -20,22 +20,12 @@ namespace Google\Service\CloudAsset;
 class ResourceSelector extends \Google\Model
 {
   /**
-   * Required. The [full resource name] (https://cloud.google.com/asset-
-   * inventory/docs/resource-name-format) of a resource of [supported resource
-   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-
-   * types#analyzable_asset_types).
-   *
    * @var string
    */
   public $fullResourceName;
 
   /**
-   * Required. The [full resource name] (https://cloud.google.com/asset-
-   * inventory/docs/resource-name-format) of a resource of [supported resource
-   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-
-   * types#analyzable_asset_types).
-   *
-   * @param string $fullResourceName
+   * @param string
    */
   public function setFullResourceName($fullResourceName)
   {

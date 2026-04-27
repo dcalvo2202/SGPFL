@@ -20,117 +20,18 @@ namespace Google\Service\YouTube;
 class VideoStatus extends \Google\Model
 {
   /**
-   * Unable to convert video content.
-   */
-  public const FAILURE_REASON_conversion = 'conversion';
-  /**
-   * Invalid file format.
-   */
-  public const FAILURE_REASON_invalidFile = 'invalidFile';
-  /**
-   * Empty file.
-   */
-  public const FAILURE_REASON_emptyFile = 'emptyFile';
-  /**
-   * File was too small.
-   */
-  public const FAILURE_REASON_tooSmall = 'tooSmall';
-  /**
-   * Unsupported codec.
-   */
-  public const FAILURE_REASON_codec = 'codec';
-  /**
-   * Upload wasn't finished.
-   */
-  public const FAILURE_REASON_uploadAborted = 'uploadAborted';
-  public const LICENSE_youtube = 'youtube';
-  public const LICENSE_creativeCommon = 'creativeCommon';
-  public const PRIVACY_STATUS_public = 'public';
-  public const PRIVACY_STATUS_unlisted = 'unlisted';
-  public const PRIVACY_STATUS_private = 'private';
-  /**
-   * Copyright infringement.
-   */
-  public const REJECTION_REASON_copyright = 'copyright';
-  /**
-   * Inappropriate video content.
-   */
-  public const REJECTION_REASON_inappropriate = 'inappropriate';
-  /**
-   * Duplicate upload in the same channel.
-   */
-  public const REJECTION_REASON_duplicate = 'duplicate';
-  /**
-   * Terms of use violation.
-   */
-  public const REJECTION_REASON_termsOfUse = 'termsOfUse';
-  /**
-   * Uploader account was suspended.
-   */
-  public const REJECTION_REASON_uploaderAccountSuspended = 'uploaderAccountSuspended';
-  /**
-   * Video duration was too long.
-   */
-  public const REJECTION_REASON_length = 'length';
-  /**
-   * Blocked by content owner.
-   */
-  public const REJECTION_REASON_claim = 'claim';
-  /**
-   * Uploader closed his/her account.
-   */
-  public const REJECTION_REASON_uploaderAccountClosed = 'uploaderAccountClosed';
-  /**
-   * Trademark infringement.
-   */
-  public const REJECTION_REASON_trademark = 'trademark';
-  /**
-   * An unspecified legal reason.
-   */
-  public const REJECTION_REASON_legal = 'legal';
-  /**
-   * Video has been uploaded but not processed yet.
-   */
-  public const UPLOAD_STATUS_uploaded = 'uploaded';
-  /**
-   * Video has been successfully processed.
-   */
-  public const UPLOAD_STATUS_processed = 'processed';
-  /**
-   * Processing has failed. See FailureReason.
-   */
-  public const UPLOAD_STATUS_failed = 'failed';
-  /**
-   * Video has been rejected. See RejectionReason.
-   */
-  public const UPLOAD_STATUS_rejected = 'rejected';
-  /**
-   * Video has been deleted.
-   */
-  public const UPLOAD_STATUS_deleted = 'deleted';
-  /**
-   * Indicates if the video contains altered or synthetic media.
-   *
    * @var bool
    */
   public $containsSyntheticMedia;
   /**
-   * This value indicates if the video can be embedded on another website.
-   * @mutable youtube.videos.insert youtube.videos.update
-   *
    * @var bool
    */
   public $embeddable;
   /**
-   * This value explains why a video failed to upload. This property is only
-   * present if the uploadStatus property indicates that the upload failed.
-   *
    * @var string
    */
   public $failureReason;
   /**
-   * The video's license. @mutable youtube.videos.insert youtube.videos.update
-   *
    * @var string
    */
   public $license;
@@ -139,32 +40,18 @@ class VideoStatus extends \Google\Model
    */
   public $madeForKids;
   /**
-   * The video's privacy status.
-   *
    * @var string
    */
   public $privacyStatus;
   /**
-   * This value indicates if the extended video statistics on the watch page can
-   * be viewed by everyone. Note that the view count, likes, etc will still be
-   * visible if this is disabled. @mutable youtube.videos.insert
-   * youtube.videos.update
-   *
    * @var bool
    */
   public $publicStatsViewable;
   /**
-   * The date and time when the video is scheduled to publish. It can be set
-   * only if the privacy status of the video is private..
-   *
    * @var string
    */
   public $publishAt;
   /**
-   * This value explains why YouTube rejected an uploaded video. This property
-   * is only present if the uploadStatus property indicates that the upload was
-   * rejected.
-   *
    * @var string
    */
   public $rejectionReason;
@@ -173,16 +60,12 @@ class VideoStatus extends \Google\Model
    */
   public $selfDeclaredMadeForKids;
   /**
-   * The status of the uploaded video.
-   *
    * @var string
    */
   public $uploadStatus;
 
   /**
-   * Indicates if the video contains altered or synthetic media.
-   *
-   * @param bool $containsSyntheticMedia
+   * @param bool
    */
   public function setContainsSyntheticMedia($containsSyntheticMedia)
   {
@@ -196,10 +79,7 @@ class VideoStatus extends \Google\Model
     return $this->containsSyntheticMedia;
   }
   /**
-   * This value indicates if the video can be embedded on another website.
-   * @mutable youtube.videos.insert youtube.videos.update
-   *
-   * @param bool $embeddable
+   * @param bool
    */
   public function setEmbeddable($embeddable)
   {
@@ -213,45 +93,35 @@ class VideoStatus extends \Google\Model
     return $this->embeddable;
   }
   /**
-   * This value explains why a video failed to upload. This property is only
-   * present if the uploadStatus property indicates that the upload failed.
-   *
-   * Accepted values: conversion, invalidFile, emptyFile, tooSmall, codec,
-   * uploadAborted
-   *
-   * @param self::FAILURE_REASON_* $failureReason
+   * @param string
    */
   public function setFailureReason($failureReason)
   {
     $this->failureReason = $failureReason;
   }
   /**
-   * @return self::FAILURE_REASON_*
+   * @return string
    */
   public function getFailureReason()
   {
     return $this->failureReason;
   }
   /**
-   * The video's license. @mutable youtube.videos.insert youtube.videos.update
-   *
-   * Accepted values: youtube, creativeCommon
-   *
-   * @param self::LICENSE_* $license
+   * @param string
    */
   public function setLicense($license)
   {
     $this->license = $license;
   }
   /**
-   * @return self::LICENSE_*
+   * @return string
    */
   public function getLicense()
   {
     return $this->license;
   }
   /**
-   * @param bool $madeForKids
+   * @param bool
    */
   public function setMadeForKids($madeForKids)
   {
@@ -265,30 +135,21 @@ class VideoStatus extends \Google\Model
     return $this->madeForKids;
   }
   /**
-   * The video's privacy status.
-   *
-   * Accepted values: public, unlisted, private
-   *
-   * @param self::PRIVACY_STATUS_* $privacyStatus
+   * @param string
    */
   public function setPrivacyStatus($privacyStatus)
   {
     $this->privacyStatus = $privacyStatus;
   }
   /**
-   * @return self::PRIVACY_STATUS_*
+   * @return string
    */
   public function getPrivacyStatus()
   {
     return $this->privacyStatus;
   }
   /**
-   * This value indicates if the extended video statistics on the watch page can
-   * be viewed by everyone. Note that the view count, likes, etc will still be
-   * visible if this is disabled. @mutable youtube.videos.insert
-   * youtube.videos.update
-   *
-   * @param bool $publicStatsViewable
+   * @param bool
    */
   public function setPublicStatsViewable($publicStatsViewable)
   {
@@ -302,10 +163,7 @@ class VideoStatus extends \Google\Model
     return $this->publicStatsViewable;
   }
   /**
-   * The date and time when the video is scheduled to publish. It can be set
-   * only if the privacy status of the video is private..
-   *
-   * @param string $publishAt
+   * @param string
    */
   public function setPublishAt($publishAt)
   {
@@ -319,29 +177,21 @@ class VideoStatus extends \Google\Model
     return $this->publishAt;
   }
   /**
-   * This value explains why YouTube rejected an uploaded video. This property
-   * is only present if the uploadStatus property indicates that the upload was
-   * rejected.
-   *
-   * Accepted values: copyright, inappropriate, duplicate, termsOfUse,
-   * uploaderAccountSuspended, length, claim, uploaderAccountClosed, trademark,
-   * legal
-   *
-   * @param self::REJECTION_REASON_* $rejectionReason
+   * @param string
    */
   public function setRejectionReason($rejectionReason)
   {
     $this->rejectionReason = $rejectionReason;
   }
   /**
-   * @return self::REJECTION_REASON_*
+   * @return string
    */
   public function getRejectionReason()
   {
     return $this->rejectionReason;
   }
   /**
-   * @param bool $selfDeclaredMadeForKids
+   * @param bool
    */
   public function setSelfDeclaredMadeForKids($selfDeclaredMadeForKids)
   {
@@ -355,18 +205,14 @@ class VideoStatus extends \Google\Model
     return $this->selfDeclaredMadeForKids;
   }
   /**
-   * The status of the uploaded video.
-   *
-   * Accepted values: uploaded, processed, failed, rejected, deleted
-   *
-   * @param self::UPLOAD_STATUS_* $uploadStatus
+   * @param string
    */
   public function setUploadStatus($uploadStatus)
   {
     $this->uploadStatus = $uploadStatus;
   }
   /**
-   * @return self::UPLOAD_STATUS_*
+   * @return string
    */
   public function getUploadStatus()
   {

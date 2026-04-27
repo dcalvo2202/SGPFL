@@ -19,63 +19,29 @@ namespace Google\Service\Spanner;
 
 class RestoreDatabaseMetadata extends \Google\Model
 {
-  /**
-   * No restore associated.
-   */
-  public const SOURCE_TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * A backup was used as the source of the restore.
-   */
-  public const SOURCE_TYPE_BACKUP = 'BACKUP';
   protected $backupInfoType = BackupInfo::class;
   protected $backupInfoDataType = '';
   /**
-   * The time at which cancellation of this operation was received.
-   * Operations.CancelOperation starts asynchronous cancellation on a long-
-   * running operation. The server makes a best effort to cancel the operation,
-   * but success is not guaranteed. Clients can use Operations.GetOperation or
-   * other methods to check whether the cancellation succeeded or whether the
-   * operation completed despite cancellation. On successful cancellation, the
-   * operation is not deleted; instead, it becomes an operation with an
-   * Operation.error value with a google.rpc.Status.code of 1, corresponding to
-   * `Code.CANCELLED`.
-   *
    * @var string
    */
   public $cancelTime;
   /**
-   * Name of the database being created and restored to.
-   *
    * @var string
    */
   public $name;
   /**
-   * If exists, the name of the long-running operation that will be used to
-   * track the post-restore optimization process to optimize the performance of
-   * the restored database, and remove the dependency on the restore source. The
-   * name is of the form `projects//instances//databases//operations/` where the
-   * is the name of database being created and restored to. The metadata type of
-   * the long-running operation is OptimizeRestoredDatabaseMetadata. This long-
-   * running operation will be automatically created by the system after the
-   * RestoreDatabase long-running operation completes successfully. This
-   * operation will not be created if the restore was not successful.
-   *
    * @var string
    */
   public $optimizeDatabaseOperationName;
   protected $progressType = OperationProgress::class;
   protected $progressDataType = '';
   /**
-   * The type of the restore source.
-   *
    * @var string
    */
   public $sourceType;
 
   /**
-   * Information about the backup used to restore the database.
-   *
-   * @param BackupInfo $backupInfo
+   * @param BackupInfo
    */
   public function setBackupInfo(BackupInfo $backupInfo)
   {
@@ -89,17 +55,7 @@ class RestoreDatabaseMetadata extends \Google\Model
     return $this->backupInfo;
   }
   /**
-   * The time at which cancellation of this operation was received.
-   * Operations.CancelOperation starts asynchronous cancellation on a long-
-   * running operation. The server makes a best effort to cancel the operation,
-   * but success is not guaranteed. Clients can use Operations.GetOperation or
-   * other methods to check whether the cancellation succeeded or whether the
-   * operation completed despite cancellation. On successful cancellation, the
-   * operation is not deleted; instead, it becomes an operation with an
-   * Operation.error value with a google.rpc.Status.code of 1, corresponding to
-   * `Code.CANCELLED`.
-   *
-   * @param string $cancelTime
+   * @param string
    */
   public function setCancelTime($cancelTime)
   {
@@ -113,9 +69,7 @@ class RestoreDatabaseMetadata extends \Google\Model
     return $this->cancelTime;
   }
   /**
-   * Name of the database being created and restored to.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -129,17 +83,7 @@ class RestoreDatabaseMetadata extends \Google\Model
     return $this->name;
   }
   /**
-   * If exists, the name of the long-running operation that will be used to
-   * track the post-restore optimization process to optimize the performance of
-   * the restored database, and remove the dependency on the restore source. The
-   * name is of the form `projects//instances//databases//operations/` where the
-   * is the name of database being created and restored to. The metadata type of
-   * the long-running operation is OptimizeRestoredDatabaseMetadata. This long-
-   * running operation will be automatically created by the system after the
-   * RestoreDatabase long-running operation completes successfully. This
-   * operation will not be created if the restore was not successful.
-   *
-   * @param string $optimizeDatabaseOperationName
+   * @param string
    */
   public function setOptimizeDatabaseOperationName($optimizeDatabaseOperationName)
   {
@@ -153,9 +97,7 @@ class RestoreDatabaseMetadata extends \Google\Model
     return $this->optimizeDatabaseOperationName;
   }
   /**
-   * The progress of the RestoreDatabase operation.
-   *
-   * @param OperationProgress $progress
+   * @param OperationProgress
    */
   public function setProgress(OperationProgress $progress)
   {
@@ -169,18 +111,14 @@ class RestoreDatabaseMetadata extends \Google\Model
     return $this->progress;
   }
   /**
-   * The type of the restore source.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, BACKUP
-   *
-   * @param self::SOURCE_TYPE_* $sourceType
+   * @param string
    */
   public function setSourceType($sourceType)
   {
     $this->sourceType = $sourceType;
   }
   /**
-   * @return self::SOURCE_TYPE_*
+   * @return string
    */
   public function getSourceType()
   {

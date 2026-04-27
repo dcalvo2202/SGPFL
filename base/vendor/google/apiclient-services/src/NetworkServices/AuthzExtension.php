@@ -19,172 +19,62 @@ namespace Google\Service\NetworkServices;
 
 class AuthzExtension extends \Google\Collection
 {
-  /**
-   * Default value. Do not use.
-   */
-  public const LOAD_BALANCING_SCHEME_LOAD_BALANCING_SCHEME_UNSPECIFIED = 'LOAD_BALANCING_SCHEME_UNSPECIFIED';
-  /**
-   * Signifies that this is used for Internal HTTP(S) Load Balancing.
-   */
-  public const LOAD_BALANCING_SCHEME_INTERNAL_MANAGED = 'INTERNAL_MANAGED';
-  /**
-   * Signifies that this is used for External Managed HTTP(S) Load Balancing.
-   */
-  public const LOAD_BALANCING_SCHEME_EXTERNAL_MANAGED = 'EXTERNAL_MANAGED';
-  /**
-   * Not specified.
-   */
-  public const WIRE_FORMAT_WIRE_FORMAT_UNSPECIFIED = 'WIRE_FORMAT_UNSPECIFIED';
-  /**
-   * The extension service uses ext_proc gRPC API over a gRPC stream. This is
-   * the default value if the wire format is not specified. The backend service
-   * for the extension must use HTTP2 or H2C as the protocol. All
-   * `supported_events` for a client request are sent as part of the same gRPC
-   * stream.
-   */
-  public const WIRE_FORMAT_EXT_PROC_GRPC = 'EXT_PROC_GRPC';
-  /**
-   * The extension service uses Envoy's `ext_authz` gRPC API. The backend
-   * service for the extension must use HTTP2 or H2C as the protocol.
-   * `EXT_AUTHZ_GRPC` is only supported for regional `AuthzExtension` resources.
-   */
-  public const WIRE_FORMAT_EXT_AUTHZ_GRPC = 'EXT_AUTHZ_GRPC';
   protected $collection_key = 'forwardHeaders';
   /**
-   * Optional. The `:authority` header in the gRPC request sent from Envoy to
-   * the extension service. It is required when the `service` field points to a
-   * backend service or a wasm plugin.
-   *
    * @var string
    */
   public $authority;
   /**
-   * Output only. The timestamp when the resource was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. A human-readable description of the resource.
-   *
    * @var string
    */
   public $description;
   /**
-   * Optional. Determines how the proxy behaves if the call to the extension
-   * fails or times out. When set to `TRUE`, request or response processing
-   * continues without error. Any subsequent extensions in the extension chain
-   * are also executed. When set to `FALSE` or the default setting of `FALSE` is
-   * used, one of the following happens: * If response headers have not been
-   * delivered to the downstream client, a generic 500 error is returned to the
-   * client. The error response can be tailored by configuring a custom error
-   * response in the load balancer. * If response headers have been delivered,
-   * then the HTTP stream to the downstream client is reset.
-   *
    * @var bool
    */
   public $failOpen;
   /**
-   * Optional. List of the Envoy attributes to forward to the extension server.
-   * The attributes provided here are included as part of the
-   * `ProcessingRequest.attributes` field (of type `map`), where the keys are
-   * the attribute names. Refer to the
-   * [documentation](https://cloud.google.com/service-extensions/docs/cel-
-   * matcher-language-reference#attributes) for the names of attributes that can
-   * be forwarded. If omitted, no attributes are sent. Each element is a string
-   * indicating the attribute name.
-   *
-   * @var string[]
-   */
-  public $forwardAttributes;
-  /**
-   * Optional. List of the HTTP headers to forward to the extension (from the
-   * client). If omitted, all headers are sent. Each element is a string
-   * indicating the header name.
-   *
    * @var string[]
    */
   public $forwardHeaders;
   /**
-   * Optional. Set of labels associated with the `AuthzExtension` resource. The
-   * format must comply with [the requirements for
-   * labels](/compute/docs/labeling-resources#requirements) for Google Cloud
-   * resources.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Optional. All backend services and forwarding rules referenced by this
-   * extension must share the same load balancing scheme. Supported values:
-   * `INTERNAL_MANAGED`, `EXTERNAL_MANAGED`. Can be omitted for AuthzExtensions
-   * that do not reference a backend service. For more information, refer to
-   * [Backend services overview](https://cloud.google.com/load-
-   * balancing/docs/backend-service).
-   *
    * @var string
    */
   public $loadBalancingScheme;
   /**
-   * Optional. The metadata provided here is included as part of the
-   * `metadata_context` (of type `google.protobuf.Struct`) in the
-   * `ProcessingRequest` message sent to the extension server. The metadata is
-   * available under the namespace `com.google.authz_extension.`. The following
-   * variables are supported in the metadata Struct: `{forwarding_rule_id}` -
-   * substituted with the forwarding rule's fully qualified resource name.
-   *
    * @var array[]
    */
   public $metadata;
   /**
-   * Required. Identifier. Name of the `AuthzExtension` resource in the
-   * following format: `projects/{project}/locations/{location}/authzExtensions/
-   * {authz_extension}`.
-   *
    * @var string
    */
   public $name;
   /**
-   * Required. The reference to the service that runs the extension. To
-   * configure a callout extension, `service` must be a fully-qualified
-   * reference to a [backend service](https://cloud.google.com/compute/docs/refe
-   * rence/rest/v1/backendServices) in the format: `https://www.googleapis.com/c
-   * ompute/v1/projects/{project}/regions/{region}/backendServices/{backendServi
-   * ce}` or `https://www.googleapis.com/compute/v1/projects/{project}/global/ba
-   * ckendServices/{backendService}`.
-   *
    * @var string
    */
   public $service;
   /**
-   * Required. Specifies the timeout for each individual message on the stream.
-   * The timeout must be between 10-10000 milliseconds.
-   *
    * @var string
    */
   public $timeout;
   /**
-   * Output only. The timestamp when the resource was updated.
-   *
    * @var string
    */
   public $updateTime;
   /**
-   * Optional. The format of communication supported by the callout extension.
-   * This field is supported only for regional `AuthzExtension` resources. If
-   * not specified, the default value `EXT_PROC_GRPC` is used. Global
-   * `AuthzExtension` resources use the `EXT_PROC_GRPC` wire format.
-   *
    * @var string
    */
   public $wireFormat;
 
   /**
-   * Optional. The `:authority` header in the gRPC request sent from Envoy to
-   * the extension service. It is required when the `service` field points to a
-   * backend service or a wasm plugin.
-   *
-   * @param string $authority
+   * @param string
    */
   public function setAuthority($authority)
   {
@@ -198,9 +88,7 @@ class AuthzExtension extends \Google\Collection
     return $this->authority;
   }
   /**
-   * Output only. The timestamp when the resource was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -214,9 +102,7 @@ class AuthzExtension extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Optional. A human-readable description of the resource.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -230,17 +116,7 @@ class AuthzExtension extends \Google\Collection
     return $this->description;
   }
   /**
-   * Optional. Determines how the proxy behaves if the call to the extension
-   * fails or times out. When set to `TRUE`, request or response processing
-   * continues without error. Any subsequent extensions in the extension chain
-   * are also executed. When set to `FALSE` or the default setting of `FALSE` is
-   * used, one of the following happens: * If response headers have not been
-   * delivered to the downstream client, a generic 500 error is returned to the
-   * client. The error response can be tailored by configuring a custom error
-   * response in the load balancer. * If response headers have been delivered,
-   * then the HTTP stream to the downstream client is reset.
-   *
-   * @param bool $failOpen
+   * @param bool
    */
   public function setFailOpen($failOpen)
   {
@@ -254,34 +130,7 @@ class AuthzExtension extends \Google\Collection
     return $this->failOpen;
   }
   /**
-   * Optional. List of the Envoy attributes to forward to the extension server.
-   * The attributes provided here are included as part of the
-   * `ProcessingRequest.attributes` field (of type `map`), where the keys are
-   * the attribute names. Refer to the
-   * [documentation](https://cloud.google.com/service-extensions/docs/cel-
-   * matcher-language-reference#attributes) for the names of attributes that can
-   * be forwarded. If omitted, no attributes are sent. Each element is a string
-   * indicating the attribute name.
-   *
-   * @param string[] $forwardAttributes
-   */
-  public function setForwardAttributes($forwardAttributes)
-  {
-    $this->forwardAttributes = $forwardAttributes;
-  }
-  /**
-   * @return string[]
-   */
-  public function getForwardAttributes()
-  {
-    return $this->forwardAttributes;
-  }
-  /**
-   * Optional. List of the HTTP headers to forward to the extension (from the
-   * client). If omitted, all headers are sent. Each element is a string
-   * indicating the header name.
-   *
-   * @param string[] $forwardHeaders
+   * @param string[]
    */
   public function setForwardHeaders($forwardHeaders)
   {
@@ -295,12 +144,7 @@ class AuthzExtension extends \Google\Collection
     return $this->forwardHeaders;
   }
   /**
-   * Optional. Set of labels associated with the `AuthzExtension` resource. The
-   * format must comply with [the requirements for
-   * labels](/compute/docs/labeling-resources#requirements) for Google Cloud
-   * resources.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -314,38 +158,21 @@ class AuthzExtension extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Optional. All backend services and forwarding rules referenced by this
-   * extension must share the same load balancing scheme. Supported values:
-   * `INTERNAL_MANAGED`, `EXTERNAL_MANAGED`. Can be omitted for AuthzExtensions
-   * that do not reference a backend service. For more information, refer to
-   * [Backend services overview](https://cloud.google.com/load-
-   * balancing/docs/backend-service).
-   *
-   * Accepted values: LOAD_BALANCING_SCHEME_UNSPECIFIED, INTERNAL_MANAGED,
-   * EXTERNAL_MANAGED
-   *
-   * @param self::LOAD_BALANCING_SCHEME_* $loadBalancingScheme
+   * @param string
    */
   public function setLoadBalancingScheme($loadBalancingScheme)
   {
     $this->loadBalancingScheme = $loadBalancingScheme;
   }
   /**
-   * @return self::LOAD_BALANCING_SCHEME_*
+   * @return string
    */
   public function getLoadBalancingScheme()
   {
     return $this->loadBalancingScheme;
   }
   /**
-   * Optional. The metadata provided here is included as part of the
-   * `metadata_context` (of type `google.protobuf.Struct`) in the
-   * `ProcessingRequest` message sent to the extension server. The metadata is
-   * available under the namespace `com.google.authz_extension.`. The following
-   * variables are supported in the metadata Struct: `{forwarding_rule_id}` -
-   * substituted with the forwarding rule's fully qualified resource name.
-   *
-   * @param array[] $metadata
+   * @param array[]
    */
   public function setMetadata($metadata)
   {
@@ -359,11 +186,7 @@ class AuthzExtension extends \Google\Collection
     return $this->metadata;
   }
   /**
-   * Required. Identifier. Name of the `AuthzExtension` resource in the
-   * following format: `projects/{project}/locations/{location}/authzExtensions/
-   * {authz_extension}`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -377,15 +200,7 @@ class AuthzExtension extends \Google\Collection
     return $this->name;
   }
   /**
-   * Required. The reference to the service that runs the extension. To
-   * configure a callout extension, `service` must be a fully-qualified
-   * reference to a [backend service](https://cloud.google.com/compute/docs/refe
-   * rence/rest/v1/backendServices) in the format: `https://www.googleapis.com/c
-   * ompute/v1/projects/{project}/regions/{region}/backendServices/{backendServi
-   * ce}` or `https://www.googleapis.com/compute/v1/projects/{project}/global/ba
-   * ckendServices/{backendService}`.
-   *
-   * @param string $service
+   * @param string
    */
   public function setService($service)
   {
@@ -399,10 +214,7 @@ class AuthzExtension extends \Google\Collection
     return $this->service;
   }
   /**
-   * Required. Specifies the timeout for each individual message on the stream.
-   * The timeout must be between 10-10000 milliseconds.
-   *
-   * @param string $timeout
+   * @param string
    */
   public function setTimeout($timeout)
   {
@@ -416,9 +228,7 @@ class AuthzExtension extends \Google\Collection
     return $this->timeout;
   }
   /**
-   * Output only. The timestamp when the resource was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -432,21 +242,14 @@ class AuthzExtension extends \Google\Collection
     return $this->updateTime;
   }
   /**
-   * Optional. The format of communication supported by the callout extension.
-   * This field is supported only for regional `AuthzExtension` resources. If
-   * not specified, the default value `EXT_PROC_GRPC` is used. Global
-   * `AuthzExtension` resources use the `EXT_PROC_GRPC` wire format.
-   *
-   * Accepted values: WIRE_FORMAT_UNSPECIFIED, EXT_PROC_GRPC, EXT_AUTHZ_GRPC
-   *
-   * @param self::WIRE_FORMAT_* $wireFormat
+   * @param string
    */
   public function setWireFormat($wireFormat)
   {
     $this->wireFormat = $wireFormat;
   }
   /**
-   * @return self::WIRE_FORMAT_*
+   * @return string
    */
   public function getWireFormat()
   {

@@ -23,48 +23,30 @@ class GoogleCloudApigeeV1EnvironmentGroupConfig extends \Google\Collection
   protected $endpointChainingRulesType = GoogleCloudApigeeV1EndpointChainingRule::class;
   protected $endpointChainingRulesDataType = 'array';
   /**
-   * Host names for the environment group.
-   *
    * @var string[]
    */
   public $hostnames;
   /**
-   * When this message appears in the top-level IngressConfig, this field will
-   * be populated in lieu of the inlined routing_rules and hostnames fields.
-   * Some URL for downloading the full EnvironmentGroupConfig for this group.
-   *
    * @var string
    */
   public $location;
   /**
-   * Name of the environment group in the following format:
-   * `organizations/{org}/envgroups/{envgroup}`.
-   *
    * @var string
    */
   public $name;
   /**
-   * Revision id that defines the ordering of the EnvironmentGroupConfig
-   * resource. The higher the revision, the more recently the configuration was
-   * deployed.
-   *
    * @var string
    */
   public $revisionId;
   protected $routingRulesType = GoogleCloudApigeeV1RoutingRule::class;
   protected $routingRulesDataType = 'array';
   /**
-   * A unique id for the environment group config that will only change if the
-   * environment group is deleted and recreated.
-   *
    * @var string
    */
   public $uid;
 
   /**
-   * A list of proxies in each deployment group for proxy chaining calls.
-   *
-   * @param GoogleCloudApigeeV1EndpointChainingRule[] $endpointChainingRules
+   * @param GoogleCloudApigeeV1EndpointChainingRule[]
    */
   public function setEndpointChainingRules($endpointChainingRules)
   {
@@ -78,9 +60,7 @@ class GoogleCloudApigeeV1EnvironmentGroupConfig extends \Google\Collection
     return $this->endpointChainingRules;
   }
   /**
-   * Host names for the environment group.
-   *
-   * @param string[] $hostnames
+   * @param string[]
    */
   public function setHostnames($hostnames)
   {
@@ -94,11 +74,7 @@ class GoogleCloudApigeeV1EnvironmentGroupConfig extends \Google\Collection
     return $this->hostnames;
   }
   /**
-   * When this message appears in the top-level IngressConfig, this field will
-   * be populated in lieu of the inlined routing_rules and hostnames fields.
-   * Some URL for downloading the full EnvironmentGroupConfig for this group.
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -112,10 +88,7 @@ class GoogleCloudApigeeV1EnvironmentGroupConfig extends \Google\Collection
     return $this->location;
   }
   /**
-   * Name of the environment group in the following format:
-   * `organizations/{org}/envgroups/{envgroup}`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -129,11 +102,7 @@ class GoogleCloudApigeeV1EnvironmentGroupConfig extends \Google\Collection
     return $this->name;
   }
   /**
-   * Revision id that defines the ordering of the EnvironmentGroupConfig
-   * resource. The higher the revision, the more recently the configuration was
-   * deployed.
-   *
-   * @param string $revisionId
+   * @param string
    */
   public function setRevisionId($revisionId)
   {
@@ -147,10 +116,7 @@ class GoogleCloudApigeeV1EnvironmentGroupConfig extends \Google\Collection
     return $this->revisionId;
   }
   /**
-   * Ordered list of routing rules defining how traffic to this environment
-   * group's hostnames should be routed to different environments.
-   *
-   * @param GoogleCloudApigeeV1RoutingRule[] $routingRules
+   * @param GoogleCloudApigeeV1RoutingRule[]
    */
   public function setRoutingRules($routingRules)
   {
@@ -164,10 +130,7 @@ class GoogleCloudApigeeV1EnvironmentGroupConfig extends \Google\Collection
     return $this->routingRules;
   }
   /**
-   * A unique id for the environment group config that will only change if the
-   * environment group is deleted and recreated.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {

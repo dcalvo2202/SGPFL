@@ -23,18 +23,12 @@ class GoogleCloudContactcenterinsightsV1ListConversationsResponse extends \Googl
   protected $conversationsType = GoogleCloudContactcenterinsightsV1Conversation::class;
   protected $conversationsDataType = 'array';
   /**
-   * A token which can be sent as `page_token` to retrieve the next page. If
-   * this field is set, it means there is another page available. If it is not
-   * set, it means no other pages are available.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The conversations that match the request.
-   *
-   * @param GoogleCloudContactcenterinsightsV1Conversation[] $conversations
+   * @param GoogleCloudContactcenterinsightsV1Conversation[]
    */
   public function setConversations($conversations)
   {
@@ -48,11 +42,7 @@ class GoogleCloudContactcenterinsightsV1ListConversationsResponse extends \Googl
     return $this->conversations;
   }
   /**
-   * A token which can be sent as `page_token` to retrieve the next page. If
-   * this field is set, it means there is another page available. If it is not
-   * set, it means no other pages are available.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

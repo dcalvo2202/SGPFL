@@ -25,10 +25,7 @@ class PolicyControllerResourceRequirements extends \Google\Model
   protected $requestsDataType = '';
 
   /**
-   * Limits describes the maximum amount of compute resources allowed for use by
-   * the running container.
-   *
-   * @param PolicyControllerResourceList $limits
+   * @param PolicyControllerResourceList
    */
   public function setLimits(PolicyControllerResourceList $limits)
   {
@@ -42,10 +39,7 @@ class PolicyControllerResourceRequirements extends \Google\Model
     return $this->limits;
   }
   /**
-   * Requests describes the amount of compute resources reserved for the
-   * container by the kube-scheduler.
-   *
-   * @param PolicyControllerResourceList $requests
+   * @param PolicyControllerResourceList
    */
   public function setRequests(PolicyControllerResourceList $requests)
   {

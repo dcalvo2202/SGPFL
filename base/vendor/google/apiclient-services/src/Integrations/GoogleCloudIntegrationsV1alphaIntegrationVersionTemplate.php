@@ -22,16 +22,12 @@ class GoogleCloudIntegrationsV1alphaIntegrationVersionTemplate extends \Google\M
   protected $integrationVersionType = GoogleCloudIntegrationsV1alphaIntegrationVersion::class;
   protected $integrationVersionDataType = '';
   /**
-   * Required. Unique Key of the IntegrationVersion.
-   *
    * @var string
    */
   public $key;
 
   /**
-   * Required. Templatized version of integration.
-   *
-   * @param GoogleCloudIntegrationsV1alphaIntegrationVersion $integrationVersion
+   * @param GoogleCloudIntegrationsV1alphaIntegrationVersion
    */
   public function setIntegrationVersion(GoogleCloudIntegrationsV1alphaIntegrationVersion $integrationVersion)
   {
@@ -45,9 +41,7 @@ class GoogleCloudIntegrationsV1alphaIntegrationVersionTemplate extends \Google\M
     return $this->integrationVersion;
   }
   /**
-   * Required. Unique Key of the IntegrationVersion.
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {

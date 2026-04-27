@@ -20,22 +20,14 @@ namespace Google\Service\Compute;
 class ResourcePolicyInstanceSchedulePolicy extends \Google\Model
 {
   /**
-   * The expiration time of the schedule. The timestamp is an RFC3339 string.
-   *
    * @var string
    */
   public $expirationTime;
   /**
-   * The start time of the schedule. The timestamp is an RFC3339 string.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * Specifies the time zone to be used in interpreting Schedule.schedule. The
-   * value of this field must be a time zone name from the tz database:
-   * https://wikipedia.org/wiki/Tz_database.
-   *
    * @var string
    */
   public $timeZone;
@@ -45,9 +37,7 @@ class ResourcePolicyInstanceSchedulePolicy extends \Google\Model
   protected $vmStopScheduleDataType = '';
 
   /**
-   * The expiration time of the schedule. The timestamp is an RFC3339 string.
-   *
-   * @param string $expirationTime
+   * @param string
    */
   public function setExpirationTime($expirationTime)
   {
@@ -61,9 +51,7 @@ class ResourcePolicyInstanceSchedulePolicy extends \Google\Model
     return $this->expirationTime;
   }
   /**
-   * The start time of the schedule. The timestamp is an RFC3339 string.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -77,11 +65,7 @@ class ResourcePolicyInstanceSchedulePolicy extends \Google\Model
     return $this->startTime;
   }
   /**
-   * Specifies the time zone to be used in interpreting Schedule.schedule. The
-   * value of this field must be a time zone name from the tz database:
-   * https://wikipedia.org/wiki/Tz_database.
-   *
-   * @param string $timeZone
+   * @param string
    */
   public function setTimeZone($timeZone)
   {
@@ -95,9 +79,7 @@ class ResourcePolicyInstanceSchedulePolicy extends \Google\Model
     return $this->timeZone;
   }
   /**
-   * Specifies the schedule for starting instances.
-   *
-   * @param ResourcePolicyInstanceSchedulePolicySchedule $vmStartSchedule
+   * @param ResourcePolicyInstanceSchedulePolicySchedule
    */
   public function setVmStartSchedule(ResourcePolicyInstanceSchedulePolicySchedule $vmStartSchedule)
   {
@@ -111,9 +93,7 @@ class ResourcePolicyInstanceSchedulePolicy extends \Google\Model
     return $this->vmStartSchedule;
   }
   /**
-   * Specifies the schedule for stopping instances.
-   *
-   * @param ResourcePolicyInstanceSchedulePolicySchedule $vmStopSchedule
+   * @param ResourcePolicyInstanceSchedulePolicySchedule
    */
   public function setVmStopSchedule(ResourcePolicyInstanceSchedulePolicySchedule $vmStopSchedule)
   {

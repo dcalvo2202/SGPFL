@@ -24,10 +24,7 @@ class GoogleChromePolicyVersionsV1PolicyModificationErrorDetails extends \Google
   protected $modificationErrorsDataType = 'array';
 
   /**
-   * Output only. List of specific policy modifications errors that may have
-   * occurred during a modifying request.
-   *
-   * @param GoogleChromePolicyVersionsV1PolicyModificationError[] $modificationErrors
+   * @param GoogleChromePolicyVersionsV1PolicyModificationError[]
    */
   public function setModificationErrors($modificationErrors)
   {

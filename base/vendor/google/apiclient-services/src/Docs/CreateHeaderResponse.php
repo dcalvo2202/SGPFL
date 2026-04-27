@@ -20,16 +20,12 @@ namespace Google\Service\Docs;
 class CreateHeaderResponse extends \Google\Model
 {
   /**
-   * The ID of the created header.
-   *
    * @var string
    */
   public $headerId;
 
   /**
-   * The ID of the created header.
-   *
-   * @param string $headerId
+   * @param string
    */
   public function setHeaderId($headerId)
   {

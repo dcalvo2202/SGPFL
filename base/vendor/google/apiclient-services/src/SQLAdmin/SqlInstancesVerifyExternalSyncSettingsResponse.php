@@ -23,8 +23,6 @@ class SqlInstancesVerifyExternalSyncSettingsResponse extends \Google\Collection
   protected $errorsType = SqlExternalSyncSettingError::class;
   protected $errorsDataType = 'array';
   /**
-   * This is always `sql#migrationSettingErrorList`.
-   *
    * @var string
    */
   public $kind;
@@ -32,9 +30,7 @@ class SqlInstancesVerifyExternalSyncSettingsResponse extends \Google\Collection
   protected $warningsDataType = 'array';
 
   /**
-   * List of migration violations.
-   *
-   * @param SqlExternalSyncSettingError[] $errors
+   * @param SqlExternalSyncSettingError[]
    */
   public function setErrors($errors)
   {
@@ -48,9 +44,7 @@ class SqlInstancesVerifyExternalSyncSettingsResponse extends \Google\Collection
     return $this->errors;
   }
   /**
-   * This is always `sql#migrationSettingErrorList`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -64,9 +58,7 @@ class SqlInstancesVerifyExternalSyncSettingsResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * List of migration warnings.
-   *
-   * @param SqlExternalSyncSettingError[] $warnings
+   * @param SqlExternalSyncSettingError[]
    */
   public function setWarnings($warnings)
   {

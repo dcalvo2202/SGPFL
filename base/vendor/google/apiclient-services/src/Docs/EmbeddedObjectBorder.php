@@ -19,44 +19,13 @@ namespace Google\Service\Docs;
 
 class EmbeddedObjectBorder extends \Google\Model
 {
-  /**
-   * Unspecified dash style.
-   */
-  public const DASH_STYLE_DASH_STYLE_UNSPECIFIED = 'DASH_STYLE_UNSPECIFIED';
-  /**
-   * Solid line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'solid'.
-   * This is the default dash style.
-   */
-  public const DASH_STYLE_SOLID = 'SOLID';
-  /**
-   * Dotted line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dot'.
-   */
-  public const DASH_STYLE_DOT = 'DOT';
-  /**
-   * Dashed line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dash'.
-   */
-  public const DASH_STYLE_DASH = 'DASH';
-  /**
-   * If a property's state is RENDERED, then the element has the corresponding
-   * property when rendered in the document. This is the default value.
-   */
-  public const PROPERTY_STATE_RENDERED = 'RENDERED';
-  /**
-   * If a property's state is NOT_RENDERED, then the element does not have the
-   * corresponding property when rendered in the document.
-   */
-  public const PROPERTY_STATE_NOT_RENDERED = 'NOT_RENDERED';
   protected $colorType = OptionalColor::class;
   protected $colorDataType = '';
   /**
-   * The dash style of the border.
-   *
    * @var string
    */
   public $dashStyle;
   /**
-   * The property state of the border property.
-   *
    * @var string
    */
   public $propertyState;
@@ -64,9 +33,7 @@ class EmbeddedObjectBorder extends \Google\Model
   protected $widthDataType = '';
 
   /**
-   * The color of the border.
-   *
-   * @param OptionalColor $color
+   * @param OptionalColor
    */
   public function setColor(OptionalColor $color)
   {
@@ -80,45 +47,35 @@ class EmbeddedObjectBorder extends \Google\Model
     return $this->color;
   }
   /**
-   * The dash style of the border.
-   *
-   * Accepted values: DASH_STYLE_UNSPECIFIED, SOLID, DOT, DASH
-   *
-   * @param self::DASH_STYLE_* $dashStyle
+   * @param string
    */
   public function setDashStyle($dashStyle)
   {
     $this->dashStyle = $dashStyle;
   }
   /**
-   * @return self::DASH_STYLE_*
+   * @return string
    */
   public function getDashStyle()
   {
     return $this->dashStyle;
   }
   /**
-   * The property state of the border property.
-   *
-   * Accepted values: RENDERED, NOT_RENDERED
-   *
-   * @param self::PROPERTY_STATE_* $propertyState
+   * @param string
    */
   public function setPropertyState($propertyState)
   {
     $this->propertyState = $propertyState;
   }
   /**
-   * @return self::PROPERTY_STATE_*
+   * @return string
    */
   public function getPropertyState()
   {
     return $this->propertyState;
   }
   /**
-   * The width of the border.
-   *
-   * @param Dimension $width
+   * @param Dimension
    */
   public function setWidth(Dimension $width)
   {

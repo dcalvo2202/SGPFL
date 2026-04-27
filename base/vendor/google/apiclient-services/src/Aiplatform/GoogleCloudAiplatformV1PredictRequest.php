@@ -21,43 +21,16 @@ class GoogleCloudAiplatformV1PredictRequest extends \Google\Collection
 {
   protected $collection_key = 'instances';
   /**
-   * Required. The instances that are the input to the prediction call. A
-   * DeployedModel may have an upper limit on the number of instances it
-   * supports per request, and when it is exceeded the prediction call errors in
-   * case of AutoML Models, or, in case of customer created Models, the
-   * behaviour is as documented by that Model. The schema of any single instance
-   * may be specified via Endpoint's DeployedModels' Model's PredictSchemata's
-   * instance_schema_uri.
-   *
    * @var array[]
    */
   public $instances;
   /**
-   * Optional. The user labels for Imagen billing usage only. Only Imagen
-   * supports labels. For other use cases, it will be ignored.
-   *
-   * @var string[]
-   */
-  public $labels;
-  /**
-   * The parameters that govern the prediction. The schema of the parameters may
-   * be specified via Endpoint's DeployedModels' Model's PredictSchemata's
-   * parameters_schema_uri.
-   *
    * @var array
    */
   public $parameters;
 
   /**
-   * Required. The instances that are the input to the prediction call. A
-   * DeployedModel may have an upper limit on the number of instances it
-   * supports per request, and when it is exceeded the prediction call errors in
-   * case of AutoML Models, or, in case of customer created Models, the
-   * behaviour is as documented by that Model. The schema of any single instance
-   * may be specified via Endpoint's DeployedModels' Model's PredictSchemata's
-   * instance_schema_uri.
-   *
-   * @param array[] $instances
+   * @param array[]
    */
   public function setInstances($instances)
   {
@@ -71,28 +44,7 @@ class GoogleCloudAiplatformV1PredictRequest extends \Google\Collection
     return $this->instances;
   }
   /**
-   * Optional. The user labels for Imagen billing usage only. Only Imagen
-   * supports labels. For other use cases, it will be ignored.
-   *
-   * @param string[] $labels
-   */
-  public function setLabels($labels)
-  {
-    $this->labels = $labels;
-  }
-  /**
-   * @return string[]
-   */
-  public function getLabels()
-  {
-    return $this->labels;
-  }
-  /**
-   * The parameters that govern the prediction. The schema of the parameters may
-   * be specified via Endpoint's DeployedModels' Model's PredictSchemata's
-   * parameters_schema_uri.
-   *
-   * @param array $parameters
+   * @param array
    */
   public function setParameters($parameters)
   {

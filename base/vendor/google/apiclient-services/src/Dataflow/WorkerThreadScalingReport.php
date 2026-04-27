@@ -20,16 +20,12 @@ namespace Google\Service\Dataflow;
 class WorkerThreadScalingReport extends \Google\Model
 {
   /**
-   * Current number of active threads in a worker.
-   *
    * @var int
    */
   public $currentThreadCount;
 
   /**
-   * Current number of active threads in a worker.
-   *
-   * @param int $currentThreadCount
+   * @param int
    */
   public function setCurrentThreadCount($currentThreadCount)
   {

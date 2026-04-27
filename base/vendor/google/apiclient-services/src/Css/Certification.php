@@ -20,36 +20,20 @@ namespace Google\Service\Css;
 class Certification extends \Google\Model
 {
   /**
-   * The authority or certification body responsible for issuing the
-   * certification. At this time, the most common value is "EC" or
-   * “European_Commission” for energy labels in the EU.
-   *
    * @var string
    */
   public $authority;
   /**
-   * The code of the certification. For example, for the EPREL certificate with
-   * the link https://eprel.ec.europa.eu/screen/product/dishwashers2019/123456
-   * the code is 123456. The code is required for European Energy Labels.
-   *
    * @var string
    */
   public $code;
   /**
-   * The name of the certification. At this time, the most common value is
-   * "EPREL", which represents energy efficiency certifications in the EU
-   * European Registry for Energy Labeling (EPREL) database.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The authority or certification body responsible for issuing the
-   * certification. At this time, the most common value is "EC" or
-   * “European_Commission” for energy labels in the EU.
-   *
-   * @param string $authority
+   * @param string
    */
   public function setAuthority($authority)
   {
@@ -63,11 +47,7 @@ class Certification extends \Google\Model
     return $this->authority;
   }
   /**
-   * The code of the certification. For example, for the EPREL certificate with
-   * the link https://eprel.ec.europa.eu/screen/product/dishwashers2019/123456
-   * the code is 123456. The code is required for European Energy Labels.
-   *
-   * @param string $code
+   * @param string
    */
   public function setCode($code)
   {
@@ -81,11 +61,7 @@ class Certification extends \Google\Model
     return $this->code;
   }
   /**
-   * The name of the certification. At this time, the most common value is
-   * "EPREL", which represents energy efficiency certifications in the EU
-   * European Registry for Energy Labeling (EPREL) database.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

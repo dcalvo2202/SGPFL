@@ -25,9 +25,7 @@ class ReportRow extends \Google\Model
   protected $metricValuesDataType = 'map';
 
   /**
-   * Map of dimension values in a row, with keys as enum name of the dimensions.
-   *
-   * @param ReportRowDimensionValue[] $dimensionValues
+   * @param ReportRowDimensionValue[]
    */
   public function setDimensionValues($dimensionValues)
   {
@@ -41,10 +39,7 @@ class ReportRow extends \Google\Model
     return $this->dimensionValues;
   }
   /**
-   * Map of metric values in a row, with keys as enum name of the metrics. If a
-   * metric being requested has no value returned, the map will not include it.
-   *
-   * @param ReportRowMetricValue[] $metricValues
+   * @param ReportRowMetricValue[]
    */
   public function setMetricValues($metricValues)
   {

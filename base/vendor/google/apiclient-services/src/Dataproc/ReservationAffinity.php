@@ -19,63 +19,36 @@ namespace Google\Service\Dataproc;
 
 class ReservationAffinity extends \Google\Collection
 {
-  public const CONSUME_RESERVATION_TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * Do not consume from any allocated capacity.
-   */
-  public const CONSUME_RESERVATION_TYPE_NO_RESERVATION = 'NO_RESERVATION';
-  /**
-   * Consume any reservation available.
-   */
-  public const CONSUME_RESERVATION_TYPE_ANY_RESERVATION = 'ANY_RESERVATION';
-  /**
-   * Must consume from a specific reservation. Must specify key value fields for
-   * specifying the reservations.
-   */
-  public const CONSUME_RESERVATION_TYPE_SPECIFIC_RESERVATION = 'SPECIFIC_RESERVATION';
   protected $collection_key = 'values';
   /**
-   * Optional. Type of reservation to consume
-   *
    * @var string
    */
   public $consumeReservationType;
   /**
-   * Optional. Corresponds to the label key of reservation resource.
-   *
    * @var string
    */
   public $key;
   /**
-   * Optional. Corresponds to the label values of reservation resource.
-   *
    * @var string[]
    */
   public $values;
 
   /**
-   * Optional. Type of reservation to consume
-   *
-   * Accepted values: TYPE_UNSPECIFIED, NO_RESERVATION, ANY_RESERVATION,
-   * SPECIFIC_RESERVATION
-   *
-   * @param self::CONSUME_RESERVATION_TYPE_* $consumeReservationType
+   * @param string
    */
   public function setConsumeReservationType($consumeReservationType)
   {
     $this->consumeReservationType = $consumeReservationType;
   }
   /**
-   * @return self::CONSUME_RESERVATION_TYPE_*
+   * @return string
    */
   public function getConsumeReservationType()
   {
     return $this->consumeReservationType;
   }
   /**
-   * Optional. Corresponds to the label key of reservation resource.
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {
@@ -89,9 +62,7 @@ class ReservationAffinity extends \Google\Collection
     return $this->key;
   }
   /**
-   * Optional. Corresponds to the label values of reservation resource.
-   *
-   * @param string[] $values
+   * @param string[]
    */
   public function setValues($values)
   {

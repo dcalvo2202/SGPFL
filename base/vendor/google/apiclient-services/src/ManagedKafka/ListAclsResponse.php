@@ -23,18 +23,12 @@ class ListAclsResponse extends \Google\Collection
   protected $aclsType = Acl::class;
   protected $aclsDataType = 'array';
   /**
-   * A token that can be sent as `page_token` to retrieve the next page of
-   * results. If this field is omitted, there are no more results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of acls in the requested parent. The order of the acls is
-   * unspecified.
-   *
-   * @param Acl[] $acls
+   * @param Acl[]
    */
   public function setAcls($acls)
   {
@@ -48,10 +42,7 @@ class ListAclsResponse extends \Google\Collection
     return $this->acls;
   }
   /**
-   * A token that can be sent as `page_token` to retrieve the next page of
-   * results. If this field is omitted, there are no more results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

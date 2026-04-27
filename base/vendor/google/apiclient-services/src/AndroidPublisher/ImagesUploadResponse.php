@@ -23,9 +23,7 @@ class ImagesUploadResponse extends \Google\Model
   protected $imageDataType = '';
 
   /**
-   * The uploaded image.
-   *
-   * @param Image $image
+   * @param Image
    */
   public function setImage(Image $image)
   {

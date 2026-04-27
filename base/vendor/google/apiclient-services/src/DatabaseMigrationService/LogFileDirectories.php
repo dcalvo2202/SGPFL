@@ -20,22 +20,16 @@ namespace Google\Service\DatabaseMigrationService;
 class LogFileDirectories extends \Google\Model
 {
   /**
-   * Required. Oracle directory for archived logs.
-   *
    * @var string
    */
   public $archivedLogDirectory;
   /**
-   * Required. Oracle directory for online logs.
-   *
    * @var string
    */
   public $onlineLogDirectory;
 
   /**
-   * Required. Oracle directory for archived logs.
-   *
-   * @param string $archivedLogDirectory
+   * @param string
    */
   public function setArchivedLogDirectory($archivedLogDirectory)
   {
@@ -49,9 +43,7 @@ class LogFileDirectories extends \Google\Model
     return $this->archivedLogDirectory;
   }
   /**
-   * Required. Oracle directory for online logs.
-   *
-   * @param string $onlineLogDirectory
+   * @param string
    */
   public function setOnlineLogDirectory($onlineLogDirectory)
   {

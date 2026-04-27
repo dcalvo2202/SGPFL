@@ -20,31 +20,16 @@ namespace Google\Service\Dataproc;
 class AcceleratorConfig extends \Google\Model
 {
   /**
-   * The number of the accelerator cards of this type exposed to this instance.
-   *
    * @var int
    */
   public $acceleratorCount;
   /**
-   * Full URL, partial URI, or short name of the accelerator type resource to
-   * expose to this instance. See Compute Engine AcceleratorTypes (https://cloud
-   * .google.com/compute/docs/reference/v1/acceleratorTypes).Examples: https://w
-   * ww.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/accelerator
-   * Types/nvidia-tesla-t4
-   * projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-t4 nvidia-
-   * tesla-t4Auto Zone Exception: If you are using the Dataproc Auto Zone
-   * Placement (https://cloud.google.com/dataproc/docs/concepts/configuring-
-   * clusters/auto-zone#using_auto_zone_placement) feature, you must use the
-   * short name of the accelerator type resource, for example, nvidia-tesla-t4.
-   *
    * @var string
    */
   public $acceleratorTypeUri;
 
   /**
-   * The number of the accelerator cards of this type exposed to this instance.
-   *
-   * @param int $acceleratorCount
+   * @param int
    */
   public function setAcceleratorCount($acceleratorCount)
   {
@@ -58,18 +43,7 @@ class AcceleratorConfig extends \Google\Model
     return $this->acceleratorCount;
   }
   /**
-   * Full URL, partial URI, or short name of the accelerator type resource to
-   * expose to this instance. See Compute Engine AcceleratorTypes (https://cloud
-   * .google.com/compute/docs/reference/v1/acceleratorTypes).Examples: https://w
-   * ww.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/accelerator
-   * Types/nvidia-tesla-t4
-   * projects/[project_id]/zones/[zone]/acceleratorTypes/nvidia-tesla-t4 nvidia-
-   * tesla-t4Auto Zone Exception: If you are using the Dataproc Auto Zone
-   * Placement (https://cloud.google.com/dataproc/docs/concepts/configuring-
-   * clusters/auto-zone#using_auto_zone_placement) feature, you must use the
-   * short name of the accelerator type resource, for example, nvidia-tesla-t4.
-   *
-   * @param string $acceleratorTypeUri
+   * @param string
    */
   public function setAcceleratorTypeUri($acceleratorTypeUri)
   {

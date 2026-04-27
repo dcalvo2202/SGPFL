@@ -23,23 +23,16 @@ class CampaignsListResponse extends \Google\Collection
   protected $campaignsType = Campaign::class;
   protected $campaignsDataType = 'array';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#campaignsListResponse".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Pagination token to be used for the next list operation.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Campaign collection.
-   *
-   * @param Campaign[] $campaigns
+   * @param Campaign[]
    */
   public function setCampaigns($campaigns)
   {
@@ -53,10 +46,7 @@ class CampaignsListResponse extends \Google\Collection
     return $this->campaigns;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#campaignsListResponse".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -70,9 +60,7 @@ class CampaignsListResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Pagination token to be used for the next list operation.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

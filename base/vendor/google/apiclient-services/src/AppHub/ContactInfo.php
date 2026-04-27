@@ -20,22 +20,16 @@ namespace Google\Service\AppHub;
 class ContactInfo extends \Google\Model
 {
   /**
-   * Optional. Contact's name. Can have a maximum length of 63 characters.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Required. Email address of the contacts.
-   *
    * @var string
    */
   public $email;
 
   /**
-   * Optional. Contact's name. Can have a maximum length of 63 characters.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -49,9 +43,7 @@ class ContactInfo extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Required. Email address of the contacts.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {

@@ -23,17 +23,12 @@ class ListApisResponse extends \Google\Collection
   protected $apisType = Api::class;
   protected $apisDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The APIs from the specified publisher.
-   *
-   * @param Api[] $apis
+   * @param Api[]
    */
   public function setApis($apis)
   {
@@ -47,10 +42,7 @@ class ListApisResponse extends \Google\Collection
     return $this->apis;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

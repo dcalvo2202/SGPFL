@@ -21,16 +21,12 @@ class GoogleCloudSaasacceleratorManagementProvidersV1NotificationParameter exten
 {
   protected $collection_key = 'values';
   /**
-   * Optional. Array of string values. e.g. instance's replica information.
-   *
    * @var string[]
    */
   public $values;
 
   /**
-   * Optional. Array of string values. e.g. instance's replica information.
-   *
-   * @param string[] $values
+   * @param string[]
    */
   public function setValues($values)
   {

@@ -26,9 +26,7 @@ class DiskTypesScopedList extends \Google\Collection
   protected $warningDataType = '';
 
   /**
-   * [Output Only] A list of disk types contained in this scope.
-   *
-   * @param DiskType[] $diskTypes
+   * @param DiskType[]
    */
   public function setDiskTypes($diskTypes)
   {
@@ -42,10 +40,7 @@ class DiskTypesScopedList extends \Google\Collection
     return $this->diskTypes;
   }
   /**
-   * [Output Only] Informational warning which replaces the list of disk types
-   * when the list is empty.
-   *
-   * @param DiskTypesScopedListWarning $warning
+   * @param DiskTypesScopedListWarning
    */
   public function setWarning(DiskTypesScopedListWarning $warning)
   {

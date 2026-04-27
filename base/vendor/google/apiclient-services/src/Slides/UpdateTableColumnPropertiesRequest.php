@@ -21,26 +21,14 @@ class UpdateTableColumnPropertiesRequest extends \Google\Collection
 {
   protected $collection_key = 'columnIndices';
   /**
-   * The list of zero-based indices specifying which columns to update. If no
-   * indices are provided, all columns in the table will be updated.
-   *
    * @var int[]
    */
   public $columnIndices;
   /**
-   * The fields that should be updated. At least one field must be specified.
-   * The root `tableColumnProperties` is implied and should not be specified. A
-   * single `"*"` can be used as short-hand for listing every field. For example
-   * to update the column width, set `fields` to `"column_width"`. If
-   * '"column_width"' is included in the field mask but the property is left
-   * unset, the column width will default to 406,400 EMU (32 points).
-   *
    * @var string
    */
   public $fields;
   /**
-   * The object ID of the table.
-   *
    * @var string
    */
   public $objectId;
@@ -48,10 +36,7 @@ class UpdateTableColumnPropertiesRequest extends \Google\Collection
   protected $tableColumnPropertiesDataType = '';
 
   /**
-   * The list of zero-based indices specifying which columns to update. If no
-   * indices are provided, all columns in the table will be updated.
-   *
-   * @param int[] $columnIndices
+   * @param int[]
    */
   public function setColumnIndices($columnIndices)
   {
@@ -65,14 +50,7 @@ class UpdateTableColumnPropertiesRequest extends \Google\Collection
     return $this->columnIndices;
   }
   /**
-   * The fields that should be updated. At least one field must be specified.
-   * The root `tableColumnProperties` is implied and should not be specified. A
-   * single `"*"` can be used as short-hand for listing every field. For example
-   * to update the column width, set `fields` to `"column_width"`. If
-   * '"column_width"' is included in the field mask but the property is left
-   * unset, the column width will default to 406,400 EMU (32 points).
-   *
-   * @param string $fields
+   * @param string
    */
   public function setFields($fields)
   {
@@ -86,9 +64,7 @@ class UpdateTableColumnPropertiesRequest extends \Google\Collection
     return $this->fields;
   }
   /**
-   * The object ID of the table.
-   *
-   * @param string $objectId
+   * @param string
    */
   public function setObjectId($objectId)
   {
@@ -102,11 +78,7 @@ class UpdateTableColumnPropertiesRequest extends \Google\Collection
     return $this->objectId;
   }
   /**
-   * The table column properties to update. If the value of
-   * `table_column_properties#column_width` in the request is less than 406,400
-   * EMU (32 points), a 400 bad request error is returned.
-   *
-   * @param TableColumnProperties $tableColumnProperties
+   * @param TableColumnProperties
    */
   public function setTableColumnProperties(TableColumnProperties $tableColumnProperties)
   {

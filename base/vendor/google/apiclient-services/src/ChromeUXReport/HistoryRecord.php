@@ -28,12 +28,7 @@ class HistoryRecord extends \Google\Collection
   protected $metricsDataType = 'map';
 
   /**
-   * The collection periods indicate when each of the data points reflected in
-   * the time series data in metrics was collected. Note that all the time
-   * series share the same collection periods, and it is enforced in the CrUX
-   * pipeline that every time series has the same number of data points.
-   *
-   * @param CollectionPeriod[] $collectionPeriods
+   * @param CollectionPeriod[]
    */
   public function setCollectionPeriods($collectionPeriods)
   {
@@ -47,10 +42,7 @@ class HistoryRecord extends \Google\Collection
     return $this->collectionPeriods;
   }
   /**
-   * Key defines all of the unique querying parameters needed to look up a user
-   * experience history record.
-   *
-   * @param HistoryKey $key
+   * @param HistoryKey
    */
   public function setKey(HistoryKey $key)
   {
@@ -64,14 +56,7 @@ class HistoryRecord extends \Google\Collection
     return $this->key;
   }
   /**
-   * Metrics is the map of user experience time series data available for the
-   * record defined in the key field. Metrics are keyed on the metric name.
-   * Allowed key values: ["first_contentful_paint", "first_input_delay",
-   * "largest_contentful_paint", "cumulative_layout_shift",
-   * "experimental_time_to_first_byte",
-   * "experimental_interaction_to_next_paint"]
-   *
-   * @param MetricTimeseries[] $metrics
+   * @param MetricTimeseries[]
    */
   public function setMetrics($metrics)
   {

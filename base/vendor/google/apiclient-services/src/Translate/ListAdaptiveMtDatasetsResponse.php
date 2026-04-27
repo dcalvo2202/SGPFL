@@ -23,18 +23,12 @@ class ListAdaptiveMtDatasetsResponse extends \Google\Collection
   protected $adaptiveMtDatasetsType = AdaptiveMtDataset::class;
   protected $adaptiveMtDatasetsDataType = 'array';
   /**
-   * Optional. A token to retrieve a page of results. Pass this value in the
-   * [ListAdaptiveMtDatasetsRequest.page_token] field in the subsequent call to
-   * `ListAdaptiveMtDatasets` method to retrieve the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Output only. A list of Adaptive MT datasets.
-   *
-   * @param AdaptiveMtDataset[] $adaptiveMtDatasets
+   * @param AdaptiveMtDataset[]
    */
   public function setAdaptiveMtDatasets($adaptiveMtDatasets)
   {
@@ -48,11 +42,7 @@ class ListAdaptiveMtDatasetsResponse extends \Google\Collection
     return $this->adaptiveMtDatasets;
   }
   /**
-   * Optional. A token to retrieve a page of results. Pass this value in the
-   * [ListAdaptiveMtDatasetsRequest.page_token] field in the subsequent call to
-   * `ListAdaptiveMtDatasets` method to retrieve the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

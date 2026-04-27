@@ -21,22 +21,16 @@ class InListFilter extends \Google\Collection
 {
   protected $collection_key = 'values';
   /**
-   * If true, the string value is case sensitive.
-   *
    * @var bool
    */
   public $caseSensitive;
   /**
-   * The list of string values. Must be non-empty.
-   *
    * @var string[]
    */
   public $values;
 
   /**
-   * If true, the string value is case sensitive.
-   *
-   * @param bool $caseSensitive
+   * @param bool
    */
   public function setCaseSensitive($caseSensitive)
   {
@@ -50,9 +44,7 @@ class InListFilter extends \Google\Collection
     return $this->caseSensitive;
   }
   /**
-   * The list of string values. Must be non-empty.
-   *
-   * @param string[] $values
+   * @param string[]
    */
   public function setValues($values)
   {

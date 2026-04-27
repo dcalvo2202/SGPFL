@@ -23,9 +23,7 @@ class ClassifyTextRequest extends \Google\Model
   protected $documentDataType = '';
 
   /**
-   * Required. Input document.
-   *
-   * @param Document $document
+   * @param Document
    */
   public function setDocument(Document $document)
   {

@@ -19,245 +19,90 @@ namespace Google\Service\CloudRun;
 
 class GoogleCloudRunV2Revision extends \Google\Collection
 {
-  /**
-   * Unspecified
-   */
-  public const ENCRYPTION_KEY_REVOCATION_ACTION_ENCRYPTION_KEY_REVOCATION_ACTION_UNSPECIFIED = 'ENCRYPTION_KEY_REVOCATION_ACTION_UNSPECIFIED';
-  /**
-   * Prevents the creation of new instances.
-   */
-  public const ENCRYPTION_KEY_REVOCATION_ACTION_PREVENT_NEW = 'PREVENT_NEW';
-  /**
-   * Shuts down existing instances, and prevents creation of new ones.
-   */
-  public const ENCRYPTION_KEY_REVOCATION_ACTION_SHUTDOWN = 'SHUTDOWN';
-  /**
-   * Unspecified
-   */
-  public const EXECUTION_ENVIRONMENT_EXECUTION_ENVIRONMENT_UNSPECIFIED = 'EXECUTION_ENVIRONMENT_UNSPECIFIED';
-  /**
-   * Uses the First Generation environment.
-   */
-  public const EXECUTION_ENVIRONMENT_EXECUTION_ENVIRONMENT_GEN1 = 'EXECUTION_ENVIRONMENT_GEN1';
-  /**
-   * Uses Second Generation environment.
-   */
-  public const EXECUTION_ENVIRONMENT_EXECUTION_ENVIRONMENT_GEN2 = 'EXECUTION_ENVIRONMENT_GEN2';
-  /**
-   * Do not use this default value.
-   */
-  public const LAUNCH_STAGE_LAUNCH_STAGE_UNSPECIFIED = 'LAUNCH_STAGE_UNSPECIFIED';
-  /**
-   * The feature is not yet implemented. Users can not use it.
-   */
-  public const LAUNCH_STAGE_UNIMPLEMENTED = 'UNIMPLEMENTED';
-  /**
-   * Prelaunch features are hidden from users and are only visible internally.
-   */
-  public const LAUNCH_STAGE_PRELAUNCH = 'PRELAUNCH';
-  /**
-   * Early Access features are limited to a closed group of testers. To use
-   * these features, you must sign up in advance and sign a Trusted Tester
-   * agreement (which includes confidentiality provisions). These features may
-   * be unstable, changed in backward-incompatible ways, and are not guaranteed
-   * to be released.
-   */
-  public const LAUNCH_STAGE_EARLY_ACCESS = 'EARLY_ACCESS';
-  /**
-   * Alpha is a limited availability test for releases before they are cleared
-   * for widespread use. By Alpha, all significant design issues are resolved
-   * and we are in the process of verifying functionality. Alpha customers need
-   * to apply for access, agree to applicable terms, and have their projects
-   * allowlisted. Alpha releases don't have to be feature complete, no SLAs are
-   * provided, and there are no technical support obligations, but they will be
-   * far enough along that customers can actually use them in test environments
-   * or for limited-use tests -- just like they would in normal production
-   * cases.
-   */
-  public const LAUNCH_STAGE_ALPHA = 'ALPHA';
-  /**
-   * Beta is the point at which we are ready to open a release for any customer
-   * to use. There are no SLA or technical support obligations in a Beta
-   * release. Products will be complete from a feature perspective, but may have
-   * some open outstanding issues. Beta releases are suitable for limited
-   * production use cases.
-   */
-  public const LAUNCH_STAGE_BETA = 'BETA';
-  /**
-   * GA features are open to all developers and are considered stable and fully
-   * qualified for production use.
-   */
-  public const LAUNCH_STAGE_GA = 'GA';
-  /**
-   * Deprecated features are scheduled to be shut down and removed. For more
-   * information, see the "Deprecation Policy" section of our [Terms of
-   * Service](https://cloud.google.com/terms/) and the [Google Cloud Platform
-   * Subject to the Deprecation
-   * Policy](https://cloud.google.com/terms/deprecation) documentation.
-   */
-  public const LAUNCH_STAGE_DEPRECATED = 'DEPRECATED';
   protected $collection_key = 'volumes';
   /**
-   * Output only. Unstructured key value map that may be set by external tools
-   * to store and arbitrary metadata. They are not queryable and should be
-   * preserved when modifying objects.
-   *
    * @var string[]
    */
   public $annotations;
-  /**
-   * Output only. Arbitrary identifier for the API client.
-   *
-   * @var string
-   */
-  public $client;
-  /**
-   * Output only. Arbitrary version identifier for the API client.
-   *
-   * @var string
-   */
-  public $clientVersion;
   protected $conditionsType = GoogleCloudRunV2Condition::class;
   protected $conditionsDataType = 'array';
   protected $containersType = GoogleCloudRunV2Container::class;
   protected $containersDataType = 'array';
   /**
-   * Output only. The creation time.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. Email address of the authenticated creator.
-   *
    * @var string
    */
   public $creator;
   /**
-   * Output only. For a deleted resource, the deletion time. It is only
-   * populated as a response to a Delete request.
-   *
    * @var string
    */
   public $deleteTime;
   /**
-   * A reference to a customer managed encryption key (CMEK) to use to encrypt
-   * this container image. For more information, go to
-   * https://cloud.google.com/run/docs/securing/using-cmek
-   *
    * @var string
    */
   public $encryptionKey;
   /**
-   * The action to take if the encryption key is revoked.
-   *
    * @var string
    */
   public $encryptionKeyRevocationAction;
   /**
-   * If encryption_key_revocation_action is SHUTDOWN, the duration before
-   * shutting down all instances. The minimum increment is 1 hour.
-   *
    * @var string
    */
   public $encryptionKeyShutdownDuration;
   /**
-   * Output only. A system-generated fingerprint for this version of the
-   * resource. May be used to detect modification conflict during updates.
-   *
    * @var string
    */
   public $etag;
   /**
-   * The execution environment being used to host this Revision.
-   *
    * @var string
    */
   public $executionEnvironment;
   /**
-   * Output only. For a deleted resource, the time after which it will be
-   * permamently deleted. It is only populated as a response to a Delete
-   * request.
-   *
    * @var string
    */
   public $expireTime;
   /**
-   * Output only. A number that monotonically increases every time the user
-   * modifies the desired state.
-   *
    * @var string
    */
   public $generation;
   /**
-   * Optional. Output only. True if GPU zonal redundancy is disabled on this
-   * revision.
-   *
    * @var bool
    */
   public $gpuZonalRedundancyDisabled;
   /**
-   * Output only. Unstructured key value map that can be used to organize and
-   * categorize objects. User-provided labels are shared with Google's billing
-   * system, so they can be used to filter, or break down billing charges by
-   * team, component, environment, state, etc. For more information, visit
-   * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
-   * https://cloud.google.com/run/docs/configuring/labels.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * The least stable launch stage needed to create this resource, as defined by
-   * [Google Cloud Platform Launch
-   * Stages](https://cloud.google.com/terms/launch-stages). Cloud Run supports
-   * `ALPHA`, `BETA`, and `GA`. Note that this value might not be what was used
-   * as input. For example, if ALPHA was provided as input in the parent
-   * resource, but only BETA and GA-level features are used, this field will be
-   * BETA.
-   *
    * @var string
    */
   public $launchStage;
   /**
-   * Output only. The Google Console URI to obtain logs for the Revision.
-   *
    * @var string
    */
   public $logUri;
   /**
-   * Sets the maximum number of requests that each serving instance can receive.
-   *
    * @var int
    */
   public $maxInstanceRequestConcurrency;
   /**
-   * Output only. The unique name of this Revision.
-   *
    * @var string
    */
   public $name;
   protected $nodeSelectorType = GoogleCloudRunV2NodeSelector::class;
   protected $nodeSelectorDataType = '';
   /**
-   * Output only. The generation of this Revision currently serving traffic. See
-   * comments in `reconciling` for additional information on reconciliation
-   * process in Cloud Run.
-   *
    * @var string
    */
   public $observedGeneration;
   /**
-   * Output only. Indicates whether the resource's reconciliation is still in
-   * progress. See comments in `Service.reconciling` for additional information
-   * on reconciliation process in Cloud Run.
-   *
    * @var bool
    */
   public $reconciling;
   /**
-   * Output only. Reserved for future use.
-   *
    * @var bool
    */
   public $satisfiesPzs;
@@ -266,44 +111,28 @@ class GoogleCloudRunV2Revision extends \Google\Collection
   protected $scalingStatusType = GoogleCloudRunV2RevisionScalingStatus::class;
   protected $scalingStatusDataType = '';
   /**
-   * Output only. The name of the parent service.
-   *
    * @var string
    */
   public $service;
   /**
-   * Email address of the IAM service account associated with the revision of
-   * the service. The service account represents the identity of the running
-   * revision, and determines what permissions the revision has.
-   *
    * @var string
    */
   public $serviceAccount;
   protected $serviceMeshType = GoogleCloudRunV2ServiceMesh::class;
   protected $serviceMeshDataType = '';
   /**
-   * Enable session affinity.
-   *
    * @var bool
    */
   public $sessionAffinity;
   /**
-   * Max allowed time for an instance to respond to a request.
-   *
    * @var string
    */
   public $timeout;
   /**
-   * Output only. Server assigned unique identifier for the Revision. The value
-   * is a UUID4 string and guaranteed to remain unchanged until the resource is
-   * deleted.
-   *
    * @var string
    */
   public $uid;
   /**
-   * Output only. The last-modified time.
-   *
    * @var string
    */
   public $updateTime;
@@ -313,11 +142,7 @@ class GoogleCloudRunV2Revision extends \Google\Collection
   protected $vpcAccessDataType = '';
 
   /**
-   * Output only. Unstructured key value map that may be set by external tools
-   * to store and arbitrary metadata. They are not queryable and should be
-   * preserved when modifying objects.
-   *
-   * @param string[] $annotations
+   * @param string[]
    */
   public function setAnnotations($annotations)
   {
@@ -331,43 +156,7 @@ class GoogleCloudRunV2Revision extends \Google\Collection
     return $this->annotations;
   }
   /**
-   * Output only. Arbitrary identifier for the API client.
-   *
-   * @param string $client
-   */
-  public function setClient($client)
-  {
-    $this->client = $client;
-  }
-  /**
-   * @return string
-   */
-  public function getClient()
-  {
-    return $this->client;
-  }
-  /**
-   * Output only. Arbitrary version identifier for the API client.
-   *
-   * @param string $clientVersion
-   */
-  public function setClientVersion($clientVersion)
-  {
-    $this->clientVersion = $clientVersion;
-  }
-  /**
-   * @return string
-   */
-  public function getClientVersion()
-  {
-    return $this->clientVersion;
-  }
-  /**
-   * Output only. The Condition of this Revision, containing its readiness
-   * status, and detailed error information in case it did not reach a serving
-   * state.
-   *
-   * @param GoogleCloudRunV2Condition[] $conditions
+   * @param GoogleCloudRunV2Condition[]
    */
   public function setConditions($conditions)
   {
@@ -381,9 +170,7 @@ class GoogleCloudRunV2Revision extends \Google\Collection
     return $this->conditions;
   }
   /**
-   * Holds the list which define the units of execution for this Revision.
-   *
-   * @param GoogleCloudRunV2Container[] $containers
+   * @param GoogleCloudRunV2Container[]
    */
   public function setContainers($containers)
   {
@@ -397,9 +184,7 @@ class GoogleCloudRunV2Revision extends \Google\Collection
     return $this->containers;
   }
   /**
-   * Output only. The creation time.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -413,9 +198,7 @@ class GoogleCloudRunV2Revision extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Output only. Email address of the authenticated creator.
-   *
-   * @param string $creator
+   * @param string
    */
   public function setCreator($creator)
   {
@@ -429,10 +212,7 @@ class GoogleCloudRunV2Revision extends \Google\Collection
     return $this->creator;
   }
   /**
-   * Output only. For a deleted resource, the deletion time. It is only
-   * populated as a response to a Delete request.
-   *
-   * @param string $deleteTime
+   * @param string
    */
   public function setDeleteTime($deleteTime)
   {
@@ -446,11 +226,7 @@ class GoogleCloudRunV2Revision extends \Google\Collection
     return $this->deleteTime;
   }
   /**
-   * A reference to a customer managed encryption key (CMEK) to use to encrypt
-   * this container image. For more information, go to
-   * https://cloud.google.com/run/docs/securing/using-cmek
-   *
-   * @param string $encryptionKey
+   * @param string
    */
   public function setEncryptionKey($encryptionKey)
   {
@@ -464,29 +240,21 @@ class GoogleCloudRunV2Revision extends \Google\Collection
     return $this->encryptionKey;
   }
   /**
-   * The action to take if the encryption key is revoked.
-   *
-   * Accepted values: ENCRYPTION_KEY_REVOCATION_ACTION_UNSPECIFIED, PREVENT_NEW,
-   * SHUTDOWN
-   *
-   * @param self::ENCRYPTION_KEY_REVOCATION_ACTION_* $encryptionKeyRevocationAction
+   * @param string
    */
   public function setEncryptionKeyRevocationAction($encryptionKeyRevocationAction)
   {
     $this->encryptionKeyRevocationAction = $encryptionKeyRevocationAction;
   }
   /**
-   * @return self::ENCRYPTION_KEY_REVOCATION_ACTION_*
+   * @return string
    */
   public function getEncryptionKeyRevocationAction()
   {
     return $this->encryptionKeyRevocationAction;
   }
   /**
-   * If encryption_key_revocation_action is SHUTDOWN, the duration before
-   * shutting down all instances. The minimum increment is 1 hour.
-   *
-   * @param string $encryptionKeyShutdownDuration
+   * @param string
    */
   public function setEncryptionKeyShutdownDuration($encryptionKeyShutdownDuration)
   {
@@ -500,10 +268,7 @@ class GoogleCloudRunV2Revision extends \Google\Collection
     return $this->encryptionKeyShutdownDuration;
   }
   /**
-   * Output only. A system-generated fingerprint for this version of the
-   * resource. May be used to detect modification conflict during updates.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -517,30 +282,21 @@ class GoogleCloudRunV2Revision extends \Google\Collection
     return $this->etag;
   }
   /**
-   * The execution environment being used to host this Revision.
-   *
-   * Accepted values: EXECUTION_ENVIRONMENT_UNSPECIFIED,
-   * EXECUTION_ENVIRONMENT_GEN1, EXECUTION_ENVIRONMENT_GEN2
-   *
-   * @param self::EXECUTION_ENVIRONMENT_* $executionEnvironment
+   * @param string
    */
   public function setExecutionEnvironment($executionEnvironment)
   {
     $this->executionEnvironment = $executionEnvironment;
   }
   /**
-   * @return self::EXECUTION_ENVIRONMENT_*
+   * @return string
    */
   public function getExecutionEnvironment()
   {
     return $this->executionEnvironment;
   }
   /**
-   * Output only. For a deleted resource, the time after which it will be
-   * permamently deleted. It is only populated as a response to a Delete
-   * request.
-   *
-   * @param string $expireTime
+   * @param string
    */
   public function setExpireTime($expireTime)
   {
@@ -554,10 +310,7 @@ class GoogleCloudRunV2Revision extends \Google\Collection
     return $this->expireTime;
   }
   /**
-   * Output only. A number that monotonically increases every time the user
-   * modifies the desired state.
-   *
-   * @param string $generation
+   * @param string
    */
   public function setGeneration($generation)
   {
@@ -571,10 +324,7 @@ class GoogleCloudRunV2Revision extends \Google\Collection
     return $this->generation;
   }
   /**
-   * Optional. Output only. True if GPU zonal redundancy is disabled on this
-   * revision.
-   *
-   * @param bool $gpuZonalRedundancyDisabled
+   * @param bool
    */
   public function setGpuZonalRedundancyDisabled($gpuZonalRedundancyDisabled)
   {
@@ -588,14 +338,7 @@ class GoogleCloudRunV2Revision extends \Google\Collection
     return $this->gpuZonalRedundancyDisabled;
   }
   /**
-   * Output only. Unstructured key value map that can be used to organize and
-   * categorize objects. User-provided labels are shared with Google's billing
-   * system, so they can be used to filter, or break down billing charges by
-   * team, component, environment, state, etc. For more information, visit
-   * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
-   * https://cloud.google.com/run/docs/configuring/labels.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -609,34 +352,21 @@ class GoogleCloudRunV2Revision extends \Google\Collection
     return $this->labels;
   }
   /**
-   * The least stable launch stage needed to create this resource, as defined by
-   * [Google Cloud Platform Launch
-   * Stages](https://cloud.google.com/terms/launch-stages). Cloud Run supports
-   * `ALPHA`, `BETA`, and `GA`. Note that this value might not be what was used
-   * as input. For example, if ALPHA was provided as input in the parent
-   * resource, but only BETA and GA-level features are used, this field will be
-   * BETA.
-   *
-   * Accepted values: LAUNCH_STAGE_UNSPECIFIED, UNIMPLEMENTED, PRELAUNCH,
-   * EARLY_ACCESS, ALPHA, BETA, GA, DEPRECATED
-   *
-   * @param self::LAUNCH_STAGE_* $launchStage
+   * @param string
    */
   public function setLaunchStage($launchStage)
   {
     $this->launchStage = $launchStage;
   }
   /**
-   * @return self::LAUNCH_STAGE_*
+   * @return string
    */
   public function getLaunchStage()
   {
     return $this->launchStage;
   }
   /**
-   * Output only. The Google Console URI to obtain logs for the Revision.
-   *
-   * @param string $logUri
+   * @param string
    */
   public function setLogUri($logUri)
   {
@@ -650,9 +380,7 @@ class GoogleCloudRunV2Revision extends \Google\Collection
     return $this->logUri;
   }
   /**
-   * Sets the maximum number of requests that each serving instance can receive.
-   *
-   * @param int $maxInstanceRequestConcurrency
+   * @param int
    */
   public function setMaxInstanceRequestConcurrency($maxInstanceRequestConcurrency)
   {
@@ -666,9 +394,7 @@ class GoogleCloudRunV2Revision extends \Google\Collection
     return $this->maxInstanceRequestConcurrency;
   }
   /**
-   * Output only. The unique name of this Revision.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -682,9 +408,7 @@ class GoogleCloudRunV2Revision extends \Google\Collection
     return $this->name;
   }
   /**
-   * The node selector for the revision.
-   *
-   * @param GoogleCloudRunV2NodeSelector $nodeSelector
+   * @param GoogleCloudRunV2NodeSelector
    */
   public function setNodeSelector(GoogleCloudRunV2NodeSelector $nodeSelector)
   {
@@ -698,11 +422,7 @@ class GoogleCloudRunV2Revision extends \Google\Collection
     return $this->nodeSelector;
   }
   /**
-   * Output only. The generation of this Revision currently serving traffic. See
-   * comments in `reconciling` for additional information on reconciliation
-   * process in Cloud Run.
-   *
-   * @param string $observedGeneration
+   * @param string
    */
   public function setObservedGeneration($observedGeneration)
   {
@@ -716,11 +436,7 @@ class GoogleCloudRunV2Revision extends \Google\Collection
     return $this->observedGeneration;
   }
   /**
-   * Output only. Indicates whether the resource's reconciliation is still in
-   * progress. See comments in `Service.reconciling` for additional information
-   * on reconciliation process in Cloud Run.
-   *
-   * @param bool $reconciling
+   * @param bool
    */
   public function setReconciling($reconciling)
   {
@@ -734,9 +450,7 @@ class GoogleCloudRunV2Revision extends \Google\Collection
     return $this->reconciling;
   }
   /**
-   * Output only. Reserved for future use.
-   *
-   * @param bool $satisfiesPzs
+   * @param bool
    */
   public function setSatisfiesPzs($satisfiesPzs)
   {
@@ -750,9 +464,7 @@ class GoogleCloudRunV2Revision extends \Google\Collection
     return $this->satisfiesPzs;
   }
   /**
-   * Scaling settings for this revision.
-   *
-   * @param GoogleCloudRunV2RevisionScaling $scaling
+   * @param GoogleCloudRunV2RevisionScaling
    */
   public function setScaling(GoogleCloudRunV2RevisionScaling $scaling)
   {
@@ -766,9 +478,7 @@ class GoogleCloudRunV2Revision extends \Google\Collection
     return $this->scaling;
   }
   /**
-   * Output only. The current effective scaling settings for the revision.
-   *
-   * @param GoogleCloudRunV2RevisionScalingStatus $scalingStatus
+   * @param GoogleCloudRunV2RevisionScalingStatus
    */
   public function setScalingStatus(GoogleCloudRunV2RevisionScalingStatus $scalingStatus)
   {
@@ -782,9 +492,7 @@ class GoogleCloudRunV2Revision extends \Google\Collection
     return $this->scalingStatus;
   }
   /**
-   * Output only. The name of the parent service.
-   *
-   * @param string $service
+   * @param string
    */
   public function setService($service)
   {
@@ -798,11 +506,7 @@ class GoogleCloudRunV2Revision extends \Google\Collection
     return $this->service;
   }
   /**
-   * Email address of the IAM service account associated with the revision of
-   * the service. The service account represents the identity of the running
-   * revision, and determines what permissions the revision has.
-   *
-   * @param string $serviceAccount
+   * @param string
    */
   public function setServiceAccount($serviceAccount)
   {
@@ -816,9 +520,7 @@ class GoogleCloudRunV2Revision extends \Google\Collection
     return $this->serviceAccount;
   }
   /**
-   * Enables service mesh connectivity.
-   *
-   * @param GoogleCloudRunV2ServiceMesh $serviceMesh
+   * @param GoogleCloudRunV2ServiceMesh
    */
   public function setServiceMesh(GoogleCloudRunV2ServiceMesh $serviceMesh)
   {
@@ -832,9 +534,7 @@ class GoogleCloudRunV2Revision extends \Google\Collection
     return $this->serviceMesh;
   }
   /**
-   * Enable session affinity.
-   *
-   * @param bool $sessionAffinity
+   * @param bool
    */
   public function setSessionAffinity($sessionAffinity)
   {
@@ -848,9 +548,7 @@ class GoogleCloudRunV2Revision extends \Google\Collection
     return $this->sessionAffinity;
   }
   /**
-   * Max allowed time for an instance to respond to a request.
-   *
-   * @param string $timeout
+   * @param string
    */
   public function setTimeout($timeout)
   {
@@ -864,11 +562,7 @@ class GoogleCloudRunV2Revision extends \Google\Collection
     return $this->timeout;
   }
   /**
-   * Output only. Server assigned unique identifier for the Revision. The value
-   * is a UUID4 string and guaranteed to remain unchanged until the resource is
-   * deleted.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {
@@ -882,9 +576,7 @@ class GoogleCloudRunV2Revision extends \Google\Collection
     return $this->uid;
   }
   /**
-   * Output only. The last-modified time.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -898,9 +590,7 @@ class GoogleCloudRunV2Revision extends \Google\Collection
     return $this->updateTime;
   }
   /**
-   * A list of Volumes to make available to containers.
-   *
-   * @param GoogleCloudRunV2Volume[] $volumes
+   * @param GoogleCloudRunV2Volume[]
    */
   public function setVolumes($volumes)
   {
@@ -914,10 +604,7 @@ class GoogleCloudRunV2Revision extends \Google\Collection
     return $this->volumes;
   }
   /**
-   * VPC Access configuration for this Revision. For more information, visit
-   * https://cloud.google.com/run/docs/configuring/connecting-vpc.
-   *
-   * @param GoogleCloudRunV2VpcAccess $vpcAccess
+   * @param GoogleCloudRunV2VpcAccess
    */
   public function setVpcAccess(GoogleCloudRunV2VpcAccess $vpcAccess)
   {

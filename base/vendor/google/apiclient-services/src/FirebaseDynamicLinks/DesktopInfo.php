@@ -20,16 +20,12 @@ namespace Google\Service\FirebaseDynamicLinks;
 class DesktopInfo extends \Google\Model
 {
   /**
-   * Link to open on desktop.
-   *
    * @var string
    */
   public $desktopFallbackLink;
 
   /**
-   * Link to open on desktop.
-   *
-   * @param string $desktopFallbackLink
+   * @param string
    */
   public function setDesktopFallbackLink($desktopFallbackLink)
   {

@@ -22,17 +22,12 @@ class GoogleCloudPolicysimulatorV1OrgPolicyOverlayPolicyOverlay extends \Google\
   protected $policyType = GoogleCloudOrgpolicyV2Policy::class;
   protected $policyDataType = '';
   /**
-   * Optional. The parent of the policy we are attaching to. Example:
-   * "projects/123456"
-   *
    * @var string
    */
   public $policyParent;
 
   /**
-   * Optional. The new or updated OrgPolicy.
-   *
-   * @param GoogleCloudOrgpolicyV2Policy $policy
+   * @param GoogleCloudOrgpolicyV2Policy
    */
   public function setPolicy(GoogleCloudOrgpolicyV2Policy $policy)
   {
@@ -46,10 +41,7 @@ class GoogleCloudPolicysimulatorV1OrgPolicyOverlayPolicyOverlay extends \Google\
     return $this->policy;
   }
   /**
-   * Optional. The parent of the policy we are attaching to. Example:
-   * "projects/123456"
-   *
-   * @param string $policyParent
+   * @param string
    */
   public function setPolicyParent($policyParent)
   {

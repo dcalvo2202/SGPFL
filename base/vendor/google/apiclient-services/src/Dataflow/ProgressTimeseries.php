@@ -20,11 +20,6 @@ namespace Google\Service\Dataflow;
 class ProgressTimeseries extends \Google\Collection
 {
   protected $collection_key = 'dataPoints';
-  /**
-   * The current progress of the component, in the range [0,1].
-   *
-   * @var 
-   */
   public $currentProgress;
   protected $dataPointsType = Point::class;
   protected $dataPointsDataType = 'array';
@@ -38,9 +33,7 @@ class ProgressTimeseries extends \Google\Collection
     return $this->currentProgress;
   }
   /**
-   * History of progress for the component. Points are sorted by time.
-   *
-   * @param Point[] $dataPoints
+   * @param Point[]
    */
   public function setDataPoints($dataPoints)
   {

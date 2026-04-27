@@ -20,46 +20,6 @@ namespace Google\Service\DriveActivity;
 class Permission extends \Google\Model
 {
   /**
-   * The role is not available.
-   */
-  public const ROLE_ROLE_UNSPECIFIED = 'ROLE_UNSPECIFIED';
-  /**
-   * A role granting full access.
-   */
-  public const ROLE_OWNER = 'OWNER';
-  /**
-   * A role granting the ability to manage people and settings.
-   */
-  public const ROLE_ORGANIZER = 'ORGANIZER';
-  /**
-   * A role granting the ability to contribute and manage content.
-   */
-  public const ROLE_FILE_ORGANIZER = 'FILE_ORGANIZER';
-  /**
-   * A role granting the ability to contribute content. This role is sometimes
-   * also known as "writer".
-   */
-  public const ROLE_EDITOR = 'EDITOR';
-  /**
-   * A role granting the ability to view and comment on content.
-   */
-  public const ROLE_COMMENTER = 'COMMENTER';
-  /**
-   * A role granting the ability to view content. This role is sometimes also
-   * known as "reader".
-   */
-  public const ROLE_VIEWER = 'VIEWER';
-  /**
-   * A role granting the ability to view content only after it has been
-   * published to the web. This role is sometimes also known as "published
-   * reader". See https://support.google.com/sites/answer/6372880 for more
-   * information.
-   */
-  public const ROLE_PUBLISHED_VIEWER = 'PUBLISHED_VIEWER';
-  /**
-   * If true, the item can be discovered (e.g. in the user's "Shared with me"
-   * collection) without needing a link to the item.
-   *
    * @var bool
    */
   public $allowDiscovery;
@@ -70,11 +30,6 @@ class Permission extends \Google\Model
   protected $groupType = Group::class;
   protected $groupDataType = '';
   /**
-   * Indicates the [Google Drive permissions
-   * role](https://developers.google.com/workspace/drive/web/manage-
-   * sharing#roles). The role determines a user's ability to read, write, and
-   * comment on items.
-   *
    * @var string
    */
   public $role;
@@ -82,10 +37,7 @@ class Permission extends \Google\Model
   protected $userDataType = '';
 
   /**
-   * If true, the item can be discovered (e.g. in the user's "Shared with me"
-   * collection) without needing a link to the item.
-   *
-   * @param bool $allowDiscovery
+   * @param bool
    */
   public function setAllowDiscovery($allowDiscovery)
   {
@@ -99,9 +51,7 @@ class Permission extends \Google\Model
     return $this->allowDiscovery;
   }
   /**
-   * If set, this permission applies to anyone, even logged out users.
-   *
-   * @param Anyone $anyone
+   * @param Anyone
    */
   public function setAnyone(Anyone $anyone)
   {
@@ -115,9 +65,7 @@ class Permission extends \Google\Model
     return $this->anyone;
   }
   /**
-   * The domain to whom this permission applies.
-   *
-   * @param Domain $domain
+   * @param Domain
    */
   public function setDomain(Domain $domain)
   {
@@ -131,9 +79,7 @@ class Permission extends \Google\Model
     return $this->domain;
   }
   /**
-   * The group to whom this permission applies.
-   *
-   * @param Group $group
+   * @param Group
    */
   public function setGroup(Group $group)
   {
@@ -147,31 +93,21 @@ class Permission extends \Google\Model
     return $this->group;
   }
   /**
-   * Indicates the [Google Drive permissions
-   * role](https://developers.google.com/workspace/drive/web/manage-
-   * sharing#roles). The role determines a user's ability to read, write, and
-   * comment on items.
-   *
-   * Accepted values: ROLE_UNSPECIFIED, OWNER, ORGANIZER, FILE_ORGANIZER,
-   * EDITOR, COMMENTER, VIEWER, PUBLISHED_VIEWER
-   *
-   * @param self::ROLE_* $role
+   * @param string
    */
   public function setRole($role)
   {
     $this->role = $role;
   }
   /**
-   * @return self::ROLE_*
+   * @return string
    */
   public function getRole()
   {
     return $this->role;
   }
   /**
-   * The user to whom this permission applies.
-   *
-   * @param User $user
+   * @param User
    */
   public function setUser(User $user)
   {

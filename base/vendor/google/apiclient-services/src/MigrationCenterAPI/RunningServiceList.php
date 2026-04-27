@@ -24,9 +24,7 @@ class RunningServiceList extends \Google\Collection
   protected $entriesDataType = 'array';
 
   /**
-   * Running service entries.
-   *
-   * @param RunningService[] $entries
+   * @param RunningService[]
    */
   public function setEntries($entries)
   {

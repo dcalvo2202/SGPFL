@@ -20,22 +20,12 @@ namespace Google\Service\RecaptchaEnterprise;
 class GoogleCloudRecaptchaenterpriseV1RetrieveLegacySecretKeyResponse extends \Google\Model
 {
   /**
-   * The secret key (also known as shared secret) authorizes communication
-   * between your application backend and the reCAPTCHA Enterprise server to
-   * create an assessment. The secret key needs to be kept safe for security
-   * purposes.
-   *
    * @var string
    */
   public $legacySecretKey;
 
   /**
-   * The secret key (also known as shared secret) authorizes communication
-   * between your application backend and the reCAPTCHA Enterprise server to
-   * create an assessment. The secret key needs to be kept safe for security
-   * purposes.
-   *
-   * @param string $legacySecretKey
+   * @param string
    */
   public function setLegacySecretKey($legacySecretKey)
   {

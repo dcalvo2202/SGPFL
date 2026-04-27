@@ -19,26 +19,6 @@ namespace Google\Service\Slides;
 
 class Page extends \Google\Collection
 {
-  /**
-   * A slide page.
-   */
-  public const PAGE_TYPE_SLIDE = 'SLIDE';
-  /**
-   * A master slide page.
-   */
-  public const PAGE_TYPE_MASTER = 'MASTER';
-  /**
-   * A layout page.
-   */
-  public const PAGE_TYPE_LAYOUT = 'LAYOUT';
-  /**
-   * A notes page.
-   */
-  public const PAGE_TYPE_NOTES = 'NOTES';
-  /**
-   * A notes master page.
-   */
-  public const PAGE_TYPE_NOTES_MASTER = 'NOTES_MASTER';
   protected $collection_key = 'pageElements';
   protected $layoutPropertiesType = LayoutProperties::class;
   protected $layoutPropertiesDataType = '';
@@ -47,9 +27,6 @@ class Page extends \Google\Collection
   protected $notesPropertiesType = NotesProperties::class;
   protected $notesPropertiesDataType = '';
   /**
-   * The object ID for this page. Object IDs used by Page and PageElement share
-   * the same namespace.
-   *
    * @var string
    */
   public $objectId;
@@ -58,24 +35,10 @@ class Page extends \Google\Collection
   protected $pagePropertiesType = PageProperties::class;
   protected $pagePropertiesDataType = '';
   /**
-   * The type of the page.
-   *
    * @var string
    */
   public $pageType;
   /**
-   * Output only. The revision ID of the presentation. Can be used in update
-   * requests to assert the presentation revision hasn't changed since the last
-   * read operation. Only populated if the user has edit access to the
-   * presentation. The revision ID is not a sequential number but an opaque
-   * string. The format of the revision ID might change over time. A returned
-   * revision ID is only guaranteed to be valid for 24 hours after it has been
-   * returned and cannot be shared across users. If the revision ID is unchanged
-   * between calls, then the presentation has not changed. Conversely, a changed
-   * ID (for the same presentation and user) usually means the presentation has
-   * been updated. However, a changed ID can also be due to internal factors
-   * such as ID format changes.
-   *
    * @var string
    */
   public $revisionId;
@@ -83,9 +46,7 @@ class Page extends \Google\Collection
   protected $slidePropertiesDataType = '';
 
   /**
-   * Layout specific properties. Only set if page_type = LAYOUT.
-   *
-   * @param LayoutProperties $layoutProperties
+   * @param LayoutProperties
    */
   public function setLayoutProperties(LayoutProperties $layoutProperties)
   {
@@ -99,9 +60,7 @@ class Page extends \Google\Collection
     return $this->layoutProperties;
   }
   /**
-   * Master specific properties. Only set if page_type = MASTER.
-   *
-   * @param MasterProperties $masterProperties
+   * @param MasterProperties
    */
   public function setMasterProperties(MasterProperties $masterProperties)
   {
@@ -115,9 +74,7 @@ class Page extends \Google\Collection
     return $this->masterProperties;
   }
   /**
-   * Notes specific properties. Only set if page_type = NOTES.
-   *
-   * @param NotesProperties $notesProperties
+   * @param NotesProperties
    */
   public function setNotesProperties(NotesProperties $notesProperties)
   {
@@ -131,10 +88,7 @@ class Page extends \Google\Collection
     return $this->notesProperties;
   }
   /**
-   * The object ID for this page. Object IDs used by Page and PageElement share
-   * the same namespace.
-   *
-   * @param string $objectId
+   * @param string
    */
   public function setObjectId($objectId)
   {
@@ -148,9 +102,7 @@ class Page extends \Google\Collection
     return $this->objectId;
   }
   /**
-   * The page elements rendered on the page.
-   *
-   * @param PageElement[] $pageElements
+   * @param PageElement[]
    */
   public function setPageElements($pageElements)
   {
@@ -164,9 +116,7 @@ class Page extends \Google\Collection
     return $this->pageElements;
   }
   /**
-   * The properties of the page.
-   *
-   * @param PageProperties $pageProperties
+   * @param PageProperties
    */
   public function setPageProperties(PageProperties $pageProperties)
   {
@@ -180,37 +130,21 @@ class Page extends \Google\Collection
     return $this->pageProperties;
   }
   /**
-   * The type of the page.
-   *
-   * Accepted values: SLIDE, MASTER, LAYOUT, NOTES, NOTES_MASTER
-   *
-   * @param self::PAGE_TYPE_* $pageType
+   * @param string
    */
   public function setPageType($pageType)
   {
     $this->pageType = $pageType;
   }
   /**
-   * @return self::PAGE_TYPE_*
+   * @return string
    */
   public function getPageType()
   {
     return $this->pageType;
   }
   /**
-   * Output only. The revision ID of the presentation. Can be used in update
-   * requests to assert the presentation revision hasn't changed since the last
-   * read operation. Only populated if the user has edit access to the
-   * presentation. The revision ID is not a sequential number but an opaque
-   * string. The format of the revision ID might change over time. A returned
-   * revision ID is only guaranteed to be valid for 24 hours after it has been
-   * returned and cannot be shared across users. If the revision ID is unchanged
-   * between calls, then the presentation has not changed. Conversely, a changed
-   * ID (for the same presentation and user) usually means the presentation has
-   * been updated. However, a changed ID can also be due to internal factors
-   * such as ID format changes.
-   *
-   * @param string $revisionId
+   * @param string
    */
   public function setRevisionId($revisionId)
   {
@@ -224,9 +158,7 @@ class Page extends \Google\Collection
     return $this->revisionId;
   }
   /**
-   * Slide specific properties. Only set if page_type = SLIDE.
-   *
-   * @param SlideProperties $slideProperties
+   * @param SlideProperties
    */
   public function setSlideProperties(SlideProperties $slideProperties)
   {

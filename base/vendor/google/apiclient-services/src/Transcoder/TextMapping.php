@@ -20,30 +20,20 @@ namespace Google\Service\Transcoder;
 class TextMapping extends \Google\Model
 {
   /**
-   * Required. The EditAtom.key that references atom with text inputs in the
-   * JobConfig.edit_list.
-   *
    * @var string
    */
   public $atomKey;
   /**
-   * Required. The Input.key that identifies the input file.
-   *
    * @var string
    */
   public $inputKey;
   /**
-   * Required. The zero-based index of the track in the input file.
-   *
    * @var int
    */
   public $inputTrack;
 
   /**
-   * Required. The EditAtom.key that references atom with text inputs in the
-   * JobConfig.edit_list.
-   *
-   * @param string $atomKey
+   * @param string
    */
   public function setAtomKey($atomKey)
   {
@@ -57,9 +47,7 @@ class TextMapping extends \Google\Model
     return $this->atomKey;
   }
   /**
-   * Required. The Input.key that identifies the input file.
-   *
-   * @param string $inputKey
+   * @param string
    */
   public function setInputKey($inputKey)
   {
@@ -73,9 +61,7 @@ class TextMapping extends \Google\Model
     return $this->inputKey;
   }
   /**
-   * Required. The zero-based index of the track in the input file.
-   *
-   * @param int $inputTrack
+   * @param int
    */
   public function setInputTrack($inputTrack)
   {

@@ -25,7 +25,7 @@ class CheckReadinessResponse extends \Google\Model
   public $status;
 
   /**
-   * @param string $status
+   * @param string
    */
   public function setStatus($status)
   {

@@ -21,43 +21,28 @@ class GoogleCloudApigeeV1ApiSecurityRuntimeConfig extends \Google\Collection
 {
   protected $collection_key = 'location';
   /**
-   * A list of up to 5 Cloud Storage Blobs that contain SecurityActions.
-   *
    * @var string[]
    */
   public $location;
   /**
-   * Name of the environment API Security Runtime configuration resource.
-   * Format: `organizations/{org}/environments/{env}/apiSecurityRuntimeConfig`
-   *
    * @var string
    */
   public $name;
   /**
-   * Revision ID of the API Security Runtime configuration. The higher the
-   * value, the more recently the configuration was deployed.
-   *
    * @var string
    */
   public $revisionId;
   /**
-   * Unique ID for the API Security Runtime configuration. The ID will only
-   * change if the environment is deleted and recreated.
-   *
    * @var string
    */
   public $uid;
   /**
-   * Time that the API Security Runtime configuration was updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * A list of up to 5 Cloud Storage Blobs that contain SecurityActions.
-   *
-   * @param string[] $location
+   * @param string[]
    */
   public function setLocation($location)
   {
@@ -71,10 +56,7 @@ class GoogleCloudApigeeV1ApiSecurityRuntimeConfig extends \Google\Collection
     return $this->location;
   }
   /**
-   * Name of the environment API Security Runtime configuration resource.
-   * Format: `organizations/{org}/environments/{env}/apiSecurityRuntimeConfig`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -88,10 +70,7 @@ class GoogleCloudApigeeV1ApiSecurityRuntimeConfig extends \Google\Collection
     return $this->name;
   }
   /**
-   * Revision ID of the API Security Runtime configuration. The higher the
-   * value, the more recently the configuration was deployed.
-   *
-   * @param string $revisionId
+   * @param string
    */
   public function setRevisionId($revisionId)
   {
@@ -105,10 +84,7 @@ class GoogleCloudApigeeV1ApiSecurityRuntimeConfig extends \Google\Collection
     return $this->revisionId;
   }
   /**
-   * Unique ID for the API Security Runtime configuration. The ID will only
-   * change if the environment is deleted and recreated.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {
@@ -122,9 +98,7 @@ class GoogleCloudApigeeV1ApiSecurityRuntimeConfig extends \Google\Collection
     return $this->uid;
   }
   /**
-   * Time that the API Security Runtime configuration was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

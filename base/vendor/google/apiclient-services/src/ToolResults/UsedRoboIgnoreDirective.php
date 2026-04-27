@@ -20,16 +20,12 @@ namespace Google\Service\ToolResults;
 class UsedRoboIgnoreDirective extends \Google\Model
 {
   /**
-   * The name of the resource that was ignored.
-   *
    * @var string
    */
   public $resourceName;
 
   /**
-   * The name of the resource that was ignored.
-   *
-   * @param string $resourceName
+   * @param string
    */
   public function setResourceName($resourceName)
   {

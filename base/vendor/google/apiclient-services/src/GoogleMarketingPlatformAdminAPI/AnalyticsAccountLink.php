@@ -20,57 +20,24 @@ namespace Google\Service\GoogleMarketingPlatformAdminAPI;
 class AnalyticsAccountLink extends \Google\Model
 {
   /**
-   * The link state is unknown.
-   */
-  public const LINK_VERIFICATION_STATE_LINK_VERIFICATION_STATE_UNSPECIFIED = 'LINK_VERIFICATION_STATE_UNSPECIFIED';
-  /**
-   * The link is established.
-   */
-  public const LINK_VERIFICATION_STATE_LINK_VERIFICATION_STATE_VERIFIED = 'LINK_VERIFICATION_STATE_VERIFIED';
-  /**
-   * The link is requested, but hasn't been approved by the product account
-   * admin.
-   */
-  public const LINK_VERIFICATION_STATE_LINK_VERIFICATION_STATE_NOT_VERIFIED = 'LINK_VERIFICATION_STATE_NOT_VERIFIED';
-  /**
-   * Required. Immutable. The resource name of the AnalyticsAdmin API account.
-   * The account ID will be used as the ID of this AnalyticsAccountLink
-   * resource, which will become the final component of the resource name.
-   * Format: analyticsadmin.googleapis.com/accounts/{account_id}
-   *
    * @var string
    */
   public $analyticsAccount;
   /**
-   * Output only. The human-readable name for the Analytics account.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. The verification state of the link between the Analytics
-   * account and the parent organization.
-   *
    * @var string
    */
   public $linkVerificationState;
   /**
-   * Identifier. Resource name of this AnalyticsAccountLink. Note the resource
-   * ID is the same as the ID of the Analtyics account. Format:
-   * organizations/{org_id}/analyticsAccountLinks/{analytics_account_link_id}
-   * Example: "organizations/xyz/analyticsAccountLinks/1234"
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Required. Immutable. The resource name of the AnalyticsAdmin API account.
-   * The account ID will be used as the ID of this AnalyticsAccountLink
-   * resource, which will become the final component of the resource name.
-   * Format: analyticsadmin.googleapis.com/accounts/{account_id}
-   *
-   * @param string $analyticsAccount
+   * @param string
    */
   public function setAnalyticsAccount($analyticsAccount)
   {
@@ -84,9 +51,7 @@ class AnalyticsAccountLink extends \Google\Model
     return $this->analyticsAccount;
   }
   /**
-   * Output only. The human-readable name for the Analytics account.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -100,32 +65,21 @@ class AnalyticsAccountLink extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Output only. The verification state of the link between the Analytics
-   * account and the parent organization.
-   *
-   * Accepted values: LINK_VERIFICATION_STATE_UNSPECIFIED,
-   * LINK_VERIFICATION_STATE_VERIFIED, LINK_VERIFICATION_STATE_NOT_VERIFIED
-   *
-   * @param self::LINK_VERIFICATION_STATE_* $linkVerificationState
+   * @param string
    */
   public function setLinkVerificationState($linkVerificationState)
   {
     $this->linkVerificationState = $linkVerificationState;
   }
   /**
-   * @return self::LINK_VERIFICATION_STATE_*
+   * @return string
    */
   public function getLinkVerificationState()
   {
     return $this->linkVerificationState;
   }
   /**
-   * Identifier. Resource name of this AnalyticsAccountLink. Note the resource
-   * ID is the same as the ID of the Analtyics account. Format:
-   * organizations/{org_id}/analyticsAccountLinks/{analytics_account_link_id}
-   * Example: "organizations/xyz/analyticsAccountLinks/1234"
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

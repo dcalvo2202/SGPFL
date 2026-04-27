@@ -20,58 +20,28 @@ namespace Google\Service\CloudRun;
 class GoogleDevtoolsCloudbuildV1MavenArtifact extends \Google\Model
 {
   /**
-   * Maven `artifactId` value used when uploading the artifact to Artifact
-   * Registry.
-   *
    * @var string
    */
   public $artifactId;
   /**
-   * Optional. Path to a folder containing the files to upload to Artifact
-   * Registry. This can be either an absolute path, e.g. `/workspace/my-
-   * app/target/`, or a relative path from /workspace, e.g. `my-app/target/`.
-   * This field is mutually exclusive with the `path` field.
-   *
-   * @var string
-   */
-  public $deployFolder;
-  /**
-   * Maven `groupId` value used when uploading the artifact to Artifact
-   * Registry.
-   *
    * @var string
    */
   public $groupId;
   /**
-   * Optional. Path to an artifact in the build's workspace to be uploaded to
-   * Artifact Registry. This can be either an absolute path, e.g. /workspace/my-
-   * app/target/my-app-1.0.SNAPSHOT.jar or a relative path from /workspace, e.g.
-   * my-app/target/my-app-1.0.SNAPSHOT.jar.
-   *
    * @var string
    */
   public $path;
   /**
-   * Artifact Registry repository, in the form "https://$REGION-
-   * maven.pkg.dev/$PROJECT/$REPOSITORY" Artifact in the workspace specified by
-   * path will be uploaded to Artifact Registry with this location as a prefix.
-   *
    * @var string
    */
   public $repository;
   /**
-   * Maven `version` value used when uploading the artifact to Artifact
-   * Registry.
-   *
    * @var string
    */
   public $version;
 
   /**
-   * Maven `artifactId` value used when uploading the artifact to Artifact
-   * Registry.
-   *
-   * @param string $artifactId
+   * @param string
    */
   public function setArtifactId($artifactId)
   {
@@ -85,29 +55,7 @@ class GoogleDevtoolsCloudbuildV1MavenArtifact extends \Google\Model
     return $this->artifactId;
   }
   /**
-   * Optional. Path to a folder containing the files to upload to Artifact
-   * Registry. This can be either an absolute path, e.g. `/workspace/my-
-   * app/target/`, or a relative path from /workspace, e.g. `my-app/target/`.
-   * This field is mutually exclusive with the `path` field.
-   *
-   * @param string $deployFolder
-   */
-  public function setDeployFolder($deployFolder)
-  {
-    $this->deployFolder = $deployFolder;
-  }
-  /**
-   * @return string
-   */
-  public function getDeployFolder()
-  {
-    return $this->deployFolder;
-  }
-  /**
-   * Maven `groupId` value used when uploading the artifact to Artifact
-   * Registry.
-   *
-   * @param string $groupId
+   * @param string
    */
   public function setGroupId($groupId)
   {
@@ -121,12 +69,7 @@ class GoogleDevtoolsCloudbuildV1MavenArtifact extends \Google\Model
     return $this->groupId;
   }
   /**
-   * Optional. Path to an artifact in the build's workspace to be uploaded to
-   * Artifact Registry. This can be either an absolute path, e.g. /workspace/my-
-   * app/target/my-app-1.0.SNAPSHOT.jar or a relative path from /workspace, e.g.
-   * my-app/target/my-app-1.0.SNAPSHOT.jar.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {
@@ -140,11 +83,7 @@ class GoogleDevtoolsCloudbuildV1MavenArtifact extends \Google\Model
     return $this->path;
   }
   /**
-   * Artifact Registry repository, in the form "https://$REGION-
-   * maven.pkg.dev/$PROJECT/$REPOSITORY" Artifact in the workspace specified by
-   * path will be uploaded to Artifact Registry with this location as a prefix.
-   *
-   * @param string $repository
+   * @param string
    */
   public function setRepository($repository)
   {
@@ -158,10 +97,7 @@ class GoogleDevtoolsCloudbuildV1MavenArtifact extends \Google\Model
     return $this->repository;
   }
   /**
-   * Maven `version` value used when uploading the artifact to Artifact
-   * Registry.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

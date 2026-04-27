@@ -25,10 +25,7 @@ class CustomerSettings extends \Google\Model
   protected $vpcSettingsDataType = '';
 
   /**
-   * Audit Logging settings for the customer. If update_mask is empty then this
-   * field will be updated based on UpdateCustomerSettings request.
-   *
-   * @param AuditLoggingSettings $auditLoggingSettings
+   * @param AuditLoggingSettings
    */
   public function setAuditLoggingSettings(AuditLoggingSettings $auditLoggingSettings)
   {
@@ -42,10 +39,7 @@ class CustomerSettings extends \Google\Model
     return $this->auditLoggingSettings;
   }
   /**
-   * VPC SC settings for the customer. If update_mask is empty then this field
-   * will be updated based on UpdateCustomerSettings request.
-   *
-   * @param VPCSettings $vpcSettings
+   * @param VPCSettings
    */
   public function setVpcSettings(VPCSettings $vpcSettings)
   {

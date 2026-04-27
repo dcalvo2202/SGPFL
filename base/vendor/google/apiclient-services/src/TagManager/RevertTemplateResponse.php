@@ -23,11 +23,7 @@ class RevertTemplateResponse extends \Google\Model
   protected $templateDataType = '';
 
   /**
-   * Template as it appears in the latest container version since the last
-   * workspace synchronization operation. If no template is present, that means
-   * the template was deleted in the latest container version.
-   *
-   * @param CustomTemplate $template
+   * @param CustomTemplate
    */
   public function setTemplate(CustomTemplate $template)
   {

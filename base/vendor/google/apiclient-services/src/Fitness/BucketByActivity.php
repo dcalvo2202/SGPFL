@@ -20,26 +20,16 @@ namespace Google\Service\Fitness;
 class BucketByActivity extends \Google\Model
 {
   /**
-   * The default activity stream will be used if a specific activityDataSourceId
-   * is not specified.
-   *
    * @var string
    */
   public $activityDataSourceId;
   /**
-   * Specifies that only activity segments of duration longer than
-   * minDurationMillis are considered and used as a container for aggregated
-   * data.
-   *
    * @var string
    */
   public $minDurationMillis;
 
   /**
-   * The default activity stream will be used if a specific activityDataSourceId
-   * is not specified.
-   *
-   * @param string $activityDataSourceId
+   * @param string
    */
   public function setActivityDataSourceId($activityDataSourceId)
   {
@@ -53,11 +43,7 @@ class BucketByActivity extends \Google\Model
     return $this->activityDataSourceId;
   }
   /**
-   * Specifies that only activity segments of duration longer than
-   * minDurationMillis are considered and used as a container for aggregated
-   * data.
-   *
-   * @param string $minDurationMillis
+   * @param string
    */
   public function setMinDurationMillis($minDurationMillis)
   {

@@ -23,9 +23,7 @@ class MembershipDeletedEventData extends \Google\Model
   protected $membershipDataType = '';
 
   /**
-   * The deleted membership. Only the `name` and `state` fields are populated.
-   *
-   * @param Membership $membership
+   * @param Membership
    */
   public function setMembership(Membership $membership)
   {

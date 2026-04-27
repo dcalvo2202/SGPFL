@@ -20,28 +20,20 @@ namespace Google\Service\Adsense;
 class AdClientAdCode extends \Google\Model
 {
   /**
-   * Output only. The AdSense code snippet to add to the head of an HTML page.
-   *
    * @var string
    */
   public $adCode;
   /**
-   * Output only. The AdSense code snippet to add to the body of an AMP page.
-   *
    * @var string
    */
   public $ampBody;
   /**
-   * Output only. The AdSense code snippet to add to the head of an AMP page.
-   *
    * @var string
    */
   public $ampHead;
 
   /**
-   * Output only. The AdSense code snippet to add to the head of an HTML page.
-   *
-   * @param string $adCode
+   * @param string
    */
   public function setAdCode($adCode)
   {
@@ -55,9 +47,7 @@ class AdClientAdCode extends \Google\Model
     return $this->adCode;
   }
   /**
-   * Output only. The AdSense code snippet to add to the body of an AMP page.
-   *
-   * @param string $ampBody
+   * @param string
    */
   public function setAmpBody($ampBody)
   {
@@ -71,9 +61,7 @@ class AdClientAdCode extends \Google\Model
     return $this->ampBody;
   }
   /**
-   * Output only. The AdSense code snippet to add to the head of an AMP page.
-   *
-   * @param string $ampHead
+   * @param string
    */
   public function setAmpHead($ampHead)
   {

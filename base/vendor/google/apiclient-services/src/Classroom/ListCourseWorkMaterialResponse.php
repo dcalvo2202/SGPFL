@@ -23,17 +23,12 @@ class ListCourseWorkMaterialResponse extends \Google\Collection
   protected $courseWorkMaterialType = CourseWorkMaterial::class;
   protected $courseWorkMaterialDataType = 'array';
   /**
-   * Token identifying the next page of results to return. If empty, no further
-   * results are available.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Course work material items that match the request.
-   *
-   * @param CourseWorkMaterial[] $courseWorkMaterial
+   * @param CourseWorkMaterial[]
    */
   public function setCourseWorkMaterial($courseWorkMaterial)
   {
@@ -47,10 +42,7 @@ class ListCourseWorkMaterialResponse extends \Google\Collection
     return $this->courseWorkMaterial;
   }
   /**
-   * Token identifying the next page of results to return. If empty, no further
-   * results are available.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

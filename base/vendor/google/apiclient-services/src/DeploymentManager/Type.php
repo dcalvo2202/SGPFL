@@ -24,28 +24,22 @@ class Type extends \Google\Model
    */
   public $id;
   /**
-   * Output only. Creation timestamp in RFC3339 text format.
-   *
    * @var string
    */
   public $insertTime;
   /**
-   * Name of the type.
-   *
    * @var string
    */
   public $name;
   protected $operationType = Operation::class;
   protected $operationDataType = '';
   /**
-   * Output only. Server defined URL for the resource.
-   *
    * @var string
    */
   public $selfLink;
 
   /**
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -59,9 +53,7 @@ class Type extends \Google\Model
     return $this->id;
   }
   /**
-   * Output only. Creation timestamp in RFC3339 text format.
-   *
-   * @param string $insertTime
+   * @param string
    */
   public function setInsertTime($insertTime)
   {
@@ -75,9 +67,7 @@ class Type extends \Google\Model
     return $this->insertTime;
   }
   /**
-   * Name of the type.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -91,10 +81,7 @@ class Type extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The Operation that most recently ran, or is currently running,
-   * on this type.
-   *
-   * @param Operation $operation
+   * @param Operation
    */
   public function setOperation(Operation $operation)
   {
@@ -108,9 +95,7 @@ class Type extends \Google\Model
     return $this->operation;
   }
   /**
-   * Output only. Server defined URL for the resource.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {

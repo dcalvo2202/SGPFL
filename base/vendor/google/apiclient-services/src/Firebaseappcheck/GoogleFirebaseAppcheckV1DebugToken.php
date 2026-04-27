@@ -20,49 +20,24 @@ namespace Google\Service\Firebaseappcheck;
 class GoogleFirebaseAppcheckV1DebugToken extends \Google\Model
 {
   /**
-   * Required. A human readable display name used to identify this debug token.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Optional. This checksum is computed by the server based on the value of
-   * other fields, and may be sent on update and delete requests to ensure the
-   * client has an up-to-date value before proceeding. This etag is strongly
-   * validated as defined by RFC 7232.
-   *
-   * @var string
-   */
-  public $etag;
-  /**
-   * Required. The relative resource name of the debug token, in the format: ```
-   * projects/{project_number}/apps/{app_id}/debugTokens/{debug_token_id} ```
-   *
    * @var string
    */
   public $name;
   /**
-   * Required. Input only. Immutable. The secret token itself. Must be provided
-   * during creation, and must be a UUID4, case insensitive. This field is
-   * immutable once set, and cannot be provided during an UpdateDebugToken
-   * request. You can, however, delete this debug token using DeleteDebugToken
-   * to revoke it. For security reasons, this field will never be populated in
-   * any response.
-   *
    * @var string
    */
   public $token;
   /**
-   * Output only. Timestamp when this debug token was most recently updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Required. A human readable display name used to identify this debug token.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -76,29 +51,7 @@ class GoogleFirebaseAppcheckV1DebugToken extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Optional. This checksum is computed by the server based on the value of
-   * other fields, and may be sent on update and delete requests to ensure the
-   * client has an up-to-date value before proceeding. This etag is strongly
-   * validated as defined by RFC 7232.
-   *
-   * @param string $etag
-   */
-  public function setEtag($etag)
-  {
-    $this->etag = $etag;
-  }
-  /**
-   * @return string
-   */
-  public function getEtag()
-  {
-    return $this->etag;
-  }
-  /**
-   * Required. The relative resource name of the debug token, in the format: ```
-   * projects/{project_number}/apps/{app_id}/debugTokens/{debug_token_id} ```
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -112,14 +65,7 @@ class GoogleFirebaseAppcheckV1DebugToken extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. Input only. Immutable. The secret token itself. Must be provided
-   * during creation, and must be a UUID4, case insensitive. This field is
-   * immutable once set, and cannot be provided during an UpdateDebugToken
-   * request. You can, however, delete this debug token using DeleteDebugToken
-   * to revoke it. For security reasons, this field will never be populated in
-   * any response.
-   *
-   * @param string $token
+   * @param string
    */
   public function setToken($token)
   {
@@ -133,9 +79,7 @@ class GoogleFirebaseAppcheckV1DebugToken extends \Google\Model
     return $this->token;
   }
   /**
-   * Output only. Timestamp when this debug token was most recently updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

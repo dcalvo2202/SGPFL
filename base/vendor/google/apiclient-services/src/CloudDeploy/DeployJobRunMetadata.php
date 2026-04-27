@@ -27,10 +27,7 @@ class DeployJobRunMetadata extends \Google\Model
   protected $customTargetDataType = '';
 
   /**
-   * Output only. The name of the Cloud Run Service that is associated with a
-   * `DeployJobRun`.
-   *
-   * @param CloudRunMetadata $cloudRun
+   * @param CloudRunMetadata
    */
   public function setCloudRun(CloudRunMetadata $cloudRun)
   {
@@ -44,9 +41,7 @@ class DeployJobRunMetadata extends \Google\Model
     return $this->cloudRun;
   }
   /**
-   * Output only. Custom metadata provided by user-defined deploy operation.
-   *
-   * @param CustomMetadata $custom
+   * @param CustomMetadata
    */
   public function setCustom(CustomMetadata $custom)
   {
@@ -60,9 +55,7 @@ class DeployJobRunMetadata extends \Google\Model
     return $this->custom;
   }
   /**
-   * Output only. Custom Target metadata associated with a `DeployJobRun`.
-   *
-   * @param CustomTargetDeployMetadata $customTarget
+   * @param CustomTargetDeployMetadata
    */
   public function setCustomTarget(CustomTargetDeployMetadata $customTarget)
   {

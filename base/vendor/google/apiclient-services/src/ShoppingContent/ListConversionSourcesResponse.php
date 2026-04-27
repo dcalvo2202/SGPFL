@@ -23,16 +23,12 @@ class ListConversionSourcesResponse extends \Google\Collection
   protected $conversionSourcesType = ConversionSource::class;
   protected $conversionSourcesDataType = 'array';
   /**
-   * Token to be used to fetch the next results page.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * List of conversion sources.
-   *
-   * @param ConversionSource[] $conversionSources
+   * @param ConversionSource[]
    */
   public function setConversionSources($conversionSources)
   {
@@ -46,9 +42,7 @@ class ListConversionSourcesResponse extends \Google\Collection
     return $this->conversionSources;
   }
   /**
-   * Token to be used to fetch the next results page.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

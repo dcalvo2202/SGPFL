@@ -22,16 +22,12 @@ class Emoji extends \Google\Model
   protected $customEmojiType = CustomEmoji::class;
   protected $customEmojiDataType = '';
   /**
-   * Optional. A basic emoji represented by a unicode string.
-   *
    * @var string
    */
   public $unicode;
 
   /**
-   * A custom emoji.
-   *
-   * @param CustomEmoji $customEmoji
+   * @param CustomEmoji
    */
   public function setCustomEmoji(CustomEmoji $customEmoji)
   {
@@ -45,9 +41,7 @@ class Emoji extends \Google\Model
     return $this->customEmoji;
   }
   /**
-   * Optional. A basic emoji represented by a unicode string.
-   *
-   * @param string $unicode
+   * @param string
    */
   public function setUnicode($unicode)
   {

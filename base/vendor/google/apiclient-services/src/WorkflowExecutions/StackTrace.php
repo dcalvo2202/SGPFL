@@ -24,9 +24,7 @@ class StackTrace extends \Google\Collection
   protected $elementsDataType = 'array';
 
   /**
-   * An array of stack elements.
-   *
-   * @param StackTraceElement[] $elements
+   * @param StackTraceElement[]
    */
   public function setElements($elements)
   {

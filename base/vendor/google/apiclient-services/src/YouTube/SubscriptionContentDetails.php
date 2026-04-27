@@ -19,52 +19,35 @@ namespace Google\Service\YouTube;
 
 class SubscriptionContentDetails extends \Google\Model
 {
-  public const ACTIVITY_TYPE_subscriptionActivityTypeUnspecified = 'subscriptionActivityTypeUnspecified';
-  public const ACTIVITY_TYPE_all = 'all';
-  public const ACTIVITY_TYPE_uploads = 'uploads';
   /**
-   * The type of activity this subscription is for (only uploads, everything).
-   *
    * @var string
    */
   public $activityType;
   /**
-   * The number of new items in the subscription since its content was last
-   * read.
-   *
    * @var string
    */
   public $newItemCount;
   /**
-   * The approximate number of items that the subscription points to.
-   *
    * @var string
    */
   public $totalItemCount;
 
   /**
-   * The type of activity this subscription is for (only uploads, everything).
-   *
-   * Accepted values: subscriptionActivityTypeUnspecified, all, uploads
-   *
-   * @param self::ACTIVITY_TYPE_* $activityType
+   * @param string
    */
   public function setActivityType($activityType)
   {
     $this->activityType = $activityType;
   }
   /**
-   * @return self::ACTIVITY_TYPE_*
+   * @return string
    */
   public function getActivityType()
   {
     return $this->activityType;
   }
   /**
-   * The number of new items in the subscription since its content was last
-   * read.
-   *
-   * @param string $newItemCount
+   * @param string
    */
   public function setNewItemCount($newItemCount)
   {
@@ -78,9 +61,7 @@ class SubscriptionContentDetails extends \Google\Model
     return $this->newItemCount;
   }
   /**
-   * The approximate number of items that the subscription points to.
-   *
-   * @param string $totalItemCount
+   * @param string
    */
   public function setTotalItemCount($totalItemCount)
   {

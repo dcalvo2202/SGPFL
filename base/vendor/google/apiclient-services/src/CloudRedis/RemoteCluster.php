@@ -20,24 +20,16 @@ namespace Google\Service\CloudRedis;
 class RemoteCluster extends \Google\Model
 {
   /**
-   * Output only. The full resource path of the remote cluster in the format:
-   * projects//locations//clusters/
-   *
    * @var string
    */
   public $cluster;
   /**
-   * Output only. The unique identifier of the remote cluster.
-   *
    * @var string
    */
   public $uid;
 
   /**
-   * Output only. The full resource path of the remote cluster in the format:
-   * projects//locations//clusters/
-   *
-   * @param string $cluster
+   * @param string
    */
   public function setCluster($cluster)
   {
@@ -51,9 +43,7 @@ class RemoteCluster extends \Google\Model
     return $this->cluster;
   }
   /**
-   * Output only. The unique identifier of the remote cluster.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {

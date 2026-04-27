@@ -23,16 +23,12 @@ class GetSearchApplicationQueryStatsResponse extends \Google\Collection
   protected $statsType = SearchApplicationQueryStats::class;
   protected $statsDataType = 'array';
   /**
-   * Total successful query count (status code 200) for the given date range.
-   *
    * @var string
    */
   public $totalQueryCount;
 
   /**
-   * Query stats per date for a search application.
-   *
-   * @param SearchApplicationQueryStats[] $stats
+   * @param SearchApplicationQueryStats[]
    */
   public function setStats($stats)
   {
@@ -46,9 +42,7 @@ class GetSearchApplicationQueryStatsResponse extends \Google\Collection
     return $this->stats;
   }
   /**
-   * Total successful query count (status code 200) for the given date range.
-   *
-   * @param string $totalQueryCount
+   * @param string
    */
   public function setTotalQueryCount($totalQueryCount)
   {

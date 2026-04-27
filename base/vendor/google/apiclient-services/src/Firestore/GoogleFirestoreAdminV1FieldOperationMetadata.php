@@ -19,53 +19,12 @@ namespace Google\Service\Firestore;
 
 class GoogleFirestoreAdminV1FieldOperationMetadata extends \Google\Collection
 {
-  /**
-   * Unspecified.
-   */
-  public const STATE_OPERATION_STATE_UNSPECIFIED = 'OPERATION_STATE_UNSPECIFIED';
-  /**
-   * Request is being prepared for processing.
-   */
-  public const STATE_INITIALIZING = 'INITIALIZING';
-  /**
-   * Request is actively being processed.
-   */
-  public const STATE_PROCESSING = 'PROCESSING';
-  /**
-   * Request is in the process of being cancelled after user called
-   * google.longrunning.Operations.CancelOperation on the operation.
-   */
-  public const STATE_CANCELLING = 'CANCELLING';
-  /**
-   * Request has been processed and is in its finalization stage.
-   */
-  public const STATE_FINALIZING = 'FINALIZING';
-  /**
-   * Request has completed successfully.
-   */
-  public const STATE_SUCCESSFUL = 'SUCCESSFUL';
-  /**
-   * Request has finished being processed, but encountered an error.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * Request has finished being cancelled after user called
-   * google.longrunning.Operations.CancelOperation.
-   */
-  public const STATE_CANCELLED = 'CANCELLED';
   protected $collection_key = 'indexConfigDeltas';
   /**
-   * The time this operation completed. Will be unset if operation still in
-   * progress.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * The field resource that this operation is acting on. For example: `projects
-   * /{project_id}/databases/{database_id}/collectionGroups/{collection_id}/fiel
-   * ds/{field_path}`
-   *
    * @var string
    */
   public $field;
@@ -76,14 +35,10 @@ class GoogleFirestoreAdminV1FieldOperationMetadata extends \Google\Collection
   protected $progressDocumentsType = GoogleFirestoreAdminV1Progress::class;
   protected $progressDocumentsDataType = '';
   /**
-   * The time this operation started.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * The state of the operation.
-   *
    * @var string
    */
   public $state;
@@ -91,10 +46,7 @@ class GoogleFirestoreAdminV1FieldOperationMetadata extends \Google\Collection
   protected $ttlConfigDeltaDataType = '';
 
   /**
-   * The time this operation completed. Will be unset if operation still in
-   * progress.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -108,11 +60,7 @@ class GoogleFirestoreAdminV1FieldOperationMetadata extends \Google\Collection
     return $this->endTime;
   }
   /**
-   * The field resource that this operation is acting on. For example: `projects
-   * /{project_id}/databases/{database_id}/collectionGroups/{collection_id}/fiel
-   * ds/{field_path}`
-   *
-   * @param string $field
+   * @param string
    */
   public function setField($field)
   {
@@ -126,9 +74,7 @@ class GoogleFirestoreAdminV1FieldOperationMetadata extends \Google\Collection
     return $this->field;
   }
   /**
-   * A list of IndexConfigDelta, which describe the intent of this operation.
-   *
-   * @param GoogleFirestoreAdminV1IndexConfigDelta[] $indexConfigDeltas
+   * @param GoogleFirestoreAdminV1IndexConfigDelta[]
    */
   public function setIndexConfigDeltas($indexConfigDeltas)
   {
@@ -142,9 +88,7 @@ class GoogleFirestoreAdminV1FieldOperationMetadata extends \Google\Collection
     return $this->indexConfigDeltas;
   }
   /**
-   * The progress, in bytes, of this operation.
-   *
-   * @param GoogleFirestoreAdminV1Progress $progressBytes
+   * @param GoogleFirestoreAdminV1Progress
    */
   public function setProgressBytes(GoogleFirestoreAdminV1Progress $progressBytes)
   {
@@ -158,9 +102,7 @@ class GoogleFirestoreAdminV1FieldOperationMetadata extends \Google\Collection
     return $this->progressBytes;
   }
   /**
-   * The progress, in documents, of this operation.
-   *
-   * @param GoogleFirestoreAdminV1Progress $progressDocuments
+   * @param GoogleFirestoreAdminV1Progress
    */
   public function setProgressDocuments(GoogleFirestoreAdminV1Progress $progressDocuments)
   {
@@ -174,9 +116,7 @@ class GoogleFirestoreAdminV1FieldOperationMetadata extends \Google\Collection
     return $this->progressDocuments;
   }
   /**
-   * The time this operation started.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -190,28 +130,21 @@ class GoogleFirestoreAdminV1FieldOperationMetadata extends \Google\Collection
     return $this->startTime;
   }
   /**
-   * The state of the operation.
-   *
-   * Accepted values: OPERATION_STATE_UNSPECIFIED, INITIALIZING, PROCESSING,
-   * CANCELLING, FINALIZING, SUCCESSFUL, FAILED, CANCELLED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Describes the deltas of TTL configuration.
-   *
-   * @param GoogleFirestoreAdminV1TtlConfigDelta $ttlConfigDelta
+   * @param GoogleFirestoreAdminV1TtlConfigDelta
    */
   public function setTtlConfigDelta(GoogleFirestoreAdminV1TtlConfigDelta $ttlConfigDelta)
   {

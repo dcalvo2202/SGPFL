@@ -24,9 +24,7 @@ class BatchCreateOccurrencesRequest extends \Google\Collection
   protected $occurrencesDataType = 'array';
 
   /**
-   * Required. The occurrences to create. Max allowed length is 1000.
-   *
-   * @param Occurrence[] $occurrences
+   * @param Occurrence[]
    */
   public function setOccurrences($occurrences)
   {

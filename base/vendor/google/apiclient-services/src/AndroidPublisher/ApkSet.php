@@ -26,9 +26,7 @@ class ApkSet extends \Google\Collection
   protected $moduleMetadataDataType = '';
 
   /**
-   * Description of the generated apks.
-   *
-   * @param ApkDescription[] $apkDescription
+   * @param ApkDescription[]
    */
   public function setApkDescription($apkDescription)
   {
@@ -42,9 +40,7 @@ class ApkSet extends \Google\Collection
     return $this->apkDescription;
   }
   /**
-   * Metadata about the module represented by this ApkSet
-   *
-   * @param ModuleMetadata $moduleMetadata
+   * @param ModuleMetadata
    */
   public function setModuleMetadata(ModuleMetadata $moduleMetadata)
   {

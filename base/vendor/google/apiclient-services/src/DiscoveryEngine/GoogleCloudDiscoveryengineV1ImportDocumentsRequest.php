@@ -19,37 +19,9 @@ namespace Google\Service\DiscoveryEngine;
 
 class GoogleCloudDiscoveryengineV1ImportDocumentsRequest extends \Google\Model
 {
-  /**
-   * Defaults to `INCREMENTAL`.
-   */
-  public const RECONCILIATION_MODE_RECONCILIATION_MODE_UNSPECIFIED = 'RECONCILIATION_MODE_UNSPECIFIED';
-  /**
-   * Inserts new documents or updates existing documents.
-   */
-  public const RECONCILIATION_MODE_INCREMENTAL = 'INCREMENTAL';
-  /**
-   * Calculates diff and replaces the entire document dataset. Existing
-   * documents may be deleted if they are not present in the source location.
-   * When using this mode, there won't be any downtime on the dataset targeted.
-   * Any document that should remain unchanged or that should be updated will
-   * continue serving while the operation is running.
-   */
-  public const RECONCILIATION_MODE_FULL = 'FULL';
   protected $alloyDbSourceType = GoogleCloudDiscoveryengineV1AlloyDbSource::class;
   protected $alloyDbSourceDataType = '';
   /**
-   * Whether to automatically generate IDs for the documents if absent. If set
-   * to `true`, Document.ids are automatically generated based on the hash of
-   * the payload, where IDs may not be consistent during multiple imports. In
-   * which case ReconciliationMode.FULL is highly recommended to avoid duplicate
-   * contents. If unset or set to `false`, Document.ids have to be specified
-   * using id_field, otherwise, documents without IDs fail to be imported.
-   * Supported data sources: * GcsSource. GcsSource.data_schema must be `custom`
-   * or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown. * BigQuerySource.
-   * BigQuerySource.data_schema must be `custom` or `csv`. Otherwise, an
-   * INVALID_ARGUMENT error is thrown. * SpannerSource. * CloudSqlSource. *
-   * FirestoreSource. * BigtableSource.
-   *
    * @var bool
    */
   public $autoGenerateIds;
@@ -66,59 +38,30 @@ class GoogleCloudDiscoveryengineV1ImportDocumentsRequest extends \Google\Model
   protected $firestoreSourceType = GoogleCloudDiscoveryengineV1FirestoreSource::class;
   protected $firestoreSourceDataType = '';
   /**
-   * Optional. Whether to force refresh the unstructured content of the
-   * documents. If set to `true`, the content part of the documents will be
-   * refreshed regardless of the update status of the referencing content.
-   *
    * @var bool
    */
   public $forceRefreshContent;
   protected $gcsSourceType = GoogleCloudDiscoveryengineV1GcsSource::class;
   protected $gcsSourceDataType = '';
   /**
-   * The field indicates the ID field or column to be used as unique IDs of the
-   * documents. For GcsSource it is the key of the JSON field. For instance,
-   * `my_id` for JSON `{"my_id": "some_uuid"}`. For others, it may be the column
-   * name of the table where the unique ids are stored. The values of the JSON
-   * field or the table column are used as the Document.ids. The JSON field or
-   * the table column must be of string type, and the values must be set as
-   * valid strings conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
-   * with 1-63 characters. Otherwise, documents without valid IDs fail to be
-   * imported. Only set this field when auto_generate_ids is unset or set as
-   * `false`. Otherwise, an INVALID_ARGUMENT error is thrown. If it is unset, a
-   * default value `_id` is used when importing from the allowed data sources.
-   * Supported data sources: * GcsSource. GcsSource.data_schema must be `custom`
-   * or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown. * BigQuerySource.
-   * BigQuerySource.data_schema must be `custom` or `csv`. Otherwise, an
-   * INVALID_ARGUMENT error is thrown. * SpannerSource. * CloudSqlSource. *
-   * BigtableSource.
-   *
    * @var string
    */
   public $idField;
   protected $inlineSourceType = GoogleCloudDiscoveryengineV1ImportDocumentsRequestInlineSource::class;
   protected $inlineSourceDataType = '';
   /**
-   * The mode of reconciliation between existing documents and the documents to
-   * be imported. Defaults to ReconciliationMode.INCREMENTAL.
-   *
    * @var string
    */
   public $reconciliationMode;
   protected $spannerSourceType = GoogleCloudDiscoveryengineV1SpannerSource::class;
   protected $spannerSourceDataType = '';
   /**
-   * Indicates which fields in the provided imported documents to update. If not
-   * set, the default is to update all fields.
-   *
    * @var string
    */
   public $updateMask;
 
   /**
-   * AlloyDB input source.
-   *
-   * @param GoogleCloudDiscoveryengineV1AlloyDbSource $alloyDbSource
+   * @param GoogleCloudDiscoveryengineV1AlloyDbSource
    */
   public function setAlloyDbSource(GoogleCloudDiscoveryengineV1AlloyDbSource $alloyDbSource)
   {
@@ -132,19 +75,7 @@ class GoogleCloudDiscoveryengineV1ImportDocumentsRequest extends \Google\Model
     return $this->alloyDbSource;
   }
   /**
-   * Whether to automatically generate IDs for the documents if absent. If set
-   * to `true`, Document.ids are automatically generated based on the hash of
-   * the payload, where IDs may not be consistent during multiple imports. In
-   * which case ReconciliationMode.FULL is highly recommended to avoid duplicate
-   * contents. If unset or set to `false`, Document.ids have to be specified
-   * using id_field, otherwise, documents without IDs fail to be imported.
-   * Supported data sources: * GcsSource. GcsSource.data_schema must be `custom`
-   * or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown. * BigQuerySource.
-   * BigQuerySource.data_schema must be `custom` or `csv`. Otherwise, an
-   * INVALID_ARGUMENT error is thrown. * SpannerSource. * CloudSqlSource. *
-   * FirestoreSource. * BigtableSource.
-   *
-   * @param bool $autoGenerateIds
+   * @param bool
    */
   public function setAutoGenerateIds($autoGenerateIds)
   {
@@ -158,9 +89,7 @@ class GoogleCloudDiscoveryengineV1ImportDocumentsRequest extends \Google\Model
     return $this->autoGenerateIds;
   }
   /**
-   * BigQuery input source.
-   *
-   * @param GoogleCloudDiscoveryengineV1BigQuerySource $bigquerySource
+   * @param GoogleCloudDiscoveryengineV1BigQuerySource
    */
   public function setBigquerySource(GoogleCloudDiscoveryengineV1BigQuerySource $bigquerySource)
   {
@@ -174,9 +103,7 @@ class GoogleCloudDiscoveryengineV1ImportDocumentsRequest extends \Google\Model
     return $this->bigquerySource;
   }
   /**
-   * Cloud Bigtable input source.
-   *
-   * @param GoogleCloudDiscoveryengineV1BigtableSource $bigtableSource
+   * @param GoogleCloudDiscoveryengineV1BigtableSource
    */
   public function setBigtableSource(GoogleCloudDiscoveryengineV1BigtableSource $bigtableSource)
   {
@@ -190,9 +117,7 @@ class GoogleCloudDiscoveryengineV1ImportDocumentsRequest extends \Google\Model
     return $this->bigtableSource;
   }
   /**
-   * Cloud SQL input source.
-   *
-   * @param GoogleCloudDiscoveryengineV1CloudSqlSource $cloudSqlSource
+   * @param GoogleCloudDiscoveryengineV1CloudSqlSource
    */
   public function setCloudSqlSource(GoogleCloudDiscoveryengineV1CloudSqlSource $cloudSqlSource)
   {
@@ -206,9 +131,7 @@ class GoogleCloudDiscoveryengineV1ImportDocumentsRequest extends \Google\Model
     return $this->cloudSqlSource;
   }
   /**
-   * The desired location of errors incurred during the Import.
-   *
-   * @param GoogleCloudDiscoveryengineV1ImportErrorConfig $errorConfig
+   * @param GoogleCloudDiscoveryengineV1ImportErrorConfig
    */
   public function setErrorConfig(GoogleCloudDiscoveryengineV1ImportErrorConfig $errorConfig)
   {
@@ -222,9 +145,7 @@ class GoogleCloudDiscoveryengineV1ImportDocumentsRequest extends \Google\Model
     return $this->errorConfig;
   }
   /**
-   * FhirStore input source.
-   *
-   * @param GoogleCloudDiscoveryengineV1FhirStoreSource $fhirStoreSource
+   * @param GoogleCloudDiscoveryengineV1FhirStoreSource
    */
   public function setFhirStoreSource(GoogleCloudDiscoveryengineV1FhirStoreSource $fhirStoreSource)
   {
@@ -238,9 +159,7 @@ class GoogleCloudDiscoveryengineV1ImportDocumentsRequest extends \Google\Model
     return $this->fhirStoreSource;
   }
   /**
-   * Firestore input source.
-   *
-   * @param GoogleCloudDiscoveryengineV1FirestoreSource $firestoreSource
+   * @param GoogleCloudDiscoveryengineV1FirestoreSource
    */
   public function setFirestoreSource(GoogleCloudDiscoveryengineV1FirestoreSource $firestoreSource)
   {
@@ -254,11 +173,7 @@ class GoogleCloudDiscoveryengineV1ImportDocumentsRequest extends \Google\Model
     return $this->firestoreSource;
   }
   /**
-   * Optional. Whether to force refresh the unstructured content of the
-   * documents. If set to `true`, the content part of the documents will be
-   * refreshed regardless of the update status of the referencing content.
-   *
-   * @param bool $forceRefreshContent
+   * @param bool
    */
   public function setForceRefreshContent($forceRefreshContent)
   {
@@ -272,9 +187,7 @@ class GoogleCloudDiscoveryengineV1ImportDocumentsRequest extends \Google\Model
     return $this->forceRefreshContent;
   }
   /**
-   * Cloud Storage location for the input content.
-   *
-   * @param GoogleCloudDiscoveryengineV1GcsSource $gcsSource
+   * @param GoogleCloudDiscoveryengineV1GcsSource
    */
   public function setGcsSource(GoogleCloudDiscoveryengineV1GcsSource $gcsSource)
   {
@@ -288,24 +201,7 @@ class GoogleCloudDiscoveryengineV1ImportDocumentsRequest extends \Google\Model
     return $this->gcsSource;
   }
   /**
-   * The field indicates the ID field or column to be used as unique IDs of the
-   * documents. For GcsSource it is the key of the JSON field. For instance,
-   * `my_id` for JSON `{"my_id": "some_uuid"}`. For others, it may be the column
-   * name of the table where the unique ids are stored. The values of the JSON
-   * field or the table column are used as the Document.ids. The JSON field or
-   * the table column must be of string type, and the values must be set as
-   * valid strings conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
-   * with 1-63 characters. Otherwise, documents without valid IDs fail to be
-   * imported. Only set this field when auto_generate_ids is unset or set as
-   * `false`. Otherwise, an INVALID_ARGUMENT error is thrown. If it is unset, a
-   * default value `_id` is used when importing from the allowed data sources.
-   * Supported data sources: * GcsSource. GcsSource.data_schema must be `custom`
-   * or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown. * BigQuerySource.
-   * BigQuerySource.data_schema must be `custom` or `csv`. Otherwise, an
-   * INVALID_ARGUMENT error is thrown. * SpannerSource. * CloudSqlSource. *
-   * BigtableSource.
-   *
-   * @param string $idField
+   * @param string
    */
   public function setIdField($idField)
   {
@@ -319,9 +215,7 @@ class GoogleCloudDiscoveryengineV1ImportDocumentsRequest extends \Google\Model
     return $this->idField;
   }
   /**
-   * The Inline source for the input content for documents.
-   *
-   * @param GoogleCloudDiscoveryengineV1ImportDocumentsRequestInlineSource $inlineSource
+   * @param GoogleCloudDiscoveryengineV1ImportDocumentsRequestInlineSource
    */
   public function setInlineSource(GoogleCloudDiscoveryengineV1ImportDocumentsRequestInlineSource $inlineSource)
   {
@@ -335,28 +229,21 @@ class GoogleCloudDiscoveryengineV1ImportDocumentsRequest extends \Google\Model
     return $this->inlineSource;
   }
   /**
-   * The mode of reconciliation between existing documents and the documents to
-   * be imported. Defaults to ReconciliationMode.INCREMENTAL.
-   *
-   * Accepted values: RECONCILIATION_MODE_UNSPECIFIED, INCREMENTAL, FULL
-   *
-   * @param self::RECONCILIATION_MODE_* $reconciliationMode
+   * @param string
    */
   public function setReconciliationMode($reconciliationMode)
   {
     $this->reconciliationMode = $reconciliationMode;
   }
   /**
-   * @return self::RECONCILIATION_MODE_*
+   * @return string
    */
   public function getReconciliationMode()
   {
     return $this->reconciliationMode;
   }
   /**
-   * Spanner input source.
-   *
-   * @param GoogleCloudDiscoveryengineV1SpannerSource $spannerSource
+   * @param GoogleCloudDiscoveryengineV1SpannerSource
    */
   public function setSpannerSource(GoogleCloudDiscoveryengineV1SpannerSource $spannerSource)
   {
@@ -370,10 +257,7 @@ class GoogleCloudDiscoveryengineV1ImportDocumentsRequest extends \Google\Model
     return $this->spannerSource;
   }
   /**
-   * Indicates which fields in the provided imported documents to update. If not
-   * set, the default is to update all fields.
-   *
-   * @param string $updateMask
+   * @param string
    */
   public function setUpdateMask($updateMask)
   {

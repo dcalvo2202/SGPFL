@@ -23,18 +23,12 @@ class ListCombinedAudiencesResponse extends \Google\Collection
   protected $combinedAudiencesType = CombinedAudience::class;
   protected $combinedAudiencesDataType = 'array';
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * page_token field in the subsequent call to `ListCombinedAudiences` method
-   * to retrieve the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of combined audiences. This list will be absent if empty.
-   *
-   * @param CombinedAudience[] $combinedAudiences
+   * @param CombinedAudience[]
    */
   public function setCombinedAudiences($combinedAudiences)
   {
@@ -48,11 +42,7 @@ class ListCombinedAudiencesResponse extends \Google\Collection
     return $this->combinedAudiences;
   }
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * page_token field in the subsequent call to `ListCombinedAudiences` method
-   * to retrieve the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

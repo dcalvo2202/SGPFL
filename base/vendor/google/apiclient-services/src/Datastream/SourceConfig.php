@@ -30,21 +30,14 @@ class SourceConfig extends \Google\Model
   protected $salesforceSourceConfigType = SalesforceSourceConfig::class;
   protected $salesforceSourceConfigDataType = '';
   /**
-   * Required. Source connection profile resource. Format:
-   * `projects/{project}/locations/{location}/connectionProfiles/{name}`
-   *
    * @var string
    */
   public $sourceConnectionProfile;
-  protected $spannerSourceConfigType = SpannerSourceConfig::class;
-  protected $spannerSourceConfigDataType = '';
   protected $sqlServerSourceConfigType = SqlServerSourceConfig::class;
   protected $sqlServerSourceConfigDataType = '';
 
   /**
-   * MongoDB data source configuration.
-   *
-   * @param MongodbSourceConfig $mongodbSourceConfig
+   * @param MongodbSourceConfig
    */
   public function setMongodbSourceConfig(MongodbSourceConfig $mongodbSourceConfig)
   {
@@ -58,9 +51,7 @@ class SourceConfig extends \Google\Model
     return $this->mongodbSourceConfig;
   }
   /**
-   * MySQL data source configuration.
-   *
-   * @param MysqlSourceConfig $mysqlSourceConfig
+   * @param MysqlSourceConfig
    */
   public function setMysqlSourceConfig(MysqlSourceConfig $mysqlSourceConfig)
   {
@@ -74,9 +65,7 @@ class SourceConfig extends \Google\Model
     return $this->mysqlSourceConfig;
   }
   /**
-   * Oracle data source configuration.
-   *
-   * @param OracleSourceConfig $oracleSourceConfig
+   * @param OracleSourceConfig
    */
   public function setOracleSourceConfig(OracleSourceConfig $oracleSourceConfig)
   {
@@ -90,9 +79,7 @@ class SourceConfig extends \Google\Model
     return $this->oracleSourceConfig;
   }
   /**
-   * PostgreSQL data source configuration.
-   *
-   * @param PostgresqlSourceConfig $postgresqlSourceConfig
+   * @param PostgresqlSourceConfig
    */
   public function setPostgresqlSourceConfig(PostgresqlSourceConfig $postgresqlSourceConfig)
   {
@@ -106,9 +93,7 @@ class SourceConfig extends \Google\Model
     return $this->postgresqlSourceConfig;
   }
   /**
-   * Salesforce data source configuration.
-   *
-   * @param SalesforceSourceConfig $salesforceSourceConfig
+   * @param SalesforceSourceConfig
    */
   public function setSalesforceSourceConfig(SalesforceSourceConfig $salesforceSourceConfig)
   {
@@ -122,10 +107,7 @@ class SourceConfig extends \Google\Model
     return $this->salesforceSourceConfig;
   }
   /**
-   * Required. Source connection profile resource. Format:
-   * `projects/{project}/locations/{location}/connectionProfiles/{name}`
-   *
-   * @param string $sourceConnectionProfile
+   * @param string
    */
   public function setSourceConnectionProfile($sourceConnectionProfile)
   {
@@ -139,25 +121,7 @@ class SourceConfig extends \Google\Model
     return $this->sourceConnectionProfile;
   }
   /**
-   * Spanner data source configuration.
-   *
-   * @param SpannerSourceConfig $spannerSourceConfig
-   */
-  public function setSpannerSourceConfig(SpannerSourceConfig $spannerSourceConfig)
-  {
-    $this->spannerSourceConfig = $spannerSourceConfig;
-  }
-  /**
-   * @return SpannerSourceConfig
-   */
-  public function getSpannerSourceConfig()
-  {
-    return $this->spannerSourceConfig;
-  }
-  /**
-   * SQLServer data source configuration.
-   *
-   * @param SqlServerSourceConfig $sqlServerSourceConfig
+   * @param SqlServerSourceConfig
    */
   public function setSqlServerSourceConfig(SqlServerSourceConfig $sqlServerSourceConfig)
   {

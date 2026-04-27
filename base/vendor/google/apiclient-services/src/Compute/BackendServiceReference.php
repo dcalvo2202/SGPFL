@@ -25,7 +25,7 @@ class BackendServiceReference extends \Google\Model
   public $backendService;
 
   /**
-   * @param string $backendService
+   * @param string
    */
   public function setBackendService($backendService)
   {

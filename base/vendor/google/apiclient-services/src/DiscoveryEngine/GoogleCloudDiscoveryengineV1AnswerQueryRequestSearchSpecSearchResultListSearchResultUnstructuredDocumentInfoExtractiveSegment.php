@@ -20,22 +20,16 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1AnswerQueryRequestSearchSpecSearchResultListSearchResultUnstructuredDocumentInfoExtractiveSegment extends \Google\Model
 {
   /**
-   * Extractive segment content.
-   *
    * @var string
    */
   public $content;
   /**
-   * Page identifier.
-   *
    * @var string
    */
   public $pageIdentifier;
 
   /**
-   * Extractive segment content.
-   *
-   * @param string $content
+   * @param string
    */
   public function setContent($content)
   {
@@ -49,9 +43,7 @@ class GoogleCloudDiscoveryengineV1AnswerQueryRequestSearchSpecSearchResultListSe
     return $this->content;
   }
   /**
-   * Page identifier.
-   *
-   * @param string $pageIdentifier
+   * @param string
    */
   public function setPageIdentifier($pageIdentifier)
   {

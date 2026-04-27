@@ -19,68 +19,30 @@ namespace Google\Service\Fitness;
 
 class AggregateBucket extends \Google\Collection
 {
-  public const TYPE_unknown = 'unknown';
-  /**
-   * Denotes that bucketing by time is requested. When this is specified, the
-   * timeBucketDurationMillis field is used to determine how many buckets will
-   * be returned.
-   */
-  public const TYPE_time = 'time';
-  /**
-   * Denotes that bucketing by session is requested. When this is specified,
-   * only data that occurs within sessions that begin and end within the dataset
-   * time frame, is included in the results.
-   */
-  public const TYPE_session = 'session';
-  /**
-   * Denotes that bucketing by activity type is requested. When this is
-   * specified, there will be one bucket for each unique activity type that a
-   * user participated in, during the dataset time frame of interest.
-   */
-  public const TYPE_activityType = 'activityType';
-  /**
-   * Denotes that bucketing by individual activity segment is requested. This
-   * will aggregate data by the time boundaries specified by each activity
-   * segment occurring within the dataset time frame of interest.
-   */
-  public const TYPE_activitySegment = 'activitySegment';
   protected $collection_key = 'dataset';
   /**
-   * Available for Bucket.Type.ACTIVITY_TYPE, Bucket.Type.ACTIVITY_SEGMENT
-   *
    * @var int
    */
   public $activity;
   protected $datasetType = Dataset::class;
   protected $datasetDataType = 'array';
   /**
-   * The end time for the aggregated data, in milliseconds since epoch,
-   * inclusive.
-   *
    * @var string
    */
   public $endTimeMillis;
   protected $sessionType = Session::class;
   protected $sessionDataType = '';
   /**
-   * The start time for the aggregated data, in milliseconds since epoch,
-   * inclusive.
-   *
    * @var string
    */
   public $startTimeMillis;
   /**
-   * The type of a bucket signifies how the data aggregation is performed in the
-   * bucket.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Available for Bucket.Type.ACTIVITY_TYPE, Bucket.Type.ACTIVITY_SEGMENT
-   *
-   * @param int $activity
+   * @param int
    */
   public function setActivity($activity)
   {
@@ -94,9 +56,7 @@ class AggregateBucket extends \Google\Collection
     return $this->activity;
   }
   /**
-   * There will be one dataset per AggregateBy in the request.
-   *
-   * @param Dataset[] $dataset
+   * @param Dataset[]
    */
   public function setDataset($dataset)
   {
@@ -110,10 +70,7 @@ class AggregateBucket extends \Google\Collection
     return $this->dataset;
   }
   /**
-   * The end time for the aggregated data, in milliseconds since epoch,
-   * inclusive.
-   *
-   * @param string $endTimeMillis
+   * @param string
    */
   public function setEndTimeMillis($endTimeMillis)
   {
@@ -127,9 +84,7 @@ class AggregateBucket extends \Google\Collection
     return $this->endTimeMillis;
   }
   /**
-   * Available for Bucket.Type.SESSION
-   *
-   * @param Session $session
+   * @param Session
    */
   public function setSession(Session $session)
   {
@@ -143,10 +98,7 @@ class AggregateBucket extends \Google\Collection
     return $this->session;
   }
   /**
-   * The start time for the aggregated data, in milliseconds since epoch,
-   * inclusive.
-   *
-   * @param string $startTimeMillis
+   * @param string
    */
   public function setStartTimeMillis($startTimeMillis)
   {
@@ -160,19 +112,14 @@ class AggregateBucket extends \Google\Collection
     return $this->startTimeMillis;
   }
   /**
-   * The type of a bucket signifies how the data aggregation is performed in the
-   * bucket.
-   *
-   * Accepted values: unknown, time, session, activityType, activitySegment
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

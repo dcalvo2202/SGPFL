@@ -20,20 +20,12 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1DiscoveryEventConfigDetails extends \Google\Model
 {
   /**
-   * A list of discovery configuration parameters in effect. The keys are the
-   * field paths within DiscoverySpec. Eg. includePatterns, excludePatterns,
-   * csvOptions.disableTypeInference, etc.
-   *
    * @var string[]
    */
   public $parameters;
 
   /**
-   * A list of discovery configuration parameters in effect. The keys are the
-   * field paths within DiscoverySpec. Eg. includePatterns, excludePatterns,
-   * csvOptions.disableTypeInference, etc.
-   *
-   * @param string[] $parameters
+   * @param string[]
    */
   public function setParameters($parameters)
   {

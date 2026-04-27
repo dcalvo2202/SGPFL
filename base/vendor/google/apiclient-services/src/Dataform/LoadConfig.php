@@ -29,9 +29,7 @@ class LoadConfig extends \Google\Model
   protected $uniqueDataType = '';
 
   /**
-   * Append into destination table
-   *
-   * @param SimpleLoadMode $append
+   * @param SimpleLoadMode
    */
   public function setAppend(SimpleLoadMode $append)
   {
@@ -45,10 +43,7 @@ class LoadConfig extends \Google\Model
     return $this->append;
   }
   /**
-   * Insert records where the value exceeds the previous maximum value for a
-   * column in the destination table
-   *
-   * @param IncrementalLoadMode $maximum
+   * @param IncrementalLoadMode
    */
   public function setMaximum(IncrementalLoadMode $maximum)
   {
@@ -62,9 +57,7 @@ class LoadConfig extends \Google\Model
     return $this->maximum;
   }
   /**
-   * Replace destination table
-   *
-   * @param SimpleLoadMode $replace
+   * @param SimpleLoadMode
    */
   public function setReplace(SimpleLoadMode $replace)
   {
@@ -78,10 +71,7 @@ class LoadConfig extends \Google\Model
     return $this->replace;
   }
   /**
-   * Insert records where the value of a column is not already present in the
-   * destination table
-   *
-   * @param IncrementalLoadMode $unique
+   * @param IncrementalLoadMode
    */
   public function setUnique(IncrementalLoadMode $unique)
   {

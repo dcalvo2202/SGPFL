@@ -20,18 +20,12 @@ namespace Google\Service\PubsubLite;
 class Cursor extends \Google\Model
 {
   /**
-   * The offset of a message within a topic partition. Must be greater than or
-   * equal 0.
-   *
    * @var string
    */
   public $offset;
 
   /**
-   * The offset of a message within a topic partition. Must be greater than or
-   * equal 0.
-   *
-   * @param string $offset
+   * @param string
    */
   public function setOffset($offset)
   {

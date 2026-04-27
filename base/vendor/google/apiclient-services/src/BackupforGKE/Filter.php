@@ -26,11 +26,7 @@ class Filter extends \Google\Collection
   protected $inclusionFiltersDataType = 'array';
 
   /**
-   * Optional. Excludes resources from restoration. If specified, a resource
-   * will not be restored if it matches any `ResourceSelector` of the
-   * `exclusion_filters`.
-   *
-   * @param ResourceSelector[] $exclusionFilters
+   * @param ResourceSelector[]
    */
   public function setExclusionFilters($exclusionFilters)
   {
@@ -44,12 +40,7 @@ class Filter extends \Google\Collection
     return $this->exclusionFilters;
   }
   /**
-   * Optional. Selects resources for restoration. If specified, only resources
-   * which match `inclusion_filters` will be selected for restoration. A
-   * resource will be selected if it matches any `ResourceSelector` of the
-   * `inclusion_filters`.
-   *
-   * @param ResourceSelector[] $inclusionFilters
+   * @param ResourceSelector[]
    */
   public function setInclusionFilters($inclusionFilters)
   {

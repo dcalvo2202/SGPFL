@@ -28,9 +28,7 @@ class GoogleCloudAiplatformV1PipelineJobDetail extends \Google\Collection
   protected $taskDetailsDataType = 'array';
 
   /**
-   * Output only. The context of the pipeline.
-   *
-   * @param GoogleCloudAiplatformV1Context $pipelineContext
+   * @param GoogleCloudAiplatformV1Context
    */
   public function setPipelineContext(GoogleCloudAiplatformV1Context $pipelineContext)
   {
@@ -44,9 +42,7 @@ class GoogleCloudAiplatformV1PipelineJobDetail extends \Google\Collection
     return $this->pipelineContext;
   }
   /**
-   * Output only. The context of the current pipeline run.
-   *
-   * @param GoogleCloudAiplatformV1Context $pipelineRunContext
+   * @param GoogleCloudAiplatformV1Context
    */
   public function setPipelineRunContext(GoogleCloudAiplatformV1Context $pipelineRunContext)
   {
@@ -60,9 +56,7 @@ class GoogleCloudAiplatformV1PipelineJobDetail extends \Google\Collection
     return $this->pipelineRunContext;
   }
   /**
-   * Output only. The runtime details of the tasks under the pipeline.
-   *
-   * @param GoogleCloudAiplatformV1PipelineTaskDetail[] $taskDetails
+   * @param GoogleCloudAiplatformV1PipelineTaskDetail[]
    */
   public function setTaskDetails($taskDetails)
   {

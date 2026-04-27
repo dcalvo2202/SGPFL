@@ -20,116 +20,60 @@ namespace Google\Service\Compute;
 class InstanceGroupManagerActionsSummary extends \Google\Model
 {
   /**
-   * Output only. The total number of instances in the managed instance group
-   * that are scheduled to be abandoned. Abandoning an instance removes it from
-   * the managed instance group without deleting it.
-   *
    * @var int
    */
   public $abandoning;
   /**
-   * Output only. The number of instances in the managed instance group that are
-   * scheduled to be created or are currently being created. If the group fails
-   * to create any of these instances, it tries again until it creates the
-   * instance successfully.
-   *
-   * If you have disabled creation retries, this field will not be populated;
-   * instead, the creatingWithoutRetries field will be populated.
-   *
    * @var int
    */
   public $creating;
   /**
-   * Output only. The number of instances that the managed instance group will
-   * attempt to create. The group attempts to create each instance only once. If
-   * the group fails to create any of these instances, it decreases the group's
-   * targetSize value accordingly.
-   *
    * @var int
    */
   public $creatingWithoutRetries;
   /**
-   * Output only. The number of instances in the managed instance group that are
-   * scheduled to be deleted or are currently being deleted.
-   *
    * @var int
    */
   public $deleting;
   /**
-   * Output only. The number of instances in the managed instance group that are
-   * running and have no scheduled actions.
-   *
    * @var int
    */
   public $none;
   /**
-   * Output only. The number of instances in the managed instance group that are
-   * scheduled to be recreated or are currently being being recreated.
-   * Recreating an instance deletes the existing root persistent disk and
-   * creates a new disk from the image that is defined in the instance template.
-   *
    * @var int
    */
   public $recreating;
   /**
-   * Output only. The number of instances in the managed instance group that are
-   * being reconfigured with properties that do not require a restart or a
-   * recreate action. For example, setting or removing target pools for the
-   * instance.
-   *
    * @var int
    */
   public $refreshing;
   /**
-   * Output only. The number of instances in the managed instance group that are
-   * scheduled to be restarted or are currently being restarted.
-   *
    * @var int
    */
   public $restarting;
   /**
-   * Output only. The number of instances in the managed instance group that are
-   * scheduled to be resumed or are currently being resumed.
-   *
    * @var int
    */
   public $resuming;
   /**
-   * Output only. The number of instances in the managed instance group that are
-   * scheduled to be started or are currently being started.
-   *
    * @var int
    */
   public $starting;
   /**
-   * Output only. The number of instances in the managed instance group that are
-   * scheduled to be stopped or are currently being stopped.
-   *
    * @var int
    */
   public $stopping;
   /**
-   * Output only. The number of instances in the managed instance group that are
-   * scheduled to be suspended or are currently being suspended.
-   *
    * @var int
    */
   public $suspending;
   /**
-   * Output only. The number of instances in the managed instance group that are
-   * being verified. See the managedInstances[].currentAction property in the
-   * listManagedInstances method documentation.
-   *
    * @var int
    */
   public $verifying;
 
   /**
-   * Output only. The total number of instances in the managed instance group
-   * that are scheduled to be abandoned. Abandoning an instance removes it from
-   * the managed instance group without deleting it.
-   *
-   * @param int $abandoning
+   * @param int
    */
   public function setAbandoning($abandoning)
   {
@@ -143,15 +87,7 @@ class InstanceGroupManagerActionsSummary extends \Google\Model
     return $this->abandoning;
   }
   /**
-   * Output only. The number of instances in the managed instance group that are
-   * scheduled to be created or are currently being created. If the group fails
-   * to create any of these instances, it tries again until it creates the
-   * instance successfully.
-   *
-   * If you have disabled creation retries, this field will not be populated;
-   * instead, the creatingWithoutRetries field will be populated.
-   *
-   * @param int $creating
+   * @param int
    */
   public function setCreating($creating)
   {
@@ -165,12 +101,7 @@ class InstanceGroupManagerActionsSummary extends \Google\Model
     return $this->creating;
   }
   /**
-   * Output only. The number of instances that the managed instance group will
-   * attempt to create. The group attempts to create each instance only once. If
-   * the group fails to create any of these instances, it decreases the group's
-   * targetSize value accordingly.
-   *
-   * @param int $creatingWithoutRetries
+   * @param int
    */
   public function setCreatingWithoutRetries($creatingWithoutRetries)
   {
@@ -184,10 +115,7 @@ class InstanceGroupManagerActionsSummary extends \Google\Model
     return $this->creatingWithoutRetries;
   }
   /**
-   * Output only. The number of instances in the managed instance group that are
-   * scheduled to be deleted or are currently being deleted.
-   *
-   * @param int $deleting
+   * @param int
    */
   public function setDeleting($deleting)
   {
@@ -201,10 +129,7 @@ class InstanceGroupManagerActionsSummary extends \Google\Model
     return $this->deleting;
   }
   /**
-   * Output only. The number of instances in the managed instance group that are
-   * running and have no scheduled actions.
-   *
-   * @param int $none
+   * @param int
    */
   public function setNone($none)
   {
@@ -218,12 +143,7 @@ class InstanceGroupManagerActionsSummary extends \Google\Model
     return $this->none;
   }
   /**
-   * Output only. The number of instances in the managed instance group that are
-   * scheduled to be recreated or are currently being being recreated.
-   * Recreating an instance deletes the existing root persistent disk and
-   * creates a new disk from the image that is defined in the instance template.
-   *
-   * @param int $recreating
+   * @param int
    */
   public function setRecreating($recreating)
   {
@@ -237,12 +157,7 @@ class InstanceGroupManagerActionsSummary extends \Google\Model
     return $this->recreating;
   }
   /**
-   * Output only. The number of instances in the managed instance group that are
-   * being reconfigured with properties that do not require a restart or a
-   * recreate action. For example, setting or removing target pools for the
-   * instance.
-   *
-   * @param int $refreshing
+   * @param int
    */
   public function setRefreshing($refreshing)
   {
@@ -256,10 +171,7 @@ class InstanceGroupManagerActionsSummary extends \Google\Model
     return $this->refreshing;
   }
   /**
-   * Output only. The number of instances in the managed instance group that are
-   * scheduled to be restarted or are currently being restarted.
-   *
-   * @param int $restarting
+   * @param int
    */
   public function setRestarting($restarting)
   {
@@ -273,10 +185,7 @@ class InstanceGroupManagerActionsSummary extends \Google\Model
     return $this->restarting;
   }
   /**
-   * Output only. The number of instances in the managed instance group that are
-   * scheduled to be resumed or are currently being resumed.
-   *
-   * @param int $resuming
+   * @param int
    */
   public function setResuming($resuming)
   {
@@ -290,10 +199,7 @@ class InstanceGroupManagerActionsSummary extends \Google\Model
     return $this->resuming;
   }
   /**
-   * Output only. The number of instances in the managed instance group that are
-   * scheduled to be started or are currently being started.
-   *
-   * @param int $starting
+   * @param int
    */
   public function setStarting($starting)
   {
@@ -307,10 +213,7 @@ class InstanceGroupManagerActionsSummary extends \Google\Model
     return $this->starting;
   }
   /**
-   * Output only. The number of instances in the managed instance group that are
-   * scheduled to be stopped or are currently being stopped.
-   *
-   * @param int $stopping
+   * @param int
    */
   public function setStopping($stopping)
   {
@@ -324,10 +227,7 @@ class InstanceGroupManagerActionsSummary extends \Google\Model
     return $this->stopping;
   }
   /**
-   * Output only. The number of instances in the managed instance group that are
-   * scheduled to be suspended or are currently being suspended.
-   *
-   * @param int $suspending
+   * @param int
    */
   public function setSuspending($suspending)
   {
@@ -341,11 +241,7 @@ class InstanceGroupManagerActionsSummary extends \Google\Model
     return $this->suspending;
   }
   /**
-   * Output only. The number of instances in the managed instance group that are
-   * being verified. See the managedInstances[].currentAction property in the
-   * listManagedInstances method documentation.
-   *
-   * @param int $verifying
+   * @param int
    */
   public function setVerifying($verifying)
   {

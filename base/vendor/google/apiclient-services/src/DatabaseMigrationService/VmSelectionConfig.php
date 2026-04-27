@@ -20,16 +20,12 @@ namespace Google\Service\DatabaseMigrationService;
 class VmSelectionConfig extends \Google\Model
 {
   /**
-   * Required. The Google Cloud Platform zone the VM is located.
-   *
    * @var string
    */
   public $vmZone;
 
   /**
-   * Required. The Google Cloud Platform zone the VM is located.
-   *
-   * @param string $vmZone
+   * @param string
    */
   public function setVmZone($vmZone)
   {

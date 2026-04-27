@@ -20,28 +20,20 @@ namespace Google\Service\MapsPlaces;
 class GoogleMapsPlacesV1ContextualContentJustificationBusinessAvailabilityAttributesJustification extends \Google\Model
 {
   /**
-   * If a place provides delivery.
-   *
    * @var bool
    */
   public $delivery;
   /**
-   * If a place provides dine-in.
-   *
    * @var bool
    */
   public $dineIn;
   /**
-   * If a place provides takeout.
-   *
    * @var bool
    */
   public $takeout;
 
   /**
-   * If a place provides delivery.
-   *
-   * @param bool $delivery
+   * @param bool
    */
   public function setDelivery($delivery)
   {
@@ -55,9 +47,7 @@ class GoogleMapsPlacesV1ContextualContentJustificationBusinessAvailabilityAttrib
     return $this->delivery;
   }
   /**
-   * If a place provides dine-in.
-   *
-   * @param bool $dineIn
+   * @param bool
    */
   public function setDineIn($dineIn)
   {
@@ -71,9 +61,7 @@ class GoogleMapsPlacesV1ContextualContentJustificationBusinessAvailabilityAttrib
     return $this->dineIn;
   }
   /**
-   * If a place provides takeout.
-   *
-   * @param bool $takeout
+   * @param bool
    */
   public function setTakeout($takeout)
   {

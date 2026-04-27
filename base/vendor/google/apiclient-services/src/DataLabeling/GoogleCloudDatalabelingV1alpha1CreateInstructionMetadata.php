@@ -21,15 +21,10 @@ class GoogleCloudDatalabelingV1alpha1CreateInstructionMetadata extends \Google\C
 {
   protected $collection_key = 'partialFailures';
   /**
-   * Timestamp when create instruction request was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * The name of the created Instruction.
-   * projects/{project_id}/instructions/{instruction_id}
-   *
    * @var string
    */
   public $instruction;
@@ -37,9 +32,7 @@ class GoogleCloudDatalabelingV1alpha1CreateInstructionMetadata extends \Google\C
   protected $partialFailuresDataType = 'array';
 
   /**
-   * Timestamp when create instruction request was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -53,10 +46,7 @@ class GoogleCloudDatalabelingV1alpha1CreateInstructionMetadata extends \Google\C
     return $this->createTime;
   }
   /**
-   * The name of the created Instruction.
-   * projects/{project_id}/instructions/{instruction_id}
-   *
-   * @param string $instruction
+   * @param string
    */
   public function setInstruction($instruction)
   {
@@ -70,10 +60,7 @@ class GoogleCloudDatalabelingV1alpha1CreateInstructionMetadata extends \Google\C
     return $this->instruction;
   }
   /**
-   * Partial failures encountered. E.g. single files that couldn't be read.
-   * Status details field will contain standard GCP error details.
-   *
-   * @param GoogleRpcStatus[] $partialFailures
+   * @param GoogleRpcStatus[]
    */
   public function setPartialFailures($partialFailures)
   {

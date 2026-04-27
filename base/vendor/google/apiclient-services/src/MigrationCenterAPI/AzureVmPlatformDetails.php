@@ -20,65 +20,38 @@ namespace Google\Service\MigrationCenterAPI;
 class AzureVmPlatformDetails extends \Google\Model
 {
   /**
-   * Simultaneous Multithreading status unknown.
-   */
-  public const HYPERTHREADING_HYPERTHREADING_STATUS_UNSPECIFIED = 'HYPERTHREADING_STATUS_UNSPECIFIED';
-  /**
-   * Simultaneous Multithreading is disabled or unavailable.
-   */
-  public const HYPERTHREADING_HYPERTHREADING_STATUS_DISABLED = 'HYPERTHREADING_STATUS_DISABLED';
-  /**
-   * Simultaneous Multithreading is enabled.
-   */
-  public const HYPERTHREADING_HYPERTHREADING_STATUS_ENABLED = 'HYPERTHREADING_STATUS_ENABLED';
-  /**
-   * Whether the machine is hyperthreaded.
-   *
    * @var string
    */
   public $hyperthreading;
   /**
-   * The location of the machine in the Azure format.
-   *
    * @var string
    */
   public $location;
   /**
-   * Azure platform's machine type label.
-   *
    * @var string
    */
   public $machineTypeLabel;
   /**
-   * Azure platform's provisioning state.
-   *
    * @var string
    */
   public $provisioningState;
 
   /**
-   * Whether the machine is hyperthreaded.
-   *
-   * Accepted values: HYPERTHREADING_STATUS_UNSPECIFIED,
-   * HYPERTHREADING_STATUS_DISABLED, HYPERTHREADING_STATUS_ENABLED
-   *
-   * @param self::HYPERTHREADING_* $hyperthreading
+   * @param string
    */
   public function setHyperthreading($hyperthreading)
   {
     $this->hyperthreading = $hyperthreading;
   }
   /**
-   * @return self::HYPERTHREADING_*
+   * @return string
    */
   public function getHyperthreading()
   {
     return $this->hyperthreading;
   }
   /**
-   * The location of the machine in the Azure format.
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -92,9 +65,7 @@ class AzureVmPlatformDetails extends \Google\Model
     return $this->location;
   }
   /**
-   * Azure platform's machine type label.
-   *
-   * @param string $machineTypeLabel
+   * @param string
    */
   public function setMachineTypeLabel($machineTypeLabel)
   {
@@ -108,9 +79,7 @@ class AzureVmPlatformDetails extends \Google\Model
     return $this->machineTypeLabel;
   }
   /**
-   * Azure platform's provisioning state.
-   *
-   * @param string $provisioningState
+   * @param string
    */
   public function setProvisioningState($provisioningState)
   {

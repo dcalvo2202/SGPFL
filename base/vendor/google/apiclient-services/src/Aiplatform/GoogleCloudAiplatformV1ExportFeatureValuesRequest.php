@@ -32,9 +32,7 @@ class GoogleCloudAiplatformV1ExportFeatureValuesRequest extends \Google\Collecti
   protected $snapshotExportDataType = '';
 
   /**
-   * Required. Specifies destination location and format.
-   *
-   * @param GoogleCloudAiplatformV1FeatureValueDestination $destination
+   * @param GoogleCloudAiplatformV1FeatureValueDestination
    */
   public function setDestination(GoogleCloudAiplatformV1FeatureValueDestination $destination)
   {
@@ -48,9 +46,7 @@ class GoogleCloudAiplatformV1ExportFeatureValuesRequest extends \Google\Collecti
     return $this->destination;
   }
   /**
-   * Required. Selects Features to export values of.
-   *
-   * @param GoogleCloudAiplatformV1FeatureSelector $featureSelector
+   * @param GoogleCloudAiplatformV1FeatureSelector
    */
   public function setFeatureSelector(GoogleCloudAiplatformV1FeatureSelector $featureSelector)
   {
@@ -64,10 +60,7 @@ class GoogleCloudAiplatformV1ExportFeatureValuesRequest extends \Google\Collecti
     return $this->featureSelector;
   }
   /**
-   * Exports all historical values of all entities of the EntityType within a
-   * time range
-   *
-   * @param GoogleCloudAiplatformV1ExportFeatureValuesRequestFullExport $fullExport
+   * @param GoogleCloudAiplatformV1ExportFeatureValuesRequestFullExport
    */
   public function setFullExport(GoogleCloudAiplatformV1ExportFeatureValuesRequestFullExport $fullExport)
   {
@@ -81,9 +74,7 @@ class GoogleCloudAiplatformV1ExportFeatureValuesRequest extends \Google\Collecti
     return $this->fullExport;
   }
   /**
-   * Per-Feature export settings.
-   *
-   * @param GoogleCloudAiplatformV1DestinationFeatureSetting[] $settings
+   * @param GoogleCloudAiplatformV1DestinationFeatureSetting[]
    */
   public function setSettings($settings)
   {
@@ -97,10 +88,7 @@ class GoogleCloudAiplatformV1ExportFeatureValuesRequest extends \Google\Collecti
     return $this->settings;
   }
   /**
-   * Exports the latest Feature values of all entities of the EntityType within
-   * a time range.
-   *
-   * @param GoogleCloudAiplatformV1ExportFeatureValuesRequestSnapshotExport $snapshotExport
+   * @param GoogleCloudAiplatformV1ExportFeatureValuesRequestSnapshotExport
    */
   public function setSnapshotExport(GoogleCloudAiplatformV1ExportFeatureValuesRequestSnapshotExport $snapshotExport)
   {

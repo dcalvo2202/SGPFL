@@ -20,57 +20,32 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1AlloyDbSource extends \Google\Model
 {
   /**
-   * Required. The AlloyDB cluster to copy the data from with a length limit of
-   * 256 characters.
-   *
    * @var string
    */
   public $clusterId;
   /**
-   * Required. The AlloyDB database to copy the data from with a length limit of
-   * 256 characters.
-   *
    * @var string
    */
   public $databaseId;
   /**
-   * Intermediate Cloud Storage directory used for the import with a length
-   * limit of 2,000 characters. Can be specified if one wants to have the
-   * AlloyDB export to a specific Cloud Storage directory. Ensure that the
-   * AlloyDB service account has the necessary Cloud Storage Admin permissions
-   * to access the specified Cloud Storage directory.
-   *
    * @var string
    */
   public $gcsStagingDir;
   /**
-   * Required. The AlloyDB location to copy the data from with a length limit of
-   * 256 characters.
-   *
    * @var string
    */
   public $locationId;
   /**
-   * The project ID that contains the AlloyDB source. Has a length limit of 128
-   * characters. If not specified, inherits the project ID from the parent
-   * request.
-   *
    * @var string
    */
   public $projectId;
   /**
-   * Required. The AlloyDB table to copy the data from with a length limit of
-   * 256 characters.
-   *
    * @var string
    */
   public $tableId;
 
   /**
-   * Required. The AlloyDB cluster to copy the data from with a length limit of
-   * 256 characters.
-   *
-   * @param string $clusterId
+   * @param string
    */
   public function setClusterId($clusterId)
   {
@@ -84,10 +59,7 @@ class GoogleCloudDiscoveryengineV1AlloyDbSource extends \Google\Model
     return $this->clusterId;
   }
   /**
-   * Required. The AlloyDB database to copy the data from with a length limit of
-   * 256 characters.
-   *
-   * @param string $databaseId
+   * @param string
    */
   public function setDatabaseId($databaseId)
   {
@@ -101,13 +73,7 @@ class GoogleCloudDiscoveryengineV1AlloyDbSource extends \Google\Model
     return $this->databaseId;
   }
   /**
-   * Intermediate Cloud Storage directory used for the import with a length
-   * limit of 2,000 characters. Can be specified if one wants to have the
-   * AlloyDB export to a specific Cloud Storage directory. Ensure that the
-   * AlloyDB service account has the necessary Cloud Storage Admin permissions
-   * to access the specified Cloud Storage directory.
-   *
-   * @param string $gcsStagingDir
+   * @param string
    */
   public function setGcsStagingDir($gcsStagingDir)
   {
@@ -121,10 +87,7 @@ class GoogleCloudDiscoveryengineV1AlloyDbSource extends \Google\Model
     return $this->gcsStagingDir;
   }
   /**
-   * Required. The AlloyDB location to copy the data from with a length limit of
-   * 256 characters.
-   *
-   * @param string $locationId
+   * @param string
    */
   public function setLocationId($locationId)
   {
@@ -138,11 +101,7 @@ class GoogleCloudDiscoveryengineV1AlloyDbSource extends \Google\Model
     return $this->locationId;
   }
   /**
-   * The project ID that contains the AlloyDB source. Has a length limit of 128
-   * characters. If not specified, inherits the project ID from the parent
-   * request.
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {
@@ -156,10 +115,7 @@ class GoogleCloudDiscoveryengineV1AlloyDbSource extends \Google\Model
     return $this->projectId;
   }
   /**
-   * Required. The AlloyDB table to copy the data from with a length limit of
-   * 256 characters.
-   *
-   * @param string $tableId
+   * @param string
    */
   public function setTableId($tableId)
   {

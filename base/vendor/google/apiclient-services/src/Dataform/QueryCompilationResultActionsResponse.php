@@ -23,17 +23,12 @@ class QueryCompilationResultActionsResponse extends \Google\Collection
   protected $compilationResultActionsType = CompilationResultAction::class;
   protected $compilationResultActionsDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * List of compilation result actions.
-   *
-   * @param CompilationResultAction[] $compilationResultActions
+   * @param CompilationResultAction[]
    */
   public function setCompilationResultActions($compilationResultActions)
   {
@@ -47,10 +42,7 @@ class QueryCompilationResultActionsResponse extends \Google\Collection
     return $this->compilationResultActions;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

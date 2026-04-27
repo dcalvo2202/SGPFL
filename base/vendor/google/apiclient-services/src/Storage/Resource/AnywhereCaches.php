@@ -127,7 +127,8 @@ class AnywhereCaches extends \Google\Service\Resource
     return $this->call('resume', [$params], AnywhereCache::class);
   }
   /**
-   * Updates the config of an Anywhere Cache instance. (anywhereCaches.update)
+   * Updates the config(ttl and admissionPolicy) of an Anywhere Cache instance.
+   * (anywhereCaches.update)
    *
    * @param string $bucket Name of the parent bucket.
    * @param string $anywhereCacheId The ID of requested Anywhere Cache instance.

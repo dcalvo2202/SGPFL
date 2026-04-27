@@ -22,31 +22,20 @@ class GoogleCloudDiscoveryengineV1BigtableSource extends \Google\Model
   protected $bigtableOptionsType = GoogleCloudDiscoveryengineV1BigtableOptions::class;
   protected $bigtableOptionsDataType = '';
   /**
-   * Required. The instance ID of the Cloud Bigtable that needs to be imported.
-   *
    * @var string
    */
   public $instanceId;
   /**
-   * The project ID that contains the Bigtable source. Has a length limit of 128
-   * characters. If not specified, inherits the project ID from the parent
-   * request.
-   *
    * @var string
    */
   public $projectId;
   /**
-   * Required. The table ID of the Cloud Bigtable that needs to be imported.
-   *
    * @var string
    */
   public $tableId;
 
   /**
-   * Required. Bigtable options that contains information needed when parsing
-   * data into typed structures. For example, column type annotations.
-   *
-   * @param GoogleCloudDiscoveryengineV1BigtableOptions $bigtableOptions
+   * @param GoogleCloudDiscoveryengineV1BigtableOptions
    */
   public function setBigtableOptions(GoogleCloudDiscoveryengineV1BigtableOptions $bigtableOptions)
   {
@@ -60,9 +49,7 @@ class GoogleCloudDiscoveryengineV1BigtableSource extends \Google\Model
     return $this->bigtableOptions;
   }
   /**
-   * Required. The instance ID of the Cloud Bigtable that needs to be imported.
-   *
-   * @param string $instanceId
+   * @param string
    */
   public function setInstanceId($instanceId)
   {
@@ -76,11 +63,7 @@ class GoogleCloudDiscoveryengineV1BigtableSource extends \Google\Model
     return $this->instanceId;
   }
   /**
-   * The project ID that contains the Bigtable source. Has a length limit of 128
-   * characters. If not specified, inherits the project ID from the parent
-   * request.
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {
@@ -94,9 +77,7 @@ class GoogleCloudDiscoveryengineV1BigtableSource extends \Google\Model
     return $this->projectId;
   }
   /**
-   * Required. The table ID of the Cloud Bigtable that needs to be imported.
-   *
-   * @param string $tableId
+   * @param string
    */
   public function setTableId($tableId)
   {

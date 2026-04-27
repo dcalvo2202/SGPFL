@@ -20,28 +20,20 @@ namespace Google\Service\Vision;
 class Position extends \Google\Model
 {
   /**
-   * X coordinate.
-   *
    * @var float
    */
   public $x;
   /**
-   * Y coordinate.
-   *
    * @var float
    */
   public $y;
   /**
-   * Z coordinate (or depth).
-   *
    * @var float
    */
   public $z;
 
   /**
-   * X coordinate.
-   *
-   * @param float $x
+   * @param float
    */
   public function setX($x)
   {
@@ -55,9 +47,7 @@ class Position extends \Google\Model
     return $this->x;
   }
   /**
-   * Y coordinate.
-   *
-   * @param float $y
+   * @param float
    */
   public function setY($y)
   {
@@ -71,9 +61,7 @@ class Position extends \Google\Model
     return $this->y;
   }
   /**
-   * Z coordinate (or depth).
-   *
-   * @param float $z
+   * @param float
    */
   public function setZ($z)
   {

@@ -23,11 +23,7 @@ class ExecuteSqlQueryRequest extends \Google\Model
   protected $queryDataType = '';
 
   /**
-   * Required. SQL statement passed by clients like Integration Platform, the
-   * query is passed as-is to the driver used for interfacing with external
-   * systems.
-   *
-   * @param Query $query
+   * @param Query
    */
   public function setQuery(Query $query)
   {

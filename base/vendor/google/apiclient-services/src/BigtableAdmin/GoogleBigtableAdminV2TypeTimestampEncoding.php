@@ -23,11 +23,7 @@ class GoogleBigtableAdminV2TypeTimestampEncoding extends \Google\Model
   protected $unixMicrosInt64DataType = '';
 
   /**
-   * Encodes the number of microseconds since the Unix epoch using the given
-   * `Int64` encoding. Values must be microsecond-aligned. Compatible with: -
-   * Java `Instant.truncatedTo()` with `ChronoUnit.MICROS`
-   *
-   * @param GoogleBigtableAdminV2TypeInt64Encoding $unixMicrosInt64
+   * @param GoogleBigtableAdminV2TypeInt64Encoding
    */
   public function setUnixMicrosInt64(GoogleBigtableAdminV2TypeInt64Encoding $unixMicrosInt64)
   {

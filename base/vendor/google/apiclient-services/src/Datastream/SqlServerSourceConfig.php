@@ -26,14 +26,10 @@ class SqlServerSourceConfig extends \Google\Model
   protected $includeObjectsType = SqlServerRdbms::class;
   protected $includeObjectsDataType = '';
   /**
-   * Max concurrent backfill tasks.
-   *
    * @var int
    */
   public $maxConcurrentBackfillTasks;
   /**
-   * Max concurrent CDC tasks.
-   *
    * @var int
    */
   public $maxConcurrentCdcTasks;
@@ -41,9 +37,7 @@ class SqlServerSourceConfig extends \Google\Model
   protected $transactionLogsDataType = '';
 
   /**
-   * CDC reader reads from change tables.
-   *
-   * @param SqlServerChangeTables $changeTables
+   * @param SqlServerChangeTables
    */
   public function setChangeTables(SqlServerChangeTables $changeTables)
   {
@@ -57,9 +51,7 @@ class SqlServerSourceConfig extends \Google\Model
     return $this->changeTables;
   }
   /**
-   * The SQLServer objects to exclude from the stream.
-   *
-   * @param SqlServerRdbms $excludeObjects
+   * @param SqlServerRdbms
    */
   public function setExcludeObjects(SqlServerRdbms $excludeObjects)
   {
@@ -73,9 +65,7 @@ class SqlServerSourceConfig extends \Google\Model
     return $this->excludeObjects;
   }
   /**
-   * The SQLServer objects to include in the stream.
-   *
-   * @param SqlServerRdbms $includeObjects
+   * @param SqlServerRdbms
    */
   public function setIncludeObjects(SqlServerRdbms $includeObjects)
   {
@@ -89,9 +79,7 @@ class SqlServerSourceConfig extends \Google\Model
     return $this->includeObjects;
   }
   /**
-   * Max concurrent backfill tasks.
-   *
-   * @param int $maxConcurrentBackfillTasks
+   * @param int
    */
   public function setMaxConcurrentBackfillTasks($maxConcurrentBackfillTasks)
   {
@@ -105,9 +93,7 @@ class SqlServerSourceConfig extends \Google\Model
     return $this->maxConcurrentBackfillTasks;
   }
   /**
-   * Max concurrent CDC tasks.
-   *
-   * @param int $maxConcurrentCdcTasks
+   * @param int
    */
   public function setMaxConcurrentCdcTasks($maxConcurrentCdcTasks)
   {
@@ -121,9 +107,7 @@ class SqlServerSourceConfig extends \Google\Model
     return $this->maxConcurrentCdcTasks;
   }
   /**
-   * CDC reader reads from transaction logs.
-   *
-   * @param SqlServerTransactionLogs $transactionLogs
+   * @param SqlServerTransactionLogs
    */
   public function setTransactionLogs(SqlServerTransactionLogs $transactionLogs)
   {

@@ -25,9 +25,7 @@ class Deinterlace extends \Google\Model
   protected $yadifDataType = '';
 
   /**
-   * Specifies the Bob Weaver Deinterlacing Filter Configuration.
-   *
-   * @param BwdifConfig $bwdif
+   * @param BwdifConfig
    */
   public function setBwdif(BwdifConfig $bwdif)
   {
@@ -41,9 +39,7 @@ class Deinterlace extends \Google\Model
     return $this->bwdif;
   }
   /**
-   * Specifies the Yet Another Deinterlacing Filter Configuration.
-   *
-   * @param YadifConfig $yadif
+   * @param YadifConfig
    */
   public function setYadif(YadifConfig $yadif)
   {

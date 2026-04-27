@@ -19,17 +19,6 @@ namespace Google\Service\SearchConsole;
 
 class ApiDimensionFilter extends \Google\Model
 {
-  public const DIMENSION_QUERY = 'QUERY';
-  public const DIMENSION_PAGE = 'PAGE';
-  public const DIMENSION_COUNTRY = 'COUNTRY';
-  public const DIMENSION_DEVICE = 'DEVICE';
-  public const DIMENSION_SEARCH_APPEARANCE = 'SEARCH_APPEARANCE';
-  public const OPERATOR_EQUALS = 'EQUALS';
-  public const OPERATOR_NOT_EQUALS = 'NOT_EQUALS';
-  public const OPERATOR_CONTAINS = 'CONTAINS';
-  public const OPERATOR_NOT_CONTAINS = 'NOT_CONTAINS';
-  public const OPERATOR_INCLUDING_REGEX = 'INCLUDING_REGEX';
-  public const OPERATOR_EXCLUDING_REGEX = 'EXCLUDING_REGEX';
   /**
    * @var string
    */
@@ -44,21 +33,21 @@ class ApiDimensionFilter extends \Google\Model
   public $operator;
 
   /**
-   * @param self::DIMENSION_* $dimension
+   * @param string
    */
   public function setDimension($dimension)
   {
     $this->dimension = $dimension;
   }
   /**
-   * @return self::DIMENSION_*
+   * @return string
    */
   public function getDimension()
   {
     return $this->dimension;
   }
   /**
-   * @param string $expression
+   * @param string
    */
   public function setExpression($expression)
   {
@@ -72,14 +61,14 @@ class ApiDimensionFilter extends \Google\Model
     return $this->expression;
   }
   /**
-   * @param self::OPERATOR_* $operator
+   * @param string
    */
   public function setOperator($operator)
   {
     $this->operator = $operator;
   }
   /**
-   * @return self::OPERATOR_*
+   * @return string
    */
   public function getOperator()
   {

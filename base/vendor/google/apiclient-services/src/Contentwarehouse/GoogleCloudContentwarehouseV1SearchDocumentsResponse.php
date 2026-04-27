@@ -27,35 +27,20 @@ class GoogleCloudContentwarehouseV1SearchDocumentsResponse extends \Google\Colle
   protected $metadataType = GoogleCloudContentwarehouseV1ResponseMetadata::class;
   protected $metadataDataType = '';
   /**
-   * The token that specifies the starting position of the next page of results.
-   * This field is empty if there are no more results.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Experimental. Question answer from the query against the document.
-   *
    * @var string
    */
   public $questionAnswer;
   /**
-   * The total number of matched documents which is available only if the client
-   * set SearchDocumentsRequest.require_total_size to `true` or set
-   * SearchDocumentsRequest.total_result_size to `ESTIMATED_SIZE` or
-   * `ACTUAL_SIZE`. Otherwise, the value will be `-1`. Typically a UI would
-   * handle this condition by displaying "of many", for example: "Displaying 10
-   * of many".
-   *
    * @var int
    */
   public $totalSize;
 
   /**
-   * The histogram results that match with the specified
-   * SearchDocumentsRequest.histogram_queries.
-   *
-   * @param GoogleCloudContentwarehouseV1HistogramQueryResult[] $histogramQueryResults
+   * @param GoogleCloudContentwarehouseV1HistogramQueryResult[]
    */
   public function setHistogramQueryResults($histogramQueryResults)
   {
@@ -69,9 +54,7 @@ class GoogleCloudContentwarehouseV1SearchDocumentsResponse extends \Google\Colle
     return $this->histogramQueryResults;
   }
   /**
-   * The document entities that match the specified SearchDocumentsRequest.
-   *
-   * @param GoogleCloudContentwarehouseV1SearchDocumentsResponseMatchingDocument[] $matchingDocuments
+   * @param GoogleCloudContentwarehouseV1SearchDocumentsResponseMatchingDocument[]
    */
   public function setMatchingDocuments($matchingDocuments)
   {
@@ -85,10 +68,7 @@ class GoogleCloudContentwarehouseV1SearchDocumentsResponse extends \Google\Colle
     return $this->matchingDocuments;
   }
   /**
-   * Additional information for the API invocation, such as the request tracking
-   * id.
-   *
-   * @param GoogleCloudContentwarehouseV1ResponseMetadata $metadata
+   * @param GoogleCloudContentwarehouseV1ResponseMetadata
    */
   public function setMetadata(GoogleCloudContentwarehouseV1ResponseMetadata $metadata)
   {
@@ -102,10 +82,7 @@ class GoogleCloudContentwarehouseV1SearchDocumentsResponse extends \Google\Colle
     return $this->metadata;
   }
   /**
-   * The token that specifies the starting position of the next page of results.
-   * This field is empty if there are no more results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -119,9 +96,7 @@ class GoogleCloudContentwarehouseV1SearchDocumentsResponse extends \Google\Colle
     return $this->nextPageToken;
   }
   /**
-   * Experimental. Question answer from the query against the document.
-   *
-   * @param string $questionAnswer
+   * @param string
    */
   public function setQuestionAnswer($questionAnswer)
   {
@@ -135,14 +110,7 @@ class GoogleCloudContentwarehouseV1SearchDocumentsResponse extends \Google\Colle
     return $this->questionAnswer;
   }
   /**
-   * The total number of matched documents which is available only if the client
-   * set SearchDocumentsRequest.require_total_size to `true` or set
-   * SearchDocumentsRequest.total_result_size to `ESTIMATED_SIZE` or
-   * `ACTUAL_SIZE`. Otherwise, the value will be `-1`. Typically a UI would
-   * handle this condition by displaying "of many", for example: "Displaying 10
-   * of many".
-   *
-   * @param int $totalSize
+   * @param int
    */
   public function setTotalSize($totalSize)
   {

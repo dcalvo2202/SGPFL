@@ -19,185 +19,98 @@ namespace Google\Service\NetAppFiles;
 
 class ActiveDirectory extends \Google\Collection
 {
-  /**
-   * Unspecified Active Directory State
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Active Directory State is Creating
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * Active Directory State is Ready
-   */
-  public const STATE_READY = 'READY';
-  /**
-   * Active Directory State is Updating
-   */
-  public const STATE_UPDATING = 'UPDATING';
-  /**
-   * Active Directory State is In use
-   */
-  public const STATE_IN_USE = 'IN_USE';
-  /**
-   * Active Directory State is Deleting
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * Active Directory State is Error
-   */
-  public const STATE_ERROR = 'ERROR';
-  /**
-   * Active Directory State is Diagnosing.
-   */
-  public const STATE_DIAGNOSING = 'DIAGNOSING';
   protected $collection_key = 'securityOperators';
   /**
-   * Optional. Users to be added to the Built-in Admininstrators group.
-   *
    * @var string[]
    */
   public $administrators;
   /**
-   * If enabled, AES encryption will be enabled for SMB communication.
-   *
    * @var bool
    */
   public $aesEncryption;
   /**
-   * Optional. Users to be added to the Built-in Backup Operator active
-   * directory group.
-   *
    * @var string[]
    */
   public $backupOperators;
   /**
-   * Output only. Create time of the active directory.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Description of the active directory.
-   *
    * @var string
    */
   public $description;
   /**
-   * Required. Comma separated list of DNS server IP addresses for the Active
-   * Directory domain.
-   *
    * @var string
    */
   public $dns;
   /**
-   * Required. Name of the Active Directory domain
-   *
    * @var string
    */
   public $domain;
   /**
-   * If enabled, traffic between the SMB server to Domain Controller (DC) will
-   * be encrypted.
-   *
    * @var bool
    */
   public $encryptDcConnections;
   /**
-   * Name of the active directory machine. This optional parameter is used only
-   * while creating kerberos volume
-   *
    * @var string
    */
   public $kdcHostname;
   /**
-   * KDC server IP address for the active directory machine.
-   *
    * @var string
    */
   public $kdcIp;
   /**
-   * Labels for the active directory.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Specifies whether or not the LDAP traffic needs to be signed.
-   *
    * @var bool
    */
   public $ldapSigning;
   /**
-   * Identifier. The resource name of the active directory. Format: `projects/{p
-   * roject_number}/locations/{location_id}/activeDirectories/{active_directory_
-   * id}`.
-   *
    * @var string
    */
   public $name;
   /**
-   * Required. NetBIOSPrefix is used as a prefix for SMB server name.
-   *
    * @var string
    */
   public $netBiosPrefix;
   /**
-   * If enabled, will allow access to local users and LDAP users. If access is
-   * needed for only LDAP users, it has to be disabled.
-   *
    * @var bool
    */
   public $nfsUsersWithLdap;
   /**
-   * The Organizational Unit (OU) within the Windows Active Directory the user
-   * belongs to.
-   *
    * @var string
    */
   public $organizationalUnit;
   /**
-   * Required. Password of the Active Directory domain administrator.
-   *
    * @var string
    */
   public $password;
   /**
-   * Optional. Domain users to be given the SeSecurityPrivilege.
-   *
    * @var string[]
    */
   public $securityOperators;
   /**
-   * The Active Directory site the service will limit Domain Controller
-   * discovery too.
-   *
    * @var string
    */
   public $site;
   /**
-   * Output only. The state of the AD.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. The state details of the Active Directory.
-   *
    * @var string
    */
   public $stateDetails;
   /**
-   * Required. Username of the Active Directory domain administrator.
-   *
    * @var string
    */
   public $username;
 
   /**
-   * Optional. Users to be added to the Built-in Admininstrators group.
-   *
-   * @param string[] $administrators
+   * @param string[]
    */
   public function setAdministrators($administrators)
   {
@@ -211,9 +124,7 @@ class ActiveDirectory extends \Google\Collection
     return $this->administrators;
   }
   /**
-   * If enabled, AES encryption will be enabled for SMB communication.
-   *
-   * @param bool $aesEncryption
+   * @param bool
    */
   public function setAesEncryption($aesEncryption)
   {
@@ -227,10 +138,7 @@ class ActiveDirectory extends \Google\Collection
     return $this->aesEncryption;
   }
   /**
-   * Optional. Users to be added to the Built-in Backup Operator active
-   * directory group.
-   *
-   * @param string[] $backupOperators
+   * @param string[]
    */
   public function setBackupOperators($backupOperators)
   {
@@ -244,9 +152,7 @@ class ActiveDirectory extends \Google\Collection
     return $this->backupOperators;
   }
   /**
-   * Output only. Create time of the active directory.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -260,9 +166,7 @@ class ActiveDirectory extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Description of the active directory.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -276,10 +180,7 @@ class ActiveDirectory extends \Google\Collection
     return $this->description;
   }
   /**
-   * Required. Comma separated list of DNS server IP addresses for the Active
-   * Directory domain.
-   *
-   * @param string $dns
+   * @param string
    */
   public function setDns($dns)
   {
@@ -293,9 +194,7 @@ class ActiveDirectory extends \Google\Collection
     return $this->dns;
   }
   /**
-   * Required. Name of the Active Directory domain
-   *
-   * @param string $domain
+   * @param string
    */
   public function setDomain($domain)
   {
@@ -309,10 +208,7 @@ class ActiveDirectory extends \Google\Collection
     return $this->domain;
   }
   /**
-   * If enabled, traffic between the SMB server to Domain Controller (DC) will
-   * be encrypted.
-   *
-   * @param bool $encryptDcConnections
+   * @param bool
    */
   public function setEncryptDcConnections($encryptDcConnections)
   {
@@ -326,10 +222,7 @@ class ActiveDirectory extends \Google\Collection
     return $this->encryptDcConnections;
   }
   /**
-   * Name of the active directory machine. This optional parameter is used only
-   * while creating kerberos volume
-   *
-   * @param string $kdcHostname
+   * @param string
    */
   public function setKdcHostname($kdcHostname)
   {
@@ -343,9 +236,7 @@ class ActiveDirectory extends \Google\Collection
     return $this->kdcHostname;
   }
   /**
-   * KDC server IP address for the active directory machine.
-   *
-   * @param string $kdcIp
+   * @param string
    */
   public function setKdcIp($kdcIp)
   {
@@ -359,9 +250,7 @@ class ActiveDirectory extends \Google\Collection
     return $this->kdcIp;
   }
   /**
-   * Labels for the active directory.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -375,9 +264,7 @@ class ActiveDirectory extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Specifies whether or not the LDAP traffic needs to be signed.
-   *
-   * @param bool $ldapSigning
+   * @param bool
    */
   public function setLdapSigning($ldapSigning)
   {
@@ -391,11 +278,7 @@ class ActiveDirectory extends \Google\Collection
     return $this->ldapSigning;
   }
   /**
-   * Identifier. The resource name of the active directory. Format: `projects/{p
-   * roject_number}/locations/{location_id}/activeDirectories/{active_directory_
-   * id}`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -409,9 +292,7 @@ class ActiveDirectory extends \Google\Collection
     return $this->name;
   }
   /**
-   * Required. NetBIOSPrefix is used as a prefix for SMB server name.
-   *
-   * @param string $netBiosPrefix
+   * @param string
    */
   public function setNetBiosPrefix($netBiosPrefix)
   {
@@ -425,10 +306,7 @@ class ActiveDirectory extends \Google\Collection
     return $this->netBiosPrefix;
   }
   /**
-   * If enabled, will allow access to local users and LDAP users. If access is
-   * needed for only LDAP users, it has to be disabled.
-   *
-   * @param bool $nfsUsersWithLdap
+   * @param bool
    */
   public function setNfsUsersWithLdap($nfsUsersWithLdap)
   {
@@ -442,10 +320,7 @@ class ActiveDirectory extends \Google\Collection
     return $this->nfsUsersWithLdap;
   }
   /**
-   * The Organizational Unit (OU) within the Windows Active Directory the user
-   * belongs to.
-   *
-   * @param string $organizationalUnit
+   * @param string
    */
   public function setOrganizationalUnit($organizationalUnit)
   {
@@ -459,9 +334,7 @@ class ActiveDirectory extends \Google\Collection
     return $this->organizationalUnit;
   }
   /**
-   * Required. Password of the Active Directory domain administrator.
-   *
-   * @param string $password
+   * @param string
    */
   public function setPassword($password)
   {
@@ -475,9 +348,7 @@ class ActiveDirectory extends \Google\Collection
     return $this->password;
   }
   /**
-   * Optional. Domain users to be given the SeSecurityPrivilege.
-   *
-   * @param string[] $securityOperators
+   * @param string[]
    */
   public function setSecurityOperators($securityOperators)
   {
@@ -491,10 +362,7 @@ class ActiveDirectory extends \Google\Collection
     return $this->securityOperators;
   }
   /**
-   * The Active Directory site the service will limit Domain Controller
-   * discovery too.
-   *
-   * @param string $site
+   * @param string
    */
   public function setSite($site)
   {
@@ -508,28 +376,21 @@ class ActiveDirectory extends \Google\Collection
     return $this->site;
   }
   /**
-   * Output only. The state of the AD.
-   *
-   * Accepted values: STATE_UNSPECIFIED, CREATING, READY, UPDATING, IN_USE,
-   * DELETING, ERROR, DIAGNOSING
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. The state details of the Active Directory.
-   *
-   * @param string $stateDetails
+   * @param string
    */
   public function setStateDetails($stateDetails)
   {
@@ -543,9 +404,7 @@ class ActiveDirectory extends \Google\Collection
     return $this->stateDetails;
   }
   /**
-   * Required. Username of the Active Directory domain administrator.
-   *
-   * @param string $username
+   * @param string
    */
   public function setUsername($username)
   {

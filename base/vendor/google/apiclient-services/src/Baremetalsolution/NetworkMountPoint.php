@@ -20,34 +20,24 @@ namespace Google\Service\Baremetalsolution;
 class NetworkMountPoint extends \Google\Model
 {
   /**
-   * Network should be a default gateway.
-   *
    * @var bool
    */
   public $defaultGateway;
   /**
-   * Instance to attach network to.
-   *
    * @var string
    */
   public $instance;
   /**
-   * Ip address of the server.
-   *
    * @var string
    */
   public $ipAddress;
   /**
-   * Logical interface to detach from.
-   *
    * @var string
    */
   public $logicalInterface;
 
   /**
-   * Network should be a default gateway.
-   *
-   * @param bool $defaultGateway
+   * @param bool
    */
   public function setDefaultGateway($defaultGateway)
   {
@@ -61,9 +51,7 @@ class NetworkMountPoint extends \Google\Model
     return $this->defaultGateway;
   }
   /**
-   * Instance to attach network to.
-   *
-   * @param string $instance
+   * @param string
    */
   public function setInstance($instance)
   {
@@ -77,9 +65,7 @@ class NetworkMountPoint extends \Google\Model
     return $this->instance;
   }
   /**
-   * Ip address of the server.
-   *
-   * @param string $ipAddress
+   * @param string
    */
   public function setIpAddress($ipAddress)
   {
@@ -93,9 +79,7 @@ class NetworkMountPoint extends \Google\Model
     return $this->ipAddress;
   }
   /**
-   * Logical interface to detach from.
-   *
-   * @param string $logicalInterface
+   * @param string
    */
   public function setLogicalInterface($logicalInterface)
   {

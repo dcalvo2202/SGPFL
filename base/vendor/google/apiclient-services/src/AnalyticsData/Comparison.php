@@ -20,28 +20,18 @@ namespace Google\Service\AnalyticsData;
 class Comparison extends \Google\Model
 {
   /**
-   * A saved comparison identified by the comparison's resource name. For
-   * example, 'comparisons/1234'.
-   *
    * @var string
    */
   public $comparison;
   protected $dimensionFilterType = FilterExpression::class;
   protected $dimensionFilterDataType = '';
   /**
-   * Each comparison produces separate rows in the response. In the response,
-   * this comparison is identified by this name. If name is unspecified, we will
-   * use the saved comparisons display name.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * A saved comparison identified by the comparison's resource name. For
-   * example, 'comparisons/1234'.
-   *
-   * @param string $comparison
+   * @param string
    */
   public function setComparison($comparison)
   {
@@ -55,9 +45,7 @@ class Comparison extends \Google\Model
     return $this->comparison;
   }
   /**
-   * A basic comparison.
-   *
-   * @param FilterExpression $dimensionFilter
+   * @param FilterExpression
    */
   public function setDimensionFilter(FilterExpression $dimensionFilter)
   {
@@ -71,11 +59,7 @@ class Comparison extends \Google\Model
     return $this->dimensionFilter;
   }
   /**
-   * Each comparison produces separate rows in the response. In the response,
-   * this comparison is identified by this name. If name is unspecified, we will
-   * use the saved comparisons display name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

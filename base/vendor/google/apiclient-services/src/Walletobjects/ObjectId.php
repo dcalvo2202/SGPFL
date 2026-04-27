@@ -20,31 +20,20 @@ namespace Google\Service\Walletobjects;
 class ObjectId extends \Google\Model
 {
   /**
-   * The name of the bucket to which this object belongs.
-   *
    * @var string
    */
   public $bucketName;
   /**
-   * Generation of the object. Generations are monotonically increasing across
-   * writes, allowing them to be be compared to determine which generation is
-   * newer. If this is omitted in a request, then you are requesting the live
-   * object. See http://go/bigstore-versions
-   *
    * @var string
    */
   public $generation;
   /**
-   * The name of the object.
-   *
    * @var string
    */
   public $objectName;
 
   /**
-   * The name of the bucket to which this object belongs.
-   *
-   * @param string $bucketName
+   * @param string
    */
   public function setBucketName($bucketName)
   {
@@ -58,12 +47,7 @@ class ObjectId extends \Google\Model
     return $this->bucketName;
   }
   /**
-   * Generation of the object. Generations are monotonically increasing across
-   * writes, allowing them to be be compared to determine which generation is
-   * newer. If this is omitted in a request, then you are requesting the live
-   * object. See http://go/bigstore-versions
-   *
-   * @param string $generation
+   * @param string
    */
   public function setGeneration($generation)
   {
@@ -77,9 +61,7 @@ class ObjectId extends \Google\Model
     return $this->generation;
   }
   /**
-   * The name of the object.
-   *
-   * @param string $objectName
+   * @param string
    */
   public function setObjectName($objectName)
   {

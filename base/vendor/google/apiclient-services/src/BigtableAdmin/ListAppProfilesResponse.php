@@ -23,27 +23,16 @@ class ListAppProfilesResponse extends \Google\Collection
   protected $appProfilesType = AppProfile::class;
   protected $appProfilesDataType = 'array';
   /**
-   * Locations from which AppProfile information could not be retrieved, due to
-   * an outage or some other transient condition. AppProfiles from these
-   * locations may be missing from `app_profiles`. Values are of the form
-   * `projects//locations/`
-   *
    * @var string[]
    */
   public $failedLocations;
   /**
-   * Set if not all app profiles could be returned in a single response. Pass
-   * this value to `page_token` in another request to get the next page of
-   * results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of requested app profiles.
-   *
-   * @param AppProfile[] $appProfiles
+   * @param AppProfile[]
    */
   public function setAppProfiles($appProfiles)
   {
@@ -57,12 +46,7 @@ class ListAppProfilesResponse extends \Google\Collection
     return $this->appProfiles;
   }
   /**
-   * Locations from which AppProfile information could not be retrieved, due to
-   * an outage or some other transient condition. AppProfiles from these
-   * locations may be missing from `app_profiles`. Values are of the form
-   * `projects//locations/`
-   *
-   * @param string[] $failedLocations
+   * @param string[]
    */
   public function setFailedLocations($failedLocations)
   {
@@ -76,11 +60,7 @@ class ListAppProfilesResponse extends \Google\Collection
     return $this->failedLocations;
   }
   /**
-   * Set if not all app profiles could be returned in a single response. Pass
-   * this value to `page_token` in another request to get the next page of
-   * results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

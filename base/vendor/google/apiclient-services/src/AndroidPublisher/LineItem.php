@@ -26,16 +26,10 @@ class LineItem extends \Google\Model
   protected $paidAppDetailsType = PaidAppDetails::class;
   protected $paidAppDetailsDataType = '';
   /**
-   * The purchased product ID or in-app SKU (for example, 'monthly001' or
-   * 'com.some.thing.inapp1').
-   *
    * @var string
    */
   public $productId;
   /**
-   * Developer-specified name of the product. Displayed in buyer's locale.
-   * Example: coins, monthly subscription, etc.
-   *
    * @var string
    */
   public $productTitle;
@@ -47,10 +41,7 @@ class LineItem extends \Google\Model
   protected $totalDataType = '';
 
   /**
-   * Item's listed price on Play Store, this may or may not include tax.
-   * Excludes Google-funded discounts only.
-   *
-   * @param Money $listingPrice
+   * @param Money
    */
   public function setListingPrice(Money $listingPrice)
   {
@@ -64,9 +55,7 @@ class LineItem extends \Google\Model
     return $this->listingPrice;
   }
   /**
-   * Details of a one-time purchase.
-   *
-   * @param OneTimePurchaseDetails $oneTimePurchaseDetails
+   * @param OneTimePurchaseDetails
    */
   public function setOneTimePurchaseDetails(OneTimePurchaseDetails $oneTimePurchaseDetails)
   {
@@ -80,9 +69,7 @@ class LineItem extends \Google\Model
     return $this->oneTimePurchaseDetails;
   }
   /**
-   * Details of a paid app purchase.
-   *
-   * @param PaidAppDetails $paidAppDetails
+   * @param PaidAppDetails
    */
   public function setPaidAppDetails(PaidAppDetails $paidAppDetails)
   {
@@ -96,10 +83,7 @@ class LineItem extends \Google\Model
     return $this->paidAppDetails;
   }
   /**
-   * The purchased product ID or in-app SKU (for example, 'monthly001' or
-   * 'com.some.thing.inapp1').
-   *
-   * @param string $productId
+   * @param string
    */
   public function setProductId($productId)
   {
@@ -113,10 +97,7 @@ class LineItem extends \Google\Model
     return $this->productId;
   }
   /**
-   * Developer-specified name of the product. Displayed in buyer's locale.
-   * Example: coins, monthly subscription, etc.
-   *
-   * @param string $productTitle
+   * @param string
    */
   public function setProductTitle($productTitle)
   {
@@ -130,9 +111,7 @@ class LineItem extends \Google\Model
     return $this->productTitle;
   }
   /**
-   * Details of a subscription purchase.
-   *
-   * @param SubscriptionDetails $subscriptionDetails
+   * @param SubscriptionDetails
    */
   public function setSubscriptionDetails(SubscriptionDetails $subscriptionDetails)
   {
@@ -146,9 +125,7 @@ class LineItem extends \Google\Model
     return $this->subscriptionDetails;
   }
   /**
-   * The tax paid for this line item.
-   *
-   * @param Money $tax
+   * @param Money
    */
   public function setTax(Money $tax)
   {
@@ -162,10 +139,7 @@ class LineItem extends \Google\Model
     return $this->tax;
   }
   /**
-   * The total amount paid by the user for this line item, taking into account
-   * discounts and tax.
-   *
-   * @param Money $total
+   * @param Money
    */
   public function setTotal(Money $total)
   {

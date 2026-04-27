@@ -23,70 +23,42 @@ class HttpRule extends \Google\Collection
   protected $additionalBindingsType = HttpRule::class;
   protected $additionalBindingsDataType = 'array';
   /**
-   * The name of the request field whose value is mapped to the HTTP request
-   * body, or `*` for mapping all request fields not captured by the path
-   * pattern to the HTTP body, or omitted for not having any HTTP request body.
-   * NOTE: the referred field must be present at the top-level of the request
-   * message type.
-   *
    * @var string
    */
   public $body;
   protected $customType = CustomHttpPattern::class;
   protected $customDataType = '';
   /**
-   * Maps to HTTP DELETE. Used for deleting a resource.
-   *
    * @var string
    */
   public $delete;
   /**
-   * Maps to HTTP GET. Used for listing and getting information about resources.
-   *
    * @var string
    */
   public $get;
   /**
-   * Maps to HTTP PATCH. Used for updating a resource.
-   *
    * @var string
    */
   public $patch;
   /**
-   * Maps to HTTP POST. Used for creating a resource or performing an action.
-   *
    * @var string
    */
   public $post;
   /**
-   * Maps to HTTP PUT. Used for replacing a resource.
-   *
    * @var string
    */
   public $put;
   /**
-   * Optional. The name of the response field whose value is mapped to the HTTP
-   * response body. When omitted, the entire response message will be used as
-   * the HTTP response body. NOTE: The referred field must be present at the
-   * top-level of the response message type.
-   *
    * @var string
    */
   public $responseBody;
   /**
-   * Selects a method to which this rule applies. Refer to selector for syntax
-   * details.
-   *
    * @var string
    */
   public $selector;
 
   /**
-   * Additional HTTP bindings for the selector. Nested bindings must not contain
-   * an `additional_bindings` field themselves (that is, the nesting may only be
-   * one level deep).
-   *
-   * @param HttpRule[] $additionalBindings
+   * @param HttpRule[]
    */
   public function setAdditionalBindings($additionalBindings)
   {
@@ -100,13 +72,7 @@ class HttpRule extends \Google\Collection
     return $this->additionalBindings;
   }
   /**
-   * The name of the request field whose value is mapped to the HTTP request
-   * body, or `*` for mapping all request fields not captured by the path
-   * pattern to the HTTP body, or omitted for not having any HTTP request body.
-   * NOTE: the referred field must be present at the top-level of the request
-   * message type.
-   *
-   * @param string $body
+   * @param string
    */
   public function setBody($body)
   {
@@ -120,12 +86,7 @@ class HttpRule extends \Google\Collection
     return $this->body;
   }
   /**
-   * The custom pattern is used for specifying an HTTP method that is not
-   * included in the `pattern` field, such as HEAD, or "*" to leave the HTTP
-   * method unspecified for this rule. The wild-card rule is useful for services
-   * that provide content to Web (HTML) clients.
-   *
-   * @param CustomHttpPattern $custom
+   * @param CustomHttpPattern
    */
   public function setCustom(CustomHttpPattern $custom)
   {
@@ -139,9 +100,7 @@ class HttpRule extends \Google\Collection
     return $this->custom;
   }
   /**
-   * Maps to HTTP DELETE. Used for deleting a resource.
-   *
-   * @param string $delete
+   * @param string
    */
   public function setDelete($delete)
   {
@@ -155,9 +114,7 @@ class HttpRule extends \Google\Collection
     return $this->delete;
   }
   /**
-   * Maps to HTTP GET. Used for listing and getting information about resources.
-   *
-   * @param string $get
+   * @param string
    */
   public function setGet($get)
   {
@@ -171,9 +128,7 @@ class HttpRule extends \Google\Collection
     return $this->get;
   }
   /**
-   * Maps to HTTP PATCH. Used for updating a resource.
-   *
-   * @param string $patch
+   * @param string
    */
   public function setPatch($patch)
   {
@@ -187,9 +142,7 @@ class HttpRule extends \Google\Collection
     return $this->patch;
   }
   /**
-   * Maps to HTTP POST. Used for creating a resource or performing an action.
-   *
-   * @param string $post
+   * @param string
    */
   public function setPost($post)
   {
@@ -203,9 +156,7 @@ class HttpRule extends \Google\Collection
     return $this->post;
   }
   /**
-   * Maps to HTTP PUT. Used for replacing a resource.
-   *
-   * @param string $put
+   * @param string
    */
   public function setPut($put)
   {
@@ -219,12 +170,7 @@ class HttpRule extends \Google\Collection
     return $this->put;
   }
   /**
-   * Optional. The name of the response field whose value is mapped to the HTTP
-   * response body. When omitted, the entire response message will be used as
-   * the HTTP response body. NOTE: The referred field must be present at the
-   * top-level of the response message type.
-   *
-   * @param string $responseBody
+   * @param string
    */
   public function setResponseBody($responseBody)
   {
@@ -238,10 +184,7 @@ class HttpRule extends \Google\Collection
     return $this->responseBody;
   }
   /**
-   * Selects a method to which this rule applies. Refer to selector for syntax
-   * details.
-   *
-   * @param string $selector
+   * @param string
    */
   public function setSelector($selector)
   {

@@ -20,9 +20,6 @@ namespace Google\Service\CloudFunctions;
 class SourceProvenance extends \Google\Model
 {
   /**
-   * A copy of the build's `source.git_uri`, if exists, with any commits
-   * resolved.
-   *
    * @var string
    */
   public $gitUri;
@@ -32,10 +29,7 @@ class SourceProvenance extends \Google\Model
   protected $resolvedStorageSourceDataType = '';
 
   /**
-   * A copy of the build's `source.git_uri`, if exists, with any commits
-   * resolved.
-   *
-   * @param string $gitUri
+   * @param string
    */
   public function setGitUri($gitUri)
   {
@@ -49,10 +43,7 @@ class SourceProvenance extends \Google\Model
     return $this->gitUri;
   }
   /**
-   * A copy of the build's `source.repo_source`, if exists, with any revisions
-   * resolved.
-   *
-   * @param RepoSource $resolvedRepoSource
+   * @param RepoSource
    */
   public function setResolvedRepoSource(RepoSource $resolvedRepoSource)
   {
@@ -66,10 +57,7 @@ class SourceProvenance extends \Google\Model
     return $this->resolvedRepoSource;
   }
   /**
-   * A copy of the build's `source.storage_source`, if exists, with any
-   * generations resolved.
-   *
-   * @param StorageSource $resolvedStorageSource
+   * @param StorageSource
    */
   public function setResolvedStorageSource(StorageSource $resolvedStorageSource)
   {

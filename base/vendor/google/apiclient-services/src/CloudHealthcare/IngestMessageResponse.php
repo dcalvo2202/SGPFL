@@ -20,8 +20,6 @@ namespace Google\Service\CloudHealthcare;
 class IngestMessageResponse extends \Google\Model
 {
   /**
-   * HL7v2 ACK message.
-   *
    * @var string
    */
   public $hl7Ack;
@@ -29,9 +27,7 @@ class IngestMessageResponse extends \Google\Model
   protected $messageDataType = '';
 
   /**
-   * HL7v2 ACK message.
-   *
-   * @param string $hl7Ack
+   * @param string
    */
   public function setHl7Ack($hl7Ack)
   {
@@ -45,9 +41,7 @@ class IngestMessageResponse extends \Google\Model
     return $this->hl7Ack;
   }
   /**
-   * Created message resource.
-   *
-   * @param Message $message
+   * @param Message
    */
   public function setMessage(Message $message)
   {

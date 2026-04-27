@@ -20,25 +20,16 @@ namespace Google\Service\CloudRun;
 class GoogleCloudRunV2CancelExecutionRequest extends \Google\Model
 {
   /**
-   * A system-generated fingerprint for this version of the resource. This may
-   * be used to detect modification conflict during updates.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Indicates that the request should be validated without actually cancelling
-   * any resources.
-   *
    * @var bool
    */
   public $validateOnly;
 
   /**
-   * A system-generated fingerprint for this version of the resource. This may
-   * be used to detect modification conflict during updates.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -52,10 +43,7 @@ class GoogleCloudRunV2CancelExecutionRequest extends \Google\Model
     return $this->etag;
   }
   /**
-   * Indicates that the request should be validated without actually cancelling
-   * any resources.
-   *
-   * @param bool $validateOnly
+   * @param bool
    */
   public function setValidateOnly($validateOnly)
   {

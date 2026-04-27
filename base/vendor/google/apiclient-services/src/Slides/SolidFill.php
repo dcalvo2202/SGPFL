@@ -20,12 +20,6 @@ namespace Google\Service\Slides;
 class SolidFill extends \Google\Model
 {
   /**
-   * The fraction of this `color` that should be applied to the pixel. That is,
-   * the final pixel color is defined by the equation: pixel color = alpha *
-   * (color) + (1.0 - alpha) * (background color) This means that a value of 1.0
-   * corresponds to a solid color, whereas a value of 0.0 corresponds to a
-   * completely transparent color.
-   *
    * @var float
    */
   public $alpha;
@@ -33,13 +27,7 @@ class SolidFill extends \Google\Model
   protected $colorDataType = '';
 
   /**
-   * The fraction of this `color` that should be applied to the pixel. That is,
-   * the final pixel color is defined by the equation: pixel color = alpha *
-   * (color) + (1.0 - alpha) * (background color) This means that a value of 1.0
-   * corresponds to a solid color, whereas a value of 0.0 corresponds to a
-   * completely transparent color.
-   *
-   * @param float $alpha
+   * @param float
    */
   public function setAlpha($alpha)
   {
@@ -53,9 +41,7 @@ class SolidFill extends \Google\Model
     return $this->alpha;
   }
   /**
-   * The color value of the solid fill.
-   *
-   * @param OpaqueColor $color
+   * @param OpaqueColor
    */
   public function setColor(OpaqueColor $color)
   {

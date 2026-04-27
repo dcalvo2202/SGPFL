@@ -22,16 +22,12 @@ class GoogleAppsScriptTypeWebAppEntryPoint extends \Google\Model
   protected $entryPointConfigType = GoogleAppsScriptTypeWebAppConfig::class;
   protected $entryPointConfigDataType = '';
   /**
-   * The URL for the web application.
-   *
    * @var string
    */
   public $url;
 
   /**
-   * The entry point's configuration.
-   *
-   * @param GoogleAppsScriptTypeWebAppConfig $entryPointConfig
+   * @param GoogleAppsScriptTypeWebAppConfig
    */
   public function setEntryPointConfig(GoogleAppsScriptTypeWebAppConfig $entryPointConfig)
   {
@@ -45,9 +41,7 @@ class GoogleAppsScriptTypeWebAppEntryPoint extends \Google\Model
     return $this->entryPointConfig;
   }
   /**
-   * The URL for the web application.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

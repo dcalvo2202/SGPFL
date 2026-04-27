@@ -19,40 +19,23 @@ namespace Google\Service\CloudAlloyDBAdmin;
 
 class StorageDatabasecenterPartnerapiV1mainBackupRun extends \Google\Model
 {
-  public const STATUS_STATUS_UNSPECIFIED = 'STATUS_UNSPECIFIED';
   /**
-   * The backup was successful.
-   */
-  public const STATUS_SUCCESSFUL = 'SUCCESSFUL';
-  /**
-   * The backup was unsuccessful.
-   */
-  public const STATUS_FAILED = 'FAILED';
-  /**
-   * The time the backup operation completed. REQUIRED
-   *
    * @var string
    */
   public $endTime;
   protected $errorType = StorageDatabasecenterPartnerapiV1mainOperationError::class;
   protected $errorDataType = '';
   /**
-   * The time the backup operation started. REQUIRED
-   *
    * @var string
    */
   public $startTime;
   /**
-   * The status of this run. REQUIRED
-   *
    * @var string
    */
   public $status;
 
   /**
-   * The time the backup operation completed. REQUIRED
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -66,10 +49,7 @@ class StorageDatabasecenterPartnerapiV1mainBackupRun extends \Google\Model
     return $this->endTime;
   }
   /**
-   * Information about why the backup operation failed. This is only present if
-   * the run has the FAILED status. OPTIONAL
-   *
-   * @param StorageDatabasecenterPartnerapiV1mainOperationError $error
+   * @param StorageDatabasecenterPartnerapiV1mainOperationError
    */
   public function setError(StorageDatabasecenterPartnerapiV1mainOperationError $error)
   {
@@ -83,9 +63,7 @@ class StorageDatabasecenterPartnerapiV1mainBackupRun extends \Google\Model
     return $this->error;
   }
   /**
-   * The time the backup operation started. REQUIRED
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -99,18 +77,14 @@ class StorageDatabasecenterPartnerapiV1mainBackupRun extends \Google\Model
     return $this->startTime;
   }
   /**
-   * The status of this run. REQUIRED
-   *
-   * Accepted values: STATUS_UNSPECIFIED, SUCCESSFUL, FAILED
-   *
-   * @param self::STATUS_* $status
+   * @param string
    */
   public function setStatus($status)
   {
     $this->status = $status;
   }
   /**
-   * @return self::STATUS_*
+   * @return string
    */
   public function getStatus()
   {

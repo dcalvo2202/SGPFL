@@ -24,11 +24,7 @@ class AssetPerformanceData extends \Google\Collection
   protected $dailyResourceUsageAggregationsDataType = 'array';
 
   /**
-   * Daily resource usage aggregations. Contains all of the data available for
-   * an asset, up to the last 420 days. Aggregations are sorted from oldest to
-   * most recent.
-   *
-   * @param DailyResourceUsageAggregation[] $dailyResourceUsageAggregations
+   * @param DailyResourceUsageAggregation[]
    */
   public function setDailyResourceUsageAggregations($dailyResourceUsageAggregations)
   {

@@ -20,46 +20,32 @@ namespace Google\Service\CloudSearch;
 class EnterpriseTopazSidekickTimeSlot extends \Google\Model
 {
   /**
-   * Day end time at the user's timezone.
-   *
    * @var string
    */
   public $endTimeDay;
   /**
-   * Hour and minute of the end time at the user's timezone.
-   *
    * @var string
    */
   public $endTimeHourAndMinute;
   /**
-   * End time in milliseconds.
-   *
    * @var string
    */
   public $endTimeInMillis;
   /**
-   * Day start time at user's timezone.
-   *
    * @var string
    */
   public $startTimeDay;
   /**
-   * Hour and minute of the start time at the user's timezone.
-   *
    * @var string
    */
   public $startTimeHourAndMinute;
   /**
-   * Start time in milliseconds.
-   *
    * @var string
    */
   public $startTimeInMillis;
 
   /**
-   * Day end time at the user's timezone.
-   *
-   * @param string $endTimeDay
+   * @param string
    */
   public function setEndTimeDay($endTimeDay)
   {
@@ -73,9 +59,7 @@ class EnterpriseTopazSidekickTimeSlot extends \Google\Model
     return $this->endTimeDay;
   }
   /**
-   * Hour and minute of the end time at the user's timezone.
-   *
-   * @param string $endTimeHourAndMinute
+   * @param string
    */
   public function setEndTimeHourAndMinute($endTimeHourAndMinute)
   {
@@ -89,9 +73,7 @@ class EnterpriseTopazSidekickTimeSlot extends \Google\Model
     return $this->endTimeHourAndMinute;
   }
   /**
-   * End time in milliseconds.
-   *
-   * @param string $endTimeInMillis
+   * @param string
    */
   public function setEndTimeInMillis($endTimeInMillis)
   {
@@ -105,9 +87,7 @@ class EnterpriseTopazSidekickTimeSlot extends \Google\Model
     return $this->endTimeInMillis;
   }
   /**
-   * Day start time at user's timezone.
-   *
-   * @param string $startTimeDay
+   * @param string
    */
   public function setStartTimeDay($startTimeDay)
   {
@@ -121,9 +101,7 @@ class EnterpriseTopazSidekickTimeSlot extends \Google\Model
     return $this->startTimeDay;
   }
   /**
-   * Hour and minute of the start time at the user's timezone.
-   *
-   * @param string $startTimeHourAndMinute
+   * @param string
    */
   public function setStartTimeHourAndMinute($startTimeHourAndMinute)
   {
@@ -137,9 +115,7 @@ class EnterpriseTopazSidekickTimeSlot extends \Google\Model
     return $this->startTimeHourAndMinute;
   }
   /**
-   * Start time in milliseconds.
-   *
-   * @param string $startTimeInMillis
+   * @param string
    */
   public function setStartTimeInMillis($startTimeInMillis)
   {

@@ -21,16 +21,12 @@ class K8sBetaAPIConfig extends \Google\Collection
 {
   protected $collection_key = 'enabledApis';
   /**
-   * Enabled k8s beta APIs.
-   *
    * @var string[]
    */
   public $enabledApis;
 
   /**
-   * Enabled k8s beta APIs.
-   *
-   * @param string[] $enabledApis
+   * @param string[]
    */
   public function setEnabledApis($enabledApis)
   {

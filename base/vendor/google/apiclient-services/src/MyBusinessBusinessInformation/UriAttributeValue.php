@@ -20,16 +20,12 @@ namespace Google\Service\MyBusinessBusinessInformation;
 class UriAttributeValue extends \Google\Model
 {
   /**
-   * Required. The proposed URI value for this attribute.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * Required. The proposed URI value for this attribute.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

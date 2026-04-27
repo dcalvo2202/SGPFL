@@ -24,21 +24,14 @@ class LiveStream extends \Google\Model
   protected $contentDetailsType = LiveStreamContentDetails::class;
   protected $contentDetailsDataType = '';
   /**
-   * Etag of this resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * The ID that YouTube assigns to uniquely identify the stream.
-   *
    * @var string
    */
   public $id;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "youtube#liveStream".
-   *
    * @var string
    */
   public $kind;
@@ -48,11 +41,7 @@ class LiveStream extends \Google\Model
   protected $statusDataType = '';
 
   /**
-   * The cdn object defines the live stream's content delivery network (CDN)
-   * settings. These settings provide details about the manner in which you
-   * stream your content to YouTube.
-   *
-   * @param CdnSettings $cdn
+   * @param CdnSettings
    */
   public function setCdn(CdnSettings $cdn)
   {
@@ -66,10 +55,7 @@ class LiveStream extends \Google\Model
     return $this->cdn;
   }
   /**
-   * The content_details object contains information about the stream, including
-   * the closed captions ingestion URL.
-   *
-   * @param LiveStreamContentDetails $contentDetails
+   * @param LiveStreamContentDetails
    */
   public function setContentDetails(LiveStreamContentDetails $contentDetails)
   {
@@ -83,9 +69,7 @@ class LiveStream extends \Google\Model
     return $this->contentDetails;
   }
   /**
-   * Etag of this resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -99,9 +83,7 @@ class LiveStream extends \Google\Model
     return $this->etag;
   }
   /**
-   * The ID that YouTube assigns to uniquely identify the stream.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -115,10 +97,7 @@ class LiveStream extends \Google\Model
     return $this->id;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "youtube#liveStream".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -132,10 +111,7 @@ class LiveStream extends \Google\Model
     return $this->kind;
   }
   /**
-   * The snippet object contains basic details about the stream, including its
-   * channel, title, and description.
-   *
-   * @param LiveStreamSnippet $snippet
+   * @param LiveStreamSnippet
    */
   public function setSnippet(LiveStreamSnippet $snippet)
   {
@@ -149,9 +125,7 @@ class LiveStream extends \Google\Model
     return $this->snippet;
   }
   /**
-   * The status object contains information about live stream's status.
-   *
-   * @param LiveStreamStatus $status
+   * @param LiveStreamStatus
    */
   public function setStatus(LiveStreamStatus $status)
   {

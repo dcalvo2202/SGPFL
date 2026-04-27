@@ -20,9 +20,6 @@ namespace Google\Service\MyBusinessLodging;
 class GetGoogleUpdatedLodgingResponse extends \Google\Model
 {
   /**
-   * Required. The fields in the Lodging that have been updated by Google.
-   * Repeated field items are not individually specified.
-   *
    * @var string
    */
   public $diffMask;
@@ -30,10 +27,7 @@ class GetGoogleUpdatedLodgingResponse extends \Google\Model
   protected $lodgingDataType = '';
 
   /**
-   * Required. The fields in the Lodging that have been updated by Google.
-   * Repeated field items are not individually specified.
-   *
-   * @param string $diffMask
+   * @param string
    */
   public function setDiffMask($diffMask)
   {
@@ -47,9 +41,7 @@ class GetGoogleUpdatedLodgingResponse extends \Google\Model
     return $this->diffMask;
   }
   /**
-   * Required. The Google updated Lodging.
-   *
-   * @param Lodging $lodging
+   * @param Lodging
    */
   public function setLodging(Lodging $lodging)
   {

@@ -25,9 +25,7 @@ class GoogleCloudAiplatformV1DeleteFeatureValuesRequest extends \Google\Model
   protected $selectTimeRangeAndFeatureDataType = '';
 
   /**
-   * Select feature values to be deleted by specifying entities.
-   *
-   * @param GoogleCloudAiplatformV1DeleteFeatureValuesRequestSelectEntity $selectEntity
+   * @param GoogleCloudAiplatformV1DeleteFeatureValuesRequestSelectEntity
    */
   public function setSelectEntity(GoogleCloudAiplatformV1DeleteFeatureValuesRequestSelectEntity $selectEntity)
   {
@@ -41,9 +39,7 @@ class GoogleCloudAiplatformV1DeleteFeatureValuesRequest extends \Google\Model
     return $this->selectEntity;
   }
   /**
-   * Select feature values to be deleted by specifying time range and features.
-   *
-   * @param GoogleCloudAiplatformV1DeleteFeatureValuesRequestSelectTimeRangeAndFeature $selectTimeRangeAndFeature
+   * @param GoogleCloudAiplatformV1DeleteFeatureValuesRequestSelectTimeRangeAndFeature
    */
   public function setSelectTimeRangeAndFeature(GoogleCloudAiplatformV1DeleteFeatureValuesRequestSelectTimeRangeAndFeature $selectTimeRangeAndFeature)
   {

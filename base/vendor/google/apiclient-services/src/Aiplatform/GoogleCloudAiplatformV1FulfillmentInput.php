@@ -25,9 +25,7 @@ class GoogleCloudAiplatformV1FulfillmentInput extends \Google\Model
   protected $metricSpecDataType = '';
 
   /**
-   * Required. Fulfillment instance.
-   *
-   * @param GoogleCloudAiplatformV1FulfillmentInstance $instance
+   * @param GoogleCloudAiplatformV1FulfillmentInstance
    */
   public function setInstance(GoogleCloudAiplatformV1FulfillmentInstance $instance)
   {
@@ -41,9 +39,7 @@ class GoogleCloudAiplatformV1FulfillmentInput extends \Google\Model
     return $this->instance;
   }
   /**
-   * Required. Spec for fulfillment score metric.
-   *
-   * @param GoogleCloudAiplatformV1FulfillmentSpec $metricSpec
+   * @param GoogleCloudAiplatformV1FulfillmentSpec
    */
   public function setMetricSpec(GoogleCloudAiplatformV1FulfillmentSpec $metricSpec)
   {

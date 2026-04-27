@@ -20,22 +20,16 @@ namespace Google\Service\CloudSupport;
 class DownloadParameters extends \Google\Model
 {
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
    * @var bool
    */
   public $allowGzipCompression;
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
    * @var bool
    */
   public $ignoreRange;
 
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
-   * @param bool $allowGzipCompression
+   * @param bool
    */
   public function setAllowGzipCompression($allowGzipCompression)
   {
@@ -49,9 +43,7 @@ class DownloadParameters extends \Google\Model
     return $this->allowGzipCompression;
   }
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
-   * @param bool $ignoreRange
+   * @param bool
    */
   public function setIgnoreRange($ignoreRange)
   {

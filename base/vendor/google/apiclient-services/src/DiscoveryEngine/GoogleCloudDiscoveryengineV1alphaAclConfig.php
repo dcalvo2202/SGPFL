@@ -22,18 +22,12 @@ class GoogleCloudDiscoveryengineV1alphaAclConfig extends \Google\Model
   protected $idpConfigType = GoogleCloudDiscoveryengineV1alphaIdpConfig::class;
   protected $idpConfigDataType = '';
   /**
-   * Immutable. The full resource name of the acl configuration. Format:
-   * `projects/{project}/locations/{location}/aclConfig`. This field must be a
-   * UTF-8 encoded string with a length limit of 1024 characters.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Identity provider config.
-   *
-   * @param GoogleCloudDiscoveryengineV1alphaIdpConfig $idpConfig
+   * @param GoogleCloudDiscoveryengineV1alphaIdpConfig
    */
   public function setIdpConfig(GoogleCloudDiscoveryengineV1alphaIdpConfig $idpConfig)
   {
@@ -47,11 +41,7 @@ class GoogleCloudDiscoveryengineV1alphaAclConfig extends \Google\Model
     return $this->idpConfig;
   }
   /**
-   * Immutable. The full resource name of the acl configuration. Format:
-   * `projects/{project}/locations/{location}/aclConfig`. This field must be a
-   * UTF-8 encoded string with a length limit of 1024 characters.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

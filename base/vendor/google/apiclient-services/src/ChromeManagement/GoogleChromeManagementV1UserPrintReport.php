@@ -20,42 +20,28 @@ namespace Google\Service\ChromeManagement;
 class GoogleChromeManagementV1UserPrintReport extends \Google\Model
 {
   /**
-   * Number of chrome devices that have been used to initiate print jobs by the
-   * user.
-   *
    * @var string
    */
   public $deviceCount;
   /**
-   * Number of print jobs initiated by the user.
-   *
    * @var string
    */
   public $jobCount;
   /**
-   * Number of printers used by the user.
-   *
    * @var string
    */
   public $printerCount;
   /**
-   * The primary e-mail address of the user.
-   *
    * @var string
    */
   public $userEmail;
   /**
-   * The unique Directory API ID of the user.
-   *
    * @var string
    */
   public $userId;
 
   /**
-   * Number of chrome devices that have been used to initiate print jobs by the
-   * user.
-   *
-   * @param string $deviceCount
+   * @param string
    */
   public function setDeviceCount($deviceCount)
   {
@@ -69,9 +55,7 @@ class GoogleChromeManagementV1UserPrintReport extends \Google\Model
     return $this->deviceCount;
   }
   /**
-   * Number of print jobs initiated by the user.
-   *
-   * @param string $jobCount
+   * @param string
    */
   public function setJobCount($jobCount)
   {
@@ -85,9 +69,7 @@ class GoogleChromeManagementV1UserPrintReport extends \Google\Model
     return $this->jobCount;
   }
   /**
-   * Number of printers used by the user.
-   *
-   * @param string $printerCount
+   * @param string
    */
   public function setPrinterCount($printerCount)
   {
@@ -101,9 +83,7 @@ class GoogleChromeManagementV1UserPrintReport extends \Google\Model
     return $this->printerCount;
   }
   /**
-   * The primary e-mail address of the user.
-   *
-   * @param string $userEmail
+   * @param string
    */
   public function setUserEmail($userEmail)
   {
@@ -117,9 +97,7 @@ class GoogleChromeManagementV1UserPrintReport extends \Google\Model
     return $this->userEmail;
   }
   /**
-   * The unique Directory API ID of the user.
-   *
-   * @param string $userId
+   * @param string
    */
   public function setUserId($userId)
   {

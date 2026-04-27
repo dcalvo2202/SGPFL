@@ -24,9 +24,7 @@ class GoogleCloudAiplatformV1PublisherModelCallToActionDeployVertex extends \Goo
   protected $multiDeployVertexDataType = 'array';
 
   /**
-   * Optional. One click deployment configurations.
-   *
-   * @param GoogleCloudAiplatformV1PublisherModelCallToActionDeploy[] $multiDeployVertex
+   * @param GoogleCloudAiplatformV1PublisherModelCallToActionDeploy[]
    */
   public function setMultiDeployVertex($multiDeployVertex)
   {

@@ -20,9 +20,6 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1GraphqlDocumentation extends \Google\Model
 {
   /**
-   * Required. The GraphQL endpoint URI to be queried by API consumers. Max
-   * length is 2,083 characters.
-   *
    * @var string
    */
   public $endpointUri;
@@ -30,10 +27,7 @@ class GoogleCloudApigeeV1GraphqlDocumentation extends \Google\Model
   protected $schemaDataType = '';
 
   /**
-   * Required. The GraphQL endpoint URI to be queried by API consumers. Max
-   * length is 2,083 characters.
-   *
-   * @param string $endpointUri
+   * @param string
    */
   public function setEndpointUri($endpointUri)
   {
@@ -47,9 +41,7 @@ class GoogleCloudApigeeV1GraphqlDocumentation extends \Google\Model
     return $this->endpointUri;
   }
   /**
-   * Required. The documentation file contents for the GraphQL schema.
-   *
-   * @param GoogleCloudApigeeV1DocumentationFile $schema
+   * @param GoogleCloudApigeeV1DocumentationFile
    */
   public function setSchema(GoogleCloudApigeeV1DocumentationFile $schema)
   {

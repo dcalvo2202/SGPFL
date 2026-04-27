@@ -20,33 +20,22 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1AnswerReferenceChunkInfo extends \Google\Model
 {
   /**
-   * Chunk resource name.
-   *
    * @var string
    */
   public $chunk;
   /**
-   * Chunk textual content.
-   *
    * @var string
    */
   public $content;
   protected $documentMetadataType = GoogleCloudDiscoveryengineV1AnswerReferenceChunkInfoDocumentMetadata::class;
   protected $documentMetadataDataType = '';
   /**
-   * The relevance of the chunk for a given query. Values range from 0.0
-   * (completely irrelevant) to 1.0 (completely relevant). This value is for
-   * informational purpose only. It may change for the same query and chunk at
-   * any time due to a model retraining or change in implementation.
-   *
    * @var float
    */
   public $relevanceScore;
 
   /**
-   * Chunk resource name.
-   *
-   * @param string $chunk
+   * @param string
    */
   public function setChunk($chunk)
   {
@@ -60,9 +49,7 @@ class GoogleCloudDiscoveryengineV1AnswerReferenceChunkInfo extends \Google\Model
     return $this->chunk;
   }
   /**
-   * Chunk textual content.
-   *
-   * @param string $content
+   * @param string
    */
   public function setContent($content)
   {
@@ -76,9 +63,7 @@ class GoogleCloudDiscoveryengineV1AnswerReferenceChunkInfo extends \Google\Model
     return $this->content;
   }
   /**
-   * Document metadata.
-   *
-   * @param GoogleCloudDiscoveryengineV1AnswerReferenceChunkInfoDocumentMetadata $documentMetadata
+   * @param GoogleCloudDiscoveryengineV1AnswerReferenceChunkInfoDocumentMetadata
    */
   public function setDocumentMetadata(GoogleCloudDiscoveryengineV1AnswerReferenceChunkInfoDocumentMetadata $documentMetadata)
   {
@@ -92,12 +77,7 @@ class GoogleCloudDiscoveryengineV1AnswerReferenceChunkInfo extends \Google\Model
     return $this->documentMetadata;
   }
   /**
-   * The relevance of the chunk for a given query. Values range from 0.0
-   * (completely irrelevant) to 1.0 (completely relevant). This value is for
-   * informational purpose only. It may change for the same query and chunk at
-   * any time due to a model retraining or change in implementation.
-   *
-   * @param float $relevanceScore
+   * @param float
    */
   public function setRelevanceScore($relevanceScore)
   {

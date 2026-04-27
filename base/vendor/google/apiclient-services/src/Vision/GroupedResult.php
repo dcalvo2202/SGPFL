@@ -28,9 +28,7 @@ class GroupedResult extends \Google\Collection
   protected $resultsDataType = 'array';
 
   /**
-   * The bounding polygon around the product detected in the query image.
-   *
-   * @param BoundingPoly $boundingPoly
+   * @param BoundingPoly
    */
   public function setBoundingPoly(BoundingPoly $boundingPoly)
   {
@@ -44,9 +42,7 @@ class GroupedResult extends \Google\Collection
     return $this->boundingPoly;
   }
   /**
-   * List of generic predictions for the object in the bounding box.
-   *
-   * @param ObjectAnnotation[] $objectAnnotations
+   * @param ObjectAnnotation[]
    */
   public function setObjectAnnotations($objectAnnotations)
   {
@@ -60,9 +56,7 @@ class GroupedResult extends \Google\Collection
     return $this->objectAnnotations;
   }
   /**
-   * List of results, one for each product match.
-   *
-   * @param Result[] $results
+   * @param Result[]
    */
   public function setResults($results)
   {

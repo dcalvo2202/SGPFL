@@ -20,19 +20,10 @@ namespace Google\Service\BinaryAuthorization;
 class Check extends \Google\Model
 {
   /**
-   * Optional. A special-case check that always denies. Note that this still
-   * only applies when the scope of the `CheckSet` applies and the image isn't
-   * exempted by an image allowlist. This check is primarily useful for testing,
-   * or to set the default behavior for all unmatched scopes to "deny".
-   *
    * @var bool
    */
   public $alwaysDeny;
   /**
-   * Optional. A user-provided name for this check. This field has no effect on
-   * the policy evaluation behavior except to improve readability of messages in
-   * evaluation results.
-   *
    * @var string
    */
   public $displayName;
@@ -52,12 +43,7 @@ class Check extends \Google\Model
   protected $vulnerabilityCheckDataType = '';
 
   /**
-   * Optional. A special-case check that always denies. Note that this still
-   * only applies when the scope of the `CheckSet` applies and the image isn't
-   * exempted by an image allowlist. This check is primarily useful for testing,
-   * or to set the default behavior for all unmatched scopes to "deny".
-   *
-   * @param bool $alwaysDeny
+   * @param bool
    */
   public function setAlwaysDeny($alwaysDeny)
   {
@@ -71,11 +57,7 @@ class Check extends \Google\Model
     return $this->alwaysDeny;
   }
   /**
-   * Optional. A user-provided name for this check. This field has no effect on
-   * the policy evaluation behavior except to improve readability of messages in
-   * evaluation results.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -89,10 +71,7 @@ class Check extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Optional. Images exempted from this check. If any of the patterns match the
-   * image url, the check will not be evaluated.
-   *
-   * @param ImageAllowlist $imageAllowlist
+   * @param ImageAllowlist
    */
   public function setImageAllowlist(ImageAllowlist $imageAllowlist)
   {
@@ -106,10 +85,7 @@ class Check extends \Google\Model
     return $this->imageAllowlist;
   }
   /**
-   * Optional. Require that an image is no older than a configured expiration
-   * time. Image age is determined by its upload time.
-   *
-   * @param ImageFreshnessCheck $imageFreshnessCheck
+   * @param ImageFreshnessCheck
    */
   public function setImageFreshnessCheck(ImageFreshnessCheck $imageFreshnessCheck)
   {
@@ -123,11 +99,7 @@ class Check extends \Google\Model
     return $this->imageFreshnessCheck;
   }
   /**
-   * Optional. Require that an image was signed by Cosign with a trusted key.
-   * This check requires that both the image and signature are stored in
-   * Artifact Registry.
-   *
-   * @param SigstoreSignatureCheck $sigstoreSignatureCheck
+   * @param SigstoreSignatureCheck
    */
   public function setSigstoreSignatureCheck(SigstoreSignatureCheck $sigstoreSignatureCheck)
   {
@@ -141,10 +113,7 @@ class Check extends \Google\Model
     return $this->sigstoreSignatureCheck;
   }
   /**
-   * Optional. Require a SimpleSigning-type attestation for every image in the
-   * deployment.
-   *
-   * @param SimpleSigningAttestationCheck $simpleSigningAttestationCheck
+   * @param SimpleSigningAttestationCheck
    */
   public function setSimpleSigningAttestationCheck(SimpleSigningAttestationCheck $simpleSigningAttestationCheck)
   {
@@ -158,12 +127,7 @@ class Check extends \Google\Model
     return $this->simpleSigningAttestationCheck;
   }
   /**
-   * Optional. Require that an image was built by a trusted builder (such as
-   * Google Cloud Build), meets requirements for Supply chain Levels for
-   * Software Artifacts (SLSA), and was built from a trusted source code
-   * repostitory.
-   *
-   * @param SlsaCheck $slsaCheck
+   * @param SlsaCheck
    */
   public function setSlsaCheck(SlsaCheck $slsaCheck)
   {
@@ -177,9 +141,7 @@ class Check extends \Google\Model
     return $this->slsaCheck;
   }
   /**
-   * Optional. Require that an image lives in a trusted directory.
-   *
-   * @param TrustedDirectoryCheck $trustedDirectoryCheck
+   * @param TrustedDirectoryCheck
    */
   public function setTrustedDirectoryCheck(TrustedDirectoryCheck $trustedDirectoryCheck)
   {
@@ -193,10 +155,7 @@ class Check extends \Google\Model
     return $this->trustedDirectoryCheck;
   }
   /**
-   * Optional. Require that an image does not contain vulnerabilities that
-   * violate the configured rules, such as based on severity levels.
-   *
-   * @param VulnerabilityCheck $vulnerabilityCheck
+   * @param VulnerabilityCheck
    */
   public function setVulnerabilityCheck(VulnerabilityCheck $vulnerabilityCheck)
   {

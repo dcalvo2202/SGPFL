@@ -20,26 +20,16 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1DnsZonePeeringConfig extends \Google\Model
 {
   /**
-   * Required. The VPC network where the records for that private DNS zone's
-   * namespace are available. Apigee will be performing DNS peering with this
-   * VPC network.
-   *
    * @var string
    */
   public $targetNetworkId;
   /**
-   * Required. The ID of the project that contains the producer VPC network.
-   *
    * @var string
    */
   public $targetProjectId;
 
   /**
-   * Required. The VPC network where the records for that private DNS zone's
-   * namespace are available. Apigee will be performing DNS peering with this
-   * VPC network.
-   *
-   * @param string $targetNetworkId
+   * @param string
    */
   public function setTargetNetworkId($targetNetworkId)
   {
@@ -53,9 +43,7 @@ class GoogleCloudApigeeV1DnsZonePeeringConfig extends \Google\Model
     return $this->targetNetworkId;
   }
   /**
-   * Required. The ID of the project that contains the producer VPC network.
-   *
-   * @param string $targetProjectId
+   * @param string
    */
   public function setTargetProjectId($targetProjectId)
   {

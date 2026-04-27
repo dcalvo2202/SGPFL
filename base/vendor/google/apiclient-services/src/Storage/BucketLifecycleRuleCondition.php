@@ -21,110 +21,56 @@ class BucketLifecycleRuleCondition extends \Google\Collection
 {
   protected $collection_key = 'matchesSuffix';
   /**
-   * Age of an object (in days). This condition is satisfied when an object
-   * reaches the specified age.
-   *
    * @var int
    */
   public $age;
   /**
-   * A date in RFC 3339 format with only the date part (for instance,
-   * "2013-01-15"). This condition is satisfied when an object is created before
-   * midnight of the specified date in UTC.
-   *
    * @var string
    */
   public $createdBefore;
   /**
-   * A date in RFC 3339 format with only the date part (for instance,
-   * "2013-01-15"). This condition is satisfied when the custom time on an
-   * object is before this date in UTC.
-   *
    * @var string
    */
   public $customTimeBefore;
   /**
-   * Number of days elapsed since the user-specified timestamp set on an object.
-   * The condition is satisfied if the days elapsed is at least this number. If
-   * no custom timestamp is specified on an object, the condition does not
-   * apply.
-   *
    * @var int
    */
   public $daysSinceCustomTime;
   /**
-   * Number of days elapsed since the noncurrent timestamp of an object. The
-   * condition is satisfied if the days elapsed is at least this number. This
-   * condition is relevant only for versioned objects. The value of the field
-   * must be a nonnegative integer. If it's zero, the object version will become
-   * eligible for Lifecycle action as soon as it becomes noncurrent.
-   *
    * @var int
    */
   public $daysSinceNoncurrentTime;
   /**
-   * Relevant only for versioned objects. If the value is true, this condition
-   * matches live objects; if the value is false, it matches archived objects.
-   *
    * @var bool
    */
   public $isLive;
   /**
-   * A regular expression that satisfies the RE2 syntax. This condition is
-   * satisfied when the name of the object matches the RE2 pattern. Note: This
-   * feature is currently in the "Early Access" launch stage and is only
-   * available to a whitelisted set of users; that means that this feature may
-   * be changed in backward-incompatible ways and that it is not guaranteed to
-   * be released.
-   *
    * @var string
    */
   public $matchesPattern;
   /**
-   * List of object name prefixes. This condition will be satisfied when at
-   * least one of the prefixes exactly matches the beginning of the object name.
-   *
    * @var string[]
    */
   public $matchesPrefix;
   /**
-   * Objects having any of the storage classes specified by this condition will
-   * be matched. Values include MULTI_REGIONAL, REGIONAL, NEARLINE, COLDLINE,
-   * ARCHIVE, STANDARD, and DURABLE_REDUCED_AVAILABILITY.
-   *
    * @var string[]
    */
   public $matchesStorageClass;
   /**
-   * List of object name suffixes. This condition will be satisfied when at
-   * least one of the suffixes exactly matches the end of the object name.
-   *
    * @var string[]
    */
   public $matchesSuffix;
   /**
-   * A date in RFC 3339 format with only the date part (for instance,
-   * "2013-01-15"). This condition is satisfied when the noncurrent time on an
-   * object is before this date in UTC. This condition is relevant only for
-   * versioned objects.
-   *
    * @var string
    */
   public $noncurrentTimeBefore;
   /**
-   * Relevant only for versioned objects. If the value is N, this condition is
-   * satisfied when there are at least N versions (including the live version)
-   * newer than this version of the object.
-   *
    * @var int
    */
   public $numNewerVersions;
 
   /**
-   * Age of an object (in days). This condition is satisfied when an object
-   * reaches the specified age.
-   *
-   * @param int $age
+   * @param int
    */
   public function setAge($age)
   {
@@ -138,11 +84,7 @@ class BucketLifecycleRuleCondition extends \Google\Collection
     return $this->age;
   }
   /**
-   * A date in RFC 3339 format with only the date part (for instance,
-   * "2013-01-15"). This condition is satisfied when an object is created before
-   * midnight of the specified date in UTC.
-   *
-   * @param string $createdBefore
+   * @param string
    */
   public function setCreatedBefore($createdBefore)
   {
@@ -156,11 +98,7 @@ class BucketLifecycleRuleCondition extends \Google\Collection
     return $this->createdBefore;
   }
   /**
-   * A date in RFC 3339 format with only the date part (for instance,
-   * "2013-01-15"). This condition is satisfied when the custom time on an
-   * object is before this date in UTC.
-   *
-   * @param string $customTimeBefore
+   * @param string
    */
   public function setCustomTimeBefore($customTimeBefore)
   {
@@ -174,12 +112,7 @@ class BucketLifecycleRuleCondition extends \Google\Collection
     return $this->customTimeBefore;
   }
   /**
-   * Number of days elapsed since the user-specified timestamp set on an object.
-   * The condition is satisfied if the days elapsed is at least this number. If
-   * no custom timestamp is specified on an object, the condition does not
-   * apply.
-   *
-   * @param int $daysSinceCustomTime
+   * @param int
    */
   public function setDaysSinceCustomTime($daysSinceCustomTime)
   {
@@ -193,13 +126,7 @@ class BucketLifecycleRuleCondition extends \Google\Collection
     return $this->daysSinceCustomTime;
   }
   /**
-   * Number of days elapsed since the noncurrent timestamp of an object. The
-   * condition is satisfied if the days elapsed is at least this number. This
-   * condition is relevant only for versioned objects. The value of the field
-   * must be a nonnegative integer. If it's zero, the object version will become
-   * eligible for Lifecycle action as soon as it becomes noncurrent.
-   *
-   * @param int $daysSinceNoncurrentTime
+   * @param int
    */
   public function setDaysSinceNoncurrentTime($daysSinceNoncurrentTime)
   {
@@ -213,10 +140,7 @@ class BucketLifecycleRuleCondition extends \Google\Collection
     return $this->daysSinceNoncurrentTime;
   }
   /**
-   * Relevant only for versioned objects. If the value is true, this condition
-   * matches live objects; if the value is false, it matches archived objects.
-   *
-   * @param bool $isLive
+   * @param bool
    */
   public function setIsLive($isLive)
   {
@@ -230,14 +154,7 @@ class BucketLifecycleRuleCondition extends \Google\Collection
     return $this->isLive;
   }
   /**
-   * A regular expression that satisfies the RE2 syntax. This condition is
-   * satisfied when the name of the object matches the RE2 pattern. Note: This
-   * feature is currently in the "Early Access" launch stage and is only
-   * available to a whitelisted set of users; that means that this feature may
-   * be changed in backward-incompatible ways and that it is not guaranteed to
-   * be released.
-   *
-   * @param string $matchesPattern
+   * @param string
    */
   public function setMatchesPattern($matchesPattern)
   {
@@ -251,10 +168,7 @@ class BucketLifecycleRuleCondition extends \Google\Collection
     return $this->matchesPattern;
   }
   /**
-   * List of object name prefixes. This condition will be satisfied when at
-   * least one of the prefixes exactly matches the beginning of the object name.
-   *
-   * @param string[] $matchesPrefix
+   * @param string[]
    */
   public function setMatchesPrefix($matchesPrefix)
   {
@@ -268,11 +182,7 @@ class BucketLifecycleRuleCondition extends \Google\Collection
     return $this->matchesPrefix;
   }
   /**
-   * Objects having any of the storage classes specified by this condition will
-   * be matched. Values include MULTI_REGIONAL, REGIONAL, NEARLINE, COLDLINE,
-   * ARCHIVE, STANDARD, and DURABLE_REDUCED_AVAILABILITY.
-   *
-   * @param string[] $matchesStorageClass
+   * @param string[]
    */
   public function setMatchesStorageClass($matchesStorageClass)
   {
@@ -286,10 +196,7 @@ class BucketLifecycleRuleCondition extends \Google\Collection
     return $this->matchesStorageClass;
   }
   /**
-   * List of object name suffixes. This condition will be satisfied when at
-   * least one of the suffixes exactly matches the end of the object name.
-   *
-   * @param string[] $matchesSuffix
+   * @param string[]
    */
   public function setMatchesSuffix($matchesSuffix)
   {
@@ -303,12 +210,7 @@ class BucketLifecycleRuleCondition extends \Google\Collection
     return $this->matchesSuffix;
   }
   /**
-   * A date in RFC 3339 format with only the date part (for instance,
-   * "2013-01-15"). This condition is satisfied when the noncurrent time on an
-   * object is before this date in UTC. This condition is relevant only for
-   * versioned objects.
-   *
-   * @param string $noncurrentTimeBefore
+   * @param string
    */
   public function setNoncurrentTimeBefore($noncurrentTimeBefore)
   {
@@ -322,11 +224,7 @@ class BucketLifecycleRuleCondition extends \Google\Collection
     return $this->noncurrentTimeBefore;
   }
   /**
-   * Relevant only for versioned objects. If the value is N, this condition is
-   * satisfied when there are at least N versions (including the live version)
-   * newer than this version of the object.
-   *
-   * @param int $numNewerVersions
+   * @param int
    */
   public function setNumNewerVersions($numNewerVersions)
   {

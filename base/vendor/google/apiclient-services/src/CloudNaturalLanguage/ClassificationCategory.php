@@ -20,32 +20,20 @@ namespace Google\Service\CloudNaturalLanguage;
 class ClassificationCategory extends \Google\Model
 {
   /**
-   * The classifier's confidence of the category. Number represents how certain
-   * the classifier is that this category represents the given text.
-   *
    * @var float
    */
   public $confidence;
   /**
-   * The name of the category representing the document.
-   *
    * @var string
    */
   public $name;
   /**
-   * Optional. The classifier's severity of the category. This is only present
-   * when the ModerateTextRequest.ModelVersion is set to MODEL_VERSION_2, and
-   * the corresponding category has a severity score.
-   *
    * @var float
    */
   public $severity;
 
   /**
-   * The classifier's confidence of the category. Number represents how certain
-   * the classifier is that this category represents the given text.
-   *
-   * @param float $confidence
+   * @param float
    */
   public function setConfidence($confidence)
   {
@@ -59,9 +47,7 @@ class ClassificationCategory extends \Google\Model
     return $this->confidence;
   }
   /**
-   * The name of the category representing the document.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -75,11 +61,7 @@ class ClassificationCategory extends \Google\Model
     return $this->name;
   }
   /**
-   * Optional. The classifier's severity of the category. This is only present
-   * when the ModerateTextRequest.ModelVersion is set to MODEL_VERSION_2, and
-   * the corresponding category has a severity score.
-   *
-   * @param float $severity
+   * @param float
    */
   public function setSeverity($severity)
   {

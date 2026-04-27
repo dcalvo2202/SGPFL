@@ -20,16 +20,12 @@ namespace Google\Service\Compute;
 class DisksResizeRequest extends \Google\Model
 {
   /**
-   * The new size of the persistent disk, which is specified in GB.
-   *
    * @var string
    */
   public $sizeGb;
 
   /**
-   * The new size of the persistent disk, which is specified in GB.
-   *
-   * @param string $sizeGb
+   * @param string
    */
   public function setSizeGb($sizeGb)
   {

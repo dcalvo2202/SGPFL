@@ -22,17 +22,12 @@ class CloneDefinition extends \Google\Model
   protected $baseTableReferenceType = TableReference::class;
   protected $baseTableReferenceDataType = '';
   /**
-   * Required. The time at which the base table was cloned. This value is
-   * reported in the JSON response using RFC3339 format.
-   *
    * @var string
    */
   public $cloneTime;
 
   /**
-   * Required. Reference describing the ID of the table that was cloned.
-   *
-   * @param TableReference $baseTableReference
+   * @param TableReference
    */
   public function setBaseTableReference(TableReference $baseTableReference)
   {
@@ -46,10 +41,7 @@ class CloneDefinition extends \Google\Model
     return $this->baseTableReference;
   }
   /**
-   * Required. The time at which the base table was cloned. This value is
-   * reported in the JSON response using RFC3339 format.
-   *
-   * @param string $cloneTime
+   * @param string
    */
   public function setCloneTime($cloneTime)
   {

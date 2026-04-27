@@ -20,24 +20,16 @@ namespace Google\Service\AlertCenter;
 class MergeInfo extends \Google\Model
 {
   /**
-   * Optional. New alert ID. Reference the [google.apps.alertcenter.Alert] with
-   * this ID for the current state.
-   *
    * @var string
    */
   public $newAlertId;
   /**
-   * The new tracking ID from the parent incident.
-   *
    * @var string
    */
   public $newIncidentTrackingId;
 
   /**
-   * Optional. New alert ID. Reference the [google.apps.alertcenter.Alert] with
-   * this ID for the current state.
-   *
-   * @param string $newAlertId
+   * @param string
    */
   public function setNewAlertId($newAlertId)
   {
@@ -51,9 +43,7 @@ class MergeInfo extends \Google\Model
     return $this->newAlertId;
   }
   /**
-   * The new tracking ID from the parent incident.
-   *
-   * @param string $newIncidentTrackingId
+   * @param string
    */
   public function setNewIncidentTrackingId($newIncidentTrackingId)
   {

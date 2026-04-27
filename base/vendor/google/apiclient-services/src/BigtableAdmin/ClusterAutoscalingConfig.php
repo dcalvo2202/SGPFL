@@ -25,9 +25,7 @@ class ClusterAutoscalingConfig extends \Google\Model
   protected $autoscalingTargetsDataType = '';
 
   /**
-   * Required. Autoscaling limits for this cluster.
-   *
-   * @param AutoscalingLimits $autoscalingLimits
+   * @param AutoscalingLimits
    */
   public function setAutoscalingLimits(AutoscalingLimits $autoscalingLimits)
   {
@@ -41,9 +39,7 @@ class ClusterAutoscalingConfig extends \Google\Model
     return $this->autoscalingLimits;
   }
   /**
-   * Required. Autoscaling targets for this cluster.
-   *
-   * @param AutoscalingTargets $autoscalingTargets
+   * @param AutoscalingTargets
    */
   public function setAutoscalingTargets(AutoscalingTargets $autoscalingTargets)
   {

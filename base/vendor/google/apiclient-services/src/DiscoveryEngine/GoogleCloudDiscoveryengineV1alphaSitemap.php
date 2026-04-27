@@ -20,30 +20,20 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1alphaSitemap extends \Google\Model
 {
   /**
-   * Output only. The sitemap's creation time.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. The fully qualified resource name of the sitemap.
-   * `projects/locations/collections/dataStores/siteSearchEngine/sitemaps` The
-   * `sitemap_id` suffix is system-generated.
-   *
    * @var string
    */
   public $name;
   /**
-   * Public URI for the sitemap, e.g. `www.example.com/sitemap.xml`.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * Output only. The sitemap's creation time.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -57,11 +47,7 @@ class GoogleCloudDiscoveryengineV1alphaSitemap extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. The fully qualified resource name of the sitemap.
-   * `projects/locations/collections/dataStores/siteSearchEngine/sitemaps` The
-   * `sitemap_id` suffix is system-generated.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -75,9 +61,7 @@ class GoogleCloudDiscoveryengineV1alphaSitemap extends \Google\Model
     return $this->name;
   }
   /**
-   * Public URI for the sitemap, e.g. `www.example.com/sitemap.xml`.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

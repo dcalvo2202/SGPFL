@@ -24,10 +24,7 @@ class Context extends \Google\Collection
   protected $rulesDataType = 'array';
 
   /**
-   * A list of RPC context rules that apply to individual API methods. **NOTE:**
-   * All service configuration rules follow "last one wins" order.
-   *
-   * @param ContextRule[] $rules
+   * @param ContextRule[]
    */
   public function setRules($rules)
   {

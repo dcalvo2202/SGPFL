@@ -20,16 +20,12 @@ namespace Google\Service\Reseller;
 class ResellernotifyResource extends \Google\Model
 {
   /**
-   * Topic name of the PubSub
-   *
    * @var string
    */
   public $topicName;
 
   /**
-   * Topic name of the PubSub
-   *
-   * @param string $topicName
+   * @param string
    */
   public function setTopicName($topicName)
   {

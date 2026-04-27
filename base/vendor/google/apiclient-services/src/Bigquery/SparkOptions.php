@@ -21,92 +21,48 @@ class SparkOptions extends \Google\Collection
 {
   protected $collection_key = 'pyFileUris';
   /**
-   * Archive files to be extracted into the working directory of each executor.
-   * For more information about Apache Spark, see [Apache
-   * Spark](https://spark.apache.org/docs/latest/index.html).
-   *
    * @var string[]
    */
   public $archiveUris;
   /**
-   * Fully qualified name of the user-provided Spark connection object. Format:
-   * ```"projects/{project_id}/locations/{location_id}/connections/{connection_i
-   * d}"```
-   *
    * @var string
    */
   public $connection;
   /**
-   * Custom container image for the runtime environment.
-   *
    * @var string
    */
   public $containerImage;
   /**
-   * Files to be placed in the working directory of each executor. For more
-   * information about Apache Spark, see [Apache
-   * Spark](https://spark.apache.org/docs/latest/index.html).
-   *
    * @var string[]
    */
   public $fileUris;
   /**
-   * JARs to include on the driver and executor CLASSPATH. For more information
-   * about Apache Spark, see [Apache
-   * Spark](https://spark.apache.org/docs/latest/index.html).
-   *
    * @var string[]
    */
   public $jarUris;
   /**
-   * The fully qualified name of a class in jar_uris, for example,
-   * com.example.wordcount. Exactly one of main_class and main_jar_uri field
-   * should be set for Java/Scala language type.
-   *
    * @var string
    */
   public $mainClass;
   /**
-   * The main file/jar URI of the Spark application. Exactly one of the
-   * definition_body field and the main_file_uri field must be set for Python.
-   * Exactly one of main_class and main_file_uri field should be set for
-   * Java/Scala language type.
-   *
    * @var string
    */
   public $mainFileUri;
   /**
-   * Configuration properties as a set of key/value pairs, which will be passed
-   * on to the Spark application. For more information, see [Apache
-   * Spark](https://spark.apache.org/docs/latest/index.html) and the [procedure
-   * option list](https://cloud.google.com/bigquery/docs/reference/standard-
-   * sql/data-definition-language#procedure_option_list).
-   *
    * @var string[]
    */
   public $properties;
   /**
-   * Python files to be placed on the PYTHONPATH for PySpark application.
-   * Supported file types: `.py`, `.egg`, and `.zip`. For more information about
-   * Apache Spark, see [Apache
-   * Spark](https://spark.apache.org/docs/latest/index.html).
-   *
    * @var string[]
    */
   public $pyFileUris;
   /**
-   * Runtime version. If not specified, the default runtime version is used.
-   *
    * @var string
    */
   public $runtimeVersion;
 
   /**
-   * Archive files to be extracted into the working directory of each executor.
-   * For more information about Apache Spark, see [Apache
-   * Spark](https://spark.apache.org/docs/latest/index.html).
-   *
-   * @param string[] $archiveUris
+   * @param string[]
    */
   public function setArchiveUris($archiveUris)
   {
@@ -120,11 +76,7 @@ class SparkOptions extends \Google\Collection
     return $this->archiveUris;
   }
   /**
-   * Fully qualified name of the user-provided Spark connection object. Format:
-   * ```"projects/{project_id}/locations/{location_id}/connections/{connection_i
-   * d}"```
-   *
-   * @param string $connection
+   * @param string
    */
   public function setConnection($connection)
   {
@@ -138,9 +90,7 @@ class SparkOptions extends \Google\Collection
     return $this->connection;
   }
   /**
-   * Custom container image for the runtime environment.
-   *
-   * @param string $containerImage
+   * @param string
    */
   public function setContainerImage($containerImage)
   {
@@ -154,11 +104,7 @@ class SparkOptions extends \Google\Collection
     return $this->containerImage;
   }
   /**
-   * Files to be placed in the working directory of each executor. For more
-   * information about Apache Spark, see [Apache
-   * Spark](https://spark.apache.org/docs/latest/index.html).
-   *
-   * @param string[] $fileUris
+   * @param string[]
    */
   public function setFileUris($fileUris)
   {
@@ -172,11 +118,7 @@ class SparkOptions extends \Google\Collection
     return $this->fileUris;
   }
   /**
-   * JARs to include on the driver and executor CLASSPATH. For more information
-   * about Apache Spark, see [Apache
-   * Spark](https://spark.apache.org/docs/latest/index.html).
-   *
-   * @param string[] $jarUris
+   * @param string[]
    */
   public function setJarUris($jarUris)
   {
@@ -190,11 +132,7 @@ class SparkOptions extends \Google\Collection
     return $this->jarUris;
   }
   /**
-   * The fully qualified name of a class in jar_uris, for example,
-   * com.example.wordcount. Exactly one of main_class and main_jar_uri field
-   * should be set for Java/Scala language type.
-   *
-   * @param string $mainClass
+   * @param string
    */
   public function setMainClass($mainClass)
   {
@@ -208,12 +146,7 @@ class SparkOptions extends \Google\Collection
     return $this->mainClass;
   }
   /**
-   * The main file/jar URI of the Spark application. Exactly one of the
-   * definition_body field and the main_file_uri field must be set for Python.
-   * Exactly one of main_class and main_file_uri field should be set for
-   * Java/Scala language type.
-   *
-   * @param string $mainFileUri
+   * @param string
    */
   public function setMainFileUri($mainFileUri)
   {
@@ -227,13 +160,7 @@ class SparkOptions extends \Google\Collection
     return $this->mainFileUri;
   }
   /**
-   * Configuration properties as a set of key/value pairs, which will be passed
-   * on to the Spark application. For more information, see [Apache
-   * Spark](https://spark.apache.org/docs/latest/index.html) and the [procedure
-   * option list](https://cloud.google.com/bigquery/docs/reference/standard-
-   * sql/data-definition-language#procedure_option_list).
-   *
-   * @param string[] $properties
+   * @param string[]
    */
   public function setProperties($properties)
   {
@@ -247,12 +174,7 @@ class SparkOptions extends \Google\Collection
     return $this->properties;
   }
   /**
-   * Python files to be placed on the PYTHONPATH for PySpark application.
-   * Supported file types: `.py`, `.egg`, and `.zip`. For more information about
-   * Apache Spark, see [Apache
-   * Spark](https://spark.apache.org/docs/latest/index.html).
-   *
-   * @param string[] $pyFileUris
+   * @param string[]
    */
   public function setPyFileUris($pyFileUris)
   {
@@ -266,9 +188,7 @@ class SparkOptions extends \Google\Collection
     return $this->pyFileUris;
   }
   /**
-   * Runtime version. If not specified, the default runtime version is used.
-   *
-   * @param string $runtimeVersion
+   * @param string
    */
   public function setRuntimeVersion($runtimeVersion)
   {

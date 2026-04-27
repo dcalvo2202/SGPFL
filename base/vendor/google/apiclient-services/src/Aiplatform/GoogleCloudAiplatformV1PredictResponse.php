@@ -21,52 +21,32 @@ class GoogleCloudAiplatformV1PredictResponse extends \Google\Collection
 {
   protected $collection_key = 'predictions';
   /**
-   * ID of the Endpoint's DeployedModel that served this prediction.
-   *
    * @var string
    */
   public $deployedModelId;
   /**
-   * Output only. Request-level metadata returned by the model. The metadata
-   * type will be dependent upon the model implementation.
-   *
    * @var array
    */
   public $metadata;
   /**
-   * Output only. The resource name of the Model which is deployed as the
-   * DeployedModel that this prediction hits.
-   *
    * @var string
    */
   public $model;
   /**
-   * Output only. The display name of the Model which is deployed as the
-   * DeployedModel that this prediction hits.
-   *
    * @var string
    */
   public $modelDisplayName;
   /**
-   * Output only. The version ID of the Model which is deployed as the
-   * DeployedModel that this prediction hits.
-   *
    * @var string
    */
   public $modelVersionId;
   /**
-   * The predictions that are the output of the predictions call. The schema of
-   * any single prediction may be specified via Endpoint's DeployedModels'
-   * Model's PredictSchemata's prediction_schema_uri.
-   *
    * @var array[]
    */
   public $predictions;
 
   /**
-   * ID of the Endpoint's DeployedModel that served this prediction.
-   *
-   * @param string $deployedModelId
+   * @param string
    */
   public function setDeployedModelId($deployedModelId)
   {
@@ -80,10 +60,7 @@ class GoogleCloudAiplatformV1PredictResponse extends \Google\Collection
     return $this->deployedModelId;
   }
   /**
-   * Output only. Request-level metadata returned by the model. The metadata
-   * type will be dependent upon the model implementation.
-   *
-   * @param array $metadata
+   * @param array
    */
   public function setMetadata($metadata)
   {
@@ -97,10 +74,7 @@ class GoogleCloudAiplatformV1PredictResponse extends \Google\Collection
     return $this->metadata;
   }
   /**
-   * Output only. The resource name of the Model which is deployed as the
-   * DeployedModel that this prediction hits.
-   *
-   * @param string $model
+   * @param string
    */
   public function setModel($model)
   {
@@ -114,10 +88,7 @@ class GoogleCloudAiplatformV1PredictResponse extends \Google\Collection
     return $this->model;
   }
   /**
-   * Output only. The display name of the Model which is deployed as the
-   * DeployedModel that this prediction hits.
-   *
-   * @param string $modelDisplayName
+   * @param string
    */
   public function setModelDisplayName($modelDisplayName)
   {
@@ -131,10 +102,7 @@ class GoogleCloudAiplatformV1PredictResponse extends \Google\Collection
     return $this->modelDisplayName;
   }
   /**
-   * Output only. The version ID of the Model which is deployed as the
-   * DeployedModel that this prediction hits.
-   *
-   * @param string $modelVersionId
+   * @param string
    */
   public function setModelVersionId($modelVersionId)
   {
@@ -148,11 +116,7 @@ class GoogleCloudAiplatformV1PredictResponse extends \Google\Collection
     return $this->modelVersionId;
   }
   /**
-   * The predictions that are the output of the predictions call. The schema of
-   * any single prediction may be specified via Endpoint's DeployedModels'
-   * Model's PredictSchemata's prediction_schema_uri.
-   *
-   * @param array[] $predictions
+   * @param array[]
    */
   public function setPredictions($predictions)
   {

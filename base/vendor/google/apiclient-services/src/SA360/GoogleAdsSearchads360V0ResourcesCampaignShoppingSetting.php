@@ -20,59 +20,32 @@ namespace Google\Service\SA360;
 class GoogleAdsSearchads360V0ResourcesCampaignShoppingSetting extends \Google\Model
 {
   /**
-   * Priority of the campaign. Campaigns with numerically higher priorities take
-   * precedence over those with lower priorities. This field is required for
-   * Shopping campaigns, with values between 0 and 2, inclusive. This field is
-   * optional for Smart Shopping campaigns, but must be equal to 3 if set.
-   *
    * @var int
    */
   public $campaignPriority;
   /**
-   * Whether to include local products.
-   *
    * @var bool
    */
   public $enableLocal;
   /**
-   * Feed label of products to include in the campaign. Valid feed labels may
-   * contain a maximum of 20 characters including uppercase letters, numbers,
-   * hyphens, and underscores. If you previously used the deprecated
-   * `sales_country` in the two-letter country code (`XX`) format, the
-   * `feed_label` field should be used instead. For more information see the
-   * [feed label](//support.google.com/merchants/answer/12453549) support
-   * article.
-   *
    * @var string
    */
   public $feedLabel;
   /**
-   * Immutable. ID of the Merchant Center account. This field is required for
-   * create operations. This field is immutable for Shopping campaigns.
-   *
    * @var string
    */
   public $merchantId;
   /**
-   * Sales country of products to include in the campaign.
-   *
    * @var string
    */
   public $salesCountry;
   /**
-   * Immutable. Whether to target Vehicle Listing inventory.
-   *
    * @var bool
    */
   public $useVehicleInventory;
 
   /**
-   * Priority of the campaign. Campaigns with numerically higher priorities take
-   * precedence over those with lower priorities. This field is required for
-   * Shopping campaigns, with values between 0 and 2, inclusive. This field is
-   * optional for Smart Shopping campaigns, but must be equal to 3 if set.
-   *
-   * @param int $campaignPriority
+   * @param int
    */
   public function setCampaignPriority($campaignPriority)
   {
@@ -86,9 +59,7 @@ class GoogleAdsSearchads360V0ResourcesCampaignShoppingSetting extends \Google\Mo
     return $this->campaignPriority;
   }
   /**
-   * Whether to include local products.
-   *
-   * @param bool $enableLocal
+   * @param bool
    */
   public function setEnableLocal($enableLocal)
   {
@@ -102,15 +73,7 @@ class GoogleAdsSearchads360V0ResourcesCampaignShoppingSetting extends \Google\Mo
     return $this->enableLocal;
   }
   /**
-   * Feed label of products to include in the campaign. Valid feed labels may
-   * contain a maximum of 20 characters including uppercase letters, numbers,
-   * hyphens, and underscores. If you previously used the deprecated
-   * `sales_country` in the two-letter country code (`XX`) format, the
-   * `feed_label` field should be used instead. For more information see the
-   * [feed label](//support.google.com/merchants/answer/12453549) support
-   * article.
-   *
-   * @param string $feedLabel
+   * @param string
    */
   public function setFeedLabel($feedLabel)
   {
@@ -124,10 +87,7 @@ class GoogleAdsSearchads360V0ResourcesCampaignShoppingSetting extends \Google\Mo
     return $this->feedLabel;
   }
   /**
-   * Immutable. ID of the Merchant Center account. This field is required for
-   * create operations. This field is immutable for Shopping campaigns.
-   *
-   * @param string $merchantId
+   * @param string
    */
   public function setMerchantId($merchantId)
   {
@@ -141,9 +101,7 @@ class GoogleAdsSearchads360V0ResourcesCampaignShoppingSetting extends \Google\Mo
     return $this->merchantId;
   }
   /**
-   * Sales country of products to include in the campaign.
-   *
-   * @param string $salesCountry
+   * @param string
    */
   public function setSalesCountry($salesCountry)
   {
@@ -157,9 +115,7 @@ class GoogleAdsSearchads360V0ResourcesCampaignShoppingSetting extends \Google\Mo
     return $this->salesCountry;
   }
   /**
-   * Immutable. Whether to target Vehicle Listing inventory.
-   *
-   * @param bool $useVehicleInventory
+   * @param bool
    */
   public function setUseVehicleInventory($useVehicleInventory)
   {

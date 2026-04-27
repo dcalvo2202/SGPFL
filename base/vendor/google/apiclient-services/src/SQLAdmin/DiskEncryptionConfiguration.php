@@ -20,22 +20,16 @@ namespace Google\Service\SQLAdmin;
 class DiskEncryptionConfiguration extends \Google\Model
 {
   /**
-   * This is always `sql#diskEncryptionConfiguration`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Resource name of KMS key for disk encryption
-   *
    * @var string
    */
   public $kmsKeyName;
 
   /**
-   * This is always `sql#diskEncryptionConfiguration`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -49,9 +43,7 @@ class DiskEncryptionConfiguration extends \Google\Model
     return $this->kind;
   }
   /**
-   * Resource name of KMS key for disk encryption
-   *
-   * @param string $kmsKeyName
+   * @param string
    */
   public function setKmsKeyName($kmsKeyName)
   {

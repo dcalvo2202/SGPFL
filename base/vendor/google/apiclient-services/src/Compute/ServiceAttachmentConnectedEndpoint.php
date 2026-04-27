@@ -17,80 +17,31 @@
 
 namespace Google\Service\Compute;
 
-class ServiceAttachmentConnectedEndpoint extends \Google\Collection
+class ServiceAttachmentConnectedEndpoint extends \Google\Model
 {
   /**
-   * The connection has been accepted by the producer.
-   */
-  public const STATUS_ACCEPTED = 'ACCEPTED';
-  /**
-   * The connection has been closed by the producer.
-   */
-  public const STATUS_CLOSED = 'CLOSED';
-  /**
-   * The connection has been accepted by the producer, but the producer needs to
-   * take further action before the forwarding rule can serve traffic.
-   */
-  public const STATUS_NEEDS_ATTENTION = 'NEEDS_ATTENTION';
-  /**
-   * The connection is pending acceptance by the producer.
-   */
-  public const STATUS_PENDING = 'PENDING';
-  /**
-   * The consumer is still connected but not using the connection.
-   */
-  public const STATUS_REJECTED = 'REJECTED';
-  public const STATUS_STATUS_UNSPECIFIED = 'STATUS_UNSPECIFIED';
-  protected $collection_key = 'natIps';
-  /**
-   * The url of the consumer network.
-   *
    * @var string
    */
   public $consumerNetwork;
   /**
-   * The url of a connected endpoint.
-   *
    * @var string
    */
   public $endpoint;
   /**
-   * The url of a connected endpoint with resource id.
-   *
-   * @var string
-   */
-  public $endpointWithId;
-  /**
-   * NAT IPs of the connected PSC endpoint and those of other endpoints
-   * propagated from it.
-   *
-   * @var string[]
-   */
-  public $natIps;
-  /**
-   * The number of consumer Network Connectivity Center spokes that the
-   * connected Private Service Connect endpoint has propagated to.
-   *
    * @var string
    */
   public $propagatedConnectionCount;
   /**
-   * The PSC connection id of the connected endpoint.
-   *
    * @var string
    */
   public $pscConnectionId;
   /**
-   * The status of a connected endpoint to this service attachment.
-   *
    * @var string
    */
   public $status;
 
   /**
-   * The url of the consumer network.
-   *
-   * @param string $consumerNetwork
+   * @param string
    */
   public function setConsumerNetwork($consumerNetwork)
   {
@@ -104,9 +55,7 @@ class ServiceAttachmentConnectedEndpoint extends \Google\Collection
     return $this->consumerNetwork;
   }
   /**
-   * The url of a connected endpoint.
-   *
-   * @param string $endpoint
+   * @param string
    */
   public function setEndpoint($endpoint)
   {
@@ -120,43 +69,7 @@ class ServiceAttachmentConnectedEndpoint extends \Google\Collection
     return $this->endpoint;
   }
   /**
-   * The url of a connected endpoint with resource id.
-   *
-   * @param string $endpointWithId
-   */
-  public function setEndpointWithId($endpointWithId)
-  {
-    $this->endpointWithId = $endpointWithId;
-  }
-  /**
-   * @return string
-   */
-  public function getEndpointWithId()
-  {
-    return $this->endpointWithId;
-  }
-  /**
-   * NAT IPs of the connected PSC endpoint and those of other endpoints
-   * propagated from it.
-   *
-   * @param string[] $natIps
-   */
-  public function setNatIps($natIps)
-  {
-    $this->natIps = $natIps;
-  }
-  /**
-   * @return string[]
-   */
-  public function getNatIps()
-  {
-    return $this->natIps;
-  }
-  /**
-   * The number of consumer Network Connectivity Center spokes that the
-   * connected Private Service Connect endpoint has propagated to.
-   *
-   * @param string $propagatedConnectionCount
+   * @param string
    */
   public function setPropagatedConnectionCount($propagatedConnectionCount)
   {
@@ -170,9 +83,7 @@ class ServiceAttachmentConnectedEndpoint extends \Google\Collection
     return $this->propagatedConnectionCount;
   }
   /**
-   * The PSC connection id of the connected endpoint.
-   *
-   * @param string $pscConnectionId
+   * @param string
    */
   public function setPscConnectionId($pscConnectionId)
   {
@@ -186,19 +97,14 @@ class ServiceAttachmentConnectedEndpoint extends \Google\Collection
     return $this->pscConnectionId;
   }
   /**
-   * The status of a connected endpoint to this service attachment.
-   *
-   * Accepted values: ACCEPTED, CLOSED, NEEDS_ATTENTION, PENDING, REJECTED,
-   * STATUS_UNSPECIFIED
-   *
-   * @param self::STATUS_* $status
+   * @param string
    */
   public function setStatus($status)
   {
     $this->status = $status;
   }
   /**
-   * @return self::STATUS_*
+   * @return string
    */
   public function getStatus()
   {

@@ -24,11 +24,7 @@ class AccessConfig extends \Google\Collection
   protected $networkConfigsDataType = 'array';
 
   /**
-   * Required. Virtual Private Cloud (VPC) networks that must be granted direct
-   * access to the Kafka cluster. Minimum of 1 network is required. Maximum 10
-   * networks can be specified.
-   *
-   * @param NetworkConfig[] $networkConfigs
+   * @param NetworkConfig[]
    */
   public function setNetworkConfigs($networkConfigs)
   {

@@ -28,9 +28,7 @@ class LiveChatPollDetailsPollMetadata extends \Google\Collection
   public $questionText;
 
   /**
-   * The options will be returned in the order that is displayed in 1P
-   *
-   * @param LiveChatPollDetailsPollMetadataPollOption[] $options
+   * @param LiveChatPollDetailsPollMetadataPollOption[]
    */
   public function setOptions($options)
   {
@@ -44,7 +42,7 @@ class LiveChatPollDetailsPollMetadata extends \Google\Collection
     return $this->options;
   }
   /**
-   * @param string $questionText
+   * @param string
    */
   public function setQuestionText($questionText)
   {

@@ -30,7 +30,7 @@ class PoolData extends \Google\Collection
   public $stageIds;
 
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -44,7 +44,7 @@ class PoolData extends \Google\Collection
     return $this->name;
   }
   /**
-   * @param string[] $stageIds
+   * @param string[]
    */
   public function setStageIds($stageIds)
   {

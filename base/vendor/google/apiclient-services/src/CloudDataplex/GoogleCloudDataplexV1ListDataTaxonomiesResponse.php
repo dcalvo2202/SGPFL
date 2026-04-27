@@ -23,23 +23,16 @@ class GoogleCloudDataplexV1ListDataTaxonomiesResponse extends \Google\Collection
   protected $dataTaxonomiesType = GoogleCloudDataplexV1DataTaxonomy::class;
   protected $dataTaxonomiesDataType = 'array';
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachableLocations;
 
   /**
-   * DataTaxonomies under the given parent location.
-   *
-   * @param GoogleCloudDataplexV1DataTaxonomy[] $dataTaxonomies
+   * @param GoogleCloudDataplexV1DataTaxonomy[]
    */
   public function setDataTaxonomies($dataTaxonomies)
   {
@@ -53,10 +46,7 @@ class GoogleCloudDataplexV1ListDataTaxonomiesResponse extends \Google\Collection
     return $this->dataTaxonomies;
   }
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -70,9 +60,7 @@ class GoogleCloudDataplexV1ListDataTaxonomiesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachableLocations
+   * @param string[]
    */
   public function setUnreachableLocations($unreachableLocations)
   {

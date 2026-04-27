@@ -20,22 +20,16 @@ namespace Google\Service\AlertCenter;
 class DomainWideTakeoutInitiated extends \Google\Model
 {
   /**
-   * The email of the admin who initiated the takeout.
-   *
    * @var string
    */
   public $email;
   /**
-   * The takeout request ID.
-   *
    * @var string
    */
   public $takeoutRequestId;
 
   /**
-   * The email of the admin who initiated the takeout.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {
@@ -49,9 +43,7 @@ class DomainWideTakeoutInitiated extends \Google\Model
     return $this->email;
   }
   /**
-   * The takeout request ID.
-   *
-   * @param string $takeoutRequestId
+   * @param string
    */
   public function setTakeoutRequestId($takeoutRequestId)
   {

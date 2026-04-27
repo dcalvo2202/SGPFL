@@ -20,28 +20,20 @@ namespace Google\Service\Vision;
 class GoogleCloudVisionV1p4beta1Property extends \Google\Model
 {
   /**
-   * Name of the property.
-   *
    * @var string
    */
   public $name;
   /**
-   * Value of numeric properties.
-   *
    * @var string
    */
   public $uint64Value;
   /**
-   * Value of the property.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Name of the property.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -55,9 +47,7 @@ class GoogleCloudVisionV1p4beta1Property extends \Google\Model
     return $this->name;
   }
   /**
-   * Value of numeric properties.
-   *
-   * @param string $uint64Value
+   * @param string
    */
   public function setUint64Value($uint64Value)
   {
@@ -71,9 +61,7 @@ class GoogleCloudVisionV1p4beta1Property extends \Google\Model
     return $this->uint64Value;
   }
   /**
-   * Value of the property.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

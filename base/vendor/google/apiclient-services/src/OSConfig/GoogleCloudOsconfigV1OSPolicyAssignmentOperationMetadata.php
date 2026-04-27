@@ -20,98 +20,42 @@ namespace Google\Service\OSConfig;
 class GoogleCloudOsconfigV1OSPolicyAssignmentOperationMetadata extends \Google\Model
 {
   /**
-   * Invalid value
-   */
-  public const API_METHOD_API_METHOD_UNSPECIFIED = 'API_METHOD_UNSPECIFIED';
-  /**
-   * Create OS policy assignment API method
-   */
-  public const API_METHOD_CREATE = 'CREATE';
-  /**
-   * Update OS policy assignment API method
-   */
-  public const API_METHOD_UPDATE = 'UPDATE';
-  /**
-   * Delete OS policy assignment API method
-   */
-  public const API_METHOD_DELETE = 'DELETE';
-  /**
-   * Invalid value
-   */
-  public const ROLLOUT_STATE_ROLLOUT_STATE_UNSPECIFIED = 'ROLLOUT_STATE_UNSPECIFIED';
-  /**
-   * The rollout is in progress.
-   */
-  public const ROLLOUT_STATE_IN_PROGRESS = 'IN_PROGRESS';
-  /**
-   * The rollout is being cancelled.
-   */
-  public const ROLLOUT_STATE_CANCELLING = 'CANCELLING';
-  /**
-   * The rollout is cancelled.
-   */
-  public const ROLLOUT_STATE_CANCELLED = 'CANCELLED';
-  /**
-   * The rollout has completed successfully.
-   */
-  public const ROLLOUT_STATE_SUCCEEDED = 'SUCCEEDED';
-  /**
-   * The OS policy assignment API method.
-   *
    * @var string
    */
   public $apiMethod;
   /**
-   * Reference to the `OSPolicyAssignment` API resource. Format: `projects/{proj
-   * ect_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_
-   * id@revision_id}`
-   *
    * @var string
    */
   public $osPolicyAssignment;
   /**
-   * Rollout start time
-   *
    * @var string
    */
   public $rolloutStartTime;
   /**
-   * State of the rollout
-   *
    * @var string
    */
   public $rolloutState;
   /**
-   * Rollout update time
-   *
    * @var string
    */
   public $rolloutUpdateTime;
 
   /**
-   * The OS policy assignment API method.
-   *
-   * Accepted values: API_METHOD_UNSPECIFIED, CREATE, UPDATE, DELETE
-   *
-   * @param self::API_METHOD_* $apiMethod
+   * @param string
    */
   public function setApiMethod($apiMethod)
   {
     $this->apiMethod = $apiMethod;
   }
   /**
-   * @return self::API_METHOD_*
+   * @return string
    */
   public function getApiMethod()
   {
     return $this->apiMethod;
   }
   /**
-   * Reference to the `OSPolicyAssignment` API resource. Format: `projects/{proj
-   * ect_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_
-   * id@revision_id}`
-   *
-   * @param string $osPolicyAssignment
+   * @param string
    */
   public function setOsPolicyAssignment($osPolicyAssignment)
   {
@@ -125,9 +69,7 @@ class GoogleCloudOsconfigV1OSPolicyAssignmentOperationMetadata extends \Google\M
     return $this->osPolicyAssignment;
   }
   /**
-   * Rollout start time
-   *
-   * @param string $rolloutStartTime
+   * @param string
    */
   public function setRolloutStartTime($rolloutStartTime)
   {
@@ -141,28 +83,21 @@ class GoogleCloudOsconfigV1OSPolicyAssignmentOperationMetadata extends \Google\M
     return $this->rolloutStartTime;
   }
   /**
-   * State of the rollout
-   *
-   * Accepted values: ROLLOUT_STATE_UNSPECIFIED, IN_PROGRESS, CANCELLING,
-   * CANCELLED, SUCCEEDED
-   *
-   * @param self::ROLLOUT_STATE_* $rolloutState
+   * @param string
    */
   public function setRolloutState($rolloutState)
   {
     $this->rolloutState = $rolloutState;
   }
   /**
-   * @return self::ROLLOUT_STATE_*
+   * @return string
    */
   public function getRolloutState()
   {
     return $this->rolloutState;
   }
   /**
-   * Rollout update time
-   *
-   * @param string $rolloutUpdateTime
+   * @param string
    */
   public function setRolloutUpdateTime($rolloutUpdateTime)
   {

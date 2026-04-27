@@ -21,8 +21,6 @@ class ListWorkspacesResponse extends \Google\Collection
 {
   protected $collection_key = 'workspace';
   /**
-   * Continuation token for fetching the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -30,9 +28,7 @@ class ListWorkspacesResponse extends \Google\Collection
   protected $workspaceDataType = 'array';
 
   /**
-   * Continuation token for fetching the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -46,9 +42,7 @@ class ListWorkspacesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * All Workspaces of a GTM Container.
-   *
-   * @param Workspace[] $workspace
+   * @param Workspace[]
    */
   public function setWorkspace($workspace)
   {

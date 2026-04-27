@@ -21,21 +21,12 @@ class Search extends \Google\Collection
 {
   protected $collection_key = 'promotions';
   /**
-   * Metadata and refinements associated with the given search engine,
-   * including: * The name of the search engine that was used for the query. * A
-   * set of [facet objects](https://developers.google.com/custom-
-   * search/docs/refinements#create) (refinements) you can use for refining a
-   * search.
-   *
    * @var array[]
    */
   public $context;
   protected $itemsType = Result::class;
   protected $itemsDataType = 'array';
   /**
-   * Unique identifier for the type of current object. For this API, it is
-   * customsearch#search.
-   *
    * @var string
    */
   public $kind;
@@ -51,13 +42,7 @@ class Search extends \Google\Collection
   protected $urlDataType = '';
 
   /**
-   * Metadata and refinements associated with the given search engine,
-   * including: * The name of the search engine that was used for the query. * A
-   * set of [facet objects](https://developers.google.com/custom-
-   * search/docs/refinements#create) (refinements) you can use for refining a
-   * search.
-   *
-   * @param array[] $context
+   * @param array[]
    */
   public function setContext($context)
   {
@@ -71,9 +56,7 @@ class Search extends \Google\Collection
     return $this->context;
   }
   /**
-   * The current set of custom search results.
-   *
-   * @param Result[] $items
+   * @param Result[]
    */
   public function setItems($items)
   {
@@ -87,10 +70,7 @@ class Search extends \Google\Collection
     return $this->items;
   }
   /**
-   * Unique identifier for the type of current object. For this API, it is
-   * customsearch#search.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -104,11 +84,7 @@ class Search extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The set of [promotions](https://developers.google.com/custom-
-   * search/docs/promotions). Present only if the custom search engine's
-   * configuration files define any promotions for the given query.
-   *
-   * @param Promotion[] $promotions
+   * @param Promotion[]
    */
   public function setPromotions($promotions)
   {
@@ -122,9 +98,7 @@ class Search extends \Google\Collection
     return $this->promotions;
   }
   /**
-   * Query metadata for the previous, current, and next pages of results.
-   *
-   * @param SearchQueries $queries
+   * @param SearchQueries
    */
   public function setQueries(SearchQueries $queries)
   {
@@ -138,9 +112,7 @@ class Search extends \Google\Collection
     return $this->queries;
   }
   /**
-   * Metadata about a search operation.
-   *
-   * @param SearchSearchInformation $searchInformation
+   * @param SearchSearchInformation
    */
   public function setSearchInformation(SearchSearchInformation $searchInformation)
   {
@@ -154,9 +126,7 @@ class Search extends \Google\Collection
     return $this->searchInformation;
   }
   /**
-   * Spell correction information for a query.
-   *
-   * @param SearchSpelling $spelling
+   * @param SearchSpelling
    */
   public function setSpelling(SearchSpelling $spelling)
   {
@@ -170,9 +140,7 @@ class Search extends \Google\Collection
     return $this->spelling;
   }
   /**
-   * OpenSearch template and URL.
-   *
-   * @param SearchUrl $url
+   * @param SearchUrl
    */
   public function setUrl(SearchUrl $url)
   {

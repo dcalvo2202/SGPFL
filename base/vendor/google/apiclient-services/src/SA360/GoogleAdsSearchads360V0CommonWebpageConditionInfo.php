@@ -20,72 +20,20 @@ namespace Google\Service\SA360;
 class GoogleAdsSearchads360V0CommonWebpageConditionInfo extends \Google\Model
 {
   /**
-   * Not specified.
-   */
-  public const OPERAND_UNSPECIFIED = 'UNSPECIFIED';
-  /**
-   * Used for return value only. Represents value unknown in this version.
-   */
-  public const OPERAND_UNKNOWN = 'UNKNOWN';
-  /**
-   * Operand denoting a webpage URL targeting condition.
-   */
-  public const OPERAND_URL = 'URL';
-  /**
-   * Operand denoting a webpage category targeting condition.
-   */
-  public const OPERAND_CATEGORY = 'CATEGORY';
-  /**
-   * Operand denoting a webpage title targeting condition.
-   */
-  public const OPERAND_PAGE_TITLE = 'PAGE_TITLE';
-  /**
-   * Operand denoting a webpage content targeting condition.
-   */
-  public const OPERAND_PAGE_CONTENT = 'PAGE_CONTENT';
-  /**
-   * Operand denoting a webpage custom label targeting condition.
-   */
-  public const OPERAND_CUSTOM_LABEL = 'CUSTOM_LABEL';
-  /**
-   * Not specified.
-   */
-  public const OPERATOR_UNSPECIFIED = 'UNSPECIFIED';
-  /**
-   * Used for return value only. Represents value unknown in this version.
-   */
-  public const OPERATOR_UNKNOWN = 'UNKNOWN';
-  /**
-   * The argument web condition is equal to the compared web condition.
-   */
-  public const OPERATOR_EQUALS = 'EQUALS';
-  /**
-   * The argument web condition is part of the compared web condition.
-   */
-  public const OPERATOR_CONTAINS = 'CONTAINS';
-  /**
-   * Argument of webpage targeting condition.
-   *
    * @var string
    */
   public $argument;
   /**
-   * Operand of webpage targeting condition.
-   *
    * @var string
    */
   public $operand;
   /**
-   * Operator of webpage targeting condition.
-   *
    * @var string
    */
   public $operator;
 
   /**
-   * Argument of webpage targeting condition.
-   *
-   * @param string $argument
+   * @param string
    */
   public function setArgument($argument)
   {
@@ -99,37 +47,28 @@ class GoogleAdsSearchads360V0CommonWebpageConditionInfo extends \Google\Model
     return $this->argument;
   }
   /**
-   * Operand of webpage targeting condition.
-   *
-   * Accepted values: UNSPECIFIED, UNKNOWN, URL, CATEGORY, PAGE_TITLE,
-   * PAGE_CONTENT, CUSTOM_LABEL
-   *
-   * @param self::OPERAND_* $operand
+   * @param string
    */
   public function setOperand($operand)
   {
     $this->operand = $operand;
   }
   /**
-   * @return self::OPERAND_*
+   * @return string
    */
   public function getOperand()
   {
     return $this->operand;
   }
   /**
-   * Operator of webpage targeting condition.
-   *
-   * Accepted values: UNSPECIFIED, UNKNOWN, EQUALS, CONTAINS
-   *
-   * @param self::OPERATOR_* $operator
+   * @param string
    */
   public function setOperator($operator)
   {
     $this->operator = $operator;
   }
   /**
-   * @return self::OPERATOR_*
+   * @return string
    */
   public function getOperator()
   {

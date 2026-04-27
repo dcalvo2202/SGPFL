@@ -23,64 +23,28 @@ class Acl extends \Google\Collection
   protected $aclEntriesType = AclEntry::class;
   protected $aclEntriesDataType = 'array';
   /**
-   * Optional. `etag` is used for concurrency control. An `etag` is returned in
-   * the response to `GetAcl` and `CreateAcl`. Callers are required to put that
-   * etag in the request to `UpdateAcl` to ensure that their change will be
-   * applied to the same version of the acl that exists in the Kafka Cluster. A
-   * terminal 'T' character in the etag indicates that the AclEntries were
-   * truncated; more entries for the Acl exist on the Kafka Cluster, but can't
-   * be returned in the Acl due to repeated field limits.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Identifier. The name for the acl. Represents a single Resource Pattern.
-   * Structured like:
-   * projects/{project}/locations/{location}/clusters/{cluster}/acls/{acl_id}
-   * The structure of `acl_id` defines the Resource Pattern (resource_type,
-   * resource_name, pattern_type) of the acl. `acl_id` is structured like one of
-   * the following: For acls on the cluster: `cluster` For acls on a single
-   * resource within the cluster: `topic/{resource_name}`
-   * `consumerGroup/{resource_name}` `transactionalId/{resource_name}` For acls
-   * on all resources that match a prefix: `topicPrefixed/{resource_name}`
-   * `consumerGroupPrefixed/{resource_name}`
-   * `transactionalIdPrefixed/{resource_name}` For acls on all resources of a
-   * given type (i.e. the wildcard literal "*"): `allTopics` (represents
-   * `topic`) `allConsumerGroups` (represents `consumerGroup`)
-   * `allTransactionalIds` (represents `transactionalId`)
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The ACL pattern type derived from the name. One of: LITERAL,
-   * PREFIXED.
-   *
    * @var string
    */
   public $patternType;
   /**
-   * Output only. The ACL resource name derived from the name. For cluster
-   * resource_type, this is always "kafka-cluster". Can be the wildcard literal
-   * "*".
-   *
    * @var string
    */
   public $resourceName;
   /**
-   * Output only. The ACL resource type derived from the name. One of: CLUSTER,
-   * TOPIC, GROUP, TRANSACTIONAL_ID.
-   *
    * @var string
    */
   public $resourceType;
 
   /**
-   * Required. The ACL entries that apply to the resource pattern. The maximum
-   * number of allowed entries 100.
-   *
-   * @param AclEntry[] $aclEntries
+   * @param AclEntry[]
    */
   public function setAclEntries($aclEntries)
   {
@@ -94,15 +58,7 @@ class Acl extends \Google\Collection
     return $this->aclEntries;
   }
   /**
-   * Optional. `etag` is used for concurrency control. An `etag` is returned in
-   * the response to `GetAcl` and `CreateAcl`. Callers are required to put that
-   * etag in the request to `UpdateAcl` to ensure that their change will be
-   * applied to the same version of the acl that exists in the Kafka Cluster. A
-   * terminal 'T' character in the etag indicates that the AclEntries were
-   * truncated; more entries for the Acl exist on the Kafka Cluster, but can't
-   * be returned in the Acl due to repeated field limits.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -116,22 +72,7 @@ class Acl extends \Google\Collection
     return $this->etag;
   }
   /**
-   * Identifier. The name for the acl. Represents a single Resource Pattern.
-   * Structured like:
-   * projects/{project}/locations/{location}/clusters/{cluster}/acls/{acl_id}
-   * The structure of `acl_id` defines the Resource Pattern (resource_type,
-   * resource_name, pattern_type) of the acl. `acl_id` is structured like one of
-   * the following: For acls on the cluster: `cluster` For acls on a single
-   * resource within the cluster: `topic/{resource_name}`
-   * `consumerGroup/{resource_name}` `transactionalId/{resource_name}` For acls
-   * on all resources that match a prefix: `topicPrefixed/{resource_name}`
-   * `consumerGroupPrefixed/{resource_name}`
-   * `transactionalIdPrefixed/{resource_name}` For acls on all resources of a
-   * given type (i.e. the wildcard literal "*"): `allTopics` (represents
-   * `topic`) `allConsumerGroups` (represents `consumerGroup`)
-   * `allTransactionalIds` (represents `transactionalId`)
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -145,10 +86,7 @@ class Acl extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. The ACL pattern type derived from the name. One of: LITERAL,
-   * PREFIXED.
-   *
-   * @param string $patternType
+   * @param string
    */
   public function setPatternType($patternType)
   {
@@ -162,11 +100,7 @@ class Acl extends \Google\Collection
     return $this->patternType;
   }
   /**
-   * Output only. The ACL resource name derived from the name. For cluster
-   * resource_type, this is always "kafka-cluster". Can be the wildcard literal
-   * "*".
-   *
-   * @param string $resourceName
+   * @param string
    */
   public function setResourceName($resourceName)
   {
@@ -180,10 +114,7 @@ class Acl extends \Google\Collection
     return $this->resourceName;
   }
   /**
-   * Output only. The ACL resource type derived from the name. One of: CLUSTER,
-   * TOPIC, GROUP, TRANSACTIONAL_ID.
-   *
-   * @param string $resourceType
+   * @param string
    */
   public function setResourceType($resourceType)
   {

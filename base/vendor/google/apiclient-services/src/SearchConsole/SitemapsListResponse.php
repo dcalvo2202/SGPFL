@@ -24,10 +24,7 @@ class SitemapsListResponse extends \Google\Collection
   protected $sitemapDataType = 'array';
 
   /**
-   * Contains detailed information about a specific URL submitted as a
-   * [sitemap](https://support.google.com/webmasters/answer/156184).
-   *
-   * @param WmxSitemap[] $sitemap
+   * @param WmxSitemap[]
    */
   public function setSitemap($sitemap)
   {

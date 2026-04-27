@@ -20,55 +20,24 @@ namespace Google\Service\Adsense;
 class Alert extends \Google\Model
 {
   /**
-   * Unspecified severity.
-   */
-  public const SEVERITY_SEVERITY_UNSPECIFIED = 'SEVERITY_UNSPECIFIED';
-  /**
-   * Info.
-   */
-  public const SEVERITY_INFO = 'INFO';
-  /**
-   * Warning.
-   */
-  public const SEVERITY_WARNING = 'WARNING';
-  /**
-   * Severe.
-   */
-  public const SEVERITY_SEVERE = 'SEVERE';
-  /**
-   * Output only. The localized alert message. This may contain HTML markup,
-   * such as phrase elements or links.
-   *
    * @var string
    */
   public $message;
   /**
-   * Output only. Resource name of the alert. Format:
-   * accounts/{account}/alerts/{alert}
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Severity of this alert.
-   *
    * @var string
    */
   public $severity;
   /**
-   * Output only. Type of alert. This identifies the broad type of this alert,
-   * and provides a stable machine-readable identifier that will not be
-   * translated. For example, "payment-hold".
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Output only. The localized alert message. This may contain HTML markup,
-   * such as phrase elements or links.
-   *
-   * @param string $message
+   * @param string
    */
   public function setMessage($message)
   {
@@ -82,10 +51,7 @@ class Alert extends \Google\Model
     return $this->message;
   }
   /**
-   * Output only. Resource name of the alert. Format:
-   * accounts/{account}/alerts/{alert}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -99,29 +65,21 @@ class Alert extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Severity of this alert.
-   *
-   * Accepted values: SEVERITY_UNSPECIFIED, INFO, WARNING, SEVERE
-   *
-   * @param self::SEVERITY_* $severity
+   * @param string
    */
   public function setSeverity($severity)
   {
     $this->severity = $severity;
   }
   /**
-   * @return self::SEVERITY_*
+   * @return string
    */
   public function getSeverity()
   {
     return $this->severity;
   }
   /**
-   * Output only. Type of alert. This identifies the broad type of this alert,
-   * and provides a stable machine-readable identifier that will not be
-   * translated. For example, "payment-hold".
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

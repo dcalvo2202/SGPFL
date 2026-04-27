@@ -20,22 +20,16 @@ namespace Google\Service\PagespeedInsights;
 class CategoryGroupV5 extends \Google\Model
 {
   /**
-   * The description of what the category is grouping
-   *
    * @var string
    */
   public $description;
   /**
-   * The human readable title of the group
-   *
    * @var string
    */
   public $title;
 
   /**
-   * The description of what the category is grouping
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -49,9 +43,7 @@ class CategoryGroupV5 extends \Google\Model
     return $this->description;
   }
   /**
-   * The human readable title of the group
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

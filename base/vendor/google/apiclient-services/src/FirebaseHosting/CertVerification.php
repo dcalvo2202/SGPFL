@@ -25,10 +25,7 @@ class CertVerification extends \Google\Model
   protected $httpDataType = '';
 
   /**
-   * Output only. A `TXT` record to add to your DNS records that confirms your
-   * intent to let Hosting create an SSL cert for your domain name.
-   *
-   * @param DnsUpdates $dns
+   * @param DnsUpdates
    */
   public function setDns(DnsUpdates $dns)
   {
@@ -42,11 +39,7 @@ class CertVerification extends \Google\Model
     return $this->dns;
   }
   /**
-   * Output only. A file to add to your existing, non-Hosting hosting service
-   * that confirms your intent to let Hosting create an SSL cert for your domain
-   * name.
-   *
-   * @param HttpUpdate $http
+   * @param HttpUpdate
    */
   public function setHttp(HttpUpdate $http)
   {

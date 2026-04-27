@@ -20,30 +20,20 @@ namespace Google\Service\Datapipelines;
 class GoogleCloudDatapipelinesV1ScheduleSpec extends \Google\Model
 {
   /**
-   * Output only. When the next Scheduler job is going to run.
-   *
    * @var string
    */
   public $nextJobTime;
   /**
-   * Unix-cron format of the schedule. This information is retrieved from the
-   * linked Cloud Scheduler.
-   *
    * @var string
    */
   public $schedule;
   /**
-   * Timezone ID. This matches the timezone IDs used by the Cloud Scheduler API.
-   * If empty, UTC time is assumed.
-   *
    * @var string
    */
   public $timeZone;
 
   /**
-   * Output only. When the next Scheduler job is going to run.
-   *
-   * @param string $nextJobTime
+   * @param string
    */
   public function setNextJobTime($nextJobTime)
   {
@@ -57,10 +47,7 @@ class GoogleCloudDatapipelinesV1ScheduleSpec extends \Google\Model
     return $this->nextJobTime;
   }
   /**
-   * Unix-cron format of the schedule. This information is retrieved from the
-   * linked Cloud Scheduler.
-   *
-   * @param string $schedule
+   * @param string
    */
   public function setSchedule($schedule)
   {
@@ -74,10 +61,7 @@ class GoogleCloudDatapipelinesV1ScheduleSpec extends \Google\Model
     return $this->schedule;
   }
   /**
-   * Timezone ID. This matches the timezone IDs used by the Cloud Scheduler API.
-   * If empty, UTC time is assumed.
-   *
-   * @param string $timeZone
+   * @param string
    */
   public function setTimeZone($timeZone)
   {

@@ -21,9 +21,6 @@ class GoogleCloudApigeeV1ListSecurityProfilesResponse extends \Google\Collection
 {
   protected $collection_key = 'securityProfiles';
   /**
-   * A token that can be sent as `page_token` to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GoogleCloudApigeeV1ListSecurityProfilesResponse extends \Google\Collection
   protected $securityProfilesDataType = 'array';
 
   /**
-   * A token that can be sent as `page_token` to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,11 +42,7 @@ class GoogleCloudApigeeV1ListSecurityProfilesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * List of security profiles in the organization. The profiles may be attached
-   * or unattached to any environment. This will return latest revision of each
-   * profile.
-   *
-   * @param GoogleCloudApigeeV1SecurityProfile[] $securityProfiles
+   * @param GoogleCloudApigeeV1SecurityProfile[]
    */
   public function setSecurityProfiles($securityProfiles)
   {

@@ -19,82 +19,28 @@ namespace Google\Service\GKEOnPrem;
 
 class OperationStage extends \Google\Collection
 {
-  /**
-   * Not set.
-   */
-  public const STAGE_STAGE_UNSPECIFIED = 'STAGE_UNSPECIFIED';
-  /**
-   * Preflight checks are running.
-   */
-  public const STAGE_PREFLIGHT_CHECK = 'PREFLIGHT_CHECK';
-  /**
-   * Resource is being configured.
-   */
-  public const STAGE_CONFIGURE = 'CONFIGURE';
-  /**
-   * Resource is being deployed.
-   */
-  public const STAGE_DEPLOY = 'DEPLOY';
-  /**
-   * Waiting for the resource to become healthy.
-   */
-  public const STAGE_HEALTH_CHECK = 'HEALTH_CHECK';
-  /**
-   * Resource is being updated.
-   */
-  public const STAGE_UPDATE = 'UPDATE';
-  /**
-   * Not set.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The stage is pending.
-   */
-  public const STATE_PENDING = 'PENDING';
-  /**
-   * The stage is running
-   */
-  public const STATE_RUNNING = 'RUNNING';
-  /**
-   * The stage has completed successfully.
-   */
-  public const STATE_SUCCEEDED = 'SUCCEEDED';
-  /**
-   * The stage has failed.
-   */
-  public const STATE_FAILED = 'FAILED';
   protected $collection_key = 'metrics';
   /**
-   * Time the stage ended.
-   *
    * @var string
    */
   public $endTime;
   protected $metricsType = Metric::class;
   protected $metricsDataType = 'array';
   /**
-   * The high-level stage of the operation.
-   *
    * @var string
    */
   public $stage;
   /**
-   * Time the stage started.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * Output only. State of the stage.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Time the stage ended.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -108,9 +54,7 @@ class OperationStage extends \Google\Collection
     return $this->endTime;
   }
   /**
-   * Progress metric bundle.
-   *
-   * @param Metric[] $metrics
+   * @param Metric[]
    */
   public function setMetrics($metrics)
   {
@@ -124,28 +68,21 @@ class OperationStage extends \Google\Collection
     return $this->metrics;
   }
   /**
-   * The high-level stage of the operation.
-   *
-   * Accepted values: STAGE_UNSPECIFIED, PREFLIGHT_CHECK, CONFIGURE, DEPLOY,
-   * HEALTH_CHECK, UPDATE
-   *
-   * @param self::STAGE_* $stage
+   * @param string
    */
   public function setStage($stage)
   {
     $this->stage = $stage;
   }
   /**
-   * @return self::STAGE_*
+   * @return string
    */
   public function getStage()
   {
     return $this->stage;
   }
   /**
-   * Time the stage started.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -159,18 +96,14 @@ class OperationStage extends \Google\Collection
     return $this->startTime;
   }
   /**
-   * Output only. State of the stage.
-   *
-   * Accepted values: STATE_UNSPECIFIED, PENDING, RUNNING, SUCCEEDED, FAILED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

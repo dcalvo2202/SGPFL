@@ -20,81 +20,22 @@ namespace Google\Service\Integrations;
 class EnterpriseCrmEventbusProtoTaskAlertConfig extends \Google\Model
 {
   /**
-   * The default value. Metric type should always be set to one of the other
-   * non-default values, otherwise it will result in an INVALID_ARGUMENT error.
-   */
-  public const METRIC_TYPE_METRIC_TYPE_UNSPECIFIED = 'METRIC_TYPE_UNSPECIFIED';
-  /**
-   * Specifies alerting on the rate of errors (potentially for a specific set of
-   * enum values) for the enclosing TaskConfig.
-   */
-  public const METRIC_TYPE_TASK_ERROR_RATE = 'TASK_ERROR_RATE';
-  /**
-   * Specifies alerting on the rate of warnings (potentially for a specific set
-   * of enum values) for the enclosing TaskConfig. Warnings use the same enum
-   * values as errors.
-   */
-  public const METRIC_TYPE_TASK_WARNING_RATE = 'TASK_WARNING_RATE';
-  /**
-   * Specifies alerting on the number of instances for the enclosing TaskConfig
-   * executed in the given aggregation_period.
-   */
-  public const METRIC_TYPE_TASK_RATE = 'TASK_RATE';
-  /**
-   * Specifies alerting on the average duration of execution for the enclosing
-   * task.
-   */
-  public const METRIC_TYPE_TASK_AVERAGE_DURATION = 'TASK_AVERAGE_DURATION';
-  /**
-   * Specifies alerting on the duration of a particular percentile of task
-   * executions. E.g. If 10% or more of the task executions have durations above
-   * 5 seconds, alert.
-   */
-  public const METRIC_TYPE_TASK_PERCENTILE_DURATION = 'TASK_PERCENTILE_DURATION';
-  public const THRESHOLD_TYPE_UNSPECIFIED_THRESHOLD_TYPE = 'UNSPECIFIED_THRESHOLD_TYPE';
-  /**
-   * Note that this field will only trigger alerts if the workflow specifying it
-   * runs at least once in 24 hours (which is our in-memory retention period for
-   * monarch streams). Also note that `aggregation_period` for this alert
-   * configuration must be less than 24 hours.
-   */
-  public const THRESHOLD_TYPE_EXPECTED_MIN = 'EXPECTED_MIN';
-  public const THRESHOLD_TYPE_EXPECTED_MAX = 'EXPECTED_MAX';
-  /**
-   * The period over which the metric value should be aggregated and evaluated.
-   * Format is , where integer should be a positive integer and unit should be
-   * one of (s,m,h,d,w) meaning (second, minute, hour, day, week).
-   *
    * @var string
    */
   public $aggregationPeriod;
   /**
-   * Set to false by default. When set to true, the metrics are not aggregated
-   * or pushed to Monarch for this workflow alert.
-   *
    * @var bool
    */
   public $alertDisabled;
   /**
-   * A name to identify this alert. This will be displayed in the alert subject.
-   * If set, this name should be unique in within the scope of the containing
-   * workflow.
-   *
    * @var string
    */
   public $alertName;
   /**
-   * Client associated with this alert configuration. Must be a client enabled
-   * in one of the containing workflow's triggers.
-   *
    * @var string
    */
   public $clientId;
   /**
-   * Should be specified only for TASK_AVERAGE_DURATION and
-   * TASK_PERCENTILE_DURATION metrics. This member should be used to specify
-   * what duration value the metrics should exceed for the alert to trigger.
-   *
    * @var string
    */
   public $durationThresholdMs;
@@ -105,28 +46,18 @@ class EnterpriseCrmEventbusProtoTaskAlertConfig extends \Google\Model
    */
   public $metricType;
   /**
-   * For how many contiguous aggregation periods should the expected min or max
-   * be violated for the alert to be fired.
-   *
    * @var int
    */
   public $numAggregationPeriods;
   /**
-   * Only count final task attempts, not retries.
-   *
    * @var bool
    */
   public $onlyFinalAttempt;
   /**
-   * Link to a playbook for resolving the issue that triggered this alert.
-   *
    * @var string
    */
   public $playbookUrl;
   /**
-   * The threshold type for which this alert is being configured. If value falls
-   * below expected_min or exceeds expected_max, an alert will be fired.
-   *
    * @var string
    */
   public $thresholdType;
@@ -136,11 +67,7 @@ class EnterpriseCrmEventbusProtoTaskAlertConfig extends \Google\Model
   protected $warningEnumListDataType = '';
 
   /**
-   * The period over which the metric value should be aggregated and evaluated.
-   * Format is , where integer should be a positive integer and unit should be
-   * one of (s,m,h,d,w) meaning (second, minute, hour, day, week).
-   *
-   * @param string $aggregationPeriod
+   * @param string
    */
   public function setAggregationPeriod($aggregationPeriod)
   {
@@ -154,10 +81,7 @@ class EnterpriseCrmEventbusProtoTaskAlertConfig extends \Google\Model
     return $this->aggregationPeriod;
   }
   /**
-   * Set to false by default. When set to true, the metrics are not aggregated
-   * or pushed to Monarch for this workflow alert.
-   *
-   * @param bool $alertDisabled
+   * @param bool
    */
   public function setAlertDisabled($alertDisabled)
   {
@@ -171,11 +95,7 @@ class EnterpriseCrmEventbusProtoTaskAlertConfig extends \Google\Model
     return $this->alertDisabled;
   }
   /**
-   * A name to identify this alert. This will be displayed in the alert subject.
-   * If set, this name should be unique in within the scope of the containing
-   * workflow.
-   *
-   * @param string $alertName
+   * @param string
    */
   public function setAlertName($alertName)
   {
@@ -189,10 +109,7 @@ class EnterpriseCrmEventbusProtoTaskAlertConfig extends \Google\Model
     return $this->alertName;
   }
   /**
-   * Client associated with this alert configuration. Must be a client enabled
-   * in one of the containing workflow's triggers.
-   *
-   * @param string $clientId
+   * @param string
    */
   public function setClientId($clientId)
   {
@@ -206,11 +123,7 @@ class EnterpriseCrmEventbusProtoTaskAlertConfig extends \Google\Model
     return $this->clientId;
   }
   /**
-   * Should be specified only for TASK_AVERAGE_DURATION and
-   * TASK_PERCENTILE_DURATION metrics. This member should be used to specify
-   * what duration value the metrics should exceed for the alert to trigger.
-   *
-   * @param string $durationThresholdMs
+   * @param string
    */
   public function setDurationThresholdMs($durationThresholdMs)
   {
@@ -224,7 +137,7 @@ class EnterpriseCrmEventbusProtoTaskAlertConfig extends \Google\Model
     return $this->durationThresholdMs;
   }
   /**
-   * @param EnterpriseCrmEventbusProtoBaseAlertConfigErrorEnumList $errorEnumList
+   * @param EnterpriseCrmEventbusProtoBaseAlertConfigErrorEnumList
    */
   public function setErrorEnumList(EnterpriseCrmEventbusProtoBaseAlertConfigErrorEnumList $errorEnumList)
   {
@@ -238,24 +151,21 @@ class EnterpriseCrmEventbusProtoTaskAlertConfig extends \Google\Model
     return $this->errorEnumList;
   }
   /**
-   * @param self::METRIC_TYPE_* $metricType
+   * @param string
    */
   public function setMetricType($metricType)
   {
     $this->metricType = $metricType;
   }
   /**
-   * @return self::METRIC_TYPE_*
+   * @return string
    */
   public function getMetricType()
   {
     return $this->metricType;
   }
   /**
-   * For how many contiguous aggregation periods should the expected min or max
-   * be violated for the alert to be fired.
-   *
-   * @param int $numAggregationPeriods
+   * @param int
    */
   public function setNumAggregationPeriods($numAggregationPeriods)
   {
@@ -269,9 +179,7 @@ class EnterpriseCrmEventbusProtoTaskAlertConfig extends \Google\Model
     return $this->numAggregationPeriods;
   }
   /**
-   * Only count final task attempts, not retries.
-   *
-   * @param bool $onlyFinalAttempt
+   * @param bool
    */
   public function setOnlyFinalAttempt($onlyFinalAttempt)
   {
@@ -285,9 +193,7 @@ class EnterpriseCrmEventbusProtoTaskAlertConfig extends \Google\Model
     return $this->onlyFinalAttempt;
   }
   /**
-   * Link to a playbook for resolving the issue that triggered this alert.
-   *
-   * @param string $playbookUrl
+   * @param string
    */
   public function setPlaybookUrl($playbookUrl)
   {
@@ -301,28 +207,21 @@ class EnterpriseCrmEventbusProtoTaskAlertConfig extends \Google\Model
     return $this->playbookUrl;
   }
   /**
-   * The threshold type for which this alert is being configured. If value falls
-   * below expected_min or exceeds expected_max, an alert will be fired.
-   *
-   * Accepted values: UNSPECIFIED_THRESHOLD_TYPE, EXPECTED_MIN, EXPECTED_MAX
-   *
-   * @param self::THRESHOLD_TYPE_* $thresholdType
+   * @param string
    */
   public function setThresholdType($thresholdType)
   {
     $this->thresholdType = $thresholdType;
   }
   /**
-   * @return self::THRESHOLD_TYPE_*
+   * @return string
    */
   public function getThresholdType()
   {
     return $this->thresholdType;
   }
   /**
-   * The metric value, above or below which the alert should be triggered.
-   *
-   * @param EnterpriseCrmEventbusProtoBaseAlertConfigThresholdValue $thresholdValue
+   * @param EnterpriseCrmEventbusProtoBaseAlertConfigThresholdValue
    */
   public function setThresholdValue(EnterpriseCrmEventbusProtoBaseAlertConfigThresholdValue $thresholdValue)
   {
@@ -336,7 +235,7 @@ class EnterpriseCrmEventbusProtoTaskAlertConfig extends \Google\Model
     return $this->thresholdValue;
   }
   /**
-   * @param EnterpriseCrmEventbusProtoBaseAlertConfigErrorEnumList $warningEnumList
+   * @param EnterpriseCrmEventbusProtoBaseAlertConfigErrorEnumList
    */
   public function setWarningEnumList(EnterpriseCrmEventbusProtoBaseAlertConfigErrorEnumList $warningEnumList)
   {

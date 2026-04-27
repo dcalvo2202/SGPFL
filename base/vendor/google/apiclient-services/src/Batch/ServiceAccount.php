@@ -21,22 +21,16 @@ class ServiceAccount extends \Google\Collection
 {
   protected $collection_key = 'scopes';
   /**
-   * Email address of the service account.
-   *
    * @var string
    */
   public $email;
   /**
-   * List of scopes to be enabled for this service account.
-   *
    * @var string[]
    */
   public $scopes;
 
   /**
-   * Email address of the service account.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {
@@ -50,9 +44,7 @@ class ServiceAccount extends \Google\Collection
     return $this->email;
   }
   /**
-   * List of scopes to be enabled for this service account.
-   *
-   * @param string[] $scopes
+   * @param string[]
    */
   public function setScopes($scopes)
   {

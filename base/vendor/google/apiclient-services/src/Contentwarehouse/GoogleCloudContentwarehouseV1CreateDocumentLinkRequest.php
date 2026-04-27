@@ -25,10 +25,7 @@ class GoogleCloudContentwarehouseV1CreateDocumentLinkRequest extends \Google\Mod
   protected $requestMetadataDataType = '';
 
   /**
-   * Required. Document links associated with the source documents
-   * (source_document_id).
-   *
-   * @param GoogleCloudContentwarehouseV1DocumentLink $documentLink
+   * @param GoogleCloudContentwarehouseV1DocumentLink
    */
   public function setDocumentLink(GoogleCloudContentwarehouseV1DocumentLink $documentLink)
   {
@@ -42,10 +39,7 @@ class GoogleCloudContentwarehouseV1CreateDocumentLinkRequest extends \Google\Mod
     return $this->documentLink;
   }
   /**
-   * The meta information collected about the document creator, used to enforce
-   * access control for the service.
-   *
-   * @param GoogleCloudContentwarehouseV1RequestMetadata $requestMetadata
+   * @param GoogleCloudContentwarehouseV1RequestMetadata
    */
   public function setRequestMetadata(GoogleCloudContentwarehouseV1RequestMetadata $requestMetadata)
   {

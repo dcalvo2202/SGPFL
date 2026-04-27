@@ -24,9 +24,7 @@ class GoogleCloudAiplatformV1SharePointSources extends \Google\Collection
   protected $sharePointSourcesDataType = 'array';
 
   /**
-   * The SharePoint sources.
-   *
-   * @param GoogleCloudAiplatformV1SharePointSourcesSharePointSource[] $sharePointSources
+   * @param GoogleCloudAiplatformV1SharePointSourcesSharePointSource[]
    */
   public function setSharePointSources($sharePointSources)
   {

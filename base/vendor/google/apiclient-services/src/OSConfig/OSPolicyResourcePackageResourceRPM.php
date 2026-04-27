@@ -20,10 +20,6 @@ namespace Google\Service\OSConfig;
 class OSPolicyResourcePackageResourceRPM extends \Google\Model
 {
   /**
-   * Whether dependencies should also be installed. - install when false: `rpm
-   * --upgrade --replacepkgs package.rpm` - install when true: `yum -y install
-   * package.rpm` or `zypper -y install package.rpm`
-   *
    * @var bool
    */
   public $pullDeps;
@@ -31,11 +27,7 @@ class OSPolicyResourcePackageResourceRPM extends \Google\Model
   protected $sourceDataType = '';
 
   /**
-   * Whether dependencies should also be installed. - install when false: `rpm
-   * --upgrade --replacepkgs package.rpm` - install when true: `yum -y install
-   * package.rpm` or `zypper -y install package.rpm`
-   *
-   * @param bool $pullDeps
+   * @param bool
    */
   public function setPullDeps($pullDeps)
   {
@@ -49,9 +41,7 @@ class OSPolicyResourcePackageResourceRPM extends \Google\Model
     return $this->pullDeps;
   }
   /**
-   * Required. An rpm package.
-   *
-   * @param OSPolicyResourceFile $source
+   * @param OSPolicyResourceFile
    */
   public function setSource(OSPolicyResourceFile $source)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\SecurityCommandCenter;
 class GoogleCloudSecuritycenterV2IssueFindingCve extends \Google\Model
 {
   /**
-   * The CVE name.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The CVE name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

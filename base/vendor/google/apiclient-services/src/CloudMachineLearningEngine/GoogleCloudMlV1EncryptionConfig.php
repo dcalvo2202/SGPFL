@@ -20,22 +20,12 @@ namespace Google\Service\CloudMachineLearningEngine;
 class GoogleCloudMlV1EncryptionConfig extends \Google\Model
 {
   /**
-   * The Cloud KMS resource identifier of the customer-managed encryption key
-   * used to protect a resource, such as a training job. It has the following
-   * format: `projects/{PROJECT_ID}/locations/{REGION}/keyRings/{KEY_RING_NAME}/
-   * cryptoKeys/{KEY_NAME}`
-   *
    * @var string
    */
   public $kmsKeyName;
 
   /**
-   * The Cloud KMS resource identifier of the customer-managed encryption key
-   * used to protect a resource, such as a training job. It has the following
-   * format: `projects/{PROJECT_ID}/locations/{REGION}/keyRings/{KEY_RING_NAME}/
-   * cryptoKeys/{KEY_NAME}`
-   *
-   * @param string $kmsKeyName
+   * @param string
    */
   public function setKmsKeyName($kmsKeyName)
   {

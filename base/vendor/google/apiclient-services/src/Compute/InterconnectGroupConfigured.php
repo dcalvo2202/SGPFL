@@ -23,7 +23,7 @@ class InterconnectGroupConfigured extends \Google\Model
   protected $topologyCapabilityDataType = '';
 
   /**
-   * @param InterconnectGroupConfiguredTopologyCapability $topologyCapability
+   * @param InterconnectGroupConfiguredTopologyCapability
    */
   public function setTopologyCapability(InterconnectGroupConfiguredTopologyCapability $topologyCapability)
   {

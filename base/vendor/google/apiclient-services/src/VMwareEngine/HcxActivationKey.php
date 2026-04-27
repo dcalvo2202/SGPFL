@@ -20,60 +20,28 @@ namespace Google\Service\VMwareEngine;
 class HcxActivationKey extends \Google\Model
 {
   /**
-   * Unspecified state.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * State of a newly generated activation key.
-   */
-  public const STATE_AVAILABLE = 'AVAILABLE';
-  /**
-   * State of key when it has been used to activate HCX appliance.
-   */
-  public const STATE_CONSUMED = 'CONSUMED';
-  /**
-   * State of key when it is being created.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * Output only. HCX activation key.
-   *
    * @var string
    */
   public $activationKey;
   /**
-   * Output only. Creation time of HCX activation key.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. The resource name of this HcxActivationKey. Resource names are
-   * schemeless URIs that follow the conventions in
-   * https://cloud.google.com/apis/design/resource_names. For example:
-   * `projects/my-project/locations/us-central1/privateClouds/my-
-   * cloud/hcxActivationKeys/my-key`
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. State of HCX activation key.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. System-generated unique identifier for the resource.
-   *
    * @var string
    */
   public $uid;
 
   /**
-   * Output only. HCX activation key.
-   *
-   * @param string $activationKey
+   * @param string
    */
   public function setActivationKey($activationKey)
   {
@@ -87,9 +55,7 @@ class HcxActivationKey extends \Google\Model
     return $this->activationKey;
   }
   /**
-   * Output only. Creation time of HCX activation key.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -103,13 +69,7 @@ class HcxActivationKey extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. The resource name of this HcxActivationKey. Resource names are
-   * schemeless URIs that follow the conventions in
-   * https://cloud.google.com/apis/design/resource_names. For example:
-   * `projects/my-project/locations/us-central1/privateClouds/my-
-   * cloud/hcxActivationKeys/my-key`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -123,27 +83,21 @@ class HcxActivationKey extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. State of HCX activation key.
-   *
-   * Accepted values: STATE_UNSPECIFIED, AVAILABLE, CONSUMED, CREATING
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. System-generated unique identifier for the resource.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {

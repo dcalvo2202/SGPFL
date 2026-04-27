@@ -21,9 +21,6 @@ class GoogleChromeManagementV1ListTelemetryNotificationConfigsResponse extends \
 {
   protected $collection_key = 'telemetryNotificationConfigs';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GoogleChromeManagementV1ListTelemetryNotificationConfigsResponse extends \
   protected $telemetryNotificationConfigsDataType = 'array';
 
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class GoogleChromeManagementV1ListTelemetryNotificationConfigsResponse extends \
     return $this->nextPageToken;
   }
   /**
-   * The telemetry notification configs from the specified customer.
-   *
-   * @param GoogleChromeManagementV1TelemetryNotificationConfig[] $telemetryNotificationConfigs
+   * @param GoogleChromeManagementV1TelemetryNotificationConfig[]
    */
   public function setTelemetryNotificationConfigs($telemetryNotificationConfigs)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\Dataflow;
 class GetDebugConfigResponse extends \Google\Model
 {
   /**
-   * The encoded debug configuration for the requested component.
-   *
    * @var string
    */
   public $config;
 
   /**
-   * The encoded debug configuration for the requested component.
-   *
-   * @param string $config
+   * @param string
    */
   public function setConfig($config)
   {

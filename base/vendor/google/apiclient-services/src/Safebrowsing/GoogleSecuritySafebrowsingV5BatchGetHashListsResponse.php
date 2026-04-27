@@ -24,9 +24,7 @@ class GoogleSecuritySafebrowsingV5BatchGetHashListsResponse extends \Google\Coll
   protected $hashListsDataType = 'array';
 
   /**
-   * The hash lists in the same order given in the request.
-   *
-   * @param GoogleSecuritySafebrowsingV5HashList[] $hashLists
+   * @param GoogleSecuritySafebrowsingV5HashList[]
    */
   public function setHashLists($hashLists)
   {

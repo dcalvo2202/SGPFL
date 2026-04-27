@@ -21,36 +21,24 @@ class RemarketingListShare extends \Google\Collection
 {
   protected $collection_key = 'sharedAdvertiserIds';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#remarketingListShare".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Remarketing list ID. This is a read-only, auto-generated field.
-   *
    * @var string
    */
   public $remarketingListId;
   /**
-   * Accounts that the remarketing list is shared with.
-   *
    * @var string[]
    */
   public $sharedAccountIds;
   /**
-   * Advertisers that the remarketing list is shared with.
-   *
    * @var string[]
    */
   public $sharedAdvertiserIds;
 
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#remarketingListShare".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -64,9 +52,7 @@ class RemarketingListShare extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Remarketing list ID. This is a read-only, auto-generated field.
-   *
-   * @param string $remarketingListId
+   * @param string
    */
   public function setRemarketingListId($remarketingListId)
   {
@@ -80,9 +66,7 @@ class RemarketingListShare extends \Google\Collection
     return $this->remarketingListId;
   }
   /**
-   * Accounts that the remarketing list is shared with.
-   *
-   * @param string[] $sharedAccountIds
+   * @param string[]
    */
   public function setSharedAccountIds($sharedAccountIds)
   {
@@ -96,9 +80,7 @@ class RemarketingListShare extends \Google\Collection
     return $this->sharedAccountIds;
   }
   /**
-   * Advertisers that the remarketing list is shared with.
-   *
-   * @param string[] $sharedAdvertiserIds
+   * @param string[]
    */
   public function setSharedAdvertiserIds($sharedAdvertiserIds)
   {

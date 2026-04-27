@@ -23,19 +23,12 @@ class ListMetricDescriptorsResponse extends \Google\Collection
   protected $metricDescriptorsType = MetricDescriptor::class;
   protected $metricDescriptorsDataType = 'array';
   /**
-   * If there are more results than have been returned, then this field is set
-   * to a non-empty value. To see the additional results, use that value as
-   * page_token in the next call to this method.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The metric descriptors that are available to the project and that match the
-   * value of filter, if present.
-   *
-   * @param MetricDescriptor[] $metricDescriptors
+   * @param MetricDescriptor[]
    */
   public function setMetricDescriptors($metricDescriptors)
   {
@@ -49,11 +42,7 @@ class ListMetricDescriptorsResponse extends \Google\Collection
     return $this->metricDescriptors;
   }
   /**
-   * If there are more results than have been returned, then this field is set
-   * to a non-empty value. To see the additional results, use that value as
-   * page_token in the next call to this method.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

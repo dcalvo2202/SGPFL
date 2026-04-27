@@ -21,16 +21,12 @@ class RegionDisksAddResourcePoliciesRequest extends \Google\Collection
 {
   protected $collection_key = 'resourcePolicies';
   /**
-   * Resource policies to be added to this disk.
-   *
    * @var string[]
    */
   public $resourcePolicies;
 
   /**
-   * Resource policies to be added to this disk.
-   *
-   * @param string[] $resourcePolicies
+   * @param string[]
    */
   public function setResourcePolicies($resourcePolicies)
   {

@@ -21,24 +21,18 @@ class ListConnectivityTestsResponse extends \Google\Collection
 {
   protected $collection_key = 'unreachable';
   /**
-   * Page token to fetch the next set of Connectivity Tests.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $resourcesType = ConnectivityTest::class;
   protected $resourcesDataType = 'array';
   /**
-   * Locations that could not be reached (when querying all locations with `-`).
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * Page token to fetch the next set of Connectivity Tests.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -52,9 +46,7 @@ class ListConnectivityTestsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * List of Connectivity Tests.
-   *
-   * @param ConnectivityTest[] $resources
+   * @param ConnectivityTest[]
    */
   public function setResources($resources)
   {
@@ -68,9 +60,7 @@ class ListConnectivityTestsResponse extends \Google\Collection
     return $this->resources;
   }
   /**
-   * Locations that could not be reached (when querying all locations with `-`).
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

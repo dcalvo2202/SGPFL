@@ -20,64 +20,44 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1DataDiscoveryResultScanStatistics extends \Google\Model
 {
   /**
-   * The data processed in bytes.
-   *
    * @var string
    */
   public $dataProcessedBytes;
   /**
-   * The number of files excluded.
-   *
    * @var int
    */
   public $filesExcluded;
   /**
-   * The number of filesets created.
-   *
    * @var int
    */
   public $filesetsCreated;
   /**
-   * The number of filesets deleted.
-   *
    * @var int
    */
   public $filesetsDeleted;
   /**
-   * The number of filesets updated.
-   *
    * @var int
    */
   public $filesetsUpdated;
   /**
-   * The number of files scanned.
-   *
    * @var int
    */
   public $scannedFileCount;
   /**
-   * The number of tables created.
-   *
    * @var int
    */
   public $tablesCreated;
   /**
-   * The number of tables deleted.
-   *
    * @var int
    */
   public $tablesDeleted;
   /**
-   * The number of tables updated.
-   *
    * @var int
    */
   public $tablesUpdated;
 
   /**
-   * The data processed in bytes.
-   *
-   * @param string $dataProcessedBytes
+   * @param string
    */
   public function setDataProcessedBytes($dataProcessedBytes)
   {
@@ -91,9 +71,7 @@ class GoogleCloudDataplexV1DataDiscoveryResultScanStatistics extends \Google\Mod
     return $this->dataProcessedBytes;
   }
   /**
-   * The number of files excluded.
-   *
-   * @param int $filesExcluded
+   * @param int
    */
   public function setFilesExcluded($filesExcluded)
   {
@@ -107,9 +85,7 @@ class GoogleCloudDataplexV1DataDiscoveryResultScanStatistics extends \Google\Mod
     return $this->filesExcluded;
   }
   /**
-   * The number of filesets created.
-   *
-   * @param int $filesetsCreated
+   * @param int
    */
   public function setFilesetsCreated($filesetsCreated)
   {
@@ -123,9 +99,7 @@ class GoogleCloudDataplexV1DataDiscoveryResultScanStatistics extends \Google\Mod
     return $this->filesetsCreated;
   }
   /**
-   * The number of filesets deleted.
-   *
-   * @param int $filesetsDeleted
+   * @param int
    */
   public function setFilesetsDeleted($filesetsDeleted)
   {
@@ -139,9 +113,7 @@ class GoogleCloudDataplexV1DataDiscoveryResultScanStatistics extends \Google\Mod
     return $this->filesetsDeleted;
   }
   /**
-   * The number of filesets updated.
-   *
-   * @param int $filesetsUpdated
+   * @param int
    */
   public function setFilesetsUpdated($filesetsUpdated)
   {
@@ -155,9 +127,7 @@ class GoogleCloudDataplexV1DataDiscoveryResultScanStatistics extends \Google\Mod
     return $this->filesetsUpdated;
   }
   /**
-   * The number of files scanned.
-   *
-   * @param int $scannedFileCount
+   * @param int
    */
   public function setScannedFileCount($scannedFileCount)
   {
@@ -171,9 +141,7 @@ class GoogleCloudDataplexV1DataDiscoveryResultScanStatistics extends \Google\Mod
     return $this->scannedFileCount;
   }
   /**
-   * The number of tables created.
-   *
-   * @param int $tablesCreated
+   * @param int
    */
   public function setTablesCreated($tablesCreated)
   {
@@ -187,9 +155,7 @@ class GoogleCloudDataplexV1DataDiscoveryResultScanStatistics extends \Google\Mod
     return $this->tablesCreated;
   }
   /**
-   * The number of tables deleted.
-   *
-   * @param int $tablesDeleted
+   * @param int
    */
   public function setTablesDeleted($tablesDeleted)
   {
@@ -203,9 +169,7 @@ class GoogleCloudDataplexV1DataDiscoveryResultScanStatistics extends \Google\Mod
     return $this->tablesDeleted;
   }
   /**
-   * The number of tables updated.
-   *
-   * @param int $tablesUpdated
+   * @param int
    */
   public function setTablesUpdated($tablesUpdated)
   {

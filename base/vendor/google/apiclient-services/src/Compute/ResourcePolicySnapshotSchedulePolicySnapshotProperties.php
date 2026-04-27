@@ -21,36 +21,24 @@ class ResourcePolicySnapshotSchedulePolicySnapshotProperties extends \Google\Col
 {
   protected $collection_key = 'storageLocations';
   /**
-   * Chain name that the snapshot is created in.
-   *
    * @var string
    */
   public $chainName;
   /**
-   * Indication to perform a 'guest aware' snapshot.
-   *
    * @var bool
    */
   public $guestFlush;
   /**
-   * Labels to apply to scheduled snapshots. These can be later modified by the
-   * setLabels method. Label values may be empty.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Cloud Storage bucket storage location of the auto snapshot (regional or
-   * multi-regional).
-   *
    * @var string[]
    */
   public $storageLocations;
 
   /**
-   * Chain name that the snapshot is created in.
-   *
-   * @param string $chainName
+   * @param string
    */
   public function setChainName($chainName)
   {
@@ -64,9 +52,7 @@ class ResourcePolicySnapshotSchedulePolicySnapshotProperties extends \Google\Col
     return $this->chainName;
   }
   /**
-   * Indication to perform a 'guest aware' snapshot.
-   *
-   * @param bool $guestFlush
+   * @param bool
    */
   public function setGuestFlush($guestFlush)
   {
@@ -80,10 +66,7 @@ class ResourcePolicySnapshotSchedulePolicySnapshotProperties extends \Google\Col
     return $this->guestFlush;
   }
   /**
-   * Labels to apply to scheduled snapshots. These can be later modified by the
-   * setLabels method. Label values may be empty.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -97,10 +80,7 @@ class ResourcePolicySnapshotSchedulePolicySnapshotProperties extends \Google\Col
     return $this->labels;
   }
   /**
-   * Cloud Storage bucket storage location of the auto snapshot (regional or
-   * multi-regional).
-   *
-   * @param string[] $storageLocations
+   * @param string[]
    */
   public function setStorageLocations($storageLocations)
   {

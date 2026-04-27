@@ -23,25 +23,16 @@ class ListAnswersResponse extends \Google\Collection
   protected $answersType = Answer::class;
   protected $answersDataType = 'array';
   /**
-   * If the number of answers exceeds the requested max page size, this field is
-   * populated with a token to fetch the next page of answers on a subsequent
-   * call. If there are no more answers, this field is not present in the
-   * response.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * The total number of answers posted for this question across all pages.
-   *
    * @var int
    */
   public $totalSize;
 
   /**
-   * The requested answers.
-   *
-   * @param Answer[] $answers
+   * @param Answer[]
    */
   public function setAnswers($answers)
   {
@@ -55,12 +46,7 @@ class ListAnswersResponse extends \Google\Collection
     return $this->answers;
   }
   /**
-   * If the number of answers exceeds the requested max page size, this field is
-   * populated with a token to fetch the next page of answers on a subsequent
-   * call. If there are no more answers, this field is not present in the
-   * response.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -74,9 +60,7 @@ class ListAnswersResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The total number of answers posted for this question across all pages.
-   *
-   * @param int $totalSize
+   * @param int
    */
   public function setTotalSize($totalSize)
   {

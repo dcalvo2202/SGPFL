@@ -21,18 +21,12 @@ class EnrollDataSourcesRequest extends \Google\Collection
 {
   protected $collection_key = 'dataSourceIds';
   /**
-   * Data sources that are enrolled. It is required to provide at least one data
-   * source id.
-   *
    * @var string[]
    */
   public $dataSourceIds;
 
   /**
-   * Data sources that are enrolled. It is required to provide at least one data
-   * source id.
-   *
-   * @param string[] $dataSourceIds
+   * @param string[]
    */
   public function setDataSourceIds($dataSourceIds)
   {

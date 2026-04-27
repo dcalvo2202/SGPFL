@@ -20,41 +20,28 @@ namespace Google\Service\DataFusion;
 class DnsPeering extends \Google\Model
 {
   /**
-   * Optional. Optional description of the dns zone.
-   *
    * @var string
    */
   public $description;
   /**
-   * Required. The dns name suffix of the zone.
-   *
    * @var string
    */
   public $domain;
   /**
-   * Identifier. The resource name of the dns peering zone. Format: projects/{pr
-   * oject}/locations/{location}/instances/{instance}/dnsPeerings/{dns_peering}
-   *
    * @var string
    */
   public $name;
   /**
-   * Optional. Optional target network to which dns peering should happen.
-   *
    * @var string
    */
   public $targetNetwork;
   /**
-   * Optional. Optional target project to which dns peering should happen.
-   *
    * @var string
    */
   public $targetProject;
 
   /**
-   * Optional. Optional description of the dns zone.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -68,9 +55,7 @@ class DnsPeering extends \Google\Model
     return $this->description;
   }
   /**
-   * Required. The dns name suffix of the zone.
-   *
-   * @param string $domain
+   * @param string
    */
   public function setDomain($domain)
   {
@@ -84,10 +69,7 @@ class DnsPeering extends \Google\Model
     return $this->domain;
   }
   /**
-   * Identifier. The resource name of the dns peering zone. Format: projects/{pr
-   * oject}/locations/{location}/instances/{instance}/dnsPeerings/{dns_peering}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -101,9 +83,7 @@ class DnsPeering extends \Google\Model
     return $this->name;
   }
   /**
-   * Optional. Optional target network to which dns peering should happen.
-   *
-   * @param string $targetNetwork
+   * @param string
    */
   public function setTargetNetwork($targetNetwork)
   {
@@ -117,9 +97,7 @@ class DnsPeering extends \Google\Model
     return $this->targetNetwork;
   }
   /**
-   * Optional. Optional target project to which dns peering should happen.
-   *
-   * @param string $targetProject
+   * @param string
    */
   public function setTargetProject($targetProject)
   {

@@ -20,62 +20,24 @@ namespace Google\Service\Dfareporting;
 class TvCampaignTimepoint extends \Google\Model
 {
   /**
-   * Default value, should never be set.
-   */
-  public const DATE_WINDOW_WEEKS_UNSPECIFIED = 'WEEKS_UNSPECIFIED';
-  /**
-   * One Day.
-   */
-  public const DATE_WINDOW_DAYS_ONE = 'DAYS_ONE';
-  /**
-   * One week.
-   */
-  public const DATE_WINDOW_WEEKS_ONE = 'WEEKS_ONE';
-  /**
-   * Four weeks.
-   */
-  public const DATE_WINDOW_WEEKS_FOUR = 'WEEKS_FOUR';
-  /**
-   * Eight weeks.
-   */
-  public const DATE_WINDOW_WEEKS_EIGHT = 'WEEKS_EIGHT';
-  /**
-   * Twelve weeks.
-   */
-  public const DATE_WINDOW_WEEKS_TWELVE = 'WEEKS_TWELVE';
-  /**
-   * The date window of the timepoint.
-   *
    * @var string
    */
   public $dateWindow;
-  /**
-   * The spend within the time range of the timepoint.
-   *
-   * @var 
-   */
   public $spend;
   /**
-   * The start date of the timepoint. A string in the format of "yyyy-MM-dd".
-   *
    * @var string
    */
   public $startDate;
 
   /**
-   * The date window of the timepoint.
-   *
-   * Accepted values: WEEKS_UNSPECIFIED, DAYS_ONE, WEEKS_ONE, WEEKS_FOUR,
-   * WEEKS_EIGHT, WEEKS_TWELVE
-   *
-   * @param self::DATE_WINDOW_* $dateWindow
+   * @param string
    */
   public function setDateWindow($dateWindow)
   {
     $this->dateWindow = $dateWindow;
   }
   /**
-   * @return self::DATE_WINDOW_*
+   * @return string
    */
   public function getDateWindow()
   {
@@ -90,9 +52,7 @@ class TvCampaignTimepoint extends \Google\Model
     return $this->spend;
   }
   /**
-   * The start date of the timepoint. A string in the format of "yyyy-MM-dd".
-   *
-   * @param string $startDate
+   * @param string
    */
   public function setStartDate($startDate)
   {

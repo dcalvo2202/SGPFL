@@ -41,7 +41,7 @@ class Spanner extends \Google\Service
   /** Administer your Spanner databases. */
   const SPANNER_ADMIN =
       "https://www.googleapis.com/auth/spanner.admin";
-  /** See, edit, configure, and delete your Google Cloud Spanner data and see the email address for your Google Account. */
+  /** View and manage the contents of your Spanner databases. */
   const SPANNER_DATA =
       "https://www.googleapis.com/auth/spanner.data";
 
@@ -248,10 +248,6 @@ class Spanner extends \Google\Service
                   'location' => 'query',
                   'type' => 'string',
                 ],
-                'returnPartialSuccess' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
               ],
             ],
           ]
@@ -313,10 +309,6 @@ class Spanner extends \Google\Service
                 'pageToken' => [
                   'location' => 'query',
                   'type' => 'string',
-                ],
-                'returnPartialSuccess' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ],
               ],
             ],
@@ -664,10 +656,6 @@ class Spanner extends \Google\Service
                 'pageToken' => [
                   'location' => 'query',
                   'type' => 'string',
-                ],
-                'returnPartialSuccess' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ],
               ],
             ],
@@ -1081,10 +1069,6 @@ class Spanner extends \Google\Service
                   'location' => 'query',
                   'type' => 'string',
                 ],
-                'returnPartialSuccess' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
               ],
             ],
           ]
@@ -1461,10 +1445,6 @@ class Spanner extends \Google\Service
                   'location' => 'query',
                   'type' => 'string',
                 ],
-                'returnPartialSuccess' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
               ],
             ],
           ]
@@ -1526,10 +1506,6 @@ class Spanner extends \Google\Service
                 'pageToken' => [
                   'location' => 'query',
                   'type' => 'string',
-                ],
-                'returnPartialSuccess' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ],
               ],
             ],

@@ -22,18 +22,12 @@ class GoogleCloudRetailV2ReplaceCatalogAttributeRequest extends \Google\Model
   protected $catalogAttributeType = GoogleCloudRetailV2CatalogAttribute::class;
   protected $catalogAttributeDataType = '';
   /**
-   * Indicates which fields in the provided CatalogAttribute to update. The
-   * following are NOT supported: * CatalogAttribute.key If not set, all
-   * supported fields are updated.
-   *
    * @var string
    */
   public $updateMask;
 
   /**
-   * Required. The updated CatalogAttribute.
-   *
-   * @param GoogleCloudRetailV2CatalogAttribute $catalogAttribute
+   * @param GoogleCloudRetailV2CatalogAttribute
    */
   public function setCatalogAttribute(GoogleCloudRetailV2CatalogAttribute $catalogAttribute)
   {
@@ -47,11 +41,7 @@ class GoogleCloudRetailV2ReplaceCatalogAttributeRequest extends \Google\Model
     return $this->catalogAttribute;
   }
   /**
-   * Indicates which fields in the provided CatalogAttribute to update. The
-   * following are NOT supported: * CatalogAttribute.key If not set, all
-   * supported fields are updated.
-   *
-   * @param string $updateMask
+   * @param string
    */
   public function setUpdateMask($updateMask)
   {

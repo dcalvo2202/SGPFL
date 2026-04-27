@@ -19,51 +19,20 @@ namespace Google\Service\CloudBuild;
 
 class TaskRef extends \Google\Collection
 {
-  /**
-   * Default enum type; should not be used.
-   */
-  public const RESOLVER_RESOLVER_NAME_UNSPECIFIED = 'RESOLVER_NAME_UNSPECIFIED';
-  /**
-   * Bundles resolver. https://tekton.dev/docs/pipelines/bundle-resolver/
-   */
-  public const RESOLVER_BUNDLES = 'BUNDLES';
-  /**
-   * GCB repo resolver.
-   */
-  public const RESOLVER_GCB_REPO = 'GCB_REPO';
-  /**
-   * Simple Git resolver. https://tekton.dev/docs/pipelines/git-resolver/
-   */
-  public const RESOLVER_GIT = 'GIT';
-  /**
-   * Developer Connect resolver.
-   */
-  public const RESOLVER_DEVELOPER_CONNECT = 'DEVELOPER_CONNECT';
-  /**
-   * Default resolver.
-   */
-  public const RESOLVER_DEFAULT = 'DEFAULT';
   protected $collection_key = 'params';
   /**
-   * Optional. Name of the task.
-   *
    * @var string
    */
   public $name;
   protected $paramsType = Param::class;
   protected $paramsDataType = 'array';
   /**
-   * Resolver is the name of the resolver that should perform resolution of the
-   * referenced Tekton resource.
-   *
    * @var string
    */
   public $resolver;
 
   /**
-   * Optional. Name of the task.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -77,11 +46,7 @@ class TaskRef extends \Google\Collection
     return $this->name;
   }
   /**
-   * Params contains the parameters used to identify the referenced Tekton
-   * resource. Example entries might include "repo" or "path" but the set of
-   * params ultimately depends on the chosen resolver.
-   *
-   * @param Param[] $params
+   * @param Param[]
    */
   public function setParams($params)
   {
@@ -95,20 +60,14 @@ class TaskRef extends \Google\Collection
     return $this->params;
   }
   /**
-   * Resolver is the name of the resolver that should perform resolution of the
-   * referenced Tekton resource.
-   *
-   * Accepted values: RESOLVER_NAME_UNSPECIFIED, BUNDLES, GCB_REPO, GIT,
-   * DEVELOPER_CONNECT, DEFAULT
-   *
-   * @param self::RESOLVER_* $resolver
+   * @param string
    */
   public function setResolver($resolver)
   {
     $this->resolver = $resolver;
   }
   /**
-   * @return self::RESOLVER_*
+   * @return string
    */
   public function getResolver()
   {

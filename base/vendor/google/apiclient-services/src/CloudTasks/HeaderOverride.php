@@ -23,12 +23,7 @@ class HeaderOverride extends \Google\Model
   protected $headerDataType = '';
 
   /**
-   * Header embodying a key and a value. Do not put business sensitive or
-   * personally identifying data in the HTTP Header Override Configuration or
-   * other similar fields in accordance with Section 12 (Resource Fields) of the
-   * [Service Specific Terms](https://cloud.google.com/terms/service-terms).
-   *
-   * @param Header $header
+   * @param Header
    */
   public function setHeader(Header $header)
   {

@@ -20,21 +20,14 @@ namespace Google\Service\YouTube;
 class LiveChatBan extends \Google\Model
 {
   /**
-   * Etag of this resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * The ID that YouTube assigns to uniquely identify the ban.
-   *
    * @var string
    */
   public $id;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * `"youtube#liveChatBan"`.
-   *
    * @var string
    */
   public $kind;
@@ -42,9 +35,7 @@ class LiveChatBan extends \Google\Model
   protected $snippetDataType = '';
 
   /**
-   * Etag of this resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -58,9 +49,7 @@ class LiveChatBan extends \Google\Model
     return $this->etag;
   }
   /**
-   * The ID that YouTube assigns to uniquely identify the ban.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -74,10 +63,7 @@ class LiveChatBan extends \Google\Model
     return $this->id;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * `"youtube#liveChatBan"`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -91,9 +77,7 @@ class LiveChatBan extends \Google\Model
     return $this->kind;
   }
   /**
-   * The `snippet` object contains basic details about the ban.
-   *
-   * @param LiveChatBanSnippet $snippet
+   * @param LiveChatBanSnippet
    */
   public function setSnippet(LiveChatBanSnippet $snippet)
   {

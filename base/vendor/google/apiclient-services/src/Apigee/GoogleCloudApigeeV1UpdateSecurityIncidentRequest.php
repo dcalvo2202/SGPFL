@@ -22,19 +22,12 @@ class GoogleCloudApigeeV1UpdateSecurityIncidentRequest extends \Google\Model
   protected $securityIncidentType = GoogleCloudApigeeV1SecurityIncident::class;
   protected $securityIncidentDataType = '';
   /**
-   * Required. The list of fields to update. Allowed fields are:
-   * LINT.IfChange(allowed_update_fields_comment) - observability
-   * LINT.ThenChange()
-   *
    * @var string
    */
   public $updateMask;
 
   /**
-   * Required. The security incident to update. Must contain all existing
-   * populated fields of the current incident.
-   *
-   * @param GoogleCloudApigeeV1SecurityIncident $securityIncident
+   * @param GoogleCloudApigeeV1SecurityIncident
    */
   public function setSecurityIncident(GoogleCloudApigeeV1SecurityIncident $securityIncident)
   {
@@ -48,11 +41,7 @@ class GoogleCloudApigeeV1UpdateSecurityIncidentRequest extends \Google\Model
     return $this->securityIncident;
   }
   /**
-   * Required. The list of fields to update. Allowed fields are:
-   * LINT.IfChange(allowed_update_fields_comment) - observability
-   * LINT.ThenChange()
-   *
-   * @param string $updateMask
+   * @param string
    */
   public function setUpdateMask($updateMask)
   {

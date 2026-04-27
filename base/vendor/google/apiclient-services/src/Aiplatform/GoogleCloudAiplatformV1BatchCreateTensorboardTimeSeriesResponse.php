@@ -24,9 +24,7 @@ class GoogleCloudAiplatformV1BatchCreateTensorboardTimeSeriesResponse extends \G
   protected $tensorboardTimeSeriesDataType = 'array';
 
   /**
-   * The created TensorboardTimeSeries.
-   *
-   * @param GoogleCloudAiplatformV1TensorboardTimeSeries[] $tensorboardTimeSeries
+   * @param GoogleCloudAiplatformV1TensorboardTimeSeries[]
    */
   public function setTensorboardTimeSeries($tensorboardTimeSeries)
   {

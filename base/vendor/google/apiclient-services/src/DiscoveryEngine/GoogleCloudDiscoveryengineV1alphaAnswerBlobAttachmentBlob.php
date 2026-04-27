@@ -20,22 +20,16 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1alphaAnswerBlobAttachmentBlob extends \Google\Model
 {
   /**
-   * Output only. Raw bytes.
-   *
    * @var string
    */
   public $data;
   /**
-   * Output only. The media type (MIME type) of the generated or retrieved data.
-   *
    * @var string
    */
   public $mimeType;
 
   /**
-   * Output only. Raw bytes.
-   *
-   * @param string $data
+   * @param string
    */
   public function setData($data)
   {
@@ -49,9 +43,7 @@ class GoogleCloudDiscoveryengineV1alphaAnswerBlobAttachmentBlob extends \Google\
     return $this->data;
   }
   /**
-   * Output only. The media type (MIME type) of the generated or retrieved data.
-   *
-   * @param string $mimeType
+   * @param string
    */
   public function setMimeType($mimeType)
   {

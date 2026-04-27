@@ -23,9 +23,7 @@ class Sum extends \Google\Model
   protected $propertyDataType = '';
 
   /**
-   * The property to aggregate on.
-   *
-   * @param PropertyReference $property
+   * @param PropertyReference
    */
   public function setProperty(PropertyReference $property)
   {

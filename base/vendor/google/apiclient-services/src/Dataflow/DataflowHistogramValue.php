@@ -21,20 +21,12 @@ class DataflowHistogramValue extends \Google\Collection
 {
   protected $collection_key = 'bucketCounts';
   /**
-   * Optional. The number of values in each bucket of the histogram, as
-   * described in `bucket_options`. `bucket_counts` should contain N values,
-   * where N is the number of buckets specified in `bucket_options`. If
-   * `bucket_counts` has fewer than N values, the remaining values are assumed
-   * to be 0.
-   *
    * @var string[]
    */
   public $bucketCounts;
   protected $bucketOptionsType = BucketOptions::class;
   protected $bucketOptionsDataType = '';
   /**
-   * Number of values recorded in this histogram.
-   *
    * @var string
    */
   public $count;
@@ -42,13 +34,7 @@ class DataflowHistogramValue extends \Google\Collection
   protected $outlierStatsDataType = '';
 
   /**
-   * Optional. The number of values in each bucket of the histogram, as
-   * described in `bucket_options`. `bucket_counts` should contain N values,
-   * where N is the number of buckets specified in `bucket_options`. If
-   * `bucket_counts` has fewer than N values, the remaining values are assumed
-   * to be 0.
-   *
-   * @param string[] $bucketCounts
+   * @param string[]
    */
   public function setBucketCounts($bucketCounts)
   {
@@ -62,9 +48,7 @@ class DataflowHistogramValue extends \Google\Collection
     return $this->bucketCounts;
   }
   /**
-   * Describes the bucket boundaries used in the histogram.
-   *
-   * @param BucketOptions $bucketOptions
+   * @param BucketOptions
    */
   public function setBucketOptions(BucketOptions $bucketOptions)
   {
@@ -78,9 +62,7 @@ class DataflowHistogramValue extends \Google\Collection
     return $this->bucketOptions;
   }
   /**
-   * Number of values recorded in this histogram.
-   *
-   * @param string $count
+   * @param string
    */
   public function setCount($count)
   {
@@ -94,10 +76,7 @@ class DataflowHistogramValue extends \Google\Collection
     return $this->count;
   }
   /**
-   * Statistics on the values recorded in the histogram that fall out of the
-   * bucket boundaries.
-   *
-   * @param OutlierStats $outlierStats
+   * @param OutlierStats
    */
   public function setOutlierStats(OutlierStats $outlierStats)
   {

@@ -20,24 +20,16 @@ namespace Google\Service\Dataform;
 class NotebookAction extends \Google\Model
 {
   /**
-   * Output only. The code contents of a Notebook to be run.
-   *
    * @var string
    */
   public $contents;
   /**
-   * Output only. The ID of the Vertex job that executed the notebook in
-   * contents and also the ID used for the outputs created in Google Cloud
-   * Storage buckets. Only set once the job has started to run.
-   *
    * @var string
    */
   public $jobId;
 
   /**
-   * Output only. The code contents of a Notebook to be run.
-   *
-   * @param string $contents
+   * @param string
    */
   public function setContents($contents)
   {
@@ -51,11 +43,7 @@ class NotebookAction extends \Google\Model
     return $this->contents;
   }
   /**
-   * Output only. The ID of the Vertex job that executed the notebook in
-   * contents and also the ID used for the outputs created in Google Cloud
-   * Storage buckets. Only set once the job has started to run.
-   *
-   * @param string $jobId
+   * @param string
    */
   public function setJobId($jobId)
   {

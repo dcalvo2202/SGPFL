@@ -20,54 +20,28 @@ namespace Google\Service\Games;
 class PlayerScore extends \Google\Model
 {
   /**
-   * The score is an all-time score.
-   */
-  public const TIME_SPAN_ALL_TIME = 'ALL_TIME';
-  /**
-   * The score is a weekly score.
-   */
-  public const TIME_SPAN_WEEKLY = 'WEEKLY';
-  /**
-   * The score is a daily score.
-   */
-  public const TIME_SPAN_DAILY = 'DAILY';
-  /**
-   * The formatted score for this player score.
-   *
    * @var string
    */
   public $formattedScore;
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#playerScore`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The numerical value for this player score.
-   *
    * @var string
    */
   public $score;
   /**
-   * Additional information about this score. Values will contain no more than
-   * 64 URI-safe characters as defined by section 2.3 of RFC 3986.
-   *
    * @var string
    */
   public $scoreTag;
   /**
-   * The time span for this player score.
-   *
    * @var string
    */
   public $timeSpan;
 
   /**
-   * The formatted score for this player score.
-   *
-   * @param string $formattedScore
+   * @param string
    */
   public function setFormattedScore($formattedScore)
   {
@@ -81,10 +55,7 @@ class PlayerScore extends \Google\Model
     return $this->formattedScore;
   }
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#playerScore`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -98,9 +69,7 @@ class PlayerScore extends \Google\Model
     return $this->kind;
   }
   /**
-   * The numerical value for this player score.
-   *
-   * @param string $score
+   * @param string
    */
   public function setScore($score)
   {
@@ -114,10 +83,7 @@ class PlayerScore extends \Google\Model
     return $this->score;
   }
   /**
-   * Additional information about this score. Values will contain no more than
-   * 64 URI-safe characters as defined by section 2.3 of RFC 3986.
-   *
-   * @param string $scoreTag
+   * @param string
    */
   public function setScoreTag($scoreTag)
   {
@@ -131,18 +97,14 @@ class PlayerScore extends \Google\Model
     return $this->scoreTag;
   }
   /**
-   * The time span for this player score.
-   *
-   * Accepted values: ALL_TIME, WEEKLY, DAILY
-   *
-   * @param self::TIME_SPAN_* $timeSpan
+   * @param string
    */
   public function setTimeSpan($timeSpan)
   {
     $this->timeSpan = $timeSpan;
   }
   /**
-   * @return self::TIME_SPAN_*
+   * @return string
    */
   public function getTimeSpan()
   {

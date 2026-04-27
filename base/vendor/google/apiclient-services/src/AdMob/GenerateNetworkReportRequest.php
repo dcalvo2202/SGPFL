@@ -23,9 +23,7 @@ class GenerateNetworkReportRequest extends \Google\Model
   protected $reportSpecDataType = '';
 
   /**
-   * Network report specification.
-   *
-   * @param NetworkReportSpec $reportSpec
+   * @param NetworkReportSpec
    */
   public function setReportSpec(NetworkReportSpec $reportSpec)
   {

@@ -25,9 +25,7 @@ class QuestionItem extends \Google\Model
   protected $questionDataType = '';
 
   /**
-   * The image displayed within the question.
-   *
-   * @param Image $image
+   * @param Image
    */
   public function setImage(Image $image)
   {
@@ -41,9 +39,7 @@ class QuestionItem extends \Google\Model
     return $this->image;
   }
   /**
-   * Required. The displayed question.
-   *
-   * @param Question $question
+   * @param Question
    */
   public function setQuestion(Question $question)
   {

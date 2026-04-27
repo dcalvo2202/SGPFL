@@ -23,19 +23,12 @@ class ListNotificationChannelDescriptorsResponse extends \Google\Collection
   protected $channelDescriptorsType = NotificationChannelDescriptor::class;
   protected $channelDescriptorsDataType = 'array';
   /**
-   * If not empty, indicates that there may be more results that match the
-   * request. Use the value in the page_token field in a subsequent request to
-   * fetch the next set of results. If empty, all results have been returned.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The monitored resource descriptors supported for the specified project,
-   * optionally filtered.
-   *
-   * @param NotificationChannelDescriptor[] $channelDescriptors
+   * @param NotificationChannelDescriptor[]
    */
   public function setChannelDescriptors($channelDescriptors)
   {
@@ -49,11 +42,7 @@ class ListNotificationChannelDescriptorsResponse extends \Google\Collection
     return $this->channelDescriptors;
   }
   /**
-   * If not empty, indicates that there may be more results that match the
-   * request. Use the value in the page_token field in a subsequent request to
-   * fetch the next set of results. If empty, all results have been returned.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

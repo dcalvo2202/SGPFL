@@ -20,39 +20,16 @@ namespace Google\Service\VMwareEngine;
 class NetworkService extends \Google\Model
 {
   /**
-   * Unspecified service state. This is the default value.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Service is not provisioned.
-   */
-  public const STATE_UNPROVISIONED = 'UNPROVISIONED';
-  /**
-   * Service is in the process of being provisioned/deprovisioned.
-   */
-  public const STATE_RECONCILING = 'RECONCILING';
-  /**
-   * Service is active.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * True if the service is enabled; false otherwise.
-   *
    * @var bool
    */
   public $enabled;
   /**
-   * Output only. State of the service. New values may be added to this enum
-   * when appropriate.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * True if the service is enabled; false otherwise.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {
@@ -66,19 +43,14 @@ class NetworkService extends \Google\Model
     return $this->enabled;
   }
   /**
-   * Output only. State of the service. New values may be added to this enum
-   * when appropriate.
-   *
-   * Accepted values: STATE_UNSPECIFIED, UNPROVISIONED, RECONCILING, ACTIVE
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

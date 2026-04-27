@@ -20,16 +20,12 @@ namespace Google\Service\Config;
 class TerraformVariable extends \Google\Model
 {
   /**
-   * Optional. Input variable value.
-   *
    * @var array
    */
   public $inputValue;
 
   /**
-   * Optional. Input variable value.
-   *
-   * @param array $inputValue
+   * @param array
    */
   public function setInputValue($inputValue)
   {

@@ -20,34 +20,21 @@ namespace Google\Service\CloudAlloyDBAdmin;
 class StorageDatabasecenterProtoCommonTypedValue extends \Google\Model
 {
   /**
-   * For boolean value
-   *
    * @var bool
    */
   public $boolValue;
-  /**
-   * For double value
-   *
-   * @var 
-   */
   public $doubleValue;
   /**
-   * For integer value
-   *
    * @var string
    */
   public $int64Value;
   /**
-   * For string value
-   *
    * @var string
    */
   public $stringValue;
 
   /**
-   * For boolean value
-   *
-   * @param bool $boolValue
+   * @param bool
    */
   public function setBoolValue($boolValue)
   {
@@ -69,9 +56,7 @@ class StorageDatabasecenterProtoCommonTypedValue extends \Google\Model
     return $this->doubleValue;
   }
   /**
-   * For integer value
-   *
-   * @param string $int64Value
+   * @param string
    */
   public function setInt64Value($int64Value)
   {
@@ -85,9 +70,7 @@ class StorageDatabasecenterProtoCommonTypedValue extends \Google\Model
     return $this->int64Value;
   }
   /**
-   * For string value
-   *
-   * @param string $stringValue
+   * @param string
    */
   public function setStringValue($stringValue)
   {

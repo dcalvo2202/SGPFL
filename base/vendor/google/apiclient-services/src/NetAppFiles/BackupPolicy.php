@@ -20,100 +20,48 @@ namespace Google\Service\NetAppFiles;
 class BackupPolicy extends \Google\Model
 {
   /**
-   * State not set.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * BackupPolicy is being created.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * BackupPolicy is available for use.
-   */
-  public const STATE_READY = 'READY';
-  /**
-   * BackupPolicy is being deleted.
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * BackupPolicy is not valid and cannot be used.
-   */
-  public const STATE_ERROR = 'ERROR';
-  /**
-   * BackupPolicy is being updated.
-   */
-  public const STATE_UPDATING = 'UPDATING';
-  /**
-   * Output only. The total number of volumes assigned by this backup policy.
-   *
    * @var int
    */
   public $assignedVolumeCount;
   /**
-   * Output only. The time when the backup policy was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Number of daily backups to keep. Note that the minimum daily backup limit
-   * is 2.
-   *
    * @var int
    */
   public $dailyBackupLimit;
   /**
-   * Description of the backup policy.
-   *
    * @var string
    */
   public $description;
   /**
-   * If enabled, make backups automatically according to the schedules. This
-   * will be applied to all volumes that have this policy attached and enforced
-   * on volume level. If not specified, default is true.
-   *
    * @var bool
    */
   public $enabled;
   /**
-   * Resource labels to represent user provided metadata.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Number of monthly backups to keep. Note that the sum of daily, weekly and
-   * monthly backups should be greater than 1.
-   *
    * @var int
    */
   public $monthlyBackupLimit;
   /**
-   * Identifier. The resource name of the backup policy. Format: `projects/{proj
-   * ect_id}/locations/{location}/backupPolicies/{backup_policy_id}`.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The backup policy state.
-   *
    * @var string
    */
   public $state;
   /**
-   * Number of weekly backups to keep. Note that the sum of daily, weekly and
-   * monthly backups should be greater than 1.
-   *
    * @var int
    */
   public $weeklyBackupLimit;
 
   /**
-   * Output only. The total number of volumes assigned by this backup policy.
-   *
-   * @param int $assignedVolumeCount
+   * @param int
    */
   public function setAssignedVolumeCount($assignedVolumeCount)
   {
@@ -127,9 +75,7 @@ class BackupPolicy extends \Google\Model
     return $this->assignedVolumeCount;
   }
   /**
-   * Output only. The time when the backup policy was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -143,10 +89,7 @@ class BackupPolicy extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Number of daily backups to keep. Note that the minimum daily backup limit
-   * is 2.
-   *
-   * @param int $dailyBackupLimit
+   * @param int
    */
   public function setDailyBackupLimit($dailyBackupLimit)
   {
@@ -160,9 +103,7 @@ class BackupPolicy extends \Google\Model
     return $this->dailyBackupLimit;
   }
   /**
-   * Description of the backup policy.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -176,11 +117,7 @@ class BackupPolicy extends \Google\Model
     return $this->description;
   }
   /**
-   * If enabled, make backups automatically according to the schedules. This
-   * will be applied to all volumes that have this policy attached and enforced
-   * on volume level. If not specified, default is true.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {
@@ -194,9 +131,7 @@ class BackupPolicy extends \Google\Model
     return $this->enabled;
   }
   /**
-   * Resource labels to represent user provided metadata.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -210,10 +145,7 @@ class BackupPolicy extends \Google\Model
     return $this->labels;
   }
   /**
-   * Number of monthly backups to keep. Note that the sum of daily, weekly and
-   * monthly backups should be greater than 1.
-   *
-   * @param int $monthlyBackupLimit
+   * @param int
    */
   public function setMonthlyBackupLimit($monthlyBackupLimit)
   {
@@ -227,10 +159,7 @@ class BackupPolicy extends \Google\Model
     return $this->monthlyBackupLimit;
   }
   /**
-   * Identifier. The resource name of the backup policy. Format: `projects/{proj
-   * ect_id}/locations/{location}/backupPolicies/{backup_policy_id}`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -244,29 +173,21 @@ class BackupPolicy extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The backup policy state.
-   *
-   * Accepted values: STATE_UNSPECIFIED, CREATING, READY, DELETING, ERROR,
-   * UPDATING
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Number of weekly backups to keep. Note that the sum of daily, weekly and
-   * monthly backups should be greater than 1.
-   *
-   * @param int $weeklyBackupLimit
+   * @param int
    */
   public function setWeeklyBackupLimit($weeklyBackupLimit)
   {

@@ -20,21 +20,14 @@ namespace Google\Service\YouTube;
 class CommentThread extends \Google\Model
 {
   /**
-   * Etag of this resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * The ID that YouTube uses to uniquely identify the comment thread.
-   *
    * @var string
    */
   public $id;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "youtube#commentThread".
-   *
    * @var string
    */
   public $kind;
@@ -44,9 +37,7 @@ class CommentThread extends \Google\Model
   protected $snippetDataType = '';
 
   /**
-   * Etag of this resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -60,9 +51,7 @@ class CommentThread extends \Google\Model
     return $this->etag;
   }
   /**
-   * The ID that YouTube uses to uniquely identify the comment thread.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -76,10 +65,7 @@ class CommentThread extends \Google\Model
     return $this->id;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "youtube#commentThread".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -93,10 +79,7 @@ class CommentThread extends \Google\Model
     return $this->kind;
   }
   /**
-   * The replies object contains a limited number of replies (if any) to the top
-   * level comment found in the snippet.
-   *
-   * @param CommentThreadReplies $replies
+   * @param CommentThreadReplies
    */
   public function setReplies(CommentThreadReplies $replies)
   {
@@ -110,10 +93,7 @@ class CommentThread extends \Google\Model
     return $this->replies;
   }
   /**
-   * The snippet object contains basic details about the comment thread and also
-   * the top level comment.
-   *
-   * @param CommentThreadSnippet $snippet
+   * @param CommentThreadSnippet
    */
   public function setSnippet(CommentThreadSnippet $snippet)
   {

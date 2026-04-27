@@ -20,32 +20,20 @@ namespace Google\Service\Games;
 class EventPeriodRange extends \Google\Model
 {
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#eventPeriodRange`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The time when this update period ends, in millis, since 1970 UTC (Unix
-   * Epoch).
-   *
    * @var string
    */
   public $periodEndMillis;
   /**
-   * The time when this update period begins, in millis, since 1970 UTC (Unix
-   * Epoch).
-   *
    * @var string
    */
   public $periodStartMillis;
 
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#eventPeriodRange`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -59,10 +47,7 @@ class EventPeriodRange extends \Google\Model
     return $this->kind;
   }
   /**
-   * The time when this update period ends, in millis, since 1970 UTC (Unix
-   * Epoch).
-   *
-   * @param string $periodEndMillis
+   * @param string
    */
   public function setPeriodEndMillis($periodEndMillis)
   {
@@ -76,10 +61,7 @@ class EventPeriodRange extends \Google\Model
     return $this->periodEndMillis;
   }
   /**
-   * The time when this update period begins, in millis, since 1970 UTC (Unix
-   * Epoch).
-   *
-   * @param string $periodStartMillis
+   * @param string
    */
   public function setPeriodStartMillis($periodStartMillis)
   {

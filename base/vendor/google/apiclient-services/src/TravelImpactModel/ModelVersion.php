@@ -20,43 +20,24 @@ namespace Google\Service\TravelImpactModel;
 class ModelVersion extends \Google\Model
 {
   /**
-   * Dated versions: Model datasets are recreated with refreshed input data but
-   * no change to the algorithms regularly.
-   *
    * @var string
    */
   public $dated;
   /**
-   * Major versions: Major changes to methodology (e.g. adding new data sources
-   * to the model that lead to major output changes). Such changes will be
-   * infrequent and announced well in advance. Might involve API version
-   * changes, which will respect [Google Cloud API
-   * guidelines](https://cloud.google.com/endpoints/docs/openapi/versioning-an-
-   * api#backwards-incompatible)
-   *
    * @var int
    */
   public $major;
   /**
-   * Minor versions: Changes to the model that, while being consistent across
-   * schema versions, change the model parameters or implementation.
-   *
    * @var int
    */
   public $minor;
   /**
-   * Patch versions: Implementation changes meant to address bugs or
-   * inaccuracies in the model implementation.
-   *
    * @var int
    */
   public $patch;
 
   /**
-   * Dated versions: Model datasets are recreated with refreshed input data but
-   * no change to the algorithms regularly.
-   *
-   * @param string $dated
+   * @param string
    */
   public function setDated($dated)
   {
@@ -70,14 +51,7 @@ class ModelVersion extends \Google\Model
     return $this->dated;
   }
   /**
-   * Major versions: Major changes to methodology (e.g. adding new data sources
-   * to the model that lead to major output changes). Such changes will be
-   * infrequent and announced well in advance. Might involve API version
-   * changes, which will respect [Google Cloud API
-   * guidelines](https://cloud.google.com/endpoints/docs/openapi/versioning-an-
-   * api#backwards-incompatible)
-   *
-   * @param int $major
+   * @param int
    */
   public function setMajor($major)
   {
@@ -91,10 +65,7 @@ class ModelVersion extends \Google\Model
     return $this->major;
   }
   /**
-   * Minor versions: Changes to the model that, while being consistent across
-   * schema versions, change the model parameters or implementation.
-   *
-   * @param int $minor
+   * @param int
    */
   public function setMinor($minor)
   {
@@ -108,10 +79,7 @@ class ModelVersion extends \Google\Model
     return $this->minor;
   }
   /**
-   * Patch versions: Implementation changes meant to address bugs or
-   * inaccuracies in the model implementation.
-   *
-   * @param int $patch
+   * @param int
    */
   public function setPatch($patch)
   {

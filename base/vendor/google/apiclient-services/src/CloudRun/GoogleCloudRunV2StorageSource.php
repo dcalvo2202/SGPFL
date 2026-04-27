@@ -20,34 +20,20 @@ namespace Google\Service\CloudRun;
 class GoogleCloudRunV2StorageSource extends \Google\Model
 {
   /**
-   * Required. Google Cloud Storage bucket containing the source (see [Bucket
-   * Name Requirements](https://cloud.google.com/storage/docs/bucket-
-   * naming#requirements)).
-   *
    * @var string
    */
   public $bucket;
   /**
-   * Optional. Google Cloud Storage generation for the object. If the generation
-   * is omitted, the latest generation will be used.
-   *
    * @var string
    */
   public $generation;
   /**
-   * Required. Google Cloud Storage object containing the source. This object
-   * must be a gzipped archive file (`.tar.gz`) containing source to build.
-   *
    * @var string
    */
   public $object;
 
   /**
-   * Required. Google Cloud Storage bucket containing the source (see [Bucket
-   * Name Requirements](https://cloud.google.com/storage/docs/bucket-
-   * naming#requirements)).
-   *
-   * @param string $bucket
+   * @param string
    */
   public function setBucket($bucket)
   {
@@ -61,10 +47,7 @@ class GoogleCloudRunV2StorageSource extends \Google\Model
     return $this->bucket;
   }
   /**
-   * Optional. Google Cloud Storage generation for the object. If the generation
-   * is omitted, the latest generation will be used.
-   *
-   * @param string $generation
+   * @param string
    */
   public function setGeneration($generation)
   {
@@ -78,10 +61,7 @@ class GoogleCloudRunV2StorageSource extends \Google\Model
     return $this->generation;
   }
   /**
-   * Required. Google Cloud Storage object containing the source. This object
-   * must be a gzipped archive file (`.tar.gz`) containing source to build.
-   *
-   * @param string $object
+   * @param string
    */
   public function setObject($object)
   {

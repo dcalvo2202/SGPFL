@@ -20,107 +20,60 @@ namespace Google\Service\FirebaseAppHosting;
 class Domain extends \Google\Model
 {
   /**
-   * The type is unspecified (this should not happen).
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * Default, App Hosting-provided and managed domains. These domains are
-   * created automatically with their parent backend and cannot be deleted
-   * except by deleting that parent, and cannot be moved to another backend.
-   * Default domains can be disabled via the `disabled` field.
-   */
-  public const TYPE_DEFAULT = 'DEFAULT';
-  /**
-   * Custom, developer-owned domains. Custom Domains allow you to associate a
-   * domain you own with your App Hosting backend, and configure that domain to
-   * serve your backend's content.
-   */
-  public const TYPE_CUSTOM = 'CUSTOM';
-  /**
-   * Optional. Annotations as key value pairs.
-   *
    * @var string[]
    */
   public $annotations;
   /**
-   * Output only. Time at which the domain was created.
-   *
    * @var string
    */
   public $createTime;
   protected $customDomainStatusType = CustomDomainStatus::class;
   protected $customDomainStatusDataType = '';
   /**
-   * Output only. Time at which the domain was deleted.
-   *
    * @var string
    */
   public $deleteTime;
   /**
-   * Optional. Whether the domain is disabled. Defaults to false.
-   *
    * @var bool
    */
   public $disabled;
   /**
-   * Optional. Mutable human-readable name for the domain. 63 character limit.
-   * e.g. `prod domain`.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. Server-computed checksum based on other values; may be sent on
-   * update or delete to ensure operation is done on expected resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Optional. Labels as key value pairs.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Identifier. The resource name of the domain, e.g.
-   * `/projects/p/locations/l/backends/b/domains/foo.com`
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. A field that, if true, indicates that the build has an ongoing
-   * LRO.
-   *
    * @var bool
    */
   public $reconciling;
   protected $serveType = ServingBehavior::class;
   protected $serveDataType = '';
   /**
-   * Output only. The type of the domain.
-   *
    * @var string
    */
   public $type;
   /**
-   * Output only. System-assigned, unique identifier.
-   *
    * @var string
    */
   public $uid;
   /**
-   * Output only. Time at which the domain was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Optional. Annotations as key value pairs.
-   *
-   * @param string[] $annotations
+   * @param string[]
    */
   public function setAnnotations($annotations)
   {
@@ -134,9 +87,7 @@ class Domain extends \Google\Model
     return $this->annotations;
   }
   /**
-   * Output only. Time at which the domain was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -150,10 +101,7 @@ class Domain extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. Represents the state and configuration of a `CUSTOM` type
-   * domain. It is only present on Domains of that type.
-   *
-   * @param CustomDomainStatus $customDomainStatus
+   * @param CustomDomainStatus
    */
   public function setCustomDomainStatus(CustomDomainStatus $customDomainStatus)
   {
@@ -167,9 +115,7 @@ class Domain extends \Google\Model
     return $this->customDomainStatus;
   }
   /**
-   * Output only. Time at which the domain was deleted.
-   *
-   * @param string $deleteTime
+   * @param string
    */
   public function setDeleteTime($deleteTime)
   {
@@ -183,9 +129,7 @@ class Domain extends \Google\Model
     return $this->deleteTime;
   }
   /**
-   * Optional. Whether the domain is disabled. Defaults to false.
-   *
-   * @param bool $disabled
+   * @param bool
    */
   public function setDisabled($disabled)
   {
@@ -199,10 +143,7 @@ class Domain extends \Google\Model
     return $this->disabled;
   }
   /**
-   * Optional. Mutable human-readable name for the domain. 63 character limit.
-   * e.g. `prod domain`.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -216,10 +157,7 @@ class Domain extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Output only. Server-computed checksum based on other values; may be sent on
-   * update or delete to ensure operation is done on expected resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -233,9 +171,7 @@ class Domain extends \Google\Model
     return $this->etag;
   }
   /**
-   * Optional. Labels as key value pairs.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -249,10 +185,7 @@ class Domain extends \Google\Model
     return $this->labels;
   }
   /**
-   * Identifier. The resource name of the domain, e.g.
-   * `/projects/p/locations/l/backends/b/domains/foo.com`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -266,10 +199,7 @@ class Domain extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. A field that, if true, indicates that the build has an ongoing
-   * LRO.
-   *
-   * @param bool $reconciling
+   * @param bool
    */
   public function setReconciling($reconciling)
   {
@@ -283,10 +213,7 @@ class Domain extends \Google\Model
     return $this->reconciling;
   }
   /**
-   * Optional. The serving behavior of the domain. If specified, the domain will
-   * serve content other than its backend's live content.
-   *
-   * @param ServingBehavior $serve
+   * @param ServingBehavior
    */
   public function setServe(ServingBehavior $serve)
   {
@@ -300,27 +227,21 @@ class Domain extends \Google\Model
     return $this->serve;
   }
   /**
-   * Output only. The type of the domain.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, DEFAULT, CUSTOM
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * Output only. System-assigned, unique identifier.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {
@@ -334,9 +255,7 @@ class Domain extends \Google\Model
     return $this->uid;
   }
   /**
-   * Output only. Time at which the domain was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

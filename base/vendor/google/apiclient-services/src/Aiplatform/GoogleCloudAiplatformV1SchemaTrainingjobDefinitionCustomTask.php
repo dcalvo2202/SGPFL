@@ -25,9 +25,7 @@ class GoogleCloudAiplatformV1SchemaTrainingjobDefinitionCustomTask extends \Goog
   protected $metadataDataType = '';
 
   /**
-   * The input parameters of this CustomTask.
-   *
-   * @param GoogleCloudAiplatformV1CustomJobSpec $inputs
+   * @param GoogleCloudAiplatformV1CustomJobSpec
    */
   public function setInputs(GoogleCloudAiplatformV1CustomJobSpec $inputs)
   {
@@ -41,9 +39,7 @@ class GoogleCloudAiplatformV1SchemaTrainingjobDefinitionCustomTask extends \Goog
     return $this->inputs;
   }
   /**
-   * The metadata information.
-   *
-   * @param GoogleCloudAiplatformV1SchemaTrainingjobDefinitionCustomJobMetadata $metadata
+   * @param GoogleCloudAiplatformV1SchemaTrainingjobDefinitionCustomJobMetadata
    */
   public function setMetadata(GoogleCloudAiplatformV1SchemaTrainingjobDefinitionCustomJobMetadata $metadata)
   {

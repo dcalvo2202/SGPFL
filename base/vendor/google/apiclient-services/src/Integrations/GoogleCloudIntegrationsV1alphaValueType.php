@@ -22,46 +22,31 @@ class GoogleCloudIntegrationsV1alphaValueType extends \Google\Model
   protected $booleanArrayType = GoogleCloudIntegrationsV1alphaBooleanParameterArray::class;
   protected $booleanArrayDataType = '';
   /**
-   * Boolean.
-   *
    * @var bool
    */
   public $booleanValue;
   protected $doubleArrayType = GoogleCloudIntegrationsV1alphaDoubleParameterArray::class;
   protected $doubleArrayDataType = '';
-  /**
-   * Double Number.
-   *
-   * @var 
-   */
   public $doubleValue;
   protected $intArrayType = GoogleCloudIntegrationsV1alphaIntParameterArray::class;
   protected $intArrayDataType = '';
   /**
-   * Integer.
-   *
    * @var string
    */
   public $intValue;
   /**
-   * Json.
-   *
    * @var string
    */
   public $jsonValue;
   protected $stringArrayType = GoogleCloudIntegrationsV1alphaStringParameterArray::class;
   protected $stringArrayDataType = '';
   /**
-   * String.
-   *
    * @var string
    */
   public $stringValue;
 
   /**
-   * Boolean Array.
-   *
-   * @param GoogleCloudIntegrationsV1alphaBooleanParameterArray $booleanArray
+   * @param GoogleCloudIntegrationsV1alphaBooleanParameterArray
    */
   public function setBooleanArray(GoogleCloudIntegrationsV1alphaBooleanParameterArray $booleanArray)
   {
@@ -75,9 +60,7 @@ class GoogleCloudIntegrationsV1alphaValueType extends \Google\Model
     return $this->booleanArray;
   }
   /**
-   * Boolean.
-   *
-   * @param bool $booleanValue
+   * @param bool
    */
   public function setBooleanValue($booleanValue)
   {
@@ -91,9 +74,7 @@ class GoogleCloudIntegrationsV1alphaValueType extends \Google\Model
     return $this->booleanValue;
   }
   /**
-   * Double Number Array.
-   *
-   * @param GoogleCloudIntegrationsV1alphaDoubleParameterArray $doubleArray
+   * @param GoogleCloudIntegrationsV1alphaDoubleParameterArray
    */
   public function setDoubleArray(GoogleCloudIntegrationsV1alphaDoubleParameterArray $doubleArray)
   {
@@ -115,9 +96,7 @@ class GoogleCloudIntegrationsV1alphaValueType extends \Google\Model
     return $this->doubleValue;
   }
   /**
-   * Integer Array.
-   *
-   * @param GoogleCloudIntegrationsV1alphaIntParameterArray $intArray
+   * @param GoogleCloudIntegrationsV1alphaIntParameterArray
    */
   public function setIntArray(GoogleCloudIntegrationsV1alphaIntParameterArray $intArray)
   {
@@ -131,9 +110,7 @@ class GoogleCloudIntegrationsV1alphaValueType extends \Google\Model
     return $this->intArray;
   }
   /**
-   * Integer.
-   *
-   * @param string $intValue
+   * @param string
    */
   public function setIntValue($intValue)
   {
@@ -147,9 +124,7 @@ class GoogleCloudIntegrationsV1alphaValueType extends \Google\Model
     return $this->intValue;
   }
   /**
-   * Json.
-   *
-   * @param string $jsonValue
+   * @param string
    */
   public function setJsonValue($jsonValue)
   {
@@ -163,9 +138,7 @@ class GoogleCloudIntegrationsV1alphaValueType extends \Google\Model
     return $this->jsonValue;
   }
   /**
-   * String Array.
-   *
-   * @param GoogleCloudIntegrationsV1alphaStringParameterArray $stringArray
+   * @param GoogleCloudIntegrationsV1alphaStringParameterArray
    */
   public function setStringArray(GoogleCloudIntegrationsV1alphaStringParameterArray $stringArray)
   {
@@ -179,9 +152,7 @@ class GoogleCloudIntegrationsV1alphaValueType extends \Google\Model
     return $this->stringArray;
   }
   /**
-   * String.
-   *
-   * @param string $stringValue
+   * @param string
    */
   public function setStringValue($stringValue)
   {

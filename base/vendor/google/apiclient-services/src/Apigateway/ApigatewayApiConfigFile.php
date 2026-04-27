@@ -20,23 +20,16 @@ namespace Google\Service\Apigateway;
 class ApigatewayApiConfigFile extends \Google\Model
 {
   /**
-   * The bytes that constitute the file.
-   *
    * @var string
    */
   public $contents;
   /**
-   * The file path (full or relative path). This is typically the path of the
-   * file when it is uploaded.
-   *
    * @var string
    */
   public $path;
 
   /**
-   * The bytes that constitute the file.
-   *
-   * @param string $contents
+   * @param string
    */
   public function setContents($contents)
   {
@@ -50,10 +43,7 @@ class ApigatewayApiConfigFile extends \Google\Model
     return $this->contents;
   }
   /**
-   * The file path (full or relative path). This is typically the path of the
-   * file when it is uploaded.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {

@@ -20,39 +20,22 @@ namespace Google\Service\Spanner;
 class CopyBackupRequest extends \Google\Model
 {
   /**
-   * Required. The id of the backup copy. The `backup_id` appended to `parent`
-   * forms the full backup_uri of the form `projects//instances//backups/`.
-   *
    * @var string
    */
   public $backupId;
   protected $encryptionConfigType = CopyBackupEncryptionConfig::class;
   protected $encryptionConfigDataType = '';
   /**
-   * Required. The expiration time of the backup in microsecond granularity. The
-   * expiration time must be at least 6 hours and at most 366 days from the
-   * `create_time` of the source backup. Once the `expire_time` has passed, the
-   * backup is eligible to be automatically deleted by Cloud Spanner to free the
-   * resources used by the backup.
-   *
    * @var string
    */
   public $expireTime;
   /**
-   * Required. The source backup to be copied. The source backup needs to be in
-   * READY state for it to be copied. Once CopyBackup is in progress, the source
-   * backup cannot be deleted or cleaned up on expiration until CopyBackup is
-   * finished. Values are of the form: `projects//instances//backups/`.
-   *
    * @var string
    */
   public $sourceBackup;
 
   /**
-   * Required. The id of the backup copy. The `backup_id` appended to `parent`
-   * forms the full backup_uri of the form `projects//instances//backups/`.
-   *
-   * @param string $backupId
+   * @param string
    */
   public function setBackupId($backupId)
   {
@@ -66,12 +49,7 @@ class CopyBackupRequest extends \Google\Model
     return $this->backupId;
   }
   /**
-   * Optional. The encryption configuration used to encrypt the backup. If this
-   * field is not specified, the backup will use the same encryption
-   * configuration as the source backup by default, namely encryption_type =
-   * `USE_CONFIG_DEFAULT_OR_BACKUP_ENCRYPTION`.
-   *
-   * @param CopyBackupEncryptionConfig $encryptionConfig
+   * @param CopyBackupEncryptionConfig
    */
   public function setEncryptionConfig(CopyBackupEncryptionConfig $encryptionConfig)
   {
@@ -85,13 +63,7 @@ class CopyBackupRequest extends \Google\Model
     return $this->encryptionConfig;
   }
   /**
-   * Required. The expiration time of the backup in microsecond granularity. The
-   * expiration time must be at least 6 hours and at most 366 days from the
-   * `create_time` of the source backup. Once the `expire_time` has passed, the
-   * backup is eligible to be automatically deleted by Cloud Spanner to free the
-   * resources used by the backup.
-   *
-   * @param string $expireTime
+   * @param string
    */
   public function setExpireTime($expireTime)
   {
@@ -105,12 +77,7 @@ class CopyBackupRequest extends \Google\Model
     return $this->expireTime;
   }
   /**
-   * Required. The source backup to be copied. The source backup needs to be in
-   * READY state for it to be copied. Once CopyBackup is in progress, the source
-   * backup cannot be deleted or cleaned up on expiration until CopyBackup is
-   * finished. Values are of the form: `projects//instances//backups/`.
-   *
-   * @param string $sourceBackup
+   * @param string
    */
   public function setSourceBackup($sourceBackup)
   {

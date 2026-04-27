@@ -22,26 +22,14 @@ class CloudAiPlatformTenantresourceInfraSpannerConfig extends \Google\Model
   protected $createDatabaseOptionsType = CloudAiPlatformTenantresourceInfraSpannerConfigCreateDatabaseOptions::class;
   protected $createDatabaseOptionsDataType = '';
   /**
-   * Input [Optional]. The KMS key name or the KMS grant name used for CMEK
-   * encryption. Only set this field when provisioning new Infra Spanner
-   * databases. For existing Infra Spanner databases, this field will be ignored
-   * because CMEK re-encryption is not supported. For example,
-   * projects//locations//keyRings//cryptoKeys/
-   *
    * @var string
    */
   public $kmsKeyReference;
   /**
-   * Input [Required]. The file path to the spanner SDL bundle.
-   *
    * @var string
    */
   public $sdlBundlePath;
   /**
-   * Input [Optional]. The spanner borg service account for delegating the kms
-   * key to. For example, spanner-infra-cmek-nonprod@system.gserviceaccount.com,
-   * for the nonprod universe.
-   *
    * @var string
    */
   public $spannerBorgServiceAccount;
@@ -54,19 +42,12 @@ class CloudAiPlatformTenantresourceInfraSpannerConfig extends \Google\Model
    */
   public $spannerNamespace;
   /**
-   * Input [Required]. Every database in Spanner can be identified by the
-   * following path name: /span//:
-   *
    * @var string
    */
   public $spannerUniverse;
 
   /**
-   * Input [Optional]. The options to create a spanner database. Note: give the
-   * right options to ensure the right KMS key access audit logging and AxT
-   * logging in expected logging category.
-   *
-   * @param CloudAiPlatformTenantresourceInfraSpannerConfigCreateDatabaseOptions $createDatabaseOptions
+   * @param CloudAiPlatformTenantresourceInfraSpannerConfigCreateDatabaseOptions
    */
   public function setCreateDatabaseOptions(CloudAiPlatformTenantresourceInfraSpannerConfigCreateDatabaseOptions $createDatabaseOptions)
   {
@@ -80,13 +61,7 @@ class CloudAiPlatformTenantresourceInfraSpannerConfig extends \Google\Model
     return $this->createDatabaseOptions;
   }
   /**
-   * Input [Optional]. The KMS key name or the KMS grant name used for CMEK
-   * encryption. Only set this field when provisioning new Infra Spanner
-   * databases. For existing Infra Spanner databases, this field will be ignored
-   * because CMEK re-encryption is not supported. For example,
-   * projects//locations//keyRings//cryptoKeys/
-   *
-   * @param string $kmsKeyReference
+   * @param string
    */
   public function setKmsKeyReference($kmsKeyReference)
   {
@@ -100,9 +75,7 @@ class CloudAiPlatformTenantresourceInfraSpannerConfig extends \Google\Model
     return $this->kmsKeyReference;
   }
   /**
-   * Input [Required]. The file path to the spanner SDL bundle.
-   *
-   * @param string $sdlBundlePath
+   * @param string
    */
   public function setSdlBundlePath($sdlBundlePath)
   {
@@ -116,11 +89,7 @@ class CloudAiPlatformTenantresourceInfraSpannerConfig extends \Google\Model
     return $this->sdlBundlePath;
   }
   /**
-   * Input [Optional]. The spanner borg service account for delegating the kms
-   * key to. For example, spanner-infra-cmek-nonprod@system.gserviceaccount.com,
-   * for the nonprod universe.
-   *
-   * @param string $spannerBorgServiceAccount
+   * @param string
    */
   public function setSpannerBorgServiceAccount($spannerBorgServiceAccount)
   {
@@ -134,7 +103,7 @@ class CloudAiPlatformTenantresourceInfraSpannerConfig extends \Google\Model
     return $this->spannerBorgServiceAccount;
   }
   /**
-   * @param string $spannerLocalNamePrefix
+   * @param string
    */
   public function setSpannerLocalNamePrefix($spannerLocalNamePrefix)
   {
@@ -148,7 +117,7 @@ class CloudAiPlatformTenantresourceInfraSpannerConfig extends \Google\Model
     return $this->spannerLocalNamePrefix;
   }
   /**
-   * @param string $spannerNamespace
+   * @param string
    */
   public function setSpannerNamespace($spannerNamespace)
   {
@@ -162,10 +131,7 @@ class CloudAiPlatformTenantresourceInfraSpannerConfig extends \Google\Model
     return $this->spannerNamespace;
   }
   /**
-   * Input [Required]. Every database in Spanner can be identified by the
-   * following path name: /span//:
-   *
-   * @param string $spannerUniverse
+   * @param string
    */
   public function setSpannerUniverse($spannerUniverse)
   {

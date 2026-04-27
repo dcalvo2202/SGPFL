@@ -19,31 +19,15 @@ namespace Google\Service\DiscoveryEngine;
 
 class GoogleCloudDiscoveryengineV1betaRemoveDedicatedCrawlRateResponse extends \Google\Model
 {
-  /**
-   * The state is unspecified.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The state is successful.
-   */
-  public const STATE_SUCCEEDED = 'SUCCEEDED';
-  /**
-   * The state is failed.
-   */
-  public const STATE_FAILED = 'FAILED';
   protected $errorType = GoogleRpcStatus::class;
   protected $errorDataType = '';
   /**
-   * Output only. The state of the response.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Errors from service when handling the request.
-   *
-   * @param GoogleRpcStatus $error
+   * @param GoogleRpcStatus
    */
   public function setError(GoogleRpcStatus $error)
   {
@@ -57,18 +41,14 @@ class GoogleCloudDiscoveryengineV1betaRemoveDedicatedCrawlRateResponse extends \
     return $this->error;
   }
   /**
-   * Output only. The state of the response.
-   *
-   * Accepted values: STATE_UNSPECIFIED, SUCCEEDED, FAILED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

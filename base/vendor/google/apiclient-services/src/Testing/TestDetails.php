@@ -21,26 +21,16 @@ class TestDetails extends \Google\Collection
 {
   protected $collection_key = 'progressMessages';
   /**
-   * Output only. If the TestState is ERROR, then this string will contain
-   * human-readable details about the error.
-   *
    * @var string
    */
   public $errorMessage;
   /**
-   * Output only. Human-readable, detailed descriptions of the test's progress.
-   * For example: "Provisioning a device", "Starting Test". During the course of
-   * execution new data may be appended to the end of progress_messages.
-   *
    * @var string[]
    */
   public $progressMessages;
 
   /**
-   * Output only. If the TestState is ERROR, then this string will contain
-   * human-readable details about the error.
-   *
-   * @param string $errorMessage
+   * @param string
    */
   public function setErrorMessage($errorMessage)
   {
@@ -54,11 +44,7 @@ class TestDetails extends \Google\Collection
     return $this->errorMessage;
   }
   /**
-   * Output only. Human-readable, detailed descriptions of the test's progress.
-   * For example: "Provisioning a device", "Starting Test". During the course of
-   * execution new data may be appended to the end of progress_messages.
-   *
-   * @param string[] $progressMessages
+   * @param string[]
    */
   public function setProgressMessages($progressMessages)
   {

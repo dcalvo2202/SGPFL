@@ -33,53 +33,36 @@ class LighthouseResultV5 extends \Google\Collection
   protected $environmentType = Environment::class;
   protected $environmentDataType = '';
   /**
-   * The time that this run was fetched.
-   *
    * @var string
    */
   public $fetchTime;
   /**
-   * URL displayed on the page after Lighthouse finishes.
-   *
    * @var string
    */
   public $finalDisplayedUrl;
   /**
-   * The final resolved url that was audited.
-   *
    * @var string
    */
   public $finalUrl;
   /**
-   * Screenshot data of the full page, along with node rects relevant to the
-   * audit results.
-   *
    * @var array
    */
   public $fullPageScreenshot;
   protected $i18nType = I18n::class;
   protected $i18nDataType = '';
   /**
-   * The lighthouse version that was used to generate this LHR.
-   *
    * @var string
    */
   public $lighthouseVersion;
   /**
-   * URL of the main document request of the final navigation.
-   *
    * @var string
    */
   public $mainDocumentUrl;
   /**
-   * The original requested url.
-   *
    * @var string
    */
   public $requestedUrl;
   /**
-   * List of all run warnings in the LHR. Will always output to at least `[]`.
-   *
    * @var array[]
    */
   public $runWarnings;
@@ -90,16 +73,12 @@ class LighthouseResultV5 extends \Google\Collection
   protected $timingType = Timing::class;
   protected $timingDataType = '';
   /**
-   * The user agent that was used to run this LHR.
-   *
    * @var string
    */
   public $userAgent;
 
   /**
-   * Map of audits in the LHR.
-   *
-   * @param LighthouseAuditResultV5[] $audits
+   * @param LighthouseAuditResultV5[]
    */
   public function setAudits($audits)
   {
@@ -113,9 +92,7 @@ class LighthouseResultV5 extends \Google\Collection
     return $this->audits;
   }
   /**
-   * Map of categories in the LHR.
-   *
-   * @param Categories $categories
+   * @param Categories
    */
   public function setCategories(Categories $categories)
   {
@@ -129,9 +106,7 @@ class LighthouseResultV5 extends \Google\Collection
     return $this->categories;
   }
   /**
-   * Map of category groups in the LHR.
-   *
-   * @param CategoryGroupV5[] $categoryGroups
+   * @param CategoryGroupV5[]
    */
   public function setCategoryGroups($categoryGroups)
   {
@@ -145,9 +120,7 @@ class LighthouseResultV5 extends \Google\Collection
     return $this->categoryGroups;
   }
   /**
-   * The configuration settings for this LHR.
-   *
-   * @param ConfigSettings $configSettings
+   * @param ConfigSettings
    */
   public function setConfigSettings(ConfigSettings $configSettings)
   {
@@ -161,9 +134,7 @@ class LighthouseResultV5 extends \Google\Collection
     return $this->configSettings;
   }
   /**
-   * Entity classification data.
-   *
-   * @param LhrEntity[] $entities
+   * @param LhrEntity[]
    */
   public function setEntities($entities)
   {
@@ -177,9 +148,7 @@ class LighthouseResultV5 extends \Google\Collection
     return $this->entities;
   }
   /**
-   * Environment settings that were used when making this LHR.
-   *
-   * @param Environment $environment
+   * @param Environment
    */
   public function setEnvironment(Environment $environment)
   {
@@ -193,9 +162,7 @@ class LighthouseResultV5 extends \Google\Collection
     return $this->environment;
   }
   /**
-   * The time that this run was fetched.
-   *
-   * @param string $fetchTime
+   * @param string
    */
   public function setFetchTime($fetchTime)
   {
@@ -209,9 +176,7 @@ class LighthouseResultV5 extends \Google\Collection
     return $this->fetchTime;
   }
   /**
-   * URL displayed on the page after Lighthouse finishes.
-   *
-   * @param string $finalDisplayedUrl
+   * @param string
    */
   public function setFinalDisplayedUrl($finalDisplayedUrl)
   {
@@ -225,9 +190,7 @@ class LighthouseResultV5 extends \Google\Collection
     return $this->finalDisplayedUrl;
   }
   /**
-   * The final resolved url that was audited.
-   *
-   * @param string $finalUrl
+   * @param string
    */
   public function setFinalUrl($finalUrl)
   {
@@ -241,10 +204,7 @@ class LighthouseResultV5 extends \Google\Collection
     return $this->finalUrl;
   }
   /**
-   * Screenshot data of the full page, along with node rects relevant to the
-   * audit results.
-   *
-   * @param array $fullPageScreenshot
+   * @param array
    */
   public function setFullPageScreenshot($fullPageScreenshot)
   {
@@ -258,9 +218,7 @@ class LighthouseResultV5 extends \Google\Collection
     return $this->fullPageScreenshot;
   }
   /**
-   * The internationalization strings that are required to render the LHR.
-   *
-   * @param I18n $i18n
+   * @param I18n
    */
   public function setI18n(I18n $i18n)
   {
@@ -274,9 +232,7 @@ class LighthouseResultV5 extends \Google\Collection
     return $this->i18n;
   }
   /**
-   * The lighthouse version that was used to generate this LHR.
-   *
-   * @param string $lighthouseVersion
+   * @param string
    */
   public function setLighthouseVersion($lighthouseVersion)
   {
@@ -290,9 +246,7 @@ class LighthouseResultV5 extends \Google\Collection
     return $this->lighthouseVersion;
   }
   /**
-   * URL of the main document request of the final navigation.
-   *
-   * @param string $mainDocumentUrl
+   * @param string
    */
   public function setMainDocumentUrl($mainDocumentUrl)
   {
@@ -306,9 +260,7 @@ class LighthouseResultV5 extends \Google\Collection
     return $this->mainDocumentUrl;
   }
   /**
-   * The original requested url.
-   *
-   * @param string $requestedUrl
+   * @param string
    */
   public function setRequestedUrl($requestedUrl)
   {
@@ -322,9 +274,7 @@ class LighthouseResultV5 extends \Google\Collection
     return $this->requestedUrl;
   }
   /**
-   * List of all run warnings in the LHR. Will always output to at least `[]`.
-   *
-   * @param array[] $runWarnings
+   * @param array[]
    */
   public function setRunWarnings($runWarnings)
   {
@@ -338,10 +288,7 @@ class LighthouseResultV5 extends \Google\Collection
     return $this->runWarnings;
   }
   /**
-   * A top-level error message that, if present, indicates a serious enough
-   * problem that this Lighthouse result may need to be discarded.
-   *
-   * @param RuntimeError $runtimeError
+   * @param RuntimeError
    */
   public function setRuntimeError(RuntimeError $runtimeError)
   {
@@ -355,9 +302,7 @@ class LighthouseResultV5 extends \Google\Collection
     return $this->runtimeError;
   }
   /**
-   * The Stack Pack advice strings.
-   *
-   * @param StackPack[] $stackPacks
+   * @param StackPack[]
    */
   public function setStackPacks($stackPacks)
   {
@@ -371,9 +316,7 @@ class LighthouseResultV5 extends \Google\Collection
     return $this->stackPacks;
   }
   /**
-   * Timing information for this LHR.
-   *
-   * @param Timing $timing
+   * @param Timing
    */
   public function setTiming(Timing $timing)
   {
@@ -387,9 +330,7 @@ class LighthouseResultV5 extends \Google\Collection
     return $this->timing;
   }
   /**
-   * The user agent that was used to run this LHR.
-   *
-   * @param string $userAgent
+   * @param string
    */
   public function setUserAgent($userAgent)
   {

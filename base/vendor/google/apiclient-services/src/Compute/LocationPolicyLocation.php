@@ -19,32 +19,15 @@ namespace Google\Service\Compute;
 
 class LocationPolicyLocation extends \Google\Model
 {
-  /**
-   * Location is allowed for use.
-   */
-  public const PREFERENCE_ALLOW = 'ALLOW';
-  /**
-   * Location is prohibited.
-   */
-  public const PREFERENCE_DENY = 'DENY';
-  /**
-   * Default value, unused.
-   */
-  public const PREFERENCE_PREFERENCE_UNSPECIFIED = 'PREFERENCE_UNSPECIFIED';
   protected $constraintsType = LocationPolicyLocationConstraints::class;
   protected $constraintsDataType = '';
   /**
-   * Preference for a given location. Set to either ALLOW orDENY.
-   *
    * @var string
    */
   public $preference;
 
   /**
-   * Constraints that the caller requires on the result distribution in this
-   * zone.
-   *
-   * @param LocationPolicyLocationConstraints $constraints
+   * @param LocationPolicyLocationConstraints
    */
   public function setConstraints(LocationPolicyLocationConstraints $constraints)
   {
@@ -58,18 +41,14 @@ class LocationPolicyLocation extends \Google\Model
     return $this->constraints;
   }
   /**
-   * Preference for a given location. Set to either ALLOW orDENY.
-   *
-   * Accepted values: ALLOW, DENY, PREFERENCE_UNSPECIFIED
-   *
-   * @param self::PREFERENCE_* $preference
+   * @param string
    */
   public function setPreference($preference)
   {
     $this->preference = $preference;
   }
   /**
-   * @return self::PREFERENCE_*
+   * @return string
    */
   public function getPreference()
   {

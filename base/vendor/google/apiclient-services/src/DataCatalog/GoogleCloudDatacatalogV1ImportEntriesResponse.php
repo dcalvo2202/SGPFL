@@ -20,23 +20,16 @@ namespace Google\Service\DataCatalog;
 class GoogleCloudDatacatalogV1ImportEntriesResponse extends \Google\Model
 {
   /**
-   * Number of entries deleted as a result of import operation.
-   *
    * @var string
    */
   public $deletedEntriesCount;
   /**
-   * Cumulative number of entries created and entries updated as a result of
-   * import operation.
-   *
    * @var string
    */
   public $upsertedEntriesCount;
 
   /**
-   * Number of entries deleted as a result of import operation.
-   *
-   * @param string $deletedEntriesCount
+   * @param string
    */
   public function setDeletedEntriesCount($deletedEntriesCount)
   {
@@ -50,10 +43,7 @@ class GoogleCloudDatacatalogV1ImportEntriesResponse extends \Google\Model
     return $this->deletedEntriesCount;
   }
   /**
-   * Cumulative number of entries created and entries updated as a result of
-   * import operation.
-   *
-   * @param string $upsertedEntriesCount
+   * @param string
    */
   public function setUpsertedEntriesCount($upsertedEntriesCount)
   {

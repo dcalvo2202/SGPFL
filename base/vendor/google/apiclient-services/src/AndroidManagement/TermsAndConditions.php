@@ -25,10 +25,7 @@ class TermsAndConditions extends \Google\Model
   protected $headerDataType = '';
 
   /**
-   * A well-formatted HTML string. It will be parsed on the client with
-   * android.text.Html#fromHtml.
-   *
-   * @param UserFacingMessage $content
+   * @param UserFacingMessage
    */
   public function setContent(UserFacingMessage $content)
   {
@@ -42,9 +39,7 @@ class TermsAndConditions extends \Google\Model
     return $this->content;
   }
   /**
-   * A short header which appears above the HTML content.
-   *
-   * @param UserFacingMessage $header
+   * @param UserFacingMessage
    */
   public function setHeader(UserFacingMessage $header)
   {

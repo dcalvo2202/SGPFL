@@ -21,22 +21,9 @@ class ConvertRegionPricesRequest extends \Google\Model
 {
   protected $priceType = Money::class;
   protected $priceDataType = '';
-  /**
-   * Optional. Product tax category code in context. Product tax category
-   * determines the transaction tax rates applied to the product that will be
-   * factored into the price calculation. If not set, tax rates for the default
-   * product tax category will be used. Refer to the [Help Center
-   * article](https://support.google.com/googleplay/android-
-   * developer/answer/16408159) for more information.
-   *
-   * @var string
-   */
-  public $productTaxCategoryCode;
 
   /**
-   * The intital price to convert other regions from. Tax exclusive.
-   *
-   * @param Money $price
+   * @param Money
    */
   public function setPrice(Money $price)
   {
@@ -48,27 +35,6 @@ class ConvertRegionPricesRequest extends \Google\Model
   public function getPrice()
   {
     return $this->price;
-  }
-  /**
-   * Optional. Product tax category code in context. Product tax category
-   * determines the transaction tax rates applied to the product that will be
-   * factored into the price calculation. If not set, tax rates for the default
-   * product tax category will be used. Refer to the [Help Center
-   * article](https://support.google.com/googleplay/android-
-   * developer/answer/16408159) for more information.
-   *
-   * @param string $productTaxCategoryCode
-   */
-  public function setProductTaxCategoryCode($productTaxCategoryCode)
-  {
-    $this->productTaxCategoryCode = $productTaxCategoryCode;
-  }
-  /**
-   * @return string
-   */
-  public function getProductTaxCategoryCode()
-  {
-    return $this->productTaxCategoryCode;
   }
 }
 

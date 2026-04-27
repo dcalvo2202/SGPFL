@@ -20,29 +20,20 @@ namespace Google\Service\ShoppingContent;
 class PickupServicesPickupService extends \Google\Model
 {
   /**
-   * The name of the carrier (for example, `"UPS"`). Always present.
-   *
    * @var string
    */
   public $carrierName;
   /**
-   * The CLDR country code of the carrier (for example, "US"). Always present.
-   *
    * @var string
    */
   public $country;
   /**
-   * The name of the pickup service (for example, `"Access point"`). Always
-   * present.
-   *
    * @var string
    */
   public $serviceName;
 
   /**
-   * The name of the carrier (for example, `"UPS"`). Always present.
-   *
-   * @param string $carrierName
+   * @param string
    */
   public function setCarrierName($carrierName)
   {
@@ -56,9 +47,7 @@ class PickupServicesPickupService extends \Google\Model
     return $this->carrierName;
   }
   /**
-   * The CLDR country code of the carrier (for example, "US"). Always present.
-   *
-   * @param string $country
+   * @param string
    */
   public function setCountry($country)
   {
@@ -72,10 +61,7 @@ class PickupServicesPickupService extends \Google\Model
     return $this->country;
   }
   /**
-   * The name of the pickup service (for example, `"Access point"`). Always
-   * present.
-   *
-   * @param string $serviceName
+   * @param string
    */
   public function setServiceName($serviceName)
   {

@@ -25,20 +25,10 @@ class TestSetup extends \Google\Collection
   protected $additionalApksType = Apk::class;
   protected $additionalApksDataType = 'array';
   /**
-   * List of directories on the device to upload to GCS at the end of the test;
-   * they must be absolute paths under /sdcard, /storage or /data/local/tmp.
-   * Path names are restricted to characters a-z A-Z 0-9 _ - . + and / Note: The
-   * paths /sdcard and /data will be made available and treated as implicit path
-   * substitutions. E.g. if /sdcard on a particular device does not map to
-   * external storage, the system will replace it with the external storage path
-   * prefix for that device.
-   *
    * @var string[]
    */
   public $directoriesToPull;
   /**
-   * Whether to prevent all runtime permissions to be granted at app install
-   *
    * @var bool
    */
   public $dontAutograntPermissions;
@@ -49,10 +39,6 @@ class TestSetup extends \Google\Collection
   protected $initialSetupApksType = Apk::class;
   protected $initialSetupApksDataType = 'array';
   /**
-   * The network traffic profile used for running the test. Available network
-   * profiles can be queried by using the NETWORK_CONFIGURATION environment type
-   * when calling TestEnvironmentDiscoveryService.GetTestEnvironmentCatalog.
-   *
    * @var string
    */
   public $networkProfile;
@@ -60,9 +46,7 @@ class TestSetup extends \Google\Collection
   protected $systraceDataType = '';
 
   /**
-   * The device will be logged in on this account for the duration of the test.
-   *
-   * @param Account $account
+   * @param Account
    */
   public function setAccount(Account $account)
   {
@@ -76,11 +60,7 @@ class TestSetup extends \Google\Collection
     return $this->account;
   }
   /**
-   * APKs to install in addition to those being directly tested. These will be
-   * installed after the app under test. Limited to a combined total of 100
-   * initial setup and additional files.
-   *
-   * @param Apk[] $additionalApks
+   * @param Apk[]
    */
   public function setAdditionalApks($additionalApks)
   {
@@ -94,15 +74,7 @@ class TestSetup extends \Google\Collection
     return $this->additionalApks;
   }
   /**
-   * List of directories on the device to upload to GCS at the end of the test;
-   * they must be absolute paths under /sdcard, /storage or /data/local/tmp.
-   * Path names are restricted to characters a-z A-Z 0-9 _ - . + and / Note: The
-   * paths /sdcard and /data will be made available and treated as implicit path
-   * substitutions. E.g. if /sdcard on a particular device does not map to
-   * external storage, the system will replace it with the external storage path
-   * prefix for that device.
-   *
-   * @param string[] $directoriesToPull
+   * @param string[]
    */
   public function setDirectoriesToPull($directoriesToPull)
   {
@@ -116,9 +88,7 @@ class TestSetup extends \Google\Collection
     return $this->directoriesToPull;
   }
   /**
-   * Whether to prevent all runtime permissions to be granted at app install
-   *
-   * @param bool $dontAutograntPermissions
+   * @param bool
    */
   public function setDontAutograntPermissions($dontAutograntPermissions)
   {
@@ -132,10 +102,7 @@ class TestSetup extends \Google\Collection
     return $this->dontAutograntPermissions;
   }
   /**
-   * Environment variables to set for the test (only applicable for
-   * instrumentation tests).
-   *
-   * @param EnvironmentVariable[] $environmentVariables
+   * @param EnvironmentVariable[]
    */
   public function setEnvironmentVariables($environmentVariables)
   {
@@ -149,9 +116,7 @@ class TestSetup extends \Google\Collection
     return $this->environmentVariables;
   }
   /**
-   * List of files to push to the device before starting the test.
-   *
-   * @param DeviceFile[] $filesToPush
+   * @param DeviceFile[]
    */
   public function setFilesToPush($filesToPush)
   {
@@ -165,11 +130,7 @@ class TestSetup extends \Google\Collection
     return $this->filesToPush;
   }
   /**
-   * Optional. Initial setup APKs to install before the app under test is
-   * installed. Limited to a combined total of 100 initial setup and additional
-   * files.
-   *
-   * @param Apk[] $initialSetupApks
+   * @param Apk[]
    */
   public function setInitialSetupApks($initialSetupApks)
   {
@@ -183,11 +144,7 @@ class TestSetup extends \Google\Collection
     return $this->initialSetupApks;
   }
   /**
-   * The network traffic profile used for running the test. Available network
-   * profiles can be queried by using the NETWORK_CONFIGURATION environment type
-   * when calling TestEnvironmentDiscoveryService.GetTestEnvironmentCatalog.
-   *
-   * @param string $networkProfile
+   * @param string
    */
   public function setNetworkProfile($networkProfile)
   {
@@ -201,19 +158,13 @@ class TestSetup extends \Google\Collection
     return $this->networkProfile;
   }
   /**
-   * Systrace configuration for the run. Deprecated: Systrace used Python 2
-   * which was sunsetted on 2020-01-01. Systrace is no longer supported in the
-   * Cloud Testing API, and no Systrace file will be provided in the results.
-   *
-   * @deprecated
-   * @param SystraceSetup $systrace
+   * @param SystraceSetup
    */
   public function setSystrace(SystraceSetup $systrace)
   {
     $this->systrace = $systrace;
   }
   /**
-   * @deprecated
    * @return SystraceSetup
    */
   public function getSystrace()

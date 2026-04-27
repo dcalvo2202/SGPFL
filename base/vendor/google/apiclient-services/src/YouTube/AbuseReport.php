@@ -32,7 +32,7 @@ class AbuseReport extends \Google\Collection
   protected $subjectDataType = '';
 
   /**
-   * @param AbuseType[] $abuseTypes
+   * @param AbuseType[]
    */
   public function setAbuseTypes($abuseTypes)
   {
@@ -46,7 +46,7 @@ class AbuseReport extends \Google\Collection
     return $this->abuseTypes;
   }
   /**
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -60,7 +60,7 @@ class AbuseReport extends \Google\Collection
     return $this->description;
   }
   /**
-   * @param RelatedEntity[] $relatedEntities
+   * @param RelatedEntity[]
    */
   public function setRelatedEntities($relatedEntities)
   {
@@ -74,7 +74,7 @@ class AbuseReport extends \Google\Collection
     return $this->relatedEntities;
   }
   /**
-   * @param Entity $subject
+   * @param Entity
    */
   public function setSubject(Entity $subject)
   {

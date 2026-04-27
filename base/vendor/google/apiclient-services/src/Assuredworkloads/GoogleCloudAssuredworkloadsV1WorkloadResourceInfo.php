@@ -20,47 +20,16 @@ namespace Google\Service\Assuredworkloads;
 class GoogleCloudAssuredworkloadsV1WorkloadResourceInfo extends \Google\Model
 {
   /**
-   * Unknown resource type.
-   */
-  public const RESOURCE_TYPE_RESOURCE_TYPE_UNSPECIFIED = 'RESOURCE_TYPE_UNSPECIFIED';
-  /**
-   * Deprecated. Existing workloads will continue to support this, but new
-   * CreateWorkloadRequests should not specify this as an input value.
-   *
-   * @deprecated
-   */
-  public const RESOURCE_TYPE_CONSUMER_PROJECT = 'CONSUMER_PROJECT';
-  /**
-   * Consumer Folder.
-   */
-  public const RESOURCE_TYPE_CONSUMER_FOLDER = 'CONSUMER_FOLDER';
-  /**
-   * Consumer project containing encryption keys.
-   */
-  public const RESOURCE_TYPE_ENCRYPTION_KEYS_PROJECT = 'ENCRYPTION_KEYS_PROJECT';
-  /**
-   * Keyring resource that hosts encryption keys.
-   */
-  public const RESOURCE_TYPE_KEYRING = 'KEYRING';
-  /**
-   * Output only. Resource identifier. For a project this represents
-   * project_number.
-   *
    * @var string
    */
   public $resourceId;
   /**
-   * Indicates the type of resource.
-   *
    * @var string
    */
   public $resourceType;
 
   /**
-   * Output only. Resource identifier. For a project this represents
-   * project_number.
-   *
-   * @param string $resourceId
+   * @param string
    */
   public function setResourceId($resourceId)
   {
@@ -74,19 +43,14 @@ class GoogleCloudAssuredworkloadsV1WorkloadResourceInfo extends \Google\Model
     return $this->resourceId;
   }
   /**
-   * Indicates the type of resource.
-   *
-   * Accepted values: RESOURCE_TYPE_UNSPECIFIED, CONSUMER_PROJECT,
-   * CONSUMER_FOLDER, ENCRYPTION_KEYS_PROJECT, KEYRING
-   *
-   * @param self::RESOURCE_TYPE_* $resourceType
+   * @param string
    */
   public function setResourceType($resourceType)
   {
     $this->resourceType = $resourceType;
   }
   /**
-   * @return self::RESOURCE_TYPE_*
+   * @return string
    */
   public function getResourceType()
   {

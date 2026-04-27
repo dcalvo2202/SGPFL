@@ -23,17 +23,12 @@ class ListDatabaseRolesResponse extends \Google\Collection
   protected $databaseRolesType = DatabaseRole::class;
   protected $databaseRolesDataType = 'array';
   /**
-   * `next_page_token` can be sent in a subsequent ListDatabaseRoles call to
-   * fetch more of the matching roles.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Database roles that matched the request.
-   *
-   * @param DatabaseRole[] $databaseRoles
+   * @param DatabaseRole[]
    */
   public function setDatabaseRoles($databaseRoles)
   {
@@ -47,10 +42,7 @@ class ListDatabaseRolesResponse extends \Google\Collection
     return $this->databaseRoles;
   }
   /**
-   * `next_page_token` can be sent in a subsequent ListDatabaseRoles call to
-   * fetch more of the matching roles.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

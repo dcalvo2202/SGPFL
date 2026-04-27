@@ -19,34 +19,15 @@ namespace Google\Service\CloudNaturalLanguage;
 
 class ModerateTextRequest extends \Google\Model
 {
-  /**
-   * The default model version.
-   */
-  public const MODEL_VERSION_MODEL_VERSION_UNSPECIFIED = 'MODEL_VERSION_UNSPECIFIED';
-  /**
-   * Use the v1 model, this model is used by default when not provided. The v1
-   * model only returns probability (confidence) score for each category.
-   */
-  public const MODEL_VERSION_MODEL_VERSION_1 = 'MODEL_VERSION_1';
-  /**
-   * Use the v2 model. The v2 model only returns probability (confidence) score
-   * for each category, and returns severity score for a subset of the
-   * categories.
-   */
-  public const MODEL_VERSION_MODEL_VERSION_2 = 'MODEL_VERSION_2';
   protected $documentType = Document::class;
   protected $documentDataType = '';
   /**
-   * Optional. The model version to use for ModerateText.
-   *
    * @var string
    */
   public $modelVersion;
 
   /**
-   * Required. Input document.
-   *
-   * @param Document $document
+   * @param Document
    */
   public function setDocument(Document $document)
   {
@@ -60,19 +41,14 @@ class ModerateTextRequest extends \Google\Model
     return $this->document;
   }
   /**
-   * Optional. The model version to use for ModerateText.
-   *
-   * Accepted values: MODEL_VERSION_UNSPECIFIED, MODEL_VERSION_1,
-   * MODEL_VERSION_2
-   *
-   * @param self::MODEL_VERSION_* $modelVersion
+   * @param string
    */
   public function setModelVersion($modelVersion)
   {
     $this->modelVersion = $modelVersion;
   }
   /**
-   * @return self::MODEL_VERSION_*
+   * @return string
    */
   public function getModelVersion()
   {

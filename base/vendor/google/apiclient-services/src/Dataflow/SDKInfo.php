@@ -20,60 +20,30 @@ namespace Google\Service\Dataflow;
 class SDKInfo extends \Google\Model
 {
   /**
-   * UNKNOWN Language.
-   */
-  public const LANGUAGE_UNKNOWN = 'UNKNOWN';
-  /**
-   * Java.
-   */
-  public const LANGUAGE_JAVA = 'JAVA';
-  /**
-   * Python.
-   */
-  public const LANGUAGE_PYTHON = 'PYTHON';
-  /**
-   * Go.
-   */
-  public const LANGUAGE_GO = 'GO';
-  /**
-   * YAML.
-   */
-  public const LANGUAGE_YAML = 'YAML';
-  /**
-   * Required. The SDK Language.
-   *
    * @var string
    */
   public $language;
   /**
-   * Optional. The SDK version.
-   *
    * @var string
    */
   public $version;
 
   /**
-   * Required. The SDK Language.
-   *
-   * Accepted values: UNKNOWN, JAVA, PYTHON, GO, YAML
-   *
-   * @param self::LANGUAGE_* $language
+   * @param string
    */
   public function setLanguage($language)
   {
     $this->language = $language;
   }
   /**
-   * @return self::LANGUAGE_*
+   * @return string
    */
   public function getLanguage()
   {
     return $this->language;
   }
   /**
-   * Optional. The SDK version.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

@@ -23,9 +23,7 @@ class GoogleCloudDatalabelingV1beta1ObjectDetectionMetrics extends \Google\Model
   protected $prCurveDataType = '';
 
   /**
-   * Precision-recall curve.
-   *
-   * @param GoogleCloudDatalabelingV1beta1PrCurve $prCurve
+   * @param GoogleCloudDatalabelingV1beta1PrCurve
    */
   public function setPrCurve(GoogleCloudDatalabelingV1beta1PrCurve $prCurve)
   {

@@ -23,16 +23,12 @@ class GoogleCloudDatalabelingV1beta1ListInstructionsResponse extends \Google\Col
   protected $instructionsType = GoogleCloudDatalabelingV1beta1Instruction::class;
   protected $instructionsDataType = 'array';
   /**
-   * A token to retrieve next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of Instructions to return.
-   *
-   * @param GoogleCloudDatalabelingV1beta1Instruction[] $instructions
+   * @param GoogleCloudDatalabelingV1beta1Instruction[]
    */
   public function setInstructions($instructions)
   {
@@ -46,9 +42,7 @@ class GoogleCloudDatalabelingV1beta1ListInstructionsResponse extends \Google\Col
     return $this->instructions;
   }
   /**
-   * A token to retrieve next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

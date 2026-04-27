@@ -27,9 +27,7 @@ class GoogleCloudAiplatformV1ExplanationSpecOverride extends \Google\Model
   protected $parametersDataType = '';
 
   /**
-   * The example-based explanations parameter overrides.
-   *
-   * @param GoogleCloudAiplatformV1ExamplesOverride $examplesOverride
+   * @param GoogleCloudAiplatformV1ExamplesOverride
    */
   public function setExamplesOverride(GoogleCloudAiplatformV1ExamplesOverride $examplesOverride)
   {
@@ -43,9 +41,7 @@ class GoogleCloudAiplatformV1ExplanationSpecOverride extends \Google\Model
     return $this->examplesOverride;
   }
   /**
-   * The metadata to be overridden. If not specified, no metadata is overridden.
-   *
-   * @param GoogleCloudAiplatformV1ExplanationMetadataOverride $metadata
+   * @param GoogleCloudAiplatformV1ExplanationMetadataOverride
    */
   public function setMetadata(GoogleCloudAiplatformV1ExplanationMetadataOverride $metadata)
   {
@@ -59,10 +55,7 @@ class GoogleCloudAiplatformV1ExplanationSpecOverride extends \Google\Model
     return $this->metadata;
   }
   /**
-   * The parameters to be overridden. Note that the attribution method cannot be
-   * changed. If not specified, no parameter is overridden.
-   *
-   * @param GoogleCloudAiplatformV1ExplanationParameters $parameters
+   * @param GoogleCloudAiplatformV1ExplanationParameters
    */
   public function setParameters(GoogleCloudAiplatformV1ExplanationParameters $parameters)
   {

@@ -24,42 +24,28 @@ class GoogleCloudDocumentaiV1DocumentStyle extends \Google\Model
   protected $colorType = GoogleTypeColor::class;
   protected $colorDataType = '';
   /**
-   * Font family such as `Arial`, `Times New Roman`.
-   * https://www.w3schools.com/cssref/pr_font_font-family.asp
-   *
    * @var string
    */
   public $fontFamily;
   protected $fontSizeType = GoogleCloudDocumentaiV1DocumentStyleFontSize::class;
   protected $fontSizeDataType = '';
   /**
-   * [Font weight](https://www.w3schools.com/cssref/pr_font_weight.asp).
-   * Possible values are `normal`, `bold`, `bolder`, and `lighter`.
-   *
    * @var string
    */
   public $fontWeight;
   protected $textAnchorType = GoogleCloudDocumentaiV1DocumentTextAnchor::class;
   protected $textAnchorDataType = '';
   /**
-   * [Text decoration](https://www.w3schools.com/cssref/pr_text_text-
-   * decoration.asp). Follows CSS standard.
-   *
    * @var string
    */
   public $textDecoration;
   /**
-   * [Text style](https://www.w3schools.com/cssref/pr_font_font-style.asp).
-   * Possible values are `normal`, `italic`, and `oblique`.
-   *
    * @var string
    */
   public $textStyle;
 
   /**
-   * Text background color.
-   *
-   * @param GoogleTypeColor $backgroundColor
+   * @param GoogleTypeColor
    */
   public function setBackgroundColor(GoogleTypeColor $backgroundColor)
   {
@@ -73,9 +59,7 @@ class GoogleCloudDocumentaiV1DocumentStyle extends \Google\Model
     return $this->backgroundColor;
   }
   /**
-   * Text color.
-   *
-   * @param GoogleTypeColor $color
+   * @param GoogleTypeColor
    */
   public function setColor(GoogleTypeColor $color)
   {
@@ -89,10 +73,7 @@ class GoogleCloudDocumentaiV1DocumentStyle extends \Google\Model
     return $this->color;
   }
   /**
-   * Font family such as `Arial`, `Times New Roman`.
-   * https://www.w3schools.com/cssref/pr_font_font-family.asp
-   *
-   * @param string $fontFamily
+   * @param string
    */
   public function setFontFamily($fontFamily)
   {
@@ -106,9 +87,7 @@ class GoogleCloudDocumentaiV1DocumentStyle extends \Google\Model
     return $this->fontFamily;
   }
   /**
-   * Font size.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentStyleFontSize $fontSize
+   * @param GoogleCloudDocumentaiV1DocumentStyleFontSize
    */
   public function setFontSize(GoogleCloudDocumentaiV1DocumentStyleFontSize $fontSize)
   {
@@ -122,10 +101,7 @@ class GoogleCloudDocumentaiV1DocumentStyle extends \Google\Model
     return $this->fontSize;
   }
   /**
-   * [Font weight](https://www.w3schools.com/cssref/pr_font_weight.asp).
-   * Possible values are `normal`, `bold`, `bolder`, and `lighter`.
-   *
-   * @param string $fontWeight
+   * @param string
    */
   public function setFontWeight($fontWeight)
   {
@@ -139,9 +115,7 @@ class GoogleCloudDocumentaiV1DocumentStyle extends \Google\Model
     return $this->fontWeight;
   }
   /**
-   * Text anchor indexing into the Document.text.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentTextAnchor $textAnchor
+   * @param GoogleCloudDocumentaiV1DocumentTextAnchor
    */
   public function setTextAnchor(GoogleCloudDocumentaiV1DocumentTextAnchor $textAnchor)
   {
@@ -155,10 +129,7 @@ class GoogleCloudDocumentaiV1DocumentStyle extends \Google\Model
     return $this->textAnchor;
   }
   /**
-   * [Text decoration](https://www.w3schools.com/cssref/pr_text_text-
-   * decoration.asp). Follows CSS standard.
-   *
-   * @param string $textDecoration
+   * @param string
    */
   public function setTextDecoration($textDecoration)
   {
@@ -172,10 +143,7 @@ class GoogleCloudDocumentaiV1DocumentStyle extends \Google\Model
     return $this->textDecoration;
   }
   /**
-   * [Text style](https://www.w3schools.com/cssref/pr_font_font-style.asp).
-   * Possible values are `normal`, `italic`, and `oblique`.
-   *
-   * @param string $textStyle
+   * @param string
    */
   public function setTextStyle($textStyle)
   {

@@ -22,67 +22,36 @@ class CodebaseSource extends \Google\Model
   protected $authorType = UserMetadata::class;
   protected $authorDataType = '';
   /**
-   * The branch in the codebase to build from, using the latest commit.
-   *
    * @var string
    */
   public $branch;
   /**
-   * The commit in the codebase to build from.
-   *
    * @var string
    */
   public $commit;
   /**
-   * Output only. The message of a codebase change.
-   *
    * @var string
    */
   public $commitMessage;
   /**
-   * Output only. The time the change was made.
-   *
    * @var string
    */
   public $commitTime;
   /**
-   * Output only. The human-friendly name to use for this Codebase when
-   * displaying a build. We use the first eight characters of the SHA-1 hash for
-   * GitHub.com.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. The full SHA-1 hash of a Git commit, if available.
-   *
    * @var string
    */
   public $hash;
   /**
-   * Output only. The resource name for the Developer Connect
-   * [`gitRepositoryLink`](https://cloud.google.com/developer-connect/docs/api/r
-   * eference/rest/v1/projects.locations.connections.gitRepositoryLinks) used
-   * for this build, in the format: `projects/{project}/locations/{location}/con
-   * nections/{connection}/gitRepositoryLinks/{repositoryLink}`
-   *
-   * @var string
-   */
-  public $repository;
-  /**
-   * Output only. A URI linking to the codebase on an hosting provider's
-   * website. May not be valid if the commit has been rebased or force-pushed
-   * out of existence in the linked repository.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * Output only. The author contained in the metadata of a version control
-   * change.
-   *
-   * @param UserMetadata $author
+   * @param UserMetadata
    */
   public function setAuthor(UserMetadata $author)
   {
@@ -96,9 +65,7 @@ class CodebaseSource extends \Google\Model
     return $this->author;
   }
   /**
-   * The branch in the codebase to build from, using the latest commit.
-   *
-   * @param string $branch
+   * @param string
    */
   public function setBranch($branch)
   {
@@ -112,9 +79,7 @@ class CodebaseSource extends \Google\Model
     return $this->branch;
   }
   /**
-   * The commit in the codebase to build from.
-   *
-   * @param string $commit
+   * @param string
    */
   public function setCommit($commit)
   {
@@ -128,9 +93,7 @@ class CodebaseSource extends \Google\Model
     return $this->commit;
   }
   /**
-   * Output only. The message of a codebase change.
-   *
-   * @param string $commitMessage
+   * @param string
    */
   public function setCommitMessage($commitMessage)
   {
@@ -144,9 +107,7 @@ class CodebaseSource extends \Google\Model
     return $this->commitMessage;
   }
   /**
-   * Output only. The time the change was made.
-   *
-   * @param string $commitTime
+   * @param string
    */
   public function setCommitTime($commitTime)
   {
@@ -160,11 +121,7 @@ class CodebaseSource extends \Google\Model
     return $this->commitTime;
   }
   /**
-   * Output only. The human-friendly name to use for this Codebase when
-   * displaying a build. We use the first eight characters of the SHA-1 hash for
-   * GitHub.com.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -178,9 +135,7 @@ class CodebaseSource extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Output only. The full SHA-1 hash of a Git commit, if available.
-   *
-   * @param string $hash
+   * @param string
    */
   public function setHash($hash)
   {
@@ -194,31 +149,7 @@ class CodebaseSource extends \Google\Model
     return $this->hash;
   }
   /**
-   * Output only. The resource name for the Developer Connect
-   * [`gitRepositoryLink`](https://cloud.google.com/developer-connect/docs/api/r
-   * eference/rest/v1/projects.locations.connections.gitRepositoryLinks) used
-   * for this build, in the format: `projects/{project}/locations/{location}/con
-   * nections/{connection}/gitRepositoryLinks/{repositoryLink}`
-   *
-   * @param string $repository
-   */
-  public function setRepository($repository)
-  {
-    $this->repository = $repository;
-  }
-  /**
-   * @return string
-   */
-  public function getRepository()
-  {
-    return $this->repository;
-  }
-  /**
-   * Output only. A URI linking to the codebase on an hosting provider's
-   * website. May not be valid if the commit has been rebased or force-pushed
-   * out of existence in the linked repository.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

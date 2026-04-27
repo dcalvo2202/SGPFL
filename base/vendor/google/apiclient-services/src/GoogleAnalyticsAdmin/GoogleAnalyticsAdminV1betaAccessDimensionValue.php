@@ -20,18 +20,12 @@ namespace Google\Service\GoogleAnalyticsAdmin;
 class GoogleAnalyticsAdminV1betaAccessDimensionValue extends \Google\Model
 {
   /**
-   * The dimension value. For example, this value may be 'France' for the
-   * 'country' dimension.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * The dimension value. For example, this value may be 'France' for the
-   * 'country' dimension.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\CloudTasks;
 class PathOverride extends \Google\Model
 {
   /**
-   * The URI path (e.g., /users/1234). Default is an empty string.
-   *
    * @var string
    */
   public $path;
 
   /**
-   * The URI path (e.g., /users/1234). Default is an empty string.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {

@@ -23,15 +23,13 @@ class GoogleCloudDialogflowV2KnowledgeAssistAnswer extends \Google\Model
    * @var string
    */
   public $answerRecord;
-  protected $knowledgeAssistDebugInfoType = GoogleCloudDialogflowV2KnowledgeAssistDebugInfo::class;
-  protected $knowledgeAssistDebugInfoDataType = '';
   protected $suggestedQueryType = GoogleCloudDialogflowV2KnowledgeAssistAnswerSuggestedQuery::class;
   protected $suggestedQueryDataType = '';
   protected $suggestedQueryAnswerType = GoogleCloudDialogflowV2KnowledgeAssistAnswerKnowledgeAnswer::class;
   protected $suggestedQueryAnswerDataType = '';
 
   /**
-   * @param string $answerRecord
+   * @param string
    */
   public function setAnswerRecord($answerRecord)
   {
@@ -45,21 +43,7 @@ class GoogleCloudDialogflowV2KnowledgeAssistAnswer extends \Google\Model
     return $this->answerRecord;
   }
   /**
-   * @param GoogleCloudDialogflowV2KnowledgeAssistDebugInfo $knowledgeAssistDebugInfo
-   */
-  public function setKnowledgeAssistDebugInfo(GoogleCloudDialogflowV2KnowledgeAssistDebugInfo $knowledgeAssistDebugInfo)
-  {
-    $this->knowledgeAssistDebugInfo = $knowledgeAssistDebugInfo;
-  }
-  /**
-   * @return GoogleCloudDialogflowV2KnowledgeAssistDebugInfo
-   */
-  public function getKnowledgeAssistDebugInfo()
-  {
-    return $this->knowledgeAssistDebugInfo;
-  }
-  /**
-   * @param GoogleCloudDialogflowV2KnowledgeAssistAnswerSuggestedQuery $suggestedQuery
+   * @param GoogleCloudDialogflowV2KnowledgeAssistAnswerSuggestedQuery
    */
   public function setSuggestedQuery(GoogleCloudDialogflowV2KnowledgeAssistAnswerSuggestedQuery $suggestedQuery)
   {
@@ -73,7 +57,7 @@ class GoogleCloudDialogflowV2KnowledgeAssistAnswer extends \Google\Model
     return $this->suggestedQuery;
   }
   /**
-   * @param GoogleCloudDialogflowV2KnowledgeAssistAnswerKnowledgeAnswer $suggestedQueryAnswer
+   * @param GoogleCloudDialogflowV2KnowledgeAssistAnswerKnowledgeAnswer
    */
   public function setSuggestedQueryAnswer(GoogleCloudDialogflowV2KnowledgeAssistAnswerKnowledgeAnswer $suggestedQueryAnswer)
   {

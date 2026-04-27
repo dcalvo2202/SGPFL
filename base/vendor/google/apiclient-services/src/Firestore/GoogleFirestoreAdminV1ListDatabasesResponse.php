@@ -23,23 +23,12 @@ class GoogleFirestoreAdminV1ListDatabasesResponse extends \Google\Collection
   protected $databasesType = GoogleFirestoreAdminV1Database::class;
   protected $databasesDataType = 'array';
   /**
-   * In the event that data about individual databases cannot be listed they
-   * will be recorded here. An example entry might be:
-   * projects/some_project/locations/some_location This can happen if the Cloud
-   * Region that the Database resides in is currently unavailable. In this case
-   * we can't fetch all the details about the database. You may be able to get a
-   * more detailed error message (or possibly fetch the resource) by sending a
-   * 'Get' request for the resource or a 'List' request for the specific
-   * location.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * The databases in the project.
-   *
-   * @param GoogleFirestoreAdminV1Database[] $databases
+   * @param GoogleFirestoreAdminV1Database[]
    */
   public function setDatabases($databases)
   {
@@ -53,16 +42,7 @@ class GoogleFirestoreAdminV1ListDatabasesResponse extends \Google\Collection
     return $this->databases;
   }
   /**
-   * In the event that data about individual databases cannot be listed they
-   * will be recorded here. An example entry might be:
-   * projects/some_project/locations/some_location This can happen if the Cloud
-   * Region that the Database resides in is currently unavailable. In this case
-   * we can't fetch all the details about the database. You may be able to get a
-   * more detailed error message (or possibly fetch the resource) by sending a
-   * 'Get' request for the resource or a 'List' request for the specific
-   * location.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

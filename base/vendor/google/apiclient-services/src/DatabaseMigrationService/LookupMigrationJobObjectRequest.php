@@ -23,10 +23,7 @@ class LookupMigrationJobObjectRequest extends \Google\Model
   protected $sourceObjectIdentifierDataType = '';
 
   /**
-   * Required. The source object identifier which maps to the migration job
-   * object.
-   *
-   * @param SourceObjectIdentifier $sourceObjectIdentifier
+   * @param SourceObjectIdentifier
    */
   public function setSourceObjectIdentifier(SourceObjectIdentifier $sourceObjectIdentifier)
   {

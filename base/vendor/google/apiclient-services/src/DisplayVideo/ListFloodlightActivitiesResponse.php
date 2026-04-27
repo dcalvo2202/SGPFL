@@ -23,18 +23,12 @@ class ListFloodlightActivitiesResponse extends \Google\Collection
   protected $floodlightActivitiesType = FloodlightActivity::class;
   protected $floodlightActivitiesDataType = 'array';
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * page_token field in the subsequent call to `ListFloodlightActivities`
-   * method to retrieve the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of Floodlight activities. This list will be absent if empty.
-   *
-   * @param FloodlightActivity[] $floodlightActivities
+   * @param FloodlightActivity[]
    */
   public function setFloodlightActivities($floodlightActivities)
   {
@@ -48,11 +42,7 @@ class ListFloodlightActivitiesResponse extends \Google\Collection
     return $this->floodlightActivities;
   }
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * page_token field in the subsequent call to `ListFloodlightActivities`
-   * method to retrieve the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

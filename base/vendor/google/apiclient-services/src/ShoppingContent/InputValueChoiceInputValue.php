@@ -20,16 +20,12 @@ namespace Google\Service\ShoppingContent;
 class InputValueChoiceInputValue extends \Google\Model
 {
   /**
-   * Required. Id of the option that was selected by the merchant.
-   *
    * @var string
    */
   public $choiceInputOptionId;
 
   /**
-   * Required. Id of the option that was selected by the merchant.
-   *
-   * @param string $choiceInputOptionId
+   * @param string
    */
   public function setChoiceInputOptionId($choiceInputOptionId)
   {

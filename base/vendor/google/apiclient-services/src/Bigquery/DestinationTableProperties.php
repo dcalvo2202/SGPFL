@@ -20,44 +20,24 @@ namespace Google\Service\Bigquery;
 class DestinationTableProperties extends \Google\Model
 {
   /**
-   * Optional. The description for the destination table. This will only be used
-   * if the destination table is newly created. If the table already exists and
-   * a value different than the current description is provided, the job will
-   * fail.
-   *
    * @var string
    */
   public $description;
   /**
-   * Internal use only.
-   *
    * @var string
    */
   public $expirationTime;
   /**
-   * Optional. Friendly name for the destination table. If the table already
-   * exists, it should be same as the existing friendly name.
-   *
    * @var string
    */
   public $friendlyName;
   /**
-   * Optional. The labels associated with this table. You can use these to
-   * organize and group your tables. This will only be used if the destination
-   * table is newly created. If the table already exists and labels are
-   * different than the current labels are provided, the job will fail.
-   *
    * @var string[]
    */
   public $labels;
 
   /**
-   * Optional. The description for the destination table. This will only be used
-   * if the destination table is newly created. If the table already exists and
-   * a value different than the current description is provided, the job will
-   * fail.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -71,9 +51,7 @@ class DestinationTableProperties extends \Google\Model
     return $this->description;
   }
   /**
-   * Internal use only.
-   *
-   * @param string $expirationTime
+   * @param string
    */
   public function setExpirationTime($expirationTime)
   {
@@ -87,10 +65,7 @@ class DestinationTableProperties extends \Google\Model
     return $this->expirationTime;
   }
   /**
-   * Optional. Friendly name for the destination table. If the table already
-   * exists, it should be same as the existing friendly name.
-   *
-   * @param string $friendlyName
+   * @param string
    */
   public function setFriendlyName($friendlyName)
   {
@@ -104,12 +79,7 @@ class DestinationTableProperties extends \Google\Model
     return $this->friendlyName;
   }
   /**
-   * Optional. The labels associated with this table. You can use these to
-   * organize and group your tables. This will only be used if the destination
-   * table is newly created. If the table already exists and labels are
-   * different than the current labels are provided, the job will fail.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {

@@ -21,18 +21,12 @@ class GoogleAdsSearchads360V0ResourcesCampaignSelectiveOptimization extends \Goo
 {
   protected $collection_key = 'conversionActions';
   /**
-   * The selected set of resource names for conversion actions for optimizing
-   * this campaign.
-   *
    * @var string[]
    */
   public $conversionActions;
 
   /**
-   * The selected set of resource names for conversion actions for optimizing
-   * this campaign.
-   *
-   * @param string[] $conversionActions
+   * @param string[]
    */
   public function setConversionActions($conversionActions)
   {

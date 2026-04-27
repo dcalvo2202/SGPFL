@@ -20,25 +20,16 @@ namespace Google\Service\Appengine;
 class AuthorizedDomain extends \Google\Model
 {
   /**
-   * Fully qualified domain name of the domain authorized for use. Example:
-   * example.com.
-   *
    * @var string
    */
   public $id;
   /**
-   * Full path to the AuthorizedDomain resource in the API. Example:
-   * apps/myapp/authorizedDomains/example.com.@OutputOnly
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Fully qualified domain name of the domain authorized for use. Example:
-   * example.com.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -52,10 +43,7 @@ class AuthorizedDomain extends \Google\Model
     return $this->id;
   }
   /**
-   * Full path to the AuthorizedDomain resource in the API. Example:
-   * apps/myapp/authorizedDomains/example.com.@OutputOnly
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

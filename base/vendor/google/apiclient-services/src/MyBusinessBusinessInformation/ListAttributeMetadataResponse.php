@@ -23,19 +23,12 @@ class ListAttributeMetadataResponse extends \Google\Collection
   protected $attributeMetadataType = AttributeMetadata::class;
   protected $attributeMetadataDataType = 'array';
   /**
-   * If the number of attributes exceeded the requested page size, this field
-   * will be populated with a token to fetch the next page of attributes on a
-   * subsequent call to `attributes.list`. If there are no more attributes, this
-   * field will not be present in the response.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * A collection of attribute metadata for the available attributes.
-   *
-   * @param AttributeMetadata[] $attributeMetadata
+   * @param AttributeMetadata[]
    */
   public function setAttributeMetadata($attributeMetadata)
   {
@@ -49,12 +42,7 @@ class ListAttributeMetadataResponse extends \Google\Collection
     return $this->attributeMetadata;
   }
   /**
-   * If the number of attributes exceeded the requested page size, this field
-   * will be populated with a token to fetch the next page of attributes on a
-   * subsequent call to `attributes.list`. If there are no more attributes, this
-   * field will not be present in the response.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

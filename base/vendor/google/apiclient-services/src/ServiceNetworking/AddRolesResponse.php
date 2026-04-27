@@ -24,10 +24,7 @@ class AddRolesResponse extends \Google\Collection
   protected $policyBindingDataType = 'array';
 
   /**
-   * Required. List of policy bindings that were added to the shared VPC host
-   * project.
-   *
-   * @param PolicyBinding[] $policyBinding
+   * @param PolicyBinding[]
    */
   public function setPolicyBinding($policyBinding)
   {

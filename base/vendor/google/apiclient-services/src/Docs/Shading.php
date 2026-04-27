@@ -23,9 +23,7 @@ class Shading extends \Google\Model
   protected $backgroundColorDataType = '';
 
   /**
-   * The background color of this paragraph shading.
-   *
-   * @param OptionalColor $backgroundColor
+   * @param OptionalColor
    */
   public function setBackgroundColor(OptionalColor $backgroundColor)
   {

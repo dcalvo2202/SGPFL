@@ -20,58 +20,28 @@ namespace Google\Service\GKEOnPrem;
 class ResourceCondition extends \Google\Model
 {
   /**
-   * Not set.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Resource is in the condition.
-   */
-  public const STATE_STATE_TRUE = 'STATE_TRUE';
-  /**
-   * Resource is not in the condition.
-   */
-  public const STATE_STATE_FALSE = 'STATE_FALSE';
-  /**
-   * Kubernetes controller can't decide if the resource is in the condition or
-   * not.
-   */
-  public const STATE_STATE_UNKNOWN = 'STATE_UNKNOWN';
-  /**
-   * Last time the condition transit from one status to another.
-   *
    * @var string
    */
   public $lastTransitionTime;
   /**
-   * Human-readable message indicating details about last transition.
-   *
    * @var string
    */
   public $message;
   /**
-   * Machine-readable message indicating details about last transition.
-   *
    * @var string
    */
   public $reason;
   /**
-   * state of the condition.
-   *
    * @var string
    */
   public $state;
   /**
-   * Type of the condition. (e.g., ClusterRunning, NodePoolRunning or
-   * ServerSidePreflightReady)
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Last time the condition transit from one status to another.
-   *
-   * @param string $lastTransitionTime
+   * @param string
    */
   public function setLastTransitionTime($lastTransitionTime)
   {
@@ -85,9 +55,7 @@ class ResourceCondition extends \Google\Model
     return $this->lastTransitionTime;
   }
   /**
-   * Human-readable message indicating details about last transition.
-   *
-   * @param string $message
+   * @param string
    */
   public function setMessage($message)
   {
@@ -101,9 +69,7 @@ class ResourceCondition extends \Google\Model
     return $this->message;
   }
   /**
-   * Machine-readable message indicating details about last transition.
-   *
-   * @param string $reason
+   * @param string
    */
   public function setReason($reason)
   {
@@ -117,28 +83,21 @@ class ResourceCondition extends \Google\Model
     return $this->reason;
   }
   /**
-   * state of the condition.
-   *
-   * Accepted values: STATE_UNSPECIFIED, STATE_TRUE, STATE_FALSE, STATE_UNKNOWN
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Type of the condition. (e.g., ClusterRunning, NodePoolRunning or
-   * ServerSidePreflightReady)
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

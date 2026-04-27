@@ -20,35 +20,20 @@ namespace Google\Service\DataprocMetastore;
 class Consumer extends \Google\Model
 {
   /**
-   * Output only. The location of the endpoint URI. Format:
-   * projects/{project}/locations/{location}.
-   *
    * @var string
    */
   public $endpointLocation;
   /**
-   * Output only. The URI of the endpoint used to access the metastore service.
-   *
    * @var string
    */
   public $endpointUri;
   /**
-   * Immutable. The subnetwork of the customer project from which an IP address
-   * is reserved and used as the Dataproc Metastore service's endpoint. It is
-   * accessible to hosts in the subnet and to all hosts in a subnet in the same
-   * region and same network. There must be at least one IP address available in
-   * the subnet's primary range. The subnet is specified in the following form:p
-   * rojects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}
-   *
    * @var string
    */
   public $subnetwork;
 
   /**
-   * Output only. The location of the endpoint URI. Format:
-   * projects/{project}/locations/{location}.
-   *
-   * @param string $endpointLocation
+   * @param string
    */
   public function setEndpointLocation($endpointLocation)
   {
@@ -62,9 +47,7 @@ class Consumer extends \Google\Model
     return $this->endpointLocation;
   }
   /**
-   * Output only. The URI of the endpoint used to access the metastore service.
-   *
-   * @param string $endpointUri
+   * @param string
    */
   public function setEndpointUri($endpointUri)
   {
@@ -78,14 +61,7 @@ class Consumer extends \Google\Model
     return $this->endpointUri;
   }
   /**
-   * Immutable. The subnetwork of the customer project from which an IP address
-   * is reserved and used as the Dataproc Metastore service's endpoint. It is
-   * accessible to hosts in the subnet and to all hosts in a subnet in the same
-   * region and same network. There must be at least one IP address available in
-   * the subnet's primary range. The subnet is specified in the following form:p
-   * rojects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}
-   *
-   * @param string $subnetwork
+   * @param string
    */
   public function setSubnetwork($subnetwork)
   {

@@ -21,20 +21,12 @@ class HangoutsChatInfo extends \Google\Collection
 {
   protected $collection_key = 'roomId';
   /**
-   * A list of Chat spaces IDs, as provided by the [Chat
-   * API](https://developers.google.com/workspace/chat). There is a limit of
-   * exporting from 500 Chat spaces per request.
-   *
    * @var string[]
    */
   public $roomId;
 
   /**
-   * A list of Chat spaces IDs, as provided by the [Chat
-   * API](https://developers.google.com/workspace/chat). There is a limit of
-   * exporting from 500 Chat spaces per request.
-   *
-   * @param string[] $roomId
+   * @param string[]
    */
   public function setRoomId($roomId)
   {

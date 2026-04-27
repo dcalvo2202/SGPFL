@@ -20,58 +20,40 @@ namespace Google\Service\ShoppingContent;
 class AccountStatusItemLevelIssue extends \Google\Model
 {
   /**
-   * The attribute's name, if the issue is caused by a single attribute.
-   *
    * @var string
    */
   public $attributeName;
   /**
-   * The error code of the issue.
-   *
    * @var string
    */
   public $code;
   /**
-   * A short issue description in English.
-   *
    * @var string
    */
   public $description;
   /**
-   * A detailed issue description in English.
-   *
    * @var string
    */
   public $detail;
   /**
-   * The URL of a web page to help with resolving this issue.
-   *
    * @var string
    */
   public $documentation;
   /**
-   * Number of items with this issue.
-   *
    * @var string
    */
   public $numItems;
   /**
-   * Whether the issue can be resolved by the merchant.
-   *
    * @var string
    */
   public $resolution;
   /**
-   * How this issue affects serving of the offer.
-   *
    * @var string
    */
   public $servability;
 
   /**
-   * The attribute's name, if the issue is caused by a single attribute.
-   *
-   * @param string $attributeName
+   * @param string
    */
   public function setAttributeName($attributeName)
   {
@@ -85,9 +67,7 @@ class AccountStatusItemLevelIssue extends \Google\Model
     return $this->attributeName;
   }
   /**
-   * The error code of the issue.
-   *
-   * @param string $code
+   * @param string
    */
   public function setCode($code)
   {
@@ -101,9 +81,7 @@ class AccountStatusItemLevelIssue extends \Google\Model
     return $this->code;
   }
   /**
-   * A short issue description in English.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -117,9 +95,7 @@ class AccountStatusItemLevelIssue extends \Google\Model
     return $this->description;
   }
   /**
-   * A detailed issue description in English.
-   *
-   * @param string $detail
+   * @param string
    */
   public function setDetail($detail)
   {
@@ -133,9 +109,7 @@ class AccountStatusItemLevelIssue extends \Google\Model
     return $this->detail;
   }
   /**
-   * The URL of a web page to help with resolving this issue.
-   *
-   * @param string $documentation
+   * @param string
    */
   public function setDocumentation($documentation)
   {
@@ -149,9 +123,7 @@ class AccountStatusItemLevelIssue extends \Google\Model
     return $this->documentation;
   }
   /**
-   * Number of items with this issue.
-   *
-   * @param string $numItems
+   * @param string
    */
   public function setNumItems($numItems)
   {
@@ -165,9 +137,7 @@ class AccountStatusItemLevelIssue extends \Google\Model
     return $this->numItems;
   }
   /**
-   * Whether the issue can be resolved by the merchant.
-   *
-   * @param string $resolution
+   * @param string
    */
   public function setResolution($resolution)
   {
@@ -181,9 +151,7 @@ class AccountStatusItemLevelIssue extends \Google\Model
     return $this->resolution;
   }
   /**
-   * How this issue affects serving of the offer.
-   *
-   * @param string $servability
+   * @param string
    */
   public function setServability($servability)
   {

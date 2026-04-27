@@ -24,10 +24,7 @@ class BatchGetPhotosResponse extends \Google\Collection
   protected $resultsDataType = 'array';
 
   /**
-   * List of results for each individual Photo requested, in the same order as
-   * the requests in BatchGetPhotos.
-   *
-   * @param PhotoResponse[] $results
+   * @param PhotoResponse[]
    */
   public function setResults($results)
   {

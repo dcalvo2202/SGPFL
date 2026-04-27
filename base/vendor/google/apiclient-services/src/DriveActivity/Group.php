@@ -20,22 +20,16 @@ namespace Google\Service\DriveActivity;
 class Group extends \Google\Model
 {
   /**
-   * The email address of the group.
-   *
    * @var string
    */
   public $email;
   /**
-   * The title of the group.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * The email address of the group.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {
@@ -49,9 +43,7 @@ class Group extends \Google\Model
     return $this->email;
   }
   /**
-   * The title of the group.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

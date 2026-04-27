@@ -20,71 +20,34 @@ namespace Google\Service\DataprocMetastore;
 class MetadataImport extends \Google\Model
 {
   /**
-   * The state of the metadata import is unknown.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The metadata import is running.
-   */
-  public const STATE_RUNNING = 'RUNNING';
-  /**
-   * The metadata import completed successfully.
-   */
-  public const STATE_SUCCEEDED = 'SUCCEEDED';
-  /**
-   * The metadata import is being updated.
-   */
-  public const STATE_UPDATING = 'UPDATING';
-  /**
-   * The metadata import failed, and attempted metadata changes were rolled
-   * back.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * Output only. The time when the metadata import was started.
-   *
    * @var string
    */
   public $createTime;
   protected $databaseDumpType = DatabaseDump::class;
   protected $databaseDumpDataType = '';
   /**
-   * Optional. The description of the metadata import.
-   *
    * @var string
    */
   public $description;
   /**
-   * Output only. The time when the metadata import finished.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * Immutable. Identifier. The relative resource name of the metadata import,
-   * of the form:projects/{project_number}/locations/{location_id}/services/{ser
-   * vice_id}/metadataImports/{metadata_import_id}.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The current state of the metadata import.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. The time when the metadata import was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. The time when the metadata import was started.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -98,9 +61,7 @@ class MetadataImport extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Immutable. A database dump from a pre-existing metastore's database.
-   *
-   * @param DatabaseDump $databaseDump
+   * @param DatabaseDump
    */
   public function setDatabaseDump(DatabaseDump $databaseDump)
   {
@@ -114,9 +75,7 @@ class MetadataImport extends \Google\Model
     return $this->databaseDump;
   }
   /**
-   * Optional. The description of the metadata import.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -130,9 +89,7 @@ class MetadataImport extends \Google\Model
     return $this->description;
   }
   /**
-   * Output only. The time when the metadata import finished.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -146,11 +103,7 @@ class MetadataImport extends \Google\Model
     return $this->endTime;
   }
   /**
-   * Immutable. Identifier. The relative resource name of the metadata import,
-   * of the form:projects/{project_number}/locations/{location_id}/services/{ser
-   * vice_id}/metadataImports/{metadata_import_id}.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -164,27 +117,21 @@ class MetadataImport extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The current state of the metadata import.
-   *
-   * Accepted values: STATE_UNSPECIFIED, RUNNING, SUCCEEDED, UPDATING, FAILED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. The time when the metadata import was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

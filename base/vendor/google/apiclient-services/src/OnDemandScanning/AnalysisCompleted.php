@@ -26,7 +26,7 @@ class AnalysisCompleted extends \Google\Collection
   public $analysisType;
 
   /**
-   * @param string[] $analysisType
+   * @param string[]
    */
   public function setAnalysisType($analysisType)
   {

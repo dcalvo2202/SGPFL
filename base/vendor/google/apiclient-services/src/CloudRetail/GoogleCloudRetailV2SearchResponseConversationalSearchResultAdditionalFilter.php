@@ -23,10 +23,7 @@ class GoogleCloudRetailV2SearchResponseConversationalSearchResultAdditionalFilte
   protected $productAttributeValueDataType = '';
 
   /**
-   * Product attribute value, including an attribute key and an attribute value.
-   * Other types can be added here in the future.
-   *
-   * @param GoogleCloudRetailV2ProductAttributeValue $productAttributeValue
+   * @param GoogleCloudRetailV2ProductAttributeValue
    */
   public function setProductAttributeValue(GoogleCloudRetailV2ProductAttributeValue $productAttributeValue)
   {

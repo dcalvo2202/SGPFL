@@ -21,8 +21,6 @@ class BatchWriteRequest extends \Google\Collection
 {
   protected $collection_key = 'writes';
   /**
-   * Labels associated with this batch write.
-   *
    * @var string[]
    */
   public $labels;
@@ -30,9 +28,7 @@ class BatchWriteRequest extends \Google\Collection
   protected $writesDataType = 'array';
 
   /**
-   * Labels associated with this batch write.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -46,11 +42,7 @@ class BatchWriteRequest extends \Google\Collection
     return $this->labels;
   }
   /**
-   * The writes to apply. Method does not apply writes atomically and does not
-   * guarantee ordering. Each write succeeds or fails independently. You cannot
-   * write to the same document more than once per request.
-   *
-   * @param Write[] $writes
+   * @param Write[]
    */
   public function setWrites($writes)
   {

@@ -20,40 +20,28 @@ namespace Google\Service\WorkloadManager;
 class UpcomingMaintenanceEvent extends \Google\Model
 {
   /**
-   * Optional. End time
-   *
    * @var string
    */
   public $endTime;
   /**
-   * Optional. Maintenance status
-   *
    * @var string
    */
   public $maintenanceStatus;
   /**
-   * Optional. Instance maintenance behavior. Could be `MIGRATE` or `TERMINATE`.
-   *
    * @var string
    */
   public $onHostMaintenance;
   /**
-   * Optional. Start time
-   *
    * @var string
    */
   public $startTime;
   /**
-   * Optional. Type
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Optional. End time
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -67,9 +55,7 @@ class UpcomingMaintenanceEvent extends \Google\Model
     return $this->endTime;
   }
   /**
-   * Optional. Maintenance status
-   *
-   * @param string $maintenanceStatus
+   * @param string
    */
   public function setMaintenanceStatus($maintenanceStatus)
   {
@@ -83,9 +69,7 @@ class UpcomingMaintenanceEvent extends \Google\Model
     return $this->maintenanceStatus;
   }
   /**
-   * Optional. Instance maintenance behavior. Could be `MIGRATE` or `TERMINATE`.
-   *
-   * @param string $onHostMaintenance
+   * @param string
    */
   public function setOnHostMaintenance($onHostMaintenance)
   {
@@ -99,9 +83,7 @@ class UpcomingMaintenanceEvent extends \Google\Model
     return $this->onHostMaintenance;
   }
   /**
-   * Optional. Start time
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -115,9 +97,7 @@ class UpcomingMaintenanceEvent extends \Google\Model
     return $this->startTime;
   }
   /**
-   * Optional. Type
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

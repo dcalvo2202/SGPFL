@@ -22,40 +22,20 @@ class AutoscalingSettings extends \Google\Model
   protected $autoscalingPoliciesType = AutoscalingPolicy::class;
   protected $autoscalingPoliciesDataType = 'map';
   /**
-   * Optional. The minimum duration between consecutive autoscale operations. It
-   * starts once addition or removal of nodes is fully completed. Defaults to 30
-   * minutes if not specified. Cool down period must be in whole minutes (for
-   * example, 30, 31, 50, 180 minutes).
-   *
    * @var string
    */
   public $coolDownPeriod;
   /**
-   * Optional. Maximum number of nodes of any type in a cluster. If not
-   * specified the default limits apply.
-   *
    * @var int
    */
   public $maxClusterNodeCount;
   /**
-   * Optional. Minimum number of nodes of any type in a cluster. If not
-   * specified the default limits apply.
-   *
    * @var int
    */
   public $minClusterNodeCount;
 
   /**
-   * Required. The map with autoscaling policies applied to the cluster. The key
-   * is the identifier of the policy. It must meet the following requirements: *
-   * Only contains 1-63 alphanumeric characters and hyphens * Begins with an
-   * alphabetical character * Ends with a non-hyphen character * Not formatted
-   * as a UUID * Complies with [RFC
-   * 1034](https://datatracker.ietf.org/doc/html/rfc1034) (section 3.5)
-   * Currently there map must contain only one element that describes the
-   * autoscaling policy for compute nodes.
-   *
-   * @param AutoscalingPolicy[] $autoscalingPolicies
+   * @param AutoscalingPolicy[]
    */
   public function setAutoscalingPolicies($autoscalingPolicies)
   {
@@ -69,12 +49,7 @@ class AutoscalingSettings extends \Google\Model
     return $this->autoscalingPolicies;
   }
   /**
-   * Optional. The minimum duration between consecutive autoscale operations. It
-   * starts once addition or removal of nodes is fully completed. Defaults to 30
-   * minutes if not specified. Cool down period must be in whole minutes (for
-   * example, 30, 31, 50, 180 minutes).
-   *
-   * @param string $coolDownPeriod
+   * @param string
    */
   public function setCoolDownPeriod($coolDownPeriod)
   {
@@ -88,10 +63,7 @@ class AutoscalingSettings extends \Google\Model
     return $this->coolDownPeriod;
   }
   /**
-   * Optional. Maximum number of nodes of any type in a cluster. If not
-   * specified the default limits apply.
-   *
-   * @param int $maxClusterNodeCount
+   * @param int
    */
   public function setMaxClusterNodeCount($maxClusterNodeCount)
   {
@@ -105,10 +77,7 @@ class AutoscalingSettings extends \Google\Model
     return $this->maxClusterNodeCount;
   }
   /**
-   * Optional. Minimum number of nodes of any type in a cluster. If not
-   * specified the default limits apply.
-   *
-   * @param int $minClusterNodeCount
+   * @param int
    */
   public function setMinClusterNodeCount($minClusterNodeCount)
   {

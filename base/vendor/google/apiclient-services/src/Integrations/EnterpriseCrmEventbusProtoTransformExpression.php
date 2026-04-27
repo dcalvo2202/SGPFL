@@ -26,9 +26,7 @@ class EnterpriseCrmEventbusProtoTransformExpression extends \Google\Collection
   protected $transformationFunctionsDataType = 'array';
 
   /**
-   * Initial value upon which to perform transformations.
-   *
-   * @param EnterpriseCrmEventbusProtoBaseValue $initialValue
+   * @param EnterpriseCrmEventbusProtoBaseValue
    */
   public function setInitialValue(EnterpriseCrmEventbusProtoBaseValue $initialValue)
   {
@@ -42,9 +40,7 @@ class EnterpriseCrmEventbusProtoTransformExpression extends \Google\Collection
     return $this->initialValue;
   }
   /**
-   * Transformations to be applied sequentially.
-   *
-   * @param EnterpriseCrmEventbusProtoFunction[] $transformationFunctions
+   * @param EnterpriseCrmEventbusProtoFunction[]
    */
   public function setTransformationFunctions($transformationFunctions)
   {

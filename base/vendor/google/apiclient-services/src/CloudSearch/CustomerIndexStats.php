@@ -26,9 +26,7 @@ class CustomerIndexStats extends \Google\Collection
   protected $itemCountByStatusDataType = 'array';
 
   /**
-   * The date for which statistics were calculated.
-   *
-   * @param Date $date
+   * @param Date
    */
   public function setDate(Date $date)
   {
@@ -42,9 +40,7 @@ class CustomerIndexStats extends \Google\Collection
     return $this->date;
   }
   /**
-   * Number of items aggregrated by status code.
-   *
-   * @param ItemCountByStatus[] $itemCountByStatus
+   * @param ItemCountByStatus[]
    */
   public function setItemCountByStatus($itemCountByStatus)
   {

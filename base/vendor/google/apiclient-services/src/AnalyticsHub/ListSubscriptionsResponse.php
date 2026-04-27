@@ -21,8 +21,6 @@ class ListSubscriptionsResponse extends \Google\Collection
 {
   protected $collection_key = 'subscriptions';
   /**
-   * Next page token.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -30,9 +28,7 @@ class ListSubscriptionsResponse extends \Google\Collection
   protected $subscriptionsDataType = 'array';
 
   /**
-   * Next page token.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -46,9 +42,7 @@ class ListSubscriptionsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The list of subscriptions.
-   *
-   * @param Subscription[] $subscriptions
+   * @param Subscription[]
    */
   public function setSubscriptions($subscriptions)
   {

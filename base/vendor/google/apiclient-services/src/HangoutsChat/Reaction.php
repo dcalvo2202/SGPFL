@@ -22,9 +22,6 @@ class Reaction extends \Google\Model
   protected $emojiType = Emoji::class;
   protected $emojiDataType = '';
   /**
-   * Identifier. The resource name of the reaction. Format:
-   * `spaces/{space}/messages/{message}/reactions/{reaction}`
-   *
    * @var string
    */
   public $name;
@@ -32,9 +29,7 @@ class Reaction extends \Google\Model
   protected $userDataType = '';
 
   /**
-   * Required. The emoji used in the reaction.
-   *
-   * @param Emoji $emoji
+   * @param Emoji
    */
   public function setEmoji(Emoji $emoji)
   {
@@ -48,10 +43,7 @@ class Reaction extends \Google\Model
     return $this->emoji;
   }
   /**
-   * Identifier. The resource name of the reaction. Format:
-   * `spaces/{space}/messages/{message}/reactions/{reaction}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -65,9 +57,7 @@ class Reaction extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The user who created the reaction.
-   *
-   * @param User $user
+   * @param User
    */
   public function setUser(User $user)
   {

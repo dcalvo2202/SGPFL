@@ -19,30 +19,16 @@ namespace Google\Service\GKEOnPrem;
 
 class BareMetalNodePoolConfig extends \Google\Collection
 {
-  /**
-   * No operating system runtime selected.
-   */
-  public const OPERATING_SYSTEM_OPERATING_SYSTEM_UNSPECIFIED = 'OPERATING_SYSTEM_UNSPECIFIED';
-  /**
-   * Linux operating system.
-   */
-  public const OPERATING_SYSTEM_LINUX = 'LINUX';
   protected $collection_key = 'taints';
   protected $kubeletConfigType = BareMetalKubeletConfig::class;
   protected $kubeletConfigDataType = '';
   /**
-   * The labels assigned to nodes of this node pool. An object containing a list
-   * of key/value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count":
-   * "3" }.
-   *
    * @var string[]
    */
   public $labels;
   protected $nodeConfigsType = BareMetalNodeConfig::class;
   protected $nodeConfigsDataType = 'array';
   /**
-   * Specifies the nodes operating system (default: LINUX).
-   *
    * @var string
    */
   public $operatingSystem;
@@ -50,9 +36,7 @@ class BareMetalNodePoolConfig extends \Google\Collection
   protected $taintsDataType = 'array';
 
   /**
-   * The modifiable kubelet configurations for the bare metal machines.
-   *
-   * @param BareMetalKubeletConfig $kubeletConfig
+   * @param BareMetalKubeletConfig
    */
   public function setKubeletConfig(BareMetalKubeletConfig $kubeletConfig)
   {
@@ -66,11 +50,7 @@ class BareMetalNodePoolConfig extends \Google\Collection
     return $this->kubeletConfig;
   }
   /**
-   * The labels assigned to nodes of this node pool. An object containing a list
-   * of key/value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count":
-   * "3" }.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -84,9 +64,7 @@ class BareMetalNodePoolConfig extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Required. The list of machine addresses in the bare metal node pool.
-   *
-   * @param BareMetalNodeConfig[] $nodeConfigs
+   * @param BareMetalNodeConfig[]
    */
   public function setNodeConfigs($nodeConfigs)
   {
@@ -100,27 +78,21 @@ class BareMetalNodePoolConfig extends \Google\Collection
     return $this->nodeConfigs;
   }
   /**
-   * Specifies the nodes operating system (default: LINUX).
-   *
-   * Accepted values: OPERATING_SYSTEM_UNSPECIFIED, LINUX
-   *
-   * @param self::OPERATING_SYSTEM_* $operatingSystem
+   * @param string
    */
   public function setOperatingSystem($operatingSystem)
   {
     $this->operatingSystem = $operatingSystem;
   }
   /**
-   * @return self::OPERATING_SYSTEM_*
+   * @return string
    */
   public function getOperatingSystem()
   {
     return $this->operatingSystem;
   }
   /**
-   * The initial taints assigned to nodes of this node pool.
-   *
-   * @param NodeTaint[] $taints
+   * @param NodeTaint[]
    */
   public function setTaints($taints)
   {

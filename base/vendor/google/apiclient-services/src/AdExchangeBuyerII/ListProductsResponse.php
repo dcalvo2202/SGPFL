@@ -21,8 +21,6 @@ class ListProductsResponse extends \Google\Collection
 {
   protected $collection_key = 'products';
   /**
-   * List pagination support.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -30,9 +28,7 @@ class ListProductsResponse extends \Google\Collection
   protected $productsDataType = 'array';
 
   /**
-   * List pagination support.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -46,9 +42,7 @@ class ListProductsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The list of matching products at their head revision number.
-   *
-   * @param Product[] $products
+   * @param Product[]
    */
   public function setProducts($products)
   {

@@ -20,22 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1SchemaPromptSpecReferenceSentencePair extends \Google\Model
 {
   /**
-   * Source sentence in the sentence pair.
-   *
    * @var string
    */
   public $sourceSentence;
   /**
-   * Target sentence in the sentence pair.
-   *
    * @var string
    */
   public $targetSentence;
 
   /**
-   * Source sentence in the sentence pair.
-   *
-   * @param string $sourceSentence
+   * @param string
    */
   public function setSourceSentence($sourceSentence)
   {
@@ -49,9 +43,7 @@ class GoogleCloudAiplatformV1SchemaPromptSpecReferenceSentencePair extends \Goog
     return $this->sourceSentence;
   }
   /**
-   * Target sentence in the sentence pair.
-   *
-   * @param string $targetSentence
+   * @param string
    */
   public function setTargetSentence($targetSentence)
   {

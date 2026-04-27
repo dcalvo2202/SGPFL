@@ -19,27 +19,17 @@ namespace Google\Service\Compute;
 
 class ResourcePolicySnapshotSchedulePolicyRetentionPolicy extends \Google\Model
 {
-  public const ON_SOURCE_DISK_DELETE_APPLY_RETENTION_POLICY = 'APPLY_RETENTION_POLICY';
-  public const ON_SOURCE_DISK_DELETE_KEEP_AUTO_SNAPSHOTS = 'KEEP_AUTO_SNAPSHOTS';
-  public const ON_SOURCE_DISK_DELETE_UNSPECIFIED_ON_SOURCE_DISK_DELETE = 'UNSPECIFIED_ON_SOURCE_DISK_DELETE';
   /**
-   * Maximum age of the snapshot that is allowed to be kept.
-   *
    * @var int
    */
   public $maxRetentionDays;
   /**
-   * Specifies the behavior to apply to scheduled snapshots when the source disk
-   * is deleted.
-   *
    * @var string
    */
   public $onSourceDiskDelete;
 
   /**
-   * Maximum age of the snapshot that is allowed to be kept.
-   *
-   * @param int $maxRetentionDays
+   * @param int
    */
   public function setMaxRetentionDays($maxRetentionDays)
   {
@@ -53,20 +43,14 @@ class ResourcePolicySnapshotSchedulePolicyRetentionPolicy extends \Google\Model
     return $this->maxRetentionDays;
   }
   /**
-   * Specifies the behavior to apply to scheduled snapshots when the source disk
-   * is deleted.
-   *
-   * Accepted values: APPLY_RETENTION_POLICY, KEEP_AUTO_SNAPSHOTS,
-   * UNSPECIFIED_ON_SOURCE_DISK_DELETE
-   *
-   * @param self::ON_SOURCE_DISK_DELETE_* $onSourceDiskDelete
+   * @param string
    */
   public function setOnSourceDiskDelete($onSourceDiskDelete)
   {
     $this->onSourceDiskDelete = $onSourceDiskDelete;
   }
   /**
-   * @return self::ON_SOURCE_DISK_DELETE_*
+   * @return string
    */
   public function getOnSourceDiskDelete()
   {

@@ -20,16 +20,12 @@ namespace Google\Service\CloudRetail;
 class GoogleCloudRetailV2betaRejoinUserEventsResponse extends \Google\Model
 {
   /**
-   * Number of user events that were joined with latest product catalog.
-   *
    * @var string
    */
   public $rejoinedUserEventsCount;
 
   /**
-   * Number of user events that were joined with latest product catalog.
-   *
-   * @param string $rejoinedUserEventsCount
+   * @param string
    */
   public function setRejoinedUserEventsCount($rejoinedUserEventsCount)
   {

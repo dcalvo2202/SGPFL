@@ -21,80 +21,32 @@ class GoogleCloudDiscoveryengineV1DocumentProcessingConfigParsingConfigLayoutPar
 {
   protected $collection_key = 'structuredContentTypes';
   /**
-   * Optional. If true, the processed document will be made available for the
-   * GetProcessedDocument API.
-   *
-   * @var bool
-   */
-  public $enableGetProcessedDocument;
-  /**
-   * Optional. If true, the LLM based annotation is added to the image during
-   * parsing.
-   *
    * @var bool
    */
   public $enableImageAnnotation;
   /**
-   * Optional. If true, the pdf layout will be refined using an LLM.
-   *
-   * @var bool
-   */
-  public $enableLlmLayoutParsing;
-  /**
-   * Optional. If true, the LLM based annotation is added to the table during
-   * parsing.
-   *
    * @var bool
    */
   public $enableTableAnnotation;
   /**
-   * Optional. List of HTML classes to exclude from the parsed content.
-   *
    * @var string[]
    */
   public $excludeHtmlClasses;
   /**
-   * Optional. List of HTML elements to exclude from the parsed content.
-   *
    * @var string[]
    */
   public $excludeHtmlElements;
   /**
-   * Optional. List of HTML ids to exclude from the parsed content.
-   *
    * @var string[]
    */
   public $excludeHtmlIds;
   /**
-   * Optional. Contains the required structure types to extract from the
-   * document. Supported values: * `shareholder-structure`
-   *
    * @var string[]
    */
   public $structuredContentTypes;
 
   /**
-   * Optional. If true, the processed document will be made available for the
-   * GetProcessedDocument API.
-   *
-   * @param bool $enableGetProcessedDocument
-   */
-  public function setEnableGetProcessedDocument($enableGetProcessedDocument)
-  {
-    $this->enableGetProcessedDocument = $enableGetProcessedDocument;
-  }
-  /**
-   * @return bool
-   */
-  public function getEnableGetProcessedDocument()
-  {
-    return $this->enableGetProcessedDocument;
-  }
-  /**
-   * Optional. If true, the LLM based annotation is added to the image during
-   * parsing.
-   *
-   * @param bool $enableImageAnnotation
+   * @param bool
    */
   public function setEnableImageAnnotation($enableImageAnnotation)
   {
@@ -108,26 +60,7 @@ class GoogleCloudDiscoveryengineV1DocumentProcessingConfigParsingConfigLayoutPar
     return $this->enableImageAnnotation;
   }
   /**
-   * Optional. If true, the pdf layout will be refined using an LLM.
-   *
-   * @param bool $enableLlmLayoutParsing
-   */
-  public function setEnableLlmLayoutParsing($enableLlmLayoutParsing)
-  {
-    $this->enableLlmLayoutParsing = $enableLlmLayoutParsing;
-  }
-  /**
-   * @return bool
-   */
-  public function getEnableLlmLayoutParsing()
-  {
-    return $this->enableLlmLayoutParsing;
-  }
-  /**
-   * Optional. If true, the LLM based annotation is added to the table during
-   * parsing.
-   *
-   * @param bool $enableTableAnnotation
+   * @param bool
    */
   public function setEnableTableAnnotation($enableTableAnnotation)
   {
@@ -141,9 +74,7 @@ class GoogleCloudDiscoveryengineV1DocumentProcessingConfigParsingConfigLayoutPar
     return $this->enableTableAnnotation;
   }
   /**
-   * Optional. List of HTML classes to exclude from the parsed content.
-   *
-   * @param string[] $excludeHtmlClasses
+   * @param string[]
    */
   public function setExcludeHtmlClasses($excludeHtmlClasses)
   {
@@ -157,9 +88,7 @@ class GoogleCloudDiscoveryengineV1DocumentProcessingConfigParsingConfigLayoutPar
     return $this->excludeHtmlClasses;
   }
   /**
-   * Optional. List of HTML elements to exclude from the parsed content.
-   *
-   * @param string[] $excludeHtmlElements
+   * @param string[]
    */
   public function setExcludeHtmlElements($excludeHtmlElements)
   {
@@ -173,9 +102,7 @@ class GoogleCloudDiscoveryengineV1DocumentProcessingConfigParsingConfigLayoutPar
     return $this->excludeHtmlElements;
   }
   /**
-   * Optional. List of HTML ids to exclude from the parsed content.
-   *
-   * @param string[] $excludeHtmlIds
+   * @param string[]
    */
   public function setExcludeHtmlIds($excludeHtmlIds)
   {
@@ -189,10 +116,7 @@ class GoogleCloudDiscoveryengineV1DocumentProcessingConfigParsingConfigLayoutPar
     return $this->excludeHtmlIds;
   }
   /**
-   * Optional. Contains the required structure types to extract from the
-   * document. Supported values: * `shareholder-structure`
-   *
-   * @param string[] $structuredContentTypes
+   * @param string[]
    */
   public function setStructuredContentTypes($structuredContentTypes)
   {

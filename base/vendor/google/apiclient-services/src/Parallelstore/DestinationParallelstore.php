@@ -20,18 +20,12 @@ namespace Google\Service\Parallelstore;
 class DestinationParallelstore extends \Google\Model
 {
   /**
-   * Optional. Root directory path to the Paralellstore filesystem, starting
-   * with `/`. Defaults to `/` if unset.
-   *
    * @var string
    */
   public $path;
 
   /**
-   * Optional. Root directory path to the Paralellstore filesystem, starting
-   * with `/`. Defaults to `/` if unset.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {

@@ -25,9 +25,7 @@ class TransactionOptions extends \Google\Model
   protected $readWriteDataType = '';
 
   /**
-   * The transaction can only be used for read operations.
-   *
-   * @param FirestoreReadOnly $readOnly
+   * @param FirestoreReadOnly
    */
   public function setReadOnly(FirestoreReadOnly $readOnly)
   {
@@ -41,9 +39,7 @@ class TransactionOptions extends \Google\Model
     return $this->readOnly;
   }
   /**
-   * The transaction can be used for both read and write operations.
-   *
-   * @param ReadWrite $readWrite
+   * @param ReadWrite
    */
   public function setReadWrite(ReadWrite $readWrite)
   {

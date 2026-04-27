@@ -20,66 +20,36 @@ namespace Google\Service\Contactcenterinsights;
 class GoogleCloudContactcenterinsightsV1alpha1Dataset extends \Google\Model
 {
   /**
-   * Default value for unspecified.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * For evals only.
-   */
-  public const TYPE_EVAL = 'EVAL';
-  /**
-   * Dataset with new conversations coming in regularly (Insights legacy
-   * conversations and AI trainer)
-   */
-  public const TYPE_LIVE = 'LIVE';
-  /**
-   * Output only. Dataset create time.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Dataset description.
-   *
    * @var string
    */
   public $description;
   /**
-   * Display name for the dataaset
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Immutable. Identifier. Resource name of the dataset. Format:
-   * projects/{project}/locations/{location}/datasets/{dataset}
-   *
    * @var string
    */
   public $name;
   /**
-   * Optional. Option TTL for the dataset.
-   *
    * @var string
    */
   public $ttl;
   /**
-   * Dataset usage type.
-   *
    * @var string
    */
   public $type;
   /**
-   * Output only. Dataset update time.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. Dataset create time.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -93,9 +63,7 @@ class GoogleCloudContactcenterinsightsV1alpha1Dataset extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Dataset description.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -109,9 +77,7 @@ class GoogleCloudContactcenterinsightsV1alpha1Dataset extends \Google\Model
     return $this->description;
   }
   /**
-   * Display name for the dataaset
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -125,10 +91,7 @@ class GoogleCloudContactcenterinsightsV1alpha1Dataset extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Immutable. Identifier. Resource name of the dataset. Format:
-   * projects/{project}/locations/{location}/datasets/{dataset}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -142,9 +105,7 @@ class GoogleCloudContactcenterinsightsV1alpha1Dataset extends \Google\Model
     return $this->name;
   }
   /**
-   * Optional. Option TTL for the dataset.
-   *
-   * @param string $ttl
+   * @param string
    */
   public function setTtl($ttl)
   {
@@ -158,27 +119,21 @@ class GoogleCloudContactcenterinsightsV1alpha1Dataset extends \Google\Model
     return $this->ttl;
   }
   /**
-   * Dataset usage type.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, EVAL, LIVE
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * Output only. Dataset update time.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

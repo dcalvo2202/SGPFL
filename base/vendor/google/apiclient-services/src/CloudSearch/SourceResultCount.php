@@ -20,20 +20,14 @@ namespace Google\Service\CloudSearch;
 class SourceResultCount extends \Google\Model
 {
   /**
-   * Whether there are more search results for this source.
-   *
    * @var bool
    */
   public $hasMoreResults;
   /**
-   * The estimated result count for this source.
-   *
    * @var string
    */
   public $resultCountEstimate;
   /**
-   * The exact result count for this source.
-   *
    * @var string
    */
   public $resultCountExact;
@@ -41,9 +35,7 @@ class SourceResultCount extends \Google\Model
   protected $sourceDataType = '';
 
   /**
-   * Whether there are more search results for this source.
-   *
-   * @param bool $hasMoreResults
+   * @param bool
    */
   public function setHasMoreResults($hasMoreResults)
   {
@@ -57,9 +49,7 @@ class SourceResultCount extends \Google\Model
     return $this->hasMoreResults;
   }
   /**
-   * The estimated result count for this source.
-   *
-   * @param string $resultCountEstimate
+   * @param string
    */
   public function setResultCountEstimate($resultCountEstimate)
   {
@@ -73,9 +63,7 @@ class SourceResultCount extends \Google\Model
     return $this->resultCountEstimate;
   }
   /**
-   * The exact result count for this source.
-   *
-   * @param string $resultCountExact
+   * @param string
    */
   public function setResultCountExact($resultCountExact)
   {
@@ -89,9 +77,7 @@ class SourceResultCount extends \Google\Model
     return $this->resultCountExact;
   }
   /**
-   * The source the result count information is associated with.
-   *
-   * @param Source $source
+   * @param Source
    */
   public function setSource(Source $source)
   {

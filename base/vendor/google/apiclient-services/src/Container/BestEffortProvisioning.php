@@ -20,28 +20,16 @@ namespace Google\Service\Container;
 class BestEffortProvisioning extends \Google\Model
 {
   /**
-   * When this is enabled, cluster/node pool creations will ignore non-fatal
-   * errors like stockout to best provision as many nodes as possible right now
-   * and eventually bring up all target number of nodes
-   *
    * @var bool
    */
   public $enabled;
   /**
-   * Minimum number of nodes to be provisioned to be considered as succeeded,
-   * and the rest of nodes will be provisioned gradually and eventually when
-   * stockout issue has been resolved.
-   *
    * @var int
    */
   public $minProvisionNodes;
 
   /**
-   * When this is enabled, cluster/node pool creations will ignore non-fatal
-   * errors like stockout to best provision as many nodes as possible right now
-   * and eventually bring up all target number of nodes
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {
@@ -55,11 +43,7 @@ class BestEffortProvisioning extends \Google\Model
     return $this->enabled;
   }
   /**
-   * Minimum number of nodes to be provisioned to be considered as succeeded,
-   * and the rest of nodes will be provisioned gradually and eventually when
-   * stockout issue has been resolved.
-   *
-   * @param int $minProvisionNodes
+   * @param int
    */
   public function setMinProvisionNodes($minProvisionNodes)
   {

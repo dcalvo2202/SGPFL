@@ -20,55 +20,30 @@ namespace Google\Service\CloudBuild;
 class Security extends \Google\Model
 {
   /**
-   * Default to PRIVILEGED.
-   */
-  public const PRIVILEGE_MODE_PRIVILEGE_MODE_UNSPECIFIED = 'PRIVILEGE_MODE_UNSPECIFIED';
-  /**
-   * Privileged mode.
-   */
-  public const PRIVILEGE_MODE_PRIVILEGED = 'PRIVILEGED';
-  /**
-   * Unprivileged mode.
-   */
-  public const PRIVILEGE_MODE_UNPRIVILEGED = 'UNPRIVILEGED';
-  /**
-   * Optional. Privilege mode.
-   *
-   * @deprecated
    * @var string
    */
   public $privilegeMode;
   /**
-   * IAM service account whose credentials will be used at runtime.
-   *
    * @var string
    */
   public $serviceAccount;
 
   /**
-   * Optional. Privilege mode.
-   *
-   * Accepted values: PRIVILEGE_MODE_UNSPECIFIED, PRIVILEGED, UNPRIVILEGED
-   *
-   * @deprecated
-   * @param self::PRIVILEGE_MODE_* $privilegeMode
+   * @param string
    */
   public function setPrivilegeMode($privilegeMode)
   {
     $this->privilegeMode = $privilegeMode;
   }
   /**
-   * @deprecated
-   * @return self::PRIVILEGE_MODE_*
+   * @return string
    */
   public function getPrivilegeMode()
   {
     return $this->privilegeMode;
   }
   /**
-   * IAM service account whose credentials will be used at runtime.
-   *
-   * @param string $serviceAccount
+   * @param string
    */
   public function setServiceAccount($serviceAccount)
   {

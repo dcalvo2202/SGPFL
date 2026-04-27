@@ -20,29 +20,18 @@ namespace Google\Service\PeopleService;
 class RelationshipStatus extends \Google\Model
 {
   /**
-   * Output only. The value of the relationship status translated and formatted
-   * in the viewer's account locale or the `Accept-Language` HTTP header locale.
-   *
    * @var string
    */
   public $formattedValue;
   protected $metadataType = FieldMetadata::class;
   protected $metadataDataType = '';
   /**
-   * The relationship status. The value can be custom or one of these predefined
-   * values: * `single` * `inARelationship` * `engaged` * `married` *
-   * `itsComplicated` * `openRelationship` * `widowed` * `inDomesticPartnership`
-   * * `inCivilUnion`
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Output only. The value of the relationship status translated and formatted
-   * in the viewer's account locale or the `Accept-Language` HTTP header locale.
-   *
-   * @param string $formattedValue
+   * @param string
    */
   public function setFormattedValue($formattedValue)
   {
@@ -56,9 +45,7 @@ class RelationshipStatus extends \Google\Model
     return $this->formattedValue;
   }
   /**
-   * Metadata about the relationship status.
-   *
-   * @param FieldMetadata $metadata
+   * @param FieldMetadata
    */
   public function setMetadata(FieldMetadata $metadata)
   {
@@ -72,12 +59,7 @@ class RelationshipStatus extends \Google\Model
     return $this->metadata;
   }
   /**
-   * The relationship status. The value can be custom or one of these predefined
-   * values: * `single` * `inARelationship` * `engaged` * `married` *
-   * `itsComplicated` * `openRelationship` * `widowed` * `inDomesticPartnership`
-   * * `inCivilUnion`
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

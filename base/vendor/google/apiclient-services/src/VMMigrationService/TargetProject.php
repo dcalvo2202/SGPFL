@@ -20,42 +20,28 @@ namespace Google\Service\VMMigrationService;
 class TargetProject extends \Google\Model
 {
   /**
-   * Output only. The time this target project resource was created (not related
-   * to when the Compute Engine project it points to was created).
-   *
    * @var string
    */
   public $createTime;
   /**
-   * The target project's description.
-   *
    * @var string
    */
   public $description;
   /**
-   * Output only. The name of the target project.
-   *
    * @var string
    */
   public $name;
   /**
-   * Required. The target project ID (number) or project name.
-   *
    * @var string
    */
   public $project;
   /**
-   * Output only. The last time the target project resource was updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. The time this target project resource was created (not related
-   * to when the Compute Engine project it points to was created).
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -69,9 +55,7 @@ class TargetProject extends \Google\Model
     return $this->createTime;
   }
   /**
-   * The target project's description.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -85,9 +69,7 @@ class TargetProject extends \Google\Model
     return $this->description;
   }
   /**
-   * Output only. The name of the target project.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -101,9 +83,7 @@ class TargetProject extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. The target project ID (number) or project name.
-   *
-   * @param string $project
+   * @param string
    */
   public function setProject($project)
   {
@@ -117,9 +97,7 @@ class TargetProject extends \Google\Model
     return $this->project;
   }
   /**
-   * Output only. The last time the target project resource was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

@@ -24,10 +24,7 @@ class BatchGetCategoriesResponse extends \Google\Collection
   protected $categoriesDataType = 'array';
 
   /**
-   * Categories that match the GConcept ids provided in the request. They will
-   * not come in the same order as category ids in the request.
-   *
-   * @param Category[] $categories
+   * @param Category[]
    */
   public function setCategories($categories)
   {

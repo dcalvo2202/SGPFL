@@ -28,9 +28,7 @@ class KeyUsage extends \Google\Collection
   protected $unknownExtendedKeyUsagesDataType = 'array';
 
   /**
-   * Describes high-level ways in which a key may be used.
-   *
-   * @param KeyUsageOptions $baseKeyUsage
+   * @param KeyUsageOptions
    */
   public function setBaseKeyUsage(KeyUsageOptions $baseKeyUsage)
   {
@@ -44,9 +42,7 @@ class KeyUsage extends \Google\Collection
     return $this->baseKeyUsage;
   }
   /**
-   * Detailed scenarios in which a key may be used.
-   *
-   * @param ExtendedKeyUsageOptions $extendedKeyUsage
+   * @param ExtendedKeyUsageOptions
    */
   public function setExtendedKeyUsage(ExtendedKeyUsageOptions $extendedKeyUsage)
   {
@@ -60,10 +56,7 @@ class KeyUsage extends \Google\Collection
     return $this->extendedKeyUsage;
   }
   /**
-   * Used to describe extended key usages that are not listed in the
-   * KeyUsage.ExtendedKeyUsageOptions message.
-   *
-   * @param ObjectId[] $unknownExtendedKeyUsages
+   * @param ObjectId[]
    */
   public function setUnknownExtendedKeyUsages($unknownExtendedKeyUsages)
   {

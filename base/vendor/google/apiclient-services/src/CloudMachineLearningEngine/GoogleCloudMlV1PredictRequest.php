@@ -23,11 +23,7 @@ class GoogleCloudMlV1PredictRequest extends \Google\Model
   protected $httpBodyDataType = '';
 
   /**
-   * Required. The prediction request body. Refer to the [request body details
-   * section](#request-body-details) for more information on how to structure
-   * your request.
-   *
-   * @param GoogleApiHttpBody $httpBody
+   * @param GoogleApiHttpBody
    */
   public function setHttpBody(GoogleApiHttpBody $httpBody)
   {

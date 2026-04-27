@@ -20,34 +20,24 @@ namespace Google\Service\ShoppingContent;
 class AccountStatusStatistics extends \Google\Model
 {
   /**
-   * Number of active offers.
-   *
    * @var string
    */
   public $active;
   /**
-   * Number of disapproved offers.
-   *
    * @var string
    */
   public $disapproved;
   /**
-   * Number of expiring offers.
-   *
    * @var string
    */
   public $expiring;
   /**
-   * Number of pending offers.
-   *
    * @var string
    */
   public $pending;
 
   /**
-   * Number of active offers.
-   *
-   * @param string $active
+   * @param string
    */
   public function setActive($active)
   {
@@ -61,9 +51,7 @@ class AccountStatusStatistics extends \Google\Model
     return $this->active;
   }
   /**
-   * Number of disapproved offers.
-   *
-   * @param string $disapproved
+   * @param string
    */
   public function setDisapproved($disapproved)
   {
@@ -77,9 +65,7 @@ class AccountStatusStatistics extends \Google\Model
     return $this->disapproved;
   }
   /**
-   * Number of expiring offers.
-   *
-   * @param string $expiring
+   * @param string
    */
   public function setExpiring($expiring)
   {
@@ -93,9 +79,7 @@ class AccountStatusStatistics extends \Google\Model
     return $this->expiring;
   }
   /**
-   * Number of pending offers.
-   *
-   * @param string $pending
+   * @param string
    */
   public function setPending($pending)
   {

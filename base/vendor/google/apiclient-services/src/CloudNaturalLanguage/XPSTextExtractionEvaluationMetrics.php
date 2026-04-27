@@ -30,18 +30,13 @@ class XPSTextExtractionEvaluationMetrics extends \Google\Collection
   protected $perLabelConfidenceMetricsDataType = 'map';
 
   /**
-   * Values are at the highest F1 score on the precision-recall curve. Only
-   * confidence_threshold, recall, precision, and f1_score will be set.
-   *
-   * @deprecated
-   * @param XPSConfidenceMetricsEntry $bestF1ConfidenceMetrics
+   * @param XPSConfidenceMetricsEntry
    */
   public function setBestF1ConfidenceMetrics(XPSConfidenceMetricsEntry $bestF1ConfidenceMetrics)
   {
     $this->bestF1ConfidenceMetrics = $bestF1ConfidenceMetrics;
   }
   /**
-   * @deprecated
    * @return XPSConfidenceMetricsEntry
    */
   public function getBestF1ConfidenceMetrics()
@@ -49,12 +44,7 @@ class XPSTextExtractionEvaluationMetrics extends \Google\Collection
     return $this->bestF1ConfidenceMetrics;
   }
   /**
-   * If the enclosing EvaluationMetrics.label is empty,
-   * confidence_metrics_entries is an evaluation of the entire model across all
-   * labels. If the enclosing EvaluationMetrics.label is set,
-   * confidence_metrics_entries applies to that label.
-   *
-   * @param XPSConfidenceMetricsEntry[] $confidenceMetricsEntries
+   * @param XPSConfidenceMetricsEntry[]
    */
   public function setConfidenceMetricsEntries($confidenceMetricsEntries)
   {
@@ -68,10 +58,7 @@ class XPSTextExtractionEvaluationMetrics extends \Google\Collection
     return $this->confidenceMetricsEntries;
   }
   /**
-   * Confusion matrix of the model, at the default confidence threshold (0.0).
-   * Only set for whole-model evaluation, not for evaluation per label.
-   *
-   * @param XPSConfusionMatrix $confusionMatrix
+   * @param XPSConfusionMatrix
    */
   public function setConfusionMatrix(XPSConfusionMatrix $confusionMatrix)
   {
@@ -85,17 +72,13 @@ class XPSTextExtractionEvaluationMetrics extends \Google\Collection
     return $this->confusionMatrix;
   }
   /**
-   * Only recall, precision, and f1_score will be set.
-   *
-   * @deprecated
-   * @param XPSConfidenceMetricsEntry[] $perLabelConfidenceMetrics
+   * @param XPSConfidenceMetricsEntry[]
    */
   public function setPerLabelConfidenceMetrics($perLabelConfidenceMetrics)
   {
     $this->perLabelConfidenceMetrics = $perLabelConfidenceMetrics;
   }
   /**
-   * @deprecated
    * @return XPSConfidenceMetricsEntry[]
    */
   public function getPerLabelConfidenceMetrics()

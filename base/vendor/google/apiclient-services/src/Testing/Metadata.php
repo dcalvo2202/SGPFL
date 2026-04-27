@@ -20,22 +20,16 @@ namespace Google\Service\Testing;
 class Metadata extends \Google\Model
 {
   /**
-   * The android:name value
-   *
    * @var string
    */
   public $name;
   /**
-   * The android:value value
-   *
    * @var string
    */
   public $value;
 
   /**
-   * The android:name value
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -49,9 +43,7 @@ class Metadata extends \Google\Model
     return $this->name;
   }
   /**
-   * The android:value value
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

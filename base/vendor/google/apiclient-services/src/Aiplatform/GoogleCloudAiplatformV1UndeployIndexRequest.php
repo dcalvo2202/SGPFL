@@ -20,18 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1UndeployIndexRequest extends \Google\Model
 {
   /**
-   * Required. The ID of the DeployedIndex to be undeployed from the
-   * IndexEndpoint.
-   *
    * @var string
    */
   public $deployedIndexId;
 
   /**
-   * Required. The ID of the DeployedIndex to be undeployed from the
-   * IndexEndpoint.
-   *
-   * @param string $deployedIndexId
+   * @param string
    */
   public function setDeployedIndexId($deployedIndexId)
   {

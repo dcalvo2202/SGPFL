@@ -20,23 +20,16 @@ namespace Google\Service\MigrationCenterAPI;
 class DatabaseDetailsParentDatabaseDeployment extends \Google\Model
 {
   /**
-   * Optional. The parent database deployment generated ID.
-   *
    * @var string
    */
   public $generatedId;
   /**
-   * Optional. The parent database deployment optional manual unique ID set by
-   * the user.
-   *
    * @var string
    */
   public $manualUniqueId;
 
   /**
-   * Optional. The parent database deployment generated ID.
-   *
-   * @param string $generatedId
+   * @param string
    */
   public function setGeneratedId($generatedId)
   {
@@ -50,10 +43,7 @@ class DatabaseDetailsParentDatabaseDeployment extends \Google\Model
     return $this->generatedId;
   }
   /**
-   * Optional. The parent database deployment optional manual unique ID set by
-   * the user.
-   *
-   * @param string $manualUniqueId
+   * @param string
    */
   public function setManualUniqueId($manualUniqueId)
   {

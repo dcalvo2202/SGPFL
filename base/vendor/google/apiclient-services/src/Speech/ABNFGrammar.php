@@ -21,18 +21,12 @@ class ABNFGrammar extends \Google\Collection
 {
   protected $collection_key = 'abnfStrings';
   /**
-   * All declarations and rules of an ABNF grammar broken up into multiple
-   * strings that will end up concatenated.
-   *
    * @var string[]
    */
   public $abnfStrings;
 
   /**
-   * All declarations and rules of an ABNF grammar broken up into multiple
-   * strings that will end up concatenated.
-   *
-   * @param string[] $abnfStrings
+   * @param string[]
    */
   public function setAbnfStrings($abnfStrings)
   {

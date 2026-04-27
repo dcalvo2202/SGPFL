@@ -20,16 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1CheckTrialEarlyStoppingStateResponse extends \Google\Model
 {
   /**
-   * True if the Trial should stop.
-   *
    * @var bool
    */
   public $shouldStop;
 
   /**
-   * True if the Trial should stop.
-   *
-   * @param bool $shouldStop
+   * @param bool
    */
   public function setShouldStop($shouldStop)
   {

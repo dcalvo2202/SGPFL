@@ -24,9 +24,6 @@ class GoogleCloudContactcenterinsightsV1CallAnnotation extends \Google\Model
   protected $annotationStartBoundaryType = GoogleCloudContactcenterinsightsV1AnnotationBoundary::class;
   protected $annotationStartBoundaryDataType = '';
   /**
-   * The channel of the audio where the annotation occurs. For single-channel
-   * audio, this field is not populated.
-   *
    * @var int
    */
   public $channelTag;
@@ -48,9 +45,7 @@ class GoogleCloudContactcenterinsightsV1CallAnnotation extends \Google\Model
   protected $silenceDataDataType = '';
 
   /**
-   * The boundary in the conversation where the annotation ends, inclusive.
-   *
-   * @param GoogleCloudContactcenterinsightsV1AnnotationBoundary $annotationEndBoundary
+   * @param GoogleCloudContactcenterinsightsV1AnnotationBoundary
    */
   public function setAnnotationEndBoundary(GoogleCloudContactcenterinsightsV1AnnotationBoundary $annotationEndBoundary)
   {
@@ -64,9 +59,7 @@ class GoogleCloudContactcenterinsightsV1CallAnnotation extends \Google\Model
     return $this->annotationEndBoundary;
   }
   /**
-   * The boundary in the conversation where the annotation starts, inclusive.
-   *
-   * @param GoogleCloudContactcenterinsightsV1AnnotationBoundary $annotationStartBoundary
+   * @param GoogleCloudContactcenterinsightsV1AnnotationBoundary
    */
   public function setAnnotationStartBoundary(GoogleCloudContactcenterinsightsV1AnnotationBoundary $annotationStartBoundary)
   {
@@ -80,10 +73,7 @@ class GoogleCloudContactcenterinsightsV1CallAnnotation extends \Google\Model
     return $this->annotationStartBoundary;
   }
   /**
-   * The channel of the audio where the annotation occurs. For single-channel
-   * audio, this field is not populated.
-   *
-   * @param int $channelTag
+   * @param int
    */
   public function setChannelTag($channelTag)
   {
@@ -97,9 +87,7 @@ class GoogleCloudContactcenterinsightsV1CallAnnotation extends \Google\Model
     return $this->channelTag;
   }
   /**
-   * Data specifying an entity mention.
-   *
-   * @param GoogleCloudContactcenterinsightsV1EntityMentionData $entityMentionData
+   * @param GoogleCloudContactcenterinsightsV1EntityMentionData
    */
   public function setEntityMentionData(GoogleCloudContactcenterinsightsV1EntityMentionData $entityMentionData)
   {
@@ -113,9 +101,7 @@ class GoogleCloudContactcenterinsightsV1CallAnnotation extends \Google\Model
     return $this->entityMentionData;
   }
   /**
-   * Data specifying a hold.
-   *
-   * @param GoogleCloudContactcenterinsightsV1HoldData $holdData
+   * @param GoogleCloudContactcenterinsightsV1HoldData
    */
   public function setHoldData(GoogleCloudContactcenterinsightsV1HoldData $holdData)
   {
@@ -129,9 +115,7 @@ class GoogleCloudContactcenterinsightsV1CallAnnotation extends \Google\Model
     return $this->holdData;
   }
   /**
-   * Data specifying an intent match.
-   *
-   * @param GoogleCloudContactcenterinsightsV1IntentMatchData $intentMatchData
+   * @param GoogleCloudContactcenterinsightsV1IntentMatchData
    */
   public function setIntentMatchData(GoogleCloudContactcenterinsightsV1IntentMatchData $intentMatchData)
   {
@@ -145,9 +129,7 @@ class GoogleCloudContactcenterinsightsV1CallAnnotation extends \Google\Model
     return $this->intentMatchData;
   }
   /**
-   * Data specifying an interruption.
-   *
-   * @param GoogleCloudContactcenterinsightsV1InterruptionData $interruptionData
+   * @param GoogleCloudContactcenterinsightsV1InterruptionData
    */
   public function setInterruptionData(GoogleCloudContactcenterinsightsV1InterruptionData $interruptionData)
   {
@@ -161,9 +143,7 @@ class GoogleCloudContactcenterinsightsV1CallAnnotation extends \Google\Model
     return $this->interruptionData;
   }
   /**
-   * Data specifying an issue match.
-   *
-   * @param GoogleCloudContactcenterinsightsV1IssueMatchData $issueMatchData
+   * @param GoogleCloudContactcenterinsightsV1IssueMatchData
    */
   public function setIssueMatchData(GoogleCloudContactcenterinsightsV1IssueMatchData $issueMatchData)
   {
@@ -177,9 +157,7 @@ class GoogleCloudContactcenterinsightsV1CallAnnotation extends \Google\Model
     return $this->issueMatchData;
   }
   /**
-   * Data specifying a phrase match.
-   *
-   * @param GoogleCloudContactcenterinsightsV1PhraseMatchData $phraseMatchData
+   * @param GoogleCloudContactcenterinsightsV1PhraseMatchData
    */
   public function setPhraseMatchData(GoogleCloudContactcenterinsightsV1PhraseMatchData $phraseMatchData)
   {
@@ -193,9 +171,7 @@ class GoogleCloudContactcenterinsightsV1CallAnnotation extends \Google\Model
     return $this->phraseMatchData;
   }
   /**
-   * Data specifying sentiment.
-   *
-   * @param GoogleCloudContactcenterinsightsV1SentimentData $sentimentData
+   * @param GoogleCloudContactcenterinsightsV1SentimentData
    */
   public function setSentimentData(GoogleCloudContactcenterinsightsV1SentimentData $sentimentData)
   {
@@ -209,9 +185,7 @@ class GoogleCloudContactcenterinsightsV1CallAnnotation extends \Google\Model
     return $this->sentimentData;
   }
   /**
-   * Data specifying silence.
-   *
-   * @param GoogleCloudContactcenterinsightsV1SilenceData $silenceData
+   * @param GoogleCloudContactcenterinsightsV1SilenceData
    */
   public function setSilenceData(GoogleCloudContactcenterinsightsV1SilenceData $silenceData)
   {

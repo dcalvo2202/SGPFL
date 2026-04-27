@@ -20,16 +20,12 @@ namespace Google\Service\Integrations;
 class GoogleCloudIntegrationsV1alphaCreateAppsScriptProjectResponse extends \Google\Model
 {
   /**
-   * The created AppsScriptProject ID.
-   *
    * @var string
    */
   public $projectId;
 
   /**
-   * The created AppsScriptProject ID.
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {

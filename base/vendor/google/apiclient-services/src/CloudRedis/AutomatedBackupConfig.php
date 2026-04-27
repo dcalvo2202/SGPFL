@@ -20,58 +20,32 @@ namespace Google\Service\CloudRedis;
 class AutomatedBackupConfig extends \Google\Model
 {
   /**
-   * Default value. Automated backup config is not specified.
-   */
-  public const AUTOMATED_BACKUP_MODE_AUTOMATED_BACKUP_MODE_UNSPECIFIED = 'AUTOMATED_BACKUP_MODE_UNSPECIFIED';
-  /**
-   * Automated backup config disabled.
-   */
-  public const AUTOMATED_BACKUP_MODE_DISABLED = 'DISABLED';
-  /**
-   * Automated backup config enabled.
-   */
-  public const AUTOMATED_BACKUP_MODE_ENABLED = 'ENABLED';
-  /**
-   * Optional. The automated backup mode. If the mode is disabled, the other
-   * fields will be ignored.
-   *
    * @var string
    */
   public $automatedBackupMode;
   protected $fixedFrequencyScheduleType = FixedFrequencySchedule::class;
   protected $fixedFrequencyScheduleDataType = '';
   /**
-   * Optional. How long to keep automated backups before the backups are
-   * deleted. The value should be between 1 day and 365 days. If not specified,
-   * the default value is 35 days.
-   *
    * @var string
    */
   public $retention;
 
   /**
-   * Optional. The automated backup mode. If the mode is disabled, the other
-   * fields will be ignored.
-   *
-   * Accepted values: AUTOMATED_BACKUP_MODE_UNSPECIFIED, DISABLED, ENABLED
-   *
-   * @param self::AUTOMATED_BACKUP_MODE_* $automatedBackupMode
+   * @param string
    */
   public function setAutomatedBackupMode($automatedBackupMode)
   {
     $this->automatedBackupMode = $automatedBackupMode;
   }
   /**
-   * @return self::AUTOMATED_BACKUP_MODE_*
+   * @return string
    */
   public function getAutomatedBackupMode()
   {
     return $this->automatedBackupMode;
   }
   /**
-   * Optional. Trigger automated backups at a fixed frequency.
-   *
-   * @param FixedFrequencySchedule $fixedFrequencySchedule
+   * @param FixedFrequencySchedule
    */
   public function setFixedFrequencySchedule(FixedFrequencySchedule $fixedFrequencySchedule)
   {
@@ -85,11 +59,7 @@ class AutomatedBackupConfig extends \Google\Model
     return $this->fixedFrequencySchedule;
   }
   /**
-   * Optional. How long to keep automated backups before the backups are
-   * deleted. The value should be between 1 day and 365 days. If not specified,
-   * the default value is 35 days.
-   *
-   * @param string $retention
+   * @param string
    */
   public function setRetention($retention)
   {

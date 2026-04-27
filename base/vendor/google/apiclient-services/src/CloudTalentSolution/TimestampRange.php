@@ -20,22 +20,16 @@ namespace Google\Service\CloudTalentSolution;
 class TimestampRange extends \Google\Model
 {
   /**
-   * End of the period (exclusive).
-   *
    * @var string
    */
   public $endTime;
   /**
-   * Begin of the period (inclusive).
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * End of the period (exclusive).
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -49,9 +43,7 @@ class TimestampRange extends \Google\Model
     return $this->endTime;
   }
   /**
-   * Begin of the period (inclusive).
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

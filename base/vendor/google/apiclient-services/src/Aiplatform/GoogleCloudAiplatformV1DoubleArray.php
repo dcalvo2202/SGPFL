@@ -20,11 +20,6 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1DoubleArray extends \Google\Collection
 {
   protected $collection_key = 'values';
-  /**
-   * A list of double values.
-   *
-   * @var []
-   */
   public $values;
 
   public function setValues($values)

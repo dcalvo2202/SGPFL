@@ -20,31 +20,20 @@ namespace Google\Service\Directory;
 class BacklightInfo extends \Google\Model
 {
   /**
-   * Output only. Current brightness of the backlight, between 0 and
-   * max_brightness.
-   *
    * @var int
    */
   public $brightness;
   /**
-   * Output only. Maximum brightness for the backlight.
-   *
    * @var int
    */
   public $maxBrightness;
   /**
-   * Output only. Path to this backlight on the system. Useful if the caller
-   * needs to correlate with other information.
-   *
    * @var string
    */
   public $path;
 
   /**
-   * Output only. Current brightness of the backlight, between 0 and
-   * max_brightness.
-   *
-   * @param int $brightness
+   * @param int
    */
   public function setBrightness($brightness)
   {
@@ -58,9 +47,7 @@ class BacklightInfo extends \Google\Model
     return $this->brightness;
   }
   /**
-   * Output only. Maximum brightness for the backlight.
-   *
-   * @param int $maxBrightness
+   * @param int
    */
   public function setMaxBrightness($maxBrightness)
   {
@@ -74,10 +61,7 @@ class BacklightInfo extends \Google\Model
     return $this->maxBrightness;
   }
   /**
-   * Output only. Path to this backlight on the system. Useful if the caller
-   * needs to correlate with other information.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {

@@ -23,9 +23,7 @@ class GoogleCloudAiplatformV1AddTrialMeasurementRequest extends \Google\Model
   protected $measurementDataType = '';
 
   /**
-   * Required. The measurement to be added to a Trial.
-   *
-   * @param GoogleCloudAiplatformV1Measurement $measurement
+   * @param GoogleCloudAiplatformV1Measurement
    */
   public function setMeasurement(GoogleCloudAiplatformV1Measurement $measurement)
   {

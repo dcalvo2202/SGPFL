@@ -20,35 +20,16 @@ namespace Google\Service\HangoutsChat;
 class AppCommandMetadata extends \Google\Model
 {
   /**
-   * Default value. Unspecified.
-   */
-  public const APP_COMMAND_TYPE_APP_COMMAND_TYPE_UNSPECIFIED = 'APP_COMMAND_TYPE_UNSPECIFIED';
-  /**
-   * A slash command. The user sends the command in a Chat message.
-   */
-  public const APP_COMMAND_TYPE_SLASH_COMMAND = 'SLASH_COMMAND';
-  /**
-   * A quick command. The user selects the command from the Chat menu in the
-   * message reply area.
-   */
-  public const APP_COMMAND_TYPE_QUICK_COMMAND = 'QUICK_COMMAND';
-  /**
-   * The ID for the command specified in the Chat API configuration.
-   *
    * @var int
    */
   public $appCommandId;
   /**
-   * The type of Chat app command.
-   *
    * @var string
    */
   public $appCommandType;
 
   /**
-   * The ID for the command specified in the Chat API configuration.
-   *
-   * @param int $appCommandId
+   * @param int
    */
   public function setAppCommandId($appCommandId)
   {
@@ -62,18 +43,14 @@ class AppCommandMetadata extends \Google\Model
     return $this->appCommandId;
   }
   /**
-   * The type of Chat app command.
-   *
-   * Accepted values: APP_COMMAND_TYPE_UNSPECIFIED, SLASH_COMMAND, QUICK_COMMAND
-   *
-   * @param self::APP_COMMAND_TYPE_* $appCommandType
+   * @param string
    */
   public function setAppCommandType($appCommandType)
   {
     $this->appCommandType = $appCommandType;
   }
   /**
-   * @return self::APP_COMMAND_TYPE_*
+   * @return string
    */
   public function getAppCommandType()
   {

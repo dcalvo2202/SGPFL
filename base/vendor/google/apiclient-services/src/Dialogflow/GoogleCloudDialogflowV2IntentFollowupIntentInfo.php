@@ -29,7 +29,7 @@ class GoogleCloudDialogflowV2IntentFollowupIntentInfo extends \Google\Model
   public $parentFollowupIntentName;
 
   /**
-   * @param string $followupIntentName
+   * @param string
    */
   public function setFollowupIntentName($followupIntentName)
   {
@@ -43,7 +43,7 @@ class GoogleCloudDialogflowV2IntentFollowupIntentInfo extends \Google\Model
     return $this->followupIntentName;
   }
   /**
-   * @param string $parentFollowupIntentName
+   * @param string
    */
   public function setParentFollowupIntentName($parentFollowupIntentName)
   {

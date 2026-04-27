@@ -22,28 +22,20 @@ class CommitLogEntry extends \Google\Model
   protected $authorType = CommitAuthor::class;
   protected $authorDataType = '';
   /**
-   * The commit message for this commit log entry.
-   *
    * @var string
    */
   public $commitMessage;
   /**
-   * The commit SHA for this commit log entry.
-   *
    * @var string
    */
   public $commitSha;
   /**
-   * Commit timestamp.
-   *
    * @var string
    */
   public $commitTime;
 
   /**
-   * The commit author for this commit log entry.
-   *
-   * @param CommitAuthor $author
+   * @param CommitAuthor
    */
   public function setAuthor(CommitAuthor $author)
   {
@@ -57,9 +49,7 @@ class CommitLogEntry extends \Google\Model
     return $this->author;
   }
   /**
-   * The commit message for this commit log entry.
-   *
-   * @param string $commitMessage
+   * @param string
    */
   public function setCommitMessage($commitMessage)
   {
@@ -73,9 +63,7 @@ class CommitLogEntry extends \Google\Model
     return $this->commitMessage;
   }
   /**
-   * The commit SHA for this commit log entry.
-   *
-   * @param string $commitSha
+   * @param string
    */
   public function setCommitSha($commitSha)
   {
@@ -89,9 +77,7 @@ class CommitLogEntry extends \Google\Model
     return $this->commitSha;
   }
   /**
-   * Commit timestamp.
-   *
-   * @param string $commitTime
+   * @param string
    */
   public function setCommitTime($commitTime)
   {

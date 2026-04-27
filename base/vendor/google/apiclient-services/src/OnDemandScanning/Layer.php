@@ -20,23 +20,16 @@ namespace Google\Service\OnDemandScanning;
 class Layer extends \Google\Model
 {
   /**
-   * The recovered arguments to the Dockerfile directive.
-   *
    * @var string
    */
   public $arguments;
   /**
-   * Required. The recovered Dockerfile directive used to construct this layer.
-   * See https://docs.docker.com/engine/reference/builder/ for more information.
-   *
    * @var string
    */
   public $directive;
 
   /**
-   * The recovered arguments to the Dockerfile directive.
-   *
-   * @param string $arguments
+   * @param string
    */
   public function setArguments($arguments)
   {
@@ -50,10 +43,7 @@ class Layer extends \Google\Model
     return $this->arguments;
   }
   /**
-   * Required. The recovered Dockerfile directive used to construct this layer.
-   * See https://docs.docker.com/engine/reference/builder/ for more information.
-   *
-   * @param string $directive
+   * @param string
    */
   public function setDirective($directive)
   {

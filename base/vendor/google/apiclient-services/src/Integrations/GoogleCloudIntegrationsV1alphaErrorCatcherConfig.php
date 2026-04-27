@@ -21,30 +21,18 @@ class GoogleCloudIntegrationsV1alphaErrorCatcherConfig extends \Google\Collectio
 {
   protected $collection_key = 'startErrorTasks';
   /**
-   * Optional. User-provided description intended to give more business context
-   * about the error catcher config.
-   *
    * @var string
    */
   public $description;
   /**
-   * Required. An error catcher id is string representation for the error
-   * catcher config. Within a workflow, error_catcher_id uniquely identifies an
-   * error catcher config among all error catcher configs for the workflow
-   *
    * @var string
    */
   public $errorCatcherId;
   /**
-   * Required. A number to uniquely identify each error catcher config within
-   * the workflow on UI.
-   *
    * @var string
    */
   public $errorCatcherNumber;
   /**
-   * Optional. The user created label for a particular error catcher. Optional.
-   *
    * @var string
    */
   public $label;
@@ -54,10 +42,7 @@ class GoogleCloudIntegrationsV1alphaErrorCatcherConfig extends \Google\Collectio
   protected $startErrorTasksDataType = 'array';
 
   /**
-   * Optional. User-provided description intended to give more business context
-   * about the error catcher config.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -71,11 +56,7 @@ class GoogleCloudIntegrationsV1alphaErrorCatcherConfig extends \Google\Collectio
     return $this->description;
   }
   /**
-   * Required. An error catcher id is string representation for the error
-   * catcher config. Within a workflow, error_catcher_id uniquely identifies an
-   * error catcher config among all error catcher configs for the workflow
-   *
-   * @param string $errorCatcherId
+   * @param string
    */
   public function setErrorCatcherId($errorCatcherId)
   {
@@ -89,10 +70,7 @@ class GoogleCloudIntegrationsV1alphaErrorCatcherConfig extends \Google\Collectio
     return $this->errorCatcherId;
   }
   /**
-   * Required. A number to uniquely identify each error catcher config within
-   * the workflow on UI.
-   *
-   * @param string $errorCatcherNumber
+   * @param string
    */
   public function setErrorCatcherNumber($errorCatcherNumber)
   {
@@ -106,9 +84,7 @@ class GoogleCloudIntegrationsV1alphaErrorCatcherConfig extends \Google\Collectio
     return $this->errorCatcherNumber;
   }
   /**
-   * Optional. The user created label for a particular error catcher. Optional.
-   *
-   * @param string $label
+   * @param string
    */
   public function setLabel($label)
   {
@@ -122,10 +98,7 @@ class GoogleCloudIntegrationsV1alphaErrorCatcherConfig extends \Google\Collectio
     return $this->label;
   }
   /**
-   * Optional. Informs the front-end application where to draw this error
-   * catcher config on the UI.
-   *
-   * @param GoogleCloudIntegrationsV1alphaCoordinate $position
+   * @param GoogleCloudIntegrationsV1alphaCoordinate
    */
   public function setPosition(GoogleCloudIntegrationsV1alphaCoordinate $position)
   {
@@ -139,10 +112,7 @@ class GoogleCloudIntegrationsV1alphaErrorCatcherConfig extends \Google\Collectio
     return $this->position;
   }
   /**
-   * Required. The set of start tasks that are to be executed for the error
-   * catch flow
-   *
-   * @param GoogleCloudIntegrationsV1alphaNextTask[] $startErrorTasks
+   * @param GoogleCloudIntegrationsV1alphaNextTask[]
    */
   public function setStartErrorTasks($startErrorTasks)
   {

@@ -23,16 +23,10 @@ class DocsList extends \Google\Collection
   protected $listPropertiesType = ListProperties::class;
   protected $listPropertiesDataType = '';
   /**
-   * The suggested deletion IDs. If empty, then there are no suggested deletions
-   * of this list.
-   *
    * @var string[]
    */
   public $suggestedDeletionIds;
   /**
-   * The suggested insertion ID. If empty, then this is not a suggested
-   * insertion.
-   *
    * @var string
    */
   public $suggestedInsertionId;
@@ -40,9 +34,7 @@ class DocsList extends \Google\Collection
   protected $suggestedListPropertiesChangesDataType = 'map';
 
   /**
-   * The properties of the list.
-   *
-   * @param ListProperties $listProperties
+   * @param ListProperties
    */
   public function setListProperties(ListProperties $listProperties)
   {
@@ -56,10 +48,7 @@ class DocsList extends \Google\Collection
     return $this->listProperties;
   }
   /**
-   * The suggested deletion IDs. If empty, then there are no suggested deletions
-   * of this list.
-   *
-   * @param string[] $suggestedDeletionIds
+   * @param string[]
    */
   public function setSuggestedDeletionIds($suggestedDeletionIds)
   {
@@ -73,10 +62,7 @@ class DocsList extends \Google\Collection
     return $this->suggestedDeletionIds;
   }
   /**
-   * The suggested insertion ID. If empty, then this is not a suggested
-   * insertion.
-   *
-   * @param string $suggestedInsertionId
+   * @param string
    */
   public function setSuggestedInsertionId($suggestedInsertionId)
   {
@@ -90,9 +76,7 @@ class DocsList extends \Google\Collection
     return $this->suggestedInsertionId;
   }
   /**
-   * The suggested changes to the list properties, keyed by suggestion ID.
-   *
-   * @param SuggestedListProperties[] $suggestedListPropertiesChanges
+   * @param SuggestedListProperties[]
    */
   public function setSuggestedListPropertiesChanges($suggestedListPropertiesChanges)
   {

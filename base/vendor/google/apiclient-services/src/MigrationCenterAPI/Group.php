@@ -20,46 +20,32 @@ namespace Google\Service\MigrationCenterAPI;
 class Group extends \Google\Model
 {
   /**
-   * Output only. The timestamp when the group was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. The description of the group.
-   *
    * @var string
    */
   public $description;
   /**
-   * Optional. User-friendly display name.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Labels as key value pairs.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Output only. The name of the group.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The timestamp when the group was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. The timestamp when the group was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -73,9 +59,7 @@ class Group extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Optional. The description of the group.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -89,9 +73,7 @@ class Group extends \Google\Model
     return $this->description;
   }
   /**
-   * Optional. User-friendly display name.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -105,9 +87,7 @@ class Group extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Labels as key value pairs.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -121,9 +101,7 @@ class Group extends \Google\Model
     return $this->labels;
   }
   /**
-   * Output only. The name of the group.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -137,9 +115,7 @@ class Group extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The timestamp when the group was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

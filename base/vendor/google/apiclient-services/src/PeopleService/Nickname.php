@@ -19,64 +19,19 @@ namespace Google\Service\PeopleService;
 
 class Nickname extends \Google\Model
 {
-  /**
-   * Generic nickname.
-   */
-  public const TYPE_DEFAULT = 'DEFAULT';
-  /**
-   * Maiden name or birth family name. Used when the person's family name has
-   * changed as a result of marriage.
-   *
-   * @deprecated
-   */
-  public const TYPE_MAIDEN_NAME = 'MAIDEN_NAME';
-  /**
-   * Initials.
-   *
-   * @deprecated
-   */
-  public const TYPE_INITIALS = 'INITIALS';
-  /**
-   * Google+ profile nickname.
-   *
-   * @deprecated
-   */
-  public const TYPE_GPLUS = 'GPLUS';
-  /**
-   * A professional affiliation or other name; for example, `Dr. Smith.`
-   *
-   * @deprecated
-   */
-  public const TYPE_OTHER_NAME = 'OTHER_NAME';
-  /**
-   * Alternate name person is known by.
-   */
-  public const TYPE_ALTERNATE_NAME = 'ALTERNATE_NAME';
-  /**
-   * A shorter version of the person's name.
-   *
-   * @deprecated
-   */
-  public const TYPE_SHORT_NAME = 'SHORT_NAME';
   protected $metadataType = FieldMetadata::class;
   protected $metadataDataType = '';
   /**
-   * The type of the nickname.
-   *
    * @var string
    */
   public $type;
   /**
-   * The nickname.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Metadata about the nickname.
-   *
-   * @param FieldMetadata $metadata
+   * @param FieldMetadata
    */
   public function setMetadata(FieldMetadata $metadata)
   {
@@ -90,28 +45,21 @@ class Nickname extends \Google\Model
     return $this->metadata;
   }
   /**
-   * The type of the nickname.
-   *
-   * Accepted values: DEFAULT, MAIDEN_NAME, INITIALS, GPLUS, OTHER_NAME,
-   * ALTERNATE_NAME, SHORT_NAME
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * The nickname.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

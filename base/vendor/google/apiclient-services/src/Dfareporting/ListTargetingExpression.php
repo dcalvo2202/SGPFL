@@ -20,16 +20,12 @@ namespace Google\Service\Dfareporting;
 class ListTargetingExpression extends \Google\Model
 {
   /**
-   * Expression describing which lists are being targeted by the ad.
-   *
    * @var string
    */
   public $expression;
 
   /**
-   * Expression describing which lists are being targeted by the ad.
-   *
-   * @param string $expression
+   * @param string
    */
   public function setExpression($expression)
   {

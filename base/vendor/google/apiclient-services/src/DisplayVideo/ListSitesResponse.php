@@ -21,10 +21,6 @@ class ListSitesResponse extends \Google\Collection
 {
   protected $collection_key = 'sites';
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * page_token field in the subsequent call to `ListSites` method to retrieve
-   * the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -32,11 +28,7 @@ class ListSitesResponse extends \Google\Collection
   protected $sitesDataType = 'array';
 
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * page_token field in the subsequent call to `ListSites` method to retrieve
-   * the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -50,9 +42,7 @@ class ListSitesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The list of sites. This list will be absent if empty.
-   *
-   * @param Site[] $sites
+   * @param Site[]
    */
   public function setSites($sites)
   {

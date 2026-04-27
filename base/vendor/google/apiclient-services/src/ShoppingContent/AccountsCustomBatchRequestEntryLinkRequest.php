@@ -21,43 +21,24 @@ class AccountsCustomBatchRequestEntryLinkRequest extends \Google\Collection
 {
   protected $collection_key = 'services';
   /**
-   * Action to perform for this link. The `"request"` action is only available
-   * to select merchants. Acceptable values are: - "`approve`" - "`remove`" -
-   * "`request`"
-   *
    * @var string
    */
   public $action;
   /**
-   * Type of the link between the two accounts. Acceptable values are: -
-   * "`channelPartner`" - "`eCommercePlatform`" - "`paymentServiceProvider`" -
-   * "`localProductManager`"
-   *
    * @var string
    */
   public $linkType;
   /**
-   * The ID of the linked account.
-   *
    * @var string
    */
   public $linkedAccountId;
   /**
-   * Provided services. Acceptable values are: -
-   * "`shoppingAdsProductManagement`" - "`shoppingActionsProductManagement`" -
-   * "`shoppingActionsOrderManagement`" - "`paymentProcessing`" -
-   * "`localProductManagement`"
-   *
    * @var string[]
    */
   public $services;
 
   /**
-   * Action to perform for this link. The `"request"` action is only available
-   * to select merchants. Acceptable values are: - "`approve`" - "`remove`" -
-   * "`request`"
-   *
-   * @param string $action
+   * @param string
    */
   public function setAction($action)
   {
@@ -71,11 +52,7 @@ class AccountsCustomBatchRequestEntryLinkRequest extends \Google\Collection
     return $this->action;
   }
   /**
-   * Type of the link between the two accounts. Acceptable values are: -
-   * "`channelPartner`" - "`eCommercePlatform`" - "`paymentServiceProvider`" -
-   * "`localProductManager`"
-   *
-   * @param string $linkType
+   * @param string
    */
   public function setLinkType($linkType)
   {
@@ -89,9 +66,7 @@ class AccountsCustomBatchRequestEntryLinkRequest extends \Google\Collection
     return $this->linkType;
   }
   /**
-   * The ID of the linked account.
-   *
-   * @param string $linkedAccountId
+   * @param string
    */
   public function setLinkedAccountId($linkedAccountId)
   {
@@ -105,12 +80,7 @@ class AccountsCustomBatchRequestEntryLinkRequest extends \Google\Collection
     return $this->linkedAccountId;
   }
   /**
-   * Provided services. Acceptable values are: -
-   * "`shoppingAdsProductManagement`" - "`shoppingActionsProductManagement`" -
-   * "`shoppingActionsOrderManagement`" - "`paymentProcessing`" -
-   * "`localProductManagement`"
-   *
-   * @param string[] $services
+   * @param string[]
    */
   public function setServices($services)
   {

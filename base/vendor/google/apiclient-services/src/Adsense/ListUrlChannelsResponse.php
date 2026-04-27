@@ -21,9 +21,6 @@ class ListUrlChannelsResponse extends \Google\Collection
 {
   protected $collection_key = 'urlChannels';
   /**
-   * Continuation token used to page through url channels. To retrieve the next
-   * page of the results, set the next request's "page_token" value to this.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListUrlChannelsResponse extends \Google\Collection
   protected $urlChannelsDataType = 'array';
 
   /**
-   * Continuation token used to page through url channels. To retrieve the next
-   * page of the results, set the next request's "page_token" value to this.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class ListUrlChannelsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The url channels returned in this list response.
-   *
-   * @param UrlChannel[] $urlChannels
+   * @param UrlChannel[]
    */
   public function setUrlChannels($urlChannels)
   {

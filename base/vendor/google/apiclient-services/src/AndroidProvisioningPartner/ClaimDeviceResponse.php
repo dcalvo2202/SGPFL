@@ -20,23 +20,16 @@ namespace Google\Service\AndroidProvisioningPartner;
 class ClaimDeviceResponse extends \Google\Model
 {
   /**
-   * The device ID of the claimed device.
-   *
    * @var string
    */
   public $deviceId;
   /**
-   * The resource name of the device in the format
-   * `partners/[PARTNER_ID]/devices/[DEVICE_ID]`.
-   *
    * @var string
    */
   public $deviceName;
 
   /**
-   * The device ID of the claimed device.
-   *
-   * @param string $deviceId
+   * @param string
    */
   public function setDeviceId($deviceId)
   {
@@ -50,10 +43,7 @@ class ClaimDeviceResponse extends \Google\Model
     return $this->deviceId;
   }
   /**
-   * The resource name of the device in the format
-   * `partners/[PARTNER_ID]/devices/[DEVICE_ID]`.
-   *
-   * @param string $deviceName
+   * @param string
    */
   public function setDeviceName($deviceName)
   {

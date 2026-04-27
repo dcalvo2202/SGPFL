@@ -20,90 +20,32 @@ namespace Google\Service\Pubsub;
 class ConfluentCloud extends \Google\Model
 {
   /**
-   * Default value. This value is unused.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Ingestion is active.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * Permission denied encountered while consuming data from Confluent Cloud.
-   */
-  public const STATE_CONFLUENT_CLOUD_PERMISSION_DENIED = 'CONFLUENT_CLOUD_PERMISSION_DENIED';
-  /**
-   * Permission denied encountered while publishing to the topic.
-   */
-  public const STATE_PUBLISH_PERMISSION_DENIED = 'PUBLISH_PERMISSION_DENIED';
-  /**
-   * The provided bootstrap server address is unreachable.
-   */
-  public const STATE_UNREACHABLE_BOOTSTRAP_SERVER = 'UNREACHABLE_BOOTSTRAP_SERVER';
-  /**
-   * The provided cluster wasn't found.
-   */
-  public const STATE_CLUSTER_NOT_FOUND = 'CLUSTER_NOT_FOUND';
-  /**
-   * The provided topic wasn't found.
-   */
-  public const STATE_TOPIC_NOT_FOUND = 'TOPIC_NOT_FOUND';
-  /**
-   * Indicates an error state where the ingestion source cannot be processed.
-   * This occurs because there is no overlap between the regions allowed by the
-   * topic's `MessageStoragePolicy` and the regions permitted by the Regional
-   * Access Boundary (RAB) restrictions on the project's Pub/Sub service
-   * account. A common, allowed region is required to determine a valid
-   * ingestion region.
-   */
-  public const STATE_CONFLICTING_REGION_CONSTRAINTS = 'CONFLICTING_REGION_CONSTRAINTS';
-  /**
-   * Required. The address of the bootstrap server. The format is url:port.
-   *
    * @var string
    */
   public $bootstrapServer;
   /**
-   * Required. The id of the cluster.
-   *
    * @var string
    */
   public $clusterId;
   /**
-   * Required. The GCP service account to be used for Federated Identity
-   * authentication with `identity_pool_id`.
-   *
    * @var string
    */
   public $gcpServiceAccount;
   /**
-   * Required. The id of the identity pool to be used for Federated Identity
-   * authentication with Confluent Cloud. See
-   * https://docs.confluent.io/cloud/current/security/authenticate/workload-
-   * identities/identity-providers/oauth/identity-pools.html#add-oauth-identity-
-   * pools.
-   *
    * @var string
    */
   public $identityPoolId;
   /**
-   * Output only. An output-only field that indicates the state of the Confluent
-   * Cloud ingestion source.
-   *
    * @var string
    */
   public $state;
   /**
-   * Required. The name of the topic in the Confluent Cloud cluster that Pub/Sub
-   * will import from.
-   *
    * @var string
    */
   public $topic;
 
   /**
-   * Required. The address of the bootstrap server. The format is url:port.
-   *
-   * @param string $bootstrapServer
+   * @param string
    */
   public function setBootstrapServer($bootstrapServer)
   {
@@ -117,9 +59,7 @@ class ConfluentCloud extends \Google\Model
     return $this->bootstrapServer;
   }
   /**
-   * Required. The id of the cluster.
-   *
-   * @param string $clusterId
+   * @param string
    */
   public function setClusterId($clusterId)
   {
@@ -133,10 +73,7 @@ class ConfluentCloud extends \Google\Model
     return $this->clusterId;
   }
   /**
-   * Required. The GCP service account to be used for Federated Identity
-   * authentication with `identity_pool_id`.
-   *
-   * @param string $gcpServiceAccount
+   * @param string
    */
   public function setGcpServiceAccount($gcpServiceAccount)
   {
@@ -150,13 +87,7 @@ class ConfluentCloud extends \Google\Model
     return $this->gcpServiceAccount;
   }
   /**
-   * Required. The id of the identity pool to be used for Federated Identity
-   * authentication with Confluent Cloud. See
-   * https://docs.confluent.io/cloud/current/security/authenticate/workload-
-   * identities/identity-providers/oauth/identity-pools.html#add-oauth-identity-
-   * pools.
-   *
-   * @param string $identityPoolId
+   * @param string
    */
   public function setIdentityPoolId($identityPoolId)
   {
@@ -170,32 +101,21 @@ class ConfluentCloud extends \Google\Model
     return $this->identityPoolId;
   }
   /**
-   * Output only. An output-only field that indicates the state of the Confluent
-   * Cloud ingestion source.
-   *
-   * Accepted values: STATE_UNSPECIFIED, ACTIVE,
-   * CONFLUENT_CLOUD_PERMISSION_DENIED, PUBLISH_PERMISSION_DENIED,
-   * UNREACHABLE_BOOTSTRAP_SERVER, CLUSTER_NOT_FOUND, TOPIC_NOT_FOUND,
-   * CONFLICTING_REGION_CONSTRAINTS
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Required. The name of the topic in the Confluent Cloud cluster that Pub/Sub
-   * will import from.
-   *
-   * @param string $topic
+   * @param string
    */
   public function setTopic($topic)
   {

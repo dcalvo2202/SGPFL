@@ -20,33 +20,20 @@ namespace Google\Service\Bigquery;
 class Streamingbuffer extends \Google\Model
 {
   /**
-   * Output only. A lower-bound estimate of the number of bytes currently in the
-   * streaming buffer.
-   *
    * @var string
    */
   public $estimatedBytes;
   /**
-   * Output only. A lower-bound estimate of the number of rows currently in the
-   * streaming buffer.
-   *
    * @var string
    */
   public $estimatedRows;
   /**
-   * Output only. Contains the timestamp of the oldest entry in the streaming
-   * buffer, in milliseconds since the epoch, if the streaming buffer is
-   * available.
-   *
    * @var string
    */
   public $oldestEntryTime;
 
   /**
-   * Output only. A lower-bound estimate of the number of bytes currently in the
-   * streaming buffer.
-   *
-   * @param string $estimatedBytes
+   * @param string
    */
   public function setEstimatedBytes($estimatedBytes)
   {
@@ -60,10 +47,7 @@ class Streamingbuffer extends \Google\Model
     return $this->estimatedBytes;
   }
   /**
-   * Output only. A lower-bound estimate of the number of rows currently in the
-   * streaming buffer.
-   *
-   * @param string $estimatedRows
+   * @param string
    */
   public function setEstimatedRows($estimatedRows)
   {
@@ -77,11 +61,7 @@ class Streamingbuffer extends \Google\Model
     return $this->estimatedRows;
   }
   /**
-   * Output only. Contains the timestamp of the oldest entry in the streaming
-   * buffer, in milliseconds since the epoch, if the streaming buffer is
-   * available.
-   *
-   * @param string $oldestEntryTime
+   * @param string
    */
   public function setOldestEntryTime($oldestEntryTime)
   {

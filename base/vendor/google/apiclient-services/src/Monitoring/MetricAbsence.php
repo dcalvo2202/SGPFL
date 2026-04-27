@@ -23,25 +23,10 @@ class MetricAbsence extends \Google\Collection
   protected $aggregationsType = Aggregation::class;
   protected $aggregationsDataType = 'array';
   /**
-   * Required. The amount of time that a time series must fail to report new
-   * data to be considered failing. The minimum value of this field is 120
-   * seconds. Larger values that are a multiple of a minute--for example, 240 or
-   * 300 seconds--are supported. If an invalid value is given, an error will be
-   * returned.
-   *
    * @var string
    */
   public $duration;
   /**
-   * Required. A filter (https://cloud.google.com/monitoring/api/v3/filters)
-   * that identifies which time series should be compared with the threshold.The
-   * filter is similar to the one that is specified in the ListTimeSeries
-   * request (https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.ti
-   * meSeries/list) (that call is useful to verify the time series that will be
-   * retrieved / processed). The filter must specify the metric type and the
-   * resource type. Optionally, it can specify resource labels and metric
-   * labels. This field must not exceed 2048 Unicode characters in length.
-   *
    * @var string
    */
   public $filter;
@@ -49,16 +34,7 @@ class MetricAbsence extends \Google\Collection
   protected $triggerDataType = '';
 
   /**
-   * Specifies the alignment of data points in individual time series as well as
-   * how to combine the retrieved time series together (such as when aggregating
-   * multiple streams on each resource to a single stream for each resource or
-   * when aggregating streams across all members of a group of resources).
-   * Multiple aggregations are applied in the order specified.This field is
-   * similar to the one in the ListTimeSeries request (https://cloud.google.com/
-   * monitoring/api/ref_v3/rest/v3/projects.timeSeries/list). It is advisable to
-   * use the ListTimeSeries method when debugging this field.
-   *
-   * @param Aggregation[] $aggregations
+   * @param Aggregation[]
    */
   public function setAggregations($aggregations)
   {
@@ -72,13 +48,7 @@ class MetricAbsence extends \Google\Collection
     return $this->aggregations;
   }
   /**
-   * Required. The amount of time that a time series must fail to report new
-   * data to be considered failing. The minimum value of this field is 120
-   * seconds. Larger values that are a multiple of a minute--for example, 240 or
-   * 300 seconds--are supported. If an invalid value is given, an error will be
-   * returned.
-   *
-   * @param string $duration
+   * @param string
    */
   public function setDuration($duration)
   {
@@ -92,16 +62,7 @@ class MetricAbsence extends \Google\Collection
     return $this->duration;
   }
   /**
-   * Required. A filter (https://cloud.google.com/monitoring/api/v3/filters)
-   * that identifies which time series should be compared with the threshold.The
-   * filter is similar to the one that is specified in the ListTimeSeries
-   * request (https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.ti
-   * meSeries/list) (that call is useful to verify the time series that will be
-   * retrieved / processed). The filter must specify the metric type and the
-   * resource type. Optionally, it can specify resource labels and metric
-   * labels. This field must not exceed 2048 Unicode characters in length.
-   *
-   * @param string $filter
+   * @param string
    */
   public function setFilter($filter)
   {
@@ -115,12 +76,7 @@ class MetricAbsence extends \Google\Collection
     return $this->filter;
   }
   /**
-   * The number/percent of time series for which the comparison must hold in
-   * order for the condition to trigger. If unspecified, then the condition will
-   * trigger if the comparison is true for any of the time series that have been
-   * identified by filter and aggregations.
-   *
-   * @param Trigger $trigger
+   * @param Trigger
    */
   public function setTrigger(Trigger $trigger)
   {

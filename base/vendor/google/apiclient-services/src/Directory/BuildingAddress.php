@@ -21,56 +21,36 @@ class BuildingAddress extends \Google\Collection
 {
   protected $collection_key = 'addressLines';
   /**
-   * Unstructured address lines describing the lower levels of an address.
-   *
    * @var string[]
    */
   public $addressLines;
   /**
-   * Optional. Highest administrative subdivision which is used for postal
-   * addresses of a country or region.
-   *
    * @var string
    */
   public $administrativeArea;
   /**
-   * Optional. BCP-47 language code of the contents of this address (if known).
-   *
    * @var string
    */
   public $languageCode;
   /**
-   * Optional. Generally refers to the city/town portion of the address.
-   * Examples: US city, IT comune, UK post town. In regions of the world where
-   * localities are not well defined or do not fit into this structure well,
-   * leave locality empty and use addressLines.
-   *
    * @var string
    */
   public $locality;
   /**
-   * Optional. Postal code of the address.
-   *
    * @var string
    */
   public $postalCode;
   /**
-   * Required. CLDR region code of the country/region of the address.
-   *
    * @var string
    */
   public $regionCode;
   /**
-   * Optional. Sublocality of the address.
-   *
    * @var string
    */
   public $sublocality;
 
   /**
-   * Unstructured address lines describing the lower levels of an address.
-   *
-   * @param string[] $addressLines
+   * @param string[]
    */
   public function setAddressLines($addressLines)
   {
@@ -84,10 +64,7 @@ class BuildingAddress extends \Google\Collection
     return $this->addressLines;
   }
   /**
-   * Optional. Highest administrative subdivision which is used for postal
-   * addresses of a country or region.
-   *
-   * @param string $administrativeArea
+   * @param string
    */
   public function setAdministrativeArea($administrativeArea)
   {
@@ -101,9 +78,7 @@ class BuildingAddress extends \Google\Collection
     return $this->administrativeArea;
   }
   /**
-   * Optional. BCP-47 language code of the contents of this address (if known).
-   *
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {
@@ -117,12 +92,7 @@ class BuildingAddress extends \Google\Collection
     return $this->languageCode;
   }
   /**
-   * Optional. Generally refers to the city/town portion of the address.
-   * Examples: US city, IT comune, UK post town. In regions of the world where
-   * localities are not well defined or do not fit into this structure well,
-   * leave locality empty and use addressLines.
-   *
-   * @param string $locality
+   * @param string
    */
   public function setLocality($locality)
   {
@@ -136,9 +106,7 @@ class BuildingAddress extends \Google\Collection
     return $this->locality;
   }
   /**
-   * Optional. Postal code of the address.
-   *
-   * @param string $postalCode
+   * @param string
    */
   public function setPostalCode($postalCode)
   {
@@ -152,9 +120,7 @@ class BuildingAddress extends \Google\Collection
     return $this->postalCode;
   }
   /**
-   * Required. CLDR region code of the country/region of the address.
-   *
-   * @param string $regionCode
+   * @param string
    */
   public function setRegionCode($regionCode)
   {
@@ -168,9 +134,7 @@ class BuildingAddress extends \Google\Collection
     return $this->regionCode;
   }
   /**
-   * Optional. Sublocality of the address.
-   *
-   * @param string $sublocality
+   * @param string
    */
   public function setSublocality($sublocality)
   {

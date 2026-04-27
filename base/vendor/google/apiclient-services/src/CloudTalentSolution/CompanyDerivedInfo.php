@@ -23,10 +23,7 @@ class CompanyDerivedInfo extends \Google\Model
   protected $headquartersLocationDataType = '';
 
   /**
-   * A structured headquarters location of the company, resolved from
-   * Company.headquarters_address if provided.
-   *
-   * @param Location $headquartersLocation
+   * @param Location
    */
   public function setHeadquartersLocation(Location $headquartersLocation)
   {

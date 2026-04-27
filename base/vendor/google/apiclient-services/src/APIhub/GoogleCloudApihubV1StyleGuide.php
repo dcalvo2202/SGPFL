@@ -19,38 +19,19 @@ namespace Google\Service\APIhub;
 
 class GoogleCloudApihubV1StyleGuide extends \Google\Model
 {
-  /**
-   * Linter type unspecified.
-   */
-  public const LINTER_LINTER_UNSPECIFIED = 'LINTER_UNSPECIFIED';
-  /**
-   * Linter type spectral.
-   */
-  public const LINTER_SPECTRAL = 'SPECTRAL';
-  /**
-   * Linter type other.
-   */
-  public const LINTER_OTHER = 'OTHER';
   protected $contentsType = GoogleCloudApihubV1StyleGuideContents::class;
   protected $contentsDataType = '';
   /**
-   * Required. Target linter for the style guide.
-   *
    * @var string
    */
   public $linter;
   /**
-   * Identifier. The name of the style guide. Format:
-   * `projects/{project}/locations/{location}/plugins/{plugin}/styleGuide`
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Required. Input only. The contents of the uploaded style guide.
-   *
-   * @param GoogleCloudApihubV1StyleGuideContents $contents
+   * @param GoogleCloudApihubV1StyleGuideContents
    */
   public function setContents(GoogleCloudApihubV1StyleGuideContents $contents)
   {
@@ -64,28 +45,21 @@ class GoogleCloudApihubV1StyleGuide extends \Google\Model
     return $this->contents;
   }
   /**
-   * Required. Target linter for the style guide.
-   *
-   * Accepted values: LINTER_UNSPECIFIED, SPECTRAL, OTHER
-   *
-   * @param self::LINTER_* $linter
+   * @param string
    */
   public function setLinter($linter)
   {
     $this->linter = $linter;
   }
   /**
-   * @return self::LINTER_*
+   * @return string
    */
   public function getLinter()
   {
     return $this->linter;
   }
   /**
-   * Identifier. The name of the style guide. Format:
-   * `projects/{project}/locations/{location}/plugins/{plugin}/styleGuide`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

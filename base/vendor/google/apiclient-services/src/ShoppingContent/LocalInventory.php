@@ -21,73 +21,46 @@ class LocalInventory extends \Google\Collection
 {
   protected $collection_key = 'customAttributes';
   /**
-   * The availability of the product. For accepted attribute values, see the
-   * local product inventory feed specification.
-   *
    * @var string
    */
   public $availability;
   protected $customAttributesType = CustomAttribute::class;
   protected $customAttributesDataType = 'array';
   /**
-   * The in-store product location.
-   *
    * @var string
    */
   public $instoreProductLocation;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#localInventory`"
-   *
    * @var string
    */
   public $kind;
   /**
-   * The supported pickup method for this offer. Unless the value is "not
-   * supported", this field must be submitted together with `pickupSla`. For
-   * accepted attribute values, see the local product inventory feed
-   * specification.
-   *
    * @var string
    */
   public $pickupMethod;
   /**
-   * The expected date that an order will be ready for pickup relative to the
-   * order date. Must be submitted together with `pickupMethod`. For accepted
-   * attribute values, see the local product inventory feed specification.
-   *
    * @var string
    */
   public $pickupSla;
   protected $priceType = Price::class;
   protected $priceDataType = '';
   /**
-   * The quantity of the product. Must be nonnegative.
-   *
    * @var string
    */
   public $quantity;
   protected $salePriceType = Price::class;
   protected $salePriceDataType = '';
   /**
-   * A date range represented by a pair of ISO 8601 dates separated by a space,
-   * comma, or slash. Both dates may be specified as 'null' if undecided.
-   *
    * @var string
    */
   public $salePriceEffectiveDate;
   /**
-   * Required. The store code of this local inventory resource.
-   *
    * @var string
    */
   public $storeCode;
 
   /**
-   * The availability of the product. For accepted attribute values, see the
-   * local product inventory feed specification.
-   *
-   * @param string $availability
+   * @param string
    */
   public function setAvailability($availability)
   {
@@ -101,11 +74,7 @@ class LocalInventory extends \Google\Collection
     return $this->availability;
   }
   /**
-   * A list of custom (merchant-provided) attributes. Can also be used to submit
-   * any attribute of the feed specification in its generic form, for example,
-   * `{ "name": "size type", "value": "regular" }`.
-   *
-   * @param CustomAttribute[] $customAttributes
+   * @param CustomAttribute[]
    */
   public function setCustomAttributes($customAttributes)
   {
@@ -119,9 +88,7 @@ class LocalInventory extends \Google\Collection
     return $this->customAttributes;
   }
   /**
-   * The in-store product location.
-   *
-   * @param string $instoreProductLocation
+   * @param string
    */
   public function setInstoreProductLocation($instoreProductLocation)
   {
@@ -135,10 +102,7 @@ class LocalInventory extends \Google\Collection
     return $this->instoreProductLocation;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#localInventory`"
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -152,12 +116,7 @@ class LocalInventory extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The supported pickup method for this offer. Unless the value is "not
-   * supported", this field must be submitted together with `pickupSla`. For
-   * accepted attribute values, see the local product inventory feed
-   * specification.
-   *
-   * @param string $pickupMethod
+   * @param string
    */
   public function setPickupMethod($pickupMethod)
   {
@@ -171,11 +130,7 @@ class LocalInventory extends \Google\Collection
     return $this->pickupMethod;
   }
   /**
-   * The expected date that an order will be ready for pickup relative to the
-   * order date. Must be submitted together with `pickupMethod`. For accepted
-   * attribute values, see the local product inventory feed specification.
-   *
-   * @param string $pickupSla
+   * @param string
    */
   public function setPickupSla($pickupSla)
   {
@@ -189,9 +144,7 @@ class LocalInventory extends \Google\Collection
     return $this->pickupSla;
   }
   /**
-   * The price of the product.
-   *
-   * @param Price $price
+   * @param Price
    */
   public function setPrice(Price $price)
   {
@@ -205,9 +158,7 @@ class LocalInventory extends \Google\Collection
     return $this->price;
   }
   /**
-   * The quantity of the product. Must be nonnegative.
-   *
-   * @param string $quantity
+   * @param string
    */
   public function setQuantity($quantity)
   {
@@ -221,10 +172,7 @@ class LocalInventory extends \Google\Collection
     return $this->quantity;
   }
   /**
-   * The sale price of the product. Mandatory if `sale_price_effective_date` is
-   * defined.
-   *
-   * @param Price $salePrice
+   * @param Price
    */
   public function setSalePrice(Price $salePrice)
   {
@@ -238,10 +186,7 @@ class LocalInventory extends \Google\Collection
     return $this->salePrice;
   }
   /**
-   * A date range represented by a pair of ISO 8601 dates separated by a space,
-   * comma, or slash. Both dates may be specified as 'null' if undecided.
-   *
-   * @param string $salePriceEffectiveDate
+   * @param string
    */
   public function setSalePriceEffectiveDate($salePriceEffectiveDate)
   {
@@ -255,9 +200,7 @@ class LocalInventory extends \Google\Collection
     return $this->salePriceEffectiveDate;
   }
   /**
-   * Required. The store code of this local inventory resource.
-   *
-   * @param string $storeCode
+   * @param string
    */
   public function setStoreCode($storeCode)
   {

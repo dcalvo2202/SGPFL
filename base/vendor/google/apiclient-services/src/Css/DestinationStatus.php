@@ -21,38 +21,24 @@ class DestinationStatus extends \Google\Collection
 {
   protected $collection_key = 'pendingCountries';
   /**
-   * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
-   * approved.
-   *
    * @var string[]
    */
   public $approvedCountries;
   /**
-   * The name of the destination
-   *
    * @var string
    */
   public $destination;
   /**
-   * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
-   * disapproved.
-   *
    * @var string[]
    */
   public $disapprovedCountries;
   /**
-   * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is pending
-   * approval.
-   *
    * @var string[]
    */
   public $pendingCountries;
 
   /**
-   * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
-   * approved.
-   *
-   * @param string[] $approvedCountries
+   * @param string[]
    */
   public function setApprovedCountries($approvedCountries)
   {
@@ -66,9 +52,7 @@ class DestinationStatus extends \Google\Collection
     return $this->approvedCountries;
   }
   /**
-   * The name of the destination
-   *
-   * @param string $destination
+   * @param string
    */
   public function setDestination($destination)
   {
@@ -82,10 +66,7 @@ class DestinationStatus extends \Google\Collection
     return $this->destination;
   }
   /**
-   * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is
-   * disapproved.
-   *
-   * @param string[] $disapprovedCountries
+   * @param string[]
    */
   public function setDisapprovedCountries($disapprovedCountries)
   {
@@ -99,10 +80,7 @@ class DestinationStatus extends \Google\Collection
     return $this->disapprovedCountries;
   }
   /**
-   * List of country codes (ISO 3166-1 alpha-2) where the CSS Product is pending
-   * approval.
-   *
-   * @param string[] $pendingCountries
+   * @param string[]
    */
   public function setPendingCountries($pendingCountries)
   {

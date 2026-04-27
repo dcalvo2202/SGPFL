@@ -20,22 +20,16 @@ namespace Google\Service\Script;
 class ScriptStackTraceElement extends \Google\Model
 {
   /**
-   * The name of the function that failed.
-   *
    * @var string
    */
   public $function;
   /**
-   * The line number where the script failed.
-   *
    * @var int
    */
   public $lineNumber;
 
   /**
-   * The name of the function that failed.
-   *
-   * @param string $function
+   * @param string
    */
   public function setFunction($function)
   {
@@ -49,9 +43,7 @@ class ScriptStackTraceElement extends \Google\Model
     return $this->function;
   }
   /**
-   * The line number where the script failed.
-   *
-   * @param int $lineNumber
+   * @param int
    */
   public function setLineNumber($lineNumber)
   {

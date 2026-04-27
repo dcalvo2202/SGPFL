@@ -20,16 +20,12 @@ namespace Google\Service\CloudResourceManager;
 class MoveProjectRequest extends \Google\Model
 {
   /**
-   * Required. The new parent to move the Project under.
-   *
    * @var string
    */
   public $destinationParent;
 
   /**
-   * Required. The new parent to move the Project under.
-   *
-   * @param string $destinationParent
+   * @param string
    */
   public function setDestinationParent($destinationParent)
   {

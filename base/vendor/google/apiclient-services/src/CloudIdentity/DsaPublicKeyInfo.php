@@ -20,16 +20,12 @@ namespace Google\Service\CloudIdentity;
 class DsaPublicKeyInfo extends \Google\Model
 {
   /**
-   * Key size in bits (size of parameter P).
-   *
    * @var int
    */
   public $keySize;
 
   /**
-   * Key size in bits (size of parameter P).
-   *
-   * @param int $keySize
+   * @param int
    */
   public function setKeySize($keySize)
   {

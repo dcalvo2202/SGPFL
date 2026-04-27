@@ -24,16 +24,12 @@ class GoogleCloudChannelV1ProvisionCloudIdentityRequest extends \Google\Model
   protected $userType = GoogleCloudChannelV1AdminUser::class;
   protected $userDataType = '';
   /**
-   * Validate the request and preview the review, but do not post it.
-   *
    * @var bool
    */
   public $validateOnly;
 
   /**
-   * CloudIdentity-specific customer information.
-   *
-   * @param GoogleCloudChannelV1CloudIdentityInfo $cloudIdentityInfo
+   * @param GoogleCloudChannelV1CloudIdentityInfo
    */
   public function setCloudIdentityInfo(GoogleCloudChannelV1CloudIdentityInfo $cloudIdentityInfo)
   {
@@ -47,9 +43,7 @@ class GoogleCloudChannelV1ProvisionCloudIdentityRequest extends \Google\Model
     return $this->cloudIdentityInfo;
   }
   /**
-   * Admin user information.
-   *
-   * @param GoogleCloudChannelV1AdminUser $user
+   * @param GoogleCloudChannelV1AdminUser
    */
   public function setUser(GoogleCloudChannelV1AdminUser $user)
   {
@@ -63,9 +57,7 @@ class GoogleCloudChannelV1ProvisionCloudIdentityRequest extends \Google\Model
     return $this->user;
   }
   /**
-   * Validate the request and preview the review, but do not post it.
-   *
-   * @param bool $validateOnly
+   * @param bool
    */
   public function setValidateOnly($validateOnly)
   {

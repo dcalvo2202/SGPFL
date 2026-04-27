@@ -22,18 +22,12 @@ class GoogleCloudDiscoveryengineV1alphaUpdateSessionRequest extends \Google\Mode
   protected $sessionType = GoogleCloudDiscoveryengineV1alphaSession::class;
   protected $sessionDataType = '';
   /**
-   * Indicates which fields in the provided Session to update. The following are
-   * NOT supported: * Session.name If not set or empty, all supported fields are
-   * updated.
-   *
    * @var string
    */
   public $updateMask;
 
   /**
-   * Required. The Session to update.
-   *
-   * @param GoogleCloudDiscoveryengineV1alphaSession $session
+   * @param GoogleCloudDiscoveryengineV1alphaSession
    */
   public function setSession(GoogleCloudDiscoveryengineV1alphaSession $session)
   {
@@ -47,11 +41,7 @@ class GoogleCloudDiscoveryengineV1alphaUpdateSessionRequest extends \Google\Mode
     return $this->session;
   }
   /**
-   * Indicates which fields in the provided Session to update. The following are
-   * NOT supported: * Session.name If not set or empty, all supported fields are
-   * updated.
-   *
-   * @param string $updateMask
+   * @param string
    */
   public function setUpdateMask($updateMask)
   {

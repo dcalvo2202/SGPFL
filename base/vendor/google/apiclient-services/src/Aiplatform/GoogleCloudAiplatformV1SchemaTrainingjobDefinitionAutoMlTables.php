@@ -25,9 +25,7 @@ class GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlTables extends \Go
   protected $metadataDataType = '';
 
   /**
-   * The input parameters of this TrainingJob.
-   *
-   * @param GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlTablesInputs $inputs
+   * @param GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlTablesInputs
    */
   public function setInputs(GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlTablesInputs $inputs)
   {
@@ -41,9 +39,7 @@ class GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlTables extends \Go
     return $this->inputs;
   }
   /**
-   * The metadata information.
-   *
-   * @param GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlTablesMetadata $metadata
+   * @param GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlTablesMetadata
    */
   public function setMetadata(GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlTablesMetadata $metadata)
   {

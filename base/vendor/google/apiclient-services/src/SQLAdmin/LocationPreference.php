@@ -20,48 +20,30 @@ namespace Google\Service\SQLAdmin;
 class LocationPreference extends \Google\Model
 {
   /**
-   * The App Engine application to follow, it must be in the same region as the
-   * Cloud SQL instance. WARNING: Changing this might restart the instance.
-   *
-   * @deprecated
    * @var string
    */
   public $followGaeApplication;
   /**
-   * This is always `sql#locationPreference`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The preferred Compute Engine zone for the secondary/failover (for example:
-   * us-central1-a, us-central1-b, etc.). To disable this field, set it to
-   * 'no_secondary_zone'.
-   *
    * @var string
    */
   public $secondaryZone;
   /**
-   * The preferred Compute Engine zone (for example: us-central1-a, us-
-   * central1-b, etc.). WARNING: Changing this might restart the instance.
-   *
    * @var string
    */
   public $zone;
 
   /**
-   * The App Engine application to follow, it must be in the same region as the
-   * Cloud SQL instance. WARNING: Changing this might restart the instance.
-   *
-   * @deprecated
-   * @param string $followGaeApplication
+   * @param string
    */
   public function setFollowGaeApplication($followGaeApplication)
   {
     $this->followGaeApplication = $followGaeApplication;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getFollowGaeApplication()
@@ -69,9 +51,7 @@ class LocationPreference extends \Google\Model
     return $this->followGaeApplication;
   }
   /**
-   * This is always `sql#locationPreference`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -85,11 +65,7 @@ class LocationPreference extends \Google\Model
     return $this->kind;
   }
   /**
-   * The preferred Compute Engine zone for the secondary/failover (for example:
-   * us-central1-a, us-central1-b, etc.). To disable this field, set it to
-   * 'no_secondary_zone'.
-   *
-   * @param string $secondaryZone
+   * @param string
    */
   public function setSecondaryZone($secondaryZone)
   {
@@ -103,10 +79,7 @@ class LocationPreference extends \Google\Model
     return $this->secondaryZone;
   }
   /**
-   * The preferred Compute Engine zone (for example: us-central1-a, us-
-   * central1-b, etc.). WARNING: Changing this might restart the instance.
-   *
-   * @param string $zone
+   * @param string
    */
   public function setZone($zone)
   {

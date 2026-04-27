@@ -27,39 +27,24 @@ class SearchApplication extends \Google\Collection
   protected $defaultSortOptionsType = SortOptions::class;
   protected $defaultSortOptionsDataType = '';
   /**
-   * Display name of the Search Application. The maximum length is 300
-   * characters.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Indicates whether audit logging is on/off for requests made for the search
-   * application in query APIs.
-   *
    * @var bool
    */
   public $enableAuditLog;
   /**
-   * The name of the Search Application. Format:
-   * searchapplications/{application_id}.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. IDs of the Long Running Operations (LROs) currently running
-   * for this schema. Output only field.
-   *
    * @var string[]
    */
   public $operationIds;
   protected $queryInterpretationConfigType = QueryInterpretationConfig::class;
   protected $queryInterpretationConfigDataType = '';
   /**
-   * With each result we should return the URI for its thumbnail (when
-   * applicable)
-   *
    * @var bool
    */
   public $returnResultThumbnailUrls;
@@ -69,10 +54,7 @@ class SearchApplication extends \Google\Collection
   protected $sourceConfigDataType = 'array';
 
   /**
-   * Retrictions applied to the configurations. The maximum number of elements
-   * is 10.
-   *
-   * @param DataSourceRestriction[] $dataSourceRestrictions
+   * @param DataSourceRestriction[]
    */
   public function setDataSourceRestrictions($dataSourceRestrictions)
   {
@@ -86,10 +68,7 @@ class SearchApplication extends \Google\Collection
     return $this->dataSourceRestrictions;
   }
   /**
-   * The default fields for returning facet results. The sources specified here
-   * also have been included in data_source_restrictions above.
-   *
-   * @param FacetOptions[] $defaultFacetOptions
+   * @param FacetOptions[]
    */
   public function setDefaultFacetOptions($defaultFacetOptions)
   {
@@ -103,9 +82,7 @@ class SearchApplication extends \Google\Collection
     return $this->defaultFacetOptions;
   }
   /**
-   * The default options for sorting the search results
-   *
-   * @param SortOptions $defaultSortOptions
+   * @param SortOptions
    */
   public function setDefaultSortOptions(SortOptions $defaultSortOptions)
   {
@@ -119,10 +96,7 @@ class SearchApplication extends \Google\Collection
     return $this->defaultSortOptions;
   }
   /**
-   * Display name of the Search Application. The maximum length is 300
-   * characters.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -136,10 +110,7 @@ class SearchApplication extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Indicates whether audit logging is on/off for requests made for the search
-   * application in query APIs.
-   *
-   * @param bool $enableAuditLog
+   * @param bool
    */
   public function setEnableAuditLog($enableAuditLog)
   {
@@ -153,10 +124,7 @@ class SearchApplication extends \Google\Collection
     return $this->enableAuditLog;
   }
   /**
-   * The name of the Search Application. Format:
-   * searchapplications/{application_id}.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -170,10 +138,7 @@ class SearchApplication extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. IDs of the Long Running Operations (LROs) currently running
-   * for this schema. Output only field.
-   *
-   * @param string[] $operationIds
+   * @param string[]
    */
   public function setOperationIds($operationIds)
   {
@@ -187,9 +152,7 @@ class SearchApplication extends \Google\Collection
     return $this->operationIds;
   }
   /**
-   * The default options for query interpretation
-   *
-   * @param QueryInterpretationConfig $queryInterpretationConfig
+   * @param QueryInterpretationConfig
    */
   public function setQueryInterpretationConfig(QueryInterpretationConfig $queryInterpretationConfig)
   {
@@ -203,10 +166,7 @@ class SearchApplication extends \Google\Collection
     return $this->queryInterpretationConfig;
   }
   /**
-   * With each result we should return the URI for its thumbnail (when
-   * applicable)
-   *
-   * @param bool $returnResultThumbnailUrls
+   * @param bool
    */
   public function setReturnResultThumbnailUrls($returnResultThumbnailUrls)
   {
@@ -220,9 +180,7 @@ class SearchApplication extends \Google\Collection
     return $this->returnResultThumbnailUrls;
   }
   /**
-   * Configuration for ranking results.
-   *
-   * @param ScoringConfig $scoringConfig
+   * @param ScoringConfig
    */
   public function setScoringConfig(ScoringConfig $scoringConfig)
   {
@@ -236,9 +194,7 @@ class SearchApplication extends \Google\Collection
     return $this->scoringConfig;
   }
   /**
-   * Configuration for a sources specified in data_source_restrictions.
-   *
-   * @param SourceConfig[] $sourceConfig
+   * @param SourceConfig[]
    */
   public function setSourceConfig($sourceConfig)
   {

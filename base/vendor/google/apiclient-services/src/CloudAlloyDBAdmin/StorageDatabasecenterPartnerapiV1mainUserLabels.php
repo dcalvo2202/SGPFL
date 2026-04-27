@@ -25,7 +25,7 @@ class StorageDatabasecenterPartnerapiV1mainUserLabels extends \Google\Model
   public $labels;
 
   /**
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {

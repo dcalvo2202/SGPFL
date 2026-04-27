@@ -37,7 +37,7 @@ class GoogleCloudDialogflowV2beta1SuggestionResult extends \Google\Model
   protected $suggestSmartRepliesResponseDataType = '';
 
   /**
-   * @param GoogleRpcStatus $error
+   * @param GoogleRpcStatus
    */
   public function setError(GoogleRpcStatus $error)
   {
@@ -51,7 +51,7 @@ class GoogleCloudDialogflowV2beta1SuggestionResult extends \Google\Model
     return $this->error;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1GenerateSuggestionsResponse $generateSuggestionsResponse
+   * @param GoogleCloudDialogflowV2beta1GenerateSuggestionsResponse
    */
   public function setGenerateSuggestionsResponse(GoogleCloudDialogflowV2beta1GenerateSuggestionsResponse $generateSuggestionsResponse)
   {
@@ -65,7 +65,7 @@ class GoogleCloudDialogflowV2beta1SuggestionResult extends \Google\Model
     return $this->generateSuggestionsResponse;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1SuggestArticlesResponse $suggestArticlesResponse
+   * @param GoogleCloudDialogflowV2beta1SuggestArticlesResponse
    */
   public function setSuggestArticlesResponse(GoogleCloudDialogflowV2beta1SuggestArticlesResponse $suggestArticlesResponse)
   {
@@ -79,7 +79,7 @@ class GoogleCloudDialogflowV2beta1SuggestionResult extends \Google\Model
     return $this->suggestArticlesResponse;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1SuggestDialogflowAssistsResponse $suggestDialogflowAssistsResponse
+   * @param GoogleCloudDialogflowV2beta1SuggestDialogflowAssistsResponse
    */
   public function setSuggestDialogflowAssistsResponse(GoogleCloudDialogflowV2beta1SuggestDialogflowAssistsResponse $suggestDialogflowAssistsResponse)
   {
@@ -93,7 +93,7 @@ class GoogleCloudDialogflowV2beta1SuggestionResult extends \Google\Model
     return $this->suggestDialogflowAssistsResponse;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1SuggestDialogflowAssistsResponse $suggestEntityExtractionResponse
+   * @param GoogleCloudDialogflowV2beta1SuggestDialogflowAssistsResponse
    */
   public function setSuggestEntityExtractionResponse(GoogleCloudDialogflowV2beta1SuggestDialogflowAssistsResponse $suggestEntityExtractionResponse)
   {
@@ -107,7 +107,7 @@ class GoogleCloudDialogflowV2beta1SuggestionResult extends \Google\Model
     return $this->suggestEntityExtractionResponse;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1SuggestFaqAnswersResponse $suggestFaqAnswersResponse
+   * @param GoogleCloudDialogflowV2beta1SuggestFaqAnswersResponse
    */
   public function setSuggestFaqAnswersResponse(GoogleCloudDialogflowV2beta1SuggestFaqAnswersResponse $suggestFaqAnswersResponse)
   {
@@ -121,7 +121,7 @@ class GoogleCloudDialogflowV2beta1SuggestionResult extends \Google\Model
     return $this->suggestFaqAnswersResponse;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1SuggestKnowledgeAssistResponse $suggestKnowledgeAssistResponse
+   * @param GoogleCloudDialogflowV2beta1SuggestKnowledgeAssistResponse
    */
   public function setSuggestKnowledgeAssistResponse(GoogleCloudDialogflowV2beta1SuggestKnowledgeAssistResponse $suggestKnowledgeAssistResponse)
   {
@@ -135,7 +135,7 @@ class GoogleCloudDialogflowV2beta1SuggestionResult extends \Google\Model
     return $this->suggestKnowledgeAssistResponse;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1SuggestSmartRepliesResponse $suggestSmartRepliesResponse
+   * @param GoogleCloudDialogflowV2beta1SuggestSmartRepliesResponse
    */
   public function setSuggestSmartRepliesResponse(GoogleCloudDialogflowV2beta1SuggestSmartRepliesResponse $suggestSmartRepliesResponse)
   {

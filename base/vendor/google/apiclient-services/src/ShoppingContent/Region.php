@@ -20,46 +20,32 @@ namespace Google\Service\ShoppingContent;
 class Region extends \Google\Model
 {
   /**
-   * The display name of the region.
-   *
    * @var string
    */
   public $displayName;
   protected $geotargetAreaType = RegionGeoTargetArea::class;
   protected $geotargetAreaDataType = '';
   /**
-   * Output only. Immutable. Merchant that owns the region.
-   *
    * @var string
    */
   public $merchantId;
   protected $postalCodeAreaType = RegionPostalCodeArea::class;
   protected $postalCodeAreaDataType = '';
   /**
-   * Output only. Immutable. The ID uniquely identifying each region.
-   *
    * @var string
    */
   public $regionId;
   /**
-   * Output only. Indicates if the region is eligible to use in the Regional
-   * Inventory configuration.
-   *
    * @var bool
    */
   public $regionalInventoryEligible;
   /**
-   * Output only. Indicates if the region is eligible to use in the Shipping
-   * Services configuration.
-   *
    * @var bool
    */
   public $shippingEligible;
 
   /**
-   * The display name of the region.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -73,9 +59,7 @@ class Region extends \Google\Model
     return $this->displayName;
   }
   /**
-   * A list of geotargets that defines the region area.
-   *
-   * @param RegionGeoTargetArea $geotargetArea
+   * @param RegionGeoTargetArea
    */
   public function setGeotargetArea(RegionGeoTargetArea $geotargetArea)
   {
@@ -89,9 +73,7 @@ class Region extends \Google\Model
     return $this->geotargetArea;
   }
   /**
-   * Output only. Immutable. Merchant that owns the region.
-   *
-   * @param string $merchantId
+   * @param string
    */
   public function setMerchantId($merchantId)
   {
@@ -105,9 +87,7 @@ class Region extends \Google\Model
     return $this->merchantId;
   }
   /**
-   * A list of postal codes that defines the region area.
-   *
-   * @param RegionPostalCodeArea $postalCodeArea
+   * @param RegionPostalCodeArea
    */
   public function setPostalCodeArea(RegionPostalCodeArea $postalCodeArea)
   {
@@ -121,9 +101,7 @@ class Region extends \Google\Model
     return $this->postalCodeArea;
   }
   /**
-   * Output only. Immutable. The ID uniquely identifying each region.
-   *
-   * @param string $regionId
+   * @param string
    */
   public function setRegionId($regionId)
   {
@@ -137,10 +115,7 @@ class Region extends \Google\Model
     return $this->regionId;
   }
   /**
-   * Output only. Indicates if the region is eligible to use in the Regional
-   * Inventory configuration.
-   *
-   * @param bool $regionalInventoryEligible
+   * @param bool
    */
   public function setRegionalInventoryEligible($regionalInventoryEligible)
   {
@@ -154,10 +129,7 @@ class Region extends \Google\Model
     return $this->regionalInventoryEligible;
   }
   /**
-   * Output only. Indicates if the region is eligible to use in the Shipping
-   * Services configuration.
-   *
-   * @param bool $shippingEligible
+   * @param bool
    */
   public function setShippingEligible($shippingEligible)
   {

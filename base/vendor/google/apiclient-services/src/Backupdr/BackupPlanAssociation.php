@@ -19,136 +19,44 @@ namespace Google\Service\Backupdr;
 
 class BackupPlanAssociation extends \Google\Collection
 {
-  /**
-   * State not set.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The resource is being created.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * The resource has been created and is fully usable.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * The resource is being deleted.
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * The resource has been created but is not usable.
-   */
-  public const STATE_INACTIVE = 'INACTIVE';
-  /**
-   * The resource is being updated.
-   */
-  public const STATE_UPDATING = 'UPDATING';
   protected $collection_key = 'rulesConfigInfo';
-  protected $alloydbClusterBackupPlanAssociationPropertiesType = AlloyDBClusterBackupPlanAssociationProperties::class;
-  protected $alloydbClusterBackupPlanAssociationPropertiesDataType = '';
   /**
-   * Required. Resource name of backup plan which needs to be applied on
-   * workload. Format:
-   * projects/{project}/locations/{location}/backupPlans/{backupPlanId}
-   *
    * @var string
    */
   public $backupPlan;
   /**
-   * Output only. The user friendly revision ID of the `BackupPlanRevision`.
-   * Example: v0, v1, v2, etc.
-   *
-   * @var string
-   */
-  public $backupPlanRevisionId;
-  /**
-   * Output only. The resource id of the `BackupPlanRevision`. Format: `projects
-   * /{project}/locations/{location}/backupPlans/{backup_plan}/revisions/{revisi
-   * on_id}`
-   *
-   * @var string
-   */
-  public $backupPlanRevisionName;
-  protected $cloudSqlInstanceBackupPlanAssociationPropertiesType = CloudSqlInstanceBackupPlanAssociationProperties::class;
-  protected $cloudSqlInstanceBackupPlanAssociationPropertiesDataType = '';
-  /**
-   * Output only. The time when the instance was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. Resource name of data source which will be used as storage
-   * location for backups taken. Format : projects/{project}/locations/{location
-   * }/backupVaults/{backupvault}/dataSources/{datasource}
-   *
    * @var string
    */
   public $dataSource;
-  protected $filestoreInstanceBackupPlanAssociationPropertiesType = FilestoreInstanceBackupPlanAssociationProperties::class;
-  protected $filestoreInstanceBackupPlanAssociationPropertiesDataType = '';
   /**
-   * Output only. Identifier. The resource name of BackupPlanAssociation in
-   * below format Format : projects/{project}/locations/{location}/backupPlanAss
-   * ociations/{backupPlanAssociationId}
-   *
    * @var string
    */
   public $name;
   /**
-   * Required. Immutable. Resource name of workload on which the backup plan is
-   * applied. The format can either be the resource name (e.g., "projects/my-
-   * project/zones/us-central1-a/instances/my-instance") or the full resource
-   * URI (e.g., "https://www.googleapis.com/compute/v1/projects/my-
-   * project/zones/us-central1-a/instances/my-instance").
-   *
    * @var string
    */
   public $resource;
   /**
-   * Required. Immutable. Resource type of workload on which backupplan is
-   * applied
-   *
    * @var string
    */
   public $resourceType;
   protected $rulesConfigInfoType = RuleConfigInfo::class;
   protected $rulesConfigInfoDataType = 'array';
   /**
-   * Output only. The BackupPlanAssociation resource state.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. The time when the instance was updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. AlloyDB cluster's backup plan association properties.
-   *
-   * @param AlloyDBClusterBackupPlanAssociationProperties $alloydbClusterBackupPlanAssociationProperties
-   */
-  public function setAlloydbClusterBackupPlanAssociationProperties(AlloyDBClusterBackupPlanAssociationProperties $alloydbClusterBackupPlanAssociationProperties)
-  {
-    $this->alloydbClusterBackupPlanAssociationProperties = $alloydbClusterBackupPlanAssociationProperties;
-  }
-  /**
-   * @return AlloyDBClusterBackupPlanAssociationProperties
-   */
-  public function getAlloydbClusterBackupPlanAssociationProperties()
-  {
-    return $this->alloydbClusterBackupPlanAssociationProperties;
-  }
-  /**
-   * Required. Resource name of backup plan which needs to be applied on
-   * workload. Format:
-   * projects/{project}/locations/{location}/backupPlans/{backupPlanId}
-   *
-   * @param string $backupPlan
+   * @param string
    */
   public function setBackupPlan($backupPlan)
   {
@@ -162,60 +70,7 @@ class BackupPlanAssociation extends \Google\Collection
     return $this->backupPlan;
   }
   /**
-   * Output only. The user friendly revision ID of the `BackupPlanRevision`.
-   * Example: v0, v1, v2, etc.
-   *
-   * @param string $backupPlanRevisionId
-   */
-  public function setBackupPlanRevisionId($backupPlanRevisionId)
-  {
-    $this->backupPlanRevisionId = $backupPlanRevisionId;
-  }
-  /**
-   * @return string
-   */
-  public function getBackupPlanRevisionId()
-  {
-    return $this->backupPlanRevisionId;
-  }
-  /**
-   * Output only. The resource id of the `BackupPlanRevision`. Format: `projects
-   * /{project}/locations/{location}/backupPlans/{backup_plan}/revisions/{revisi
-   * on_id}`
-   *
-   * @param string $backupPlanRevisionName
-   */
-  public function setBackupPlanRevisionName($backupPlanRevisionName)
-  {
-    $this->backupPlanRevisionName = $backupPlanRevisionName;
-  }
-  /**
-   * @return string
-   */
-  public function getBackupPlanRevisionName()
-  {
-    return $this->backupPlanRevisionName;
-  }
-  /**
-   * Output only. Cloud SQL instance's backup plan association properties.
-   *
-   * @param CloudSqlInstanceBackupPlanAssociationProperties $cloudSqlInstanceBackupPlanAssociationProperties
-   */
-  public function setCloudSqlInstanceBackupPlanAssociationProperties(CloudSqlInstanceBackupPlanAssociationProperties $cloudSqlInstanceBackupPlanAssociationProperties)
-  {
-    $this->cloudSqlInstanceBackupPlanAssociationProperties = $cloudSqlInstanceBackupPlanAssociationProperties;
-  }
-  /**
-   * @return CloudSqlInstanceBackupPlanAssociationProperties
-   */
-  public function getCloudSqlInstanceBackupPlanAssociationProperties()
-  {
-    return $this->cloudSqlInstanceBackupPlanAssociationProperties;
-  }
-  /**
-   * Output only. The time when the instance was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -229,11 +84,7 @@ class BackupPlanAssociation extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Output only. Resource name of data source which will be used as storage
-   * location for backups taken. Format : projects/{project}/locations/{location
-   * }/backupVaults/{backupvault}/dataSources/{datasource}
-   *
-   * @param string $dataSource
+   * @param string
    */
   public function setDataSource($dataSource)
   {
@@ -247,27 +98,7 @@ class BackupPlanAssociation extends \Google\Collection
     return $this->dataSource;
   }
   /**
-   * Output only. Filestore instance's backup plan association properties.
-   *
-   * @param FilestoreInstanceBackupPlanAssociationProperties $filestoreInstanceBackupPlanAssociationProperties
-   */
-  public function setFilestoreInstanceBackupPlanAssociationProperties(FilestoreInstanceBackupPlanAssociationProperties $filestoreInstanceBackupPlanAssociationProperties)
-  {
-    $this->filestoreInstanceBackupPlanAssociationProperties = $filestoreInstanceBackupPlanAssociationProperties;
-  }
-  /**
-   * @return FilestoreInstanceBackupPlanAssociationProperties
-   */
-  public function getFilestoreInstanceBackupPlanAssociationProperties()
-  {
-    return $this->filestoreInstanceBackupPlanAssociationProperties;
-  }
-  /**
-   * Output only. Identifier. The resource name of BackupPlanAssociation in
-   * below format Format : projects/{project}/locations/{location}/backupPlanAss
-   * ociations/{backupPlanAssociationId}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -281,13 +112,7 @@ class BackupPlanAssociation extends \Google\Collection
     return $this->name;
   }
   /**
-   * Required. Immutable. Resource name of workload on which the backup plan is
-   * applied. The format can either be the resource name (e.g., "projects/my-
-   * project/zones/us-central1-a/instances/my-instance") or the full resource
-   * URI (e.g., "https://www.googleapis.com/compute/v1/projects/my-
-   * project/zones/us-central1-a/instances/my-instance").
-   *
-   * @param string $resource
+   * @param string
    */
   public function setResource($resource)
   {
@@ -301,10 +126,7 @@ class BackupPlanAssociation extends \Google\Collection
     return $this->resource;
   }
   /**
-   * Required. Immutable. Resource type of workload on which backupplan is
-   * applied
-   *
-   * @param string $resourceType
+   * @param string
    */
   public function setResourceType($resourceType)
   {
@@ -318,9 +140,7 @@ class BackupPlanAssociation extends \Google\Collection
     return $this->resourceType;
   }
   /**
-   * Output only. The config info related to backup rules.
-   *
-   * @param RuleConfigInfo[] $rulesConfigInfo
+   * @param RuleConfigInfo[]
    */
   public function setRulesConfigInfo($rulesConfigInfo)
   {
@@ -334,28 +154,21 @@ class BackupPlanAssociation extends \Google\Collection
     return $this->rulesConfigInfo;
   }
   /**
-   * Output only. The BackupPlanAssociation resource state.
-   *
-   * Accepted values: STATE_UNSPECIFIED, CREATING, ACTIVE, DELETING, INACTIVE,
-   * UPDATING
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. The time when the instance was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

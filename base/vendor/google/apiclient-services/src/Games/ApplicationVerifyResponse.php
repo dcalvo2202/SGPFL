@@ -24,31 +24,20 @@ class ApplicationVerifyResponse extends \Google\Model
         "playerId" => "player_id",
   ];
   /**
-   * An alternate ID that was once used for the player that was issued the auth
-   * token used in this request. (This field is not normally populated.)
-   *
    * @var string
    */
   public $alternatePlayerId;
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#applicationVerifyResponse`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The ID of the player that was issued the auth token used in this request.
-   *
    * @var string
    */
   public $playerId;
 
   /**
-   * An alternate ID that was once used for the player that was issued the auth
-   * token used in this request. (This field is not normally populated.)
-   *
-   * @param string $alternatePlayerId
+   * @param string
    */
   public function setAlternatePlayerId($alternatePlayerId)
   {
@@ -62,10 +51,7 @@ class ApplicationVerifyResponse extends \Google\Model
     return $this->alternatePlayerId;
   }
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#applicationVerifyResponse`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -79,9 +65,7 @@ class ApplicationVerifyResponse extends \Google\Model
     return $this->kind;
   }
   /**
-   * The ID of the player that was issued the auth token used in this request.
-   *
-   * @param string $playerId
+   * @param string
    */
   public function setPlayerId($playerId)
   {

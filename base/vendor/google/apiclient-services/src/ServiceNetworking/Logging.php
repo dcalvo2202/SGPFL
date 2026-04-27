@@ -26,11 +26,7 @@ class Logging extends \Google\Collection
   protected $producerDestinationsDataType = 'array';
 
   /**
-   * Logging configurations for sending logs to the consumer project. There can
-   * be multiple consumer destinations, each one must have a different monitored
-   * resource type. A log can be used in at most one consumer destination.
-   *
-   * @param LoggingDestination[] $consumerDestinations
+   * @param LoggingDestination[]
    */
   public function setConsumerDestinations($consumerDestinations)
   {
@@ -44,11 +40,7 @@ class Logging extends \Google\Collection
     return $this->consumerDestinations;
   }
   /**
-   * Logging configurations for sending logs to the producer project. There can
-   * be multiple producer destinations, each one must have a different monitored
-   * resource type. A log can be used in at most one producer destination.
-   *
-   * @param LoggingDestination[] $producerDestinations
+   * @param LoggingDestination[]
    */
   public function setProducerDestinations($producerDestinations)
   {

@@ -20,44 +20,28 @@ namespace Google\Service\ChromeManagement;
 class GoogleChromeManagementV1RuntimeCountersReport extends \Google\Model
 {
   /**
-   * Number of times that the device has entered into the hibernation state.
-   * Currently obtained via the PSR, count from S0->S4.
-   *
    * @var string
    */
   public $enterHibernationCount;
   /**
-   * Number of times that the device has entered into the power-off state.
-   * Currently obtained via the PSR, count from S0->S5.
-   *
    * @var string
    */
   public $enterPoweroffCount;
   /**
-   * Number of times that the device has entered into the sleep state. Currently
-   * obtained via the PSR, count from S0->S3.
-   *
    * @var string
    */
   public $enterSleepCount;
   /**
-   * Timestamp when the report was collected.
-   *
    * @var string
    */
   public $reportTime;
   /**
-   * Total lifetime runtime. Currently always S0 runtime from Intel vPro PSR.
-   *
    * @var string
    */
   public $uptimeRuntimeDuration;
 
   /**
-   * Number of times that the device has entered into the hibernation state.
-   * Currently obtained via the PSR, count from S0->S4.
-   *
-   * @param string $enterHibernationCount
+   * @param string
    */
   public function setEnterHibernationCount($enterHibernationCount)
   {
@@ -71,10 +55,7 @@ class GoogleChromeManagementV1RuntimeCountersReport extends \Google\Model
     return $this->enterHibernationCount;
   }
   /**
-   * Number of times that the device has entered into the power-off state.
-   * Currently obtained via the PSR, count from S0->S5.
-   *
-   * @param string $enterPoweroffCount
+   * @param string
    */
   public function setEnterPoweroffCount($enterPoweroffCount)
   {
@@ -88,10 +69,7 @@ class GoogleChromeManagementV1RuntimeCountersReport extends \Google\Model
     return $this->enterPoweroffCount;
   }
   /**
-   * Number of times that the device has entered into the sleep state. Currently
-   * obtained via the PSR, count from S0->S3.
-   *
-   * @param string $enterSleepCount
+   * @param string
    */
   public function setEnterSleepCount($enterSleepCount)
   {
@@ -105,9 +83,7 @@ class GoogleChromeManagementV1RuntimeCountersReport extends \Google\Model
     return $this->enterSleepCount;
   }
   /**
-   * Timestamp when the report was collected.
-   *
-   * @param string $reportTime
+   * @param string
    */
   public function setReportTime($reportTime)
   {
@@ -121,9 +97,7 @@ class GoogleChromeManagementV1RuntimeCountersReport extends \Google\Model
     return $this->reportTime;
   }
   /**
-   * Total lifetime runtime. Currently always S0 runtime from Intel vPro PSR.
-   *
-   * @param string $uptimeRuntimeDuration
+   * @param string
    */
   public function setUptimeRuntimeDuration($uptimeRuntimeDuration)
   {

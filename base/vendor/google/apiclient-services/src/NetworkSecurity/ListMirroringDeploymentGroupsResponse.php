@@ -23,18 +23,12 @@ class ListMirroringDeploymentGroupsResponse extends \Google\Collection
   protected $mirroringDeploymentGroupsType = MirroringDeploymentGroup::class;
   protected $mirroringDeploymentGroupsDataType = 'array';
   /**
-   * A token that can be sent as `page_token` to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages. See
-   * https://google.aip.dev/158 for more details.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The deployment groups from the specified parent.
-   *
-   * @param MirroringDeploymentGroup[] $mirroringDeploymentGroups
+   * @param MirroringDeploymentGroup[]
    */
   public function setMirroringDeploymentGroups($mirroringDeploymentGroups)
   {
@@ -48,11 +42,7 @@ class ListMirroringDeploymentGroupsResponse extends \Google\Collection
     return $this->mirroringDeploymentGroups;
   }
   /**
-   * A token that can be sent as `page_token` to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages. See
-   * https://google.aip.dev/158 for more details.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

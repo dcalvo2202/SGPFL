@@ -28,10 +28,7 @@ class GooglePrivacyDlpV2RiskAnalysisJobConfig extends \Google\Collection
   protected $sourceTableDataType = '';
 
   /**
-   * Actions to execute at the completion of the job. Are executed in the order
-   * provided.
-   *
-   * @param GooglePrivacyDlpV2Action[] $actions
+   * @param GooglePrivacyDlpV2Action[]
    */
   public function setActions($actions)
   {
@@ -45,9 +42,7 @@ class GooglePrivacyDlpV2RiskAnalysisJobConfig extends \Google\Collection
     return $this->actions;
   }
   /**
-   * Privacy metric to compute.
-   *
-   * @param GooglePrivacyDlpV2PrivacyMetric $privacyMetric
+   * @param GooglePrivacyDlpV2PrivacyMetric
    */
   public function setPrivacyMetric(GooglePrivacyDlpV2PrivacyMetric $privacyMetric)
   {
@@ -61,9 +56,7 @@ class GooglePrivacyDlpV2RiskAnalysisJobConfig extends \Google\Collection
     return $this->privacyMetric;
   }
   /**
-   * Input dataset to compute metrics over.
-   *
-   * @param GooglePrivacyDlpV2BigQueryTable $sourceTable
+   * @param GooglePrivacyDlpV2BigQueryTable
    */
   public function setSourceTable(GooglePrivacyDlpV2BigQueryTable $sourceTable)
   {

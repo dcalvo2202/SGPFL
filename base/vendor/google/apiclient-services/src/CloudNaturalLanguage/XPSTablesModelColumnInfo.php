@@ -20,30 +20,16 @@ namespace Google\Service\CloudNaturalLanguage;
 class XPSTablesModelColumnInfo extends \Google\Model
 {
   /**
-   * The ID of the column.
-   *
    * @var int
    */
   public $columnId;
   /**
-   * When given as part of a Model: Measurement of how much model predictions
-   * correctness on the TEST data depend on values in this column. A value
-   * between 0 and 1, higher means higher influence. These values are normalized
-   * - for all input feature columns of a given model they add to 1. When given
-   * back by Predict or Batch Predict: Measurement of how impactful for the
-   * prediction returned for the given row the value in this column was.
-   * Specifically, the feature importance specifies the marginal contribution
-   * that the feature made to the prediction score compared to the baseline
-   * score. These values are computed using the Sampled Shapley method.
-   *
    * @var float
    */
   public $featureImportance;
 
   /**
-   * The ID of the column.
-   *
-   * @param int $columnId
+   * @param int
    */
   public function setColumnId($columnId)
   {
@@ -57,17 +43,7 @@ class XPSTablesModelColumnInfo extends \Google\Model
     return $this->columnId;
   }
   /**
-   * When given as part of a Model: Measurement of how much model predictions
-   * correctness on the TEST data depend on values in this column. A value
-   * between 0 and 1, higher means higher influence. These values are normalized
-   * - for all input feature columns of a given model they add to 1. When given
-   * back by Predict or Batch Predict: Measurement of how impactful for the
-   * prediction returned for the given row the value in this column was.
-   * Specifically, the feature importance specifies the marginal contribution
-   * that the feature made to the prediction score compared to the baseline
-   * score. These values are computed using the Sampled Shapley method.
-   *
-   * @param float $featureImportance
+   * @param float
    */
   public function setFeatureImportance($featureImportance)
   {

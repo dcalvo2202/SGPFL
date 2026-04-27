@@ -20,28 +20,20 @@ namespace Google\Service\Dataflow;
 class SpannerIODetails extends \Google\Model
 {
   /**
-   * DatabaseId accessed in the connection.
-   *
    * @var string
    */
   public $databaseId;
   /**
-   * InstanceId accessed in the connection.
-   *
    * @var string
    */
   public $instanceId;
   /**
-   * ProjectId accessed in the connection.
-   *
    * @var string
    */
   public $projectId;
 
   /**
-   * DatabaseId accessed in the connection.
-   *
-   * @param string $databaseId
+   * @param string
    */
   public function setDatabaseId($databaseId)
   {
@@ -55,9 +47,7 @@ class SpannerIODetails extends \Google\Model
     return $this->databaseId;
   }
   /**
-   * InstanceId accessed in the connection.
-   *
-   * @param string $instanceId
+   * @param string
    */
   public function setInstanceId($instanceId)
   {
@@ -71,9 +61,7 @@ class SpannerIODetails extends \Google\Model
     return $this->instanceId;
   }
   /**
-   * ProjectId accessed in the connection.
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {

@@ -20,29 +20,20 @@ namespace Google\Service\Contentwarehouse;
 class GoogleCloudDocumentaiV1DocumentShardInfo extends \Google\Model
 {
   /**
-   * Total number of shards.
-   *
    * @var string
    */
   public $shardCount;
   /**
-   * The 0-based index of this shard.
-   *
    * @var string
    */
   public $shardIndex;
   /**
-   * The index of the first character in Document.text in the overall document
-   * global text.
-   *
    * @var string
    */
   public $textOffset;
 
   /**
-   * Total number of shards.
-   *
-   * @param string $shardCount
+   * @param string
    */
   public function setShardCount($shardCount)
   {
@@ -56,9 +47,7 @@ class GoogleCloudDocumentaiV1DocumentShardInfo extends \Google\Model
     return $this->shardCount;
   }
   /**
-   * The 0-based index of this shard.
-   *
-   * @param string $shardIndex
+   * @param string
    */
   public function setShardIndex($shardIndex)
   {
@@ -72,10 +61,7 @@ class GoogleCloudDocumentaiV1DocumentShardInfo extends \Google\Model
     return $this->shardIndex;
   }
   /**
-   * The index of the first character in Document.text in the overall document
-   * global text.
-   *
-   * @param string $textOffset
+   * @param string
    */
   public function setTextOffset($textOffset)
   {

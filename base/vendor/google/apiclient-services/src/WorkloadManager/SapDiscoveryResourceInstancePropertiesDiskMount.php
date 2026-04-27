@@ -21,28 +21,20 @@ class SapDiscoveryResourceInstancePropertiesDiskMount extends \Google\Collection
 {
   protected $collection_key = 'diskNames';
   /**
-   * Optional. Names of the disks providing this mount point.
-   *
    * @var string[]
    */
   public $diskNames;
   /**
-   * Optional. Filesystem mount point.
-   *
    * @var string
    */
   public $mountPoint;
   /**
-   * Optional. Name of the disk.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Optional. Names of the disks providing this mount point.
-   *
-   * @param string[] $diskNames
+   * @param string[]
    */
   public function setDiskNames($diskNames)
   {
@@ -56,9 +48,7 @@ class SapDiscoveryResourceInstancePropertiesDiskMount extends \Google\Collection
     return $this->diskNames;
   }
   /**
-   * Optional. Filesystem mount point.
-   *
-   * @param string $mountPoint
+   * @param string
    */
   public function setMountPoint($mountPoint)
   {
@@ -72,9 +62,7 @@ class SapDiscoveryResourceInstancePropertiesDiskMount extends \Google\Collection
     return $this->mountPoint;
   }
   /**
-   * Optional. Name of the disk.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

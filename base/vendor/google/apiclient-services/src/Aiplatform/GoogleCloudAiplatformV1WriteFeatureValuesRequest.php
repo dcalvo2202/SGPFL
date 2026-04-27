@@ -24,10 +24,7 @@ class GoogleCloudAiplatformV1WriteFeatureValuesRequest extends \Google\Collectio
   protected $payloadsDataType = 'array';
 
   /**
-   * Required. The entities to be written. Up to 100,000 feature values can be
-   * written across all `payloads`.
-   *
-   * @param GoogleCloudAiplatformV1WriteFeatureValuesPayload[] $payloads
+   * @param GoogleCloudAiplatformV1WriteFeatureValuesPayload[]
    */
   public function setPayloads($payloads)
   {

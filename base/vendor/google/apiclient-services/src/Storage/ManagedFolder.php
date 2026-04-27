@@ -20,61 +20,40 @@ namespace Google\Service\Storage;
 class ManagedFolder extends \Google\Model
 {
   /**
-   * The name of the bucket containing this managed folder.
-   *
    * @var string
    */
   public $bucket;
   /**
-   * The creation time of the managed folder in RFC 3339 format.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * The ID of the managed folder, including the bucket name and managed folder
-   * name.
-   *
    * @var string
    */
   public $id;
   /**
-   * The kind of item this is. For managed folders, this is always
-   * storage#managedFolder.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The version of the metadata for this managed folder. Used for preconditions
-   * and for detecting changes in metadata.
-   *
    * @var string
    */
   public $metageneration;
   /**
-   * The name of the managed folder. Required if not specified by URL parameter.
-   *
    * @var string
    */
   public $name;
   /**
-   * The link to this managed folder.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * The last update time of the managed folder metadata in RFC 3339 format.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * The name of the bucket containing this managed folder.
-   *
-   * @param string $bucket
+   * @param string
    */
   public function setBucket($bucket)
   {
@@ -88,9 +67,7 @@ class ManagedFolder extends \Google\Model
     return $this->bucket;
   }
   /**
-   * The creation time of the managed folder in RFC 3339 format.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -104,10 +81,7 @@ class ManagedFolder extends \Google\Model
     return $this->createTime;
   }
   /**
-   * The ID of the managed folder, including the bucket name and managed folder
-   * name.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -121,10 +95,7 @@ class ManagedFolder extends \Google\Model
     return $this->id;
   }
   /**
-   * The kind of item this is. For managed folders, this is always
-   * storage#managedFolder.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -138,10 +109,7 @@ class ManagedFolder extends \Google\Model
     return $this->kind;
   }
   /**
-   * The version of the metadata for this managed folder. Used for preconditions
-   * and for detecting changes in metadata.
-   *
-   * @param string $metageneration
+   * @param string
    */
   public function setMetageneration($metageneration)
   {
@@ -155,9 +123,7 @@ class ManagedFolder extends \Google\Model
     return $this->metageneration;
   }
   /**
-   * The name of the managed folder. Required if not specified by URL parameter.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -171,9 +137,7 @@ class ManagedFolder extends \Google\Model
     return $this->name;
   }
   /**
-   * The link to this managed folder.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -187,9 +151,7 @@ class ManagedFolder extends \Google\Model
     return $this->selfLink;
   }
   /**
-   * The last update time of the managed folder metadata in RFC 3339 format.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

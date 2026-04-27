@@ -21,8 +21,6 @@ class Series extends \Google\Collection
 {
   protected $collection_key = 'series';
   /**
-   * Resource type.
-   *
    * @var string
    */
   public $kind;
@@ -30,9 +28,7 @@ class Series extends \Google\Collection
   protected $seriesDataType = 'array';
 
   /**
-   * Resource type.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -46,7 +42,7 @@ class Series extends \Google\Collection
     return $this->kind;
   }
   /**
-   * @param SeriesSeries[] $series
+   * @param SeriesSeries[]
    */
   public function setSeries($series)
   {

@@ -20,40 +20,24 @@ namespace Google\Service\SQLAdmin;
 class ExportContextTdeExportOptions extends \Google\Model
 {
   /**
-   * Required. Path to the TDE certificate public key in the form
-   * gs://bucketName/fileName. The instance must have write access to the
-   * bucket. Applicable only for SQL Server instances.
-   *
    * @var string
    */
   public $certificatePath;
   /**
-   * Required. Certificate name. Applicable only for SQL Server instances.
-   *
    * @var string
    */
   public $name;
   /**
-   * Required. Password that encrypts the private key.
-   *
    * @var string
    */
   public $privateKeyPassword;
   /**
-   * Required. Path to the TDE certificate private key in the form
-   * gs://bucketName/fileName. The instance must have write access to the
-   * location. Applicable only for SQL Server instances.
-   *
    * @var string
    */
   public $privateKeyPath;
 
   /**
-   * Required. Path to the TDE certificate public key in the form
-   * gs://bucketName/fileName. The instance must have write access to the
-   * bucket. Applicable only for SQL Server instances.
-   *
-   * @param string $certificatePath
+   * @param string
    */
   public function setCertificatePath($certificatePath)
   {
@@ -67,9 +51,7 @@ class ExportContextTdeExportOptions extends \Google\Model
     return $this->certificatePath;
   }
   /**
-   * Required. Certificate name. Applicable only for SQL Server instances.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -83,9 +65,7 @@ class ExportContextTdeExportOptions extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. Password that encrypts the private key.
-   *
-   * @param string $privateKeyPassword
+   * @param string
    */
   public function setPrivateKeyPassword($privateKeyPassword)
   {
@@ -99,11 +79,7 @@ class ExportContextTdeExportOptions extends \Google\Model
     return $this->privateKeyPassword;
   }
   /**
-   * Required. Path to the TDE certificate private key in the form
-   * gs://bucketName/fileName. The instance must have write access to the
-   * location. Applicable only for SQL Server instances.
-   *
-   * @param string $privateKeyPath
+   * @param string
    */
   public function setPrivateKeyPath($privateKeyPath)
   {

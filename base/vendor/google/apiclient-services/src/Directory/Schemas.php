@@ -21,14 +21,10 @@ class Schemas extends \Google\Collection
 {
   protected $collection_key = 'schemas';
   /**
-   * ETag of the resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Kind of resource this is.
-   *
    * @var string
    */
   public $kind;
@@ -36,9 +32,7 @@ class Schemas extends \Google\Collection
   protected $schemasDataType = 'array';
 
   /**
-   * ETag of the resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -52,9 +46,7 @@ class Schemas extends \Google\Collection
     return $this->etag;
   }
   /**
-   * Kind of resource this is.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -68,9 +60,7 @@ class Schemas extends \Google\Collection
     return $this->kind;
   }
   /**
-   * A list of UserSchema objects.
-   *
-   * @param Schema[] $schemas
+   * @param Schema[]
    */
   public function setSchemas($schemas)
   {

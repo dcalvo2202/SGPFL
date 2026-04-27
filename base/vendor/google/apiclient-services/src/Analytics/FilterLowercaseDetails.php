@@ -20,22 +20,16 @@ namespace Google\Service\Analytics;
 class FilterLowercaseDetails extends \Google\Model
 {
   /**
-   * Field to use in the filter.
-   *
    * @var string
    */
   public $field;
   /**
-   * The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION.
-   *
    * @var int
    */
   public $fieldIndex;
 
   /**
-   * Field to use in the filter.
-   *
-   * @param string $field
+   * @param string
    */
   public function setField($field)
   {
@@ -49,9 +43,7 @@ class FilterLowercaseDetails extends \Google\Model
     return $this->field;
   }
   /**
-   * The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION.
-   *
-   * @param int $fieldIndex
+   * @param int
    */
   public function setFieldIndex($fieldIndex)
   {

@@ -20,14 +20,10 @@ namespace Google\Service\AlertCenter;
 class SensitiveAdminAction extends \Google\Model
 {
   /**
-   * Email of person who performed the action
-   *
    * @var string
    */
   public $actorEmail;
   /**
-   * The time at which event occurred
-   *
    * @var string
    */
   public $eventTime;
@@ -43,9 +39,7 @@ class SensitiveAdminAction extends \Google\Model
   protected $superAdminPasswordResetEventDataType = '';
 
   /**
-   * Email of person who performed the action
-   *
-   * @param string $actorEmail
+   * @param string
    */
   public function setActorEmail($actorEmail)
   {
@@ -59,9 +53,7 @@ class SensitiveAdminAction extends \Google\Model
     return $this->actorEmail;
   }
   /**
-   * The time at which event occurred
-   *
-   * @param string $eventTime
+   * @param string
    */
   public function setEventTime($eventTime)
   {
@@ -75,9 +67,7 @@ class SensitiveAdminAction extends \Google\Model
     return $this->eventTime;
   }
   /**
-   * Event occurred when primary admin changed in customer's account
-   *
-   * @param PrimaryAdminChangedEvent $primaryAdminChangedEvent
+   * @param PrimaryAdminChangedEvent
    */
   public function setPrimaryAdminChangedEvent(PrimaryAdminChangedEvent $primaryAdminChangedEvent)
   {
@@ -91,9 +81,7 @@ class SensitiveAdminAction extends \Google\Model
     return $this->primaryAdminChangedEvent;
   }
   /**
-   * Event occurred when SSO Profile created in customer's account
-   *
-   * @param SSOProfileCreatedEvent $ssoProfileCreatedEvent
+   * @param SSOProfileCreatedEvent
    */
   public function setSsoProfileCreatedEvent(SSOProfileCreatedEvent $ssoProfileCreatedEvent)
   {
@@ -107,9 +95,7 @@ class SensitiveAdminAction extends \Google\Model
     return $this->ssoProfileCreatedEvent;
   }
   /**
-   * Event occurred when SSO Profile deleted in customer's account
-   *
-   * @param SSOProfileDeletedEvent $ssoProfileDeletedEvent
+   * @param SSOProfileDeletedEvent
    */
   public function setSsoProfileDeletedEvent(SSOProfileDeletedEvent $ssoProfileDeletedEvent)
   {
@@ -123,9 +109,7 @@ class SensitiveAdminAction extends \Google\Model
     return $this->ssoProfileDeletedEvent;
   }
   /**
-   * Event occurred when SSO Profile updated in customer's account
-   *
-   * @param SSOProfileUpdatedEvent $ssoProfileUpdatedEvent
+   * @param SSOProfileUpdatedEvent
    */
   public function setSsoProfileUpdatedEvent(SSOProfileUpdatedEvent $ssoProfileUpdatedEvent)
   {
@@ -139,10 +123,7 @@ class SensitiveAdminAction extends \Google\Model
     return $this->ssoProfileUpdatedEvent;
   }
   /**
-   * Event occurred when password was reset for super admin in customer's
-   * account
-   *
-   * @param SuperAdminPasswordResetEvent $superAdminPasswordResetEvent
+   * @param SuperAdminPasswordResetEvent
    */
   public function setSuperAdminPasswordResetEvent(SuperAdminPasswordResetEvent $superAdminPasswordResetEvent)
   {

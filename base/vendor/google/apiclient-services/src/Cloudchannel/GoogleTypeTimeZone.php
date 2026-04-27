@@ -20,22 +20,16 @@ namespace Google\Service\Cloudchannel;
 class GoogleTypeTimeZone extends \Google\Model
 {
   /**
-   * IANA Time Zone Database time zone. For example "America/New_York".
-   *
    * @var string
    */
   public $id;
   /**
-   * Optional. IANA Time Zone Database version number. For example "2019a".
-   *
    * @var string
    */
   public $version;
 
   /**
-   * IANA Time Zone Database time zone. For example "America/New_York".
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -49,9 +43,7 @@ class GoogleTypeTimeZone extends \Google\Model
     return $this->id;
   }
   /**
-   * Optional. IANA Time Zone Database version number. For example "2019a".
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

@@ -20,58 +20,26 @@ namespace Google\Service\Compute;
 class QuotaExceededInfo extends \Google\Model
 {
   /**
-   * IN_PROGRESS - A rollout is in process which will change the limit value to
-   * future limit.
-   */
-  public const ROLLOUT_STATUS_IN_PROGRESS = 'IN_PROGRESS';
-  /**
-   * ROLLOUT_STATUS_UNSPECIFIED - Rollout status is not specified. The default
-   * value.
-   */
-  public const ROLLOUT_STATUS_ROLLOUT_STATUS_UNSPECIFIED = 'ROLLOUT_STATUS_UNSPECIFIED';
-  /**
-   * The map holding related quota dimensions.
-   *
    * @var string[]
    */
   public $dimensions;
-  /**
-   * Future quota limit being rolled out. The limit's unit depends on the quota
-   * type or metric.
-   *
-   * @var 
-   */
   public $futureLimit;
-  /**
-   * Current effective quota limit. The limit's unit depends on the quota type
-   * or metric.
-   *
-   * @var 
-   */
   public $limit;
   /**
-   * The name of the quota limit.
-   *
    * @var string
    */
   public $limitName;
   /**
-   * The Compute Engine quota metric name.
-   *
    * @var string
    */
   public $metricName;
   /**
-   * Rollout status of the future quota limit.
-   *
    * @var string
    */
   public $rolloutStatus;
 
   /**
-   * The map holding related quota dimensions.
-   *
-   * @param string[] $dimensions
+   * @param string[]
    */
   public function setDimensions($dimensions)
   {
@@ -101,9 +69,7 @@ class QuotaExceededInfo extends \Google\Model
     return $this->limit;
   }
   /**
-   * The name of the quota limit.
-   *
-   * @param string $limitName
+   * @param string
    */
   public function setLimitName($limitName)
   {
@@ -117,9 +83,7 @@ class QuotaExceededInfo extends \Google\Model
     return $this->limitName;
   }
   /**
-   * The Compute Engine quota metric name.
-   *
-   * @param string $metricName
+   * @param string
    */
   public function setMetricName($metricName)
   {
@@ -133,18 +97,14 @@ class QuotaExceededInfo extends \Google\Model
     return $this->metricName;
   }
   /**
-   * Rollout status of the future quota limit.
-   *
-   * Accepted values: IN_PROGRESS, ROLLOUT_STATUS_UNSPECIFIED
-   *
-   * @param self::ROLLOUT_STATUS_* $rolloutStatus
+   * @param string
    */
   public function setRolloutStatus($rolloutStatus)
   {
     $this->rolloutStatus = $rolloutStatus;
   }
   /**
-   * @return self::ROLLOUT_STATUS_*
+   * @return string
    */
   public function getRolloutStatus()
   {

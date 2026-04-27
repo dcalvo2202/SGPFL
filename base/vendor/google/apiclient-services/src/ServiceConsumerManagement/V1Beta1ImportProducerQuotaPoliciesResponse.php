@@ -24,9 +24,7 @@ class V1Beta1ImportProducerQuotaPoliciesResponse extends \Google\Collection
   protected $policiesDataType = 'array';
 
   /**
-   * The policies that were created from the imported data.
-   *
-   * @param V1Beta1ProducerQuotaPolicy[] $policies
+   * @param V1Beta1ProducerQuotaPolicy[]
    */
   public function setPolicies($policies)
   {

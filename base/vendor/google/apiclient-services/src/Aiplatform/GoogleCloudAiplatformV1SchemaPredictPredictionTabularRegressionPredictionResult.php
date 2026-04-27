@@ -21,40 +21,28 @@ class GoogleCloudAiplatformV1SchemaPredictPredictionTabularRegressionPredictionR
 {
   protected $collection_key = 'quantileValues';
   /**
-   * The lower bound of the prediction interval.
-   *
    * @var float
    */
   public $lowerBound;
   /**
-   * Quantile predictions, in 1-1 correspondence with quantile_values.
-   *
    * @var float[]
    */
   public $quantilePredictions;
   /**
-   * Quantile values.
-   *
    * @var float[]
    */
   public $quantileValues;
   /**
-   * The upper bound of the prediction interval.
-   *
    * @var float
    */
   public $upperBound;
   /**
-   * The regression value.
-   *
    * @var float
    */
   public $value;
 
   /**
-   * The lower bound of the prediction interval.
-   *
-   * @param float $lowerBound
+   * @param float
    */
   public function setLowerBound($lowerBound)
   {
@@ -68,9 +56,7 @@ class GoogleCloudAiplatformV1SchemaPredictPredictionTabularRegressionPredictionR
     return $this->lowerBound;
   }
   /**
-   * Quantile predictions, in 1-1 correspondence with quantile_values.
-   *
-   * @param float[] $quantilePredictions
+   * @param float[]
    */
   public function setQuantilePredictions($quantilePredictions)
   {
@@ -84,9 +70,7 @@ class GoogleCloudAiplatformV1SchemaPredictPredictionTabularRegressionPredictionR
     return $this->quantilePredictions;
   }
   /**
-   * Quantile values.
-   *
-   * @param float[] $quantileValues
+   * @param float[]
    */
   public function setQuantileValues($quantileValues)
   {
@@ -100,9 +84,7 @@ class GoogleCloudAiplatformV1SchemaPredictPredictionTabularRegressionPredictionR
     return $this->quantileValues;
   }
   /**
-   * The upper bound of the prediction interval.
-   *
-   * @param float $upperBound
+   * @param float
    */
   public function setUpperBound($upperBound)
   {
@@ -116,9 +98,7 @@ class GoogleCloudAiplatformV1SchemaPredictPredictionTabularRegressionPredictionR
     return $this->upperBound;
   }
   /**
-   * The regression value.
-   *
-   * @param float $value
+   * @param float
    */
   public function setValue($value)
   {

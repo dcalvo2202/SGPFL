@@ -20,8 +20,6 @@ namespace Google\Service\YouTube;
 class MembershipsLevelSnippet extends \Google\Model
 {
   /**
-   * The id of the channel that's offering channel memberships.
-   *
    * @var string
    */
   public $creatorChannelId;
@@ -29,9 +27,7 @@ class MembershipsLevelSnippet extends \Google\Model
   protected $levelDetailsDataType = '';
 
   /**
-   * The id of the channel that's offering channel memberships.
-   *
-   * @param string $creatorChannelId
+   * @param string
    */
   public function setCreatorChannelId($creatorChannelId)
   {
@@ -45,9 +41,7 @@ class MembershipsLevelSnippet extends \Google\Model
     return $this->creatorChannelId;
   }
   /**
-   * Details about the pricing level.
-   *
-   * @param LevelDetails $levelDetails
+   * @param LevelDetails
    */
   public function setLevelDetails(LevelDetails $levelDetails)
   {

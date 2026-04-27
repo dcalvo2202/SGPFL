@@ -21,13 +21,6 @@ class Section extends \Google\Collection
 {
   protected $collection_key = 'widgets';
   /**
-   * The header of the section. Formatted text is supported. For more
-   * information about formatting text, see [Formatting text in Google Chat
-   * apps](https://developers.google.com/workspace/chat/format-messages#card-
-   * formatting) and [Formatting text in Google Workspace Add-
-   * ons](https://developers.google.com/apps-script/add-
-   * ons/concepts/widgets#text_formatting).
-   *
    * @var string
    */
   public $header;
@@ -35,14 +28,7 @@ class Section extends \Google\Collection
   protected $widgetsDataType = 'array';
 
   /**
-   * The header of the section. Formatted text is supported. For more
-   * information about formatting text, see [Formatting text in Google Chat
-   * apps](https://developers.google.com/workspace/chat/format-messages#card-
-   * formatting) and [Formatting text in Google Workspace Add-
-   * ons](https://developers.google.com/apps-script/add-
-   * ons/concepts/widgets#text_formatting).
-   *
-   * @param string $header
+   * @param string
    */
   public function setHeader($header)
   {
@@ -56,9 +42,7 @@ class Section extends \Google\Collection
     return $this->header;
   }
   /**
-   * A section must contain at least one widget.
-   *
-   * @param WidgetMarkup[] $widgets
+   * @param WidgetMarkup[]
    */
   public function setWidgets($widgets)
   {

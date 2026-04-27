@@ -23,9 +23,7 @@ class GoogleCloudApihubV1ExecutePluginInstanceActionRequest extends \Google\Mode
   protected $actionExecutionDetailDataType = '';
 
   /**
-   * Required. The execution details for the action to execute.
-   *
-   * @param GoogleCloudApihubV1ActionExecutionDetail $actionExecutionDetail
+   * @param GoogleCloudApihubV1ActionExecutionDetail
    */
   public function setActionExecutionDetail(GoogleCloudApihubV1ActionExecutionDetail $actionExecutionDetail)
   {

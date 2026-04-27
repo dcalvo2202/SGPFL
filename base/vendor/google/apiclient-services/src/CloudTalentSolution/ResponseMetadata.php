@@ -20,18 +20,12 @@ namespace Google\Service\CloudTalentSolution;
 class ResponseMetadata extends \Google\Model
 {
   /**
-   * A unique id associated with this call. This id is logged for tracking
-   * purposes.
-   *
    * @var string
    */
   public $requestId;
 
   /**
-   * A unique id associated with this call. This id is logged for tracking
-   * purposes.
-   *
-   * @param string $requestId
+   * @param string
    */
   public function setRequestId($requestId)
   {

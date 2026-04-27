@@ -20,32 +20,20 @@ namespace Google\Service\DataCatalog;
 class GoogleCloudDatacatalogV1SqlDatabaseSystemSpec extends \Google\Model
 {
   /**
-   * Version of the database engine.
-   *
    * @var string
    */
   public $databaseVersion;
   /**
-   * Host of the SQL database enum InstanceHost { UNDEFINED = 0; SELF_HOSTED =
-   * 1; CLOUD_SQL = 2; AMAZON_RDS = 3; AZURE_SQL = 4; } Host of the enclousing
-   * database instance.
-   *
    * @var string
    */
   public $instanceHost;
   /**
-   * SQL Database Engine. enum SqlEngine { UNDEFINED = 0; MY_SQL = 1;
-   * POSTGRE_SQL = 2; SQL_SERVER = 3; } Engine of the enclosing database
-   * instance.
-   *
    * @var string
    */
   public $sqlEngine;
 
   /**
-   * Version of the database engine.
-   *
-   * @param string $databaseVersion
+   * @param string
    */
   public function setDatabaseVersion($databaseVersion)
   {
@@ -59,11 +47,7 @@ class GoogleCloudDatacatalogV1SqlDatabaseSystemSpec extends \Google\Model
     return $this->databaseVersion;
   }
   /**
-   * Host of the SQL database enum InstanceHost { UNDEFINED = 0; SELF_HOSTED =
-   * 1; CLOUD_SQL = 2; AMAZON_RDS = 3; AZURE_SQL = 4; } Host of the enclousing
-   * database instance.
-   *
-   * @param string $instanceHost
+   * @param string
    */
   public function setInstanceHost($instanceHost)
   {
@@ -77,11 +61,7 @@ class GoogleCloudDatacatalogV1SqlDatabaseSystemSpec extends \Google\Model
     return $this->instanceHost;
   }
   /**
-   * SQL Database Engine. enum SqlEngine { UNDEFINED = 0; MY_SQL = 1;
-   * POSTGRE_SQL = 2; SQL_SERVER = 3; } Engine of the enclosing database
-   * instance.
-   *
-   * @param string $sqlEngine
+   * @param string
    */
   public function setSqlEngine($sqlEngine)
   {

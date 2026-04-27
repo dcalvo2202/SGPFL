@@ -22,28 +22,20 @@ class EnterpriseTopazSidekickMeetingNotesCardProto extends \Google\Model
   protected $eventType = EnterpriseTopazSidekickAgendaEntry::class;
   protected $eventDataType = '';
   /**
-   * Google Drive ID (a.k.a. resource ID) of the file.
-   *
    * @var string
    */
   public $fileId;
   /**
-   * Title we want to show for meeting notes in the answer card
-   *
    * @var string
    */
   public $title;
   /**
-   * New URL.
-   *
    * @var string
    */
   public $url;
 
   /**
-   * The event to request meeting notes creation.
-   *
-   * @param EnterpriseTopazSidekickAgendaEntry $event
+   * @param EnterpriseTopazSidekickAgendaEntry
    */
   public function setEvent(EnterpriseTopazSidekickAgendaEntry $event)
   {
@@ -57,9 +49,7 @@ class EnterpriseTopazSidekickMeetingNotesCardProto extends \Google\Model
     return $this->event;
   }
   /**
-   * Google Drive ID (a.k.a. resource ID) of the file.
-   *
-   * @param string $fileId
+   * @param string
    */
   public function setFileId($fileId)
   {
@@ -73,9 +63,7 @@ class EnterpriseTopazSidekickMeetingNotesCardProto extends \Google\Model
     return $this->fileId;
   }
   /**
-   * Title we want to show for meeting notes in the answer card
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -89,9 +77,7 @@ class EnterpriseTopazSidekickMeetingNotesCardProto extends \Google\Model
     return $this->title;
   }
   /**
-   * New URL.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

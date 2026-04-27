@@ -20,24 +20,16 @@ namespace Google\Service\Adsense;
 class SavedReport extends \Google\Model
 {
   /**
-   * Output only. Resource name of the report. Format:
-   * accounts/{account}/reports/{report}
-   *
    * @var string
    */
   public $name;
   /**
-   * Report title as specified by publisher.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * Output only. Resource name of the report. Format:
-   * accounts/{account}/reports/{report}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -51,9 +43,7 @@ class SavedReport extends \Google\Model
     return $this->name;
   }
   /**
-   * Report title as specified by publisher.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

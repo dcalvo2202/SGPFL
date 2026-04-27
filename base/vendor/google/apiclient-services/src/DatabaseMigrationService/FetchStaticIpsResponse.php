@@ -21,24 +21,16 @@ class FetchStaticIpsResponse extends \Google\Collection
 {
   protected $collection_key = 'staticIps';
   /**
-   * A token that can be sent as `page_token` to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * List of static IPs.
-   *
    * @var string[]
    */
   public $staticIps;
 
   /**
-   * A token that can be sent as `page_token` to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -52,9 +44,7 @@ class FetchStaticIpsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * List of static IPs.
-   *
-   * @param string[] $staticIps
+   * @param string[]
    */
   public function setStaticIps($staticIps)
   {

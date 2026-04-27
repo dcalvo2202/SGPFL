@@ -19,28 +19,6 @@ namespace Google\Service\Walletobjects;
 
 class FirstRowOption extends \Google\Model
 {
-  public const TRANSIT_OPTION_TRANSIT_OPTION_UNSPECIFIED = 'TRANSIT_OPTION_UNSPECIFIED';
-  public const TRANSIT_OPTION_ORIGIN_AND_DESTINATION_NAMES = 'ORIGIN_AND_DESTINATION_NAMES';
-  /**
-   * Legacy alias for `ORIGIN_AND_DESTINATION_NAMES`. Deprecated.
-   *
-   * @deprecated
-   */
-  public const TRANSIT_OPTION_originAndDestinationNames = 'originAndDestinationNames';
-  public const TRANSIT_OPTION_ORIGIN_AND_DESTINATION_CODES = 'ORIGIN_AND_DESTINATION_CODES';
-  /**
-   * Legacy alias for `ORIGIN_AND_DESTINATION_CODES`. Deprecated.
-   *
-   * @deprecated
-   */
-  public const TRANSIT_OPTION_originAndDestinationCodes = 'originAndDestinationCodes';
-  public const TRANSIT_OPTION_ORIGIN_NAME = 'ORIGIN_NAME';
-  /**
-   * Legacy alias for `ORIGIN_NAME`. Deprecated.
-   *
-   * @deprecated
-   */
-  public const TRANSIT_OPTION_originName = 'originName';
   protected $fieldOptionType = FieldSelector::class;
   protected $fieldOptionDataType = '';
   /**
@@ -49,9 +27,7 @@ class FirstRowOption extends \Google\Model
   public $transitOption;
 
   /**
-   * A reference to the field to be displayed in the first row.
-   *
-   * @param FieldSelector $fieldOption
+   * @param FieldSelector
    */
   public function setFieldOption(FieldSelector $fieldOption)
   {
@@ -65,14 +41,14 @@ class FirstRowOption extends \Google\Model
     return $this->fieldOption;
   }
   /**
-   * @param self::TRANSIT_OPTION_* $transitOption
+   * @param string
    */
   public function setTransitOption($transitOption)
   {
     $this->transitOption = $transitOption;
   }
   /**
-   * @return self::TRANSIT_OPTION_*
+   * @return string
    */
   public function getTransitOption()
   {

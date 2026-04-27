@@ -20,36 +20,24 @@ namespace Google\Service\Integrations;
 class GoogleCloudIntegrationsV1alphaCloudSchedulerConfig extends \Google\Model
 {
   /**
-   * Required. The cron tab of cloud scheduler trigger.
-   *
    * @var string
    */
   public $cronTab;
   /**
-   * Optional. When the job was deleted from Pantheon UI, error_message will be
-   * populated when Get/List integrations
-   *
    * @var string
    */
   public $errorMessage;
   /**
-   * Required. The location where associated cloud scheduler job will be created
-   *
    * @var string
    */
   public $location;
   /**
-   * Required. Service account used by Cloud Scheduler to trigger the
-   * integration at scheduled time
-   *
    * @var string
    */
   public $serviceAccountEmail;
 
   /**
-   * Required. The cron tab of cloud scheduler trigger.
-   *
-   * @param string $cronTab
+   * @param string
    */
   public function setCronTab($cronTab)
   {
@@ -63,10 +51,7 @@ class GoogleCloudIntegrationsV1alphaCloudSchedulerConfig extends \Google\Model
     return $this->cronTab;
   }
   /**
-   * Optional. When the job was deleted from Pantheon UI, error_message will be
-   * populated when Get/List integrations
-   *
-   * @param string $errorMessage
+   * @param string
    */
   public function setErrorMessage($errorMessage)
   {
@@ -80,9 +65,7 @@ class GoogleCloudIntegrationsV1alphaCloudSchedulerConfig extends \Google\Model
     return $this->errorMessage;
   }
   /**
-   * Required. The location where associated cloud scheduler job will be created
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -96,10 +79,7 @@ class GoogleCloudIntegrationsV1alphaCloudSchedulerConfig extends \Google\Model
     return $this->location;
   }
   /**
-   * Required. Service account used by Cloud Scheduler to trigger the
-   * integration at scheduled time
-   *
-   * @param string $serviceAccountEmail
+   * @param string
    */
   public function setServiceAccountEmail($serviceAccountEmail)
   {

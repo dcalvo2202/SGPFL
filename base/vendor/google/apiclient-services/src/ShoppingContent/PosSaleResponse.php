@@ -20,69 +20,46 @@ namespace Google\Service\ShoppingContent;
 class PosSaleResponse extends \Google\Model
 {
   /**
-   * Required. The two-letter ISO 639-1 language code for the item.
-   *
    * @var string
    */
   public $contentLanguage;
   /**
-   * Global Trade Item Number.
-   *
    * @var string
    */
   public $gtin;
   /**
-   * Required. A unique identifier for the item.
-   *
    * @var string
    */
   public $itemId;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#posSaleResponse`".
-   *
    * @var string
    */
   public $kind;
   protected $priceType = Price::class;
   protected $priceDataType = '';
   /**
-   * Required. The relative change of the available quantity. Negative for items
-   * returned.
-   *
    * @var string
    */
   public $quantity;
   /**
-   * A unique ID to group items from the same sale event.
-   *
    * @var string
    */
   public $saleId;
   /**
-   * Required. The identifier of the merchant's store. Either a `storeCode`
-   * inserted through the API or the code of the store in a Business Profile.
-   *
    * @var string
    */
   public $storeCode;
   /**
-   * Required. The CLDR territory code for the item.
-   *
    * @var string
    */
   public $targetCountry;
   /**
-   * Required. The inventory timestamp, in ISO 8601 format.
-   *
    * @var string
    */
   public $timestamp;
 
   /**
-   * Required. The two-letter ISO 639-1 language code for the item.
-   *
-   * @param string $contentLanguage
+   * @param string
    */
   public function setContentLanguage($contentLanguage)
   {
@@ -96,9 +73,7 @@ class PosSaleResponse extends \Google\Model
     return $this->contentLanguage;
   }
   /**
-   * Global Trade Item Number.
-   *
-   * @param string $gtin
+   * @param string
    */
   public function setGtin($gtin)
   {
@@ -112,9 +87,7 @@ class PosSaleResponse extends \Google\Model
     return $this->gtin;
   }
   /**
-   * Required. A unique identifier for the item.
-   *
-   * @param string $itemId
+   * @param string
    */
   public function setItemId($itemId)
   {
@@ -128,10 +101,7 @@ class PosSaleResponse extends \Google\Model
     return $this->itemId;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#posSaleResponse`".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -145,9 +115,7 @@ class PosSaleResponse extends \Google\Model
     return $this->kind;
   }
   /**
-   * Required. The price of the item.
-   *
-   * @param Price $price
+   * @param Price
    */
   public function setPrice(Price $price)
   {
@@ -161,10 +129,7 @@ class PosSaleResponse extends \Google\Model
     return $this->price;
   }
   /**
-   * Required. The relative change of the available quantity. Negative for items
-   * returned.
-   *
-   * @param string $quantity
+   * @param string
    */
   public function setQuantity($quantity)
   {
@@ -178,9 +143,7 @@ class PosSaleResponse extends \Google\Model
     return $this->quantity;
   }
   /**
-   * A unique ID to group items from the same sale event.
-   *
-   * @param string $saleId
+   * @param string
    */
   public function setSaleId($saleId)
   {
@@ -194,10 +157,7 @@ class PosSaleResponse extends \Google\Model
     return $this->saleId;
   }
   /**
-   * Required. The identifier of the merchant's store. Either a `storeCode`
-   * inserted through the API or the code of the store in a Business Profile.
-   *
-   * @param string $storeCode
+   * @param string
    */
   public function setStoreCode($storeCode)
   {
@@ -211,9 +171,7 @@ class PosSaleResponse extends \Google\Model
     return $this->storeCode;
   }
   /**
-   * Required. The CLDR territory code for the item.
-   *
-   * @param string $targetCountry
+   * @param string
    */
   public function setTargetCountry($targetCountry)
   {
@@ -227,9 +185,7 @@ class PosSaleResponse extends \Google\Model
     return $this->targetCountry;
   }
   /**
-   * Required. The inventory timestamp, in ISO 8601 format.
-   *
-   * @param string $timestamp
+   * @param string
    */
   public function setTimestamp($timestamp)
   {

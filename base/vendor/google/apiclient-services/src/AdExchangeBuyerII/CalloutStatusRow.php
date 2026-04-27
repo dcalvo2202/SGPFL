@@ -20,10 +20,6 @@ namespace Google\Service\AdExchangeBuyerII;
 class CalloutStatusRow extends \Google\Model
 {
   /**
-   * The ID of the callout status. See [callout-status-
-   * codes](https://developers.google.com/authorized-
-   * buyers/rtb/downloads/callout-status-codes).
-   *
    * @var int
    */
   public $calloutStatusId;
@@ -33,11 +29,7 @@ class CalloutStatusRow extends \Google\Model
   protected $rowDimensionsDataType = '';
 
   /**
-   * The ID of the callout status. See [callout-status-
-   * codes](https://developers.google.com/authorized-
-   * buyers/rtb/downloads/callout-status-codes).
-   *
-   * @param int $calloutStatusId
+   * @param int
    */
   public function setCalloutStatusId($calloutStatusId)
   {
@@ -51,10 +43,7 @@ class CalloutStatusRow extends \Google\Model
     return $this->calloutStatusId;
   }
   /**
-   * The number of impressions for which there was a bid request or bid response
-   * with the specified callout status.
-   *
-   * @param MetricValue $impressionCount
+   * @param MetricValue
    */
   public function setImpressionCount(MetricValue $impressionCount)
   {
@@ -68,9 +57,7 @@ class CalloutStatusRow extends \Google\Model
     return $this->impressionCount;
   }
   /**
-   * The values of all dimensions associated with metric values in this row.
-   *
-   * @param RowDimensions $rowDimensions
+   * @param RowDimensions
    */
   public function setRowDimensions(RowDimensions $rowDimensions)
   {

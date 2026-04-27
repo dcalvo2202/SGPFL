@@ -19,31 +19,15 @@ namespace Google\Service\ChromeManagement;
 
 class GoogleChromeManagementV1TelemetryHttpsLatencyChangeEvent extends \Google\Model
 {
-  /**
-   * HTTPS latency state is unspecified.
-   */
-  public const HTTPS_LATENCY_STATE_HTTPS_LATENCY_STATE_UNSPECIFIED = 'HTTPS_LATENCY_STATE_UNSPECIFIED';
-  /**
-   * HTTPS latency recovered from a problem.
-   */
-  public const HTTPS_LATENCY_STATE_RECOVERY = 'RECOVERY';
-  /**
-   * HTTPS latency problem.
-   */
-  public const HTTPS_LATENCY_STATE_PROBLEM = 'PROBLEM';
   protected $httpsLatencyRoutineDataType = GoogleChromeManagementV1HttpsLatencyRoutineData::class;
   protected $httpsLatencyRoutineDataDataType = '';
   /**
-   * Current HTTPS latency state.
-   *
    * @var string
    */
   public $httpsLatencyState;
 
   /**
-   * HTTPS latency routine data that triggered the event.
-   *
-   * @param GoogleChromeManagementV1HttpsLatencyRoutineData $httpsLatencyRoutineData
+   * @param GoogleChromeManagementV1HttpsLatencyRoutineData
    */
   public function setHttpsLatencyRoutineData(GoogleChromeManagementV1HttpsLatencyRoutineData $httpsLatencyRoutineData)
   {
@@ -57,18 +41,14 @@ class GoogleChromeManagementV1TelemetryHttpsLatencyChangeEvent extends \Google\M
     return $this->httpsLatencyRoutineData;
   }
   /**
-   * Current HTTPS latency state.
-   *
-   * Accepted values: HTTPS_LATENCY_STATE_UNSPECIFIED, RECOVERY, PROBLEM
-   *
-   * @param self::HTTPS_LATENCY_STATE_* $httpsLatencyState
+   * @param string
    */
   public function setHttpsLatencyState($httpsLatencyState)
   {
     $this->httpsLatencyState = $httpsLatencyState;
   }
   /**
-   * @return self::HTTPS_LATENCY_STATE_*
+   * @return string
    */
   public function getHttpsLatencyState()
   {

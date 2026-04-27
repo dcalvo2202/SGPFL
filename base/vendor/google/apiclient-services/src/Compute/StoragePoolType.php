@@ -21,114 +21,74 @@ class StoragePoolType extends \Google\Collection
 {
   protected $collection_key = 'supportedDiskTypes';
   /**
-   * [Output Only] Creation timestamp inRFC3339 text format.
-   *
    * @var string
    */
   public $creationTimestamp;
   protected $deprecatedType = DeprecationStatus::class;
   protected $deprecatedDataType = '';
   /**
-   * [Output Only] An optional description of this resource.
-   *
    * @var string
    */
   public $description;
   /**
-   * [Output Only] The unique identifier for the resource. This identifier is
-   * defined by the server.
-   *
    * @var string
    */
   public $id;
   /**
-   * Output only. [Output Only] Type of the resource.
-   * Alwayscompute#storagePoolType for storage pool types.
-   *
    * @var string
    */
   public $kind;
   /**
-   * [Output Only] Maximum storage pool size in GB.
-   *
    * @var string
    */
   public $maxPoolProvisionedCapacityGb;
   /**
-   * [Output Only] Maximum provisioned IOPS.
-   *
    * @var string
    */
   public $maxPoolProvisionedIops;
   /**
-   * [Output Only] Maximum provisioned throughput.
-   *
    * @var string
    */
   public $maxPoolProvisionedThroughput;
   /**
-   * [Output Only] Minimum storage pool size in GB.
-   *
    * @var string
    */
   public $minPoolProvisionedCapacityGb;
   /**
-   * [Output Only] Minimum provisioned IOPS.
-   *
    * @var string
    */
   public $minPoolProvisionedIops;
   /**
-   * [Output Only] Minimum provisioned throughput.
-   *
    * @var string
    */
   public $minPoolProvisionedThroughput;
   /**
-   * [Deprecated] This field is deprecated. Use minPoolProvisionedCapacityGb
-   * instead.
-   *
    * @var string
    */
   public $minSizeGb;
   /**
-   * [Output Only] Name of the resource.
-   *
    * @var string
    */
   public $name;
   /**
-   * [Output Only] Server-defined URL for the resource.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * Output only. [Output Only] Server-defined URL for this resource with the
-   * resource id.
-   *
    * @var string
    */
   public $selfLinkWithId;
   /**
-   * [Output Only] The list of disk types supported in this storage pool type.
-   *
    * @var string[]
    */
   public $supportedDiskTypes;
   /**
-   * [Output Only] URL of the zone where the storage pool type resides. You must
-   * specify this field as part of the HTTP request URL. It is not settable as a
-   * field in the request body.
-   *
    * @var string
    */
   public $zone;
 
   /**
-   * [Output Only] Creation timestamp inRFC3339 text format.
-   *
-   * @param string $creationTimestamp
+   * @param string
    */
   public function setCreationTimestamp($creationTimestamp)
   {
@@ -142,10 +102,7 @@ class StoragePoolType extends \Google\Collection
     return $this->creationTimestamp;
   }
   /**
-   * [Output Only] The deprecation status associated with this storage pool
-   * type.
-   *
-   * @param DeprecationStatus $deprecated
+   * @param DeprecationStatus
    */
   public function setDeprecated(DeprecationStatus $deprecated)
   {
@@ -159,9 +116,7 @@ class StoragePoolType extends \Google\Collection
     return $this->deprecated;
   }
   /**
-   * [Output Only] An optional description of this resource.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -175,10 +130,7 @@ class StoragePoolType extends \Google\Collection
     return $this->description;
   }
   /**
-   * [Output Only] The unique identifier for the resource. This identifier is
-   * defined by the server.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -192,10 +144,7 @@ class StoragePoolType extends \Google\Collection
     return $this->id;
   }
   /**
-   * Output only. [Output Only] Type of the resource.
-   * Alwayscompute#storagePoolType for storage pool types.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -209,9 +158,7 @@ class StoragePoolType extends \Google\Collection
     return $this->kind;
   }
   /**
-   * [Output Only] Maximum storage pool size in GB.
-   *
-   * @param string $maxPoolProvisionedCapacityGb
+   * @param string
    */
   public function setMaxPoolProvisionedCapacityGb($maxPoolProvisionedCapacityGb)
   {
@@ -225,9 +172,7 @@ class StoragePoolType extends \Google\Collection
     return $this->maxPoolProvisionedCapacityGb;
   }
   /**
-   * [Output Only] Maximum provisioned IOPS.
-   *
-   * @param string $maxPoolProvisionedIops
+   * @param string
    */
   public function setMaxPoolProvisionedIops($maxPoolProvisionedIops)
   {
@@ -241,9 +186,7 @@ class StoragePoolType extends \Google\Collection
     return $this->maxPoolProvisionedIops;
   }
   /**
-   * [Output Only] Maximum provisioned throughput.
-   *
-   * @param string $maxPoolProvisionedThroughput
+   * @param string
    */
   public function setMaxPoolProvisionedThroughput($maxPoolProvisionedThroughput)
   {
@@ -257,9 +200,7 @@ class StoragePoolType extends \Google\Collection
     return $this->maxPoolProvisionedThroughput;
   }
   /**
-   * [Output Only] Minimum storage pool size in GB.
-   *
-   * @param string $minPoolProvisionedCapacityGb
+   * @param string
    */
   public function setMinPoolProvisionedCapacityGb($minPoolProvisionedCapacityGb)
   {
@@ -273,9 +214,7 @@ class StoragePoolType extends \Google\Collection
     return $this->minPoolProvisionedCapacityGb;
   }
   /**
-   * [Output Only] Minimum provisioned IOPS.
-   *
-   * @param string $minPoolProvisionedIops
+   * @param string
    */
   public function setMinPoolProvisionedIops($minPoolProvisionedIops)
   {
@@ -289,9 +228,7 @@ class StoragePoolType extends \Google\Collection
     return $this->minPoolProvisionedIops;
   }
   /**
-   * [Output Only] Minimum provisioned throughput.
-   *
-   * @param string $minPoolProvisionedThroughput
+   * @param string
    */
   public function setMinPoolProvisionedThroughput($minPoolProvisionedThroughput)
   {
@@ -305,10 +242,7 @@ class StoragePoolType extends \Google\Collection
     return $this->minPoolProvisionedThroughput;
   }
   /**
-   * [Deprecated] This field is deprecated. Use minPoolProvisionedCapacityGb
-   * instead.
-   *
-   * @param string $minSizeGb
+   * @param string
    */
   public function setMinSizeGb($minSizeGb)
   {
@@ -322,9 +256,7 @@ class StoragePoolType extends \Google\Collection
     return $this->minSizeGb;
   }
   /**
-   * [Output Only] Name of the resource.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -338,9 +270,7 @@ class StoragePoolType extends \Google\Collection
     return $this->name;
   }
   /**
-   * [Output Only] Server-defined URL for the resource.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -354,10 +284,7 @@ class StoragePoolType extends \Google\Collection
     return $this->selfLink;
   }
   /**
-   * Output only. [Output Only] Server-defined URL for this resource with the
-   * resource id.
-   *
-   * @param string $selfLinkWithId
+   * @param string
    */
   public function setSelfLinkWithId($selfLinkWithId)
   {
@@ -371,9 +298,7 @@ class StoragePoolType extends \Google\Collection
     return $this->selfLinkWithId;
   }
   /**
-   * [Output Only] The list of disk types supported in this storage pool type.
-   *
-   * @param string[] $supportedDiskTypes
+   * @param string[]
    */
   public function setSupportedDiskTypes($supportedDiskTypes)
   {
@@ -387,11 +312,7 @@ class StoragePoolType extends \Google\Collection
     return $this->supportedDiskTypes;
   }
   /**
-   * [Output Only] URL of the zone where the storage pool type resides. You must
-   * specify this field as part of the HTTP request URL. It is not settable as a
-   * field in the request body.
-   *
-   * @param string $zone
+   * @param string
    */
   public function setZone($zone)
   {

@@ -20,22 +20,16 @@ namespace Google\Service\ContainerAnalysis;
 class GoogleDevtoolsContaineranalysisV1alpha1OperationMetadata extends \Google\Model
 {
   /**
-   * Output only. The time this operation was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. The time that this operation was marked completed or failed.
-   *
    * @var string
    */
   public $endTime;
 
   /**
-   * Output only. The time this operation was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -49,9 +43,7 @@ class GoogleDevtoolsContaineranalysisV1alpha1OperationMetadata extends \Google\M
     return $this->createTime;
   }
   /**
-   * Output only. The time that this operation was marked completed or failed.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {

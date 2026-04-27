@@ -20,33 +20,20 @@ namespace Google\Service\Appengine;
 class LocationMetadata extends \Google\Model
 {
   /**
-   * App Engine flexible environment is available in the given
-   * location.@OutputOnly
-   *
    * @var bool
    */
   public $flexibleEnvironmentAvailable;
   /**
-   * Output only. Search API
-   * (https://cloud.google.com/appengine/docs/standard/python/search) is
-   * available in the given location.
-   *
    * @var bool
    */
   public $searchApiAvailable;
   /**
-   * App Engine standard environment is available in the given
-   * location.@OutputOnly
-   *
    * @var bool
    */
   public $standardEnvironmentAvailable;
 
   /**
-   * App Engine flexible environment is available in the given
-   * location.@OutputOnly
-   *
-   * @param bool $flexibleEnvironmentAvailable
+   * @param bool
    */
   public function setFlexibleEnvironmentAvailable($flexibleEnvironmentAvailable)
   {
@@ -60,11 +47,7 @@ class LocationMetadata extends \Google\Model
     return $this->flexibleEnvironmentAvailable;
   }
   /**
-   * Output only. Search API
-   * (https://cloud.google.com/appengine/docs/standard/python/search) is
-   * available in the given location.
-   *
-   * @param bool $searchApiAvailable
+   * @param bool
    */
   public function setSearchApiAvailable($searchApiAvailable)
   {
@@ -78,10 +61,7 @@ class LocationMetadata extends \Google\Model
     return $this->searchApiAvailable;
   }
   /**
-   * App Engine standard environment is available in the given
-   * location.@OutputOnly
-   *
-   * @param bool $standardEnvironmentAvailable
+   * @param bool
    */
   public function setStandardEnvironmentAvailable($standardEnvironmentAvailable)
   {

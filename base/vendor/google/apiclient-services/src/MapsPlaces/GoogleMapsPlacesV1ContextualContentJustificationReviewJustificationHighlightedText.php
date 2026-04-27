@@ -28,9 +28,7 @@ class GoogleMapsPlacesV1ContextualContentJustificationReviewJustificationHighlig
   public $text;
 
   /**
-   * The list of the ranges of the highlighted text.
-   *
-   * @param GoogleMapsPlacesV1ContextualContentJustificationReviewJustificationHighlightedTextHighlightedTextRange[] $highlightedTextRanges
+   * @param GoogleMapsPlacesV1ContextualContentJustificationReviewJustificationHighlightedTextHighlightedTextRange[]
    */
   public function setHighlightedTextRanges($highlightedTextRanges)
   {
@@ -44,7 +42,7 @@ class GoogleMapsPlacesV1ContextualContentJustificationReviewJustificationHighlig
     return $this->highlightedTextRanges;
   }
   /**
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {

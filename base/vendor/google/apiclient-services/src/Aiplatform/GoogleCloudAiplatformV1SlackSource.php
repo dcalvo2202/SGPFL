@@ -24,9 +24,7 @@ class GoogleCloudAiplatformV1SlackSource extends \Google\Collection
   protected $channelsDataType = 'array';
 
   /**
-   * Required. The Slack channels.
-   *
-   * @param GoogleCloudAiplatformV1SlackSourceSlackChannels[] $channels
+   * @param GoogleCloudAiplatformV1SlackSourceSlackChannels[]
    */
   public function setChannels($channels)
   {

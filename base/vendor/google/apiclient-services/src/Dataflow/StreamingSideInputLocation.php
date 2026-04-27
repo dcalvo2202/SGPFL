@@ -20,22 +20,16 @@ namespace Google\Service\Dataflow;
 class StreamingSideInputLocation extends \Google\Model
 {
   /**
-   * Identifies the state family where this side input is stored.
-   *
    * @var string
    */
   public $stateFamily;
   /**
-   * Identifies the particular side input within the streaming Dataflow job.
-   *
    * @var string
    */
   public $tag;
 
   /**
-   * Identifies the state family where this side input is stored.
-   *
-   * @param string $stateFamily
+   * @param string
    */
   public function setStateFamily($stateFamily)
   {
@@ -49,9 +43,7 @@ class StreamingSideInputLocation extends \Google\Model
     return $this->stateFamily;
   }
   /**
-   * Identifies the particular side input within the streaming Dataflow job.
-   *
-   * @param string $tag
+   * @param string
    */
   public function setTag($tag)
   {

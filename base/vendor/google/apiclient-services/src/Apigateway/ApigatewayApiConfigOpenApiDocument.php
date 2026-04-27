@@ -23,9 +23,7 @@ class ApigatewayApiConfigOpenApiDocument extends \Google\Model
   protected $documentDataType = '';
 
   /**
-   * The OpenAPI Specification document file.
-   *
-   * @param ApigatewayApiConfigFile $document
+   * @param ApigatewayApiConfigFile
    */
   public function setDocument(ApigatewayApiConfigFile $document)
   {

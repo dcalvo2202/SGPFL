@@ -23,26 +23,18 @@ class ManagedConfiguration extends \Google\Collection
   protected $configurationVariablesType = ConfigurationVariables::class;
   protected $configurationVariablesDataType = '';
   /**
-   * Deprecated.
-   *
    * @var string
    */
   public $kind;
   protected $managedPropertyType = ManagedProperty::class;
   protected $managedPropertyDataType = 'array';
   /**
-   * The ID of the product that the managed configuration is for, e.g.
-   * "app:com.google.android.gm".
-   *
    * @var string
    */
   public $productId;
 
   /**
-   * Contains the ID of the managed configuration profile and the set of
-   * configuration variables (if any) defined for the user.
-   *
-   * @param ConfigurationVariables $configurationVariables
+   * @param ConfigurationVariables
    */
   public function setConfigurationVariables(ConfigurationVariables $configurationVariables)
   {
@@ -56,9 +48,7 @@ class ManagedConfiguration extends \Google\Collection
     return $this->configurationVariables;
   }
   /**
-   * Deprecated.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -72,9 +62,7 @@ class ManagedConfiguration extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The set of managed properties for this configuration.
-   *
-   * @param ManagedProperty[] $managedProperty
+   * @param ManagedProperty[]
    */
   public function setManagedProperty($managedProperty)
   {
@@ -88,10 +76,7 @@ class ManagedConfiguration extends \Google\Collection
     return $this->managedProperty;
   }
   /**
-   * The ID of the product that the managed configuration is for, e.g.
-   * "app:com.google.android.gm".
-   *
-   * @param string $productId
+   * @param string
    */
   public function setProductId($productId)
   {

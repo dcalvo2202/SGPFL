@@ -21,45 +21,30 @@ class GoogleIdentityAccesscontextmanagerV1DevicePolicy extends \Google\Collectio
 {
   protected $collection_key = 'osConstraints';
   /**
-   * Allowed device management levels, an empty list allows all management
-   * levels.
-   *
    * @var string[]
    */
   public $allowedDeviceManagementLevels;
   /**
-   * Allowed encryptions statuses, an empty list allows all statuses.
-   *
    * @var string[]
    */
   public $allowedEncryptionStatuses;
   protected $osConstraintsType = GoogleIdentityAccesscontextmanagerV1OsConstraint::class;
   protected $osConstraintsDataType = 'array';
   /**
-   * Whether the device needs to be approved by the customer admin.
-   *
    * @var bool
    */
   public $requireAdminApproval;
   /**
-   * Whether the device needs to be corp owned.
-   *
    * @var bool
    */
   public $requireCorpOwned;
   /**
-   * Whether or not screenlock is required for the DevicePolicy to be true.
-   * Defaults to `false`.
-   *
    * @var bool
    */
   public $requireScreenlock;
 
   /**
-   * Allowed device management levels, an empty list allows all management
-   * levels.
-   *
-   * @param string[] $allowedDeviceManagementLevels
+   * @param string[]
    */
   public function setAllowedDeviceManagementLevels($allowedDeviceManagementLevels)
   {
@@ -73,9 +58,7 @@ class GoogleIdentityAccesscontextmanagerV1DevicePolicy extends \Google\Collectio
     return $this->allowedDeviceManagementLevels;
   }
   /**
-   * Allowed encryptions statuses, an empty list allows all statuses.
-   *
-   * @param string[] $allowedEncryptionStatuses
+   * @param string[]
    */
   public function setAllowedEncryptionStatuses($allowedEncryptionStatuses)
   {
@@ -89,9 +72,7 @@ class GoogleIdentityAccesscontextmanagerV1DevicePolicy extends \Google\Collectio
     return $this->allowedEncryptionStatuses;
   }
   /**
-   * Allowed OS versions, an empty list allows all types and all versions.
-   *
-   * @param GoogleIdentityAccesscontextmanagerV1OsConstraint[] $osConstraints
+   * @param GoogleIdentityAccesscontextmanagerV1OsConstraint[]
    */
   public function setOsConstraints($osConstraints)
   {
@@ -105,9 +86,7 @@ class GoogleIdentityAccesscontextmanagerV1DevicePolicy extends \Google\Collectio
     return $this->osConstraints;
   }
   /**
-   * Whether the device needs to be approved by the customer admin.
-   *
-   * @param bool $requireAdminApproval
+   * @param bool
    */
   public function setRequireAdminApproval($requireAdminApproval)
   {
@@ -121,9 +100,7 @@ class GoogleIdentityAccesscontextmanagerV1DevicePolicy extends \Google\Collectio
     return $this->requireAdminApproval;
   }
   /**
-   * Whether the device needs to be corp owned.
-   *
-   * @param bool $requireCorpOwned
+   * @param bool
    */
   public function setRequireCorpOwned($requireCorpOwned)
   {
@@ -137,10 +114,7 @@ class GoogleIdentityAccesscontextmanagerV1DevicePolicy extends \Google\Collectio
     return $this->requireCorpOwned;
   }
   /**
-   * Whether or not screenlock is required for the DevicePolicy to be true.
-   * Defaults to `false`.
-   *
-   * @param bool $requireScreenlock
+   * @param bool
    */
   public function setRequireScreenlock($requireScreenlock)
   {

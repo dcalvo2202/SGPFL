@@ -21,24 +21,18 @@ class QueryRequest extends \Google\Collection
 {
   protected $collection_key = 'inputs';
   /**
-   * Required. Third-party user ID.
-   *
    * @var string
    */
   public $agentUserId;
   protected $inputsType = QueryRequestInput::class;
   protected $inputsDataType = 'array';
   /**
-   * Request ID used for debugging.
-   *
    * @var string
    */
   public $requestId;
 
   /**
-   * Required. Third-party user ID.
-   *
-   * @param string $agentUserId
+   * @param string
    */
   public function setAgentUserId($agentUserId)
   {
@@ -52,10 +46,7 @@ class QueryRequest extends \Google\Collection
     return $this->agentUserId;
   }
   /**
-   * Required. Inputs containing third-party device IDs for which to get the
-   * device states.
-   *
-   * @param QueryRequestInput[] $inputs
+   * @param QueryRequestInput[]
    */
   public function setInputs($inputs)
   {
@@ -69,9 +60,7 @@ class QueryRequest extends \Google\Collection
     return $this->inputs;
   }
   /**
-   * Request ID used for debugging.
-   *
-   * @param string $requestId
+   * @param string
    */
   public function setRequestId($requestId)
   {

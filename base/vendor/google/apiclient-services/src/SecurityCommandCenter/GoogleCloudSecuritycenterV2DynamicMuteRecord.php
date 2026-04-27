@@ -20,25 +20,16 @@ namespace Google\Service\SecurityCommandCenter;
 class GoogleCloudSecuritycenterV2DynamicMuteRecord extends \Google\Model
 {
   /**
-   * When the dynamic mute rule first matched the finding.
-   *
    * @var string
    */
   public $matchTime;
   /**
-   * The relative resource name of the mute rule, represented by a mute config,
-   * that created this record, for example
-   * `organizations/123/muteConfigs/mymuteconfig` or
-   * `organizations/123/locations/global/muteConfigs/mymuteconfig`.
-   *
    * @var string
    */
   public $muteConfig;
 
   /**
-   * When the dynamic mute rule first matched the finding.
-   *
-   * @param string $matchTime
+   * @param string
    */
   public function setMatchTime($matchTime)
   {
@@ -52,12 +43,7 @@ class GoogleCloudSecuritycenterV2DynamicMuteRecord extends \Google\Model
     return $this->matchTime;
   }
   /**
-   * The relative resource name of the mute rule, represented by a mute config,
-   * that created this record, for example
-   * `organizations/123/muteConfigs/mymuteconfig` or
-   * `organizations/123/locations/global/muteConfigs/mymuteconfig`.
-   *
-   * @param string $muteConfig
+   * @param string
    */
   public function setMuteConfig($muteConfig)
   {

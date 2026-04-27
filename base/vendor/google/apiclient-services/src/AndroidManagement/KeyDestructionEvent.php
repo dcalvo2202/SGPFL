@@ -20,28 +20,20 @@ namespace Google\Service\AndroidManagement;
 class KeyDestructionEvent extends \Google\Model
 {
   /**
-   * UID of the application which owns the key.
-   *
    * @var int
    */
   public $applicationUid;
   /**
-   * Alias of the key.
-   *
    * @var string
    */
   public $keyAlias;
   /**
-   * Whether the operation was successful.
-   *
    * @var bool
    */
   public $success;
 
   /**
-   * UID of the application which owns the key.
-   *
-   * @param int $applicationUid
+   * @param int
    */
   public function setApplicationUid($applicationUid)
   {
@@ -55,9 +47,7 @@ class KeyDestructionEvent extends \Google\Model
     return $this->applicationUid;
   }
   /**
-   * Alias of the key.
-   *
-   * @param string $keyAlias
+   * @param string
    */
   public function setKeyAlias($keyAlias)
   {
@@ -71,9 +61,7 @@ class KeyDestructionEvent extends \Google\Model
     return $this->keyAlias;
   }
   /**
-   * Whether the operation was successful.
-   *
-   * @param bool $success
+   * @param bool
    */
   public function setSuccess($success)
   {

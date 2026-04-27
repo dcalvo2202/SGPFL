@@ -31,7 +31,7 @@ class GoogleCloudDialogflowV2beta1GenerateSuggestionsResponseGeneratorSuggestion
   public $sourceGenerator;
 
   /**
-   * @param string $answerRecord
+   * @param string
    */
   public function setAnswerRecord($answerRecord)
   {
@@ -45,7 +45,7 @@ class GoogleCloudDialogflowV2beta1GenerateSuggestionsResponseGeneratorSuggestion
     return $this->answerRecord;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1GeneratorSuggestion $generatorSuggestion
+   * @param GoogleCloudDialogflowV2beta1GeneratorSuggestion
    */
   public function setGeneratorSuggestion(GoogleCloudDialogflowV2beta1GeneratorSuggestion $generatorSuggestion)
   {
@@ -59,7 +59,7 @@ class GoogleCloudDialogflowV2beta1GenerateSuggestionsResponseGeneratorSuggestion
     return $this->generatorSuggestion;
   }
   /**
-   * @param string $sourceGenerator
+   * @param string
    */
   public function setSourceGenerator($sourceGenerator)
   {

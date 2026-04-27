@@ -20,31 +20,17 @@ namespace Google\Service\Contactcenterinsights;
 class GoogleCloudContactcenterinsightsV1alpha1IssueAssignment extends \Google\Model
 {
   /**
-   * Immutable. Display name of the assigned issue. This field is set at time of
-   * analysis and immutable since then.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Resource name of the assigned issue.
-   *
    * @var string
    */
   public $issue;
-  /**
-   * Score indicating the likelihood of the issue assignment. currently bounded
-   * on [0,1].
-   *
-   * @var 
-   */
   public $score;
 
   /**
-   * Immutable. Display name of the assigned issue. This field is set at time of
-   * analysis and immutable since then.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -58,9 +44,7 @@ class GoogleCloudContactcenterinsightsV1alpha1IssueAssignment extends \Google\Mo
     return $this->displayName;
   }
   /**
-   * Resource name of the assigned issue.
-   *
-   * @param string $issue
+   * @param string
    */
   public function setIssue($issue)
   {

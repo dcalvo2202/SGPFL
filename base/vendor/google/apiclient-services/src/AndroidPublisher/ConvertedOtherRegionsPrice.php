@@ -25,9 +25,7 @@ class ConvertedOtherRegionsPrice extends \Google\Model
   protected $usdPriceDataType = '';
 
   /**
-   * Price in EUR to use for the "Other regions" location exclusive of taxes.
-   *
-   * @param Money $eurPrice
+   * @param Money
    */
   public function setEurPrice(Money $eurPrice)
   {
@@ -41,9 +39,7 @@ class ConvertedOtherRegionsPrice extends \Google\Model
     return $this->eurPrice;
   }
   /**
-   * Price in USD to use for the "Other regions" location exclusive of taxes.
-   *
-   * @param Money $usdPrice
+   * @param Money
    */
   public function setUsdPrice(Money $usdPrice)
   {

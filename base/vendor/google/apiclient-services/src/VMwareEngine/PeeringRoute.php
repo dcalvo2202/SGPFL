@@ -20,83 +20,32 @@ namespace Google\Service\VMwareEngine;
 class PeeringRoute extends \Google\Model
 {
   /**
-   * Unspecified exchanged routes direction. This is default.
-   */
-  public const DIRECTION_DIRECTION_UNSPECIFIED = 'DIRECTION_UNSPECIFIED';
-  /**
-   * Routes imported from the peer network.
-   */
-  public const DIRECTION_INCOMING = 'INCOMING';
-  /**
-   * Routes exported to the peer network.
-   */
-  public const DIRECTION_OUTGOING = 'OUTGOING';
-  /**
-   * Unspecified peering route type. This is the default value.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * Dynamic routes in the peer network.
-   */
-  public const TYPE_DYNAMIC_PEERING_ROUTE = 'DYNAMIC_PEERING_ROUTE';
-  /**
-   * Static routes in the peer network.
-   */
-  public const TYPE_STATIC_PEERING_ROUTE = 'STATIC_PEERING_ROUTE';
-  /**
-   * Created, updated, and removed automatically by Google Cloud when subnets
-   * are created, modified, or deleted in the peer network.
-   */
-  public const TYPE_SUBNET_PEERING_ROUTE = 'SUBNET_PEERING_ROUTE';
-  /**
-   * Output only. Destination range of the peering route in CIDR notation.
-   *
    * @var string
    */
   public $destRange;
   /**
-   * Output only. Direction of the routes exchanged with the peer network, from
-   * the VMware Engine network perspective: * Routes of direction `INCOMING` are
-   * imported from the peer network. * Routes of direction `OUTGOING` are
-   * exported from the intranet VPC network of the VMware Engine network.
-   *
    * @var string
    */
   public $direction;
   /**
-   * Output only. True if the peering route has been imported from a peered VPC
-   * network; false otherwise. The import happens if the field
-   * `NetworkPeering.importCustomRoutes` is true for this network,
-   * `NetworkPeering.exportCustomRoutes` is true for the peer VPC network, and
-   * the import does not result in a route conflict.
-   *
    * @var bool
    */
   public $imported;
   /**
-   * Output only. Region containing the next hop of the peering route. This
-   * field only applies to dynamic routes in the peer VPC network.
-   *
    * @var string
    */
   public $nextHopRegion;
   /**
-   * Output only. The priority of the peering route.
-   *
    * @var string
    */
   public $priority;
   /**
-   * Output only. Type of the route in the peer VPC network.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Output only. Destination range of the peering route in CIDR notation.
-   *
-   * @param string $destRange
+   * @param string
    */
   public function setDestRange($destRange)
   {
@@ -110,34 +59,21 @@ class PeeringRoute extends \Google\Model
     return $this->destRange;
   }
   /**
-   * Output only. Direction of the routes exchanged with the peer network, from
-   * the VMware Engine network perspective: * Routes of direction `INCOMING` are
-   * imported from the peer network. * Routes of direction `OUTGOING` are
-   * exported from the intranet VPC network of the VMware Engine network.
-   *
-   * Accepted values: DIRECTION_UNSPECIFIED, INCOMING, OUTGOING
-   *
-   * @param self::DIRECTION_* $direction
+   * @param string
    */
   public function setDirection($direction)
   {
     $this->direction = $direction;
   }
   /**
-   * @return self::DIRECTION_*
+   * @return string
    */
   public function getDirection()
   {
     return $this->direction;
   }
   /**
-   * Output only. True if the peering route has been imported from a peered VPC
-   * network; false otherwise. The import happens if the field
-   * `NetworkPeering.importCustomRoutes` is true for this network,
-   * `NetworkPeering.exportCustomRoutes` is true for the peer VPC network, and
-   * the import does not result in a route conflict.
-   *
-   * @param bool $imported
+   * @param bool
    */
   public function setImported($imported)
   {
@@ -151,10 +87,7 @@ class PeeringRoute extends \Google\Model
     return $this->imported;
   }
   /**
-   * Output only. Region containing the next hop of the peering route. This
-   * field only applies to dynamic routes in the peer VPC network.
-   *
-   * @param string $nextHopRegion
+   * @param string
    */
   public function setNextHopRegion($nextHopRegion)
   {
@@ -168,9 +101,7 @@ class PeeringRoute extends \Google\Model
     return $this->nextHopRegion;
   }
   /**
-   * Output only. The priority of the peering route.
-   *
-   * @param string $priority
+   * @param string
    */
   public function setPriority($priority)
   {
@@ -184,19 +115,14 @@ class PeeringRoute extends \Google\Model
     return $this->priority;
   }
   /**
-   * Output only. Type of the route in the peer VPC network.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, DYNAMIC_PEERING_ROUTE,
-   * STATIC_PEERING_ROUTE, SUBNET_PEERING_ROUTE
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

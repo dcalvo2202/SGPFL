@@ -19,53 +19,23 @@ namespace Google\Service\Container;
 
 class UpgradeSettings extends \Google\Model
 {
-  /**
-   * Default value if unset. GKE internally defaults the update strategy to
-   * SURGE for unspecified strategies.
-   */
-  public const STRATEGY_NODE_POOL_UPDATE_STRATEGY_UNSPECIFIED = 'NODE_POOL_UPDATE_STRATEGY_UNSPECIFIED';
-  /**
-   * blue-green upgrade.
-   */
-  public const STRATEGY_BLUE_GREEN = 'BLUE_GREEN';
-  /**
-   * SURGE is the traditional way of upgrade a node pool. max_surge and
-   * max_unavailable determines the level of upgrade parallelism.
-   */
-  public const STRATEGY_SURGE = 'SURGE';
-  /**
-   * SHORT_LIVED is the dedicated upgrade strategy for QueuedProvisioning and
-   * flex start node pools scaled up only by enqueueing to the Dynamic Workload
-   * Scheduler (DWS).
-   */
-  public const STRATEGY_SHORT_LIVED = 'SHORT_LIVED';
   protected $blueGreenSettingsType = BlueGreenSettings::class;
   protected $blueGreenSettingsDataType = '';
   /**
-   * The maximum number of nodes that can be created beyond the current size of
-   * the node pool during the upgrade process.
-   *
    * @var int
    */
   public $maxSurge;
   /**
-   * The maximum number of nodes that can be simultaneously unavailable during
-   * the upgrade process. A node is considered available if its status is Ready.
-   *
    * @var int
    */
   public $maxUnavailable;
   /**
-   * Update strategy of the node pool.
-   *
    * @var string
    */
   public $strategy;
 
   /**
-   * Settings for blue-green upgrade strategy.
-   *
-   * @param BlueGreenSettings $blueGreenSettings
+   * @param BlueGreenSettings
    */
   public function setBlueGreenSettings(BlueGreenSettings $blueGreenSettings)
   {
@@ -79,10 +49,7 @@ class UpgradeSettings extends \Google\Model
     return $this->blueGreenSettings;
   }
   /**
-   * The maximum number of nodes that can be created beyond the current size of
-   * the node pool during the upgrade process.
-   *
-   * @param int $maxSurge
+   * @param int
    */
   public function setMaxSurge($maxSurge)
   {
@@ -96,10 +63,7 @@ class UpgradeSettings extends \Google\Model
     return $this->maxSurge;
   }
   /**
-   * The maximum number of nodes that can be simultaneously unavailable during
-   * the upgrade process. A node is considered available if its status is Ready.
-   *
-   * @param int $maxUnavailable
+   * @param int
    */
   public function setMaxUnavailable($maxUnavailable)
   {
@@ -113,19 +77,14 @@ class UpgradeSettings extends \Google\Model
     return $this->maxUnavailable;
   }
   /**
-   * Update strategy of the node pool.
-   *
-   * Accepted values: NODE_POOL_UPDATE_STRATEGY_UNSPECIFIED, BLUE_GREEN, SURGE,
-   * SHORT_LIVED
-   *
-   * @param self::STRATEGY_* $strategy
+   * @param string
    */
   public function setStrategy($strategy)
   {
     $this->strategy = $strategy;
   }
   /**
-   * @return self::STRATEGY_*
+   * @return string
    */
   public function getStrategy()
   {

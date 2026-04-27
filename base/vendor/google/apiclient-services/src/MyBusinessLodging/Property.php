@@ -20,132 +20,40 @@ namespace Google\Service\MyBusinessLodging;
 class Property extends \Google\Model
 {
   /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const BUILT_YEAR_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const BUILT_YEAR_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const BUILT_YEAR_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const BUILT_YEAR_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const FLOORS_COUNT_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const FLOORS_COUNT_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const FLOORS_COUNT_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const FLOORS_COUNT_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const LAST_RENOVATED_YEAR_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const LAST_RENOVATED_YEAR_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const LAST_RENOVATED_YEAR_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const LAST_RENOVATED_YEAR_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const ROOMS_COUNT_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const ROOMS_COUNT_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const ROOMS_COUNT_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const ROOMS_COUNT_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Built year. The year that construction of the property was completed.
-   *
    * @var int
    */
   public $builtYear;
   /**
-   * Built year exception.
-   *
    * @var string
    */
   public $builtYearException;
   /**
-   * Floors count. The number of stories the building has from the ground floor
-   * to the top floor that are accessible to guests.
-   *
    * @var int
    */
   public $floorsCount;
   /**
-   * Floors count exception.
-   *
    * @var string
    */
   public $floorsCountException;
   /**
-   * Last renovated year. The year when the most recent renovation of the
-   * property was completed. Renovation may include all or any combination of
-   * the following: the units, the public spaces, the exterior, or the interior.
-   *
    * @var int
    */
   public $lastRenovatedYear;
   /**
-   * Last renovated year exception.
-   *
    * @var string
    */
   public $lastRenovatedYearException;
   /**
-   * Rooms count. The total number of rooms and suites bookable by guests for an
-   * overnight stay. Does not include event space, public spaces, conference
-   * rooms, fitness rooms, business centers, spa, salon, restaurants/bars, or
-   * shops.
-   *
    * @var int
    */
   public $roomsCount;
   /**
-   * Rooms count exception.
-   *
    * @var string
    */
   public $roomsCountException;
 
   /**
-   * Built year. The year that construction of the property was completed.
-   *
-   * @param int $builtYear
+   * @param int
    */
   public function setBuiltYear($builtYear)
   {
@@ -159,29 +67,21 @@ class Property extends \Google\Model
     return $this->builtYear;
   }
   /**
-   * Built year exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::BUILT_YEAR_EXCEPTION_* $builtYearException
+   * @param string
    */
   public function setBuiltYearException($builtYearException)
   {
     $this->builtYearException = $builtYearException;
   }
   /**
-   * @return self::BUILT_YEAR_EXCEPTION_*
+   * @return string
    */
   public function getBuiltYearException()
   {
     return $this->builtYearException;
   }
   /**
-   * Floors count. The number of stories the building has from the ground floor
-   * to the top floor that are accessible to guests.
-   *
-   * @param int $floorsCount
+   * @param int
    */
   public function setFloorsCount($floorsCount)
   {
@@ -195,30 +95,21 @@ class Property extends \Google\Model
     return $this->floorsCount;
   }
   /**
-   * Floors count exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::FLOORS_COUNT_EXCEPTION_* $floorsCountException
+   * @param string
    */
   public function setFloorsCountException($floorsCountException)
   {
     $this->floorsCountException = $floorsCountException;
   }
   /**
-   * @return self::FLOORS_COUNT_EXCEPTION_*
+   * @return string
    */
   public function getFloorsCountException()
   {
     return $this->floorsCountException;
   }
   /**
-   * Last renovated year. The year when the most recent renovation of the
-   * property was completed. Renovation may include all or any combination of
-   * the following: the units, the public spaces, the exterior, or the interior.
-   *
-   * @param int $lastRenovatedYear
+   * @param int
    */
   public function setLastRenovatedYear($lastRenovatedYear)
   {
@@ -232,31 +123,21 @@ class Property extends \Google\Model
     return $this->lastRenovatedYear;
   }
   /**
-   * Last renovated year exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::LAST_RENOVATED_YEAR_EXCEPTION_* $lastRenovatedYearException
+   * @param string
    */
   public function setLastRenovatedYearException($lastRenovatedYearException)
   {
     $this->lastRenovatedYearException = $lastRenovatedYearException;
   }
   /**
-   * @return self::LAST_RENOVATED_YEAR_EXCEPTION_*
+   * @return string
    */
   public function getLastRenovatedYearException()
   {
     return $this->lastRenovatedYearException;
   }
   /**
-   * Rooms count. The total number of rooms and suites bookable by guests for an
-   * overnight stay. Does not include event space, public spaces, conference
-   * rooms, fitness rooms, business centers, spa, salon, restaurants/bars, or
-   * shops.
-   *
-   * @param int $roomsCount
+   * @param int
    */
   public function setRoomsCount($roomsCount)
   {
@@ -270,19 +151,14 @@ class Property extends \Google\Model
     return $this->roomsCount;
   }
   /**
-   * Rooms count exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::ROOMS_COUNT_EXCEPTION_* $roomsCountException
+   * @param string
    */
   public function setRoomsCountException($roomsCountException)
   {
     $this->roomsCountException = $roomsCountException;
   }
   /**
-   * @return self::ROOMS_COUNT_EXCEPTION_*
+   * @return string
    */
   public function getRoomsCountException()
   {

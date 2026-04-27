@@ -23,17 +23,12 @@ class LocalinventoryCustomBatchResponse extends \Google\Collection
   protected $entriesType = LocalinventoryCustomBatchResponseEntry::class;
   protected $entriesDataType = 'array';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#localinventoryCustomBatchResponse`".
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * The result of the execution of the batch requests.
-   *
-   * @param LocalinventoryCustomBatchResponseEntry[] $entries
+   * @param LocalinventoryCustomBatchResponseEntry[]
    */
   public function setEntries($entries)
   {
@@ -47,10 +42,7 @@ class LocalinventoryCustomBatchResponse extends \Google\Collection
     return $this->entries;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#localinventoryCustomBatchResponse`".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

@@ -29,57 +29,32 @@ class GoogleCloudDataplexV1AspectTypeMetadataTemplate extends \Google\Collection
   protected $enumValuesType = GoogleCloudDataplexV1AspectTypeMetadataTemplateEnumValue::class;
   protected $enumValuesDataType = 'array';
   /**
-   * Optional. Index is used to encode Template messages. The value of index can
-   * range between 1 and 2,147,483,647. Index must be unique within all fields
-   * in a Template. (Nested Templates can reuse indexes). Once a Template is
-   * defined, the index cannot be changed, because it identifies the field in
-   * the actual storage format. Index is a mandatory field, but it is optional
-   * for top level fields, and map/array "values" definitions.
-   *
    * @var int
    */
   public $index;
   protected $mapItemsType = GoogleCloudDataplexV1AspectTypeMetadataTemplate::class;
   protected $mapItemsDataType = '';
   /**
-   * Required. The name of the field.
-   *
    * @var string
    */
   public $name;
   protected $recordFieldsType = GoogleCloudDataplexV1AspectTypeMetadataTemplate::class;
   protected $recordFieldsDataType = 'array';
   /**
-   * Required. The datatype of this field. The following values are
-   * supported:Primitive types: string int bool double datetime. Must be of the
-   * format RFC3339 UTC "Zulu" (Examples: "2014-10-02T15:01:23Z" and
-   * "2014-10-02T15:01:23.045123456Z").Complex types: enum array map record
-   *
    * @var string
    */
   public $type;
   /**
-   * Optional. You can use type id if this definition of the field needs to be
-   * reused later. The type id must be unique across the entire template. You
-   * can only specify it if the field type is record.
-   *
    * @var string
    */
   public $typeId;
   /**
-   * Optional. A reference to another field definition (not an inline
-   * definition). The value must be equal to the value of an id field defined
-   * elsewhere in the MetadataTemplate. Only fields with record type can refer
-   * to other fields.
-   *
    * @var string
    */
   public $typeRef;
 
   /**
-   * Optional. Specifies annotations on this field.
-   *
-   * @param GoogleCloudDataplexV1AspectTypeMetadataTemplateAnnotations $annotations
+   * @param GoogleCloudDataplexV1AspectTypeMetadataTemplateAnnotations
    */
   public function setAnnotations(GoogleCloudDataplexV1AspectTypeMetadataTemplateAnnotations $annotations)
   {
@@ -93,13 +68,7 @@ class GoogleCloudDataplexV1AspectTypeMetadataTemplate extends \Google\Collection
     return $this->annotations;
   }
   /**
-   * Optional. If the type is array, set array_items. array_items can refer to a
-   * primitive field or a complex (record only) field. To specify a primitive
-   * field, you only need to set name and type in the nested MetadataTemplate.
-   * The recommended value for the name field is item, as this isn't used in the
-   * actual payload.
-   *
-   * @param GoogleCloudDataplexV1AspectTypeMetadataTemplate $arrayItems
+   * @param GoogleCloudDataplexV1AspectTypeMetadataTemplate
    */
   public function setArrayItems(GoogleCloudDataplexV1AspectTypeMetadataTemplate $arrayItems)
   {
@@ -113,9 +82,7 @@ class GoogleCloudDataplexV1AspectTypeMetadataTemplate extends \Google\Collection
     return $this->arrayItems;
   }
   /**
-   * Optional. Specifies the constraints on this field.
-   *
-   * @param GoogleCloudDataplexV1AspectTypeMetadataTemplateConstraints $constraints
+   * @param GoogleCloudDataplexV1AspectTypeMetadataTemplateConstraints
    */
   public function setConstraints(GoogleCloudDataplexV1AspectTypeMetadataTemplateConstraints $constraints)
   {
@@ -129,10 +96,7 @@ class GoogleCloudDataplexV1AspectTypeMetadataTemplate extends \Google\Collection
     return $this->constraints;
   }
   /**
-   * Optional. The list of values for an enum type. You must define it if the
-   * type is enum.
-   *
-   * @param GoogleCloudDataplexV1AspectTypeMetadataTemplateEnumValue[] $enumValues
+   * @param GoogleCloudDataplexV1AspectTypeMetadataTemplateEnumValue[]
    */
   public function setEnumValues($enumValues)
   {
@@ -146,14 +110,7 @@ class GoogleCloudDataplexV1AspectTypeMetadataTemplate extends \Google\Collection
     return $this->enumValues;
   }
   /**
-   * Optional. Index is used to encode Template messages. The value of index can
-   * range between 1 and 2,147,483,647. Index must be unique within all fields
-   * in a Template. (Nested Templates can reuse indexes). Once a Template is
-   * defined, the index cannot be changed, because it identifies the field in
-   * the actual storage format. Index is a mandatory field, but it is optional
-   * for top level fields, and map/array "values" definitions.
-   *
-   * @param int $index
+   * @param int
    */
   public function setIndex($index)
   {
@@ -167,13 +124,7 @@ class GoogleCloudDataplexV1AspectTypeMetadataTemplate extends \Google\Collection
     return $this->index;
   }
   /**
-   * Optional. If the type is map, set map_items. map_items can refer to a
-   * primitive field or a complex (record only) field. To specify a primitive
-   * field, you only need to set name and type in the nested MetadataTemplate.
-   * The recommended value for the name field is item, as this isn't used in the
-   * actual payload.
-   *
-   * @param GoogleCloudDataplexV1AspectTypeMetadataTemplate $mapItems
+   * @param GoogleCloudDataplexV1AspectTypeMetadataTemplate
    */
   public function setMapItems(GoogleCloudDataplexV1AspectTypeMetadataTemplate $mapItems)
   {
@@ -187,9 +138,7 @@ class GoogleCloudDataplexV1AspectTypeMetadataTemplate extends \Google\Collection
     return $this->mapItems;
   }
   /**
-   * Required. The name of the field.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -203,10 +152,7 @@ class GoogleCloudDataplexV1AspectTypeMetadataTemplate extends \Google\Collection
     return $this->name;
   }
   /**
-   * Optional. Field definition. You must specify it if the type is record. It
-   * defines the nested fields.
-   *
-   * @param GoogleCloudDataplexV1AspectTypeMetadataTemplate[] $recordFields
+   * @param GoogleCloudDataplexV1AspectTypeMetadataTemplate[]
    */
   public function setRecordFields($recordFields)
   {
@@ -220,12 +166,7 @@ class GoogleCloudDataplexV1AspectTypeMetadataTemplate extends \Google\Collection
     return $this->recordFields;
   }
   /**
-   * Required. The datatype of this field. The following values are
-   * supported:Primitive types: string int bool double datetime. Must be of the
-   * format RFC3339 UTC "Zulu" (Examples: "2014-10-02T15:01:23Z" and
-   * "2014-10-02T15:01:23.045123456Z").Complex types: enum array map record
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {
@@ -239,11 +180,7 @@ class GoogleCloudDataplexV1AspectTypeMetadataTemplate extends \Google\Collection
     return $this->type;
   }
   /**
-   * Optional. You can use type id if this definition of the field needs to be
-   * reused later. The type id must be unique across the entire template. You
-   * can only specify it if the field type is record.
-   *
-   * @param string $typeId
+   * @param string
    */
   public function setTypeId($typeId)
   {
@@ -257,12 +194,7 @@ class GoogleCloudDataplexV1AspectTypeMetadataTemplate extends \Google\Collection
     return $this->typeId;
   }
   /**
-   * Optional. A reference to another field definition (not an inline
-   * definition). The value must be equal to the value of an id field defined
-   * elsewhere in the MetadataTemplate. Only fields with record type can refer
-   * to other fields.
-   *
-   * @param string $typeRef
+   * @param string
    */
   public function setTypeRef($typeRef)
   {

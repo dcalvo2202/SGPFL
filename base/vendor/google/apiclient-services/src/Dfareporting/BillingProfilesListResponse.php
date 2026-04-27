@@ -23,23 +23,16 @@ class BillingProfilesListResponse extends \Google\Collection
   protected $billingProfilesType = BillingProfile::class;
   protected $billingProfilesDataType = 'array';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#billingProfilesListResponse".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Pagination token to be used for the next list operation.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Billing profiles collection.
-   *
-   * @param BillingProfile[] $billingProfiles
+   * @param BillingProfile[]
    */
   public function setBillingProfiles($billingProfiles)
   {
@@ -53,10 +46,7 @@ class BillingProfilesListResponse extends \Google\Collection
     return $this->billingProfiles;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#billingProfilesListResponse".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -70,9 +60,7 @@ class BillingProfilesListResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Pagination token to be used for the next list operation.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

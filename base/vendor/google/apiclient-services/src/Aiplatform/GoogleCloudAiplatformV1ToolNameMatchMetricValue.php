@@ -20,16 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1ToolNameMatchMetricValue extends \Google\Model
 {
   /**
-   * Output only. Tool name match score.
-   *
    * @var float
    */
   public $score;
 
   /**
-   * Output only. Tool name match score.
-   *
-   * @param float $score
+   * @param float
    */
   public function setScore($score)
   {

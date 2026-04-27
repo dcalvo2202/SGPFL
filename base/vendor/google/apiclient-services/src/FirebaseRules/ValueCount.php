@@ -20,22 +20,16 @@ namespace Google\Service\FirebaseRules;
 class ValueCount extends \Google\Model
 {
   /**
-   * The amount of times that expression returned.
-   *
    * @var int
    */
   public $count;
   /**
-   * The return value of the expression
-   *
    * @var array
    */
   public $value;
 
   /**
-   * The amount of times that expression returned.
-   *
-   * @param int $count
+   * @param int
    */
   public function setCount($count)
   {
@@ -49,9 +43,7 @@ class ValueCount extends \Google\Model
     return $this->count;
   }
   /**
-   * The return value of the expression
-   *
-   * @param array $value
+   * @param array
    */
   public function setValue($value)
   {

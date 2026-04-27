@@ -23,23 +23,16 @@ class GoogleChromeManagementVersionsV1ListChromeBrowserProfilesResponse extends 
   protected $chromeBrowserProfilesType = GoogleChromeManagementVersionsV1ChromeBrowserProfile::class;
   protected $chromeBrowserProfilesDataType = 'array';
   /**
-   * The pagination token that can be used to list the next page.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Total size represents an estimated number of resources returned. Not
-   * guaranteed to be accurate above 10k profiles.
-   *
    * @var string
    */
   public $totalSize;
 
   /**
-   * The list of profiles returned.
-   *
-   * @param GoogleChromeManagementVersionsV1ChromeBrowserProfile[] $chromeBrowserProfiles
+   * @param GoogleChromeManagementVersionsV1ChromeBrowserProfile[]
    */
   public function setChromeBrowserProfiles($chromeBrowserProfiles)
   {
@@ -53,9 +46,7 @@ class GoogleChromeManagementVersionsV1ListChromeBrowserProfilesResponse extends 
     return $this->chromeBrowserProfiles;
   }
   /**
-   * The pagination token that can be used to list the next page.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -69,10 +60,7 @@ class GoogleChromeManagementVersionsV1ListChromeBrowserProfilesResponse extends 
     return $this->nextPageToken;
   }
   /**
-   * Total size represents an estimated number of resources returned. Not
-   * guaranteed to be accurate above 10k profiles.
-   *
-   * @param string $totalSize
+   * @param string
    */
   public function setTotalSize($totalSize)
   {

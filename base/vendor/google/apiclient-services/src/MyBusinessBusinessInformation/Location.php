@@ -25,17 +25,10 @@ class Location extends \Google\Collection
   protected $categoriesType = Categories::class;
   protected $categoriesDataType = '';
   /**
-   * Optional. A collection of free-form strings to allow you to tag your
-   * business. These labels are NOT user facing; only you can see them. Must be
-   * between 1-255 characters per label.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Immutable. The language of the location. Set during creation and not
-   * updateable.
-   *
    * @var string
    */
   public $languageCode;
@@ -46,8 +39,6 @@ class Location extends \Google\Collection
   protected $moreHoursType = MoreHours::class;
   protected $moreHoursDataType = 'array';
   /**
-   * Google identifier for this location in the form: `locations/{location_id}`.
-   *
    * @var string
    */
   public $name;
@@ -68,43 +59,22 @@ class Location extends \Google\Collection
   protected $specialHoursType = SpecialHours::class;
   protected $specialHoursDataType = '';
   /**
-   * Optional. External identifier for this location, which must be unique
-   * within a given account. This is a means of associating the location with
-   * your own records.
-   *
    * @var string
    */
   public $storeCode;
   protected $storefrontAddressType = PostalAddress::class;
   protected $storefrontAddressDataType = '';
   /**
-   * Required. Location name should reflect your business's real-world name, as
-   * used consistently on your storefront, website, and stationery, and as known
-   * to customers. Any additional information, when relevant, can be included in
-   * other fields of the resource (for example, `Address`, `Categories`). Don't
-   * add unnecessary information to your name (for example, prefer "Google" over
-   * "Google Inc. - Mountain View Corporate Headquarters"). Don't include
-   * marketing taglines, store codes, special characters, hours or closed/open
-   * status, phone numbers, website URLs, service/product information,
-   * location/address or directions, or containment information (for example,
-   * "Chase ATM in Duane Reade").
-   *
    * @var string
    */
   public $title;
   /**
-   * Optional. A URL for this business. If possible, use a URL that represents
-   * this individual business location instead of a generic website/URL that
-   * represents all locations, or the brand.
-   *
    * @var string
    */
   public $websiteUri;
 
   /**
-   * Optional. Additional information that is surfaced in AdWords.
-   *
-   * @param AdWordsLocationExtensions $adWordsLocationExtensions
+   * @param AdWordsLocationExtensions
    */
   public function setAdWordsLocationExtensions(AdWordsLocationExtensions $adWordsLocationExtensions)
   {
@@ -118,9 +88,7 @@ class Location extends \Google\Collection
     return $this->adWordsLocationExtensions;
   }
   /**
-   * Optional. The different categories that describe the business.
-   *
-   * @param Categories $categories
+   * @param Categories
    */
   public function setCategories(Categories $categories)
   {
@@ -134,11 +102,7 @@ class Location extends \Google\Collection
     return $this->categories;
   }
   /**
-   * Optional. A collection of free-form strings to allow you to tag your
-   * business. These labels are NOT user facing; only you can see them. Must be
-   * between 1-255 characters per label.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -152,10 +116,7 @@ class Location extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Immutable. The language of the location. Set during creation and not
-   * updateable.
-   *
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {
@@ -169,14 +130,7 @@ class Location extends \Google\Collection
     return $this->languageCode;
   }
   /**
-   * Optional. User-provided latitude and longitude. When creating a location,
-   * this field is ignored if the provided address geocodes successfully. This
-   * field is only returned on get requests if the user-provided `latlng` value
-   * was accepted during create, or the `latlng` value was updated through the
-   * Google Business Profile website. This field can only be updated by approved
-   * clients.
-   *
-   * @param LatLng $latlng
+   * @param LatLng
    */
   public function setLatlng(LatLng $latlng)
   {
@@ -190,9 +144,7 @@ class Location extends \Google\Collection
     return $this->latlng;
   }
   /**
-   * Output only. Additional non-user-editable information.
-   *
-   * @param Metadata $metadata
+   * @param Metadata
    */
   public function setMetadata(Metadata $metadata)
   {
@@ -206,10 +158,7 @@ class Location extends \Google\Collection
     return $this->metadata;
   }
   /**
-   * Optional. More hours for a business's different departments or specific
-   * customers.
-   *
-   * @param MoreHours[] $moreHours
+   * @param MoreHours[]
    */
   public function setMoreHours($moreHours)
   {
@@ -223,9 +172,7 @@ class Location extends \Google\Collection
     return $this->moreHours;
   }
   /**
-   * Google identifier for this location in the form: `locations/{location_id}`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -239,10 +186,7 @@ class Location extends \Google\Collection
     return $this->name;
   }
   /**
-   * Optional. A flag that indicates whether the location is currently open for
-   * business.
-   *
-   * @param OpenInfo $openInfo
+   * @param OpenInfo
    */
   public function setOpenInfo(OpenInfo $openInfo)
   {
@@ -256,10 +200,7 @@ class Location extends \Google\Collection
     return $this->openInfo;
   }
   /**
-   * Optional. The different phone numbers that customers can use to get in
-   * touch with the business.
-   *
-   * @param PhoneNumbers $phoneNumbers
+   * @param PhoneNumbers
    */
   public function setPhoneNumbers(PhoneNumbers $phoneNumbers)
   {
@@ -273,11 +214,7 @@ class Location extends \Google\Collection
     return $this->phoneNumbers;
   }
   /**
-   * Optional. Describes your business in your own voice and shares with users
-   * the unique story of your business and offerings. This field is required for
-   * all categories except lodging categories (e.g., hotels, motels, inns).
-   *
-   * @param Profile $profile
+   * @param Profile
    */
   public function setProfile(Profile $profile)
   {
@@ -291,9 +228,7 @@ class Location extends \Google\Collection
     return $this->profile;
   }
   /**
-   * Optional. Operating hours for the business.
-   *
-   * @param BusinessHours $regularHours
+   * @param BusinessHours
    */
   public function setRegularHours(BusinessHours $regularHours)
   {
@@ -307,9 +242,7 @@ class Location extends \Google\Collection
     return $this->regularHours;
   }
   /**
-   * Optional. All locations and chain related to this one.
-   *
-   * @param RelationshipData $relationshipData
+   * @param RelationshipData
    */
   public function setRelationshipData(RelationshipData $relationshipData)
   {
@@ -323,11 +256,7 @@ class Location extends \Google\Collection
     return $this->relationshipData;
   }
   /**
-   * Optional. Service area businesses provide their service at the customer's
-   * location. If this business is a service area business, this field describes
-   * the area(s) serviced by the business.
-   *
-   * @param ServiceAreaBusiness $serviceArea
+   * @param ServiceAreaBusiness
    */
   public function setServiceArea(ServiceAreaBusiness $serviceArea)
   {
@@ -341,11 +270,7 @@ class Location extends \Google\Collection
     return $this->serviceArea;
   }
   /**
-   * Optional. List of services supported by merchants. A service can be
-   * haircut, install water heater, etc. Duplicated service items will be
-   * removed automatically.
-   *
-   * @param ServiceItem[] $serviceItems
+   * @param ServiceItem[]
    */
   public function setServiceItems($serviceItems)
   {
@@ -359,11 +284,7 @@ class Location extends \Google\Collection
     return $this->serviceItems;
   }
   /**
-   * Optional. Special hours for the business. This typically includes holiday
-   * hours, and other times outside of regular operating hours. These override
-   * regular business hours. This field cannot be set without regular hours.
-   *
-   * @param SpecialHours $specialHours
+   * @param SpecialHours
    */
   public function setSpecialHours(SpecialHours $specialHours)
   {
@@ -377,11 +298,7 @@ class Location extends \Google\Collection
     return $this->specialHours;
   }
   /**
-   * Optional. External identifier for this location, which must be unique
-   * within a given account. This is a means of associating the location with
-   * your own records.
-   *
-   * @param string $storeCode
+   * @param string
    */
   public function setStoreCode($storeCode)
   {
@@ -395,14 +312,7 @@ class Location extends \Google\Collection
     return $this->storeCode;
   }
   /**
-   * Optional. A precise, accurate address to describe your business location.
-   * PO boxes or mailboxes located at remote locations are not acceptable. At
-   * this time, you can specify a maximum of five `address_lines` values in the
-   * address. This field should only be set for businesses that have a
-   * storefront. This field should not be set for locations of type
-   * `CUSTOMER_LOCATION_ONLY` but if set, any value provided will be discarded.
-   *
-   * @param PostalAddress $storefrontAddress
+   * @param PostalAddress
    */
   public function setStorefrontAddress(PostalAddress $storefrontAddress)
   {
@@ -416,18 +326,7 @@ class Location extends \Google\Collection
     return $this->storefrontAddress;
   }
   /**
-   * Required. Location name should reflect your business's real-world name, as
-   * used consistently on your storefront, website, and stationery, and as known
-   * to customers. Any additional information, when relevant, can be included in
-   * other fields of the resource (for example, `Address`, `Categories`). Don't
-   * add unnecessary information to your name (for example, prefer "Google" over
-   * "Google Inc. - Mountain View Corporate Headquarters"). Don't include
-   * marketing taglines, store codes, special characters, hours or closed/open
-   * status, phone numbers, website URLs, service/product information,
-   * location/address or directions, or containment information (for example,
-   * "Chase ATM in Duane Reade").
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -441,11 +340,7 @@ class Location extends \Google\Collection
     return $this->title;
   }
   /**
-   * Optional. A URL for this business. If possible, use a URL that represents
-   * this individual business location instead of a generic website/URL that
-   * represents all locations, or the brand.
-   *
-   * @param string $websiteUri
+   * @param string
    */
   public function setWebsiteUri($websiteUri)
   {

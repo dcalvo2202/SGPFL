@@ -22,49 +22,28 @@ class TimedPromoteReleaseRule extends \Google\Model
   protected $conditionType = AutomationRuleCondition::class;
   protected $conditionDataType = '';
   /**
-   * Optional. The starting phase of the rollout created by this rule. Default
-   * to the first phase.
-   *
    * @var string
    */
   public $destinationPhase;
   /**
-   * Optional. The ID of the stage in the pipeline to which this `Release` is
-   * deploying. If unspecified, default it to the next stage in the promotion
-   * flow. The value of this field could be one of the following: * The last
-   * segment of a target name * "@next", the next target in the promotion
-   * sequence
-   *
    * @var string
    */
   public $destinationTargetId;
   /**
-   * Required. ID of the rule. This ID must be unique in the `Automation`
-   * resource to which this rule belongs. The format is
-   * `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`.
-   *
    * @var string
    */
   public $id;
   /**
-   * Required. Schedule in crontab format. e.g. "0 9 * * 1" for every Monday at
-   * 9am.
-   *
    * @var string
    */
   public $schedule;
   /**
-   * Required. The time zone in IANA format [IANA Time Zone
-   * Database](https://www.iana.org/time-zones) (e.g. America/New_York).
-   *
    * @var string
    */
   public $timeZone;
 
   /**
-   * Output only. Information around the state of the Automation rule.
-   *
-   * @param AutomationRuleCondition $condition
+   * @param AutomationRuleCondition
    */
   public function setCondition(AutomationRuleCondition $condition)
   {
@@ -78,10 +57,7 @@ class TimedPromoteReleaseRule extends \Google\Model
     return $this->condition;
   }
   /**
-   * Optional. The starting phase of the rollout created by this rule. Default
-   * to the first phase.
-   *
-   * @param string $destinationPhase
+   * @param string
    */
   public function setDestinationPhase($destinationPhase)
   {
@@ -95,13 +71,7 @@ class TimedPromoteReleaseRule extends \Google\Model
     return $this->destinationPhase;
   }
   /**
-   * Optional. The ID of the stage in the pipeline to which this `Release` is
-   * deploying. If unspecified, default it to the next stage in the promotion
-   * flow. The value of this field could be one of the following: * The last
-   * segment of a target name * "@next", the next target in the promotion
-   * sequence
-   *
-   * @param string $destinationTargetId
+   * @param string
    */
   public function setDestinationTargetId($destinationTargetId)
   {
@@ -115,11 +85,7 @@ class TimedPromoteReleaseRule extends \Google\Model
     return $this->destinationTargetId;
   }
   /**
-   * Required. ID of the rule. This ID must be unique in the `Automation`
-   * resource to which this rule belongs. The format is
-   * `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -133,10 +99,7 @@ class TimedPromoteReleaseRule extends \Google\Model
     return $this->id;
   }
   /**
-   * Required. Schedule in crontab format. e.g. "0 9 * * 1" for every Monday at
-   * 9am.
-   *
-   * @param string $schedule
+   * @param string
    */
   public function setSchedule($schedule)
   {
@@ -150,10 +113,7 @@ class TimedPromoteReleaseRule extends \Google\Model
     return $this->schedule;
   }
   /**
-   * Required. The time zone in IANA format [IANA Time Zone
-   * Database](https://www.iana.org/time-zones) (e.g. America/New_York).
-   *
-   * @param string $timeZone
+   * @param string
    */
   public function setTimeZone($timeZone)
   {

@@ -20,40 +20,28 @@ namespace Google\Service\AndroidPublisher;
 class SubscribeWithGoogleInfo extends \Google\Model
 {
   /**
-   * The email address of the user when the subscription was purchased.
-   *
    * @var string
    */
   public $emailAddress;
   /**
-   * The family name of the user when the subscription was purchased.
-   *
    * @var string
    */
   public $familyName;
   /**
-   * The given name of the user when the subscription was purchased.
-   *
    * @var string
    */
   public $givenName;
   /**
-   * The Google profile id of the user when the subscription was purchased.
-   *
    * @var string
    */
   public $profileId;
   /**
-   * The profile name of the user when the subscription was purchased.
-   *
    * @var string
    */
   public $profileName;
 
   /**
-   * The email address of the user when the subscription was purchased.
-   *
-   * @param string $emailAddress
+   * @param string
    */
   public function setEmailAddress($emailAddress)
   {
@@ -67,9 +55,7 @@ class SubscribeWithGoogleInfo extends \Google\Model
     return $this->emailAddress;
   }
   /**
-   * The family name of the user when the subscription was purchased.
-   *
-   * @param string $familyName
+   * @param string
    */
   public function setFamilyName($familyName)
   {
@@ -83,9 +69,7 @@ class SubscribeWithGoogleInfo extends \Google\Model
     return $this->familyName;
   }
   /**
-   * The given name of the user when the subscription was purchased.
-   *
-   * @param string $givenName
+   * @param string
    */
   public function setGivenName($givenName)
   {
@@ -99,9 +83,7 @@ class SubscribeWithGoogleInfo extends \Google\Model
     return $this->givenName;
   }
   /**
-   * The Google profile id of the user when the subscription was purchased.
-   *
-   * @param string $profileId
+   * @param string
    */
   public function setProfileId($profileId)
   {
@@ -115,9 +97,7 @@ class SubscribeWithGoogleInfo extends \Google\Model
     return $this->profileId;
   }
   /**
-   * The profile name of the user when the subscription was purchased.
-   *
-   * @param string $profileName
+   * @param string
    */
   public function setProfileName($profileName)
   {

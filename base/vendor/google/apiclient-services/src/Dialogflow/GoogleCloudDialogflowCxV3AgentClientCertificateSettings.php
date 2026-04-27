@@ -33,7 +33,7 @@ class GoogleCloudDialogflowCxV3AgentClientCertificateSettings extends \Google\Mo
   public $sslCertificate;
 
   /**
-   * @param string $passphrase
+   * @param string
    */
   public function setPassphrase($passphrase)
   {
@@ -47,7 +47,7 @@ class GoogleCloudDialogflowCxV3AgentClientCertificateSettings extends \Google\Mo
     return $this->passphrase;
   }
   /**
-   * @param string $privateKey
+   * @param string
    */
   public function setPrivateKey($privateKey)
   {
@@ -61,7 +61,7 @@ class GoogleCloudDialogflowCxV3AgentClientCertificateSettings extends \Google\Mo
     return $this->privateKey;
   }
   /**
-   * @param string $sslCertificate
+   * @param string
    */
   public function setSslCertificate($sslCertificate)
   {

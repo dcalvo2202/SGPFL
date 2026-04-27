@@ -23,9 +23,7 @@ class ImageItem extends \Google\Model
   protected $imageDataType = '';
 
   /**
-   * Required. The image displayed in the item.
-   *
-   * @param Image $image
+   * @param Image
    */
   public function setImage(Image $image)
   {

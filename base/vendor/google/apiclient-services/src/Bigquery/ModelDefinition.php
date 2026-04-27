@@ -26,9 +26,7 @@ class ModelDefinition extends \Google\Collection
   protected $trainingRunsDataType = 'array';
 
   /**
-   * Deprecated.
-   *
-   * @param ModelDefinitionModelOptions $modelOptions
+   * @param ModelDefinitionModelOptions
    */
   public function setModelOptions(ModelDefinitionModelOptions $modelOptions)
   {
@@ -42,9 +40,7 @@ class ModelDefinition extends \Google\Collection
     return $this->modelOptions;
   }
   /**
-   * Deprecated.
-   *
-   * @param BqmlTrainingRun[] $trainingRuns
+   * @param BqmlTrainingRun[]
    */
   public function setTrainingRuns($trainingRuns)
   {

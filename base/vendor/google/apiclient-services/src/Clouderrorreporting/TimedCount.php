@@ -20,28 +20,20 @@ namespace Google\Service\Clouderrorreporting;
 class TimedCount extends \Google\Model
 {
   /**
-   * Approximate number of occurrences in the given time period.
-   *
    * @var string
    */
   public $count;
   /**
-   * End of the time period to which `count` refers (excluded).
-   *
    * @var string
    */
   public $endTime;
   /**
-   * Start of the time period to which `count` refers (included).
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * Approximate number of occurrences in the given time period.
-   *
-   * @param string $count
+   * @param string
    */
   public function setCount($count)
   {
@@ -55,9 +47,7 @@ class TimedCount extends \Google\Model
     return $this->count;
   }
   /**
-   * End of the time period to which `count` refers (excluded).
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -71,9 +61,7 @@ class TimedCount extends \Google\Model
     return $this->endTime;
   }
   /**
-   * Start of the time period to which `count` refers (included).
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

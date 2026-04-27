@@ -23,11 +23,7 @@ class QueryContent extends \Google\Model
   protected $iamPolicyAnalysisQueryDataType = '';
 
   /**
-   * An IAM Policy Analysis query, which could be used in the
-   * AssetService.AnalyzeIamPolicy RPC or the
-   * AssetService.AnalyzeIamPolicyLongrunning RPC.
-   *
-   * @param IamPolicyAnalysisQuery $iamPolicyAnalysisQuery
+   * @param IamPolicyAnalysisQuery
    */
   public function setIamPolicyAnalysisQuery(IamPolicyAnalysisQuery $iamPolicyAnalysisQuery)
   {

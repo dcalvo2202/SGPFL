@@ -32,8 +32,6 @@ class Service extends \Google\Model
   protected $customType = Custom::class;
   protected $customDataType = '';
   /**
-   * Name used for UI elements listing this Service.
-   *
    * @var string
    */
   public $displayName;
@@ -48,30 +46,18 @@ class Service extends \Google\Model
   protected $meshIstioType = MeshIstio::class;
   protected $meshIstioDataType = '';
   /**
-   * Identifier. Resource name for this Service. The format is:
-   * projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
-   *
    * @var string
    */
   public $name;
   protected $telemetryType = Telemetry::class;
   protected $telemetryDataType = '';
   /**
-   * Labels which have been used to annotate the service. Label keys must start
-   * with a letter. Label keys and values may contain lowercase letters,
-   * numbers, underscores, and dashes. Label keys and values have a maximum
-   * length of 63 characters, and must be less than 128 bytes in size. Up to 64
-   * label entries may be stored. For labels which do not have a semantic value,
-   * the empty string may be supplied for the label value.
-   *
    * @var string[]
    */
   public $userLabels;
 
   /**
-   * Type used for App Engine services.
-   *
-   * @param AppEngine $appEngine
+   * @param AppEngine
    */
   public function setAppEngine(AppEngine $appEngine)
   {
@@ -85,12 +71,7 @@ class Service extends \Google\Model
     return $this->appEngine;
   }
   /**
-   * Message that contains the service type and service labels of this service
-   * if it is a basic service. Documentation and examples here
-   * (https://cloud.google.com/stackdriver/docs/solutions/slo-
-   * monitoring/api/api-structures#basic-svc-w-basic-sli).
-   *
-   * @param BasicService $basicService
+   * @param BasicService
    */
   public function setBasicService(BasicService $basicService)
   {
@@ -104,9 +85,7 @@ class Service extends \Google\Model
     return $this->basicService;
   }
   /**
-   * Type used for Cloud Endpoints services.
-   *
-   * @param CloudEndpoints $cloudEndpoints
+   * @param CloudEndpoints
    */
   public function setCloudEndpoints(CloudEndpoints $cloudEndpoints)
   {
@@ -120,9 +99,7 @@ class Service extends \Google\Model
     return $this->cloudEndpoints;
   }
   /**
-   * Type used for Cloud Run services.
-   *
-   * @param CloudRun $cloudRun
+   * @param CloudRun
    */
   public function setCloudRun(CloudRun $cloudRun)
   {
@@ -136,9 +113,7 @@ class Service extends \Google\Model
     return $this->cloudRun;
   }
   /**
-   * Type used for Istio services that live in a Kubernetes cluster.
-   *
-   * @param ClusterIstio $clusterIstio
+   * @param ClusterIstio
    */
   public function setClusterIstio(ClusterIstio $clusterIstio)
   {
@@ -152,9 +127,7 @@ class Service extends \Google\Model
     return $this->clusterIstio;
   }
   /**
-   * Custom service type.
-   *
-   * @param Custom $custom
+   * @param Custom
    */
   public function setCustom(Custom $custom)
   {
@@ -168,9 +141,7 @@ class Service extends \Google\Model
     return $this->custom;
   }
   /**
-   * Name used for UI elements listing this Service.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -184,9 +155,7 @@ class Service extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Type used for GKE Namespaces.
-   *
-   * @param GkeNamespace $gkeNamespace
+   * @param GkeNamespace
    */
   public function setGkeNamespace(GkeNamespace $gkeNamespace)
   {
@@ -200,9 +169,7 @@ class Service extends \Google\Model
     return $this->gkeNamespace;
   }
   /**
-   * Type used for GKE Services (the Kubernetes concept of a service).
-   *
-   * @param GkeService $gkeService
+   * @param GkeService
    */
   public function setGkeService(GkeService $gkeService)
   {
@@ -216,9 +183,7 @@ class Service extends \Google\Model
     return $this->gkeService;
   }
   /**
-   * Type used for GKE Workloads.
-   *
-   * @param GkeWorkload $gkeWorkload
+   * @param GkeWorkload
    */
   public function setGkeWorkload(GkeWorkload $gkeWorkload)
   {
@@ -232,11 +197,7 @@ class Service extends \Google\Model
     return $this->gkeWorkload;
   }
   /**
-   * Type used for canonical services scoped to an Istio mesh. Metrics for Istio
-   * are documented here
-   * (https://istio.io/latest/docs/reference/config/metrics/)
-   *
-   * @param IstioCanonicalService $istioCanonicalService
+   * @param IstioCanonicalService
    */
   public function setIstioCanonicalService(IstioCanonicalService $istioCanonicalService)
   {
@@ -250,9 +211,7 @@ class Service extends \Google\Model
     return $this->istioCanonicalService;
   }
   /**
-   * Type used for Istio services scoped to an Istio mesh.
-   *
-   * @param MeshIstio $meshIstio
+   * @param MeshIstio
    */
   public function setMeshIstio(MeshIstio $meshIstio)
   {
@@ -266,10 +225,7 @@ class Service extends \Google\Model
     return $this->meshIstio;
   }
   /**
-   * Identifier. Resource name for this Service. The format is:
-   * projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -283,9 +239,7 @@ class Service extends \Google\Model
     return $this->name;
   }
   /**
-   * Configuration for how to query telemetry on a Service.
-   *
-   * @param Telemetry $telemetry
+   * @param Telemetry
    */
   public function setTelemetry(Telemetry $telemetry)
   {
@@ -299,14 +253,7 @@ class Service extends \Google\Model
     return $this->telemetry;
   }
   /**
-   * Labels which have been used to annotate the service. Label keys must start
-   * with a letter. Label keys and values may contain lowercase letters,
-   * numbers, underscores, and dashes. Label keys and values have a maximum
-   * length of 63 characters, and must be less than 128 bytes in size. Up to 64
-   * label entries may be stored. For labels which do not have a semantic value,
-   * the empty string may be supplied for the label value.
-   *
-   * @param string[] $userLabels
+   * @param string[]
    */
   public function setUserLabels($userLabels)
   {

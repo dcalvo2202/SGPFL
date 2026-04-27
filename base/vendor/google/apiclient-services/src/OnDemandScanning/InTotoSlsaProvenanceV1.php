@@ -24,9 +24,6 @@ class InTotoSlsaProvenanceV1 extends \Google\Collection
         "type" => "_type",
   ];
   /**
-   * InToto spec defined at https://github.com/in-
-   * toto/attestation/tree/main/spec#statement
-   *
    * @var string
    */
   public $type;
@@ -39,10 +36,7 @@ class InTotoSlsaProvenanceV1 extends \Google\Collection
   protected $subjectDataType = 'array';
 
   /**
-   * InToto spec defined at https://github.com/in-
-   * toto/attestation/tree/main/spec#statement
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {
@@ -56,7 +50,7 @@ class InTotoSlsaProvenanceV1 extends \Google\Collection
     return $this->type;
   }
   /**
-   * @param SlsaProvenanceV1 $predicate
+   * @param SlsaProvenanceV1
    */
   public function setPredicate(SlsaProvenanceV1 $predicate)
   {
@@ -70,7 +64,7 @@ class InTotoSlsaProvenanceV1 extends \Google\Collection
     return $this->predicate;
   }
   /**
-   * @param string $predicateType
+   * @param string
    */
   public function setPredicateType($predicateType)
   {
@@ -84,7 +78,7 @@ class InTotoSlsaProvenanceV1 extends \Google\Collection
     return $this->predicateType;
   }
   /**
-   * @param Subject[] $subject
+   * @param Subject[]
    */
   public function setSubject($subject)
   {

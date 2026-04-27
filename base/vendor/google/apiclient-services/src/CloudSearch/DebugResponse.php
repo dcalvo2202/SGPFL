@@ -20,14 +20,10 @@ namespace Google\Service\CloudSearch;
 class DebugResponse extends \Google\Model
 {
   /**
-   * Serialized string of GenericSearchRequest.
-   *
    * @var string
    */
   public $gsrRequest;
   /**
-   * Serialized string of GenericSearchResponse.
-   *
    * @var string
    */
   public $gsrResponse;
@@ -35,9 +31,7 @@ class DebugResponse extends \Google\Model
   protected $searchResponseDataType = '';
 
   /**
-   * Serialized string of GenericSearchRequest.
-   *
-   * @param string $gsrRequest
+   * @param string
    */
   public function setGsrRequest($gsrRequest)
   {
@@ -51,9 +45,7 @@ class DebugResponse extends \Google\Model
     return $this->gsrRequest;
   }
   /**
-   * Serialized string of GenericSearchResponse.
-   *
-   * @param string $gsrResponse
+   * @param string
    */
   public function setGsrResponse($gsrResponse)
   {
@@ -67,9 +59,7 @@ class DebugResponse extends \Google\Model
     return $this->gsrResponse;
   }
   /**
-   * Search response.
-   *
-   * @param SearchResponse $searchResponse
+   * @param SearchResponse
    */
   public function setSearchResponse(SearchResponse $searchResponse)
   {

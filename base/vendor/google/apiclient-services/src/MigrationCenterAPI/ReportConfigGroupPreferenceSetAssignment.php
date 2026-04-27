@@ -20,22 +20,16 @@ namespace Google\Service\MigrationCenterAPI;
 class ReportConfigGroupPreferenceSetAssignment extends \Google\Model
 {
   /**
-   * Required. Name of the group.
-   *
    * @var string
    */
   public $group;
   /**
-   * Required. Name of the Preference Set.
-   *
    * @var string
    */
   public $preferenceSet;
 
   /**
-   * Required. Name of the group.
-   *
-   * @param string $group
+   * @param string
    */
   public function setGroup($group)
   {
@@ -49,9 +43,7 @@ class ReportConfigGroupPreferenceSetAssignment extends \Google\Model
     return $this->group;
   }
   /**
-   * Required. Name of the Preference Set.
-   *
-   * @param string $preferenceSet
+   * @param string
    */
   public function setPreferenceSet($preferenceSet)
   {

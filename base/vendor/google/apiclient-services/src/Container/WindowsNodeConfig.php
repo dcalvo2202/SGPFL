@@ -20,38 +20,19 @@ namespace Google\Service\Container;
 class WindowsNodeConfig extends \Google\Model
 {
   /**
-   * When OSVersion is not specified.
-   */
-  public const OS_VERSION_OS_VERSION_UNSPECIFIED = 'OS_VERSION_UNSPECIFIED';
-  /**
-   * LTSC2019 specifies to use LTSC2019 as the Windows Servercore Base Image.
-   */
-  public const OS_VERSION_OS_VERSION_LTSC2019 = 'OS_VERSION_LTSC2019';
-  /**
-   * LTSC2022 specifies to use LTSC2022 as the Windows Servercore Base Image.
-   */
-  public const OS_VERSION_OS_VERSION_LTSC2022 = 'OS_VERSION_LTSC2022';
-  /**
-   * OSVersion specifies the Windows node config to be used on the node.
-   *
    * @var string
    */
   public $osVersion;
 
   /**
-   * OSVersion specifies the Windows node config to be used on the node.
-   *
-   * Accepted values: OS_VERSION_UNSPECIFIED, OS_VERSION_LTSC2019,
-   * OS_VERSION_LTSC2022
-   *
-   * @param self::OS_VERSION_* $osVersion
+   * @param string
    */
   public function setOsVersion($osVersion)
   {
     $this->osVersion = $osVersion;
   }
   /**
-   * @return self::OS_VERSION_*
+   * @return string
    */
   public function getOsVersion()
   {

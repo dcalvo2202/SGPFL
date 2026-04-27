@@ -20,16 +20,12 @@ namespace Google\Service\ArtifactRegistry;
 class CommonRemoteRepository extends \Google\Model
 {
   /**
-   * Required. A common public repository base for remote repository.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * Required. A common public repository base for remote repository.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

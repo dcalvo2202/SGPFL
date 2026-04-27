@@ -23,9 +23,7 @@ class GoogleCloudApihubV1LookupRuntimeProjectAttachmentResponse extends \Google\
   protected $runtimeProjectAttachmentDataType = '';
 
   /**
-   * Runtime project attachment for a project if exists, empty otherwise.
-   *
-   * @param GoogleCloudApihubV1RuntimeProjectAttachment $runtimeProjectAttachment
+   * @param GoogleCloudApihubV1RuntimeProjectAttachment
    */
   public function setRuntimeProjectAttachment(GoogleCloudApihubV1RuntimeProjectAttachment $runtimeProjectAttachment)
   {

@@ -20,42 +20,30 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1Citation extends \Google\Model
 {
   /**
-   * Output only. The end index of the citation in the content.
-   *
    * @var int
    */
   public $endIndex;
   /**
-   * Output only. The license of the source of the citation.
-   *
    * @var string
    */
   public $license;
   protected $publicationDateType = GoogleTypeDate::class;
   protected $publicationDateDataType = '';
   /**
-   * Output only. The start index of the citation in the content.
-   *
    * @var int
    */
   public $startIndex;
   /**
-   * Output only. The title of the source of the citation.
-   *
    * @var string
    */
   public $title;
   /**
-   * Output only. The URI of the source of the citation.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * Output only. The end index of the citation in the content.
-   *
-   * @param int $endIndex
+   * @param int
    */
   public function setEndIndex($endIndex)
   {
@@ -69,9 +57,7 @@ class GoogleCloudAiplatformV1Citation extends \Google\Model
     return $this->endIndex;
   }
   /**
-   * Output only. The license of the source of the citation.
-   *
-   * @param string $license
+   * @param string
    */
   public function setLicense($license)
   {
@@ -85,9 +71,7 @@ class GoogleCloudAiplatformV1Citation extends \Google\Model
     return $this->license;
   }
   /**
-   * Output only. The publication date of the source of the citation.
-   *
-   * @param GoogleTypeDate $publicationDate
+   * @param GoogleTypeDate
    */
   public function setPublicationDate(GoogleTypeDate $publicationDate)
   {
@@ -101,9 +85,7 @@ class GoogleCloudAiplatformV1Citation extends \Google\Model
     return $this->publicationDate;
   }
   /**
-   * Output only. The start index of the citation in the content.
-   *
-   * @param int $startIndex
+   * @param int
    */
   public function setStartIndex($startIndex)
   {
@@ -117,9 +99,7 @@ class GoogleCloudAiplatformV1Citation extends \Google\Model
     return $this->startIndex;
   }
   /**
-   * Output only. The title of the source of the citation.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -133,9 +113,7 @@ class GoogleCloudAiplatformV1Citation extends \Google\Model
     return $this->title;
   }
   /**
-   * Output only. The URI of the source of the citation.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

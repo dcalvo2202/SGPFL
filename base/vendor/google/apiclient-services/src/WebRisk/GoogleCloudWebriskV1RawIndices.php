@@ -21,16 +21,12 @@ class GoogleCloudWebriskV1RawIndices extends \Google\Collection
 {
   protected $collection_key = 'indices';
   /**
-   * The indices to remove from a lexicographically-sorted local list.
-   *
    * @var int[]
    */
   public $indices;
 
   /**
-   * The indices to remove from a lexicographically-sorted local list.
-   *
-   * @param int[] $indices
+   * @param int[]
    */
   public function setIndices($indices)
   {

@@ -20,29 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1VideoMetadata extends \Google\Model
 {
   /**
-   * Optional. The end offset of the video.
-   *
    * @var string
    */
   public $endOffset;
   /**
-   * Optional. The frame rate of the video sent to the model. If not specified,
-   * the default value is 1.0. The valid range is (0.0, 24.0].
-   *
-   * @var 
-   */
-  public $fps;
-  /**
-   * Optional. The start offset of the video.
-   *
    * @var string
    */
   public $startOffset;
 
   /**
-   * Optional. The end offset of the video.
-   *
-   * @param string $endOffset
+   * @param string
    */
   public function setEndOffset($endOffset)
   {
@@ -55,18 +42,8 @@ class GoogleCloudAiplatformV1VideoMetadata extends \Google\Model
   {
     return $this->endOffset;
   }
-  public function setFps($fps)
-  {
-    $this->fps = $fps;
-  }
-  public function getFps()
-  {
-    return $this->fps;
-  }
   /**
-   * Optional. The start offset of the video.
-   *
-   * @param string $startOffset
+   * @param string
    */
   public function setStartOffset($startOffset)
   {

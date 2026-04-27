@@ -21,22 +21,12 @@ class XPSVideoBatchPredictOperationMetadata extends \Google\Collection
 {
   protected $collection_key = 'outputExamples';
   /**
-   * All the partial batch prediction results that are completed at the moment.
-   * Output examples are sorted by completion time. The order will not be
-   * changed. Each output example should be the path of a single RecordIO file
-   * of AnnotatedExamples.
-   *
    * @var string[]
    */
   public $outputExamples;
 
   /**
-   * All the partial batch prediction results that are completed at the moment.
-   * Output examples are sorted by completion time. The order will not be
-   * changed. Each output example should be the path of a single RecordIO file
-   * of AnnotatedExamples.
-   *
-   * @param string[] $outputExamples
+   * @param string[]
    */
   public function setOutputExamples($outputExamples)
   {

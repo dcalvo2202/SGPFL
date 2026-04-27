@@ -20,50 +20,19 @@ namespace Google\Service\Pubsub;
 class PlatformLogsSettings extends \Google\Model
 {
   /**
-   * Default value. Logs level is unspecified. Logs will be disabled.
-   */
-  public const SEVERITY_SEVERITY_UNSPECIFIED = 'SEVERITY_UNSPECIFIED';
-  /**
-   * Logs will be disabled.
-   */
-  public const SEVERITY_DISABLED = 'DISABLED';
-  /**
-   * Debug logs and higher-severity logs will be written.
-   */
-  public const SEVERITY_DEBUG = 'DEBUG';
-  /**
-   * Info logs and higher-severity logs will be written.
-   */
-  public const SEVERITY_INFO = 'INFO';
-  /**
-   * Warning logs and higher-severity logs will be written.
-   */
-  public const SEVERITY_WARNING = 'WARNING';
-  /**
-   * Only error logs will be written.
-   */
-  public const SEVERITY_ERROR = 'ERROR';
-  /**
-   * Optional. The minimum severity level of Platform Logs that will be written.
-   *
    * @var string
    */
   public $severity;
 
   /**
-   * Optional. The minimum severity level of Platform Logs that will be written.
-   *
-   * Accepted values: SEVERITY_UNSPECIFIED, DISABLED, DEBUG, INFO, WARNING,
-   * ERROR
-   *
-   * @param self::SEVERITY_* $severity
+   * @param string
    */
   public function setSeverity($severity)
   {
     $this->severity = $severity;
   }
   /**
-   * @return self::SEVERITY_*
+   * @return string
    */
   public function getSeverity()
   {

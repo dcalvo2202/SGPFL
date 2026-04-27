@@ -21,9 +21,6 @@ class GoogleCloudMlV1ListVersionsResponse extends \Google\Collection
 {
   protected $collection_key = 'versions';
   /**
-   * Optional. Pass this token as the `page_token` field of the request for a
-   * subsequent call.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GoogleCloudMlV1ListVersionsResponse extends \Google\Collection
   protected $versionsDataType = 'array';
 
   /**
-   * Optional. Pass this token as the `page_token` field of the request for a
-   * subsequent call.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class GoogleCloudMlV1ListVersionsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The list of versions.
-   *
-   * @param GoogleCloudMlV1Version[] $versions
+   * @param GoogleCloudMlV1Version[]
    */
   public function setVersions($versions)
   {

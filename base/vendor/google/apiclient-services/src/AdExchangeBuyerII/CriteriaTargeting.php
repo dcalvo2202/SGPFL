@@ -21,22 +21,16 @@ class CriteriaTargeting extends \Google\Collection
 {
   protected $collection_key = 'targetedCriteriaIds';
   /**
-   * A list of numeric IDs to be excluded.
-   *
    * @var string[]
    */
   public $excludedCriteriaIds;
   /**
-   * A list of numeric IDs to be included.
-   *
    * @var string[]
    */
   public $targetedCriteriaIds;
 
   /**
-   * A list of numeric IDs to be excluded.
-   *
-   * @param string[] $excludedCriteriaIds
+   * @param string[]
    */
   public function setExcludedCriteriaIds($excludedCriteriaIds)
   {
@@ -50,9 +44,7 @@ class CriteriaTargeting extends \Google\Collection
     return $this->excludedCriteriaIds;
   }
   /**
-   * A list of numeric IDs to be included.
-   *
-   * @param string[] $targetedCriteriaIds
+   * @param string[]
    */
   public function setTargetedCriteriaIds($targetedCriteriaIds)
   {

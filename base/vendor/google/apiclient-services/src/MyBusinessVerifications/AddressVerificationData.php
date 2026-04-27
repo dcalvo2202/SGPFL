@@ -22,23 +22,16 @@ class AddressVerificationData extends \Google\Model
   protected $addressType = PostalAddress::class;
   protected $addressDataType = '';
   /**
-   * Merchant's business name.
-   *
    * @var string
    */
   public $business;
   /**
-   * Expected number of days it takes to deliver a postcard to the address's
-   * region.
-   *
    * @var int
    */
   public $expectedDeliveryDaysRegion;
 
   /**
-   * Address that a postcard can be sent to.
-   *
-   * @param PostalAddress $address
+   * @param PostalAddress
    */
   public function setAddress(PostalAddress $address)
   {
@@ -52,9 +45,7 @@ class AddressVerificationData extends \Google\Model
     return $this->address;
   }
   /**
-   * Merchant's business name.
-   *
-   * @param string $business
+   * @param string
    */
   public function setBusiness($business)
   {
@@ -68,10 +59,7 @@ class AddressVerificationData extends \Google\Model
     return $this->business;
   }
   /**
-   * Expected number of days it takes to deliver a postcard to the address's
-   * region.
-   *
-   * @param int $expectedDeliveryDaysRegion
+   * @param int
    */
   public function setExpectedDeliveryDaysRegion($expectedDeliveryDaysRegion)
   {

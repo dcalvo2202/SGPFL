@@ -23,7 +23,7 @@ class InterconnectAttachmentGroupConfigured extends \Google\Model
   protected $availabilitySlaDataType = '';
 
   /**
-   * @param InterconnectAttachmentGroupConfiguredAvailabilitySLA $availabilitySla
+   * @param InterconnectAttachmentGroupConfiguredAvailabilitySLA
    */
   public function setAvailabilitySla(InterconnectAttachmentGroupConfiguredAvailabilitySLA $availabilitySla)
   {

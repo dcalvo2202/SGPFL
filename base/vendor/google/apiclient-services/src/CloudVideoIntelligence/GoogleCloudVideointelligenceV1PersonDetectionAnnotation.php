@@ -23,16 +23,12 @@ class GoogleCloudVideointelligenceV1PersonDetectionAnnotation extends \Google\Co
   protected $tracksType = GoogleCloudVideointelligenceV1Track::class;
   protected $tracksDataType = 'array';
   /**
-   * Feature version.
-   *
    * @var string
    */
   public $version;
 
   /**
-   * The detected tracks of a person.
-   *
-   * @param GoogleCloudVideointelligenceV1Track[] $tracks
+   * @param GoogleCloudVideointelligenceV1Track[]
    */
   public function setTracks($tracks)
   {
@@ -46,9 +42,7 @@ class GoogleCloudVideointelligenceV1PersonDetectionAnnotation extends \Google\Co
     return $this->tracks;
   }
   /**
-   * Feature version.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

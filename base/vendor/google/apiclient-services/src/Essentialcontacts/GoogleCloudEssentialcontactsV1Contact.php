@@ -19,72 +19,34 @@ namespace Google\Service\Essentialcontacts;
 
 class GoogleCloudEssentialcontactsV1Contact extends \Google\Collection
 {
-  /**
-   * The validation state is unknown or unspecified.
-   */
-  public const VALIDATION_STATE_VALIDATION_STATE_UNSPECIFIED = 'VALIDATION_STATE_UNSPECIFIED';
-  /**
-   * The contact is marked as valid. This is usually done manually by the
-   * contact admin. All new contacts begin in the valid state.
-   */
-  public const VALIDATION_STATE_VALID = 'VALID';
-  /**
-   * The contact is considered invalid. This may become the state if the
-   * contact's email is found to be unreachable.
-   */
-  public const VALIDATION_STATE_INVALID = 'INVALID';
   protected $collection_key = 'notificationCategorySubscriptions';
   /**
-   * Required. The email address to send notifications to. The email address
-   * does not need to be a Google Account.
-   *
    * @var string
    */
   public $email;
   /**
-   * Required. The preferred language for notifications, as a ISO 639-1 language
-   * code. See [Supported languages](https://cloud.google.com/resource-
-   * manager/docs/managing-notification-contacts#supported-languages) for a list
-   * of supported languages.
-   *
    * @var string
    */
   public $languageTag;
   /**
-   * Output only. The identifier for the contact. Format:
-   * {resource_type}/{resource_id}/contacts/{contact_id}
-   *
    * @var string
    */
   public $name;
   /**
-   * Required. The categories of notifications that the contact will receive
-   * communications for.
-   *
    * @var string[]
    */
   public $notificationCategorySubscriptions;
   /**
-   * Output only. The last time the validation_state was updated, either
-   * manually or automatically. A contact is considered stale if its validation
-   * state was updated more than 1 year ago.
-   *
    * @var string
    */
   public $validateTime;
   /**
-   * Output only. The validity of the contact. A contact is considered valid if
-   * it is the correct recipient for notifications for a particular resource.
-   *
    * @var string
    */
   public $validationState;
 
   /**
-   * Required. The email address to send notifications to. The email address
-   * does not need to be a Google Account.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {
@@ -98,12 +60,7 @@ class GoogleCloudEssentialcontactsV1Contact extends \Google\Collection
     return $this->email;
   }
   /**
-   * Required. The preferred language for notifications, as a ISO 639-1 language
-   * code. See [Supported languages](https://cloud.google.com/resource-
-   * manager/docs/managing-notification-contacts#supported-languages) for a list
-   * of supported languages.
-   *
-   * @param string $languageTag
+   * @param string
    */
   public function setLanguageTag($languageTag)
   {
@@ -117,10 +74,7 @@ class GoogleCloudEssentialcontactsV1Contact extends \Google\Collection
     return $this->languageTag;
   }
   /**
-   * Output only. The identifier for the contact. Format:
-   * {resource_type}/{resource_id}/contacts/{contact_id}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -134,10 +88,7 @@ class GoogleCloudEssentialcontactsV1Contact extends \Google\Collection
     return $this->name;
   }
   /**
-   * Required. The categories of notifications that the contact will receive
-   * communications for.
-   *
-   * @param string[] $notificationCategorySubscriptions
+   * @param string[]
    */
   public function setNotificationCategorySubscriptions($notificationCategorySubscriptions)
   {
@@ -151,11 +102,7 @@ class GoogleCloudEssentialcontactsV1Contact extends \Google\Collection
     return $this->notificationCategorySubscriptions;
   }
   /**
-   * Output only. The last time the validation_state was updated, either
-   * manually or automatically. A contact is considered stale if its validation
-   * state was updated more than 1 year ago.
-   *
-   * @param string $validateTime
+   * @param string
    */
   public function setValidateTime($validateTime)
   {
@@ -169,19 +116,14 @@ class GoogleCloudEssentialcontactsV1Contact extends \Google\Collection
     return $this->validateTime;
   }
   /**
-   * Output only. The validity of the contact. A contact is considered valid if
-   * it is the correct recipient for notifications for a particular resource.
-   *
-   * Accepted values: VALIDATION_STATE_UNSPECIFIED, VALID, INVALID
-   *
-   * @param self::VALIDATION_STATE_* $validationState
+   * @param string
    */
   public function setValidationState($validationState)
   {
     $this->validationState = $validationState;
   }
   /**
-   * @return self::VALIDATION_STATE_*
+   * @return string
    */
   public function getValidationState()
   {

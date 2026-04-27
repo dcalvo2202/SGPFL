@@ -20,18 +20,12 @@ namespace Google\Service\DisplayVideo;
 class CustomListTargetingSetting extends \Google\Model
 {
   /**
-   * Required. Custom id of custom list targeting setting. This id is
-   * custom_list_id.
-   *
    * @var string
    */
   public $customListId;
 
   /**
-   * Required. Custom id of custom list targeting setting. This id is
-   * custom_list_id.
-   *
-   * @param string $customListId
+   * @param string
    */
   public function setCustomListId($customListId)
   {

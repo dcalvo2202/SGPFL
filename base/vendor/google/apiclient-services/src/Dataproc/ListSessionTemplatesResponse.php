@@ -21,9 +21,6 @@ class ListSessionTemplatesResponse extends \Google\Collection
 {
   protected $collection_key = 'sessionTemplates';
   /**
-   * A token, which can be sent as page_token to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListSessionTemplatesResponse extends \Google\Collection
   protected $sessionTemplatesDataType = 'array';
 
   /**
-   * A token, which can be sent as page_token to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class ListSessionTemplatesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Output only. Session template list
-   *
-   * @param SessionTemplate[] $sessionTemplates
+   * @param SessionTemplate[]
    */
   public function setSessionTemplates($sessionTemplates)
   {

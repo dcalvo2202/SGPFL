@@ -22,22 +22,16 @@ class ExecutionReport extends \Google\Model
   protected $executionErrorsType = ValidationReport::class;
   protected $executionErrorsDataType = '';
   /**
-   * Total number of asset frames reported for the import job.
-   *
    * @var int
    */
   public $framesReported;
   /**
-   * Output only. Total number of rows in the import job.
-   *
    * @var int
    */
   public $totalRowsCount;
 
   /**
-   * Validation errors encountered during the execution of the import job.
-   *
-   * @param ValidationReport $executionErrors
+   * @param ValidationReport
    */
   public function setExecutionErrors(ValidationReport $executionErrors)
   {
@@ -51,9 +45,7 @@ class ExecutionReport extends \Google\Model
     return $this->executionErrors;
   }
   /**
-   * Total number of asset frames reported for the import job.
-   *
-   * @param int $framesReported
+   * @param int
    */
   public function setFramesReported($framesReported)
   {
@@ -67,9 +59,7 @@ class ExecutionReport extends \Google\Model
     return $this->framesReported;
   }
   /**
-   * Output only. Total number of rows in the import job.
-   *
-   * @param int $totalRowsCount
+   * @param int
    */
   public function setTotalRowsCount($totalRowsCount)
   {

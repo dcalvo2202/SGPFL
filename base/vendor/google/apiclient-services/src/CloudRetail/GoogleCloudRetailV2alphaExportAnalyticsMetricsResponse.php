@@ -28,9 +28,7 @@ class GoogleCloudRetailV2alphaExportAnalyticsMetricsResponse extends \Google\Col
   protected $outputResultDataType = '';
 
   /**
-   * A sample of errors encountered while processing the request.
-   *
-   * @param GoogleRpcStatus[] $errorSamples
+   * @param GoogleRpcStatus[]
    */
   public function setErrorSamples($errorSamples)
   {
@@ -44,9 +42,7 @@ class GoogleCloudRetailV2alphaExportAnalyticsMetricsResponse extends \Google\Col
     return $this->errorSamples;
   }
   /**
-   * This field is never set.
-   *
-   * @param GoogleCloudRetailV2alphaExportErrorsConfig $errorsConfig
+   * @param GoogleCloudRetailV2alphaExportErrorsConfig
    */
   public function setErrorsConfig(GoogleCloudRetailV2alphaExportErrorsConfig $errorsConfig)
   {
@@ -60,9 +56,7 @@ class GoogleCloudRetailV2alphaExportAnalyticsMetricsResponse extends \Google\Col
     return $this->errorsConfig;
   }
   /**
-   * Output result indicating where the data were exported to.
-   *
-   * @param GoogleCloudRetailV2alphaOutputResult $outputResult
+   * @param GoogleCloudRetailV2alphaOutputResult
    */
   public function setOutputResult(GoogleCloudRetailV2alphaOutputResult $outputResult)
   {

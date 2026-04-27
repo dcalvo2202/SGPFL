@@ -23,9 +23,7 @@ class RoutersPreviewResponse extends \Google\Model
   protected $resourceDataType = '';
 
   /**
-   * Preview of given router.
-   *
-   * @param Router $resource
+   * @param Router
    */
   public function setResource(Router $resource)
   {

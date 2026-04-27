@@ -20,23 +20,12 @@ namespace Google\Service\BackupforGKE;
 class ExclusionWindow extends \Google\Model
 {
   /**
-   * The exclusion window occurs every day if set to "True". Specifying this
-   * field to "False" is an error.
-   *
    * @var bool
    */
   public $daily;
   protected $daysOfWeekType = DayOfWeekList::class;
   protected $daysOfWeekDataType = '';
   /**
-   * Required. Specifies duration of the window. Duration must be >= 5 minutes
-   * and < (target RPO - 20 minutes). Additional restrictions based on the
-   * recurrence type to allow some time for backup to happen: -
-   * single_occurrence_date: no restriction, but UI may warn about this when
-   * duration >= target RPO - daily window: duration < 24 hours - weekly window:
-   * - days of week includes all seven days of a week: duration < 24 hours - all
-   * other weekly window: duration < 168 hours (i.e., 24 * 7 hours)
-   *
    * @var string
    */
   public $duration;
@@ -46,10 +35,7 @@ class ExclusionWindow extends \Google\Model
   protected $startTimeDataType = '';
 
   /**
-   * The exclusion window occurs every day if set to "True". Specifying this
-   * field to "False" is an error.
-   *
-   * @param bool $daily
+   * @param bool
    */
   public function setDaily($daily)
   {
@@ -63,9 +49,7 @@ class ExclusionWindow extends \Google\Model
     return $this->daily;
   }
   /**
-   * The exclusion window occurs on these days of each week in UTC.
-   *
-   * @param DayOfWeekList $daysOfWeek
+   * @param DayOfWeekList
    */
   public function setDaysOfWeek(DayOfWeekList $daysOfWeek)
   {
@@ -79,15 +63,7 @@ class ExclusionWindow extends \Google\Model
     return $this->daysOfWeek;
   }
   /**
-   * Required. Specifies duration of the window. Duration must be >= 5 minutes
-   * and < (target RPO - 20 minutes). Additional restrictions based on the
-   * recurrence type to allow some time for backup to happen: -
-   * single_occurrence_date: no restriction, but UI may warn about this when
-   * duration >= target RPO - daily window: duration < 24 hours - weekly window:
-   * - days of week includes all seven days of a week: duration < 24 hours - all
-   * other weekly window: duration < 168 hours (i.e., 24 * 7 hours)
-   *
-   * @param string $duration
+   * @param string
    */
   public function setDuration($duration)
   {
@@ -101,10 +77,7 @@ class ExclusionWindow extends \Google\Model
     return $this->duration;
   }
   /**
-   * No recurrence. The exclusion window occurs only once and on this date in
-   * UTC.
-   *
-   * @param Date $singleOccurrenceDate
+   * @param Date
    */
   public function setSingleOccurrenceDate(Date $singleOccurrenceDate)
   {
@@ -118,10 +91,7 @@ class ExclusionWindow extends \Google\Model
     return $this->singleOccurrenceDate;
   }
   /**
-   * Optional. Specifies the start time of the window using time of the day in
-   * UTC.
-   *
-   * @param TimeOfDay $startTime
+   * @param TimeOfDay
    */
   public function setStartTime(TimeOfDay $startTime)
   {

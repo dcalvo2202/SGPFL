@@ -21,31 +21,22 @@ class CustomApp extends \Google\Collection
 {
   protected $collection_key = 'organizations';
   /**
-   * Default listing language in BCP 47 format.
-   *
    * @var string
    */
   public $languageCode;
   protected $organizationsType = Organization::class;
   protected $organizationsDataType = 'array';
   /**
-   * Output only. Package name of the created Android app. Only present in the
-   * API response.
-   *
    * @var string
    */
   public $packageName;
   /**
-   * Title for the Android app.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * Default listing language in BCP 47 format.
-   *
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {
@@ -59,14 +50,7 @@ class CustomApp extends \Google\Collection
     return $this->languageCode;
   }
   /**
-   * Organizations to which the custom app should be made available. If the
-   * request contains any organizations, then the app will be restricted to only
-   * these organizations. To support the organization linked to the developer
-   * account, the organization ID should be provided explicitly together with
-   * other organizations. If no organizations are provided, then the app is only
-   * available to the organization linked to the developer account.
-   *
-   * @param Organization[] $organizations
+   * @param Organization[]
    */
   public function setOrganizations($organizations)
   {
@@ -80,10 +64,7 @@ class CustomApp extends \Google\Collection
     return $this->organizations;
   }
   /**
-   * Output only. Package name of the created Android app. Only present in the
-   * API response.
-   *
-   * @param string $packageName
+   * @param string
    */
   public function setPackageName($packageName)
   {
@@ -97,9 +78,7 @@ class CustomApp extends \Google\Collection
     return $this->packageName;
   }
   /**
-   * Title for the Android app.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

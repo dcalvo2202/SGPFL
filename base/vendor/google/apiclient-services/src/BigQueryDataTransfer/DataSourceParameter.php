@@ -19,144 +19,66 @@ namespace Google\Service\BigQueryDataTransfer;
 
 class DataSourceParameter extends \Google\Collection
 {
-  /**
-   * Type unspecified.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * String parameter.
-   */
-  public const TYPE_STRING = 'STRING';
-  /**
-   * Integer parameter (64-bits). Will be serialized to json as string.
-   */
-  public const TYPE_INTEGER = 'INTEGER';
-  /**
-   * Double precision floating point parameter.
-   */
-  public const TYPE_DOUBLE = 'DOUBLE';
-  /**
-   * Boolean parameter.
-   */
-  public const TYPE_BOOLEAN = 'BOOLEAN';
-  /**
-   * Deprecated. This field has no effect.
-   */
-  public const TYPE_RECORD = 'RECORD';
-  /**
-   * Page ID for a Google+ Page.
-   */
-  public const TYPE_PLUS_PAGE = 'PLUS_PAGE';
-  /**
-   * List of strings parameter.
-   */
-  public const TYPE_LIST = 'LIST';
   protected $collection_key = 'fields';
   /**
-   * All possible values for the parameter.
-   *
    * @var string[]
    */
   public $allowedValues;
   /**
-   * If true, it should not be used in new transfers, and it should not be
-   * visible to users.
-   *
    * @var bool
    */
   public $deprecated;
   /**
-   * Parameter description.
-   *
    * @var string
    */
   public $description;
   /**
-   * Parameter display name in the user interface.
-   *
    * @var string
    */
   public $displayName;
   protected $fieldsType = DataSourceParameter::class;
   protected $fieldsDataType = 'array';
   /**
-   * Cannot be changed after initial creation.
-   *
    * @var bool
    */
   public $immutable;
-  /**
-   * For list parameters, the max size of the list.
-   *
-   * @var string
-   */
-  public $maxListSize;
-  /**
-   * For integer and double values specifies maximum allowed value.
-   *
-   * @var 
-   */
   public $maxValue;
-  /**
-   * For integer and double values specifies minimum allowed value.
-   *
-   * @var 
-   */
   public $minValue;
   /**
-   * Parameter identifier.
-   *
    * @var string
    */
   public $paramId;
   /**
-   * Deprecated. This field has no effect.
-   *
    * @var bool
    */
   public $recurse;
   /**
-   * Deprecated. This field has no effect.
-   *
    * @var bool
    */
   public $repeated;
   /**
-   * Is parameter required.
-   *
    * @var bool
    */
   public $required;
   /**
-   * Parameter type.
-   *
    * @var string
    */
   public $type;
   /**
-   * Description of the requirements for this field, in case the user input does
-   * not fulfill the regex pattern or min/max values.
-   *
    * @var string
    */
   public $validationDescription;
   /**
-   * URL to a help document to further explain the naming requirements.
-   *
    * @var string
    */
   public $validationHelpUrl;
   /**
-   * Regular expression which can be used for parameter validation.
-   *
    * @var string
    */
   public $validationRegex;
 
   /**
-   * All possible values for the parameter.
-   *
-   * @param string[] $allowedValues
+   * @param string[]
    */
   public function setAllowedValues($allowedValues)
   {
@@ -170,10 +92,7 @@ class DataSourceParameter extends \Google\Collection
     return $this->allowedValues;
   }
   /**
-   * If true, it should not be used in new transfers, and it should not be
-   * visible to users.
-   *
-   * @param bool $deprecated
+   * @param bool
    */
   public function setDeprecated($deprecated)
   {
@@ -187,9 +106,7 @@ class DataSourceParameter extends \Google\Collection
     return $this->deprecated;
   }
   /**
-   * Parameter description.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -203,9 +120,7 @@ class DataSourceParameter extends \Google\Collection
     return $this->description;
   }
   /**
-   * Parameter display name in the user interface.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -219,9 +134,7 @@ class DataSourceParameter extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Deprecated. This field has no effect.
-   *
-   * @param DataSourceParameter[] $fields
+   * @param DataSourceParameter[]
    */
   public function setFields($fields)
   {
@@ -235,9 +148,7 @@ class DataSourceParameter extends \Google\Collection
     return $this->fields;
   }
   /**
-   * Cannot be changed after initial creation.
-   *
-   * @param bool $immutable
+   * @param bool
    */
   public function setImmutable($immutable)
   {
@@ -249,22 +160,6 @@ class DataSourceParameter extends \Google\Collection
   public function getImmutable()
   {
     return $this->immutable;
-  }
-  /**
-   * For list parameters, the max size of the list.
-   *
-   * @param string $maxListSize
-   */
-  public function setMaxListSize($maxListSize)
-  {
-    $this->maxListSize = $maxListSize;
-  }
-  /**
-   * @return string
-   */
-  public function getMaxListSize()
-  {
-    return $this->maxListSize;
   }
   public function setMaxValue($maxValue)
   {
@@ -283,9 +178,7 @@ class DataSourceParameter extends \Google\Collection
     return $this->minValue;
   }
   /**
-   * Parameter identifier.
-   *
-   * @param string $paramId
+   * @param string
    */
   public function setParamId($paramId)
   {
@@ -299,9 +192,7 @@ class DataSourceParameter extends \Google\Collection
     return $this->paramId;
   }
   /**
-   * Deprecated. This field has no effect.
-   *
-   * @param bool $recurse
+   * @param bool
    */
   public function setRecurse($recurse)
   {
@@ -315,9 +206,7 @@ class DataSourceParameter extends \Google\Collection
     return $this->recurse;
   }
   /**
-   * Deprecated. This field has no effect.
-   *
-   * @param bool $repeated
+   * @param bool
    */
   public function setRepeated($repeated)
   {
@@ -331,9 +220,7 @@ class DataSourceParameter extends \Google\Collection
     return $this->repeated;
   }
   /**
-   * Is parameter required.
-   *
-   * @param bool $required
+   * @param bool
    */
   public function setRequired($required)
   {
@@ -347,29 +234,21 @@ class DataSourceParameter extends \Google\Collection
     return $this->required;
   }
   /**
-   * Parameter type.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, STRING, INTEGER, DOUBLE, BOOLEAN,
-   * RECORD, PLUS_PAGE, LIST
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * Description of the requirements for this field, in case the user input does
-   * not fulfill the regex pattern or min/max values.
-   *
-   * @param string $validationDescription
+   * @param string
    */
   public function setValidationDescription($validationDescription)
   {
@@ -383,9 +262,7 @@ class DataSourceParameter extends \Google\Collection
     return $this->validationDescription;
   }
   /**
-   * URL to a help document to further explain the naming requirements.
-   *
-   * @param string $validationHelpUrl
+   * @param string
    */
   public function setValidationHelpUrl($validationHelpUrl)
   {
@@ -399,9 +276,7 @@ class DataSourceParameter extends \Google\Collection
     return $this->validationHelpUrl;
   }
   /**
-   * Regular expression which can be used for parameter validation.
-   *
-   * @param string $validationRegex
+   * @param string
    */
   public function setValidationRegex($validationRegex)
   {

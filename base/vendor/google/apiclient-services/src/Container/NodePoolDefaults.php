@@ -23,9 +23,7 @@ class NodePoolDefaults extends \Google\Model
   protected $nodeConfigDefaultsDataType = '';
 
   /**
-   * Subset of NodeConfig message that has defaults.
-   *
-   * @param NodeConfigDefaults $nodeConfigDefaults
+   * @param NodeConfigDefaults
    */
   public function setNodeConfigDefaults(NodeConfigDefaults $nodeConfigDefaults)
   {

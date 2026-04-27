@@ -23,8 +23,6 @@ class AddOnAttachment extends \Google\Collection
   protected $copyHistoryType = CopyHistory::class;
   protected $copyHistoryDataType = 'array';
   /**
-   * Immutable. Identifier of the course.
-   *
    * @var string
    */
   public $courseId;
@@ -33,34 +31,15 @@ class AddOnAttachment extends \Google\Collection
   protected $dueTimeType = TimeOfDay::class;
   protected $dueTimeDataType = '';
   /**
-   * Immutable. Classroom-assigned identifier for this attachment, unique per
-   * post.
-   *
    * @var string
    */
   public $id;
   /**
-   * Immutable. Identifier of the `Announcement`, `CourseWork`, or
-   * `CourseWorkMaterial` under which the attachment is attached. Unique per
-   * course.
-   *
    * @var string
    */
   public $itemId;
-  /**
-   * Maximum grade for this attachment. Can only be set if
-   * `studentWorkReviewUri` is set. Set to a non-zero value to indicate that the
-   * attachment supports grade passback. If set, this must be a non-negative
-   * integer value. When set to zero, the attachment will not support grade
-   * passback.
-   *
-   * @var 
-   */
   public $maxPoints;
   /**
-   * Immutable. Deprecated, use `item_id` instead.
-   *
-   * @deprecated
    * @var string
    */
   public $postId;
@@ -71,20 +50,12 @@ class AddOnAttachment extends \Google\Collection
   protected $teacherViewUriType = EmbedUri::class;
   protected $teacherViewUriDataType = '';
   /**
-   * Required. Title of this attachment. The title must be between 1 and 1000
-   * characters.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * Output only. Identifiers of attachments that were previous copies of this
-   * attachment. If the attachment was previously copied by virtue of its parent
-   * post being copied, this enumerates the identifiers of attachments that were
-   * its previous copies in ascending chronological order of copy.
-   *
-   * @param CopyHistory[] $copyHistory
+   * @param CopyHistory[]
    */
   public function setCopyHistory($copyHistory)
   {
@@ -98,9 +69,7 @@ class AddOnAttachment extends \Google\Collection
     return $this->copyHistory;
   }
   /**
-   * Immutable. Identifier of the course.
-   *
-   * @param string $courseId
+   * @param string
    */
   public function setCourseId($courseId)
   {
@@ -114,10 +83,7 @@ class AddOnAttachment extends \Google\Collection
     return $this->courseId;
   }
   /**
-   * Date, in UTC, that work on this attachment is due. This must be specified
-   * if `due_time` is specified.
-   *
-   * @param Date $dueDate
+   * @param Date
    */
   public function setDueDate(Date $dueDate)
   {
@@ -131,10 +97,7 @@ class AddOnAttachment extends \Google\Collection
     return $this->dueDate;
   }
   /**
-   * Time of day, in UTC, that work on this attachment is due. This must be
-   * specified if `due_date` is specified.
-   *
-   * @param TimeOfDay $dueTime
+   * @param TimeOfDay
    */
   public function setDueTime(TimeOfDay $dueTime)
   {
@@ -148,10 +111,7 @@ class AddOnAttachment extends \Google\Collection
     return $this->dueTime;
   }
   /**
-   * Immutable. Classroom-assigned identifier for this attachment, unique per
-   * post.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -165,11 +125,7 @@ class AddOnAttachment extends \Google\Collection
     return $this->id;
   }
   /**
-   * Immutable. Identifier of the `Announcement`, `CourseWork`, or
-   * `CourseWorkMaterial` under which the attachment is attached. Unique per
-   * course.
-   *
-   * @param string $itemId
+   * @param string
    */
   public function setItemId($itemId)
   {
@@ -191,17 +147,13 @@ class AddOnAttachment extends \Google\Collection
     return $this->maxPoints;
   }
   /**
-   * Immutable. Deprecated, use `item_id` instead.
-   *
-   * @deprecated
-   * @param string $postId
+   * @param string
    */
   public function setPostId($postId)
   {
     $this->postId = $postId;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getPostId()
@@ -209,11 +161,7 @@ class AddOnAttachment extends \Google\Collection
     return $this->postId;
   }
   /**
-   * Required. URI to show the student view of the attachment. The URI will be
-   * opened in an iframe with the `courseId`, `itemId`, `itemType`, and
-   * `attachmentId` query parameters set.
-   *
-   * @param EmbedUri $studentViewUri
+   * @param EmbedUri
    */
   public function setStudentViewUri(EmbedUri $studentViewUri)
   {
@@ -227,15 +175,7 @@ class AddOnAttachment extends \Google\Collection
     return $this->studentViewUri;
   }
   /**
-   * URI for the teacher to see student work on the attachment, if applicable.
-   * The URI will be opened in an iframe with the `courseId`, `itemId`,
-   * `itemType`, `attachmentId`, and `submissionId` query parameters set. This
-   * is the same `submissionId` returned in the [`AddOnContext.studentContext`](
-   * //devsite.google.com/classroom/reference/rest/v1/AddOnContext#StudentContex
-   * t) field when a student views the attachment. If the URI is omitted or
-   * removed, `max_points` will also be discarded.
-   *
-   * @param EmbedUri $studentWorkReviewUri
+   * @param EmbedUri
    */
   public function setStudentWorkReviewUri(EmbedUri $studentWorkReviewUri)
   {
@@ -249,11 +189,7 @@ class AddOnAttachment extends \Google\Collection
     return $this->studentWorkReviewUri;
   }
   /**
-   * Required. URI to show the teacher view of the attachment. The URI will be
-   * opened in an iframe with the `courseId`, `itemId`, `itemType`, and
-   * `attachmentId` query parameters set.
-   *
-   * @param EmbedUri $teacherViewUri
+   * @param EmbedUri
    */
   public function setTeacherViewUri(EmbedUri $teacherViewUri)
   {
@@ -267,10 +203,7 @@ class AddOnAttachment extends \Google\Collection
     return $this->teacherViewUri;
   }
   /**
-   * Required. Title of this attachment. The title must be between 1 and 1000
-   * characters.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

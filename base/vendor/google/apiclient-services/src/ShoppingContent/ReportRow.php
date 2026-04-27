@@ -41,11 +41,7 @@ class ReportRow extends \Google\Model
   protected $topicTrendsDataType = '';
 
   /**
-   * Best sellers fields requested by the merchant in the query. Field values
-   * are only set if the merchant queries `BestSellersProductClusterView` or
-   * `BestSellersBrandView`.
-   *
-   * @param BestSellers $bestSellers
+   * @param BestSellers
    */
   public function setBestSellers(BestSellers $bestSellers)
   {
@@ -59,10 +55,7 @@ class ReportRow extends \Google\Model
     return $this->bestSellers;
   }
   /**
-   * Brand fields requested by the merchant in the query. Field values are only
-   * set if the merchant queries `BestSellersBrandView`.
-   *
-   * @param Brand $brand
+   * @param Brand
    */
   public function setBrand(Brand $brand)
   {
@@ -76,13 +69,7 @@ class ReportRow extends \Google\Model
     return $this->brand;
   }
   /**
-   * Competitive visibility fields requested by the merchant in the query. Field
-   * values are only set if the merchant queries
-   * `CompetitiveVisibilityTopMerchantView`,
-   * `CompetitiveVisibilityBenchmarkView` or
-   * `CompetitiveVisibilityCompetitorView`.
-   *
-   * @param CompetitiveVisibility $competitiveVisibility
+   * @param CompetitiveVisibility
    */
   public function setCompetitiveVisibility(CompetitiveVisibility $competitiveVisibility)
   {
@@ -96,10 +83,7 @@ class ReportRow extends \Google\Model
     return $this->competitiveVisibility;
   }
   /**
-   * Metrics requested by the merchant in the query. Metric values are only set
-   * for metrics requested explicitly in the query.
-   *
-   * @param Metrics $metrics
+   * @param Metrics
    */
   public function setMetrics(Metrics $metrics)
   {
@@ -113,11 +97,7 @@ class ReportRow extends \Google\Model
     return $this->metrics;
   }
   /**
-   * Price competitiveness fields requested by the merchant in the query. Field
-   * values are only set if the merchant queries
-   * `PriceCompetitivenessProductView`.
-   *
-   * @param PriceCompetitiveness $priceCompetitiveness
+   * @param PriceCompetitiveness
    */
   public function setPriceCompetitiveness(PriceCompetitiveness $priceCompetitiveness)
   {
@@ -131,10 +111,7 @@ class ReportRow extends \Google\Model
     return $this->priceCompetitiveness;
   }
   /**
-   * Price insights fields requested by the merchant in the query. Field values
-   * are only set if the merchant queries `PriceInsightsProductView`.
-   *
-   * @param PriceInsights $priceInsights
+   * @param PriceInsights
    */
   public function setPriceInsights(PriceInsights $priceInsights)
   {
@@ -148,10 +125,7 @@ class ReportRow extends \Google\Model
     return $this->priceInsights;
   }
   /**
-   * Product cluster fields requested by the merchant in the query. Field values
-   * are only set if the merchant queries `BestSellersProductClusterView`.
-   *
-   * @param ProductCluster $productCluster
+   * @param ProductCluster
    */
   public function setProductCluster(ProductCluster $productCluster)
   {
@@ -165,10 +139,7 @@ class ReportRow extends \Google\Model
     return $this->productCluster;
   }
   /**
-   * Product fields requested by the merchant in the query. Field values are
-   * only set if the merchant queries `ProductView`.
-   *
-   * @param ProductView $productView
+   * @param ProductView
    */
   public function setProductView(ProductView $productView)
   {
@@ -182,10 +153,7 @@ class ReportRow extends \Google\Model
     return $this->productView;
   }
   /**
-   * Segmentation dimensions requested by the merchant in the query. Dimension
-   * values are only set for dimensions requested explicitly in the query.
-   *
-   * @param Segments $segments
+   * @param Segments
    */
   public function setSegments(Segments $segments)
   {
@@ -199,11 +167,7 @@ class ReportRow extends \Google\Model
     return $this->segments;
   }
   /**
-   * [Topic trends](https://support.google.com/merchants/answer/13542370) fields
-   * requested by the merchant in the query. Field values are only set if the
-   * merchant queries `TopicTrendsView`.
-   *
-   * @param TopicTrends $topicTrends
+   * @param TopicTrends
    */
   public function setTopicTrends(TopicTrends $topicTrends)
   {

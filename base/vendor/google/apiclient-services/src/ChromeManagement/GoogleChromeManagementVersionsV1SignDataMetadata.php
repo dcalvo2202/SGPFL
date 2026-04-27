@@ -20,16 +20,12 @@ namespace Google\Service\ChromeManagement;
 class GoogleChromeManagementVersionsV1SignDataMetadata extends \Google\Model
 {
   /**
-   * Output only. Start time of the SignData operation.
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * Output only. Start time of the SignData operation.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

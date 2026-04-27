@@ -20,16 +20,12 @@ namespace Google\Service\DriveActivity;
 class Date extends \Google\Model
 {
   /**
-   * Date value.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Date value.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

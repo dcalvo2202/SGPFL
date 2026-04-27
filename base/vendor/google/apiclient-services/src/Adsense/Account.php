@@ -19,60 +19,28 @@ namespace Google\Service\Adsense;
 
 class Account extends \Google\Collection
 {
-  /**
-   * State unspecified.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The account is open and ready to serve ads.
-   */
-  public const STATE_READY = 'READY';
-  /**
-   * There are some issues with this account. Publishers should visit AdSense in
-   * order to fix the account.
-   */
-  public const STATE_NEEDS_ATTENTION = 'NEEDS_ATTENTION';
-  /**
-   * The account is closed and can't serve ads.
-   */
-  public const STATE_CLOSED = 'CLOSED';
   protected $collection_key = 'pendingTasks';
   /**
-   * Output only. Creation time of the account.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. Display name of this account.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. Resource name of the account. Format: accounts/pub-[0-9]+
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Outstanding tasks that need to be completed as part of the
-   * sign-up process for a new account. e.g. "billing-profile-creation", "phone-
-   * pin-verification".
-   *
    * @var string[]
    */
   public $pendingTasks;
   /**
-   * Output only. Whether this account is premium. Premium accounts have access
-   * to additional spam-related metrics.
-   *
    * @var bool
    */
   public $premium;
   /**
-   * Output only. State of the account.
-   *
    * @var string
    */
   public $state;
@@ -80,9 +48,7 @@ class Account extends \Google\Collection
   protected $timeZoneDataType = '';
 
   /**
-   * Output only. Creation time of the account.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -96,9 +62,7 @@ class Account extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Output only. Display name of this account.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -112,9 +76,7 @@ class Account extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Output only. Resource name of the account. Format: accounts/pub-[0-9]+
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -128,11 +90,7 @@ class Account extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. Outstanding tasks that need to be completed as part of the
-   * sign-up process for a new account. e.g. "billing-profile-creation", "phone-
-   * pin-verification".
-   *
-   * @param string[] $pendingTasks
+   * @param string[]
    */
   public function setPendingTasks($pendingTasks)
   {
@@ -146,10 +104,7 @@ class Account extends \Google\Collection
     return $this->pendingTasks;
   }
   /**
-   * Output only. Whether this account is premium. Premium accounts have access
-   * to additional spam-related metrics.
-   *
-   * @param bool $premium
+   * @param bool
    */
   public function setPremium($premium)
   {
@@ -163,29 +118,21 @@ class Account extends \Google\Collection
     return $this->premium;
   }
   /**
-   * Output only. State of the account.
-   *
-   * Accepted values: STATE_UNSPECIFIED, READY, NEEDS_ATTENTION, CLOSED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * The account time zone, as used by reporting. For more information, see
-   * [changing the time zone of your
-   * reports](https://support.google.com/adsense/answer/9830725).
-   *
-   * @param TimeZone $timeZone
+   * @param TimeZone
    */
   public function setTimeZone(TimeZone $timeZone)
   {

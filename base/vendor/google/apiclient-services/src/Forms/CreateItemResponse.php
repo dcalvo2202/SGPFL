@@ -21,23 +21,16 @@ class CreateItemResponse extends \Google\Collection
 {
   protected $collection_key = 'questionId';
   /**
-   * The ID of the created item.
-   *
    * @var string
    */
   public $itemId;
   /**
-   * The ID of the question created as part of this item, for a question group
-   * it lists IDs of all the questions created for this item.
-   *
    * @var string[]
    */
   public $questionId;
 
   /**
-   * The ID of the created item.
-   *
-   * @param string $itemId
+   * @param string
    */
   public function setItemId($itemId)
   {
@@ -51,10 +44,7 @@ class CreateItemResponse extends \Google\Collection
     return $this->itemId;
   }
   /**
-   * The ID of the question created as part of this item, for a question group
-   * it lists IDs of all the questions created for this item.
-   *
-   * @param string[] $questionId
+   * @param string[]
    */
   public function setQuestionId($questionId)
   {

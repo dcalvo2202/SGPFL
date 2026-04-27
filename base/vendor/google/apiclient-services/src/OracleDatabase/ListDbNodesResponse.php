@@ -23,16 +23,12 @@ class ListDbNodesResponse extends \Google\Collection
   protected $dbNodesType = DbNode::class;
   protected $dbNodesDataType = 'array';
   /**
-   * A token identifying a page of results the node should return.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of DB Nodes
-   *
-   * @param DbNode[] $dbNodes
+   * @param DbNode[]
    */
   public function setDbNodes($dbNodes)
   {
@@ -46,9 +42,7 @@ class ListDbNodesResponse extends \Google\Collection
     return $this->dbNodes;
   }
   /**
-   * A token identifying a page of results the node should return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

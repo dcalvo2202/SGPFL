@@ -20,24 +20,16 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1DataDiscoverySpecStorageConfigJsonOptions extends \Google\Model
 {
   /**
-   * Optional. The character encoding of the data. The default is UTF-8.
-   *
    * @var string
    */
   public $encoding;
   /**
-   * Optional. Whether to disable the inference of data types for JSON data. If
-   * true, all columns are registered as their primitive types (strings, number,
-   * or boolean).
-   *
    * @var bool
    */
   public $typeInferenceDisabled;
 
   /**
-   * Optional. The character encoding of the data. The default is UTF-8.
-   *
-   * @param string $encoding
+   * @param string
    */
   public function setEncoding($encoding)
   {
@@ -51,11 +43,7 @@ class GoogleCloudDataplexV1DataDiscoverySpecStorageConfigJsonOptions extends \Go
     return $this->encoding;
   }
   /**
-   * Optional. Whether to disable the inference of data types for JSON data. If
-   * true, all columns are registered as their primitive types (strings, number,
-   * or boolean).
-   *
-   * @param bool $typeInferenceDisabled
+   * @param bool
    */
   public function setTypeInferenceDisabled($typeInferenceDisabled)
   {

@@ -23,10 +23,7 @@ class LaunchFlexTemplateResponse extends \Google\Model
   protected $jobDataType = '';
 
   /**
-   * The job that was launched, if the request was not a dry run and the job was
-   * successfully launched.
-   *
-   * @param Job $job
+   * @param Job
    */
   public function setJob(Job $job)
   {

@@ -23,29 +23,20 @@ class ListContactGroupsResponse extends \Google\Collection
   protected $contactGroupsType = ContactGroup::class;
   protected $contactGroupsDataType = 'array';
   /**
-   * The token that can be used to retrieve the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * The token that can be used to retrieve changes since the last request.
-   *
    * @var string
    */
   public $nextSyncToken;
   /**
-   * The total number of items in the list without pagination.
-   *
    * @var int
    */
   public $totalItems;
 
   /**
-   * The list of contact groups. Members of the contact groups are not
-   * populated.
-   *
-   * @param ContactGroup[] $contactGroups
+   * @param ContactGroup[]
    */
   public function setContactGroups($contactGroups)
   {
@@ -59,9 +50,7 @@ class ListContactGroupsResponse extends \Google\Collection
     return $this->contactGroups;
   }
   /**
-   * The token that can be used to retrieve the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -75,9 +64,7 @@ class ListContactGroupsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The token that can be used to retrieve changes since the last request.
-   *
-   * @param string $nextSyncToken
+   * @param string
    */
   public function setNextSyncToken($nextSyncToken)
   {
@@ -91,9 +78,7 @@ class ListContactGroupsResponse extends \Google\Collection
     return $this->nextSyncToken;
   }
   /**
-   * The total number of items in the list without pagination.
-   *
-   * @param int $totalItems
+   * @param int
    */
   public function setTotalItems($totalItems)
   {

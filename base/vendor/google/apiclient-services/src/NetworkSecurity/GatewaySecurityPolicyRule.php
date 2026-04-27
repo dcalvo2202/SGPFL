@@ -20,88 +20,48 @@ namespace Google\Service\NetworkSecurity;
 class GatewaySecurityPolicyRule extends \Google\Model
 {
   /**
-   * If there is not a mentioned action for the target.
-   */
-  public const BASIC_PROFILE_BASIC_PROFILE_UNSPECIFIED = 'BASIC_PROFILE_UNSPECIFIED';
-  /**
-   * Allow the matched traffic.
-   */
-  public const BASIC_PROFILE_ALLOW = 'ALLOW';
-  /**
-   * Deny the matched traffic.
-   */
-  public const BASIC_PROFILE_DENY = 'DENY';
-  /**
-   * Optional. CEL expression for matching on L7/application level criteria.
-   *
    * @var string
    */
   public $applicationMatcher;
   /**
-   * Required. Profile which tells what the primitive action should be.
-   *
    * @var string
    */
   public $basicProfile;
   /**
-   * Output only. Time when the rule was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. Free-text description of the resource.
-   *
    * @var string
    */
   public $description;
   /**
-   * Required. Whether the rule is enforced.
-   *
    * @var bool
    */
   public $enabled;
   /**
-   * Required. Immutable. Name of the resource. ame is the full resource name so
-   * projects/{project}/locations/{location}/gatewaySecurityPolicies/{gateway_se
-   * curity_policy}/rules/{rule} rule should match the pattern:
-   * (^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$).
-   *
    * @var string
    */
   public $name;
   /**
-   * Required. Priority of the rule. Lower number corresponds to higher
-   * precedence.
-   *
    * @var int
    */
   public $priority;
   /**
-   * Required. CEL expression for matching on session criteria.
-   *
    * @var string
    */
   public $sessionMatcher;
   /**
-   * Optional. Flag to enable TLS inspection of traffic matching on , can only
-   * be true if the parent GatewaySecurityPolicy references a
-   * TLSInspectionConfig.
-   *
    * @var bool
    */
   public $tlsInspectionEnabled;
   /**
-   * Output only. Time when the rule was updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Optional. CEL expression for matching on L7/application level criteria.
-   *
-   * @param string $applicationMatcher
+   * @param string
    */
   public function setApplicationMatcher($applicationMatcher)
   {
@@ -115,27 +75,21 @@ class GatewaySecurityPolicyRule extends \Google\Model
     return $this->applicationMatcher;
   }
   /**
-   * Required. Profile which tells what the primitive action should be.
-   *
-   * Accepted values: BASIC_PROFILE_UNSPECIFIED, ALLOW, DENY
-   *
-   * @param self::BASIC_PROFILE_* $basicProfile
+   * @param string
    */
   public function setBasicProfile($basicProfile)
   {
     $this->basicProfile = $basicProfile;
   }
   /**
-   * @return self::BASIC_PROFILE_*
+   * @return string
    */
   public function getBasicProfile()
   {
     return $this->basicProfile;
   }
   /**
-   * Output only. Time when the rule was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -149,9 +103,7 @@ class GatewaySecurityPolicyRule extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Optional. Free-text description of the resource.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -165,9 +117,7 @@ class GatewaySecurityPolicyRule extends \Google\Model
     return $this->description;
   }
   /**
-   * Required. Whether the rule is enforced.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {
@@ -181,12 +131,7 @@ class GatewaySecurityPolicyRule extends \Google\Model
     return $this->enabled;
   }
   /**
-   * Required. Immutable. Name of the resource. ame is the full resource name so
-   * projects/{project}/locations/{location}/gatewaySecurityPolicies/{gateway_se
-   * curity_policy}/rules/{rule} rule should match the pattern:
-   * (^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$).
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -200,10 +145,7 @@ class GatewaySecurityPolicyRule extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. Priority of the rule. Lower number corresponds to higher
-   * precedence.
-   *
-   * @param int $priority
+   * @param int
    */
   public function setPriority($priority)
   {
@@ -217,9 +159,7 @@ class GatewaySecurityPolicyRule extends \Google\Model
     return $this->priority;
   }
   /**
-   * Required. CEL expression for matching on session criteria.
-   *
-   * @param string $sessionMatcher
+   * @param string
    */
   public function setSessionMatcher($sessionMatcher)
   {
@@ -233,11 +173,7 @@ class GatewaySecurityPolicyRule extends \Google\Model
     return $this->sessionMatcher;
   }
   /**
-   * Optional. Flag to enable TLS inspection of traffic matching on , can only
-   * be true if the parent GatewaySecurityPolicy references a
-   * TLSInspectionConfig.
-   *
-   * @param bool $tlsInspectionEnabled
+   * @param bool
    */
   public function setTlsInspectionEnabled($tlsInspectionEnabled)
   {
@@ -251,9 +187,7 @@ class GatewaySecurityPolicyRule extends \Google\Model
     return $this->tlsInspectionEnabled;
   }
   /**
-   * Output only. Time when the rule was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

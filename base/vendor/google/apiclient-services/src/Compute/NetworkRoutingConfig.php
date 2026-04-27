@@ -19,69 +19,33 @@ namespace Google\Service\Compute;
 
 class NetworkRoutingConfig extends \Google\Model
 {
-  public const BGP_BEST_PATH_SELECTION_MODE_LEGACY = 'LEGACY';
-  public const BGP_BEST_PATH_SELECTION_MODE_STANDARD = 'STANDARD';
-  public const BGP_INTER_REGION_COST_ADD_COST_TO_MED = 'ADD_COST_TO_MED';
-  public const BGP_INTER_REGION_COST_DEFAULT = 'DEFAULT';
-  public const EFFECTIVE_BGP_INTER_REGION_COST_ADD_COST_TO_MED = 'ADD_COST_TO_MED';
-  public const EFFECTIVE_BGP_INTER_REGION_COST_DEFAULT = 'DEFAULT';
-  public const ROUTING_MODE_GLOBAL = 'GLOBAL';
-  public const ROUTING_MODE_REGIONAL = 'REGIONAL';
   /**
-   * Enable comparison of Multi-Exit Discriminators (MED) across routes with
-   * different neighbor ASNs when using the STANDARD BGP best path selection
-   * algorithm.
-   *
    * @var bool
    */
   public $bgpAlwaysCompareMed;
   /**
-   * The BGP best path selection algorithm to be employed within this network
-   * for dynamic routes learned by Cloud Routers. Can be LEGACY (default) or
-   * STANDARD.
-   *
    * @var string
    */
   public $bgpBestPathSelectionMode;
   /**
-   * Allows to define a preferred approach for handling inter-region cost in the
-   * selection process when using the STANDARD BGP best path selection
-   * algorithm. Can be DEFAULT orADD_COST_TO_MED.
-   *
    * @var string
    */
   public $bgpInterRegionCost;
   /**
-   * Output only. [Output Only] Effective value of the bgp_always_compare_med
-   * field.
-   *
    * @var bool
    */
   public $effectiveBgpAlwaysCompareMed;
   /**
-   * Output only. [Output Only] Effective value of the bgp_inter_region_cost
-   * field.
-   *
    * @var string
    */
   public $effectiveBgpInterRegionCost;
   /**
-   * The network-wide routing mode to use. If set to REGIONAL, this network's
-   * Cloud Routers will only advertise routes with subnets of this network in
-   * the same region as the router. If set toGLOBAL, this network's Cloud
-   * Routers will advertise routes with all subnets of this network, across
-   * regions.
-   *
    * @var string
    */
   public $routingMode;
 
   /**
-   * Enable comparison of Multi-Exit Discriminators (MED) across routes with
-   * different neighbor ASNs when using the STANDARD BGP best path selection
-   * algorithm.
-   *
-   * @param bool $bgpAlwaysCompareMed
+   * @param bool
    */
   public function setBgpAlwaysCompareMed($bgpAlwaysCompareMed)
   {
@@ -95,50 +59,35 @@ class NetworkRoutingConfig extends \Google\Model
     return $this->bgpAlwaysCompareMed;
   }
   /**
-   * The BGP best path selection algorithm to be employed within this network
-   * for dynamic routes learned by Cloud Routers. Can be LEGACY (default) or
-   * STANDARD.
-   *
-   * Accepted values: LEGACY, STANDARD
-   *
-   * @param self::BGP_BEST_PATH_SELECTION_MODE_* $bgpBestPathSelectionMode
+   * @param string
    */
   public function setBgpBestPathSelectionMode($bgpBestPathSelectionMode)
   {
     $this->bgpBestPathSelectionMode = $bgpBestPathSelectionMode;
   }
   /**
-   * @return self::BGP_BEST_PATH_SELECTION_MODE_*
+   * @return string
    */
   public function getBgpBestPathSelectionMode()
   {
     return $this->bgpBestPathSelectionMode;
   }
   /**
-   * Allows to define a preferred approach for handling inter-region cost in the
-   * selection process when using the STANDARD BGP best path selection
-   * algorithm. Can be DEFAULT orADD_COST_TO_MED.
-   *
-   * Accepted values: ADD_COST_TO_MED, DEFAULT
-   *
-   * @param self::BGP_INTER_REGION_COST_* $bgpInterRegionCost
+   * @param string
    */
   public function setBgpInterRegionCost($bgpInterRegionCost)
   {
     $this->bgpInterRegionCost = $bgpInterRegionCost;
   }
   /**
-   * @return self::BGP_INTER_REGION_COST_*
+   * @return string
    */
   public function getBgpInterRegionCost()
   {
     return $this->bgpInterRegionCost;
   }
   /**
-   * Output only. [Output Only] Effective value of the bgp_always_compare_med
-   * field.
-   *
-   * @param bool $effectiveBgpAlwaysCompareMed
+   * @param bool
    */
   public function setEffectiveBgpAlwaysCompareMed($effectiveBgpAlwaysCompareMed)
   {
@@ -152,41 +101,28 @@ class NetworkRoutingConfig extends \Google\Model
     return $this->effectiveBgpAlwaysCompareMed;
   }
   /**
-   * Output only. [Output Only] Effective value of the bgp_inter_region_cost
-   * field.
-   *
-   * Accepted values: ADD_COST_TO_MED, DEFAULT
-   *
-   * @param self::EFFECTIVE_BGP_INTER_REGION_COST_* $effectiveBgpInterRegionCost
+   * @param string
    */
   public function setEffectiveBgpInterRegionCost($effectiveBgpInterRegionCost)
   {
     $this->effectiveBgpInterRegionCost = $effectiveBgpInterRegionCost;
   }
   /**
-   * @return self::EFFECTIVE_BGP_INTER_REGION_COST_*
+   * @return string
    */
   public function getEffectiveBgpInterRegionCost()
   {
     return $this->effectiveBgpInterRegionCost;
   }
   /**
-   * The network-wide routing mode to use. If set to REGIONAL, this network's
-   * Cloud Routers will only advertise routes with subnets of this network in
-   * the same region as the router. If set toGLOBAL, this network's Cloud
-   * Routers will advertise routes with all subnets of this network, across
-   * regions.
-   *
-   * Accepted values: GLOBAL, REGIONAL
-   *
-   * @param self::ROUTING_MODE_* $routingMode
+   * @param string
    */
   public function setRoutingMode($routingMode)
   {
     $this->routingMode = $routingMode;
   }
   /**
-   * @return self::ROUTING_MODE_*
+   * @return string
    */
   public function getRoutingMode()
   {

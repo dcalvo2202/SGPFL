@@ -20,31 +20,20 @@ namespace Google\Service\BlockchainNodeEngine;
 class EthereumEndpoints extends \Google\Model
 {
   /**
-   * Output only. The assigned URL for the node's Beacon API endpoint.
-   *
    * @var string
    */
   public $beaconApiEndpoint;
   /**
-   * Output only. The assigned URL for the node's Beacon Prometheus metrics
-   * endpoint. See [Prometheus Metrics](https://lighthouse-
-   * book.sigmaprime.io/advanced_metrics.html) for more details.
-   *
    * @var string
    */
   public $beaconPrometheusMetricsApiEndpoint;
   /**
-   * Output only. The assigned URL for the node's execution client's Prometheus
-   * metrics endpoint.
-   *
    * @var string
    */
   public $executionClientPrometheusMetricsApiEndpoint;
 
   /**
-   * Output only. The assigned URL for the node's Beacon API endpoint.
-   *
-   * @param string $beaconApiEndpoint
+   * @param string
    */
   public function setBeaconApiEndpoint($beaconApiEndpoint)
   {
@@ -58,11 +47,7 @@ class EthereumEndpoints extends \Google\Model
     return $this->beaconApiEndpoint;
   }
   /**
-   * Output only. The assigned URL for the node's Beacon Prometheus metrics
-   * endpoint. See [Prometheus Metrics](https://lighthouse-
-   * book.sigmaprime.io/advanced_metrics.html) for more details.
-   *
-   * @param string $beaconPrometheusMetricsApiEndpoint
+   * @param string
    */
   public function setBeaconPrometheusMetricsApiEndpoint($beaconPrometheusMetricsApiEndpoint)
   {
@@ -76,10 +61,7 @@ class EthereumEndpoints extends \Google\Model
     return $this->beaconPrometheusMetricsApiEndpoint;
   }
   /**
-   * Output only. The assigned URL for the node's execution client's Prometheus
-   * metrics endpoint.
-   *
-   * @param string $executionClientPrometheusMetricsApiEndpoint
+   * @param string
    */
   public function setExecutionClientPrometheusMetricsApiEndpoint($executionClientPrometheusMetricsApiEndpoint)
   {

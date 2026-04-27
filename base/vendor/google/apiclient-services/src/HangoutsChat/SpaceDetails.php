@@ -20,27 +20,16 @@ namespace Google\Service\HangoutsChat;
 class SpaceDetails extends \Google\Model
 {
   /**
-   * Optional. A description of the space. For example, describe the space's
-   * discussion topic, functional purpose, or participants. Supports up to 150
-   * characters.
-   *
    * @var string
    */
   public $description;
   /**
-   * Optional. The space's rules, expectations, and etiquette. Supports up to
-   * 5,000 characters.
-   *
    * @var string
    */
   public $guidelines;
 
   /**
-   * Optional. A description of the space. For example, describe the space's
-   * discussion topic, functional purpose, or participants. Supports up to 150
-   * characters.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -54,10 +43,7 @@ class SpaceDetails extends \Google\Model
     return $this->description;
   }
   /**
-   * Optional. The space's rules, expectations, and etiquette. Supports up to
-   * 5,000 characters.
-   *
-   * @param string $guidelines
+   * @param string
    */
   public function setGuidelines($guidelines)
   {

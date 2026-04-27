@@ -20,40 +20,12 @@ namespace Google\Service\Dataproc;
 class AnalyzeBatchRequest extends \Google\Model
 {
   /**
-   * Optional. A unique ID used to identify the request. If the service receives
-   * two AnalyzeBatchRequest (http://cloud/dataproc/docs/reference/rpc/google.cl
-   * oud.dataproc.v1#google.cloud.dataproc.v1.AnalyzeBatchRequest)s with the
-   * same request_id, the second request is ignored and the Operation that
-   * corresponds to the first request created and stored in the backend is
-   * returned.Recommendation: Set this value to a UUID
-   * (https://en.wikipedia.org/wiki/Universally_unique_identifier).The value
-   * must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and
-   * hyphens (-). The maximum length is 40 characters.
-   *
    * @var string
    */
   public $requestId;
-  /**
-   * Optional. The requestor ID is used to identify if the request comes from a
-   * GCA investigation or the old Ask Gemini Experience.
-   *
-   * @deprecated
-   * @var string
-   */
-  public $requestorId;
 
   /**
-   * Optional. A unique ID used to identify the request. If the service receives
-   * two AnalyzeBatchRequest (http://cloud/dataproc/docs/reference/rpc/google.cl
-   * oud.dataproc.v1#google.cloud.dataproc.v1.AnalyzeBatchRequest)s with the
-   * same request_id, the second request is ignored and the Operation that
-   * corresponds to the first request created and stored in the backend is
-   * returned.Recommendation: Set this value to a UUID
-   * (https://en.wikipedia.org/wiki/Universally_unique_identifier).The value
-   * must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and
-   * hyphens (-). The maximum length is 40 characters.
-   *
-   * @param string $requestId
+   * @param string
    */
   public function setRequestId($requestId)
   {
@@ -65,25 +37,6 @@ class AnalyzeBatchRequest extends \Google\Model
   public function getRequestId()
   {
     return $this->requestId;
-  }
-  /**
-   * Optional. The requestor ID is used to identify if the request comes from a
-   * GCA investigation or the old Ask Gemini Experience.
-   *
-   * @deprecated
-   * @param string $requestorId
-   */
-  public function setRequestorId($requestorId)
-  {
-    $this->requestorId = $requestorId;
-  }
-  /**
-   * @deprecated
-   * @return string
-   */
-  public function getRequestorId()
-  {
-    return $this->requestorId;
   }
 }
 

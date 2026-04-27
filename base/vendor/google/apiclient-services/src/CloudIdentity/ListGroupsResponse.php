@@ -23,17 +23,12 @@ class ListGroupsResponse extends \Google\Collection
   protected $groupsType = Group::class;
   protected $groupsDataType = 'array';
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results available for listing.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Groups returned in response to list request. The results are not sorted.
-   *
-   * @param Group[] $groups
+   * @param Group[]
    */
   public function setGroups($groups)
   {
@@ -47,10 +42,7 @@ class ListGroupsResponse extends \Google\Collection
     return $this->groups;
   }
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results available for listing.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

@@ -23,8 +23,6 @@ class DeviceTierConfig extends \Google\Collection
   protected $deviceGroupsType = DeviceGroup::class;
   protected $deviceGroupsDataType = 'array';
   /**
-   * Output only. The device tier config ID.
-   *
    * @var string
    */
   public $deviceTierConfigId;
@@ -34,9 +32,7 @@ class DeviceTierConfig extends \Google\Collection
   protected $userCountrySetsDataType = 'array';
 
   /**
-   * Definition of device groups for the app.
-   *
-   * @param DeviceGroup[] $deviceGroups
+   * @param DeviceGroup[]
    */
   public function setDeviceGroups($deviceGroups)
   {
@@ -50,9 +46,7 @@ class DeviceTierConfig extends \Google\Collection
     return $this->deviceGroups;
   }
   /**
-   * Output only. The device tier config ID.
-   *
-   * @param string $deviceTierConfigId
+   * @param string
    */
   public function setDeviceTierConfigId($deviceTierConfigId)
   {
@@ -66,9 +60,7 @@ class DeviceTierConfig extends \Google\Collection
     return $this->deviceTierConfigId;
   }
   /**
-   * Definition of the set of device tiers for the app.
-   *
-   * @param DeviceTierSet $deviceTierSet
+   * @param DeviceTierSet
    */
   public function setDeviceTierSet(DeviceTierSet $deviceTierSet)
   {
@@ -82,9 +74,7 @@ class DeviceTierConfig extends \Google\Collection
     return $this->deviceTierSet;
   }
   /**
-   * Definition of user country sets for the app.
-   *
-   * @param UserCountrySet[] $userCountrySets
+   * @param UserCountrySet[]
    */
   public function setUserCountrySets($userCountrySets)
   {

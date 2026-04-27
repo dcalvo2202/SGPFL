@@ -20,24 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1TensorboardTensor extends \Google\Model
 {
   /**
-   * Required. Serialized form of https://github.com/tensorflow/tensorflow/blob/
-   * master/tensorflow/core/framework/tensor.proto
-   *
    * @var string
    */
   public $value;
   /**
-   * Optional. Version number of TensorProto used to serialize value.
-   *
    * @var int
    */
   public $versionNumber;
 
   /**
-   * Required. Serialized form of https://github.com/tensorflow/tensorflow/blob/
-   * master/tensorflow/core/framework/tensor.proto
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {
@@ -51,9 +43,7 @@ class GoogleCloudAiplatformV1TensorboardTensor extends \Google\Model
     return $this->value;
   }
   /**
-   * Optional. Version number of TensorProto used to serialize value.
-   *
-   * @param int $versionNumber
+   * @param int
    */
   public function setVersionNumber($versionNumber)
   {

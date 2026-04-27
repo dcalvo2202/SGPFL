@@ -41,8 +41,10 @@ class SpacesMembers extends \Google\Service\Resource
    * authorize): - [App
    * authentication](https://developers.google.com/workspace/chat/authenticate-
    * authorize-chat-app) with [administrator
-   * approval](https://support.google.com/a?p=chat-app-auth) and the authorization
-   * scope: - `https://www.googleapis.com/auth/chat.app.memberships` - [User
+   * approval](https://support.google.com/a?p=chat-app-auth) in [Developer
+   * Preview](https://developers.google.com/workspace/preview) and the
+   * authorization scope: - `https://www.googleapis.com/auth/chat.app.memberships`
+   * - [User
    * authentication](https://developers.google.com/workspace/chat/authenticate-
    * authorize-chat-user) with one of the following authorization scopes: -
    * `https://www.googleapis.com/auth/chat.memberships` -
@@ -93,8 +95,10 @@ class SpacesMembers extends \Google\Service\Resource
    * authorize): - [App
    * authentication](https://developers.google.com/workspace/chat/authenticate-
    * authorize-chat-app) with [administrator
-   * approval](https://support.google.com/a?p=chat-app-auth) and the authorization
-   * scope: - `https://www.googleapis.com/auth/chat.app.memberships` - [User
+   * approval](https://support.google.com/a?p=chat-app-auth) in [Developer
+   * Preview](https://developers.google.com/workspace/preview) and the
+   * authorization scope: - `https://www.googleapis.com/auth/chat.app.memberships`
+   * - [User
    * authentication](https://developers.google.com/workspace/chat/authenticate-
    * authorize-chat-user) with one of the following authorization scopes: -
    * `https://www.googleapis.com/auth/chat.memberships` -
@@ -150,11 +154,8 @@ class SpacesMembers extends \Google\Service\Resource
    * [authentication](https://developers.google.com/workspace/chat/authenticate-
    * authorize): - [App
    * authentication](https://developers.google.com/workspace/chat/authenticate-
-   * authorize-chat-app) with one of the following authorization scopes: -
-   * `https://www.googleapis.com/auth/chat.bot` -
-   * `https://www.googleapis.com/auth/chat.app.memberships` (requires
-   * [administrator approval](https://support.google.com/a?p=chat-app-auth)) -
-   * [User
+   * authorize-chat-app) with the authorization scope: -
+   * `https://www.googleapis.com/auth/chat.bot` - [User
    * authentication](https://developers.google.com/workspace/chat/authenticate-
    * authorize-chat-user) with one of the following authorization scopes: -
    * `https://www.googleapis.com/auth/chat.memberships.readonly` -
@@ -205,11 +206,8 @@ class SpacesMembers extends \Google\Service\Resource
    * [authentication](https://developers.google.com/workspace/chat/authenticate-
    * authorize): - [App
    * authentication](https://developers.google.com/workspace/chat/authenticate-
-   * authorize-chat-app) with one of the following authorization scopes: -
-   * `https://www.googleapis.com/auth/chat.bot` -
-   * `https://www.googleapis.com/auth/chat.app.memberships` (requires
-   * [administrator approval](https://support.google.com/a?p=chat-app-auth)) -
-   * [User
+   * authorize-chat-app) with the authorization scope: -
+   * `https://www.googleapis.com/auth/chat.bot` - [User
    * authentication](https://developers.google.com/workspace/chat/authenticate-
    * authorize-chat-user) with one of the following authorization scopes: -
    * `https://www.googleapis.com/auth/chat.memberships.readonly` -
@@ -288,9 +286,10 @@ class SpacesMembers extends \Google\Service\Resource
    * authorize): - [App
    * authentication](https://developers.google.com/workspace/chat/authenticate-
    * authorize-chat-app) with [administrator
-   * approval](https://support.google.com/a?p=chat-app-auth) and the authorization
-   * scope: - `https://www.googleapis.com/auth/chat.app.memberships` (only in
-   * spaces the app created) - [User
+   * approval](https://support.google.com/a?p=chat-app-auth) in [Developer
+   * Preview](https://developers.google.com/workspace/preview) and the
+   * authorization scope: - `https://www.googleapis.com/auth/chat.app.memberships`
+   * (only in spaces the app created) - [User
    * authentication](https://developers.google.com/workspace/chat/authenticate-
    * authorize-chat-user) with one of the following authorization scopes: -
    * `https://www.googleapis.com/auth/chat.memberships` -

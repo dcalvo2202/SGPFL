@@ -69,7 +69,7 @@ class TaskMetrics extends \Google\Model
   protected $shuffleWriteMetricsDataType = '';
 
   /**
-   * @param string $diskBytesSpilled
+   * @param string
    */
   public function setDiskBytesSpilled($diskBytesSpilled)
   {
@@ -83,7 +83,7 @@ class TaskMetrics extends \Google\Model
     return $this->diskBytesSpilled;
   }
   /**
-   * @param string $executorCpuTimeNanos
+   * @param string
    */
   public function setExecutorCpuTimeNanos($executorCpuTimeNanos)
   {
@@ -97,7 +97,7 @@ class TaskMetrics extends \Google\Model
     return $this->executorCpuTimeNanos;
   }
   /**
-   * @param string $executorDeserializeCpuTimeNanos
+   * @param string
    */
   public function setExecutorDeserializeCpuTimeNanos($executorDeserializeCpuTimeNanos)
   {
@@ -111,7 +111,7 @@ class TaskMetrics extends \Google\Model
     return $this->executorDeserializeCpuTimeNanos;
   }
   /**
-   * @param string $executorDeserializeTimeMillis
+   * @param string
    */
   public function setExecutorDeserializeTimeMillis($executorDeserializeTimeMillis)
   {
@@ -125,7 +125,7 @@ class TaskMetrics extends \Google\Model
     return $this->executorDeserializeTimeMillis;
   }
   /**
-   * @param string $executorRunTimeMillis
+   * @param string
    */
   public function setExecutorRunTimeMillis($executorRunTimeMillis)
   {
@@ -139,7 +139,7 @@ class TaskMetrics extends \Google\Model
     return $this->executorRunTimeMillis;
   }
   /**
-   * @param InputMetrics $inputMetrics
+   * @param InputMetrics
    */
   public function setInputMetrics(InputMetrics $inputMetrics)
   {
@@ -153,7 +153,7 @@ class TaskMetrics extends \Google\Model
     return $this->inputMetrics;
   }
   /**
-   * @param string $jvmGcTimeMillis
+   * @param string
    */
   public function setJvmGcTimeMillis($jvmGcTimeMillis)
   {
@@ -167,7 +167,7 @@ class TaskMetrics extends \Google\Model
     return $this->jvmGcTimeMillis;
   }
   /**
-   * @param string $memoryBytesSpilled
+   * @param string
    */
   public function setMemoryBytesSpilled($memoryBytesSpilled)
   {
@@ -181,7 +181,7 @@ class TaskMetrics extends \Google\Model
     return $this->memoryBytesSpilled;
   }
   /**
-   * @param OutputMetrics $outputMetrics
+   * @param OutputMetrics
    */
   public function setOutputMetrics(OutputMetrics $outputMetrics)
   {
@@ -195,7 +195,7 @@ class TaskMetrics extends \Google\Model
     return $this->outputMetrics;
   }
   /**
-   * @param string $peakExecutionMemoryBytes
+   * @param string
    */
   public function setPeakExecutionMemoryBytes($peakExecutionMemoryBytes)
   {
@@ -209,7 +209,7 @@ class TaskMetrics extends \Google\Model
     return $this->peakExecutionMemoryBytes;
   }
   /**
-   * @param string $resultSerializationTimeMillis
+   * @param string
    */
   public function setResultSerializationTimeMillis($resultSerializationTimeMillis)
   {
@@ -223,7 +223,7 @@ class TaskMetrics extends \Google\Model
     return $this->resultSerializationTimeMillis;
   }
   /**
-   * @param string $resultSize
+   * @param string
    */
   public function setResultSize($resultSize)
   {
@@ -237,7 +237,7 @@ class TaskMetrics extends \Google\Model
     return $this->resultSize;
   }
   /**
-   * @param ShuffleReadMetrics $shuffleReadMetrics
+   * @param ShuffleReadMetrics
    */
   public function setShuffleReadMetrics(ShuffleReadMetrics $shuffleReadMetrics)
   {
@@ -251,7 +251,7 @@ class TaskMetrics extends \Google\Model
     return $this->shuffleReadMetrics;
   }
   /**
-   * @param ShuffleWriteMetrics $shuffleWriteMetrics
+   * @param ShuffleWriteMetrics
    */
   public function setShuffleWriteMetrics(ShuffleWriteMetrics $shuffleWriteMetrics)
   {

@@ -22,17 +22,12 @@ class SslCertDetail extends \Google\Model
   protected $certInfoType = SslCert::class;
   protected $certInfoDataType = '';
   /**
-   * The private key for the client cert, in pem format. Keep private in order
-   * to protect your security.
-   *
    * @var string
    */
   public $certPrivateKey;
 
   /**
-   * The public information about the cert.
-   *
-   * @param SslCert $certInfo
+   * @param SslCert
    */
   public function setCertInfo(SslCert $certInfo)
   {
@@ -46,10 +41,7 @@ class SslCertDetail extends \Google\Model
     return $this->certInfo;
   }
   /**
-   * The private key for the client cert, in pem format. Keep private in order
-   * to protect your security.
-   *
-   * @param string $certPrivateKey
+   * @param string
    */
   public function setCertPrivateKey($certPrivateKey)
   {

@@ -22,17 +22,12 @@ class GooglePrivacyDlpV2DiscoveryOtherCloudConditions extends \Google\Model
   protected $amazonS3BucketConditionsType = GooglePrivacyDlpV2AmazonS3BucketConditions::class;
   protected $amazonS3BucketConditionsDataType = '';
   /**
-   * Minimum age a resource must be before Cloud DLP can profile it. Value must
-   * be 1 hour or greater.
-   *
    * @var string
    */
   public $minAge;
 
   /**
-   * Amazon S3 bucket conditions.
-   *
-   * @param GooglePrivacyDlpV2AmazonS3BucketConditions $amazonS3BucketConditions
+   * @param GooglePrivacyDlpV2AmazonS3BucketConditions
    */
   public function setAmazonS3BucketConditions(GooglePrivacyDlpV2AmazonS3BucketConditions $amazonS3BucketConditions)
   {
@@ -46,10 +41,7 @@ class GooglePrivacyDlpV2DiscoveryOtherCloudConditions extends \Google\Model
     return $this->amazonS3BucketConditions;
   }
   /**
-   * Minimum age a resource must be before Cloud DLP can profile it. Value must
-   * be 1 hour or greater.
-   *
-   * @param string $minAge
+   * @param string
    */
   public function setMinAge($minAge)
   {

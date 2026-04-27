@@ -21,9 +21,6 @@ class StackFrames extends \Google\Collection
 {
   protected $collection_key = 'frame';
   /**
-   * The number of stack frames that were dropped because there were too many
-   * stack frames. If this value is 0, then no stack frames were dropped.
-   *
    * @var int
    */
   public $droppedFramesCount;
@@ -31,10 +28,7 @@ class StackFrames extends \Google\Collection
   protected $frameDataType = 'array';
 
   /**
-   * The number of stack frames that were dropped because there were too many
-   * stack frames. If this value is 0, then no stack frames were dropped.
-   *
-   * @param int $droppedFramesCount
+   * @param int
    */
   public function setDroppedFramesCount($droppedFramesCount)
   {
@@ -48,9 +42,7 @@ class StackFrames extends \Google\Collection
     return $this->droppedFramesCount;
   }
   /**
-   * Stack frames in this call stack.
-   *
-   * @param StackFrame[] $frame
+   * @param StackFrame[]
    */
   public function setFrame($frame)
   {

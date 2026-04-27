@@ -25,9 +25,7 @@ class TableBorderCell extends \Google\Model
   protected $tableBorderPropertiesDataType = '';
 
   /**
-   * The location of the border within the border table.
-   *
-   * @param TableCellLocation $location
+   * @param TableCellLocation
    */
   public function setLocation(TableCellLocation $location)
   {
@@ -41,9 +39,7 @@ class TableBorderCell extends \Google\Model
     return $this->location;
   }
   /**
-   * The border properties.
-   *
-   * @param TableBorderProperties $tableBorderProperties
+   * @param TableBorderProperties
    */
   public function setTableBorderProperties(TableBorderProperties $tableBorderProperties)
   {

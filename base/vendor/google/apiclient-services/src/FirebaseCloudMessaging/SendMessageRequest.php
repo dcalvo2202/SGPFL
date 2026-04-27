@@ -22,16 +22,12 @@ class SendMessageRequest extends \Google\Model
   protected $messageType = Message::class;
   protected $messageDataType = '';
   /**
-   * Flag for testing the request without actually delivering the message.
-   *
    * @var bool
    */
   public $validateOnly;
 
   /**
-   * Required. Message to send.
-   *
-   * @param Message $message
+   * @param Message
    */
   public function setMessage(Message $message)
   {
@@ -45,9 +41,7 @@ class SendMessageRequest extends \Google\Model
     return $this->message;
   }
   /**
-   * Flag for testing the request without actually delivering the message.
-   *
-   * @param bool $validateOnly
+   * @param bool
    */
   public function setValidateOnly($validateOnly)
   {

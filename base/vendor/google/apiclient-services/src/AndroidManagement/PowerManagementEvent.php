@@ -20,60 +20,20 @@ namespace Google\Service\AndroidManagement;
 class PowerManagementEvent extends \Google\Model
 {
   /**
-   * Unspecified. No events have this type.
-   */
-  public const EVENT_TYPE_POWER_MANAGEMENT_EVENT_TYPE_UNSPECIFIED = 'POWER_MANAGEMENT_EVENT_TYPE_UNSPECIFIED';
-  /**
-   * Battery level was measured.
-   */
-  public const EVENT_TYPE_BATTERY_LEVEL_COLLECTED = 'BATTERY_LEVEL_COLLECTED';
-  /**
-   * The device started charging.
-   */
-  public const EVENT_TYPE_POWER_CONNECTED = 'POWER_CONNECTED';
-  /**
-   * The device stopped charging.
-   */
-  public const EVENT_TYPE_POWER_DISCONNECTED = 'POWER_DISCONNECTED';
-  /**
-   * The device entered low-power mode.
-   */
-  public const EVENT_TYPE_BATTERY_LOW = 'BATTERY_LOW';
-  /**
-   * The device exited low-power mode.
-   */
-  public const EVENT_TYPE_BATTERY_OKAY = 'BATTERY_OKAY';
-  /**
-   * The device booted.
-   */
-  public const EVENT_TYPE_BOOT_COMPLETED = 'BOOT_COMPLETED';
-  /**
-   * The device shut down.
-   */
-  public const EVENT_TYPE_SHUTDOWN = 'SHUTDOWN';
-  /**
-   * For BATTERY_LEVEL_COLLECTED events, the battery level as a percentage.
-   *
    * @var float
    */
   public $batteryLevel;
   /**
-   * The creation time of the event.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Event type.
-   *
    * @var string
    */
   public $eventType;
 
   /**
-   * For BATTERY_LEVEL_COLLECTED events, the battery level as a percentage.
-   *
-   * @param float $batteryLevel
+   * @param float
    */
   public function setBatteryLevel($batteryLevel)
   {
@@ -87,9 +47,7 @@ class PowerManagementEvent extends \Google\Model
     return $this->batteryLevel;
   }
   /**
-   * The creation time of the event.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -103,20 +61,14 @@ class PowerManagementEvent extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Event type.
-   *
-   * Accepted values: POWER_MANAGEMENT_EVENT_TYPE_UNSPECIFIED,
-   * BATTERY_LEVEL_COLLECTED, POWER_CONNECTED, POWER_DISCONNECTED, BATTERY_LOW,
-   * BATTERY_OKAY, BOOT_COMPLETED, SHUTDOWN
-   *
-   * @param self::EVENT_TYPE_* $eventType
+   * @param string
    */
   public function setEventType($eventType)
   {
     $this->eventType = $eventType;
   }
   /**
-   * @return self::EVENT_TYPE_*
+   * @return string
    */
   public function getEventType()
   {

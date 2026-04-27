@@ -20,30 +20,18 @@ namespace Google\Service\Translate;
 class DocumentInputConfig extends \Google\Model
 {
   /**
-   * Document's content represented as a stream of bytes.
-   *
    * @var string
    */
   public $content;
   protected $gcsSourceType = GcsSource::class;
   protected $gcsSourceDataType = '';
   /**
-   * Specifies the input document's mime_type. If not specified it will be
-   * determined using the file extension for gcs_source provided files. For a
-   * file provided through bytes content the mime_type must be provided.
-   * Currently supported mime types are: - application/pdf -
-   * application/vnd.openxmlformats-officedocument.wordprocessingml.document -
-   * application/vnd.openxmlformats-officedocument.presentationml.presentation -
-   * application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-   *
    * @var string
    */
   public $mimeType;
 
   /**
-   * Document's content represented as a stream of bytes.
-   *
-   * @param string $content
+   * @param string
    */
   public function setContent($content)
   {
@@ -57,10 +45,7 @@ class DocumentInputConfig extends \Google\Model
     return $this->content;
   }
   /**
-   * Google Cloud Storage location. This must be a single file. For example:
-   * gs://example_bucket/example_file.pdf
-   *
-   * @param GcsSource $gcsSource
+   * @param GcsSource
    */
   public function setGcsSource(GcsSource $gcsSource)
   {
@@ -74,15 +59,7 @@ class DocumentInputConfig extends \Google\Model
     return $this->gcsSource;
   }
   /**
-   * Specifies the input document's mime_type. If not specified it will be
-   * determined using the file extension for gcs_source provided files. For a
-   * file provided through bytes content the mime_type must be provided.
-   * Currently supported mime types are: - application/pdf -
-   * application/vnd.openxmlformats-officedocument.wordprocessingml.document -
-   * application/vnd.openxmlformats-officedocument.presentationml.presentation -
-   * application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-   *
-   * @param string $mimeType
+   * @param string
    */
   public function setMimeType($mimeType)
   {

@@ -24,9 +24,7 @@ class StructuredDataObject extends \Google\Collection
   protected $propertiesDataType = 'array';
 
   /**
-   * The properties for the object. The maximum number of elements is 1000.
-   *
-   * @param NamedProperty[] $properties
+   * @param NamedProperty[]
    */
   public function setProperties($properties)
   {

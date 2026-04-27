@@ -20,23 +20,16 @@ namespace Google\Service\Translate;
 class DetectedLanguage extends \Google\Model
 {
   /**
-   * The confidence of the detection result for this language.
-   *
    * @var float
    */
   public $confidence;
   /**
-   * The ISO-639 language code of the source content in the request, detected
-   * automatically.
-   *
    * @var string
    */
   public $languageCode;
 
   /**
-   * The confidence of the detection result for this language.
-   *
-   * @param float $confidence
+   * @param float
    */
   public function setConfidence($confidence)
   {
@@ -50,10 +43,7 @@ class DetectedLanguage extends \Google\Model
     return $this->confidence;
   }
   /**
-   * The ISO-639 language code of the source content in the request, detected
-   * automatically.
-   *
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {

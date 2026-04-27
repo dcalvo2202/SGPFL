@@ -20,46 +20,24 @@ namespace Google\Service\VMwareEngine;
 class Vcenter extends \Google\Model
 {
   /**
-   * Unspecified appliance state. This is the default value.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The appliance is operational and can be used.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * The appliance is being deployed.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * Fully qualified domain name of the appliance.
-   *
    * @var string
    */
   public $fqdn;
   /**
-   * Internal IP address of the appliance.
-   *
    * @var string
    */
   public $internalIp;
   /**
-   * Output only. The state of the appliance.
-   *
    * @var string
    */
   public $state;
   /**
-   * Version of the appliance.
-   *
    * @var string
    */
   public $version;
 
   /**
-   * Fully qualified domain name of the appliance.
-   *
-   * @param string $fqdn
+   * @param string
    */
   public function setFqdn($fqdn)
   {
@@ -73,9 +51,7 @@ class Vcenter extends \Google\Model
     return $this->fqdn;
   }
   /**
-   * Internal IP address of the appliance.
-   *
-   * @param string $internalIp
+   * @param string
    */
   public function setInternalIp($internalIp)
   {
@@ -89,27 +65,21 @@ class Vcenter extends \Google\Model
     return $this->internalIp;
   }
   /**
-   * Output only. The state of the appliance.
-   *
-   * Accepted values: STATE_UNSPECIFIED, ACTIVE, CREATING
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Version of the appliance.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

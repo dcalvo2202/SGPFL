@@ -20,50 +20,16 @@ namespace Google\Service\CloudRun;
 class GoogleDevtoolsCloudbuildV1FailureInfo extends \Google\Model
 {
   /**
-   * Type unspecified
-   */
-  public const TYPE_FAILURE_TYPE_UNSPECIFIED = 'FAILURE_TYPE_UNSPECIFIED';
-  /**
-   * Unable to push the image to the repository.
-   */
-  public const TYPE_PUSH_FAILED = 'PUSH_FAILED';
-  /**
-   * Final image not found.
-   */
-  public const TYPE_PUSH_IMAGE_NOT_FOUND = 'PUSH_IMAGE_NOT_FOUND';
-  /**
-   * Unauthorized push of the final image.
-   */
-  public const TYPE_PUSH_NOT_AUTHORIZED = 'PUSH_NOT_AUTHORIZED';
-  /**
-   * Backend logging failures. Should retry.
-   */
-  public const TYPE_LOGGING_FAILURE = 'LOGGING_FAILURE';
-  /**
-   * A build step has failed.
-   */
-  public const TYPE_USER_BUILD_STEP = 'USER_BUILD_STEP';
-  /**
-   * The source fetching has failed.
-   */
-  public const TYPE_FETCH_SOURCE_FAILED = 'FETCH_SOURCE_FAILED';
-  /**
-   * Explains the failure issue in more detail using hard-coded text.
-   *
    * @var string
    */
   public $detail;
   /**
-   * The name of the failure.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Explains the failure issue in more detail using hard-coded text.
-   *
-   * @param string $detail
+   * @param string
    */
   public function setDetail($detail)
   {
@@ -77,20 +43,14 @@ class GoogleDevtoolsCloudbuildV1FailureInfo extends \Google\Model
     return $this->detail;
   }
   /**
-   * The name of the failure.
-   *
-   * Accepted values: FAILURE_TYPE_UNSPECIFIED, PUSH_FAILED,
-   * PUSH_IMAGE_NOT_FOUND, PUSH_NOT_AUTHORIZED, LOGGING_FAILURE,
-   * USER_BUILD_STEP, FETCH_SOURCE_FAILED
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

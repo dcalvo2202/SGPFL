@@ -20,22 +20,16 @@ namespace Google\Service\DriveLabels;
 class GoogleAppsDriveLabelsV2IntegerLimits extends \Google\Model
 {
   /**
-   * Maximum value for an integer field type.
-   *
    * @var string
    */
   public $maxValue;
   /**
-   * Minimum value for an integer field type.
-   *
    * @var string
    */
   public $minValue;
 
   /**
-   * Maximum value for an integer field type.
-   *
-   * @param string $maxValue
+   * @param string
    */
   public function setMaxValue($maxValue)
   {
@@ -49,9 +43,7 @@ class GoogleAppsDriveLabelsV2IntegerLimits extends \Google\Model
     return $this->maxValue;
   }
   /**
-   * Minimum value for an integer field type.
-   *
-   * @param string $minValue
+   * @param string
    */
   public function setMinValue($minValue)
   {

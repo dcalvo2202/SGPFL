@@ -21,44 +21,30 @@ class CertificateMap extends \Google\Collection
 {
   protected $collection_key = 'gclbTargets';
   /**
-   * Output only. The creation timestamp of a Certificate Map.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. One or more paragraphs of text description of a certificate map.
-   *
    * @var string
    */
   public $description;
   protected $gclbTargetsType = GclbTarget::class;
   protected $gclbTargetsDataType = 'array';
   /**
-   * Optional. Set of labels associated with a Certificate Map.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Identifier. A user-defined name of the Certificate Map. Certificate Map
-   * names must be unique globally and match pattern
-   * `projects/locations/certificateMaps`.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The update timestamp of a Certificate Map.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. The creation timestamp of a Certificate Map.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -72,9 +58,7 @@ class CertificateMap extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Optional. One or more paragraphs of text description of a certificate map.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -88,10 +72,7 @@ class CertificateMap extends \Google\Collection
     return $this->description;
   }
   /**
-   * Output only. A list of GCLB targets that use this Certificate Map. A Target
-   * Proxy is only present on this list if it's attached to a Forwarding Rule.
-   *
-   * @param GclbTarget[] $gclbTargets
+   * @param GclbTarget[]
    */
   public function setGclbTargets($gclbTargets)
   {
@@ -105,9 +86,7 @@ class CertificateMap extends \Google\Collection
     return $this->gclbTargets;
   }
   /**
-   * Optional. Set of labels associated with a Certificate Map.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -121,11 +100,7 @@ class CertificateMap extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Identifier. A user-defined name of the Certificate Map. Certificate Map
-   * names must be unique globally and match pattern
-   * `projects/locations/certificateMaps`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -139,9 +114,7 @@ class CertificateMap extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. The update timestamp of a Certificate Map.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

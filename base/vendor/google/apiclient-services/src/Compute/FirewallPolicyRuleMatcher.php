@@ -19,147 +19,66 @@ namespace Google\Service\Compute;
 
 class FirewallPolicyRuleMatcher extends \Google\Collection
 {
-  public const DEST_NETWORK_CONTEXT_INTERNET = 'INTERNET';
-  public const DEST_NETWORK_CONTEXT_INTRA_VPC = 'INTRA_VPC';
-  public const DEST_NETWORK_CONTEXT_NON_INTERNET = 'NON_INTERNET';
-  public const DEST_NETWORK_CONTEXT_UNSPECIFIED = 'UNSPECIFIED';
-  public const DEST_NETWORK_CONTEXT_VPC_NETWORKS = 'VPC_NETWORKS';
-  public const DEST_NETWORK_TYPE_INTERNET = 'INTERNET';
-  public const DEST_NETWORK_TYPE_INTRA_VPC = 'INTRA_VPC';
-  public const DEST_NETWORK_TYPE_NON_INTERNET = 'NON_INTERNET';
-  public const DEST_NETWORK_TYPE_UNSPECIFIED = 'UNSPECIFIED';
-  public const DEST_NETWORK_TYPE_VPC_NETWORKS = 'VPC_NETWORKS';
-  public const SRC_NETWORK_CONTEXT_INTERNET = 'INTERNET';
-  public const SRC_NETWORK_CONTEXT_INTRA_VPC = 'INTRA_VPC';
-  public const SRC_NETWORK_CONTEXT_NON_INTERNET = 'NON_INTERNET';
-  public const SRC_NETWORK_CONTEXT_UNSPECIFIED = 'UNSPECIFIED';
-  public const SRC_NETWORK_CONTEXT_VPC_NETWORKS = 'VPC_NETWORKS';
-  public const SRC_NETWORK_TYPE_INTERNET = 'INTERNET';
-  public const SRC_NETWORK_TYPE_INTRA_VPC = 'INTRA_VPC';
-  public const SRC_NETWORK_TYPE_NON_INTERNET = 'NON_INTERNET';
-  public const SRC_NETWORK_TYPE_UNSPECIFIED = 'UNSPECIFIED';
-  public const SRC_NETWORK_TYPE_VPC_NETWORKS = 'VPC_NETWORKS';
   protected $collection_key = 'srcThreatIntelligences';
   /**
-   * Address groups which should be matched against the traffic destination.
-   * Maximum number of destination address groups is 10.
-   *
    * @var string[]
    */
   public $destAddressGroups;
   /**
-   * Fully Qualified Domain Name (FQDN) which should be matched against traffic
-   * destination. Maximum number of destination fqdn allowed is 100.
-   *
    * @var string[]
    */
   public $destFqdns;
   /**
-   * CIDR IP address range. Maximum number of destination CIDR IP ranges allowed
-   * is 5000.
-   *
    * @var string[]
    */
   public $destIpRanges;
   /**
-   * Network context of the traffic destination. Allowed values are:
-   * - UNSPECIFIED      - INTERNET      - NON_INTERNET
-   *
-   * @var string
-   */
-  public $destNetworkContext;
-  /**
-   * Network type of the traffic destination. Allowed values are:              -
-   * UNSPECIFIED      - INTERNET      - NON_INTERNET
-   *
    * @var string
    */
   public $destNetworkType;
   /**
-   * Region codes whose IP addresses will be used to match for destination of
-   * traffic. Should be specified as 2 letter country code defined as per ISO
-   * 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes
-   * allowed is 5000.
-   *
    * @var string[]
    */
   public $destRegionCodes;
   /**
-   * Names of Network Threat Intelligence lists. The IPs in these lists will be
-   * matched against traffic destination.
-   *
    * @var string[]
    */
   public $destThreatIntelligences;
   protected $layer4ConfigsType = FirewallPolicyRuleMatcherLayer4Config::class;
   protected $layer4ConfigsDataType = 'array';
   /**
-   * Address groups which should be matched against the traffic source. Maximum
-   * number of source address groups is 10.
-   *
    * @var string[]
    */
   public $srcAddressGroups;
   /**
-   * Fully Qualified Domain Name (FQDN) which should be matched against traffic
-   * source. Maximum number of source fqdn allowed is 100.
-   *
    * @var string[]
    */
   public $srcFqdns;
   /**
-   * CIDR IP address range. Maximum number of source CIDR IP ranges allowed is
-   * 5000.
-   *
    * @var string[]
    */
   public $srcIpRanges;
   /**
-   * Network context of the traffic source. Allowed values are:              -
-   * UNSPECIFIED      - INTERNET      - INTRA_VPC      - NON_INTERNET      -
-   * VPC_NETWORKS
-   *
-   * @var string
-   */
-  public $srcNetworkContext;
-  /**
-   * Network type of the traffic source. Allowed values are:              -
-   * UNSPECIFIED      - INTERNET      - INTRA_VPC      - NON_INTERNET      -
-   * VPC_NETWORKS
-   *
    * @var string
    */
   public $srcNetworkType;
   /**
-   * Networks of the traffic source. It can be either a full or partial url.
-   *
    * @var string[]
    */
   public $srcNetworks;
   /**
-   * Region codes whose IP addresses will be used to match for source of
-   * traffic. Should be specified as 2 letter country code defined as per ISO
-   * 3166 alpha-2 country codes. ex."US" Maximum number of source region codes
-   * allowed is 5000.
-   *
    * @var string[]
    */
   public $srcRegionCodes;
   protected $srcSecureTagsType = FirewallPolicyRuleSecureTag::class;
   protected $srcSecureTagsDataType = 'array';
   /**
-   * Names of Network Threat Intelligence lists. The IPs in these lists will be
-   * matched against traffic source.
-   *
    * @var string[]
    */
   public $srcThreatIntelligences;
 
   /**
-   * Address groups which should be matched against the traffic destination.
-   * Maximum number of destination address groups is 10.
-   *
-   * @param string[] $destAddressGroups
+   * @param string[]
    */
   public function setDestAddressGroups($destAddressGroups)
   {
@@ -173,10 +92,7 @@ class FirewallPolicyRuleMatcher extends \Google\Collection
     return $this->destAddressGroups;
   }
   /**
-   * Fully Qualified Domain Name (FQDN) which should be matched against traffic
-   * destination. Maximum number of destination fqdn allowed is 100.
-   *
-   * @param string[] $destFqdns
+   * @param string[]
    */
   public function setDestFqdns($destFqdns)
   {
@@ -190,10 +106,7 @@ class FirewallPolicyRuleMatcher extends \Google\Collection
     return $this->destFqdns;
   }
   /**
-   * CIDR IP address range. Maximum number of destination CIDR IP ranges allowed
-   * is 5000.
-   *
-   * @param string[] $destIpRanges
+   * @param string[]
    */
   public function setDestIpRanges($destIpRanges)
   {
@@ -207,52 +120,21 @@ class FirewallPolicyRuleMatcher extends \Google\Collection
     return $this->destIpRanges;
   }
   /**
-   * Network context of the traffic destination. Allowed values are:
-   * - UNSPECIFIED      - INTERNET      - NON_INTERNET
-   *
-   * Accepted values: INTERNET, INTRA_VPC, NON_INTERNET, UNSPECIFIED,
-   * VPC_NETWORKS
-   *
-   * @param self::DEST_NETWORK_CONTEXT_* $destNetworkContext
-   */
-  public function setDestNetworkContext($destNetworkContext)
-  {
-    $this->destNetworkContext = $destNetworkContext;
-  }
-  /**
-   * @return self::DEST_NETWORK_CONTEXT_*
-   */
-  public function getDestNetworkContext()
-  {
-    return $this->destNetworkContext;
-  }
-  /**
-   * Network type of the traffic destination. Allowed values are:              -
-   * UNSPECIFIED      - INTERNET      - NON_INTERNET
-   *
-   * Accepted values: INTERNET, INTRA_VPC, NON_INTERNET, UNSPECIFIED,
-   * VPC_NETWORKS
-   *
-   * @param self::DEST_NETWORK_TYPE_* $destNetworkType
+   * @param string
    */
   public function setDestNetworkType($destNetworkType)
   {
     $this->destNetworkType = $destNetworkType;
   }
   /**
-   * @return self::DEST_NETWORK_TYPE_*
+   * @return string
    */
   public function getDestNetworkType()
   {
     return $this->destNetworkType;
   }
   /**
-   * Region codes whose IP addresses will be used to match for destination of
-   * traffic. Should be specified as 2 letter country code defined as per ISO
-   * 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes
-   * allowed is 5000.
-   *
-   * @param string[] $destRegionCodes
+   * @param string[]
    */
   public function setDestRegionCodes($destRegionCodes)
   {
@@ -266,10 +148,7 @@ class FirewallPolicyRuleMatcher extends \Google\Collection
     return $this->destRegionCodes;
   }
   /**
-   * Names of Network Threat Intelligence lists. The IPs in these lists will be
-   * matched against traffic destination.
-   *
-   * @param string[] $destThreatIntelligences
+   * @param string[]
    */
   public function setDestThreatIntelligences($destThreatIntelligences)
   {
@@ -283,9 +162,7 @@ class FirewallPolicyRuleMatcher extends \Google\Collection
     return $this->destThreatIntelligences;
   }
   /**
-   * Pairs of IP protocols and ports that the rule should match.
-   *
-   * @param FirewallPolicyRuleMatcherLayer4Config[] $layer4Configs
+   * @param FirewallPolicyRuleMatcherLayer4Config[]
    */
   public function setLayer4Configs($layer4Configs)
   {
@@ -299,10 +176,7 @@ class FirewallPolicyRuleMatcher extends \Google\Collection
     return $this->layer4Configs;
   }
   /**
-   * Address groups which should be matched against the traffic source. Maximum
-   * number of source address groups is 10.
-   *
-   * @param string[] $srcAddressGroups
+   * @param string[]
    */
   public function setSrcAddressGroups($srcAddressGroups)
   {
@@ -316,10 +190,7 @@ class FirewallPolicyRuleMatcher extends \Google\Collection
     return $this->srcAddressGroups;
   }
   /**
-   * Fully Qualified Domain Name (FQDN) which should be matched against traffic
-   * source. Maximum number of source fqdn allowed is 100.
-   *
-   * @param string[] $srcFqdns
+   * @param string[]
    */
   public function setSrcFqdns($srcFqdns)
   {
@@ -333,10 +204,7 @@ class FirewallPolicyRuleMatcher extends \Google\Collection
     return $this->srcFqdns;
   }
   /**
-   * CIDR IP address range. Maximum number of source CIDR IP ranges allowed is
-   * 5000.
-   *
-   * @param string[] $srcIpRanges
+   * @param string[]
    */
   public function setSrcIpRanges($srcIpRanges)
   {
@@ -350,51 +218,21 @@ class FirewallPolicyRuleMatcher extends \Google\Collection
     return $this->srcIpRanges;
   }
   /**
-   * Network context of the traffic source. Allowed values are:              -
-   * UNSPECIFIED      - INTERNET      - INTRA_VPC      - NON_INTERNET      -
-   * VPC_NETWORKS
-   *
-   * Accepted values: INTERNET, INTRA_VPC, NON_INTERNET, UNSPECIFIED,
-   * VPC_NETWORKS
-   *
-   * @param self::SRC_NETWORK_CONTEXT_* $srcNetworkContext
-   */
-  public function setSrcNetworkContext($srcNetworkContext)
-  {
-    $this->srcNetworkContext = $srcNetworkContext;
-  }
-  /**
-   * @return self::SRC_NETWORK_CONTEXT_*
-   */
-  public function getSrcNetworkContext()
-  {
-    return $this->srcNetworkContext;
-  }
-  /**
-   * Network type of the traffic source. Allowed values are:              -
-   * UNSPECIFIED      - INTERNET      - INTRA_VPC      - NON_INTERNET      -
-   * VPC_NETWORKS
-   *
-   * Accepted values: INTERNET, INTRA_VPC, NON_INTERNET, UNSPECIFIED,
-   * VPC_NETWORKS
-   *
-   * @param self::SRC_NETWORK_TYPE_* $srcNetworkType
+   * @param string
    */
   public function setSrcNetworkType($srcNetworkType)
   {
     $this->srcNetworkType = $srcNetworkType;
   }
   /**
-   * @return self::SRC_NETWORK_TYPE_*
+   * @return string
    */
   public function getSrcNetworkType()
   {
     return $this->srcNetworkType;
   }
   /**
-   * Networks of the traffic source. It can be either a full or partial url.
-   *
-   * @param string[] $srcNetworks
+   * @param string[]
    */
   public function setSrcNetworks($srcNetworks)
   {
@@ -408,12 +246,7 @@ class FirewallPolicyRuleMatcher extends \Google\Collection
     return $this->srcNetworks;
   }
   /**
-   * Region codes whose IP addresses will be used to match for source of
-   * traffic. Should be specified as 2 letter country code defined as per ISO
-   * 3166 alpha-2 country codes. ex."US" Maximum number of source region codes
-   * allowed is 5000.
-   *
-   * @param string[] $srcRegionCodes
+   * @param string[]
    */
   public function setSrcRegionCodes($srcRegionCodes)
   {
@@ -427,12 +260,7 @@ class FirewallPolicyRuleMatcher extends \Google\Collection
     return $this->srcRegionCodes;
   }
   /**
-   * List of secure tag values, which should be matched at the source of the
-   * traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and
-   * there is no srcIpRange, this rule will be ignored. Maximum number of source
-   * tag values allowed is 256.
-   *
-   * @param FirewallPolicyRuleSecureTag[] $srcSecureTags
+   * @param FirewallPolicyRuleSecureTag[]
    */
   public function setSrcSecureTags($srcSecureTags)
   {
@@ -446,10 +274,7 @@ class FirewallPolicyRuleMatcher extends \Google\Collection
     return $this->srcSecureTags;
   }
   /**
-   * Names of Network Threat Intelligence lists. The IPs in these lists will be
-   * matched against traffic source.
-   *
-   * @param string[] $srcThreatIntelligences
+   * @param string[]
    */
   public function setSrcThreatIntelligences($srcThreatIntelligences)
   {

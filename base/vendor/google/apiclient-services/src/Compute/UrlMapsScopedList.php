@@ -26,9 +26,7 @@ class UrlMapsScopedList extends \Google\Collection
   protected $warningDataType = '';
 
   /**
-   * A list of UrlMaps contained in this scope.
-   *
-   * @param UrlMap[] $urlMaps
+   * @param UrlMap[]
    */
   public function setUrlMaps($urlMaps)
   {
@@ -42,10 +40,7 @@ class UrlMapsScopedList extends \Google\Collection
     return $this->urlMaps;
   }
   /**
-   * Informational warning which replaces the list of backend services when the
-   * list is empty.
-   *
-   * @param UrlMapsScopedListWarning $warning
+   * @param UrlMapsScopedListWarning
    */
   public function setWarning(UrlMapsScopedListWarning $warning)
   {

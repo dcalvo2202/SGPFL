@@ -25,7 +25,7 @@ class ExecutorMetrics extends \Google\Model
   public $metrics;
 
   /**
-   * @param string[] $metrics
+   * @param string[]
    */
   public function setMetrics($metrics)
   {

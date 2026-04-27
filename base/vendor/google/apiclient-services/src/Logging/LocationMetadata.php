@@ -20,18 +20,12 @@ namespace Google\Service\Logging;
 class LocationMetadata extends \Google\Model
 {
   /**
-   * Indicates whether or not Log Analytics features are supported in the given
-   * location.
-   *
    * @var bool
    */
   public $logAnalyticsEnabled;
 
   /**
-   * Indicates whether or not Log Analytics features are supported in the given
-   * location.
-   *
-   * @param bool $logAnalyticsEnabled
+   * @param bool
    */
   public function setLogAnalyticsEnabled($logAnalyticsEnabled)
   {

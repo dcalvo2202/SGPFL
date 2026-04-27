@@ -26,9 +26,7 @@ class GoogleCloudAiplatformV1TrajectoryAnyOrderMatchInput extends \Google\Collec
   protected $metricSpecDataType = '';
 
   /**
-   * Required. Repeated TrajectoryAnyOrderMatch instance.
-   *
-   * @param GoogleCloudAiplatformV1TrajectoryAnyOrderMatchInstance[] $instances
+   * @param GoogleCloudAiplatformV1TrajectoryAnyOrderMatchInstance[]
    */
   public function setInstances($instances)
   {
@@ -42,9 +40,7 @@ class GoogleCloudAiplatformV1TrajectoryAnyOrderMatchInput extends \Google\Collec
     return $this->instances;
   }
   /**
-   * Required. Spec for TrajectoryAnyOrderMatch metric.
-   *
-   * @param GoogleCloudAiplatformV1TrajectoryAnyOrderMatchSpec $metricSpec
+   * @param GoogleCloudAiplatformV1TrajectoryAnyOrderMatchSpec
    */
   public function setMetricSpec(GoogleCloudAiplatformV1TrajectoryAnyOrderMatchSpec $metricSpec)
   {

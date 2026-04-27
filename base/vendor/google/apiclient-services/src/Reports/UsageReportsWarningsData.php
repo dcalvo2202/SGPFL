@@ -20,25 +20,16 @@ namespace Google\Service\Reports;
 class UsageReportsWarningsData extends \Google\Model
 {
   /**
-   * Key associated with a key-value pair to give detailed information on the
-   * warning.
-   *
    * @var string
    */
   public $key;
   /**
-   * Value associated with a key-value pair to give detailed information on the
-   * warning.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Key associated with a key-value pair to give detailed information on the
-   * warning.
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {
@@ -52,10 +43,7 @@ class UsageReportsWarningsData extends \Google\Model
     return $this->key;
   }
   /**
-   * Value associated with a key-value pair to give detailed information on the
-   * warning.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

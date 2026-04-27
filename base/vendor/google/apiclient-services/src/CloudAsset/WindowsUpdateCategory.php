@@ -20,22 +20,16 @@ namespace Google\Service\CloudAsset;
 class WindowsUpdateCategory extends \Google\Model
 {
   /**
-   * The identifier of the windows update category.
-   *
    * @var string
    */
   public $id;
   /**
-   * The name of the windows update category.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The identifier of the windows update category.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -49,9 +43,7 @@ class WindowsUpdateCategory extends \Google\Model
     return $this->id;
   }
   /**
-   * The name of the windows update category.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

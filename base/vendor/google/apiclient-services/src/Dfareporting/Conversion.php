@@ -19,203 +19,103 @@ namespace Google\Service\Dfareporting;
 
 class Conversion extends \Google\Collection
 {
-  /**
-   * Granted.
-   */
-  public const AD_USER_DATA_CONSENT_GRANTED = 'GRANTED';
-  /**
-   * Denied.
-   */
-  public const AD_USER_DATA_CONSENT_DENIED = 'DENIED';
   protected $collection_key = 'userIdentifiers';
   /**
-   * This represents consent for ad user data.
-   *
    * @var string
    */
   public $adUserDataConsent;
   protected $cartDataType = CartData::class;
   protected $cartDataDataType = '';
   /**
-   * Whether this particular request may come from a user under the age of 13,
-   * under COPPA compliance.
-   *
    * @var bool
    */
   public $childDirectedTreatment;
   protected $customVariablesType = CustomFloodlightVariable::class;
   protected $customVariablesDataType = 'array';
   /**
-   * The display click ID. This field is mutually exclusive with
-   * encryptedUserId, encryptedUserIdCandidates[], matchId, mobileDeviceId,
-   * gclid, and impressionId. This or encryptedUserId or
-   * encryptedUserIdCandidates[] or matchId or mobileDeviceId or gclid or
-   * impressionId is a required field.
-   *
    * @var string
    */
   public $dclid;
   /**
-   * The alphanumeric encrypted user ID. When set, encryptionInfo should also be
-   * specified. This field is mutually exclusive with
-   * encryptedUserIdCandidates[], matchId, mobileDeviceId, gclid, dclid, and
-   * impressionId. This or encryptedUserIdCandidates[] or matchId or
-   * mobileDeviceId or gclid or dclid or impressionId is a required field.
-   *
    * @var string
    */
   public $encryptedUserId;
   /**
-   * A list of the alphanumeric encrypted user IDs. Any user ID with exposure
-   * prior to the conversion timestamp will be used in the inserted conversion.
-   * If no such user ID is found then the conversion will be rejected with
-   * INVALID_ARGUMENT error. When set, encryptionInfo should also be specified.
-   * This field may only be used when calling batchinsert; it is not supported
-   * by batchupdate. This field is mutually exclusive with encryptedUserId,
-   * matchId, mobileDeviceId, gclid dclid, and impressionId. This or
-   * encryptedUserId or matchId or mobileDeviceId or gclid or dclid or
-   * impressionId is a required field.
-   *
    * @var string[]
    */
   public $encryptedUserIdCandidates;
   /**
-   * Floodlight Activity ID of this conversion. This is a required field.
-   *
    * @var string
    */
   public $floodlightActivityId;
   /**
-   * Floodlight Configuration ID of this conversion. This is a required field.
-   *
    * @var string
    */
   public $floodlightConfigurationId;
   /**
-   * The Google click ID. This field is mutually exclusive with encryptedUserId,
-   * encryptedUserIdCandidates[], matchId, mobileDeviceId, dclid, and
-   * impressionId. This or encryptedUserId or encryptedUserIdCandidates[] or
-   * matchId or mobileDeviceId or dclid or impressionId is a required field.
-   *
    * @var string
    */
   public $gclid;
   /**
-   * The impression ID. This field is mutually exclusive with encryptedUserId,
-   * encryptedUserIdCandidates[], matchId, mobileDeviceId, and gclid. One of
-   * these identifiers must be set.
-   *
    * @var string
    */
   public $impressionId;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#conversion".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Whether Limit Ad Tracking is enabled. When set to true, the conversion will
-   * be used for reporting but not targeting. This will prevent remarketing.
-   *
    * @var bool
    */
   public $limitAdTracking;
   /**
-   * The match ID field. A match ID is your own first-party identifier that has
-   * been synced with Google using the match ID feature in Floodlight. This
-   * field is mutually exclusive with encryptedUserId,
-   * encryptedUserIdCandidates[],mobileDeviceId, gclid, dclid, and impressionId.
-   * This or encryptedUserId orencryptedUserIdCandidates[] or mobileDeviceId or
-   * gclid or dclid or impressionIdis a required field.
-   *
    * @var string
    */
   public $matchId;
   /**
-   * The mobile device ID. This field is mutually exclusive with
-   * encryptedUserId, encryptedUserIdCandidates[], matchId, gclid, dclid, and
-   * impressionId. This or encryptedUserId or encryptedUserIdCandidates[] or
-   * matchId or gclid or dclid or impressionId is a required field.
-   *
    * @var string
    */
   public $mobileDeviceId;
   /**
-   * Whether the conversion was for a non personalized ad.
-   *
    * @var bool
    */
   public $nonPersonalizedAd;
   /**
-   * The ordinal of the conversion. Use this field to control how conversions of
-   * the same user and day are de-duplicated. This is a required field.
-   *
    * @var string
    */
   public $ordinal;
   /**
-   * The quantity of the conversion. This is a required field.
-   *
    * @var string
    */
   public $quantity;
   /**
-   * Session attributes for the conversion, encoded as based64 bytes. This field
-   * may only be used when calling batchinsert; it is not supported by
-   * batchupdate.
-   *
-   * @var string
-   */
-  public $sessionAttributesEncoded;
-  /**
-   * The timestamp of conversion, in Unix epoch micros. This is a required
-   * field.
-   *
    * @var string
    */
   public $timestampMicros;
   /**
-   * Whether this particular request may come from a user under the age of 16
-   * (may differ by country), under compliance with the European Union's General
-   * Data Protection Regulation (GDPR).
-   *
    * @var bool
    */
   public $treatmentForUnderage;
   protected $userIdentifiersType = UserIdentifier::class;
   protected $userIdentifiersDataType = 'array';
-  /**
-   * The value of the conversion. Interpreted in CM360 Floodlight config parent
-   * advertiser's currency code. This is a required field.
-   *
-   * @var 
-   */
   public $value;
 
   /**
-   * This represents consent for ad user data.
-   *
-   * Accepted values: GRANTED, DENIED
-   *
-   * @param self::AD_USER_DATA_CONSENT_* $adUserDataConsent
+   * @param string
    */
   public function setAdUserDataConsent($adUserDataConsent)
   {
     $this->adUserDataConsent = $adUserDataConsent;
   }
   /**
-   * @return self::AD_USER_DATA_CONSENT_*
+   * @return string
    */
   public function getAdUserDataConsent()
   {
     return $this->adUserDataConsent;
   }
   /**
-   * The cart data associated with this conversion.
-   *
-   * @param CartData $cartData
+   * @param CartData
    */
   public function setCartData(CartData $cartData)
   {
@@ -229,10 +129,7 @@ class Conversion extends \Google\Collection
     return $this->cartData;
   }
   /**
-   * Whether this particular request may come from a user under the age of 13,
-   * under COPPA compliance.
-   *
-   * @param bool $childDirectedTreatment
+   * @param bool
    */
   public function setChildDirectedTreatment($childDirectedTreatment)
   {
@@ -246,9 +143,7 @@ class Conversion extends \Google\Collection
     return $this->childDirectedTreatment;
   }
   /**
-   * Custom floodlight variables.
-   *
-   * @param CustomFloodlightVariable[] $customVariables
+   * @param CustomFloodlightVariable[]
    */
   public function setCustomVariables($customVariables)
   {
@@ -262,13 +157,7 @@ class Conversion extends \Google\Collection
     return $this->customVariables;
   }
   /**
-   * The display click ID. This field is mutually exclusive with
-   * encryptedUserId, encryptedUserIdCandidates[], matchId, mobileDeviceId,
-   * gclid, and impressionId. This or encryptedUserId or
-   * encryptedUserIdCandidates[] or matchId or mobileDeviceId or gclid or
-   * impressionId is a required field.
-   *
-   * @param string $dclid
+   * @param string
    */
   public function setDclid($dclid)
   {
@@ -282,13 +171,7 @@ class Conversion extends \Google\Collection
     return $this->dclid;
   }
   /**
-   * The alphanumeric encrypted user ID. When set, encryptionInfo should also be
-   * specified. This field is mutually exclusive with
-   * encryptedUserIdCandidates[], matchId, mobileDeviceId, gclid, dclid, and
-   * impressionId. This or encryptedUserIdCandidates[] or matchId or
-   * mobileDeviceId or gclid or dclid or impressionId is a required field.
-   *
-   * @param string $encryptedUserId
+   * @param string
    */
   public function setEncryptedUserId($encryptedUserId)
   {
@@ -302,17 +185,7 @@ class Conversion extends \Google\Collection
     return $this->encryptedUserId;
   }
   /**
-   * A list of the alphanumeric encrypted user IDs. Any user ID with exposure
-   * prior to the conversion timestamp will be used in the inserted conversion.
-   * If no such user ID is found then the conversion will be rejected with
-   * INVALID_ARGUMENT error. When set, encryptionInfo should also be specified.
-   * This field may only be used when calling batchinsert; it is not supported
-   * by batchupdate. This field is mutually exclusive with encryptedUserId,
-   * matchId, mobileDeviceId, gclid dclid, and impressionId. This or
-   * encryptedUserId or matchId or mobileDeviceId or gclid or dclid or
-   * impressionId is a required field.
-   *
-   * @param string[] $encryptedUserIdCandidates
+   * @param string[]
    */
   public function setEncryptedUserIdCandidates($encryptedUserIdCandidates)
   {
@@ -326,9 +199,7 @@ class Conversion extends \Google\Collection
     return $this->encryptedUserIdCandidates;
   }
   /**
-   * Floodlight Activity ID of this conversion. This is a required field.
-   *
-   * @param string $floodlightActivityId
+   * @param string
    */
   public function setFloodlightActivityId($floodlightActivityId)
   {
@@ -342,9 +213,7 @@ class Conversion extends \Google\Collection
     return $this->floodlightActivityId;
   }
   /**
-   * Floodlight Configuration ID of this conversion. This is a required field.
-   *
-   * @param string $floodlightConfigurationId
+   * @param string
    */
   public function setFloodlightConfigurationId($floodlightConfigurationId)
   {
@@ -358,12 +227,7 @@ class Conversion extends \Google\Collection
     return $this->floodlightConfigurationId;
   }
   /**
-   * The Google click ID. This field is mutually exclusive with encryptedUserId,
-   * encryptedUserIdCandidates[], matchId, mobileDeviceId, dclid, and
-   * impressionId. This or encryptedUserId or encryptedUserIdCandidates[] or
-   * matchId or mobileDeviceId or dclid or impressionId is a required field.
-   *
-   * @param string $gclid
+   * @param string
    */
   public function setGclid($gclid)
   {
@@ -377,11 +241,7 @@ class Conversion extends \Google\Collection
     return $this->gclid;
   }
   /**
-   * The impression ID. This field is mutually exclusive with encryptedUserId,
-   * encryptedUserIdCandidates[], matchId, mobileDeviceId, and gclid. One of
-   * these identifiers must be set.
-   *
-   * @param string $impressionId
+   * @param string
    */
   public function setImpressionId($impressionId)
   {
@@ -395,10 +255,7 @@ class Conversion extends \Google\Collection
     return $this->impressionId;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#conversion".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -412,10 +269,7 @@ class Conversion extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Whether Limit Ad Tracking is enabled. When set to true, the conversion will
-   * be used for reporting but not targeting. This will prevent remarketing.
-   *
-   * @param bool $limitAdTracking
+   * @param bool
    */
   public function setLimitAdTracking($limitAdTracking)
   {
@@ -429,14 +283,7 @@ class Conversion extends \Google\Collection
     return $this->limitAdTracking;
   }
   /**
-   * The match ID field. A match ID is your own first-party identifier that has
-   * been synced with Google using the match ID feature in Floodlight. This
-   * field is mutually exclusive with encryptedUserId,
-   * encryptedUserIdCandidates[],mobileDeviceId, gclid, dclid, and impressionId.
-   * This or encryptedUserId orencryptedUserIdCandidates[] or mobileDeviceId or
-   * gclid or dclid or impressionIdis a required field.
-   *
-   * @param string $matchId
+   * @param string
    */
   public function setMatchId($matchId)
   {
@@ -450,12 +297,7 @@ class Conversion extends \Google\Collection
     return $this->matchId;
   }
   /**
-   * The mobile device ID. This field is mutually exclusive with
-   * encryptedUserId, encryptedUserIdCandidates[], matchId, gclid, dclid, and
-   * impressionId. This or encryptedUserId or encryptedUserIdCandidates[] or
-   * matchId or gclid or dclid or impressionId is a required field.
-   *
-   * @param string $mobileDeviceId
+   * @param string
    */
   public function setMobileDeviceId($mobileDeviceId)
   {
@@ -469,9 +311,7 @@ class Conversion extends \Google\Collection
     return $this->mobileDeviceId;
   }
   /**
-   * Whether the conversion was for a non personalized ad.
-   *
-   * @param bool $nonPersonalizedAd
+   * @param bool
    */
   public function setNonPersonalizedAd($nonPersonalizedAd)
   {
@@ -485,10 +325,7 @@ class Conversion extends \Google\Collection
     return $this->nonPersonalizedAd;
   }
   /**
-   * The ordinal of the conversion. Use this field to control how conversions of
-   * the same user and day are de-duplicated. This is a required field.
-   *
-   * @param string $ordinal
+   * @param string
    */
   public function setOrdinal($ordinal)
   {
@@ -502,9 +339,7 @@ class Conversion extends \Google\Collection
     return $this->ordinal;
   }
   /**
-   * The quantity of the conversion. This is a required field.
-   *
-   * @param string $quantity
+   * @param string
    */
   public function setQuantity($quantity)
   {
@@ -518,28 +353,7 @@ class Conversion extends \Google\Collection
     return $this->quantity;
   }
   /**
-   * Session attributes for the conversion, encoded as based64 bytes. This field
-   * may only be used when calling batchinsert; it is not supported by
-   * batchupdate.
-   *
-   * @param string $sessionAttributesEncoded
-   */
-  public function setSessionAttributesEncoded($sessionAttributesEncoded)
-  {
-    $this->sessionAttributesEncoded = $sessionAttributesEncoded;
-  }
-  /**
-   * @return string
-   */
-  public function getSessionAttributesEncoded()
-  {
-    return $this->sessionAttributesEncoded;
-  }
-  /**
-   * The timestamp of conversion, in Unix epoch micros. This is a required
-   * field.
-   *
-   * @param string $timestampMicros
+   * @param string
    */
   public function setTimestampMicros($timestampMicros)
   {
@@ -553,11 +367,7 @@ class Conversion extends \Google\Collection
     return $this->timestampMicros;
   }
   /**
-   * Whether this particular request may come from a user under the age of 16
-   * (may differ by country), under compliance with the European Union's General
-   * Data Protection Regulation (GDPR).
-   *
-   * @param bool $treatmentForUnderage
+   * @param bool
    */
   public function setTreatmentForUnderage($treatmentForUnderage)
   {
@@ -571,10 +381,7 @@ class Conversion extends \Google\Collection
     return $this->treatmentForUnderage;
   }
   /**
-   * The user identifiers to enhance the conversion. The maximum number of user
-   * identifiers for each conversion is 5.
-   *
-   * @param UserIdentifier[] $userIdentifiers
+   * @param UserIdentifier[]
    */
   public function setUserIdentifiers($userIdentifiers)
   {

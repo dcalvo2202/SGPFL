@@ -20,18 +20,10 @@ namespace Google\Service\CertificateAuthorityService;
 class CertificateIdentityConstraints extends \Google\Model
 {
   /**
-   * Required. If this is true, the SubjectAltNames extension may be copied from
-   * a certificate request into the signed certificate. Otherwise, the requested
-   * SubjectAltNames will be discarded.
-   *
    * @var bool
    */
   public $allowSubjectAltNamesPassthrough;
   /**
-   * Required. If this is true, the Subject field may be copied from a
-   * certificate request into the signed certificate. Otherwise, the requested
-   * Subject will be discarded.
-   *
    * @var bool
    */
   public $allowSubjectPassthrough;
@@ -39,11 +31,7 @@ class CertificateIdentityConstraints extends \Google\Model
   protected $celExpressionDataType = '';
 
   /**
-   * Required. If this is true, the SubjectAltNames extension may be copied from
-   * a certificate request into the signed certificate. Otherwise, the requested
-   * SubjectAltNames will be discarded.
-   *
-   * @param bool $allowSubjectAltNamesPassthrough
+   * @param bool
    */
   public function setAllowSubjectAltNamesPassthrough($allowSubjectAltNamesPassthrough)
   {
@@ -57,11 +45,7 @@ class CertificateIdentityConstraints extends \Google\Model
     return $this->allowSubjectAltNamesPassthrough;
   }
   /**
-   * Required. If this is true, the Subject field may be copied from a
-   * certificate request into the signed certificate. Otherwise, the requested
-   * Subject will be discarded.
-   *
-   * @param bool $allowSubjectPassthrough
+   * @param bool
    */
   public function setAllowSubjectPassthrough($allowSubjectPassthrough)
   {
@@ -75,12 +59,7 @@ class CertificateIdentityConstraints extends \Google\Model
     return $this->allowSubjectPassthrough;
   }
   /**
-   * Optional. A CEL expression that may be used to validate the resolved X.509
-   * Subject and/or Subject Alternative Name before a certificate is signed. To
-   * see the full allowed syntax and some examples, see
-   * https://cloud.google.com/certificate-authority-service/docs/using-cel
-   *
-   * @param Expr $celExpression
+   * @param Expr
    */
   public function setCelExpression(Expr $celExpression)
   {

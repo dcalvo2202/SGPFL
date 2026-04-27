@@ -22,34 +22,24 @@ class CloudAiLargeModelsVisionRaiInfoDetectedLabelsEntity extends \Google\Model
   protected $boundingBoxType = CloudAiLargeModelsVisionRaiInfoDetectedLabelsBoundingBox::class;
   protected $boundingBoxDataType = '';
   /**
-   * Description of the label
-   *
    * @var string
    */
   public $description;
   /**
-   * The intersection ratio between the detection bounding box and the mask.
-   *
    * @var float
    */
   public $iouScore;
   /**
-   * MID of the label
-   *
    * @var string
    */
   public $mid;
   /**
-   * Confidence score of the label
-   *
    * @var float
    */
   public $score;
 
   /**
-   * Bounding box of the label
-   *
-   * @param CloudAiLargeModelsVisionRaiInfoDetectedLabelsBoundingBox $boundingBox
+   * @param CloudAiLargeModelsVisionRaiInfoDetectedLabelsBoundingBox
    */
   public function setBoundingBox(CloudAiLargeModelsVisionRaiInfoDetectedLabelsBoundingBox $boundingBox)
   {
@@ -63,9 +53,7 @@ class CloudAiLargeModelsVisionRaiInfoDetectedLabelsEntity extends \Google\Model
     return $this->boundingBox;
   }
   /**
-   * Description of the label
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -79,9 +67,7 @@ class CloudAiLargeModelsVisionRaiInfoDetectedLabelsEntity extends \Google\Model
     return $this->description;
   }
   /**
-   * The intersection ratio between the detection bounding box and the mask.
-   *
-   * @param float $iouScore
+   * @param float
    */
   public function setIouScore($iouScore)
   {
@@ -95,9 +81,7 @@ class CloudAiLargeModelsVisionRaiInfoDetectedLabelsEntity extends \Google\Model
     return $this->iouScore;
   }
   /**
-   * MID of the label
-   *
-   * @param string $mid
+   * @param string
    */
   public function setMid($mid)
   {
@@ -111,9 +95,7 @@ class CloudAiLargeModelsVisionRaiInfoDetectedLabelsEntity extends \Google\Model
     return $this->mid;
   }
   /**
-   * Confidence score of the label
-   *
-   * @param float $score
+   * @param float
    */
   public function setScore($score)
   {

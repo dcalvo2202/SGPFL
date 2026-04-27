@@ -19,46 +19,21 @@ namespace Google\Service\Compute;
 
 class ResourceCommitment extends \Google\Model
 {
-  public const TYPE_ACCELERATOR = 'ACCELERATOR';
-  public const TYPE_LOCAL_SSD = 'LOCAL_SSD';
-  public const TYPE_MEMORY = 'MEMORY';
-  public const TYPE_UNSPECIFIED = 'UNSPECIFIED';
-  public const TYPE_VCPU = 'VCPU';
   /**
-   * Name of the accelerator type or GPU resource. Specify this field only when
-   * the type of hardware resource is ACCELERATOR.
-   *
    * @var string
    */
   public $acceleratorType;
   /**
-   * The quantity of the hardware resource that you want to commit to purchasing
-   * (in a type-dependent unit).        - For vCPUs, you must specify an integer
-   * value.    - For memory, you specify the amount of MB that you want. The
-   * value you    specify must be a multiple of 256 MB, with up to 6.5 GB of
-   * memory per every vCPU.    - For GPUs, you must specify an integer value.
-   * - For Local SSD disks, you must specify the amount in GB. The size of a
-   * single Local SSD disk is 375 GB.
-   *
    * @var string
    */
   public $amount;
   /**
-   * The type of hardware resource that you want to specify. You can specify any
-   * of the following values:        - VCPU    - MEMORY    - LOCAL_SSD    -
-   * ACCELERATOR
-   *
-   * Specify as a separate entry in the list for each individual resource type.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Name of the accelerator type or GPU resource. Specify this field only when
-   * the type of hardware resource is ACCELERATOR.
-   *
-   * @param string $acceleratorType
+   * @param string
    */
   public function setAcceleratorType($acceleratorType)
   {
@@ -72,15 +47,7 @@ class ResourceCommitment extends \Google\Model
     return $this->acceleratorType;
   }
   /**
-   * The quantity of the hardware resource that you want to commit to purchasing
-   * (in a type-dependent unit).        - For vCPUs, you must specify an integer
-   * value.    - For memory, you specify the amount of MB that you want. The
-   * value you    specify must be a multiple of 256 MB, with up to 6.5 GB of
-   * memory per every vCPU.    - For GPUs, you must specify an integer value.
-   * - For Local SSD disks, you must specify the amount in GB. The size of a
-   * single Local SSD disk is 375 GB.
-   *
-   * @param string $amount
+   * @param string
    */
   public function setAmount($amount)
   {
@@ -94,22 +61,14 @@ class ResourceCommitment extends \Google\Model
     return $this->amount;
   }
   /**
-   * The type of hardware resource that you want to specify. You can specify any
-   * of the following values:        - VCPU    - MEMORY    - LOCAL_SSD    -
-   * ACCELERATOR
-   *
-   * Specify as a separate entry in the list for each individual resource type.
-   *
-   * Accepted values: ACCELERATOR, LOCAL_SSD, MEMORY, UNSPECIFIED, VCPU
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

@@ -20,29 +20,16 @@ namespace Google\Service\ContainerAnalysis;
 class ContaineranalysisGoogleDevtoolsCloudbuildV1InlineSecret extends \Google\Model
 {
   /**
-   * Map of environment variable name to its encrypted value. Secret environment
-   * variables must be unique across all of a build's secrets, and must be used
-   * by at least one build step. Values can be at most 64 KB in size. There can
-   * be at most 100 secret values across all of a build's secrets.
-   *
    * @var string[]
    */
   public $envMap;
   /**
-   * Resource name of Cloud KMS crypto key to decrypt the encrypted value. In
-   * format: projects/locations/keyRings/cryptoKeys
-   *
    * @var string
    */
   public $kmsKeyName;
 
   /**
-   * Map of environment variable name to its encrypted value. Secret environment
-   * variables must be unique across all of a build's secrets, and must be used
-   * by at least one build step. Values can be at most 64 KB in size. There can
-   * be at most 100 secret values across all of a build's secrets.
-   *
-   * @param string[] $envMap
+   * @param string[]
    */
   public function setEnvMap($envMap)
   {
@@ -56,10 +43,7 @@ class ContaineranalysisGoogleDevtoolsCloudbuildV1InlineSecret extends \Google\Mo
     return $this->envMap;
   }
   /**
-   * Resource name of Cloud KMS crypto key to decrypt the encrypted value. In
-   * format: projects/locations/keyRings/cryptoKeys
-   *
-   * @param string $kmsKeyName
+   * @param string
    */
   public function setKmsKeyName($kmsKeyName)
   {

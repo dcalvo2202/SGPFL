@@ -20,27 +20,16 @@ namespace Google\Service\DataLabeling;
 class GoogleCloudDatalabelingV1beta1SearchExampleComparisonsRequest extends \Google\Model
 {
   /**
-   * Optional. Requested page size. Server may return fewer results than
-   * requested. Default value is 100.
-   *
    * @var int
    */
   public $pageSize;
   /**
-   * Optional. A token identifying a page of results for the server to return.
-   * Typically obtained by the nextPageToken of the response to a previous
-   * search rquest. If you don't specify this field, the API call requests the
-   * first page of the search.
-   *
    * @var string
    */
   public $pageToken;
 
   /**
-   * Optional. Requested page size. Server may return fewer results than
-   * requested. Default value is 100.
-   *
-   * @param int $pageSize
+   * @param int
    */
   public function setPageSize($pageSize)
   {
@@ -54,12 +43,7 @@ class GoogleCloudDatalabelingV1beta1SearchExampleComparisonsRequest extends \Goo
     return $this->pageSize;
   }
   /**
-   * Optional. A token identifying a page of results for the server to return.
-   * Typically obtained by the nextPageToken of the response to a previous
-   * search rquest. If you don't specify this field, the API call requests the
-   * first page of the search.
-   *
-   * @param string $pageToken
+   * @param string
    */
   public function setPageToken($pageToken)
   {

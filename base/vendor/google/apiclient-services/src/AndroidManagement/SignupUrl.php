@@ -20,25 +20,16 @@ namespace Google\Service\AndroidManagement;
 class SignupUrl extends \Google\Model
 {
   /**
-   * The name of the resource. Use this value in the signupUrl field when
-   * calling enterprises.create to complete the enterprise signup flow.
-   *
    * @var string
    */
   public $name;
   /**
-   * A URL where an enterprise admin can register their enterprise. The page
-   * can't be rendered in an iframe.
-   *
    * @var string
    */
   public $url;
 
   /**
-   * The name of the resource. Use this value in the signupUrl field when
-   * calling enterprises.create to complete the enterprise signup flow.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -52,10 +43,7 @@ class SignupUrl extends \Google\Model
     return $this->name;
   }
   /**
-   * A URL where an enterprise admin can register their enterprise. The page
-   * can't be rendered in an iframe.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

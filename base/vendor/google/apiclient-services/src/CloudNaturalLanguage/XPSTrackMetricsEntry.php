@@ -23,37 +23,24 @@ class XPSTrackMetricsEntry extends \Google\Collection
   protected $confidenceMetricsEntriesType = XPSTrackMetricsEntryConfidenceMetricsEntry::class;
   protected $confidenceMetricsEntriesDataType = 'array';
   /**
-   * Output only. The intersection-over-union threshold value between bounding
-   * boxes across frames used to compute this metric entry.
-   *
    * @var float
    */
   public $iouThreshold;
   /**
-   * Output only. The mean bounding box iou over all confidence thresholds.
-   *
    * @var float
    */
   public $meanBoundingBoxIou;
   /**
-   * Output only. The mean mismatch rate over all confidence thresholds.
-   *
    * @var float
    */
   public $meanMismatchRate;
   /**
-   * Output only. The mean average precision over all confidence thresholds.
-   *
    * @var float
    */
   public $meanTrackingAveragePrecision;
 
   /**
-   * Output only. Metrics for each label-match confidence_threshold from
-   * 0.05,0.10,...,0.95,0.96,0.97,0.98,0.99. Precision-recall curve is derived
-   * from them.
-   *
-   * @param XPSTrackMetricsEntryConfidenceMetricsEntry[] $confidenceMetricsEntries
+   * @param XPSTrackMetricsEntryConfidenceMetricsEntry[]
    */
   public function setConfidenceMetricsEntries($confidenceMetricsEntries)
   {
@@ -67,10 +54,7 @@ class XPSTrackMetricsEntry extends \Google\Collection
     return $this->confidenceMetricsEntries;
   }
   /**
-   * Output only. The intersection-over-union threshold value between bounding
-   * boxes across frames used to compute this metric entry.
-   *
-   * @param float $iouThreshold
+   * @param float
    */
   public function setIouThreshold($iouThreshold)
   {
@@ -84,9 +68,7 @@ class XPSTrackMetricsEntry extends \Google\Collection
     return $this->iouThreshold;
   }
   /**
-   * Output only. The mean bounding box iou over all confidence thresholds.
-   *
-   * @param float $meanBoundingBoxIou
+   * @param float
    */
   public function setMeanBoundingBoxIou($meanBoundingBoxIou)
   {
@@ -100,9 +82,7 @@ class XPSTrackMetricsEntry extends \Google\Collection
     return $this->meanBoundingBoxIou;
   }
   /**
-   * Output only. The mean mismatch rate over all confidence thresholds.
-   *
-   * @param float $meanMismatchRate
+   * @param float
    */
   public function setMeanMismatchRate($meanMismatchRate)
   {
@@ -116,9 +96,7 @@ class XPSTrackMetricsEntry extends \Google\Collection
     return $this->meanMismatchRate;
   }
   /**
-   * Output only. The mean average precision over all confidence thresholds.
-   *
-   * @param float $meanTrackingAveragePrecision
+   * @param float
    */
   public function setMeanTrackingAveragePrecision($meanTrackingAveragePrecision)
   {

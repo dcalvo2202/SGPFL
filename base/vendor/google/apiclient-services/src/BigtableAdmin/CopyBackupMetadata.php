@@ -20,9 +20,6 @@ namespace Google\Service\BigtableAdmin;
 class CopyBackupMetadata extends \Google\Model
 {
   /**
-   * The name of the backup being created through the copy operation. Values are
-   * of the form `projects//instances//clusters//backups/`.
-   *
    * @var string
    */
   public $name;
@@ -32,10 +29,7 @@ class CopyBackupMetadata extends \Google\Model
   protected $sourceBackupInfoDataType = '';
 
   /**
-   * The name of the backup being created through the copy operation. Values are
-   * of the form `projects//instances//clusters//backups/`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -49,9 +43,7 @@ class CopyBackupMetadata extends \Google\Model
     return $this->name;
   }
   /**
-   * The progress of the CopyBackup operation.
-   *
-   * @param OperationProgress $progress
+   * @param OperationProgress
    */
   public function setProgress(OperationProgress $progress)
   {
@@ -65,9 +57,7 @@ class CopyBackupMetadata extends \Google\Model
     return $this->progress;
   }
   /**
-   * Information about the source backup that is being copied from.
-   *
-   * @param BackupInfo $sourceBackupInfo
+   * @param BackupInfo
    */
   public function setSourceBackupInfo(BackupInfo $sourceBackupInfo)
   {

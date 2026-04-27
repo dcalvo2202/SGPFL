@@ -20,31 +20,6 @@ namespace Google\Service\Datalineage;
 class GoogleCloudDatacatalogLineageV1Run extends \Google\Model
 {
   /**
-   * The state is unknown. The true state may be any of the below or a different
-   * state that is not supported here explicitly.
-   */
-  public const STATE_UNKNOWN = 'UNKNOWN';
-  /**
-   * The run is still executing.
-   */
-  public const STATE_STARTED = 'STARTED';
-  /**
-   * The run completed.
-   */
-  public const STATE_COMPLETED = 'COMPLETED';
-  /**
-   * The run failed.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * The run aborted.
-   */
-  public const STATE_ABORTED = 'ABORTED';
-  /**
-   * Optional. The attributes of the run. Should only be used for the purpose of
-   * non-semantic management (classifying, describing or labeling the run). Up
-   * to 100 attributes are allowed.
-   *
    * @var array[]
    */
   public $attributes;
@@ -53,39 +28,24 @@ class GoogleCloudDatacatalogLineageV1Run extends \Google\Model
    */
   public $displayName;
   /**
-   * Optional. The timestamp of the end of the run.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * Immutable. The resource name of the run. Format:
-   * `projects/{project}/locations/{location}/processes/{process}/runs/{run}`.
-   * Can be specified or auto-assigned. {run} must be not longer than 200
-   * characters and only contain characters in a set: `a-zA-Z0-9_-:.`
-   *
    * @var string
    */
   public $name;
   /**
-   * Required. The timestamp of the start of the run.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * Required. The state of the run.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Optional. The attributes of the run. Should only be used for the purpose of
-   * non-semantic management (classifying, describing or labeling the run). Up
-   * to 100 attributes are allowed.
-   *
-   * @param array[] $attributes
+   * @param array[]
    */
   public function setAttributes($attributes)
   {
@@ -99,7 +59,7 @@ class GoogleCloudDatacatalogLineageV1Run extends \Google\Model
     return $this->attributes;
   }
   /**
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -113,9 +73,7 @@ class GoogleCloudDatacatalogLineageV1Run extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Optional. The timestamp of the end of the run.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -129,12 +87,7 @@ class GoogleCloudDatacatalogLineageV1Run extends \Google\Model
     return $this->endTime;
   }
   /**
-   * Immutable. The resource name of the run. Format:
-   * `projects/{project}/locations/{location}/processes/{process}/runs/{run}`.
-   * Can be specified or auto-assigned. {run} must be not longer than 200
-   * characters and only contain characters in a set: `a-zA-Z0-9_-:.`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -148,9 +101,7 @@ class GoogleCloudDatacatalogLineageV1Run extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. The timestamp of the start of the run.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -164,18 +115,14 @@ class GoogleCloudDatacatalogLineageV1Run extends \Google\Model
     return $this->startTime;
   }
   /**
-   * Required. The state of the run.
-   *
-   * Accepted values: UNKNOWN, STARTED, COMPLETED, FAILED, ABORTED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

@@ -20,13 +20,29 @@ namespace Google\Service\WorkloadManager;
 class ListRulesResponse extends \Google\Collection
 {
   protected $collection_key = 'rules';
+  /**
+   * @var string
+   */
+  public $nextPageToken;
   protected $rulesType = Rule::class;
   protected $rulesDataType = 'array';
 
   /**
-   * All rules in response.
-   *
-   * @param Rule[] $rules
+   * @param string
+   */
+  public function setNextPageToken($nextPageToken)
+  {
+    $this->nextPageToken = $nextPageToken;
+  }
+  /**
+   * @return string
+   */
+  public function getNextPageToken()
+  {
+    return $this->nextPageToken;
+  }
+  /**
+   * @param Rule[]
    */
   public function setRules($rules)
   {

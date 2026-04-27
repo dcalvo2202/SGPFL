@@ -27,7 +27,7 @@ class ResourcePolicySnapshotSchedulePolicySchedule extends \Google\Model
   protected $weeklyScheduleDataType = '';
 
   /**
-   * @param ResourcePolicyDailyCycle $dailySchedule
+   * @param ResourcePolicyDailyCycle
    */
   public function setDailySchedule(ResourcePolicyDailyCycle $dailySchedule)
   {
@@ -41,7 +41,7 @@ class ResourcePolicySnapshotSchedulePolicySchedule extends \Google\Model
     return $this->dailySchedule;
   }
   /**
-   * @param ResourcePolicyHourlyCycle $hourlySchedule
+   * @param ResourcePolicyHourlyCycle
    */
   public function setHourlySchedule(ResourcePolicyHourlyCycle $hourlySchedule)
   {
@@ -55,7 +55,7 @@ class ResourcePolicySnapshotSchedulePolicySchedule extends \Google\Model
     return $this->hourlySchedule;
   }
   /**
-   * @param ResourcePolicyWeeklyCycle $weeklySchedule
+   * @param ResourcePolicyWeeklyCycle
    */
   public function setWeeklySchedule(ResourcePolicyWeeklyCycle $weeklySchedule)
   {

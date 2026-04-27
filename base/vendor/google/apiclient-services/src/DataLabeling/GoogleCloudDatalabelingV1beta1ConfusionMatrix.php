@@ -24,7 +24,7 @@ class GoogleCloudDatalabelingV1beta1ConfusionMatrix extends \Google\Collection
   protected $rowDataType = 'array';
 
   /**
-   * @param GoogleCloudDatalabelingV1beta1Row[] $row
+   * @param GoogleCloudDatalabelingV1beta1Row[]
    */
   public function setRow($row)
   {

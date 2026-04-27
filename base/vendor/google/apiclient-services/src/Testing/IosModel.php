@@ -19,106 +19,48 @@ namespace Google\Service\Testing;
 
 class IosModel extends \Google\Collection
 {
-  /**
-   * Do not use. For proto versioning only.
-   */
-  public const FORM_FACTOR_DEVICE_FORM_FACTOR_UNSPECIFIED = 'DEVICE_FORM_FACTOR_UNSPECIFIED';
-  /**
-   * This device has the shape of a phone.
-   */
-  public const FORM_FACTOR_PHONE = 'PHONE';
-  /**
-   * This device has the shape of a tablet.
-   */
-  public const FORM_FACTOR_TABLET = 'TABLET';
-  /**
-   * This device has the shape of a watch or other wearable.
-   */
-  public const FORM_FACTOR_WEARABLE = 'WEARABLE';
-  /**
-   * This device has a television form factor.
-   */
-  public const FORM_FACTOR_TV = 'TV';
-  /**
-   * This device has an automotive form factor.
-   */
-  public const FORM_FACTOR_AUTOMOTIVE = 'AUTOMOTIVE';
-  /**
-   * This device has a desktop form factor.
-   */
-  public const FORM_FACTOR_DESKTOP = 'DESKTOP';
-  /**
-   * This device has an Extended Reality form factor.
-   */
-  public const FORM_FACTOR_XR = 'XR';
   protected $collection_key = 'tags';
   /**
-   * Device capabilities. Copied from https://developer.apple.com/library/archiv
-   * e/documentation/DeviceInformation/Reference/iOSDeviceCompatibility/DeviceCo
-   * mpatibilityMatrix/DeviceCompatibilityMatrix.html
-   *
    * @var string[]
    */
   public $deviceCapabilities;
   /**
-   * Whether this device is a phone, tablet, wearable, etc.
-   *
    * @var string
    */
   public $formFactor;
   /**
-   * The unique opaque id for this model. Use this for invoking the
-   * TestExecutionService.
-   *
    * @var string
    */
   public $id;
   /**
-   * The human-readable name for this device model. Examples: "iPhone 4s", "iPad
-   * Mini 2".
-   *
    * @var string
    */
   public $name;
   protected $perVersionInfoType = PerIosVersionInfo::class;
   protected $perVersionInfoDataType = 'array';
   /**
-   * Screen density in DPI.
-   *
    * @var int
    */
   public $screenDensity;
   /**
-   * Screen size in the horizontal (X) dimension measured in pixels.
-   *
    * @var int
    */
   public $screenX;
   /**
-   * Screen size in the vertical (Y) dimension measured in pixels.
-   *
    * @var int
    */
   public $screenY;
   /**
-   * The set of iOS major software versions this device supports.
-   *
    * @var string[]
    */
   public $supportedVersionIds;
   /**
-   * Tags for this dimension. Examples: "default", "preview", "deprecated".
-   *
    * @var string[]
    */
   public $tags;
 
   /**
-   * Device capabilities. Copied from https://developer.apple.com/library/archiv
-   * e/documentation/DeviceInformation/Reference/iOSDeviceCompatibility/DeviceCo
-   * mpatibilityMatrix/DeviceCompatibilityMatrix.html
-   *
-   * @param string[] $deviceCapabilities
+   * @param string[]
    */
   public function setDeviceCapabilities($deviceCapabilities)
   {
@@ -132,29 +74,21 @@ class IosModel extends \Google\Collection
     return $this->deviceCapabilities;
   }
   /**
-   * Whether this device is a phone, tablet, wearable, etc.
-   *
-   * Accepted values: DEVICE_FORM_FACTOR_UNSPECIFIED, PHONE, TABLET, WEARABLE,
-   * TV, AUTOMOTIVE, DESKTOP, XR
-   *
-   * @param self::FORM_FACTOR_* $formFactor
+   * @param string
    */
   public function setFormFactor($formFactor)
   {
     $this->formFactor = $formFactor;
   }
   /**
-   * @return self::FORM_FACTOR_*
+   * @return string
    */
   public function getFormFactor()
   {
     return $this->formFactor;
   }
   /**
-   * The unique opaque id for this model. Use this for invoking the
-   * TestExecutionService.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -168,10 +102,7 @@ class IosModel extends \Google\Collection
     return $this->id;
   }
   /**
-   * The human-readable name for this device model. Examples: "iPhone 4s", "iPad
-   * Mini 2".
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -185,9 +116,7 @@ class IosModel extends \Google\Collection
     return $this->name;
   }
   /**
-   * Version-specific information of an iOS model.
-   *
-   * @param PerIosVersionInfo[] $perVersionInfo
+   * @param PerIosVersionInfo[]
    */
   public function setPerVersionInfo($perVersionInfo)
   {
@@ -201,9 +130,7 @@ class IosModel extends \Google\Collection
     return $this->perVersionInfo;
   }
   /**
-   * Screen density in DPI.
-   *
-   * @param int $screenDensity
+   * @param int
    */
   public function setScreenDensity($screenDensity)
   {
@@ -217,9 +144,7 @@ class IosModel extends \Google\Collection
     return $this->screenDensity;
   }
   /**
-   * Screen size in the horizontal (X) dimension measured in pixels.
-   *
-   * @param int $screenX
+   * @param int
    */
   public function setScreenX($screenX)
   {
@@ -233,9 +158,7 @@ class IosModel extends \Google\Collection
     return $this->screenX;
   }
   /**
-   * Screen size in the vertical (Y) dimension measured in pixels.
-   *
-   * @param int $screenY
+   * @param int
    */
   public function setScreenY($screenY)
   {
@@ -249,9 +172,7 @@ class IosModel extends \Google\Collection
     return $this->screenY;
   }
   /**
-   * The set of iOS major software versions this device supports.
-   *
-   * @param string[] $supportedVersionIds
+   * @param string[]
    */
   public function setSupportedVersionIds($supportedVersionIds)
   {
@@ -265,9 +186,7 @@ class IosModel extends \Google\Collection
     return $this->supportedVersionIds;
   }
   /**
-   * Tags for this dimension. Examples: "default", "preview", "deprecated".
-   *
-   * @param string[] $tags
+   * @param string[]
    */
   public function setTags($tags)
   {

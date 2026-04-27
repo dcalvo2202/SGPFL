@@ -23,23 +23,16 @@ class GoogleCloudDataplexV1ListAspectTypesResponse extends \Google\Collection
   protected $aspectTypesType = GoogleCloudDataplexV1AspectType::class;
   protected $aspectTypesDataType = 'array';
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Locations that the service couldn't reach.
-   *
    * @var string[]
    */
   public $unreachableLocations;
 
   /**
-   * AspectTypes under the given parent location.
-   *
-   * @param GoogleCloudDataplexV1AspectType[] $aspectTypes
+   * @param GoogleCloudDataplexV1AspectType[]
    */
   public function setAspectTypes($aspectTypes)
   {
@@ -53,10 +46,7 @@ class GoogleCloudDataplexV1ListAspectTypesResponse extends \Google\Collection
     return $this->aspectTypes;
   }
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -70,9 +60,7 @@ class GoogleCloudDataplexV1ListAspectTypesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Locations that the service couldn't reach.
-   *
-   * @param string[] $unreachableLocations
+   * @param string[]
    */
   public function setUnreachableLocations($unreachableLocations)
   {

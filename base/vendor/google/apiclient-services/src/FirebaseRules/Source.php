@@ -24,9 +24,7 @@ class Source extends \Google\Collection
   protected $filesDataType = 'array';
 
   /**
-   * Required. `File` set constituting the `Source` bundle.
-   *
-   * @param FirebaserulesFile[] $files
+   * @param FirebaserulesFile[]
    */
   public function setFiles($files)
   {

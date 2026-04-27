@@ -21,9 +21,6 @@ class GoogleCloudAiplatformV1ExportTensorboardTimeSeriesDataResponse extends \Go
 {
   protected $collection_key = 'timeSeriesDataPoints';
   /**
-   * A token, which can be sent as page_token to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GoogleCloudAiplatformV1ExportTensorboardTimeSeriesDataResponse extends \Go
   protected $timeSeriesDataPointsDataType = 'array';
 
   /**
-   * A token, which can be sent as page_token to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class GoogleCloudAiplatformV1ExportTensorboardTimeSeriesDataResponse extends \Go
     return $this->nextPageToken;
   }
   /**
-   * The returned time series data points.
-   *
-   * @param GoogleCloudAiplatformV1TimeSeriesDataPoint[] $timeSeriesDataPoints
+   * @param GoogleCloudAiplatformV1TimeSeriesDataPoint[]
    */
   public function setTimeSeriesDataPoints($timeSeriesDataPoints)
   {

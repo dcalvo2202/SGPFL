@@ -54,7 +54,7 @@ class GoogleCloudDialogflowV2IntentParameter extends \Google\Collection
   public $value;
 
   /**
-   * @param string $defaultValue
+   * @param string
    */
   public function setDefaultValue($defaultValue)
   {
@@ -68,7 +68,7 @@ class GoogleCloudDialogflowV2IntentParameter extends \Google\Collection
     return $this->defaultValue;
   }
   /**
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -82,7 +82,7 @@ class GoogleCloudDialogflowV2IntentParameter extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * @param string $entityTypeDisplayName
+   * @param string
    */
   public function setEntityTypeDisplayName($entityTypeDisplayName)
   {
@@ -96,7 +96,7 @@ class GoogleCloudDialogflowV2IntentParameter extends \Google\Collection
     return $this->entityTypeDisplayName;
   }
   /**
-   * @param bool $isList
+   * @param bool
    */
   public function setIsList($isList)
   {
@@ -110,7 +110,7 @@ class GoogleCloudDialogflowV2IntentParameter extends \Google\Collection
     return $this->isList;
   }
   /**
-   * @param bool $mandatory
+   * @param bool
    */
   public function setMandatory($mandatory)
   {
@@ -124,7 +124,7 @@ class GoogleCloudDialogflowV2IntentParameter extends \Google\Collection
     return $this->mandatory;
   }
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -138,7 +138,7 @@ class GoogleCloudDialogflowV2IntentParameter extends \Google\Collection
     return $this->name;
   }
   /**
-   * @param string[] $prompts
+   * @param string[]
    */
   public function setPrompts($prompts)
   {
@@ -152,7 +152,7 @@ class GoogleCloudDialogflowV2IntentParameter extends \Google\Collection
     return $this->prompts;
   }
   /**
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

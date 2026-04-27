@@ -20,16 +20,12 @@ namespace Google\Service\AndroidProvisioningPartner;
 class DeviceMetadata extends \Google\Model
 {
   /**
-   * Metadata entries recorded as key-value pairs.
-   *
    * @var string[]
    */
   public $entries;
 
   /**
-   * Metadata entries recorded as key-value pairs.
-   *
-   * @param string[] $entries
+   * @param string[]
    */
   public function setEntries($entries)
   {

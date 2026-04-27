@@ -20,22 +20,12 @@ namespace Google\Service\Compute;
 class RouterBgpPeerCustomLearnedIpRange extends \Google\Model
 {
   /**
-   * The custom learned route IP address range. Must be a valid CIDR-formatted
-   * prefix. If an IP address is provided without a subnet mask, it is
-   * interpreted as, for IPv4, a `/32` singular IP address range, and, for IPv6,
-   * `/128`.
-   *
    * @var string
    */
   public $range;
 
   /**
-   * The custom learned route IP address range. Must be a valid CIDR-formatted
-   * prefix. If an IP address is provided without a subnet mask, it is
-   * interpreted as, for IPv4, a `/32` singular IP address range, and, for IPv6,
-   * `/128`.
-   *
-   * @param string $range
+   * @param string
    */
   public function setRange($range)
   {

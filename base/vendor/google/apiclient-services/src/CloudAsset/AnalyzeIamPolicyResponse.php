@@ -21,10 +21,6 @@ class AnalyzeIamPolicyResponse extends \Google\Collection
 {
   protected $collection_key = 'serviceAccountImpersonationAnalysis';
   /**
-   * Represents whether all entries in the main_analysis and
-   * service_account_impersonation_analysis have been fully explored to answer
-   * the query in the request.
-   *
    * @var bool
    */
   public $fullyExplored;
@@ -34,11 +30,7 @@ class AnalyzeIamPolicyResponse extends \Google\Collection
   protected $serviceAccountImpersonationAnalysisDataType = 'array';
 
   /**
-   * Represents whether all entries in the main_analysis and
-   * service_account_impersonation_analysis have been fully explored to answer
-   * the query in the request.
-   *
-   * @param bool $fullyExplored
+   * @param bool
    */
   public function setFullyExplored($fullyExplored)
   {
@@ -52,9 +44,7 @@ class AnalyzeIamPolicyResponse extends \Google\Collection
     return $this->fullyExplored;
   }
   /**
-   * The main analysis that matches the original request.
-   *
-   * @param IamPolicyAnalysis $mainAnalysis
+   * @param IamPolicyAnalysis
    */
   public function setMainAnalysis(IamPolicyAnalysis $mainAnalysis)
   {
@@ -68,11 +58,7 @@ class AnalyzeIamPolicyResponse extends \Google\Collection
     return $this->mainAnalysis;
   }
   /**
-   * The service account impersonation analysis if
-   * IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation is
-   * enabled.
-   *
-   * @param IamPolicyAnalysis[] $serviceAccountImpersonationAnalysis
+   * @param IamPolicyAnalysis[]
    */
   public function setServiceAccountImpersonationAnalysis($serviceAccountImpersonationAnalysis)
   {

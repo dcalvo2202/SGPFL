@@ -20,54 +20,19 @@ namespace Google\Service\SA360;
 class GoogleAdsSearchads360V0CommonDeviceInfo extends \Google\Model
 {
   /**
-   * Not specified.
-   */
-  public const TYPE_UNSPECIFIED = 'UNSPECIFIED';
-  /**
-   * The value is unknown in this version.
-   */
-  public const TYPE_UNKNOWN = 'UNKNOWN';
-  /**
-   * Mobile devices with full browsers.
-   */
-  public const TYPE_MOBILE = 'MOBILE';
-  /**
-   * Tablets with full browsers.
-   */
-  public const TYPE_TABLET = 'TABLET';
-  /**
-   * Computers.
-   */
-  public const TYPE_DESKTOP = 'DESKTOP';
-  /**
-   * Smart TVs and game consoles.
-   */
-  public const TYPE_CONNECTED_TV = 'CONNECTED_TV';
-  /**
-   * Other device types.
-   */
-  public const TYPE_OTHER = 'OTHER';
-  /**
-   * Type of the device.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Type of the device.
-   *
-   * Accepted values: UNSPECIFIED, UNKNOWN, MOBILE, TABLET, DESKTOP,
-   * CONNECTED_TV, OTHER
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

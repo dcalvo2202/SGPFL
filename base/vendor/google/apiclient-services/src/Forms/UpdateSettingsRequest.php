@@ -22,19 +22,12 @@ class UpdateSettingsRequest extends \Google\Model
   protected $settingsType = FormSettings::class;
   protected $settingsDataType = '';
   /**
-   * Required. Only values named in this mask are changed. At least one field
-   * must be specified. The root `settings` is implied and should not be
-   * specified. A single `"*"` can be used as short-hand for updating every
-   * field.
-   *
    * @var string
    */
   public $updateMask;
 
   /**
-   * Required. The settings to update with.
-   *
-   * @param FormSettings $settings
+   * @param FormSettings
    */
   public function setSettings(FormSettings $settings)
   {
@@ -48,12 +41,7 @@ class UpdateSettingsRequest extends \Google\Model
     return $this->settings;
   }
   /**
-   * Required. Only values named in this mask are changed. At least one field
-   * must be specified. The root `settings` is implied and should not be
-   * specified. A single `"*"` can be used as short-hand for updating every
-   * field.
-   *
-   * @param string $updateMask
+   * @param string
    */
   public function setUpdateMask($updateMask)
   {

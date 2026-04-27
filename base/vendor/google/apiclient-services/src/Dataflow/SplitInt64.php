@@ -20,22 +20,16 @@ namespace Google\Service\Dataflow;
 class SplitInt64 extends \Google\Model
 {
   /**
-   * The high order bits, including the sign: n >> 32.
-   *
    * @var int
    */
   public $highBits;
   /**
-   * The low order bits: n & 0xffffffff.
-   *
    * @var string
    */
   public $lowBits;
 
   /**
-   * The high order bits, including the sign: n >> 32.
-   *
-   * @param int $highBits
+   * @param int
    */
   public function setHighBits($highBits)
   {
@@ -49,9 +43,7 @@ class SplitInt64 extends \Google\Model
     return $this->highBits;
   }
   /**
-   * The low order bits: n & 0xffffffff.
-   *
-   * @param string $lowBits
+   * @param string
    */
   public function setLowBits($lowBits)
   {

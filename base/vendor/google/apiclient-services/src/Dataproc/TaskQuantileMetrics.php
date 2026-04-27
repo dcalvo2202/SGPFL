@@ -55,7 +55,7 @@ class TaskQuantileMetrics extends \Google\Model
   protected $shuffleWriteMetricsDataType = '';
 
   /**
-   * @param Quantiles $diskBytesSpilled
+   * @param Quantiles
    */
   public function setDiskBytesSpilled(Quantiles $diskBytesSpilled)
   {
@@ -69,7 +69,7 @@ class TaskQuantileMetrics extends \Google\Model
     return $this->diskBytesSpilled;
   }
   /**
-   * @param Quantiles $durationMillis
+   * @param Quantiles
    */
   public function setDurationMillis(Quantiles $durationMillis)
   {
@@ -83,7 +83,7 @@ class TaskQuantileMetrics extends \Google\Model
     return $this->durationMillis;
   }
   /**
-   * @param Quantiles $executorCpuTimeNanos
+   * @param Quantiles
    */
   public function setExecutorCpuTimeNanos(Quantiles $executorCpuTimeNanos)
   {
@@ -97,7 +97,7 @@ class TaskQuantileMetrics extends \Google\Model
     return $this->executorCpuTimeNanos;
   }
   /**
-   * @param Quantiles $executorDeserializeCpuTimeNanos
+   * @param Quantiles
    */
   public function setExecutorDeserializeCpuTimeNanos(Quantiles $executorDeserializeCpuTimeNanos)
   {
@@ -111,7 +111,7 @@ class TaskQuantileMetrics extends \Google\Model
     return $this->executorDeserializeCpuTimeNanos;
   }
   /**
-   * @param Quantiles $executorDeserializeTimeMillis
+   * @param Quantiles
    */
   public function setExecutorDeserializeTimeMillis(Quantiles $executorDeserializeTimeMillis)
   {
@@ -125,7 +125,7 @@ class TaskQuantileMetrics extends \Google\Model
     return $this->executorDeserializeTimeMillis;
   }
   /**
-   * @param Quantiles $executorRunTimeMillis
+   * @param Quantiles
    */
   public function setExecutorRunTimeMillis(Quantiles $executorRunTimeMillis)
   {
@@ -139,7 +139,7 @@ class TaskQuantileMetrics extends \Google\Model
     return $this->executorRunTimeMillis;
   }
   /**
-   * @param Quantiles $gettingResultTimeMillis
+   * @param Quantiles
    */
   public function setGettingResultTimeMillis(Quantiles $gettingResultTimeMillis)
   {
@@ -153,7 +153,7 @@ class TaskQuantileMetrics extends \Google\Model
     return $this->gettingResultTimeMillis;
   }
   /**
-   * @param InputQuantileMetrics $inputMetrics
+   * @param InputQuantileMetrics
    */
   public function setInputMetrics(InputQuantileMetrics $inputMetrics)
   {
@@ -167,7 +167,7 @@ class TaskQuantileMetrics extends \Google\Model
     return $this->inputMetrics;
   }
   /**
-   * @param Quantiles $jvmGcTimeMillis
+   * @param Quantiles
    */
   public function setJvmGcTimeMillis(Quantiles $jvmGcTimeMillis)
   {
@@ -181,7 +181,7 @@ class TaskQuantileMetrics extends \Google\Model
     return $this->jvmGcTimeMillis;
   }
   /**
-   * @param Quantiles $memoryBytesSpilled
+   * @param Quantiles
    */
   public function setMemoryBytesSpilled(Quantiles $memoryBytesSpilled)
   {
@@ -195,7 +195,7 @@ class TaskQuantileMetrics extends \Google\Model
     return $this->memoryBytesSpilled;
   }
   /**
-   * @param OutputQuantileMetrics $outputMetrics
+   * @param OutputQuantileMetrics
    */
   public function setOutputMetrics(OutputQuantileMetrics $outputMetrics)
   {
@@ -209,7 +209,7 @@ class TaskQuantileMetrics extends \Google\Model
     return $this->outputMetrics;
   }
   /**
-   * @param Quantiles $peakExecutionMemoryBytes
+   * @param Quantiles
    */
   public function setPeakExecutionMemoryBytes(Quantiles $peakExecutionMemoryBytes)
   {
@@ -223,7 +223,7 @@ class TaskQuantileMetrics extends \Google\Model
     return $this->peakExecutionMemoryBytes;
   }
   /**
-   * @param Quantiles $resultSerializationTimeMillis
+   * @param Quantiles
    */
   public function setResultSerializationTimeMillis(Quantiles $resultSerializationTimeMillis)
   {
@@ -237,7 +237,7 @@ class TaskQuantileMetrics extends \Google\Model
     return $this->resultSerializationTimeMillis;
   }
   /**
-   * @param Quantiles $resultSize
+   * @param Quantiles
    */
   public function setResultSize(Quantiles $resultSize)
   {
@@ -251,7 +251,7 @@ class TaskQuantileMetrics extends \Google\Model
     return $this->resultSize;
   }
   /**
-   * @param Quantiles $schedulerDelayMillis
+   * @param Quantiles
    */
   public function setSchedulerDelayMillis(Quantiles $schedulerDelayMillis)
   {
@@ -265,7 +265,7 @@ class TaskQuantileMetrics extends \Google\Model
     return $this->schedulerDelayMillis;
   }
   /**
-   * @param ShuffleReadQuantileMetrics $shuffleReadMetrics
+   * @param ShuffleReadQuantileMetrics
    */
   public function setShuffleReadMetrics(ShuffleReadQuantileMetrics $shuffleReadMetrics)
   {
@@ -279,7 +279,7 @@ class TaskQuantileMetrics extends \Google\Model
     return $this->shuffleReadMetrics;
   }
   /**
-   * @param ShuffleWriteQuantileMetrics $shuffleWriteMetrics
+   * @param ShuffleWriteQuantileMetrics
    */
   public function setShuffleWriteMetrics(ShuffleWriteQuantileMetrics $shuffleWriteMetrics)
   {

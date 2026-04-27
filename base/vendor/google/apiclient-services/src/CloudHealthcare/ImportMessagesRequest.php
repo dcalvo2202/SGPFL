@@ -23,11 +23,7 @@ class ImportMessagesRequest extends \Google\Model
   protected $gcsSourceDataType = '';
 
   /**
-   * Cloud Storage source data location and import configuration. The Cloud
-   * Healthcare Service Agent requires the `roles/storage.objectViewer` Cloud
-   * IAM roles on the Cloud Storage location.
-   *
-   * @param GcsSource $gcsSource
+   * @param GcsSource
    */
   public function setGcsSource(GcsSource $gcsSource)
   {

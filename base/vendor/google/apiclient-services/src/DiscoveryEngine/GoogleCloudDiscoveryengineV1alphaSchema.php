@@ -23,31 +23,20 @@ class GoogleCloudDiscoveryengineV1alphaSchema extends \Google\Collection
   protected $fieldConfigsType = GoogleCloudDiscoveryengineV1alphaFieldConfig::class;
   protected $fieldConfigsDataType = 'array';
   /**
-   * The JSON representation of the schema.
-   *
    * @var string
    */
   public $jsonSchema;
   /**
-   * Immutable. The full resource name of the schema, in the format of `projects
-   * /{project}/locations/{location}/collections/{collection}/dataStores/{data_s
-   * tore}/schemas/{schema}`. This field must be a UTF-8 encoded string with a
-   * length limit of 1024 characters.
-   *
    * @var string
    */
   public $name;
   /**
-   * The structured representation of the schema.
-   *
    * @var array[]
    */
   public $structSchema;
 
   /**
-   * Output only. Configurations for fields of the schema.
-   *
-   * @param GoogleCloudDiscoveryengineV1alphaFieldConfig[] $fieldConfigs
+   * @param GoogleCloudDiscoveryengineV1alphaFieldConfig[]
    */
   public function setFieldConfigs($fieldConfigs)
   {
@@ -61,9 +50,7 @@ class GoogleCloudDiscoveryengineV1alphaSchema extends \Google\Collection
     return $this->fieldConfigs;
   }
   /**
-   * The JSON representation of the schema.
-   *
-   * @param string $jsonSchema
+   * @param string
    */
   public function setJsonSchema($jsonSchema)
   {
@@ -77,12 +64,7 @@ class GoogleCloudDiscoveryengineV1alphaSchema extends \Google\Collection
     return $this->jsonSchema;
   }
   /**
-   * Immutable. The full resource name of the schema, in the format of `projects
-   * /{project}/locations/{location}/collections/{collection}/dataStores/{data_s
-   * tore}/schemas/{schema}`. This field must be a UTF-8 encoded string with a
-   * length limit of 1024 characters.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -96,9 +78,7 @@ class GoogleCloudDiscoveryengineV1alphaSchema extends \Google\Collection
     return $this->name;
   }
   /**
-   * The structured representation of the schema.
-   *
-   * @param array[] $structSchema
+   * @param array[]
    */
   public function setStructSchema($structSchema)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\GKEHub;
 class ConfigManagementInstallError extends \Google\Model
 {
   /**
-   * A string representing the user facing error message.
-   *
    * @var string
    */
   public $errorMessage;
 
   /**
-   * A string representing the user facing error message.
-   *
-   * @param string $errorMessage
+   * @param string
    */
   public function setErrorMessage($errorMessage)
   {

@@ -23,16 +23,12 @@ class DatabasesListResponse extends \Google\Collection
   protected $itemsType = Database::class;
   protected $itemsDataType = 'array';
   /**
-   * This is always `sql#databasesList`.
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * List of database resources in the instance.
-   *
-   * @param Database[] $items
+   * @param Database[]
    */
   public function setItems($items)
   {
@@ -46,9 +42,7 @@ class DatabasesListResponse extends \Google\Collection
     return $this->items;
   }
   /**
-   * This is always `sql#databasesList`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

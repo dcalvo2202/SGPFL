@@ -20,34 +20,20 @@ namespace Google\Service\CloudAlloyDBAdmin;
 class AutomatedBackupPolicy extends \Google\Model
 {
   /**
-   * The length of the time window during which a backup can be taken. If a
-   * backup does not succeed within this time window, it will be canceled and
-   * considered failed. The backup window must be at least 5 minutes long. There
-   * is no upper bound on the window. If not set, it defaults to 1 hour.
-   *
    * @var string
    */
   public $backupWindow;
   /**
-   * Whether automated automated backups are enabled. If not set, defaults to
-   * true.
-   *
    * @var bool
    */
   public $enabled;
   protected $encryptionConfigType = EncryptionConfig::class;
   protected $encryptionConfigDataType = '';
   /**
-   * Labels to apply to backups created using this configuration.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * The location where the backup will be stored. Currently, the only supported
-   * option is to store the backup in the same region as the cluster. If empty,
-   * defaults to the region of the cluster.
-   *
    * @var string
    */
   public $location;
@@ -59,12 +45,7 @@ class AutomatedBackupPolicy extends \Google\Model
   protected $weeklyScheduleDataType = '';
 
   /**
-   * The length of the time window during which a backup can be taken. If a
-   * backup does not succeed within this time window, it will be canceled and
-   * considered failed. The backup window must be at least 5 minutes long. There
-   * is no upper bound on the window. If not set, it defaults to 1 hour.
-   *
-   * @param string $backupWindow
+   * @param string
    */
   public function setBackupWindow($backupWindow)
   {
@@ -78,10 +59,7 @@ class AutomatedBackupPolicy extends \Google\Model
     return $this->backupWindow;
   }
   /**
-   * Whether automated automated backups are enabled. If not set, defaults to
-   * true.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {
@@ -95,11 +73,7 @@ class AutomatedBackupPolicy extends \Google\Model
     return $this->enabled;
   }
   /**
-   * Optional. The encryption config can be specified to encrypt the backups
-   * with a customer-managed encryption key (CMEK). When this field is not
-   * specified, the backup will use the cluster's encryption config.
-   *
-   * @param EncryptionConfig $encryptionConfig
+   * @param EncryptionConfig
    */
   public function setEncryptionConfig(EncryptionConfig $encryptionConfig)
   {
@@ -113,9 +87,7 @@ class AutomatedBackupPolicy extends \Google\Model
     return $this->encryptionConfig;
   }
   /**
-   * Labels to apply to backups created using this configuration.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -129,11 +101,7 @@ class AutomatedBackupPolicy extends \Google\Model
     return $this->labels;
   }
   /**
-   * The location where the backup will be stored. Currently, the only supported
-   * option is to store the backup in the same region as the cluster. If empty,
-   * defaults to the region of the cluster.
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -147,9 +115,7 @@ class AutomatedBackupPolicy extends \Google\Model
     return $this->location;
   }
   /**
-   * Quantity-based Backup retention policy to retain recent backups.
-   *
-   * @param QuantityBasedRetention $quantityBasedRetention
+   * @param QuantityBasedRetention
    */
   public function setQuantityBasedRetention(QuantityBasedRetention $quantityBasedRetention)
   {
@@ -163,9 +129,7 @@ class AutomatedBackupPolicy extends \Google\Model
     return $this->quantityBasedRetention;
   }
   /**
-   * Time-based Backup retention policy.
-   *
-   * @param TimeBasedRetention $timeBasedRetention
+   * @param TimeBasedRetention
    */
   public function setTimeBasedRetention(TimeBasedRetention $timeBasedRetention)
   {
@@ -179,9 +143,7 @@ class AutomatedBackupPolicy extends \Google\Model
     return $this->timeBasedRetention;
   }
   /**
-   * Weekly schedule for the Backup.
-   *
-   * @param WeeklySchedule $weeklySchedule
+   * @param WeeklySchedule
    */
   public function setWeeklySchedule(WeeklySchedule $weeklySchedule)
   {

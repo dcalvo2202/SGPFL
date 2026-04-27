@@ -20,22 +20,16 @@ namespace Google\Service\Dataform;
 class FetchGitAheadBehindResponse extends \Google\Model
 {
   /**
-   * The number of commits in the remote branch that are not in the workspace.
-   *
    * @var int
    */
   public $commitsAhead;
   /**
-   * The number of commits in the workspace that are not in the remote branch.
-   *
    * @var int
    */
   public $commitsBehind;
 
   /**
-   * The number of commits in the remote branch that are not in the workspace.
-   *
-   * @param int $commitsAhead
+   * @param int
    */
   public function setCommitsAhead($commitsAhead)
   {
@@ -49,9 +43,7 @@ class FetchGitAheadBehindResponse extends \Google\Model
     return $this->commitsAhead;
   }
   /**
-   * The number of commits in the workspace that are not in the remote branch.
-   *
-   * @param int $commitsBehind
+   * @param int
    */
   public function setCommitsBehind($commitsBehind)
   {

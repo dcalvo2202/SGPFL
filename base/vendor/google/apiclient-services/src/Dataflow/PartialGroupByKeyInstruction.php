@@ -23,38 +23,26 @@ class PartialGroupByKeyInstruction extends \Google\Collection
   protected $inputType = InstructionInput::class;
   protected $inputDataType = '';
   /**
-   * The codec to use for interpreting an element in the input PTable.
-   *
    * @var array[]
    */
   public $inputElementCodec;
   /**
-   * If this instruction includes a combining function this is the name of the
-   * intermediate store between the GBK and the CombineValues.
-   *
    * @var string
    */
   public $originalCombineValuesInputStoreName;
   /**
-   * If this instruction includes a combining function, this is the name of the
-   * CombineValues instruction lifted into this instruction.
-   *
    * @var string
    */
   public $originalCombineValuesStepName;
   protected $sideInputsType = SideInputInfo::class;
   protected $sideInputsDataType = 'array';
   /**
-   * The value combining function to invoke.
-   *
    * @var array[]
    */
   public $valueCombiningFn;
 
   /**
-   * Describes the input to the partial group-by-key instruction.
-   *
-   * @param InstructionInput $input
+   * @param InstructionInput
    */
   public function setInput(InstructionInput $input)
   {
@@ -68,9 +56,7 @@ class PartialGroupByKeyInstruction extends \Google\Collection
     return $this->input;
   }
   /**
-   * The codec to use for interpreting an element in the input PTable.
-   *
-   * @param array[] $inputElementCodec
+   * @param array[]
    */
   public function setInputElementCodec($inputElementCodec)
   {
@@ -84,10 +70,7 @@ class PartialGroupByKeyInstruction extends \Google\Collection
     return $this->inputElementCodec;
   }
   /**
-   * If this instruction includes a combining function this is the name of the
-   * intermediate store between the GBK and the CombineValues.
-   *
-   * @param string $originalCombineValuesInputStoreName
+   * @param string
    */
   public function setOriginalCombineValuesInputStoreName($originalCombineValuesInputStoreName)
   {
@@ -101,10 +84,7 @@ class PartialGroupByKeyInstruction extends \Google\Collection
     return $this->originalCombineValuesInputStoreName;
   }
   /**
-   * If this instruction includes a combining function, this is the name of the
-   * CombineValues instruction lifted into this instruction.
-   *
-   * @param string $originalCombineValuesStepName
+   * @param string
    */
   public function setOriginalCombineValuesStepName($originalCombineValuesStepName)
   {
@@ -118,9 +98,7 @@ class PartialGroupByKeyInstruction extends \Google\Collection
     return $this->originalCombineValuesStepName;
   }
   /**
-   * Zero or more side inputs.
-   *
-   * @param SideInputInfo[] $sideInputs
+   * @param SideInputInfo[]
    */
   public function setSideInputs($sideInputs)
   {
@@ -134,9 +112,7 @@ class PartialGroupByKeyInstruction extends \Google\Collection
     return $this->sideInputs;
   }
   /**
-   * The value combining function to invoke.
-   *
-   * @param array[] $valueCombiningFn
+   * @param array[]
    */
   public function setValueCombiningFn($valueCombiningFn)
   {

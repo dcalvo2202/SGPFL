@@ -24,20 +24,14 @@ class Group extends \Google\Model
   protected $errorsType = Errors::class;
   protected $errorsDataType = '';
   /**
-   * The Etag of this resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * The ID that YouTube uses to uniquely identify the group.
-   *
    * @var string
    */
   public $id;
   /**
-   * Identifies the API resource's type. The value will be `youtube#group`.
-   *
    * @var string
    */
   public $kind;
@@ -45,10 +39,7 @@ class Group extends \Google\Model
   protected $snippetDataType = '';
 
   /**
-   * The `contentDetails` object contains additional information about the
-   * group, such as the number and type of items that it contains.
-   *
-   * @param GroupContentDetails $contentDetails
+   * @param GroupContentDetails
    */
   public function setContentDetails(GroupContentDetails $contentDetails)
   {
@@ -62,9 +53,7 @@ class Group extends \Google\Model
     return $this->contentDetails;
   }
   /**
-   * Apiary error details
-   *
-   * @param Errors $errors
+   * @param Errors
    */
   public function setErrors(Errors $errors)
   {
@@ -78,9 +67,7 @@ class Group extends \Google\Model
     return $this->errors;
   }
   /**
-   * The Etag of this resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -94,9 +81,7 @@ class Group extends \Google\Model
     return $this->etag;
   }
   /**
-   * The ID that YouTube uses to uniquely identify the group.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -110,9 +95,7 @@ class Group extends \Google\Model
     return $this->id;
   }
   /**
-   * Identifies the API resource's type. The value will be `youtube#group`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -126,10 +109,7 @@ class Group extends \Google\Model
     return $this->kind;
   }
   /**
-   * The `snippet` object contains basic information about the group, including
-   * its creation date and name.
-   *
-   * @param GroupSnippet $snippet
+   * @param GroupSnippet
    */
   public function setSnippet(GroupSnippet $snippet)
   {

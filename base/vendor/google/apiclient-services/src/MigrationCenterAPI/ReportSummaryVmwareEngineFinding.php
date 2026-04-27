@@ -21,14 +21,10 @@ class ReportSummaryVmwareEngineFinding extends \Google\Collection
 {
   protected $collection_key = 'nodeAllocations';
   /**
-   * Count of assets which are allocated
-   *
    * @var string
    */
   public $allocatedAssetCount;
   /**
-   * Set of regions in which the assets were allocated
-   *
    * @var string[]
    */
   public $allocatedRegions;
@@ -36,9 +32,7 @@ class ReportSummaryVmwareEngineFinding extends \Google\Collection
   protected $nodeAllocationsDataType = 'array';
 
   /**
-   * Count of assets which are allocated
-   *
-   * @param string $allocatedAssetCount
+   * @param string
    */
   public function setAllocatedAssetCount($allocatedAssetCount)
   {
@@ -52,9 +46,7 @@ class ReportSummaryVmwareEngineFinding extends \Google\Collection
     return $this->allocatedAssetCount;
   }
   /**
-   * Set of regions in which the assets were allocated
-   *
-   * @param string[] $allocatedRegions
+   * @param string[]
    */
   public function setAllocatedRegions($allocatedRegions)
   {
@@ -68,9 +60,7 @@ class ReportSummaryVmwareEngineFinding extends \Google\Collection
     return $this->allocatedRegions;
   }
   /**
-   * Set of per-nodetype allocation records
-   *
-   * @param ReportSummaryVmwareNodeAllocation[] $nodeAllocations
+   * @param ReportSummaryVmwareNodeAllocation[]
    */
   public function setNodeAllocations($nodeAllocations)
   {

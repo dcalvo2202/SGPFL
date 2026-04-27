@@ -31,9 +31,7 @@ class DailyResourceUsageAggregation extends \Google\Model
   protected $networkDataType = '';
 
   /**
-   * CPU usage.
-   *
-   * @param DailyResourceUsageAggregationCPU $cpu
+   * @param DailyResourceUsageAggregationCPU
    */
   public function setCpu(DailyResourceUsageAggregationCPU $cpu)
   {
@@ -47,9 +45,7 @@ class DailyResourceUsageAggregation extends \Google\Model
     return $this->cpu;
   }
   /**
-   * Aggregation date. Day boundaries are at midnight UTC.
-   *
-   * @param Date $date
+   * @param Date
    */
   public function setDate(Date $date)
   {
@@ -63,9 +59,7 @@ class DailyResourceUsageAggregation extends \Google\Model
     return $this->date;
   }
   /**
-   * Disk usage.
-   *
-   * @param DailyResourceUsageAggregationDisk $disk
+   * @param DailyResourceUsageAggregationDisk
    */
   public function setDisk(DailyResourceUsageAggregationDisk $disk)
   {
@@ -79,9 +73,7 @@ class DailyResourceUsageAggregation extends \Google\Model
     return $this->disk;
   }
   /**
-   * Memory usage.
-   *
-   * @param DailyResourceUsageAggregationMemory $memory
+   * @param DailyResourceUsageAggregationMemory
    */
   public function setMemory(DailyResourceUsageAggregationMemory $memory)
   {
@@ -95,9 +87,7 @@ class DailyResourceUsageAggregation extends \Google\Model
     return $this->memory;
   }
   /**
-   * Network usage.
-   *
-   * @param DailyResourceUsageAggregationNetwork $network
+   * @param DailyResourceUsageAggregationNetwork
    */
   public function setNetwork(DailyResourceUsageAggregationNetwork $network)
   {

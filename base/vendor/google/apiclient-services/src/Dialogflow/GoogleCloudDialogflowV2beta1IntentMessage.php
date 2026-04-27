@@ -19,17 +19,6 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowV2beta1IntentMessage extends \Google\Model
 {
-  public const PLATFORM_PLATFORM_UNSPECIFIED = 'PLATFORM_UNSPECIFIED';
-  public const PLATFORM_FACEBOOK = 'FACEBOOK';
-  public const PLATFORM_SLACK = 'SLACK';
-  public const PLATFORM_TELEGRAM = 'TELEGRAM';
-  public const PLATFORM_KIK = 'KIK';
-  public const PLATFORM_SKYPE = 'SKYPE';
-  public const PLATFORM_LINE = 'LINE';
-  public const PLATFORM_VIBER = 'VIBER';
-  public const PLATFORM_ACTIONS_ON_GOOGLE = 'ACTIONS_ON_GOOGLE';
-  public const PLATFORM_TELEPHONY = 'TELEPHONY';
-  public const PLATFORM_GOOGLE_HANGOUTS = 'GOOGLE_HANGOUTS';
   protected $basicCardType = GoogleCloudDialogflowV2beta1IntentMessageBasicCard::class;
   protected $basicCardDataType = '';
   protected $browseCarouselCardType = GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard::class;
@@ -78,7 +67,7 @@ class GoogleCloudDialogflowV2beta1IntentMessage extends \Google\Model
   protected $textDataType = '';
 
   /**
-   * @param GoogleCloudDialogflowV2beta1IntentMessageBasicCard $basicCard
+   * @param GoogleCloudDialogflowV2beta1IntentMessageBasicCard
    */
   public function setBasicCard(GoogleCloudDialogflowV2beta1IntentMessageBasicCard $basicCard)
   {
@@ -92,7 +81,7 @@ class GoogleCloudDialogflowV2beta1IntentMessage extends \Google\Model
     return $this->basicCard;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard $browseCarouselCard
+   * @param GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard
    */
   public function setBrowseCarouselCard(GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard $browseCarouselCard)
   {
@@ -106,7 +95,7 @@ class GoogleCloudDialogflowV2beta1IntentMessage extends \Google\Model
     return $this->browseCarouselCard;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1IntentMessageCard $card
+   * @param GoogleCloudDialogflowV2beta1IntentMessageCard
    */
   public function setCard(GoogleCloudDialogflowV2beta1IntentMessageCard $card)
   {
@@ -120,7 +109,7 @@ class GoogleCloudDialogflowV2beta1IntentMessage extends \Google\Model
     return $this->card;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1IntentMessageCarouselSelect $carouselSelect
+   * @param GoogleCloudDialogflowV2beta1IntentMessageCarouselSelect
    */
   public function setCarouselSelect(GoogleCloudDialogflowV2beta1IntentMessageCarouselSelect $carouselSelect)
   {
@@ -134,7 +123,7 @@ class GoogleCloudDialogflowV2beta1IntentMessage extends \Google\Model
     return $this->carouselSelect;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1IntentMessageImage $image
+   * @param GoogleCloudDialogflowV2beta1IntentMessageImage
    */
   public function setImage(GoogleCloudDialogflowV2beta1IntentMessageImage $image)
   {
@@ -148,7 +137,7 @@ class GoogleCloudDialogflowV2beta1IntentMessage extends \Google\Model
     return $this->image;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1IntentMessageLinkOutSuggestion $linkOutSuggestion
+   * @param GoogleCloudDialogflowV2beta1IntentMessageLinkOutSuggestion
    */
   public function setLinkOutSuggestion(GoogleCloudDialogflowV2beta1IntentMessageLinkOutSuggestion $linkOutSuggestion)
   {
@@ -162,7 +151,7 @@ class GoogleCloudDialogflowV2beta1IntentMessage extends \Google\Model
     return $this->linkOutSuggestion;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1IntentMessageListSelect $listSelect
+   * @param GoogleCloudDialogflowV2beta1IntentMessageListSelect
    */
   public function setListSelect(GoogleCloudDialogflowV2beta1IntentMessageListSelect $listSelect)
   {
@@ -176,7 +165,7 @@ class GoogleCloudDialogflowV2beta1IntentMessage extends \Google\Model
     return $this->listSelect;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1IntentMessageMediaContent $mediaContent
+   * @param GoogleCloudDialogflowV2beta1IntentMessageMediaContent
    */
   public function setMediaContent(GoogleCloudDialogflowV2beta1IntentMessageMediaContent $mediaContent)
   {
@@ -190,7 +179,7 @@ class GoogleCloudDialogflowV2beta1IntentMessage extends \Google\Model
     return $this->mediaContent;
   }
   /**
-   * @param array[] $payload
+   * @param array[]
    */
   public function setPayload($payload)
   {
@@ -204,21 +193,21 @@ class GoogleCloudDialogflowV2beta1IntentMessage extends \Google\Model
     return $this->payload;
   }
   /**
-   * @param self::PLATFORM_* $platform
+   * @param string
    */
   public function setPlatform($platform)
   {
     $this->platform = $platform;
   }
   /**
-   * @return self::PLATFORM_*
+   * @return string
    */
   public function getPlatform()
   {
     return $this->platform;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1IntentMessageQuickReplies $quickReplies
+   * @param GoogleCloudDialogflowV2beta1IntentMessageQuickReplies
    */
   public function setQuickReplies(GoogleCloudDialogflowV2beta1IntentMessageQuickReplies $quickReplies)
   {
@@ -232,7 +221,7 @@ class GoogleCloudDialogflowV2beta1IntentMessage extends \Google\Model
     return $this->quickReplies;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1IntentMessageRbmCarouselCard $rbmCarouselRichCard
+   * @param GoogleCloudDialogflowV2beta1IntentMessageRbmCarouselCard
    */
   public function setRbmCarouselRichCard(GoogleCloudDialogflowV2beta1IntentMessageRbmCarouselCard $rbmCarouselRichCard)
   {
@@ -246,7 +235,7 @@ class GoogleCloudDialogflowV2beta1IntentMessage extends \Google\Model
     return $this->rbmCarouselRichCard;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard $rbmStandaloneRichCard
+   * @param GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard
    */
   public function setRbmStandaloneRichCard(GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard $rbmStandaloneRichCard)
   {
@@ -260,7 +249,7 @@ class GoogleCloudDialogflowV2beta1IntentMessage extends \Google\Model
     return $this->rbmStandaloneRichCard;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1IntentMessageRbmText $rbmText
+   * @param GoogleCloudDialogflowV2beta1IntentMessageRbmText
    */
   public function setRbmText(GoogleCloudDialogflowV2beta1IntentMessageRbmText $rbmText)
   {
@@ -274,7 +263,7 @@ class GoogleCloudDialogflowV2beta1IntentMessage extends \Google\Model
     return $this->rbmText;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1IntentMessageSimpleResponses $simpleResponses
+   * @param GoogleCloudDialogflowV2beta1IntentMessageSimpleResponses
    */
   public function setSimpleResponses(GoogleCloudDialogflowV2beta1IntentMessageSimpleResponses $simpleResponses)
   {
@@ -288,7 +277,7 @@ class GoogleCloudDialogflowV2beta1IntentMessage extends \Google\Model
     return $this->simpleResponses;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1IntentMessageSuggestions $suggestions
+   * @param GoogleCloudDialogflowV2beta1IntentMessageSuggestions
    */
   public function setSuggestions(GoogleCloudDialogflowV2beta1IntentMessageSuggestions $suggestions)
   {
@@ -302,7 +291,7 @@ class GoogleCloudDialogflowV2beta1IntentMessage extends \Google\Model
     return $this->suggestions;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1IntentMessageTableCard $tableCard
+   * @param GoogleCloudDialogflowV2beta1IntentMessageTableCard
    */
   public function setTableCard(GoogleCloudDialogflowV2beta1IntentMessageTableCard $tableCard)
   {
@@ -316,7 +305,7 @@ class GoogleCloudDialogflowV2beta1IntentMessage extends \Google\Model
     return $this->tableCard;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1IntentMessageTelephonyPlayAudio $telephonyPlayAudio
+   * @param GoogleCloudDialogflowV2beta1IntentMessageTelephonyPlayAudio
    */
   public function setTelephonyPlayAudio(GoogleCloudDialogflowV2beta1IntentMessageTelephonyPlayAudio $telephonyPlayAudio)
   {
@@ -330,7 +319,7 @@ class GoogleCloudDialogflowV2beta1IntentMessage extends \Google\Model
     return $this->telephonyPlayAudio;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1IntentMessageTelephonySynthesizeSpeech $telephonySynthesizeSpeech
+   * @param GoogleCloudDialogflowV2beta1IntentMessageTelephonySynthesizeSpeech
    */
   public function setTelephonySynthesizeSpeech(GoogleCloudDialogflowV2beta1IntentMessageTelephonySynthesizeSpeech $telephonySynthesizeSpeech)
   {
@@ -344,7 +333,7 @@ class GoogleCloudDialogflowV2beta1IntentMessage extends \Google\Model
     return $this->telephonySynthesizeSpeech;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1IntentMessageTelephonyTransferCall $telephonyTransferCall
+   * @param GoogleCloudDialogflowV2beta1IntentMessageTelephonyTransferCall
    */
   public function setTelephonyTransferCall(GoogleCloudDialogflowV2beta1IntentMessageTelephonyTransferCall $telephonyTransferCall)
   {
@@ -358,7 +347,7 @@ class GoogleCloudDialogflowV2beta1IntentMessage extends \Google\Model
     return $this->telephonyTransferCall;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1IntentMessageText $text
+   * @param GoogleCloudDialogflowV2beta1IntentMessageText
    */
   public function setText(GoogleCloudDialogflowV2beta1IntentMessageText $text)
   {

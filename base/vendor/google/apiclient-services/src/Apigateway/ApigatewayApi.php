@@ -20,82 +20,36 @@ namespace Google\Service\Apigateway;
 class ApigatewayApi extends \Google\Model
 {
   /**
-   * API does not have a state yet.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * API is being created.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * API is active.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * API creation failed.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * API is being deleted.
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * API is being updated.
-   */
-  public const STATE_UPDATING = 'UPDATING';
-  /**
-   * Output only. Created time.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. Display name.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Optional. Resource labels to represent user-provided metadata. Refer to
-   * cloud documentation on labels for more details.
-   * https://cloud.google.com/compute/docs/labeling-resources
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Optional. Immutable. The name of a Google Managed Service (
-   * https://cloud.google.com/service-infrastructure/docs/glossary#managed). If
-   * not specified, a new Service will automatically be created in the same
-   * project as this API.
-   *
    * @var string
    */
   public $managedService;
   /**
-   * Output only. Resource name of the API. Format:
-   * projects/{project}/locations/global/apis/{api}
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. State of the API.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. Updated time.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. Created time.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -109,9 +63,7 @@ class ApigatewayApi extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Optional. Display name.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -125,11 +77,7 @@ class ApigatewayApi extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Optional. Resource labels to represent user-provided metadata. Refer to
-   * cloud documentation on labels for more details.
-   * https://cloud.google.com/compute/docs/labeling-resources
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -143,12 +91,7 @@ class ApigatewayApi extends \Google\Model
     return $this->labels;
   }
   /**
-   * Optional. Immutable. The name of a Google Managed Service (
-   * https://cloud.google.com/service-infrastructure/docs/glossary#managed). If
-   * not specified, a new Service will automatically be created in the same
-   * project as this API.
-   *
-   * @param string $managedService
+   * @param string
    */
   public function setManagedService($managedService)
   {
@@ -162,10 +105,7 @@ class ApigatewayApi extends \Google\Model
     return $this->managedService;
   }
   /**
-   * Output only. Resource name of the API. Format:
-   * projects/{project}/locations/global/apis/{api}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -179,28 +119,21 @@ class ApigatewayApi extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. State of the API.
-   *
-   * Accepted values: STATE_UNSPECIFIED, CREATING, ACTIVE, FAILED, DELETING,
-   * UPDATING
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. Updated time.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

@@ -20,36 +20,14 @@ namespace Google\Service\CloudBuild;
 class PipelineResult extends \Google\Model
 {
   /**
-   * Default enum type; should not be used.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * Default
-   */
-  public const TYPE_STRING = 'STRING';
-  /**
-   * Array type
-   */
-  public const TYPE_ARRAY = 'ARRAY';
-  /**
-   * Object type
-   */
-  public const TYPE_OBJECT = 'OBJECT';
-  /**
-   * Output only. Description of the result.
-   *
    * @var string
    */
   public $description;
   /**
-   * Output only. Name of the result.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The type of data that the result holds.
-   *
    * @var string
    */
   public $type;
@@ -57,9 +35,7 @@ class PipelineResult extends \Google\Model
   protected $valueDataType = '';
 
   /**
-   * Output only. Description of the result.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -73,9 +49,7 @@ class PipelineResult extends \Google\Model
     return $this->description;
   }
   /**
-   * Output only. Name of the result.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -89,27 +63,21 @@ class PipelineResult extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The type of data that the result holds.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, STRING, ARRAY, OBJECT
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * Output only. Value of the result.
-   *
-   * @param ResultValue $value
+   * @param ResultValue
    */
   public function setValue(ResultValue $value)
   {

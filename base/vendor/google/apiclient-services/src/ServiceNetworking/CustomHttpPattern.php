@@ -20,22 +20,16 @@ namespace Google\Service\ServiceNetworking;
 class CustomHttpPattern extends \Google\Model
 {
   /**
-   * The name of this custom HTTP verb.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The path matched by this custom verb.
-   *
    * @var string
    */
   public $path;
 
   /**
-   * The name of this custom HTTP verb.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -49,9 +43,7 @@ class CustomHttpPattern extends \Google\Model
     return $this->kind;
   }
   /**
-   * The path matched by this custom verb.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {

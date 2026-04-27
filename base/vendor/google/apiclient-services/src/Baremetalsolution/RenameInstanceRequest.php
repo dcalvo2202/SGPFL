@@ -20,16 +20,12 @@ namespace Google\Service\Baremetalsolution;
 class RenameInstanceRequest extends \Google\Model
 {
   /**
-   * Required. The new `id` of the instance.
-   *
    * @var string
    */
   public $newInstanceId;
 
   /**
-   * Required. The new `id` of the instance.
-   *
-   * @param string $newInstanceId
+   * @param string
    */
   public function setNewInstanceId($newInstanceId)
   {

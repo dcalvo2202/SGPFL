@@ -21,25 +21,16 @@ class ServiceAccount extends \Google\Collection
 {
   protected $collection_key = 'scope';
   /**
-   * Email address of the service account. If empty, default Compute service
-   * account will be used.
-   *
    * @var string
    */
   public $email;
   /**
-   * The list of scopes to be made available for this service account. If empty,
-   * access to all Cloud APIs will be allowed.
-   *
    * @var string[]
    */
   public $scope;
 
   /**
-   * Email address of the service account. If empty, default Compute service
-   * account will be used.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {
@@ -53,10 +44,7 @@ class ServiceAccount extends \Google\Collection
     return $this->email;
   }
   /**
-   * The list of scopes to be made available for this service account. If empty,
-   * access to all Cloud APIs will be allowed.
-   *
-   * @param string[] $scope
+   * @param string[]
    */
   public function setScope($scope)
   {

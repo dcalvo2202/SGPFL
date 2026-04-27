@@ -32,96 +32,52 @@ class StatsResponse extends \Google\Model
         "totalSpendNext28Days" => "total_spend_next_28_days",
   ];
   /**
-   * Average session length in minutes of the player. E.g., 1, 30, 60, ... . Not
-   * populated if there is not enough information.
-   *
    * @var float
    */
   public $avgSessionLengthMinutes;
   /**
-   * The probability of the player not returning to play the game in the next
-   * day. E.g., 0, 0.1, 0.5, ..., 1.0. Not populated if there is not enough
-   * information.
-   *
    * @var float
    */
   public $churnProbability;
   /**
-   * Number of days since the player last played this game. E.g., 0, 1, 5, 10,
-   * ... . Not populated if there is not enough information.
-   *
    * @var int
    */
   public $daysSinceLastPlayed;
   /**
-   * The probability of the player going to spend beyond a threshold amount of
-   * money. E.g., 0, 0.25, 0.50, 0.75. Not populated if there is not enough
-   * information.
-   *
    * @var float
    */
   public $highSpenderProbability;
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#statsResponse`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Number of in-app purchases made by the player in this game. E.g., 0, 1, 5,
-   * 10, ... . Not populated if there is not enough information.
-   *
    * @var int
    */
   public $numPurchases;
   /**
-   * The approximate number of sessions of the player within the last 28 days,
-   * where a session begins when the player is connected to Play Games Services
-   * and ends when they are disconnected. E.g., 0, 1, 5, 10, ... . Not populated
-   * if there is not enough information.
-   *
    * @var int
    */
   public $numSessions;
   /**
-   * The approximation of the sessions percentile of the player within the last
-   * 30 days, where a session begins when the player is connected to Play Games
-   * Services and ends when they are disconnected. E.g., 0, 0.25, 0.5, 0.75. Not
-   * populated if there is not enough information.
-   *
    * @var float
    */
   public $numSessionsPercentile;
   /**
-   * The approximate spend percentile of the player in this game. E.g., 0, 0.25,
-   * 0.5, 0.75. Not populated if there is not enough information.
-   *
    * @var float
    */
   public $spendPercentile;
   /**
-   * The probability of the player going to spend the game in the next seven
-   * days. E.g., 0, 0.25, 0.50, 0.75. Not populated if there is not enough
-   * information.
-   *
    * @var float
    */
   public $spendProbability;
   /**
-   * The predicted amount of money that the player going to spend in the next 28
-   * days. E.g., 1, 30, 60, ... . Not populated if there is not enough
-   * information.
-   *
    * @var float
    */
   public $totalSpendNext28Days;
 
   /**
-   * Average session length in minutes of the player. E.g., 1, 30, 60, ... . Not
-   * populated if there is not enough information.
-   *
-   * @param float $avgSessionLengthMinutes
+   * @param float
    */
   public function setAvgSessionLengthMinutes($avgSessionLengthMinutes)
   {
@@ -135,11 +91,7 @@ class StatsResponse extends \Google\Model
     return $this->avgSessionLengthMinutes;
   }
   /**
-   * The probability of the player not returning to play the game in the next
-   * day. E.g., 0, 0.1, 0.5, ..., 1.0. Not populated if there is not enough
-   * information.
-   *
-   * @param float $churnProbability
+   * @param float
    */
   public function setChurnProbability($churnProbability)
   {
@@ -153,10 +105,7 @@ class StatsResponse extends \Google\Model
     return $this->churnProbability;
   }
   /**
-   * Number of days since the player last played this game. E.g., 0, 1, 5, 10,
-   * ... . Not populated if there is not enough information.
-   *
-   * @param int $daysSinceLastPlayed
+   * @param int
    */
   public function setDaysSinceLastPlayed($daysSinceLastPlayed)
   {
@@ -170,11 +119,7 @@ class StatsResponse extends \Google\Model
     return $this->daysSinceLastPlayed;
   }
   /**
-   * The probability of the player going to spend beyond a threshold amount of
-   * money. E.g., 0, 0.25, 0.50, 0.75. Not populated if there is not enough
-   * information.
-   *
-   * @param float $highSpenderProbability
+   * @param float
    */
   public function setHighSpenderProbability($highSpenderProbability)
   {
@@ -188,10 +133,7 @@ class StatsResponse extends \Google\Model
     return $this->highSpenderProbability;
   }
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#statsResponse`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -205,10 +147,7 @@ class StatsResponse extends \Google\Model
     return $this->kind;
   }
   /**
-   * Number of in-app purchases made by the player in this game. E.g., 0, 1, 5,
-   * 10, ... . Not populated if there is not enough information.
-   *
-   * @param int $numPurchases
+   * @param int
    */
   public function setNumPurchases($numPurchases)
   {
@@ -222,12 +161,7 @@ class StatsResponse extends \Google\Model
     return $this->numPurchases;
   }
   /**
-   * The approximate number of sessions of the player within the last 28 days,
-   * where a session begins when the player is connected to Play Games Services
-   * and ends when they are disconnected. E.g., 0, 1, 5, 10, ... . Not populated
-   * if there is not enough information.
-   *
-   * @param int $numSessions
+   * @param int
    */
   public function setNumSessions($numSessions)
   {
@@ -241,12 +175,7 @@ class StatsResponse extends \Google\Model
     return $this->numSessions;
   }
   /**
-   * The approximation of the sessions percentile of the player within the last
-   * 30 days, where a session begins when the player is connected to Play Games
-   * Services and ends when they are disconnected. E.g., 0, 0.25, 0.5, 0.75. Not
-   * populated if there is not enough information.
-   *
-   * @param float $numSessionsPercentile
+   * @param float
    */
   public function setNumSessionsPercentile($numSessionsPercentile)
   {
@@ -260,10 +189,7 @@ class StatsResponse extends \Google\Model
     return $this->numSessionsPercentile;
   }
   /**
-   * The approximate spend percentile of the player in this game. E.g., 0, 0.25,
-   * 0.5, 0.75. Not populated if there is not enough information.
-   *
-   * @param float $spendPercentile
+   * @param float
    */
   public function setSpendPercentile($spendPercentile)
   {
@@ -277,11 +203,7 @@ class StatsResponse extends \Google\Model
     return $this->spendPercentile;
   }
   /**
-   * The probability of the player going to spend the game in the next seven
-   * days. E.g., 0, 0.25, 0.50, 0.75. Not populated if there is not enough
-   * information.
-   *
-   * @param float $spendProbability
+   * @param float
    */
   public function setSpendProbability($spendProbability)
   {
@@ -295,11 +217,7 @@ class StatsResponse extends \Google\Model
     return $this->spendProbability;
   }
   /**
-   * The predicted amount of money that the player going to spend in the next 28
-   * days. E.g., 1, 30, 60, ... . Not populated if there is not enough
-   * information.
-   *
-   * @param float $totalSpendNext28Days
+   * @param float
    */
   public function setTotalSpendNext28Days($totalSpendNext28Days)
   {

@@ -23,9 +23,7 @@ class GoogleCloudEventarcV1PipelineMediation extends \Google\Model
   protected $transformationDataType = '';
 
   /**
-   * Optional. How the Pipeline is to transform messages
-   *
-   * @param GoogleCloudEventarcV1PipelineMediationTransformation $transformation
+   * @param GoogleCloudEventarcV1PipelineMediationTransformation
    */
   public function setTransformation(GoogleCloudEventarcV1PipelineMediationTransformation $transformation)
   {

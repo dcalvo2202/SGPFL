@@ -25,45 +25,28 @@ class CloudAiPlatformTenantresourceGcsBucketConfig extends \Google\Collection
    */
   public $admins;
   /**
-   * Input/Output [Optional]. The name of a GCS bucket with max length of 63
-   * chars. If not set, a random UUID will be generated as bucket name.
-   *
    * @var string
    */
   public $bucketName;
   /**
-   * Input/Output [Optional]. Only needed for per-entity tenant GCP resources.
-   * During Deprovision API, the on-demand deletion will only cover the tenant
-   * GCP resources with the specified entity name.
-   *
    * @var string
    */
   public $entityName;
   /**
-   * Input/Output [Optional]. The KMS key name or the KMS grant name used for
-   * CMEK encryption. Only set this field when provisioning new GCS bucket. For
-   * existing GCS bucket, this field will be ignored because CMEK re-encryption
-   * is not supported.
-   *
    * @var string
    */
   public $kmsKeyReference;
   /**
-   * Input/Output [Optional]. Only needed when the content in bucket need to be
-   * garbage collected within some amount of days.
-   *
    * @var int
    */
   public $ttlDays;
   /**
-   * Input/Output [Required]. IAM roles (viewer/admin) put on the bucket.
-   *
    * @var string[]
    */
   public $viewers;
 
   /**
-   * @param string[] $admins
+   * @param string[]
    */
   public function setAdmins($admins)
   {
@@ -77,10 +60,7 @@ class CloudAiPlatformTenantresourceGcsBucketConfig extends \Google\Collection
     return $this->admins;
   }
   /**
-   * Input/Output [Optional]. The name of a GCS bucket with max length of 63
-   * chars. If not set, a random UUID will be generated as bucket name.
-   *
-   * @param string $bucketName
+   * @param string
    */
   public function setBucketName($bucketName)
   {
@@ -94,11 +74,7 @@ class CloudAiPlatformTenantresourceGcsBucketConfig extends \Google\Collection
     return $this->bucketName;
   }
   /**
-   * Input/Output [Optional]. Only needed for per-entity tenant GCP resources.
-   * During Deprovision API, the on-demand deletion will only cover the tenant
-   * GCP resources with the specified entity name.
-   *
-   * @param string $entityName
+   * @param string
    */
   public function setEntityName($entityName)
   {
@@ -112,12 +88,7 @@ class CloudAiPlatformTenantresourceGcsBucketConfig extends \Google\Collection
     return $this->entityName;
   }
   /**
-   * Input/Output [Optional]. The KMS key name or the KMS grant name used for
-   * CMEK encryption. Only set this field when provisioning new GCS bucket. For
-   * existing GCS bucket, this field will be ignored because CMEK re-encryption
-   * is not supported.
-   *
-   * @param string $kmsKeyReference
+   * @param string
    */
   public function setKmsKeyReference($kmsKeyReference)
   {
@@ -131,10 +102,7 @@ class CloudAiPlatformTenantresourceGcsBucketConfig extends \Google\Collection
     return $this->kmsKeyReference;
   }
   /**
-   * Input/Output [Optional]. Only needed when the content in bucket need to be
-   * garbage collected within some amount of days.
-   *
-   * @param int $ttlDays
+   * @param int
    */
   public function setTtlDays($ttlDays)
   {
@@ -148,9 +116,7 @@ class CloudAiPlatformTenantresourceGcsBucketConfig extends \Google\Collection
     return $this->ttlDays;
   }
   /**
-   * Input/Output [Required]. IAM roles (viewer/admin) put on the bucket.
-   *
-   * @param string[] $viewers
+   * @param string[]
    */
   public function setViewers($viewers)
   {

@@ -20,23 +20,16 @@ namespace Google\Service\CloudRetail;
 class GoogleCloudRetailV2ExportMetadata extends \Google\Model
 {
   /**
-   * Operation create time.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Operation last update time. If the operation is done, this is also the
-   * finish time.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Operation create time.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -50,10 +43,7 @@ class GoogleCloudRetailV2ExportMetadata extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Operation last update time. If the operation is done, this is also the
-   * finish time.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

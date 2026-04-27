@@ -23,16 +23,12 @@ class GoogleCloudDiscoveryengineV1alphaAlertPolicyConfig extends \Google\Collect
   protected $alertEnrollmentsType = GoogleCloudDiscoveryengineV1alphaAlertPolicyConfigAlertEnrollment::class;
   protected $alertEnrollmentsDataType = 'array';
   /**
-   * Immutable. The fully qualified resource name of the AlertPolicy.
-   *
    * @var string
    */
   public $alertPolicyName;
 
   /**
-   * Optional. The enrollment states of each alert.
-   *
-   * @param GoogleCloudDiscoveryengineV1alphaAlertPolicyConfigAlertEnrollment[] $alertEnrollments
+   * @param GoogleCloudDiscoveryengineV1alphaAlertPolicyConfigAlertEnrollment[]
    */
   public function setAlertEnrollments($alertEnrollments)
   {
@@ -46,9 +42,7 @@ class GoogleCloudDiscoveryengineV1alphaAlertPolicyConfig extends \Google\Collect
     return $this->alertEnrollments;
   }
   /**
-   * Immutable. The fully qualified resource name of the AlertPolicy.
-   *
-   * @param string $alertPolicyName
+   * @param string
    */
   public function setAlertPolicyName($alertPolicyName)
   {

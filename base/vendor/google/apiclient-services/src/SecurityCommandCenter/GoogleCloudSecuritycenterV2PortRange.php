@@ -20,22 +20,16 @@ namespace Google\Service\SecurityCommandCenter;
 class GoogleCloudSecuritycenterV2PortRange extends \Google\Model
 {
   /**
-   * Maximum port value.
-   *
    * @var string
    */
   public $max;
   /**
-   * Minimum port value.
-   *
    * @var string
    */
   public $min;
 
   /**
-   * Maximum port value.
-   *
-   * @param string $max
+   * @param string
    */
   public function setMax($max)
   {
@@ -49,9 +43,7 @@ class GoogleCloudSecuritycenterV2PortRange extends \Google\Model
     return $this->max;
   }
   /**
-   * Minimum port value.
-   *
-   * @param string $min
+   * @param string
    */
   public function setMin($min)
   {

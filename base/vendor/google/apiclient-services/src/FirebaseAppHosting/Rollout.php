@@ -20,133 +20,58 @@ namespace Google\Service\FirebaseAppHosting;
 class Rollout extends \Google\Model
 {
   /**
-   * The rollout is in an unknown state.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The rollout is waiting for actuation to begin. This may be because it is
-   * waiting on another rollout to complete.
-   */
-  public const STATE_QUEUED = 'QUEUED';
-  /**
-   * The rollout is waiting for the build process to complete, which builds the
-   * code and sets up the underlying infrastructure.
-   */
-  public const STATE_PENDING_BUILD = 'PENDING_BUILD';
-  /**
-   * The rollout has started and is actively modifying traffic.
-   */
-  public const STATE_PROGRESSING = 'PROGRESSING';
-  /**
-   * The rollout has been paused due to either being manually paused or a PAUSED
-   * stage. This should be set while `paused = true`.
-   */
-  public const STATE_PAUSED = 'PAUSED';
-  /**
-   * The rollout has completed.
-   */
-  public const STATE_SUCCEEDED = 'SUCCEEDED';
-  /**
-   * The rollout has failed. See error for more information.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * The rollout has been cancelled.
-   */
-  public const STATE_CANCELLED = 'CANCELLED';
-  /**
-   * The rollout has been skipped.
-   */
-  public const STATE_SKIPPED = 'SKIPPED';
-  /**
-   * Optional. Unstructured key value map that may be set by external tools to
-   * store and arbitrary metadata. They are not queryable and should be
-   * preserved when modifying objects.
-   *
    * @var string[]
    */
   public $annotations;
   /**
-   * Required. Immutable. The name of a build that already exists. It doesn't
-   * have to be built; a rollout will wait for a build to be ready before
-   * updating traffic.
-   *
    * @var string
    */
   public $build;
   /**
-   * Output only. Time at which the rollout was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. Time at which the rollout was deleted.
-   *
    * @var string
    */
   public $deleteTime;
   /**
-   * Optional. Human-readable name. 63 character limit.
-   *
    * @var string
    */
   public $displayName;
   protected $errorType = Status::class;
   protected $errorDataType = '';
   /**
-   * Output only. Server-computed checksum based on other values; may be sent on
-   * update or delete to ensure operation is done on expected resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Optional. Unstructured key value map that can be used to organize and
-   * categorize objects.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Identifier. The resource name of the rollout. Format: `projects/{project}/l
-   * ocations/{locationId}/backends/{backendId}/rollouts/{rolloutId}`.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. A field that, if true, indicates that the Rollout currently
-   * has an LRO.
-   *
    * @var bool
    */
   public $reconciling;
   /**
-   * Output only. The state of the rollout.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. System-assigned, unique identifier.
-   *
    * @var string
    */
   public $uid;
   /**
-   * Output only. Time at which the rollout was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Optional. Unstructured key value map that may be set by external tools to
-   * store and arbitrary metadata. They are not queryable and should be
-   * preserved when modifying objects.
-   *
-   * @param string[] $annotations
+   * @param string[]
    */
   public function setAnnotations($annotations)
   {
@@ -160,11 +85,7 @@ class Rollout extends \Google\Model
     return $this->annotations;
   }
   /**
-   * Required. Immutable. The name of a build that already exists. It doesn't
-   * have to be built; a rollout will wait for a build to be ready before
-   * updating traffic.
-   *
-   * @param string $build
+   * @param string
    */
   public function setBuild($build)
   {
@@ -178,9 +99,7 @@ class Rollout extends \Google\Model
     return $this->build;
   }
   /**
-   * Output only. Time at which the rollout was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -194,9 +113,7 @@ class Rollout extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. Time at which the rollout was deleted.
-   *
-   * @param string $deleteTime
+   * @param string
    */
   public function setDeleteTime($deleteTime)
   {
@@ -210,9 +127,7 @@ class Rollout extends \Google\Model
     return $this->deleteTime;
   }
   /**
-   * Optional. Human-readable name. 63 character limit.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -226,10 +141,7 @@ class Rollout extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Output only. A status and (human readable) error message for the rollout,
-   * if in a `FAILED` state.
-   *
-   * @param Status $error
+   * @param Status
    */
   public function setError(Status $error)
   {
@@ -243,10 +155,7 @@ class Rollout extends \Google\Model
     return $this->error;
   }
   /**
-   * Output only. Server-computed checksum based on other values; may be sent on
-   * update or delete to ensure operation is done on expected resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -260,10 +169,7 @@ class Rollout extends \Google\Model
     return $this->etag;
   }
   /**
-   * Optional. Unstructured key value map that can be used to organize and
-   * categorize objects.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -277,10 +183,7 @@ class Rollout extends \Google\Model
     return $this->labels;
   }
   /**
-   * Identifier. The resource name of the rollout. Format: `projects/{project}/l
-   * ocations/{locationId}/backends/{backendId}/rollouts/{rolloutId}`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -294,10 +197,7 @@ class Rollout extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. A field that, if true, indicates that the Rollout currently
-   * has an LRO.
-   *
-   * @param bool $reconciling
+   * @param bool
    */
   public function setReconciling($reconciling)
   {
@@ -311,28 +211,21 @@ class Rollout extends \Google\Model
     return $this->reconciling;
   }
   /**
-   * Output only. The state of the rollout.
-   *
-   * Accepted values: STATE_UNSPECIFIED, QUEUED, PENDING_BUILD, PROGRESSING,
-   * PAUSED, SUCCEEDED, FAILED, CANCELLED, SKIPPED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. System-assigned, unique identifier.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {
@@ -346,9 +239,7 @@ class Rollout extends \Google\Model
     return $this->uid;
   }
   /**
-   * Output only. Time at which the rollout was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

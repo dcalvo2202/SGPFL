@@ -21,10 +21,6 @@ class ListMonitoredResourceDescriptorsResponse extends \Google\Collection
 {
   protected $collection_key = 'resourceDescriptors';
   /**
-   * If there might be more results than those appearing in this response, then
-   * nextPageToken is included. To get the next set of results, call this method
-   * again using the value of nextPageToken as pageToken.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -32,11 +28,7 @@ class ListMonitoredResourceDescriptorsResponse extends \Google\Collection
   protected $resourceDescriptorsDataType = 'array';
 
   /**
-   * If there might be more results than those appearing in this response, then
-   * nextPageToken is included. To get the next set of results, call this method
-   * again using the value of nextPageToken as pageToken.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -50,9 +42,7 @@ class ListMonitoredResourceDescriptorsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * A list of resource descriptors.
-   *
-   * @param MonitoredResourceDescriptor[] $resourceDescriptors
+   * @param MonitoredResourceDescriptor[]
    */
   public function setResourceDescriptors($resourceDescriptors)
   {

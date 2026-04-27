@@ -22,23 +22,16 @@ class GoogleCloudDatalabelingV1beta1ImageSegmentationAnnotation extends \Google\
   protected $annotationColorsType = GoogleCloudDatalabelingV1beta1AnnotationSpec::class;
   protected $annotationColorsDataType = 'map';
   /**
-   * A byte string of a full image's color map.
-   *
    * @var string
    */
   public $imageBytes;
   /**
-   * Image format.
-   *
    * @var string
    */
   public $mimeType;
 
   /**
-   * The mapping between rgb color and annotation spec. The key is the rgb color
-   * represented in format of rgb(0, 0, 0). The value is the AnnotationSpec.
-   *
-   * @param GoogleCloudDatalabelingV1beta1AnnotationSpec[] $annotationColors
+   * @param GoogleCloudDatalabelingV1beta1AnnotationSpec[]
    */
   public function setAnnotationColors($annotationColors)
   {
@@ -52,9 +45,7 @@ class GoogleCloudDatalabelingV1beta1ImageSegmentationAnnotation extends \Google\
     return $this->annotationColors;
   }
   /**
-   * A byte string of a full image's color map.
-   *
-   * @param string $imageBytes
+   * @param string
    */
   public function setImageBytes($imageBytes)
   {
@@ -68,9 +59,7 @@ class GoogleCloudDatalabelingV1beta1ImageSegmentationAnnotation extends \Google\
     return $this->imageBytes;
   }
   /**
-   * Image format.
-   *
-   * @param string $mimeType
+   * @param string
    */
   public function setMimeType($mimeType)
   {

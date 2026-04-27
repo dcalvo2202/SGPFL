@@ -29,7 +29,7 @@ class GoogleCloudDialogflowV2KnowledgeAssistAnswerKnowledgeAnswer extends \Googl
   protected $generativeSourceDataType = '';
 
   /**
-   * @param string $answerText
+   * @param string
    */
   public function setAnswerText($answerText)
   {
@@ -43,7 +43,7 @@ class GoogleCloudDialogflowV2KnowledgeAssistAnswerKnowledgeAnswer extends \Googl
     return $this->answerText;
   }
   /**
-   * @param GoogleCloudDialogflowV2KnowledgeAssistAnswerKnowledgeAnswerFaqSource $faqSource
+   * @param GoogleCloudDialogflowV2KnowledgeAssistAnswerKnowledgeAnswerFaqSource
    */
   public function setFaqSource(GoogleCloudDialogflowV2KnowledgeAssistAnswerKnowledgeAnswerFaqSource $faqSource)
   {
@@ -57,7 +57,7 @@ class GoogleCloudDialogflowV2KnowledgeAssistAnswerKnowledgeAnswer extends \Googl
     return $this->faqSource;
   }
   /**
-   * @param GoogleCloudDialogflowV2KnowledgeAssistAnswerKnowledgeAnswerGenerativeSource $generativeSource
+   * @param GoogleCloudDialogflowV2KnowledgeAssistAnswerKnowledgeAnswerGenerativeSource
    */
   public function setGenerativeSource(GoogleCloudDialogflowV2KnowledgeAssistAnswerKnowledgeAnswerGenerativeSource $generativeSource)
   {

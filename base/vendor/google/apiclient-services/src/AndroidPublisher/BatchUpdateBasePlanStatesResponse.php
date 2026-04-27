@@ -24,10 +24,7 @@ class BatchUpdateBasePlanStatesResponse extends \Google\Collection
   protected $subscriptionsDataType = 'array';
 
   /**
-   * The list of updated subscriptions. This list will match the requests one to
-   * one, in the same order.
-   *
-   * @param Subscription[] $subscriptions
+   * @param Subscription[]
    */
   public function setSubscriptions($subscriptions)
   {

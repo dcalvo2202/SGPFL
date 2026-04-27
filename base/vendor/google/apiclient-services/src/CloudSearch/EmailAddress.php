@@ -20,44 +20,28 @@ namespace Google\Service\CloudSearch;
 class EmailAddress extends \Google\Model
 {
   /**
-   * If the value of type is custom, this property contains the custom type
-   * string.
-   *
    * @var string
    */
   public $customType;
   /**
-   * The email address.
-   *
    * @var string
    */
   public $emailAddress;
   /**
-   * The URL to send email.
-   *
    * @var string
    */
   public $emailUrl;
   /**
-   * Indicates if this is the user's primary email. Only one entry can be marked
-   * as primary.
-   *
    * @var bool
    */
   public $primary;
   /**
-   * The type of the email account. Acceptable values are: "custom", "home",
-   * "other", "work".
-   *
    * @var string
    */
   public $type;
 
   /**
-   * If the value of type is custom, this property contains the custom type
-   * string.
-   *
-   * @param string $customType
+   * @param string
    */
   public function setCustomType($customType)
   {
@@ -71,9 +55,7 @@ class EmailAddress extends \Google\Model
     return $this->customType;
   }
   /**
-   * The email address.
-   *
-   * @param string $emailAddress
+   * @param string
    */
   public function setEmailAddress($emailAddress)
   {
@@ -87,9 +69,7 @@ class EmailAddress extends \Google\Model
     return $this->emailAddress;
   }
   /**
-   * The URL to send email.
-   *
-   * @param string $emailUrl
+   * @param string
    */
   public function setEmailUrl($emailUrl)
   {
@@ -103,10 +83,7 @@ class EmailAddress extends \Google\Model
     return $this->emailUrl;
   }
   /**
-   * Indicates if this is the user's primary email. Only one entry can be marked
-   * as primary.
-   *
-   * @param bool $primary
+   * @param bool
    */
   public function setPrimary($primary)
   {
@@ -120,10 +97,7 @@ class EmailAddress extends \Google\Model
     return $this->primary;
   }
   /**
-   * The type of the email account. Acceptable values are: "custom", "home",
-   * "other", "work".
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

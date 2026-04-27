@@ -20,42 +20,28 @@ namespace Google\Service\Dataflow;
 class Stack extends \Google\Model
 {
   /**
-   * The raw stack trace.
-   *
    * @var string
    */
   public $stackContent;
   /**
-   * With java thread dumps we may get collapsed stacks e.g., N threads in stack
-   * "". Instead of having to copy over the same stack trace N times, this int
-   * field captures this.
-   *
    * @var int
    */
   public $threadCount;
   /**
-   * Thread name. For example, "CommitThread-0,10,main"
-   *
    * @var string
    */
   public $threadName;
   /**
-   * The state of the thread. For example, "WAITING".
-   *
    * @var string
    */
   public $threadState;
   /**
-   * Timestamp at which the stack was captured.
-   *
    * @var string
    */
   public $timestamp;
 
   /**
-   * The raw stack trace.
-   *
-   * @param string $stackContent
+   * @param string
    */
   public function setStackContent($stackContent)
   {
@@ -69,11 +55,7 @@ class Stack extends \Google\Model
     return $this->stackContent;
   }
   /**
-   * With java thread dumps we may get collapsed stacks e.g., N threads in stack
-   * "". Instead of having to copy over the same stack trace N times, this int
-   * field captures this.
-   *
-   * @param int $threadCount
+   * @param int
    */
   public function setThreadCount($threadCount)
   {
@@ -87,9 +69,7 @@ class Stack extends \Google\Model
     return $this->threadCount;
   }
   /**
-   * Thread name. For example, "CommitThread-0,10,main"
-   *
-   * @param string $threadName
+   * @param string
    */
   public function setThreadName($threadName)
   {
@@ -103,9 +83,7 @@ class Stack extends \Google\Model
     return $this->threadName;
   }
   /**
-   * The state of the thread. For example, "WAITING".
-   *
-   * @param string $threadState
+   * @param string
    */
   public function setThreadState($threadState)
   {
@@ -119,9 +97,7 @@ class Stack extends \Google\Model
     return $this->threadState;
   }
   /**
-   * Timestamp at which the stack was captured.
-   *
-   * @param string $timestamp
+   * @param string
    */
   public function setTimestamp($timestamp)
   {

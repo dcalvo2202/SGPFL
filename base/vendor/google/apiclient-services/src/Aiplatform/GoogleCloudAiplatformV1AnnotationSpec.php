@@ -20,42 +20,28 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1AnnotationSpec extends \Google\Model
 {
   /**
-   * Output only. Timestamp when this AnnotationSpec was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Required. The user-defined name of the AnnotationSpec. The name can be up
-   * to 128 characters long and can consist of any UTF-8 characters.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Optional. Used to perform consistent read-modify-write updates. If not set,
-   * a blind "overwrite" update happens.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Output only. Resource name of the AnnotationSpec.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Timestamp when AnnotationSpec was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. Timestamp when this AnnotationSpec was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -69,10 +55,7 @@ class GoogleCloudAiplatformV1AnnotationSpec extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Required. The user-defined name of the AnnotationSpec. The name can be up
-   * to 128 characters long and can consist of any UTF-8 characters.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -86,10 +69,7 @@ class GoogleCloudAiplatformV1AnnotationSpec extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Optional. Used to perform consistent read-modify-write updates. If not set,
-   * a blind "overwrite" update happens.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -103,9 +83,7 @@ class GoogleCloudAiplatformV1AnnotationSpec extends \Google\Model
     return $this->etag;
   }
   /**
-   * Output only. Resource name of the AnnotationSpec.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -119,9 +97,7 @@ class GoogleCloudAiplatformV1AnnotationSpec extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Timestamp when AnnotationSpec was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

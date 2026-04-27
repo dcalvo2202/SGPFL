@@ -21,15 +21,10 @@ class BuildProvenance extends \Google\Collection
 {
   protected $collection_key = 'commands';
   /**
-   * Special options applied to this build. This is a catch-all field where
-   * build providers can enter any desired additional details.
-   *
    * @var string[]
    */
   public $buildOptions;
   /**
-   * Version string of the builder at the time this build was executed.
-   *
    * @var string
    */
   public $builderVersion;
@@ -38,63 +33,42 @@ class BuildProvenance extends \Google\Collection
   protected $commandsType = Command::class;
   protected $commandsDataType = 'array';
   /**
-   * Time at which the build was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * E-mail address of the user who initiated this build. Note that this was the
-   * user's e-mail address at the time the build was initiated; this address may
-   * not represent the same end-user for all time.
-   *
    * @var string
    */
   public $creator;
   /**
-   * Time at which execution of the build was finished.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * Required. Unique identifier of the build.
-   *
    * @var string
    */
   public $id;
   /**
-   * URI where any logs for this provenance were written.
-   *
    * @var string
    */
   public $logsUri;
   /**
-   * ID of the project.
-   *
    * @var string
    */
   public $projectId;
   protected $sourceProvenanceType = Source::class;
   protected $sourceProvenanceDataType = '';
   /**
-   * Time at which execution of the build was started.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * Trigger identifier if the build was triggered automatically; empty if not.
-   *
    * @var string
    */
   public $triggerId;
 
   /**
-   * Special options applied to this build. This is a catch-all field where
-   * build providers can enter any desired additional details.
-   *
-   * @param string[] $buildOptions
+   * @param string[]
    */
   public function setBuildOptions($buildOptions)
   {
@@ -108,9 +82,7 @@ class BuildProvenance extends \Google\Collection
     return $this->buildOptions;
   }
   /**
-   * Version string of the builder at the time this build was executed.
-   *
-   * @param string $builderVersion
+   * @param string
    */
   public function setBuilderVersion($builderVersion)
   {
@@ -124,9 +96,7 @@ class BuildProvenance extends \Google\Collection
     return $this->builderVersion;
   }
   /**
-   * Output of the build.
-   *
-   * @param Artifact[] $builtArtifacts
+   * @param Artifact[]
    */
   public function setBuiltArtifacts($builtArtifacts)
   {
@@ -140,9 +110,7 @@ class BuildProvenance extends \Google\Collection
     return $this->builtArtifacts;
   }
   /**
-   * Commands requested by the build.
-   *
-   * @param Command[] $commands
+   * @param Command[]
    */
   public function setCommands($commands)
   {
@@ -156,9 +124,7 @@ class BuildProvenance extends \Google\Collection
     return $this->commands;
   }
   /**
-   * Time at which the build was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -172,11 +138,7 @@ class BuildProvenance extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * E-mail address of the user who initiated this build. Note that this was the
-   * user's e-mail address at the time the build was initiated; this address may
-   * not represent the same end-user for all time.
-   *
-   * @param string $creator
+   * @param string
    */
   public function setCreator($creator)
   {
@@ -190,9 +152,7 @@ class BuildProvenance extends \Google\Collection
     return $this->creator;
   }
   /**
-   * Time at which execution of the build was finished.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -206,9 +166,7 @@ class BuildProvenance extends \Google\Collection
     return $this->endTime;
   }
   /**
-   * Required. Unique identifier of the build.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -222,9 +180,7 @@ class BuildProvenance extends \Google\Collection
     return $this->id;
   }
   /**
-   * URI where any logs for this provenance were written.
-   *
-   * @param string $logsUri
+   * @param string
    */
   public function setLogsUri($logsUri)
   {
@@ -238,9 +194,7 @@ class BuildProvenance extends \Google\Collection
     return $this->logsUri;
   }
   /**
-   * ID of the project.
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {
@@ -254,9 +208,7 @@ class BuildProvenance extends \Google\Collection
     return $this->projectId;
   }
   /**
-   * Details of the Source input to the build.
-   *
-   * @param Source $sourceProvenance
+   * @param Source
    */
   public function setSourceProvenance(Source $sourceProvenance)
   {
@@ -270,9 +222,7 @@ class BuildProvenance extends \Google\Collection
     return $this->sourceProvenance;
   }
   /**
-   * Time at which execution of the build was started.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -286,9 +236,7 @@ class BuildProvenance extends \Google\Collection
     return $this->startTime;
   }
   /**
-   * Trigger identifier if the build was triggered automatically; empty if not.
-   *
-   * @param string $triggerId
+   * @param string
    */
   public function setTriggerId($triggerId)
   {

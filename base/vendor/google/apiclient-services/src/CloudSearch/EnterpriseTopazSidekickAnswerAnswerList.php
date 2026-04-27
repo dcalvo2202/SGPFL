@@ -19,28 +19,16 @@ namespace Google\Service\CloudSearch;
 
 class EnterpriseTopazSidekickAnswerAnswerList extends \Google\Collection
 {
-  public const TYPE_UNKNOWN = 'UNKNOWN';
-  public const TYPE_PERSON_ADDRESS = 'PERSON_ADDRESS';
-  public const TYPE_PERSON_BIRTHDAY = 'PERSON_BIRTHDAY';
-  public const TYPE_PERSON_DEPARTMENT = 'PERSON_DEPARTMENT';
-  public const TYPE_PERSON_DESK_LOCATION = 'PERSON_DESK_LOCATION';
-  public const TYPE_PERSON_EMAIL = 'PERSON_EMAIL';
-  public const TYPE_PERSON_JOB_TITLE = 'PERSON_JOB_TITLE';
-  public const TYPE_PERSON_PHONE = 'PERSON_PHONE';
   protected $collection_key = 'labeledAnswer';
   protected $labeledAnswerType = EnterpriseTopazSidekickAnswerAnswerListLabeledAnswer::class;
   protected $labeledAnswerDataType = 'array';
   /**
-   * Answer type.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Answers that have a corresponding label.
-   *
-   * @param EnterpriseTopazSidekickAnswerAnswerListLabeledAnswer[] $labeledAnswer
+   * @param EnterpriseTopazSidekickAnswerAnswerListLabeledAnswer[]
    */
   public function setLabeledAnswer($labeledAnswer)
   {
@@ -54,20 +42,14 @@ class EnterpriseTopazSidekickAnswerAnswerList extends \Google\Collection
     return $this->labeledAnswer;
   }
   /**
-   * Answer type.
-   *
-   * Accepted values: UNKNOWN, PERSON_ADDRESS, PERSON_BIRTHDAY,
-   * PERSON_DEPARTMENT, PERSON_DESK_LOCATION, PERSON_EMAIL, PERSON_JOB_TITLE,
-   * PERSON_PHONE
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

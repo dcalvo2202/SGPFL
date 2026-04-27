@@ -21,35 +21,20 @@ class DdlStatementActionInfo extends \Google\Collection
 {
   protected $collection_key = 'entityNames';
   /**
-   * The action for the DDL statement, for example, CREATE, ALTER, DROP, GRANT,
-   * etc. This field is a non-empty string.
-   *
    * @var string
    */
   public $action;
   /**
-   * The entity names being operated on the DDL statement. For example, 1. For
-   * statement "CREATE TABLE t1(...)", `entity_names` = ["t1"]. 2. For statement
-   * "GRANT ROLE r1, r2 ...", `entity_names` = ["r1", "r2"]. 3. For statement
-   * "ANALYZE", `entity_names` = [].
-   *
    * @var string[]
    */
   public $entityNames;
   /**
-   * The entity type for the DDL statement, for example, TABLE, INDEX, VIEW,
-   * etc. This field can be empty string for some DDL statement, for example,
-   * for statement "ANALYZE", `entity_type` = "".
-   *
    * @var string
    */
   public $entityType;
 
   /**
-   * The action for the DDL statement, for example, CREATE, ALTER, DROP, GRANT,
-   * etc. This field is a non-empty string.
-   *
-   * @param string $action
+   * @param string
    */
   public function setAction($action)
   {
@@ -63,12 +48,7 @@ class DdlStatementActionInfo extends \Google\Collection
     return $this->action;
   }
   /**
-   * The entity names being operated on the DDL statement. For example, 1. For
-   * statement "CREATE TABLE t1(...)", `entity_names` = ["t1"]. 2. For statement
-   * "GRANT ROLE r1, r2 ...", `entity_names` = ["r1", "r2"]. 3. For statement
-   * "ANALYZE", `entity_names` = [].
-   *
-   * @param string[] $entityNames
+   * @param string[]
    */
   public function setEntityNames($entityNames)
   {
@@ -82,11 +62,7 @@ class DdlStatementActionInfo extends \Google\Collection
     return $this->entityNames;
   }
   /**
-   * The entity type for the DDL statement, for example, TABLE, INDEX, VIEW,
-   * etc. This field can be empty string for some DDL statement, for example,
-   * for statement "ANALYZE", `entity_type` = "".
-   *
-   * @param string $entityType
+   * @param string
    */
   public function setEntityType($entityType)
   {

@@ -24,9 +24,7 @@ class GetWorkerStacktracesResponse extends \Google\Collection
   protected $sdksDataType = 'array';
 
   /**
-   * Repeated as unified worker may have multiple SDK processes.
-   *
-   * @param Sdk[] $sdks
+   * @param Sdk[]
    */
   public function setSdks($sdks)
   {

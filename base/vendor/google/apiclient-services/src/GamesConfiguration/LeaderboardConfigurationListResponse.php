@@ -23,23 +23,16 @@ class LeaderboardConfigurationListResponse extends \Google\Collection
   protected $itemsType = LeaderboardConfiguration::class;
   protected $itemsDataType = 'array';
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `gamesConfiguration#leaderboardConfigurationListResponse`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The pagination token for the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The leaderboard configurations.
-   *
-   * @param LeaderboardConfiguration[] $items
+   * @param LeaderboardConfiguration[]
    */
   public function setItems($items)
   {
@@ -53,10 +46,7 @@ class LeaderboardConfigurationListResponse extends \Google\Collection
     return $this->items;
   }
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `gamesConfiguration#leaderboardConfigurationListResponse`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -70,9 +60,7 @@ class LeaderboardConfigurationListResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The pagination token for the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

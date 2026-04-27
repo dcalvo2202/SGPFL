@@ -20,16 +20,12 @@ namespace Google\Service\PubsubLite;
 class TopicPartitions extends \Google\Model
 {
   /**
-   * The number of partitions in the topic.
-   *
    * @var string
    */
   public $partitionCount;
 
   /**
-   * The number of partitions in the topic.
-   *
-   * @param string $partitionCount
+   * @param string
    */
   public function setPartitionCount($partitionCount)
   {

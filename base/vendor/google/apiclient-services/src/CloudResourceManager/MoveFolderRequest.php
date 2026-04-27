@@ -20,20 +20,12 @@ namespace Google\Service\CloudResourceManager;
 class MoveFolderRequest extends \Google\Model
 {
   /**
-   * Required. The resource name of the folder or organization which should be
-   * the folder's new parent. Must be of the form `folders/{folder_id}` or
-   * `organizations/{org_id}`.
-   *
    * @var string
    */
   public $destinationParent;
 
   /**
-   * Required. The resource name of the folder or organization which should be
-   * the folder's new parent. Must be of the form `folders/{folder_id}` or
-   * `organizations/{org_id}`.
-   *
-   * @param string $destinationParent
+   * @param string
    */
   public function setDestinationParent($destinationParent)
   {

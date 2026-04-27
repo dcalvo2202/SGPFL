@@ -25,9 +25,7 @@ class GoogleCloudDatacatalogV1ImportTaxonomiesRequest extends \Google\Model
   protected $inlineSourceDataType = '';
 
   /**
-   * Cross-regional source taxonomy to import.
-   *
-   * @param GoogleCloudDatacatalogV1CrossRegionalSource $crossRegionalSource
+   * @param GoogleCloudDatacatalogV1CrossRegionalSource
    */
   public function setCrossRegionalSource(GoogleCloudDatacatalogV1CrossRegionalSource $crossRegionalSource)
   {
@@ -41,9 +39,7 @@ class GoogleCloudDatacatalogV1ImportTaxonomiesRequest extends \Google\Model
     return $this->crossRegionalSource;
   }
   /**
-   * Inline source taxonomy to import.
-   *
-   * @param GoogleCloudDatacatalogV1InlineSource $inlineSource
+   * @param GoogleCloudDatacatalogV1InlineSource
    */
   public function setInlineSource(GoogleCloudDatacatalogV1InlineSource $inlineSource)
   {

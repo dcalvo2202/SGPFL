@@ -20,34 +20,24 @@ namespace Google\Service\IdentityToolkit;
 class IdentitytoolkitRelyingpartySendVerificationCodeRequest extends \Google\Model
 {
   /**
-   * Receipt of successful app token validation with APNS.
-   *
    * @var string
    */
   public $iosReceipt;
   /**
-   * Secret delivered to iOS app via APNS.
-   *
    * @var string
    */
   public $iosSecret;
   /**
-   * The phone number to send the verification code to in E.164 format.
-   *
    * @var string
    */
   public $phoneNumber;
   /**
-   * Recaptcha solution.
-   *
    * @var string
    */
   public $recaptchaToken;
 
   /**
-   * Receipt of successful app token validation with APNS.
-   *
-   * @param string $iosReceipt
+   * @param string
    */
   public function setIosReceipt($iosReceipt)
   {
@@ -61,9 +51,7 @@ class IdentitytoolkitRelyingpartySendVerificationCodeRequest extends \Google\Mod
     return $this->iosReceipt;
   }
   /**
-   * Secret delivered to iOS app via APNS.
-   *
-   * @param string $iosSecret
+   * @param string
    */
   public function setIosSecret($iosSecret)
   {
@@ -77,9 +65,7 @@ class IdentitytoolkitRelyingpartySendVerificationCodeRequest extends \Google\Mod
     return $this->iosSecret;
   }
   /**
-   * The phone number to send the verification code to in E.164 format.
-   *
-   * @param string $phoneNumber
+   * @param string
    */
   public function setPhoneNumber($phoneNumber)
   {
@@ -93,9 +79,7 @@ class IdentitytoolkitRelyingpartySendVerificationCodeRequest extends \Google\Mod
     return $this->phoneNumber;
   }
   /**
-   * Recaptcha solution.
-   *
-   * @param string $recaptchaToken
+   * @param string
    */
   public function setRecaptchaToken($recaptchaToken)
   {

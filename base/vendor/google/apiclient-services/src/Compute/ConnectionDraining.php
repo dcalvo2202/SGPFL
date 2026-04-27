@@ -20,20 +20,12 @@ namespace Google\Service\Compute;
 class ConnectionDraining extends \Google\Model
 {
   /**
-   * Configures a duration timeout for existing requests on a removed backend
-   * instance. For supported load balancers and protocols, as described
-   * inEnabling connection draining.
-   *
    * @var int
    */
   public $drainingTimeoutSec;
 
   /**
-   * Configures a duration timeout for existing requests on a removed backend
-   * instance. For supported load balancers and protocols, as described
-   * inEnabling connection draining.
-   *
-   * @param int $drainingTimeoutSec
+   * @param int
    */
   public function setDrainingTimeoutSec($drainingTimeoutSec)
   {

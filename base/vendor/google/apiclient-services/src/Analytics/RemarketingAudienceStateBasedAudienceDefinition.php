@@ -25,9 +25,7 @@ class RemarketingAudienceStateBasedAudienceDefinition extends \Google\Model
   protected $includeConditionsDataType = '';
 
   /**
-   * Defines the conditions to exclude users from the audience.
-   *
-   * @param RemarketingAudienceStateBasedAudienceDefinitionExcludeConditions $excludeConditions
+   * @param RemarketingAudienceStateBasedAudienceDefinitionExcludeConditions
    */
   public function setExcludeConditions(RemarketingAudienceStateBasedAudienceDefinitionExcludeConditions $excludeConditions)
   {
@@ -41,9 +39,7 @@ class RemarketingAudienceStateBasedAudienceDefinition extends \Google\Model
     return $this->excludeConditions;
   }
   /**
-   * Defines the conditions to include users to the audience.
-   *
-   * @param IncludeConditions $includeConditions
+   * @param IncludeConditions
    */
   public function setIncludeConditions(IncludeConditions $includeConditions)
   {

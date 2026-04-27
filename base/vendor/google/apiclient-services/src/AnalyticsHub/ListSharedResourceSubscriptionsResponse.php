@@ -21,8 +21,6 @@ class ListSharedResourceSubscriptionsResponse extends \Google\Collection
 {
   protected $collection_key = 'sharedResourceSubscriptions';
   /**
-   * Next page token.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -30,9 +28,7 @@ class ListSharedResourceSubscriptionsResponse extends \Google\Collection
   protected $sharedResourceSubscriptionsDataType = 'array';
 
   /**
-   * Next page token.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -46,9 +42,7 @@ class ListSharedResourceSubscriptionsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The list of subscriptions.
-   *
-   * @param Subscription[] $sharedResourceSubscriptions
+   * @param Subscription[]
    */
   public function setSharedResourceSubscriptions($sharedResourceSubscriptions)
   {

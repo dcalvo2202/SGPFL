@@ -25,15 +25,7 @@ class GoogleMapsPlacesV1AutocompletePlacesResponseSuggestionQueryPrediction exte
   protected $textDataType = '';
 
   /**
-   * A breakdown of the query prediction into main text containing the query and
-   * secondary text containing additional disambiguating features (such as a
-   * city or region). `structured_format` is recommended for developers who wish
-   * to show two separate, but related, UI elements. Developers who wish to show
-   * a single UI element may want to use `text` instead. They are two different
-   * ways to represent a query prediction. Users should not try to parse
-   * `structured_format` into `text` or vice versa.
-   *
-   * @param GoogleMapsPlacesV1AutocompletePlacesResponseSuggestionStructuredFormat $structuredFormat
+   * @param GoogleMapsPlacesV1AutocompletePlacesResponseSuggestionStructuredFormat
    */
   public function setStructuredFormat(GoogleMapsPlacesV1AutocompletePlacesResponseSuggestionStructuredFormat $structuredFormat)
   {
@@ -47,18 +39,7 @@ class GoogleMapsPlacesV1AutocompletePlacesResponseSuggestionQueryPrediction exte
     return $this->structuredFormat;
   }
   /**
-   * The predicted text. This text does not represent a Place, but rather a text
-   * query that could be used in a search endpoint (for example, Text Search).
-   * `text` is recommended for developers who wish to show a single UI element.
-   * Developers who wish to show two separate, but related, UI elements may want
-   * to use `structured_format` instead. They are two different ways to
-   * represent a query prediction. Users should not try to parse
-   * `structured_format` into `text` or vice versa. May be in mixed languages if
-   * the request `input` and `language_code` are in different languages or if
-   * part of the query does not have a translation from the local language to
-   * `language_code`.
-   *
-   * @param GoogleMapsPlacesV1AutocompletePlacesResponseSuggestionFormattableText $text
+   * @param GoogleMapsPlacesV1AutocompletePlacesResponseSuggestionFormattableText
    */
   public function setText(GoogleMapsPlacesV1AutocompletePlacesResponseSuggestionFormattableText $text)
   {

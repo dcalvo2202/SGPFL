@@ -20,18 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1BatchReadFeatureValuesRequestPassThroughField extends \Google\Model
 {
   /**
-   * Required. The name of the field in the CSV header or the name of the column
-   * in BigQuery table. The naming restriction is the same as Feature.name.
-   *
    * @var string
    */
   public $fieldName;
 
   /**
-   * Required. The name of the field in the CSV header or the name of the column
-   * in BigQuery table. The naming restriction is the same as Feature.name.
-   *
-   * @param string $fieldName
+   * @param string
    */
   public function setFieldName($fieldName)
   {

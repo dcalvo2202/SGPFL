@@ -23,17 +23,12 @@ class GooglePrivacyDlpV2ListInspectTemplatesResponse extends \Google\Collection
   protected $inspectTemplatesType = GooglePrivacyDlpV2InspectTemplate::class;
   protected $inspectTemplatesDataType = 'array';
   /**
-   * If the next page is available then the next page token to be used in the
-   * following ListInspectTemplates request.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * List of inspectTemplates, up to page_size in ListInspectTemplatesRequest.
-   *
-   * @param GooglePrivacyDlpV2InspectTemplate[] $inspectTemplates
+   * @param GooglePrivacyDlpV2InspectTemplate[]
    */
   public function setInspectTemplates($inspectTemplates)
   {
@@ -47,10 +42,7 @@ class GooglePrivacyDlpV2ListInspectTemplatesResponse extends \Google\Collection
     return $this->inspectTemplates;
   }
   /**
-   * If the next page is available then the next page token to be used in the
-   * following ListInspectTemplates request.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

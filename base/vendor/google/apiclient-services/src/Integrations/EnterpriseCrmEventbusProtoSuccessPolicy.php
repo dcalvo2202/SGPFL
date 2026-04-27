@@ -19,39 +19,20 @@ namespace Google\Service\Integrations;
 
 class EnterpriseCrmEventbusProtoSuccessPolicy extends \Google\Model
 {
-  public const FINAL_STATE_UNSPECIFIED = 'UNSPECIFIED';
   /**
-   * The default behavior, where successful tasks will be marked as SUCCEEDED.
-   */
-  public const FINAL_STATE_SUCCEEDED = 'SUCCEEDED';
-  /**
-   * Sets the state to SUSPENDED after executing. This is required for
-   * SuspensionTask; event execution will continue once the user calls
-   * ResolveSuspensions with the event_execution_info_id and the task number.
-   */
-  public const FINAL_STATE_SUSPENDED = 'SUSPENDED';
-  /**
-   * State to which the execution snapshot status will be set if the task
-   * succeeds.
-   *
    * @var string
    */
   public $finalState;
 
   /**
-   * State to which the execution snapshot status will be set if the task
-   * succeeds.
-   *
-   * Accepted values: UNSPECIFIED, SUCCEEDED, SUSPENDED
-   *
-   * @param self::FINAL_STATE_* $finalState
+   * @param string
    */
   public function setFinalState($finalState)
   {
     $this->finalState = $finalState;
   }
   /**
-   * @return self::FINAL_STATE_*
+   * @return string
    */
   public function getFinalState()
   {

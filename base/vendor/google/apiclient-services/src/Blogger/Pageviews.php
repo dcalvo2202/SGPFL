@@ -21,24 +21,18 @@ class Pageviews extends \Google\Collection
 {
   protected $collection_key = 'counts';
   /**
-   * Blog Id.
-   *
    * @var string
    */
   public $blogId;
   protected $countsType = PageviewsCounts::class;
   protected $countsDataType = 'array';
   /**
-   * The kind of this entry. Always blogger#page_views.
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * Blog Id.
-   *
-   * @param string $blogId
+   * @param string
    */
   public function setBlogId($blogId)
   {
@@ -52,9 +46,7 @@ class Pageviews extends \Google\Collection
     return $this->blogId;
   }
   /**
-   * The container of posts in this blog.
-   *
-   * @param PageviewsCounts[] $counts
+   * @param PageviewsCounts[]
    */
   public function setCounts($counts)
   {
@@ -68,9 +60,7 @@ class Pageviews extends \Google\Collection
     return $this->counts;
   }
   /**
-   * The kind of this entry. Always blogger#page_views.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

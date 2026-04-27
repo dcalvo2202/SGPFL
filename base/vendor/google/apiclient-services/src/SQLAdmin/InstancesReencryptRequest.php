@@ -23,9 +23,7 @@ class InstancesReencryptRequest extends \Google\Model
   protected $backupReencryptionConfigDataType = '';
 
   /**
-   * Configuration specific to backup re-encryption
-   *
-   * @param BackupReencryptionConfig $backupReencryptionConfig
+   * @param BackupReencryptionConfig
    */
   public function setBackupReencryptionConfig(BackupReencryptionConfig $backupReencryptionConfig)
   {

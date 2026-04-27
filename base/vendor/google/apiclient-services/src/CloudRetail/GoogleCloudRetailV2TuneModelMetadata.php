@@ -20,20 +20,12 @@ namespace Google\Service\CloudRetail;
 class GoogleCloudRetailV2TuneModelMetadata extends \Google\Model
 {
   /**
-   * The resource name of the model that this tune applies to. Format: `projects
-   * /{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{mod
-   * el_id}`
-   *
    * @var string
    */
   public $model;
 
   /**
-   * The resource name of the model that this tune applies to. Format: `projects
-   * /{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{mod
-   * el_id}`
-   *
-   * @param string $model
+   * @param string
    */
   public function setModel($model)
   {

@@ -23,9 +23,7 @@ class GoogleCloudRecaptchaenterpriseV1RemoveIpOverrideRequest extends \Google\Mo
   protected $ipOverrideDataDataType = '';
 
   /**
-   * Required. IP override to be removed from the key.
-   *
-   * @param GoogleCloudRecaptchaenterpriseV1IpOverrideData $ipOverrideData
+   * @param GoogleCloudRecaptchaenterpriseV1IpOverrideData
    */
   public function setIpOverrideData(GoogleCloudRecaptchaenterpriseV1IpOverrideData $ipOverrideData)
   {

@@ -20,36 +20,24 @@ namespace Google\Service\SQLAdmin;
 class AcquireSsrsLeaseContext extends \Google\Model
 {
   /**
-   * Lease duration needed for SSRS setup.
-   *
    * @var string
    */
   public $duration;
   /**
-   * The report database to be used for SSRS setup.
-   *
    * @var string
    */
   public $reportDatabase;
   /**
-   * The username to be used as the service login to connect to the report
-   * database for SSRS setup.
-   *
    * @var string
    */
   public $serviceLogin;
   /**
-   * The username to be used as the setup login to connect to the database
-   * server for SSRS setup.
-   *
    * @var string
    */
   public $setupLogin;
 
   /**
-   * Lease duration needed for SSRS setup.
-   *
-   * @param string $duration
+   * @param string
    */
   public function setDuration($duration)
   {
@@ -63,9 +51,7 @@ class AcquireSsrsLeaseContext extends \Google\Model
     return $this->duration;
   }
   /**
-   * The report database to be used for SSRS setup.
-   *
-   * @param string $reportDatabase
+   * @param string
    */
   public function setReportDatabase($reportDatabase)
   {
@@ -79,10 +65,7 @@ class AcquireSsrsLeaseContext extends \Google\Model
     return $this->reportDatabase;
   }
   /**
-   * The username to be used as the service login to connect to the report
-   * database for SSRS setup.
-   *
-   * @param string $serviceLogin
+   * @param string
    */
   public function setServiceLogin($serviceLogin)
   {
@@ -96,10 +79,7 @@ class AcquireSsrsLeaseContext extends \Google\Model
     return $this->serviceLogin;
   }
   /**
-   * The username to be used as the setup login to connect to the database
-   * server for SSRS setup.
-   *
-   * @param string $setupLogin
+   * @param string
    */
   public function setSetupLogin($setupLogin)
   {

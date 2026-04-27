@@ -19,59 +19,36 @@ namespace Google\Service\CloudHealthcare;
 
 class AnalyzeEntitiesRequest extends \Google\Collection
 {
-  /**
-   * No alternative output format is specified.
-   */
-  public const ALTERNATIVE_OUTPUT_FORMAT_ALTERNATIVE_OUTPUT_FORMAT_UNSPECIFIED = 'ALTERNATIVE_OUTPUT_FORMAT_UNSPECIFIED';
-  /**
-   * FHIR bundle output.
-   */
-  public const ALTERNATIVE_OUTPUT_FORMAT_FHIR_BUNDLE = 'FHIR_BUNDLE';
   protected $collection_key = 'licensedVocabularies';
   /**
-   * Optional. Alternative output format to be generated based on the results of
-   * analysis.
-   *
    * @var string
    */
   public $alternativeOutputFormat;
   /**
-   * document_content is a document to be annotated.
-   *
    * @var string
    */
   public $documentContent;
   /**
-   * A list of licensed vocabularies to use in the request, in addition to the
-   * default unlicensed vocabularies.
-   *
    * @var string[]
    */
   public $licensedVocabularies;
 
   /**
-   * Optional. Alternative output format to be generated based on the results of
-   * analysis.
-   *
-   * Accepted values: ALTERNATIVE_OUTPUT_FORMAT_UNSPECIFIED, FHIR_BUNDLE
-   *
-   * @param self::ALTERNATIVE_OUTPUT_FORMAT_* $alternativeOutputFormat
+   * @param string
    */
   public function setAlternativeOutputFormat($alternativeOutputFormat)
   {
     $this->alternativeOutputFormat = $alternativeOutputFormat;
   }
   /**
-   * @return self::ALTERNATIVE_OUTPUT_FORMAT_*
+   * @return string
    */
   public function getAlternativeOutputFormat()
   {
     return $this->alternativeOutputFormat;
   }
   /**
-   * document_content is a document to be annotated.
-   *
-   * @param string $documentContent
+   * @param string
    */
   public function setDocumentContent($documentContent)
   {
@@ -85,10 +62,7 @@ class AnalyzeEntitiesRequest extends \Google\Collection
     return $this->documentContent;
   }
   /**
-   * A list of licensed vocabularies to use in the request, in addition to the
-   * default unlicensed vocabularies.
-   *
-   * @param string[] $licensedVocabularies
+   * @param string[]
    */
   public function setLicensedVocabularies($licensedVocabularies)
   {

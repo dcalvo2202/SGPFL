@@ -20,40 +20,24 @@ namespace Google\Service\Storage;
 class Expr extends \Google\Model
 {
   /**
-   * An optional description of the expression. This is a longer text which
-   * describes the expression, e.g. when hovered over it in a UI.
-   *
    * @var string
    */
   public $description;
   /**
-   * Textual representation of an expression in Common Expression Language
-   * syntax. The application context of the containing message determines which
-   * well-known feature set of CEL is supported.
-   *
    * @var string
    */
   public $expression;
   /**
-   * An optional string indicating the location of the expression for error
-   * reporting, e.g. a file name and a position in the file.
-   *
    * @var string
    */
   public $location;
   /**
-   * An optional title for the expression, i.e. a short string describing its
-   * purpose. This can be used e.g. in UIs which allow to enter the expression.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * An optional description of the expression. This is a longer text which
-   * describes the expression, e.g. when hovered over it in a UI.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -67,11 +51,7 @@ class Expr extends \Google\Model
     return $this->description;
   }
   /**
-   * Textual representation of an expression in Common Expression Language
-   * syntax. The application context of the containing message determines which
-   * well-known feature set of CEL is supported.
-   *
-   * @param string $expression
+   * @param string
    */
   public function setExpression($expression)
   {
@@ -85,10 +65,7 @@ class Expr extends \Google\Model
     return $this->expression;
   }
   /**
-   * An optional string indicating the location of the expression for error
-   * reporting, e.g. a file name and a position in the file.
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -102,10 +79,7 @@ class Expr extends \Google\Model
     return $this->location;
   }
   /**
-   * An optional title for the expression, i.e. a short string describing its
-   * purpose. This can be used e.g. in UIs which allow to enter the expression.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

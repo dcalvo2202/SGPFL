@@ -19,74 +19,30 @@ namespace Google\Service\VMMigrationService;
 
 class CloneJob extends \Google\Collection
 {
-  /**
-   * The state is unknown. This is used for API compatibility only and is not
-   * used by the system.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The clone job has not yet started.
-   */
-  public const STATE_PENDING = 'PENDING';
-  /**
-   * The clone job is active and running.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * The clone job finished with errors.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * The clone job finished successfully.
-   */
-  public const STATE_SUCCEEDED = 'SUCCEEDED';
-  /**
-   * The clone job was cancelled.
-   */
-  public const STATE_CANCELLED = 'CANCELLED';
-  /**
-   * The clone job is being cancelled.
-   */
-  public const STATE_CANCELLING = 'CANCELLING';
-  /**
-   * OS adaptation is running as part of the clone job to generate license.
-   */
-  public const STATE_ADAPTING_OS = 'ADAPTING_OS';
   protected $collection_key = 'steps';
   protected $computeEngineDisksTargetDetailsType = ComputeEngineDisksTargetDetails::class;
   protected $computeEngineDisksTargetDetailsDataType = '';
   protected $computeEngineTargetDetailsType = ComputeEngineTargetDetails::class;
   protected $computeEngineTargetDetailsDataType = '';
   /**
-   * Output only. The time the clone job was created (as an API call, not when
-   * it was actually created in the target).
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. The time the clone job was ended.
-   *
    * @var string
    */
   public $endTime;
   protected $errorType = Status::class;
   protected $errorDataType = '';
   /**
-   * Output only. The name of the clone.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. State of the clone job.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. The time the state was last updated.
-   *
    * @var string
    */
   public $stateTime;
@@ -94,9 +50,7 @@ class CloneJob extends \Google\Collection
   protected $stepsDataType = 'array';
 
   /**
-   * Output only. Details of the target Persistent Disks in Compute Engine.
-   *
-   * @param ComputeEngineDisksTargetDetails $computeEngineDisksTargetDetails
+   * @param ComputeEngineDisksTargetDetails
    */
   public function setComputeEngineDisksTargetDetails(ComputeEngineDisksTargetDetails $computeEngineDisksTargetDetails)
   {
@@ -110,9 +64,7 @@ class CloneJob extends \Google\Collection
     return $this->computeEngineDisksTargetDetails;
   }
   /**
-   * Output only. Details of the target VM in Compute Engine.
-   *
-   * @param ComputeEngineTargetDetails $computeEngineTargetDetails
+   * @param ComputeEngineTargetDetails
    */
   public function setComputeEngineTargetDetails(ComputeEngineTargetDetails $computeEngineTargetDetails)
   {
@@ -126,10 +78,7 @@ class CloneJob extends \Google\Collection
     return $this->computeEngineTargetDetails;
   }
   /**
-   * Output only. The time the clone job was created (as an API call, not when
-   * it was actually created in the target).
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -143,9 +92,7 @@ class CloneJob extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Output only. The time the clone job was ended.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -159,10 +106,7 @@ class CloneJob extends \Google\Collection
     return $this->endTime;
   }
   /**
-   * Output only. Provides details for the errors that led to the Clone Job's
-   * state.
-   *
-   * @param Status $error
+   * @param Status
    */
   public function setError(Status $error)
   {
@@ -176,9 +120,7 @@ class CloneJob extends \Google\Collection
     return $this->error;
   }
   /**
-   * Output only. The name of the clone.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -192,28 +134,21 @@ class CloneJob extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. State of the clone job.
-   *
-   * Accepted values: STATE_UNSPECIFIED, PENDING, ACTIVE, FAILED, SUCCEEDED,
-   * CANCELLED, CANCELLING, ADAPTING_OS
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. The time the state was last updated.
-   *
-   * @param string $stateTime
+   * @param string
    */
   public function setStateTime($stateTime)
   {
@@ -227,9 +162,7 @@ class CloneJob extends \Google\Collection
     return $this->stateTime;
   }
   /**
-   * Output only. The clone steps list representing its progress.
-   *
-   * @param CloneStep[] $steps
+   * @param CloneStep[]
    */
   public function setSteps($steps)
   {

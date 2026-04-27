@@ -20,22 +20,16 @@ namespace Google\Service\Dataproc;
 class DriverSchedulingConfig extends \Google\Model
 {
   /**
-   * Required. The amount of memory in MB the driver is requesting.
-   *
    * @var int
    */
   public $memoryMb;
   /**
-   * Required. The number of vCPUs the driver is requesting.
-   *
    * @var int
    */
   public $vcores;
 
   /**
-   * Required. The amount of memory in MB the driver is requesting.
-   *
-   * @param int $memoryMb
+   * @param int
    */
   public function setMemoryMb($memoryMb)
   {
@@ -49,9 +43,7 @@ class DriverSchedulingConfig extends \Google\Model
     return $this->memoryMb;
   }
   /**
-   * Required. The number of vCPUs the driver is requesting.
-   *
-   * @param int $vcores
+   * @param int
    */
   public function setVcores($vcores)
   {

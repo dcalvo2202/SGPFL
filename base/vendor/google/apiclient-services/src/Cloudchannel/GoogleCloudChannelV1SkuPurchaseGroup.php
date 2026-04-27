@@ -23,17 +23,12 @@ class GoogleCloudChannelV1SkuPurchaseGroup extends \Google\Collection
   protected $billingAccountPurchaseInfosType = GoogleCloudChannelV1BillingAccountPurchaseInfo::class;
   protected $billingAccountPurchaseInfosDataType = 'array';
   /**
-   * Resource names of the SKUs included in this group. Format:
-   * products/{product_id}/skus/{sku_id}.
-   *
    * @var string[]
    */
   public $skus;
 
   /**
-   * List of billing accounts that are eligible to purhcase these SKUs.
-   *
-   * @param GoogleCloudChannelV1BillingAccountPurchaseInfo[] $billingAccountPurchaseInfos
+   * @param GoogleCloudChannelV1BillingAccountPurchaseInfo[]
    */
   public function setBillingAccountPurchaseInfos($billingAccountPurchaseInfos)
   {
@@ -47,10 +42,7 @@ class GoogleCloudChannelV1SkuPurchaseGroup extends \Google\Collection
     return $this->billingAccountPurchaseInfos;
   }
   /**
-   * Resource names of the SKUs included in this group. Format:
-   * products/{product_id}/skus/{sku_id}.
-   *
-   * @param string[] $skus
+   * @param string[]
    */
   public function setSkus($skus)
   {

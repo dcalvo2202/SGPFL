@@ -20,28 +20,20 @@ namespace Google\Service\HangoutsChat;
 class DateTimeInput extends \Google\Model
 {
   /**
-   * Whether the `datetime` input includes a calendar date.
-   *
    * @var bool
    */
   public $hasDate;
   /**
-   * Whether the `datetime` input includes a timestamp.
-   *
    * @var bool
    */
   public $hasTime;
   /**
-   * Time since epoch time, in milliseconds.
-   *
    * @var string
    */
   public $msSinceEpoch;
 
   /**
-   * Whether the `datetime` input includes a calendar date.
-   *
-   * @param bool $hasDate
+   * @param bool
    */
   public function setHasDate($hasDate)
   {
@@ -55,9 +47,7 @@ class DateTimeInput extends \Google\Model
     return $this->hasDate;
   }
   /**
-   * Whether the `datetime` input includes a timestamp.
-   *
-   * @param bool $hasTime
+   * @param bool
    */
   public function setHasTime($hasTime)
   {
@@ -71,9 +61,7 @@ class DateTimeInput extends \Google\Model
     return $this->hasTime;
   }
   /**
-   * Time since epoch time, in milliseconds.
-   *
-   * @param string $msSinceEpoch
+   * @param string
    */
   public function setMsSinceEpoch($msSinceEpoch)
   {

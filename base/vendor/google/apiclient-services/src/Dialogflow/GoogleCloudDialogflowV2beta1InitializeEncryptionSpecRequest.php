@@ -23,7 +23,7 @@ class GoogleCloudDialogflowV2beta1InitializeEncryptionSpecRequest extends \Googl
   protected $encryptionSpecDataType = '';
 
   /**
-   * @param GoogleCloudDialogflowV2beta1EncryptionSpec $encryptionSpec
+   * @param GoogleCloudDialogflowV2beta1EncryptionSpec
    */
   public function setEncryptionSpec(GoogleCloudDialogflowV2beta1EncryptionSpec $encryptionSpec)
   {

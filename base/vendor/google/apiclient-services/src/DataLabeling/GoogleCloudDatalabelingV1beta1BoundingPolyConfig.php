@@ -20,22 +20,16 @@ namespace Google\Service\DataLabeling;
 class GoogleCloudDatalabelingV1beta1BoundingPolyConfig extends \Google\Model
 {
   /**
-   * Required. Annotation spec set resource name.
-   *
    * @var string
    */
   public $annotationSpecSet;
   /**
-   * Optional. Instruction message showed on contributors UI.
-   *
    * @var string
    */
   public $instructionMessage;
 
   /**
-   * Required. Annotation spec set resource name.
-   *
-   * @param string $annotationSpecSet
+   * @param string
    */
   public function setAnnotationSpecSet($annotationSpecSet)
   {
@@ -49,9 +43,7 @@ class GoogleCloudDatalabelingV1beta1BoundingPolyConfig extends \Google\Model
     return $this->annotationSpecSet;
   }
   /**
-   * Optional. Instruction message showed on contributors UI.
-   *
-   * @param string $instructionMessage
+   * @param string
    */
   public function setInstructionMessage($instructionMessage)
   {

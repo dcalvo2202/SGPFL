@@ -27,7 +27,7 @@ class InterconnectGroupsGetOperationalStatusResponse extends \Google\Model
   protected $resultDataType = '';
 
   /**
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -41,7 +41,7 @@ class InterconnectGroupsGetOperationalStatusResponse extends \Google\Model
     return $this->etag;
   }
   /**
-   * @param InterconnectGroupsOperationalStatus $result
+   * @param InterconnectGroupsOperationalStatus
    */
   public function setResult(InterconnectGroupsOperationalStatus $result)
   {

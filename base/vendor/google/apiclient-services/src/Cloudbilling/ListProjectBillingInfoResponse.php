@@ -21,10 +21,6 @@ class ListProjectBillingInfoResponse extends \Google\Collection
 {
   protected $collection_key = 'projectBillingInfo';
   /**
-   * A token to retrieve the next page of results. To retrieve the next page,
-   * call `ListProjectBillingInfo` again with the `page_token` field set to this
-   * value. This field is empty if there are no more results to retrieve.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -32,11 +28,7 @@ class ListProjectBillingInfoResponse extends \Google\Collection
   protected $projectBillingInfoDataType = 'array';
 
   /**
-   * A token to retrieve the next page of results. To retrieve the next page,
-   * call `ListProjectBillingInfo` again with the `page_token` field set to this
-   * value. This field is empty if there are no more results to retrieve.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -50,10 +42,7 @@ class ListProjectBillingInfoResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * A list of `ProjectBillingInfo` resources representing the projects
-   * associated with the billing account.
-   *
-   * @param ProjectBillingInfo[] $projectBillingInfo
+   * @param ProjectBillingInfo[]
    */
   public function setProjectBillingInfo($projectBillingInfo)
   {

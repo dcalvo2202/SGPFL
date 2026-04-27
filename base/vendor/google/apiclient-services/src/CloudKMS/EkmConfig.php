@@ -20,25 +20,16 @@ namespace Google\Service\CloudKMS;
 class EkmConfig extends \Google\Model
 {
   /**
-   * Optional. Resource name of the default EkmConnection. Setting this field to
-   * the empty string removes the default.
-   *
    * @var string
    */
   public $defaultEkmConnection;
   /**
-   * Output only. The resource name for the EkmConfig in the format
-   * `projects/locations/ekmConfig`.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Optional. Resource name of the default EkmConnection. Setting this field to
-   * the empty string removes the default.
-   *
-   * @param string $defaultEkmConnection
+   * @param string
    */
   public function setDefaultEkmConnection($defaultEkmConnection)
   {
@@ -52,10 +43,7 @@ class EkmConfig extends \Google\Model
     return $this->defaultEkmConnection;
   }
   /**
-   * Output only. The resource name for the EkmConfig in the format
-   * `projects/locations/ekmConfig`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

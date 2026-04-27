@@ -22,30 +22,19 @@ class GoogleCloudAiplatformV1FeatureValue extends \Google\Model
   protected $boolArrayValueType = GoogleCloudAiplatformV1BoolArray::class;
   protected $boolArrayValueDataType = '';
   /**
-   * Bool type feature value.
-   *
    * @var bool
    */
   public $boolValue;
   /**
-   * Bytes feature value.
-   *
    * @var string
    */
   public $bytesValue;
   protected $doubleArrayValueType = GoogleCloudAiplatformV1DoubleArray::class;
   protected $doubleArrayValueDataType = '';
-  /**
-   * Double type feature value.
-   *
-   * @var 
-   */
   public $doubleValue;
   protected $int64ArrayValueType = GoogleCloudAiplatformV1Int64Array::class;
   protected $int64ArrayValueDataType = '';
   /**
-   * Int64 feature value.
-   *
    * @var string
    */
   public $int64Value;
@@ -54,8 +43,6 @@ class GoogleCloudAiplatformV1FeatureValue extends \Google\Model
   protected $stringArrayValueType = GoogleCloudAiplatformV1StringArray::class;
   protected $stringArrayValueDataType = '';
   /**
-   * String feature value.
-   *
    * @var string
    */
   public $stringValue;
@@ -63,9 +50,7 @@ class GoogleCloudAiplatformV1FeatureValue extends \Google\Model
   protected $structValueDataType = '';
 
   /**
-   * A list of bool type feature value.
-   *
-   * @param GoogleCloudAiplatformV1BoolArray $boolArrayValue
+   * @param GoogleCloudAiplatformV1BoolArray
    */
   public function setBoolArrayValue(GoogleCloudAiplatformV1BoolArray $boolArrayValue)
   {
@@ -79,9 +64,7 @@ class GoogleCloudAiplatformV1FeatureValue extends \Google\Model
     return $this->boolArrayValue;
   }
   /**
-   * Bool type feature value.
-   *
-   * @param bool $boolValue
+   * @param bool
    */
   public function setBoolValue($boolValue)
   {
@@ -95,9 +78,7 @@ class GoogleCloudAiplatformV1FeatureValue extends \Google\Model
     return $this->boolValue;
   }
   /**
-   * Bytes feature value.
-   *
-   * @param string $bytesValue
+   * @param string
    */
   public function setBytesValue($bytesValue)
   {
@@ -111,9 +92,7 @@ class GoogleCloudAiplatformV1FeatureValue extends \Google\Model
     return $this->bytesValue;
   }
   /**
-   * A list of double type feature value.
-   *
-   * @param GoogleCloudAiplatformV1DoubleArray $doubleArrayValue
+   * @param GoogleCloudAiplatformV1DoubleArray
    */
   public function setDoubleArrayValue(GoogleCloudAiplatformV1DoubleArray $doubleArrayValue)
   {
@@ -135,9 +114,7 @@ class GoogleCloudAiplatformV1FeatureValue extends \Google\Model
     return $this->doubleValue;
   }
   /**
-   * A list of int64 type feature value.
-   *
-   * @param GoogleCloudAiplatformV1Int64Array $int64ArrayValue
+   * @param GoogleCloudAiplatformV1Int64Array
    */
   public function setInt64ArrayValue(GoogleCloudAiplatformV1Int64Array $int64ArrayValue)
   {
@@ -151,9 +128,7 @@ class GoogleCloudAiplatformV1FeatureValue extends \Google\Model
     return $this->int64ArrayValue;
   }
   /**
-   * Int64 feature value.
-   *
-   * @param string $int64Value
+   * @param string
    */
   public function setInt64Value($int64Value)
   {
@@ -167,9 +142,7 @@ class GoogleCloudAiplatformV1FeatureValue extends \Google\Model
     return $this->int64Value;
   }
   /**
-   * Metadata of feature value.
-   *
-   * @param GoogleCloudAiplatformV1FeatureValueMetadata $metadata
+   * @param GoogleCloudAiplatformV1FeatureValueMetadata
    */
   public function setMetadata(GoogleCloudAiplatformV1FeatureValueMetadata $metadata)
   {
@@ -183,9 +156,7 @@ class GoogleCloudAiplatformV1FeatureValue extends \Google\Model
     return $this->metadata;
   }
   /**
-   * A list of string type feature value.
-   *
-   * @param GoogleCloudAiplatformV1StringArray $stringArrayValue
+   * @param GoogleCloudAiplatformV1StringArray
    */
   public function setStringArrayValue(GoogleCloudAiplatformV1StringArray $stringArrayValue)
   {
@@ -199,9 +170,7 @@ class GoogleCloudAiplatformV1FeatureValue extends \Google\Model
     return $this->stringArrayValue;
   }
   /**
-   * String feature value.
-   *
-   * @param string $stringValue
+   * @param string
    */
   public function setStringValue($stringValue)
   {
@@ -215,9 +184,7 @@ class GoogleCloudAiplatformV1FeatureValue extends \Google\Model
     return $this->stringValue;
   }
   /**
-   * A struct type feature value.
-   *
-   * @param GoogleCloudAiplatformV1StructValue $structValue
+   * @param GoogleCloudAiplatformV1StructValue
    */
   public function setStructValue(GoogleCloudAiplatformV1StructValue $structValue)
   {

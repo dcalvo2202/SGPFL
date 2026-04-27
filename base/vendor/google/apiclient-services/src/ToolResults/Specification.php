@@ -25,9 +25,7 @@ class Specification extends \Google\Model
   protected $iosTestDataType = '';
 
   /**
-   * An Android mobile test execution specification.
-   *
-   * @param AndroidTest $androidTest
+   * @param AndroidTest
    */
   public function setAndroidTest(AndroidTest $androidTest)
   {
@@ -41,9 +39,7 @@ class Specification extends \Google\Model
     return $this->androidTest;
   }
   /**
-   * An iOS mobile test execution specification.
-   *
-   * @param IosTest $iosTest
+   * @param IosTest
    */
   public function setIosTest(IosTest $iosTest)
   {

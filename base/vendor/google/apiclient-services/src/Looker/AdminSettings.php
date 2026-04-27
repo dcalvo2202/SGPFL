@@ -21,16 +21,12 @@ class AdminSettings extends \Google\Collection
 {
   protected $collection_key = 'allowedEmailDomains';
   /**
-   * Email domain allowlist for the instance.
-   *
    * @var string[]
    */
   public $allowedEmailDomains;
 
   /**
-   * Email domain allowlist for the instance.
-   *
-   * @param string[] $allowedEmailDomains
+   * @param string[]
    */
   public function setAllowedEmailDomains($allowedEmailDomains)
   {

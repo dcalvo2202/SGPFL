@@ -21,18 +21,12 @@ class ResumeProposalDealsRequest extends \Google\Collection
 {
   protected $collection_key = 'externalDealIds';
   /**
-   * The external_deal_id's of the deals to resume. If empty, all the deals in
-   * the proposal will be resumed.
-   *
    * @var string[]
    */
   public $externalDealIds;
 
   /**
-   * The external_deal_id's of the deals to resume. If empty, all the deals in
-   * the proposal will be resumed.
-   *
-   * @param string[] $externalDealIds
+   * @param string[]
    */
   public function setExternalDealIds($externalDealIds)
   {

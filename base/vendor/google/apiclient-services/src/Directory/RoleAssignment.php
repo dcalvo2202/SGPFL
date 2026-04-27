@@ -20,106 +20,44 @@ namespace Google\Service\Directory;
 class RoleAssignment extends \Google\Model
 {
   /**
-   * An individual user within the domain.
-   */
-  public const ASSIGNEE_TYPE_user = 'user';
-  /**
-   * A group within the domain.
-   */
-  public const ASSIGNEE_TYPE_group = 'group';
-  /**
-   * The unique ID of the entity this role is assigned to—either the `user_id`
-   * of a user, the `group_id` of a group, or the `uniqueId` of a service
-   * account as defined in [Identity and Access Management (IAM)](https://cloud.
-   * google.com/iam/docs/reference/rest/v1/projects.serviceAccounts).
-   *
    * @var string
    */
   public $assignedTo;
   /**
-   * Output only. The type of the assignee (`USER` or `GROUP`).
-   *
    * @var string
    */
   public $assigneeType;
   /**
-   * Optional. The condition associated with this role assignment. Note: Feature
-   * is available to Enterprise Standard, Enterprise Plus, Google Workspace for
-   * Education Plus and Cloud Identity Premium customers. A `RoleAssignment`
-   * with the `condition` field set will only take effect when the resource
-   * being accessed meets the condition. If `condition` is empty, the role
-   * (`role_id`) is applied to the actor (`assigned_to`) at the scope
-   * (`scope_type`) unconditionally. Currently, the following conditions are
-   * supported: - To make the `RoleAssignment` only applicable to [Security
-   * Groups](https://cloud.google.com/identity/docs/groups#group_types):
-   * `api.getAttribute('cloudidentity.googleapis.com/groups.labels',
-   * []).hasAny(['groups.security']) && resource.type ==
-   * 'cloudidentity.googleapis.com/Group'` - To make the `RoleAssignment` not
-   * applicable to [Security
-   * Groups](https://cloud.google.com/identity/docs/groups#group_types):
-   * `!api.getAttribute('cloudidentity.googleapis.com/groups.labels',
-   * []).hasAny(['groups.security']) && resource.type ==
-   * 'cloudidentity.googleapis.com/Group'` Currently, the condition strings have
-   * to be verbatim and they only work with the following [pre-built
-   * administrator roles](https://support.google.com/a/answer/2405986): - Groups
-   * Editor - Groups Reader The condition follows [Cloud IAM condition
-   * syntax](https://cloud.google.com/iam/docs/conditions-overview). - To make
-   * the `RoleAssignment` not applicable to [Locked
-   * Groups](https://cloud.google.com/identity/docs/groups#group_types):
-   * `!api.getAttribute('cloudidentity.googleapis.com/groups.labels',
-   * []).hasAny(['groups.locked']) && resource.type ==
-   * 'cloudidentity.googleapis.com/Group'` This condition can also be used in
-   * conjunction with a Security-related condition.
-   *
    * @var string
    */
   public $condition;
   /**
-   * ETag of the resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * The type of the API resource. This is always
-   * `admin#directory#roleAssignment`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * If the role is restricted to an organization unit, this contains the ID for
-   * the organization unit the exercise of this role is restricted to.
-   *
    * @var string
    */
   public $orgUnitId;
   /**
-   * ID of this roleAssignment.
-   *
    * @var string
    */
   public $roleAssignmentId;
   /**
-   * The ID of the role that is assigned.
-   *
    * @var string
    */
   public $roleId;
   /**
-   * The scope in which this role is assigned.
-   *
    * @var string
    */
   public $scopeType;
 
   /**
-   * The unique ID of the entity this role is assigned to—either the `user_id`
-   * of a user, the `group_id` of a group, or the `uniqueId` of a service
-   * account as defined in [Identity and Access Management (IAM)](https://cloud.
-   * google.com/iam/docs/reference/rest/v1/projects.serviceAccounts).
-   *
-   * @param string $assignedTo
+   * @param string
    */
   public function setAssignedTo($assignedTo)
   {
@@ -133,53 +71,21 @@ class RoleAssignment extends \Google\Model
     return $this->assignedTo;
   }
   /**
-   * Output only. The type of the assignee (`USER` or `GROUP`).
-   *
-   * Accepted values: user, group
-   *
-   * @param self::ASSIGNEE_TYPE_* $assigneeType
+   * @param string
    */
   public function setAssigneeType($assigneeType)
   {
     $this->assigneeType = $assigneeType;
   }
   /**
-   * @return self::ASSIGNEE_TYPE_*
+   * @return string
    */
   public function getAssigneeType()
   {
     return $this->assigneeType;
   }
   /**
-   * Optional. The condition associated with this role assignment. Note: Feature
-   * is available to Enterprise Standard, Enterprise Plus, Google Workspace for
-   * Education Plus and Cloud Identity Premium customers. A `RoleAssignment`
-   * with the `condition` field set will only take effect when the resource
-   * being accessed meets the condition. If `condition` is empty, the role
-   * (`role_id`) is applied to the actor (`assigned_to`) at the scope
-   * (`scope_type`) unconditionally. Currently, the following conditions are
-   * supported: - To make the `RoleAssignment` only applicable to [Security
-   * Groups](https://cloud.google.com/identity/docs/groups#group_types):
-   * `api.getAttribute('cloudidentity.googleapis.com/groups.labels',
-   * []).hasAny(['groups.security']) && resource.type ==
-   * 'cloudidentity.googleapis.com/Group'` - To make the `RoleAssignment` not
-   * applicable to [Security
-   * Groups](https://cloud.google.com/identity/docs/groups#group_types):
-   * `!api.getAttribute('cloudidentity.googleapis.com/groups.labels',
-   * []).hasAny(['groups.security']) && resource.type ==
-   * 'cloudidentity.googleapis.com/Group'` Currently, the condition strings have
-   * to be verbatim and they only work with the following [pre-built
-   * administrator roles](https://support.google.com/a/answer/2405986): - Groups
-   * Editor - Groups Reader The condition follows [Cloud IAM condition
-   * syntax](https://cloud.google.com/iam/docs/conditions-overview). - To make
-   * the `RoleAssignment` not applicable to [Locked
-   * Groups](https://cloud.google.com/identity/docs/groups#group_types):
-   * `!api.getAttribute('cloudidentity.googleapis.com/groups.labels',
-   * []).hasAny(['groups.locked']) && resource.type ==
-   * 'cloudidentity.googleapis.com/Group'` This condition can also be used in
-   * conjunction with a Security-related condition.
-   *
-   * @param string $condition
+   * @param string
    */
   public function setCondition($condition)
   {
@@ -193,9 +99,7 @@ class RoleAssignment extends \Google\Model
     return $this->condition;
   }
   /**
-   * ETag of the resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -209,10 +113,7 @@ class RoleAssignment extends \Google\Model
     return $this->etag;
   }
   /**
-   * The type of the API resource. This is always
-   * `admin#directory#roleAssignment`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -226,10 +127,7 @@ class RoleAssignment extends \Google\Model
     return $this->kind;
   }
   /**
-   * If the role is restricted to an organization unit, this contains the ID for
-   * the organization unit the exercise of this role is restricted to.
-   *
-   * @param string $orgUnitId
+   * @param string
    */
   public function setOrgUnitId($orgUnitId)
   {
@@ -243,9 +141,7 @@ class RoleAssignment extends \Google\Model
     return $this->orgUnitId;
   }
   /**
-   * ID of this roleAssignment.
-   *
-   * @param string $roleAssignmentId
+   * @param string
    */
   public function setRoleAssignmentId($roleAssignmentId)
   {
@@ -259,9 +155,7 @@ class RoleAssignment extends \Google\Model
     return $this->roleAssignmentId;
   }
   /**
-   * The ID of the role that is assigned.
-   *
-   * @param string $roleId
+   * @param string
    */
   public function setRoleId($roleId)
   {
@@ -275,9 +169,7 @@ class RoleAssignment extends \Google\Model
     return $this->roleId;
   }
   /**
-   * The scope in which this role is assigned.
-   *
-   * @param string $scopeType
+   * @param string
    */
   public function setScopeType($scopeType)
   {

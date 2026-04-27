@@ -20,16 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1FetchPredictOperationRequest extends \Google\Model
 {
   /**
-   * Required. The server-assigned name for the operation.
-   *
    * @var string
    */
   public $operationName;
 
   /**
-   * Required. The server-assigned name for the operation.
-   *
-   * @param string $operationName
+   * @param string
    */
   public function setOperationName($operationName)
   {

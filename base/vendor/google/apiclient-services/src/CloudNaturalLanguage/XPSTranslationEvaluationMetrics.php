@@ -19,17 +19,7 @@ namespace Google\Service\CloudNaturalLanguage;
 
 class XPSTranslationEvaluationMetrics extends \Google\Model
 {
-  /**
-   * BLEU score for base model.
-   *
-   * @var 
-   */
   public $baseBleuScore;
-  /**
-   * BLEU score.
-   *
-   * @var 
-   */
   public $bleuScore;
 
   public function setBaseBleuScore($baseBleuScore)

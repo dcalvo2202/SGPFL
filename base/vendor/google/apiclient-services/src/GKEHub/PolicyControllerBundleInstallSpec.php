@@ -21,16 +21,12 @@ class PolicyControllerBundleInstallSpec extends \Google\Collection
 {
   protected $collection_key = 'exemptedNamespaces';
   /**
-   * the set of namespaces to be exempted from the bundle
-   *
    * @var string[]
    */
   public $exemptedNamespaces;
 
   /**
-   * the set of namespaces to be exempted from the bundle
-   *
-   * @param string[] $exemptedNamespaces
+   * @param string[]
    */
   public function setExemptedNamespaces($exemptedNamespaces)
   {

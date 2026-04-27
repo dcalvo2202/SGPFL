@@ -20,18 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1MigrateResourceRequestMigrateDataLabelingDatasetConfigMigrateDataLabelingAnnotatedDatasetConfig extends \Google\Model
 {
   /**
-   * Required. Full resource name of data labeling AnnotatedDataset. Format: `pr
-   * ojects/{project}/datasets/{dataset}/annotatedDatasets/{annotated_dataset}`.
-   *
    * @var string
    */
   public $annotatedDataset;
 
   /**
-   * Required. Full resource name of data labeling AnnotatedDataset. Format: `pr
-   * ojects/{project}/datasets/{dataset}/annotatedDatasets/{annotated_dataset}`.
-   *
-   * @param string $annotatedDataset
+   * @param string
    */
   public function setAnnotatedDataset($annotatedDataset)
   {

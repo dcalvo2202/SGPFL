@@ -20,38 +20,24 @@ namespace Google\Service\IdentityToolkit;
 class IdentitytoolkitRelyingpartyDownloadAccountRequest extends \Google\Model
 {
   /**
-   * GCP project number of the requesting delegated app. Currently only intended
-   * for Firebase V1 migration.
-   *
    * @var string
    */
   public $delegatedProjectNumber;
   /**
-   * The max number of results to return in the response.
-   *
    * @var string
    */
   public $maxResults;
   /**
-   * The token for the next page. This should be taken from the previous
-   * response.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Specify which project (field value is actually project id) to operate. Only
-   * used when provided credential.
-   *
    * @var string
    */
   public $targetProjectId;
 
   /**
-   * GCP project number of the requesting delegated app. Currently only intended
-   * for Firebase V1 migration.
-   *
-   * @param string $delegatedProjectNumber
+   * @param string
    */
   public function setDelegatedProjectNumber($delegatedProjectNumber)
   {
@@ -65,9 +51,7 @@ class IdentitytoolkitRelyingpartyDownloadAccountRequest extends \Google\Model
     return $this->delegatedProjectNumber;
   }
   /**
-   * The max number of results to return in the response.
-   *
-   * @param string $maxResults
+   * @param string
    */
   public function setMaxResults($maxResults)
   {
@@ -81,10 +65,7 @@ class IdentitytoolkitRelyingpartyDownloadAccountRequest extends \Google\Model
     return $this->maxResults;
   }
   /**
-   * The token for the next page. This should be taken from the previous
-   * response.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -98,10 +79,7 @@ class IdentitytoolkitRelyingpartyDownloadAccountRequest extends \Google\Model
     return $this->nextPageToken;
   }
   /**
-   * Specify which project (field value is actually project id) to operate. Only
-   * used when provided credential.
-   *
-   * @param string $targetProjectId
+   * @param string
    */
   public function setTargetProjectId($targetProjectId)
   {

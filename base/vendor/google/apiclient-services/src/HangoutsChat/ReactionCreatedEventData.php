@@ -23,9 +23,7 @@ class ReactionCreatedEventData extends \Google\Model
   protected $reactionDataType = '';
 
   /**
-   * The new reaction.
-   *
-   * @param Reaction $reaction
+   * @param Reaction
    */
   public function setReaction(Reaction $reaction)
   {

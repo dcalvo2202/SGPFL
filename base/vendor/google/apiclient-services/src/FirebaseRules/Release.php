@@ -20,35 +20,24 @@ namespace Google\Service\FirebaseRules;
 class Release extends \Google\Model
 {
   /**
-   * Output only. Time the release was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Required. Format: `projects/{project_id}/releases/{release_id}`
-   *
    * @var string
    */
   public $name;
   /**
-   * Required. Name of the `Ruleset` referred to by this `Release`. The
-   * `Ruleset` must exist for the `Release` to be created.
-   *
    * @var string
    */
   public $rulesetName;
   /**
-   * Output only. Time the release was updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. Time the release was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -62,9 +51,7 @@ class Release extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Required. Format: `projects/{project_id}/releases/{release_id}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -78,10 +65,7 @@ class Release extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. Name of the `Ruleset` referred to by this `Release`. The
-   * `Ruleset` must exist for the `Release` to be created.
-   *
-   * @param string $rulesetName
+   * @param string
    */
   public function setRulesetName($rulesetName)
   {
@@ -95,9 +79,7 @@ class Release extends \Google\Model
     return $this->rulesetName;
   }
   /**
-   * Output only. Time the release was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

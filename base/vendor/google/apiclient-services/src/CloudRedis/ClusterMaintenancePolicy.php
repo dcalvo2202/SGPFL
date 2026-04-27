@@ -21,16 +21,10 @@ class ClusterMaintenancePolicy extends \Google\Collection
 {
   protected $collection_key = 'weeklyMaintenanceWindow';
   /**
-   * Output only. The time when the policy was created i.e. Maintenance Window
-   * or Deny Period was assigned.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. The time when the policy was updated i.e. Maintenance Window
-   * or Deny Period was updated.
-   *
    * @var string
    */
   public $updateTime;
@@ -38,10 +32,7 @@ class ClusterMaintenancePolicy extends \Google\Collection
   protected $weeklyMaintenanceWindowDataType = 'array';
 
   /**
-   * Output only. The time when the policy was created i.e. Maintenance Window
-   * or Deny Period was assigned.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -55,10 +46,7 @@ class ClusterMaintenancePolicy extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Output only. The time when the policy was updated i.e. Maintenance Window
-   * or Deny Period was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -72,11 +60,7 @@ class ClusterMaintenancePolicy extends \Google\Collection
     return $this->updateTime;
   }
   /**
-   * Optional. Maintenance window that is applied to resources covered by this
-   * policy. Minimum 1. For the current version, the maximum number of
-   * weekly_maintenance_window is expected to be one.
-   *
-   * @param ClusterWeeklyMaintenanceWindow[] $weeklyMaintenanceWindow
+   * @param ClusterWeeklyMaintenanceWindow[]
    */
   public function setWeeklyMaintenanceWindow($weeklyMaintenanceWindow)
   {

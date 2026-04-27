@@ -25,9 +25,7 @@ class GoogleCloudAiplatformV1SummarizationVerbosityInput extends \Google\Model
   protected $metricSpecDataType = '';
 
   /**
-   * Required. Summarization verbosity instance.
-   *
-   * @param GoogleCloudAiplatformV1SummarizationVerbosityInstance $instance
+   * @param GoogleCloudAiplatformV1SummarizationVerbosityInstance
    */
   public function setInstance(GoogleCloudAiplatformV1SummarizationVerbosityInstance $instance)
   {
@@ -41,9 +39,7 @@ class GoogleCloudAiplatformV1SummarizationVerbosityInput extends \Google\Model
     return $this->instance;
   }
   /**
-   * Required. Spec for summarization verbosity score metric.
-   *
-   * @param GoogleCloudAiplatformV1SummarizationVerbositySpec $metricSpec
+   * @param GoogleCloudAiplatformV1SummarizationVerbositySpec
    */
   public function setMetricSpec(GoogleCloudAiplatformV1SummarizationVerbositySpec $metricSpec)
   {

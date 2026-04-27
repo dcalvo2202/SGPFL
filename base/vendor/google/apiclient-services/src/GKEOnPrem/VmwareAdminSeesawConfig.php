@@ -21,45 +21,30 @@ class VmwareAdminSeesawConfig extends \Google\Collection
 {
   protected $collection_key = 'vms';
   /**
-   * Enable two load balancer VMs to achieve a highly-available Seesaw load
-   * balancer.
-   *
    * @var bool
    */
   public $enableHa;
   /**
-   * In general the following format should be used for the Seesaw group name:
-   * seesaw-for-[cluster_name].
-   *
    * @var string
    */
   public $group;
   protected $ipBlocksType = VmwareIpBlock::class;
   protected $ipBlocksDataType = 'array';
   /**
-   * MasterIP is the IP announced by the master of Seesaw group.
-   *
    * @var string
    */
   public $masterIp;
   /**
-   * Name to be used by Stackdriver.
-   *
    * @var string
    */
   public $stackdriverName;
   /**
-   * Names of the VMs created for this Seesaw group.
-   *
    * @var string[]
    */
   public $vms;
 
   /**
-   * Enable two load balancer VMs to achieve a highly-available Seesaw load
-   * balancer.
-   *
-   * @param bool $enableHa
+   * @param bool
    */
   public function setEnableHa($enableHa)
   {
@@ -73,10 +58,7 @@ class VmwareAdminSeesawConfig extends \Google\Collection
     return $this->enableHa;
   }
   /**
-   * In general the following format should be used for the Seesaw group name:
-   * seesaw-for-[cluster_name].
-   *
-   * @param string $group
+   * @param string
    */
   public function setGroup($group)
   {
@@ -90,9 +72,7 @@ class VmwareAdminSeesawConfig extends \Google\Collection
     return $this->group;
   }
   /**
-   * The IP Blocks to be used by the Seesaw load balancer
-   *
-   * @param VmwareIpBlock[] $ipBlocks
+   * @param VmwareIpBlock[]
    */
   public function setIpBlocks($ipBlocks)
   {
@@ -106,9 +86,7 @@ class VmwareAdminSeesawConfig extends \Google\Collection
     return $this->ipBlocks;
   }
   /**
-   * MasterIP is the IP announced by the master of Seesaw group.
-   *
-   * @param string $masterIp
+   * @param string
    */
   public function setMasterIp($masterIp)
   {
@@ -122,9 +100,7 @@ class VmwareAdminSeesawConfig extends \Google\Collection
     return $this->masterIp;
   }
   /**
-   * Name to be used by Stackdriver.
-   *
-   * @param string $stackdriverName
+   * @param string
    */
   public function setStackdriverName($stackdriverName)
   {
@@ -138,9 +114,7 @@ class VmwareAdminSeesawConfig extends \Google\Collection
     return $this->stackdriverName;
   }
   /**
-   * Names of the VMs created for this Seesaw group.
-   *
-   * @param string[] $vms
+   * @param string[]
    */
   public function setVms($vms)
   {

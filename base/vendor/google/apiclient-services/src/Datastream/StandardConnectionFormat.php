@@ -20,31 +20,18 @@ namespace Google\Service\Datastream;
 class StandardConnectionFormat extends \Google\Model
 {
   /**
-   * Optional. Deprecated: Use the `additional_options` map to specify the
-   * `directConnection` parameter instead. For example: `additional_options =
-   * {"directConnection": "true"}`. Specifies whether the client connects
-   * directly to the host[:port] in the connection URI.
-   *
-   * @deprecated
    * @var bool
    */
   public $directConnection;
 
   /**
-   * Optional. Deprecated: Use the `additional_options` map to specify the
-   * `directConnection` parameter instead. For example: `additional_options =
-   * {"directConnection": "true"}`. Specifies whether the client connects
-   * directly to the host[:port] in the connection URI.
-   *
-   * @deprecated
-   * @param bool $directConnection
+   * @param bool
    */
   public function setDirectConnection($directConnection)
   {
     $this->directConnection = $directConnection;
   }
   /**
-   * @deprecated
    * @return bool
    */
   public function getDirectConnection()

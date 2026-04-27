@@ -20,60 +20,36 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1DebugSession extends \Google\Model
 {
   /**
-   * Optional. The number of request to be traced. Min = 1, Max = 15, Default =
-   * 10.
-   *
    * @var int
    */
   public $count;
   /**
-   * Output only. The first transaction creation timestamp, recorded by UAP.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. A conditional statement which is evaluated against the request
-   * message to determine if it should be traced. Syntax matches that of on API
-   * Proxy bundle flow Condition.
-   *
    * @var string
    */
   public $filter;
   /**
-   * A unique ID for this DebugSession.
-   *
    * @var string
    */
   public $name;
   /**
-   * Optional. The time in seconds after which this DebugSession should end.
-   * This value will override the value in query param, if both are provided.
-   *
    * @var string
    */
   public $timeout;
   /**
-   * Optional. The maximum number of bytes captured from the response payload.
-   * Min = 0, Max = 5120, Default = 5120.
-   *
    * @var int
    */
   public $tracesize;
   /**
-   * Optional. The length of time, in seconds, that this debug session is valid,
-   * starting from when it's received in the control plane. Min = 1, Max = 15,
-   * Default = 10.
-   *
    * @var int
    */
   public $validity;
 
   /**
-   * Optional. The number of request to be traced. Min = 1, Max = 15, Default =
-   * 10.
-   *
-   * @param int $count
+   * @param int
    */
   public function setCount($count)
   {
@@ -87,9 +63,7 @@ class GoogleCloudApigeeV1DebugSession extends \Google\Model
     return $this->count;
   }
   /**
-   * Output only. The first transaction creation timestamp, recorded by UAP.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -103,11 +77,7 @@ class GoogleCloudApigeeV1DebugSession extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Optional. A conditional statement which is evaluated against the request
-   * message to determine if it should be traced. Syntax matches that of on API
-   * Proxy bundle flow Condition.
-   *
-   * @param string $filter
+   * @param string
    */
   public function setFilter($filter)
   {
@@ -121,9 +91,7 @@ class GoogleCloudApigeeV1DebugSession extends \Google\Model
     return $this->filter;
   }
   /**
-   * A unique ID for this DebugSession.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -137,10 +105,7 @@ class GoogleCloudApigeeV1DebugSession extends \Google\Model
     return $this->name;
   }
   /**
-   * Optional. The time in seconds after which this DebugSession should end.
-   * This value will override the value in query param, if both are provided.
-   *
-   * @param string $timeout
+   * @param string
    */
   public function setTimeout($timeout)
   {
@@ -154,10 +119,7 @@ class GoogleCloudApigeeV1DebugSession extends \Google\Model
     return $this->timeout;
   }
   /**
-   * Optional. The maximum number of bytes captured from the response payload.
-   * Min = 0, Max = 5120, Default = 5120.
-   *
-   * @param int $tracesize
+   * @param int
    */
   public function setTracesize($tracesize)
   {
@@ -171,11 +133,7 @@ class GoogleCloudApigeeV1DebugSession extends \Google\Model
     return $this->tracesize;
   }
   /**
-   * Optional. The length of time, in seconds, that this debug session is valid,
-   * starting from when it's received in the control plane. Min = 1, Max = 15,
-   * Default = 10.
-   *
-   * @param int $validity
+   * @param int
    */
   public function setValidity($validity)
   {

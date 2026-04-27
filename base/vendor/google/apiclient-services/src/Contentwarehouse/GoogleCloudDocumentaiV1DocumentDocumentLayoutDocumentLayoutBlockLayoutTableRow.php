@@ -24,9 +24,7 @@ class GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlockLayoutTabl
   protected $cellsDataType = 'array';
 
   /**
-   * A table row is a list of table cells.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlockLayoutTableCell[] $cells
+   * @param GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlockLayoutTableCell[]
    */
   public function setCells($cells)
   {

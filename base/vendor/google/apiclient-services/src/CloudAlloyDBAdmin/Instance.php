@@ -19,252 +19,60 @@ namespace Google\Service\CloudAlloyDBAdmin;
 
 class Instance extends \Google\Collection
 {
-  /**
-   * The policy is not specified.
-   */
-  public const ACTIVATION_POLICY_ACTIVATION_POLICY_UNSPECIFIED = 'ACTIVATION_POLICY_UNSPECIFIED';
-  /**
-   * The instance is running.
-   */
-  public const ACTIVATION_POLICY_ALWAYS = 'ALWAYS';
-  /**
-   * The instance is not running.
-   */
-  public const ACTIVATION_POLICY_NEVER = 'NEVER';
-  /**
-   * This is an unknown Availability type.
-   */
-  public const AVAILABILITY_TYPE_AVAILABILITY_TYPE_UNSPECIFIED = 'AVAILABILITY_TYPE_UNSPECIFIED';
-  /**
-   * Zonal available instance.
-   */
-  public const AVAILABILITY_TYPE_ZONAL = 'ZONAL';
-  /**
-   * Regional (or Highly) available instance.
-   */
-  public const AVAILABILITY_TYPE_REGIONAL = 'REGIONAL';
-  /**
-   * DEFAULT_DATA_API_ENABLED_FOR_GOOGLE_CLOUD_SERVICES is a default value that
-   * allows Google internal services like AlloyDB Studio to access the instance.
-   */
-  public const DATA_API_ACCESS_DEFAULT_DATA_API_ENABLED_FOR_GOOGLE_CLOUD_SERVICES = 'DEFAULT_DATA_API_ENABLED_FOR_GOOGLE_CLOUD_SERVICES';
-  /**
-   * Data API access is disabled for this instance.
-   */
-  public const DATA_API_ACCESS_DISABLED = 'DISABLED';
-  /**
-   * Data API access is enabled for this instance. For private IP instances,
-   * this allows authorized users to access the instance from the public
-   * internet using the ExecuteSql API.
-   */
-  public const DATA_API_ACCESS_ENABLED = 'ENABLED';
-  /**
-   * The type of the instance is unknown.
-   */
-  public const INSTANCE_TYPE_INSTANCE_TYPE_UNSPECIFIED = 'INSTANCE_TYPE_UNSPECIFIED';
-  /**
-   * PRIMARY instances support read and write operations.
-   */
-  public const INSTANCE_TYPE_PRIMARY = 'PRIMARY';
-  /**
-   * READ POOL instances support read operations only. Each read pool instance
-   * consists of one or more homogeneous nodes. * Read pool of size 1 can only
-   * have zonal availability. * Read pools with node count of 2 or more can have
-   * regional availability (nodes are present in 2 or more zones in a region).
-   */
-  public const INSTANCE_TYPE_READ_POOL = 'READ_POOL';
-  /**
-   * SECONDARY instances support read operations only. SECONDARY instance is a
-   * cross-region read replica
-   */
-  public const INSTANCE_TYPE_SECONDARY = 'SECONDARY';
-  /**
-   * The state of the instance is unknown.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The instance is active and running.
-   */
-  public const STATE_READY = 'READY';
-  /**
-   * The instance is stopped. Instance name and IP resources are preserved.
-   */
-  public const STATE_STOPPED = 'STOPPED';
-  /**
-   * The instance is being created.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * The instance is being deleted.
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * The instance is down for maintenance.
-   */
-  public const STATE_MAINTENANCE = 'MAINTENANCE';
-  /**
-   * The creation of the instance failed or a fatal error occurred during an
-   * operation on the instance. Note: Instances in this state would tried to be
-   * auto-repaired. And Customers should be able to restart, update or delete
-   * these instances.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * The instance has been configured to sync data from some other source.
-   */
-  public const STATE_BOOTSTRAPPING = 'BOOTSTRAPPING';
-  /**
-   * The instance is being promoted.
-   */
-  public const STATE_PROMOTING = 'PROMOTING';
-  /**
-   * The instance has entered switchover state. All updates on instance are
-   * restricted while the instance is in this state.
-   */
-  public const STATE_SWITCHOVER = 'SWITCHOVER';
-  /**
-   * The instance is being stopped.
-   */
-  public const STATE_STOPPING = 'STOPPING';
-  /**
-   * The instance is being started.
-   */
-  public const STATE_STARTING = 'STARTING';
   protected $collection_key = 'outboundPublicIpAddresses';
   /**
-   * Optional. Specifies whether an instance needs to spin up. Once the instance
-   * is active, the activation policy can be updated to the `NEVER` to stop the
-   * instance. Likewise, the activation policy can be updated to `ALWAYS` to
-   * start the instance. There are restrictions around when an instance
-   * can/cannot be activated (for example, a read pool instance should be
-   * stopped before stopping primary etc.). Please refer to the API
-   * documentation for more details.
-   *
    * @var string
    */
   public $activationPolicy;
   /**
-   * Annotations to allow client tools to store small amount of arbitrary data.
-   * This is distinct from labels. https://google.aip.dev/128
-   *
    * @var string[]
    */
   public $annotations;
   /**
-   * Availability type of an Instance. If empty, defaults to REGIONAL for
-   * primary instances. For read pools, availability_type is always UNSPECIFIED.
-   * Instances in the read pools are evenly distributed across available zones
-   * within the region (i.e. read pools with more than one node will have a node
-   * in at least two zones).
-   *
    * @var string
    */
   public $availabilityType;
   protected $clientConnectionConfigType = ClientConnectionConfig::class;
   protected $clientConnectionConfigDataType = '';
-  protected $connectionPoolConfigType = ConnectionPoolConfig::class;
-  protected $connectionPoolConfigDataType = '';
   /**
-   * Output only. Create time stamp
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. Controls whether the Data API is enabled for this instance. When
-   * enabled, this allows authorized users to connect to the instance from the
-   * public internet using the `executeSql` API, even for private IP instances.
-   * If this is not specified, the data API is enabled by default for Google
-   * internal services like AlloyDB Studio. Disable it explicitly to disallow
-   * Google internal services as well.
-   *
-   * @var string
-   */
-  public $dataApiAccess;
-  /**
-   * Database flags. Set at the instance level. They are copied from the primary
-   * instance on secondary instance creation. Flags that have restrictions
-   * default to the value at primary instance on read instances during creation.
-   * Read instances can set new flags or override existing flags that are
-   * relevant for reads, for example, for enabling columnar cache on a read
-   * instance. Flags set on read instance might or might not be present on the
-   * primary instance. This is a list of "key": "value" pairs. "key": The name
-   * of the flag. These flags are passed at instance setup time, so include both
-   * server options and system variables for Postgres. Flags are specified with
-   * underscores, not hyphens. "value": The value of the flag. Booleans are set
-   * to **on** for true and **off** for false. This field must be omitted if the
-   * flag doesn't take a value.
-   *
    * @var string[]
    */
   public $databaseFlags;
   /**
-   * Output only. Delete time stamp
-   *
    * @var string
    */
   public $deleteTime;
   /**
-   * User-settable and human-readable display name for the Instance.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * For Resource freshness validation (https://google.aip.dev/154)
-   *
    * @var string
    */
   public $etag;
   /**
-   * The Compute Engine zone that the instance should serve from, per
-   * https://cloud.google.com/compute/docs/regions-zones This can ONLY be
-   * specified for ZONAL instances. If present for a REGIONAL instance, an error
-   * will be thrown. If this is absent for a ZONAL instance, instance is created
-   * in a random zone with available capacity.
-   *
    * @var string
    */
   public $gceZone;
   /**
-   * Required. The type of the instance. Specified at creation time.
-   *
    * @var string
    */
   public $instanceType;
   /**
-   * Output only. The IP address for the Instance. This is the connection
-   * endpoint for an end-user application.
-   *
    * @var string
    */
   public $ipAddress;
   /**
-   * Labels as key value pairs
-   *
    * @var string[]
    */
   public $labels;
   protected $machineConfigType = MachineConfig::class;
   protected $machineConfigDataType = '';
   /**
-   * Output only. Maintenance version of the instance, for example:
-   * POSTGRES_15.2025_07_15.04_00. Output only. Update this field via the parent
-   * cluster's maintenance_version field(s).
-   *
-   * @var string
-   */
-  public $maintenanceVersionName;
-  /**
-   * Output only. The name of the instance resource with the format: * projects/
-   * {project}/locations/{region}/clusters/{cluster_id}/instances/{instance_id}
-   * where the cluster and instance ID segments should satisfy the regex
-   * expression `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`, e.g. 1-63 characters of
-   * lowercase letters, numbers, and dashes, starting with a letter, and ending
-   * with a letter or number. For more details see https://google.aip.dev/122.
-   * The prefix of the instance resource name is the name of the parent
-   * resource: * projects/{project}/locations/{region}/clusters/{cluster_id}
-   *
    * @var string
    */
   public $name;
@@ -275,18 +83,12 @@ class Instance extends \Google\Collection
   protected $observabilityConfigType = ObservabilityInstanceConfig::class;
   protected $observabilityConfigDataType = '';
   /**
-   * Output only. All outbound public IP addresses configured for the instance.
-   *
    * @var string[]
    */
   public $outboundPublicIpAddresses;
   protected $pscInstanceConfigType = PscInstanceConfig::class;
   protected $pscInstanceConfigDataType = '';
   /**
-   * Output only. The public IP addresses for the Instance. This is available
-   * ONLY when enable_public_ip is set. This is the connection endpoint for an
-   * end-user application.
-   *
    * @var string
    */
   public $publicIpAddress;
@@ -295,37 +97,22 @@ class Instance extends \Google\Collection
   protected $readPoolConfigType = ReadPoolConfig::class;
   protected $readPoolConfigDataType = '';
   /**
-   * Output only. Reconciling (https://google.aip.dev/128#reconciliation). Set
-   * to true if the current state of Instance does not match the user's intended
-   * state, and the service is actively updating the resource to reconcile them.
-   * This can happen due to user-triggered updates or system actions like
-   * failover or maintenance.
-   *
    * @var bool
    */
   public $reconciling;
   /**
-   * Output only. Reserved for future use.
-   *
    * @var bool
    */
   public $satisfiesPzs;
   /**
-   * Output only. The current serving state of the instance.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. The system-generated UID of the resource. The UID is assigned
-   * when the resource is created, and it is retained until it is deleted.
-   *
    * @var string
    */
   public $uid;
   /**
-   * Output only. Update time stamp
-   *
    * @var string
    */
   public $updateTime;
@@ -333,34 +120,21 @@ class Instance extends \Google\Collection
   protected $writableNodeDataType = '';
 
   /**
-   * Optional. Specifies whether an instance needs to spin up. Once the instance
-   * is active, the activation policy can be updated to the `NEVER` to stop the
-   * instance. Likewise, the activation policy can be updated to `ALWAYS` to
-   * start the instance. There are restrictions around when an instance
-   * can/cannot be activated (for example, a read pool instance should be
-   * stopped before stopping primary etc.). Please refer to the API
-   * documentation for more details.
-   *
-   * Accepted values: ACTIVATION_POLICY_UNSPECIFIED, ALWAYS, NEVER
-   *
-   * @param self::ACTIVATION_POLICY_* $activationPolicy
+   * @param string
    */
   public function setActivationPolicy($activationPolicy)
   {
     $this->activationPolicy = $activationPolicy;
   }
   /**
-   * @return self::ACTIVATION_POLICY_*
+   * @return string
    */
   public function getActivationPolicy()
   {
     return $this->activationPolicy;
   }
   /**
-   * Annotations to allow client tools to store small amount of arbitrary data.
-   * This is distinct from labels. https://google.aip.dev/128
-   *
-   * @param string[] $annotations
+   * @param string[]
    */
   public function setAnnotations($annotations)
   {
@@ -374,31 +148,21 @@ class Instance extends \Google\Collection
     return $this->annotations;
   }
   /**
-   * Availability type of an Instance. If empty, defaults to REGIONAL for
-   * primary instances. For read pools, availability_type is always UNSPECIFIED.
-   * Instances in the read pools are evenly distributed across available zones
-   * within the region (i.e. read pools with more than one node will have a node
-   * in at least two zones).
-   *
-   * Accepted values: AVAILABILITY_TYPE_UNSPECIFIED, ZONAL, REGIONAL
-   *
-   * @param self::AVAILABILITY_TYPE_* $availabilityType
+   * @param string
    */
   public function setAvailabilityType($availabilityType)
   {
     $this->availabilityType = $availabilityType;
   }
   /**
-   * @return self::AVAILABILITY_TYPE_*
+   * @return string
    */
   public function getAvailabilityType()
   {
     return $this->availabilityType;
   }
   /**
-   * Optional. Client connection specific configurations
-   *
-   * @param ClientConnectionConfig $clientConnectionConfig
+   * @param ClientConnectionConfig
    */
   public function setClientConnectionConfig(ClientConnectionConfig $clientConnectionConfig)
   {
@@ -412,25 +176,7 @@ class Instance extends \Google\Collection
     return $this->clientConnectionConfig;
   }
   /**
-   * Optional. The configuration for Managed Connection Pool (MCP).
-   *
-   * @param ConnectionPoolConfig $connectionPoolConfig
-   */
-  public function setConnectionPoolConfig(ConnectionPoolConfig $connectionPoolConfig)
-  {
-    $this->connectionPoolConfig = $connectionPoolConfig;
-  }
-  /**
-   * @return ConnectionPoolConfig
-   */
-  public function getConnectionPoolConfig()
-  {
-    return $this->connectionPoolConfig;
-  }
-  /**
-   * Output only. Create time stamp
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -444,44 +190,7 @@ class Instance extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Optional. Controls whether the Data API is enabled for this instance. When
-   * enabled, this allows authorized users to connect to the instance from the
-   * public internet using the `executeSql` API, even for private IP instances.
-   * If this is not specified, the data API is enabled by default for Google
-   * internal services like AlloyDB Studio. Disable it explicitly to disallow
-   * Google internal services as well.
-   *
-   * Accepted values: DEFAULT_DATA_API_ENABLED_FOR_GOOGLE_CLOUD_SERVICES,
-   * DISABLED, ENABLED
-   *
-   * @param self::DATA_API_ACCESS_* $dataApiAccess
-   */
-  public function setDataApiAccess($dataApiAccess)
-  {
-    $this->dataApiAccess = $dataApiAccess;
-  }
-  /**
-   * @return self::DATA_API_ACCESS_*
-   */
-  public function getDataApiAccess()
-  {
-    return $this->dataApiAccess;
-  }
-  /**
-   * Database flags. Set at the instance level. They are copied from the primary
-   * instance on secondary instance creation. Flags that have restrictions
-   * default to the value at primary instance on read instances during creation.
-   * Read instances can set new flags or override existing flags that are
-   * relevant for reads, for example, for enabling columnar cache on a read
-   * instance. Flags set on read instance might or might not be present on the
-   * primary instance. This is a list of "key": "value" pairs. "key": The name
-   * of the flag. These flags are passed at instance setup time, so include both
-   * server options and system variables for Postgres. Flags are specified with
-   * underscores, not hyphens. "value": The value of the flag. Booleans are set
-   * to **on** for true and **off** for false. This field must be omitted if the
-   * flag doesn't take a value.
-   *
-   * @param string[] $databaseFlags
+   * @param string[]
    */
   public function setDatabaseFlags($databaseFlags)
   {
@@ -495,9 +204,7 @@ class Instance extends \Google\Collection
     return $this->databaseFlags;
   }
   /**
-   * Output only. Delete time stamp
-   *
-   * @param string $deleteTime
+   * @param string
    */
   public function setDeleteTime($deleteTime)
   {
@@ -511,9 +218,7 @@ class Instance extends \Google\Collection
     return $this->deleteTime;
   }
   /**
-   * User-settable and human-readable display name for the Instance.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -527,9 +232,7 @@ class Instance extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * For Resource freshness validation (https://google.aip.dev/154)
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -543,13 +246,7 @@ class Instance extends \Google\Collection
     return $this->etag;
   }
   /**
-   * The Compute Engine zone that the instance should serve from, per
-   * https://cloud.google.com/compute/docs/regions-zones This can ONLY be
-   * specified for ZONAL instances. If present for a REGIONAL instance, an error
-   * will be thrown. If this is absent for a ZONAL instance, instance is created
-   * in a random zone with available capacity.
-   *
-   * @param string $gceZone
+   * @param string
    */
   public function setGceZone($gceZone)
   {
@@ -563,28 +260,21 @@ class Instance extends \Google\Collection
     return $this->gceZone;
   }
   /**
-   * Required. The type of the instance. Specified at creation time.
-   *
-   * Accepted values: INSTANCE_TYPE_UNSPECIFIED, PRIMARY, READ_POOL, SECONDARY
-   *
-   * @param self::INSTANCE_TYPE_* $instanceType
+   * @param string
    */
   public function setInstanceType($instanceType)
   {
     $this->instanceType = $instanceType;
   }
   /**
-   * @return self::INSTANCE_TYPE_*
+   * @return string
    */
   public function getInstanceType()
   {
     return $this->instanceType;
   }
   /**
-   * Output only. The IP address for the Instance. This is the connection
-   * endpoint for an end-user application.
-   *
-   * @param string $ipAddress
+   * @param string
    */
   public function setIpAddress($ipAddress)
   {
@@ -598,9 +288,7 @@ class Instance extends \Google\Collection
     return $this->ipAddress;
   }
   /**
-   * Labels as key value pairs
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -614,9 +302,7 @@ class Instance extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Configurations for the machines that host the underlying database engine.
-   *
-   * @param MachineConfig $machineConfig
+   * @param MachineConfig
    */
   public function setMachineConfig(MachineConfig $machineConfig)
   {
@@ -630,34 +316,7 @@ class Instance extends \Google\Collection
     return $this->machineConfig;
   }
   /**
-   * Output only. Maintenance version of the instance, for example:
-   * POSTGRES_15.2025_07_15.04_00. Output only. Update this field via the parent
-   * cluster's maintenance_version field(s).
-   *
-   * @param string $maintenanceVersionName
-   */
-  public function setMaintenanceVersionName($maintenanceVersionName)
-  {
-    $this->maintenanceVersionName = $maintenanceVersionName;
-  }
-  /**
-   * @return string
-   */
-  public function getMaintenanceVersionName()
-  {
-    return $this->maintenanceVersionName;
-  }
-  /**
-   * Output only. The name of the instance resource with the format: * projects/
-   * {project}/locations/{region}/clusters/{cluster_id}/instances/{instance_id}
-   * where the cluster and instance ID segments should satisfy the regex
-   * expression `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`, e.g. 1-63 characters of
-   * lowercase letters, numbers, and dashes, starting with a letter, and ending
-   * with a letter or number. For more details see https://google.aip.dev/122.
-   * The prefix of the instance resource name is the name of the parent
-   * resource: * projects/{project}/locations/{region}/clusters/{cluster_id}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -671,9 +330,7 @@ class Instance extends \Google\Collection
     return $this->name;
   }
   /**
-   * Optional. Instance-level network configuration.
-   *
-   * @param InstanceNetworkConfig $networkConfig
+   * @param InstanceNetworkConfig
    */
   public function setNetworkConfig(InstanceNetworkConfig $networkConfig)
   {
@@ -687,10 +344,7 @@ class Instance extends \Google\Collection
     return $this->networkConfig;
   }
   /**
-   * Output only. List of available read-only VMs in this instance, including
-   * the standby for a PRIMARY instance.
-   *
-   * @param Node[] $nodes
+   * @param Node[]
    */
   public function setNodes($nodes)
   {
@@ -704,9 +358,7 @@ class Instance extends \Google\Collection
     return $this->nodes;
   }
   /**
-   * Configuration for observability.
-   *
-   * @param ObservabilityInstanceConfig $observabilityConfig
+   * @param ObservabilityInstanceConfig
    */
   public function setObservabilityConfig(ObservabilityInstanceConfig $observabilityConfig)
   {
@@ -720,9 +372,7 @@ class Instance extends \Google\Collection
     return $this->observabilityConfig;
   }
   /**
-   * Output only. All outbound public IP addresses configured for the instance.
-   *
-   * @param string[] $outboundPublicIpAddresses
+   * @param string[]
    */
   public function setOutboundPublicIpAddresses($outboundPublicIpAddresses)
   {
@@ -736,10 +386,7 @@ class Instance extends \Google\Collection
     return $this->outboundPublicIpAddresses;
   }
   /**
-   * Optional. The configuration for Private Service Connect (PSC) for the
-   * instance.
-   *
-   * @param PscInstanceConfig $pscInstanceConfig
+   * @param PscInstanceConfig
    */
   public function setPscInstanceConfig(PscInstanceConfig $pscInstanceConfig)
   {
@@ -753,11 +400,7 @@ class Instance extends \Google\Collection
     return $this->pscInstanceConfig;
   }
   /**
-   * Output only. The public IP addresses for the Instance. This is available
-   * ONLY when enable_public_ip is set. This is the connection endpoint for an
-   * end-user application.
-   *
-   * @param string $publicIpAddress
+   * @param string
    */
   public function setPublicIpAddress($publicIpAddress)
   {
@@ -771,9 +414,7 @@ class Instance extends \Google\Collection
     return $this->publicIpAddress;
   }
   /**
-   * Configuration for query insights.
-   *
-   * @param QueryInsightsInstanceConfig $queryInsightsConfig
+   * @param QueryInsightsInstanceConfig
    */
   public function setQueryInsightsConfig(QueryInsightsInstanceConfig $queryInsightsConfig)
   {
@@ -787,10 +428,7 @@ class Instance extends \Google\Collection
     return $this->queryInsightsConfig;
   }
   /**
-   * Read pool instance configuration. This is required if the value of
-   * instanceType is READ_POOL.
-   *
-   * @param ReadPoolConfig $readPoolConfig
+   * @param ReadPoolConfig
    */
   public function setReadPoolConfig(ReadPoolConfig $readPoolConfig)
   {
@@ -804,13 +442,7 @@ class Instance extends \Google\Collection
     return $this->readPoolConfig;
   }
   /**
-   * Output only. Reconciling (https://google.aip.dev/128#reconciliation). Set
-   * to true if the current state of Instance does not match the user's intended
-   * state, and the service is actively updating the resource to reconcile them.
-   * This can happen due to user-triggered updates or system actions like
-   * failover or maintenance.
-   *
-   * @param bool $reconciling
+   * @param bool
    */
   public function setReconciling($reconciling)
   {
@@ -824,9 +456,7 @@ class Instance extends \Google\Collection
     return $this->reconciling;
   }
   /**
-   * Output only. Reserved for future use.
-   *
-   * @param bool $satisfiesPzs
+   * @param bool
    */
   public function setSatisfiesPzs($satisfiesPzs)
   {
@@ -840,30 +470,21 @@ class Instance extends \Google\Collection
     return $this->satisfiesPzs;
   }
   /**
-   * Output only. The current serving state of the instance.
-   *
-   * Accepted values: STATE_UNSPECIFIED, READY, STOPPED, CREATING, DELETING,
-   * MAINTENANCE, FAILED, BOOTSTRAPPING, PROMOTING, SWITCHOVER, STOPPING,
-   * STARTING
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. The system-generated UID of the resource. The UID is assigned
-   * when the resource is created, and it is retained until it is deleted.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {
@@ -877,9 +498,7 @@ class Instance extends \Google\Collection
     return $this->uid;
   }
   /**
-   * Output only. Update time stamp
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -893,10 +512,7 @@ class Instance extends \Google\Collection
     return $this->updateTime;
   }
   /**
-   * Output only. This is set for the read-write VM of the PRIMARY instance
-   * only.
-   *
-   * @param Node $writableNode
+   * @param Node
    */
   public function setWritableNode(Node $writableNode)
   {

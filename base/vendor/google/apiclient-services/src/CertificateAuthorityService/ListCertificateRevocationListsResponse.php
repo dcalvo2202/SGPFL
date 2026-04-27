@@ -23,24 +23,16 @@ class ListCertificateRevocationListsResponse extends \Google\Collection
   protected $certificateRevocationListsType = CertificateRevocationList::class;
   protected $certificateRevocationListsDataType = 'array';
   /**
-   * A token to retrieve next page of results. Pass this value in
-   * ListCertificateRevocationListsRequest.page_token to retrieve the next page
-   * of results.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * A list of locations (e.g. "us-west1") that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * The list of CertificateRevocationLists.
-   *
-   * @param CertificateRevocationList[] $certificateRevocationLists
+   * @param CertificateRevocationList[]
    */
   public function setCertificateRevocationLists($certificateRevocationLists)
   {
@@ -54,11 +46,7 @@ class ListCertificateRevocationListsResponse extends \Google\Collection
     return $this->certificateRevocationLists;
   }
   /**
-   * A token to retrieve next page of results. Pass this value in
-   * ListCertificateRevocationListsRequest.page_token to retrieve the next page
-   * of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -72,9 +60,7 @@ class ListCertificateRevocationListsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * A list of locations (e.g. "us-west1") that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

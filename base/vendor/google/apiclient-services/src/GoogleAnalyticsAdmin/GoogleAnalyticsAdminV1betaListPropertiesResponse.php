@@ -21,9 +21,6 @@ class GoogleAnalyticsAdminV1betaListPropertiesResponse extends \Google\Collectio
 {
   protected $collection_key = 'properties';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GoogleAnalyticsAdminV1betaListPropertiesResponse extends \Google\Collectio
   protected $propertiesDataType = 'array';
 
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class GoogleAnalyticsAdminV1betaListPropertiesResponse extends \Google\Collectio
     return $this->nextPageToken;
   }
   /**
-   * Results that matched the filter criteria and were accessible to the caller.
-   *
-   * @param GoogleAnalyticsAdminV1betaProperty[] $properties
+   * @param GoogleAnalyticsAdminV1betaProperty[]
    */
   public function setProperties($properties)
   {

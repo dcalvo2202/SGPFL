@@ -29,7 +29,7 @@ class GoogleCloudDialogflowCxV3SafetySettingsPhrase extends \Google\Model
   public $text;
 
   /**
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {
@@ -43,7 +43,7 @@ class GoogleCloudDialogflowCxV3SafetySettingsPhrase extends \Google\Model
     return $this->languageCode;
   }
   /**
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {

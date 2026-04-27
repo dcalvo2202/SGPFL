@@ -21,27 +21,16 @@ class GoogleCloudDataplexV1DataAttributeBindingPath extends \Google\Collection
 {
   protected $collection_key = 'attributes';
   /**
-   * Optional. List of attributes to be associated with the path of the
-   * resource, provided in the form: projects/{project}/locations/{location}/dat
-   * aTaxonomies/{dataTaxonomy}/attributes/{data_attribute_id}
-   *
    * @var string[]
    */
   public $attributes;
   /**
-   * Required. The name identifier of the path. Nested columns should be of the
-   * form: 'address.city'.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Optional. List of attributes to be associated with the path of the
-   * resource, provided in the form: projects/{project}/locations/{location}/dat
-   * aTaxonomies/{dataTaxonomy}/attributes/{data_attribute_id}
-   *
-   * @param string[] $attributes
+   * @param string[]
    */
   public function setAttributes($attributes)
   {
@@ -55,10 +44,7 @@ class GoogleCloudDataplexV1DataAttributeBindingPath extends \Google\Collection
     return $this->attributes;
   }
   /**
-   * Required. The name identifier of the path. Nested columns should be of the
-   * form: 'address.city'.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

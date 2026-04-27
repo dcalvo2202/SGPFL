@@ -19,117 +19,32 @@ namespace Google\Service\Networkconnectivity;
 
 class Spoke extends \Google\Collection
 {
-  /**
-   * Unspecified spoke type.
-   */
-  public const SPOKE_TYPE_SPOKE_TYPE_UNSPECIFIED = 'SPOKE_TYPE_UNSPECIFIED';
-  /**
-   * Spokes associated with VPN tunnels.
-   */
-  public const SPOKE_TYPE_VPN_TUNNEL = 'VPN_TUNNEL';
-  /**
-   * Spokes associated with VLAN attachments.
-   */
-  public const SPOKE_TYPE_INTERCONNECT_ATTACHMENT = 'INTERCONNECT_ATTACHMENT';
-  /**
-   * Spokes associated with router appliance instances.
-   */
-  public const SPOKE_TYPE_ROUTER_APPLIANCE = 'ROUTER_APPLIANCE';
-  /**
-   * Spokes associated with VPC networks.
-   */
-  public const SPOKE_TYPE_VPC_NETWORK = 'VPC_NETWORK';
-  /**
-   * Spokes that are backed by a producer VPC network.
-   */
-  public const SPOKE_TYPE_PRODUCER_VPC_NETWORK = 'PRODUCER_VPC_NETWORK';
-  /**
-   * No state information available
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The resource's create operation is in progress.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * The resource is active
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * The resource's delete operation is in progress.
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * The resource's accept operation is in progress.
-   */
-  public const STATE_ACCEPTING = 'ACCEPTING';
-  /**
-   * The resource's reject operation is in progress.
-   */
-  public const STATE_REJECTING = 'REJECTING';
-  /**
-   * The resource's update operation is in progress.
-   */
-  public const STATE_UPDATING = 'UPDATING';
-  /**
-   * The resource is inactive.
-   */
-  public const STATE_INACTIVE = 'INACTIVE';
-  /**
-   * The hub associated with this spoke resource has been deleted. This state
-   * applies to spoke resources only.
-   */
-  public const STATE_OBSOLETE = 'OBSOLETE';
-  /**
-   * The resource is in an undefined state due to resource creation or deletion
-   * failure. You can try to delete the resource later or contact support for
-   * help.
-   */
-  public const STATE_FAILED = 'FAILED';
   protected $collection_key = 'reasons';
   /**
-   * Output only. The time the spoke was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. An optional description of the spoke.
-   *
    * @var string
    */
   public $description;
   /**
-   * Optional. This checksum is computed by the server based on the value of
-   * other fields, and may be sent on update and delete requests to ensure the
-   * client has an up-to-date value before proceeding.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Optional. The list of fields waiting for hub administrator's approval.
-   *
    * @var string[]
    */
   public $fieldPathsPendingUpdate;
   /**
-   * Optional. The name of the group that this spoke is associated with.
-   *
    * @var string
    */
   public $group;
   /**
-   * Immutable. The name of the hub that this spoke is attached to.
-   *
    * @var string
    */
   public $hub;
   /**
-   * Optional labels in key-value pair format. For more information about
-   * labels, see [Requirements for labels](https://cloud.google.com/resource-
-   * manager/docs/creating-managing-labels#requirements).
-   *
    * @var string[]
    */
   public $labels;
@@ -144,46 +59,30 @@ class Spoke extends \Google\Collection
   protected $linkedVpnTunnelsType = LinkedVpnTunnels::class;
   protected $linkedVpnTunnelsDataType = '';
   /**
-   * Immutable. The name of the spoke. Spoke names must be unique. They use the
-   * following form:
-   * `projects/{project_number}/locations/{region}/spokes/{spoke_id}`
-   *
    * @var string
    */
   public $name;
   protected $reasonsType = StateReason::class;
   protected $reasonsDataType = 'array';
   /**
-   * Output only. The type of resource associated with the spoke.
-   *
    * @var string
    */
   public $spokeType;
   /**
-   * Output only. The current lifecycle state of this spoke.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. The Google-generated UUID for the spoke. This value is unique
-   * across all spoke resources. If a spoke is deleted and another with the same
-   * name is created, the new spoke is assigned a different `unique_id`.
-   *
    * @var string
    */
   public $uniqueId;
   /**
-   * Output only. The time the spoke was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. The time the spoke was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -197,9 +96,7 @@ class Spoke extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Optional. An optional description of the spoke.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -213,11 +110,7 @@ class Spoke extends \Google\Collection
     return $this->description;
   }
   /**
-   * Optional. This checksum is computed by the server based on the value of
-   * other fields, and may be sent on update and delete requests to ensure the
-   * client has an up-to-date value before proceeding.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -231,9 +124,7 @@ class Spoke extends \Google\Collection
     return $this->etag;
   }
   /**
-   * Optional. The list of fields waiting for hub administrator's approval.
-   *
-   * @param string[] $fieldPathsPendingUpdate
+   * @param string[]
    */
   public function setFieldPathsPendingUpdate($fieldPathsPendingUpdate)
   {
@@ -247,9 +138,7 @@ class Spoke extends \Google\Collection
     return $this->fieldPathsPendingUpdate;
   }
   /**
-   * Optional. The name of the group that this spoke is associated with.
-   *
-   * @param string $group
+   * @param string
    */
   public function setGroup($group)
   {
@@ -263,9 +152,7 @@ class Spoke extends \Google\Collection
     return $this->group;
   }
   /**
-   * Immutable. The name of the hub that this spoke is attached to.
-   *
-   * @param string $hub
+   * @param string
    */
   public function setHub($hub)
   {
@@ -279,11 +166,7 @@ class Spoke extends \Google\Collection
     return $this->hub;
   }
   /**
-   * Optional labels in key-value pair format. For more information about
-   * labels, see [Requirements for labels](https://cloud.google.com/resource-
-   * manager/docs/creating-managing-labels#requirements).
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -297,9 +180,7 @@ class Spoke extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Optional. VLAN attachments that are associated with the spoke.
-   *
-   * @param LinkedInterconnectAttachments $linkedInterconnectAttachments
+   * @param LinkedInterconnectAttachments
    */
   public function setLinkedInterconnectAttachments(LinkedInterconnectAttachments $linkedInterconnectAttachments)
   {
@@ -313,9 +194,7 @@ class Spoke extends \Google\Collection
     return $this->linkedInterconnectAttachments;
   }
   /**
-   * Optional. The linked producer VPC that is associated with the spoke.
-   *
-   * @param LinkedProducerVpcNetwork $linkedProducerVpcNetwork
+   * @param LinkedProducerVpcNetwork
    */
   public function setLinkedProducerVpcNetwork(LinkedProducerVpcNetwork $linkedProducerVpcNetwork)
   {
@@ -329,9 +208,7 @@ class Spoke extends \Google\Collection
     return $this->linkedProducerVpcNetwork;
   }
   /**
-   * Optional. Router appliance instances that are associated with the spoke.
-   *
-   * @param LinkedRouterApplianceInstances $linkedRouterApplianceInstances
+   * @param LinkedRouterApplianceInstances
    */
   public function setLinkedRouterApplianceInstances(LinkedRouterApplianceInstances $linkedRouterApplianceInstances)
   {
@@ -345,9 +222,7 @@ class Spoke extends \Google\Collection
     return $this->linkedRouterApplianceInstances;
   }
   /**
-   * Optional. VPC network that is associated with the spoke.
-   *
-   * @param LinkedVpcNetwork $linkedVpcNetwork
+   * @param LinkedVpcNetwork
    */
   public function setLinkedVpcNetwork(LinkedVpcNetwork $linkedVpcNetwork)
   {
@@ -361,9 +236,7 @@ class Spoke extends \Google\Collection
     return $this->linkedVpcNetwork;
   }
   /**
-   * Optional. VPN tunnels that are associated with the spoke.
-   *
-   * @param LinkedVpnTunnels $linkedVpnTunnels
+   * @param LinkedVpnTunnels
    */
   public function setLinkedVpnTunnels(LinkedVpnTunnels $linkedVpnTunnels)
   {
@@ -377,11 +250,7 @@ class Spoke extends \Google\Collection
     return $this->linkedVpnTunnels;
   }
   /**
-   * Immutable. The name of the spoke. Spoke names must be unique. They use the
-   * following form:
-   * `projects/{project_number}/locations/{region}/spokes/{spoke_id}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -395,9 +264,7 @@ class Spoke extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. The reasons for current state of the spoke.
-   *
-   * @param StateReason[] $reasons
+   * @param StateReason[]
    */
   public function setReasons($reasons)
   {
@@ -411,50 +278,35 @@ class Spoke extends \Google\Collection
     return $this->reasons;
   }
   /**
-   * Output only. The type of resource associated with the spoke.
-   *
-   * Accepted values: SPOKE_TYPE_UNSPECIFIED, VPN_TUNNEL,
-   * INTERCONNECT_ATTACHMENT, ROUTER_APPLIANCE, VPC_NETWORK,
-   * PRODUCER_VPC_NETWORK
-   *
-   * @param self::SPOKE_TYPE_* $spokeType
+   * @param string
    */
   public function setSpokeType($spokeType)
   {
     $this->spokeType = $spokeType;
   }
   /**
-   * @return self::SPOKE_TYPE_*
+   * @return string
    */
   public function getSpokeType()
   {
     return $this->spokeType;
   }
   /**
-   * Output only. The current lifecycle state of this spoke.
-   *
-   * Accepted values: STATE_UNSPECIFIED, CREATING, ACTIVE, DELETING, ACCEPTING,
-   * REJECTING, UPDATING, INACTIVE, OBSOLETE, FAILED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. The Google-generated UUID for the spoke. This value is unique
-   * across all spoke resources. If a spoke is deleted and another with the same
-   * name is created, the new spoke is assigned a different `unique_id`.
-   *
-   * @param string $uniqueId
+   * @param string
    */
   public function setUniqueId($uniqueId)
   {
@@ -468,9 +320,7 @@ class Spoke extends \Google\Collection
     return $this->uniqueId;
   }
   /**
-   * Output only. The time the spoke was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

@@ -20,27 +20,16 @@ namespace Google\Service\CloudScheduler;
 class OidcToken extends \Google\Model
 {
   /**
-   * Audience to be used when generating OIDC token. If not specified, the URI
-   * specified in target will be used.
-   *
    * @var string
    */
   public $audience;
   /**
-   * [Service account email](https://cloud.google.com/iam/docs/service-accounts)
-   * to be used for generating OIDC token. The service account must be within
-   * the same project as the job. The caller must have iam.serviceAccounts.actAs
-   * permission for the service account.
-   *
    * @var string
    */
   public $serviceAccountEmail;
 
   /**
-   * Audience to be used when generating OIDC token. If not specified, the URI
-   * specified in target will be used.
-   *
-   * @param string $audience
+   * @param string
    */
   public function setAudience($audience)
   {
@@ -54,12 +43,7 @@ class OidcToken extends \Google\Model
     return $this->audience;
   }
   /**
-   * [Service account email](https://cloud.google.com/iam/docs/service-accounts)
-   * to be used for generating OIDC token. The service account must be within
-   * the same project as the job. The caller must have iam.serviceAccounts.actAs
-   * permission for the service account.
-   *
-   * @param string $serviceAccountEmail
+   * @param string
    */
   public function setServiceAccountEmail($serviceAccountEmail)
   {

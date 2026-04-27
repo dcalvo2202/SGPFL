@@ -20,36 +20,24 @@ namespace Google\Service\TrafficDirectorService;
 class UpdateFailureState extends \Google\Model
 {
   /**
-   * Details about the last failed update attempt.
-   *
    * @var string
    */
   public $details;
   /**
-   * What the component configuration would have been if the update had
-   * succeeded. This field may not be populated by xDS clients due to storage
-   * overhead.
-   *
    * @var array[]
    */
   public $failedConfiguration;
   /**
-   * Time of the latest failed update attempt.
-   *
    * @var string
    */
   public $lastUpdateAttempt;
   /**
-   * This is the version of the rejected resource. [#not-implemented-hide:]
-   *
    * @var string
    */
   public $versionInfo;
 
   /**
-   * Details about the last failed update attempt.
-   *
-   * @param string $details
+   * @param string
    */
   public function setDetails($details)
   {
@@ -63,11 +51,7 @@ class UpdateFailureState extends \Google\Model
     return $this->details;
   }
   /**
-   * What the component configuration would have been if the update had
-   * succeeded. This field may not be populated by xDS clients due to storage
-   * overhead.
-   *
-   * @param array[] $failedConfiguration
+   * @param array[]
    */
   public function setFailedConfiguration($failedConfiguration)
   {
@@ -81,9 +65,7 @@ class UpdateFailureState extends \Google\Model
     return $this->failedConfiguration;
   }
   /**
-   * Time of the latest failed update attempt.
-   *
-   * @param string $lastUpdateAttempt
+   * @param string
    */
   public function setLastUpdateAttempt($lastUpdateAttempt)
   {
@@ -97,9 +79,7 @@ class UpdateFailureState extends \Google\Model
     return $this->lastUpdateAttempt;
   }
   /**
-   * This is the version of the rejected resource. [#not-implemented-hide:]
-   *
-   * @param string $versionInfo
+   * @param string
    */
   public function setVersionInfo($versionInfo)
   {

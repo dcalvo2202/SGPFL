@@ -19,71 +19,8 @@ namespace Google\Service\AndroidManagement;
 
 class Application extends \Google\Collection
 {
-  /**
-   * Unknown pricing, used to denote an approved app that is not generally
-   * available.
-   */
-  public const APP_PRICING_APP_PRICING_UNSPECIFIED = 'APP_PRICING_UNSPECIFIED';
-  /**
-   * The app is free.
-   */
-  public const APP_PRICING_FREE = 'FREE';
-  /**
-   * The app is free, but offers in-app purchases.
-   */
-  public const APP_PRICING_FREE_WITH_IN_APP_PURCHASE = 'FREE_WITH_IN_APP_PURCHASE';
-  /**
-   * The app is paid.
-   */
-  public const APP_PRICING_PAID = 'PAID';
-  /**
-   * Unspecified.
-   */
-  public const CONTENT_RATING_CONTENT_RATING_UNSPECIFIED = 'CONTENT_RATING_UNSPECIFIED';
-  /**
-   * Content suitable for ages 3 and above only.
-   */
-  public const CONTENT_RATING_THREE_YEARS = 'THREE_YEARS';
-  /**
-   * Content suitable for ages 7 and above only.
-   */
-  public const CONTENT_RATING_SEVEN_YEARS = 'SEVEN_YEARS';
-  /**
-   * Content suitable for ages 12 and above only.
-   */
-  public const CONTENT_RATING_TWELVE_YEARS = 'TWELVE_YEARS';
-  /**
-   * Content suitable for ages 16 and above only.
-   */
-  public const CONTENT_RATING_SIXTEEN_YEARS = 'SIXTEEN_YEARS';
-  /**
-   * Content suitable for ages 18 and above only.
-   */
-  public const CONTENT_RATING_EIGHTEEN_YEARS = 'EIGHTEEN_YEARS';
-  /**
-   * Unspecified.
-   */
-  public const DISTRIBUTION_CHANNEL_DISTRIBUTION_CHANNEL_UNSPECIFIED = 'DISTRIBUTION_CHANNEL_UNSPECIFIED';
-  /**
-   * Package is available through the Play store and not restricted to a
-   * specific enterprise.
-   */
-  public const DISTRIBUTION_CHANNEL_PUBLIC_GOOGLE_HOSTED = 'PUBLIC_GOOGLE_HOSTED';
-  /**
-   * Package is a private app (restricted to an enterprise) but hosted by
-   * Google.
-   */
-  public const DISTRIBUTION_CHANNEL_PRIVATE_GOOGLE_HOSTED = 'PRIVATE_GOOGLE_HOSTED';
-  /**
-   * Private app (restricted to an enterprise) and is privately hosted.
-   */
-  public const DISTRIBUTION_CHANNEL_PRIVATE_SELF_HOSTED = 'PRIVATE_SELF_HOSTED';
   protected $collection_key = 'screenshotUrls';
   /**
-   * Whether this app is free, free with in-app purchases, or paid. If the
-   * pricing is unspecified, this means the app is not generally available
-   * anymore (even though it might still be available to people who own it).
-   *
    * @var string
    */
   public $appPricing;
@@ -92,141 +29,94 @@ class Application extends \Google\Collection
   protected $appVersionsType = AppVersion::class;
   protected $appVersionsDataType = 'array';
   /**
-   * The name of the author of the apps (for example, the app developer).
-   *
    * @var string
    */
   public $author;
   /**
-   * The countries which this app is available in as per ISO 3166-1 alpha-2.
-   *
    * @var string[]
    */
   public $availableCountries;
   /**
-   * The app category (e.g. RACING, SOCIAL, etc.)
-   *
    * @var string
    */
   public $category;
   /**
-   * The content rating for this app.
-   *
    * @var string
    */
   public $contentRating;
   /**
-   * The localized promotional description, if available.
-   *
    * @var string
    */
   public $description;
   /**
-   * How and to whom the package is made available.
-   *
    * @var string
    */
   public $distributionChannel;
   /**
-   * Noteworthy features (if any) of this app.
-   *
    * @var string[]
    */
   public $features;
   /**
-   * Full app description, if available.
-   *
    * @var string
    */
   public $fullDescription;
   /**
-   * A link to an image that can be used as an icon for the app. This image is
-   * suitable for use up to a pixel size of 512 x 512.
-   *
    * @var string
    */
   public $iconUrl;
   protected $managedPropertiesType = ManagedProperty::class;
   protected $managedPropertiesDataType = 'array';
   /**
-   * The minimum Android SDK necessary to run the app.
-   *
    * @var int
    */
   public $minAndroidSdkVersion;
   /**
-   * The name of the app in the form
-   * enterprises/{enterprise}/applications/{package_name}.
-   *
    * @var string
    */
   public $name;
   protected $permissionsType = ApplicationPermission::class;
   protected $permissionsDataType = 'array';
   /**
-   * A link to the (consumer) Google Play details page for the app.
-   *
    * @var string
    */
   public $playStoreUrl;
   /**
-   * A localised description of the recent changes made to the app.
-   *
    * @var string
    */
   public $recentChanges;
   /**
-   * A list of screenshot links representing the app.
-   *
    * @var string[]
    */
   public $screenshotUrls;
   /**
-   * A link to a smaller image that can be used as an icon for the app. This
-   * image is suitable for use up to a pixel size of 128 x 128.
-   *
    * @var string
    */
   public $smallIconUrl;
   /**
-   * The title of the app. Localized.
-   *
    * @var string
    */
   public $title;
   /**
-   * Output only. The approximate time (within 7 days) the app was last
-   * published.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Whether this app is free, free with in-app purchases, or paid. If the
-   * pricing is unspecified, this means the app is not generally available
-   * anymore (even though it might still be available to people who own it).
-   *
-   * Accepted values: APP_PRICING_UNSPECIFIED, FREE, FREE_WITH_IN_APP_PURCHASE,
-   * PAID
-   *
-   * @param self::APP_PRICING_* $appPricing
+   * @param string
    */
   public function setAppPricing($appPricing)
   {
     $this->appPricing = $appPricing;
   }
   /**
-   * @return self::APP_PRICING_*
+   * @return string
    */
   public function getAppPricing()
   {
     return $this->appPricing;
   }
   /**
-   * Application tracks visible to the enterprise.
-   *
-   * @param AppTrackInfo[] $appTracks
+   * @param AppTrackInfo[]
    */
   public function setAppTracks($appTracks)
   {
@@ -240,9 +130,7 @@ class Application extends \Google\Collection
     return $this->appTracks;
   }
   /**
-   * Versions currently available for this app.
-   *
-   * @param AppVersion[] $appVersions
+   * @param AppVersion[]
    */
   public function setAppVersions($appVersions)
   {
@@ -256,9 +144,7 @@ class Application extends \Google\Collection
     return $this->appVersions;
   }
   /**
-   * The name of the author of the apps (for example, the app developer).
-   *
-   * @param string $author
+   * @param string
    */
   public function setAuthor($author)
   {
@@ -272,9 +158,7 @@ class Application extends \Google\Collection
     return $this->author;
   }
   /**
-   * The countries which this app is available in as per ISO 3166-1 alpha-2.
-   *
-   * @param string[] $availableCountries
+   * @param string[]
    */
   public function setAvailableCountries($availableCountries)
   {
@@ -288,9 +172,7 @@ class Application extends \Google\Collection
     return $this->availableCountries;
   }
   /**
-   * The app category (e.g. RACING, SOCIAL, etc.)
-   *
-   * @param string $category
+   * @param string
    */
   public function setCategory($category)
   {
@@ -304,28 +186,21 @@ class Application extends \Google\Collection
     return $this->category;
   }
   /**
-   * The content rating for this app.
-   *
-   * Accepted values: CONTENT_RATING_UNSPECIFIED, THREE_YEARS, SEVEN_YEARS,
-   * TWELVE_YEARS, SIXTEEN_YEARS, EIGHTEEN_YEARS
-   *
-   * @param self::CONTENT_RATING_* $contentRating
+   * @param string
    */
   public function setContentRating($contentRating)
   {
     $this->contentRating = $contentRating;
   }
   /**
-   * @return self::CONTENT_RATING_*
+   * @return string
    */
   public function getContentRating()
   {
     return $this->contentRating;
   }
   /**
-   * The localized promotional description, if available.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -339,28 +214,21 @@ class Application extends \Google\Collection
     return $this->description;
   }
   /**
-   * How and to whom the package is made available.
-   *
-   * Accepted values: DISTRIBUTION_CHANNEL_UNSPECIFIED, PUBLIC_GOOGLE_HOSTED,
-   * PRIVATE_GOOGLE_HOSTED, PRIVATE_SELF_HOSTED
-   *
-   * @param self::DISTRIBUTION_CHANNEL_* $distributionChannel
+   * @param string
    */
   public function setDistributionChannel($distributionChannel)
   {
     $this->distributionChannel = $distributionChannel;
   }
   /**
-   * @return self::DISTRIBUTION_CHANNEL_*
+   * @return string
    */
   public function getDistributionChannel()
   {
     return $this->distributionChannel;
   }
   /**
-   * Noteworthy features (if any) of this app.
-   *
-   * @param string[] $features
+   * @param string[]
    */
   public function setFeatures($features)
   {
@@ -374,9 +242,7 @@ class Application extends \Google\Collection
     return $this->features;
   }
   /**
-   * Full app description, if available.
-   *
-   * @param string $fullDescription
+   * @param string
    */
   public function setFullDescription($fullDescription)
   {
@@ -390,10 +256,7 @@ class Application extends \Google\Collection
     return $this->fullDescription;
   }
   /**
-   * A link to an image that can be used as an icon for the app. This image is
-   * suitable for use up to a pixel size of 512 x 512.
-   *
-   * @param string $iconUrl
+   * @param string
    */
   public function setIconUrl($iconUrl)
   {
@@ -407,9 +270,7 @@ class Application extends \Google\Collection
     return $this->iconUrl;
   }
   /**
-   * The set of managed properties available to be pre-configured for the app.
-   *
-   * @param ManagedProperty[] $managedProperties
+   * @param ManagedProperty[]
    */
   public function setManagedProperties($managedProperties)
   {
@@ -423,9 +284,7 @@ class Application extends \Google\Collection
     return $this->managedProperties;
   }
   /**
-   * The minimum Android SDK necessary to run the app.
-   *
-   * @param int $minAndroidSdkVersion
+   * @param int
    */
   public function setMinAndroidSdkVersion($minAndroidSdkVersion)
   {
@@ -439,10 +298,7 @@ class Application extends \Google\Collection
     return $this->minAndroidSdkVersion;
   }
   /**
-   * The name of the app in the form
-   * enterprises/{enterprise}/applications/{package_name}.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -456,9 +312,7 @@ class Application extends \Google\Collection
     return $this->name;
   }
   /**
-   * The permissions required by the app.
-   *
-   * @param ApplicationPermission[] $permissions
+   * @param ApplicationPermission[]
    */
   public function setPermissions($permissions)
   {
@@ -472,9 +326,7 @@ class Application extends \Google\Collection
     return $this->permissions;
   }
   /**
-   * A link to the (consumer) Google Play details page for the app.
-   *
-   * @param string $playStoreUrl
+   * @param string
    */
   public function setPlayStoreUrl($playStoreUrl)
   {
@@ -488,9 +340,7 @@ class Application extends \Google\Collection
     return $this->playStoreUrl;
   }
   /**
-   * A localised description of the recent changes made to the app.
-   *
-   * @param string $recentChanges
+   * @param string
    */
   public function setRecentChanges($recentChanges)
   {
@@ -504,9 +354,7 @@ class Application extends \Google\Collection
     return $this->recentChanges;
   }
   /**
-   * A list of screenshot links representing the app.
-   *
-   * @param string[] $screenshotUrls
+   * @param string[]
    */
   public function setScreenshotUrls($screenshotUrls)
   {
@@ -520,10 +368,7 @@ class Application extends \Google\Collection
     return $this->screenshotUrls;
   }
   /**
-   * A link to a smaller image that can be used as an icon for the app. This
-   * image is suitable for use up to a pixel size of 128 x 128.
-   *
-   * @param string $smallIconUrl
+   * @param string
    */
   public function setSmallIconUrl($smallIconUrl)
   {
@@ -537,9 +382,7 @@ class Application extends \Google\Collection
     return $this->smallIconUrl;
   }
   /**
-   * The title of the app. Localized.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -553,10 +396,7 @@ class Application extends \Google\Collection
     return $this->title;
   }
   /**
-   * Output only. The approximate time (within 7 days) the app was last
-   * published.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

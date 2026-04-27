@@ -19,51 +19,11 @@ namespace Google\Service\Classroom;
 
 class AddOnAttachmentStudentSubmission extends \Google\Model
 {
-  /**
-   * No state specified. This should never be returned.
-   */
-  public const POST_SUBMISSION_STATE_SUBMISSION_STATE_UNSPECIFIED = 'SUBMISSION_STATE_UNSPECIFIED';
-  /**
-   * The student has never accessed this submission. Attachments are not
-   * returned and timestamps is not set.
-   */
-  public const POST_SUBMISSION_STATE_NEW = 'NEW';
-  /**
-   * Has been created.
-   */
-  public const POST_SUBMISSION_STATE_CREATED = 'CREATED';
-  /**
-   * Has been turned in to the teacher.
-   */
-  public const POST_SUBMISSION_STATE_TURNED_IN = 'TURNED_IN';
-  /**
-   * Has been returned to the student.
-   */
-  public const POST_SUBMISSION_STATE_RETURNED = 'RETURNED';
-  /**
-   * Student chose to "unsubmit" the assignment.
-   */
-  public const POST_SUBMISSION_STATE_RECLAIMED_BY_STUDENT = 'RECLAIMED_BY_STUDENT';
-  /**
-   * Student grade on this attachment. If unset, no grade was set.
-   *
-   * @var 
-   */
   public $pointsEarned;
   /**
-   * Submission state of add-on attachment's parent post (i.e. assignment).
-   *
    * @var string
    */
   public $postSubmissionState;
-  /**
-   * Identifier for the student that owns this submission. Requires the user to
-   * be a teacher in the course and have permission to read student submissions.
-   * Read-only.
-   *
-   * @var string
-   */
-  public $userId;
 
   public function setPointsEarned($pointsEarned)
   {
@@ -74,41 +34,18 @@ class AddOnAttachmentStudentSubmission extends \Google\Model
     return $this->pointsEarned;
   }
   /**
-   * Submission state of add-on attachment's parent post (i.e. assignment).
-   *
-   * Accepted values: SUBMISSION_STATE_UNSPECIFIED, NEW, CREATED, TURNED_IN,
-   * RETURNED, RECLAIMED_BY_STUDENT
-   *
-   * @param self::POST_SUBMISSION_STATE_* $postSubmissionState
+   * @param string
    */
   public function setPostSubmissionState($postSubmissionState)
   {
     $this->postSubmissionState = $postSubmissionState;
   }
   /**
-   * @return self::POST_SUBMISSION_STATE_*
+   * @return string
    */
   public function getPostSubmissionState()
   {
     return $this->postSubmissionState;
-  }
-  /**
-   * Identifier for the student that owns this submission. Requires the user to
-   * be a teacher in the course and have permission to read student submissions.
-   * Read-only.
-   *
-   * @param string $userId
-   */
-  public function setUserId($userId)
-  {
-    $this->userId = $userId;
-  }
-  /**
-   * @return string
-   */
-  public function getUserId()
-  {
-    return $this->userId;
   }
 }
 

@@ -676,10 +676,6 @@ class Dns extends \Google\Service
                   'type' => 'string',
                   'required' => true,
                 ],
-                'filter' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
                 'maxResults' => [
                   'location' => 'query',
                   'type' => 'integer',

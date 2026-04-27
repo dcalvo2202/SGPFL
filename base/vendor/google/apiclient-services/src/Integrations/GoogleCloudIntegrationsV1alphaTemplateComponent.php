@@ -20,38 +20,16 @@ namespace Google\Service\Integrations;
 class GoogleCloudIntegrationsV1alphaTemplateComponent extends \Google\Model
 {
   /**
-   * Component type is unspecified
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * Trigger component
-   */
-  public const TYPE_TRIGGER = 'TRIGGER';
-  /**
-   * Task component
-   */
-  public const TYPE_TASK = 'TASK';
-  /**
-   * Connector component
-   */
-  public const TYPE_CONNECTOR = 'CONNECTOR';
-  /**
-   * Optional. Name of the component.
-   *
    * @var string
    */
   public $name;
   /**
-   * Optional. Type of the component.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Optional. Name of the component.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -65,18 +43,14 @@ class GoogleCloudIntegrationsV1alphaTemplateComponent extends \Google\Model
     return $this->name;
   }
   /**
-   * Optional. Type of the component.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, TRIGGER, TASK, CONNECTOR
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

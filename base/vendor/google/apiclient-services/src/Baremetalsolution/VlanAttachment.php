@@ -20,50 +20,34 @@ namespace Google\Service\Baremetalsolution;
 class VlanAttachment extends \Google\Model
 {
   /**
-   * Immutable. The identifier of the attachment within vrf.
-   *
    * @var string
    */
   public $id;
   /**
-   * Optional. The name of the vlan attachment within vrf. This is of the form p
-   * rojects/{project_number}/regions/{region}/interconnectAttachments/{intercon
-   * nect_attachment}
-   *
    * @var string
    */
   public $interconnectAttachment;
   /**
-   * Input only. Pairing key.
-   *
    * @var string
    */
   public $pairingKey;
   /**
-   * The peer IP of the attachment.
-   *
    * @var string
    */
   public $peerIp;
   /**
-   * The peer vlan ID of the attachment.
-   *
    * @var string
    */
   public $peerVlanId;
   protected $qosPolicyType = QosPolicy::class;
   protected $qosPolicyDataType = '';
   /**
-   * The router IP of the attachment.
-   *
    * @var string
    */
   public $routerIp;
 
   /**
-   * Immutable. The identifier of the attachment within vrf.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -77,11 +61,7 @@ class VlanAttachment extends \Google\Model
     return $this->id;
   }
   /**
-   * Optional. The name of the vlan attachment within vrf. This is of the form p
-   * rojects/{project_number}/regions/{region}/interconnectAttachments/{intercon
-   * nect_attachment}
-   *
-   * @param string $interconnectAttachment
+   * @param string
    */
   public function setInterconnectAttachment($interconnectAttachment)
   {
@@ -95,9 +75,7 @@ class VlanAttachment extends \Google\Model
     return $this->interconnectAttachment;
   }
   /**
-   * Input only. Pairing key.
-   *
-   * @param string $pairingKey
+   * @param string
    */
   public function setPairingKey($pairingKey)
   {
@@ -111,9 +89,7 @@ class VlanAttachment extends \Google\Model
     return $this->pairingKey;
   }
   /**
-   * The peer IP of the attachment.
-   *
-   * @param string $peerIp
+   * @param string
    */
   public function setPeerIp($peerIp)
   {
@@ -127,9 +103,7 @@ class VlanAttachment extends \Google\Model
     return $this->peerIp;
   }
   /**
-   * The peer vlan ID of the attachment.
-   *
-   * @param string $peerVlanId
+   * @param string
    */
   public function setPeerVlanId($peerVlanId)
   {
@@ -143,10 +117,7 @@ class VlanAttachment extends \Google\Model
     return $this->peerVlanId;
   }
   /**
-   * The QOS policy applied to this VLAN attachment. This value should be
-   * preferred to using qos at vrf level.
-   *
-   * @param QosPolicy $qosPolicy
+   * @param QosPolicy
    */
   public function setQosPolicy(QosPolicy $qosPolicy)
   {
@@ -160,9 +131,7 @@ class VlanAttachment extends \Google\Model
     return $this->qosPolicy;
   }
   /**
-   * The router IP of the attachment.
-   *
-   * @param string $routerIp
+   * @param string
    */
   public function setRouterIp($routerIp)
   {

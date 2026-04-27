@@ -19,10 +19,6 @@ namespace Google\Service\Compute;
 
 class InterconnectAttachmentGroupConfiguredAvailabilitySLA extends \Google\Collection
 {
-  public const EFFECTIVE_SLA_EFFECTIVE_SLA_UNSPECIFIED = 'EFFECTIVE_SLA_UNSPECIFIED';
-  public const EFFECTIVE_SLA_NO_SLA = 'NO_SLA';
-  public const EFFECTIVE_SLA_PRODUCTION_CRITICAL = 'PRODUCTION_CRITICAL';
-  public const EFFECTIVE_SLA_PRODUCTION_NON_CRITICAL = 'PRODUCTION_NON_CRITICAL';
   protected $collection_key = 'intendedSlaBlockers';
   /**
    * @var string
@@ -32,21 +28,21 @@ class InterconnectAttachmentGroupConfiguredAvailabilitySLA extends \Google\Colle
   protected $intendedSlaBlockersDataType = 'array';
 
   /**
-   * @param self::EFFECTIVE_SLA_* $effectiveSla
+   * @param string
    */
   public function setEffectiveSla($effectiveSla)
   {
     $this->effectiveSla = $effectiveSla;
   }
   /**
-   * @return self::EFFECTIVE_SLA_*
+   * @return string
    */
   public function getEffectiveSla()
   {
     return $this->effectiveSla;
   }
   /**
-   * @param InterconnectAttachmentGroupConfiguredAvailabilitySLAIntendedSlaBlockers[] $intendedSlaBlockers
+   * @param InterconnectAttachmentGroupConfiguredAvailabilitySLAIntendedSlaBlockers[]
    */
   public function setIntendedSlaBlockers($intendedSlaBlockers)
   {

@@ -19,15 +19,8 @@ namespace Google\Service\ManufacturerCenter;
 
 class VoluntaryNutritionFact extends \Google\Model
 {
-  /**
-   * Daily percentage.
-   *
-   * @var 
-   */
   public $dailyPercentage;
   /**
-   * Name.
-   *
    * @var string
    */
   public $name;
@@ -43,9 +36,7 @@ class VoluntaryNutritionFact extends \Google\Model
     return $this->dailyPercentage;
   }
   /**
-   * Name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -59,9 +50,7 @@ class VoluntaryNutritionFact extends \Google\Model
     return $this->name;
   }
   /**
-   * Value.
-   *
-   * @param FloatUnit $value
+   * @param FloatUnit
    */
   public function setValue(FloatUnit $value)
   {

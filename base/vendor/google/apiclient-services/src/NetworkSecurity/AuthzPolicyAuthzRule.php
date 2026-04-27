@@ -24,18 +24,12 @@ class AuthzPolicyAuthzRule extends \Google\Model
   protected $toType = AuthzPolicyAuthzRuleTo::class;
   protected $toDataType = '';
   /**
-   * Optional. CEL expression that describes the conditions to be satisfied for
-   * the action. The result of the CEL expression is ANDed with the from and to.
-   * Refer to the CEL language reference for a list of available attributes.
-   *
    * @var string
    */
   public $when;
 
   /**
-   * Optional. Describes properties of a source of a request.
-   *
-   * @param AuthzPolicyAuthzRuleFrom $from
+   * @param AuthzPolicyAuthzRuleFrom
    */
   public function setFrom(AuthzPolicyAuthzRuleFrom $from)
   {
@@ -49,9 +43,7 @@ class AuthzPolicyAuthzRule extends \Google\Model
     return $this->from;
   }
   /**
-   * Optional. Describes properties of a target of a request.
-   *
-   * @param AuthzPolicyAuthzRuleTo $to
+   * @param AuthzPolicyAuthzRuleTo
    */
   public function setTo(AuthzPolicyAuthzRuleTo $to)
   {
@@ -65,11 +57,7 @@ class AuthzPolicyAuthzRule extends \Google\Model
     return $this->to;
   }
   /**
-   * Optional. CEL expression that describes the conditions to be satisfied for
-   * the action. The result of the CEL expression is ANDed with the from and to.
-   * Refer to the CEL language reference for a list of available attributes.
-   *
-   * @param string $when
+   * @param string
    */
   public function setWhen($when)
   {

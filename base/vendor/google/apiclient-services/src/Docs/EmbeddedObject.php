@@ -20,9 +20,6 @@ namespace Google\Service\Docs;
 class EmbeddedObject extends \Google\Model
 {
   /**
-   * The description of the embedded object. The `title` and `description` are
-   * both combined to display alt text.
-   *
    * @var string
    */
   public $description;
@@ -45,18 +42,12 @@ class EmbeddedObject extends \Google\Model
   protected $sizeType = Size::class;
   protected $sizeDataType = '';
   /**
-   * The title of the embedded object. The `title` and `description` are both
-   * combined to display alt text.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * The description of the embedded object. The `title` and `description` are
-   * both combined to display alt text.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -70,9 +61,7 @@ class EmbeddedObject extends \Google\Model
     return $this->description;
   }
   /**
-   * The properties of an embedded drawing.
-   *
-   * @param EmbeddedDrawingProperties $embeddedDrawingProperties
+   * @param EmbeddedDrawingProperties
    */
   public function setEmbeddedDrawingProperties(EmbeddedDrawingProperties $embeddedDrawingProperties)
   {
@@ -86,9 +75,7 @@ class EmbeddedObject extends \Google\Model
     return $this->embeddedDrawingProperties;
   }
   /**
-   * The border of the embedded object.
-   *
-   * @param EmbeddedObjectBorder $embeddedObjectBorder
+   * @param EmbeddedObjectBorder
    */
   public function setEmbeddedObjectBorder(EmbeddedObjectBorder $embeddedObjectBorder)
   {
@@ -102,9 +89,7 @@ class EmbeddedObject extends \Google\Model
     return $this->embeddedObjectBorder;
   }
   /**
-   * The properties of an image.
-   *
-   * @param ImageProperties $imageProperties
+   * @param ImageProperties
    */
   public function setImageProperties(ImageProperties $imageProperties)
   {
@@ -118,11 +103,7 @@ class EmbeddedObject extends \Google\Model
     return $this->imageProperties;
   }
   /**
-   * A reference to the external linked source content. For example, it contains
-   * a reference to the source Google Sheets chart when the embedded object is a
-   * linked chart. If unset, then the embedded object is not linked.
-   *
-   * @param LinkedContentReference $linkedContentReference
+   * @param LinkedContentReference
    */
   public function setLinkedContentReference(LinkedContentReference $linkedContentReference)
   {
@@ -136,9 +117,7 @@ class EmbeddedObject extends \Google\Model
     return $this->linkedContentReference;
   }
   /**
-   * The bottom margin of the embedded object.
-   *
-   * @param Dimension $marginBottom
+   * @param Dimension
    */
   public function setMarginBottom(Dimension $marginBottom)
   {
@@ -152,9 +131,7 @@ class EmbeddedObject extends \Google\Model
     return $this->marginBottom;
   }
   /**
-   * The left margin of the embedded object.
-   *
-   * @param Dimension $marginLeft
+   * @param Dimension
    */
   public function setMarginLeft(Dimension $marginLeft)
   {
@@ -168,9 +145,7 @@ class EmbeddedObject extends \Google\Model
     return $this->marginLeft;
   }
   /**
-   * The right margin of the embedded object.
-   *
-   * @param Dimension $marginRight
+   * @param Dimension
    */
   public function setMarginRight(Dimension $marginRight)
   {
@@ -184,9 +159,7 @@ class EmbeddedObject extends \Google\Model
     return $this->marginRight;
   }
   /**
-   * The top margin of the embedded object.
-   *
-   * @param Dimension $marginTop
+   * @param Dimension
    */
   public function setMarginTop(Dimension $marginTop)
   {
@@ -200,9 +173,7 @@ class EmbeddedObject extends \Google\Model
     return $this->marginTop;
   }
   /**
-   * The visible size of the image after cropping.
-   *
-   * @param Size $size
+   * @param Size
    */
   public function setSize(Size $size)
   {
@@ -216,10 +187,7 @@ class EmbeddedObject extends \Google\Model
     return $this->size;
   }
   /**
-   * The title of the embedded object. The `title` and `description` are both
-   * combined to display alt text.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

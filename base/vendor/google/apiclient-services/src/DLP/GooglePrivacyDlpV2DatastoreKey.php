@@ -23,9 +23,7 @@ class GooglePrivacyDlpV2DatastoreKey extends \Google\Model
   protected $entityKeyDataType = '';
 
   /**
-   * Datastore entity key.
-   *
-   * @param GooglePrivacyDlpV2Key $entityKey
+   * @param GooglePrivacyDlpV2Key
    */
   public function setEntityKey(GooglePrivacyDlpV2Key $entityKey)
   {

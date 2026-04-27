@@ -20,8 +20,6 @@ namespace Google\Service\Contentwarehouse;
 class GoogleCloudContentwarehouseV1RunPipelineMetadataIndividualDocumentStatus extends \Google\Model
 {
   /**
-   * Document identifier of an existing document.
-   *
    * @var string
    */
   public $documentId;
@@ -29,9 +27,7 @@ class GoogleCloudContentwarehouseV1RunPipelineMetadataIndividualDocumentStatus e
   protected $statusDataType = '';
 
   /**
-   * Document identifier of an existing document.
-   *
-   * @param string $documentId
+   * @param string
    */
   public function setDocumentId($documentId)
   {
@@ -45,9 +41,7 @@ class GoogleCloudContentwarehouseV1RunPipelineMetadataIndividualDocumentStatus e
     return $this->documentId;
   }
   /**
-   * The status processing the document.
-   *
-   * @param GoogleRpcStatus $status
+   * @param GoogleRpcStatus
    */
   public function setStatus(GoogleRpcStatus $status)
   {

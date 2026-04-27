@@ -22,25 +22,16 @@ class EditInventorySourceReadWriteAccessorsRequest extends \Google\Model
   protected $advertisersUpdateType = EditInventorySourceReadWriteAccessorsRequestAdvertisersUpdate::class;
   protected $advertisersUpdateDataType = '';
   /**
-   * Set the partner context as read/write accessor of the inventory source.
-   * This will remove all other current read/write advertiser accessors.
-   *
    * @var bool
    */
   public $assignPartner;
   /**
-   * Required. The partner context by which the accessors change is being made.
-   *
    * @var string
    */
   public $partnerId;
 
   /**
-   * The advertisers to add or remove from the list of advertisers that have
-   * read/write access to the inventory source. This change will remove an
-   * existing partner read/write accessor.
-   *
-   * @param EditInventorySourceReadWriteAccessorsRequestAdvertisersUpdate $advertisersUpdate
+   * @param EditInventorySourceReadWriteAccessorsRequestAdvertisersUpdate
    */
   public function setAdvertisersUpdate(EditInventorySourceReadWriteAccessorsRequestAdvertisersUpdate $advertisersUpdate)
   {
@@ -54,10 +45,7 @@ class EditInventorySourceReadWriteAccessorsRequest extends \Google\Model
     return $this->advertisersUpdate;
   }
   /**
-   * Set the partner context as read/write accessor of the inventory source.
-   * This will remove all other current read/write advertiser accessors.
-   *
-   * @param bool $assignPartner
+   * @param bool
    */
   public function setAssignPartner($assignPartner)
   {
@@ -71,9 +59,7 @@ class EditInventorySourceReadWriteAccessorsRequest extends \Google\Model
     return $this->assignPartner;
   }
   /**
-   * Required. The partner context by which the accessors change is being made.
-   *
-   * @param string $partnerId
+   * @param string
    */
   public function setPartnerId($partnerId)
   {

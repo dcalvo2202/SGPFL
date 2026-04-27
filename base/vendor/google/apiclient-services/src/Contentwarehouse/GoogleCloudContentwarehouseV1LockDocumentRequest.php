@@ -20,8 +20,6 @@ namespace Google\Service\Contentwarehouse;
 class GoogleCloudContentwarehouseV1LockDocumentRequest extends \Google\Model
 {
   /**
-   * The collection the document connects to.
-   *
    * @var string
    */
   public $collectionId;
@@ -29,9 +27,7 @@ class GoogleCloudContentwarehouseV1LockDocumentRequest extends \Google\Model
   protected $lockingUserDataType = '';
 
   /**
-   * The collection the document connects to.
-   *
-   * @param string $collectionId
+   * @param string
    */
   public function setCollectionId($collectionId)
   {
@@ -45,9 +41,7 @@ class GoogleCloudContentwarehouseV1LockDocumentRequest extends \Google\Model
     return $this->collectionId;
   }
   /**
-   * The user information who locks the document.
-   *
-   * @param GoogleCloudContentwarehouseV1UserInfo $lockingUser
+   * @param GoogleCloudContentwarehouseV1UserInfo
    */
   public function setLockingUser(GoogleCloudContentwarehouseV1UserInfo $lockingUser)
   {

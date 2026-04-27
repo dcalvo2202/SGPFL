@@ -25,7 +25,7 @@ class GoogleCloudDialogflowCxV3AgentAnswerFeedbackSettings extends \Google\Model
   public $enableAnswerFeedback;
 
   /**
-   * @param bool $enableAnswerFeedback
+   * @param bool
    */
   public function setEnableAnswerFeedback($enableAnswerFeedback)
   {

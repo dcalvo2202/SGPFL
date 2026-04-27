@@ -21,115 +21,66 @@ class GoogleCloudAiplatformV1IndexEndpoint extends \Google\Collection
 {
   protected $collection_key = 'deployedIndexes';
   /**
-   * Output only. Timestamp when this IndexEndpoint was created.
-   *
    * @var string
    */
   public $createTime;
   protected $deployedIndexesType = GoogleCloudAiplatformV1DeployedIndex::class;
   protected $deployedIndexesDataType = 'array';
   /**
-   * The description of the IndexEndpoint.
-   *
    * @var string
    */
   public $description;
   /**
-   * Required. The display name of the IndexEndpoint. The name can be up to 128
-   * characters long and can consist of any UTF-8 characters.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Optional. Deprecated: If true, expose the IndexEndpoint via private service
-   * connect. Only one of the fields, network or enable_private_service_connect,
-   * can be set.
-   *
-   * @deprecated
    * @var bool
    */
   public $enablePrivateServiceConnect;
   protected $encryptionSpecType = GoogleCloudAiplatformV1EncryptionSpec::class;
   protected $encryptionSpecDataType = '';
   /**
-   * Used to perform consistent read-modify-write updates. If not set, a blind
-   * "overwrite" update happens.
-   *
    * @var string
    */
   public $etag;
   /**
-   * The labels with user-defined metadata to organize your IndexEndpoints.
-   * Label keys and values can be no longer than 64 characters (Unicode
-   * codepoints), can only contain lowercase letters, numeric characters,
-   * underscores and dashes. International characters are allowed. See
-   * https://goo.gl/xmQnxf for more information and examples of labels.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Output only. The resource name of the IndexEndpoint.
-   *
    * @var string
    */
   public $name;
   /**
-   * Optional. The full name of the Google Compute Engine
-   * [network](https://cloud.google.com/compute/docs/networks-and-
-   * firewalls#networks) to which the IndexEndpoint should be peered. Private
-   * services access must already be configured for the network. If left
-   * unspecified, the Endpoint is not peered with any network. network and
-   * private_service_connect_config are mutually exclusive. [Format](https://clo
-   * ud.google.com/compute/docs/reference/rest/v1/networks/insert):
-   * `projects/{project}/global/networks/{network}`. Where {project} is a
-   * project number, as in '12345', and {network} is network name.
-   *
    * @var string
    */
   public $network;
   protected $privateServiceConnectConfigType = GoogleCloudAiplatformV1PrivateServiceConnectConfig::class;
   protected $privateServiceConnectConfigDataType = '';
   /**
-   * Output only. If public_endpoint_enabled is true, this field will be
-   * populated with the domain name to use for this index endpoint.
-   *
    * @var string
    */
   public $publicEndpointDomainName;
   /**
-   * Optional. If true, the deployed index will be accessible through public
-   * endpoint.
-   *
    * @var bool
    */
   public $publicEndpointEnabled;
   /**
-   * Output only. Reserved for future use.
-   *
    * @var bool
    */
   public $satisfiesPzi;
   /**
-   * Output only. Reserved for future use.
-   *
    * @var bool
    */
   public $satisfiesPzs;
   /**
-   * Output only. Timestamp when this IndexEndpoint was last updated. This
-   * timestamp is not updated when the endpoint's DeployedIndexes are updated,
-   * e.g. due to updates of the original Indexes they are the deployments of.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. Timestamp when this IndexEndpoint was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -143,9 +94,7 @@ class GoogleCloudAiplatformV1IndexEndpoint extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Output only. The indexes deployed in this endpoint.
-   *
-   * @param GoogleCloudAiplatformV1DeployedIndex[] $deployedIndexes
+   * @param GoogleCloudAiplatformV1DeployedIndex[]
    */
   public function setDeployedIndexes($deployedIndexes)
   {
@@ -159,9 +108,7 @@ class GoogleCloudAiplatformV1IndexEndpoint extends \Google\Collection
     return $this->deployedIndexes;
   }
   /**
-   * The description of the IndexEndpoint.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -175,10 +122,7 @@ class GoogleCloudAiplatformV1IndexEndpoint extends \Google\Collection
     return $this->description;
   }
   /**
-   * Required. The display name of the IndexEndpoint. The name can be up to 128
-   * characters long and can consist of any UTF-8 characters.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -192,19 +136,13 @@ class GoogleCloudAiplatformV1IndexEndpoint extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Optional. Deprecated: If true, expose the IndexEndpoint via private service
-   * connect. Only one of the fields, network or enable_private_service_connect,
-   * can be set.
-   *
-   * @deprecated
-   * @param bool $enablePrivateServiceConnect
+   * @param bool
    */
   public function setEnablePrivateServiceConnect($enablePrivateServiceConnect)
   {
     $this->enablePrivateServiceConnect = $enablePrivateServiceConnect;
   }
   /**
-   * @deprecated
    * @return bool
    */
   public function getEnablePrivateServiceConnect()
@@ -212,11 +150,7 @@ class GoogleCloudAiplatformV1IndexEndpoint extends \Google\Collection
     return $this->enablePrivateServiceConnect;
   }
   /**
-   * Immutable. Customer-managed encryption key spec for an IndexEndpoint. If
-   * set, this IndexEndpoint and all sub-resources of this IndexEndpoint will be
-   * secured by this key.
-   *
-   * @param GoogleCloudAiplatformV1EncryptionSpec $encryptionSpec
+   * @param GoogleCloudAiplatformV1EncryptionSpec
    */
   public function setEncryptionSpec(GoogleCloudAiplatformV1EncryptionSpec $encryptionSpec)
   {
@@ -230,10 +164,7 @@ class GoogleCloudAiplatformV1IndexEndpoint extends \Google\Collection
     return $this->encryptionSpec;
   }
   /**
-   * Used to perform consistent read-modify-write updates. If not set, a blind
-   * "overwrite" update happens.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -247,13 +178,7 @@ class GoogleCloudAiplatformV1IndexEndpoint extends \Google\Collection
     return $this->etag;
   }
   /**
-   * The labels with user-defined metadata to organize your IndexEndpoints.
-   * Label keys and values can be no longer than 64 characters (Unicode
-   * codepoints), can only contain lowercase letters, numeric characters,
-   * underscores and dashes. International characters are allowed. See
-   * https://goo.gl/xmQnxf for more information and examples of labels.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -267,9 +192,7 @@ class GoogleCloudAiplatformV1IndexEndpoint extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Output only. The resource name of the IndexEndpoint.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -283,17 +206,7 @@ class GoogleCloudAiplatformV1IndexEndpoint extends \Google\Collection
     return $this->name;
   }
   /**
-   * Optional. The full name of the Google Compute Engine
-   * [network](https://cloud.google.com/compute/docs/networks-and-
-   * firewalls#networks) to which the IndexEndpoint should be peered. Private
-   * services access must already be configured for the network. If left
-   * unspecified, the Endpoint is not peered with any network. network and
-   * private_service_connect_config are mutually exclusive. [Format](https://clo
-   * ud.google.com/compute/docs/reference/rest/v1/networks/insert):
-   * `projects/{project}/global/networks/{network}`. Where {project} is a
-   * project number, as in '12345', and {network} is network name.
-   *
-   * @param string $network
+   * @param string
    */
   public function setNetwork($network)
   {
@@ -307,10 +220,7 @@ class GoogleCloudAiplatformV1IndexEndpoint extends \Google\Collection
     return $this->network;
   }
   /**
-   * Optional. Configuration for private service connect. network and
-   * private_service_connect_config are mutually exclusive.
-   *
-   * @param GoogleCloudAiplatformV1PrivateServiceConnectConfig $privateServiceConnectConfig
+   * @param GoogleCloudAiplatformV1PrivateServiceConnectConfig
    */
   public function setPrivateServiceConnectConfig(GoogleCloudAiplatformV1PrivateServiceConnectConfig $privateServiceConnectConfig)
   {
@@ -324,10 +234,7 @@ class GoogleCloudAiplatformV1IndexEndpoint extends \Google\Collection
     return $this->privateServiceConnectConfig;
   }
   /**
-   * Output only. If public_endpoint_enabled is true, this field will be
-   * populated with the domain name to use for this index endpoint.
-   *
-   * @param string $publicEndpointDomainName
+   * @param string
    */
   public function setPublicEndpointDomainName($publicEndpointDomainName)
   {
@@ -341,10 +248,7 @@ class GoogleCloudAiplatformV1IndexEndpoint extends \Google\Collection
     return $this->publicEndpointDomainName;
   }
   /**
-   * Optional. If true, the deployed index will be accessible through public
-   * endpoint.
-   *
-   * @param bool $publicEndpointEnabled
+   * @param bool
    */
   public function setPublicEndpointEnabled($publicEndpointEnabled)
   {
@@ -358,9 +262,7 @@ class GoogleCloudAiplatformV1IndexEndpoint extends \Google\Collection
     return $this->publicEndpointEnabled;
   }
   /**
-   * Output only. Reserved for future use.
-   *
-   * @param bool $satisfiesPzi
+   * @param bool
    */
   public function setSatisfiesPzi($satisfiesPzi)
   {
@@ -374,9 +276,7 @@ class GoogleCloudAiplatformV1IndexEndpoint extends \Google\Collection
     return $this->satisfiesPzi;
   }
   /**
-   * Output only. Reserved for future use.
-   *
-   * @param bool $satisfiesPzs
+   * @param bool
    */
   public function setSatisfiesPzs($satisfiesPzs)
   {
@@ -390,11 +290,7 @@ class GoogleCloudAiplatformV1IndexEndpoint extends \Google\Collection
     return $this->satisfiesPzs;
   }
   /**
-   * Output only. Timestamp when this IndexEndpoint was last updated. This
-   * timestamp is not updated when the endpoint's DeployedIndexes are updated,
-   * e.g. due to updates of the original Indexes they are the deployments of.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

@@ -20,26 +20,16 @@ namespace Google\Service\CloudAlloyDBAdmin;
 class ContinuousBackupSource extends \Google\Model
 {
   /**
-   * Required. The source cluster from which to restore. This cluster must have
-   * continuous backup enabled for this operation to succeed. For the required
-   * format, see the comment on the Cluster.name field.
-   *
    * @var string
    */
   public $cluster;
   /**
-   * Required. The point in time to restore to.
-   *
    * @var string
    */
   public $pointInTime;
 
   /**
-   * Required. The source cluster from which to restore. This cluster must have
-   * continuous backup enabled for this operation to succeed. For the required
-   * format, see the comment on the Cluster.name field.
-   *
-   * @param string $cluster
+   * @param string
    */
   public function setCluster($cluster)
   {
@@ -53,9 +43,7 @@ class ContinuousBackupSource extends \Google\Model
     return $this->cluster;
   }
   /**
-   * Required. The point in time to restore to.
-   *
-   * @param string $pointInTime
+   * @param string
    */
   public function setPointInTime($pointInTime)
   {

@@ -20,22 +20,16 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1SetAddonEnablementRequest extends \Google\Model
 {
   /**
-   * If the Analytics should be enabled in the environment.
-   *
    * @var bool
    */
   public $analyticsEnabled;
   /**
-   * If the API Security should be enabled in the environment.
-   *
    * @var bool
    */
   public $apiSecurityEnabled;
 
   /**
-   * If the Analytics should be enabled in the environment.
-   *
-   * @param bool $analyticsEnabled
+   * @param bool
    */
   public function setAnalyticsEnabled($analyticsEnabled)
   {
@@ -49,9 +43,7 @@ class GoogleCloudApigeeV1SetAddonEnablementRequest extends \Google\Model
     return $this->analyticsEnabled;
   }
   /**
-   * If the API Security should be enabled in the environment.
-   *
-   * @param bool $apiSecurityEnabled
+   * @param bool
    */
   public function setApiSecurityEnabled($apiSecurityEnabled)
   {

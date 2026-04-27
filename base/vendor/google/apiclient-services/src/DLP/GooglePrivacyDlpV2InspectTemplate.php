@@ -20,44 +20,30 @@ namespace Google\Service\DLP;
 class GooglePrivacyDlpV2InspectTemplate extends \Google\Model
 {
   /**
-   * Output only. The creation timestamp of an inspectTemplate.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Short description (max 256 chars).
-   *
    * @var string
    */
   public $description;
   /**
-   * Display name (max 256 chars).
-   *
    * @var string
    */
   public $displayName;
   protected $inspectConfigType = GooglePrivacyDlpV2InspectConfig::class;
   protected $inspectConfigDataType = '';
   /**
-   * Output only. The template name. The template will have one of the following
-   * formats: `projects/PROJECT_ID/inspectTemplates/TEMPLATE_ID` OR
-   * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`;
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The last update timestamp of an inspectTemplate.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. The creation timestamp of an inspectTemplate.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -71,9 +57,7 @@ class GooglePrivacyDlpV2InspectTemplate extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Short description (max 256 chars).
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -87,9 +71,7 @@ class GooglePrivacyDlpV2InspectTemplate extends \Google\Model
     return $this->description;
   }
   /**
-   * Display name (max 256 chars).
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -103,9 +85,7 @@ class GooglePrivacyDlpV2InspectTemplate extends \Google\Model
     return $this->displayName;
   }
   /**
-   * The core content of the template. Configuration of the scanning process.
-   *
-   * @param GooglePrivacyDlpV2InspectConfig $inspectConfig
+   * @param GooglePrivacyDlpV2InspectConfig
    */
   public function setInspectConfig(GooglePrivacyDlpV2InspectConfig $inspectConfig)
   {
@@ -119,11 +99,7 @@ class GooglePrivacyDlpV2InspectTemplate extends \Google\Model
     return $this->inspectConfig;
   }
   /**
-   * Output only. The template name. The template will have one of the following
-   * formats: `projects/PROJECT_ID/inspectTemplates/TEMPLATE_ID` OR
-   * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`;
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -137,9 +113,7 @@ class GooglePrivacyDlpV2InspectTemplate extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The last update timestamp of an inspectTemplate.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

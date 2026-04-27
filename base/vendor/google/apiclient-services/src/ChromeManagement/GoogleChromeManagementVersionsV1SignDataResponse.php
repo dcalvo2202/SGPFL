@@ -23,11 +23,7 @@ class GoogleChromeManagementVersionsV1SignDataResponse extends \Google\Model
   protected $certificateProvisioningProcessDataType = '';
 
   /**
-   * Output only. The certificate provisioning process. The signature generated
-   * by the client will be available in the `signature` field of
-   * `CertificateProvisioningProcess`.
-   *
-   * @param GoogleChromeManagementVersionsV1CertificateProvisioningProcess $certificateProvisioningProcess
+   * @param GoogleChromeManagementVersionsV1CertificateProvisioningProcess
    */
   public function setCertificateProvisioningProcess(GoogleChromeManagementVersionsV1CertificateProvisioningProcess $certificateProvisioningProcess)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\CertificateAuthorityService;
 class CertificateFingerprint extends \Google\Model
 {
   /**
-   * The SHA 256 hash, encoded in hexadecimal, of the DER x509 certificate.
-   *
    * @var string
    */
   public $sha256Hash;
 
   /**
-   * The SHA 256 hash, encoded in hexadecimal, of the DER x509 certificate.
-   *
-   * @param string $sha256Hash
+   * @param string
    */
   public function setSha256Hash($sha256Hash)
   {

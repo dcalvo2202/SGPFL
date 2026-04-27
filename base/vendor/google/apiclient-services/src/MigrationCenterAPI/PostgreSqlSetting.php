@@ -20,53 +20,36 @@ namespace Google\Service\MigrationCenterAPI;
 class PostgreSqlSetting extends \Google\Model
 {
   /**
-   * Required. The setting boolean value.
-   *
    * @var bool
    */
   public $boolValue;
   /**
-   * Required. The setting int value.
-   *
    * @var string
    */
   public $intValue;
   /**
-   * Required. The setting real value.
-   *
    * @var float
    */
   public $realValue;
   /**
-   * Required. The setting name.
-   *
    * @var string
    */
   public $setting;
   /**
-   * Required. The setting source.
-   *
    * @var string
    */
   public $source;
   /**
-   * Required. The setting string value. Notice that enum values are stored as
-   * strings.
-   *
    * @var string
    */
   public $stringValue;
   /**
-   * Optional. The setting unit.
-   *
    * @var string
    */
   public $unit;
 
   /**
-   * Required. The setting boolean value.
-   *
-   * @param bool $boolValue
+   * @param bool
    */
   public function setBoolValue($boolValue)
   {
@@ -80,9 +63,7 @@ class PostgreSqlSetting extends \Google\Model
     return $this->boolValue;
   }
   /**
-   * Required. The setting int value.
-   *
-   * @param string $intValue
+   * @param string
    */
   public function setIntValue($intValue)
   {
@@ -96,9 +77,7 @@ class PostgreSqlSetting extends \Google\Model
     return $this->intValue;
   }
   /**
-   * Required. The setting real value.
-   *
-   * @param float $realValue
+   * @param float
    */
   public function setRealValue($realValue)
   {
@@ -112,9 +91,7 @@ class PostgreSqlSetting extends \Google\Model
     return $this->realValue;
   }
   /**
-   * Required. The setting name.
-   *
-   * @param string $setting
+   * @param string
    */
   public function setSetting($setting)
   {
@@ -128,9 +105,7 @@ class PostgreSqlSetting extends \Google\Model
     return $this->setting;
   }
   /**
-   * Required. The setting source.
-   *
-   * @param string $source
+   * @param string
    */
   public function setSource($source)
   {
@@ -144,10 +119,7 @@ class PostgreSqlSetting extends \Google\Model
     return $this->source;
   }
   /**
-   * Required. The setting string value. Notice that enum values are stored as
-   * strings.
-   *
-   * @param string $stringValue
+   * @param string
    */
   public function setStringValue($stringValue)
   {
@@ -161,9 +133,7 @@ class PostgreSqlSetting extends \Google\Model
     return $this->stringValue;
   }
   /**
-   * Optional. The setting unit.
-   *
-   * @param string $unit
+   * @param string
    */
   public function setUnit($unit)
   {

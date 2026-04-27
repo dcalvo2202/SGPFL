@@ -20,18 +20,12 @@ namespace Google\Service\AccessApproval;
 class ResourceProperties extends \Google\Model
 {
   /**
-   * Whether an approval will exclude the descendants of the resource being
-   * requested.
-   *
    * @var bool
    */
   public $excludesDescendants;
 
   /**
-   * Whether an approval will exclude the descendants of the resource being
-   * requested.
-   *
-   * @param bool $excludesDescendants
+   * @param bool
    */
   public function setExcludesDescendants($excludesDescendants)
   {

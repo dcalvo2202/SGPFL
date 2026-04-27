@@ -20,66 +20,42 @@ namespace Google\Service\AndroidManagement;
 class SoftwareInfo extends \Google\Model
 {
   /**
-   * Android build ID string meant for displaying to the user. For example,
-   * shamu-userdebug 6.0.1 MOB30I 2756745 dev-keys.
-   *
    * @var string
    */
   public $androidBuildNumber;
   /**
-   * Build time.
-   *
    * @var string
    */
   public $androidBuildTime;
   /**
-   * The Android Device Policy app version code.
-   *
    * @var int
    */
   public $androidDevicePolicyVersionCode;
   /**
-   * The Android Device Policy app version as displayed to the user.
-   *
    * @var string
    */
   public $androidDevicePolicyVersionName;
   /**
-   * The user-visible Android version string. For example, 6.0.1.
-   *
    * @var string
    */
   public $androidVersion;
   /**
-   * The system bootloader version number, e.g. 0.6.7.
-   *
    * @var string
    */
   public $bootloaderVersion;
   /**
-   * SHA-256 hash of android.content.pm.Signature
-   * (https://developer.android.com/reference/android/content/pm/Signature.html)
-   * associated with the system package, which can be used to verify that the
-   * system build hasn't been modified.
-   *
    * @var string
    */
   public $deviceBuildSignature;
   /**
-   * Kernel version, for example, 2.6.32.9-g103d848.
-   *
    * @var string
    */
   public $deviceKernelVersion;
   /**
-   * An IETF BCP 47 language code for the primary locale on the device.
-   *
    * @var string
    */
   public $primaryLanguageCode;
   /**
-   * Security patch level, e.g. 2016-05-01.
-   *
    * @var string
    */
   public $securityPatchLevel;
@@ -87,10 +63,7 @@ class SoftwareInfo extends \Google\Model
   protected $systemUpdateInfoDataType = '';
 
   /**
-   * Android build ID string meant for displaying to the user. For example,
-   * shamu-userdebug 6.0.1 MOB30I 2756745 dev-keys.
-   *
-   * @param string $androidBuildNumber
+   * @param string
    */
   public function setAndroidBuildNumber($androidBuildNumber)
   {
@@ -104,9 +77,7 @@ class SoftwareInfo extends \Google\Model
     return $this->androidBuildNumber;
   }
   /**
-   * Build time.
-   *
-   * @param string $androidBuildTime
+   * @param string
    */
   public function setAndroidBuildTime($androidBuildTime)
   {
@@ -120,9 +91,7 @@ class SoftwareInfo extends \Google\Model
     return $this->androidBuildTime;
   }
   /**
-   * The Android Device Policy app version code.
-   *
-   * @param int $androidDevicePolicyVersionCode
+   * @param int
    */
   public function setAndroidDevicePolicyVersionCode($androidDevicePolicyVersionCode)
   {
@@ -136,9 +105,7 @@ class SoftwareInfo extends \Google\Model
     return $this->androidDevicePolicyVersionCode;
   }
   /**
-   * The Android Device Policy app version as displayed to the user.
-   *
-   * @param string $androidDevicePolicyVersionName
+   * @param string
    */
   public function setAndroidDevicePolicyVersionName($androidDevicePolicyVersionName)
   {
@@ -152,9 +119,7 @@ class SoftwareInfo extends \Google\Model
     return $this->androidDevicePolicyVersionName;
   }
   /**
-   * The user-visible Android version string. For example, 6.0.1.
-   *
-   * @param string $androidVersion
+   * @param string
    */
   public function setAndroidVersion($androidVersion)
   {
@@ -168,9 +133,7 @@ class SoftwareInfo extends \Google\Model
     return $this->androidVersion;
   }
   /**
-   * The system bootloader version number, e.g. 0.6.7.
-   *
-   * @param string $bootloaderVersion
+   * @param string
    */
   public function setBootloaderVersion($bootloaderVersion)
   {
@@ -184,12 +147,7 @@ class SoftwareInfo extends \Google\Model
     return $this->bootloaderVersion;
   }
   /**
-   * SHA-256 hash of android.content.pm.Signature
-   * (https://developer.android.com/reference/android/content/pm/Signature.html)
-   * associated with the system package, which can be used to verify that the
-   * system build hasn't been modified.
-   *
-   * @param string $deviceBuildSignature
+   * @param string
    */
   public function setDeviceBuildSignature($deviceBuildSignature)
   {
@@ -203,9 +161,7 @@ class SoftwareInfo extends \Google\Model
     return $this->deviceBuildSignature;
   }
   /**
-   * Kernel version, for example, 2.6.32.9-g103d848.
-   *
-   * @param string $deviceKernelVersion
+   * @param string
    */
   public function setDeviceKernelVersion($deviceKernelVersion)
   {
@@ -219,9 +175,7 @@ class SoftwareInfo extends \Google\Model
     return $this->deviceKernelVersion;
   }
   /**
-   * An IETF BCP 47 language code for the primary locale on the device.
-   *
-   * @param string $primaryLanguageCode
+   * @param string
    */
   public function setPrimaryLanguageCode($primaryLanguageCode)
   {
@@ -235,9 +189,7 @@ class SoftwareInfo extends \Google\Model
     return $this->primaryLanguageCode;
   }
   /**
-   * Security patch level, e.g. 2016-05-01.
-   *
-   * @param string $securityPatchLevel
+   * @param string
    */
   public function setSecurityPatchLevel($securityPatchLevel)
   {
@@ -251,9 +203,7 @@ class SoftwareInfo extends \Google\Model
     return $this->securityPatchLevel;
   }
   /**
-   * Information about a potential pending system update.
-   *
-   * @param SystemUpdateInfo $systemUpdateInfo
+   * @param SystemUpdateInfo
    */
   public function setSystemUpdateInfo(SystemUpdateInfo $systemUpdateInfo)
   {

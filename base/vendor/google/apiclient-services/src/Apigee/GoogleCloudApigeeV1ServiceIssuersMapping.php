@@ -21,22 +21,16 @@ class GoogleCloudApigeeV1ServiceIssuersMapping extends \Google\Collection
 {
   protected $collection_key = 'emailIds';
   /**
-   * List of trusted issuer email ids.
-   *
    * @var string[]
    */
   public $emailIds;
   /**
-   * String indicating the Apigee service name.
-   *
    * @var string
    */
   public $service;
 
   /**
-   * List of trusted issuer email ids.
-   *
-   * @param string[] $emailIds
+   * @param string[]
    */
   public function setEmailIds($emailIds)
   {
@@ -50,9 +44,7 @@ class GoogleCloudApigeeV1ServiceIssuersMapping extends \Google\Collection
     return $this->emailIds;
   }
   /**
-   * String indicating the Apigee service name.
-   *
-   * @param string $service
+   * @param string
    */
   public function setService($service)
   {

@@ -20,74 +20,33 @@ namespace Google\Service\SecurityCommandCenter;
 class GoogleCloudSecuritycenterV2AttackExposure extends \Google\Model
 {
   /**
-   * The state is not specified.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The attack exposure has been calculated.
-   */
-  public const STATE_CALCULATED = 'CALCULATED';
-  /**
-   * The attack exposure has not been calculated.
-   */
-  public const STATE_NOT_CALCULATED = 'NOT_CALCULATED';
-  /**
-   * The resource name of the attack path simulation result that contains the
-   * details regarding this attack exposure score. Example:
-   * `organizations/123/simulations/456/attackExposureResults/789`
-   *
    * @var string
    */
   public $attackExposureResult;
   /**
-   * The number of high value resources that are exposed as a result of this
-   * finding.
-   *
    * @var int
    */
   public $exposedHighValueResourcesCount;
   /**
-   * The number of high value resources that are exposed as a result of this
-   * finding.
-   *
    * @var int
    */
   public $exposedLowValueResourcesCount;
   /**
-   * The number of medium value resources that are exposed as a result of this
-   * finding.
-   *
    * @var int
    */
   public $exposedMediumValueResourcesCount;
   /**
-   * The most recent time the attack exposure was updated on this finding.
-   *
    * @var string
    */
   public $latestCalculationTime;
-  /**
-   * A number between 0 (inclusive) and infinity that represents how important
-   * this finding is to remediate. The higher the score, the more important it
-   * is to remediate.
-   *
-   * @var 
-   */
   public $score;
   /**
-   * Output only. What state this AttackExposure is in. This captures whether or
-   * not an attack exposure has been calculated or not.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * The resource name of the attack path simulation result that contains the
-   * details regarding this attack exposure score. Example:
-   * `organizations/123/simulations/456/attackExposureResults/789`
-   *
-   * @param string $attackExposureResult
+   * @param string
    */
   public function setAttackExposureResult($attackExposureResult)
   {
@@ -101,10 +60,7 @@ class GoogleCloudSecuritycenterV2AttackExposure extends \Google\Model
     return $this->attackExposureResult;
   }
   /**
-   * The number of high value resources that are exposed as a result of this
-   * finding.
-   *
-   * @param int $exposedHighValueResourcesCount
+   * @param int
    */
   public function setExposedHighValueResourcesCount($exposedHighValueResourcesCount)
   {
@@ -118,10 +74,7 @@ class GoogleCloudSecuritycenterV2AttackExposure extends \Google\Model
     return $this->exposedHighValueResourcesCount;
   }
   /**
-   * The number of high value resources that are exposed as a result of this
-   * finding.
-   *
-   * @param int $exposedLowValueResourcesCount
+   * @param int
    */
   public function setExposedLowValueResourcesCount($exposedLowValueResourcesCount)
   {
@@ -135,10 +88,7 @@ class GoogleCloudSecuritycenterV2AttackExposure extends \Google\Model
     return $this->exposedLowValueResourcesCount;
   }
   /**
-   * The number of medium value resources that are exposed as a result of this
-   * finding.
-   *
-   * @param int $exposedMediumValueResourcesCount
+   * @param int
    */
   public function setExposedMediumValueResourcesCount($exposedMediumValueResourcesCount)
   {
@@ -152,9 +102,7 @@ class GoogleCloudSecuritycenterV2AttackExposure extends \Google\Model
     return $this->exposedMediumValueResourcesCount;
   }
   /**
-   * The most recent time the attack exposure was updated on this finding.
-   *
-   * @param string $latestCalculationTime
+   * @param string
    */
   public function setLatestCalculationTime($latestCalculationTime)
   {
@@ -176,19 +124,14 @@ class GoogleCloudSecuritycenterV2AttackExposure extends \Google\Model
     return $this->score;
   }
   /**
-   * Output only. What state this AttackExposure is in. This captures whether or
-   * not an attack exposure has been calculated or not.
-   *
-   * Accepted values: STATE_UNSPECIFIED, CALCULATED, NOT_CALCULATED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

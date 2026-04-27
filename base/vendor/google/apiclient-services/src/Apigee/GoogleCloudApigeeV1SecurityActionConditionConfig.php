@@ -21,86 +21,52 @@ class GoogleCloudApigeeV1SecurityActionConditionConfig extends \Google\Collectio
 {
   protected $collection_key = 'userAgents';
   /**
-   * Optional. A list of access_tokens. Limit 1000 per action.
-   *
    * @var string[]
    */
   public $accessTokens;
   /**
-   * Optional. A list of API keys. Limit 1000 per action.
-   *
    * @var string[]
    */
   public $apiKeys;
   /**
-   * Optional. A list of API Products. Limit 1000 per action.
-   *
    * @var string[]
    */
   public $apiProducts;
   /**
-   * Optional. A list of ASN numbers to act on, e.g. 23.
-   * https://en.wikipedia.org/wiki/Autonomous_system_(Internet) This uses int64
-   * instead of uint32 because of https://linter.aip.dev/141/forbidden-types.
-   *
    * @var string[]
    */
   public $asns;
   /**
-   * Optional. A list of Bot Reasons. Current options: Flooder, Brute Guessor,
-   * Static Content Scraper, OAuth Abuser, Robot Abuser, TorListRule, Advanced
-   * Anomaly Detection, Advanced API Scraper, Search Engine Crawlers, Public
-   * Clouds, Public Cloud AWS, Public Cloud Azure, and Public Cloud Google.
-   *
    * @var string[]
    */
   public $botReasons;
   /**
-   * Optional. A list of developer apps. Limit 1000 per action.
-   *
    * @var string[]
    */
   public $developerApps;
   /**
-   * Optional. A list of developers. Limit 1000 per action.
-   *
    * @var string[]
    */
   public $developers;
   /**
-   * Optional. Act only on particular HTTP methods. E.g. A read-only API can
-   * block POST/PUT/DELETE methods. Accepted values are: GET, HEAD, POST, PUT,
-   * DELETE, CONNECT, OPTIONS, TRACE and PATCH.
-   *
    * @var string[]
    */
   public $httpMethods;
   /**
-   * Optional. A list of IP addresses. This could be either IPv4 or IPv6.
-   * Limited to 100 per action.
-   *
    * @var string[]
    */
   public $ipAddressRanges;
   /**
-   * Optional. A list of countries/region codes to act on, e.g. US. This follows
-   * https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2.
-   *
    * @var string[]
    */
   public $regionCodes;
   /**
-   * Optional. A list of user agents to deny. We look for exact matches. Limit
-   * 50 per action.
-   *
    * @var string[]
    */
   public $userAgents;
 
   /**
-   * Optional. A list of access_tokens. Limit 1000 per action.
-   *
-   * @param string[] $accessTokens
+   * @param string[]
    */
   public function setAccessTokens($accessTokens)
   {
@@ -114,9 +80,7 @@ class GoogleCloudApigeeV1SecurityActionConditionConfig extends \Google\Collectio
     return $this->accessTokens;
   }
   /**
-   * Optional. A list of API keys. Limit 1000 per action.
-   *
-   * @param string[] $apiKeys
+   * @param string[]
    */
   public function setApiKeys($apiKeys)
   {
@@ -130,9 +94,7 @@ class GoogleCloudApigeeV1SecurityActionConditionConfig extends \Google\Collectio
     return $this->apiKeys;
   }
   /**
-   * Optional. A list of API Products. Limit 1000 per action.
-   *
-   * @param string[] $apiProducts
+   * @param string[]
    */
   public function setApiProducts($apiProducts)
   {
@@ -146,11 +108,7 @@ class GoogleCloudApigeeV1SecurityActionConditionConfig extends \Google\Collectio
     return $this->apiProducts;
   }
   /**
-   * Optional. A list of ASN numbers to act on, e.g. 23.
-   * https://en.wikipedia.org/wiki/Autonomous_system_(Internet) This uses int64
-   * instead of uint32 because of https://linter.aip.dev/141/forbidden-types.
-   *
-   * @param string[] $asns
+   * @param string[]
    */
   public function setAsns($asns)
   {
@@ -164,12 +122,7 @@ class GoogleCloudApigeeV1SecurityActionConditionConfig extends \Google\Collectio
     return $this->asns;
   }
   /**
-   * Optional. A list of Bot Reasons. Current options: Flooder, Brute Guessor,
-   * Static Content Scraper, OAuth Abuser, Robot Abuser, TorListRule, Advanced
-   * Anomaly Detection, Advanced API Scraper, Search Engine Crawlers, Public
-   * Clouds, Public Cloud AWS, Public Cloud Azure, and Public Cloud Google.
-   *
-   * @param string[] $botReasons
+   * @param string[]
    */
   public function setBotReasons($botReasons)
   {
@@ -183,9 +136,7 @@ class GoogleCloudApigeeV1SecurityActionConditionConfig extends \Google\Collectio
     return $this->botReasons;
   }
   /**
-   * Optional. A list of developer apps. Limit 1000 per action.
-   *
-   * @param string[] $developerApps
+   * @param string[]
    */
   public function setDeveloperApps($developerApps)
   {
@@ -199,9 +150,7 @@ class GoogleCloudApigeeV1SecurityActionConditionConfig extends \Google\Collectio
     return $this->developerApps;
   }
   /**
-   * Optional. A list of developers. Limit 1000 per action.
-   *
-   * @param string[] $developers
+   * @param string[]
    */
   public function setDevelopers($developers)
   {
@@ -215,11 +164,7 @@ class GoogleCloudApigeeV1SecurityActionConditionConfig extends \Google\Collectio
     return $this->developers;
   }
   /**
-   * Optional. Act only on particular HTTP methods. E.g. A read-only API can
-   * block POST/PUT/DELETE methods. Accepted values are: GET, HEAD, POST, PUT,
-   * DELETE, CONNECT, OPTIONS, TRACE and PATCH.
-   *
-   * @param string[] $httpMethods
+   * @param string[]
    */
   public function setHttpMethods($httpMethods)
   {
@@ -233,10 +178,7 @@ class GoogleCloudApigeeV1SecurityActionConditionConfig extends \Google\Collectio
     return $this->httpMethods;
   }
   /**
-   * Optional. A list of IP addresses. This could be either IPv4 or IPv6.
-   * Limited to 100 per action.
-   *
-   * @param string[] $ipAddressRanges
+   * @param string[]
    */
   public function setIpAddressRanges($ipAddressRanges)
   {
@@ -250,10 +192,7 @@ class GoogleCloudApigeeV1SecurityActionConditionConfig extends \Google\Collectio
     return $this->ipAddressRanges;
   }
   /**
-   * Optional. A list of countries/region codes to act on, e.g. US. This follows
-   * https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2.
-   *
-   * @param string[] $regionCodes
+   * @param string[]
    */
   public function setRegionCodes($regionCodes)
   {
@@ -267,10 +206,7 @@ class GoogleCloudApigeeV1SecurityActionConditionConfig extends \Google\Collectio
     return $this->regionCodes;
   }
   /**
-   * Optional. A list of user agents to deny. We look for exact matches. Limit
-   * 50 per action.
-   *
-   * @param string[] $userAgents
+   * @param string[]
    */
   public function setUserAgents($userAgents)
   {

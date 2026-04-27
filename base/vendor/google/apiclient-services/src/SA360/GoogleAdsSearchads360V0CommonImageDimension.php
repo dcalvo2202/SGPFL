@@ -20,28 +20,20 @@ namespace Google\Service\SA360;
 class GoogleAdsSearchads360V0CommonImageDimension extends \Google\Model
 {
   /**
-   * Height of the image.
-   *
    * @var string
    */
   public $heightPixels;
   /**
-   * A URL that returns the image with this height and width.
-   *
    * @var string
    */
   public $url;
   /**
-   * Width of the image.
-   *
    * @var string
    */
   public $widthPixels;
 
   /**
-   * Height of the image.
-   *
-   * @param string $heightPixels
+   * @param string
    */
   public function setHeightPixels($heightPixels)
   {
@@ -55,9 +47,7 @@ class GoogleAdsSearchads360V0CommonImageDimension extends \Google\Model
     return $this->heightPixels;
   }
   /**
-   * A URL that returns the image with this height and width.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {
@@ -71,9 +61,7 @@ class GoogleAdsSearchads360V0CommonImageDimension extends \Google\Model
     return $this->url;
   }
   /**
-   * Width of the image.
-   *
-   * @param string $widthPixels
+   * @param string
    */
   public function setWidthPixels($widthPixels)
   {

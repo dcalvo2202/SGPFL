@@ -20,18 +20,12 @@ namespace Google\Service\Playdeveloperreporting;
 class GooglePlayDeveloperReportingV1beta1AppVersion extends \Google\Model
 {
   /**
-   * Optional. Numeric version code of the app version (set by the app's
-   * developer).
-   *
    * @var string
    */
   public $versionCode;
 
   /**
-   * Optional. Numeric version code of the app version (set by the app's
-   * developer).
-   *
-   * @param string $versionCode
+   * @param string
    */
   public function setVersionCode($versionCode)
   {

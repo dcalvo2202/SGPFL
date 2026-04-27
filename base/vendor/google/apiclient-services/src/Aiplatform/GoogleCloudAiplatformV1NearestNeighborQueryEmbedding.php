@@ -21,16 +21,12 @@ class GoogleCloudAiplatformV1NearestNeighborQueryEmbedding extends \Google\Colle
 {
   protected $collection_key = 'value';
   /**
-   * Optional. Individual value in the embedding.
-   *
    * @var float[]
    */
   public $value;
 
   /**
-   * Optional. Individual value in the embedding.
-   *
-   * @param float[] $value
+   * @param float[]
    */
   public function setValue($value)
   {

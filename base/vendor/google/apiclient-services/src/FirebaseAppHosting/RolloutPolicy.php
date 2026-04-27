@@ -17,40 +17,23 @@
 
 namespace Google\Service\FirebaseAppHosting;
 
-class RolloutPolicy extends \Google\Collection
+class RolloutPolicy extends \Google\Model
 {
-  protected $collection_key = 'requiredPaths';
   /**
-   * If set, specifies a branch that triggers a new build to be started with
-   * this policy. Otherwise, no automatic rollouts will happen.
-   *
    * @var string
    */
   public $codebaseBranch;
   /**
-   * Optional. A flag that, if true, prevents automatic rollouts from being
-   * created via this RolloutPolicy.
-   *
    * @var bool
    */
   public $disabled;
   /**
-   * Output only. If `disabled` is set, the time at which the automatic rollouts
-   * were disabled.
-   *
    * @var string
    */
   public $disabledTime;
-  protected $ignoredPathsType = Path::class;
-  protected $ignoredPathsDataType = 'array';
-  protected $requiredPathsType = Path::class;
-  protected $requiredPathsDataType = 'array';
 
   /**
-   * If set, specifies a branch that triggers a new build to be started with
-   * this policy. Otherwise, no automatic rollouts will happen.
-   *
-   * @param string $codebaseBranch
+   * @param string
    */
   public function setCodebaseBranch($codebaseBranch)
   {
@@ -64,10 +47,7 @@ class RolloutPolicy extends \Google\Collection
     return $this->codebaseBranch;
   }
   /**
-   * Optional. A flag that, if true, prevents automatic rollouts from being
-   * created via this RolloutPolicy.
-   *
-   * @param bool $disabled
+   * @param bool
    */
   public function setDisabled($disabled)
   {
@@ -81,10 +61,7 @@ class RolloutPolicy extends \Google\Collection
     return $this->disabled;
   }
   /**
-   * Output only. If `disabled` is set, the time at which the automatic rollouts
-   * were disabled.
-   *
-   * @param string $disabledTime
+   * @param string
    */
   public function setDisabledTime($disabledTime)
   {
@@ -96,46 +73,6 @@ class RolloutPolicy extends \Google\Collection
   public function getDisabledTime()
   {
     return $this->disabledTime;
-  }
-  /**
-   * Optional. A list of file paths patterns to exclude from triggering a
-   * rollout. Patterns in this list take precedence over required_paths.
-   * **Note**: All paths must be in the ignored_paths in order for the rollout
-   * to be skipped. Limited to 100 paths. Example: ignored_paths: { pattern:
-   * "foo/bar/excluded” type: GLOB }
-   *
-   * @param Path[] $ignoredPaths
-   */
-  public function setIgnoredPaths($ignoredPaths)
-  {
-    $this->ignoredPaths = $ignoredPaths;
-  }
-  /**
-   * @return Path[]
-   */
-  public function getIgnoredPaths()
-  {
-    return $this->ignoredPaths;
-  }
-  /**
-   * Optional. A list of file paths patterns that trigger a build and rollout if
-   * at least one of the changed files in the commit are present in this list.
-   * This field is optional; the rollout policy will default to triggering on
-   * all paths if not populated. Limited to 100 paths. Example: “required_paths:
-   * { pattern: "foo/bar” type: GLOB }
-   *
-   * @param Path[] $requiredPaths
-   */
-  public function setRequiredPaths($requiredPaths)
-  {
-    $this->requiredPaths = $requiredPaths;
-  }
-  /**
-   * @return Path[]
-   */
-  public function getRequiredPaths()
-  {
-    return $this->requiredPaths;
   }
 }
 

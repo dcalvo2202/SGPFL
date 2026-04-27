@@ -20,16 +20,12 @@ namespace Google\Service\AndroidManagement;
 class FilePulledEvent extends \Google\Model
 {
   /**
-   * The path of the file being pulled.
-   *
    * @var string
    */
   public $filePath;
 
   /**
-   * The path of the file being pulled.
-   *
-   * @param string $filePath
+   * @param string
    */
   public function setFilePath($filePath)
   {

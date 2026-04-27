@@ -20,16 +20,12 @@ namespace Google\Service\CloudRetail;
 class GoogleCloudRetailLoggingServiceContext extends \Google\Model
 {
   /**
-   * An identifier of the service. For example, "retail.googleapis.com".
-   *
    * @var string
    */
   public $service;
 
   /**
-   * An identifier of the service. For example, "retail.googleapis.com".
-   *
-   * @param string $service
+   * @param string
    */
   public function setService($service)
   {

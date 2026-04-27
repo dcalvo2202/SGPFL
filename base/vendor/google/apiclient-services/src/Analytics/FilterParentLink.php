@@ -20,22 +20,16 @@ namespace Google\Service\Analytics;
 class FilterParentLink extends \Google\Model
 {
   /**
-   * Link to the account to which this filter belongs.
-   *
    * @var string
    */
   public $href;
   /**
-   * Value is "analytics#account".
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Link to the account to which this filter belongs.
-   *
-   * @param string $href
+   * @param string
    */
   public function setHref($href)
   {
@@ -49,9 +43,7 @@ class FilterParentLink extends \Google\Model
     return $this->href;
   }
   /**
-   * Value is "analytics#account".
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

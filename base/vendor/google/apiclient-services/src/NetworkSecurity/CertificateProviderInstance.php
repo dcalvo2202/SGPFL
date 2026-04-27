@@ -20,20 +20,12 @@ namespace Google\Service\NetworkSecurity;
 class CertificateProviderInstance extends \Google\Model
 {
   /**
-   * Required. Plugin instance name, used to locate and load CertificateProvider
-   * instance configuration. Set to "google_cloud_private_spiffe" to use
-   * Certificate Authority Service certificate provider instance.
-   *
    * @var string
    */
   public $pluginInstance;
 
   /**
-   * Required. Plugin instance name, used to locate and load CertificateProvider
-   * instance configuration. Set to "google_cloud_private_spiffe" to use
-   * Certificate Authority Service certificate provider instance.
-   *
-   * @param string $pluginInstance
+   * @param string
    */
   public function setPluginInstance($pluginInstance)
   {

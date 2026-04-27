@@ -25,7 +25,7 @@ class InterconnectAttachmentGroupAttachment extends \Google\Model
   public $attachment;
 
   /**
-   * @param string $attachment
+   * @param string
    */
   public function setAttachment($attachment)
   {

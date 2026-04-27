@@ -26,9 +26,7 @@ class GoogleCloudAiplatformV1ExactMatchInput extends \Google\Collection
   protected $metricSpecDataType = '';
 
   /**
-   * Required. Repeated exact match instances.
-   *
-   * @param GoogleCloudAiplatformV1ExactMatchInstance[] $instances
+   * @param GoogleCloudAiplatformV1ExactMatchInstance[]
    */
   public function setInstances($instances)
   {
@@ -42,9 +40,7 @@ class GoogleCloudAiplatformV1ExactMatchInput extends \Google\Collection
     return $this->instances;
   }
   /**
-   * Required. Spec for exact match metric.
-   *
-   * @param GoogleCloudAiplatformV1ExactMatchSpec $metricSpec
+   * @param GoogleCloudAiplatformV1ExactMatchSpec
    */
   public function setMetricSpec(GoogleCloudAiplatformV1ExactMatchSpec $metricSpec)
   {

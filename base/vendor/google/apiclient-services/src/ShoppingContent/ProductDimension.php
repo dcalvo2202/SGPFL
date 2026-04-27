@@ -20,23 +20,13 @@ namespace Google\Service\ShoppingContent;
 class ProductDimension extends \Google\Model
 {
   /**
-   * Required. The length units. Acceptable values are: - "`in`" - "`cm`"
-   *
    * @var string
    */
   public $unit;
-  /**
-   * Required. The length value represented as a number. The value can have a
-   * maximum precision of four decimal places.
-   *
-   * @var 
-   */
   public $value;
 
   /**
-   * Required. The length units. Acceptable values are: - "`in`" - "`cm`"
-   *
-   * @param string $unit
+   * @param string
    */
   public function setUnit($unit)
   {

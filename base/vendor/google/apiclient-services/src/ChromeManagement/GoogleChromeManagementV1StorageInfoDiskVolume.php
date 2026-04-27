@@ -20,28 +20,20 @@ namespace Google\Service\ChromeManagement;
 class GoogleChromeManagementV1StorageInfoDiskVolume extends \Google\Model
 {
   /**
-   * Free storage space in bytes.
-   *
    * @var string
    */
   public $storageFreeBytes;
   /**
-   * Total storage space in bytes.
-   *
    * @var string
    */
   public $storageTotalBytes;
   /**
-   * Disk volume id.
-   *
    * @var string
    */
   public $volumeId;
 
   /**
-   * Free storage space in bytes.
-   *
-   * @param string $storageFreeBytes
+   * @param string
    */
   public function setStorageFreeBytes($storageFreeBytes)
   {
@@ -55,9 +47,7 @@ class GoogleChromeManagementV1StorageInfoDiskVolume extends \Google\Model
     return $this->storageFreeBytes;
   }
   /**
-   * Total storage space in bytes.
-   *
-   * @param string $storageTotalBytes
+   * @param string
    */
   public function setStorageTotalBytes($storageTotalBytes)
   {
@@ -71,9 +61,7 @@ class GoogleChromeManagementV1StorageInfoDiskVolume extends \Google\Model
     return $this->storageTotalBytes;
   }
   /**
-   * Disk volume id.
-   *
-   * @param string $volumeId
+   * @param string
    */
   public function setVolumeId($volumeId)
   {

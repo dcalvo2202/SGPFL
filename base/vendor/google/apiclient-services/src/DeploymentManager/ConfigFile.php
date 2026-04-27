@@ -20,16 +20,12 @@ namespace Google\Service\DeploymentManager;
 class ConfigFile extends \Google\Model
 {
   /**
-   * The contents of the file.
-   *
    * @var string
    */
   public $content;
 
   /**
-   * The contents of the file.
-   *
-   * @param string $content
+   * @param string
    */
   public function setContent($content)
   {

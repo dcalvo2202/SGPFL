@@ -20,8 +20,6 @@ namespace Google\Service\Spanner;
 class OptimizeRestoredDatabaseMetadata extends \Google\Model
 {
   /**
-   * Name of the restored database being optimized.
-   *
    * @var string
    */
   public $name;
@@ -29,9 +27,7 @@ class OptimizeRestoredDatabaseMetadata extends \Google\Model
   protected $progressDataType = '';
 
   /**
-   * Name of the restored database being optimized.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -45,9 +41,7 @@ class OptimizeRestoredDatabaseMetadata extends \Google\Model
     return $this->name;
   }
   /**
-   * The progress of the post-restore optimizations.
-   *
-   * @param OperationProgress $progress
+   * @param OperationProgress
    */
   public function setProgress(OperationProgress $progress)
   {

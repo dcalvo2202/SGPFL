@@ -21,32 +21,22 @@ class ComputeEngineShapeDescriptor extends \Google\Collection
 {
   protected $collection_key = 'storage';
   /**
-   * Output only. Number of logical cores.
-   *
    * @var int
    */
   public $logicalCoreCount;
   /**
-   * Output only. Compute Engine machine type.
-   *
    * @var string
    */
   public $machineType;
   /**
-   * Memory in mebibytes.
-   *
    * @var int
    */
   public $memoryMb;
   /**
-   * Number of physical cores.
-   *
    * @var int
    */
   public $physicalCoreCount;
   /**
-   * Output only. Compute Engine machine series.
-   *
    * @var string
    */
   public $series;
@@ -54,9 +44,7 @@ class ComputeEngineShapeDescriptor extends \Google\Collection
   protected $storageDataType = 'array';
 
   /**
-   * Output only. Number of logical cores.
-   *
-   * @param int $logicalCoreCount
+   * @param int
    */
   public function setLogicalCoreCount($logicalCoreCount)
   {
@@ -70,9 +58,7 @@ class ComputeEngineShapeDescriptor extends \Google\Collection
     return $this->logicalCoreCount;
   }
   /**
-   * Output only. Compute Engine machine type.
-   *
-   * @param string $machineType
+   * @param string
    */
   public function setMachineType($machineType)
   {
@@ -86,9 +72,7 @@ class ComputeEngineShapeDescriptor extends \Google\Collection
     return $this->machineType;
   }
   /**
-   * Memory in mebibytes.
-   *
-   * @param int $memoryMb
+   * @param int
    */
   public function setMemoryMb($memoryMb)
   {
@@ -102,9 +86,7 @@ class ComputeEngineShapeDescriptor extends \Google\Collection
     return $this->memoryMb;
   }
   /**
-   * Number of physical cores.
-   *
-   * @param int $physicalCoreCount
+   * @param int
    */
   public function setPhysicalCoreCount($physicalCoreCount)
   {
@@ -118,9 +100,7 @@ class ComputeEngineShapeDescriptor extends \Google\Collection
     return $this->physicalCoreCount;
   }
   /**
-   * Output only. Compute Engine machine series.
-   *
-   * @param string $series
+   * @param string
    */
   public function setSeries($series)
   {
@@ -134,9 +114,7 @@ class ComputeEngineShapeDescriptor extends \Google\Collection
     return $this->series;
   }
   /**
-   * Output only. Compute Engine storage. Never empty.
-   *
-   * @param ComputeStorageDescriptor[] $storage
+   * @param ComputeStorageDescriptor[]
    */
   public function setStorage($storage)
   {

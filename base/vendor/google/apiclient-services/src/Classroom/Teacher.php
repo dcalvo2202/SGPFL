@@ -20,27 +20,18 @@ namespace Google\Service\Classroom;
 class Teacher extends \Google\Model
 {
   /**
-   * Identifier of the course. Read-only.
-   *
    * @var string
    */
   public $courseId;
   protected $profileType = UserProfile::class;
   protected $profileDataType = '';
   /**
-   * Identifier of the user. When specified as a parameter of a request, this
-   * identifier can be one of the following: * the numeric identifier for the
-   * user * the email address of the user * the string literal `"me"`,
-   * indicating the requesting user
-   *
    * @var string
    */
   public $userId;
 
   /**
-   * Identifier of the course. Read-only.
-   *
-   * @param string $courseId
+   * @param string
    */
   public function setCourseId($courseId)
   {
@@ -54,9 +45,7 @@ class Teacher extends \Google\Model
     return $this->courseId;
   }
   /**
-   * Global user information for the teacher. Read-only.
-   *
-   * @param UserProfile $profile
+   * @param UserProfile
    */
   public function setProfile(UserProfile $profile)
   {
@@ -70,12 +59,7 @@ class Teacher extends \Google\Model
     return $this->profile;
   }
   /**
-   * Identifier of the user. When specified as a parameter of a request, this
-   * identifier can be one of the following: * the numeric identifier for the
-   * user * the email address of the user * the string literal `"me"`,
-   * indicating the requesting user
-   *
-   * @param string $userId
+   * @param string
    */
   public function setUserId($userId)
   {

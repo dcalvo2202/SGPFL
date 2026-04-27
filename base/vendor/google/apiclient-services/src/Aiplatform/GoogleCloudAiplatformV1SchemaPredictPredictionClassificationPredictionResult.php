@@ -21,31 +21,20 @@ class GoogleCloudAiplatformV1SchemaPredictPredictionClassificationPredictionResu
 {
   protected $collection_key = 'ids';
   /**
-   * The Model's confidences in correctness of the predicted IDs, higher value
-   * means higher confidence. Order matches the Ids.
-   *
    * @var float[]
    */
   public $confidences;
   /**
-   * The display names of the AnnotationSpecs that had been identified, order
-   * matches the IDs.
-   *
    * @var string[]
    */
   public $displayNames;
   /**
-   * The resource IDs of the AnnotationSpecs that had been identified.
-   *
    * @var string[]
    */
   public $ids;
 
   /**
-   * The Model's confidences in correctness of the predicted IDs, higher value
-   * means higher confidence. Order matches the Ids.
-   *
-   * @param float[] $confidences
+   * @param float[]
    */
   public function setConfidences($confidences)
   {
@@ -59,10 +48,7 @@ class GoogleCloudAiplatformV1SchemaPredictPredictionClassificationPredictionResu
     return $this->confidences;
   }
   /**
-   * The display names of the AnnotationSpecs that had been identified, order
-   * matches the IDs.
-   *
-   * @param string[] $displayNames
+   * @param string[]
    */
   public function setDisplayNames($displayNames)
   {
@@ -76,9 +62,7 @@ class GoogleCloudAiplatformV1SchemaPredictPredictionClassificationPredictionResu
     return $this->displayNames;
   }
   /**
-   * The resource IDs of the AnnotationSpecs that had been identified.
-   *
-   * @param string[] $ids
+   * @param string[]
    */
   public function setIds($ids)
   {

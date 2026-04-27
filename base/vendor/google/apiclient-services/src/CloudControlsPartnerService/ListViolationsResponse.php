@@ -21,16 +21,10 @@ class ListViolationsResponse extends \Google\Collection
 {
   protected $collection_key = 'violations';
   /**
-   * A token that can be sent as `page_token` to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Workloads that could not be reached due to permission errors or any other
-   * error. Ref: https://google.aip.dev/217
-   *
    * @var string[]
    */
   public $unreachable;
@@ -38,10 +32,7 @@ class ListViolationsResponse extends \Google\Collection
   protected $violationsDataType = 'array';
 
   /**
-   * A token that can be sent as `page_token` to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -55,10 +46,7 @@ class ListViolationsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Workloads that could not be reached due to permission errors or any other
-   * error. Ref: https://google.aip.dev/217
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {
@@ -72,9 +60,7 @@ class ListViolationsResponse extends \Google\Collection
     return $this->unreachable;
   }
   /**
-   * List of violation
-   *
-   * @param Violation[] $violations
+   * @param Violation[]
    */
   public function setViolations($violations)
   {

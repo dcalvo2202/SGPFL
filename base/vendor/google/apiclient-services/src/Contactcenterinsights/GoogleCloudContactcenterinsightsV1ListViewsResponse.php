@@ -21,9 +21,6 @@ class GoogleCloudContactcenterinsightsV1ListViewsResponse extends \Google\Collec
 {
   protected $collection_key = 'views';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GoogleCloudContactcenterinsightsV1ListViewsResponse extends \Google\Collec
   protected $viewsDataType = 'array';
 
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class GoogleCloudContactcenterinsightsV1ListViewsResponse extends \Google\Collec
     return $this->nextPageToken;
   }
   /**
-   * The views that match the request.
-   *
-   * @param GoogleCloudContactcenterinsightsV1View[] $views
+   * @param GoogleCloudContactcenterinsightsV1View[]
    */
   public function setViews($views)
   {

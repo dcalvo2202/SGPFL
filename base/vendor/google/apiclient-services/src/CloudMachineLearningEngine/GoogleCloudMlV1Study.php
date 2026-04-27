@@ -20,44 +20,18 @@ namespace Google\Service\CloudMachineLearningEngine;
 class GoogleCloudMlV1Study extends \Google\Model
 {
   /**
-   * The study state is unspecified.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The study is active.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * The study is stopped due to an internal error.
-   */
-  public const STATE_INACTIVE = 'INACTIVE';
-  /**
-   * The study is done when the service exhausts the parameter search space or
-   * max_trial_count is reached.
-   */
-  public const STATE_COMPLETED = 'COMPLETED';
-  /**
-   * Output only. Time at which the study was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. A human readable reason why the Study is inactive. This should
-   * be empty if a study is ACTIVE or COMPLETED.
-   *
    * @var string
    */
   public $inactiveReason;
   /**
-   * Output only. The name of a study.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The detailed state of a study.
-   *
    * @var string
    */
   public $state;
@@ -65,9 +39,7 @@ class GoogleCloudMlV1Study extends \Google\Model
   protected $studyConfigDataType = '';
 
   /**
-   * Output only. Time at which the study was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -81,10 +53,7 @@ class GoogleCloudMlV1Study extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. A human readable reason why the Study is inactive. This should
-   * be empty if a study is ACTIVE or COMPLETED.
-   *
-   * @param string $inactiveReason
+   * @param string
    */
   public function setInactiveReason($inactiveReason)
   {
@@ -98,9 +67,7 @@ class GoogleCloudMlV1Study extends \Google\Model
     return $this->inactiveReason;
   }
   /**
-   * Output only. The name of a study.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -114,27 +81,21 @@ class GoogleCloudMlV1Study extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The detailed state of a study.
-   *
-   * Accepted values: STATE_UNSPECIFIED, ACTIVE, INACTIVE, COMPLETED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Required. Configuration of the study.
-   *
-   * @param GoogleCloudMlV1StudyConfig $studyConfig
+   * @param GoogleCloudMlV1StudyConfig
    */
   public function setStudyConfig(GoogleCloudMlV1StudyConfig $studyConfig)
   {

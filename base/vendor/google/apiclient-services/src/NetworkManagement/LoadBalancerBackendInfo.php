@@ -20,108 +20,48 @@ namespace Google\Service\NetworkManagement;
 class LoadBalancerBackendInfo extends \Google\Model
 {
   /**
-   * Configuration state unspecified. It usually means that the backend has no
-   * health check attached, or there was an unexpected configuration error
-   * preventing Connectivity tests from verifying health check configuration.
-   */
-  public const HEALTH_CHECK_FIREWALLS_CONFIG_STATE_HEALTH_CHECK_FIREWALLS_CONFIG_STATE_UNSPECIFIED = 'HEALTH_CHECK_FIREWALLS_CONFIG_STATE_UNSPECIFIED';
-  /**
-   * Firewall rules (policies) allowing health check traffic from all required
-   * IP ranges to the backend are configured.
-   */
-  public const HEALTH_CHECK_FIREWALLS_CONFIG_STATE_FIREWALLS_CONFIGURED = 'FIREWALLS_CONFIGURED';
-  /**
-   * Firewall rules (policies) allow health check traffic only from a part of
-   * required IP ranges.
-   */
-  public const HEALTH_CHECK_FIREWALLS_CONFIG_STATE_FIREWALLS_PARTIALLY_CONFIGURED = 'FIREWALLS_PARTIALLY_CONFIGURED';
-  /**
-   * Firewall rules (policies) deny health check traffic from all required IP
-   * ranges to the backend.
-   */
-  public const HEALTH_CHECK_FIREWALLS_CONFIG_STATE_FIREWALLS_NOT_CONFIGURED = 'FIREWALLS_NOT_CONFIGURED';
-  /**
-   * The network contains firewall rules of unsupported types, so Connectivity
-   * tests were not able to verify health check configuration status. Please
-   * refer to the documentation for the list of unsupported configurations:
-   * https://cloud.google.com/network-intelligence-center/docs/connectivity-
-   * tests/concepts/overview#unsupported-configs
-   */
-  public const HEALTH_CHECK_FIREWALLS_CONFIG_STATE_FIREWALLS_UNSUPPORTED = 'FIREWALLS_UNSUPPORTED';
-  /**
-   * URI of the backend bucket this backend targets (if applicable).
-   *
    * @var string
    */
   public $backendBucketUri;
   /**
-   * URI of the backend service this backend belongs to (if applicable).
-   *
    * @var string
    */
   public $backendServiceUri;
   /**
-   * Output only. Health check firewalls configuration state for the backend.
-   * This is a result of the static firewall analysis (verifying that health
-   * check traffic from required IP ranges to the backend is allowed or not).
-   * The backend might still be unhealthy even if these firewalls are
-   * configured. Please refer to the documentation for more information:
-   * https://cloud.google.com/load-balancing/docs/firewall-rules
-   *
    * @var string
    */
   public $healthCheckFirewallsConfigState;
   /**
-   * URI of the health check attached to this backend (if applicable).
-   *
    * @var string
    */
   public $healthCheckUri;
   /**
-   * URI of the instance group this backend belongs to (if applicable).
-   *
    * @var string
    */
   public $instanceGroupUri;
   /**
-   * URI of the backend instance (if applicable). Populated for instance group
-   * backends, and zonal NEG backends.
-   *
    * @var string
    */
   public $instanceUri;
   /**
-   * Display name of the backend. For example, it might be an instance name for
-   * the instance group backends, or an IP address and port for zonal network
-   * endpoint group backends.
-   *
    * @var string
    */
   public $name;
   /**
-   * URI of the network endpoint group this backend belongs to (if applicable).
-   *
    * @var string
    */
   public $networkEndpointGroupUri;
   /**
-   * PSC Google API target this PSC NEG backend targets (if applicable).
-   *
    * @var string
    */
   public $pscGoogleApiTarget;
   /**
-   * URI of the PSC service attachment this PSC NEG backend targets (if
-   * applicable).
-   *
    * @var string
    */
   public $pscServiceAttachmentUri;
 
   /**
-   * URI of the backend bucket this backend targets (if applicable).
-   *
-   * @param string $backendBucketUri
+   * @param string
    */
   public function setBackendBucketUri($backendBucketUri)
   {
@@ -135,9 +75,7 @@ class LoadBalancerBackendInfo extends \Google\Model
     return $this->backendBucketUri;
   }
   /**
-   * URI of the backend service this backend belongs to (if applicable).
-   *
-   * @param string $backendServiceUri
+   * @param string
    */
   public function setBackendServiceUri($backendServiceUri)
   {
@@ -151,34 +89,21 @@ class LoadBalancerBackendInfo extends \Google\Model
     return $this->backendServiceUri;
   }
   /**
-   * Output only. Health check firewalls configuration state for the backend.
-   * This is a result of the static firewall analysis (verifying that health
-   * check traffic from required IP ranges to the backend is allowed or not).
-   * The backend might still be unhealthy even if these firewalls are
-   * configured. Please refer to the documentation for more information:
-   * https://cloud.google.com/load-balancing/docs/firewall-rules
-   *
-   * Accepted values: HEALTH_CHECK_FIREWALLS_CONFIG_STATE_UNSPECIFIED,
-   * FIREWALLS_CONFIGURED, FIREWALLS_PARTIALLY_CONFIGURED,
-   * FIREWALLS_NOT_CONFIGURED, FIREWALLS_UNSUPPORTED
-   *
-   * @param self::HEALTH_CHECK_FIREWALLS_CONFIG_STATE_* $healthCheckFirewallsConfigState
+   * @param string
    */
   public function setHealthCheckFirewallsConfigState($healthCheckFirewallsConfigState)
   {
     $this->healthCheckFirewallsConfigState = $healthCheckFirewallsConfigState;
   }
   /**
-   * @return self::HEALTH_CHECK_FIREWALLS_CONFIG_STATE_*
+   * @return string
    */
   public function getHealthCheckFirewallsConfigState()
   {
     return $this->healthCheckFirewallsConfigState;
   }
   /**
-   * URI of the health check attached to this backend (if applicable).
-   *
-   * @param string $healthCheckUri
+   * @param string
    */
   public function setHealthCheckUri($healthCheckUri)
   {
@@ -192,9 +117,7 @@ class LoadBalancerBackendInfo extends \Google\Model
     return $this->healthCheckUri;
   }
   /**
-   * URI of the instance group this backend belongs to (if applicable).
-   *
-   * @param string $instanceGroupUri
+   * @param string
    */
   public function setInstanceGroupUri($instanceGroupUri)
   {
@@ -208,10 +131,7 @@ class LoadBalancerBackendInfo extends \Google\Model
     return $this->instanceGroupUri;
   }
   /**
-   * URI of the backend instance (if applicable). Populated for instance group
-   * backends, and zonal NEG backends.
-   *
-   * @param string $instanceUri
+   * @param string
    */
   public function setInstanceUri($instanceUri)
   {
@@ -225,11 +145,7 @@ class LoadBalancerBackendInfo extends \Google\Model
     return $this->instanceUri;
   }
   /**
-   * Display name of the backend. For example, it might be an instance name for
-   * the instance group backends, or an IP address and port for zonal network
-   * endpoint group backends.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -243,9 +159,7 @@ class LoadBalancerBackendInfo extends \Google\Model
     return $this->name;
   }
   /**
-   * URI of the network endpoint group this backend belongs to (if applicable).
-   *
-   * @param string $networkEndpointGroupUri
+   * @param string
    */
   public function setNetworkEndpointGroupUri($networkEndpointGroupUri)
   {
@@ -259,9 +173,7 @@ class LoadBalancerBackendInfo extends \Google\Model
     return $this->networkEndpointGroupUri;
   }
   /**
-   * PSC Google API target this PSC NEG backend targets (if applicable).
-   *
-   * @param string $pscGoogleApiTarget
+   * @param string
    */
   public function setPscGoogleApiTarget($pscGoogleApiTarget)
   {
@@ -275,10 +187,7 @@ class LoadBalancerBackendInfo extends \Google\Model
     return $this->pscGoogleApiTarget;
   }
   /**
-   * URI of the PSC service attachment this PSC NEG backend targets (if
-   * applicable).
-   *
-   * @param string $pscServiceAttachmentUri
+   * @param string
    */
   public function setPscServiceAttachmentUri($pscServiceAttachmentUri)
   {

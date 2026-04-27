@@ -24,11 +24,7 @@ class GoogleCloudApigeeV1SecurityActionFlag extends \Google\Collection
   protected $headersDataType = 'array';
 
   /**
-   * Optional. A list of HTTP headers to be sent to the target in case of a FLAG
-   * SecurityAction. Limit 5 headers per SecurityAction. At least one is
-   * mandatory.
-   *
-   * @param GoogleCloudApigeeV1SecurityActionHttpHeader[] $headers
+   * @param GoogleCloudApigeeV1SecurityActionHttpHeader[]
    */
   public function setHeaders($headers)
   {

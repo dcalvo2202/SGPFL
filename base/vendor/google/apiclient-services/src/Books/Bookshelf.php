@@ -20,73 +20,48 @@ namespace Google\Service\Books;
 class Bookshelf extends \Google\Model
 {
   /**
-   * Whether this bookshelf is PUBLIC or PRIVATE.
-   *
    * @var string
    */
   public $access;
   /**
-   * Created time for this bookshelf (formatted UTC timestamp with millisecond
-   * resolution).
-   *
    * @var string
    */
   public $created;
   /**
-   * Description of this bookshelf.
-   *
    * @var string
    */
   public $description;
   /**
-   * Id of this bookshelf, only unique by user.
-   *
    * @var int
    */
   public $id;
   /**
-   * Resource type for bookshelf metadata.
-   *
    * @var string
    */
   public $kind;
   /**
-   * URL to this resource.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * Title of this bookshelf.
-   *
    * @var string
    */
   public $title;
   /**
-   * Last modified time of this bookshelf (formatted UTC timestamp with
-   * millisecond resolution).
-   *
    * @var string
    */
   public $updated;
   /**
-   * Number of volumes in this bookshelf.
-   *
    * @var int
    */
   public $volumeCount;
   /**
-   * Last time a volume was added or removed from this bookshelf (formatted UTC
-   * timestamp with millisecond resolution).
-   *
    * @var string
    */
   public $volumesLastUpdated;
 
   /**
-   * Whether this bookshelf is PUBLIC or PRIVATE.
-   *
-   * @param string $access
+   * @param string
    */
   public function setAccess($access)
   {
@@ -100,10 +75,7 @@ class Bookshelf extends \Google\Model
     return $this->access;
   }
   /**
-   * Created time for this bookshelf (formatted UTC timestamp with millisecond
-   * resolution).
-   *
-   * @param string $created
+   * @param string
    */
   public function setCreated($created)
   {
@@ -117,9 +89,7 @@ class Bookshelf extends \Google\Model
     return $this->created;
   }
   /**
-   * Description of this bookshelf.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -133,9 +103,7 @@ class Bookshelf extends \Google\Model
     return $this->description;
   }
   /**
-   * Id of this bookshelf, only unique by user.
-   *
-   * @param int $id
+   * @param int
    */
   public function setId($id)
   {
@@ -149,9 +117,7 @@ class Bookshelf extends \Google\Model
     return $this->id;
   }
   /**
-   * Resource type for bookshelf metadata.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -165,9 +131,7 @@ class Bookshelf extends \Google\Model
     return $this->kind;
   }
   /**
-   * URL to this resource.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -181,9 +145,7 @@ class Bookshelf extends \Google\Model
     return $this->selfLink;
   }
   /**
-   * Title of this bookshelf.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -197,10 +159,7 @@ class Bookshelf extends \Google\Model
     return $this->title;
   }
   /**
-   * Last modified time of this bookshelf (formatted UTC timestamp with
-   * millisecond resolution).
-   *
-   * @param string $updated
+   * @param string
    */
   public function setUpdated($updated)
   {
@@ -214,9 +173,7 @@ class Bookshelf extends \Google\Model
     return $this->updated;
   }
   /**
-   * Number of volumes in this bookshelf.
-   *
-   * @param int $volumeCount
+   * @param int
    */
   public function setVolumeCount($volumeCount)
   {
@@ -230,10 +187,7 @@ class Bookshelf extends \Google\Model
     return $this->volumeCount;
   }
   /**
-   * Last time a volume was added or removed from this bookshelf (formatted UTC
-   * timestamp with millisecond resolution).
-   *
-   * @param string $volumesLastUpdated
+   * @param string
    */
   public function setVolumesLastUpdated($volumesLastUpdated)
   {

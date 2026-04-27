@@ -20,42 +20,24 @@ namespace Google\Service\Backupdr;
 class AdvancedMachineFeatures extends \Google\Model
 {
   /**
-   * Optional. Whether to enable nested virtualization or not (default is
-   * false).
-   *
    * @var bool
    */
   public $enableNestedVirtualization;
   /**
-   * Optional. Whether to enable UEFI networking for instance creation.
-   *
    * @var bool
    */
   public $enableUefiNetworking;
   /**
-   * Optional. The number of threads per physical core. To disable simultaneous
-   * multithreading (SMT) set this to 1. If unset, the maximum number of threads
-   * supported per core by the underlying processor is assumed.
-   *
    * @var int
    */
   public $threadsPerCore;
   /**
-   * Optional. The number of physical cores to expose to an instance. Multiply
-   * by the number of threads per core to compute the total number of virtual
-   * CPUs to expose to the instance. If unset, the number of cores is inferred
-   * from the instance's nominal CPU count and the underlying platform's SMT
-   * width.
-   *
    * @var int
    */
   public $visibleCoreCount;
 
   /**
-   * Optional. Whether to enable nested virtualization or not (default is
-   * false).
-   *
-   * @param bool $enableNestedVirtualization
+   * @param bool
    */
   public function setEnableNestedVirtualization($enableNestedVirtualization)
   {
@@ -69,9 +51,7 @@ class AdvancedMachineFeatures extends \Google\Model
     return $this->enableNestedVirtualization;
   }
   /**
-   * Optional. Whether to enable UEFI networking for instance creation.
-   *
-   * @param bool $enableUefiNetworking
+   * @param bool
    */
   public function setEnableUefiNetworking($enableUefiNetworking)
   {
@@ -85,11 +65,7 @@ class AdvancedMachineFeatures extends \Google\Model
     return $this->enableUefiNetworking;
   }
   /**
-   * Optional. The number of threads per physical core. To disable simultaneous
-   * multithreading (SMT) set this to 1. If unset, the maximum number of threads
-   * supported per core by the underlying processor is assumed.
-   *
-   * @param int $threadsPerCore
+   * @param int
    */
   public function setThreadsPerCore($threadsPerCore)
   {
@@ -103,13 +79,7 @@ class AdvancedMachineFeatures extends \Google\Model
     return $this->threadsPerCore;
   }
   /**
-   * Optional. The number of physical cores to expose to an instance. Multiply
-   * by the number of threads per core to compute the total number of virtual
-   * CPUs to expose to the instance. If unset, the number of cores is inferred
-   * from the instance's nominal CPU count and the underlying platform's SMT
-   * width.
-   *
-   * @param int $visibleCoreCount
+   * @param int
    */
   public function setVisibleCoreCount($visibleCoreCount)
   {

@@ -20,38 +20,24 @@ namespace Google\Service\CloudComposer;
 class ScheduledSnapshotsConfig extends \Google\Model
 {
   /**
-   * Optional. Whether scheduled snapshots creation is enabled.
-   *
    * @var bool
    */
   public $enabled;
   /**
-   * Optional. The cron expression representing the time when snapshots creation
-   * mechanism runs. This field is subject to additional validation around
-   * frequency of execution.
-   *
    * @var string
    */
   public $snapshotCreationSchedule;
   /**
-   * Optional. The Cloud Storage location for storing automatically created
-   * snapshots.
-   *
    * @var string
    */
   public $snapshotLocation;
   /**
-   * Optional. Time zone that sets the context to interpret
-   * snapshot_creation_schedule.
-   *
    * @var string
    */
   public $timeZone;
 
   /**
-   * Optional. Whether scheduled snapshots creation is enabled.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {
@@ -65,11 +51,7 @@ class ScheduledSnapshotsConfig extends \Google\Model
     return $this->enabled;
   }
   /**
-   * Optional. The cron expression representing the time when snapshots creation
-   * mechanism runs. This field is subject to additional validation around
-   * frequency of execution.
-   *
-   * @param string $snapshotCreationSchedule
+   * @param string
    */
   public function setSnapshotCreationSchedule($snapshotCreationSchedule)
   {
@@ -83,10 +65,7 @@ class ScheduledSnapshotsConfig extends \Google\Model
     return $this->snapshotCreationSchedule;
   }
   /**
-   * Optional. The Cloud Storage location for storing automatically created
-   * snapshots.
-   *
-   * @param string $snapshotLocation
+   * @param string
    */
   public function setSnapshotLocation($snapshotLocation)
   {
@@ -100,10 +79,7 @@ class ScheduledSnapshotsConfig extends \Google\Model
     return $this->snapshotLocation;
   }
   /**
-   * Optional. Time zone that sets the context to interpret
-   * snapshot_creation_schedule.
-   *
-   * @param string $timeZone
+   * @param string
    */
   public function setTimeZone($timeZone)
   {

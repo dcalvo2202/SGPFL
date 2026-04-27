@@ -20,24 +20,16 @@ namespace Google\Service\Bigquery;
 class TableConstraintsForeignKeysColumnReferences extends \Google\Model
 {
   /**
-   * Required. The column in the primary key that are referenced by the
-   * referencing_column.
-   *
    * @var string
    */
   public $referencedColumn;
   /**
-   * Required. The column that composes the foreign key.
-   *
    * @var string
    */
   public $referencingColumn;
 
   /**
-   * Required. The column in the primary key that are referenced by the
-   * referencing_column.
-   *
-   * @param string $referencedColumn
+   * @param string
    */
   public function setReferencedColumn($referencedColumn)
   {
@@ -51,9 +43,7 @@ class TableConstraintsForeignKeysColumnReferences extends \Google\Model
     return $this->referencedColumn;
   }
   /**
-   * Required. The column that composes the foreign key.
-   *
-   * @param string $referencingColumn
+   * @param string
    */
   public function setReferencingColumn($referencingColumn)
   {

@@ -21,16 +21,12 @@ class GoogleCloudDocumentaiV1beta3TrainProcessorVersionMetadataDatasetValidation
 {
   protected $collection_key = 'documentErrors';
   /**
-   * The total number of dataset errors.
-   *
    * @var int
    */
   public $datasetErrorCount;
   protected $datasetErrorsType = GoogleRpcStatus::class;
   protected $datasetErrorsDataType = 'array';
   /**
-   * The total number of document errors.
-   *
    * @var int
    */
   public $documentErrorCount;
@@ -38,9 +34,7 @@ class GoogleCloudDocumentaiV1beta3TrainProcessorVersionMetadataDatasetValidation
   protected $documentErrorsDataType = 'array';
 
   /**
-   * The total number of dataset errors.
-   *
-   * @param int $datasetErrorCount
+   * @param int
    */
   public function setDatasetErrorCount($datasetErrorCount)
   {
@@ -54,10 +48,7 @@ class GoogleCloudDocumentaiV1beta3TrainProcessorVersionMetadataDatasetValidation
     return $this->datasetErrorCount;
   }
   /**
-   * Error information for the dataset as a whole. A maximum of 10 dataset
-   * errors will be returned. A single dataset error is terminal for training.
-   *
-   * @param GoogleRpcStatus[] $datasetErrors
+   * @param GoogleRpcStatus[]
    */
   public function setDatasetErrors($datasetErrors)
   {
@@ -71,9 +62,7 @@ class GoogleCloudDocumentaiV1beta3TrainProcessorVersionMetadataDatasetValidation
     return $this->datasetErrors;
   }
   /**
-   * The total number of document errors.
-   *
-   * @param int $documentErrorCount
+   * @param int
    */
   public function setDocumentErrorCount($documentErrorCount)
   {
@@ -87,11 +76,7 @@ class GoogleCloudDocumentaiV1beta3TrainProcessorVersionMetadataDatasetValidation
     return $this->documentErrorCount;
   }
   /**
-   * Error information pertaining to specific documents. A maximum of 10
-   * document errors will be returned. Any document with errors will not be used
-   * throughout training.
-   *
-   * @param GoogleRpcStatus[] $documentErrors
+   * @param GoogleRpcStatus[]
    */
   public function setDocumentErrors($documentErrors)
   {

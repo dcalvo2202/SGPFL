@@ -20,18 +20,12 @@ namespace Google\Service\BackupforGKE;
 class EncryptionKey extends \Google\Model
 {
   /**
-   * Optional. Google Cloud KMS encryption key. Format:
-   * `projects/locations/keyRings/cryptoKeys`
-   *
    * @var string
    */
   public $gcpKmsEncryptionKey;
 
   /**
-   * Optional. Google Cloud KMS encryption key. Format:
-   * `projects/locations/keyRings/cryptoKeys`
-   *
-   * @param string $gcpKmsEncryptionKey
+   * @param string
    */
   public function setGcpKmsEncryptionKey($gcpKmsEncryptionKey)
   {

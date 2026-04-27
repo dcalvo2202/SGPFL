@@ -25,16 +25,12 @@ class BlogList extends \Google\Collection
   protected $itemsType = Blog::class;
   protected $itemsDataType = 'array';
   /**
-   * The kind of this entity. Always blogger#blogList.
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * Admin level list of blog per-user information.
-   *
-   * @param BlogUserInfo[] $blogUserInfos
+   * @param BlogUserInfo[]
    */
   public function setBlogUserInfos($blogUserInfos)
   {
@@ -48,9 +44,7 @@ class BlogList extends \Google\Collection
     return $this->blogUserInfos;
   }
   /**
-   * The list of Blogs this user has Authorship or Admin rights over.
-   *
-   * @param Blog[] $items
+   * @param Blog[]
    */
   public function setItems($items)
   {
@@ -64,9 +58,7 @@ class BlogList extends \Google\Collection
     return $this->items;
   }
   /**
-   * The kind of this entity. Always blogger#blogList.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

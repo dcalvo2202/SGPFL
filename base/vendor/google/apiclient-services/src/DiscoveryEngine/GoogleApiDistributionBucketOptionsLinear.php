@@ -20,28 +20,14 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleApiDistributionBucketOptionsLinear extends \Google\Model
 {
   /**
-   * Must be greater than 0.
-   *
    * @var int
    */
   public $numFiniteBuckets;
-  /**
-   * Lower bound of the first bucket.
-   *
-   * @var 
-   */
   public $offset;
-  /**
-   * Must be greater than 0.
-   *
-   * @var 
-   */
   public $width;
 
   /**
-   * Must be greater than 0.
-   *
-   * @param int $numFiniteBuckets
+   * @param int
    */
   public function setNumFiniteBuckets($numFiniteBuckets)
   {

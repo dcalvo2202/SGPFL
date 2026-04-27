@@ -30,9 +30,7 @@ class AsyncAnnotateFileRequest extends \Google\Collection
   protected $outputConfigDataType = '';
 
   /**
-   * Required. Requested features.
-   *
-   * @param Feature[] $features
+   * @param Feature[]
    */
   public function setFeatures($features)
   {
@@ -46,9 +44,7 @@ class AsyncAnnotateFileRequest extends \Google\Collection
     return $this->features;
   }
   /**
-   * Additional context that may accompany the image(s) in the file.
-   *
-   * @param ImageContext $imageContext
+   * @param ImageContext
    */
   public function setImageContext(ImageContext $imageContext)
   {
@@ -62,9 +58,7 @@ class AsyncAnnotateFileRequest extends \Google\Collection
     return $this->imageContext;
   }
   /**
-   * Required. Information about the input file.
-   *
-   * @param InputConfig $inputConfig
+   * @param InputConfig
    */
   public function setInputConfig(InputConfig $inputConfig)
   {
@@ -78,9 +72,7 @@ class AsyncAnnotateFileRequest extends \Google\Collection
     return $this->inputConfig;
   }
   /**
-   * Required. The desired output location and metadata (e.g. format).
-   *
-   * @param OutputConfig $outputConfig
+   * @param OutputConfig
    */
   public function setOutputConfig(OutputConfig $outputConfig)
   {

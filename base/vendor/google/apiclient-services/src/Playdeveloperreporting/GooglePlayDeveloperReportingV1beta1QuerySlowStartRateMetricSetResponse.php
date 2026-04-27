@@ -21,8 +21,6 @@ class GooglePlayDeveloperReportingV1beta1QuerySlowStartRateMetricSetResponse ext
 {
   protected $collection_key = 'rows';
   /**
-   * Continuation token to fetch the next page of data.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -30,9 +28,7 @@ class GooglePlayDeveloperReportingV1beta1QuerySlowStartRateMetricSetResponse ext
   protected $rowsDataType = 'array';
 
   /**
-   * Continuation token to fetch the next page of data.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -46,9 +42,7 @@ class GooglePlayDeveloperReportingV1beta1QuerySlowStartRateMetricSetResponse ext
     return $this->nextPageToken;
   }
   /**
-   * Returned rows of data.
-   *
-   * @param GooglePlayDeveloperReportingV1beta1MetricsRow[] $rows
+   * @param GooglePlayDeveloperReportingV1beta1MetricsRow[]
    */
   public function setRows($rows)
   {

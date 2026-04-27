@@ -21,16 +21,12 @@ class DriveDocumentIds extends \Google\Collection
 {
   protected $collection_key = 'ids';
   /**
-   * Required. A list of Drive document IDs.
-   *
    * @var string[]
    */
   public $ids;
 
   /**
-   * Required. A list of Drive document IDs.
-   *
-   * @param string[] $ids
+   * @param string[]
    */
   public function setIds($ids)
   {

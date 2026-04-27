@@ -21,44 +21,24 @@ class GoogleCloudAiplatformV1PipelineTaskExecutorDetailContainerDetail extends \
 {
   protected $collection_key = 'failedPreCachingCheckJobs';
   /**
-   * Output only. The names of the previously failed CustomJob for the main
-   * container executions. The list includes the all attempts in chronological
-   * order.
-   *
    * @var string[]
    */
   public $failedMainJobs;
   /**
-   * Output only. The names of the previously failed CustomJob for the pre-
-   * caching-check container executions. This job will be available if the
-   * PipelineJob.pipeline_spec specifies the `pre_caching_check` hook in the
-   * lifecycle events. The list includes the all attempts in chronological
-   * order.
-   *
    * @var string[]
    */
   public $failedPreCachingCheckJobs;
   /**
-   * Output only. The name of the CustomJob for the main container execution.
-   *
    * @var string
    */
   public $mainJob;
   /**
-   * Output only. The name of the CustomJob for the pre-caching-check container
-   * execution. This job will be available if the PipelineJob.pipeline_spec
-   * specifies the `pre_caching_check` hook in the lifecycle events.
-   *
    * @var string
    */
   public $preCachingCheckJob;
 
   /**
-   * Output only. The names of the previously failed CustomJob for the main
-   * container executions. The list includes the all attempts in chronological
-   * order.
-   *
-   * @param string[] $failedMainJobs
+   * @param string[]
    */
   public function setFailedMainJobs($failedMainJobs)
   {
@@ -72,13 +52,7 @@ class GoogleCloudAiplatformV1PipelineTaskExecutorDetailContainerDetail extends \
     return $this->failedMainJobs;
   }
   /**
-   * Output only. The names of the previously failed CustomJob for the pre-
-   * caching-check container executions. This job will be available if the
-   * PipelineJob.pipeline_spec specifies the `pre_caching_check` hook in the
-   * lifecycle events. The list includes the all attempts in chronological
-   * order.
-   *
-   * @param string[] $failedPreCachingCheckJobs
+   * @param string[]
    */
   public function setFailedPreCachingCheckJobs($failedPreCachingCheckJobs)
   {
@@ -92,9 +66,7 @@ class GoogleCloudAiplatformV1PipelineTaskExecutorDetailContainerDetail extends \
     return $this->failedPreCachingCheckJobs;
   }
   /**
-   * Output only. The name of the CustomJob for the main container execution.
-   *
-   * @param string $mainJob
+   * @param string
    */
   public function setMainJob($mainJob)
   {
@@ -108,11 +80,7 @@ class GoogleCloudAiplatformV1PipelineTaskExecutorDetailContainerDetail extends \
     return $this->mainJob;
   }
   /**
-   * Output only. The name of the CustomJob for the pre-caching-check container
-   * execution. This job will be available if the PipelineJob.pipeline_spec
-   * specifies the `pre_caching_check` hook in the lifecycle events.
-   *
-   * @param string $preCachingCheckJob
+   * @param string
    */
   public function setPreCachingCheckJob($preCachingCheckJob)
   {

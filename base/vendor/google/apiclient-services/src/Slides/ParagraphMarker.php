@@ -25,10 +25,7 @@ class ParagraphMarker extends \Google\Model
   protected $styleDataType = '';
 
   /**
-   * The bullet for this paragraph. If not present, the paragraph does not
-   * belong to a list.
-   *
-   * @param Bullet $bullet
+   * @param Bullet
    */
   public function setBullet(Bullet $bullet)
   {
@@ -42,9 +39,7 @@ class ParagraphMarker extends \Google\Model
     return $this->bullet;
   }
   /**
-   * The paragraph's style
-   *
-   * @param ParagraphStyle $style
+   * @param ParagraphStyle
    */
   public function setStyle(ParagraphStyle $style)
   {

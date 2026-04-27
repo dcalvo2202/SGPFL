@@ -23,7 +23,7 @@ class DiskAsyncReplicationList extends \Google\Model
   protected $asyncReplicationDiskDataType = '';
 
   /**
-   * @param DiskAsyncReplication $asyncReplicationDisk
+   * @param DiskAsyncReplication
    */
   public function setAsyncReplicationDisk(DiskAsyncReplication $asyncReplicationDisk)
   {

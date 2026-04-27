@@ -22,26 +22,16 @@ class ValidateAttestationOccurrenceRequest extends \Google\Model
   protected $attestationType = AttestationOccurrence::class;
   protected $attestationDataType = '';
   /**
-   * Required. The resource name of the Note to which the containing Occurrence
-   * is associated.
-   *
    * @var string
    */
   public $occurrenceNote;
   /**
-   * Required. The URI of the artifact (e.g. container image) that is the
-   * subject of the containing Occurrence.
-   *
    * @var string
    */
   public $occurrenceResourceUri;
 
   /**
-   * Required. An AttestationOccurrence to be checked that it can be verified by
-   * the `Attestor`. It does not have to be an existing entity in Container
-   * Analysis. It must otherwise be a valid `AttestationOccurrence`.
-   *
-   * @param AttestationOccurrence $attestation
+   * @param AttestationOccurrence
    */
   public function setAttestation(AttestationOccurrence $attestation)
   {
@@ -55,10 +45,7 @@ class ValidateAttestationOccurrenceRequest extends \Google\Model
     return $this->attestation;
   }
   /**
-   * Required. The resource name of the Note to which the containing Occurrence
-   * is associated.
-   *
-   * @param string $occurrenceNote
+   * @param string
    */
   public function setOccurrenceNote($occurrenceNote)
   {
@@ -72,10 +59,7 @@ class ValidateAttestationOccurrenceRequest extends \Google\Model
     return $this->occurrenceNote;
   }
   /**
-   * Required. The URI of the artifact (e.g. container image) that is the
-   * subject of the containing Occurrence.
-   *
-   * @param string $occurrenceResourceUri
+   * @param string
    */
   public function setOccurrenceResourceUri($occurrenceResourceUri)
   {

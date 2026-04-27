@@ -24,10 +24,7 @@ class GoogleCloudApigeeV1BatchUpdateSecurityIncidentsRequest extends \Google\Col
   protected $requestsDataType = 'array';
 
   /**
-   * Optional. Required. The request message specifying the resources to update.
-   * A maximum of 1000 can be modified in a batch.
-   *
-   * @param GoogleCloudApigeeV1UpdateSecurityIncidentRequest[] $requests
+   * @param GoogleCloudApigeeV1UpdateSecurityIncidentRequest[]
    */
   public function setRequests($requests)
   {

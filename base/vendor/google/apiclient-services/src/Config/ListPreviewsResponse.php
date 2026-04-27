@@ -21,26 +21,18 @@ class ListPreviewsResponse extends \Google\Collection
 {
   protected $collection_key = 'unreachable';
   /**
-   * Token to be supplied to the next ListPreviews request via `page_token` to
-   * obtain the next set of results.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $previewsType = Preview::class;
   protected $previewsDataType = 'array';
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * Token to be supplied to the next ListPreviews request via `page_token` to
-   * obtain the next set of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -54,9 +46,7 @@ class ListPreviewsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * List of Previews.
-   *
-   * @param Preview[] $previews
+   * @param Preview[]
    */
   public function setPreviews($previews)
   {
@@ -70,9 +60,7 @@ class ListPreviewsResponse extends \Google\Collection
     return $this->previews;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

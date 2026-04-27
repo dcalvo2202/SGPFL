@@ -21,25 +21,16 @@ class BucketIpFilterVpcNetworkSources extends \Google\Collection
 {
   protected $collection_key = 'allowedIpCidrRanges';
   /**
-   * The list of IPv4, IPv6 cidr ranges subnetworks that are allowed to access
-   * the bucket.
-   *
    * @var string[]
    */
   public $allowedIpCidrRanges;
   /**
-   * Name of the network. Format:
-   * projects/{PROJECT_ID}/global/networks/{NETWORK_NAME}
-   *
    * @var string
    */
   public $network;
 
   /**
-   * The list of IPv4, IPv6 cidr ranges subnetworks that are allowed to access
-   * the bucket.
-   *
-   * @param string[] $allowedIpCidrRanges
+   * @param string[]
    */
   public function setAllowedIpCidrRanges($allowedIpCidrRanges)
   {
@@ -53,10 +44,7 @@ class BucketIpFilterVpcNetworkSources extends \Google\Collection
     return $this->allowedIpCidrRanges;
   }
   /**
-   * Name of the network. Format:
-   * projects/{PROJECT_ID}/global/networks/{NETWORK_NAME}
-   *
-   * @param string $network
+   * @param string
    */
   public function setNetwork($network)
   {

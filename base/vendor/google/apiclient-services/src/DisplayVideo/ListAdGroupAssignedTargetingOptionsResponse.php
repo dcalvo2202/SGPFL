@@ -23,20 +23,12 @@ class ListAdGroupAssignedTargetingOptionsResponse extends \Google\Collection
   protected $assignedTargetingOptionsType = AssignedTargetingOption::class;
   protected $assignedTargetingOptionsDataType = 'array';
   /**
-   * A token identifying the next page of results. This value should be
-   * specified as the pageToken in a subsequent
-   * ListAdGroupAssignedTargetingOptionsRequest to fetch the next page of
-   * results. This token will be absent if there are no more
-   * AssignedTargetingOption resources to return.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of assigned targeting options. This list will be absent if empty.
-   *
-   * @param AssignedTargetingOption[] $assignedTargetingOptions
+   * @param AssignedTargetingOption[]
    */
   public function setAssignedTargetingOptions($assignedTargetingOptions)
   {
@@ -50,13 +42,7 @@ class ListAdGroupAssignedTargetingOptionsResponse extends \Google\Collection
     return $this->assignedTargetingOptions;
   }
   /**
-   * A token identifying the next page of results. This value should be
-   * specified as the pageToken in a subsequent
-   * ListAdGroupAssignedTargetingOptionsRequest to fetch the next page of
-   * results. This token will be absent if there are no more
-   * AssignedTargetingOption resources to return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

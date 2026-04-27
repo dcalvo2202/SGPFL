@@ -20,22 +20,16 @@ namespace Google\Service\TagManager;
 class ZoneChildContainer extends \Google\Model
 {
   /**
-   * The zone's nickname for the child container.
-   *
    * @var string
    */
   public $nickname;
   /**
-   * The child container's public id.
-   *
    * @var string
    */
   public $publicId;
 
   /**
-   * The zone's nickname for the child container.
-   *
-   * @param string $nickname
+   * @param string
    */
   public function setNickname($nickname)
   {
@@ -49,9 +43,7 @@ class ZoneChildContainer extends \Google\Model
     return $this->nickname;
   }
   /**
-   * The child container's public id.
-   *
-   * @param string $publicId
+   * @param string
    */
   public function setPublicId($publicId)
   {

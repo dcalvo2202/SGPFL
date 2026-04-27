@@ -20,18 +20,12 @@ namespace Google\Service\MyBusinessBusinessInformation;
 class Profile extends \Google\Model
 {
   /**
-   * Required. Description of the location in your own voice, not editable by
-   * anyone else.
-   *
    * @var string
    */
   public $description;
 
   /**
-   * Required. Description of the location in your own voice, not editable by
-   * anyone else.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {

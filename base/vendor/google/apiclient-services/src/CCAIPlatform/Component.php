@@ -21,25 +21,16 @@ class Component extends \Google\Collection
 {
   protected $collection_key = 'serviceAttachmentNames';
   /**
-   * Name of the component.
-   *
    * @var string
    */
   public $name;
   /**
-   * Associated service attachments. The service attachment names that will be
-   * used for sending private traffic to the CCAIP tenant project. Example
-   * service attachment name: "projects/${TENANT_PROJECT_ID}/regions/${REGION}/s
-   * erviceAttachments/ingress-default".
-   *
    * @var string[]
    */
   public $serviceAttachmentNames;
 
   /**
-   * Name of the component.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -53,12 +44,7 @@ class Component extends \Google\Collection
     return $this->name;
   }
   /**
-   * Associated service attachments. The service attachment names that will be
-   * used for sending private traffic to the CCAIP tenant project. Example
-   * service attachment name: "projects/${TENANT_PROJECT_ID}/regions/${REGION}/s
-   * erviceAttachments/ingress-default".
-   *
-   * @param string[] $serviceAttachmentNames
+   * @param string[]
    */
   public function setServiceAttachmentNames($serviceAttachmentNames)
   {

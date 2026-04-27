@@ -21,31 +21,20 @@ class MachineImageTargetDetails extends \Google\Collection
 {
   protected $collection_key = 'tags';
   /**
-   * Optional. Additional licenses to assign to the instance created by the
-   * machine image. Format: https://www.googleapis.com/compute/v1/projects/PROJE
-   * CT_ID/global/licenses/LICENSE_NAME Or https://www.googleapis.com/compute/be
-   * ta/projects/PROJECT_ID/global/licenses/LICENSE_NAME
-   *
    * @var string[]
    */
   public $additionalLicenses;
   /**
-   * Optional. An optional description of the machine image.
-   *
    * @var string
    */
   public $description;
   protected $encryptionType = Encryption::class;
   protected $encryptionDataType = '';
   /**
-   * Optional. The labels to apply to the instance created by the machine image.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Required. The name of the machine image to be created.
-   *
    * @var string
    */
   public $machineImageName;
@@ -60,36 +49,22 @@ class MachineImageTargetDetails extends \Google\Collection
   protected $shieldedInstanceConfigType = ShieldedInstanceConfig::class;
   protected $shieldedInstanceConfigDataType = '';
   /**
-   * Optional. Set to true to set the machine image storageLocations to the
-   * single region of the import job. When false, the closest multi-region is
-   * selected.
-   *
    * @var bool
    */
   public $singleRegionStorage;
   protected $skipOsAdaptationType = SkipOsAdaptation::class;
   protected $skipOsAdaptationDataType = '';
   /**
-   * Optional. The tags to apply to the instance created by the machine image.
-   *
    * @var string[]
    */
   public $tags;
   /**
-   * Required. Reference to the TargetProject resource that represents the
-   * target project in which the imported machine image will be created.
-   *
    * @var string
    */
   public $targetProject;
 
   /**
-   * Optional. Additional licenses to assign to the instance created by the
-   * machine image. Format: https://www.googleapis.com/compute/v1/projects/PROJE
-   * CT_ID/global/licenses/LICENSE_NAME Or https://www.googleapis.com/compute/be
-   * ta/projects/PROJECT_ID/global/licenses/LICENSE_NAME
-   *
-   * @param string[] $additionalLicenses
+   * @param string[]
    */
   public function setAdditionalLicenses($additionalLicenses)
   {
@@ -103,9 +78,7 @@ class MachineImageTargetDetails extends \Google\Collection
     return $this->additionalLicenses;
   }
   /**
-   * Optional. An optional description of the machine image.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -119,11 +92,7 @@ class MachineImageTargetDetails extends \Google\Collection
     return $this->description;
   }
   /**
-   * Immutable. The encryption to apply to the machine image. If the Image
-   * Import resource has an encryption, this field must be set to the same
-   * encryption key.
-   *
-   * @param Encryption $encryption
+   * @param Encryption
    */
   public function setEncryption(Encryption $encryption)
   {
@@ -137,9 +106,7 @@ class MachineImageTargetDetails extends \Google\Collection
     return $this->encryption;
   }
   /**
-   * Optional. The labels to apply to the instance created by the machine image.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -153,9 +120,7 @@ class MachineImageTargetDetails extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Required. The name of the machine image to be created.
-   *
-   * @param string $machineImageName
+   * @param string
    */
   public function setMachineImageName($machineImageName)
   {
@@ -169,10 +134,7 @@ class MachineImageTargetDetails extends \Google\Collection
     return $this->machineImageName;
   }
   /**
-   * Optional. Parameters overriding decisions based on the source machine image
-   * configurations.
-   *
-   * @param MachineImageParametersOverrides $machineImageParametersOverrides
+   * @param MachineImageParametersOverrides
    */
   public function setMachineImageParametersOverrides(MachineImageParametersOverrides $machineImageParametersOverrides)
   {
@@ -186,11 +148,7 @@ class MachineImageTargetDetails extends \Google\Collection
     return $this->machineImageParametersOverrides;
   }
   /**
-   * Optional. The network interfaces to create with the instance created by the
-   * machine image. Internal and external IP addresses, and network tiers are
-   * ignored for machine image import.
-   *
-   * @param NetworkInterface[] $networkInterfaces
+   * @param NetworkInterface[]
    */
   public function setNetworkInterfaces($networkInterfaces)
   {
@@ -204,9 +162,7 @@ class MachineImageTargetDetails extends \Google\Collection
     return $this->networkInterfaces;
   }
   /**
-   * Optional. Use to set the parameters relevant for the OS adaptation process.
-   *
-   * @param ImageImportOsAdaptationParameters $osAdaptationParameters
+   * @param ImageImportOsAdaptationParameters
    */
   public function setOsAdaptationParameters(ImageImportOsAdaptationParameters $osAdaptationParameters)
   {
@@ -220,10 +176,7 @@ class MachineImageTargetDetails extends \Google\Collection
     return $this->osAdaptationParameters;
   }
   /**
-   * Optional. The service account to assign to the instance created by the
-   * machine image.
-   *
-   * @param ServiceAccount $serviceAccount
+   * @param ServiceAccount
    */
   public function setServiceAccount(ServiceAccount $serviceAccount)
   {
@@ -237,9 +190,7 @@ class MachineImageTargetDetails extends \Google\Collection
     return $this->serviceAccount;
   }
   /**
-   * Optional. Shielded instance configuration.
-   *
-   * @param ShieldedInstanceConfig $shieldedInstanceConfig
+   * @param ShieldedInstanceConfig
    */
   public function setShieldedInstanceConfig(ShieldedInstanceConfig $shieldedInstanceConfig)
   {
@@ -253,11 +204,7 @@ class MachineImageTargetDetails extends \Google\Collection
     return $this->shieldedInstanceConfig;
   }
   /**
-   * Optional. Set to true to set the machine image storageLocations to the
-   * single region of the import job. When false, the closest multi-region is
-   * selected.
-   *
-   * @param bool $singleRegionStorage
+   * @param bool
    */
   public function setSingleRegionStorage($singleRegionStorage)
   {
@@ -271,9 +218,7 @@ class MachineImageTargetDetails extends \Google\Collection
     return $this->singleRegionStorage;
   }
   /**
-   * Optional. Use to skip OS adaptation process.
-   *
-   * @param SkipOsAdaptation $skipOsAdaptation
+   * @param SkipOsAdaptation
    */
   public function setSkipOsAdaptation(SkipOsAdaptation $skipOsAdaptation)
   {
@@ -287,9 +232,7 @@ class MachineImageTargetDetails extends \Google\Collection
     return $this->skipOsAdaptation;
   }
   /**
-   * Optional. The tags to apply to the instance created by the machine image.
-   *
-   * @param string[] $tags
+   * @param string[]
    */
   public function setTags($tags)
   {
@@ -303,10 +246,7 @@ class MachineImageTargetDetails extends \Google\Collection
     return $this->tags;
   }
   /**
-   * Required. Reference to the TargetProject resource that represents the
-   * target project in which the imported machine image will be created.
-   *
-   * @param string $targetProject
+   * @param string
    */
   public function setTargetProject($targetProject)
   {

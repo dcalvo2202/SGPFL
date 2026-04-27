@@ -24,9 +24,7 @@ class DeviceIpBlockCatalog extends \Google\Collection
   protected $ipBlocksDataType = 'array';
 
   /**
-   * The device IP blocks used by Firebase Test Lab
-   *
-   * @param DeviceIpBlock[] $ipBlocks
+   * @param DeviceIpBlock[]
    */
   public function setIpBlocks($ipBlocks)
   {

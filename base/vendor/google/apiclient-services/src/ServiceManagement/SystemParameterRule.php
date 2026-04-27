@@ -23,20 +23,12 @@ class SystemParameterRule extends \Google\Collection
   protected $parametersType = SystemParameter::class;
   protected $parametersDataType = 'array';
   /**
-   * Selects the methods to which this rule applies. Use '*' to indicate all
-   * methods in all APIs. Refer to selector for syntax details.
-   *
    * @var string
    */
   public $selector;
 
   /**
-   * Define parameters. Multiple names may be defined for a parameter. For a
-   * given method call, only one of them should be used. If multiple names are
-   * used the behavior is implementation-dependent. If none of the specified
-   * names are present the behavior is parameter-dependent.
-   *
-   * @param SystemParameter[] $parameters
+   * @param SystemParameter[]
    */
   public function setParameters($parameters)
   {
@@ -50,10 +42,7 @@ class SystemParameterRule extends \Google\Collection
     return $this->parameters;
   }
   /**
-   * Selects the methods to which this rule applies. Use '*' to indicate all
-   * methods in all APIs. Refer to selector for syntax details.
-   *
-   * @param string $selector
+   * @param string
    */
   public function setSelector($selector)
   {

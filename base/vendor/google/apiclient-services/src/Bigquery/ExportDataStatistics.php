@@ -20,25 +20,16 @@ namespace Google\Service\Bigquery;
 class ExportDataStatistics extends \Google\Model
 {
   /**
-   * Number of destination files generated in case of EXPORT DATA statement
-   * only.
-   *
    * @var string
    */
   public $fileCount;
   /**
-   * [Alpha] Number of destination rows generated in case of EXPORT DATA
-   * statement only.
-   *
    * @var string
    */
   public $rowCount;
 
   /**
-   * Number of destination files generated in case of EXPORT DATA statement
-   * only.
-   *
-   * @param string $fileCount
+   * @param string
    */
   public function setFileCount($fileCount)
   {
@@ -52,10 +43,7 @@ class ExportDataStatistics extends \Google\Model
     return $this->fileCount;
   }
   /**
-   * [Alpha] Number of destination rows generated in case of EXPORT DATA
-   * statement only.
-   *
-   * @param string $rowCount
+   * @param string
    */
   public function setRowCount($rowCount)
   {

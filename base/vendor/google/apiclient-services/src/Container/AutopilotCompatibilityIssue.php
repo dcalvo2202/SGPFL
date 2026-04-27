@@ -19,68 +19,34 @@ namespace Google\Service\Container;
 
 class AutopilotCompatibilityIssue extends \Google\Collection
 {
-  /**
-   * Default value, should not be used.
-   */
-  public const INCOMPATIBILITY_TYPE_UNSPECIFIED = 'UNSPECIFIED';
-  /**
-   * Indicates that the issue is a known incompatibility between the cluster and
-   * Autopilot mode.
-   */
-  public const INCOMPATIBILITY_TYPE_INCOMPATIBILITY = 'INCOMPATIBILITY';
-  /**
-   * Indicates the issue is an incompatibility if customers take no further
-   * action to resolve.
-   */
-  public const INCOMPATIBILITY_TYPE_ADDITIONAL_CONFIG_REQUIRED = 'ADDITIONAL_CONFIG_REQUIRED';
-  /**
-   * Indicates the issue is not an incompatibility, but depending on the
-   * workloads business logic, there is a potential that they won't work on
-   * Autopilot.
-   */
-  public const INCOMPATIBILITY_TYPE_PASSED_WITH_OPTIONAL_CONFIG = 'PASSED_WITH_OPTIONAL_CONFIG';
   protected $collection_key = 'subjects';
   /**
-   * The constraint type of the issue.
-   *
    * @var string
    */
   public $constraintType;
   /**
-   * The description of the issue.
-   *
    * @var string
    */
   public $description;
   /**
-   * A URL to a public documentation, which addresses resolving this issue.
-   *
    * @var string
    */
   public $documentationUrl;
   /**
-   * The incompatibility type of this issue.
-   *
    * @var string
    */
   public $incompatibilityType;
   /**
-   * The last time when this issue was observed.
-   *
    * @var string
    */
   public $lastObservation;
   /**
-   * The name of the resources which are subject to this issue.
-   *
    * @var string[]
    */
   public $subjects;
 
   /**
-   * The constraint type of the issue.
-   *
-   * @param string $constraintType
+   * @param string
    */
   public function setConstraintType($constraintType)
   {
@@ -94,9 +60,7 @@ class AutopilotCompatibilityIssue extends \Google\Collection
     return $this->constraintType;
   }
   /**
-   * The description of the issue.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -110,9 +74,7 @@ class AutopilotCompatibilityIssue extends \Google\Collection
     return $this->description;
   }
   /**
-   * A URL to a public documentation, which addresses resolving this issue.
-   *
-   * @param string $documentationUrl
+   * @param string
    */
   public function setDocumentationUrl($documentationUrl)
   {
@@ -126,28 +88,21 @@ class AutopilotCompatibilityIssue extends \Google\Collection
     return $this->documentationUrl;
   }
   /**
-   * The incompatibility type of this issue.
-   *
-   * Accepted values: UNSPECIFIED, INCOMPATIBILITY, ADDITIONAL_CONFIG_REQUIRED,
-   * PASSED_WITH_OPTIONAL_CONFIG
-   *
-   * @param self::INCOMPATIBILITY_TYPE_* $incompatibilityType
+   * @param string
    */
   public function setIncompatibilityType($incompatibilityType)
   {
     $this->incompatibilityType = $incompatibilityType;
   }
   /**
-   * @return self::INCOMPATIBILITY_TYPE_*
+   * @return string
    */
   public function getIncompatibilityType()
   {
     return $this->incompatibilityType;
   }
   /**
-   * The last time when this issue was observed.
-   *
-   * @param string $lastObservation
+   * @param string
    */
   public function setLastObservation($lastObservation)
   {
@@ -161,9 +116,7 @@ class AutopilotCompatibilityIssue extends \Google\Collection
     return $this->lastObservation;
   }
   /**
-   * The name of the resources which are subject to this issue.
-   *
-   * @param string[] $subjects
+   * @param string[]
    */
   public function setSubjects($subjects)
   {

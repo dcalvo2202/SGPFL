@@ -27,9 +27,7 @@ class SimulatedResult extends \Google\Model
   protected $noViolationDataType = '';
 
   /**
-   * Error encountered during the test.
-   *
-   * @param Status $error
+   * @param Status
    */
   public function setError(Status $error)
   {
@@ -43,10 +41,7 @@ class SimulatedResult extends \Google\Model
     return $this->error;
   }
   /**
-   * Finding that would be published for the test case, if a violation is
-   * detected.
-   *
-   * @param Finding $finding
+   * @param Finding
    */
   public function setFinding(Finding $finding)
   {
@@ -60,9 +55,7 @@ class SimulatedResult extends \Google\Model
     return $this->finding;
   }
   /**
-   * Indicates that the test case does not trigger any violation.
-   *
-   * @param SecuritycenterEmpty $noViolation
+   * @param SecuritycenterEmpty
    */
   public function setNoViolation(SecuritycenterEmpty $noViolation)
   {

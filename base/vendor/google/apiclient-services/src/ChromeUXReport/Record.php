@@ -27,10 +27,7 @@ class Record extends \Google\Model
   protected $metricsDataType = 'map';
 
   /**
-   * The collection period indicates when the data reflected in this record was
-   * collected.
-   *
-   * @param CollectionPeriod $collectionPeriod
+   * @param CollectionPeriod
    */
   public function setCollectionPeriod(CollectionPeriod $collectionPeriod)
   {
@@ -44,10 +41,7 @@ class Record extends \Google\Model
     return $this->collectionPeriod;
   }
   /**
-   * Key defines all of the unique querying parameters needed to look up a user
-   * experience record.
-   *
-   * @param Key $key
+   * @param Key
    */
   public function setKey(Key $key)
   {
@@ -61,13 +55,7 @@ class Record extends \Google\Model
     return $this->key;
   }
   /**
-   * Metrics is the map of user experience data available for the record defined
-   * in the key field. Metrics are keyed on the metric name. Allowed key values:
-   * ["first_contentful_paint", "first_input_delay", "largest_contentful_paint",
-   * "cumulative_layout_shift", "experimental_time_to_first_byte",
-   * "experimental_interaction_to_next_paint"]
-   *
-   * @param Metric[] $metrics
+   * @param Metric[]
    */
   public function setMetrics($metrics)
   {

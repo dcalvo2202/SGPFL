@@ -19,80 +19,32 @@ namespace Google\Service\Dataflow;
 
 class TransformSummary extends \Google\Collection
 {
-  /**
-   * Unrecognized transform type.
-   */
-  public const KIND_UNKNOWN_KIND = 'UNKNOWN_KIND';
-  /**
-   * ParDo transform.
-   */
-  public const KIND_PAR_DO_KIND = 'PAR_DO_KIND';
-  /**
-   * Group By Key transform.
-   */
-  public const KIND_GROUP_BY_KEY_KIND = 'GROUP_BY_KEY_KIND';
-  /**
-   * Flatten transform.
-   */
-  public const KIND_FLATTEN_KIND = 'FLATTEN_KIND';
-  /**
-   * Read transform.
-   */
-  public const KIND_READ_KIND = 'READ_KIND';
-  /**
-   * Write transform.
-   */
-  public const KIND_WRITE_KIND = 'WRITE_KIND';
-  /**
-   * Constructs from a constant value, such as with Create.of.
-   */
-  public const KIND_CONSTANT_KIND = 'CONSTANT_KIND';
-  /**
-   * Creates a Singleton view of a collection.
-   */
-  public const KIND_SINGLETON_KIND = 'SINGLETON_KIND';
-  /**
-   * Opening or closing a shuffle session, often as part of a GroupByKey.
-   */
-  public const KIND_SHUFFLE_KIND = 'SHUFFLE_KIND';
   protected $collection_key = 'outputCollectionName';
   protected $displayDataType = DisplayData::class;
   protected $displayDataDataType = 'array';
   /**
-   * SDK generated id of this transform instance.
-   *
    * @var string
    */
   public $id;
   /**
-   * User names for all collection inputs to this transform.
-   *
    * @var string[]
    */
   public $inputCollectionName;
   /**
-   * Type of transform.
-   *
    * @var string
    */
   public $kind;
   /**
-   * User provided name for this transform instance.
-   *
    * @var string
    */
   public $name;
   /**
-   * User names for all collection outputs to this transform.
-   *
    * @var string[]
    */
   public $outputCollectionName;
 
   /**
-   * Transform-specific display data.
-   *
-   * @param DisplayData[] $displayData
+   * @param DisplayData[]
    */
   public function setDisplayData($displayData)
   {
@@ -106,9 +58,7 @@ class TransformSummary extends \Google\Collection
     return $this->displayData;
   }
   /**
-   * SDK generated id of this transform instance.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -122,9 +72,7 @@ class TransformSummary extends \Google\Collection
     return $this->id;
   }
   /**
-   * User names for all collection inputs to this transform.
-   *
-   * @param string[] $inputCollectionName
+   * @param string[]
    */
   public function setInputCollectionName($inputCollectionName)
   {
@@ -138,29 +86,21 @@ class TransformSummary extends \Google\Collection
     return $this->inputCollectionName;
   }
   /**
-   * Type of transform.
-   *
-   * Accepted values: UNKNOWN_KIND, PAR_DO_KIND, GROUP_BY_KEY_KIND,
-   * FLATTEN_KIND, READ_KIND, WRITE_KIND, CONSTANT_KIND, SINGLETON_KIND,
-   * SHUFFLE_KIND
-   *
-   * @param self::KIND_* $kind
+   * @param string
    */
   public function setKind($kind)
   {
     $this->kind = $kind;
   }
   /**
-   * @return self::KIND_*
+   * @return string
    */
   public function getKind()
   {
     return $this->kind;
   }
   /**
-   * User provided name for this transform instance.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -174,9 +114,7 @@ class TransformSummary extends \Google\Collection
     return $this->name;
   }
   /**
-   * User names for all collection outputs to this transform.
-   *
-   * @param string[] $outputCollectionName
+   * @param string[]
    */
   public function setOutputCollectionName($outputCollectionName)
   {

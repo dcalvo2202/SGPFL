@@ -20,37 +20,24 @@ namespace Google\Service\Contentwarehouse;
 class GoogleCloudDocumentaiV1DocumentPageMatrix extends \Google\Model
 {
   /**
-   * Number of columns in the matrix.
-   *
    * @var int
    */
   public $cols;
   /**
-   * The matrix data.
-   *
    * @var string
    */
   public $data;
   /**
-   * Number of rows in the matrix.
-   *
    * @var int
    */
   public $rows;
   /**
-   * This encodes information about what data type the matrix uses. For example,
-   * 0 (CV_8U) is an unsigned 8-bit image. For the full list of OpenCV primitive
-   * data types, please refer to
-   * https://docs.opencv.org/4.3.0/d1/d1b/group__core__hal__interface.html
-   *
    * @var int
    */
   public $type;
 
   /**
-   * Number of columns in the matrix.
-   *
-   * @param int $cols
+   * @param int
    */
   public function setCols($cols)
   {
@@ -64,9 +51,7 @@ class GoogleCloudDocumentaiV1DocumentPageMatrix extends \Google\Model
     return $this->cols;
   }
   /**
-   * The matrix data.
-   *
-   * @param string $data
+   * @param string
    */
   public function setData($data)
   {
@@ -80,9 +65,7 @@ class GoogleCloudDocumentaiV1DocumentPageMatrix extends \Google\Model
     return $this->data;
   }
   /**
-   * Number of rows in the matrix.
-   *
-   * @param int $rows
+   * @param int
    */
   public function setRows($rows)
   {
@@ -96,12 +79,7 @@ class GoogleCloudDocumentaiV1DocumentPageMatrix extends \Google\Model
     return $this->rows;
   }
   /**
-   * This encodes information about what data type the matrix uses. For example,
-   * 0 (CV_8U) is an unsigned 8-bit image. For the full list of OpenCV primitive
-   * data types, please refer to
-   * https://docs.opencv.org/4.3.0/d1/d1b/group__core__hal__interface.html
-   *
-   * @param int $type
+   * @param int
    */
   public function setType($type)
   {

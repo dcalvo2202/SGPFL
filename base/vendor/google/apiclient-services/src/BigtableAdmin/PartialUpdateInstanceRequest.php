@@ -22,17 +22,12 @@ class PartialUpdateInstanceRequest extends \Google\Model
   protected $instanceType = Instance::class;
   protected $instanceDataType = '';
   /**
-   * Required. The subset of Instance fields which should be replaced. Must be
-   * explicitly set.
-   *
    * @var string
    */
   public $updateMask;
 
   /**
-   * Required. The Instance which will (partially) replace the current value.
-   *
-   * @param Instance $instance
+   * @param Instance
    */
   public function setInstance(Instance $instance)
   {
@@ -46,10 +41,7 @@ class PartialUpdateInstanceRequest extends \Google\Model
     return $this->instance;
   }
   /**
-   * Required. The subset of Instance fields which should be replaced. Must be
-   * explicitly set.
-   *
-   * @param string $updateMask
+   * @param string
    */
   public function setUpdateMask($updateMask)
   {

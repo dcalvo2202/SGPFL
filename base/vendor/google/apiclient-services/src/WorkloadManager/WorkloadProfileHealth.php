@@ -19,46 +19,20 @@ namespace Google\Service\WorkloadManager;
 
 class WorkloadProfileHealth extends \Google\Collection
 {
+  protected $collection_key = 'componentHealthes';
   /**
-   * Unspecified.
-   */
-  public const STATE_HEALTH_STATE_UNSPECIFIED = 'HEALTH_STATE_UNSPECIFIED';
-  /**
-   * Healthy workload.
-   */
-  public const STATE_HEALTHY = 'HEALTHY';
-  /**
-   * Unhealthy workload.
-   */
-  public const STATE_UNHEALTHY = 'UNHEALTHY';
-  /**
-   * Has critical issues.
-   */
-  public const STATE_CRITICAL = 'CRITICAL';
-  /**
-   * Unsupported.
-   */
-  public const STATE_UNSUPPORTED = 'UNSUPPORTED';
-  protected $collection_key = 'componentsHealth';
-  /**
-   * The time when the health check was performed.
-   *
    * @var string
    */
   public $checkTime;
-  protected $componentsHealthType = ComponentHealth::class;
-  protected $componentsHealthDataType = 'array';
+  protected $componentHealthesType = ComponentHealth::class;
+  protected $componentHealthesDataType = 'array';
   /**
-   * Output only. The health state of the workload.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * The time when the health check was performed.
-   *
-   * @param string $checkTime
+   * @param string
    */
   public function setCheckTime($checkTime)
   {
@@ -72,35 +46,28 @@ class WorkloadProfileHealth extends \Google\Collection
     return $this->checkTime;
   }
   /**
-   * The detailed condition reports of each component.
-   *
-   * @param ComponentHealth[] $componentsHealth
+   * @param ComponentHealth[]
    */
-  public function setComponentsHealth($componentsHealth)
+  public function setComponentHealthes($componentHealthes)
   {
-    $this->componentsHealth = $componentsHealth;
+    $this->componentHealthes = $componentHealthes;
   }
   /**
    * @return ComponentHealth[]
    */
-  public function getComponentsHealth()
+  public function getComponentHealthes()
   {
-    return $this->componentsHealth;
+    return $this->componentHealthes;
   }
   /**
-   * Output only. The health state of the workload.
-   *
-   * Accepted values: HEALTH_STATE_UNSPECIFIED, HEALTHY, UNHEALTHY, CRITICAL,
-   * UNSUPPORTED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

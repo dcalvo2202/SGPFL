@@ -20,22 +20,12 @@ namespace Google\Service\Datastore;
 class GoogleDatastoreAdminV1ExportEntitiesResponse extends \Google\Model
 {
   /**
-   * Location of the output metadata file. This can be used to begin an import
-   * into Cloud Datastore (this project or another project). See
-   * google.datastore.admin.v1.ImportEntitiesRequest.input_url. Only present if
-   * the operation completed successfully.
-   *
    * @var string
    */
   public $outputUrl;
 
   /**
-   * Location of the output metadata file. This can be used to begin an import
-   * into Cloud Datastore (this project or another project). See
-   * google.datastore.admin.v1.ImportEntitiesRequest.input_url. Only present if
-   * the operation completed successfully.
-   *
-   * @param string $outputUrl
+   * @param string
    */
   public function setOutputUrl($outputUrl)
   {

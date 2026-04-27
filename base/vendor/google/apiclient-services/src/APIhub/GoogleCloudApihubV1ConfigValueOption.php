@@ -20,28 +20,20 @@ namespace Google\Service\APIhub;
 class GoogleCloudApihubV1ConfigValueOption extends \Google\Model
 {
   /**
-   * Optional. Description of the option.
-   *
    * @var string
    */
   public $description;
   /**
-   * Required. Display name of the option.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Required. Id of the option.
-   *
    * @var string
    */
   public $id;
 
   /**
-   * Optional. Description of the option.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -55,9 +47,7 @@ class GoogleCloudApihubV1ConfigValueOption extends \Google\Model
     return $this->description;
   }
   /**
-   * Required. Display name of the option.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -71,9 +61,7 @@ class GoogleCloudApihubV1ConfigValueOption extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Required. Id of the option.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {

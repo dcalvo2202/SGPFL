@@ -19,11 +19,6 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowV2IntentMessageBrowseCarouselCard extends \Google\Collection
 {
-  public const IMAGE_DISPLAY_OPTIONS_IMAGE_DISPLAY_OPTIONS_UNSPECIFIED = 'IMAGE_DISPLAY_OPTIONS_UNSPECIFIED';
-  public const IMAGE_DISPLAY_OPTIONS_GRAY = 'GRAY';
-  public const IMAGE_DISPLAY_OPTIONS_WHITE = 'WHITE';
-  public const IMAGE_DISPLAY_OPTIONS_CROPPED = 'CROPPED';
-  public const IMAGE_DISPLAY_OPTIONS_BLURRED_BACKGROUND = 'BLURRED_BACKGROUND';
   protected $collection_key = 'items';
   /**
    * @var string
@@ -33,21 +28,21 @@ class GoogleCloudDialogflowV2IntentMessageBrowseCarouselCard extends \Google\Col
   protected $itemsDataType = 'array';
 
   /**
-   * @param self::IMAGE_DISPLAY_OPTIONS_* $imageDisplayOptions
+   * @param string
    */
   public function setImageDisplayOptions($imageDisplayOptions)
   {
     $this->imageDisplayOptions = $imageDisplayOptions;
   }
   /**
-   * @return self::IMAGE_DISPLAY_OPTIONS_*
+   * @return string
    */
   public function getImageDisplayOptions()
   {
     return $this->imageDisplayOptions;
   }
   /**
-   * @param GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardItem[] $items
+   * @param GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardItem[]
    */
   public function setItems($items)
   {

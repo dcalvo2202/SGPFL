@@ -21,32 +21,22 @@ class GoogleCloudContentwarehouseV1RuleSet extends \Google\Collection
 {
   protected $collection_key = 'rules';
   /**
-   * Short description of the rule-set.
-   *
    * @var string
    */
   public $description;
   /**
-   * The resource name of the rule set. Managed internally. Format:
-   * projects/{project_number}/locations/{location}/ruleSet/{rule_set_id}. The
-   * name is ignored when creating a rule set.
-   *
    * @var string
    */
   public $name;
   protected $rulesType = GoogleCloudContentwarehouseV1Rule::class;
   protected $rulesDataType = 'array';
   /**
-   * Source of the rules i.e., customer name.
-   *
    * @var string
    */
   public $source;
 
   /**
-   * Short description of the rule-set.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -60,11 +50,7 @@ class GoogleCloudContentwarehouseV1RuleSet extends \Google\Collection
     return $this->description;
   }
   /**
-   * The resource name of the rule set. Managed internally. Format:
-   * projects/{project_number}/locations/{location}/ruleSet/{rule_set_id}. The
-   * name is ignored when creating a rule set.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -78,9 +64,7 @@ class GoogleCloudContentwarehouseV1RuleSet extends \Google\Collection
     return $this->name;
   }
   /**
-   * List of rules given by the customer.
-   *
-   * @param GoogleCloudContentwarehouseV1Rule[] $rules
+   * @param GoogleCloudContentwarehouseV1Rule[]
    */
   public function setRules($rules)
   {
@@ -94,9 +78,7 @@ class GoogleCloudContentwarehouseV1RuleSet extends \Google\Collection
     return $this->rules;
   }
   /**
-   * Source of the rules i.e., customer name.
-   *
-   * @param string $source
+   * @param string
    */
   public function setSource($source)
   {

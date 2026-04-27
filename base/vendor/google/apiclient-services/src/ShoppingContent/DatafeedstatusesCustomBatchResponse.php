@@ -23,17 +23,12 @@ class DatafeedstatusesCustomBatchResponse extends \Google\Collection
   protected $entriesType = DatafeedstatusesCustomBatchResponseEntry::class;
   protected $entriesDataType = 'array';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#datafeedstatusesCustomBatchResponse`".
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * The result of the execution of the batch requests.
-   *
-   * @param DatafeedstatusesCustomBatchResponseEntry[] $entries
+   * @param DatafeedstatusesCustomBatchResponseEntry[]
    */
   public function setEntries($entries)
   {
@@ -47,10 +42,7 @@ class DatafeedstatusesCustomBatchResponse extends \Google\Collection
     return $this->entries;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#datafeedstatusesCustomBatchResponse`".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

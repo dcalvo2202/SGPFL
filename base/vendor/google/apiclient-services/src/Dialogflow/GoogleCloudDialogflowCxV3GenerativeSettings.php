@@ -37,7 +37,7 @@ class GoogleCloudDialogflowCxV3GenerativeSettings extends \Google\Model
   public $name;
 
   /**
-   * @param GoogleCloudDialogflowCxV3GenerativeSettingsFallbackSettings $fallbackSettings
+   * @param GoogleCloudDialogflowCxV3GenerativeSettingsFallbackSettings
    */
   public function setFallbackSettings(GoogleCloudDialogflowCxV3GenerativeSettingsFallbackSettings $fallbackSettings)
   {
@@ -51,7 +51,7 @@ class GoogleCloudDialogflowCxV3GenerativeSettings extends \Google\Model
     return $this->fallbackSettings;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3SafetySettings $generativeSafetySettings
+   * @param GoogleCloudDialogflowCxV3SafetySettings
    */
   public function setGenerativeSafetySettings(GoogleCloudDialogflowCxV3SafetySettings $generativeSafetySettings)
   {
@@ -65,7 +65,7 @@ class GoogleCloudDialogflowCxV3GenerativeSettings extends \Google\Model
     return $this->generativeSafetySettings;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3GenerativeSettingsKnowledgeConnectorSettings $knowledgeConnectorSettings
+   * @param GoogleCloudDialogflowCxV3GenerativeSettingsKnowledgeConnectorSettings
    */
   public function setKnowledgeConnectorSettings(GoogleCloudDialogflowCxV3GenerativeSettingsKnowledgeConnectorSettings $knowledgeConnectorSettings)
   {
@@ -79,7 +79,7 @@ class GoogleCloudDialogflowCxV3GenerativeSettings extends \Google\Model
     return $this->knowledgeConnectorSettings;
   }
   /**
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {
@@ -93,7 +93,7 @@ class GoogleCloudDialogflowCxV3GenerativeSettings extends \Google\Model
     return $this->languageCode;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3LlmModelSettings $llmModelSettings
+   * @param GoogleCloudDialogflowCxV3LlmModelSettings
    */
   public function setLlmModelSettings(GoogleCloudDialogflowCxV3LlmModelSettings $llmModelSettings)
   {
@@ -107,7 +107,7 @@ class GoogleCloudDialogflowCxV3GenerativeSettings extends \Google\Model
     return $this->llmModelSettings;
   }
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

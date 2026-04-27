@@ -20,16 +20,12 @@ namespace Google\Service\Blogger;
 class PostBlog extends \Google\Model
 {
   /**
-   * The identifier of the Blog that contains this Post.
-   *
    * @var string
    */
   public $id;
 
   /**
-   * The identifier of the Blog that contains this Post.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {

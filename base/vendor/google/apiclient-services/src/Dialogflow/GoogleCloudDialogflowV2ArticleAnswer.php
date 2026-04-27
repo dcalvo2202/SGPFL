@@ -46,7 +46,7 @@ class GoogleCloudDialogflowV2ArticleAnswer extends \Google\Collection
   public $uri;
 
   /**
-   * @param string $answerRecord
+   * @param string
    */
   public function setAnswerRecord($answerRecord)
   {
@@ -60,7 +60,7 @@ class GoogleCloudDialogflowV2ArticleAnswer extends \Google\Collection
     return $this->answerRecord;
   }
   /**
-   * @param float $confidence
+   * @param float
    */
   public function setConfidence($confidence)
   {
@@ -74,7 +74,7 @@ class GoogleCloudDialogflowV2ArticleAnswer extends \Google\Collection
     return $this->confidence;
   }
   /**
-   * @param string[] $metadata
+   * @param string[]
    */
   public function setMetadata($metadata)
   {
@@ -88,7 +88,7 @@ class GoogleCloudDialogflowV2ArticleAnswer extends \Google\Collection
     return $this->metadata;
   }
   /**
-   * @param string[] $snippets
+   * @param string[]
    */
   public function setSnippets($snippets)
   {
@@ -102,7 +102,7 @@ class GoogleCloudDialogflowV2ArticleAnswer extends \Google\Collection
     return $this->snippets;
   }
   /**
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -116,7 +116,7 @@ class GoogleCloudDialogflowV2ArticleAnswer extends \Google\Collection
     return $this->title;
   }
   /**
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

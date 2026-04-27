@@ -25,7 +25,7 @@ class GoogleCloudDialogflowCxV3AgentGenAppBuilderSettings extends \Google\Model
   public $engine;
 
   /**
-   * @param string $engine
+   * @param string
    */
   public function setEngine($engine)
   {

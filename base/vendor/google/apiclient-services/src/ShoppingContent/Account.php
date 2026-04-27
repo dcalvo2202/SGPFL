@@ -21,26 +21,18 @@ class Account extends \Google\Collection
 {
   protected $collection_key = 'youtubeChannelLinks';
   /**
-   * Output only. How the account is managed. Acceptable values are: -
-   * "`manual`" - "`automatic`"
-   *
    * @var string
    */
   public $accountManagement;
   protected $adsLinksType = AccountAdsLink::class;
   protected $adsLinksDataType = 'array';
   /**
-   * Indicates whether the merchant sells adult content.
-   *
    * @var bool
    */
   public $adultContent;
   protected $automaticImprovementsType = AccountAutomaticImprovements::class;
   protected $automaticImprovementsDataType = '';
   /**
-   * Automatically created label IDs that are assigned to the account by CSS
-   * Center.
-   *
    * @var string[]
    */
   public $automaticLabelIds;
@@ -51,49 +43,34 @@ class Account extends \Google\Collection
   protected $conversionSettingsType = AccountConversionSettings::class;
   protected $conversionSettingsDataType = '';
   /**
-   * ID of CSS the account belongs to.
-   *
    * @var string
    */
   public $cssId;
   protected $googleMyBusinessLinkType = AccountGoogleMyBusinessLink::class;
   protected $googleMyBusinessLinkDataType = '';
   /**
-   * Required. 64-bit Merchant Center account ID.
-   *
    * @var string
    */
   public $id;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#account`".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Manually created label IDs that are assigned to the account by CSS.
-   *
    * @var string[]
    */
   public $labelIds;
   /**
-   * Required. Display name for the account.
-   *
    * @var string
    */
   public $name;
   /**
-   * Client-specific, locally-unique, internal ID for the child account.
-   *
    * @var string
    */
   public $sellerId;
   protected $usersType = AccountUser::class;
   protected $usersDataType = 'array';
   /**
-   * The merchant's website.
-   *
    * @var string
    */
   public $websiteUrl;
@@ -101,10 +78,7 @@ class Account extends \Google\Collection
   protected $youtubeChannelLinksDataType = 'array';
 
   /**
-   * Output only. How the account is managed. Acceptable values are: -
-   * "`manual`" - "`automatic`"
-   *
-   * @param string $accountManagement
+   * @param string
    */
   public function setAccountManagement($accountManagement)
   {
@@ -118,13 +92,7 @@ class Account extends \Google\Collection
     return $this->accountManagement;
   }
   /**
-   * Linked Ads accounts that are active or pending approval. To create a new
-   * link request, add a new link with status `active` to the list. It will
-   * remain in a `pending` state until approved or rejected either in the Ads
-   * interface or through the Google Ads API. To delete an active link, or to
-   * cancel a link request, remove it from the list.
-   *
-   * @param AccountAdsLink[] $adsLinks
+   * @param AccountAdsLink[]
    */
   public function setAdsLinks($adsLinks)
   {
@@ -138,9 +106,7 @@ class Account extends \Google\Collection
     return $this->adsLinks;
   }
   /**
-   * Indicates whether the merchant sells adult content.
-   *
-   * @param bool $adultContent
+   * @param bool
    */
   public function setAdultContent($adultContent)
   {
@@ -154,11 +120,7 @@ class Account extends \Google\Collection
     return $this->adultContent;
   }
   /**
-   * The automatic improvements of the account can be used to automatically
-   * update items, improve images and shipping. Each section inside
-   * AutomaticImprovements is updated separately.
-   *
-   * @param AccountAutomaticImprovements $automaticImprovements
+   * @param AccountAutomaticImprovements
    */
   public function setAutomaticImprovements(AccountAutomaticImprovements $automaticImprovements)
   {
@@ -172,10 +134,7 @@ class Account extends \Google\Collection
     return $this->automaticImprovements;
   }
   /**
-   * Automatically created label IDs that are assigned to the account by CSS
-   * Center.
-   *
-   * @param string[] $automaticLabelIds
+   * @param string[]
    */
   public function setAutomaticLabelIds($automaticLabelIds)
   {
@@ -189,10 +148,7 @@ class Account extends \Google\Collection
     return $this->automaticLabelIds;
   }
   /**
-   * The business identity attributes can be used to self-declare attributes
-   * that let customers know more about your business.
-   *
-   * @param AccountBusinessIdentity $businessIdentity
+   * @param AccountBusinessIdentity
    */
   public function setBusinessIdentity(AccountBusinessIdentity $businessIdentity)
   {
@@ -206,9 +162,7 @@ class Account extends \Google\Collection
     return $this->businessIdentity;
   }
   /**
-   * The business information of the account.
-   *
-   * @param AccountBusinessInformation $businessInformation
+   * @param AccountBusinessInformation
    */
   public function setBusinessInformation(AccountBusinessInformation $businessInformation)
   {
@@ -222,9 +176,7 @@ class Account extends \Google\Collection
     return $this->businessInformation;
   }
   /**
-   * Settings for conversion tracking.
-   *
-   * @param AccountConversionSettings $conversionSettings
+   * @param AccountConversionSettings
    */
   public function setConversionSettings(AccountConversionSettings $conversionSettings)
   {
@@ -238,9 +190,7 @@ class Account extends \Google\Collection
     return $this->conversionSettings;
   }
   /**
-   * ID of CSS the account belongs to.
-   *
-   * @param string $cssId
+   * @param string
    */
   public function setCssId($cssId)
   {
@@ -254,10 +204,7 @@ class Account extends \Google\Collection
     return $this->cssId;
   }
   /**
-   * The Business Profile which is linked or in the process of being linked with
-   * the Merchant Center account.
-   *
-   * @param AccountGoogleMyBusinessLink $googleMyBusinessLink
+   * @param AccountGoogleMyBusinessLink
    */
   public function setGoogleMyBusinessLink(AccountGoogleMyBusinessLink $googleMyBusinessLink)
   {
@@ -271,9 +218,7 @@ class Account extends \Google\Collection
     return $this->googleMyBusinessLink;
   }
   /**
-   * Required. 64-bit Merchant Center account ID.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -287,10 +232,7 @@ class Account extends \Google\Collection
     return $this->id;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#account`".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -304,9 +246,7 @@ class Account extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Manually created label IDs that are assigned to the account by CSS.
-   *
-   * @param string[] $labelIds
+   * @param string[]
    */
   public function setLabelIds($labelIds)
   {
@@ -320,9 +260,7 @@ class Account extends \Google\Collection
     return $this->labelIds;
   }
   /**
-   * Required. Display name for the account.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -336,9 +274,7 @@ class Account extends \Google\Collection
     return $this->name;
   }
   /**
-   * Client-specific, locally-unique, internal ID for the child account.
-   *
-   * @param string $sellerId
+   * @param string
    */
   public function setSellerId($sellerId)
   {
@@ -352,10 +288,7 @@ class Account extends \Google\Collection
     return $this->sellerId;
   }
   /**
-   * Users with access to the account. Every account (except for subaccounts)
-   * must have at least one admin user.
-   *
-   * @param AccountUser[] $users
+   * @param AccountUser[]
    */
   public function setUsers($users)
   {
@@ -369,9 +302,7 @@ class Account extends \Google\Collection
     return $this->users;
   }
   /**
-   * The merchant's website.
-   *
-   * @param string $websiteUrl
+   * @param string
    */
   public function setWebsiteUrl($websiteUrl)
   {
@@ -385,13 +316,7 @@ class Account extends \Google\Collection
     return $this->websiteUrl;
   }
   /**
-   * Linked YouTube channels that are active or pending approval. To create a
-   * new link request, add a new link with status `active` to the list. It will
-   * remain in a `pending` state until approved or rejected in the YT Creator
-   * Studio interface. To delete an active link, or to cancel a link request,
-   * remove it from the list.
-   *
-   * @param AccountYouTubeChannelLink[] $youtubeChannelLinks
+   * @param AccountYouTubeChannelLink[]
    */
   public function setYoutubeChannelLinks($youtubeChannelLinks)
   {

@@ -20,67 +20,28 @@ namespace Google\Service\SecurityCommandCenter;
 class GoogleCloudSecuritycenterV2Connection extends \Google\Model
 {
   /**
-   * Unspecified protocol (not HOPOPT).
-   */
-  public const PROTOCOL_PROTOCOL_UNSPECIFIED = 'PROTOCOL_UNSPECIFIED';
-  /**
-   * Internet Control Message Protocol.
-   */
-  public const PROTOCOL_ICMP = 'ICMP';
-  /**
-   * Transmission Control Protocol.
-   */
-  public const PROTOCOL_TCP = 'TCP';
-  /**
-   * User Datagram Protocol.
-   */
-  public const PROTOCOL_UDP = 'UDP';
-  /**
-   * Generic Routing Encapsulation.
-   */
-  public const PROTOCOL_GRE = 'GRE';
-  /**
-   * Encap Security Payload.
-   */
-  public const PROTOCOL_ESP = 'ESP';
-  /**
-   * Destination IP address. Not present for sockets that are listening and not
-   * connected.
-   *
    * @var string
    */
   public $destinationIp;
   /**
-   * Destination port. Not present for sockets that are listening and not
-   * connected.
-   *
    * @var int
    */
   public $destinationPort;
   /**
-   * IANA Internet Protocol Number such as TCP(6) and UDP(17).
-   *
    * @var string
    */
   public $protocol;
   /**
-   * Source IP address.
-   *
    * @var string
    */
   public $sourceIp;
   /**
-   * Source port.
-   *
    * @var int
    */
   public $sourcePort;
 
   /**
-   * Destination IP address. Not present for sockets that are listening and not
-   * connected.
-   *
-   * @param string $destinationIp
+   * @param string
    */
   public function setDestinationIp($destinationIp)
   {
@@ -94,10 +55,7 @@ class GoogleCloudSecuritycenterV2Connection extends \Google\Model
     return $this->destinationIp;
   }
   /**
-   * Destination port. Not present for sockets that are listening and not
-   * connected.
-   *
-   * @param int $destinationPort
+   * @param int
    */
   public function setDestinationPort($destinationPort)
   {
@@ -111,27 +69,21 @@ class GoogleCloudSecuritycenterV2Connection extends \Google\Model
     return $this->destinationPort;
   }
   /**
-   * IANA Internet Protocol Number such as TCP(6) and UDP(17).
-   *
-   * Accepted values: PROTOCOL_UNSPECIFIED, ICMP, TCP, UDP, GRE, ESP
-   *
-   * @param self::PROTOCOL_* $protocol
+   * @param string
    */
   public function setProtocol($protocol)
   {
     $this->protocol = $protocol;
   }
   /**
-   * @return self::PROTOCOL_*
+   * @return string
    */
   public function getProtocol()
   {
     return $this->protocol;
   }
   /**
-   * Source IP address.
-   *
-   * @param string $sourceIp
+   * @param string
    */
   public function setSourceIp($sourceIp)
   {
@@ -145,9 +97,7 @@ class GoogleCloudSecuritycenterV2Connection extends \Google\Model
     return $this->sourceIp;
   }
   /**
-   * Source port.
-   *
-   * @param int $sourcePort
+   * @param int
    */
   public function setSourcePort($sourcePort)
   {

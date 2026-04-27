@@ -25,28 +25,16 @@ class ServiceStoreConfig extends \Google\Collection
   protected $serviceRadiusType = Distance::class;
   protected $serviceRadiusDataType = '';
   /**
-   * A list of store codes that provide local delivery. If empty, then
-   * `store_service_type` must be `all_stores`, or an error is thrown. If not
-   * empty, then `store_service_type` must be `selected_stores`, or an error is
-   * thrown.
-   *
    * @var string[]
    */
   public $storeCodes;
   /**
-   * Indicates whether all stores listed by this merchant provide local delivery
-   * or not. Acceptable values are `all stores` and `selected stores`
-   *
    * @var string
    */
   public $storeServiceType;
 
   /**
-   * Time local delivery ends for the day. This can be either
-   * `local_cutoff_time` or `store_close_offset_hours`, if both are provided an
-   * error is thrown.
-   *
-   * @param ServiceStoreConfigCutoffConfig $cutoffConfig
+   * @param ServiceStoreConfigCutoffConfig
    */
   public function setCutoffConfig(ServiceStoreConfigCutoffConfig $cutoffConfig)
   {
@@ -60,9 +48,7 @@ class ServiceStoreConfig extends \Google\Collection
     return $this->cutoffConfig;
   }
   /**
-   * Maximum delivery radius. Only needed for local delivery fulfillment type.
-   *
-   * @param Distance $serviceRadius
+   * @param Distance
    */
   public function setServiceRadius(Distance $serviceRadius)
   {
@@ -76,12 +62,7 @@ class ServiceStoreConfig extends \Google\Collection
     return $this->serviceRadius;
   }
   /**
-   * A list of store codes that provide local delivery. If empty, then
-   * `store_service_type` must be `all_stores`, or an error is thrown. If not
-   * empty, then `store_service_type` must be `selected_stores`, or an error is
-   * thrown.
-   *
-   * @param string[] $storeCodes
+   * @param string[]
    */
   public function setStoreCodes($storeCodes)
   {
@@ -95,10 +76,7 @@ class ServiceStoreConfig extends \Google\Collection
     return $this->storeCodes;
   }
   /**
-   * Indicates whether all stores listed by this merchant provide local delivery
-   * or not. Acceptable values are `all stores` and `selected stores`
-   *
-   * @param string $storeServiceType
+   * @param string
    */
   public function setStoreServiceType($storeServiceType)
   {

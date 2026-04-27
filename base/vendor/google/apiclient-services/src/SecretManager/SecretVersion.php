@@ -20,85 +20,40 @@ namespace Google\Service\SecretManager;
 class SecretVersion extends \Google\Model
 {
   /**
-   * Not specified. This value is unused and invalid.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The SecretVersion may be accessed.
-   */
-  public const STATE_ENABLED = 'ENABLED';
-  /**
-   * The SecretVersion may not be accessed, but the secret data is still
-   * available and can be placed back into the ENABLED state.
-   */
-  public const STATE_DISABLED = 'DISABLED';
-  /**
-   * The SecretVersion is destroyed and the secret data is no longer stored. A
-   * version may not leave this state once entered.
-   */
-  public const STATE_DESTROYED = 'DESTROYED';
-  /**
-   * Output only. True if payload checksum specified in SecretPayload object has
-   * been received by SecretManagerService on
-   * SecretManagerService.AddSecretVersion.
-   *
    * @var bool
    */
   public $clientSpecifiedPayloadChecksum;
   /**
-   * Output only. The time at which the SecretVersion was created.
-   *
    * @var string
    */
   public $createTime;
   protected $customerManagedEncryptionType = CustomerManagedEncryptionStatus::class;
   protected $customerManagedEncryptionDataType = '';
   /**
-   * Output only. The time this SecretVersion was destroyed. Only present if
-   * state is DESTROYED.
-   *
    * @var string
    */
   public $destroyTime;
   /**
-   * Output only. Etag of the currently stored SecretVersion.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Output only. The resource name of the SecretVersion in the format
-   * `projects/secrets/versions`. SecretVersion IDs in a Secret start at 1 and
-   * are incremented for each subsequent version of the secret.
-   *
    * @var string
    */
   public $name;
   protected $replicationStatusType = ReplicationStatus::class;
   protected $replicationStatusDataType = '';
   /**
-   * Optional. Output only. Scheduled destroy time for secret version. This is a
-   * part of the Delayed secret version destroy feature. For a Secret with a
-   * valid version destroy TTL, when a secert version is destroyed, version is
-   * moved to disabled state and it is scheduled for destruction Version is
-   * destroyed only after the scheduled_destroy_time.
-   *
    * @var string
    */
   public $scheduledDestroyTime;
   /**
-   * Output only. The current state of the SecretVersion.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Output only. True if payload checksum specified in SecretPayload object has
-   * been received by SecretManagerService on
-   * SecretManagerService.AddSecretVersion.
-   *
-   * @param bool $clientSpecifiedPayloadChecksum
+   * @param bool
    */
   public function setClientSpecifiedPayloadChecksum($clientSpecifiedPayloadChecksum)
   {
@@ -112,9 +67,7 @@ class SecretVersion extends \Google\Model
     return $this->clientSpecifiedPayloadChecksum;
   }
   /**
-   * Output only. The time at which the SecretVersion was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -128,11 +81,7 @@ class SecretVersion extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. The customer-managed encryption status of the SecretVersion.
-   * Only populated if customer-managed encryption is used and Secret is a
-   * regionalized secret.
-   *
-   * @param CustomerManagedEncryptionStatus $customerManagedEncryption
+   * @param CustomerManagedEncryptionStatus
    */
   public function setCustomerManagedEncryption(CustomerManagedEncryptionStatus $customerManagedEncryption)
   {
@@ -146,10 +95,7 @@ class SecretVersion extends \Google\Model
     return $this->customerManagedEncryption;
   }
   /**
-   * Output only. The time this SecretVersion was destroyed. Only present if
-   * state is DESTROYED.
-   *
-   * @param string $destroyTime
+   * @param string
    */
   public function setDestroyTime($destroyTime)
   {
@@ -163,9 +109,7 @@ class SecretVersion extends \Google\Model
     return $this->destroyTime;
   }
   /**
-   * Output only. Etag of the currently stored SecretVersion.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -179,11 +123,7 @@ class SecretVersion extends \Google\Model
     return $this->etag;
   }
   /**
-   * Output only. The resource name of the SecretVersion in the format
-   * `projects/secrets/versions`. SecretVersion IDs in a Secret start at 1 and
-   * are incremented for each subsequent version of the secret.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -197,9 +137,7 @@ class SecretVersion extends \Google\Model
     return $this->name;
   }
   /**
-   * The replication status of the SecretVersion.
-   *
-   * @param ReplicationStatus $replicationStatus
+   * @param ReplicationStatus
    */
   public function setReplicationStatus(ReplicationStatus $replicationStatus)
   {
@@ -213,13 +151,7 @@ class SecretVersion extends \Google\Model
     return $this->replicationStatus;
   }
   /**
-   * Optional. Output only. Scheduled destroy time for secret version. This is a
-   * part of the Delayed secret version destroy feature. For a Secret with a
-   * valid version destroy TTL, when a secert version is destroyed, version is
-   * moved to disabled state and it is scheduled for destruction Version is
-   * destroyed only after the scheduled_destroy_time.
-   *
-   * @param string $scheduledDestroyTime
+   * @param string
    */
   public function setScheduledDestroyTime($scheduledDestroyTime)
   {
@@ -233,18 +165,14 @@ class SecretVersion extends \Google\Model
     return $this->scheduledDestroyTime;
   }
   /**
-   * Output only. The current state of the SecretVersion.
-   *
-   * Accepted values: STATE_UNSPECIFIED, ENABLED, DISABLED, DESTROYED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

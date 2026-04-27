@@ -20,16 +20,12 @@ namespace Google\Service\Books;
 class ReviewAuthor extends \Google\Model
 {
   /**
-   * Name of this person.
-   *
    * @var string
    */
   public $displayName;
 
   /**
-   * Name of this person.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {

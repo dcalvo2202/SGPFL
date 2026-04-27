@@ -22,10 +22,6 @@ class SpecialHourPeriod extends \Google\Model
   protected $closeTimeType = TimeOfDay::class;
   protected $closeTimeDataType = '';
   /**
-   * Optional. If true, `end_date`, `open_time`, and `close_time` are ignored,
-   * and the date specified in `start_date` is treated as the location being
-   * closed for the entire day.
-   *
    * @var bool
    */
   public $closed;
@@ -37,10 +33,7 @@ class SpecialHourPeriod extends \Google\Model
   protected $startDateDataType = '';
 
   /**
-   * Optional. Valid values are 00:00-24:00, where 24:00 represents midnight at
-   * the end of the specified day field. Must be specified if `closed` is false.
-   *
-   * @param TimeOfDay $closeTime
+   * @param TimeOfDay
    */
   public function setCloseTime(TimeOfDay $closeTime)
   {
@@ -54,11 +47,7 @@ class SpecialHourPeriod extends \Google\Model
     return $this->closeTime;
   }
   /**
-   * Optional. If true, `end_date`, `open_time`, and `close_time` are ignored,
-   * and the date specified in `start_date` is treated as the location being
-   * closed for the entire day.
-   *
-   * @param bool $closed
+   * @param bool
    */
   public function setClosed($closed)
   {
@@ -72,11 +61,7 @@ class SpecialHourPeriod extends \Google\Model
     return $this->closed;
   }
   /**
-   * Optional. The calendar date this special hour period ends on. If `end_date`
-   * field is not set, default to the date specified in `start_date`. If set,
-   * this field must be equal to or at most 1 day after `start_date`.
-   *
-   * @param Date $endDate
+   * @param Date
    */
   public function setEndDate(Date $endDate)
   {
@@ -90,10 +75,7 @@ class SpecialHourPeriod extends \Google\Model
     return $this->endDate;
   }
   /**
-   * Optional. Valid values are 00:00-24:00 where 24:00 represents midnight at
-   * the end of the specified day field. Must be specified if `closed` is false.
-   *
-   * @param TimeOfDay $openTime
+   * @param TimeOfDay
    */
   public function setOpenTime(TimeOfDay $openTime)
   {
@@ -107,9 +89,7 @@ class SpecialHourPeriod extends \Google\Model
     return $this->openTime;
   }
   /**
-   * Required. The calendar date this special hour period starts on.
-   *
-   * @param Date $startDate
+   * @param Date
    */
   public function setStartDate(Date $startDate)
   {

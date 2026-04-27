@@ -20,16 +20,12 @@ namespace Google\Service\CloudShell;
 class AddPublicKeyResponse extends \Google\Model
 {
   /**
-   * Key that was added to the environment.
-   *
    * @var string
    */
   public $key;
 
   /**
-   * Key that was added to the environment.
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {

@@ -23,18 +23,12 @@ class ListClustersResponse extends \Google\Collection
   protected $clustersType = Cluster::class;
   protected $clustersDataType = 'array';
   /**
-   * Output only. This token is included in the response if there are more
-   * results to fetch. To fetch additional results, provide this value as the
-   * page_token in a subsequent ListClustersRequest.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Output only. The clusters in the project.
-   *
-   * @param Cluster[] $clusters
+   * @param Cluster[]
    */
   public function setClusters($clusters)
   {
@@ -48,11 +42,7 @@ class ListClustersResponse extends \Google\Collection
     return $this->clusters;
   }
   /**
-   * Output only. This token is included in the response if there are more
-   * results to fetch. To fetch additional results, provide this value as the
-   * page_token in a subsequent ListClustersRequest.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

@@ -20,22 +20,16 @@ namespace Google\Service\Config;
 class PreviewResult extends \Google\Model
 {
   /**
-   * Output only. Plan binary signed URL
-   *
    * @var string
    */
   public $binarySignedUri;
   /**
-   * Output only. Plan JSON signed URL
-   *
    * @var string
    */
   public $jsonSignedUri;
 
   /**
-   * Output only. Plan binary signed URL
-   *
-   * @param string $binarySignedUri
+   * @param string
    */
   public function setBinarySignedUri($binarySignedUri)
   {
@@ -49,9 +43,7 @@ class PreviewResult extends \Google\Model
     return $this->binarySignedUri;
   }
   /**
-   * Output only. Plan JSON signed URL
-   *
-   * @param string $jsonSignedUri
+   * @param string
    */
   public function setJsonSignedUri($jsonSignedUri)
   {

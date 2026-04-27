@@ -20,70 +20,28 @@ namespace Google\Service\Adsense;
 class Site extends \Google\Model
 {
   /**
-   * State unspecified.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Either: * The site hasn't been checked yet. * The site is inactive and
-   * needs another review before it can show ads again. Learn how to [request a
-   * review for an inactive
-   * site](https://support.google.com/adsense/answer/9393996).
-   */
-  public const STATE_REQUIRES_REVIEW = 'REQUIRES_REVIEW';
-  /**
-   * Google is running some checks on the site. This usually takes a few days,
-   * but in some cases it can take two to four weeks.
-   */
-  public const STATE_GETTING_READY = 'GETTING_READY';
-  /**
-   * The site is ready to show ads. Learn how to [set up ads on the
-   * site](https://support.google.com/adsense/answer/7037624).
-   */
-  public const STATE_READY = 'READY';
-  /**
-   * Publisher needs to fix some issues before the site is ready to show ads.
-   * Learn what to do [if a new site isn't
-   * ready](https://support.google.com/adsense/answer/9061852).
-   */
-  public const STATE_NEEDS_ATTENTION = 'NEEDS_ATTENTION';
-  /**
-   * Whether auto ads is turned on for the site.
-   *
    * @var bool
    */
   public $autoAdsEnabled;
   /**
-   * Domain (or subdomain) of the site, e.g. "example.com" or "www.example.com".
-   * This is used in the `OWNED_SITE_DOMAIN_NAME` reporting dimension.
-   *
    * @var string
    */
   public $domain;
   /**
-   * Output only. Resource name of a site. Format:
-   * accounts/{account}/sites/{site}
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Unique ID of the site as used in the `OWNED_SITE_ID` reporting
-   * dimension.
-   *
    * @var string
    */
   public $reportingDimensionId;
   /**
-   * Output only. State of a site.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Whether auto ads is turned on for the site.
-   *
-   * @param bool $autoAdsEnabled
+   * @param bool
    */
   public function setAutoAdsEnabled($autoAdsEnabled)
   {
@@ -97,10 +55,7 @@ class Site extends \Google\Model
     return $this->autoAdsEnabled;
   }
   /**
-   * Domain (or subdomain) of the site, e.g. "example.com" or "www.example.com".
-   * This is used in the `OWNED_SITE_DOMAIN_NAME` reporting dimension.
-   *
-   * @param string $domain
+   * @param string
    */
   public function setDomain($domain)
   {
@@ -114,10 +69,7 @@ class Site extends \Google\Model
     return $this->domain;
   }
   /**
-   * Output only. Resource name of a site. Format:
-   * accounts/{account}/sites/{site}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -131,10 +83,7 @@ class Site extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Unique ID of the site as used in the `OWNED_SITE_ID` reporting
-   * dimension.
-   *
-   * @param string $reportingDimensionId
+   * @param string
    */
   public function setReportingDimensionId($reportingDimensionId)
   {
@@ -148,19 +97,14 @@ class Site extends \Google\Model
     return $this->reportingDimensionId;
   }
   /**
-   * Output only. State of a site.
-   *
-   * Accepted values: STATE_UNSPECIFIED, REQUIRES_REVIEW, GETTING_READY, READY,
-   * NEEDS_ATTENTION
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

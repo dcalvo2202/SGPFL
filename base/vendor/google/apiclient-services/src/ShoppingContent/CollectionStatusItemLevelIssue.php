@@ -21,64 +21,44 @@ class CollectionStatusItemLevelIssue extends \Google\Collection
 {
   protected $collection_key = 'applicableCountries';
   /**
-   * Country codes (ISO 3166-1 alpha-2) where issue applies to the offer.
-   *
    * @var string[]
    */
   public $applicableCountries;
   /**
-   * The attribute's name, if the issue is caused by a single attribute.
-   *
    * @var string
    */
   public $attributeName;
   /**
-   * The error code of the issue.
-   *
    * @var string
    */
   public $code;
   /**
-   * A short issue description in English.
-   *
    * @var string
    */
   public $description;
   /**
-   * The destination the issue applies to.
-   *
    * @var string
    */
   public $destination;
   /**
-   * A detailed issue description in English.
-   *
    * @var string
    */
   public $detail;
   /**
-   * The URL of a web page to help with resolving this issue.
-   *
    * @var string
    */
   public $documentation;
   /**
-   * Whether the issue can be resolved by the merchant.
-   *
    * @var string
    */
   public $resolution;
   /**
-   * How this issue affects the serving of the collection.
-   *
    * @var string
    */
   public $servability;
 
   /**
-   * Country codes (ISO 3166-1 alpha-2) where issue applies to the offer.
-   *
-   * @param string[] $applicableCountries
+   * @param string[]
    */
   public function setApplicableCountries($applicableCountries)
   {
@@ -92,9 +72,7 @@ class CollectionStatusItemLevelIssue extends \Google\Collection
     return $this->applicableCountries;
   }
   /**
-   * The attribute's name, if the issue is caused by a single attribute.
-   *
-   * @param string $attributeName
+   * @param string
    */
   public function setAttributeName($attributeName)
   {
@@ -108,9 +86,7 @@ class CollectionStatusItemLevelIssue extends \Google\Collection
     return $this->attributeName;
   }
   /**
-   * The error code of the issue.
-   *
-   * @param string $code
+   * @param string
    */
   public function setCode($code)
   {
@@ -124,9 +100,7 @@ class CollectionStatusItemLevelIssue extends \Google\Collection
     return $this->code;
   }
   /**
-   * A short issue description in English.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -140,9 +114,7 @@ class CollectionStatusItemLevelIssue extends \Google\Collection
     return $this->description;
   }
   /**
-   * The destination the issue applies to.
-   *
-   * @param string $destination
+   * @param string
    */
   public function setDestination($destination)
   {
@@ -156,9 +128,7 @@ class CollectionStatusItemLevelIssue extends \Google\Collection
     return $this->destination;
   }
   /**
-   * A detailed issue description in English.
-   *
-   * @param string $detail
+   * @param string
    */
   public function setDetail($detail)
   {
@@ -172,9 +142,7 @@ class CollectionStatusItemLevelIssue extends \Google\Collection
     return $this->detail;
   }
   /**
-   * The URL of a web page to help with resolving this issue.
-   *
-   * @param string $documentation
+   * @param string
    */
   public function setDocumentation($documentation)
   {
@@ -188,9 +156,7 @@ class CollectionStatusItemLevelIssue extends \Google\Collection
     return $this->documentation;
   }
   /**
-   * Whether the issue can be resolved by the merchant.
-   *
-   * @param string $resolution
+   * @param string
    */
   public function setResolution($resolution)
   {
@@ -204,9 +170,7 @@ class CollectionStatusItemLevelIssue extends \Google\Collection
     return $this->resolution;
   }
   /**
-   * How this issue affects the serving of the collection.
-   *
-   * @param string $servability
+   * @param string
    */
   public function setServability($servability)
   {

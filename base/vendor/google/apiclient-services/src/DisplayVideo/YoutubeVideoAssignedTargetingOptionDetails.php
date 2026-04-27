@@ -20,22 +20,16 @@ namespace Google\Service\DisplayVideo;
 class YoutubeVideoAssignedTargetingOptionDetails extends \Google\Model
 {
   /**
-   * Indicates if this option is being negatively targeted.
-   *
    * @var bool
    */
   public $negative;
   /**
-   * YouTube video id as it appears on the YouTube watch page.
-   *
    * @var string
    */
   public $videoId;
 
   /**
-   * Indicates if this option is being negatively targeted.
-   *
-   * @param bool $negative
+   * @param bool
    */
   public function setNegative($negative)
   {
@@ -49,9 +43,7 @@ class YoutubeVideoAssignedTargetingOptionDetails extends \Google\Model
     return $this->negative;
   }
   /**
-   * YouTube video id as it appears on the YouTube watch page.
-   *
-   * @param string $videoId
+   * @param string
    */
   public function setVideoId($videoId)
   {

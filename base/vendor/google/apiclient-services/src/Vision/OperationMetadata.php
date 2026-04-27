@@ -20,48 +20,20 @@ namespace Google\Service\Vision;
 class OperationMetadata extends \Google\Model
 {
   /**
-   * Invalid.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Request is received.
-   */
-  public const STATE_CREATED = 'CREATED';
-  /**
-   * Request is actively being processed.
-   */
-  public const STATE_RUNNING = 'RUNNING';
-  /**
-   * The batch processing is done.
-   */
-  public const STATE_DONE = 'DONE';
-  /**
-   * The batch processing was cancelled.
-   */
-  public const STATE_CANCELLED = 'CANCELLED';
-  /**
-   * The time when the batch request was received.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Current state of the batch operation.
-   *
    * @var string
    */
   public $state;
   /**
-   * The time when the operation result was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * The time when the batch request was received.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -75,27 +47,21 @@ class OperationMetadata extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Current state of the batch operation.
-   *
-   * Accepted values: STATE_UNSPECIFIED, CREATED, RUNNING, DONE, CANCELLED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * The time when the operation result was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

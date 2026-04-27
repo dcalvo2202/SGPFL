@@ -20,63 +20,26 @@ namespace Google\Service\Firestore;
 class GoogleFirestoreAdminV1Backup extends \Google\Model
 {
   /**
-   * The state is unspecified.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The pending backup is still being created. Operations on the backup will be
-   * rejected in this state.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * The backup is complete and ready to use.
-   */
-  public const STATE_READY = 'READY';
-  /**
-   * The backup is not available at this moment.
-   */
-  public const STATE_NOT_AVAILABLE = 'NOT_AVAILABLE';
-  /**
-   * Output only. Name of the Firestore database that the backup is from. Format
-   * is `projects/{project}/databases/{database}`.
-   *
    * @var string
    */
   public $database;
   /**
-   * Output only. The system-generated UUID4 for the Firestore database that the
-   * backup is from.
-   *
    * @var string
    */
   public $databaseUid;
   /**
-   * Output only. The timestamp at which this backup expires.
-   *
    * @var string
    */
   public $expireTime;
   /**
-   * Output only. The unique resource name of the Backup. Format is
-   * `projects/{project}/locations/{location}/backups/{backup}`. The location in
-   * the name will be the Standard Managed Multi-Region (SMMR) location (e.g.
-   * `us`) if the backup was created with an SMMR location, or the Google
-   * Managed Multi-Region (GMMR) location (e.g. `nam5`) if the backup was
-   * created with a GMMR location.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The backup contains an externally consistent copy of the
-   * database at this time.
-   *
    * @var string
    */
   public $snapshotTime;
   /**
-   * Output only. The current state of the backup.
-   *
    * @var string
    */
   public $state;
@@ -84,10 +47,7 @@ class GoogleFirestoreAdminV1Backup extends \Google\Model
   protected $statsDataType = '';
 
   /**
-   * Output only. Name of the Firestore database that the backup is from. Format
-   * is `projects/{project}/databases/{database}`.
-   *
-   * @param string $database
+   * @param string
    */
   public function setDatabase($database)
   {
@@ -101,10 +61,7 @@ class GoogleFirestoreAdminV1Backup extends \Google\Model
     return $this->database;
   }
   /**
-   * Output only. The system-generated UUID4 for the Firestore database that the
-   * backup is from.
-   *
-   * @param string $databaseUid
+   * @param string
    */
   public function setDatabaseUid($databaseUid)
   {
@@ -118,9 +75,7 @@ class GoogleFirestoreAdminV1Backup extends \Google\Model
     return $this->databaseUid;
   }
   /**
-   * Output only. The timestamp at which this backup expires.
-   *
-   * @param string $expireTime
+   * @param string
    */
   public function setExpireTime($expireTime)
   {
@@ -134,14 +89,7 @@ class GoogleFirestoreAdminV1Backup extends \Google\Model
     return $this->expireTime;
   }
   /**
-   * Output only. The unique resource name of the Backup. Format is
-   * `projects/{project}/locations/{location}/backups/{backup}`. The location in
-   * the name will be the Standard Managed Multi-Region (SMMR) location (e.g.
-   * `us`) if the backup was created with an SMMR location, or the Google
-   * Managed Multi-Region (GMMR) location (e.g. `nam5`) if the backup was
-   * created with a GMMR location.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -155,10 +103,7 @@ class GoogleFirestoreAdminV1Backup extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The backup contains an externally consistent copy of the
-   * database at this time.
-   *
-   * @param string $snapshotTime
+   * @param string
    */
   public function setSnapshotTime($snapshotTime)
   {
@@ -172,29 +117,21 @@ class GoogleFirestoreAdminV1Backup extends \Google\Model
     return $this->snapshotTime;
   }
   /**
-   * Output only. The current state of the backup.
-   *
-   * Accepted values: STATE_UNSPECIFIED, CREATING, READY, NOT_AVAILABLE
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. Statistics about the backup. This data only becomes available
-   * after the backup is fully materialized to secondary storage. This field
-   * will be empty till then.
-   *
-   * @param GoogleFirestoreAdminV1Stats $stats
+   * @param GoogleFirestoreAdminV1Stats
    */
   public function setStats(GoogleFirestoreAdminV1Stats $stats)
   {

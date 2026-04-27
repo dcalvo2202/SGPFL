@@ -28,9 +28,7 @@ class Tab extends \Google\Collection
   protected $tabPropertiesDataType = '';
 
   /**
-   * The child tabs nested within this tab.
-   *
-   * @param Tab[] $childTabs
+   * @param Tab[]
    */
   public function setChildTabs($childTabs)
   {
@@ -44,9 +42,7 @@ class Tab extends \Google\Collection
     return $this->childTabs;
   }
   /**
-   * A tab with document contents, like text and images.
-   *
-   * @param DocumentTab $documentTab
+   * @param DocumentTab
    */
   public function setDocumentTab(DocumentTab $documentTab)
   {
@@ -60,9 +56,7 @@ class Tab extends \Google\Collection
     return $this->documentTab;
   }
   /**
-   * The properties of the tab, like ID and title.
-   *
-   * @param TabProperties $tabProperties
+   * @param TabProperties
    */
   public function setTabProperties(TabProperties $tabProperties)
   {

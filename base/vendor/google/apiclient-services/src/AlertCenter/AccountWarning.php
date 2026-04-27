@@ -20,8 +20,6 @@ namespace Google\Service\AlertCenter;
 class AccountWarning extends \Google\Model
 {
   /**
-   * Required. The email of the user that this event belongs to.
-   *
    * @var string
    */
   public $email;
@@ -29,9 +27,7 @@ class AccountWarning extends \Google\Model
   protected $loginDetailsDataType = '';
 
   /**
-   * Required. The email of the user that this event belongs to.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {
@@ -45,12 +41,7 @@ class AccountWarning extends \Google\Model
     return $this->email;
   }
   /**
-   * Optional. Details of the login action associated with the warning event.
-   * This is only available for: * Suspicious login * Suspicious login (less
-   * secure app) * Suspicious programmatic login * User suspended (suspicious
-   * activity)
-   *
-   * @param LoginDetails $loginDetails
+   * @param LoginDetails
    */
   public function setLoginDetails(LoginDetails $loginDetails)
   {

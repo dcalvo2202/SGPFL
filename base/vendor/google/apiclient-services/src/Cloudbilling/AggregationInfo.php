@@ -19,16 +19,7 @@ namespace Google\Service\Cloudbilling;
 
 class AggregationInfo extends \Google\Model
 {
-  public const AGGREGATION_INTERVAL_AGGREGATION_INTERVAL_UNSPECIFIED = 'AGGREGATION_INTERVAL_UNSPECIFIED';
-  public const AGGREGATION_INTERVAL_DAILY = 'DAILY';
-  public const AGGREGATION_INTERVAL_MONTHLY = 'MONTHLY';
-  public const AGGREGATION_LEVEL_AGGREGATION_LEVEL_UNSPECIFIED = 'AGGREGATION_LEVEL_UNSPECIFIED';
-  public const AGGREGATION_LEVEL_ACCOUNT = 'ACCOUNT';
-  public const AGGREGATION_LEVEL_PROJECT = 'PROJECT';
   /**
-   * The number of intervals to aggregate over. Example: If aggregation_level is
-   * "DAILY" and aggregation_count is 14, aggregation will be over 14 days.
-   *
    * @var int
    */
   public $aggregationCount;
@@ -42,10 +33,7 @@ class AggregationInfo extends \Google\Model
   public $aggregationLevel;
 
   /**
-   * The number of intervals to aggregate over. Example: If aggregation_level is
-   * "DAILY" and aggregation_count is 14, aggregation will be over 14 days.
-   *
-   * @param int $aggregationCount
+   * @param int
    */
   public function setAggregationCount($aggregationCount)
   {
@@ -59,28 +47,28 @@ class AggregationInfo extends \Google\Model
     return $this->aggregationCount;
   }
   /**
-   * @param self::AGGREGATION_INTERVAL_* $aggregationInterval
+   * @param string
    */
   public function setAggregationInterval($aggregationInterval)
   {
     $this->aggregationInterval = $aggregationInterval;
   }
   /**
-   * @return self::AGGREGATION_INTERVAL_*
+   * @return string
    */
   public function getAggregationInterval()
   {
     return $this->aggregationInterval;
   }
   /**
-   * @param self::AGGREGATION_LEVEL_* $aggregationLevel
+   * @param string
    */
   public function setAggregationLevel($aggregationLevel)
   {
     $this->aggregationLevel = $aggregationLevel;
   }
   /**
-   * @return self::AGGREGATION_LEVEL_*
+   * @return string
    */
   public function getAggregationLevel()
   {

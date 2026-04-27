@@ -20,20 +20,12 @@ namespace Google\Service\CloudRetail;
 class GoogleCloudRetailV2betaExportErrorsConfig extends \Google\Model
 {
   /**
-   * Google Cloud Storage path for import errors. This must be an empty,
-   * existing Cloud Storage bucket. Export errors will be written to a file in
-   * this bucket, one per line, as a JSON-encoded `google.rpc.Status` message.
-   *
    * @var string
    */
   public $gcsPrefix;
 
   /**
-   * Google Cloud Storage path for import errors. This must be an empty,
-   * existing Cloud Storage bucket. Export errors will be written to a file in
-   * this bucket, one per line, as a JSON-encoded `google.rpc.Status` message.
-   *
-   * @param string $gcsPrefix
+   * @param string
    */
   public function setGcsPrefix($gcsPrefix)
   {

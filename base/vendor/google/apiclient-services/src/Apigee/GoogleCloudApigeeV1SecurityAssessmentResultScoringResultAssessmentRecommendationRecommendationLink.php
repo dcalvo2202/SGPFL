@@ -20,22 +20,16 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1SecurityAssessmentResultScoringResultAssessmentRecommendationRecommendationLink extends \Google\Model
 {
   /**
-   * The text of the url. (ie: "Learn more")
-   *
    * @var string
    */
   public $text;
   /**
-   * The link itself.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * The text of the url. (ie: "Learn more")
-   *
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {
@@ -49,9 +43,7 @@ class GoogleCloudApigeeV1SecurityAssessmentResultScoringResultAssessmentRecommen
     return $this->text;
   }
   /**
-   * The link itself.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

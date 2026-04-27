@@ -21,25 +21,16 @@ class MonitoringDestination extends \Google\Collection
 {
   protected $collection_key = 'metrics';
   /**
-   * Types of the metrics to report to this monitoring destination. Each type
-   * must be defined in Service.metrics section.
-   *
    * @var string[]
    */
   public $metrics;
   /**
-   * The monitored resource type. The type must be defined in
-   * Service.monitored_resources section.
-   *
    * @var string
    */
   public $monitoredResource;
 
   /**
-   * Types of the metrics to report to this monitoring destination. Each type
-   * must be defined in Service.metrics section.
-   *
-   * @param string[] $metrics
+   * @param string[]
    */
   public function setMetrics($metrics)
   {
@@ -53,10 +44,7 @@ class MonitoringDestination extends \Google\Collection
     return $this->metrics;
   }
   /**
-   * The monitored resource type. The type must be defined in
-   * Service.monitored_resources section.
-   *
-   * @param string $monitoredResource
+   * @param string
    */
   public function setMonitoredResource($monitoredResource)
   {

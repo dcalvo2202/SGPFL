@@ -30,10 +30,7 @@ class GoogleCloudSecuritycenterV2AzureMetadata extends \Google\Collection
   protected $tenantDataType = '';
 
   /**
-   * A list of Azure management groups associated with the resource, ordered
-   * from lowest level (closest to the subscription) to highest level.
-   *
-   * @param GoogleCloudSecuritycenterV2AzureManagementGroup[] $managementGroups
+   * @param GoogleCloudSecuritycenterV2AzureManagementGroup[]
    */
   public function setManagementGroups($managementGroups)
   {
@@ -47,9 +44,7 @@ class GoogleCloudSecuritycenterV2AzureMetadata extends \Google\Collection
     return $this->managementGroups;
   }
   /**
-   * The Azure resource group associated with the resource.
-   *
-   * @param GoogleCloudSecuritycenterV2AzureResourceGroup $resourceGroup
+   * @param GoogleCloudSecuritycenterV2AzureResourceGroup
    */
   public function setResourceGroup(GoogleCloudSecuritycenterV2AzureResourceGroup $resourceGroup)
   {
@@ -63,9 +58,7 @@ class GoogleCloudSecuritycenterV2AzureMetadata extends \Google\Collection
     return $this->resourceGroup;
   }
   /**
-   * The Azure subscription associated with the resource.
-   *
-   * @param GoogleCloudSecuritycenterV2AzureSubscription $subscription
+   * @param GoogleCloudSecuritycenterV2AzureSubscription
    */
   public function setSubscription(GoogleCloudSecuritycenterV2AzureSubscription $subscription)
   {
@@ -79,9 +72,7 @@ class GoogleCloudSecuritycenterV2AzureMetadata extends \Google\Collection
     return $this->subscription;
   }
   /**
-   * The Azure Entra tenant associated with the resource.
-   *
-   * @param GoogleCloudSecuritycenterV2AzureTenant $tenant
+   * @param GoogleCloudSecuritycenterV2AzureTenant
    */
   public function setTenant(GoogleCloudSecuritycenterV2AzureTenant $tenant)
   {

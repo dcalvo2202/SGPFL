@@ -23,9 +23,7 @@ class GoogleCloudAiplatformV1CopyModelOperationMetadata extends \Google\Model
   protected $genericMetadataDataType = '';
 
   /**
-   * The common part of the operation metadata.
-   *
-   * @param GoogleCloudAiplatformV1GenericOperationMetadata $genericMetadata
+   * @param GoogleCloudAiplatformV1GenericOperationMetadata
    */
   public function setGenericMetadata(GoogleCloudAiplatformV1GenericOperationMetadata $genericMetadata)
   {

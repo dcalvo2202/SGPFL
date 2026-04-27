@@ -20,24 +20,16 @@ namespace Google\Service\BigLakeService;
 class HiveDatabaseOptions extends \Google\Model
 {
   /**
-   * Cloud Storage folder URI where the database data is stored, starting with
-   * "gs://".
-   *
    * @var string
    */
   public $locationUri;
   /**
-   * Stores user supplied Hive database parameters.
-   *
    * @var string[]
    */
   public $parameters;
 
   /**
-   * Cloud Storage folder URI where the database data is stored, starting with
-   * "gs://".
-   *
-   * @param string $locationUri
+   * @param string
    */
   public function setLocationUri($locationUri)
   {
@@ -51,9 +43,7 @@ class HiveDatabaseOptions extends \Google\Model
     return $this->locationUri;
   }
   /**
-   * Stores user supplied Hive database parameters.
-   *
-   * @param string[] $parameters
+   * @param string[]
    */
   public function setParameters($parameters)
   {

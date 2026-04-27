@@ -20,24 +20,16 @@ namespace Google\Service\SmartDeviceManagement;
 class GoogleHomeEnterpriseSdmV1Room extends \Google\Model
 {
   /**
-   * Output only. The resource name of the room. For example:
-   * "enterprises/XYZ/structures/ABC/rooms/123".
-   *
    * @var string
    */
   public $name;
   /**
-   * Room traits.
-   *
    * @var array[]
    */
   public $traits;
 
   /**
-   * Output only. The resource name of the room. For example:
-   * "enterprises/XYZ/structures/ABC/rooms/123".
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -51,9 +43,7 @@ class GoogleHomeEnterpriseSdmV1Room extends \Google\Model
     return $this->name;
   }
   /**
-   * Room traits.
-   *
-   * @param array[] $traits
+   * @param array[]
    */
   public function setTraits($traits)
   {

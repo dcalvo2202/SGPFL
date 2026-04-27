@@ -27,7 +27,7 @@ class XPSColumnSpecCorrelatedColumn extends \Google\Model
   protected $correlationStatsDataType = '';
 
   /**
-   * @param int $columnId
+   * @param int
    */
   public function setColumnId($columnId)
   {
@@ -41,7 +41,7 @@ class XPSColumnSpecCorrelatedColumn extends \Google\Model
     return $this->columnId;
   }
   /**
-   * @param XPSCorrelationStats $correlationStats
+   * @param XPSCorrelationStats
    */
   public function setCorrelationStats(XPSCorrelationStats $correlationStats)
   {

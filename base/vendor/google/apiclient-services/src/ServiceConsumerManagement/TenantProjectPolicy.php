@@ -24,11 +24,7 @@ class TenantProjectPolicy extends \Google\Collection
   protected $policyBindingsDataType = 'array';
 
   /**
-   * Policy bindings to be applied to the tenant project, in addition to the
-   * 'roles/owner' role granted to the Service Consumer Management service
-   * account.
-   *
-   * @param PolicyBinding[] $policyBindings
+   * @param PolicyBinding[]
    */
   public function setPolicyBindings($policyBindings)
   {

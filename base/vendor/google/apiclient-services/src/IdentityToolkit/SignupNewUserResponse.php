@@ -20,53 +20,36 @@ namespace Google\Service\IdentityToolkit;
 class SignupNewUserResponse extends \Google\Model
 {
   /**
-   * The name of the user.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * The email of the user.
-   *
    * @var string
    */
   public $email;
   /**
-   * If idToken is STS id token, then this field will be expiration time of STS
-   * id token in seconds.
-   *
    * @var string
    */
   public $expiresIn;
   /**
-   * The Gitkit id token to login the newly sign up user.
-   *
    * @var string
    */
   public $idToken;
   /**
-   * The fixed string "identitytoolkit#SignupNewUserResponse".
-   *
    * @var string
    */
   public $kind;
   /**
-   * The RP local ID of the user.
-   *
    * @var string
    */
   public $localId;
   /**
-   * If idToken is STS id token, then this field will be refresh token.
-   *
    * @var string
    */
   public $refreshToken;
 
   /**
-   * The name of the user.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -80,9 +63,7 @@ class SignupNewUserResponse extends \Google\Model
     return $this->displayName;
   }
   /**
-   * The email of the user.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {
@@ -96,10 +77,7 @@ class SignupNewUserResponse extends \Google\Model
     return $this->email;
   }
   /**
-   * If idToken is STS id token, then this field will be expiration time of STS
-   * id token in seconds.
-   *
-   * @param string $expiresIn
+   * @param string
    */
   public function setExpiresIn($expiresIn)
   {
@@ -113,9 +91,7 @@ class SignupNewUserResponse extends \Google\Model
     return $this->expiresIn;
   }
   /**
-   * The Gitkit id token to login the newly sign up user.
-   *
-   * @param string $idToken
+   * @param string
    */
   public function setIdToken($idToken)
   {
@@ -129,9 +105,7 @@ class SignupNewUserResponse extends \Google\Model
     return $this->idToken;
   }
   /**
-   * The fixed string "identitytoolkit#SignupNewUserResponse".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -145,9 +119,7 @@ class SignupNewUserResponse extends \Google\Model
     return $this->kind;
   }
   /**
-   * The RP local ID of the user.
-   *
-   * @param string $localId
+   * @param string
    */
   public function setLocalId($localId)
   {
@@ -161,9 +133,7 @@ class SignupNewUserResponse extends \Google\Model
     return $this->localId;
   }
   /**
-   * If idToken is STS id token, then this field will be refresh token.
-   *
-   * @param string $refreshToken
+   * @param string
    */
   public function setRefreshToken($refreshToken)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\Slides;
 class CreateImageResponse extends \Google\Model
 {
   /**
-   * The object ID of the created image.
-   *
    * @var string
    */
   public $objectId;
 
   /**
-   * The object ID of the created image.
-   *
-   * @param string $objectId
+   * @param string
    */
   public function setObjectId($objectId)
   {

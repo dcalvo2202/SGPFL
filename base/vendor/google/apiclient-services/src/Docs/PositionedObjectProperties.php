@@ -25,9 +25,7 @@ class PositionedObjectProperties extends \Google\Model
   protected $positioningDataType = '';
 
   /**
-   * The embedded object of this positioned object.
-   *
-   * @param EmbeddedObject $embeddedObject
+   * @param EmbeddedObject
    */
   public function setEmbeddedObject(EmbeddedObject $embeddedObject)
   {
@@ -41,10 +39,7 @@ class PositionedObjectProperties extends \Google\Model
     return $this->embeddedObject;
   }
   /**
-   * The positioning of this positioned object relative to the newline of the
-   * Paragraph that references this positioned object.
-   *
-   * @param PositionedObjectPositioning $positioning
+   * @param PositionedObjectPositioning
    */
   public function setPositioning(PositionedObjectPositioning $positioning)
   {

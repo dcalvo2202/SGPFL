@@ -20,18 +20,12 @@ namespace Google\Service\ContainerAnalysis;
 class DSSEHint extends \Google\Model
 {
   /**
-   * Required. The human readable name of this attestation authority, for
-   * example "cloudbuild-prod".
-   *
    * @var string
    */
   public $humanReadableName;
 
   /**
-   * Required. The human readable name of this attestation authority, for
-   * example "cloudbuild-prod".
-   *
-   * @param string $humanReadableName
+   * @param string
    */
   public function setHumanReadableName($humanReadableName)
   {

@@ -20,64 +20,30 @@ namespace Google\Service\Integrations;
 class EnterpriseCrmEventbusProtoCloudLoggingDetails extends \Google\Model
 {
   /**
-   * Unspecified
-   */
-  public const CLOUD_LOGGING_SEVERITY_CLOUD_LOGGING_SEVERITY_UNSPECIFIED = 'CLOUD_LOGGING_SEVERITY_UNSPECIFIED';
-  /**
-   * If Severity selected is `INFO`, then all the Integration Execution States
-   * (`IN_PROCESS`, `ON_HOLD`, `SUCCEEDED`, `SUSPENDED`, `ERROR`, `CANCELLED`)
-   * will be sent to Cloud Logging.
-   */
-  public const CLOUD_LOGGING_SEVERITY_INFO = 'INFO';
-  /**
-   * If Severity selected is `ERROR`, then only the following Integration
-   * Execution States (`ERROR`, `CANCELLED`) will be sent to Cloud Logging.
-   */
-  public const CLOUD_LOGGING_SEVERITY_ERROR = 'ERROR';
-  /**
-   * If Severity selected is `WARNING`, then only the following Integration
-   * Execution States (`ERROR`, `CANCELLED`) will be sent to Cloud Logging.
-   */
-  public const CLOUD_LOGGING_SEVERITY_WARNING = 'WARNING';
-  /**
-   * Severity selected by the customer for the logs to be sent to Cloud Logging,
-   * for the integration version getting executed.
-   *
    * @var string
    */
   public $cloudLoggingSeverity;
   /**
-   * Status of whether Cloud Logging is enabled or not for the integration
-   * version getting executed.
-   *
    * @var bool
    */
   public $enableCloudLogging;
 
   /**
-   * Severity selected by the customer for the logs to be sent to Cloud Logging,
-   * for the integration version getting executed.
-   *
-   * Accepted values: CLOUD_LOGGING_SEVERITY_UNSPECIFIED, INFO, ERROR, WARNING
-   *
-   * @param self::CLOUD_LOGGING_SEVERITY_* $cloudLoggingSeverity
+   * @param string
    */
   public function setCloudLoggingSeverity($cloudLoggingSeverity)
   {
     $this->cloudLoggingSeverity = $cloudLoggingSeverity;
   }
   /**
-   * @return self::CLOUD_LOGGING_SEVERITY_*
+   * @return string
    */
   public function getCloudLoggingSeverity()
   {
     return $this->cloudLoggingSeverity;
   }
   /**
-   * Status of whether Cloud Logging is enabled or not for the integration
-   * version getting executed.
-   *
-   * @param bool $enableCloudLogging
+   * @param bool
    */
   public function setEnableCloudLogging($enableCloudLogging)
   {

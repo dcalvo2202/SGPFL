@@ -20,24 +20,16 @@ namespace Google\Service\SA360;
 class GoogleAdsSearchads360V0CommonAssetInteractionTarget extends \Google\Model
 {
   /**
-   * The asset resource name.
-   *
    * @var string
    */
   public $asset;
   /**
-   * Only used with CustomerAsset, CampaignAsset and AdGroupAsset metrics.
-   * Indicates whether the interaction metrics occurred on the asset itself or a
-   * different asset or ad unit.
-   *
    * @var bool
    */
   public $interactionOnThisAsset;
 
   /**
-   * The asset resource name.
-   *
-   * @param string $asset
+   * @param string
    */
   public function setAsset($asset)
   {
@@ -51,11 +43,7 @@ class GoogleAdsSearchads360V0CommonAssetInteractionTarget extends \Google\Model
     return $this->asset;
   }
   /**
-   * Only used with CustomerAsset, CampaignAsset and AdGroupAsset metrics.
-   * Indicates whether the interaction metrics occurred on the asset itself or a
-   * different asset or ad unit.
-   *
-   * @param bool $interactionOnThisAsset
+   * @param bool
    */
   public function setInteractionOnThisAsset($interactionOnThisAsset)
   {

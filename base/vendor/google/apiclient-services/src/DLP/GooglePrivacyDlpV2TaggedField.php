@@ -20,10 +20,6 @@ namespace Google\Service\DLP;
 class GooglePrivacyDlpV2TaggedField extends \Google\Model
 {
   /**
-   * A column can be tagged with a custom tag. In this case, the user must
-   * indicate an auxiliary table that contains statistical information on the
-   * possible values of this column.
-   *
    * @var string
    */
   public $customTag;
@@ -35,11 +31,7 @@ class GooglePrivacyDlpV2TaggedField extends \Google\Model
   protected $infoTypeDataType = '';
 
   /**
-   * A column can be tagged with a custom tag. In this case, the user must
-   * indicate an auxiliary table that contains statistical information on the
-   * possible values of this column.
-   *
-   * @param string $customTag
+   * @param string
    */
   public function setCustomTag($customTag)
   {
@@ -53,9 +45,7 @@ class GooglePrivacyDlpV2TaggedField extends \Google\Model
     return $this->customTag;
   }
   /**
-   * Required. Identifies the column.
-   *
-   * @param GooglePrivacyDlpV2FieldId $field
+   * @param GooglePrivacyDlpV2FieldId
    */
   public function setField(GooglePrivacyDlpV2FieldId $field)
   {
@@ -69,10 +59,7 @@ class GooglePrivacyDlpV2TaggedField extends \Google\Model
     return $this->field;
   }
   /**
-   * If no semantic tag is indicated, we infer the statistical model from the
-   * distribution of values in the input data
-   *
-   * @param GoogleProtobufEmpty $inferred
+   * @param GoogleProtobufEmpty
    */
   public function setInferred(GoogleProtobufEmpty $inferred)
   {
@@ -86,13 +73,7 @@ class GooglePrivacyDlpV2TaggedField extends \Google\Model
     return $this->inferred;
   }
   /**
-   * A column can be tagged with a InfoType to use the relevant public dataset
-   * as a statistical model of population, if available. We currently support US
-   * ZIP codes, region codes, ages and genders. To programmatically obtain the
-   * list of supported InfoTypes, use ListInfoTypes with the
-   * supported_by=RISK_ANALYSIS filter.
-   *
-   * @param GooglePrivacyDlpV2InfoType $infoType
+   * @param GooglePrivacyDlpV2InfoType
    */
   public function setInfoType(GooglePrivacyDlpV2InfoType $infoType)
   {

@@ -20,22 +20,16 @@ namespace Google\Service\DatabaseMigrationService;
 class DumpFlag extends \Google\Model
 {
   /**
-   * The name of the flag
-   *
    * @var string
    */
   public $name;
   /**
-   * The value of the flag.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * The name of the flag
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -49,9 +43,7 @@ class DumpFlag extends \Google\Model
     return $this->name;
   }
   /**
-   * The value of the flag.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

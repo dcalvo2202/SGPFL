@@ -19,52 +19,28 @@ namespace Google\Service\Slides;
 
 class ReplaceAllShapesWithSheetsChartRequest extends \Google\Collection
 {
-  /**
-   * The chart is not associated with the source spreadsheet and cannot be
-   * updated. A chart that is not linked will be inserted as an image.
-   */
-  public const LINKING_MODE_NOT_LINKED_IMAGE = 'NOT_LINKED_IMAGE';
-  /**
-   * Linking the chart allows it to be updated, and other collaborators will see
-   * a link to the spreadsheet.
-   */
-  public const LINKING_MODE_LINKED = 'LINKED';
   protected $collection_key = 'pageObjectIds';
   /**
-   * The ID of the specific chart in the Google Sheets spreadsheet.
-   *
    * @var int
    */
   public $chartId;
   protected $containsTextType = SubstringMatchCriteria::class;
   protected $containsTextDataType = '';
   /**
-   * The mode with which the chart is linked to the source spreadsheet. When not
-   * specified, the chart will be an image that is not linked.
-   *
    * @var string
    */
   public $linkingMode;
   /**
-   * If non-empty, limits the matches to page elements only on the given pages.
-   * Returns a 400 bad request error if given the page object ID of a notes page
-   * or a notes master, or if a page with that object ID doesn't exist in the
-   * presentation.
-   *
    * @var string[]
    */
   public $pageObjectIds;
   /**
-   * The ID of the Google Sheets spreadsheet that contains the chart.
-   *
    * @var string
    */
   public $spreadsheetId;
 
   /**
-   * The ID of the specific chart in the Google Sheets spreadsheet.
-   *
-   * @param int $chartId
+   * @param int
    */
   public function setChartId($chartId)
   {
@@ -78,10 +54,7 @@ class ReplaceAllShapesWithSheetsChartRequest extends \Google\Collection
     return $this->chartId;
   }
   /**
-   * The criteria that the shapes must match in order to be replaced. The
-   * request will replace all of the shapes that contain the given text.
-   *
-   * @param SubstringMatchCriteria $containsText
+   * @param SubstringMatchCriteria
    */
   public function setContainsText(SubstringMatchCriteria $containsText)
   {
@@ -95,31 +68,21 @@ class ReplaceAllShapesWithSheetsChartRequest extends \Google\Collection
     return $this->containsText;
   }
   /**
-   * The mode with which the chart is linked to the source spreadsheet. When not
-   * specified, the chart will be an image that is not linked.
-   *
-   * Accepted values: NOT_LINKED_IMAGE, LINKED
-   *
-   * @param self::LINKING_MODE_* $linkingMode
+   * @param string
    */
   public function setLinkingMode($linkingMode)
   {
     $this->linkingMode = $linkingMode;
   }
   /**
-   * @return self::LINKING_MODE_*
+   * @return string
    */
   public function getLinkingMode()
   {
     return $this->linkingMode;
   }
   /**
-   * If non-empty, limits the matches to page elements only on the given pages.
-   * Returns a 400 bad request error if given the page object ID of a notes page
-   * or a notes master, or if a page with that object ID doesn't exist in the
-   * presentation.
-   *
-   * @param string[] $pageObjectIds
+   * @param string[]
    */
   public function setPageObjectIds($pageObjectIds)
   {
@@ -133,9 +96,7 @@ class ReplaceAllShapesWithSheetsChartRequest extends \Google\Collection
     return $this->pageObjectIds;
   }
   /**
-   * The ID of the Google Sheets spreadsheet that contains the chart.
-   *
-   * @param string $spreadsheetId
+   * @param string
    */
   public function setSpreadsheetId($spreadsheetId)
   {

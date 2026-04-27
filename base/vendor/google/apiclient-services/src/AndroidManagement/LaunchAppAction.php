@@ -20,16 +20,12 @@ namespace Google\Service\AndroidManagement;
 class LaunchAppAction extends \Google\Model
 {
   /**
-   * Package name of app to be launched
-   *
    * @var string
    */
   public $packageName;
 
   /**
-   * Package name of app to be launched
-   *
-   * @param string $packageName
+   * @param string
    */
   public function setPackageName($packageName)
   {

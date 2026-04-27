@@ -20,16 +20,12 @@ namespace Google\Service\Integrations;
 class GoogleCloudIntegrationsV1alphaExecuteEventResponse extends \Google\Model
 {
   /**
-   * The id of the execution corresponding to this run of integration.
-   *
    * @var string
    */
   public $executionId;
 
   /**
-   * The id of the execution corresponding to this run of integration.
-   *
-   * @param string $executionId
+   * @param string
    */
   public function setExecutionId($executionId)
   {

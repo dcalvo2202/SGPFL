@@ -26,9 +26,7 @@ class ReservationsScopedList extends \Google\Collection
   protected $warningDataType = '';
 
   /**
-   * A list of reservations contained in this scope.
-   *
-   * @param Reservation[] $reservations
+   * @param Reservation[]
    */
   public function setReservations($reservations)
   {
@@ -42,10 +40,7 @@ class ReservationsScopedList extends \Google\Collection
     return $this->reservations;
   }
   /**
-   * Informational warning which replaces the list of reservations when the list
-   * is empty.
-   *
-   * @param ReservationsScopedListWarning $warning
+   * @param ReservationsScopedListWarning
    */
   public function setWarning(ReservationsScopedListWarning $warning)
   {

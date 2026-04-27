@@ -22,16 +22,12 @@ class GoogleCloudDocumentaiV1DocumentChunkedDocumentChunkChunkPageHeader extends
   protected $pageSpanType = GoogleCloudDocumentaiV1DocumentChunkedDocumentChunkChunkPageSpan::class;
   protected $pageSpanDataType = '';
   /**
-   * Header in text format.
-   *
    * @var string
    */
   public $text;
 
   /**
-   * Page span of the header.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentChunkedDocumentChunkChunkPageSpan $pageSpan
+   * @param GoogleCloudDocumentaiV1DocumentChunkedDocumentChunkChunkPageSpan
    */
   public function setPageSpan(GoogleCloudDocumentaiV1DocumentChunkedDocumentChunkChunkPageSpan $pageSpan)
   {
@@ -45,9 +41,7 @@ class GoogleCloudDocumentaiV1DocumentChunkedDocumentChunkChunkPageHeader extends
     return $this->pageSpan;
   }
   /**
-   * Header in text format.
-   *
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {

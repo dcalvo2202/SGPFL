@@ -20,38 +20,20 @@ namespace Google\Service\Eventarc;
 class EventFilter extends \Google\Model
 {
   /**
-   * Required. The name of a CloudEvents attribute. Currently, only a subset of
-   * attributes are supported for filtering. You can [retrieve a specific
-   * provider's supported event types](/eventarc/docs/list-providers#describe-
-   * provider). All triggers MUST provide a filter for the 'type' attribute.
-   *
    * @var string
    */
   public $attribute;
   /**
-   * Optional. The operator used for matching the events with the value of the
-   * filter. If not specified, only events that have an exact key-value pair
-   * specified in the filter are matched. The allowed values are `path_pattern`
-   * and `match-path-pattern`. `path_pattern` is only allowed for GCFv1
-   * triggers.
-   *
    * @var string
    */
   public $operator;
   /**
-   * Required. The value for the attribute.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Required. The name of a CloudEvents attribute. Currently, only a subset of
-   * attributes are supported for filtering. You can [retrieve a specific
-   * provider's supported event types](/eventarc/docs/list-providers#describe-
-   * provider). All triggers MUST provide a filter for the 'type' attribute.
-   *
-   * @param string $attribute
+   * @param string
    */
   public function setAttribute($attribute)
   {
@@ -65,13 +47,7 @@ class EventFilter extends \Google\Model
     return $this->attribute;
   }
   /**
-   * Optional. The operator used for matching the events with the value of the
-   * filter. If not specified, only events that have an exact key-value pair
-   * specified in the filter are matched. The allowed values are `path_pattern`
-   * and `match-path-pattern`. `path_pattern` is only allowed for GCFv1
-   * triggers.
-   *
-   * @param string $operator
+   * @param string
    */
   public function setOperator($operator)
   {
@@ -85,9 +61,7 @@ class EventFilter extends \Google\Model
     return $this->operator;
   }
   /**
-   * Required. The value for the attribute.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

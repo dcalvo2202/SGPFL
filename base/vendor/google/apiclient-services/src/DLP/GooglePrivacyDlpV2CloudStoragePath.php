@@ -20,18 +20,12 @@ namespace Google\Service\DLP;
 class GooglePrivacyDlpV2CloudStoragePath extends \Google\Model
 {
   /**
-   * A URL representing a file or path (no wildcards) in Cloud Storage. Example:
-   * `gs://[BUCKET_NAME]/dictionary.txt`
-   *
    * @var string
    */
   public $path;
 
   /**
-   * A URL representing a file or path (no wildcards) in Cloud Storage. Example:
-   * `gs://[BUCKET_NAME]/dictionary.txt`
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {

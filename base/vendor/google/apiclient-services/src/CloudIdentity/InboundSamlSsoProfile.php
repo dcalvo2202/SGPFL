@@ -20,24 +20,16 @@ namespace Google\Service\CloudIdentity;
 class InboundSamlSsoProfile extends \Google\Model
 {
   /**
-   * Immutable. The customer. For example: `customers/C0123abc`.
-   *
    * @var string
    */
   public $customer;
   /**
-   * Human-readable name of the SAML SSO profile.
-   *
    * @var string
    */
   public $displayName;
   protected $idpConfigType = SamlIdpConfig::class;
   protected $idpConfigDataType = '';
   /**
-   * Output only. [Resource
-   * name](https://cloud.google.com/apis/design/resource_names) of the SAML SSO
-   * profile.
-   *
    * @var string
    */
   public $name;
@@ -45,9 +37,7 @@ class InboundSamlSsoProfile extends \Google\Model
   protected $spConfigDataType = '';
 
   /**
-   * Immutable. The customer. For example: `customers/C0123abc`.
-   *
-   * @param string $customer
+   * @param string
    */
   public function setCustomer($customer)
   {
@@ -61,9 +51,7 @@ class InboundSamlSsoProfile extends \Google\Model
     return $this->customer;
   }
   /**
-   * Human-readable name of the SAML SSO profile.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -77,9 +65,7 @@ class InboundSamlSsoProfile extends \Google\Model
     return $this->displayName;
   }
   /**
-   * SAML identity provider configuration.
-   *
-   * @param SamlIdpConfig $idpConfig
+   * @param SamlIdpConfig
    */
   public function setIdpConfig(SamlIdpConfig $idpConfig)
   {
@@ -93,11 +79,7 @@ class InboundSamlSsoProfile extends \Google\Model
     return $this->idpConfig;
   }
   /**
-   * Output only. [Resource
-   * name](https://cloud.google.com/apis/design/resource_names) of the SAML SSO
-   * profile.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -111,11 +93,7 @@ class InboundSamlSsoProfile extends \Google\Model
     return $this->name;
   }
   /**
-   * SAML service provider configuration for this SAML SSO profile. These are
-   * the service provider details provided by Google that should be configured
-   * on the corresponding identity provider.
-   *
-   * @param SamlSpConfig $spConfig
+   * @param SamlSpConfig
    */
   public function setSpConfig(SamlSpConfig $spConfig)
   {

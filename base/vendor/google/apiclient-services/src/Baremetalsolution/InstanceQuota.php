@@ -20,43 +20,28 @@ namespace Google\Service\Baremetalsolution;
 class InstanceQuota extends \Google\Model
 {
   /**
-   * Number of machines than can be created for the given location and
-   * instance_type.
-   *
    * @var int
    */
   public $availableMachineCount;
   /**
-   * The gcp service of the provisioning quota.
-   *
    * @var string
    */
   public $gcpService;
   /**
-   * Instance type. Deprecated: use gcp_service.
-   *
-   * @deprecated
    * @var string
    */
   public $instanceType;
   /**
-   * Location where the quota applies.
-   *
    * @var string
    */
   public $location;
   /**
-   * Output only. The name of the instance quota.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Number of machines than can be created for the given location and
-   * instance_type.
-   *
-   * @param int $availableMachineCount
+   * @param int
    */
   public function setAvailableMachineCount($availableMachineCount)
   {
@@ -70,9 +55,7 @@ class InstanceQuota extends \Google\Model
     return $this->availableMachineCount;
   }
   /**
-   * The gcp service of the provisioning quota.
-   *
-   * @param string $gcpService
+   * @param string
    */
   public function setGcpService($gcpService)
   {
@@ -86,17 +69,13 @@ class InstanceQuota extends \Google\Model
     return $this->gcpService;
   }
   /**
-   * Instance type. Deprecated: use gcp_service.
-   *
-   * @deprecated
-   * @param string $instanceType
+   * @param string
    */
   public function setInstanceType($instanceType)
   {
     $this->instanceType = $instanceType;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getInstanceType()
@@ -104,9 +83,7 @@ class InstanceQuota extends \Google\Model
     return $this->instanceType;
   }
   /**
-   * Location where the quota applies.
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -120,9 +97,7 @@ class InstanceQuota extends \Google\Model
     return $this->location;
   }
   /**
-   * Output only. The name of the instance quota.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

@@ -26,10 +26,7 @@ class Overlay extends \Google\Collection
   protected $imageDataType = '';
 
   /**
-   * List of animations. The list should be chronological, without any time
-   * overlap.
-   *
-   * @param Animation[] $animations
+   * @param Animation[]
    */
   public function setAnimations($animations)
   {
@@ -43,9 +40,7 @@ class Overlay extends \Google\Collection
     return $this->animations;
   }
   /**
-   * Image overlay.
-   *
-   * @param Image $image
+   * @param Image
    */
   public function setImage(Image $image)
   {

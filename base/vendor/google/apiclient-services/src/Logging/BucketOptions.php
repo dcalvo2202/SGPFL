@@ -27,9 +27,7 @@ class BucketOptions extends \Google\Model
   protected $linearBucketsDataType = '';
 
   /**
-   * The explicit buckets.
-   *
-   * @param Explicit $explicitBuckets
+   * @param Explicit
    */
   public function setExplicitBuckets(Explicit $explicitBuckets)
   {
@@ -43,9 +41,7 @@ class BucketOptions extends \Google\Model
     return $this->explicitBuckets;
   }
   /**
-   * The exponential buckets.
-   *
-   * @param Exponential $exponentialBuckets
+   * @param Exponential
    */
   public function setExponentialBuckets(Exponential $exponentialBuckets)
   {
@@ -59,9 +55,7 @@ class BucketOptions extends \Google\Model
     return $this->exponentialBuckets;
   }
   /**
-   * The linear bucket.
-   *
-   * @param Linear $linearBuckets
+   * @param Linear
    */
   public function setLinearBuckets(Linear $linearBuckets)
   {

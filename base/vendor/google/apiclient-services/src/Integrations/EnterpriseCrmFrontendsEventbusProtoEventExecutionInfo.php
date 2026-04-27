@@ -19,28 +19,14 @@ namespace Google\Service\Integrations;
 
 class EnterpriseCrmFrontendsEventbusProtoEventExecutionInfo extends \Google\Collection
 {
-  public const POST_METHOD_UNSPECIFIED = 'UNSPECIFIED';
-  public const POST_METHOD_POST = 'POST';
-  public const POST_METHOD_POST_TO_QUEUE = 'POST_TO_QUEUE';
-  public const POST_METHOD_SCHEDULE = 'SCHEDULE';
-  public const POST_METHOD_POST_BY_EVENT_CONFIG_ID = 'POST_BY_EVENT_CONFIG_ID';
-  public const POST_METHOD_POST_WITH_EVENT_DETAILS = 'POST_WITH_EVENT_DETAILS';
-  public const PRODUCT_UNSPECIFIED_PRODUCT = 'UNSPECIFIED_PRODUCT';
-  public const PRODUCT_IP = 'IP';
-  public const PRODUCT_APIGEE = 'APIGEE';
-  public const PRODUCT_SECURITY = 'SECURITY';
   protected $collection_key = 'errors';
   /**
-   * The event data user sends as request.
-   *
    * @var string
    */
   public $clientId;
   protected $cloudLoggingDetailsType = EnterpriseCrmEventbusProtoCloudLoggingDetails::class;
   protected $cloudLoggingDetailsDataType = '';
   /**
-   * Auto-generated.
-   *
    * @var string
    */
   public $createTime;
@@ -51,43 +37,30 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionInfo extends \Google\Coll
   protected $eventExecutionDetailsType = EnterpriseCrmFrontendsEventbusProtoEventExecutionDetails::class;
   protected $eventExecutionDetailsDataType = '';
   /**
-   * Auto-generated primary key.
-   *
    * @var string
    */
   public $eventExecutionInfoId;
   protected $executionTraceInfoType = EnterpriseCrmEventbusProtoExecutionTraceInfo::class;
   protected $executionTraceInfoDataType = '';
   /**
-   * User-defined label that annotates the executed integration version.
-   *
    * @var string
    */
   public $integrationVersionUserLabel;
   /**
-   * Auto-generated.
-   *
    * @var string
    */
   public $lastModifiedTime;
   /**
-   * The ways user posts this event.
-   *
    * @var string
    */
   public $postMethod;
   /**
-   * Which Google product the execution_info belongs to. If not set, the
-   * execution_info belongs to Integration Platform by default.
-   *
    * @var string
    */
   public $product;
   protected $replayInfoType = EnterpriseCrmFrontendsEventbusProtoEventExecutionInfoReplayInfo::class;
   protected $replayInfoDataType = '';
   /**
-   * Optional. This is used to de-dup incoming request.
-   *
    * @var string
    */
   public $requestId;
@@ -96,51 +69,32 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionInfo extends \Google\Coll
   protected $responseParamsType = EnterpriseCrmFrontendsEventbusProtoEventParameters::class;
   protected $responseParamsDataType = '';
   /**
-   * Workflow snapshot number.
-   *
    * @var string
    */
   public $snapshotNumber;
   /**
-   * Tenant this event is created. Used to reschedule the event to correct
-   * tenant.
-   *
    * @var string
    */
   public $tenant;
   /**
-   * The trigger id of the workflow trigger config. If both trigger_id and
-   * client_id is present, the workflow is executed from the start tasks
-   * provided by the matching trigger config otherwise it is executed from the
-   * default start tasks.
-   *
    * @var string
    */
   public $triggerId;
   /**
-   * Required. Pointer to the workflow it is executing.
-   *
    * @var string
    */
   public $workflowId;
   /**
-   * Name of the workflow.
-   *
    * @var string
    */
   public $workflowName;
   /**
-   * Time interval in seconds to schedule retry of workflow in manifold when
-   * workflow is already running
-   *
    * @var string
    */
   public $workflowRetryBackoffIntervalSeconds;
 
   /**
-   * The event data user sends as request.
-   *
-   * @param string $clientId
+   * @param string
    */
   public function setClientId($clientId)
   {
@@ -154,9 +108,7 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionInfo extends \Google\Coll
     return $this->clientId;
   }
   /**
-   * Cloud Logging details for execution info
-   *
-   * @param EnterpriseCrmEventbusProtoCloudLoggingDetails $cloudLoggingDetails
+   * @param EnterpriseCrmEventbusProtoCloudLoggingDetails
    */
   public function setCloudLoggingDetails(EnterpriseCrmEventbusProtoCloudLoggingDetails $cloudLoggingDetails)
   {
@@ -170,9 +122,7 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionInfo extends \Google\Coll
     return $this->cloudLoggingDetails;
   }
   /**
-   * Auto-generated.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -186,9 +136,7 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionInfo extends \Google\Coll
     return $this->createTime;
   }
   /**
-   * Final error-code if event failed.
-   *
-   * @param CrmlogErrorCode $errorCode
+   * @param CrmlogErrorCode
    */
   public function setErrorCode(CrmlogErrorCode $errorCode)
   {
@@ -202,10 +150,7 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionInfo extends \Google\Coll
     return $this->errorCode;
   }
   /**
-   * Errors, warnings, and informationals associated with the workflow/task. The
-   * order in which the errors were added by the workflow/task is maintained.
-   *
-   * @param EnterpriseCrmEventbusProtoErrorDetail[] $errors
+   * @param EnterpriseCrmEventbusProtoErrorDetail[]
    */
   public function setErrors($errors)
   {
@@ -219,9 +164,7 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionInfo extends \Google\Coll
     return $this->errors;
   }
   /**
-   * The execution info about this event.
-   *
-   * @param EnterpriseCrmFrontendsEventbusProtoEventExecutionDetails $eventExecutionDetails
+   * @param EnterpriseCrmFrontendsEventbusProtoEventExecutionDetails
    */
   public function setEventExecutionDetails(EnterpriseCrmFrontendsEventbusProtoEventExecutionDetails $eventExecutionDetails)
   {
@@ -235,9 +178,7 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionInfo extends \Google\Coll
     return $this->eventExecutionDetails;
   }
   /**
-   * Auto-generated primary key.
-   *
-   * @param string $eventExecutionInfoId
+   * @param string
    */
   public function setEventExecutionInfoId($eventExecutionInfoId)
   {
@@ -251,9 +192,7 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionInfo extends \Google\Coll
     return $this->eventExecutionInfoId;
   }
   /**
-   * Execution trace info to aggregate parent-child executions.
-   *
-   * @param EnterpriseCrmEventbusProtoExecutionTraceInfo $executionTraceInfo
+   * @param EnterpriseCrmEventbusProtoExecutionTraceInfo
    */
   public function setExecutionTraceInfo(EnterpriseCrmEventbusProtoExecutionTraceInfo $executionTraceInfo)
   {
@@ -267,9 +206,7 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionInfo extends \Google\Coll
     return $this->executionTraceInfo;
   }
   /**
-   * User-defined label that annotates the executed integration version.
-   *
-   * @param string $integrationVersionUserLabel
+   * @param string
    */
   public function setIntegrationVersionUserLabel($integrationVersionUserLabel)
   {
@@ -283,9 +220,7 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionInfo extends \Google\Coll
     return $this->integrationVersionUserLabel;
   }
   /**
-   * Auto-generated.
-   *
-   * @param string $lastModifiedTime
+   * @param string
    */
   public function setLastModifiedTime($lastModifiedTime)
   {
@@ -299,47 +234,35 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionInfo extends \Google\Coll
     return $this->lastModifiedTime;
   }
   /**
-   * The ways user posts this event.
-   *
-   * Accepted values: UNSPECIFIED, POST, POST_TO_QUEUE, SCHEDULE,
-   * POST_BY_EVENT_CONFIG_ID, POST_WITH_EVENT_DETAILS
-   *
-   * @param self::POST_METHOD_* $postMethod
+   * @param string
    */
   public function setPostMethod($postMethod)
   {
     $this->postMethod = $postMethod;
   }
   /**
-   * @return self::POST_METHOD_*
+   * @return string
    */
   public function getPostMethod()
   {
     return $this->postMethod;
   }
   /**
-   * Which Google product the execution_info belongs to. If not set, the
-   * execution_info belongs to Integration Platform by default.
-   *
-   * Accepted values: UNSPECIFIED_PRODUCT, IP, APIGEE, SECURITY
-   *
-   * @param self::PRODUCT_* $product
+   * @param string
    */
   public function setProduct($product)
   {
     $this->product = $product;
   }
   /**
-   * @return self::PRODUCT_*
+   * @return string
    */
   public function getProduct()
   {
     return $this->product;
   }
   /**
-   * Replay info for the execution
-   *
-   * @param EnterpriseCrmFrontendsEventbusProtoEventExecutionInfoReplayInfo $replayInfo
+   * @param EnterpriseCrmFrontendsEventbusProtoEventExecutionInfoReplayInfo
    */
   public function setReplayInfo(EnterpriseCrmFrontendsEventbusProtoEventExecutionInfoReplayInfo $replayInfo)
   {
@@ -353,9 +276,7 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionInfo extends \Google\Coll
     return $this->replayInfo;
   }
   /**
-   * Optional. This is used to de-dup incoming request.
-   *
-   * @param string $requestId
+   * @param string
    */
   public function setRequestId($requestId)
   {
@@ -369,9 +290,7 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionInfo extends \Google\Coll
     return $this->requestId;
   }
   /**
-   * Event parameters come in as part of the request.
-   *
-   * @param EnterpriseCrmFrontendsEventbusProtoEventParameters $requestParams
+   * @param EnterpriseCrmFrontendsEventbusProtoEventParameters
    */
   public function setRequestParams(EnterpriseCrmFrontendsEventbusProtoEventParameters $requestParams)
   {
@@ -385,9 +304,7 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionInfo extends \Google\Coll
     return $this->requestParams;
   }
   /**
-   * Event parameters come out as part of the response.
-   *
-   * @param EnterpriseCrmFrontendsEventbusProtoEventParameters $responseParams
+   * @param EnterpriseCrmFrontendsEventbusProtoEventParameters
    */
   public function setResponseParams(EnterpriseCrmFrontendsEventbusProtoEventParameters $responseParams)
   {
@@ -401,9 +318,7 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionInfo extends \Google\Coll
     return $this->responseParams;
   }
   /**
-   * Workflow snapshot number.
-   *
-   * @param string $snapshotNumber
+   * @param string
    */
   public function setSnapshotNumber($snapshotNumber)
   {
@@ -417,10 +332,7 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionInfo extends \Google\Coll
     return $this->snapshotNumber;
   }
   /**
-   * Tenant this event is created. Used to reschedule the event to correct
-   * tenant.
-   *
-   * @param string $tenant
+   * @param string
    */
   public function setTenant($tenant)
   {
@@ -434,12 +346,7 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionInfo extends \Google\Coll
     return $this->tenant;
   }
   /**
-   * The trigger id of the workflow trigger config. If both trigger_id and
-   * client_id is present, the workflow is executed from the start tasks
-   * provided by the matching trigger config otherwise it is executed from the
-   * default start tasks.
-   *
-   * @param string $triggerId
+   * @param string
    */
   public function setTriggerId($triggerId)
   {
@@ -453,9 +360,7 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionInfo extends \Google\Coll
     return $this->triggerId;
   }
   /**
-   * Required. Pointer to the workflow it is executing.
-   *
-   * @param string $workflowId
+   * @param string
    */
   public function setWorkflowId($workflowId)
   {
@@ -469,9 +374,7 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionInfo extends \Google\Coll
     return $this->workflowId;
   }
   /**
-   * Name of the workflow.
-   *
-   * @param string $workflowName
+   * @param string
    */
   public function setWorkflowName($workflowName)
   {
@@ -485,10 +388,7 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionInfo extends \Google\Coll
     return $this->workflowName;
   }
   /**
-   * Time interval in seconds to schedule retry of workflow in manifold when
-   * workflow is already running
-   *
-   * @param string $workflowRetryBackoffIntervalSeconds
+   * @param string
    */
   public function setWorkflowRetryBackoffIntervalSeconds($workflowRetryBackoffIntervalSeconds)
   {

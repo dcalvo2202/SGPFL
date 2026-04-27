@@ -20,105 +20,58 @@ namespace Google\Service\AlertCenter;
 class Alert extends \Google\Model
 {
   /**
-   * Output only. The unique identifier for the alert.
-   *
    * @var string
    */
   public $alertId;
   /**
-   * Output only. The time this alert was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. The unique identifier of the Google Workspace account of the
-   * customer.
-   *
    * @var string
    */
   public $customerId;
   /**
-   * Optional. The data associated with this alert, for example
-   * google.apps.alertcenter.type.DeviceCompromised.
-   *
    * @var array[]
    */
   public $data;
   /**
-   * Output only. `True` if this alert is marked for deletion.
-   *
    * @var bool
    */
   public $deleted;
   /**
-   * Optional. The time the event that caused this alert ceased being active. If
-   * provided, the end time must not be earlier than the start time. If not
-   * provided, it indicates an ongoing alert.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * Optional. `etag` is used for optimistic concurrency control as a way to
-   * help prevent simultaneous updates of an alert from overwriting each other.
-   * It is strongly suggested that systems make use of the `etag` in the read-
-   * modify-write cycle to perform alert updates in order to avoid race
-   * conditions: An `etag` is returned in the response which contains alerts,
-   * and systems are expected to put that etag in the request to update alert to
-   * ensure that their change will be applied to the same version of the alert.
-   * If no `etag` is provided in the call to update alert, then the existing
-   * alert is overwritten blindly.
-   *
    * @var string
    */
   public $etag;
   protected $metadataType = AlertMetadata::class;
   protected $metadataDataType = '';
   /**
-   * Output only. An optional [Security Investigation
-   * Tool](https://support.google.com/a/answer/7575955) query for this alert.
-   *
    * @var string
    */
   public $securityInvestigationToolLink;
   /**
-   * Required. A unique identifier for the system that reported the alert. This
-   * is output only after alert is created. Supported sources are any of the
-   * following: * Google Operations * Mobile device management * Gmail phishing
-   * * Data Loss Prevention * Domain wide takeout * State sponsored attack *
-   * Google identity * Apps outage
-   *
    * @var string
    */
   public $source;
   /**
-   * Required. The time the event that caused this alert was started or
-   * detected.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * Required. The type of the alert. This is output only after alert is
-   * created. For a list of available alert types see [Google Workspace Alert ty
-   * pes](https://developers.google.com/workspace/admin/alertcenter/reference/al
-   * ert-types).
-   *
    * @var string
    */
   public $type;
   /**
-   * Output only. The time this alert was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. The unique identifier for the alert.
-   *
-   * @param string $alertId
+   * @param string
    */
   public function setAlertId($alertId)
   {
@@ -132,9 +85,7 @@ class Alert extends \Google\Model
     return $this->alertId;
   }
   /**
-   * Output only. The time this alert was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -148,10 +99,7 @@ class Alert extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. The unique identifier of the Google Workspace account of the
-   * customer.
-   *
-   * @param string $customerId
+   * @param string
    */
   public function setCustomerId($customerId)
   {
@@ -165,10 +113,7 @@ class Alert extends \Google\Model
     return $this->customerId;
   }
   /**
-   * Optional. The data associated with this alert, for example
-   * google.apps.alertcenter.type.DeviceCompromised.
-   *
-   * @param array[] $data
+   * @param array[]
    */
   public function setData($data)
   {
@@ -182,9 +127,7 @@ class Alert extends \Google\Model
     return $this->data;
   }
   /**
-   * Output only. `True` if this alert is marked for deletion.
-   *
-   * @param bool $deleted
+   * @param bool
    */
   public function setDeleted($deleted)
   {
@@ -198,11 +141,7 @@ class Alert extends \Google\Model
     return $this->deleted;
   }
   /**
-   * Optional. The time the event that caused this alert ceased being active. If
-   * provided, the end time must not be earlier than the start time. If not
-   * provided, it indicates an ongoing alert.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -216,17 +155,7 @@ class Alert extends \Google\Model
     return $this->endTime;
   }
   /**
-   * Optional. `etag` is used for optimistic concurrency control as a way to
-   * help prevent simultaneous updates of an alert from overwriting each other.
-   * It is strongly suggested that systems make use of the `etag` in the read-
-   * modify-write cycle to perform alert updates in order to avoid race
-   * conditions: An `etag` is returned in the response which contains alerts,
-   * and systems are expected to put that etag in the request to update alert to
-   * ensure that their change will be applied to the same version of the alert.
-   * If no `etag` is provided in the call to update alert, then the existing
-   * alert is overwritten blindly.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -240,9 +169,7 @@ class Alert extends \Google\Model
     return $this->etag;
   }
   /**
-   * Output only. The metadata associated with this alert.
-   *
-   * @param AlertMetadata $metadata
+   * @param AlertMetadata
    */
   public function setMetadata(AlertMetadata $metadata)
   {
@@ -256,10 +183,7 @@ class Alert extends \Google\Model
     return $this->metadata;
   }
   /**
-   * Output only. An optional [Security Investigation
-   * Tool](https://support.google.com/a/answer/7575955) query for this alert.
-   *
-   * @param string $securityInvestigationToolLink
+   * @param string
    */
   public function setSecurityInvestigationToolLink($securityInvestigationToolLink)
   {
@@ -273,13 +197,7 @@ class Alert extends \Google\Model
     return $this->securityInvestigationToolLink;
   }
   /**
-   * Required. A unique identifier for the system that reported the alert. This
-   * is output only after alert is created. Supported sources are any of the
-   * following: * Google Operations * Mobile device management * Gmail phishing
-   * * Data Loss Prevention * Domain wide takeout * State sponsored attack *
-   * Google identity * Apps outage
-   *
-   * @param string $source
+   * @param string
    */
   public function setSource($source)
   {
@@ -293,10 +211,7 @@ class Alert extends \Google\Model
     return $this->source;
   }
   /**
-   * Required. The time the event that caused this alert was started or
-   * detected.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -310,12 +225,7 @@ class Alert extends \Google\Model
     return $this->startTime;
   }
   /**
-   * Required. The type of the alert. This is output only after alert is
-   * created. For a list of available alert types see [Google Workspace Alert ty
-   * pes](https://developers.google.com/workspace/admin/alertcenter/reference/al
-   * ert-types).
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {
@@ -329,9 +239,7 @@ class Alert extends \Google\Model
     return $this->type;
   }
   /**
-   * Output only. The time this alert was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

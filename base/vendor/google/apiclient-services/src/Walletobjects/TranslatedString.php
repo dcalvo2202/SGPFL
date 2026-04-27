@@ -20,40 +20,26 @@ namespace Google\Service\Walletobjects;
 class TranslatedString extends \Google\Model
 {
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * `"walletobjects#translatedString"`.
-   *
-   * @deprecated
    * @var string
    */
   public $kind;
   /**
-   * Represents the BCP 47 language tag. Example values are "en-US", "en-GB",
-   * "de", or "de-AT".
-   *
    * @var string
    */
   public $language;
   /**
-   * The UTF-8 encoded translated string.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * `"walletobjects#translatedString"`.
-   *
-   * @deprecated
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
     $this->kind = $kind;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getKind()
@@ -61,10 +47,7 @@ class TranslatedString extends \Google\Model
     return $this->kind;
   }
   /**
-   * Represents the BCP 47 language tag. Example values are "en-US", "en-GB",
-   * "de", or "de-AT".
-   *
-   * @param string $language
+   * @param string
    */
   public function setLanguage($language)
   {
@@ -78,9 +61,7 @@ class TranslatedString extends \Google\Model
     return $this->language;
   }
   /**
-   * The UTF-8 encoded translated string.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

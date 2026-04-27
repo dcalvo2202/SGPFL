@@ -23,9 +23,7 @@ class GoogleCloudDatapipelinesV1RunPipelineResponse extends \Google\Model
   protected $jobDataType = '';
 
   /**
-   * Job that was created as part of RunPipeline operation.
-   *
-   * @param GoogleCloudDatapipelinesV1Job $job
+   * @param GoogleCloudDatapipelinesV1Job
    */
   public function setJob(GoogleCloudDatapipelinesV1Job $job)
   {

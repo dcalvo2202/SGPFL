@@ -20,30 +20,20 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1GroundingChunkWeb extends \Google\Model
 {
   /**
-   * The domain of the web page that contains the evidence. This can be used to
-   * filter out low-quality sources.
-   *
    * @var string
    */
   public $domain;
   /**
-   * The title of the web page that contains the evidence.
-   *
    * @var string
    */
   public $title;
   /**
-   * The URI of the web page that contains the evidence.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * The domain of the web page that contains the evidence. This can be used to
-   * filter out low-quality sources.
-   *
-   * @param string $domain
+   * @param string
    */
   public function setDomain($domain)
   {
@@ -57,9 +47,7 @@ class GoogleCloudAiplatformV1GroundingChunkWeb extends \Google\Model
     return $this->domain;
   }
   /**
-   * The title of the web page that contains the evidence.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -73,9 +61,7 @@ class GoogleCloudAiplatformV1GroundingChunkWeb extends \Google\Model
     return $this->title;
   }
   /**
-   * The URI of the web page that contains the evidence.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

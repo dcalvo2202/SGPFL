@@ -20,34 +20,14 @@ namespace Google\Service\DataCatalog;
 class GoogleCloudDatacatalogV1DataSource extends \Google\Model
 {
   /**
-   * Default unknown service.
-   */
-  public const SERVICE_SERVICE_UNSPECIFIED = 'SERVICE_UNSPECIFIED';
-  /**
-   * Google Cloud Storage service.
-   */
-  public const SERVICE_CLOUD_STORAGE = 'CLOUD_STORAGE';
-  /**
-   * BigQuery service.
-   */
-  public const SERVICE_BIGQUERY = 'BIGQUERY';
-  /**
-   * Full name of a resource as defined by the service. For example: `//bigquery
-   * .googleapis.com/projects/{PROJECT_ID}/locations/{LOCATION}/datasets/{DATASE
-   * T_ID}/tables/{TABLE_ID}`
-   *
    * @var string
    */
   public $resource;
   /**
-   * Service that physically stores the data.
-   *
    * @var string
    */
   public $service;
   /**
-   * Output only. Data Catalog entry name, if applicable.
-   *
    * @var string
    */
   public $sourceEntry;
@@ -55,11 +35,7 @@ class GoogleCloudDatacatalogV1DataSource extends \Google\Model
   protected $storagePropertiesDataType = '';
 
   /**
-   * Full name of a resource as defined by the service. For example: `//bigquery
-   * .googleapis.com/projects/{PROJECT_ID}/locations/{LOCATION}/datasets/{DATASE
-   * T_ID}/tables/{TABLE_ID}`
-   *
-   * @param string $resource
+   * @param string
    */
   public function setResource($resource)
   {
@@ -73,27 +49,21 @@ class GoogleCloudDatacatalogV1DataSource extends \Google\Model
     return $this->resource;
   }
   /**
-   * Service that physically stores the data.
-   *
-   * Accepted values: SERVICE_UNSPECIFIED, CLOUD_STORAGE, BIGQUERY
-   *
-   * @param self::SERVICE_* $service
+   * @param string
    */
   public function setService($service)
   {
     $this->service = $service;
   }
   /**
-   * @return self::SERVICE_*
+   * @return string
    */
   public function getService()
   {
     return $this->service;
   }
   /**
-   * Output only. Data Catalog entry name, if applicable.
-   *
-   * @param string $sourceEntry
+   * @param string
    */
   public function setSourceEntry($sourceEntry)
   {
@@ -107,9 +77,7 @@ class GoogleCloudDatacatalogV1DataSource extends \Google\Model
     return $this->sourceEntry;
   }
   /**
-   * Detailed properties of the underlying storage.
-   *
-   * @param GoogleCloudDatacatalogV1StorageProperties $storageProperties
+   * @param GoogleCloudDatacatalogV1StorageProperties
    */
   public function setStorageProperties(GoogleCloudDatacatalogV1StorageProperties $storageProperties)
   {

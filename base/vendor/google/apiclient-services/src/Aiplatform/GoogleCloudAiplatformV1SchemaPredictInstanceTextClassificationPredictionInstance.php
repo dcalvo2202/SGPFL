@@ -20,23 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1SchemaPredictInstanceTextClassificationPredictionInstance extends \Google\Model
 {
   /**
-   * The text snippet to make the predictions on.
-   *
    * @var string
    */
   public $content;
   /**
-   * The MIME type of the text snippet. The supported MIME types are listed
-   * below. - text/plain
-   *
    * @var string
    */
   public $mimeType;
 
   /**
-   * The text snippet to make the predictions on.
-   *
-   * @param string $content
+   * @param string
    */
   public function setContent($content)
   {
@@ -50,10 +43,7 @@ class GoogleCloudAiplatformV1SchemaPredictInstanceTextClassificationPredictionIn
     return $this->content;
   }
   /**
-   * The MIME type of the text snippet. The supported MIME types are listed
-   * below. - text/plain
-   *
-   * @param string $mimeType
+   * @param string
    */
   public function setMimeType($mimeType)
   {

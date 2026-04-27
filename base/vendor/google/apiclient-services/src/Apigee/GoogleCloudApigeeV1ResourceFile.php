@@ -20,22 +20,16 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1ResourceFile extends \Google\Model
 {
   /**
-   * ID of the resource file.
-   *
    * @var string
    */
   public $name;
   /**
-   * Resource file type. {{ resource_file_type }}
-   *
    * @var string
    */
   public $type;
 
   /**
-   * ID of the resource file.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -49,9 +43,7 @@ class GoogleCloudApigeeV1ResourceFile extends \Google\Model
     return $this->name;
   }
   /**
-   * Resource file type. {{ resource_file_type }}
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

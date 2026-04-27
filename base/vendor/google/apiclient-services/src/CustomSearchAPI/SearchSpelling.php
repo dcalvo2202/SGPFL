@@ -20,22 +20,16 @@ namespace Google\Service\CustomSearchAPI;
 class SearchSpelling extends \Google\Model
 {
   /**
-   * The corrected query.
-   *
    * @var string
    */
   public $correctedQuery;
   /**
-   * The corrected query, formatted in HTML.
-   *
    * @var string
    */
   public $htmlCorrectedQuery;
 
   /**
-   * The corrected query.
-   *
-   * @param string $correctedQuery
+   * @param string
    */
   public function setCorrectedQuery($correctedQuery)
   {
@@ -49,9 +43,7 @@ class SearchSpelling extends \Google\Model
     return $this->correctedQuery;
   }
   /**
-   * The corrected query, formatted in HTML.
-   *
-   * @param string $htmlCorrectedQuery
+   * @param string
    */
   public function setHtmlCorrectedQuery($htmlCorrectedQuery)
   {

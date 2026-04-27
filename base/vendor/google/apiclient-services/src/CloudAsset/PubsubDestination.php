@@ -20,18 +20,12 @@ namespace Google\Service\CloudAsset;
 class PubsubDestination extends \Google\Model
 {
   /**
-   * The name of the Pub/Sub topic to publish to. Example:
-   * `projects/PROJECT_ID/topics/TOPIC_ID`.
-   *
    * @var string
    */
   public $topic;
 
   /**
-   * The name of the Pub/Sub topic to publish to. Example:
-   * `projects/PROJECT_ID/topics/TOPIC_ID`.
-   *
-   * @param string $topic
+   * @param string
    */
   public function setTopic($topic)
   {

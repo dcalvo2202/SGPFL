@@ -20,25 +20,16 @@ namespace Google\Service\CloudDeploy;
 class Rollback extends \Google\Model
 {
   /**
-   * Optional. The starting phase ID for the `Rollout`. If unspecified, the
-   * `Rollout` will start in the stable phase.
-   *
    * @var string
    */
   public $destinationPhase;
   /**
-   * Optional. If pending rollout exists on the target, the rollback operation
-   * will be aborted.
-   *
    * @var bool
    */
   public $disableRollbackIfRolloutPending;
 
   /**
-   * Optional. The starting phase ID for the `Rollout`. If unspecified, the
-   * `Rollout` will start in the stable phase.
-   *
-   * @param string $destinationPhase
+   * @param string
    */
   public function setDestinationPhase($destinationPhase)
   {
@@ -52,10 +43,7 @@ class Rollback extends \Google\Model
     return $this->destinationPhase;
   }
   /**
-   * Optional. If pending rollout exists on the target, the rollback operation
-   * will be aborted.
-   *
-   * @param bool $disableRollbackIfRolloutPending
+   * @param bool
    */
   public function setDisableRollbackIfRolloutPending($disableRollbackIfRolloutPending)
   {

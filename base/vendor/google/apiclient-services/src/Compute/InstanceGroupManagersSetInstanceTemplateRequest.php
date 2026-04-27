@@ -20,26 +20,12 @@ namespace Google\Service\Compute;
 class InstanceGroupManagersSetInstanceTemplateRequest extends \Google\Model
 {
   /**
-   * The URL of the instance template that is specified for this managed
-   * instance group. The group uses this template to create all new instances in
-   * the managed instance group. The templates for existing instances in the
-   * group do not change unless you run recreateInstances,
-   * runapplyUpdatesToInstances, or set the group'supdatePolicy.type to
-   * PROACTIVE.
-   *
    * @var string
    */
   public $instanceTemplate;
 
   /**
-   * The URL of the instance template that is specified for this managed
-   * instance group. The group uses this template to create all new instances in
-   * the managed instance group. The templates for existing instances in the
-   * group do not change unless you run recreateInstances,
-   * runapplyUpdatesToInstances, or set the group'supdatePolicy.type to
-   * PROACTIVE.
-   *
-   * @param string $instanceTemplate
+   * @param string
    */
   public function setInstanceTemplate($instanceTemplate)
   {

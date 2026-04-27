@@ -21,9 +21,6 @@ class ListPrinterModelsResponse extends \Google\Collection
 {
   protected $collection_key = 'printerModels';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListPrinterModelsResponse extends \Google\Collection
   protected $printerModelsDataType = 'array';
 
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,10 +42,7 @@ class ListPrinterModelsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Printer models that are currently allowed to be configured for ChromeOs.
-   * Some printers may be added or removed over time.
-   *
-   * @param PrinterModel[] $printerModels
+   * @param PrinterModel[]
    */
   public function setPrinterModels($printerModels)
   {

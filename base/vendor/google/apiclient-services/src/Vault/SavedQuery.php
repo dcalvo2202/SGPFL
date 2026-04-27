@@ -20,40 +20,26 @@ namespace Google\Service\Vault;
 class SavedQuery extends \Google\Model
 {
   /**
-   * Output only. The server-generated timestamp when the saved query was
-   * created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * The name of the saved query.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. The matter ID of the matter the saved query is saved in. The
-   * server does not use this field during create and always uses matter ID in
-   * the URL.
-   *
    * @var string
    */
   public $matterId;
   protected $queryType = Query::class;
   protected $queryDataType = '';
   /**
-   * A unique identifier for the saved query.
-   *
    * @var string
    */
   public $savedQueryId;
 
   /**
-   * Output only. The server-generated timestamp when the saved query was
-   * created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -67,9 +53,7 @@ class SavedQuery extends \Google\Model
     return $this->createTime;
   }
   /**
-   * The name of the saved query.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -83,11 +67,7 @@ class SavedQuery extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Output only. The matter ID of the matter the saved query is saved in. The
-   * server does not use this field during create and always uses matter ID in
-   * the URL.
-   *
-   * @param string $matterId
+   * @param string
    */
   public function setMatterId($matterId)
   {
@@ -101,9 +81,7 @@ class SavedQuery extends \Google\Model
     return $this->matterId;
   }
   /**
-   * The search parameters of the saved query.
-   *
-   * @param Query $query
+   * @param Query
    */
   public function setQuery(Query $query)
   {
@@ -117,9 +95,7 @@ class SavedQuery extends \Google\Model
     return $this->query;
   }
   /**
-   * A unique identifier for the saved query.
-   *
-   * @param string $savedQueryId
+   * @param string
    */
   public function setSavedQueryId($savedQueryId)
   {

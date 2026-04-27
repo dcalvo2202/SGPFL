@@ -20,35 +20,20 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1SchemaTrainingjobDefinitionWindowConfig extends \Google\Model
 {
   /**
-   * Name of the column that should be used to generate sliding windows. The
-   * column should contain either booleans or string booleans; if the value of
-   * the row is True, generate a sliding window with the horizon starting at
-   * that row. The column will not be used as a feature in training.
-   *
    * @var string
    */
   public $column;
   /**
-   * Maximum number of windows that should be generated across all time series.
-   *
    * @var string
    */
   public $maxCount;
   /**
-   * Stride length used to generate input examples. Within one time series,
-   * every {$STRIDE_LENGTH} rows will be used to generate a sliding window.
-   *
    * @var string
    */
   public $strideLength;
 
   /**
-   * Name of the column that should be used to generate sliding windows. The
-   * column should contain either booleans or string booleans; if the value of
-   * the row is True, generate a sliding window with the horizon starting at
-   * that row. The column will not be used as a feature in training.
-   *
-   * @param string $column
+   * @param string
    */
   public function setColumn($column)
   {
@@ -62,9 +47,7 @@ class GoogleCloudAiplatformV1SchemaTrainingjobDefinitionWindowConfig extends \Go
     return $this->column;
   }
   /**
-   * Maximum number of windows that should be generated across all time series.
-   *
-   * @param string $maxCount
+   * @param string
    */
   public function setMaxCount($maxCount)
   {
@@ -78,10 +61,7 @@ class GoogleCloudAiplatformV1SchemaTrainingjobDefinitionWindowConfig extends \Go
     return $this->maxCount;
   }
   /**
-   * Stride length used to generate input examples. Within one time series,
-   * every {$STRIDE_LENGTH} rows will be used to generate a sliding window.
-   *
-   * @param string $strideLength
+   * @param string
    */
   public function setStrideLength($strideLength)
   {

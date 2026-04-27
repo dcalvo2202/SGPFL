@@ -20,41 +20,13 @@ namespace Google\Service\FirebaseAppHosting;
 class Config extends \Google\Collection
 {
   protected $collection_key = 'env';
-  protected $effectiveEnvType = EnvironmentVariable::class;
-  protected $effectiveEnvDataType = 'array';
   protected $envType = EnvironmentVariable::class;
   protected $envDataType = 'array';
   protected $runConfigType = RunConfig::class;
   protected $runConfigDataType = '';
 
   /**
-   * Output only. [OUTPUT_ONLY] This field represents all environment variables
-   * employed during both the build and runtime. This list reflects the result
-   * of merging variables from all sources (Backend.override_env,
-   * Build.Config.env, YAML, defaults, system). Each variable includes its
-   * `origin`
-   *
-   * @param EnvironmentVariable[] $effectiveEnv
-   */
-  public function setEffectiveEnv($effectiveEnv)
-  {
-    $this->effectiveEnv = $effectiveEnv;
-  }
-  /**
-   * @return EnvironmentVariable[]
-   */
-  public function getEffectiveEnv()
-  {
-    return $this->effectiveEnv;
-  }
-  /**
-   * Optional. Supplied environment variables for a specific build. Provided at
-   * Build creation time and immutable afterwards. This field is only applicable
-   * for Builds using a build image - (e.g., ContainerSource or ArchiveSource
-   * with locally_built_source) Attempts to set this for other build types will
-   * result in an error
-   *
-   * @param EnvironmentVariable[] $env
+   * @param EnvironmentVariable[]
    */
   public function setEnv($env)
   {
@@ -68,11 +40,7 @@ class Config extends \Google\Collection
     return $this->env;
   }
   /**
-   * Optional. Additional configuration of the Cloud Run [`service`](https://clo
-   * ud.google.com/run/docs/reference/rest/v2/projects.locations.services#resour
-   * ce:-service).
-   *
-   * @param RunConfig $runConfig
+   * @param RunConfig
    */
   public function setRunConfig(RunConfig $runConfig)
   {

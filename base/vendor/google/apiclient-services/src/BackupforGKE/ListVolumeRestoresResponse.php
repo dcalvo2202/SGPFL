@@ -21,10 +21,6 @@ class ListVolumeRestoresResponse extends \Google\Collection
 {
   protected $collection_key = 'volumeRestores';
   /**
-   * A token which may be sent as page_token in a subsequent
-   * `ListVolumeRestores` call to retrieve the next page of results. If this
-   * field is omitted or empty, then there are no more results to return.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -32,11 +28,7 @@ class ListVolumeRestoresResponse extends \Google\Collection
   protected $volumeRestoresDataType = 'array';
 
   /**
-   * A token which may be sent as page_token in a subsequent
-   * `ListVolumeRestores` call to retrieve the next page of results. If this
-   * field is omitted or empty, then there are no more results to return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -50,9 +42,7 @@ class ListVolumeRestoresResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The list of VolumeRestores matching the given criteria.
-   *
-   * @param VolumeRestore[] $volumeRestores
+   * @param VolumeRestore[]
    */
   public function setVolumeRestores($volumeRestores)
   {

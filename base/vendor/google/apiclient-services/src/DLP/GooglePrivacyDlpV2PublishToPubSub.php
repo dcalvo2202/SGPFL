@@ -20,22 +20,12 @@ namespace Google\Service\DLP;
 class GooglePrivacyDlpV2PublishToPubSub extends \Google\Model
 {
   /**
-   * Cloud Pub/Sub topic to send notifications to. The topic must have given
-   * publishing access rights to the DLP API service account executing the long
-   * running DlpJob sending the notifications. Format is
-   * projects/{project}/topics/{topic}.
-   *
    * @var string
    */
   public $topic;
 
   /**
-   * Cloud Pub/Sub topic to send notifications to. The topic must have given
-   * publishing access rights to the DLP API service account executing the long
-   * running DlpJob sending the notifications. Format is
-   * projects/{project}/topics/{topic}.
-   *
-   * @param string $topic
+   * @param string
    */
   public function setTopic($topic)
   {

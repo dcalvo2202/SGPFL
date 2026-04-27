@@ -20,31 +20,16 @@ namespace Google\Service\Contactcenterinsights;
 class GoogleCloudContactcenterinsightsV1EncryptionSpec extends \Google\Model
 {
   /**
-   * Required. The name of customer-managed encryption key that is used to
-   * secure a resource and its sub-resources. If empty, the resource is secured
-   * by our default encryption key. Only the key in the same location as this
-   * resource is allowed to be used for encryption. Format: `projects/{project}/
-   * locations/{location}/keyRings/{keyRing}/cryptoKeys/{key}`
-   *
    * @var string
    */
   public $kmsKey;
   /**
-   * Immutable. The resource name of the encryption key specification resource.
-   * Format: projects/{project}/locations/{location}/encryptionSpec
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Required. The name of customer-managed encryption key that is used to
-   * secure a resource and its sub-resources. If empty, the resource is secured
-   * by our default encryption key. Only the key in the same location as this
-   * resource is allowed to be used for encryption. Format: `projects/{project}/
-   * locations/{location}/keyRings/{keyRing}/cryptoKeys/{key}`
-   *
-   * @param string $kmsKey
+   * @param string
    */
   public function setKmsKey($kmsKey)
   {
@@ -58,10 +43,7 @@ class GoogleCloudContactcenterinsightsV1EncryptionSpec extends \Google\Model
     return $this->kmsKey;
   }
   /**
-   * Immutable. The resource name of the encryption key specification resource.
-   * Format: projects/{project}/locations/{location}/encryptionSpec
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

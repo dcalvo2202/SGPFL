@@ -20,16 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1ToolParameterKVMatchSpec extends \Google\Model
 {
   /**
-   * Optional. Whether to use STRICT string match on parameter values.
-   *
    * @var bool
    */
   public $useStrictStringMatch;
 
   /**
-   * Optional. Whether to use STRICT string match on parameter values.
-   *
-   * @param bool $useStrictStringMatch
+   * @param bool
    */
   public function setUseStrictStringMatch($useStrictStringMatch)
   {

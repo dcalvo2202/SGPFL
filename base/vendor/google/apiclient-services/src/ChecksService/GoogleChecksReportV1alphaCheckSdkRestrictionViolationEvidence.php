@@ -24,9 +24,7 @@ class GoogleChecksReportV1alphaCheckSdkRestrictionViolationEvidence extends \Goo
   protected $sdkDetailsDataType = 'array';
 
   /**
-   * SDKs in violation.
-   *
-   * @param GoogleChecksReportV1alphaCheckSdkRestrictionViolationEvidenceSdkDetails[] $sdkDetails
+   * @param GoogleChecksReportV1alphaCheckSdkRestrictionViolationEvidenceSdkDetails[]
    */
   public function setSdkDetails($sdkDetails)
   {

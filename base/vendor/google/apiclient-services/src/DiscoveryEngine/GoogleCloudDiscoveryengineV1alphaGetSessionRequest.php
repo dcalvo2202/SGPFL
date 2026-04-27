@@ -20,26 +20,16 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1alphaGetSessionRequest extends \Google\Model
 {
   /**
-   * Optional. If set to true, the full session including all answer details
-   * will be returned.
-   *
    * @var bool
    */
   public $includeAnswerDetails;
   /**
-   * Required. The resource name of the Session to get. Format: `projects/{proje
-   * ct}/locations/{location}/collections/{collection}/dataStores/{data_store_id
-   * }/sessions/{session_id}`
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Optional. If set to true, the full session including all answer details
-   * will be returned.
-   *
-   * @param bool $includeAnswerDetails
+   * @param bool
    */
   public function setIncludeAnswerDetails($includeAnswerDetails)
   {
@@ -53,11 +43,7 @@ class GoogleCloudDiscoveryengineV1alphaGetSessionRequest extends \Google\Model
     return $this->includeAnswerDetails;
   }
   /**
-   * Required. The resource name of the Session to get. Format: `projects/{proje
-   * ct}/locations/{location}/collections/{collection}/dataStores/{data_store_id
-   * }/sessions/{session_id}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

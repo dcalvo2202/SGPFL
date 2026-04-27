@@ -20,22 +20,16 @@ namespace Google\Service\Compute;
 class HelpLink extends \Google\Model
 {
   /**
-   * Describes what the link offers.
-   *
    * @var string
    */
   public $description;
   /**
-   * The URL of the link.
-   *
    * @var string
    */
   public $url;
 
   /**
-   * Describes what the link offers.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -49,9 +43,7 @@ class HelpLink extends \Google\Model
     return $this->description;
   }
   /**
-   * The URL of the link.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

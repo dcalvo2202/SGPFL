@@ -20,18 +20,12 @@ namespace Google\Service\Recommender;
 class GoogleCloudRecommenderV1RecommenderGenerationConfig extends \Google\Model
 {
   /**
-   * Parameters for this RecommenderGenerationConfig. These configs can be used
-   * by or are applied to all subtypes.
-   *
    * @var array[]
    */
   public $params;
 
   /**
-   * Parameters for this RecommenderGenerationConfig. These configs can be used
-   * by or are applied to all subtypes.
-   *
-   * @param array[] $params
+   * @param array[]
    */
   public function setParams($params)
   {

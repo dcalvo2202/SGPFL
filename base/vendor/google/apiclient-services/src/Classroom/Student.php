@@ -20,8 +20,6 @@ namespace Google\Service\Classroom;
 class Student extends \Google\Model
 {
   /**
-   * Identifier of the course. Read-only.
-   *
    * @var string
    */
   public $courseId;
@@ -30,19 +28,12 @@ class Student extends \Google\Model
   protected $studentWorkFolderType = DriveFolder::class;
   protected $studentWorkFolderDataType = '';
   /**
-   * Identifier of the user. When specified as a parameter of a request, this
-   * identifier can be one of the following: * the numeric identifier for the
-   * user * the email address of the user * the string literal `"me"`,
-   * indicating the requesting user
-   *
    * @var string
    */
   public $userId;
 
   /**
-   * Identifier of the course. Read-only.
-   *
-   * @param string $courseId
+   * @param string
    */
   public function setCourseId($courseId)
   {
@@ -56,9 +47,7 @@ class Student extends \Google\Model
     return $this->courseId;
   }
   /**
-   * Global user information for the student. Read-only.
-   *
-   * @param UserProfile $profile
+   * @param UserProfile
    */
   public function setProfile(UserProfile $profile)
   {
@@ -72,10 +61,7 @@ class Student extends \Google\Model
     return $this->profile;
   }
   /**
-   * Information about a Drive Folder for this student's work in this course.
-   * Only visible to the student and domain administrators. Read-only.
-   *
-   * @param DriveFolder $studentWorkFolder
+   * @param DriveFolder
    */
   public function setStudentWorkFolder(DriveFolder $studentWorkFolder)
   {
@@ -89,12 +75,7 @@ class Student extends \Google\Model
     return $this->studentWorkFolder;
   }
   /**
-   * Identifier of the user. When specified as a parameter of a request, this
-   * identifier can be one of the following: * the numeric identifier for the
-   * user * the email address of the user * the string literal `"me"`,
-   * indicating the requesting user
-   *
-   * @param string $userId
+   * @param string
    */
   public function setUserId($userId)
   {

@@ -21,28 +21,20 @@ class GoogleCloudAiplatformV1IndexDatapointRestriction extends \Google\Collectio
 {
   protected $collection_key = 'denyList';
   /**
-   * The attributes to allow in this namespace. e.g.: 'red'
-   *
    * @var string[]
    */
   public $allowList;
   /**
-   * The attributes to deny in this namespace. e.g.: 'blue'
-   *
    * @var string[]
    */
   public $denyList;
   /**
-   * The namespace of this restriction. e.g.: color.
-   *
    * @var string
    */
   public $namespace;
 
   /**
-   * The attributes to allow in this namespace. e.g.: 'red'
-   *
-   * @param string[] $allowList
+   * @param string[]
    */
   public function setAllowList($allowList)
   {
@@ -56,9 +48,7 @@ class GoogleCloudAiplatformV1IndexDatapointRestriction extends \Google\Collectio
     return $this->allowList;
   }
   /**
-   * The attributes to deny in this namespace. e.g.: 'blue'
-   *
-   * @param string[] $denyList
+   * @param string[]
    */
   public function setDenyList($denyList)
   {
@@ -72,9 +62,7 @@ class GoogleCloudAiplatformV1IndexDatapointRestriction extends \Google\Collectio
     return $this->denyList;
   }
   /**
-   * The namespace of this restriction. e.g.: color.
-   *
-   * @param string $namespace
+   * @param string
    */
   public function setNamespace($namespace)
   {

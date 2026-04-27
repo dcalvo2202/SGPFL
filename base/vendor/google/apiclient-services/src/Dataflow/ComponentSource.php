@@ -20,29 +20,20 @@ namespace Google\Service\Dataflow;
 class ComponentSource extends \Google\Model
 {
   /**
-   * Dataflow service generated name for this source.
-   *
    * @var string
    */
   public $name;
   /**
-   * User name for the original user transform or collection with which this
-   * source is most closely associated.
-   *
    * @var string
    */
   public $originalTransformOrCollection;
   /**
-   * Human-readable name for this transform; may be user or system generated.
-   *
    * @var string
    */
   public $userName;
 
   /**
-   * Dataflow service generated name for this source.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -56,10 +47,7 @@ class ComponentSource extends \Google\Model
     return $this->name;
   }
   /**
-   * User name for the original user transform or collection with which this
-   * source is most closely associated.
-   *
-   * @param string $originalTransformOrCollection
+   * @param string
    */
   public function setOriginalTransformOrCollection($originalTransformOrCollection)
   {
@@ -73,9 +61,7 @@ class ComponentSource extends \Google\Model
     return $this->originalTransformOrCollection;
   }
   /**
-   * Human-readable name for this transform; may be user or system generated.
-   *
-   * @param string $userName
+   * @param string
    */
   public function setUserName($userName)
   {

@@ -21,26 +21,18 @@ class SapValidation extends \Google\Collection
 {
   protected $collection_key = 'validationDetails';
   /**
-   * Required. The project_id of the cloud project that the Insight data comes
-   * from.
-   *
    * @var string
    */
   public $projectId;
   protected $validationDetailsType = SapValidationValidationDetail::class;
   protected $validationDetailsDataType = 'array';
   /**
-   * Optional. The zone of the instance that the Insight data comes from.
-   *
    * @var string
    */
   public $zone;
 
   /**
-   * Required. The project_id of the cloud project that the Insight data comes
-   * from.
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {
@@ -54,9 +46,7 @@ class SapValidation extends \Google\Collection
     return $this->projectId;
   }
   /**
-   * Optional. A list of SAP validation metrics data.
-   *
-   * @param SapValidationValidationDetail[] $validationDetails
+   * @param SapValidationValidationDetail[]
    */
   public function setValidationDetails($validationDetails)
   {
@@ -70,9 +60,7 @@ class SapValidation extends \Google\Collection
     return $this->validationDetails;
   }
   /**
-   * Optional. The zone of the instance that the Insight data comes from.
-   *
-   * @param string $zone
+   * @param string
    */
   public function setZone($zone)
   {

@@ -29,7 +29,7 @@ class VolumeseriesinfoVolumeSeriesIssue extends \Google\Model
   public $issueOrderNumber;
 
   /**
-   * @param string $issueDisplayNumber
+   * @param string
    */
   public function setIssueDisplayNumber($issueDisplayNumber)
   {
@@ -43,7 +43,7 @@ class VolumeseriesinfoVolumeSeriesIssue extends \Google\Model
     return $this->issueDisplayNumber;
   }
   /**
-   * @param int $issueOrderNumber
+   * @param int
    */
   public function setIssueOrderNumber($issueOrderNumber)
   {

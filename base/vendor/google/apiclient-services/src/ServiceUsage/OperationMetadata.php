@@ -21,18 +21,12 @@ class OperationMetadata extends \Google\Collection
 {
   protected $collection_key = 'resourceNames';
   /**
-   * The full name of the resources that this operation is directly associated
-   * with.
-   *
    * @var string[]
    */
   public $resourceNames;
 
   /**
-   * The full name of the resources that this operation is directly associated
-   * with.
-   *
-   * @param string[] $resourceNames
+   * @param string[]
    */
   public function setResourceNames($resourceNames)
   {

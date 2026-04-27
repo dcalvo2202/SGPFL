@@ -21,10 +21,6 @@ class XPSReportingMetrics extends \Google\Collection
 {
   protected $collection_key = 'metricEntries';
   /**
-   * The effective time training used. If set, this is used for quota management
-   * and billing. Deprecated. AutoML BE doesn't use this. Don't set.
-   *
-   * @deprecated
    * @var string
    */
   public $effectiveTrainingDuration;
@@ -32,18 +28,13 @@ class XPSReportingMetrics extends \Google\Collection
   protected $metricEntriesDataType = 'array';
 
   /**
-   * The effective time training used. If set, this is used for quota management
-   * and billing. Deprecated. AutoML BE doesn't use this. Don't set.
-   *
-   * @deprecated
-   * @param string $effectiveTrainingDuration
+   * @param string
    */
   public function setEffectiveTrainingDuration($effectiveTrainingDuration)
   {
     $this->effectiveTrainingDuration = $effectiveTrainingDuration;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getEffectiveTrainingDuration()
@@ -51,9 +42,7 @@ class XPSReportingMetrics extends \Google\Collection
     return $this->effectiveTrainingDuration;
   }
   /**
-   * One entry per metric name. The values must be aggregated per metric name.
-   *
-   * @param XPSMetricEntry[] $metricEntries
+   * @param XPSMetricEntry[]
    */
   public function setMetricEntries($metricEntries)
   {

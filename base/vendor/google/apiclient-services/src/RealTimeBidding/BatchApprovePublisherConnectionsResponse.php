@@ -24,9 +24,7 @@ class BatchApprovePublisherConnectionsResponse extends \Google\Collection
   protected $publisherConnectionsDataType = 'array';
 
   /**
-   * The publisher connections that have been approved.
-   *
-   * @param PublisherConnection[] $publisherConnections
+   * @param PublisherConnection[]
    */
   public function setPublisherConnections($publisherConnections)
   {

@@ -24,10 +24,6 @@ class GoogleCloudPolicysimulatorV1OrgPolicyViolation extends \Google\Model
   protected $errorType = GoogleRpcStatus::class;
   protected $errorDataType = '';
   /**
-   * The name of the `OrgPolicyViolation`. Example: organizations/my-example-org
-   * /locations/global/orgPolicyViolationsPreviews/506a5f7f/orgPolicyViolations/
-   * 38ce`
-   *
    * @var string
    */
   public $name;
@@ -35,9 +31,7 @@ class GoogleCloudPolicysimulatorV1OrgPolicyViolation extends \Google\Model
   protected $resourceDataType = '';
 
   /**
-   * The custom constraint being violated.
-   *
-   * @param GoogleCloudOrgpolicyV2CustomConstraint $customConstraint
+   * @param GoogleCloudOrgpolicyV2CustomConstraint
    */
   public function setCustomConstraint(GoogleCloudOrgpolicyV2CustomConstraint $customConstraint)
   {
@@ -51,9 +45,7 @@ class GoogleCloudPolicysimulatorV1OrgPolicyViolation extends \Google\Model
     return $this->customConstraint;
   }
   /**
-   * Any error encountered during the evaluation.
-   *
-   * @param GoogleRpcStatus $error
+   * @param GoogleRpcStatus
    */
   public function setError(GoogleRpcStatus $error)
   {
@@ -67,11 +59,7 @@ class GoogleCloudPolicysimulatorV1OrgPolicyViolation extends \Google\Model
     return $this->error;
   }
   /**
-   * The name of the `OrgPolicyViolation`. Example: organizations/my-example-org
-   * /locations/global/orgPolicyViolationsPreviews/506a5f7f/orgPolicyViolations/
-   * 38ce`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -85,9 +73,7 @@ class GoogleCloudPolicysimulatorV1OrgPolicyViolation extends \Google\Model
     return $this->name;
   }
   /**
-   * The resource violating the constraint.
-   *
-   * @param GoogleCloudPolicysimulatorV1ResourceContext $resource
+   * @param GoogleCloudPolicysimulatorV1ResourceContext
    */
   public function setResource(GoogleCloudPolicysimulatorV1ResourceContext $resource)
   {

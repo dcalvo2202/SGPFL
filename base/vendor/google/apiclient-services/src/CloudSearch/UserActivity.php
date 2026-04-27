@@ -23,9 +23,7 @@ class UserActivity extends \Google\Model
   protected $queryActivityDataType = '';
 
   /**
-   * Contains data which needs to be logged/removed.
-   *
-   * @param QueryActivity $queryActivity
+   * @param QueryActivity
    */
   public function setQueryActivity(QueryActivity $queryActivity)
   {

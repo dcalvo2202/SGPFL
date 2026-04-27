@@ -20,24 +20,16 @@ namespace Google\Service\MapsPlaces;
 class GoogleMapsPlacesV1PhotoMedia extends \Google\Model
 {
   /**
-   * The resource name of a photo media in the format:
-   * `places/{place_id}/photos/{photo_reference}/media`.
-   *
    * @var string
    */
   public $name;
   /**
-   * A short-lived uri that can be used to render the photo.
-   *
    * @var string
    */
   public $photoUri;
 
   /**
-   * The resource name of a photo media in the format:
-   * `places/{place_id}/photos/{photo_reference}/media`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -51,9 +43,7 @@ class GoogleMapsPlacesV1PhotoMedia extends \Google\Model
     return $this->name;
   }
   /**
-   * A short-lived uri that can be used to render the photo.
-   *
-   * @param string $photoUri
+   * @param string
    */
   public function setPhotoUri($photoUri)
   {

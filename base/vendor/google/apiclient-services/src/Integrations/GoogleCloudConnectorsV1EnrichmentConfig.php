@@ -20,16 +20,12 @@ namespace Google\Service\Integrations;
 class GoogleCloudConnectorsV1EnrichmentConfig extends \Google\Model
 {
   /**
-   * Optional. Append ACL to the event.
-   *
    * @var bool
    */
   public $appendAcl;
 
   /**
-   * Optional. Append ACL to the event.
-   *
-   * @param bool $appendAcl
+   * @param bool
    */
   public function setAppendAcl($appendAcl)
   {

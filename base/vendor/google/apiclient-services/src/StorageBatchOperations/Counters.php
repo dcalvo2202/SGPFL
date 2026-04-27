@@ -20,60 +20,20 @@ namespace Google\Service\StorageBatchOperations;
 class Counters extends \Google\Model
 {
   /**
-   * Output only. The number of objects that failed due to user errors or
-   * service errors.
-   *
    * @var string
    */
   public $failedObjectCount;
   /**
-   * Output only. Number of object custom contexts created. This field is only
-   * populated for jobs with the UpdateObjectCustomContext transformation.
-   *
-   * @var string
-   */
-  public $objectCustomContextsCreated;
-  /**
-   * Output only. Number of object custom contexts deleted. This field is only
-   * populated for jobs with the UpdateObjectCustomContext transformation.
-   *
-   * @var string
-   */
-  public $objectCustomContextsDeleted;
-  /**
-   * Output only. Number of object custom contexts updated. This counter tracks
-   * custom contexts where the key already existed, but the payload was
-   * modified. This field is only populated for jobs with the
-   * UpdateObjectCustomContext transformation.
-   *
-   * @var string
-   */
-  public $objectCustomContextsUpdated;
-  /**
-   * Output only. Number of objects completed.
-   *
    * @var string
    */
   public $succeededObjectCount;
   /**
-   * Output only. Number of bytes found from source. This field is only
-   * populated for jobs with a prefix list object configuration.
-   *
-   * @var string
-   */
-  public $totalBytesFound;
-  /**
-   * Output only. Number of objects listed.
-   *
    * @var string
    */
   public $totalObjectCount;
 
   /**
-   * Output only. The number of objects that failed due to user errors or
-   * service errors.
-   *
-   * @param string $failedObjectCount
+   * @param string
    */
   public function setFailedObjectCount($failedObjectCount)
   {
@@ -87,62 +47,7 @@ class Counters extends \Google\Model
     return $this->failedObjectCount;
   }
   /**
-   * Output only. Number of object custom contexts created. This field is only
-   * populated for jobs with the UpdateObjectCustomContext transformation.
-   *
-   * @param string $objectCustomContextsCreated
-   */
-  public function setObjectCustomContextsCreated($objectCustomContextsCreated)
-  {
-    $this->objectCustomContextsCreated = $objectCustomContextsCreated;
-  }
-  /**
-   * @return string
-   */
-  public function getObjectCustomContextsCreated()
-  {
-    return $this->objectCustomContextsCreated;
-  }
-  /**
-   * Output only. Number of object custom contexts deleted. This field is only
-   * populated for jobs with the UpdateObjectCustomContext transformation.
-   *
-   * @param string $objectCustomContextsDeleted
-   */
-  public function setObjectCustomContextsDeleted($objectCustomContextsDeleted)
-  {
-    $this->objectCustomContextsDeleted = $objectCustomContextsDeleted;
-  }
-  /**
-   * @return string
-   */
-  public function getObjectCustomContextsDeleted()
-  {
-    return $this->objectCustomContextsDeleted;
-  }
-  /**
-   * Output only. Number of object custom contexts updated. This counter tracks
-   * custom contexts where the key already existed, but the payload was
-   * modified. This field is only populated for jobs with the
-   * UpdateObjectCustomContext transformation.
-   *
-   * @param string $objectCustomContextsUpdated
-   */
-  public function setObjectCustomContextsUpdated($objectCustomContextsUpdated)
-  {
-    $this->objectCustomContextsUpdated = $objectCustomContextsUpdated;
-  }
-  /**
-   * @return string
-   */
-  public function getObjectCustomContextsUpdated()
-  {
-    return $this->objectCustomContextsUpdated;
-  }
-  /**
-   * Output only. Number of objects completed.
-   *
-   * @param string $succeededObjectCount
+   * @param string
    */
   public function setSucceededObjectCount($succeededObjectCount)
   {
@@ -156,26 +61,7 @@ class Counters extends \Google\Model
     return $this->succeededObjectCount;
   }
   /**
-   * Output only. Number of bytes found from source. This field is only
-   * populated for jobs with a prefix list object configuration.
-   *
-   * @param string $totalBytesFound
-   */
-  public function setTotalBytesFound($totalBytesFound)
-  {
-    $this->totalBytesFound = $totalBytesFound;
-  }
-  /**
-   * @return string
-   */
-  public function getTotalBytesFound()
-  {
-    return $this->totalBytesFound;
-  }
-  /**
-   * Output only. Number of objects listed.
-   *
-   * @param string $totalObjectCount
+   * @param string
    */
   public function setTotalObjectCount($totalObjectCount)
   {

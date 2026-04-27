@@ -27,7 +27,7 @@ class ShuffleWriteQuantileMetrics extends \Google\Model
   protected $writeTimeNanosDataType = '';
 
   /**
-   * @param Quantiles $writeBytes
+   * @param Quantiles
    */
   public function setWriteBytes(Quantiles $writeBytes)
   {
@@ -41,7 +41,7 @@ class ShuffleWriteQuantileMetrics extends \Google\Model
     return $this->writeBytes;
   }
   /**
-   * @param Quantiles $writeRecords
+   * @param Quantiles
    */
   public function setWriteRecords(Quantiles $writeRecords)
   {
@@ -55,7 +55,7 @@ class ShuffleWriteQuantileMetrics extends \Google\Model
     return $this->writeRecords;
   }
   /**
-   * @param Quantiles $writeTimeNanos
+   * @param Quantiles
    */
   public function setWriteTimeNanos(Quantiles $writeTimeNanos)
   {

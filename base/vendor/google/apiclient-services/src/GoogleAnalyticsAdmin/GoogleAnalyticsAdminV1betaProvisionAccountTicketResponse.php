@@ -20,16 +20,12 @@ namespace Google\Service\GoogleAnalyticsAdmin;
 class GoogleAnalyticsAdminV1betaProvisionAccountTicketResponse extends \Google\Model
 {
   /**
-   * The param to be passed in the ToS link.
-   *
    * @var string
    */
   public $accountTicketId;
 
   /**
-   * The param to be passed in the ToS link.
-   *
-   * @param string $accountTicketId
+   * @param string
    */
   public function setAccountTicketId($accountTicketId)
   {

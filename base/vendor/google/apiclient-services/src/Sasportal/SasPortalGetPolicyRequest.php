@@ -20,16 +20,12 @@ namespace Google\Service\Sasportal;
 class SasPortalGetPolicyRequest extends \Google\Model
 {
   /**
-   * Required. The resource for which the policy is being requested.
-   *
    * @var string
    */
   public $resource;
 
   /**
-   * Required. The resource for which the policy is being requested.
-   *
-   * @param string $resource
+   * @param string
    */
   public function setResource($resource)
   {

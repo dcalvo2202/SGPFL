@@ -21,24 +21,12 @@ class AsyncBatchAnnotateImagesRequest extends \Google\Collection
 {
   protected $collection_key = 'requests';
   /**
-   * Optional. The labels with user-defined metadata for the request. Label keys
-   * and values can be no longer than 63 characters (Unicode codepoints), can
-   * only contain lowercase letters, numeric characters, underscores and dashes.
-   * International characters are allowed. Label values are optional. Label keys
-   * must start with a letter.
-   *
    * @var string[]
    */
   public $labels;
   protected $outputConfigType = OutputConfig::class;
   protected $outputConfigDataType = '';
   /**
-   * Optional. Target project and location to make a call. Format:
-   * `projects/{project-id}/locations/{location-id}`. If no parent is specified,
-   * a region will be chosen automatically. Supported location-ids: `us`: USA
-   * country only, `asia`: East asia areas, like Japan, Taiwan, `eu`: The
-   * European Union. Example: `projects/project-A/locations/eu`.
-   *
    * @var string
    */
   public $parent;
@@ -46,13 +34,7 @@ class AsyncBatchAnnotateImagesRequest extends \Google\Collection
   protected $requestsDataType = 'array';
 
   /**
-   * Optional. The labels with user-defined metadata for the request. Label keys
-   * and values can be no longer than 63 characters (Unicode codepoints), can
-   * only contain lowercase letters, numeric characters, underscores and dashes.
-   * International characters are allowed. Label values are optional. Label keys
-   * must start with a letter.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -66,9 +48,7 @@ class AsyncBatchAnnotateImagesRequest extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Required. The desired output location and metadata (e.g. format).
-   *
-   * @param OutputConfig $outputConfig
+   * @param OutputConfig
    */
   public function setOutputConfig(OutputConfig $outputConfig)
   {
@@ -82,13 +62,7 @@ class AsyncBatchAnnotateImagesRequest extends \Google\Collection
     return $this->outputConfig;
   }
   /**
-   * Optional. Target project and location to make a call. Format:
-   * `projects/{project-id}/locations/{location-id}`. If no parent is specified,
-   * a region will be chosen automatically. Supported location-ids: `us`: USA
-   * country only, `asia`: East asia areas, like Japan, Taiwan, `eu`: The
-   * European Union. Example: `projects/project-A/locations/eu`.
-   *
-   * @param string $parent
+   * @param string
    */
   public function setParent($parent)
   {
@@ -102,9 +76,7 @@ class AsyncBatchAnnotateImagesRequest extends \Google\Collection
     return $this->parent;
   }
   /**
-   * Required. Individual image annotation requests for this batch.
-   *
-   * @param AnnotateImageRequest[] $requests
+   * @param AnnotateImageRequest[]
    */
   public function setRequests($requests)
   {

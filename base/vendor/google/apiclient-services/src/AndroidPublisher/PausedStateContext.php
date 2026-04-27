@@ -20,16 +20,12 @@ namespace Google\Service\AndroidPublisher;
 class PausedStateContext extends \Google\Model
 {
   /**
-   * Time at which the subscription will be automatically resumed.
-   *
    * @var string
    */
   public $autoResumeTime;
 
   /**
-   * Time at which the subscription will be automatically resumed.
-   *
-   * @param string $autoResumeTime
+   * @param string
    */
   public function setAutoResumeTime($autoResumeTime)
   {

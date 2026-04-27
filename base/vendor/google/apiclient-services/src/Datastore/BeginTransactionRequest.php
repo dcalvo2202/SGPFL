@@ -20,9 +20,6 @@ namespace Google\Service\Datastore;
 class BeginTransactionRequest extends \Google\Model
 {
   /**
-   * The ID of the database against which to make the request. '(default)' is
-   * not allowed; please use empty string '' to refer the default database.
-   *
    * @var string
    */
   public $databaseId;
@@ -30,10 +27,7 @@ class BeginTransactionRequest extends \Google\Model
   protected $transactionOptionsDataType = '';
 
   /**
-   * The ID of the database against which to make the request. '(default)' is
-   * not allowed; please use empty string '' to refer the default database.
-   *
-   * @param string $databaseId
+   * @param string
    */
   public function setDatabaseId($databaseId)
   {
@@ -47,9 +41,7 @@ class BeginTransactionRequest extends \Google\Model
     return $this->databaseId;
   }
   /**
-   * Options for a new transaction.
-   *
-   * @param TransactionOptions $transactionOptions
+   * @param TransactionOptions
    */
   public function setTransactionOptions(TransactionOptions $transactionOptions)
   {

@@ -23,16 +23,12 @@ class GoogleCloudChannelV1ListEntitlementChangesResponse extends \Google\Collect
   protected $entitlementChangesType = GoogleCloudChannelV1EntitlementChange::class;
   protected $entitlementChangesDataType = 'array';
   /**
-   * A token to list the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of entitlement changes.
-   *
-   * @param GoogleCloudChannelV1EntitlementChange[] $entitlementChanges
+   * @param GoogleCloudChannelV1EntitlementChange[]
    */
   public function setEntitlementChanges($entitlementChanges)
   {
@@ -46,9 +42,7 @@ class GoogleCloudChannelV1ListEntitlementChangesResponse extends \Google\Collect
     return $this->entitlementChanges;
   }
   /**
-   * A token to list the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

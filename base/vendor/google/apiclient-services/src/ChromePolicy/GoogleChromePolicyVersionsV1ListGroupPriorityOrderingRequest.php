@@ -20,14 +20,10 @@ namespace Google\Service\ChromePolicy;
 class GoogleChromePolicyVersionsV1ListGroupPriorityOrderingRequest extends \Google\Model
 {
   /**
-   * The namespace of the policy type for the request.
-   *
    * @var string
    */
   public $policyNamespace;
   /**
-   * The schema name of the policy for the request.
-   *
    * @var string
    */
   public $policySchema;
@@ -35,9 +31,7 @@ class GoogleChromePolicyVersionsV1ListGroupPriorityOrderingRequest extends \Goog
   protected $policyTargetKeyDataType = '';
 
   /**
-   * The namespace of the policy type for the request.
-   *
-   * @param string $policyNamespace
+   * @param string
    */
   public function setPolicyNamespace($policyNamespace)
   {
@@ -51,9 +45,7 @@ class GoogleChromePolicyVersionsV1ListGroupPriorityOrderingRequest extends \Goog
     return $this->policyNamespace;
   }
   /**
-   * The schema name of the policy for the request.
-   *
-   * @param string $policySchema
+   * @param string
    */
   public function setPolicySchema($policySchema)
   {
@@ -67,10 +59,7 @@ class GoogleChromePolicyVersionsV1ListGroupPriorityOrderingRequest extends \Goog
     return $this->policySchema;
   }
   /**
-   * Required. The key of the target for which we want to retrieve the group
-   * priority ordering. The target resource must point to an app.
-   *
-   * @param GoogleChromePolicyVersionsV1PolicyTargetKey $policyTargetKey
+   * @param GoogleChromePolicyVersionsV1PolicyTargetKey
    */
   public function setPolicyTargetKey(GoogleChromePolicyVersionsV1PolicyTargetKey $policyTargetKey)
   {

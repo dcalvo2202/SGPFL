@@ -21,15 +21,10 @@ class UserRolesListResponse extends \Google\Collection
 {
   protected $collection_key = 'userRoles';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#userRolesListResponse".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Pagination token to be used for the next list operation.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -37,10 +32,7 @@ class UserRolesListResponse extends \Google\Collection
   protected $userRolesDataType = 'array';
 
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#userRolesListResponse".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -54,9 +46,7 @@ class UserRolesListResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Pagination token to be used for the next list operation.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -70,9 +60,7 @@ class UserRolesListResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * User role collection.
-   *
-   * @param UserRole[] $userRoles
+   * @param UserRole[]
    */
   public function setUserRoles($userRoles)
   {

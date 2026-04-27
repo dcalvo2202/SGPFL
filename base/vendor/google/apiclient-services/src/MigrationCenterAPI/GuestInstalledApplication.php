@@ -21,46 +21,32 @@ class GuestInstalledApplication extends \Google\Collection
 {
   protected $collection_key = 'licenses';
   /**
-   * Installed application name.
-   *
    * @var string
    */
   public $applicationName;
   /**
-   * The time when the application was installed.
-   *
    * @var string
    */
   public $installTime;
   /**
-   * License strings associated with the installed application.
-   *
    * @var string[]
    */
   public $licenses;
   /**
-   * Source path.
-   *
    * @var string
    */
   public $path;
   /**
-   * Installed application vendor.
-   *
    * @var string
    */
   public $vendor;
   /**
-   * Installed application version.
-   *
    * @var string
    */
   public $version;
 
   /**
-   * Installed application name.
-   *
-   * @param string $applicationName
+   * @param string
    */
   public function setApplicationName($applicationName)
   {
@@ -74,9 +60,7 @@ class GuestInstalledApplication extends \Google\Collection
     return $this->applicationName;
   }
   /**
-   * The time when the application was installed.
-   *
-   * @param string $installTime
+   * @param string
    */
   public function setInstallTime($installTime)
   {
@@ -90,9 +74,7 @@ class GuestInstalledApplication extends \Google\Collection
     return $this->installTime;
   }
   /**
-   * License strings associated with the installed application.
-   *
-   * @param string[] $licenses
+   * @param string[]
    */
   public function setLicenses($licenses)
   {
@@ -106,9 +88,7 @@ class GuestInstalledApplication extends \Google\Collection
     return $this->licenses;
   }
   /**
-   * Source path.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {
@@ -122,9 +102,7 @@ class GuestInstalledApplication extends \Google\Collection
     return $this->path;
   }
   /**
-   * Installed application vendor.
-   *
-   * @param string $vendor
+   * @param string
    */
   public function setVendor($vendor)
   {
@@ -138,9 +116,7 @@ class GuestInstalledApplication extends \Google\Collection
     return $this->vendor;
   }
   /**
-   * Installed application version.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

@@ -23,18 +23,12 @@ class ListInterceptDeploymentGroupsResponse extends \Google\Collection
   protected $interceptDeploymentGroupsType = InterceptDeploymentGroup::class;
   protected $interceptDeploymentGroupsDataType = 'array';
   /**
-   * A token that can be sent as `page_token` to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages. See
-   * https://google.aip.dev/158 for more details.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The deployment groups from the specified parent.
-   *
-   * @param InterceptDeploymentGroup[] $interceptDeploymentGroups
+   * @param InterceptDeploymentGroup[]
    */
   public function setInterceptDeploymentGroups($interceptDeploymentGroups)
   {
@@ -48,11 +42,7 @@ class ListInterceptDeploymentGroupsResponse extends \Google\Collection
     return $this->interceptDeploymentGroups;
   }
   /**
-   * A token that can be sent as `page_token` to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages. See
-   * https://google.aip.dev/158 for more details.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

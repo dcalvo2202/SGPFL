@@ -20,10 +20,6 @@ namespace Google\Service\Monitoring;
 class WindowsBasedSli extends \Google\Model
 {
   /**
-   * A monitoring filter (https://cloud.google.com/monitoring/api/v3/filters)
-   * specifying a TimeSeries with ValueType = BOOL. The window is good if any
-   * true values appear in the window.
-   *
    * @var string
    */
   public $goodBadMetricFilter;
@@ -34,19 +30,12 @@ class WindowsBasedSli extends \Google\Model
   protected $metricSumInRangeType = MetricRange::class;
   protected $metricSumInRangeDataType = '';
   /**
-   * Duration over which window quality is evaluated. Must be an integer
-   * fraction of a day and at least 60s.
-   *
    * @var string
    */
   public $windowPeriod;
 
   /**
-   * A monitoring filter (https://cloud.google.com/monitoring/api/v3/filters)
-   * specifying a TimeSeries with ValueType = BOOL. The window is good if any
-   * true values appear in the window.
-   *
-   * @param string $goodBadMetricFilter
+   * @param string
    */
   public function setGoodBadMetricFilter($goodBadMetricFilter)
   {
@@ -60,9 +49,7 @@ class WindowsBasedSli extends \Google\Model
     return $this->goodBadMetricFilter;
   }
   /**
-   * A window is good if its performance is high enough.
-   *
-   * @param PerformanceThreshold $goodTotalRatioThreshold
+   * @param PerformanceThreshold
    */
   public function setGoodTotalRatioThreshold(PerformanceThreshold $goodTotalRatioThreshold)
   {
@@ -76,10 +63,7 @@ class WindowsBasedSli extends \Google\Model
     return $this->goodTotalRatioThreshold;
   }
   /**
-   * A window is good if the metric's value is in a good range, averaged across
-   * returned streams.
-   *
-   * @param MetricRange $metricMeanInRange
+   * @param MetricRange
    */
   public function setMetricMeanInRange(MetricRange $metricMeanInRange)
   {
@@ -93,10 +77,7 @@ class WindowsBasedSli extends \Google\Model
     return $this->metricMeanInRange;
   }
   /**
-   * A window is good if the metric's value is in a good range, summed across
-   * returned streams.
-   *
-   * @param MetricRange $metricSumInRange
+   * @param MetricRange
    */
   public function setMetricSumInRange(MetricRange $metricSumInRange)
   {
@@ -110,10 +91,7 @@ class WindowsBasedSli extends \Google\Model
     return $this->metricSumInRange;
   }
   /**
-   * Duration over which window quality is evaluated. Must be an integer
-   * fraction of a day and at least 60s.
-   *
-   * @param string $windowPeriod
+   * @param string
    */
   public function setWindowPeriod($windowPeriod)
   {

@@ -23,11 +23,7 @@ class XPSBatchPredictResponse extends \Google\Model
   protected $exampleSetDataType = '';
 
   /**
-   * Examples for batch prediction result. Under full API implementation,
-   * results are stored in shared RecordIO of AnnotatedExample protobufs, the
-   * annotations field of which is populated by XPS backend.
-   *
-   * @param XPSExampleSet $exampleSet
+   * @param XPSExampleSet
    */
   public function setExampleSet(XPSExampleSet $exampleSet)
   {

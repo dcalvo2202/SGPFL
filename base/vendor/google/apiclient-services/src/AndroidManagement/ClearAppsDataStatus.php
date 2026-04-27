@@ -23,10 +23,7 @@ class ClearAppsDataStatus extends \Google\Model
   protected $resultsDataType = 'map';
 
   /**
-   * The per-app results, a mapping from package names to the respective
-   * clearing result.
-   *
-   * @param PerAppResult[] $results
+   * @param PerAppResult[]
    */
   public function setResults($results)
   {

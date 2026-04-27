@@ -20,16 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1SchemaPromptSpecTranslationGcsInputSource extends \Google\Model
 {
   /**
-   * Source data URI. For example, `gs://my_bucket/my_object`.
-   *
    * @var string
    */
   public $inputUri;
 
   /**
-   * Source data URI. For example, `gs://my_bucket/my_object`.
-   *
-   * @param string $inputUri
+   * @param string
    */
   public function setInputUri($inputUri)
   {

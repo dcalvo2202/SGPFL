@@ -20,16 +20,12 @@ namespace Google\Service\DatabaseMigrationService;
 class AssignSpecificValue extends \Google\Model
 {
   /**
-   * Required. Specific value to be assigned
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Required. Specific value to be assigned
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

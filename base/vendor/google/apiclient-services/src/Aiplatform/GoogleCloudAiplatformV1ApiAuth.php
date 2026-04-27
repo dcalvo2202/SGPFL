@@ -23,9 +23,7 @@ class GoogleCloudAiplatformV1ApiAuth extends \Google\Model
   protected $apiKeyConfigDataType = '';
 
   /**
-   * The API secret.
-   *
-   * @param GoogleCloudAiplatformV1ApiAuthApiKeyConfig $apiKeyConfig
+   * @param GoogleCloudAiplatformV1ApiAuthApiKeyConfig
    */
   public function setApiKeyConfig(GoogleCloudAiplatformV1ApiAuthApiKeyConfig $apiKeyConfig)
   {

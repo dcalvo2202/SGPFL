@@ -21,10 +21,6 @@ class ListMonitoredResourceDescriptorsResponse extends \Google\Collection
 {
   protected $collection_key = 'resourceDescriptors';
   /**
-   * If there are more results than have been returned, then this field is set
-   * to a non-empty value. To see the additional results, use that value as
-   * page_token in the next call to this method.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -32,11 +28,7 @@ class ListMonitoredResourceDescriptorsResponse extends \Google\Collection
   protected $resourceDescriptorsDataType = 'array';
 
   /**
-   * If there are more results than have been returned, then this field is set
-   * to a non-empty value. To see the additional results, use that value as
-   * page_token in the next call to this method.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -50,10 +42,7 @@ class ListMonitoredResourceDescriptorsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The monitored resource descriptors that are available to this project and
-   * that match filter, if present.
-   *
-   * @param MonitoredResourceDescriptor[] $resourceDescriptors
+   * @param MonitoredResourceDescriptor[]
    */
   public function setResourceDescriptors($resourceDescriptors)
   {

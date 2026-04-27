@@ -20,25 +20,16 @@ namespace Google\Service\APIhub;
 class GoogleCloudApihubV1PluginInstanceActionID extends \Google\Model
 {
   /**
-   * Output only. The action ID that is using the curation. This should map to
-   * one of the action IDs specified in action configs in the plugin.
-   *
    * @var string
    */
   public $actionId;
   /**
-   * Output only. Plugin instance that is using the curation. Format is `project
-   * s/{project}/locations/{location}/plugins/{plugin}/instances/{instance}`
-   *
    * @var string
    */
   public $pluginInstance;
 
   /**
-   * Output only. The action ID that is using the curation. This should map to
-   * one of the action IDs specified in action configs in the plugin.
-   *
-   * @param string $actionId
+   * @param string
    */
   public function setActionId($actionId)
   {
@@ -52,10 +43,7 @@ class GoogleCloudApihubV1PluginInstanceActionID extends \Google\Model
     return $this->actionId;
   }
   /**
-   * Output only. Plugin instance that is using the curation. Format is `project
-   * s/{project}/locations/{location}/plugins/{plugin}/instances/{instance}`
-   *
-   * @param string $pluginInstance
+   * @param string
    */
   public function setPluginInstance($pluginInstance)
   {

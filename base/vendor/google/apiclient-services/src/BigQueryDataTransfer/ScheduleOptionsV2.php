@@ -27,10 +27,7 @@ class ScheduleOptionsV2 extends \Google\Model
   protected $timeBasedScheduleDataType = '';
 
   /**
-   * Event driven transfer schedule options. If set, the transfer will be
-   * scheduled upon events arrial.
-   *
-   * @param EventDrivenSchedule $eventDrivenSchedule
+   * @param EventDrivenSchedule
    */
   public function setEventDrivenSchedule(EventDrivenSchedule $eventDrivenSchedule)
   {
@@ -44,11 +41,7 @@ class ScheduleOptionsV2 extends \Google\Model
     return $this->eventDrivenSchedule;
   }
   /**
-   * Manual transfer schedule. If set, the transfer run will not be auto-
-   * scheduled by the system, unless the client invokes StartManualTransferRuns.
-   * This is equivalent to disable_auto_scheduling = true.
-   *
-   * @param ManualSchedule $manualSchedule
+   * @param ManualSchedule
    */
   public function setManualSchedule(ManualSchedule $manualSchedule)
   {
@@ -62,9 +55,7 @@ class ScheduleOptionsV2 extends \Google\Model
     return $this->manualSchedule;
   }
   /**
-   * Time based transfer schedule options. This is the default schedule option.
-   *
-   * @param TimeBasedSchedule $timeBasedSchedule
+   * @param TimeBasedSchedule
    */
   public function setTimeBasedSchedule(TimeBasedSchedule $timeBasedSchedule)
   {

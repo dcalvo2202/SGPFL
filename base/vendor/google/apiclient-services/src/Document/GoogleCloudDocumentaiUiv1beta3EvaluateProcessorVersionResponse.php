@@ -20,16 +20,12 @@ namespace Google\Service\Document;
 class GoogleCloudDocumentaiUiv1beta3EvaluateProcessorVersionResponse extends \Google\Model
 {
   /**
-   * The resource name of the created evaluation.
-   *
    * @var string
    */
   public $evaluation;
 
   /**
-   * The resource name of the created evaluation.
-   *
-   * @param string $evaluation
+   * @param string
    */
   public function setEvaluation($evaluation)
   {

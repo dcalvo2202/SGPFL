@@ -23,9 +23,7 @@ class UpstreamCredentials extends \Google\Model
   protected $usernamePasswordCredentialsDataType = '';
 
   /**
-   * Use username and password to access the remote repository.
-   *
-   * @param UsernamePasswordCredentials $usernamePasswordCredentials
+   * @param UsernamePasswordCredentials
    */
   public function setUsernamePasswordCredentials(UsernamePasswordCredentials $usernamePasswordCredentials)
   {

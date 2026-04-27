@@ -23,29 +23,20 @@ class ChromeOsDevices extends \Google\Collection
   protected $chromeosdevicesType = ChromeOsDevice::class;
   protected $chromeosdevicesDataType = 'array';
   /**
-   * ETag of the resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Kind of resource this is.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Token used to access the next page of this result. To access the next page,
-   * use this token's value in the `pageToken` query string of this request.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * A list of Chrome OS Device objects.
-   *
-   * @param ChromeOsDevice[] $chromeosdevices
+   * @param ChromeOsDevice[]
    */
   public function setChromeosdevices($chromeosdevices)
   {
@@ -59,9 +50,7 @@ class ChromeOsDevices extends \Google\Collection
     return $this->chromeosdevices;
   }
   /**
-   * ETag of the resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -75,9 +64,7 @@ class ChromeOsDevices extends \Google\Collection
     return $this->etag;
   }
   /**
-   * Kind of resource this is.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -91,10 +78,7 @@ class ChromeOsDevices extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Token used to access the next page of this result. To access the next page,
-   * use this token's value in the `pageToken` query string of this request.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

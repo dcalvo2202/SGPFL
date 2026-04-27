@@ -19,52 +19,26 @@ namespace Google\Service\CloudDataplex;
 
 class GoogleCloudDataplexV1DiscoveryEventPartitionDetails extends \Google\Collection
 {
-  /**
-   * An unspecified event type.
-   */
-  public const TYPE_ENTITY_TYPE_UNSPECIFIED = 'ENTITY_TYPE_UNSPECIFIED';
-  /**
-   * Entities representing structured data.
-   */
-  public const TYPE_TABLE = 'TABLE';
-  /**
-   * Entities representing unstructured data.
-   */
-  public const TYPE_FILESET = 'FILESET';
   protected $collection_key = 'sampledDataLocations';
   /**
-   * The name to the containing entity resource. The name is the fully-qualified
-   * resource name.
-   *
    * @var string
    */
   public $entity;
   /**
-   * The name to the partition resource. The name is the fully-qualified
-   * resource name.
-   *
    * @var string
    */
   public $partition;
   /**
-   * The locations of the data items (e.g., a Cloud Storage objects) sampled for
-   * metadata inference.
-   *
    * @var string[]
    */
   public $sampledDataLocations;
   /**
-   * The type of the containing entity resource.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The name to the containing entity resource. The name is the fully-qualified
-   * resource name.
-   *
-   * @param string $entity
+   * @param string
    */
   public function setEntity($entity)
   {
@@ -78,10 +52,7 @@ class GoogleCloudDataplexV1DiscoveryEventPartitionDetails extends \Google\Collec
     return $this->entity;
   }
   /**
-   * The name to the partition resource. The name is the fully-qualified
-   * resource name.
-   *
-   * @param string $partition
+   * @param string
    */
   public function setPartition($partition)
   {
@@ -95,10 +66,7 @@ class GoogleCloudDataplexV1DiscoveryEventPartitionDetails extends \Google\Collec
     return $this->partition;
   }
   /**
-   * The locations of the data items (e.g., a Cloud Storage objects) sampled for
-   * metadata inference.
-   *
-   * @param string[] $sampledDataLocations
+   * @param string[]
    */
   public function setSampledDataLocations($sampledDataLocations)
   {
@@ -112,18 +80,14 @@ class GoogleCloudDataplexV1DiscoveryEventPartitionDetails extends \Google\Collec
     return $this->sampledDataLocations;
   }
   /**
-   * The type of the containing entity resource.
-   *
-   * Accepted values: ENTITY_TYPE_UNSPECIFIED, TABLE, FILESET
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

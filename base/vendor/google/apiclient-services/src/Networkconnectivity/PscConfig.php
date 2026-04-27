@@ -19,77 +19,26 @@ namespace Google\Service\Networkconnectivity;
 
 class PscConfig extends \Google\Collection
 {
-  /**
-   * Producer instance location is not specified. When this option is chosen,
-   * then the PSC connections created by this ServiceConnectionPolicy must be
-   * within the same project as the Producer instance. This is the default
-   * ProducerInstanceLocation value. To allow for PSC connections from this
-   * network to other networks, use the CUSTOM_RESOURCE_HIERARCHY_LEVELS option.
-   */
-  public const PRODUCER_INSTANCE_LOCATION_PRODUCER_INSTANCE_LOCATION_UNSPECIFIED = 'PRODUCER_INSTANCE_LOCATION_UNSPECIFIED';
-  /**
-   * Producer instance must be within one of the values provided in
-   * allowed_google_producers_resource_hierarchy_level.
-   */
-  public const PRODUCER_INSTANCE_LOCATION_CUSTOM_RESOURCE_HIERARCHY_LEVELS = 'CUSTOM_RESOURCE_HIERARCHY_LEVELS';
   protected $collection_key = 'subnetworks';
   /**
-   * Optional. List of Projects, Folders, or Organizations from where the
-   * Producer instance can be within. For example, a network administrator can
-   * provide both 'organizations/foo' and 'projects/bar' as
-   * allowed_google_producers_resource_hierarchy_levels. This allowlists this
-   * network to connect with any Producer instance within the 'foo' organization
-   * or the 'bar' project. By default,
-   * allowed_google_producers_resource_hierarchy_level is empty. The format for
-   * each allowed_google_producers_resource_hierarchy_level is / where is one of
-   * 'projects', 'folders', or 'organizations' and is either the ID or the
-   * number of the resource type. Format for each
-   * allowed_google_producers_resource_hierarchy_level value: 'projects/' or
-   * 'folders/' or 'organizations/' Eg. [projects/my-project-id, projects/567,
-   * folders/891, organizations/123]
-   *
    * @var string[]
    */
   public $allowedGoogleProducersResourceHierarchyLevel;
   /**
-   * Optional. Max number of PSC connections for this policy.
-   *
    * @var string
    */
   public $limit;
   /**
-   * Optional. ProducerInstanceLocation is used to specify which authorization
-   * mechanism to use to determine which projects the Producer instance can be
-   * within.
-   *
    * @var string
    */
   public $producerInstanceLocation;
   /**
-   * The resource paths of subnetworks to use for IP address management.
-   * Example:
-   * projects/{projectNumOrId}/regions/{region}/subnetworks/{resourceId}.
-   *
    * @var string[]
    */
   public $subnetworks;
 
   /**
-   * Optional. List of Projects, Folders, or Organizations from where the
-   * Producer instance can be within. For example, a network administrator can
-   * provide both 'organizations/foo' and 'projects/bar' as
-   * allowed_google_producers_resource_hierarchy_levels. This allowlists this
-   * network to connect with any Producer instance within the 'foo' organization
-   * or the 'bar' project. By default,
-   * allowed_google_producers_resource_hierarchy_level is empty. The format for
-   * each allowed_google_producers_resource_hierarchy_level is / where is one of
-   * 'projects', 'folders', or 'organizations' and is either the ID or the
-   * number of the resource type. Format for each
-   * allowed_google_producers_resource_hierarchy_level value: 'projects/' or
-   * 'folders/' or 'organizations/' Eg. [projects/my-project-id, projects/567,
-   * folders/891, organizations/123]
-   *
-   * @param string[] $allowedGoogleProducersResourceHierarchyLevel
+   * @param string[]
    */
   public function setAllowedGoogleProducersResourceHierarchyLevel($allowedGoogleProducersResourceHierarchyLevel)
   {
@@ -103,9 +52,7 @@ class PscConfig extends \Google\Collection
     return $this->allowedGoogleProducersResourceHierarchyLevel;
   }
   /**
-   * Optional. Max number of PSC connections for this policy.
-   *
-   * @param string $limit
+   * @param string
    */
   public function setLimit($limit)
   {
@@ -119,32 +66,21 @@ class PscConfig extends \Google\Collection
     return $this->limit;
   }
   /**
-   * Optional. ProducerInstanceLocation is used to specify which authorization
-   * mechanism to use to determine which projects the Producer instance can be
-   * within.
-   *
-   * Accepted values: PRODUCER_INSTANCE_LOCATION_UNSPECIFIED,
-   * CUSTOM_RESOURCE_HIERARCHY_LEVELS
-   *
-   * @param self::PRODUCER_INSTANCE_LOCATION_* $producerInstanceLocation
+   * @param string
    */
   public function setProducerInstanceLocation($producerInstanceLocation)
   {
     $this->producerInstanceLocation = $producerInstanceLocation;
   }
   /**
-   * @return self::PRODUCER_INSTANCE_LOCATION_*
+   * @return string
    */
   public function getProducerInstanceLocation()
   {
     return $this->producerInstanceLocation;
   }
   /**
-   * The resource paths of subnetworks to use for IP address management.
-   * Example:
-   * projects/{projectNumOrId}/regions/{region}/subnetworks/{resourceId}.
-   *
-   * @param string[] $subnetworks
+   * @param string[]
    */
   public function setSubnetworks($subnetworks)
   {

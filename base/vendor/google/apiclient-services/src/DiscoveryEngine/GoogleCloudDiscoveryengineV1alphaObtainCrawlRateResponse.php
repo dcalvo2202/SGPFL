@@ -19,18 +19,6 @@ namespace Google\Service\DiscoveryEngine;
 
 class GoogleCloudDiscoveryengineV1alphaObtainCrawlRateResponse extends \Google\Model
 {
-  /**
-   * The state is unspecified.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The state is successful.
-   */
-  public const STATE_SUCCEEDED = 'SUCCEEDED';
-  /**
-   * The state is failed.
-   */
-  public const STATE_FAILED = 'FAILED';
   protected $dedicatedCrawlRateTimeSeriesType = GoogleCloudDiscoveryengineV1alphaDedicatedCrawlRateTimeSeries::class;
   protected $dedicatedCrawlRateTimeSeriesDataType = '';
   protected $errorType = GoogleRpcStatus::class;
@@ -38,16 +26,12 @@ class GoogleCloudDiscoveryengineV1alphaObtainCrawlRateResponse extends \Google\M
   protected $organicCrawlRateTimeSeriesType = GoogleCloudDiscoveryengineV1alphaOrganicCrawlRateTimeSeries::class;
   protected $organicCrawlRateTimeSeriesDataType = '';
   /**
-   * Output only. The state of the response.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * The historical dedicated crawl rate timeseries data, used for monitoring.
-   *
-   * @param GoogleCloudDiscoveryengineV1alphaDedicatedCrawlRateTimeSeries $dedicatedCrawlRateTimeSeries
+   * @param GoogleCloudDiscoveryengineV1alphaDedicatedCrawlRateTimeSeries
    */
   public function setDedicatedCrawlRateTimeSeries(GoogleCloudDiscoveryengineV1alphaDedicatedCrawlRateTimeSeries $dedicatedCrawlRateTimeSeries)
   {
@@ -61,9 +45,7 @@ class GoogleCloudDiscoveryengineV1alphaObtainCrawlRateResponse extends \Google\M
     return $this->dedicatedCrawlRateTimeSeries;
   }
   /**
-   * Errors from service when handling the request.
-   *
-   * @param GoogleRpcStatus $error
+   * @param GoogleRpcStatus
    */
   public function setError(GoogleRpcStatus $error)
   {
@@ -77,9 +59,7 @@ class GoogleCloudDiscoveryengineV1alphaObtainCrawlRateResponse extends \Google\M
     return $this->error;
   }
   /**
-   * The historical organic crawl rate timeseries data, used for monitoring.
-   *
-   * @param GoogleCloudDiscoveryengineV1alphaOrganicCrawlRateTimeSeries $organicCrawlRateTimeSeries
+   * @param GoogleCloudDiscoveryengineV1alphaOrganicCrawlRateTimeSeries
    */
   public function setOrganicCrawlRateTimeSeries(GoogleCloudDiscoveryengineV1alphaOrganicCrawlRateTimeSeries $organicCrawlRateTimeSeries)
   {
@@ -93,18 +73,14 @@ class GoogleCloudDiscoveryengineV1alphaObtainCrawlRateResponse extends \Google\M
     return $this->organicCrawlRateTimeSeries;
   }
   /**
-   * Output only. The state of the response.
-   *
-   * Accepted values: STATE_UNSPECIFIED, SUCCEEDED, FAILED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

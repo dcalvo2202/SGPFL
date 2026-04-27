@@ -35,13 +35,22 @@ use Google\Service\Dialogflow\GoogleProtobufEmpty;
 class ProjectsLocationsAgentsIntents extends \Google\Service\Resource
 {
   /**
+   * Creates an intent in the specified agent. Note: You should always train a
+   * flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    * (intents.create)
    *
-   * @param string $parent
+   * @param string $parent Required. The agent to create an intent for. Format:
+   * `projects//locations//agents/`.
    * @param GoogleCloudDialogflowCxV3Intent $postBody
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string languageCode
+   * @opt_param string languageCode The language of the following fields in
+   * `intent`: * `Intent.training_phrases.parts.text` If not specified, the
+   * agent's default language is used. [Many
+   * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
+   * are supported. Note: languages must be enabled in the agent before they can
+   * be used.
    * @return GoogleCloudDialogflowCxV3Intent
    * @throws \Google\Service\Exception
    */
@@ -52,9 +61,13 @@ class ProjectsLocationsAgentsIntents extends \Google\Service\Resource
     return $this->call('create', [$params], GoogleCloudDialogflowCxV3Intent::class);
   }
   /**
+   * Deletes the specified intent. Note: You should always train a flow prior to
+   * sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    * (intents.delete)
    *
-   * @param string $name
+   * @param string $name Required. The name of the intent to delete. Format:
+   * `projects//locations//agents//intents/`.
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
    * @throws \Google\Service\Exception
@@ -66,9 +79,14 @@ class ProjectsLocationsAgentsIntents extends \Google\Service\Resource
     return $this->call('delete', [$params], GoogleProtobufEmpty::class);
   }
   /**
-   * (intents.export)
+   * Exports the selected intents. This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-
+   * operation). The returned `Operation` type has the following method-specific
+   * fields: - `metadata`: ExportIntentsMetadata - `response`:
+   * ExportIntentsResponse (intents.export)
    *
-   * @param string $parent
+   * @param string $parent Required. The name of the parent agent to export
+   * intents. Format: `projects//locations//agents/`.
    * @param GoogleCloudDialogflowCxV3ExportIntentsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
@@ -81,12 +99,19 @@ class ProjectsLocationsAgentsIntents extends \Google\Service\Resource
     return $this->call('export', [$params], GoogleLongrunningOperation::class);
   }
   /**
-   * (intents.get)
+   * Retrieves the specified intent. (intents.get)
    *
-   * @param string $name
+   * @param string $name Required. The name of the intent. Format:
+   * `projects//locations//agents//intents/`.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string languageCode
+   * @opt_param string languageCode The language to retrieve the intent for. The
+   * following fields are language dependent: *
+   * `Intent.training_phrases.parts.text` If not specified, the agent's default
+   * language is used. [Many
+   * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
+   * are supported. Note: languages must be enabled in the agent before they can
+   * be used.
    * @return GoogleCloudDialogflowCxV3Intent
    * @throws \Google\Service\Exception
    */
@@ -97,9 +122,14 @@ class ProjectsLocationsAgentsIntents extends \Google\Service\Resource
     return $this->call('get', [$params], GoogleCloudDialogflowCxV3Intent::class);
   }
   /**
-   * (intents.import)
+   * Imports the specified intents into the agent. This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-
+   * operation). The returned `Operation` type has the following method-specific
+   * fields: - `metadata`: ImportIntentsMetadata - `response`:
+   * ImportIntentsResponse (intents.import)
    *
-   * @param string $parent
+   * @param string $parent Required. The agent to import the intents into. Format:
+   * `projects//locations//agents/`.
    * @param GoogleCloudDialogflowCxV3ImportIntentsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
@@ -112,15 +142,26 @@ class ProjectsLocationsAgentsIntents extends \Google\Service\Resource
     return $this->call('import', [$params], GoogleLongrunningOperation::class);
   }
   /**
+   * Returns the list of all intents in the specified agent.
    * (intents.listProjectsLocationsAgentsIntents)
    *
-   * @param string $parent
+   * @param string $parent Required. The agent to list all intents for. Format:
+   * `projects//locations//agents/`.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string intentView
-   * @opt_param string languageCode
-   * @opt_param int pageSize
-   * @opt_param string pageToken
+   * @opt_param string intentView The resource view to apply to the returned
+   * intent.
+   * @opt_param string languageCode The language to list intents for. The
+   * following fields are language dependent: *
+   * `Intent.training_phrases.parts.text` If not specified, the agent's default
+   * language is used. [Many
+   * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
+   * are supported. Note: languages must be enabled in the agent before they can
+   * be used.
+   * @opt_param int pageSize The maximum number of items to return in a single
+   * page. By default 100 and at most 1000.
+   * @opt_param string pageToken The next_page_token value returned from a
+   * previous list request.
    * @return GoogleCloudDialogflowCxV3ListIntentsResponse
    * @throws \Google\Service\Exception
    */
@@ -131,14 +172,25 @@ class ProjectsLocationsAgentsIntents extends \Google\Service\Resource
     return $this->call('list', [$params], GoogleCloudDialogflowCxV3ListIntentsResponse::class);
   }
   /**
+   * Updates the specified intent. Note: You should always train a flow prior to
+   * sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    * (intents.patch)
    *
-   * @param string $name
+   * @param string $name The unique identifier of the intent. Required for the
+   * Intents.UpdateIntent method. Intents.CreateIntent populates the name
+   * automatically. Format: `projects//locations//agents//intents/`.
    * @param GoogleCloudDialogflowCxV3Intent $postBody
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string languageCode
-   * @opt_param string updateMask
+   * @opt_param string languageCode The language of the following fields in
+   * `intent`: * `Intent.training_phrases.parts.text` If not specified, the
+   * agent's default language is used. [Many
+   * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
+   * are supported. Note: languages must be enabled in the agent before they can
+   * be used.
+   * @opt_param string updateMask The mask to control which fields get updated. If
+   * the mask is not present, all fields will be updated.
    * @return GoogleCloudDialogflowCxV3Intent
    * @throws \Google\Service\Exception
    */

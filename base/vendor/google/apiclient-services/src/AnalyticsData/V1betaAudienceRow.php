@@ -24,10 +24,7 @@ class V1betaAudienceRow extends \Google\Collection
   protected $dimensionValuesDataType = 'array';
 
   /**
-   * Each dimension value attribute for an audience user. One dimension value
-   * will be added for each dimension column requested.
-   *
-   * @param V1betaAudienceDimensionValue[] $dimensionValues
+   * @param V1betaAudienceDimensionValue[]
    */
   public function setDimensionValues($dimensionValues)
   {

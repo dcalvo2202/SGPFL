@@ -21,35 +21,24 @@ class Locale extends \Google\Collection
 {
   protected $collection_key = 'tags';
   /**
-   * The id for this locale. Example: "en_US".
-   *
    * @var string
    */
   public $id;
   /**
-   * A human-friendly name for this language/locale. Example: "English".
-   *
    * @var string
    */
   public $name;
   /**
-   * A human-friendly string representing the region for this locale. Example:
-   * "United States". Not present for every locale.
-   *
    * @var string
    */
   public $region;
   /**
-   * Tags for this dimension. Example: "default".
-   *
    * @var string[]
    */
   public $tags;
 
   /**
-   * The id for this locale. Example: "en_US".
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -63,9 +52,7 @@ class Locale extends \Google\Collection
     return $this->id;
   }
   /**
-   * A human-friendly name for this language/locale. Example: "English".
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -79,10 +66,7 @@ class Locale extends \Google\Collection
     return $this->name;
   }
   /**
-   * A human-friendly string representing the region for this locale. Example:
-   * "United States". Not present for every locale.
-   *
-   * @param string $region
+   * @param string
    */
   public function setRegion($region)
   {
@@ -96,9 +80,7 @@ class Locale extends \Google\Collection
     return $this->region;
   }
   /**
-   * Tags for this dimension. Example: "default".
-   *
-   * @param string[] $tags
+   * @param string[]
    */
   public function setTags($tags)
   {

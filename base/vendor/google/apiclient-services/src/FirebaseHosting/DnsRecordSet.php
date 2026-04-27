@@ -23,8 +23,6 @@ class DnsRecordSet extends \Google\Collection
   protected $checkErrorType = Status::class;
   protected $checkErrorDataType = '';
   /**
-   * Output only. The domain name the record set pertains to.
-   *
    * @var string
    */
   public $domainName;
@@ -32,11 +30,7 @@ class DnsRecordSet extends \Google\Collection
   protected $recordsDataType = 'array';
 
   /**
-   * Output only. An error Hosting services encountered when querying your
-   * domain name's DNS records. Note: Hosting ignores `NXDOMAIN` errors, as
-   * those generally just mean that a domain name hasn't been set up yet.
-   *
-   * @param Status $checkError
+   * @param Status
    */
   public function setCheckError(Status $checkError)
   {
@@ -50,9 +44,7 @@ class DnsRecordSet extends \Google\Collection
     return $this->checkError;
   }
   /**
-   * Output only. The domain name the record set pertains to.
-   *
-   * @param string $domainName
+   * @param string
    */
   public function setDomainName($domainName)
   {
@@ -66,9 +58,7 @@ class DnsRecordSet extends \Google\Collection
     return $this->domainName;
   }
   /**
-   * Output only. Records on the domain.
-   *
-   * @param DnsRecord[] $records
+   * @param DnsRecord[]
    */
   public function setRecords($records)
   {

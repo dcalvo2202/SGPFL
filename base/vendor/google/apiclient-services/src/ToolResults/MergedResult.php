@@ -19,32 +19,10 @@ namespace Google\Service\ToolResults;
 
 class MergedResult extends \Google\Collection
 {
-  /**
-   * Should never be in this state. Exists for proto deserialization backward
-   * compatibility.
-   */
-  public const STATE_unknownState = 'unknownState';
-  /**
-   * The Execution/Step is created, ready to run, but not running yet. If an
-   * Execution/Step is created without initial state, it is assumed that the
-   * Execution/Step is in PENDING state.
-   */
-  public const STATE_pending = 'pending';
-  /**
-   * The Execution/Step is in progress.
-   */
-  public const STATE_inProgress = 'inProgress';
-  /**
-   * The finalized, immutable state. Steps/Executions in this state cannot be
-   * modified.
-   */
-  public const STATE_complete = 'complete';
   protected $collection_key = 'testSuiteOverviews';
   protected $outcomeType = Outcome::class;
   protected $outcomeDataType = '';
   /**
-   * State of the resource
-   *
    * @var string
    */
   public $state;
@@ -52,9 +30,7 @@ class MergedResult extends \Google\Collection
   protected $testSuiteOverviewsDataType = 'array';
 
   /**
-   * Outcome of the resource
-   *
-   * @param Outcome $outcome
+   * @param Outcome
    */
   public function setOutcome(Outcome $outcome)
   {
@@ -68,35 +44,21 @@ class MergedResult extends \Google\Collection
     return $this->outcome;
   }
   /**
-   * State of the resource
-   *
-   * Accepted values: unknownState, pending, inProgress, complete
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * The combined and rolled-up result of each test suite that was run as part
-   * of this environment. Combining: When the test cases from a suite are run in
-   * different steps (sharding), the results are added back together in one
-   * overview. (e.g., if shard1 has 2 failures and shard2 has 1 failure than the
-   * overview failure_count = 3). Rollup: When test cases from the same suite
-   * are run multiple times (flaky), the results are combined (e.g., if
-   * testcase1.run1 fails, testcase1.run2 passes, and both testcase2.run1 and
-   * testcase2.run2 fail then the overview flaky_count = 1 and failure_count =
-   * 1).
-   *
-   * @param TestSuiteOverview[] $testSuiteOverviews
+   * @param TestSuiteOverview[]
    */
   public function setTestSuiteOverviews($testSuiteOverviews)
   {

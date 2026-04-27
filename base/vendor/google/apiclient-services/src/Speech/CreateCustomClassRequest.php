@@ -22,19 +22,12 @@ class CreateCustomClassRequest extends \Google\Model
   protected $customClassType = CustomClass::class;
   protected $customClassDataType = '';
   /**
-   * Required. The ID to use for the custom class, which will become the final
-   * component of the custom class' resource name. This value should restrict to
-   * letters, numbers, and hyphens, with the first character a letter, the last
-   * a letter or a number, and be 4-63 characters.
-   *
    * @var string
    */
   public $customClassId;
 
   /**
-   * Required. The custom class to create.
-   *
-   * @param CustomClass $customClass
+   * @param CustomClass
    */
   public function setCustomClass(CustomClass $customClass)
   {
@@ -48,12 +41,7 @@ class CreateCustomClassRequest extends \Google\Model
     return $this->customClass;
   }
   /**
-   * Required. The ID to use for the custom class, which will become the final
-   * component of the custom class' resource name. This value should restrict to
-   * letters, numbers, and hyphens, with the first character a letter, the last
-   * a letter or a number, and be 4-63 characters.
-   *
-   * @param string $customClassId
+   * @param string
    */
   public function setCustomClassId($customClassId)
   {

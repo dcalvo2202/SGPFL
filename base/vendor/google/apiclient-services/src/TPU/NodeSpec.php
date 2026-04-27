@@ -24,25 +24,16 @@ class NodeSpec extends \Google\Model
   protected $nodeType = Node::class;
   protected $nodeDataType = '';
   /**
-   * Optional. The unqualified resource name. Should follow the
-   * `^[A-Za-z0-9_.~+%-]+$` regex format. This is only specified when requesting
-   * a single node. In case of multislice requests, multislice_params must be
-   * populated instead.
-   *
    * @var string
    */
   public $nodeId;
   /**
-   * Required. The parent resource name.
-   *
    * @var string
    */
   public $parent;
 
   /**
-   * Optional. Fields to specify in case of multislice request.
-   *
-   * @param MultisliceParams $multisliceParams
+   * @param MultisliceParams
    */
   public function setMultisliceParams(MultisliceParams $multisliceParams)
   {
@@ -56,9 +47,7 @@ class NodeSpec extends \Google\Model
     return $this->multisliceParams;
   }
   /**
-   * Required. The node.
-   *
-   * @param Node $node
+   * @param Node
    */
   public function setNode(Node $node)
   {
@@ -72,12 +61,7 @@ class NodeSpec extends \Google\Model
     return $this->node;
   }
   /**
-   * Optional. The unqualified resource name. Should follow the
-   * `^[A-Za-z0-9_.~+%-]+$` regex format. This is only specified when requesting
-   * a single node. In case of multislice requests, multislice_params must be
-   * populated instead.
-   *
-   * @param string $nodeId
+   * @param string
    */
   public function setNodeId($nodeId)
   {
@@ -91,9 +75,7 @@ class NodeSpec extends \Google\Model
     return $this->nodeId;
   }
   /**
-   * Required. The parent resource name.
-   *
-   * @param string $parent
+   * @param string
    */
   public function setParent($parent)
   {

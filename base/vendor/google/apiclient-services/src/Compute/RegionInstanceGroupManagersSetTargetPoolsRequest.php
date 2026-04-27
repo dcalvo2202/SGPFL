@@ -21,28 +21,16 @@ class RegionInstanceGroupManagersSetTargetPoolsRequest extends \Google\Collectio
 {
   protected $collection_key = 'targetPools';
   /**
-   * Fingerprint of the target pools information, which is a hash of the
-   * contents. This field is used for optimistic locking when you update the
-   * target pool entries. This field is optional.
-   *
    * @var string
    */
   public $fingerprint;
   /**
-   * The URL of all TargetPool resources to which instances in theinstanceGroup
-   * field are added. The target pools automatically apply to all of the
-   * instances in the managed instance group.
-   *
    * @var string[]
    */
   public $targetPools;
 
   /**
-   * Fingerprint of the target pools information, which is a hash of the
-   * contents. This field is used for optimistic locking when you update the
-   * target pool entries. This field is optional.
-   *
-   * @param string $fingerprint
+   * @param string
    */
   public function setFingerprint($fingerprint)
   {
@@ -56,11 +44,7 @@ class RegionInstanceGroupManagersSetTargetPoolsRequest extends \Google\Collectio
     return $this->fingerprint;
   }
   /**
-   * The URL of all TargetPool resources to which instances in theinstanceGroup
-   * field are added. The target pools automatically apply to all of the
-   * instances in the managed instance group.
-   *
-   * @param string[] $targetPools
+   * @param string[]
    */
   public function setTargetPools($targetPools)
   {

@@ -20,100 +20,66 @@ namespace Google\Service\PeopleService;
 class Organization extends \Google\Model
 {
   /**
-   * The person's cost center at the organization.
-   *
    * @var string
    */
   public $costCenter;
   /**
-   * True if the organization is the person's current organization; false if the
-   * organization is a past organization.
-   *
    * @var bool
    */
   public $current;
   /**
-   * The person's department at the organization.
-   *
    * @var string
    */
   public $department;
   /**
-   * The domain name associated with the organization; for example,
-   * `google.com`.
-   *
    * @var string
    */
   public $domain;
   protected $endDateType = Date::class;
   protected $endDateDataType = '';
   /**
-   * Output only. The type of the organization translated and formatted in the
-   * viewer's account locale or the `Accept-Language` HTTP header locale.
-   *
    * @var string
    */
   public $formattedType;
   /**
-   * The person's full-time equivalent millipercent within the organization
-   * (100000 = 100%).
-   *
    * @var int
    */
   public $fullTimeEquivalentMillipercent;
   /**
-   * The person's job description at the organization.
-   *
    * @var string
    */
   public $jobDescription;
   /**
-   * The location of the organization office the person works at.
-   *
    * @var string
    */
   public $location;
   protected $metadataType = FieldMetadata::class;
   protected $metadataDataType = '';
   /**
-   * The name of the organization.
-   *
    * @var string
    */
   public $name;
   /**
-   * The phonetic name of the organization.
-   *
    * @var string
    */
   public $phoneticName;
   protected $startDateType = Date::class;
   protected $startDateDataType = '';
   /**
-   * The symbol associated with the organization; for example, a stock ticker
-   * symbol, abbreviation, or acronym.
-   *
    * @var string
    */
   public $symbol;
   /**
-   * The person's job title at the organization.
-   *
    * @var string
    */
   public $title;
   /**
-   * The type of the organization. The type can be custom or one of these
-   * predefined values: * `work` * `school`
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The person's cost center at the organization.
-   *
-   * @param string $costCenter
+   * @param string
    */
   public function setCostCenter($costCenter)
   {
@@ -127,10 +93,7 @@ class Organization extends \Google\Model
     return $this->costCenter;
   }
   /**
-   * True if the organization is the person's current organization; false if the
-   * organization is a past organization.
-   *
-   * @param bool $current
+   * @param bool
    */
   public function setCurrent($current)
   {
@@ -144,9 +107,7 @@ class Organization extends \Google\Model
     return $this->current;
   }
   /**
-   * The person's department at the organization.
-   *
-   * @param string $department
+   * @param string
    */
   public function setDepartment($department)
   {
@@ -160,10 +121,7 @@ class Organization extends \Google\Model
     return $this->department;
   }
   /**
-   * The domain name associated with the organization; for example,
-   * `google.com`.
-   *
-   * @param string $domain
+   * @param string
    */
   public function setDomain($domain)
   {
@@ -177,9 +135,7 @@ class Organization extends \Google\Model
     return $this->domain;
   }
   /**
-   * The end date when the person left the organization.
-   *
-   * @param Date $endDate
+   * @param Date
    */
   public function setEndDate(Date $endDate)
   {
@@ -193,10 +149,7 @@ class Organization extends \Google\Model
     return $this->endDate;
   }
   /**
-   * Output only. The type of the organization translated and formatted in the
-   * viewer's account locale or the `Accept-Language` HTTP header locale.
-   *
-   * @param string $formattedType
+   * @param string
    */
   public function setFormattedType($formattedType)
   {
@@ -210,10 +163,7 @@ class Organization extends \Google\Model
     return $this->formattedType;
   }
   /**
-   * The person's full-time equivalent millipercent within the organization
-   * (100000 = 100%).
-   *
-   * @param int $fullTimeEquivalentMillipercent
+   * @param int
    */
   public function setFullTimeEquivalentMillipercent($fullTimeEquivalentMillipercent)
   {
@@ -227,9 +177,7 @@ class Organization extends \Google\Model
     return $this->fullTimeEquivalentMillipercent;
   }
   /**
-   * The person's job description at the organization.
-   *
-   * @param string $jobDescription
+   * @param string
    */
   public function setJobDescription($jobDescription)
   {
@@ -243,9 +191,7 @@ class Organization extends \Google\Model
     return $this->jobDescription;
   }
   /**
-   * The location of the organization office the person works at.
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -259,9 +205,7 @@ class Organization extends \Google\Model
     return $this->location;
   }
   /**
-   * Metadata about the organization.
-   *
-   * @param FieldMetadata $metadata
+   * @param FieldMetadata
    */
   public function setMetadata(FieldMetadata $metadata)
   {
@@ -275,9 +219,7 @@ class Organization extends \Google\Model
     return $this->metadata;
   }
   /**
-   * The name of the organization.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -291,9 +233,7 @@ class Organization extends \Google\Model
     return $this->name;
   }
   /**
-   * The phonetic name of the organization.
-   *
-   * @param string $phoneticName
+   * @param string
    */
   public function setPhoneticName($phoneticName)
   {
@@ -307,9 +247,7 @@ class Organization extends \Google\Model
     return $this->phoneticName;
   }
   /**
-   * The start date when the person joined the organization.
-   *
-   * @param Date $startDate
+   * @param Date
    */
   public function setStartDate(Date $startDate)
   {
@@ -323,10 +261,7 @@ class Organization extends \Google\Model
     return $this->startDate;
   }
   /**
-   * The symbol associated with the organization; for example, a stock ticker
-   * symbol, abbreviation, or acronym.
-   *
-   * @param string $symbol
+   * @param string
    */
   public function setSymbol($symbol)
   {
@@ -340,9 +275,7 @@ class Organization extends \Google\Model
     return $this->symbol;
   }
   /**
-   * The person's job title at the organization.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -356,10 +289,7 @@ class Organization extends \Google\Model
     return $this->title;
   }
   /**
-   * The type of the organization. The type can be custom or one of these
-   * predefined values: * `work` * `school`
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

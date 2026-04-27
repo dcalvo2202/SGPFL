@@ -24,27 +24,12 @@ class AnalyzeIamPolicyLongrunningRequest extends \Google\Model
   protected $outputConfigType = IamPolicyAnalysisOutputConfig::class;
   protected $outputConfigDataType = '';
   /**
-   * Optional. The name of a saved query, which must be in the format of: *
-   * projects/project_number/savedQueries/saved_query_id *
-   * folders/folder_number/savedQueries/saved_query_id *
-   * organizations/organization_number/savedQueries/saved_query_id If both
-   * `analysis_query` and `saved_analysis_query` are provided, they will be
-   * merged together with the `saved_analysis_query` as base and the
-   * `analysis_query` as overrides. For more details of the merge behavior,
-   * refer to the [MergeFrom](https://developers.google.com/protocol-buffers/doc
-   * s/reference/cpp/google.protobuf.message#Message.MergeFrom.details) doc.
-   * Note that you cannot override primitive fields with default value, such as
-   * 0 or empty string, etc., because we use proto3, which doesn't support field
-   * presence yet.
-   *
    * @var string
    */
   public $savedAnalysisQuery;
 
   /**
-   * Required. The request query.
-   *
-   * @param IamPolicyAnalysisQuery $analysisQuery
+   * @param IamPolicyAnalysisQuery
    */
   public function setAnalysisQuery(IamPolicyAnalysisQuery $analysisQuery)
   {
@@ -58,10 +43,7 @@ class AnalyzeIamPolicyLongrunningRequest extends \Google\Model
     return $this->analysisQuery;
   }
   /**
-   * Required. Output configuration indicating where the results will be output
-   * to.
-   *
-   * @param IamPolicyAnalysisOutputConfig $outputConfig
+   * @param IamPolicyAnalysisOutputConfig
    */
   public function setOutputConfig(IamPolicyAnalysisOutputConfig $outputConfig)
   {
@@ -75,20 +57,7 @@ class AnalyzeIamPolicyLongrunningRequest extends \Google\Model
     return $this->outputConfig;
   }
   /**
-   * Optional. The name of a saved query, which must be in the format of: *
-   * projects/project_number/savedQueries/saved_query_id *
-   * folders/folder_number/savedQueries/saved_query_id *
-   * organizations/organization_number/savedQueries/saved_query_id If both
-   * `analysis_query` and `saved_analysis_query` are provided, they will be
-   * merged together with the `saved_analysis_query` as base and the
-   * `analysis_query` as overrides. For more details of the merge behavior,
-   * refer to the [MergeFrom](https://developers.google.com/protocol-buffers/doc
-   * s/reference/cpp/google.protobuf.message#Message.MergeFrom.details) doc.
-   * Note that you cannot override primitive fields with default value, such as
-   * 0 or empty string, etc., because we use proto3, which doesn't support field
-   * presence yet.
-   *
-   * @param string $savedAnalysisQuery
+   * @param string
    */
   public function setSavedAnalysisQuery($savedAnalysisQuery)
   {

@@ -25,10 +25,7 @@ class AuthzPolicyAuthzRuleRequestResource extends \Google\Model
   protected $tagValueIdSetDataType = '';
 
   /**
-   * Optional. An IAM service account to match against the source service
-   * account of the VM sending the request.
-   *
-   * @param AuthzPolicyAuthzRuleStringMatch $iamServiceAccount
+   * @param AuthzPolicyAuthzRuleStringMatch
    */
   public function setIamServiceAccount(AuthzPolicyAuthzRuleStringMatch $iamServiceAccount)
   {
@@ -42,10 +39,7 @@ class AuthzPolicyAuthzRuleRequestResource extends \Google\Model
     return $this->iamServiceAccount;
   }
   /**
-   * Optional. A list of resource tag value permanent IDs to match against the
-   * resource manager tags value associated with the source VM of a request.
-   *
-   * @param AuthzPolicyAuthzRuleRequestResourceTagValueIdSet $tagValueIdSet
+   * @param AuthzPolicyAuthzRuleRequestResourceTagValueIdSet
    */
   public function setTagValueIdSet(AuthzPolicyAuthzRuleRequestResourceTagValueIdSet $tagValueIdSet)
   {

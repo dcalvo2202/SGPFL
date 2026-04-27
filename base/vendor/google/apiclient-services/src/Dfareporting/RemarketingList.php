@@ -20,131 +20,56 @@ namespace Google\Service\Dfareporting;
 class RemarketingList extends \Google\Model
 {
   /**
-   * covers sources not supported in DCM other than those listed below
-   */
-  public const LIST_SOURCE_REMARKETING_LIST_SOURCE_OTHER = 'REMARKETING_LIST_SOURCE_OTHER';
-  /**
-   * ADX
-   */
-  public const LIST_SOURCE_REMARKETING_LIST_SOURCE_ADX = 'REMARKETING_LIST_SOURCE_ADX';
-  /**
-   * DFP
-   */
-  public const LIST_SOURCE_REMARKETING_LIST_SOURCE_DFP = 'REMARKETING_LIST_SOURCE_DFP';
-  /**
-   * XFP
-   */
-  public const LIST_SOURCE_REMARKETING_LIST_SOURCE_XFP = 'REMARKETING_LIST_SOURCE_XFP';
-  /**
-   * DoubleClick Campaign Manager
-   */
-  public const LIST_SOURCE_REMARKETING_LIST_SOURCE_DFA = 'REMARKETING_LIST_SOURCE_DFA';
-  /**
-   * Google Analytics Premium
-   */
-  public const LIST_SOURCE_REMARKETING_LIST_SOURCE_GA = 'REMARKETING_LIST_SOURCE_GA';
-  /**
-   * Youtube
-   */
-  public const LIST_SOURCE_REMARKETING_LIST_SOURCE_YOUTUBE = 'REMARKETING_LIST_SOURCE_YOUTUBE';
-  /**
-   * DoubleClick Bid Manager
-   */
-  public const LIST_SOURCE_REMARKETING_LIST_SOURCE_DBM = 'REMARKETING_LIST_SOURCE_DBM';
-  /**
-   * G+
-   */
-  public const LIST_SOURCE_REMARKETING_LIST_SOURCE_GPLUS = 'REMARKETING_LIST_SOURCE_GPLUS';
-  /**
-   * DoubleClick Audience Center
-   */
-  public const LIST_SOURCE_REMARKETING_LIST_SOURCE_DMP = 'REMARKETING_LIST_SOURCE_DMP';
-  /**
-   * Playstore
-   */
-  public const LIST_SOURCE_REMARKETING_LIST_SOURCE_PLAY_STORE = 'REMARKETING_LIST_SOURCE_PLAY_STORE';
-  /**
-   * Account ID of this remarketing list. This is a read-only, auto-generated
-   * field that is only returned in GET requests.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * Whether this remarketing list is active.
-   *
    * @var bool
    */
   public $active;
   /**
-   * Dimension value for the advertiser ID that owns this remarketing list. This
-   * is a required field.
-   *
    * @var string
    */
   public $advertiserId;
   protected $advertiserIdDimensionValueType = DimensionValue::class;
   protected $advertiserIdDimensionValueDataType = '';
   /**
-   * Remarketing list description.
-   *
    * @var string
    */
   public $description;
   /**
-   * Remarketing list ID. This is a read-only, auto-generated field.
-   *
    * @var string
    */
   public $id;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#remarketingList".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Number of days that a user should remain in the remarketing list without an
-   * impression. Acceptable values are 1 to 540, inclusive.
-   *
    * @var string
    */
   public $lifeSpan;
   protected $listPopulationRuleType = ListPopulationRule::class;
   protected $listPopulationRuleDataType = '';
   /**
-   * Number of users currently in the list. This is a read-only field.
-   *
    * @var string
    */
   public $listSize;
   /**
-   * Product from which this remarketing list was originated.
-   *
    * @var string
    */
   public $listSource;
   /**
-   * Name of the remarketing list. This is a required field. Must be no greater
-   * than 128 characters long.
-   *
    * @var string
    */
   public $name;
   /**
-   * Subaccount ID of this remarketing list. This is a read-only, auto-generated
-   * field that is only returned in GET requests.
-   *
    * @var string
    */
   public $subaccountId;
 
   /**
-   * Account ID of this remarketing list. This is a read-only, auto-generated
-   * field that is only returned in GET requests.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -158,9 +83,7 @@ class RemarketingList extends \Google\Model
     return $this->accountId;
   }
   /**
-   * Whether this remarketing list is active.
-   *
-   * @param bool $active
+   * @param bool
    */
   public function setActive($active)
   {
@@ -174,10 +97,7 @@ class RemarketingList extends \Google\Model
     return $this->active;
   }
   /**
-   * Dimension value for the advertiser ID that owns this remarketing list. This
-   * is a required field.
-   *
-   * @param string $advertiserId
+   * @param string
    */
   public function setAdvertiserId($advertiserId)
   {
@@ -191,10 +111,7 @@ class RemarketingList extends \Google\Model
     return $this->advertiserId;
   }
   /**
-   * Dimension value for the ID of the advertiser. This is a read-only, auto-
-   * generated field.
-   *
-   * @param DimensionValue $advertiserIdDimensionValue
+   * @param DimensionValue
    */
   public function setAdvertiserIdDimensionValue(DimensionValue $advertiserIdDimensionValue)
   {
@@ -208,9 +125,7 @@ class RemarketingList extends \Google\Model
     return $this->advertiserIdDimensionValue;
   }
   /**
-   * Remarketing list description.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -224,9 +139,7 @@ class RemarketingList extends \Google\Model
     return $this->description;
   }
   /**
-   * Remarketing list ID. This is a read-only, auto-generated field.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -240,10 +153,7 @@ class RemarketingList extends \Google\Model
     return $this->id;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#remarketingList".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -257,10 +167,7 @@ class RemarketingList extends \Google\Model
     return $this->kind;
   }
   /**
-   * Number of days that a user should remain in the remarketing list without an
-   * impression. Acceptable values are 1 to 540, inclusive.
-   *
-   * @param string $lifeSpan
+   * @param string
    */
   public function setLifeSpan($lifeSpan)
   {
@@ -274,9 +181,7 @@ class RemarketingList extends \Google\Model
     return $this->lifeSpan;
   }
   /**
-   * Rule used to populate the remarketing list with users.
-   *
-   * @param ListPopulationRule $listPopulationRule
+   * @param ListPopulationRule
    */
   public function setListPopulationRule(ListPopulationRule $listPopulationRule)
   {
@@ -290,9 +195,7 @@ class RemarketingList extends \Google\Model
     return $this->listPopulationRule;
   }
   /**
-   * Number of users currently in the list. This is a read-only field.
-   *
-   * @param string $listSize
+   * @param string
    */
   public function setListSize($listSize)
   {
@@ -306,33 +209,21 @@ class RemarketingList extends \Google\Model
     return $this->listSize;
   }
   /**
-   * Product from which this remarketing list was originated.
-   *
-   * Accepted values: REMARKETING_LIST_SOURCE_OTHER,
-   * REMARKETING_LIST_SOURCE_ADX, REMARKETING_LIST_SOURCE_DFP,
-   * REMARKETING_LIST_SOURCE_XFP, REMARKETING_LIST_SOURCE_DFA,
-   * REMARKETING_LIST_SOURCE_GA, REMARKETING_LIST_SOURCE_YOUTUBE,
-   * REMARKETING_LIST_SOURCE_DBM, REMARKETING_LIST_SOURCE_GPLUS,
-   * REMARKETING_LIST_SOURCE_DMP, REMARKETING_LIST_SOURCE_PLAY_STORE
-   *
-   * @param self::LIST_SOURCE_* $listSource
+   * @param string
    */
   public function setListSource($listSource)
   {
     $this->listSource = $listSource;
   }
   /**
-   * @return self::LIST_SOURCE_*
+   * @return string
    */
   public function getListSource()
   {
     return $this->listSource;
   }
   /**
-   * Name of the remarketing list. This is a required field. Must be no greater
-   * than 128 characters long.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -346,10 +237,7 @@ class RemarketingList extends \Google\Model
     return $this->name;
   }
   /**
-   * Subaccount ID of this remarketing list. This is a read-only, auto-generated
-   * field that is only returned in GET requests.
-   *
-   * @param string $subaccountId
+   * @param string
    */
   public function setSubaccountId($subaccountId)
   {

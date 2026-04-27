@@ -25,9 +25,7 @@ class GoogleCloudAiplatformV1SchemaTrainingjobDefinitionHyperparameterTuningTask
   protected $metadataDataType = '';
 
   /**
-   * The input parameters of this HyperparameterTuningTask.
-   *
-   * @param GoogleCloudAiplatformV1SchemaTrainingjobDefinitionHyperparameterTuningJobSpec $inputs
+   * @param GoogleCloudAiplatformV1SchemaTrainingjobDefinitionHyperparameterTuningJobSpec
    */
   public function setInputs(GoogleCloudAiplatformV1SchemaTrainingjobDefinitionHyperparameterTuningJobSpec $inputs)
   {
@@ -41,9 +39,7 @@ class GoogleCloudAiplatformV1SchemaTrainingjobDefinitionHyperparameterTuningTask
     return $this->inputs;
   }
   /**
-   * The metadata information.
-   *
-   * @param GoogleCloudAiplatformV1SchemaTrainingjobDefinitionHyperparameterTuningJobMetadata $metadata
+   * @param GoogleCloudAiplatformV1SchemaTrainingjobDefinitionHyperparameterTuningJobMetadata
    */
   public function setMetadata(GoogleCloudAiplatformV1SchemaTrainingjobDefinitionHyperparameterTuningJobMetadata $metadata)
   {

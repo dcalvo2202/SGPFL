@@ -19,126 +19,60 @@ namespace Google\Service\Speech;
 
 class PhraseSet extends \Google\Collection
 {
-  /**
-   * Unspecified state. This is only used/useful for distinguishing unset
-   * values.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The normal and active state.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * This CustomClass has been deleted.
-   */
-  public const STATE_DELETED = 'DELETED';
   protected $collection_key = 'phrases';
   /**
-   * Output only. Allows users to store small amounts of arbitrary data. Both
-   * the key and the value must be 63 characters or less each. At most 100
-   * annotations. This field is not used.
-   *
    * @var string[]
    */
   public $annotations;
   /**
-   * Hint Boost. Positive value will increase the probability that a specific
-   * phrase will be recognized over other similar sounding phrases. The higher
-   * the boost, the higher the chance of false positive recognition as well.
-   * Negative boost values would correspond to anti-biasing. Anti-biasing is not
-   * enabled, so negative boost will simply be ignored. Though `boost` can
-   * accept a wide range of positive values, most use cases are best served with
-   * values between 0 (exclusive) and 20. We recommend using a binary search
-   * approach to finding the optimal value for your use case as well as adding
-   * phrases both with and without boost to your requests.
-   *
    * @var float
    */
   public $boost;
   /**
-   * Output only. The time at which this resource was requested for deletion.
-   * This field is not used.
-   *
    * @var string
    */
   public $deleteTime;
   /**
-   * Output only. User-settable, human-readable name for the PhraseSet. Must be
-   * 63 characters or less. This field is not used.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. This checksum is computed by the server based on the value of
-   * other fields. This may be sent on update, undelete, and delete requests to
-   * ensure the client has an up-to-date value before proceeding. This field is
-   * not used.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Output only. The time at which this resource will be purged. This field is
-   * not used.
-   *
    * @var string
    */
   public $expireTime;
   /**
-   * Output only. The [KMS key name](https://cloud.google.com/kms/docs/resource-
-   * hierarchy#keys) with which the content of the PhraseSet is encrypted. The
-   * expected format is `projects/{project}/locations/{location}/keyRings/{key_r
-   * ing}/cryptoKeys/{crypto_key}`.
-   *
    * @var string
    */
   public $kmsKeyName;
   /**
-   * Output only. The [KMS key version
-   * name](https://cloud.google.com/kms/docs/resource-hierarchy#key_versions)
-   * with which content of the PhraseSet is encrypted. The expected format is `p
-   * rojects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{cryp
-   * to_key}/cryptoKeyVersions/{crypto_key_version}`.
-   *
    * @var string
    */
   public $kmsKeyVersionName;
   /**
-   * The resource name of the phrase set.
-   *
    * @var string
    */
   public $name;
   protected $phrasesType = Phrase::class;
   protected $phrasesDataType = 'array';
   /**
-   * Output only. Whether or not this PhraseSet is in the process of being
-   * updated. This field is not used.
-   *
    * @var bool
    */
   public $reconciling;
   /**
-   * Output only. The CustomClass lifecycle state. This field is not used.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. System-assigned unique identifier for the PhraseSet. This
-   * field is not used.
-   *
    * @var string
    */
   public $uid;
 
   /**
-   * Output only. Allows users to store small amounts of arbitrary data. Both
-   * the key and the value must be 63 characters or less each. At most 100
-   * annotations. This field is not used.
-   *
-   * @param string[] $annotations
+   * @param string[]
    */
   public function setAnnotations($annotations)
   {
@@ -152,17 +86,7 @@ class PhraseSet extends \Google\Collection
     return $this->annotations;
   }
   /**
-   * Hint Boost. Positive value will increase the probability that a specific
-   * phrase will be recognized over other similar sounding phrases. The higher
-   * the boost, the higher the chance of false positive recognition as well.
-   * Negative boost values would correspond to anti-biasing. Anti-biasing is not
-   * enabled, so negative boost will simply be ignored. Though `boost` can
-   * accept a wide range of positive values, most use cases are best served with
-   * values between 0 (exclusive) and 20. We recommend using a binary search
-   * approach to finding the optimal value for your use case as well as adding
-   * phrases both with and without boost to your requests.
-   *
-   * @param float $boost
+   * @param float
    */
   public function setBoost($boost)
   {
@@ -176,10 +100,7 @@ class PhraseSet extends \Google\Collection
     return $this->boost;
   }
   /**
-   * Output only. The time at which this resource was requested for deletion.
-   * This field is not used.
-   *
-   * @param string $deleteTime
+   * @param string
    */
   public function setDeleteTime($deleteTime)
   {
@@ -193,10 +114,7 @@ class PhraseSet extends \Google\Collection
     return $this->deleteTime;
   }
   /**
-   * Output only. User-settable, human-readable name for the PhraseSet. Must be
-   * 63 characters or less. This field is not used.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -210,12 +128,7 @@ class PhraseSet extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Output only. This checksum is computed by the server based on the value of
-   * other fields. This may be sent on update, undelete, and delete requests to
-   * ensure the client has an up-to-date value before proceeding. This field is
-   * not used.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -229,10 +142,7 @@ class PhraseSet extends \Google\Collection
     return $this->etag;
   }
   /**
-   * Output only. The time at which this resource will be purged. This field is
-   * not used.
-   *
-   * @param string $expireTime
+   * @param string
    */
   public function setExpireTime($expireTime)
   {
@@ -246,12 +156,7 @@ class PhraseSet extends \Google\Collection
     return $this->expireTime;
   }
   /**
-   * Output only. The [KMS key name](https://cloud.google.com/kms/docs/resource-
-   * hierarchy#keys) with which the content of the PhraseSet is encrypted. The
-   * expected format is `projects/{project}/locations/{location}/keyRings/{key_r
-   * ing}/cryptoKeys/{crypto_key}`.
-   *
-   * @param string $kmsKeyName
+   * @param string
    */
   public function setKmsKeyName($kmsKeyName)
   {
@@ -265,13 +170,7 @@ class PhraseSet extends \Google\Collection
     return $this->kmsKeyName;
   }
   /**
-   * Output only. The [KMS key version
-   * name](https://cloud.google.com/kms/docs/resource-hierarchy#key_versions)
-   * with which content of the PhraseSet is encrypted. The expected format is `p
-   * rojects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{cryp
-   * to_key}/cryptoKeyVersions/{crypto_key_version}`.
-   *
-   * @param string $kmsKeyVersionName
+   * @param string
    */
   public function setKmsKeyVersionName($kmsKeyVersionName)
   {
@@ -285,9 +184,7 @@ class PhraseSet extends \Google\Collection
     return $this->kmsKeyVersionName;
   }
   /**
-   * The resource name of the phrase set.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -301,9 +198,7 @@ class PhraseSet extends \Google\Collection
     return $this->name;
   }
   /**
-   * A list of word and phrases.
-   *
-   * @param Phrase[] $phrases
+   * @param Phrase[]
    */
   public function setPhrases($phrases)
   {
@@ -317,10 +212,7 @@ class PhraseSet extends \Google\Collection
     return $this->phrases;
   }
   /**
-   * Output only. Whether or not this PhraseSet is in the process of being
-   * updated. This field is not used.
-   *
-   * @param bool $reconciling
+   * @param bool
    */
   public function setReconciling($reconciling)
   {
@@ -334,28 +226,21 @@ class PhraseSet extends \Google\Collection
     return $this->reconciling;
   }
   /**
-   * Output only. The CustomClass lifecycle state. This field is not used.
-   *
-   * Accepted values: STATE_UNSPECIFIED, ACTIVE, DELETED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. System-assigned unique identifier for the PhraseSet. This
-   * field is not used.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {

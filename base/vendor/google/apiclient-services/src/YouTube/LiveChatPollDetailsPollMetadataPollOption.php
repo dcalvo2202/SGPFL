@@ -29,7 +29,7 @@ class LiveChatPollDetailsPollMetadataPollOption extends \Google\Model
   public $tally;
 
   /**
-   * @param string $optionText
+   * @param string
    */
   public function setOptionText($optionText)
   {
@@ -43,7 +43,7 @@ class LiveChatPollDetailsPollMetadataPollOption extends \Google\Model
     return $this->optionText;
   }
   /**
-   * @param string $tally
+   * @param string
    */
   public function setTally($tally)
   {

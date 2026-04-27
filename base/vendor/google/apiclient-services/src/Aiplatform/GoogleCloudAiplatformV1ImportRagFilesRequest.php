@@ -23,10 +23,7 @@ class GoogleCloudAiplatformV1ImportRagFilesRequest extends \Google\Model
   protected $importRagFilesConfigDataType = '';
 
   /**
-   * Required. The config for the RagFiles to be synced and imported into the
-   * RagCorpus. VertexRagDataService.ImportRagFiles.
-   *
-   * @param GoogleCloudAiplatformV1ImportRagFilesConfig $importRagFilesConfig
+   * @param GoogleCloudAiplatformV1ImportRagFilesConfig
    */
   public function setImportRagFilesConfig(GoogleCloudAiplatformV1ImportRagFilesConfig $importRagFilesConfig)
   {

@@ -21,9 +21,6 @@ class CommitResponse extends \Google\Collection
 {
   protected $collection_key = 'writeResults';
   /**
-   * The time at which the commit occurred. Any read with an equal or greater
-   * `read_time` is guaranteed to see the effects of the commit.
-   *
    * @var string
    */
   public $commitTime;
@@ -31,10 +28,7 @@ class CommitResponse extends \Google\Collection
   protected $writeResultsDataType = 'array';
 
   /**
-   * The time at which the commit occurred. Any read with an equal or greater
-   * `read_time` is guaranteed to see the effects of the commit.
-   *
-   * @param string $commitTime
+   * @param string
    */
   public function setCommitTime($commitTime)
   {
@@ -48,10 +42,7 @@ class CommitResponse extends \Google\Collection
     return $this->commitTime;
   }
   /**
-   * The result of applying the writes. This i-th write result corresponds to
-   * the i-th write in the request.
-   *
-   * @param WriteResult[] $writeResults
+   * @param WriteResult[]
    */
   public function setWriteResults($writeResults)
   {

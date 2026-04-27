@@ -21,26 +21,18 @@ class ListPolicyBasedRoutesResponse extends \Google\Collection
 {
   protected $collection_key = 'unreachable';
   /**
-   * The next pagination token in the List response. It should be used as
-   * page_token for the following request. An empty value means no more result.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $policyBasedRoutesType = PolicyBasedRoute::class;
   protected $policyBasedRoutesDataType = 'array';
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * The next pagination token in the List response. It should be used as
-   * page_token for the following request. An empty value means no more result.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -54,9 +46,7 @@ class ListPolicyBasedRoutesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Policy-based routes to be returned.
-   *
-   * @param PolicyBasedRoute[] $policyBasedRoutes
+   * @param PolicyBasedRoute[]
    */
   public function setPolicyBasedRoutes($policyBasedRoutes)
   {
@@ -70,9 +60,7 @@ class ListPolicyBasedRoutesResponse extends \Google\Collection
     return $this->policyBasedRoutes;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

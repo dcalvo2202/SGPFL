@@ -22,18 +22,12 @@ class GoogleCloudDatalabelingV1beta1FeedbackThread extends \Google\Model
   protected $feedbackThreadMetadataType = GoogleCloudDatalabelingV1beta1FeedbackThreadMetadata::class;
   protected $feedbackThreadMetadataDataType = '';
   /**
-   * Name of the feedback thread. Format: 'project/{project_id}/datasets/{datase
-   * t_id}/annotatedDatasets/{annotated_dataset_id}/feedbackThreads/{feedback_th
-   * read_id}'
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Metadata regarding the feedback thread.
-   *
-   * @param GoogleCloudDatalabelingV1beta1FeedbackThreadMetadata $feedbackThreadMetadata
+   * @param GoogleCloudDatalabelingV1beta1FeedbackThreadMetadata
    */
   public function setFeedbackThreadMetadata(GoogleCloudDatalabelingV1beta1FeedbackThreadMetadata $feedbackThreadMetadata)
   {
@@ -47,11 +41,7 @@ class GoogleCloudDatalabelingV1beta1FeedbackThread extends \Google\Model
     return $this->feedbackThreadMetadata;
   }
   /**
-   * Name of the feedback thread. Format: 'project/{project_id}/datasets/{datase
-   * t_id}/annotatedDatasets/{annotated_dataset_id}/feedbackThreads/{feedback_th
-   * read_id}'
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

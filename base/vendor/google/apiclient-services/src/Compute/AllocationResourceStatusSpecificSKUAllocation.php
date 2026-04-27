@@ -20,23 +20,16 @@ namespace Google\Service\Compute;
 class AllocationResourceStatusSpecificSKUAllocation extends \Google\Model
 {
   /**
-   * ID of the instance template used to populate reservation properties.
-   *
    * @var string
    */
   public $sourceInstanceTemplateId;
   /**
-   * Per service utilization breakdown. The Key is the Google Cloud managed
-   * service name.
-   *
    * @var string[]
    */
   public $utilizations;
 
   /**
-   * ID of the instance template used to populate reservation properties.
-   *
-   * @param string $sourceInstanceTemplateId
+   * @param string
    */
   public function setSourceInstanceTemplateId($sourceInstanceTemplateId)
   {
@@ -50,10 +43,7 @@ class AllocationResourceStatusSpecificSKUAllocation extends \Google\Model
     return $this->sourceInstanceTemplateId;
   }
   /**
-   * Per service utilization breakdown. The Key is the Google Cloud managed
-   * service name.
-   *
-   * @param string[] $utilizations
+   * @param string[]
    */
   public function setUtilizations($utilizations)
   {

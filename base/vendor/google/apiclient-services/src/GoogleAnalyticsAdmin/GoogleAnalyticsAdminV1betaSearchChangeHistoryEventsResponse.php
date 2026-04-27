@@ -23,17 +23,12 @@ class GoogleAnalyticsAdminV1betaSearchChangeHistoryEventsResponse extends \Googl
   protected $changeHistoryEventsType = GoogleAnalyticsAdminV1betaChangeHistoryEvent::class;
   protected $changeHistoryEventsDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Results that were accessible to the caller.
-   *
-   * @param GoogleAnalyticsAdminV1betaChangeHistoryEvent[] $changeHistoryEvents
+   * @param GoogleAnalyticsAdminV1betaChangeHistoryEvent[]
    */
   public function setChangeHistoryEvents($changeHistoryEvents)
   {
@@ -47,10 +42,7 @@ class GoogleAnalyticsAdminV1betaSearchChangeHistoryEventsResponse extends \Googl
     return $this->changeHistoryEvents;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

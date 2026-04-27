@@ -25,7 +25,7 @@ class GoogleCloudDialogflowCxV3ImportFlowResponse extends \Google\Model
   public $flow;
 
   /**
-   * @param string $flow
+   * @param string
    */
   public function setFlow($flow)
   {

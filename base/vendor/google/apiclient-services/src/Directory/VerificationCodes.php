@@ -21,25 +21,18 @@ class VerificationCodes extends \Google\Collection
 {
   protected $collection_key = 'items';
   /**
-   * ETag of the resource.
-   *
    * @var string
    */
   public $etag;
   protected $itemsType = VerificationCode::class;
   protected $itemsDataType = 'array';
   /**
-   * The type of the resource. This is always
-   * `admin#directory#verificationCodesList`.
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * ETag of the resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -53,9 +46,7 @@ class VerificationCodes extends \Google\Collection
     return $this->etag;
   }
   /**
-   * A list of verification code resources.
-   *
-   * @param VerificationCode[] $items
+   * @param VerificationCode[]
    */
   public function setItems($items)
   {
@@ -69,10 +60,7 @@ class VerificationCodes extends \Google\Collection
     return $this->items;
   }
   /**
-   * The type of the resource. This is always
-   * `admin#directory#verificationCodesList`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

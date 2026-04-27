@@ -20,22 +20,16 @@ namespace Google\Service\MigrationCenterAPI;
 class ReportSummaryUtilizationChartData extends \Google\Model
 {
   /**
-   * Aggregate value which falls into the "Free" bucket.
-   *
    * @var string
    */
   public $free;
   /**
-   * Aggregate value which falls into the "Used" bucket.
-   *
    * @var string
    */
   public $used;
 
   /**
-   * Aggregate value which falls into the "Free" bucket.
-   *
-   * @param string $free
+   * @param string
    */
   public function setFree($free)
   {
@@ -49,9 +43,7 @@ class ReportSummaryUtilizationChartData extends \Google\Model
     return $this->free;
   }
   /**
-   * Aggregate value which falls into the "Used" bucket.
-   *
-   * @param string $used
+   * @param string
    */
   public function setUsed($used)
   {

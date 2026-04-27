@@ -20,28 +20,15 @@ namespace Google\Service\Forms;
 class Grade extends \Google\Model
 {
   /**
-   * Output only. Whether the question was answered correctly or not. A zero-
-   * point score is not enough to infer incorrectness, since a correctly
-   * answered question could be worth zero points.
-   *
    * @var bool
    */
   public $correct;
   protected $feedbackType = Feedback::class;
   protected $feedbackDataType = '';
-  /**
-   * Output only. The numeric score awarded for the answer.
-   *
-   * @var 
-   */
   public $score;
 
   /**
-   * Output only. Whether the question was answered correctly or not. A zero-
-   * point score is not enough to infer incorrectness, since a correctly
-   * answered question could be worth zero points.
-   *
-   * @param bool $correct
+   * @param bool
    */
   public function setCorrect($correct)
   {
@@ -55,9 +42,7 @@ class Grade extends \Google\Model
     return $this->correct;
   }
   /**
-   * Output only. Additional feedback given for an answer.
-   *
-   * @param Feedback $feedback
+   * @param Feedback
    */
   public function setFeedback(Feedback $feedback)
   {

@@ -20,44 +20,28 @@ namespace Google\Service\SecurityPosture;
 class PostureDetails extends \Google\Model
 {
   /**
-   * The identifier for the PolicySet that the relevant policy belongs to.
-   *
    * @var string
    */
   public $policySet;
   /**
-   * The posture used in the deployment, in the format
-   * `organizations/{organization}/locations/global/postures/{posture_id}`.
-   *
    * @var string
    */
   public $posture;
   /**
-   * The name of the posture deployment, in the format `organizations/{organizat
-   * ion}/locations/global/postureDeployments/{deployment_id}`.
-   *
    * @var string
    */
   public $postureDeployment;
   /**
-   * The organization, folder, or project where the posture is deployed. Uses
-   * one of the following formats: * `organizations/{organization_number}` *
-   * `folders/{folder_number}` * `projects/{project_number}`
-   *
    * @var string
    */
   public $postureDeploymentTargetResource;
   /**
-   * The revision ID of the posture used in the deployment.
-   *
    * @var string
    */
   public $postureRevisionId;
 
   /**
-   * The identifier for the PolicySet that the relevant policy belongs to.
-   *
-   * @param string $policySet
+   * @param string
    */
   public function setPolicySet($policySet)
   {
@@ -71,10 +55,7 @@ class PostureDetails extends \Google\Model
     return $this->policySet;
   }
   /**
-   * The posture used in the deployment, in the format
-   * `organizations/{organization}/locations/global/postures/{posture_id}`.
-   *
-   * @param string $posture
+   * @param string
    */
   public function setPosture($posture)
   {
@@ -88,10 +69,7 @@ class PostureDetails extends \Google\Model
     return $this->posture;
   }
   /**
-   * The name of the posture deployment, in the format `organizations/{organizat
-   * ion}/locations/global/postureDeployments/{deployment_id}`.
-   *
-   * @param string $postureDeployment
+   * @param string
    */
   public function setPostureDeployment($postureDeployment)
   {
@@ -105,11 +83,7 @@ class PostureDetails extends \Google\Model
     return $this->postureDeployment;
   }
   /**
-   * The organization, folder, or project where the posture is deployed. Uses
-   * one of the following formats: * `organizations/{organization_number}` *
-   * `folders/{folder_number}` * `projects/{project_number}`
-   *
-   * @param string $postureDeploymentTargetResource
+   * @param string
    */
   public function setPostureDeploymentTargetResource($postureDeploymentTargetResource)
   {
@@ -123,9 +97,7 @@ class PostureDetails extends \Google\Model
     return $this->postureDeploymentTargetResource;
   }
   /**
-   * The revision ID of the posture used in the deployment.
-   *
-   * @param string $postureRevisionId
+   * @param string
    */
   public function setPostureRevisionId($postureRevisionId)
   {

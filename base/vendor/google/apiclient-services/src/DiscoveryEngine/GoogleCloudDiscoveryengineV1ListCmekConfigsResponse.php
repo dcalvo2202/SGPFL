@@ -24,9 +24,7 @@ class GoogleCloudDiscoveryengineV1ListCmekConfigsResponse extends \Google\Collec
   protected $cmekConfigsDataType = 'array';
 
   /**
-   * All the customer's CmekConfigs.
-   *
-   * @param GoogleCloudDiscoveryengineV1CmekConfig[] $cmekConfigs
+   * @param GoogleCloudDiscoveryengineV1CmekConfig[]
    */
   public function setCmekConfigs($cmekConfigs)
   {

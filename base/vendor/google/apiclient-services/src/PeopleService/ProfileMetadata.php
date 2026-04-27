@@ -19,54 +19,32 @@ namespace Google\Service\PeopleService;
 
 class ProfileMetadata extends \Google\Collection
 {
-  /**
-   * Unspecified.
-   */
-  public const OBJECT_TYPE_OBJECT_TYPE_UNSPECIFIED = 'OBJECT_TYPE_UNSPECIFIED';
-  /**
-   * Person.
-   */
-  public const OBJECT_TYPE_PERSON = 'PERSON';
-  /**
-   * [Currents Page.](https://workspace.google.com/products/currents/)
-   */
-  public const OBJECT_TYPE_PAGE = 'PAGE';
   protected $collection_key = 'userTypes';
   /**
-   * Output only. The profile object type.
-   *
    * @var string
    */
   public $objectType;
   /**
-   * Output only. The user types.
-   *
    * @var string[]
    */
   public $userTypes;
 
   /**
-   * Output only. The profile object type.
-   *
-   * Accepted values: OBJECT_TYPE_UNSPECIFIED, PERSON, PAGE
-   *
-   * @param self::OBJECT_TYPE_* $objectType
+   * @param string
    */
   public function setObjectType($objectType)
   {
     $this->objectType = $objectType;
   }
   /**
-   * @return self::OBJECT_TYPE_*
+   * @return string
    */
   public function getObjectType()
   {
     return $this->objectType;
   }
   /**
-   * Output only. The user types.
-   *
-   * @param string[] $userTypes
+   * @param string[]
    */
   public function setUserTypes($userTypes)
   {

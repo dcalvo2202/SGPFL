@@ -19,138 +19,54 @@ namespace Google\Service\ManagedServiceforMicrosoftActiveDirectoryConsumerAPI;
 
 class Trust extends \Google\Collection
 {
-  /**
-   * Not set.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The domain trust is being created.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * The domain trust is being updated.
-   */
-  public const STATE_UPDATING = 'UPDATING';
-  /**
-   * The domain trust is being deleted.
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * The domain trust is connected.
-   */
-  public const STATE_CONNECTED = 'CONNECTED';
-  /**
-   * The domain trust is disconnected.
-   */
-  public const STATE_DISCONNECTED = 'DISCONNECTED';
-  /**
-   * Not set.
-   */
-  public const TRUST_DIRECTION_TRUST_DIRECTION_UNSPECIFIED = 'TRUST_DIRECTION_UNSPECIFIED';
-  /**
-   * The inbound direction represents the trusting side.
-   */
-  public const TRUST_DIRECTION_INBOUND = 'INBOUND';
-  /**
-   * The outboud direction represents the trusted side.
-   */
-  public const TRUST_DIRECTION_OUTBOUND = 'OUTBOUND';
-  /**
-   * The bidirectional direction represents the trusted / trusting side.
-   */
-  public const TRUST_DIRECTION_BIDIRECTIONAL = 'BIDIRECTIONAL';
-  /**
-   * Not set.
-   */
-  public const TRUST_TYPE_TRUST_TYPE_UNSPECIFIED = 'TRUST_TYPE_UNSPECIFIED';
-  /**
-   * The forest trust.
-   */
-  public const TRUST_TYPE_FOREST = 'FOREST';
-  /**
-   * The external domain trust.
-   */
-  public const TRUST_TYPE_EXTERNAL = 'EXTERNAL';
   protected $collection_key = 'targetDnsIpAddresses';
   /**
-   * Output only. The time the instance was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. The last heartbeat time when the trust was known to be
-   * connected.
-   *
    * @var string
    */
   public $lastTrustHeartbeatTime;
   /**
-   * Optional. The trust authentication type, which decides whether the trusted
-   * side has forest/domain wide access or selective access to an approved set
-   * of resources.
-   *
    * @var bool
    */
   public $selectiveAuthentication;
   /**
-   * Output only. The current state of the trust.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. Additional information about the current state of the trust,
-   * if available.
-   *
    * @var string
    */
   public $stateDescription;
   /**
-   * Required. The target DNS server IP addresses which can resolve the remote
-   * domain involved in the trust.
-   *
    * @var string[]
    */
   public $targetDnsIpAddresses;
   /**
-   * Required. The fully qualified target domain name which will be in trust
-   * with the current domain.
-   *
    * @var string
    */
   public $targetDomainName;
   /**
-   * Required. The trust direction, which decides if the current domain is
-   * trusted, trusting, or both.
-   *
    * @var string
    */
   public $trustDirection;
   /**
-   * Required. The trust secret used for the handshake with the target domain.
-   * This will not be stored.
-   *
    * @var string
    */
   public $trustHandshakeSecret;
   /**
-   * Required. The type of trust represented by the trust resource.
-   *
    * @var string
    */
   public $trustType;
   /**
-   * Output only. The last update time.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. The time the instance was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -164,10 +80,7 @@ class Trust extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Output only. The last heartbeat time when the trust was known to be
-   * connected.
-   *
-   * @param string $lastTrustHeartbeatTime
+   * @param string
    */
   public function setLastTrustHeartbeatTime($lastTrustHeartbeatTime)
   {
@@ -181,11 +94,7 @@ class Trust extends \Google\Collection
     return $this->lastTrustHeartbeatTime;
   }
   /**
-   * Optional. The trust authentication type, which decides whether the trusted
-   * side has forest/domain wide access or selective access to an approved set
-   * of resources.
-   *
-   * @param bool $selectiveAuthentication
+   * @param bool
    */
   public function setSelectiveAuthentication($selectiveAuthentication)
   {
@@ -199,29 +108,21 @@ class Trust extends \Google\Collection
     return $this->selectiveAuthentication;
   }
   /**
-   * Output only. The current state of the trust.
-   *
-   * Accepted values: STATE_UNSPECIFIED, CREATING, UPDATING, DELETING,
-   * CONNECTED, DISCONNECTED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. Additional information about the current state of the trust,
-   * if available.
-   *
-   * @param string $stateDescription
+   * @param string
    */
   public function setStateDescription($stateDescription)
   {
@@ -235,10 +136,7 @@ class Trust extends \Google\Collection
     return $this->stateDescription;
   }
   /**
-   * Required. The target DNS server IP addresses which can resolve the remote
-   * domain involved in the trust.
-   *
-   * @param string[] $targetDnsIpAddresses
+   * @param string[]
    */
   public function setTargetDnsIpAddresses($targetDnsIpAddresses)
   {
@@ -252,10 +150,7 @@ class Trust extends \Google\Collection
     return $this->targetDnsIpAddresses;
   }
   /**
-   * Required. The fully qualified target domain name which will be in trust
-   * with the current domain.
-   *
-   * @param string $targetDomainName
+   * @param string
    */
   public function setTargetDomainName($targetDomainName)
   {
@@ -269,30 +164,21 @@ class Trust extends \Google\Collection
     return $this->targetDomainName;
   }
   /**
-   * Required. The trust direction, which decides if the current domain is
-   * trusted, trusting, or both.
-   *
-   * Accepted values: TRUST_DIRECTION_UNSPECIFIED, INBOUND, OUTBOUND,
-   * BIDIRECTIONAL
-   *
-   * @param self::TRUST_DIRECTION_* $trustDirection
+   * @param string
    */
   public function setTrustDirection($trustDirection)
   {
     $this->trustDirection = $trustDirection;
   }
   /**
-   * @return self::TRUST_DIRECTION_*
+   * @return string
    */
   public function getTrustDirection()
   {
     return $this->trustDirection;
   }
   /**
-   * Required. The trust secret used for the handshake with the target domain.
-   * This will not be stored.
-   *
-   * @param string $trustHandshakeSecret
+   * @param string
    */
   public function setTrustHandshakeSecret($trustHandshakeSecret)
   {
@@ -306,27 +192,21 @@ class Trust extends \Google\Collection
     return $this->trustHandshakeSecret;
   }
   /**
-   * Required. The type of trust represented by the trust resource.
-   *
-   * Accepted values: TRUST_TYPE_UNSPECIFIED, FOREST, EXTERNAL
-   *
-   * @param self::TRUST_TYPE_* $trustType
+   * @param string
    */
   public function setTrustType($trustType)
   {
     $this->trustType = $trustType;
   }
   /**
-   * @return self::TRUST_TYPE_*
+   * @return string
    */
   public function getTrustType()
   {
     return $this->trustType;
   }
   /**
-   * Output only. The last update time.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

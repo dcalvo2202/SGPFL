@@ -20,52 +20,20 @@ namespace Google\Service\VMMigrationService;
 class PersistentDiskDefaults extends \Google\Model
 {
   /**
-   * An unspecified disk type. Will be used as STANDARD.
-   */
-  public const DISK_TYPE_COMPUTE_ENGINE_DISK_TYPE_UNSPECIFIED = 'COMPUTE_ENGINE_DISK_TYPE_UNSPECIFIED';
-  /**
-   * A Standard disk type.
-   */
-  public const DISK_TYPE_COMPUTE_ENGINE_DISK_TYPE_STANDARD = 'COMPUTE_ENGINE_DISK_TYPE_STANDARD';
-  /**
-   * SSD hard disk type.
-   */
-  public const DISK_TYPE_COMPUTE_ENGINE_DISK_TYPE_SSD = 'COMPUTE_ENGINE_DISK_TYPE_SSD';
-  /**
-   * An alternative to SSD persistent disks that balance performance and cost.
-   */
-  public const DISK_TYPE_COMPUTE_ENGINE_DISK_TYPE_BALANCED = 'COMPUTE_ENGINE_DISK_TYPE_BALANCED';
-  /**
-   * Hyperdisk balanced disk type.
-   */
-  public const DISK_TYPE_COMPUTE_ENGINE_DISK_TYPE_HYPERDISK_BALANCED = 'COMPUTE_ENGINE_DISK_TYPE_HYPERDISK_BALANCED';
-  /**
-   * Hyperdisk balanced high availability disk type.
-   */
-  public const DISK_TYPE_COMPUTE_ENGINE_DISK_TYPE_HYPERDISK_BALANCED_HIGH_AVAILABILITY = 'COMPUTE_ENGINE_DISK_TYPE_HYPERDISK_BALANCED_HIGH_AVAILABILITY';
-  /**
-   * A map of labels to associate with the Persistent Disk.
-   *
    * @var string[]
    */
   public $additionalLabels;
   /**
-   * Optional. The name of the Persistent Disk to create.
-   *
    * @var string
    */
   public $diskName;
   /**
-   * The disk type to use.
-   *
    * @var string
    */
   public $diskType;
   protected $encryptionType = Encryption::class;
   protected $encryptionDataType = '';
   /**
-   * Required. The ordinal number of the source VM disk.
-   *
    * @var int
    */
   public $sourceDiskNumber;
@@ -73,9 +41,7 @@ class PersistentDiskDefaults extends \Google\Model
   protected $vmAttachmentDetailsDataType = '';
 
   /**
-   * A map of labels to associate with the Persistent Disk.
-   *
-   * @param string[] $additionalLabels
+   * @param string[]
    */
   public function setAdditionalLabels($additionalLabels)
   {
@@ -89,9 +55,7 @@ class PersistentDiskDefaults extends \Google\Model
     return $this->additionalLabels;
   }
   /**
-   * Optional. The name of the Persistent Disk to create.
-   *
-   * @param string $diskName
+   * @param string
    */
   public function setDiskName($diskName)
   {
@@ -105,31 +69,21 @@ class PersistentDiskDefaults extends \Google\Model
     return $this->diskName;
   }
   /**
-   * The disk type to use.
-   *
-   * Accepted values: COMPUTE_ENGINE_DISK_TYPE_UNSPECIFIED,
-   * COMPUTE_ENGINE_DISK_TYPE_STANDARD, COMPUTE_ENGINE_DISK_TYPE_SSD,
-   * COMPUTE_ENGINE_DISK_TYPE_BALANCED,
-   * COMPUTE_ENGINE_DISK_TYPE_HYPERDISK_BALANCED,
-   * COMPUTE_ENGINE_DISK_TYPE_HYPERDISK_BALANCED_HIGH_AVAILABILITY
-   *
-   * @param self::DISK_TYPE_* $diskType
+   * @param string
    */
   public function setDiskType($diskType)
   {
     $this->diskType = $diskType;
   }
   /**
-   * @return self::DISK_TYPE_*
+   * @return string
    */
   public function getDiskType()
   {
     return $this->diskType;
   }
   /**
-   * Optional. The encryption to apply to the disk.
-   *
-   * @param Encryption $encryption
+   * @param Encryption
    */
   public function setEncryption(Encryption $encryption)
   {
@@ -143,9 +97,7 @@ class PersistentDiskDefaults extends \Google\Model
     return $this->encryption;
   }
   /**
-   * Required. The ordinal number of the source VM disk.
-   *
-   * @param int $sourceDiskNumber
+   * @param int
    */
   public function setSourceDiskNumber($sourceDiskNumber)
   {
@@ -159,10 +111,7 @@ class PersistentDiskDefaults extends \Google\Model
     return $this->sourceDiskNumber;
   }
   /**
-   * Optional. Details for attachment of the disk to a VM. Used when the disk is
-   * set to be attached to a target VM.
-   *
-   * @param VmAttachmentDetails $vmAttachmentDetails
+   * @param VmAttachmentDetails
    */
   public function setVmAttachmentDetails(VmAttachmentDetails $vmAttachmentDetails)
   {

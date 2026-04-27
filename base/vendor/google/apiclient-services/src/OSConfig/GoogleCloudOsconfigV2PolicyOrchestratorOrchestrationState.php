@@ -25,9 +25,7 @@ class GoogleCloudOsconfigV2PolicyOrchestratorOrchestrationState extends \Google\
   protected $previousIterationStateDataType = '';
 
   /**
-   * Output only. Current Wave iteration state.
-   *
-   * @param GoogleCloudOsconfigV2PolicyOrchestratorIterationState $currentIterationState
+   * @param GoogleCloudOsconfigV2PolicyOrchestratorIterationState
    */
   public function setCurrentIterationState(GoogleCloudOsconfigV2PolicyOrchestratorIterationState $currentIterationState)
   {
@@ -41,9 +39,7 @@ class GoogleCloudOsconfigV2PolicyOrchestratorOrchestrationState extends \Google\
     return $this->currentIterationState;
   }
   /**
-   * Output only. Previous Wave iteration state.
-   *
-   * @param GoogleCloudOsconfigV2PolicyOrchestratorIterationState $previousIterationState
+   * @param GoogleCloudOsconfigV2PolicyOrchestratorIterationState
    */
   public function setPreviousIterationState(GoogleCloudOsconfigV2PolicyOrchestratorIterationState $previousIterationState)
   {

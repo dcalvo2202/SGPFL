@@ -23,18 +23,12 @@ class ListClustersResponse extends \Google\Collection
   protected $clustersType = Cluster::class;
   protected $clustersDataType = 'array';
   /**
-   * If any zones are listed here, the list of clusters returned may be missing
-   * those zones.
-   *
    * @var string[]
    */
   public $missingZones;
 
   /**
-   * A list of clusters in the project in the specified zone, or across all
-   * ones.
-   *
-   * @param Cluster[] $clusters
+   * @param Cluster[]
    */
   public function setClusters($clusters)
   {
@@ -48,10 +42,7 @@ class ListClustersResponse extends \Google\Collection
     return $this->clusters;
   }
   /**
-   * If any zones are listed here, the list of clusters returned may be missing
-   * those zones.
-   *
-   * @param string[] $missingZones
+   * @param string[]
    */
   public function setMissingZones($missingZones)
   {

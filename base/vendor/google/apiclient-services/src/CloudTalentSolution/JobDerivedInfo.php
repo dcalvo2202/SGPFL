@@ -21,8 +21,6 @@ class JobDerivedInfo extends \Google\Collection
 {
   protected $collection_key = 'locations';
   /**
-   * Job categories derived from Job.title and Job.description.
-   *
    * @var string[]
    */
   public $jobCategories;
@@ -30,9 +28,7 @@ class JobDerivedInfo extends \Google\Collection
   protected $locationsDataType = 'array';
 
   /**
-   * Job categories derived from Job.title and Job.description.
-   *
-   * @param string[] $jobCategories
+   * @param string[]
    */
   public function setJobCategories($jobCategories)
   {
@@ -46,10 +42,7 @@ class JobDerivedInfo extends \Google\Collection
     return $this->jobCategories;
   }
   /**
-   * Structured locations of the job, resolved from Job.addresses. locations are
-   * exactly matched to Job.addresses in the same order.
-   *
-   * @param Location[] $locations
+   * @param Location[]
    */
   public function setLocations($locations)
   {

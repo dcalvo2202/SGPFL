@@ -22,19 +22,12 @@ class CloudFunctionV2Target extends \Google\Model
   protected $cloudRunRevisionType = MonitoredResource::class;
   protected $cloudRunRevisionDataType = '';
   /**
-   * Required. Fully qualified GCFv2 resource name i.e.
-   * projects/{project}/locations/{location}/functions/{function} Required.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Output only. The cloud_run_revision Monitored Resource associated with the
-   * GCFv2. The Synthetic Monitor execution results (metrics, logs, and spans)
-   * are reported against this Monitored Resource. This field is output only.
-   *
-   * @param MonitoredResource $cloudRunRevision
+   * @param MonitoredResource
    */
   public function setCloudRunRevision(MonitoredResource $cloudRunRevision)
   {
@@ -48,10 +41,7 @@ class CloudFunctionV2Target extends \Google\Model
     return $this->cloudRunRevision;
   }
   /**
-   * Required. Fully qualified GCFv2 resource name i.e.
-   * projects/{project}/locations/{location}/functions/{function} Required.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

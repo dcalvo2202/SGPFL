@@ -27,10 +27,7 @@ class DimensionExpression extends \Google\Model
   protected $upperCaseDataType = '';
 
   /**
-   * Used to combine dimension values to a single dimension. For example,
-   * dimension "country, city": concatenate(country, ", ", city).
-   *
-   * @param ConcatenateExpression $concatenate
+   * @param ConcatenateExpression
    */
   public function setConcatenate(ConcatenateExpression $concatenate)
   {
@@ -44,9 +41,7 @@ class DimensionExpression extends \Google\Model
     return $this->concatenate;
   }
   /**
-   * Used to convert a dimension value to lower case.
-   *
-   * @param CaseExpression $lowerCase
+   * @param CaseExpression
    */
   public function setLowerCase(CaseExpression $lowerCase)
   {
@@ -60,9 +55,7 @@ class DimensionExpression extends \Google\Model
     return $this->lowerCase;
   }
   /**
-   * Used to convert a dimension value to upper case.
-   *
-   * @param CaseExpression $upperCase
+   * @param CaseExpression
    */
   public function setUpperCase(CaseExpression $upperCase)
   {

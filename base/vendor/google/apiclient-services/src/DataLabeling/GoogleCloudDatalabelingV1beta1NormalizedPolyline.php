@@ -24,9 +24,7 @@ class GoogleCloudDatalabelingV1beta1NormalizedPolyline extends \Google\Collectio
   protected $normalizedVerticesDataType = 'array';
 
   /**
-   * The normalized polyline vertices.
-   *
-   * @param GoogleCloudDatalabelingV1beta1NormalizedVertex[] $normalizedVertices
+   * @param GoogleCloudDatalabelingV1beta1NormalizedVertex[]
    */
   public function setNormalizedVertices($normalizedVertices)
   {

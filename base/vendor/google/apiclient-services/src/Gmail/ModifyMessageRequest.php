@@ -21,25 +21,16 @@ class ModifyMessageRequest extends \Google\Collection
 {
   protected $collection_key = 'removeLabelIds';
   /**
-   * A list of IDs of labels to add to this message. You can add up to 100
-   * labels with each update.
-   *
    * @var string[]
    */
   public $addLabelIds;
   /**
-   * A list IDs of labels to remove from this message. You can remove up to 100
-   * labels with each update.
-   *
    * @var string[]
    */
   public $removeLabelIds;
 
   /**
-   * A list of IDs of labels to add to this message. You can add up to 100
-   * labels with each update.
-   *
-   * @param string[] $addLabelIds
+   * @param string[]
    */
   public function setAddLabelIds($addLabelIds)
   {
@@ -53,10 +44,7 @@ class ModifyMessageRequest extends \Google\Collection
     return $this->addLabelIds;
   }
   /**
-   * A list IDs of labels to remove from this message. You can remove up to 100
-   * labels with each update.
-   *
-   * @param string[] $removeLabelIds
+   * @param string[]
    */
   public function setRemoveLabelIds($removeLabelIds)
   {

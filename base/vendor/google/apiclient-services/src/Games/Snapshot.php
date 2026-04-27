@@ -19,82 +19,51 @@ namespace Google\Service\Games;
 
 class Snapshot extends \Google\Model
 {
-  /**
-   * A snapshot representing a save game.
-   */
-  public const TYPE_SAVE_GAME = 'SAVE_GAME';
   protected $coverImageType = SnapshotImage::class;
   protected $coverImageDataType = '';
   /**
-   * The description of this snapshot.
-   *
    * @var string
    */
   public $description;
   /**
-   * The ID of the file underlying this snapshot in the Drive API. Only present
-   * if the snapshot is a view on a Drive file and the file is owned by the
-   * caller.
-   *
    * @var string
    */
   public $driveId;
   /**
-   * The duration associated with this snapshot, in millis.
-   *
    * @var string
    */
   public $durationMillis;
   /**
-   * The ID of the snapshot.
-   *
    * @var string
    */
   public $id;
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#snapshot`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The timestamp (in millis since Unix epoch) of the last modification to this
-   * snapshot.
-   *
    * @var string
    */
   public $lastModifiedMillis;
   /**
-   * The progress value (64-bit integer set by developer) associated with this
-   * snapshot.
-   *
    * @var string
    */
   public $progressValue;
   /**
-   * The title of this snapshot.
-   *
    * @var string
    */
   public $title;
   /**
-   * The type of this snapshot.
-   *
    * @var string
    */
   public $type;
   /**
-   * The unique name provided when the snapshot was created.
-   *
    * @var string
    */
   public $uniqueName;
 
   /**
-   * The cover image of this snapshot. May be absent if there is no image.
-   *
-   * @param SnapshotImage $coverImage
+   * @param SnapshotImage
    */
   public function setCoverImage(SnapshotImage $coverImage)
   {
@@ -108,9 +77,7 @@ class Snapshot extends \Google\Model
     return $this->coverImage;
   }
   /**
-   * The description of this snapshot.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -124,11 +91,7 @@ class Snapshot extends \Google\Model
     return $this->description;
   }
   /**
-   * The ID of the file underlying this snapshot in the Drive API. Only present
-   * if the snapshot is a view on a Drive file and the file is owned by the
-   * caller.
-   *
-   * @param string $driveId
+   * @param string
    */
   public function setDriveId($driveId)
   {
@@ -142,9 +105,7 @@ class Snapshot extends \Google\Model
     return $this->driveId;
   }
   /**
-   * The duration associated with this snapshot, in millis.
-   *
-   * @param string $durationMillis
+   * @param string
    */
   public function setDurationMillis($durationMillis)
   {
@@ -158,9 +119,7 @@ class Snapshot extends \Google\Model
     return $this->durationMillis;
   }
   /**
-   * The ID of the snapshot.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -174,10 +133,7 @@ class Snapshot extends \Google\Model
     return $this->id;
   }
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#snapshot`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -191,10 +147,7 @@ class Snapshot extends \Google\Model
     return $this->kind;
   }
   /**
-   * The timestamp (in millis since Unix epoch) of the last modification to this
-   * snapshot.
-   *
-   * @param string $lastModifiedMillis
+   * @param string
    */
   public function setLastModifiedMillis($lastModifiedMillis)
   {
@@ -208,10 +161,7 @@ class Snapshot extends \Google\Model
     return $this->lastModifiedMillis;
   }
   /**
-   * The progress value (64-bit integer set by developer) associated with this
-   * snapshot.
-   *
-   * @param string $progressValue
+   * @param string
    */
   public function setProgressValue($progressValue)
   {
@@ -225,9 +175,7 @@ class Snapshot extends \Google\Model
     return $this->progressValue;
   }
   /**
-   * The title of this snapshot.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -241,27 +189,21 @@ class Snapshot extends \Google\Model
     return $this->title;
   }
   /**
-   * The type of this snapshot.
-   *
-   * Accepted values: SAVE_GAME
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * The unique name provided when the snapshot was created.
-   *
-   * @param string $uniqueName
+   * @param string
    */
   public function setUniqueName($uniqueName)
   {

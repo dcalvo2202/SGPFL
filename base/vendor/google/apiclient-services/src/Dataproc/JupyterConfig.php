@@ -20,34 +20,16 @@ namespace Google\Service\Dataproc;
 class JupyterConfig extends \Google\Model
 {
   /**
-   * The kernel is unknown.
-   */
-  public const KERNEL_KERNEL_UNSPECIFIED = 'KERNEL_UNSPECIFIED';
-  /**
-   * Python kernel.
-   */
-  public const KERNEL_PYTHON = 'PYTHON';
-  /**
-   * Scala kernel.
-   */
-  public const KERNEL_SCALA = 'SCALA';
-  /**
-   * Optional. Display name, shown in the Jupyter kernelspec card.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Optional. Kernel
-   *
    * @var string
    */
   public $kernel;
 
   /**
-   * Optional. Display name, shown in the Jupyter kernelspec card.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -61,18 +43,14 @@ class JupyterConfig extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Optional. Kernel
-   *
-   * Accepted values: KERNEL_UNSPECIFIED, PYTHON, SCALA
-   *
-   * @param self::KERNEL_* $kernel
+   * @param string
    */
   public function setKernel($kernel)
   {
     $this->kernel = $kernel;
   }
   /**
-   * @return self::KERNEL_*
+   * @return string
    */
   public function getKernel()
   {

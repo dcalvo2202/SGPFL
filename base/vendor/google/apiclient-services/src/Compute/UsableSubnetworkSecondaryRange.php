@@ -20,26 +20,16 @@ namespace Google\Service\Compute;
 class UsableSubnetworkSecondaryRange extends \Google\Model
 {
   /**
-   * The range of IP addresses belonging to this subnetwork secondary range. Can
-   * be Ipv4 or Ipv6 range.
-   *
    * @var string
    */
   public $ipCidrRange;
   /**
-   * The name associated with this subnetwork secondary range, used when adding
-   * an alias IP range to a VM instance. The name must be 1-63 characters long,
-   * and comply withRFC1035. The name must be unique within the subnetwork.
-   *
    * @var string
    */
   public $rangeName;
 
   /**
-   * The range of IP addresses belonging to this subnetwork secondary range. Can
-   * be Ipv4 or Ipv6 range.
-   *
-   * @param string $ipCidrRange
+   * @param string
    */
   public function setIpCidrRange($ipCidrRange)
   {
@@ -53,11 +43,7 @@ class UsableSubnetworkSecondaryRange extends \Google\Model
     return $this->ipCidrRange;
   }
   /**
-   * The name associated with this subnetwork secondary range, used when adding
-   * an alias IP range to a VM instance. The name must be 1-63 characters long,
-   * and comply withRFC1035. The name must be unique within the subnetwork.
-   *
-   * @param string $rangeName
+   * @param string
    */
   public function setRangeName($rangeName)
   {

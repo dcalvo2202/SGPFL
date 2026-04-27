@@ -25,11 +25,7 @@ class SuggestedTextStyle extends \Google\Model
   protected $textStyleSuggestionStateDataType = '';
 
   /**
-   * A TextStyle that only includes the changes made in this suggestion. This
-   * can be used along with the text_style_suggestion_state to see which fields
-   * have changed and their new values.
-   *
-   * @param TextStyle $textStyle
+   * @param TextStyle
    */
   public function setTextStyle(TextStyle $textStyle)
   {
@@ -43,10 +39,7 @@ class SuggestedTextStyle extends \Google\Model
     return $this->textStyle;
   }
   /**
-   * A mask that indicates which of the fields on the base TextStyle have been
-   * changed in this suggestion.
-   *
-   * @param TextStyleSuggestionState $textStyleSuggestionState
+   * @param TextStyleSuggestionState
    */
   public function setTextStyleSuggestionState(TextStyleSuggestionState $textStyleSuggestionState)
   {

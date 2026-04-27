@@ -20,33 +20,19 @@ namespace Google\Service\DriveActivity;
 class Restore extends \Google\Model
 {
   /**
-   * The type is not available.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * An object was restored from the trash.
-   */
-  public const TYPE_UNTRASH = 'UNTRASH';
-  /**
-   * The type of restore action taken.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The type of restore action taken.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, UNTRASH
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

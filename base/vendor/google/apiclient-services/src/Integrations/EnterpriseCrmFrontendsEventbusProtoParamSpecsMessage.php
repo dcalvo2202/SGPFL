@@ -24,7 +24,7 @@ class EnterpriseCrmFrontendsEventbusProtoParamSpecsMessage extends \Google\Colle
   protected $parametersDataType = 'array';
 
   /**
-   * @param EnterpriseCrmFrontendsEventbusProtoParamSpecEntry[] $parameters
+   * @param EnterpriseCrmFrontendsEventbusProtoParamSpecEntry[]
    */
   public function setParameters($parameters)
   {

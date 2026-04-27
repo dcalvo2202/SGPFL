@@ -21,10 +21,6 @@ class SearchSessionSparkApplicationExecutorStageSummaryResponse extends \Google\
 {
   protected $collection_key = 'sparkApplicationStageExecutors';
   /**
-   * This token is included in the response if there are more results to fetch.
-   * To fetch additional results, provide this value as the page_token in a
-   * subsequent SearchSessionSparkApplicationExecutorStageSummaryRequest.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -32,11 +28,7 @@ class SearchSessionSparkApplicationExecutorStageSummaryResponse extends \Google\
   protected $sparkApplicationStageExecutorsDataType = 'array';
 
   /**
-   * This token is included in the response if there are more results to fetch.
-   * To fetch additional results, provide this value as the page_token in a
-   * subsequent SearchSessionSparkApplicationExecutorStageSummaryRequest.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -50,9 +42,7 @@ class SearchSessionSparkApplicationExecutorStageSummaryResponse extends \Google\
     return $this->nextPageToken;
   }
   /**
-   * Details about executors used by the application stage.
-   *
-   * @param ExecutorStageSummary[] $sparkApplicationStageExecutors
+   * @param ExecutorStageSummary[]
    */
   public function setSparkApplicationStageExecutors($sparkApplicationStageExecutors)
   {

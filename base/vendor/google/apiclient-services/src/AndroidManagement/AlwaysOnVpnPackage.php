@@ -20,22 +20,16 @@ namespace Google\Service\AndroidManagement;
 class AlwaysOnVpnPackage extends \Google\Model
 {
   /**
-   * Disallows networking when the VPN is not connected.
-   *
    * @var bool
    */
   public $lockdownEnabled;
   /**
-   * The package name of the VPN app.
-   *
    * @var string
    */
   public $packageName;
 
   /**
-   * Disallows networking when the VPN is not connected.
-   *
-   * @param bool $lockdownEnabled
+   * @param bool
    */
   public function setLockdownEnabled($lockdownEnabled)
   {
@@ -49,9 +43,7 @@ class AlwaysOnVpnPackage extends \Google\Model
     return $this->lockdownEnabled;
   }
   /**
-   * The package name of the VPN app.
-   *
-   * @param string $packageName
+   * @param string
    */
   public function setPackageName($packageName)
   {

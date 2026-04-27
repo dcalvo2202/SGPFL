@@ -20,22 +20,16 @@ namespace Google\Service\BlockchainNodeEngine;
 class EndpointInfo extends \Google\Model
 {
   /**
-   * Output only. The assigned URL for the node JSON-RPC API endpoint.
-   *
    * @var string
    */
   public $jsonRpcApiEndpoint;
   /**
-   * Output only. The assigned URL for the node WebSockets API endpoint.
-   *
    * @var string
    */
   public $websocketsApiEndpoint;
 
   /**
-   * Output only. The assigned URL for the node JSON-RPC API endpoint.
-   *
-   * @param string $jsonRpcApiEndpoint
+   * @param string
    */
   public function setJsonRpcApiEndpoint($jsonRpcApiEndpoint)
   {
@@ -49,9 +43,7 @@ class EndpointInfo extends \Google\Model
     return $this->jsonRpcApiEndpoint;
   }
   /**
-   * Output only. The assigned URL for the node WebSockets API endpoint.
-   *
-   * @param string $websocketsApiEndpoint
+   * @param string
    */
   public function setWebsocketsApiEndpoint($websocketsApiEndpoint)
   {

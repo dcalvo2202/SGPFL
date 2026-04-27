@@ -20,29 +20,20 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1alphaConnectorRunEntityRunProgress extends \Google\Model
 {
   /**
-   * The current progress.
-   *
    * @var string
    */
   public $currentCount;
   /**
-   * Derived. The percentile of the progress.current_count / total_count. The
-   * value is between [0, 1.0] inclusive.
-   *
    * @var float
    */
   public $percentile;
   /**
-   * The total.
-   *
    * @var string
    */
   public $totalCount;
 
   /**
-   * The current progress.
-   *
-   * @param string $currentCount
+   * @param string
    */
   public function setCurrentCount($currentCount)
   {
@@ -56,10 +47,7 @@ class GoogleCloudDiscoveryengineV1alphaConnectorRunEntityRunProgress extends \Go
     return $this->currentCount;
   }
   /**
-   * Derived. The percentile of the progress.current_count / total_count. The
-   * value is between [0, 1.0] inclusive.
-   *
-   * @param float $percentile
+   * @param float
    */
   public function setPercentile($percentile)
   {
@@ -73,9 +61,7 @@ class GoogleCloudDiscoveryengineV1alphaConnectorRunEntityRunProgress extends \Go
     return $this->percentile;
   }
   /**
-   * The total.
-   *
-   * @param string $totalCount
+   * @param string
    */
   public function setTotalCount($totalCount)
   {

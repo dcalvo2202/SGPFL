@@ -24,9 +24,7 @@ class LatencyDistribution extends \Google\Collection
   protected $latencyPercentilesDataType = 'array';
 
   /**
-   * Representative latency percentiles.
-   *
-   * @param LatencyPercentile[] $latencyPercentiles
+   * @param LatencyPercentile[]
    */
   public function setLatencyPercentiles($latencyPercentiles)
   {

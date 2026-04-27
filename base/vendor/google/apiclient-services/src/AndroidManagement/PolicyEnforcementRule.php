@@ -22,9 +22,6 @@ class PolicyEnforcementRule extends \Google\Model
   protected $blockActionType = BlockAction::class;
   protected $blockActionDataType = '';
   /**
-   * The top-level policy to enforce. For example, applications or
-   * passwordPolicies.
-   *
    * @var string
    */
   public $settingName;
@@ -32,12 +29,7 @@ class PolicyEnforcementRule extends \Google\Model
   protected $wipeActionDataType = '';
 
   /**
-   * An action to block access to apps and data on a company owned device or in
-   * a work profile. This action also triggers a user-facing notification with
-   * information (where possible) on how to correct the compliance issue. Note:
-   * wipeAction must also be specified.
-   *
-   * @param BlockAction $blockAction
+   * @param BlockAction
    */
   public function setBlockAction(BlockAction $blockAction)
   {
@@ -51,10 +43,7 @@ class PolicyEnforcementRule extends \Google\Model
     return $this->blockAction;
   }
   /**
-   * The top-level policy to enforce. For example, applications or
-   * passwordPolicies.
-   *
-   * @param string $settingName
+   * @param string
    */
   public function setSettingName($settingName)
   {
@@ -68,10 +57,7 @@ class PolicyEnforcementRule extends \Google\Model
     return $this->settingName;
   }
   /**
-   * An action to reset a company owned device or delete a work profile. Note:
-   * blockAction must also be specified.
-   *
-   * @param WipeAction $wipeAction
+   * @param WipeAction
    */
   public function setWipeAction(WipeAction $wipeAction)
   {

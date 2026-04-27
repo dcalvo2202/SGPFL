@@ -20,35 +20,20 @@ namespace Google\Service\SA360;
 class GoogleAdsSearchads360V0CommonTargetCpa extends \Google\Model
 {
   /**
-   * Maximum bid limit that can be set by the bid strategy. The limit applies to
-   * all keywords managed by the strategy. This should only be set for portfolio
-   * bid strategies.
-   *
    * @var string
    */
   public $cpcBidCeilingMicros;
   /**
-   * Minimum bid limit that can be set by the bid strategy. The limit applies to
-   * all keywords managed by the strategy. This should only be set for portfolio
-   * bid strategies.
-   *
    * @var string
    */
   public $cpcBidFloorMicros;
   /**
-   * Average CPA target. This target should be greater than or equal to minimum
-   * billable unit based on the currency for the account.
-   *
    * @var string
    */
   public $targetCpaMicros;
 
   /**
-   * Maximum bid limit that can be set by the bid strategy. The limit applies to
-   * all keywords managed by the strategy. This should only be set for portfolio
-   * bid strategies.
-   *
-   * @param string $cpcBidCeilingMicros
+   * @param string
    */
   public function setCpcBidCeilingMicros($cpcBidCeilingMicros)
   {
@@ -62,11 +47,7 @@ class GoogleAdsSearchads360V0CommonTargetCpa extends \Google\Model
     return $this->cpcBidCeilingMicros;
   }
   /**
-   * Minimum bid limit that can be set by the bid strategy. The limit applies to
-   * all keywords managed by the strategy. This should only be set for portfolio
-   * bid strategies.
-   *
-   * @param string $cpcBidFloorMicros
+   * @param string
    */
   public function setCpcBidFloorMicros($cpcBidFloorMicros)
   {
@@ -80,10 +61,7 @@ class GoogleAdsSearchads360V0CommonTargetCpa extends \Google\Model
     return $this->cpcBidFloorMicros;
   }
   /**
-   * Average CPA target. This target should be greater than or equal to minimum
-   * billable unit based on the currency for the account.
-   *
-   * @param string $targetCpaMicros
+   * @param string
    */
   public function setTargetCpaMicros($targetCpaMicros)
   {

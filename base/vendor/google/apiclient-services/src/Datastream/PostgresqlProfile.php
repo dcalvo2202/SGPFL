@@ -20,51 +20,34 @@ namespace Google\Service\Datastream;
 class PostgresqlProfile extends \Google\Model
 {
   /**
-   * Required. Database for the PostgreSQL connection.
-   *
    * @var string
    */
   public $database;
   /**
-   * Required. Hostname for the PostgreSQL connection.
-   *
    * @var string
    */
   public $hostname;
   /**
-   * Optional. Password for the PostgreSQL connection. Mutually exclusive with
-   * the `secret_manager_stored_password` field.
-   *
    * @var string
    */
   public $password;
   /**
-   * Port for the PostgreSQL connection, default value is 5432.
-   *
    * @var int
    */
   public $port;
   /**
-   * Optional. A reference to a Secret Manager resource name storing the
-   * PostgreSQL connection password. Mutually exclusive with the `password`
-   * field.
-   *
    * @var string
    */
   public $secretManagerStoredPassword;
   protected $sslConfigType = PostgresqlSslConfig::class;
   protected $sslConfigDataType = '';
   /**
-   * Required. Username for the PostgreSQL connection.
-   *
    * @var string
    */
   public $username;
 
   /**
-   * Required. Database for the PostgreSQL connection.
-   *
-   * @param string $database
+   * @param string
    */
   public function setDatabase($database)
   {
@@ -78,9 +61,7 @@ class PostgresqlProfile extends \Google\Model
     return $this->database;
   }
   /**
-   * Required. Hostname for the PostgreSQL connection.
-   *
-   * @param string $hostname
+   * @param string
    */
   public function setHostname($hostname)
   {
@@ -94,10 +75,7 @@ class PostgresqlProfile extends \Google\Model
     return $this->hostname;
   }
   /**
-   * Optional. Password for the PostgreSQL connection. Mutually exclusive with
-   * the `secret_manager_stored_password` field.
-   *
-   * @param string $password
+   * @param string
    */
   public function setPassword($password)
   {
@@ -111,9 +89,7 @@ class PostgresqlProfile extends \Google\Model
     return $this->password;
   }
   /**
-   * Port for the PostgreSQL connection, default value is 5432.
-   *
-   * @param int $port
+   * @param int
    */
   public function setPort($port)
   {
@@ -127,11 +103,7 @@ class PostgresqlProfile extends \Google\Model
     return $this->port;
   }
   /**
-   * Optional. A reference to a Secret Manager resource name storing the
-   * PostgreSQL connection password. Mutually exclusive with the `password`
-   * field.
-   *
-   * @param string $secretManagerStoredPassword
+   * @param string
    */
   public function setSecretManagerStoredPassword($secretManagerStoredPassword)
   {
@@ -145,12 +117,7 @@ class PostgresqlProfile extends \Google\Model
     return $this->secretManagerStoredPassword;
   }
   /**
-   * Optional. SSL configuration for the PostgreSQL connection. In case
-   * PostgresqlSslConfig is not set, the connection will use the default SSL
-   * mode, which is `prefer` (i.e. this mode will only use encryption if enabled
-   * from database side, otherwise will use unencrypted communication)
-   *
-   * @param PostgresqlSslConfig $sslConfig
+   * @param PostgresqlSslConfig
    */
   public function setSslConfig(PostgresqlSslConfig $sslConfig)
   {
@@ -164,9 +131,7 @@ class PostgresqlProfile extends \Google\Model
     return $this->sslConfig;
   }
   /**
-   * Required. Username for the PostgreSQL connection.
-   *
-   * @param string $username
+   * @param string
    */
   public function setUsername($username)
   {

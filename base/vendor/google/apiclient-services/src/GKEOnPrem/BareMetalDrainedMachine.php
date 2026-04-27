@@ -20,16 +20,12 @@ namespace Google\Service\GKEOnPrem;
 class BareMetalDrainedMachine extends \Google\Model
 {
   /**
-   * Drained machine IP address.
-   *
    * @var string
    */
   public $nodeIp;
 
   /**
-   * Drained machine IP address.
-   *
-   * @param string $nodeIp
+   * @param string
    */
   public function setNodeIp($nodeIp)
   {

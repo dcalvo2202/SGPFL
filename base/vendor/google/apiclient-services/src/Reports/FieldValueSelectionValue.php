@@ -20,28 +20,20 @@ namespace Google\Service\Reports;
 class FieldValueSelectionValue extends \Google\Model
 {
   /**
-   * Whether the selection is badged.
-   *
    * @var bool
    */
   public $badged;
   /**
-   * Display name of the selection.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Identifier of the selection.
-   *
    * @var string
    */
   public $id;
 
   /**
-   * Whether the selection is badged.
-   *
-   * @param bool $badged
+   * @param bool
    */
   public function setBadged($badged)
   {
@@ -55,9 +47,7 @@ class FieldValueSelectionValue extends \Google\Model
     return $this->badged;
   }
   /**
-   * Display name of the selection.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -71,9 +61,7 @@ class FieldValueSelectionValue extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Identifier of the selection.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {

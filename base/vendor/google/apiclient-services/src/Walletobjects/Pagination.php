@@ -20,39 +20,26 @@ namespace Google\Service\Walletobjects;
 class Pagination extends \Google\Model
 {
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * `"walletobjects#pagination"`.
-   *
-   * @deprecated
    * @var string
    */
   public $kind;
   /**
-   * Page token to send to fetch the next page.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Number of results returned in this page.
-   *
    * @var int
    */
   public $resultsPerPage;
 
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * `"walletobjects#pagination"`.
-   *
-   * @deprecated
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
     $this->kind = $kind;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getKind()
@@ -60,9 +47,7 @@ class Pagination extends \Google\Model
     return $this->kind;
   }
   /**
-   * Page token to send to fetch the next page.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -76,9 +61,7 @@ class Pagination extends \Google\Model
     return $this->nextPageToken;
   }
   /**
-   * Number of results returned in this page.
-   *
-   * @param int $resultsPerPage
+   * @param int
    */
   public function setResultsPerPage($resultsPerPage)
   {

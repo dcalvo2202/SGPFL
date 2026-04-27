@@ -20,53 +20,30 @@ namespace Google\Service\AndroidManagement;
 class PersonalApplicationPolicy extends \Google\Model
 {
   /**
-   * Unspecified. Defaults to AVAILABLE.
-   */
-  public const INSTALL_TYPE_INSTALL_TYPE_UNSPECIFIED = 'INSTALL_TYPE_UNSPECIFIED';
-  /**
-   * The app is blocked and can't be installed in the personal profile. If the
-   * app was previously installed in the device, it will be uninstalled.
-   */
-  public const INSTALL_TYPE_BLOCKED = 'BLOCKED';
-  /**
-   * The app is available to install in the personal profile.
-   */
-  public const INSTALL_TYPE_AVAILABLE = 'AVAILABLE';
-  /**
-   * The type of installation to perform.
-   *
    * @var string
    */
   public $installType;
   /**
-   * The package name of the application.
-   *
    * @var string
    */
   public $packageName;
 
   /**
-   * The type of installation to perform.
-   *
-   * Accepted values: INSTALL_TYPE_UNSPECIFIED, BLOCKED, AVAILABLE
-   *
-   * @param self::INSTALL_TYPE_* $installType
+   * @param string
    */
   public function setInstallType($installType)
   {
     $this->installType = $installType;
   }
   /**
-   * @return self::INSTALL_TYPE_*
+   * @return string
    */
   public function getInstallType()
   {
     return $this->installType;
   }
   /**
-   * The package name of the application.
-   *
-   * @param string $packageName
+   * @param string
    */
   public function setPackageName($packageName)
   {

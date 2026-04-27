@@ -22,25 +22,16 @@ class GoogleCloudAiplatformV1BatchDedicatedResources extends \Google\Model
   protected $machineSpecType = GoogleCloudAiplatformV1MachineSpec::class;
   protected $machineSpecDataType = '';
   /**
-   * Immutable. The maximum number of machine replicas the batch operation may
-   * be scaled to. The default value is 10.
-   *
    * @var int
    */
   public $maxReplicaCount;
   /**
-   * Immutable. The number of machine replicas used at the start of the batch
-   * operation. If not set, Vertex AI decides starting number, not greater than
-   * max_replica_count
-   *
    * @var int
    */
   public $startingReplicaCount;
 
   /**
-   * Required. Immutable. The specification of a single machine.
-   *
-   * @param GoogleCloudAiplatformV1MachineSpec $machineSpec
+   * @param GoogleCloudAiplatformV1MachineSpec
    */
   public function setMachineSpec(GoogleCloudAiplatformV1MachineSpec $machineSpec)
   {
@@ -54,10 +45,7 @@ class GoogleCloudAiplatformV1BatchDedicatedResources extends \Google\Model
     return $this->machineSpec;
   }
   /**
-   * Immutable. The maximum number of machine replicas the batch operation may
-   * be scaled to. The default value is 10.
-   *
-   * @param int $maxReplicaCount
+   * @param int
    */
   public function setMaxReplicaCount($maxReplicaCount)
   {
@@ -71,11 +59,7 @@ class GoogleCloudAiplatformV1BatchDedicatedResources extends \Google\Model
     return $this->maxReplicaCount;
   }
   /**
-   * Immutable. The number of machine replicas used at the start of the batch
-   * operation. If not set, Vertex AI decides starting number, not greater than
-   * max_replica_count
-   *
-   * @param int $startingReplicaCount
+   * @param int
    */
   public function setStartingReplicaCount($startingReplicaCount)
   {

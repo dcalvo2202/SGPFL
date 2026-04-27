@@ -20,168 +20,64 @@ namespace Google\Service\Transcoder;
 class Job extends \Google\Model
 {
   /**
-   * The job processing mode is not specified.
-   */
-  public const MODE_PROCESSING_MODE_UNSPECIFIED = 'PROCESSING_MODE_UNSPECIFIED';
-  /**
-   * The job processing mode is interactive mode. Interactive job will either be
-   * ran or rejected if quota does not allow for it.
-   */
-  public const MODE_PROCESSING_MODE_INTERACTIVE = 'PROCESSING_MODE_INTERACTIVE';
-  /**
-   * The job processing mode is batch mode. Batch mode allows queuing of jobs.
-   */
-  public const MODE_PROCESSING_MODE_BATCH = 'PROCESSING_MODE_BATCH';
-  /**
-   * The optimization strategy is not specified.
-   */
-  public const OPTIMIZATION_OPTIMIZATION_STRATEGY_UNSPECIFIED = 'OPTIMIZATION_STRATEGY_UNSPECIFIED';
-  /**
-   * Prioritize job processing speed.
-   */
-  public const OPTIMIZATION_AUTODETECT = 'AUTODETECT';
-  /**
-   * Disable all optimizations.
-   */
-  public const OPTIMIZATION_DISABLED = 'DISABLED';
-  /**
-   * The processing state is not specified.
-   */
-  public const STATE_PROCESSING_STATE_UNSPECIFIED = 'PROCESSING_STATE_UNSPECIFIED';
-  /**
-   * The job is enqueued and will be picked up for processing soon.
-   */
-  public const STATE_PENDING = 'PENDING';
-  /**
-   * The job is being processed.
-   */
-  public const STATE_RUNNING = 'RUNNING';
-  /**
-   * The job has been completed successfully.
-   */
-  public const STATE_SUCCEEDED = 'SUCCEEDED';
-  /**
-   * The job has failed. For additional information, see [Troubleshooting](https
-   * ://cloud.google.com/transcoder/docs/troubleshooting).
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * The processing priority of a batch job. This field can only be set for
-   * batch mode jobs. The default value is 0. This value cannot be negative.
-   * Higher values correspond to higher priorities for the job.
-   *
    * @var int
    */
   public $batchModePriority;
   protected $configType = JobConfig::class;
   protected $configDataType = '';
   /**
-   * Output only. The time the job was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. The time the transcoding finished.
-   *
    * @var string
    */
   public $endTime;
   protected $errorType = Status::class;
   protected $errorDataType = '';
   /**
-   * Optional. Insert silence and duplicate frames when timestamp gaps are
-   * detected in a given stream.
-   *
-   * @var bool
-   */
-  public $fillContentGaps;
-  /**
-   * Input only. Specify the `input_uri` to populate empty `uri` fields in each
-   * element of `Job.config.inputs` or `JobTemplate.config.inputs` when using
-   * template. URI of the media. Input files must be at least 5 seconds in
-   * duration and stored in Cloud Storage (for example,
-   * `gs://bucket/inputs/file.mp4`). See [Supported input and output
-   * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-
-   * and-output-formats).
-   *
    * @var string
    */
   public $inputUri;
   /**
-   * The labels associated with this job. You can use these to organize and
-   * group your jobs.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * The processing mode of the job. The default is
-   * `PROCESSING_MODE_INTERACTIVE`.
-   *
    * @var string
    */
   public $mode;
   /**
-   * The resource name of the job. Format:
-   * `projects/{project_number}/locations/{location}/jobs/{job}`
-   *
    * @var string
    */
   public $name;
   /**
-   * Optional. The optimization strategy of the job. The default is
-   * `AUTODETECT`.
-   *
    * @var string
    */
   public $optimization;
   /**
-   * Input only. Specify the `output_uri` to populate an empty
-   * `Job.config.output.uri` or `JobTemplate.config.output.uri` when using
-   * template. URI for the output file(s). For example, `gs://my-
-   * bucket/outputs/`. See [Supported input and output
-   * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-
-   * and-output-formats).
-   *
    * @var string
    */
   public $outputUri;
   /**
-   * Output only. The time the transcoding started.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * Output only. The current state of the job.
-   *
    * @var string
    */
   public $state;
   /**
-   * Input only. Specify the `template_id` to use for populating `Job.config`.
-   * The default is `preset/web-hd`, which is the only supported preset. User
-   * defined JobTemplate: `{job_template_id}`
-   *
    * @var string
    */
   public $templateId;
   /**
-   * Job time to live value in days, which will be effective after job
-   * completion. Job should be deleted automatically after the given TTL. Enter
-   * a value between 1 and 90. The default is 30.
-   *
    * @var int
    */
   public $ttlAfterCompletionDays;
 
   /**
-   * The processing priority of a batch job. This field can only be set for
-   * batch mode jobs. The default value is 0. This value cannot be negative.
-   * Higher values correspond to higher priorities for the job.
-   *
-   * @param int $batchModePriority
+   * @param int
    */
   public function setBatchModePriority($batchModePriority)
   {
@@ -195,9 +91,7 @@ class Job extends \Google\Model
     return $this->batchModePriority;
   }
   /**
-   * The configuration for this job.
-   *
-   * @param JobConfig $config
+   * @param JobConfig
    */
   public function setConfig(JobConfig $config)
   {
@@ -211,9 +105,7 @@ class Job extends \Google\Model
     return $this->config;
   }
   /**
-   * Output only. The time the job was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -227,9 +119,7 @@ class Job extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. The time the transcoding finished.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -243,10 +133,7 @@ class Job extends \Google\Model
     return $this->endTime;
   }
   /**
-   * Output only. An error object that describes the reason for the failure.
-   * This property is always present when ProcessingState is `FAILED`.
-   *
-   * @param Status $error
+   * @param Status
    */
   public function setError(Status $error)
   {
@@ -260,32 +147,7 @@ class Job extends \Google\Model
     return $this->error;
   }
   /**
-   * Optional. Insert silence and duplicate frames when timestamp gaps are
-   * detected in a given stream.
-   *
-   * @param bool $fillContentGaps
-   */
-  public function setFillContentGaps($fillContentGaps)
-  {
-    $this->fillContentGaps = $fillContentGaps;
-  }
-  /**
-   * @return bool
-   */
-  public function getFillContentGaps()
-  {
-    return $this->fillContentGaps;
-  }
-  /**
-   * Input only. Specify the `input_uri` to populate empty `uri` fields in each
-   * element of `Job.config.inputs` or `JobTemplate.config.inputs` when using
-   * template. URI of the media. Input files must be at least 5 seconds in
-   * duration and stored in Cloud Storage (for example,
-   * `gs://bucket/inputs/file.mp4`). See [Supported input and output
-   * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-
-   * and-output-formats).
-   *
-   * @param string $inputUri
+   * @param string
    */
   public function setInputUri($inputUri)
   {
@@ -299,10 +161,7 @@ class Job extends \Google\Model
     return $this->inputUri;
   }
   /**
-   * The labels associated with this job. You can use these to organize and
-   * group your jobs.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -316,30 +175,21 @@ class Job extends \Google\Model
     return $this->labels;
   }
   /**
-   * The processing mode of the job. The default is
-   * `PROCESSING_MODE_INTERACTIVE`.
-   *
-   * Accepted values: PROCESSING_MODE_UNSPECIFIED, PROCESSING_MODE_INTERACTIVE,
-   * PROCESSING_MODE_BATCH
-   *
-   * @param self::MODE_* $mode
+   * @param string
    */
   public function setMode($mode)
   {
     $this->mode = $mode;
   }
   /**
-   * @return self::MODE_*
+   * @return string
    */
   public function getMode()
   {
     return $this->mode;
   }
   /**
-   * The resource name of the job. Format:
-   * `projects/{project_number}/locations/{location}/jobs/{job}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -353,33 +203,21 @@ class Job extends \Google\Model
     return $this->name;
   }
   /**
-   * Optional. The optimization strategy of the job. The default is
-   * `AUTODETECT`.
-   *
-   * Accepted values: OPTIMIZATION_STRATEGY_UNSPECIFIED, AUTODETECT, DISABLED
-   *
-   * @param self::OPTIMIZATION_* $optimization
+   * @param string
    */
   public function setOptimization($optimization)
   {
     $this->optimization = $optimization;
   }
   /**
-   * @return self::OPTIMIZATION_*
+   * @return string
    */
   public function getOptimization()
   {
     return $this->optimization;
   }
   /**
-   * Input only. Specify the `output_uri` to populate an empty
-   * `Job.config.output.uri` or `JobTemplate.config.output.uri` when using
-   * template. URI for the output file(s). For example, `gs://my-
-   * bucket/outputs/`. See [Supported input and output
-   * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-
-   * and-output-formats).
-   *
-   * @param string $outputUri
+   * @param string
    */
   public function setOutputUri($outputUri)
   {
@@ -393,9 +231,7 @@ class Job extends \Google\Model
     return $this->outputUri;
   }
   /**
-   * Output only. The time the transcoding started.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -409,30 +245,21 @@ class Job extends \Google\Model
     return $this->startTime;
   }
   /**
-   * Output only. The current state of the job.
-   *
-   * Accepted values: PROCESSING_STATE_UNSPECIFIED, PENDING, RUNNING, SUCCEEDED,
-   * FAILED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Input only. Specify the `template_id` to use for populating `Job.config`.
-   * The default is `preset/web-hd`, which is the only supported preset. User
-   * defined JobTemplate: `{job_template_id}`
-   *
-   * @param string $templateId
+   * @param string
    */
   public function setTemplateId($templateId)
   {
@@ -446,11 +273,7 @@ class Job extends \Google\Model
     return $this->templateId;
   }
   /**
-   * Job time to live value in days, which will be effective after job
-   * completion. Job should be deleted automatically after the given TTL. Enter
-   * a value between 1 and 90. The default is 30.
-   *
-   * @param int $ttlAfterCompletionDays
+   * @param int
    */
   public function setTtlAfterCompletionDays($ttlAfterCompletionDays)
   {

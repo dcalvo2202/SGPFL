@@ -20,78 +20,38 @@ namespace Google\Service\DataprocMetastore;
 class DatabaseDump extends \Google\Model
 {
   /**
-   * The type of the source database is unknown.
-   */
-  public const DATABASE_TYPE_DATABASE_TYPE_UNSPECIFIED = 'DATABASE_TYPE_UNSPECIFIED';
-  /**
-   * The type of the source database is MySQL.
-   */
-  public const DATABASE_TYPE_MYSQL = 'MYSQL';
-  /**
-   * The type of the database dump is unknown.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * Database dump is a MySQL dump file.
-   */
-  public const TYPE_MYSQL = 'MYSQL';
-  /**
-   * Database dump contains Avro files.
-   */
-  public const TYPE_AVRO = 'AVRO';
-  /**
-   * The type of the database.
-   *
-   * @deprecated
    * @var string
    */
   public $databaseType;
   /**
-   * Optional. A Cloud Storage object or folder URI that specifies the source
-   * from which to import metadata. It must begin with gs://.
-   *
    * @var string
    */
   public $gcsUri;
   /**
-   * Optional. The name of the source database.
-   *
-   * @deprecated
    * @var string
    */
   public $sourceDatabase;
   /**
-   * Optional. The type of the database dump. If unspecified, defaults to MYSQL.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The type of the database.
-   *
-   * Accepted values: DATABASE_TYPE_UNSPECIFIED, MYSQL
-   *
-   * @deprecated
-   * @param self::DATABASE_TYPE_* $databaseType
+   * @param string
    */
   public function setDatabaseType($databaseType)
   {
     $this->databaseType = $databaseType;
   }
   /**
-   * @deprecated
-   * @return self::DATABASE_TYPE_*
+   * @return string
    */
   public function getDatabaseType()
   {
     return $this->databaseType;
   }
   /**
-   * Optional. A Cloud Storage object or folder URI that specifies the source
-   * from which to import metadata. It must begin with gs://.
-   *
-   * @param string $gcsUri
+   * @param string
    */
   public function setGcsUri($gcsUri)
   {
@@ -105,17 +65,13 @@ class DatabaseDump extends \Google\Model
     return $this->gcsUri;
   }
   /**
-   * Optional. The name of the source database.
-   *
-   * @deprecated
-   * @param string $sourceDatabase
+   * @param string
    */
   public function setSourceDatabase($sourceDatabase)
   {
     $this->sourceDatabase = $sourceDatabase;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getSourceDatabase()
@@ -123,18 +79,14 @@ class DatabaseDump extends \Google\Model
     return $this->sourceDatabase;
   }
   /**
-   * Optional. The type of the database dump. If unspecified, defaults to MYSQL.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, MYSQL, AVRO
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

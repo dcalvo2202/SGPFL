@@ -20,26 +20,14 @@ namespace Google\Service\BigtableAdmin;
 class AuthorizedView extends \Google\Model
 {
   /**
-   * Set to true to make the AuthorizedView protected against deletion. The
-   * parent Table and containing Instance cannot be deleted if an AuthorizedView
-   * has this bit set.
-   *
    * @var bool
    */
   public $deletionProtection;
   /**
-   * The etag for this AuthorizedView. If this is provided on update, it must
-   * match the server's etag. The server returns ABORTED error on a mismatched
-   * etag.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Identifier. The name of this AuthorizedView. Values are of the form `projec
-   * ts/{project}/instances/{instance}/tables/{table}/authorizedViews/{authorize
-   * d_view}`
-   *
    * @var string
    */
   public $name;
@@ -47,11 +35,7 @@ class AuthorizedView extends \Google\Model
   protected $subsetViewDataType = '';
 
   /**
-   * Set to true to make the AuthorizedView protected against deletion. The
-   * parent Table and containing Instance cannot be deleted if an AuthorizedView
-   * has this bit set.
-   *
-   * @param bool $deletionProtection
+   * @param bool
    */
   public function setDeletionProtection($deletionProtection)
   {
@@ -65,11 +49,7 @@ class AuthorizedView extends \Google\Model
     return $this->deletionProtection;
   }
   /**
-   * The etag for this AuthorizedView. If this is provided on update, it must
-   * match the server's etag. The server returns ABORTED error on a mismatched
-   * etag.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -83,11 +63,7 @@ class AuthorizedView extends \Google\Model
     return $this->etag;
   }
   /**
-   * Identifier. The name of this AuthorizedView. Values are of the form `projec
-   * ts/{project}/instances/{instance}/tables/{table}/authorizedViews/{authorize
-   * d_view}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -101,9 +77,7 @@ class AuthorizedView extends \Google\Model
     return $this->name;
   }
   /**
-   * An AuthorizedView permitting access to an explicit subset of a Table.
-   *
-   * @param GoogleBigtableAdminV2AuthorizedViewSubsetView $subsetView
+   * @param GoogleBigtableAdminV2AuthorizedViewSubsetView
    */
   public function setSubsetView(GoogleBigtableAdminV2AuthorizedViewSubsetView $subsetView)
   {

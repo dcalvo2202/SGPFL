@@ -20,16 +20,12 @@ namespace Google\Service\AnalyticsData;
 class DimensionValue extends \Google\Model
 {
   /**
-   * Value as a string if the dimension type is a string.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Value as a string if the dimension type is a string.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

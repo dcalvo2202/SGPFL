@@ -20,25 +20,16 @@ namespace Google\Service\CloudRetail;
 class GoogleCloudRetailV2PredictResponsePredictionResult extends \Google\Model
 {
   /**
-   * ID of the recommended product
-   *
    * @var string
    */
   public $id;
   /**
-   * Additional product metadata / annotations. Possible values: * `product`:
-   * JSON representation of the product. Is set if `returnProduct` is set to
-   * true in `PredictRequest.params`. * `score`: Prediction score in double
-   * value. Is set if `returnScore` is set to true in `PredictRequest.params`.
-   *
    * @var array[]
    */
   public $metadata;
 
   /**
-   * ID of the recommended product
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -52,12 +43,7 @@ class GoogleCloudRetailV2PredictResponsePredictionResult extends \Google\Model
     return $this->id;
   }
   /**
-   * Additional product metadata / annotations. Possible values: * `product`:
-   * JSON representation of the product. Is set if `returnProduct` is set to
-   * true in `PredictRequest.params`. * `score`: Prediction score in double
-   * value. Is set if `returnScore` is set to true in `PredictRequest.params`.
-   *
-   * @param array[] $metadata
+   * @param array[]
    */
   public function setMetadata($metadata)
   {

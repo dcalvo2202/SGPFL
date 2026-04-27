@@ -20,18 +20,12 @@ namespace Google\Service\CertificateAuthorityService;
 class KeyId extends \Google\Model
 {
   /**
-   * Optional. The value of this KeyId encoded in lowercase hexadecimal. This is
-   * most likely the 160 bit SHA-1 hash of the public key.
-   *
    * @var string
    */
   public $keyId;
 
   /**
-   * Optional. The value of this KeyId encoded in lowercase hexadecimal. This is
-   * most likely the 160 bit SHA-1 hash of the public key.
-   *
-   * @param string $keyId
+   * @param string
    */
   public function setKeyId($keyId)
   {

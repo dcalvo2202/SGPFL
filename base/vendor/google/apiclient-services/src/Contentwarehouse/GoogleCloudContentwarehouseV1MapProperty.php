@@ -23,9 +23,7 @@ class GoogleCloudContentwarehouseV1MapProperty extends \Google\Model
   protected $fieldsDataType = 'map';
 
   /**
-   * Unordered map of dynamically typed values.
-   *
-   * @param GoogleCloudContentwarehouseV1Value[] $fields
+   * @param GoogleCloudContentwarehouseV1Value[]
    */
   public function setFields($fields)
   {

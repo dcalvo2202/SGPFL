@@ -22,23 +22,14 @@ class VmwareControlPlaneNodeConfig extends \Google\Model
   protected $autoResizeConfigType = VmwareAutoResizeConfig::class;
   protected $autoResizeConfigDataType = '';
   /**
-   * The number of CPUs for each admin cluster node that serve as control planes
-   * for this VMware user cluster. (default: 4 CPUs)
-   *
    * @var string
    */
   public $cpus;
   /**
-   * The megabytes of memory for each admin cluster node that serves as a
-   * control plane for this VMware user cluster (default: 8192 MB memory).
-   *
    * @var string
    */
   public $memory;
   /**
-   * The number of control plane nodes for this VMware user cluster. (default: 1
-   * replica).
-   *
    * @var string
    */
   public $replicas;
@@ -46,9 +37,7 @@ class VmwareControlPlaneNodeConfig extends \Google\Model
   protected $vsphereConfigDataType = '';
 
   /**
-   * AutoResizeConfig provides auto resizing configurations.
-   *
-   * @param VmwareAutoResizeConfig $autoResizeConfig
+   * @param VmwareAutoResizeConfig
    */
   public function setAutoResizeConfig(VmwareAutoResizeConfig $autoResizeConfig)
   {
@@ -62,10 +51,7 @@ class VmwareControlPlaneNodeConfig extends \Google\Model
     return $this->autoResizeConfig;
   }
   /**
-   * The number of CPUs for each admin cluster node that serve as control planes
-   * for this VMware user cluster. (default: 4 CPUs)
-   *
-   * @param string $cpus
+   * @param string
    */
   public function setCpus($cpus)
   {
@@ -79,10 +65,7 @@ class VmwareControlPlaneNodeConfig extends \Google\Model
     return $this->cpus;
   }
   /**
-   * The megabytes of memory for each admin cluster node that serves as a
-   * control plane for this VMware user cluster (default: 8192 MB memory).
-   *
-   * @param string $memory
+   * @param string
    */
   public function setMemory($memory)
   {
@@ -96,10 +79,7 @@ class VmwareControlPlaneNodeConfig extends \Google\Model
     return $this->memory;
   }
   /**
-   * The number of control plane nodes for this VMware user cluster. (default: 1
-   * replica).
-   *
-   * @param string $replicas
+   * @param string
    */
   public function setReplicas($replicas)
   {
@@ -113,9 +93,7 @@ class VmwareControlPlaneNodeConfig extends \Google\Model
     return $this->replicas;
   }
   /**
-   * Vsphere-specific config.
-   *
-   * @param VmwareControlPlaneVsphereConfig $vsphereConfig
+   * @param VmwareControlPlaneVsphereConfig
    */
   public function setVsphereConfig(VmwareControlPlaneVsphereConfig $vsphereConfig)
   {

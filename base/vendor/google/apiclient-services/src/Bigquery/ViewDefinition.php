@@ -25,25 +25,14 @@ class ViewDefinition extends \Google\Collection
   protected $privacyPolicyType = PrivacyPolicy::class;
   protected $privacyPolicyDataType = '';
   /**
-   * Required. A query that BigQuery executes when the view is referenced.
-   *
    * @var string
    */
   public $query;
   /**
-   * True if the column names are explicitly specified. For example by using the
-   * 'CREATE VIEW v(c1, c2) AS ...' syntax. Can only be set for GoogleSQL views.
-   *
    * @var bool
    */
   public $useExplicitColumnNames;
   /**
-   * Specifies whether to use BigQuery's legacy SQL for this view. The default
-   * value is true. If set to false, the view uses BigQuery's
-   * [GoogleSQL](https://docs.cloud.google.com/bigquery/docs/introduction-sql).
-   * Queries and views that reference this view must use the same flag value. A
-   * wrapper is used here because the default value is True.
-   *
    * @var bool
    */
   public $useLegacySql;
@@ -51,9 +40,7 @@ class ViewDefinition extends \Google\Collection
   protected $userDefinedFunctionResourcesDataType = 'array';
 
   /**
-   * Optional. Foreign view representations.
-   *
-   * @param ForeignViewDefinition[] $foreignDefinitions
+   * @param ForeignViewDefinition[]
    */
   public function setForeignDefinitions($foreignDefinitions)
   {
@@ -67,9 +54,7 @@ class ViewDefinition extends \Google\Collection
     return $this->foreignDefinitions;
   }
   /**
-   * Optional. Specifies the privacy policy for the view.
-   *
-   * @param PrivacyPolicy $privacyPolicy
+   * @param PrivacyPolicy
    */
   public function setPrivacyPolicy(PrivacyPolicy $privacyPolicy)
   {
@@ -83,9 +68,7 @@ class ViewDefinition extends \Google\Collection
     return $this->privacyPolicy;
   }
   /**
-   * Required. A query that BigQuery executes when the view is referenced.
-   *
-   * @param string $query
+   * @param string
    */
   public function setQuery($query)
   {
@@ -99,10 +82,7 @@ class ViewDefinition extends \Google\Collection
     return $this->query;
   }
   /**
-   * True if the column names are explicitly specified. For example by using the
-   * 'CREATE VIEW v(c1, c2) AS ...' syntax. Can only be set for GoogleSQL views.
-   *
-   * @param bool $useExplicitColumnNames
+   * @param bool
    */
   public function setUseExplicitColumnNames($useExplicitColumnNames)
   {
@@ -116,13 +96,7 @@ class ViewDefinition extends \Google\Collection
     return $this->useExplicitColumnNames;
   }
   /**
-   * Specifies whether to use BigQuery's legacy SQL for this view. The default
-   * value is true. If set to false, the view uses BigQuery's
-   * [GoogleSQL](https://docs.cloud.google.com/bigquery/docs/introduction-sql).
-   * Queries and views that reference this view must use the same flag value. A
-   * wrapper is used here because the default value is True.
-   *
-   * @param bool $useLegacySql
+   * @param bool
    */
   public function setUseLegacySql($useLegacySql)
   {
@@ -136,9 +110,7 @@ class ViewDefinition extends \Google\Collection
     return $this->useLegacySql;
   }
   /**
-   * Describes user-defined function resources used in the query.
-   *
-   * @param UserDefinedFunctionResource[] $userDefinedFunctionResources
+   * @param UserDefinedFunctionResource[]
    */
   public function setUserDefinedFunctionResources($userDefinedFunctionResources)
   {

@@ -20,26 +20,18 @@ namespace Google\Service\CloudSearch;
 class DeleteQueueItemsRequest extends \Google\Model
 {
   /**
-   * The name of connector making this call. Format:
-   * datasources/{source_id}/connectors/{ID}
-   *
    * @var string
    */
   public $connectorName;
   protected $debugOptionsType = DebugOptions::class;
   protected $debugOptionsDataType = '';
   /**
-   * The name of a queue to delete items from.
-   *
    * @var string
    */
   public $queue;
 
   /**
-   * The name of connector making this call. Format:
-   * datasources/{source_id}/connectors/{ID}
-   *
-   * @param string $connectorName
+   * @param string
    */
   public function setConnectorName($connectorName)
   {
@@ -53,9 +45,7 @@ class DeleteQueueItemsRequest extends \Google\Model
     return $this->connectorName;
   }
   /**
-   * Common debug options.
-   *
-   * @param DebugOptions $debugOptions
+   * @param DebugOptions
    */
   public function setDebugOptions(DebugOptions $debugOptions)
   {
@@ -69,9 +59,7 @@ class DeleteQueueItemsRequest extends \Google\Model
     return $this->debugOptions;
   }
   /**
-   * The name of a queue to delete items from.
-   *
-   * @param string $queue
+   * @param string
    */
   public function setQueue($queue)
   {

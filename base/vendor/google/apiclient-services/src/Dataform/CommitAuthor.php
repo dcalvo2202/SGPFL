@@ -20,22 +20,16 @@ namespace Google\Service\Dataform;
 class CommitAuthor extends \Google\Model
 {
   /**
-   * Required. The commit author's email address.
-   *
    * @var string
    */
   public $emailAddress;
   /**
-   * Required. The commit author's name.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Required. The commit author's email address.
-   *
-   * @param string $emailAddress
+   * @param string
    */
   public function setEmailAddress($emailAddress)
   {
@@ -49,9 +43,7 @@ class CommitAuthor extends \Google\Model
     return $this->emailAddress;
   }
   /**
-   * Required. The commit author's name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

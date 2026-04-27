@@ -35,16 +35,10 @@ class GoogleChromeManagementV1TelemetryDevice extends \Google\Collection
   protected $cpuStatusReportType = GoogleChromeManagementV1CpuStatusReport::class;
   protected $cpuStatusReportDataType = 'array';
   /**
-   * Output only. Google Workspace Customer whose enterprise enrolled the
-   * device.
-   *
    * @var string
    */
   public $customer;
   /**
-   * Output only. The unique Directory API ID of the device. This value is the
-   * same as the Admin Console's Directory API ID in the ChromeOS Devices tab
-   *
    * @var string
    */
   public $deviceId;
@@ -61,8 +55,6 @@ class GoogleChromeManagementV1TelemetryDevice extends \Google\Collection
   protected $memoryStatusReportType = GoogleChromeManagementV1MemoryStatusReport::class;
   protected $memoryStatusReportDataType = 'array';
   /**
-   * Output only. Resource name of the device.
-   *
    * @var string
    */
   public $name;
@@ -75,8 +67,6 @@ class GoogleChromeManagementV1TelemetryDevice extends \Google\Collection
   protected $networkStatusReportType = GoogleChromeManagementV1NetworkStatusReport::class;
   protected $networkStatusReportDataType = 'array';
   /**
-   * Output only. Organization unit ID of the device.
-   *
    * @var string
    */
   public $orgUnitId;
@@ -87,9 +77,6 @@ class GoogleChromeManagementV1TelemetryDevice extends \Google\Collection
   protected $runtimeCountersReportType = GoogleChromeManagementV1RuntimeCountersReport::class;
   protected $runtimeCountersReportDataType = 'array';
   /**
-   * Output only. Device serial number. This value is the same as the Admin
-   * Console's Serial Number in the ChromeOS Devices tab.
-   *
    * @var string
    */
   public $serialNumber;
@@ -101,10 +88,7 @@ class GoogleChromeManagementV1TelemetryDevice extends \Google\Collection
   protected $thunderboltInfoDataType = 'array';
 
   /**
-   * Output only. App reports collected periodically sorted in a decreasing
-   * order of report_time.
-   *
-   * @param GoogleChromeManagementV1AppReport[] $appReport
+   * @param GoogleChromeManagementV1AppReport[]
    */
   public function setAppReport($appReport)
   {
@@ -118,10 +102,7 @@ class GoogleChromeManagementV1TelemetryDevice extends \Google\Collection
     return $this->appReport;
   }
   /**
-   * Output only. Audio reports collected periodically sorted in a decreasing
-   * order of report_time.
-   *
-   * @param GoogleChromeManagementV1AudioStatusReport[] $audioStatusReport
+   * @param GoogleChromeManagementV1AudioStatusReport[]
    */
   public function setAudioStatusReport($audioStatusReport)
   {
@@ -135,9 +116,7 @@ class GoogleChromeManagementV1TelemetryDevice extends \Google\Collection
     return $this->audioStatusReport;
   }
   /**
-   * Output only. Information on battery specs for the device.
-   *
-   * @param GoogleChromeManagementV1BatteryInfo[] $batteryInfo
+   * @param GoogleChromeManagementV1BatteryInfo[]
    */
   public function setBatteryInfo($batteryInfo)
   {
@@ -151,9 +130,7 @@ class GoogleChromeManagementV1TelemetryDevice extends \Google\Collection
     return $this->batteryInfo;
   }
   /**
-   * Output only. Battery reports collected periodically.
-   *
-   * @param GoogleChromeManagementV1BatteryStatusReport[] $batteryStatusReport
+   * @param GoogleChromeManagementV1BatteryStatusReport[]
    */
   public function setBatteryStatusReport($batteryStatusReport)
   {
@@ -167,9 +144,7 @@ class GoogleChromeManagementV1TelemetryDevice extends \Google\Collection
     return $this->batteryStatusReport;
   }
   /**
-   * Output only. Boot performance reports of the device.
-   *
-   * @param GoogleChromeManagementV1BootPerformanceReport[] $bootPerformanceReport
+   * @param GoogleChromeManagementV1BootPerformanceReport[]
    */
   public function setBootPerformanceReport($bootPerformanceReport)
   {
@@ -183,9 +158,7 @@ class GoogleChromeManagementV1TelemetryDevice extends \Google\Collection
     return $this->bootPerformanceReport;
   }
   /**
-   * Output only. Information regarding CPU specs for the device.
-   *
-   * @param GoogleChromeManagementV1CpuInfo[] $cpuInfo
+   * @param GoogleChromeManagementV1CpuInfo[]
    */
   public function setCpuInfo($cpuInfo)
   {
@@ -199,10 +172,7 @@ class GoogleChromeManagementV1TelemetryDevice extends \Google\Collection
     return $this->cpuInfo;
   }
   /**
-   * Output only. CPU status reports collected periodically sorted in a
-   * decreasing order of report_time.
-   *
-   * @param GoogleChromeManagementV1CpuStatusReport[] $cpuStatusReport
+   * @param GoogleChromeManagementV1CpuStatusReport[]
    */
   public function setCpuStatusReport($cpuStatusReport)
   {
@@ -216,10 +186,7 @@ class GoogleChromeManagementV1TelemetryDevice extends \Google\Collection
     return $this->cpuStatusReport;
   }
   /**
-   * Output only. Google Workspace Customer whose enterprise enrolled the
-   * device.
-   *
-   * @param string $customer
+   * @param string
    */
   public function setCustomer($customer)
   {
@@ -233,10 +200,7 @@ class GoogleChromeManagementV1TelemetryDevice extends \Google\Collection
     return $this->customer;
   }
   /**
-   * Output only. The unique Directory API ID of the device. This value is the
-   * same as the Admin Console's Directory API ID in the ChromeOS Devices tab
-   *
-   * @param string $deviceId
+   * @param string
    */
   public function setDeviceId($deviceId)
   {
@@ -250,10 +214,7 @@ class GoogleChromeManagementV1TelemetryDevice extends \Google\Collection
     return $this->deviceId;
   }
   /**
-   * Output only. Contains information regarding Graphic peripherals for the
-   * device.
-   *
-   * @param GoogleChromeManagementV1GraphicsInfo $graphicsInfo
+   * @param GoogleChromeManagementV1GraphicsInfo
    */
   public function setGraphicsInfo(GoogleChromeManagementV1GraphicsInfo $graphicsInfo)
   {
@@ -267,9 +228,7 @@ class GoogleChromeManagementV1TelemetryDevice extends \Google\Collection
     return $this->graphicsInfo;
   }
   /**
-   * Output only. Graphics reports collected periodically.
-   *
-   * @param GoogleChromeManagementV1GraphicsStatusReport[] $graphicsStatusReport
+   * @param GoogleChromeManagementV1GraphicsStatusReport[]
    */
   public function setGraphicsStatusReport($graphicsStatusReport)
   {
@@ -283,10 +242,7 @@ class GoogleChromeManagementV1TelemetryDevice extends \Google\Collection
     return $this->graphicsStatusReport;
   }
   /**
-   * Output only. Heartbeat status report containing timestamps periodically
-   * sorted in decreasing order of report_time
-   *
-   * @param GoogleChromeManagementV1HeartbeatStatusReport[] $heartbeatStatusReport
+   * @param GoogleChromeManagementV1HeartbeatStatusReport[]
    */
   public function setHeartbeatStatusReport($heartbeatStatusReport)
   {
@@ -300,9 +256,7 @@ class GoogleChromeManagementV1TelemetryDevice extends \Google\Collection
     return $this->heartbeatStatusReport;
   }
   /**
-   * Output only. Kiosk app status report for the kiosk device
-   *
-   * @param GoogleChromeManagementV1KioskAppStatusReport[] $kioskAppStatusReport
+   * @param GoogleChromeManagementV1KioskAppStatusReport[]
    */
   public function setKioskAppStatusReport($kioskAppStatusReport)
   {
@@ -316,9 +270,7 @@ class GoogleChromeManagementV1TelemetryDevice extends \Google\Collection
     return $this->kioskAppStatusReport;
   }
   /**
-   * Output only. Information regarding memory specs for the device.
-   *
-   * @param GoogleChromeManagementV1MemoryInfo $memoryInfo
+   * @param GoogleChromeManagementV1MemoryInfo
    */
   public function setMemoryInfo(GoogleChromeManagementV1MemoryInfo $memoryInfo)
   {
@@ -332,10 +284,7 @@ class GoogleChromeManagementV1TelemetryDevice extends \Google\Collection
     return $this->memoryInfo;
   }
   /**
-   * Output only. Memory status reports collected periodically sorted decreasing
-   * by report_time.
-   *
-   * @param GoogleChromeManagementV1MemoryStatusReport[] $memoryStatusReport
+   * @param GoogleChromeManagementV1MemoryStatusReport[]
    */
   public function setMemoryStatusReport($memoryStatusReport)
   {
@@ -349,9 +298,7 @@ class GoogleChromeManagementV1TelemetryDevice extends \Google\Collection
     return $this->memoryStatusReport;
   }
   /**
-   * Output only. Resource name of the device.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -365,10 +312,7 @@ class GoogleChromeManagementV1TelemetryDevice extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. Network bandwidth reports collected periodically sorted in a
-   * decreasing order of report_time.
-   *
-   * @param GoogleChromeManagementV1NetworkBandwidthReport[] $networkBandwidthReport
+   * @param GoogleChromeManagementV1NetworkBandwidthReport[]
    */
   public function setNetworkBandwidthReport($networkBandwidthReport)
   {
@@ -382,9 +326,7 @@ class GoogleChromeManagementV1TelemetryDevice extends \Google\Collection
     return $this->networkBandwidthReport;
   }
   /**
-   * Output only. Network diagnostics collected periodically.
-   *
-   * @param GoogleChromeManagementV1NetworkDiagnosticsReport[] $networkDiagnosticsReport
+   * @param GoogleChromeManagementV1NetworkDiagnosticsReport[]
    */
   public function setNetworkDiagnosticsReport($networkDiagnosticsReport)
   {
@@ -398,9 +340,7 @@ class GoogleChromeManagementV1TelemetryDevice extends \Google\Collection
     return $this->networkDiagnosticsReport;
   }
   /**
-   * Output only. Network devices information.
-   *
-   * @param GoogleChromeManagementV1NetworkInfo $networkInfo
+   * @param GoogleChromeManagementV1NetworkInfo
    */
   public function setNetworkInfo(GoogleChromeManagementV1NetworkInfo $networkInfo)
   {
@@ -414,9 +354,7 @@ class GoogleChromeManagementV1TelemetryDevice extends \Google\Collection
     return $this->networkInfo;
   }
   /**
-   * Output only. Network specs collected periodically.
-   *
-   * @param GoogleChromeManagementV1NetworkStatusReport[] $networkStatusReport
+   * @param GoogleChromeManagementV1NetworkStatusReport[]
    */
   public function setNetworkStatusReport($networkStatusReport)
   {
@@ -430,9 +368,7 @@ class GoogleChromeManagementV1TelemetryDevice extends \Google\Collection
     return $this->networkStatusReport;
   }
   /**
-   * Output only. Organization unit ID of the device.
-   *
-   * @param string $orgUnitId
+   * @param string
    */
   public function setOrgUnitId($orgUnitId)
   {
@@ -446,10 +382,7 @@ class GoogleChromeManagementV1TelemetryDevice extends \Google\Collection
     return $this->orgUnitId;
   }
   /**
-   * Output only. Contains relevant information regarding ChromeOS update
-   * status.
-   *
-   * @param GoogleChromeManagementV1OsUpdateStatus[] $osUpdateStatus
+   * @param GoogleChromeManagementV1OsUpdateStatus[]
    */
   public function setOsUpdateStatus($osUpdateStatus)
   {
@@ -463,10 +396,7 @@ class GoogleChromeManagementV1TelemetryDevice extends \Google\Collection
     return $this->osUpdateStatus;
   }
   /**
-   * Output only. Peripherals reports collected periodically sorted in a
-   * decreasing order of report_time.
-   *
-   * @param GoogleChromeManagementV1PeripheralsReport[] $peripheralsReport
+   * @param GoogleChromeManagementV1PeripheralsReport[]
    */
   public function setPeripheralsReport($peripheralsReport)
   {
@@ -480,11 +410,7 @@ class GoogleChromeManagementV1TelemetryDevice extends \Google\Collection
     return $this->peripheralsReport;
   }
   /**
-   * Output only. Runtime counters reports collected device lifetime runtime, as
-   * well as the counts of S0->S3, S0->S4, and S0->S5 transitions, meaning
-   * entering into sleep, hibernation, and power-off states
-   *
-   * @param GoogleChromeManagementV1RuntimeCountersReport[] $runtimeCountersReport
+   * @param GoogleChromeManagementV1RuntimeCountersReport[]
    */
   public function setRuntimeCountersReport($runtimeCountersReport)
   {
@@ -498,10 +424,7 @@ class GoogleChromeManagementV1TelemetryDevice extends \Google\Collection
     return $this->runtimeCountersReport;
   }
   /**
-   * Output only. Device serial number. This value is the same as the Admin
-   * Console's Serial Number in the ChromeOS Devices tab.
-   *
-   * @param string $serialNumber
+   * @param string
    */
   public function setSerialNumber($serialNumber)
   {
@@ -515,9 +438,7 @@ class GoogleChromeManagementV1TelemetryDevice extends \Google\Collection
     return $this->serialNumber;
   }
   /**
-   * Output only. Information of storage specs for the device.
-   *
-   * @param GoogleChromeManagementV1StorageInfo $storageInfo
+   * @param GoogleChromeManagementV1StorageInfo
    */
   public function setStorageInfo(GoogleChromeManagementV1StorageInfo $storageInfo)
   {
@@ -531,9 +452,7 @@ class GoogleChromeManagementV1TelemetryDevice extends \Google\Collection
     return $this->storageInfo;
   }
   /**
-   * Output only. Storage reports collected periodically.
-   *
-   * @param GoogleChromeManagementV1StorageStatusReport[] $storageStatusReport
+   * @param GoogleChromeManagementV1StorageStatusReport[]
    */
   public function setStorageStatusReport($storageStatusReport)
   {
@@ -547,9 +466,7 @@ class GoogleChromeManagementV1TelemetryDevice extends \Google\Collection
     return $this->storageStatusReport;
   }
   /**
-   * Output only. Information on Thunderbolt bus.
-   *
-   * @param GoogleChromeManagementV1ThunderboltInfo[] $thunderboltInfo
+   * @param GoogleChromeManagementV1ThunderboltInfo[]
    */
   public function setThunderboltInfo($thunderboltInfo)
   {

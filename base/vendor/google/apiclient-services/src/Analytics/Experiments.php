@@ -23,57 +23,36 @@ class Experiments extends \Google\Collection
   protected $itemsType = Experiment::class;
   protected $itemsDataType = 'array';
   /**
-   * The maximum number of resources the response can contain, regardless of the
-   * actual number of resources returned. Its value ranges from 1 to 1000 with a
-   * value of 1000 by default, or otherwise specified by the max-results query
-   * parameter.
-   *
    * @var int
    */
   public $itemsPerPage;
   /**
-   * Collection type.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Link to next page for this experiment collection.
-   *
    * @var string
    */
   public $nextLink;
   /**
-   * Link to previous page for this experiment collection.
-   *
    * @var string
    */
   public $previousLink;
   /**
-   * The starting index of the resources, which is 1 by default or otherwise
-   * specified by the start-index query parameter.
-   *
    * @var int
    */
   public $startIndex;
   /**
-   * The total number of results for the query, regardless of the number of
-   * resources in the result.
-   *
    * @var int
    */
   public $totalResults;
   /**
-   * Email ID of the authenticated user
-   *
    * @var string
    */
   public $username;
 
   /**
-   * A list of experiments.
-   *
-   * @param Experiment[] $items
+   * @param Experiment[]
    */
   public function setItems($items)
   {
@@ -87,12 +66,7 @@ class Experiments extends \Google\Collection
     return $this->items;
   }
   /**
-   * The maximum number of resources the response can contain, regardless of the
-   * actual number of resources returned. Its value ranges from 1 to 1000 with a
-   * value of 1000 by default, or otherwise specified by the max-results query
-   * parameter.
-   *
-   * @param int $itemsPerPage
+   * @param int
    */
   public function setItemsPerPage($itemsPerPage)
   {
@@ -106,9 +80,7 @@ class Experiments extends \Google\Collection
     return $this->itemsPerPage;
   }
   /**
-   * Collection type.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -122,9 +94,7 @@ class Experiments extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Link to next page for this experiment collection.
-   *
-   * @param string $nextLink
+   * @param string
    */
   public function setNextLink($nextLink)
   {
@@ -138,9 +108,7 @@ class Experiments extends \Google\Collection
     return $this->nextLink;
   }
   /**
-   * Link to previous page for this experiment collection.
-   *
-   * @param string $previousLink
+   * @param string
    */
   public function setPreviousLink($previousLink)
   {
@@ -154,10 +122,7 @@ class Experiments extends \Google\Collection
     return $this->previousLink;
   }
   /**
-   * The starting index of the resources, which is 1 by default or otherwise
-   * specified by the start-index query parameter.
-   *
-   * @param int $startIndex
+   * @param int
    */
   public function setStartIndex($startIndex)
   {
@@ -171,10 +136,7 @@ class Experiments extends \Google\Collection
     return $this->startIndex;
   }
   /**
-   * The total number of results for the query, regardless of the number of
-   * resources in the result.
-   *
-   * @param int $totalResults
+   * @param int
    */
   public function setTotalResults($totalResults)
   {
@@ -188,9 +150,7 @@ class Experiments extends \Google\Collection
     return $this->totalResults;
   }
   /**
-   * Email ID of the authenticated user
-   *
-   * @param string $username
+   * @param string
    */
   public function setUsername($username)
   {

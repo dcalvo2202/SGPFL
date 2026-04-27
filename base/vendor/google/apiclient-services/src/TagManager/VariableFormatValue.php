@@ -19,30 +19,7 @@ namespace Google\Service\TagManager;
 
 class VariableFormatValue extends \Google\Model
 {
-  public const CASE_CONVERSION_TYPE_none = 'none';
   /**
-   * The option to convert a variable value to lowercase.
-   */
-  public const CASE_CONVERSION_TYPE_lowercase = 'lowercase';
-  /**
-   * The option to convert a variable value to uppercase.
-   */
-  public const CASE_CONVERSION_TYPE_uppercase = 'uppercase';
-  public const CONVERT_TO_NUMBER_decimalSeparatorTypeUnspecified = 'decimalSeparatorTypeUnspecified';
-  /**
-   * The option to convert a variable value to a number with a period as the
-   * decimal separator.
-   */
-  public const CONVERT_TO_NUMBER_period = 'period';
-  /**
-   * The option to convert a variable value to a number with a comma as the
-   * decimal separator.
-   */
-  public const CONVERT_TO_NUMBER_comma = 'comma';
-  /**
-   * The option to convert a string-type variable value to either lowercase or
-   * uppercase.
-   *
    * @var string
    */
   public $caseConversionType;
@@ -50,46 +27,27 @@ class VariableFormatValue extends \Google\Model
   protected $convertFalseToValueDataType = '';
   protected $convertNullToValueType = Parameter::class;
   protected $convertNullToValueDataType = '';
-  /**
-   * The option to convert a variable value to a boolean.
-   *
-   * @var bool
-   */
-  public $convertToBoolean;
-  /**
-   * The option to convert a variable value to a number.
-   *
-   * @var string
-   */
-  public $convertToNumber;
   protected $convertTrueToValueType = Parameter::class;
   protected $convertTrueToValueDataType = '';
   protected $convertUndefinedToValueType = Parameter::class;
   protected $convertUndefinedToValueDataType = '';
 
   /**
-   * The option to convert a string-type variable value to either lowercase or
-   * uppercase.
-   *
-   * Accepted values: none, lowercase, uppercase
-   *
-   * @param self::CASE_CONVERSION_TYPE_* $caseConversionType
+   * @param string
    */
   public function setCaseConversionType($caseConversionType)
   {
     $this->caseConversionType = $caseConversionType;
   }
   /**
-   * @return self::CASE_CONVERSION_TYPE_*
+   * @return string
    */
   public function getCaseConversionType()
   {
     return $this->caseConversionType;
   }
   /**
-   * The value to convert if a variable value is false.
-   *
-   * @param Parameter $convertFalseToValue
+   * @param Parameter
    */
   public function setConvertFalseToValue(Parameter $convertFalseToValue)
   {
@@ -103,9 +61,7 @@ class VariableFormatValue extends \Google\Model
     return $this->convertFalseToValue;
   }
   /**
-   * The value to convert if a variable value is null.
-   *
-   * @param Parameter $convertNullToValue
+   * @param Parameter
    */
   public function setConvertNullToValue(Parameter $convertNullToValue)
   {
@@ -119,43 +75,7 @@ class VariableFormatValue extends \Google\Model
     return $this->convertNullToValue;
   }
   /**
-   * The option to convert a variable value to a boolean.
-   *
-   * @param bool $convertToBoolean
-   */
-  public function setConvertToBoolean($convertToBoolean)
-  {
-    $this->convertToBoolean = $convertToBoolean;
-  }
-  /**
-   * @return bool
-   */
-  public function getConvertToBoolean()
-  {
-    return $this->convertToBoolean;
-  }
-  /**
-   * The option to convert a variable value to a number.
-   *
-   * Accepted values: decimalSeparatorTypeUnspecified, period, comma
-   *
-   * @param self::CONVERT_TO_NUMBER_* $convertToNumber
-   */
-  public function setConvertToNumber($convertToNumber)
-  {
-    $this->convertToNumber = $convertToNumber;
-  }
-  /**
-   * @return self::CONVERT_TO_NUMBER_*
-   */
-  public function getConvertToNumber()
-  {
-    return $this->convertToNumber;
-  }
-  /**
-   * The value to convert if a variable value is true.
-   *
-   * @param Parameter $convertTrueToValue
+   * @param Parameter
    */
   public function setConvertTrueToValue(Parameter $convertTrueToValue)
   {
@@ -169,9 +89,7 @@ class VariableFormatValue extends \Google\Model
     return $this->convertTrueToValue;
   }
   /**
-   * The value to convert if a variable value is undefined.
-   *
-   * @param Parameter $convertUndefinedToValue
+   * @param Parameter
    */
   public function setConvertUndefinedToValue(Parameter $convertUndefinedToValue)
   {

@@ -20,34 +20,24 @@ namespace Google\Service\NetworkManagement;
 class AppEngineVersionInfo extends \Google\Model
 {
   /**
-   * Name of an App Engine version.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * App Engine execution environment for a version.
-   *
    * @var string
    */
   public $environment;
   /**
-   * Runtime of the App Engine version.
-   *
    * @var string
    */
   public $runtime;
   /**
-   * URI of an App Engine version.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * Name of an App Engine version.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -61,9 +51,7 @@ class AppEngineVersionInfo extends \Google\Model
     return $this->displayName;
   }
   /**
-   * App Engine execution environment for a version.
-   *
-   * @param string $environment
+   * @param string
    */
   public function setEnvironment($environment)
   {
@@ -77,9 +65,7 @@ class AppEngineVersionInfo extends \Google\Model
     return $this->environment;
   }
   /**
-   * Runtime of the App Engine version.
-   *
-   * @param string $runtime
+   * @param string
    */
   public function setRuntime($runtime)
   {
@@ -93,9 +79,7 @@ class AppEngineVersionInfo extends \Google\Model
     return $this->runtime;
   }
   /**
-   * URI of an App Engine version.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

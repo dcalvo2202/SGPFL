@@ -20,18 +20,12 @@ namespace Google\Service\Parallelstore;
 class SourceGcsBucket extends \Google\Model
 {
   /**
-   * Required. URI to a Cloud Storage bucket in the format: `gs:`. The path
-   * inside the bucket is optional.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * Required. URI to a Cloud Storage bucket in the format: `gs:`. The path
-   * inside the bucket is optional.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

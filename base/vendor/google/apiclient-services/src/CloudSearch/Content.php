@@ -30,9 +30,7 @@ class Content extends \Google\Collection
   protected $titleDataType = '';
 
   /**
-   * [Optional] Actions for this card.
-   *
-   * @param Action[] $actions
+   * @param Action[]
    */
   public function setActions($actions)
   {
@@ -46,9 +44,7 @@ class Content extends \Google\Collection
     return $this->actions;
   }
   /**
-   * [Optional] Description of the card.
-   *
-   * @param SafeHtmlProto $description
+   * @param SafeHtmlProto
    */
   public function setDescription(SafeHtmlProto $description)
   {
@@ -62,9 +58,7 @@ class Content extends \Google\Collection
     return $this->description;
   }
   /**
-   * [Optional] Subtitle of the card.
-   *
-   * @param BackgroundColoredText $subtitle
+   * @param BackgroundColoredText
    */
   public function setSubtitle(BackgroundColoredText $subtitle)
   {
@@ -78,9 +72,7 @@ class Content extends \Google\Collection
     return $this->subtitle;
   }
   /**
-   * [Optional] Title of the card.
-   *
-   * @param BackgroundColoredText $title
+   * @param BackgroundColoredText
    */
   public function setTitle(BackgroundColoredText $title)
   {

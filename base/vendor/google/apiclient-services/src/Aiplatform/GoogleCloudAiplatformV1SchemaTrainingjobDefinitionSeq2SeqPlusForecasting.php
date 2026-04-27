@@ -25,9 +25,7 @@ class GoogleCloudAiplatformV1SchemaTrainingjobDefinitionSeq2SeqPlusForecasting e
   protected $metadataDataType = '';
 
   /**
-   * The input parameters of this TrainingJob.
-   *
-   * @param GoogleCloudAiplatformV1SchemaTrainingjobDefinitionSeq2SeqPlusForecastingInputs $inputs
+   * @param GoogleCloudAiplatformV1SchemaTrainingjobDefinitionSeq2SeqPlusForecastingInputs
    */
   public function setInputs(GoogleCloudAiplatformV1SchemaTrainingjobDefinitionSeq2SeqPlusForecastingInputs $inputs)
   {
@@ -41,9 +39,7 @@ class GoogleCloudAiplatformV1SchemaTrainingjobDefinitionSeq2SeqPlusForecasting e
     return $this->inputs;
   }
   /**
-   * The metadata information.
-   *
-   * @param GoogleCloudAiplatformV1SchemaTrainingjobDefinitionSeq2SeqPlusForecastingMetadata $metadata
+   * @param GoogleCloudAiplatformV1SchemaTrainingjobDefinitionSeq2SeqPlusForecastingMetadata
    */
   public function setMetadata(GoogleCloudAiplatformV1SchemaTrainingjobDefinitionSeq2SeqPlusForecastingMetadata $metadata)
   {

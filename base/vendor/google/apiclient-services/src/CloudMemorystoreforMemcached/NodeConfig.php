@@ -20,22 +20,16 @@ namespace Google\Service\CloudMemorystoreforMemcached;
 class NodeConfig extends \Google\Model
 {
   /**
-   * Required. Number of cpus per Memcached node.
-   *
    * @var int
    */
   public $cpuCount;
   /**
-   * Required. Memory size in MiB for each Memcached node.
-   *
    * @var int
    */
   public $memorySizeMb;
 
   /**
-   * Required. Number of cpus per Memcached node.
-   *
-   * @param int $cpuCount
+   * @param int
    */
   public function setCpuCount($cpuCount)
   {
@@ -49,9 +43,7 @@ class NodeConfig extends \Google\Model
     return $this->cpuCount;
   }
   /**
-   * Required. Memory size in MiB for each Memcached node.
-   *
-   * @param int $memorySizeMb
+   * @param int
    */
   public function setMemorySizeMb($memorySizeMb)
   {

@@ -67,8 +67,6 @@ class Objects extends \Google\Service\Resource
    *
    * @opt_param string destinationPredefinedAcl Apply a predefined set of access
    * controls to the destination object.
-   * @opt_param string dropContextGroups Specifies which groups of Object Contexts
-   * from the source object(s) should be dropped from the destination object.
    * @opt_param string ifGenerationMatch Makes the operation conditional on
    * whether the object's current generation matches the given value. Setting to 0
    * makes the operation succeed only if there are no live versions of the object.
@@ -318,9 +316,6 @@ class Objects extends \Google\Service\Resource
    * lexicographically before endOffset. If startOffset is also set, the objects
    * listed will have names between startOffset (inclusive) and endOffset
    * (exclusive).
-   * @opt_param string filter Filter the returned objects. Currently only
-   * supported for the contexts field. If delimiter is set, the returned prefixes
-   * are exempt from this filter.
    * @opt_param bool includeFoldersAsPrefixes Only applicable if delimiter is set
    * to '/'. If true, will also include folders and managed folders (besides
    * objects) in the returned prefixes.
@@ -530,8 +525,6 @@ class Objects extends \Google\Service\Resource
    * object metadata's kms_key_name value, if any.
    * @opt_param string destinationPredefinedAcl Apply a predefined set of access
    * controls to the destination object.
-   * @opt_param string dropContextGroups Specifies which groups of Object Contexts
-   * from the source object should be dropped from the destination object.
    * @opt_param string ifGenerationMatch Makes the operation conditional on
    * whether the object's current generation matches the given value. Setting to 0
    * makes the operation succeed only if there are no live versions of the object.

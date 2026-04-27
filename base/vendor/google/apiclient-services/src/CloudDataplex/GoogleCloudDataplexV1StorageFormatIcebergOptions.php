@@ -20,18 +20,12 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1StorageFormatIcebergOptions extends \Google\Model
 {
   /**
-   * Optional. The location of where the iceberg metadata is present, must be
-   * within the table path
-   *
    * @var string
    */
   public $metadataLocation;
 
   /**
-   * Optional. The location of where the iceberg metadata is present, must be
-   * within the table path
-   *
-   * @param string $metadataLocation
+   * @param string
    */
   public function setMetadataLocation($metadataLocation)
   {

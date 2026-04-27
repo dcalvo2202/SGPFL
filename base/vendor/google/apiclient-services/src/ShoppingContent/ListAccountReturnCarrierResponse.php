@@ -24,9 +24,7 @@ class ListAccountReturnCarrierResponse extends \Google\Collection
   protected $accountReturnCarriersDataType = 'array';
 
   /**
-   * List of all available account return carriers for the merchant.
-   *
-   * @param AccountReturnCarrier[] $accountReturnCarriers
+   * @param AccountReturnCarrier[]
    */
   public function setAccountReturnCarriers($accountReturnCarriers)
   {

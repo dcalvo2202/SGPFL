@@ -27,7 +27,7 @@ class EnterpriseCrmEventbusProtoParamSpecEntryValidationRule extends \Google\Mod
   protected $stringRegexDataType = '';
 
   /**
-   * @param EnterpriseCrmEventbusProtoParamSpecEntryValidationRuleDoubleRange $doubleRange
+   * @param EnterpriseCrmEventbusProtoParamSpecEntryValidationRuleDoubleRange
    */
   public function setDoubleRange(EnterpriseCrmEventbusProtoParamSpecEntryValidationRuleDoubleRange $doubleRange)
   {
@@ -41,7 +41,7 @@ class EnterpriseCrmEventbusProtoParamSpecEntryValidationRule extends \Google\Mod
     return $this->doubleRange;
   }
   /**
-   * @param EnterpriseCrmEventbusProtoParamSpecEntryValidationRuleIntRange $intRange
+   * @param EnterpriseCrmEventbusProtoParamSpecEntryValidationRuleIntRange
    */
   public function setIntRange(EnterpriseCrmEventbusProtoParamSpecEntryValidationRuleIntRange $intRange)
   {
@@ -55,7 +55,7 @@ class EnterpriseCrmEventbusProtoParamSpecEntryValidationRule extends \Google\Mod
     return $this->intRange;
   }
   /**
-   * @param EnterpriseCrmEventbusProtoParamSpecEntryValidationRuleStringRegex $stringRegex
+   * @param EnterpriseCrmEventbusProtoParamSpecEntryValidationRuleStringRegex
    */
   public function setStringRegex(EnterpriseCrmEventbusProtoParamSpecEntryValidationRuleStringRegex $stringRegex)
   {

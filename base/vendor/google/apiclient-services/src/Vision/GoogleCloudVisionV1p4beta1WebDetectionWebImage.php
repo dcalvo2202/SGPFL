@@ -20,22 +20,16 @@ namespace Google\Service\Vision;
 class GoogleCloudVisionV1p4beta1WebDetectionWebImage extends \Google\Model
 {
   /**
-   * (Deprecated) Overall relevancy score for the image.
-   *
    * @var float
    */
   public $score;
   /**
-   * The result image URL.
-   *
    * @var string
    */
   public $url;
 
   /**
-   * (Deprecated) Overall relevancy score for the image.
-   *
-   * @param float $score
+   * @param float
    */
   public function setScore($score)
   {
@@ -49,9 +43,7 @@ class GoogleCloudVisionV1p4beta1WebDetectionWebImage extends \Google\Model
     return $this->score;
   }
   /**
-   * The result image URL.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

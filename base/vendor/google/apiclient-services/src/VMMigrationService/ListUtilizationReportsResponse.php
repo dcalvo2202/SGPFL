@@ -21,15 +21,10 @@ class ListUtilizationReportsResponse extends \Google\Collection
 {
   protected $collection_key = 'utilizationReports';
   /**
-   * Output only. A token, which can be sent as `page_token` to retrieve the
-   * next page. If this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Output only. Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
@@ -37,10 +32,7 @@ class ListUtilizationReportsResponse extends \Google\Collection
   protected $utilizationReportsDataType = 'array';
 
   /**
-   * Output only. A token, which can be sent as `page_token` to retrieve the
-   * next page. If this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -54,9 +46,7 @@ class ListUtilizationReportsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Output only. Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {
@@ -70,9 +60,7 @@ class ListUtilizationReportsResponse extends \Google\Collection
     return $this->unreachable;
   }
   /**
-   * Output only. The list of reports.
-   *
-   * @param UtilizationReport[] $utilizationReports
+   * @param UtilizationReport[]
    */
   public function setUtilizationReports($utilizationReports)
   {

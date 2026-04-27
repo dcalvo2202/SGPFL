@@ -25,9 +25,7 @@ class EnvironmentConfig extends \Google\Model
   protected $peripheralsConfigDataType = '';
 
   /**
-   * Optional. Execution configuration for a workload.
-   *
-   * @param ExecutionConfig $executionConfig
+   * @param ExecutionConfig
    */
   public function setExecutionConfig(ExecutionConfig $executionConfig)
   {
@@ -41,9 +39,7 @@ class EnvironmentConfig extends \Google\Model
     return $this->executionConfig;
   }
   /**
-   * Optional. Peripherals configuration that workload has access to.
-   *
-   * @param PeripheralsConfig $peripheralsConfig
+   * @param PeripheralsConfig
    */
   public function setPeripheralsConfig(PeripheralsConfig $peripheralsConfig)
   {

@@ -29,10 +29,7 @@ class AutomationRule extends \Google\Model
   protected $timedPromoteReleaseRuleDataType = '';
 
   /**
-   * Optional. The `AdvanceRolloutRule` will automatically advance a successful
-   * Rollout.
-   *
-   * @param AdvanceRolloutRule $advanceRolloutRule
+   * @param AdvanceRolloutRule
    */
   public function setAdvanceRolloutRule(AdvanceRolloutRule $advanceRolloutRule)
   {
@@ -46,10 +43,7 @@ class AutomationRule extends \Google\Model
     return $this->advanceRolloutRule;
   }
   /**
-   * Optional. `PromoteReleaseRule` will automatically promote a release from
-   * the current target to a specified target.
-   *
-   * @param PromoteReleaseRule $promoteReleaseRule
+   * @param PromoteReleaseRule
    */
   public function setPromoteReleaseRule(PromoteReleaseRule $promoteReleaseRule)
   {
@@ -63,10 +57,7 @@ class AutomationRule extends \Google\Model
     return $this->promoteReleaseRule;
   }
   /**
-   * Optional. The `RepairRolloutRule` will automatically repair a failed
-   * rollout.
-   *
-   * @param RepairRolloutRule $repairRolloutRule
+   * @param RepairRolloutRule
    */
   public function setRepairRolloutRule(RepairRolloutRule $repairRolloutRule)
   {
@@ -80,11 +71,7 @@ class AutomationRule extends \Google\Model
     return $this->repairRolloutRule;
   }
   /**
-   * Optional. The `TimedPromoteReleaseRule` will automatically promote a
-   * release from the current target(s) to the specified target(s) on a
-   * configured schedule.
-   *
-   * @param TimedPromoteReleaseRule $timedPromoteReleaseRule
+   * @param TimedPromoteReleaseRule
    */
   public function setTimedPromoteReleaseRule(TimedPromoteReleaseRule $timedPromoteReleaseRule)
   {

@@ -20,24 +20,18 @@ namespace Google\Service\Slides;
 class TableRange extends \Google\Model
 {
   /**
-   * The column span of the table range.
-   *
    * @var int
    */
   public $columnSpan;
   protected $locationType = TableCellLocation::class;
   protected $locationDataType = '';
   /**
-   * The row span of the table range.
-   *
    * @var int
    */
   public $rowSpan;
 
   /**
-   * The column span of the table range.
-   *
-   * @param int $columnSpan
+   * @param int
    */
   public function setColumnSpan($columnSpan)
   {
@@ -51,9 +45,7 @@ class TableRange extends \Google\Model
     return $this->columnSpan;
   }
   /**
-   * The starting location of the table range.
-   *
-   * @param TableCellLocation $location
+   * @param TableCellLocation
    */
   public function setLocation(TableCellLocation $location)
   {
@@ -67,9 +59,7 @@ class TableRange extends \Google\Model
     return $this->location;
   }
   /**
-   * The row span of the table range.
-   *
-   * @param int $rowSpan
+   * @param int
    */
   public function setRowSpan($rowSpan)
   {

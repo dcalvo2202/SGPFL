@@ -24,9 +24,7 @@ class GoogleChecksReportV1alphaCheckPermissionRestrictionViolationEvidence exten
   protected $permissionDetailsDataType = 'array';
 
   /**
-   * Permissions in violation.
-   *
-   * @param GoogleChecksReportV1alphaCheckPermissionRestrictionViolationEvidencePermissionDetails[] $permissionDetails
+   * @param GoogleChecksReportV1alphaCheckPermissionRestrictionViolationEvidencePermissionDetails[]
    */
   public function setPermissionDetails($permissionDetails)
   {

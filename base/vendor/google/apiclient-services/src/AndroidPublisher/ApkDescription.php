@@ -24,9 +24,6 @@ class ApkDescription extends \Google\Model
   protected $instantApkMetadataType = SplitApkMetadata::class;
   protected $instantApkMetadataDataType = '';
   /**
-   * Path of the Apk, will be in the following format: .apk where DownloadId is
-   * the ID used to download the apk using GeneratedApks.Download API.
-   *
    * @var string
    */
   public $path;
@@ -38,9 +35,7 @@ class ApkDescription extends \Google\Model
   protected $targetingDataType = '';
 
   /**
-   * Set only for asset slices.
-   *
-   * @param SplitApkMetadata $assetSliceMetadata
+   * @param SplitApkMetadata
    */
   public function setAssetSliceMetadata(SplitApkMetadata $assetSliceMetadata)
   {
@@ -54,9 +49,7 @@ class ApkDescription extends \Google\Model
     return $this->assetSliceMetadata;
   }
   /**
-   * Set only for Instant split APKs.
-   *
-   * @param SplitApkMetadata $instantApkMetadata
+   * @param SplitApkMetadata
    */
   public function setInstantApkMetadata(SplitApkMetadata $instantApkMetadata)
   {
@@ -70,10 +63,7 @@ class ApkDescription extends \Google\Model
     return $this->instantApkMetadata;
   }
   /**
-   * Path of the Apk, will be in the following format: .apk where DownloadId is
-   * the ID used to download the apk using GeneratedApks.Download API.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {
@@ -87,9 +77,7 @@ class ApkDescription extends \Google\Model
     return $this->path;
   }
   /**
-   * Set only for Split APKs.
-   *
-   * @param SplitApkMetadata $splitApkMetadata
+   * @param SplitApkMetadata
    */
   public function setSplitApkMetadata(SplitApkMetadata $splitApkMetadata)
   {
@@ -103,9 +91,7 @@ class ApkDescription extends \Google\Model
     return $this->splitApkMetadata;
   }
   /**
-   * Set only for standalone APKs.
-   *
-   * @param StandaloneApkMetadata $standaloneApkMetadata
+   * @param StandaloneApkMetadata
    */
   public function setStandaloneApkMetadata(StandaloneApkMetadata $standaloneApkMetadata)
   {
@@ -119,9 +105,7 @@ class ApkDescription extends \Google\Model
     return $this->standaloneApkMetadata;
   }
   /**
-   * Apk-level targeting.
-   *
-   * @param ApkTargeting $targeting
+   * @param ApkTargeting
    */
   public function setTargeting(ApkTargeting $targeting)
   {

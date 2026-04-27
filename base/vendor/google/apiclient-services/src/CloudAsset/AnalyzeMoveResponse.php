@@ -24,10 +24,7 @@ class AnalyzeMoveResponse extends \Google\Collection
   protected $moveAnalysisDataType = 'array';
 
   /**
-   * The list of analyses returned from performing the intended resource move
-   * analysis. The analysis is grouped by different Google Cloud services.
-   *
-   * @param MoveAnalysis[] $moveAnalysis
+   * @param MoveAnalysis[]
    */
   public function setMoveAnalysis($moveAnalysis)
   {

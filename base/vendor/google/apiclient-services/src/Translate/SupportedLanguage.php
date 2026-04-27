@@ -20,38 +20,24 @@ namespace Google\Service\Translate;
 class SupportedLanguage extends \Google\Model
 {
   /**
-   * Human-readable name of the language localized in the display language
-   * specified in the request.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Supported language code, generally consisting of its ISO 639-1 identifier,
-   * for example, 'en', 'ja'. In certain cases, ISO-639 codes including language
-   * and region identifiers are returned (for example, 'zh-TW' and 'zh-CN').
-   *
    * @var string
    */
   public $languageCode;
   /**
-   * Can be used as a source language.
-   *
    * @var bool
    */
   public $supportSource;
   /**
-   * Can be used as a target language.
-   *
    * @var bool
    */
   public $supportTarget;
 
   /**
-   * Human-readable name of the language localized in the display language
-   * specified in the request.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -65,11 +51,7 @@ class SupportedLanguage extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Supported language code, generally consisting of its ISO 639-1 identifier,
-   * for example, 'en', 'ja'. In certain cases, ISO-639 codes including language
-   * and region identifiers are returned (for example, 'zh-TW' and 'zh-CN').
-   *
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {
@@ -83,9 +65,7 @@ class SupportedLanguage extends \Google\Model
     return $this->languageCode;
   }
   /**
-   * Can be used as a source language.
-   *
-   * @param bool $supportSource
+   * @param bool
    */
   public function setSupportSource($supportSource)
   {
@@ -99,9 +79,7 @@ class SupportedLanguage extends \Google\Model
     return $this->supportSource;
   }
   /**
-   * Can be used as a target language.
-   *
-   * @param bool $supportTarget
+   * @param bool
    */
   public function setSupportTarget($supportTarget)
   {

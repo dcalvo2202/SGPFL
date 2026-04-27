@@ -20,12 +20,6 @@ namespace Google\Service\BigQueryConnectionService;
 class ConnectorConfigurationAuthentication extends \Google\Model
 {
   /**
-   * Output only. Google-managed service account associated with this
-   * connection, e.g., `service-{project_number}@gcp-sa-
-   * bigqueryconnection.iam.gserviceaccount.com`. BigQuery jobs using this
-   * connection will act as `service_account` identity while connecting to the
-   * datasource.
-   *
    * @var string
    */
   public $serviceAccount;
@@ -33,13 +27,7 @@ class ConnectorConfigurationAuthentication extends \Google\Model
   protected $usernamePasswordDataType = '';
 
   /**
-   * Output only. Google-managed service account associated with this
-   * connection, e.g., `service-{project_number}@gcp-sa-
-   * bigqueryconnection.iam.gserviceaccount.com`. BigQuery jobs using this
-   * connection will act as `service_account` identity while connecting to the
-   * datasource.
-   *
-   * @param string $serviceAccount
+   * @param string
    */
   public function setServiceAccount($serviceAccount)
   {
@@ -53,9 +41,7 @@ class ConnectorConfigurationAuthentication extends \Google\Model
     return $this->serviceAccount;
   }
   /**
-   * Username/password authentication.
-   *
-   * @param ConnectorConfigurationUsernamePassword $usernamePassword
+   * @param ConnectorConfigurationUsernamePassword
    */
   public function setUsernamePassword(ConnectorConfigurationUsernamePassword $usernamePassword)
   {

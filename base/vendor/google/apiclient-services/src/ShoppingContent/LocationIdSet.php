@@ -21,18 +21,12 @@ class LocationIdSet extends \Google\Collection
 {
   protected $collection_key = 'locationIds';
   /**
-   * A non-empty list of location IDs. They must all be of the same location
-   * type (for example, state).
-   *
    * @var string[]
    */
   public $locationIds;
 
   /**
-   * A non-empty list of location IDs. They must all be of the same location
-   * type (for example, state).
-   *
-   * @param string[] $locationIds
+   * @param string[]
    */
   public function setLocationIds($locationIds)
   {

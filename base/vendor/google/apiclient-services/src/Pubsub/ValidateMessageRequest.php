@@ -20,34 +20,14 @@ namespace Google\Service\Pubsub;
 class ValidateMessageRequest extends \Google\Model
 {
   /**
-   * Unspecified
-   */
-  public const ENCODING_ENCODING_UNSPECIFIED = 'ENCODING_UNSPECIFIED';
-  /**
-   * JSON encoding
-   */
-  public const ENCODING_JSON = 'JSON';
-  /**
-   * Binary encoding, as defined by the schema type. For some schema types,
-   * binary encoding may not be available.
-   */
-  public const ENCODING_BINARY = 'BINARY';
-  /**
-   * The encoding expected for messages
-   *
    * @var string
    */
   public $encoding;
   /**
-   * Message to validate against the provided `schema_spec`.
-   *
    * @var string
    */
   public $message;
   /**
-   * Name of the schema against which to validate. Format is
-   * `projects/{project}/schemas/{schema}`.
-   *
    * @var string
    */
   public $name;
@@ -55,27 +35,21 @@ class ValidateMessageRequest extends \Google\Model
   protected $schemaDataType = '';
 
   /**
-   * The encoding expected for messages
-   *
-   * Accepted values: ENCODING_UNSPECIFIED, JSON, BINARY
-   *
-   * @param self::ENCODING_* $encoding
+   * @param string
    */
   public function setEncoding($encoding)
   {
     $this->encoding = $encoding;
   }
   /**
-   * @return self::ENCODING_*
+   * @return string
    */
   public function getEncoding()
   {
     return $this->encoding;
   }
   /**
-   * Message to validate against the provided `schema_spec`.
-   *
-   * @param string $message
+   * @param string
    */
   public function setMessage($message)
   {
@@ -89,10 +63,7 @@ class ValidateMessageRequest extends \Google\Model
     return $this->message;
   }
   /**
-   * Name of the schema against which to validate. Format is
-   * `projects/{project}/schemas/{schema}`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -106,9 +77,7 @@ class ValidateMessageRequest extends \Google\Model
     return $this->name;
   }
   /**
-   * Ad-hoc schema against which to validate
-   *
-   * @param Schema $schema
+   * @param Schema
    */
   public function setSchema(Schema $schema)
   {

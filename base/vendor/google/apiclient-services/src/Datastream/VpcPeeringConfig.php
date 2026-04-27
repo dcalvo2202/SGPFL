@@ -20,23 +20,16 @@ namespace Google\Service\Datastream;
 class VpcPeeringConfig extends \Google\Model
 {
   /**
-   * Required. A free subnet for peering. (CIDR of /29)
-   *
    * @var string
    */
   public $subnet;
   /**
-   * Required. Fully qualified name of the VPC that Datastream will peer to.
-   * Format: `projects/{project}/global/{networks}/{name}`
-   *
    * @var string
    */
   public $vpc;
 
   /**
-   * Required. A free subnet for peering. (CIDR of /29)
-   *
-   * @param string $subnet
+   * @param string
    */
   public function setSubnet($subnet)
   {
@@ -50,10 +43,7 @@ class VpcPeeringConfig extends \Google\Model
     return $this->subnet;
   }
   /**
-   * Required. Fully qualified name of the VPC that Datastream will peer to.
-   * Format: `projects/{project}/global/{networks}/{name}`
-   *
-   * @param string $vpc
+   * @param string
    */
   public function setVpc($vpc)
   {

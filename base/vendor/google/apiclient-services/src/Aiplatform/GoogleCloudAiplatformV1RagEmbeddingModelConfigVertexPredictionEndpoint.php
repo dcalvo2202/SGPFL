@@ -20,35 +20,20 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1RagEmbeddingModelConfigVertexPredictionEndpoint extends \Google\Model
 {
   /**
-   * Required. The endpoint resource name. Format: `projects/{project}/locations
-   * /{location}/publishers/{publisher}/models/{model}` or
-   * `projects/{project}/locations/{location}/endpoints/{endpoint}`
-   *
    * @var string
    */
   public $endpoint;
   /**
-   * Output only. The resource name of the model that is deployed on the
-   * endpoint. Present only when the endpoint is not a publisher model. Pattern:
-   * `projects/{project}/locations/{location}/models/{model}`
-   *
    * @var string
    */
   public $model;
   /**
-   * Output only. Version ID of the model that is deployed on the endpoint.
-   * Present only when the endpoint is not a publisher model.
-   *
    * @var string
    */
   public $modelVersionId;
 
   /**
-   * Required. The endpoint resource name. Format: `projects/{project}/locations
-   * /{location}/publishers/{publisher}/models/{model}` or
-   * `projects/{project}/locations/{location}/endpoints/{endpoint}`
-   *
-   * @param string $endpoint
+   * @param string
    */
   public function setEndpoint($endpoint)
   {
@@ -62,11 +47,7 @@ class GoogleCloudAiplatformV1RagEmbeddingModelConfigVertexPredictionEndpoint ext
     return $this->endpoint;
   }
   /**
-   * Output only. The resource name of the model that is deployed on the
-   * endpoint. Present only when the endpoint is not a publisher model. Pattern:
-   * `projects/{project}/locations/{location}/models/{model}`
-   *
-   * @param string $model
+   * @param string
    */
   public function setModel($model)
   {
@@ -80,10 +61,7 @@ class GoogleCloudAiplatformV1RagEmbeddingModelConfigVertexPredictionEndpoint ext
     return $this->model;
   }
   /**
-   * Output only. Version ID of the model that is deployed on the endpoint.
-   * Present only when the endpoint is not a publisher model.
-   *
-   * @param string $modelVersionId
+   * @param string
    */
   public function setModelVersionId($modelVersionId)
   {

@@ -19,73 +19,34 @@ namespace Google\Service\DataCatalog;
 
 class GoogleCloudDatacatalogV1ColumnSchema extends \Google\Collection
 {
-  /**
-   * Unspecified.
-   */
-  public const HIGHEST_INDEXING_TYPE_INDEXING_TYPE_UNSPECIFIED = 'INDEXING_TYPE_UNSPECIFIED';
-  /**
-   * Column not a part of an index.
-   */
-  public const HIGHEST_INDEXING_TYPE_INDEXING_TYPE_NONE = 'INDEXING_TYPE_NONE';
-  /**
-   * Column Part of non unique index.
-   */
-  public const HIGHEST_INDEXING_TYPE_INDEXING_TYPE_NON_UNIQUE = 'INDEXING_TYPE_NON_UNIQUE';
-  /**
-   * Column part of unique index.
-   */
-  public const HIGHEST_INDEXING_TYPE_INDEXING_TYPE_UNIQUE = 'INDEXING_TYPE_UNIQUE';
-  /**
-   * Column part of the primary key.
-   */
-  public const HIGHEST_INDEXING_TYPE_INDEXING_TYPE_PRIMARY_KEY = 'INDEXING_TYPE_PRIMARY_KEY';
   protected $collection_key = 'subcolumns';
   /**
-   * Required. Name of the column. Must be a UTF-8 string without dots (.). The
-   * maximum size is 64 bytes.
-   *
    * @var string
    */
   public $column;
   /**
-   * Optional. Default value for the column.
-   *
    * @var string
    */
   public $defaultValue;
   /**
-   * Optional. Description of the column. Default value is an empty string. The
-   * description must be a UTF-8 string with the maximum size of 2000 bytes.
-   *
    * @var string
    */
   public $description;
   /**
-   * Optional. Garbage collection policy for the column or column family.
-   * Applies to systems like Cloud Bigtable.
-   *
    * @var string
    */
   public $gcRule;
   /**
-   * Optional. Most important inclusion of this column.
-   *
    * @var string
    */
   public $highestIndexingType;
   protected $lookerColumnSpecType = GoogleCloudDatacatalogV1ColumnSchemaLookerColumnSpec::class;
   protected $lookerColumnSpecDataType = '';
   /**
-   * Optional. A column's mode indicates whether values in this column are
-   * required, nullable, or repeated. Only `NULLABLE`, `REQUIRED`, and
-   * `REPEATED` values are supported. Default mode is `NULLABLE`.
-   *
    * @var string
    */
   public $mode;
   /**
-   * Optional. Ordinal position
-   *
    * @var int
    */
   public $ordinalPosition;
@@ -94,18 +55,12 @@ class GoogleCloudDatacatalogV1ColumnSchema extends \Google\Collection
   protected $subcolumnsType = GoogleCloudDatacatalogV1ColumnSchema::class;
   protected $subcolumnsDataType = 'array';
   /**
-   * Required. Type of the column. Must be a UTF-8 string with the maximum size
-   * of 128 bytes.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Required. Name of the column. Must be a UTF-8 string without dots (.). The
-   * maximum size is 64 bytes.
-   *
-   * @param string $column
+   * @param string
    */
   public function setColumn($column)
   {
@@ -119,9 +74,7 @@ class GoogleCloudDatacatalogV1ColumnSchema extends \Google\Collection
     return $this->column;
   }
   /**
-   * Optional. Default value for the column.
-   *
-   * @param string $defaultValue
+   * @param string
    */
   public function setDefaultValue($defaultValue)
   {
@@ -135,10 +88,7 @@ class GoogleCloudDatacatalogV1ColumnSchema extends \Google\Collection
     return $this->defaultValue;
   }
   /**
-   * Optional. Description of the column. Default value is an empty string. The
-   * description must be a UTF-8 string with the maximum size of 2000 bytes.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -152,10 +102,7 @@ class GoogleCloudDatacatalogV1ColumnSchema extends \Google\Collection
     return $this->description;
   }
   /**
-   * Optional. Garbage collection policy for the column or column family.
-   * Applies to systems like Cloud Bigtable.
-   *
-   * @param string $gcRule
+   * @param string
    */
   public function setGcRule($gcRule)
   {
@@ -169,28 +116,21 @@ class GoogleCloudDatacatalogV1ColumnSchema extends \Google\Collection
     return $this->gcRule;
   }
   /**
-   * Optional. Most important inclusion of this column.
-   *
-   * Accepted values: INDEXING_TYPE_UNSPECIFIED, INDEXING_TYPE_NONE,
-   * INDEXING_TYPE_NON_UNIQUE, INDEXING_TYPE_UNIQUE, INDEXING_TYPE_PRIMARY_KEY
-   *
-   * @param self::HIGHEST_INDEXING_TYPE_* $highestIndexingType
+   * @param string
    */
   public function setHighestIndexingType($highestIndexingType)
   {
     $this->highestIndexingType = $highestIndexingType;
   }
   /**
-   * @return self::HIGHEST_INDEXING_TYPE_*
+   * @return string
    */
   public function getHighestIndexingType()
   {
     return $this->highestIndexingType;
   }
   /**
-   * Looker specific column info of this column.
-   *
-   * @param GoogleCloudDatacatalogV1ColumnSchemaLookerColumnSpec $lookerColumnSpec
+   * @param GoogleCloudDatacatalogV1ColumnSchemaLookerColumnSpec
    */
   public function setLookerColumnSpec(GoogleCloudDatacatalogV1ColumnSchemaLookerColumnSpec $lookerColumnSpec)
   {
@@ -204,11 +144,7 @@ class GoogleCloudDatacatalogV1ColumnSchema extends \Google\Collection
     return $this->lookerColumnSpec;
   }
   /**
-   * Optional. A column's mode indicates whether values in this column are
-   * required, nullable, or repeated. Only `NULLABLE`, `REQUIRED`, and
-   * `REPEATED` values are supported. Default mode is `NULLABLE`.
-   *
-   * @param string $mode
+   * @param string
    */
   public function setMode($mode)
   {
@@ -222,9 +158,7 @@ class GoogleCloudDatacatalogV1ColumnSchema extends \Google\Collection
     return $this->mode;
   }
   /**
-   * Optional. Ordinal position
-   *
-   * @param int $ordinalPosition
+   * @param int
    */
   public function setOrdinalPosition($ordinalPosition)
   {
@@ -238,11 +172,7 @@ class GoogleCloudDatacatalogV1ColumnSchema extends \Google\Collection
     return $this->ordinalPosition;
   }
   /**
-   * Optional. The subtype of the RANGE, if the type of this field is RANGE. If
-   * the type is RANGE, this field is required. Possible values for the field
-   * element type of a RANGE include: * DATE * DATETIME * TIMESTAMP
-   *
-   * @param GoogleCloudDatacatalogV1ColumnSchemaFieldElementType $rangeElementType
+   * @param GoogleCloudDatacatalogV1ColumnSchemaFieldElementType
    */
   public function setRangeElementType(GoogleCloudDatacatalogV1ColumnSchemaFieldElementType $rangeElementType)
   {
@@ -256,10 +186,7 @@ class GoogleCloudDatacatalogV1ColumnSchema extends \Google\Collection
     return $this->rangeElementType;
   }
   /**
-   * Optional. Schema of sub-columns. A column can have zero or more sub-
-   * columns.
-   *
-   * @param GoogleCloudDatacatalogV1ColumnSchema[] $subcolumns
+   * @param GoogleCloudDatacatalogV1ColumnSchema[]
    */
   public function setSubcolumns($subcolumns)
   {
@@ -273,10 +200,7 @@ class GoogleCloudDatacatalogV1ColumnSchema extends \Google\Collection
     return $this->subcolumns;
   }
   /**
-   * Required. Type of the column. Must be a UTF-8 string with the maximum size
-   * of 128 bytes.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

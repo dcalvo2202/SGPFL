@@ -20,16 +20,12 @@ namespace Google\Service\Contactcenterinsights;
 class GoogleCloudContactcenterinsightsV1NoteQaQuestionNote extends \Google\Model
 {
   /**
-   * The question resource that the note is associated with.
-   *
    * @var string
    */
   public $qaQuestion;
 
   /**
-   * The question resource that the note is associated with.
-   *
-   * @param string $qaQuestion
+   * @param string
    */
   public function setQaQuestion($qaQuestion)
   {

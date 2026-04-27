@@ -22,8 +22,6 @@ class GoogleDatastoreAdminV1IndexOperationMetadata extends \Google\Model
   protected $commonType = GoogleDatastoreAdminV1CommonMetadata::class;
   protected $commonDataType = '';
   /**
-   * The index resource ID that this operation is acting on.
-   *
    * @var string
    */
   public $indexId;
@@ -31,9 +29,7 @@ class GoogleDatastoreAdminV1IndexOperationMetadata extends \Google\Model
   protected $progressEntitiesDataType = '';
 
   /**
-   * Metadata common to all Datastore Admin operations.
-   *
-   * @param GoogleDatastoreAdminV1CommonMetadata $common
+   * @param GoogleDatastoreAdminV1CommonMetadata
    */
   public function setCommon(GoogleDatastoreAdminV1CommonMetadata $common)
   {
@@ -47,9 +43,7 @@ class GoogleDatastoreAdminV1IndexOperationMetadata extends \Google\Model
     return $this->common;
   }
   /**
-   * The index resource ID that this operation is acting on.
-   *
-   * @param string $indexId
+   * @param string
    */
   public function setIndexId($indexId)
   {
@@ -63,9 +57,7 @@ class GoogleDatastoreAdminV1IndexOperationMetadata extends \Google\Model
     return $this->indexId;
   }
   /**
-   * An estimate of the number of entities processed.
-   *
-   * @param GoogleDatastoreAdminV1Progress $progressEntities
+   * @param GoogleDatastoreAdminV1Progress
    */
   public function setProgressEntities(GoogleDatastoreAdminV1Progress $progressEntities)
   {

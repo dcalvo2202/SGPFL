@@ -20,58 +20,40 @@ namespace Google\Service\YouTube;
 class LiveChatMessageAuthorDetails extends \Google\Model
 {
   /**
-   * The YouTube channel ID.
-   *
    * @var string
    */
   public $channelId;
   /**
-   * The channel's URL.
-   *
    * @var string
    */
   public $channelUrl;
   /**
-   * The channel's display name.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Whether the author is a moderator of the live chat.
-   *
    * @var bool
    */
   public $isChatModerator;
   /**
-   * Whether the author is the owner of the live chat.
-   *
    * @var bool
    */
   public $isChatOwner;
   /**
-   * Whether the author is a sponsor of the live chat.
-   *
    * @var bool
    */
   public $isChatSponsor;
   /**
-   * Whether the author's identity has been verified by YouTube.
-   *
    * @var bool
    */
   public $isVerified;
   /**
-   * The channels's avatar URL.
-   *
    * @var string
    */
   public $profileImageUrl;
 
   /**
-   * The YouTube channel ID.
-   *
-   * @param string $channelId
+   * @param string
    */
   public function setChannelId($channelId)
   {
@@ -85,9 +67,7 @@ class LiveChatMessageAuthorDetails extends \Google\Model
     return $this->channelId;
   }
   /**
-   * The channel's URL.
-   *
-   * @param string $channelUrl
+   * @param string
    */
   public function setChannelUrl($channelUrl)
   {
@@ -101,9 +81,7 @@ class LiveChatMessageAuthorDetails extends \Google\Model
     return $this->channelUrl;
   }
   /**
-   * The channel's display name.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -117,9 +95,7 @@ class LiveChatMessageAuthorDetails extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Whether the author is a moderator of the live chat.
-   *
-   * @param bool $isChatModerator
+   * @param bool
    */
   public function setIsChatModerator($isChatModerator)
   {
@@ -133,9 +109,7 @@ class LiveChatMessageAuthorDetails extends \Google\Model
     return $this->isChatModerator;
   }
   /**
-   * Whether the author is the owner of the live chat.
-   *
-   * @param bool $isChatOwner
+   * @param bool
    */
   public function setIsChatOwner($isChatOwner)
   {
@@ -149,9 +123,7 @@ class LiveChatMessageAuthorDetails extends \Google\Model
     return $this->isChatOwner;
   }
   /**
-   * Whether the author is a sponsor of the live chat.
-   *
-   * @param bool $isChatSponsor
+   * @param bool
    */
   public function setIsChatSponsor($isChatSponsor)
   {
@@ -165,9 +137,7 @@ class LiveChatMessageAuthorDetails extends \Google\Model
     return $this->isChatSponsor;
   }
   /**
-   * Whether the author's identity has been verified by YouTube.
-   *
-   * @param bool $isVerified
+   * @param bool
    */
   public function setIsVerified($isVerified)
   {
@@ -181,9 +151,7 @@ class LiveChatMessageAuthorDetails extends \Google\Model
     return $this->isVerified;
   }
   /**
-   * The channels's avatar URL.
-   *
-   * @param string $profileImageUrl
+   * @param string
    */
   public function setProfileImageUrl($profileImageUrl)
   {

@@ -21,14 +21,6 @@ class RRSetRoutingPolicyGeoPolicy extends \Google\Collection
 {
   protected $collection_key = 'items';
   /**
-   * Without fencing, if health check fails for all configured items in the
-   * current geo bucket, we failover to the next nearest geo bucket. With
-   * fencing, if health checking is enabled, as long as some targets in the
-   * current geo bucket are healthy, we return only the healthy targets.
-   * However, if all targets are unhealthy, we don't failover to the next
-   * nearest bucket; instead, we return all the items in the current bucket even
-   * when all targets are unhealthy.
-   *
    * @var bool
    */
   public $enableFencing;
@@ -40,15 +32,7 @@ class RRSetRoutingPolicyGeoPolicy extends \Google\Collection
   public $kind;
 
   /**
-   * Without fencing, if health check fails for all configured items in the
-   * current geo bucket, we failover to the next nearest geo bucket. With
-   * fencing, if health checking is enabled, as long as some targets in the
-   * current geo bucket are healthy, we return only the healthy targets.
-   * However, if all targets are unhealthy, we don't failover to the next
-   * nearest bucket; instead, we return all the items in the current bucket even
-   * when all targets are unhealthy.
-   *
-   * @param bool $enableFencing
+   * @param bool
    */
   public function setEnableFencing($enableFencing)
   {
@@ -62,10 +46,7 @@ class RRSetRoutingPolicyGeoPolicy extends \Google\Collection
     return $this->enableFencing;
   }
   /**
-   * The primary geo routing configuration. If there are multiple items with the
-   * same location, an error is returned instead.
-   *
-   * @param RRSetRoutingPolicyGeoPolicyGeoPolicyItem[] $items
+   * @param RRSetRoutingPolicyGeoPolicyGeoPolicyItem[]
    */
   public function setItems($items)
   {
@@ -79,7 +60,7 @@ class RRSetRoutingPolicyGeoPolicy extends \Google\Collection
     return $this->items;
   }
   /**
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

@@ -26,16 +26,12 @@ class SourceContext extends \Google\Model
   protected $gitType = GitSourceContext::class;
   protected $gitDataType = '';
   /**
-   * Labels with user defined metadata.
-   *
    * @var string[]
    */
   public $labels;
 
   /**
-   * A SourceContext referring to a revision in a Google Cloud Source Repo.
-   *
-   * @param CloudRepoSourceContext $cloudRepo
+   * @param CloudRepoSourceContext
    */
   public function setCloudRepo(CloudRepoSourceContext $cloudRepo)
   {
@@ -49,9 +45,7 @@ class SourceContext extends \Google\Model
     return $this->cloudRepo;
   }
   /**
-   * A SourceContext referring to a Gerrit project.
-   *
-   * @param GerritSourceContext $gerrit
+   * @param GerritSourceContext
    */
   public function setGerrit(GerritSourceContext $gerrit)
   {
@@ -65,9 +59,7 @@ class SourceContext extends \Google\Model
     return $this->gerrit;
   }
   /**
-   * A SourceContext referring to any third party Git repo (e.g., GitHub).
-   *
-   * @param GitSourceContext $git
+   * @param GitSourceContext
    */
   public function setGit(GitSourceContext $git)
   {
@@ -81,9 +73,7 @@ class SourceContext extends \Google\Model
     return $this->git;
   }
   /**
-   * Labels with user defined metadata.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {

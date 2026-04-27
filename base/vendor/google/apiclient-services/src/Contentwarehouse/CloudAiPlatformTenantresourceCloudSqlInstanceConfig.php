@@ -21,56 +21,36 @@ class CloudAiPlatformTenantresourceCloudSqlInstanceConfig extends \Google\Collec
 {
   protected $collection_key = 'mdbRolesForCorpAccess';
   /**
-   * Output only. The CloudSQL instance connection name.
-   *
    * @var string
    */
   public $cloudSqlInstanceConnectionName;
   /**
-   * Input/Output [Optional]. The CloudSQL instance name within SLM instance. If
-   * not set, a random UUIC will be generated as instance name.
-   *
    * @var string
    */
   public $cloudSqlInstanceName;
   /**
-   * Input [Optional]. The KMS key name or the KMS grant name used for CMEK
-   * encryption. Only set this field when provisioning new CloudSQL instances.
-   * For existing CloudSQL instances, this field will be ignored because CMEK
-   * re-encryption is not supported.
-   *
    * @var string
    */
   public $kmsKeyReference;
   /**
-   * Input [Optional]. MDB roles for corp access to CloudSQL instance.
-   *
    * @var string[]
    */
   public $mdbRolesForCorpAccess;
   /**
-   * Output only. The SLM instance's full resource name.
-   *
    * @var string
    */
   public $slmInstanceName;
   /**
-   * Input [Required]. The SLM instance template to provision CloudSQL.
-   *
    * @var string
    */
   public $slmInstanceTemplate;
   /**
-   * Input [Required]. The SLM instance type to provision CloudSQL.
-   *
    * @var string
    */
   public $slmInstanceType;
 
   /**
-   * Output only. The CloudSQL instance connection name.
-   *
-   * @param string $cloudSqlInstanceConnectionName
+   * @param string
    */
   public function setCloudSqlInstanceConnectionName($cloudSqlInstanceConnectionName)
   {
@@ -84,10 +64,7 @@ class CloudAiPlatformTenantresourceCloudSqlInstanceConfig extends \Google\Collec
     return $this->cloudSqlInstanceConnectionName;
   }
   /**
-   * Input/Output [Optional]. The CloudSQL instance name within SLM instance. If
-   * not set, a random UUIC will be generated as instance name.
-   *
-   * @param string $cloudSqlInstanceName
+   * @param string
    */
   public function setCloudSqlInstanceName($cloudSqlInstanceName)
   {
@@ -101,12 +78,7 @@ class CloudAiPlatformTenantresourceCloudSqlInstanceConfig extends \Google\Collec
     return $this->cloudSqlInstanceName;
   }
   /**
-   * Input [Optional]. The KMS key name or the KMS grant name used for CMEK
-   * encryption. Only set this field when provisioning new CloudSQL instances.
-   * For existing CloudSQL instances, this field will be ignored because CMEK
-   * re-encryption is not supported.
-   *
-   * @param string $kmsKeyReference
+   * @param string
    */
   public function setKmsKeyReference($kmsKeyReference)
   {
@@ -120,9 +92,7 @@ class CloudAiPlatformTenantresourceCloudSqlInstanceConfig extends \Google\Collec
     return $this->kmsKeyReference;
   }
   /**
-   * Input [Optional]. MDB roles for corp access to CloudSQL instance.
-   *
-   * @param string[] $mdbRolesForCorpAccess
+   * @param string[]
    */
   public function setMdbRolesForCorpAccess($mdbRolesForCorpAccess)
   {
@@ -136,9 +106,7 @@ class CloudAiPlatformTenantresourceCloudSqlInstanceConfig extends \Google\Collec
     return $this->mdbRolesForCorpAccess;
   }
   /**
-   * Output only. The SLM instance's full resource name.
-   *
-   * @param string $slmInstanceName
+   * @param string
    */
   public function setSlmInstanceName($slmInstanceName)
   {
@@ -152,9 +120,7 @@ class CloudAiPlatformTenantresourceCloudSqlInstanceConfig extends \Google\Collec
     return $this->slmInstanceName;
   }
   /**
-   * Input [Required]. The SLM instance template to provision CloudSQL.
-   *
-   * @param string $slmInstanceTemplate
+   * @param string
    */
   public function setSlmInstanceTemplate($slmInstanceTemplate)
   {
@@ -168,9 +134,7 @@ class CloudAiPlatformTenantresourceCloudSqlInstanceConfig extends \Google\Collec
     return $this->slmInstanceTemplate;
   }
   /**
-   * Input [Required]. The SLM instance type to provision CloudSQL.
-   *
-   * @param string $slmInstanceType
+   * @param string
    */
   public function setSlmInstanceType($slmInstanceType)
   {

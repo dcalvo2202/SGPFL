@@ -23,17 +23,12 @@ class ListMuteConfigsResponse extends \Google\Collection
   protected $muteConfigsType = GoogleCloudSecuritycenterV1MuteConfig::class;
   protected $muteConfigsDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The mute configs from the specified parent.
-   *
-   * @param GoogleCloudSecuritycenterV1MuteConfig[] $muteConfigs
+   * @param GoogleCloudSecuritycenterV1MuteConfig[]
    */
   public function setMuteConfigs($muteConfigs)
   {
@@ -47,10 +42,7 @@ class ListMuteConfigsResponse extends \Google\Collection
     return $this->muteConfigs;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

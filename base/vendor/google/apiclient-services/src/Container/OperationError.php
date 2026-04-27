@@ -20,28 +20,20 @@ namespace Google\Service\Container;
 class OperationError extends \Google\Model
 {
   /**
-   * Description of the error seen during the operation.
-   *
    * @var string
    */
   public $errorMessage;
   /**
-   * CloudKMS key resource that had the error.
-   *
    * @var string
    */
   public $keyName;
   /**
-   * Time when the CloudKMS error was seen.
-   *
    * @var string
    */
   public $timestamp;
 
   /**
-   * Description of the error seen during the operation.
-   *
-   * @param string $errorMessage
+   * @param string
    */
   public function setErrorMessage($errorMessage)
   {
@@ -55,9 +47,7 @@ class OperationError extends \Google\Model
     return $this->errorMessage;
   }
   /**
-   * CloudKMS key resource that had the error.
-   *
-   * @param string $keyName
+   * @param string
    */
   public function setKeyName($keyName)
   {
@@ -71,9 +61,7 @@ class OperationError extends \Google\Model
     return $this->keyName;
   }
   /**
-   * Time when the CloudKMS error was seen.
-   *
-   * @param string $timestamp
+   * @param string
    */
   public function setTimestamp($timestamp)
   {

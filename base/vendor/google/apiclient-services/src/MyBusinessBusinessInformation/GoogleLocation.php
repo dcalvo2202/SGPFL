@@ -22,26 +22,16 @@ class GoogleLocation extends \Google\Model
   protected $locationType = Location::class;
   protected $locationDataType = '';
   /**
-   * Resource name of this GoogleLocation, in the format
-   * `googleLocations/{googleLocationId}`.
-   *
    * @var string
    */
   public $name;
   /**
-   * A URL that will redirect the user to the request admin rights UI. This
-   * field is only present if the location has already been claimed by any user,
-   * including the current user.
-   *
    * @var string
    */
   public $requestAdminRightsUri;
 
   /**
-   * The sparsely populated Location information. This field can be re-used in
-   * CreateLocation if it is not currently claimed by a user.
-   *
-   * @param Location $location
+   * @param Location
    */
   public function setLocation(Location $location)
   {
@@ -55,10 +45,7 @@ class GoogleLocation extends \Google\Model
     return $this->location;
   }
   /**
-   * Resource name of this GoogleLocation, in the format
-   * `googleLocations/{googleLocationId}`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -72,11 +59,7 @@ class GoogleLocation extends \Google\Model
     return $this->name;
   }
   /**
-   * A URL that will redirect the user to the request admin rights UI. This
-   * field is only present if the location has already been claimed by any user,
-   * including the current user.
-   *
-   * @param string $requestAdminRightsUri
+   * @param string
    */
   public function setRequestAdminRightsUri($requestAdminRightsUri)
   {

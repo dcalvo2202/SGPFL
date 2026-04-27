@@ -20,29 +20,16 @@ namespace Google\Service\HangoutsChat;
 class Thread extends \Google\Model
 {
   /**
-   * Identifier. Resource name of the thread. Example:
-   * `spaces/{space}/threads/{thread}`
-   *
    * @var string
    */
   public $name;
   /**
-   * Optional. Input for creating or updating a thread. Otherwise, output only.
-   * ID for the thread. Supports up to 4000 characters. This ID is unique to the
-   * Chat app that sets it. For example, if multiple Chat apps create a message
-   * using the same thread key, the messages are posted in different threads. To
-   * reply in a thread created by a person or another Chat app, specify the
-   * thread `name` field instead.
-   *
    * @var string
    */
   public $threadKey;
 
   /**
-   * Identifier. Resource name of the thread. Example:
-   * `spaces/{space}/threads/{thread}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -56,14 +43,7 @@ class Thread extends \Google\Model
     return $this->name;
   }
   /**
-   * Optional. Input for creating or updating a thread. Otherwise, output only.
-   * ID for the thread. Supports up to 4000 characters. This ID is unique to the
-   * Chat app that sets it. For example, if multiple Chat apps create a message
-   * using the same thread key, the messages are posted in different threads. To
-   * reply in a thread created by a person or another Chat app, specify the
-   * thread `name` field instead.
-   *
-   * @param string $threadKey
+   * @param string
    */
   public function setThreadKey($threadKey)
   {

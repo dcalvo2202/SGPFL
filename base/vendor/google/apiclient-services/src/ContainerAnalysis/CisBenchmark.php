@@ -20,30 +20,6 @@ namespace Google\Service\ContainerAnalysis;
 class CisBenchmark extends \Google\Model
 {
   /**
-   * Unknown.
-   */
-  public const SEVERITY_SEVERITY_UNSPECIFIED = 'SEVERITY_UNSPECIFIED';
-  /**
-   * Minimal severity.
-   */
-  public const SEVERITY_MINIMAL = 'MINIMAL';
-  /**
-   * Low severity.
-   */
-  public const SEVERITY_LOW = 'LOW';
-  /**
-   * Medium severity.
-   */
-  public const SEVERITY_MEDIUM = 'MEDIUM';
-  /**
-   * High severity.
-   */
-  public const SEVERITY_HIGH = 'HIGH';
-  /**
-   * Critical severity.
-   */
-  public const SEVERITY_CRITICAL = 'CRITICAL';
-  /**
    * @var int
    */
   public $profileLevel;
@@ -53,7 +29,7 @@ class CisBenchmark extends \Google\Model
   public $severity;
 
   /**
-   * @param int $profileLevel
+   * @param int
    */
   public function setProfileLevel($profileLevel)
   {
@@ -67,14 +43,14 @@ class CisBenchmark extends \Google\Model
     return $this->profileLevel;
   }
   /**
-   * @param self::SEVERITY_* $severity
+   * @param string
    */
   public function setSeverity($severity)
   {
     $this->severity = $severity;
   }
   /**
-   * @return self::SEVERITY_*
+   * @return string
    */
   public function getSeverity()
   {

@@ -25,78 +25,54 @@ class Application extends \Google\Collection
         "leaderboardCount" => "leaderboard_count",
   ];
   /**
-   * The number of achievements visible to the currently authenticated player.
-   *
    * @var int
    */
   public $achievementCount;
   protected $assetsType = ImageAsset::class;
   protected $assetsDataType = 'array';
   /**
-   * The author of the application.
-   *
    * @var string
    */
   public $author;
   protected $categoryType = ApplicationCategory::class;
   protected $categoryDataType = '';
   /**
-   * The description of the application.
-   *
    * @var string
    */
   public $description;
   /**
-   * A list of features that have been enabled for the application.
-   *
    * @var string[]
    */
   public $enabledFeatures;
   /**
-   * The ID of the application.
-   *
    * @var string
    */
   public $id;
   protected $instancesType = Instance::class;
   protected $instancesDataType = 'array';
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#application`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The last updated timestamp of the application.
-   *
    * @var string
    */
   public $lastUpdatedTimestamp;
   /**
-   * The number of leaderboards visible to the currently authenticated player.
-   *
    * @var int
    */
   public $leaderboardCount;
   /**
-   * The name of the application.
-   *
    * @var string
    */
   public $name;
   /**
-   * A hint to the client UI for what color to use as an app-themed color. The
-   * color is given as an RGB triplet (e.g. "E0E0E0").
-   *
    * @var string
    */
   public $themeColor;
 
   /**
-   * The number of achievements visible to the currently authenticated player.
-   *
-   * @param int $achievementCount
+   * @param int
    */
   public function setAchievementCount($achievementCount)
   {
@@ -110,9 +86,7 @@ class Application extends \Google\Collection
     return $this->achievementCount;
   }
   /**
-   * The assets of the application.
-   *
-   * @param ImageAsset[] $assets
+   * @param ImageAsset[]
    */
   public function setAssets($assets)
   {
@@ -126,9 +100,7 @@ class Application extends \Google\Collection
     return $this->assets;
   }
   /**
-   * The author of the application.
-   *
-   * @param string $author
+   * @param string
    */
   public function setAuthor($author)
   {
@@ -142,9 +114,7 @@ class Application extends \Google\Collection
     return $this->author;
   }
   /**
-   * The category of the application.
-   *
-   * @param ApplicationCategory $category
+   * @param ApplicationCategory
    */
   public function setCategory(ApplicationCategory $category)
   {
@@ -158,9 +128,7 @@ class Application extends \Google\Collection
     return $this->category;
   }
   /**
-   * The description of the application.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -174,9 +142,7 @@ class Application extends \Google\Collection
     return $this->description;
   }
   /**
-   * A list of features that have been enabled for the application.
-   *
-   * @param string[] $enabledFeatures
+   * @param string[]
    */
   public function setEnabledFeatures($enabledFeatures)
   {
@@ -190,9 +156,7 @@ class Application extends \Google\Collection
     return $this->enabledFeatures;
   }
   /**
-   * The ID of the application.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -206,9 +170,7 @@ class Application extends \Google\Collection
     return $this->id;
   }
   /**
-   * The instances of the application.
-   *
-   * @param Instance[] $instances
+   * @param Instance[]
    */
   public function setInstances($instances)
   {
@@ -222,10 +184,7 @@ class Application extends \Google\Collection
     return $this->instances;
   }
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#application`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -239,9 +198,7 @@ class Application extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The last updated timestamp of the application.
-   *
-   * @param string $lastUpdatedTimestamp
+   * @param string
    */
   public function setLastUpdatedTimestamp($lastUpdatedTimestamp)
   {
@@ -255,9 +212,7 @@ class Application extends \Google\Collection
     return $this->lastUpdatedTimestamp;
   }
   /**
-   * The number of leaderboards visible to the currently authenticated player.
-   *
-   * @param int $leaderboardCount
+   * @param int
    */
   public function setLeaderboardCount($leaderboardCount)
   {
@@ -271,9 +226,7 @@ class Application extends \Google\Collection
     return $this->leaderboardCount;
   }
   /**
-   * The name of the application.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -287,10 +240,7 @@ class Application extends \Google\Collection
     return $this->name;
   }
   /**
-   * A hint to the client UI for what color to use as an app-themed color. The
-   * color is given as an RGB triplet (e.g. "E0E0E0").
-   *
-   * @param string $themeColor
+   * @param string
    */
   public function setThemeColor($themeColor)
   {

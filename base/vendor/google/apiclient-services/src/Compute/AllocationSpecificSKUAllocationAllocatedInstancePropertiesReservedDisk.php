@@ -19,27 +19,17 @@ namespace Google\Service\Compute;
 
 class AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk extends \Google\Model
 {
-  public const INTERFACE_NVME = 'NVME';
-  public const INTERFACE_SCSI = 'SCSI';
   /**
-   * Specifies the size of the disk in base-2 GB.
-   *
    * @var string
    */
   public $diskSizeGb;
   /**
-   * Specifies the disk interface to use for attaching this disk, which is
-   * either SCSI or NVME. The default isSCSI. For performance characteristics of
-   * SCSI over NVMe, seeLocal SSD performance.
-   *
    * @var string
    */
   public $interface;
 
   /**
-   * Specifies the size of the disk in base-2 GB.
-   *
-   * @param string $diskSizeGb
+   * @param string
    */
   public function setDiskSizeGb($diskSizeGb)
   {
@@ -53,20 +43,14 @@ class AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk ext
     return $this->diskSizeGb;
   }
   /**
-   * Specifies the disk interface to use for attaching this disk, which is
-   * either SCSI or NVME. The default isSCSI. For performance characteristics of
-   * SCSI over NVMe, seeLocal SSD performance.
-   *
-   * Accepted values: NVME, SCSI
-   *
-   * @param self::INTERFACE_* $interface
+   * @param string
    */
   public function setInterface($interface)
   {
     $this->interface = $interface;
   }
   /**
-   * @return self::INTERFACE_*
+   * @return string
    */
   public function getInterface()
   {

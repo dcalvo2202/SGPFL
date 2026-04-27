@@ -20,22 +20,16 @@ namespace Google\Service\Datastream;
 class SqlServerObjectIdentifier extends \Google\Model
 {
   /**
-   * Required. The schema name.
-   *
    * @var string
    */
   public $schema;
   /**
-   * Required. The table name.
-   *
    * @var string
    */
   public $table;
 
   /**
-   * Required. The schema name.
-   *
-   * @param string $schema
+   * @param string
    */
   public function setSchema($schema)
   {
@@ -49,9 +43,7 @@ class SqlServerObjectIdentifier extends \Google\Model
     return $this->schema;
   }
   /**
-   * Required. The table name.
-   *
-   * @param string $table
+   * @param string
    */
   public function setTable($table)
   {

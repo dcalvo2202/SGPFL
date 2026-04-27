@@ -20,16 +20,12 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1EntryTypeAspectInfo extends \Google\Model
 {
   /**
-   * Required aspect type for the entry type.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Required aspect type for the entry type.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

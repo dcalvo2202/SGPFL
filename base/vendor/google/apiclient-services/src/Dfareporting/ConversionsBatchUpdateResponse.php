@@ -21,15 +21,10 @@ class ConversionsBatchUpdateResponse extends \Google\Collection
 {
   protected $collection_key = 'status';
   /**
-   * Indicates that some or all conversions failed to update.
-   *
    * @var bool
    */
   public $hasFailures;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#conversionsBatchUpdateResponse".
-   *
    * @var string
    */
   public $kind;
@@ -37,9 +32,7 @@ class ConversionsBatchUpdateResponse extends \Google\Collection
   protected $statusDataType = 'array';
 
   /**
-   * Indicates that some or all conversions failed to update.
-   *
-   * @param bool $hasFailures
+   * @param bool
    */
   public function setHasFailures($hasFailures)
   {
@@ -53,10 +46,7 @@ class ConversionsBatchUpdateResponse extends \Google\Collection
     return $this->hasFailures;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#conversionsBatchUpdateResponse".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -70,10 +60,7 @@ class ConversionsBatchUpdateResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The update status of each conversion. Statuses are returned in the same
-   * order that conversions are updated.
-   *
-   * @param ConversionStatus[] $status
+   * @param ConversionStatus[]
    */
   public function setStatus($status)
   {

@@ -20,22 +20,16 @@ namespace Google\Service\RealTimeBidding;
 class DomainCalls extends \Google\Model
 {
   /**
-   * The domain name.
-   *
    * @var string
    */
   public $domain;
   /**
-   * Number of HTTP calls made to the domain.
-   *
    * @var int
    */
   public $httpCallCount;
 
   /**
-   * The domain name.
-   *
-   * @param string $domain
+   * @param string
    */
   public function setDomain($domain)
   {
@@ -49,9 +43,7 @@ class DomainCalls extends \Google\Model
     return $this->domain;
   }
   /**
-   * Number of HTTP calls made to the domain.
-   *
-   * @param int $httpCallCount
+   * @param int
    */
   public function setHttpCallCount($httpCallCount)
   {

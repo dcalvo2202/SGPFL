@@ -24,9 +24,7 @@ class GoogleAdsSearchads360V0ResourcesAssetGroupAssetCombinationData extends \Go
   protected $assetCombinationServedAssetsDataType = 'array';
 
   /**
-   * Output only. Served assets.
-   *
-   * @param GoogleAdsSearchads360V0CommonAssetUsage[] $assetCombinationServedAssets
+   * @param GoogleAdsSearchads360V0CommonAssetUsage[]
    */
   public function setAssetCombinationServedAssets($assetCombinationServedAssets)
   {

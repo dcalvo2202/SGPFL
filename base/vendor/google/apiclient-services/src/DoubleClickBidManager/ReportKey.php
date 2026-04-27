@@ -20,22 +20,16 @@ namespace Google\Service\DoubleClickBidManager;
 class ReportKey extends \Google\Model
 {
   /**
-   * Output only. The unique ID of the query that generated the report.
-   *
    * @var string
    */
   public $queryId;
   /**
-   * Output only. The unique ID of the report.
-   *
    * @var string
    */
   public $reportId;
 
   /**
-   * Output only. The unique ID of the query that generated the report.
-   *
-   * @param string $queryId
+   * @param string
    */
   public function setQueryId($queryId)
   {
@@ -49,9 +43,7 @@ class ReportKey extends \Google\Model
     return $this->queryId;
   }
   /**
-   * Output only. The unique ID of the report.
-   *
-   * @param string $reportId
+   * @param string
    */
   public function setReportId($reportId)
   {

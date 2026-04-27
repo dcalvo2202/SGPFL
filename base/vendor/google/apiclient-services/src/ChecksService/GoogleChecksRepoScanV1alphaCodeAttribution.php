@@ -20,36 +20,24 @@ namespace Google\Service\ChecksService;
 class GoogleChecksRepoScanV1alphaCodeAttribution extends \Google\Model
 {
   /**
-   * Optional. Code excerpt where the source was detected along with surrounding
-   * code.
-   *
    * @var string
    */
   public $codeExcerpt;
   /**
-   * Required. Line number (1-based).
-   *
    * @var int
    */
   public $lineNumber;
   /**
-   * Required. Path of the file.
-   *
    * @var string
    */
   public $path;
   /**
-   * Optional. Start line number of the code excerpt (1-based).
-   *
    * @var int
    */
   public $startLineNumber;
 
   /**
-   * Optional. Code excerpt where the source was detected along with surrounding
-   * code.
-   *
-   * @param string $codeExcerpt
+   * @param string
    */
   public function setCodeExcerpt($codeExcerpt)
   {
@@ -63,9 +51,7 @@ class GoogleChecksRepoScanV1alphaCodeAttribution extends \Google\Model
     return $this->codeExcerpt;
   }
   /**
-   * Required. Line number (1-based).
-   *
-   * @param int $lineNumber
+   * @param int
    */
   public function setLineNumber($lineNumber)
   {
@@ -79,9 +65,7 @@ class GoogleChecksRepoScanV1alphaCodeAttribution extends \Google\Model
     return $this->lineNumber;
   }
   /**
-   * Required. Path of the file.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {
@@ -95,9 +79,7 @@ class GoogleChecksRepoScanV1alphaCodeAttribution extends \Google\Model
     return $this->path;
   }
   /**
-   * Optional. Start line number of the code excerpt (1-based).
-   *
-   * @param int $startLineNumber
+   * @param int
    */
   public function setStartLineNumber($startLineNumber)
   {

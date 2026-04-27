@@ -26,9 +26,7 @@ class GoogleApiServiceusageV2betaAnalysisResult extends \Google\Collection
   protected $warningsDataType = 'array';
 
   /**
-   * Blocking information that would prevent the policy changes at runtime.
-   *
-   * @param GoogleApiServiceusageV2betaImpact[] $blockers
+   * @param GoogleApiServiceusageV2betaImpact[]
    */
   public function setBlockers($blockers)
   {
@@ -42,10 +40,7 @@ class GoogleApiServiceusageV2betaAnalysisResult extends \Google\Collection
     return $this->blockers;
   }
   /**
-   * Warning information indicating that the policy changes might be unsafe, but
-   * will not block the changes at runtime.
-   *
-   * @param GoogleApiServiceusageV2betaImpact[] $warnings
+   * @param GoogleApiServiceusageV2betaImpact[]
    */
   public function setWarnings($warnings)
   {

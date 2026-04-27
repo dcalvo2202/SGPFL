@@ -23,24 +23,16 @@ class ListCryptoKeysResponse extends \Google\Collection
   protected $cryptoKeysType = CryptoKey::class;
   protected $cryptoKeysDataType = 'array';
   /**
-   * A token to retrieve next page of results. Pass this value in
-   * ListCryptoKeysRequest.page_token to retrieve the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * The total number of CryptoKeys that matched the query. This field is not
-   * populated if ListCryptoKeysRequest.filter is applied.
-   *
    * @var int
    */
   public $totalSize;
 
   /**
-   * The list of CryptoKeys.
-   *
-   * @param CryptoKey[] $cryptoKeys
+   * @param CryptoKey[]
    */
   public function setCryptoKeys($cryptoKeys)
   {
@@ -54,10 +46,7 @@ class ListCryptoKeysResponse extends \Google\Collection
     return $this->cryptoKeys;
   }
   /**
-   * A token to retrieve next page of results. Pass this value in
-   * ListCryptoKeysRequest.page_token to retrieve the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -71,10 +60,7 @@ class ListCryptoKeysResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The total number of CryptoKeys that matched the query. This field is not
-   * populated if ListCryptoKeysRequest.filter is applied.
-   *
-   * @param int $totalSize
+   * @param int
    */
   public function setTotalSize($totalSize)
   {

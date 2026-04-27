@@ -26,10 +26,7 @@ class EnterpriseCrmEventbusProtoConditionalFailurePolicies extends \Google\Colle
   protected $failurePoliciesDataType = 'array';
 
   /**
-   * The default failure policy to be applied if no conditional failure policy
-   * matches
-   *
-   * @param EnterpriseCrmEventbusProtoFailurePolicy $defaultFailurePolicy
+   * @param EnterpriseCrmEventbusProtoFailurePolicy
    */
   public function setDefaultFailurePolicy(EnterpriseCrmEventbusProtoFailurePolicy $defaultFailurePolicy)
   {
@@ -43,9 +40,7 @@ class EnterpriseCrmEventbusProtoConditionalFailurePolicies extends \Google\Colle
     return $this->defaultFailurePolicy;
   }
   /**
-   * The list of failure policies that will be applied to the task in order.
-   *
-   * @param EnterpriseCrmEventbusProtoFailurePolicy[] $failurePolicies
+   * @param EnterpriseCrmEventbusProtoFailurePolicy[]
    */
   public function setFailurePolicies($failurePolicies)
   {

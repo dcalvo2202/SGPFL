@@ -21,22 +21,16 @@ class GoogleCloudDiscoveryengineV1betaSearchRequestEmbeddingSpecEmbeddingVector 
 {
   protected $collection_key = 'vector';
   /**
-   * Embedding field path in schema.
-   *
    * @var string
    */
   public $fieldPath;
   /**
-   * Query embedding vector.
-   *
    * @var float[]
    */
   public $vector;
 
   /**
-   * Embedding field path in schema.
-   *
-   * @param string $fieldPath
+   * @param string
    */
   public function setFieldPath($fieldPath)
   {
@@ -50,9 +44,7 @@ class GoogleCloudDiscoveryengineV1betaSearchRequestEmbeddingSpecEmbeddingVector 
     return $this->fieldPath;
   }
   /**
-   * Query embedding vector.
-   *
-   * @param float[] $vector
+   * @param float[]
    */
   public function setVector($vector)
   {

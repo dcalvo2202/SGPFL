@@ -19,59 +19,28 @@ namespace Google\Service\ManagedKafka;
 
 class LookupVersionRequest extends \Google\Collection
 {
-  /**
-   * No schema type. The default will be AVRO.
-   */
-  public const SCHEMA_TYPE_SCHEMA_TYPE_UNSPECIFIED = 'SCHEMA_TYPE_UNSPECIFIED';
-  /**
-   * Avro schema type.
-   */
-  public const SCHEMA_TYPE_AVRO = 'AVRO';
-  /**
-   * JSON schema type.
-   */
-  public const SCHEMA_TYPE_JSON = 'JSON';
-  /**
-   * Protobuf schema type.
-   */
-  public const SCHEMA_TYPE_PROTOBUF = 'PROTOBUF';
   protected $collection_key = 'references';
   /**
-   * Optional. If true, soft-deleted versions will be included in lookup, no
-   * matter if the subject is active or soft-deleted. If false, soft-deleted
-   * versions will be excluded. The default is false.
-   *
    * @var bool
    */
   public $deleted;
   /**
-   * Optional. If true, the schema will be normalized before being looked up.
-   * The default is false.
-   *
    * @var bool
    */
   public $normalize;
   protected $referencesType = SchemaReference::class;
   protected $referencesDataType = 'array';
   /**
-   * Required. The schema payload
-   *
    * @var string
    */
   public $schema;
   /**
-   * Optional. The schema type of the schema.
-   *
    * @var string
    */
   public $schemaType;
 
   /**
-   * Optional. If true, soft-deleted versions will be included in lookup, no
-   * matter if the subject is active or soft-deleted. If false, soft-deleted
-   * versions will be excluded. The default is false.
-   *
-   * @param bool $deleted
+   * @param bool
    */
   public function setDeleted($deleted)
   {
@@ -85,10 +54,7 @@ class LookupVersionRequest extends \Google\Collection
     return $this->deleted;
   }
   /**
-   * Optional. If true, the schema will be normalized before being looked up.
-   * The default is false.
-   *
-   * @param bool $normalize
+   * @param bool
    */
   public function setNormalize($normalize)
   {
@@ -102,9 +68,7 @@ class LookupVersionRequest extends \Google\Collection
     return $this->normalize;
   }
   /**
-   * Optional. The schema references used by the schema.
-   *
-   * @param SchemaReference[] $references
+   * @param SchemaReference[]
    */
   public function setReferences($references)
   {
@@ -118,9 +82,7 @@ class LookupVersionRequest extends \Google\Collection
     return $this->references;
   }
   /**
-   * Required. The schema payload
-   *
-   * @param string $schema
+   * @param string
    */
   public function setSchema($schema)
   {
@@ -134,18 +96,14 @@ class LookupVersionRequest extends \Google\Collection
     return $this->schema;
   }
   /**
-   * Optional. The schema type of the schema.
-   *
-   * Accepted values: SCHEMA_TYPE_UNSPECIFIED, AVRO, JSON, PROTOBUF
-   *
-   * @param self::SCHEMA_TYPE_* $schemaType
+   * @param string
    */
   public function setSchemaType($schemaType)
   {
     $this->schemaType = $schemaType;
   }
   /**
-   * @return self::SCHEMA_TYPE_*
+   * @return string
    */
   public function getSchemaType()
   {

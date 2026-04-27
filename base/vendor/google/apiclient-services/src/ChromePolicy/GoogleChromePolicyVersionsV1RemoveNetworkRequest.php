@@ -20,24 +20,16 @@ namespace Google\Service\ChromePolicy;
 class GoogleChromePolicyVersionsV1RemoveNetworkRequest extends \Google\Model
 {
   /**
-   * Required. The GUID of the network to remove.
-   *
    * @var string
    */
   public $networkId;
   /**
-   * Required. The target resource on which this network will be removed. The
-   * following resources are supported: * Organizational Unit
-   * ("orgunits/{orgunit_id}")
-   *
    * @var string
    */
   public $targetResource;
 
   /**
-   * Required. The GUID of the network to remove.
-   *
-   * @param string $networkId
+   * @param string
    */
   public function setNetworkId($networkId)
   {
@@ -51,11 +43,7 @@ class GoogleChromePolicyVersionsV1RemoveNetworkRequest extends \Google\Model
     return $this->networkId;
   }
   /**
-   * Required. The target resource on which this network will be removed. The
-   * following resources are supported: * Organizational Unit
-   * ("orgunits/{orgunit_id}")
-   *
-   * @param string $targetResource
+   * @param string
    */
   public function setTargetResource($targetResource)
   {

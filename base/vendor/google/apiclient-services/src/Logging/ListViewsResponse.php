@@ -21,10 +21,6 @@ class ListViewsResponse extends \Google\Collection
 {
   protected $collection_key = 'views';
   /**
-   * If there might be more results than appear in this response, then
-   * nextPageToken is included. To get the next set of results, call the same
-   * method again using the value of nextPageToken as pageToken.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -32,11 +28,7 @@ class ListViewsResponse extends \Google\Collection
   protected $viewsDataType = 'array';
 
   /**
-   * If there might be more results than appear in this response, then
-   * nextPageToken is included. To get the next set of results, call the same
-   * method again using the value of nextPageToken as pageToken.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -50,9 +42,7 @@ class ListViewsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * A list of views.
-   *
-   * @param LogView[] $views
+   * @param LogView[]
    */
   public function setViews($views)
   {

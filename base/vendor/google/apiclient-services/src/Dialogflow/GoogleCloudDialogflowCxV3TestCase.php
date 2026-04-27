@@ -48,7 +48,7 @@ class GoogleCloudDialogflowCxV3TestCase extends \Google\Collection
   protected $testConfigDataType = '';
 
   /**
-   * @param string $creationTime
+   * @param string
    */
   public function setCreationTime($creationTime)
   {
@@ -62,7 +62,7 @@ class GoogleCloudDialogflowCxV3TestCase extends \Google\Collection
     return $this->creationTime;
   }
   /**
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -76,7 +76,7 @@ class GoogleCloudDialogflowCxV3TestCase extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3TestCaseResult $lastTestResult
+   * @param GoogleCloudDialogflowCxV3TestCaseResult
    */
   public function setLastTestResult(GoogleCloudDialogflowCxV3TestCaseResult $lastTestResult)
   {
@@ -90,7 +90,7 @@ class GoogleCloudDialogflowCxV3TestCase extends \Google\Collection
     return $this->lastTestResult;
   }
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -104,7 +104,7 @@ class GoogleCloudDialogflowCxV3TestCase extends \Google\Collection
     return $this->name;
   }
   /**
-   * @param string $notes
+   * @param string
    */
   public function setNotes($notes)
   {
@@ -118,7 +118,7 @@ class GoogleCloudDialogflowCxV3TestCase extends \Google\Collection
     return $this->notes;
   }
   /**
-   * @param string[] $tags
+   * @param string[]
    */
   public function setTags($tags)
   {
@@ -132,7 +132,7 @@ class GoogleCloudDialogflowCxV3TestCase extends \Google\Collection
     return $this->tags;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3ConversationTurn[] $testCaseConversationTurns
+   * @param GoogleCloudDialogflowCxV3ConversationTurn[]
    */
   public function setTestCaseConversationTurns($testCaseConversationTurns)
   {
@@ -146,7 +146,7 @@ class GoogleCloudDialogflowCxV3TestCase extends \Google\Collection
     return $this->testCaseConversationTurns;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3TestConfig $testConfig
+   * @param GoogleCloudDialogflowCxV3TestConfig
    */
   public function setTestConfig(GoogleCloudDialogflowCxV3TestConfig $testConfig)
   {

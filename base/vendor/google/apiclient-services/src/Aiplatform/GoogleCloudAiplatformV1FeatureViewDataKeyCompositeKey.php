@@ -21,18 +21,12 @@ class GoogleCloudAiplatformV1FeatureViewDataKeyCompositeKey extends \Google\Coll
 {
   protected $collection_key = 'parts';
   /**
-   * Parts to construct Entity ID. Should match with the same ID columns as
-   * defined in FeatureView in the same order.
-   *
    * @var string[]
    */
   public $parts;
 
   /**
-   * Parts to construct Entity ID. Should match with the same ID columns as
-   * defined in FeatureView in the same order.
-   *
-   * @param string[] $parts
+   * @param string[]
    */
   public function setParts($parts)
   {

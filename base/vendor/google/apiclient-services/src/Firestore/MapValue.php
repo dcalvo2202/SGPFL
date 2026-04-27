@@ -23,12 +23,7 @@ class MapValue extends \Google\Model
   protected $fieldsDataType = 'map';
 
   /**
-   * The map's fields. The map keys represent field names. Field names matching
-   * the regular expression `__.*__` are reserved. Reserved field names are
-   * forbidden except in certain documented contexts. The map keys, represented
-   * as UTF-8, must not exceed 1,500 bytes and cannot be empty.
-   *
-   * @param Value[] $fields
+   * @param Value[]
    */
   public function setFields($fields)
   {

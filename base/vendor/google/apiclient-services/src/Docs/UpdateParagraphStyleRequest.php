@@ -20,13 +20,6 @@ namespace Google\Service\Docs;
 class UpdateParagraphStyleRequest extends \Google\Model
 {
   /**
-   * The fields that should be updated. At least one field must be specified.
-   * The root `paragraph_style` is implied and should not be specified. A single
-   * `"*"` can be used as short-hand for listing every field. For example, to
-   * update the paragraph style's alignment property, set `fields` to
-   * `"alignment"`. To reset a property to its default value, include its field
-   * name in the field mask but leave the field itself unset.
-   *
    * @var string
    */
   public $fields;
@@ -36,14 +29,7 @@ class UpdateParagraphStyleRequest extends \Google\Model
   protected $rangeDataType = '';
 
   /**
-   * The fields that should be updated. At least one field must be specified.
-   * The root `paragraph_style` is implied and should not be specified. A single
-   * `"*"` can be used as short-hand for listing every field. For example, to
-   * update the paragraph style's alignment property, set `fields` to
-   * `"alignment"`. To reset a property to its default value, include its field
-   * name in the field mask but leave the field itself unset.
-   *
-   * @param string $fields
+   * @param string
    */
   public function setFields($fields)
   {
@@ -57,11 +43,7 @@ class UpdateParagraphStyleRequest extends \Google\Model
     return $this->fields;
   }
   /**
-   * The styles to set on the paragraphs. Certain paragraph style changes may
-   * cause other changes in order to mirror the behavior of the Docs editor. See
-   * the documentation of ParagraphStyle for more information.
-   *
-   * @param ParagraphStyle $paragraphStyle
+   * @param ParagraphStyle
    */
   public function setParagraphStyle(ParagraphStyle $paragraphStyle)
   {
@@ -75,9 +57,7 @@ class UpdateParagraphStyleRequest extends \Google\Model
     return $this->paragraphStyle;
   }
   /**
-   * The range overlapping the paragraphs to style.
-   *
-   * @param Range $range
+   * @param Range
    */
   public function setRange(Range $range)
   {

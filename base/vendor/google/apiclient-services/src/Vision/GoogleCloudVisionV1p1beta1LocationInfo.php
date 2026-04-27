@@ -23,9 +23,7 @@ class GoogleCloudVisionV1p1beta1LocationInfo extends \Google\Model
   protected $latLngDataType = '';
 
   /**
-   * lat/long location coordinates.
-   *
-   * @param LatLng $latLng
+   * @param LatLng
    */
   public function setLatLng(LatLng $latLng)
   {

@@ -24,9 +24,7 @@ class ListAccountAdminsResponse extends \Google\Collection
   protected $accountAdminsDataType = 'array';
 
   /**
-   * A collection of Admin instances.
-   *
-   * @param Admin[] $accountAdmins
+   * @param Admin[]
    */
   public function setAccountAdmins($accountAdmins)
   {

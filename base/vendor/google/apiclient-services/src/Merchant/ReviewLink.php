@@ -20,36 +20,16 @@ namespace Google\Service\Merchant;
 class ReviewLink extends \Google\Model
 {
   /**
-   * Type unspecified.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * The review page contains only this single review.
-   */
-  public const TYPE_SINGLETON = 'SINGLETON';
-  /**
-   * The review page contains a group of reviews including this review.
-   */
-  public const TYPE_GROUP = 'GROUP';
-  /**
-   * Optional. The URI of the review landing page. For example:
-   * `http://www.example.com/review_5.html`.
-   *
    * @var string
    */
   public $link;
   /**
-   * Optional. Type of the review URI.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Optional. The URI of the review landing page. For example:
-   * `http://www.example.com/review_5.html`.
-   *
-   * @param string $link
+   * @param string
    */
   public function setLink($link)
   {
@@ -63,18 +43,14 @@ class ReviewLink extends \Google\Model
     return $this->link;
   }
   /**
-   * Optional. Type of the review URI.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, SINGLETON, GROUP
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

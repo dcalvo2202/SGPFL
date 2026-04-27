@@ -20,26 +20,12 @@ namespace Google\Service\Slides;
 class NotesProperties extends \Google\Model
 {
   /**
-   * The object ID of the shape on this notes page that contains the speaker
-   * notes for the corresponding slide. The actual shape may not always exist on
-   * the notes page. Inserting text using this object ID will automatically
-   * create the shape. In this case, the actual shape may have different object
-   * ID. The `GetPresentation` or `GetPage` action will always return the latest
-   * object ID.
-   *
    * @var string
    */
   public $speakerNotesObjectId;
 
   /**
-   * The object ID of the shape on this notes page that contains the speaker
-   * notes for the corresponding slide. The actual shape may not always exist on
-   * the notes page. Inserting text using this object ID will automatically
-   * create the shape. In this case, the actual shape may have different object
-   * ID. The `GetPresentation` or `GetPage` action will always return the latest
-   * object ID.
-   *
-   * @param string $speakerNotesObjectId
+   * @param string
    */
   public function setSpeakerNotesObjectId($speakerNotesObjectId)
   {

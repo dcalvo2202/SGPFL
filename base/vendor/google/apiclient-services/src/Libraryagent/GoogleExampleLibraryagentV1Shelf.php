@@ -20,24 +20,16 @@ namespace Google\Service\Libraryagent;
 class GoogleExampleLibraryagentV1Shelf extends \Google\Model
 {
   /**
-   * Output only. The resource name of the shelf. Shelf names have the form
-   * `shelves/{shelf_id}`. The name is ignored when creating a shelf.
-   *
    * @var string
    */
   public $name;
   /**
-   * The theme of the shelf
-   *
    * @var string
    */
   public $theme;
 
   /**
-   * Output only. The resource name of the shelf. Shelf names have the form
-   * `shelves/{shelf_id}`. The name is ignored when creating a shelf.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -51,9 +43,7 @@ class GoogleExampleLibraryagentV1Shelf extends \Google\Model
     return $this->name;
   }
   /**
-   * The theme of the shelf
-   *
-   * @param string $theme
+   * @param string
    */
   public function setTheme($theme)
   {

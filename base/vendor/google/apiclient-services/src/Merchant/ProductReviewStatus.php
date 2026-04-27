@@ -21,9 +21,6 @@ class ProductReviewStatus extends \Google\Collection
 {
   protected $collection_key = 'itemLevelIssues';
   /**
-   * Output only. Date on which the item has been created, in [ISO
-   * 8601](http://en.wikipedia.org/wiki/ISO_8601) format.
-   *
    * @var string
    */
   public $createTime;
@@ -32,18 +29,12 @@ class ProductReviewStatus extends \Google\Collection
   protected $itemLevelIssuesType = ProductReviewItemLevelIssue::class;
   protected $itemLevelIssuesDataType = 'array';
   /**
-   * Output only. Date on which the item has been last updated, in [ISO
-   * 8601](http://en.wikipedia.org/wiki/ISO_8601) format.
-   *
    * @var string
    */
   public $lastUpdateTime;
 
   /**
-   * Output only. Date on which the item has been created, in [ISO
-   * 8601](http://en.wikipedia.org/wiki/ISO_8601) format.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -57,9 +48,7 @@ class ProductReviewStatus extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Output only. The intended destinations for the product review.
-   *
-   * @param ProductReviewDestinationStatus[] $destinationStatuses
+   * @param ProductReviewDestinationStatus[]
    */
   public function setDestinationStatuses($destinationStatuses)
   {
@@ -73,9 +62,7 @@ class ProductReviewStatus extends \Google\Collection
     return $this->destinationStatuses;
   }
   /**
-   * Output only. A list of all issues associated with the product review.
-   *
-   * @param ProductReviewItemLevelIssue[] $itemLevelIssues
+   * @param ProductReviewItemLevelIssue[]
    */
   public function setItemLevelIssues($itemLevelIssues)
   {
@@ -89,10 +76,7 @@ class ProductReviewStatus extends \Google\Collection
     return $this->itemLevelIssues;
   }
   /**
-   * Output only. Date on which the item has been last updated, in [ISO
-   * 8601](http://en.wikipedia.org/wiki/ISO_8601) format.
-   *
-   * @param string $lastUpdateTime
+   * @param string
    */
   public function setLastUpdateTime($lastUpdateTime)
   {

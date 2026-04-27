@@ -33,10 +33,7 @@ class GoogleCloudRecaptchaenterpriseV1FirewallAction extends \Google\Model
   protected $substituteDataType = '';
 
   /**
-   * The user request did not match any policy and should be allowed access to
-   * the requested resource.
-   *
-   * @param GoogleCloudRecaptchaenterpriseV1FirewallActionAllowAction $allow
+   * @param GoogleCloudRecaptchaenterpriseV1FirewallActionAllowAction
    */
   public function setAllow(GoogleCloudRecaptchaenterpriseV1FirewallActionAllowAction $allow)
   {
@@ -50,10 +47,7 @@ class GoogleCloudRecaptchaenterpriseV1FirewallAction extends \Google\Model
     return $this->allow;
   }
   /**
-   * This action denies access to a given page. The user gets an HTTP error
-   * code.
-   *
-   * @param GoogleCloudRecaptchaenterpriseV1FirewallActionBlockAction $block
+   * @param GoogleCloudRecaptchaenterpriseV1FirewallActionBlockAction
    */
   public function setBlock(GoogleCloudRecaptchaenterpriseV1FirewallActionBlockAction $block)
   {
@@ -67,10 +61,7 @@ class GoogleCloudRecaptchaenterpriseV1FirewallAction extends \Google\Model
     return $this->block;
   }
   /**
-   * This action injects reCAPTCHA JavaScript code into the HTML page returned
-   * by the site backend.
-   *
-   * @param GoogleCloudRecaptchaenterpriseV1FirewallActionIncludeRecaptchaScriptAction $includeRecaptchaScript
+   * @param GoogleCloudRecaptchaenterpriseV1FirewallActionIncludeRecaptchaScriptAction
    */
   public function setIncludeRecaptchaScript(GoogleCloudRecaptchaenterpriseV1FirewallActionIncludeRecaptchaScriptAction $includeRecaptchaScript)
   {
@@ -84,10 +75,7 @@ class GoogleCloudRecaptchaenterpriseV1FirewallAction extends \Google\Model
     return $this->includeRecaptchaScript;
   }
   /**
-   * This action redirects the request to a reCAPTCHA interstitial to attach a
-   * token.
-   *
-   * @param GoogleCloudRecaptchaenterpriseV1FirewallActionRedirectAction $redirect
+   * @param GoogleCloudRecaptchaenterpriseV1FirewallActionRedirectAction
    */
   public function setRedirect(GoogleCloudRecaptchaenterpriseV1FirewallActionRedirectAction $redirect)
   {
@@ -101,10 +89,7 @@ class GoogleCloudRecaptchaenterpriseV1FirewallAction extends \Google\Model
     return $this->redirect;
   }
   /**
-   * This action sets a custom header but allow the request to continue to the
-   * customer backend.
-   *
-   * @param GoogleCloudRecaptchaenterpriseV1FirewallActionSetHeaderAction $setHeader
+   * @param GoogleCloudRecaptchaenterpriseV1FirewallActionSetHeaderAction
    */
   public function setSetHeader(GoogleCloudRecaptchaenterpriseV1FirewallActionSetHeaderAction $setHeader)
   {
@@ -118,9 +103,7 @@ class GoogleCloudRecaptchaenterpriseV1FirewallAction extends \Google\Model
     return $this->setHeader;
   }
   /**
-   * This action transparently serves a different page to an offending user.
-   *
-   * @param GoogleCloudRecaptchaenterpriseV1FirewallActionSubstituteAction $substitute
+   * @param GoogleCloudRecaptchaenterpriseV1FirewallActionSubstituteAction
    */
   public function setSubstitute(GoogleCloudRecaptchaenterpriseV1FirewallActionSubstituteAction $substitute)
   {

@@ -19,52 +19,33 @@ namespace Google\Service\Blogger;
 
 class BlogPerUserInfo extends \Google\Model
 {
-  public const ROLE_VIEW_TYPE_UNSPECIFIED = 'VIEW_TYPE_UNSPECIFIED';
-  public const ROLE_READER = 'READER';
-  public const ROLE_AUTHOR = 'AUTHOR';
-  public const ROLE_ADMIN = 'ADMIN';
   /**
-   * ID of the Blog resource.
-   *
    * @var string
    */
   public $blogId;
   /**
-   * True if the user has Admin level access to the blog.
-   *
    * @var bool
    */
   public $hasAdminAccess;
   /**
-   * The kind of this entity. Always blogger#blogPerUserInfo.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The Photo Album Key for the user when adding photos to the blog.
-   *
    * @var string
    */
   public $photosAlbumKey;
   /**
-   * Access permissions that the user has for the blog (ADMIN, AUTHOR, or
-   * READER).
-   *
    * @var string
    */
   public $role;
   /**
-   * ID of the User.
-   *
    * @var string
    */
   public $userId;
 
   /**
-   * ID of the Blog resource.
-   *
-   * @param string $blogId
+   * @param string
    */
   public function setBlogId($blogId)
   {
@@ -78,9 +59,7 @@ class BlogPerUserInfo extends \Google\Model
     return $this->blogId;
   }
   /**
-   * True if the user has Admin level access to the blog.
-   *
-   * @param bool $hasAdminAccess
+   * @param bool
    */
   public function setHasAdminAccess($hasAdminAccess)
   {
@@ -94,9 +73,7 @@ class BlogPerUserInfo extends \Google\Model
     return $this->hasAdminAccess;
   }
   /**
-   * The kind of this entity. Always blogger#blogPerUserInfo.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -110,9 +87,7 @@ class BlogPerUserInfo extends \Google\Model
     return $this->kind;
   }
   /**
-   * The Photo Album Key for the user when adding photos to the blog.
-   *
-   * @param string $photosAlbumKey
+   * @param string
    */
   public function setPhotosAlbumKey($photosAlbumKey)
   {
@@ -126,28 +101,21 @@ class BlogPerUserInfo extends \Google\Model
     return $this->photosAlbumKey;
   }
   /**
-   * Access permissions that the user has for the blog (ADMIN, AUTHOR, or
-   * READER).
-   *
-   * Accepted values: VIEW_TYPE_UNSPECIFIED, READER, AUTHOR, ADMIN
-   *
-   * @param self::ROLE_* $role
+   * @param string
    */
   public function setRole($role)
   {
     $this->role = $role;
   }
   /**
-   * @return self::ROLE_*
+   * @return string
    */
   public function getRole()
   {
     return $this->role;
   }
   /**
-   * ID of the User.
-   *
-   * @param string $userId
+   * @param string
    */
   public function setUserId($userId)
   {

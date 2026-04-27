@@ -20,29 +20,20 @@ namespace Google\Service\Vision;
 class GoogleCloudVisionV1p4beta1Celebrity extends \Google\Model
 {
   /**
-   * The Celebrity's description.
-   *
    * @var string
    */
   public $description;
   /**
-   * The Celebrity's display name.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * The resource name of the preloaded Celebrity. Has the format
-   * `builtin/{mid}`.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The Celebrity's description.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -56,9 +47,7 @@ class GoogleCloudVisionV1p4beta1Celebrity extends \Google\Model
     return $this->description;
   }
   /**
-   * The Celebrity's display name.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -72,10 +61,7 @@ class GoogleCloudVisionV1p4beta1Celebrity extends \Google\Model
     return $this->displayName;
   }
   /**
-   * The resource name of the preloaded Celebrity. Has the format
-   * `builtin/{mid}`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

@@ -25,35 +25,20 @@ class AndroidTestLoop extends \Google\Collection
   protected $appBundleType = AppBundle::class;
   protected $appBundleDataType = '';
   /**
-   * The java package for the application under test. The default is determined
-   * by examining the application's manifest.
-   *
    * @var string
    */
   public $appPackageId;
   /**
-   * The list of scenario labels that should be run during the test. The
-   * scenario labels should map to labels defined in the application's manifest.
-   * For example, player_experience and com.google.test.loops.player_experience
-   * add all of the loops labeled in the manifest with the
-   * com.google.test.loops.player_experience name to the execution. Scenarios
-   * can also be specified in the scenarios field.
-   *
    * @var string[]
    */
   public $scenarioLabels;
   /**
-   * The list of scenarios that should be run during the test. The default is
-   * all test loops, derived from the application's manifest.
-   *
    * @var int[]
    */
   public $scenarios;
 
   /**
-   * The APK for the application under test.
-   *
-   * @param FileReference $appApk
+   * @param FileReference
    */
   public function setAppApk(FileReference $appApk)
   {
@@ -67,9 +52,7 @@ class AndroidTestLoop extends \Google\Collection
     return $this->appApk;
   }
   /**
-   * A multi-apk app bundle for the application under test.
-   *
-   * @param AppBundle $appBundle
+   * @param AppBundle
    */
   public function setAppBundle(AppBundle $appBundle)
   {
@@ -83,10 +66,7 @@ class AndroidTestLoop extends \Google\Collection
     return $this->appBundle;
   }
   /**
-   * The java package for the application under test. The default is determined
-   * by examining the application's manifest.
-   *
-   * @param string $appPackageId
+   * @param string
    */
   public function setAppPackageId($appPackageId)
   {
@@ -100,14 +80,7 @@ class AndroidTestLoop extends \Google\Collection
     return $this->appPackageId;
   }
   /**
-   * The list of scenario labels that should be run during the test. The
-   * scenario labels should map to labels defined in the application's manifest.
-   * For example, player_experience and com.google.test.loops.player_experience
-   * add all of the loops labeled in the manifest with the
-   * com.google.test.loops.player_experience name to the execution. Scenarios
-   * can also be specified in the scenarios field.
-   *
-   * @param string[] $scenarioLabels
+   * @param string[]
    */
   public function setScenarioLabels($scenarioLabels)
   {
@@ -121,10 +94,7 @@ class AndroidTestLoop extends \Google\Collection
     return $this->scenarioLabels;
   }
   /**
-   * The list of scenarios that should be run during the test. The default is
-   * all test loops, derived from the application's manifest.
-   *
-   * @param int[] $scenarios
+   * @param int[]
    */
   public function setScenarios($scenarios)
   {

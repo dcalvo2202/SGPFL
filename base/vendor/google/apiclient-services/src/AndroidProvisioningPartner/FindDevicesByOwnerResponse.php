@@ -23,23 +23,16 @@ class FindDevicesByOwnerResponse extends \Google\Collection
   protected $devicesType = Device::class;
   protected $devicesDataType = 'array';
   /**
-   * A token used to access the next page of results. Omitted if no further
-   * results are available.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * The total count of items in the list irrespective of pagination.
-   *
    * @var int
    */
   public $totalSize;
 
   /**
-   * The customer's devices.
-   *
-   * @param Device[] $devices
+   * @param Device[]
    */
   public function setDevices($devices)
   {
@@ -53,10 +46,7 @@ class FindDevicesByOwnerResponse extends \Google\Collection
     return $this->devices;
   }
   /**
-   * A token used to access the next page of results. Omitted if no further
-   * results are available.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -70,9 +60,7 @@ class FindDevicesByOwnerResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The total count of items in the list irrespective of pagination.
-   *
-   * @param int $totalSize
+   * @param int
    */
   public function setTotalSize($totalSize)
   {

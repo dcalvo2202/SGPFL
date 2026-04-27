@@ -24,9 +24,7 @@ class GoogleAdsSearchads360V0ErrorsErrorLocation extends \Google\Collection
   protected $fieldPathElementsDataType = 'array';
 
   /**
-   * A field path that indicates which field was invalid in the request.
-   *
-   * @param GoogleAdsSearchads360V0ErrorsErrorLocationFieldPathElement[] $fieldPathElements
+   * @param GoogleAdsSearchads360V0ErrorsErrorLocationFieldPathElement[]
    */
   public function setFieldPathElements($fieldPathElements)
   {

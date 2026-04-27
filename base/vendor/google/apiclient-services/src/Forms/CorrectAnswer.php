@@ -20,18 +20,12 @@ namespace Google\Service\Forms;
 class CorrectAnswer extends \Google\Model
 {
   /**
-   * Required. The correct answer value. See the documentation for
-   * TextAnswer.value for details on how various value types are formatted.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Required. The correct answer value. See the documentation for
-   * TextAnswer.value for details on how various value types are formatted.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

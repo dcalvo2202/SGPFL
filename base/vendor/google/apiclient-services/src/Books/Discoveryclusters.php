@@ -23,8 +23,6 @@ class Discoveryclusters extends \Google\Collection
   protected $clustersType = DiscoveryclustersClusters::class;
   protected $clustersDataType = 'array';
   /**
-   * Resorce type.
-   *
    * @var string
    */
   public $kind;
@@ -34,7 +32,7 @@ class Discoveryclusters extends \Google\Collection
   public $totalClusters;
 
   /**
-   * @param DiscoveryclustersClusters[] $clusters
+   * @param DiscoveryclustersClusters[]
    */
   public function setClusters($clusters)
   {
@@ -48,9 +46,7 @@ class Discoveryclusters extends \Google\Collection
     return $this->clusters;
   }
   /**
-   * Resorce type.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -64,7 +60,7 @@ class Discoveryclusters extends \Google\Collection
     return $this->kind;
   }
   /**
-   * @param int $totalClusters
+   * @param int
    */
   public function setTotalClusters($totalClusters)
   {

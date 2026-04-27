@@ -23,17 +23,12 @@ class QueryDriveActivityResponse extends \Google\Collection
   protected $activitiesType = DriveActivity::class;
   protected $activitiesDataType = 'array';
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * List of activity requested.
-   *
-   * @param DriveActivity[] $activities
+   * @param DriveActivity[]
    */
   public function setActivities($activities)
   {
@@ -47,10 +42,7 @@ class QueryDriveActivityResponse extends \Google\Collection
     return $this->activities;
   }
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

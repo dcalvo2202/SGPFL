@@ -23,16 +23,12 @@ class GoogleChromeManagementV1GraphicsStatusReport extends \Google\Collection
   protected $displaysType = GoogleChromeManagementV1DisplayInfo::class;
   protected $displaysDataType = 'array';
   /**
-   * Output only. Time at which the graphics data was reported.
-   *
    * @var string
    */
   public $reportTime;
 
   /**
-   * Output only. Information about the displays for the device.
-   *
-   * @param GoogleChromeManagementV1DisplayInfo[] $displays
+   * @param GoogleChromeManagementV1DisplayInfo[]
    */
   public function setDisplays($displays)
   {
@@ -46,9 +42,7 @@ class GoogleChromeManagementV1GraphicsStatusReport extends \Google\Collection
     return $this->displays;
   }
   /**
-   * Output only. Time at which the graphics data was reported.
-   *
-   * @param string $reportTime
+   * @param string
    */
   public function setReportTime($reportTime)
   {

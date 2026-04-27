@@ -33,9 +33,7 @@ class ApkTargeting extends \Google\Model
   protected $textureCompressionFormatTargetingDataType = '';
 
   /**
-   * The abi that the apk targets
-   *
-   * @param AbiTargeting $abiTargeting
+   * @param AbiTargeting
    */
   public function setAbiTargeting(AbiTargeting $abiTargeting)
   {
@@ -49,9 +47,7 @@ class ApkTargeting extends \Google\Model
     return $this->abiTargeting;
   }
   /**
-   * The language that the apk targets
-   *
-   * @param LanguageTargeting $languageTargeting
+   * @param LanguageTargeting
    */
   public function setLanguageTargeting(LanguageTargeting $languageTargeting)
   {
@@ -65,9 +61,7 @@ class ApkTargeting extends \Google\Model
     return $this->languageTargeting;
   }
   /**
-   * Multi-api-level targeting.
-   *
-   * @param MultiAbiTargeting $multiAbiTargeting
+   * @param MultiAbiTargeting
    */
   public function setMultiAbiTargeting(MultiAbiTargeting $multiAbiTargeting)
   {
@@ -81,9 +75,7 @@ class ApkTargeting extends \Google\Model
     return $this->multiAbiTargeting;
   }
   /**
-   * The screen density that this apk supports.
-   *
-   * @param ScreenDensityTargeting $screenDensityTargeting
+   * @param ScreenDensityTargeting
    */
   public function setScreenDensityTargeting(ScreenDensityTargeting $screenDensityTargeting)
   {
@@ -97,9 +89,7 @@ class ApkTargeting extends \Google\Model
     return $this->screenDensityTargeting;
   }
   /**
-   * The sdk version that the apk targets
-   *
-   * @param SdkVersionTargeting $sdkVersionTargeting
+   * @param SdkVersionTargeting
    */
   public function setSdkVersionTargeting(SdkVersionTargeting $sdkVersionTargeting)
   {
@@ -113,9 +103,7 @@ class ApkTargeting extends \Google\Model
     return $this->sdkVersionTargeting;
   }
   /**
-   * Texture-compression-format-level targeting
-   *
-   * @param TextureCompressionFormatTargeting $textureCompressionFormatTargeting
+   * @param TextureCompressionFormatTargeting
    */
   public function setTextureCompressionFormatTargeting(TextureCompressionFormatTargeting $textureCompressionFormatTargeting)
   {

@@ -19,55 +19,29 @@ namespace Google\Service\DeploymentManager;
 
 class BulkInsertOperationStatus extends \Google\Model
 {
-  public const STATUS_STATUS_UNSPECIFIED = 'STATUS_UNSPECIFIED';
   /**
-   * Rolling forward - creating VMs.
-   */
-  public const STATUS_CREATING = 'CREATING';
-  /**
-   * Rolling back - cleaning up after an error.
-   */
-  public const STATUS_ROLLING_BACK = 'ROLLING_BACK';
-  /**
-   * Done
-   */
-  public const STATUS_DONE = 'DONE';
-  /**
-   * [Output Only] Count of VMs successfully created so far.
-   *
    * @var int
    */
   public $createdVmCount;
   /**
-   * [Output Only] Count of VMs that got deleted during rollback.
-   *
    * @var int
    */
   public $deletedVmCount;
   /**
-   * [Output Only] Count of VMs that started creating but encountered an error.
-   *
    * @var int
    */
   public $failedToCreateVmCount;
   /**
-   * [Output Only] Creation status of BulkInsert operation - information if the
-   * flow is rolling forward or rolling back.
-   *
    * @var string
    */
   public $status;
   /**
-   * [Output Only] Count of VMs originally planned to be created.
-   *
    * @var int
    */
   public $targetVmCount;
 
   /**
-   * [Output Only] Count of VMs successfully created so far.
-   *
-   * @param int $createdVmCount
+   * @param int
    */
   public function setCreatedVmCount($createdVmCount)
   {
@@ -81,9 +55,7 @@ class BulkInsertOperationStatus extends \Google\Model
     return $this->createdVmCount;
   }
   /**
-   * [Output Only] Count of VMs that got deleted during rollback.
-   *
-   * @param int $deletedVmCount
+   * @param int
    */
   public function setDeletedVmCount($deletedVmCount)
   {
@@ -97,9 +69,7 @@ class BulkInsertOperationStatus extends \Google\Model
     return $this->deletedVmCount;
   }
   /**
-   * [Output Only] Count of VMs that started creating but encountered an error.
-   *
-   * @param int $failedToCreateVmCount
+   * @param int
    */
   public function setFailedToCreateVmCount($failedToCreateVmCount)
   {
@@ -113,28 +83,21 @@ class BulkInsertOperationStatus extends \Google\Model
     return $this->failedToCreateVmCount;
   }
   /**
-   * [Output Only] Creation status of BulkInsert operation - information if the
-   * flow is rolling forward or rolling back.
-   *
-   * Accepted values: STATUS_UNSPECIFIED, CREATING, ROLLING_BACK, DONE
-   *
-   * @param self::STATUS_* $status
+   * @param string
    */
   public function setStatus($status)
   {
     $this->status = $status;
   }
   /**
-   * @return self::STATUS_*
+   * @return string
    */
   public function getStatus()
   {
     return $this->status;
   }
   /**
-   * [Output Only] Count of VMs originally planned to be created.
-   *
-   * @param int $targetVmCount
+   * @param int
    */
   public function setTargetVmCount($targetVmCount)
   {

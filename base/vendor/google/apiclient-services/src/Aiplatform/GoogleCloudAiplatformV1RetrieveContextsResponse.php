@@ -23,9 +23,7 @@ class GoogleCloudAiplatformV1RetrieveContextsResponse extends \Google\Model
   protected $contextsDataType = '';
 
   /**
-   * The contexts of the query.
-   *
-   * @param GoogleCloudAiplatformV1RagContexts $contexts
+   * @param GoogleCloudAiplatformV1RagContexts
    */
   public function setContexts(GoogleCloudAiplatformV1RagContexts $contexts)
   {

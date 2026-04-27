@@ -20,31 +20,16 @@ namespace Google\Service\Eventarc;
 class GoogleCloudEventarcV1PipelineDestinationAuthenticationConfigOAuthToken extends \Google\Model
 {
   /**
-   * Optional. OAuth scope to be used for generating OAuth access token. If not
-   * specified, "https://www.googleapis.com/auth/cloud-platform" will be used.
-   *
    * @var string
    */
   public $scope;
   /**
-   * Required. Service account email used to generate the [OAuth
-   * token](https://developers.google.com/identity/protocols/OAuth2). The
-   * principal who calls this API must have iam.serviceAccounts.actAs permission
-   * in the service account. See
-   * https://cloud.google.com/iam/docs/understanding-service-accounts for more
-   * information. Eventarc service agents must have
-   * roles/roles/iam.serviceAccountTokenCreator role to allow Pipeline to create
-   * OAuth2 tokens for authenticated requests.
-   *
    * @var string
    */
   public $serviceAccount;
 
   /**
-   * Optional. OAuth scope to be used for generating OAuth access token. If not
-   * specified, "https://www.googleapis.com/auth/cloud-platform" will be used.
-   *
-   * @param string $scope
+   * @param string
    */
   public function setScope($scope)
   {
@@ -58,16 +43,7 @@ class GoogleCloudEventarcV1PipelineDestinationAuthenticationConfigOAuthToken ext
     return $this->scope;
   }
   /**
-   * Required. Service account email used to generate the [OAuth
-   * token](https://developers.google.com/identity/protocols/OAuth2). The
-   * principal who calls this API must have iam.serviceAccounts.actAs permission
-   * in the service account. See
-   * https://cloud.google.com/iam/docs/understanding-service-accounts for more
-   * information. Eventarc service agents must have
-   * roles/roles/iam.serviceAccountTokenCreator role to allow Pipeline to create
-   * OAuth2 tokens for authenticated requests.
-   *
-   * @param string $serviceAccount
+   * @param string
    */
   public function setServiceAccount($serviceAccount)
   {

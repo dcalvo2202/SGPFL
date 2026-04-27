@@ -20,34 +20,24 @@ namespace Google\Service\OracleDatabase;
 class CloudAccountDetails extends \Google\Model
 {
   /**
-   * Output only. URL to create a new account and link.
-   *
    * @var string
    */
   public $accountCreationUri;
   /**
-   * Output only. OCI account name.
-   *
    * @var string
    */
   public $cloudAccount;
   /**
-   * Output only. OCI account home region.
-   *
    * @var string
    */
   public $cloudAccountHomeRegion;
   /**
-   * Output only. URL to link an existing account.
-   *
    * @var string
    */
   public $linkExistingAccountUri;
 
   /**
-   * Output only. URL to create a new account and link.
-   *
-   * @param string $accountCreationUri
+   * @param string
    */
   public function setAccountCreationUri($accountCreationUri)
   {
@@ -61,9 +51,7 @@ class CloudAccountDetails extends \Google\Model
     return $this->accountCreationUri;
   }
   /**
-   * Output only. OCI account name.
-   *
-   * @param string $cloudAccount
+   * @param string
    */
   public function setCloudAccount($cloudAccount)
   {
@@ -77,9 +65,7 @@ class CloudAccountDetails extends \Google\Model
     return $this->cloudAccount;
   }
   /**
-   * Output only. OCI account home region.
-   *
-   * @param string $cloudAccountHomeRegion
+   * @param string
    */
   public function setCloudAccountHomeRegion($cloudAccountHomeRegion)
   {
@@ -93,9 +79,7 @@ class CloudAccountDetails extends \Google\Model
     return $this->cloudAccountHomeRegion;
   }
   /**
-   * Output only. URL to link an existing account.
-   *
-   * @param string $linkExistingAccountUri
+   * @param string
    */
   public function setLinkExistingAccountUri($linkExistingAccountUri)
   {

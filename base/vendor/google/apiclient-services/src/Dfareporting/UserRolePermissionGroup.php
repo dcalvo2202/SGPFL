@@ -20,29 +20,20 @@ namespace Google\Service\Dfareporting;
 class UserRolePermissionGroup extends \Google\Model
 {
   /**
-   * ID of this user role permission.
-   *
    * @var string
    */
   public $id;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#userRolePermissionGroup".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Name of this user role permission group.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * ID of this user role permission.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -56,10 +47,7 @@ class UserRolePermissionGroup extends \Google\Model
     return $this->id;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#userRolePermissionGroup".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -73,9 +61,7 @@ class UserRolePermissionGroup extends \Google\Model
     return $this->kind;
   }
   /**
-   * Name of this user role permission group.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

@@ -20,52 +20,36 @@ namespace Google\Service\CustomSearchAPI;
 class ResultImage extends \Google\Model
 {
   /**
-   * The size of the image, in bytes.
-   *
    * @var int
    */
   public $byteSize;
   /**
-   * A URL pointing to the webpage hosting the image.
-   *
    * @var string
    */
   public $contextLink;
   /**
-   * The height of the image, in pixels.
-   *
    * @var int
    */
   public $height;
   /**
-   * The height of the thumbnail image, in pixels.
-   *
    * @var int
    */
   public $thumbnailHeight;
   /**
-   * A URL to the thumbnail image.
-   *
    * @var string
    */
   public $thumbnailLink;
   /**
-   * The width of the thumbnail image, in pixels.
-   *
    * @var int
    */
   public $thumbnailWidth;
   /**
-   * The width of the image, in pixels.
-   *
    * @var int
    */
   public $width;
 
   /**
-   * The size of the image, in bytes.
-   *
-   * @param int $byteSize
+   * @param int
    */
   public function setByteSize($byteSize)
   {
@@ -79,9 +63,7 @@ class ResultImage extends \Google\Model
     return $this->byteSize;
   }
   /**
-   * A URL pointing to the webpage hosting the image.
-   *
-   * @param string $contextLink
+   * @param string
    */
   public function setContextLink($contextLink)
   {
@@ -95,9 +77,7 @@ class ResultImage extends \Google\Model
     return $this->contextLink;
   }
   /**
-   * The height of the image, in pixels.
-   *
-   * @param int $height
+   * @param int
    */
   public function setHeight($height)
   {
@@ -111,9 +91,7 @@ class ResultImage extends \Google\Model
     return $this->height;
   }
   /**
-   * The height of the thumbnail image, in pixels.
-   *
-   * @param int $thumbnailHeight
+   * @param int
    */
   public function setThumbnailHeight($thumbnailHeight)
   {
@@ -127,9 +105,7 @@ class ResultImage extends \Google\Model
     return $this->thumbnailHeight;
   }
   /**
-   * A URL to the thumbnail image.
-   *
-   * @param string $thumbnailLink
+   * @param string
    */
   public function setThumbnailLink($thumbnailLink)
   {
@@ -143,9 +119,7 @@ class ResultImage extends \Google\Model
     return $this->thumbnailLink;
   }
   /**
-   * The width of the thumbnail image, in pixels.
-   *
-   * @param int $thumbnailWidth
+   * @param int
    */
   public function setThumbnailWidth($thumbnailWidth)
   {
@@ -159,9 +133,7 @@ class ResultImage extends \Google\Model
     return $this->thumbnailWidth;
   }
   /**
-   * The width of the image, in pixels.
-   *
-   * @param int $width
+   * @param int
    */
   public function setWidth($width)
   {

@@ -20,22 +20,16 @@ namespace Google\Service\Sasportal;
 class SasPortalOrganization extends \Google\Model
 {
   /**
-   * Name of organization
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Id of organization
-   *
    * @var string
    */
   public $id;
 
   /**
-   * Name of organization
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -49,9 +43,7 @@ class SasPortalOrganization extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Id of organization
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {

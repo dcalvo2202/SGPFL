@@ -20,55 +20,28 @@ namespace Google\Service\Compute;
 class ExchangedPeeringRoute extends \Google\Model
 {
   /**
-   * For routes exported from local network.
-   */
-  public const TYPE_DYNAMIC_PEERING_ROUTE = 'DYNAMIC_PEERING_ROUTE';
-  /**
-   * The peering route.
-   */
-  public const TYPE_STATIC_PEERING_ROUTE = 'STATIC_PEERING_ROUTE';
-  /**
-   * The peering route corresponding to subnetwork range.
-   */
-  public const TYPE_SUBNET_PEERING_ROUTE = 'SUBNET_PEERING_ROUTE';
-  /**
-   * The destination range of the route.
-   *
    * @var string
    */
   public $destRange;
   /**
-   * True if the peering route has been imported from a peer. The actual import
-   * happens if the field networkPeering.importCustomRoutes is true for this
-   * network, and networkPeering.exportCustomRoutes is true for the peer
-   * network, and the import does not result in a route conflict.
-   *
    * @var bool
    */
   public $imported;
   /**
-   * The region of peering route next hop, only applies to dynamic routes.
-   *
    * @var string
    */
   public $nextHopRegion;
   /**
-   * The priority of the peering route.
-   *
    * @var string
    */
   public $priority;
   /**
-   * The type of the peering route.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The destination range of the route.
-   *
-   * @param string $destRange
+   * @param string
    */
   public function setDestRange($destRange)
   {
@@ -82,12 +55,7 @@ class ExchangedPeeringRoute extends \Google\Model
     return $this->destRange;
   }
   /**
-   * True if the peering route has been imported from a peer. The actual import
-   * happens if the field networkPeering.importCustomRoutes is true for this
-   * network, and networkPeering.exportCustomRoutes is true for the peer
-   * network, and the import does not result in a route conflict.
-   *
-   * @param bool $imported
+   * @param bool
    */
   public function setImported($imported)
   {
@@ -101,9 +69,7 @@ class ExchangedPeeringRoute extends \Google\Model
     return $this->imported;
   }
   /**
-   * The region of peering route next hop, only applies to dynamic routes.
-   *
-   * @param string $nextHopRegion
+   * @param string
    */
   public function setNextHopRegion($nextHopRegion)
   {
@@ -117,9 +83,7 @@ class ExchangedPeeringRoute extends \Google\Model
     return $this->nextHopRegion;
   }
   /**
-   * The priority of the peering route.
-   *
-   * @param string $priority
+   * @param string
    */
   public function setPriority($priority)
   {
@@ -133,19 +97,14 @@ class ExchangedPeeringRoute extends \Google\Model
     return $this->priority;
   }
   /**
-   * The type of the peering route.
-   *
-   * Accepted values: DYNAMIC_PEERING_ROUTE, STATIC_PEERING_ROUTE,
-   * SUBNET_PEERING_ROUTE
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

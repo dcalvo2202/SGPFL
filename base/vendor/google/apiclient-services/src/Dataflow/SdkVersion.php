@@ -19,52 +19,24 @@ namespace Google\Service\Dataflow;
 
 class SdkVersion extends \Google\Collection
 {
-  /**
-   * Cloud Dataflow is unaware of this version.
-   */
-  public const SDK_SUPPORT_STATUS_UNKNOWN = 'UNKNOWN';
-  /**
-   * This is a known version of an SDK, and is supported.
-   */
-  public const SDK_SUPPORT_STATUS_SUPPORTED = 'SUPPORTED';
-  /**
-   * A newer version of the SDK family exists, and an update is recommended.
-   */
-  public const SDK_SUPPORT_STATUS_STALE = 'STALE';
-  /**
-   * This version of the SDK is deprecated and will eventually be unsupported.
-   */
-  public const SDK_SUPPORT_STATUS_DEPRECATED = 'DEPRECATED';
-  /**
-   * Support for this SDK version has ended and it should no longer be used.
-   */
-  public const SDK_SUPPORT_STATUS_UNSUPPORTED = 'UNSUPPORTED';
   protected $collection_key = 'bugs';
   protected $bugsType = SdkBug::class;
   protected $bugsDataType = 'array';
   /**
-   * The support status for this SDK version.
-   *
    * @var string
    */
   public $sdkSupportStatus;
   /**
-   * The version of the SDK used to run the job.
-   *
    * @var string
    */
   public $version;
   /**
-   * A readable string describing the version of the SDK.
-   *
    * @var string
    */
   public $versionDisplayName;
 
   /**
-   * Output only. Known bugs found in this SDK version.
-   *
-   * @param SdkBug[] $bugs
+   * @param SdkBug[]
    */
   public function setBugs($bugs)
   {
@@ -78,27 +50,21 @@ class SdkVersion extends \Google\Collection
     return $this->bugs;
   }
   /**
-   * The support status for this SDK version.
-   *
-   * Accepted values: UNKNOWN, SUPPORTED, STALE, DEPRECATED, UNSUPPORTED
-   *
-   * @param self::SDK_SUPPORT_STATUS_* $sdkSupportStatus
+   * @param string
    */
   public function setSdkSupportStatus($sdkSupportStatus)
   {
     $this->sdkSupportStatus = $sdkSupportStatus;
   }
   /**
-   * @return self::SDK_SUPPORT_STATUS_*
+   * @return string
    */
   public function getSdkSupportStatus()
   {
     return $this->sdkSupportStatus;
   }
   /**
-   * The version of the SDK used to run the job.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {
@@ -112,9 +78,7 @@ class SdkVersion extends \Google\Collection
     return $this->version;
   }
   /**
-   * A readable string describing the version of the SDK.
-   *
-   * @param string $versionDisplayName
+   * @param string
    */
   public function setVersionDisplayName($versionDisplayName)
   {

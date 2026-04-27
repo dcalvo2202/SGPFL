@@ -19,32 +19,10 @@ namespace Google\Service\AndroidPublisher;
 
 class BasePlan extends \Google\Collection
 {
-  /**
-   * Unspecified state.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The base plan is currently in a draft state, and hasn't been activated. It
-   * can be safely deleted at this point.
-   */
-  public const STATE_DRAFT = 'DRAFT';
-  /**
-   * The base plan is active and available for new subscribers.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * The base plan is inactive and only available for existing subscribers.
-   */
-  public const STATE_INACTIVE = 'INACTIVE';
   protected $collection_key = 'regionalConfigs';
   protected $autoRenewingBasePlanTypeType = AutoRenewingBasePlanType::class;
   protected $autoRenewingBasePlanTypeDataType = '';
   /**
-   * Required. Immutable. The unique identifier of this base plan. Must be
-   * unique within the subscription, and conform with RFC-1034. That is, this ID
-   * can only contain lower-case letters (a-z), numbers (0-9), and hyphens (-),
-   * and be at most 63 characters.
-   *
    * @var string
    */
   public $basePlanId;
@@ -59,19 +37,12 @@ class BasePlan extends \Google\Collection
   protected $regionalConfigsType = RegionalBasePlanConfig::class;
   protected $regionalConfigsDataType = 'array';
   /**
-   * Output only. The state of the base plan, i.e. whether it's active. Draft
-   * and inactive base plans can be activated or deleted. Active base plans can
-   * be made inactive. Inactive base plans can be canceled. This field cannot be
-   * changed by updating the resource. Use the dedicated endpoints instead.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Set when the base plan automatically renews at a regular interval.
-   *
-   * @param AutoRenewingBasePlanType $autoRenewingBasePlanType
+   * @param AutoRenewingBasePlanType
    */
   public function setAutoRenewingBasePlanType(AutoRenewingBasePlanType $autoRenewingBasePlanType)
   {
@@ -85,12 +56,7 @@ class BasePlan extends \Google\Collection
     return $this->autoRenewingBasePlanType;
   }
   /**
-   * Required. Immutable. The unique identifier of this base plan. Must be
-   * unique within the subscription, and conform with RFC-1034. That is, this ID
-   * can only contain lower-case letters (a-z), numbers (0-9), and hyphens (-),
-   * and be at most 63 characters.
-   *
-   * @param string $basePlanId
+   * @param string
    */
   public function setBasePlanId($basePlanId)
   {
@@ -104,10 +70,7 @@ class BasePlan extends \Google\Collection
     return $this->basePlanId;
   }
   /**
-   * Set for installments base plans where a user is committed to a specified
-   * number of payments.
-   *
-   * @param InstallmentsBasePlanType $installmentsBasePlanType
+   * @param InstallmentsBasePlanType
    */
   public function setInstallmentsBasePlanType(InstallmentsBasePlanType $installmentsBasePlanType)
   {
@@ -121,11 +84,7 @@ class BasePlan extends \Google\Collection
     return $this->installmentsBasePlanType;
   }
   /**
-   * List of up to 20 custom tags specified for this base plan, and returned to
-   * the app through the billing library. Subscription offers for this base plan
-   * will also receive these offer tags in the billing library.
-   *
-   * @param OfferTag[] $offerTags
+   * @param OfferTag[]
    */
   public function setOfferTags($offerTags)
   {
@@ -139,11 +98,7 @@ class BasePlan extends \Google\Collection
     return $this->offerTags;
   }
   /**
-   * Pricing information for any new locations Play may launch in the future. If
-   * omitted, the BasePlan will not be automatically available any new locations
-   * Play may launch in the future.
-   *
-   * @param OtherRegionsBasePlanConfig $otherRegionsConfig
+   * @param OtherRegionsBasePlanConfig
    */
   public function setOtherRegionsConfig(OtherRegionsBasePlanConfig $otherRegionsConfig)
   {
@@ -157,10 +112,7 @@ class BasePlan extends \Google\Collection
     return $this->otherRegionsConfig;
   }
   /**
-   * Set when the base plan does not automatically renew at the end of the
-   * billing period.
-   *
-   * @param PrepaidBasePlanType $prepaidBasePlanType
+   * @param PrepaidBasePlanType
    */
   public function setPrepaidBasePlanType(PrepaidBasePlanType $prepaidBasePlanType)
   {
@@ -174,9 +126,7 @@ class BasePlan extends \Google\Collection
     return $this->prepaidBasePlanType;
   }
   /**
-   * Region-specific information for this base plan.
-   *
-   * @param RegionalBasePlanConfig[] $regionalConfigs
+   * @param RegionalBasePlanConfig[]
    */
   public function setRegionalConfigs($regionalConfigs)
   {
@@ -190,21 +140,14 @@ class BasePlan extends \Google\Collection
     return $this->regionalConfigs;
   }
   /**
-   * Output only. The state of the base plan, i.e. whether it's active. Draft
-   * and inactive base plans can be activated or deleted. Active base plans can
-   * be made inactive. Inactive base plans can be canceled. This field cannot be
-   * changed by updating the resource. Use the dedicated endpoints instead.
-   *
-   * Accepted values: STATE_UNSPECIFIED, DRAFT, ACTIVE, INACTIVE
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

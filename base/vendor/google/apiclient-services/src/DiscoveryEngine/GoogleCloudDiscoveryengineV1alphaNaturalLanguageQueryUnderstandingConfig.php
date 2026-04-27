@@ -20,39 +20,19 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1alphaNaturalLanguageQueryUnderstandingConfig extends \Google\Model
 {
   /**
-   * Default value.
-   */
-  public const MODE_MODE_UNSPECIFIED = 'MODE_UNSPECIFIED';
-  /**
-   * Natural Language Query Understanding is disabled.
-   */
-  public const MODE_DISABLED = 'DISABLED';
-  /**
-   * Natural Language Query Understanding is enabled.
-   */
-  public const MODE_ENABLED = 'ENABLED';
-  /**
-   * Mode of Natural Language Query Understanding. If this field is unset, the
-   * behavior defaults to NaturalLanguageQueryUnderstandingConfig.Mode.DISABLED.
-   *
    * @var string
    */
   public $mode;
 
   /**
-   * Mode of Natural Language Query Understanding. If this field is unset, the
-   * behavior defaults to NaturalLanguageQueryUnderstandingConfig.Mode.DISABLED.
-   *
-   * Accepted values: MODE_UNSPECIFIED, DISABLED, ENABLED
-   *
-   * @param self::MODE_* $mode
+   * @param string
    */
   public function setMode($mode)
   {
     $this->mode = $mode;
   }
   /**
-   * @return self::MODE_*
+   * @return string
    */
   public function getMode()
   {

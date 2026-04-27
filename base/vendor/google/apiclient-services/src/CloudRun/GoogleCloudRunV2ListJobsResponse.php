@@ -23,17 +23,12 @@ class GoogleCloudRunV2ListJobsResponse extends \Google\Collection
   protected $jobsType = GoogleCloudRunV2Job::class;
   protected $jobsDataType = 'array';
   /**
-   * A token indicating there are more items than page_size. Use it in the next
-   * ListJobs request to continue.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The resulting list of Jobs.
-   *
-   * @param GoogleCloudRunV2Job[] $jobs
+   * @param GoogleCloudRunV2Job[]
    */
   public function setJobs($jobs)
   {
@@ -47,10 +42,7 @@ class GoogleCloudRunV2ListJobsResponse extends \Google\Collection
     return $this->jobs;
   }
   /**
-   * A token indicating there are more items than page_size. Use it in the next
-   * ListJobs request to continue.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

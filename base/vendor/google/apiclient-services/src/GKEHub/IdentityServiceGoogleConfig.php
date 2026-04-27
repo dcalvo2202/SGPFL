@@ -20,16 +20,12 @@ namespace Google\Service\GKEHub;
 class IdentityServiceGoogleConfig extends \Google\Model
 {
   /**
-   * Disable automatic configuration of Google Plugin on supported platforms.
-   *
    * @var bool
    */
   public $disable;
 
   /**
-   * Disable automatic configuration of Google Plugin on supported platforms.
-   *
-   * @param bool $disable
+   * @param bool
    */
   public function setDisable($disable)
   {

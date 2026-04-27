@@ -21,9 +21,6 @@ class ListScannedResourcesResponse extends \Google\Collection
 {
   protected $collection_key = 'scannedResources';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListScannedResourcesResponse extends \Google\Collection
   protected $scannedResourcesDataType = 'array';
 
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class ListScannedResourcesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * All scanned resources in response.
-   *
-   * @param ScannedResource[] $scannedResources
+   * @param ScannedResource[]
    */
   public function setScannedResources($scannedResources)
   {

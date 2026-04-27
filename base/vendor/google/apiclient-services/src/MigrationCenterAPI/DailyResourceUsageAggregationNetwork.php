@@ -25,9 +25,7 @@ class DailyResourceUsageAggregationNetwork extends \Google\Model
   protected $ingressBpsDataType = '';
 
   /**
-   * Network egress in B/s.
-   *
-   * @param DailyResourceUsageAggregationStats $egressBps
+   * @param DailyResourceUsageAggregationStats
    */
   public function setEgressBps(DailyResourceUsageAggregationStats $egressBps)
   {
@@ -41,9 +39,7 @@ class DailyResourceUsageAggregationNetwork extends \Google\Model
     return $this->egressBps;
   }
   /**
-   * Network ingress in B/s.
-   *
-   * @param DailyResourceUsageAggregationStats $ingressBps
+   * @param DailyResourceUsageAggregationStats
    */
   public function setIngressBps(DailyResourceUsageAggregationStats $ingressBps)
   {

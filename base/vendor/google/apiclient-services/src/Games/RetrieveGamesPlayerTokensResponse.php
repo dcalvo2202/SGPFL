@@ -24,11 +24,7 @@ class RetrieveGamesPlayerTokensResponse extends \Google\Collection
   protected $gamePlayerTokensDataType = 'array';
 
   /**
-   * The requested applications along with the recall tokens for the player. If
-   * the player does not have recall tokens for an application, that application
-   * is not included in the response.
-   *
-   * @param GamePlayerToken[] $gamePlayerTokens
+   * @param GamePlayerToken[]
    */
   public function setGamePlayerTokens($gamePlayerTokens)
   {

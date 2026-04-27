@@ -20,22 +20,16 @@ namespace Google\Service\ShoppingContent;
 class TimePeriod extends \Google\Model
 {
   /**
-   * The ending timestamp.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * The starting timestamp.
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * The ending timestamp.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -49,9 +43,7 @@ class TimePeriod extends \Google\Model
     return $this->endTime;
   }
   /**
-   * The starting timestamp.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

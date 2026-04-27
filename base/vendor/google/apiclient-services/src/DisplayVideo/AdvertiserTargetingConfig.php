@@ -20,18 +20,12 @@ namespace Google\Service\DisplayVideo;
 class AdvertiserTargetingConfig extends \Google\Model
 {
   /**
-   * Whether or not connected TV devices are exempt from viewability targeting
-   * for all video line items under the advertiser.
-   *
    * @var bool
    */
   public $exemptTvFromViewabilityTargeting;
 
   /**
-   * Whether or not connected TV devices are exempt from viewability targeting
-   * for all video line items under the advertiser.
-   *
-   * @param bool $exemptTvFromViewabilityTargeting
+   * @param bool
    */
   public function setExemptTvFromViewabilityTargeting($exemptTvFromViewabilityTargeting)
   {

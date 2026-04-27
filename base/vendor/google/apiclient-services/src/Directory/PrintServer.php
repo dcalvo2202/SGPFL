@@ -20,57 +20,36 @@ namespace Google\Service\Directory;
 class PrintServer extends \Google\Model
 {
   /**
-   * Output only. Time when the print server was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Editable. Description of the print server (as shown in the Admin console).
-   *
    * @var string
    */
   public $description;
   /**
-   * Editable. Display name of the print server (as shown in the Admin console).
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Immutable. ID of the print server. Leave empty when creating.
-   *
    * @var string
    */
   public $id;
   /**
-   * Identifier. Resource name of the print server. Leave empty when creating.
-   * Format: `customers/{customer.id}/printServers/{print_server.id}`
-   *
    * @var string
    */
   public $name;
   /**
-   * ID of the organization unit (OU) that owns this print server. This value
-   * can only be set when the print server is initially created. If it's not
-   * populated, the print server is placed under the root OU. The `org_unit_id`
-   * can be retrieved using the [Directory API](https://developers.google.com/wo
-   * rkspace/admin/directory/reference/rest/v1/orgunits).
-   *
    * @var string
    */
   public $orgUnitId;
   /**
-   * Editable. Print server URI.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * Output only. Time when the print server was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -84,9 +63,7 @@ class PrintServer extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Editable. Description of the print server (as shown in the Admin console).
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -100,9 +77,7 @@ class PrintServer extends \Google\Model
     return $this->description;
   }
   /**
-   * Editable. Display name of the print server (as shown in the Admin console).
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -116,9 +91,7 @@ class PrintServer extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Immutable. ID of the print server. Leave empty when creating.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -132,10 +105,7 @@ class PrintServer extends \Google\Model
     return $this->id;
   }
   /**
-   * Identifier. Resource name of the print server. Leave empty when creating.
-   * Format: `customers/{customer.id}/printServers/{print_server.id}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -149,13 +119,7 @@ class PrintServer extends \Google\Model
     return $this->name;
   }
   /**
-   * ID of the organization unit (OU) that owns this print server. This value
-   * can only be set when the print server is initially created. If it's not
-   * populated, the print server is placed under the root OU. The `org_unit_id`
-   * can be retrieved using the [Directory API](https://developers.google.com/wo
-   * rkspace/admin/directory/reference/rest/v1/orgunits).
-   *
-   * @param string $orgUnitId
+   * @param string
    */
   public function setOrgUnitId($orgUnitId)
   {
@@ -169,9 +133,7 @@ class PrintServer extends \Google\Model
     return $this->orgUnitId;
   }
   /**
-   * Editable. Print server URI.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

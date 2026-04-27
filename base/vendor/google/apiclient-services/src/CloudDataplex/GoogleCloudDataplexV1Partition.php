@@ -21,50 +21,30 @@ class GoogleCloudDataplexV1Partition extends \Google\Collection
 {
   protected $collection_key = 'values';
   /**
-   * Optional. The etag for this partition.
-   *
-   * @deprecated
    * @var string
    */
   public $etag;
   /**
-   * Required. Immutable. The location of the entity data within the partition,
-   * for example, gs://bucket/path/to/entity/key1=value1/key2=value2. Or
-   * projects//datasets//tables/
-   *
    * @var string
    */
   public $location;
   /**
-   * Output only. Partition values used in the HTTP URL must be double encoded.
-   * For example, url_encode(url_encode(value)) can be used to encode
-   * "US:CA/CA#Sunnyvale so that the request URL ends with
-   * "/partitions/US%253ACA/CA%2523Sunnyvale". The name field in the response
-   * retains the encoded format.
-   *
    * @var string
    */
   public $name;
   /**
-   * Required. Immutable. The set of values representing the partition, which
-   * correspond to the partition schema defined in the parent entity.
-   *
    * @var string[]
    */
   public $values;
 
   /**
-   * Optional. The etag for this partition.
-   *
-   * @deprecated
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
     $this->etag = $etag;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getEtag()
@@ -72,11 +52,7 @@ class GoogleCloudDataplexV1Partition extends \Google\Collection
     return $this->etag;
   }
   /**
-   * Required. Immutable. The location of the entity data within the partition,
-   * for example, gs://bucket/path/to/entity/key1=value1/key2=value2. Or
-   * projects//datasets//tables/
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -90,13 +66,7 @@ class GoogleCloudDataplexV1Partition extends \Google\Collection
     return $this->location;
   }
   /**
-   * Output only. Partition values used in the HTTP URL must be double encoded.
-   * For example, url_encode(url_encode(value)) can be used to encode
-   * "US:CA/CA#Sunnyvale so that the request URL ends with
-   * "/partitions/US%253ACA/CA%2523Sunnyvale". The name field in the response
-   * retains the encoded format.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -110,10 +80,7 @@ class GoogleCloudDataplexV1Partition extends \Google\Collection
     return $this->name;
   }
   /**
-   * Required. Immutable. The set of values representing the partition, which
-   * correspond to the partition schema defined in the parent entity.
-   *
-   * @param string[] $values
+   * @param string[]
    */
   public function setValues($values)
   {

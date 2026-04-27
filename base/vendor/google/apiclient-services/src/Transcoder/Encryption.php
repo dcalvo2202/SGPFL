@@ -24,8 +24,6 @@ class Encryption extends \Google\Model
   protected $drmSystemsType = DrmSystems::class;
   protected $drmSystemsDataType = '';
   /**
-   * Required. Identifier for this set of encryption options.
-   *
    * @var string
    */
   public $id;
@@ -37,9 +35,7 @@ class Encryption extends \Google\Model
   protected $secretManagerKeySourceDataType = '';
 
   /**
-   * Configuration for AES-128 encryption.
-   *
-   * @param Aes128Encryption $aes128
+   * @param Aes128Encryption
    */
   public function setAes128(Aes128Encryption $aes128)
   {
@@ -53,10 +49,7 @@ class Encryption extends \Google\Model
     return $this->aes128;
   }
   /**
-   * Required. DRM system(s) to use; at least one must be specified. If a DRM
-   * system is omitted, it is considered disabled.
-   *
-   * @param DrmSystems $drmSystems
+   * @param DrmSystems
    */
   public function setDrmSystems(DrmSystems $drmSystems)
   {
@@ -70,9 +63,7 @@ class Encryption extends \Google\Model
     return $this->drmSystems;
   }
   /**
-   * Required. Identifier for this set of encryption options.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -86,9 +77,7 @@ class Encryption extends \Google\Model
     return $this->id;
   }
   /**
-   * Configuration for MPEG Common Encryption (MPEG-CENC).
-   *
-   * @param MpegCommonEncryption $mpegCenc
+   * @param MpegCommonEncryption
    */
   public function setMpegCenc(MpegCommonEncryption $mpegCenc)
   {
@@ -102,9 +91,7 @@ class Encryption extends \Google\Model
     return $this->mpegCenc;
   }
   /**
-   * Configuration for SAMPLE-AES encryption.
-   *
-   * @param SampleAesEncryption $sampleAes
+   * @param SampleAesEncryption
    */
   public function setSampleAes(SampleAesEncryption $sampleAes)
   {
@@ -118,9 +105,7 @@ class Encryption extends \Google\Model
     return $this->sampleAes;
   }
   /**
-   * Keys are stored in Google Secret Manager.
-   *
-   * @param SecretManagerSource $secretManagerKeySource
+   * @param SecretManagerSource
    */
   public function setSecretManagerKeySource(SecretManagerSource $secretManagerKeySource)
   {

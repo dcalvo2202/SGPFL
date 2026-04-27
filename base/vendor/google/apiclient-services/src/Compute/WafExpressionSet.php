@@ -21,31 +21,18 @@ class WafExpressionSet extends \Google\Collection
 {
   protected $collection_key = 'expressions';
   /**
-   * A list of alternate IDs. The format should be: - E.g. XSS-stable Generic
-   * suffix like "stable" is particularly useful if a policy likes to avail
-   * newer set of expressions without having to change the policy. A given alias
-   * name can't be used for more than one entity set.
-   *
    * @var string[]
    */
   public $aliases;
   protected $expressionsType = WafExpressionSetExpression::class;
   protected $expressionsDataType = 'array';
   /**
-   * Google specified expression set ID. The format should be: - E.g.
-   * XSS-20170329 required
-   *
    * @var string
    */
   public $id;
 
   /**
-   * A list of alternate IDs. The format should be: - E.g. XSS-stable Generic
-   * suffix like "stable" is particularly useful if a policy likes to avail
-   * newer set of expressions without having to change the policy. A given alias
-   * name can't be used for more than one entity set.
-   *
-   * @param string[] $aliases
+   * @param string[]
    */
   public function setAliases($aliases)
   {
@@ -59,9 +46,7 @@ class WafExpressionSet extends \Google\Collection
     return $this->aliases;
   }
   /**
-   * List of available expressions.
-   *
-   * @param WafExpressionSetExpression[] $expressions
+   * @param WafExpressionSetExpression[]
    */
   public function setExpressions($expressions)
   {
@@ -75,10 +60,7 @@ class WafExpressionSet extends \Google\Collection
     return $this->expressions;
   }
   /**
-   * Google specified expression set ID. The format should be: - E.g.
-   * XSS-20170329 required
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {

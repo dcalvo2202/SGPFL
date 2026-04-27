@@ -21,16 +21,12 @@ class GoogleChromePolicyVersionsV1PolicySchema extends \Google\Collection
 {
   protected $collection_key = 'validTargetResources';
   /**
-   * Output only. Specific access restrictions related to this policy.
-   *
    * @var string[]
    */
   public $accessRestrictions;
   protected $additionalTargetKeyNamesType = GoogleChromePolicyVersionsV1AdditionalTargetKeyName::class;
   protected $additionalTargetKeyNamesDataType = 'array';
   /**
-   * Title of the category in which a setting belongs.
-   *
    * @var string
    */
   public $categoryTitle;
@@ -39,8 +35,6 @@ class GoogleChromePolicyVersionsV1PolicySchema extends \Google\Collection
   protected $fieldDescriptionsType = GoogleChromePolicyVersionsV1PolicySchemaFieldDescription::class;
   protected $fieldDescriptionsDataType = 'array';
   /**
-   * Format: name=customers/{customer}/policySchemas/{schema_namespace}
-   *
    * @var string
    */
   public $name;
@@ -49,44 +43,28 @@ class GoogleChromePolicyVersionsV1PolicySchema extends \Google\Collection
   protected $policyApiLifecycleType = GoogleChromePolicyVersionsV1PolicyApiLifecycle::class;
   protected $policyApiLifecycleDataType = '';
   /**
-   * Output only. Description about the policy schema for user consumption.
-   *
    * @var string
    */
   public $policyDescription;
   /**
-   * Output only. The fully qualified name of the policy schema. This value is
-   * used to fill the field `policy_schema` in PolicyValue when calling
-   * BatchInheritOrgUnitPolicies BatchModifyOrgUnitPolicies
-   * BatchModifyGroupPolicies or BatchDeleteGroupPolicies.
-   *
    * @var string
    */
   public $schemaName;
   /**
-   * Output only. URI to related support article for this schema.
-   *
    * @var string
    */
   public $supportUri;
   /**
-   * Output only. List indicates that the policy will only apply to
-   * devices/users on these platforms.
-   *
    * @var string[]
    */
   public $supportedPlatforms;
   /**
-   * Output only. Information about applicable target resources for the policy.
-   *
    * @var string[]
    */
   public $validTargetResources;
 
   /**
-   * Output only. Specific access restrictions related to this policy.
-   *
-   * @param string[] $accessRestrictions
+   * @param string[]
    */
   public function setAccessRestrictions($accessRestrictions)
   {
@@ -100,12 +78,7 @@ class GoogleChromePolicyVersionsV1PolicySchema extends \Google\Collection
     return $this->accessRestrictions;
   }
   /**
-   * Output only. Additional key names that will be used to identify the target
-   * of the policy value. When specifying a `policyTargetKey`, each of the
-   * additional keys specified here will have to be included in the
-   * `additionalTargetKeys` map.
-   *
-   * @param GoogleChromePolicyVersionsV1AdditionalTargetKeyName[] $additionalTargetKeyNames
+   * @param GoogleChromePolicyVersionsV1AdditionalTargetKeyName[]
    */
   public function setAdditionalTargetKeyNames($additionalTargetKeyNames)
   {
@@ -119,9 +92,7 @@ class GoogleChromePolicyVersionsV1PolicySchema extends \Google\Collection
     return $this->additionalTargetKeyNames;
   }
   /**
-   * Title of the category in which a setting belongs.
-   *
-   * @param string $categoryTitle
+   * @param string
    */
   public function setCategoryTitle($categoryTitle)
   {
@@ -135,9 +106,7 @@ class GoogleChromePolicyVersionsV1PolicySchema extends \Google\Collection
     return $this->categoryTitle;
   }
   /**
-   * Schema definition using proto descriptor.
-   *
-   * @param Proto2FileDescriptorProto $definition
+   * @param Proto2FileDescriptorProto
    */
   public function setDefinition(Proto2FileDescriptorProto $definition)
   {
@@ -151,11 +120,7 @@ class GoogleChromePolicyVersionsV1PolicySchema extends \Google\Collection
     return $this->definition;
   }
   /**
-   * Output only. Detailed description of each field that is part of the schema.
-   * Fields are suggested to be displayed by the ordering in this list, not by
-   * field number.
-   *
-   * @param GoogleChromePolicyVersionsV1PolicySchemaFieldDescription[] $fieldDescriptions
+   * @param GoogleChromePolicyVersionsV1PolicySchemaFieldDescription[]
    */
   public function setFieldDescriptions($fieldDescriptions)
   {
@@ -169,9 +134,7 @@ class GoogleChromePolicyVersionsV1PolicySchema extends \Google\Collection
     return $this->fieldDescriptions;
   }
   /**
-   * Format: name=customers/{customer}/policySchemas/{schema_namespace}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -185,10 +148,7 @@ class GoogleChromePolicyVersionsV1PolicySchema extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. Special notice messages related to setting certain values in
-   * certain fields in the schema.
-   *
-   * @param GoogleChromePolicyVersionsV1PolicySchemaNoticeDescription[] $notices
+   * @param GoogleChromePolicyVersionsV1PolicySchemaNoticeDescription[]
    */
   public function setNotices($notices)
   {
@@ -202,9 +162,7 @@ class GoogleChromePolicyVersionsV1PolicySchema extends \Google\Collection
     return $this->notices;
   }
   /**
-   * Output only. Current lifecycle information.
-   *
-   * @param GoogleChromePolicyVersionsV1PolicyApiLifecycle $policyApiLifecycle
+   * @param GoogleChromePolicyVersionsV1PolicyApiLifecycle
    */
   public function setPolicyApiLifecycle(GoogleChromePolicyVersionsV1PolicyApiLifecycle $policyApiLifecycle)
   {
@@ -218,9 +176,7 @@ class GoogleChromePolicyVersionsV1PolicySchema extends \Google\Collection
     return $this->policyApiLifecycle;
   }
   /**
-   * Output only. Description about the policy schema for user consumption.
-   *
-   * @param string $policyDescription
+   * @param string
    */
   public function setPolicyDescription($policyDescription)
   {
@@ -234,12 +190,7 @@ class GoogleChromePolicyVersionsV1PolicySchema extends \Google\Collection
     return $this->policyDescription;
   }
   /**
-   * Output only. The fully qualified name of the policy schema. This value is
-   * used to fill the field `policy_schema` in PolicyValue when calling
-   * BatchInheritOrgUnitPolicies BatchModifyOrgUnitPolicies
-   * BatchModifyGroupPolicies or BatchDeleteGroupPolicies.
-   *
-   * @param string $schemaName
+   * @param string
    */
   public function setSchemaName($schemaName)
   {
@@ -253,9 +204,7 @@ class GoogleChromePolicyVersionsV1PolicySchema extends \Google\Collection
     return $this->schemaName;
   }
   /**
-   * Output only. URI to related support article for this schema.
-   *
-   * @param string $supportUri
+   * @param string
    */
   public function setSupportUri($supportUri)
   {
@@ -269,10 +218,7 @@ class GoogleChromePolicyVersionsV1PolicySchema extends \Google\Collection
     return $this->supportUri;
   }
   /**
-   * Output only. List indicates that the policy will only apply to
-   * devices/users on these platforms.
-   *
-   * @param string[] $supportedPlatforms
+   * @param string[]
    */
   public function setSupportedPlatforms($supportedPlatforms)
   {
@@ -286,9 +232,7 @@ class GoogleChromePolicyVersionsV1PolicySchema extends \Google\Collection
     return $this->supportedPlatforms;
   }
   /**
-   * Output only. Information about applicable target resources for the policy.
-   *
-   * @param string[] $validTargetResources
+   * @param string[]
    */
   public function setValidTargetResources($validTargetResources)
   {

@@ -26,10 +26,7 @@ class GoogleAppsDriveLabelsV2DeltaUpdateLabelResponse extends \Google\Collection
   protected $updatedLabelDataType = '';
 
   /**
-   * The reply of the updates. This maps 1:1 with the updates, although
-   * responses to some requests may be empty.
-   *
-   * @param GoogleAppsDriveLabelsV2DeltaUpdateLabelResponseResponse[] $responses
+   * @param GoogleAppsDriveLabelsV2DeltaUpdateLabelResponseResponse[]
    */
   public function setResponses($responses)
   {
@@ -43,10 +40,7 @@ class GoogleAppsDriveLabelsV2DeltaUpdateLabelResponse extends \Google\Collection
     return $this->responses;
   }
   /**
-   * The label after updates were applied. This is only set if
-   * `include_label_in_response` is `true` and there were no errors.
-   *
-   * @param GoogleAppsDriveLabelsV2Label $updatedLabel
+   * @param GoogleAppsDriveLabelsV2Label
    */
   public function setUpdatedLabel(GoogleAppsDriveLabelsV2Label $updatedLabel)
   {

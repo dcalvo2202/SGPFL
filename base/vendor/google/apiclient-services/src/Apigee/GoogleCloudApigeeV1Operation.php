@@ -21,27 +21,16 @@ class GoogleCloudApigeeV1Operation extends \Google\Collection
 {
   protected $collection_key = 'methods';
   /**
-   * methods refers to the REST verbs as in
-   * https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html. When none
-   * specified, all verb types are allowed.
-   *
    * @var string[]
    */
   public $methods;
   /**
-   * Required. REST resource path associated with the API proxy or remote
-   * service.
-   *
    * @var string
    */
   public $resource;
 
   /**
-   * methods refers to the REST verbs as in
-   * https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html. When none
-   * specified, all verb types are allowed.
-   *
-   * @param string[] $methods
+   * @param string[]
    */
   public function setMethods($methods)
   {
@@ -55,10 +44,7 @@ class GoogleCloudApigeeV1Operation extends \Google\Collection
     return $this->methods;
   }
   /**
-   * Required. REST resource path associated with the API proxy or remote
-   * service.
-   *
-   * @param string $resource
+   * @param string
    */
   public function setResource($resource)
   {

@@ -19,20 +19,16 @@ namespace Google\Service\Dialogflow;
 
 class GoogleLongrunningListOperationsResponse extends \Google\Collection
 {
-  protected $collection_key = 'unreachable';
+  protected $collection_key = 'operations';
   /**
    * @var string
    */
   public $nextPageToken;
   protected $operationsType = GoogleLongrunningOperation::class;
   protected $operationsDataType = 'array';
-  /**
-   * @var string[]
-   */
-  public $unreachable;
 
   /**
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -46,7 +42,7 @@ class GoogleLongrunningListOperationsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * @param GoogleLongrunningOperation[] $operations
+   * @param GoogleLongrunningOperation[]
    */
   public function setOperations($operations)
   {
@@ -58,20 +54,6 @@ class GoogleLongrunningListOperationsResponse extends \Google\Collection
   public function getOperations()
   {
     return $this->operations;
-  }
-  /**
-   * @param string[] $unreachable
-   */
-  public function setUnreachable($unreachable)
-  {
-    $this->unreachable = $unreachable;
-  }
-  /**
-   * @return string[]
-   */
-  public function getUnreachable()
-  {
-    return $this->unreachable;
   }
 }
 

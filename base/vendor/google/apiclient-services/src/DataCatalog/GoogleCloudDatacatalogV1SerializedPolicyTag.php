@@ -23,31 +23,20 @@ class GoogleCloudDatacatalogV1SerializedPolicyTag extends \Google\Collection
   protected $childPolicyTagsType = GoogleCloudDatacatalogV1SerializedPolicyTag::class;
   protected $childPolicyTagsDataType = 'array';
   /**
-   * Description of the serialized policy tag. At most 2000 bytes when encoded
-   * in UTF-8. If not set, defaults to an empty description.
-   *
    * @var string
    */
   public $description;
   /**
-   * Required. Display name of the policy tag. At most 200 bytes when encoded in
-   * UTF-8.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Resource name of the policy tag. This field is ignored when calling
-   * `ImportTaxonomies`.
-   *
    * @var string
    */
   public $policyTag;
 
   /**
-   * Children of the policy tag, if any.
-   *
-   * @param GoogleCloudDatacatalogV1SerializedPolicyTag[] $childPolicyTags
+   * @param GoogleCloudDatacatalogV1SerializedPolicyTag[]
    */
   public function setChildPolicyTags($childPolicyTags)
   {
@@ -61,10 +50,7 @@ class GoogleCloudDatacatalogV1SerializedPolicyTag extends \Google\Collection
     return $this->childPolicyTags;
   }
   /**
-   * Description of the serialized policy tag. At most 2000 bytes when encoded
-   * in UTF-8. If not set, defaults to an empty description.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -78,10 +64,7 @@ class GoogleCloudDatacatalogV1SerializedPolicyTag extends \Google\Collection
     return $this->description;
   }
   /**
-   * Required. Display name of the policy tag. At most 200 bytes when encoded in
-   * UTF-8.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -95,10 +78,7 @@ class GoogleCloudDatacatalogV1SerializedPolicyTag extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Resource name of the policy tag. This field is ignored when calling
-   * `ImportTaxonomies`.
-   *
-   * @param string $policyTag
+   * @param string
    */
   public function setPolicyTag($policyTag)
   {

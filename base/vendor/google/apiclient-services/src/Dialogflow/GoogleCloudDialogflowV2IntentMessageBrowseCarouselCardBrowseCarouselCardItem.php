@@ -37,7 +37,7 @@ class GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardIt
   public $title;
 
   /**
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -51,7 +51,7 @@ class GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardIt
     return $this->description;
   }
   /**
-   * @param string $footer
+   * @param string
    */
   public function setFooter($footer)
   {
@@ -65,7 +65,7 @@ class GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardIt
     return $this->footer;
   }
   /**
-   * @param GoogleCloudDialogflowV2IntentMessageImage $image
+   * @param GoogleCloudDialogflowV2IntentMessageImage
    */
   public function setImage(GoogleCloudDialogflowV2IntentMessageImage $image)
   {
@@ -79,7 +79,7 @@ class GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardIt
     return $this->image;
   }
   /**
-   * @param GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction $openUriAction
+   * @param GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction
    */
   public function setOpenUriAction(GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardItemOpenUrlAction $openUriAction)
   {
@@ -93,7 +93,7 @@ class GoogleCloudDialogflowV2IntentMessageBrowseCarouselCardBrowseCarouselCardIt
     return $this->openUriAction;
   }
   /**
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

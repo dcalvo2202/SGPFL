@@ -26,10 +26,7 @@ class Hl7SchemaConfig extends \Google\Collection
   protected $versionDataType = 'array';
 
   /**
-   * Map from each HL7v2 message type and trigger event pair, such as ADT_A04,
-   * to its schema configuration root group.
-   *
-   * @param SchemaGroup[] $messageSchemaConfigs
+   * @param SchemaGroup[]
    */
   public function setMessageSchemaConfigs($messageSchemaConfigs)
   {
@@ -43,10 +40,7 @@ class Hl7SchemaConfig extends \Google\Collection
     return $this->messageSchemaConfigs;
   }
   /**
-   * Each VersionSource is tested and only if they all match is the schema used
-   * for the message.
-   *
-   * @param VersionSource[] $version
+   * @param VersionSource[]
    */
   public function setVersion($version)
   {

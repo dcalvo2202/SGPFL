@@ -20,40 +20,6 @@ namespace Google\Service\Looker;
 class MaintenanceWindow extends \Google\Model
 {
   /**
-   * The day of the week is unspecified.
-   */
-  public const DAY_OF_WEEK_DAY_OF_WEEK_UNSPECIFIED = 'DAY_OF_WEEK_UNSPECIFIED';
-  /**
-   * Monday
-   */
-  public const DAY_OF_WEEK_MONDAY = 'MONDAY';
-  /**
-   * Tuesday
-   */
-  public const DAY_OF_WEEK_TUESDAY = 'TUESDAY';
-  /**
-   * Wednesday
-   */
-  public const DAY_OF_WEEK_WEDNESDAY = 'WEDNESDAY';
-  /**
-   * Thursday
-   */
-  public const DAY_OF_WEEK_THURSDAY = 'THURSDAY';
-  /**
-   * Friday
-   */
-  public const DAY_OF_WEEK_FRIDAY = 'FRIDAY';
-  /**
-   * Saturday
-   */
-  public const DAY_OF_WEEK_SATURDAY = 'SATURDAY';
-  /**
-   * Sunday
-   */
-  public const DAY_OF_WEEK_SUNDAY = 'SUNDAY';
-  /**
-   * Required. Day of the week for this MaintenanceWindow (in UTC).
-   *
    * @var string
    */
   public $dayOfWeek;
@@ -61,29 +27,21 @@ class MaintenanceWindow extends \Google\Model
   protected $startTimeDataType = '';
 
   /**
-   * Required. Day of the week for this MaintenanceWindow (in UTC).
-   *
-   * Accepted values: DAY_OF_WEEK_UNSPECIFIED, MONDAY, TUESDAY, WEDNESDAY,
-   * THURSDAY, FRIDAY, SATURDAY, SUNDAY
-   *
-   * @param self::DAY_OF_WEEK_* $dayOfWeek
+   * @param string
    */
   public function setDayOfWeek($dayOfWeek)
   {
     $this->dayOfWeek = $dayOfWeek;
   }
   /**
-   * @return self::DAY_OF_WEEK_*
+   * @return string
    */
   public function getDayOfWeek()
   {
     return $this->dayOfWeek;
   }
   /**
-   * Required. Time in UTC when the period starts. Maintenance will be scheduled
-   * within 60 minutes.
-   *
-   * @param TimeOfDay $startTime
+   * @param TimeOfDay
    */
   public function setStartTime(TimeOfDay $startTime)
   {

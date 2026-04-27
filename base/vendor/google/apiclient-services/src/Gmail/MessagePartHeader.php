@@ -20,23 +20,16 @@ namespace Google\Service\Gmail;
 class MessagePartHeader extends \Google\Model
 {
   /**
-   * The name of the header before the `:` separator. For example, `To`.
-   *
    * @var string
    */
   public $name;
   /**
-   * The value of the header after the `:` separator. For example,
-   * `someuser@example.com`.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * The name of the header before the `:` separator. For example, `To`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -50,10 +43,7 @@ class MessagePartHeader extends \Google\Model
     return $this->name;
   }
   /**
-   * The value of the header after the `:` separator. For example,
-   * `someuser@example.com`.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

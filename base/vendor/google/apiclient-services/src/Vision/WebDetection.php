@@ -34,10 +34,7 @@ class WebDetection extends \Google\Collection
   protected $webEntitiesDataType = 'array';
 
   /**
-   * The service's best guess as to the topic of the request image. Inferred
-   * from similar images on the open web.
-   *
-   * @param WebLabel[] $bestGuessLabels
+   * @param WebLabel[]
    */
   public function setBestGuessLabels($bestGuessLabels)
   {
@@ -51,10 +48,7 @@ class WebDetection extends \Google\Collection
     return $this->bestGuessLabels;
   }
   /**
-   * Fully matching images from the Internet. Can include resized copies of the
-   * query image.
-   *
-   * @param WebImage[] $fullMatchingImages
+   * @param WebImage[]
    */
   public function setFullMatchingImages($fullMatchingImages)
   {
@@ -68,9 +62,7 @@ class WebDetection extends \Google\Collection
     return $this->fullMatchingImages;
   }
   /**
-   * Web pages containing the matching images from the Internet.
-   *
-   * @param WebPage[] $pagesWithMatchingImages
+   * @param WebPage[]
    */
   public function setPagesWithMatchingImages($pagesWithMatchingImages)
   {
@@ -84,11 +76,7 @@ class WebDetection extends \Google\Collection
     return $this->pagesWithMatchingImages;
   }
   /**
-   * Partial matching images from the Internet. Those images are similar enough
-   * to share some key-point features. For example an original image will likely
-   * have partial matching for its crops.
-   *
-   * @param WebImage[] $partialMatchingImages
+   * @param WebImage[]
    */
   public function setPartialMatchingImages($partialMatchingImages)
   {
@@ -102,9 +90,7 @@ class WebDetection extends \Google\Collection
     return $this->partialMatchingImages;
   }
   /**
-   * The visually similar image results.
-   *
-   * @param WebImage[] $visuallySimilarImages
+   * @param WebImage[]
    */
   public function setVisuallySimilarImages($visuallySimilarImages)
   {
@@ -118,9 +104,7 @@ class WebDetection extends \Google\Collection
     return $this->visuallySimilarImages;
   }
   /**
-   * Deduced entities from similar images on the Internet.
-   *
-   * @param WebEntity[] $webEntities
+   * @param WebEntity[]
    */
   public function setWebEntities($webEntities)
   {

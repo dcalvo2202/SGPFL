@@ -22,19 +22,12 @@ class GoogleFirestoreAdminV1SourceInfo extends \Google\Model
   protected $backupType = GoogleFirestoreAdminV1BackupSource::class;
   protected $backupDataType = '';
   /**
-   * The associated long-running operation. This field may not be set after the
-   * operation has completed. Format:
-   * `projects/{project}/databases/{database}/operations/{operation}`.
-   *
    * @var string
    */
   public $operation;
 
   /**
-   * If set, this database was restored from the specified backup (or a snapshot
-   * thereof).
-   *
-   * @param GoogleFirestoreAdminV1BackupSource $backup
+   * @param GoogleFirestoreAdminV1BackupSource
    */
   public function setBackup(GoogleFirestoreAdminV1BackupSource $backup)
   {
@@ -48,11 +41,7 @@ class GoogleFirestoreAdminV1SourceInfo extends \Google\Model
     return $this->backup;
   }
   /**
-   * The associated long-running operation. This field may not be set after the
-   * operation has completed. Format:
-   * `projects/{project}/databases/{database}/operations/{operation}`.
-   *
-   * @param string $operation
+   * @param string
    */
   public function setOperation($operation)
   {

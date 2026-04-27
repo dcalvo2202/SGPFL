@@ -24,9 +24,7 @@ class GetPeopleResponse extends \Google\Collection
   protected $responsesDataType = 'array';
 
   /**
-   * The response for each requested resource name.
-   *
-   * @param PersonResponse[] $responses
+   * @param PersonResponse[]
    */
   public function setResponses($responses)
   {

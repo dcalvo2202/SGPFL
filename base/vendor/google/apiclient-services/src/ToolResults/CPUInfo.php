@@ -20,28 +20,20 @@ namespace Google\Service\ToolResults;
 class CPUInfo extends \Google\Model
 {
   /**
-   * description of the device processor ie '1.8 GHz hexa core 64-bit ARMv8-A'
-   *
    * @var string
    */
   public $cpuProcessor;
   /**
-   * the CPU clock speed in GHz
-   *
    * @var float
    */
   public $cpuSpeedInGhz;
   /**
-   * the number of CPU cores
-   *
    * @var int
    */
   public $numberOfCores;
 
   /**
-   * description of the device processor ie '1.8 GHz hexa core 64-bit ARMv8-A'
-   *
-   * @param string $cpuProcessor
+   * @param string
    */
   public function setCpuProcessor($cpuProcessor)
   {
@@ -55,9 +47,7 @@ class CPUInfo extends \Google\Model
     return $this->cpuProcessor;
   }
   /**
-   * the CPU clock speed in GHz
-   *
-   * @param float $cpuSpeedInGhz
+   * @param float
    */
   public function setCpuSpeedInGhz($cpuSpeedInGhz)
   {
@@ -71,9 +61,7 @@ class CPUInfo extends \Google\Model
     return $this->cpuSpeedInGhz;
   }
   /**
-   * the number of CPU cores
-   *
-   * @param int $numberOfCores
+   * @param int
    */
   public function setNumberOfCores($numberOfCores)
   {

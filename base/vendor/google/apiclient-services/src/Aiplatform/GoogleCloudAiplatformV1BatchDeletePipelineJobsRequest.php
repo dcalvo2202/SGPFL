@@ -21,20 +21,12 @@ class GoogleCloudAiplatformV1BatchDeletePipelineJobsRequest extends \Google\Coll
 {
   protected $collection_key = 'names';
   /**
-   * Required. The names of the PipelineJobs to delete. A maximum of 32
-   * PipelineJobs can be deleted in a batch. Format:
-   * `projects/{project}/locations/{location}/pipelineJobs/{pipelineJob}`
-   *
    * @var string[]
    */
   public $names;
 
   /**
-   * Required. The names of the PipelineJobs to delete. A maximum of 32
-   * PipelineJobs can be deleted in a batch. Format:
-   * `projects/{project}/locations/{location}/pipelineJobs/{pipelineJob}`
-   *
-   * @param string[] $names
+   * @param string[]
    */
   public function setNames($names)
   {

@@ -33,7 +33,7 @@ class GoogleCloudDialogflowV2beta1IntentMessageCarouselSelectItem extends \Googl
   public $title;
 
   /**
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -47,7 +47,7 @@ class GoogleCloudDialogflowV2beta1IntentMessageCarouselSelectItem extends \Googl
     return $this->description;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1IntentMessageImage $image
+   * @param GoogleCloudDialogflowV2beta1IntentMessageImage
    */
   public function setImage(GoogleCloudDialogflowV2beta1IntentMessageImage $image)
   {
@@ -61,7 +61,7 @@ class GoogleCloudDialogflowV2beta1IntentMessageCarouselSelectItem extends \Googl
     return $this->image;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1IntentMessageSelectItemInfo $info
+   * @param GoogleCloudDialogflowV2beta1IntentMessageSelectItemInfo
    */
   public function setInfo(GoogleCloudDialogflowV2beta1IntentMessageSelectItemInfo $info)
   {
@@ -75,7 +75,7 @@ class GoogleCloudDialogflowV2beta1IntentMessageCarouselSelectItem extends \Googl
     return $this->info;
   }
   /**
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

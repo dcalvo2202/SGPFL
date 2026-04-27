@@ -20,22 +20,16 @@ namespace Google\Service\Batch;
 class NFS extends \Google\Model
 {
   /**
-   * Remote source path exported from the NFS, e.g., "/share".
-   *
    * @var string
    */
   public $remotePath;
   /**
-   * The IP address of the NFS.
-   *
    * @var string
    */
   public $server;
 
   /**
-   * Remote source path exported from the NFS, e.g., "/share".
-   *
-   * @param string $remotePath
+   * @param string
    */
   public function setRemotePath($remotePath)
   {
@@ -49,9 +43,7 @@ class NFS extends \Google\Model
     return $this->remotePath;
   }
   /**
-   * The IP address of the NFS.
-   *
-   * @param string $server
+   * @param string
    */
   public function setServer($server)
   {

@@ -23,27 +23,16 @@ class ListInstancesResponse extends \Google\Collection
   protected $instancesType = Instance::class;
   protected $instancesDataType = 'array';
   /**
-   * The token you can use to retrieve the next page of results. Not returned if
-   * there are no more results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Unordered list. Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * A list of instances in the project for the specified location. If the
-   * `{location}` value in the request is "-", the response contains a list of
-   * instances from all locations. If any location is unreachable, the response
-   * will only return instances in reachable locations and the "unreachable"
-   * field will be populated with a list of unreachable locations.
-   *
-   * @param Instance[] $instances
+   * @param Instance[]
    */
   public function setInstances($instances)
   {
@@ -57,10 +46,7 @@ class ListInstancesResponse extends \Google\Collection
     return $this->instances;
   }
   /**
-   * The token you can use to retrieve the next page of results. Not returned if
-   * there are no more results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -74,9 +60,7 @@ class ListInstancesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Unordered list. Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

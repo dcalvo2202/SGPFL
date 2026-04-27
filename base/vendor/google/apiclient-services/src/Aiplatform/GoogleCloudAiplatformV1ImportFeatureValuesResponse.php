@@ -20,37 +20,24 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1ImportFeatureValuesResponse extends \Google\Model
 {
   /**
-   * Number of entities that have been imported by the operation.
-   *
    * @var string
    */
   public $importedEntityCount;
   /**
-   * Number of Feature values that have been imported by the operation.
-   *
    * @var string
    */
   public $importedFeatureValueCount;
   /**
-   * The number of rows in input source that weren't imported due to either *
-   * Not having any featureValues. * Having a null entityId. * Having a null
-   * timestamp. * Not being parsable (applicable for CSV sources).
-   *
    * @var string
    */
   public $invalidRowCount;
   /**
-   * The number rows that weren't ingested due to having feature timestamps
-   * outside the retention boundary.
-   *
    * @var string
    */
   public $timestampOutsideRetentionRowsCount;
 
   /**
-   * Number of entities that have been imported by the operation.
-   *
-   * @param string $importedEntityCount
+   * @param string
    */
   public function setImportedEntityCount($importedEntityCount)
   {
@@ -64,9 +51,7 @@ class GoogleCloudAiplatformV1ImportFeatureValuesResponse extends \Google\Model
     return $this->importedEntityCount;
   }
   /**
-   * Number of Feature values that have been imported by the operation.
-   *
-   * @param string $importedFeatureValueCount
+   * @param string
    */
   public function setImportedFeatureValueCount($importedFeatureValueCount)
   {
@@ -80,11 +65,7 @@ class GoogleCloudAiplatformV1ImportFeatureValuesResponse extends \Google\Model
     return $this->importedFeatureValueCount;
   }
   /**
-   * The number of rows in input source that weren't imported due to either *
-   * Not having any featureValues. * Having a null entityId. * Having a null
-   * timestamp. * Not being parsable (applicable for CSV sources).
-   *
-   * @param string $invalidRowCount
+   * @param string
    */
   public function setInvalidRowCount($invalidRowCount)
   {
@@ -98,10 +79,7 @@ class GoogleCloudAiplatformV1ImportFeatureValuesResponse extends \Google\Model
     return $this->invalidRowCount;
   }
   /**
-   * The number rows that weren't ingested due to having feature timestamps
-   * outside the retention boundary.
-   *
-   * @param string $timestampOutsideRetentionRowsCount
+   * @param string
    */
   public function setTimestampOutsideRetentionRowsCount($timestampOutsideRetentionRowsCount)
   {

@@ -19,121 +19,51 @@ namespace Google\Service\SQLAdmin;
 
 class BackupConfiguration extends \Google\Model
 {
-  /**
-   * Unspecified.
-   */
-  public const BACKUP_TIER_BACKUP_TIER_UNSPECIFIED = 'BACKUP_TIER_UNSPECIFIED';
-  /**
-   * Instance is managed by Cloud SQL.
-   */
-  public const BACKUP_TIER_STANDARD = 'STANDARD';
-  /**
-   * Deprecated: ADVANCED is deprecated. Please use ENHANCED instead.
-   *
-   * @deprecated
-   */
-  public const BACKUP_TIER_ADVANCED = 'ADVANCED';
-  /**
-   * Instance is managed by Google Cloud Backup and DR Service.
-   */
-  public const BACKUP_TIER_ENHANCED = 'ENHANCED';
-  /**
-   * Unspecified.
-   */
-  public const TRANSACTIONAL_LOG_STORAGE_STATE_TRANSACTIONAL_LOG_STORAGE_STATE_UNSPECIFIED = 'TRANSACTIONAL_LOG_STORAGE_STATE_UNSPECIFIED';
-  /**
-   * The transaction logs used for PITR for the instance are stored on a data
-   * disk.
-   */
-  public const TRANSACTIONAL_LOG_STORAGE_STATE_DISK = 'DISK';
-  /**
-   * The transaction logs used for PITR for the instance are switching from
-   * being stored on a data disk to being stored in Cloud Storage. Only
-   * applicable to MySQL.
-   */
-  public const TRANSACTIONAL_LOG_STORAGE_STATE_SWITCHING_TO_CLOUD_STORAGE = 'SWITCHING_TO_CLOUD_STORAGE';
-  /**
-   * The transaction logs used for PITR for the instance are now stored in Cloud
-   * Storage. Previously, they were stored on a data disk. Only applicable to
-   * MySQL.
-   */
-  public const TRANSACTIONAL_LOG_STORAGE_STATE_SWITCHED_TO_CLOUD_STORAGE = 'SWITCHED_TO_CLOUD_STORAGE';
-  /**
-   * The transaction logs used for PITR for the instance are stored in Cloud
-   * Storage. Only applicable to MySQL and PostgreSQL.
-   */
-  public const TRANSACTIONAL_LOG_STORAGE_STATE_CLOUD_STORAGE = 'CLOUD_STORAGE';
   protected $backupRetentionSettingsType = BackupRetentionSettings::class;
   protected $backupRetentionSettingsDataType = '';
   /**
-   * Output only. Backup tier that manages the backups for the instance.
-   *
    * @var string
    */
   public $backupTier;
   /**
-   * (MySQL only) Whether binary log is enabled. If backup configuration is
-   * disabled, binarylog must be disabled as well.
-   *
    * @var bool
    */
   public $binaryLogEnabled;
   /**
-   * Whether this configuration is enabled.
-   *
    * @var bool
    */
   public $enabled;
   /**
-   * This is always `sql#backupConfiguration`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Location of the backup
-   *
    * @var string
    */
   public $location;
   /**
-   * Whether point in time recovery is enabled.
-   *
    * @var bool
    */
   public $pointInTimeRecoveryEnabled;
   /**
-   * Reserved for future use.
-   *
    * @var bool
    */
   public $replicationLogArchivingEnabled;
   /**
-   * Start time for the daily backup configuration in UTC timezone in the 24
-   * hour format - `HH:MM`.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * The number of days of transaction logs we retain for point in time restore,
-   * from 1-7.
-   *
    * @var int
    */
   public $transactionLogRetentionDays;
   /**
-   * Output only. This value contains the storage location of transactional logs
-   * used to perform point-in-time recovery (PITR) for the database.
-   *
    * @var string
    */
   public $transactionalLogStorageState;
 
   /**
-   * Backup retention settings.
-   *
-   * @param BackupRetentionSettings $backupRetentionSettings
+   * @param BackupRetentionSettings
    */
   public function setBackupRetentionSettings(BackupRetentionSettings $backupRetentionSettings)
   {
@@ -147,28 +77,21 @@ class BackupConfiguration extends \Google\Model
     return $this->backupRetentionSettings;
   }
   /**
-   * Output only. Backup tier that manages the backups for the instance.
-   *
-   * Accepted values: BACKUP_TIER_UNSPECIFIED, STANDARD, ADVANCED, ENHANCED
-   *
-   * @param self::BACKUP_TIER_* $backupTier
+   * @param string
    */
   public function setBackupTier($backupTier)
   {
     $this->backupTier = $backupTier;
   }
   /**
-   * @return self::BACKUP_TIER_*
+   * @return string
    */
   public function getBackupTier()
   {
     return $this->backupTier;
   }
   /**
-   * (MySQL only) Whether binary log is enabled. If backup configuration is
-   * disabled, binarylog must be disabled as well.
-   *
-   * @param bool $binaryLogEnabled
+   * @param bool
    */
   public function setBinaryLogEnabled($binaryLogEnabled)
   {
@@ -182,9 +105,7 @@ class BackupConfiguration extends \Google\Model
     return $this->binaryLogEnabled;
   }
   /**
-   * Whether this configuration is enabled.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {
@@ -198,9 +119,7 @@ class BackupConfiguration extends \Google\Model
     return $this->enabled;
   }
   /**
-   * This is always `sql#backupConfiguration`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -214,9 +133,7 @@ class BackupConfiguration extends \Google\Model
     return $this->kind;
   }
   /**
-   * Location of the backup
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -230,9 +147,7 @@ class BackupConfiguration extends \Google\Model
     return $this->location;
   }
   /**
-   * Whether point in time recovery is enabled.
-   *
-   * @param bool $pointInTimeRecoveryEnabled
+   * @param bool
    */
   public function setPointInTimeRecoveryEnabled($pointInTimeRecoveryEnabled)
   {
@@ -246,9 +161,7 @@ class BackupConfiguration extends \Google\Model
     return $this->pointInTimeRecoveryEnabled;
   }
   /**
-   * Reserved for future use.
-   *
-   * @param bool $replicationLogArchivingEnabled
+   * @param bool
    */
   public function setReplicationLogArchivingEnabled($replicationLogArchivingEnabled)
   {
@@ -262,10 +175,7 @@ class BackupConfiguration extends \Google\Model
     return $this->replicationLogArchivingEnabled;
   }
   /**
-   * Start time for the daily backup configuration in UTC timezone in the 24
-   * hour format - `HH:MM`.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -279,10 +189,7 @@ class BackupConfiguration extends \Google\Model
     return $this->startTime;
   }
   /**
-   * The number of days of transaction logs we retain for point in time restore,
-   * from 1-7.
-   *
-   * @param int $transactionLogRetentionDays
+   * @param int
    */
   public function setTransactionLogRetentionDays($transactionLogRetentionDays)
   {
@@ -296,20 +203,14 @@ class BackupConfiguration extends \Google\Model
     return $this->transactionLogRetentionDays;
   }
   /**
-   * Output only. This value contains the storage location of transactional logs
-   * used to perform point-in-time recovery (PITR) for the database.
-   *
-   * Accepted values: TRANSACTIONAL_LOG_STORAGE_STATE_UNSPECIFIED, DISK,
-   * SWITCHING_TO_CLOUD_STORAGE, SWITCHED_TO_CLOUD_STORAGE, CLOUD_STORAGE
-   *
-   * @param self::TRANSACTIONAL_LOG_STORAGE_STATE_* $transactionalLogStorageState
+   * @param string
    */
   public function setTransactionalLogStorageState($transactionalLogStorageState)
   {
     $this->transactionalLogStorageState = $transactionalLogStorageState;
   }
   /**
-   * @return self::TRANSACTIONAL_LOG_STORAGE_STATE_*
+   * @return string
    */
   public function getTransactionalLogStorageState()
   {

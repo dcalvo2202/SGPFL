@@ -20,80 +20,32 @@ namespace Google\Service\ChromeManagement;
 class GoogleChromeManagementV1RiskAssessmentEntry extends \Google\Model
 {
   /**
-   * Default value when no provider is specified.
-   */
-  public const PROVIDER_RISK_ASSESSMENT_PROVIDER_UNSPECIFIED = 'RISK_ASSESSMENT_PROVIDER_UNSPECIFIED';
-  /**
-   * CRXcavator.
-   */
-  public const PROVIDER_RISK_ASSESSMENT_PROVIDER_CRXCAVATOR = 'RISK_ASSESSMENT_PROVIDER_CRXCAVATOR';
-  /**
-   * Spin.Ai.
-   */
-  public const PROVIDER_RISK_ASSESSMENT_PROVIDER_SPIN_AI = 'RISK_ASSESSMENT_PROVIDER_SPIN_AI';
-  /**
-   * LayerX Security.
-   */
-  public const PROVIDER_RISK_ASSESSMENT_PROVIDER_LAYERX = 'RISK_ASSESSMENT_PROVIDER_LAYERX';
-  /**
-   * Spin.AI V2.
-   */
-  public const PROVIDER_RISK_ASSESSMENT_PROVIDER_SPIN_AI_V2 = 'RISK_ASSESSMENT_PROVIDER_SPIN_AI_V2';
-  /**
-   * Risk level not specified.
-   */
-  public const RISK_LEVEL_RISK_LEVEL_UNSPECIFIED = 'RISK_LEVEL_UNSPECIFIED';
-  /**
-   * Extension that represents a low risk.
-   */
-  public const RISK_LEVEL_RISK_LEVEL_LOW = 'RISK_LEVEL_LOW';
-  /**
-   * Extension that represents a medium risk.
-   */
-  public const RISK_LEVEL_RISK_LEVEL_MEDIUM = 'RISK_LEVEL_MEDIUM';
-  /**
-   * Extension that represents a high risk.
-   */
-  public const RISK_LEVEL_RISK_LEVEL_HIGH = 'RISK_LEVEL_HIGH';
-  /**
-   * Output only. The risk assessment provider from which this entry comes from.
-   *
    * @var string
    */
   public $provider;
   protected $riskAssessmentType = GoogleChromeManagementV1RiskAssessment::class;
   protected $riskAssessmentDataType = '';
   /**
-   * Output only. The bucketed risk level for the risk assessment.
-   *
    * @var string
    */
   public $riskLevel;
 
   /**
-   * Output only. The risk assessment provider from which this entry comes from.
-   *
-   * Accepted values: RISK_ASSESSMENT_PROVIDER_UNSPECIFIED,
-   * RISK_ASSESSMENT_PROVIDER_CRXCAVATOR, RISK_ASSESSMENT_PROVIDER_SPIN_AI,
-   * RISK_ASSESSMENT_PROVIDER_LAYERX, RISK_ASSESSMENT_PROVIDER_SPIN_AI_V2
-   *
-   * @param self::PROVIDER_* $provider
+   * @param string
    */
   public function setProvider($provider)
   {
     $this->provider = $provider;
   }
   /**
-   * @return self::PROVIDER_*
+   * @return string
    */
   public function getProvider()
   {
     return $this->provider;
   }
   /**
-   * Output only. The details of the provider's risk assessment.
-   *
-   * @param GoogleChromeManagementV1RiskAssessment $riskAssessment
+   * @param GoogleChromeManagementV1RiskAssessment
    */
   public function setRiskAssessment(GoogleChromeManagementV1RiskAssessment $riskAssessment)
   {
@@ -107,19 +59,14 @@ class GoogleChromeManagementV1RiskAssessmentEntry extends \Google\Model
     return $this->riskAssessment;
   }
   /**
-   * Output only. The bucketed risk level for the risk assessment.
-   *
-   * Accepted values: RISK_LEVEL_UNSPECIFIED, RISK_LEVEL_LOW, RISK_LEVEL_MEDIUM,
-   * RISK_LEVEL_HIGH
-   *
-   * @param self::RISK_LEVEL_* $riskLevel
+   * @param string
    */
   public function setRiskLevel($riskLevel)
   {
     $this->riskLevel = $riskLevel;
   }
   /**
-   * @return self::RISK_LEVEL_*
+   * @return string
    */
   public function getRiskLevel()
   {

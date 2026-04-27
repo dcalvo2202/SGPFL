@@ -21,16 +21,12 @@ class CertChain extends \Google\Collection
 {
   protected $collection_key = 'certificates';
   /**
-   * The certificates that form the CA chain, from leaf to root order.
-   *
    * @var string[]
    */
   public $certificates;
 
   /**
-   * The certificates that form the CA chain, from leaf to root order.
-   *
-   * @param string[] $certificates
+   * @param string[]
    */
   public function setCertificates($certificates)
   {

@@ -20,22 +20,16 @@ namespace Google\Service\Dfareporting;
 class DfareportingFileUrls extends \Google\Model
 {
   /**
-   * The URL for downloading the report data through the API.
-   *
    * @var string
    */
   public $apiUrl;
   /**
-   * The URL for downloading the report data through a browser.
-   *
    * @var string
    */
   public $browserUrl;
 
   /**
-   * The URL for downloading the report data through the API.
-   *
-   * @param string $apiUrl
+   * @param string
    */
   public function setApiUrl($apiUrl)
   {
@@ -49,9 +43,7 @@ class DfareportingFileUrls extends \Google\Model
     return $this->apiUrl;
   }
   /**
-   * The URL for downloading the report data through a browser.
-   *
-   * @param string $browserUrl
+   * @param string
    */
   public function setBrowserUrl($browserUrl)
   {

@@ -20,8 +20,6 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1ConversationMessage extends \Google\Model
 {
   /**
-   * Output only. Message creation timestamp.
-   *
    * @var string
    */
   public $createTime;
@@ -31,9 +29,7 @@ class GoogleCloudDiscoveryengineV1ConversationMessage extends \Google\Model
   protected $userInputDataType = '';
 
   /**
-   * Output only. Message creation timestamp.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -47,9 +43,7 @@ class GoogleCloudDiscoveryengineV1ConversationMessage extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Search reply.
-   *
-   * @param GoogleCloudDiscoveryengineV1Reply $reply
+   * @param GoogleCloudDiscoveryengineV1Reply
    */
   public function setReply(GoogleCloudDiscoveryengineV1Reply $reply)
   {
@@ -63,9 +57,7 @@ class GoogleCloudDiscoveryengineV1ConversationMessage extends \Google\Model
     return $this->reply;
   }
   /**
-   * User text input.
-   *
-   * @param GoogleCloudDiscoveryengineV1TextInput $userInput
+   * @param GoogleCloudDiscoveryengineV1TextInput
    */
   public function setUserInput(GoogleCloudDiscoveryengineV1TextInput $userInput)
   {

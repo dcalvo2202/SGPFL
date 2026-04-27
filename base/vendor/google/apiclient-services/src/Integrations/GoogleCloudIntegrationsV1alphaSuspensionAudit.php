@@ -20,22 +20,16 @@ namespace Google\Service\Integrations;
 class GoogleCloudIntegrationsV1alphaSuspensionAudit extends \Google\Model
 {
   /**
-   * Time at which this suspension was resolved.
-   *
    * @var string
    */
   public $resolveTime;
   /**
-   * Email address of the person who resolved this suspension.
-   *
    * @var string
    */
   public $resolver;
 
   /**
-   * Time at which this suspension was resolved.
-   *
-   * @param string $resolveTime
+   * @param string
    */
   public function setResolveTime($resolveTime)
   {
@@ -49,9 +43,7 @@ class GoogleCloudIntegrationsV1alphaSuspensionAudit extends \Google\Model
     return $this->resolveTime;
   }
   /**
-   * Email address of the person who resolved this suspension.
-   *
-   * @param string $resolver
+   * @param string
    */
   public function setResolver($resolver)
   {

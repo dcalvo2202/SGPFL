@@ -24,10 +24,7 @@ class BatchUpdateAssetsResponse extends \Google\Collection
   protected $assetsDataType = 'array';
 
   /**
-   * Update asset content. The content only includes values after field mask
-   * being applied.
-   *
-   * @param Asset[] $assets
+   * @param Asset[]
    */
   public function setAssets($assets)
   {

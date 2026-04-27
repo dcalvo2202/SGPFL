@@ -31,7 +31,7 @@ class GoogleCloudDialogflowCxV3CalculateCoverageResponse extends \Google\Model
   protected $transitionCoverageDataType = '';
 
   /**
-   * @param string $agent
+   * @param string
    */
   public function setAgent($agent)
   {
@@ -45,7 +45,7 @@ class GoogleCloudDialogflowCxV3CalculateCoverageResponse extends \Google\Model
     return $this->agent;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3IntentCoverage $intentCoverage
+   * @param GoogleCloudDialogflowCxV3IntentCoverage
    */
   public function setIntentCoverage(GoogleCloudDialogflowCxV3IntentCoverage $intentCoverage)
   {
@@ -59,7 +59,7 @@ class GoogleCloudDialogflowCxV3CalculateCoverageResponse extends \Google\Model
     return $this->intentCoverage;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3TransitionRouteGroupCoverage $routeGroupCoverage
+   * @param GoogleCloudDialogflowCxV3TransitionRouteGroupCoverage
    */
   public function setRouteGroupCoverage(GoogleCloudDialogflowCxV3TransitionRouteGroupCoverage $routeGroupCoverage)
   {
@@ -73,7 +73,7 @@ class GoogleCloudDialogflowCxV3CalculateCoverageResponse extends \Google\Model
     return $this->routeGroupCoverage;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3TransitionCoverage $transitionCoverage
+   * @param GoogleCloudDialogflowCxV3TransitionCoverage
    */
   public function setTransitionCoverage(GoogleCloudDialogflowCxV3TransitionCoverage $transitionCoverage)
   {

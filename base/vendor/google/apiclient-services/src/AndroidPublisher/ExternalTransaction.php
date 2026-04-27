@@ -20,21 +20,6 @@ namespace Google\Service\AndroidPublisher;
 class ExternalTransaction extends \Google\Model
 {
   /**
-   * Unspecified transaction state. Not used.
-   */
-  public const TRANSACTION_STATE_TRANSACTION_STATE_UNSPECIFIED = 'TRANSACTION_STATE_UNSPECIFIED';
-  /**
-   * The transaction has been successfully reported to Google.
-   */
-  public const TRANSACTION_STATE_TRANSACTION_REPORTED = 'TRANSACTION_REPORTED';
-  /**
-   * The transaction has been fully refunded.
-   */
-  public const TRANSACTION_STATE_TRANSACTION_CANCELED = 'TRANSACTION_CANCELED';
-  /**
-   * Output only. The time when this transaction was created. This is the time
-   * when Google was notified of the transaction.
-   *
    * @var string
    */
   public $createTime;
@@ -42,12 +27,7 @@ class ExternalTransaction extends \Google\Model
   protected $currentPreTaxAmountDataType = '';
   protected $currentTaxAmountType = Price::class;
   protected $currentTaxAmountDataType = '';
-  protected $externalOfferDetailsType = ExternalOfferDetails::class;
-  protected $externalOfferDetailsDataType = '';
   /**
-   * Output only. The id of this transaction. All transaction ids under the same
-   * package name must be unique. Set when creating the external transaction.
-   *
    * @var string
    */
   public $externalTransactionId;
@@ -58,10 +38,6 @@ class ExternalTransaction extends \Google\Model
   protected $originalTaxAmountType = Price::class;
   protected $originalTaxAmountDataType = '';
   /**
-   * Output only. The resource name of the external transaction. The package
-   * name of the application the inapp products were sold (for example,
-   * 'com.some.app').
-   *
    * @var string
    */
   public $packageName;
@@ -70,27 +46,14 @@ class ExternalTransaction extends \Google\Model
   protected $testPurchaseType = ExternalTransactionTestPurchase::class;
   protected $testPurchaseDataType = '';
   /**
-   * Optional. The transaction program code, used to help determine service fee
-   * for eligible apps participating in partner programs. Developers
-   * participating in the Play Media Experience Program
-   * (https://play.google.com/console/about/programs/mediaprogram/) must provide
-   * the program code when reporting alternative billing transactions. If you
-   * are an eligible developer, please contact your BDM for more information on
-   * how to set this field. Note: this field can not be used for external offers
-   * transactions.
-   *
    * @var int
    */
   public $transactionProgramCode;
   /**
-   * Output only. The current state of the transaction.
-   *
    * @var string
    */
   public $transactionState;
   /**
-   * Required. The time when the transaction was completed.
-   *
    * @var string
    */
   public $transactionTime;
@@ -98,10 +61,7 @@ class ExternalTransaction extends \Google\Model
   protected $userTaxAddressDataType = '';
 
   /**
-   * Output only. The time when this transaction was created. This is the time
-   * when Google was notified of the transaction.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -115,11 +75,7 @@ class ExternalTransaction extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. The current transaction amount before tax. This represents the
-   * current pre-tax amount including any refunds that may have been applied to
-   * this transaction.
-   *
-   * @param Price $currentPreTaxAmount
+   * @param Price
    */
   public function setCurrentPreTaxAmount(Price $currentPreTaxAmount)
   {
@@ -133,10 +89,7 @@ class ExternalTransaction extends \Google\Model
     return $this->currentPreTaxAmount;
   }
   /**
-   * Output only. The current tax amount. This represents the current tax amount
-   * including any refunds that may have been applied to this transaction.
-   *
-   * @param Price $currentTaxAmount
+   * @param Price
    */
   public function setCurrentTaxAmount(Price $currentTaxAmount)
   {
@@ -150,27 +103,7 @@ class ExternalTransaction extends \Google\Model
     return $this->currentTaxAmount;
   }
   /**
-   * Optional. Details necessary to accurately report external offers
-   * transactions.
-   *
-   * @param ExternalOfferDetails $externalOfferDetails
-   */
-  public function setExternalOfferDetails(ExternalOfferDetails $externalOfferDetails)
-  {
-    $this->externalOfferDetails = $externalOfferDetails;
-  }
-  /**
-   * @return ExternalOfferDetails
-   */
-  public function getExternalOfferDetails()
-  {
-    return $this->externalOfferDetails;
-  }
-  /**
-   * Output only. The id of this transaction. All transaction ids under the same
-   * package name must be unique. Set when creating the external transaction.
-   *
-   * @param string $externalTransactionId
+   * @param string
    */
   public function setExternalTransactionId($externalTransactionId)
   {
@@ -184,9 +117,7 @@ class ExternalTransaction extends \Google\Model
     return $this->externalTransactionId;
   }
   /**
-   * This is a one-time transaction and not part of a subscription.
-   *
-   * @param OneTimeExternalTransaction $oneTimeTransaction
+   * @param OneTimeExternalTransaction
    */
   public function setOneTimeTransaction(OneTimeExternalTransaction $oneTimeTransaction)
   {
@@ -200,11 +131,7 @@ class ExternalTransaction extends \Google\Model
     return $this->oneTimeTransaction;
   }
   /**
-   * Required. The original transaction amount before taxes. This represents the
-   * pre-tax amount originally notified to Google before any refunds were
-   * applied.
-   *
-   * @param Price $originalPreTaxAmount
+   * @param Price
    */
   public function setOriginalPreTaxAmount(Price $originalPreTaxAmount)
   {
@@ -218,10 +145,7 @@ class ExternalTransaction extends \Google\Model
     return $this->originalPreTaxAmount;
   }
   /**
-   * Required. The original tax amount. This represents the tax amount
-   * originally notified to Google before any refunds were applied.
-   *
-   * @param Price $originalTaxAmount
+   * @param Price
    */
   public function setOriginalTaxAmount(Price $originalTaxAmount)
   {
@@ -235,11 +159,7 @@ class ExternalTransaction extends \Google\Model
     return $this->originalTaxAmount;
   }
   /**
-   * Output only. The resource name of the external transaction. The package
-   * name of the application the inapp products were sold (for example,
-   * 'com.some.app').
-   *
-   * @param string $packageName
+   * @param string
    */
   public function setPackageName($packageName)
   {
@@ -253,9 +173,7 @@ class ExternalTransaction extends \Google\Model
     return $this->packageName;
   }
   /**
-   * This transaction is part of a recurring series of transactions.
-   *
-   * @param RecurringExternalTransaction $recurringTransaction
+   * @param RecurringExternalTransaction
    */
   public function setRecurringTransaction(RecurringExternalTransaction $recurringTransaction)
   {
@@ -269,10 +187,7 @@ class ExternalTransaction extends \Google\Model
     return $this->recurringTransaction;
   }
   /**
-   * Output only. If set, this transaction was a test purchase. Google will not
-   * charge for a test transaction.
-   *
-   * @param ExternalTransactionTestPurchase $testPurchase
+   * @param ExternalTransactionTestPurchase
    */
   public function setTestPurchase(ExternalTransactionTestPurchase $testPurchase)
   {
@@ -286,16 +201,7 @@ class ExternalTransaction extends \Google\Model
     return $this->testPurchase;
   }
   /**
-   * Optional. The transaction program code, used to help determine service fee
-   * for eligible apps participating in partner programs. Developers
-   * participating in the Play Media Experience Program
-   * (https://play.google.com/console/about/programs/mediaprogram/) must provide
-   * the program code when reporting alternative billing transactions. If you
-   * are an eligible developer, please contact your BDM for more information on
-   * how to set this field. Note: this field can not be used for external offers
-   * transactions.
-   *
-   * @param int $transactionProgramCode
+   * @param int
    */
   public function setTransactionProgramCode($transactionProgramCode)
   {
@@ -309,28 +215,21 @@ class ExternalTransaction extends \Google\Model
     return $this->transactionProgramCode;
   }
   /**
-   * Output only. The current state of the transaction.
-   *
-   * Accepted values: TRANSACTION_STATE_UNSPECIFIED, TRANSACTION_REPORTED,
-   * TRANSACTION_CANCELED
-   *
-   * @param self::TRANSACTION_STATE_* $transactionState
+   * @param string
    */
   public function setTransactionState($transactionState)
   {
     $this->transactionState = $transactionState;
   }
   /**
-   * @return self::TRANSACTION_STATE_*
+   * @return string
    */
   public function getTransactionState()
   {
     return $this->transactionState;
   }
   /**
-   * Required. The time when the transaction was completed.
-   *
-   * @param string $transactionTime
+   * @param string
    */
   public function setTransactionTime($transactionTime)
   {
@@ -344,9 +243,7 @@ class ExternalTransaction extends \Google\Model
     return $this->transactionTime;
   }
   /**
-   * Required. User address for tax computation.
-   *
-   * @param ExternalTransactionAddress $userTaxAddress
+   * @param ExternalTransactionAddress
    */
   public function setUserTaxAddress(ExternalTransactionAddress $userTaxAddress)
   {

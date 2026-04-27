@@ -19,66 +19,26 @@ namespace Google\Service\SA360;
 
 class GoogleAdsSearchads360V0CommonLocationGroupInfo extends \Google\Collection
 {
-  /**
-   * Not specified.
-   */
-  public const RADIUS_UNITS_UNSPECIFIED = 'UNSPECIFIED';
-  /**
-   * Used for return value only. Represents value unknown in this version.
-   */
-  public const RADIUS_UNITS_UNKNOWN = 'UNKNOWN';
-  /**
-   * Meters
-   */
-  public const RADIUS_UNITS_METERS = 'METERS';
-  /**
-   * Miles
-   */
-  public const RADIUS_UNITS_MILES = 'MILES';
-  /**
-   * Milli Miles
-   */
-  public const RADIUS_UNITS_MILLI_MILES = 'MILLI_MILES';
   protected $collection_key = 'geoTargetConstants';
   /**
-   * FeedItemSets whose FeedItems are targeted. If multiple IDs are specified,
-   * then all items that appear in at least one set are targeted. This field
-   * cannot be used with geo_target_constants. This is optional and can only be
-   * set in CREATE operations.
-   *
    * @var string[]
    */
   public $feedItemSets;
   /**
-   * Geo target constant(s) restricting the scope of the geographic area within
-   * the feed. Currently only one geo target constant is allowed.
-   *
    * @var string[]
    */
   public $geoTargetConstants;
   /**
-   * Distance in units specifying the radius around targeted locations. This is
-   * required and must be set in CREATE operations.
-   *
    * @var string
    */
   public $radius;
   /**
-   * Unit of the radius. Miles and meters are supported for geo target
-   * constants. Milli miles and meters are supported for feed item sets. This is
-   * required and must be set in CREATE operations.
-   *
    * @var string
    */
   public $radiusUnits;
 
   /**
-   * FeedItemSets whose FeedItems are targeted. If multiple IDs are specified,
-   * then all items that appear in at least one set are targeted. This field
-   * cannot be used with geo_target_constants. This is optional and can only be
-   * set in CREATE operations.
-   *
-   * @param string[] $feedItemSets
+   * @param string[]
    */
   public function setFeedItemSets($feedItemSets)
   {
@@ -92,10 +52,7 @@ class GoogleAdsSearchads360V0CommonLocationGroupInfo extends \Google\Collection
     return $this->feedItemSets;
   }
   /**
-   * Geo target constant(s) restricting the scope of the geographic area within
-   * the feed. Currently only one geo target constant is allowed.
-   *
-   * @param string[] $geoTargetConstants
+   * @param string[]
    */
   public function setGeoTargetConstants($geoTargetConstants)
   {
@@ -109,10 +66,7 @@ class GoogleAdsSearchads360V0CommonLocationGroupInfo extends \Google\Collection
     return $this->geoTargetConstants;
   }
   /**
-   * Distance in units specifying the radius around targeted locations. This is
-   * required and must be set in CREATE operations.
-   *
-   * @param string $radius
+   * @param string
    */
   public function setRadius($radius)
   {
@@ -126,20 +80,14 @@ class GoogleAdsSearchads360V0CommonLocationGroupInfo extends \Google\Collection
     return $this->radius;
   }
   /**
-   * Unit of the radius. Miles and meters are supported for geo target
-   * constants. Milli miles and meters are supported for feed item sets. This is
-   * required and must be set in CREATE operations.
-   *
-   * Accepted values: UNSPECIFIED, UNKNOWN, METERS, MILES, MILLI_MILES
-   *
-   * @param self::RADIUS_UNITS_* $radiusUnits
+   * @param string
    */
   public function setRadiusUnits($radiusUnits)
   {
     $this->radiusUnits = $radiusUnits;
   }
   /**
-   * @return self::RADIUS_UNITS_*
+   * @return string
    */
   public function getRadiusUnits()
   {

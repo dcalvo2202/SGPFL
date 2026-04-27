@@ -22,19 +22,12 @@ class GooglePrivacyDlpV2InfoTypeLimit extends \Google\Model
   protected $infoTypeType = GooglePrivacyDlpV2InfoType::class;
   protected $infoTypeDataType = '';
   /**
-   * Max findings limit for the given infoType.
-   *
    * @var int
    */
   public $maxFindings;
 
   /**
-   * Type of information the findings limit applies to. Only one limit per
-   * info_type should be provided. If InfoTypeLimit does not have an info_type,
-   * the DLP API applies the limit against all info_types that are found but not
-   * specified in another InfoTypeLimit.
-   *
-   * @param GooglePrivacyDlpV2InfoType $infoType
+   * @param GooglePrivacyDlpV2InfoType
    */
   public function setInfoType(GooglePrivacyDlpV2InfoType $infoType)
   {
@@ -48,9 +41,7 @@ class GooglePrivacyDlpV2InfoTypeLimit extends \Google\Model
     return $this->infoType;
   }
   /**
-   * Max findings limit for the given infoType.
-   *
-   * @param int $maxFindings
+   * @param int
    */
   public function setMaxFindings($maxFindings)
   {

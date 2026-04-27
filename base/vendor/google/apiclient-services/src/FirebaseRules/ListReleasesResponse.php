@@ -21,9 +21,6 @@ class ListReleasesResponse extends \Google\Collection
 {
   protected $collection_key = 'releases';
   /**
-   * The pagination token to retrieve the next page of results. If the value is
-   * empty, no further results remain.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListReleasesResponse extends \Google\Collection
   protected $releasesDataType = 'array';
 
   /**
-   * The pagination token to retrieve the next page of results. If the value is
-   * empty, no further results remain.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class ListReleasesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * List of `Release` instances.
-   *
-   * @param Release[] $releases
+   * @param Release[]
    */
   public function setReleases($releases)
   {

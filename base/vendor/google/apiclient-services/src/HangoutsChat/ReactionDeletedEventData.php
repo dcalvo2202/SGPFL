@@ -23,9 +23,7 @@ class ReactionDeletedEventData extends \Google\Model
   protected $reactionDataType = '';
 
   /**
-   * The deleted reaction.
-   *
-   * @param Reaction $reaction
+   * @param Reaction
    */
   public function setReaction(Reaction $reaction)
   {

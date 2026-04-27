@@ -20,73 +20,30 @@ namespace Google\Service\DataCatalog;
 class GoogleCloudDatacatalogV1Tag extends \Google\Model
 {
   /**
-   * Default value. TagTemplate and its tags are only visible and editable in
-   * Data Catalog.
-   */
-  public const DATAPLEX_TRANSFER_STATUS_DATAPLEX_TRANSFER_STATUS_UNSPECIFIED = 'DATAPLEX_TRANSFER_STATUS_UNSPECIFIED';
-  /**
-   * TagTemplate and its tags are auto-copied to Dataplex Universal Catalog
-   * service. Visible in both services. Editable in Data Catalog, read-only in
-   * Dataplex Universal Catalog. Deprecated: Individual TagTemplate migration is
-   * deprecated in favor of organization or project wide TagTemplate migration
-   * opt-in.
-   *
-   * @deprecated
-   */
-  public const DATAPLEX_TRANSFER_STATUS_MIGRATED = 'MIGRATED';
-  /**
-   * TagTemplate and its tags are auto-copied to Dataplex Universal Catalog
-   * service. Visible in both services. Editable in Dataplex Universal Catalog,
-   * read-only in Data Catalog.
-   */
-  public const DATAPLEX_TRANSFER_STATUS_TRANSFERRED = 'TRANSFERRED';
-  /**
-   * Resources like entry can have schemas associated with them. This scope
-   * allows you to attach tags to an individual column based on that schema. To
-   * attach a tag to a nested column, separate column names with a dot (`.`).
-   * Example: `column.nested_column`.
-   *
    * @var string
    */
   public $column;
   /**
-   * Output only. Denotes the transfer status of the Tag Template.
-   *
    * @var string
    */
   public $dataplexTransferStatus;
   protected $fieldsType = GoogleCloudDatacatalogV1TagField::class;
   protected $fieldsDataType = 'map';
   /**
-   * Identifier. The resource name of the tag in URL format where tag ID is a
-   * system-generated identifier. Note: The tag itself might not be stored in
-   * the location specified in its name.
-   *
    * @var string
    */
   public $name;
   /**
-   * Required. The resource name of the tag template this tag uses. Example:
-   * `projects/{PROJECT_ID}/locations/{LOCATION}/tagTemplates/{TAG_TEMPLATE_ID}`
-   * This field cannot be modified after creation.
-   *
    * @var string
    */
   public $template;
   /**
-   * Output only. The display name of the tag template.
-   *
    * @var string
    */
   public $templateDisplayName;
 
   /**
-   * Resources like entry can have schemas associated with them. This scope
-   * allows you to attach tags to an individual column based on that schema. To
-   * attach a tag to a nested column, separate column names with a dot (`.`).
-   * Example: `column.nested_column`.
-   *
-   * @param string $column
+   * @param string
    */
   public function setColumn($column)
   {
@@ -100,30 +57,21 @@ class GoogleCloudDatacatalogV1Tag extends \Google\Model
     return $this->column;
   }
   /**
-   * Output only. Denotes the transfer status of the Tag Template.
-   *
-   * Accepted values: DATAPLEX_TRANSFER_STATUS_UNSPECIFIED, MIGRATED,
-   * TRANSFERRED
-   *
-   * @param self::DATAPLEX_TRANSFER_STATUS_* $dataplexTransferStatus
+   * @param string
    */
   public function setDataplexTransferStatus($dataplexTransferStatus)
   {
     $this->dataplexTransferStatus = $dataplexTransferStatus;
   }
   /**
-   * @return self::DATAPLEX_TRANSFER_STATUS_*
+   * @return string
    */
   public function getDataplexTransferStatus()
   {
     return $this->dataplexTransferStatus;
   }
   /**
-   * Required. Maps the ID of a tag field to its value and additional
-   * information about that field. Tag template defines valid field IDs. A tag
-   * must have at least 1 field and at most 500 fields.
-   *
-   * @param GoogleCloudDatacatalogV1TagField[] $fields
+   * @param GoogleCloudDatacatalogV1TagField[]
    */
   public function setFields($fields)
   {
@@ -137,11 +85,7 @@ class GoogleCloudDatacatalogV1Tag extends \Google\Model
     return $this->fields;
   }
   /**
-   * Identifier. The resource name of the tag in URL format where tag ID is a
-   * system-generated identifier. Note: The tag itself might not be stored in
-   * the location specified in its name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -155,11 +99,7 @@ class GoogleCloudDatacatalogV1Tag extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. The resource name of the tag template this tag uses. Example:
-   * `projects/{PROJECT_ID}/locations/{LOCATION}/tagTemplates/{TAG_TEMPLATE_ID}`
-   * This field cannot be modified after creation.
-   *
-   * @param string $template
+   * @param string
    */
   public function setTemplate($template)
   {
@@ -173,9 +113,7 @@ class GoogleCloudDatacatalogV1Tag extends \Google\Model
     return $this->template;
   }
   /**
-   * Output only. The display name of the tag template.
-   *
-   * @param string $templateDisplayName
+   * @param string
    */
   public function setTemplateDisplayName($templateDisplayName)
   {

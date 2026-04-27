@@ -24,9 +24,7 @@ class GoogleCloudIntegrationsV1alphaDownloadJsonPackageResponse extends \Google\
   protected $filesDataType = 'array';
 
   /**
-   * List containing JSON for multiple file with type information.
-   *
-   * @param GoogleCloudIntegrationsV1alphaFile[] $files
+   * @param GoogleCloudIntegrationsV1alphaFile[]
    */
   public function setFiles($files)
   {

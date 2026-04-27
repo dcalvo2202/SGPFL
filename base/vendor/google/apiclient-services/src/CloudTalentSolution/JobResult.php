@@ -25,11 +25,7 @@ class JobResult extends \Google\Model
   protected $statusDataType = '';
 
   /**
-   * Here Job only contains basic information including name, company,
-   * language_code and requisition_id, use getJob method to retrieve detailed
-   * information of the created/updated job.
-   *
-   * @param Job $job
+   * @param Job
    */
   public function setJob(Job $job)
   {
@@ -43,10 +39,7 @@ class JobResult extends \Google\Model
     return $this->job;
   }
   /**
-   * The status of the job processed. This field is populated if the processing
-   * of the job fails.
-   *
-   * @param Status $status
+   * @param Status
    */
   public function setStatus(Status $status)
   {

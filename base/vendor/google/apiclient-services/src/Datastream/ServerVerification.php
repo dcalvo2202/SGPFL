@@ -20,24 +20,12 @@ namespace Google\Service\Datastream;
 class ServerVerification extends \Google\Model
 {
   /**
-   * Required. Input only. PEM-encoded server root CA certificate.
-   *
    * @var string
    */
   public $caCertificate;
-  /**
-   * Optional. The hostname mentioned in the Subject or SAN extension of the
-   * server certificate. If this field is not provided, the hostname in the
-   * server certificate is not validated.
-   *
-   * @var string
-   */
-  public $serverCertificateHostname;
 
   /**
-   * Required. Input only. PEM-encoded server root CA certificate.
-   *
-   * @param string $caCertificate
+   * @param string
    */
   public function setCaCertificate($caCertificate)
   {
@@ -49,24 +37,6 @@ class ServerVerification extends \Google\Model
   public function getCaCertificate()
   {
     return $this->caCertificate;
-  }
-  /**
-   * Optional. The hostname mentioned in the Subject or SAN extension of the
-   * server certificate. If this field is not provided, the hostname in the
-   * server certificate is not validated.
-   *
-   * @param string $serverCertificateHostname
-   */
-  public function setServerCertificateHostname($serverCertificateHostname)
-  {
-    $this->serverCertificateHostname = $serverCertificateHostname;
-  }
-  /**
-   * @return string
-   */
-  public function getServerCertificateHostname()
-  {
-    return $this->serverCertificateHostname;
   }
 }
 

@@ -20,20 +20,12 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1alphaGetUriPatternDocumentDataResponse extends \Google\Model
 {
   /**
-   * Document data keyed by URI pattern. For example: document_data_map = {
-   * "www.url1.com": { "Categories": ["category1", "category2"] },
-   * "www.url2.com": { "Categories": ["category3"] } }
-   *
    * @var array[]
    */
   public $documentDataMap;
 
   /**
-   * Document data keyed by URI pattern. For example: document_data_map = {
-   * "www.url1.com": { "Categories": ["category1", "category2"] },
-   * "www.url2.com": { "Categories": ["category3"] } }
-   *
-   * @param array[] $documentDataMap
+   * @param array[]
    */
   public function setDocumentDataMap($documentDataMap)
   {

@@ -20,62 +20,28 @@ namespace Google\Service\Walletobjects;
 class Blobstore2Info extends \Google\Model
 {
   /**
-   * The blob generation id.
-   *
    * @var string
    */
   public $blobGeneration;
   /**
-   * The blob id, e.g., /blobstore/prod/playground/scotty
-   *
    * @var string
    */
   public $blobId;
   /**
-   * A serialized External Read Token passed from Bigstore -> Scotty for a GCS
-   * download. This field must never be consumed outside of Bigstore, and is not
-   * applicable to non-GCS media uploads.
-   *
-   * @var string
-   */
-  public $downloadExternalReadToken;
-  /**
-   * Read handle passed from Bigstore -> Scotty for a GCS download. This is a
-   * signed, serialized blobstore2.ReadHandle proto which must never be set
-   * outside of Bigstore, and is not applicable to non-GCS media downloads.
-   *
    * @var string
    */
   public $downloadReadHandle;
   /**
-   * The blob read token. Needed to read blobs that have not been replicated.
-   * Might not be available until the final call.
-   *
    * @var string
    */
   public $readToken;
   /**
-   * A serialized Object Fragment List Creation Info passed from Bigstore ->
-   * Scotty for a GCS upload. This field must never be consumed outside of
-   * Bigstore, and is not applicable to non-GCS media uploads.
-   *
-   * @var string
-   */
-  public $uploadFragmentListCreationInfo;
-  /**
-   * Metadata passed from Blobstore -> Scotty for a new GCS upload. This is a
-   * signed, serialized blobstore2.BlobMetadataContainer proto which must never
-   * be consumed outside of Bigstore, and is not applicable to non-GCS media
-   * uploads.
-   *
    * @var string
    */
   public $uploadMetadataContainer;
 
   /**
-   * The blob generation id.
-   *
-   * @param string $blobGeneration
+   * @param string
    */
   public function setBlobGeneration($blobGeneration)
   {
@@ -89,9 +55,7 @@ class Blobstore2Info extends \Google\Model
     return $this->blobGeneration;
   }
   /**
-   * The blob id, e.g., /blobstore/prod/playground/scotty
-   *
-   * @param string $blobId
+   * @param string
    */
   public function setBlobId($blobId)
   {
@@ -105,29 +69,7 @@ class Blobstore2Info extends \Google\Model
     return $this->blobId;
   }
   /**
-   * A serialized External Read Token passed from Bigstore -> Scotty for a GCS
-   * download. This field must never be consumed outside of Bigstore, and is not
-   * applicable to non-GCS media uploads.
-   *
-   * @param string $downloadExternalReadToken
-   */
-  public function setDownloadExternalReadToken($downloadExternalReadToken)
-  {
-    $this->downloadExternalReadToken = $downloadExternalReadToken;
-  }
-  /**
-   * @return string
-   */
-  public function getDownloadExternalReadToken()
-  {
-    return $this->downloadExternalReadToken;
-  }
-  /**
-   * Read handle passed from Bigstore -> Scotty for a GCS download. This is a
-   * signed, serialized blobstore2.ReadHandle proto which must never be set
-   * outside of Bigstore, and is not applicable to non-GCS media downloads.
-   *
-   * @param string $downloadReadHandle
+   * @param string
    */
   public function setDownloadReadHandle($downloadReadHandle)
   {
@@ -141,10 +83,7 @@ class Blobstore2Info extends \Google\Model
     return $this->downloadReadHandle;
   }
   /**
-   * The blob read token. Needed to read blobs that have not been replicated.
-   * Might not be available until the final call.
-   *
-   * @param string $readToken
+   * @param string
    */
   public function setReadToken($readToken)
   {
@@ -158,30 +97,7 @@ class Blobstore2Info extends \Google\Model
     return $this->readToken;
   }
   /**
-   * A serialized Object Fragment List Creation Info passed from Bigstore ->
-   * Scotty for a GCS upload. This field must never be consumed outside of
-   * Bigstore, and is not applicable to non-GCS media uploads.
-   *
-   * @param string $uploadFragmentListCreationInfo
-   */
-  public function setUploadFragmentListCreationInfo($uploadFragmentListCreationInfo)
-  {
-    $this->uploadFragmentListCreationInfo = $uploadFragmentListCreationInfo;
-  }
-  /**
-   * @return string
-   */
-  public function getUploadFragmentListCreationInfo()
-  {
-    return $this->uploadFragmentListCreationInfo;
-  }
-  /**
-   * Metadata passed from Blobstore -> Scotty for a new GCS upload. This is a
-   * signed, serialized blobstore2.BlobMetadataContainer proto which must never
-   * be consumed outside of Bigstore, and is not applicable to non-GCS media
-   * uploads.
-   *
-   * @param string $uploadMetadataContainer
+   * @param string
    */
   public function setUploadMetadataContainer($uploadMetadataContainer)
   {

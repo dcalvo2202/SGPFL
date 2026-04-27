@@ -21,10 +21,6 @@ class SasPortalListNodesResponse extends \Google\Collection
 {
   protected $collection_key = 'nodes';
   /**
-   * A pagination token returned from a previous call to ListNodes that
-   * indicates from where listing should continue. If the field is missing or
-   * empty, it means there is no more nodes.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -32,11 +28,7 @@ class SasPortalListNodesResponse extends \Google\Collection
   protected $nodesDataType = 'array';
 
   /**
-   * A pagination token returned from a previous call to ListNodes that
-   * indicates from where listing should continue. If the field is missing or
-   * empty, it means there is no more nodes.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -50,9 +42,7 @@ class SasPortalListNodesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The nodes that match the request.
-   *
-   * @param SasPortalNode[] $nodes
+   * @param SasPortalNode[]
    */
   public function setNodes($nodes)
   {

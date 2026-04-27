@@ -20,82 +20,54 @@ namespace Google\Service\PeopleService;
 class Address extends \Google\Model
 {
   /**
-   * The city of the address.
-   *
    * @var string
    */
   public $city;
   /**
-   * The country of the address.
-   *
    * @var string
    */
   public $country;
   /**
-   * The [ISO 3166-1 alpha-2](http://www.iso.org/iso/country_codes.htm) country
-   * code of the address.
-   *
    * @var string
    */
   public $countryCode;
   /**
-   * The extended address of the address; for example, the apartment number.
-   *
    * @var string
    */
   public $extendedAddress;
   /**
-   * Output only. The type of the address translated and formatted in the
-   * viewer's account locale or the `Accept-Language` HTTP header locale.
-   *
    * @var string
    */
   public $formattedType;
   /**
-   * The unstructured value of the address. If this is not set by the user it
-   * will be automatically constructed from structured values.
-   *
    * @var string
    */
   public $formattedValue;
   protected $metadataType = FieldMetadata::class;
   protected $metadataDataType = '';
   /**
-   * The P.O. box of the address.
-   *
    * @var string
    */
   public $poBox;
   /**
-   * The postal code of the address.
-   *
    * @var string
    */
   public $postalCode;
   /**
-   * The region of the address; for example, the state or province.
-   *
    * @var string
    */
   public $region;
   /**
-   * The street address.
-   *
    * @var string
    */
   public $streetAddress;
   /**
-   * The type of the address. The type can be custom or one of these predefined
-   * values: * `home` * `work` * `other`
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The city of the address.
-   *
-   * @param string $city
+   * @param string
    */
   public function setCity($city)
   {
@@ -109,9 +81,7 @@ class Address extends \Google\Model
     return $this->city;
   }
   /**
-   * The country of the address.
-   *
-   * @param string $country
+   * @param string
    */
   public function setCountry($country)
   {
@@ -125,10 +95,7 @@ class Address extends \Google\Model
     return $this->country;
   }
   /**
-   * The [ISO 3166-1 alpha-2](http://www.iso.org/iso/country_codes.htm) country
-   * code of the address.
-   *
-   * @param string $countryCode
+   * @param string
    */
   public function setCountryCode($countryCode)
   {
@@ -142,9 +109,7 @@ class Address extends \Google\Model
     return $this->countryCode;
   }
   /**
-   * The extended address of the address; for example, the apartment number.
-   *
-   * @param string $extendedAddress
+   * @param string
    */
   public function setExtendedAddress($extendedAddress)
   {
@@ -158,10 +123,7 @@ class Address extends \Google\Model
     return $this->extendedAddress;
   }
   /**
-   * Output only. The type of the address translated and formatted in the
-   * viewer's account locale or the `Accept-Language` HTTP header locale.
-   *
-   * @param string $formattedType
+   * @param string
    */
   public function setFormattedType($formattedType)
   {
@@ -175,10 +137,7 @@ class Address extends \Google\Model
     return $this->formattedType;
   }
   /**
-   * The unstructured value of the address. If this is not set by the user it
-   * will be automatically constructed from structured values.
-   *
-   * @param string $formattedValue
+   * @param string
    */
   public function setFormattedValue($formattedValue)
   {
@@ -192,9 +151,7 @@ class Address extends \Google\Model
     return $this->formattedValue;
   }
   /**
-   * Metadata about the address.
-   *
-   * @param FieldMetadata $metadata
+   * @param FieldMetadata
    */
   public function setMetadata(FieldMetadata $metadata)
   {
@@ -208,9 +165,7 @@ class Address extends \Google\Model
     return $this->metadata;
   }
   /**
-   * The P.O. box of the address.
-   *
-   * @param string $poBox
+   * @param string
    */
   public function setPoBox($poBox)
   {
@@ -224,9 +179,7 @@ class Address extends \Google\Model
     return $this->poBox;
   }
   /**
-   * The postal code of the address.
-   *
-   * @param string $postalCode
+   * @param string
    */
   public function setPostalCode($postalCode)
   {
@@ -240,9 +193,7 @@ class Address extends \Google\Model
     return $this->postalCode;
   }
   /**
-   * The region of the address; for example, the state or province.
-   *
-   * @param string $region
+   * @param string
    */
   public function setRegion($region)
   {
@@ -256,9 +207,7 @@ class Address extends \Google\Model
     return $this->region;
   }
   /**
-   * The street address.
-   *
-   * @param string $streetAddress
+   * @param string
    */
   public function setStreetAddress($streetAddress)
   {
@@ -272,10 +221,7 @@ class Address extends \Google\Model
     return $this->streetAddress;
   }
   /**
-   * The type of the address. The type can be custom or one of these predefined
-   * values: * `home` * `work` * `other`
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

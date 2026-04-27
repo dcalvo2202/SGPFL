@@ -24,7 +24,7 @@ class WrrPolicy extends \Google\Collection
   protected $itemDataType = 'array';
 
   /**
-   * @param WrrPolicyItem[] $item
+   * @param WrrPolicyItem[]
    */
   public function setItem($item)
   {

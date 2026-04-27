@@ -23,26 +23,16 @@ class ListGrpcRoutesResponse extends \Google\Collection
   protected $grpcRoutesType = GrpcRoute::class;
   protected $grpcRoutesDataType = 'array';
   /**
-   * If there might be more results than those appearing in this response, then
-   * `next_page_token` is included. To get the next set of results, call this
-   * method again using the value of `next_page_token` as `page_token`.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Unreachable resources. Populated when the request opts into
-   * return_partial_success and reading across collections e.g. when attempting
-   * to list all resources across all supported locations.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * List of GrpcRoute resources.
-   *
-   * @param GrpcRoute[] $grpcRoutes
+   * @param GrpcRoute[]
    */
   public function setGrpcRoutes($grpcRoutes)
   {
@@ -56,11 +46,7 @@ class ListGrpcRoutesResponse extends \Google\Collection
     return $this->grpcRoutes;
   }
   /**
-   * If there might be more results than those appearing in this response, then
-   * `next_page_token` is included. To get the next set of results, call this
-   * method again using the value of `next_page_token` as `page_token`.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -74,11 +60,7 @@ class ListGrpcRoutesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Unreachable resources. Populated when the request opts into
-   * return_partial_success and reading across collections e.g. when attempting
-   * to list all resources across all supported locations.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

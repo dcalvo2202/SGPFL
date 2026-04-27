@@ -20,16 +20,12 @@ namespace Google\Service\TPU;
 class ShieldedInstanceConfig extends \Google\Model
 {
   /**
-   * Defines whether the instance has Secure Boot enabled.
-   *
    * @var bool
    */
   public $enableSecureBoot;
 
   /**
-   * Defines whether the instance has Secure Boot enabled.
-   *
-   * @param bool $enableSecureBoot
+   * @param bool
    */
   public function setEnableSecureBoot($enableSecureBoot)
   {

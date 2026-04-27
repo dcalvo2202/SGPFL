@@ -29,7 +29,7 @@ class Proto2EnumValueDescriptorProto extends \Google\Model
   public $number;
 
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -43,7 +43,7 @@ class Proto2EnumValueDescriptorProto extends \Google\Model
     return $this->name;
   }
   /**
-   * @param int $number
+   * @param int
    */
   public function setNumber($number)
   {

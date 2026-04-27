@@ -20,39 +20,24 @@ namespace Google\Service\Dfareporting;
 class CustomViewabilityMetricConfiguration extends \Google\Model
 {
   /**
-   * Whether the video must be audible to count an impression.
-   *
    * @var bool
    */
   public $audible;
   /**
-   * The time in milliseconds the video must play for the Custom Viewability
-   * Metric to count an impression. If both this and timePercent are specified,
-   * the earlier of the two will be used.
-   *
    * @var int
    */
   public $timeMillis;
   /**
-   * The percentage of video that must play for the Custom Viewability Metric to
-   * count an impression. If both this and timeMillis are specified, the earlier
-   * of the two will be used.
-   *
    * @var int
    */
   public $timePercent;
   /**
-   * The percentage of video that must be on screen for the Custom Viewability
-   * Metric to count an impression.
-   *
    * @var int
    */
   public $viewabilityPercent;
 
   /**
-   * Whether the video must be audible to count an impression.
-   *
-   * @param bool $audible
+   * @param bool
    */
   public function setAudible($audible)
   {
@@ -66,11 +51,7 @@ class CustomViewabilityMetricConfiguration extends \Google\Model
     return $this->audible;
   }
   /**
-   * The time in milliseconds the video must play for the Custom Viewability
-   * Metric to count an impression. If both this and timePercent are specified,
-   * the earlier of the two will be used.
-   *
-   * @param int $timeMillis
+   * @param int
    */
   public function setTimeMillis($timeMillis)
   {
@@ -84,11 +65,7 @@ class CustomViewabilityMetricConfiguration extends \Google\Model
     return $this->timeMillis;
   }
   /**
-   * The percentage of video that must play for the Custom Viewability Metric to
-   * count an impression. If both this and timeMillis are specified, the earlier
-   * of the two will be used.
-   *
-   * @param int $timePercent
+   * @param int
    */
   public function setTimePercent($timePercent)
   {
@@ -102,10 +79,7 @@ class CustomViewabilityMetricConfiguration extends \Google\Model
     return $this->timePercent;
   }
   /**
-   * The percentage of video that must be on screen for the Custom Viewability
-   * Metric to count an impression.
-   *
-   * @param int $viewabilityPercent
+   * @param int
    */
   public function setViewabilityPercent($viewabilityPercent)
   {

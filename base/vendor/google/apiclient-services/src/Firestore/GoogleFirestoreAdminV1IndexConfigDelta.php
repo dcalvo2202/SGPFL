@@ -20,20 +20,6 @@ namespace Google\Service\Firestore;
 class GoogleFirestoreAdminV1IndexConfigDelta extends \Google\Model
 {
   /**
-   * The type of change is not specified or known.
-   */
-  public const CHANGE_TYPE_CHANGE_TYPE_UNSPECIFIED = 'CHANGE_TYPE_UNSPECIFIED';
-  /**
-   * The single field index is being added.
-   */
-  public const CHANGE_TYPE_ADD = 'ADD';
-  /**
-   * The single field index is being removed.
-   */
-  public const CHANGE_TYPE_REMOVE = 'REMOVE';
-  /**
-   * Specifies how the index is changing.
-   *
    * @var string
    */
   public $changeType;
@@ -41,27 +27,21 @@ class GoogleFirestoreAdminV1IndexConfigDelta extends \Google\Model
   protected $indexDataType = '';
 
   /**
-   * Specifies how the index is changing.
-   *
-   * Accepted values: CHANGE_TYPE_UNSPECIFIED, ADD, REMOVE
-   *
-   * @param self::CHANGE_TYPE_* $changeType
+   * @param string
    */
   public function setChangeType($changeType)
   {
     $this->changeType = $changeType;
   }
   /**
-   * @return self::CHANGE_TYPE_*
+   * @return string
    */
   public function getChangeType()
   {
     return $this->changeType;
   }
   /**
-   * The index being changed.
-   *
-   * @param GoogleFirestoreAdminV1Index $index
+   * @param GoogleFirestoreAdminV1Index
    */
   public function setIndex(GoogleFirestoreAdminV1Index $index)
   {

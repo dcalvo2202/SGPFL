@@ -21,16 +21,12 @@ class MetricMatrixRow extends \Google\Collection
 {
   protected $collection_key = 'cols';
   /**
-   * The columns of the row.
-   *
    * @var float[]
    */
   public $cols;
 
   /**
-   * The columns of the row.
-   *
-   * @param float[] $cols
+   * @param float[]
    */
   public function setCols($cols)
   {

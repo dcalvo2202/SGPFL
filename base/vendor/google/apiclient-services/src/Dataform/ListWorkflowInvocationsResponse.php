@@ -21,15 +21,10 @@ class ListWorkflowInvocationsResponse extends \Google\Collection
 {
   protected $collection_key = 'workflowInvocations';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Locations which could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
@@ -37,10 +32,7 @@ class ListWorkflowInvocationsResponse extends \Google\Collection
   protected $workflowInvocationsDataType = 'array';
 
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -54,9 +46,7 @@ class ListWorkflowInvocationsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Locations which could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {
@@ -70,9 +60,7 @@ class ListWorkflowInvocationsResponse extends \Google\Collection
     return $this->unreachable;
   }
   /**
-   * List of workflow invocations.
-   *
-   * @param WorkflowInvocation[] $workflowInvocations
+   * @param WorkflowInvocation[]
    */
   public function setWorkflowInvocations($workflowInvocations)
   {

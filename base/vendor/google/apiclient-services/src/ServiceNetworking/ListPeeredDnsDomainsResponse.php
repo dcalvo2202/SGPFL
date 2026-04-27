@@ -24,9 +24,7 @@ class ListPeeredDnsDomainsResponse extends \Google\Collection
   protected $peeredDnsDomainsDataType = 'array';
 
   /**
-   * The list of peered DNS domains.
-   *
-   * @param PeeredDnsDomain[] $peeredDnsDomains
+   * @param PeeredDnsDomain[]
    */
   public function setPeeredDnsDomains($peeredDnsDomains)
   {

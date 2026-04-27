@@ -25,9 +25,7 @@ class AptRepository extends \Google\Model
   protected $publicRepositoryDataType = '';
 
   /**
-   * Customer-specified remote repository.
-   *
-   * @param GoogleDevtoolsArtifactregistryV1RemoteRepositoryConfigAptRepositoryCustomRepository $customRepository
+   * @param GoogleDevtoolsArtifactregistryV1RemoteRepositoryConfigAptRepositoryCustomRepository
    */
   public function setCustomRepository(GoogleDevtoolsArtifactregistryV1RemoteRepositoryConfigAptRepositoryCustomRepository $customRepository)
   {
@@ -41,10 +39,7 @@ class AptRepository extends \Google\Model
     return $this->customRepository;
   }
   /**
-   * One of the publicly available Apt repositories supported by Artifact
-   * Registry.
-   *
-   * @param GoogleDevtoolsArtifactregistryV1RemoteRepositoryConfigAptRepositoryPublicRepository $publicRepository
+   * @param GoogleDevtoolsArtifactregistryV1RemoteRepositoryConfigAptRepositoryPublicRepository
    */
   public function setPublicRepository(GoogleDevtoolsArtifactregistryV1RemoteRepositoryConfigAptRepositoryPublicRepository $publicRepository)
   {

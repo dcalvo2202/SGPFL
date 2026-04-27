@@ -23,15 +23,6 @@ class ImageContext extends \Google\Collection
   protected $cropHintsParamsType = CropHintsParams::class;
   protected $cropHintsParamsDataType = '';
   /**
-   * List of languages to use for TEXT_DETECTION. In most cases, an empty value
-   * yields the best results since it enables automatic language detection. For
-   * languages based on the Latin alphabet, setting `language_hints` is not
-   * needed. In rare cases, when the language of the text in the image is known,
-   * setting a hint will help get better results (although it will be a
-   * significant hindrance if the hint is wrong). Text detection returns an
-   * error if one or more of the specified languages is not one of the
-   * [supported languages](https://cloud.google.com/vision/docs/languages).
-   *
    * @var string[]
    */
   public $languageHints;
@@ -45,9 +36,7 @@ class ImageContext extends \Google\Collection
   protected $webDetectionParamsDataType = '';
 
   /**
-   * Parameters for crop hints annotation request.
-   *
-   * @param CropHintsParams $cropHintsParams
+   * @param CropHintsParams
    */
   public function setCropHintsParams(CropHintsParams $cropHintsParams)
   {
@@ -61,16 +50,7 @@ class ImageContext extends \Google\Collection
     return $this->cropHintsParams;
   }
   /**
-   * List of languages to use for TEXT_DETECTION. In most cases, an empty value
-   * yields the best results since it enables automatic language detection. For
-   * languages based on the Latin alphabet, setting `language_hints` is not
-   * needed. In rare cases, when the language of the text in the image is known,
-   * setting a hint will help get better results (although it will be a
-   * significant hindrance if the hint is wrong). Text detection returns an
-   * error if one or more of the specified languages is not one of the
-   * [supported languages](https://cloud.google.com/vision/docs/languages).
-   *
-   * @param string[] $languageHints
+   * @param string[]
    */
   public function setLanguageHints($languageHints)
   {
@@ -84,9 +64,7 @@ class ImageContext extends \Google\Collection
     return $this->languageHints;
   }
   /**
-   * Not used.
-   *
-   * @param LatLongRect $latLongRect
+   * @param LatLongRect
    */
   public function setLatLongRect(LatLongRect $latLongRect)
   {
@@ -100,9 +78,7 @@ class ImageContext extends \Google\Collection
     return $this->latLongRect;
   }
   /**
-   * Parameters for product search.
-   *
-   * @param ProductSearchParams $productSearchParams
+   * @param ProductSearchParams
    */
   public function setProductSearchParams(ProductSearchParams $productSearchParams)
   {
@@ -116,9 +92,7 @@ class ImageContext extends \Google\Collection
     return $this->productSearchParams;
   }
   /**
-   * Parameters for text detection and document text detection.
-   *
-   * @param TextDetectionParams $textDetectionParams
+   * @param TextDetectionParams
    */
   public function setTextDetectionParams(TextDetectionParams $textDetectionParams)
   {
@@ -132,9 +106,7 @@ class ImageContext extends \Google\Collection
     return $this->textDetectionParams;
   }
   /**
-   * Parameters for web detection.
-   *
-   * @param WebDetectionParams $webDetectionParams
+   * @param WebDetectionParams
    */
   public function setWebDetectionParams(WebDetectionParams $webDetectionParams)
   {

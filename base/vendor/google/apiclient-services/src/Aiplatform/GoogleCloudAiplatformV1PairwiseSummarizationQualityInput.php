@@ -25,9 +25,7 @@ class GoogleCloudAiplatformV1PairwiseSummarizationQualityInput extends \Google\M
   protected $metricSpecDataType = '';
 
   /**
-   * Required. Pairwise summarization quality instance.
-   *
-   * @param GoogleCloudAiplatformV1PairwiseSummarizationQualityInstance $instance
+   * @param GoogleCloudAiplatformV1PairwiseSummarizationQualityInstance
    */
   public function setInstance(GoogleCloudAiplatformV1PairwiseSummarizationQualityInstance $instance)
   {
@@ -41,9 +39,7 @@ class GoogleCloudAiplatformV1PairwiseSummarizationQualityInput extends \Google\M
     return $this->instance;
   }
   /**
-   * Required. Spec for pairwise summarization quality score metric.
-   *
-   * @param GoogleCloudAiplatformV1PairwiseSummarizationQualitySpec $metricSpec
+   * @param GoogleCloudAiplatformV1PairwiseSummarizationQualitySpec
    */
   public function setMetricSpec(GoogleCloudAiplatformV1PairwiseSummarizationQualitySpec $metricSpec)
   {

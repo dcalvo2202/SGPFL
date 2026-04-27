@@ -27,25 +27,12 @@ class QueryParameterType extends \Google\Collection
   protected $structTypesType = QueryParameterTypeStructTypes::class;
   protected $structTypesDataType = 'array';
   /**
-   * Optional. Precision (maximum number of total digits in base 10) for seconds
-   * of TIMESTAMP type. Possible values include: * 6 (Default, for TIMESTAMP
-   * type with microsecond precision) * 12 (For TIMESTAMP type with picosecond
-   * precision)
-   *
-   * @var string
-   */
-  public $timestampPrecision;
-  /**
-   * Required. The top level type of this field.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Optional. The type of the array's elements, if this is an array.
-   *
-   * @param QueryParameterType $arrayType
+   * @param QueryParameterType
    */
   public function setArrayType(QueryParameterType $arrayType)
   {
@@ -59,9 +46,7 @@ class QueryParameterType extends \Google\Collection
     return $this->arrayType;
   }
   /**
-   * Optional. The element type of the range, if this is a range.
-   *
-   * @param QueryParameterType $rangeElementType
+   * @param QueryParameterType
    */
   public function setRangeElementType(QueryParameterType $rangeElementType)
   {
@@ -75,10 +60,7 @@ class QueryParameterType extends \Google\Collection
     return $this->rangeElementType;
   }
   /**
-   * Optional. The types of the fields of this struct, in order, if this is a
-   * struct.
-   *
-   * @param QueryParameterTypeStructTypes[] $structTypes
+   * @param QueryParameterTypeStructTypes[]
    */
   public function setStructTypes($structTypes)
   {
@@ -92,28 +74,7 @@ class QueryParameterType extends \Google\Collection
     return $this->structTypes;
   }
   /**
-   * Optional. Precision (maximum number of total digits in base 10) for seconds
-   * of TIMESTAMP type. Possible values include: * 6 (Default, for TIMESTAMP
-   * type with microsecond precision) * 12 (For TIMESTAMP type with picosecond
-   * precision)
-   *
-   * @param string $timestampPrecision
-   */
-  public function setTimestampPrecision($timestampPrecision)
-  {
-    $this->timestampPrecision = $timestampPrecision;
-  }
-  /**
-   * @return string
-   */
-  public function getTimestampPrecision()
-  {
-    return $this->timestampPrecision;
-  }
-  /**
-   * Required. The top level type of this field.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

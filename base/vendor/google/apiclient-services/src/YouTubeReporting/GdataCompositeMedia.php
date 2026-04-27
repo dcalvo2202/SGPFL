@@ -20,97 +20,54 @@ namespace Google\Service\YouTubeReporting;
 class GdataCompositeMedia extends \Google\Model
 {
   /**
-   * gdata
-   */
-  public const REFERENCE_TYPE_PATH = 'PATH';
-  /**
-   * gdata
-   */
-  public const REFERENCE_TYPE_BLOB_REF = 'BLOB_REF';
-  /**
-   * gdata
-   */
-  public const REFERENCE_TYPE_INLINE = 'INLINE';
-  /**
-   * gdata
-   */
-  public const REFERENCE_TYPE_BIGSTORE_REF = 'BIGSTORE_REF';
-  /**
-   * gdata
-   */
-  public const REFERENCE_TYPE_COSMO_BINARY_REFERENCE = 'COSMO_BINARY_REFERENCE';
-  /**
-   * gdata
-   *
-   * @deprecated
    * @var string
    */
   public $blobRef;
   protected $blobstore2InfoType = GdataBlobstore2Info::class;
   protected $blobstore2InfoDataType = '';
   /**
-   * gdata
-   *
    * @var string
    */
   public $cosmoBinaryReference;
   /**
-   * gdata
-   *
    * @var string
    */
   public $crc32cHash;
   /**
-   * gdata
-   *
    * @var string
    */
   public $inline;
   /**
-   * gdata
-   *
    * @var string
    */
   public $length;
   /**
-   * gdata
-   *
    * @var string
    */
   public $md5Hash;
   protected $objectIdType = GdataObjectId::class;
   protected $objectIdDataType = '';
   /**
-   * gdata
-   *
    * @var string
    */
   public $path;
   /**
-   * gdata
-   *
    * @var string
    */
   public $referenceType;
   /**
-   * gdata
-   *
    * @var string
    */
   public $sha1Hash;
 
   /**
-   * gdata
-   *
-   * @deprecated
-   * @param string $blobRef
+   * @param string
    */
   public function setBlobRef($blobRef)
   {
     $this->blobRef = $blobRef;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getBlobRef()
@@ -118,9 +75,7 @@ class GdataCompositeMedia extends \Google\Model
     return $this->blobRef;
   }
   /**
-   * gdata
-   *
-   * @param GdataBlobstore2Info $blobstore2Info
+   * @param GdataBlobstore2Info
    */
   public function setBlobstore2Info(GdataBlobstore2Info $blobstore2Info)
   {
@@ -134,9 +89,7 @@ class GdataCompositeMedia extends \Google\Model
     return $this->blobstore2Info;
   }
   /**
-   * gdata
-   *
-   * @param string $cosmoBinaryReference
+   * @param string
    */
   public function setCosmoBinaryReference($cosmoBinaryReference)
   {
@@ -150,9 +103,7 @@ class GdataCompositeMedia extends \Google\Model
     return $this->cosmoBinaryReference;
   }
   /**
-   * gdata
-   *
-   * @param string $crc32cHash
+   * @param string
    */
   public function setCrc32cHash($crc32cHash)
   {
@@ -166,9 +117,7 @@ class GdataCompositeMedia extends \Google\Model
     return $this->crc32cHash;
   }
   /**
-   * gdata
-   *
-   * @param string $inline
+   * @param string
    */
   public function setInline($inline)
   {
@@ -182,9 +131,7 @@ class GdataCompositeMedia extends \Google\Model
     return $this->inline;
   }
   /**
-   * gdata
-   *
-   * @param string $length
+   * @param string
    */
   public function setLength($length)
   {
@@ -198,9 +145,7 @@ class GdataCompositeMedia extends \Google\Model
     return $this->length;
   }
   /**
-   * gdata
-   *
-   * @param string $md5Hash
+   * @param string
    */
   public function setMd5Hash($md5Hash)
   {
@@ -214,9 +159,7 @@ class GdataCompositeMedia extends \Google\Model
     return $this->md5Hash;
   }
   /**
-   * gdata
-   *
-   * @param GdataObjectId $objectId
+   * @param GdataObjectId
    */
   public function setObjectId(GdataObjectId $objectId)
   {
@@ -230,9 +173,7 @@ class GdataCompositeMedia extends \Google\Model
     return $this->objectId;
   }
   /**
-   * gdata
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {
@@ -246,28 +187,21 @@ class GdataCompositeMedia extends \Google\Model
     return $this->path;
   }
   /**
-   * gdata
-   *
-   * Accepted values: PATH, BLOB_REF, INLINE, BIGSTORE_REF,
-   * COSMO_BINARY_REFERENCE
-   *
-   * @param self::REFERENCE_TYPE_* $referenceType
+   * @param string
    */
   public function setReferenceType($referenceType)
   {
     $this->referenceType = $referenceType;
   }
   /**
-   * @return self::REFERENCE_TYPE_*
+   * @return string
    */
   public function getReferenceType()
   {
     return $this->referenceType;
   }
   /**
-   * gdata
-   *
-   * @param string $sha1Hash
+   * @param string
    */
   public function setSha1Hash($sha1Hash)
   {

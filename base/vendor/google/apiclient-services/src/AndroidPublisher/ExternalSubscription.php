@@ -20,38 +20,19 @@ namespace Google\Service\AndroidPublisher;
 class ExternalSubscription extends \Google\Model
 {
   /**
-   * Unspecified, do not use.
-   */
-  public const SUBSCRIPTION_TYPE_SUBSCRIPTION_TYPE_UNSPECIFIED = 'SUBSCRIPTION_TYPE_UNSPECIFIED';
-  /**
-   * This is a recurring subscription where the user is charged every billing
-   * cycle.
-   */
-  public const SUBSCRIPTION_TYPE_RECURRING = 'RECURRING';
-  /**
-   * This is a prepaid subscription where the user pays up front.
-   */
-  public const SUBSCRIPTION_TYPE_PREPAID = 'PREPAID';
-  /**
-   * Required. The type of the external subscription.
-   *
    * @var string
    */
   public $subscriptionType;
 
   /**
-   * Required. The type of the external subscription.
-   *
-   * Accepted values: SUBSCRIPTION_TYPE_UNSPECIFIED, RECURRING, PREPAID
-   *
-   * @param self::SUBSCRIPTION_TYPE_* $subscriptionType
+   * @param string
    */
   public function setSubscriptionType($subscriptionType)
   {
     $this->subscriptionType = $subscriptionType;
   }
   /**
-   * @return self::SUBSCRIPTION_TYPE_*
+   * @return string
    */
   public function getSubscriptionType()
   {

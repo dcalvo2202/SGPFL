@@ -20,16 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1NotebookExecutionJobDirectNotebookSource extends \Google\Model
 {
   /**
-   * The base64-encoded contents of the input notebook file.
-   *
    * @var string
    */
   public $content;
 
   /**
-   * The base64-encoded contents of the input notebook file.
-   *
-   * @param string $content
+   * @param string
    */
   public function setContent($content)
   {

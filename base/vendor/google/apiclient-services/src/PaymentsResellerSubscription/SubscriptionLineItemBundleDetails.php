@@ -20,20 +20,18 @@ namespace Google\Service\PaymentsResellerSubscription;
 class SubscriptionLineItemBundleDetails extends \Google\Collection
 {
   protected $collection_key = 'bundleElementDetails';
-  protected $bundleElementDetailsType = SubscriptionLineItemBundleDetailsBundleElementDetails::class;
+  protected $bundleElementDetailsType = GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemBundleDetailsBundleElementDetails::class;
   protected $bundleElementDetailsDataType = 'array';
 
   /**
-   * Output only. The details for each element in the hard bundle.
-   *
-   * @param SubscriptionLineItemBundleDetailsBundleElementDetails[] $bundleElementDetails
+   * @param GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemBundleDetailsBundleElementDetails[]
    */
   public function setBundleElementDetails($bundleElementDetails)
   {
     $this->bundleElementDetails = $bundleElementDetails;
   }
   /**
-   * @return SubscriptionLineItemBundleDetailsBundleElementDetails[]
+   * @return GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemBundleDetailsBundleElementDetails[]
    */
   public function getBundleElementDetails()
   {

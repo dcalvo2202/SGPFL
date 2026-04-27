@@ -20,16 +20,12 @@ namespace Google\Service\Baremetalsolution;
 class RenameVolumeRequest extends \Google\Model
 {
   /**
-   * Required. The new `id` of the volume.
-   *
    * @var string
    */
   public $newVolumeId;
 
   /**
-   * Required. The new `id` of the volume.
-   *
-   * @param string $newVolumeId
+   * @param string
    */
   public function setNewVolumeId($newVolumeId)
   {

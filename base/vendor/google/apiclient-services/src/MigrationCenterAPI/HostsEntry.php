@@ -21,22 +21,16 @@ class HostsEntry extends \Google\Collection
 {
   protected $collection_key = 'hostNames';
   /**
-   * List of host names / aliases.
-   *
    * @var string[]
    */
   public $hostNames;
   /**
-   * IP (raw, IPv4/6 agnostic).
-   *
    * @var string
    */
   public $ip;
 
   /**
-   * List of host names / aliases.
-   *
-   * @param string[] $hostNames
+   * @param string[]
    */
   public function setHostNames($hostNames)
   {
@@ -50,9 +44,7 @@ class HostsEntry extends \Google\Collection
     return $this->hostNames;
   }
   /**
-   * IP (raw, IPv4/6 agnostic).
-   *
-   * @param string $ip
+   * @param string
    */
   public function setIp($ip)
   {

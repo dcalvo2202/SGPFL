@@ -25,17 +25,10 @@ class DeviceIntegrity extends \Google\Collection
   protected $deviceRecallType = DeviceRecall::class;
   protected $deviceRecallDataType = '';
   /**
-   * Details about the integrity of the device the app is running on.
-   *
    * @var string[]
    */
   public $deviceRecognitionVerdict;
   /**
-   * Contains legacy details about the integrity of the device the app is
-   * running on. Only for devices with Android version T or higher and only for
-   * apps opted in to the new verdicts. Only available during the transition
-   * period to the new verdicts system and will be removed afterwards.
-   *
    * @var string[]
    */
   public $legacyDeviceRecognitionVerdict;
@@ -43,9 +36,7 @@ class DeviceIntegrity extends \Google\Collection
   protected $recentDeviceActivityDataType = '';
 
   /**
-   * Attributes of the device where the integrity token was generated.
-   *
-   * @param DeviceAttributes $deviceAttributes
+   * @param DeviceAttributes
    */
   public function setDeviceAttributes(DeviceAttributes $deviceAttributes)
   {
@@ -59,9 +50,7 @@ class DeviceIntegrity extends \Google\Collection
     return $this->deviceAttributes;
   }
   /**
-   * Details about the device recall bits set by the developer.
-   *
-   * @param DeviceRecall $deviceRecall
+   * @param DeviceRecall
    */
   public function setDeviceRecall(DeviceRecall $deviceRecall)
   {
@@ -75,9 +64,7 @@ class DeviceIntegrity extends \Google\Collection
     return $this->deviceRecall;
   }
   /**
-   * Details about the integrity of the device the app is running on.
-   *
-   * @param string[] $deviceRecognitionVerdict
+   * @param string[]
    */
   public function setDeviceRecognitionVerdict($deviceRecognitionVerdict)
   {
@@ -91,12 +78,7 @@ class DeviceIntegrity extends \Google\Collection
     return $this->deviceRecognitionVerdict;
   }
   /**
-   * Contains legacy details about the integrity of the device the app is
-   * running on. Only for devices with Android version T or higher and only for
-   * apps opted in to the new verdicts. Only available during the transition
-   * period to the new verdicts system and will be removed afterwards.
-   *
-   * @param string[] $legacyDeviceRecognitionVerdict
+   * @param string[]
    */
   public function setLegacyDeviceRecognitionVerdict($legacyDeviceRecognitionVerdict)
   {
@@ -110,9 +92,7 @@ class DeviceIntegrity extends \Google\Collection
     return $this->legacyDeviceRecognitionVerdict;
   }
   /**
-   * Details about the device activity of the device the app is running on.
-   *
-   * @param RecentDeviceActivity $recentDeviceActivity
+   * @param RecentDeviceActivity
    */
   public function setRecentDeviceActivity(RecentDeviceActivity $recentDeviceActivity)
   {

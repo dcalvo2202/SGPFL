@@ -22,46 +22,28 @@ class GitLabEnterpriseConfig extends \Google\Model
   protected $authorizerCredentialType = UserCredential::class;
   protected $authorizerCredentialDataType = '';
   /**
-   * Required. The URI of the GitLab Enterprise host this connection is for.
-   *
    * @var string
    */
   public $hostUri;
   protected $readAuthorizerCredentialType = UserCredential::class;
   protected $readAuthorizerCredentialDataType = '';
   /**
-   * Output only. Version of the GitLab Enterprise server running on the
-   * `host_uri`.
-   *
    * @var string
    */
   public $serverVersion;
   protected $serviceDirectoryConfigType = ServiceDirectoryConfig::class;
   protected $serviceDirectoryConfigDataType = '';
   /**
-   * Optional. SSL Certificate Authority certificate to use for requests to
-   * GitLab Enterprise instance.
-   *
    * @var string
    */
   public $sslCaCertificate;
   /**
-   * Required. Immutable. SecretManager resource containing the webhook secret
-   * of a GitLab project, formatted as `projects/secrets/versions` or
-   * `projects/locations/secrets/versions` (if regional secrets are supported in
-   * that location). This is used to validate webhooks.
-   *
    * @var string
    */
   public $webhookSecretSecretVersion;
 
   /**
-   * Required. A GitLab personal access token with the minimum `api` scope
-   * access and a minimum role of `maintainer`. The GitLab Projects visible to
-   * this Personal Access Token will control which Projects Developer Connect
-   * has access to.
-   *
-   * @param UserCredential $authorizerCredential
+   * @param UserCredential
    */
   public function setAuthorizerCredential(UserCredential $authorizerCredential)
   {
@@ -75,9 +57,7 @@ class GitLabEnterpriseConfig extends \Google\Model
     return $this->authorizerCredential;
   }
   /**
-   * Required. The URI of the GitLab Enterprise host this connection is for.
-   *
-   * @param string $hostUri
+   * @param string
    */
   public function setHostUri($hostUri)
   {
@@ -91,12 +71,7 @@ class GitLabEnterpriseConfig extends \Google\Model
     return $this->hostUri;
   }
   /**
-   * Required. A GitLab personal access token with the minimum `read_api` scope
-   * access and a minimum role of `reporter`. The GitLab Projects visible to
-   * this Personal Access Token will control which Projects Developer Connect
-   * has access to.
-   *
-   * @param UserCredential $readAuthorizerCredential
+   * @param UserCredential
    */
   public function setReadAuthorizerCredential(UserCredential $readAuthorizerCredential)
   {
@@ -110,10 +85,7 @@ class GitLabEnterpriseConfig extends \Google\Model
     return $this->readAuthorizerCredential;
   }
   /**
-   * Output only. Version of the GitLab Enterprise server running on the
-   * `host_uri`.
-   *
-   * @param string $serverVersion
+   * @param string
    */
   public function setServerVersion($serverVersion)
   {
@@ -127,13 +99,7 @@ class GitLabEnterpriseConfig extends \Google\Model
     return $this->serverVersion;
   }
   /**
-   * Optional. Configuration for using Service Directory to privately connect to
-   * a GitLab Enterprise instance. This should only be set if the GitLab
-   * Enterprise server is hosted on-premises and not reachable by public
-   * internet. If this field is left empty, calls to the GitLab Enterprise
-   * server will be made over the public internet.
-   *
-   * @param ServiceDirectoryConfig $serviceDirectoryConfig
+   * @param ServiceDirectoryConfig
    */
   public function setServiceDirectoryConfig(ServiceDirectoryConfig $serviceDirectoryConfig)
   {
@@ -147,10 +113,7 @@ class GitLabEnterpriseConfig extends \Google\Model
     return $this->serviceDirectoryConfig;
   }
   /**
-   * Optional. SSL Certificate Authority certificate to use for requests to
-   * GitLab Enterprise instance.
-   *
-   * @param string $sslCaCertificate
+   * @param string
    */
   public function setSslCaCertificate($sslCaCertificate)
   {
@@ -164,12 +127,7 @@ class GitLabEnterpriseConfig extends \Google\Model
     return $this->sslCaCertificate;
   }
   /**
-   * Required. Immutable. SecretManager resource containing the webhook secret
-   * of a GitLab project, formatted as `projects/secrets/versions` or
-   * `projects/locations/secrets/versions` (if regional secrets are supported in
-   * that location). This is used to validate webhooks.
-   *
-   * @param string $webhookSecretSecretVersion
+   * @param string
    */
   public function setWebhookSecretSecretVersion($webhookSecretSecretVersion)
   {

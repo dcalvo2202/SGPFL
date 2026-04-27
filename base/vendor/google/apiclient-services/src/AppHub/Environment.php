@@ -20,45 +20,19 @@ namespace Google\Service\AppHub;
 class Environment extends \Google\Model
 {
   /**
-   * Unspecified type.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * Production environment.
-   */
-  public const TYPE_PRODUCTION = 'PRODUCTION';
-  /**
-   * Staging environment.
-   */
-  public const TYPE_STAGING = 'STAGING';
-  /**
-   * Test environment.
-   */
-  public const TYPE_TEST = 'TEST';
-  /**
-   * Development environment.
-   */
-  public const TYPE_DEVELOPMENT = 'DEVELOPMENT';
-  /**
-   * Required. Environment Type.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Required. Environment Type.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, PRODUCTION, STAGING, TEST, DEVELOPMENT
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

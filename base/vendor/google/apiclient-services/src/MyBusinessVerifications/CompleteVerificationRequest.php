@@ -20,16 +20,12 @@ namespace Google\Service\MyBusinessVerifications;
 class CompleteVerificationRequest extends \Google\Model
 {
   /**
-   * Required. PIN code received by the merchant to complete the verification.
-   *
    * @var string
    */
   public $pin;
 
   /**
-   * Required. PIN code received by the merchant to complete the verification.
-   *
-   * @param string $pin
+   * @param string
    */
   public function setPin($pin)
   {

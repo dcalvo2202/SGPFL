@@ -23,18 +23,12 @@ class ListFoldersResponse extends \Google\Collection
   protected $foldersType = Folder::class;
   protected $foldersDataType = 'array';
   /**
-   * A pagination token returned from a previous call to `ListFolders` that
-   * indicates from where listing should continue.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * A possibly paginated list of folders that are direct descendants of the
-   * specified parent resource.
-   *
-   * @param Folder[] $folders
+   * @param Folder[]
    */
   public function setFolders($folders)
   {
@@ -48,10 +42,7 @@ class ListFoldersResponse extends \Google\Collection
     return $this->folders;
   }
   /**
-   * A pagination token returned from a previous call to `ListFolders` that
-   * indicates from where listing should continue.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

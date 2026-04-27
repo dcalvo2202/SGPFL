@@ -20,45 +20,20 @@ namespace Google\Service\Compute;
 class FixedOrPercent extends \Google\Model
 {
   /**
-   * Output only. [Output Only] Absolute value of VM instances calculated based
-   * on the specific mode.
-   *
-   *             - If the value is fixed, then the calculated      value is
-   * equal to the fixed value.     - If the value is a percent, then the
-   * calculated      value is percent/100 * targetSize. For example,      the
-   * calculated value of a 80% of a managed instance group      with 150
-   * instances would be (80/100 * 150) = 120 VM instances. If there      is a
-   * remainder, the number is rounded.
-   *
    * @var int
    */
   public $calculated;
   /**
-   * Specifies a fixed number of VM instances. This must be a positive integer.
-   *
    * @var int
    */
   public $fixed;
   /**
-   * Specifies a percentage of instances between 0 to 100%, inclusive. For
-   * example, specify 80 for 80%.
-   *
    * @var int
    */
   public $percent;
 
   /**
-   * Output only. [Output Only] Absolute value of VM instances calculated based
-   * on the specific mode.
-   *
-   *             - If the value is fixed, then the calculated      value is
-   * equal to the fixed value.     - If the value is a percent, then the
-   * calculated      value is percent/100 * targetSize. For example,      the
-   * calculated value of a 80% of a managed instance group      with 150
-   * instances would be (80/100 * 150) = 120 VM instances. If there      is a
-   * remainder, the number is rounded.
-   *
-   * @param int $calculated
+   * @param int
    */
   public function setCalculated($calculated)
   {
@@ -72,9 +47,7 @@ class FixedOrPercent extends \Google\Model
     return $this->calculated;
   }
   /**
-   * Specifies a fixed number of VM instances. This must be a positive integer.
-   *
-   * @param int $fixed
+   * @param int
    */
   public function setFixed($fixed)
   {
@@ -88,10 +61,7 @@ class FixedOrPercent extends \Google\Model
     return $this->fixed;
   }
   /**
-   * Specifies a percentage of instances between 0 to 100%, inclusive. For
-   * example, specify 80 for 80%.
-   *
-   * @param int $percent
+   * @param int
    */
   public function setPercent($percent)
   {

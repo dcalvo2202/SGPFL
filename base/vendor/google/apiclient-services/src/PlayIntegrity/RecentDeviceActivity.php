@@ -20,50 +20,19 @@ namespace Google\Service\PlayIntegrity;
 class RecentDeviceActivity extends \Google\Model
 {
   /**
-   * Device activity level has not been set.
-   */
-  public const DEVICE_ACTIVITY_LEVEL_DEVICE_ACTIVITY_LEVEL_UNSPECIFIED = 'DEVICE_ACTIVITY_LEVEL_UNSPECIFIED';
-  /**
-   * Device activity level has not been evaluated.
-   */
-  public const DEVICE_ACTIVITY_LEVEL_UNEVALUATED = 'UNEVALUATED';
-  /**
-   * Indicates the amount of used tokens. See the documentation for details.
-   */
-  public const DEVICE_ACTIVITY_LEVEL_LEVEL_1 = 'LEVEL_1';
-  /**
-   * Indicates the amount of used tokens. See the documentation for details.
-   */
-  public const DEVICE_ACTIVITY_LEVEL_LEVEL_2 = 'LEVEL_2';
-  /**
-   * Indicates the amount of used tokens. See the documentation for details.
-   */
-  public const DEVICE_ACTIVITY_LEVEL_LEVEL_3 = 'LEVEL_3';
-  /**
-   * Indicates the amount of used tokens. See the documentation for details.
-   */
-  public const DEVICE_ACTIVITY_LEVEL_LEVEL_4 = 'LEVEL_4';
-  /**
-   * Required. Indicates the activity level of the device.
-   *
    * @var string
    */
   public $deviceActivityLevel;
 
   /**
-   * Required. Indicates the activity level of the device.
-   *
-   * Accepted values: DEVICE_ACTIVITY_LEVEL_UNSPECIFIED, UNEVALUATED, LEVEL_1,
-   * LEVEL_2, LEVEL_3, LEVEL_4
-   *
-   * @param self::DEVICE_ACTIVITY_LEVEL_* $deviceActivityLevel
+   * @param string
    */
   public function setDeviceActivityLevel($deviceActivityLevel)
   {
     $this->deviceActivityLevel = $deviceActivityLevel;
   }
   /**
-   * @return self::DEVICE_ACTIVITY_LEVEL_*
+   * @return string
    */
   public function getDeviceActivityLevel()
   {

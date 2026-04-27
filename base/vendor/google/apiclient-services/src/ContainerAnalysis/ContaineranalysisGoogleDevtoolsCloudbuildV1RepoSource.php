@@ -20,69 +20,40 @@ namespace Google\Service\ContainerAnalysis;
 class ContaineranalysisGoogleDevtoolsCloudbuildV1RepoSource extends \Google\Model
 {
   /**
-   * Regex matching branches to build. The syntax of the regular expressions
-   * accepted is the syntax accepted by RE2 and described at
-   * https://github.com/google/re2/wiki/Syntax
-   *
    * @var string
    */
   public $branchName;
   /**
-   * Explicit commit SHA to build.
-   *
    * @var string
    */
   public $commitSha;
   /**
-   * Optional. Directory, relative to the source root, in which to run the
-   * build. This must be a relative path. If a step's `dir` is specified and is
-   * an absolute path, this value is ignored for that step's execution.
-   *
    * @var string
    */
   public $dir;
   /**
-   * Optional. Only trigger a build if the revision regex does NOT match the
-   * revision regex.
-   *
    * @var bool
    */
   public $invertRegex;
   /**
-   * Optional. ID of the project that owns the Cloud Source Repository. If
-   * omitted, the project ID requesting the build is assumed.
-   *
    * @var string
    */
   public $projectId;
   /**
-   * Required. Name of the Cloud Source Repository.
-   *
    * @var string
    */
   public $repoName;
   /**
-   * Optional. Substitutions to use in a triggered build. Should only be used
-   * with RunBuildTrigger
-   *
    * @var string[]
    */
   public $substitutions;
   /**
-   * Regex matching tags to build. The syntax of the regular expressions
-   * accepted is the syntax accepted by RE2 and described at
-   * https://github.com/google/re2/wiki/Syntax
-   *
    * @var string
    */
   public $tagName;
 
   /**
-   * Regex matching branches to build. The syntax of the regular expressions
-   * accepted is the syntax accepted by RE2 and described at
-   * https://github.com/google/re2/wiki/Syntax
-   *
-   * @param string $branchName
+   * @param string
    */
   public function setBranchName($branchName)
   {
@@ -96,9 +67,7 @@ class ContaineranalysisGoogleDevtoolsCloudbuildV1RepoSource extends \Google\Mode
     return $this->branchName;
   }
   /**
-   * Explicit commit SHA to build.
-   *
-   * @param string $commitSha
+   * @param string
    */
   public function setCommitSha($commitSha)
   {
@@ -112,11 +81,7 @@ class ContaineranalysisGoogleDevtoolsCloudbuildV1RepoSource extends \Google\Mode
     return $this->commitSha;
   }
   /**
-   * Optional. Directory, relative to the source root, in which to run the
-   * build. This must be a relative path. If a step's `dir` is specified and is
-   * an absolute path, this value is ignored for that step's execution.
-   *
-   * @param string $dir
+   * @param string
    */
   public function setDir($dir)
   {
@@ -130,10 +95,7 @@ class ContaineranalysisGoogleDevtoolsCloudbuildV1RepoSource extends \Google\Mode
     return $this->dir;
   }
   /**
-   * Optional. Only trigger a build if the revision regex does NOT match the
-   * revision regex.
-   *
-   * @param bool $invertRegex
+   * @param bool
    */
   public function setInvertRegex($invertRegex)
   {
@@ -147,10 +109,7 @@ class ContaineranalysisGoogleDevtoolsCloudbuildV1RepoSource extends \Google\Mode
     return $this->invertRegex;
   }
   /**
-   * Optional. ID of the project that owns the Cloud Source Repository. If
-   * omitted, the project ID requesting the build is assumed.
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {
@@ -164,9 +123,7 @@ class ContaineranalysisGoogleDevtoolsCloudbuildV1RepoSource extends \Google\Mode
     return $this->projectId;
   }
   /**
-   * Required. Name of the Cloud Source Repository.
-   *
-   * @param string $repoName
+   * @param string
    */
   public function setRepoName($repoName)
   {
@@ -180,10 +137,7 @@ class ContaineranalysisGoogleDevtoolsCloudbuildV1RepoSource extends \Google\Mode
     return $this->repoName;
   }
   /**
-   * Optional. Substitutions to use in a triggered build. Should only be used
-   * with RunBuildTrigger
-   *
-   * @param string[] $substitutions
+   * @param string[]
    */
   public function setSubstitutions($substitutions)
   {
@@ -197,11 +151,7 @@ class ContaineranalysisGoogleDevtoolsCloudbuildV1RepoSource extends \Google\Mode
     return $this->substitutions;
   }
   /**
-   * Regex matching tags to build. The syntax of the regular expressions
-   * accepted is the syntax accepted by RE2 and described at
-   * https://github.com/google/re2/wiki/Syntax
-   *
-   * @param string $tagName
+   * @param string
    */
   public function setTagName($tagName)
   {

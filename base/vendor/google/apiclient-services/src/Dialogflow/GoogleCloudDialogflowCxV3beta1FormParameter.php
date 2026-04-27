@@ -49,7 +49,7 @@ class GoogleCloudDialogflowCxV3beta1FormParameter extends \Google\Model
   public $required;
 
   /**
-   * @param GoogleCloudDialogflowCxV3beta1AdvancedSettings $advancedSettings
+   * @param GoogleCloudDialogflowCxV3beta1AdvancedSettings
    */
   public function setAdvancedSettings(GoogleCloudDialogflowCxV3beta1AdvancedSettings $advancedSettings)
   {
@@ -63,7 +63,7 @@ class GoogleCloudDialogflowCxV3beta1FormParameter extends \Google\Model
     return $this->advancedSettings;
   }
   /**
-   * @param array $defaultValue
+   * @param array
    */
   public function setDefaultValue($defaultValue)
   {
@@ -77,7 +77,7 @@ class GoogleCloudDialogflowCxV3beta1FormParameter extends \Google\Model
     return $this->defaultValue;
   }
   /**
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -91,7 +91,7 @@ class GoogleCloudDialogflowCxV3beta1FormParameter extends \Google\Model
     return $this->displayName;
   }
   /**
-   * @param string $entityType
+   * @param string
    */
   public function setEntityType($entityType)
   {
@@ -105,7 +105,7 @@ class GoogleCloudDialogflowCxV3beta1FormParameter extends \Google\Model
     return $this->entityType;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3beta1FormParameterFillBehavior $fillBehavior
+   * @param GoogleCloudDialogflowCxV3beta1FormParameterFillBehavior
    */
   public function setFillBehavior(GoogleCloudDialogflowCxV3beta1FormParameterFillBehavior $fillBehavior)
   {
@@ -119,7 +119,7 @@ class GoogleCloudDialogflowCxV3beta1FormParameter extends \Google\Model
     return $this->fillBehavior;
   }
   /**
-   * @param bool $isList
+   * @param bool
    */
   public function setIsList($isList)
   {
@@ -133,7 +133,7 @@ class GoogleCloudDialogflowCxV3beta1FormParameter extends \Google\Model
     return $this->isList;
   }
   /**
-   * @param bool $redact
+   * @param bool
    */
   public function setRedact($redact)
   {
@@ -147,7 +147,7 @@ class GoogleCloudDialogflowCxV3beta1FormParameter extends \Google\Model
     return $this->redact;
   }
   /**
-   * @param bool $required
+   * @param bool
    */
   public function setRequired($required)
   {

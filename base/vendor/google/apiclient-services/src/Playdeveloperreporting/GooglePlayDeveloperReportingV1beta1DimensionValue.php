@@ -20,38 +20,24 @@ namespace Google\Service\Playdeveloperreporting;
 class GooglePlayDeveloperReportingV1beta1DimensionValue extends \Google\Model
 {
   /**
-   * Name of the dimension.
-   *
    * @var string
    */
   public $dimension;
   /**
-   * Actual value, represented as an int64.
-   *
    * @var string
    */
   public $int64Value;
   /**
-   * Actual value, represented as a string.
-   *
    * @var string
    */
   public $stringValue;
   /**
-   * Optional. Human-friendly label for the value, always in English. For
-   * example, 'Spain' for the 'ES' country code. Whereas the dimension value is
-   * stable, this value label is subject to change. Do not assume that the
-   * (value, value_label) relationship is stable. For example, the ISO country
-   * code 'MK' changed its name recently to 'North Macedonia'.
-   *
    * @var string
    */
   public $valueLabel;
 
   /**
-   * Name of the dimension.
-   *
-   * @param string $dimension
+   * @param string
    */
   public function setDimension($dimension)
   {
@@ -65,9 +51,7 @@ class GooglePlayDeveloperReportingV1beta1DimensionValue extends \Google\Model
     return $this->dimension;
   }
   /**
-   * Actual value, represented as an int64.
-   *
-   * @param string $int64Value
+   * @param string
    */
   public function setInt64Value($int64Value)
   {
@@ -81,9 +65,7 @@ class GooglePlayDeveloperReportingV1beta1DimensionValue extends \Google\Model
     return $this->int64Value;
   }
   /**
-   * Actual value, represented as a string.
-   *
-   * @param string $stringValue
+   * @param string
    */
   public function setStringValue($stringValue)
   {
@@ -97,13 +79,7 @@ class GooglePlayDeveloperReportingV1beta1DimensionValue extends \Google\Model
     return $this->stringValue;
   }
   /**
-   * Optional. Human-friendly label for the value, always in English. For
-   * example, 'Spain' for the 'ES' country code. Whereas the dimension value is
-   * stable, this value label is subject to change. Do not assume that the
-   * (value, value_label) relationship is stable. For example, the ISO country
-   * code 'MK' changed its name recently to 'North Macedonia'.
-   *
-   * @param string $valueLabel
+   * @param string
    */
   public function setValueLabel($valueLabel)
   {

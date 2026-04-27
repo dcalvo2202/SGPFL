@@ -23,9 +23,7 @@ class GoogleCloudAssuredworkloadsV1UpdateDetails extends \Google\Model
   protected $orgPolicyUpdateDataType = '';
 
   /**
-   * Update to one org policy, e.g. gcp.resourceLocation.
-   *
-   * @param GoogleCloudAssuredworkloadsV1OrgPolicyUpdate $orgPolicyUpdate
+   * @param GoogleCloudAssuredworkloadsV1OrgPolicyUpdate
    */
   public function setOrgPolicyUpdate(GoogleCloudAssuredworkloadsV1OrgPolicyUpdate $orgPolicyUpdate)
   {

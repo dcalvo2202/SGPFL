@@ -20,22 +20,16 @@ namespace Google\Service\DriveLabels;
 class GoogleAppsDriveLabelsV2LongTextLimits extends \Google\Model
 {
   /**
-   * Maximum length allowed for a long text field type.
-   *
    * @var int
    */
   public $maxLength;
   /**
-   * Minimum length allowed for a long text field type.
-   *
    * @var int
    */
   public $minLength;
 
   /**
-   * Maximum length allowed for a long text field type.
-   *
-   * @param int $maxLength
+   * @param int
    */
   public function setMaxLength($maxLength)
   {
@@ -49,9 +43,7 @@ class GoogleAppsDriveLabelsV2LongTextLimits extends \Google\Model
     return $this->maxLength;
   }
   /**
-   * Minimum length allowed for a long text field type.
-   *
-   * @param int $minLength
+   * @param int
    */
   public function setMinLength($minLength)
   {

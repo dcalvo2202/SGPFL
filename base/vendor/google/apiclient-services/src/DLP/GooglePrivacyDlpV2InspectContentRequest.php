@@ -22,29 +22,18 @@ class GooglePrivacyDlpV2InspectContentRequest extends \Google\Model
   protected $inspectConfigType = GooglePrivacyDlpV2InspectConfig::class;
   protected $inspectConfigDataType = '';
   /**
-   * Template to use. Any configuration directly specified in inspect_config
-   * will override those set in the template. Singular fields that are set in
-   * this request will replace their corresponding fields in the template.
-   * Repeated fields are appended. Singular sub-messages and groups are
-   * recursively merged.
-   *
    * @var string
    */
   public $inspectTemplateName;
   protected $itemType = GooglePrivacyDlpV2ContentItem::class;
   protected $itemDataType = '';
   /**
-   * Deprecated. This field has no effect.
-   *
    * @var string
    */
   public $locationId;
 
   /**
-   * Configuration for the inspector. What specified here will override the
-   * template referenced by the inspect_template_name argument.
-   *
-   * @param GooglePrivacyDlpV2InspectConfig $inspectConfig
+   * @param GooglePrivacyDlpV2InspectConfig
    */
   public function setInspectConfig(GooglePrivacyDlpV2InspectConfig $inspectConfig)
   {
@@ -58,13 +47,7 @@ class GooglePrivacyDlpV2InspectContentRequest extends \Google\Model
     return $this->inspectConfig;
   }
   /**
-   * Template to use. Any configuration directly specified in inspect_config
-   * will override those set in the template. Singular fields that are set in
-   * this request will replace their corresponding fields in the template.
-   * Repeated fields are appended. Singular sub-messages and groups are
-   * recursively merged.
-   *
-   * @param string $inspectTemplateName
+   * @param string
    */
   public function setInspectTemplateName($inspectTemplateName)
   {
@@ -78,9 +61,7 @@ class GooglePrivacyDlpV2InspectContentRequest extends \Google\Model
     return $this->inspectTemplateName;
   }
   /**
-   * The item to inspect.
-   *
-   * @param GooglePrivacyDlpV2ContentItem $item
+   * @param GooglePrivacyDlpV2ContentItem
    */
   public function setItem(GooglePrivacyDlpV2ContentItem $item)
   {
@@ -94,9 +75,7 @@ class GooglePrivacyDlpV2InspectContentRequest extends \Google\Model
     return $this->item;
   }
   /**
-   * Deprecated. This field has no effect.
-   *
-   * @param string $locationId
+   * @param string
    */
   public function setLocationId($locationId)
   {

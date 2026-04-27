@@ -23,9 +23,7 @@ class NestingLevel extends \Google\Model
   protected $bulletStyleDataType = '';
 
   /**
-   * The style of a bullet at this level of nesting.
-   *
-   * @param TextStyle $bulletStyle
+   * @param TextStyle
    */
   public function setBulletStyle(TextStyle $bulletStyle)
   {

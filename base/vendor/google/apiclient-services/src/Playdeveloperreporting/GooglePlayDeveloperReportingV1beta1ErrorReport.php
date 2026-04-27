@@ -19,83 +19,39 @@ namespace Google\Service\Playdeveloperreporting;
 
 class GooglePlayDeveloperReportingV1beta1ErrorReport extends \Google\Model
 {
-  /**
-   * Unspecified error type.
-   */
-  public const TYPE_ERROR_TYPE_UNSPECIFIED = 'ERROR_TYPE_UNSPECIFIED';
-  /**
-   * Application Not Responding (ANR) error. To learn more about this type of
-   * errors visit the corresponding Android Developers documentation.
-   */
-  public const TYPE_APPLICATION_NOT_RESPONDING = 'APPLICATION_NOT_RESPONDING';
-  /**
-   * Crash caused by an unhandled exception in Java (or Kotlin or any other JVM
-   * language) or a signal in native code such as SIGSEGV.
-   */
-  public const TYPE_CRASH = 'CRASH';
-  /**
-   * Non-fatal caused by events that do not immediately cause crashes, but is
-   * likely to lead to one.
-   */
-  public const TYPE_NON_FATAL = 'NON_FATAL';
   protected $appVersionType = GooglePlayDeveloperReportingV1beta1AppVersion::class;
   protected $appVersionDataType = '';
   protected $deviceModelType = GooglePlayDeveloperReportingV1beta1DeviceModelSummary::class;
   protected $deviceModelDataType = '';
   /**
-   * Start of the hour during which the latest event in this error report
-   * occurred.
-   *
    * @var string
    */
   public $eventTime;
   /**
-   * The issue this report was associated with. **Please note:** this resource
-   * is currently in Alpha. There could be changes to the issue grouping that
-   * would result in similar but more recent error reports being assigned to a
-   * different issue.
-   *
    * @var string
    */
   public $issue;
   /**
-   * Identifier. The resource name of the report. Format: apps/{app}/{report}
-   *
    * @var string
    */
   public $name;
   protected $osVersionType = GooglePlayDeveloperReportingV1beta1OsVersion::class;
   protected $osVersionDataType = '';
   /**
-   * Textual representation of the error report. These textual reports are
-   * produced by the platform. The reports are then sanitized and filtered to
-   * remove any potentially sensitive information. Although their format is
-   * fairly stable, they are not entirely meant for machine consumption and we
-   * cannot guarantee that there won't be subtle changes to the formatting that
-   * may break systems trying to parse information out of the reports.
-   *
    * @var string
    */
   public $reportText;
   /**
-   * Type of the error for which this report was generated.
-   *
    * @var string
    */
   public $type;
   /**
-   * Version control system information from BUNDLE-METADATA/version-control-
-   * info.textproto or META-INF/version-control-info.textproto of the app bundle
-   * or APK, respectively.
-   *
    * @var string
    */
   public $vcsInformation;
 
   /**
-   * The app version on which an event in this error report occurred on.
-   *
-   * @param GooglePlayDeveloperReportingV1beta1AppVersion $appVersion
+   * @param GooglePlayDeveloperReportingV1beta1AppVersion
    */
   public function setAppVersion(GooglePlayDeveloperReportingV1beta1AppVersion $appVersion)
   {
@@ -109,9 +65,7 @@ class GooglePlayDeveloperReportingV1beta1ErrorReport extends \Google\Model
     return $this->appVersion;
   }
   /**
-   * A device model on which an event in this error report occurred on.
-   *
-   * @param GooglePlayDeveloperReportingV1beta1DeviceModelSummary $deviceModel
+   * @param GooglePlayDeveloperReportingV1beta1DeviceModelSummary
    */
   public function setDeviceModel(GooglePlayDeveloperReportingV1beta1DeviceModelSummary $deviceModel)
   {
@@ -125,10 +79,7 @@ class GooglePlayDeveloperReportingV1beta1ErrorReport extends \Google\Model
     return $this->deviceModel;
   }
   /**
-   * Start of the hour during which the latest event in this error report
-   * occurred.
-   *
-   * @param string $eventTime
+   * @param string
    */
   public function setEventTime($eventTime)
   {
@@ -142,12 +93,7 @@ class GooglePlayDeveloperReportingV1beta1ErrorReport extends \Google\Model
     return $this->eventTime;
   }
   /**
-   * The issue this report was associated with. **Please note:** this resource
-   * is currently in Alpha. There could be changes to the issue grouping that
-   * would result in similar but more recent error reports being assigned to a
-   * different issue.
-   *
-   * @param string $issue
+   * @param string
    */
   public function setIssue($issue)
   {
@@ -161,9 +107,7 @@ class GooglePlayDeveloperReportingV1beta1ErrorReport extends \Google\Model
     return $this->issue;
   }
   /**
-   * Identifier. The resource name of the report. Format: apps/{app}/{report}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -177,9 +121,7 @@ class GooglePlayDeveloperReportingV1beta1ErrorReport extends \Google\Model
     return $this->name;
   }
   /**
-   * The OS version on which an event in this error report occurred on.
-   *
-   * @param GooglePlayDeveloperReportingV1beta1OsVersion $osVersion
+   * @param GooglePlayDeveloperReportingV1beta1OsVersion
    */
   public function setOsVersion(GooglePlayDeveloperReportingV1beta1OsVersion $osVersion)
   {
@@ -193,14 +135,7 @@ class GooglePlayDeveloperReportingV1beta1ErrorReport extends \Google\Model
     return $this->osVersion;
   }
   /**
-   * Textual representation of the error report. These textual reports are
-   * produced by the platform. The reports are then sanitized and filtered to
-   * remove any potentially sensitive information. Although their format is
-   * fairly stable, they are not entirely meant for machine consumption and we
-   * cannot guarantee that there won't be subtle changes to the formatting that
-   * may break systems trying to parse information out of the reports.
-   *
-   * @param string $reportText
+   * @param string
    */
   public function setReportText($reportText)
   {
@@ -214,30 +149,21 @@ class GooglePlayDeveloperReportingV1beta1ErrorReport extends \Google\Model
     return $this->reportText;
   }
   /**
-   * Type of the error for which this report was generated.
-   *
-   * Accepted values: ERROR_TYPE_UNSPECIFIED, APPLICATION_NOT_RESPONDING, CRASH,
-   * NON_FATAL
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * Version control system information from BUNDLE-METADATA/version-control-
-   * info.textproto or META-INF/version-control-info.textproto of the app bundle
-   * or APK, respectively.
-   *
-   * @param string $vcsInformation
+   * @param string
    */
   public function setVcsInformation($vcsInformation)
   {

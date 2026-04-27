@@ -24,9 +24,7 @@ class SalesforceOrg extends \Google\Collection
   protected $objectsDataType = 'array';
 
   /**
-   * Salesforce objects in the database server.
-   *
-   * @param SalesforceObject[] $objects
+   * @param SalesforceObject[]
    */
   public function setObjects($objects)
   {

@@ -23,8 +23,6 @@ class PhishingSpike extends \Google\Collection
   protected $domainIdType = DomainId::class;
   protected $domainIdDataType = '';
   /**
-   * If `true`, the email originated from within the organization.
-   *
    * @var bool
    */
   public $isInternal;
@@ -34,9 +32,7 @@ class PhishingSpike extends \Google\Collection
   protected $messagesDataType = 'array';
 
   /**
-   * The domain ID.
-   *
-   * @param DomainId $domainId
+   * @param DomainId
    */
   public function setDomainId(DomainId $domainId)
   {
@@ -50,9 +46,7 @@ class PhishingSpike extends \Google\Collection
     return $this->domainId;
   }
   /**
-   * If `true`, the email originated from within the organization.
-   *
-   * @param bool $isInternal
+   * @param bool
    */
   public function setIsInternal($isInternal)
   {
@@ -66,9 +60,7 @@ class PhishingSpike extends \Google\Collection
     return $this->isInternal;
   }
   /**
-   * The entity whose actions triggered a Gmail phishing alert.
-   *
-   * @param MaliciousEntity $maliciousEntity
+   * @param MaliciousEntity
    */
   public function setMaliciousEntity(MaliciousEntity $maliciousEntity)
   {
@@ -82,9 +74,7 @@ class PhishingSpike extends \Google\Collection
     return $this->maliciousEntity;
   }
   /**
-   * The list of messages contained by this alert.
-   *
-   * @param GmailMessageInfo[] $messages
+   * @param GmailMessageInfo[]
    */
   public function setMessages($messages)
   {

@@ -21,28 +21,14 @@ class WriteRequest extends \Google\Collection
 {
   protected $collection_key = 'writes';
   /**
-   * Labels associated with this write request.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * The ID of the write stream to resume. This may only be set in the first
-   * message. When left empty, a new write stream will be created.
-   *
    * @var string
    */
   public $streamId;
   /**
-   * A stream token that was previously sent by the server. The client should
-   * set this field to the token from the most recent WriteResponse it has
-   * received. This acknowledges that the client has received responses up to
-   * this token. After sending this token, earlier tokens may not be used
-   * anymore. The server may close the stream if there are too many
-   * unacknowledged responses. Leave this field unset when creating a new
-   * stream. To resume a stream at a specific point, set this field and the
-   * `stream_id` field. Leave this field unset when creating a new stream.
-   *
    * @var string
    */
   public $streamToken;
@@ -50,9 +36,7 @@ class WriteRequest extends \Google\Collection
   protected $writesDataType = 'array';
 
   /**
-   * Labels associated with this write request.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -66,10 +50,7 @@ class WriteRequest extends \Google\Collection
     return $this->labels;
   }
   /**
-   * The ID of the write stream to resume. This may only be set in the first
-   * message. When left empty, a new write stream will be created.
-   *
-   * @param string $streamId
+   * @param string
    */
   public function setStreamId($streamId)
   {
@@ -83,16 +64,7 @@ class WriteRequest extends \Google\Collection
     return $this->streamId;
   }
   /**
-   * A stream token that was previously sent by the server. The client should
-   * set this field to the token from the most recent WriteResponse it has
-   * received. This acknowledges that the client has received responses up to
-   * this token. After sending this token, earlier tokens may not be used
-   * anymore. The server may close the stream if there are too many
-   * unacknowledged responses. Leave this field unset when creating a new
-   * stream. To resume a stream at a specific point, set this field and the
-   * `stream_id` field. Leave this field unset when creating a new stream.
-   *
-   * @param string $streamToken
+   * @param string
    */
   public function setStreamToken($streamToken)
   {
@@ -106,11 +78,7 @@ class WriteRequest extends \Google\Collection
     return $this->streamToken;
   }
   /**
-   * The writes to apply. Always executed atomically and in order. This must be
-   * empty on the first request. This may be empty on the last request. This
-   * must not be empty on all other requests.
-   *
-   * @param Write[] $writes
+   * @param Write[]
    */
   public function setWrites($writes)
   {

@@ -22,16 +22,12 @@ class ProductMatchDimension extends \Google\Model
   protected $customLabelType = CustomLabel::class;
   protected $customLabelDataType = '';
   /**
-   * The ID of the product offer to match with a product with the same offer ID.
-   *
    * @var string
    */
   public $productOfferId;
 
   /**
-   * The custom label to match all the products with the label.
-   *
-   * @param CustomLabel $customLabel
+   * @param CustomLabel
    */
   public function setCustomLabel(CustomLabel $customLabel)
   {
@@ -45,9 +41,7 @@ class ProductMatchDimension extends \Google\Model
     return $this->customLabel;
   }
   /**
-   * The ID of the product offer to match with a product with the same offer ID.
-   *
-   * @param string $productOfferId
+   * @param string
    */
   public function setProductOfferId($productOfferId)
   {

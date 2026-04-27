@@ -23,9 +23,7 @@ class DSSEAttestationNote extends \Google\Model
   protected $hintDataType = '';
 
   /**
-   * DSSEHint hints at the purpose of the attestation authority.
-   *
-   * @param DSSEHint $hint
+   * @param DSSEHint
    */
   public function setHint(DSSEHint $hint)
   {

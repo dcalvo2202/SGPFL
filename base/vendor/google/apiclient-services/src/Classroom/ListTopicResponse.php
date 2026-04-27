@@ -21,9 +21,6 @@ class ListTopicResponse extends \Google\Collection
 {
   protected $collection_key = 'topic';
   /**
-   * Token identifying the next page of results to return. If empty, no further
-   * results are available.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListTopicResponse extends \Google\Collection
   protected $topicDataType = 'array';
 
   /**
-   * Token identifying the next page of results to return. If empty, no further
-   * results are available.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class ListTopicResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Topic items that match the request.
-   *
-   * @param Topic[] $topic
+   * @param Topic[]
    */
   public function setTopic($topic)
   {

@@ -20,27 +20,16 @@ namespace Google\Service\AddressValidation;
 class GoogleMapsAddressvalidationV1PlusCode extends \Google\Model
 {
   /**
-   * Place's compound code, such as "33GV+HQ, Ramberg, Norway", containing the
-   * suffix of the global code and replacing the prefix with a formatted name of
-   * a reference entity.
-   *
    * @var string
    */
   public $compoundCode;
   /**
-   * Place's global (full) code, such as "9FWM33GV+HQ", representing an 1/8000
-   * by 1/8000 degree area (~14 by 14 meters).
-   *
    * @var string
    */
   public $globalCode;
 
   /**
-   * Place's compound code, such as "33GV+HQ, Ramberg, Norway", containing the
-   * suffix of the global code and replacing the prefix with a formatted name of
-   * a reference entity.
-   *
-   * @param string $compoundCode
+   * @param string
    */
   public function setCompoundCode($compoundCode)
   {
@@ -54,10 +43,7 @@ class GoogleMapsAddressvalidationV1PlusCode extends \Google\Model
     return $this->compoundCode;
   }
   /**
-   * Place's global (full) code, such as "9FWM33GV+HQ", representing an 1/8000
-   * by 1/8000 degree area (~14 by 14 meters).
-   *
-   * @param string $globalCode
+   * @param string
    */
   public function setGlobalCode($globalCode)
   {

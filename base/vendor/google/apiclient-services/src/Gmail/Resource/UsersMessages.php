@@ -107,8 +107,7 @@ class UsersMessages extends \Google\Service\Resource
    * scanning and classification similar to receiving via SMTP. This method
    * doesn't perform SPF checks, so it might not work for some spam messages, such
    * as those attempting to perform domain spoofing. This method does not send a
-   * message. Note that the maximum size of the message is 150MB.
-   * (messages.import)
+   * message. (messages.import)
    *
    * @param string $userId The user's email address. The special value `me` can be
    * used to indicate the authenticated user.
@@ -158,9 +157,7 @@ class UsersMessages extends \Google\Service\Resource
     return $this->call('insert', [$params], Message::class);
   }
   /**
-   * Lists the messages in the user's mailbox. For example usage, see [List Gmail
-   * messages](https://developers.google.com/workspace/gmail/api/guides/list-
-   * messages). (messages.listUsersMessages)
+   * Lists the messages in the user's mailbox. (messages.listUsersMessages)
    *
    * @param string $userId The user's email address. The special value `me` can be
    * used to indicate the authenticated user.

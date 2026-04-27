@@ -21,22 +21,16 @@ class UserCountriesTargeting extends \Google\Collection
 {
   protected $collection_key = 'countryCodes';
   /**
-   * List of country codes in the two-letter CLDR territory format.
-   *
    * @var string[]
    */
   public $countryCodes;
   /**
-   * Indicates if the list above is exclusive.
-   *
    * @var bool
    */
   public $exclude;
 
   /**
-   * List of country codes in the two-letter CLDR territory format.
-   *
-   * @param string[] $countryCodes
+   * @param string[]
    */
   public function setCountryCodes($countryCodes)
   {
@@ -50,9 +44,7 @@ class UserCountriesTargeting extends \Google\Collection
     return $this->countryCodes;
   }
   /**
-   * Indicates if the list above is exclusive.
-   *
-   * @param bool $exclude
+   * @param bool
    */
   public function setExclude($exclude)
   {

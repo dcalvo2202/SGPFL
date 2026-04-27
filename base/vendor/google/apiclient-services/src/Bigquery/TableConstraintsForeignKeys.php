@@ -23,8 +23,6 @@ class TableConstraintsForeignKeys extends \Google\Collection
   protected $columnReferencesType = TableConstraintsForeignKeysColumnReferences::class;
   protected $columnReferencesDataType = 'array';
   /**
-   * Optional. Set only if the foreign key constraint is named.
-   *
    * @var string
    */
   public $name;
@@ -32,9 +30,7 @@ class TableConstraintsForeignKeys extends \Google\Collection
   protected $referencedTableDataType = '';
 
   /**
-   * Required. The columns that compose the foreign key.
-   *
-   * @param TableConstraintsForeignKeysColumnReferences[] $columnReferences
+   * @param TableConstraintsForeignKeysColumnReferences[]
    */
   public function setColumnReferences($columnReferences)
   {
@@ -48,9 +44,7 @@ class TableConstraintsForeignKeys extends \Google\Collection
     return $this->columnReferences;
   }
   /**
-   * Optional. Set only if the foreign key constraint is named.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -64,7 +58,7 @@ class TableConstraintsForeignKeys extends \Google\Collection
     return $this->name;
   }
   /**
-   * @param TableConstraintsForeignKeysReferencedTable $referencedTable
+   * @param TableConstraintsForeignKeysReferencedTable
    */
   public function setReferencedTable(TableConstraintsForeignKeysReferencedTable $referencedTable)
   {

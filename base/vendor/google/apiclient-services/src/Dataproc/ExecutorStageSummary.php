@@ -95,7 +95,7 @@ class ExecutorStageSummary extends \Google\Model
   public $taskTimeMillis;
 
   /**
-   * @param string $diskBytesSpilled
+   * @param string
    */
   public function setDiskBytesSpilled($diskBytesSpilled)
   {
@@ -109,7 +109,7 @@ class ExecutorStageSummary extends \Google\Model
     return $this->diskBytesSpilled;
   }
   /**
-   * @param string $executorId
+   * @param string
    */
   public function setExecutorId($executorId)
   {
@@ -123,7 +123,7 @@ class ExecutorStageSummary extends \Google\Model
     return $this->executorId;
   }
   /**
-   * @param int $failedTasks
+   * @param int
    */
   public function setFailedTasks($failedTasks)
   {
@@ -137,7 +137,7 @@ class ExecutorStageSummary extends \Google\Model
     return $this->failedTasks;
   }
   /**
-   * @param string $inputBytes
+   * @param string
    */
   public function setInputBytes($inputBytes)
   {
@@ -151,7 +151,7 @@ class ExecutorStageSummary extends \Google\Model
     return $this->inputBytes;
   }
   /**
-   * @param string $inputRecords
+   * @param string
    */
   public function setInputRecords($inputRecords)
   {
@@ -165,7 +165,7 @@ class ExecutorStageSummary extends \Google\Model
     return $this->inputRecords;
   }
   /**
-   * @param bool $isExcludedForStage
+   * @param bool
    */
   public function setIsExcludedForStage($isExcludedForStage)
   {
@@ -179,7 +179,7 @@ class ExecutorStageSummary extends \Google\Model
     return $this->isExcludedForStage;
   }
   /**
-   * @param int $killedTasks
+   * @param int
    */
   public function setKilledTasks($killedTasks)
   {
@@ -193,7 +193,7 @@ class ExecutorStageSummary extends \Google\Model
     return $this->killedTasks;
   }
   /**
-   * @param string $memoryBytesSpilled
+   * @param string
    */
   public function setMemoryBytesSpilled($memoryBytesSpilled)
   {
@@ -207,7 +207,7 @@ class ExecutorStageSummary extends \Google\Model
     return $this->memoryBytesSpilled;
   }
   /**
-   * @param string $outputBytes
+   * @param string
    */
   public function setOutputBytes($outputBytes)
   {
@@ -221,7 +221,7 @@ class ExecutorStageSummary extends \Google\Model
     return $this->outputBytes;
   }
   /**
-   * @param string $outputRecords
+   * @param string
    */
   public function setOutputRecords($outputRecords)
   {
@@ -235,7 +235,7 @@ class ExecutorStageSummary extends \Google\Model
     return $this->outputRecords;
   }
   /**
-   * @param ExecutorMetrics $peakMemoryMetrics
+   * @param ExecutorMetrics
    */
   public function setPeakMemoryMetrics(ExecutorMetrics $peakMemoryMetrics)
   {
@@ -249,7 +249,7 @@ class ExecutorStageSummary extends \Google\Model
     return $this->peakMemoryMetrics;
   }
   /**
-   * @param string $shuffleRead
+   * @param string
    */
   public function setShuffleRead($shuffleRead)
   {
@@ -263,7 +263,7 @@ class ExecutorStageSummary extends \Google\Model
     return $this->shuffleRead;
   }
   /**
-   * @param string $shuffleReadRecords
+   * @param string
    */
   public function setShuffleReadRecords($shuffleReadRecords)
   {
@@ -277,7 +277,7 @@ class ExecutorStageSummary extends \Google\Model
     return $this->shuffleReadRecords;
   }
   /**
-   * @param string $shuffleWrite
+   * @param string
    */
   public function setShuffleWrite($shuffleWrite)
   {
@@ -291,7 +291,7 @@ class ExecutorStageSummary extends \Google\Model
     return $this->shuffleWrite;
   }
   /**
-   * @param string $shuffleWriteRecords
+   * @param string
    */
   public function setShuffleWriteRecords($shuffleWriteRecords)
   {
@@ -305,7 +305,7 @@ class ExecutorStageSummary extends \Google\Model
     return $this->shuffleWriteRecords;
   }
   /**
-   * @param int $stageAttemptId
+   * @param int
    */
   public function setStageAttemptId($stageAttemptId)
   {
@@ -319,7 +319,7 @@ class ExecutorStageSummary extends \Google\Model
     return $this->stageAttemptId;
   }
   /**
-   * @param string $stageId
+   * @param string
    */
   public function setStageId($stageId)
   {
@@ -333,7 +333,7 @@ class ExecutorStageSummary extends \Google\Model
     return $this->stageId;
   }
   /**
-   * @param int $succeededTasks
+   * @param int
    */
   public function setSucceededTasks($succeededTasks)
   {
@@ -347,7 +347,7 @@ class ExecutorStageSummary extends \Google\Model
     return $this->succeededTasks;
   }
   /**
-   * @param string $taskTimeMillis
+   * @param string
    */
   public function setTaskTimeMillis($taskTimeMillis)
   {

@@ -20,59 +20,30 @@ namespace Google\Service\ChecksService;
 class GoogleChecksReportV1alphaAnalyzeUploadRequest extends \Google\Model
 {
   /**
-   * Not specified.
-   */
-  public const APP_BINARY_FILE_TYPE_APP_BINARY_FILE_TYPE_UNSPECIFIED = 'APP_BINARY_FILE_TYPE_UNSPECIFIED';
-  /**
-   * .apk file type.
-   */
-  public const APP_BINARY_FILE_TYPE_ANDROID_APK = 'ANDROID_APK';
-  /**
-   * .aab (app bundle) file type.
-   */
-  public const APP_BINARY_FILE_TYPE_ANDROID_AAB = 'ANDROID_AAB';
-  /**
-   * .ipa file type.
-   */
-  public const APP_BINARY_FILE_TYPE_IOS_IPA = 'IOS_IPA';
-  /**
-   * Optional. The type of the uploaded app binary. If not provided, the server
-   * assumes APK file for Android and IPA file for iOS.
-   *
    * @var string
    */
   public $appBinaryFileType;
   /**
-   * Optional. Git commit hash or changelist number associated with the upload.
-   *
    * @var string
    */
   public $codeReferenceId;
 
   /**
-   * Optional. The type of the uploaded app binary. If not provided, the server
-   * assumes APK file for Android and IPA file for iOS.
-   *
-   * Accepted values: APP_BINARY_FILE_TYPE_UNSPECIFIED, ANDROID_APK,
-   * ANDROID_AAB, IOS_IPA
-   *
-   * @param self::APP_BINARY_FILE_TYPE_* $appBinaryFileType
+   * @param string
    */
   public function setAppBinaryFileType($appBinaryFileType)
   {
     $this->appBinaryFileType = $appBinaryFileType;
   }
   /**
-   * @return self::APP_BINARY_FILE_TYPE_*
+   * @return string
    */
   public function getAppBinaryFileType()
   {
     return $this->appBinaryFileType;
   }
   /**
-   * Optional. Git commit hash or changelist number associated with the upload.
-   *
-   * @param string $codeReferenceId
+   * @param string
    */
   public function setCodeReferenceId($codeReferenceId)
   {

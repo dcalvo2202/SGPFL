@@ -23,24 +23,16 @@ class ListImportJobsResponse extends \Google\Collection
   protected $importJobsType = ImportJob::class;
   protected $importJobsDataType = 'array';
   /**
-   * A token to retrieve next page of results. Pass this value in
-   * ListImportJobsRequest.page_token to retrieve the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * The total number of ImportJobs that matched the query. This field is not
-   * populated if ListImportJobsRequest.filter is applied.
-   *
    * @var int
    */
   public $totalSize;
 
   /**
-   * The list of ImportJobs.
-   *
-   * @param ImportJob[] $importJobs
+   * @param ImportJob[]
    */
   public function setImportJobs($importJobs)
   {
@@ -54,10 +46,7 @@ class ListImportJobsResponse extends \Google\Collection
     return $this->importJobs;
   }
   /**
-   * A token to retrieve next page of results. Pass this value in
-   * ListImportJobsRequest.page_token to retrieve the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -71,10 +60,7 @@ class ListImportJobsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The total number of ImportJobs that matched the query. This field is not
-   * populated if ListImportJobsRequest.filter is applied.
-   *
-   * @param int $totalSize
+   * @param int
    */
   public function setTotalSize($totalSize)
   {

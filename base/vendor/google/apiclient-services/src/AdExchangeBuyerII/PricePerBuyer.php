@@ -21,9 +21,6 @@ class PricePerBuyer extends \Google\Collection
 {
   protected $collection_key = 'advertiserIds';
   /**
-   * The list of advertisers for this price when associated with this buyer. If
-   * empty, all advertisers with this buyer pay this price.
-   *
    * @var string[]
    */
   public $advertiserIds;
@@ -33,10 +30,7 @@ class PricePerBuyer extends \Google\Collection
   protected $priceDataType = '';
 
   /**
-   * The list of advertisers for this price when associated with this buyer. If
-   * empty, all advertisers with this buyer pay this price.
-   *
-   * @param string[] $advertiserIds
+   * @param string[]
    */
   public function setAdvertiserIds($advertiserIds)
   {
@@ -50,11 +44,7 @@ class PricePerBuyer extends \Google\Collection
     return $this->advertiserIds;
   }
   /**
-   * The buyer who will pay this price. If unset, all buyers can pay this price
-   * (if the advertisers match, and there's no more specific rule matching the
-   * buyer).
-   *
-   * @param Buyer $buyer
+   * @param Buyer
    */
   public function setBuyer(Buyer $buyer)
   {
@@ -68,9 +58,7 @@ class PricePerBuyer extends \Google\Collection
     return $this->buyer;
   }
   /**
-   * The specified price.
-   *
-   * @param Price $price
+   * @param Price
    */
   public function setPrice(Price $price)
   {

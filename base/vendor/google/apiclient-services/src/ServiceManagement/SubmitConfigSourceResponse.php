@@ -23,9 +23,7 @@ class SubmitConfigSourceResponse extends \Google\Model
   protected $serviceConfigDataType = '';
 
   /**
-   * The generated service configuration.
-   *
-   * @param Service $serviceConfig
+   * @param Service
    */
   public function setServiceConfig(Service $serviceConfig)
   {

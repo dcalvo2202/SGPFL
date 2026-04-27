@@ -24,9 +24,7 @@ class DataprocMetricConfig extends \Google\Collection
   protected $metricsDataType = 'array';
 
   /**
-   * Required. Metrics sources to enable.
-   *
-   * @param Metric[] $metrics
+   * @param Metric[]
    */
   public function setMetrics($metrics)
   {

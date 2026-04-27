@@ -20,16 +20,12 @@ namespace Google\Service\AppHub;
 class WorkloadReference extends \Google\Model
 {
   /**
-   * Output only. The underlying compute resource uri.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * Output only. The underlying compute resource uri.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

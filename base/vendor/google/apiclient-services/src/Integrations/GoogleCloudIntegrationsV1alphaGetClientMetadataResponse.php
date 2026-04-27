@@ -23,9 +23,7 @@ class GoogleCloudIntegrationsV1alphaGetClientMetadataResponse extends \Google\Mo
   protected $propertiesDataType = '';
 
   /**
-   * Required. Required: The client configuration that was requested
-   *
-   * @param GoogleCloudIntegrationsV1alphaProjectProperties $properties
+   * @param GoogleCloudIntegrationsV1alphaProjectProperties
    */
   public function setProperties(GoogleCloudIntegrationsV1alphaProjectProperties $properties)
   {

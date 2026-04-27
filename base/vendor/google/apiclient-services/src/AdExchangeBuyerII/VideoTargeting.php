@@ -21,26 +21,16 @@ class VideoTargeting extends \Google\Collection
 {
   protected $collection_key = 'targetedPositionTypes';
   /**
-   * A list of video positions to be excluded. Position types can either be
-   * included or excluded (XOR).
-   *
    * @var string[]
    */
   public $excludedPositionTypes;
   /**
-   * A list of video positions to be included. When the included list is
-   * present, the excluded list must be empty. When the excluded list is
-   * present, the included list must be empty.
-   *
    * @var string[]
    */
   public $targetedPositionTypes;
 
   /**
-   * A list of video positions to be excluded. Position types can either be
-   * included or excluded (XOR).
-   *
-   * @param string[] $excludedPositionTypes
+   * @param string[]
    */
   public function setExcludedPositionTypes($excludedPositionTypes)
   {
@@ -54,11 +44,7 @@ class VideoTargeting extends \Google\Collection
     return $this->excludedPositionTypes;
   }
   /**
-   * A list of video positions to be included. When the included list is
-   * present, the excluded list must be empty. When the excluded list is
-   * present, the included list must be empty.
-   *
-   * @param string[] $targetedPositionTypes
+   * @param string[]
    */
   public function setTargetedPositionTypes($targetedPositionTypes)
   {

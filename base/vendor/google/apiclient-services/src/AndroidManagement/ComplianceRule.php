@@ -23,29 +23,18 @@ class ComplianceRule extends \Google\Collection
   protected $apiLevelConditionType = ApiLevelCondition::class;
   protected $apiLevelConditionDataType = '';
   /**
-   * If set to true, the rule includes a mitigating action to disable apps so
-   * that the device is effectively disabled, but app data is preserved. If the
-   * device is running an app in locked task mode, the app will be closed and a
-   * UI showing the reason for non-compliance will be displayed.
-   *
    * @var bool
    */
   public $disableApps;
   protected $nonComplianceDetailConditionType = NonComplianceDetailCondition::class;
   protected $nonComplianceDetailConditionDataType = '';
   /**
-   * If set, the rule includes a mitigating action to disable apps specified in
-   * the list, but app data is preserved.
-   *
    * @var string[]
    */
   public $packageNamesToDisable;
 
   /**
-   * A condition which is satisfied if the Android Framework API level on the
-   * device doesn't meet a minimum requirement.
-   *
-   * @param ApiLevelCondition $apiLevelCondition
+   * @param ApiLevelCondition
    */
   public function setApiLevelCondition(ApiLevelCondition $apiLevelCondition)
   {
@@ -59,12 +48,7 @@ class ComplianceRule extends \Google\Collection
     return $this->apiLevelCondition;
   }
   /**
-   * If set to true, the rule includes a mitigating action to disable apps so
-   * that the device is effectively disabled, but app data is preserved. If the
-   * device is running an app in locked task mode, the app will be closed and a
-   * UI showing the reason for non-compliance will be displayed.
-   *
-   * @param bool $disableApps
+   * @param bool
    */
   public function setDisableApps($disableApps)
   {
@@ -78,10 +62,7 @@ class ComplianceRule extends \Google\Collection
     return $this->disableApps;
   }
   /**
-   * A condition which is satisfied if there exists any matching
-   * NonComplianceDetail for the device.
-   *
-   * @param NonComplianceDetailCondition $nonComplianceDetailCondition
+   * @param NonComplianceDetailCondition
    */
   public function setNonComplianceDetailCondition(NonComplianceDetailCondition $nonComplianceDetailCondition)
   {
@@ -95,10 +76,7 @@ class ComplianceRule extends \Google\Collection
     return $this->nonComplianceDetailCondition;
   }
   /**
-   * If set, the rule includes a mitigating action to disable apps specified in
-   * the list, but app data is preserved.
-   *
-   * @param string[] $packageNamesToDisable
+   * @param string[]
    */
   public function setPackageNamesToDisable($packageNamesToDisable)
   {

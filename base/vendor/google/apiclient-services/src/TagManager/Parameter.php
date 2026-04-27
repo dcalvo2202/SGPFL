@@ -19,29 +19,12 @@ namespace Google\Service\TagManager;
 
 class Parameter extends \Google\Collection
 {
-  public const TYPE_typeUnspecified = 'typeUnspecified';
-  /**
-   * May include variable references.
-   */
-  public const TYPE_template = 'template';
-  public const TYPE_integer = 'integer';
-  public const TYPE_boolean = 'boolean';
-  public const TYPE_list = 'list';
-  public const TYPE_map = 'map';
-  public const TYPE_triggerReference = 'triggerReference';
-  public const TYPE_tagReference = 'tagReference';
   protected $collection_key = 'map';
   /**
-   * Whether or not a reference type parameter is strongly or weakly referenced.
-   * Only used by Transformations.
-   *
    * @var bool
    */
   public $isWeakReference;
   /**
-   * The named key that uniquely identifies a parameter. Required for top-level
-   * parameters, as well as map values. Ignored for list values.
-   *
    * @var string
    */
   public $key;
@@ -50,32 +33,16 @@ class Parameter extends \Google\Collection
   protected $mapType = Parameter::class;
   protected $mapDataType = 'array';
   /**
-   * The parameter type. Valid values are: - boolean: The value represents a
-   * boolean, represented as 'true' or 'false' - integer: The value represents a
-   * 64-bit signed integer value, in base 10 - list: A list of parameters should
-   * be specified - map: A map of parameters should be specified - template: The
-   * value represents any text; this can include variable references (even
-   * variable references that might return non-string types) -
-   * trigger_reference: The value represents a trigger, represented as the
-   * trigger id - tag_reference: The value represents a tag, represented as the
-   * tag name
-   *
    * @var string
    */
   public $type;
   /**
-   * A parameter's value (may contain variable references). as appropriate to
-   * the specified type.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Whether or not a reference type parameter is strongly or weakly referenced.
-   * Only used by Transformations.
-   *
-   * @param bool $isWeakReference
+   * @param bool
    */
   public function setIsWeakReference($isWeakReference)
   {
@@ -89,10 +56,7 @@ class Parameter extends \Google\Collection
     return $this->isWeakReference;
   }
   /**
-   * The named key that uniquely identifies a parameter. Required for top-level
-   * parameters, as well as map values. Ignored for list values.
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {
@@ -106,9 +70,7 @@ class Parameter extends \Google\Collection
     return $this->key;
   }
   /**
-   * This list parameter's parameters (keys will be ignored).
-   *
-   * @param Parameter[] $list
+   * @param Parameter[]
    */
   public function setList($list)
   {
@@ -122,9 +84,7 @@ class Parameter extends \Google\Collection
     return $this->list;
   }
   /**
-   * This map parameter's parameters (must have keys; keys must be unique).
-   *
-   * @param Parameter[] $map
+   * @param Parameter[]
    */
   public function setMap($map)
   {
@@ -138,37 +98,21 @@ class Parameter extends \Google\Collection
     return $this->map;
   }
   /**
-   * The parameter type. Valid values are: - boolean: The value represents a
-   * boolean, represented as 'true' or 'false' - integer: The value represents a
-   * 64-bit signed integer value, in base 10 - list: A list of parameters should
-   * be specified - map: A map of parameters should be specified - template: The
-   * value represents any text; this can include variable references (even
-   * variable references that might return non-string types) -
-   * trigger_reference: The value represents a trigger, represented as the
-   * trigger id - tag_reference: The value represents a tag, represented as the
-   * tag name
-   *
-   * Accepted values: typeUnspecified, template, integer, boolean, list, map,
-   * triggerReference, tagReference
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * A parameter's value (may contain variable references). as appropriate to
-   * the specified type.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

@@ -20,104 +20,44 @@ namespace Google\Service\CloudRedis;
 class PscConnection extends \Google\Model
 {
   /**
-   * Cluster endpoint Type is not set
-   */
-  public const CONNECTION_TYPE_CONNECTION_TYPE_UNSPECIFIED = 'CONNECTION_TYPE_UNSPECIFIED';
-  /**
-   * Cluster endpoint that will be used as for cluster topology discovery.
-   */
-  public const CONNECTION_TYPE_CONNECTION_TYPE_DISCOVERY = 'CONNECTION_TYPE_DISCOVERY';
-  /**
-   * Cluster endpoint that will be used as primary endpoint to access primary.
-   */
-  public const CONNECTION_TYPE_CONNECTION_TYPE_PRIMARY = 'CONNECTION_TYPE_PRIMARY';
-  /**
-   * Cluster endpoint that will be used as reader endpoint to access replicas.
-   */
-  public const CONNECTION_TYPE_CONNECTION_TYPE_READER = 'CONNECTION_TYPE_READER';
-  /**
-   * PSC connection status is not specified.
-   */
-  public const PSC_CONNECTION_STATUS_PSC_CONNECTION_STATUS_UNSPECIFIED = 'PSC_CONNECTION_STATUS_UNSPECIFIED';
-  /**
-   * The connection is active
-   */
-  public const PSC_CONNECTION_STATUS_PSC_CONNECTION_STATUS_ACTIVE = 'PSC_CONNECTION_STATUS_ACTIVE';
-  /**
-   * Connection not found
-   */
-  public const PSC_CONNECTION_STATUS_PSC_CONNECTION_STATUS_NOT_FOUND = 'PSC_CONNECTION_STATUS_NOT_FOUND';
-  /**
-   * Required. The IP allocated on the consumer network for the PSC forwarding
-   * rule.
-   *
    * @var string
    */
   public $address;
   /**
-   * Output only. Type of the PSC connection.
-   *
    * @var string
    */
   public $connectionType;
   /**
-   * Required. The URI of the consumer side forwarding rule. Example:
-   * projects/{projectNumOrId}/regions/us-east1/forwardingRules/{resourceId}.
-   *
    * @var string
    */
   public $forwardingRule;
   /**
-   * Required. The consumer network where the IP address resides, in the form of
-   * projects/{project_id}/global/networks/{network_id}.
-   *
    * @var string
    */
   public $network;
   /**
-   * Output only. port will only be set for Primary/Reader or Discovery
-   * endpoint.
-   *
    * @var int
    */
   public $port;
   /**
-   * Optional. Project ID of the consumer project where the forwarding rule is
-   * created in.
-   *
    * @var string
    */
   public $projectId;
   /**
-   * Required. The PSC connection id of the forwarding rule connected to the
-   * service attachment.
-   *
    * @var string
    */
   public $pscConnectionId;
   /**
-   * Output only. The status of the PSC connection. Please note that this value
-   * is updated periodically. To get the latest status of a PSC connection,
-   * follow https://cloud.google.com/vpc/docs/configure-private-service-connect-
-   * services#endpoint-details.
-   *
    * @var string
    */
   public $pscConnectionStatus;
   /**
-   * Required. The service attachment which is the target of the PSC connection,
-   * in the form of projects/{project-
-   * id}/regions/{region}/serviceAttachments/{service-attachment-id}.
-   *
    * @var string
    */
   public $serviceAttachment;
 
   /**
-   * Required. The IP allocated on the consumer network for the PSC forwarding
-   * rule.
-   *
-   * @param string $address
+   * @param string
    */
   public function setAddress($address)
   {
@@ -131,29 +71,21 @@ class PscConnection extends \Google\Model
     return $this->address;
   }
   /**
-   * Output only. Type of the PSC connection.
-   *
-   * Accepted values: CONNECTION_TYPE_UNSPECIFIED, CONNECTION_TYPE_DISCOVERY,
-   * CONNECTION_TYPE_PRIMARY, CONNECTION_TYPE_READER
-   *
-   * @param self::CONNECTION_TYPE_* $connectionType
+   * @param string
    */
   public function setConnectionType($connectionType)
   {
     $this->connectionType = $connectionType;
   }
   /**
-   * @return self::CONNECTION_TYPE_*
+   * @return string
    */
   public function getConnectionType()
   {
     return $this->connectionType;
   }
   /**
-   * Required. The URI of the consumer side forwarding rule. Example:
-   * projects/{projectNumOrId}/regions/us-east1/forwardingRules/{resourceId}.
-   *
-   * @param string $forwardingRule
+   * @param string
    */
   public function setForwardingRule($forwardingRule)
   {
@@ -167,10 +99,7 @@ class PscConnection extends \Google\Model
     return $this->forwardingRule;
   }
   /**
-   * Required. The consumer network where the IP address resides, in the form of
-   * projects/{project_id}/global/networks/{network_id}.
-   *
-   * @param string $network
+   * @param string
    */
   public function setNetwork($network)
   {
@@ -184,10 +113,7 @@ class PscConnection extends \Google\Model
     return $this->network;
   }
   /**
-   * Output only. port will only be set for Primary/Reader or Discovery
-   * endpoint.
-   *
-   * @param int $port
+   * @param int
    */
   public function setPort($port)
   {
@@ -201,10 +127,7 @@ class PscConnection extends \Google\Model
     return $this->port;
   }
   /**
-   * Optional. Project ID of the consumer project where the forwarding rule is
-   * created in.
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {
@@ -218,10 +141,7 @@ class PscConnection extends \Google\Model
     return $this->projectId;
   }
   /**
-   * Required. The PSC connection id of the forwarding rule connected to the
-   * service attachment.
-   *
-   * @param string $pscConnectionId
+   * @param string
    */
   public function setPscConnectionId($pscConnectionId)
   {
@@ -235,33 +155,21 @@ class PscConnection extends \Google\Model
     return $this->pscConnectionId;
   }
   /**
-   * Output only. The status of the PSC connection. Please note that this value
-   * is updated periodically. To get the latest status of a PSC connection,
-   * follow https://cloud.google.com/vpc/docs/configure-private-service-connect-
-   * services#endpoint-details.
-   *
-   * Accepted values: PSC_CONNECTION_STATUS_UNSPECIFIED,
-   * PSC_CONNECTION_STATUS_ACTIVE, PSC_CONNECTION_STATUS_NOT_FOUND
-   *
-   * @param self::PSC_CONNECTION_STATUS_* $pscConnectionStatus
+   * @param string
    */
   public function setPscConnectionStatus($pscConnectionStatus)
   {
     $this->pscConnectionStatus = $pscConnectionStatus;
   }
   /**
-   * @return self::PSC_CONNECTION_STATUS_*
+   * @return string
    */
   public function getPscConnectionStatus()
   {
     return $this->pscConnectionStatus;
   }
   /**
-   * Required. The service attachment which is the target of the PSC connection,
-   * in the form of projects/{project-
-   * id}/regions/{region}/serviceAttachments/{service-attachment-id}.
-   *
-   * @param string $serviceAttachment
+   * @param string
    */
   public function setServiceAttachment($serviceAttachment)
   {

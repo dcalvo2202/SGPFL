@@ -24,7 +24,7 @@ class DateValues extends \Google\Collection
   protected $valuesDataType = 'array';
 
   /**
-   * @param Date[] $values
+   * @param Date[]
    */
   public function setValues($values)
   {

@@ -20,22 +20,16 @@ namespace Google\Service\PagespeedInsights;
 class PagespeedVersion extends \Google\Model
 {
   /**
-   * The major version number of PageSpeed used to generate these results.
-   *
    * @var string
    */
   public $major;
   /**
-   * The minor version number of PageSpeed used to generate these results.
-   *
    * @var string
    */
   public $minor;
 
   /**
-   * The major version number of PageSpeed used to generate these results.
-   *
-   * @param string $major
+   * @param string
    */
   public function setMajor($major)
   {
@@ -49,9 +43,7 @@ class PagespeedVersion extends \Google\Model
     return $this->major;
   }
   /**
-   * The minor version number of PageSpeed used to generate these results.
-   *
-   * @param string $minor
+   * @param string
    */
   public function setMinor($minor)
   {

@@ -23,42 +23,32 @@ class PerfMetricsSummary extends \Google\Collection
   protected $appStartTimeType = AppStartTime::class;
   protected $appStartTimeDataType = '';
   /**
-   * A tool results execution ID. @OutputOnly
-   *
    * @var string
    */
   public $executionId;
   protected $graphicsStatsType = GraphicsStats::class;
   protected $graphicsStatsDataType = '';
   /**
-   * A tool results history ID. @OutputOnly
-   *
    * @var string
    */
   public $historyId;
   protected $perfEnvironmentType = PerfEnvironment::class;
   protected $perfEnvironmentDataType = '';
   /**
-   * Set of resource collected
-   *
    * @var string[]
    */
   public $perfMetrics;
   /**
-   * The cloud project @OutputOnly
-   *
    * @var string
    */
   public $projectId;
   /**
-   * A tool results step ID. @OutputOnly
-   *
    * @var string
    */
   public $stepId;
 
   /**
-   * @param AppStartTime $appStartTime
+   * @param AppStartTime
    */
   public function setAppStartTime(AppStartTime $appStartTime)
   {
@@ -72,9 +62,7 @@ class PerfMetricsSummary extends \Google\Collection
     return $this->appStartTime;
   }
   /**
-   * A tool results execution ID. @OutputOnly
-   *
-   * @param string $executionId
+   * @param string
    */
   public function setExecutionId($executionId)
   {
@@ -88,18 +76,13 @@ class PerfMetricsSummary extends \Google\Collection
     return $this->executionId;
   }
   /**
-   * Graphics statistics for the entire run. Statistics are reset at the
-   * beginning of the run and collected at the end of the run.
-   *
-   * @deprecated
-   * @param GraphicsStats $graphicsStats
+   * @param GraphicsStats
    */
   public function setGraphicsStats(GraphicsStats $graphicsStats)
   {
     $this->graphicsStats = $graphicsStats;
   }
   /**
-   * @deprecated
    * @return GraphicsStats
    */
   public function getGraphicsStats()
@@ -107,9 +90,7 @@ class PerfMetricsSummary extends \Google\Collection
     return $this->graphicsStats;
   }
   /**
-   * A tool results history ID. @OutputOnly
-   *
-   * @param string $historyId
+   * @param string
    */
   public function setHistoryId($historyId)
   {
@@ -123,9 +104,7 @@ class PerfMetricsSummary extends \Google\Collection
     return $this->historyId;
   }
   /**
-   * Describes the environment in which the performance metrics were collected
-   *
-   * @param PerfEnvironment $perfEnvironment
+   * @param PerfEnvironment
    */
   public function setPerfEnvironment(PerfEnvironment $perfEnvironment)
   {
@@ -139,9 +118,7 @@ class PerfMetricsSummary extends \Google\Collection
     return $this->perfEnvironment;
   }
   /**
-   * Set of resource collected
-   *
-   * @param string[] $perfMetrics
+   * @param string[]
    */
   public function setPerfMetrics($perfMetrics)
   {
@@ -155,9 +132,7 @@ class PerfMetricsSummary extends \Google\Collection
     return $this->perfMetrics;
   }
   /**
-   * The cloud project @OutputOnly
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {
@@ -171,9 +146,7 @@ class PerfMetricsSummary extends \Google\Collection
     return $this->projectId;
   }
   /**
-   * A tool results step ID. @OutputOnly
-   *
-   * @param string $stepId
+   * @param string
    */
   public function setStepId($stepId)
   {

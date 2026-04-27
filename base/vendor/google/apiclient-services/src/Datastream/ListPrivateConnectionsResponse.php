@@ -21,26 +21,18 @@ class ListPrivateConnectionsResponse extends \Google\Collection
 {
   protected $collection_key = 'unreachable';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $privateConnectionsType = PrivateConnection::class;
   protected $privateConnectionsDataType = 'array';
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -54,9 +46,7 @@ class ListPrivateConnectionsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * List of private connectivity configurations.
-   *
-   * @param PrivateConnection[] $privateConnections
+   * @param PrivateConnection[]
    */
   public function setPrivateConnections($privateConnections)
   {
@@ -70,9 +60,7 @@ class ListPrivateConnectionsResponse extends \Google\Collection
     return $this->privateConnections;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

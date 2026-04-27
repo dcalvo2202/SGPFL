@@ -20,18 +20,12 @@ namespace Google\Service\DLP;
 class GooglePrivacyDlpV2AwsAccountRegex extends \Google\Model
 {
   /**
-   * Optional. Regex to test the AWS account ID against. If empty, all accounts
-   * match.
-   *
    * @var string
    */
   public $accountIdRegex;
 
   /**
-   * Optional. Regex to test the AWS account ID against. If empty, all accounts
-   * match.
-   *
-   * @param string $accountIdRegex
+   * @param string
    */
   public function setAccountIdRegex($accountIdRegex)
   {

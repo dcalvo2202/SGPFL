@@ -21,41 +21,24 @@ class InstanceGroupAggregatedList extends \Google\Collection
 {
   protected $collection_key = 'unreachables';
   /**
-   * Output only. [Output Only] Unique identifier for the resource; defined by
-   * the server.
-   *
    * @var string
    */
   public $id;
   protected $itemsType = InstanceGroupsScopedList::class;
   protected $itemsDataType = 'map';
   /**
-   * Output only. [Output Only] The resource type, which is
-   * alwayscompute#instanceGroupAggregatedList for aggregated lists of instance
-   * groups.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Output only. [Output Only] This token allows you to get the next page of
-   * results for list requests. If the number of results is larger
-   * thanmaxResults, use the nextPageToken as a value for the query parameter
-   * pageToken in the next list request. Subsequent list requests will have
-   * their own nextPageToken to continue paging through the results.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Output only. [Output Only] Server-defined URL for this resource.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * Output only. [Output Only] Unreachable resources.
-   *
    * @var string[]
    */
   public $unreachables;
@@ -63,10 +46,7 @@ class InstanceGroupAggregatedList extends \Google\Collection
   protected $warningDataType = '';
 
   /**
-   * Output only. [Output Only] Unique identifier for the resource; defined by
-   * the server.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -80,9 +60,7 @@ class InstanceGroupAggregatedList extends \Google\Collection
     return $this->id;
   }
   /**
-   * A list of InstanceGroupsScopedList resources.
-   *
-   * @param InstanceGroupsScopedList[] $items
+   * @param InstanceGroupsScopedList[]
    */
   public function setItems($items)
   {
@@ -96,11 +74,7 @@ class InstanceGroupAggregatedList extends \Google\Collection
     return $this->items;
   }
   /**
-   * Output only. [Output Only] The resource type, which is
-   * alwayscompute#instanceGroupAggregatedList for aggregated lists of instance
-   * groups.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -114,13 +88,7 @@ class InstanceGroupAggregatedList extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Output only. [Output Only] This token allows you to get the next page of
-   * results for list requests. If the number of results is larger
-   * thanmaxResults, use the nextPageToken as a value for the query parameter
-   * pageToken in the next list request. Subsequent list requests will have
-   * their own nextPageToken to continue paging through the results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -134,9 +102,7 @@ class InstanceGroupAggregatedList extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Output only. [Output Only] Server-defined URL for this resource.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -150,9 +116,7 @@ class InstanceGroupAggregatedList extends \Google\Collection
     return $this->selfLink;
   }
   /**
-   * Output only. [Output Only] Unreachable resources.
-   *
-   * @param string[] $unreachables
+   * @param string[]
    */
   public function setUnreachables($unreachables)
   {
@@ -166,9 +130,7 @@ class InstanceGroupAggregatedList extends \Google\Collection
     return $this->unreachables;
   }
   /**
-   * Output only. [Output Only] Informational warning message.
-   *
-   * @param InstanceGroupAggregatedListWarning $warning
+   * @param InstanceGroupAggregatedListWarning
    */
   public function setWarning(InstanceGroupAggregatedListWarning $warning)
   {

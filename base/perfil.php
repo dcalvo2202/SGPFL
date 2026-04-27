@@ -26,14 +26,16 @@ $is_external_advisor = false;
 $google_calendar_connected = false;
 
 // Mensajes flash desde callbacks (Google auth/disconnect)
-if (isset($_SESSION['success']) && !empty($_SESSION['success'])) {
-    $message = $_SESSION['success'];
+$_flash_success = $mySessionController->getVar('success');
+$_flash_error   = $mySessionController->getVar('error');
+if (!empty($_flash_success)) {
+    $message = $_flash_success;
     $message_type = "success";
-    unset($_SESSION['success']);
-} elseif (isset($_SESSION['error']) && !empty($_SESSION['error'])) {
-    $message = $_SESSION['error'];
+    $mySessionController->save('success', '');
+} elseif (!empty($_flash_error)) {
+    $message = $_flash_error;
     $message_type = "danger";
-    unset($_SESSION['error']);
+    $mySessionController->save('error', '');
 }
 
 // Procesar cambio de contraseña

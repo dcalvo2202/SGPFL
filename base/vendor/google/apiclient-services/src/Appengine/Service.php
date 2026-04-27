@@ -20,39 +20,18 @@ namespace Google\Service\Appengine;
 class Service extends \Google\Model
 {
   /**
-   * Additional Google Generated Customer Metadata, this field won't be provided
-   * by default and can be requested by setting the IncludeExtraData field in
-   * GetServiceRequest
-   *
    * @var array[]
    */
   public $generatedCustomerMetadata;
   /**
-   * Output only. Relative name of the service within the application. Example:
-   * default.@OutputOnly
-   *
    * @var string
    */
   public $id;
   /**
-   * A set of labels to apply to this service. Labels are key/value pairs that
-   * describe the service and all resources that belong to it (e.g., versions).
-   * The labels can be used to search and group resources, and are propagated to
-   * the usage and billing reports, enabling fine-grain analysis of costs. An
-   * example of using labels is to tag resources belonging to different
-   * environments (e.g., "env=prod", "env=qa"). Label keys and values can be no
-   * longer than 63 characters and can only contain lowercase letters, numeric
-   * characters, underscores, dashes, and international characters. Label keys
-   * must start with a lowercase letter or an international character. Each
-   * service can have at most 32 labels.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Output only. Full path to the Service resource in the API. Example:
-   * apps/myapp/services/default.@OutputOnly
-   *
    * @var string
    */
   public $name;
@@ -62,11 +41,7 @@ class Service extends \Google\Model
   protected $splitDataType = '';
 
   /**
-   * Additional Google Generated Customer Metadata, this field won't be provided
-   * by default and can be requested by setting the IncludeExtraData field in
-   * GetServiceRequest
-   *
-   * @param array[] $generatedCustomerMetadata
+   * @param array[]
    */
   public function setGeneratedCustomerMetadata($generatedCustomerMetadata)
   {
@@ -80,10 +55,7 @@ class Service extends \Google\Model
     return $this->generatedCustomerMetadata;
   }
   /**
-   * Output only. Relative name of the service within the application. Example:
-   * default.@OutputOnly
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -97,18 +69,7 @@ class Service extends \Google\Model
     return $this->id;
   }
   /**
-   * A set of labels to apply to this service. Labels are key/value pairs that
-   * describe the service and all resources that belong to it (e.g., versions).
-   * The labels can be used to search and group resources, and are propagated to
-   * the usage and billing reports, enabling fine-grain analysis of costs. An
-   * example of using labels is to tag resources belonging to different
-   * environments (e.g., "env=prod", "env=qa"). Label keys and values can be no
-   * longer than 63 characters and can only contain lowercase letters, numeric
-   * characters, underscores, dashes, and international characters. Label keys
-   * must start with a lowercase letter or an international character. Each
-   * service can have at most 32 labels.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -122,10 +83,7 @@ class Service extends \Google\Model
     return $this->labels;
   }
   /**
-   * Output only. Full path to the Service resource in the API. Example:
-   * apps/myapp/services/default.@OutputOnly
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -139,9 +97,7 @@ class Service extends \Google\Model
     return $this->name;
   }
   /**
-   * Ingress settings for this service. Will apply to all versions.
-   *
-   * @param NetworkSettings $networkSettings
+   * @param NetworkSettings
    */
   public function setNetworkSettings(NetworkSettings $networkSettings)
   {
@@ -155,10 +111,7 @@ class Service extends \Google\Model
     return $this->networkSettings;
   }
   /**
-   * Mapping that defines fractional HTTP traffic diversion to different
-   * versions within the service.
-   *
-   * @param TrafficSplit $split
+   * @param TrafficSplit
    */
   public function setSplit(TrafficSplit $split)
   {

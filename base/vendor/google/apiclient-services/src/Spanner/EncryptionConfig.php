@@ -21,35 +21,16 @@ class EncryptionConfig extends \Google\Collection
 {
   protected $collection_key = 'kmsKeyNames';
   /**
-   * The Cloud KMS key to be used for encrypting and decrypting the database.
-   * Values are of the form `projects//locations//keyRings//cryptoKeys/`.
-   *
    * @var string
    */
   public $kmsKeyName;
   /**
-   * Specifies the KMS configuration for one or more keys used to encrypt the
-   * database. Values are of the form
-   * `projects//locations//keyRings//cryptoKeys/`. The keys referenced by
-   * `kms_key_names` must fully cover all regions of the database's instance
-   * configuration. Some examples: * For regional (single-region) instance
-   * configurations, specify a regional location KMS key. * For multi-region
-   * instance configurations of type `GOOGLE_MANAGED`, either specify a multi-
-   * region location KMS key or multiple regional location KMS keys that cover
-   * all regions in the instance configuration. * For an instance configuration
-   * of type `USER_MANAGED`, specify only regional location KMS keys to cover
-   * each region in the instance configuration. Multi-region location KMS keys
-   * aren't supported for `USER_MANAGED` type instance configurations.
-   *
    * @var string[]
    */
   public $kmsKeyNames;
 
   /**
-   * The Cloud KMS key to be used for encrypting and decrypting the database.
-   * Values are of the form `projects//locations//keyRings//cryptoKeys/`.
-   *
-   * @param string $kmsKeyName
+   * @param string
    */
   public function setKmsKeyName($kmsKeyName)
   {
@@ -63,20 +44,7 @@ class EncryptionConfig extends \Google\Collection
     return $this->kmsKeyName;
   }
   /**
-   * Specifies the KMS configuration for one or more keys used to encrypt the
-   * database. Values are of the form
-   * `projects//locations//keyRings//cryptoKeys/`. The keys referenced by
-   * `kms_key_names` must fully cover all regions of the database's instance
-   * configuration. Some examples: * For regional (single-region) instance
-   * configurations, specify a regional location KMS key. * For multi-region
-   * instance configurations of type `GOOGLE_MANAGED`, either specify a multi-
-   * region location KMS key or multiple regional location KMS keys that cover
-   * all regions in the instance configuration. * For an instance configuration
-   * of type `USER_MANAGED`, specify only regional location KMS keys to cover
-   * each region in the instance configuration. Multi-region location KMS keys
-   * aren't supported for `USER_MANAGED` type instance configurations.
-   *
-   * @param string[] $kmsKeyNames
+   * @param string[]
    */
   public function setKmsKeyNames($kmsKeyNames)
   {

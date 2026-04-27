@@ -20,60 +20,35 @@ namespace Google\Service\DataCatalog;
 class GoogleCloudDatacatalogV1TagField extends \Google\Model
 {
   /**
-   * The value of a tag field with a boolean type.
-   *
    * @var bool
    */
   public $boolValue;
   /**
-   * Output only. The display name of this field.
-   *
    * @var string
    */
   public $displayName;
-  /**
-   * The value of a tag field with a double type.
-   *
-   * @var 
-   */
   public $doubleValue;
   protected $enumValueType = GoogleCloudDatacatalogV1TagFieldEnumValue::class;
   protected $enumValueDataType = '';
   /**
-   * Output only. The order of this field with respect to other fields in this
-   * tag. Can be set by Tag. For example, a higher value can indicate a more
-   * important field. The value can be negative. Multiple fields can have the
-   * same order, and field orders within a tag don't have to be sequential.
-   *
    * @var int
    */
   public $order;
   /**
-   * The value of a tag field with a rich text type. The maximum length is 10
-   * MiB as this value holds HTML descriptions including encoded images. The
-   * maximum length of the text without images is 100 KiB.
-   *
    * @var string
    */
   public $richtextValue;
   /**
-   * The value of a tag field with a string type. The maximum length is 2000
-   * UTF-8 characters.
-   *
    * @var string
    */
   public $stringValue;
   /**
-   * The value of a tag field with a timestamp type.
-   *
    * @var string
    */
   public $timestampValue;
 
   /**
-   * The value of a tag field with a boolean type.
-   *
-   * @param bool $boolValue
+   * @param bool
    */
   public function setBoolValue($boolValue)
   {
@@ -87,9 +62,7 @@ class GoogleCloudDatacatalogV1TagField extends \Google\Model
     return $this->boolValue;
   }
   /**
-   * Output only. The display name of this field.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -111,10 +84,7 @@ class GoogleCloudDatacatalogV1TagField extends \Google\Model
     return $this->doubleValue;
   }
   /**
-   * The value of a tag field with an enum type. This value must be one of the
-   * allowed values listed in this enum.
-   *
-   * @param GoogleCloudDatacatalogV1TagFieldEnumValue $enumValue
+   * @param GoogleCloudDatacatalogV1TagFieldEnumValue
    */
   public function setEnumValue(GoogleCloudDatacatalogV1TagFieldEnumValue $enumValue)
   {
@@ -128,12 +98,7 @@ class GoogleCloudDatacatalogV1TagField extends \Google\Model
     return $this->enumValue;
   }
   /**
-   * Output only. The order of this field with respect to other fields in this
-   * tag. Can be set by Tag. For example, a higher value can indicate a more
-   * important field. The value can be negative. Multiple fields can have the
-   * same order, and field orders within a tag don't have to be sequential.
-   *
-   * @param int $order
+   * @param int
    */
   public function setOrder($order)
   {
@@ -147,11 +112,7 @@ class GoogleCloudDatacatalogV1TagField extends \Google\Model
     return $this->order;
   }
   /**
-   * The value of a tag field with a rich text type. The maximum length is 10
-   * MiB as this value holds HTML descriptions including encoded images. The
-   * maximum length of the text without images is 100 KiB.
-   *
-   * @param string $richtextValue
+   * @param string
    */
   public function setRichtextValue($richtextValue)
   {
@@ -165,10 +126,7 @@ class GoogleCloudDatacatalogV1TagField extends \Google\Model
     return $this->richtextValue;
   }
   /**
-   * The value of a tag field with a string type. The maximum length is 2000
-   * UTF-8 characters.
-   *
-   * @param string $stringValue
+   * @param string
    */
   public function setStringValue($stringValue)
   {
@@ -182,9 +140,7 @@ class GoogleCloudDatacatalogV1TagField extends \Google\Model
     return $this->stringValue;
   }
   /**
-   * The value of a tag field with a timestamp type.
-   *
-   * @param string $timestampValue
+   * @param string
    */
   public function setTimestampValue($timestampValue)
   {

@@ -19,28 +19,15 @@ namespace Google\Service\ArtifactRegistry;
 
 class DockerRepository extends \Google\Model
 {
-  /**
-   * Unspecified repository.
-   */
-  public const PUBLIC_REPOSITORY_PUBLIC_REPOSITORY_UNSPECIFIED = 'PUBLIC_REPOSITORY_UNSPECIFIED';
-  /**
-   * Docker Hub.
-   */
-  public const PUBLIC_REPOSITORY_DOCKER_HUB = 'DOCKER_HUB';
   protected $customRepositoryType = GoogleDevtoolsArtifactregistryV1RemoteRepositoryConfigDockerRepositoryCustomRepository::class;
   protected $customRepositoryDataType = '';
   /**
-   * One of the publicly available Docker repositories supported by Artifact
-   * Registry.
-   *
    * @var string
    */
   public $publicRepository;
 
   /**
-   * Customer-specified remote repository.
-   *
-   * @param GoogleDevtoolsArtifactregistryV1RemoteRepositoryConfigDockerRepositoryCustomRepository $customRepository
+   * @param GoogleDevtoolsArtifactregistryV1RemoteRepositoryConfigDockerRepositoryCustomRepository
    */
   public function setCustomRepository(GoogleDevtoolsArtifactregistryV1RemoteRepositoryConfigDockerRepositoryCustomRepository $customRepository)
   {
@@ -54,19 +41,14 @@ class DockerRepository extends \Google\Model
     return $this->customRepository;
   }
   /**
-   * One of the publicly available Docker repositories supported by Artifact
-   * Registry.
-   *
-   * Accepted values: PUBLIC_REPOSITORY_UNSPECIFIED, DOCKER_HUB
-   *
-   * @param self::PUBLIC_REPOSITORY_* $publicRepository
+   * @param string
    */
   public function setPublicRepository($publicRepository)
   {
     $this->publicRepository = $publicRepository;
   }
   /**
-   * @return self::PUBLIC_REPOSITORY_*
+   * @return string
    */
   public function getPublicRepository()
   {

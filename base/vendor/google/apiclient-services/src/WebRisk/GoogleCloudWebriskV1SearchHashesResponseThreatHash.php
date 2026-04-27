@@ -21,32 +21,20 @@ class GoogleCloudWebriskV1SearchHashesResponseThreatHash extends \Google\Collect
 {
   protected $collection_key = 'threatTypes';
   /**
-   * The cache lifetime for the returned match. Clients must not cache this
-   * response past this timestamp to avoid false positives.
-   *
    * @var string
    */
   public $expireTime;
   /**
-   * A 32 byte SHA256 hash. This field is in binary format. For JSON requests,
-   * hashes are base64-encoded.
-   *
    * @var string
    */
   public $hash;
   /**
-   * The ThreatList this threat belongs to. This must contain at least one
-   * entry.
-   *
    * @var string[]
    */
   public $threatTypes;
 
   /**
-   * The cache lifetime for the returned match. Clients must not cache this
-   * response past this timestamp to avoid false positives.
-   *
-   * @param string $expireTime
+   * @param string
    */
   public function setExpireTime($expireTime)
   {
@@ -60,10 +48,7 @@ class GoogleCloudWebriskV1SearchHashesResponseThreatHash extends \Google\Collect
     return $this->expireTime;
   }
   /**
-   * A 32 byte SHA256 hash. This field is in binary format. For JSON requests,
-   * hashes are base64-encoded.
-   *
-   * @param string $hash
+   * @param string
    */
   public function setHash($hash)
   {
@@ -77,10 +62,7 @@ class GoogleCloudWebriskV1SearchHashesResponseThreatHash extends \Google\Collect
     return $this->hash;
   }
   /**
-   * The ThreatList this threat belongs to. This must contain at least one
-   * entry.
-   *
-   * @param string[] $threatTypes
+   * @param string[]
    */
   public function setThreatTypes($threatTypes)
   {

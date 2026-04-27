@@ -20,20 +20,12 @@ namespace Google\Service\DriveLabels;
 class GoogleAppsDriveLabelsV2UserInfo extends \Google\Model
 {
   /**
-   * The identifier for this user that can be used with the [People
-   * API](https://developers.google.com/people) to get more information. For
-   * example, `people/12345678`.
-   *
    * @var string
    */
   public $person;
 
   /**
-   * The identifier for this user that can be used with the [People
-   * API](https://developers.google.com/people) to get more information. For
-   * example, `people/12345678`.
-   *
-   * @param string $person
+   * @param string
    */
   public function setPerson($person)
   {

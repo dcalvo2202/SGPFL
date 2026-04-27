@@ -20,16 +20,12 @@ namespace Google\Service\ChecksService;
 class GoogleChecksReportV1alphaEndpoint extends \Google\Model
 {
   /**
-   * Domain name (e.g. ads.google.com).
-   *
    * @var string
    */
   public $domain;
 
   /**
-   * Domain name (e.g. ads.google.com).
-   *
-   * @param string $domain
+   * @param string
    */
   public function setDomain($domain)
   {

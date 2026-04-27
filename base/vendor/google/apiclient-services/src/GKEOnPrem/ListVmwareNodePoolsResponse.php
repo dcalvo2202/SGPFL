@@ -21,15 +21,10 @@ class ListVmwareNodePoolsResponse extends \Google\Collection
 {
   protected $collection_key = 'vmwareNodePools';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
@@ -37,10 +32,7 @@ class ListVmwareNodePoolsResponse extends \Google\Collection
   protected $vmwareNodePoolsDataType = 'array';
 
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -54,9 +46,7 @@ class ListVmwareNodePoolsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {
@@ -70,9 +60,7 @@ class ListVmwareNodePoolsResponse extends \Google\Collection
     return $this->unreachable;
   }
   /**
-   * The node pools from the specified parent resource.
-   *
-   * @param VmwareNodePool[] $vmwareNodePools
+   * @param VmwareNodePool[]
    */
   public function setVmwareNodePools($vmwareNodePools)
   {

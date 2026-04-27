@@ -22,17 +22,12 @@ class Probe extends \Google\Model
   protected $execType = ExecAction::class;
   protected $execDataType = '';
   /**
-   * Optional. How often (in seconds) to perform the probe. Default to 10
-   * seconds. Minimum value is 1. +optional
-   *
    * @var int
    */
   public $periodSeconds;
 
   /**
-   * Optional. Exec specifies the action to take. +optional
-   *
-   * @param ExecAction $exec
+   * @param ExecAction
    */
   public function setExec(ExecAction $exec)
   {
@@ -46,10 +41,7 @@ class Probe extends \Google\Model
     return $this->exec;
   }
   /**
-   * Optional. How often (in seconds) to perform the probe. Default to 10
-   * seconds. Minimum value is 1. +optional
-   *
-   * @param int $periodSeconds
+   * @param int
    */
   public function setPeriodSeconds($periodSeconds)
   {

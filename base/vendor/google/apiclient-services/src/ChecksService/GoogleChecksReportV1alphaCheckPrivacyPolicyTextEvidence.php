@@ -23,9 +23,7 @@ class GoogleChecksReportV1alphaCheckPrivacyPolicyTextEvidence extends \Google\Mo
   protected $policyFragmentDataType = '';
 
   /**
-   * The privacy policy fragment that was used during the check.
-   *
-   * @param GoogleChecksReportV1alphaPolicyFragment $policyFragment
+   * @param GoogleChecksReportV1alphaPolicyFragment
    */
   public function setPolicyFragment(GoogleChecksReportV1alphaPolicyFragment $policyFragment)
   {

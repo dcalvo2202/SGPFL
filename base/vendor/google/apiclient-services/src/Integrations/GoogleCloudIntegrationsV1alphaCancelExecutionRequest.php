@@ -20,18 +20,12 @@ namespace Google\Service\Integrations;
 class GoogleCloudIntegrationsV1alphaCancelExecutionRequest extends \Google\Model
 {
   /**
-   * Required. Reason for cancelling the execution. This is provided by the
-   * client requesting the cancellation, and is not used by the Platform.
-   *
    * @var string
    */
   public $cancelReason;
 
   /**
-   * Required. Reason for cancelling the execution. This is provided by the
-   * client requesting the cancellation, and is not used by the Platform.
-   *
-   * @param string $cancelReason
+   * @param string
    */
   public function setCancelReason($cancelReason)
   {

@@ -19,10 +19,6 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowCxV3PageInfoFormInfoParameterInfo extends \Google\Model
 {
-  public const STATE_PARAMETER_STATE_UNSPECIFIED = 'PARAMETER_STATE_UNSPECIFIED';
-  public const STATE_EMPTY = 'EMPTY';
-  public const STATE_INVALID = 'INVALID';
-  public const STATE_FILLED = 'FILLED';
   /**
    * @var string
    */
@@ -45,7 +41,7 @@ class GoogleCloudDialogflowCxV3PageInfoFormInfoParameterInfo extends \Google\Mod
   public $value;
 
   /**
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -59,7 +55,7 @@ class GoogleCloudDialogflowCxV3PageInfoFormInfoParameterInfo extends \Google\Mod
     return $this->displayName;
   }
   /**
-   * @param bool $justCollected
+   * @param bool
    */
   public function setJustCollected($justCollected)
   {
@@ -73,7 +69,7 @@ class GoogleCloudDialogflowCxV3PageInfoFormInfoParameterInfo extends \Google\Mod
     return $this->justCollected;
   }
   /**
-   * @param bool $required
+   * @param bool
    */
   public function setRequired($required)
   {
@@ -87,21 +83,21 @@ class GoogleCloudDialogflowCxV3PageInfoFormInfoParameterInfo extends \Google\Mod
     return $this->required;
   }
   /**
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * @param array $value
+   * @param array
    */
   public function setValue($value)
   {

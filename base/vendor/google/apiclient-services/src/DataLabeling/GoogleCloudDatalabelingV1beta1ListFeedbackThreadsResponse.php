@@ -23,16 +23,12 @@ class GoogleCloudDatalabelingV1beta1ListFeedbackThreadsResponse extends \Google\
   protected $feedbackThreadsType = GoogleCloudDatalabelingV1beta1FeedbackThread::class;
   protected $feedbackThreadsDataType = 'array';
   /**
-   * A token to retrieve next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of feedback threads to return.
-   *
-   * @param GoogleCloudDatalabelingV1beta1FeedbackThread[] $feedbackThreads
+   * @param GoogleCloudDatalabelingV1beta1FeedbackThread[]
    */
   public function setFeedbackThreads($feedbackThreads)
   {
@@ -46,9 +42,7 @@ class GoogleCloudDatalabelingV1beta1ListFeedbackThreadsResponse extends \Google\
     return $this->feedbackThreads;
   }
   /**
-   * A token to retrieve next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

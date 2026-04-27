@@ -20,24 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1VertexAiSearchConfig extends \Google\Model
 {
   /**
-   * Vertex AI Search Serving Config resource full name. For example, `projects/
-   * {project}/locations/{location}/collections/{collection}/engines/{engine}/se
-   * rvingConfigs/{serving_config}` or `projects/{project}/locations/{location}/
-   * collections/{collection}/dataStores/{data_store}/servingConfigs/{serving_co
-   * nfig}`.
-   *
    * @var string
    */
   public $servingConfig;
 
   /**
-   * Vertex AI Search Serving Config resource full name. For example, `projects/
-   * {project}/locations/{location}/collections/{collection}/engines/{engine}/se
-   * rvingConfigs/{serving_config}` or `projects/{project}/locations/{location}/
-   * collections/{collection}/dataStores/{data_store}/servingConfigs/{serving_co
-   * nfig}`.
-   *
-   * @param string $servingConfig
+   * @param string
    */
   public function setServingConfig($servingConfig)
   {

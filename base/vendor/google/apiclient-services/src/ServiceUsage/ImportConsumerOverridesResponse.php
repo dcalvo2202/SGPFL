@@ -24,9 +24,7 @@ class ImportConsumerOverridesResponse extends \Google\Collection
   protected $overridesDataType = 'array';
 
   /**
-   * The overrides that were created from the imported data.
-   *
-   * @param QuotaOverride[] $overrides
+   * @param QuotaOverride[]
    */
   public function setOverrides($overrides)
   {

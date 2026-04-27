@@ -24,9 +24,7 @@ class BatchUpdateIngressRulesResponse extends \Google\Collection
   protected $ingressRulesDataType = 'array';
 
   /**
-   * The full list of ingress FirewallRules for this application.
-   *
-   * @param FirewallRule[] $ingressRules
+   * @param FirewallRule[]
    */
   public function setIngressRules($ingressRules)
   {

@@ -102,7 +102,7 @@ class TaskData extends \Google\Collection
   protected $taskMetricsDataType = '';
 
   /**
-   * @param AccumulableInfo[] $accumulatorUpdates
+   * @param AccumulableInfo[]
    */
   public function setAccumulatorUpdates($accumulatorUpdates)
   {
@@ -116,7 +116,7 @@ class TaskData extends \Google\Collection
     return $this->accumulatorUpdates;
   }
   /**
-   * @param int $attempt
+   * @param int
    */
   public function setAttempt($attempt)
   {
@@ -130,7 +130,7 @@ class TaskData extends \Google\Collection
     return $this->attempt;
   }
   /**
-   * @param string $durationMillis
+   * @param string
    */
   public function setDurationMillis($durationMillis)
   {
@@ -144,7 +144,7 @@ class TaskData extends \Google\Collection
     return $this->durationMillis;
   }
   /**
-   * @param string $errorMessage
+   * @param string
    */
   public function setErrorMessage($errorMessage)
   {
@@ -158,7 +158,7 @@ class TaskData extends \Google\Collection
     return $this->errorMessage;
   }
   /**
-   * @param string $executorId
+   * @param string
    */
   public function setExecutorId($executorId)
   {
@@ -172,7 +172,7 @@ class TaskData extends \Google\Collection
     return $this->executorId;
   }
   /**
-   * @param string[] $executorLogs
+   * @param string[]
    */
   public function setExecutorLogs($executorLogs)
   {
@@ -186,7 +186,7 @@ class TaskData extends \Google\Collection
     return $this->executorLogs;
   }
   /**
-   * @param string $gettingResultTimeMillis
+   * @param string
    */
   public function setGettingResultTimeMillis($gettingResultTimeMillis)
   {
@@ -200,7 +200,7 @@ class TaskData extends \Google\Collection
     return $this->gettingResultTimeMillis;
   }
   /**
-   * @param bool $hasMetrics
+   * @param bool
    */
   public function setHasMetrics($hasMetrics)
   {
@@ -214,7 +214,7 @@ class TaskData extends \Google\Collection
     return $this->hasMetrics;
   }
   /**
-   * @param string $host
+   * @param string
    */
   public function setHost($host)
   {
@@ -228,7 +228,7 @@ class TaskData extends \Google\Collection
     return $this->host;
   }
   /**
-   * @param int $index
+   * @param int
    */
   public function setIndex($index)
   {
@@ -242,7 +242,7 @@ class TaskData extends \Google\Collection
     return $this->index;
   }
   /**
-   * @param string $launchTime
+   * @param string
    */
   public function setLaunchTime($launchTime)
   {
@@ -256,7 +256,7 @@ class TaskData extends \Google\Collection
     return $this->launchTime;
   }
   /**
-   * @param int $partitionId
+   * @param int
    */
   public function setPartitionId($partitionId)
   {
@@ -270,7 +270,7 @@ class TaskData extends \Google\Collection
     return $this->partitionId;
   }
   /**
-   * @param string $resultFetchStart
+   * @param string
    */
   public function setResultFetchStart($resultFetchStart)
   {
@@ -284,7 +284,7 @@ class TaskData extends \Google\Collection
     return $this->resultFetchStart;
   }
   /**
-   * @param string $schedulerDelayMillis
+   * @param string
    */
   public function setSchedulerDelayMillis($schedulerDelayMillis)
   {
@@ -298,7 +298,7 @@ class TaskData extends \Google\Collection
     return $this->schedulerDelayMillis;
   }
   /**
-   * @param bool $speculative
+   * @param bool
    */
   public function setSpeculative($speculative)
   {
@@ -312,7 +312,7 @@ class TaskData extends \Google\Collection
     return $this->speculative;
   }
   /**
-   * @param int $stageAttemptId
+   * @param int
    */
   public function setStageAttemptId($stageAttemptId)
   {
@@ -326,7 +326,7 @@ class TaskData extends \Google\Collection
     return $this->stageAttemptId;
   }
   /**
-   * @param string $stageId
+   * @param string
    */
   public function setStageId($stageId)
   {
@@ -340,7 +340,7 @@ class TaskData extends \Google\Collection
     return $this->stageId;
   }
   /**
-   * @param string $status
+   * @param string
    */
   public function setStatus($status)
   {
@@ -354,7 +354,7 @@ class TaskData extends \Google\Collection
     return $this->status;
   }
   /**
-   * @param string $taskId
+   * @param string
    */
   public function setTaskId($taskId)
   {
@@ -368,7 +368,7 @@ class TaskData extends \Google\Collection
     return $this->taskId;
   }
   /**
-   * @param string $taskLocality
+   * @param string
    */
   public function setTaskLocality($taskLocality)
   {
@@ -382,7 +382,7 @@ class TaskData extends \Google\Collection
     return $this->taskLocality;
   }
   /**
-   * @param TaskMetrics $taskMetrics
+   * @param TaskMetrics
    */
   public function setTaskMetrics(TaskMetrics $taskMetrics)
   {

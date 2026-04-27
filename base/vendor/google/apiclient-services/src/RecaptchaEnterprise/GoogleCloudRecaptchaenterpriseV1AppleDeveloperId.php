@@ -20,31 +20,20 @@ namespace Google\Service\RecaptchaEnterprise;
 class GoogleCloudRecaptchaenterpriseV1AppleDeveloperId extends \Google\Model
 {
   /**
-   * Required. The Apple developer key ID (10-character string).
-   *
    * @var string
    */
   public $keyId;
   /**
-   * Required. Input only. A private key (downloaded as a text file with a .p8
-   * file extension) generated for your Apple Developer account. Ensure that
-   * Apple DeviceCheck is enabled for the private key.
-   *
    * @var string
    */
   public $privateKey;
   /**
-   * Required. The Apple team ID (10-character string) owning the provisioning
-   * profile used to build your application.
-   *
    * @var string
    */
   public $teamId;
 
   /**
-   * Required. The Apple developer key ID (10-character string).
-   *
-   * @param string $keyId
+   * @param string
    */
   public function setKeyId($keyId)
   {
@@ -58,11 +47,7 @@ class GoogleCloudRecaptchaenterpriseV1AppleDeveloperId extends \Google\Model
     return $this->keyId;
   }
   /**
-   * Required. Input only. A private key (downloaded as a text file with a .p8
-   * file extension) generated for your Apple Developer account. Ensure that
-   * Apple DeviceCheck is enabled for the private key.
-   *
-   * @param string $privateKey
+   * @param string
    */
   public function setPrivateKey($privateKey)
   {
@@ -76,10 +61,7 @@ class GoogleCloudRecaptchaenterpriseV1AppleDeveloperId extends \Google\Model
     return $this->privateKey;
   }
   /**
-   * Required. The Apple team ID (10-character string) owning the provisioning
-   * profile used to build your application.
-   *
-   * @param string $teamId
+   * @param string
    */
   public function setTeamId($teamId)
   {

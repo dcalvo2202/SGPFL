@@ -24,10 +24,7 @@ class InstanceGroupManagerResizeRequestStatusLastAttemptError extends \Google\Co
   protected $errorsDataType = 'array';
 
   /**
-   * [Output Only] The array of errors encountered while processing this
-   * operation.
-   *
-   * @param InstanceGroupManagerResizeRequestStatusLastAttemptErrorErrors[] $errors
+   * @param InstanceGroupManagerResizeRequestStatusLastAttemptErrorErrors[]
    */
   public function setErrors($errors)
   {

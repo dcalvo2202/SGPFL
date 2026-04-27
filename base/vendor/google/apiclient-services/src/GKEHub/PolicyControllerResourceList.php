@@ -20,22 +20,16 @@ namespace Google\Service\GKEHub;
 class PolicyControllerResourceList extends \Google\Model
 {
   /**
-   * CPU requirement expressed in Kubernetes resource units.
-   *
    * @var string
    */
   public $cpu;
   /**
-   * Memory requirement expressed in Kubernetes resource units.
-   *
    * @var string
    */
   public $memory;
 
   /**
-   * CPU requirement expressed in Kubernetes resource units.
-   *
-   * @param string $cpu
+   * @param string
    */
   public function setCpu($cpu)
   {
@@ -49,9 +43,7 @@ class PolicyControllerResourceList extends \Google\Model
     return $this->cpu;
   }
   /**
-   * Memory requirement expressed in Kubernetes resource units.
-   *
-   * @param string $memory
+   * @param string
    */
   public function setMemory($memory)
   {

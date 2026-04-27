@@ -20,16 +20,12 @@ namespace Google\Service\ManagedKafka;
 class CreateVersionResponse extends \Google\Model
 {
   /**
-   * The unique identifier of the schema created.
-   *
    * @var int
    */
   public $id;
 
   /**
-   * The unique identifier of the schema created.
-   *
-   * @param int $id
+   * @param int
    */
   public function setId($id)
   {

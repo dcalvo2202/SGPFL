@@ -23,19 +23,12 @@ class GoogleAdsSearchads360V0ResourcesAssetGroupTopCombinationView extends \Goog
   protected $assetGroupTopCombinationsType = GoogleAdsSearchads360V0ResourcesAssetGroupAssetCombinationData::class;
   protected $assetGroupTopCombinationsDataType = 'array';
   /**
-   * Output only. The resource name of the asset group top combination view.
-   * AssetGroup Top Combination view resource names have the form: `"customers/{
-   * customer_id}/assetGroupTopCombinationViews/{asset_group_id}~{asset_combinat
-   * ion_category}"
-   *
    * @var string
    */
   public $resourceName;
 
   /**
-   * Output only. The top combinations of assets that served together.
-   *
-   * @param GoogleAdsSearchads360V0ResourcesAssetGroupAssetCombinationData[] $assetGroupTopCombinations
+   * @param GoogleAdsSearchads360V0ResourcesAssetGroupAssetCombinationData[]
    */
   public function setAssetGroupTopCombinations($assetGroupTopCombinations)
   {
@@ -49,12 +42,7 @@ class GoogleAdsSearchads360V0ResourcesAssetGroupTopCombinationView extends \Goog
     return $this->assetGroupTopCombinations;
   }
   /**
-   * Output only. The resource name of the asset group top combination view.
-   * AssetGroup Top Combination view resource names have the form: `"customers/{
-   * customer_id}/assetGroupTopCombinationViews/{asset_group_id}~{asset_combinat
-   * ion_category}"
-   *
-   * @param string $resourceName
+   * @param string
    */
   public function setResourceName($resourceName)
   {

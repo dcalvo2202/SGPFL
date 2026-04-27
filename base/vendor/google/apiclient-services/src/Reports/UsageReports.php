@@ -21,24 +21,14 @@ class UsageReports extends \Google\Collection
 {
   protected $collection_key = 'warnings';
   /**
-   * ETag of the resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * The type of API resource. For a usage report, the value is
-   * `admin#reports#usageReports`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Token to specify next page. A report with multiple pages has a
-   * `nextPageToken` property in the response. For your follow-on requests
-   * getting all of the report's pages, enter the `nextPageToken` value in the
-   * `pageToken` query string.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -48,9 +38,7 @@ class UsageReports extends \Google\Collection
   protected $warningsDataType = 'array';
 
   /**
-   * ETag of the resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -64,10 +52,7 @@ class UsageReports extends \Google\Collection
     return $this->etag;
   }
   /**
-   * The type of API resource. For a usage report, the value is
-   * `admin#reports#usageReports`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -81,12 +66,7 @@ class UsageReports extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Token to specify next page. A report with multiple pages has a
-   * `nextPageToken` property in the response. For your follow-on requests
-   * getting all of the report's pages, enter the `nextPageToken` value in the
-   * `pageToken` query string.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -100,9 +80,7 @@ class UsageReports extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Various application parameter records.
-   *
-   * @param UsageReport[] $usageReports
+   * @param UsageReport[]
    */
   public function setUsageReports($usageReports)
   {
@@ -116,9 +94,7 @@ class UsageReports extends \Google\Collection
     return $this->usageReports;
   }
   /**
-   * Warnings, if any.
-   *
-   * @param UsageReportsWarnings[] $warnings
+   * @param UsageReportsWarnings[]
    */
   public function setWarnings($warnings)
   {

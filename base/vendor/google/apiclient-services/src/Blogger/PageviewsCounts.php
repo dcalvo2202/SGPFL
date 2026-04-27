@@ -19,26 +19,17 @@ namespace Google\Service\Blogger;
 
 class PageviewsCounts extends \Google\Model
 {
-  public const TIME_RANGE_ALL_TIME = 'ALL_TIME';
-  public const TIME_RANGE_THIRTY_DAYS = 'THIRTY_DAYS';
-  public const TIME_RANGE_SEVEN_DAYS = 'SEVEN_DAYS';
   /**
-   * Count of page views for the given time range.
-   *
    * @var string
    */
   public $count;
   /**
-   * Time range the given count applies to.
-   *
    * @var string
    */
   public $timeRange;
 
   /**
-   * Count of page views for the given time range.
-   *
-   * @param string $count
+   * @param string
    */
   public function setCount($count)
   {
@@ -52,18 +43,14 @@ class PageviewsCounts extends \Google\Model
     return $this->count;
   }
   /**
-   * Time range the given count applies to.
-   *
-   * Accepted values: ALL_TIME, THIRTY_DAYS, SEVEN_DAYS
-   *
-   * @param self::TIME_RANGE_* $timeRange
+   * @param string
    */
   public function setTimeRange($timeRange)
   {
     $this->timeRange = $timeRange;
   }
   /**
-   * @return self::TIME_RANGE_*
+   * @return string
    */
   public function getTimeRange()
   {

@@ -20,24 +20,16 @@ namespace Google\Service\ShoppingContent;
 class AttributionSettingsConversionType extends \Google\Model
 {
   /**
-   * Output only. Option indicating if the type should be included in Merchant
-   * Center reporting.
-   *
    * @var bool
    */
   public $includeInReporting;
   /**
-   * Output only. Conversion event name, as it'll be reported by the client.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Output only. Option indicating if the type should be included in Merchant
-   * Center reporting.
-   *
-   * @param bool $includeInReporting
+   * @param bool
    */
   public function setIncludeInReporting($includeInReporting)
   {
@@ -51,9 +43,7 @@ class AttributionSettingsConversionType extends \Google\Model
     return $this->includeInReporting;
   }
   /**
-   * Output only. Conversion event name, as it'll be reported by the client.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

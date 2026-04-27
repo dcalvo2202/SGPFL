@@ -20,18 +20,12 @@ namespace Google\Service\ChecksService;
 class GoogleChecksReportV1alphaCheckDataSecurityEvidenceDataInTransitInfo extends \Google\Model
 {
   /**
-   * The URL contacted by your app. This includes the protocol, domain, and URL
-   * parameters.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * The URL contacted by your app. This includes the protocol, domain, and URL
-   * parameters.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

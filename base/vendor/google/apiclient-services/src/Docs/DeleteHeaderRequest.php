@@ -20,35 +20,16 @@ namespace Google\Service\Docs;
 class DeleteHeaderRequest extends \Google\Model
 {
   /**
-   * The id of the header to delete. If this header is defined on DocumentStyle,
-   * the reference to this header is removed, resulting in no header of that
-   * type for the first section of the document. If this header is defined on a
-   * SectionStyle, the reference to this header is removed and the header of
-   * that type is now continued from the previous section.
-   *
    * @var string
    */
   public $headerId;
   /**
-   * The tab containing the header to delete. When omitted, the request is
-   * applied to the first tab. In a document containing a single tab: - If
-   * provided, must match the singular tab's ID. - If omitted, the request
-   * applies to the singular tab. In a document containing multiple tabs: - If
-   * provided, the request applies to the specified tab. - If omitted, the
-   * request applies to the first tab in the document.
-   *
    * @var string
    */
   public $tabId;
 
   /**
-   * The id of the header to delete. If this header is defined on DocumentStyle,
-   * the reference to this header is removed, resulting in no header of that
-   * type for the first section of the document. If this header is defined on a
-   * SectionStyle, the reference to this header is removed and the header of
-   * that type is now continued from the previous section.
-   *
-   * @param string $headerId
+   * @param string
    */
   public function setHeaderId($headerId)
   {
@@ -62,14 +43,7 @@ class DeleteHeaderRequest extends \Google\Model
     return $this->headerId;
   }
   /**
-   * The tab containing the header to delete. When omitted, the request is
-   * applied to the first tab. In a document containing a single tab: - If
-   * provided, must match the singular tab's ID. - If omitted, the request
-   * applies to the singular tab. In a document containing multiple tabs: - If
-   * provided, the request applies to the specified tab. - If omitted, the
-   * request applies to the first tab in the document.
-   *
-   * @param string $tabId
+   * @param string
    */
   public function setTabId($tabId)
   {

@@ -29,9 +29,7 @@ class NodeConfigDefaults extends \Google\Model
   protected $nodeKubeletConfigDataType = '';
 
   /**
-   * Parameters for containerd customization.
-   *
-   * @param ContainerdConfig $containerdConfig
+   * @param ContainerdConfig
    */
   public function setContainerdConfig(ContainerdConfig $containerdConfig)
   {
@@ -45,9 +43,7 @@ class NodeConfigDefaults extends \Google\Model
     return $this->containerdConfig;
   }
   /**
-   * GCFS (Google Container File System, also known as Riptide) options.
-   *
-   * @param GcfsConfig $gcfsConfig
+   * @param GcfsConfig
    */
   public function setGcfsConfig(GcfsConfig $gcfsConfig)
   {
@@ -61,9 +57,7 @@ class NodeConfigDefaults extends \Google\Model
     return $this->gcfsConfig;
   }
   /**
-   * Logging configuration for node pools.
-   *
-   * @param NodePoolLoggingConfig $loggingConfig
+   * @param NodePoolLoggingConfig
    */
   public function setLoggingConfig(NodePoolLoggingConfig $loggingConfig)
   {
@@ -77,10 +71,7 @@ class NodeConfigDefaults extends \Google\Model
     return $this->loggingConfig;
   }
   /**
-   * NodeKubeletConfig controls the defaults for new node-pools. Currently only
-   * `insecure_kubelet_readonly_port_enabled` can be set here.
-   *
-   * @param NodeKubeletConfig $nodeKubeletConfig
+   * @param NodeKubeletConfig
    */
   public function setNodeKubeletConfig(NodeKubeletConfig $nodeKubeletConfig)
   {

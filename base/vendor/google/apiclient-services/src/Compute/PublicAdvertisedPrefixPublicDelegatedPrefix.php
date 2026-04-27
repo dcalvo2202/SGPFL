@@ -20,44 +20,28 @@ namespace Google\Service\Compute;
 class PublicAdvertisedPrefixPublicDelegatedPrefix extends \Google\Model
 {
   /**
-   * The IP address range of the public delegated prefix
-   *
    * @var string
    */
   public $ipRange;
   /**
-   * The name of the public delegated prefix
-   *
    * @var string
    */
   public $name;
   /**
-   * The project number of the public delegated prefix
-   *
    * @var string
    */
   public $project;
   /**
-   * The region of the public delegated prefix if it is regional. If absent, the
-   * prefix is global.
-   *
    * @var string
    */
   public $region;
   /**
-   * The status of the public delegated prefix. Possible values are:
-   * INITIALIZING: The public delegated prefix is being initialized and
-   * addresses cannot be created yet.   ANNOUNCED: The public delegated prefix
-   * is active.
-   *
    * @var string
    */
   public $status;
 
   /**
-   * The IP address range of the public delegated prefix
-   *
-   * @param string $ipRange
+   * @param string
    */
   public function setIpRange($ipRange)
   {
@@ -71,9 +55,7 @@ class PublicAdvertisedPrefixPublicDelegatedPrefix extends \Google\Model
     return $this->ipRange;
   }
   /**
-   * The name of the public delegated prefix
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -87,9 +69,7 @@ class PublicAdvertisedPrefixPublicDelegatedPrefix extends \Google\Model
     return $this->name;
   }
   /**
-   * The project number of the public delegated prefix
-   *
-   * @param string $project
+   * @param string
    */
   public function setProject($project)
   {
@@ -103,10 +83,7 @@ class PublicAdvertisedPrefixPublicDelegatedPrefix extends \Google\Model
     return $this->project;
   }
   /**
-   * The region of the public delegated prefix if it is regional. If absent, the
-   * prefix is global.
-   *
-   * @param string $region
+   * @param string
    */
   public function setRegion($region)
   {
@@ -120,12 +97,7 @@ class PublicAdvertisedPrefixPublicDelegatedPrefix extends \Google\Model
     return $this->region;
   }
   /**
-   * The status of the public delegated prefix. Possible values are:
-   * INITIALIZING: The public delegated prefix is being initialized and
-   * addresses cannot be created yet.   ANNOUNCED: The public delegated prefix
-   * is active.
-   *
-   * @param string $status
+   * @param string
    */
   public function setStatus($status)
   {

@@ -21,61 +21,40 @@ class GoogleCloudIntegrationsV1alphaExecutionSnapshotExecutionSnapshotMetadata e
 {
   protected $collection_key = 'ancestorTaskNumbers';
   /**
-   * Ancestor iteration number for the task(it will only be non-empty if the
-   * task is under 'private workflow')
-   *
    * @var string[]
    */
   public $ancestorIterationNumbers;
   /**
-   * Ancestor task number for the task(it will only be non-empty if the task is
-   * under 'private workflow')
-   *
    * @var string[]
    */
   public $ancestorTaskNumbers;
   /**
-   * the execution attempt number this snapshot belongs to.
-   *
    * @var int
    */
   public $executionAttempt;
   /**
-   * The direct integration which the event execution snapshots belongs to
-   *
    * @var string
    */
   public $integrationName;
   /**
-   * the task name associated with this snapshot.
-   *
    * @var string
    */
   public $task;
   /**
-   * the task attempt number this snapshot belongs to.
-   *
    * @var int
    */
   public $taskAttempt;
   /**
-   * the task label associated with this snapshot. Could be empty.
-   *
    * @var string
    */
   public $taskLabel;
   /**
-   * The task number associated with this snapshot.
-   *
    * @var string
    */
   public $taskNumber;
 
   /**
-   * Ancestor iteration number for the task(it will only be non-empty if the
-   * task is under 'private workflow')
-   *
-   * @param string[] $ancestorIterationNumbers
+   * @param string[]
    */
   public function setAncestorIterationNumbers($ancestorIterationNumbers)
   {
@@ -89,10 +68,7 @@ class GoogleCloudIntegrationsV1alphaExecutionSnapshotExecutionSnapshotMetadata e
     return $this->ancestorIterationNumbers;
   }
   /**
-   * Ancestor task number for the task(it will only be non-empty if the task is
-   * under 'private workflow')
-   *
-   * @param string[] $ancestorTaskNumbers
+   * @param string[]
    */
   public function setAncestorTaskNumbers($ancestorTaskNumbers)
   {
@@ -106,9 +82,7 @@ class GoogleCloudIntegrationsV1alphaExecutionSnapshotExecutionSnapshotMetadata e
     return $this->ancestorTaskNumbers;
   }
   /**
-   * the execution attempt number this snapshot belongs to.
-   *
-   * @param int $executionAttempt
+   * @param int
    */
   public function setExecutionAttempt($executionAttempt)
   {
@@ -122,9 +96,7 @@ class GoogleCloudIntegrationsV1alphaExecutionSnapshotExecutionSnapshotMetadata e
     return $this->executionAttempt;
   }
   /**
-   * The direct integration which the event execution snapshots belongs to
-   *
-   * @param string $integrationName
+   * @param string
    */
   public function setIntegrationName($integrationName)
   {
@@ -138,9 +110,7 @@ class GoogleCloudIntegrationsV1alphaExecutionSnapshotExecutionSnapshotMetadata e
     return $this->integrationName;
   }
   /**
-   * the task name associated with this snapshot.
-   *
-   * @param string $task
+   * @param string
    */
   public function setTask($task)
   {
@@ -154,9 +124,7 @@ class GoogleCloudIntegrationsV1alphaExecutionSnapshotExecutionSnapshotMetadata e
     return $this->task;
   }
   /**
-   * the task attempt number this snapshot belongs to.
-   *
-   * @param int $taskAttempt
+   * @param int
    */
   public function setTaskAttempt($taskAttempt)
   {
@@ -170,9 +138,7 @@ class GoogleCloudIntegrationsV1alphaExecutionSnapshotExecutionSnapshotMetadata e
     return $this->taskAttempt;
   }
   /**
-   * the task label associated with this snapshot. Could be empty.
-   *
-   * @param string $taskLabel
+   * @param string
    */
   public function setTaskLabel($taskLabel)
   {
@@ -186,9 +152,7 @@ class GoogleCloudIntegrationsV1alphaExecutionSnapshotExecutionSnapshotMetadata e
     return $this->taskLabel;
   }
   /**
-   * The task number associated with this snapshot.
-   *
-   * @param string $taskNumber
+   * @param string
    */
   public function setTaskNumber($taskNumber)
   {

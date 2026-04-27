@@ -20,22 +20,16 @@ namespace Google\Service\DatabaseMigrationService;
 class ApplyJobDetails extends \Google\Model
 {
   /**
-   * Output only. The connection profile which was used for the apply job.
-   *
    * @var string
    */
   public $connectionProfile;
   /**
-   * Output only. AIP-160 based filter used to specify the entities to apply
-   *
    * @var string
    */
   public $filter;
 
   /**
-   * Output only. The connection profile which was used for the apply job.
-   *
-   * @param string $connectionProfile
+   * @param string
    */
   public function setConnectionProfile($connectionProfile)
   {
@@ -49,9 +43,7 @@ class ApplyJobDetails extends \Google\Model
     return $this->connectionProfile;
   }
   /**
-   * Output only. AIP-160 based filter used to specify the entities to apply
-   *
-   * @param string $filter
+   * @param string
    */
   public function setFilter($filter)
   {

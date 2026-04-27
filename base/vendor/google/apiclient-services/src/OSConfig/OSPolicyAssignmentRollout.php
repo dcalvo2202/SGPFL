@@ -22,20 +22,12 @@ class OSPolicyAssignmentRollout extends \Google\Model
   protected $disruptionBudgetType = FixedOrPercent::class;
   protected $disruptionBudgetDataType = '';
   /**
-   * Required. This determines the minimum duration of time to wait after the
-   * configuration changes are applied through the current rollout. A VM
-   * continues to count towards the `disruption_budget` at least until this
-   * duration of time has passed after configuration changes are applied.
-   *
    * @var string
    */
   public $minWaitDuration;
 
   /**
-   * Required. The maximum number (or percentage) of VMs per zone to disrupt at
-   * any given moment.
-   *
-   * @param FixedOrPercent $disruptionBudget
+   * @param FixedOrPercent
    */
   public function setDisruptionBudget(FixedOrPercent $disruptionBudget)
   {
@@ -49,12 +41,7 @@ class OSPolicyAssignmentRollout extends \Google\Model
     return $this->disruptionBudget;
   }
   /**
-   * Required. This determines the minimum duration of time to wait after the
-   * configuration changes are applied through the current rollout. A VM
-   * continues to count towards the `disruption_budget` at least until this
-   * duration of time has passed after configuration changes are applied.
-   *
-   * @param string $minWaitDuration
+   * @param string
    */
   public function setMinWaitDuration($minWaitDuration)
   {

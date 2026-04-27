@@ -26,9 +26,7 @@ class BareMetalMachineDrainStatus extends \Google\Collection
   protected $drainingMachinesDataType = 'array';
 
   /**
-   * The list of drained machines.
-   *
-   * @param BareMetalDrainedMachine[] $drainedMachines
+   * @param BareMetalDrainedMachine[]
    */
   public function setDrainedMachines($drainedMachines)
   {
@@ -42,9 +40,7 @@ class BareMetalMachineDrainStatus extends \Google\Collection
     return $this->drainedMachines;
   }
   /**
-   * The list of draning machines.
-   *
-   * @param BareMetalDrainingMachine[] $drainingMachines
+   * @param BareMetalDrainingMachine[]
    */
   public function setDrainingMachines($drainingMachines)
   {

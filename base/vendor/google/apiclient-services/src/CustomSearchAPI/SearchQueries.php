@@ -28,9 +28,7 @@ class SearchQueries extends \Google\Collection
   protected $requestDataType = 'array';
 
   /**
-   * Metadata representing the next page of results, if applicable.
-   *
-   * @param SearchQueriesNextPage[] $nextPage
+   * @param SearchQueriesNextPage[]
    */
   public function setNextPage($nextPage)
   {
@@ -44,9 +42,7 @@ class SearchQueries extends \Google\Collection
     return $this->nextPage;
   }
   /**
-   * Metadata representing the previous page of results, if applicable.
-   *
-   * @param SearchQueriesPreviousPage[] $previousPage
+   * @param SearchQueriesPreviousPage[]
    */
   public function setPreviousPage($previousPage)
   {
@@ -60,9 +56,7 @@ class SearchQueries extends \Google\Collection
     return $this->previousPage;
   }
   /**
-   * Metadata representing the current request.
-   *
-   * @param SearchQueriesRequest[] $request
+   * @param SearchQueriesRequest[]
    */
   public function setRequest($request)
   {

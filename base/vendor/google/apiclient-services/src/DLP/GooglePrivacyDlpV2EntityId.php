@@ -23,9 +23,7 @@ class GooglePrivacyDlpV2EntityId extends \Google\Model
   protected $fieldDataType = '';
 
   /**
-   * Composite key indicating which field contains the entity identifier.
-   *
-   * @param GooglePrivacyDlpV2FieldId $field
+   * @param GooglePrivacyDlpV2FieldId
    */
   public function setField(GooglePrivacyDlpV2FieldId $field)
   {

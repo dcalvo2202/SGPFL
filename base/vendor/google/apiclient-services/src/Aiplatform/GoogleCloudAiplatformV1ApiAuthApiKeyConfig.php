@@ -20,24 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1ApiAuthApiKeyConfig extends \Google\Model
 {
   /**
-   * Required. The SecretManager secret version resource name storing API key.
-   * e.g. projects/{project}/secrets/{secret}/versions/{version}
-   *
    * @var string
    */
   public $apiKeySecretVersion;
   /**
-   * The API key string. Either this or `api_key_secret_version` must be set.
-   *
    * @var string
    */
   public $apiKeyString;
 
   /**
-   * Required. The SecretManager secret version resource name storing API key.
-   * e.g. projects/{project}/secrets/{secret}/versions/{version}
-   *
-   * @param string $apiKeySecretVersion
+   * @param string
    */
   public function setApiKeySecretVersion($apiKeySecretVersion)
   {
@@ -51,9 +43,7 @@ class GoogleCloudAiplatformV1ApiAuthApiKeyConfig extends \Google\Model
     return $this->apiKeySecretVersion;
   }
   /**
-   * The API key string. Either this or `api_key_secret_version` must be set.
-   *
-   * @param string $apiKeyString
+   * @param string
    */
   public function setApiKeyString($apiKeyString)
   {

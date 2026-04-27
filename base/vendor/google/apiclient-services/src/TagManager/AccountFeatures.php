@@ -20,22 +20,16 @@ namespace Google\Service\TagManager;
 class AccountFeatures extends \Google\Model
 {
   /**
-   * Whether this Account supports multiple Containers.
-   *
    * @var bool
    */
   public $supportMultipleContainers;
   /**
-   * Whether this Account supports user permissions managed by GTM.
-   *
    * @var bool
    */
   public $supportUserPermissions;
 
   /**
-   * Whether this Account supports multiple Containers.
-   *
-   * @param bool $supportMultipleContainers
+   * @param bool
    */
   public function setSupportMultipleContainers($supportMultipleContainers)
   {
@@ -49,9 +43,7 @@ class AccountFeatures extends \Google\Model
     return $this->supportMultipleContainers;
   }
   /**
-   * Whether this Account supports user permissions managed by GTM.
-   *
-   * @param bool $supportUserPermissions
+   * @param bool
    */
   public function setSupportUserPermissions($supportUserPermissions)
   {

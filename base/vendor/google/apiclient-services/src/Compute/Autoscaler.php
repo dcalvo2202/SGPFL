@@ -19,129 +19,60 @@ namespace Google\Service\Compute;
 
 class Autoscaler extends \Google\Collection
 {
-  /**
-   * Configuration is acknowledged to be effective
-   */
-  public const STATUS_ACTIVE = 'ACTIVE';
-  /**
-   * Configuration is being deleted
-   */
-  public const STATUS_DELETING = 'DELETING';
-  /**
-   * Configuration has errors. Actionable for users.
-   */
-  public const STATUS_ERROR = 'ERROR';
-  /**
-   * Autoscaler backend hasn't read new/updated configuration
-   */
-  public const STATUS_PENDING = 'PENDING';
   protected $collection_key = 'statusDetails';
   protected $autoscalingPolicyType = AutoscalingPolicy::class;
   protected $autoscalingPolicyDataType = '';
   /**
-   * Output only. [Output Only] Creation timestamp inRFC3339 text format.
-   *
    * @var string
    */
   public $creationTimestamp;
   /**
-   * An optional description of this resource. Provide this property when you
-   * create the resource.
-   *
    * @var string
    */
   public $description;
   /**
-   * Output only. [Output Only] The unique identifier for the resource. This
-   * identifier is defined by the server.
-   *
    * @var string
    */
   public $id;
   /**
-   * Output only. [Output Only] Type of the resource. Always compute#autoscaler
-   * for autoscalers.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Name of the resource. Provided by the client when the resource is created.
-   * The name must be 1-63 characters long, and comply withRFC1035.
-   * Specifically, the name must be 1-63 characters long and match the regular
-   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character
-   * must be a lowercase letter, and all following characters must be a dash,
-   * lowercase letter, or digit, except the last character, which cannot be a
-   * dash.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. [Output Only] Target recommended MIG size (number of
-   * instances) computed by autoscaler. Autoscaler calculates the recommended
-   * MIG size even when the autoscaling policy mode is different from ON. This
-   * field is empty when autoscaler is not connected to an existing managed
-   * instance group or autoscaler did not generate its prediction.
-   *
    * @var int
    */
   public $recommendedSize;
   /**
-   * Output only. [Output Only] URL of theregion where the instance group
-   * resides (for autoscalers living in regional scope).
-   *
    * @var string
    */
   public $region;
   protected $scalingScheduleStatusType = ScalingScheduleStatus::class;
   protected $scalingScheduleStatusDataType = 'map';
   /**
-   * [Output Only] Server-defined URL for the resource.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * [Output Only] The status of the autoscaler configuration. Current set of
-   * possible values:        - PENDING:      Autoscaler backend hasn't read
-   * new/updated configuration.    - DELETING:      Configuration is being
-   * deleted.    - ACTIVE:      Configuration is acknowledged to be effective.
-   * Some warnings might      be present in the statusDetails field.    - ERROR:
-   * Configuration has errors. Actionable for users. Details are present in
-   * the statusDetails field.
-   *
-   * New values might be added in the future.
-   *
    * @var string
    */
   public $status;
   protected $statusDetailsType = AutoscalerStatusDetails::class;
   protected $statusDetailsDataType = 'array';
   /**
-   * URL of the managed instance group that this autoscaler will scale. This
-   * field is required when creating an autoscaler.
-   *
    * @var string
    */
   public $target;
   /**
-   * Output only. [Output Only] URL of thezone where the instance group resides
-   * (for autoscalers living in zonal scope).
-   *
    * @var string
    */
   public $zone;
 
   /**
-   * The configuration parameters for the autoscaling algorithm. You can define
-   * one or more signals for an autoscaler:
-   * cpuUtilization,customMetricUtilizations, andloadBalancingUtilization.
-   *
-   * If none of these are specified, the default will be to autoscale based
-   * oncpuUtilization to 0.6 or 60%.
-   *
-   * @param AutoscalingPolicy $autoscalingPolicy
+   * @param AutoscalingPolicy
    */
   public function setAutoscalingPolicy(AutoscalingPolicy $autoscalingPolicy)
   {
@@ -155,9 +86,7 @@ class Autoscaler extends \Google\Collection
     return $this->autoscalingPolicy;
   }
   /**
-   * Output only. [Output Only] Creation timestamp inRFC3339 text format.
-   *
-   * @param string $creationTimestamp
+   * @param string
    */
   public function setCreationTimestamp($creationTimestamp)
   {
@@ -171,10 +100,7 @@ class Autoscaler extends \Google\Collection
     return $this->creationTimestamp;
   }
   /**
-   * An optional description of this resource. Provide this property when you
-   * create the resource.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -188,10 +114,7 @@ class Autoscaler extends \Google\Collection
     return $this->description;
   }
   /**
-   * Output only. [Output Only] The unique identifier for the resource. This
-   * identifier is defined by the server.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -205,10 +128,7 @@ class Autoscaler extends \Google\Collection
     return $this->id;
   }
   /**
-   * Output only. [Output Only] Type of the resource. Always compute#autoscaler
-   * for autoscalers.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -222,15 +142,7 @@ class Autoscaler extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Name of the resource. Provided by the client when the resource is created.
-   * The name must be 1-63 characters long, and comply withRFC1035.
-   * Specifically, the name must be 1-63 characters long and match the regular
-   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character
-   * must be a lowercase letter, and all following characters must be a dash,
-   * lowercase letter, or digit, except the last character, which cannot be a
-   * dash.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -244,13 +156,7 @@ class Autoscaler extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. [Output Only] Target recommended MIG size (number of
-   * instances) computed by autoscaler. Autoscaler calculates the recommended
-   * MIG size even when the autoscaling policy mode is different from ON. This
-   * field is empty when autoscaler is not connected to an existing managed
-   * instance group or autoscaler did not generate its prediction.
-   *
-   * @param int $recommendedSize
+   * @param int
    */
   public function setRecommendedSize($recommendedSize)
   {
@@ -264,10 +170,7 @@ class Autoscaler extends \Google\Collection
     return $this->recommendedSize;
   }
   /**
-   * Output only. [Output Only] URL of theregion where the instance group
-   * resides (for autoscalers living in regional scope).
-   *
-   * @param string $region
+   * @param string
    */
   public function setRegion($region)
   {
@@ -281,10 +184,7 @@ class Autoscaler extends \Google\Collection
     return $this->region;
   }
   /**
-   * Output only. [Output Only] Status information of existing scaling
-   * schedules.
-   *
-   * @param ScalingScheduleStatus[] $scalingScheduleStatus
+   * @param ScalingScheduleStatus[]
    */
   public function setScalingScheduleStatus($scalingScheduleStatus)
   {
@@ -298,9 +198,7 @@ class Autoscaler extends \Google\Collection
     return $this->scalingScheduleStatus;
   }
   /**
-   * [Output Only] Server-defined URL for the resource.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -314,37 +212,21 @@ class Autoscaler extends \Google\Collection
     return $this->selfLink;
   }
   /**
-   * [Output Only] The status of the autoscaler configuration. Current set of
-   * possible values:        - PENDING:      Autoscaler backend hasn't read
-   * new/updated configuration.    - DELETING:      Configuration is being
-   * deleted.    - ACTIVE:      Configuration is acknowledged to be effective.
-   * Some warnings might      be present in the statusDetails field.    - ERROR:
-   * Configuration has errors. Actionable for users. Details are present in
-   * the statusDetails field.
-   *
-   * New values might be added in the future.
-   *
-   * Accepted values: ACTIVE, DELETING, ERROR, PENDING
-   *
-   * @param self::STATUS_* $status
+   * @param string
    */
   public function setStatus($status)
   {
     $this->status = $status;
   }
   /**
-   * @return self::STATUS_*
+   * @return string
    */
   public function getStatus()
   {
     return $this->status;
   }
   /**
-   * [Output Only] Human-readable details about the current state of the
-   * autoscaler. Read the documentation forCommonly returned status messages for
-   * examples of status messages you might encounter.
-   *
-   * @param AutoscalerStatusDetails[] $statusDetails
+   * @param AutoscalerStatusDetails[]
    */
   public function setStatusDetails($statusDetails)
   {
@@ -358,10 +240,7 @@ class Autoscaler extends \Google\Collection
     return $this->statusDetails;
   }
   /**
-   * URL of the managed instance group that this autoscaler will scale. This
-   * field is required when creating an autoscaler.
-   *
-   * @param string $target
+   * @param string
    */
   public function setTarget($target)
   {
@@ -375,10 +254,7 @@ class Autoscaler extends \Google\Collection
     return $this->target;
   }
   /**
-   * Output only. [Output Only] URL of thezone where the instance group resides
-   * (for autoscalers living in zonal scope).
-   *
-   * @param string $zone
+   * @param string
    */
   public function setZone($zone)
   {

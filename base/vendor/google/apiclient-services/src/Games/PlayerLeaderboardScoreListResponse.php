@@ -23,15 +23,10 @@ class PlayerLeaderboardScoreListResponse extends \Google\Collection
   protected $itemsType = PlayerLeaderboardScore::class;
   protected $itemsDataType = 'array';
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#playerLeaderboardScoreListResponse`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The pagination token for the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -39,9 +34,7 @@ class PlayerLeaderboardScoreListResponse extends \Google\Collection
   protected $playerDataType = '';
 
   /**
-   * The leaderboard scores.
-   *
-   * @param PlayerLeaderboardScore[] $items
+   * @param PlayerLeaderboardScore[]
    */
   public function setItems($items)
   {
@@ -55,10 +48,7 @@ class PlayerLeaderboardScoreListResponse extends \Google\Collection
     return $this->items;
   }
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#playerLeaderboardScoreListResponse`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -72,9 +62,7 @@ class PlayerLeaderboardScoreListResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The pagination token for the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -88,9 +76,7 @@ class PlayerLeaderboardScoreListResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The Player resources for the owner of this score.
-   *
-   * @param Player $player
+   * @param Player
    */
   public function setPlayer(Player $player)
   {

@@ -27,10 +27,7 @@ class ShowEffectiveKeyAccessJustificationsEnrollmentConfigResponse extends \Goog
   protected $softwareConfigDataType = '';
 
   /**
-   * Contains the effective KeyAccessJustificationsEnrollmentConfig for external
-   * keys.
-   *
-   * @param KeyAccessJustificationsEnrollmentConfig $externalConfig
+   * @param KeyAccessJustificationsEnrollmentConfig
    */
   public function setExternalConfig(KeyAccessJustificationsEnrollmentConfig $externalConfig)
   {
@@ -44,10 +41,7 @@ class ShowEffectiveKeyAccessJustificationsEnrollmentConfigResponse extends \Goog
     return $this->externalConfig;
   }
   /**
-   * Contains the effective KeyAccessJustificationsEnrollmentConfig for hardware
-   * keys.
-   *
-   * @param KeyAccessJustificationsEnrollmentConfig $hardwareConfig
+   * @param KeyAccessJustificationsEnrollmentConfig
    */
   public function setHardwareConfig(KeyAccessJustificationsEnrollmentConfig $hardwareConfig)
   {
@@ -61,10 +55,7 @@ class ShowEffectiveKeyAccessJustificationsEnrollmentConfigResponse extends \Goog
     return $this->hardwareConfig;
   }
   /**
-   * Contains the effective KeyAccessJustificationsEnrollmentConfig for software
-   * keys.
-   *
-   * @param KeyAccessJustificationsEnrollmentConfig $softwareConfig
+   * @param KeyAccessJustificationsEnrollmentConfig
    */
   public function setSoftwareConfig(KeyAccessJustificationsEnrollmentConfig $softwareConfig)
   {

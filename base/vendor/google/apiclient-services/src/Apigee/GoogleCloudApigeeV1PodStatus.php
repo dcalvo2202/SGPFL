@@ -20,67 +20,44 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1PodStatus extends \Google\Model
 {
   /**
-   * Version of the application running in the pod.
-   *
    * @var string
    */
   public $appVersion;
   /**
-   * Status of the deployment. Valid values include: - `deployed`: Successful. -
-   * `error` : Failed. - `pending` : Pod has not yet reported on the deployment.
-   *
    * @var string
    */
   public $deploymentStatus;
   /**
-   * Time the deployment status was reported in milliseconds since epoch.
-   *
    * @var string
    */
   public $deploymentStatusTime;
   /**
-   * Time the proxy was deployed in milliseconds since epoch.
-   *
    * @var string
    */
   public $deploymentTime;
   /**
-   * Name of the pod which is reporting the status.
-   *
    * @var string
    */
   public $podName;
   /**
-   * Overall status of the pod (not this specific deployment). Valid values
-   * include: - `active`: Up to date. - `stale` : Recently out of date. Pods
-   * that have not reported status in a long time are excluded from the output.
-   *
    * @var string
    */
   public $podStatus;
   /**
-   * Time the pod status was reported in milliseconds since epoch.
-   *
    * @var string
    */
   public $podStatusTime;
   /**
-   * Code associated with the deployment status.
-   *
    * @var string
    */
   public $statusCode;
   /**
-   * Human-readable message associated with the status code.
-   *
    * @var string
    */
   public $statusCodeDetails;
 
   /**
-   * Version of the application running in the pod.
-   *
-   * @param string $appVersion
+   * @param string
    */
   public function setAppVersion($appVersion)
   {
@@ -94,10 +71,7 @@ class GoogleCloudApigeeV1PodStatus extends \Google\Model
     return $this->appVersion;
   }
   /**
-   * Status of the deployment. Valid values include: - `deployed`: Successful. -
-   * `error` : Failed. - `pending` : Pod has not yet reported on the deployment.
-   *
-   * @param string $deploymentStatus
+   * @param string
    */
   public function setDeploymentStatus($deploymentStatus)
   {
@@ -111,9 +85,7 @@ class GoogleCloudApigeeV1PodStatus extends \Google\Model
     return $this->deploymentStatus;
   }
   /**
-   * Time the deployment status was reported in milliseconds since epoch.
-   *
-   * @param string $deploymentStatusTime
+   * @param string
    */
   public function setDeploymentStatusTime($deploymentStatusTime)
   {
@@ -127,9 +99,7 @@ class GoogleCloudApigeeV1PodStatus extends \Google\Model
     return $this->deploymentStatusTime;
   }
   /**
-   * Time the proxy was deployed in milliseconds since epoch.
-   *
-   * @param string $deploymentTime
+   * @param string
    */
   public function setDeploymentTime($deploymentTime)
   {
@@ -143,9 +113,7 @@ class GoogleCloudApigeeV1PodStatus extends \Google\Model
     return $this->deploymentTime;
   }
   /**
-   * Name of the pod which is reporting the status.
-   *
-   * @param string $podName
+   * @param string
    */
   public function setPodName($podName)
   {
@@ -159,11 +127,7 @@ class GoogleCloudApigeeV1PodStatus extends \Google\Model
     return $this->podName;
   }
   /**
-   * Overall status of the pod (not this specific deployment). Valid values
-   * include: - `active`: Up to date. - `stale` : Recently out of date. Pods
-   * that have not reported status in a long time are excluded from the output.
-   *
-   * @param string $podStatus
+   * @param string
    */
   public function setPodStatus($podStatus)
   {
@@ -177,9 +141,7 @@ class GoogleCloudApigeeV1PodStatus extends \Google\Model
     return $this->podStatus;
   }
   /**
-   * Time the pod status was reported in milliseconds since epoch.
-   *
-   * @param string $podStatusTime
+   * @param string
    */
   public function setPodStatusTime($podStatusTime)
   {
@@ -193,9 +155,7 @@ class GoogleCloudApigeeV1PodStatus extends \Google\Model
     return $this->podStatusTime;
   }
   /**
-   * Code associated with the deployment status.
-   *
-   * @param string $statusCode
+   * @param string
    */
   public function setStatusCode($statusCode)
   {
@@ -209,9 +169,7 @@ class GoogleCloudApigeeV1PodStatus extends \Google\Model
     return $this->statusCode;
   }
   /**
-   * Human-readable message associated with the status code.
-   *
-   * @param string $statusCodeDetails
+   * @param string
    */
   public function setStatusCodeDetails($statusCodeDetails)
   {

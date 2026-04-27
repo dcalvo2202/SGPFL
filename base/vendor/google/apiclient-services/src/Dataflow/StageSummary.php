@@ -19,35 +19,8 @@ namespace Google\Service\Dataflow;
 
 class StageSummary extends \Google\Collection
 {
-  /**
-   * The component state is unknown or unspecified.
-   */
-  public const STATE_EXECUTION_STATE_UNKNOWN = 'EXECUTION_STATE_UNKNOWN';
-  /**
-   * The component is not yet running.
-   */
-  public const STATE_EXECUTION_STATE_NOT_STARTED = 'EXECUTION_STATE_NOT_STARTED';
-  /**
-   * The component is currently running.
-   */
-  public const STATE_EXECUTION_STATE_RUNNING = 'EXECUTION_STATE_RUNNING';
-  /**
-   * The component succeeded.
-   */
-  public const STATE_EXECUTION_STATE_SUCCEEDED = 'EXECUTION_STATE_SUCCEEDED';
-  /**
-   * The component failed.
-   */
-  public const STATE_EXECUTION_STATE_FAILED = 'EXECUTION_STATE_FAILED';
-  /**
-   * Execution of the component was cancelled.
-   */
-  public const STATE_EXECUTION_STATE_CANCELLED = 'EXECUTION_STATE_CANCELLED';
   protected $collection_key = 'metrics';
   /**
-   * End time of this stage. If the work item is completed, this is the actual
-   * end time of the stage. Otherwise, it is the predicted end time.
-   *
    * @var string
    */
   public $endTime;
@@ -56,20 +29,14 @@ class StageSummary extends \Google\Collection
   protected $progressType = ProgressTimeseries::class;
   protected $progressDataType = '';
   /**
-   * ID of this stage
-   *
    * @var string
    */
   public $stageId;
   /**
-   * Start time of this stage.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * State of this stage.
-   *
    * @var string
    */
   public $state;
@@ -77,10 +44,7 @@ class StageSummary extends \Google\Collection
   protected $stragglerSummaryDataType = '';
 
   /**
-   * End time of this stage. If the work item is completed, this is the actual
-   * end time of the stage. Otherwise, it is the predicted end time.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -94,9 +58,7 @@ class StageSummary extends \Google\Collection
     return $this->endTime;
   }
   /**
-   * Metrics for this stage.
-   *
-   * @param MetricUpdate[] $metrics
+   * @param MetricUpdate[]
    */
   public function setMetrics($metrics)
   {
@@ -110,9 +72,7 @@ class StageSummary extends \Google\Collection
     return $this->metrics;
   }
   /**
-   * Progress for this stage. Only applicable to Batch jobs.
-   *
-   * @param ProgressTimeseries $progress
+   * @param ProgressTimeseries
    */
   public function setProgress(ProgressTimeseries $progress)
   {
@@ -126,9 +86,7 @@ class StageSummary extends \Google\Collection
     return $this->progress;
   }
   /**
-   * ID of this stage
-   *
-   * @param string $stageId
+   * @param string
    */
   public function setStageId($stageId)
   {
@@ -142,9 +100,7 @@ class StageSummary extends \Google\Collection
     return $this->stageId;
   }
   /**
-   * Start time of this stage.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -158,29 +114,21 @@ class StageSummary extends \Google\Collection
     return $this->startTime;
   }
   /**
-   * State of this stage.
-   *
-   * Accepted values: EXECUTION_STATE_UNKNOWN, EXECUTION_STATE_NOT_STARTED,
-   * EXECUTION_STATE_RUNNING, EXECUTION_STATE_SUCCEEDED, EXECUTION_STATE_FAILED,
-   * EXECUTION_STATE_CANCELLED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Straggler summary for this stage.
-   *
-   * @param StragglerSummary $stragglerSummary
+   * @param StragglerSummary
    */
   public function setStragglerSummary(StragglerSummary $stragglerSummary)
   {

@@ -21,9 +21,6 @@ class PlayerScoreResetAllResponse extends \Google\Collection
 {
   protected $collection_key = 'results';
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `gamesManagement#playerScoreResetAllResponse`.
-   *
    * @var string
    */
   public $kind;
@@ -31,10 +28,7 @@ class PlayerScoreResetAllResponse extends \Google\Collection
   protected $resultsDataType = 'array';
 
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `gamesManagement#playerScoreResetAllResponse`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -48,9 +42,7 @@ class PlayerScoreResetAllResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The leaderboard reset results.
-   *
-   * @param PlayerScoreResetResponse[] $results
+   * @param PlayerScoreResetResponse[]
    */
   public function setResults($results)
   {

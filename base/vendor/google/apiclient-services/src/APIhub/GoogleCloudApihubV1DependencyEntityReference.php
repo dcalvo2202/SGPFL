@@ -20,31 +20,20 @@ namespace Google\Service\APIhub;
 class GoogleCloudApihubV1DependencyEntityReference extends \Google\Model
 {
   /**
-   * Output only. Display name of the entity.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * The resource name of an external API in the API Hub. Format:
-   * `projects/{project}/locations/{location}/externalApis/{external_api}`
-   *
    * @var string
    */
   public $externalApiResourceName;
   /**
-   * The resource name of an operation in the API Hub. Format: `projects/{projec
-   * t}/locations/{location}/apis/{api}/versions/{version}/operations/{operation
-   * }`
-   *
    * @var string
    */
   public $operationResourceName;
 
   /**
-   * Output only. Display name of the entity.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -58,10 +47,7 @@ class GoogleCloudApihubV1DependencyEntityReference extends \Google\Model
     return $this->displayName;
   }
   /**
-   * The resource name of an external API in the API Hub. Format:
-   * `projects/{project}/locations/{location}/externalApis/{external_api}`
-   *
-   * @param string $externalApiResourceName
+   * @param string
    */
   public function setExternalApiResourceName($externalApiResourceName)
   {
@@ -75,11 +61,7 @@ class GoogleCloudApihubV1DependencyEntityReference extends \Google\Model
     return $this->externalApiResourceName;
   }
   /**
-   * The resource name of an operation in the API Hub. Format: `projects/{projec
-   * t}/locations/{location}/apis/{api}/versions/{version}/operations/{operation
-   * }`
-   *
-   * @param string $operationResourceName
+   * @param string
    */
   public function setOperationResourceName($operationResourceName)
   {

@@ -27,12 +27,7 @@ class GooglePrivacyDlpV2DiscoveryBigQueryFilter extends \Google\Model
   protected $tablesDataType = '';
 
   /**
-   * Catch-all. This should always be the last filter in the list because
-   * anything above it will apply first. Should only appear once in a
-   * configuration. If none is specified, a default one will be added
-   * automatically.
-   *
-   * @param GooglePrivacyDlpV2AllOtherBigQueryTables $otherTables
+   * @param GooglePrivacyDlpV2AllOtherBigQueryTables
    */
   public function setOtherTables(GooglePrivacyDlpV2AllOtherBigQueryTables $otherTables)
   {
@@ -46,10 +41,7 @@ class GooglePrivacyDlpV2DiscoveryBigQueryFilter extends \Google\Model
     return $this->otherTables;
   }
   /**
-   * The table to scan. Discovery configurations including this can only include
-   * one DiscoveryTarget (the DiscoveryTarget with this TableReference).
-   *
-   * @param GooglePrivacyDlpV2TableReference $tableReference
+   * @param GooglePrivacyDlpV2TableReference
    */
   public function setTableReference(GooglePrivacyDlpV2TableReference $tableReference)
   {
@@ -63,12 +55,7 @@ class GooglePrivacyDlpV2DiscoveryBigQueryFilter extends \Google\Model
     return $this->tableReference;
   }
   /**
-   * A specific set of tables for this filter to apply to. A table collection
-   * must be specified in only one filter per config. If a table id or dataset
-   * is empty, Cloud DLP assumes all tables in that collection must be profiled.
-   * Must specify a project ID.
-   *
-   * @param GooglePrivacyDlpV2BigQueryTableCollection $tables
+   * @param GooglePrivacyDlpV2BigQueryTableCollection
    */
   public function setTables(GooglePrivacyDlpV2BigQueryTableCollection $tables)
   {

@@ -24,10 +24,7 @@ class ManagedCertificateAuthority extends \Google\Collection
   protected $caCertsDataType = 'array';
 
   /**
-   * The PEM encoded CA certificate chains for redis managed server
-   * authentication
-   *
-   * @param CertChain[] $caCerts
+   * @param CertChain[]
    */
   public function setCaCerts($caCerts)
   {

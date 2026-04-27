@@ -21,23 +21,16 @@ class GoogleCloudOsconfigV2OrchestrationScopeResourceHierarchySelector extends \
 {
   protected $collection_key = 'includedProjects';
   /**
-   * Optional. Names of the folders in scope. Format: `folders/{folder_id}`
-   *
    * @var string[]
    */
   public $includedFolders;
   /**
-   * Optional. Names of the projects in scope. Format:
-   * `projects/{project_number}`
-   *
    * @var string[]
    */
   public $includedProjects;
 
   /**
-   * Optional. Names of the folders in scope. Format: `folders/{folder_id}`
-   *
-   * @param string[] $includedFolders
+   * @param string[]
    */
   public function setIncludedFolders($includedFolders)
   {
@@ -51,10 +44,7 @@ class GoogleCloudOsconfigV2OrchestrationScopeResourceHierarchySelector extends \
     return $this->includedFolders;
   }
   /**
-   * Optional. Names of the projects in scope. Format:
-   * `projects/{project_number}`
-   *
-   * @param string[] $includedProjects
+   * @param string[]
    */
   public function setIncludedProjects($includedProjects)
   {

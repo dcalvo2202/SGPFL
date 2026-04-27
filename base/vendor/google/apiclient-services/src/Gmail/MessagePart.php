@@ -23,23 +23,16 @@ class MessagePart extends \Google\Collection
   protected $bodyType = MessagePartBody::class;
   protected $bodyDataType = '';
   /**
-   * The filename of the attachment. Only present if this message part
-   * represents an attachment.
-   *
    * @var string
    */
   public $filename;
   protected $headersType = MessagePartHeader::class;
   protected $headersDataType = 'array';
   /**
-   * The MIME type of the message part.
-   *
    * @var string
    */
   public $mimeType;
   /**
-   * The immutable ID of the message part.
-   *
    * @var string
    */
   public $partId;
@@ -47,10 +40,7 @@ class MessagePart extends \Google\Collection
   protected $partsDataType = 'array';
 
   /**
-   * The message part body for this part, which may be empty for container MIME
-   * message parts.
-   *
-   * @param MessagePartBody $body
+   * @param MessagePartBody
    */
   public function setBody(MessagePartBody $body)
   {
@@ -64,10 +54,7 @@ class MessagePart extends \Google\Collection
     return $this->body;
   }
   /**
-   * The filename of the attachment. Only present if this message part
-   * represents an attachment.
-   *
-   * @param string $filename
+   * @param string
    */
   public function setFilename($filename)
   {
@@ -81,11 +68,7 @@ class MessagePart extends \Google\Collection
     return $this->filename;
   }
   /**
-   * List of headers on this message part. For the top-level message part,
-   * representing the entire message payload, it will contain the standard RFC
-   * 2822 email headers such as `To`, `From`, and `Subject`.
-   *
-   * @param MessagePartHeader[] $headers
+   * @param MessagePartHeader[]
    */
   public function setHeaders($headers)
   {
@@ -99,9 +82,7 @@ class MessagePart extends \Google\Collection
     return $this->headers;
   }
   /**
-   * The MIME type of the message part.
-   *
-   * @param string $mimeType
+   * @param string
    */
   public function setMimeType($mimeType)
   {
@@ -115,9 +96,7 @@ class MessagePart extends \Google\Collection
     return $this->mimeType;
   }
   /**
-   * The immutable ID of the message part.
-   *
-   * @param string $partId
+   * @param string
    */
   public function setPartId($partId)
   {
@@ -131,12 +110,7 @@ class MessagePart extends \Google\Collection
     return $this->partId;
   }
   /**
-   * The child MIME message parts of this part. This only applies to container
-   * MIME message parts, for example `multipart`. For non- container MIME
-   * message part types, such as `text/plain`, this field is empty. For more
-   * information, see RFC 1521.
-   *
-   * @param MessagePart[] $parts
+   * @param MessagePart[]
    */
   public function setParts($parts)
   {

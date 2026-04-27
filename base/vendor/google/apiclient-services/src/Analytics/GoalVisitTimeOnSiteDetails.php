@@ -20,22 +20,16 @@ namespace Google\Service\Analytics;
 class GoalVisitTimeOnSiteDetails extends \Google\Model
 {
   /**
-   * Type of comparison. Possible values are LESS_THAN or GREATER_THAN.
-   *
    * @var string
    */
   public $comparisonType;
   /**
-   * Value used for this comparison.
-   *
    * @var string
    */
   public $comparisonValue;
 
   /**
-   * Type of comparison. Possible values are LESS_THAN or GREATER_THAN.
-   *
-   * @param string $comparisonType
+   * @param string
    */
   public function setComparisonType($comparisonType)
   {
@@ -49,9 +43,7 @@ class GoalVisitTimeOnSiteDetails extends \Google\Model
     return $this->comparisonType;
   }
   /**
-   * Value used for this comparison.
-   *
-   * @param string $comparisonValue
+   * @param string
    */
   public function setComparisonValue($comparisonValue)
   {

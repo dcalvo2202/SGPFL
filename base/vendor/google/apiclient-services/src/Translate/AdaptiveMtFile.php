@@ -20,42 +20,28 @@ namespace Google\Service\Translate;
 class AdaptiveMtFile extends \Google\Model
 {
   /**
-   * Output only. Timestamp when this file was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * The file's display name.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * The number of entries that the file contains.
-   *
    * @var int
    */
   public $entryCount;
   /**
-   * Identifier. The resource name of the file, in form of `projects/{project-
-   * number-or-id}/locations/{location_id}/adaptiveMtDatasets/{dataset}/adaptive
-   * MtFiles/{file}`
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Timestamp when this file was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. Timestamp when this file was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -69,9 +55,7 @@ class AdaptiveMtFile extends \Google\Model
     return $this->createTime;
   }
   /**
-   * The file's display name.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -85,9 +69,7 @@ class AdaptiveMtFile extends \Google\Model
     return $this->displayName;
   }
   /**
-   * The number of entries that the file contains.
-   *
-   * @param int $entryCount
+   * @param int
    */
   public function setEntryCount($entryCount)
   {
@@ -101,11 +83,7 @@ class AdaptiveMtFile extends \Google\Model
     return $this->entryCount;
   }
   /**
-   * Identifier. The resource name of the file, in form of `projects/{project-
-   * number-or-id}/locations/{location_id}/adaptiveMtDatasets/{dataset}/adaptive
-   * MtFiles/{file}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -119,9 +97,7 @@ class AdaptiveMtFile extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Timestamp when this file was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

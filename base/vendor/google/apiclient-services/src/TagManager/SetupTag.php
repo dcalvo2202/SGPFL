@@ -20,24 +20,16 @@ namespace Google\Service\TagManager;
 class SetupTag extends \Google\Model
 {
   /**
-   * If true, fire the main tag if and only if the setup tag fires successfully.
-   * If false, fire the main tag regardless of setup tag firing status.
-   *
    * @var bool
    */
   public $stopOnSetupFailure;
   /**
-   * The name of the setup tag.
-   *
    * @var string
    */
   public $tagName;
 
   /**
-   * If true, fire the main tag if and only if the setup tag fires successfully.
-   * If false, fire the main tag regardless of setup tag firing status.
-   *
-   * @param bool $stopOnSetupFailure
+   * @param bool
    */
   public function setStopOnSetupFailure($stopOnSetupFailure)
   {
@@ -51,9 +43,7 @@ class SetupTag extends \Google\Model
     return $this->stopOnSetupFailure;
   }
   /**
-   * The name of the setup tag.
-   *
-   * @param string $tagName
+   * @param string
    */
   public function setTagName($tagName)
   {

@@ -20,9 +20,6 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1AnswerQueryRequestQueryUnderstandingSpec extends \Google\Model
 {
   /**
-   * Optional. Whether to disable spell correction. The default value is
-   * `false`.
-   *
    * @var bool
    */
   public $disableSpellCorrection;
@@ -32,10 +29,7 @@ class GoogleCloudDiscoveryengineV1AnswerQueryRequestQueryUnderstandingSpec exten
   protected $queryRephraserSpecDataType = '';
 
   /**
-   * Optional. Whether to disable spell correction. The default value is
-   * `false`.
-   *
-   * @param bool $disableSpellCorrection
+   * @param bool
    */
   public function setDisableSpellCorrection($disableSpellCorrection)
   {
@@ -49,9 +43,7 @@ class GoogleCloudDiscoveryengineV1AnswerQueryRequestQueryUnderstandingSpec exten
     return $this->disableSpellCorrection;
   }
   /**
-   * Query classification specification.
-   *
-   * @param GoogleCloudDiscoveryengineV1AnswerQueryRequestQueryUnderstandingSpecQueryClassificationSpec $queryClassificationSpec
+   * @param GoogleCloudDiscoveryengineV1AnswerQueryRequestQueryUnderstandingSpecQueryClassificationSpec
    */
   public function setQueryClassificationSpec(GoogleCloudDiscoveryengineV1AnswerQueryRequestQueryUnderstandingSpecQueryClassificationSpec $queryClassificationSpec)
   {
@@ -65,9 +57,7 @@ class GoogleCloudDiscoveryengineV1AnswerQueryRequestQueryUnderstandingSpec exten
     return $this->queryClassificationSpec;
   }
   /**
-   * Query rephraser specification.
-   *
-   * @param GoogleCloudDiscoveryengineV1AnswerQueryRequestQueryUnderstandingSpecQueryRephraserSpec $queryRephraserSpec
+   * @param GoogleCloudDiscoveryengineV1AnswerQueryRequestQueryUnderstandingSpecQueryRephraserSpec
    */
   public function setQueryRephraserSpec(GoogleCloudDiscoveryengineV1AnswerQueryRequestQueryUnderstandingSpecQueryRephraserSpec $queryRephraserSpec)
   {

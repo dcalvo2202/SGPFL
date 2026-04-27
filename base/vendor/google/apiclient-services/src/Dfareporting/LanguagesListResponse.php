@@ -21,9 +21,6 @@ class LanguagesListResponse extends \Google\Collection
 {
   protected $collection_key = 'languages';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#languagesListResponse".
-   *
    * @var string
    */
   public $kind;
@@ -31,10 +28,7 @@ class LanguagesListResponse extends \Google\Collection
   protected $languagesDataType = 'array';
 
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#languagesListResponse".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -48,9 +42,7 @@ class LanguagesListResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Language collection.
-   *
-   * @param Language[] $languages
+   * @param Language[]
    */
   public function setLanguages($languages)
   {

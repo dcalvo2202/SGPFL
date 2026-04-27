@@ -20,35 +20,16 @@ namespace Google\Service\FirebaseDataConnect;
 class Impersonation extends \Google\Model
 {
   /**
-   * Evaluate the auth policy with a customized JWT auth token. Should follow
-   * the Firebase Auth token format.
-   * https://firebase.google.com/docs/rules/rules-and-auth For example: a
-   * verified user may have auth_claims of {"sub": , "email_verified": true}
-   *
    * @var array[]
    */
   public $authClaims;
   /**
-   * Optional. If set, include debug details in GraphQL error extensions.
-   *
-   * @var bool
-   */
-  public $includeDebugDetails;
-  /**
-   * Evaluate the auth policy as an unauthenticated request. Can only be set to
-   * true.
-   *
    * @var bool
    */
   public $unauthenticated;
 
   /**
-   * Evaluate the auth policy with a customized JWT auth token. Should follow
-   * the Firebase Auth token format.
-   * https://firebase.google.com/docs/rules/rules-and-auth For example: a
-   * verified user may have auth_claims of {"sub": , "email_verified": true}
-   *
-   * @param array[] $authClaims
+   * @param array[]
    */
   public function setAuthClaims($authClaims)
   {
@@ -62,26 +43,7 @@ class Impersonation extends \Google\Model
     return $this->authClaims;
   }
   /**
-   * Optional. If set, include debug details in GraphQL error extensions.
-   *
-   * @param bool $includeDebugDetails
-   */
-  public function setIncludeDebugDetails($includeDebugDetails)
-  {
-    $this->includeDebugDetails = $includeDebugDetails;
-  }
-  /**
-   * @return bool
-   */
-  public function getIncludeDebugDetails()
-  {
-    return $this->includeDebugDetails;
-  }
-  /**
-   * Evaluate the auth policy as an unauthenticated request. Can only be set to
-   * true.
-   *
-   * @param bool $unauthenticated
+   * @param bool
    */
   public function setUnauthenticated($unauthenticated)
   {

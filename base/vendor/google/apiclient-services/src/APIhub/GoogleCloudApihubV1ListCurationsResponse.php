@@ -23,17 +23,12 @@ class GoogleCloudApihubV1ListCurationsResponse extends \Google\Collection
   protected $curationsType = GoogleCloudApihubV1Curation::class;
   protected $curationsDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The curation resources present in the API hub.
-   *
-   * @param GoogleCloudApihubV1Curation[] $curations
+   * @param GoogleCloudApihubV1Curation[]
    */
   public function setCurations($curations)
   {
@@ -47,10 +42,7 @@ class GoogleCloudApihubV1ListCurationsResponse extends \Google\Collection
     return $this->curations;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

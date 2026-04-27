@@ -20,28 +20,20 @@ namespace Google\Service\Datastore;
 class PartitionId extends \Google\Model
 {
   /**
-   * If not empty, the ID of the database to which the entities belong.
-   *
    * @var string
    */
   public $databaseId;
   /**
-   * If not empty, the ID of the namespace to which the entities belong.
-   *
    * @var string
    */
   public $namespaceId;
   /**
-   * The ID of the project to which the entities belong.
-   *
    * @var string
    */
   public $projectId;
 
   /**
-   * If not empty, the ID of the database to which the entities belong.
-   *
-   * @param string $databaseId
+   * @param string
    */
   public function setDatabaseId($databaseId)
   {
@@ -55,9 +47,7 @@ class PartitionId extends \Google\Model
     return $this->databaseId;
   }
   /**
-   * If not empty, the ID of the namespace to which the entities belong.
-   *
-   * @param string $namespaceId
+   * @param string
    */
   public function setNamespaceId($namespaceId)
   {
@@ -71,9 +61,7 @@ class PartitionId extends \Google\Model
     return $this->namespaceId;
   }
   /**
-   * The ID of the project to which the entities belong.
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {

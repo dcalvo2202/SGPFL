@@ -20,22 +20,12 @@ namespace Google\Service\CloudHealthcare;
 class LinkedEntity extends \Google\Model
 {
   /**
-   * entity_id is a concept unique identifier. These are prefixed by a string
-   * that identifies the entity coding system, followed by the unique identifier
-   * within that system. For example, "UMLS/C0000970". This also supports ad hoc
-   * entities, which are formed by normalizing entity mention content.
-   *
    * @var string
    */
   public $entityId;
 
   /**
-   * entity_id is a concept unique identifier. These are prefixed by a string
-   * that identifies the entity coding system, followed by the unique identifier
-   * within that system. For example, "UMLS/C0000970". This also supports ad hoc
-   * entities, which are formed by normalizing entity mention content.
-   *
-   * @param string $entityId
+   * @param string
    */
   public function setEntityId($entityId)
   {

@@ -24,9 +24,7 @@ class GoogleChromeManagementV1CountChromeCrashEventsResponse extends \Google\Col
   protected $crashEventCountsDataType = 'array';
 
   /**
-   * Crash event counts grouped by date and browser version.
-   *
-   * @param GoogleChromeManagementV1CountChromeCrashEventsResponseCrashEventCount[] $crashEventCounts
+   * @param GoogleChromeManagementV1CountChromeCrashEventsResponseCrashEventCount[]
    */
   public function setCrashEventCounts($crashEventCounts)
   {

@@ -20,18 +20,12 @@ namespace Google\Service\GKEOnPrem;
 class BareMetalAdminVipConfig extends \Google\Model
 {
   /**
-   * The VIP which you previously set aside for the Kubernetes API of this bare
-   * metal admin cluster.
-   *
    * @var string
    */
   public $controlPlaneVip;
 
   /**
-   * The VIP which you previously set aside for the Kubernetes API of this bare
-   * metal admin cluster.
-   *
-   * @param string $controlPlaneVip
+   * @param string
    */
   public function setControlPlaneVip($controlPlaneVip)
   {

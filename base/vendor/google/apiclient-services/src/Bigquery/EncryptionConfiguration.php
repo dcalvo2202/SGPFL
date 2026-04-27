@@ -20,20 +20,12 @@ namespace Google\Service\Bigquery;
 class EncryptionConfiguration extends \Google\Model
 {
   /**
-   * Optional. Describes the Cloud KMS encryption key that will be used to
-   * protect destination BigQuery table. The BigQuery Service Account associated
-   * with your project requires access to this encryption key.
-   *
    * @var string
    */
   public $kmsKeyName;
 
   /**
-   * Optional. Describes the Cloud KMS encryption key that will be used to
-   * protect destination BigQuery table. The BigQuery Service Account associated
-   * with your project requires access to this encryption key.
-   *
-   * @param string $kmsKeyName
+   * @param string
    */
   public function setKmsKeyName($kmsKeyName)
   {

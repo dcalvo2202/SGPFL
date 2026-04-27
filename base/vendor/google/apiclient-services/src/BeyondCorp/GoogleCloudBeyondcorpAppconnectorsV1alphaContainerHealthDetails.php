@@ -20,34 +20,24 @@ namespace Google\Service\BeyondCorp;
 class GoogleCloudBeyondcorpAppconnectorsV1alphaContainerHealthDetails extends \Google\Model
 {
   /**
-   * The version of the current config.
-   *
    * @var string
    */
   public $currentConfigVersion;
   /**
-   * The latest error message.
-   *
    * @var string
    */
   public $errorMsg;
   /**
-   * The version of the expected config.
-   *
    * @var string
    */
   public $expectedConfigVersion;
   /**
-   * The extended status. Such as ExitCode, StartedAt, FinishedAt, etc.
-   *
    * @var string[]
    */
   public $extendedStatus;
 
   /**
-   * The version of the current config.
-   *
-   * @param string $currentConfigVersion
+   * @param string
    */
   public function setCurrentConfigVersion($currentConfigVersion)
   {
@@ -61,9 +51,7 @@ class GoogleCloudBeyondcorpAppconnectorsV1alphaContainerHealthDetails extends \G
     return $this->currentConfigVersion;
   }
   /**
-   * The latest error message.
-   *
-   * @param string $errorMsg
+   * @param string
    */
   public function setErrorMsg($errorMsg)
   {
@@ -77,9 +65,7 @@ class GoogleCloudBeyondcorpAppconnectorsV1alphaContainerHealthDetails extends \G
     return $this->errorMsg;
   }
   /**
-   * The version of the expected config.
-   *
-   * @param string $expectedConfigVersion
+   * @param string
    */
   public function setExpectedConfigVersion($expectedConfigVersion)
   {
@@ -93,9 +79,7 @@ class GoogleCloudBeyondcorpAppconnectorsV1alphaContainerHealthDetails extends \G
     return $this->expectedConfigVersion;
   }
   /**
-   * The extended status. Such as ExitCode, StartedAt, FinishedAt, etc.
-   *
-   * @param string[] $extendedStatus
+   * @param string[]
    */
   public function setExtendedStatus($extendedStatus)
   {

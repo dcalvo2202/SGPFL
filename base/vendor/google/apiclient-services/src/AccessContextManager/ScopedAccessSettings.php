@@ -27,10 +27,7 @@ class ScopedAccessSettings extends \Google\Model
   protected $scopeDataType = '';
 
   /**
-   * Optional. Access settings for this scoped access settings. This field may
-   * be empty if dry_run_settings is set.
-   *
-   * @param AccessSettings $activeSettings
+   * @param AccessSettings
    */
   public function setActiveSettings(AccessSettings $activeSettings)
   {
@@ -44,10 +41,7 @@ class ScopedAccessSettings extends \Google\Model
     return $this->activeSettings;
   }
   /**
-   * Optional. Dry-run access settings for this scoped access settings. This
-   * field may be empty if active_settings is set.
-   *
-   * @param AccessSettings $dryRunSettings
+   * @param AccessSettings
    */
   public function setDryRunSettings(AccessSettings $dryRunSettings)
   {
@@ -61,11 +55,7 @@ class ScopedAccessSettings extends \Google\Model
     return $this->dryRunSettings;
   }
   /**
-   * Optional. Application, etc. to which the access settings will be applied
-   * to. Implicitly, this is the scoped access settings key; as such, it must be
-   * unique and non-empty.
-   *
-   * @param AccessScope $scope
+   * @param AccessScope
    */
   public function setScope(AccessScope $scope)
   {

@@ -20,29 +20,20 @@ namespace Google\Service\DisplayVideo;
 class DeviceMakeModelAssignedTargetingOptionDetails extends \Google\Model
 {
   /**
-   * Output only. The display name of the device make and model.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Indicates if this option is being negatively targeted.
-   *
    * @var bool
    */
   public $negative;
   /**
-   * Required. The targeting_option_id field when targeting_type is
-   * `TARGETING_TYPE_DEVICE_MAKE_MODEL`.
-   *
    * @var string
    */
   public $targetingOptionId;
 
   /**
-   * Output only. The display name of the device make and model.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -56,9 +47,7 @@ class DeviceMakeModelAssignedTargetingOptionDetails extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Indicates if this option is being negatively targeted.
-   *
-   * @param bool $negative
+   * @param bool
    */
   public function setNegative($negative)
   {
@@ -72,10 +61,7 @@ class DeviceMakeModelAssignedTargetingOptionDetails extends \Google\Model
     return $this->negative;
   }
   /**
-   * Required. The targeting_option_id field when targeting_type is
-   * `TARGETING_TYPE_DEVICE_MAKE_MODEL`.
-   *
-   * @param string $targetingOptionId
+   * @param string
    */
   public function setTargetingOptionId($targetingOptionId)
   {

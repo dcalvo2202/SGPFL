@@ -23,32 +23,22 @@ class GoogleCloudVisionV1p4beta1Page extends \Google\Collection
   protected $blocksType = GoogleCloudVisionV1p4beta1Block::class;
   protected $blocksDataType = 'array';
   /**
-   * Confidence of the OCR results on the page. Range [0, 1].
-   *
    * @var float
    */
   public $confidence;
   /**
-   * Page height. For PDFs the unit is points. For images (including TIFFs) the
-   * unit is pixels.
-   *
    * @var int
    */
   public $height;
   protected $propertyType = GoogleCloudVisionV1p4beta1TextAnnotationTextProperty::class;
   protected $propertyDataType = '';
   /**
-   * Page width. For PDFs the unit is points. For images (including TIFFs) the
-   * unit is pixels.
-   *
    * @var int
    */
   public $width;
 
   /**
-   * List of blocks of text, images etc on this page.
-   *
-   * @param GoogleCloudVisionV1p4beta1Block[] $blocks
+   * @param GoogleCloudVisionV1p4beta1Block[]
    */
   public function setBlocks($blocks)
   {
@@ -62,9 +52,7 @@ class GoogleCloudVisionV1p4beta1Page extends \Google\Collection
     return $this->blocks;
   }
   /**
-   * Confidence of the OCR results on the page. Range [0, 1].
-   *
-   * @param float $confidence
+   * @param float
    */
   public function setConfidence($confidence)
   {
@@ -78,10 +66,7 @@ class GoogleCloudVisionV1p4beta1Page extends \Google\Collection
     return $this->confidence;
   }
   /**
-   * Page height. For PDFs the unit is points. For images (including TIFFs) the
-   * unit is pixels.
-   *
-   * @param int $height
+   * @param int
    */
   public function setHeight($height)
   {
@@ -95,9 +80,7 @@ class GoogleCloudVisionV1p4beta1Page extends \Google\Collection
     return $this->height;
   }
   /**
-   * Additional information detected on the page.
-   *
-   * @param GoogleCloudVisionV1p4beta1TextAnnotationTextProperty $property
+   * @param GoogleCloudVisionV1p4beta1TextAnnotationTextProperty
    */
   public function setProperty(GoogleCloudVisionV1p4beta1TextAnnotationTextProperty $property)
   {
@@ -111,10 +94,7 @@ class GoogleCloudVisionV1p4beta1Page extends \Google\Collection
     return $this->property;
   }
   /**
-   * Page width. For PDFs the unit is points. For images (including TIFFs) the
-   * unit is pixels.
-   *
-   * @param int $width
+   * @param int
    */
   public function setWidth($width)
   {

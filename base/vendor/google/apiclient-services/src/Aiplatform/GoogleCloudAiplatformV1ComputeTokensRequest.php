@@ -23,26 +23,16 @@ class GoogleCloudAiplatformV1ComputeTokensRequest extends \Google\Collection
   protected $contentsType = GoogleCloudAiplatformV1Content::class;
   protected $contentsDataType = 'array';
   /**
-   * Optional. The instances that are the input to token computing API call.
-   * Schema is identical to the prediction schema of the text model, even for
-   * the non-text models, like chat models, or Codey models.
-   *
    * @var array[]
    */
   public $instances;
   /**
-   * Optional. The name of the publisher model requested to serve the
-   * prediction. Format:
-   * projects/{project}/locations/{location}/publishers/models
-   *
    * @var string
    */
   public $model;
 
   /**
-   * Optional. Input content.
-   *
-   * @param GoogleCloudAiplatformV1Content[] $contents
+   * @param GoogleCloudAiplatformV1Content[]
    */
   public function setContents($contents)
   {
@@ -56,11 +46,7 @@ class GoogleCloudAiplatformV1ComputeTokensRequest extends \Google\Collection
     return $this->contents;
   }
   /**
-   * Optional. The instances that are the input to token computing API call.
-   * Schema is identical to the prediction schema of the text model, even for
-   * the non-text models, like chat models, or Codey models.
-   *
-   * @param array[] $instances
+   * @param array[]
    */
   public function setInstances($instances)
   {
@@ -74,11 +60,7 @@ class GoogleCloudAiplatformV1ComputeTokensRequest extends \Google\Collection
     return $this->instances;
   }
   /**
-   * Optional. The name of the publisher model requested to serve the
-   * prediction. Format:
-   * projects/{project}/locations/{location}/publishers/models
-   *
-   * @param string $model
+   * @param string
    */
   public function setModel($model)
   {

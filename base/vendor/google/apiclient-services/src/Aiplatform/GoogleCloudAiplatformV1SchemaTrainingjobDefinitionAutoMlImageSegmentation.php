@@ -25,9 +25,7 @@ class GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlImageSegmentation 
   protected $metadataDataType = '';
 
   /**
-   * The input parameters of this TrainingJob.
-   *
-   * @param GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlImageSegmentationInputs $inputs
+   * @param GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlImageSegmentationInputs
    */
   public function setInputs(GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlImageSegmentationInputs $inputs)
   {
@@ -41,9 +39,7 @@ class GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlImageSegmentation 
     return $this->inputs;
   }
   /**
-   * The metadata information.
-   *
-   * @param GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlImageSegmentationMetadata $metadata
+   * @param GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlImageSegmentationMetadata
    */
   public function setMetadata(GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlImageSegmentationMetadata $metadata)
   {

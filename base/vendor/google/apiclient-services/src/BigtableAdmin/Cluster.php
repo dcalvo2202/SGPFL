@@ -19,110 +19,37 @@ namespace Google\Service\BigtableAdmin;
 
 class Cluster extends \Google\Model
 {
-  /**
-   * The user did not specify a storage type.
-   */
-  public const DEFAULT_STORAGE_TYPE_STORAGE_TYPE_UNSPECIFIED = 'STORAGE_TYPE_UNSPECIFIED';
-  /**
-   * Flash (SSD) storage should be used.
-   */
-  public const DEFAULT_STORAGE_TYPE_SSD = 'SSD';
-  /**
-   * Magnetic drive (HDD) storage should be used.
-   */
-  public const DEFAULT_STORAGE_TYPE_HDD = 'HDD';
-  /**
-   * No node scaling specified. Defaults to NODE_SCALING_FACTOR_1X.
-   */
-  public const NODE_SCALING_FACTOR_NODE_SCALING_FACTOR_UNSPECIFIED = 'NODE_SCALING_FACTOR_UNSPECIFIED';
-  /**
-   * The cluster is running with a scaling factor of 1.
-   */
-  public const NODE_SCALING_FACTOR_NODE_SCALING_FACTOR_1X = 'NODE_SCALING_FACTOR_1X';
-  /**
-   * The cluster is running with a scaling factor of 2. All node count values
-   * must be in increments of 2 with this scaling factor enabled, otherwise an
-   * INVALID_ARGUMENT error will be returned.
-   */
-  public const NODE_SCALING_FACTOR_NODE_SCALING_FACTOR_2X = 'NODE_SCALING_FACTOR_2X';
-  /**
-   * The state of the cluster could not be determined.
-   */
-  public const STATE_STATE_NOT_KNOWN = 'STATE_NOT_KNOWN';
-  /**
-   * The cluster has been successfully created and is ready to serve requests.
-   */
-  public const STATE_READY = 'READY';
-  /**
-   * The cluster is currently being created, and may be destroyed if the
-   * creation process encounters an error. A cluster may not be able to serve
-   * requests while being created.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * The cluster is currently being resized, and may revert to its previous node
-   * count if the process encounters an error. A cluster is still capable of
-   * serving requests while being resized, but may exhibit performance as if its
-   * number of allocated nodes is between the starting and requested states.
-   */
-  public const STATE_RESIZING = 'RESIZING';
-  /**
-   * The cluster has no backing nodes. The data (tables) still exist, but no
-   * operations can be performed on the cluster.
-   */
-  public const STATE_DISABLED = 'DISABLED';
   protected $clusterConfigType = ClusterConfig::class;
   protected $clusterConfigDataType = '';
   /**
-   * Immutable. The type of storage used by this cluster to serve its parent
-   * instance's tables, unless explicitly overridden.
-   *
    * @var string
    */
   public $defaultStorageType;
   protected $encryptionConfigType = EncryptionConfig::class;
   protected $encryptionConfigDataType = '';
   /**
-   * Immutable. The location where this cluster's nodes and storage reside. For
-   * best performance, clients should be located as close as possible to this
-   * cluster. Currently only zones are supported, so values should be of the
-   * form `projects/{project}/locations/{zone}`.
-   *
    * @var string
    */
   public $location;
   /**
-   * The unique name of the cluster. Values are of the form
-   * `projects/{project}/instances/{instance}/clusters/a-z*`.
-   *
    * @var string
    */
   public $name;
   /**
-   * Immutable. The node scaling factor of this cluster.
-   *
    * @var string
    */
   public $nodeScalingFactor;
   /**
-   * The number of nodes in the cluster. If no value is set, Cloud Bigtable
-   * automatically allocates nodes based on your data footprint and optimized
-   * for 50% storage utilization.
-   *
    * @var int
    */
   public $serveNodes;
   /**
-   * Output only. The current state of the cluster.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Configuration for this cluster.
-   *
-   * @param ClusterConfig $clusterConfig
+   * @param ClusterConfig
    */
   public function setClusterConfig(ClusterConfig $clusterConfig)
   {
@@ -136,28 +63,21 @@ class Cluster extends \Google\Model
     return $this->clusterConfig;
   }
   /**
-   * Immutable. The type of storage used by this cluster to serve its parent
-   * instance's tables, unless explicitly overridden.
-   *
-   * Accepted values: STORAGE_TYPE_UNSPECIFIED, SSD, HDD
-   *
-   * @param self::DEFAULT_STORAGE_TYPE_* $defaultStorageType
+   * @param string
    */
   public function setDefaultStorageType($defaultStorageType)
   {
     $this->defaultStorageType = $defaultStorageType;
   }
   /**
-   * @return self::DEFAULT_STORAGE_TYPE_*
+   * @return string
    */
   public function getDefaultStorageType()
   {
     return $this->defaultStorageType;
   }
   /**
-   * Immutable. The encryption configuration for CMEK-protected clusters.
-   *
-   * @param EncryptionConfig $encryptionConfig
+   * @param EncryptionConfig
    */
   public function setEncryptionConfig(EncryptionConfig $encryptionConfig)
   {
@@ -171,12 +91,7 @@ class Cluster extends \Google\Model
     return $this->encryptionConfig;
   }
   /**
-   * Immutable. The location where this cluster's nodes and storage reside. For
-   * best performance, clients should be located as close as possible to this
-   * cluster. Currently only zones are supported, so values should be of the
-   * form `projects/{project}/locations/{zone}`.
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -190,10 +105,7 @@ class Cluster extends \Google\Model
     return $this->location;
   }
   /**
-   * The unique name of the cluster. Values are of the form
-   * `projects/{project}/instances/{instance}/clusters/a-z*`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -207,30 +119,21 @@ class Cluster extends \Google\Model
     return $this->name;
   }
   /**
-   * Immutable. The node scaling factor of this cluster.
-   *
-   * Accepted values: NODE_SCALING_FACTOR_UNSPECIFIED, NODE_SCALING_FACTOR_1X,
-   * NODE_SCALING_FACTOR_2X
-   *
-   * @param self::NODE_SCALING_FACTOR_* $nodeScalingFactor
+   * @param string
    */
   public function setNodeScalingFactor($nodeScalingFactor)
   {
     $this->nodeScalingFactor = $nodeScalingFactor;
   }
   /**
-   * @return self::NODE_SCALING_FACTOR_*
+   * @return string
    */
   public function getNodeScalingFactor()
   {
     return $this->nodeScalingFactor;
   }
   /**
-   * The number of nodes in the cluster. If no value is set, Cloud Bigtable
-   * automatically allocates nodes based on your data footprint and optimized
-   * for 50% storage utilization.
-   *
-   * @param int $serveNodes
+   * @param int
    */
   public function setServeNodes($serveNodes)
   {
@@ -244,18 +147,14 @@ class Cluster extends \Google\Model
     return $this->serveNodes;
   }
   /**
-   * Output only. The current state of the cluster.
-   *
-   * Accepted values: STATE_NOT_KNOWN, READY, CREATING, RESIZING, DISABLED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

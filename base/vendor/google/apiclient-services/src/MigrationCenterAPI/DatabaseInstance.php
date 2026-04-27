@@ -20,40 +20,18 @@ namespace Google\Service\MigrationCenterAPI;
 class DatabaseInstance extends \Google\Model
 {
   /**
-   * Unspecified.
-   */
-  public const ROLE_ROLE_UNSPECIFIED = 'ROLE_UNSPECIFIED';
-  /**
-   * Primary.
-   */
-  public const ROLE_PRIMARY = 'PRIMARY';
-  /**
-   * Secondary.
-   */
-  public const ROLE_SECONDARY = 'SECONDARY';
-  /**
-   * Arbiter.
-   */
-  public const ROLE_ARBITER = 'ARBITER';
-  /**
-   * Optional. The instance's name.
-   *
    * @var string
    */
   public $instanceName;
   protected $networkType = DatabaseInstanceNetwork::class;
   protected $networkDataType = '';
   /**
-   * Optional. The instance role in the database engine.
-   *
    * @var string
    */
   public $role;
 
   /**
-   * Optional. The instance's name.
-   *
-   * @param string $instanceName
+   * @param string
    */
   public function setInstanceName($instanceName)
   {
@@ -67,9 +45,7 @@ class DatabaseInstance extends \Google\Model
     return $this->instanceName;
   }
   /**
-   * Optional. Networking details.
-   *
-   * @param DatabaseInstanceNetwork $network
+   * @param DatabaseInstanceNetwork
    */
   public function setNetwork(DatabaseInstanceNetwork $network)
   {
@@ -83,18 +59,14 @@ class DatabaseInstance extends \Google\Model
     return $this->network;
   }
   /**
-   * Optional. The instance role in the database engine.
-   *
-   * Accepted values: ROLE_UNSPECIFIED, PRIMARY, SECONDARY, ARBITER
-   *
-   * @param self::ROLE_* $role
+   * @param string
    */
   public function setRole($role)
   {
     $this->role = $role;
   }
   /**
-   * @return self::ROLE_*
+   * @return string
    */
   public function getRole()
   {

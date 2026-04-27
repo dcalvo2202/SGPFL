@@ -23,16 +23,12 @@ class GoogleCloudIntegrationsV1alphaListCertificatesResponse extends \Google\Col
   protected $certificatesType = GoogleCloudIntegrationsV1alphaCertificate::class;
   protected $certificatesDataType = 'array';
   /**
-   * The token used to retrieve the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of Certificates retrieved.
-   *
-   * @param GoogleCloudIntegrationsV1alphaCertificate[] $certificates
+   * @param GoogleCloudIntegrationsV1alphaCertificate[]
    */
   public function setCertificates($certificates)
   {
@@ -46,9 +42,7 @@ class GoogleCloudIntegrationsV1alphaListCertificatesResponse extends \Google\Col
     return $this->certificates;
   }
   /**
-   * The token used to retrieve the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

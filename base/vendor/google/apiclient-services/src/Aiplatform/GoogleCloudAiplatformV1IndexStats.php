@@ -20,28 +20,20 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1IndexStats extends \Google\Model
 {
   /**
-   * Output only. The number of shards in the Index.
-   *
    * @var int
    */
   public $shardsCount;
   /**
-   * Output only. The number of sparse vectors in the Index.
-   *
    * @var string
    */
   public $sparseVectorsCount;
   /**
-   * Output only. The number of dense vectors in the Index.
-   *
    * @var string
    */
   public $vectorsCount;
 
   /**
-   * Output only. The number of shards in the Index.
-   *
-   * @param int $shardsCount
+   * @param int
    */
   public function setShardsCount($shardsCount)
   {
@@ -55,9 +47,7 @@ class GoogleCloudAiplatformV1IndexStats extends \Google\Model
     return $this->shardsCount;
   }
   /**
-   * Output only. The number of sparse vectors in the Index.
-   *
-   * @param string $sparseVectorsCount
+   * @param string
    */
   public function setSparseVectorsCount($sparseVectorsCount)
   {
@@ -71,9 +61,7 @@ class GoogleCloudAiplatformV1IndexStats extends \Google\Model
     return $this->sparseVectorsCount;
   }
   /**
-   * Output only. The number of dense vectors in the Index.
-   *
-   * @param string $vectorsCount
+   * @param string
    */
   public function setVectorsCount($vectorsCount)
   {

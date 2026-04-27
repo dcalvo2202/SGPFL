@@ -21,40 +21,28 @@ class CollectdPayload extends \Google\Collection
 {
   protected $collection_key = 'values';
   /**
-   * The end time of the interval.
-   *
    * @var string
    */
   public $endTime;
   protected $metadataType = TypedValue::class;
   protected $metadataDataType = 'map';
   /**
-   * The name of the plugin. Example: "disk".
-   *
    * @var string
    */
   public $plugin;
   /**
-   * The instance name of the plugin Example: "hdcl".
-   *
    * @var string
    */
   public $pluginInstance;
   /**
-   * The start time of the interval.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * The measurement type. Example: "memory".
-   *
    * @var string
    */
   public $type;
   /**
-   * The measurement type instance. Example: "used".
-   *
    * @var string
    */
   public $typeInstance;
@@ -62,9 +50,7 @@ class CollectdPayload extends \Google\Collection
   protected $valuesDataType = 'array';
 
   /**
-   * The end time of the interval.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -78,9 +64,7 @@ class CollectdPayload extends \Google\Collection
     return $this->endTime;
   }
   /**
-   * The measurement metadata. Example: "process_id" -> 12345
-   *
-   * @param TypedValue[] $metadata
+   * @param TypedValue[]
    */
   public function setMetadata($metadata)
   {
@@ -94,9 +78,7 @@ class CollectdPayload extends \Google\Collection
     return $this->metadata;
   }
   /**
-   * The name of the plugin. Example: "disk".
-   *
-   * @param string $plugin
+   * @param string
    */
   public function setPlugin($plugin)
   {
@@ -110,9 +92,7 @@ class CollectdPayload extends \Google\Collection
     return $this->plugin;
   }
   /**
-   * The instance name of the plugin Example: "hdcl".
-   *
-   * @param string $pluginInstance
+   * @param string
    */
   public function setPluginInstance($pluginInstance)
   {
@@ -126,9 +106,7 @@ class CollectdPayload extends \Google\Collection
     return $this->pluginInstance;
   }
   /**
-   * The start time of the interval.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -142,9 +120,7 @@ class CollectdPayload extends \Google\Collection
     return $this->startTime;
   }
   /**
-   * The measurement type. Example: "memory".
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {
@@ -158,9 +134,7 @@ class CollectdPayload extends \Google\Collection
     return $this->type;
   }
   /**
-   * The measurement type instance. Example: "used".
-   *
-   * @param string $typeInstance
+   * @param string
    */
   public function setTypeInstance($typeInstance)
   {
@@ -174,10 +148,7 @@ class CollectdPayload extends \Google\Collection
     return $this->typeInstance;
   }
   /**
-   * The measured values during this time interval. Each value must have a
-   * different data_source_name.
-   *
-   * @param CollectdValue[] $values
+   * @param CollectdValue[]
    */
   public function setValues($values)
   {

@@ -20,15 +20,6 @@ namespace Google\Service\Datastore;
 class Aggregation extends \Google\Model
 {
   /**
-   * Optional. Optional name of the property to store the result of the
-   * aggregation. If not provided, Datastore will pick a default name following
-   * the format `property_`. For example: ``` AGGREGATE COUNT_UP_TO(1) AS
-   * count_up_to_1, COUNT_UP_TO(2), COUNT_UP_TO(3) AS count_up_to_3, COUNT(*)
-   * OVER ( ... ); ``` becomes: ``` AGGREGATE COUNT_UP_TO(1) AS count_up_to_1,
-   * COUNT_UP_TO(2) AS property_1, COUNT_UP_TO(3) AS count_up_to_3, COUNT(*) AS
-   * property_2 OVER ( ... ); ``` Requires: * Must be unique across all
-   * aggregation aliases. * Conform to entity property name limitations.
-   *
    * @var string
    */
   public $alias;
@@ -40,16 +31,7 @@ class Aggregation extends \Google\Model
   protected $sumDataType = '';
 
   /**
-   * Optional. Optional name of the property to store the result of the
-   * aggregation. If not provided, Datastore will pick a default name following
-   * the format `property_`. For example: ``` AGGREGATE COUNT_UP_TO(1) AS
-   * count_up_to_1, COUNT_UP_TO(2), COUNT_UP_TO(3) AS count_up_to_3, COUNT(*)
-   * OVER ( ... ); ``` becomes: ``` AGGREGATE COUNT_UP_TO(1) AS count_up_to_1,
-   * COUNT_UP_TO(2) AS property_1, COUNT_UP_TO(3) AS count_up_to_3, COUNT(*) AS
-   * property_2 OVER ( ... ); ``` Requires: * Must be unique across all
-   * aggregation aliases. * Conform to entity property name limitations.
-   *
-   * @param string $alias
+   * @param string
    */
   public function setAlias($alias)
   {
@@ -63,9 +45,7 @@ class Aggregation extends \Google\Model
     return $this->alias;
   }
   /**
-   * Average aggregator.
-   *
-   * @param Avg $avg
+   * @param Avg
    */
   public function setAvg(Avg $avg)
   {
@@ -79,9 +59,7 @@ class Aggregation extends \Google\Model
     return $this->avg;
   }
   /**
-   * Count aggregator.
-   *
-   * @param Count $count
+   * @param Count
    */
   public function setCount(Count $count)
   {
@@ -95,9 +73,7 @@ class Aggregation extends \Google\Model
     return $this->count;
   }
   /**
-   * Sum aggregator.
-   *
-   * @param Sum $sum
+   * @param Sum
    */
   public function setSum(Sum $sum)
   {

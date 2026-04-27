@@ -23,25 +23,16 @@ class ListBatchesResponse extends \Google\Collection
   protected $batchesType = Batch::class;
   protected $batchesDataType = 'array';
   /**
-   * A token, which can be sent as page_token to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Output only. List of Batches that could not be included in the response.
-   * Attempting to get one of these resources may indicate why it was not
-   * included in the list response.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * Output only. The batches from the specified collection.
-   *
-   * @param Batch[] $batches
+   * @param Batch[]
    */
   public function setBatches($batches)
   {
@@ -55,10 +46,7 @@ class ListBatchesResponse extends \Google\Collection
     return $this->batches;
   }
   /**
-   * A token, which can be sent as page_token to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -72,11 +60,7 @@ class ListBatchesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Output only. List of Batches that could not be included in the response.
-   * Attempting to get one of these resources may indicate why it was not
-   * included in the list response.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

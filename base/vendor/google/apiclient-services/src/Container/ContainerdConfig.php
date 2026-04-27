@@ -17,21 +17,13 @@
 
 namespace Google\Service\Container;
 
-class ContainerdConfig extends \Google\Collection
+class ContainerdConfig extends \Google\Model
 {
-  protected $collection_key = 'registryHosts';
   protected $privateRegistryAccessConfigType = PrivateRegistryAccessConfig::class;
   protected $privateRegistryAccessConfigDataType = '';
-  protected $registryHostsType = RegistryHostConfig::class;
-  protected $registryHostsDataType = 'array';
-  protected $writableCgroupsType = WritableCgroups::class;
-  protected $writableCgroupsDataType = '';
 
   /**
-   * PrivateRegistryAccessConfig is used to configure access configuration for
-   * private container registries.
-   *
-   * @param PrivateRegistryAccessConfig $privateRegistryAccessConfig
+   * @param PrivateRegistryAccessConfig
    */
   public function setPrivateRegistryAccessConfig(PrivateRegistryAccessConfig $privateRegistryAccessConfig)
   {
@@ -43,41 +35,6 @@ class ContainerdConfig extends \Google\Collection
   public function getPrivateRegistryAccessConfig()
   {
     return $this->privateRegistryAccessConfig;
-  }
-  /**
-   * RegistryHostConfig configures containerd registry host configuration. Each
-   * registry_hosts represents a hosts.toml file. At most 25 registry_hosts are
-   * allowed.
-   *
-   * @param RegistryHostConfig[] $registryHosts
-   */
-  public function setRegistryHosts($registryHosts)
-  {
-    $this->registryHosts = $registryHosts;
-  }
-  /**
-   * @return RegistryHostConfig[]
-   */
-  public function getRegistryHosts()
-  {
-    return $this->registryHosts;
-  }
-  /**
-   * Optional. WritableCgroups defines writable cgroups configuration for the
-   * node pool.
-   *
-   * @param WritableCgroups $writableCgroups
-   */
-  public function setWritableCgroups(WritableCgroups $writableCgroups)
-  {
-    $this->writableCgroups = $writableCgroups;
-  }
-  /**
-   * @return WritableCgroups
-   */
-  public function getWritableCgroups()
-  {
-    return $this->writableCgroups;
   }
 }
 

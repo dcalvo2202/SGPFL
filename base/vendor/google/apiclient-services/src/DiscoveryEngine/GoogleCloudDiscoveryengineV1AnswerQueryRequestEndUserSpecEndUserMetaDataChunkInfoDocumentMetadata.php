@@ -20,16 +20,12 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1AnswerQueryRequestEndUserSpecEndUserMetaDataChunkInfoDocumentMetadata extends \Google\Model
 {
   /**
-   * Title of the document.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * Title of the document.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

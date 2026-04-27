@@ -20,16 +20,12 @@ namespace Google\Service\HangoutsChat;
 class UploadAttachmentRequest extends \Google\Model
 {
   /**
-   * Required. The filename of the attachment, including the file extension.
-   *
    * @var string
    */
   public $filename;
 
   /**
-   * Required. The filename of the attachment, including the file extension.
-   *
-   * @param string $filename
+   * @param string
    */
   public function setFilename($filename)
   {

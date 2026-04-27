@@ -19,54 +19,33 @@ namespace Google\Service\Integrations;
 
 class EnterpriseCrmEventbusProtoSuspensionResolutionInfo extends \Google\Model
 {
-  public const PRODUCT_UNSPECIFIED_PRODUCT = 'UNSPECIFIED_PRODUCT';
-  public const PRODUCT_IP = 'IP';
-  public const PRODUCT_APIGEE = 'APIGEE';
-  public const PRODUCT_SECURITY = 'SECURITY';
-  public const STATUS_PENDING_UNSPECIFIED = 'PENDING_UNSPECIFIED';
-  public const STATUS_REJECTED = 'REJECTED';
-  public const STATUS_LIFTED = 'LIFTED';
-  public const STATUS_CANCELED = 'CANCELED';
   protected $auditType = EnterpriseCrmEventbusProtoSuspensionResolutionInfoAudit::class;
   protected $auditDataType = '';
   /**
-   * The event data user sends as request.
-   *
    * @var string
    */
   public $clientId;
   protected $cloudKmsConfigType = EnterpriseCrmEventbusProtoCloudKmsConfig::class;
   protected $cloudKmsConfigDataType = '';
   /**
-   * Auto-generated.
-   *
    * @var string
    */
   public $createdTimestamp;
   /**
-   * Encrypted SuspensionResolutionInfo
-   *
    * @var string
    */
   public $encryptedSuspensionResolutionInfo;
   /**
-   * Required. ID of the associated execution.
-   *
    * @var string
    */
   public $eventExecutionInfoId;
   protected $externalTrafficType = EnterpriseCrmEventbusProtoExternalTraffic::class;
   protected $externalTrafficDataType = '';
   /**
-   * Auto-generated.
-   *
    * @var string
    */
   public $lastModifiedTimestamp;
   /**
-   * Which Google product the suspension belongs to. If not set, the suspension
-   * belongs to Integration Platform by default.
-   *
    * @var string
    */
   public $product;
@@ -77,32 +56,24 @@ class EnterpriseCrmEventbusProtoSuspensionResolutionInfo extends \Google\Model
   protected $suspensionConfigType = EnterpriseCrmEventbusProtoSuspensionConfig::class;
   protected $suspensionConfigDataType = '';
   /**
-   * Primary key for the SuspensionResolutionInfoTable.
-   *
    * @var string
    */
   public $suspensionId;
   /**
-   * Required. Task number of the associated SuspensionTask.
-   *
    * @var string
    */
   public $taskNumber;
   /**
-   * Required. The name of the originating workflow.
-   *
    * @var string
    */
   public $workflowName;
   /**
-   * Wrapped dek
-   *
    * @var string
    */
   public $wrappedDek;
 
   /**
-   * @param EnterpriseCrmEventbusProtoSuspensionResolutionInfoAudit $audit
+   * @param EnterpriseCrmEventbusProtoSuspensionResolutionInfoAudit
    */
   public function setAudit(EnterpriseCrmEventbusProtoSuspensionResolutionInfoAudit $audit)
   {
@@ -116,9 +87,7 @@ class EnterpriseCrmEventbusProtoSuspensionResolutionInfo extends \Google\Model
     return $this->audit;
   }
   /**
-   * The event data user sends as request.
-   *
-   * @param string $clientId
+   * @param string
    */
   public function setClientId($clientId)
   {
@@ -132,9 +101,7 @@ class EnterpriseCrmEventbusProtoSuspensionResolutionInfo extends \Google\Model
     return $this->clientId;
   }
   /**
-   * KMS info, used by cmek/gmek integration
-   *
-   * @param EnterpriseCrmEventbusProtoCloudKmsConfig $cloudKmsConfig
+   * @param EnterpriseCrmEventbusProtoCloudKmsConfig
    */
   public function setCloudKmsConfig(EnterpriseCrmEventbusProtoCloudKmsConfig $cloudKmsConfig)
   {
@@ -148,9 +115,7 @@ class EnterpriseCrmEventbusProtoSuspensionResolutionInfo extends \Google\Model
     return $this->cloudKmsConfig;
   }
   /**
-   * Auto-generated.
-   *
-   * @param string $createdTimestamp
+   * @param string
    */
   public function setCreatedTimestamp($createdTimestamp)
   {
@@ -164,9 +129,7 @@ class EnterpriseCrmEventbusProtoSuspensionResolutionInfo extends \Google\Model
     return $this->createdTimestamp;
   }
   /**
-   * Encrypted SuspensionResolutionInfo
-   *
-   * @param string $encryptedSuspensionResolutionInfo
+   * @param string
    */
   public function setEncryptedSuspensionResolutionInfo($encryptedSuspensionResolutionInfo)
   {
@@ -180,9 +143,7 @@ class EnterpriseCrmEventbusProtoSuspensionResolutionInfo extends \Google\Model
     return $this->encryptedSuspensionResolutionInfo;
   }
   /**
-   * Required. ID of the associated execution.
-   *
-   * @param string $eventExecutionInfoId
+   * @param string
    */
   public function setEventExecutionInfoId($eventExecutionInfoId)
   {
@@ -196,9 +157,7 @@ class EnterpriseCrmEventbusProtoSuspensionResolutionInfo extends \Google\Model
     return $this->eventExecutionInfoId;
   }
   /**
-   * The origin of the suspension for periodic notifications.
-   *
-   * @param EnterpriseCrmEventbusProtoExternalTraffic $externalTraffic
+   * @param EnterpriseCrmEventbusProtoExternalTraffic
    */
   public function setExternalTraffic(EnterpriseCrmEventbusProtoExternalTraffic $externalTraffic)
   {
@@ -212,9 +171,7 @@ class EnterpriseCrmEventbusProtoSuspensionResolutionInfo extends \Google\Model
     return $this->externalTraffic;
   }
   /**
-   * Auto-generated.
-   *
-   * @param string $lastModifiedTimestamp
+   * @param string
    */
   public function setLastModifiedTimestamp($lastModifiedTimestamp)
   {
@@ -228,40 +185,35 @@ class EnterpriseCrmEventbusProtoSuspensionResolutionInfo extends \Google\Model
     return $this->lastModifiedTimestamp;
   }
   /**
-   * Which Google product the suspension belongs to. If not set, the suspension
-   * belongs to Integration Platform by default.
-   *
-   * Accepted values: UNSPECIFIED_PRODUCT, IP, APIGEE, SECURITY
-   *
-   * @param self::PRODUCT_* $product
+   * @param string
    */
   public function setProduct($product)
   {
     $this->product = $product;
   }
   /**
-   * @return self::PRODUCT_*
+   * @return string
    */
   public function getProduct()
   {
     return $this->product;
   }
   /**
-   * @param self::STATUS_* $status
+   * @param string
    */
   public function setStatus($status)
   {
     $this->status = $status;
   }
   /**
-   * @return self::STATUS_*
+   * @return string
    */
   public function getStatus()
   {
     return $this->status;
   }
   /**
-   * @param EnterpriseCrmEventbusProtoSuspensionConfig $suspensionConfig
+   * @param EnterpriseCrmEventbusProtoSuspensionConfig
    */
   public function setSuspensionConfig(EnterpriseCrmEventbusProtoSuspensionConfig $suspensionConfig)
   {
@@ -275,9 +227,7 @@ class EnterpriseCrmEventbusProtoSuspensionResolutionInfo extends \Google\Model
     return $this->suspensionConfig;
   }
   /**
-   * Primary key for the SuspensionResolutionInfoTable.
-   *
-   * @param string $suspensionId
+   * @param string
    */
   public function setSuspensionId($suspensionId)
   {
@@ -291,9 +241,7 @@ class EnterpriseCrmEventbusProtoSuspensionResolutionInfo extends \Google\Model
     return $this->suspensionId;
   }
   /**
-   * Required. Task number of the associated SuspensionTask.
-   *
-   * @param string $taskNumber
+   * @param string
    */
   public function setTaskNumber($taskNumber)
   {
@@ -307,9 +255,7 @@ class EnterpriseCrmEventbusProtoSuspensionResolutionInfo extends \Google\Model
     return $this->taskNumber;
   }
   /**
-   * Required. The name of the originating workflow.
-   *
-   * @param string $workflowName
+   * @param string
    */
   public function setWorkflowName($workflowName)
   {
@@ -323,9 +269,7 @@ class EnterpriseCrmEventbusProtoSuspensionResolutionInfo extends \Google\Model
     return $this->workflowName;
   }
   /**
-   * Wrapped dek
-   *
-   * @param string $wrappedDek
+   * @param string
    */
   public function setWrappedDek($wrappedDek)
   {

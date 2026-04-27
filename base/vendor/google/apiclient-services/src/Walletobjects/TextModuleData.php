@@ -20,27 +20,14 @@ namespace Google\Service\Walletobjects;
 class TextModuleData extends \Google\Model
 {
   /**
-   * The body of the Text Module, which is defined as an uninterrupted string.
-   * Recommended maximum length is 500 characters to ensure full string is
-   * displayed on smaller screens.
-   *
    * @var string
    */
   public $body;
   /**
-   * The header of the Text Module. Recommended maximum length is 35 characters
-   * to ensure full string is displayed on smaller screens.
-   *
    * @var string
    */
   public $header;
   /**
-   * The ID associated with a text module. This field is here to enable ease of
-   * management of text modules and referencing them in template overrides. The
-   * ID should only include alphanumeric characters, '_', or '-'. It can not
-   * include dots, as dots are used to separate fields within
-   * FieldReference.fieldPaths in template overrides.
-   *
    * @var string
    */
   public $id;
@@ -50,11 +37,7 @@ class TextModuleData extends \Google\Model
   protected $localizedHeaderDataType = '';
 
   /**
-   * The body of the Text Module, which is defined as an uninterrupted string.
-   * Recommended maximum length is 500 characters to ensure full string is
-   * displayed on smaller screens.
-   *
-   * @param string $body
+   * @param string
    */
   public function setBody($body)
   {
@@ -68,10 +51,7 @@ class TextModuleData extends \Google\Model
     return $this->body;
   }
   /**
-   * The header of the Text Module. Recommended maximum length is 35 characters
-   * to ensure full string is displayed on smaller screens.
-   *
-   * @param string $header
+   * @param string
    */
   public function setHeader($header)
   {
@@ -85,13 +65,7 @@ class TextModuleData extends \Google\Model
     return $this->header;
   }
   /**
-   * The ID associated with a text module. This field is here to enable ease of
-   * management of text modules and referencing them in template overrides. The
-   * ID should only include alphanumeric characters, '_', or '-'. It can not
-   * include dots, as dots are used to separate fields within
-   * FieldReference.fieldPaths in template overrides.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -105,10 +79,7 @@ class TextModuleData extends \Google\Model
     return $this->id;
   }
   /**
-   * Translated strings for the body. Recommended maximum length is 500
-   * characters to ensure full string is displayed on smaller screens.
-   *
-   * @param LocalizedString $localizedBody
+   * @param LocalizedString
    */
   public function setLocalizedBody(LocalizedString $localizedBody)
   {
@@ -122,10 +93,7 @@ class TextModuleData extends \Google\Model
     return $this->localizedBody;
   }
   /**
-   * Translated strings for the header. Recommended maximum length is 35
-   * characters to ensure full string is displayed on smaller screens.
-   *
-   * @param LocalizedString $localizedHeader
+   * @param LocalizedString
    */
   public function setLocalizedHeader(LocalizedString $localizedHeader)
   {

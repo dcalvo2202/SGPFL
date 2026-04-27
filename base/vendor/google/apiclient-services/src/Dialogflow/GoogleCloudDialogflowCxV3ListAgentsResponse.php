@@ -28,7 +28,7 @@ class GoogleCloudDialogflowCxV3ListAgentsResponse extends \Google\Collection
   public $nextPageToken;
 
   /**
-   * @param GoogleCloudDialogflowCxV3Agent[] $agents
+   * @param GoogleCloudDialogflowCxV3Agent[]
    */
   public function setAgents($agents)
   {
@@ -42,7 +42,7 @@ class GoogleCloudDialogflowCxV3ListAgentsResponse extends \Google\Collection
     return $this->agents;
   }
   /**
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

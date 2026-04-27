@@ -20,22 +20,16 @@ namespace Google\Service\MapsPlaces;
 class GoogleMapsPlacesV1PlaceSubDestination extends \Google\Model
 {
   /**
-   * The place id of the sub-destination.
-   *
    * @var string
    */
   public $id;
   /**
-   * The resource name of the sub-destination.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The place id of the sub-destination.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -49,9 +43,7 @@ class GoogleMapsPlacesV1PlaceSubDestination extends \Google\Model
     return $this->id;
   }
   /**
-   * The resource name of the sub-destination.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

@@ -20,32 +20,20 @@ namespace Google\Service\SA360;
 class GoogleAdsSearchads360V0ResourcesDoubleClickCampaignManagerSetting extends \Google\Model
 {
   /**
-   * Output only. ID of the Campaign Manager advertiser associated with this
-   * customer.
-   *
    * @var string
    */
   public $advertiserId;
   /**
-   * Output only. ID of the Campaign Manager network associated with this
-   * customer.
-   *
    * @var string
    */
   public $networkId;
   /**
-   * Output only. Time zone of the Campaign Manager network associated with this
-   * customer in IANA Time Zone Database format, such as America/New_York.
-   *
    * @var string
    */
   public $timeZone;
 
   /**
-   * Output only. ID of the Campaign Manager advertiser associated with this
-   * customer.
-   *
-   * @param string $advertiserId
+   * @param string
    */
   public function setAdvertiserId($advertiserId)
   {
@@ -59,10 +47,7 @@ class GoogleAdsSearchads360V0ResourcesDoubleClickCampaignManagerSetting extends 
     return $this->advertiserId;
   }
   /**
-   * Output only. ID of the Campaign Manager network associated with this
-   * customer.
-   *
-   * @param string $networkId
+   * @param string
    */
   public function setNetworkId($networkId)
   {
@@ -76,10 +61,7 @@ class GoogleAdsSearchads360V0ResourcesDoubleClickCampaignManagerSetting extends 
     return $this->networkId;
   }
   /**
-   * Output only. Time zone of the Campaign Manager network associated with this
-   * customer in IANA Time Zone Database format, such as America/New_York.
-   *
-   * @param string $timeZone
+   * @param string
    */
   public function setTimeZone($timeZone)
   {

@@ -19,44 +19,21 @@ namespace Google\Service\DataLabeling;
 
 class GoogleCloudDatalabelingV1beta1ImageClassificationConfig extends \Google\Model
 {
-  public const ANSWER_AGGREGATION_TYPE_STRING_AGGREGATION_TYPE_UNSPECIFIED = 'STRING_AGGREGATION_TYPE_UNSPECIFIED';
   /**
-   * Majority vote to aggregate answers.
-   */
-  public const ANSWER_AGGREGATION_TYPE_MAJORITY_VOTE = 'MAJORITY_VOTE';
-  /**
-   * Unanimous answers will be adopted.
-   */
-  public const ANSWER_AGGREGATION_TYPE_UNANIMOUS_VOTE = 'UNANIMOUS_VOTE';
-  /**
-   * Preserve all answers by crowd compute.
-   */
-  public const ANSWER_AGGREGATION_TYPE_NO_AGGREGATION = 'NO_AGGREGATION';
-  /**
-   * Optional. If allow_multi_label is true, contributors are able to choose
-   * multiple labels for one image.
-   *
    * @var bool
    */
   public $allowMultiLabel;
   /**
-   * Required. Annotation spec set resource name.
-   *
    * @var string
    */
   public $annotationSpecSet;
   /**
-   * Optional. The type of how to aggregate answers.
-   *
    * @var string
    */
   public $answerAggregationType;
 
   /**
-   * Optional. If allow_multi_label is true, contributors are able to choose
-   * multiple labels for one image.
-   *
-   * @param bool $allowMultiLabel
+   * @param bool
    */
   public function setAllowMultiLabel($allowMultiLabel)
   {
@@ -70,9 +47,7 @@ class GoogleCloudDatalabelingV1beta1ImageClassificationConfig extends \Google\Mo
     return $this->allowMultiLabel;
   }
   /**
-   * Required. Annotation spec set resource name.
-   *
-   * @param string $annotationSpecSet
+   * @param string
    */
   public function setAnnotationSpecSet($annotationSpecSet)
   {
@@ -86,19 +61,14 @@ class GoogleCloudDatalabelingV1beta1ImageClassificationConfig extends \Google\Mo
     return $this->annotationSpecSet;
   }
   /**
-   * Optional. The type of how to aggregate answers.
-   *
-   * Accepted values: STRING_AGGREGATION_TYPE_UNSPECIFIED, MAJORITY_VOTE,
-   * UNANIMOUS_VOTE, NO_AGGREGATION
-   *
-   * @param self::ANSWER_AGGREGATION_TYPE_* $answerAggregationType
+   * @param string
    */
   public function setAnswerAggregationType($answerAggregationType)
   {
     $this->answerAggregationType = $answerAggregationType;
   }
   /**
-   * @return self::ANSWER_AGGREGATION_TYPE_*
+   * @return string
    */
   public function getAnswerAggregationType()
   {

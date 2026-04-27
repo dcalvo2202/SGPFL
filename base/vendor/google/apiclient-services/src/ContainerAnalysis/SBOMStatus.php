@@ -20,36 +20,16 @@ namespace Google\Service\ContainerAnalysis;
 class SBOMStatus extends \Google\Model
 {
   /**
-   * Default unknown state.
-   */
-  public const SBOM_STATE_SBOM_STATE_UNSPECIFIED = 'SBOM_STATE_UNSPECIFIED';
-  /**
-   * SBOM scanning is pending.
-   */
-  public const SBOM_STATE_PENDING = 'PENDING';
-  /**
-   * SBOM scanning has completed.
-   */
-  public const SBOM_STATE_COMPLETE = 'COMPLETE';
-  /**
-   * If there was an error generating an SBOM, this will indicate what that
-   * error was.
-   *
    * @var string
    */
   public $error;
   /**
-   * The progress of the SBOM generation.
-   *
    * @var string
    */
   public $sbomState;
 
   /**
-   * If there was an error generating an SBOM, this will indicate what that
-   * error was.
-   *
-   * @param string $error
+   * @param string
    */
   public function setError($error)
   {
@@ -63,18 +43,14 @@ class SBOMStatus extends \Google\Model
     return $this->error;
   }
   /**
-   * The progress of the SBOM generation.
-   *
-   * Accepted values: SBOM_STATE_UNSPECIFIED, PENDING, COMPLETE
-   *
-   * @param self::SBOM_STATE_* $sbomState
+   * @param string
    */
   public function setSbomState($sbomState)
   {
     $this->sbomState = $sbomState;
   }
   /**
-   * @return self::SBOM_STATE_*
+   * @return string
    */
   public function getSbomState()
   {

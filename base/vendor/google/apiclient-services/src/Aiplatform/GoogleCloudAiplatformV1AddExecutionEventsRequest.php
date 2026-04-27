@@ -24,9 +24,7 @@ class GoogleCloudAiplatformV1AddExecutionEventsRequest extends \Google\Collectio
   protected $eventsDataType = 'array';
 
   /**
-   * The Events to create and add.
-   *
-   * @param GoogleCloudAiplatformV1Event[] $events
+   * @param GoogleCloudAiplatformV1Event[]
    */
   public function setEvents($events)
   {

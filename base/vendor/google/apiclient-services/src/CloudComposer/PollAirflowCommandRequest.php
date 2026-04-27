@@ -20,34 +20,24 @@ namespace Google\Service\CloudComposer;
 class PollAirflowCommandRequest extends \Google\Model
 {
   /**
-   * The unique ID of the command execution.
-   *
    * @var string
    */
   public $executionId;
   /**
-   * Line number from which new logs should be fetched.
-   *
    * @var int
    */
   public $nextLineNumber;
   /**
-   * The name of the pod where the command is executed.
-   *
    * @var string
    */
   public $pod;
   /**
-   * The namespace of the pod where the command is executed.
-   *
    * @var string
    */
   public $podNamespace;
 
   /**
-   * The unique ID of the command execution.
-   *
-   * @param string $executionId
+   * @param string
    */
   public function setExecutionId($executionId)
   {
@@ -61,9 +51,7 @@ class PollAirflowCommandRequest extends \Google\Model
     return $this->executionId;
   }
   /**
-   * Line number from which new logs should be fetched.
-   *
-   * @param int $nextLineNumber
+   * @param int
    */
   public function setNextLineNumber($nextLineNumber)
   {
@@ -77,9 +65,7 @@ class PollAirflowCommandRequest extends \Google\Model
     return $this->nextLineNumber;
   }
   /**
-   * The name of the pod where the command is executed.
-   *
-   * @param string $pod
+   * @param string
    */
   public function setPod($pod)
   {
@@ -93,9 +79,7 @@ class PollAirflowCommandRequest extends \Google\Model
     return $this->pod;
   }
   /**
-   * The namespace of the pod where the command is executed.
-   *
-   * @param string $podNamespace
+   * @param string
    */
   public function setPodNamespace($podNamespace)
   {

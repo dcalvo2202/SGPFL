@@ -23,9 +23,6 @@ class GoogleMapsPlacesV1SearchTextResponse extends \Google\Collection
   protected $contextualContentsType = GoogleMapsPlacesV1ContextualContent::class;
   protected $contextualContentsDataType = 'array';
   /**
-   * A token that can be sent as `page_token` to retrieve the next page. If this
-   * field is omitted or empty, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -34,25 +31,12 @@ class GoogleMapsPlacesV1SearchTextResponse extends \Google\Collection
   protected $routingSummariesType = GoogleMapsPlacesV1RoutingSummary::class;
   protected $routingSummariesDataType = 'array';
   /**
-   * A link allows the user to search with the same text query as specified in
-   * the request on Google Maps.
-   *
    * @var string
    */
   public $searchUri;
 
   /**
-   * Experimental: See
-   * https://developers.google.com/maps/documentation/places/web-
-   * service/experimental/places-generative for more details. A list of
-   * contextual contents where each entry associates to the corresponding place
-   * in the same index in the places field. The contents that are relevant to
-   * the `text_query` in the request are preferred. If the contextual content is
-   * not available for one of the places, it will return non-contextual content.
-   * It will be empty only when the content is unavailable for this place. This
-   * list will have as many entries as the list of places if requested.
-   *
-   * @param GoogleMapsPlacesV1ContextualContent[] $contextualContents
+   * @param GoogleMapsPlacesV1ContextualContent[]
    */
   public function setContextualContents($contextualContents)
   {
@@ -66,10 +50,7 @@ class GoogleMapsPlacesV1SearchTextResponse extends \Google\Collection
     return $this->contextualContents;
   }
   /**
-   * A token that can be sent as `page_token` to retrieve the next page. If this
-   * field is omitted or empty, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -83,9 +64,7 @@ class GoogleMapsPlacesV1SearchTextResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * A list of places that meet the user's text search criteria.
-   *
-   * @param GoogleMapsPlacesV1Place[] $places
+   * @param GoogleMapsPlacesV1Place[]
    */
   public function setPlaces($places)
   {
@@ -99,13 +78,7 @@ class GoogleMapsPlacesV1SearchTextResponse extends \Google\Collection
     return $this->places;
   }
   /**
-   * A list of routing summaries where each entry associates to the
-   * corresponding place in the same index in the `places` field. If the routing
-   * summary is not available for one of the places, it will contain an empty
-   * entry. This list will have as many entries as the list of places if
-   * requested.
-   *
-   * @param GoogleMapsPlacesV1RoutingSummary[] $routingSummaries
+   * @param GoogleMapsPlacesV1RoutingSummary[]
    */
   public function setRoutingSummaries($routingSummaries)
   {
@@ -119,10 +92,7 @@ class GoogleMapsPlacesV1SearchTextResponse extends \Google\Collection
     return $this->routingSummaries;
   }
   /**
-   * A link allows the user to search with the same text query as specified in
-   * the request on Google Maps.
-   *
-   * @param string $searchUri
+   * @param string
    */
   public function setSearchUri($searchUri)
   {

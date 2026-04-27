@@ -20,76 +20,52 @@ namespace Google\Service\Document;
 class GoogleCloudDocumentaiV1EvaluationMetrics extends \Google\Model
 {
   /**
-   * The calculated F1 score.
-   *
    * @var float
    */
   public $f1Score;
   /**
-   * The amount of false negatives.
-   *
    * @var int
    */
   public $falseNegativesCount;
   /**
-   * The amount of false positives.
-   *
    * @var int
    */
   public $falsePositivesCount;
   /**
-   * The amount of documents with a ground truth occurrence.
-   *
    * @var int
    */
   public $groundTruthDocumentCount;
   /**
-   * The amount of occurrences in ground truth documents.
-   *
    * @var int
    */
   public $groundTruthOccurrencesCount;
   /**
-   * The calculated precision.
-   *
    * @var float
    */
   public $precision;
   /**
-   * The amount of documents with a predicted occurrence.
-   *
    * @var int
    */
   public $predictedDocumentCount;
   /**
-   * The amount of occurrences in predicted documents.
-   *
    * @var int
    */
   public $predictedOccurrencesCount;
   /**
-   * The calculated recall.
-   *
    * @var float
    */
   public $recall;
   /**
-   * The amount of documents that had an occurrence of this label.
-   *
    * @var int
    */
   public $totalDocumentsCount;
   /**
-   * The amount of true positives.
-   *
    * @var int
    */
   public $truePositivesCount;
 
   /**
-   * The calculated F1 score.
-   *
-   * @param float $f1Score
+   * @param float
    */
   public function setF1Score($f1Score)
   {
@@ -103,9 +79,7 @@ class GoogleCloudDocumentaiV1EvaluationMetrics extends \Google\Model
     return $this->f1Score;
   }
   /**
-   * The amount of false negatives.
-   *
-   * @param int $falseNegativesCount
+   * @param int
    */
   public function setFalseNegativesCount($falseNegativesCount)
   {
@@ -119,9 +93,7 @@ class GoogleCloudDocumentaiV1EvaluationMetrics extends \Google\Model
     return $this->falseNegativesCount;
   }
   /**
-   * The amount of false positives.
-   *
-   * @param int $falsePositivesCount
+   * @param int
    */
   public function setFalsePositivesCount($falsePositivesCount)
   {
@@ -135,9 +107,7 @@ class GoogleCloudDocumentaiV1EvaluationMetrics extends \Google\Model
     return $this->falsePositivesCount;
   }
   /**
-   * The amount of documents with a ground truth occurrence.
-   *
-   * @param int $groundTruthDocumentCount
+   * @param int
    */
   public function setGroundTruthDocumentCount($groundTruthDocumentCount)
   {
@@ -151,9 +121,7 @@ class GoogleCloudDocumentaiV1EvaluationMetrics extends \Google\Model
     return $this->groundTruthDocumentCount;
   }
   /**
-   * The amount of occurrences in ground truth documents.
-   *
-   * @param int $groundTruthOccurrencesCount
+   * @param int
    */
   public function setGroundTruthOccurrencesCount($groundTruthOccurrencesCount)
   {
@@ -167,9 +135,7 @@ class GoogleCloudDocumentaiV1EvaluationMetrics extends \Google\Model
     return $this->groundTruthOccurrencesCount;
   }
   /**
-   * The calculated precision.
-   *
-   * @param float $precision
+   * @param float
    */
   public function setPrecision($precision)
   {
@@ -183,9 +149,7 @@ class GoogleCloudDocumentaiV1EvaluationMetrics extends \Google\Model
     return $this->precision;
   }
   /**
-   * The amount of documents with a predicted occurrence.
-   *
-   * @param int $predictedDocumentCount
+   * @param int
    */
   public function setPredictedDocumentCount($predictedDocumentCount)
   {
@@ -199,9 +163,7 @@ class GoogleCloudDocumentaiV1EvaluationMetrics extends \Google\Model
     return $this->predictedDocumentCount;
   }
   /**
-   * The amount of occurrences in predicted documents.
-   *
-   * @param int $predictedOccurrencesCount
+   * @param int
    */
   public function setPredictedOccurrencesCount($predictedOccurrencesCount)
   {
@@ -215,9 +177,7 @@ class GoogleCloudDocumentaiV1EvaluationMetrics extends \Google\Model
     return $this->predictedOccurrencesCount;
   }
   /**
-   * The calculated recall.
-   *
-   * @param float $recall
+   * @param float
    */
   public function setRecall($recall)
   {
@@ -231,9 +191,7 @@ class GoogleCloudDocumentaiV1EvaluationMetrics extends \Google\Model
     return $this->recall;
   }
   /**
-   * The amount of documents that had an occurrence of this label.
-   *
-   * @param int $totalDocumentsCount
+   * @param int
    */
   public function setTotalDocumentsCount($totalDocumentsCount)
   {
@@ -247,9 +205,7 @@ class GoogleCloudDocumentaiV1EvaluationMetrics extends \Google\Model
     return $this->totalDocumentsCount;
   }
   /**
-   * The amount of true positives.
-   *
-   * @param int $truePositivesCount
+   * @param int
    */
   public function setTruePositivesCount($truePositivesCount)
   {

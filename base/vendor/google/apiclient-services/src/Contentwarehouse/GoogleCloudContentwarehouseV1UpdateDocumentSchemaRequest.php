@@ -23,9 +23,7 @@ class GoogleCloudContentwarehouseV1UpdateDocumentSchemaRequest extends \Google\M
   protected $documentSchemaDataType = '';
 
   /**
-   * Required. The document schema to update with.
-   *
-   * @param GoogleCloudContentwarehouseV1DocumentSchema $documentSchema
+   * @param GoogleCloudContentwarehouseV1DocumentSchema
    */
   public function setDocumentSchema(GoogleCloudContentwarehouseV1DocumentSchema $documentSchema)
   {

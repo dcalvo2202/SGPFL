@@ -20,20 +20,12 @@ namespace Google\Service\CloudSearch;
 class DoubleOperatorOptions extends \Google\Model
 {
   /**
-   * Indicates the operator name required in the query in order to use the
-   * double property in sorting or as a facet. The operator name can only
-   * contain lowercase letters (a-z). The maximum length is 32 characters.
-   *
    * @var string
    */
   public $operatorName;
 
   /**
-   * Indicates the operator name required in the query in order to use the
-   * double property in sorting or as a facet. The operator name can only
-   * contain lowercase letters (a-z). The maximum length is 32 characters.
-   *
-   * @param string $operatorName
+   * @param string
    */
   public function setOperatorName($operatorName)
   {

@@ -20,22 +20,16 @@ namespace Google\Service\MapsPlaces;
 class GoogleMapsPlacesV1PlaceAttribution extends \Google\Model
 {
   /**
-   * Name of the Place's data provider.
-   *
    * @var string
    */
   public $provider;
   /**
-   * URI to the Place's data provider.
-   *
    * @var string
    */
   public $providerUri;
 
   /**
-   * Name of the Place's data provider.
-   *
-   * @param string $provider
+   * @param string
    */
   public function setProvider($provider)
   {
@@ -49,9 +43,7 @@ class GoogleMapsPlacesV1PlaceAttribution extends \Google\Model
     return $this->provider;
   }
   /**
-   * URI to the Place's data provider.
-   *
-   * @param string $providerUri
+   * @param string
    */
   public function setProviderUri($providerUri)
   {

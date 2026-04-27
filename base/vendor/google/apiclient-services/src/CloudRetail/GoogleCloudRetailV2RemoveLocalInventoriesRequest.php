@@ -21,37 +21,20 @@ class GoogleCloudRetailV2RemoveLocalInventoriesRequest extends \Google\Collectio
 {
   protected $collection_key = 'placeIds';
   /**
-   * If set to true, and the Product is not found, the local inventory removal
-   * request will still be processed and retained for at most 1 day and
-   * processed once the Product is created. If set to false, a NOT_FOUND error
-   * is returned if the Product is not found.
-   *
    * @var bool
    */
   public $allowMissing;
   /**
-   * Required. A list of place IDs to have their inventory deleted. At most 3000
-   * place IDs are allowed per request.
-   *
    * @var string[]
    */
   public $placeIds;
   /**
-   * The time when the inventory deletions are issued. Used to prevent out-of-
-   * order updates and deletions on local inventory fields. If not provided, the
-   * internal system time will be used.
-   *
    * @var string
    */
   public $removeTime;
 
   /**
-   * If set to true, and the Product is not found, the local inventory removal
-   * request will still be processed and retained for at most 1 day and
-   * processed once the Product is created. If set to false, a NOT_FOUND error
-   * is returned if the Product is not found.
-   *
-   * @param bool $allowMissing
+   * @param bool
    */
   public function setAllowMissing($allowMissing)
   {
@@ -65,10 +48,7 @@ class GoogleCloudRetailV2RemoveLocalInventoriesRequest extends \Google\Collectio
     return $this->allowMissing;
   }
   /**
-   * Required. A list of place IDs to have their inventory deleted. At most 3000
-   * place IDs are allowed per request.
-   *
-   * @param string[] $placeIds
+   * @param string[]
    */
   public function setPlaceIds($placeIds)
   {
@@ -82,11 +62,7 @@ class GoogleCloudRetailV2RemoveLocalInventoriesRequest extends \Google\Collectio
     return $this->placeIds;
   }
   /**
-   * The time when the inventory deletions are issued. Used to prevent out-of-
-   * order updates and deletions on local inventory fields. If not provided, the
-   * internal system time will be used.
-   *
-   * @param string $removeTime
+   * @param string
    */
   public function setRemoveTime($removeTime)
   {

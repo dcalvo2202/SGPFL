@@ -21,16 +21,10 @@ class Subscriptions extends \Google\Collection
 {
   protected $collection_key = 'subscriptions';
   /**
-   * Identifies the resource as a collection of subscriptions. Value:
-   * reseller#subscriptions
-   *
    * @var string
    */
   public $kind;
   /**
-   * The continuation token, used to page through large result sets. Provide
-   * this value in a subsequent request to return the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -38,10 +32,7 @@ class Subscriptions extends \Google\Collection
   protected $subscriptionsDataType = 'array';
 
   /**
-   * Identifies the resource as a collection of subscriptions. Value:
-   * reseller#subscriptions
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -55,10 +46,7 @@ class Subscriptions extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The continuation token, used to page through large result sets. Provide
-   * this value in a subsequent request to return the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -72,9 +60,7 @@ class Subscriptions extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The subscriptions in this page of results.
-   *
-   * @param Subscription[] $subscriptions
+   * @param Subscription[]
    */
   public function setSubscriptions($subscriptions)
   {

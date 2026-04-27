@@ -21,24 +21,18 @@ class MaterializedViewEntity extends \Google\Collection
 {
   protected $collection_key = 'indices';
   /**
-   * Custom engine specific features.
-   *
    * @var array[]
    */
   public $customFeatures;
   protected $indicesType = IndexEntity::class;
   protected $indicesDataType = 'array';
   /**
-   * The SQL code which creates the view.
-   *
    * @var string
    */
   public $sqlCode;
 
   /**
-   * Custom engine specific features.
-   *
-   * @param array[] $customFeatures
+   * @param array[]
    */
   public function setCustomFeatures($customFeatures)
   {
@@ -52,9 +46,7 @@ class MaterializedViewEntity extends \Google\Collection
     return $this->customFeatures;
   }
   /**
-   * View indices.
-   *
-   * @param IndexEntity[] $indices
+   * @param IndexEntity[]
    */
   public function setIndices($indices)
   {
@@ -68,9 +60,7 @@ class MaterializedViewEntity extends \Google\Collection
     return $this->indices;
   }
   /**
-   * The SQL code which creates the view.
-   *
-   * @param string $sqlCode
+   * @param string
    */
   public function setSqlCode($sqlCode)
   {

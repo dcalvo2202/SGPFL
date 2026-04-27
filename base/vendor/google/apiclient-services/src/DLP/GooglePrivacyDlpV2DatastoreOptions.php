@@ -25,9 +25,7 @@ class GooglePrivacyDlpV2DatastoreOptions extends \Google\Model
   protected $partitionIdDataType = '';
 
   /**
-   * The kind to process.
-   *
-   * @param GooglePrivacyDlpV2KindExpression $kind
+   * @param GooglePrivacyDlpV2KindExpression
    */
   public function setKind(GooglePrivacyDlpV2KindExpression $kind)
   {
@@ -41,10 +39,7 @@ class GooglePrivacyDlpV2DatastoreOptions extends \Google\Model
     return $this->kind;
   }
   /**
-   * A partition ID identifies a grouping of entities. The grouping is always by
-   * project and namespace, however the namespace ID may be empty.
-   *
-   * @param GooglePrivacyDlpV2PartitionId $partitionId
+   * @param GooglePrivacyDlpV2PartitionId
    */
   public function setPartitionId(GooglePrivacyDlpV2PartitionId $partitionId)
   {

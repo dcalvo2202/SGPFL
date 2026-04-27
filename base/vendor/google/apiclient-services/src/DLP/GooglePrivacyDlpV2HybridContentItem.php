@@ -25,9 +25,7 @@ class GooglePrivacyDlpV2HybridContentItem extends \Google\Model
   protected $itemDataType = '';
 
   /**
-   * Supplementary information that will be added to each finding.
-   *
-   * @param GooglePrivacyDlpV2HybridFindingDetails $findingDetails
+   * @param GooglePrivacyDlpV2HybridFindingDetails
    */
   public function setFindingDetails(GooglePrivacyDlpV2HybridFindingDetails $findingDetails)
   {
@@ -41,9 +39,7 @@ class GooglePrivacyDlpV2HybridContentItem extends \Google\Model
     return $this->findingDetails;
   }
   /**
-   * The item to inspect.
-   *
-   * @param GooglePrivacyDlpV2ContentItem $item
+   * @param GooglePrivacyDlpV2ContentItem
    */
   public function setItem(GooglePrivacyDlpV2ContentItem $item)
   {

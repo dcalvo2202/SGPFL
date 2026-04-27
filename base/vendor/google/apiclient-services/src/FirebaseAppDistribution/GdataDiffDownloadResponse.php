@@ -23,9 +23,7 @@ class GdataDiffDownloadResponse extends \Google\Model
   protected $objectLocationDataType = '';
 
   /**
-   * The original object location.
-   *
-   * @param GdataCompositeMedia $objectLocation
+   * @param GdataCompositeMedia
    */
   public function setObjectLocation(GdataCompositeMedia $objectLocation)
   {

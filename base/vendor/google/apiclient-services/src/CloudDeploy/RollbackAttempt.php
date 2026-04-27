@@ -20,68 +20,28 @@ namespace Google\Service\CloudDeploy;
 class RollbackAttempt extends \Google\Model
 {
   /**
-   * The `repair` has an unspecified state.
-   */
-  public const STATE_REPAIR_STATE_UNSPECIFIED = 'REPAIR_STATE_UNSPECIFIED';
-  /**
-   * The `repair` action has succeeded.
-   */
-  public const STATE_REPAIR_STATE_SUCCEEDED = 'REPAIR_STATE_SUCCEEDED';
-  /**
-   * The `repair` action was cancelled.
-   */
-  public const STATE_REPAIR_STATE_CANCELLED = 'REPAIR_STATE_CANCELLED';
-  /**
-   * The `repair` action has failed.
-   */
-  public const STATE_REPAIR_STATE_FAILED = 'REPAIR_STATE_FAILED';
-  /**
-   * The `repair` action is in progress.
-   */
-  public const STATE_REPAIR_STATE_IN_PROGRESS = 'REPAIR_STATE_IN_PROGRESS';
-  /**
-   * The `repair` action is pending.
-   */
-  public const STATE_REPAIR_STATE_PENDING = 'REPAIR_STATE_PENDING';
-  /**
-   * The `repair` action was aborted.
-   */
-  public const STATE_REPAIR_STATE_ABORTED = 'REPAIR_STATE_ABORTED';
-  /**
-   * Output only. The phase to which the rollout will be rolled back to.
-   *
    * @var string
    */
   public $destinationPhase;
   /**
-   * Output only. If active rollout exists on the target, abort this rollback.
-   *
    * @var bool
    */
   public $disableRollbackIfRolloutPending;
   /**
-   * Output only. ID of the rollback `Rollout` to create.
-   *
    * @var string
    */
   public $rolloutId;
   /**
-   * Output only. Valid state of this rollback action.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. Description of the state of the Rollback.
-   *
    * @var string
    */
   public $stateDesc;
 
   /**
-   * Output only. The phase to which the rollout will be rolled back to.
-   *
-   * @param string $destinationPhase
+   * @param string
    */
   public function setDestinationPhase($destinationPhase)
   {
@@ -95,9 +55,7 @@ class RollbackAttempt extends \Google\Model
     return $this->destinationPhase;
   }
   /**
-   * Output only. If active rollout exists on the target, abort this rollback.
-   *
-   * @param bool $disableRollbackIfRolloutPending
+   * @param bool
    */
   public function setDisableRollbackIfRolloutPending($disableRollbackIfRolloutPending)
   {
@@ -111,9 +69,7 @@ class RollbackAttempt extends \Google\Model
     return $this->disableRollbackIfRolloutPending;
   }
   /**
-   * Output only. ID of the rollback `Rollout` to create.
-   *
-   * @param string $rolloutId
+   * @param string
    */
   public function setRolloutId($rolloutId)
   {
@@ -127,29 +83,21 @@ class RollbackAttempt extends \Google\Model
     return $this->rolloutId;
   }
   /**
-   * Output only. Valid state of this rollback action.
-   *
-   * Accepted values: REPAIR_STATE_UNSPECIFIED, REPAIR_STATE_SUCCEEDED,
-   * REPAIR_STATE_CANCELLED, REPAIR_STATE_FAILED, REPAIR_STATE_IN_PROGRESS,
-   * REPAIR_STATE_PENDING, REPAIR_STATE_ABORTED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. Description of the state of the Rollback.
-   *
-   * @param string $stateDesc
+   * @param string
    */
   public function setStateDesc($stateDesc)
   {

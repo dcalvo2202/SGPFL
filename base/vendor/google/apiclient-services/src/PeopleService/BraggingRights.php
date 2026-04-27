@@ -22,16 +22,12 @@ class BraggingRights extends \Google\Model
   protected $metadataType = FieldMetadata::class;
   protected $metadataDataType = '';
   /**
-   * The bragging rights; for example, `climbed mount everest`.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Metadata about the bragging rights.
-   *
-   * @param FieldMetadata $metadata
+   * @param FieldMetadata
    */
   public function setMetadata(FieldMetadata $metadata)
   {
@@ -45,9 +41,7 @@ class BraggingRights extends \Google\Model
     return $this->metadata;
   }
   /**
-   * The bragging rights; for example, `climbed mount everest`.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

@@ -19,27 +19,9 @@ namespace Google\Service\Document;
 
 class GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataIndividualDocumentResyncStatus extends \Google\Model
 {
-  /**
-   * Default value.
-   */
-  public const DOCUMENT_INCONSISTENCY_TYPE_DOCUMENT_INCONSISTENCY_TYPE_UNSPECIFIED = 'DOCUMENT_INCONSISTENCY_TYPE_UNSPECIFIED';
-  /**
-   * The document proto is invalid.
-   */
-  public const DOCUMENT_INCONSISTENCY_TYPE_DOCUMENT_INCONSISTENCY_TYPE_INVALID_DOCPROTO = 'DOCUMENT_INCONSISTENCY_TYPE_INVALID_DOCPROTO';
-  /**
-   * Indexed docproto metadata is mismatched.
-   */
-  public const DOCUMENT_INCONSISTENCY_TYPE_DOCUMENT_INCONSISTENCY_TYPE_MISMATCHED_METADATA = 'DOCUMENT_INCONSISTENCY_TYPE_MISMATCHED_METADATA';
-  /**
-   * The page image or thumbnails are missing.
-   */
-  public const DOCUMENT_INCONSISTENCY_TYPE_DOCUMENT_INCONSISTENCY_TYPE_NO_PAGE_IMAGE = 'DOCUMENT_INCONSISTENCY_TYPE_NO_PAGE_IMAGE';
   protected $documentIdType = GoogleCloudDocumentaiUiv1beta3DocumentId::class;
   protected $documentIdDataType = '';
   /**
-   * The type of document inconsistency.
-   *
    * @var string
    */
   public $documentInconsistencyType;
@@ -47,9 +29,7 @@ class GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataIndividualDocumentResyn
   protected $statusDataType = '';
 
   /**
-   * The document identifier.
-   *
-   * @param GoogleCloudDocumentaiUiv1beta3DocumentId $documentId
+   * @param GoogleCloudDocumentaiUiv1beta3DocumentId
    */
   public function setDocumentId(GoogleCloudDocumentaiUiv1beta3DocumentId $documentId)
   {
@@ -63,31 +43,21 @@ class GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataIndividualDocumentResyn
     return $this->documentId;
   }
   /**
-   * The type of document inconsistency.
-   *
-   * Accepted values: DOCUMENT_INCONSISTENCY_TYPE_UNSPECIFIED,
-   * DOCUMENT_INCONSISTENCY_TYPE_INVALID_DOCPROTO,
-   * DOCUMENT_INCONSISTENCY_TYPE_MISMATCHED_METADATA,
-   * DOCUMENT_INCONSISTENCY_TYPE_NO_PAGE_IMAGE
-   *
-   * @param self::DOCUMENT_INCONSISTENCY_TYPE_* $documentInconsistencyType
+   * @param string
    */
   public function setDocumentInconsistencyType($documentInconsistencyType)
   {
     $this->documentInconsistencyType = $documentInconsistencyType;
   }
   /**
-   * @return self::DOCUMENT_INCONSISTENCY_TYPE_*
+   * @return string
    */
   public function getDocumentInconsistencyType()
   {
     return $this->documentInconsistencyType;
   }
   /**
-   * The status of resyncing the document with regards to the detected
-   * inconsistency. Empty if ResyncDatasetRequest.validate_only is `true`.
-   *
-   * @param GoogleRpcStatus $status
+   * @param GoogleRpcStatus
    */
   public function setStatus(GoogleRpcStatus $status)
   {

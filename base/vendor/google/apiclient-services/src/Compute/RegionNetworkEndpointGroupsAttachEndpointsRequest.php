@@ -24,9 +24,7 @@ class RegionNetworkEndpointGroupsAttachEndpointsRequest extends \Google\Collecti
   protected $networkEndpointsDataType = 'array';
 
   /**
-   * The list of network endpoints to be attached.
-   *
-   * @param NetworkEndpoint[] $networkEndpoints
+   * @param NetworkEndpoint[]
    */
   public function setNetworkEndpoints($networkEndpoints)
   {

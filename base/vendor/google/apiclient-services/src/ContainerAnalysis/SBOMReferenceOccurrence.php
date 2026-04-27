@@ -22,10 +22,6 @@ class SBOMReferenceOccurrence extends \Google\Collection
   protected $collection_key = 'signatures';
   protected $payloadDataType = '';
   /**
-   * The kind of payload that SbomReferenceIntotoPayload takes. Since it's in
-   * the intoto format, this value is expected to be 'application/vnd.in-
-   * toto+json'.
-   *
    * @var string
    */
   public $payloadType;
@@ -33,9 +29,7 @@ class SBOMReferenceOccurrence extends \Google\Collection
   protected $signaturesDataType = 'array';
 
   /**
-   * The actual payload that contains the SBOM reference data.
-   *
-   * @param SbomReferenceIntotoPayload $payload
+   * @param SbomReferenceIntotoPayload
    */
   public function setPayload(SbomReferenceIntotoPayload $payload)
   {
@@ -49,11 +43,7 @@ class SBOMReferenceOccurrence extends \Google\Collection
     return $this->payload;
   }
   /**
-   * The kind of payload that SbomReferenceIntotoPayload takes. Since it's in
-   * the intoto format, this value is expected to be 'application/vnd.in-
-   * toto+json'.
-   *
-   * @param string $payloadType
+   * @param string
    */
   public function setPayloadType($payloadType)
   {
@@ -67,9 +57,7 @@ class SBOMReferenceOccurrence extends \Google\Collection
     return $this->payloadType;
   }
   /**
-   * The signatures over the payload.
-   *
-   * @param EnvelopeSignature[] $signatures
+   * @param EnvelopeSignature[]
    */
   public function setSignatures($signatures)
   {

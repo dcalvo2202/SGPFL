@@ -1,19 +1,17 @@
 <?php
-session_start();
-require_once __DIR__ . '/../includes.php';
+require_once __DIR__ . '/../mod/login/check.php';
 require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../inc/db/bdcommon.inc';
 
 use Service\GoogleCalendarService;
 
-if (!isset($_SESSION['id_user'])) {
-    header('Location: ../login.php');
-    exit;
-}
+$current_user_id = $mySessionController->getVar('usuario');
+$conn = new mysqli($db_host, $usuario, $clave, $db);
+$conn->set_charset('utf8');
 
 $googleCalendarService = new GoogleCalendarService($conn);
-$googleCalendarService->disconnectUser($_SESSION['id_user']);
+$googleCalendarService->disconnectUser($current_user_id);
 
-$_SESSION['success'] = 'Google Calendar desconectado correctamente';
+$mySessionController->save('success', 'Google Calendar desconectado correctamente');
 header('Location: ../perfil.php');
 exit;
-?>

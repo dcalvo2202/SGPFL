@@ -28,18 +28,12 @@ class Question extends \Google\Model
   protected $gradingType = Grading::class;
   protected $gradingDataType = '';
   /**
-   * Read only. The question ID. On creation, it can be provided but the ID must
-   * not be already used in the form. If not provided, a new ID is assigned.
-   *
    * @var string
    */
   public $questionId;
   protected $ratingQuestionType = RatingQuestion::class;
   protected $ratingQuestionDataType = '';
   /**
-   * Whether the question must be answered in order for a respondent to submit
-   * their response.
-   *
    * @var bool
    */
   public $required;
@@ -53,9 +47,7 @@ class Question extends \Google\Model
   protected $timeQuestionDataType = '';
 
   /**
-   * A respondent can choose from a pre-defined set of options.
-   *
-   * @param ChoiceQuestion $choiceQuestion
+   * @param ChoiceQuestion
    */
   public function setChoiceQuestion(ChoiceQuestion $choiceQuestion)
   {
@@ -69,9 +61,7 @@ class Question extends \Google\Model
     return $this->choiceQuestion;
   }
   /**
-   * A respondent can enter a date.
-   *
-   * @param DateQuestion $dateQuestion
+   * @param DateQuestion
    */
   public function setDateQuestion(DateQuestion $dateQuestion)
   {
@@ -85,9 +75,7 @@ class Question extends \Google\Model
     return $this->dateQuestion;
   }
   /**
-   * A respondent can upload one or more files.
-   *
-   * @param FileUploadQuestion $fileUploadQuestion
+   * @param FileUploadQuestion
    */
   public function setFileUploadQuestion(FileUploadQuestion $fileUploadQuestion)
   {
@@ -101,9 +89,7 @@ class Question extends \Google\Model
     return $this->fileUploadQuestion;
   }
   /**
-   * Grading setup for the question.
-   *
-   * @param Grading $grading
+   * @param Grading
    */
   public function setGrading(Grading $grading)
   {
@@ -117,10 +103,7 @@ class Question extends \Google\Model
     return $this->grading;
   }
   /**
-   * Read only. The question ID. On creation, it can be provided but the ID must
-   * not be already used in the form. If not provided, a new ID is assigned.
-   *
-   * @param string $questionId
+   * @param string
    */
   public function setQuestionId($questionId)
   {
@@ -134,9 +117,7 @@ class Question extends \Google\Model
     return $this->questionId;
   }
   /**
-   * A respondent can choose a rating from a pre-defined set of icons.
-   *
-   * @param RatingQuestion $ratingQuestion
+   * @param RatingQuestion
    */
   public function setRatingQuestion(RatingQuestion $ratingQuestion)
   {
@@ -150,10 +131,7 @@ class Question extends \Google\Model
     return $this->ratingQuestion;
   }
   /**
-   * Whether the question must be answered in order for a respondent to submit
-   * their response.
-   *
-   * @param bool $required
+   * @param bool
    */
   public function setRequired($required)
   {
@@ -167,9 +145,7 @@ class Question extends \Google\Model
     return $this->required;
   }
   /**
-   * A row of a QuestionGroupItem.
-   *
-   * @param RowQuestion $rowQuestion
+   * @param RowQuestion
    */
   public function setRowQuestion(RowQuestion $rowQuestion)
   {
@@ -183,9 +159,7 @@ class Question extends \Google\Model
     return $this->rowQuestion;
   }
   /**
-   * A respondent can choose a number from a range.
-   *
-   * @param ScaleQuestion $scaleQuestion
+   * @param ScaleQuestion
    */
   public function setScaleQuestion(ScaleQuestion $scaleQuestion)
   {
@@ -199,9 +173,7 @@ class Question extends \Google\Model
     return $this->scaleQuestion;
   }
   /**
-   * A respondent can enter a free text response.
-   *
-   * @param TextQuestion $textQuestion
+   * @param TextQuestion
    */
   public function setTextQuestion(TextQuestion $textQuestion)
   {
@@ -215,9 +187,7 @@ class Question extends \Google\Model
     return $this->textQuestion;
   }
   /**
-   * A respondent can enter a time.
-   *
-   * @param TimeQuestion $timeQuestion
+   * @param TimeQuestion
    */
   public function setTimeQuestion(TimeQuestion $timeQuestion)
   {

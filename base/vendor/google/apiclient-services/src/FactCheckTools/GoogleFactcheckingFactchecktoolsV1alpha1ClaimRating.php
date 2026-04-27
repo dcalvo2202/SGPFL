@@ -20,51 +20,32 @@ namespace Google\Service\FactCheckTools;
 class GoogleFactcheckingFactchecktoolsV1alpha1ClaimRating extends \Google\Model
 {
   /**
-   * For numeric ratings, the best value possible in the scale from worst to
-   * best. Corresponds to `ClaimReview.reviewRating.bestRating`.
-   *
    * @var int
    */
   public $bestRating;
   /**
-   * Corresponds to `ClaimReview.reviewRating.image`.
-   *
    * @var string
    */
   public $imageUrl;
   /**
-   * Corresponds to `ClaimReview.reviewRating.ratingExplanation`.
-   *
    * @var string
    */
   public $ratingExplanation;
   /**
-   * A numeric rating of this claim, in the range worstRating — bestRating
-   * inclusive. Corresponds to `ClaimReview.reviewRating.ratingValue`.
-   *
    * @var int
    */
   public $ratingValue;
   /**
-   * The truthfulness rating as a human-readible short word or phrase.
-   * Corresponds to `ClaimReview.reviewRating.alternateName`.
-   *
    * @var string
    */
   public $textualRating;
   /**
-   * For numeric ratings, the worst value possible in the scale from worst to
-   * best. Corresponds to `ClaimReview.reviewRating.worstRating`.
-   *
    * @var int
    */
   public $worstRating;
 
   /**
-   * For numeric ratings, the best value possible in the scale from worst to
-   * best. Corresponds to `ClaimReview.reviewRating.bestRating`.
-   *
-   * @param int $bestRating
+   * @param int
    */
   public function setBestRating($bestRating)
   {
@@ -78,9 +59,7 @@ class GoogleFactcheckingFactchecktoolsV1alpha1ClaimRating extends \Google\Model
     return $this->bestRating;
   }
   /**
-   * Corresponds to `ClaimReview.reviewRating.image`.
-   *
-   * @param string $imageUrl
+   * @param string
    */
   public function setImageUrl($imageUrl)
   {
@@ -94,9 +73,7 @@ class GoogleFactcheckingFactchecktoolsV1alpha1ClaimRating extends \Google\Model
     return $this->imageUrl;
   }
   /**
-   * Corresponds to `ClaimReview.reviewRating.ratingExplanation`.
-   *
-   * @param string $ratingExplanation
+   * @param string
    */
   public function setRatingExplanation($ratingExplanation)
   {
@@ -110,10 +87,7 @@ class GoogleFactcheckingFactchecktoolsV1alpha1ClaimRating extends \Google\Model
     return $this->ratingExplanation;
   }
   /**
-   * A numeric rating of this claim, in the range worstRating — bestRating
-   * inclusive. Corresponds to `ClaimReview.reviewRating.ratingValue`.
-   *
-   * @param int $ratingValue
+   * @param int
    */
   public function setRatingValue($ratingValue)
   {
@@ -127,10 +101,7 @@ class GoogleFactcheckingFactchecktoolsV1alpha1ClaimRating extends \Google\Model
     return $this->ratingValue;
   }
   /**
-   * The truthfulness rating as a human-readible short word or phrase.
-   * Corresponds to `ClaimReview.reviewRating.alternateName`.
-   *
-   * @param string $textualRating
+   * @param string
    */
   public function setTextualRating($textualRating)
   {
@@ -144,10 +115,7 @@ class GoogleFactcheckingFactchecktoolsV1alpha1ClaimRating extends \Google\Model
     return $this->textualRating;
   }
   /**
-   * For numeric ratings, the worst value possible in the scale from worst to
-   * best. Corresponds to `ClaimReview.reviewRating.worstRating`.
-   *
-   * @param int $worstRating
+   * @param int
    */
   public function setWorstRating($worstRating)
   {

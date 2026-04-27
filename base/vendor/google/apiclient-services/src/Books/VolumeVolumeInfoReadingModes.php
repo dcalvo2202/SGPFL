@@ -29,7 +29,7 @@ class VolumeVolumeInfoReadingModes extends \Google\Model
   public $text;
 
   /**
-   * @param bool $image
+   * @param bool
    */
   public function setImage($image)
   {
@@ -43,7 +43,7 @@ class VolumeVolumeInfoReadingModes extends \Google\Model
     return $this->image;
   }
   /**
-   * @param bool $text
+   * @param bool
    */
   public function setText($text)
   {

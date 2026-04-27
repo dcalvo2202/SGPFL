@@ -24,34 +24,22 @@ class FinancialDetails extends \Google\Model
   protected $federalIncentiveType = Money::class;
   protected $federalIncentiveDataType = '';
   /**
-   * How many AC kWh we think the solar panels will generate in their first
-   * year.
-   *
    * @var float
    */
   public $initialAcKwhPerYear;
   protected $lifetimeSrecTotalType = Money::class;
   protected $lifetimeSrecTotalDataType = '';
   /**
-   * Whether net metering is allowed.
-   *
    * @var bool
    */
   public $netMeteringAllowed;
   /**
-   * The percentage (0-100) of solar electricity production we assumed was
-   * exported to the grid, based on the first quarter of production. This
-   * affects the calculations if net metering is not allowed.
-   *
    * @var float
    */
   public $percentageExportedToGrid;
   protected $remainingLifetimeUtilityBillType = Money::class;
   protected $remainingLifetimeUtilityBillDataType = '';
   /**
-   * Percentage (0-100) of the user's power supplied by solar. Valid for the
-   * first year but approximately correct for future years.
-   *
    * @var float
    */
   public $solarPercentage;
@@ -61,10 +49,7 @@ class FinancialDetails extends \Google\Model
   protected $utilityIncentiveDataType = '';
 
   /**
-   * Total cost of electricity the user would have paid over the lifetime period
-   * if they didn't install solar.
-   *
-   * @param Money $costOfElectricityWithoutSolar
+   * @param Money
    */
   public function setCostOfElectricityWithoutSolar(Money $costOfElectricityWithoutSolar)
   {
@@ -78,10 +63,7 @@ class FinancialDetails extends \Google\Model
     return $this->costOfElectricityWithoutSolar;
   }
   /**
-   * Amount of money available from federal incentives; this applies if the user
-   * buys (with or without a loan) the panels.
-   *
-   * @param Money $federalIncentive
+   * @param Money
    */
   public function setFederalIncentive(Money $federalIncentive)
   {
@@ -95,10 +77,7 @@ class FinancialDetails extends \Google\Model
     return $this->federalIncentive;
   }
   /**
-   * How many AC kWh we think the solar panels will generate in their first
-   * year.
-   *
-   * @param float $initialAcKwhPerYear
+   * @param float
    */
   public function setInitialAcKwhPerYear($initialAcKwhPerYear)
   {
@@ -112,11 +91,7 @@ class FinancialDetails extends \Google\Model
     return $this->initialAcKwhPerYear;
   }
   /**
-   * Amount of money the user will receive from Solar Renewable Energy Credits
-   * over the panel lifetime; this applies if the user buys (with or without a
-   * loan) the panels.
-   *
-   * @param Money $lifetimeSrecTotal
+   * @param Money
    */
   public function setLifetimeSrecTotal(Money $lifetimeSrecTotal)
   {
@@ -130,9 +105,7 @@ class FinancialDetails extends \Google\Model
     return $this->lifetimeSrecTotal;
   }
   /**
-   * Whether net metering is allowed.
-   *
-   * @param bool $netMeteringAllowed
+   * @param bool
    */
   public function setNetMeteringAllowed($netMeteringAllowed)
   {
@@ -146,11 +119,7 @@ class FinancialDetails extends \Google\Model
     return $this->netMeteringAllowed;
   }
   /**
-   * The percentage (0-100) of solar electricity production we assumed was
-   * exported to the grid, based on the first quarter of production. This
-   * affects the calculations if net metering is not allowed.
-   *
-   * @param float $percentageExportedToGrid
+   * @param float
    */
   public function setPercentageExportedToGrid($percentageExportedToGrid)
   {
@@ -164,10 +133,7 @@ class FinancialDetails extends \Google\Model
     return $this->percentageExportedToGrid;
   }
   /**
-   * Utility bill for electricity not produced by solar, for the lifetime of the
-   * panels.
-   *
-   * @param Money $remainingLifetimeUtilityBill
+   * @param Money
    */
   public function setRemainingLifetimeUtilityBill(Money $remainingLifetimeUtilityBill)
   {
@@ -181,10 +147,7 @@ class FinancialDetails extends \Google\Model
     return $this->remainingLifetimeUtilityBill;
   }
   /**
-   * Percentage (0-100) of the user's power supplied by solar. Valid for the
-   * first year but approximately correct for future years.
-   *
-   * @param float $solarPercentage
+   * @param float
    */
   public function setSolarPercentage($solarPercentage)
   {
@@ -198,10 +161,7 @@ class FinancialDetails extends \Google\Model
     return $this->solarPercentage;
   }
   /**
-   * Amount of money available from state incentives; this applies if the user
-   * buys (with or without a loan) the panels.
-   *
-   * @param Money $stateIncentive
+   * @param Money
    */
   public function setStateIncentive(Money $stateIncentive)
   {
@@ -215,10 +175,7 @@ class FinancialDetails extends \Google\Model
     return $this->stateIncentive;
   }
   /**
-   * Amount of money available from utility incentives; this applies if the user
-   * buys (with or without a loan) the panels.
-   *
-   * @param Money $utilityIncentive
+   * @param Money
    */
   public function setUtilityIncentive(Money $utilityIncentive)
   {

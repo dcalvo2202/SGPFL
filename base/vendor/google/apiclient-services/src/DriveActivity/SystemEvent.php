@@ -20,37 +20,19 @@ namespace Google\Service\DriveActivity;
 class SystemEvent extends \Google\Model
 {
   /**
-   * The event type is unspecified.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * The event is a consequence of a user account being deleted.
-   */
-  public const TYPE_USER_DELETION = 'USER_DELETION';
-  /**
-   * The event is due to the system automatically purging trash.
-   */
-  public const TYPE_TRASH_AUTO_PURGE = 'TRASH_AUTO_PURGE';
-  /**
-   * The type of the system event that may triggered activity.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The type of the system event that may triggered activity.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, USER_DELETION, TRASH_AUTO_PURGE
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

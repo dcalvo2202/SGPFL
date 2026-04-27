@@ -23,17 +23,12 @@ class ListMessagesResponse extends \Google\Collection
   protected $messagesType = Message::class;
   protected $messagesDataType = 'array';
   /**
-   * You can send a token as `pageToken` to retrieve the next page of results.
-   * If empty, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * List of messages.
-   *
-   * @param Message[] $messages
+   * @param Message[]
    */
   public function setMessages($messages)
   {
@@ -47,10 +42,7 @@ class ListMessagesResponse extends \Google\Collection
     return $this->messages;
   }
   /**
-   * You can send a token as `pageToken` to retrieve the next page of results.
-   * If empty, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

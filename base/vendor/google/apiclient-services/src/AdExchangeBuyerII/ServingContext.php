@@ -20,12 +20,6 @@ namespace Google\Service\AdExchangeBuyerII;
 class ServingContext extends \Google\Model
 {
   /**
-   * A simple context.
-   */
-  public const ALL_SIMPLE_CONTEXT = 'SIMPLE_CONTEXT';
-  /**
-   * Matches all contexts.
-   *
    * @var string
    */
   public $all;
@@ -41,27 +35,21 @@ class ServingContext extends \Google\Model
   protected $securityTypeDataType = '';
 
   /**
-   * Matches all contexts.
-   *
-   * Accepted values: SIMPLE_CONTEXT
-   *
-   * @param self::ALL_* $all
+   * @param string
    */
   public function setAll($all)
   {
     $this->all = $all;
   }
   /**
-   * @return self::ALL_*
+   * @return string
    */
   public function getAll()
   {
     return $this->all;
   }
   /**
-   * Matches impressions for a particular app type.
-   *
-   * @param AppContext $appType
+   * @param AppContext
    */
   public function setAppType(AppContext $appType)
   {
@@ -75,9 +63,7 @@ class ServingContext extends \Google\Model
     return $this->appType;
   }
   /**
-   * Matches impressions for a particular auction type.
-   *
-   * @param AuctionContext $auctionType
+   * @param AuctionContext
    */
   public function setAuctionType(AuctionContext $auctionType)
   {
@@ -91,10 +77,7 @@ class ServingContext extends \Google\Model
     return $this->auctionType;
   }
   /**
-   * Matches impressions coming from users *or* publishers in a specific
-   * location.
-   *
-   * @param LocationContext $location
+   * @param LocationContext
    */
   public function setLocation(LocationContext $location)
   {
@@ -108,9 +91,7 @@ class ServingContext extends \Google\Model
     return $this->location;
   }
   /**
-   * Matches impressions coming from a particular platform.
-   *
-   * @param PlatformContext $platform
+   * @param PlatformContext
    */
   public function setPlatform(PlatformContext $platform)
   {
@@ -124,17 +105,13 @@ class ServingContext extends \Google\Model
     return $this->platform;
   }
   /**
-   * Matches impressions for a particular security type.
-   *
-   * @deprecated
-   * @param SecurityContext $securityType
+   * @param SecurityContext
    */
   public function setSecurityType(SecurityContext $securityType)
   {
     $this->securityType = $securityType;
   }
   /**
-   * @deprecated
    * @return SecurityContext
    */
   public function getSecurityType()

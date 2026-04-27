@@ -24,16 +24,12 @@ class SiteSummaryResponse extends \Google\Model
   protected $mobileSummaryType = PlatformSummary::class;
   protected $mobileSummaryDataType = '';
   /**
-   * The name of the reviewed site, e.g. `google.com`.
-   *
    * @var string
    */
   public $reviewedSite;
 
   /**
-   * The site's Ad Experience Report summary on desktop.
-   *
-   * @param PlatformSummary $desktopSummary
+   * @param PlatformSummary
    */
   public function setDesktopSummary(PlatformSummary $desktopSummary)
   {
@@ -47,9 +43,7 @@ class SiteSummaryResponse extends \Google\Model
     return $this->desktopSummary;
   }
   /**
-   * The site's Ad Experience Report summary on mobile.
-   *
-   * @param PlatformSummary $mobileSummary
+   * @param PlatformSummary
    */
   public function setMobileSummary(PlatformSummary $mobileSummary)
   {
@@ -63,9 +57,7 @@ class SiteSummaryResponse extends \Google\Model
     return $this->mobileSummary;
   }
   /**
-   * The name of the reviewed site, e.g. `google.com`.
-   *
-   * @param string $reviewedSite
+   * @param string
    */
   public function setReviewedSite($reviewedSite)
   {

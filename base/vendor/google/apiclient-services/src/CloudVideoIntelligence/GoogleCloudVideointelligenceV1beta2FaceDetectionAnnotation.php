@@ -21,24 +21,18 @@ class GoogleCloudVideointelligenceV1beta2FaceDetectionAnnotation extends \Google
 {
   protected $collection_key = 'tracks';
   /**
-   * The thumbnail of a person's face.
-   *
    * @var string
    */
   public $thumbnail;
   protected $tracksType = GoogleCloudVideointelligenceV1beta2Track::class;
   protected $tracksDataType = 'array';
   /**
-   * Feature version.
-   *
    * @var string
    */
   public $version;
 
   /**
-   * The thumbnail of a person's face.
-   *
-   * @param string $thumbnail
+   * @param string
    */
   public function setThumbnail($thumbnail)
   {
@@ -52,9 +46,7 @@ class GoogleCloudVideointelligenceV1beta2FaceDetectionAnnotation extends \Google
     return $this->thumbnail;
   }
   /**
-   * The face tracks with attributes.
-   *
-   * @param GoogleCloudVideointelligenceV1beta2Track[] $tracks
+   * @param GoogleCloudVideointelligenceV1beta2Track[]
    */
   public function setTracks($tracks)
   {
@@ -68,9 +60,7 @@ class GoogleCloudVideointelligenceV1beta2FaceDetectionAnnotation extends \Google
     return $this->tracks;
   }
   /**
-   * Feature version.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

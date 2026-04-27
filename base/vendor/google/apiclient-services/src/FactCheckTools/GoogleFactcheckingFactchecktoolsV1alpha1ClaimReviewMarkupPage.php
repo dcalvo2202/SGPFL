@@ -25,45 +25,24 @@ class GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkupPage extends \Goo
   protected $claimReviewMarkupsType = GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkup::class;
   protected $claimReviewMarkupsDataType = 'array';
   /**
-   * The name of this `ClaimReview` markup page resource, in the form of
-   * `pages/{page_id}`. Except for update requests, this field is output-only
-   * and should not be set by the user.
-   *
    * @var string
    */
   public $name;
   /**
-   * The URL of the page associated with this `ClaimReview` markup. While every
-   * individual `ClaimReview` has its own URL field, semantically this is a
-   * page-level field, and each `ClaimReview` on this page will use this value
-   * unless individually overridden. Corresponds to `ClaimReview.url`
-   *
    * @var string
    */
   public $pageUrl;
   /**
-   * The date when the fact check was published. Similar to the URL,
-   * semantically this is a page-level field, and each `ClaimReview` on this
-   * page will contain the same value. Corresponds to
-   * `ClaimReview.datePublished`
-   *
    * @var string
    */
   public $publishDate;
   /**
-   * The version ID for this markup. Except for update requests, this field is
-   * output-only and should not be set by the user.
-   *
    * @var string
    */
   public $versionId;
 
   /**
-   * Info about the author of this claim review. Similar to the above,
-   * semantically these are page-level fields, and each `ClaimReview` on this
-   * page will contain the same values.
-   *
-   * @param GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewAuthor $claimReviewAuthor
+   * @param GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewAuthor
    */
   public function setClaimReviewAuthor(GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewAuthor $claimReviewAuthor)
   {
@@ -77,10 +56,7 @@ class GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkupPage extends \Goo
     return $this->claimReviewAuthor;
   }
   /**
-   * A list of individual claim reviews for this page. Each item in the list
-   * corresponds to one `ClaimReview` element.
-   *
-   * @param GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkup[] $claimReviewMarkups
+   * @param GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkup[]
    */
   public function setClaimReviewMarkups($claimReviewMarkups)
   {
@@ -94,11 +70,7 @@ class GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkupPage extends \Goo
     return $this->claimReviewMarkups;
   }
   /**
-   * The name of this `ClaimReview` markup page resource, in the form of
-   * `pages/{page_id}`. Except for update requests, this field is output-only
-   * and should not be set by the user.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -112,12 +84,7 @@ class GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkupPage extends \Goo
     return $this->name;
   }
   /**
-   * The URL of the page associated with this `ClaimReview` markup. While every
-   * individual `ClaimReview` has its own URL field, semantically this is a
-   * page-level field, and each `ClaimReview` on this page will use this value
-   * unless individually overridden. Corresponds to `ClaimReview.url`
-   *
-   * @param string $pageUrl
+   * @param string
    */
   public function setPageUrl($pageUrl)
   {
@@ -131,12 +98,7 @@ class GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkupPage extends \Goo
     return $this->pageUrl;
   }
   /**
-   * The date when the fact check was published. Similar to the URL,
-   * semantically this is a page-level field, and each `ClaimReview` on this
-   * page will contain the same value. Corresponds to
-   * `ClaimReview.datePublished`
-   *
-   * @param string $publishDate
+   * @param string
    */
   public function setPublishDate($publishDate)
   {
@@ -150,10 +112,7 @@ class GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkupPage extends \Goo
     return $this->publishDate;
   }
   /**
-   * The version ID for this markup. Except for update requests, this field is
-   * output-only and should not be set by the user.
-   *
-   * @param string $versionId
+   * @param string
    */
   public function setVersionId($versionId)
   {

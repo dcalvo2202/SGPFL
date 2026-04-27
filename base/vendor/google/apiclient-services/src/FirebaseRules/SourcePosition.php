@@ -20,40 +20,28 @@ namespace Google\Service\FirebaseRules;
 class SourcePosition extends \Google\Model
 {
   /**
-   * First column on the source line associated with the source fragment.
-   *
    * @var int
    */
   public $column;
   /**
-   * Start position relative to the beginning of the file.
-   *
    * @var int
    */
   public $currentOffset;
   /**
-   * End position relative to the beginning of the file.
-   *
    * @var int
    */
   public $endOffset;
   /**
-   * Name of the `File`.
-   *
    * @var string
    */
   public $fileName;
   /**
-   * Line number of the source fragment. 1-based.
-   *
    * @var int
    */
   public $line;
 
   /**
-   * First column on the source line associated with the source fragment.
-   *
-   * @param int $column
+   * @param int
    */
   public function setColumn($column)
   {
@@ -67,9 +55,7 @@ class SourcePosition extends \Google\Model
     return $this->column;
   }
   /**
-   * Start position relative to the beginning of the file.
-   *
-   * @param int $currentOffset
+   * @param int
    */
   public function setCurrentOffset($currentOffset)
   {
@@ -83,9 +69,7 @@ class SourcePosition extends \Google\Model
     return $this->currentOffset;
   }
   /**
-   * End position relative to the beginning of the file.
-   *
-   * @param int $endOffset
+   * @param int
    */
   public function setEndOffset($endOffset)
   {
@@ -99,9 +83,7 @@ class SourcePosition extends \Google\Model
     return $this->endOffset;
   }
   /**
-   * Name of the `File`.
-   *
-   * @param string $fileName
+   * @param string
    */
   public function setFileName($fileName)
   {
@@ -115,9 +97,7 @@ class SourcePosition extends \Google\Model
     return $this->fileName;
   }
   /**
-   * Line number of the source fragment. 1-based.
-   *
-   * @param int $line
+   * @param int
    */
   public function setLine($line)
   {

@@ -23,16 +23,12 @@ class GoogleCloudDatalabelingV1beta1ListFeedbackMessagesResponse extends \Google
   protected $feedbackMessagesType = GoogleCloudDatalabelingV1beta1FeedbackMessage::class;
   protected $feedbackMessagesDataType = 'array';
   /**
-   * A token to retrieve next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of feedback messages to return.
-   *
-   * @param GoogleCloudDatalabelingV1beta1FeedbackMessage[] $feedbackMessages
+   * @param GoogleCloudDatalabelingV1beta1FeedbackMessage[]
    */
   public function setFeedbackMessages($feedbackMessages)
   {
@@ -46,9 +42,7 @@ class GoogleCloudDatalabelingV1beta1ListFeedbackMessagesResponse extends \Google
     return $this->feedbackMessages;
   }
   /**
-   * A token to retrieve next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

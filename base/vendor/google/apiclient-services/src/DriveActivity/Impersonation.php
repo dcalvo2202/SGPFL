@@ -23,9 +23,7 @@ class Impersonation extends \Google\Model
   protected $impersonatedUserDataType = '';
 
   /**
-   * The impersonated user.
-   *
-   * @param User $impersonatedUser
+   * @param User
    */
   public function setImpersonatedUser(User $impersonatedUser)
   {

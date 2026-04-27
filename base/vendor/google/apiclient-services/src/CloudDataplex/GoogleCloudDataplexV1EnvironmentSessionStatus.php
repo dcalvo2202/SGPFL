@@ -20,18 +20,12 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1EnvironmentSessionStatus extends \Google\Model
 {
   /**
-   * Output only. Queries over sessions to mark whether the environment is
-   * currently active or not
-   *
    * @var bool
    */
   public $active;
 
   /**
-   * Output only. Queries over sessions to mark whether the environment is
-   * currently active or not
-   *
-   * @param bool $active
+   * @param bool
    */
   public function setActive($active)
   {

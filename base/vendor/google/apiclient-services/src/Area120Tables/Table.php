@@ -23,43 +23,30 @@ class Table extends \Google\Collection
   protected $columnsType = ColumnDescription::class;
   protected $columnsDataType = 'array';
   /**
-   * Time when the table was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * The human readable title of the table.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * The resource name of the table. Table names have the form `tables/{table}`.
-   *
    * @var string
    */
   public $name;
   protected $savedViewsType = SavedView::class;
   protected $savedViewsDataType = 'array';
   /**
-   * The time zone of the table. IANA Time Zone Database time zone, e.g.
-   * "America/New_York".
-   *
    * @var string
    */
   public $timeZone;
   /**
-   * Time when the table was last updated excluding updates to individual rows
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * List of columns in this table. Order of columns matches the display order.
-   *
-   * @param ColumnDescription[] $columns
+   * @param ColumnDescription[]
    */
   public function setColumns($columns)
   {
@@ -73,9 +60,7 @@ class Table extends \Google\Collection
     return $this->columns;
   }
   /**
-   * Time when the table was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -89,9 +74,7 @@ class Table extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * The human readable title of the table.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -105,9 +88,7 @@ class Table extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * The resource name of the table. Table names have the form `tables/{table}`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -121,9 +102,7 @@ class Table extends \Google\Collection
     return $this->name;
   }
   /**
-   * Saved views for this table.
-   *
-   * @param SavedView[] $savedViews
+   * @param SavedView[]
    */
   public function setSavedViews($savedViews)
   {
@@ -137,10 +116,7 @@ class Table extends \Google\Collection
     return $this->savedViews;
   }
   /**
-   * The time zone of the table. IANA Time Zone Database time zone, e.g.
-   * "America/New_York".
-   *
-   * @param string $timeZone
+   * @param string
    */
   public function setTimeZone($timeZone)
   {
@@ -154,9 +130,7 @@ class Table extends \Google\Collection
     return $this->timeZone;
   }
   /**
-   * Time when the table was last updated excluding updates to individual rows
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

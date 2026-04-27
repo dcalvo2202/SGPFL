@@ -25,7 +25,7 @@ class GoogleCloudDialogflowCxV3AgentPersonalizationSettings extends \Google\Mode
   public $defaultEndUserMetadata;
 
   /**
-   * @param array[] $defaultEndUserMetadata
+   * @param array[]
    */
   public function setDefaultEndUserMetadata($defaultEndUserMetadata)
   {

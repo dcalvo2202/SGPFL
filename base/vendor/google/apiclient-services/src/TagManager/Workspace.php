@@ -20,59 +20,40 @@ namespace Google\Service\TagManager;
 class Workspace extends \Google\Model
 {
   /**
-   * GTM Account ID.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * GTM Container ID.
-   *
    * @var string
    */
   public $containerId;
   /**
-   * Workspace description.
-   *
    * @var string
    */
   public $description;
   /**
-   * The fingerprint of the GTM Workspace as computed at storage time. This
-   * value is recomputed whenever the workspace is modified.
-   *
    * @var string
    */
   public $fingerprint;
   /**
-   * Workspace display name.
-   *
    * @var string
    */
   public $name;
   /**
-   * GTM Workspace's API relative path.
-   *
    * @var string
    */
   public $path;
   /**
-   * Auto generated link to the tag manager UI
-   *
    * @var string
    */
   public $tagManagerUrl;
   /**
-   * The Workspace ID uniquely identifies the GTM Workspace.
-   *
    * @var string
    */
   public $workspaceId;
 
   /**
-   * GTM Account ID.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -86,9 +67,7 @@ class Workspace extends \Google\Model
     return $this->accountId;
   }
   /**
-   * GTM Container ID.
-   *
-   * @param string $containerId
+   * @param string
    */
   public function setContainerId($containerId)
   {
@@ -102,9 +81,7 @@ class Workspace extends \Google\Model
     return $this->containerId;
   }
   /**
-   * Workspace description.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -118,10 +95,7 @@ class Workspace extends \Google\Model
     return $this->description;
   }
   /**
-   * The fingerprint of the GTM Workspace as computed at storage time. This
-   * value is recomputed whenever the workspace is modified.
-   *
-   * @param string $fingerprint
+   * @param string
    */
   public function setFingerprint($fingerprint)
   {
@@ -135,9 +109,7 @@ class Workspace extends \Google\Model
     return $this->fingerprint;
   }
   /**
-   * Workspace display name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -151,9 +123,7 @@ class Workspace extends \Google\Model
     return $this->name;
   }
   /**
-   * GTM Workspace's API relative path.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {
@@ -167,9 +137,7 @@ class Workspace extends \Google\Model
     return $this->path;
   }
   /**
-   * Auto generated link to the tag manager UI
-   *
-   * @param string $tagManagerUrl
+   * @param string
    */
   public function setTagManagerUrl($tagManagerUrl)
   {
@@ -183,9 +151,7 @@ class Workspace extends \Google\Model
     return $this->tagManagerUrl;
   }
   /**
-   * The Workspace ID uniquely identifies the GTM Workspace.
-   *
-   * @param string $workspaceId
+   * @param string
    */
   public function setWorkspaceId($workspaceId)
   {

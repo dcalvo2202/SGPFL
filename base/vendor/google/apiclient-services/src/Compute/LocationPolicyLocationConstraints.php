@@ -20,18 +20,12 @@ namespace Google\Service\Compute;
 class LocationPolicyLocationConstraints extends \Google\Model
 {
   /**
-   * Maximum number of items that are allowed to be placed in this zone. The
-   * value must be non-negative.
-   *
    * @var int
    */
   public $maxCount;
 
   /**
-   * Maximum number of items that are allowed to be placed in this zone. The
-   * value must be non-negative.
-   *
-   * @param int $maxCount
+   * @param int
    */
   public function setMaxCount($maxCount)
   {

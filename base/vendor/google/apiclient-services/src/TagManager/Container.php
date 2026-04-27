@@ -21,87 +21,58 @@ class Container extends \Google\Collection
 {
   protected $collection_key = 'usageContext';
   /**
-   * GTM Account ID.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * The Container ID uniquely identifies the GTM Container.
-   *
    * @var string
    */
   public $containerId;
   /**
-   * List of domain names associated with the Container.
-   *
    * @var string[]
    */
   public $domainName;
   protected $featuresType = ContainerFeatures::class;
   protected $featuresDataType = '';
   /**
-   * The fingerprint of the GTM Container as computed at storage time. This
-   * value is recomputed whenever the account is modified.
-   *
    * @var string
    */
   public $fingerprint;
   /**
-   * Container display name.
-   *
    * @var string
    */
   public $name;
   /**
-   * Container Notes.
-   *
    * @var string
    */
   public $notes;
   /**
-   * GTM Container's API relative path.
-   *
    * @var string
    */
   public $path;
   /**
-   * Container Public ID.
-   *
    * @var string
    */
   public $publicId;
   /**
-   * All Tag IDs that refer to this Container.
-   *
    * @var string[]
    */
   public $tagIds;
   /**
-   * Auto generated link to the tag manager UI
-   *
    * @var string
    */
   public $tagManagerUrl;
   /**
-   * List of server-side container URLs for the Container. If multiple URLs are
-   * provided, all URL paths must match.
-   *
    * @var string[]
    */
   public $taggingServerUrls;
   /**
-   * List of Usage Contexts for the Container. Valid values include: web,
-   * android, or ios.
-   *
    * @var string[]
    */
   public $usageContext;
 
   /**
-   * GTM Account ID.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -115,9 +86,7 @@ class Container extends \Google\Collection
     return $this->accountId;
   }
   /**
-   * The Container ID uniquely identifies the GTM Container.
-   *
-   * @param string $containerId
+   * @param string
    */
   public function setContainerId($containerId)
   {
@@ -131,9 +100,7 @@ class Container extends \Google\Collection
     return $this->containerId;
   }
   /**
-   * List of domain names associated with the Container.
-   *
-   * @param string[] $domainName
+   * @param string[]
    */
   public function setDomainName($domainName)
   {
@@ -147,9 +114,7 @@ class Container extends \Google\Collection
     return $this->domainName;
   }
   /**
-   * Read-only Container feature set.
-   *
-   * @param ContainerFeatures $features
+   * @param ContainerFeatures
    */
   public function setFeatures(ContainerFeatures $features)
   {
@@ -163,10 +128,7 @@ class Container extends \Google\Collection
     return $this->features;
   }
   /**
-   * The fingerprint of the GTM Container as computed at storage time. This
-   * value is recomputed whenever the account is modified.
-   *
-   * @param string $fingerprint
+   * @param string
    */
   public function setFingerprint($fingerprint)
   {
@@ -180,9 +142,7 @@ class Container extends \Google\Collection
     return $this->fingerprint;
   }
   /**
-   * Container display name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -196,9 +156,7 @@ class Container extends \Google\Collection
     return $this->name;
   }
   /**
-   * Container Notes.
-   *
-   * @param string $notes
+   * @param string
    */
   public function setNotes($notes)
   {
@@ -212,9 +170,7 @@ class Container extends \Google\Collection
     return $this->notes;
   }
   /**
-   * GTM Container's API relative path.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {
@@ -228,9 +184,7 @@ class Container extends \Google\Collection
     return $this->path;
   }
   /**
-   * Container Public ID.
-   *
-   * @param string $publicId
+   * @param string
    */
   public function setPublicId($publicId)
   {
@@ -244,9 +198,7 @@ class Container extends \Google\Collection
     return $this->publicId;
   }
   /**
-   * All Tag IDs that refer to this Container.
-   *
-   * @param string[] $tagIds
+   * @param string[]
    */
   public function setTagIds($tagIds)
   {
@@ -260,9 +212,7 @@ class Container extends \Google\Collection
     return $this->tagIds;
   }
   /**
-   * Auto generated link to the tag manager UI
-   *
-   * @param string $tagManagerUrl
+   * @param string
    */
   public function setTagManagerUrl($tagManagerUrl)
   {
@@ -276,10 +226,7 @@ class Container extends \Google\Collection
     return $this->tagManagerUrl;
   }
   /**
-   * List of server-side container URLs for the Container. If multiple URLs are
-   * provided, all URL paths must match.
-   *
-   * @param string[] $taggingServerUrls
+   * @param string[]
    */
   public function setTaggingServerUrls($taggingServerUrls)
   {
@@ -293,10 +240,7 @@ class Container extends \Google\Collection
     return $this->taggingServerUrls;
   }
   /**
-   * List of Usage Contexts for the Container. Valid values include: web,
-   * android, or ios.
-   *
-   * @param string[] $usageContext
+   * @param string[]
    */
   public function setUsageContext($usageContext)
   {

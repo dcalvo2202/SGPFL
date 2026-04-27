@@ -20,44 +20,28 @@ namespace Google\Service\SQLAdmin;
 class ExportContextCsvExportOptions extends \Google\Model
 {
   /**
-   * Specifies the character that should appear before a data character that
-   * needs to be escaped.
-   *
    * @var string
    */
   public $escapeCharacter;
   /**
-   * Specifies the character that separates columns within each row (line) of
-   * the file.
-   *
    * @var string
    */
   public $fieldsTerminatedBy;
   /**
-   * This is used to separate lines. If a line does not contain all fields, the
-   * rest of the columns are set to their default values.
-   *
    * @var string
    */
   public $linesTerminatedBy;
   /**
-   * Specifies the quoting character to be used when a data value is quoted.
-   *
    * @var string
    */
   public $quoteCharacter;
   /**
-   * The select query used to extract the data.
-   *
    * @var string
    */
   public $selectQuery;
 
   /**
-   * Specifies the character that should appear before a data character that
-   * needs to be escaped.
-   *
-   * @param string $escapeCharacter
+   * @param string
    */
   public function setEscapeCharacter($escapeCharacter)
   {
@@ -71,10 +55,7 @@ class ExportContextCsvExportOptions extends \Google\Model
     return $this->escapeCharacter;
   }
   /**
-   * Specifies the character that separates columns within each row (line) of
-   * the file.
-   *
-   * @param string $fieldsTerminatedBy
+   * @param string
    */
   public function setFieldsTerminatedBy($fieldsTerminatedBy)
   {
@@ -88,10 +69,7 @@ class ExportContextCsvExportOptions extends \Google\Model
     return $this->fieldsTerminatedBy;
   }
   /**
-   * This is used to separate lines. If a line does not contain all fields, the
-   * rest of the columns are set to their default values.
-   *
-   * @param string $linesTerminatedBy
+   * @param string
    */
   public function setLinesTerminatedBy($linesTerminatedBy)
   {
@@ -105,9 +83,7 @@ class ExportContextCsvExportOptions extends \Google\Model
     return $this->linesTerminatedBy;
   }
   /**
-   * Specifies the quoting character to be used when a data value is quoted.
-   *
-   * @param string $quoteCharacter
+   * @param string
    */
   public function setQuoteCharacter($quoteCharacter)
   {
@@ -121,9 +97,7 @@ class ExportContextCsvExportOptions extends \Google\Model
     return $this->quoteCharacter;
   }
   /**
-   * The select query used to extract the data.
-   *
-   * @param string $selectQuery
+   * @param string
    */
   public function setSelectQuery($selectQuery)
   {

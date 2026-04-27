@@ -27,7 +27,7 @@ class GoogleCloudDialogflowCxV3VariantsHistory extends \Google\Model
   protected $versionVariantsDataType = '';
 
   /**
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -41,7 +41,7 @@ class GoogleCloudDialogflowCxV3VariantsHistory extends \Google\Model
     return $this->updateTime;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3VersionVariants $versionVariants
+   * @param GoogleCloudDialogflowCxV3VersionVariants
    */
   public function setVersionVariants(GoogleCloudDialogflowCxV3VersionVariants $versionVariants)
   {

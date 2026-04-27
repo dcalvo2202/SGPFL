@@ -26,18 +26,13 @@ class RenderAccountIssuesResponse extends \Google\Collection
   protected $issuesDataType = 'array';
 
   /**
-   * Alternate Dispute Resolution (ADR) is deprecated. Use
-   * `prerendered_out_of_court_dispute_settlement` instead.
-   *
-   * @deprecated
-   * @param AlternateDisputeResolution $alternateDisputeResolution
+   * @param AlternateDisputeResolution
    */
   public function setAlternateDisputeResolution(AlternateDisputeResolution $alternateDisputeResolution)
   {
     $this->alternateDisputeResolution = $alternateDisputeResolution;
   }
   /**
-   * @deprecated
    * @return AlternateDisputeResolution
    */
   public function getAlternateDisputeResolution()
@@ -45,12 +40,7 @@ class RenderAccountIssuesResponse extends \Google\Collection
     return $this->alternateDisputeResolution;
   }
   /**
-   * List of account issues for a given account. This list can be shown with
-   * compressed, expandable items. In the compressed form, the title and impact
-   * should be shown for each issue. Once the issue is expanded, the detailed
-   * content and available actions should be rendered.
-   *
-   * @param AccountIssue[] $issues
+   * @param AccountIssue[]
    */
   public function setIssues($issues)
   {

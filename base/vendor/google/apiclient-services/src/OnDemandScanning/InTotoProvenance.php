@@ -23,11 +23,6 @@ class InTotoProvenance extends \Google\Collection
   protected $builderConfigType = BuilderConfig::class;
   protected $builderConfigDataType = '';
   /**
-   * The collection of artifacts that influenced the build including sources,
-   * dependencies, build tools, base images, and so on. This is considered to be
-   * incomplete unless metadata.completeness.materials is true. Unset or null is
-   * equivalent to empty.
-   *
    * @var string[]
    */
   public $materials;
@@ -37,9 +32,7 @@ class InTotoProvenance extends \Google\Collection
   protected $recipeDataType = '';
 
   /**
-   * required
-   *
-   * @param BuilderConfig $builderConfig
+   * @param BuilderConfig
    */
   public function setBuilderConfig(BuilderConfig $builderConfig)
   {
@@ -53,12 +46,7 @@ class InTotoProvenance extends \Google\Collection
     return $this->builderConfig;
   }
   /**
-   * The collection of artifacts that influenced the build including sources,
-   * dependencies, build tools, base images, and so on. This is considered to be
-   * incomplete unless metadata.completeness.materials is true. Unset or null is
-   * equivalent to empty.
-   *
-   * @param string[] $materials
+   * @param string[]
    */
   public function setMaterials($materials)
   {
@@ -72,7 +60,7 @@ class InTotoProvenance extends \Google\Collection
     return $this->materials;
   }
   /**
-   * @param Metadata $metadata
+   * @param Metadata
    */
   public function setMetadata(Metadata $metadata)
   {
@@ -86,12 +74,7 @@ class InTotoProvenance extends \Google\Collection
     return $this->metadata;
   }
   /**
-   * Identifies the configuration used for the build. When combined with
-   * materials, this SHOULD fully describe the build, such that re-running this
-   * recipe results in bit-for-bit identical output (if the build is
-   * reproducible). required
-   *
-   * @param Recipe $recipe
+   * @param Recipe
    */
   public function setRecipe(Recipe $recipe)
   {

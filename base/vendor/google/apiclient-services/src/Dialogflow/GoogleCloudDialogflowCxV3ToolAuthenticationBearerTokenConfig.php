@@ -29,7 +29,7 @@ class GoogleCloudDialogflowCxV3ToolAuthenticationBearerTokenConfig extends \Goog
   public $token;
 
   /**
-   * @param string $secretVersionForToken
+   * @param string
    */
   public function setSecretVersionForToken($secretVersionForToken)
   {
@@ -43,7 +43,7 @@ class GoogleCloudDialogflowCxV3ToolAuthenticationBearerTokenConfig extends \Goog
     return $this->secretVersionForToken;
   }
   /**
-   * @param string $token
+   * @param string
    */
   public function setToken($token)
   {

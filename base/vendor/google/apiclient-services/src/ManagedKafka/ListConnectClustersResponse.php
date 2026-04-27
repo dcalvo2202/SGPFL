@@ -23,23 +23,16 @@ class ListConnectClustersResponse extends \Google\Collection
   protected $connectClustersType = ConnectCluster::class;
   protected $connectClustersDataType = 'array';
   /**
-   * A token that can be sent as `page_token` to retrieve the next page of
-   * results. If this field is omitted, there are no more results.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * The list of Connect clusters in the requested parent.
-   *
-   * @param ConnectCluster[] $connectClusters
+   * @param ConnectCluster[]
    */
   public function setConnectClusters($connectClusters)
   {
@@ -53,10 +46,7 @@ class ListConnectClustersResponse extends \Google\Collection
     return $this->connectClusters;
   }
   /**
-   * A token that can be sent as `page_token` to retrieve the next page of
-   * results. If this field is omitted, there are no more results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -70,9 +60,7 @@ class ListConnectClustersResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

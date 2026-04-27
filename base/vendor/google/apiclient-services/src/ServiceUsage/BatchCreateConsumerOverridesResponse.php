@@ -24,9 +24,7 @@ class BatchCreateConsumerOverridesResponse extends \Google\Collection
   protected $overridesDataType = 'array';
 
   /**
-   * The overrides that were created.
-   *
-   * @param QuotaOverride[] $overrides
+   * @param QuotaOverride[]
    */
   public function setOverrides($overrides)
   {

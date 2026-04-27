@@ -20,25 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1ProbeTcpSocketAction extends \Google\Model
 {
   /**
-   * Optional: Host name to connect to, defaults to the model serving
-   * container's IP.
-   *
    * @var string
    */
   public $host;
   /**
-   * Number of the port to access on the container. Number must be in the range
-   * 1 to 65535.
-   *
    * @var int
    */
   public $port;
 
   /**
-   * Optional: Host name to connect to, defaults to the model serving
-   * container's IP.
-   *
-   * @param string $host
+   * @param string
    */
   public function setHost($host)
   {
@@ -52,10 +43,7 @@ class GoogleCloudAiplatformV1ProbeTcpSocketAction extends \Google\Model
     return $this->host;
   }
   /**
-   * Number of the port to access on the container. Number must be in the range
-   * 1 to 65535.
-   *
-   * @param int $port
+   * @param int
    */
   public function setPort($port)
   {

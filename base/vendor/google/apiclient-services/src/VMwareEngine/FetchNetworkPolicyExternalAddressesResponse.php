@@ -23,18 +23,12 @@ class FetchNetworkPolicyExternalAddressesResponse extends \Google\Collection
   protected $externalAddressesType = ExternalAddress::class;
   protected $externalAddressesDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * A list of external IP addresses assigned to VMware workload VMs within the
-   * scope of the given network policy.
-   *
-   * @param ExternalAddress[] $externalAddresses
+   * @param ExternalAddress[]
    */
   public function setExternalAddresses($externalAddresses)
   {
@@ -48,10 +42,7 @@ class FetchNetworkPolicyExternalAddressesResponse extends \Google\Collection
     return $this->externalAddresses;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

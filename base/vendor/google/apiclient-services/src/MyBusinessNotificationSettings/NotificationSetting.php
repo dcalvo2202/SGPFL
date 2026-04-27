@@ -21,37 +21,20 @@ class NotificationSetting extends \Google\Collection
 {
   protected $collection_key = 'notificationTypes';
   /**
-   * Required. The resource name this setting is for. This is of the form
-   * `accounts/{account_id}/notificationSetting`.
-   *
    * @var string
    */
   public $name;
   /**
-   * The types of notifications that will be sent to the Pub/Sub topic. To stop
-   * receiving notifications entirely, use
-   * NotificationSettings.UpdateNotificationSetting with an empty
-   * notification_types or set the pubsub_topic to an empty string.
-   *
    * @var string[]
    */
   public $notificationTypes;
   /**
-   * Optional. The Google Pub/Sub topic that will receive notifications when
-   * locations managed by this account are updated. If unset, no notifications
-   * will be posted. The account mybusiness-api-
-   * pubsub@system.gserviceaccount.com must have at least Publish permissions on
-   * the Pub/Sub topic.
-   *
    * @var string
    */
   public $pubsubTopic;
 
   /**
-   * Required. The resource name this setting is for. This is of the form
-   * `accounts/{account_id}/notificationSetting`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -65,12 +48,7 @@ class NotificationSetting extends \Google\Collection
     return $this->name;
   }
   /**
-   * The types of notifications that will be sent to the Pub/Sub topic. To stop
-   * receiving notifications entirely, use
-   * NotificationSettings.UpdateNotificationSetting with an empty
-   * notification_types or set the pubsub_topic to an empty string.
-   *
-   * @param string[] $notificationTypes
+   * @param string[]
    */
   public function setNotificationTypes($notificationTypes)
   {
@@ -84,13 +62,7 @@ class NotificationSetting extends \Google\Collection
     return $this->notificationTypes;
   }
   /**
-   * Optional. The Google Pub/Sub topic that will receive notifications when
-   * locations managed by this account are updated. If unset, no notifications
-   * will be posted. The account mybusiness-api-
-   * pubsub@system.gserviceaccount.com must have at least Publish permissions on
-   * the Pub/Sub topic.
-   *
-   * @param string $pubsubTopic
+   * @param string
    */
   public function setPubsubTopic($pubsubTopic)
   {

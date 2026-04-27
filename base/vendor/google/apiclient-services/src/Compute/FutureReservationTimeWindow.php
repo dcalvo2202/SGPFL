@@ -26,14 +26,12 @@ class FutureReservationTimeWindow extends \Google\Model
    */
   public $endTime;
   /**
-   * Start time of the Future Reservation. The start_time is an RFC3339 string.
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * @param Duration $duration
+   * @param Duration
    */
   public function setDuration(Duration $duration)
   {
@@ -47,7 +45,7 @@ class FutureReservationTimeWindow extends \Google\Model
     return $this->duration;
   }
   /**
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -61,9 +59,7 @@ class FutureReservationTimeWindow extends \Google\Model
     return $this->endTime;
   }
   /**
-   * Start time of the Future Reservation. The start_time is an RFC3339 string.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

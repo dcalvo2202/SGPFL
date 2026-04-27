@@ -19,22 +19,8 @@ namespace Google\Service\Compute;
 
 class InstancesReportHostAsFaultyRequest extends \Google\Collection
 {
-  /**
-   * Not used. Required as per aip/126.
-   */
-  public const DISRUPTION_SCHEDULE_DISRUPTION_SCHEDULE_UNSPECIFIED = 'DISRUPTION_SCHEDULE_UNSPECIFIED';
-  /**
-   * Delay disruption for caller control. Will be default soon.
-   */
-  public const DISRUPTION_SCHEDULE_FUTURE = 'FUTURE';
-  /**
-   * Default value. Disrupt the VM immediately.
-   */
-  public const DISRUPTION_SCHEDULE_IMMEDIATE = 'IMMEDIATE';
   protected $collection_key = 'faultReasons';
   /**
-   * The disruption schedule for the VM. Required field, only allows IMMEDIATE.
-   *
    * @var string
    */
   public $disruptionSchedule;
@@ -42,25 +28,21 @@ class InstancesReportHostAsFaultyRequest extends \Google\Collection
   protected $faultReasonsDataType = 'array';
 
   /**
-   * The disruption schedule for the VM. Required field, only allows IMMEDIATE.
-   *
-   * Accepted values: DISRUPTION_SCHEDULE_UNSPECIFIED, FUTURE, IMMEDIATE
-   *
-   * @param self::DISRUPTION_SCHEDULE_* $disruptionSchedule
+   * @param string
    */
   public function setDisruptionSchedule($disruptionSchedule)
   {
     $this->disruptionSchedule = $disruptionSchedule;
   }
   /**
-   * @return self::DISRUPTION_SCHEDULE_*
+   * @return string
    */
   public function getDisruptionSchedule()
   {
     return $this->disruptionSchedule;
   }
   /**
-   * @param InstancesReportHostAsFaultyRequestFaultReason[] $faultReasons
+   * @param InstancesReportHostAsFaultyRequestFaultReason[]
    */
   public function setFaultReasons($faultReasons)
   {

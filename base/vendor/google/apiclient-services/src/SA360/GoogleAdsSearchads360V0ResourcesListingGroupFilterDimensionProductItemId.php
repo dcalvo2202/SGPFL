@@ -20,16 +20,12 @@ namespace Google\Service\SA360;
 class GoogleAdsSearchads360V0ResourcesListingGroupFilterDimensionProductItemId extends \Google\Model
 {
   /**
-   * Value of the id.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Value of the id.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

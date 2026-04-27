@@ -20,8 +20,6 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1MutateDeployedIndexOperationMetadata extends \Google\Model
 {
   /**
-   * The unique index id specified by user
-   *
    * @var string
    */
   public $deployedIndexId;
@@ -29,9 +27,7 @@ class GoogleCloudAiplatformV1MutateDeployedIndexOperationMetadata extends \Googl
   protected $genericMetadataDataType = '';
 
   /**
-   * The unique index id specified by user
-   *
-   * @param string $deployedIndexId
+   * @param string
    */
   public function setDeployedIndexId($deployedIndexId)
   {
@@ -45,9 +41,7 @@ class GoogleCloudAiplatformV1MutateDeployedIndexOperationMetadata extends \Googl
     return $this->deployedIndexId;
   }
   /**
-   * The operation generic information.
-   *
-   * @param GoogleCloudAiplatformV1GenericOperationMetadata $genericMetadata
+   * @param GoogleCloudAiplatformV1GenericOperationMetadata
    */
   public function setGenericMetadata(GoogleCloudAiplatformV1GenericOperationMetadata $genericMetadata)
   {

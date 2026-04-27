@@ -20,8 +20,6 @@ namespace Google\Service\Dataform;
 class ActionErrorTable extends \Google\Model
 {
   /**
-   * Error table partition expiration in days. Only positive values are allowed.
-   *
    * @var int
    */
   public $retentionDays;
@@ -29,9 +27,7 @@ class ActionErrorTable extends \Google\Model
   protected $targetDataType = '';
 
   /**
-   * Error table partition expiration in days. Only positive values are allowed.
-   *
-   * @param int $retentionDays
+   * @param int
    */
   public function setRetentionDays($retentionDays)
   {
@@ -45,9 +41,7 @@ class ActionErrorTable extends \Google\Model
     return $this->retentionDays;
   }
   /**
-   * Error Table target.
-   *
-   * @param Target $target
+   * @param Target
    */
   public function setTarget(Target $target)
   {

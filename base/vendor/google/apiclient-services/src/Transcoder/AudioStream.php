@@ -21,67 +21,38 @@ class AudioStream extends \Google\Collection
 {
   protected $collection_key = 'mapping';
   /**
-   * Required. Audio bitrate in bits per second. Must be between 1 and
-   * 10,000,000.
-   *
    * @var int
    */
   public $bitrateBps;
   /**
-   * Number of audio channels. Must be between 1 and 6. The default is 2.
-   *
    * @var int
    */
   public $channelCount;
   /**
-   * A list of channel names specifying layout of the audio channels. This only
-   * affects the metadata embedded in the container headers, if supported by the
-   * specified format. The default is `["fl", "fr"]`. Supported channel names: -
-   * `fl` - Front left channel - `fr` - Front right channel - `sl` - Side left
-   * channel - `sr` - Side right channel - `fc` - Front center channel - `lfe` -
-   * Low frequency
-   *
    * @var string[]
    */
   public $channelLayout;
   /**
-   * The codec for this audio stream. The default is `aac`. Supported audio
-   * codecs: - `aac` - `aac-he` - `aac-he-v2` - `mp3` - `ac3` - `eac3` -
-   * `vorbis`
-   *
    * @var string
    */
   public $codec;
   /**
-   * The name for this particular audio stream that will be added to the
-   * HLS/DASH manifest. Not supported in MP4 files.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
-   * information, see
-   * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier. Not
-   * supported in MP4 files.
-   *
    * @var string
    */
   public $languageCode;
   protected $mappingType = AudioMapping::class;
   protected $mappingDataType = 'array';
   /**
-   * The audio sample rate in Hertz. The default is 48000 Hertz.
-   *
    * @var int
    */
   public $sampleRateHertz;
 
   /**
-   * Required. Audio bitrate in bits per second. Must be between 1 and
-   * 10,000,000.
-   *
-   * @param int $bitrateBps
+   * @param int
    */
   public function setBitrateBps($bitrateBps)
   {
@@ -95,9 +66,7 @@ class AudioStream extends \Google\Collection
     return $this->bitrateBps;
   }
   /**
-   * Number of audio channels. Must be between 1 and 6. The default is 2.
-   *
-   * @param int $channelCount
+   * @param int
    */
   public function setChannelCount($channelCount)
   {
@@ -111,14 +80,7 @@ class AudioStream extends \Google\Collection
     return $this->channelCount;
   }
   /**
-   * A list of channel names specifying layout of the audio channels. This only
-   * affects the metadata embedded in the container headers, if supported by the
-   * specified format. The default is `["fl", "fr"]`. Supported channel names: -
-   * `fl` - Front left channel - `fr` - Front right channel - `sl` - Side left
-   * channel - `sr` - Side right channel - `fc` - Front center channel - `lfe` -
-   * Low frequency
-   *
-   * @param string[] $channelLayout
+   * @param string[]
    */
   public function setChannelLayout($channelLayout)
   {
@@ -132,11 +94,7 @@ class AudioStream extends \Google\Collection
     return $this->channelLayout;
   }
   /**
-   * The codec for this audio stream. The default is `aac`. Supported audio
-   * codecs: - `aac` - `aac-he` - `aac-he-v2` - `mp3` - `ac3` - `eac3` -
-   * `vorbis`
-   *
-   * @param string $codec
+   * @param string
    */
   public function setCodec($codec)
   {
@@ -150,10 +108,7 @@ class AudioStream extends \Google\Collection
     return $this->codec;
   }
   /**
-   * The name for this particular audio stream that will be added to the
-   * HLS/DASH manifest. Not supported in MP4 files.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -167,12 +122,7 @@ class AudioStream extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
-   * information, see
-   * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier. Not
-   * supported in MP4 files.
-   *
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {
@@ -186,9 +136,7 @@ class AudioStream extends \Google\Collection
     return $this->languageCode;
   }
   /**
-   * The mapping for the JobConfig.edit_list atoms with audio EditAtom.inputs.
-   *
-   * @param AudioMapping[] $mapping
+   * @param AudioMapping[]
    */
   public function setMapping($mapping)
   {
@@ -202,9 +150,7 @@ class AudioStream extends \Google\Collection
     return $this->mapping;
   }
   /**
-   * The audio sample rate in Hertz. The default is 48000 Hertz.
-   *
-   * @param int $sampleRateHertz
+   * @param int
    */
   public function setSampleRateHertz($sampleRateHertz)
   {

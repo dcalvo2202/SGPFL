@@ -20,52 +20,28 @@ namespace Google\Service\YouTubeReporting;
 class GdataBlobstore2Info extends \Google\Model
 {
   /**
-   * gdata
-   *
    * @var string
    */
   public $blobGeneration;
   /**
-   * gdata
-   *
    * @var string
    */
   public $blobId;
   /**
-   * gdata
-   *
-   * @var string
-   */
-  public $downloadExternalReadToken;
-  /**
-   * gdata
-   *
    * @var string
    */
   public $downloadReadHandle;
   /**
-   * gdata
-   *
    * @var string
    */
   public $readToken;
   /**
-   * gdata
-   *
-   * @var string
-   */
-  public $uploadFragmentListCreationInfo;
-  /**
-   * gdata
-   *
    * @var string
    */
   public $uploadMetadataContainer;
 
   /**
-   * gdata
-   *
-   * @param string $blobGeneration
+   * @param string
    */
   public function setBlobGeneration($blobGeneration)
   {
@@ -79,9 +55,7 @@ class GdataBlobstore2Info extends \Google\Model
     return $this->blobGeneration;
   }
   /**
-   * gdata
-   *
-   * @param string $blobId
+   * @param string
    */
   public function setBlobId($blobId)
   {
@@ -95,25 +69,7 @@ class GdataBlobstore2Info extends \Google\Model
     return $this->blobId;
   }
   /**
-   * gdata
-   *
-   * @param string $downloadExternalReadToken
-   */
-  public function setDownloadExternalReadToken($downloadExternalReadToken)
-  {
-    $this->downloadExternalReadToken = $downloadExternalReadToken;
-  }
-  /**
-   * @return string
-   */
-  public function getDownloadExternalReadToken()
-  {
-    return $this->downloadExternalReadToken;
-  }
-  /**
-   * gdata
-   *
-   * @param string $downloadReadHandle
+   * @param string
    */
   public function setDownloadReadHandle($downloadReadHandle)
   {
@@ -127,9 +83,7 @@ class GdataBlobstore2Info extends \Google\Model
     return $this->downloadReadHandle;
   }
   /**
-   * gdata
-   *
-   * @param string $readToken
+   * @param string
    */
   public function setReadToken($readToken)
   {
@@ -143,25 +97,7 @@ class GdataBlobstore2Info extends \Google\Model
     return $this->readToken;
   }
   /**
-   * gdata
-   *
-   * @param string $uploadFragmentListCreationInfo
-   */
-  public function setUploadFragmentListCreationInfo($uploadFragmentListCreationInfo)
-  {
-    $this->uploadFragmentListCreationInfo = $uploadFragmentListCreationInfo;
-  }
-  /**
-   * @return string
-   */
-  public function getUploadFragmentListCreationInfo()
-  {
-    return $this->uploadFragmentListCreationInfo;
-  }
-  /**
-   * gdata
-   *
-   * @param string $uploadMetadataContainer
+   * @param string
    */
   public function setUploadMetadataContainer($uploadMetadataContainer)
   {

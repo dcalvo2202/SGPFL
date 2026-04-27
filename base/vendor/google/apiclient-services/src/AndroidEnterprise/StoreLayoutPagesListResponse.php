@@ -24,9 +24,7 @@ class StoreLayoutPagesListResponse extends \Google\Collection
   protected $pageDataType = 'array';
 
   /**
-   * A store page of an enterprise.
-   *
-   * @param StorePage[] $page
+   * @param StorePage[]
    */
   public function setPage($page)
   {

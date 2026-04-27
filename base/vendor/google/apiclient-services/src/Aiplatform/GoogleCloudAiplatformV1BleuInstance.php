@@ -20,22 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1BleuInstance extends \Google\Model
 {
   /**
-   * Required. Output of the evaluated model.
-   *
    * @var string
    */
   public $prediction;
   /**
-   * Required. Ground truth used to compare against the prediction.
-   *
    * @var string
    */
   public $reference;
 
   /**
-   * Required. Output of the evaluated model.
-   *
-   * @param string $prediction
+   * @param string
    */
   public function setPrediction($prediction)
   {
@@ -49,9 +43,7 @@ class GoogleCloudAiplatformV1BleuInstance extends \Google\Model
     return $this->prediction;
   }
   /**
-   * Required. Ground truth used to compare against the prediction.
-   *
-   * @param string $reference
+   * @param string
    */
   public function setReference($reference)
   {

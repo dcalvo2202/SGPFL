@@ -20,22 +20,14 @@ namespace Google\Service\CloudDomains;
 class Contact extends \Google\Model
 {
   /**
-   * Required. Email address of the contact.
-   *
    * @var string
    */
   public $email;
   /**
-   * Fax number of the contact in international format. For example,
-   * `"+1-800-555-0123"`.
-   *
    * @var string
    */
   public $faxNumber;
   /**
-   * Required. Phone number of the contact in international format. For example,
-   * `"+1-800-555-0123"`.
-   *
    * @var string
    */
   public $phoneNumber;
@@ -43,9 +35,7 @@ class Contact extends \Google\Model
   protected $postalAddressDataType = '';
 
   /**
-   * Required. Email address of the contact.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {
@@ -59,10 +49,7 @@ class Contact extends \Google\Model
     return $this->email;
   }
   /**
-   * Fax number of the contact in international format. For example,
-   * `"+1-800-555-0123"`.
-   *
-   * @param string $faxNumber
+   * @param string
    */
   public function setFaxNumber($faxNumber)
   {
@@ -76,10 +63,7 @@ class Contact extends \Google\Model
     return $this->faxNumber;
   }
   /**
-   * Required. Phone number of the contact in international format. For example,
-   * `"+1-800-555-0123"`.
-   *
-   * @param string $phoneNumber
+   * @param string
    */
   public function setPhoneNumber($phoneNumber)
   {
@@ -93,9 +77,7 @@ class Contact extends \Google\Model
     return $this->phoneNumber;
   }
   /**
-   * Required. Postal address of the contact.
-   *
-   * @param PostalAddress $postalAddress
+   * @param PostalAddress
    */
   public function setPostalAddress(PostalAddress $postalAddress)
   {

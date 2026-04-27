@@ -20,31 +20,20 @@ namespace Google\Service\Document;
 class GoogleCloudDocumentaiV1RawDocument extends \Google\Model
 {
   /**
-   * Inline document content.
-   *
    * @var string
    */
   public $content;
   /**
-   * The display name of the document, it supports all Unicode characters except
-   * the following: `*`, `?`, `[`, `]`, `%`, `{`, `}`,`'`, `\"`, `,` `~`, `=`
-   * and `:` are reserved. If not specified, a default ID is generated.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * An IANA MIME type (RFC6838) indicating the nature and format of the
-   * content.
-   *
    * @var string
    */
   public $mimeType;
 
   /**
-   * Inline document content.
-   *
-   * @param string $content
+   * @param string
    */
   public function setContent($content)
   {
@@ -58,11 +47,7 @@ class GoogleCloudDocumentaiV1RawDocument extends \Google\Model
     return $this->content;
   }
   /**
-   * The display name of the document, it supports all Unicode characters except
-   * the following: `*`, `?`, `[`, `]`, `%`, `{`, `}`,`'`, `\"`, `,` `~`, `=`
-   * and `:` are reserved. If not specified, a default ID is generated.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -76,10 +61,7 @@ class GoogleCloudDocumentaiV1RawDocument extends \Google\Model
     return $this->displayName;
   }
   /**
-   * An IANA MIME type (RFC6838) indicating the nature and format of the
-   * content.
-   *
-   * @param string $mimeType
+   * @param string
    */
   public function setMimeType($mimeType)
   {

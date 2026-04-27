@@ -23,10 +23,7 @@ class ToolExecutionStep extends \Google\Model
   protected $toolExecutionDataType = '';
 
   /**
-   * A Tool execution. - In response: present if set by create/update request -
-   * In create/update request: optional
-   *
-   * @param ToolExecution $toolExecution
+   * @param ToolExecution
    */
   public function setToolExecution(ToolExecution $toolExecution)
   {

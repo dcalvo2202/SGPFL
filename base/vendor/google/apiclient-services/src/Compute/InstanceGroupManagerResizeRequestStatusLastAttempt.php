@@ -23,9 +23,7 @@ class InstanceGroupManagerResizeRequestStatusLastAttempt extends \Google\Model
   protected $errorDataType = '';
 
   /**
-   * Output only. Errors that prevented the ResizeRequest to be fulfilled.
-   *
-   * @param InstanceGroupManagerResizeRequestStatusLastAttemptError $error
+   * @param InstanceGroupManagerResizeRequestStatusLastAttemptError
    */
   public function setError(InstanceGroupManagerResizeRequestStatusLastAttemptError $error)
   {

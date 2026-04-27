@@ -24,10 +24,7 @@ class BatchAnnotateFilesResponse extends \Google\Collection
   protected $responsesDataType = 'array';
 
   /**
-   * The list of file annotation responses, each response corresponding to each
-   * AnnotateFileRequest in BatchAnnotateFilesRequest.
-   *
-   * @param AnnotateFileResponse[] $responses
+   * @param AnnotateFileResponse[]
    */
   public function setResponses($responses)
   {

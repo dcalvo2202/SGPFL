@@ -20,28 +20,20 @@ namespace Google\Service\MyBusinessVerifications;
 class EmailVerificationData extends \Google\Model
 {
   /**
-   * Domain name in the email address. e.g. "gmail.com" in foo@gmail.com
-   *
    * @var string
    */
   public $domain;
   /**
-   * Whether client is allowed to provide a different user name.
-   *
    * @var bool
    */
   public $isUserNameEditable;
   /**
-   * User name in the email address. e.g. "foo" in foo@gmail.com
-   *
    * @var string
    */
   public $user;
 
   /**
-   * Domain name in the email address. e.g. "gmail.com" in foo@gmail.com
-   *
-   * @param string $domain
+   * @param string
    */
   public function setDomain($domain)
   {
@@ -55,9 +47,7 @@ class EmailVerificationData extends \Google\Model
     return $this->domain;
   }
   /**
-   * Whether client is allowed to provide a different user name.
-   *
-   * @param bool $isUserNameEditable
+   * @param bool
    */
   public function setIsUserNameEditable($isUserNameEditable)
   {
@@ -71,9 +61,7 @@ class EmailVerificationData extends \Google\Model
     return $this->isUserNameEditable;
   }
   /**
-   * User name in the email address. e.g. "foo" in foo@gmail.com
-   *
-   * @param string $user
+   * @param string
    */
   public function setUser($user)
   {

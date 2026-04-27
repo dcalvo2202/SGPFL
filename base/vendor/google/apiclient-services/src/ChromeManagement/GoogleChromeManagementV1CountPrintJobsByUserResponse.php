@@ -21,14 +21,10 @@ class GoogleChromeManagementV1CountPrintJobsByUserResponse extends \Google\Colle
 {
   protected $collection_key = 'userPrintReports';
   /**
-   * Pagination token for requesting the next page.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Total number of users matching request.
-   *
    * @var string
    */
   public $totalSize;
@@ -36,9 +32,7 @@ class GoogleChromeManagementV1CountPrintJobsByUserResponse extends \Google\Colle
   protected $userPrintReportsDataType = 'array';
 
   /**
-   * Pagination token for requesting the next page.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -52,9 +46,7 @@ class GoogleChromeManagementV1CountPrintJobsByUserResponse extends \Google\Colle
     return $this->nextPageToken;
   }
   /**
-   * Total number of users matching request.
-   *
-   * @param string $totalSize
+   * @param string
    */
   public function setTotalSize($totalSize)
   {
@@ -68,9 +60,7 @@ class GoogleChromeManagementV1CountPrintJobsByUserResponse extends \Google\Colle
     return $this->totalSize;
   }
   /**
-   * List of UserPrintReports matching request.
-   *
-   * @param GoogleChromeManagementV1UserPrintReport[] $userPrintReports
+   * @param GoogleChromeManagementV1UserPrintReport[]
    */
   public function setUserPrintReports($userPrintReports)
   {

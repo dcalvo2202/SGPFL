@@ -22,24 +22,16 @@ class FutureReservationSpecificSKUProperties extends \Google\Model
   protected $instancePropertiesType = AllocationSpecificSKUAllocationReservedInstanceProperties::class;
   protected $instancePropertiesDataType = '';
   /**
-   * The instance template that will be used to populate the
-   * ReservedInstanceProperties of the future reservation
-   *
    * @var string
    */
   public $sourceInstanceTemplate;
   /**
-   * Total number of instances for which capacity assurance is requested at a
-   * future time period.
-   *
    * @var string
    */
   public $totalCount;
 
   /**
-   * Properties of the SKU instances being reserved.
-   *
-   * @param AllocationSpecificSKUAllocationReservedInstanceProperties $instanceProperties
+   * @param AllocationSpecificSKUAllocationReservedInstanceProperties
    */
   public function setInstanceProperties(AllocationSpecificSKUAllocationReservedInstanceProperties $instanceProperties)
   {
@@ -53,10 +45,7 @@ class FutureReservationSpecificSKUProperties extends \Google\Model
     return $this->instanceProperties;
   }
   /**
-   * The instance template that will be used to populate the
-   * ReservedInstanceProperties of the future reservation
-   *
-   * @param string $sourceInstanceTemplate
+   * @param string
    */
   public function setSourceInstanceTemplate($sourceInstanceTemplate)
   {
@@ -70,10 +59,7 @@ class FutureReservationSpecificSKUProperties extends \Google\Model
     return $this->sourceInstanceTemplate;
   }
   /**
-   * Total number of instances for which capacity assurance is requested at a
-   * future time period.
-   *
-   * @param string $totalCount
+   * @param string
    */
   public function setTotalCount($totalCount)
   {

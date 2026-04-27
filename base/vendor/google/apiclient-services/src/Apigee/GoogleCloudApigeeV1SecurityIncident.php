@@ -19,101 +19,46 @@ namespace Google\Service\Apigee;
 
 class GoogleCloudApigeeV1SecurityIncident extends \Google\Collection
 {
-  /**
-   * The incident observability is unspecified.
-   */
-  public const OBSERVABILITY_OBSERVABILITY_UNSPECIFIED = 'OBSERVABILITY_UNSPECIFIED';
-  /**
-   * The incident is currently active. Can change to this status from archived.
-   */
-  public const OBSERVABILITY_ACTIVE = 'ACTIVE';
-  /**
-   * The incident is currently archived and was archived by the customer.
-   */
-  public const OBSERVABILITY_ARCHIVED = 'ARCHIVED';
-  /**
-   * Risk Level Unspecified.
-   */
-  public const RISK_LEVEL_RISK_LEVEL_UNSPECIFIED = 'RISK_LEVEL_UNSPECIFIED';
-  /**
-   * Risk level of the incident is low.
-   */
-  public const RISK_LEVEL_LOW = 'LOW';
-  /**
-   * Risk level of the incident is moderate.
-   */
-  public const RISK_LEVEL_MODERATE = 'MODERATE';
-  /**
-   * Risk level of the incident is severe.
-   */
-  public const RISK_LEVEL_SEVERE = 'SEVERE';
   protected $collection_key = 'detectionTypes';
   /**
-   * Output only. Detection types which are part of the incident. Examples:
-   * Flooder, OAuth Abuser, Static Content Scraper, Anomaly Detection.
-   *
    * @var string[]
    */
   public $detectionTypes;
   /**
-   * Optional. Display name of the security incident.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. The time when events associated with the incident were first
-   * detected.
-   *
    * @var string
    */
   public $firstDetectedTime;
   /**
-   * Output only. The time when events associated with the incident were last
-   * detected.
-   *
    * @var string
    */
   public $lastDetectedTime;
   /**
-   * Output only. The time when the incident observability was last changed.
-   *
    * @var string
    */
   public $lastObservabilityChangeTime;
   /**
-   * Immutable. Name of the security incident resource. Format:
-   * organizations/{org}/environments/{environment}/securityIncidents/{incident}
-   * Example: organizations/apigee-
-   * org/environments/dev/securityIncidents/1234-5678-9101-1111
-   *
    * @var string
    */
   public $name;
   /**
-   * Optional. Indicates if the user archived this incident.
-   *
    * @var string
    */
   public $observability;
   /**
-   * Output only. Risk level of the incident.
-   *
    * @var string
    */
   public $riskLevel;
   /**
-   * Total traffic detected as part of the incident.
-   *
    * @var string
    */
   public $trafficCount;
 
   /**
-   * Output only. Detection types which are part of the incident. Examples:
-   * Flooder, OAuth Abuser, Static Content Scraper, Anomaly Detection.
-   *
-   * @param string[] $detectionTypes
+   * @param string[]
    */
   public function setDetectionTypes($detectionTypes)
   {
@@ -127,9 +72,7 @@ class GoogleCloudApigeeV1SecurityIncident extends \Google\Collection
     return $this->detectionTypes;
   }
   /**
-   * Optional. Display name of the security incident.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -143,10 +86,7 @@ class GoogleCloudApigeeV1SecurityIncident extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Output only. The time when events associated with the incident were first
-   * detected.
-   *
-   * @param string $firstDetectedTime
+   * @param string
    */
   public function setFirstDetectedTime($firstDetectedTime)
   {
@@ -160,10 +100,7 @@ class GoogleCloudApigeeV1SecurityIncident extends \Google\Collection
     return $this->firstDetectedTime;
   }
   /**
-   * Output only. The time when events associated with the incident were last
-   * detected.
-   *
-   * @param string $lastDetectedTime
+   * @param string
    */
   public function setLastDetectedTime($lastDetectedTime)
   {
@@ -177,9 +114,7 @@ class GoogleCloudApigeeV1SecurityIncident extends \Google\Collection
     return $this->lastDetectedTime;
   }
   /**
-   * Output only. The time when the incident observability was last changed.
-   *
-   * @param string $lastObservabilityChangeTime
+   * @param string
    */
   public function setLastObservabilityChangeTime($lastObservabilityChangeTime)
   {
@@ -193,12 +128,7 @@ class GoogleCloudApigeeV1SecurityIncident extends \Google\Collection
     return $this->lastObservabilityChangeTime;
   }
   /**
-   * Immutable. Name of the security incident resource. Format:
-   * organizations/{org}/environments/{environment}/securityIncidents/{incident}
-   * Example: organizations/apigee-
-   * org/environments/dev/securityIncidents/1234-5678-9101-1111
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -212,45 +142,35 @@ class GoogleCloudApigeeV1SecurityIncident extends \Google\Collection
     return $this->name;
   }
   /**
-   * Optional. Indicates if the user archived this incident.
-   *
-   * Accepted values: OBSERVABILITY_UNSPECIFIED, ACTIVE, ARCHIVED
-   *
-   * @param self::OBSERVABILITY_* $observability
+   * @param string
    */
   public function setObservability($observability)
   {
     $this->observability = $observability;
   }
   /**
-   * @return self::OBSERVABILITY_*
+   * @return string
    */
   public function getObservability()
   {
     return $this->observability;
   }
   /**
-   * Output only. Risk level of the incident.
-   *
-   * Accepted values: RISK_LEVEL_UNSPECIFIED, LOW, MODERATE, SEVERE
-   *
-   * @param self::RISK_LEVEL_* $riskLevel
+   * @param string
    */
   public function setRiskLevel($riskLevel)
   {
     $this->riskLevel = $riskLevel;
   }
   /**
-   * @return self::RISK_LEVEL_*
+   * @return string
    */
   public function getRiskLevel()
   {
     return $this->riskLevel;
   }
   /**
-   * Total traffic detected as part of the incident.
-   *
-   * @param string $trafficCount
+   * @param string
    */
   public function setTrafficCount($trafficCount)
   {

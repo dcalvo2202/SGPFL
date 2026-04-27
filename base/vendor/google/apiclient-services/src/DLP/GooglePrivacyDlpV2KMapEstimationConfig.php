@@ -25,20 +25,12 @@ class GooglePrivacyDlpV2KMapEstimationConfig extends \Google\Collection
   protected $quasiIdsType = GooglePrivacyDlpV2TaggedField::class;
   protected $quasiIdsDataType = 'array';
   /**
-   * ISO 3166-1 alpha-2 region code to use in the statistical modeling. Set if
-   * no column is tagged with a region-specific InfoType (like US_ZIP_5) or a
-   * region code.
-   *
    * @var string
    */
   public $regionCode;
 
   /**
-   * Several auxiliary tables can be used in the analysis. Each custom_tag used
-   * to tag a quasi-identifiers column must appear in exactly one column of one
-   * auxiliary table.
-   *
-   * @param GooglePrivacyDlpV2AuxiliaryTable[] $auxiliaryTables
+   * @param GooglePrivacyDlpV2AuxiliaryTable[]
    */
   public function setAuxiliaryTables($auxiliaryTables)
   {
@@ -52,10 +44,7 @@ class GooglePrivacyDlpV2KMapEstimationConfig extends \Google\Collection
     return $this->auxiliaryTables;
   }
   /**
-   * Required. Fields considered to be quasi-identifiers. No two columns can
-   * have the same tag.
-   *
-   * @param GooglePrivacyDlpV2TaggedField[] $quasiIds
+   * @param GooglePrivacyDlpV2TaggedField[]
    */
   public function setQuasiIds($quasiIds)
   {
@@ -69,11 +58,7 @@ class GooglePrivacyDlpV2KMapEstimationConfig extends \Google\Collection
     return $this->quasiIds;
   }
   /**
-   * ISO 3166-1 alpha-2 region code to use in the statistical modeling. Set if
-   * no column is tagged with a region-specific InfoType (like US_ZIP_5) or a
-   * region code.
-   *
-   * @param string $regionCode
+   * @param string
    */
   public function setRegionCode($regionCode)
   {

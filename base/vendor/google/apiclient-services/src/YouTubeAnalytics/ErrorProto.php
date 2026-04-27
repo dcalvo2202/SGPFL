@@ -19,69 +19,28 @@ namespace Google\Service\YouTubeAnalytics;
 
 class ErrorProto extends \Google\Collection
 {
-  /**
-   * location is an xpath-like path pointing to the request field that caused
-   * the error.
-   */
-  public const LOCATION_TYPE_PATH = 'PATH';
-  /**
-   * other location type which can safely be shared externally.
-   */
-  public const LOCATION_TYPE_OTHER = 'OTHER';
-  /**
-   * Location is request parameter. This maps to the {@link PARAMETERS} in
-   * {@link MessageLocation}.
-   */
-  public const LOCATION_TYPE_PARAMETER = 'PARAMETER';
   protected $collection_key = 'argument';
   /**
-   * Error arguments, to be used when building user-friendly error messages
-   * given the error domain and code. Different error codes require different
-   * arguments.
-   *
    * @var string[]
    */
   public $argument;
   /**
-   * Error code in the error domain. This should correspond to a value of the
-   * enum type whose name is in domain. See the core error domain in
-   * error_domain.proto.
-   *
    * @var string
    */
   public $code;
   /**
-   * Debugging information, which should not be shared externally.
-   *
    * @var string
    */
   public $debugInfo;
   /**
-   * Error domain. RoSy services can define their own domain and error codes.
-   * This should normally be the name of an enum type, such as:
-   * gdata.CoreErrorDomain
-   *
    * @var string
    */
   public $domain;
   /**
-   * A short explanation for the error, which can be shared outside Google.
-   * Please set domain, code and arguments whenever possible instead of this
-   * error message so that external APIs can build safe error messages
-   * themselves. External messages built in a RoSy interface will most likely
-   * refer to information and concepts that are not available externally and
-   * should not be exposed. It is safer if external APIs can understand the
-   * errors and decide what the error message should look like.
-   *
    * @var string
    */
   public $externalErrorMessage;
   /**
-   * Location of the error, as specified by the location type. If location_type
-   * is PATH, this should be a path to a field that's relative to the request,
-   * using FieldPath notation (net/proto2/util/public/field_path.h). Examples:
-   * authenticated_user.gaia_id resource.address[2].country
-   *
    * @var string
    */
   public $location;
@@ -91,11 +50,7 @@ class ErrorProto extends \Google\Collection
   public $locationType;
 
   /**
-   * Error arguments, to be used when building user-friendly error messages
-   * given the error domain and code. Different error codes require different
-   * arguments.
-   *
-   * @param string[] $argument
+   * @param string[]
    */
   public function setArgument($argument)
   {
@@ -109,11 +64,7 @@ class ErrorProto extends \Google\Collection
     return $this->argument;
   }
   /**
-   * Error code in the error domain. This should correspond to a value of the
-   * enum type whose name is in domain. See the core error domain in
-   * error_domain.proto.
-   *
-   * @param string $code
+   * @param string
    */
   public function setCode($code)
   {
@@ -127,9 +78,7 @@ class ErrorProto extends \Google\Collection
     return $this->code;
   }
   /**
-   * Debugging information, which should not be shared externally.
-   *
-   * @param string $debugInfo
+   * @param string
    */
   public function setDebugInfo($debugInfo)
   {
@@ -143,11 +92,7 @@ class ErrorProto extends \Google\Collection
     return $this->debugInfo;
   }
   /**
-   * Error domain. RoSy services can define their own domain and error codes.
-   * This should normally be the name of an enum type, such as:
-   * gdata.CoreErrorDomain
-   *
-   * @param string $domain
+   * @param string
    */
   public function setDomain($domain)
   {
@@ -161,15 +106,7 @@ class ErrorProto extends \Google\Collection
     return $this->domain;
   }
   /**
-   * A short explanation for the error, which can be shared outside Google.
-   * Please set domain, code and arguments whenever possible instead of this
-   * error message so that external APIs can build safe error messages
-   * themselves. External messages built in a RoSy interface will most likely
-   * refer to information and concepts that are not available externally and
-   * should not be exposed. It is safer if external APIs can understand the
-   * errors and decide what the error message should look like.
-   *
-   * @param string $externalErrorMessage
+   * @param string
    */
   public function setExternalErrorMessage($externalErrorMessage)
   {
@@ -183,12 +120,7 @@ class ErrorProto extends \Google\Collection
     return $this->externalErrorMessage;
   }
   /**
-   * Location of the error, as specified by the location type. If location_type
-   * is PATH, this should be a path to a field that's relative to the request,
-   * using FieldPath notation (net/proto2/util/public/field_path.h). Examples:
-   * authenticated_user.gaia_id resource.address[2].country
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -202,14 +134,14 @@ class ErrorProto extends \Google\Collection
     return $this->location;
   }
   /**
-   * @param self::LOCATION_TYPE_* $locationType
+   * @param string
    */
   public function setLocationType($locationType)
   {
     $this->locationType = $locationType;
   }
   /**
-   * @return self::LOCATION_TYPE_*
+   * @return string
    */
   public function getLocationType()
   {

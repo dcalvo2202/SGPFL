@@ -23,18 +23,12 @@ class GoogleIamV1AuditConfig extends \Google\Collection
   protected $auditLogConfigsType = GoogleIamV1AuditLogConfig::class;
   protected $auditLogConfigsDataType = 'array';
   /**
-   * Specifies a service that will be enabled for audit logging. For example,
-   * storage.googleapis.com, cloudsql.googleapis.com. allServices is a special
-   * value that covers all services.
-   *
    * @var string
    */
   public $service;
 
   /**
-   * The configuration for logging of each type of permission.
-   *
-   * @param GoogleIamV1AuditLogConfig[] $auditLogConfigs
+   * @param GoogleIamV1AuditLogConfig[]
    */
   public function setAuditLogConfigs($auditLogConfigs)
   {
@@ -48,11 +42,7 @@ class GoogleIamV1AuditConfig extends \Google\Collection
     return $this->auditLogConfigs;
   }
   /**
-   * Specifies a service that will be enabled for audit logging. For example,
-   * storage.googleapis.com, cloudsql.googleapis.com. allServices is a special
-   * value that covers all services.
-   *
-   * @param string $service
+   * @param string
    */
   public function setService($service)
   {

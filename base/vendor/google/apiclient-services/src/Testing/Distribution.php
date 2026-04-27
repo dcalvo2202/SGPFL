@@ -19,16 +19,8 @@ namespace Google\Service\Testing;
 
 class Distribution extends \Google\Model
 {
-  /**
-   * Output only. The estimated fraction (0-1) of the total market with this
-   * configuration.
-   *
-   * @var 
-   */
   public $marketShare;
   /**
-   * Output only. The time this distribution was measured.
-   *
    * @var string
    */
   public $measurementTime;
@@ -42,9 +34,7 @@ class Distribution extends \Google\Model
     return $this->marketShare;
   }
   /**
-   * Output only. The time this distribution was measured.
-   *
-   * @param string $measurementTime
+   * @param string
    */
   public function setMeasurementTime($measurementTime)
   {

@@ -20,20 +20,12 @@ namespace Google\Service\HangoutsChat;
 class Group extends \Google\Model
 {
   /**
-   * Resource name for a Google Group. Represents a
-   * [group](https://cloud.google.com/identity/docs/reference/rest/v1/groups) in
-   * Cloud Identity Groups API. Format: groups/{group}
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Resource name for a Google Group. Represents a
-   * [group](https://cloud.google.com/identity/docs/reference/rest/v1/groups) in
-   * Cloud Identity Groups API. Format: groups/{group}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

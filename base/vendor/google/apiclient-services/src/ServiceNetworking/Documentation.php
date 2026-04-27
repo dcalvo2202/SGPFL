@@ -21,25 +21,14 @@ class Documentation extends \Google\Collection
 {
   protected $collection_key = 'sectionOverrides';
   /**
-   * Optional information about the IAM configuration. This is typically used to
-   * link to documentation about a product's IAM roles and permissions.
-   *
    * @var string
    */
   public $additionalIamInfo;
   /**
-   * The URL to the root of documentation.
-   *
    * @var string
    */
   public $documentationRootUrl;
   /**
-   * Declares a single overview page. For example: documentation: summary: ...
-   * overview: (== include overview.md ==) This is a shortcut for the following
-   * declaration (using pages style): documentation: summary: ... pages: - name:
-   * Overview content: (== include overview.md ==) Note: you cannot specify both
-   * `overview` field and `pages` field.
-   *
    * @var string
    */
   public $overview;
@@ -50,29 +39,16 @@ class Documentation extends \Google\Collection
   protected $sectionOverridesType = Page::class;
   protected $sectionOverridesDataType = 'array';
   /**
-   * Specifies the service root url if the default one (the service name from
-   * the yaml file) is not suitable. This can be seen in any fully specified
-   * service urls as well as sections that show a base that other urls are
-   * relative to.
-   *
    * @var string
    */
   public $serviceRootUrl;
   /**
-   * A short description of what the service does. The summary must be plain
-   * text. It becomes the overview of the service displayed in Google Cloud
-   * Console. NOTE: This field is equivalent to the standard field
-   * `description`.
-   *
    * @var string
    */
   public $summary;
 
   /**
-   * Optional information about the IAM configuration. This is typically used to
-   * link to documentation about a product's IAM roles and permissions.
-   *
-   * @param string $additionalIamInfo
+   * @param string
    */
   public function setAdditionalIamInfo($additionalIamInfo)
   {
@@ -86,9 +62,7 @@ class Documentation extends \Google\Collection
     return $this->additionalIamInfo;
   }
   /**
-   * The URL to the root of documentation.
-   *
-   * @param string $documentationRootUrl
+   * @param string
    */
   public function setDocumentationRootUrl($documentationRootUrl)
   {
@@ -102,13 +76,7 @@ class Documentation extends \Google\Collection
     return $this->documentationRootUrl;
   }
   /**
-   * Declares a single overview page. For example: documentation: summary: ...
-   * overview: (== include overview.md ==) This is a shortcut for the following
-   * declaration (using pages style): documentation: summary: ... pages: - name:
-   * Overview content: (== include overview.md ==) Note: you cannot specify both
-   * `overview` field and `pages` field.
-   *
-   * @param string $overview
+   * @param string
    */
   public function setOverview($overview)
   {
@@ -122,9 +90,7 @@ class Documentation extends \Google\Collection
     return $this->overview;
   }
   /**
-   * The top level pages for the documentation set.
-   *
-   * @param Page[] $pages
+   * @param Page[]
    */
   public function setPages($pages)
   {
@@ -138,10 +104,7 @@ class Documentation extends \Google\Collection
     return $this->pages;
   }
   /**
-   * A list of documentation rules that apply to individual API elements.
-   * **NOTE:** All service configuration rules follow "last one wins" order.
-   *
-   * @param DocumentationRule[] $rules
+   * @param DocumentationRule[]
    */
   public function setRules($rules)
   {
@@ -155,10 +118,7 @@ class Documentation extends \Google\Collection
     return $this->rules;
   }
   /**
-   * Specifies section and content to override the boilerplate content.
-   * Currently overrides following sections: 1. rest.service.client_libraries
-   *
-   * @param Page[] $sectionOverrides
+   * @param Page[]
    */
   public function setSectionOverrides($sectionOverrides)
   {
@@ -172,12 +132,7 @@ class Documentation extends \Google\Collection
     return $this->sectionOverrides;
   }
   /**
-   * Specifies the service root url if the default one (the service name from
-   * the yaml file) is not suitable. This can be seen in any fully specified
-   * service urls as well as sections that show a base that other urls are
-   * relative to.
-   *
-   * @param string $serviceRootUrl
+   * @param string
    */
   public function setServiceRootUrl($serviceRootUrl)
   {
@@ -191,12 +146,7 @@ class Documentation extends \Google\Collection
     return $this->serviceRootUrl;
   }
   /**
-   * A short description of what the service does. The summary must be plain
-   * text. It becomes the overview of the service displayed in Google Cloud
-   * Console. NOTE: This field is equivalent to the standard field
-   * `description`.
-   *
-   * @param string $summary
+   * @param string
    */
   public function setSummary($summary)
   {

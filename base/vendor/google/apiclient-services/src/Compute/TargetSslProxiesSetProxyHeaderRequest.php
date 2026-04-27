@@ -19,30 +19,20 @@ namespace Google\Service\Compute;
 
 class TargetSslProxiesSetProxyHeaderRequest extends \Google\Model
 {
-  public const PROXY_HEADER_NONE = 'NONE';
-  public const PROXY_HEADER_PROXY_V1 = 'PROXY_V1';
   /**
-   * The new type of proxy header to append before sending data to the backend.
-   * NONE or PROXY_V1 are allowed.
-   *
    * @var string
    */
   public $proxyHeader;
 
   /**
-   * The new type of proxy header to append before sending data to the backend.
-   * NONE or PROXY_V1 are allowed.
-   *
-   * Accepted values: NONE, PROXY_V1
-   *
-   * @param self::PROXY_HEADER_* $proxyHeader
+   * @param string
    */
   public function setProxyHeader($proxyHeader)
   {
     $this->proxyHeader = $proxyHeader;
   }
   /**
-   * @return self::PROXY_HEADER_*
+   * @return string
    */
   public function getProxyHeader()
   {

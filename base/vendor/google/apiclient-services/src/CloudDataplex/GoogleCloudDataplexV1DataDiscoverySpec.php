@@ -25,9 +25,7 @@ class GoogleCloudDataplexV1DataDiscoverySpec extends \Google\Model
   protected $storageConfigDataType = '';
 
   /**
-   * Optional. Configuration for metadata publishing.
-   *
-   * @param GoogleCloudDataplexV1DataDiscoverySpecBigQueryPublishingConfig $bigqueryPublishingConfig
+   * @param GoogleCloudDataplexV1DataDiscoverySpecBigQueryPublishingConfig
    */
   public function setBigqueryPublishingConfig(GoogleCloudDataplexV1DataDiscoverySpecBigQueryPublishingConfig $bigqueryPublishingConfig)
   {
@@ -41,9 +39,7 @@ class GoogleCloudDataplexV1DataDiscoverySpec extends \Google\Model
     return $this->bigqueryPublishingConfig;
   }
   /**
-   * Cloud Storage related configurations.
-   *
-   * @param GoogleCloudDataplexV1DataDiscoverySpecStorageConfig $storageConfig
+   * @param GoogleCloudDataplexV1DataDiscoverySpecStorageConfig
    */
   public function setStorageConfig(GoogleCloudDataplexV1DataDiscoverySpecStorageConfig $storageConfig)
   {

@@ -20,11 +20,6 @@ namespace Google\Service\Document;
 class GoogleCloudDocumentaiV1TrainProcessorVersionRequest extends \Google\Model
 {
   /**
-   * Optional. The processor version to use as a base for training. This
-   * processor version must be a child of `parent`. Format: `projects/{project}/
-   * locations/{location}/processors/{processor}/processorVersions/{processorVer
-   * sion}`.
-   *
    * @var string
    */
   public $baseProcessorVersion;
@@ -40,12 +35,7 @@ class GoogleCloudDocumentaiV1TrainProcessorVersionRequest extends \Google\Model
   protected $processorVersionDataType = '';
 
   /**
-   * Optional. The processor version to use as a base for training. This
-   * processor version must be a child of `parent`. Format: `projects/{project}/
-   * locations/{location}/processors/{processor}/processorVersions/{processorVer
-   * sion}`.
-   *
-   * @param string $baseProcessorVersion
+   * @param string
    */
   public function setBaseProcessorVersion($baseProcessorVersion)
   {
@@ -59,9 +49,7 @@ class GoogleCloudDocumentaiV1TrainProcessorVersionRequest extends \Google\Model
     return $this->baseProcessorVersion;
   }
   /**
-   * Options to control Custom Document Extraction (CDE) Processor.
-   *
-   * @param GoogleCloudDocumentaiV1TrainProcessorVersionRequestCustomDocumentExtractionOptions $customDocumentExtractionOptions
+   * @param GoogleCloudDocumentaiV1TrainProcessorVersionRequestCustomDocumentExtractionOptions
    */
   public function setCustomDocumentExtractionOptions(GoogleCloudDocumentaiV1TrainProcessorVersionRequestCustomDocumentExtractionOptions $customDocumentExtractionOptions)
   {
@@ -75,9 +63,7 @@ class GoogleCloudDocumentaiV1TrainProcessorVersionRequest extends \Google\Model
     return $this->customDocumentExtractionOptions;
   }
   /**
-   * Optional. The schema the processor version will be trained with.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentSchema $documentSchema
+   * @param GoogleCloudDocumentaiV1DocumentSchema
    */
   public function setDocumentSchema(GoogleCloudDocumentaiV1DocumentSchema $documentSchema)
   {
@@ -91,9 +77,7 @@ class GoogleCloudDocumentaiV1TrainProcessorVersionRequest extends \Google\Model
     return $this->documentSchema;
   }
   /**
-   * Options to control foundation model tuning of a processor.
-   *
-   * @param GoogleCloudDocumentaiV1TrainProcessorVersionRequestFoundationModelTuningOptions $foundationModelTuningOptions
+   * @param GoogleCloudDocumentaiV1TrainProcessorVersionRequestFoundationModelTuningOptions
    */
   public function setFoundationModelTuningOptions(GoogleCloudDocumentaiV1TrainProcessorVersionRequestFoundationModelTuningOptions $foundationModelTuningOptions)
   {
@@ -107,9 +91,7 @@ class GoogleCloudDocumentaiV1TrainProcessorVersionRequest extends \Google\Model
     return $this->foundationModelTuningOptions;
   }
   /**
-   * Optional. The input data used to train the ProcessorVersion.
-   *
-   * @param GoogleCloudDocumentaiV1TrainProcessorVersionRequestInputData $inputData
+   * @param GoogleCloudDocumentaiV1TrainProcessorVersionRequestInputData
    */
   public function setInputData(GoogleCloudDocumentaiV1TrainProcessorVersionRequestInputData $inputData)
   {
@@ -123,9 +105,7 @@ class GoogleCloudDocumentaiV1TrainProcessorVersionRequest extends \Google\Model
     return $this->inputData;
   }
   /**
-   * Required. The processor version to be created.
-   *
-   * @param GoogleCloudDocumentaiV1ProcessorVersion $processorVersion
+   * @param GoogleCloudDocumentaiV1ProcessorVersion
    */
   public function setProcessorVersion(GoogleCloudDocumentaiV1ProcessorVersion $processorVersion)
   {

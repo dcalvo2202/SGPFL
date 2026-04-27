@@ -19,30 +19,11 @@ namespace Google\Service\DataLabeling;
 
 class GoogleCloudDatalabelingV1beta1LabelVideoRequest extends \Google\Model
 {
-  public const FEATURE_FEATURE_UNSPECIFIED = 'FEATURE_UNSPECIFIED';
-  /**
-   * Label whole video or video segment with one or more labels.
-   */
-  public const FEATURE_CLASSIFICATION = 'CLASSIFICATION';
-  /**
-   * Label objects with bounding box on image frames extracted from the video.
-   */
-  public const FEATURE_OBJECT_DETECTION = 'OBJECT_DETECTION';
-  /**
-   * Label and track objects in video.
-   */
-  public const FEATURE_OBJECT_TRACKING = 'OBJECT_TRACKING';
-  /**
-   * Label the range of video for the specified events.
-   */
-  public const FEATURE_EVENT = 'EVENT';
   protected $basicConfigType = GoogleCloudDatalabelingV1beta1HumanAnnotationConfig::class;
   protected $basicConfigDataType = '';
   protected $eventConfigType = GoogleCloudDatalabelingV1beta1EventConfig::class;
   protected $eventConfigDataType = '';
   /**
-   * Required. The type of video labeling task.
-   *
    * @var string
    */
   public $feature;
@@ -54,9 +35,7 @@ class GoogleCloudDatalabelingV1beta1LabelVideoRequest extends \Google\Model
   protected $videoClassificationConfigDataType = '';
 
   /**
-   * Required. Basic human annotation config.
-   *
-   * @param GoogleCloudDatalabelingV1beta1HumanAnnotationConfig $basicConfig
+   * @param GoogleCloudDatalabelingV1beta1HumanAnnotationConfig
    */
   public function setBasicConfig(GoogleCloudDatalabelingV1beta1HumanAnnotationConfig $basicConfig)
   {
@@ -70,11 +49,7 @@ class GoogleCloudDatalabelingV1beta1LabelVideoRequest extends \Google\Model
     return $this->basicConfig;
   }
   /**
-   * Configuration for video event task. One of video_classification_config,
-   * object_detection_config, object_tracking_config and event_config is
-   * required.
-   *
-   * @param GoogleCloudDatalabelingV1beta1EventConfig $eventConfig
+   * @param GoogleCloudDatalabelingV1beta1EventConfig
    */
   public function setEventConfig(GoogleCloudDatalabelingV1beta1EventConfig $eventConfig)
   {
@@ -88,30 +63,21 @@ class GoogleCloudDatalabelingV1beta1LabelVideoRequest extends \Google\Model
     return $this->eventConfig;
   }
   /**
-   * Required. The type of video labeling task.
-   *
-   * Accepted values: FEATURE_UNSPECIFIED, CLASSIFICATION, OBJECT_DETECTION,
-   * OBJECT_TRACKING, EVENT
-   *
-   * @param self::FEATURE_* $feature
+   * @param string
    */
   public function setFeature($feature)
   {
     $this->feature = $feature;
   }
   /**
-   * @return self::FEATURE_*
+   * @return string
    */
   public function getFeature()
   {
     return $this->feature;
   }
   /**
-   * Configuration for video object detection task. One of
-   * video_classification_config, object_detection_config,
-   * object_tracking_config and event_config is required.
-   *
-   * @param GoogleCloudDatalabelingV1beta1ObjectDetectionConfig $objectDetectionConfig
+   * @param GoogleCloudDatalabelingV1beta1ObjectDetectionConfig
    */
   public function setObjectDetectionConfig(GoogleCloudDatalabelingV1beta1ObjectDetectionConfig $objectDetectionConfig)
   {
@@ -125,11 +91,7 @@ class GoogleCloudDatalabelingV1beta1LabelVideoRequest extends \Google\Model
     return $this->objectDetectionConfig;
   }
   /**
-   * Configuration for video object tracking task. One of
-   * video_classification_config, object_detection_config,
-   * object_tracking_config and event_config is required.
-   *
-   * @param GoogleCloudDatalabelingV1beta1ObjectTrackingConfig $objectTrackingConfig
+   * @param GoogleCloudDatalabelingV1beta1ObjectTrackingConfig
    */
   public function setObjectTrackingConfig(GoogleCloudDatalabelingV1beta1ObjectTrackingConfig $objectTrackingConfig)
   {
@@ -143,11 +105,7 @@ class GoogleCloudDatalabelingV1beta1LabelVideoRequest extends \Google\Model
     return $this->objectTrackingConfig;
   }
   /**
-   * Configuration for video classification task. One of
-   * video_classification_config, object_detection_config,
-   * object_tracking_config and event_config is required.
-   *
-   * @param GoogleCloudDatalabelingV1beta1VideoClassificationConfig $videoClassificationConfig
+   * @param GoogleCloudDatalabelingV1beta1VideoClassificationConfig
    */
   public function setVideoClassificationConfig(GoogleCloudDatalabelingV1beta1VideoClassificationConfig $videoClassificationConfig)
   {

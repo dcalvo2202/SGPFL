@@ -19,129 +19,54 @@ namespace Google\Service\Recommender;
 
 class GoogleCloudRecommenderV1Insight extends \Google\Collection
 {
-  /**
-   * Unspecified category.
-   */
-  public const CATEGORY_CATEGORY_UNSPECIFIED = 'CATEGORY_UNSPECIFIED';
-  /**
-   * The insight is related to cost.
-   */
-  public const CATEGORY_COST = 'COST';
-  /**
-   * The insight is related to security.
-   */
-  public const CATEGORY_SECURITY = 'SECURITY';
-  /**
-   * The insight is related to performance.
-   */
-  public const CATEGORY_PERFORMANCE = 'PERFORMANCE';
-  /**
-   * This insight is related to manageability.
-   */
-  public const CATEGORY_MANAGEABILITY = 'MANAGEABILITY';
-  /**
-   * The insight is related to sustainability.
-   */
-  public const CATEGORY_SUSTAINABILITY = 'SUSTAINABILITY';
-  /**
-   * This insight is related to reliability.
-   */
-  public const CATEGORY_RELIABILITY = 'RELIABILITY';
-  /**
-   * Insight has unspecified severity.
-   */
-  public const SEVERITY_SEVERITY_UNSPECIFIED = 'SEVERITY_UNSPECIFIED';
-  /**
-   * Insight has low severity.
-   */
-  public const SEVERITY_LOW = 'LOW';
-  /**
-   * Insight has medium severity.
-   */
-  public const SEVERITY_MEDIUM = 'MEDIUM';
-  /**
-   * Insight has high severity.
-   */
-  public const SEVERITY_HIGH = 'HIGH';
-  /**
-   * Insight has critical severity.
-   */
-  public const SEVERITY_CRITICAL = 'CRITICAL';
   protected $collection_key = 'targetResources';
   protected $associatedRecommendationsType = GoogleCloudRecommenderV1InsightRecommendationReference::class;
   protected $associatedRecommendationsDataType = 'array';
   /**
-   * Category being targeted by the insight.
-   *
    * @var string
    */
   public $category;
   /**
-   * A struct of custom fields to explain the insight. Example:
-   * "grantedPermissionsCount": "1000"
-   *
    * @var array[]
    */
   public $content;
   /**
-   * Free-form human readable summary in English. The maximum length is 500
-   * characters.
-   *
    * @var string
    */
   public $description;
   /**
-   * Fingerprint of the Insight. Provides optimistic locking when updating
-   * states.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Insight subtype. Insight content schema will be stable for a given subtype.
-   *
    * @var string
    */
   public $insightSubtype;
   /**
-   * Timestamp of the latest data used to generate the insight.
-   *
    * @var string
    */
   public $lastRefreshTime;
   /**
-   * Identifier. Name of the insight.
-   *
    * @var string
    */
   public $name;
   /**
-   * Observation period that led to the insight. The source data used to
-   * generate the insight ends at last_refresh_time and begins at
-   * (last_refresh_time - observation_period).
-   *
    * @var string
    */
   public $observationPeriod;
   /**
-   * Insight's severity.
-   *
    * @var string
    */
   public $severity;
   protected $stateInfoType = GoogleCloudRecommenderV1InsightStateInfo::class;
   protected $stateInfoDataType = '';
   /**
-   * Fully qualified resource names that this insight is targeting.
-   *
    * @var string[]
    */
   public $targetResources;
 
   /**
-   * Recommendations derived from this insight.
-   *
-   * @param GoogleCloudRecommenderV1InsightRecommendationReference[] $associatedRecommendations
+   * @param GoogleCloudRecommenderV1InsightRecommendationReference[]
    */
   public function setAssociatedRecommendations($associatedRecommendations)
   {
@@ -155,29 +80,21 @@ class GoogleCloudRecommenderV1Insight extends \Google\Collection
     return $this->associatedRecommendations;
   }
   /**
-   * Category being targeted by the insight.
-   *
-   * Accepted values: CATEGORY_UNSPECIFIED, COST, SECURITY, PERFORMANCE,
-   * MANAGEABILITY, SUSTAINABILITY, RELIABILITY
-   *
-   * @param self::CATEGORY_* $category
+   * @param string
    */
   public function setCategory($category)
   {
     $this->category = $category;
   }
   /**
-   * @return self::CATEGORY_*
+   * @return string
    */
   public function getCategory()
   {
     return $this->category;
   }
   /**
-   * A struct of custom fields to explain the insight. Example:
-   * "grantedPermissionsCount": "1000"
-   *
-   * @param array[] $content
+   * @param array[]
    */
   public function setContent($content)
   {
@@ -191,10 +108,7 @@ class GoogleCloudRecommenderV1Insight extends \Google\Collection
     return $this->content;
   }
   /**
-   * Free-form human readable summary in English. The maximum length is 500
-   * characters.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -208,10 +122,7 @@ class GoogleCloudRecommenderV1Insight extends \Google\Collection
     return $this->description;
   }
   /**
-   * Fingerprint of the Insight. Provides optimistic locking when updating
-   * states.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -225,9 +136,7 @@ class GoogleCloudRecommenderV1Insight extends \Google\Collection
     return $this->etag;
   }
   /**
-   * Insight subtype. Insight content schema will be stable for a given subtype.
-   *
-   * @param string $insightSubtype
+   * @param string
    */
   public function setInsightSubtype($insightSubtype)
   {
@@ -241,9 +150,7 @@ class GoogleCloudRecommenderV1Insight extends \Google\Collection
     return $this->insightSubtype;
   }
   /**
-   * Timestamp of the latest data used to generate the insight.
-   *
-   * @param string $lastRefreshTime
+   * @param string
    */
   public function setLastRefreshTime($lastRefreshTime)
   {
@@ -257,9 +164,7 @@ class GoogleCloudRecommenderV1Insight extends \Google\Collection
     return $this->lastRefreshTime;
   }
   /**
-   * Identifier. Name of the insight.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -273,11 +178,7 @@ class GoogleCloudRecommenderV1Insight extends \Google\Collection
     return $this->name;
   }
   /**
-   * Observation period that led to the insight. The source data used to
-   * generate the insight ends at last_refresh_time and begins at
-   * (last_refresh_time - observation_period).
-   *
-   * @param string $observationPeriod
+   * @param string
    */
   public function setObservationPeriod($observationPeriod)
   {
@@ -291,27 +192,21 @@ class GoogleCloudRecommenderV1Insight extends \Google\Collection
     return $this->observationPeriod;
   }
   /**
-   * Insight's severity.
-   *
-   * Accepted values: SEVERITY_UNSPECIFIED, LOW, MEDIUM, HIGH, CRITICAL
-   *
-   * @param self::SEVERITY_* $severity
+   * @param string
    */
   public function setSeverity($severity)
   {
     $this->severity = $severity;
   }
   /**
-   * @return self::SEVERITY_*
+   * @return string
    */
   public function getSeverity()
   {
     return $this->severity;
   }
   /**
-   * Information state and metadata.
-   *
-   * @param GoogleCloudRecommenderV1InsightStateInfo $stateInfo
+   * @param GoogleCloudRecommenderV1InsightStateInfo
    */
   public function setStateInfo(GoogleCloudRecommenderV1InsightStateInfo $stateInfo)
   {
@@ -325,9 +220,7 @@ class GoogleCloudRecommenderV1Insight extends \Google\Collection
     return $this->stateInfo;
   }
   /**
-   * Fully qualified resource names that this insight is targeting.
-   *
-   * @param string[] $targetResources
+   * @param string[]
    */
   public function setTargetResources($targetResources)
   {

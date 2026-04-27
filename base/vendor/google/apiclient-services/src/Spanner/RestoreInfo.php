@@ -19,28 +19,15 @@ namespace Google\Service\Spanner;
 
 class RestoreInfo extends \Google\Model
 {
-  /**
-   * No restore associated.
-   */
-  public const SOURCE_TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * A backup was used as the source of the restore.
-   */
-  public const SOURCE_TYPE_BACKUP = 'BACKUP';
   protected $backupInfoType = BackupInfo::class;
   protected $backupInfoDataType = '';
   /**
-   * The type of the restore source.
-   *
    * @var string
    */
   public $sourceType;
 
   /**
-   * Information about the backup used to restore the database. The backup may
-   * no longer exist.
-   *
-   * @param BackupInfo $backupInfo
+   * @param BackupInfo
    */
   public function setBackupInfo(BackupInfo $backupInfo)
   {
@@ -54,18 +41,14 @@ class RestoreInfo extends \Google\Model
     return $this->backupInfo;
   }
   /**
-   * The type of the restore source.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, BACKUP
-   *
-   * @param self::SOURCE_TYPE_* $sourceType
+   * @param string
    */
   public function setSourceType($sourceType)
   {
     $this->sourceType = $sourceType;
   }
   /**
-   * @return self::SOURCE_TYPE_*
+   * @return string
    */
   public function getSourceType()
   {

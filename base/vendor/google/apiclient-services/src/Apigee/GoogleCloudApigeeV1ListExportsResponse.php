@@ -24,9 +24,7 @@ class GoogleCloudApigeeV1ListExportsResponse extends \Google\Collection
   protected $exportsDataType = 'array';
 
   /**
-   * Details of the export jobs.
-   *
-   * @param GoogleCloudApigeeV1Export[] $exports
+   * @param GoogleCloudApigeeV1Export[]
    */
   public function setExports($exports)
   {

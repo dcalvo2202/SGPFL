@@ -23,51 +23,32 @@ class EntityUserLinks extends \Google\Collection
   protected $itemsType = EntityUserLink::class;
   protected $itemsDataType = 'array';
   /**
-   * The maximum number of entries the response can contain, regardless of the
-   * actual number of entries returned. Its value ranges from 1 to 1000 with a
-   * value of 1000 by default, or otherwise specified by the max-results query
-   * parameter.
-   *
    * @var int
    */
   public $itemsPerPage;
   /**
-   * Collection type.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Next link for this account collection.
-   *
    * @var string
    */
   public $nextLink;
   /**
-   * Previous link for this account collection.
-   *
    * @var string
    */
   public $previousLink;
   /**
-   * The starting index of the entries, which is 1 by default or otherwise
-   * specified by the start-index query parameter.
-   *
    * @var int
    */
   public $startIndex;
   /**
-   * The total number of results for the query, regardless of the number of
-   * results in the response.
-   *
    * @var int
    */
   public $totalResults;
 
   /**
-   * A list of entity user links.
-   *
-   * @param EntityUserLink[] $items
+   * @param EntityUserLink[]
    */
   public function setItems($items)
   {
@@ -81,12 +62,7 @@ class EntityUserLinks extends \Google\Collection
     return $this->items;
   }
   /**
-   * The maximum number of entries the response can contain, regardless of the
-   * actual number of entries returned. Its value ranges from 1 to 1000 with a
-   * value of 1000 by default, or otherwise specified by the max-results query
-   * parameter.
-   *
-   * @param int $itemsPerPage
+   * @param int
    */
   public function setItemsPerPage($itemsPerPage)
   {
@@ -100,9 +76,7 @@ class EntityUserLinks extends \Google\Collection
     return $this->itemsPerPage;
   }
   /**
-   * Collection type.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -116,9 +90,7 @@ class EntityUserLinks extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Next link for this account collection.
-   *
-   * @param string $nextLink
+   * @param string
    */
   public function setNextLink($nextLink)
   {
@@ -132,9 +104,7 @@ class EntityUserLinks extends \Google\Collection
     return $this->nextLink;
   }
   /**
-   * Previous link for this account collection.
-   *
-   * @param string $previousLink
+   * @param string
    */
   public function setPreviousLink($previousLink)
   {
@@ -148,10 +118,7 @@ class EntityUserLinks extends \Google\Collection
     return $this->previousLink;
   }
   /**
-   * The starting index of the entries, which is 1 by default or otherwise
-   * specified by the start-index query parameter.
-   *
-   * @param int $startIndex
+   * @param int
    */
   public function setStartIndex($startIndex)
   {
@@ -165,10 +132,7 @@ class EntityUserLinks extends \Google\Collection
     return $this->startIndex;
   }
   /**
-   * The total number of results for the query, regardless of the number of
-   * results in the response.
-   *
-   * @param int $totalResults
+   * @param int
    */
   public function setTotalResults($totalResults)
   {

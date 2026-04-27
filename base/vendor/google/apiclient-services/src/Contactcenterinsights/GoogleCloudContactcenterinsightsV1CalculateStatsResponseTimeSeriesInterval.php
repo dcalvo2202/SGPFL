@@ -20,22 +20,16 @@ namespace Google\Service\Contactcenterinsights;
 class GoogleCloudContactcenterinsightsV1CalculateStatsResponseTimeSeriesInterval extends \Google\Model
 {
   /**
-   * The number of conversations created in this interval.
-   *
    * @var int
    */
   public $conversationCount;
   /**
-   * The start time of this interval.
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * The number of conversations created in this interval.
-   *
-   * @param int $conversationCount
+   * @param int
    */
   public function setConversationCount($conversationCount)
   {
@@ -49,9 +43,7 @@ class GoogleCloudContactcenterinsightsV1CalculateStatsResponseTimeSeriesInterval
     return $this->conversationCount;
   }
   /**
-   * The start time of this interval.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

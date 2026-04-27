@@ -23,16 +23,12 @@ class GoogleCloudDatalabelingV1beta1ListAnnotatedDatasetsResponse extends \Googl
   protected $annotatedDatasetsType = GoogleCloudDatalabelingV1beta1AnnotatedDataset::class;
   protected $annotatedDatasetsDataType = 'array';
   /**
-   * A token to retrieve next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of annotated datasets to return.
-   *
-   * @param GoogleCloudDatalabelingV1beta1AnnotatedDataset[] $annotatedDatasets
+   * @param GoogleCloudDatalabelingV1beta1AnnotatedDataset[]
    */
   public function setAnnotatedDatasets($annotatedDatasets)
   {
@@ -46,9 +42,7 @@ class GoogleCloudDatalabelingV1beta1ListAnnotatedDatasetsResponse extends \Googl
     return $this->annotatedDatasets;
   }
   /**
-   * A token to retrieve next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

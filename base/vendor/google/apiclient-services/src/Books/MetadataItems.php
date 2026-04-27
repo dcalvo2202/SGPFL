@@ -45,7 +45,7 @@ class MetadataItems extends \Google\Model
   public $version;
 
   /**
-   * @param string $downloadUrl
+   * @param string
    */
   public function setDownloadUrl($downloadUrl)
   {
@@ -59,7 +59,7 @@ class MetadataItems extends \Google\Model
     return $this->downloadUrl;
   }
   /**
-   * @param string $encryptedKey
+   * @param string
    */
   public function setEncryptedKey($encryptedKey)
   {
@@ -73,7 +73,7 @@ class MetadataItems extends \Google\Model
     return $this->encryptedKey;
   }
   /**
-   * @param string $language
+   * @param string
    */
   public function setLanguage($language)
   {
@@ -87,7 +87,7 @@ class MetadataItems extends \Google\Model
     return $this->language;
   }
   /**
-   * @param string $size
+   * @param string
    */
   public function setSize($size)
   {
@@ -101,7 +101,7 @@ class MetadataItems extends \Google\Model
     return $this->size;
   }
   /**
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

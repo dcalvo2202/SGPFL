@@ -23,9 +23,7 @@ class GoogleCloudBeyondcorpAppconnectorsV1ResolveInstanceConfigResponse extends 
   protected $instanceConfigDataType = '';
 
   /**
-   * AppConnectorInstanceConfig.
-   *
-   * @param GoogleCloudBeyondcorpAppconnectorsV1AppConnectorInstanceConfig $instanceConfig
+   * @param GoogleCloudBeyondcorpAppconnectorsV1AppConnectorInstanceConfig
    */
   public function setInstanceConfig(GoogleCloudBeyondcorpAppconnectorsV1AppConnectorInstanceConfig $instanceConfig)
   {

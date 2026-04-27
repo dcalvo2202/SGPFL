@@ -19,43 +19,16 @@ namespace Google\Service\DataCatalog;
 
 class GoogleCloudDatacatalogV1ImportEntriesMetadata extends \Google\Collection
 {
-  /**
-   * Default value. This value is unused.
-   */
-  public const STATE_IMPORT_STATE_UNSPECIFIED = 'IMPORT_STATE_UNSPECIFIED';
-  /**
-   * The dump with entries has been queued for import.
-   */
-  public const STATE_IMPORT_QUEUED = 'IMPORT_QUEUED';
-  /**
-   * The import of entries is in progress.
-   */
-  public const STATE_IMPORT_IN_PROGRESS = 'IMPORT_IN_PROGRESS';
-  /**
-   * The import of entries has been finished.
-   */
-  public const STATE_IMPORT_DONE = 'IMPORT_DONE';
-  /**
-   * The import of entries has been abandoned in favor of a newer request.
-   */
-  public const STATE_IMPORT_OBSOLETE = 'IMPORT_OBSOLETE';
   protected $collection_key = 'errors';
   protected $errorsType = Status::class;
   protected $errorsDataType = 'array';
   /**
-   * State of the import operation.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Partial errors that are encountered during the ImportEntries operation.
-   * There is no guarantee that all the encountered errors are reported.
-   * However, if no errors are reported, it means that no errors were
-   * encountered.
-   *
-   * @param Status[] $errors
+   * @param Status[]
    */
   public function setErrors($errors)
   {
@@ -69,19 +42,14 @@ class GoogleCloudDatacatalogV1ImportEntriesMetadata extends \Google\Collection
     return $this->errors;
   }
   /**
-   * State of the import operation.
-   *
-   * Accepted values: IMPORT_STATE_UNSPECIFIED, IMPORT_QUEUED,
-   * IMPORT_IN_PROGRESS, IMPORT_DONE, IMPORT_OBSOLETE
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

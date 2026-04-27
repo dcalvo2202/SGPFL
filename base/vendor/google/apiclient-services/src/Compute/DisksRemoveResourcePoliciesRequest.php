@@ -21,16 +21,12 @@ class DisksRemoveResourcePoliciesRequest extends \Google\Collection
 {
   protected $collection_key = 'resourcePolicies';
   /**
-   * Resource policies to be removed from this disk.
-   *
    * @var string[]
    */
   public $resourcePolicies;
 
   /**
-   * Resource policies to be removed from this disk.
-   *
-   * @param string[] $resourcePolicies
+   * @param string[]
    */
   public function setResourcePolicies($resourcePolicies)
   {

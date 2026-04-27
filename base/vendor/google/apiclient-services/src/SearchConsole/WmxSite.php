@@ -19,59 +19,31 @@ namespace Google\Service\SearchConsole;
 
 class WmxSite extends \Google\Model
 {
-  public const PERMISSION_LEVEL_SITE_PERMISSION_LEVEL_UNSPECIFIED = 'SITE_PERMISSION_LEVEL_UNSPECIFIED';
   /**
-   * Owner has complete access to the site.
-   */
-  public const PERMISSION_LEVEL_SITE_OWNER = 'SITE_OWNER';
-  /**
-   * Full users can access all data, and perform most of the operations.
-   */
-  public const PERMISSION_LEVEL_SITE_FULL_USER = 'SITE_FULL_USER';
-  /**
-   * Restricted users can access most of the data, and perform some operations.
-   */
-  public const PERMISSION_LEVEL_SITE_RESTRICTED_USER = 'SITE_RESTRICTED_USER';
-  /**
-   * Unverified user has no access to site's data.
-   */
-  public const PERMISSION_LEVEL_SITE_UNVERIFIED_USER = 'SITE_UNVERIFIED_USER';
-  /**
-   * The user's permission level for the site.
-   *
    * @var string
    */
   public $permissionLevel;
   /**
-   * The URL of the site.
-   *
    * @var string
    */
   public $siteUrl;
 
   /**
-   * The user's permission level for the site.
-   *
-   * Accepted values: SITE_PERMISSION_LEVEL_UNSPECIFIED, SITE_OWNER,
-   * SITE_FULL_USER, SITE_RESTRICTED_USER, SITE_UNVERIFIED_USER
-   *
-   * @param self::PERMISSION_LEVEL_* $permissionLevel
+   * @param string
    */
   public function setPermissionLevel($permissionLevel)
   {
     $this->permissionLevel = $permissionLevel;
   }
   /**
-   * @return self::PERMISSION_LEVEL_*
+   * @return string
    */
   public function getPermissionLevel()
   {
     return $this->permissionLevel;
   }
   /**
-   * The URL of the site.
-   *
-   * @param string $siteUrl
+   * @param string
    */
   public function setSiteUrl($siteUrl)
   {

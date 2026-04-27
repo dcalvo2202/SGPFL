@@ -21,56 +21,30 @@ class GoogleCloudDiscoveryengineV1CompletionSuggestion extends \Google\Collectio
 {
   protected $collection_key = 'alternativePhrases';
   /**
-   * Alternative matching phrases for this suggestion.
-   *
    * @var string[]
    */
   public $alternativePhrases;
   /**
-   * Frequency of this suggestion. Will be used to rank suggestions when score
-   * is not available.
-   *
    * @var string
    */
   public $frequency;
-  /**
-   * Global score of this suggestion. Control how this suggestion would be
-   * scored / ranked.
-   *
-   * @var 
-   */
   public $globalScore;
   /**
-   * If two suggestions have the same groupId, they will not be returned
-   * together. Instead the one ranked higher will be returned. This can be used
-   * to deduplicate semantically identical suggestions.
-   *
    * @var string
    */
   public $groupId;
-  /**
-   * The score of this suggestion within its group.
-   *
-   * @var 
-   */
   public $groupScore;
   /**
-   * BCP-47 language code of this suggestion.
-   *
    * @var string
    */
   public $languageCode;
   /**
-   * Required. The suggestion text.
-   *
    * @var string
    */
   public $suggestion;
 
   /**
-   * Alternative matching phrases for this suggestion.
-   *
-   * @param string[] $alternativePhrases
+   * @param string[]
    */
   public function setAlternativePhrases($alternativePhrases)
   {
@@ -84,10 +58,7 @@ class GoogleCloudDiscoveryengineV1CompletionSuggestion extends \Google\Collectio
     return $this->alternativePhrases;
   }
   /**
-   * Frequency of this suggestion. Will be used to rank suggestions when score
-   * is not available.
-   *
-   * @param string $frequency
+   * @param string
    */
   public function setFrequency($frequency)
   {
@@ -109,11 +80,7 @@ class GoogleCloudDiscoveryengineV1CompletionSuggestion extends \Google\Collectio
     return $this->globalScore;
   }
   /**
-   * If two suggestions have the same groupId, they will not be returned
-   * together. Instead the one ranked higher will be returned. This can be used
-   * to deduplicate semantically identical suggestions.
-   *
-   * @param string $groupId
+   * @param string
    */
   public function setGroupId($groupId)
   {
@@ -135,9 +102,7 @@ class GoogleCloudDiscoveryengineV1CompletionSuggestion extends \Google\Collectio
     return $this->groupScore;
   }
   /**
-   * BCP-47 language code of this suggestion.
-   *
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {
@@ -151,9 +116,7 @@ class GoogleCloudDiscoveryengineV1CompletionSuggestion extends \Google\Collectio
     return $this->languageCode;
   }
   /**
-   * Required. The suggestion text.
-   *
-   * @param string $suggestion
+   * @param string
    */
   public function setSuggestion($suggestion)
   {

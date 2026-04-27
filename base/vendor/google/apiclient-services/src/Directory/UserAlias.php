@@ -20,41 +20,28 @@ namespace Google\Service\Directory;
 class UserAlias extends \Google\Model
 {
   /**
-   * The alias email address.
-   *
    * @var string
    */
   public $alias;
   /**
-   * ETag of the resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * The unique ID for the user.
-   *
    * @var string
    */
   public $id;
   /**
-   * The type of the API resource. For Alias resources, the value is
-   * `admin#directory#alias`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The user's primary email address.
-   *
    * @var string
    */
   public $primaryEmail;
 
   /**
-   * The alias email address.
-   *
-   * @param string $alias
+   * @param string
    */
   public function setAlias($alias)
   {
@@ -68,9 +55,7 @@ class UserAlias extends \Google\Model
     return $this->alias;
   }
   /**
-   * ETag of the resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -84,9 +69,7 @@ class UserAlias extends \Google\Model
     return $this->etag;
   }
   /**
-   * The unique ID for the user.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -100,10 +83,7 @@ class UserAlias extends \Google\Model
     return $this->id;
   }
   /**
-   * The type of the API resource. For Alias resources, the value is
-   * `admin#directory#alias`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -117,9 +97,7 @@ class UserAlias extends \Google\Model
     return $this->kind;
   }
   /**
-   * The user's primary email address.
-   *
-   * @param string $primaryEmail
+   * @param string
    */
   public function setPrimaryEmail($primaryEmail)
   {

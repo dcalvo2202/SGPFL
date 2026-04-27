@@ -26,9 +26,7 @@ class GoogleCloudAiplatformV1BatchMigrateResourcesOperationMetadata extends \Goo
   protected $partialResultsDataType = 'array';
 
   /**
-   * The common part of the operation metadata.
-   *
-   * @param GoogleCloudAiplatformV1GenericOperationMetadata $genericMetadata
+   * @param GoogleCloudAiplatformV1GenericOperationMetadata
    */
   public function setGenericMetadata(GoogleCloudAiplatformV1GenericOperationMetadata $genericMetadata)
   {
@@ -42,9 +40,7 @@ class GoogleCloudAiplatformV1BatchMigrateResourcesOperationMetadata extends \Goo
     return $this->genericMetadata;
   }
   /**
-   * Partial results that reflect the latest migration operation progress.
-   *
-   * @param GoogleCloudAiplatformV1BatchMigrateResourcesOperationMetadataPartialResult[] $partialResults
+   * @param GoogleCloudAiplatformV1BatchMigrateResourcesOperationMetadataPartialResult[]
    */
   public function setPartialResults($partialResults)
   {

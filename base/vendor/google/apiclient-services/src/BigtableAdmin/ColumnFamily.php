@@ -27,12 +27,7 @@ class ColumnFamily extends \Google\Model
   protected $valueTypeDataType = '';
 
   /**
-   * Garbage collection rule specified as a protobuf. Must serialize to at most
-   * 500 bytes. NOTE: Garbage collection executes opportunistically in the
-   * background, and so it's possible for reads to return a cell even if it
-   * matches the active GC expression for its family.
-   *
-   * @param GcRule $gcRule
+   * @param GcRule
    */
   public function setGcRule(GcRule $gcRule)
   {
@@ -46,11 +41,7 @@ class ColumnFamily extends \Google\Model
     return $this->gcRule;
   }
   /**
-   * Output only. Only available with STATS_VIEW, this includes summary
-   * statistics about column family contents. For statistics over an entire
-   * table, see TableStats above.
-   *
-   * @param ColumnFamilyStats $stats
+   * @param ColumnFamilyStats
    */
   public function setStats(ColumnFamilyStats $stats)
   {
@@ -64,14 +55,7 @@ class ColumnFamily extends \Google\Model
     return $this->stats;
   }
   /**
-   * The type of data stored in each of this family's cell values, including its
-   * full encoding. If omitted, the family only serves raw untyped bytes. For
-   * now, only the `Aggregate` type is supported. `Aggregate` can only be set at
-   * family creation and is immutable afterwards. This field is mutually
-   * exclusive with `sql_type`. If `value_type` is `Aggregate`, written data
-   * must be compatible with: * `value_type.input_type` for `AddInput` mutations
-   *
-   * @param Type $valueType
+   * @param Type
    */
   public function setValueType(Type $valueType)
   {

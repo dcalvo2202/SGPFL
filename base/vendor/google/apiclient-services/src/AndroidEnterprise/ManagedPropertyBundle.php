@@ -24,9 +24,7 @@ class ManagedPropertyBundle extends \Google\Collection
   protected $managedPropertyDataType = 'array';
 
   /**
-   * The list of managed properties.
-   *
-   * @param ManagedProperty[] $managedProperty
+   * @param ManagedProperty[]
    */
   public function setManagedProperty($managedProperty)
   {

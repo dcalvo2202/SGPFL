@@ -19,91 +19,35 @@ namespace Google\Service\YouTube;
 
 class ChannelSectionSnippet extends \Google\Model
 {
-  public const STYLE_channelsectionStyleUnspecified = 'channelsectionStyleUnspecified';
-  public const STYLE_horizontalRow = 'horizontalRow';
-  public const STYLE_verticalList = 'verticalList';
-  public const TYPE_channelsectionTypeUndefined = 'channelsectionTypeUndefined';
-  public const TYPE_singlePlaylist = 'singlePlaylist';
-  public const TYPE_multiplePlaylists = 'multiplePlaylists';
-  public const TYPE_popularUploads = 'popularUploads';
-  public const TYPE_recentUploads = 'recentUploads';
   /**
-   * @deprecated
-   */
-  public const TYPE_likes = 'likes';
-  public const TYPE_allPlaylists = 'allPlaylists';
-  /**
-   * @deprecated
-   */
-  public const TYPE_likedPlaylists = 'likedPlaylists';
-  /**
-   * @deprecated
-   */
-  public const TYPE_recentPosts = 'recentPosts';
-  /**
-   * @deprecated
-   */
-  public const TYPE_recentActivity = 'recentActivity';
-  public const TYPE_liveEvents = 'liveEvents';
-  public const TYPE_upcomingEvents = 'upcomingEvents';
-  public const TYPE_completedEvents = 'completedEvents';
-  public const TYPE_multipleChannels = 'multipleChannels';
-  /**
-   * @deprecated
-   */
-  public const TYPE_postedVideos = 'postedVideos';
-  /**
-   * @deprecated
-   */
-  public const TYPE_postedPlaylists = 'postedPlaylists';
-  public const TYPE_subscriptions = 'subscriptions';
-  /**
-   * The ID that YouTube uses to uniquely identify the channel that published
-   * the channel section.
-   *
    * @var string
    */
   public $channelId;
   /**
-   * The language of the channel section's default title and description.
-   *
-   * @deprecated
    * @var string
    */
   public $defaultLanguage;
   protected $localizedType = ChannelSectionLocalization::class;
   protected $localizedDataType = '';
   /**
-   * The position of the channel section in the channel.
-   *
    * @var string
    */
   public $position;
   /**
-   * The style of the channel section.
-   *
-   * @deprecated
    * @var string
    */
   public $style;
   /**
-   * The channel section's title for multiple_playlists and multiple_channels.
-   *
    * @var string
    */
   public $title;
   /**
-   * The type of the channel section.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The ID that YouTube uses to uniquely identify the channel that published
-   * the channel section.
-   *
-   * @param string $channelId
+   * @param string
    */
   public function setChannelId($channelId)
   {
@@ -117,17 +61,13 @@ class ChannelSectionSnippet extends \Google\Model
     return $this->channelId;
   }
   /**
-   * The language of the channel section's default title and description.
-   *
-   * @deprecated
-   * @param string $defaultLanguage
+   * @param string
    */
   public function setDefaultLanguage($defaultLanguage)
   {
     $this->defaultLanguage = $defaultLanguage;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getDefaultLanguage()
@@ -135,17 +75,13 @@ class ChannelSectionSnippet extends \Google\Model
     return $this->defaultLanguage;
   }
   /**
-   * Localized title, read-only.
-   *
-   * @deprecated
-   * @param ChannelSectionLocalization $localized
+   * @param ChannelSectionLocalization
    */
   public function setLocalized(ChannelSectionLocalization $localized)
   {
     $this->localized = $localized;
   }
   /**
-   * @deprecated
    * @return ChannelSectionLocalization
    */
   public function getLocalized()
@@ -153,9 +89,7 @@ class ChannelSectionSnippet extends \Google\Model
     return $this->localized;
   }
   /**
-   * The position of the channel section in the channel.
-   *
-   * @param string $position
+   * @param string
    */
   public function setPosition($position)
   {
@@ -169,30 +103,21 @@ class ChannelSectionSnippet extends \Google\Model
     return $this->position;
   }
   /**
-   * The style of the channel section.
-   *
-   * Accepted values: channelsectionStyleUnspecified, horizontalRow,
-   * verticalList
-   *
-   * @deprecated
-   * @param self::STYLE_* $style
+   * @param string
    */
   public function setStyle($style)
   {
     $this->style = $style;
   }
   /**
-   * @deprecated
-   * @return self::STYLE_*
+   * @return string
    */
   public function getStyle()
   {
     return $this->style;
   }
   /**
-   * The channel section's title for multiple_playlists and multiple_channels.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -206,22 +131,14 @@ class ChannelSectionSnippet extends \Google\Model
     return $this->title;
   }
   /**
-   * The type of the channel section.
-   *
-   * Accepted values: channelsectionTypeUndefined, singlePlaylist,
-   * multiplePlaylists, popularUploads, recentUploads, likes, allPlaylists,
-   * likedPlaylists, recentPosts, recentActivity, liveEvents, upcomingEvents,
-   * completedEvents, multipleChannels, postedVideos, postedPlaylists,
-   * subscriptions
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

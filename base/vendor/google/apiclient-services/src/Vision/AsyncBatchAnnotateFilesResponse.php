@@ -24,10 +24,7 @@ class AsyncBatchAnnotateFilesResponse extends \Google\Collection
   protected $responsesDataType = 'array';
 
   /**
-   * The list of file annotation responses, one for each request in
-   * AsyncBatchAnnotateFilesRequest.
-   *
-   * @param AsyncAnnotateFileResponse[] $responses
+   * @param AsyncAnnotateFileResponse[]
    */
   public function setResponses($responses)
   {

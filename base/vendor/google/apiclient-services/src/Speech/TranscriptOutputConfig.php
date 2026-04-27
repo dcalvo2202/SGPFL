@@ -20,20 +20,12 @@ namespace Google\Service\Speech;
 class TranscriptOutputConfig extends \Google\Model
 {
   /**
-   * Specifies a Cloud Storage URI for the recognition results. Must be
-   * specified in the format: `gs://bucket_name/object_name`, and the bucket
-   * must already exist.
-   *
    * @var string
    */
   public $gcsUri;
 
   /**
-   * Specifies a Cloud Storage URI for the recognition results. Must be
-   * specified in the format: `gs://bucket_name/object_name`, and the bucket
-   * must already exist.
-   *
-   * @param string $gcsUri
+   * @param string
    */
   public function setGcsUri($gcsUri)
   {

@@ -20,22 +20,12 @@ namespace Google\Service\DataprocMetastore;
 class QueryMetadataResponse extends \Google\Model
 {
   /**
-   * The manifest URI is link to a JSON instance in Cloud Storage. This instance
-   * manifests immediately along with QueryMetadataResponse. The content of the
-   * URI is not retriable until the long-running operation query against the
-   * metadata finishes.
-   *
    * @var string
    */
   public $resultManifestUri;
 
   /**
-   * The manifest URI is link to a JSON instance in Cloud Storage. This instance
-   * manifests immediately along with QueryMetadataResponse. The content of the
-   * URI is not retriable until the long-running operation query against the
-   * metadata finishes.
-   *
-   * @param string $resultManifestUri
+   * @param string
    */
   public function setResultManifestUri($resultManifestUri)
   {

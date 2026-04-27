@@ -19,30 +19,14 @@ namespace Google\Service\ServiceConsumerManagement;
 
 class Enum extends \Google\Collection
 {
-  /**
-   * Syntax `proto2`.
-   */
-  public const SYNTAX_SYNTAX_PROTO2 = 'SYNTAX_PROTO2';
-  /**
-   * Syntax `proto3`.
-   */
-  public const SYNTAX_SYNTAX_PROTO3 = 'SYNTAX_PROTO3';
-  /**
-   * Syntax `editions`.
-   */
-  public const SYNTAX_SYNTAX_EDITIONS = 'SYNTAX_EDITIONS';
   protected $collection_key = 'options';
   /**
-   * The source edition string, only valid when syntax is SYNTAX_EDITIONS.
-   *
    * @var string
    */
   public $edition;
   protected $enumvalueType = EnumValue::class;
   protected $enumvalueDataType = 'array';
   /**
-   * Enum type name.
-   *
    * @var string
    */
   public $name;
@@ -51,16 +35,12 @@ class Enum extends \Google\Collection
   protected $sourceContextType = SourceContext::class;
   protected $sourceContextDataType = '';
   /**
-   * The source syntax.
-   *
    * @var string
    */
   public $syntax;
 
   /**
-   * The source edition string, only valid when syntax is SYNTAX_EDITIONS.
-   *
-   * @param string $edition
+   * @param string
    */
   public function setEdition($edition)
   {
@@ -74,9 +54,7 @@ class Enum extends \Google\Collection
     return $this->edition;
   }
   /**
-   * Enum value definitions.
-   *
-   * @param EnumValue[] $enumvalue
+   * @param EnumValue[]
    */
   public function setEnumvalue($enumvalue)
   {
@@ -90,9 +68,7 @@ class Enum extends \Google\Collection
     return $this->enumvalue;
   }
   /**
-   * Enum type name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -106,9 +82,7 @@ class Enum extends \Google\Collection
     return $this->name;
   }
   /**
-   * Protocol buffer options.
-   *
-   * @param Option[] $options
+   * @param Option[]
    */
   public function setOptions($options)
   {
@@ -122,9 +96,7 @@ class Enum extends \Google\Collection
     return $this->options;
   }
   /**
-   * The source context.
-   *
-   * @param SourceContext $sourceContext
+   * @param SourceContext
    */
   public function setSourceContext(SourceContext $sourceContext)
   {
@@ -138,18 +110,14 @@ class Enum extends \Google\Collection
     return $this->sourceContext;
   }
   /**
-   * The source syntax.
-   *
-   * Accepted values: SYNTAX_PROTO2, SYNTAX_PROTO3, SYNTAX_EDITIONS
-   *
-   * @param self::SYNTAX_* $syntax
+   * @param string
    */
   public function setSyntax($syntax)
   {
     $this->syntax = $syntax;
   }
   /**
-   * @return self::SYNTAX_*
+   * @return string
    */
   public function getSyntax()
   {

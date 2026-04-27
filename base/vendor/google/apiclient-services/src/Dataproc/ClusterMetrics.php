@@ -20,22 +20,16 @@ namespace Google\Service\Dataproc;
 class ClusterMetrics extends \Google\Model
 {
   /**
-   * The HDFS metrics.
-   *
    * @var string[]
    */
   public $hdfsMetrics;
   /**
-   * YARN metrics.
-   *
    * @var string[]
    */
   public $yarnMetrics;
 
   /**
-   * The HDFS metrics.
-   *
-   * @param string[] $hdfsMetrics
+   * @param string[]
    */
   public function setHdfsMetrics($hdfsMetrics)
   {
@@ -49,9 +43,7 @@ class ClusterMetrics extends \Google\Model
     return $this->hdfsMetrics;
   }
   /**
-   * YARN metrics.
-   *
-   * @param string[] $yarnMetrics
+   * @param string[]
    */
   public function setYarnMetrics($yarnMetrics)
   {

@@ -20,30 +20,16 @@ namespace Google\Service\Container;
 class NetworkPolicy extends \Google\Model
 {
   /**
-   * Not set
-   */
-  public const PROVIDER_PROVIDER_UNSPECIFIED = 'PROVIDER_UNSPECIFIED';
-  /**
-   * Tigera (Calico Felix).
-   */
-  public const PROVIDER_CALICO = 'CALICO';
-  /**
-   * Whether network policy is enabled on the cluster.
-   *
    * @var bool
    */
   public $enabled;
   /**
-   * The selected network policy provider.
-   *
    * @var string
    */
   public $provider;
 
   /**
-   * Whether network policy is enabled on the cluster.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {
@@ -57,18 +43,14 @@ class NetworkPolicy extends \Google\Model
     return $this->enabled;
   }
   /**
-   * The selected network policy provider.
-   *
-   * Accepted values: PROVIDER_UNSPECIFIED, CALICO
-   *
-   * @param self::PROVIDER_* $provider
+   * @param string
    */
   public function setProvider($provider)
   {
     $this->provider = $provider;
   }
   /**
-   * @return self::PROVIDER_*
+   * @return string
    */
   public function getProvider()
   {

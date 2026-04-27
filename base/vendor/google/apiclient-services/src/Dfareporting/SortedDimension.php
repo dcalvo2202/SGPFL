@@ -19,31 +19,21 @@ namespace Google\Service\Dfareporting;
 
 class SortedDimension extends \Google\Model
 {
-  public const SORT_ORDER_ASCENDING = 'ASCENDING';
-  public const SORT_ORDER_DESCENDING = 'DESCENDING';
   /**
-   * The kind of resource this is, in this case dfareporting#sortedDimension.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The name of the dimension.
-   *
    * @var string
    */
   public $name;
   /**
-   * An optional sort order for the dimension column.
-   *
    * @var string
    */
   public $sortOrder;
 
   /**
-   * The kind of resource this is, in this case dfareporting#sortedDimension.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -57,9 +47,7 @@ class SortedDimension extends \Google\Model
     return $this->kind;
   }
   /**
-   * The name of the dimension.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -73,18 +61,14 @@ class SortedDimension extends \Google\Model
     return $this->name;
   }
   /**
-   * An optional sort order for the dimension column.
-   *
-   * Accepted values: ASCENDING, DESCENDING
-   *
-   * @param self::SORT_ORDER_* $sortOrder
+   * @param string
    */
   public function setSortOrder($sortOrder)
   {
     $this->sortOrder = $sortOrder;
   }
   /**
-   * @return self::SORT_ORDER_*
+   * @return string
    */
   public function getSortOrder()
   {

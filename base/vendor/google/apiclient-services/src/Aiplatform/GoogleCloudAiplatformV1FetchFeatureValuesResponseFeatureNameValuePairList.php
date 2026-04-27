@@ -24,9 +24,7 @@ class GoogleCloudAiplatformV1FetchFeatureValuesResponseFeatureNameValuePairList 
   protected $featuresDataType = 'array';
 
   /**
-   * List of feature names and values.
-   *
-   * @param GoogleCloudAiplatformV1FetchFeatureValuesResponseFeatureNameValuePairListFeatureNameValuePair[] $features
+   * @param GoogleCloudAiplatformV1FetchFeatureValuesResponseFeatureNameValuePairListFeatureNameValuePair[]
    */
   public function setFeatures($features)
   {

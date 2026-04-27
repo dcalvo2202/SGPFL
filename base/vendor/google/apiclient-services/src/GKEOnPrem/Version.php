@@ -20,22 +20,16 @@ namespace Google\Service\GKEOnPrem;
 class Version extends \Google\Model
 {
   /**
-   * Number of machines under the above version.
-   *
    * @var string
    */
   public $count;
   /**
-   * Resource version.
-   *
    * @var string
    */
   public $version;
 
   /**
-   * Number of machines under the above version.
-   *
-   * @param string $count
+   * @param string
    */
   public function setCount($count)
   {
@@ -49,9 +43,7 @@ class Version extends \Google\Model
     return $this->count;
   }
   /**
-   * Resource version.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

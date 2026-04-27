@@ -19,48 +19,24 @@ namespace Google\Service\Transcoder;
 
 class Manifest extends \Google\Collection
 {
-  /**
-   * The manifest type is not specified.
-   */
-  public const TYPE_MANIFEST_TYPE_UNSPECIFIED = 'MANIFEST_TYPE_UNSPECIFIED';
-  /**
-   * Create an HLS manifest. The corresponding file extension is `.m3u8`.
-   */
-  public const TYPE_HLS = 'HLS';
-  /**
-   * Create an MPEG-DASH manifest. The corresponding file extension is `.mpd`.
-   */
-  public const TYPE_DASH = 'DASH';
   protected $collection_key = 'muxStreams';
   protected $dashType = DashConfig::class;
   protected $dashDataType = '';
   /**
-   * The name of the generated file. The default is `manifest` with the
-   * extension suffix corresponding to the Manifest.type.
-   *
    * @var string
    */
   public $fileName;
   /**
-   * Required. List of user supplied MuxStream.key values that should appear in
-   * this manifest. When Manifest.type is `HLS`, a media manifest with name
-   * MuxStream.key and `.m3u8` extension is generated for each element in this
-   * list.
-   *
    * @var string[]
    */
   public $muxStreams;
   /**
-   * Required. Type of the manifest.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * `DASH` manifest configuration.
-   *
-   * @param DashConfig $dash
+   * @param DashConfig
    */
   public function setDash(DashConfig $dash)
   {
@@ -74,10 +50,7 @@ class Manifest extends \Google\Collection
     return $this->dash;
   }
   /**
-   * The name of the generated file. The default is `manifest` with the
-   * extension suffix corresponding to the Manifest.type.
-   *
-   * @param string $fileName
+   * @param string
    */
   public function setFileName($fileName)
   {
@@ -91,12 +64,7 @@ class Manifest extends \Google\Collection
     return $this->fileName;
   }
   /**
-   * Required. List of user supplied MuxStream.key values that should appear in
-   * this manifest. When Manifest.type is `HLS`, a media manifest with name
-   * MuxStream.key and `.m3u8` extension is generated for each element in this
-   * list.
-   *
-   * @param string[] $muxStreams
+   * @param string[]
    */
   public function setMuxStreams($muxStreams)
   {
@@ -110,18 +78,14 @@ class Manifest extends \Google\Collection
     return $this->muxStreams;
   }
   /**
-   * Required. Type of the manifest.
-   *
-   * Accepted values: MANIFEST_TYPE_UNSPECIFIED, HLS, DASH
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

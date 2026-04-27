@@ -21,39 +21,26 @@ class DeepLink extends \Google\Collection
 {
   protected $collection_key = 'remarketingListIds';
   /**
-   * The URL of the mobile app being linked to.
-   *
    * @var string
    */
   public $appUrl;
   /**
-   * The fallback URL. This URL will be served to users who do not have the
-   * mobile app installed.
-   *
    * @var string
    */
   public $fallbackUrl;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#deepLink".
-   *
    * @var string
    */
   public $kind;
   protected $mobileAppType = MobileApp::class;
   protected $mobileAppDataType = '';
   /**
-   * Ads served to users on these remarketing lists will use this deep link.
-   * Applicable when mobileApp.directory is APPLE_APP_STORE.
-   *
    * @var string[]
    */
   public $remarketingListIds;
 
   /**
-   * The URL of the mobile app being linked to.
-   *
-   * @param string $appUrl
+   * @param string
    */
   public function setAppUrl($appUrl)
   {
@@ -67,10 +54,7 @@ class DeepLink extends \Google\Collection
     return $this->appUrl;
   }
   /**
-   * The fallback URL. This URL will be served to users who do not have the
-   * mobile app installed.
-   *
-   * @param string $fallbackUrl
+   * @param string
    */
   public function setFallbackUrl($fallbackUrl)
   {
@@ -84,10 +68,7 @@ class DeepLink extends \Google\Collection
     return $this->fallbackUrl;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#deepLink".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -101,9 +82,7 @@ class DeepLink extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The mobile app targeted by this deep link.
-   *
-   * @param MobileApp $mobileApp
+   * @param MobileApp
    */
   public function setMobileApp(MobileApp $mobileApp)
   {
@@ -117,10 +96,7 @@ class DeepLink extends \Google\Collection
     return $this->mobileApp;
   }
   /**
-   * Ads served to users on these remarketing lists will use this deep link.
-   * Applicable when mobileApp.directory is APPLE_APP_STORE.
-   *
-   * @param string[] $remarketingListIds
+   * @param string[]
    */
   public function setRemarketingListIds($remarketingListIds)
   {

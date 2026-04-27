@@ -20,28 +20,20 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1PscAutomatedEndpoints extends \Google\Model
 {
   /**
-   * Ip Address created by the automated forwarding rule.
-   *
    * @var string
    */
   public $matchAddress;
   /**
-   * Corresponding network in pscAutomationConfigs.
-   *
    * @var string
    */
   public $network;
   /**
-   * Corresponding project_id in pscAutomationConfigs
-   *
    * @var string
    */
   public $projectId;
 
   /**
-   * Ip Address created by the automated forwarding rule.
-   *
-   * @param string $matchAddress
+   * @param string
    */
   public function setMatchAddress($matchAddress)
   {
@@ -55,9 +47,7 @@ class GoogleCloudAiplatformV1PscAutomatedEndpoints extends \Google\Model
     return $this->matchAddress;
   }
   /**
-   * Corresponding network in pscAutomationConfigs.
-   *
-   * @param string $network
+   * @param string
    */
   public function setNetwork($network)
   {
@@ -71,9 +61,7 @@ class GoogleCloudAiplatformV1PscAutomatedEndpoints extends \Google\Model
     return $this->network;
   }
   /**
-   * Corresponding project_id in pscAutomationConfigs
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {

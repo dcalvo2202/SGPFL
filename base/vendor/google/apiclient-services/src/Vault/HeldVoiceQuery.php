@@ -21,18 +21,12 @@ class HeldVoiceQuery extends \Google\Collection
 {
   protected $collection_key = 'coveredData';
   /**
-   * A list of data types covered by the hold. Should be non-empty. Order does
-   * not matter and duplicates are ignored.
-   *
    * @var string[]
    */
   public $coveredData;
 
   /**
-   * A list of data types covered by the hold. Should be non-empty. Order does
-   * not matter and duplicates are ignored.
-   *
-   * @param string[] $coveredData
+   * @param string[]
    */
   public function setCoveredData($coveredData)
   {

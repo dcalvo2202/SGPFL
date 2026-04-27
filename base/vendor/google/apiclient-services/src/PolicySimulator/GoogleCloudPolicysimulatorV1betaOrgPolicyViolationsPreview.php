@@ -19,52 +19,16 @@ namespace Google\Service\PolicySimulator;
 
 class GoogleCloudPolicysimulatorV1betaOrgPolicyViolationsPreview extends \Google\Collection
 {
-  /**
-   * The state is unspecified.
-   */
-  public const STATE_PREVIEW_STATE_UNSPECIFIED = 'PREVIEW_STATE_UNSPECIFIED';
-  /**
-   * The OrgPolicyViolationsPreview has not been created yet.
-   */
-  public const STATE_PREVIEW_PENDING = 'PREVIEW_PENDING';
-  /**
-   * The OrgPolicyViolationsPreview is currently being created.
-   */
-  public const STATE_PREVIEW_RUNNING = 'PREVIEW_RUNNING';
-  /**
-   * The OrgPolicyViolationsPreview creation finished successfully.
-   */
-  public const STATE_PREVIEW_SUCCEEDED = 'PREVIEW_SUCCEEDED';
-  /**
-   * The OrgPolicyViolationsPreview creation failed with an error.
-   */
-  public const STATE_PREVIEW_FAILED = 'PREVIEW_FAILED';
   protected $collection_key = 'customConstraints';
   /**
-   * Output only. Time when this `OrgPolicyViolationsPreview` was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. The names of the constraints against which all
-   * `OrgPolicyViolations` were evaluated. If `OrgPolicyOverlay` only contains
-   * `PolicyOverlay` then it contains the name of the configured custom
-   * constraint, applicable to the specified policies. Otherwise it contains the
-   * name of the constraint specified in `CustomConstraintOverlay`. Format:
-   * `organizations/{organization_id}/customConstraints/{custom_constraint_id}`
-   * Example: `organizations/123/customConstraints/custom.createOnlyE2TypeVms`
-   *
    * @var string[]
    */
   public $customConstraints;
   /**
-   * Output only. The resource name of the `OrgPolicyViolationsPreview`. It has
-   * the following format: `organizations/{organization}/locations/{location}/or
-   * gPolicyViolationsPreviews/{orgPolicyViolationsPreview}` Example:
-   * `organizations/my-example-
-   * org/locations/global/orgPolicyViolationsPreviews/506a5f7f`
-   *
    * @var string
    */
   public $name;
@@ -73,27 +37,16 @@ class GoogleCloudPolicysimulatorV1betaOrgPolicyViolationsPreview extends \Google
   protected $resourceCountsType = GoogleCloudPolicysimulatorV1betaOrgPolicyViolationsPreviewResourceCounts::class;
   protected $resourceCountsDataType = '';
   /**
-   * Output only. The state of the `OrgPolicyViolationsPreview`.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. The number of OrgPolicyViolations in this
-   * `OrgPolicyViolationsPreview`. This count may differ from
-   * `resource_summary.noncompliant_count` because each OrgPolicyViolation is
-   * specific to a resource **and** constraint. If there are multiple
-   * constraints being evaluated (i.e. multiple policies in the overlay), a
-   * single resource may violate multiple constraints.
-   *
    * @var int
    */
   public $violationsCount;
 
   /**
-   * Output only. Time when this `OrgPolicyViolationsPreview` was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -107,15 +60,7 @@ class GoogleCloudPolicysimulatorV1betaOrgPolicyViolationsPreview extends \Google
     return $this->createTime;
   }
   /**
-   * Output only. The names of the constraints against which all
-   * `OrgPolicyViolations` were evaluated. If `OrgPolicyOverlay` only contains
-   * `PolicyOverlay` then it contains the name of the configured custom
-   * constraint, applicable to the specified policies. Otherwise it contains the
-   * name of the constraint specified in `CustomConstraintOverlay`. Format:
-   * `organizations/{organization_id}/customConstraints/{custom_constraint_id}`
-   * Example: `organizations/123/customConstraints/custom.createOnlyE2TypeVms`
-   *
-   * @param string[] $customConstraints
+   * @param string[]
    */
   public function setCustomConstraints($customConstraints)
   {
@@ -129,13 +74,7 @@ class GoogleCloudPolicysimulatorV1betaOrgPolicyViolationsPreview extends \Google
     return $this->customConstraints;
   }
   /**
-   * Output only. The resource name of the `OrgPolicyViolationsPreview`. It has
-   * the following format: `organizations/{organization}/locations/{location}/or
-   * gPolicyViolationsPreviews/{orgPolicyViolationsPreview}` Example:
-   * `organizations/my-example-
-   * org/locations/global/orgPolicyViolationsPreviews/506a5f7f`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -149,9 +88,7 @@ class GoogleCloudPolicysimulatorV1betaOrgPolicyViolationsPreview extends \Google
     return $this->name;
   }
   /**
-   * Required. The proposed changes we are previewing violations for.
-   *
-   * @param GoogleCloudPolicysimulatorV1betaOrgPolicyOverlay $overlay
+   * @param GoogleCloudPolicysimulatorV1betaOrgPolicyOverlay
    */
   public function setOverlay(GoogleCloudPolicysimulatorV1betaOrgPolicyOverlay $overlay)
   {
@@ -165,10 +102,7 @@ class GoogleCloudPolicysimulatorV1betaOrgPolicyViolationsPreview extends \Google
     return $this->overlay;
   }
   /**
-   * Output only. A summary of the state of all resources scanned for compliance
-   * with the changed OrgPolicy.
-   *
-   * @param GoogleCloudPolicysimulatorV1betaOrgPolicyViolationsPreviewResourceCounts $resourceCounts
+   * @param GoogleCloudPolicysimulatorV1betaOrgPolicyViolationsPreviewResourceCounts
    */
   public function setResourceCounts(GoogleCloudPolicysimulatorV1betaOrgPolicyViolationsPreviewResourceCounts $resourceCounts)
   {
@@ -182,33 +116,21 @@ class GoogleCloudPolicysimulatorV1betaOrgPolicyViolationsPreview extends \Google
     return $this->resourceCounts;
   }
   /**
-   * Output only. The state of the `OrgPolicyViolationsPreview`.
-   *
-   * Accepted values: PREVIEW_STATE_UNSPECIFIED, PREVIEW_PENDING,
-   * PREVIEW_RUNNING, PREVIEW_SUCCEEDED, PREVIEW_FAILED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. The number of OrgPolicyViolations in this
-   * `OrgPolicyViolationsPreview`. This count may differ from
-   * `resource_summary.noncompliant_count` because each OrgPolicyViolation is
-   * specific to a resource **and** constraint. If there are multiple
-   * constraints being evaluated (i.e. multiple policies in the overlay), a
-   * single resource may violate multiple constraints.
-   *
-   * @param int $violationsCount
+   * @param int
    */
   public function setViolationsCount($violationsCount)
   {

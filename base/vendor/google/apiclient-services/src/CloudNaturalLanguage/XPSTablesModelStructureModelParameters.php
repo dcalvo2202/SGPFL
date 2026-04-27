@@ -24,7 +24,7 @@ class XPSTablesModelStructureModelParameters extends \Google\Collection
   protected $hyperparametersDataType = 'array';
 
   /**
-   * @param XPSTablesModelStructureModelParametersParameter[] $hyperparameters
+   * @param XPSTablesModelStructureModelParametersParameter[]
    */
   public function setHyperparameters($hyperparameters)
   {

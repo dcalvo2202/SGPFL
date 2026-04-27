@@ -29,7 +29,7 @@ class GoogleCloudDialogflowV2beta1IntentMessageTelephonySynthesizeSpeech extends
   public $text;
 
   /**
-   * @param string $ssml
+   * @param string
    */
   public function setSsml($ssml)
   {
@@ -43,7 +43,7 @@ class GoogleCloudDialogflowV2beta1IntentMessageTelephonySynthesizeSpeech extends
     return $this->ssml;
   }
   /**
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {

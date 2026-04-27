@@ -21,57 +21,22 @@ class GoogleHomeEnterpriseSdmV1Device extends \Google\Collection
 {
   protected $collection_key = 'parentRelations';
   /**
-   * Output only. The GHP device ID of the device.
-   *
-   * @var string
-   */
-  public $ghpName;
-  /**
-   * Required. The resource name of the device. For example:
-   * "enterprises/XYZ/devices/123".
-   *
    * @var string
    */
   public $name;
   protected $parentRelationsType = GoogleHomeEnterpriseSdmV1ParentRelation::class;
   protected $parentRelationsDataType = 'array';
   /**
-   * Output only. Device traits.
-   *
    * @var array[]
    */
   public $traits;
   /**
-   * Output only. Type of the device for general display purposes. For example:
-   * "THERMOSTAT". The device type should not be used to deduce or infer
-   * functionality of the actual device it is assigned to. Instead, use the
-   * returned traits for the device.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Output only. The GHP device ID of the device.
-   *
-   * @param string $ghpName
-   */
-  public function setGhpName($ghpName)
-  {
-    $this->ghpName = $ghpName;
-  }
-  /**
-   * @return string
-   */
-  public function getGhpName()
-  {
-    return $this->ghpName;
-  }
-  /**
-   * Required. The resource name of the device. For example:
-   * "enterprises/XYZ/devices/123".
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -85,9 +50,7 @@ class GoogleHomeEnterpriseSdmV1Device extends \Google\Collection
     return $this->name;
   }
   /**
-   * Assignee details of the device.
-   *
-   * @param GoogleHomeEnterpriseSdmV1ParentRelation[] $parentRelations
+   * @param GoogleHomeEnterpriseSdmV1ParentRelation[]
    */
   public function setParentRelations($parentRelations)
   {
@@ -101,9 +64,7 @@ class GoogleHomeEnterpriseSdmV1Device extends \Google\Collection
     return $this->parentRelations;
   }
   /**
-   * Output only. Device traits.
-   *
-   * @param array[] $traits
+   * @param array[]
    */
   public function setTraits($traits)
   {
@@ -117,12 +78,7 @@ class GoogleHomeEnterpriseSdmV1Device extends \Google\Collection
     return $this->traits;
   }
   /**
-   * Output only. Type of the device for general display purposes. For example:
-   * "THERMOSTAT". The device type should not be used to deduce or infer
-   * functionality of the actual device it is assigned to. Instead, use the
-   * returned traits for the device.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

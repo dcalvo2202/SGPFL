@@ -21,46 +21,28 @@ class GoogleCloudContactcenterinsightsV1QaQuestionTag extends \Google\Collection
 {
   protected $collection_key = 'qaQuestionIds';
   /**
-   * Output only. The time at which the question tag was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Required. A user-specified display name for the tag.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Identifier. Resource name for the QaQuestionTag Format
-   * projects/{project}/locations/{location}/qaQuestionTags/{qa_question_tag} In
-   * the above format, the last segment, i.e., qa_question_tag, is a server-
-   * generated ID corresponding to the tag resource.
-   *
    * @var string
    */
   public $name;
   /**
-   * Optional. The list of Scorecard Question IDs that the tag applies to. Each
-   * QaQuestionId is represented as a full resource name containing the Question
-   * ID. Lastly, Since a tag may not necessarily be referenced by any Scorecard
-   * Questions, we treat this field as optional.
-   *
    * @var string[]
    */
   public $qaQuestionIds;
   /**
-   * Output only. The most recent time at which the question tag was updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. The time at which the question tag was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -74,9 +56,7 @@ class GoogleCloudContactcenterinsightsV1QaQuestionTag extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Required. A user-specified display name for the tag.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -90,12 +70,7 @@ class GoogleCloudContactcenterinsightsV1QaQuestionTag extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Identifier. Resource name for the QaQuestionTag Format
-   * projects/{project}/locations/{location}/qaQuestionTags/{qa_question_tag} In
-   * the above format, the last segment, i.e., qa_question_tag, is a server-
-   * generated ID corresponding to the tag resource.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -109,12 +84,7 @@ class GoogleCloudContactcenterinsightsV1QaQuestionTag extends \Google\Collection
     return $this->name;
   }
   /**
-   * Optional. The list of Scorecard Question IDs that the tag applies to. Each
-   * QaQuestionId is represented as a full resource name containing the Question
-   * ID. Lastly, Since a tag may not necessarily be referenced by any Scorecard
-   * Questions, we treat this field as optional.
-   *
-   * @param string[] $qaQuestionIds
+   * @param string[]
    */
   public function setQaQuestionIds($qaQuestionIds)
   {
@@ -128,9 +98,7 @@ class GoogleCloudContactcenterinsightsV1QaQuestionTag extends \Google\Collection
     return $this->qaQuestionIds;
   }
   /**
-   * Output only. The most recent time at which the question tag was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

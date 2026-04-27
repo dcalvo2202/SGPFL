@@ -24,9 +24,7 @@ class GoogleCloudDiscoveryengineV1PurgeIdentityMappingsRequestInlineSource exten
   protected $identityMappingEntriesDataType = 'array';
 
   /**
-   * A maximum of 10000 entries can be purged at one time
-   *
-   * @param GoogleCloudDiscoveryengineV1IdentityMappingEntry[] $identityMappingEntries
+   * @param GoogleCloudDiscoveryengineV1IdentityMappingEntry[]
    */
   public function setIdentityMappingEntries($identityMappingEntries)
   {

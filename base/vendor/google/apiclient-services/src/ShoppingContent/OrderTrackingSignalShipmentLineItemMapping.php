@@ -20,29 +20,20 @@ namespace Google\Service\ShoppingContent;
 class OrderTrackingSignalShipmentLineItemMapping extends \Google\Model
 {
   /**
-   * Required. The line item ID.
-   *
    * @var string
    */
   public $lineItemId;
   /**
-   * The line item quantity in the shipment.
-   *
    * @var string
    */
   public $quantity;
   /**
-   * Required. The shipment ID. This field will be hashed in returned
-   * OrderTrackingSignal creation response.
-   *
    * @var string
    */
   public $shipmentId;
 
   /**
-   * Required. The line item ID.
-   *
-   * @param string $lineItemId
+   * @param string
    */
   public function setLineItemId($lineItemId)
   {
@@ -56,9 +47,7 @@ class OrderTrackingSignalShipmentLineItemMapping extends \Google\Model
     return $this->lineItemId;
   }
   /**
-   * The line item quantity in the shipment.
-   *
-   * @param string $quantity
+   * @param string
    */
   public function setQuantity($quantity)
   {
@@ -72,10 +61,7 @@ class OrderTrackingSignalShipmentLineItemMapping extends \Google\Model
     return $this->quantity;
   }
   /**
-   * Required. The shipment ID. This field will be hashed in returned
-   * OrderTrackingSignal creation response.
-   *
-   * @param string $shipmentId
+   * @param string
    */
   public function setShipmentId($shipmentId)
   {

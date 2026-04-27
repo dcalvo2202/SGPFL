@@ -27,10 +27,6 @@ class RRSetRoutingPolicyGeoPolicyGeoPolicyItem extends \Google\Collection
    */
   public $kind;
   /**
-   * The geo-location granularity is a GCP region. This location string should
-   * correspond to a GCP region. e.g. "us-east1", "southamerica-east1", "asia-
-   * east1", etc.
-   *
    * @var string
    */
   public $location;
@@ -39,20 +35,12 @@ class RRSetRoutingPolicyGeoPolicyGeoPolicyItem extends \Google\Collection
    */
   public $rrdatas;
   /**
-   * DNSSEC generated signatures for all the `rrdata` within this item. When
-   * using health-checked targets for DNSSEC-enabled zones, you can only use at
-   * most one health-checked IP address per item.
-   *
    * @var string[]
    */
   public $signatureRrdatas;
 
   /**
-   * For A and AAAA types only. Endpoints to return in the query result only if
-   * they are healthy. These can be specified along with `rrdata` within this
-   * item.
-   *
-   * @param RRSetRoutingPolicyHealthCheckTargets $healthCheckedTargets
+   * @param RRSetRoutingPolicyHealthCheckTargets
    */
   public function setHealthCheckedTargets(RRSetRoutingPolicyHealthCheckTargets $healthCheckedTargets)
   {
@@ -66,7 +54,7 @@ class RRSetRoutingPolicyGeoPolicyGeoPolicyItem extends \Google\Collection
     return $this->healthCheckedTargets;
   }
   /**
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -80,11 +68,7 @@ class RRSetRoutingPolicyGeoPolicyGeoPolicyItem extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The geo-location granularity is a GCP region. This location string should
-   * correspond to a GCP region. e.g. "us-east1", "southamerica-east1", "asia-
-   * east1", etc.
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -98,7 +82,7 @@ class RRSetRoutingPolicyGeoPolicyGeoPolicyItem extends \Google\Collection
     return $this->location;
   }
   /**
-   * @param string[] $rrdatas
+   * @param string[]
    */
   public function setRrdatas($rrdatas)
   {
@@ -112,11 +96,7 @@ class RRSetRoutingPolicyGeoPolicyGeoPolicyItem extends \Google\Collection
     return $this->rrdatas;
   }
   /**
-   * DNSSEC generated signatures for all the `rrdata` within this item. When
-   * using health-checked targets for DNSSEC-enabled zones, you can only use at
-   * most one health-checked IP address per item.
-   *
-   * @param string[] $signatureRrdatas
+   * @param string[]
    */
   public function setSignatureRrdatas($signatureRrdatas)
   {

@@ -20,24 +20,16 @@ namespace Google\Service\DisplayVideo;
 class RegionalLocationListAssignedTargetingOptionDetails extends \Google\Model
 {
   /**
-   * Indicates if this option is being negatively targeted.
-   *
    * @var bool
    */
   public $negative;
   /**
-   * Required. ID of the regional location list. Should refer to the
-   * location_list_id field of a LocationList resource whose type is
-   * `TARGETING_LOCATION_TYPE_REGIONAL`.
-   *
    * @var string
    */
   public $regionalLocationListId;
 
   /**
-   * Indicates if this option is being negatively targeted.
-   *
-   * @param bool $negative
+   * @param bool
    */
   public function setNegative($negative)
   {
@@ -51,11 +43,7 @@ class RegionalLocationListAssignedTargetingOptionDetails extends \Google\Model
     return $this->negative;
   }
   /**
-   * Required. ID of the regional location list. Should refer to the
-   * location_list_id field of a LocationList resource whose type is
-   * `TARGETING_LOCATION_TYPE_REGIONAL`.
-   *
-   * @param string $regionalLocationListId
+   * @param string
    */
   public function setRegionalLocationListId($regionalLocationListId)
   {

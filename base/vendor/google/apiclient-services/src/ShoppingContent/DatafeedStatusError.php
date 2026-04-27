@@ -21,30 +21,22 @@ class DatafeedStatusError extends \Google\Collection
 {
   protected $collection_key = 'examples';
   /**
-   * The code of the error, for example, "validation/invalid_value".
-   *
    * @var string
    */
   public $code;
   /**
-   * The number of occurrences of the error in the feed.
-   *
    * @var string
    */
   public $count;
   protected $examplesType = DatafeedStatusExample::class;
   protected $examplesDataType = 'array';
   /**
-   * The error message, for example, "Invalid price".
-   *
    * @var string
    */
   public $message;
 
   /**
-   * The code of the error, for example, "validation/invalid_value".
-   *
-   * @param string $code
+   * @param string
    */
   public function setCode($code)
   {
@@ -58,9 +50,7 @@ class DatafeedStatusError extends \Google\Collection
     return $this->code;
   }
   /**
-   * The number of occurrences of the error in the feed.
-   *
-   * @param string $count
+   * @param string
    */
   public function setCount($count)
   {
@@ -74,9 +64,7 @@ class DatafeedStatusError extends \Google\Collection
     return $this->count;
   }
   /**
-   * A list of example occurrences of the error, grouped by product.
-   *
-   * @param DatafeedStatusExample[] $examples
+   * @param DatafeedStatusExample[]
    */
   public function setExamples($examples)
   {
@@ -90,9 +78,7 @@ class DatafeedStatusError extends \Google\Collection
     return $this->examples;
   }
   /**
-   * The error message, for example, "Invalid price".
-   *
-   * @param string $message
+   * @param string
    */
   public function setMessage($message)
   {

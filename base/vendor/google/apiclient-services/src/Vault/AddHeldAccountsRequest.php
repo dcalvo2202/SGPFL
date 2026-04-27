@@ -21,25 +21,16 @@ class AddHeldAccountsRequest extends \Google\Collection
 {
   protected $collection_key = 'emails';
   /**
-   * A comma-separated list of the account IDs of the accounts to add to the
-   * hold. Specify either **emails** or **account_ids**, but not both.
-   *
    * @var string[]
    */
   public $accountIds;
   /**
-   * A comma-separated list of the emails of the accounts to add to the hold.
-   * Specify either **emails** or **account_ids**, but not both.
-   *
    * @var string[]
    */
   public $emails;
 
   /**
-   * A comma-separated list of the account IDs of the accounts to add to the
-   * hold. Specify either **emails** or **account_ids**, but not both.
-   *
-   * @param string[] $accountIds
+   * @param string[]
    */
   public function setAccountIds($accountIds)
   {
@@ -53,10 +44,7 @@ class AddHeldAccountsRequest extends \Google\Collection
     return $this->accountIds;
   }
   /**
-   * A comma-separated list of the emails of the accounts to add to the hold.
-   * Specify either **emails** or **account_ids**, but not both.
-   *
-   * @param string[] $emails
+   * @param string[]
    */
   public function setEmails($emails)
   {

@@ -21,8 +21,6 @@ class GoogleCloudChannelV1ListProductsResponse extends \Google\Collection
 {
   protected $collection_key = 'products';
   /**
-   * A token to retrieve the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -30,9 +28,7 @@ class GoogleCloudChannelV1ListProductsResponse extends \Google\Collection
   protected $productsDataType = 'array';
 
   /**
-   * A token to retrieve the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -46,9 +42,7 @@ class GoogleCloudChannelV1ListProductsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * List of Products requested.
-   *
-   * @param GoogleCloudChannelV1Product[] $products
+   * @param GoogleCloudChannelV1Product[]
    */
   public function setProducts($products)
   {

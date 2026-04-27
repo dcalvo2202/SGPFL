@@ -26,9 +26,7 @@ class GetMembershipGraphResponse extends \Google\Collection
   protected $groupsDataType = 'array';
 
   /**
-   * The membership graph's path information represented as an adjacency list.
-   *
-   * @param MembershipAdjacencyList[] $adjacencyList
+   * @param MembershipAdjacencyList[]
    */
   public function setAdjacencyList($adjacencyList)
   {
@@ -42,11 +40,7 @@ class GetMembershipGraphResponse extends \Google\Collection
     return $this->adjacencyList;
   }
   /**
-   * The resources representing each group in the adjacency list. Each group in
-   * this list can be correlated to a 'group' of the MembershipAdjacencyList
-   * using the 'name' of the Group resource.
-   *
-   * @param Group[] $groups
+   * @param Group[]
    */
   public function setGroups($groups)
   {

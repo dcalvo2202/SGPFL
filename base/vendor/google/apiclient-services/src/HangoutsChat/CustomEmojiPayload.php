@@ -20,27 +20,16 @@ namespace Google\Service\HangoutsChat;
 class CustomEmojiPayload extends \Google\Model
 {
   /**
-   * Required. Input only. The image used for the custom emoji. The payload must
-   * be under 256 KB and the dimension of the image must be square and between
-   * 64 and 500 pixels. The restrictions are subject to change.
-   *
    * @var string
    */
   public $fileContent;
   /**
-   * Required. Input only. The image file name. Supported file extensions:
-   * `.png`, `.jpg`, `.gif`.
-   *
    * @var string
    */
   public $filename;
 
   /**
-   * Required. Input only. The image used for the custom emoji. The payload must
-   * be under 256 KB and the dimension of the image must be square and between
-   * 64 and 500 pixels. The restrictions are subject to change.
-   *
-   * @param string $fileContent
+   * @param string
    */
   public function setFileContent($fileContent)
   {
@@ -54,10 +43,7 @@ class CustomEmojiPayload extends \Google\Model
     return $this->fileContent;
   }
   /**
-   * Required. Input only. The image file name. Supported file extensions:
-   * `.png`, `.jpg`, `.gif`.
-   *
-   * @param string $filename
+   * @param string
    */
   public function setFilename($filename)
   {

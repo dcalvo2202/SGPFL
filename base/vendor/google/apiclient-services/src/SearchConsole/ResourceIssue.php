@@ -23,9 +23,7 @@ class ResourceIssue extends \Google\Model
   protected $blockedResourceDataType = '';
 
   /**
-   * Describes a blocked resource issue.
-   *
-   * @param BlockedResource $blockedResource
+   * @param BlockedResource
    */
   public function setBlockedResource(BlockedResource $blockedResource)
   {

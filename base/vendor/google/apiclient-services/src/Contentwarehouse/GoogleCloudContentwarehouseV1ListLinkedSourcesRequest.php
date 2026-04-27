@@ -20,20 +20,10 @@ namespace Google\Service\Contentwarehouse;
 class GoogleCloudContentwarehouseV1ListLinkedSourcesRequest extends \Google\Model
 {
   /**
-   * The maximum number of document-links to return. The service may return
-   * fewer than this value. If unspecified, at most 50 document-links will be
-   * returned. The maximum value is 1000; values above 1000 will be coerced to
-   * 1000.
-   *
    * @var int
    */
   public $pageSize;
   /**
-   * A page token, received from a previous `ListLinkedSources` call. Provide
-   * this to retrieve the subsequent page. When paginating, all other parameters
-   * provided to `ListLinkedSources` must match the call that provided the page
-   * token.
-   *
    * @var string
    */
   public $pageToken;
@@ -41,12 +31,7 @@ class GoogleCloudContentwarehouseV1ListLinkedSourcesRequest extends \Google\Mode
   protected $requestMetadataDataType = '';
 
   /**
-   * The maximum number of document-links to return. The service may return
-   * fewer than this value. If unspecified, at most 50 document-links will be
-   * returned. The maximum value is 1000; values above 1000 will be coerced to
-   * 1000.
-   *
-   * @param int $pageSize
+   * @param int
    */
   public function setPageSize($pageSize)
   {
@@ -60,12 +45,7 @@ class GoogleCloudContentwarehouseV1ListLinkedSourcesRequest extends \Google\Mode
     return $this->pageSize;
   }
   /**
-   * A page token, received from a previous `ListLinkedSources` call. Provide
-   * this to retrieve the subsequent page. When paginating, all other parameters
-   * provided to `ListLinkedSources` must match the call that provided the page
-   * token.
-   *
-   * @param string $pageToken
+   * @param string
    */
   public function setPageToken($pageToken)
   {
@@ -79,10 +59,7 @@ class GoogleCloudContentwarehouseV1ListLinkedSourcesRequest extends \Google\Mode
     return $this->pageToken;
   }
   /**
-   * The meta information collected about the document creator, used to enforce
-   * access control for the service.
-   *
-   * @param GoogleCloudContentwarehouseV1RequestMetadata $requestMetadata
+   * @param GoogleCloudContentwarehouseV1RequestMetadata
    */
   public function setRequestMetadata(GoogleCloudContentwarehouseV1RequestMetadata $requestMetadata)
   {

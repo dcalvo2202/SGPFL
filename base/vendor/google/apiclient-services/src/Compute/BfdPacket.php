@@ -19,139 +19,73 @@ namespace Google\Service\Compute;
 
 class BfdPacket extends \Google\Model
 {
-  public const DIAGNOSTIC_ADMINISTRATIVELY_DOWN = 'ADMINISTRATIVELY_DOWN';
-  public const DIAGNOSTIC_CONCATENATED_PATH_DOWN = 'CONCATENATED_PATH_DOWN';
-  public const DIAGNOSTIC_CONTROL_DETECTION_TIME_EXPIRED = 'CONTROL_DETECTION_TIME_EXPIRED';
-  public const DIAGNOSTIC_DIAGNOSTIC_UNSPECIFIED = 'DIAGNOSTIC_UNSPECIFIED';
-  public const DIAGNOSTIC_ECHO_FUNCTION_FAILED = 'ECHO_FUNCTION_FAILED';
-  public const DIAGNOSTIC_FORWARDING_PLANE_RESET = 'FORWARDING_PLANE_RESET';
-  public const DIAGNOSTIC_NEIGHBOR_SIGNALED_SESSION_DOWN = 'NEIGHBOR_SIGNALED_SESSION_DOWN';
-  public const DIAGNOSTIC_NO_DIAGNOSTIC = 'NO_DIAGNOSTIC';
-  public const DIAGNOSTIC_PATH_DOWN = 'PATH_DOWN';
-  public const DIAGNOSTIC_REVERSE_CONCATENATED_PATH_DOWN = 'REVERSE_CONCATENATED_PATH_DOWN';
-  public const STATE_ADMIN_DOWN = 'ADMIN_DOWN';
-  public const STATE_DOWN = 'DOWN';
-  public const STATE_INIT = 'INIT';
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  public const STATE_UP = 'UP';
   /**
-   * The Authentication Present bit of the BFD packet. This is specified in
-   * section 4.1 ofRFC5880
-   *
    * @var bool
    */
   public $authenticationPresent;
   /**
-   * The Control Plane Independent bit of the BFD packet. This is specified in
-   * section 4.1 ofRFC5880
-   *
    * @var bool
    */
   public $controlPlaneIndependent;
   /**
-   * The demand bit of the BFD packet. This is specified in section 4.1
-   * ofRFC5880
-   *
    * @var bool
    */
   public $demand;
   /**
-   * The diagnostic code specifies the local system's reason for the last change
-   * in session state. This allows remote systems to determine the reason that
-   * the previous session failed, for example. These diagnostic codes are
-   * specified in section 4.1 ofRFC5880
-   *
    * @var string
    */
   public $diagnostic;
   /**
-   * The Final bit of the BFD packet. This is specified in section 4.1 ofRFC5880
-   *
    * @var bool
    */
   public $final;
   /**
-   * The length of the BFD Control packet in bytes. This is specified in section
-   * 4.1 ofRFC5880
-   *
    * @var string
    */
   public $length;
   /**
-   * The Required Min Echo RX Interval value in the BFD packet. This is
-   * specified in section 4.1 ofRFC5880
-   *
    * @var string
    */
   public $minEchoRxIntervalMs;
   /**
-   * The Required Min RX Interval value in the BFD packet. This is specified in
-   * section 4.1 ofRFC5880
-   *
    * @var string
    */
   public $minRxIntervalMs;
   /**
-   * The Desired Min TX Interval value in the BFD packet. This is specified in
-   * section 4.1 ofRFC5880
-   *
    * @var string
    */
   public $minTxIntervalMs;
   /**
-   * The detection time multiplier of the BFD packet. This is specified in
-   * section 4.1 ofRFC5880
-   *
    * @var string
    */
   public $multiplier;
   /**
-   * The multipoint bit of the BFD packet. This is specified in section 4.1
-   * ofRFC5880
-   *
    * @var bool
    */
   public $multipoint;
   /**
-   * The My Discriminator value in the BFD packet. This is specified in section
-   * 4.1 ofRFC5880
-   *
    * @var string
    */
   public $myDiscriminator;
   /**
-   * The Poll bit of the BFD packet. This is specified in section 4.1 ofRFC5880
-   *
    * @var bool
    */
   public $poll;
   /**
-   * The current BFD session state as seen by the transmitting system. These
-   * states are specified in section 4.1 ofRFC5880
-   *
    * @var string
    */
   public $state;
   /**
-   * The version number of the BFD protocol, as specified in section 4.1
-   * ofRFC5880.
-   *
    * @var string
    */
   public $version;
   /**
-   * The Your Discriminator value in the BFD packet. This is specified in
-   * section 4.1 ofRFC5880
-   *
    * @var string
    */
   public $yourDiscriminator;
 
   /**
-   * The Authentication Present bit of the BFD packet. This is specified in
-   * section 4.1 ofRFC5880
-   *
-   * @param bool $authenticationPresent
+   * @param bool
    */
   public function setAuthenticationPresent($authenticationPresent)
   {
@@ -165,10 +99,7 @@ class BfdPacket extends \Google\Model
     return $this->authenticationPresent;
   }
   /**
-   * The Control Plane Independent bit of the BFD packet. This is specified in
-   * section 4.1 ofRFC5880
-   *
-   * @param bool $controlPlaneIndependent
+   * @param bool
    */
   public function setControlPlaneIndependent($controlPlaneIndependent)
   {
@@ -182,10 +113,7 @@ class BfdPacket extends \Google\Model
     return $this->controlPlaneIndependent;
   }
   /**
-   * The demand bit of the BFD packet. This is specified in section 4.1
-   * ofRFC5880
-   *
-   * @param bool $demand
+   * @param bool
    */
   public function setDemand($demand)
   {
@@ -199,34 +127,21 @@ class BfdPacket extends \Google\Model
     return $this->demand;
   }
   /**
-   * The diagnostic code specifies the local system's reason for the last change
-   * in session state. This allows remote systems to determine the reason that
-   * the previous session failed, for example. These diagnostic codes are
-   * specified in section 4.1 ofRFC5880
-   *
-   * Accepted values: ADMINISTRATIVELY_DOWN, CONCATENATED_PATH_DOWN,
-   * CONTROL_DETECTION_TIME_EXPIRED, DIAGNOSTIC_UNSPECIFIED,
-   * ECHO_FUNCTION_FAILED, FORWARDING_PLANE_RESET,
-   * NEIGHBOR_SIGNALED_SESSION_DOWN, NO_DIAGNOSTIC, PATH_DOWN,
-   * REVERSE_CONCATENATED_PATH_DOWN
-   *
-   * @param self::DIAGNOSTIC_* $diagnostic
+   * @param string
    */
   public function setDiagnostic($diagnostic)
   {
     $this->diagnostic = $diagnostic;
   }
   /**
-   * @return self::DIAGNOSTIC_*
+   * @return string
    */
   public function getDiagnostic()
   {
     return $this->diagnostic;
   }
   /**
-   * The Final bit of the BFD packet. This is specified in section 4.1 ofRFC5880
-   *
-   * @param bool $final
+   * @param bool
    */
   public function setFinal($final)
   {
@@ -240,10 +155,7 @@ class BfdPacket extends \Google\Model
     return $this->final;
   }
   /**
-   * The length of the BFD Control packet in bytes. This is specified in section
-   * 4.1 ofRFC5880
-   *
-   * @param string $length
+   * @param string
    */
   public function setLength($length)
   {
@@ -257,10 +169,7 @@ class BfdPacket extends \Google\Model
     return $this->length;
   }
   /**
-   * The Required Min Echo RX Interval value in the BFD packet. This is
-   * specified in section 4.1 ofRFC5880
-   *
-   * @param string $minEchoRxIntervalMs
+   * @param string
    */
   public function setMinEchoRxIntervalMs($minEchoRxIntervalMs)
   {
@@ -274,10 +183,7 @@ class BfdPacket extends \Google\Model
     return $this->minEchoRxIntervalMs;
   }
   /**
-   * The Required Min RX Interval value in the BFD packet. This is specified in
-   * section 4.1 ofRFC5880
-   *
-   * @param string $minRxIntervalMs
+   * @param string
    */
   public function setMinRxIntervalMs($minRxIntervalMs)
   {
@@ -291,10 +197,7 @@ class BfdPacket extends \Google\Model
     return $this->minRxIntervalMs;
   }
   /**
-   * The Desired Min TX Interval value in the BFD packet. This is specified in
-   * section 4.1 ofRFC5880
-   *
-   * @param string $minTxIntervalMs
+   * @param string
    */
   public function setMinTxIntervalMs($minTxIntervalMs)
   {
@@ -308,10 +211,7 @@ class BfdPacket extends \Google\Model
     return $this->minTxIntervalMs;
   }
   /**
-   * The detection time multiplier of the BFD packet. This is specified in
-   * section 4.1 ofRFC5880
-   *
-   * @param string $multiplier
+   * @param string
    */
   public function setMultiplier($multiplier)
   {
@@ -325,10 +225,7 @@ class BfdPacket extends \Google\Model
     return $this->multiplier;
   }
   /**
-   * The multipoint bit of the BFD packet. This is specified in section 4.1
-   * ofRFC5880
-   *
-   * @param bool $multipoint
+   * @param bool
    */
   public function setMultipoint($multipoint)
   {
@@ -342,10 +239,7 @@ class BfdPacket extends \Google\Model
     return $this->multipoint;
   }
   /**
-   * The My Discriminator value in the BFD packet. This is specified in section
-   * 4.1 ofRFC5880
-   *
-   * @param string $myDiscriminator
+   * @param string
    */
   public function setMyDiscriminator($myDiscriminator)
   {
@@ -359,9 +253,7 @@ class BfdPacket extends \Google\Model
     return $this->myDiscriminator;
   }
   /**
-   * The Poll bit of the BFD packet. This is specified in section 4.1 ofRFC5880
-   *
-   * @param bool $poll
+   * @param bool
    */
   public function setPoll($poll)
   {
@@ -375,29 +267,21 @@ class BfdPacket extends \Google\Model
     return $this->poll;
   }
   /**
-   * The current BFD session state as seen by the transmitting system. These
-   * states are specified in section 4.1 ofRFC5880
-   *
-   * Accepted values: ADMIN_DOWN, DOWN, INIT, STATE_UNSPECIFIED, UP
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * The version number of the BFD protocol, as specified in section 4.1
-   * ofRFC5880.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {
@@ -411,10 +295,7 @@ class BfdPacket extends \Google\Model
     return $this->version;
   }
   /**
-   * The Your Discriminator value in the BFD packet. This is specified in
-   * section 4.1 ofRFC5880
-   *
-   * @param string $yourDiscriminator
+   * @param string
    */
   public function setYourDiscriminator($yourDiscriminator)
   {

@@ -26,9 +26,7 @@ class GoogleCloudRetailV2alphaOutputResult extends \Google\Collection
   protected $gcsResultDataType = 'array';
 
   /**
-   * The BigQuery location where the result is stored.
-   *
-   * @param GoogleCloudRetailV2alphaBigQueryOutputResult[] $bigqueryResult
+   * @param GoogleCloudRetailV2alphaBigQueryOutputResult[]
    */
   public function setBigqueryResult($bigqueryResult)
   {
@@ -42,9 +40,7 @@ class GoogleCloudRetailV2alphaOutputResult extends \Google\Collection
     return $this->bigqueryResult;
   }
   /**
-   * The Google Cloud Storage location where the result is stored.
-   *
-   * @param GoogleCloudRetailV2alphaGcsOutputResult[] $gcsResult
+   * @param GoogleCloudRetailV2alphaGcsOutputResult[]
    */
   public function setGcsResult($gcsResult)
   {

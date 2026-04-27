@@ -21,27 +21,18 @@ class SearchSpacesResponse extends \Google\Collection
 {
   protected $collection_key = 'spaces';
   /**
-   * A token that can be used to retrieve the next page. If this field is empty,
-   * there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $spacesType = Space::class;
   protected $spacesDataType = 'array';
   /**
-   * The total number of spaces that match the query, across all pages. If the
-   * result is over 10,000 spaces, this value is an estimate.
-   *
    * @var int
    */
   public $totalSize;
 
   /**
-   * A token that can be used to retrieve the next page. If this field is empty,
-   * there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -55,9 +46,7 @@ class SearchSpacesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * A page of the requested spaces.
-   *
-   * @param Space[] $spaces
+   * @param Space[]
    */
   public function setSpaces($spaces)
   {
@@ -71,10 +60,7 @@ class SearchSpacesResponse extends \Google\Collection
     return $this->spaces;
   }
   /**
-   * The total number of spaces that match the query, across all pages. If the
-   * result is over 10,000 spaces, this value is an estimate.
-   *
-   * @param int $totalSize
+   * @param int
    */
   public function setTotalSize($totalSize)
   {

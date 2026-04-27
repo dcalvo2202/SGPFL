@@ -24,21 +24,12 @@ class UpdateItemRequest extends \Google\Model
   protected $locationType = Location::class;
   protected $locationDataType = '';
   /**
-   * Required. Only values named in this mask are changed.
-   *
    * @var string
    */
   public $updateMask;
 
   /**
-   * Required. New values for the item. Note that item and question IDs are used
-   * if they are provided (and are in the field mask). If an ID is blank (and in
-   * the field mask) a new ID is generated. This means you can modify an item by
-   * getting the form via forms.get, modifying your local copy of that item to
-   * be how you want it, and using UpdateItemRequest to write it back, with the
-   * IDs being the same (or not in the field mask).
-   *
-   * @param Item $item
+   * @param Item
    */
   public function setItem(Item $item)
   {
@@ -52,9 +43,7 @@ class UpdateItemRequest extends \Google\Model
     return $this->item;
   }
   /**
-   * Required. The location identifying the item to update.
-   *
-   * @param Location $location
+   * @param Location
    */
   public function setLocation(Location $location)
   {
@@ -68,9 +57,7 @@ class UpdateItemRequest extends \Google\Model
     return $this->location;
   }
   /**
-   * Required. Only values named in this mask are changed.
-   *
-   * @param string $updateMask
+   * @param string
    */
   public function setUpdateMask($updateMask)
   {

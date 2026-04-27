@@ -23,51 +23,34 @@ class EnterpriseCrmEventbusProtoNextTask extends \Google\Collection
   protected $combinedConditionsType = EnterpriseCrmEventbusProtoCombinedCondition::class;
   protected $combinedConditionsDataType = 'array';
   /**
-   * Standard filter expression for this task to become an eligible next task.
-   *
    * @var string
    */
   public $condition;
   /**
-   * User-provided description intended to give more business context about the
-   * next task edge or condition.
-   *
    * @var string
    */
   public $description;
   /**
-   * User-provided label that is attached to this edge in the UI.
-   *
    * @var string
    */
   public $label;
   /**
-   * ID of the next task.
-   *
    * @var string
    */
   public $taskConfigId;
   /**
-   * Task number of the next task.
-   *
    * @var string
    */
   public $taskNumber;
 
   /**
-   * Combined condition for this task to become an eligible next task. Each of
-   * these combined_conditions are joined with logical OR. DEPRECATED: use
-   * `condition`
-   *
-   * @deprecated
-   * @param EnterpriseCrmEventbusProtoCombinedCondition[] $combinedConditions
+   * @param EnterpriseCrmEventbusProtoCombinedCondition[]
    */
   public function setCombinedConditions($combinedConditions)
   {
     $this->combinedConditions = $combinedConditions;
   }
   /**
-   * @deprecated
    * @return EnterpriseCrmEventbusProtoCombinedCondition[]
    */
   public function getCombinedConditions()
@@ -75,9 +58,7 @@ class EnterpriseCrmEventbusProtoNextTask extends \Google\Collection
     return $this->combinedConditions;
   }
   /**
-   * Standard filter expression for this task to become an eligible next task.
-   *
-   * @param string $condition
+   * @param string
    */
   public function setCondition($condition)
   {
@@ -91,10 +72,7 @@ class EnterpriseCrmEventbusProtoNextTask extends \Google\Collection
     return $this->condition;
   }
   /**
-   * User-provided description intended to give more business context about the
-   * next task edge or condition.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -108,9 +86,7 @@ class EnterpriseCrmEventbusProtoNextTask extends \Google\Collection
     return $this->description;
   }
   /**
-   * User-provided label that is attached to this edge in the UI.
-   *
-   * @param string $label
+   * @param string
    */
   public function setLabel($label)
   {
@@ -124,9 +100,7 @@ class EnterpriseCrmEventbusProtoNextTask extends \Google\Collection
     return $this->label;
   }
   /**
-   * ID of the next task.
-   *
-   * @param string $taskConfigId
+   * @param string
    */
   public function setTaskConfigId($taskConfigId)
   {
@@ -140,9 +114,7 @@ class EnterpriseCrmEventbusProtoNextTask extends \Google\Collection
     return $this->taskConfigId;
   }
   /**
-   * Task number of the next task.
-   *
-   * @param string $taskNumber
+   * @param string
    */
   public function setTaskNumber($taskNumber)
   {

@@ -23,16 +23,12 @@ class InterconnectGroupPhysicalStructureMetros extends \Google\Collection
   protected $facilitiesType = InterconnectGroupPhysicalStructureMetrosFacilities::class;
   protected $facilitiesDataType = 'array';
   /**
-   * Output only. [Output Only] The name of the metro, as a three-letter
-   * lowercase string like "iad". This is the first component of the location of
-   * Interconnects underneath this.
-   *
    * @var string
    */
   public $metro;
 
   /**
-   * @param InterconnectGroupPhysicalStructureMetrosFacilities[] $facilities
+   * @param InterconnectGroupPhysicalStructureMetrosFacilities[]
    */
   public function setFacilities($facilities)
   {
@@ -46,11 +42,7 @@ class InterconnectGroupPhysicalStructureMetros extends \Google\Collection
     return $this->facilities;
   }
   /**
-   * Output only. [Output Only] The name of the metro, as a three-letter
-   * lowercase string like "iad". This is the first component of the location of
-   * Interconnects underneath this.
-   *
-   * @param string $metro
+   * @param string
    */
   public function setMetro($metro)
   {

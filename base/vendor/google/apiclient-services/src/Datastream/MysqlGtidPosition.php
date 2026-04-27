@@ -20,16 +20,12 @@ namespace Google\Service\Datastream;
 class MysqlGtidPosition extends \Google\Model
 {
   /**
-   * Required. The gtid set to start replication from.
-   *
    * @var string
    */
   public $gtidSet;
 
   /**
-   * Required. The gtid set to start replication from.
-   *
-   * @param string $gtidSet
+   * @param string
    */
   public function setGtidSet($gtidSet)
   {

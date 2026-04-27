@@ -24,9 +24,7 @@ class MySqlSyncConfig extends \Google\Collection
   protected $initialSyncFlagsDataType = 'array';
 
   /**
-   * Flags to use for the initial dump.
-   *
-   * @param SyncFlags[] $initialSyncFlags
+   * @param SyncFlags[]
    */
   public function setInitialSyncFlags($initialSyncFlags)
   {

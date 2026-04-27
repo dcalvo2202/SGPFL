@@ -20,58 +20,32 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1CloudSqlSource extends \Google\Model
 {
   /**
-   * Required. The Cloud SQL database to copy the data from with a length limit
-   * of 256 characters.
-   *
    * @var string
    */
   public $databaseId;
   /**
-   * Intermediate Cloud Storage directory used for the import with a length
-   * limit of 2,000 characters. Can be specified if one wants to have the Cloud
-   * SQL export to a specific Cloud Storage directory. Ensure that the Cloud SQL
-   * service account has the necessary Cloud Storage Admin permissions to access
-   * the specified Cloud Storage directory.
-   *
    * @var string
    */
   public $gcsStagingDir;
   /**
-   * Required. The Cloud SQL instance to copy the data from with a length limit
-   * of 256 characters.
-   *
    * @var string
    */
   public $instanceId;
   /**
-   * Option for serverless export. Enabling this option will incur additional
-   * cost. More info can be found
-   * [here](https://cloud.google.com/sql/pricing#serverless).
-   *
    * @var bool
    */
   public $offload;
   /**
-   * The project ID that contains the Cloud SQL source. Has a length limit of
-   * 128 characters. If not specified, inherits the project ID from the parent
-   * request.
-   *
    * @var string
    */
   public $projectId;
   /**
-   * Required. The Cloud SQL table to copy the data from with a length limit of
-   * 256 characters.
-   *
    * @var string
    */
   public $tableId;
 
   /**
-   * Required. The Cloud SQL database to copy the data from with a length limit
-   * of 256 characters.
-   *
-   * @param string $databaseId
+   * @param string
    */
   public function setDatabaseId($databaseId)
   {
@@ -85,13 +59,7 @@ class GoogleCloudDiscoveryengineV1CloudSqlSource extends \Google\Model
     return $this->databaseId;
   }
   /**
-   * Intermediate Cloud Storage directory used for the import with a length
-   * limit of 2,000 characters. Can be specified if one wants to have the Cloud
-   * SQL export to a specific Cloud Storage directory. Ensure that the Cloud SQL
-   * service account has the necessary Cloud Storage Admin permissions to access
-   * the specified Cloud Storage directory.
-   *
-   * @param string $gcsStagingDir
+   * @param string
    */
   public function setGcsStagingDir($gcsStagingDir)
   {
@@ -105,10 +73,7 @@ class GoogleCloudDiscoveryengineV1CloudSqlSource extends \Google\Model
     return $this->gcsStagingDir;
   }
   /**
-   * Required. The Cloud SQL instance to copy the data from with a length limit
-   * of 256 characters.
-   *
-   * @param string $instanceId
+   * @param string
    */
   public function setInstanceId($instanceId)
   {
@@ -122,11 +87,7 @@ class GoogleCloudDiscoveryengineV1CloudSqlSource extends \Google\Model
     return $this->instanceId;
   }
   /**
-   * Option for serverless export. Enabling this option will incur additional
-   * cost. More info can be found
-   * [here](https://cloud.google.com/sql/pricing#serverless).
-   *
-   * @param bool $offload
+   * @param bool
    */
   public function setOffload($offload)
   {
@@ -140,11 +101,7 @@ class GoogleCloudDiscoveryengineV1CloudSqlSource extends \Google\Model
     return $this->offload;
   }
   /**
-   * The project ID that contains the Cloud SQL source. Has a length limit of
-   * 128 characters. If not specified, inherits the project ID from the parent
-   * request.
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {
@@ -158,10 +115,7 @@ class GoogleCloudDiscoveryengineV1CloudSqlSource extends \Google\Model
     return $this->projectId;
   }
   /**
-   * Required. The Cloud SQL table to copy the data from with a length limit of
-   * 256 characters.
-   *
-   * @param string $tableId
+   * @param string
    */
   public function setTableId($tableId)
   {

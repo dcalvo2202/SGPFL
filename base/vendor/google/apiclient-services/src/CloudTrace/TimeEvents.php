@@ -21,16 +21,10 @@ class TimeEvents extends \Google\Collection
 {
   protected $collection_key = 'timeEvent';
   /**
-   * The number of dropped annotations in all the included time events. If the
-   * value is 0, then no annotations were dropped.
-   *
    * @var int
    */
   public $droppedAnnotationsCount;
   /**
-   * The number of dropped message events in all the included time events. If
-   * the value is 0, then no message events were dropped.
-   *
    * @var int
    */
   public $droppedMessageEventsCount;
@@ -38,10 +32,7 @@ class TimeEvents extends \Google\Collection
   protected $timeEventDataType = 'array';
 
   /**
-   * The number of dropped annotations in all the included time events. If the
-   * value is 0, then no annotations were dropped.
-   *
-   * @param int $droppedAnnotationsCount
+   * @param int
    */
   public function setDroppedAnnotationsCount($droppedAnnotationsCount)
   {
@@ -55,10 +46,7 @@ class TimeEvents extends \Google\Collection
     return $this->droppedAnnotationsCount;
   }
   /**
-   * The number of dropped message events in all the included time events. If
-   * the value is 0, then no message events were dropped.
-   *
-   * @param int $droppedMessageEventsCount
+   * @param int
    */
   public function setDroppedMessageEventsCount($droppedMessageEventsCount)
   {
@@ -72,9 +60,7 @@ class TimeEvents extends \Google\Collection
     return $this->droppedMessageEventsCount;
   }
   /**
-   * A collection of `TimeEvent`s.
-   *
-   * @param TimeEvent[] $timeEvent
+   * @param TimeEvent[]
    */
   public function setTimeEvent($timeEvent)
   {

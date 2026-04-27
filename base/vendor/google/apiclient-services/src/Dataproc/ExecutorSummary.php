@@ -132,7 +132,7 @@ class ExecutorSummary extends \Google\Collection
   public $totalTasks;
 
   /**
-   * @param int $activeTasks
+   * @param int
    */
   public function setActiveTasks($activeTasks)
   {
@@ -146,7 +146,7 @@ class ExecutorSummary extends \Google\Collection
     return $this->activeTasks;
   }
   /**
-   * @param string $addTime
+   * @param string
    */
   public function setAddTime($addTime)
   {
@@ -160,7 +160,7 @@ class ExecutorSummary extends \Google\Collection
     return $this->addTime;
   }
   /**
-   * @param string[] $attributes
+   * @param string[]
    */
   public function setAttributes($attributes)
   {
@@ -174,7 +174,7 @@ class ExecutorSummary extends \Google\Collection
     return $this->attributes;
   }
   /**
-   * @param int $completedTasks
+   * @param int
    */
   public function setCompletedTasks($completedTasks)
   {
@@ -188,7 +188,7 @@ class ExecutorSummary extends \Google\Collection
     return $this->completedTasks;
   }
   /**
-   * @param string $diskUsed
+   * @param string
    */
   public function setDiskUsed($diskUsed)
   {
@@ -202,7 +202,7 @@ class ExecutorSummary extends \Google\Collection
     return $this->diskUsed;
   }
   /**
-   * @param string[] $excludedInStages
+   * @param string[]
    */
   public function setExcludedInStages($excludedInStages)
   {
@@ -216,7 +216,7 @@ class ExecutorSummary extends \Google\Collection
     return $this->excludedInStages;
   }
   /**
-   * @param string $executorId
+   * @param string
    */
   public function setExecutorId($executorId)
   {
@@ -230,7 +230,7 @@ class ExecutorSummary extends \Google\Collection
     return $this->executorId;
   }
   /**
-   * @param string[] $executorLogs
+   * @param string[]
    */
   public function setExecutorLogs($executorLogs)
   {
@@ -244,7 +244,7 @@ class ExecutorSummary extends \Google\Collection
     return $this->executorLogs;
   }
   /**
-   * @param int $failedTasks
+   * @param int
    */
   public function setFailedTasks($failedTasks)
   {
@@ -258,7 +258,7 @@ class ExecutorSummary extends \Google\Collection
     return $this->failedTasks;
   }
   /**
-   * @param string $hostPort
+   * @param string
    */
   public function setHostPort($hostPort)
   {
@@ -272,7 +272,7 @@ class ExecutorSummary extends \Google\Collection
     return $this->hostPort;
   }
   /**
-   * @param bool $isActive
+   * @param bool
    */
   public function setIsActive($isActive)
   {
@@ -286,7 +286,7 @@ class ExecutorSummary extends \Google\Collection
     return $this->isActive;
   }
   /**
-   * @param bool $isExcluded
+   * @param bool
    */
   public function setIsExcluded($isExcluded)
   {
@@ -300,7 +300,7 @@ class ExecutorSummary extends \Google\Collection
     return $this->isExcluded;
   }
   /**
-   * @param string $maxMemory
+   * @param string
    */
   public function setMaxMemory($maxMemory)
   {
@@ -314,7 +314,7 @@ class ExecutorSummary extends \Google\Collection
     return $this->maxMemory;
   }
   /**
-   * @param int $maxTasks
+   * @param int
    */
   public function setMaxTasks($maxTasks)
   {
@@ -328,7 +328,7 @@ class ExecutorSummary extends \Google\Collection
     return $this->maxTasks;
   }
   /**
-   * @param MemoryMetrics $memoryMetrics
+   * @param MemoryMetrics
    */
   public function setMemoryMetrics(MemoryMetrics $memoryMetrics)
   {
@@ -342,7 +342,7 @@ class ExecutorSummary extends \Google\Collection
     return $this->memoryMetrics;
   }
   /**
-   * @param string $memoryUsed
+   * @param string
    */
   public function setMemoryUsed($memoryUsed)
   {
@@ -356,7 +356,7 @@ class ExecutorSummary extends \Google\Collection
     return $this->memoryUsed;
   }
   /**
-   * @param ExecutorMetrics $peakMemoryMetrics
+   * @param ExecutorMetrics
    */
   public function setPeakMemoryMetrics(ExecutorMetrics $peakMemoryMetrics)
   {
@@ -370,7 +370,7 @@ class ExecutorSummary extends \Google\Collection
     return $this->peakMemoryMetrics;
   }
   /**
-   * @param int $rddBlocks
+   * @param int
    */
   public function setRddBlocks($rddBlocks)
   {
@@ -384,7 +384,7 @@ class ExecutorSummary extends \Google\Collection
     return $this->rddBlocks;
   }
   /**
-   * @param string $removeReason
+   * @param string
    */
   public function setRemoveReason($removeReason)
   {
@@ -398,7 +398,7 @@ class ExecutorSummary extends \Google\Collection
     return $this->removeReason;
   }
   /**
-   * @param string $removeTime
+   * @param string
    */
   public function setRemoveTime($removeTime)
   {
@@ -412,7 +412,7 @@ class ExecutorSummary extends \Google\Collection
     return $this->removeTime;
   }
   /**
-   * @param int $resourceProfileId
+   * @param int
    */
   public function setResourceProfileId($resourceProfileId)
   {
@@ -426,7 +426,7 @@ class ExecutorSummary extends \Google\Collection
     return $this->resourceProfileId;
   }
   /**
-   * @param ResourceInformation[] $resources
+   * @param ResourceInformation[]
    */
   public function setResources($resources)
   {
@@ -440,7 +440,7 @@ class ExecutorSummary extends \Google\Collection
     return $this->resources;
   }
   /**
-   * @param int $totalCores
+   * @param int
    */
   public function setTotalCores($totalCores)
   {
@@ -454,7 +454,7 @@ class ExecutorSummary extends \Google\Collection
     return $this->totalCores;
   }
   /**
-   * @param string $totalDurationMillis
+   * @param string
    */
   public function setTotalDurationMillis($totalDurationMillis)
   {
@@ -468,7 +468,7 @@ class ExecutorSummary extends \Google\Collection
     return $this->totalDurationMillis;
   }
   /**
-   * @param string $totalGcTimeMillis
+   * @param string
    */
   public function setTotalGcTimeMillis($totalGcTimeMillis)
   {
@@ -482,7 +482,7 @@ class ExecutorSummary extends \Google\Collection
     return $this->totalGcTimeMillis;
   }
   /**
-   * @param string $totalInputBytes
+   * @param string
    */
   public function setTotalInputBytes($totalInputBytes)
   {
@@ -496,7 +496,7 @@ class ExecutorSummary extends \Google\Collection
     return $this->totalInputBytes;
   }
   /**
-   * @param string $totalShuffleRead
+   * @param string
    */
   public function setTotalShuffleRead($totalShuffleRead)
   {
@@ -510,7 +510,7 @@ class ExecutorSummary extends \Google\Collection
     return $this->totalShuffleRead;
   }
   /**
-   * @param string $totalShuffleWrite
+   * @param string
    */
   public function setTotalShuffleWrite($totalShuffleWrite)
   {
@@ -524,7 +524,7 @@ class ExecutorSummary extends \Google\Collection
     return $this->totalShuffleWrite;
   }
   /**
-   * @param int $totalTasks
+   * @param int
    */
   public function setTotalTasks($totalTasks)
   {

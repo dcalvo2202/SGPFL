@@ -20,22 +20,16 @@ namespace Google\Service\Contentwarehouse;
 class GoogleCloudDocumentaiV1DocumentTextAnchorTextSegment extends \Google\Model
 {
   /**
-   * TextSegment half open end UTF-8 char index in the Document.text.
-   *
    * @var string
    */
   public $endIndex;
   /**
-   * TextSegment start UTF-8 char index in the Document.text.
-   *
    * @var string
    */
   public $startIndex;
 
   /**
-   * TextSegment half open end UTF-8 char index in the Document.text.
-   *
-   * @param string $endIndex
+   * @param string
    */
   public function setEndIndex($endIndex)
   {
@@ -49,9 +43,7 @@ class GoogleCloudDocumentaiV1DocumentTextAnchorTextSegment extends \Google\Model
     return $this->endIndex;
   }
   /**
-   * TextSegment start UTF-8 char index in the Document.text.
-   *
-   * @param string $startIndex
+   * @param string
    */
   public function setStartIndex($startIndex)
   {

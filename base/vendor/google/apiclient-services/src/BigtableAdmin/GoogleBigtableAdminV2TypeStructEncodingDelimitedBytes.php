@@ -20,18 +20,12 @@ namespace Google\Service\BigtableAdmin;
 class GoogleBigtableAdminV2TypeStructEncodingDelimitedBytes extends \Google\Model
 {
   /**
-   * Byte sequence used to delimit concatenated fields. The delimiter must
-   * contain at least 1 character and at most 50 characters.
-   *
    * @var string
    */
   public $delimiter;
 
   /**
-   * Byte sequence used to delimit concatenated fields. The delimiter must
-   * contain at least 1 character and at most 50 characters.
-   *
-   * @param string $delimiter
+   * @param string
    */
   public function setDelimiter($delimiter)
   {

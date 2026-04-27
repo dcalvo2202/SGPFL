@@ -21,18 +21,10 @@ class GoogleCloudIntegrationsV1alphaExecuteIntegrationsRequest extends \Google\C
 {
   protected $collection_key = 'parameterEntries';
   /**
-   * Optional. Flag to determine how to should propagate errors. If this flag is
-   * set to be true, it will not throw an exception. Instead, it will return a
-   * {@link ExecuteIntegrationsResponse} with an execution id and error messages
-   * as PostWithTriggerIdExecutionException in {@link EventParameters}. The flag
-   * is set to be false by default.
-   *
    * @var bool
    */
   public $doNotPropagateError;
   /**
-   * Optional. The id of the ON_HOLD execution to be resumed.
-   *
    * @var string
    */
   public $executionId;
@@ -43,29 +35,16 @@ class GoogleCloudIntegrationsV1alphaExecuteIntegrationsRequest extends \Google\C
   protected $parametersType = EnterpriseCrmFrontendsEventbusProtoEventParameters::class;
   protected $parametersDataType = '';
   /**
-   * Optional. This is used to de-dup incoming request: if the duplicate request
-   * was detected, the response from the previous execution is returned.
-   *
    * @var string
    */
   public $requestId;
   /**
-   * Required. Matched against all {@link TriggerConfig}s across all
-   * integrations. i.e. TriggerConfig.trigger_id.equals(trigger_id). The
-   * trigger_id is in the format of `api_trigger/TRIGGER_NAME`.
-   *
    * @var string
    */
   public $triggerId;
 
   /**
-   * Optional. Flag to determine how to should propagate errors. If this flag is
-   * set to be true, it will not throw an exception. Instead, it will return a
-   * {@link ExecuteIntegrationsResponse} with an execution id and error messages
-   * as PostWithTriggerIdExecutionException in {@link EventParameters}. The flag
-   * is set to be false by default.
-   *
-   * @param bool $doNotPropagateError
+   * @param bool
    */
   public function setDoNotPropagateError($doNotPropagateError)
   {
@@ -79,9 +58,7 @@ class GoogleCloudIntegrationsV1alphaExecuteIntegrationsRequest extends \Google\C
     return $this->doNotPropagateError;
   }
   /**
-   * Optional. The id of the ON_HOLD execution to be resumed.
-   *
-   * @param string $executionId
+   * @param string
    */
   public function setExecutionId($executionId)
   {
@@ -95,9 +72,7 @@ class GoogleCloudIntegrationsV1alphaExecuteIntegrationsRequest extends \Google\C
     return $this->executionId;
   }
   /**
-   * Optional. Input parameters used by integration execution.
-   *
-   * @param GoogleCloudIntegrationsV1alphaValueType[] $inputParameters
+   * @param GoogleCloudIntegrationsV1alphaValueType[]
    */
   public function setInputParameters($inputParameters)
   {
@@ -111,18 +86,13 @@ class GoogleCloudIntegrationsV1alphaExecuteIntegrationsRequest extends \Google\C
     return $this->inputParameters;
   }
   /**
-   * Optional. Parameters are a part of Event and can be used to communicate
-   * between different tasks that are part of the same integration execution.
-   *
-   * @deprecated
-   * @param EnterpriseCrmFrontendsEventbusProtoParameterEntry[] $parameterEntries
+   * @param EnterpriseCrmFrontendsEventbusProtoParameterEntry[]
    */
   public function setParameterEntries($parameterEntries)
   {
     $this->parameterEntries = $parameterEntries;
   }
   /**
-   * @deprecated
    * @return EnterpriseCrmFrontendsEventbusProtoParameterEntry[]
    */
   public function getParameterEntries()
@@ -130,17 +100,13 @@ class GoogleCloudIntegrationsV1alphaExecuteIntegrationsRequest extends \Google\C
     return $this->parameterEntries;
   }
   /**
-   * Optional. Passed in as parameters to each integration execution. Redacted
-   *
-   * @deprecated
-   * @param EnterpriseCrmFrontendsEventbusProtoEventParameters $parameters
+   * @param EnterpriseCrmFrontendsEventbusProtoEventParameters
    */
   public function setParameters(EnterpriseCrmFrontendsEventbusProtoEventParameters $parameters)
   {
     $this->parameters = $parameters;
   }
   /**
-   * @deprecated
    * @return EnterpriseCrmFrontendsEventbusProtoEventParameters
    */
   public function getParameters()
@@ -148,10 +114,7 @@ class GoogleCloudIntegrationsV1alphaExecuteIntegrationsRequest extends \Google\C
     return $this->parameters;
   }
   /**
-   * Optional. This is used to de-dup incoming request: if the duplicate request
-   * was detected, the response from the previous execution is returned.
-   *
-   * @param string $requestId
+   * @param string
    */
   public function setRequestId($requestId)
   {
@@ -165,11 +128,7 @@ class GoogleCloudIntegrationsV1alphaExecuteIntegrationsRequest extends \Google\C
     return $this->requestId;
   }
   /**
-   * Required. Matched against all {@link TriggerConfig}s across all
-   * integrations. i.e. TriggerConfig.trigger_id.equals(trigger_id). The
-   * trigger_id is in the format of `api_trigger/TRIGGER_NAME`.
-   *
-   * @param string $triggerId
+   * @param string
    */
   public function setTriggerId($triggerId)
   {

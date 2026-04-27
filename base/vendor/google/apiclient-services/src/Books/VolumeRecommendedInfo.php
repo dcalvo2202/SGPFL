@@ -20,16 +20,12 @@ namespace Google\Service\Books;
 class VolumeRecommendedInfo extends \Google\Model
 {
   /**
-   * A text explaining why this volume is recommended.
-   *
    * @var string
    */
   public $explanation;
 
   /**
-   * A text explaining why this volume is recommended.
-   *
-   * @param string $explanation
+   * @param string
    */
   public function setExplanation($explanation)
   {

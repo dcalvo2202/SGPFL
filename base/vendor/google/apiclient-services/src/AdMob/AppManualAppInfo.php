@@ -20,18 +20,12 @@ namespace Google\Service\AdMob;
 class AppManualAppInfo extends \Google\Model
 {
   /**
-   * The display name of the app as shown in the AdMob UI, which is provided by
-   * the user. The maximum length allowed is 80 characters.
-   *
    * @var string
    */
   public $displayName;
 
   /**
-   * The display name of the app as shown in the AdMob UI, which is provided by
-   * the user. The maximum length allowed is 80 characters.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {

@@ -20,121 +20,56 @@ namespace Google\Service\RapidMigrationAssessment;
 class Collector extends \Google\Model
 {
   /**
-   * Collector state is not recognized.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Collector started to create, but hasn't been completed MC source creation
-   * and db object creation.
-   */
-  public const STATE_STATE_INITIALIZING = 'STATE_INITIALIZING';
-  /**
-   * Collector has been created, MC source creation and db object creation
-   * completed.
-   */
-  public const STATE_STATE_READY_TO_USE = 'STATE_READY_TO_USE';
-  /**
-   * Collector client has been registered with client.
-   */
-  public const STATE_STATE_REGISTERED = 'STATE_REGISTERED';
-  /**
-   * Collector client is actively scanning.
-   */
-  public const STATE_STATE_ACTIVE = 'STATE_ACTIVE';
-  /**
-   * Collector is not actively scanning.
-   */
-  public const STATE_STATE_PAUSED = 'STATE_PAUSED';
-  /**
-   * Collector is starting background job for deletion.
-   */
-  public const STATE_STATE_DELETING = 'STATE_DELETING';
-  /**
-   * Collector completed all tasks for deletion.
-   */
-  public const STATE_STATE_DECOMMISSIONED = 'STATE_DECOMMISSIONED';
-  /**
-   * Collector is in error state.
-   */
-  public const STATE_STATE_ERROR = 'STATE_ERROR';
-  /**
-   * Output only. Store cloud storage bucket name (which is a guid) created with
-   * this Collector.
-   *
    * @var string
    */
   public $bucket;
   /**
-   * Output only. Client version.
-   *
    * @var string
    */
   public $clientVersion;
   /**
-   * How many days to collect data.
-   *
    * @var int
    */
   public $collectionDays;
   /**
-   * Output only. Create time stamp.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * User specified description of the Collector.
-   *
    * @var string
    */
   public $description;
   /**
-   * User specified name of the Collector.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Uri for EULA (End User License Agreement) from customer.
-   *
    * @var string
    */
   public $eulaUri;
   /**
-   * User specified expected asset count.
-   *
    * @var string
    */
   public $expectedAssetCount;
   protected $guestOsScanType = GuestOsScan::class;
   protected $guestOsScanDataType = '';
   /**
-   * Labels as key value pairs.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * name of resource.
-   *
    * @var string
    */
   public $name;
   /**
-   * Service Account email used to ingest data to this Collector.
-   *
    * @var string
    */
   public $serviceAccount;
   /**
-   * Output only. State of the Collector.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. Update time stamp.
-   *
    * @var string
    */
   public $updateTime;
@@ -142,10 +77,7 @@ class Collector extends \Google\Model
   protected $vsphereScanDataType = '';
 
   /**
-   * Output only. Store cloud storage bucket name (which is a guid) created with
-   * this Collector.
-   *
-   * @param string $bucket
+   * @param string
    */
   public function setBucket($bucket)
   {
@@ -159,9 +91,7 @@ class Collector extends \Google\Model
     return $this->bucket;
   }
   /**
-   * Output only. Client version.
-   *
-   * @param string $clientVersion
+   * @param string
    */
   public function setClientVersion($clientVersion)
   {
@@ -175,9 +105,7 @@ class Collector extends \Google\Model
     return $this->clientVersion;
   }
   /**
-   * How many days to collect data.
-   *
-   * @param int $collectionDays
+   * @param int
    */
   public function setCollectionDays($collectionDays)
   {
@@ -191,9 +119,7 @@ class Collector extends \Google\Model
     return $this->collectionDays;
   }
   /**
-   * Output only. Create time stamp.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -207,9 +133,7 @@ class Collector extends \Google\Model
     return $this->createTime;
   }
   /**
-   * User specified description of the Collector.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -223,9 +147,7 @@ class Collector extends \Google\Model
     return $this->description;
   }
   /**
-   * User specified name of the Collector.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -239,9 +161,7 @@ class Collector extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Uri for EULA (End User License Agreement) from customer.
-   *
-   * @param string $eulaUri
+   * @param string
    */
   public function setEulaUri($eulaUri)
   {
@@ -255,9 +175,7 @@ class Collector extends \Google\Model
     return $this->eulaUri;
   }
   /**
-   * User specified expected asset count.
-   *
-   * @param string $expectedAssetCount
+   * @param string
    */
   public function setExpectedAssetCount($expectedAssetCount)
   {
@@ -271,9 +189,7 @@ class Collector extends \Google\Model
     return $this->expectedAssetCount;
   }
   /**
-   * Output only. Reference to MC Source Guest Os Scan.
-   *
-   * @param GuestOsScan $guestOsScan
+   * @param GuestOsScan
    */
   public function setGuestOsScan(GuestOsScan $guestOsScan)
   {
@@ -287,9 +203,7 @@ class Collector extends \Google\Model
     return $this->guestOsScan;
   }
   /**
-   * Labels as key value pairs.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -303,9 +217,7 @@ class Collector extends \Google\Model
     return $this->labels;
   }
   /**
-   * name of resource.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -319,9 +231,7 @@ class Collector extends \Google\Model
     return $this->name;
   }
   /**
-   * Service Account email used to ingest data to this Collector.
-   *
-   * @param string $serviceAccount
+   * @param string
    */
   public function setServiceAccount($serviceAccount)
   {
@@ -335,29 +245,21 @@ class Collector extends \Google\Model
     return $this->serviceAccount;
   }
   /**
-   * Output only. State of the Collector.
-   *
-   * Accepted values: STATE_UNSPECIFIED, STATE_INITIALIZING, STATE_READY_TO_USE,
-   * STATE_REGISTERED, STATE_ACTIVE, STATE_PAUSED, STATE_DELETING,
-   * STATE_DECOMMISSIONED, STATE_ERROR
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. Update time stamp.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -371,9 +273,7 @@ class Collector extends \Google\Model
     return $this->updateTime;
   }
   /**
-   * Output only. Reference to MC Source vsphere_scan.
-   *
-   * @param VSphereScan $vsphereScan
+   * @param VSphereScan
    */
   public function setVsphereScan(VSphereScan $vsphereScan)
   {

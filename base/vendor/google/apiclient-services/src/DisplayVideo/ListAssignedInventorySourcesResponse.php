@@ -23,18 +23,12 @@ class ListAssignedInventorySourcesResponse extends \Google\Collection
   protected $assignedInventorySourcesType = AssignedInventorySource::class;
   protected $assignedInventorySourcesDataType = 'array';
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * page_token field in the subsequent call to `ListAssignedInventorySources`
-   * method to retrieve the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of assigned inventory sources. This list will be absent if empty.
-   *
-   * @param AssignedInventorySource[] $assignedInventorySources
+   * @param AssignedInventorySource[]
    */
   public function setAssignedInventorySources($assignedInventorySources)
   {
@@ -48,11 +42,7 @@ class ListAssignedInventorySourcesResponse extends \Google\Collection
     return $this->assignedInventorySources;
   }
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * page_token field in the subsequent call to `ListAssignedInventorySources`
-   * method to retrieve the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

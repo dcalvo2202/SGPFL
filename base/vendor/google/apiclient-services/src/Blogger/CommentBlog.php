@@ -20,16 +20,12 @@ namespace Google\Service\Blogger;
 class CommentBlog extends \Google\Model
 {
   /**
-   * The identifier of the blog containing this comment.
-   *
    * @var string
    */
   public $id;
 
   /**
-   * The identifier of the blog containing this comment.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {

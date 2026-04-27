@@ -20,24 +20,16 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1SecurityProfileEnvironment extends \Google\Model
 {
   /**
-   * Output only. Time at which environment was attached to the security
-   * profile.
-   *
    * @var string
    */
   public $attachTime;
   /**
-   * Output only. Name of the environment.
-   *
    * @var string
    */
   public $environment;
 
   /**
-   * Output only. Time at which environment was attached to the security
-   * profile.
-   *
-   * @param string $attachTime
+   * @param string
    */
   public function setAttachTime($attachTime)
   {
@@ -51,9 +43,7 @@ class GoogleCloudApigeeV1SecurityProfileEnvironment extends \Google\Model
     return $this->attachTime;
   }
   /**
-   * Output only. Name of the environment.
-   *
-   * @param string $environment
+   * @param string
    */
   public function setEnvironment($environment)
   {

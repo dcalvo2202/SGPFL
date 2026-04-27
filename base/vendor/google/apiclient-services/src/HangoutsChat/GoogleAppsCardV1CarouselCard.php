@@ -26,10 +26,7 @@ class GoogleAppsCardV1CarouselCard extends \Google\Collection
   protected $widgetsDataType = 'array';
 
   /**
-   * A list of widgets displayed at the bottom of the carousel card. The widgets
-   * are displayed in the order that they are specified.
-   *
-   * @param GoogleAppsCardV1NestedWidget[] $footerWidgets
+   * @param GoogleAppsCardV1NestedWidget[]
    */
   public function setFooterWidgets($footerWidgets)
   {
@@ -43,10 +40,7 @@ class GoogleAppsCardV1CarouselCard extends \Google\Collection
     return $this->footerWidgets;
   }
   /**
-   * A list of widgets displayed in the carousel card. The widgets are displayed
-   * in the order that they are specified.
-   *
-   * @param GoogleAppsCardV1NestedWidget[] $widgets
+   * @param GoogleAppsCardV1NestedWidget[]
    */
   public function setWidgets($widgets)
   {

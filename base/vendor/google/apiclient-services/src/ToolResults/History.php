@@ -19,46 +19,25 @@ namespace Google\Service\ToolResults;
 
 class History extends \Google\Model
 {
-  public const TEST_PLATFORM_unknownPlatform = 'unknownPlatform';
-  public const TEST_PLATFORM_android = 'android';
-  public const TEST_PLATFORM_ios = 'ios';
   /**
-   * A short human-readable (plain text) name to display in the UI. Maximum of
-   * 100 characters. - In response: present if set during create. - In create
-   * request: optional
-   *
    * @var string
    */
   public $displayName;
   /**
-   * A unique identifier within a project for this History. Returns
-   * INVALID_ARGUMENT if this field is set or overwritten by the caller. - In
-   * response always set - In create request: never set
-   *
    * @var string
    */
   public $historyId;
   /**
-   * A name to uniquely identify a history within a project. Maximum of 200
-   * characters. - In response always set - In create request: always set
-   *
    * @var string
    */
   public $name;
   /**
-   * The platform of the test history. - In response: always set. Returns the
-   * platform of the last execution if unknown.
-   *
    * @var string
    */
   public $testPlatform;
 
   /**
-   * A short human-readable (plain text) name to display in the UI. Maximum of
-   * 100 characters. - In response: present if set during create. - In create
-   * request: optional
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -72,11 +51,7 @@ class History extends \Google\Model
     return $this->displayName;
   }
   /**
-   * A unique identifier within a project for this History. Returns
-   * INVALID_ARGUMENT if this field is set or overwritten by the caller. - In
-   * response always set - In create request: never set
-   *
-   * @param string $historyId
+   * @param string
    */
   public function setHistoryId($historyId)
   {
@@ -90,10 +65,7 @@ class History extends \Google\Model
     return $this->historyId;
   }
   /**
-   * A name to uniquely identify a history within a project. Maximum of 200
-   * characters. - In response always set - In create request: always set
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -107,19 +79,14 @@ class History extends \Google\Model
     return $this->name;
   }
   /**
-   * The platform of the test history. - In response: always set. Returns the
-   * platform of the last execution if unknown.
-   *
-   * Accepted values: unknownPlatform, android, ios
-   *
-   * @param self::TEST_PLATFORM_* $testPlatform
+   * @param string
    */
   public function setTestPlatform($testPlatform)
   {
     $this->testPlatform = $testPlatform;
   }
   /**
-   * @return self::TEST_PLATFORM_*
+   * @return string
    */
   public function getTestPlatform()
   {

@@ -21,14 +21,10 @@ class CreateShortDynamicLinkResponse extends \Google\Collection
 {
   protected $collection_key = 'warning';
   /**
-   * Preview link to show the link flow chart. (debug info.)
-   *
    * @var string
    */
   public $previewLink;
   /**
-   * Short Dynamic Link value. e.g. https://abcd.app.goo.gl/wxyz
-   *
    * @var string
    */
   public $shortLink;
@@ -36,9 +32,7 @@ class CreateShortDynamicLinkResponse extends \Google\Collection
   protected $warningDataType = 'array';
 
   /**
-   * Preview link to show the link flow chart. (debug info.)
-   *
-   * @param string $previewLink
+   * @param string
    */
   public function setPreviewLink($previewLink)
   {
@@ -52,9 +46,7 @@ class CreateShortDynamicLinkResponse extends \Google\Collection
     return $this->previewLink;
   }
   /**
-   * Short Dynamic Link value. e.g. https://abcd.app.goo.gl/wxyz
-   *
-   * @param string $shortLink
+   * @param string
    */
   public function setShortLink($shortLink)
   {
@@ -68,9 +60,7 @@ class CreateShortDynamicLinkResponse extends \Google\Collection
     return $this->shortLink;
   }
   /**
-   * Information about potential warnings on link creation.
-   *
-   * @param DynamicLinkWarning[] $warning
+   * @param DynamicLinkWarning[]
    */
   public function setWarning($warning)
   {

@@ -23,9 +23,7 @@ class GoogleCloudDatacatalogV1DatasetSpec extends \Google\Model
   protected $vertexDatasetSpecDataType = '';
 
   /**
-   * Vertex AI Dataset specific fields
-   *
-   * @param GoogleCloudDatacatalogV1VertexDatasetSpec $vertexDatasetSpec
+   * @param GoogleCloudDatacatalogV1VertexDatasetSpec
    */
   public function setVertexDatasetSpec(GoogleCloudDatacatalogV1VertexDatasetSpec $vertexDatasetSpec)
   {

@@ -20,22 +20,16 @@ namespace Google\Service\MapsPlaces;
 class GoogleMapsPlacesV1PlaceContainingPlace extends \Google\Model
 {
   /**
-   * The place id of the place in which this place is located.
-   *
    * @var string
    */
   public $id;
   /**
-   * The resource name of the place in which this place is located.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The place id of the place in which this place is located.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -49,9 +43,7 @@ class GoogleMapsPlacesV1PlaceContainingPlace extends \Google\Model
     return $this->id;
   }
   /**
-   * The resource name of the place in which this place is located.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

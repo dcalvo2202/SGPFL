@@ -24,18 +24,12 @@ class ArtifactConfig extends \Google\Model
   protected $googleArtifactRegistryType = GoogleArtifactRegistry::class;
   protected $googleArtifactRegistryDataType = '';
   /**
-   * Required. Immutable. The URI of the artifact that is deployed. e.g. `us-
-   * docker.pkg.dev/my-project/my-repo/image`. The URI does not include the tag
-   * / digest because it captures a lineage of artifacts.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * Optional. Set if the artifact metadata is stored in Artifact analysis.
-   *
-   * @param GoogleArtifactAnalysis $googleArtifactAnalysis
+   * @param GoogleArtifactAnalysis
    */
   public function setGoogleArtifactAnalysis(GoogleArtifactAnalysis $googleArtifactAnalysis)
   {
@@ -49,9 +43,7 @@ class ArtifactConfig extends \Google\Model
     return $this->googleArtifactAnalysis;
   }
   /**
-   * Optional. Set if the artifact is stored in Artifact registry.
-   *
-   * @param GoogleArtifactRegistry $googleArtifactRegistry
+   * @param GoogleArtifactRegistry
    */
   public function setGoogleArtifactRegistry(GoogleArtifactRegistry $googleArtifactRegistry)
   {
@@ -65,11 +57,7 @@ class ArtifactConfig extends \Google\Model
     return $this->googleArtifactRegistry;
   }
   /**
-   * Required. Immutable. The URI of the artifact that is deployed. e.g. `us-
-   * docker.pkg.dev/my-project/my-repo/image`. The URI does not include the tag
-   * / digest because it captures a lineage of artifacts.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

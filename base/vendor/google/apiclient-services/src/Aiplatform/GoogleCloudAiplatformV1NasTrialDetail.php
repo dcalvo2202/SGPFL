@@ -20,14 +20,10 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1NasTrialDetail extends \Google\Model
 {
   /**
-   * Output only. Resource name of the NasTrialDetail.
-   *
    * @var string
    */
   public $name;
   /**
-   * The parameters for the NasJob NasTrial.
-   *
    * @var string
    */
   public $parameters;
@@ -37,9 +33,7 @@ class GoogleCloudAiplatformV1NasTrialDetail extends \Google\Model
   protected $trainTrialDataType = '';
 
   /**
-   * Output only. Resource name of the NasTrialDetail.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -53,9 +47,7 @@ class GoogleCloudAiplatformV1NasTrialDetail extends \Google\Model
     return $this->name;
   }
   /**
-   * The parameters for the NasJob NasTrial.
-   *
-   * @param string $parameters
+   * @param string
    */
   public function setParameters($parameters)
   {
@@ -69,9 +61,7 @@ class GoogleCloudAiplatformV1NasTrialDetail extends \Google\Model
     return $this->parameters;
   }
   /**
-   * The requested search NasTrial.
-   *
-   * @param GoogleCloudAiplatformV1NasTrial $searchTrial
+   * @param GoogleCloudAiplatformV1NasTrial
    */
   public function setSearchTrial(GoogleCloudAiplatformV1NasTrial $searchTrial)
   {
@@ -85,10 +75,7 @@ class GoogleCloudAiplatformV1NasTrialDetail extends \Google\Model
     return $this->searchTrial;
   }
   /**
-   * The train NasTrial corresponding to search_trial. Only populated if
-   * search_trial is used for training.
-   *
-   * @param GoogleCloudAiplatformV1NasTrial $trainTrial
+   * @param GoogleCloudAiplatformV1NasTrial
    */
   public function setTrainTrial(GoogleCloudAiplatformV1NasTrial $trainTrial)
   {

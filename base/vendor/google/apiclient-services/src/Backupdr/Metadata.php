@@ -24,10 +24,7 @@ class Metadata extends \Google\Collection
   protected $itemsDataType = 'array';
 
   /**
-   * Optional. Array of key/value pairs. The total size of all keys and values
-   * must be less than 512 KB.
-   *
-   * @param Entry[] $items
+   * @param Entry[]
    */
   public function setItems($items)
   {

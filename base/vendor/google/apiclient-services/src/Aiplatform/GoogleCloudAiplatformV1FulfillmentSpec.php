@@ -20,16 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1FulfillmentSpec extends \Google\Model
 {
   /**
-   * Optional. Which version to use for evaluation.
-   *
    * @var int
    */
   public $version;
 
   /**
-   * Optional. Which version to use for evaluation.
-   *
-   * @param int $version
+   * @param int
    */
   public function setVersion($version)
   {

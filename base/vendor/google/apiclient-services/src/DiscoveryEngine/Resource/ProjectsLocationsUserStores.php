@@ -18,7 +18,6 @@
 namespace Google\Service\DiscoveryEngine\Resource;
 
 use Google\Service\DiscoveryEngine\GoogleCloudDiscoveryengineV1BatchUpdateUserLicensesRequest;
-use Google\Service\DiscoveryEngine\GoogleCloudDiscoveryengineV1UserStore;
 use Google\Service\DiscoveryEngine\GoogleLongrunningOperation;
 
 /**
@@ -47,41 +46,6 @@ class ProjectsLocationsUserStores extends \Google\Service\Resource
     $params = ['parent' => $parent, 'postBody' => $postBody];
     $params = array_merge($params, $optParams);
     return $this->call('batchUpdateUserLicenses', [$params], GoogleLongrunningOperation::class);
-  }
-  /**
-   * Gets the User Store. (userStores.get)
-   *
-   * @param string $name Required. The name of the User Store to get. Format:
-   * `projects/{project}/locations/{location}/userStores/{user_store_id}`
-   * @param array $optParams Optional parameters.
-   * @return GoogleCloudDiscoveryengineV1UserStore
-   * @throws \Google\Service\Exception
-   */
-  public function get($name, $optParams = [])
-  {
-    $params = ['name' => $name];
-    $params = array_merge($params, $optParams);
-    return $this->call('get', [$params], GoogleCloudDiscoveryengineV1UserStore::class);
-  }
-  /**
-   * Updates the User Store. (userStores.patch)
-   *
-   * @param string $name Immutable. The full resource name of the User Store, in
-   * the format of
-   * `projects/{project}/locations/{location}/userStores/{user_store}`. This field
-   * must be a UTF-8 encoded string with a length limit of 1024 characters.
-   * @param GoogleCloudDiscoveryengineV1UserStore $postBody
-   * @param array $optParams Optional parameters.
-   *
-   * @opt_param string updateMask Optional. The list of fields to update.
-   * @return GoogleCloudDiscoveryengineV1UserStore
-   * @throws \Google\Service\Exception
-   */
-  public function patch($name, GoogleCloudDiscoveryengineV1UserStore $postBody, $optParams = [])
-  {
-    $params = ['name' => $name, 'postBody' => $postBody];
-    $params = array_merge($params, $optParams);
-    return $this->call('patch', [$params], GoogleCloudDiscoveryengineV1UserStore::class);
   }
 }
 

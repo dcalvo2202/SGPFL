@@ -20,22 +20,16 @@ namespace Google\Service\YouTube;
 class ChannelLocalization extends \Google\Model
 {
   /**
-   * The localized strings for channel's description.
-   *
    * @var string
    */
   public $description;
   /**
-   * The localized strings for channel's title.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * The localized strings for channel's description.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -49,9 +43,7 @@ class ChannelLocalization extends \Google\Model
     return $this->description;
   }
   /**
-   * The localized strings for channel's title.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

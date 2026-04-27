@@ -20,22 +20,16 @@ namespace Google\Service\DeveloperConnect;
 class GoogleArtifactRegistry extends \Google\Model
 {
   /**
-   * Required. Immutable. The name of the artifact registry package.
-   *
    * @var string
    */
   public $artifactRegistryPackage;
   /**
-   * Required. The host project of Artifact Registry.
-   *
    * @var string
    */
   public $projectId;
 
   /**
-   * Required. Immutable. The name of the artifact registry package.
-   *
-   * @param string $artifactRegistryPackage
+   * @param string
    */
   public function setArtifactRegistryPackage($artifactRegistryPackage)
   {
@@ -49,9 +43,7 @@ class GoogleArtifactRegistry extends \Google\Model
     return $this->artifactRegistryPackage;
   }
   /**
-   * Required. The host project of Artifact Registry.
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {

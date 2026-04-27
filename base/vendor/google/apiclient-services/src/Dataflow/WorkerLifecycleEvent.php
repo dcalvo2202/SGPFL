@@ -20,64 +20,20 @@ namespace Google\Service\Dataflow;
 class WorkerLifecycleEvent extends \Google\Model
 {
   /**
-   * Invalid event.
-   */
-  public const EVENT_UNKNOWN_EVENT = 'UNKNOWN_EVENT';
-  /**
-   * The time the VM started.
-   */
-  public const EVENT_OS_START = 'OS_START';
-  /**
-   * Our container code starts running. Multiple containers could be
-   * distinguished with WorkerMessage.labels if desired.
-   */
-  public const EVENT_CONTAINER_START = 'CONTAINER_START';
-  /**
-   * The worker has a functional external network connection.
-   */
-  public const EVENT_NETWORK_UP = 'NETWORK_UP';
-  /**
-   * Started downloading staging files.
-   */
-  public const EVENT_STAGING_FILES_DOWNLOAD_START = 'STAGING_FILES_DOWNLOAD_START';
-  /**
-   * Finished downloading all staging files.
-   */
-  public const EVENT_STAGING_FILES_DOWNLOAD_FINISH = 'STAGING_FILES_DOWNLOAD_FINISH';
-  /**
-   * For applicable SDKs, started installation of SDK and worker packages.
-   */
-  public const EVENT_SDK_INSTALL_START = 'SDK_INSTALL_START';
-  /**
-   * Finished installing SDK.
-   */
-  public const EVENT_SDK_INSTALL_FINISH = 'SDK_INSTALL_FINISH';
-  /**
-   * The start time of this container. All events will report this so that
-   * events can be grouped together across container/VM restarts.
-   *
    * @var string
    */
   public $containerStartTime;
   /**
-   * The event being reported.
-   *
    * @var string
    */
   public $event;
   /**
-   * Other stats that can accompany an event. E.g. { "downloaded_bytes" :
-   * "123456" }
-   *
    * @var string[]
    */
   public $metadata;
 
   /**
-   * The start time of this container. All events will report this so that
-   * events can be grouped together across container/VM restarts.
-   *
-   * @param string $containerStartTime
+   * @param string
    */
   public function setContainerStartTime($containerStartTime)
   {
@@ -91,30 +47,21 @@ class WorkerLifecycleEvent extends \Google\Model
     return $this->containerStartTime;
   }
   /**
-   * The event being reported.
-   *
-   * Accepted values: UNKNOWN_EVENT, OS_START, CONTAINER_START, NETWORK_UP,
-   * STAGING_FILES_DOWNLOAD_START, STAGING_FILES_DOWNLOAD_FINISH,
-   * SDK_INSTALL_START, SDK_INSTALL_FINISH
-   *
-   * @param self::EVENT_* $event
+   * @param string
    */
   public function setEvent($event)
   {
     $this->event = $event;
   }
   /**
-   * @return self::EVENT_*
+   * @return string
    */
   public function getEvent()
   {
     return $this->event;
   }
   /**
-   * Other stats that can accompany an event. E.g. { "downloaded_bytes" :
-   * "123456" }
-   *
-   * @param string[] $metadata
+   * @param string[]
    */
   public function setMetadata($metadata)
   {

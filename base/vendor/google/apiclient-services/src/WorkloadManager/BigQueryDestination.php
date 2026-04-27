@@ -20,24 +20,16 @@ namespace Google\Service\WorkloadManager;
 class BigQueryDestination extends \Google\Model
 {
   /**
-   * Optional. Determines if a new results table will be created when an
-   * Execution is created.
-   *
    * @var bool
    */
   public $createNewResultsTable;
   /**
-   * Optional. Destination dataset to save evaluation results.
-   *
    * @var string
    */
   public $destinationDataset;
 
   /**
-   * Optional. Determines if a new results table will be created when an
-   * Execution is created.
-   *
-   * @param bool $createNewResultsTable
+   * @param bool
    */
   public function setCreateNewResultsTable($createNewResultsTable)
   {
@@ -51,9 +43,7 @@ class BigQueryDestination extends \Google\Model
     return $this->createNewResultsTable;
   }
   /**
-   * Optional. Destination dataset to save evaluation results.
-   *
-   * @param string $destinationDataset
+   * @param string
    */
   public function setDestinationDataset($destinationDataset)
   {

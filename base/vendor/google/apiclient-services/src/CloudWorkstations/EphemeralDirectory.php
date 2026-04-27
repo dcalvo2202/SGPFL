@@ -22,16 +22,12 @@ class EphemeralDirectory extends \Google\Model
   protected $gcePdType = GcePersistentDisk::class;
   protected $gcePdDataType = '';
   /**
-   * Required. Location of this directory in the running workstation.
-   *
    * @var string
    */
   public $mountPath;
 
   /**
-   * An EphemeralDirectory backed by a Compute Engine persistent disk.
-   *
-   * @param GcePersistentDisk $gcePd
+   * @param GcePersistentDisk
    */
   public function setGcePd(GcePersistentDisk $gcePd)
   {
@@ -45,9 +41,7 @@ class EphemeralDirectory extends \Google\Model
     return $this->gcePd;
   }
   /**
-   * Required. Location of this directory in the running workstation.
-   *
-   * @param string $mountPath
+   * @param string
    */
   public function setMountPath($mountPath)
   {

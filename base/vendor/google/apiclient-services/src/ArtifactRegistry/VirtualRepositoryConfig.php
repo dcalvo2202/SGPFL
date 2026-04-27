@@ -24,10 +24,7 @@ class VirtualRepositoryConfig extends \Google\Collection
   protected $upstreamPoliciesDataType = 'array';
 
   /**
-   * Policies that configure the upstream artifacts distributed by the Virtual
-   * Repository. Upstream policies cannot be set on a standard repository.
-   *
-   * @param UpstreamPolicy[] $upstreamPolicies
+   * @param UpstreamPolicy[]
    */
   public function setUpstreamPolicies($upstreamPolicies)
   {

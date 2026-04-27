@@ -21,9 +21,6 @@ class GoogleCloudContactcenterinsightsV1ListNotesResponse extends \Google\Collec
 {
   protected $collection_key = 'notes';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GoogleCloudContactcenterinsightsV1ListNotesResponse extends \Google\Collec
   protected $notesDataType = 'array';
 
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class GoogleCloudContactcenterinsightsV1ListNotesResponse extends \Google\Collec
     return $this->nextPageToken;
   }
   /**
-   * The notes that match the request.
-   *
-   * @param GoogleCloudContactcenterinsightsV1Note[] $notes
+   * @param GoogleCloudContactcenterinsightsV1Note[]
    */
   public function setNotes($notes)
   {

@@ -23,11 +23,7 @@ class GooglePrivacyDlpV2CategoricalStatsConfig extends \Google\Model
   protected $fieldDataType = '';
 
   /**
-   * Field to compute categorical stats on. All column types are supported
-   * except for arrays and structs. However, it may be more informative to use
-   * NumericalStats when the field type is supported, depending on the data.
-   *
-   * @param GooglePrivacyDlpV2FieldId $field
+   * @param GooglePrivacyDlpV2FieldId
    */
   public function setField(GooglePrivacyDlpV2FieldId $field)
   {

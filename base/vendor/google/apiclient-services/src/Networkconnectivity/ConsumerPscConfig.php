@@ -20,118 +20,44 @@ namespace Google\Service\Networkconnectivity;
 class ConsumerPscConfig extends \Google\Model
 {
   /**
-   * Default value. We will use IPv4 or IPv6 depending on the IP version of
-   * first available subnetwork.
-   */
-  public const IP_VERSION_IP_VERSION_UNSPECIFIED = 'IP_VERSION_UNSPECIFIED';
-  /**
-   * Will use IPv4 only.
-   */
-  public const IP_VERSION_IPV4 = 'IPV4';
-  /**
-   * Will use IPv6 only.
-   */
-  public const IP_VERSION_IPV6 = 'IPV6';
-  /**
-   * Default state, when Connection Map is created initially.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Set when policy and map configuration is valid, and their matching can lead
-   * to allowing creation of PSC Connections subject to other constraints like
-   * connections limit.
-   */
-  public const STATE_VALID = 'VALID';
-  /**
-   * No Service Connection Policy found for this network and Service Class
-   */
-  public const STATE_CONNECTION_POLICY_MISSING = 'CONNECTION_POLICY_MISSING';
-  /**
-   * Service Connection Policy limit reached for this network and Service Class
-   */
-  public const STATE_POLICY_LIMIT_REACHED = 'POLICY_LIMIT_REACHED';
-  /**
-   * The consumer instance project is not in
-   * AllowedGoogleProducersResourceHierarchyLevels of the matching
-   * ServiceConnectionPolicy.
-   */
-  public const STATE_CONSUMER_INSTANCE_PROJECT_NOT_ALLOWLISTED = 'CONSUMER_INSTANCE_PROJECT_NOT_ALLOWLISTED';
-  /**
-   * Required. The project ID or project number of the consumer project. This
-   * project is the one that the consumer uses to interact with the producer
-   * instance. From the perspective of a consumer who's created a producer
-   * instance, this is the project of the producer instance. Format: 'projects/'
-   * Eg. 'projects/consumer-project' or 'projects/1234'
-   *
    * @var string
    */
   public $consumerInstanceProject;
   /**
-   * This is used in PSC consumer ForwardingRule to control whether the PSC
-   * endpoint can be accessed from another region.
-   *
    * @var bool
    */
   public $disableGlobalAccess;
   /**
-   * The requested IP version for the PSC connection.
-   *
    * @var string
    */
   public $ipVersion;
   /**
-   * The resource path of the consumer network where PSC connections are allowed
-   * to be created in. Note, this network does not need be in the
-   * ConsumerPscConfig.project in the case of SharedVPC. Example:
-   * projects/{projectNumOrId}/global/networks/{networkId}.
-   *
    * @var string
    */
   public $network;
   /**
-   * Immutable. Deprecated. Use producer_instance_metadata instead. An immutable
-   * identifier for the producer instance.
-   *
-   * @deprecated
    * @var string
    */
   public $producerInstanceId;
   /**
-   * Immutable. An immutable map for the producer instance metadata.
-   *
    * @var string[]
    */
   public $producerInstanceMetadata;
   /**
-   * The consumer project where PSC connections are allowed to be created in.
-   *
    * @var string
    */
   public $project;
   /**
-   * Optional. A map to store mapping between customer vip and target service
-   * attachment. This field can be used to specify a static IP address for a PSC
-   * connection.
-   *
    * @var string[]
    */
   public $serviceAttachmentIpAddressMap;
   /**
-   * Output only. Overall state of PSC Connections management for this consumer
-   * psc config.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Required. The project ID or project number of the consumer project. This
-   * project is the one that the consumer uses to interact with the producer
-   * instance. From the perspective of a consumer who's created a producer
-   * instance, this is the project of the producer instance. Format: 'projects/'
-   * Eg. 'projects/consumer-project' or 'projects/1234'
-   *
-   * @param string $consumerInstanceProject
+   * @param string
    */
   public function setConsumerInstanceProject($consumerInstanceProject)
   {
@@ -145,10 +71,7 @@ class ConsumerPscConfig extends \Google\Model
     return $this->consumerInstanceProject;
   }
   /**
-   * This is used in PSC consumer ForwardingRule to control whether the PSC
-   * endpoint can be accessed from another region.
-   *
-   * @param bool $disableGlobalAccess
+   * @param bool
    */
   public function setDisableGlobalAccess($disableGlobalAccess)
   {
@@ -162,30 +85,21 @@ class ConsumerPscConfig extends \Google\Model
     return $this->disableGlobalAccess;
   }
   /**
-   * The requested IP version for the PSC connection.
-   *
-   * Accepted values: IP_VERSION_UNSPECIFIED, IPV4, IPV6
-   *
-   * @param self::IP_VERSION_* $ipVersion
+   * @param string
    */
   public function setIpVersion($ipVersion)
   {
     $this->ipVersion = $ipVersion;
   }
   /**
-   * @return self::IP_VERSION_*
+   * @return string
    */
   public function getIpVersion()
   {
     return $this->ipVersion;
   }
   /**
-   * The resource path of the consumer network where PSC connections are allowed
-   * to be created in. Note, this network does not need be in the
-   * ConsumerPscConfig.project in the case of SharedVPC. Example:
-   * projects/{projectNumOrId}/global/networks/{networkId}.
-   *
-   * @param string $network
+   * @param string
    */
   public function setNetwork($network)
   {
@@ -199,18 +113,13 @@ class ConsumerPscConfig extends \Google\Model
     return $this->network;
   }
   /**
-   * Immutable. Deprecated. Use producer_instance_metadata instead. An immutable
-   * identifier for the producer instance.
-   *
-   * @deprecated
-   * @param string $producerInstanceId
+   * @param string
    */
   public function setProducerInstanceId($producerInstanceId)
   {
     $this->producerInstanceId = $producerInstanceId;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getProducerInstanceId()
@@ -218,9 +127,7 @@ class ConsumerPscConfig extends \Google\Model
     return $this->producerInstanceId;
   }
   /**
-   * Immutable. An immutable map for the producer instance metadata.
-   *
-   * @param string[] $producerInstanceMetadata
+   * @param string[]
    */
   public function setProducerInstanceMetadata($producerInstanceMetadata)
   {
@@ -234,9 +141,7 @@ class ConsumerPscConfig extends \Google\Model
     return $this->producerInstanceMetadata;
   }
   /**
-   * The consumer project where PSC connections are allowed to be created in.
-   *
-   * @param string $project
+   * @param string
    */
   public function setProject($project)
   {
@@ -250,11 +155,7 @@ class ConsumerPscConfig extends \Google\Model
     return $this->project;
   }
   /**
-   * Optional. A map to store mapping between customer vip and target service
-   * attachment. This field can be used to specify a static IP address for a PSC
-   * connection.
-   *
-   * @param string[] $serviceAttachmentIpAddressMap
+   * @param string[]
    */
   public function setServiceAttachmentIpAddressMap($serviceAttachmentIpAddressMap)
   {
@@ -268,20 +169,14 @@ class ConsumerPscConfig extends \Google\Model
     return $this->serviceAttachmentIpAddressMap;
   }
   /**
-   * Output only. Overall state of PSC Connections management for this consumer
-   * psc config.
-   *
-   * Accepted values: STATE_UNSPECIFIED, VALID, CONNECTION_POLICY_MISSING,
-   * POLICY_LIMIT_REACHED, CONSUMER_INSTANCE_PROJECT_NOT_ALLOWLISTED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

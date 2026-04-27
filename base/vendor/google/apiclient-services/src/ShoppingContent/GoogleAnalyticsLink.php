@@ -22,24 +22,16 @@ class GoogleAnalyticsLink extends \Google\Model
   protected $attributionSettingsType = AttributionSettings::class;
   protected $attributionSettingsDataType = '';
   /**
-   * Required. Immutable. ID of the Google Analytics property the merchant is
-   * linked to.
-   *
    * @var string
    */
   public $propertyId;
   /**
-   * Output only. Name of the Google Analytics property the merchant is linked
-   * to.
-   *
    * @var string
    */
   public $propertyName;
 
   /**
-   * Output only. Attribution settings for the linked Google Analytics property.
-   *
-   * @param AttributionSettings $attributionSettings
+   * @param AttributionSettings
    */
   public function setAttributionSettings(AttributionSettings $attributionSettings)
   {
@@ -53,10 +45,7 @@ class GoogleAnalyticsLink extends \Google\Model
     return $this->attributionSettings;
   }
   /**
-   * Required. Immutable. ID of the Google Analytics property the merchant is
-   * linked to.
-   *
-   * @param string $propertyId
+   * @param string
    */
   public function setPropertyId($propertyId)
   {
@@ -70,10 +59,7 @@ class GoogleAnalyticsLink extends \Google\Model
     return $this->propertyId;
   }
   /**
-   * Output only. Name of the Google Analytics property the merchant is linked
-   * to.
-   *
-   * @param string $propertyName
+   * @param string
    */
   public function setPropertyName($propertyName)
   {

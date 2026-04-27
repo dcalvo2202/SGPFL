@@ -21,22 +21,10 @@ class Node extends \Google\Collection
 {
   protected $collection_key = 'listeningAddresses';
   /**
-   * Client feature support list. These are well known features described in the
-   * Envoy API repository for a given major version of an API. Client features
-   * use reverse DNS naming scheme, for example ``com.acme.feature``. See
-   * :ref:`the list of features ` that xDS client may support.
-   *
    * @var string[]
    */
   public $clientFeatures;
   /**
-   * Defines the local service cluster name where Envoy is running. Though
-   * optional, it should be set if any of the following features are used:
-   * :ref:`statsd `, :ref:`health check cluster verification `, :ref:`runtime
-   * override directory `, :ref:`user agent addition `, :ref:`HTTP global rate
-   * limiting `, :ref:`CDS `, and :ref:`HTTP tracing `, either in this message
-   * or via :option:`--service-cluster`.
-   *
    * @var string
    */
   public $cluster;
@@ -45,11 +33,6 @@ class Node extends \Google\Collection
   protected $extensionsType = Extension::class;
   protected $extensionsDataType = 'array';
   /**
-   * An opaque node identifier for the Envoy node. This also provides the local
-   * service node name. It should be set if any of the following features are
-   * used: :ref:`statsd `, :ref:`CDS `, and :ref:`HTTP tracing `, either in this
-   * message or via :option:`--service-node`.
-   *
    * @var string
    */
   public $id;
@@ -58,36 +41,22 @@ class Node extends \Google\Collection
   protected $localityType = Locality::class;
   protected $localityDataType = '';
   /**
-   * Opaque metadata extending the node identifier. Envoy will pass this
-   * directly to the management server.
-   *
    * @var array[]
    */
   public $metadata;
   protected $userAgentBuildVersionType = BuildVersion::class;
   protected $userAgentBuildVersionDataType = '';
   /**
-   * Free-form string that identifies the entity requesting config. E.g. "envoy"
-   * or "grpc"
-   *
    * @var string
    */
   public $userAgentName;
   /**
-   * Free-form string that identifies the version of the entity requesting
-   * config. E.g. "1.12.2" or "abcd1234", or "SpecialEnvoyBuild"
-   *
    * @var string
    */
   public $userAgentVersion;
 
   /**
-   * Client feature support list. These are well known features described in the
-   * Envoy API repository for a given major version of an API. Client features
-   * use reverse DNS naming scheme, for example ``com.acme.feature``. See
-   * :ref:`the list of features ` that xDS client may support.
-   *
-   * @param string[] $clientFeatures
+   * @param string[]
    */
   public function setClientFeatures($clientFeatures)
   {
@@ -101,14 +70,7 @@ class Node extends \Google\Collection
     return $this->clientFeatures;
   }
   /**
-   * Defines the local service cluster name where Envoy is running. Though
-   * optional, it should be set if any of the following features are used:
-   * :ref:`statsd `, :ref:`health check cluster verification `, :ref:`runtime
-   * override directory `, :ref:`user agent addition `, :ref:`HTTP global rate
-   * limiting `, :ref:`CDS `, and :ref:`HTTP tracing `, either in this message
-   * or via :option:`--service-cluster`.
-   *
-   * @param string $cluster
+   * @param string
    */
   public function setCluster($cluster)
   {
@@ -122,15 +84,7 @@ class Node extends \Google\Collection
     return $this->cluster;
   }
   /**
-   * Map from xDS resource type URL to dynamic context parameters. These may
-   * vary at runtime (unlike other fields in this message). For example, the xDS
-   * client may have a shard identifier that changes during the lifetime of the
-   * xDS client. In Envoy, this would be achieved by updating the dynamic
-   * context on the Server::Instance's LocalInfo context provider. The shard ID
-   * dynamic parameter then appears in this field during future discovery
-   * requests.
-   *
-   * @param ContextParams[] $dynamicParameters
+   * @param ContextParams[]
    */
   public function setDynamicParameters($dynamicParameters)
   {
@@ -144,9 +98,7 @@ class Node extends \Google\Collection
     return $this->dynamicParameters;
   }
   /**
-   * List of extensions and their versions supported by the node.
-   *
-   * @param Extension[] $extensions
+   * @param Extension[]
    */
   public function setExtensions($extensions)
   {
@@ -160,12 +112,7 @@ class Node extends \Google\Collection
     return $this->extensions;
   }
   /**
-   * An opaque node identifier for the Envoy node. This also provides the local
-   * service node name. It should be set if any of the following features are
-   * used: :ref:`statsd `, :ref:`CDS `, and :ref:`HTTP tracing `, either in this
-   * message or via :option:`--service-node`.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -179,20 +126,13 @@ class Node extends \Google\Collection
     return $this->id;
   }
   /**
-   * Known listening ports on the node as a generic hint to the management
-   * server for filtering :ref:`listeners ` to be returned. For example, if
-   * there is a listener bound to port 80, the list can optionally contain the
-   * SocketAddress ``(0.0.0.0,80)``. The field is optional and just a hint.
-   *
-   * @deprecated
-   * @param Address[] $listeningAddresses
+   * @param Address[]
    */
   public function setListeningAddresses($listeningAddresses)
   {
     $this->listeningAddresses = $listeningAddresses;
   }
   /**
-   * @deprecated
    * @return Address[]
    */
   public function getListeningAddresses()
@@ -200,9 +140,7 @@ class Node extends \Google\Collection
     return $this->listeningAddresses;
   }
   /**
-   * Locality specifying where the Envoy instance is running.
-   *
-   * @param Locality $locality
+   * @param Locality
    */
   public function setLocality(Locality $locality)
   {
@@ -216,10 +154,7 @@ class Node extends \Google\Collection
     return $this->locality;
   }
   /**
-   * Opaque metadata extending the node identifier. Envoy will pass this
-   * directly to the management server.
-   *
-   * @param array[] $metadata
+   * @param array[]
    */
   public function setMetadata($metadata)
   {
@@ -233,9 +168,7 @@ class Node extends \Google\Collection
     return $this->metadata;
   }
   /**
-   * Structured version of the entity requesting config.
-   *
-   * @param BuildVersion $userAgentBuildVersion
+   * @param BuildVersion
    */
   public function setUserAgentBuildVersion(BuildVersion $userAgentBuildVersion)
   {
@@ -249,10 +182,7 @@ class Node extends \Google\Collection
     return $this->userAgentBuildVersion;
   }
   /**
-   * Free-form string that identifies the entity requesting config. E.g. "envoy"
-   * or "grpc"
-   *
-   * @param string $userAgentName
+   * @param string
    */
   public function setUserAgentName($userAgentName)
   {
@@ -266,10 +196,7 @@ class Node extends \Google\Collection
     return $this->userAgentName;
   }
   /**
-   * Free-form string that identifies the version of the entity requesting
-   * config. E.g. "1.12.2" or "abcd1234", or "SpecialEnvoyBuild"
-   *
-   * @param string $userAgentVersion
+   * @param string
    */
   public function setUserAgentVersion($userAgentVersion)
   {

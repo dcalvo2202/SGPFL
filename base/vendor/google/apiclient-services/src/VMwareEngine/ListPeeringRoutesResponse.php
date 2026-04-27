@@ -21,9 +21,6 @@ class ListPeeringRoutesResponse extends \Google\Collection
 {
   protected $collection_key = 'peeringRoutes';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListPeeringRoutesResponse extends \Google\Collection
   protected $peeringRoutesDataType = 'array';
 
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class ListPeeringRoutesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * A list of peering routes.
-   *
-   * @param PeeringRoute[] $peeringRoutes
+   * @param PeeringRoute[]
    */
   public function setPeeringRoutes($peeringRoutes)
   {

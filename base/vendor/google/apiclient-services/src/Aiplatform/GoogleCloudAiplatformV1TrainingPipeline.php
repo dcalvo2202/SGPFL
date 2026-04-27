@@ -20,62 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1TrainingPipeline extends \Google\Model
 {
   /**
-   * The pipeline state is unspecified.
-   */
-  public const STATE_PIPELINE_STATE_UNSPECIFIED = 'PIPELINE_STATE_UNSPECIFIED';
-  /**
-   * The pipeline has been created or resumed, and processing has not yet begun.
-   */
-  public const STATE_PIPELINE_STATE_QUEUED = 'PIPELINE_STATE_QUEUED';
-  /**
-   * The service is preparing to run the pipeline.
-   */
-  public const STATE_PIPELINE_STATE_PENDING = 'PIPELINE_STATE_PENDING';
-  /**
-   * The pipeline is in progress.
-   */
-  public const STATE_PIPELINE_STATE_RUNNING = 'PIPELINE_STATE_RUNNING';
-  /**
-   * The pipeline completed successfully.
-   */
-  public const STATE_PIPELINE_STATE_SUCCEEDED = 'PIPELINE_STATE_SUCCEEDED';
-  /**
-   * The pipeline failed.
-   */
-  public const STATE_PIPELINE_STATE_FAILED = 'PIPELINE_STATE_FAILED';
-  /**
-   * The pipeline is being cancelled. From this state, the pipeline may only go
-   * to either PIPELINE_STATE_SUCCEEDED, PIPELINE_STATE_FAILED or
-   * PIPELINE_STATE_CANCELLED.
-   */
-  public const STATE_PIPELINE_STATE_CANCELLING = 'PIPELINE_STATE_CANCELLING';
-  /**
-   * The pipeline has been cancelled.
-   */
-  public const STATE_PIPELINE_STATE_CANCELLED = 'PIPELINE_STATE_CANCELLED';
-  /**
-   * The pipeline has been stopped, and can be resumed.
-   */
-  public const STATE_PIPELINE_STATE_PAUSED = 'PIPELINE_STATE_PAUSED';
-  /**
-   * Output only. Time when the TrainingPipeline was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Required. The user-defined name of this TrainingPipeline.
-   *
    * @var string
    */
   public $displayName;
   protected $encryptionSpecType = GoogleCloudAiplatformV1EncryptionSpec::class;
   protected $encryptionSpecDataType = '';
   /**
-   * Output only. Time when the TrainingPipeline entered any of the following
-   * states: `PIPELINE_STATE_SUCCEEDED`, `PIPELINE_STATE_FAILED`,
-   * `PIPELINE_STATE_CANCELLED`.
-   *
    * @var string
    */
   public $endTime;
@@ -84,95 +38,50 @@ class GoogleCloudAiplatformV1TrainingPipeline extends \Google\Model
   protected $inputDataConfigType = GoogleCloudAiplatformV1InputDataConfig::class;
   protected $inputDataConfigDataType = '';
   /**
-   * The labels with user-defined metadata to organize TrainingPipelines. Label
-   * keys and values can be no longer than 64 characters (Unicode codepoints),
-   * can only contain lowercase letters, numeric characters, underscores and
-   * dashes. International characters are allowed. See https://goo.gl/xmQnxf for
-   * more information and examples of labels.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Optional. The ID to use for the uploaded Model, which will become the final
-   * component of the model resource name. This value may be up to 63
-   * characters, and valid characters are `[a-z0-9_-]`. The first character
-   * cannot be a number or hyphen.
-   *
    * @var string
    */
   public $modelId;
   protected $modelToUploadType = GoogleCloudAiplatformV1Model::class;
   protected $modelToUploadDataType = '';
   /**
-   * Output only. Resource name of the TrainingPipeline.
-   *
    * @var string
    */
   public $name;
   /**
-   * Optional. When specify this field, the `model_to_upload` will not be
-   * uploaded as a new model, instead, it will become a new version of this
-   * `parent_model`.
-   *
    * @var string
    */
   public $parentModel;
   /**
-   * Output only. Time when the TrainingPipeline for the first time entered the
-   * `PIPELINE_STATE_RUNNING` state.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * Output only. The detailed state of the pipeline.
-   *
    * @var string
    */
   public $state;
   /**
-   * Required. A Google Cloud Storage path to the YAML file that defines the
-   * training task which is responsible for producing the model artifact, and
-   * may also include additional auxiliary work. The definition files that can
-   * be used here are found in gs://google-cloud-
-   * aiplatform/schema/trainingjob/definition/. Note: The URI given on output
-   * will be immutable and probably different, including the URI scheme, than
-   * the one given on input. The output URI will point to a location where the
-   * user only has a read access.
-   *
    * @var string
    */
   public $trainingTaskDefinition;
   /**
-   * Required. The training task's parameter(s), as specified in the
-   * training_task_definition's `inputs`.
-   *
    * @var array
    */
   public $trainingTaskInputs;
   /**
-   * Output only. The metadata information as specified in the
-   * training_task_definition's `metadata`. This metadata is an auxiliary
-   * runtime and final information about the training task. While the pipeline
-   * is running this information is populated only at a best effort basis. Only
-   * present if the pipeline's training_task_definition contains `metadata`
-   * object.
-   *
    * @var array
    */
   public $trainingTaskMetadata;
   /**
-   * Output only. Time when the TrainingPipeline was most recently updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. Time when the TrainingPipeline was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -186,9 +95,7 @@ class GoogleCloudAiplatformV1TrainingPipeline extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Required. The user-defined name of this TrainingPipeline.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -202,12 +109,7 @@ class GoogleCloudAiplatformV1TrainingPipeline extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Customer-managed encryption key spec for a TrainingPipeline. If set, this
-   * TrainingPipeline will be secured by this key. Note: Model trained by this
-   * TrainingPipeline is also secured by this key if model_to_upload is not set
-   * separately.
-   *
-   * @param GoogleCloudAiplatformV1EncryptionSpec $encryptionSpec
+   * @param GoogleCloudAiplatformV1EncryptionSpec
    */
   public function setEncryptionSpec(GoogleCloudAiplatformV1EncryptionSpec $encryptionSpec)
   {
@@ -221,11 +123,7 @@ class GoogleCloudAiplatformV1TrainingPipeline extends \Google\Model
     return $this->encryptionSpec;
   }
   /**
-   * Output only. Time when the TrainingPipeline entered any of the following
-   * states: `PIPELINE_STATE_SUCCEEDED`, `PIPELINE_STATE_FAILED`,
-   * `PIPELINE_STATE_CANCELLED`.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -239,10 +137,7 @@ class GoogleCloudAiplatformV1TrainingPipeline extends \Google\Model
     return $this->endTime;
   }
   /**
-   * Output only. Only populated when the pipeline's state is
-   * `PIPELINE_STATE_FAILED` or `PIPELINE_STATE_CANCELLED`.
-   *
-   * @param GoogleRpcStatus $error
+   * @param GoogleRpcStatus
    */
   public function setError(GoogleRpcStatus $error)
   {
@@ -256,14 +151,7 @@ class GoogleCloudAiplatformV1TrainingPipeline extends \Google\Model
     return $this->error;
   }
   /**
-   * Specifies Vertex AI owned input data that may be used for training the
-   * Model. The TrainingPipeline's training_task_definition should make clear
-   * whether this config is used and if there are any special requirements on
-   * how it should be filled. If nothing about this config is mentioned in the
-   * training_task_definition, then it should be assumed that the
-   * TrainingPipeline does not depend on this configuration.
-   *
-   * @param GoogleCloudAiplatformV1InputDataConfig $inputDataConfig
+   * @param GoogleCloudAiplatformV1InputDataConfig
    */
   public function setInputDataConfig(GoogleCloudAiplatformV1InputDataConfig $inputDataConfig)
   {
@@ -277,13 +165,7 @@ class GoogleCloudAiplatformV1TrainingPipeline extends \Google\Model
     return $this->inputDataConfig;
   }
   /**
-   * The labels with user-defined metadata to organize TrainingPipelines. Label
-   * keys and values can be no longer than 64 characters (Unicode codepoints),
-   * can only contain lowercase letters, numeric characters, underscores and
-   * dashes. International characters are allowed. See https://goo.gl/xmQnxf for
-   * more information and examples of labels.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -297,12 +179,7 @@ class GoogleCloudAiplatformV1TrainingPipeline extends \Google\Model
     return $this->labels;
   }
   /**
-   * Optional. The ID to use for the uploaded Model, which will become the final
-   * component of the model resource name. This value may be up to 63
-   * characters, and valid characters are `[a-z0-9_-]`. The first character
-   * cannot be a number or hyphen.
-   *
-   * @param string $modelId
+   * @param string
    */
   public function setModelId($modelId)
   {
@@ -316,20 +193,7 @@ class GoogleCloudAiplatformV1TrainingPipeline extends \Google\Model
     return $this->modelId;
   }
   /**
-   * Describes the Model that may be uploaded (via ModelService.UploadModel) by
-   * this TrainingPipeline. The TrainingPipeline's training_task_definition
-   * should make clear whether this Model description should be populated, and
-   * if there are any special requirements regarding how it should be filled. If
-   * nothing is mentioned in the training_task_definition, then it should be
-   * assumed that this field should not be filled and the training task either
-   * uploads the Model without a need of this information, or that training task
-   * does not support uploading a Model as part of the pipeline. When the
-   * Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and the trained Model
-   * had been uploaded into Vertex AI, then the model_to_upload's resource name
-   * is populated. The Model is always uploaded into the Project and Location in
-   * which this pipeline is.
-   *
-   * @param GoogleCloudAiplatformV1Model $modelToUpload
+   * @param GoogleCloudAiplatformV1Model
    */
   public function setModelToUpload(GoogleCloudAiplatformV1Model $modelToUpload)
   {
@@ -343,9 +207,7 @@ class GoogleCloudAiplatformV1TrainingPipeline extends \Google\Model
     return $this->modelToUpload;
   }
   /**
-   * Output only. Resource name of the TrainingPipeline.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -359,11 +221,7 @@ class GoogleCloudAiplatformV1TrainingPipeline extends \Google\Model
     return $this->name;
   }
   /**
-   * Optional. When specify this field, the `model_to_upload` will not be
-   * uploaded as a new model, instead, it will become a new version of this
-   * `parent_model`.
-   *
-   * @param string $parentModel
+   * @param string
    */
   public function setParentModel($parentModel)
   {
@@ -377,10 +235,7 @@ class GoogleCloudAiplatformV1TrainingPipeline extends \Google\Model
     return $this->parentModel;
   }
   /**
-   * Output only. Time when the TrainingPipeline for the first time entered the
-   * `PIPELINE_STATE_RUNNING` state.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -394,37 +249,21 @@ class GoogleCloudAiplatformV1TrainingPipeline extends \Google\Model
     return $this->startTime;
   }
   /**
-   * Output only. The detailed state of the pipeline.
-   *
-   * Accepted values: PIPELINE_STATE_UNSPECIFIED, PIPELINE_STATE_QUEUED,
-   * PIPELINE_STATE_PENDING, PIPELINE_STATE_RUNNING, PIPELINE_STATE_SUCCEEDED,
-   * PIPELINE_STATE_FAILED, PIPELINE_STATE_CANCELLING, PIPELINE_STATE_CANCELLED,
-   * PIPELINE_STATE_PAUSED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Required. A Google Cloud Storage path to the YAML file that defines the
-   * training task which is responsible for producing the model artifact, and
-   * may also include additional auxiliary work. The definition files that can
-   * be used here are found in gs://google-cloud-
-   * aiplatform/schema/trainingjob/definition/. Note: The URI given on output
-   * will be immutable and probably different, including the URI scheme, than
-   * the one given on input. The output URI will point to a location where the
-   * user only has a read access.
-   *
-   * @param string $trainingTaskDefinition
+   * @param string
    */
   public function setTrainingTaskDefinition($trainingTaskDefinition)
   {
@@ -438,10 +277,7 @@ class GoogleCloudAiplatformV1TrainingPipeline extends \Google\Model
     return $this->trainingTaskDefinition;
   }
   /**
-   * Required. The training task's parameter(s), as specified in the
-   * training_task_definition's `inputs`.
-   *
-   * @param array $trainingTaskInputs
+   * @param array
    */
   public function setTrainingTaskInputs($trainingTaskInputs)
   {
@@ -455,14 +291,7 @@ class GoogleCloudAiplatformV1TrainingPipeline extends \Google\Model
     return $this->trainingTaskInputs;
   }
   /**
-   * Output only. The metadata information as specified in the
-   * training_task_definition's `metadata`. This metadata is an auxiliary
-   * runtime and final information about the training task. While the pipeline
-   * is running this information is populated only at a best effort basis. Only
-   * present if the pipeline's training_task_definition contains `metadata`
-   * object.
-   *
-   * @param array $trainingTaskMetadata
+   * @param array
    */
   public function setTrainingTaskMetadata($trainingTaskMetadata)
   {
@@ -476,9 +305,7 @@ class GoogleCloudAiplatformV1TrainingPipeline extends \Google\Model
     return $this->trainingTaskMetadata;
   }
   /**
-   * Output only. Time when the TrainingPipeline was most recently updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

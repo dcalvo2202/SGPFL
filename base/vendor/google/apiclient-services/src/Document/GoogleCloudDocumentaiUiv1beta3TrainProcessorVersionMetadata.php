@@ -27,9 +27,7 @@ class GoogleCloudDocumentaiUiv1beta3TrainProcessorVersionMetadata extends \Googl
   protected $trainingDatasetValidationDataType = '';
 
   /**
-   * The basic metadata of the long-running operation.
-   *
-   * @param GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata $commonMetadata
+   * @param GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata
    */
   public function setCommonMetadata(GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata $commonMetadata)
   {
@@ -43,9 +41,7 @@ class GoogleCloudDocumentaiUiv1beta3TrainProcessorVersionMetadata extends \Googl
     return $this->commonMetadata;
   }
   /**
-   * The test dataset validation information.
-   *
-   * @param GoogleCloudDocumentaiUiv1beta3TrainProcessorVersionMetadataDatasetValidation $testDatasetValidation
+   * @param GoogleCloudDocumentaiUiv1beta3TrainProcessorVersionMetadataDatasetValidation
    */
   public function setTestDatasetValidation(GoogleCloudDocumentaiUiv1beta3TrainProcessorVersionMetadataDatasetValidation $testDatasetValidation)
   {
@@ -59,9 +55,7 @@ class GoogleCloudDocumentaiUiv1beta3TrainProcessorVersionMetadata extends \Googl
     return $this->testDatasetValidation;
   }
   /**
-   * The training dataset validation information.
-   *
-   * @param GoogleCloudDocumentaiUiv1beta3TrainProcessorVersionMetadataDatasetValidation $trainingDatasetValidation
+   * @param GoogleCloudDocumentaiUiv1beta3TrainProcessorVersionMetadataDatasetValidation
    */
   public function setTrainingDatasetValidation(GoogleCloudDocumentaiUiv1beta3TrainProcessorVersionMetadataDatasetValidation $trainingDatasetValidation)
   {

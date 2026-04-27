@@ -20,26 +20,18 @@ namespace Google\Service\PeopleService;
 class Residence extends \Google\Model
 {
   /**
-   * True if the residence is the person's current residence; false if the
-   * residence is a past residence.
-   *
    * @var bool
    */
   public $current;
   protected $metadataType = FieldMetadata::class;
   protected $metadataDataType = '';
   /**
-   * The address of the residence.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * True if the residence is the person's current residence; false if the
-   * residence is a past residence.
-   *
-   * @param bool $current
+   * @param bool
    */
   public function setCurrent($current)
   {
@@ -53,9 +45,7 @@ class Residence extends \Google\Model
     return $this->current;
   }
   /**
-   * Metadata about the residence.
-   *
-   * @param FieldMetadata $metadata
+   * @param FieldMetadata
    */
   public function setMetadata(FieldMetadata $metadata)
   {
@@ -69,9 +59,7 @@ class Residence extends \Google\Model
     return $this->metadata;
   }
   /**
-   * The address of the residence.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

@@ -23,10 +23,7 @@ class CustomerUnclaimDeviceRequest extends \Google\Model
   protected $deviceDataType = '';
 
   /**
-   * Required. The device to unclaim. There are custom validations in
-   * UnclaimDeviceRequestValidator.
-   *
-   * @param DeviceReference $device
+   * @param DeviceReference
    */
   public function setDevice(DeviceReference $device)
   {

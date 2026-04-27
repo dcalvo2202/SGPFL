@@ -23,9 +23,7 @@ class ResetSearchApplicationRequest extends \Google\Model
   protected $debugOptionsDataType = '';
 
   /**
-   * Common debug options.
-   *
-   * @param DebugOptions $debugOptions
+   * @param DebugOptions
    */
   public function setDebugOptions(DebugOptions $debugOptions)
   {

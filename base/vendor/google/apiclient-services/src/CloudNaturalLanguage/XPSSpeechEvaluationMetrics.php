@@ -24,9 +24,7 @@ class XPSSpeechEvaluationMetrics extends \Google\Collection
   protected $subModelEvaluationMetricsDataType = 'array';
 
   /**
-   * Evaluation metrics for all submodels contained in this model.
-   *
-   * @param XPSSpeechEvaluationMetricsSubModelEvaluationMetric[] $subModelEvaluationMetrics
+   * @param XPSSpeechEvaluationMetricsSubModelEvaluationMetric[]
    */
   public function setSubModelEvaluationMetrics($subModelEvaluationMetrics)
   {

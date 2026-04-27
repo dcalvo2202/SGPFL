@@ -23,9 +23,7 @@ class GoogleCloudAiplatformV1ReadTensorboardUsageResponse extends \Google\Model
   protected $monthlyUsageDataDataType = 'map';
 
   /**
-   * Maps year-month (YYYYMM) string to per month usage data.
-   *
-   * @param GoogleCloudAiplatformV1ReadTensorboardUsageResponsePerMonthUsageData[] $monthlyUsageData
+   * @param GoogleCloudAiplatformV1ReadTensorboardUsageResponsePerMonthUsageData[]
    */
   public function setMonthlyUsageData($monthlyUsageData)
   {

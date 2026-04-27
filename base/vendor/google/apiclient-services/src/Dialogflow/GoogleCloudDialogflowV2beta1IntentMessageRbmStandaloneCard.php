@@ -19,12 +19,6 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard extends \Google\Model
 {
-  public const CARD_ORIENTATION_CARD_ORIENTATION_UNSPECIFIED = 'CARD_ORIENTATION_UNSPECIFIED';
-  public const CARD_ORIENTATION_HORIZONTAL = 'HORIZONTAL';
-  public const CARD_ORIENTATION_VERTICAL = 'VERTICAL';
-  public const THUMBNAIL_IMAGE_ALIGNMENT_THUMBNAIL_IMAGE_ALIGNMENT_UNSPECIFIED = 'THUMBNAIL_IMAGE_ALIGNMENT_UNSPECIFIED';
-  public const THUMBNAIL_IMAGE_ALIGNMENT_LEFT = 'LEFT';
-  public const THUMBNAIL_IMAGE_ALIGNMENT_RIGHT = 'RIGHT';
   protected $cardContentType = GoogleCloudDialogflowV2beta1IntentMessageRbmCardContent::class;
   protected $cardContentDataType = '';
   /**
@@ -37,7 +31,7 @@ class GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard extends \Google
   public $thumbnailImageAlignment;
 
   /**
-   * @param GoogleCloudDialogflowV2beta1IntentMessageRbmCardContent $cardContent
+   * @param GoogleCloudDialogflowV2beta1IntentMessageRbmCardContent
    */
   public function setCardContent(GoogleCloudDialogflowV2beta1IntentMessageRbmCardContent $cardContent)
   {
@@ -51,28 +45,28 @@ class GoogleCloudDialogflowV2beta1IntentMessageRbmStandaloneCard extends \Google
     return $this->cardContent;
   }
   /**
-   * @param self::CARD_ORIENTATION_* $cardOrientation
+   * @param string
    */
   public function setCardOrientation($cardOrientation)
   {
     $this->cardOrientation = $cardOrientation;
   }
   /**
-   * @return self::CARD_ORIENTATION_*
+   * @return string
    */
   public function getCardOrientation()
   {
     return $this->cardOrientation;
   }
   /**
-   * @param self::THUMBNAIL_IMAGE_ALIGNMENT_* $thumbnailImageAlignment
+   * @param string
    */
   public function setThumbnailImageAlignment($thumbnailImageAlignment)
   {
     $this->thumbnailImageAlignment = $thumbnailImageAlignment;
   }
   /**
-   * @return self::THUMBNAIL_IMAGE_ALIGNMENT_*
+   * @return string
    */
   public function getThumbnailImageAlignment()
   {

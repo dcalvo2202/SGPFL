@@ -20,16 +20,12 @@ namespace Google\Service\GKEOnPrem;
 class VmwareAutoResizeConfig extends \Google\Model
 {
   /**
-   * Whether to enable controle plane node auto resizing.
-   *
    * @var bool
    */
   public $enabled;
 
   /**
-   * Whether to enable controle plane node auto resizing.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {

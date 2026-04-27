@@ -23,21 +23,12 @@ class GoogleFirebaseAppcheckV1BatchUpdateResourcePoliciesRequest extends \Google
   protected $requestsType = GoogleFirebaseAppcheckV1UpdateResourcePolicyRequest::class;
   protected $requestsDataType = 'array';
   /**
-   * Optional. A comma-separated list of names of fields in the ResourcePolicy
-   * objects to update. Example: `enforcement_mode`. If this field is present,
-   * the `update_mask` field in the UpdateResourcePolicyRequest messages must
-   * all match this field, or the entire batch fails and no updates will be
-   * committed.
-   *
    * @var string
    */
   public $updateMask;
 
   /**
-   * Required. The request messages specifying the ResourcePolicy objects to
-   * update. A maximum of 100 objects can be updated in a batch.
-   *
-   * @param GoogleFirebaseAppcheckV1UpdateResourcePolicyRequest[] $requests
+   * @param GoogleFirebaseAppcheckV1UpdateResourcePolicyRequest[]
    */
   public function setRequests($requests)
   {
@@ -51,13 +42,7 @@ class GoogleFirebaseAppcheckV1BatchUpdateResourcePoliciesRequest extends \Google
     return $this->requests;
   }
   /**
-   * Optional. A comma-separated list of names of fields in the ResourcePolicy
-   * objects to update. Example: `enforcement_mode`. If this field is present,
-   * the `update_mask` field in the UpdateResourcePolicyRequest messages must
-   * all match this field, or the entire batch fails and no updates will be
-   * committed.
-   *
-   * @param string $updateMask
+   * @param string
    */
   public function setUpdateMask($updateMask)
   {

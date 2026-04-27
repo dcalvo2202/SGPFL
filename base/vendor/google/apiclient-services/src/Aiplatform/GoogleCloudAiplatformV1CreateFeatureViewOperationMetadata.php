@@ -23,9 +23,7 @@ class GoogleCloudAiplatformV1CreateFeatureViewOperationMetadata extends \Google\
   protected $genericMetadataDataType = '';
 
   /**
-   * Operation metadata for FeatureView Create.
-   *
-   * @param GoogleCloudAiplatformV1GenericOperationMetadata $genericMetadata
+   * @param GoogleCloudAiplatformV1GenericOperationMetadata
    */
   public function setGenericMetadata(GoogleCloudAiplatformV1GenericOperationMetadata $genericMetadata)
   {

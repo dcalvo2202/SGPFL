@@ -19,251 +19,74 @@ namespace Google\Service\ShoppingContent;
 
 class Promotion extends \Google\Collection
 {
-  /**
-   * Indicates that the coupon value type is unspecified.
-   */
-  public const COUPON_VALUE_TYPE_COUPON_VALUE_TYPE_UNSPECIFIED = 'COUPON_VALUE_TYPE_UNSPECIFIED';
-  /**
-   * Money off coupon value type.
-   */
-  public const COUPON_VALUE_TYPE_MONEY_OFF = 'MONEY_OFF';
-  /**
-   * Percent off coupon value type.
-   */
-  public const COUPON_VALUE_TYPE_PERCENT_OFF = 'PERCENT_OFF';
-  /**
-   * Buy M quantity, get N money off coupon value type. `buy_this_quantity` and
-   * `get_this_quantity` must be present. `money_off_amount` must also be
-   * present.
-   */
-  public const COUPON_VALUE_TYPE_BUY_M_GET_N_MONEY_OFF = 'BUY_M_GET_N_MONEY_OFF';
-  /**
-   * Buy M quantity, get N percent off coupon value type. `buy_this_quantity`
-   * and `get_this_quantity` must be present. `percent_off_percentage` must also
-   * be present.
-   */
-  public const COUPON_VALUE_TYPE_BUY_M_GET_N_PERCENT_OFF = 'BUY_M_GET_N_PERCENT_OFF';
-  /**
-   * Buy M quantity, get money off. `buy_this_quantity` and `money_off_amount`
-   * must be present.
-   */
-  public const COUPON_VALUE_TYPE_BUY_M_GET_MONEY_OFF = 'BUY_M_GET_MONEY_OFF';
-  /**
-   * Buy M quantity, get money off. `buy_this_quantity` and
-   * `percent_off_percentage` must be present.
-   */
-  public const COUPON_VALUE_TYPE_BUY_M_GET_PERCENT_OFF = 'BUY_M_GET_PERCENT_OFF';
-  /**
-   * Free gift with description only.
-   */
-  public const COUPON_VALUE_TYPE_FREE_GIFT = 'FREE_GIFT';
-  /**
-   * Free gift with value (description is optional).
-   */
-  public const COUPON_VALUE_TYPE_FREE_GIFT_WITH_VALUE = 'FREE_GIFT_WITH_VALUE';
-  /**
-   * Free gift with item ID (description is optional).
-   */
-  public const COUPON_VALUE_TYPE_FREE_GIFT_WITH_ITEM_ID = 'FREE_GIFT_WITH_ITEM_ID';
-  /**
-   * Standard free shipping coupon value type.
-   */
-  public const COUPON_VALUE_TYPE_FREE_SHIPPING_STANDARD = 'FREE_SHIPPING_STANDARD';
-  /**
-   * Overnight free shipping coupon value type.
-   */
-  public const COUPON_VALUE_TYPE_FREE_SHIPPING_OVERNIGHT = 'FREE_SHIPPING_OVERNIGHT';
-  /**
-   * Two day free shipping coupon value type.
-   */
-  public const COUPON_VALUE_TYPE_FREE_SHIPPING_TWO_DAY = 'FREE_SHIPPING_TWO_DAY';
-  /**
-   * Unknown offer type.
-   */
-  public const OFFER_TYPE_OFFER_TYPE_UNSPECIFIED = 'OFFER_TYPE_UNSPECIFIED';
-  /**
-   * Offer type without a code.
-   */
-  public const OFFER_TYPE_NO_CODE = 'NO_CODE';
-  /**
-   * Offer type with a code.
-   */
-  public const OFFER_TYPE_GENERIC_CODE = 'GENERIC_CODE';
-  /**
-   * Which products the promotion applies to is unknown.
-   */
-  public const PRODUCT_APPLICABILITY_PRODUCT_APPLICABILITY_UNSPECIFIED = 'PRODUCT_APPLICABILITY_UNSPECIFIED';
-  /**
-   * Applicable to all products.
-   */
-  public const PRODUCT_APPLICABILITY_ALL_PRODUCTS = 'ALL_PRODUCTS';
-  /**
-   * Applicable to only a single product or list of products.
-   */
-  public const PRODUCT_APPLICABILITY_SPECIFIC_PRODUCTS = 'SPECIFIC_PRODUCTS';
-  /**
-   * The redemption restriction is unspecified.
-   */
-  public const REDEMPTION_RESTRICTION_REDEMPTION_RESTRICTION_UNSPECIFIED = 'REDEMPTION_RESTRICTION_UNSPECIFIED';
-  /**
-   * The customer must subscribe to the merchant's channel to redeem the
-   * promotion.
-   */
-  public const REDEMPTION_RESTRICTION_SUBSCRIBE_AND_SAVE = 'SUBSCRIBE_AND_SAVE';
-  /**
-   * The customer must be a first-time customer to redeem the promotion.
-   */
-  public const REDEMPTION_RESTRICTION_FIRST_ORDER = 'FIRST_ORDER';
-  /**
-   * The customer must sign up for email's to redeem the promotion.
-   */
-  public const REDEMPTION_RESTRICTION_SIGN_UP_FOR_EMAIL = 'SIGN_UP_FOR_EMAIL';
-  /**
-   * The customer must sign up for text to redeem the promotion.
-   */
-  public const REDEMPTION_RESTRICTION_SIGN_UP_FOR_TEXT = 'SIGN_UP_FOR_TEXT';
-  /**
-   * The customer must use a specific form of payment to redeem the promotion.
-   */
-  public const REDEMPTION_RESTRICTION_FORMS_OF_PAYMENT = 'FORMS_OF_PAYMENT';
-  /**
-   * The customer must meet a custom restriction to redeem the promotion. If
-   * selected, the `custom_redemption_restriction` field must be set.
-   */
-  public const REDEMPTION_RESTRICTION_CUSTOM = 'CUSTOM';
-  /**
-   * Which store codes the promotion applies to is unknown.
-   */
-  public const STORE_APPLICABILITY_STORE_APPLICABILITY_UNSPECIFIED = 'STORE_APPLICABILITY_UNSPECIFIED';
-  /**
-   * Promotion applies to all stores.
-   */
-  public const STORE_APPLICABILITY_ALL_STORES = 'ALL_STORES';
-  /**
-   * Promotion applies to only the specified stores.
-   */
-  public const STORE_APPLICABILITY_SPECIFIC_STORES = 'SPECIFIC_STORES';
   protected $collection_key = 'storeCodeExclusion';
   /**
-   * Product filter by brand for the promotion.
-   *
    * @var string[]
    */
   public $brand;
   /**
-   * Product filter by brand exclusion for the promotion.
-   *
    * @var string[]
    */
   public $brandExclusion;
   /**
-   * Required. The content language used as part of the unique identifier. `en`
-   * content language is available for all target countries. `fr` content
-   * language is available for `CA` and `FR` target countries. `de` content
-   * language is available for `DE` target country. `nl` content language is
-   * available for `NL` target country. `it` content language is available for
-   * `IT` target country. `pt` content language is available for `BR` target
-   * country. `ja` content language is available for `JP` target country. `ko`
-   * content language is available for `KR` target country.
-   *
    * @var string
    */
   public $contentLanguage;
   /**
-   * Required. Coupon value type for the promotion.
-   *
    * @var string
    */
   public $couponValueType;
   /**
-   * The custom redemption restriction for the promotion. If the
-   * `redemption_restriction` field is set to `CUSTOM`, this field must be set.
-   *
-   * @var string
-   */
-  public $customRedemptionRestriction;
-  /**
-   * Free gift description for the promotion.
-   *
    * @var string
    */
   public $freeGiftDescription;
   /**
-   * Free gift item ID for the promotion.
-   *
    * @var string
    */
   public $freeGiftItemId;
   protected $freeGiftValueType = PriceAmount::class;
   protected $freeGiftValueDataType = '';
   /**
-   * Generic redemption code for the promotion. To be used with the `offerType`
-   * field.
-   *
    * @var string
    */
   public $genericRedemptionCode;
   /**
-   * The number of items discounted in the promotion.
-   *
    * @var int
    */
   public $getThisQuantityDiscounted;
   /**
-   * Output only. The REST promotion ID to uniquely identify the promotion.
-   * Content API methods that operate on promotions take this as their
-   * `promotionId` parameter. The REST ID for a promotion is of the form
-   * channel:contentLanguage:targetCountry:promotionId The `channel` field has a
-   * value of `"online"`, `"in_store"`, or `"online_in_store"`.
-   *
    * @var string
    */
   public $id;
   /**
-   * Product filter by item group ID for the promotion.
-   *
    * @var string[]
    */
   public $itemGroupId;
   /**
-   * Product filter by item group ID exclusion for the promotion.
-   *
    * @var string[]
    */
   public $itemGroupIdExclusion;
   /**
-   * Product filter by item ID for the promotion.
-   *
    * @var string[]
    */
   public $itemId;
   /**
-   * Product filter by item ID exclusion for the promotion.
-   *
    * @var string[]
    */
   public $itemIdExclusion;
   /**
-   * Maximum purchase quantity for the promotion.
-   *
    * @var int
    */
   public $limitQuantity;
   protected $limitValueType = PriceAmount::class;
   protected $limitValueDataType = '';
   /**
-   * Required. Long title for the promotion.
-   *
    * @var string
    */
   public $longTitle;
-  protected $maxDiscountAmountType = PriceAmount::class;
-  protected $maxDiscountAmountDataType = '';
   protected $minimumPurchaseAmountType = PriceAmount::class;
   protected $minimumPurchaseAmountDataType = '';
   /**
-   * Minimum purchase quantity for the promotion.
-   *
    * @var int
    */
   public $minimumPurchaseQuantity;
@@ -272,138 +95,82 @@ class Promotion extends \Google\Collection
   protected $moneyOffAmountType = PriceAmount::class;
   protected $moneyOffAmountDataType = '';
   /**
-   * Required. Type of the promotion.
-   *
    * @var string
    */
   public $offerType;
   /**
-   * Order limit for the promotion.
-   *
    * @var int
    */
   public $orderLimit;
   /**
-   * The percentage discount offered in the promotion.
-   *
    * @var int
    */
   public $percentOff;
   /**
-   * Required. Applicability of the promotion to either all products or only
-   * specific products.
-   *
    * @var string
    */
   public $productApplicability;
   /**
-   * Product filter by product type for the promotion.
-   *
    * @var string[]
    */
   public $productType;
   /**
-   * Product filter by product type exclusion for the promotion.
-   *
    * @var string[]
    */
   public $productTypeExclusion;
   /**
-   * Destination ID for the promotion.
-   *
    * @var string[]
    */
   public $promotionDestinationIds;
   /**
-   * String representation of the promotion display dates. Deprecated. Use
-   * `promotion_display_time_period` instead.
-   *
-   * @deprecated
    * @var string
    */
   public $promotionDisplayDates;
   protected $promotionDisplayTimePeriodType = TimePeriod::class;
   protected $promotionDisplayTimePeriodDataType = '';
   /**
-   * String representation of the promotion effective dates. Deprecated. Use
-   * `promotion_effective_time_period` instead.
-   *
-   * @deprecated
    * @var string
    */
   public $promotionEffectiveDates;
   protected $promotionEffectiveTimePeriodType = TimePeriod::class;
   protected $promotionEffectiveTimePeriodDataType = '';
   /**
-   * Required. The user provided promotion ID to uniquely identify the
-   * promotion.
-   *
    * @var string
    */
   public $promotionId;
   protected $promotionStatusType = PromotionPromotionStatus::class;
   protected $promotionStatusDataType = '';
   /**
-   * URL to the page on the merchant's site where the promotion shows. Local
-   * Inventory ads promotions throw an error if no promo url is included. URL is
-   * used to confirm that the promotion is valid and can be redeemed.
-   *
    * @var string
    */
   public $promotionUrl;
   /**
-   * Required. Redemption channel for the promotion. At least one channel is
-   * required.
-   *
    * @var string[]
    */
   public $redemptionChannel;
   /**
-   * The redemption restriction for the promotion.
-   *
-   * @var string
-   */
-  public $redemptionRestriction;
-  /**
-   * Shipping service names for the promotion.
-   *
    * @var string[]
    */
   public $shippingServiceNames;
   /**
-   * Whether the promotion applies to all stores, or only specified stores.
-   * Local Inventory ads promotions throw an error if no store applicability is
-   * included. An INVALID_ARGUMENT error is thrown if store_applicability is set
-   * to ALL_STORES and store_code or score_code_exclusion is set to a value.
-   *
    * @var string
    */
   public $storeApplicability;
   /**
-   * Store codes to include for the promotion.
-   *
    * @var string[]
    */
   public $storeCode;
   /**
-   * Store codes to exclude for the promotion.
-   *
    * @var string[]
    */
   public $storeCodeExclusion;
   /**
-   * Required. The target country used as part of the unique identifier. Can be
-   * `AU`, `CA`, `DE`, `FR`, `GB`, `IN`, `US`, `BR`, `ES`, `NL`, `JP`, `IT` or
-   * `KR`.
-   *
    * @var string
    */
   public $targetCountry;
 
   /**
-   * Product filter by brand for the promotion.
-   *
-   * @param string[] $brand
+   * @param string[]
    */
   public function setBrand($brand)
   {
@@ -417,9 +184,7 @@ class Promotion extends \Google\Collection
     return $this->brand;
   }
   /**
-   * Product filter by brand exclusion for the promotion.
-   *
-   * @param string[] $brandExclusion
+   * @param string[]
    */
   public function setBrandExclusion($brandExclusion)
   {
@@ -433,16 +198,7 @@ class Promotion extends \Google\Collection
     return $this->brandExclusion;
   }
   /**
-   * Required. The content language used as part of the unique identifier. `en`
-   * content language is available for all target countries. `fr` content
-   * language is available for `CA` and `FR` target countries. `de` content
-   * language is available for `DE` target country. `nl` content language is
-   * available for `NL` target country. `it` content language is available for
-   * `IT` target country. `pt` content language is available for `BR` target
-   * country. `ja` content language is available for `JP` target country. `ko`
-   * content language is available for `KR` target country.
-   *
-   * @param string $contentLanguage
+   * @param string
    */
   public function setContentLanguage($contentLanguage)
   {
@@ -456,48 +212,21 @@ class Promotion extends \Google\Collection
     return $this->contentLanguage;
   }
   /**
-   * Required. Coupon value type for the promotion.
-   *
-   * Accepted values: COUPON_VALUE_TYPE_UNSPECIFIED, MONEY_OFF, PERCENT_OFF,
-   * BUY_M_GET_N_MONEY_OFF, BUY_M_GET_N_PERCENT_OFF, BUY_M_GET_MONEY_OFF,
-   * BUY_M_GET_PERCENT_OFF, FREE_GIFT, FREE_GIFT_WITH_VALUE,
-   * FREE_GIFT_WITH_ITEM_ID, FREE_SHIPPING_STANDARD, FREE_SHIPPING_OVERNIGHT,
-   * FREE_SHIPPING_TWO_DAY
-   *
-   * @param self::COUPON_VALUE_TYPE_* $couponValueType
+   * @param string
    */
   public function setCouponValueType($couponValueType)
   {
     $this->couponValueType = $couponValueType;
   }
   /**
-   * @return self::COUPON_VALUE_TYPE_*
+   * @return string
    */
   public function getCouponValueType()
   {
     return $this->couponValueType;
   }
   /**
-   * The custom redemption restriction for the promotion. If the
-   * `redemption_restriction` field is set to `CUSTOM`, this field must be set.
-   *
-   * @param string $customRedemptionRestriction
-   */
-  public function setCustomRedemptionRestriction($customRedemptionRestriction)
-  {
-    $this->customRedemptionRestriction = $customRedemptionRestriction;
-  }
-  /**
-   * @return string
-   */
-  public function getCustomRedemptionRestriction()
-  {
-    return $this->customRedemptionRestriction;
-  }
-  /**
-   * Free gift description for the promotion.
-   *
-   * @param string $freeGiftDescription
+   * @param string
    */
   public function setFreeGiftDescription($freeGiftDescription)
   {
@@ -511,9 +240,7 @@ class Promotion extends \Google\Collection
     return $this->freeGiftDescription;
   }
   /**
-   * Free gift item ID for the promotion.
-   *
-   * @param string $freeGiftItemId
+   * @param string
    */
   public function setFreeGiftItemId($freeGiftItemId)
   {
@@ -527,9 +254,7 @@ class Promotion extends \Google\Collection
     return $this->freeGiftItemId;
   }
   /**
-   * Free gift value for the promotion.
-   *
-   * @param PriceAmount $freeGiftValue
+   * @param PriceAmount
    */
   public function setFreeGiftValue(PriceAmount $freeGiftValue)
   {
@@ -543,10 +268,7 @@ class Promotion extends \Google\Collection
     return $this->freeGiftValue;
   }
   /**
-   * Generic redemption code for the promotion. To be used with the `offerType`
-   * field.
-   *
-   * @param string $genericRedemptionCode
+   * @param string
    */
   public function setGenericRedemptionCode($genericRedemptionCode)
   {
@@ -560,9 +282,7 @@ class Promotion extends \Google\Collection
     return $this->genericRedemptionCode;
   }
   /**
-   * The number of items discounted in the promotion.
-   *
-   * @param int $getThisQuantityDiscounted
+   * @param int
    */
   public function setGetThisQuantityDiscounted($getThisQuantityDiscounted)
   {
@@ -576,13 +296,7 @@ class Promotion extends \Google\Collection
     return $this->getThisQuantityDiscounted;
   }
   /**
-   * Output only. The REST promotion ID to uniquely identify the promotion.
-   * Content API methods that operate on promotions take this as their
-   * `promotionId` parameter. The REST ID for a promotion is of the form
-   * channel:contentLanguage:targetCountry:promotionId The `channel` field has a
-   * value of `"online"`, `"in_store"`, or `"online_in_store"`.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -596,9 +310,7 @@ class Promotion extends \Google\Collection
     return $this->id;
   }
   /**
-   * Product filter by item group ID for the promotion.
-   *
-   * @param string[] $itemGroupId
+   * @param string[]
    */
   public function setItemGroupId($itemGroupId)
   {
@@ -612,9 +324,7 @@ class Promotion extends \Google\Collection
     return $this->itemGroupId;
   }
   /**
-   * Product filter by item group ID exclusion for the promotion.
-   *
-   * @param string[] $itemGroupIdExclusion
+   * @param string[]
    */
   public function setItemGroupIdExclusion($itemGroupIdExclusion)
   {
@@ -628,9 +338,7 @@ class Promotion extends \Google\Collection
     return $this->itemGroupIdExclusion;
   }
   /**
-   * Product filter by item ID for the promotion.
-   *
-   * @param string[] $itemId
+   * @param string[]
    */
   public function setItemId($itemId)
   {
@@ -644,9 +352,7 @@ class Promotion extends \Google\Collection
     return $this->itemId;
   }
   /**
-   * Product filter by item ID exclusion for the promotion.
-   *
-   * @param string[] $itemIdExclusion
+   * @param string[]
    */
   public function setItemIdExclusion($itemIdExclusion)
   {
@@ -660,9 +366,7 @@ class Promotion extends \Google\Collection
     return $this->itemIdExclusion;
   }
   /**
-   * Maximum purchase quantity for the promotion.
-   *
-   * @param int $limitQuantity
+   * @param int
    */
   public function setLimitQuantity($limitQuantity)
   {
@@ -676,9 +380,7 @@ class Promotion extends \Google\Collection
     return $this->limitQuantity;
   }
   /**
-   * Maximum purchase value for the promotion.
-   *
-   * @param PriceAmount $limitValue
+   * @param PriceAmount
    */
   public function setLimitValue(PriceAmount $limitValue)
   {
@@ -692,9 +394,7 @@ class Promotion extends \Google\Collection
     return $this->limitValue;
   }
   /**
-   * Required. Long title for the promotion.
-   *
-   * @param string $longTitle
+   * @param string
    */
   public function setLongTitle($longTitle)
   {
@@ -708,26 +408,7 @@ class Promotion extends \Google\Collection
     return $this->longTitle;
   }
   /**
-   * The maximum monetary discount a customer can receive for the promotion.
-   * This field is only supported with the `Percent off` coupon value type.
-   *
-   * @param PriceAmount $maxDiscountAmount
-   */
-  public function setMaxDiscountAmount(PriceAmount $maxDiscountAmount)
-  {
-    $this->maxDiscountAmount = $maxDiscountAmount;
-  }
-  /**
-   * @return PriceAmount
-   */
-  public function getMaxDiscountAmount()
-  {
-    return $this->maxDiscountAmount;
-  }
-  /**
-   * Minimum purchase amount for the promotion.
-   *
-   * @param PriceAmount $minimumPurchaseAmount
+   * @param PriceAmount
    */
   public function setMinimumPurchaseAmount(PriceAmount $minimumPurchaseAmount)
   {
@@ -741,9 +422,7 @@ class Promotion extends \Google\Collection
     return $this->minimumPurchaseAmount;
   }
   /**
-   * Minimum purchase quantity for the promotion.
-   *
-   * @param int $minimumPurchaseQuantity
+   * @param int
    */
   public function setMinimumPurchaseQuantity($minimumPurchaseQuantity)
   {
@@ -757,9 +436,7 @@ class Promotion extends \Google\Collection
     return $this->minimumPurchaseQuantity;
   }
   /**
-   * Cost cap for the promotion.
-   *
-   * @param PriceAmount $moneyBudget
+   * @param PriceAmount
    */
   public function setMoneyBudget(PriceAmount $moneyBudget)
   {
@@ -773,9 +450,7 @@ class Promotion extends \Google\Collection
     return $this->moneyBudget;
   }
   /**
-   * The money off amount offered in the promotion.
-   *
-   * @param PriceAmount $moneyOffAmount
+   * @param PriceAmount
    */
   public function setMoneyOffAmount(PriceAmount $moneyOffAmount)
   {
@@ -789,27 +464,21 @@ class Promotion extends \Google\Collection
     return $this->moneyOffAmount;
   }
   /**
-   * Required. Type of the promotion.
-   *
-   * Accepted values: OFFER_TYPE_UNSPECIFIED, NO_CODE, GENERIC_CODE
-   *
-   * @param self::OFFER_TYPE_* $offerType
+   * @param string
    */
   public function setOfferType($offerType)
   {
     $this->offerType = $offerType;
   }
   /**
-   * @return self::OFFER_TYPE_*
+   * @return string
    */
   public function getOfferType()
   {
     return $this->offerType;
   }
   /**
-   * Order limit for the promotion.
-   *
-   * @param int $orderLimit
+   * @param int
    */
   public function setOrderLimit($orderLimit)
   {
@@ -823,9 +492,7 @@ class Promotion extends \Google\Collection
     return $this->orderLimit;
   }
   /**
-   * The percentage discount offered in the promotion.
-   *
-   * @param int $percentOff
+   * @param int
    */
   public function setPercentOff($percentOff)
   {
@@ -839,29 +506,21 @@ class Promotion extends \Google\Collection
     return $this->percentOff;
   }
   /**
-   * Required. Applicability of the promotion to either all products or only
-   * specific products.
-   *
-   * Accepted values: PRODUCT_APPLICABILITY_UNSPECIFIED, ALL_PRODUCTS,
-   * SPECIFIC_PRODUCTS
-   *
-   * @param self::PRODUCT_APPLICABILITY_* $productApplicability
+   * @param string
    */
   public function setProductApplicability($productApplicability)
   {
     $this->productApplicability = $productApplicability;
   }
   /**
-   * @return self::PRODUCT_APPLICABILITY_*
+   * @return string
    */
   public function getProductApplicability()
   {
     return $this->productApplicability;
   }
   /**
-   * Product filter by product type for the promotion.
-   *
-   * @param string[] $productType
+   * @param string[]
    */
   public function setProductType($productType)
   {
@@ -875,9 +534,7 @@ class Promotion extends \Google\Collection
     return $this->productType;
   }
   /**
-   * Product filter by product type exclusion for the promotion.
-   *
-   * @param string[] $productTypeExclusion
+   * @param string[]
    */
   public function setProductTypeExclusion($productTypeExclusion)
   {
@@ -891,9 +548,7 @@ class Promotion extends \Google\Collection
     return $this->productTypeExclusion;
   }
   /**
-   * Destination ID for the promotion.
-   *
-   * @param string[] $promotionDestinationIds
+   * @param string[]
    */
   public function setPromotionDestinationIds($promotionDestinationIds)
   {
@@ -907,18 +562,13 @@ class Promotion extends \Google\Collection
     return $this->promotionDestinationIds;
   }
   /**
-   * String representation of the promotion display dates. Deprecated. Use
-   * `promotion_display_time_period` instead.
-   *
-   * @deprecated
-   * @param string $promotionDisplayDates
+   * @param string
    */
   public function setPromotionDisplayDates($promotionDisplayDates)
   {
     $this->promotionDisplayDates = $promotionDisplayDates;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getPromotionDisplayDates()
@@ -926,9 +576,7 @@ class Promotion extends \Google\Collection
     return $this->promotionDisplayDates;
   }
   /**
-   * `TimePeriod` representation of the promotion's display dates.
-   *
-   * @param TimePeriod $promotionDisplayTimePeriod
+   * @param TimePeriod
    */
   public function setPromotionDisplayTimePeriod(TimePeriod $promotionDisplayTimePeriod)
   {
@@ -942,18 +590,13 @@ class Promotion extends \Google\Collection
     return $this->promotionDisplayTimePeriod;
   }
   /**
-   * String representation of the promotion effective dates. Deprecated. Use
-   * `promotion_effective_time_period` instead.
-   *
-   * @deprecated
-   * @param string $promotionEffectiveDates
+   * @param string
    */
   public function setPromotionEffectiveDates($promotionEffectiveDates)
   {
     $this->promotionEffectiveDates = $promotionEffectiveDates;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getPromotionEffectiveDates()
@@ -961,9 +604,7 @@ class Promotion extends \Google\Collection
     return $this->promotionEffectiveDates;
   }
   /**
-   * Required. `TimePeriod` representation of the promotion's effective dates.
-   *
-   * @param TimePeriod $promotionEffectiveTimePeriod
+   * @param TimePeriod
    */
   public function setPromotionEffectiveTimePeriod(TimePeriod $promotionEffectiveTimePeriod)
   {
@@ -977,10 +618,7 @@ class Promotion extends \Google\Collection
     return $this->promotionEffectiveTimePeriod;
   }
   /**
-   * Required. The user provided promotion ID to uniquely identify the
-   * promotion.
-   *
-   * @param string $promotionId
+   * @param string
    */
   public function setPromotionId($promotionId)
   {
@@ -994,9 +632,7 @@ class Promotion extends \Google\Collection
     return $this->promotionId;
   }
   /**
-   * Output only. The current status of the promotion.
-   *
-   * @param PromotionPromotionStatus $promotionStatus
+   * @param PromotionPromotionStatus
    */
   public function setPromotionStatus(PromotionPromotionStatus $promotionStatus)
   {
@@ -1010,11 +646,7 @@ class Promotion extends \Google\Collection
     return $this->promotionStatus;
   }
   /**
-   * URL to the page on the merchant's site where the promotion shows. Local
-   * Inventory ads promotions throw an error if no promo url is included. URL is
-   * used to confirm that the promotion is valid and can be redeemed.
-   *
-   * @param string $promotionUrl
+   * @param string
    */
   public function setPromotionUrl($promotionUrl)
   {
@@ -1028,10 +660,7 @@ class Promotion extends \Google\Collection
     return $this->promotionUrl;
   }
   /**
-   * Required. Redemption channel for the promotion. At least one channel is
-   * required.
-   *
-   * @param string[] $redemptionChannel
+   * @param string[]
    */
   public function setRedemptionChannel($redemptionChannel)
   {
@@ -1045,28 +674,7 @@ class Promotion extends \Google\Collection
     return $this->redemptionChannel;
   }
   /**
-   * The redemption restriction for the promotion.
-   *
-   * Accepted values: REDEMPTION_RESTRICTION_UNSPECIFIED, SUBSCRIBE_AND_SAVE,
-   * FIRST_ORDER, SIGN_UP_FOR_EMAIL, SIGN_UP_FOR_TEXT, FORMS_OF_PAYMENT, CUSTOM
-   *
-   * @param self::REDEMPTION_RESTRICTION_* $redemptionRestriction
-   */
-  public function setRedemptionRestriction($redemptionRestriction)
-  {
-    $this->redemptionRestriction = $redemptionRestriction;
-  }
-  /**
-   * @return self::REDEMPTION_RESTRICTION_*
-   */
-  public function getRedemptionRestriction()
-  {
-    return $this->redemptionRestriction;
-  }
-  /**
-   * Shipping service names for the promotion.
-   *
-   * @param string[] $shippingServiceNames
+   * @param string[]
    */
   public function setShippingServiceNames($shippingServiceNames)
   {
@@ -1080,31 +688,21 @@ class Promotion extends \Google\Collection
     return $this->shippingServiceNames;
   }
   /**
-   * Whether the promotion applies to all stores, or only specified stores.
-   * Local Inventory ads promotions throw an error if no store applicability is
-   * included. An INVALID_ARGUMENT error is thrown if store_applicability is set
-   * to ALL_STORES and store_code or score_code_exclusion is set to a value.
-   *
-   * Accepted values: STORE_APPLICABILITY_UNSPECIFIED, ALL_STORES,
-   * SPECIFIC_STORES
-   *
-   * @param self::STORE_APPLICABILITY_* $storeApplicability
+   * @param string
    */
   public function setStoreApplicability($storeApplicability)
   {
     $this->storeApplicability = $storeApplicability;
   }
   /**
-   * @return self::STORE_APPLICABILITY_*
+   * @return string
    */
   public function getStoreApplicability()
   {
     return $this->storeApplicability;
   }
   /**
-   * Store codes to include for the promotion.
-   *
-   * @param string[] $storeCode
+   * @param string[]
    */
   public function setStoreCode($storeCode)
   {
@@ -1118,9 +716,7 @@ class Promotion extends \Google\Collection
     return $this->storeCode;
   }
   /**
-   * Store codes to exclude for the promotion.
-   *
-   * @param string[] $storeCodeExclusion
+   * @param string[]
    */
   public function setStoreCodeExclusion($storeCodeExclusion)
   {
@@ -1134,11 +730,7 @@ class Promotion extends \Google\Collection
     return $this->storeCodeExclusion;
   }
   /**
-   * Required. The target country used as part of the unique identifier. Can be
-   * `AU`, `CA`, `DE`, `FR`, `GB`, `IN`, `US`, `BR`, `ES`, `NL`, `JP`, `IT` or
-   * `KR`.
-   *
-   * @param string $targetCountry
+   * @param string
    */
   public function setTargetCountry($targetCountry)
   {

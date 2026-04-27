@@ -22,16 +22,12 @@ class GoogleCloudDiscoveryengineV1TextInput extends \Google\Model
   protected $contextType = GoogleCloudDiscoveryengineV1ConversationContext::class;
   protected $contextDataType = '';
   /**
-   * Text input.
-   *
    * @var string
    */
   public $input;
 
   /**
-   * Conversation context of the input.
-   *
-   * @param GoogleCloudDiscoveryengineV1ConversationContext $context
+   * @param GoogleCloudDiscoveryengineV1ConversationContext
    */
   public function setContext(GoogleCloudDiscoveryengineV1ConversationContext $context)
   {
@@ -45,9 +41,7 @@ class GoogleCloudDiscoveryengineV1TextInput extends \Google\Model
     return $this->context;
   }
   /**
-   * Text input.
-   *
-   * @param string $input
+   * @param string
    */
   public function setInput($input)
   {

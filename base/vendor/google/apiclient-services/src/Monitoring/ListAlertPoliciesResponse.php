@@ -23,25 +23,16 @@ class ListAlertPoliciesResponse extends \Google\Collection
   protected $alertPoliciesType = AlertPolicy::class;
   protected $alertPoliciesDataType = 'array';
   /**
-   * If there might be more results than were returned, then this field is set
-   * to a non-empty value. To see the additional results, use that value as
-   * page_token in the next call to this method.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * The total number of alert policies in all pages. This number is only an
-   * estimate, and may change in subsequent pages. https://aip.dev/158
-   *
    * @var int
    */
   public $totalSize;
 
   /**
-   * The returned alert policies.
-   *
-   * @param AlertPolicy[] $alertPolicies
+   * @param AlertPolicy[]
    */
   public function setAlertPolicies($alertPolicies)
   {
@@ -55,11 +46,7 @@ class ListAlertPoliciesResponse extends \Google\Collection
     return $this->alertPolicies;
   }
   /**
-   * If there might be more results than were returned, then this field is set
-   * to a non-empty value. To see the additional results, use that value as
-   * page_token in the next call to this method.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -73,10 +60,7 @@ class ListAlertPoliciesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The total number of alert policies in all pages. This number is only an
-   * estimate, and may change in subsequent pages. https://aip.dev/158
-   *
-   * @param int $totalSize
+   * @param int
    */
   public function setTotalSize($totalSize)
   {

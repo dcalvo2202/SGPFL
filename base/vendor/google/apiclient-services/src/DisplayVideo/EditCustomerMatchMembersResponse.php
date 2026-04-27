@@ -20,18 +20,12 @@ namespace Google\Service\DisplayVideo;
 class EditCustomerMatchMembersResponse extends \Google\Model
 {
   /**
-   * Required. The ID of the updated Customer Match
-   * FirstPartyAndPartnerAudience.
-   *
    * @var string
    */
   public $firstPartyAndPartnerAudienceId;
 
   /**
-   * Required. The ID of the updated Customer Match
-   * FirstPartyAndPartnerAudience.
-   *
-   * @param string $firstPartyAndPartnerAudienceId
+   * @param string
    */
   public function setFirstPartyAndPartnerAudienceId($firstPartyAndPartnerAudienceId)
   {

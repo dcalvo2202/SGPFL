@@ -20,27 +20,16 @@ namespace Google\Service\Walletobjects;
 class GroupingInfo extends \Google\Model
 {
   /**
-   * Optional grouping ID for grouping the passes with the same ID visually
-   * together. Grouping with different types of passes is allowed.
-   *
    * @var string
    */
   public $groupingId;
   /**
-   * Optional index for sorting the passes when they are grouped with other
-   * passes. Passes with lower sort index are shown before passes with higher
-   * sort index. If unspecified, the value is assumed to be INT_MAX. For two
-   * passes with the same sort index, the sorting behavior is undefined.
-   *
    * @var int
    */
   public $sortIndex;
 
   /**
-   * Optional grouping ID for grouping the passes with the same ID visually
-   * together. Grouping with different types of passes is allowed.
-   *
-   * @param string $groupingId
+   * @param string
    */
   public function setGroupingId($groupingId)
   {
@@ -54,12 +43,7 @@ class GroupingInfo extends \Google\Model
     return $this->groupingId;
   }
   /**
-   * Optional index for sorting the passes when they are grouped with other
-   * passes. Passes with lower sort index are shown before passes with higher
-   * sort index. If unspecified, the value is assumed to be INT_MAX. For two
-   * passes with the same sort index, the sorting behavior is undefined.
-   *
-   * @param int $sortIndex
+   * @param int
    */
   public function setSortIndex($sortIndex)
   {

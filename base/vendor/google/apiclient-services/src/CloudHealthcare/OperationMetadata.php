@@ -20,44 +20,30 @@ namespace Google\Service\CloudHealthcare;
 class OperationMetadata extends \Google\Model
 {
   /**
-   * The name of the API method that initiated the operation.
-   *
    * @var string
    */
   public $apiMethodName;
   /**
-   * Specifies if cancellation was requested for the operation.
-   *
    * @var bool
    */
   public $cancelRequested;
   protected $counterType = ProgressCounter::class;
   protected $counterDataType = '';
   /**
-   * The time at which the operation was created by the API.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * The time at which execution was completed.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * A link to audit and error logs in the log viewer. Error logs are generated
-   * only by some operations, listed at [Viewing error logs in Cloud
-   * Logging](https://cloud.google.com/healthcare/docs/how-tos/logging).
-   *
    * @var string
    */
   public $logsUrl;
 
   /**
-   * The name of the API method that initiated the operation.
-   *
-   * @param string $apiMethodName
+   * @param string
    */
   public function setApiMethodName($apiMethodName)
   {
@@ -71,9 +57,7 @@ class OperationMetadata extends \Google\Model
     return $this->apiMethodName;
   }
   /**
-   * Specifies if cancellation was requested for the operation.
-   *
-   * @param bool $cancelRequested
+   * @param bool
    */
   public function setCancelRequested($cancelRequested)
   {
@@ -87,7 +71,7 @@ class OperationMetadata extends \Google\Model
     return $this->cancelRequested;
   }
   /**
-   * @param ProgressCounter $counter
+   * @param ProgressCounter
    */
   public function setCounter(ProgressCounter $counter)
   {
@@ -101,9 +85,7 @@ class OperationMetadata extends \Google\Model
     return $this->counter;
   }
   /**
-   * The time at which the operation was created by the API.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -117,9 +99,7 @@ class OperationMetadata extends \Google\Model
     return $this->createTime;
   }
   /**
-   * The time at which execution was completed.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -133,11 +113,7 @@ class OperationMetadata extends \Google\Model
     return $this->endTime;
   }
   /**
-   * A link to audit and error logs in the log viewer. Error logs are generated
-   * only by some operations, listed at [Viewing error logs in Cloud
-   * Logging](https://cloud.google.com/healthcare/docs/how-tos/logging).
-   *
-   * @param string $logsUrl
+   * @param string
    */
   public function setLogsUrl($logsUrl)
   {

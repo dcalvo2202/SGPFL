@@ -20,34 +20,24 @@ namespace Google\Service\Transcoder;
 class Pad extends \Google\Model
 {
   /**
-   * The number of pixels to add to the bottom. The default is 0.
-   *
    * @var int
    */
   public $bottomPixels;
   /**
-   * The number of pixels to add to the left. The default is 0.
-   *
    * @var int
    */
   public $leftPixels;
   /**
-   * The number of pixels to add to the right. The default is 0.
-   *
    * @var int
    */
   public $rightPixels;
   /**
-   * The number of pixels to add to the top. The default is 0.
-   *
    * @var int
    */
   public $topPixels;
 
   /**
-   * The number of pixels to add to the bottom. The default is 0.
-   *
-   * @param int $bottomPixels
+   * @param int
    */
   public function setBottomPixels($bottomPixels)
   {
@@ -61,9 +51,7 @@ class Pad extends \Google\Model
     return $this->bottomPixels;
   }
   /**
-   * The number of pixels to add to the left. The default is 0.
-   *
-   * @param int $leftPixels
+   * @param int
    */
   public function setLeftPixels($leftPixels)
   {
@@ -77,9 +65,7 @@ class Pad extends \Google\Model
     return $this->leftPixels;
   }
   /**
-   * The number of pixels to add to the right. The default is 0.
-   *
-   * @param int $rightPixels
+   * @param int
    */
   public function setRightPixels($rightPixels)
   {
@@ -93,9 +79,7 @@ class Pad extends \Google\Model
     return $this->rightPixels;
   }
   /**
-   * The number of pixels to add to the top. The default is 0.
-   *
-   * @param int $topPixels
+   * @param int
    */
   public function setTopPixels($topPixels)
   {

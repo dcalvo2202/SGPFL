@@ -23,9 +23,7 @@ class GooglePrivacyDlpV2RecordCondition extends \Google\Model
   protected $expressionsDataType = '';
 
   /**
-   * An expression.
-   *
-   * @param GooglePrivacyDlpV2Expressions $expressions
+   * @param GooglePrivacyDlpV2Expressions
    */
   public function setExpressions(GooglePrivacyDlpV2Expressions $expressions)
   {

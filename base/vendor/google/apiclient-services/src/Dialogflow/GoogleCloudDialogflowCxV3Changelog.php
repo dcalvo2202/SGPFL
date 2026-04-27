@@ -53,7 +53,7 @@ class GoogleCloudDialogflowCxV3Changelog extends \Google\Model
   public $userEmail;
 
   /**
-   * @param string $action
+   * @param string
    */
   public function setAction($action)
   {
@@ -67,7 +67,7 @@ class GoogleCloudDialogflowCxV3Changelog extends \Google\Model
     return $this->action;
   }
   /**
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -81,7 +81,7 @@ class GoogleCloudDialogflowCxV3Changelog extends \Google\Model
     return $this->createTime;
   }
   /**
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -95,7 +95,7 @@ class GoogleCloudDialogflowCxV3Changelog extends \Google\Model
     return $this->displayName;
   }
   /**
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {
@@ -109,7 +109,7 @@ class GoogleCloudDialogflowCxV3Changelog extends \Google\Model
     return $this->languageCode;
   }
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -123,7 +123,7 @@ class GoogleCloudDialogflowCxV3Changelog extends \Google\Model
     return $this->name;
   }
   /**
-   * @param string $resource
+   * @param string
    */
   public function setResource($resource)
   {
@@ -137,7 +137,7 @@ class GoogleCloudDialogflowCxV3Changelog extends \Google\Model
     return $this->resource;
   }
   /**
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {
@@ -151,7 +151,7 @@ class GoogleCloudDialogflowCxV3Changelog extends \Google\Model
     return $this->type;
   }
   /**
-   * @param string $userEmail
+   * @param string
    */
   public function setUserEmail($userEmail)
   {

@@ -23,17 +23,12 @@ class ListAttachmentsResponse extends \Google\Collection
   protected $attachmentsType = Attachment::class;
   protected $attachmentsDataType = 'array';
   /**
-   * The token to retrieve the next page of attachments, or empty if there are
-   * no more attachments to return.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The attachments returned.
-   *
-   * @param Attachment[] $attachments
+   * @param Attachment[]
    */
   public function setAttachments($attachments)
   {
@@ -47,10 +42,7 @@ class ListAttachmentsResponse extends \Google\Collection
     return $this->attachments;
   }
   /**
-   * The token to retrieve the next page of attachments, or empty if there are
-   * no more attachments to return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

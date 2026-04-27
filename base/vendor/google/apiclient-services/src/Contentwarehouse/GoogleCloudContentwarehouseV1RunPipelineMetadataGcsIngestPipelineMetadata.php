@@ -20,16 +20,12 @@ namespace Google\Service\Contentwarehouse;
 class GoogleCloudContentwarehouseV1RunPipelineMetadataGcsIngestPipelineMetadata extends \Google\Model
 {
   /**
-   * The input Cloud Storage folder in this pipeline. Format: `gs:`.
-   *
    * @var string
    */
   public $inputPath;
 
   /**
-   * The input Cloud Storage folder in this pipeline. Format: `gs:`.
-   *
-   * @param string $inputPath
+   * @param string
    */
   public function setInputPath($inputPath)
   {

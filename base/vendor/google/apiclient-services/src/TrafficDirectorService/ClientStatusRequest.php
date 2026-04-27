@@ -21,10 +21,6 @@ class ClientStatusRequest extends \Google\Collection
 {
   protected $collection_key = 'nodeMatchers';
   /**
-   * If true, the server will not include the resource contents in the response
-   * (i.e., the generic_xds_configs.xds_config field will not be populated).
-   * [#not-implemented-hide:]
-   *
    * @var bool
    */
   public $excludeResourceContents;
@@ -34,11 +30,7 @@ class ClientStatusRequest extends \Google\Collection
   protected $nodeMatchersDataType = 'array';
 
   /**
-   * If true, the server will not include the resource contents in the response
-   * (i.e., the generic_xds_configs.xds_config field will not be populated).
-   * [#not-implemented-hide:]
-   *
-   * @param bool $excludeResourceContents
+   * @param bool
    */
   public function setExcludeResourceContents($excludeResourceContents)
   {
@@ -52,9 +44,7 @@ class ClientStatusRequest extends \Google\Collection
     return $this->excludeResourceContents;
   }
   /**
-   * The node making the csds request.
-   *
-   * @param Node $node
+   * @param Node
    */
   public function setNode(Node $node)
   {
@@ -68,10 +58,7 @@ class ClientStatusRequest extends \Google\Collection
     return $this->node;
   }
   /**
-   * Management server can use these match criteria to identify clients. The
-   * match follows OR semantics.
-   *
-   * @param NodeMatcher[] $nodeMatchers
+   * @param NodeMatcher[]
    */
   public function setNodeMatchers($nodeMatchers)
   {

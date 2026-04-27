@@ -22,10 +22,6 @@ class GoogleCloudAiplatformV1Probe extends \Google\Model
   protected $execType = GoogleCloudAiplatformV1ProbeExecAction::class;
   protected $execDataType = '';
   /**
-   * Number of consecutive failures before the probe is considered failed.
-   * Defaults to 3. Minimum value is 1. Maps to Kubernetes probe argument
-   * 'failureThreshold'.
-   *
    * @var int
    */
   public $failureThreshold;
@@ -34,43 +30,26 @@ class GoogleCloudAiplatformV1Probe extends \Google\Model
   protected $httpGetType = GoogleCloudAiplatformV1ProbeHttpGetAction::class;
   protected $httpGetDataType = '';
   /**
-   * Number of seconds to wait before starting the probe. Defaults to 0. Minimum
-   * value is 0. Maps to Kubernetes probe argument 'initialDelaySeconds'.
-   *
    * @var int
    */
   public $initialDelaySeconds;
   /**
-   * How often (in seconds) to perform the probe. Default to 10 seconds. Minimum
-   * value is 1. Must be less than timeout_seconds. Maps to Kubernetes probe
-   * argument 'periodSeconds'.
-   *
    * @var int
    */
   public $periodSeconds;
   /**
-   * Number of consecutive successes before the probe is considered successful.
-   * Defaults to 1. Minimum value is 1. Maps to Kubernetes probe argument
-   * 'successThreshold'.
-   *
    * @var int
    */
   public $successThreshold;
   protected $tcpSocketType = GoogleCloudAiplatformV1ProbeTcpSocketAction::class;
   protected $tcpSocketDataType = '';
   /**
-   * Number of seconds after which the probe times out. Defaults to 1 second.
-   * Minimum value is 1. Must be greater or equal to period_seconds. Maps to
-   * Kubernetes probe argument 'timeoutSeconds'.
-   *
    * @var int
    */
   public $timeoutSeconds;
 
   /**
-   * ExecAction probes the health of a container by executing a command.
-   *
-   * @param GoogleCloudAiplatformV1ProbeExecAction $exec
+   * @param GoogleCloudAiplatformV1ProbeExecAction
    */
   public function setExec(GoogleCloudAiplatformV1ProbeExecAction $exec)
   {
@@ -84,11 +63,7 @@ class GoogleCloudAiplatformV1Probe extends \Google\Model
     return $this->exec;
   }
   /**
-   * Number of consecutive failures before the probe is considered failed.
-   * Defaults to 3. Minimum value is 1. Maps to Kubernetes probe argument
-   * 'failureThreshold'.
-   *
-   * @param int $failureThreshold
+   * @param int
    */
   public function setFailureThreshold($failureThreshold)
   {
@@ -102,9 +77,7 @@ class GoogleCloudAiplatformV1Probe extends \Google\Model
     return $this->failureThreshold;
   }
   /**
-   * GrpcAction probes the health of a container by sending a gRPC request.
-   *
-   * @param GoogleCloudAiplatformV1ProbeGrpcAction $grpc
+   * @param GoogleCloudAiplatformV1ProbeGrpcAction
    */
   public function setGrpc(GoogleCloudAiplatformV1ProbeGrpcAction $grpc)
   {
@@ -118,10 +91,7 @@ class GoogleCloudAiplatformV1Probe extends \Google\Model
     return $this->grpc;
   }
   /**
-   * HttpGetAction probes the health of a container by sending an HTTP GET
-   * request.
-   *
-   * @param GoogleCloudAiplatformV1ProbeHttpGetAction $httpGet
+   * @param GoogleCloudAiplatformV1ProbeHttpGetAction
    */
   public function setHttpGet(GoogleCloudAiplatformV1ProbeHttpGetAction $httpGet)
   {
@@ -135,10 +105,7 @@ class GoogleCloudAiplatformV1Probe extends \Google\Model
     return $this->httpGet;
   }
   /**
-   * Number of seconds to wait before starting the probe. Defaults to 0. Minimum
-   * value is 0. Maps to Kubernetes probe argument 'initialDelaySeconds'.
-   *
-   * @param int $initialDelaySeconds
+   * @param int
    */
   public function setInitialDelaySeconds($initialDelaySeconds)
   {
@@ -152,11 +119,7 @@ class GoogleCloudAiplatformV1Probe extends \Google\Model
     return $this->initialDelaySeconds;
   }
   /**
-   * How often (in seconds) to perform the probe. Default to 10 seconds. Minimum
-   * value is 1. Must be less than timeout_seconds. Maps to Kubernetes probe
-   * argument 'periodSeconds'.
-   *
-   * @param int $periodSeconds
+   * @param int
    */
   public function setPeriodSeconds($periodSeconds)
   {
@@ -170,11 +133,7 @@ class GoogleCloudAiplatformV1Probe extends \Google\Model
     return $this->periodSeconds;
   }
   /**
-   * Number of consecutive successes before the probe is considered successful.
-   * Defaults to 1. Minimum value is 1. Maps to Kubernetes probe argument
-   * 'successThreshold'.
-   *
-   * @param int $successThreshold
+   * @param int
    */
   public function setSuccessThreshold($successThreshold)
   {
@@ -188,10 +147,7 @@ class GoogleCloudAiplatformV1Probe extends \Google\Model
     return $this->successThreshold;
   }
   /**
-   * TcpSocketAction probes the health of a container by opening a TCP socket
-   * connection.
-   *
-   * @param GoogleCloudAiplatformV1ProbeTcpSocketAction $tcpSocket
+   * @param GoogleCloudAiplatformV1ProbeTcpSocketAction
    */
   public function setTcpSocket(GoogleCloudAiplatformV1ProbeTcpSocketAction $tcpSocket)
   {
@@ -205,11 +161,7 @@ class GoogleCloudAiplatformV1Probe extends \Google\Model
     return $this->tcpSocket;
   }
   /**
-   * Number of seconds after which the probe times out. Defaults to 1 second.
-   * Minimum value is 1. Must be greater or equal to period_seconds. Maps to
-   * Kubernetes probe argument 'timeoutSeconds'.
-   *
-   * @param int $timeoutSeconds
+   * @param int
    */
   public function setTimeoutSeconds($timeoutSeconds)
   {

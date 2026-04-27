@@ -20,16 +20,12 @@ namespace Google\Service\AndroidManagement;
 class Eid extends \Google\Model
 {
   /**
-   * Output only. The EID
-   *
    * @var string
    */
   public $eid;
 
   /**
-   * Output only. The EID
-   *
-   * @param string $eid
+   * @param string
    */
   public function setEid($eid)
   {

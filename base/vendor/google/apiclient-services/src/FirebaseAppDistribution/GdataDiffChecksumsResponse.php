@@ -22,34 +22,22 @@ class GdataDiffChecksumsResponse extends \Google\Model
   protected $checksumsLocationType = GdataCompositeMedia::class;
   protected $checksumsLocationDataType = '';
   /**
-   * The chunk size of checksums. Must be a multiple of 256KB.
-   *
    * @var string
    */
   public $chunkSizeBytes;
   protected $objectLocationType = GdataCompositeMedia::class;
   protected $objectLocationDataType = '';
   /**
-   * The total size of the server object.
-   *
    * @var string
    */
   public $objectSizeBytes;
   /**
-   * The object version of the object the checksums are being returned for.
-   *
    * @var string
    */
   public $objectVersion;
 
   /**
-   * Exactly one of these fields must be populated. If checksums_location is
-   * filled, the server will return the corresponding contents to the user. If
-   * object_location is filled, the server will calculate the checksums based on
-   * the content there and return that to the user. For details on the format of
-   * the checksums, see http://go/scotty-diff-protocol.
-   *
-   * @param GdataCompositeMedia $checksumsLocation
+   * @param GdataCompositeMedia
    */
   public function setChecksumsLocation(GdataCompositeMedia $checksumsLocation)
   {
@@ -63,9 +51,7 @@ class GdataDiffChecksumsResponse extends \Google\Model
     return $this->checksumsLocation;
   }
   /**
-   * The chunk size of checksums. Must be a multiple of 256KB.
-   *
-   * @param string $chunkSizeBytes
+   * @param string
    */
   public function setChunkSizeBytes($chunkSizeBytes)
   {
@@ -79,10 +65,7 @@ class GdataDiffChecksumsResponse extends \Google\Model
     return $this->chunkSizeBytes;
   }
   /**
-   * If set, calculate the checksums based on the contents and return them to
-   * the caller.
-   *
-   * @param GdataCompositeMedia $objectLocation
+   * @param GdataCompositeMedia
    */
   public function setObjectLocation(GdataCompositeMedia $objectLocation)
   {
@@ -96,9 +79,7 @@ class GdataDiffChecksumsResponse extends \Google\Model
     return $this->objectLocation;
   }
   /**
-   * The total size of the server object.
-   *
-   * @param string $objectSizeBytes
+   * @param string
    */
   public function setObjectSizeBytes($objectSizeBytes)
   {
@@ -112,9 +93,7 @@ class GdataDiffChecksumsResponse extends \Google\Model
     return $this->objectSizeBytes;
   }
   /**
-   * The object version of the object the checksums are being returned for.
-   *
-   * @param string $objectVersion
+   * @param string
    */
   public function setObjectVersion($objectVersion)
   {

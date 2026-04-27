@@ -21,28 +21,20 @@ class GoogleCloudKmsV1KeyOperationAttestationCertificateChains extends \Google\C
 {
   protected $collection_key = 'googlePartitionCerts';
   /**
-   * Cavium certificate chain corresponding to the attestation.
-   *
    * @var string[]
    */
   public $caviumCerts;
   /**
-   * Google card certificate chain corresponding to the attestation.
-   *
    * @var string[]
    */
   public $googleCardCerts;
   /**
-   * Google partition certificate chain corresponding to the attestation.
-   *
    * @var string[]
    */
   public $googlePartitionCerts;
 
   /**
-   * Cavium certificate chain corresponding to the attestation.
-   *
-   * @param string[] $caviumCerts
+   * @param string[]
    */
   public function setCaviumCerts($caviumCerts)
   {
@@ -56,9 +48,7 @@ class GoogleCloudKmsV1KeyOperationAttestationCertificateChains extends \Google\C
     return $this->caviumCerts;
   }
   /**
-   * Google card certificate chain corresponding to the attestation.
-   *
-   * @param string[] $googleCardCerts
+   * @param string[]
    */
   public function setGoogleCardCerts($googleCardCerts)
   {
@@ -72,9 +62,7 @@ class GoogleCloudKmsV1KeyOperationAttestationCertificateChains extends \Google\C
     return $this->googleCardCerts;
   }
   /**
-   * Google partition certificate chain corresponding to the attestation.
-   *
-   * @param string[] $googlePartitionCerts
+   * @param string[]
    */
   public function setGooglePartitionCerts($googlePartitionCerts)
   {

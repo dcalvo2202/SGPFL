@@ -20,28 +20,20 @@ namespace Google\Service\IdentityToolkit;
 class GetOobConfirmationCodeResponse extends \Google\Model
 {
   /**
-   * The email address that the email is sent to.
-   *
    * @var string
    */
   public $email;
   /**
-   * The fixed string "identitytoolkit#GetOobConfirmationCodeResponse".
-   *
    * @var string
    */
   public $kind;
   /**
-   * The code to be send to the user.
-   *
    * @var string
    */
   public $oobCode;
 
   /**
-   * The email address that the email is sent to.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {
@@ -55,9 +47,7 @@ class GetOobConfirmationCodeResponse extends \Google\Model
     return $this->email;
   }
   /**
-   * The fixed string "identitytoolkit#GetOobConfirmationCodeResponse".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -71,9 +61,7 @@ class GetOobConfirmationCodeResponse extends \Google\Model
     return $this->kind;
   }
   /**
-   * The code to be send to the user.
-   *
-   * @param string $oobCode
+   * @param string
    */
   public function setOobCode($oobCode)
   {

@@ -24,16 +24,12 @@ class ManagedZonePrivateVisibilityConfigNetwork extends \Google\Model
    */
   public $kind;
   /**
-   * The fully qualified URL of the VPC network to bind to. Format this URL like
-   * `https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{
-   * network}`
-   *
    * @var string
    */
   public $networkUrl;
 
   /**
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -47,11 +43,7 @@ class ManagedZonePrivateVisibilityConfigNetwork extends \Google\Model
     return $this->kind;
   }
   /**
-   * The fully qualified URL of the VPC network to bind to. Format this URL like
-   * `https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{
-   * network}`
-   *
-   * @param string $networkUrl
+   * @param string
    */
   public function setNetworkUrl($networkUrl)
   {

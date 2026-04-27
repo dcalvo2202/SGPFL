@@ -20,22 +20,13 @@ namespace Google\Service\MigrationCenterAPI;
 class ReportSummaryChartDataDataPoint extends \Google\Model
 {
   /**
-   * The X-axis label for this data point.
-   *
    * @var string
    */
   public $label;
-  /**
-   * The Y-axis value for this data point.
-   *
-   * @var 
-   */
   public $value;
 
   /**
-   * The X-axis label for this data point.
-   *
-   * @param string $label
+   * @param string
    */
   public function setLabel($label)
   {

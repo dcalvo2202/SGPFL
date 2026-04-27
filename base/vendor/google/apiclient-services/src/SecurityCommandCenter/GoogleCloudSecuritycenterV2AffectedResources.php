@@ -20,16 +20,12 @@ namespace Google\Service\SecurityCommandCenter;
 class GoogleCloudSecuritycenterV2AffectedResources extends \Google\Model
 {
   /**
-   * The count of resources affected by the finding.
-   *
    * @var string
    */
   public $count;
 
   /**
-   * The count of resources affected by the finding.
-   *
-   * @param string $count
+   * @param string
    */
   public function setCount($count)
   {

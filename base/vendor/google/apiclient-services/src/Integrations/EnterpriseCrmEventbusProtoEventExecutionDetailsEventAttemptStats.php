@@ -20,23 +20,16 @@ namespace Google\Service\Integrations;
 class EnterpriseCrmEventbusProtoEventExecutionDetailsEventAttemptStats extends \Google\Model
 {
   /**
-   * The end time of the event execution for current attempt.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * The start time of the event execution for current attempt. This could be in
-   * the future if it's been scheduled.
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * The end time of the event execution for current attempt.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -50,10 +43,7 @@ class EnterpriseCrmEventbusProtoEventExecutionDetailsEventAttemptStats extends \
     return $this->endTime;
   }
   /**
-   * The start time of the event execution for current attempt. This could be in
-   * the future if it's been scheduled.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

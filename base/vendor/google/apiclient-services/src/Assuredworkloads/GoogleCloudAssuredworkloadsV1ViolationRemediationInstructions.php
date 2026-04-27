@@ -25,9 +25,7 @@ class GoogleCloudAssuredworkloadsV1ViolationRemediationInstructions extends \Goo
   protected $gcloudInstructionsDataType = '';
 
   /**
-   * Remediation instructions to resolve violation via cloud console
-   *
-   * @param GoogleCloudAssuredworkloadsV1ViolationRemediationInstructionsConsole $consoleInstructions
+   * @param GoogleCloudAssuredworkloadsV1ViolationRemediationInstructionsConsole
    */
   public function setConsoleInstructions(GoogleCloudAssuredworkloadsV1ViolationRemediationInstructionsConsole $consoleInstructions)
   {
@@ -41,9 +39,7 @@ class GoogleCloudAssuredworkloadsV1ViolationRemediationInstructions extends \Goo
     return $this->consoleInstructions;
   }
   /**
-   * Remediation instructions to resolve violation via gcloud cli
-   *
-   * @param GoogleCloudAssuredworkloadsV1ViolationRemediationInstructionsGcloud $gcloudInstructions
+   * @param GoogleCloudAssuredworkloadsV1ViolationRemediationInstructionsGcloud
    */
   public function setGcloudInstructions(GoogleCloudAssuredworkloadsV1ViolationRemediationInstructionsGcloud $gcloudInstructions)
   {

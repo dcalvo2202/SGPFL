@@ -23,16 +23,12 @@ class DownloadSizeEvidence extends \Google\Collection
   protected $topUrlDownloadSizeBreakdownsType = UrlDownloadSize::class;
   protected $topUrlDownloadSizeBreakdownsDataType = 'array';
   /**
-   * Total download size (in kilobytes) for all the resources in the creative.
-   *
    * @var int
    */
   public $totalDownloadSizeKb;
 
   /**
-   * Download size broken down by URLs with the top download size.
-   *
-   * @param UrlDownloadSize[] $topUrlDownloadSizeBreakdowns
+   * @param UrlDownloadSize[]
    */
   public function setTopUrlDownloadSizeBreakdowns($topUrlDownloadSizeBreakdowns)
   {
@@ -46,9 +42,7 @@ class DownloadSizeEvidence extends \Google\Collection
     return $this->topUrlDownloadSizeBreakdowns;
   }
   /**
-   * Total download size (in kilobytes) for all the resources in the creative.
-   *
-   * @param int $totalDownloadSizeKb
+   * @param int
    */
   public function setTotalDownloadSizeKb($totalDownloadSizeKb)
   {

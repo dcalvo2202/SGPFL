@@ -24,9 +24,7 @@ class V1Beta1ImportProducerOverridesResponse extends \Google\Collection
   protected $overridesDataType = 'array';
 
   /**
-   * The overrides that were created from the imported data.
-   *
-   * @param V1Beta1QuotaOverride[] $overrides
+   * @param V1Beta1QuotaOverride[]
    */
   public function setOverrides($overrides)
   {

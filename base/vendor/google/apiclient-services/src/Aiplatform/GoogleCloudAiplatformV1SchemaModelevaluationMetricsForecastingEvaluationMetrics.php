@@ -21,60 +21,38 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsForecastingEvaluationMe
 {
   protected $collection_key = 'quantileMetrics';
   /**
-   * Mean Absolute Error (MAE).
-   *
    * @var float
    */
   public $meanAbsoluteError;
   /**
-   * Mean absolute percentage error. Infinity when there are zeros in the ground
-   * truth.
-   *
    * @var float
    */
   public $meanAbsolutePercentageError;
   protected $quantileMetricsType = GoogleCloudAiplatformV1SchemaModelevaluationMetricsForecastingEvaluationMetricsQuantileMetricsEntry::class;
   protected $quantileMetricsDataType = 'array';
   /**
-   * Coefficient of determination as Pearson correlation coefficient. Undefined
-   * when ground truth or predictions are constant or near constant.
-   *
    * @var float
    */
   public $rSquared;
   /**
-   * Root Mean Squared Error (RMSE).
-   *
    * @var float
    */
   public $rootMeanSquaredError;
   /**
-   * Root mean squared log error. Undefined when there are negative ground truth
-   * values or predictions.
-   *
    * @var float
    */
   public $rootMeanSquaredLogError;
   /**
-   * Root Mean Square Percentage Error. Square root of MSPE. Undefined/imaginary
-   * when MSPE is negative.
-   *
    * @var float
    */
   public $rootMeanSquaredPercentageError;
   /**
-   * Weighted Absolute Percentage Error. Does not use weights, this is just what
-   * the metric is called. Undefined if actual values sum to zero. Will be very
-   * large if actual values sum to a very small number.
-   *
    * @var float
    */
   public $weightedAbsolutePercentageError;
 
   /**
-   * Mean Absolute Error (MAE).
-   *
-   * @param float $meanAbsoluteError
+   * @param float
    */
   public function setMeanAbsoluteError($meanAbsoluteError)
   {
@@ -88,10 +66,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsForecastingEvaluationMe
     return $this->meanAbsoluteError;
   }
   /**
-   * Mean absolute percentage error. Infinity when there are zeros in the ground
-   * truth.
-   *
-   * @param float $meanAbsolutePercentageError
+   * @param float
    */
   public function setMeanAbsolutePercentageError($meanAbsolutePercentageError)
   {
@@ -105,9 +80,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsForecastingEvaluationMe
     return $this->meanAbsolutePercentageError;
   }
   /**
-   * The quantile metrics entries for each quantile.
-   *
-   * @param GoogleCloudAiplatformV1SchemaModelevaluationMetricsForecastingEvaluationMetricsQuantileMetricsEntry[] $quantileMetrics
+   * @param GoogleCloudAiplatformV1SchemaModelevaluationMetricsForecastingEvaluationMetricsQuantileMetricsEntry[]
    */
   public function setQuantileMetrics($quantileMetrics)
   {
@@ -121,10 +94,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsForecastingEvaluationMe
     return $this->quantileMetrics;
   }
   /**
-   * Coefficient of determination as Pearson correlation coefficient. Undefined
-   * when ground truth or predictions are constant or near constant.
-   *
-   * @param float $rSquared
+   * @param float
    */
   public function setRSquared($rSquared)
   {
@@ -138,9 +108,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsForecastingEvaluationMe
     return $this->rSquared;
   }
   /**
-   * Root Mean Squared Error (RMSE).
-   *
-   * @param float $rootMeanSquaredError
+   * @param float
    */
   public function setRootMeanSquaredError($rootMeanSquaredError)
   {
@@ -154,10 +122,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsForecastingEvaluationMe
     return $this->rootMeanSquaredError;
   }
   /**
-   * Root mean squared log error. Undefined when there are negative ground truth
-   * values or predictions.
-   *
-   * @param float $rootMeanSquaredLogError
+   * @param float
    */
   public function setRootMeanSquaredLogError($rootMeanSquaredLogError)
   {
@@ -171,10 +136,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsForecastingEvaluationMe
     return $this->rootMeanSquaredLogError;
   }
   /**
-   * Root Mean Square Percentage Error. Square root of MSPE. Undefined/imaginary
-   * when MSPE is negative.
-   *
-   * @param float $rootMeanSquaredPercentageError
+   * @param float
    */
   public function setRootMeanSquaredPercentageError($rootMeanSquaredPercentageError)
   {
@@ -188,11 +150,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsForecastingEvaluationMe
     return $this->rootMeanSquaredPercentageError;
   }
   /**
-   * Weighted Absolute Percentage Error. Does not use weights, this is just what
-   * the metric is called. Undefined if actual values sum to zero. Will be very
-   * large if actual values sum to a very small number.
-   *
-   * @param float $weightedAbsolutePercentageError
+   * @param float
    */
   public function setWeightedAbsolutePercentageError($weightedAbsolutePercentageError)
   {

@@ -20,25 +20,16 @@ namespace Google\Service\Dataproc;
 class EndpointConfig extends \Google\Model
 {
   /**
-   * Optional. If true, enable http access to specific ports on the cluster from
-   * external sources. Defaults to false.
-   *
    * @var bool
    */
   public $enableHttpPortAccess;
   /**
-   * Output only. The map of port descriptions to URLs. Will only be populated
-   * if enable_http_port_access is true.
-   *
    * @var string[]
    */
   public $httpPorts;
 
   /**
-   * Optional. If true, enable http access to specific ports on the cluster from
-   * external sources. Defaults to false.
-   *
-   * @param bool $enableHttpPortAccess
+   * @param bool
    */
   public function setEnableHttpPortAccess($enableHttpPortAccess)
   {
@@ -52,10 +43,7 @@ class EndpointConfig extends \Google\Model
     return $this->enableHttpPortAccess;
   }
   /**
-   * Output only. The map of port descriptions to URLs. Will only be populated
-   * if enable_http_port_access is true.
-   *
-   * @param string[] $httpPorts
+   * @param string[]
    */
   public function setHttpPorts($httpPorts)
   {

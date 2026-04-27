@@ -21,11 +21,6 @@ class ListUsableSubnetworksResponse extends \Google\Collection
 {
   protected $collection_key = 'subnetworks';
   /**
-   * This token allows you to get the next page of results for list requests. If
-   * the number of results is larger than `page_size`, use the `next_page_token`
-   * as a value for the query parameter `page_token` in the next request. The
-   * value will become empty when there are no more pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -33,12 +28,7 @@ class ListUsableSubnetworksResponse extends \Google\Collection
   protected $subnetworksDataType = 'array';
 
   /**
-   * This token allows you to get the next page of results for list requests. If
-   * the number of results is larger than `page_size`, use the `next_page_token`
-   * as a value for the query parameter `page_token` in the next request. The
-   * value will become empty when there are no more pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -52,9 +42,7 @@ class ListUsableSubnetworksResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * A list of usable subnetworks in the specified network project.
-   *
-   * @param UsableSubnetwork[] $subnetworks
+   * @param UsableSubnetwork[]
    */
   public function setSubnetworks($subnetworks)
   {

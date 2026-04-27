@@ -20,25 +20,16 @@ namespace Google\Service\SA360;
 class GoogleAdsSearchads360V0ResourcesAccessibleBiddingStrategyMaximizeConversions extends \Google\Model
 {
   /**
-   * Output only. The target cost per acquisition (CPA) option. This is the
-   * average amount that you would like to spend per acquisition.
-   *
    * @var string
    */
   public $targetCpa;
   /**
-   * Output only. The target cost per acquisition (CPA) option. This is the
-   * average amount that you would like to spend per acquisition.
-   *
    * @var string
    */
   public $targetCpaMicros;
 
   /**
-   * Output only. The target cost per acquisition (CPA) option. This is the
-   * average amount that you would like to spend per acquisition.
-   *
-   * @param string $targetCpa
+   * @param string
    */
   public function setTargetCpa($targetCpa)
   {
@@ -52,10 +43,7 @@ class GoogleAdsSearchads360V0ResourcesAccessibleBiddingStrategyMaximizeConversio
     return $this->targetCpa;
   }
   /**
-   * Output only. The target cost per acquisition (CPA) option. This is the
-   * average amount that you would like to spend per acquisition.
-   *
-   * @param string $targetCpaMicros
+   * @param string
    */
   public function setTargetCpaMicros($targetCpaMicros)
   {

@@ -20,56 +20,30 @@ namespace Google\Service\Forms;
 class RatingQuestion extends \Google\Model
 {
   /**
-   * Default value. Unused.
-   */
-  public const ICON_TYPE_RATING_ICON_TYPE_UNSPECIFIED = 'RATING_ICON_TYPE_UNSPECIFIED';
-  /**
-   * A star icon.
-   */
-  public const ICON_TYPE_STAR = 'STAR';
-  /**
-   * A heart icon.
-   */
-  public const ICON_TYPE_HEART = 'HEART';
-  /**
-   * A thumbs down icon.
-   */
-  public const ICON_TYPE_THUMB_UP = 'THUMB_UP';
-  /**
-   * Required. The icon type to use for the rating.
-   *
    * @var string
    */
   public $iconType;
   /**
-   * Required. The rating scale level of the rating question.
-   *
    * @var int
    */
   public $ratingScaleLevel;
 
   /**
-   * Required. The icon type to use for the rating.
-   *
-   * Accepted values: RATING_ICON_TYPE_UNSPECIFIED, STAR, HEART, THUMB_UP
-   *
-   * @param self::ICON_TYPE_* $iconType
+   * @param string
    */
   public function setIconType($iconType)
   {
     $this->iconType = $iconType;
   }
   /**
-   * @return self::ICON_TYPE_*
+   * @return string
    */
   public function getIconType()
   {
     return $this->iconType;
   }
   /**
-   * Required. The rating scale level of the rating question.
-   *
-   * @param int $ratingScaleLevel
+   * @param int
    */
   public function setRatingScaleLevel($ratingScaleLevel)
   {

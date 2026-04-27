@@ -20,8 +20,6 @@ namespace Google\Service\MigrationCenterAPI;
 class ReportSummaryMachineSeriesAllocation extends \Google\Model
 {
   /**
-   * Count of assets allocated to this machine series.
-   *
    * @var string
    */
   public $allocatedAssetCount;
@@ -29,9 +27,7 @@ class ReportSummaryMachineSeriesAllocation extends \Google\Model
   protected $machineSeriesDataType = '';
 
   /**
-   * Count of assets allocated to this machine series.
-   *
-   * @param string $allocatedAssetCount
+   * @param string
    */
   public function setAllocatedAssetCount($allocatedAssetCount)
   {
@@ -45,9 +41,7 @@ class ReportSummaryMachineSeriesAllocation extends \Google\Model
     return $this->allocatedAssetCount;
   }
   /**
-   * The Machine Series (e.g. "E2", "N2")
-   *
-   * @param MachineSeries $machineSeries
+   * @param MachineSeries
    */
   public function setMachineSeries(MachineSeries $machineSeries)
   {

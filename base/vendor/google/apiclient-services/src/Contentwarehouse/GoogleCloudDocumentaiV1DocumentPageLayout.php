@@ -19,42 +19,13 @@ namespace Google\Service\Contentwarehouse;
 
 class GoogleCloudDocumentaiV1DocumentPageLayout extends \Google\Model
 {
-  /**
-   * Unspecified orientation.
-   */
-  public const ORIENTATION_ORIENTATION_UNSPECIFIED = 'ORIENTATION_UNSPECIFIED';
-  /**
-   * Orientation is aligned with page up.
-   */
-  public const ORIENTATION_PAGE_UP = 'PAGE_UP';
-  /**
-   * Orientation is aligned with page right. Turn the head 90 degrees clockwise
-   * from upright to read.
-   */
-  public const ORIENTATION_PAGE_RIGHT = 'PAGE_RIGHT';
-  /**
-   * Orientation is aligned with page down. Turn the head 180 degrees from
-   * upright to read.
-   */
-  public const ORIENTATION_PAGE_DOWN = 'PAGE_DOWN';
-  /**
-   * Orientation is aligned with page left. Turn the head 90 degrees
-   * counterclockwise from upright to read.
-   */
-  public const ORIENTATION_PAGE_LEFT = 'PAGE_LEFT';
   protected $boundingPolyType = GoogleCloudDocumentaiV1BoundingPoly::class;
   protected $boundingPolyDataType = '';
   /**
-   * Confidence of the current Layout within context of the object this layout
-   * is for. e.g. confidence can be for a single token, a table, a visual
-   * element, etc. depending on context. Range `[0, 1]`.
-   *
    * @var float
    */
   public $confidence;
   /**
-   * Detected orientation for the Layout.
-   *
    * @var string
    */
   public $orientation;
@@ -62,9 +33,7 @@ class GoogleCloudDocumentaiV1DocumentPageLayout extends \Google\Model
   protected $textAnchorDataType = '';
 
   /**
-   * The bounding polygon for the Layout.
-   *
-   * @param GoogleCloudDocumentaiV1BoundingPoly $boundingPoly
+   * @param GoogleCloudDocumentaiV1BoundingPoly
    */
   public function setBoundingPoly(GoogleCloudDocumentaiV1BoundingPoly $boundingPoly)
   {
@@ -78,11 +47,7 @@ class GoogleCloudDocumentaiV1DocumentPageLayout extends \Google\Model
     return $this->boundingPoly;
   }
   /**
-   * Confidence of the current Layout within context of the object this layout
-   * is for. e.g. confidence can be for a single token, a table, a visual
-   * element, etc. depending on context. Range `[0, 1]`.
-   *
-   * @param float $confidence
+   * @param float
    */
   public function setConfidence($confidence)
   {
@@ -96,28 +61,21 @@ class GoogleCloudDocumentaiV1DocumentPageLayout extends \Google\Model
     return $this->confidence;
   }
   /**
-   * Detected orientation for the Layout.
-   *
-   * Accepted values: ORIENTATION_UNSPECIFIED, PAGE_UP, PAGE_RIGHT, PAGE_DOWN,
-   * PAGE_LEFT
-   *
-   * @param self::ORIENTATION_* $orientation
+   * @param string
    */
   public function setOrientation($orientation)
   {
     $this->orientation = $orientation;
   }
   /**
-   * @return self::ORIENTATION_*
+   * @return string
    */
   public function getOrientation()
   {
     return $this->orientation;
   }
   /**
-   * Text anchor indexing into the Document.text.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentTextAnchor $textAnchor
+   * @param GoogleCloudDocumentaiV1DocumentTextAnchor
    */
   public function setTextAnchor(GoogleCloudDocumentaiV1DocumentTextAnchor $textAnchor)
   {

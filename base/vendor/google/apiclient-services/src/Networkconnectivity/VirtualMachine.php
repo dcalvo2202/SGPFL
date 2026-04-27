@@ -21,18 +21,12 @@ class VirtualMachine extends \Google\Collection
 {
   protected $collection_key = 'tags';
   /**
-   * Optional. A list of VM instance tags that this policy-based route applies
-   * to. VM instances that have ANY of tags specified here installs this PBR.
-   *
    * @var string[]
    */
   public $tags;
 
   /**
-   * Optional. A list of VM instance tags that this policy-based route applies
-   * to. VM instances that have ANY of tags specified here installs this PBR.
-   *
-   * @param string[] $tags
+   * @param string[]
    */
   public function setTags($tags)
   {

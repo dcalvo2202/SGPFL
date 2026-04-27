@@ -23,37 +23,24 @@ class GoogleCloudApigeeV1IngressConfig extends \Google\Collection
   protected $environmentGroupsType = GoogleCloudApigeeV1EnvironmentGroupConfig::class;
   protected $environmentGroupsDataType = 'array';
   /**
-   * Name of the resource in the following format:
-   * `organizations/{org}/deployedIngressConfig`.
-   *
    * @var string
    */
   public $name;
   /**
-   * Time at which the IngressConfig revision was created.
-   *
    * @var string
    */
   public $revisionCreateTime;
   /**
-   * Revision id that defines the ordering on IngressConfig resources. The
-   * higher the revision, the more recently the configuration was deployed.
-   *
    * @var string
    */
   public $revisionId;
   /**
-   * A unique id for the ingress config that will only change if the
-   * organization is deleted and recreated.
-   *
    * @var string
    */
   public $uid;
 
   /**
-   * List of environment groups in the organization.
-   *
-   * @param GoogleCloudApigeeV1EnvironmentGroupConfig[] $environmentGroups
+   * @param GoogleCloudApigeeV1EnvironmentGroupConfig[]
    */
   public function setEnvironmentGroups($environmentGroups)
   {
@@ -67,10 +54,7 @@ class GoogleCloudApigeeV1IngressConfig extends \Google\Collection
     return $this->environmentGroups;
   }
   /**
-   * Name of the resource in the following format:
-   * `organizations/{org}/deployedIngressConfig`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -84,9 +68,7 @@ class GoogleCloudApigeeV1IngressConfig extends \Google\Collection
     return $this->name;
   }
   /**
-   * Time at which the IngressConfig revision was created.
-   *
-   * @param string $revisionCreateTime
+   * @param string
    */
   public function setRevisionCreateTime($revisionCreateTime)
   {
@@ -100,10 +82,7 @@ class GoogleCloudApigeeV1IngressConfig extends \Google\Collection
     return $this->revisionCreateTime;
   }
   /**
-   * Revision id that defines the ordering on IngressConfig resources. The
-   * higher the revision, the more recently the configuration was deployed.
-   *
-   * @param string $revisionId
+   * @param string
    */
   public function setRevisionId($revisionId)
   {
@@ -117,10 +96,7 @@ class GoogleCloudApigeeV1IngressConfig extends \Google\Collection
     return $this->revisionId;
   }
   /**
-   * A unique id for the ingress config that will only change if the
-   * organization is deleted and recreated.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {

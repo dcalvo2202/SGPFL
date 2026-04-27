@@ -21,16 +21,12 @@ class GoogleCloudContentwarehouseV1IntegerArray extends \Google\Collection
 {
   protected $collection_key = 'values';
   /**
-   * List of integer values.
-   *
    * @var int[]
    */
   public $values;
 
   /**
-   * List of integer values.
-   *
-   * @param int[] $values
+   * @param int[]
    */
   public function setValues($values)
   {

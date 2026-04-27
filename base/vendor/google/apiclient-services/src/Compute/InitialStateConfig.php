@@ -30,9 +30,7 @@ class InitialStateConfig extends \Google\Collection
   protected $pkDataType = '';
 
   /**
-   * The Key Database (db).
-   *
-   * @param FileContentBuffer[] $dbs
+   * @param FileContentBuffer[]
    */
   public function setDbs($dbs)
   {
@@ -46,9 +44,7 @@ class InitialStateConfig extends \Google\Collection
     return $this->dbs;
   }
   /**
-   * The forbidden key database (dbx).
-   *
-   * @param FileContentBuffer[] $dbxs
+   * @param FileContentBuffer[]
    */
   public function setDbxs($dbxs)
   {
@@ -62,9 +58,7 @@ class InitialStateConfig extends \Google\Collection
     return $this->dbxs;
   }
   /**
-   * The Key Exchange Key (KEK).
-   *
-   * @param FileContentBuffer[] $keks
+   * @param FileContentBuffer[]
    */
   public function setKeks($keks)
   {
@@ -78,9 +72,7 @@ class InitialStateConfig extends \Google\Collection
     return $this->keks;
   }
   /**
-   * The Platform Key (PK).
-   *
-   * @param FileContentBuffer $pk
+   * @param FileContentBuffer
    */
   public function setPk(FileContentBuffer $pk)
   {

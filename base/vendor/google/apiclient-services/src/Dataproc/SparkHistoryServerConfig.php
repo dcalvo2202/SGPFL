@@ -20,20 +20,12 @@ namespace Google\Service\Dataproc;
 class SparkHistoryServerConfig extends \Google\Model
 {
   /**
-   * Optional. Resource name of an existing Dataproc Cluster to act as a Spark
-   * History Server for the workload.Example:
-   * projects/[project_id]/regions/[region]/clusters/[cluster_name]
-   *
    * @var string
    */
   public $dataprocCluster;
 
   /**
-   * Optional. Resource name of an existing Dataproc Cluster to act as a Spark
-   * History Server for the workload.Example:
-   * projects/[project_id]/regions/[region]/clusters/[cluster_name]
-   *
-   * @param string $dataprocCluster
+   * @param string
    */
   public function setDataprocCluster($dataprocCluster)
   {

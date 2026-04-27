@@ -20,22 +20,16 @@ namespace Google\Service\Testing;
 class UsesPermissionTag extends \Google\Model
 {
   /**
-   * The android:name value
-   *
    * @var int
    */
   public $maxSdkVersion;
   /**
-   * The android:name value
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The android:name value
-   *
-   * @param int $maxSdkVersion
+   * @param int
    */
   public function setMaxSdkVersion($maxSdkVersion)
   {
@@ -49,9 +43,7 @@ class UsesPermissionTag extends \Google\Model
     return $this->maxSdkVersion;
   }
   /**
-   * The android:name value
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

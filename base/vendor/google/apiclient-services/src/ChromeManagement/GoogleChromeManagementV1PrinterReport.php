@@ -20,48 +20,32 @@ namespace Google\Service\ChromeManagement;
 class GoogleChromeManagementV1PrinterReport extends \Google\Model
 {
   /**
-   * Number of chrome devices that have been used to send print jobs to the
-   * specified printer.
-   *
    * @var string
    */
   public $deviceCount;
   /**
-   * Number of print jobs sent to the printer.
-   *
    * @var string
    */
   public $jobCount;
   /**
-   * Printer name.
-   *
    * @var string
    */
   public $printer;
   /**
-   * Printer API ID.
-   *
    * @var string
    */
   public $printerId;
   /**
-   * Printer model.
-   *
    * @var string
    */
   public $printerModel;
   /**
-   * Number of users that have sent print jobs to the printer.
-   *
    * @var string
    */
   public $userCount;
 
   /**
-   * Number of chrome devices that have been used to send print jobs to the
-   * specified printer.
-   *
-   * @param string $deviceCount
+   * @param string
    */
   public function setDeviceCount($deviceCount)
   {
@@ -75,9 +59,7 @@ class GoogleChromeManagementV1PrinterReport extends \Google\Model
     return $this->deviceCount;
   }
   /**
-   * Number of print jobs sent to the printer.
-   *
-   * @param string $jobCount
+   * @param string
    */
   public function setJobCount($jobCount)
   {
@@ -91,9 +73,7 @@ class GoogleChromeManagementV1PrinterReport extends \Google\Model
     return $this->jobCount;
   }
   /**
-   * Printer name.
-   *
-   * @param string $printer
+   * @param string
    */
   public function setPrinter($printer)
   {
@@ -107,9 +87,7 @@ class GoogleChromeManagementV1PrinterReport extends \Google\Model
     return $this->printer;
   }
   /**
-   * Printer API ID.
-   *
-   * @param string $printerId
+   * @param string
    */
   public function setPrinterId($printerId)
   {
@@ -123,9 +101,7 @@ class GoogleChromeManagementV1PrinterReport extends \Google\Model
     return $this->printerId;
   }
   /**
-   * Printer model.
-   *
-   * @param string $printerModel
+   * @param string
    */
   public function setPrinterModel($printerModel)
   {
@@ -139,9 +115,7 @@ class GoogleChromeManagementV1PrinterReport extends \Google\Model
     return $this->printerModel;
   }
   /**
-   * Number of users that have sent print jobs to the printer.
-   *
-   * @param string $userCount
+   * @param string
    */
   public function setUserCount($userCount)
   {

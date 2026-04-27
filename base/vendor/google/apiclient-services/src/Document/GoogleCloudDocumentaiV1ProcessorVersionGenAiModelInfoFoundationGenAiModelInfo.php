@@ -20,23 +20,16 @@ namespace Google\Service\Document;
 class GoogleCloudDocumentaiV1ProcessorVersionGenAiModelInfoFoundationGenAiModelInfo extends \Google\Model
 {
   /**
-   * Whether fine tuning is allowed for this base processor version.
-   *
    * @var bool
    */
   public $finetuningAllowed;
   /**
-   * The minimum number of labeled documents in the training dataset required
-   * for fine tuning.
-   *
    * @var int
    */
   public $minTrainLabeledDocuments;
 
   /**
-   * Whether fine tuning is allowed for this base processor version.
-   *
-   * @param bool $finetuningAllowed
+   * @param bool
    */
   public function setFinetuningAllowed($finetuningAllowed)
   {
@@ -50,10 +43,7 @@ class GoogleCloudDocumentaiV1ProcessorVersionGenAiModelInfoFoundationGenAiModelI
     return $this->finetuningAllowed;
   }
   /**
-   * The minimum number of labeled documents in the training dataset required
-   * for fine tuning.
-   *
-   * @param int $minTrainLabeledDocuments
+   * @param int
    */
   public function setMinTrainLabeledDocuments($minTrainLabeledDocuments)
   {

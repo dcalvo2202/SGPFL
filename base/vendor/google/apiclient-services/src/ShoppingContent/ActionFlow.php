@@ -21,9 +21,6 @@ class ActionFlow extends \Google\Collection
 {
   protected $collection_key = 'inputs';
   /**
-   * Label for the button to trigger the action from the action dialog. For
-   * example: "Request review"
-   *
    * @var string
    */
   public $dialogButtonLabel;
@@ -32,33 +29,22 @@ class ActionFlow extends \Google\Collection
   protected $dialogMessageType = TextWithTooltip::class;
   protected $dialogMessageDataType = '';
   /**
-   * Title of the request dialog. For example: "Before you request a review"
-   *
    * @var string
    */
   public $dialogTitle;
   /**
-   * Not for display but need to be sent back for the selected action flow.
-   *
    * @var string
    */
   public $id;
   protected $inputsType = InputField::class;
   protected $inputsDataType = 'array';
   /**
-   * Text value describing the intent for the action flow. It can be used as an
-   * input label if merchant needs to pick one of multiple flows. For example:
-   * "I disagree with the issue"
-   *
    * @var string
    */
   public $label;
 
   /**
-   * Label for the button to trigger the action from the action dialog. For
-   * example: "Request review"
-   *
-   * @param string $dialogButtonLabel
+   * @param string
    */
   public function setDialogButtonLabel($dialogButtonLabel)
   {
@@ -72,12 +58,7 @@ class ActionFlow extends \Google\Collection
     return $this->dialogButtonLabel;
   }
   /**
-   * Important message to be highlighted in the request dialog. For example:
-   * "You can only request a review for disagreeing with this issue once. If
-   * it's not approved, you'll need to fix the issue and wait a few days before
-   * you can request another review."
-   *
-   * @param Callout $dialogCallout
+   * @param Callout
    */
   public function setDialogCallout(Callout $dialogCallout)
   {
@@ -91,12 +72,7 @@ class ActionFlow extends \Google\Collection
     return $this->dialogCallout;
   }
   /**
-   * Message displayed in the request dialog. For example: "Make sure you've
-   * fixed all your country-specific issues. If not, you may have to wait 7 days
-   * to request another review". There may be an more information to be shown in
-   * a tooltip.
-   *
-   * @param TextWithTooltip $dialogMessage
+   * @param TextWithTooltip
    */
   public function setDialogMessage(TextWithTooltip $dialogMessage)
   {
@@ -110,9 +86,7 @@ class ActionFlow extends \Google\Collection
     return $this->dialogMessage;
   }
   /**
-   * Title of the request dialog. For example: "Before you request a review"
-   *
-   * @param string $dialogTitle
+   * @param string
    */
   public function setDialogTitle($dialogTitle)
   {
@@ -126,9 +100,7 @@ class ActionFlow extends \Google\Collection
     return $this->dialogTitle;
   }
   /**
-   * Not for display but need to be sent back for the selected action flow.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -142,9 +114,7 @@ class ActionFlow extends \Google\Collection
     return $this->id;
   }
   /**
-   * A list of input fields.
-   *
-   * @param InputField[] $inputs
+   * @param InputField[]
    */
   public function setInputs($inputs)
   {
@@ -158,11 +128,7 @@ class ActionFlow extends \Google\Collection
     return $this->inputs;
   }
   /**
-   * Text value describing the intent for the action flow. It can be used as an
-   * input label if merchant needs to pick one of multiple flows. For example:
-   * "I disagree with the issue"
-   *
-   * @param string $label
+   * @param string
    */
   public function setLabel($label)
   {

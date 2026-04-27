@@ -27,9 +27,7 @@ class GooglePrivacyDlpV2CryptoKey extends \Google\Model
   protected $unwrappedDataType = '';
 
   /**
-   * Key wrapped using Cloud KMS
-   *
-   * @param GooglePrivacyDlpV2KmsWrappedCryptoKey $kmsWrapped
+   * @param GooglePrivacyDlpV2KmsWrappedCryptoKey
    */
   public function setKmsWrapped(GooglePrivacyDlpV2KmsWrappedCryptoKey $kmsWrapped)
   {
@@ -43,9 +41,7 @@ class GooglePrivacyDlpV2CryptoKey extends \Google\Model
     return $this->kmsWrapped;
   }
   /**
-   * Transient crypto key
-   *
-   * @param GooglePrivacyDlpV2TransientCryptoKey $transient
+   * @param GooglePrivacyDlpV2TransientCryptoKey
    */
   public function setTransient(GooglePrivacyDlpV2TransientCryptoKey $transient)
   {
@@ -59,9 +55,7 @@ class GooglePrivacyDlpV2CryptoKey extends \Google\Model
     return $this->transient;
   }
   /**
-   * Unwrapped crypto key
-   *
-   * @param GooglePrivacyDlpV2UnwrappedCryptoKey $unwrapped
+   * @param GooglePrivacyDlpV2UnwrappedCryptoKey
    */
   public function setUnwrapped(GooglePrivacyDlpV2UnwrappedCryptoKey $unwrapped)
   {

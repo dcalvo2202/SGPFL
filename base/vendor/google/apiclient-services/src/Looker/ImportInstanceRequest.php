@@ -20,18 +20,12 @@ namespace Google\Service\Looker;
 class ImportInstanceRequest extends \Google\Model
 {
   /**
-   * Path to the import folder in Google Cloud Storage, in the form
-   * `gs://bucketName/folderName`.
-   *
    * @var string
    */
   public $gcsUri;
 
   /**
-   * Path to the import folder in Google Cloud Storage, in the form
-   * `gs://bucketName/folderName`.
-   *
-   * @param string $gcsUri
+   * @param string
    */
   public function setGcsUri($gcsUri)
   {

@@ -21,55 +21,36 @@ class AppProcessInfo extends \Google\Collection
 {
   protected $collection_key = 'packageNames';
   /**
-   * SHA-256 hash of the base APK, in hexadecimal format.
-   *
    * @var string
    */
   public $apkSha256Hash;
   /**
-   * Package names of all packages that are associated with the particular user
-   * ID. In most cases, this will be a single package name, the package that has
-   * been assigned that user ID. If multiple application share a UID then all
-   * packages sharing UID will be included.
-   *
    * @var string[]
    */
   public $packageNames;
   /**
-   * Process ID.
-   *
    * @var int
    */
   public $pid;
   /**
-   * Process name.
-   *
    * @var string
    */
   public $processName;
   /**
-   * SELinux policy info.
-   *
    * @var string
    */
   public $seinfo;
   /**
-   * Process start time.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * UID of the package.
-   *
    * @var int
    */
   public $uid;
 
   /**
-   * SHA-256 hash of the base APK, in hexadecimal format.
-   *
-   * @param string $apkSha256Hash
+   * @param string
    */
   public function setApkSha256Hash($apkSha256Hash)
   {
@@ -83,12 +64,7 @@ class AppProcessInfo extends \Google\Collection
     return $this->apkSha256Hash;
   }
   /**
-   * Package names of all packages that are associated with the particular user
-   * ID. In most cases, this will be a single package name, the package that has
-   * been assigned that user ID. If multiple application share a UID then all
-   * packages sharing UID will be included.
-   *
-   * @param string[] $packageNames
+   * @param string[]
    */
   public function setPackageNames($packageNames)
   {
@@ -102,9 +78,7 @@ class AppProcessInfo extends \Google\Collection
     return $this->packageNames;
   }
   /**
-   * Process ID.
-   *
-   * @param int $pid
+   * @param int
    */
   public function setPid($pid)
   {
@@ -118,9 +92,7 @@ class AppProcessInfo extends \Google\Collection
     return $this->pid;
   }
   /**
-   * Process name.
-   *
-   * @param string $processName
+   * @param string
    */
   public function setProcessName($processName)
   {
@@ -134,9 +106,7 @@ class AppProcessInfo extends \Google\Collection
     return $this->processName;
   }
   /**
-   * SELinux policy info.
-   *
-   * @param string $seinfo
+   * @param string
    */
   public function setSeinfo($seinfo)
   {
@@ -150,9 +120,7 @@ class AppProcessInfo extends \Google\Collection
     return $this->seinfo;
   }
   /**
-   * Process start time.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -166,9 +134,7 @@ class AppProcessInfo extends \Google\Collection
     return $this->startTime;
   }
   /**
-   * UID of the package.
-   *
-   * @param int $uid
+   * @param int
    */
   public function setUid($uid)
   {

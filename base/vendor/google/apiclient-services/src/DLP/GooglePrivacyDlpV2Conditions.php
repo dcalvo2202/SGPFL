@@ -24,9 +24,7 @@ class GooglePrivacyDlpV2Conditions extends \Google\Collection
   protected $conditionsDataType = 'array';
 
   /**
-   * A collection of conditions.
-   *
-   * @param GooglePrivacyDlpV2Condition[] $conditions
+   * @param GooglePrivacyDlpV2Condition[]
    */
   public function setConditions($conditions)
   {

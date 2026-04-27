@@ -21,18 +21,12 @@ class SubscriptionOfferPhase extends \Google\Collection
 {
   protected $collection_key = 'regionalConfigs';
   /**
-   * Required. The duration of a single recurrence of this phase. Specified in
-   * ISO 8601 format.
-   *
    * @var string
    */
   public $duration;
   protected $otherRegionsConfigType = OtherRegionsSubscriptionOfferPhaseConfig::class;
   protected $otherRegionsConfigDataType = '';
   /**
-   * Required. The number of times this phase repeats. If this offer phase is
-   * not free, each recurrence charges the user the price of this offer phase.
-   *
    * @var int
    */
   public $recurrenceCount;
@@ -40,10 +34,7 @@ class SubscriptionOfferPhase extends \Google\Collection
   protected $regionalConfigsDataType = 'array';
 
   /**
-   * Required. The duration of a single recurrence of this phase. Specified in
-   * ISO 8601 format.
-   *
-   * @param string $duration
+   * @param string
    */
   public function setDuration($duration)
   {
@@ -57,9 +48,7 @@ class SubscriptionOfferPhase extends \Google\Collection
     return $this->duration;
   }
   /**
-   * Pricing information for any new locations Play may launch in.
-   *
-   * @param OtherRegionsSubscriptionOfferPhaseConfig $otherRegionsConfig
+   * @param OtherRegionsSubscriptionOfferPhaseConfig
    */
   public function setOtherRegionsConfig(OtherRegionsSubscriptionOfferPhaseConfig $otherRegionsConfig)
   {
@@ -73,10 +62,7 @@ class SubscriptionOfferPhase extends \Google\Collection
     return $this->otherRegionsConfig;
   }
   /**
-   * Required. The number of times this phase repeats. If this offer phase is
-   * not free, each recurrence charges the user the price of this offer phase.
-   *
-   * @param int $recurrenceCount
+   * @param int
    */
   public function setRecurrenceCount($recurrenceCount)
   {
@@ -90,11 +76,7 @@ class SubscriptionOfferPhase extends \Google\Collection
     return $this->recurrenceCount;
   }
   /**
-   * Required. The region-specific configuration of this offer phase. This list
-   * must contain exactly one entry for each region for which the subscription
-   * offer has a regional config.
-   *
-   * @param RegionalSubscriptionOfferPhaseConfig[] $regionalConfigs
+   * @param RegionalSubscriptionOfferPhaseConfig[]
    */
   public function setRegionalConfigs($regionalConfigs)
   {

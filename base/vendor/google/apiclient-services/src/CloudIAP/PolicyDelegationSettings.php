@@ -20,17 +20,10 @@ namespace Google\Service\CloudIAP;
 class PolicyDelegationSettings extends \Google\Model
 {
   /**
-   * Permission to check in IAM.
-   *
    * @var string
    */
   public $iamPermission;
   /**
-   * The DNS name of the service (e.g. "resourcemanager.googleapis.com"). This
-   * should be the domain name part of the full resource names (see
-   * https://aip.dev/122#full-resource-names), which is usually the same as
-   * IamServiceSpec.service of the service where the resource type is defined.
-   *
    * @var string
    */
   public $iamServiceName;
@@ -40,9 +33,7 @@ class PolicyDelegationSettings extends \Google\Model
   protected $resourceDataType = '';
 
   /**
-   * Permission to check in IAM.
-   *
-   * @param string $iamPermission
+   * @param string
    */
   public function setIamPermission($iamPermission)
   {
@@ -56,12 +47,7 @@ class PolicyDelegationSettings extends \Google\Model
     return $this->iamPermission;
   }
   /**
-   * The DNS name of the service (e.g. "resourcemanager.googleapis.com"). This
-   * should be the domain name part of the full resource names (see
-   * https://aip.dev/122#full-resource-names), which is usually the same as
-   * IamServiceSpec.service of the service where the resource type is defined.
-   *
-   * @param string $iamServiceName
+   * @param string
    */
   public function setIamServiceName($iamServiceName)
   {
@@ -75,9 +61,7 @@ class PolicyDelegationSettings extends \Google\Model
     return $this->iamServiceName;
   }
   /**
-   * Policy name to be checked
-   *
-   * @param PolicyName $policyName
+   * @param PolicyName
    */
   public function setPolicyName(PolicyName $policyName)
   {
@@ -91,9 +75,7 @@ class PolicyDelegationSettings extends \Google\Model
     return $this->policyName;
   }
   /**
-   * IAM resource to check permission on
-   *
-   * @param IapResource $resource
+   * @param IapResource
    */
   public function setResource(IapResource $resource)
   {

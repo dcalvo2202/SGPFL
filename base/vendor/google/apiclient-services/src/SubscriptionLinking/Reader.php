@@ -20,45 +20,16 @@ namespace Google\Service\SubscriptionLinking;
 class Reader extends \Google\Model
 {
   /**
-   * Output only. Time the publication reader was created and associated with a
-   * Google user.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. The resource name of the reader. The last part of ppid in the
-   * resource name is the publisher provided id.
-   *
    * @var string
    */
   public $name;
-  /**
-   * Output only. The SwG publication id that the reader's subscription linking
-   * was originating from.
-   *
-   * @var string
-   */
-  public $originatingPublicationId;
-  /**
-   * Output only. The publisher provided id of the reader.
-   *
-   * @var string
-   */
-  public $ppid;
-  /**
-   * Output only. The SwG publication id that the reader has linked their
-   * subscription to.
-   *
-   * @var string
-   */
-  public $publicationId;
 
   /**
-   * Output only. Time the publication reader was created and associated with a
-   * Google user.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -72,10 +43,7 @@ class Reader extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. The resource name of the reader. The last part of ppid in the
-   * resource name is the publisher provided id.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -87,56 +55,6 @@ class Reader extends \Google\Model
   public function getName()
   {
     return $this->name;
-  }
-  /**
-   * Output only. The SwG publication id that the reader's subscription linking
-   * was originating from.
-   *
-   * @param string $originatingPublicationId
-   */
-  public function setOriginatingPublicationId($originatingPublicationId)
-  {
-    $this->originatingPublicationId = $originatingPublicationId;
-  }
-  /**
-   * @return string
-   */
-  public function getOriginatingPublicationId()
-  {
-    return $this->originatingPublicationId;
-  }
-  /**
-   * Output only. The publisher provided id of the reader.
-   *
-   * @param string $ppid
-   */
-  public function setPpid($ppid)
-  {
-    $this->ppid = $ppid;
-  }
-  /**
-   * @return string
-   */
-  public function getPpid()
-  {
-    return $this->ppid;
-  }
-  /**
-   * Output only. The SwG publication id that the reader has linked their
-   * subscription to.
-   *
-   * @param string $publicationId
-   */
-  public function setPublicationId($publicationId)
-  {
-    $this->publicationId = $publicationId;
-  }
-  /**
-   * @return string
-   */
-  public function getPublicationId()
-  {
-    return $this->publicationId;
   }
 }
 

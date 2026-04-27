@@ -20,42 +20,28 @@ namespace Google\Service\CloudComposer;
 class WorkerResource extends \Google\Model
 {
   /**
-   * Optional. CPU request and limit for a single Airflow worker replica.
-   *
    * @var float
    */
   public $cpu;
   /**
-   * Optional. Maximum number of workers for autoscaling.
-   *
    * @var int
    */
   public $maxCount;
   /**
-   * Optional. Memory (GB) request and limit for a single Airflow worker
-   * replica.
-   *
    * @var float
    */
   public $memoryGb;
   /**
-   * Optional. Minimum number of workers for autoscaling.
-   *
    * @var int
    */
   public $minCount;
   /**
-   * Optional. Storage (GB) request and limit for a single Airflow worker
-   * replica.
-   *
    * @var float
    */
   public $storageGb;
 
   /**
-   * Optional. CPU request and limit for a single Airflow worker replica.
-   *
-   * @param float $cpu
+   * @param float
    */
   public function setCpu($cpu)
   {
@@ -69,9 +55,7 @@ class WorkerResource extends \Google\Model
     return $this->cpu;
   }
   /**
-   * Optional. Maximum number of workers for autoscaling.
-   *
-   * @param int $maxCount
+   * @param int
    */
   public function setMaxCount($maxCount)
   {
@@ -85,10 +69,7 @@ class WorkerResource extends \Google\Model
     return $this->maxCount;
   }
   /**
-   * Optional. Memory (GB) request and limit for a single Airflow worker
-   * replica.
-   *
-   * @param float $memoryGb
+   * @param float
    */
   public function setMemoryGb($memoryGb)
   {
@@ -102,9 +83,7 @@ class WorkerResource extends \Google\Model
     return $this->memoryGb;
   }
   /**
-   * Optional. Minimum number of workers for autoscaling.
-   *
-   * @param int $minCount
+   * @param int
    */
   public function setMinCount($minCount)
   {
@@ -118,10 +97,7 @@ class WorkerResource extends \Google\Model
     return $this->minCount;
   }
   /**
-   * Optional. Storage (GB) request and limit for a single Airflow worker
-   * replica.
-   *
-   * @param float $storageGb
+   * @param float
    */
   public function setStorageGb($storageGb)
   {

@@ -23,17 +23,12 @@ class ObjectAccessControls extends \Google\Collection
   protected $itemsType = ObjectAccessControl::class;
   protected $itemsDataType = 'array';
   /**
-   * The kind of item this is. For lists of object access control entries, this
-   * is always storage#objectAccessControls.
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * The list of items.
-   *
-   * @param ObjectAccessControl[] $items
+   * @param ObjectAccessControl[]
    */
   public function setItems($items)
   {
@@ -47,10 +42,7 @@ class ObjectAccessControls extends \Google\Collection
     return $this->items;
   }
   /**
-   * The kind of item this is. For lists of object access control entries, this
-   * is always storage#objectAccessControls.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

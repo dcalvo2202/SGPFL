@@ -20,24 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1MigratableResourceAutomlModel extends \Google\Model
 {
   /**
-   * Full resource name of automl Model. Format:
-   * `projects/{project}/locations/{location}/models/{model}`.
-   *
    * @var string
    */
   public $model;
   /**
-   * The Model's display name in automl.googleapis.com.
-   *
    * @var string
    */
   public $modelDisplayName;
 
   /**
-   * Full resource name of automl Model. Format:
-   * `projects/{project}/locations/{location}/models/{model}`.
-   *
-   * @param string $model
+   * @param string
    */
   public function setModel($model)
   {
@@ -51,9 +43,7 @@ class GoogleCloudAiplatformV1MigratableResourceAutomlModel extends \Google\Model
     return $this->model;
   }
   /**
-   * The Model's display name in automl.googleapis.com.
-   *
-   * @param string $modelDisplayName
+   * @param string
    */
   public function setModelDisplayName($modelDisplayName)
   {

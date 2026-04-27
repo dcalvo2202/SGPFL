@@ -21,22 +21,16 @@ class FilterTableColumns extends \Google\Collection
 {
   protected $collection_key = 'includeColumns';
   /**
-   * Optional. List of columns to be excluded for a particular table.
-   *
    * @var string[]
    */
   public $excludeColumns;
   /**
-   * Optional. List of columns to be included for a particular table.
-   *
    * @var string[]
    */
   public $includeColumns;
 
   /**
-   * Optional. List of columns to be excluded for a particular table.
-   *
-   * @param string[] $excludeColumns
+   * @param string[]
    */
   public function setExcludeColumns($excludeColumns)
   {
@@ -50,9 +44,7 @@ class FilterTableColumns extends \Google\Collection
     return $this->excludeColumns;
   }
   /**
-   * Optional. List of columns to be included for a particular table.
-   *
-   * @param string[] $includeColumns
+   * @param string[]
    */
   public function setIncludeColumns($includeColumns)
   {

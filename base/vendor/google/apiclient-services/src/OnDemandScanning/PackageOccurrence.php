@@ -19,32 +19,12 @@ namespace Google\Service\OnDemandScanning;
 
 class PackageOccurrence extends \Google\Collection
 {
-  /**
-   * Unknown architecture.
-   */
-  public const ARCHITECTURE_ARCHITECTURE_UNSPECIFIED = 'ARCHITECTURE_UNSPECIFIED';
-  /**
-   * X86 architecture.
-   */
-  public const ARCHITECTURE_X86 = 'X86';
-  /**
-   * X64 architecture.
-   */
-  public const ARCHITECTURE_X64 = 'X64';
   protected $collection_key = 'location';
   /**
-   * Output only. The CPU architecture for which packages in this distribution
-   * channel were built. Architecture will be blank for language packages.
-   *
    * @var string
    */
   public $architecture;
   /**
-   * Output only. The cpe_uri in [CPE
-   * format](https://cpe.mitre.org/specification/) denoting the package manager
-   * version distributing a package. The cpe_uri will be blank for language
-   * packages.
-   *
    * @var string
    */
   public $cpeUri;
@@ -53,15 +33,10 @@ class PackageOccurrence extends \Google\Collection
   protected $locationType = Location::class;
   protected $locationDataType = 'array';
   /**
-   * Required. Output only. The name of the installed package.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The type of package; whether native or non native (e.g., ruby
-   * gems, node.js packages, etc.).
-   *
    * @var string
    */
   public $packageType;
@@ -69,31 +44,21 @@ class PackageOccurrence extends \Google\Collection
   protected $versionDataType = '';
 
   /**
-   * Output only. The CPU architecture for which packages in this distribution
-   * channel were built. Architecture will be blank for language packages.
-   *
-   * Accepted values: ARCHITECTURE_UNSPECIFIED, X86, X64
-   *
-   * @param self::ARCHITECTURE_* $architecture
+   * @param string
    */
   public function setArchitecture($architecture)
   {
     $this->architecture = $architecture;
   }
   /**
-   * @return self::ARCHITECTURE_*
+   * @return string
    */
   public function getArchitecture()
   {
     return $this->architecture;
   }
   /**
-   * Output only. The cpe_uri in [CPE
-   * format](https://cpe.mitre.org/specification/) denoting the package manager
-   * version distributing a package. The cpe_uri will be blank for language
-   * packages.
-   *
-   * @param string $cpeUri
+   * @param string
    */
   public function setCpeUri($cpeUri)
   {
@@ -107,9 +72,7 @@ class PackageOccurrence extends \Google\Collection
     return $this->cpeUri;
   }
   /**
-   * Licenses that have been declared by the authors of the package.
-   *
-   * @param License $license
+   * @param License
    */
   public function setLicense(License $license)
   {
@@ -123,10 +86,7 @@ class PackageOccurrence extends \Google\Collection
     return $this->license;
   }
   /**
-   * All of the places within the filesystem versions of this package have been
-   * found.
-   *
-   * @param Location[] $location
+   * @param Location[]
    */
   public function setLocation($location)
   {
@@ -140,9 +100,7 @@ class PackageOccurrence extends \Google\Collection
     return $this->location;
   }
   /**
-   * Required. Output only. The name of the installed package.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -156,10 +114,7 @@ class PackageOccurrence extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. The type of package; whether native or non native (e.g., ruby
-   * gems, node.js packages, etc.).
-   *
-   * @param string $packageType
+   * @param string
    */
   public function setPackageType($packageType)
   {
@@ -173,9 +128,7 @@ class PackageOccurrence extends \Google\Collection
     return $this->packageType;
   }
   /**
-   * Output only. The version of the package.
-   *
-   * @param Version $version
+   * @param Version
    */
   public function setVersion(Version $version)
   {

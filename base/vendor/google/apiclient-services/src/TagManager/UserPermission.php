@@ -23,30 +23,22 @@ class UserPermission extends \Google\Collection
   protected $accountAccessType = AccountAccess::class;
   protected $accountAccessDataType = '';
   /**
-   * The Account ID uniquely identifies the GTM Account.
-   *
    * @var string
    */
   public $accountId;
   protected $containerAccessType = ContainerAccess::class;
   protected $containerAccessDataType = 'array';
   /**
-   * User's email address.
-   *
    * @var string
    */
   public $emailAddress;
   /**
-   * GTM UserPermission's API relative path.
-   *
    * @var string
    */
   public $path;
 
   /**
-   * GTM Account access permissions.
-   *
-   * @param AccountAccess $accountAccess
+   * @param AccountAccess
    */
   public function setAccountAccess(AccountAccess $accountAccess)
   {
@@ -60,9 +52,7 @@ class UserPermission extends \Google\Collection
     return $this->accountAccess;
   }
   /**
-   * The Account ID uniquely identifies the GTM Account.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -76,9 +66,7 @@ class UserPermission extends \Google\Collection
     return $this->accountId;
   }
   /**
-   * GTM Container access permissions.
-   *
-   * @param ContainerAccess[] $containerAccess
+   * @param ContainerAccess[]
    */
   public function setContainerAccess($containerAccess)
   {
@@ -92,9 +80,7 @@ class UserPermission extends \Google\Collection
     return $this->containerAccess;
   }
   /**
-   * User's email address.
-   *
-   * @param string $emailAddress
+   * @param string
    */
   public function setEmailAddress($emailAddress)
   {
@@ -108,9 +94,7 @@ class UserPermission extends \Google\Collection
     return $this->emailAddress;
   }
   /**
-   * GTM UserPermission's API relative path.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {

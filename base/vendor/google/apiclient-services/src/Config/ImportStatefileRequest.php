@@ -20,18 +20,12 @@ namespace Google\Service\Config;
 class ImportStatefileRequest extends \Google\Model
 {
   /**
-   * Required. Lock ID of the lock file to verify that the user who is importing
-   * the state file previously locked the Deployment.
-   *
    * @var string
    */
   public $lockId;
 
   /**
-   * Required. Lock ID of the lock file to verify that the user who is importing
-   * the state file previously locked the Deployment.
-   *
-   * @param string $lockId
+   * @param string
    */
   public function setLockId($lockId)
   {

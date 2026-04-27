@@ -20,58 +20,32 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1SessionEventQueryDetail extends \Google\Model
 {
   /**
-   * An unspecified Engine type.
-   */
-  public const ENGINE_ENGINE_UNSPECIFIED = 'ENGINE_UNSPECIFIED';
-  /**
-   * Spark-sql engine is specified in Query.
-   */
-  public const ENGINE_SPARK_SQL = 'SPARK_SQL';
-  /**
-   * BigQuery engine is specified in Query.
-   */
-  public const ENGINE_BIGQUERY = 'BIGQUERY';
-  /**
-   * The data processed by the query.
-   *
    * @var string
    */
   public $dataProcessedBytes;
   /**
-   * Time taken for execution of the query.
-   *
    * @var string
    */
   public $duration;
   /**
-   * Query Execution engine.
-   *
    * @var string
    */
   public $engine;
   /**
-   * The unique Query id identifying the query.
-   *
    * @var string
    */
   public $queryId;
   /**
-   * The query text executed.
-   *
    * @var string
    */
   public $queryText;
   /**
-   * The size of results the query produced.
-   *
    * @var string
    */
   public $resultSizeBytes;
 
   /**
-   * The data processed by the query.
-   *
-   * @param string $dataProcessedBytes
+   * @param string
    */
   public function setDataProcessedBytes($dataProcessedBytes)
   {
@@ -85,9 +59,7 @@ class GoogleCloudDataplexV1SessionEventQueryDetail extends \Google\Model
     return $this->dataProcessedBytes;
   }
   /**
-   * Time taken for execution of the query.
-   *
-   * @param string $duration
+   * @param string
    */
   public function setDuration($duration)
   {
@@ -101,27 +73,21 @@ class GoogleCloudDataplexV1SessionEventQueryDetail extends \Google\Model
     return $this->duration;
   }
   /**
-   * Query Execution engine.
-   *
-   * Accepted values: ENGINE_UNSPECIFIED, SPARK_SQL, BIGQUERY
-   *
-   * @param self::ENGINE_* $engine
+   * @param string
    */
   public function setEngine($engine)
   {
     $this->engine = $engine;
   }
   /**
-   * @return self::ENGINE_*
+   * @return string
    */
   public function getEngine()
   {
     return $this->engine;
   }
   /**
-   * The unique Query id identifying the query.
-   *
-   * @param string $queryId
+   * @param string
    */
   public function setQueryId($queryId)
   {
@@ -135,9 +101,7 @@ class GoogleCloudDataplexV1SessionEventQueryDetail extends \Google\Model
     return $this->queryId;
   }
   /**
-   * The query text executed.
-   *
-   * @param string $queryText
+   * @param string
    */
   public function setQueryText($queryText)
   {
@@ -151,9 +115,7 @@ class GoogleCloudDataplexV1SessionEventQueryDetail extends \Google\Model
     return $this->queryText;
   }
   /**
-   * The size of results the query produced.
-   *
-   * @param string $resultSizeBytes
+   * @param string
    */
   public function setResultSizeBytes($resultSizeBytes)
   {

@@ -21,14 +21,10 @@ class ScreenshotCluster extends \Google\Collection
 {
   protected $collection_key = 'screens';
   /**
-   * A string that describes the activity of every screen in the cluster.
-   *
    * @var string
    */
   public $activity;
   /**
-   * A unique identifier for the cluster. @OutputOnly
-   *
    * @var string
    */
   public $clusterId;
@@ -38,9 +34,7 @@ class ScreenshotCluster extends \Google\Collection
   protected $screensDataType = 'array';
 
   /**
-   * A string that describes the activity of every screen in the cluster.
-   *
-   * @param string $activity
+   * @param string
    */
   public function setActivity($activity)
   {
@@ -54,9 +48,7 @@ class ScreenshotCluster extends \Google\Collection
     return $this->activity;
   }
   /**
-   * A unique identifier for the cluster. @OutputOnly
-   *
-   * @param string $clusterId
+   * @param string
    */
   public function setClusterId($clusterId)
   {
@@ -70,12 +62,7 @@ class ScreenshotCluster extends \Google\Collection
     return $this->clusterId;
   }
   /**
-   * A singular screen that represents the cluster as a whole. This screen will
-   * act as the "cover" of the entire cluster. When users look at the clusters,
-   * only the key screen from each cluster will be shown. Which screen is the
-   * key screen is determined by the ClusteringAlgorithm
-   *
-   * @param Screen $keyScreen
+   * @param Screen
    */
   public function setKeyScreen(Screen $keyScreen)
   {
@@ -89,9 +76,7 @@ class ScreenshotCluster extends \Google\Collection
     return $this->keyScreen;
   }
   /**
-   * Full list of screens.
-   *
-   * @param Screen[] $screens
+   * @param Screen[]
    */
   public function setScreens($screens)
   {

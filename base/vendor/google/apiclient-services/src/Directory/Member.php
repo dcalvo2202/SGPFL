@@ -23,69 +23,40 @@ class Member extends \Google\Model
         "deliverySettings" => "delivery_settings",
   ];
   /**
-   * Defines mail delivery preferences of member. This field is only supported
-   * by `insert`, `update`, and `get` methods.
-   *
    * @var string
    */
   public $deliverySettings;
   /**
-   * The member's email address. A member can be a user or another group. This
-   * property is required when adding a member to a group. The `email` must be
-   * unique and cannot be an alias of another group. If the email address is
-   * changed, the API automatically reflects the email address changes.
-   *
    * @var string
    */
   public $email;
   /**
-   * ETag of the resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * The unique ID of the group member. A member `id` can be used as a member
-   * request URI's `memberKey`.
-   *
    * @var string
    */
   public $id;
   /**
-   * The type of the API resource. For Members resources, the value is
-   * `admin#directory#member`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The member's role in a group. The API returns an error for cycles in group
-   * memberships. For example, if `group1` is a member of `group2`, `group2`
-   * cannot be a member of `group1`. For more information about a member's role,
-   * see the [administration help
-   * center](https://support.google.com/a/answer/167094).
-   *
    * @var string
    */
   public $role;
   /**
-   * Status of member (Immutable)
-   *
    * @var string
    */
   public $status;
   /**
-   * The type of group member.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Defines mail delivery preferences of member. This field is only supported
-   * by `insert`, `update`, and `get` methods.
-   *
-   * @param string $deliverySettings
+   * @param string
    */
   public function setDeliverySettings($deliverySettings)
   {
@@ -99,12 +70,7 @@ class Member extends \Google\Model
     return $this->deliverySettings;
   }
   /**
-   * The member's email address. A member can be a user or another group. This
-   * property is required when adding a member to a group. The `email` must be
-   * unique and cannot be an alias of another group. If the email address is
-   * changed, the API automatically reflects the email address changes.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {
@@ -118,9 +84,7 @@ class Member extends \Google\Model
     return $this->email;
   }
   /**
-   * ETag of the resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -134,10 +98,7 @@ class Member extends \Google\Model
     return $this->etag;
   }
   /**
-   * The unique ID of the group member. A member `id` can be used as a member
-   * request URI's `memberKey`.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -151,10 +112,7 @@ class Member extends \Google\Model
     return $this->id;
   }
   /**
-   * The type of the API resource. For Members resources, the value is
-   * `admin#directory#member`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -168,13 +126,7 @@ class Member extends \Google\Model
     return $this->kind;
   }
   /**
-   * The member's role in a group. The API returns an error for cycles in group
-   * memberships. For example, if `group1` is a member of `group2`, `group2`
-   * cannot be a member of `group1`. For more information about a member's role,
-   * see the [administration help
-   * center](https://support.google.com/a/answer/167094).
-   *
-   * @param string $role
+   * @param string
    */
   public function setRole($role)
   {
@@ -188,9 +140,7 @@ class Member extends \Google\Model
     return $this->role;
   }
   /**
-   * Status of member (Immutable)
-   *
-   * @param string $status
+   * @param string
    */
   public function setStatus($status)
   {
@@ -204,9 +154,7 @@ class Member extends \Google\Model
     return $this->status;
   }
   /**
-   * The type of group member.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

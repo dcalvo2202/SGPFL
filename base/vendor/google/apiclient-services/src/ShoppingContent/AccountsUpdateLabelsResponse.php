@@ -20,18 +20,12 @@ namespace Google\Service\ShoppingContent;
 class AccountsUpdateLabelsResponse extends \Google\Model
 {
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#accountsUpdateLabelsResponse`".
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#accountsUpdateLabelsResponse`".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

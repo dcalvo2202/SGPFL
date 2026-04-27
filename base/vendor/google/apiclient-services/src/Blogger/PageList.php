@@ -21,30 +21,22 @@ class PageList extends \Google\Collection
 {
   protected $collection_key = 'items';
   /**
-   * Etag of the response.
-   *
    * @var string
    */
   public $etag;
   protected $itemsType = Page::class;
   protected $itemsDataType = 'array';
   /**
-   * The kind of this entity. Always blogger#pageList.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Pagination token to fetch the next page, if one exists.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Etag of the response.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -58,9 +50,7 @@ class PageList extends \Google\Collection
     return $this->etag;
   }
   /**
-   * The list of Pages for a Blog.
-   *
-   * @param Page[] $items
+   * @param Page[]
    */
   public function setItems($items)
   {
@@ -74,9 +64,7 @@ class PageList extends \Google\Collection
     return $this->items;
   }
   /**
-   * The kind of this entity. Always blogger#pageList.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -90,9 +78,7 @@ class PageList extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Pagination token to fetch the next page, if one exists.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

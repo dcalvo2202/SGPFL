@@ -21,33 +21,22 @@ class ReportList extends \Google\Collection
 {
   protected $collection_key = 'items';
   /**
-   * The eTag of this response for caching purposes.
-   *
    * @var string
    */
   public $etag;
   protected $itemsType = Report::class;
   protected $itemsDataType = 'array';
   /**
-   * The kind of list this is, in this case dfareporting#reportList.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Continuation token used to page through reports. To retrieve the next page
-   * of results, set the next request's "pageToken" to the value of this field.
-   * The page token is only valid for a limited amount of time and should not be
-   * persisted.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The eTag of this response for caching purposes.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -61,9 +50,7 @@ class ReportList extends \Google\Collection
     return $this->etag;
   }
   /**
-   * The reports returned in this response.
-   *
-   * @param Report[] $items
+   * @param Report[]
    */
   public function setItems($items)
   {
@@ -77,9 +64,7 @@ class ReportList extends \Google\Collection
     return $this->items;
   }
   /**
-   * The kind of list this is, in this case dfareporting#reportList.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -93,12 +78,7 @@ class ReportList extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Continuation token used to page through reports. To retrieve the next page
-   * of results, set the next request's "pageToken" to the value of this field.
-   * The page token is only valid for a limited amount of time and should not be
-   * persisted.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

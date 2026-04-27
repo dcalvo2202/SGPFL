@@ -20,20 +20,12 @@ namespace Google\Service\Compute;
 class BackendServiceUsedBy extends \Google\Model
 {
   /**
-   * Output only. [Output Only] Server-defined URL for resources referencing
-   * given BackendService like UrlMaps, TargetTcpProxies, TargetSslProxies and
-   * ForwardingRule.
-   *
    * @var string
    */
   public $reference;
 
   /**
-   * Output only. [Output Only] Server-defined URL for resources referencing
-   * given BackendService like UrlMaps, TargetTcpProxies, TargetSslProxies and
-   * ForwardingRule.
-   *
-   * @param string $reference
+   * @param string
    */
   public function setReference($reference)
   {

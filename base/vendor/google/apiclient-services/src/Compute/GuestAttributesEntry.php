@@ -20,28 +20,20 @@ namespace Google\Service\Compute;
 class GuestAttributesEntry extends \Google\Model
 {
   /**
-   * Key for the guest attribute entry.
-   *
    * @var string
    */
   public $key;
   /**
-   * Namespace for the guest attribute entry.
-   *
    * @var string
    */
   public $namespace;
   /**
-   * Value for the guest attribute entry.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Key for the guest attribute entry.
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {
@@ -55,9 +47,7 @@ class GuestAttributesEntry extends \Google\Model
     return $this->key;
   }
   /**
-   * Namespace for the guest attribute entry.
-   *
-   * @param string $namespace
+   * @param string
    */
   public function setNamespace($namespace)
   {
@@ -71,9 +61,7 @@ class GuestAttributesEntry extends \Google\Model
     return $this->namespace;
   }
   /**
-   * Value for the guest attribute entry.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

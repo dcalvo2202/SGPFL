@@ -21,18 +21,10 @@ class UpdateTableRowStyleRequest extends \Google\Collection
 {
   protected $collection_key = 'rowIndices';
   /**
-   * The fields that should be updated. At least one field must be specified.
-   * The root `tableRowStyle` is implied and should not be specified. A single
-   * `"*"` can be used as short-hand for listing every field. For example to
-   * update the minimum row height, set `fields` to `"min_row_height"`.
-   *
    * @var string
    */
   public $fields;
   /**
-   * The list of zero-based row indices whose style should be updated. If no
-   * indices are specified, all rows will be updated.
-   *
    * @var int[]
    */
   public $rowIndices;
@@ -42,12 +34,7 @@ class UpdateTableRowStyleRequest extends \Google\Collection
   protected $tableStartLocationDataType = '';
 
   /**
-   * The fields that should be updated. At least one field must be specified.
-   * The root `tableRowStyle` is implied and should not be specified. A single
-   * `"*"` can be used as short-hand for listing every field. For example to
-   * update the minimum row height, set `fields` to `"min_row_height"`.
-   *
-   * @param string $fields
+   * @param string
    */
   public function setFields($fields)
   {
@@ -61,10 +48,7 @@ class UpdateTableRowStyleRequest extends \Google\Collection
     return $this->fields;
   }
   /**
-   * The list of zero-based row indices whose style should be updated. If no
-   * indices are specified, all rows will be updated.
-   *
-   * @param int[] $rowIndices
+   * @param int[]
    */
   public function setRowIndices($rowIndices)
   {
@@ -78,9 +62,7 @@ class UpdateTableRowStyleRequest extends \Google\Collection
     return $this->rowIndices;
   }
   /**
-   * The styles to be set on the rows.
-   *
-   * @param TableRowStyle $tableRowStyle
+   * @param TableRowStyle
    */
   public function setTableRowStyle(TableRowStyle $tableRowStyle)
   {
@@ -94,9 +76,7 @@ class UpdateTableRowStyleRequest extends \Google\Collection
     return $this->tableRowStyle;
   }
   /**
-   * The location where the table starts in the document.
-   *
-   * @param Location $tableStartLocation
+   * @param Location
    */
   public function setTableStartLocation(Location $tableStartLocation)
   {

@@ -21,35 +21,22 @@ class PlayerScoreResponse extends \Google\Collection
 {
   protected $collection_key = 'unbeatenScores';
   /**
-   * The time spans where the submitted score is better than the existing score
-   * for that time span.
-   *
    * @var string[]
    */
   public $beatenScoreTimeSpans;
   /**
-   * The formatted value of the submitted score.
-   *
    * @var string
    */
   public $formattedScore;
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#playerScoreResponse`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The leaderboard ID that this score was submitted to.
-   *
    * @var string
    */
   public $leaderboardId;
   /**
-   * Additional information about this score. Values will contain no more than
-   * 64 URI-safe characters as defined by section 2.3 of RFC 3986.
-   *
    * @var string
    */
   public $scoreTag;
@@ -57,10 +44,7 @@ class PlayerScoreResponse extends \Google\Collection
   protected $unbeatenScoresDataType = 'array';
 
   /**
-   * The time spans where the submitted score is better than the existing score
-   * for that time span.
-   *
-   * @param string[] $beatenScoreTimeSpans
+   * @param string[]
    */
   public function setBeatenScoreTimeSpans($beatenScoreTimeSpans)
   {
@@ -74,9 +58,7 @@ class PlayerScoreResponse extends \Google\Collection
     return $this->beatenScoreTimeSpans;
   }
   /**
-   * The formatted value of the submitted score.
-   *
-   * @param string $formattedScore
+   * @param string
    */
   public function setFormattedScore($formattedScore)
   {
@@ -90,10 +72,7 @@ class PlayerScoreResponse extends \Google\Collection
     return $this->formattedScore;
   }
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#playerScoreResponse`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -107,9 +86,7 @@ class PlayerScoreResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The leaderboard ID that this score was submitted to.
-   *
-   * @param string $leaderboardId
+   * @param string
    */
   public function setLeaderboardId($leaderboardId)
   {
@@ -123,10 +100,7 @@ class PlayerScoreResponse extends \Google\Collection
     return $this->leaderboardId;
   }
   /**
-   * Additional information about this score. Values will contain no more than
-   * 64 URI-safe characters as defined by section 2.3 of RFC 3986.
-   *
-   * @param string $scoreTag
+   * @param string
    */
   public function setScoreTag($scoreTag)
   {
@@ -140,11 +114,7 @@ class PlayerScoreResponse extends \Google\Collection
     return $this->scoreTag;
   }
   /**
-   * The scores in time spans that have not been beaten. As an example, the
-   * submitted score may be better than the player's `DAILY` score, but not
-   * better than the player's scores for the `WEEKLY` or `ALL_TIME` time spans.
-   *
-   * @param PlayerScore[] $unbeatenScores
+   * @param PlayerScore[]
    */
   public function setUnbeatenScores($unbeatenScores)
   {

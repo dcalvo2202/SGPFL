@@ -23,9 +23,7 @@ class AcceptHubSpokeResponse extends \Google\Model
   protected $spokeDataType = '';
 
   /**
-   * The spoke that was operated on.
-   *
-   * @param Spoke $spoke
+   * @param Spoke
    */
   public function setSpoke(Spoke $spoke)
   {

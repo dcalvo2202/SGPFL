@@ -23,17 +23,12 @@ class ListChildAccountsResponse extends \Google\Collection
   protected $accountsType = Account::class;
   protected $accountsDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The CSS/MC accounts returned for the specified CSS parent account.
-   *
-   * @param Account[] $accounts
+   * @param Account[]
    */
   public function setAccounts($accounts)
   {
@@ -47,10 +42,7 @@ class ListChildAccountsResponse extends \Google\Collection
     return $this->accounts;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

@@ -23,16 +23,12 @@ class GoogleCloudAiplatformV1ListDatasetVersionsResponse extends \Google\Collect
   protected $datasetVersionsType = GoogleCloudAiplatformV1DatasetVersion::class;
   protected $datasetVersionsDataType = 'array';
   /**
-   * The standard List next-page token.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * A list of DatasetVersions that matches the specified filter in the request.
-   *
-   * @param GoogleCloudAiplatformV1DatasetVersion[] $datasetVersions
+   * @param GoogleCloudAiplatformV1DatasetVersion[]
    */
   public function setDatasetVersions($datasetVersions)
   {
@@ -46,9 +42,7 @@ class GoogleCloudAiplatformV1ListDatasetVersionsResponse extends \Google\Collect
     return $this->datasetVersions;
   }
   /**
-   * The standard List next-page token.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

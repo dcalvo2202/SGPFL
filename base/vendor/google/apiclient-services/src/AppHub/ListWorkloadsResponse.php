@@ -21,14 +21,10 @@ class ListWorkloadsResponse extends \Google\Collection
 {
   protected $collection_key = 'workloads';
   /**
-   * A token identifying a page of results the server should return.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
@@ -36,9 +32,7 @@ class ListWorkloadsResponse extends \Google\Collection
   protected $workloadsDataType = 'array';
 
   /**
-   * A token identifying a page of results the server should return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -52,9 +46,7 @@ class ListWorkloadsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {
@@ -68,9 +60,7 @@ class ListWorkloadsResponse extends \Google\Collection
     return $this->unreachable;
   }
   /**
-   * List of Workloads.
-   *
-   * @param Workload[] $workloads
+   * @param Workload[]
    */
   public function setWorkloads($workloads)
   {

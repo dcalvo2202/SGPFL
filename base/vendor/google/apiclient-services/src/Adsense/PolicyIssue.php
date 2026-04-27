@@ -19,81 +19,20 @@ namespace Google\Service\Adsense;
 
 class PolicyIssue extends \Google\Collection
 {
-  /**
-   * The action is unspecified.
-   */
-  public const ACTION_ENFORCEMENT_ACTION_UNSPECIFIED = 'ENFORCEMENT_ACTION_UNSPECIFIED';
-  /**
-   * No ad serving enforcement is currently present, but enforcement will start
-   * on the `warning_escalation_date` if the issue is not resolved.
-   */
-  public const ACTION_WARNED = 'WARNED';
-  /**
-   * Ad serving demand has been restricted on the entity.
-   */
-  public const ACTION_AD_SERVING_RESTRICTED = 'AD_SERVING_RESTRICTED';
-  /**
-   * Ad serving has been disabled on the entity.
-   */
-  public const ACTION_AD_SERVING_DISABLED = 'AD_SERVING_DISABLED';
-  /**
-   * Ads are being served for the entity but Confirmed Click is being applied to
-   * the ads. See https://support.google.com/adsense/answer/10025624.
-   */
-  public const ACTION_AD_SERVED_WITH_CLICK_CONFIRMATION = 'AD_SERVED_WITH_CLICK_CONFIRMATION';
-  /**
-   * Ad personalization is restricted because the ad requests coming from the
-   * EEA and UK do not have a TCF string or the Consent Management Platform
-   * (CMP) indicated by the TCF string is not Google certified. As a result,
-   * basic/limited ads will be served. See
-   * https://support.google.com/adsense/answer/13554116.
-   */
-  public const ACTION_AD_PERSONALIZATION_RESTRICTED = 'AD_PERSONALIZATION_RESTRICTED';
-  /**
-   * The entity type is unspecified.
-   */
-  public const ENTITY_TYPE_ENTITY_TYPE_UNSPECIFIED = 'ENTITY_TYPE_UNSPECIFIED';
-  /**
-   * The enforced entity is an entire website.
-   */
-  public const ENTITY_TYPE_SITE = 'SITE';
-  /**
-   * The enforced entity is a particular section of a website. All the pages
-   * with this prefix are enforced.
-   */
-  public const ENTITY_TYPE_SITE_SECTION = 'SITE_SECTION';
-  /**
-   * The enforced entity is a single web page.
-   */
-  public const ENTITY_TYPE_PAGE = 'PAGE';
   protected $collection_key = 'policyTopics';
   /**
-   * Required. The most severe action taken on the entity over the past seven
-   * days.
-   *
    * @var string
    */
   public $action;
   /**
-   * Optional. List of ad clients associated with the policy issue (either as
-   * the primary ad client or an associated host/secondary ad client). In the
-   * latter case, this will be an ad client that is not owned by the current
-   * account.
-   *
    * @var string[]
    */
   public $adClients;
   /**
-   * Required. Total number of ad requests affected by the policy violations
-   * over the past seven days.
-   *
    * @var string
    */
   public $adRequestCount;
   /**
-   * Required. Type of the entity indicating if the entity is a site, site-
-   * section, or page.
-   *
    * @var string
    */
   public $entityType;
@@ -102,35 +41,20 @@ class PolicyIssue extends \Google\Collection
   protected $lastDetectedDateType = Date::class;
   protected $lastDetectedDateDataType = '';
   /**
-   * Required. Resource name of the entity with policy issues. Format:
-   * accounts/{account}/policyIssues/{policy_issue}
-   *
    * @var string
    */
   public $name;
   protected $policyTopicsType = PolicyTopic::class;
   protected $policyTopicsDataType = 'array';
   /**
-   * Required. Hostname/domain of the entity (for example "foo.com" or
-   * "www.foo.com"). This _should_ be a bare domain/host name without any
-   * protocol. This will be present for all policy issues.
-   *
    * @var string
    */
   public $site;
   /**
-   * Optional. Prefix of the site-section having policy issues (For example
-   * "foo.com/bar-section"). This will be present if the `entity_type` is
-   * `SITE_SECTION` and will be absent for other entity types.
-   *
    * @var string
    */
   public $siteSection;
   /**
-   * Optional. URI of the page having policy violations (for example
-   * "foo.com/bar" or "www.foo.com/bar"). This will be present if the
-   * `entity_type` is `PAGE` and will be absent for other entity types.
-   *
    * @var string
    */
   public $uri;
@@ -138,33 +62,21 @@ class PolicyIssue extends \Google\Collection
   protected $warningEscalationDateDataType = '';
 
   /**
-   * Required. The most severe action taken on the entity over the past seven
-   * days.
-   *
-   * Accepted values: ENFORCEMENT_ACTION_UNSPECIFIED, WARNED,
-   * AD_SERVING_RESTRICTED, AD_SERVING_DISABLED,
-   * AD_SERVED_WITH_CLICK_CONFIRMATION, AD_PERSONALIZATION_RESTRICTED
-   *
-   * @param self::ACTION_* $action
+   * @param string
    */
   public function setAction($action)
   {
     $this->action = $action;
   }
   /**
-   * @return self::ACTION_*
+   * @return string
    */
   public function getAction()
   {
     return $this->action;
   }
   /**
-   * Optional. List of ad clients associated with the policy issue (either as
-   * the primary ad client or an associated host/secondary ad client). In the
-   * latter case, this will be an ad client that is not owned by the current
-   * account.
-   *
-   * @param string[] $adClients
+   * @param string[]
    */
   public function setAdClients($adClients)
   {
@@ -178,10 +90,7 @@ class PolicyIssue extends \Google\Collection
     return $this->adClients;
   }
   /**
-   * Required. Total number of ad requests affected by the policy violations
-   * over the past seven days.
-   *
-   * @param string $adRequestCount
+   * @param string
    */
   public function setAdRequestCount($adRequestCount)
   {
@@ -195,29 +104,21 @@ class PolicyIssue extends \Google\Collection
     return $this->adRequestCount;
   }
   /**
-   * Required. Type of the entity indicating if the entity is a site, site-
-   * section, or page.
-   *
-   * Accepted values: ENTITY_TYPE_UNSPECIFIED, SITE, SITE_SECTION, PAGE
-   *
-   * @param self::ENTITY_TYPE_* $entityType
+   * @param string
    */
   public function setEntityType($entityType)
   {
     $this->entityType = $entityType;
   }
   /**
-   * @return self::ENTITY_TYPE_*
+   * @return string
    */
   public function getEntityType()
   {
     return $this->entityType;
   }
   /**
-   * Required. The date (in the America/Los_Angeles timezone) when policy
-   * violations were first detected on the entity.
-   *
-   * @param Date $firstDetectedDate
+   * @param Date
    */
   public function setFirstDetectedDate(Date $firstDetectedDate)
   {
@@ -231,10 +132,7 @@ class PolicyIssue extends \Google\Collection
     return $this->firstDetectedDate;
   }
   /**
-   * Required. The date (in the America/Los_Angeles timezone) when policy
-   * violations were last detected on the entity.
-   *
-   * @param Date $lastDetectedDate
+   * @param Date
    */
   public function setLastDetectedDate(Date $lastDetectedDate)
   {
@@ -248,10 +146,7 @@ class PolicyIssue extends \Google\Collection
     return $this->lastDetectedDate;
   }
   /**
-   * Required. Resource name of the entity with policy issues. Format:
-   * accounts/{account}/policyIssues/{policy_issue}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -265,10 +160,7 @@ class PolicyIssue extends \Google\Collection
     return $this->name;
   }
   /**
-   * Required. Unordered list. The policy topics that this entity was found to
-   * violate over the past seven days.
-   *
-   * @param PolicyTopic[] $policyTopics
+   * @param PolicyTopic[]
    */
   public function setPolicyTopics($policyTopics)
   {
@@ -282,11 +174,7 @@ class PolicyIssue extends \Google\Collection
     return $this->policyTopics;
   }
   /**
-   * Required. Hostname/domain of the entity (for example "foo.com" or
-   * "www.foo.com"). This _should_ be a bare domain/host name without any
-   * protocol. This will be present for all policy issues.
-   *
-   * @param string $site
+   * @param string
    */
   public function setSite($site)
   {
@@ -300,11 +188,7 @@ class PolicyIssue extends \Google\Collection
     return $this->site;
   }
   /**
-   * Optional. Prefix of the site-section having policy issues (For example
-   * "foo.com/bar-section"). This will be present if the `entity_type` is
-   * `SITE_SECTION` and will be absent for other entity types.
-   *
-   * @param string $siteSection
+   * @param string
    */
   public function setSiteSection($siteSection)
   {
@@ -318,11 +202,7 @@ class PolicyIssue extends \Google\Collection
     return $this->siteSection;
   }
   /**
-   * Optional. URI of the page having policy violations (for example
-   * "foo.com/bar" or "www.foo.com/bar"). This will be present if the
-   * `entity_type` is `PAGE` and will be absent for other entity types.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {
@@ -336,12 +216,7 @@ class PolicyIssue extends \Google\Collection
     return $this->uri;
   }
   /**
-   * Optional. The date (in the America/Los_Angeles timezone) when the entity
-   * will have ad serving demand restricted or ad serving disabled. This is
-   * present only for issues with a `WARNED` enforcement action. See
-   * https://support.google.com/adsense/answer/11066888.
-   *
-   * @param Date $warningEscalationDate
+   * @param Date
    */
   public function setWarningEscalationDate(Date $warningEscalationDate)
   {

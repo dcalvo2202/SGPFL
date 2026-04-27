@@ -21,14 +21,10 @@ class GoogleCloudDocumentaiV1DocumentChunkedDocumentChunk extends \Google\Collec
 {
   protected $collection_key = 'sourceBlockIds';
   /**
-   * ID of the chunk.
-   *
    * @var string
    */
   public $chunkId;
   /**
-   * Text content of the chunk.
-   *
    * @var string
    */
   public $content;
@@ -39,16 +35,12 @@ class GoogleCloudDocumentaiV1DocumentChunkedDocumentChunk extends \Google\Collec
   protected $pageSpanType = GoogleCloudDocumentaiV1DocumentChunkedDocumentChunkChunkPageSpan::class;
   protected $pageSpanDataType = '';
   /**
-   * Unused.
-   *
    * @var string[]
    */
   public $sourceBlockIds;
 
   /**
-   * ID of the chunk.
-   *
-   * @param string $chunkId
+   * @param string
    */
   public function setChunkId($chunkId)
   {
@@ -62,9 +54,7 @@ class GoogleCloudDocumentaiV1DocumentChunkedDocumentChunk extends \Google\Collec
     return $this->chunkId;
   }
   /**
-   * Text content of the chunk.
-   *
-   * @param string $content
+   * @param string
    */
   public function setContent($content)
   {
@@ -78,9 +68,7 @@ class GoogleCloudDocumentaiV1DocumentChunkedDocumentChunk extends \Google\Collec
     return $this->content;
   }
   /**
-   * Page footers associated with the chunk.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentChunkedDocumentChunkChunkPageFooter[] $pageFooters
+   * @param GoogleCloudDocumentaiV1DocumentChunkedDocumentChunkChunkPageFooter[]
    */
   public function setPageFooters($pageFooters)
   {
@@ -94,9 +82,7 @@ class GoogleCloudDocumentaiV1DocumentChunkedDocumentChunk extends \Google\Collec
     return $this->pageFooters;
   }
   /**
-   * Page headers associated with the chunk.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentChunkedDocumentChunkChunkPageHeader[] $pageHeaders
+   * @param GoogleCloudDocumentaiV1DocumentChunkedDocumentChunkChunkPageHeader[]
    */
   public function setPageHeaders($pageHeaders)
   {
@@ -110,9 +96,7 @@ class GoogleCloudDocumentaiV1DocumentChunkedDocumentChunk extends \Google\Collec
     return $this->pageHeaders;
   }
   /**
-   * Page span of the chunk.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentChunkedDocumentChunkChunkPageSpan $pageSpan
+   * @param GoogleCloudDocumentaiV1DocumentChunkedDocumentChunkChunkPageSpan
    */
   public function setPageSpan(GoogleCloudDocumentaiV1DocumentChunkedDocumentChunkChunkPageSpan $pageSpan)
   {
@@ -126,9 +110,7 @@ class GoogleCloudDocumentaiV1DocumentChunkedDocumentChunk extends \Google\Collec
     return $this->pageSpan;
   }
   /**
-   * Unused.
-   *
-   * @param string[] $sourceBlockIds
+   * @param string[]
    */
   public function setSourceBlockIds($sourceBlockIds)
   {

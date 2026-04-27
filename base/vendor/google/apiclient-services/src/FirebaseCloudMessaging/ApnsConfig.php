@@ -22,48 +22,20 @@ class ApnsConfig extends \Google\Model
   protected $fcmOptionsType = ApnsFcmOptions::class;
   protected $fcmOptionsDataType = '';
   /**
-   * HTTP request headers defined in Apple Push Notification Service. Refer to
-   * [APNs request headers](https://developer.apple.com/documentation/usernotifi
-   * cations/setting_up_a_remote_notification_server/sending_notification_reques
-   * ts_to_apns) for supported headers such as `apns-expiration` and `apns-
-   * priority`. The backend sets a default value for `apns-expiration` of 30
-   * days and a default value for `apns-priority` of 10 if not explicitly set.
-   *
    * @var string[]
    */
   public $headers;
   /**
-   * Optional. [Apple Live Activity](https://developer.apple.com/design/human-
-   * interface-guidelines/live-activities) token to send updates to. This token
-   * can either be a push token or [push-to-start](https://developer.apple.com/d
-   * ocumentation/activitykit/activity/pushtostarttoken) token from Apple. To
-   * start, update, or end a live activity remotely using FCM, construct an
-   * [`aps
-   * payload`](https://developer.apple.com/documentation/activitykit/starting-
-   * and-updating-live-activities-with-activitykit-push-notifications#Construct-
-   * the-payload-that-starts-a-Live-Activity) and put it in the [`apns.payload`]
-   * (https://firebase.google.com/docs/reference/fcm/rest/v1/projects.messages#A
-   * pnsConfig) field.
-   *
    * @var string
    */
   public $liveActivityToken;
   /**
-   * APNs payload as a JSON object, including both `aps` dictionary and custom
-   * payload. See [Payload Key Reference](https://developer.apple.com/documentat
-   * ion/usernotifications/setting_up_a_remote_notification_server/generating_a_
-   * remote_notification). If present, it overrides
-   * google.firebase.fcm.v1.Notification.title and
-   * google.firebase.fcm.v1.Notification.body.
-   *
    * @var array[]
    */
   public $payload;
 
   /**
-   * Options for features provided by the FCM SDK for iOS.
-   *
-   * @param ApnsFcmOptions $fcmOptions
+   * @param ApnsFcmOptions
    */
   public function setFcmOptions(ApnsFcmOptions $fcmOptions)
   {
@@ -77,14 +49,7 @@ class ApnsConfig extends \Google\Model
     return $this->fcmOptions;
   }
   /**
-   * HTTP request headers defined in Apple Push Notification Service. Refer to
-   * [APNs request headers](https://developer.apple.com/documentation/usernotifi
-   * cations/setting_up_a_remote_notification_server/sending_notification_reques
-   * ts_to_apns) for supported headers such as `apns-expiration` and `apns-
-   * priority`. The backend sets a default value for `apns-expiration` of 30
-   * days and a default value for `apns-priority` of 10 if not explicitly set.
-   *
-   * @param string[] $headers
+   * @param string[]
    */
   public function setHeaders($headers)
   {
@@ -98,19 +63,7 @@ class ApnsConfig extends \Google\Model
     return $this->headers;
   }
   /**
-   * Optional. [Apple Live Activity](https://developer.apple.com/design/human-
-   * interface-guidelines/live-activities) token to send updates to. This token
-   * can either be a push token or [push-to-start](https://developer.apple.com/d
-   * ocumentation/activitykit/activity/pushtostarttoken) token from Apple. To
-   * start, update, or end a live activity remotely using FCM, construct an
-   * [`aps
-   * payload`](https://developer.apple.com/documentation/activitykit/starting-
-   * and-updating-live-activities-with-activitykit-push-notifications#Construct-
-   * the-payload-that-starts-a-Live-Activity) and put it in the [`apns.payload`]
-   * (https://firebase.google.com/docs/reference/fcm/rest/v1/projects.messages#A
-   * pnsConfig) field.
-   *
-   * @param string $liveActivityToken
+   * @param string
    */
   public function setLiveActivityToken($liveActivityToken)
   {
@@ -124,14 +77,7 @@ class ApnsConfig extends \Google\Model
     return $this->liveActivityToken;
   }
   /**
-   * APNs payload as a JSON object, including both `aps` dictionary and custom
-   * payload. See [Payload Key Reference](https://developer.apple.com/documentat
-   * ion/usernotifications/setting_up_a_remote_notification_server/generating_a_
-   * remote_notification). If present, it overrides
-   * google.firebase.fcm.v1.Notification.title and
-   * google.firebase.fcm.v1.Notification.body.
-   *
-   * @param array[] $payload
+   * @param array[]
    */
   public function setPayload($payload)
   {

@@ -25,7 +25,7 @@ class AggregationResultFrequency extends \Google\Model
   public $values;
 
   /**
-   * @param string[] $values
+   * @param string[]
    */
   public function setValues($values)
   {

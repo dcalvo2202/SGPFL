@@ -21,36 +21,24 @@ class VideoTrainability extends \Google\Collection
 {
   protected $collection_key = 'permitted';
   /**
-   * Etag of this resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "youtube#videoTrainability".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Specifies who is allowed to train on the video. Valid values are: - a
-   * single string "all" - a single string "none" - a list of allowed parties
-   *
    * @var string[]
    */
   public $permitted;
   /**
-   * The ID of the video.
-   *
    * @var string
    */
   public $videoId;
 
   /**
-   * Etag of this resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -64,10 +52,7 @@ class VideoTrainability extends \Google\Collection
     return $this->etag;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "youtube#videoTrainability".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -81,10 +66,7 @@ class VideoTrainability extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Specifies who is allowed to train on the video. Valid values are: - a
-   * single string "all" - a single string "none" - a list of allowed parties
-   *
-   * @param string[] $permitted
+   * @param string[]
    */
   public function setPermitted($permitted)
   {
@@ -98,9 +80,7 @@ class VideoTrainability extends \Google\Collection
     return $this->permitted;
   }
   /**
-   * The ID of the video.
-   *
-   * @param string $videoId
+   * @param string
    */
   public function setVideoId($videoId)
   {

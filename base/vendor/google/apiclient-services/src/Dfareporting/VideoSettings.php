@@ -19,50 +19,27 @@ namespace Google\Service\Dfareporting;
 
 class VideoSettings extends \Google\Model
 {
-  public const ORIENTATION_ANY = 'ANY';
-  public const ORIENTATION_LANDSCAPE = 'LANDSCAPE';
-  public const ORIENTATION_PORTRAIT = 'PORTRAIT';
   protected $companionSettingsType = CompanionSetting::class;
   protected $companionSettingsDataType = '';
   /**
-   * Duration of a video placement in seconds.
-   *
    * @var int
    */
   public $durationSeconds;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#videoSettings".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Whether OBA icons are enabled for this placement.
-   *
    * @var bool
    */
   public $obaEnabled;
   protected $obaSettingsType = ObaIcon::class;
   protected $obaSettingsDataType = '';
   /**
-   * Orientation of a video placement. If this value is set, placement will
-   * return assets matching the specified orientation.
-   *
    * @var string
    */
   public $orientation;
   /**
-   * Publisher specification ID of a video placement. Possible values are: *
-   * `1`, Hulu * `2`, NBC * `3`, CBS * `4`, CBS Desktop * `5`, Discovery * `6`,
-   * VEVO HD * `7`, VEVO Vertical * `8`, Fox * `9`, CW Network * `10`, Disney *
-   * `11`, IGN * `12`, NFL.com * `13`, Turner Broadcasting * `14`, Tubi on Fox *
-   * `15`, Hearst Corporation * `16`, Twitch Desktop * `17`, ABC * `18`,
-   * Univision * `19`, MLB.com * `20`, MLB.com Mobile * `21`, MLB.com OTT *
-   * `22`, Polsat * `23`, TVN * `24`, Mediaset * `25`, Antena 3 * `26`,
-   * Mediamond * `27`, Sky Italia * `28`, Tubi on CBS * `29`, Spotify * `30`,
-   * Paramount * `31`, Max
-   *
    * @var string
    */
   public $publisherSpecificationId;
@@ -72,10 +49,7 @@ class VideoSettings extends \Google\Model
   protected $transcodeSettingsDataType = '';
 
   /**
-   * Settings for the companion creatives of video creatives served to this
-   * placement.
-   *
-   * @param CompanionSetting $companionSettings
+   * @param CompanionSetting
    */
   public function setCompanionSettings(CompanionSetting $companionSettings)
   {
@@ -89,9 +63,7 @@ class VideoSettings extends \Google\Model
     return $this->companionSettings;
   }
   /**
-   * Duration of a video placement in seconds.
-   *
-   * @param int $durationSeconds
+   * @param int
    */
   public function setDurationSeconds($durationSeconds)
   {
@@ -105,10 +77,7 @@ class VideoSettings extends \Google\Model
     return $this->durationSeconds;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#videoSettings".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -122,9 +91,7 @@ class VideoSettings extends \Google\Model
     return $this->kind;
   }
   /**
-   * Whether OBA icons are enabled for this placement.
-   *
-   * @param bool $obaEnabled
+   * @param bool
    */
   public function setObaEnabled($obaEnabled)
   {
@@ -138,11 +105,7 @@ class VideoSettings extends \Google\Model
     return $this->obaEnabled;
   }
   /**
-   * Settings for the OBA icon of video creatives served to this placement. If
-   * this object is provided, the creative-level OBA settings will be
-   * overridden.
-   *
-   * @param ObaIcon $obaSettings
+   * @param ObaIcon
    */
   public function setObaSettings(ObaIcon $obaSettings)
   {
@@ -156,36 +119,21 @@ class VideoSettings extends \Google\Model
     return $this->obaSettings;
   }
   /**
-   * Orientation of a video placement. If this value is set, placement will
-   * return assets matching the specified orientation.
-   *
-   * Accepted values: ANY, LANDSCAPE, PORTRAIT
-   *
-   * @param self::ORIENTATION_* $orientation
+   * @param string
    */
   public function setOrientation($orientation)
   {
     $this->orientation = $orientation;
   }
   /**
-   * @return self::ORIENTATION_*
+   * @return string
    */
   public function getOrientation()
   {
     return $this->orientation;
   }
   /**
-   * Publisher specification ID of a video placement. Possible values are: *
-   * `1`, Hulu * `2`, NBC * `3`, CBS * `4`, CBS Desktop * `5`, Discovery * `6`,
-   * VEVO HD * `7`, VEVO Vertical * `8`, Fox * `9`, CW Network * `10`, Disney *
-   * `11`, IGN * `12`, NFL.com * `13`, Turner Broadcasting * `14`, Tubi on Fox *
-   * `15`, Hearst Corporation * `16`, Twitch Desktop * `17`, ABC * `18`,
-   * Univision * `19`, MLB.com * `20`, MLB.com Mobile * `21`, MLB.com OTT *
-   * `22`, Polsat * `23`, TVN * `24`, Mediaset * `25`, Antena 3 * `26`,
-   * Mediamond * `27`, Sky Italia * `28`, Tubi on CBS * `29`, Spotify * `30`,
-   * Paramount * `31`, Max
-   *
-   * @param string $publisherSpecificationId
+   * @param string
    */
   public function setPublisherSpecificationId($publisherSpecificationId)
   {
@@ -199,11 +147,7 @@ class VideoSettings extends \Google\Model
     return $this->publisherSpecificationId;
   }
   /**
-   * Settings for the skippability of video creatives served to this placement.
-   * If this object is provided, the creative-level skippable settings will be
-   * overridden.
-   *
-   * @param SkippableSetting $skippableSettings
+   * @param SkippableSetting
    */
   public function setSkippableSettings(SkippableSetting $skippableSettings)
   {
@@ -217,11 +161,7 @@ class VideoSettings extends \Google\Model
     return $this->skippableSettings;
   }
   /**
-   * Settings for the transcodes of video creatives served to this placement. If
-   * this object is provided, the creative-level transcode settings will be
-   * overridden.
-   *
-   * @param TranscodeSetting $transcodeSettings
+   * @param TranscodeSetting
    */
   public function setTranscodeSettings(TranscodeSetting $transcodeSettings)
   {

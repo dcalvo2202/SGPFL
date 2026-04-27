@@ -21,22 +21,16 @@ class ZoneTypeRestriction extends \Google\Collection
 {
   protected $collection_key = 'whitelistedTypeId';
   /**
-   * True if type restrictions have been enabled for this Zone.
-   *
    * @var bool
    */
   public $enable;
   /**
-   * List of type public ids that have been whitelisted for use in this Zone.
-   *
    * @var string[]
    */
   public $whitelistedTypeId;
 
   /**
-   * True if type restrictions have been enabled for this Zone.
-   *
-   * @param bool $enable
+   * @param bool
    */
   public function setEnable($enable)
   {
@@ -50,9 +44,7 @@ class ZoneTypeRestriction extends \Google\Collection
     return $this->enable;
   }
   /**
-   * List of type public ids that have been whitelisted for use in this Zone.
-   *
-   * @param string[] $whitelistedTypeId
+   * @param string[]
    */
   public function setWhitelistedTypeId($whitelistedTypeId)
   {

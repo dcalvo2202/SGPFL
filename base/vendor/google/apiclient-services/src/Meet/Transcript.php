@@ -19,57 +19,27 @@ namespace Google\Service\Meet;
 
 class Transcript extends \Google\Model
 {
-  /**
-   * Default, never used.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * An active transcript session has started.
-   */
-  public const STATE_STARTED = 'STARTED';
-  /**
-   * This transcript session has ended, but the transcript file hasn't been
-   * generated yet.
-   */
-  public const STATE_ENDED = 'ENDED';
-  /**
-   * Transcript file is generated and ready to download.
-   */
-  public const STATE_FILE_GENERATED = 'FILE_GENERATED';
   protected $docsDestinationType = DocsDestination::class;
   protected $docsDestinationDataType = '';
   /**
-   * Output only. Timestamp when the transcript stopped.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * Output only. Resource name of the transcript. Format:
-   * `conferenceRecords/{conference_record}/transcripts/{transcript}`, where
-   * `{transcript}` is a 1:1 mapping to each unique transcription session of the
-   * conference.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Timestamp when the transcript started.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * Output only. Current state.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Output only. Where the Google Docs transcript is saved.
-   *
-   * @param DocsDestination $docsDestination
+   * @param DocsDestination
    */
   public function setDocsDestination(DocsDestination $docsDestination)
   {
@@ -83,9 +53,7 @@ class Transcript extends \Google\Model
     return $this->docsDestination;
   }
   /**
-   * Output only. Timestamp when the transcript stopped.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -99,12 +67,7 @@ class Transcript extends \Google\Model
     return $this->endTime;
   }
   /**
-   * Output only. Resource name of the transcript. Format:
-   * `conferenceRecords/{conference_record}/transcripts/{transcript}`, where
-   * `{transcript}` is a 1:1 mapping to each unique transcription session of the
-   * conference.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -118,9 +81,7 @@ class Transcript extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Timestamp when the transcript started.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -134,18 +95,14 @@ class Transcript extends \Google\Model
     return $this->startTime;
   }
   /**
-   * Output only. Current state.
-   *
-   * Accepted values: STATE_UNSPECIFIED, STARTED, ENDED, FILE_GENERATED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

@@ -21,9 +21,6 @@ class GoogleCloudDataplexV1ListSessionsResponse extends \Google\Collection
 {
   protected $collection_key = 'sessions';
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GoogleCloudDataplexV1ListSessionsResponse extends \Google\Collection
   protected $sessionsDataType = 'array';
 
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class GoogleCloudDataplexV1ListSessionsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Sessions under a given environment.
-   *
-   * @param GoogleCloudDataplexV1Session[] $sessions
+   * @param GoogleCloudDataplexV1Session[]
    */
   public function setSessions($sessions)
   {

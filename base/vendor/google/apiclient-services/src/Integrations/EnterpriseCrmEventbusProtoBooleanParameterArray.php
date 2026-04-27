@@ -26,7 +26,7 @@ class EnterpriseCrmEventbusProtoBooleanParameterArray extends \Google\Collection
   public $booleanValues;
 
   /**
-   * @param bool[] $booleanValues
+   * @param bool[]
    */
   public function setBooleanValues($booleanValues)
   {

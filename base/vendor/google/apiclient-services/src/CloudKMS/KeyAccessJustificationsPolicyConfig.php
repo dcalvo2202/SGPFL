@@ -22,34 +22,12 @@ class KeyAccessJustificationsPolicyConfig extends \Google\Model
   protected $defaultKeyAccessJustificationPolicyType = KeyAccessJustificationsPolicy::class;
   protected $defaultKeyAccessJustificationPolicyDataType = '';
   /**
-   * Output only. Indicates whether this parent resource is available to default
-   * policy feature. Please consult [the prerequisite of default policy
-   * feature](https://cloud.google.com/assured-workloads/key-access-
-   * justifications/docs/set-default-policy#before) for more details.
-   *
-   * @var bool
-   */
-  public $defaultPolicyAvailable;
-  /**
-   * Identifier. Represents the resource name for this
-   * KeyAccessJustificationsPolicyConfig in the format of
-   * "{organizations|folders|projects}/kajPolicyConfig".
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Optional. Specifies the default key access justifications (KAJ) policy used
-   * when a CryptoKey is created in this folder. This is only used when a Key
-   * Access Justifications policy is not provided in the CreateCryptoKeyRequest.
-   * This overrides any default policies in its ancestry. If this field is
-   * unset, or is set but contains an empty allowed_access_reasons list, no
-   * default Key Access Justifications (KAJ) policy configuration is active. In
-   * this scenario, all newly created keys will default to an "allow-all"
-   * policy.
-   *
-   * @param KeyAccessJustificationsPolicy $defaultKeyAccessJustificationPolicy
+   * @param KeyAccessJustificationsPolicy
    */
   public function setDefaultKeyAccessJustificationPolicy(KeyAccessJustificationsPolicy $defaultKeyAccessJustificationPolicy)
   {
@@ -63,30 +41,7 @@ class KeyAccessJustificationsPolicyConfig extends \Google\Model
     return $this->defaultKeyAccessJustificationPolicy;
   }
   /**
-   * Output only. Indicates whether this parent resource is available to default
-   * policy feature. Please consult [the prerequisite of default policy
-   * feature](https://cloud.google.com/assured-workloads/key-access-
-   * justifications/docs/set-default-policy#before) for more details.
-   *
-   * @param bool $defaultPolicyAvailable
-   */
-  public function setDefaultPolicyAvailable($defaultPolicyAvailable)
-  {
-    $this->defaultPolicyAvailable = $defaultPolicyAvailable;
-  }
-  /**
-   * @return bool
-   */
-  public function getDefaultPolicyAvailable()
-  {
-    return $this->defaultPolicyAvailable;
-  }
-  /**
-   * Identifier. Represents the resource name for this
-   * KeyAccessJustificationsPolicyConfig in the format of
-   * "{organizations|folders|projects}/kajPolicyConfig".
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

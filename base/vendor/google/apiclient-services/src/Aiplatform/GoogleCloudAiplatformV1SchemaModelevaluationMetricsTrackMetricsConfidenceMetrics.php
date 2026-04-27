@@ -20,45 +20,28 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1SchemaModelevaluationMetricsTrackMetricsConfidenceMetrics extends \Google\Model
 {
   /**
-   * Bounding box intersection-over-union precision. Measures how well the
-   * bounding boxes overlap between each other (e.g. complete overlap or just
-   * barely above iou_threshold).
-   *
    * @var float
    */
   public $boundingBoxIou;
   /**
-   * The confidence threshold value used to compute the metrics.
-   *
    * @var float
    */
   public $confidenceThreshold;
   /**
-   * Mismatch rate, which measures the tracking consistency, i.e. correctness of
-   * instance ID continuity.
-   *
    * @var float
    */
   public $mismatchRate;
   /**
-   * Tracking precision.
-   *
    * @var float
    */
   public $trackingPrecision;
   /**
-   * Tracking recall.
-   *
    * @var float
    */
   public $trackingRecall;
 
   /**
-   * Bounding box intersection-over-union precision. Measures how well the
-   * bounding boxes overlap between each other (e.g. complete overlap or just
-   * barely above iou_threshold).
-   *
-   * @param float $boundingBoxIou
+   * @param float
    */
   public function setBoundingBoxIou($boundingBoxIou)
   {
@@ -72,9 +55,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsTrackMetricsConfidenceM
     return $this->boundingBoxIou;
   }
   /**
-   * The confidence threshold value used to compute the metrics.
-   *
-   * @param float $confidenceThreshold
+   * @param float
    */
   public function setConfidenceThreshold($confidenceThreshold)
   {
@@ -88,10 +69,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsTrackMetricsConfidenceM
     return $this->confidenceThreshold;
   }
   /**
-   * Mismatch rate, which measures the tracking consistency, i.e. correctness of
-   * instance ID continuity.
-   *
-   * @param float $mismatchRate
+   * @param float
    */
   public function setMismatchRate($mismatchRate)
   {
@@ -105,9 +83,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsTrackMetricsConfidenceM
     return $this->mismatchRate;
   }
   /**
-   * Tracking precision.
-   *
-   * @param float $trackingPrecision
+   * @param float
    */
   public function setTrackingPrecision($trackingPrecision)
   {
@@ -121,9 +97,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsTrackMetricsConfidenceM
     return $this->trackingPrecision;
   }
   /**
-   * Tracking recall.
-   *
-   * @param float $trackingRecall
+   * @param float
    */
   public function setTrackingRecall($trackingRecall)
   {

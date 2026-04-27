@@ -21,27 +21,16 @@ class RichLink extends \Google\Collection
 {
   protected $collection_key = 'suggestedInsertionIds';
   /**
-   * Output only. The ID of this link.
-   *
    * @var string
    */
   public $richLinkId;
   protected $richLinkPropertiesType = RichLinkProperties::class;
   protected $richLinkPropertiesDataType = '';
   /**
-   * IDs for suggestions that remove this link from the document. A RichLink
-   * might have multiple deletion IDs if, for example, multiple users suggest
-   * deleting it. If empty, then this person link isn't suggested for deletion.
-   *
    * @var string[]
    */
   public $suggestedDeletionIds;
   /**
-   * IDs for suggestions that insert this link into the document. A RichLink
-   * might have multiple insertion IDs if it's a nested suggested change (a
-   * suggestion within a suggestion made by a different user, for example). If
-   * empty, then this person link isn't a suggested insertion.
-   *
    * @var string[]
    */
   public $suggestedInsertionIds;
@@ -51,9 +40,7 @@ class RichLink extends \Google\Collection
   protected $textStyleDataType = '';
 
   /**
-   * Output only. The ID of this link.
-   *
-   * @param string $richLinkId
+   * @param string
    */
   public function setRichLinkId($richLinkId)
   {
@@ -67,9 +54,7 @@ class RichLink extends \Google\Collection
     return $this->richLinkId;
   }
   /**
-   * Output only. The properties of this RichLink. This field is always present.
-   *
-   * @param RichLinkProperties $richLinkProperties
+   * @param RichLinkProperties
    */
   public function setRichLinkProperties(RichLinkProperties $richLinkProperties)
   {
@@ -83,11 +68,7 @@ class RichLink extends \Google\Collection
     return $this->richLinkProperties;
   }
   /**
-   * IDs for suggestions that remove this link from the document. A RichLink
-   * might have multiple deletion IDs if, for example, multiple users suggest
-   * deleting it. If empty, then this person link isn't suggested for deletion.
-   *
-   * @param string[] $suggestedDeletionIds
+   * @param string[]
    */
   public function setSuggestedDeletionIds($suggestedDeletionIds)
   {
@@ -101,12 +82,7 @@ class RichLink extends \Google\Collection
     return $this->suggestedDeletionIds;
   }
   /**
-   * IDs for suggestions that insert this link into the document. A RichLink
-   * might have multiple insertion IDs if it's a nested suggested change (a
-   * suggestion within a suggestion made by a different user, for example). If
-   * empty, then this person link isn't a suggested insertion.
-   *
-   * @param string[] $suggestedInsertionIds
+   * @param string[]
    */
   public function setSuggestedInsertionIds($suggestedInsertionIds)
   {
@@ -120,9 +96,7 @@ class RichLink extends \Google\Collection
     return $this->suggestedInsertionIds;
   }
   /**
-   * The suggested text style changes to this RichLink, keyed by suggestion ID.
-   *
-   * @param SuggestedTextStyle[] $suggestedTextStyleChanges
+   * @param SuggestedTextStyle[]
    */
   public function setSuggestedTextStyleChanges($suggestedTextStyleChanges)
   {
@@ -136,9 +110,7 @@ class RichLink extends \Google\Collection
     return $this->suggestedTextStyleChanges;
   }
   /**
-   * The text style of this RichLink.
-   *
-   * @param TextStyle $textStyle
+   * @param TextStyle
    */
   public function setTextStyle(TextStyle $textStyle)
   {

@@ -21,32 +21,20 @@ class Fingerprint extends \Google\Collection
 {
   protected $collection_key = 'v2Blob';
   /**
-   * Required. The layer ID of the final layer in the Docker image's v1
-   * representation.
-   *
    * @var string
    */
   public $v1Name;
   /**
-   * Required. The ordered list of v2 blobs that represent a given image.
-   *
    * @var string[]
    */
   public $v2Blob;
   /**
-   * Output only. The name of the image's v2 blobs computed via: [bottom] :=
-   * v2_blobbottom := sha256(v2_blob[N] + " " + v2_name[N+1]) Only the name of
-   * the final blob is kept.
-   *
    * @var string
    */
   public $v2Name;
 
   /**
-   * Required. The layer ID of the final layer in the Docker image's v1
-   * representation.
-   *
-   * @param string $v1Name
+   * @param string
    */
   public function setV1Name($v1Name)
   {
@@ -60,9 +48,7 @@ class Fingerprint extends \Google\Collection
     return $this->v1Name;
   }
   /**
-   * Required. The ordered list of v2 blobs that represent a given image.
-   *
-   * @param string[] $v2Blob
+   * @param string[]
    */
   public function setV2Blob($v2Blob)
   {
@@ -76,11 +62,7 @@ class Fingerprint extends \Google\Collection
     return $this->v2Blob;
   }
   /**
-   * Output only. The name of the image's v2 blobs computed via: [bottom] :=
-   * v2_blobbottom := sha256(v2_blob[N] + " " + v2_name[N+1]) Only the name of
-   * the final blob is kept.
-   *
-   * @param string $v2Name
+   * @param string
    */
   public function setV2Name($v2Name)
   {

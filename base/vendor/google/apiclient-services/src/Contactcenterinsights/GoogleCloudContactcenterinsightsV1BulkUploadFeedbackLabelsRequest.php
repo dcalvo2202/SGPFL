@@ -24,18 +24,12 @@ class GoogleCloudContactcenterinsightsV1BulkUploadFeedbackLabelsRequest extends 
   protected $sheetsSourceType = GoogleCloudContactcenterinsightsV1BulkUploadFeedbackLabelsRequestSheetsSource::class;
   protected $sheetsSourceDataType = '';
   /**
-   * Optional. If set, upload will not happen and the labels will be validated.
-   * If not set, then default behavior will be to upload the labels after
-   * validation is complete.
-   *
    * @var bool
    */
   public $validateOnly;
 
   /**
-   * A cloud storage bucket source.
-   *
-   * @param GoogleCloudContactcenterinsightsV1BulkUploadFeedbackLabelsRequestGcsSource $gcsSource
+   * @param GoogleCloudContactcenterinsightsV1BulkUploadFeedbackLabelsRequestGcsSource
    */
   public function setGcsSource(GoogleCloudContactcenterinsightsV1BulkUploadFeedbackLabelsRequestGcsSource $gcsSource)
   {
@@ -49,9 +43,7 @@ class GoogleCloudContactcenterinsightsV1BulkUploadFeedbackLabelsRequest extends 
     return $this->gcsSource;
   }
   /**
-   * A sheets document source.
-   *
-   * @param GoogleCloudContactcenterinsightsV1BulkUploadFeedbackLabelsRequestSheetsSource $sheetsSource
+   * @param GoogleCloudContactcenterinsightsV1BulkUploadFeedbackLabelsRequestSheetsSource
    */
   public function setSheetsSource(GoogleCloudContactcenterinsightsV1BulkUploadFeedbackLabelsRequestSheetsSource $sheetsSource)
   {
@@ -65,11 +57,7 @@ class GoogleCloudContactcenterinsightsV1BulkUploadFeedbackLabelsRequest extends 
     return $this->sheetsSource;
   }
   /**
-   * Optional. If set, upload will not happen and the labels will be validated.
-   * If not set, then default behavior will be to upload the labels after
-   * validation is complete.
-   *
-   * @param bool $validateOnly
+   * @param bool
    */
   public function setValidateOnly($validateOnly)
   {

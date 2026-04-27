@@ -25,10 +25,6 @@ class GooglePrivacyDlpV2InspectJobConfig extends \Google\Collection
   protected $inspectConfigType = GooglePrivacyDlpV2InspectConfig::class;
   protected $inspectConfigDataType = '';
   /**
-   * If provided, will be used as the default for all values in InspectConfig.
-   * `inspect_config` will be merged into the values persisted as part of the
-   * template.
-   *
    * @var string
    */
   public $inspectTemplateName;
@@ -36,9 +32,7 @@ class GooglePrivacyDlpV2InspectJobConfig extends \Google\Collection
   protected $storageConfigDataType = '';
 
   /**
-   * Actions to execute at the completion of the job.
-   *
-   * @param GooglePrivacyDlpV2Action[] $actions
+   * @param GooglePrivacyDlpV2Action[]
    */
   public function setActions($actions)
   {
@@ -52,9 +46,7 @@ class GooglePrivacyDlpV2InspectJobConfig extends \Google\Collection
     return $this->actions;
   }
   /**
-   * How and what to scan for.
-   *
-   * @param GooglePrivacyDlpV2InspectConfig $inspectConfig
+   * @param GooglePrivacyDlpV2InspectConfig
    */
   public function setInspectConfig(GooglePrivacyDlpV2InspectConfig $inspectConfig)
   {
@@ -68,11 +60,7 @@ class GooglePrivacyDlpV2InspectJobConfig extends \Google\Collection
     return $this->inspectConfig;
   }
   /**
-   * If provided, will be used as the default for all values in InspectConfig.
-   * `inspect_config` will be merged into the values persisted as part of the
-   * template.
-   *
-   * @param string $inspectTemplateName
+   * @param string
    */
   public function setInspectTemplateName($inspectTemplateName)
   {
@@ -86,9 +74,7 @@ class GooglePrivacyDlpV2InspectJobConfig extends \Google\Collection
     return $this->inspectTemplateName;
   }
   /**
-   * The data to scan.
-   *
-   * @param GooglePrivacyDlpV2StorageConfig $storageConfig
+   * @param GooglePrivacyDlpV2StorageConfig
    */
   public function setStorageConfig(GooglePrivacyDlpV2StorageConfig $storageConfig)
   {

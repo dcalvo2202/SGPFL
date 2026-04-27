@@ -23,9 +23,7 @@ class BooleanPropertyOptions extends \Google\Model
   protected $operatorOptionsDataType = '';
 
   /**
-   * If set, describes how the boolean should be used as a search operator.
-   *
-   * @param BooleanOperatorOptions $operatorOptions
+   * @param BooleanOperatorOptions
    */
   public function setOperatorOptions(BooleanOperatorOptions $operatorOptions)
   {

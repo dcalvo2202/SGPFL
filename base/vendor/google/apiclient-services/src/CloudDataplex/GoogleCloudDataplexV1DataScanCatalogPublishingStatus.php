@@ -20,41 +20,19 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1DataScanCatalogPublishingStatus extends \Google\Model
 {
   /**
-   * The publishing state is unspecified.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Publishing to catalog completed successfully.
-   */
-  public const STATE_SUCCEEDED = 'SUCCEEDED';
-  /**
-   * Publish to catalog failed.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * Publishing to catalog was skipped.
-   */
-  public const STATE_SKIPPED = 'SKIPPED';
-  /**
-   * Output only. Execution state for publishing.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Output only. Execution state for publishing.
-   *
-   * Accepted values: STATE_UNSPECIFIED, SUCCEEDED, FAILED, SKIPPED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

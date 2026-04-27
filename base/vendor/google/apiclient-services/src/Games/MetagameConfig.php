@@ -21,16 +21,10 @@ class MetagameConfig extends \Google\Collection
 {
   protected $collection_key = 'playerLevels';
   /**
-   * Current version of the metagame configuration data. When this data is
-   * updated, the version number will be increased by one.
-   *
    * @var int
    */
   public $currentVersion;
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#metagameConfig`.
-   *
    * @var string
    */
   public $kind;
@@ -38,10 +32,7 @@ class MetagameConfig extends \Google\Collection
   protected $playerLevelsDataType = 'array';
 
   /**
-   * Current version of the metagame configuration data. When this data is
-   * updated, the version number will be increased by one.
-   *
-   * @param int $currentVersion
+   * @param int
    */
   public function setCurrentVersion($currentVersion)
   {
@@ -55,10 +46,7 @@ class MetagameConfig extends \Google\Collection
     return $this->currentVersion;
   }
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#metagameConfig`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -72,9 +60,7 @@ class MetagameConfig extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The list of player levels.
-   *
-   * @param PlayerLevel[] $playerLevels
+   * @param PlayerLevel[]
    */
   public function setPlayerLevels($playerLevels)
   {

@@ -23,17 +23,12 @@ class ListBuyersResponse extends \Google\Collection
   protected $buyersType = Buyer::class;
   protected $buyersDataType = 'array';
   /**
-   * A token which can be passed to a subsequent call to the `ListBuyers` method
-   * to retrieve the next page of results in ListBuyersRequest.pageToken.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * List of buyers.
-   *
-   * @param Buyer[] $buyers
+   * @param Buyer[]
    */
   public function setBuyers($buyers)
   {
@@ -47,10 +42,7 @@ class ListBuyersResponse extends \Google\Collection
     return $this->buyers;
   }
   /**
-   * A token which can be passed to a subsequent call to the `ListBuyers` method
-   * to retrieve the next page of results in ListBuyersRequest.pageToken.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

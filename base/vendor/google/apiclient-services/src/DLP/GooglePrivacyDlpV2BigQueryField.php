@@ -25,9 +25,7 @@ class GooglePrivacyDlpV2BigQueryField extends \Google\Model
   protected $tableDataType = '';
 
   /**
-   * Designated field in the BigQuery table.
-   *
-   * @param GooglePrivacyDlpV2FieldId $field
+   * @param GooglePrivacyDlpV2FieldId
    */
   public function setField(GooglePrivacyDlpV2FieldId $field)
   {
@@ -41,9 +39,7 @@ class GooglePrivacyDlpV2BigQueryField extends \Google\Model
     return $this->field;
   }
   /**
-   * Source table of the field.
-   *
-   * @param GooglePrivacyDlpV2BigQueryTable $table
+   * @param GooglePrivacyDlpV2BigQueryTable
    */
   public function setTable(GooglePrivacyDlpV2BigQueryTable $table)
   {

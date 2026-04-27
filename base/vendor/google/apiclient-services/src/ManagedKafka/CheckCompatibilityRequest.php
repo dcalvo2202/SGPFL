@@ -19,49 +19,24 @@ namespace Google\Service\ManagedKafka;
 
 class CheckCompatibilityRequest extends \Google\Collection
 {
-  /**
-   * No schema type. The default will be AVRO.
-   */
-  public const SCHEMA_TYPE_SCHEMA_TYPE_UNSPECIFIED = 'SCHEMA_TYPE_UNSPECIFIED';
-  /**
-   * Avro schema type.
-   */
-  public const SCHEMA_TYPE_AVRO = 'AVRO';
-  /**
-   * JSON schema type.
-   */
-  public const SCHEMA_TYPE_JSON = 'JSON';
-  /**
-   * Protobuf schema type.
-   */
-  public const SCHEMA_TYPE_PROTOBUF = 'PROTOBUF';
   protected $collection_key = 'references';
   protected $referencesType = SchemaReference::class;
   protected $referencesDataType = 'array';
   /**
-   * Required. The schema payload
-   *
    * @var string
    */
   public $schema;
   /**
-   * Optional. The schema type of the schema.
-   *
    * @var string
    */
   public $schemaType;
   /**
-   * Optional. If true, the response will contain the compatibility check result
-   * with reasons for failed checks. The default is false.
-   *
    * @var bool
    */
   public $verbose;
 
   /**
-   * Optional. The schema references used by the schema.
-   *
-   * @param SchemaReference[] $references
+   * @param SchemaReference[]
    */
   public function setReferences($references)
   {
@@ -75,9 +50,7 @@ class CheckCompatibilityRequest extends \Google\Collection
     return $this->references;
   }
   /**
-   * Required. The schema payload
-   *
-   * @param string $schema
+   * @param string
    */
   public function setSchema($schema)
   {
@@ -91,28 +64,21 @@ class CheckCompatibilityRequest extends \Google\Collection
     return $this->schema;
   }
   /**
-   * Optional. The schema type of the schema.
-   *
-   * Accepted values: SCHEMA_TYPE_UNSPECIFIED, AVRO, JSON, PROTOBUF
-   *
-   * @param self::SCHEMA_TYPE_* $schemaType
+   * @param string
    */
   public function setSchemaType($schemaType)
   {
     $this->schemaType = $schemaType;
   }
   /**
-   * @return self::SCHEMA_TYPE_*
+   * @return string
    */
   public function getSchemaType()
   {
     return $this->schemaType;
   }
   /**
-   * Optional. If true, the response will contain the compatibility check result
-   * with reasons for failed checks. The default is false.
-   *
-   * @param bool $verbose
+   * @param bool
    */
   public function setVerbose($verbose)
   {

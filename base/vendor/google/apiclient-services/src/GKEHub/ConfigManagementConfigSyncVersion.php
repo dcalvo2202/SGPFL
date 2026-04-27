@@ -20,64 +20,44 @@ namespace Google\Service\GKEHub;
 class ConfigManagementConfigSyncVersion extends \Google\Model
 {
   /**
-   * Version of the deployed admission-webhook pod.
-   *
    * @var string
    */
   public $admissionWebhook;
   /**
-   * Version of the deployed git-sync pod.
-   *
    * @var string
    */
   public $gitSync;
   /**
-   * Version of the deployed importer pod.
-   *
    * @var string
    */
   public $importer;
   /**
-   * Version of the deployed monitor pod.
-   *
    * @var string
    */
   public $monitor;
   /**
-   * Version of the deployed otel-collector pod
-   *
    * @var string
    */
   public $otelCollector;
   /**
-   * Version of the deployed reconciler-manager pod.
-   *
    * @var string
    */
   public $reconcilerManager;
   /**
-   * Version of the deployed resource-group-controller-manager pod
-   *
    * @var string
    */
   public $resourceGroupControllerManager;
   /**
-   * Version of the deployed reconciler container in root-reconciler pod.
-   *
    * @var string
    */
   public $rootReconciler;
   /**
-   * Version of the deployed syncer pod.
-   *
    * @var string
    */
   public $syncer;
 
   /**
-   * Version of the deployed admission-webhook pod.
-   *
-   * @param string $admissionWebhook
+   * @param string
    */
   public function setAdmissionWebhook($admissionWebhook)
   {
@@ -91,9 +71,7 @@ class ConfigManagementConfigSyncVersion extends \Google\Model
     return $this->admissionWebhook;
   }
   /**
-   * Version of the deployed git-sync pod.
-   *
-   * @param string $gitSync
+   * @param string
    */
   public function setGitSync($gitSync)
   {
@@ -107,9 +85,7 @@ class ConfigManagementConfigSyncVersion extends \Google\Model
     return $this->gitSync;
   }
   /**
-   * Version of the deployed importer pod.
-   *
-   * @param string $importer
+   * @param string
    */
   public function setImporter($importer)
   {
@@ -123,9 +99,7 @@ class ConfigManagementConfigSyncVersion extends \Google\Model
     return $this->importer;
   }
   /**
-   * Version of the deployed monitor pod.
-   *
-   * @param string $monitor
+   * @param string
    */
   public function setMonitor($monitor)
   {
@@ -139,9 +113,7 @@ class ConfigManagementConfigSyncVersion extends \Google\Model
     return $this->monitor;
   }
   /**
-   * Version of the deployed otel-collector pod
-   *
-   * @param string $otelCollector
+   * @param string
    */
   public function setOtelCollector($otelCollector)
   {
@@ -155,9 +127,7 @@ class ConfigManagementConfigSyncVersion extends \Google\Model
     return $this->otelCollector;
   }
   /**
-   * Version of the deployed reconciler-manager pod.
-   *
-   * @param string $reconcilerManager
+   * @param string
    */
   public function setReconcilerManager($reconcilerManager)
   {
@@ -171,9 +141,7 @@ class ConfigManagementConfigSyncVersion extends \Google\Model
     return $this->reconcilerManager;
   }
   /**
-   * Version of the deployed resource-group-controller-manager pod
-   *
-   * @param string $resourceGroupControllerManager
+   * @param string
    */
   public function setResourceGroupControllerManager($resourceGroupControllerManager)
   {
@@ -187,9 +155,7 @@ class ConfigManagementConfigSyncVersion extends \Google\Model
     return $this->resourceGroupControllerManager;
   }
   /**
-   * Version of the deployed reconciler container in root-reconciler pod.
-   *
-   * @param string $rootReconciler
+   * @param string
    */
   public function setRootReconciler($rootReconciler)
   {
@@ -203,9 +169,7 @@ class ConfigManagementConfigSyncVersion extends \Google\Model
     return $this->rootReconciler;
   }
   /**
-   * Version of the deployed syncer pod.
-   *
-   * @param string $syncer
+   * @param string
    */
   public function setSyncer($syncer)
   {

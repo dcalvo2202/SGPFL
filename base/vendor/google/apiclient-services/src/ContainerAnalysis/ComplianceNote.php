@@ -23,8 +23,6 @@ class ComplianceNote extends \Google\Collection
   protected $cisBenchmarkType = CisBenchmark::class;
   protected $cisBenchmarkDataType = '';
   /**
-   * A description about this compliance check.
-   *
    * @var string
    */
   public $description;
@@ -33,26 +31,18 @@ class ComplianceNote extends \Google\Collection
    */
   public $impact;
   /**
-   * A rationale for the existence of this compliance check.
-   *
    * @var string
    */
   public $rationale;
   /**
-   * A description of remediation steps if the compliance check fails.
-   *
    * @var string
    */
   public $remediation;
   /**
-   * Serialized scan instructions with a predefined format.
-   *
    * @var string
    */
   public $scanInstructions;
   /**
-   * The title that identifies this compliance check.
-   *
    * @var string
    */
   public $title;
@@ -60,7 +50,7 @@ class ComplianceNote extends \Google\Collection
   protected $versionDataType = 'array';
 
   /**
-   * @param CisBenchmark $cisBenchmark
+   * @param CisBenchmark
    */
   public function setCisBenchmark(CisBenchmark $cisBenchmark)
   {
@@ -74,9 +64,7 @@ class ComplianceNote extends \Google\Collection
     return $this->cisBenchmark;
   }
   /**
-   * A description about this compliance check.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -90,7 +78,7 @@ class ComplianceNote extends \Google\Collection
     return $this->description;
   }
   /**
-   * @param string $impact
+   * @param string
    */
   public function setImpact($impact)
   {
@@ -104,9 +92,7 @@ class ComplianceNote extends \Google\Collection
     return $this->impact;
   }
   /**
-   * A rationale for the existence of this compliance check.
-   *
-   * @param string $rationale
+   * @param string
    */
   public function setRationale($rationale)
   {
@@ -120,9 +106,7 @@ class ComplianceNote extends \Google\Collection
     return $this->rationale;
   }
   /**
-   * A description of remediation steps if the compliance check fails.
-   *
-   * @param string $remediation
+   * @param string
    */
   public function setRemediation($remediation)
   {
@@ -136,9 +120,7 @@ class ComplianceNote extends \Google\Collection
     return $this->remediation;
   }
   /**
-   * Serialized scan instructions with a predefined format.
-   *
-   * @param string $scanInstructions
+   * @param string
    */
   public function setScanInstructions($scanInstructions)
   {
@@ -152,9 +134,7 @@ class ComplianceNote extends \Google\Collection
     return $this->scanInstructions;
   }
   /**
-   * The title that identifies this compliance check.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -168,9 +148,7 @@ class ComplianceNote extends \Google\Collection
     return $this->title;
   }
   /**
-   * The OS and config versions the benchmark applies to.
-   *
-   * @param ComplianceVersion[] $version
+   * @param ComplianceVersion[]
    */
   public function setVersion($version)
   {

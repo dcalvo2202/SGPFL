@@ -20,18 +20,12 @@ namespace Google\Service\Compute;
 class HealthCheckLogConfig extends \Google\Model
 {
   /**
-   * Indicates whether or not to export logs. This is false by default, which
-   * means no health check logging will be done.
-   *
    * @var bool
    */
   public $enable;
 
   /**
-   * Indicates whether or not to export logs. This is false by default, which
-   * means no health check logging will be done.
-   *
-   * @param bool $enable
+   * @param bool
    */
   public function setEnable($enable)
   {

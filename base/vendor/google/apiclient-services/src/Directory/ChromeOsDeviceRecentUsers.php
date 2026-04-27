@@ -20,24 +20,16 @@ namespace Google\Service\Directory;
 class ChromeOsDeviceRecentUsers extends \Google\Model
 {
   /**
-   * The user's email address. This is only present if the user type is
-   * `USER_TYPE_MANAGED`.
-   *
    * @var string
    */
   public $email;
   /**
-   * The type of the user.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The user's email address. This is only present if the user type is
-   * `USER_TYPE_MANAGED`.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {
@@ -51,9 +43,7 @@ class ChromeOsDeviceRecentUsers extends \Google\Model
     return $this->email;
   }
   /**
-   * The type of the user.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

@@ -20,8 +20,6 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1RetrievalConfig extends \Google\Model
 {
   /**
-   * The language code of the user.
-   *
    * @var string
    */
   public $languageCode;
@@ -29,9 +27,7 @@ class GoogleCloudAiplatformV1RetrievalConfig extends \Google\Model
   protected $latLngDataType = '';
 
   /**
-   * The language code of the user.
-   *
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {
@@ -45,9 +41,7 @@ class GoogleCloudAiplatformV1RetrievalConfig extends \Google\Model
     return $this->languageCode;
   }
   /**
-   * The location of the user.
-   *
-   * @param GoogleTypeLatLng $latLng
+   * @param GoogleTypeLatLng
    */
   public function setLatLng(GoogleTypeLatLng $latLng)
   {

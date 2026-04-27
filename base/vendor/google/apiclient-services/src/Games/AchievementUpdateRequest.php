@@ -20,49 +20,24 @@ namespace Google\Service\Games;
 class AchievementUpdateRequest extends \Google\Model
 {
   /**
-   * Achievement is revealed.
-   */
-  public const UPDATE_TYPE_REVEAL = 'REVEAL';
-  /**
-   * Achievement is unlocked.
-   */
-  public const UPDATE_TYPE_UNLOCK = 'UNLOCK';
-  /**
-   * Achievement is incremented.
-   */
-  public const UPDATE_TYPE_INCREMENT = 'INCREMENT';
-  /**
-   * Achievement progress is set to at least the passed value.
-   */
-  public const UPDATE_TYPE_SET_STEPS_AT_LEAST = 'SET_STEPS_AT_LEAST';
-  /**
-   * The achievement this update is being applied to.
-   *
    * @var string
    */
   public $achievementId;
   protected $incrementPayloadType = GamesAchievementIncrement::class;
   protected $incrementPayloadDataType = '';
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#achievementUpdateRequest`.
-   *
    * @var string
    */
   public $kind;
   protected $setStepsAtLeastPayloadType = GamesAchievementSetStepsAtLeast::class;
   protected $setStepsAtLeastPayloadDataType = '';
   /**
-   * The type of update being applied.
-   *
    * @var string
    */
   public $updateType;
 
   /**
-   * The achievement this update is being applied to.
-   *
-   * @param string $achievementId
+   * @param string
    */
   public function setAchievementId($achievementId)
   {
@@ -76,10 +51,7 @@ class AchievementUpdateRequest extends \Google\Model
     return $this->achievementId;
   }
   /**
-   * The payload if an update of type `INCREMENT` was requested for the
-   * achievement.
-   *
-   * @param GamesAchievementIncrement $incrementPayload
+   * @param GamesAchievementIncrement
    */
   public function setIncrementPayload(GamesAchievementIncrement $incrementPayload)
   {
@@ -93,10 +65,7 @@ class AchievementUpdateRequest extends \Google\Model
     return $this->incrementPayload;
   }
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#achievementUpdateRequest`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -110,10 +79,7 @@ class AchievementUpdateRequest extends \Google\Model
     return $this->kind;
   }
   /**
-   * The payload if an update of type `SET_STEPS_AT_LEAST` was requested for the
-   * achievement.
-   *
-   * @param GamesAchievementSetStepsAtLeast $setStepsAtLeastPayload
+   * @param GamesAchievementSetStepsAtLeast
    */
   public function setSetStepsAtLeastPayload(GamesAchievementSetStepsAtLeast $setStepsAtLeastPayload)
   {
@@ -127,18 +93,14 @@ class AchievementUpdateRequest extends \Google\Model
     return $this->setStepsAtLeastPayload;
   }
   /**
-   * The type of update being applied.
-   *
-   * Accepted values: REVEAL, UNLOCK, INCREMENT, SET_STEPS_AT_LEAST
-   *
-   * @param self::UPDATE_TYPE_* $updateType
+   * @param string
    */
   public function setUpdateType($updateType)
   {
     $this->updateType = $updateType;
   }
   /**
-   * @return self::UPDATE_TYPE_*
+   * @return string
    */
   public function getUpdateType()
   {

@@ -20,16 +20,12 @@ namespace Google\Service\Spanner;
 class AdapterSession extends \Google\Model
 {
   /**
-   * Identifier. The name of the session. This is always system-assigned.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Identifier. The name of the session. This is always system-assigned.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

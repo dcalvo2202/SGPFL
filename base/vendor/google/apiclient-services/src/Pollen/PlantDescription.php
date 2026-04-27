@@ -20,81 +20,40 @@ namespace Google\Service\Pollen;
 class PlantDescription extends \Google\Model
 {
   /**
-   * Unspecified plant type.
-   */
-  public const TYPE_POLLEN_TYPE_UNSPECIFIED = 'POLLEN_TYPE_UNSPECIFIED';
-  /**
-   * Grass pollen type.
-   */
-  public const TYPE_GRASS = 'GRASS';
-  /**
-   * Tree pollen type.
-   */
-  public const TYPE_TREE = 'TREE';
-  /**
-   * Weed pollen type.
-   */
-  public const TYPE_WEED = 'WEED';
-  /**
-   * Textual description of pollen cross reaction plants. Example: Alder, Hazel,
-   * Hornbeam, Beech, Willow, and Oak pollen.
-   *
    * @var string
    */
   public $crossReaction;
   /**
-   * A human readable representation of the plant family name. Example:
-   * "Betulaceae (the Birch family)".
-   *
    * @var string
    */
   public $family;
   /**
-   * Link to the picture of the plant.
-   *
    * @var string
    */
   public $picture;
   /**
-   * Link to a closeup picture of the plant.
-   *
    * @var string
    */
   public $pictureCloseup;
   /**
-   * Textual list of explanations of seasons where the pollen is active.
-   * Example: "Late winter, spring".
-   *
    * @var string
    */
   public $season;
   /**
-   * Textual description of the plants' colors of leaves, bark, flowers or seeds
-   * that helps identify the plant.
-   *
    * @var string
    */
   public $specialColors;
   /**
-   * Textual description of the plants' shapes of leaves, bark, flowers or seeds
-   * that helps identify the plant.
-   *
    * @var string
    */
   public $specialShapes;
   /**
-   * The plant's pollen type. For example: "GRASS". A list of all available
-   * codes could be found here.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Textual description of pollen cross reaction plants. Example: Alder, Hazel,
-   * Hornbeam, Beech, Willow, and Oak pollen.
-   *
-   * @param string $crossReaction
+   * @param string
    */
   public function setCrossReaction($crossReaction)
   {
@@ -108,10 +67,7 @@ class PlantDescription extends \Google\Model
     return $this->crossReaction;
   }
   /**
-   * A human readable representation of the plant family name. Example:
-   * "Betulaceae (the Birch family)".
-   *
-   * @param string $family
+   * @param string
    */
   public function setFamily($family)
   {
@@ -125,9 +81,7 @@ class PlantDescription extends \Google\Model
     return $this->family;
   }
   /**
-   * Link to the picture of the plant.
-   *
-   * @param string $picture
+   * @param string
    */
   public function setPicture($picture)
   {
@@ -141,9 +95,7 @@ class PlantDescription extends \Google\Model
     return $this->picture;
   }
   /**
-   * Link to a closeup picture of the plant.
-   *
-   * @param string $pictureCloseup
+   * @param string
    */
   public function setPictureCloseup($pictureCloseup)
   {
@@ -157,10 +109,7 @@ class PlantDescription extends \Google\Model
     return $this->pictureCloseup;
   }
   /**
-   * Textual list of explanations of seasons where the pollen is active.
-   * Example: "Late winter, spring".
-   *
-   * @param string $season
+   * @param string
    */
   public function setSeason($season)
   {
@@ -174,10 +123,7 @@ class PlantDescription extends \Google\Model
     return $this->season;
   }
   /**
-   * Textual description of the plants' colors of leaves, bark, flowers or seeds
-   * that helps identify the plant.
-   *
-   * @param string $specialColors
+   * @param string
    */
   public function setSpecialColors($specialColors)
   {
@@ -191,10 +137,7 @@ class PlantDescription extends \Google\Model
     return $this->specialColors;
   }
   /**
-   * Textual description of the plants' shapes of leaves, bark, flowers or seeds
-   * that helps identify the plant.
-   *
-   * @param string $specialShapes
+   * @param string
    */
   public function setSpecialShapes($specialShapes)
   {
@@ -208,19 +151,14 @@ class PlantDescription extends \Google\Model
     return $this->specialShapes;
   }
   /**
-   * The plant's pollen type. For example: "GRASS". A list of all available
-   * codes could be found here.
-   *
-   * Accepted values: POLLEN_TYPE_UNSPECIFIED, GRASS, TREE, WEED
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

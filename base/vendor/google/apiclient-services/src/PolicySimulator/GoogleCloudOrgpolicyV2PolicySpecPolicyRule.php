@@ -20,36 +20,20 @@ namespace Google\Service\PolicySimulator;
 class GoogleCloudOrgpolicyV2PolicySpecPolicyRule extends \Google\Model
 {
   /**
-   * Setting this to true means that all values are allowed. This field can be
-   * set only in policies for list constraints.
-   *
    * @var bool
    */
   public $allowAll;
   protected $conditionType = GoogleTypeExpr::class;
   protected $conditionDataType = '';
   /**
-   * Setting this to true means that all values are denied. This field can be
-   * set only in policies for list constraints.
-   *
    * @var bool
    */
   public $denyAll;
   /**
-   * If `true`, then the policy is enforced. If `false`, then any configuration
-   * is acceptable. This field can be set in policies for boolean constraints,
-   * custom constraints and managed constraints.
-   *
    * @var bool
    */
   public $enforce;
   /**
-   * Optional. Required for managed constraints if parameters are defined.
-   * Passes parameter values when policy enforcement is enabled. Ensure that
-   * parameter value types match those defined in the constraint definition. For
-   * example: ``` { "allowedLocations" : ["us-east1", "us-west1"], "allowAll" :
-   * true } ```
-   *
    * @var array[]
    */
   public $parameters;
@@ -57,10 +41,7 @@ class GoogleCloudOrgpolicyV2PolicySpecPolicyRule extends \Google\Model
   protected $valuesDataType = '';
 
   /**
-   * Setting this to true means that all values are allowed. This field can be
-   * set only in policies for list constraints.
-   *
-   * @param bool $allowAll
+   * @param bool
    */
   public function setAllowAll($allowAll)
   {
@@ -74,31 +55,7 @@ class GoogleCloudOrgpolicyV2PolicySpecPolicyRule extends \Google\Model
     return $this->allowAll;
   }
   /**
-   * A condition that determines whether this rule is used to evaluate the
-   * policy. When set, the google.type.Expr.expression field must contain 1 to
-   * 10 subexpressions, joined by the `||` or `&&` operators. Each subexpression
-   * must use the `resource.matchTag()`, `resource.matchTagId()`,
-   * `resource.hasTagKey()`, or `resource.hasTagKeyId()` Common Expression
-   * Language (CEL) function. The `resource.matchTag()` function takes the
-   * following arguments: * `key_name`: the namespaced name of the tag key, with
-   * the organization ID and a slash (`/`) as a prefix; for example,
-   * `123456789012/environment` * `value_name`: the short name of the tag value
-   * For example: `resource.matchTag('123456789012/environment, 'prod')` The
-   * `resource.matchTagId()` function takes the following arguments: * `key_id`:
-   * the permanent ID of the tag key; for example, `tagKeys/123456789012` *
-   * `value_id`: the permanent ID of the tag value; for example,
-   * `tagValues/567890123456` For example:
-   * `resource.matchTagId('tagKeys/123456789012', 'tagValues/567890123456')` The
-   * `resource.hasTagKey()` function takes the following argument: * `key_name`:
-   * the namespaced name of the tag key, with the organization ID and a slash
-   * (`/`) as a prefix; for example, `123456789012/environment` For example:
-   * `resource.hasTagKey('123456789012/environment')` The
-   * `resource.hasTagKeyId()` function takes the following arguments: *
-   * `key_id`: the permanent ID of the tag key; for example,
-   * `tagKeys/123456789012` For example:
-   * `resource.hasTagKeyId('tagKeys/123456789012')`
-   *
-   * @param GoogleTypeExpr $condition
+   * @param GoogleTypeExpr
    */
   public function setCondition(GoogleTypeExpr $condition)
   {
@@ -112,10 +69,7 @@ class GoogleCloudOrgpolicyV2PolicySpecPolicyRule extends \Google\Model
     return $this->condition;
   }
   /**
-   * Setting this to true means that all values are denied. This field can be
-   * set only in policies for list constraints.
-   *
-   * @param bool $denyAll
+   * @param bool
    */
   public function setDenyAll($denyAll)
   {
@@ -129,11 +83,7 @@ class GoogleCloudOrgpolicyV2PolicySpecPolicyRule extends \Google\Model
     return $this->denyAll;
   }
   /**
-   * If `true`, then the policy is enforced. If `false`, then any configuration
-   * is acceptable. This field can be set in policies for boolean constraints,
-   * custom constraints and managed constraints.
-   *
-   * @param bool $enforce
+   * @param bool
    */
   public function setEnforce($enforce)
   {
@@ -147,13 +97,7 @@ class GoogleCloudOrgpolicyV2PolicySpecPolicyRule extends \Google\Model
     return $this->enforce;
   }
   /**
-   * Optional. Required for managed constraints if parameters are defined.
-   * Passes parameter values when policy enforcement is enabled. Ensure that
-   * parameter value types match those defined in the constraint definition. For
-   * example: ``` { "allowedLocations" : ["us-east1", "us-west1"], "allowAll" :
-   * true } ```
-   *
-   * @param array[] $parameters
+   * @param array[]
    */
   public function setParameters($parameters)
   {
@@ -167,10 +111,7 @@ class GoogleCloudOrgpolicyV2PolicySpecPolicyRule extends \Google\Model
     return $this->parameters;
   }
   /**
-   * List of values to be used for this policy rule. This field can be set only
-   * in policies for list constraints.
-   *
-   * @param GoogleCloudOrgpolicyV2PolicySpecPolicyRuleStringValues $values
+   * @param GoogleCloudOrgpolicyV2PolicySpecPolicyRuleStringValues
    */
   public function setValues(GoogleCloudOrgpolicyV2PolicySpecPolicyRuleStringValues $values)
   {

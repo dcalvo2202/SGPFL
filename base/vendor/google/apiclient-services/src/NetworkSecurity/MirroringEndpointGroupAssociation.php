@@ -19,52 +19,12 @@ namespace Google\Service\NetworkSecurity;
 
 class MirroringEndpointGroupAssociation extends \Google\Collection
 {
-  /**
-   * Not set.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The association is ready and in sync with the linked endpoint group.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * The association is being created.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * The association is being deleted.
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * The association is disabled due to a breaking change in another resource.
-   */
-  public const STATE_CLOSED = 'CLOSED';
-  /**
-   * The association is out of sync with the linked endpoint group. In most
-   * cases, this is a result of a transient issue within the system (e.g. an
-   * inaccessible location) and the system is expected to recover automatically.
-   * Check the `locations_details` field for more details.
-   */
-  public const STATE_OUT_OF_SYNC = 'OUT_OF_SYNC';
-  /**
-   * An attempt to delete the association has failed. This is a terminal state
-   * and the association is not expected to be usable as some of its resources
-   * have been deleted. The only permitted operation is to retry deleting the
-   * association.
-   */
-  public const STATE_DELETE_FAILED = 'DELETE_FAILED';
   protected $collection_key = 'locationsDetails';
   /**
-   * Output only. The timestamp when the resource was created. See
-   * https://google.aip.dev/148#timestamps.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. Labels are key/value pairs that help to organize and filter
-   * resources.
-   *
    * @var string[]
    */
   public $labels;
@@ -73,58 +33,32 @@ class MirroringEndpointGroupAssociation extends \Google\Collection
   protected $locationsDetailsType = MirroringEndpointGroupAssociationLocationDetails::class;
   protected $locationsDetailsDataType = 'array';
   /**
-   * Immutable. The endpoint group that this association is connected to, for
-   * example: `projects/123456789/locations/global/mirroringEndpointGroups/my-
-   * eg`. See https://google.aip.dev/124.
-   *
    * @var string
    */
   public $mirroringEndpointGroup;
   /**
-   * Immutable. Identifier. The resource name of this endpoint group
-   * association, for example:
-   * `projects/123456789/locations/global/mirroringEndpointGroupAssociations/my-
-   * eg-association`. See https://google.aip.dev/122 for more details.
-   *
    * @var string
    */
   public $name;
   /**
-   * Immutable. The VPC network that is associated. for example:
-   * `projects/123456789/global/networks/my-network`. See
-   * https://google.aip.dev/124.
-   *
    * @var string
    */
   public $network;
   /**
-   * Output only. The current state of the resource does not match the user's
-   * intended state, and the system is working to reconcile them. This part of
-   * the normal operation (e.g. adding a new location to the target deployment
-   * group). See https://google.aip.dev/128.
-   *
    * @var bool
    */
   public $reconciling;
   /**
-   * Output only. Current state of the endpoint group association.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. The timestamp when the resource was most recently updated. See
-   * https://google.aip.dev/148#timestamps.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. The timestamp when the resource was created. See
-   * https://google.aip.dev/148#timestamps.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -138,10 +72,7 @@ class MirroringEndpointGroupAssociation extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Optional. Labels are key/value pairs that help to organize and filter
-   * resources.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -155,10 +86,7 @@ class MirroringEndpointGroupAssociation extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Output only. The list of locations where the association is configured.
-   * This information is retrieved from the linked endpoint group.
-   *
-   * @param MirroringLocation[] $locations
+   * @param MirroringLocation[]
    */
   public function setLocations($locations)
   {
@@ -172,19 +100,13 @@ class MirroringEndpointGroupAssociation extends \Google\Collection
     return $this->locations;
   }
   /**
-   * Output only. The list of locations where the association is present. This
-   * information is retrieved from the linked endpoint group, and not configured
-   * as part of the association itself.
-   *
-   * @deprecated
-   * @param MirroringEndpointGroupAssociationLocationDetails[] $locationsDetails
+   * @param MirroringEndpointGroupAssociationLocationDetails[]
    */
   public function setLocationsDetails($locationsDetails)
   {
     $this->locationsDetails = $locationsDetails;
   }
   /**
-   * @deprecated
    * @return MirroringEndpointGroupAssociationLocationDetails[]
    */
   public function getLocationsDetails()
@@ -192,11 +114,7 @@ class MirroringEndpointGroupAssociation extends \Google\Collection
     return $this->locationsDetails;
   }
   /**
-   * Immutable. The endpoint group that this association is connected to, for
-   * example: `projects/123456789/locations/global/mirroringEndpointGroups/my-
-   * eg`. See https://google.aip.dev/124.
-   *
-   * @param string $mirroringEndpointGroup
+   * @param string
    */
   public function setMirroringEndpointGroup($mirroringEndpointGroup)
   {
@@ -210,12 +128,7 @@ class MirroringEndpointGroupAssociation extends \Google\Collection
     return $this->mirroringEndpointGroup;
   }
   /**
-   * Immutable. Identifier. The resource name of this endpoint group
-   * association, for example:
-   * `projects/123456789/locations/global/mirroringEndpointGroupAssociations/my-
-   * eg-association`. See https://google.aip.dev/122 for more details.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -229,11 +142,7 @@ class MirroringEndpointGroupAssociation extends \Google\Collection
     return $this->name;
   }
   /**
-   * Immutable. The VPC network that is associated. for example:
-   * `projects/123456789/global/networks/my-network`. See
-   * https://google.aip.dev/124.
-   *
-   * @param string $network
+   * @param string
    */
   public function setNetwork($network)
   {
@@ -247,12 +156,7 @@ class MirroringEndpointGroupAssociation extends \Google\Collection
     return $this->network;
   }
   /**
-   * Output only. The current state of the resource does not match the user's
-   * intended state, and the system is working to reconcile them. This part of
-   * the normal operation (e.g. adding a new location to the target deployment
-   * group). See https://google.aip.dev/128.
-   *
-   * @param bool $reconciling
+   * @param bool
    */
   public function setReconciling($reconciling)
   {
@@ -266,29 +170,21 @@ class MirroringEndpointGroupAssociation extends \Google\Collection
     return $this->reconciling;
   }
   /**
-   * Output only. Current state of the endpoint group association.
-   *
-   * Accepted values: STATE_UNSPECIFIED, ACTIVE, CREATING, DELETING, CLOSED,
-   * OUT_OF_SYNC, DELETE_FAILED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. The timestamp when the resource was most recently updated. See
-   * https://google.aip.dev/148#timestamps.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

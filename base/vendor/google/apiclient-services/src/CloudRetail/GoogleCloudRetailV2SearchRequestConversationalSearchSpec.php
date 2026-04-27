@@ -20,20 +20,10 @@ namespace Google\Service\CloudRetail;
 class GoogleCloudRetailV2SearchRequestConversationalSearchSpec extends \Google\Model
 {
   /**
-   * This field specifies the conversation id, which maintains the state of the
-   * conversation between client side and server side. Use the value from the
-   * previous SearchResponse.ConversationalSearchResult.conversation_id. For the
-   * initial request, this should be empty.
-   *
    * @var string
    */
   public $conversationId;
   /**
-   * This field specifies whether the customer would like to do conversational
-   * search. If this field is set to true, conversational related extra
-   * information will be returned from server side, including follow-up
-   * question, answer options, etc.
-   *
    * @var bool
    */
   public $followupConversationRequested;
@@ -41,12 +31,7 @@ class GoogleCloudRetailV2SearchRequestConversationalSearchSpec extends \Google\M
   protected $userAnswerDataType = '';
 
   /**
-   * This field specifies the conversation id, which maintains the state of the
-   * conversation between client side and server side. Use the value from the
-   * previous SearchResponse.ConversationalSearchResult.conversation_id. For the
-   * initial request, this should be empty.
-   *
-   * @param string $conversationId
+   * @param string
    */
   public function setConversationId($conversationId)
   {
@@ -60,12 +45,7 @@ class GoogleCloudRetailV2SearchRequestConversationalSearchSpec extends \Google\M
     return $this->conversationId;
   }
   /**
-   * This field specifies whether the customer would like to do conversational
-   * search. If this field is set to true, conversational related extra
-   * information will be returned from server side, including follow-up
-   * question, answer options, etc.
-   *
-   * @param bool $followupConversationRequested
+   * @param bool
    */
   public function setFollowupConversationRequested($followupConversationRequested)
   {
@@ -79,11 +59,7 @@ class GoogleCloudRetailV2SearchRequestConversationalSearchSpec extends \Google\M
     return $this->followupConversationRequested;
   }
   /**
-   * This field specifies the current user answer during the conversational
-   * search. This can be either user selected from suggested answers or user
-   * input plain text.
-   *
-   * @param GoogleCloudRetailV2SearchRequestConversationalSearchSpecUserAnswer $userAnswer
+   * @param GoogleCloudRetailV2SearchRequestConversationalSearchSpecUserAnswer
    */
   public function setUserAnswer(GoogleCloudRetailV2SearchRequestConversationalSearchSpecUserAnswer $userAnswer)
   {

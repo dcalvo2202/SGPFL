@@ -20,37 +20,19 @@ namespace Google\Service\Container;
 class DesiredEnterpriseConfig extends \Google\Model
 {
   /**
-   * CLUSTER_TIER_UNSPECIFIED is when cluster_tier is not set.
-   */
-  public const DESIRED_TIER_CLUSTER_TIER_UNSPECIFIED = 'CLUSTER_TIER_UNSPECIFIED';
-  /**
-   * STANDARD indicates a standard GKE cluster.
-   */
-  public const DESIRED_TIER_STANDARD = 'STANDARD';
-  /**
-   * ENTERPRISE indicates a GKE Enterprise cluster.
-   */
-  public const DESIRED_TIER_ENTERPRISE = 'ENTERPRISE';
-  /**
-   * desired_tier specifies the desired tier of the cluster.
-   *
    * @var string
    */
   public $desiredTier;
 
   /**
-   * desired_tier specifies the desired tier of the cluster.
-   *
-   * Accepted values: CLUSTER_TIER_UNSPECIFIED, STANDARD, ENTERPRISE
-   *
-   * @param self::DESIRED_TIER_* $desiredTier
+   * @param string
    */
   public function setDesiredTier($desiredTier)
   {
     $this->desiredTier = $desiredTier;
   }
   /**
-   * @return self::DESIRED_TIER_*
+   * @return string
    */
   public function getDesiredTier()
   {

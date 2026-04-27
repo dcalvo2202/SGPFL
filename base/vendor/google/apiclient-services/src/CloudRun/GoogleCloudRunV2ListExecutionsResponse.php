@@ -23,17 +23,12 @@ class GoogleCloudRunV2ListExecutionsResponse extends \Google\Collection
   protected $executionsType = GoogleCloudRunV2Execution::class;
   protected $executionsDataType = 'array';
   /**
-   * A token indicating there are more items than page_size. Use it in the next
-   * ListExecutions request to continue.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The resulting list of Executions.
-   *
-   * @param GoogleCloudRunV2Execution[] $executions
+   * @param GoogleCloudRunV2Execution[]
    */
   public function setExecutions($executions)
   {
@@ -47,10 +42,7 @@ class GoogleCloudRunV2ListExecutionsResponse extends \Google\Collection
     return $this->executions;
   }
   /**
-   * A token indicating there are more items than page_size. Use it in the next
-   * ListExecutions request to continue.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

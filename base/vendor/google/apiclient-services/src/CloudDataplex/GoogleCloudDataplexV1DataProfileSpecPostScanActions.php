@@ -23,9 +23,7 @@ class GoogleCloudDataplexV1DataProfileSpecPostScanActions extends \Google\Model
   protected $bigqueryExportDataType = '';
 
   /**
-   * Optional. If set, results will be exported to the provided BigQuery table.
-   *
-   * @param GoogleCloudDataplexV1DataProfileSpecPostScanActionsBigQueryExport $bigqueryExport
+   * @param GoogleCloudDataplexV1DataProfileSpecPostScanActionsBigQueryExport
    */
   public function setBigqueryExport(GoogleCloudDataplexV1DataProfileSpecPostScanActionsBigQueryExport $bigqueryExport)
   {

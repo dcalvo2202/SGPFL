@@ -21,16 +21,12 @@ class BatchDeletePrintServersRequest extends \Google\Collection
 {
   protected $collection_key = 'printServerIds';
   /**
-   * A list of print server IDs that should be deleted (max `100` per batch).
-   *
    * @var string[]
    */
   public $printServerIds;
 
   /**
-   * A list of print server IDs that should be deleted (max `100` per batch).
-   *
-   * @param string[] $printServerIds
+   * @param string[]
    */
   public function setPrintServerIds($printServerIds)
   {

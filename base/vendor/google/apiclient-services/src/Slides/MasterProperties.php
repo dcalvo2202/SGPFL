@@ -20,16 +20,12 @@ namespace Google\Service\Slides;
 class MasterProperties extends \Google\Model
 {
   /**
-   * The human-readable name of the master.
-   *
    * @var string
    */
   public $displayName;
 
   /**
-   * The human-readable name of the master.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {

@@ -38,7 +38,7 @@ class SlsaProvenanceZeroTwo extends \Google\Collection
   protected $metadataDataType = '';
 
   /**
-   * @param array[] $buildConfig
+   * @param array[]
    */
   public function setBuildConfig($buildConfig)
   {
@@ -52,7 +52,7 @@ class SlsaProvenanceZeroTwo extends \Google\Collection
     return $this->buildConfig;
   }
   /**
-   * @param string $buildType
+   * @param string
    */
   public function setBuildType($buildType)
   {
@@ -66,7 +66,7 @@ class SlsaProvenanceZeroTwo extends \Google\Collection
     return $this->buildType;
   }
   /**
-   * @param GrafeasV1SlsaProvenanceZeroTwoSlsaBuilder $builder
+   * @param GrafeasV1SlsaProvenanceZeroTwoSlsaBuilder
    */
   public function setBuilder(GrafeasV1SlsaProvenanceZeroTwoSlsaBuilder $builder)
   {
@@ -80,7 +80,7 @@ class SlsaProvenanceZeroTwo extends \Google\Collection
     return $this->builder;
   }
   /**
-   * @param GrafeasV1SlsaProvenanceZeroTwoSlsaInvocation $invocation
+   * @param GrafeasV1SlsaProvenanceZeroTwoSlsaInvocation
    */
   public function setInvocation(GrafeasV1SlsaProvenanceZeroTwoSlsaInvocation $invocation)
   {
@@ -94,7 +94,7 @@ class SlsaProvenanceZeroTwo extends \Google\Collection
     return $this->invocation;
   }
   /**
-   * @param GrafeasV1SlsaProvenanceZeroTwoSlsaMaterial[] $materials
+   * @param GrafeasV1SlsaProvenanceZeroTwoSlsaMaterial[]
    */
   public function setMaterials($materials)
   {
@@ -108,7 +108,7 @@ class SlsaProvenanceZeroTwo extends \Google\Collection
     return $this->materials;
   }
   /**
-   * @param GrafeasV1SlsaProvenanceZeroTwoSlsaMetadata $metadata
+   * @param GrafeasV1SlsaProvenanceZeroTwoSlsaMetadata
    */
   public function setMetadata(GrafeasV1SlsaProvenanceZeroTwoSlsaMetadata $metadata)
   {

@@ -25,9 +25,7 @@ class Straggler extends \Google\Model
   protected $streamingStragglerDataType = '';
 
   /**
-   * Batch straggler identification and debugging information.
-   *
-   * @param StragglerInfo $batchStraggler
+   * @param StragglerInfo
    */
   public function setBatchStraggler(StragglerInfo $batchStraggler)
   {
@@ -41,9 +39,7 @@ class Straggler extends \Google\Model
     return $this->batchStraggler;
   }
   /**
-   * Streaming straggler identification and debugging information.
-   *
-   * @param StreamingStragglerInfo $streamingStraggler
+   * @param StreamingStragglerInfo
    */
   public function setStreamingStraggler(StreamingStragglerInfo $streamingStraggler)
   {

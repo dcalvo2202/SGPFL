@@ -20,32 +20,20 @@ namespace Google\Service\Bigquery;
 class SerDeInfo extends \Google\Model
 {
   /**
-   * Optional. Name of the SerDe. The maximum length is 256 characters.
-   *
    * @var string
    */
   public $name;
   /**
-   * Optional. Key-value pairs that define the initialization parameters for the
-   * serialization library. Maximum size 10 Kib.
-   *
    * @var string[]
    */
   public $parameters;
   /**
-   * Required. Specifies a fully-qualified class name of the serialization
-   * library that is responsible for the translation of data between table
-   * representation and the underlying low-level input and output format
-   * structures. The maximum length is 256 characters.
-   *
    * @var string
    */
   public $serializationLibrary;
 
   /**
-   * Optional. Name of the SerDe. The maximum length is 256 characters.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -59,10 +47,7 @@ class SerDeInfo extends \Google\Model
     return $this->name;
   }
   /**
-   * Optional. Key-value pairs that define the initialization parameters for the
-   * serialization library. Maximum size 10 Kib.
-   *
-   * @param string[] $parameters
+   * @param string[]
    */
   public function setParameters($parameters)
   {
@@ -76,12 +61,7 @@ class SerDeInfo extends \Google\Model
     return $this->parameters;
   }
   /**
-   * Required. Specifies a fully-qualified class name of the serialization
-   * library that is responsible for the translation of data between table
-   * representation and the underlying low-level input and output format
-   * structures. The maximum length is 256 characters.
-   *
-   * @param string $serializationLibrary
+   * @param string
    */
   public function setSerializationLibrary($serializationLibrary)
   {

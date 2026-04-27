@@ -21,24 +21,18 @@ class ListQuotaRulesResponse extends \Google\Collection
 {
   protected $collection_key = 'unreachable';
   /**
-   * A token identifying a page of results the server should return.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $quotaRulesType = QuotaRule::class;
   protected $quotaRulesDataType = 'array';
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * A token identifying a page of results the server should return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -52,9 +46,7 @@ class ListQuotaRulesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * List of quota rules
-   *
-   * @param QuotaRule[] $quotaRules
+   * @param QuotaRule[]
    */
   public function setQuotaRules($quotaRules)
   {
@@ -68,9 +60,7 @@ class ListQuotaRulesResponse extends \Google\Collection
     return $this->quotaRules;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

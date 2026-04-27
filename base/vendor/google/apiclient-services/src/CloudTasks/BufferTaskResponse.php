@@ -23,9 +23,7 @@ class BufferTaskResponse extends \Google\Model
   protected $taskDataType = '';
 
   /**
-   * The created task.
-   *
-   * @param Task $task
+   * @param Task
    */
   public function setTask(Task $task)
   {

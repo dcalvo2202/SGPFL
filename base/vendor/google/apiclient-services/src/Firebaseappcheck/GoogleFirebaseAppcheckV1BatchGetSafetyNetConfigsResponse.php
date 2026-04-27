@@ -24,9 +24,7 @@ class GoogleFirebaseAppcheckV1BatchGetSafetyNetConfigsResponse extends \Google\C
   protected $configsDataType = 'array';
 
   /**
-   * SafetyNetConfigs retrieved.
-   *
-   * @param GoogleFirebaseAppcheckV1SafetyNetConfig[] $configs
+   * @param GoogleFirebaseAppcheckV1SafetyNetConfig[]
    */
   public function setConfigs($configs)
   {

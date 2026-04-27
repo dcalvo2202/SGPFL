@@ -20,23 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1RagFile extends \Google\Model
 {
   /**
-   * Output only. Timestamp when this RagFile was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. The description of the RagFile.
-   *
    * @var string
    */
   public $description;
   protected $directUploadSourceType = GoogleCloudAiplatformV1DirectUploadSource::class;
   protected $directUploadSourceDataType = '';
   /**
-   * Required. The display name of the RagFile. The name can be up to 128
-   * characters long and can consist of any UTF-8 characters.
-   *
    * @var string
    */
   public $displayName;
@@ -49,8 +42,6 @@ class GoogleCloudAiplatformV1RagFile extends \Google\Model
   protected $jiraSourceType = GoogleCloudAiplatformV1JiraSource::class;
   protected $jiraSourceDataType = '';
   /**
-   * Output only. The resource name of the RagFile.
-   *
    * @var string
    */
   public $name;
@@ -59,23 +50,12 @@ class GoogleCloudAiplatformV1RagFile extends \Google\Model
   protected $slackSourceType = GoogleCloudAiplatformV1SlackSource::class;
   protected $slackSourceDataType = '';
   /**
-   * Output only. Timestamp when this RagFile was last updated.
-   *
    * @var string
    */
   public $updateTime;
-  /**
-   * Output only. The metadata for metadata search. The user_metadata Needs to
-   * be in JSON format.
-   *
-   * @var string
-   */
-  public $userMetadata;
 
   /**
-   * Output only. Timestamp when this RagFile was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -89,9 +69,7 @@ class GoogleCloudAiplatformV1RagFile extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Optional. The description of the RagFile.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -105,10 +83,7 @@ class GoogleCloudAiplatformV1RagFile extends \Google\Model
     return $this->description;
   }
   /**
-   * Output only. The RagFile is encapsulated and uploaded in the UploadRagFile
-   * request.
-   *
-   * @param GoogleCloudAiplatformV1DirectUploadSource $directUploadSource
+   * @param GoogleCloudAiplatformV1DirectUploadSource
    */
   public function setDirectUploadSource(GoogleCloudAiplatformV1DirectUploadSource $directUploadSource)
   {
@@ -122,10 +97,7 @@ class GoogleCloudAiplatformV1RagFile extends \Google\Model
     return $this->directUploadSource;
   }
   /**
-   * Required. The display name of the RagFile. The name can be up to 128
-   * characters long and can consist of any UTF-8 characters.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -139,9 +111,7 @@ class GoogleCloudAiplatformV1RagFile extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Output only. State of the RagFile.
-   *
-   * @param GoogleCloudAiplatformV1FileStatus $fileStatus
+   * @param GoogleCloudAiplatformV1FileStatus
    */
   public function setFileStatus(GoogleCloudAiplatformV1FileStatus $fileStatus)
   {
@@ -155,10 +125,7 @@ class GoogleCloudAiplatformV1RagFile extends \Google\Model
     return $this->fileStatus;
   }
   /**
-   * Output only. Google Cloud Storage location of the RagFile. It does not
-   * support wildcards in the Cloud Storage uri for now.
-   *
-   * @param GoogleCloudAiplatformV1GcsSource $gcsSource
+   * @param GoogleCloudAiplatformV1GcsSource
    */
   public function setGcsSource(GoogleCloudAiplatformV1GcsSource $gcsSource)
   {
@@ -172,10 +139,7 @@ class GoogleCloudAiplatformV1RagFile extends \Google\Model
     return $this->gcsSource;
   }
   /**
-   * Output only. Google Drive location. Supports importing individual files as
-   * well as Google Drive folders.
-   *
-   * @param GoogleCloudAiplatformV1GoogleDriveSource $googleDriveSource
+   * @param GoogleCloudAiplatformV1GoogleDriveSource
    */
   public function setGoogleDriveSource(GoogleCloudAiplatformV1GoogleDriveSource $googleDriveSource)
   {
@@ -189,9 +153,7 @@ class GoogleCloudAiplatformV1RagFile extends \Google\Model
     return $this->googleDriveSource;
   }
   /**
-   * The RagFile is imported from a Jira query.
-   *
-   * @param GoogleCloudAiplatformV1JiraSource $jiraSource
+   * @param GoogleCloudAiplatformV1JiraSource
    */
   public function setJiraSource(GoogleCloudAiplatformV1JiraSource $jiraSource)
   {
@@ -205,9 +167,7 @@ class GoogleCloudAiplatformV1RagFile extends \Google\Model
     return $this->jiraSource;
   }
   /**
-   * Output only. The resource name of the RagFile.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -221,9 +181,7 @@ class GoogleCloudAiplatformV1RagFile extends \Google\Model
     return $this->name;
   }
   /**
-   * The RagFile is imported from a SharePoint source.
-   *
-   * @param GoogleCloudAiplatformV1SharePointSources $sharePointSources
+   * @param GoogleCloudAiplatformV1SharePointSources
    */
   public function setSharePointSources(GoogleCloudAiplatformV1SharePointSources $sharePointSources)
   {
@@ -237,9 +195,7 @@ class GoogleCloudAiplatformV1RagFile extends \Google\Model
     return $this->sharePointSources;
   }
   /**
-   * The RagFile is imported from a Slack channel.
-   *
-   * @param GoogleCloudAiplatformV1SlackSource $slackSource
+   * @param GoogleCloudAiplatformV1SlackSource
    */
   public function setSlackSource(GoogleCloudAiplatformV1SlackSource $slackSource)
   {
@@ -253,9 +209,7 @@ class GoogleCloudAiplatformV1RagFile extends \Google\Model
     return $this->slackSource;
   }
   /**
-   * Output only. Timestamp when this RagFile was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -267,23 +221,6 @@ class GoogleCloudAiplatformV1RagFile extends \Google\Model
   public function getUpdateTime()
   {
     return $this->updateTime;
-  }
-  /**
-   * Output only. The metadata for metadata search. The user_metadata Needs to
-   * be in JSON format.
-   *
-   * @param string $userMetadata
-   */
-  public function setUserMetadata($userMetadata)
-  {
-    $this->userMetadata = $userMetadata;
-  }
-  /**
-   * @return string
-   */
-  public function getUserMetadata()
-  {
-    return $this->userMetadata;
   }
 }
 

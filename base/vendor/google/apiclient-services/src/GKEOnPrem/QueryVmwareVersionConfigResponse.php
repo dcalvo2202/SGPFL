@@ -24,9 +24,7 @@ class QueryVmwareVersionConfigResponse extends \Google\Collection
   protected $versionsDataType = 'array';
 
   /**
-   * List of available versions to install or to upgrade to.
-   *
-   * @param VmwareVersionInfo[] $versions
+   * @param VmwareVersionInfo[]
    */
   public function setVersions($versions)
   {

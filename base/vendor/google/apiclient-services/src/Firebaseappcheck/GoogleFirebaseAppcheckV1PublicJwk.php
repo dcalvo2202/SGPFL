@@ -20,53 +20,32 @@ namespace Google\Service\Firebaseappcheck;
 class GoogleFirebaseAppcheckV1PublicJwk extends \Google\Model
 {
   /**
-   * See [section 4.4 of RFC
-   * 7517](https://tools.ietf.org/html/rfc7517#section-4.4).
-   *
    * @var string
    */
   public $alg;
   /**
-   * See [section 6.3.1.2 of RFC
-   * 7518](https://tools.ietf.org/html/rfc7518#section-6.3.1.2).
-   *
    * @var string
    */
   public $e;
   /**
-   * See [section 4.5 of RFC
-   * 7517](https://tools.ietf.org/html/rfc7517#section-4.5).
-   *
    * @var string
    */
   public $kid;
   /**
-   * See [section 4.1 of RFC
-   * 7517](https://tools.ietf.org/html/rfc7517#section-4.1).
-   *
    * @var string
    */
   public $kty;
   /**
-   * See [section 6.3.1.1 of RFC
-   * 7518](https://tools.ietf.org/html/rfc7518#section-6.3.1.1).
-   *
    * @var string
    */
   public $n;
   /**
-   * See [section 4.2 of RFC
-   * 7517](https://tools.ietf.org/html/rfc7517#section-4.2).
-   *
    * @var string
    */
   public $use;
 
   /**
-   * See [section 4.4 of RFC
-   * 7517](https://tools.ietf.org/html/rfc7517#section-4.4).
-   *
-   * @param string $alg
+   * @param string
    */
   public function setAlg($alg)
   {
@@ -80,10 +59,7 @@ class GoogleFirebaseAppcheckV1PublicJwk extends \Google\Model
     return $this->alg;
   }
   /**
-   * See [section 6.3.1.2 of RFC
-   * 7518](https://tools.ietf.org/html/rfc7518#section-6.3.1.2).
-   *
-   * @param string $e
+   * @param string
    */
   public function setE($e)
   {
@@ -97,10 +73,7 @@ class GoogleFirebaseAppcheckV1PublicJwk extends \Google\Model
     return $this->e;
   }
   /**
-   * See [section 4.5 of RFC
-   * 7517](https://tools.ietf.org/html/rfc7517#section-4.5).
-   *
-   * @param string $kid
+   * @param string
    */
   public function setKid($kid)
   {
@@ -114,10 +87,7 @@ class GoogleFirebaseAppcheckV1PublicJwk extends \Google\Model
     return $this->kid;
   }
   /**
-   * See [section 4.1 of RFC
-   * 7517](https://tools.ietf.org/html/rfc7517#section-4.1).
-   *
-   * @param string $kty
+   * @param string
    */
   public function setKty($kty)
   {
@@ -131,10 +101,7 @@ class GoogleFirebaseAppcheckV1PublicJwk extends \Google\Model
     return $this->kty;
   }
   /**
-   * See [section 6.3.1.1 of RFC
-   * 7518](https://tools.ietf.org/html/rfc7518#section-6.3.1.1).
-   *
-   * @param string $n
+   * @param string
    */
   public function setN($n)
   {
@@ -148,10 +115,7 @@ class GoogleFirebaseAppcheckV1PublicJwk extends \Google\Model
     return $this->n;
   }
   /**
-   * See [section 4.2 of RFC
-   * 7517](https://tools.ietf.org/html/rfc7517#section-4.2).
-   *
-   * @param string $use
+   * @param string
    */
   public function setUse($use)
   {

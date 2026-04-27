@@ -20,25 +20,13 @@ namespace Google\Service\Css;
 class ProductWeight extends \Google\Model
 {
   /**
-   * Required. The weight unit. Acceptable values are: * "`g`" * "`kg`" * "`oz`"
-   * * "`lb`"
-   *
    * @var string
    */
   public $unit;
-  /**
-   * Required. The weight represented as a number. The weight can have a maximum
-   * precision of four decimal places.
-   *
-   * @var 
-   */
   public $value;
 
   /**
-   * Required. The weight unit. Acceptable values are: * "`g`" * "`kg`" * "`oz`"
-   * * "`lb`"
-   *
-   * @param string $unit
+   * @param string
    */
   public function setUnit($unit)
   {

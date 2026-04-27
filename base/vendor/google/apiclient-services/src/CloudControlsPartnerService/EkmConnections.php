@@ -23,17 +23,12 @@ class EkmConnections extends \Google\Collection
   protected $ekmConnectionsType = EkmConnection::class;
   protected $ekmConnectionsDataType = 'array';
   /**
-   * Identifier. Format: `organizations/{organization}/locations/{location}/cust
-   * omers/{customer}/workloads/{workload}/ekmConnections`
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The EKM connections associated with the workload
-   *
-   * @param EkmConnection[] $ekmConnections
+   * @param EkmConnection[]
    */
   public function setEkmConnections($ekmConnections)
   {
@@ -47,10 +42,7 @@ class EkmConnections extends \Google\Collection
     return $this->ekmConnections;
   }
   /**
-   * Identifier. Format: `organizations/{organization}/locations/{location}/cust
-   * omers/{customer}/workloads/{workload}/ekmConnections`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

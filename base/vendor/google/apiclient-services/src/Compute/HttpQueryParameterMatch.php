@@ -20,52 +20,24 @@ namespace Google\Service\Compute;
 class HttpQueryParameterMatch extends \Google\Model
 {
   /**
-   * The queryParameterMatch matches if the value of the parameter exactly
-   * matches the contents of exactMatch.
-   *
-   * Only one of presentMatch, exactMatch, orregexMatch must be set.
-   *
    * @var string
    */
   public $exactMatch;
   /**
-   * The name of the query parameter to match. The query parameter must exist in
-   * the request, in the absence of which the request match fails.
-   *
    * @var string
    */
   public $name;
   /**
-   * Specifies that the queryParameterMatch matches if the request contains the
-   * query parameter, irrespective of whether the parameter has a value or not.
-   *
-   * Only one of presentMatch, exactMatch, orregexMatch must be set.
-   *
    * @var bool
    */
   public $presentMatch;
   /**
-   * The queryParameterMatch matches if the value of the parameter matches the
-   * regular expression specified byregexMatch. For more information about
-   * regular expression syntax, see Syntax.
-   *
-   * Only one of presentMatch, exactMatch, orregexMatch must be set.
-   *
-   * Regular expressions can only be used when the loadBalancingScheme is set to
-   * INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED (regional scope) or
-   * INTERNAL_MANAGED.
-   *
    * @var string
    */
   public $regexMatch;
 
   /**
-   * The queryParameterMatch matches if the value of the parameter exactly
-   * matches the contents of exactMatch.
-   *
-   * Only one of presentMatch, exactMatch, orregexMatch must be set.
-   *
-   * @param string $exactMatch
+   * @param string
    */
   public function setExactMatch($exactMatch)
   {
@@ -79,10 +51,7 @@ class HttpQueryParameterMatch extends \Google\Model
     return $this->exactMatch;
   }
   /**
-   * The name of the query parameter to match. The query parameter must exist in
-   * the request, in the absence of which the request match fails.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -96,12 +65,7 @@ class HttpQueryParameterMatch extends \Google\Model
     return $this->name;
   }
   /**
-   * Specifies that the queryParameterMatch matches if the request contains the
-   * query parameter, irrespective of whether the parameter has a value or not.
-   *
-   * Only one of presentMatch, exactMatch, orregexMatch must be set.
-   *
-   * @param bool $presentMatch
+   * @param bool
    */
   public function setPresentMatch($presentMatch)
   {
@@ -115,17 +79,7 @@ class HttpQueryParameterMatch extends \Google\Model
     return $this->presentMatch;
   }
   /**
-   * The queryParameterMatch matches if the value of the parameter matches the
-   * regular expression specified byregexMatch. For more information about
-   * regular expression syntax, see Syntax.
-   *
-   * Only one of presentMatch, exactMatch, orregexMatch must be set.
-   *
-   * Regular expressions can only be used when the loadBalancingScheme is set to
-   * INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED (regional scope) or
-   * INTERNAL_MANAGED.
-   *
-   * @param string $regexMatch
+   * @param string
    */
   public function setRegexMatch($regexMatch)
   {

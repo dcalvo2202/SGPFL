@@ -20,22 +20,16 @@ namespace Google\Service\CloudNaturalLanguage;
 class XPSRegressionMetricsEntry extends \Google\Model
 {
   /**
-   * The observed value for a row in the dataset.
-   *
    * @var float
    */
   public $predictedValue;
   /**
-   * The actual target value for a row in the dataset.
-   *
    * @var float
    */
   public $trueValue;
 
   /**
-   * The observed value for a row in the dataset.
-   *
-   * @param float $predictedValue
+   * @param float
    */
   public function setPredictedValue($predictedValue)
   {
@@ -49,9 +43,7 @@ class XPSRegressionMetricsEntry extends \Google\Model
     return $this->predictedValue;
   }
   /**
-   * The actual target value for a row in the dataset.
-   *
-   * @param float $trueValue
+   * @param float
    */
   public function setTrueValue($trueValue)
   {

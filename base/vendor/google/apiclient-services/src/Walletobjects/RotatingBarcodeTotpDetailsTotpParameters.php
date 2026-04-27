@@ -20,24 +20,16 @@ namespace Google\Service\Walletobjects;
 class RotatingBarcodeTotpDetailsTotpParameters extends \Google\Model
 {
   /**
-   * The secret key used for the TOTP value generation, encoded as a Base16
-   * string.
-   *
    * @var string
    */
   public $key;
   /**
-   * The length of the TOTP value in decimal digits.
-   *
    * @var int
    */
   public $valueLength;
 
   /**
-   * The secret key used for the TOTP value generation, encoded as a Base16
-   * string.
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {
@@ -51,9 +43,7 @@ class RotatingBarcodeTotpDetailsTotpParameters extends \Google\Model
     return $this->key;
   }
   /**
-   * The length of the TOTP value in decimal digits.
-   *
-   * @param int $valueLength
+   * @param int
    */
   public function setValueLength($valueLength)
   {

@@ -24,10 +24,7 @@ class BatchRunPivotReportsRequest extends \Google\Collection
   protected $requestsDataType = 'array';
 
   /**
-   * Individual requests. Each request has a separate pivot report response.
-   * Each batch request is allowed up to 5 requests.
-   *
-   * @param RunPivotReportRequest[] $requests
+   * @param RunPivotReportRequest[]
    */
   public function setRequests($requests)
   {

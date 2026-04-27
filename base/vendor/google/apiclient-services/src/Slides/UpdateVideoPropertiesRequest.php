@@ -20,20 +20,10 @@ namespace Google\Service\Slides;
 class UpdateVideoPropertiesRequest extends \Google\Model
 {
   /**
-   * The fields that should be updated. At least one field must be specified.
-   * The root `videoProperties` is implied and should not be specified. A single
-   * `"*"` can be used as short-hand for listing every field. For example to
-   * update the video outline color, set `fields` to
-   * `"outline.outlineFill.solidFill.color"`. To reset a property to its default
-   * value, include its field name in the field mask but leave the field itself
-   * unset.
-   *
    * @var string
    */
   public $fields;
   /**
-   * The object ID of the video the updates are applied to.
-   *
    * @var string
    */
   public $objectId;
@@ -41,15 +31,7 @@ class UpdateVideoPropertiesRequest extends \Google\Model
   protected $videoPropertiesDataType = '';
 
   /**
-   * The fields that should be updated. At least one field must be specified.
-   * The root `videoProperties` is implied and should not be specified. A single
-   * `"*"` can be used as short-hand for listing every field. For example to
-   * update the video outline color, set `fields` to
-   * `"outline.outlineFill.solidFill.color"`. To reset a property to its default
-   * value, include its field name in the field mask but leave the field itself
-   * unset.
-   *
-   * @param string $fields
+   * @param string
    */
   public function setFields($fields)
   {
@@ -63,9 +45,7 @@ class UpdateVideoPropertiesRequest extends \Google\Model
     return $this->fields;
   }
   /**
-   * The object ID of the video the updates are applied to.
-   *
-   * @param string $objectId
+   * @param string
    */
   public function setObjectId($objectId)
   {
@@ -79,9 +59,7 @@ class UpdateVideoPropertiesRequest extends \Google\Model
     return $this->objectId;
   }
   /**
-   * The video properties to update.
-   *
-   * @param VideoProperties $videoProperties
+   * @param VideoProperties
    */
   public function setVideoProperties(VideoProperties $videoProperties)
   {

@@ -20,22 +20,8 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1CustomAttribute extends \Google\Collection
 {
   protected $collection_key = 'text';
-  /**
-   * The numerical values of this custom attribute. For example, `[2.3, 15.4]`
-   * when the key is "lengths_cm". Exactly one of CustomAttribute.text or
-   * CustomAttribute.numbers should be set. Otherwise, an `INVALID_ARGUMENT`
-   * error is returned.
-   *
-   * @var []
-   */
   public $numbers;
   /**
-   * The textual values of this custom attribute. For example, `["yellow",
-   * "green"]` when the key is "color". Empty string is not allowed. Otherwise,
-   * an `INVALID_ARGUMENT` error is returned. Exactly one of
-   * CustomAttribute.text or CustomAttribute.numbers should be set. Otherwise,
-   * an `INVALID_ARGUMENT` error is returned.
-   *
    * @var string[]
    */
   public $text;
@@ -49,13 +35,7 @@ class GoogleCloudDiscoveryengineV1CustomAttribute extends \Google\Collection
     return $this->numbers;
   }
   /**
-   * The textual values of this custom attribute. For example, `["yellow",
-   * "green"]` when the key is "color". Empty string is not allowed. Otherwise,
-   * an `INVALID_ARGUMENT` error is returned. Exactly one of
-   * CustomAttribute.text or CustomAttribute.numbers should be set. Otherwise,
-   * an `INVALID_ARGUMENT` error is returned.
-   *
-   * @param string[] $text
+   * @param string[]
    */
   public function setText($text)
   {

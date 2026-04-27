@@ -20,16 +20,12 @@ namespace Google\Service\OnDemandScanning;
 class AnalyzePackagesResponse extends \Google\Model
 {
   /**
-   * The name of the scan resource created by this successful scan.
-   *
    * @var string
    */
   public $scan;
 
   /**
-   * The name of the scan resource created by this successful scan.
-   *
-   * @param string $scan
+   * @param string
    */
   public function setScan($scan)
   {

@@ -21,28 +21,16 @@ class SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions extends \Google\Colle
 {
   protected $collection_key = 'sessionTokenSiteKeys';
   /**
-   * A list of site keys to be used during the validation of reCAPTCHA action-
-   * tokens. The provided site keys need to be created from reCAPTCHA API under
-   * the same project where the security policy is created.
-   *
    * @var string[]
    */
   public $actionTokenSiteKeys;
   /**
-   * A list of site keys to be used during the validation of reCAPTCHA session-
-   * tokens. The provided site keys need to be created from reCAPTCHA API under
-   * the same project where the security policy is created.
-   *
    * @var string[]
    */
   public $sessionTokenSiteKeys;
 
   /**
-   * A list of site keys to be used during the validation of reCAPTCHA action-
-   * tokens. The provided site keys need to be created from reCAPTCHA API under
-   * the same project where the security policy is created.
-   *
-   * @param string[] $actionTokenSiteKeys
+   * @param string[]
    */
   public function setActionTokenSiteKeys($actionTokenSiteKeys)
   {
@@ -56,11 +44,7 @@ class SecurityPolicyRuleMatcherExprOptionsRecaptchaOptions extends \Google\Colle
     return $this->actionTokenSiteKeys;
   }
   /**
-   * A list of site keys to be used during the validation of reCAPTCHA session-
-   * tokens. The provided site keys need to be created from reCAPTCHA API under
-   * the same project where the security policy is created.
-   *
-   * @param string[] $sessionTokenSiteKeys
+   * @param string[]
    */
   public function setSessionTokenSiteKeys($sessionTokenSiteKeys)
   {

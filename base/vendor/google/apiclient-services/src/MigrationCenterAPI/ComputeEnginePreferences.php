@@ -20,77 +20,32 @@ namespace Google\Service\MigrationCenterAPI;
 class ComputeEnginePreferences extends \Google\Model
 {
   /**
-   * Unspecified (default value).
-   */
-  public const LICENSE_TYPE_LICENSE_TYPE_UNSPECIFIED = 'LICENSE_TYPE_UNSPECIFIED';
-  /**
-   * Default Google Cloud licensing plan. Licensing is charged per usage. This a
-   * good value to start with.
-   */
-  public const LICENSE_TYPE_LICENSE_TYPE_DEFAULT = 'LICENSE_TYPE_DEFAULT';
-  /**
-   * Bring-your-own-license (BYOL) plan. User provides the OS license.
-   */
-  public const LICENSE_TYPE_LICENSE_TYPE_BRING_YOUR_OWN_LICENSE = 'LICENSE_TYPE_BRING_YOUR_OWN_LICENSE';
-  /**
-   * Unspecified. Fallback to default value based on context.
-   */
-  public const PERSISTENT_DISK_TYPE_PERSISTENT_DISK_TYPE_UNSPECIFIED = 'PERSISTENT_DISK_TYPE_UNSPECIFIED';
-  /**
-   * Standard HDD Persistent Disk.
-   */
-  public const PERSISTENT_DISK_TYPE_PERSISTENT_DISK_TYPE_STANDARD = 'PERSISTENT_DISK_TYPE_STANDARD';
-  /**
-   * Balanced Persistent Disk.
-   */
-  public const PERSISTENT_DISK_TYPE_PERSISTENT_DISK_TYPE_BALANCED = 'PERSISTENT_DISK_TYPE_BALANCED';
-  /**
-   * SSD Persistent Disk.
-   */
-  public const PERSISTENT_DISK_TYPE_PERSISTENT_DISK_TYPE_SSD = 'PERSISTENT_DISK_TYPE_SSD';
-  /**
-   * License type to consider when calculating costs for virtual machine
-   * insights and recommendations. If unspecified, costs are calculated based on
-   * the default licensing plan.
-   *
    * @var string
    */
   public $licenseType;
   protected $machinePreferencesType = MachinePreferences::class;
   protected $machinePreferencesDataType = '';
   /**
-   * Persistent disk type to use. If unspecified (default), all types are
-   * considered, based on available usage data.
-   *
    * @var string
    */
   public $persistentDiskType;
 
   /**
-   * License type to consider when calculating costs for virtual machine
-   * insights and recommendations. If unspecified, costs are calculated based on
-   * the default licensing plan.
-   *
-   * Accepted values: LICENSE_TYPE_UNSPECIFIED, LICENSE_TYPE_DEFAULT,
-   * LICENSE_TYPE_BRING_YOUR_OWN_LICENSE
-   *
-   * @param self::LICENSE_TYPE_* $licenseType
+   * @param string
    */
   public function setLicenseType($licenseType)
   {
     $this->licenseType = $licenseType;
   }
   /**
-   * @return self::LICENSE_TYPE_*
+   * @return string
    */
   public function getLicenseType()
   {
     return $this->licenseType;
   }
   /**
-   * Preferences concerning the machine types to consider on Compute Engine.
-   *
-   * @param MachinePreferences $machinePreferences
+   * @param MachinePreferences
    */
   public function setMachinePreferences(MachinePreferences $machinePreferences)
   {
@@ -104,21 +59,14 @@ class ComputeEnginePreferences extends \Google\Model
     return $this->machinePreferences;
   }
   /**
-   * Persistent disk type to use. If unspecified (default), all types are
-   * considered, based on available usage data.
-   *
-   * Accepted values: PERSISTENT_DISK_TYPE_UNSPECIFIED,
-   * PERSISTENT_DISK_TYPE_STANDARD, PERSISTENT_DISK_TYPE_BALANCED,
-   * PERSISTENT_DISK_TYPE_SSD
-   *
-   * @param self::PERSISTENT_DISK_TYPE_* $persistentDiskType
+   * @param string
    */
   public function setPersistentDiskType($persistentDiskType)
   {
     $this->persistentDiskType = $persistentDiskType;
   }
   /**
-   * @return self::PERSISTENT_DISK_TYPE_*
+   * @return string
    */
   public function getPersistentDiskType()
   {

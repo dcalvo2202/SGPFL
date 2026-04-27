@@ -20,18 +20,12 @@ namespace Google\Service\CloudDomains;
 class AuthorizationCode extends \Google\Model
 {
   /**
-   * The Authorization Code in ASCII. It can be used to transfer the domain to
-   * or from another registrar.
-   *
    * @var string
    */
   public $code;
 
   /**
-   * The Authorization Code in ASCII. It can be used to transfer the domain to
-   * or from another registrar.
-   *
-   * @param string $code
+   * @param string
    */
   public function setCode($code)
   {

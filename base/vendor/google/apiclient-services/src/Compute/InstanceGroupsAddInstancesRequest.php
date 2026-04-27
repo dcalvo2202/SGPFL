@@ -24,9 +24,7 @@ class InstanceGroupsAddInstancesRequest extends \Google\Collection
   protected $instancesDataType = 'array';
 
   /**
-   * The list of instances to add to the instance group.
-   *
-   * @param InstanceReference[] $instances
+   * @param InstanceReference[]
    */
   public function setInstances($instances)
   {

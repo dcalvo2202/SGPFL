@@ -31,16 +31,12 @@ class DriveActivity extends \Google\Collection
   protected $timeRangeType = TimeRange::class;
   protected $timeRangeDataType = '';
   /**
-   * The activity occurred at this specific time.
-   *
    * @var string
    */
   public $timestamp;
 
   /**
-   * Details on all actions in this activity.
-   *
-   * @param Action[] $actions
+   * @param Action[]
    */
   public function setActions($actions)
   {
@@ -54,9 +50,7 @@ class DriveActivity extends \Google\Collection
     return $this->actions;
   }
   /**
-   * All actor(s) responsible for the activity.
-   *
-   * @param Actor[] $actors
+   * @param Actor[]
    */
   public function setActors($actors)
   {
@@ -70,11 +64,7 @@ class DriveActivity extends \Google\Collection
     return $this->actors;
   }
   /**
-   * Key information about the primary action for this activity. This is either
-   * representative, or the most important, of all actions in the activity,
-   * according to the ConsolidationStrategy in the request.
-   *
-   * @param ActionDetail $primaryActionDetail
+   * @param ActionDetail
    */
   public function setPrimaryActionDetail(ActionDetail $primaryActionDetail)
   {
@@ -88,11 +78,7 @@ class DriveActivity extends \Google\Collection
     return $this->primaryActionDetail;
   }
   /**
-   * All Google Drive objects this activity is about (e.g. file, folder, drive).
-   * This represents the state of the target immediately after the actions
-   * occurred.
-   *
-   * @param Target[] $targets
+   * @param Target[]
    */
   public function setTargets($targets)
   {
@@ -106,9 +92,7 @@ class DriveActivity extends \Google\Collection
     return $this->targets;
   }
   /**
-   * The activity occurred over this time range.
-   *
-   * @param TimeRange $timeRange
+   * @param TimeRange
    */
   public function setTimeRange(TimeRange $timeRange)
   {
@@ -122,9 +106,7 @@ class DriveActivity extends \Google\Collection
     return $this->timeRange;
   }
   /**
-   * The activity occurred at this specific time.
-   *
-   * @param string $timestamp
+   * @param string
    */
   public function setTimestamp($timestamp)
   {

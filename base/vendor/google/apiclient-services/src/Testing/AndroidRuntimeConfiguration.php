@@ -26,9 +26,7 @@ class AndroidRuntimeConfiguration extends \Google\Collection
   protected $orientationsDataType = 'array';
 
   /**
-   * The set of available locales.
-   *
-   * @param Locale[] $locales
+   * @param Locale[]
    */
   public function setLocales($locales)
   {
@@ -42,9 +40,7 @@ class AndroidRuntimeConfiguration extends \Google\Collection
     return $this->locales;
   }
   /**
-   * The set of available orientations.
-   *
-   * @param Orientation[] $orientations
+   * @param Orientation[]
    */
   public function setOrientations($orientations)
   {

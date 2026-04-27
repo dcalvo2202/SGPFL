@@ -20,23 +20,16 @@ namespace Google\Service\Storage;
 class StorageObjectRetention extends \Google\Model
 {
   /**
-   * The bucket's object retention mode, can only be Unlocked or Locked.
-   *
    * @var string
    */
   public $mode;
   /**
-   * A time in RFC 3339 format until which object retention protects this
-   * object.
-   *
    * @var string
    */
   public $retainUntilTime;
 
   /**
-   * The bucket's object retention mode, can only be Unlocked or Locked.
-   *
-   * @param string $mode
+   * @param string
    */
   public function setMode($mode)
   {
@@ -50,10 +43,7 @@ class StorageObjectRetention extends \Google\Model
     return $this->mode;
   }
   /**
-   * A time in RFC 3339 format until which object retention protects this
-   * object.
-   *
-   * @param string $retainUntilTime
+   * @param string
    */
   public function setRetainUntilTime($retainUntilTime)
   {

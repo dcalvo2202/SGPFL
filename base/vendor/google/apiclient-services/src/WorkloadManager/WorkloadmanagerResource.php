@@ -20,28 +20,20 @@ namespace Google\Service\WorkloadManager;
 class WorkloadmanagerResource extends \Google\Model
 {
   /**
-   * The name of the resource.
-   *
    * @var string
    */
   public $name;
   /**
-   * The service account associated with the resource.
-   *
    * @var string
    */
   public $serviceAccount;
   /**
-   * The type of resource.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The name of the resource.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -55,9 +47,7 @@ class WorkloadmanagerResource extends \Google\Model
     return $this->name;
   }
   /**
-   * The service account associated with the resource.
-   *
-   * @param string $serviceAccount
+   * @param string
    */
   public function setServiceAccount($serviceAccount)
   {
@@ -71,9 +61,7 @@ class WorkloadmanagerResource extends \Google\Model
     return $this->serviceAccount;
   }
   /**
-   * The type of resource.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

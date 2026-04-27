@@ -20,16 +20,12 @@ namespace Google\Service\CloudAlloyDBAdmin;
 class TimeBasedRetention extends \Google\Model
 {
   /**
-   * The retention period.
-   *
    * @var string
    */
   public $retentionPeriod;
 
   /**
-   * The retention period.
-   *
-   * @param string $retentionPeriod
+   * @param string
    */
   public function setRetentionPeriod($retentionPeriod)
   {

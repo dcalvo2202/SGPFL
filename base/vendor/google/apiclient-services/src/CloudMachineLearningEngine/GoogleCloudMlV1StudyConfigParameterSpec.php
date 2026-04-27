@@ -19,50 +19,6 @@ namespace Google\Service\CloudMachineLearningEngine;
 
 class GoogleCloudMlV1StudyConfigParameterSpec extends \Google\Collection
 {
-  /**
-   * By default, no scaling is applied.
-   */
-  public const SCALE_TYPE_SCALE_TYPE_UNSPECIFIED = 'SCALE_TYPE_UNSPECIFIED';
-  /**
-   * Scales the feasible space to (0, 1) linearly.
-   */
-  public const SCALE_TYPE_UNIT_LINEAR_SCALE = 'UNIT_LINEAR_SCALE';
-  /**
-   * Scales the feasible space logarithmically to (0, 1). The entire feasible
-   * space must be strictly positive.
-   */
-  public const SCALE_TYPE_UNIT_LOG_SCALE = 'UNIT_LOG_SCALE';
-  /**
-   * Scales the feasible space "reverse" logarithmically to (0, 1). The result
-   * is that values close to the top of the feasible space are spread out more
-   * than points near the bottom. The entire feasible space must be strictly
-   * positive.
-   */
-  public const SCALE_TYPE_UNIT_REVERSE_LOG_SCALE = 'UNIT_REVERSE_LOG_SCALE';
-  /**
-   * You must specify a valid type. Using this unspecified type will result in
-   * an error.
-   */
-  public const TYPE_PARAMETER_TYPE_UNSPECIFIED = 'PARAMETER_TYPE_UNSPECIFIED';
-  /**
-   * Type for real-valued parameters.
-   */
-  public const TYPE_DOUBLE = 'DOUBLE';
-  /**
-   * Type for integral parameters.
-   */
-  public const TYPE_INTEGER = 'INTEGER';
-  /**
-   * The parameter is categorical, with a value chosen from the categories
-   * field.
-   */
-  public const TYPE_CATEGORICAL = 'CATEGORICAL';
-  /**
-   * The parameter is real valued, with a fixed set of feasible points. If
-   * `type==DISCRETE`, feasible_points must be provided, and {`min_value`,
-   * `max_value`} will be ignored.
-   */
-  public const TYPE_DISCRETE = 'DISCRETE';
   protected $collection_key = 'childParameterSpecs';
   protected $categoricalValueSpecType = GoogleCloudMlV1StudyConfigParameterSpecCategoricalValueSpec::class;
   protected $categoricalValueSpecDataType = '';
@@ -75,8 +31,6 @@ class GoogleCloudMlV1StudyConfigParameterSpec extends \Google\Collection
   protected $integerValueSpecType = GoogleCloudMlV1StudyConfigParameterSpecIntegerValueSpec::class;
   protected $integerValueSpecDataType = '';
   /**
-   * Required. The parameter name must be unique amongst all ParameterSpecs.
-   *
    * @var string
    */
   public $parameter;
@@ -87,22 +41,16 @@ class GoogleCloudMlV1StudyConfigParameterSpec extends \Google\Collection
   protected $parentIntValuesType = GoogleCloudMlV1StudyConfigParameterSpecMatchingParentIntValueSpec::class;
   protected $parentIntValuesDataType = '';
   /**
-   * How the parameter should be scaled. Leave unset for categorical parameters.
-   *
    * @var string
    */
   public $scaleType;
   /**
-   * Required. The type of the parameter.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The value spec for a 'CATEGORICAL' parameter.
-   *
-   * @param GoogleCloudMlV1StudyConfigParameterSpecCategoricalValueSpec $categoricalValueSpec
+   * @param GoogleCloudMlV1StudyConfigParameterSpecCategoricalValueSpec
    */
   public function setCategoricalValueSpec(GoogleCloudMlV1StudyConfigParameterSpecCategoricalValueSpec $categoricalValueSpec)
   {
@@ -116,11 +64,7 @@ class GoogleCloudMlV1StudyConfigParameterSpec extends \Google\Collection
     return $this->categoricalValueSpec;
   }
   /**
-   * A child node is active if the parameter's value matches the child node's
-   * matching_parent_values. If two items in child_parameter_specs have the same
-   * name, they must have disjoint matching_parent_values.
-   *
-   * @param GoogleCloudMlV1StudyConfigParameterSpec[] $childParameterSpecs
+   * @param GoogleCloudMlV1StudyConfigParameterSpec[]
    */
   public function setChildParameterSpecs($childParameterSpecs)
   {
@@ -134,9 +78,7 @@ class GoogleCloudMlV1StudyConfigParameterSpec extends \Google\Collection
     return $this->childParameterSpecs;
   }
   /**
-   * The value spec for a 'DISCRETE' parameter.
-   *
-   * @param GoogleCloudMlV1StudyConfigParameterSpecDiscreteValueSpec $discreteValueSpec
+   * @param GoogleCloudMlV1StudyConfigParameterSpecDiscreteValueSpec
    */
   public function setDiscreteValueSpec(GoogleCloudMlV1StudyConfigParameterSpecDiscreteValueSpec $discreteValueSpec)
   {
@@ -150,9 +92,7 @@ class GoogleCloudMlV1StudyConfigParameterSpec extends \Google\Collection
     return $this->discreteValueSpec;
   }
   /**
-   * The value spec for a 'DOUBLE' parameter.
-   *
-   * @param GoogleCloudMlV1StudyConfigParameterSpecDoubleValueSpec $doubleValueSpec
+   * @param GoogleCloudMlV1StudyConfigParameterSpecDoubleValueSpec
    */
   public function setDoubleValueSpec(GoogleCloudMlV1StudyConfigParameterSpecDoubleValueSpec $doubleValueSpec)
   {
@@ -166,9 +106,7 @@ class GoogleCloudMlV1StudyConfigParameterSpec extends \Google\Collection
     return $this->doubleValueSpec;
   }
   /**
-   * The value spec for an 'INTEGER' parameter.
-   *
-   * @param GoogleCloudMlV1StudyConfigParameterSpecIntegerValueSpec $integerValueSpec
+   * @param GoogleCloudMlV1StudyConfigParameterSpecIntegerValueSpec
    */
   public function setIntegerValueSpec(GoogleCloudMlV1StudyConfigParameterSpecIntegerValueSpec $integerValueSpec)
   {
@@ -182,9 +120,7 @@ class GoogleCloudMlV1StudyConfigParameterSpec extends \Google\Collection
     return $this->integerValueSpec;
   }
   /**
-   * Required. The parameter name must be unique amongst all ParameterSpecs.
-   *
-   * @param string $parameter
+   * @param string
    */
   public function setParameter($parameter)
   {
@@ -198,7 +134,7 @@ class GoogleCloudMlV1StudyConfigParameterSpec extends \Google\Collection
     return $this->parameter;
   }
   /**
-   * @param GoogleCloudMlV1StudyConfigParameterSpecMatchingParentCategoricalValueSpec $parentCategoricalValues
+   * @param GoogleCloudMlV1StudyConfigParameterSpecMatchingParentCategoricalValueSpec
    */
   public function setParentCategoricalValues(GoogleCloudMlV1StudyConfigParameterSpecMatchingParentCategoricalValueSpec $parentCategoricalValues)
   {
@@ -212,7 +148,7 @@ class GoogleCloudMlV1StudyConfigParameterSpec extends \Google\Collection
     return $this->parentCategoricalValues;
   }
   /**
-   * @param GoogleCloudMlV1StudyConfigParameterSpecMatchingParentDiscreteValueSpec $parentDiscreteValues
+   * @param GoogleCloudMlV1StudyConfigParameterSpecMatchingParentDiscreteValueSpec
    */
   public function setParentDiscreteValues(GoogleCloudMlV1StudyConfigParameterSpecMatchingParentDiscreteValueSpec $parentDiscreteValues)
   {
@@ -226,7 +162,7 @@ class GoogleCloudMlV1StudyConfigParameterSpec extends \Google\Collection
     return $this->parentDiscreteValues;
   }
   /**
-   * @param GoogleCloudMlV1StudyConfigParameterSpecMatchingParentIntValueSpec $parentIntValues
+   * @param GoogleCloudMlV1StudyConfigParameterSpecMatchingParentIntValueSpec
    */
   public function setParentIntValues(GoogleCloudMlV1StudyConfigParameterSpecMatchingParentIntValueSpec $parentIntValues)
   {
@@ -240,38 +176,28 @@ class GoogleCloudMlV1StudyConfigParameterSpec extends \Google\Collection
     return $this->parentIntValues;
   }
   /**
-   * How the parameter should be scaled. Leave unset for categorical parameters.
-   *
-   * Accepted values: SCALE_TYPE_UNSPECIFIED, UNIT_LINEAR_SCALE, UNIT_LOG_SCALE,
-   * UNIT_REVERSE_LOG_SCALE
-   *
-   * @param self::SCALE_TYPE_* $scaleType
+   * @param string
    */
   public function setScaleType($scaleType)
   {
     $this->scaleType = $scaleType;
   }
   /**
-   * @return self::SCALE_TYPE_*
+   * @return string
    */
   public function getScaleType()
   {
     return $this->scaleType;
   }
   /**
-   * Required. The type of the parameter.
-   *
-   * Accepted values: PARAMETER_TYPE_UNSPECIFIED, DOUBLE, INTEGER, CATEGORICAL,
-   * DISCRETE
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

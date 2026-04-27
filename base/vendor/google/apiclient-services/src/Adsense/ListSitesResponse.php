@@ -21,9 +21,6 @@ class ListSitesResponse extends \Google\Collection
 {
   protected $collection_key = 'sites';
   /**
-   * Continuation token used to page through sites. To retrieve the next page of
-   * the results, set the next request's "page_token" value to this.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListSitesResponse extends \Google\Collection
   protected $sitesDataType = 'array';
 
   /**
-   * Continuation token used to page through sites. To retrieve the next page of
-   * the results, set the next request's "page_token" value to this.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class ListSitesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The sites returned in this list response.
-   *
-   * @param Site[] $sites
+   * @param Site[]
    */
   public function setSites($sites)
   {

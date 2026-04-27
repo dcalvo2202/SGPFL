@@ -19,16 +19,6 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowV2IntentMessage extends \Google\Model
 {
-  public const PLATFORM_PLATFORM_UNSPECIFIED = 'PLATFORM_UNSPECIFIED';
-  public const PLATFORM_FACEBOOK = 'FACEBOOK';
-  public const PLATFORM_SLACK = 'SLACK';
-  public const PLATFORM_TELEGRAM = 'TELEGRAM';
-  public const PLATFORM_KIK = 'KIK';
-  public const PLATFORM_SKYPE = 'SKYPE';
-  public const PLATFORM_LINE = 'LINE';
-  public const PLATFORM_VIBER = 'VIBER';
-  public const PLATFORM_ACTIONS_ON_GOOGLE = 'ACTIONS_ON_GOOGLE';
-  public const PLATFORM_GOOGLE_HANGOUTS = 'GOOGLE_HANGOUTS';
   protected $basicCardType = GoogleCloudDialogflowV2IntentMessageBasicCard::class;
   protected $basicCardDataType = '';
   protected $browseCarouselCardType = GoogleCloudDialogflowV2IntentMessageBrowseCarouselCard::class;
@@ -65,7 +55,7 @@ class GoogleCloudDialogflowV2IntentMessage extends \Google\Model
   protected $textDataType = '';
 
   /**
-   * @param GoogleCloudDialogflowV2IntentMessageBasicCard $basicCard
+   * @param GoogleCloudDialogflowV2IntentMessageBasicCard
    */
   public function setBasicCard(GoogleCloudDialogflowV2IntentMessageBasicCard $basicCard)
   {
@@ -79,7 +69,7 @@ class GoogleCloudDialogflowV2IntentMessage extends \Google\Model
     return $this->basicCard;
   }
   /**
-   * @param GoogleCloudDialogflowV2IntentMessageBrowseCarouselCard $browseCarouselCard
+   * @param GoogleCloudDialogflowV2IntentMessageBrowseCarouselCard
    */
   public function setBrowseCarouselCard(GoogleCloudDialogflowV2IntentMessageBrowseCarouselCard $browseCarouselCard)
   {
@@ -93,7 +83,7 @@ class GoogleCloudDialogflowV2IntentMessage extends \Google\Model
     return $this->browseCarouselCard;
   }
   /**
-   * @param GoogleCloudDialogflowV2IntentMessageCard $card
+   * @param GoogleCloudDialogflowV2IntentMessageCard
    */
   public function setCard(GoogleCloudDialogflowV2IntentMessageCard $card)
   {
@@ -107,7 +97,7 @@ class GoogleCloudDialogflowV2IntentMessage extends \Google\Model
     return $this->card;
   }
   /**
-   * @param GoogleCloudDialogflowV2IntentMessageCarouselSelect $carouselSelect
+   * @param GoogleCloudDialogflowV2IntentMessageCarouselSelect
    */
   public function setCarouselSelect(GoogleCloudDialogflowV2IntentMessageCarouselSelect $carouselSelect)
   {
@@ -121,7 +111,7 @@ class GoogleCloudDialogflowV2IntentMessage extends \Google\Model
     return $this->carouselSelect;
   }
   /**
-   * @param GoogleCloudDialogflowV2IntentMessageImage $image
+   * @param GoogleCloudDialogflowV2IntentMessageImage
    */
   public function setImage(GoogleCloudDialogflowV2IntentMessageImage $image)
   {
@@ -135,7 +125,7 @@ class GoogleCloudDialogflowV2IntentMessage extends \Google\Model
     return $this->image;
   }
   /**
-   * @param GoogleCloudDialogflowV2IntentMessageLinkOutSuggestion $linkOutSuggestion
+   * @param GoogleCloudDialogflowV2IntentMessageLinkOutSuggestion
    */
   public function setLinkOutSuggestion(GoogleCloudDialogflowV2IntentMessageLinkOutSuggestion $linkOutSuggestion)
   {
@@ -149,7 +139,7 @@ class GoogleCloudDialogflowV2IntentMessage extends \Google\Model
     return $this->linkOutSuggestion;
   }
   /**
-   * @param GoogleCloudDialogflowV2IntentMessageListSelect $listSelect
+   * @param GoogleCloudDialogflowV2IntentMessageListSelect
    */
   public function setListSelect(GoogleCloudDialogflowV2IntentMessageListSelect $listSelect)
   {
@@ -163,7 +153,7 @@ class GoogleCloudDialogflowV2IntentMessage extends \Google\Model
     return $this->listSelect;
   }
   /**
-   * @param GoogleCloudDialogflowV2IntentMessageMediaContent $mediaContent
+   * @param GoogleCloudDialogflowV2IntentMessageMediaContent
    */
   public function setMediaContent(GoogleCloudDialogflowV2IntentMessageMediaContent $mediaContent)
   {
@@ -177,7 +167,7 @@ class GoogleCloudDialogflowV2IntentMessage extends \Google\Model
     return $this->mediaContent;
   }
   /**
-   * @param array[] $payload
+   * @param array[]
    */
   public function setPayload($payload)
   {
@@ -191,21 +181,21 @@ class GoogleCloudDialogflowV2IntentMessage extends \Google\Model
     return $this->payload;
   }
   /**
-   * @param self::PLATFORM_* $platform
+   * @param string
    */
   public function setPlatform($platform)
   {
     $this->platform = $platform;
   }
   /**
-   * @return self::PLATFORM_*
+   * @return string
    */
   public function getPlatform()
   {
     return $this->platform;
   }
   /**
-   * @param GoogleCloudDialogflowV2IntentMessageQuickReplies $quickReplies
+   * @param GoogleCloudDialogflowV2IntentMessageQuickReplies
    */
   public function setQuickReplies(GoogleCloudDialogflowV2IntentMessageQuickReplies $quickReplies)
   {
@@ -219,7 +209,7 @@ class GoogleCloudDialogflowV2IntentMessage extends \Google\Model
     return $this->quickReplies;
   }
   /**
-   * @param GoogleCloudDialogflowV2IntentMessageSimpleResponses $simpleResponses
+   * @param GoogleCloudDialogflowV2IntentMessageSimpleResponses
    */
   public function setSimpleResponses(GoogleCloudDialogflowV2IntentMessageSimpleResponses $simpleResponses)
   {
@@ -233,7 +223,7 @@ class GoogleCloudDialogflowV2IntentMessage extends \Google\Model
     return $this->simpleResponses;
   }
   /**
-   * @param GoogleCloudDialogflowV2IntentMessageSuggestions $suggestions
+   * @param GoogleCloudDialogflowV2IntentMessageSuggestions
    */
   public function setSuggestions(GoogleCloudDialogflowV2IntentMessageSuggestions $suggestions)
   {
@@ -247,7 +237,7 @@ class GoogleCloudDialogflowV2IntentMessage extends \Google\Model
     return $this->suggestions;
   }
   /**
-   * @param GoogleCloudDialogflowV2IntentMessageTableCard $tableCard
+   * @param GoogleCloudDialogflowV2IntentMessageTableCard
    */
   public function setTableCard(GoogleCloudDialogflowV2IntentMessageTableCard $tableCard)
   {
@@ -261,7 +251,7 @@ class GoogleCloudDialogflowV2IntentMessage extends \Google\Model
     return $this->tableCard;
   }
   /**
-   * @param GoogleCloudDialogflowV2IntentMessageText $text
+   * @param GoogleCloudDialogflowV2IntentMessageText
    */
   public function setText(GoogleCloudDialogflowV2IntentMessageText $text)
   {

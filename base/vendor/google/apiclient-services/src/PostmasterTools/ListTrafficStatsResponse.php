@@ -21,9 +21,6 @@ class ListTrafficStatsResponse extends \Google\Collection
 {
   protected $collection_key = 'trafficStats';
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListTrafficStatsResponse extends \Google\Collection
   protected $trafficStatsDataType = 'array';
 
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class ListTrafficStatsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The list of TrafficStats.
-   *
-   * @param TrafficStats[] $trafficStats
+   * @param TrafficStats[]
    */
   public function setTrafficStats($trafficStats)
   {

@@ -19,86 +19,43 @@ namespace Google\Service\Compute;
 
 class SecurityPolicyUserDefinedField extends \Google\Model
 {
-  public const BASE_IPV4 = 'IPV4';
-  public const BASE_IPV6 = 'IPV6';
-  public const BASE_TCP = 'TCP';
-  public const BASE_UDP = 'UDP';
   /**
-   * The base relative to which 'offset' is measured. Possible values are:
-   * - IPV4: Points to the beginning of the IPv4 header.    - IPV6: Points to
-   * the beginning of the IPv6 header.    - TCP: Points to the beginning of the
-   * TCP header, skipping    over any IPv4 options or IPv6 extension headers.
-   * Not present for    non-first fragments.    - UDP: Points to the beginning
-   * of the UDP header, skipping    over any IPv4 options or IPv6 extension
-   * headers. Not present for    non-first fragments.
-   *
-   * required
-   *
    * @var string
    */
   public $base;
   /**
-   * If specified, apply this mask (bitwise AND) to the field to ignore bits
-   * before matching. Encoded as a hexadecimal number (starting with "0x"). The
-   * last byte of the field (in network byte order) corresponds to the least
-   * significant byte of the mask.
-   *
    * @var string
    */
   public $mask;
   /**
-   * The name of this field. Must be unique within the policy.
-   *
    * @var string
    */
   public $name;
   /**
-   * Offset of the first byte of the field (in network byte order) relative to
-   * 'base'.
-   *
    * @var int
    */
   public $offset;
   /**
-   * Size of the field in bytes. Valid values: 1-4.
-   *
    * @var int
    */
   public $size;
 
   /**
-   * The base relative to which 'offset' is measured. Possible values are:
-   * - IPV4: Points to the beginning of the IPv4 header.    - IPV6: Points to
-   * the beginning of the IPv6 header.    - TCP: Points to the beginning of the
-   * TCP header, skipping    over any IPv4 options or IPv6 extension headers.
-   * Not present for    non-first fragments.    - UDP: Points to the beginning
-   * of the UDP header, skipping    over any IPv4 options or IPv6 extension
-   * headers. Not present for    non-first fragments.
-   *
-   * required
-   *
-   * Accepted values: IPV4, IPV6, TCP, UDP
-   *
-   * @param self::BASE_* $base
+   * @param string
    */
   public function setBase($base)
   {
     $this->base = $base;
   }
   /**
-   * @return self::BASE_*
+   * @return string
    */
   public function getBase()
   {
     return $this->base;
   }
   /**
-   * If specified, apply this mask (bitwise AND) to the field to ignore bits
-   * before matching. Encoded as a hexadecimal number (starting with "0x"). The
-   * last byte of the field (in network byte order) corresponds to the least
-   * significant byte of the mask.
-   *
-   * @param string $mask
+   * @param string
    */
   public function setMask($mask)
   {
@@ -112,9 +69,7 @@ class SecurityPolicyUserDefinedField extends \Google\Model
     return $this->mask;
   }
   /**
-   * The name of this field. Must be unique within the policy.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -128,10 +83,7 @@ class SecurityPolicyUserDefinedField extends \Google\Model
     return $this->name;
   }
   /**
-   * Offset of the first byte of the field (in network byte order) relative to
-   * 'base'.
-   *
-   * @param int $offset
+   * @param int
    */
   public function setOffset($offset)
   {
@@ -145,9 +97,7 @@ class SecurityPolicyUserDefinedField extends \Google\Model
     return $this->offset;
   }
   /**
-   * Size of the field in bytes. Valid values: 1-4.
-   *
-   * @param int $size
+   * @param int
    */
   public function setSize($size)
   {

@@ -24,10 +24,7 @@ class ArrayValue extends \Google\Collection
   protected $valuesDataType = 'array';
 
   /**
-   * Values in the array. The order of values in an array is preserved as long
-   * as all values have identical settings for 'exclude_from_indexes'.
-   *
-   * @param Value[] $values
+   * @param Value[]
    */
   public function setValues($values)
   {

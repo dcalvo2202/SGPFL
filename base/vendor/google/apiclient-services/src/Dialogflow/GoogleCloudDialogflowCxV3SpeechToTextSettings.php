@@ -25,7 +25,7 @@ class GoogleCloudDialogflowCxV3SpeechToTextSettings extends \Google\Model
   public $enableSpeechAdaptation;
 
   /**
-   * @param bool $enableSpeechAdaptation
+   * @param bool
    */
   public function setEnableSpeechAdaptation($enableSpeechAdaptation)
   {

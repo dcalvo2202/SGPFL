@@ -20,22 +20,16 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1alphaEstimateDataSizeResponse extends \Google\Model
 {
   /**
-   * Data size in terms of bytes.
-   *
    * @var string
    */
   public $dataSizeBytes;
   /**
-   * Total number of documents.
-   *
    * @var string
    */
   public $documentCount;
 
   /**
-   * Data size in terms of bytes.
-   *
-   * @param string $dataSizeBytes
+   * @param string
    */
   public function setDataSizeBytes($dataSizeBytes)
   {
@@ -49,9 +43,7 @@ class GoogleCloudDiscoveryengineV1alphaEstimateDataSizeResponse extends \Google\
     return $this->dataSizeBytes;
   }
   /**
-   * Total number of documents.
-   *
-   * @param string $documentCount
+   * @param string
    */
   public function setDocumentCount($documentCount)
   {

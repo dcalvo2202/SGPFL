@@ -24,10 +24,7 @@ class GlossaryTermsSet extends \Google\Collection
   protected $termsDataType = 'array';
 
   /**
-   * Each term in the set represents a term that can be replaced by the other
-   * terms.
-   *
-   * @param GlossaryTerm[] $terms
+   * @param GlossaryTerm[]
    */
   public function setTerms($terms)
   {

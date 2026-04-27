@@ -19,161 +19,89 @@ namespace Google\Service\YouTube;
 
 class CaptionSnippet extends \Google\Model
 {
-  public const AUDIO_TRACK_TYPE_unknown = 'unknown';
-  public const AUDIO_TRACK_TYPE_primary = 'primary';
-  public const AUDIO_TRACK_TYPE_commentary = 'commentary';
-  public const AUDIO_TRACK_TYPE_descriptive = 'descriptive';
-  public const FAILURE_REASON_unknownFormat = 'unknownFormat';
-  public const FAILURE_REASON_unsupportedFormat = 'unsupportedFormat';
-  public const FAILURE_REASON_processingFailed = 'processingFailed';
-  public const STATUS_serving = 'serving';
-  public const STATUS_syncing = 'syncing';
-  public const STATUS_failed = 'failed';
-  public const TRACK_KIND_standard = 'standard';
-  public const TRACK_KIND_ASR = 'ASR';
-  public const TRACK_KIND_forced = 'forced';
   /**
-   * The type of audio track associated with the caption track.
-   *
    * @var string
    */
   public $audioTrackType;
   /**
-   * The reason that YouTube failed to process the caption track. This property
-   * is only present if the state property's value is failed.
-   *
    * @var string
    */
   public $failureReason;
   /**
-   * Indicates whether YouTube synchronized the caption track to the audio track
-   * in the video. The value will be true if a sync was explicitly requested
-   * when the caption track was uploaded. For example, when calling the
-   * captions.insert or captions.update methods, you can set the sync parameter
-   * to true to instruct YouTube to sync the uploaded track to the video. If the
-   * value is false, YouTube uses the time codes in the uploaded caption track
-   * to determine when to display captions.
-   *
    * @var bool
    */
   public $isAutoSynced;
   /**
-   * Indicates whether the track contains closed captions for the deaf and hard
-   * of hearing. The default value is false.
-   *
    * @var bool
    */
   public $isCC;
   /**
-   * Indicates whether the caption track is a draft. If the value is true, then
-   * the track is not publicly visible. The default value is false. @mutable
-   * youtube.captions.insert youtube.captions.update
-   *
    * @var bool
    */
   public $isDraft;
   /**
-   * Indicates whether caption track is formatted for "easy reader," meaning it
-   * is at a third-grade level for language learners. The default value is
-   * false.
-   *
    * @var bool
    */
   public $isEasyReader;
   /**
-   * Indicates whether the caption track uses large text for the vision-
-   * impaired. The default value is false.
-   *
    * @var bool
    */
   public $isLarge;
   /**
-   * The language of the caption track. The property value is a BCP-47 language
-   * tag.
-   *
    * @var string
    */
   public $language;
   /**
-   * The date and time when the caption track was last updated.
-   *
    * @var string
    */
   public $lastUpdated;
   /**
-   * The name of the caption track. The name is intended to be visible to the
-   * user as an option during playback.
-   *
    * @var string
    */
   public $name;
   /**
-   * The caption track's status.
-   *
    * @var string
    */
   public $status;
   /**
-   * The caption track's type.
-   *
    * @var string
    */
   public $trackKind;
   /**
-   * The ID that YouTube uses to uniquely identify the video associated with the
-   * caption track. @mutable youtube.captions.insert
-   *
    * @var string
    */
   public $videoId;
 
   /**
-   * The type of audio track associated with the caption track.
-   *
-   * Accepted values: unknown, primary, commentary, descriptive
-   *
-   * @param self::AUDIO_TRACK_TYPE_* $audioTrackType
+   * @param string
    */
   public function setAudioTrackType($audioTrackType)
   {
     $this->audioTrackType = $audioTrackType;
   }
   /**
-   * @return self::AUDIO_TRACK_TYPE_*
+   * @return string
    */
   public function getAudioTrackType()
   {
     return $this->audioTrackType;
   }
   /**
-   * The reason that YouTube failed to process the caption track. This property
-   * is only present if the state property's value is failed.
-   *
-   * Accepted values: unknownFormat, unsupportedFormat, processingFailed
-   *
-   * @param self::FAILURE_REASON_* $failureReason
+   * @param string
    */
   public function setFailureReason($failureReason)
   {
     $this->failureReason = $failureReason;
   }
   /**
-   * @return self::FAILURE_REASON_*
+   * @return string
    */
   public function getFailureReason()
   {
     return $this->failureReason;
   }
   /**
-   * Indicates whether YouTube synchronized the caption track to the audio track
-   * in the video. The value will be true if a sync was explicitly requested
-   * when the caption track was uploaded. For example, when calling the
-   * captions.insert or captions.update methods, you can set the sync parameter
-   * to true to instruct YouTube to sync the uploaded track to the video. If the
-   * value is false, YouTube uses the time codes in the uploaded caption track
-   * to determine when to display captions.
-   *
-   * @param bool $isAutoSynced
+   * @param bool
    */
   public function setIsAutoSynced($isAutoSynced)
   {
@@ -187,10 +115,7 @@ class CaptionSnippet extends \Google\Model
     return $this->isAutoSynced;
   }
   /**
-   * Indicates whether the track contains closed captions for the deaf and hard
-   * of hearing. The default value is false.
-   *
-   * @param bool $isCC
+   * @param bool
    */
   public function setIsCC($isCC)
   {
@@ -204,11 +129,7 @@ class CaptionSnippet extends \Google\Model
     return $this->isCC;
   }
   /**
-   * Indicates whether the caption track is a draft. If the value is true, then
-   * the track is not publicly visible. The default value is false. @mutable
-   * youtube.captions.insert youtube.captions.update
-   *
-   * @param bool $isDraft
+   * @param bool
    */
   public function setIsDraft($isDraft)
   {
@@ -222,11 +143,7 @@ class CaptionSnippet extends \Google\Model
     return $this->isDraft;
   }
   /**
-   * Indicates whether caption track is formatted for "easy reader," meaning it
-   * is at a third-grade level for language learners. The default value is
-   * false.
-   *
-   * @param bool $isEasyReader
+   * @param bool
    */
   public function setIsEasyReader($isEasyReader)
   {
@@ -240,10 +157,7 @@ class CaptionSnippet extends \Google\Model
     return $this->isEasyReader;
   }
   /**
-   * Indicates whether the caption track uses large text for the vision-
-   * impaired. The default value is false.
-   *
-   * @param bool $isLarge
+   * @param bool
    */
   public function setIsLarge($isLarge)
   {
@@ -257,10 +171,7 @@ class CaptionSnippet extends \Google\Model
     return $this->isLarge;
   }
   /**
-   * The language of the caption track. The property value is a BCP-47 language
-   * tag.
-   *
-   * @param string $language
+   * @param string
    */
   public function setLanguage($language)
   {
@@ -274,9 +185,7 @@ class CaptionSnippet extends \Google\Model
     return $this->language;
   }
   /**
-   * The date and time when the caption track was last updated.
-   *
-   * @param string $lastUpdated
+   * @param string
    */
   public function setLastUpdated($lastUpdated)
   {
@@ -290,10 +199,7 @@ class CaptionSnippet extends \Google\Model
     return $this->lastUpdated;
   }
   /**
-   * The name of the caption track. The name is intended to be visible to the
-   * user as an option during playback.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -307,46 +213,35 @@ class CaptionSnippet extends \Google\Model
     return $this->name;
   }
   /**
-   * The caption track's status.
-   *
-   * Accepted values: serving, syncing, failed
-   *
-   * @param self::STATUS_* $status
+   * @param string
    */
   public function setStatus($status)
   {
     $this->status = $status;
   }
   /**
-   * @return self::STATUS_*
+   * @return string
    */
   public function getStatus()
   {
     return $this->status;
   }
   /**
-   * The caption track's type.
-   *
-   * Accepted values: standard, ASR, forced
-   *
-   * @param self::TRACK_KIND_* $trackKind
+   * @param string
    */
   public function setTrackKind($trackKind)
   {
     $this->trackKind = $trackKind;
   }
   /**
-   * @return self::TRACK_KIND_*
+   * @return string
    */
   public function getTrackKind()
   {
     return $this->trackKind;
   }
   /**
-   * The ID that YouTube uses to uniquely identify the video associated with the
-   * caption track. @mutable youtube.captions.insert
-   *
-   * @param string $videoId
+   * @param string
    */
   public function setVideoId($videoId)
   {

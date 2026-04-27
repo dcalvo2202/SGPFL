@@ -23,55 +23,36 @@ class DataTransfer extends \Google\Collection
   protected $applicationDataTransfersType = ApplicationDataTransfer::class;
   protected $applicationDataTransfersDataType = 'array';
   /**
-   * ETag of the resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Read-only. The transfer's ID.
-   *
    * @var string
    */
   public $id;
   /**
-   * Identifies the resource as a DataTransfer request.
-   *
    * @var string
    */
   public $kind;
   /**
-   * ID of the user to whom the data is being transferred.
-   *
    * @var string
    */
   public $newOwnerUserId;
   /**
-   * ID of the user whose data is being transferred.
-   *
    * @var string
    */
   public $oldOwnerUserId;
   /**
-   * Read-only. Overall transfer status.
-   *
    * @var string
    */
   public $overallTransferStatusCode;
   /**
-   * Read-only. The time at which the data transfer was requested.
-   *
    * @var string
    */
   public $requestTime;
 
   /**
-   * The list of per-application data transfer resources. It contains details of
-   * the applications associated with this transfer resource, and also specifies
-   * the applications for which data transfer has to be done at the time of the
-   * transfer resource creation.
-   *
-   * @param ApplicationDataTransfer[] $applicationDataTransfers
+   * @param ApplicationDataTransfer[]
    */
   public function setApplicationDataTransfers($applicationDataTransfers)
   {
@@ -85,9 +66,7 @@ class DataTransfer extends \Google\Collection
     return $this->applicationDataTransfers;
   }
   /**
-   * ETag of the resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -101,9 +80,7 @@ class DataTransfer extends \Google\Collection
     return $this->etag;
   }
   /**
-   * Read-only. The transfer's ID.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -117,9 +94,7 @@ class DataTransfer extends \Google\Collection
     return $this->id;
   }
   /**
-   * Identifies the resource as a DataTransfer request.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -133,9 +108,7 @@ class DataTransfer extends \Google\Collection
     return $this->kind;
   }
   /**
-   * ID of the user to whom the data is being transferred.
-   *
-   * @param string $newOwnerUserId
+   * @param string
    */
   public function setNewOwnerUserId($newOwnerUserId)
   {
@@ -149,9 +122,7 @@ class DataTransfer extends \Google\Collection
     return $this->newOwnerUserId;
   }
   /**
-   * ID of the user whose data is being transferred.
-   *
-   * @param string $oldOwnerUserId
+   * @param string
    */
   public function setOldOwnerUserId($oldOwnerUserId)
   {
@@ -165,9 +136,7 @@ class DataTransfer extends \Google\Collection
     return $this->oldOwnerUserId;
   }
   /**
-   * Read-only. Overall transfer status.
-   *
-   * @param string $overallTransferStatusCode
+   * @param string
    */
   public function setOverallTransferStatusCode($overallTransferStatusCode)
   {
@@ -181,9 +150,7 @@ class DataTransfer extends \Google\Collection
     return $this->overallTransferStatusCode;
   }
   /**
-   * Read-only. The time at which the data transfer was requested.
-   *
-   * @param string $requestTime
+   * @param string
    */
   public function setRequestTime($requestTime)
   {

@@ -20,37 +20,10 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1TraceConfig extends \Google\Model
 {
   /**
-   * Exporter unspecified
-   */
-  public const EXPORTER_EXPORTER_UNSPECIFIED = 'EXPORTER_UNSPECIFIED';
-  /**
-   * Exports events to Jaeger. Compatible with OpenCensus protocol.
-   */
-  public const EXPORTER_JAEGER = 'JAEGER';
-  /**
-   * Exports events to Cloud Trace. Compatible with OpenCensus protocol.
-   */
-  public const EXPORTER_CLOUD_TRACE = 'CLOUD_TRACE';
-  /**
-   * OpenTelemetry Collector. Compatible with OpenTelemetry protocol.
-   */
-  public const EXPORTER_OPEN_TELEMETRY_COLLECTOR = 'OPEN_TELEMETRY_COLLECTOR';
-  /**
-   * Exports events to Cloud Trace. Compatible with OpenTelemetry protocol.
-   */
-  public const EXPORTER_OPEN_TELEMETRY_CLOUD_TRACE = 'OPEN_TELEMETRY_CLOUD_TRACE';
-  /**
-   * Required. Endpoint of the exporter.
-   *
    * @var string
    */
   public $endpoint;
   /**
-   * Required. Exporter that is used to view the distributed trace captured
-   * using the chosen trace protocol. An exporter sends traces to any backend
-   * that is capable of consuming them. Recorded spans can be exported by
-   * registered exporters.
-   *
    * @var string
    */
   public $exporter;
@@ -58,9 +31,7 @@ class GoogleCloudApigeeV1TraceConfig extends \Google\Model
   protected $samplingConfigDataType = '';
 
   /**
-   * Required. Endpoint of the exporter.
-   *
-   * @param string $endpoint
+   * @param string
    */
   public function setEndpoint($endpoint)
   {
@@ -74,33 +45,21 @@ class GoogleCloudApigeeV1TraceConfig extends \Google\Model
     return $this->endpoint;
   }
   /**
-   * Required. Exporter that is used to view the distributed trace captured
-   * using the chosen trace protocol. An exporter sends traces to any backend
-   * that is capable of consuming them. Recorded spans can be exported by
-   * registered exporters.
-   *
-   * Accepted values: EXPORTER_UNSPECIFIED, JAEGER, CLOUD_TRACE,
-   * OPEN_TELEMETRY_COLLECTOR, OPEN_TELEMETRY_CLOUD_TRACE
-   *
-   * @param self::EXPORTER_* $exporter
+   * @param string
    */
   public function setExporter($exporter)
   {
     $this->exporter = $exporter;
   }
   /**
-   * @return self::EXPORTER_*
+   * @return string
    */
   public function getExporter()
   {
     return $this->exporter;
   }
   /**
-   * Distributed trace configuration for all API proxies in an environment. You
-   * can also override the configuration for a specific API proxy using the
-   * distributed trace configuration overrides API.
-   *
-   * @param GoogleCloudApigeeV1TraceSamplingConfig $samplingConfig
+   * @param GoogleCloudApigeeV1TraceSamplingConfig
    */
   public function setSamplingConfig(GoogleCloudApigeeV1TraceSamplingConfig $samplingConfig)
   {

@@ -19,19 +19,8 @@ namespace Google\Service\Dfareporting;
 
 class PricingSchedule extends \Google\Collection
 {
-  public const CAP_COST_OPTION_CAP_COST_NONE = 'CAP_COST_NONE';
-  public const CAP_COST_OPTION_CAP_COST_MONTHLY = 'CAP_COST_MONTHLY';
-  public const CAP_COST_OPTION_CAP_COST_CUMULATIVE = 'CAP_COST_CUMULATIVE';
-  public const PRICING_TYPE_PRICING_TYPE_CPM = 'PRICING_TYPE_CPM';
-  public const PRICING_TYPE_PRICING_TYPE_CPC = 'PRICING_TYPE_CPC';
-  public const PRICING_TYPE_PRICING_TYPE_CPA = 'PRICING_TYPE_CPA';
-  public const PRICING_TYPE_PRICING_TYPE_FLAT_RATE_IMPRESSIONS = 'PRICING_TYPE_FLAT_RATE_IMPRESSIONS';
-  public const PRICING_TYPE_PRICING_TYPE_FLAT_RATE_CLICKS = 'PRICING_TYPE_FLAT_RATE_CLICKS';
-  public const PRICING_TYPE_PRICING_TYPE_CPM_ACTIVEVIEW = 'PRICING_TYPE_CPM_ACTIVEVIEW';
   protected $collection_key = 'pricingPeriods';
   /**
-   * Placement cap cost option.
-   *
    * @var string
    */
   public $capCostOption;
@@ -40,24 +29,16 @@ class PricingSchedule extends \Google\Collection
    */
   public $endDate;
   /**
-   * Whether this placement is flighted. If true, pricing periods will be
-   * computed automatically.
-   *
    * @var bool
    */
   public $flighted;
   /**
-   * Floodlight activity ID associated with this placement. This field should be
-   * set when placement pricing type is set to PRICING_TYPE_CPA.
-   *
    * @var string
    */
   public $floodlightActivityId;
   protected $pricingPeriodsType = PricingSchedulePricingPeriod::class;
   protected $pricingPeriodsDataType = 'array';
   /**
-   * Placement pricing type. This field is required on insertion.
-   *
    * @var string
    */
   public $pricingType;
@@ -71,25 +52,21 @@ class PricingSchedule extends \Google\Collection
   public $testingStartDate;
 
   /**
-   * Placement cap cost option.
-   *
-   * Accepted values: CAP_COST_NONE, CAP_COST_MONTHLY, CAP_COST_CUMULATIVE
-   *
-   * @param self::CAP_COST_OPTION_* $capCostOption
+   * @param string
    */
   public function setCapCostOption($capCostOption)
   {
     $this->capCostOption = $capCostOption;
   }
   /**
-   * @return self::CAP_COST_OPTION_*
+   * @return string
    */
   public function getCapCostOption()
   {
     return $this->capCostOption;
   }
   /**
-   * @param string $endDate
+   * @param string
    */
   public function setEndDate($endDate)
   {
@@ -103,10 +80,7 @@ class PricingSchedule extends \Google\Collection
     return $this->endDate;
   }
   /**
-   * Whether this placement is flighted. If true, pricing periods will be
-   * computed automatically.
-   *
-   * @param bool $flighted
+   * @param bool
    */
   public function setFlighted($flighted)
   {
@@ -120,10 +94,7 @@ class PricingSchedule extends \Google\Collection
     return $this->flighted;
   }
   /**
-   * Floodlight activity ID associated with this placement. This field should be
-   * set when placement pricing type is set to PRICING_TYPE_CPA.
-   *
-   * @param string $floodlightActivityId
+   * @param string
    */
   public function setFloodlightActivityId($floodlightActivityId)
   {
@@ -137,9 +108,7 @@ class PricingSchedule extends \Google\Collection
     return $this->floodlightActivityId;
   }
   /**
-   * Pricing periods for this placement.
-   *
-   * @param PricingSchedulePricingPeriod[] $pricingPeriods
+   * @param PricingSchedulePricingPeriod[]
    */
   public function setPricingPeriods($pricingPeriods)
   {
@@ -153,27 +122,21 @@ class PricingSchedule extends \Google\Collection
     return $this->pricingPeriods;
   }
   /**
-   * Placement pricing type. This field is required on insertion.
-   *
-   * Accepted values: PRICING_TYPE_CPM, PRICING_TYPE_CPC, PRICING_TYPE_CPA,
-   * PRICING_TYPE_FLAT_RATE_IMPRESSIONS, PRICING_TYPE_FLAT_RATE_CLICKS,
-   * PRICING_TYPE_CPM_ACTIVEVIEW
-   *
-   * @param self::PRICING_TYPE_* $pricingType
+   * @param string
    */
   public function setPricingType($pricingType)
   {
     $this->pricingType = $pricingType;
   }
   /**
-   * @return self::PRICING_TYPE_*
+   * @return string
    */
   public function getPricingType()
   {
     return $this->pricingType;
   }
   /**
-   * @param string $startDate
+   * @param string
    */
   public function setStartDate($startDate)
   {
@@ -187,7 +150,7 @@ class PricingSchedule extends \Google\Collection
     return $this->startDate;
   }
   /**
-   * @param string $testingStartDate
+   * @param string
    */
   public function setTestingStartDate($testingStartDate)
   {

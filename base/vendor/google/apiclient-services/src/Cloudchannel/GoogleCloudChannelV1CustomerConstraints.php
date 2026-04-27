@@ -21,28 +21,20 @@ class GoogleCloudChannelV1CustomerConstraints extends \Google\Collection
 {
   protected $collection_key = 'promotionalOrderTypes';
   /**
-   * Allowed Customer Type.
-   *
    * @var string[]
    */
   public $allowedCustomerTypes;
   /**
-   * Allowed geographical regions of the customer.
-   *
    * @var string[]
    */
   public $allowedRegions;
   /**
-   * Allowed Promotional Order Type. Present for Promotional offers.
-   *
    * @var string[]
    */
   public $promotionalOrderTypes;
 
   /**
-   * Allowed Customer Type.
-   *
-   * @param string[] $allowedCustomerTypes
+   * @param string[]
    */
   public function setAllowedCustomerTypes($allowedCustomerTypes)
   {
@@ -56,9 +48,7 @@ class GoogleCloudChannelV1CustomerConstraints extends \Google\Collection
     return $this->allowedCustomerTypes;
   }
   /**
-   * Allowed geographical regions of the customer.
-   *
-   * @param string[] $allowedRegions
+   * @param string[]
    */
   public function setAllowedRegions($allowedRegions)
   {
@@ -72,9 +62,7 @@ class GoogleCloudChannelV1CustomerConstraints extends \Google\Collection
     return $this->allowedRegions;
   }
   /**
-   * Allowed Promotional Order Type. Present for Promotional offers.
-   *
-   * @param string[] $promotionalOrderTypes
+   * @param string[]
    */
   public function setPromotionalOrderTypes($promotionalOrderTypes)
   {

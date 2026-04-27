@@ -20,28 +20,20 @@ namespace Google\Service\AndroidPublisher;
 class SystemApkOptions extends \Google\Model
 {
   /**
-   * Whether to use the rotated key for signing the system APK.
-   *
    * @var bool
    */
   public $rotated;
   /**
-   * Whether system APK was generated with uncompressed dex files.
-   *
    * @var bool
    */
   public $uncompressedDexFiles;
   /**
-   * Whether system APK was generated with uncompressed native libraries.
-   *
    * @var bool
    */
   public $uncompressedNativeLibraries;
 
   /**
-   * Whether to use the rotated key for signing the system APK.
-   *
-   * @param bool $rotated
+   * @param bool
    */
   public function setRotated($rotated)
   {
@@ -55,9 +47,7 @@ class SystemApkOptions extends \Google\Model
     return $this->rotated;
   }
   /**
-   * Whether system APK was generated with uncompressed dex files.
-   *
-   * @param bool $uncompressedDexFiles
+   * @param bool
    */
   public function setUncompressedDexFiles($uncompressedDexFiles)
   {
@@ -71,9 +61,7 @@ class SystemApkOptions extends \Google\Model
     return $this->uncompressedDexFiles;
   }
   /**
-   * Whether system APK was generated with uncompressed native libraries.
-   *
-   * @param bool $uncompressedNativeLibraries
+   * @param bool
    */
   public function setUncompressedNativeLibraries($uncompressedNativeLibraries)
   {

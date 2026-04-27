@@ -20,22 +20,16 @@ namespace Google\Service\SA360;
 class GoogleAdsSearchads360V0CommonCustomParameter extends \Google\Model
 {
   /**
-   * The key matching the parameter tag name.
-   *
    * @var string
    */
   public $key;
   /**
-   * The value to be substituted.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * The key matching the parameter tag name.
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {
@@ -49,9 +43,7 @@ class GoogleAdsSearchads360V0CommonCustomParameter extends \Google\Model
     return $this->key;
   }
   /**
-   * The value to be substituted.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

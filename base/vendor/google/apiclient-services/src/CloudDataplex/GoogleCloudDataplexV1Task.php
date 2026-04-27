@@ -20,40 +20,14 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1Task extends \Google\Model
 {
   /**
-   * State is not specified.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Resource is active, i.e., ready to use.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * Resource is under creation.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * Resource is under deletion.
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * Resource is active but has unresolved actions.
-   */
-  public const STATE_ACTION_REQUIRED = 'ACTION_REQUIRED';
-  /**
-   * Output only. The time when the task was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. Description of the task.
-   *
    * @var string
    */
   public $description;
   /**
-   * Optional. User friendly display name.
-   *
    * @var string
    */
   public $displayName;
@@ -62,16 +36,10 @@ class GoogleCloudDataplexV1Task extends \Google\Model
   protected $executionStatusType = GoogleCloudDataplexV1TaskExecutionStatus::class;
   protected $executionStatusDataType = '';
   /**
-   * Optional. User-defined labels for the task.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Output only. The relative resource name of the task, of the form:
-   * projects/{project_number}/locations/{location_id}/lakes/{lake_id}/
-   * tasks/{task_id}.
-   *
    * @var string
    */
   public $name;
@@ -80,31 +48,22 @@ class GoogleCloudDataplexV1Task extends \Google\Model
   protected $sparkType = GoogleCloudDataplexV1TaskSparkTaskConfig::class;
   protected $sparkDataType = '';
   /**
-   * Output only. Current state of the task.
-   *
    * @var string
    */
   public $state;
   protected $triggerSpecType = GoogleCloudDataplexV1TaskTriggerSpec::class;
   protected $triggerSpecDataType = '';
   /**
-   * Output only. System generated globally unique ID for the task. This ID will
-   * be different if the task is deleted and re-created with the same name.
-   *
    * @var string
    */
   public $uid;
   /**
-   * Output only. The time when the task was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. The time when the task was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -118,9 +77,7 @@ class GoogleCloudDataplexV1Task extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Optional. Description of the task.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -134,9 +91,7 @@ class GoogleCloudDataplexV1Task extends \Google\Model
     return $this->description;
   }
   /**
-   * Optional. User friendly display name.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -150,9 +105,7 @@ class GoogleCloudDataplexV1Task extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Required. Spec related to how a task is executed.
-   *
-   * @param GoogleCloudDataplexV1TaskExecutionSpec $executionSpec
+   * @param GoogleCloudDataplexV1TaskExecutionSpec
    */
   public function setExecutionSpec(GoogleCloudDataplexV1TaskExecutionSpec $executionSpec)
   {
@@ -166,9 +119,7 @@ class GoogleCloudDataplexV1Task extends \Google\Model
     return $this->executionSpec;
   }
   /**
-   * Output only. Status of the latest task executions.
-   *
-   * @param GoogleCloudDataplexV1TaskExecutionStatus $executionStatus
+   * @param GoogleCloudDataplexV1TaskExecutionStatus
    */
   public function setExecutionStatus(GoogleCloudDataplexV1TaskExecutionStatus $executionStatus)
   {
@@ -182,9 +133,7 @@ class GoogleCloudDataplexV1Task extends \Google\Model
     return $this->executionStatus;
   }
   /**
-   * Optional. User-defined labels for the task.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -198,11 +147,7 @@ class GoogleCloudDataplexV1Task extends \Google\Model
     return $this->labels;
   }
   /**
-   * Output only. The relative resource name of the task, of the form:
-   * projects/{project_number}/locations/{location_id}/lakes/{lake_id}/
-   * tasks/{task_id}.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -216,9 +161,7 @@ class GoogleCloudDataplexV1Task extends \Google\Model
     return $this->name;
   }
   /**
-   * Config related to running scheduled Notebooks.
-   *
-   * @param GoogleCloudDataplexV1TaskNotebookTaskConfig $notebook
+   * @param GoogleCloudDataplexV1TaskNotebookTaskConfig
    */
   public function setNotebook(GoogleCloudDataplexV1TaskNotebookTaskConfig $notebook)
   {
@@ -232,9 +175,7 @@ class GoogleCloudDataplexV1Task extends \Google\Model
     return $this->notebook;
   }
   /**
-   * Config related to running custom Spark tasks.
-   *
-   * @param GoogleCloudDataplexV1TaskSparkTaskConfig $spark
+   * @param GoogleCloudDataplexV1TaskSparkTaskConfig
    */
   public function setSpark(GoogleCloudDataplexV1TaskSparkTaskConfig $spark)
   {
@@ -248,28 +189,21 @@ class GoogleCloudDataplexV1Task extends \Google\Model
     return $this->spark;
   }
   /**
-   * Output only. Current state of the task.
-   *
-   * Accepted values: STATE_UNSPECIFIED, ACTIVE, CREATING, DELETING,
-   * ACTION_REQUIRED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Required. Spec related to how often and when a task should be triggered.
-   *
-   * @param GoogleCloudDataplexV1TaskTriggerSpec $triggerSpec
+   * @param GoogleCloudDataplexV1TaskTriggerSpec
    */
   public function setTriggerSpec(GoogleCloudDataplexV1TaskTriggerSpec $triggerSpec)
   {
@@ -283,10 +217,7 @@ class GoogleCloudDataplexV1Task extends \Google\Model
     return $this->triggerSpec;
   }
   /**
-   * Output only. System generated globally unique ID for the task. This ID will
-   * be different if the task is deleted and re-created with the same name.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {
@@ -300,9 +231,7 @@ class GoogleCloudDataplexV1Task extends \Google\Model
     return $this->uid;
   }
   /**
-   * Output only. The time when the task was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

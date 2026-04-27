@@ -20,26 +20,16 @@ namespace Google\Service\ArtifactRegistry;
 class UsernamePasswordCredentials extends \Google\Model
 {
   /**
-   * The Secret Manager key version that holds the password to access the remote
-   * repository. Must be in the format of
-   * `projects/{project}/secrets/{secret}/versions/{version}`.
-   *
    * @var string
    */
   public $passwordSecretVersion;
   /**
-   * The username to access the remote repository.
-   *
    * @var string
    */
   public $username;
 
   /**
-   * The Secret Manager key version that holds the password to access the remote
-   * repository. Must be in the format of
-   * `projects/{project}/secrets/{secret}/versions/{version}`.
-   *
-   * @param string $passwordSecretVersion
+   * @param string
    */
   public function setPasswordSecretVersion($passwordSecretVersion)
   {
@@ -53,9 +43,7 @@ class UsernamePasswordCredentials extends \Google\Model
     return $this->passwordSecretVersion;
   }
   /**
-   * The username to access the remote repository.
-   *
-   * @param string $username
+   * @param string
    */
   public function setUsername($username)
   {

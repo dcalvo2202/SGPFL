@@ -37,7 +37,6 @@ class Tests extends \Google\Service\Resource
    * @param array $optParams Optional parameters.
    *
    * @opt_param string externalChannelId
-   * @opt_param string onBehalfOfContentOwnerChannel
    * @return TestItem
    * @throws \Google\Service\Exception
    */

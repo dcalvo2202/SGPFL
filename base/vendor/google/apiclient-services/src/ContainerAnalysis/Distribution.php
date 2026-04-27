@@ -20,76 +20,44 @@ namespace Google\Service\ContainerAnalysis;
 class Distribution extends \Google\Model
 {
   /**
-   * Unknown architecture.
-   */
-  public const ARCHITECTURE_ARCHITECTURE_UNSPECIFIED = 'ARCHITECTURE_UNSPECIFIED';
-  /**
-   * X86 architecture.
-   */
-  public const ARCHITECTURE_X86 = 'X86';
-  /**
-   * X64 architecture.
-   */
-  public const ARCHITECTURE_X64 = 'X64';
-  /**
-   * The CPU architecture for which packages in this distribution channel were
-   * built.
-   *
    * @var string
    */
   public $architecture;
   /**
-   * Required. The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
-   * denoting the package manager version distributing a package.
-   *
    * @var string
    */
   public $cpeUri;
   /**
-   * The distribution channel-specific description of this package.
-   *
    * @var string
    */
   public $description;
   protected $latestVersionType = Version::class;
   protected $latestVersionDataType = '';
   /**
-   * A freeform string denoting the maintainer of this package.
-   *
    * @var string
    */
   public $maintainer;
   /**
-   * The distribution channel-specific homepage for this package.
-   *
    * @var string
    */
   public $url;
 
   /**
-   * The CPU architecture for which packages in this distribution channel were
-   * built.
-   *
-   * Accepted values: ARCHITECTURE_UNSPECIFIED, X86, X64
-   *
-   * @param self::ARCHITECTURE_* $architecture
+   * @param string
    */
   public function setArchitecture($architecture)
   {
     $this->architecture = $architecture;
   }
   /**
-   * @return self::ARCHITECTURE_*
+   * @return string
    */
   public function getArchitecture()
   {
     return $this->architecture;
   }
   /**
-   * Required. The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
-   * denoting the package manager version distributing a package.
-   *
-   * @param string $cpeUri
+   * @param string
    */
   public function setCpeUri($cpeUri)
   {
@@ -103,9 +71,7 @@ class Distribution extends \Google\Model
     return $this->cpeUri;
   }
   /**
-   * The distribution channel-specific description of this package.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -119,9 +85,7 @@ class Distribution extends \Google\Model
     return $this->description;
   }
   /**
-   * The latest available version of this package in this distribution channel.
-   *
-   * @param Version $latestVersion
+   * @param Version
    */
   public function setLatestVersion(Version $latestVersion)
   {
@@ -135,9 +99,7 @@ class Distribution extends \Google\Model
     return $this->latestVersion;
   }
   /**
-   * A freeform string denoting the maintainer of this package.
-   *
-   * @param string $maintainer
+   * @param string
    */
   public function setMaintainer($maintainer)
   {
@@ -151,9 +113,7 @@ class Distribution extends \Google\Model
     return $this->maintainer;
   }
   /**
-   * The distribution channel-specific homepage for this package.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

@@ -33,7 +33,7 @@ class NodeTemplateNodeTypeFlexibility extends \Google\Model
   public $memory;
 
   /**
-   * @param string $cpus
+   * @param string
    */
   public function setCpus($cpus)
   {
@@ -47,7 +47,7 @@ class NodeTemplateNodeTypeFlexibility extends \Google\Model
     return $this->cpus;
   }
   /**
-   * @param string $localSsd
+   * @param string
    */
   public function setLocalSsd($localSsd)
   {
@@ -61,7 +61,7 @@ class NodeTemplateNodeTypeFlexibility extends \Google\Model
     return $this->localSsd;
   }
   /**
-   * @param string $memory
+   * @param string
    */
   public function setMemory($memory)
   {

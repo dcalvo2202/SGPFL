@@ -22,22 +22,16 @@ class GoogleCloudAiplatformV1SchemaTimeSeriesDatasetMetadata extends \Google\Mod
   protected $inputConfigType = GoogleCloudAiplatformV1SchemaTimeSeriesDatasetMetadataInputConfig::class;
   protected $inputConfigDataType = '';
   /**
-   * The column name of the time column that identifies time order in the time
-   * series.
-   *
    * @var string
    */
   public $timeColumn;
   /**
-   * The column name of the time series identifier column that identifies the
-   * time series.
-   *
    * @var string
    */
   public $timeSeriesIdentifierColumn;
 
   /**
-   * @param GoogleCloudAiplatformV1SchemaTimeSeriesDatasetMetadataInputConfig $inputConfig
+   * @param GoogleCloudAiplatformV1SchemaTimeSeriesDatasetMetadataInputConfig
    */
   public function setInputConfig(GoogleCloudAiplatformV1SchemaTimeSeriesDatasetMetadataInputConfig $inputConfig)
   {
@@ -51,10 +45,7 @@ class GoogleCloudAiplatformV1SchemaTimeSeriesDatasetMetadata extends \Google\Mod
     return $this->inputConfig;
   }
   /**
-   * The column name of the time column that identifies time order in the time
-   * series.
-   *
-   * @param string $timeColumn
+   * @param string
    */
   public function setTimeColumn($timeColumn)
   {
@@ -68,10 +59,7 @@ class GoogleCloudAiplatformV1SchemaTimeSeriesDatasetMetadata extends \Google\Mod
     return $this->timeColumn;
   }
   /**
-   * The column name of the time series identifier column that identifies the
-   * time series.
-   *
-   * @param string $timeSeriesIdentifierColumn
+   * @param string
    */
   public function setTimeSeriesIdentifierColumn($timeSeriesIdentifierColumn)
   {

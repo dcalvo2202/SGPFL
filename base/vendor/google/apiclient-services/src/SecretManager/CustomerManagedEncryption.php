@@ -20,26 +20,12 @@ namespace Google\Service\SecretManager;
 class CustomerManagedEncryption extends \Google\Model
 {
   /**
-   * Required. The resource name of the Cloud KMS CryptoKey used to encrypt
-   * secret payloads. For secrets using the UserManaged replication policy type,
-   * Cloud KMS CryptoKeys must reside in the same location as the replica
-   * location. For secrets using the Automatic replication policy type, Cloud
-   * KMS CryptoKeys must reside in `global`. The expected format is
-   * `projects/locations/keyRings/cryptoKeys`.
-   *
    * @var string
    */
   public $kmsKeyName;
 
   /**
-   * Required. The resource name of the Cloud KMS CryptoKey used to encrypt
-   * secret payloads. For secrets using the UserManaged replication policy type,
-   * Cloud KMS CryptoKeys must reside in the same location as the replica
-   * location. For secrets using the Automatic replication policy type, Cloud
-   * KMS CryptoKeys must reside in `global`. The expected format is
-   * `projects/locations/keyRings/cryptoKeys`.
-   *
-   * @param string $kmsKeyName
+   * @param string
    */
   public function setKmsKeyName($kmsKeyName)
   {

@@ -19,71 +19,38 @@ namespace Google\Service\DisplayVideo;
 
 class CustomBiddingScript extends \Google\Collection
 {
-  /**
-   * The script state is not specified or is unknown in this version.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The script has been accepted for scoring impressions.
-   */
-  public const STATE_ACCEPTED = 'ACCEPTED';
-  /**
-   * The script has been rejected by backend pipelines. It may have errors.
-   */
-  public const STATE_REJECTED = 'REJECTED';
-  /**
-   * The script is being processed for backend pipelines.
-   */
-  public const STATE_PENDING = 'PENDING';
   protected $collection_key = 'errors';
   /**
-   * Output only. Whether the script is currently being used for scoring by the
-   * parent algorithm.
-   *
    * @var bool
    */
   public $active;
   /**
-   * Output only. The time when the script was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. The unique ID of the custom bidding algorithm the script
-   * belongs to.
-   *
    * @var string
    */
   public $customBiddingAlgorithmId;
   /**
-   * Output only. The unique ID of the custom bidding script.
-   *
    * @var string
    */
   public $customBiddingScriptId;
   protected $errorsType = ScriptError::class;
   protected $errorsDataType = 'array';
   /**
-   * Output only. The resource name of the custom bidding script.
-   *
    * @var string
    */
   public $name;
   protected $scriptType = CustomBiddingScriptRef::class;
   protected $scriptDataType = '';
   /**
-   * Output only. The state of the custom bidding script.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Output only. Whether the script is currently being used for scoring by the
-   * parent algorithm.
-   *
-   * @param bool $active
+   * @param bool
    */
   public function setActive($active)
   {
@@ -97,9 +64,7 @@ class CustomBiddingScript extends \Google\Collection
     return $this->active;
   }
   /**
-   * Output only. The time when the script was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -113,10 +78,7 @@ class CustomBiddingScript extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Output only. The unique ID of the custom bidding algorithm the script
-   * belongs to.
-   *
-   * @param string $customBiddingAlgorithmId
+   * @param string
    */
   public function setCustomBiddingAlgorithmId($customBiddingAlgorithmId)
   {
@@ -130,9 +92,7 @@ class CustomBiddingScript extends \Google\Collection
     return $this->customBiddingAlgorithmId;
   }
   /**
-   * Output only. The unique ID of the custom bidding script.
-   *
-   * @param string $customBiddingScriptId
+   * @param string
    */
   public function setCustomBiddingScriptId($customBiddingScriptId)
   {
@@ -146,10 +106,7 @@ class CustomBiddingScript extends \Google\Collection
     return $this->customBiddingScriptId;
   }
   /**
-   * Output only. Error details of a rejected custom bidding script. This field
-   * will only be populated when state is REJECTED.
-   *
-   * @param ScriptError[] $errors
+   * @param ScriptError[]
    */
   public function setErrors($errors)
   {
@@ -163,9 +120,7 @@ class CustomBiddingScript extends \Google\Collection
     return $this->errors;
   }
   /**
-   * Output only. The resource name of the custom bidding script.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -179,9 +134,7 @@ class CustomBiddingScript extends \Google\Collection
     return $this->name;
   }
   /**
-   * The reference to the uploaded script file.
-   *
-   * @param CustomBiddingScriptRef $script
+   * @param CustomBiddingScriptRef
    */
   public function setScript(CustomBiddingScriptRef $script)
   {
@@ -195,18 +148,14 @@ class CustomBiddingScript extends \Google\Collection
     return $this->script;
   }
   /**
-   * Output only. The state of the custom bidding script.
-   *
-   * Accepted values: STATE_UNSPECIFIED, ACCEPTED, REJECTED, PENDING
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

@@ -21,20 +21,12 @@ class TableFieldSchemaPolicyTags extends \Google\Collection
 {
   protected $collection_key = 'names';
   /**
-   * A list of policy tag resource names. For example,
-   * "projects/1/locations/eu/taxonomies/2/policyTags/3". At most 1 policy tag
-   * is currently allowed.
-   *
    * @var string[]
    */
   public $names;
 
   /**
-   * A list of policy tag resource names. For example,
-   * "projects/1/locations/eu/taxonomies/2/policyTags/3". At most 1 policy tag
-   * is currently allowed.
-   *
-   * @param string[] $names
+   * @param string[]
    */
   public function setNames($names)
   {

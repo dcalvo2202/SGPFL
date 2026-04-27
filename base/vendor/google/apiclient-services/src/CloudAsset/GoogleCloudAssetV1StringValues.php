@@ -21,22 +21,16 @@ class GoogleCloudAssetV1StringValues extends \Google\Collection
 {
   protected $collection_key = 'deniedValues';
   /**
-   * List of values allowed at this resource.
-   *
    * @var string[]
    */
   public $allowedValues;
   /**
-   * List of values denied at this resource.
-   *
    * @var string[]
    */
   public $deniedValues;
 
   /**
-   * List of values allowed at this resource.
-   *
-   * @param string[] $allowedValues
+   * @param string[]
    */
   public function setAllowedValues($allowedValues)
   {
@@ -50,9 +44,7 @@ class GoogleCloudAssetV1StringValues extends \Google\Collection
     return $this->allowedValues;
   }
   /**
-   * List of values denied at this resource.
-   *
-   * @param string[] $deniedValues
+   * @param string[]
    */
   public function setDeniedValues($deniedValues)
   {

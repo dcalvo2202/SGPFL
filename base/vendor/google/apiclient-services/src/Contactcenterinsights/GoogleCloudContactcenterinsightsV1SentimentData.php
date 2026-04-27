@@ -20,24 +20,16 @@ namespace Google\Service\Contactcenterinsights;
 class GoogleCloudContactcenterinsightsV1SentimentData extends \Google\Model
 {
   /**
-   * A non-negative number from 0 to infinity which represents the absolute
-   * magnitude of sentiment regardless of score.
-   *
    * @var float
    */
   public $magnitude;
   /**
-   * The sentiment score between -1.0 (negative) and 1.0 (positive).
-   *
    * @var float
    */
   public $score;
 
   /**
-   * A non-negative number from 0 to infinity which represents the absolute
-   * magnitude of sentiment regardless of score.
-   *
-   * @param float $magnitude
+   * @param float
    */
   public function setMagnitude($magnitude)
   {
@@ -51,9 +43,7 @@ class GoogleCloudContactcenterinsightsV1SentimentData extends \Google\Model
     return $this->magnitude;
   }
   /**
-   * The sentiment score between -1.0 (negative) and 1.0 (positive).
-   *
-   * @param float $score
+   * @param float
    */
   public function setScore($score)
   {

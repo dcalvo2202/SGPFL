@@ -20,30 +20,20 @@ namespace Google\Service\Compute;
 class ShieldedInstanceConfig extends \Google\Model
 {
   /**
-   * Defines whether the instance has integrity monitoring enabled.Enabled by
-   * default.
-   *
    * @var bool
    */
   public $enableIntegrityMonitoring;
   /**
-   * Defines whether the instance has Secure Boot enabled.Disabled by default.
-   *
    * @var bool
    */
   public $enableSecureBoot;
   /**
-   * Defines whether the instance has the vTPM enabled.Enabled by default.
-   *
    * @var bool
    */
   public $enableVtpm;
 
   /**
-   * Defines whether the instance has integrity monitoring enabled.Enabled by
-   * default.
-   *
-   * @param bool $enableIntegrityMonitoring
+   * @param bool
    */
   public function setEnableIntegrityMonitoring($enableIntegrityMonitoring)
   {
@@ -57,9 +47,7 @@ class ShieldedInstanceConfig extends \Google\Model
     return $this->enableIntegrityMonitoring;
   }
   /**
-   * Defines whether the instance has Secure Boot enabled.Disabled by default.
-   *
-   * @param bool $enableSecureBoot
+   * @param bool
    */
   public function setEnableSecureBoot($enableSecureBoot)
   {
@@ -73,9 +61,7 @@ class ShieldedInstanceConfig extends \Google\Model
     return $this->enableSecureBoot;
   }
   /**
-   * Defines whether the instance has the vTPM enabled.Enabled by default.
-   *
-   * @param bool $enableVtpm
+   * @param bool
    */
   public function setEnableVtpm($enableVtpm)
   {

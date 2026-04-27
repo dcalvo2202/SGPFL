@@ -20,94 +20,43 @@ namespace Google\Service\Gmail;
 class Message extends \Google\Collection
 {
   protected $collection_key = 'labelIds';
-  protected $classificationLabelValuesType = ClassificationLabelValue::class;
-  protected $classificationLabelValuesDataType = 'array';
   /**
-   * The ID of the last history record that modified this message.
-   *
    * @var string
    */
   public $historyId;
   /**
-   * The immutable ID of the message.
-   *
    * @var string
    */
   public $id;
   /**
-   * The internal message creation timestamp (epoch ms), which determines
-   * ordering in the inbox. For normal SMTP-received email, this represents the
-   * time the message was originally accepted by Google, which is more reliable
-   * than the `Date` header. However, for API-migrated mail, it can be
-   * configured by client to be based on the `Date` header.
-   *
    * @var string
    */
   public $internalDate;
   /**
-   * List of IDs of labels applied to this message.
-   *
    * @var string[]
    */
   public $labelIds;
   protected $payloadType = MessagePart::class;
   protected $payloadDataType = '';
   /**
-   * The entire email message in an RFC 2822 formatted and base64url encoded
-   * string. Returned in `messages.get` and `drafts.get` responses when the
-   * `format=RAW` parameter is supplied.
-   *
    * @var string
    */
   public $raw;
   /**
-   * Estimated size in bytes of the message.
-   *
    * @var int
    */
   public $sizeEstimate;
   /**
-   * A short part of the message text.
-   *
    * @var string
    */
   public $snippet;
   /**
-   * The ID of the thread the message belongs to. To add a message or draft to a
-   * thread, the following criteria must be met: 1. The requested `threadId`
-   * must be specified on the `Message` or `Draft.Message` you supply with your
-   * request. 2. The `References` and `In-Reply-To` headers must be set in
-   * compliance with the [RFC 2822](https://tools.ietf.org/html/rfc2822)
-   * standard. 3. The `Subject` headers must match.
-   *
    * @var string
    */
   public $threadId;
 
   /**
-   * Classification Label values on the message. Available Classification Label
-   * schemas can be queried using the Google Drive Labels API. Each
-   * classification label ID must be unique. If duplicate IDs are provided, only
-   * one will be retained, and the selection is arbitrary. Only used for Google
-   * Workspace accounts.
-   *
-   * @param ClassificationLabelValue[] $classificationLabelValues
-   */
-  public function setClassificationLabelValues($classificationLabelValues)
-  {
-    $this->classificationLabelValues = $classificationLabelValues;
-  }
-  /**
-   * @return ClassificationLabelValue[]
-   */
-  public function getClassificationLabelValues()
-  {
-    return $this->classificationLabelValues;
-  }
-  /**
-   * The ID of the last history record that modified this message.
-   *
-   * @param string $historyId
+   * @param string
    */
   public function setHistoryId($historyId)
   {
@@ -121,9 +70,7 @@ class Message extends \Google\Collection
     return $this->historyId;
   }
   /**
-   * The immutable ID of the message.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -137,13 +84,7 @@ class Message extends \Google\Collection
     return $this->id;
   }
   /**
-   * The internal message creation timestamp (epoch ms), which determines
-   * ordering in the inbox. For normal SMTP-received email, this represents the
-   * time the message was originally accepted by Google, which is more reliable
-   * than the `Date` header. However, for API-migrated mail, it can be
-   * configured by client to be based on the `Date` header.
-   *
-   * @param string $internalDate
+   * @param string
    */
   public function setInternalDate($internalDate)
   {
@@ -157,9 +98,7 @@ class Message extends \Google\Collection
     return $this->internalDate;
   }
   /**
-   * List of IDs of labels applied to this message.
-   *
-   * @param string[] $labelIds
+   * @param string[]
    */
   public function setLabelIds($labelIds)
   {
@@ -173,9 +112,7 @@ class Message extends \Google\Collection
     return $this->labelIds;
   }
   /**
-   * The parsed email structure in the message parts.
-   *
-   * @param MessagePart $payload
+   * @param MessagePart
    */
   public function setPayload(MessagePart $payload)
   {
@@ -189,11 +126,7 @@ class Message extends \Google\Collection
     return $this->payload;
   }
   /**
-   * The entire email message in an RFC 2822 formatted and base64url encoded
-   * string. Returned in `messages.get` and `drafts.get` responses when the
-   * `format=RAW` parameter is supplied.
-   *
-   * @param string $raw
+   * @param string
    */
   public function setRaw($raw)
   {
@@ -207,9 +140,7 @@ class Message extends \Google\Collection
     return $this->raw;
   }
   /**
-   * Estimated size in bytes of the message.
-   *
-   * @param int $sizeEstimate
+   * @param int
    */
   public function setSizeEstimate($sizeEstimate)
   {
@@ -223,9 +154,7 @@ class Message extends \Google\Collection
     return $this->sizeEstimate;
   }
   /**
-   * A short part of the message text.
-   *
-   * @param string $snippet
+   * @param string
    */
   public function setSnippet($snippet)
   {
@@ -239,14 +168,7 @@ class Message extends \Google\Collection
     return $this->snippet;
   }
   /**
-   * The ID of the thread the message belongs to. To add a message or draft to a
-   * thread, the following criteria must be met: 1. The requested `threadId`
-   * must be specified on the `Message` or `Draft.Message` you supply with your
-   * request. 2. The `References` and `In-Reply-To` headers must be set in
-   * compliance with the [RFC 2822](https://tools.ietf.org/html/rfc2822)
-   * standard. 3. The `Subject` headers must match.
-   *
-   * @param string $threadId
+   * @param string
    */
   public function setThreadId($threadId)
   {

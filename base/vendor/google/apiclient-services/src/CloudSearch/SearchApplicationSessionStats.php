@@ -22,17 +22,12 @@ class SearchApplicationSessionStats extends \Google\Model
   protected $dateType = Date::class;
   protected $dateDataType = '';
   /**
-   * The count of search sessions on the day
-   *
    * @var string
    */
   public $searchSessionsCount;
 
   /**
-   * The date for which session stats were calculated. Stats are calculated on
-   * the following day, close to midnight PST, and then returned.
-   *
-   * @param Date $date
+   * @param Date
    */
   public function setDate(Date $date)
   {
@@ -46,9 +41,7 @@ class SearchApplicationSessionStats extends \Google\Model
     return $this->date;
   }
   /**
-   * The count of search sessions on the day
-   *
-   * @param string $searchSessionsCount
+   * @param string
    */
   public function setSearchSessionsCount($searchSessionsCount)
   {

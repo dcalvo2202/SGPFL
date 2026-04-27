@@ -25,9 +25,7 @@ class PhotoResponse extends \Google\Model
   protected $statusDataType = '';
 
   /**
-   * The Photo resource, if the request was successful.
-   *
-   * @param Photo $photo
+   * @param Photo
    */
   public function setPhoto(Photo $photo)
   {
@@ -41,10 +39,7 @@ class PhotoResponse extends \Google\Model
     return $this->photo;
   }
   /**
-   * The status for the operation to get or update a single photo in the batch
-   * request.
-   *
-   * @param Status $status
+   * @param Status
    */
   public function setStatus(Status $status)
   {

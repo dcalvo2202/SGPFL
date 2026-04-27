@@ -20,20 +20,14 @@ namespace Google\Service\YouTube;
 class SubscriptionSnippet extends \Google\Model
 {
   /**
-   * The ID that YouTube uses to uniquely identify the subscriber's channel.
-   *
    * @var string
    */
   public $channelId;
   /**
-   * The subscription's details.
-   *
    * @var string
    */
   public $description;
   /**
-   * The date and time that the subscription was created.
-   *
    * @var string
    */
   public $publishedAt;
@@ -42,16 +36,12 @@ class SubscriptionSnippet extends \Google\Model
   protected $thumbnailsType = ThumbnailDetails::class;
   protected $thumbnailsDataType = '';
   /**
-   * The subscription's title.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * The ID that YouTube uses to uniquely identify the subscriber's channel.
-   *
-   * @param string $channelId
+   * @param string
    */
   public function setChannelId($channelId)
   {
@@ -65,9 +55,7 @@ class SubscriptionSnippet extends \Google\Model
     return $this->channelId;
   }
   /**
-   * The subscription's details.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -81,9 +69,7 @@ class SubscriptionSnippet extends \Google\Model
     return $this->description;
   }
   /**
-   * The date and time that the subscription was created.
-   *
-   * @param string $publishedAt
+   * @param string
    */
   public function setPublishedAt($publishedAt)
   {
@@ -97,10 +83,7 @@ class SubscriptionSnippet extends \Google\Model
     return $this->publishedAt;
   }
   /**
-   * The id object contains information about the channel that the user
-   * subscribed to.
-   *
-   * @param ResourceId $resourceId
+   * @param ResourceId
    */
   public function setResourceId(ResourceId $resourceId)
   {
@@ -114,11 +97,7 @@ class SubscriptionSnippet extends \Google\Model
     return $this->resourceId;
   }
   /**
-   * A map of thumbnail images associated with the video. For each object in the
-   * map, the key is the name of the thumbnail image, and the value is an object
-   * that contains other information about the thumbnail.
-   *
-   * @param ThumbnailDetails $thumbnails
+   * @param ThumbnailDetails
    */
   public function setThumbnails(ThumbnailDetails $thumbnails)
   {
@@ -132,9 +111,7 @@ class SubscriptionSnippet extends \Google\Model
     return $this->thumbnails;
   }
   /**
-   * The subscription's title.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

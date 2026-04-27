@@ -20,16 +20,12 @@ namespace Google\Service\GKEOnPrem;
 class VmwareAutoRepairConfig extends \Google\Model
 {
   /**
-   * Whether auto repair is enabled.
-   *
    * @var bool
    */
   public $enabled;
 
   /**
-   * Whether auto repair is enabled.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {

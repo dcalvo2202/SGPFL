@@ -19,183 +19,106 @@ namespace Google\Service\Compute;
 
 class Operation extends \Google\Collection
 {
-  public const STATUS_DONE = 'DONE';
-  public const STATUS_PENDING = 'PENDING';
-  public const STATUS_RUNNING = 'RUNNING';
   protected $collection_key = 'warnings';
   /**
-   * [Output Only] The value of `requestId` if you provided it in the request.
-   * Not present otherwise.
-   *
    * @var string
    */
   public $clientOperationId;
   /**
-   * [Deprecated] This field is deprecated.
-   *
    * @var string
    */
   public $creationTimestamp;
   /**
-   * [Output Only] A textual description of the operation, which is set when the
-   * operation is created.
-   *
    * @var string
    */
   public $description;
   /**
-   * [Output Only] The time that this operation was completed. This value is
-   * inRFC3339 text format.
-   *
    * @var string
    */
   public $endTime;
   protected $errorType = OperationError::class;
   protected $errorDataType = '';
-  protected $getVersionOperationMetadataType = GetVersionOperationMetadata::class;
-  protected $getVersionOperationMetadataDataType = '';
   /**
-   * [Output Only] If the operation fails, this field contains the HTTP error
-   * message that was returned, such as `NOT FOUND`.
-   *
    * @var string
    */
   public $httpErrorMessage;
   /**
-   * [Output Only] If the operation fails, this field contains the HTTP error
-   * status code that was returned. For example, a `404` means the resource was
-   * not found.
-   *
    * @var int
    */
   public $httpErrorStatusCode;
   /**
-   * [Output Only] The unique identifier for the operation. This identifier is
-   * defined by the server.
-   *
    * @var string
    */
   public $id;
   /**
-   * [Output Only] The time that this operation was requested. This value is
-   * inRFC3339 text format.
-   *
    * @var string
    */
   public $insertTime;
   protected $instancesBulkInsertOperationMetadataType = InstancesBulkInsertOperationMetadata::class;
   protected $instancesBulkInsertOperationMetadataDataType = '';
   /**
-   * Output only. [Output Only] Type of the resource. Always `compute#operation`
-   * for Operation resources.
-   *
    * @var string
    */
   public $kind;
   /**
-   * [Output Only] Name of the operation.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. [Output Only] An ID that represents a group of operations,
-   * such as when a group of operations results from a `bulkInsert` API request.
-   *
    * @var string
    */
   public $operationGroupId;
   /**
-   * [Output Only] The type of operation, such as `insert`, `update`, or
-   * `delete`, and so on.
-   *
    * @var string
    */
   public $operationType;
   /**
-   * [Output Only] An optional progress indicator that ranges from 0 to 100.
-   * There is no requirement that this be linear or support any granularity of
-   * operations. This should not be used to guess when the operation will be
-   * complete. This number should monotonically increase as the operation
-   * progresses.
-   *
    * @var int
    */
   public $progress;
   /**
-   * [Output Only] The URL of the region where the operation resides. Only
-   * applicable when performing regional operations.
-   *
    * @var string
    */
   public $region;
   /**
-   * [Output Only] Server-defined URL for the resource.
-   *
    * @var string
    */
   public $selfLink;
   protected $setCommonInstanceMetadataOperationMetadataType = SetCommonInstanceMetadataOperationMetadata::class;
   protected $setCommonInstanceMetadataOperationMetadataDataType = '';
   /**
-   * [Output Only] The time that this operation was started by the server. This
-   * value is inRFC3339 text format.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * [Output Only] The status of the operation, which can be one of the
-   * following: `PENDING`, `RUNNING`, or `DONE`.
-   *
    * @var string
    */
   public $status;
   /**
-   * [Output Only] An optional textual description of the current status of the
-   * operation.
-   *
    * @var string
    */
   public $statusMessage;
   /**
-   * [Output Only] The unique target ID, which identifies a specific incarnation
-   * of the target resource.
-   *
    * @var string
    */
   public $targetId;
   /**
-   * [Output Only] The URL of the resource that the operation modifies. For
-   * operations related to creating a snapshot, this points to the disk that the
-   * snapshot was created from.
-   *
    * @var string
    */
   public $targetLink;
   /**
-   * [Output Only] User who requested the operation, for example:
-   * `user@example.com` or `alice_smith_identifier
-   * (global/workforcePools/example-com-us-employees)`.
-   *
    * @var string
    */
   public $user;
   protected $warningsType = OperationWarnings::class;
   protected $warningsDataType = 'array';
   /**
-   * [Output Only] The URL of the zone where the operation resides. Only
-   * applicable when performing per-zone operations.
-   *
    * @var string
    */
   public $zone;
 
   /**
-   * [Output Only] The value of `requestId` if you provided it in the request.
-   * Not present otherwise.
-   *
-   * @param string $clientOperationId
+   * @param string
    */
   public function setClientOperationId($clientOperationId)
   {
@@ -209,9 +132,7 @@ class Operation extends \Google\Collection
     return $this->clientOperationId;
   }
   /**
-   * [Deprecated] This field is deprecated.
-   *
-   * @param string $creationTimestamp
+   * @param string
    */
   public function setCreationTimestamp($creationTimestamp)
   {
@@ -225,10 +146,7 @@ class Operation extends \Google\Collection
     return $this->creationTimestamp;
   }
   /**
-   * [Output Only] A textual description of the operation, which is set when the
-   * operation is created.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -242,10 +160,7 @@ class Operation extends \Google\Collection
     return $this->description;
   }
   /**
-   * [Output Only] The time that this operation was completed. This value is
-   * inRFC3339 text format.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -259,10 +174,7 @@ class Operation extends \Google\Collection
     return $this->endTime;
   }
   /**
-   * [Output Only] If errors are generated during processing of the operation,
-   * this field will be populated.
-   *
-   * @param OperationError $error
+   * @param OperationError
    */
   public function setError(OperationError $error)
   {
@@ -276,24 +188,7 @@ class Operation extends \Google\Collection
     return $this->error;
   }
   /**
-   * @param GetVersionOperationMetadata $getVersionOperationMetadata
-   */
-  public function setGetVersionOperationMetadata(GetVersionOperationMetadata $getVersionOperationMetadata)
-  {
-    $this->getVersionOperationMetadata = $getVersionOperationMetadata;
-  }
-  /**
-   * @return GetVersionOperationMetadata
-   */
-  public function getGetVersionOperationMetadata()
-  {
-    return $this->getVersionOperationMetadata;
-  }
-  /**
-   * [Output Only] If the operation fails, this field contains the HTTP error
-   * message that was returned, such as `NOT FOUND`.
-   *
-   * @param string $httpErrorMessage
+   * @param string
    */
   public function setHttpErrorMessage($httpErrorMessage)
   {
@@ -307,11 +202,7 @@ class Operation extends \Google\Collection
     return $this->httpErrorMessage;
   }
   /**
-   * [Output Only] If the operation fails, this field contains the HTTP error
-   * status code that was returned. For example, a `404` means the resource was
-   * not found.
-   *
-   * @param int $httpErrorStatusCode
+   * @param int
    */
   public function setHttpErrorStatusCode($httpErrorStatusCode)
   {
@@ -325,10 +216,7 @@ class Operation extends \Google\Collection
     return $this->httpErrorStatusCode;
   }
   /**
-   * [Output Only] The unique identifier for the operation. This identifier is
-   * defined by the server.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -342,10 +230,7 @@ class Operation extends \Google\Collection
     return $this->id;
   }
   /**
-   * [Output Only] The time that this operation was requested. This value is
-   * inRFC3339 text format.
-   *
-   * @param string $insertTime
+   * @param string
    */
   public function setInsertTime($insertTime)
   {
@@ -359,7 +244,7 @@ class Operation extends \Google\Collection
     return $this->insertTime;
   }
   /**
-   * @param InstancesBulkInsertOperationMetadata $instancesBulkInsertOperationMetadata
+   * @param InstancesBulkInsertOperationMetadata
    */
   public function setInstancesBulkInsertOperationMetadata(InstancesBulkInsertOperationMetadata $instancesBulkInsertOperationMetadata)
   {
@@ -373,10 +258,7 @@ class Operation extends \Google\Collection
     return $this->instancesBulkInsertOperationMetadata;
   }
   /**
-   * Output only. [Output Only] Type of the resource. Always `compute#operation`
-   * for Operation resources.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -390,9 +272,7 @@ class Operation extends \Google\Collection
     return $this->kind;
   }
   /**
-   * [Output Only] Name of the operation.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -406,10 +286,7 @@ class Operation extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. [Output Only] An ID that represents a group of operations,
-   * such as when a group of operations results from a `bulkInsert` API request.
-   *
-   * @param string $operationGroupId
+   * @param string
    */
   public function setOperationGroupId($operationGroupId)
   {
@@ -423,10 +300,7 @@ class Operation extends \Google\Collection
     return $this->operationGroupId;
   }
   /**
-   * [Output Only] The type of operation, such as `insert`, `update`, or
-   * `delete`, and so on.
-   *
-   * @param string $operationType
+   * @param string
    */
   public function setOperationType($operationType)
   {
@@ -440,13 +314,7 @@ class Operation extends \Google\Collection
     return $this->operationType;
   }
   /**
-   * [Output Only] An optional progress indicator that ranges from 0 to 100.
-   * There is no requirement that this be linear or support any granularity of
-   * operations. This should not be used to guess when the operation will be
-   * complete. This number should monotonically increase as the operation
-   * progresses.
-   *
-   * @param int $progress
+   * @param int
    */
   public function setProgress($progress)
   {
@@ -460,10 +328,7 @@ class Operation extends \Google\Collection
     return $this->progress;
   }
   /**
-   * [Output Only] The URL of the region where the operation resides. Only
-   * applicable when performing regional operations.
-   *
-   * @param string $region
+   * @param string
    */
   public function setRegion($region)
   {
@@ -477,9 +342,7 @@ class Operation extends \Google\Collection
     return $this->region;
   }
   /**
-   * [Output Only] Server-defined URL for the resource.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -493,11 +356,7 @@ class Operation extends \Google\Collection
     return $this->selfLink;
   }
   /**
-   * Output only. [Output Only] If the operation is for
-   * projects.setCommonInstanceMetadata, this field will contain information on
-   * all underlying zonal actions and their state.
-   *
-   * @param SetCommonInstanceMetadataOperationMetadata $setCommonInstanceMetadataOperationMetadata
+   * @param SetCommonInstanceMetadataOperationMetadata
    */
   public function setSetCommonInstanceMetadataOperationMetadata(SetCommonInstanceMetadataOperationMetadata $setCommonInstanceMetadataOperationMetadata)
   {
@@ -511,10 +370,7 @@ class Operation extends \Google\Collection
     return $this->setCommonInstanceMetadataOperationMetadata;
   }
   /**
-   * [Output Only] The time that this operation was started by the server. This
-   * value is inRFC3339 text format.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -528,29 +384,21 @@ class Operation extends \Google\Collection
     return $this->startTime;
   }
   /**
-   * [Output Only] The status of the operation, which can be one of the
-   * following: `PENDING`, `RUNNING`, or `DONE`.
-   *
-   * Accepted values: DONE, PENDING, RUNNING
-   *
-   * @param self::STATUS_* $status
+   * @param string
    */
   public function setStatus($status)
   {
     $this->status = $status;
   }
   /**
-   * @return self::STATUS_*
+   * @return string
    */
   public function getStatus()
   {
     return $this->status;
   }
   /**
-   * [Output Only] An optional textual description of the current status of the
-   * operation.
-   *
-   * @param string $statusMessage
+   * @param string
    */
   public function setStatusMessage($statusMessage)
   {
@@ -564,10 +412,7 @@ class Operation extends \Google\Collection
     return $this->statusMessage;
   }
   /**
-   * [Output Only] The unique target ID, which identifies a specific incarnation
-   * of the target resource.
-   *
-   * @param string $targetId
+   * @param string
    */
   public function setTargetId($targetId)
   {
@@ -581,11 +426,7 @@ class Operation extends \Google\Collection
     return $this->targetId;
   }
   /**
-   * [Output Only] The URL of the resource that the operation modifies. For
-   * operations related to creating a snapshot, this points to the disk that the
-   * snapshot was created from.
-   *
-   * @param string $targetLink
+   * @param string
    */
   public function setTargetLink($targetLink)
   {
@@ -599,11 +440,7 @@ class Operation extends \Google\Collection
     return $this->targetLink;
   }
   /**
-   * [Output Only] User who requested the operation, for example:
-   * `user@example.com` or `alice_smith_identifier
-   * (global/workforcePools/example-com-us-employees)`.
-   *
-   * @param string $user
+   * @param string
    */
   public function setUser($user)
   {
@@ -617,10 +454,7 @@ class Operation extends \Google\Collection
     return $this->user;
   }
   /**
-   * [Output Only] If warning messages are generated during processing of the
-   * operation, this field will be populated.
-   *
-   * @param OperationWarnings[] $warnings
+   * @param OperationWarnings[]
    */
   public function setWarnings($warnings)
   {
@@ -634,10 +468,7 @@ class Operation extends \Google\Collection
     return $this->warnings;
   }
   /**
-   * [Output Only] The URL of the zone where the operation resides. Only
-   * applicable when performing per-zone operations.
-   *
-   * @param string $zone
+   * @param string
    */
   public function setZone($zone)
   {

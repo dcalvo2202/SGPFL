@@ -24,9 +24,7 @@ class GoogleCloudChannelV1alpha1TransferEntitlementsResponse extends \Google\Col
   protected $entitlementsDataType = 'array';
 
   /**
-   * The transferred entitlements.
-   *
-   * @param GoogleCloudChannelV1alpha1Entitlement[] $entitlements
+   * @param GoogleCloudChannelV1alpha1Entitlement[]
    */
   public function setEntitlements($entitlements)
   {

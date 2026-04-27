@@ -22,45 +22,24 @@ class SetAddonsConfigRequest extends \Google\Model
   protected $addonsConfigType = AddonsConfig::class;
   protected $addonsConfigDataType = '';
   /**
-   * Deprecated. The name of the cluster to upgrade. This field has been
-   * deprecated and replaced by the name field.
-   *
-   * @deprecated
    * @var string
    */
   public $clusterId;
   /**
-   * The name (project, location, cluster) of the cluster to set addons.
-   * Specified in the format `projects/locations/clusters`.
-   *
    * @var string
    */
   public $name;
   /**
-   * Deprecated. The Google Developers Console [project ID or project
-   * number](https://cloud.google.com/resource-manager/docs/creating-managing-
-   * projects). This field has been deprecated and replaced by the name field.
-   *
-   * @deprecated
    * @var string
    */
   public $projectId;
   /**
-   * Deprecated. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-   * cluster resides. This field has been deprecated and replaced by the name
-   * field.
-   *
-   * @deprecated
    * @var string
    */
   public $zone;
 
   /**
-   * Required. The desired configurations for the various addons available to
-   * run in the cluster.
-   *
-   * @param AddonsConfig $addonsConfig
+   * @param AddonsConfig
    */
   public function setAddonsConfig(AddonsConfig $addonsConfig)
   {
@@ -74,18 +53,13 @@ class SetAddonsConfigRequest extends \Google\Model
     return $this->addonsConfig;
   }
   /**
-   * Deprecated. The name of the cluster to upgrade. This field has been
-   * deprecated and replaced by the name field.
-   *
-   * @deprecated
-   * @param string $clusterId
+   * @param string
    */
   public function setClusterId($clusterId)
   {
     $this->clusterId = $clusterId;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getClusterId()
@@ -93,10 +67,7 @@ class SetAddonsConfigRequest extends \Google\Model
     return $this->clusterId;
   }
   /**
-   * The name (project, location, cluster) of the cluster to set addons.
-   * Specified in the format `projects/locations/clusters`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -110,19 +81,13 @@ class SetAddonsConfigRequest extends \Google\Model
     return $this->name;
   }
   /**
-   * Deprecated. The Google Developers Console [project ID or project
-   * number](https://cloud.google.com/resource-manager/docs/creating-managing-
-   * projects). This field has been deprecated and replaced by the name field.
-   *
-   * @deprecated
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {
     $this->projectId = $projectId;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getProjectId()
@@ -130,20 +95,13 @@ class SetAddonsConfigRequest extends \Google\Model
     return $this->projectId;
   }
   /**
-   * Deprecated. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-   * cluster resides. This field has been deprecated and replaced by the name
-   * field.
-   *
-   * @deprecated
-   * @param string $zone
+   * @param string
    */
   public function setZone($zone)
   {
     $this->zone = $zone;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getZone()

@@ -20,27 +20,16 @@ namespace Google\Service\Walletobjects;
 class ActivationOptions extends \Google\Model
 {
   /**
-   * HTTPS URL that supports REST semantics. Would be used for requesting
-   * activation from partners for given valuable, triggered by the users.
-   *
    * @var string
    */
   public $activationUrl;
   /**
-   * Flag to allow users to make activation call from different device. This
-   * allows client to render the activation button enabled even if the
-   * activationStatus is ACTIVATED but the requested device is different than
-   * the current device.
-   *
    * @var bool
    */
   public $allowReactivation;
 
   /**
-   * HTTPS URL that supports REST semantics. Would be used for requesting
-   * activation from partners for given valuable, triggered by the users.
-   *
-   * @param string $activationUrl
+   * @param string
    */
   public function setActivationUrl($activationUrl)
   {
@@ -54,12 +43,7 @@ class ActivationOptions extends \Google\Model
     return $this->activationUrl;
   }
   /**
-   * Flag to allow users to make activation call from different device. This
-   * allows client to render the activation button enabled even if the
-   * activationStatus is ACTIVATED but the requested device is different than
-   * the current device.
-   *
-   * @param bool $allowReactivation
+   * @param bool
    */
   public function setAllowReactivation($allowReactivation)
   {

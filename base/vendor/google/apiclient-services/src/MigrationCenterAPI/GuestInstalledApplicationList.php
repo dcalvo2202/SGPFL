@@ -24,9 +24,7 @@ class GuestInstalledApplicationList extends \Google\Collection
   protected $entriesDataType = 'array';
 
   /**
-   * Application entries.
-   *
-   * @param GuestInstalledApplication[] $entries
+   * @param GuestInstalledApplication[]
    */
   public function setEntries($entries)
   {

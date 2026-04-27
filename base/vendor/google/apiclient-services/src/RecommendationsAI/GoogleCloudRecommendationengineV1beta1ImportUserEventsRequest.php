@@ -24,20 +24,12 @@ class GoogleCloudRecommendationengineV1beta1ImportUserEventsRequest extends \Goo
   protected $inputConfigType = GoogleCloudRecommendationengineV1beta1InputConfig::class;
   protected $inputConfigDataType = '';
   /**
-   * Optional. Unique identifier provided by client, within the ancestor dataset
-   * scope. Ensures idempotency for expensive long running operations. Server-
-   * generated if unspecified. Up to 128 characters long. This is returned as
-   * google.longrunning.Operation.name in the response. Note that this field
-   * must not be set if the desired input config is catalog_inline_source.
-   *
    * @var string
    */
   public $requestId;
 
   /**
-   * Optional. The desired location of errors incurred during the Import.
-   *
-   * @param GoogleCloudRecommendationengineV1beta1ImportErrorsConfig $errorsConfig
+   * @param GoogleCloudRecommendationengineV1beta1ImportErrorsConfig
    */
   public function setErrorsConfig(GoogleCloudRecommendationengineV1beta1ImportErrorsConfig $errorsConfig)
   {
@@ -51,9 +43,7 @@ class GoogleCloudRecommendationengineV1beta1ImportUserEventsRequest extends \Goo
     return $this->errorsConfig;
   }
   /**
-   * Required. The desired input location of the data.
-   *
-   * @param GoogleCloudRecommendationengineV1beta1InputConfig $inputConfig
+   * @param GoogleCloudRecommendationengineV1beta1InputConfig
    */
   public function setInputConfig(GoogleCloudRecommendationengineV1beta1InputConfig $inputConfig)
   {
@@ -67,13 +57,7 @@ class GoogleCloudRecommendationengineV1beta1ImportUserEventsRequest extends \Goo
     return $this->inputConfig;
   }
   /**
-   * Optional. Unique identifier provided by client, within the ancestor dataset
-   * scope. Ensures idempotency for expensive long running operations. Server-
-   * generated if unspecified. Up to 128 characters long. This is returned as
-   * google.longrunning.Operation.name in the response. Note that this field
-   * must not be set if the desired input config is catalog_inline_source.
-   *
-   * @param string $requestId
+   * @param string
    */
   public function setRequestId($requestId)
   {

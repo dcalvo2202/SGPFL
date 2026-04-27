@@ -45,9 +45,6 @@ class Lodging extends \Google\Collection
   protected $metadataType = LodgingMetadata::class;
   protected $metadataDataType = '';
   /**
-   * Required. Google identifier for this location in the form:
-   * `locations/{location_id}/lodging`
-   *
    * @var string
    */
   public $name;
@@ -73,10 +70,7 @@ class Lodging extends \Google\Collection
   protected $wellnessDataType = '';
 
   /**
-   * Physical adaptations made to the property in consideration of varying
-   * levels of human physical ability.
-   *
-   * @param Accessibility $accessibility
+   * @param Accessibility
    */
   public function setAccessibility(Accessibility $accessibility)
   {
@@ -90,9 +84,7 @@ class Lodging extends \Google\Collection
     return $this->accessibility;
   }
   /**
-   * Amenities and features related to leisure and play.
-   *
-   * @param Activities $activities
+   * @param Activities
    */
   public function setActivities(Activities $activities)
   {
@@ -106,9 +98,7 @@ class Lodging extends \Google\Collection
     return $this->activities;
   }
   /**
-   * Output only. All units on the property have at least these attributes.
-   *
-   * @param GuestUnitFeatures $allUnits
+   * @param GuestUnitFeatures
    */
   public function setAllUnits(GuestUnitFeatures $allUnits)
   {
@@ -122,9 +112,7 @@ class Lodging extends \Google\Collection
     return $this->allUnits;
   }
   /**
-   * Features of the property of specific interest to the business traveler.
-   *
-   * @param Business $business
+   * @param Business
    */
   public function setBusiness(Business $business)
   {
@@ -138,9 +126,7 @@ class Lodging extends \Google\Collection
     return $this->business;
   }
   /**
-   * Features of the shared living areas available in this Lodging.
-   *
-   * @param LivingArea $commonLivingArea
+   * @param LivingArea
    */
   public function setCommonLivingArea(LivingArea $commonLivingArea)
   {
@@ -154,10 +140,7 @@ class Lodging extends \Google\Collection
     return $this->commonLivingArea;
   }
   /**
-   * The ways in which the property provides guests with the ability to access
-   * the internet.
-   *
-   * @param Connectivity $connectivity
+   * @param Connectivity
    */
   public function setConnectivity(Connectivity $connectivity)
   {
@@ -171,9 +154,7 @@ class Lodging extends \Google\Collection
     return $this->connectivity;
   }
   /**
-   * Services and amenities for families and young guests.
-   *
-   * @param Families $families
+   * @param Families
    */
   public function setFamilies(Families $families)
   {
@@ -187,9 +168,7 @@ class Lodging extends \Google\Collection
     return $this->families;
   }
   /**
-   * Meals, snacks, and beverages available at the property.
-   *
-   * @param FoodAndDrink $foodAndDrink
+   * @param FoodAndDrink
    */
   public function setFoodAndDrink(FoodAndDrink $foodAndDrink)
   {
@@ -203,9 +182,7 @@ class Lodging extends \Google\Collection
     return $this->foodAndDrink;
   }
   /**
-   * Individual GuestUnitTypes that are available in this Lodging.
-   *
-   * @param GuestUnitType[] $guestUnits
+   * @param GuestUnitType[]
    */
   public function setGuestUnits($guestUnits)
   {
@@ -219,9 +196,7 @@ class Lodging extends \Google\Collection
     return $this->guestUnits;
   }
   /**
-   * Health and safety measures implemented by the hotel during COVID-19.
-   *
-   * @param HealthAndSafety $healthAndSafety
+   * @param HealthAndSafety
    */
   public function setHealthAndSafety(HealthAndSafety $healthAndSafety)
   {
@@ -235,10 +210,7 @@ class Lodging extends \Google\Collection
     return $this->healthAndSafety;
   }
   /**
-   * Conveniences provided in guest units to facilitate an easier, more
-   * comfortable stay.
-   *
-   * @param Housekeeping $housekeeping
+   * @param Housekeeping
    */
   public function setHousekeeping(Housekeeping $housekeeping)
   {
@@ -252,9 +224,7 @@ class Lodging extends \Google\Collection
     return $this->housekeeping;
   }
   /**
-   * Required. Metadata for the lodging.
-   *
-   * @param LodgingMetadata $metadata
+   * @param LodgingMetadata
    */
   public function setMetadata(LodgingMetadata $metadata)
   {
@@ -268,10 +238,7 @@ class Lodging extends \Google\Collection
     return $this->metadata;
   }
   /**
-   * Required. Google identifier for this location in the form:
-   * `locations/{location_id}/lodging`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -285,9 +252,7 @@ class Lodging extends \Google\Collection
     return $this->name;
   }
   /**
-   * Parking options at the property.
-   *
-   * @param Parking $parking
+   * @param Parking
    */
   public function setParking(Parking $parking)
   {
@@ -301,9 +266,7 @@ class Lodging extends \Google\Collection
     return $this->parking;
   }
   /**
-   * Policies regarding guest-owned animals.
-   *
-   * @param Pets $pets
+   * @param Pets
    */
   public function setPets(Pets $pets)
   {
@@ -317,9 +280,7 @@ class Lodging extends \Google\Collection
     return $this->pets;
   }
   /**
-   * Property rules that impact guests.
-   *
-   * @param Policies $policies
+   * @param Policies
    */
   public function setPolicies(Policies $policies)
   {
@@ -333,9 +294,7 @@ class Lodging extends \Google\Collection
     return $this->policies;
   }
   /**
-   * Swimming pool or recreational water facilities available at the hotel.
-   *
-   * @param Pools $pools
+   * @param Pools
    */
   public function setPools(Pools $pools)
   {
@@ -349,10 +308,7 @@ class Lodging extends \Google\Collection
     return $this->pools;
   }
   /**
-   * General factual information about the property's physical structure and
-   * important dates.
-   *
-   * @param Property $property
+   * @param Property
    */
   public function setProperty(Property $property)
   {
@@ -366,10 +322,7 @@ class Lodging extends \Google\Collection
     return $this->property;
   }
   /**
-   * Conveniences or help provided by the property to facilitate an easier, more
-   * comfortable stay.
-   *
-   * @param Services $services
+   * @param Services
    */
   public function setServices(Services $services)
   {
@@ -383,9 +336,7 @@ class Lodging extends \Google\Collection
     return $this->services;
   }
   /**
-   * Output only. Some units on the property have as much as these attributes.
-   *
-   * @param GuestUnitFeatures $someUnits
+   * @param GuestUnitFeatures
    */
   public function setSomeUnits(GuestUnitFeatures $someUnits)
   {
@@ -399,9 +350,7 @@ class Lodging extends \Google\Collection
     return $this->someUnits;
   }
   /**
-   * Sustainability practices implemented at the hotel.
-   *
-   * @param Sustainability $sustainability
+   * @param Sustainability
    */
   public function setSustainability(Sustainability $sustainability)
   {
@@ -415,9 +364,7 @@ class Lodging extends \Google\Collection
     return $this->sustainability;
   }
   /**
-   * Vehicles or vehicular services facilitated or owned by the property.
-   *
-   * @param Transportation $transportation
+   * @param Transportation
    */
   public function setTransportation(Transportation $transportation)
   {
@@ -431,10 +378,7 @@ class Lodging extends \Google\Collection
     return $this->transportation;
   }
   /**
-   * Guest facilities at the property to promote or maintain health, beauty, and
-   * fitness.
-   *
-   * @param Wellness $wellness
+   * @param Wellness
    */
   public function setWellness(Wellness $wellness)
   {

@@ -20,27 +20,16 @@ namespace Google\Service\ToolResults;
 class ProjectSettings extends \Google\Model
 {
   /**
-   * The name of the Google Cloud Storage bucket to which results are written.
-   * By default, this is unset. In update request: optional In response:
-   * optional
-   *
    * @var string
    */
   public $defaultBucket;
   /**
-   * The name of the project's settings. Always of the form: projects/{project-
-   * id}/settings In update request: never set In response: always set
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The name of the Google Cloud Storage bucket to which results are written.
-   * By default, this is unset. In update request: optional In response:
-   * optional
-   *
-   * @param string $defaultBucket
+   * @param string
    */
   public function setDefaultBucket($defaultBucket)
   {
@@ -54,10 +43,7 @@ class ProjectSettings extends \Google\Model
     return $this->defaultBucket;
   }
   /**
-   * The name of the project's settings. Always of the form: projects/{project-
-   * id}/settings In update request: never set In response: always set
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

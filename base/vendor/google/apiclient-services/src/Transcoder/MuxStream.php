@@ -21,43 +21,24 @@ class MuxStream extends \Google\Collection
 {
   protected $collection_key = 'elementaryStreams';
   /**
-   * The container format. The default is `mp4` Supported streaming formats: -
-   * `ts` - `fmp4`- the corresponding file extension is `.m4s` Supported
-   * standalone file formats: - `mp4` - `mp3` - `ogg` - `vtt` See also:
-   * [Supported input and output
-   * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-
-   * and-output-formats)
-   *
    * @var string
    */
   public $container;
   /**
-   * List of ElementaryStream.key values multiplexed in this stream.
-   *
    * @var string[]
    */
   public $elementaryStreams;
   /**
-   * Identifier of the encryption configuration to use. If omitted, output will
-   * be unencrypted.
-   *
    * @var string
    */
   public $encryptionId;
   /**
-   * The name of the generated file. The default is MuxStream.key with the
-   * extension suffix corresponding to the MuxStream.container. Individual
-   * segments also have an incremental 10-digit zero-padded suffix starting from
-   * 0 before the extension, such as `mux_stream0000000123.ts`.
-   *
    * @var string
    */
   public $fileName;
   protected $fmp4Type = Fmp4Config::class;
   protected $fmp4DataType = '';
   /**
-   * A unique key for this multiplexed stream.
-   *
    * @var string
    */
   public $key;
@@ -65,14 +46,7 @@ class MuxStream extends \Google\Collection
   protected $segmentSettingsDataType = '';
 
   /**
-   * The container format. The default is `mp4` Supported streaming formats: -
-   * `ts` - `fmp4`- the corresponding file extension is `.m4s` Supported
-   * standalone file formats: - `mp4` - `mp3` - `ogg` - `vtt` See also:
-   * [Supported input and output
-   * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-
-   * and-output-formats)
-   *
-   * @param string $container
+   * @param string
    */
   public function setContainer($container)
   {
@@ -86,9 +60,7 @@ class MuxStream extends \Google\Collection
     return $this->container;
   }
   /**
-   * List of ElementaryStream.key values multiplexed in this stream.
-   *
-   * @param string[] $elementaryStreams
+   * @param string[]
    */
   public function setElementaryStreams($elementaryStreams)
   {
@@ -102,10 +74,7 @@ class MuxStream extends \Google\Collection
     return $this->elementaryStreams;
   }
   /**
-   * Identifier of the encryption configuration to use. If omitted, output will
-   * be unencrypted.
-   *
-   * @param string $encryptionId
+   * @param string
    */
   public function setEncryptionId($encryptionId)
   {
@@ -119,12 +88,7 @@ class MuxStream extends \Google\Collection
     return $this->encryptionId;
   }
   /**
-   * The name of the generated file. The default is MuxStream.key with the
-   * extension suffix corresponding to the MuxStream.container. Individual
-   * segments also have an incremental 10-digit zero-padded suffix starting from
-   * 0 before the extension, such as `mux_stream0000000123.ts`.
-   *
-   * @param string $fileName
+   * @param string
    */
   public function setFileName($fileName)
   {
@@ -138,9 +102,7 @@ class MuxStream extends \Google\Collection
     return $this->fileName;
   }
   /**
-   * Optional. `fmp4` container configuration.
-   *
-   * @param Fmp4Config $fmp4
+   * @param Fmp4Config
    */
   public function setFmp4(Fmp4Config $fmp4)
   {
@@ -154,9 +116,7 @@ class MuxStream extends \Google\Collection
     return $this->fmp4;
   }
   /**
-   * A unique key for this multiplexed stream.
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {
@@ -170,9 +130,7 @@ class MuxStream extends \Google\Collection
     return $this->key;
   }
   /**
-   * Segment settings for `ts`, `fmp4` and `vtt`.
-   *
-   * @param SegmentSettings $segmentSettings
+   * @param SegmentSettings
    */
   public function setSegmentSettings(SegmentSettings $segmentSettings)
   {

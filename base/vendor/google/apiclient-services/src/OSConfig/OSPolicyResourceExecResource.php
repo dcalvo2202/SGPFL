@@ -25,11 +25,7 @@ class OSPolicyResourceExecResource extends \Google\Model
   protected $validateDataType = '';
 
   /**
-   * What to run to bring this resource into the desired state. An exit code of
-   * 100 indicates "success", any other exit code indicates a failure running
-   * enforce.
-   *
-   * @param OSPolicyResourceExecResourceExec $enforce
+   * @param OSPolicyResourceExecResourceExec
    */
   public function setEnforce(OSPolicyResourceExecResourceExec $enforce)
   {
@@ -43,12 +39,7 @@ class OSPolicyResourceExecResource extends \Google\Model
     return $this->enforce;
   }
   /**
-   * Required. What to run to validate this resource is in the desired state. An
-   * exit code of 100 indicates "in desired state", and exit code of 101
-   * indicates "not in desired state". Any other exit code indicates a failure
-   * running validate.
-   *
-   * @param OSPolicyResourceExecResourceExec $validate
+   * @param OSPolicyResourceExecResourceExec
    */
   public function setValidate(OSPolicyResourceExecResourceExec $validate)
   {

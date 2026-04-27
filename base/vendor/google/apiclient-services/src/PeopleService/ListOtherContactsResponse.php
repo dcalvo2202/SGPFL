@@ -21,34 +21,22 @@ class ListOtherContactsResponse extends \Google\Collection
 {
   protected $collection_key = 'otherContacts';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * A token, which can be sent as `sync_token` to retrieve changes since the
-   * last request. Request must set `request_sync_token` to return the sync
-   * token.
-   *
    * @var string
    */
   public $nextSyncToken;
   protected $otherContactsType = Person::class;
   protected $otherContactsDataType = 'array';
   /**
-   * The total number of other contacts in the list without pagination.
-   *
    * @var int
    */
   public $totalSize;
 
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -62,11 +50,7 @@ class ListOtherContactsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * A token, which can be sent as `sync_token` to retrieve changes since the
-   * last request. Request must set `request_sync_token` to return the sync
-   * token.
-   *
-   * @param string $nextSyncToken
+   * @param string
    */
   public function setNextSyncToken($nextSyncToken)
   {
@@ -80,11 +64,7 @@ class ListOtherContactsResponse extends \Google\Collection
     return $this->nextSyncToken;
   }
   /**
-   * The list of "Other contacts" returned as Person resources. "Other contacts"
-   * support a limited subset of fields. See
-   * ListOtherContactsRequest.request_mask for more detailed information.
-   *
-   * @param Person[] $otherContacts
+   * @param Person[]
    */
   public function setOtherContacts($otherContacts)
   {
@@ -98,9 +78,7 @@ class ListOtherContactsResponse extends \Google\Collection
     return $this->otherContacts;
   }
   /**
-   * The total number of other contacts in the list without pagination.
-   *
-   * @param int $totalSize
+   * @param int
    */
   public function setTotalSize($totalSize)
   {

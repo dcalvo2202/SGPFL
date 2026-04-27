@@ -23,9 +23,7 @@ class RegionUrlMapsValidateRequest extends \Google\Model
   protected $resourceDataType = '';
 
   /**
-   * Content of the UrlMap to be validated.
-   *
-   * @param UrlMap $resource
+   * @param UrlMap
    */
   public function setResource(UrlMap $resource)
   {

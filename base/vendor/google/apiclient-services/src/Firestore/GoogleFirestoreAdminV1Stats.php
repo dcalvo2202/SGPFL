@@ -20,29 +20,20 @@ namespace Google\Service\Firestore;
 class GoogleFirestoreAdminV1Stats extends \Google\Model
 {
   /**
-   * Output only. The total number of documents contained in the backup.
-   *
    * @var string
    */
   public $documentCount;
   /**
-   * Output only. The total number of index entries contained in the backup.
-   *
    * @var string
    */
   public $indexCount;
   /**
-   * Output only. Summation of the size of all documents and index entries in
-   * the backup, measured in bytes.
-   *
    * @var string
    */
   public $sizeBytes;
 
   /**
-   * Output only. The total number of documents contained in the backup.
-   *
-   * @param string $documentCount
+   * @param string
    */
   public function setDocumentCount($documentCount)
   {
@@ -56,9 +47,7 @@ class GoogleFirestoreAdminV1Stats extends \Google\Model
     return $this->documentCount;
   }
   /**
-   * Output only. The total number of index entries contained in the backup.
-   *
-   * @param string $indexCount
+   * @param string
    */
   public function setIndexCount($indexCount)
   {
@@ -72,10 +61,7 @@ class GoogleFirestoreAdminV1Stats extends \Google\Model
     return $this->indexCount;
   }
   /**
-   * Output only. Summation of the size of all documents and index entries in
-   * the backup, measured in bytes.
-   *
-   * @param string $sizeBytes
+   * @param string
    */
   public function setSizeBytes($sizeBytes)
   {

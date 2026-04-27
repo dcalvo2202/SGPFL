@@ -20,22 +20,16 @@ namespace Google\Service\TrafficDirectorService;
 class StaticCluster extends \Google\Model
 {
   /**
-   * The cluster config.
-   *
    * @var array[]
    */
   public $cluster;
   /**
-   * The timestamp when the Cluster was last updated.
-   *
    * @var string
    */
   public $lastUpdated;
 
   /**
-   * The cluster config.
-   *
-   * @param array[] $cluster
+   * @param array[]
    */
   public function setCluster($cluster)
   {
@@ -49,9 +43,7 @@ class StaticCluster extends \Google\Model
     return $this->cluster;
   }
   /**
-   * The timestamp when the Cluster was last updated.
-   *
-   * @param string $lastUpdated
+   * @param string
    */
   public function setLastUpdated($lastUpdated)
   {

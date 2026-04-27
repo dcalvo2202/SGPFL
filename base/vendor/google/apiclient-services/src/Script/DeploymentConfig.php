@@ -20,34 +20,24 @@ namespace Google\Service\Script;
 class DeploymentConfig extends \Google\Model
 {
   /**
-   * The description for this deployment.
-   *
    * @var string
    */
   public $description;
   /**
-   * The manifest file name for this deployment.
-   *
    * @var string
    */
   public $manifestFileName;
   /**
-   * The script project's Drive ID.
-   *
    * @var string
    */
   public $scriptId;
   /**
-   * The version number on which this deployment is based.
-   *
    * @var int
    */
   public $versionNumber;
 
   /**
-   * The description for this deployment.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -61,9 +51,7 @@ class DeploymentConfig extends \Google\Model
     return $this->description;
   }
   /**
-   * The manifest file name for this deployment.
-   *
-   * @param string $manifestFileName
+   * @param string
    */
   public function setManifestFileName($manifestFileName)
   {
@@ -77,9 +65,7 @@ class DeploymentConfig extends \Google\Model
     return $this->manifestFileName;
   }
   /**
-   * The script project's Drive ID.
-   *
-   * @param string $scriptId
+   * @param string
    */
   public function setScriptId($scriptId)
   {
@@ -93,9 +79,7 @@ class DeploymentConfig extends \Google\Model
     return $this->scriptId;
   }
   /**
-   * The version number on which this deployment is based.
-   *
-   * @param int $versionNumber
+   * @param int
    */
   public function setVersionNumber($versionNumber)
   {

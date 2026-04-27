@@ -20,16 +20,12 @@ namespace Google\Service\CloudRetail;
 class GoogleCloudRetailLoggingHttpRequestContext extends \Google\Model
 {
   /**
-   * The HTTP response status code for the request.
-   *
    * @var int
    */
   public $responseStatusCode;
 
   /**
-   * The HTTP response status code for the request.
-   *
-   * @param int $responseStatusCode
+   * @param int
    */
   public function setResponseStatusCode($responseStatusCode)
   {

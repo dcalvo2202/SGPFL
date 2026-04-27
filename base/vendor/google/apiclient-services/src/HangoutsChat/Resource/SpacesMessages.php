@@ -151,16 +151,8 @@ class SpacesMessages extends \Google\Service\Resource
    * [authentication](https://developers.google.com/workspace/chat/authenticate-
    * authorize): - [App
    * authentication](https://developers.google.com/workspace/chat/authenticate-
-   * authorize-chat-app) with one of the following authorization scopes: -
-   * `https://www.googleapis.com/auth/chat.bot`: When using this authorization
-   * scope, this method returns details about a message the Chat app has access
-   * to, like direct messages and [slash
-   * commands](https://developers.google.com/workspace/chat/slash-commands) that
-   * invoke the Chat app. -
-   * `https://www.googleapis.com/auth/chat.app.messages.readonly` with
-   * [administrator approval](https://support.google.com/a?p=chat-app-auth). When
-   * using this authentication scope, this method returns details about a public
-   * message in a space. - [User
+   * authorize-chat-app) with the authorization scope: -
+   * `https://www.googleapis.com/auth/chat.bot` - [User
    * authentication](https://developers.google.com/workspace/chat/authenticate-
    * authorize-chat-user) with one of the following authorization scopes: -
    * `https://www.googleapis.com/auth/chat.messages.readonly` -
@@ -185,23 +177,15 @@ class SpacesMessages extends \Google\Service\Resource
   }
   /**
    * Lists messages in a space that the caller is a member of, including messages
-   * from blocked members and spaces. System messages, like those announcing new
-   * space members, aren't included. If you list messages from a space with no
+   * from blocked members and spaces. If you list messages from a space with no
    * messages, the response is an empty object. When using a REST/HTTP interface,
    * the response contains an empty JSON object, `{}`. For an example, see [List m
    * essages](https://developers.google.com/workspace/chat/api/guides/v1/messages/
-   * list). Supports the following types of
-   * [authentication](https://developers.google.com/workspace/chat/authenticate-
-   * authorize): - [App
+   * list). Requires [user
    * authentication](https://developers.google.com/workspace/chat/authenticate-
-   * authorize-chat-app) with [administrator
-   * approval](https://support.google.com/a?p=chat-app-auth) with the
-   * authorization scope: -
-   * `https://www.googleapis.com/auth/chat.app.messages.readonly`. When using this
-   * authentication scope, this method only returns public messages in a space. It
-   * doesn't include private messages. - [User
-   * authentication](https://developers.google.com/workspace/chat/authenticate-
-   * authorize-chat-user) with one of the following authorization scopes: -
+   * authorize-chat-user) with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-
+   * authorize#chat-api-scopes): -
    * `https://www.googleapis.com/auth/chat.messages.readonly` -
    * `https://www.googleapis.com/auth/chat.messages` -
    * `https://www.googleapis.com/auth/chat.import` (import mode spaces only)
@@ -297,8 +281,7 @@ class SpacesMessages extends \Google\Service\Resource
    * authentication](/chat/api/guides/auth/service-accounts).) - `cards_v2`
    * (Requires [app authentication](/chat/api/guides/auth/service-accounts).) -
    * `accessory_widgets` (Requires [app
-   * authentication](/chat/api/guides/auth/service-accounts).) -
-   * `quoted_message_metadata` (Only allows removal of the quoted message.)
+   * authentication](/chat/api/guides/auth/service-accounts).)
    * @return Message
    * @throws \Google\Service\Exception
    */
@@ -350,8 +333,7 @@ class SpacesMessages extends \Google\Service\Resource
    * authentication](/chat/api/guides/auth/service-accounts).) - `cards_v2`
    * (Requires [app authentication](/chat/api/guides/auth/service-accounts).) -
    * `accessory_widgets` (Requires [app
-   * authentication](/chat/api/guides/auth/service-accounts).) -
-   * `quoted_message_metadata` (Only allows removal of the quoted message.)
+   * authentication](/chat/api/guides/auth/service-accounts).)
    * @return Message
    * @throws \Google\Service\Exception
    */

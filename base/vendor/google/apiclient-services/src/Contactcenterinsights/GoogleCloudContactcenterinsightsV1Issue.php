@@ -21,48 +21,32 @@ class GoogleCloudContactcenterinsightsV1Issue extends \Google\Collection
 {
   protected $collection_key = 'sampleUtterances';
   /**
-   * Output only. The time at which this issue was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Representative description of the issue.
-   *
    * @var string
    */
   public $displayDescription;
   /**
-   * The representative name for the issue.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Immutable. The resource name of the issue. Format: projects/{project}/locat
-   * ions/{location}/issueModels/{issue_model}/issues/{issue}
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Resource names of the sample representative utterances that
-   * match to this issue.
-   *
    * @var string[]
    */
   public $sampleUtterances;
   /**
-   * Output only. The most recent time that this issue was updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. The time at which this issue was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -76,9 +60,7 @@ class GoogleCloudContactcenterinsightsV1Issue extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Representative description of the issue.
-   *
-   * @param string $displayDescription
+   * @param string
    */
   public function setDisplayDescription($displayDescription)
   {
@@ -92,9 +74,7 @@ class GoogleCloudContactcenterinsightsV1Issue extends \Google\Collection
     return $this->displayDescription;
   }
   /**
-   * The representative name for the issue.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -108,10 +88,7 @@ class GoogleCloudContactcenterinsightsV1Issue extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Immutable. The resource name of the issue. Format: projects/{project}/locat
-   * ions/{location}/issueModels/{issue_model}/issues/{issue}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -125,10 +102,7 @@ class GoogleCloudContactcenterinsightsV1Issue extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. Resource names of the sample representative utterances that
-   * match to this issue.
-   *
-   * @param string[] $sampleUtterances
+   * @param string[]
    */
   public function setSampleUtterances($sampleUtterances)
   {
@@ -142,9 +116,7 @@ class GoogleCloudContactcenterinsightsV1Issue extends \Google\Collection
     return $this->sampleUtterances;
   }
   /**
-   * Output only. The most recent time that this issue was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

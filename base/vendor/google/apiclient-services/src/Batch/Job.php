@@ -23,42 +23,22 @@ class Job extends \Google\Collection
   protected $allocationPolicyType = AllocationPolicy::class;
   protected $allocationPolicyDataType = '';
   /**
-   * Output only. When the Job was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Custom labels to apply to the job and any Cloud Logging [LogEntry](https://
-   * cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry) that it
-   * generates. Use labels to group and describe the resources they are applied
-   * to. Batch automatically applies predefined labels and supports multiple
-   * `labels` fields for each job, which each let you apply custom labels to
-   * various resources. Label names that start with "goog-" or "google-" are
-   * reserved for predefined labels. For more information about labels with
-   * Batch, see [Organize resources using
-   * labels](https://cloud.google.com/batch/docs/organize-resources-using-
-   * labels).
-   *
    * @var string[]
    */
   public $labels;
   protected $logsPolicyType = LogsPolicy::class;
   protected $logsPolicyDataType = '';
   /**
-   * Output only. Job name. For example: "projects/123456/locations/us-
-   * central1/jobs/job01".
-   *
    * @var string
    */
   public $name;
   protected $notificationsType = JobNotification::class;
   protected $notificationsDataType = 'array';
   /**
-   * Priority of the Job. The valid value range is [0, 100). Default value is 0.
-   * Higher value indicates higher priority. A job with higher priority value is
-   * more likely to run earlier if all other requirements are satisfied.
-   *
    * @var string
    */
   public $priority;
@@ -67,22 +47,16 @@ class Job extends \Google\Collection
   protected $taskGroupsType = TaskGroup::class;
   protected $taskGroupsDataType = 'array';
   /**
-   * Output only. A system generated unique ID for the Job.
-   *
    * @var string
    */
   public $uid;
   /**
-   * Output only. The last time the Job was updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Compute resource allocation for all TaskGroups in the Job.
-   *
-   * @param AllocationPolicy $allocationPolicy
+   * @param AllocationPolicy
    */
   public function setAllocationPolicy(AllocationPolicy $allocationPolicy)
   {
@@ -96,9 +70,7 @@ class Job extends \Google\Collection
     return $this->allocationPolicy;
   }
   /**
-   * Output only. When the Job was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -112,18 +84,7 @@ class Job extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Custom labels to apply to the job and any Cloud Logging [LogEntry](https://
-   * cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry) that it
-   * generates. Use labels to group and describe the resources they are applied
-   * to. Batch automatically applies predefined labels and supports multiple
-   * `labels` fields for each job, which each let you apply custom labels to
-   * various resources. Label names that start with "goog-" or "google-" are
-   * reserved for predefined labels. For more information about labels with
-   * Batch, see [Organize resources using
-   * labels](https://cloud.google.com/batch/docs/organize-resources-using-
-   * labels).
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -137,9 +98,7 @@ class Job extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Log preservation policy for the Job.
-   *
-   * @param LogsPolicy $logsPolicy
+   * @param LogsPolicy
    */
   public function setLogsPolicy(LogsPolicy $logsPolicy)
   {
@@ -153,10 +112,7 @@ class Job extends \Google\Collection
     return $this->logsPolicy;
   }
   /**
-   * Output only. Job name. For example: "projects/123456/locations/us-
-   * central1/jobs/job01".
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -170,9 +126,7 @@ class Job extends \Google\Collection
     return $this->name;
   }
   /**
-   * Notification configurations.
-   *
-   * @param JobNotification[] $notifications
+   * @param JobNotification[]
    */
   public function setNotifications($notifications)
   {
@@ -186,11 +140,7 @@ class Job extends \Google\Collection
     return $this->notifications;
   }
   /**
-   * Priority of the Job. The valid value range is [0, 100). Default value is 0.
-   * Higher value indicates higher priority. A job with higher priority value is
-   * more likely to run earlier if all other requirements are satisfied.
-   *
-   * @param string $priority
+   * @param string
    */
   public function setPriority($priority)
   {
@@ -204,9 +154,7 @@ class Job extends \Google\Collection
     return $this->priority;
   }
   /**
-   * Output only. Job status. It is read only for users.
-   *
-   * @param JobStatus $status
+   * @param JobStatus
    */
   public function setStatus(JobStatus $status)
   {
@@ -220,9 +168,7 @@ class Job extends \Google\Collection
     return $this->status;
   }
   /**
-   * Required. TaskGroups in the Job. Only one TaskGroup is supported now.
-   *
-   * @param TaskGroup[] $taskGroups
+   * @param TaskGroup[]
    */
   public function setTaskGroups($taskGroups)
   {
@@ -236,9 +182,7 @@ class Job extends \Google\Collection
     return $this->taskGroups;
   }
   /**
-   * Output only. A system generated unique ID for the Job.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {
@@ -252,9 +196,7 @@ class Job extends \Google\Collection
     return $this->uid;
   }
   /**
-   * Output only. The last time the Job was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

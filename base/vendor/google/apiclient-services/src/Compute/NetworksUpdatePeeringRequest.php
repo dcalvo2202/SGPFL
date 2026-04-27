@@ -23,7 +23,7 @@ class NetworksUpdatePeeringRequest extends \Google\Model
   protected $networkPeeringDataType = '';
 
   /**
-   * @param NetworkPeering $networkPeering
+   * @param NetworkPeering
    */
   public function setNetworkPeering(NetworkPeering $networkPeering)
   {

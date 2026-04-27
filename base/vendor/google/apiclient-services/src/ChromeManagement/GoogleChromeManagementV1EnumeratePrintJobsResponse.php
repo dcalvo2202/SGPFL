@@ -21,26 +21,18 @@ class GoogleChromeManagementV1EnumeratePrintJobsResponse extends \Google\Collect
 {
   protected $collection_key = 'printJobs';
   /**
-   * A token, which can be used in a subsequent request to retrieve the next
-   * page. If this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $printJobsType = GoogleChromeManagementV1PrintJob::class;
   protected $printJobsDataType = 'array';
   /**
-   * Total number of print jobs matching request.
-   *
    * @var string
    */
   public $totalSize;
 
   /**
-   * A token, which can be used in a subsequent request to retrieve the next
-   * page. If this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -54,9 +46,7 @@ class GoogleChromeManagementV1EnumeratePrintJobsResponse extends \Google\Collect
     return $this->nextPageToken;
   }
   /**
-   * List of requested print jobs.
-   *
-   * @param GoogleChromeManagementV1PrintJob[] $printJobs
+   * @param GoogleChromeManagementV1PrintJob[]
    */
   public function setPrintJobs($printJobs)
   {
@@ -70,9 +60,7 @@ class GoogleChromeManagementV1EnumeratePrintJobsResponse extends \Google\Collect
     return $this->printJobs;
   }
   /**
-   * Total number of print jobs matching request.
-   *
-   * @param string $totalSize
+   * @param string
    */
   public function setTotalSize($totalSize)
   {

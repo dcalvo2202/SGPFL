@@ -24,10 +24,7 @@ class EnterpriseCrmEventbusProtoEventParameters extends \Google\Collection
   protected $parametersDataType = 'array';
 
   /**
-   * Parameters are a part of Event and can be used to communicate between
-   * different tasks that are part of the same integration execution.
-   *
-   * @param EnterpriseCrmEventbusProtoParameterEntry[] $parameters
+   * @param EnterpriseCrmEventbusProtoParameterEntry[]
    */
   public function setParameters($parameters)
   {

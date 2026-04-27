@@ -24,15 +24,10 @@ class RemoteRepositoryConfig extends \Google\Model
   protected $commonRepositoryType = CommonRemoteRepository::class;
   protected $commonRepositoryDataType = '';
   /**
-   * The description of the remote source.
-   *
    * @var string
    */
   public $description;
   /**
-   * Input only. A create/update remote repo option to avoid making a HEAD/GET
-   * request to validate a remote repo and any supplied upstream credentials.
-   *
    * @var bool
    */
   public $disableUpstreamValidation;
@@ -50,9 +45,7 @@ class RemoteRepositoryConfig extends \Google\Model
   protected $yumRepositoryDataType = '';
 
   /**
-   * Specific settings for an Apt remote repository.
-   *
-   * @param AptRepository $aptRepository
+   * @param AptRepository
    */
   public function setAptRepository(AptRepository $aptRepository)
   {
@@ -66,10 +59,7 @@ class RemoteRepositoryConfig extends \Google\Model
     return $this->aptRepository;
   }
   /**
-   * Common remote repository settings. Used as the remote repository upstream
-   * URL.
-   *
-   * @param CommonRemoteRepository $commonRepository
+   * @param CommonRemoteRepository
    */
   public function setCommonRepository(CommonRemoteRepository $commonRepository)
   {
@@ -83,9 +73,7 @@ class RemoteRepositoryConfig extends \Google\Model
     return $this->commonRepository;
   }
   /**
-   * The description of the remote source.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -99,10 +87,7 @@ class RemoteRepositoryConfig extends \Google\Model
     return $this->description;
   }
   /**
-   * Input only. A create/update remote repo option to avoid making a HEAD/GET
-   * request to validate a remote repo and any supplied upstream credentials.
-   *
-   * @param bool $disableUpstreamValidation
+   * @param bool
    */
   public function setDisableUpstreamValidation($disableUpstreamValidation)
   {
@@ -116,9 +101,7 @@ class RemoteRepositoryConfig extends \Google\Model
     return $this->disableUpstreamValidation;
   }
   /**
-   * Specific settings for a Docker remote repository.
-   *
-   * @param DockerRepository $dockerRepository
+   * @param DockerRepository
    */
   public function setDockerRepository(DockerRepository $dockerRepository)
   {
@@ -132,9 +115,7 @@ class RemoteRepositoryConfig extends \Google\Model
     return $this->dockerRepository;
   }
   /**
-   * Specific settings for a Maven remote repository.
-   *
-   * @param MavenRepository $mavenRepository
+   * @param MavenRepository
    */
   public function setMavenRepository(MavenRepository $mavenRepository)
   {
@@ -148,9 +129,7 @@ class RemoteRepositoryConfig extends \Google\Model
     return $this->mavenRepository;
   }
   /**
-   * Specific settings for an Npm remote repository.
-   *
-   * @param NpmRepository $npmRepository
+   * @param NpmRepository
    */
   public function setNpmRepository(NpmRepository $npmRepository)
   {
@@ -164,9 +143,7 @@ class RemoteRepositoryConfig extends \Google\Model
     return $this->npmRepository;
   }
   /**
-   * Specific settings for a Python remote repository.
-   *
-   * @param PythonRepository $pythonRepository
+   * @param PythonRepository
    */
   public function setPythonRepository(PythonRepository $pythonRepository)
   {
@@ -180,9 +157,7 @@ class RemoteRepositoryConfig extends \Google\Model
     return $this->pythonRepository;
   }
   /**
-   * Optional. The credentials used to access the remote repository.
-   *
-   * @param UpstreamCredentials $upstreamCredentials
+   * @param UpstreamCredentials
    */
   public function setUpstreamCredentials(UpstreamCredentials $upstreamCredentials)
   {
@@ -196,9 +171,7 @@ class RemoteRepositoryConfig extends \Google\Model
     return $this->upstreamCredentials;
   }
   /**
-   * Specific settings for a Yum remote repository.
-   *
-   * @param YumRepository $yumRepository
+   * @param YumRepository
    */
   public function setYumRepository(YumRepository $yumRepository)
   {

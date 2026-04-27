@@ -20,46 +20,32 @@ namespace Google\Service\Analytics;
 class WebPropertyRef extends \Google\Model
 {
   /**
-   * Account ID to which this web property belongs.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * Link for this web property.
-   *
    * @var string
    */
   public $href;
   /**
-   * Web property ID of the form UA-XXXXX-YY.
-   *
    * @var string
    */
   public $id;
   /**
-   * Internal ID for this web property.
-   *
    * @var string
    */
   public $internalWebPropertyId;
   /**
-   * Analytics web property reference.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Name of this web property.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Account ID to which this web property belongs.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -73,9 +59,7 @@ class WebPropertyRef extends \Google\Model
     return $this->accountId;
   }
   /**
-   * Link for this web property.
-   *
-   * @param string $href
+   * @param string
    */
   public function setHref($href)
   {
@@ -89,9 +73,7 @@ class WebPropertyRef extends \Google\Model
     return $this->href;
   }
   /**
-   * Web property ID of the form UA-XXXXX-YY.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -105,9 +87,7 @@ class WebPropertyRef extends \Google\Model
     return $this->id;
   }
   /**
-   * Internal ID for this web property.
-   *
-   * @param string $internalWebPropertyId
+   * @param string
    */
   public function setInternalWebPropertyId($internalWebPropertyId)
   {
@@ -121,9 +101,7 @@ class WebPropertyRef extends \Google\Model
     return $this->internalWebPropertyId;
   }
   /**
-   * Analytics web property reference.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -137,9 +115,7 @@ class WebPropertyRef extends \Google\Model
     return $this->kind;
   }
   /**
-   * Name of this web property.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

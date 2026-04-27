@@ -21,22 +21,12 @@ class BareMetalMaintenanceConfig extends \Google\Collection
 {
   protected $collection_key = 'maintenanceAddressCidrBlocks';
   /**
-   * Required. All IPv4 address from these ranges will be placed into
-   * maintenance mode. Nodes in maintenance mode will be cordoned and drained.
-   * When both of these are true, the "baremetal.cluster.gke.io/maintenance"
-   * annotation will be set on the node resource.
-   *
    * @var string[]
    */
   public $maintenanceAddressCidrBlocks;
 
   /**
-   * Required. All IPv4 address from these ranges will be placed into
-   * maintenance mode. Nodes in maintenance mode will be cordoned and drained.
-   * When both of these are true, the "baremetal.cluster.gke.io/maintenance"
-   * annotation will be set on the node resource.
-   *
-   * @param string[] $maintenanceAddressCidrBlocks
+   * @param string[]
    */
   public function setMaintenanceAddressCidrBlocks($maintenanceAddressCidrBlocks)
   {

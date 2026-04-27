@@ -22,26 +22,13 @@ class GoogleCloudAiplatformV1PredictRequestResponseLoggingConfig extends \Google
   protected $bigqueryDestinationType = GoogleCloudAiplatformV1BigQueryDestination::class;
   protected $bigqueryDestinationDataType = '';
   /**
-   * If logging is enabled or not.
-   *
    * @var bool
    */
   public $enabled;
-  /**
-   * Percentage of requests to be logged, expressed as a fraction in range(0,1].
-   *
-   * @var 
-   */
   public $samplingRate;
 
   /**
-   * BigQuery table for logging. If only given a project, a new dataset will be
-   * created with name `logging__` where will be made BigQuery-dataset-name
-   * compatible (e.g. most special characters will become underscores). If no
-   * table name is given, a new table will be created with name
-   * `request_response_logging`
-   *
-   * @param GoogleCloudAiplatformV1BigQueryDestination $bigqueryDestination
+   * @param GoogleCloudAiplatformV1BigQueryDestination
    */
   public function setBigqueryDestination(GoogleCloudAiplatformV1BigQueryDestination $bigqueryDestination)
   {
@@ -55,9 +42,7 @@ class GoogleCloudAiplatformV1PredictRequestResponseLoggingConfig extends \Google
     return $this->bigqueryDestination;
   }
   /**
-   * If logging is enabled or not.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {

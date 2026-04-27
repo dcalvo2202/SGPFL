@@ -20,30 +20,20 @@ namespace Google\Service\AnalyticsData;
 class ComparisonMetadata extends \Google\Model
 {
   /**
-   * This comparison's resource name. Useable in [Comparison](#Comparison)'s
-   * `comparison` field. For example, 'comparisons/1234'.
-   *
    * @var string
    */
   public $apiName;
   /**
-   * This comparison's description.
-   *
    * @var string
    */
   public $description;
   /**
-   * This comparison's name within the Google Analytics user interface.
-   *
    * @var string
    */
   public $uiName;
 
   /**
-   * This comparison's resource name. Useable in [Comparison](#Comparison)'s
-   * `comparison` field. For example, 'comparisons/1234'.
-   *
-   * @param string $apiName
+   * @param string
    */
   public function setApiName($apiName)
   {
@@ -57,9 +47,7 @@ class ComparisonMetadata extends \Google\Model
     return $this->apiName;
   }
   /**
-   * This comparison's description.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -73,9 +61,7 @@ class ComparisonMetadata extends \Google\Model
     return $this->description;
   }
   /**
-   * This comparison's name within the Google Analytics user interface.
-   *
-   * @param string $uiName
+   * @param string
    */
   public function setUiName($uiName)
   {

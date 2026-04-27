@@ -20,25 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1ImportFeatureValuesRequestFeatureSpec extends \Google\Model
 {
   /**
-   * Required. ID of the Feature to import values of. This Feature must exist in
-   * the target EntityType, or the request will fail.
-   *
    * @var string
    */
   public $id;
   /**
-   * Source column to get the Feature values from. If not set, uses the column
-   * with the same name as the Feature ID.
-   *
    * @var string
    */
   public $sourceField;
 
   /**
-   * Required. ID of the Feature to import values of. This Feature must exist in
-   * the target EntityType, or the request will fail.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -52,10 +43,7 @@ class GoogleCloudAiplatformV1ImportFeatureValuesRequestFeatureSpec extends \Goog
     return $this->id;
   }
   /**
-   * Source column to get the Feature values from. If not set, uses the column
-   * with the same name as the Feature ID.
-   *
-   * @param string $sourceField
+   * @param string
    */
   public function setSourceField($sourceField)
   {

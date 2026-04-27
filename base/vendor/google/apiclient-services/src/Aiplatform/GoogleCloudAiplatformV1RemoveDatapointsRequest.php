@@ -21,16 +21,12 @@ class GoogleCloudAiplatformV1RemoveDatapointsRequest extends \Google\Collection
 {
   protected $collection_key = 'datapointIds';
   /**
-   * A list of datapoint ids to be deleted.
-   *
    * @var string[]
    */
   public $datapointIds;
 
   /**
-   * A list of datapoint ids to be deleted.
-   *
-   * @param string[] $datapointIds
+   * @param string[]
    */
   public function setDatapointIds($datapointIds)
   {

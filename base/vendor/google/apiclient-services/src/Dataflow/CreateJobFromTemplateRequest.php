@@ -22,37 +22,24 @@ class CreateJobFromTemplateRequest extends \Google\Model
   protected $environmentType = RuntimeEnvironment::class;
   protected $environmentDataType = '';
   /**
-   * Required. A Cloud Storage path to the template from which to create the
-   * job. Must be a valid Cloud Storage URL, beginning with `gs://`.
-   *
    * @var string
    */
   public $gcsPath;
   /**
-   * Required. The job name to use for the created job.
-   *
    * @var string
    */
   public $jobName;
   /**
-   * The [regional endpoint]
-   * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to
-   * which to direct the request.
-   *
    * @var string
    */
   public $location;
   /**
-   * The runtime parameters to pass to the job.
-   *
    * @var string[]
    */
   public $parameters;
 
   /**
-   * The runtime environment for the job.
-   *
-   * @param RuntimeEnvironment $environment
+   * @param RuntimeEnvironment
    */
   public function setEnvironment(RuntimeEnvironment $environment)
   {
@@ -66,10 +53,7 @@ class CreateJobFromTemplateRequest extends \Google\Model
     return $this->environment;
   }
   /**
-   * Required. A Cloud Storage path to the template from which to create the
-   * job. Must be a valid Cloud Storage URL, beginning with `gs://`.
-   *
-   * @param string $gcsPath
+   * @param string
    */
   public function setGcsPath($gcsPath)
   {
@@ -83,9 +67,7 @@ class CreateJobFromTemplateRequest extends \Google\Model
     return $this->gcsPath;
   }
   /**
-   * Required. The job name to use for the created job.
-   *
-   * @param string $jobName
+   * @param string
    */
   public function setJobName($jobName)
   {
@@ -99,11 +81,7 @@ class CreateJobFromTemplateRequest extends \Google\Model
     return $this->jobName;
   }
   /**
-   * The [regional endpoint]
-   * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to
-   * which to direct the request.
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -117,9 +95,7 @@ class CreateJobFromTemplateRequest extends \Google\Model
     return $this->location;
   }
   /**
-   * The runtime parameters to pass to the job.
-   *
-   * @param string[] $parameters
+   * @param string[]
    */
   public function setParameters($parameters)
   {

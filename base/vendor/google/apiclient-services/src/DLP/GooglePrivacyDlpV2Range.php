@@ -20,22 +20,16 @@ namespace Google\Service\DLP;
 class GooglePrivacyDlpV2Range extends \Google\Model
 {
   /**
-   * Index of the last character of the range (exclusive).
-   *
    * @var string
    */
   public $end;
   /**
-   * Index of the first character of the range (inclusive).
-   *
    * @var string
    */
   public $start;
 
   /**
-   * Index of the last character of the range (exclusive).
-   *
-   * @param string $end
+   * @param string
    */
   public function setEnd($end)
   {
@@ -49,9 +43,7 @@ class GooglePrivacyDlpV2Range extends \Google\Model
     return $this->end;
   }
   /**
-   * Index of the first character of the range (inclusive).
-   *
-   * @param string $start
+   * @param string
    */
   public function setStart($start)
   {

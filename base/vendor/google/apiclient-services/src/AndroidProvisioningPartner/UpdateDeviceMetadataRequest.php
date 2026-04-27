@@ -23,9 +23,7 @@ class UpdateDeviceMetadataRequest extends \Google\Model
   protected $deviceMetadataDataType = '';
 
   /**
-   * Required. The metadata to attach to the device.
-   *
-   * @param DeviceMetadata $deviceMetadata
+   * @param DeviceMetadata
    */
   public function setDeviceMetadata(DeviceMetadata $deviceMetadata)
   {

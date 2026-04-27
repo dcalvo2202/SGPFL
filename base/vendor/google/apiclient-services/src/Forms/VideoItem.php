@@ -20,8 +20,6 @@ namespace Google\Service\Forms;
 class VideoItem extends \Google\Model
 {
   /**
-   * The text displayed below the video.
-   *
    * @var string
    */
   public $caption;
@@ -29,9 +27,7 @@ class VideoItem extends \Google\Model
   protected $videoDataType = '';
 
   /**
-   * The text displayed below the video.
-   *
-   * @param string $caption
+   * @param string
    */
   public function setCaption($caption)
   {
@@ -45,9 +41,7 @@ class VideoItem extends \Google\Model
     return $this->caption;
   }
   /**
-   * Required. The video displayed in the item.
-   *
-   * @param Video $video
+   * @param Video
    */
   public function setVideo(Video $video)
   {

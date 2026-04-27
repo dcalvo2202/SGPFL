@@ -22,67 +22,30 @@ class Nutrition extends \Google\Collection
   protected $collection_key = 'voluntaryNutritionFact';
   protected $addedSugarsType = FloatUnit::class;
   protected $addedSugarsDataType = '';
-  /**
-   * Added sugars daily percentage.
-   *
-   * @var 
-   */
   public $addedSugarsDailyPercentage;
   protected $calciumType = FloatUnit::class;
   protected $calciumDataType = '';
-  /**
-   * Calcium daily percentage.
-   *
-   * @var 
-   */
   public $calciumDailyPercentage;
   protected $cholesterolType = FloatUnit::class;
   protected $cholesterolDataType = '';
-  /**
-   * Cholesterol daily percentage.
-   *
-   * @var 
-   */
   public $cholesterolDailyPercentage;
   protected $dietaryFiberType = FloatUnit::class;
   protected $dietaryFiberDataType = '';
-  /**
-   * Dietary fiber daily percentage.
-   *
-   * @var 
-   */
   public $dietaryFiberDailyPercentage;
   protected $energyType = FloatUnit::class;
   protected $energyDataType = '';
   protected $energyFromFatType = FloatUnit::class;
   protected $energyFromFatDataType = '';
-  /**
-   * Folate daily percentage.
-   *
-   * @var 
-   */
   public $folateDailyPercentage;
   protected $folateFolicAcidType = FloatUnit::class;
   protected $folateFolicAcidDataType = '';
-  /**
-   * Folate mcg DFE.
-   *
-   * @var 
-   */
   public $folateMcgDfe;
   protected $ironType = FloatUnit::class;
   protected $ironDataType = '';
-  /**
-   * Iron daily percentage.
-   *
-   * @var 
-   */
   public $ironDailyPercentage;
   protected $monounsaturatedFatType = FloatUnit::class;
   protected $monounsaturatedFatDataType = '';
   /**
-   * Nutrition fact measure.
-   *
    * @var string
    */
   public $nutritionFactMeasure;
@@ -92,105 +55,52 @@ class Nutrition extends \Google\Collection
   protected $polyunsaturatedFatDataType = '';
   protected $potassiumType = FloatUnit::class;
   protected $potassiumDataType = '';
-  /**
-   * Potassium daily percentage.
-   *
-   * @var 
-   */
   public $potassiumDailyPercentage;
   /**
-   * Prepared size description.
-   *
    * @var string
    */
   public $preparedSizeDescription;
   protected $proteinType = FloatUnit::class;
   protected $proteinDataType = '';
-  /**
-   * Protein daily percentage.
-   *
-   * @var 
-   */
   public $proteinDailyPercentage;
   protected $saturatedFatType = FloatUnit::class;
   protected $saturatedFatDataType = '';
-  /**
-   * Saturated fat daily percentage.
-   *
-   * @var 
-   */
   public $saturatedFatDailyPercentage;
   /**
-   * Food Serving Size. Serving size description.
-   *
    * @var string
    */
   public $servingSizeDescription;
   protected $servingSizeMeasureType = FloatUnit::class;
   protected $servingSizeMeasureDataType = '';
   /**
-   * Servings per container.
-   *
    * @var string
    */
   public $servingsPerContainer;
   protected $sodiumType = FloatUnit::class;
   protected $sodiumDataType = '';
-  /**
-   * Sodium daily percentage.
-   *
-   * @var 
-   */
   public $sodiumDailyPercentage;
   protected $starchType = FloatUnit::class;
   protected $starchDataType = '';
   protected $totalCarbohydrateType = FloatUnit::class;
   protected $totalCarbohydrateDataType = '';
-  /**
-   * Total carbohydrate daily percentage.
-   *
-   * @var 
-   */
   public $totalCarbohydrateDailyPercentage;
   protected $totalFatType = FloatUnit::class;
   protected $totalFatDataType = '';
-  /**
-   * Total fat daily percentage.
-   *
-   * @var 
-   */
   public $totalFatDailyPercentage;
   protected $totalSugarsType = FloatUnit::class;
   protected $totalSugarsDataType = '';
-  /**
-   * Total sugars daily percentage.
-   *
-   * @var 
-   */
   public $totalSugarsDailyPercentage;
   protected $transFatType = FloatUnit::class;
   protected $transFatDataType = '';
-  /**
-   * Trans fat daily percentage.
-   *
-   * @var 
-   */
   public $transFatDailyPercentage;
   protected $vitaminDType = FloatUnit::class;
   protected $vitaminDDataType = '';
-  /**
-   * Vitamin D daily percentage.
-   *
-   * @var 
-   */
   public $vitaminDDailyPercentage;
   protected $voluntaryNutritionFactType = VoluntaryNutritionFact::class;
   protected $voluntaryNutritionFactDataType = 'array';
 
   /**
-   * Added sugars.
-   *
-   * @param FloatUnit $addedSugars
+   * @param FloatUnit
    */
   public function setAddedSugars(FloatUnit $addedSugars)
   {
@@ -212,9 +122,7 @@ class Nutrition extends \Google\Collection
     return $this->addedSugarsDailyPercentage;
   }
   /**
-   * Calcium.
-   *
-   * @param FloatUnit $calcium
+   * @param FloatUnit
    */
   public function setCalcium(FloatUnit $calcium)
   {
@@ -236,9 +144,7 @@ class Nutrition extends \Google\Collection
     return $this->calciumDailyPercentage;
   }
   /**
-   * Cholesterol.
-   *
-   * @param FloatUnit $cholesterol
+   * @param FloatUnit
    */
   public function setCholesterol(FloatUnit $cholesterol)
   {
@@ -260,9 +166,7 @@ class Nutrition extends \Google\Collection
     return $this->cholesterolDailyPercentage;
   }
   /**
-   * Dietary fiber.
-   *
-   * @param FloatUnit $dietaryFiber
+   * @param FloatUnit
    */
   public function setDietaryFiber(FloatUnit $dietaryFiber)
   {
@@ -284,9 +188,7 @@ class Nutrition extends \Google\Collection
     return $this->dietaryFiberDailyPercentage;
   }
   /**
-   * Mandatory Nutrition Facts. Energy.
-   *
-   * @param FloatUnit $energy
+   * @param FloatUnit
    */
   public function setEnergy(FloatUnit $energy)
   {
@@ -300,9 +202,7 @@ class Nutrition extends \Google\Collection
     return $this->energy;
   }
   /**
-   * Energy from fat.
-   *
-   * @param FloatUnit $energyFromFat
+   * @param FloatUnit
    */
   public function setEnergyFromFat(FloatUnit $energyFromFat)
   {
@@ -324,9 +224,7 @@ class Nutrition extends \Google\Collection
     return $this->folateDailyPercentage;
   }
   /**
-   * Folate folic acid.
-   *
-   * @param FloatUnit $folateFolicAcid
+   * @param FloatUnit
    */
   public function setFolateFolicAcid(FloatUnit $folateFolicAcid)
   {
@@ -348,9 +246,7 @@ class Nutrition extends \Google\Collection
     return $this->folateMcgDfe;
   }
   /**
-   * Iron.
-   *
-   * @param FloatUnit $iron
+   * @param FloatUnit
    */
   public function setIron(FloatUnit $iron)
   {
@@ -372,9 +268,7 @@ class Nutrition extends \Google\Collection
     return $this->ironDailyPercentage;
   }
   /**
-   * Monounsaturated fat.
-   *
-   * @param FloatUnit $monounsaturatedFat
+   * @param FloatUnit
    */
   public function setMonounsaturatedFat(FloatUnit $monounsaturatedFat)
   {
@@ -388,9 +282,7 @@ class Nutrition extends \Google\Collection
     return $this->monounsaturatedFat;
   }
   /**
-   * Nutrition fact measure.
-   *
-   * @param string $nutritionFactMeasure
+   * @param string
    */
   public function setNutritionFactMeasure($nutritionFactMeasure)
   {
@@ -404,9 +296,7 @@ class Nutrition extends \Google\Collection
     return $this->nutritionFactMeasure;
   }
   /**
-   * Polyols.
-   *
-   * @param FloatUnit $polyols
+   * @param FloatUnit
    */
   public function setPolyols(FloatUnit $polyols)
   {
@@ -420,9 +310,7 @@ class Nutrition extends \Google\Collection
     return $this->polyols;
   }
   /**
-   * Polyunsaturated fat.
-   *
-   * @param FloatUnit $polyunsaturatedFat
+   * @param FloatUnit
    */
   public function setPolyunsaturatedFat(FloatUnit $polyunsaturatedFat)
   {
@@ -436,9 +324,7 @@ class Nutrition extends \Google\Collection
     return $this->polyunsaturatedFat;
   }
   /**
-   * Potassium.
-   *
-   * @param FloatUnit $potassium
+   * @param FloatUnit
    */
   public function setPotassium(FloatUnit $potassium)
   {
@@ -460,9 +346,7 @@ class Nutrition extends \Google\Collection
     return $this->potassiumDailyPercentage;
   }
   /**
-   * Prepared size description.
-   *
-   * @param string $preparedSizeDescription
+   * @param string
    */
   public function setPreparedSizeDescription($preparedSizeDescription)
   {
@@ -476,9 +360,7 @@ class Nutrition extends \Google\Collection
     return $this->preparedSizeDescription;
   }
   /**
-   * Protein.
-   *
-   * @param FloatUnit $protein
+   * @param FloatUnit
    */
   public function setProtein(FloatUnit $protein)
   {
@@ -500,9 +382,7 @@ class Nutrition extends \Google\Collection
     return $this->proteinDailyPercentage;
   }
   /**
-   * Saturated fat.
-   *
-   * @param FloatUnit $saturatedFat
+   * @param FloatUnit
    */
   public function setSaturatedFat(FloatUnit $saturatedFat)
   {
@@ -524,9 +404,7 @@ class Nutrition extends \Google\Collection
     return $this->saturatedFatDailyPercentage;
   }
   /**
-   * Food Serving Size. Serving size description.
-   *
-   * @param string $servingSizeDescription
+   * @param string
    */
   public function setServingSizeDescription($servingSizeDescription)
   {
@@ -540,9 +418,7 @@ class Nutrition extends \Google\Collection
     return $this->servingSizeDescription;
   }
   /**
-   * Serving size measure.
-   *
-   * @param FloatUnit $servingSizeMeasure
+   * @param FloatUnit
    */
   public function setServingSizeMeasure(FloatUnit $servingSizeMeasure)
   {
@@ -556,9 +432,7 @@ class Nutrition extends \Google\Collection
     return $this->servingSizeMeasure;
   }
   /**
-   * Servings per container.
-   *
-   * @param string $servingsPerContainer
+   * @param string
    */
   public function setServingsPerContainer($servingsPerContainer)
   {
@@ -572,9 +446,7 @@ class Nutrition extends \Google\Collection
     return $this->servingsPerContainer;
   }
   /**
-   * Sodium.
-   *
-   * @param FloatUnit $sodium
+   * @param FloatUnit
    */
   public function setSodium(FloatUnit $sodium)
   {
@@ -596,9 +468,7 @@ class Nutrition extends \Google\Collection
     return $this->sodiumDailyPercentage;
   }
   /**
-   * Starch.
-   *
-   * @param FloatUnit $starch
+   * @param FloatUnit
    */
   public function setStarch(FloatUnit $starch)
   {
@@ -612,9 +482,7 @@ class Nutrition extends \Google\Collection
     return $this->starch;
   }
   /**
-   * Total carbohydrate.
-   *
-   * @param FloatUnit $totalCarbohydrate
+   * @param FloatUnit
    */
   public function setTotalCarbohydrate(FloatUnit $totalCarbohydrate)
   {
@@ -636,9 +504,7 @@ class Nutrition extends \Google\Collection
     return $this->totalCarbohydrateDailyPercentage;
   }
   /**
-   * Total fat.
-   *
-   * @param FloatUnit $totalFat
+   * @param FloatUnit
    */
   public function setTotalFat(FloatUnit $totalFat)
   {
@@ -660,9 +526,7 @@ class Nutrition extends \Google\Collection
     return $this->totalFatDailyPercentage;
   }
   /**
-   * Total sugars.
-   *
-   * @param FloatUnit $totalSugars
+   * @param FloatUnit
    */
   public function setTotalSugars(FloatUnit $totalSugars)
   {
@@ -684,9 +548,7 @@ class Nutrition extends \Google\Collection
     return $this->totalSugarsDailyPercentage;
   }
   /**
-   * Trans fat.
-   *
-   * @param FloatUnit $transFat
+   * @param FloatUnit
    */
   public function setTransFat(FloatUnit $transFat)
   {
@@ -708,9 +570,7 @@ class Nutrition extends \Google\Collection
     return $this->transFatDailyPercentage;
   }
   /**
-   * Vitamin D.
-   *
-   * @param FloatUnit $vitaminD
+   * @param FloatUnit
    */
   public function setVitaminD(FloatUnit $vitaminD)
   {
@@ -732,9 +592,7 @@ class Nutrition extends \Google\Collection
     return $this->vitaminDDailyPercentage;
   }
   /**
-   * Voluntary nutrition fact.
-   *
-   * @param VoluntaryNutritionFact[] $voluntaryNutritionFact
+   * @param VoluntaryNutritionFact[]
    */
   public function setVoluntaryNutritionFact($voluntaryNutritionFact)
   {

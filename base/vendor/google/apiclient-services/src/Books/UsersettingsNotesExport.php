@@ -29,7 +29,7 @@ class UsersettingsNotesExport extends \Google\Model
   public $isEnabled;
 
   /**
-   * @param string $folderName
+   * @param string
    */
   public function setFolderName($folderName)
   {
@@ -43,7 +43,7 @@ class UsersettingsNotesExport extends \Google\Model
     return $this->folderName;
   }
   /**
-   * @param bool $isEnabled
+   * @param bool
    */
   public function setIsEnabled($isEnabled)
   {

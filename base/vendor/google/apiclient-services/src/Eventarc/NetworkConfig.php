@@ -20,20 +20,12 @@ namespace Google\Service\Eventarc;
 class NetworkConfig extends \Google\Model
 {
   /**
-   * Required. Name of the NetworkAttachment that allows access to the
-   * customer's VPC. Format: `projects/{PROJECT_ID}/regions/{REGION}/networkAtta
-   * chments/{NETWORK_ATTACHMENT_NAME}`
-   *
    * @var string
    */
   public $networkAttachment;
 
   /**
-   * Required. Name of the NetworkAttachment that allows access to the
-   * customer's VPC. Format: `projects/{PROJECT_ID}/regions/{REGION}/networkAtta
-   * chments/{NETWORK_ATTACHMENT_NAME}`
-   *
-   * @param string $networkAttachment
+   * @param string
    */
   public function setNetworkAttachment($networkAttachment)
   {

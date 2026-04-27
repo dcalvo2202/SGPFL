@@ -25,7 +25,7 @@ class GoogleCloudDialogflowCxV3ToolServiceDirectoryConfig extends \Google\Model
   public $service;
 
   /**
-   * @param string $service
+   * @param string
    */
   public function setService($service)
   {

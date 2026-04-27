@@ -20,23 +20,16 @@ namespace Google\Service\Calendar;
 class EventSource extends \Google\Model
 {
   /**
-   * Title of the source; for example a title of a web page or an email subject.
-   *
    * @var string
    */
   public $title;
   /**
-   * URL of the source pointing to a resource. The URL scheme must be HTTP or
-   * HTTPS.
-   *
    * @var string
    */
   public $url;
 
   /**
-   * Title of the source; for example a title of a web page or an email subject.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -50,10 +43,7 @@ class EventSource extends \Google\Model
     return $this->title;
   }
   /**
-   * URL of the source pointing to a resource. The URL scheme must be HTTP or
-   * HTTPS.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

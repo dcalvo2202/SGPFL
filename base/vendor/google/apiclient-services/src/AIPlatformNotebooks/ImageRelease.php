@@ -20,24 +20,16 @@ namespace Google\Service\AIPlatformNotebooks;
 class ImageRelease extends \Google\Model
 {
   /**
-   * Output only. The name of the image of the form workbench-instances-
-   * vYYYYmmdd--
-   *
    * @var string
    */
   public $imageName;
   /**
-   * Output only. The release of the image of the form m123
-   *
    * @var string
    */
   public $releaseName;
 
   /**
-   * Output only. The name of the image of the form workbench-instances-
-   * vYYYYmmdd--
-   *
-   * @param string $imageName
+   * @param string
    */
   public function setImageName($imageName)
   {
@@ -51,9 +43,7 @@ class ImageRelease extends \Google\Model
     return $this->imageName;
   }
   /**
-   * Output only. The release of the image of the form m123
-   *
-   * @param string $releaseName
+   * @param string
    */
   public function setReleaseName($releaseName)
   {

@@ -19,32 +19,16 @@ namespace Google\Service\Firestore;
 
 class CompositeFilter extends \Google\Collection
 {
-  /**
-   * Unspecified. This value must not be used.
-   */
-  public const OP_OPERATOR_UNSPECIFIED = 'OPERATOR_UNSPECIFIED';
-  /**
-   * Documents are required to satisfy all of the combined filters.
-   */
-  public const OP_AND = 'AND';
-  /**
-   * Documents are required to satisfy at least one of the combined filters.
-   */
-  public const OP_OR = 'OR';
   protected $collection_key = 'filters';
   protected $filtersType = Filter::class;
   protected $filtersDataType = 'array';
   /**
-   * The operator for combining multiple filters.
-   *
    * @var string
    */
   public $op;
 
   /**
-   * The list of filters to combine. Requires: * At least one filter is present.
-   *
-   * @param Filter[] $filters
+   * @param Filter[]
    */
   public function setFilters($filters)
   {
@@ -58,18 +42,14 @@ class CompositeFilter extends \Google\Collection
     return $this->filters;
   }
   /**
-   * The operator for combining multiple filters.
-   *
-   * Accepted values: OPERATOR_UNSPECIFIED, AND, OR
-   *
-   * @param self::OP_* $op
+   * @param string
    */
   public function setOp($op)
   {
     $this->op = $op;
   }
   /**
-   * @return self::OP_*
+   * @return string
    */
   public function getOp()
   {

@@ -20,59 +20,32 @@ namespace Google\Service\Container;
 class UpgradeEvent extends \Google\Model
 {
   /**
-   * Default value. This shouldn't be used.
-   */
-  public const RESOURCE_TYPE_UPGRADE_RESOURCE_TYPE_UNSPECIFIED = 'UPGRADE_RESOURCE_TYPE_UNSPECIFIED';
-  /**
-   * Master / control plane
-   */
-  public const RESOURCE_TYPE_MASTER = 'MASTER';
-  /**
-   * Node pool
-   */
-  public const RESOURCE_TYPE_NODE_POOL = 'NODE_POOL';
-  /**
-   * The current version before the upgrade.
-   *
    * @var string
    */
   public $currentVersion;
   /**
-   * The operation associated with this upgrade.
-   *
    * @var string
    */
   public $operation;
   /**
-   * The time when the operation was started.
-   *
    * @var string
    */
   public $operationStartTime;
   /**
-   * Optional relative path to the resource. For example in node pool upgrades,
-   * the relative path of the node pool.
-   *
    * @var string
    */
   public $resource;
   /**
-   * The resource type that is upgrading.
-   *
    * @var string
    */
   public $resourceType;
   /**
-   * The target version for the upgrade.
-   *
    * @var string
    */
   public $targetVersion;
 
   /**
-   * The current version before the upgrade.
-   *
-   * @param string $currentVersion
+   * @param string
    */
   public function setCurrentVersion($currentVersion)
   {
@@ -86,9 +59,7 @@ class UpgradeEvent extends \Google\Model
     return $this->currentVersion;
   }
   /**
-   * The operation associated with this upgrade.
-   *
-   * @param string $operation
+   * @param string
    */
   public function setOperation($operation)
   {
@@ -102,9 +73,7 @@ class UpgradeEvent extends \Google\Model
     return $this->operation;
   }
   /**
-   * The time when the operation was started.
-   *
-   * @param string $operationStartTime
+   * @param string
    */
   public function setOperationStartTime($operationStartTime)
   {
@@ -118,10 +87,7 @@ class UpgradeEvent extends \Google\Model
     return $this->operationStartTime;
   }
   /**
-   * Optional relative path to the resource. For example in node pool upgrades,
-   * the relative path of the node pool.
-   *
-   * @param string $resource
+   * @param string
    */
   public function setResource($resource)
   {
@@ -135,27 +101,21 @@ class UpgradeEvent extends \Google\Model
     return $this->resource;
   }
   /**
-   * The resource type that is upgrading.
-   *
-   * Accepted values: UPGRADE_RESOURCE_TYPE_UNSPECIFIED, MASTER, NODE_POOL
-   *
-   * @param self::RESOURCE_TYPE_* $resourceType
+   * @param string
    */
   public function setResourceType($resourceType)
   {
     $this->resourceType = $resourceType;
   }
   /**
-   * @return self::RESOURCE_TYPE_*
+   * @return string
    */
   public function getResourceType()
   {
     return $this->resourceType;
   }
   /**
-   * The target version for the upgrade.
-   *
-   * @param string $targetVersion
+   * @param string
    */
   public function setTargetVersion($targetVersion)
   {

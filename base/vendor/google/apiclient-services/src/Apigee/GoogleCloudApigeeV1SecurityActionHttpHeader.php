@@ -20,22 +20,16 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1SecurityActionHttpHeader extends \Google\Model
 {
   /**
-   * The header name to be sent to the target.
-   *
    * @var string
    */
   public $name;
   /**
-   * The header value to be sent to the target.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * The header name to be sent to the target.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -49,9 +43,7 @@ class GoogleCloudApigeeV1SecurityActionHttpHeader extends \Google\Model
     return $this->name;
   }
   /**
-   * The header value to be sent to the target.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

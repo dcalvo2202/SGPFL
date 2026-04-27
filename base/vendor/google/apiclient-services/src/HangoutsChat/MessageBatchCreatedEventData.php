@@ -24,9 +24,7 @@ class MessageBatchCreatedEventData extends \Google\Collection
   protected $messagesDataType = 'array';
 
   /**
-   * A list of new messages.
-   *
-   * @param MessageCreatedEventData[] $messages
+   * @param MessageCreatedEventData[]
    */
   public function setMessages($messages)
   {

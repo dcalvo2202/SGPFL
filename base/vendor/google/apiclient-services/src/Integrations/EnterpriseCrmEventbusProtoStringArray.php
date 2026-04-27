@@ -26,7 +26,7 @@ class EnterpriseCrmEventbusProtoStringArray extends \Google\Collection
   public $values;
 
   /**
-   * @param string[] $values
+   * @param string[]
    */
   public function setValues($values)
   {

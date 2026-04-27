@@ -23,17 +23,12 @@ class ShippingsettingsGetSupportedCarriersResponse extends \Google\Collection
   protected $carriersType = CarriersCarrier::class;
   protected $carriersDataType = 'array';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#shippingsettingsGetSupportedCarriersResponse`".
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * A list of supported carriers. May be empty.
-   *
-   * @param CarriersCarrier[] $carriers
+   * @param CarriersCarrier[]
    */
   public function setCarriers($carriers)
   {
@@ -47,10 +42,7 @@ class ShippingsettingsGetSupportedCarriersResponse extends \Google\Collection
     return $this->carriers;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#shippingsettingsGetSupportedCarriersResponse`".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

@@ -20,34 +20,24 @@ namespace Google\Service\ShoppingContent;
 class GmbAccountsGmbAccount extends \Google\Model
 {
   /**
-   * The email which identifies the Business Profile.
-   *
    * @var string
    */
   public $email;
   /**
-   * Number of listings under this account.
-   *
    * @var string
    */
   public $listingCount;
   /**
-   * The name of the Business Profile.
-   *
    * @var string
    */
   public $name;
   /**
-   * The type of the Business Profile (User or Business).
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The email which identifies the Business Profile.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {
@@ -61,9 +51,7 @@ class GmbAccountsGmbAccount extends \Google\Model
     return $this->email;
   }
   /**
-   * Number of listings under this account.
-   *
-   * @param string $listingCount
+   * @param string
    */
   public function setListingCount($listingCount)
   {
@@ -77,9 +65,7 @@ class GmbAccountsGmbAccount extends \Google\Model
     return $this->listingCount;
   }
   /**
-   * The name of the Business Profile.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -93,9 +79,7 @@ class GmbAccountsGmbAccount extends \Google\Model
     return $this->name;
   }
   /**
-   * The type of the Business Profile (User or Business).
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

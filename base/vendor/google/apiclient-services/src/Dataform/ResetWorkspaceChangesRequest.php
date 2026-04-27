@@ -21,23 +21,16 @@ class ResetWorkspaceChangesRequest extends \Google\Collection
 {
   protected $collection_key = 'paths';
   /**
-   * Optional. If set to true, untracked files will be deleted.
-   *
    * @var bool
    */
   public $clean;
   /**
-   * Optional. Full file paths to reset back to their committed state including
-   * filename, rooted at workspace root. If left empty, all files will be reset.
-   *
    * @var string[]
    */
   public $paths;
 
   /**
-   * Optional. If set to true, untracked files will be deleted.
-   *
-   * @param bool $clean
+   * @param bool
    */
   public function setClean($clean)
   {
@@ -51,10 +44,7 @@ class ResetWorkspaceChangesRequest extends \Google\Collection
     return $this->clean;
   }
   /**
-   * Optional. Full file paths to reset back to their committed state including
-   * filename, rooted at workspace root. If left empty, all files will be reset.
-   *
-   * @param string[] $paths
+   * @param string[]
    */
   public function setPaths($paths)
   {

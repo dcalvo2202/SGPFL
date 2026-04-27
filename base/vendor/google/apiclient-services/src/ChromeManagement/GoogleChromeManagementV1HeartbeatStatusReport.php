@@ -20,42 +20,16 @@ namespace Google\Service\ChromeManagement;
 class GoogleChromeManagementV1HeartbeatStatusReport extends \Google\Model
 {
   /**
-   * State not specified
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Device is not eligible for heartbeat monitoring
-   */
-  public const STATE_UNKNOWN = 'UNKNOWN';
-  /**
-   * Device is online
-   */
-  public const STATE_ONLINE = 'ONLINE';
-  /**
-   * Device is offline
-   */
-  public const STATE_OFFLINE = 'OFFLINE';
-  /**
-   * Device is outdated
-   */
-  public const STATE_DEVICE_OUTDATED = 'DEVICE_OUTDATED';
-  /**
-   * Timestamp of when status changed was detected
-   *
    * @var string
    */
   public $reportTime;
   /**
-   * State the device changed to
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Timestamp of when status changed was detected
-   *
-   * @param string $reportTime
+   * @param string
    */
   public function setReportTime($reportTime)
   {
@@ -69,19 +43,14 @@ class GoogleChromeManagementV1HeartbeatStatusReport extends \Google\Model
     return $this->reportTime;
   }
   /**
-   * State the device changed to
-   *
-   * Accepted values: STATE_UNSPECIFIED, UNKNOWN, ONLINE, OFFLINE,
-   * DEVICE_OUTDATED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

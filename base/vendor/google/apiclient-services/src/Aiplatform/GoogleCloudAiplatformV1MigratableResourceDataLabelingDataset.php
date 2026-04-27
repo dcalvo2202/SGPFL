@@ -23,24 +23,16 @@ class GoogleCloudAiplatformV1MigratableResourceDataLabelingDataset extends \Goog
   protected $dataLabelingAnnotatedDatasetsType = GoogleCloudAiplatformV1MigratableResourceDataLabelingDatasetDataLabelingAnnotatedDataset::class;
   protected $dataLabelingAnnotatedDatasetsDataType = 'array';
   /**
-   * Full resource name of data labeling Dataset. Format:
-   * `projects/{project}/datasets/{dataset}`.
-   *
    * @var string
    */
   public $dataset;
   /**
-   * The Dataset's display name in datalabeling.googleapis.com.
-   *
    * @var string
    */
   public $datasetDisplayName;
 
   /**
-   * The migratable AnnotatedDataset in datalabeling.googleapis.com belongs to
-   * the data labeling Dataset.
-   *
-   * @param GoogleCloudAiplatformV1MigratableResourceDataLabelingDatasetDataLabelingAnnotatedDataset[] $dataLabelingAnnotatedDatasets
+   * @param GoogleCloudAiplatformV1MigratableResourceDataLabelingDatasetDataLabelingAnnotatedDataset[]
    */
   public function setDataLabelingAnnotatedDatasets($dataLabelingAnnotatedDatasets)
   {
@@ -54,10 +46,7 @@ class GoogleCloudAiplatformV1MigratableResourceDataLabelingDataset extends \Goog
     return $this->dataLabelingAnnotatedDatasets;
   }
   /**
-   * Full resource name of data labeling Dataset. Format:
-   * `projects/{project}/datasets/{dataset}`.
-   *
-   * @param string $dataset
+   * @param string
    */
   public function setDataset($dataset)
   {
@@ -71,9 +60,7 @@ class GoogleCloudAiplatformV1MigratableResourceDataLabelingDataset extends \Goog
     return $this->dataset;
   }
   /**
-   * The Dataset's display name in datalabeling.googleapis.com.
-   *
-   * @param string $datasetDisplayName
+   * @param string
    */
   public function setDatasetDisplayName($datasetDisplayName)
   {

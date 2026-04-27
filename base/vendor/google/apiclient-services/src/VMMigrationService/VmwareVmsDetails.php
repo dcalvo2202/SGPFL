@@ -24,9 +24,7 @@ class VmwareVmsDetails extends \Google\Collection
   protected $detailsDataType = 'array';
 
   /**
-   * The details of the vmware VMs.
-   *
-   * @param VmwareVmDetails[] $details
+   * @param VmwareVmDetails[]
    */
   public function setDetails($details)
   {

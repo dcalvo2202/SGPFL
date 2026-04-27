@@ -27,9 +27,7 @@ class TargetReference extends \Google\Model
   protected $teamDriveDataType = '';
 
   /**
-   * The target is a shared drive.
-   *
-   * @param DriveReference $drive
+   * @param DriveReference
    */
   public function setDrive(DriveReference $drive)
   {
@@ -43,9 +41,7 @@ class TargetReference extends \Google\Model
     return $this->drive;
   }
   /**
-   * The target is a Drive item.
-   *
-   * @param DriveItemReference $driveItem
+   * @param DriveItemReference
    */
   public function setDriveItem(DriveItemReference $driveItem)
   {
@@ -59,17 +55,13 @@ class TargetReference extends \Google\Model
     return $this->driveItem;
   }
   /**
-   * This field is deprecated; please use the `drive` field instead.
-   *
-   * @deprecated
-   * @param TeamDriveReference $teamDrive
+   * @param TeamDriveReference
    */
   public function setTeamDrive(TeamDriveReference $teamDrive)
   {
     $this->teamDrive = $teamDrive;
   }
   /**
-   * @deprecated
    * @return TeamDriveReference
    */
   public function getTeamDrive()

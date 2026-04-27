@@ -27,9 +27,7 @@ class Report extends \Google\Model
   protected $paramsDataType = '';
 
   /**
-   * The key information identifying the report.
-   *
-   * @param ReportKey $key
+   * @param ReportKey
    */
   public function setKey(ReportKey $key)
   {
@@ -43,9 +41,7 @@ class Report extends \Google\Model
     return $this->key;
   }
   /**
-   * The metadata of the report.
-   *
-   * @param ReportMetadata $metadata
+   * @param ReportMetadata
    */
   public function setMetadata(ReportMetadata $metadata)
   {
@@ -59,9 +55,7 @@ class Report extends \Google\Model
     return $this->metadata;
   }
   /**
-   * The parameters of the report.
-   *
-   * @param Parameters $params
+   * @param Parameters
    */
   public function setParams(Parameters $params)
   {

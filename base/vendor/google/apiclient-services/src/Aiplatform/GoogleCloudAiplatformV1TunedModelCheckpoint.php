@@ -20,35 +20,24 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1TunedModelCheckpoint extends \Google\Model
 {
   /**
-   * The ID of the checkpoint.
-   *
    * @var string
    */
   public $checkpointId;
   /**
-   * The Endpoint resource name that the checkpoint is deployed to. Format:
-   * `projects/{project}/locations/{location}/endpoints/{endpoint}`.
-   *
    * @var string
    */
   public $endpoint;
   /**
-   * The epoch of the checkpoint.
-   *
    * @var string
    */
   public $epoch;
   /**
-   * The step of the checkpoint.
-   *
    * @var string
    */
   public $step;
 
   /**
-   * The ID of the checkpoint.
-   *
-   * @param string $checkpointId
+   * @param string
    */
   public function setCheckpointId($checkpointId)
   {
@@ -62,10 +51,7 @@ class GoogleCloudAiplatformV1TunedModelCheckpoint extends \Google\Model
     return $this->checkpointId;
   }
   /**
-   * The Endpoint resource name that the checkpoint is deployed to. Format:
-   * `projects/{project}/locations/{location}/endpoints/{endpoint}`.
-   *
-   * @param string $endpoint
+   * @param string
    */
   public function setEndpoint($endpoint)
   {
@@ -79,9 +65,7 @@ class GoogleCloudAiplatformV1TunedModelCheckpoint extends \Google\Model
     return $this->endpoint;
   }
   /**
-   * The epoch of the checkpoint.
-   *
-   * @param string $epoch
+   * @param string
    */
   public function setEpoch($epoch)
   {
@@ -95,9 +79,7 @@ class GoogleCloudAiplatformV1TunedModelCheckpoint extends \Google\Model
     return $this->epoch;
   }
   /**
-   * The step of the checkpoint.
-   *
-   * @param string $step
+   * @param string
    */
   public function setStep($step)
   {

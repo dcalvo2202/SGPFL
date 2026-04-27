@@ -21,69 +21,40 @@ class DirectorySite extends \Google\Collection
 {
   protected $collection_key = 'interstitialTagFormats';
   /**
-   * ID of this directory site. This is a read-only, auto-generated field.
-   *
    * @var string
    */
   public $id;
   protected $idDimensionValueType = DimensionValue::class;
   protected $idDimensionValueDataType = '';
   /**
-   * Tag types for regular placements. Acceptable values are: - "STANDARD" -
-   * "IFRAME_JAVASCRIPT_INPAGE" - "INTERNAL_REDIRECT_INPAGE" -
-   * "JAVASCRIPT_INPAGE"
-   *
    * @var string[]
    */
   public $inpageTagFormats;
   /**
-   * Tag types for interstitial placements. Acceptable values are: -
-   * "IFRAME_JAVASCRIPT_INTERSTITIAL" - "INTERNAL_REDIRECT_INTERSTITIAL" -
-   * "JAVASCRIPT_INTERSTITIAL"
-   *
    * @var string[]
    */
   public $interstitialTagFormats;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#directorySite".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Name of this directory site.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Default publisher specification ID of video placements under
-   * this directory site. Possible values are: * `1`, Hulu * `2`, NBC * `3`, CBS
-   * * `4`, CBS Desktop * `5`, Discovery * `6`, VEVO HD * `7`, VEVO Vertical *
-   * `8`, Fox * `9`, CW Network * `10`, Disney * `11`, IGN * `12`, NFL.com *
-   * `13`, Turner Broadcasting * `14`, Tubi on Fox * `15`, Hearst Corporation *
-   * `16`, Twitch Desktop * `17`, ABC * `18`, Univision * `19`, MLB.com * `20`,
-   * MLB.com Mobile * `21`, MLB.com OTT * `22`, Polsat * `23`, TVN * `24`,
-   * Mediaset * `25`, Antena 3 * `26`, Mediamond * `27`, Sky Italia * `28`, Tubi
-   * on CBS * `29`, Spotify * `30`, Paramount * `31`, Max
-   *
    * @var string
    */
   public $publisherSpecificationId;
   protected $settingsType = DirectorySiteSettings::class;
   protected $settingsDataType = '';
   /**
-   * URL of this directory site.
-   *
    * @var string
    */
   public $url;
 
   /**
-   * ID of this directory site. This is a read-only, auto-generated field.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -97,10 +68,7 @@ class DirectorySite extends \Google\Collection
     return $this->id;
   }
   /**
-   * Dimension value for the ID of this directory site. This is a read-only,
-   * auto-generated field.
-   *
-   * @param DimensionValue $idDimensionValue
+   * @param DimensionValue
    */
   public function setIdDimensionValue(DimensionValue $idDimensionValue)
   {
@@ -114,11 +82,7 @@ class DirectorySite extends \Google\Collection
     return $this->idDimensionValue;
   }
   /**
-   * Tag types for regular placements. Acceptable values are: - "STANDARD" -
-   * "IFRAME_JAVASCRIPT_INPAGE" - "INTERNAL_REDIRECT_INPAGE" -
-   * "JAVASCRIPT_INPAGE"
-   *
-   * @param string[] $inpageTagFormats
+   * @param string[]
    */
   public function setInpageTagFormats($inpageTagFormats)
   {
@@ -132,11 +96,7 @@ class DirectorySite extends \Google\Collection
     return $this->inpageTagFormats;
   }
   /**
-   * Tag types for interstitial placements. Acceptable values are: -
-   * "IFRAME_JAVASCRIPT_INTERSTITIAL" - "INTERNAL_REDIRECT_INTERSTITIAL" -
-   * "JAVASCRIPT_INTERSTITIAL"
-   *
-   * @param string[] $interstitialTagFormats
+   * @param string[]
    */
   public function setInterstitialTagFormats($interstitialTagFormats)
   {
@@ -150,10 +110,7 @@ class DirectorySite extends \Google\Collection
     return $this->interstitialTagFormats;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#directorySite".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -167,9 +124,7 @@ class DirectorySite extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Name of this directory site.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -183,17 +138,7 @@ class DirectorySite extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. Default publisher specification ID of video placements under
-   * this directory site. Possible values are: * `1`, Hulu * `2`, NBC * `3`, CBS
-   * * `4`, CBS Desktop * `5`, Discovery * `6`, VEVO HD * `7`, VEVO Vertical *
-   * `8`, Fox * `9`, CW Network * `10`, Disney * `11`, IGN * `12`, NFL.com *
-   * `13`, Turner Broadcasting * `14`, Tubi on Fox * `15`, Hearst Corporation *
-   * `16`, Twitch Desktop * `17`, ABC * `18`, Univision * `19`, MLB.com * `20`,
-   * MLB.com Mobile * `21`, MLB.com OTT * `22`, Polsat * `23`, TVN * `24`,
-   * Mediaset * `25`, Antena 3 * `26`, Mediamond * `27`, Sky Italia * `28`, Tubi
-   * on CBS * `29`, Spotify * `30`, Paramount * `31`, Max
-   *
-   * @param string $publisherSpecificationId
+   * @param string
    */
   public function setPublisherSpecificationId($publisherSpecificationId)
   {
@@ -207,9 +152,7 @@ class DirectorySite extends \Google\Collection
     return $this->publisherSpecificationId;
   }
   /**
-   * Directory site settings.
-   *
-   * @param DirectorySiteSettings $settings
+   * @param DirectorySiteSettings
    */
   public function setSettings(DirectorySiteSettings $settings)
   {
@@ -223,9 +166,7 @@ class DirectorySite extends \Google\Collection
     return $this->settings;
   }
   /**
-   * URL of this directory site.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

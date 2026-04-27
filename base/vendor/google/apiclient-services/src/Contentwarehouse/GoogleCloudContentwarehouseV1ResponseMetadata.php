@@ -20,18 +20,12 @@ namespace Google\Service\Contentwarehouse;
 class GoogleCloudContentwarehouseV1ResponseMetadata extends \Google\Model
 {
   /**
-   * A unique id associated with this call. This id is logged for tracking
-   * purpose.
-   *
    * @var string
    */
   public $requestId;
 
   /**
-   * A unique id associated with this call. This id is logged for tracking
-   * purpose.
-   *
-   * @param string $requestId
+   * @param string
    */
   public function setRequestId($requestId)
   {

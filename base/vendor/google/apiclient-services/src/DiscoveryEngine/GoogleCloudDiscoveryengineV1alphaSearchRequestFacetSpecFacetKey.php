@@ -21,69 +21,34 @@ class GoogleCloudDiscoveryengineV1alphaSearchRequestFacetSpecFacetKey extends \G
 {
   protected $collection_key = 'restrictedValues';
   /**
-   * True to make facet keys case insensitive when getting faceting values with
-   * prefixes or contains; false otherwise.
-   *
    * @var bool
    */
   public $caseInsensitive;
   /**
-   * Only get facet values that contain the given strings. For example, suppose
-   * "category" has three values "Action > 2022", "Action > 2021" and "Sci-Fi >
-   * 2022". If set "contains" to "2022", the "category" facet only contains
-   * "Action > 2022" and "Sci-Fi > 2022". Only supported on textual fields.
-   * Maximum is 10.
-   *
    * @var string[]
    */
   public $contains;
   protected $intervalsType = GoogleCloudDiscoveryengineV1alphaInterval::class;
   protected $intervalsDataType = 'array';
   /**
-   * Required. Supported textual and numerical facet keys in Document object,
-   * over which the facet values are computed. Facet key is case-sensitive.
-   *
    * @var string
    */
   public $key;
   /**
-   * The order in which documents are returned. Allowed values are: * "count
-   * desc", which means order by SearchResponse.Facet.values.count descending. *
-   * "value desc", which means order by SearchResponse.Facet.values.value
-   * descending. Only applies to textual facets. If not set, textual values are
-   * sorted in [natural
-   * order](https://en.wikipedia.org/wiki/Natural_sort_order); numerical
-   * intervals are sorted in the order given by FacetSpec.FacetKey.intervals.
-   *
    * @var string
    */
   public $orderBy;
   /**
-   * Only get facet values that start with the given string prefix. For example,
-   * suppose "category" has three values "Action > 2022", "Action > 2021" and
-   * "Sci-Fi > 2022". If set "prefixes" to "Action", the "category" facet only
-   * contains "Action > 2022" and "Action > 2021". Only supported on textual
-   * fields. Maximum is 10.
-   *
    * @var string[]
    */
   public $prefixes;
   /**
-   * Only get facet for the given restricted values. Only supported on textual
-   * fields. For example, suppose "category" has three values "Action > 2022",
-   * "Action > 2021" and "Sci-Fi > 2022". If set "restricted_values" to "Action
-   * > 2022", the "category" facet only contains "Action > 2022". Only supported
-   * on textual fields. Maximum is 10.
-   *
    * @var string[]
    */
   public $restrictedValues;
 
   /**
-   * True to make facet keys case insensitive when getting faceting values with
-   * prefixes or contains; false otherwise.
-   *
-   * @param bool $caseInsensitive
+   * @param bool
    */
   public function setCaseInsensitive($caseInsensitive)
   {
@@ -97,13 +62,7 @@ class GoogleCloudDiscoveryengineV1alphaSearchRequestFacetSpecFacetKey extends \G
     return $this->caseInsensitive;
   }
   /**
-   * Only get facet values that contain the given strings. For example, suppose
-   * "category" has three values "Action > 2022", "Action > 2021" and "Sci-Fi >
-   * 2022". If set "contains" to "2022", the "category" facet only contains
-   * "Action > 2022" and "Sci-Fi > 2022". Only supported on textual fields.
-   * Maximum is 10.
-   *
-   * @param string[] $contains
+   * @param string[]
    */
   public function setContains($contains)
   {
@@ -117,11 +76,7 @@ class GoogleCloudDiscoveryengineV1alphaSearchRequestFacetSpecFacetKey extends \G
     return $this->contains;
   }
   /**
-   * Set only if values should be bucketed into intervals. Must be set for
-   * facets with numerical values. Must not be set for facet with text values.
-   * Maximum number of intervals is 30.
-   *
-   * @param GoogleCloudDiscoveryengineV1alphaInterval[] $intervals
+   * @param GoogleCloudDiscoveryengineV1alphaInterval[]
    */
   public function setIntervals($intervals)
   {
@@ -135,10 +90,7 @@ class GoogleCloudDiscoveryengineV1alphaSearchRequestFacetSpecFacetKey extends \G
     return $this->intervals;
   }
   /**
-   * Required. Supported textual and numerical facet keys in Document object,
-   * over which the facet values are computed. Facet key is case-sensitive.
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {
@@ -152,15 +104,7 @@ class GoogleCloudDiscoveryengineV1alphaSearchRequestFacetSpecFacetKey extends \G
     return $this->key;
   }
   /**
-   * The order in which documents are returned. Allowed values are: * "count
-   * desc", which means order by SearchResponse.Facet.values.count descending. *
-   * "value desc", which means order by SearchResponse.Facet.values.value
-   * descending. Only applies to textual facets. If not set, textual values are
-   * sorted in [natural
-   * order](https://en.wikipedia.org/wiki/Natural_sort_order); numerical
-   * intervals are sorted in the order given by FacetSpec.FacetKey.intervals.
-   *
-   * @param string $orderBy
+   * @param string
    */
   public function setOrderBy($orderBy)
   {
@@ -174,13 +118,7 @@ class GoogleCloudDiscoveryengineV1alphaSearchRequestFacetSpecFacetKey extends \G
     return $this->orderBy;
   }
   /**
-   * Only get facet values that start with the given string prefix. For example,
-   * suppose "category" has three values "Action > 2022", "Action > 2021" and
-   * "Sci-Fi > 2022". If set "prefixes" to "Action", the "category" facet only
-   * contains "Action > 2022" and "Action > 2021". Only supported on textual
-   * fields. Maximum is 10.
-   *
-   * @param string[] $prefixes
+   * @param string[]
    */
   public function setPrefixes($prefixes)
   {
@@ -194,13 +132,7 @@ class GoogleCloudDiscoveryengineV1alphaSearchRequestFacetSpecFacetKey extends \G
     return $this->prefixes;
   }
   /**
-   * Only get facet for the given restricted values. Only supported on textual
-   * fields. For example, suppose "category" has three values "Action > 2022",
-   * "Action > 2021" and "Sci-Fi > 2022". If set "restricted_values" to "Action
-   * > 2022", the "category" facet only contains "Action > 2022". Only supported
-   * on textual fields. Maximum is 10.
-   *
-   * @param string[] $restrictedValues
+   * @param string[]
    */
   public function setRestrictedValues($restrictedValues)
   {

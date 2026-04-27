@@ -27,9 +27,7 @@ class TechnologyTargeting extends \Google\Model
   protected $operatingSystemTargetingDataType = '';
 
   /**
-   * IDs of device capabilities to be included/excluded.
-   *
-   * @param CriteriaTargeting $deviceCapabilityTargeting
+   * @param CriteriaTargeting
    */
   public function setDeviceCapabilityTargeting(CriteriaTargeting $deviceCapabilityTargeting)
   {
@@ -43,9 +41,7 @@ class TechnologyTargeting extends \Google\Model
     return $this->deviceCapabilityTargeting;
   }
   /**
-   * IDs of device categories to be included/excluded.
-   *
-   * @param CriteriaTargeting $deviceCategoryTargeting
+   * @param CriteriaTargeting
    */
   public function setDeviceCategoryTargeting(CriteriaTargeting $deviceCategoryTargeting)
   {
@@ -59,9 +55,7 @@ class TechnologyTargeting extends \Google\Model
     return $this->deviceCategoryTargeting;
   }
   /**
-   * Operating system related targeting information.
-   *
-   * @param OperatingSystemTargeting $operatingSystemTargeting
+   * @param OperatingSystemTargeting
    */
   public function setOperatingSystemTargeting(OperatingSystemTargeting $operatingSystemTargeting)
   {

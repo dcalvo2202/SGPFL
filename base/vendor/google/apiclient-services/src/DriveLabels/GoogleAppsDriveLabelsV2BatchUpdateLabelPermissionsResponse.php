@@ -24,9 +24,7 @@ class GoogleAppsDriveLabelsV2BatchUpdateLabelPermissionsResponse extends \Google
   protected $permissionsDataType = 'array';
 
   /**
-   * Required. Permissions updated.
-   *
-   * @param GoogleAppsDriveLabelsV2LabelPermission[] $permissions
+   * @param GoogleAppsDriveLabelsV2LabelPermission[]
    */
   public function setPermissions($permissions)
   {

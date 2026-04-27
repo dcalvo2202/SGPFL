@@ -20,22 +20,12 @@ namespace Google\Service\DataprocMetastore;
 class EncryptionConfig extends \Google\Model
 {
   /**
-   * Optional. The fully qualified customer provided Cloud KMS key name to use
-   * for customer data encryption, in the following format:projects/{project_num
-   * ber}/locations/{location_id}/keyRings/{key_ring_id}/cryptoKeys/{crypto_key_
-   * id}.
-   *
    * @var string
    */
   public $kmsKey;
 
   /**
-   * Optional. The fully qualified customer provided Cloud KMS key name to use
-   * for customer data encryption, in the following format:projects/{project_num
-   * ber}/locations/{location_id}/keyRings/{key_ring_id}/cryptoKeys/{crypto_key_
-   * id}.
-   *
-   * @param string $kmsKey
+   * @param string
    */
   public function setKmsKey($kmsKey)
   {

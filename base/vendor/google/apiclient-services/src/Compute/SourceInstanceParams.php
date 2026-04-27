@@ -24,12 +24,7 @@ class SourceInstanceParams extends \Google\Collection
   protected $diskConfigsDataType = 'array';
 
   /**
-   * Attached disks configuration. If not provided, defaults are applied: For
-   * boot disk and any other R/W disks, the source images for each disk will be
-   * used. For read-only disks, they will be attached in read-only mode. Local
-   * SSD disks will be created as blank volumes.
-   *
-   * @param DiskInstantiationConfig[] $diskConfigs
+   * @param DiskInstantiationConfig[]
    */
   public function setDiskConfigs($diskConfigs)
   {

@@ -19,10 +19,6 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowV2Message extends \Google\Model
 {
-  public const PARTICIPANT_ROLE_ROLE_UNSPECIFIED = 'ROLE_UNSPECIFIED';
-  public const PARTICIPANT_ROLE_HUMAN_AGENT = 'HUMAN_AGENT';
-  public const PARTICIPANT_ROLE_AUTOMATED_AGENT = 'AUTOMATED_AGENT';
-  public const PARTICIPANT_ROLE_END_USER = 'END_USER';
   /**
    * @var string
    */
@@ -57,7 +53,7 @@ class GoogleCloudDialogflowV2Message extends \Google\Model
   protected $sentimentAnalysisDataType = '';
 
   /**
-   * @param string $content
+   * @param string
    */
   public function setContent($content)
   {
@@ -71,7 +67,7 @@ class GoogleCloudDialogflowV2Message extends \Google\Model
     return $this->content;
   }
   /**
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -85,7 +81,7 @@ class GoogleCloudDialogflowV2Message extends \Google\Model
     return $this->createTime;
   }
   /**
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {
@@ -99,7 +95,7 @@ class GoogleCloudDialogflowV2Message extends \Google\Model
     return $this->languageCode;
   }
   /**
-   * @param GoogleCloudDialogflowV2MessageAnnotation $messageAnnotation
+   * @param GoogleCloudDialogflowV2MessageAnnotation
    */
   public function setMessageAnnotation(GoogleCloudDialogflowV2MessageAnnotation $messageAnnotation)
   {
@@ -113,7 +109,7 @@ class GoogleCloudDialogflowV2Message extends \Google\Model
     return $this->messageAnnotation;
   }
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -127,7 +123,7 @@ class GoogleCloudDialogflowV2Message extends \Google\Model
     return $this->name;
   }
   /**
-   * @param string $participant
+   * @param string
    */
   public function setParticipant($participant)
   {
@@ -141,21 +137,21 @@ class GoogleCloudDialogflowV2Message extends \Google\Model
     return $this->participant;
   }
   /**
-   * @param self::PARTICIPANT_ROLE_* $participantRole
+   * @param string
    */
   public function setParticipantRole($participantRole)
   {
     $this->participantRole = $participantRole;
   }
   /**
-   * @return self::PARTICIPANT_ROLE_*
+   * @return string
    */
   public function getParticipantRole()
   {
     return $this->participantRole;
   }
   /**
-   * @param string $sendTime
+   * @param string
    */
   public function setSendTime($sendTime)
   {
@@ -169,7 +165,7 @@ class GoogleCloudDialogflowV2Message extends \Google\Model
     return $this->sendTime;
   }
   /**
-   * @param GoogleCloudDialogflowV2SentimentAnalysisResult $sentimentAnalysis
+   * @param GoogleCloudDialogflowV2SentimentAnalysisResult
    */
   public function setSentimentAnalysis(GoogleCloudDialogflowV2SentimentAnalysisResult $sentimentAnalysis)
   {

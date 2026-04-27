@@ -20,16 +20,12 @@ namespace Google\Service\CloudRedis;
 class ExportBackupRequest extends \Google\Model
 {
   /**
-   * Google Cloud Storage bucket, like "my-bucket".
-   *
    * @var string
    */
   public $gcsBucket;
 
   /**
-   * Google Cloud Storage bucket, like "my-bucket".
-   *
-   * @param string $gcsBucket
+   * @param string
    */
   public function setGcsBucket($gcsBucket)
   {

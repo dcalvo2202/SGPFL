@@ -24,18 +24,12 @@ class Birthday extends \Google\Model
   protected $metadataType = FieldMetadata::class;
   protected $metadataDataType = '';
   /**
-   * Prefer to use the `date` field if set. A free-form string representing the
-   * user's birthday. This value is not validated.
-   *
-   * @deprecated
    * @var string
    */
   public $text;
 
   /**
-   * The structured date of the birthday.
-   *
-   * @param Date $date
+   * @param Date
    */
   public function setDate(Date $date)
   {
@@ -49,9 +43,7 @@ class Birthday extends \Google\Model
     return $this->date;
   }
   /**
-   * Metadata about the birthday.
-   *
-   * @param FieldMetadata $metadata
+   * @param FieldMetadata
    */
   public function setMetadata(FieldMetadata $metadata)
   {
@@ -65,18 +57,13 @@ class Birthday extends \Google\Model
     return $this->metadata;
   }
   /**
-   * Prefer to use the `date` field if set. A free-form string representing the
-   * user's birthday. This value is not validated.
-   *
-   * @deprecated
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {
     $this->text = $text;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getText()

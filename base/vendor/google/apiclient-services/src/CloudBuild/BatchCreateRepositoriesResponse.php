@@ -24,9 +24,7 @@ class BatchCreateRepositoriesResponse extends \Google\Collection
   protected $repositoriesDataType = 'array';
 
   /**
-   * Repository resources created.
-   *
-   * @param Repository[] $repositories
+   * @param Repository[]
    */
   public function setRepositories($repositories)
   {

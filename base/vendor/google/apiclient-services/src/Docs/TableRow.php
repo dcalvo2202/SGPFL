@@ -21,29 +21,18 @@ class TableRow extends \Google\Collection
 {
   protected $collection_key = 'tableCells';
   /**
-   * The zero-based end index of this row, exclusive, in UTF-16 code units.
-   *
    * @var int
    */
   public $endIndex;
   /**
-   * The zero-based start index of this row, in UTF-16 code units.
-   *
    * @var int
    */
   public $startIndex;
   /**
-   * The suggested deletion IDs. If empty, then there are no suggested deletions
-   * of this content.
-   *
    * @var string[]
    */
   public $suggestedDeletionIds;
   /**
-   * The suggested insertion IDs. A TableRow may have multiple insertion IDs if
-   * it's a nested suggested change. If empty, then this is not a suggested
-   * insertion.
-   *
    * @var string[]
    */
   public $suggestedInsertionIds;
@@ -55,9 +44,7 @@ class TableRow extends \Google\Collection
   protected $tableRowStyleDataType = '';
 
   /**
-   * The zero-based end index of this row, exclusive, in UTF-16 code units.
-   *
-   * @param int $endIndex
+   * @param int
    */
   public function setEndIndex($endIndex)
   {
@@ -71,9 +58,7 @@ class TableRow extends \Google\Collection
     return $this->endIndex;
   }
   /**
-   * The zero-based start index of this row, in UTF-16 code units.
-   *
-   * @param int $startIndex
+   * @param int
    */
   public function setStartIndex($startIndex)
   {
@@ -87,10 +72,7 @@ class TableRow extends \Google\Collection
     return $this->startIndex;
   }
   /**
-   * The suggested deletion IDs. If empty, then there are no suggested deletions
-   * of this content.
-   *
-   * @param string[] $suggestedDeletionIds
+   * @param string[]
    */
   public function setSuggestedDeletionIds($suggestedDeletionIds)
   {
@@ -104,11 +86,7 @@ class TableRow extends \Google\Collection
     return $this->suggestedDeletionIds;
   }
   /**
-   * The suggested insertion IDs. A TableRow may have multiple insertion IDs if
-   * it's a nested suggested change. If empty, then this is not a suggested
-   * insertion.
-   *
-   * @param string[] $suggestedInsertionIds
+   * @param string[]
    */
   public function setSuggestedInsertionIds($suggestedInsertionIds)
   {
@@ -122,9 +100,7 @@ class TableRow extends \Google\Collection
     return $this->suggestedInsertionIds;
   }
   /**
-   * The suggested style changes to this row, keyed by suggestion ID.
-   *
-   * @param SuggestedTableRowStyle[] $suggestedTableRowStyleChanges
+   * @param SuggestedTableRowStyle[]
    */
   public function setSuggestedTableRowStyleChanges($suggestedTableRowStyleChanges)
   {
@@ -138,11 +114,7 @@ class TableRow extends \Google\Collection
     return $this->suggestedTableRowStyleChanges;
   }
   /**
-   * The contents and style of each cell in this row. It's possible for a table
-   * to be non-rectangular, so some rows may have a different number of cells
-   * than other rows in the same table.
-   *
-   * @param TableCell[] $tableCells
+   * @param TableCell[]
    */
   public function setTableCells($tableCells)
   {
@@ -156,9 +128,7 @@ class TableRow extends \Google\Collection
     return $this->tableCells;
   }
   /**
-   * The style of the table row.
-   *
-   * @param TableRowStyle $tableRowStyle
+   * @param TableRowStyle
    */
   public function setTableRowStyle(TableRowStyle $tableRowStyle)
   {

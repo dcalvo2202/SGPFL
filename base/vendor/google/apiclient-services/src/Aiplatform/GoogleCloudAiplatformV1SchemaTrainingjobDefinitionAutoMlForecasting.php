@@ -25,9 +25,7 @@ class GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlForecasting extend
   protected $metadataDataType = '';
 
   /**
-   * The input parameters of this TrainingJob.
-   *
-   * @param GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlForecastingInputs $inputs
+   * @param GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlForecastingInputs
    */
   public function setInputs(GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlForecastingInputs $inputs)
   {
@@ -41,9 +39,7 @@ class GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlForecasting extend
     return $this->inputs;
   }
   /**
-   * The metadata information.
-   *
-   * @param GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlForecastingMetadata $metadata
+   * @param GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlForecastingMetadata
    */
   public function setMetadata(GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlForecastingMetadata $metadata)
   {

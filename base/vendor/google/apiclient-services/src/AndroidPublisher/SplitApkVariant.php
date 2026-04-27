@@ -25,18 +25,12 @@ class SplitApkVariant extends \Google\Collection
   protected $targetingType = VariantTargeting::class;
   protected $targetingDataType = '';
   /**
-   * Number of the variant, starting at 0 (unless overridden). A device will
-   * receive APKs from the first variant that matches the device configuration,
-   * with higher variant numbers having priority over lower variant numbers.
-   *
    * @var int
    */
   public $variantNumber;
 
   /**
-   * Set of APKs, one set per module.
-   *
-   * @param ApkSet[] $apkSet
+   * @param ApkSet[]
    */
   public function setApkSet($apkSet)
   {
@@ -50,9 +44,7 @@ class SplitApkVariant extends \Google\Collection
     return $this->apkSet;
   }
   /**
-   * Variant-level targeting.
-   *
-   * @param VariantTargeting $targeting
+   * @param VariantTargeting
    */
   public function setTargeting(VariantTargeting $targeting)
   {
@@ -66,11 +58,7 @@ class SplitApkVariant extends \Google\Collection
     return $this->targeting;
   }
   /**
-   * Number of the variant, starting at 0 (unless overridden). A device will
-   * receive APKs from the first variant that matches the device configuration,
-   * with higher variant numbers having priority over lower variant numbers.
-   *
-   * @param int $variantNumber
+   * @param int
    */
   public function setVariantNumber($variantNumber)
   {

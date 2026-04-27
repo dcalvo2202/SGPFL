@@ -24,9 +24,7 @@ class AddHeldAccountsResponse extends \Google\Collection
   protected $responsesDataType = 'array';
 
   /**
-   * The list of responses, in the same order as the batch request.
-   *
-   * @param AddHeldAccountResult[] $responses
+   * @param AddHeldAccountResult[]
    */
   public function setResponses($responses)
   {

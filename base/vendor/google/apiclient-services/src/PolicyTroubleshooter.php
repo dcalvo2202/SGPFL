@@ -20,7 +20,7 @@ namespace Google\Service;
 use Google\Client;
 
 /**
- * Service definition for PolicyTroubleshooter (v3).
+ * Service definition for PolicyTroubleshooter (v1).
  *
  * <p>
 </p>
@@ -55,7 +55,7 @@ class PolicyTroubleshooter extends \Google\Service
     $this->rootUrlTemplate = $rootUrl ?: 'https://policytroubleshooter.UNIVERSE_DOMAIN/';
     $this->servicePath = '';
     $this->batchPath = 'batch';
-    $this->version = 'v3';
+    $this->version = 'v1';
     $this->serviceName = 'policytroubleshooter';
 
     $this->iam = new PolicyTroubleshooter\Resource\Iam(
@@ -65,7 +65,7 @@ class PolicyTroubleshooter extends \Google\Service
         [
           'methods' => [
             'troubleshoot' => [
-              'path' => 'v3/iam:troubleshoot',
+              'path' => 'v1/iam:troubleshoot',
               'httpMethod' => 'POST',
               'parameters' => [],
             ],

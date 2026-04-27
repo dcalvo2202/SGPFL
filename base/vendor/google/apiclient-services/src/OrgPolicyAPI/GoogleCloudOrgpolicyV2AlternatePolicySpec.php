@@ -20,9 +20,6 @@ namespace Google\Service\OrgPolicyAPI;
 class GoogleCloudOrgpolicyV2AlternatePolicySpec extends \Google\Model
 {
   /**
-   * Reference to the launch that will be used while audit logging and to
-   * control the launch. Should be set only in the alternate policy.
-   *
    * @var string
    */
   public $launch;
@@ -30,10 +27,7 @@ class GoogleCloudOrgpolicyV2AlternatePolicySpec extends \Google\Model
   protected $specDataType = '';
 
   /**
-   * Reference to the launch that will be used while audit logging and to
-   * control the launch. Should be set only in the alternate policy.
-   *
-   * @param string $launch
+   * @param string
    */
   public function setLaunch($launch)
   {
@@ -47,9 +41,7 @@ class GoogleCloudOrgpolicyV2AlternatePolicySpec extends \Google\Model
     return $this->launch;
   }
   /**
-   * Specify constraint for configurations of Google Cloud resources.
-   *
-   * @param GoogleCloudOrgpolicyV2PolicySpec $spec
+   * @param GoogleCloudOrgpolicyV2PolicySpec
    */
   public function setSpec(GoogleCloudOrgpolicyV2PolicySpec $spec)
   {

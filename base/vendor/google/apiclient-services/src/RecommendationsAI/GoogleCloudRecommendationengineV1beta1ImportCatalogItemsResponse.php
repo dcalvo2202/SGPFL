@@ -26,9 +26,7 @@ class GoogleCloudRecommendationengineV1beta1ImportCatalogItemsResponse extends \
   protected $errorsConfigDataType = '';
 
   /**
-   * A sample of errors encountered while processing the request.
-   *
-   * @param GoogleRpcStatus[] $errorSamples
+   * @param GoogleRpcStatus[]
    */
   public function setErrorSamples($errorSamples)
   {
@@ -42,9 +40,7 @@ class GoogleCloudRecommendationengineV1beta1ImportCatalogItemsResponse extends \
     return $this->errorSamples;
   }
   /**
-   * Echoes the destination for the complete errors in the request if set.
-   *
-   * @param GoogleCloudRecommendationengineV1beta1ImportErrorsConfig $errorsConfig
+   * @param GoogleCloudRecommendationengineV1beta1ImportErrorsConfig
    */
   public function setErrorsConfig(GoogleCloudRecommendationengineV1beta1ImportErrorsConfig $errorsConfig)
   {

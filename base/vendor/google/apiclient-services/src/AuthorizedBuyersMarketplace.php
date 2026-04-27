@@ -136,16 +136,6 @@ class AuthorizedBuyersMarketplace extends \Google\Service
                   'type' => 'string',
                 ],
               ],
-            ],'setReadyToServe' => [
-              'path' => 'v1/{+deal}:setReadyToServe',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'deal' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
             ],
           ]
         ]

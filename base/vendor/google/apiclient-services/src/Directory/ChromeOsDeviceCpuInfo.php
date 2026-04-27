@@ -21,30 +21,22 @@ class ChromeOsDeviceCpuInfo extends \Google\Collection
 {
   protected $collection_key = 'logicalCpus';
   /**
-   * The CPU architecture.
-   *
    * @var string
    */
   public $architecture;
   protected $logicalCpusType = ChromeOsDeviceCpuInfoLogicalCpus::class;
   protected $logicalCpusDataType = 'array';
   /**
-   * The max CPU clock speed in kHz.
-   *
    * @var int
    */
   public $maxClockSpeedKhz;
   /**
-   * The CPU model name.
-   *
    * @var string
    */
   public $model;
 
   /**
-   * The CPU architecture.
-   *
-   * @param string $architecture
+   * @param string
    */
   public function setArchitecture($architecture)
   {
@@ -58,9 +50,7 @@ class ChromeOsDeviceCpuInfo extends \Google\Collection
     return $this->architecture;
   }
   /**
-   * Information for the Logical CPUs
-   *
-   * @param ChromeOsDeviceCpuInfoLogicalCpus[] $logicalCpus
+   * @param ChromeOsDeviceCpuInfoLogicalCpus[]
    */
   public function setLogicalCpus($logicalCpus)
   {
@@ -74,9 +64,7 @@ class ChromeOsDeviceCpuInfo extends \Google\Collection
     return $this->logicalCpus;
   }
   /**
-   * The max CPU clock speed in kHz.
-   *
-   * @param int $maxClockSpeedKhz
+   * @param int
    */
   public function setMaxClockSpeedKhz($maxClockSpeedKhz)
   {
@@ -90,9 +78,7 @@ class ChromeOsDeviceCpuInfo extends \Google\Collection
     return $this->maxClockSpeedKhz;
   }
   /**
-   * The CPU model name.
-   *
-   * @param string $model
+   * @param string
    */
   public function setModel($model)
   {

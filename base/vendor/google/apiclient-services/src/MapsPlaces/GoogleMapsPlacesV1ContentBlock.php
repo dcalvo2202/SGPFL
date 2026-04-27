@@ -23,17 +23,12 @@ class GoogleMapsPlacesV1ContentBlock extends \Google\Collection
   protected $contentType = GoogleTypeLocalizedText::class;
   protected $contentDataType = '';
   /**
-   * The list of resource names of the referenced places. This name can be used
-   * in other APIs that accept Place resource names.
-   *
    * @var string[]
    */
   public $referencedPlaces;
 
   /**
-   * Content related to the topic.
-   *
-   * @param GoogleTypeLocalizedText $content
+   * @param GoogleTypeLocalizedText
    */
   public function setContent(GoogleTypeLocalizedText $content)
   {
@@ -47,10 +42,7 @@ class GoogleMapsPlacesV1ContentBlock extends \Google\Collection
     return $this->content;
   }
   /**
-   * The list of resource names of the referenced places. This name can be used
-   * in other APIs that accept Place resource names.
-   *
-   * @param string[] $referencedPlaces
+   * @param string[]
    */
   public function setReferencedPlaces($referencedPlaces)
   {

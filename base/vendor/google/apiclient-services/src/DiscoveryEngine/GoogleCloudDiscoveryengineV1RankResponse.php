@@ -24,9 +24,7 @@ class GoogleCloudDiscoveryengineV1RankResponse extends \Google\Collection
   protected $recordsDataType = 'array';
 
   /**
-   * A list of records sorted by descending score.
-   *
-   * @param GoogleCloudDiscoveryengineV1RankingRecord[] $records
+   * @param GoogleCloudDiscoveryengineV1RankingRecord[]
    */
   public function setRecords($records)
   {

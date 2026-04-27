@@ -20,9 +20,6 @@ namespace Google\Service\GoogleAnalyticsAdmin;
 class GoogleAnalyticsAdminV1betaAccessOrderBy extends \Google\Model
 {
   /**
-   * If true, sorts by descending order. If false or unspecified, sorts in
-   * ascending order.
-   *
    * @var bool
    */
   public $desc;
@@ -32,10 +29,7 @@ class GoogleAnalyticsAdminV1betaAccessOrderBy extends \Google\Model
   protected $metricDataType = '';
 
   /**
-   * If true, sorts by descending order. If false or unspecified, sorts in
-   * ascending order.
-   *
-   * @param bool $desc
+   * @param bool
    */
   public function setDesc($desc)
   {
@@ -49,9 +43,7 @@ class GoogleAnalyticsAdminV1betaAccessOrderBy extends \Google\Model
     return $this->desc;
   }
   /**
-   * Sorts results by a dimension's values.
-   *
-   * @param GoogleAnalyticsAdminV1betaAccessOrderByDimensionOrderBy $dimension
+   * @param GoogleAnalyticsAdminV1betaAccessOrderByDimensionOrderBy
    */
   public function setDimension(GoogleAnalyticsAdminV1betaAccessOrderByDimensionOrderBy $dimension)
   {
@@ -65,9 +57,7 @@ class GoogleAnalyticsAdminV1betaAccessOrderBy extends \Google\Model
     return $this->dimension;
   }
   /**
-   * Sorts results by a metric's values.
-   *
-   * @param GoogleAnalyticsAdminV1betaAccessOrderByMetricOrderBy $metric
+   * @param GoogleAnalyticsAdminV1betaAccessOrderByMetricOrderBy
    */
   public function setMetric(GoogleAnalyticsAdminV1betaAccessOrderByMetricOrderBy $metric)
   {

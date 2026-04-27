@@ -21,8 +21,6 @@ class ServiceDelegationHistory extends \Google\Collection
 {
   protected $collection_key = 'serviceMetadata';
   /**
-   * The original end user who initiated the request to GCP.
-   *
    * @var string
    */
   public $originalPrincipal;
@@ -30,9 +28,7 @@ class ServiceDelegationHistory extends \Google\Collection
   protected $serviceMetadataDataType = 'array';
 
   /**
-   * The original end user who initiated the request to GCP.
-   *
-   * @param string $originalPrincipal
+   * @param string
    */
   public function setOriginalPrincipal($originalPrincipal)
   {
@@ -46,10 +42,7 @@ class ServiceDelegationHistory extends \Google\Collection
     return $this->originalPrincipal;
   }
   /**
-   * Data identifying the service specific jobs or units of work that were
-   * involved in a chain of service calls.
-   *
-   * @param ServiceMetadata[] $serviceMetadata
+   * @param ServiceMetadata[]
    */
   public function setServiceMetadata($serviceMetadata)
   {

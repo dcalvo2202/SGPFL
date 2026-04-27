@@ -20,18 +20,12 @@ namespace Google\Service\GKEOnPrem;
 class BareMetalAdminOsEnvironmentConfig extends \Google\Model
 {
   /**
-   * Whether the package repo should be added when initializing bare metal
-   * machines.
-   *
    * @var bool
    */
   public $packageRepoExcluded;
 
   /**
-   * Whether the package repo should be added when initializing bare metal
-   * machines.
-   *
-   * @param bool $packageRepoExcluded
+   * @param bool
    */
   public function setPackageRepoExcluded($packageRepoExcluded)
   {

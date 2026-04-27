@@ -22,34 +22,24 @@ class GoogleAppsDriveLabelsV2SelectionLimits extends \Google\Model
   protected $listLimitsType = GoogleAppsDriveLabelsV2ListLimits::class;
   protected $listLimitsDataType = '';
   /**
-   * Maximum number of choices.
-   *
    * @var int
    */
   public $maxChoices;
   /**
-   * Maximum number of deleted choices.
-   *
    * @var int
    */
   public $maxDeletedChoices;
   /**
-   * Maximum length for display name.
-   *
    * @var int
    */
   public $maxDisplayNameLength;
   /**
-   * Maximum ID length for a selection option.
-   *
    * @var int
    */
   public $maxIdLength;
 
   /**
-   * Limits for list-variant of a field type.
-   *
-   * @param GoogleAppsDriveLabelsV2ListLimits $listLimits
+   * @param GoogleAppsDriveLabelsV2ListLimits
    */
   public function setListLimits(GoogleAppsDriveLabelsV2ListLimits $listLimits)
   {
@@ -63,9 +53,7 @@ class GoogleAppsDriveLabelsV2SelectionLimits extends \Google\Model
     return $this->listLimits;
   }
   /**
-   * Maximum number of choices.
-   *
-   * @param int $maxChoices
+   * @param int
    */
   public function setMaxChoices($maxChoices)
   {
@@ -79,9 +67,7 @@ class GoogleAppsDriveLabelsV2SelectionLimits extends \Google\Model
     return $this->maxChoices;
   }
   /**
-   * Maximum number of deleted choices.
-   *
-   * @param int $maxDeletedChoices
+   * @param int
    */
   public function setMaxDeletedChoices($maxDeletedChoices)
   {
@@ -95,9 +81,7 @@ class GoogleAppsDriveLabelsV2SelectionLimits extends \Google\Model
     return $this->maxDeletedChoices;
   }
   /**
-   * Maximum length for display name.
-   *
-   * @param int $maxDisplayNameLength
+   * @param int
    */
   public function setMaxDisplayNameLength($maxDisplayNameLength)
   {
@@ -111,9 +95,7 @@ class GoogleAppsDriveLabelsV2SelectionLimits extends \Google\Model
     return $this->maxDisplayNameLength;
   }
   /**
-   * Maximum ID length for a selection option.
-   *
-   * @param int $maxIdLength
+   * @param int
    */
   public function setMaxIdLength($maxIdLength)
   {

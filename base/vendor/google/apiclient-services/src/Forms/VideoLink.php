@@ -20,22 +20,16 @@ namespace Google\Service\Forms;
 class VideoLink extends \Google\Model
 {
   /**
-   * Required. The display text for the link.
-   *
    * @var string
    */
   public $displayText;
   /**
-   * The URI of a YouTube video.
-   *
    * @var string
    */
   public $youtubeUri;
 
   /**
-   * Required. The display text for the link.
-   *
-   * @param string $displayText
+   * @param string
    */
   public function setDisplayText($displayText)
   {
@@ -49,9 +43,7 @@ class VideoLink extends \Google\Model
     return $this->displayText;
   }
   /**
-   * The URI of a YouTube video.
-   *
-   * @param string $youtubeUri
+   * @param string
    */
   public function setYoutubeUri($youtubeUri)
   {

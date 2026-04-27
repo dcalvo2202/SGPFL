@@ -23,10 +23,7 @@ class ConsumerTopicMetadata extends \Google\Model
   protected $partitionsDataType = 'map';
 
   /**
-   * Optional. Metadata for this consumer group and topic for all partition
-   * indexes it has metadata for.
-   *
-   * @param ConsumerPartitionMetadata[] $partitions
+   * @param ConsumerPartitionMetadata[]
    */
   public function setPartitions($partitions)
   {

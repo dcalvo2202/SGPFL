@@ -23,9 +23,7 @@ class MaintenanceWindow extends \Google\Model
   protected $recurringTimeWindowDataType = '';
 
   /**
-   * Required. The recurring time window of the maintenance window.
-   *
-   * @param RecurringTimeWindow $recurringTimeWindow
+   * @param RecurringTimeWindow
    */
   public function setRecurringTimeWindow(RecurringTimeWindow $recurringTimeWindow)
   {

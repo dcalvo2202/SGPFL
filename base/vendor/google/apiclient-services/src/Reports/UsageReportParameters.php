@@ -21,48 +21,32 @@ class UsageReportParameters extends \Google\Collection
 {
   protected $collection_key = 'msgValue';
   /**
-   * Output only. Boolean value of the parameter.
-   *
    * @var bool
    */
   public $boolValue;
   /**
-   * The RFC 3339 formatted value of the parameter, for example
-   * 2010-10-28T10:26:35.000Z.
-   *
    * @var string
    */
   public $datetimeValue;
   /**
-   * Output only. Integer value of the parameter.
-   *
    * @var string
    */
   public $intValue;
   /**
-   * Output only. Nested message value of the parameter.
-   *
    * @var array[]
    */
   public $msgValue;
   /**
-   * The name of the parameter. For the User Usage Report parameter names, see
-   * the User Usage parameters reference.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. String value of the parameter.
-   *
    * @var string
    */
   public $stringValue;
 
   /**
-   * Output only. Boolean value of the parameter.
-   *
-   * @param bool $boolValue
+   * @param bool
    */
   public function setBoolValue($boolValue)
   {
@@ -76,10 +60,7 @@ class UsageReportParameters extends \Google\Collection
     return $this->boolValue;
   }
   /**
-   * The RFC 3339 formatted value of the parameter, for example
-   * 2010-10-28T10:26:35.000Z.
-   *
-   * @param string $datetimeValue
+   * @param string
    */
   public function setDatetimeValue($datetimeValue)
   {
@@ -93,9 +74,7 @@ class UsageReportParameters extends \Google\Collection
     return $this->datetimeValue;
   }
   /**
-   * Output only. Integer value of the parameter.
-   *
-   * @param string $intValue
+   * @param string
    */
   public function setIntValue($intValue)
   {
@@ -109,9 +88,7 @@ class UsageReportParameters extends \Google\Collection
     return $this->intValue;
   }
   /**
-   * Output only. Nested message value of the parameter.
-   *
-   * @param array[] $msgValue
+   * @param array[]
    */
   public function setMsgValue($msgValue)
   {
@@ -125,10 +102,7 @@ class UsageReportParameters extends \Google\Collection
     return $this->msgValue;
   }
   /**
-   * The name of the parameter. For the User Usage Report parameter names, see
-   * the User Usage parameters reference.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -142,9 +116,7 @@ class UsageReportParameters extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. String value of the parameter.
-   *
-   * @param string $stringValue
+   * @param string
    */
   public function setStringValue($stringValue)
   {

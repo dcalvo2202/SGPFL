@@ -20,23 +20,16 @@ namespace Google\Service\CloudKMS;
 class KeyRing extends \Google\Model
 {
   /**
-   * Output only. The time at which this KeyRing was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. The resource name for the KeyRing in the format
-   * `projects/locations/keyRings`.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Output only. The time at which this KeyRing was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -50,10 +43,7 @@ class KeyRing extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. The resource name for the KeyRing in the format
-   * `projects/locations/keyRings`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

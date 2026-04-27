@@ -21,31 +21,16 @@ class HttpCookieEvidence extends \Google\Collection
 {
   protected $collection_key = 'cookieNames';
   /**
-   * Names of cookies that violate Google policies. For TOO_MANY_COOKIES policy,
-   * this will be the cookie names of top domains with the largest number of
-   * cookies. For other policies, this will be all the cookie names that violate
-   * the policy.
-   *
    * @var string[]
    */
   public $cookieNames;
   /**
-   * The largest number of cookies set by a creative. If this field is set,
-   * cookie_names above will be set to the cookie names of top domains with the
-   * largest number of cookies. This field will only be set for TOO_MANY_COOKIES
-   * policy.
-   *
    * @var int
    */
   public $maxCookieCount;
 
   /**
-   * Names of cookies that violate Google policies. For TOO_MANY_COOKIES policy,
-   * this will be the cookie names of top domains with the largest number of
-   * cookies. For other policies, this will be all the cookie names that violate
-   * the policy.
-   *
-   * @param string[] $cookieNames
+   * @param string[]
    */
   public function setCookieNames($cookieNames)
   {
@@ -59,12 +44,7 @@ class HttpCookieEvidence extends \Google\Collection
     return $this->cookieNames;
   }
   /**
-   * The largest number of cookies set by a creative. If this field is set,
-   * cookie_names above will be set to the cookie names of top domains with the
-   * largest number of cookies. This field will only be set for TOO_MANY_COOKIES
-   * policy.
-   *
-   * @param int $maxCookieCount
+   * @param int
    */
   public function setMaxCookieCount($maxCookieCount)
   {

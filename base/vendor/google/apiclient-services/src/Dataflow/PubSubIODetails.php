@@ -20,22 +20,16 @@ namespace Google\Service\Dataflow;
 class PubSubIODetails extends \Google\Model
 {
   /**
-   * Subscription used in the connection.
-   *
    * @var string
    */
   public $subscription;
   /**
-   * Topic accessed in the connection.
-   *
    * @var string
    */
   public $topic;
 
   /**
-   * Subscription used in the connection.
-   *
-   * @param string $subscription
+   * @param string
    */
   public function setSubscription($subscription)
   {
@@ -49,9 +43,7 @@ class PubSubIODetails extends \Google\Model
     return $this->subscription;
   }
   /**
-   * Topic accessed in the connection.
-   *
-   * @param string $topic
+   * @param string
    */
   public function setTopic($topic)
   {

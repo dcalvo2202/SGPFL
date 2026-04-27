@@ -25,7 +25,7 @@ class GoogleCloudDialogflowCxV3InlineDestination extends \Google\Model
   public $content;
 
   /**
-   * @param string $content
+   * @param string
    */
   public function setContent($content)
   {

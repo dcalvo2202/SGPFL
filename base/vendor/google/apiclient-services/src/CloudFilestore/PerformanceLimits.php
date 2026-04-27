@@ -20,40 +20,28 @@ namespace Google\Service\CloudFilestore;
 class PerformanceLimits extends \Google\Model
 {
   /**
-   * Output only. The maximum IOPS.
-   *
    * @var string
    */
   public $maxIops;
   /**
-   * Output only. The maximum read IOPS.
-   *
    * @var string
    */
   public $maxReadIops;
   /**
-   * Output only. The maximum read throughput in bytes per second.
-   *
    * @var string
    */
   public $maxReadThroughputBps;
   /**
-   * Output only. The maximum write IOPS.
-   *
    * @var string
    */
   public $maxWriteIops;
   /**
-   * Output only. The maximum write throughput in bytes per second.
-   *
    * @var string
    */
   public $maxWriteThroughputBps;
 
   /**
-   * Output only. The maximum IOPS.
-   *
-   * @param string $maxIops
+   * @param string
    */
   public function setMaxIops($maxIops)
   {
@@ -67,9 +55,7 @@ class PerformanceLimits extends \Google\Model
     return $this->maxIops;
   }
   /**
-   * Output only. The maximum read IOPS.
-   *
-   * @param string $maxReadIops
+   * @param string
    */
   public function setMaxReadIops($maxReadIops)
   {
@@ -83,9 +69,7 @@ class PerformanceLimits extends \Google\Model
     return $this->maxReadIops;
   }
   /**
-   * Output only. The maximum read throughput in bytes per second.
-   *
-   * @param string $maxReadThroughputBps
+   * @param string
    */
   public function setMaxReadThroughputBps($maxReadThroughputBps)
   {
@@ -99,9 +83,7 @@ class PerformanceLimits extends \Google\Model
     return $this->maxReadThroughputBps;
   }
   /**
-   * Output only. The maximum write IOPS.
-   *
-   * @param string $maxWriteIops
+   * @param string
    */
   public function setMaxWriteIops($maxWriteIops)
   {
@@ -115,9 +97,7 @@ class PerformanceLimits extends \Google\Model
     return $this->maxWriteIops;
   }
   /**
-   * Output only. The maximum write throughput in bytes per second.
-   *
-   * @param string $maxWriteThroughputBps
+   * @param string
    */
   public function setMaxWriteThroughputBps($maxWriteThroughputBps)
   {

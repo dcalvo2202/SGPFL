@@ -25,15 +25,12 @@ class ListItemNamesForUnmappedIdentityResponse extends \Google\Collection
    */
   public $itemNames;
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * @param string[] $itemNames
+   * @param string[]
    */
   public function setItemNames($itemNames)
   {
@@ -47,10 +44,7 @@ class ListItemNamesForUnmappedIdentityResponse extends \Google\Collection
     return $this->itemNames;
   }
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

@@ -19,48 +19,20 @@ namespace Google\Service\RecaptchaEnterprise;
 
 class GoogleCloudRecaptchaenterpriseV1RiskAnalysis extends \Google\Collection
 {
-  /**
-   * Default unspecified type.
-   */
-  public const CHALLENGE_CHALLENGE_UNSPECIFIED = 'CHALLENGE_UNSPECIFIED';
-  /**
-   * No challenge was presented for solving.
-   */
-  public const CHALLENGE_NOCAPTCHA = 'NOCAPTCHA';
-  /**
-   * A solution was submitted that was correct.
-   */
-  public const CHALLENGE_PASSED = 'PASSED';
-  /**
-   * A solution was submitted that was incorrect or otherwise deemed suspicious.
-   */
-  public const CHALLENGE_FAILED = 'FAILED';
   protected $collection_key = 'verifiedBots';
   /**
-   * Output only. Challenge information for POLICY_BASED_CHALLENGE and INVISIBLE
-   * keys.
-   *
    * @var string
    */
   public $challenge;
   /**
-   * Output only. Additional reasons contributing to the risk analysis verdict.
-   * These reasons are available to Enterprise tier projects only. Contact sales
-   * for more information. The set of reasons is subject to change.
-   *
    * @var string[]
    */
   public $extendedVerdictReasons;
   /**
-   * Output only. Reasons contributing to the risk analysis verdict.
-   *
    * @var string[]
    */
   public $reasons;
   /**
-   * Output only. Legitimate event score from 0.0 to 1.0. (1.0 means very likely
-   * legitimate traffic while 0.0 means very likely non-legitimate traffic).
-   *
    * @var float
    */
   public $score;
@@ -68,30 +40,21 @@ class GoogleCloudRecaptchaenterpriseV1RiskAnalysis extends \Google\Collection
   protected $verifiedBotsDataType = 'array';
 
   /**
-   * Output only. Challenge information for POLICY_BASED_CHALLENGE and INVISIBLE
-   * keys.
-   *
-   * Accepted values: CHALLENGE_UNSPECIFIED, NOCAPTCHA, PASSED, FAILED
-   *
-   * @param self::CHALLENGE_* $challenge
+   * @param string
    */
   public function setChallenge($challenge)
   {
     $this->challenge = $challenge;
   }
   /**
-   * @return self::CHALLENGE_*
+   * @return string
    */
   public function getChallenge()
   {
     return $this->challenge;
   }
   /**
-   * Output only. Additional reasons contributing to the risk analysis verdict.
-   * These reasons are available to Enterprise tier projects only. Contact sales
-   * for more information. The set of reasons is subject to change.
-   *
-   * @param string[] $extendedVerdictReasons
+   * @param string[]
    */
   public function setExtendedVerdictReasons($extendedVerdictReasons)
   {
@@ -105,9 +68,7 @@ class GoogleCloudRecaptchaenterpriseV1RiskAnalysis extends \Google\Collection
     return $this->extendedVerdictReasons;
   }
   /**
-   * Output only. Reasons contributing to the risk analysis verdict.
-   *
-   * @param string[] $reasons
+   * @param string[]
    */
   public function setReasons($reasons)
   {
@@ -121,10 +82,7 @@ class GoogleCloudRecaptchaenterpriseV1RiskAnalysis extends \Google\Collection
     return $this->reasons;
   }
   /**
-   * Output only. Legitimate event score from 0.0 to 1.0. (1.0 means very likely
-   * legitimate traffic while 0.0 means very likely non-legitimate traffic).
-   *
-   * @param float $score
+   * @param float
    */
   public function setScore($score)
   {
@@ -138,10 +96,7 @@ class GoogleCloudRecaptchaenterpriseV1RiskAnalysis extends \Google\Collection
     return $this->score;
   }
   /**
-   * Output only. Bots with identities that have been verified by reCAPTCHA and
-   * detected in the event.
-   *
-   * @param GoogleCloudRecaptchaenterpriseV1Bot[] $verifiedBots
+   * @param GoogleCloudRecaptchaenterpriseV1Bot[]
    */
   public function setVerifiedBots($verifiedBots)
   {

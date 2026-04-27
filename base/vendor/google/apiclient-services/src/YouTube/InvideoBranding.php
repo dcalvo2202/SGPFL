@@ -20,23 +20,16 @@ namespace Google\Service\YouTube;
 class InvideoBranding extends \Google\Model
 {
   /**
-   * The bytes the uploaded image. Only used in api to youtube communication.
-   *
    * @var string
    */
   public $imageBytes;
   /**
-   * The url of the uploaded image. Only used in apiary to api communication.
-   *
    * @var string
    */
   public $imageUrl;
   protected $positionType = InvideoPosition::class;
   protected $positionDataType = '';
   /**
-   * The channel to which this branding links. If not present it defaults to the
-   * current channel.
-   *
    * @var string
    */
   public $targetChannelId;
@@ -44,9 +37,7 @@ class InvideoBranding extends \Google\Model
   protected $timingDataType = '';
 
   /**
-   * The bytes the uploaded image. Only used in api to youtube communication.
-   *
-   * @param string $imageBytes
+   * @param string
    */
   public function setImageBytes($imageBytes)
   {
@@ -60,9 +51,7 @@ class InvideoBranding extends \Google\Model
     return $this->imageBytes;
   }
   /**
-   * The url of the uploaded image. Only used in apiary to api communication.
-   *
-   * @param string $imageUrl
+   * @param string
    */
   public function setImageUrl($imageUrl)
   {
@@ -76,18 +65,13 @@ class InvideoBranding extends \Google\Model
     return $this->imageUrl;
   }
   /**
-   * The spatial position within the video where the branding watermark will be
-   * displayed.
-   *
-   * @deprecated
-   * @param InvideoPosition $position
+   * @param InvideoPosition
    */
   public function setPosition(InvideoPosition $position)
   {
     $this->position = $position;
   }
   /**
-   * @deprecated
    * @return InvideoPosition
    */
   public function getPosition()
@@ -95,10 +79,7 @@ class InvideoBranding extends \Google\Model
     return $this->position;
   }
   /**
-   * The channel to which this branding links. If not present it defaults to the
-   * current channel.
-   *
-   * @param string $targetChannelId
+   * @param string
    */
   public function setTargetChannelId($targetChannelId)
   {
@@ -112,9 +93,7 @@ class InvideoBranding extends \Google\Model
     return $this->targetChannelId;
   }
   /**
-   * The temporal position within the video where watermark will be displayed.
-   *
-   * @param InvideoTiming $timing
+   * @param InvideoTiming
    */
   public function setTiming(InvideoTiming $timing)
   {

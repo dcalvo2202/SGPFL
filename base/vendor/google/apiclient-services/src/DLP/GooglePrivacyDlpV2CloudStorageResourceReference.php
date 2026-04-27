@@ -20,23 +20,16 @@ namespace Google\Service\DLP;
 class GooglePrivacyDlpV2CloudStorageResourceReference extends \Google\Model
 {
   /**
-   * Required. The bucket to scan.
-   *
    * @var string
    */
   public $bucketName;
   /**
-   * Required. If within a project-level config, then this must match the
-   * config's project id.
-   *
    * @var string
    */
   public $projectId;
 
   /**
-   * Required. The bucket to scan.
-   *
-   * @param string $bucketName
+   * @param string
    */
   public function setBucketName($bucketName)
   {
@@ -50,10 +43,7 @@ class GooglePrivacyDlpV2CloudStorageResourceReference extends \Google\Model
     return $this->bucketName;
   }
   /**
-   * Required. If within a project-level config, then this must match the
-   * config's project id.
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {

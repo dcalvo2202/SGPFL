@@ -21,16 +21,12 @@ class NodeGroupsDeleteNodesRequest extends \Google\Collection
 {
   protected $collection_key = 'nodes';
   /**
-   * Names of the nodes to delete.
-   *
    * @var string[]
    */
   public $nodes;
 
   /**
-   * Names of the nodes to delete.
-   *
-   * @param string[] $nodes
+   * @param string[]
    */
   public function setNodes($nodes)
   {

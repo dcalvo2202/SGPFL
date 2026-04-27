@@ -19,48 +19,20 @@ namespace Google\Service\Aiplatform;
 
 class GoogleCloudAiplatformV1GroundingSupport extends \Google\Collection
 {
-  protected $collection_key = 'renderedParts';
+  protected $collection_key = 'groundingChunkIndices';
   /**
-   * The confidence scores for the support references. This list is parallel to
-   * the `grounding_chunk_indices` list. A score is a value between 0.0 and 1.0,
-   * with a higher score indicating a higher confidence that the reference
-   * supports the claim. For Gemini 2.0 and before, this list has the same size
-   * as `grounding_chunk_indices`. For Gemini 2.5 and later, this list is empty
-   * and should be ignored.
-   *
    * @var float[]
    */
   public $confidenceScores;
   /**
-   * A list of indices into the `grounding_chunks` field of the
-   * `GroundingMetadata` message. These indices specify which grounding chunks
-   * support the claim made in the content segment. For example, if this field
-   * has the values `[1, 3]`, it means that `grounding_chunks[1]` and
-   * `grounding_chunks[3]` are the sources for the claim in the content segment.
-   *
    * @var int[]
    */
   public $groundingChunkIndices;
-  /**
-   * Indices into the `rendered_parts` field of the `GroundingMetadata` message.
-   * These indices specify which rendered parts are associated with this support
-   * message.
-   *
-   * @var int[]
-   */
-  public $renderedParts;
   protected $segmentType = GoogleCloudAiplatformV1Segment::class;
   protected $segmentDataType = '';
 
   /**
-   * The confidence scores for the support references. This list is parallel to
-   * the `grounding_chunk_indices` list. A score is a value between 0.0 and 1.0,
-   * with a higher score indicating a higher confidence that the reference
-   * supports the claim. For Gemini 2.0 and before, this list has the same size
-   * as `grounding_chunk_indices`. For Gemini 2.5 and later, this list is empty
-   * and should be ignored.
-   *
-   * @param float[] $confidenceScores
+   * @param float[]
    */
   public function setConfidenceScores($confidenceScores)
   {
@@ -74,13 +46,7 @@ class GoogleCloudAiplatformV1GroundingSupport extends \Google\Collection
     return $this->confidenceScores;
   }
   /**
-   * A list of indices into the `grounding_chunks` field of the
-   * `GroundingMetadata` message. These indices specify which grounding chunks
-   * support the claim made in the content segment. For example, if this field
-   * has the values `[1, 3]`, it means that `grounding_chunks[1]` and
-   * `grounding_chunks[3]` are the sources for the claim in the content segment.
-   *
-   * @param int[] $groundingChunkIndices
+   * @param int[]
    */
   public function setGroundingChunkIndices($groundingChunkIndices)
   {
@@ -94,27 +60,7 @@ class GoogleCloudAiplatformV1GroundingSupport extends \Google\Collection
     return $this->groundingChunkIndices;
   }
   /**
-   * Indices into the `rendered_parts` field of the `GroundingMetadata` message.
-   * These indices specify which rendered parts are associated with this support
-   * message.
-   *
-   * @param int[] $renderedParts
-   */
-  public function setRenderedParts($renderedParts)
-  {
-    $this->renderedParts = $renderedParts;
-  }
-  /**
-   * @return int[]
-   */
-  public function getRenderedParts()
-  {
-    return $this->renderedParts;
-  }
-  /**
-   * The content segment that this support message applies to.
-   *
-   * @param GoogleCloudAiplatformV1Segment $segment
+   * @param GoogleCloudAiplatformV1Segment
    */
   public function setSegment(GoogleCloudAiplatformV1Segment $segment)
   {

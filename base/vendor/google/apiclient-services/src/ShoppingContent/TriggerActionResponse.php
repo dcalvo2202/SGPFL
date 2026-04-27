@@ -20,16 +20,12 @@ namespace Google\Service\ShoppingContent;
 class TriggerActionResponse extends \Google\Model
 {
   /**
-   * The message for merchant.
-   *
    * @var string
    */
   public $message;
 
   /**
-   * The message for merchant.
-   *
-   * @param string $message
+   * @param string
    */
   public function setMessage($message)
   {

@@ -24,9 +24,7 @@ class UserList extends \Google\Collection
   protected $valuesDataType = 'array';
 
   /**
-   * User values.
-   *
-   * @param SingleUser[] $values
+   * @param SingleUser[]
    */
   public function setValues($values)
   {

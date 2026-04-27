@@ -20,16 +20,12 @@ namespace Google\Service\BigtableAdmin;
 class Split extends \Google\Model
 {
   /**
-   * Row key to use as an initial tablet boundary.
-   *
    * @var string
    */
   public $key;
 
   /**
-   * Row key to use as an initial tablet boundary.
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {

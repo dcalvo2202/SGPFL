@@ -26,14 +26,7 @@ class Categories extends \Google\Collection
   protected $primaryCategoryDataType = '';
 
   /**
-   * Optional. Additional categories to describe your business. Categories help
-   * your customers find accurate, specific results for services they're
-   * interested in. To keep your business information accurate and live, make
-   * sure that you use as few categories as possible to describe your overall
-   * core business. Choose categories that are as specific as possible, but
-   * representative of your main business.
-   *
-   * @param Category[] $additionalCategories
+   * @param Category[]
    */
   public function setAdditionalCategories($additionalCategories)
   {
@@ -47,10 +40,7 @@ class Categories extends \Google\Collection
     return $this->additionalCategories;
   }
   /**
-   * Required. Category that best describes the core business this location
-   * engages in.
-   *
-   * @param Category $primaryCategory
+   * @param Category
    */
   public function setPrimaryCategory(Category $primaryCategory)
   {

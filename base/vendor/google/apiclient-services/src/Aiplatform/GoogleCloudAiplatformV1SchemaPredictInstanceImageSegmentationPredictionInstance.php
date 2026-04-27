@@ -20,23 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1SchemaPredictInstanceImageSegmentationPredictionInstance extends \Google\Model
 {
   /**
-   * The image bytes to make the predictions on.
-   *
    * @var string
    */
   public $content;
   /**
-   * The MIME type of the content of the image. Only the images in below listed
-   * MIME types are supported. - image/jpeg - image/png
-   *
    * @var string
    */
   public $mimeType;
 
   /**
-   * The image bytes to make the predictions on.
-   *
-   * @param string $content
+   * @param string
    */
   public function setContent($content)
   {
@@ -50,10 +43,7 @@ class GoogleCloudAiplatformV1SchemaPredictInstanceImageSegmentationPredictionIns
     return $this->content;
   }
   /**
-   * The MIME type of the content of the image. Only the images in below listed
-   * MIME types are supported. - image/jpeg - image/png
-   *
-   * @param string $mimeType
+   * @param string
    */
   public function setMimeType($mimeType)
   {

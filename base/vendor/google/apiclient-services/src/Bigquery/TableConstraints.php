@@ -26,10 +26,7 @@ class TableConstraints extends \Google\Collection
   protected $primaryKeyDataType = '';
 
   /**
-   * Optional. Present only if the table has a foreign key. The foreign key is
-   * not enforced.
-   *
-   * @param TableConstraintsForeignKeys[] $foreignKeys
+   * @param TableConstraintsForeignKeys[]
    */
   public function setForeignKeys($foreignKeys)
   {
@@ -43,9 +40,7 @@ class TableConstraints extends \Google\Collection
     return $this->foreignKeys;
   }
   /**
-   * Represents the primary key constraint on a table's columns.
-   *
-   * @param TableConstraintsPrimaryKey $primaryKey
+   * @param TableConstraintsPrimaryKey
    */
   public function setPrimaryKey(TableConstraintsPrimaryKey $primaryKey)
   {

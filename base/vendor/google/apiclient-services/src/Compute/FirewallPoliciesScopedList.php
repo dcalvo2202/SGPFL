@@ -26,9 +26,7 @@ class FirewallPoliciesScopedList extends \Google\Collection
   protected $warningDataType = '';
 
   /**
-   * A list of firewall policies contained in this scope.
-   *
-   * @param FirewallPolicy[] $firewallPolicies
+   * @param FirewallPolicy[]
    */
   public function setFirewallPolicies($firewallPolicies)
   {
@@ -42,10 +40,7 @@ class FirewallPoliciesScopedList extends \Google\Collection
     return $this->firewallPolicies;
   }
   /**
-   * Informational warning which replaces the list of firewall policies when the
-   * list is empty.
-   *
-   * @param FirewallPoliciesScopedListWarning $warning
+   * @param FirewallPoliciesScopedListWarning
    */
   public function setWarning(FirewallPoliciesScopedListWarning $warning)
   {

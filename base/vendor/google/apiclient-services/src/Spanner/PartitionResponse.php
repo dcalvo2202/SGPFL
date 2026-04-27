@@ -26,9 +26,7 @@ class PartitionResponse extends \Google\Collection
   protected $transactionDataType = '';
 
   /**
-   * Partitions created by this request.
-   *
-   * @param Partition[] $partitions
+   * @param Partition[]
    */
   public function setPartitions($partitions)
   {
@@ -42,9 +40,7 @@ class PartitionResponse extends \Google\Collection
     return $this->partitions;
   }
   /**
-   * Transaction created by this request.
-   *
-   * @param Transaction $transaction
+   * @param Transaction
    */
   public function setTransaction(Transaction $transaction)
   {

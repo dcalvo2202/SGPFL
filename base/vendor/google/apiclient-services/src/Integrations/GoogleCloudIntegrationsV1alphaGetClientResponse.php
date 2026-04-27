@@ -23,9 +23,7 @@ class GoogleCloudIntegrationsV1alphaGetClientResponse extends \Google\Model
   protected $clientDataType = '';
 
   /**
-   * Required. Required: The client configuration that was requested
-   *
-   * @param GoogleCloudIntegrationsV1alphaClientConfig $client
+   * @param GoogleCloudIntegrationsV1alphaClientConfig
    */
   public function setClient(GoogleCloudIntegrationsV1alphaClientConfig $client)
   {

@@ -24,10 +24,7 @@ class SearchGoogleLocationsResponse extends \Google\Collection
   protected $googleLocationsDataType = 'array';
 
   /**
-   * A collection of GoogleLocations that are potential matches to the specified
-   * request, listed in order from most to least accuracy.
-   *
-   * @param GoogleLocation[] $googleLocations
+   * @param GoogleLocation[]
    */
   public function setGoogleLocations($googleLocations)
   {

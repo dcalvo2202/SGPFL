@@ -20,16 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1SafetyInstance extends \Google\Model
 {
   /**
-   * Required. Output of the evaluated model.
-   *
    * @var string
    */
   public $prediction;
 
   /**
-   * Required. Output of the evaluated model.
-   *
-   * @param string $prediction
+   * @param string
    */
   public function setPrediction($prediction)
   {

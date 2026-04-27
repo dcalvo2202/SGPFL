@@ -20,50 +20,32 @@ namespace Google\Service\Cloudchannel;
 class GoogleCloudChannelV1ContactInfo extends \Google\Model
 {
   /**
-   * Output only. The customer account contact's display name, formatted as a
-   * combination of the customer's first and last name.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * The customer account's contact email. Required for entitlements that create
-   * admin.google.com accounts, and serves as the customer's username for those
-   * accounts. Use this email to invite Team customers.
-   *
    * @var string
    */
   public $email;
   /**
-   * The customer account contact's first name. Optional for Team customers.
-   *
    * @var string
    */
   public $firstName;
   /**
-   * The customer account contact's last name. Optional for Team customers.
-   *
    * @var string
    */
   public $lastName;
   /**
-   * The customer account's contact phone number.
-   *
    * @var string
    */
   public $phone;
   /**
-   * Optional. The customer account contact's job title.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * Output only. The customer account contact's display name, formatted as a
-   * combination of the customer's first and last name.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -77,11 +59,7 @@ class GoogleCloudChannelV1ContactInfo extends \Google\Model
     return $this->displayName;
   }
   /**
-   * The customer account's contact email. Required for entitlements that create
-   * admin.google.com accounts, and serves as the customer's username for those
-   * accounts. Use this email to invite Team customers.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {
@@ -95,9 +73,7 @@ class GoogleCloudChannelV1ContactInfo extends \Google\Model
     return $this->email;
   }
   /**
-   * The customer account contact's first name. Optional for Team customers.
-   *
-   * @param string $firstName
+   * @param string
    */
   public function setFirstName($firstName)
   {
@@ -111,9 +87,7 @@ class GoogleCloudChannelV1ContactInfo extends \Google\Model
     return $this->firstName;
   }
   /**
-   * The customer account contact's last name. Optional for Team customers.
-   *
-   * @param string $lastName
+   * @param string
    */
   public function setLastName($lastName)
   {
@@ -127,9 +101,7 @@ class GoogleCloudChannelV1ContactInfo extends \Google\Model
     return $this->lastName;
   }
   /**
-   * The customer account's contact phone number.
-   *
-   * @param string $phone
+   * @param string
    */
   public function setPhone($phone)
   {
@@ -143,9 +115,7 @@ class GoogleCloudChannelV1ContactInfo extends \Google\Model
     return $this->phone;
   }
   /**
-   * Optional. The customer account contact's job title.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

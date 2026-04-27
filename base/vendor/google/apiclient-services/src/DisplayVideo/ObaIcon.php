@@ -20,80 +20,38 @@ namespace Google\Service\DisplayVideo;
 class ObaIcon extends \Google\Model
 {
   /**
-   * The OBA icon position is not specified.
-   */
-  public const POSITION_OBA_ICON_POSITION_UNSPECIFIED = 'OBA_ICON_POSITION_UNSPECIFIED';
-  /**
-   * At the upper right side of the creative.
-   */
-  public const POSITION_OBA_ICON_POSITION_UPPER_RIGHT = 'OBA_ICON_POSITION_UPPER_RIGHT';
-  /**
-   * At the upper left side of the creative.
-   */
-  public const POSITION_OBA_ICON_POSITION_UPPER_LEFT = 'OBA_ICON_POSITION_UPPER_LEFT';
-  /**
-   * At the lower right side of the creative.
-   */
-  public const POSITION_OBA_ICON_POSITION_LOWER_RIGHT = 'OBA_ICON_POSITION_LOWER_RIGHT';
-  /**
-   * At the lower left side of the creative.
-   */
-  public const POSITION_OBA_ICON_POSITION_LOWER_LEFT = 'OBA_ICON_POSITION_LOWER_LEFT';
-  /**
-   * Required. The click tracking URL of the OBA icon. Only URLs of the
-   * following domains are allowed: * `https://info.evidon.com` *
-   * `https://l.betrad.com`
-   *
    * @var string
    */
   public $clickTrackingUrl;
   protected $dimensionsType = Dimensions::class;
   protected $dimensionsDataType = '';
   /**
-   * Required. The landing page URL of the OBA icon. Only URLs of the following
-   * domains are allowed: * `https://info.evidon.com` * `https://l.betrad.com`
-   *
    * @var string
    */
   public $landingPageUrl;
   /**
-   * Optional. The position of the OBA icon on the creative.
-   *
    * @var string
    */
   public $position;
   /**
-   * Optional. The program of the OBA icon. For example: “AdChoices”.
-   *
    * @var string
    */
   public $program;
   /**
-   * Optional. The MIME type of the OBA icon resource.
-   *
    * @var string
    */
   public $resourceMimeType;
   /**
-   * Optional. The URL of the OBA icon resource.
-   *
    * @var string
    */
   public $resourceUrl;
   /**
-   * Required. The view tracking URL of the OBA icon. Only URLs of the following
-   * domains are allowed: * `https://info.evidon.com` * `https://l.betrad.com`
-   *
    * @var string
    */
   public $viewTrackingUrl;
 
   /**
-   * Required. The click tracking URL of the OBA icon. Only URLs of the
-   * following domains are allowed: * `https://info.evidon.com` *
-   * `https://l.betrad.com`
-   *
-   * @param string $clickTrackingUrl
+   * @param string
    */
   public function setClickTrackingUrl($clickTrackingUrl)
   {
@@ -107,9 +65,7 @@ class ObaIcon extends \Google\Model
     return $this->clickTrackingUrl;
   }
   /**
-   * Optional. The dimensions of the OBA icon.
-   *
-   * @param Dimensions $dimensions
+   * @param Dimensions
    */
   public function setDimensions(Dimensions $dimensions)
   {
@@ -123,10 +79,7 @@ class ObaIcon extends \Google\Model
     return $this->dimensions;
   }
   /**
-   * Required. The landing page URL of the OBA icon. Only URLs of the following
-   * domains are allowed: * `https://info.evidon.com` * `https://l.betrad.com`
-   *
-   * @param string $landingPageUrl
+   * @param string
    */
   public function setLandingPageUrl($landingPageUrl)
   {
@@ -140,29 +93,21 @@ class ObaIcon extends \Google\Model
     return $this->landingPageUrl;
   }
   /**
-   * Optional. The position of the OBA icon on the creative.
-   *
-   * Accepted values: OBA_ICON_POSITION_UNSPECIFIED,
-   * OBA_ICON_POSITION_UPPER_RIGHT, OBA_ICON_POSITION_UPPER_LEFT,
-   * OBA_ICON_POSITION_LOWER_RIGHT, OBA_ICON_POSITION_LOWER_LEFT
-   *
-   * @param self::POSITION_* $position
+   * @param string
    */
   public function setPosition($position)
   {
     $this->position = $position;
   }
   /**
-   * @return self::POSITION_*
+   * @return string
    */
   public function getPosition()
   {
     return $this->position;
   }
   /**
-   * Optional. The program of the OBA icon. For example: “AdChoices”.
-   *
-   * @param string $program
+   * @param string
    */
   public function setProgram($program)
   {
@@ -176,9 +121,7 @@ class ObaIcon extends \Google\Model
     return $this->program;
   }
   /**
-   * Optional. The MIME type of the OBA icon resource.
-   *
-   * @param string $resourceMimeType
+   * @param string
    */
   public function setResourceMimeType($resourceMimeType)
   {
@@ -192,9 +135,7 @@ class ObaIcon extends \Google\Model
     return $this->resourceMimeType;
   }
   /**
-   * Optional. The URL of the OBA icon resource.
-   *
-   * @param string $resourceUrl
+   * @param string
    */
   public function setResourceUrl($resourceUrl)
   {
@@ -208,10 +149,7 @@ class ObaIcon extends \Google\Model
     return $this->resourceUrl;
   }
   /**
-   * Required. The view tracking URL of the OBA icon. Only URLs of the following
-   * domains are allowed: * `https://info.evidon.com` * `https://l.betrad.com`
-   *
-   * @param string $viewTrackingUrl
+   * @param string
    */
   public function setViewTrackingUrl($viewTrackingUrl)
   {

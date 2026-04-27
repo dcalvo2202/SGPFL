@@ -20,22 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1SchemaModelevaluationMetricsConfusionMatrixAnnotationSpecRef extends \Google\Model
 {
   /**
-   * Display name of the AnnotationSpec.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * ID of the AnnotationSpec.
-   *
    * @var string
    */
   public $id;
 
   /**
-   * Display name of the AnnotationSpec.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -49,9 +43,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsConfusionMatrixAnnotati
     return $this->displayName;
   }
   /**
-   * ID of the AnnotationSpec.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {

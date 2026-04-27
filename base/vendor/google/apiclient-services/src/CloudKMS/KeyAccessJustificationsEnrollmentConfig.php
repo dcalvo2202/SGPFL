@@ -20,22 +20,16 @@ namespace Google\Service\CloudKMS;
 class KeyAccessJustificationsEnrollmentConfig extends \Google\Model
 {
   /**
-   * Indicates whether the project has KAJ logging enabled.
-   *
    * @var bool
    */
   public $auditLogging;
   /**
-   * Indicates whether the project is enrolled in KAJ policy enforcement.
-   *
    * @var bool
    */
   public $policyEnforcement;
 
   /**
-   * Indicates whether the project has KAJ logging enabled.
-   *
-   * @param bool $auditLogging
+   * @param bool
    */
   public function setAuditLogging($auditLogging)
   {
@@ -49,9 +43,7 @@ class KeyAccessJustificationsEnrollmentConfig extends \Google\Model
     return $this->auditLogging;
   }
   /**
-   * Indicates whether the project is enrolled in KAJ policy enforcement.
-   *
-   * @param bool $policyEnforcement
+   * @param bool
    */
   public function setPolicyEnforcement($policyEnforcement)
   {

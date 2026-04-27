@@ -20,46 +20,32 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1DataStoreBillingEstimation extends \Google\Model
 {
   /**
-   * Data size for structured data in terms of bytes.
-   *
    * @var string
    */
   public $structuredDataSize;
   /**
-   * Last updated timestamp for structured data.
-   *
    * @var string
    */
   public $structuredDataUpdateTime;
   /**
-   * Data size for unstructured data in terms of bytes.
-   *
    * @var string
    */
   public $unstructuredDataSize;
   /**
-   * Last updated timestamp for unstructured data.
-   *
    * @var string
    */
   public $unstructuredDataUpdateTime;
   /**
-   * Data size for websites in terms of bytes.
-   *
    * @var string
    */
   public $websiteDataSize;
   /**
-   * Last updated timestamp for websites.
-   *
    * @var string
    */
   public $websiteDataUpdateTime;
 
   /**
-   * Data size for structured data in terms of bytes.
-   *
-   * @param string $structuredDataSize
+   * @param string
    */
   public function setStructuredDataSize($structuredDataSize)
   {
@@ -73,9 +59,7 @@ class GoogleCloudDiscoveryengineV1DataStoreBillingEstimation extends \Google\Mod
     return $this->structuredDataSize;
   }
   /**
-   * Last updated timestamp for structured data.
-   *
-   * @param string $structuredDataUpdateTime
+   * @param string
    */
   public function setStructuredDataUpdateTime($structuredDataUpdateTime)
   {
@@ -89,9 +73,7 @@ class GoogleCloudDiscoveryengineV1DataStoreBillingEstimation extends \Google\Mod
     return $this->structuredDataUpdateTime;
   }
   /**
-   * Data size for unstructured data in terms of bytes.
-   *
-   * @param string $unstructuredDataSize
+   * @param string
    */
   public function setUnstructuredDataSize($unstructuredDataSize)
   {
@@ -105,9 +87,7 @@ class GoogleCloudDiscoveryengineV1DataStoreBillingEstimation extends \Google\Mod
     return $this->unstructuredDataSize;
   }
   /**
-   * Last updated timestamp for unstructured data.
-   *
-   * @param string $unstructuredDataUpdateTime
+   * @param string
    */
   public function setUnstructuredDataUpdateTime($unstructuredDataUpdateTime)
   {
@@ -121,9 +101,7 @@ class GoogleCloudDiscoveryengineV1DataStoreBillingEstimation extends \Google\Mod
     return $this->unstructuredDataUpdateTime;
   }
   /**
-   * Data size for websites in terms of bytes.
-   *
-   * @param string $websiteDataSize
+   * @param string
    */
   public function setWebsiteDataSize($websiteDataSize)
   {
@@ -137,9 +115,7 @@ class GoogleCloudDiscoveryengineV1DataStoreBillingEstimation extends \Google\Mod
     return $this->websiteDataSize;
   }
   /**
-   * Last updated timestamp for websites.
-   *
-   * @param string $websiteDataUpdateTime
+   * @param string
    */
   public function setWebsiteDataUpdateTime($websiteDataUpdateTime)
   {

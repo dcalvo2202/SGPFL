@@ -20,52 +20,24 @@ namespace Google\Service\NetworkServices;
 class GrpcRouteMethodMatch extends \Google\Model
 {
   /**
-   * Unspecified.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * Will only match the exact name provided.
-   */
-  public const TYPE_EXACT = 'EXACT';
-  /**
-   * Will interpret grpc_method and grpc_service as regexes. RE2 syntax is
-   * supported.
-   */
-  public const TYPE_REGULAR_EXPRESSION = 'REGULAR_EXPRESSION';
-  /**
-   * Optional. Specifies that matches are case sensitive. The default value is
-   * true. case_sensitive must not be used with a type of REGULAR_EXPRESSION.
-   *
    * @var bool
    */
   public $caseSensitive;
   /**
-   * Required. Name of the method to match against. If unspecified, will match
-   * all methods.
-   *
    * @var string
    */
   public $grpcMethod;
   /**
-   * Required. Name of the service to match against. If unspecified, will match
-   * all services.
-   *
    * @var string
    */
   public $grpcService;
   /**
-   * Optional. Specifies how to match against the name. If not specified, a
-   * default value of "EXACT" is used.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Optional. Specifies that matches are case sensitive. The default value is
-   * true. case_sensitive must not be used with a type of REGULAR_EXPRESSION.
-   *
-   * @param bool $caseSensitive
+   * @param bool
    */
   public function setCaseSensitive($caseSensitive)
   {
@@ -79,10 +51,7 @@ class GrpcRouteMethodMatch extends \Google\Model
     return $this->caseSensitive;
   }
   /**
-   * Required. Name of the method to match against. If unspecified, will match
-   * all methods.
-   *
-   * @param string $grpcMethod
+   * @param string
    */
   public function setGrpcMethod($grpcMethod)
   {
@@ -96,10 +65,7 @@ class GrpcRouteMethodMatch extends \Google\Model
     return $this->grpcMethod;
   }
   /**
-   * Required. Name of the service to match against. If unspecified, will match
-   * all services.
-   *
-   * @param string $grpcService
+   * @param string
    */
   public function setGrpcService($grpcService)
   {
@@ -113,19 +79,14 @@ class GrpcRouteMethodMatch extends \Google\Model
     return $this->grpcService;
   }
   /**
-   * Optional. Specifies how to match against the name. If not specified, a
-   * default value of "EXACT" is used.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, EXACT, REGULAR_EXPRESSION
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

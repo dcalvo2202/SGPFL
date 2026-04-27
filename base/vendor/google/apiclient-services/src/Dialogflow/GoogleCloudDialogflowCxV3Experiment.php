@@ -19,11 +19,6 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowCxV3Experiment extends \Google\Collection
 {
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  public const STATE_DRAFT = 'DRAFT';
-  public const STATE_RUNNING = 'RUNNING';
-  public const STATE_DONE = 'DONE';
-  public const STATE_ROLLOUT_FAILED = 'ROLLOUT_FAILED';
   protected $collection_key = 'variantsHistory';
   /**
    * @var string
@@ -77,7 +72,7 @@ class GoogleCloudDialogflowCxV3Experiment extends \Google\Collection
   protected $variantsHistoryDataType = 'array';
 
   /**
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -91,7 +86,7 @@ class GoogleCloudDialogflowCxV3Experiment extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3ExperimentDefinition $definition
+   * @param GoogleCloudDialogflowCxV3ExperimentDefinition
    */
   public function setDefinition(GoogleCloudDialogflowCxV3ExperimentDefinition $definition)
   {
@@ -105,7 +100,7 @@ class GoogleCloudDialogflowCxV3Experiment extends \Google\Collection
     return $this->definition;
   }
   /**
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -119,7 +114,7 @@ class GoogleCloudDialogflowCxV3Experiment extends \Google\Collection
     return $this->description;
   }
   /**
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -133,7 +128,7 @@ class GoogleCloudDialogflowCxV3Experiment extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -147,7 +142,7 @@ class GoogleCloudDialogflowCxV3Experiment extends \Google\Collection
     return $this->endTime;
   }
   /**
-   * @param string $experimentLength
+   * @param string
    */
   public function setExperimentLength($experimentLength)
   {
@@ -161,7 +156,7 @@ class GoogleCloudDialogflowCxV3Experiment extends \Google\Collection
     return $this->experimentLength;
   }
   /**
-   * @param string $lastUpdateTime
+   * @param string
    */
   public function setLastUpdateTime($lastUpdateTime)
   {
@@ -175,7 +170,7 @@ class GoogleCloudDialogflowCxV3Experiment extends \Google\Collection
     return $this->lastUpdateTime;
   }
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -189,7 +184,7 @@ class GoogleCloudDialogflowCxV3Experiment extends \Google\Collection
     return $this->name;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3ExperimentResult $result
+   * @param GoogleCloudDialogflowCxV3ExperimentResult
    */
   public function setResult(GoogleCloudDialogflowCxV3ExperimentResult $result)
   {
@@ -203,7 +198,7 @@ class GoogleCloudDialogflowCxV3Experiment extends \Google\Collection
     return $this->result;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3RolloutConfig $rolloutConfig
+   * @param GoogleCloudDialogflowCxV3RolloutConfig
    */
   public function setRolloutConfig(GoogleCloudDialogflowCxV3RolloutConfig $rolloutConfig)
   {
@@ -217,7 +212,7 @@ class GoogleCloudDialogflowCxV3Experiment extends \Google\Collection
     return $this->rolloutConfig;
   }
   /**
-   * @param string $rolloutFailureReason
+   * @param string
    */
   public function setRolloutFailureReason($rolloutFailureReason)
   {
@@ -231,7 +226,7 @@ class GoogleCloudDialogflowCxV3Experiment extends \Google\Collection
     return $this->rolloutFailureReason;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3RolloutState $rolloutState
+   * @param GoogleCloudDialogflowCxV3RolloutState
    */
   public function setRolloutState(GoogleCloudDialogflowCxV3RolloutState $rolloutState)
   {
@@ -245,7 +240,7 @@ class GoogleCloudDialogflowCxV3Experiment extends \Google\Collection
     return $this->rolloutState;
   }
   /**
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -259,21 +254,21 @@ class GoogleCloudDialogflowCxV3Experiment extends \Google\Collection
     return $this->startTime;
   }
   /**
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3VariantsHistory[] $variantsHistory
+   * @param GoogleCloudDialogflowCxV3VariantsHistory[]
    */
   public function setVariantsHistory($variantsHistory)
   {

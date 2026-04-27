@@ -20,16 +20,12 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1alphaPurgeUserEventsResponse extends \Google\Model
 {
   /**
-   * The total count of events purged as a result of the operation.
-   *
    * @var string
    */
   public $purgeCount;
 
   /**
-   * The total count of events purged as a result of the operation.
-   *
-   * @param string $purgeCount
+   * @param string
    */
   public function setPurgeCount($purgeCount)
   {

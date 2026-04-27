@@ -23,16 +23,12 @@ class ListGtagConfigResponse extends \Google\Collection
   protected $gtagConfigType = GtagConfig::class;
   protected $gtagConfigDataType = 'array';
   /**
-   * Continuation token for fetching the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * All Google tag configs in a Container.
-   *
-   * @param GtagConfig[] $gtagConfig
+   * @param GtagConfig[]
    */
   public function setGtagConfig($gtagConfig)
   {
@@ -46,9 +42,7 @@ class ListGtagConfigResponse extends \Google\Collection
     return $this->gtagConfig;
   }
   /**
-   * Continuation token for fetching the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

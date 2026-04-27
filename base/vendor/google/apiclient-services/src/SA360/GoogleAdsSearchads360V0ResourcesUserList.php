@@ -20,69 +20,24 @@ namespace Google\Service\SA360;
 class GoogleAdsSearchads360V0ResourcesUserList extends \Google\Model
 {
   /**
-   * Not specified.
-   */
-  public const TYPE_UNSPECIFIED = 'UNSPECIFIED';
-  /**
-   * Used for return value only. Represents value unknown in this version.
-   */
-  public const TYPE_UNKNOWN = 'UNKNOWN';
-  /**
-   * UserList represented as a collection of conversion types.
-   */
-  public const TYPE_REMARKETING = 'REMARKETING';
-  /**
-   * UserList represented as a combination of other user lists/interests.
-   */
-  public const TYPE_LOGICAL = 'LOGICAL';
-  /**
-   * UserList created in the Google Ad Manager platform.
-   */
-  public const TYPE_EXTERNAL_REMARKETING = 'EXTERNAL_REMARKETING';
-  /**
-   * UserList associated with a rule.
-   */
-  public const TYPE_RULE_BASED = 'RULE_BASED';
-  /**
-   * UserList with users similar to users of another UserList.
-   */
-  public const TYPE_SIMILAR = 'SIMILAR';
-  /**
-   * UserList of first-party CRM data provided by advertiser in the form of
-   * emails or other formats.
-   */
-  public const TYPE_CRM_BASED = 'CRM_BASED';
-  /**
-   * Output only. Id of the user list.
-   *
    * @var string
    */
   public $id;
   /**
-   * Name of this user list. Unique per user list, except in some cases where a
-   * user list of the same name has `access_reason` set to `SHARED`.
-   *
    * @var string
    */
   public $name;
   /**
-   * Immutable. The resource name of the user list. User list resource names
-   * have the form: `customers/{customer_id}/userLists/{user_list_id}`
-   *
    * @var string
    */
   public $resourceName;
   /**
-   * Output only. Type of this list. This field is read-only.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Output only. Id of the user list.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -96,10 +51,7 @@ class GoogleAdsSearchads360V0ResourcesUserList extends \Google\Model
     return $this->id;
   }
   /**
-   * Name of this user list. Unique per user list, except in some cases where a
-   * user list of the same name has `access_reason` set to `SHARED`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -113,10 +65,7 @@ class GoogleAdsSearchads360V0ResourcesUserList extends \Google\Model
     return $this->name;
   }
   /**
-   * Immutable. The resource name of the user list. User list resource names
-   * have the form: `customers/{customer_id}/userLists/{user_list_id}`
-   *
-   * @param string $resourceName
+   * @param string
    */
   public function setResourceName($resourceName)
   {
@@ -130,19 +79,14 @@ class GoogleAdsSearchads360V0ResourcesUserList extends \Google\Model
     return $this->resourceName;
   }
   /**
-   * Output only. Type of this list. This field is read-only.
-   *
-   * Accepted values: UNSPECIFIED, UNKNOWN, REMARKETING, LOGICAL,
-   * EXTERNAL_REMARKETING, RULE_BASED, SIMILAR, CRM_BASED
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

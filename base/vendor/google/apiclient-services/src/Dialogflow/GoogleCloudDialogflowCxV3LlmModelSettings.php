@@ -29,7 +29,7 @@ class GoogleCloudDialogflowCxV3LlmModelSettings extends \Google\Model
   public $promptText;
 
   /**
-   * @param string $model
+   * @param string
    */
   public function setModel($model)
   {
@@ -43,7 +43,7 @@ class GoogleCloudDialogflowCxV3LlmModelSettings extends \Google\Model
     return $this->model;
   }
   /**
-   * @param string $promptText
+   * @param string
    */
   public function setPromptText($promptText)
   {

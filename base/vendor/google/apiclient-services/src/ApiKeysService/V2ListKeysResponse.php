@@ -23,16 +23,12 @@ class V2ListKeysResponse extends \Google\Collection
   protected $keysType = V2Key::class;
   protected $keysDataType = 'array';
   /**
-   * The pagination token for the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * A list of API keys.
-   *
-   * @param V2Key[] $keys
+   * @param V2Key[]
    */
   public function setKeys($keys)
   {
@@ -46,9 +42,7 @@ class V2ListKeysResponse extends \Google\Collection
     return $this->keys;
   }
   /**
-   * The pagination token for the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

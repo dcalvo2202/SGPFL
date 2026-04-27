@@ -23,20 +23,12 @@ class ListCustomBiddingAlgorithmRulesResponse extends \Google\Collection
   protected $customBiddingRulesType = CustomBiddingAlgorithmRules::class;
   protected $customBiddingRulesDataType = 'array';
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * page_token field in the subsequent call to
-   * `ListCustomBiddingAlgorithmRulesRequest` method to retrieve the next page
-   * of results. If this field is null, it means this is the last page.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of CustomBiddingAlgorithmRules resources. This list will be absent
-   * if empty.
-   *
-   * @param CustomBiddingAlgorithmRules[] $customBiddingRules
+   * @param CustomBiddingAlgorithmRules[]
    */
   public function setCustomBiddingRules($customBiddingRules)
   {
@@ -50,12 +42,7 @@ class ListCustomBiddingAlgorithmRulesResponse extends \Google\Collection
     return $this->customBiddingRules;
   }
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * page_token field in the subsequent call to
-   * `ListCustomBiddingAlgorithmRulesRequest` method to retrieve the next page
-   * of results. If this field is null, it means this is the last page.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

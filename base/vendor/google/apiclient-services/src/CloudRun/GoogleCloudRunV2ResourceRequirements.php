@@ -20,40 +20,20 @@ namespace Google\Service\CloudRun;
 class GoogleCloudRunV2ResourceRequirements extends \Google\Model
 {
   /**
-   * Determines whether CPU is only allocated during requests (true by default).
-   * However, if ResourceRequirements is set, the caller must explicitly set
-   * this field to true to preserve the default behavior.
-   *
    * @var bool
    */
   public $cpuIdle;
   /**
-   * Only `memory`, `cpu` and `nvidia.com/gpu` keys in the map are supported.
-   * Notes: * The only supported values for CPU are '1', '2', '4', and '8'.
-   * Setting 4 CPU requires at least 2Gi of memory. For more information, go to
-   * https://cloud.google.com/run/docs/configuring/cpu. * For supported 'memory'
-   * values and syntax, go to
-   * https://cloud.google.com/run/docs/configuring/memory-limits * The only
-   * supported 'nvidia.com/gpu' value is '1'.
-   *
    * @var string[]
    */
   public $limits;
   /**
-   * Determines whether CPU should be boosted on startup of a new container
-   * instance above the requested CPU threshold, this can help reduce cold-start
-   * latency.
-   *
    * @var bool
    */
   public $startupCpuBoost;
 
   /**
-   * Determines whether CPU is only allocated during requests (true by default).
-   * However, if ResourceRequirements is set, the caller must explicitly set
-   * this field to true to preserve the default behavior.
-   *
-   * @param bool $cpuIdle
+   * @param bool
    */
   public function setCpuIdle($cpuIdle)
   {
@@ -67,15 +47,7 @@ class GoogleCloudRunV2ResourceRequirements extends \Google\Model
     return $this->cpuIdle;
   }
   /**
-   * Only `memory`, `cpu` and `nvidia.com/gpu` keys in the map are supported.
-   * Notes: * The only supported values for CPU are '1', '2', '4', and '8'.
-   * Setting 4 CPU requires at least 2Gi of memory. For more information, go to
-   * https://cloud.google.com/run/docs/configuring/cpu. * For supported 'memory'
-   * values and syntax, go to
-   * https://cloud.google.com/run/docs/configuring/memory-limits * The only
-   * supported 'nvidia.com/gpu' value is '1'.
-   *
-   * @param string[] $limits
+   * @param string[]
    */
   public function setLimits($limits)
   {
@@ -89,11 +61,7 @@ class GoogleCloudRunV2ResourceRequirements extends \Google\Model
     return $this->limits;
   }
   /**
-   * Determines whether CPU should be boosted on startup of a new container
-   * instance above the requested CPU threshold, this can help reduce cold-start
-   * latency.
-   *
-   * @param bool $startupCpuBoost
+   * @param bool
    */
   public function setStartupCpuBoost($startupCpuBoost)
   {

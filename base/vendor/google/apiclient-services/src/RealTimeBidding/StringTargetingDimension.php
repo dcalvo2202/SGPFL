@@ -19,56 +19,32 @@ namespace Google\Service\RealTimeBidding;
 
 class StringTargetingDimension extends \Google\Collection
 {
-  /**
-   * Placeholder for undefined targeting mode.
-   */
-  public const TARGETING_MODE_TARGETING_MODE_UNSPECIFIED = 'TARGETING_MODE_UNSPECIFIED';
-  /**
-   * The inclusive list type. Inventory must match an item in this list to be
-   * targeted.
-   */
-  public const TARGETING_MODE_INCLUSIVE = 'INCLUSIVE';
-  /**
-   * The exclusive list type. Inventory must not match any item in this list to
-   * be targeted.
-   */
-  public const TARGETING_MODE_EXCLUSIVE = 'EXCLUSIVE';
   protected $collection_key = 'values';
   /**
-   * How the items in this list should be targeted.
-   *
    * @var string
    */
   public $targetingMode;
   /**
-   * The values specified.
-   *
    * @var string[]
    */
   public $values;
 
   /**
-   * How the items in this list should be targeted.
-   *
-   * Accepted values: TARGETING_MODE_UNSPECIFIED, INCLUSIVE, EXCLUSIVE
-   *
-   * @param self::TARGETING_MODE_* $targetingMode
+   * @param string
    */
   public function setTargetingMode($targetingMode)
   {
     $this->targetingMode = $targetingMode;
   }
   /**
-   * @return self::TARGETING_MODE_*
+   * @return string
    */
   public function getTargetingMode()
   {
     return $this->targetingMode;
   }
   /**
-   * The values specified.
-   *
-   * @param string[] $values
+   * @param string[]
    */
   public function setValues($values)
   {

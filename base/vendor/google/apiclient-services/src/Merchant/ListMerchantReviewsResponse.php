@@ -23,16 +23,12 @@ class ListMerchantReviewsResponse extends \Google\Collection
   protected $merchantReviewsType = MerchantReview::class;
   protected $merchantReviewsDataType = 'array';
   /**
-   * The token to retrieve the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The merchant review.
-   *
-   * @param MerchantReview[] $merchantReviews
+   * @param MerchantReview[]
    */
   public function setMerchantReviews($merchantReviews)
   {
@@ -46,9 +42,7 @@ class ListMerchantReviewsResponse extends \Google\Collection
     return $this->merchantReviews;
   }
   /**
-   * The token to retrieve the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

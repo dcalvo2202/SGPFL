@@ -23,16 +23,12 @@ class PrivateRegistryAccessConfig extends \Google\Collection
   protected $certificateAuthorityDomainConfigType = CertificateAuthorityDomainConfig::class;
   protected $certificateAuthorityDomainConfigDataType = 'array';
   /**
-   * Private registry access is enabled.
-   *
    * @var bool
    */
   public $enabled;
 
   /**
-   * Private registry access configuration.
-   *
-   * @param CertificateAuthorityDomainConfig[] $certificateAuthorityDomainConfig
+   * @param CertificateAuthorityDomainConfig[]
    */
   public function setCertificateAuthorityDomainConfig($certificateAuthorityDomainConfig)
   {
@@ -46,9 +42,7 @@ class PrivateRegistryAccessConfig extends \Google\Collection
     return $this->certificateAuthorityDomainConfig;
   }
   /**
-   * Private registry access is enabled.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {

@@ -28,7 +28,7 @@ class GoogleCloudDialogflowCxV3LookupEnvironmentHistoryResponse extends \Google\
   public $nextPageToken;
 
   /**
-   * @param GoogleCloudDialogflowCxV3Environment[] $environments
+   * @param GoogleCloudDialogflowCxV3Environment[]
    */
   public function setEnvironments($environments)
   {
@@ -42,7 +42,7 @@ class GoogleCloudDialogflowCxV3LookupEnvironmentHistoryResponse extends \Google\
     return $this->environments;
   }
   /**
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

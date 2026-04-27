@@ -20,49 +20,24 @@ namespace Google\Service\Vault;
 class CloudStorageFile extends \Google\Model
 {
   /**
-   * The name of the Cloud Storage bucket for the export file. You can use this
-   * value in the Cloud Storage [JSON
-   * API](https://cloud.google.com/storage/docs/json_api) or [XML
-   * API](https://cloud.google.com/storage/docs/xml-api), but not to list the
-   * bucket contents. Instead, you can [get individual export
-   * files](https://cloud.google.com/storage/docs/json_api/v1/objects/get) by
-   * object name.
-   *
    * @var string
    */
   public $bucketName;
   /**
-   * The md5 hash of the file.
-   *
    * @var string
    */
   public $md5Hash;
   /**
-   * The name of the Cloud Storage object for the export file. You can use this
-   * value in the Cloud Storage [JSON
-   * API](https://cloud.google.com/storage/docs/json_api) or [XML
-   * API](https://cloud.google.com/storage/docs/xml-api).
-   *
    * @var string
    */
   public $objectName;
   /**
-   * The export file size.
-   *
    * @var string
    */
   public $size;
 
   /**
-   * The name of the Cloud Storage bucket for the export file. You can use this
-   * value in the Cloud Storage [JSON
-   * API](https://cloud.google.com/storage/docs/json_api) or [XML
-   * API](https://cloud.google.com/storage/docs/xml-api), but not to list the
-   * bucket contents. Instead, you can [get individual export
-   * files](https://cloud.google.com/storage/docs/json_api/v1/objects/get) by
-   * object name.
-   *
-   * @param string $bucketName
+   * @param string
    */
   public function setBucketName($bucketName)
   {
@@ -76,9 +51,7 @@ class CloudStorageFile extends \Google\Model
     return $this->bucketName;
   }
   /**
-   * The md5 hash of the file.
-   *
-   * @param string $md5Hash
+   * @param string
    */
   public function setMd5Hash($md5Hash)
   {
@@ -92,12 +65,7 @@ class CloudStorageFile extends \Google\Model
     return $this->md5Hash;
   }
   /**
-   * The name of the Cloud Storage object for the export file. You can use this
-   * value in the Cloud Storage [JSON
-   * API](https://cloud.google.com/storage/docs/json_api) or [XML
-   * API](https://cloud.google.com/storage/docs/xml-api).
-   *
-   * @param string $objectName
+   * @param string
    */
   public function setObjectName($objectName)
   {
@@ -111,9 +79,7 @@ class CloudStorageFile extends \Google\Model
     return $this->objectName;
   }
   /**
-   * The export file size.
-   *
-   * @param string $size
+   * @param string
    */
   public function setSize($size)
   {

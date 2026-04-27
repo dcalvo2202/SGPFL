@@ -23,17 +23,12 @@ class ListAnalyticsAccountLinksResponse extends \Google\Collection
   protected $analyticsAccountLinksType = AnalyticsAccountLink::class;
   protected $analyticsAccountLinksDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Analytics account links in this organization.
-   *
-   * @param AnalyticsAccountLink[] $analyticsAccountLinks
+   * @param AnalyticsAccountLink[]
    */
   public function setAnalyticsAccountLinks($analyticsAccountLinks)
   {
@@ -47,10 +42,7 @@ class ListAnalyticsAccountLinksResponse extends \Google\Collection
     return $this->analyticsAccountLinks;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

@@ -17,28 +17,8 @@
 
 namespace Google\Service\CloudDeploy;
 
-class VerifyJob extends \Google\Collection
+class VerifyJob extends \Google\Model
 {
-  protected $collection_key = 'tasks';
-  protected $tasksType = Task::class;
-  protected $tasksDataType = 'array';
-
-  /**
-   * Output only. The tasks that are executed as part of the verify Job.
-   *
-   * @param Task[] $tasks
-   */
-  public function setTasks($tasks)
-  {
-    $this->tasks = $tasks;
-  }
-  /**
-   * @return Task[]
-   */
-  public function getTasks()
-  {
-    return $this->tasks;
-  }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

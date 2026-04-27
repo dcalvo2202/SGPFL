@@ -20,26 +20,16 @@ namespace Google\Service\CloudDeploy;
 class TargetAttribute extends \Google\Model
 {
   /**
-   * Optional. ID of the `Target`. The value of this field could be one of the
-   * following: * The last segment of a target name * "*", all targets in a
-   * location
-   *
    * @var string
    */
   public $id;
   /**
-   * Target labels.
-   *
    * @var string[]
    */
   public $labels;
 
   /**
-   * Optional. ID of the `Target`. The value of this field could be one of the
-   * following: * The last segment of a target name * "*", all targets in a
-   * location
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -53,9 +43,7 @@ class TargetAttribute extends \Google\Model
     return $this->id;
   }
   /**
-   * Target labels.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {

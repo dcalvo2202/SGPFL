@@ -20,25 +20,16 @@ namespace Google\Service\GKEHub;
 class MeteringState extends \Google\Model
 {
   /**
-   * The time stamp of the most recent measurement of the number of vCPUs in the
-   * cluster.
-   *
    * @var string
    */
   public $lastMeasurementTime;
   /**
-   * The vCPUs capacity in the cluster according to the most recent measurement
-   * (1/1000 precision).
-   *
    * @var float
    */
   public $preciseLastMeasuredClusterVcpuCapacity;
 
   /**
-   * The time stamp of the most recent measurement of the number of vCPUs in the
-   * cluster.
-   *
-   * @param string $lastMeasurementTime
+   * @param string
    */
   public function setLastMeasurementTime($lastMeasurementTime)
   {
@@ -52,10 +43,7 @@ class MeteringState extends \Google\Model
     return $this->lastMeasurementTime;
   }
   /**
-   * The vCPUs capacity in the cluster according to the most recent measurement
-   * (1/1000 precision).
-   *
-   * @param float $preciseLastMeasuredClusterVcpuCapacity
+   * @param float
    */
   public function setPreciseLastMeasuredClusterVcpuCapacity($preciseLastMeasuredClusterVcpuCapacity)
   {

@@ -23,23 +23,16 @@ class ListCustomTargetTypesResponse extends \Google\Collection
   protected $customTargetTypesType = CustomTargetType::class;
   protected $customTargetTypesDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * The `CustomTargetType` objects.
-   *
-   * @param CustomTargetType[] $customTargetTypes
+   * @param CustomTargetType[]
    */
   public function setCustomTargetTypes($customTargetTypes)
   {
@@ -53,10 +46,7 @@ class ListCustomTargetTypesResponse extends \Google\Collection
     return $this->customTargetTypes;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -70,9 +60,7 @@ class ListCustomTargetTypesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

@@ -20,22 +20,16 @@ namespace Google\Service\Vision;
 class GoogleCloudVisionV1p2beta1NormalizedVertex extends \Google\Model
 {
   /**
-   * X coordinate.
-   *
    * @var float
    */
   public $x;
   /**
-   * Y coordinate.
-   *
    * @var float
    */
   public $y;
 
   /**
-   * X coordinate.
-   *
-   * @param float $x
+   * @param float
    */
   public function setX($x)
   {
@@ -49,9 +43,7 @@ class GoogleCloudVisionV1p2beta1NormalizedVertex extends \Google\Model
     return $this->x;
   }
   /**
-   * Y coordinate.
-   *
-   * @param float $y
+   * @param float
    */
   public function setY($y)
   {

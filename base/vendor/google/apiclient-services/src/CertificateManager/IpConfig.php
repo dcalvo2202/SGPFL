@@ -21,22 +21,16 @@ class IpConfig extends \Google\Collection
 {
   protected $collection_key = 'ports';
   /**
-   * Output only. An external IP address.
-   *
    * @var string
    */
   public $ipAddress;
   /**
-   * Output only. Ports.
-   *
    * @var string[]
    */
   public $ports;
 
   /**
-   * Output only. An external IP address.
-   *
-   * @param string $ipAddress
+   * @param string
    */
   public function setIpAddress($ipAddress)
   {
@@ -50,9 +44,7 @@ class IpConfig extends \Google\Collection
     return $this->ipAddress;
   }
   /**
-   * Output only. Ports.
-   *
-   * @param string[] $ports
+   * @param string[]
    */
   public function setPorts($ports)
   {

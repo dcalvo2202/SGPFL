@@ -20,150 +20,52 @@ namespace Google\Service\WorkflowExecutions;
 class Execution extends \Google\Model
 {
   /**
-   * No call logging level specified.
-   */
-  public const CALL_LOG_LEVEL_CALL_LOG_LEVEL_UNSPECIFIED = 'CALL_LOG_LEVEL_UNSPECIFIED';
-  /**
-   * Log all call steps within workflows, all call returns, and all exceptions
-   * raised.
-   */
-  public const CALL_LOG_LEVEL_LOG_ALL_CALLS = 'LOG_ALL_CALLS';
-  /**
-   * Log only exceptions that are raised from call steps within workflows.
-   */
-  public const CALL_LOG_LEVEL_LOG_ERRORS_ONLY = 'LOG_ERRORS_ONLY';
-  /**
-   * Explicitly log nothing.
-   */
-  public const CALL_LOG_LEVEL_LOG_NONE = 'LOG_NONE';
-  /**
-   * The default/unset value.
-   */
-  public const EXECUTION_HISTORY_LEVEL_EXECUTION_HISTORY_LEVEL_UNSPECIFIED = 'EXECUTION_HISTORY_LEVEL_UNSPECIFIED';
-  /**
-   * Enable execution history basic feature for this execution.
-   */
-  public const EXECUTION_HISTORY_LEVEL_EXECUTION_HISTORY_BASIC = 'EXECUTION_HISTORY_BASIC';
-  /**
-   * Enable execution history detailed feature for this execution.
-   */
-  public const EXECUTION_HISTORY_LEVEL_EXECUTION_HISTORY_DETAILED = 'EXECUTION_HISTORY_DETAILED';
-  /**
-   * Invalid state.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The execution is in progress.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * The execution finished successfully.
-   */
-  public const STATE_SUCCEEDED = 'SUCCEEDED';
-  /**
-   * The execution failed with an error.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * The execution was stopped intentionally.
-   */
-  public const STATE_CANCELLED = 'CANCELLED';
-  /**
-   * Execution data is unavailable. See the `state_error` field.
-   */
-  public const STATE_UNAVAILABLE = 'UNAVAILABLE';
-  /**
-   * Request has been placed in the backlog for processing at a later time.
-   */
-  public const STATE_QUEUED = 'QUEUED';
-  /**
-   * Input parameters of the execution represented as a JSON string. The size
-   * limit is 32KB. *Note*: If you are using the REST API directly to run your
-   * workflow, you must escape any JSON string value of `argument`. Example:
-   * `'{"argument":"{\"firstName\":\"FIRST\",\"lastName\":\"LAST\"}"}'`
-   *
    * @var string
    */
   public $argument;
   /**
-   * The call logging level associated to this execution.
-   *
    * @var string
    */
   public $callLogLevel;
   /**
-   * Output only. Marks the creation of the execution.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. If set to true, the execution will not be backlogged when the
-   * concurrency quota is exhausted. The backlog execution starts when the
-   * concurrency quota becomes available.
-   *
    * @var bool
    */
   public $disableConcurrencyQuotaOverflowBuffering;
   /**
-   * Output only. Measures the duration of the execution.
-   *
    * @var string
    */
   public $duration;
   /**
-   * Output only. Marks the end of execution, successful or not.
-   *
    * @var string
    */
   public $endTime;
   protected $errorType = Error::class;
   protected $errorDataType = '';
   /**
-   * Optional. Describes the execution history level to apply to this execution.
-   * If not specified, the execution history level is determined by its
-   * workflow's execution history level. If the levels are different, the
-   * executionHistoryLevel overrides the workflow's execution history level for
-   * this execution.
-   *
    * @var string
    */
   public $executionHistoryLevel;
   /**
-   * Labels associated with this execution. Labels can contain at most 64
-   * entries. Keys and values can be no longer than 63 characters and can only
-   * contain lowercase letters, numeric characters, underscores, and dashes.
-   * Label keys must start with a letter. International characters are allowed.
-   * By default, labels are inherited from the workflow but are overridden by
-   * any labels associated with the execution.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Output only. The resource name of the execution. Format: projects/{project}
-   * /locations/{location}/workflows/{workflow}/executions/{execution}
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Output of the execution represented as a JSON string. The
-   * value can only be present if the execution's state is `SUCCEEDED`.
-   *
    * @var string
    */
   public $result;
   /**
-   * Output only. Marks the beginning of execution. Note that this will be the
-   * same as `createTime` for executions that start immediately.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * Output only. Current state of the execution.
-   *
    * @var string
    */
   public $state;
@@ -172,19 +74,12 @@ class Execution extends \Google\Model
   protected $statusType = Status::class;
   protected $statusDataType = '';
   /**
-   * Output only. Revision of the workflow this execution is using.
-   *
    * @var string
    */
   public $workflowRevisionId;
 
   /**
-   * Input parameters of the execution represented as a JSON string. The size
-   * limit is 32KB. *Note*: If you are using the REST API directly to run your
-   * workflow, you must escape any JSON string value of `argument`. Example:
-   * `'{"argument":"{\"firstName\":\"FIRST\",\"lastName\":\"LAST\"}"}'`
-   *
-   * @param string $argument
+   * @param string
    */
   public function setArgument($argument)
   {
@@ -198,28 +93,21 @@ class Execution extends \Google\Model
     return $this->argument;
   }
   /**
-   * The call logging level associated to this execution.
-   *
-   * Accepted values: CALL_LOG_LEVEL_UNSPECIFIED, LOG_ALL_CALLS,
-   * LOG_ERRORS_ONLY, LOG_NONE
-   *
-   * @param self::CALL_LOG_LEVEL_* $callLogLevel
+   * @param string
    */
   public function setCallLogLevel($callLogLevel)
   {
     $this->callLogLevel = $callLogLevel;
   }
   /**
-   * @return self::CALL_LOG_LEVEL_*
+   * @return string
    */
   public function getCallLogLevel()
   {
     return $this->callLogLevel;
   }
   /**
-   * Output only. Marks the creation of the execution.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -233,11 +121,7 @@ class Execution extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Optional. If set to true, the execution will not be backlogged when the
-   * concurrency quota is exhausted. The backlog execution starts when the
-   * concurrency quota becomes available.
-   *
-   * @param bool $disableConcurrencyQuotaOverflowBuffering
+   * @param bool
    */
   public function setDisableConcurrencyQuotaOverflowBuffering($disableConcurrencyQuotaOverflowBuffering)
   {
@@ -251,9 +135,7 @@ class Execution extends \Google\Model
     return $this->disableConcurrencyQuotaOverflowBuffering;
   }
   /**
-   * Output only. Measures the duration of the execution.
-   *
-   * @param string $duration
+   * @param string
    */
   public function setDuration($duration)
   {
@@ -267,9 +149,7 @@ class Execution extends \Google\Model
     return $this->duration;
   }
   /**
-   * Output only. Marks the end of execution, successful or not.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -283,11 +163,7 @@ class Execution extends \Google\Model
     return $this->endTime;
   }
   /**
-   * Output only. The error which caused the execution to finish prematurely.
-   * The value is only present if the execution's state is `FAILED` or
-   * `CANCELLED`.
-   *
-   * @param Error $error
+   * @param Error
    */
   public function setError(Error $error)
   {
@@ -301,37 +177,21 @@ class Execution extends \Google\Model
     return $this->error;
   }
   /**
-   * Optional. Describes the execution history level to apply to this execution.
-   * If not specified, the execution history level is determined by its
-   * workflow's execution history level. If the levels are different, the
-   * executionHistoryLevel overrides the workflow's execution history level for
-   * this execution.
-   *
-   * Accepted values: EXECUTION_HISTORY_LEVEL_UNSPECIFIED,
-   * EXECUTION_HISTORY_BASIC, EXECUTION_HISTORY_DETAILED
-   *
-   * @param self::EXECUTION_HISTORY_LEVEL_* $executionHistoryLevel
+   * @param string
    */
   public function setExecutionHistoryLevel($executionHistoryLevel)
   {
     $this->executionHistoryLevel = $executionHistoryLevel;
   }
   /**
-   * @return self::EXECUTION_HISTORY_LEVEL_*
+   * @return string
    */
   public function getExecutionHistoryLevel()
   {
     return $this->executionHistoryLevel;
   }
   /**
-   * Labels associated with this execution. Labels can contain at most 64
-   * entries. Keys and values can be no longer than 63 characters and can only
-   * contain lowercase letters, numeric characters, underscores, and dashes.
-   * Label keys must start with a letter. International characters are allowed.
-   * By default, labels are inherited from the workflow but are overridden by
-   * any labels associated with the execution.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -345,10 +205,7 @@ class Execution extends \Google\Model
     return $this->labels;
   }
   /**
-   * Output only. The resource name of the execution. Format: projects/{project}
-   * /locations/{location}/workflows/{workflow}/executions/{execution}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -362,10 +219,7 @@ class Execution extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Output of the execution represented as a JSON string. The
-   * value can only be present if the execution's state is `SUCCEEDED`.
-   *
-   * @param string $result
+   * @param string
    */
   public function setResult($result)
   {
@@ -379,10 +233,7 @@ class Execution extends \Google\Model
     return $this->result;
   }
   /**
-   * Output only. Marks the beginning of execution. Note that this will be the
-   * same as `createTime` for executions that start immediately.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -396,30 +247,21 @@ class Execution extends \Google\Model
     return $this->startTime;
   }
   /**
-   * Output only. Current state of the execution.
-   *
-   * Accepted values: STATE_UNSPECIFIED, ACTIVE, SUCCEEDED, FAILED, CANCELLED,
-   * UNAVAILABLE, QUEUED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. Error regarding the state of the Execution resource. For
-   * example, this field will have error details if the execution data is
-   * unavailable due to revoked KMS key permissions.
-   *
-   * @param StateError $stateError
+   * @param StateError
    */
   public function setStateError(StateError $stateError)
   {
@@ -433,10 +275,7 @@ class Execution extends \Google\Model
     return $this->stateError;
   }
   /**
-   * Output only. Status tracks the current steps and progress data of this
-   * execution.
-   *
-   * @param Status $status
+   * @param Status
    */
   public function setStatus(Status $status)
   {
@@ -450,9 +289,7 @@ class Execution extends \Google\Model
     return $this->status;
   }
   /**
-   * Output only. Revision of the workflow this execution is using.
-   *
-   * @param string $workflowRevisionId
+   * @param string
    */
   public function setWorkflowRevisionId($workflowRevisionId)
   {

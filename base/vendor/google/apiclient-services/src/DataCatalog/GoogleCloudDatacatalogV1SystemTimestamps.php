@@ -20,32 +20,20 @@ namespace Google\Service\DataCatalog;
 class GoogleCloudDatacatalogV1SystemTimestamps extends \Google\Model
 {
   /**
-   * Creation timestamp of the resource within the given system.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. Expiration timestamp of the resource within the given system.
-   * Currently only applicable to BigQuery resources.
-   *
    * @var string
    */
   public $expireTime;
   /**
-   * Timestamp of the last modification of the resource or its metadata within a
-   * given system. Note: Depending on the source system, not every modification
-   * updates this timestamp. For example, BigQuery timestamps every metadata
-   * modification but not data or permission changes.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Creation timestamp of the resource within the given system.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -59,10 +47,7 @@ class GoogleCloudDatacatalogV1SystemTimestamps extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. Expiration timestamp of the resource within the given system.
-   * Currently only applicable to BigQuery resources.
-   *
-   * @param string $expireTime
+   * @param string
    */
   public function setExpireTime($expireTime)
   {
@@ -76,12 +61,7 @@ class GoogleCloudDatacatalogV1SystemTimestamps extends \Google\Model
     return $this->expireTime;
   }
   /**
-   * Timestamp of the last modification of the resource or its metadata within a
-   * given system. Note: Depending on the source system, not every modification
-   * updates this timestamp. For example, BigQuery timestamps every metadata
-   * modification but not data or permission changes.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

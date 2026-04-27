@@ -20,22 +20,16 @@ namespace Google\Service\DisplayVideo;
 class AudioVideoOffset extends \Google\Model
 {
   /**
-   * Optional. The offset in percentage of the audio or video duration.
-   *
    * @var string
    */
   public $percentage;
   /**
-   * Optional. The offset in seconds from the start of the audio or video.
-   *
    * @var string
    */
   public $seconds;
 
   /**
-   * Optional. The offset in percentage of the audio or video duration.
-   *
-   * @param string $percentage
+   * @param string
    */
   public function setPercentage($percentage)
   {
@@ -49,9 +43,7 @@ class AudioVideoOffset extends \Google\Model
     return $this->percentage;
   }
   /**
-   * Optional. The offset in seconds from the start of the audio or video.
-   *
-   * @param string $seconds
+   * @param string
    */
   public function setSeconds($seconds)
   {

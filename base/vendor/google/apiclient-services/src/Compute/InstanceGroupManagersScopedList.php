@@ -26,10 +26,7 @@ class InstanceGroupManagersScopedList extends \Google\Collection
   protected $warningDataType = '';
 
   /**
-   * Output only. [Output Only] The list of managed instance groups that are
-   * contained in the specified project and zone.
-   *
-   * @param InstanceGroupManager[] $instanceGroupManagers
+   * @param InstanceGroupManager[]
    */
   public function setInstanceGroupManagers($instanceGroupManagers)
   {
@@ -43,10 +40,7 @@ class InstanceGroupManagersScopedList extends \Google\Collection
     return $this->instanceGroupManagers;
   }
   /**
-   * Output only. [Output Only] The warning that replaces the list of managed
-   * instance groups when the list is empty.
-   *
-   * @param InstanceGroupManagersScopedListWarning $warning
+   * @param InstanceGroupManagersScopedListWarning
    */
   public function setWarning(InstanceGroupManagersScopedListWarning $warning)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\Firestore;
 class ReadWrite extends \Google\Model
 {
   /**
-   * An optional transaction to retry.
-   *
    * @var string
    */
   public $retryTransaction;
 
   /**
-   * An optional transaction to retry.
-   *
-   * @param string $retryTransaction
+   * @param string
    */
   public function setRetryTransaction($retryTransaction)
   {

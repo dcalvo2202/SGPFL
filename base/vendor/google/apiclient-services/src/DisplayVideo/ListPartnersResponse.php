@@ -21,10 +21,6 @@ class ListPartnersResponse extends \Google\Collection
 {
   protected $collection_key = 'partners';
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * page_token field in the subsequent call to `ListPartners` method to
-   * retrieve the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -32,11 +28,7 @@ class ListPartnersResponse extends \Google\Collection
   protected $partnersDataType = 'array';
 
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * page_token field in the subsequent call to `ListPartners` method to
-   * retrieve the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -50,9 +42,7 @@ class ListPartnersResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The list of partners. This list will be absent if empty.
-   *
-   * @param Partner[] $partners
+   * @param Partner[]
    */
   public function setPartners($partners)
   {

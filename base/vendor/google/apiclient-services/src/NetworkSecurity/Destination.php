@@ -21,38 +21,22 @@ class Destination extends \Google\Collection
 {
   protected $collection_key = 'ports';
   /**
-   * Required. List of host names to match. Matched against the ":authority"
-   * header in http requests. At least one host should match. Each host can be
-   * an exact match, or a prefix match (example "mydomain.*") or a suffix match
-   * (example "*.myorg.com") or a presence (any) match "*".
-   *
    * @var string[]
    */
   public $hosts;
   protected $httpHeaderMatchType = HttpHeaderMatch::class;
   protected $httpHeaderMatchDataType = '';
   /**
-   * Optional. A list of HTTP methods to match. At least one method should
-   * match. Should not be set for gRPC services.
-   *
    * @var string[]
    */
   public $methods;
   /**
-   * Required. List of destination ports to match. At least one port should
-   * match.
-   *
    * @var string[]
    */
   public $ports;
 
   /**
-   * Required. List of host names to match. Matched against the ":authority"
-   * header in http requests. At least one host should match. Each host can be
-   * an exact match, or a prefix match (example "mydomain.*") or a suffix match
-   * (example "*.myorg.com") or a presence (any) match "*".
-   *
-   * @param string[] $hosts
+   * @param string[]
    */
   public function setHosts($hosts)
   {
@@ -66,13 +50,7 @@ class Destination extends \Google\Collection
     return $this->hosts;
   }
   /**
-   * Optional. Match against key:value pair in http header. Provides a flexible
-   * match based on HTTP headers, for potentially advanced use cases. At least
-   * one header should match. Avoid using header matches to make authorization
-   * decisions unless there is a strong guarantee that requests arrive through a
-   * trusted client or proxy.
-   *
-   * @param HttpHeaderMatch $httpHeaderMatch
+   * @param HttpHeaderMatch
    */
   public function setHttpHeaderMatch(HttpHeaderMatch $httpHeaderMatch)
   {
@@ -86,10 +64,7 @@ class Destination extends \Google\Collection
     return $this->httpHeaderMatch;
   }
   /**
-   * Optional. A list of HTTP methods to match. At least one method should
-   * match. Should not be set for gRPC services.
-   *
-   * @param string[] $methods
+   * @param string[]
    */
   public function setMethods($methods)
   {
@@ -103,10 +78,7 @@ class Destination extends \Google\Collection
     return $this->methods;
   }
   /**
-   * Required. List of destination ports to match. At least one port should
-   * match.
-   *
-   * @param string[] $ports
+   * @param string[]
    */
   public function setPorts($ports)
   {

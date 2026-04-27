@@ -21,38 +21,22 @@ class TableFieldSchema extends \Google\Collection
 {
   protected $collection_key = 'fields';
   /**
-   * The field name. The name must contain only letters (a-z, A-Z), numbers
-   * (0-9), or underscores (_), and must start with a letter or underscore. The
-   * maximum length is 128 characters.
-   *
    * @var string
    */
   public $field;
   protected $fieldsType = TableFieldSchema::class;
   protected $fieldsDataType = 'array';
   /**
-   * The field mode. Possible values include NULLABLE, REQUIRED and REPEATED.
-   * The default value is NULLABLE.
-   *
    * @var string
    */
   public $mode;
   /**
-   * The field data type. Possible values include * STRING * BYTES * INTEGER *
-   * FLOAT * BOOLEAN * TIMESTAMP * DATE * TIME * DATETIME * GEOGRAPHY, *
-   * NUMERIC, * BIGNUMERIC, * RECORD (where RECORD indicates that the field
-   * contains a nested schema).
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The field name. The name must contain only letters (a-z, A-Z), numbers
-   * (0-9), or underscores (_), and must start with a letter or underscore. The
-   * maximum length is 128 characters.
-   *
-   * @param string $field
+   * @param string
    */
   public function setField($field)
   {
@@ -66,9 +50,7 @@ class TableFieldSchema extends \Google\Collection
     return $this->field;
   }
   /**
-   * Describes the nested schema fields if the type property is set to RECORD.
-   *
-   * @param TableFieldSchema[] $fields
+   * @param TableFieldSchema[]
    */
   public function setFields($fields)
   {
@@ -82,10 +64,7 @@ class TableFieldSchema extends \Google\Collection
     return $this->fields;
   }
   /**
-   * The field mode. Possible values include NULLABLE, REQUIRED and REPEATED.
-   * The default value is NULLABLE.
-   *
-   * @param string $mode
+   * @param string
    */
   public function setMode($mode)
   {
@@ -99,12 +78,7 @@ class TableFieldSchema extends \Google\Collection
     return $this->mode;
   }
   /**
-   * The field data type. Possible values include * STRING * BYTES * INTEGER *
-   * FLOAT * BOOLEAN * TIMESTAMP * DATE * TIME * DATETIME * GEOGRAPHY, *
-   * NUMERIC, * BIGNUMERIC, * RECORD (where RECORD indicates that the field
-   * contains a nested schema).
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

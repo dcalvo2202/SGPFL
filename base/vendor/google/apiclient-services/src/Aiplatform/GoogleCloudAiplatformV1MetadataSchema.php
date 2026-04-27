@@ -20,70 +20,32 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1MetadataSchema extends \Google\Model
 {
   /**
-   * Unspecified type for the MetadataSchema.
-   */
-  public const SCHEMA_TYPE_METADATA_SCHEMA_TYPE_UNSPECIFIED = 'METADATA_SCHEMA_TYPE_UNSPECIFIED';
-  /**
-   * A type indicating that the MetadataSchema will be used by Artifacts.
-   */
-  public const SCHEMA_TYPE_ARTIFACT_TYPE = 'ARTIFACT_TYPE';
-  /**
-   * A typee indicating that the MetadataSchema will be used by Executions.
-   */
-  public const SCHEMA_TYPE_EXECUTION_TYPE = 'EXECUTION_TYPE';
-  /**
-   * A state indicating that the MetadataSchema will be used by Contexts.
-   */
-  public const SCHEMA_TYPE_CONTEXT_TYPE = 'CONTEXT_TYPE';
-  /**
-   * Output only. Timestamp when this MetadataSchema was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Description of the Metadata Schema
-   *
    * @var string
    */
   public $description;
   /**
-   * Output only. The resource name of the MetadataSchema.
-   *
    * @var string
    */
   public $name;
   /**
-   * Required. The raw YAML string representation of the MetadataSchema. The
-   * combination of [MetadataSchema.version] and the schema name given by
-   * `title` in [MetadataSchema.schema] must be unique within a MetadataStore.
-   * The schema is defined as an OpenAPI 3.0.2 [MetadataSchema
-   * Object](https://github.com/OAI/OpenAPI-
-   * Specification/blob/master/versions/3.0.2.md#schemaObject)
-   *
    * @var string
    */
   public $schema;
   /**
-   * The type of the MetadataSchema. This is a property that identifies which
-   * metadata types will use the MetadataSchema.
-   *
    * @var string
    */
   public $schemaType;
   /**
-   * The version of the MetadataSchema. The version's format must match the
-   * following regular expression: `^[0-9]+.+.+$`, which would allow to
-   * order/compare different versions. Example: 1.0.0, 1.0.1, etc.
-   *
    * @var string
    */
   public $schemaVersion;
 
   /**
-   * Output only. Timestamp when this MetadataSchema was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -97,9 +59,7 @@ class GoogleCloudAiplatformV1MetadataSchema extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Description of the Metadata Schema
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -113,9 +73,7 @@ class GoogleCloudAiplatformV1MetadataSchema extends \Google\Model
     return $this->description;
   }
   /**
-   * Output only. The resource name of the MetadataSchema.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -129,14 +87,7 @@ class GoogleCloudAiplatformV1MetadataSchema extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. The raw YAML string representation of the MetadataSchema. The
-   * combination of [MetadataSchema.version] and the schema name given by
-   * `title` in [MetadataSchema.schema] must be unique within a MetadataStore.
-   * The schema is defined as an OpenAPI 3.0.2 [MetadataSchema
-   * Object](https://github.com/OAI/OpenAPI-
-   * Specification/blob/master/versions/3.0.2.md#schemaObject)
-   *
-   * @param string $schema
+   * @param string
    */
   public function setSchema($schema)
   {
@@ -150,31 +101,21 @@ class GoogleCloudAiplatformV1MetadataSchema extends \Google\Model
     return $this->schema;
   }
   /**
-   * The type of the MetadataSchema. This is a property that identifies which
-   * metadata types will use the MetadataSchema.
-   *
-   * Accepted values: METADATA_SCHEMA_TYPE_UNSPECIFIED, ARTIFACT_TYPE,
-   * EXECUTION_TYPE, CONTEXT_TYPE
-   *
-   * @param self::SCHEMA_TYPE_* $schemaType
+   * @param string
    */
   public function setSchemaType($schemaType)
   {
     $this->schemaType = $schemaType;
   }
   /**
-   * @return self::SCHEMA_TYPE_*
+   * @return string
    */
   public function getSchemaType()
   {
     return $this->schemaType;
   }
   /**
-   * The version of the MetadataSchema. The version's format must match the
-   * following regular expression: `^[0-9]+.+.+$`, which would allow to
-   * order/compare different versions. Example: 1.0.0, 1.0.1, etc.
-   *
-   * @param string $schemaVersion
+   * @param string
    */
   public function setSchemaVersion($schemaVersion)
   {

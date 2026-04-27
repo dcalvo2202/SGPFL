@@ -24,8 +24,6 @@ class Image extends \Google\Model
   protected $sourceImageType = ToolOutputReference::class;
   protected $sourceImageDataType = '';
   /**
-   * The step to which the image is attached. Always set.
-   *
    * @var string
    */
   public $stepId;
@@ -33,9 +31,7 @@ class Image extends \Google\Model
   protected $thumbnailDataType = '';
 
   /**
-   * An error explaining why the thumbnail could not be rendered.
-   *
-   * @param Status $error
+   * @param Status
    */
   public function setError(Status $error)
   {
@@ -49,10 +45,7 @@ class Image extends \Google\Model
     return $this->error;
   }
   /**
-   * A reference to the full-size, original image. This is the same as the
-   * tool_outputs entry for the image under its Step. Always set.
-   *
-   * @param ToolOutputReference $sourceImage
+   * @param ToolOutputReference
    */
   public function setSourceImage(ToolOutputReference $sourceImage)
   {
@@ -66,9 +59,7 @@ class Image extends \Google\Model
     return $this->sourceImage;
   }
   /**
-   * The step to which the image is attached. Always set.
-   *
-   * @param string $stepId
+   * @param string
    */
   public function setStepId($stepId)
   {
@@ -82,9 +73,7 @@ class Image extends \Google\Model
     return $this->stepId;
   }
   /**
-   * The thumbnail.
-   *
-   * @param Thumbnail $thumbnail
+   * @param Thumbnail
    */
   public function setThumbnail(Thumbnail $thumbnail)
   {

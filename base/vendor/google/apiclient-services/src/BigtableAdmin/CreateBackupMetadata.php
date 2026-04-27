@@ -20,59 +20,30 @@ namespace Google\Service\BigtableAdmin;
 class CreateBackupMetadata extends \Google\Model
 {
   /**
-   * If set, the time at which this operation finished or was cancelled.
-   * DEPRECATED: Use finish_time instead.
-   *
-   * @deprecated
    * @var string
    */
   public $endTime;
   /**
-   * The time at which the operation failed or was completed successfully.
-   *
-   * @var string
-   */
-  public $finishTime;
-  /**
-   * The name of the backup being created.
-   *
    * @var string
    */
   public $name;
   /**
-   * The time at which the original request was received.
-   *
-   * @var string
-   */
-  public $requestTime;
-  /**
-   * The name of the table the backup is created from.
-   *
    * @var string
    */
   public $sourceTable;
   /**
-   * The time at which this operation started. DEPRECATED: Use request_time
-   * instead.
-   *
-   * @deprecated
    * @var string
    */
   public $startTime;
 
   /**
-   * If set, the time at which this operation finished or was cancelled.
-   * DEPRECATED: Use finish_time instead.
-   *
-   * @deprecated
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
     $this->endTime = $endTime;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getEndTime()
@@ -80,25 +51,7 @@ class CreateBackupMetadata extends \Google\Model
     return $this->endTime;
   }
   /**
-   * The time at which the operation failed or was completed successfully.
-   *
-   * @param string $finishTime
-   */
-  public function setFinishTime($finishTime)
-  {
-    $this->finishTime = $finishTime;
-  }
-  /**
-   * @return string
-   */
-  public function getFinishTime()
-  {
-    return $this->finishTime;
-  }
-  /**
-   * The name of the backup being created.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -112,25 +65,7 @@ class CreateBackupMetadata extends \Google\Model
     return $this->name;
   }
   /**
-   * The time at which the original request was received.
-   *
-   * @param string $requestTime
-   */
-  public function setRequestTime($requestTime)
-  {
-    $this->requestTime = $requestTime;
-  }
-  /**
-   * @return string
-   */
-  public function getRequestTime()
-  {
-    return $this->requestTime;
-  }
-  /**
-   * The name of the table the backup is created from.
-   *
-   * @param string $sourceTable
+   * @param string
    */
   public function setSourceTable($sourceTable)
   {
@@ -144,18 +79,13 @@ class CreateBackupMetadata extends \Google\Model
     return $this->sourceTable;
   }
   /**
-   * The time at which this operation started. DEPRECATED: Use request_time
-   * instead.
-   *
-   * @deprecated
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
     $this->startTime = $startTime;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getStartTime()

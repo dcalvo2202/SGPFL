@@ -23,16 +23,12 @@ class ListIngressRulesResponse extends \Google\Collection
   protected $ingressRulesType = FirewallRule::class;
   protected $ingressRulesDataType = 'array';
   /**
-   * Continuation token for fetching the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The ingress FirewallRules for this application.
-   *
-   * @param FirewallRule[] $ingressRules
+   * @param FirewallRule[]
    */
   public function setIngressRules($ingressRules)
   {
@@ -46,9 +42,7 @@ class ListIngressRulesResponse extends \Google\Collection
     return $this->ingressRules;
   }
   /**
-   * Continuation token for fetching the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

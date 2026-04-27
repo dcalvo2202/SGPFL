@@ -32,7 +32,7 @@ class GoogleCloudDialogflowCxV3ExperimentResultVersionMetrics extends \Google\Co
   public $version;
 
   /**
-   * @param GoogleCloudDialogflowCxV3ExperimentResultMetric[] $metrics
+   * @param GoogleCloudDialogflowCxV3ExperimentResultMetric[]
    */
   public function setMetrics($metrics)
   {
@@ -46,7 +46,7 @@ class GoogleCloudDialogflowCxV3ExperimentResultVersionMetrics extends \Google\Co
     return $this->metrics;
   }
   /**
-   * @param int $sessionCount
+   * @param int
    */
   public function setSessionCount($sessionCount)
   {
@@ -60,7 +60,7 @@ class GoogleCloudDialogflowCxV3ExperimentResultVersionMetrics extends \Google\Co
     return $this->sessionCount;
   }
   /**
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

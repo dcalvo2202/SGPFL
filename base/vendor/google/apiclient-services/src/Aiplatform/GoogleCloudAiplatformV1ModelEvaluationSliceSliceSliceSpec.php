@@ -23,11 +23,7 @@ class GoogleCloudAiplatformV1ModelEvaluationSliceSliceSliceSpec extends \Google\
   protected $configsDataType = 'map';
 
   /**
-   * Mapping configuration for this SliceSpec. The key is the name of the
-   * feature. By default, the key will be prefixed by "instance" as a dictionary
-   * prefix for Vertex Batch Predictions output format.
-   *
-   * @param GoogleCloudAiplatformV1ModelEvaluationSliceSliceSliceSpecSliceConfig[] $configs
+   * @param GoogleCloudAiplatformV1ModelEvaluationSliceSliceSliceSpecSliceConfig[]
    */
   public function setConfigs($configs)
   {

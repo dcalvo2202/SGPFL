@@ -20,28 +20,20 @@ namespace Google\Service\MigrationCenterAPI;
 class PostgreSqlProperty extends \Google\Model
 {
   /**
-   * Required. The property is enabled.
-   *
    * @var bool
    */
   public $enabled;
   /**
-   * Required. The property numeric value.
-   *
    * @var string
    */
   public $numericValue;
   /**
-   * Required. The property name.
-   *
    * @var string
    */
   public $property;
 
   /**
-   * Required. The property is enabled.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {
@@ -55,9 +47,7 @@ class PostgreSqlProperty extends \Google\Model
     return $this->enabled;
   }
   /**
-   * Required. The property numeric value.
-   *
-   * @param string $numericValue
+   * @param string
    */
   public function setNumericValue($numericValue)
   {
@@ -71,9 +61,7 @@ class PostgreSqlProperty extends \Google\Model
     return $this->numericValue;
   }
   /**
-   * Required. The property name.
-   *
-   * @param string $property
+   * @param string
    */
   public function setProperty($property)
   {

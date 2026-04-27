@@ -25,47 +25,34 @@ class PlaylistItemListResponse extends \Google\Collection
    */
   public $etag;
   /**
-   * Serialized EventId of the request which produced this response.
-   *
    * @var string
    */
   public $eventId;
   protected $itemsType = PlaylistItem::class;
   protected $itemsDataType = 'array';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "youtube#playlistItemListResponse".
-   *
    * @var string
    */
   public $kind;
   /**
-   * The token that can be used as the value of the pageToken parameter to
-   * retrieve the next page in the result set.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $pageInfoType = PageInfo::class;
   protected $pageInfoDataType = '';
   /**
-   * The token that can be used as the value of the pageToken parameter to
-   * retrieve the previous page in the result set.
-   *
    * @var string
    */
   public $prevPageToken;
   protected $tokenPaginationType = TokenPagination::class;
   protected $tokenPaginationDataType = '';
   /**
-   * The visitorId identifies the visitor.
-   *
    * @var string
    */
   public $visitorId;
 
   /**
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -79,9 +66,7 @@ class PlaylistItemListResponse extends \Google\Collection
     return $this->etag;
   }
   /**
-   * Serialized EventId of the request which produced this response.
-   *
-   * @param string $eventId
+   * @param string
    */
   public function setEventId($eventId)
   {
@@ -95,9 +80,7 @@ class PlaylistItemListResponse extends \Google\Collection
     return $this->eventId;
   }
   /**
-   * A list of playlist items that match the request criteria.
-   *
-   * @param PlaylistItem[] $items
+   * @param PlaylistItem[]
    */
   public function setItems($items)
   {
@@ -111,10 +94,7 @@ class PlaylistItemListResponse extends \Google\Collection
     return $this->items;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "youtube#playlistItemListResponse".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -128,10 +108,7 @@ class PlaylistItemListResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The token that can be used as the value of the pageToken parameter to
-   * retrieve the next page in the result set.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -145,9 +122,7 @@ class PlaylistItemListResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * General pagination information.
-   *
-   * @param PageInfo $pageInfo
+   * @param PageInfo
    */
   public function setPageInfo(PageInfo $pageInfo)
   {
@@ -161,10 +136,7 @@ class PlaylistItemListResponse extends \Google\Collection
     return $this->pageInfo;
   }
   /**
-   * The token that can be used as the value of the pageToken parameter to
-   * retrieve the previous page in the result set.
-   *
-   * @param string $prevPageToken
+   * @param string
    */
   public function setPrevPageToken($prevPageToken)
   {
@@ -178,7 +150,7 @@ class PlaylistItemListResponse extends \Google\Collection
     return $this->prevPageToken;
   }
   /**
-   * @param TokenPagination $tokenPagination
+   * @param TokenPagination
    */
   public function setTokenPagination(TokenPagination $tokenPagination)
   {
@@ -192,9 +164,7 @@ class PlaylistItemListResponse extends \Google\Collection
     return $this->tokenPagination;
   }
   /**
-   * The visitorId identifies the visitor.
-   *
-   * @param string $visitorId
+   * @param string
    */
   public function setVisitorId($visitorId)
   {

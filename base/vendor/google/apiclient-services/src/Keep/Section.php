@@ -25,9 +25,7 @@ class Section extends \Google\Model
   protected $textDataType = '';
 
   /**
-   * Used if this section's content is a list.
-   *
-   * @param ListContent $list
+   * @param ListContent
    */
   public function setList(ListContent $list)
   {
@@ -41,10 +39,7 @@ class Section extends \Google\Model
     return $this->list;
   }
   /**
-   * Used if this section's content is a block of text. The length of the text
-   * content must be less than 20,000 characters.
-   *
-   * @param TextContent $text
+   * @param TextContent
    */
   public function setText(TextContent $text)
   {

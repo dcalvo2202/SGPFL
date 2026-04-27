@@ -23,11 +23,7 @@ class GoogleCloudDatacatalogV1OrganizationConfig extends \Google\Model
   protected $configDataType = 'map';
 
   /**
-   * Map of organizations and project resource names and their configuration.
-   * The format for the map keys is `organizations/{organizationId}` or
-   * `projects/{projectId}`.
-   *
-   * @param GoogleCloudDatacatalogV1MigrationConfig[] $config
+   * @param GoogleCloudDatacatalogV1MigrationConfig[]
    */
   public function setConfig($config)
   {

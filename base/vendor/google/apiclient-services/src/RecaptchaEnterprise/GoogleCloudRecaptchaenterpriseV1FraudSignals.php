@@ -25,10 +25,7 @@ class GoogleCloudRecaptchaenterpriseV1FraudSignals extends \Google\Model
   protected $userSignalsDataType = '';
 
   /**
-   * Output only. Signals describing the payment card or cards used in this
-   * transaction.
-   *
-   * @param GoogleCloudRecaptchaenterpriseV1FraudSignalsCardSignals $cardSignals
+   * @param GoogleCloudRecaptchaenterpriseV1FraudSignalsCardSignals
    */
   public function setCardSignals(GoogleCloudRecaptchaenterpriseV1FraudSignalsCardSignals $cardSignals)
   {
@@ -42,9 +39,7 @@ class GoogleCloudRecaptchaenterpriseV1FraudSignals extends \Google\Model
     return $this->cardSignals;
   }
   /**
-   * Output only. Signals describing the end user in this transaction.
-   *
-   * @param GoogleCloudRecaptchaenterpriseV1FraudSignalsUserSignals $userSignals
+   * @param GoogleCloudRecaptchaenterpriseV1FraudSignalsUserSignals
    */
   public function setUserSignals(GoogleCloudRecaptchaenterpriseV1FraudSignalsUserSignals $userSignals)
   {

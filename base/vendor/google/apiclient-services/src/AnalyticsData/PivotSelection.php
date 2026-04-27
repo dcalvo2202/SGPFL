@@ -20,22 +20,16 @@ namespace Google\Service\AnalyticsData;
 class PivotSelection extends \Google\Model
 {
   /**
-   * Must be a dimension name from the request.
-   *
    * @var string
    */
   public $dimensionName;
   /**
-   * Order by only when the named dimension is this value.
-   *
    * @var string
    */
   public $dimensionValue;
 
   /**
-   * Must be a dimension name from the request.
-   *
-   * @param string $dimensionName
+   * @param string
    */
   public function setDimensionName($dimensionName)
   {
@@ -49,9 +43,7 @@ class PivotSelection extends \Google\Model
     return $this->dimensionName;
   }
   /**
-   * Order by only when the named dimension is this value.
-   *
-   * @param string $dimensionValue
+   * @param string
    */
   public function setDimensionValue($dimensionValue)
   {

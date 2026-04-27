@@ -21,10 +21,6 @@ class ListPublisherConnectionsResponse extends \Google\Collection
 {
   protected $collection_key = 'publisherConnections';
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * ListPublisherConnectionsRequest.pageToken field in the subsequent call to
-   * the `ListPublisherConnections` method to retrieve the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -32,11 +28,7 @@ class ListPublisherConnectionsResponse extends \Google\Collection
   protected $publisherConnectionsDataType = 'array';
 
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * ListPublisherConnectionsRequest.pageToken field in the subsequent call to
-   * the `ListPublisherConnections` method to retrieve the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -50,9 +42,7 @@ class ListPublisherConnectionsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The list of publisher connections.
-   *
-   * @param PublisherConnection[] $publisherConnections
+   * @param PublisherConnection[]
    */
   public function setPublisherConnections($publisherConnections)
   {

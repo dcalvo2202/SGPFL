@@ -20,34 +20,16 @@ namespace Google\Service\SearchConsole;
 class AmpIssue extends \Google\Model
 {
   /**
-   * Unknown severity.
-   */
-  public const SEVERITY_SEVERITY_UNSPECIFIED = 'SEVERITY_UNSPECIFIED';
-  /**
-   * Warning.
-   */
-  public const SEVERITY_WARNING = 'WARNING';
-  /**
-   * Error.
-   */
-  public const SEVERITY_ERROR = 'ERROR';
-  /**
-   * Brief description of this issue.
-   *
    * @var string
    */
   public $issueMessage;
   /**
-   * Severity of this issue: WARNING or ERROR.
-   *
    * @var string
    */
   public $severity;
 
   /**
-   * Brief description of this issue.
-   *
-   * @param string $issueMessage
+   * @param string
    */
   public function setIssueMessage($issueMessage)
   {
@@ -61,18 +43,14 @@ class AmpIssue extends \Google\Model
     return $this->issueMessage;
   }
   /**
-   * Severity of this issue: WARNING or ERROR.
-   *
-   * Accepted values: SEVERITY_UNSPECIFIED, WARNING, ERROR
-   *
-   * @param self::SEVERITY_* $severity
+   * @param string
    */
   public function setSeverity($severity)
   {
     $this->severity = $severity;
   }
   /**
-   * @return self::SEVERITY_*
+   * @return string
    */
   public function getSeverity()
   {

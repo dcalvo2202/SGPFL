@@ -19,26 +19,8 @@ namespace Google\Service\AnalyticsData;
 
 class CheckCompatibilityRequest extends \Google\Collection
 {
-  /**
-   * Unspecified compatibility.
-   */
-  public const COMPATIBILITY_FILTER_COMPATIBILITY_UNSPECIFIED = 'COMPATIBILITY_UNSPECIFIED';
-  /**
-   * The dimension or metric is compatible. This dimension or metric can be
-   * successfully added to a report.
-   */
-  public const COMPATIBILITY_FILTER_COMPATIBLE = 'COMPATIBLE';
-  /**
-   * The dimension or metric is incompatible. This dimension or metric cannot be
-   * successfully added to a report.
-   */
-  public const COMPATIBILITY_FILTER_INCOMPATIBLE = 'INCOMPATIBLE';
   protected $collection_key = 'metrics';
   /**
-   * Filters the dimensions and metrics in the response to just this
-   * compatibility. Commonly used as `”compatibilityFilter”: “COMPATIBLE”` to
-   * only return compatible dimensions & metrics.
-   *
    * @var string
    */
   public $compatibilityFilter;
@@ -52,30 +34,21 @@ class CheckCompatibilityRequest extends \Google\Collection
   protected $metricsDataType = 'array';
 
   /**
-   * Filters the dimensions and metrics in the response to just this
-   * compatibility. Commonly used as `”compatibilityFilter”: “COMPATIBLE”` to
-   * only return compatible dimensions & metrics.
-   *
-   * Accepted values: COMPATIBILITY_UNSPECIFIED, COMPATIBLE, INCOMPATIBLE
-   *
-   * @param self::COMPATIBILITY_FILTER_* $compatibilityFilter
+   * @param string
    */
   public function setCompatibilityFilter($compatibilityFilter)
   {
     $this->compatibilityFilter = $compatibilityFilter;
   }
   /**
-   * @return self::COMPATIBILITY_FILTER_*
+   * @return string
    */
   public function getCompatibilityFilter()
   {
     return $this->compatibilityFilter;
   }
   /**
-   * The filter clause of dimensions. `dimensionFilter` should be the same value
-   * as in your `runReport` request.
-   *
-   * @param FilterExpression $dimensionFilter
+   * @param FilterExpression
    */
   public function setDimensionFilter(FilterExpression $dimensionFilter)
   {
@@ -89,10 +62,7 @@ class CheckCompatibilityRequest extends \Google\Collection
     return $this->dimensionFilter;
   }
   /**
-   * The dimensions in this report. `dimensions` should be the same value as in
-   * your `runReport` request.
-   *
-   * @param Dimension[] $dimensions
+   * @param Dimension[]
    */
   public function setDimensions($dimensions)
   {
@@ -106,10 +76,7 @@ class CheckCompatibilityRequest extends \Google\Collection
     return $this->dimensions;
   }
   /**
-   * The filter clause of metrics. `metricFilter` should be the same value as in
-   * your `runReport` request
-   *
-   * @param FilterExpression $metricFilter
+   * @param FilterExpression
    */
   public function setMetricFilter(FilterExpression $metricFilter)
   {
@@ -123,10 +90,7 @@ class CheckCompatibilityRequest extends \Google\Collection
     return $this->metricFilter;
   }
   /**
-   * The metrics in this report. `metrics` should be the same value as in your
-   * `runReport` request.
-   *
-   * @param Metric[] $metrics
+   * @param Metric[]
    */
   public function setMetrics($metrics)
   {

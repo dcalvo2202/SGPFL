@@ -24,9 +24,7 @@ class GoogleCloudDocumentaiV1FetchProcessorTypesResponse extends \Google\Collect
   protected $processorTypesDataType = 'array';
 
   /**
-   * The list of processor types.
-   *
-   * @param GoogleCloudDocumentaiV1ProcessorType[] $processorTypes
+   * @param GoogleCloudDocumentaiV1ProcessorType[]
    */
   public function setProcessorTypes($processorTypes)
   {

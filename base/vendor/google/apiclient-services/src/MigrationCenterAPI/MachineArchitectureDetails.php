@@ -19,87 +19,43 @@ namespace Google\Service\MigrationCenterAPI;
 
 class MachineArchitectureDetails extends \Google\Model
 {
-  /**
-   * Unspecified or unknown.
-   */
-  public const FIRMWARE_TYPE_FIRMWARE_TYPE_UNSPECIFIED = 'FIRMWARE_TYPE_UNSPECIFIED';
-  /**
-   * BIOS firmware.
-   */
-  public const FIRMWARE_TYPE_BIOS = 'BIOS';
-  /**
-   * EFI firmware.
-   */
-  public const FIRMWARE_TYPE_EFI = 'EFI';
-  /**
-   * Unspecified or unknown.
-   */
-  public const HYPERTHREADING_CPU_HYPER_THREADING_UNSPECIFIED = 'CPU_HYPER_THREADING_UNSPECIFIED';
-  /**
-   * Hyper-threading is disabled.
-   */
-  public const HYPERTHREADING_DISABLED = 'DISABLED';
-  /**
-   * Hyper-threading is enabled.
-   */
-  public const HYPERTHREADING_ENABLED = 'ENABLED';
   protected $biosType = BiosDetails::class;
   protected $biosDataType = '';
   /**
-   * CPU architecture, e.g., "x64-based PC", "x86_64", "i686" etc.
-   *
    * @var string
    */
   public $cpuArchitecture;
   /**
-   * Optional. CPU manufacturer, e.g., "Intel", "AMD".
-   *
    * @var string
    */
   public $cpuManufacturer;
   /**
-   * CPU name, e.g., "Intel Xeon E5-2690", "AMD EPYC 7571" etc.
-   *
    * @var string
    */
   public $cpuName;
   /**
-   * Number of processor sockets allocated to the machine.
-   *
    * @var int
    */
   public $cpuSocketCount;
   /**
-   * Deprecated: use MachineDetails.core_count instead. Number of CPU threads
-   * allocated to the machine.
-   *
-   * @deprecated
    * @var int
    */
   public $cpuThreadCount;
   /**
-   * Firmware type.
-   *
    * @var string
    */
   public $firmwareType;
   /**
-   * CPU hyper-threading support.
-   *
    * @var string
    */
   public $hyperthreading;
   /**
-   * Hardware vendor.
-   *
    * @var string
    */
   public $vendor;
 
   /**
-   * BIOS Details.
-   *
-   * @param BiosDetails $bios
+   * @param BiosDetails
    */
   public function setBios(BiosDetails $bios)
   {
@@ -113,9 +69,7 @@ class MachineArchitectureDetails extends \Google\Model
     return $this->bios;
   }
   /**
-   * CPU architecture, e.g., "x64-based PC", "x86_64", "i686" etc.
-   *
-   * @param string $cpuArchitecture
+   * @param string
    */
   public function setCpuArchitecture($cpuArchitecture)
   {
@@ -129,9 +83,7 @@ class MachineArchitectureDetails extends \Google\Model
     return $this->cpuArchitecture;
   }
   /**
-   * Optional. CPU manufacturer, e.g., "Intel", "AMD".
-   *
-   * @param string $cpuManufacturer
+   * @param string
    */
   public function setCpuManufacturer($cpuManufacturer)
   {
@@ -145,9 +97,7 @@ class MachineArchitectureDetails extends \Google\Model
     return $this->cpuManufacturer;
   }
   /**
-   * CPU name, e.g., "Intel Xeon E5-2690", "AMD EPYC 7571" etc.
-   *
-   * @param string $cpuName
+   * @param string
    */
   public function setCpuName($cpuName)
   {
@@ -161,9 +111,7 @@ class MachineArchitectureDetails extends \Google\Model
     return $this->cpuName;
   }
   /**
-   * Number of processor sockets allocated to the machine.
-   *
-   * @param int $cpuSocketCount
+   * @param int
    */
   public function setCpuSocketCount($cpuSocketCount)
   {
@@ -177,18 +125,13 @@ class MachineArchitectureDetails extends \Google\Model
     return $this->cpuSocketCount;
   }
   /**
-   * Deprecated: use MachineDetails.core_count instead. Number of CPU threads
-   * allocated to the machine.
-   *
-   * @deprecated
-   * @param int $cpuThreadCount
+   * @param int
    */
   public function setCpuThreadCount($cpuThreadCount)
   {
     $this->cpuThreadCount = $cpuThreadCount;
   }
   /**
-   * @deprecated
    * @return int
    */
   public function getCpuThreadCount()
@@ -196,45 +139,35 @@ class MachineArchitectureDetails extends \Google\Model
     return $this->cpuThreadCount;
   }
   /**
-   * Firmware type.
-   *
-   * Accepted values: FIRMWARE_TYPE_UNSPECIFIED, BIOS, EFI
-   *
-   * @param self::FIRMWARE_TYPE_* $firmwareType
+   * @param string
    */
   public function setFirmwareType($firmwareType)
   {
     $this->firmwareType = $firmwareType;
   }
   /**
-   * @return self::FIRMWARE_TYPE_*
+   * @return string
    */
   public function getFirmwareType()
   {
     return $this->firmwareType;
   }
   /**
-   * CPU hyper-threading support.
-   *
-   * Accepted values: CPU_HYPER_THREADING_UNSPECIFIED, DISABLED, ENABLED
-   *
-   * @param self::HYPERTHREADING_* $hyperthreading
+   * @param string
    */
   public function setHyperthreading($hyperthreading)
   {
     $this->hyperthreading = $hyperthreading;
   }
   /**
-   * @return self::HYPERTHREADING_*
+   * @return string
    */
   public function getHyperthreading()
   {
     return $this->hyperthreading;
   }
   /**
-   * Hardware vendor.
-   *
-   * @param string $vendor
+   * @param string
    */
   public function setVendor($vendor)
   {

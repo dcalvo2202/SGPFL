@@ -20,37 +20,26 @@ namespace Google\Service\ShoppingContent;
 class AccounttaxCustomBatchRequestEntry extends \Google\Model
 {
   /**
-   * The ID of the account for which to get/update account tax settings.
-   *
    * @var string
    */
   public $accountId;
   protected $accountTaxType = AccountTax::class;
   protected $accountTaxDataType = '';
   /**
-   * An entry ID, unique within the batch request.
-   *
    * @var string
    */
   public $batchId;
   /**
-   * The ID of the managing account.
-   *
    * @var string
    */
   public $merchantId;
   /**
-   * The method of the batch entry. Acceptable values are: - "`get`" -
-   * "`update`"
-   *
    * @var string
    */
   public $method;
 
   /**
-   * The ID of the account for which to get/update account tax settings.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -64,9 +53,7 @@ class AccounttaxCustomBatchRequestEntry extends \Google\Model
     return $this->accountId;
   }
   /**
-   * The account tax settings to update. Only defined if the method is `update`.
-   *
-   * @param AccountTax $accountTax
+   * @param AccountTax
    */
   public function setAccountTax(AccountTax $accountTax)
   {
@@ -80,9 +67,7 @@ class AccounttaxCustomBatchRequestEntry extends \Google\Model
     return $this->accountTax;
   }
   /**
-   * An entry ID, unique within the batch request.
-   *
-   * @param string $batchId
+   * @param string
    */
   public function setBatchId($batchId)
   {
@@ -96,9 +81,7 @@ class AccounttaxCustomBatchRequestEntry extends \Google\Model
     return $this->batchId;
   }
   /**
-   * The ID of the managing account.
-   *
-   * @param string $merchantId
+   * @param string
    */
   public function setMerchantId($merchantId)
   {
@@ -112,10 +95,7 @@ class AccounttaxCustomBatchRequestEntry extends \Google\Model
     return $this->merchantId;
   }
   /**
-   * The method of the batch entry. Acceptable values are: - "`get`" -
-   * "`update`"
-   *
-   * @param string $method
+   * @param string
    */
   public function setMethod($method)
   {

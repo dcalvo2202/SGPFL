@@ -20,12 +20,6 @@ namespace Google\Service\DLP;
 class GooglePrivacyDlpV2DataProfileFindingLocation extends \Google\Model
 {
   /**
-   * Name of the container where the finding is located. The top-level name is
-   * the source file name or table name. Names of some common storage containers
-   * are formatted as follows: * BigQuery tables:
-   * `{project_id}:{dataset_id}.{table_id}` * Cloud Storage files:
-   * `gs://{bucket}/{path}`
-   *
    * @var string
    */
   public $containerName;
@@ -33,13 +27,7 @@ class GooglePrivacyDlpV2DataProfileFindingLocation extends \Google\Model
   protected $dataProfileFindingRecordLocationDataType = '';
 
   /**
-   * Name of the container where the finding is located. The top-level name is
-   * the source file name or table name. Names of some common storage containers
-   * are formatted as follows: * BigQuery tables:
-   * `{project_id}:{dataset_id}.{table_id}` * Cloud Storage files:
-   * `gs://{bucket}/{path}`
-   *
-   * @param string $containerName
+   * @param string
    */
   public function setContainerName($containerName)
   {
@@ -53,9 +41,7 @@ class GooglePrivacyDlpV2DataProfileFindingLocation extends \Google\Model
     return $this->containerName;
   }
   /**
-   * Location of a finding within a resource that produces a table data profile.
-   *
-   * @param GooglePrivacyDlpV2DataProfileFindingRecordLocation $dataProfileFindingRecordLocation
+   * @param GooglePrivacyDlpV2DataProfileFindingRecordLocation
    */
   public function setDataProfileFindingRecordLocation(GooglePrivacyDlpV2DataProfileFindingRecordLocation $dataProfileFindingRecordLocation)
   {

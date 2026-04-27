@@ -23,9 +23,7 @@ class GoogleDevtoolsCloudbuildV1GitConfig extends \Google\Model
   protected $httpDataType = '';
 
   /**
-   * Configuration for HTTP related git operations.
-   *
-   * @param GoogleDevtoolsCloudbuildV1HttpConfig $http
+   * @param GoogleDevtoolsCloudbuildV1HttpConfig
    */
   public function setHttp(GoogleDevtoolsCloudbuildV1HttpConfig $http)
   {

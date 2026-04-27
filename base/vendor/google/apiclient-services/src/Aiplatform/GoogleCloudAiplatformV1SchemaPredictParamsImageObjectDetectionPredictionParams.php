@@ -20,26 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1SchemaPredictParamsImageObjectDetectionPredictionParams extends \Google\Model
 {
   /**
-   * The Model only returns predictions with at least this confidence score.
-   * Default value is 0.0
-   *
    * @var float
    */
   public $confidenceThreshold;
   /**
-   * The Model only returns up to that many top, by confidence score,
-   * predictions per instance. Note that number of returned predictions is also
-   * limited by metadata's predictionsLimit. Default value is 10.
-   *
    * @var int
    */
   public $maxPredictions;
 
   /**
-   * The Model only returns predictions with at least this confidence score.
-   * Default value is 0.0
-   *
-   * @param float $confidenceThreshold
+   * @param float
    */
   public function setConfidenceThreshold($confidenceThreshold)
   {
@@ -53,11 +43,7 @@ class GoogleCloudAiplatformV1SchemaPredictParamsImageObjectDetectionPredictionPa
     return $this->confidenceThreshold;
   }
   /**
-   * The Model only returns up to that many top, by confidence score,
-   * predictions per instance. Note that number of returned predictions is also
-   * limited by metadata's predictionsLimit. Default value is 10.
-   *
-   * @param int $maxPredictions
+   * @param int
    */
   public function setMaxPredictions($maxPredictions)
   {

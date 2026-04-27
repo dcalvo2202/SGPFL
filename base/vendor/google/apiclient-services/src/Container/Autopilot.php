@@ -19,40 +19,15 @@ namespace Google\Service\Container;
 
 class Autopilot extends \Google\Model
 {
-  protected $clusterPolicyConfigType = ClusterPolicyConfig::class;
-  protected $clusterPolicyConfigDataType = '';
   /**
-   * Enable Autopilot
-   *
    * @var bool
    */
   public $enabled;
-  protected $privilegedAdmissionConfigType = PrivilegedAdmissionConfig::class;
-  protected $privilegedAdmissionConfigDataType = '';
   protected $workloadPolicyConfigType = WorkloadPolicyConfig::class;
   protected $workloadPolicyConfigDataType = '';
 
   /**
-   * ClusterPolicyConfig denotes cluster level policies that are enforced for
-   * the cluster.
-   *
-   * @param ClusterPolicyConfig $clusterPolicyConfig
-   */
-  public function setClusterPolicyConfig(ClusterPolicyConfig $clusterPolicyConfig)
-  {
-    $this->clusterPolicyConfig = $clusterPolicyConfig;
-  }
-  /**
-   * @return ClusterPolicyConfig
-   */
-  public function getClusterPolicyConfig()
-  {
-    return $this->clusterPolicyConfig;
-  }
-  /**
-   * Enable Autopilot
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {
@@ -66,26 +41,7 @@ class Autopilot extends \Google\Model
     return $this->enabled;
   }
   /**
-   * PrivilegedAdmissionConfig is the configuration related to privileged
-   * admission control.
-   *
-   * @param PrivilegedAdmissionConfig $privilegedAdmissionConfig
-   */
-  public function setPrivilegedAdmissionConfig(PrivilegedAdmissionConfig $privilegedAdmissionConfig)
-  {
-    $this->privilegedAdmissionConfig = $privilegedAdmissionConfig;
-  }
-  /**
-   * @return PrivilegedAdmissionConfig
-   */
-  public function getPrivilegedAdmissionConfig()
-  {
-    return $this->privilegedAdmissionConfig;
-  }
-  /**
-   * WorkloadPolicyConfig is the configuration related to GCW workload policy
-   *
-   * @param WorkloadPolicyConfig $workloadPolicyConfig
+   * @param WorkloadPolicyConfig
    */
   public function setWorkloadPolicyConfig(WorkloadPolicyConfig $workloadPolicyConfig)
   {

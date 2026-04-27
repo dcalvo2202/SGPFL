@@ -21,18 +21,12 @@ class GoogleFirebaseAppdistroV1BatchLeaveGroupRequest extends \Google\Collection
 {
   protected $collection_key = 'emails';
   /**
-   * Required. The email addresses of the testers to be removed from the group.
-   * A maximum of 999 and a minimum of 1 testers can be removed in a batch.
-   *
    * @var string[]
    */
   public $emails;
 
   /**
-   * Required. The email addresses of the testers to be removed from the group.
-   * A maximum of 999 and a minimum of 1 testers can be removed in a batch.
-   *
-   * @param string[] $emails
+   * @param string[]
    */
   public function setEmails($emails)
   {

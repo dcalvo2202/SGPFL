@@ -20,64 +20,40 @@ namespace Google\Service\Calendar;
 class EventGadget extends \Google\Model
 {
   /**
-   * The gadget's display mode. Deprecated. Possible values are: - "icon" - The
-   * gadget displays next to the event's title in the calendar view.  - "chip" -
-   * The gadget displays when the event is clicked.
-   *
    * @var string
    */
   public $display;
   /**
-   * The gadget's height in pixels. The height must be an integer greater than
-   * 0. Optional. Deprecated.
-   *
    * @var int
    */
   public $height;
   /**
-   * The gadget's icon URL. The URL scheme must be HTTPS. Deprecated.
-   *
    * @var string
    */
   public $iconLink;
   /**
-   * The gadget's URL. The URL scheme must be HTTPS. Deprecated.
-   *
    * @var string
    */
   public $link;
   /**
-   * Preferences.
-   *
    * @var string[]
    */
   public $preferences;
   /**
-   * The gadget's title. Deprecated.
-   *
    * @var string
    */
   public $title;
   /**
-   * The gadget's type. Deprecated.
-   *
    * @var string
    */
   public $type;
   /**
-   * The gadget's width in pixels. The width must be an integer greater than 0.
-   * Optional. Deprecated.
-   *
    * @var int
    */
   public $width;
 
   /**
-   * The gadget's display mode. Deprecated. Possible values are: - "icon" - The
-   * gadget displays next to the event's title in the calendar view.  - "chip" -
-   * The gadget displays when the event is clicked.
-   *
-   * @param string $display
+   * @param string
    */
   public function setDisplay($display)
   {
@@ -91,10 +67,7 @@ class EventGadget extends \Google\Model
     return $this->display;
   }
   /**
-   * The gadget's height in pixels. The height must be an integer greater than
-   * 0. Optional. Deprecated.
-   *
-   * @param int $height
+   * @param int
    */
   public function setHeight($height)
   {
@@ -108,9 +81,7 @@ class EventGadget extends \Google\Model
     return $this->height;
   }
   /**
-   * The gadget's icon URL. The URL scheme must be HTTPS. Deprecated.
-   *
-   * @param string $iconLink
+   * @param string
    */
   public function setIconLink($iconLink)
   {
@@ -124,9 +95,7 @@ class EventGadget extends \Google\Model
     return $this->iconLink;
   }
   /**
-   * The gadget's URL. The URL scheme must be HTTPS. Deprecated.
-   *
-   * @param string $link
+   * @param string
    */
   public function setLink($link)
   {
@@ -140,9 +109,7 @@ class EventGadget extends \Google\Model
     return $this->link;
   }
   /**
-   * Preferences.
-   *
-   * @param string[] $preferences
+   * @param string[]
    */
   public function setPreferences($preferences)
   {
@@ -156,9 +123,7 @@ class EventGadget extends \Google\Model
     return $this->preferences;
   }
   /**
-   * The gadget's title. Deprecated.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -172,9 +137,7 @@ class EventGadget extends \Google\Model
     return $this->title;
   }
   /**
-   * The gadget's type. Deprecated.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {
@@ -188,10 +151,7 @@ class EventGadget extends \Google\Model
     return $this->type;
   }
   /**
-   * The gadget's width in pixels. The width must be an integer greater than 0.
-   * Optional. Deprecated.
-   *
-   * @param int $width
+   * @param int
    */
   public function setWidth($width)
   {

@@ -20,54 +20,20 @@ namespace Google\Service\CloudKMS;
 class Digest extends \Google\Model
 {
   /**
-   * A message digest produced with SHAKE-256, to be used with ML-DSA external-μ
-   * algorithms only. See "message representative" note in section 6.2,
-   * algorithm 7 of the FIPS-204 standard: https://doi.org/10.6028/nist.fips.204
-   *
-   * @var string
-   */
-  public $externalMu;
-  /**
-   * A message digest produced with the SHA-256 algorithm.
-   *
    * @var string
    */
   public $sha256;
   /**
-   * A message digest produced with the SHA-384 algorithm.
-   *
    * @var string
    */
   public $sha384;
   /**
-   * A message digest produced with the SHA-512 algorithm.
-   *
    * @var string
    */
   public $sha512;
 
   /**
-   * A message digest produced with SHAKE-256, to be used with ML-DSA external-μ
-   * algorithms only. See "message representative" note in section 6.2,
-   * algorithm 7 of the FIPS-204 standard: https://doi.org/10.6028/nist.fips.204
-   *
-   * @param string $externalMu
-   */
-  public function setExternalMu($externalMu)
-  {
-    $this->externalMu = $externalMu;
-  }
-  /**
-   * @return string
-   */
-  public function getExternalMu()
-  {
-    return $this->externalMu;
-  }
-  /**
-   * A message digest produced with the SHA-256 algorithm.
-   *
-   * @param string $sha256
+   * @param string
    */
   public function setSha256($sha256)
   {
@@ -81,9 +47,7 @@ class Digest extends \Google\Model
     return $this->sha256;
   }
   /**
-   * A message digest produced with the SHA-384 algorithm.
-   *
-   * @param string $sha384
+   * @param string
    */
   public function setSha384($sha384)
   {
@@ -97,9 +61,7 @@ class Digest extends \Google\Model
     return $this->sha384;
   }
   /**
-   * A message digest produced with the SHA-512 algorithm.
-   *
-   * @param string $sha512
+   * @param string
    */
   public function setSha512($sha512)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\DatabaseMigrationService;
 class ConvertJobDetails extends \Google\Model
 {
   /**
-   * Output only. AIP-160 based filter used to specify the entities to convert
-   *
    * @var string
    */
   public $filter;
 
   /**
-   * Output only. AIP-160 based filter used to specify the entities to convert
-   *
-   * @param string $filter
+   * @param string
    */
   public function setFilter($filter)
   {

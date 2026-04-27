@@ -30,9 +30,7 @@ class OrderHistory extends \Google\Collection
   protected $refundEventDataType = '';
 
   /**
-   * Details of when the order was canceled.
-   *
-   * @param CancellationEvent $cancellationEvent
+   * @param CancellationEvent
    */
   public function setCancellationEvent(CancellationEvent $cancellationEvent)
   {
@@ -46,9 +44,7 @@ class OrderHistory extends \Google\Collection
     return $this->cancellationEvent;
   }
   /**
-   * Details of the partial refund events for this order.
-   *
-   * @param PartialRefundEvent[] $partialRefundEvents
+   * @param PartialRefundEvent[]
    */
   public function setPartialRefundEvents($partialRefundEvents)
   {
@@ -62,9 +58,7 @@ class OrderHistory extends \Google\Collection
     return $this->partialRefundEvents;
   }
   /**
-   * Details of when the order was processed.
-   *
-   * @param ProcessedEvent $processedEvent
+   * @param ProcessedEvent
    */
   public function setProcessedEvent(ProcessedEvent $processedEvent)
   {
@@ -78,9 +72,7 @@ class OrderHistory extends \Google\Collection
     return $this->processedEvent;
   }
   /**
-   * Details of when the order was fully refunded.
-   *
-   * @param RefundEvent $refundEvent
+   * @param RefundEvent
    */
   public function setRefundEvent(RefundEvent $refundEvent)
   {

@@ -20,24 +20,16 @@ namespace Google\Service\Cloudchannel;
 class GoogleCloudChannelV1SkuGroup extends \Google\Model
 {
   /**
-   * Unique human readable identifier for the SKU group.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Resource name of SKU group. Format:
-   * accounts/{account}/skuGroups/{sku_group}. Example:
-   * "accounts/C01234/skuGroups/3d50fd57-3157-4577-a5a9-a219b8490041".
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Unique human readable identifier for the SKU group.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -51,11 +43,7 @@ class GoogleCloudChannelV1SkuGroup extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Resource name of SKU group. Format:
-   * accounts/{account}/skuGroups/{sku_group}. Example:
-   * "accounts/C01234/skuGroups/3d50fd57-3157-4577-a5a9-a219b8490041".
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

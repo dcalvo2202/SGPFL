@@ -23,17 +23,12 @@ class GoogleAnalyticsAdminV1betaListKeyEventsResponse extends \Google\Collection
   protected $keyEventsType = GoogleAnalyticsAdminV1betaKeyEvent::class;
   protected $keyEventsDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The requested Key Events
-   *
-   * @param GoogleAnalyticsAdminV1betaKeyEvent[] $keyEvents
+   * @param GoogleAnalyticsAdminV1betaKeyEvent[]
    */
   public function setKeyEvents($keyEvents)
   {
@@ -47,10 +42,7 @@ class GoogleAnalyticsAdminV1betaListKeyEventsResponse extends \Google\Collection
     return $this->keyEvents;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

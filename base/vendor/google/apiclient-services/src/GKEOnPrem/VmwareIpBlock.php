@@ -21,24 +21,18 @@ class VmwareIpBlock extends \Google\Collection
 {
   protected $collection_key = 'ips';
   /**
-   * The network gateway used by the VMware user cluster.
-   *
    * @var string
    */
   public $gateway;
   protected $ipsType = VmwareHostIp::class;
   protected $ipsDataType = 'array';
   /**
-   * The netmask used by the VMware user cluster.
-   *
    * @var string
    */
   public $netmask;
 
   /**
-   * The network gateway used by the VMware user cluster.
-   *
-   * @param string $gateway
+   * @param string
    */
   public function setGateway($gateway)
   {
@@ -52,9 +46,7 @@ class VmwareIpBlock extends \Google\Collection
     return $this->gateway;
   }
   /**
-   * The node's network configurations used by the VMware user cluster.
-   *
-   * @param VmwareHostIp[] $ips
+   * @param VmwareHostIp[]
    */
   public function setIps($ips)
   {
@@ -68,9 +60,7 @@ class VmwareIpBlock extends \Google\Collection
     return $this->ips;
   }
   /**
-   * The netmask used by the VMware user cluster.
-   *
-   * @param string $netmask
+   * @param string
    */
   public function setNetmask($netmask)
   {

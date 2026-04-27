@@ -27,10 +27,7 @@ class EnvironmentMatrix extends \Google\Model
   protected $iosDeviceListDataType = '';
 
   /**
-   * A list of Android devices; the test will be run only on the specified
-   * devices.
-   *
-   * @param AndroidDeviceList $androidDeviceList
+   * @param AndroidDeviceList
    */
   public function setAndroidDeviceList(AndroidDeviceList $androidDeviceList)
   {
@@ -44,9 +41,7 @@ class EnvironmentMatrix extends \Google\Model
     return $this->androidDeviceList;
   }
   /**
-   * A matrix of Android devices.
-   *
-   * @param AndroidMatrix $androidMatrix
+   * @param AndroidMatrix
    */
   public function setAndroidMatrix(AndroidMatrix $androidMatrix)
   {
@@ -60,9 +55,7 @@ class EnvironmentMatrix extends \Google\Model
     return $this->androidMatrix;
   }
   /**
-   * A list of iOS devices.
-   *
-   * @param IosDeviceList $iosDeviceList
+   * @param IosDeviceList
    */
   public function setIosDeviceList(IosDeviceList $iosDeviceList)
   {

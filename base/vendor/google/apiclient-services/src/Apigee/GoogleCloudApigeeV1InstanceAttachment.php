@@ -20,28 +20,20 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1InstanceAttachment extends \Google\Model
 {
   /**
-   * Output only. Time the attachment was created in milliseconds since epoch.
-   *
    * @var string
    */
   public $createdAt;
   /**
-   * ID of the attached environment.
-   *
    * @var string
    */
   public $environment;
   /**
-   * Output only. ID of the attachment.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Output only. Time the attachment was created in milliseconds since epoch.
-   *
-   * @param string $createdAt
+   * @param string
    */
   public function setCreatedAt($createdAt)
   {
@@ -55,9 +47,7 @@ class GoogleCloudApigeeV1InstanceAttachment extends \Google\Model
     return $this->createdAt;
   }
   /**
-   * ID of the attached environment.
-   *
-   * @param string $environment
+   * @param string
    */
   public function setEnvironment($environment)
   {
@@ -71,9 +61,7 @@ class GoogleCloudApigeeV1InstanceAttachment extends \Google\Model
     return $this->environment;
   }
   /**
-   * Output only. ID of the attachment.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

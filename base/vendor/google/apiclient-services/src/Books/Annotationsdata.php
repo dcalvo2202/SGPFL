@@ -23,29 +23,20 @@ class Annotationsdata extends \Google\Collection
   protected $itemsType = GeoAnnotationdata::class;
   protected $itemsDataType = 'array';
   /**
-   * Resource type
-   *
    * @var string
    */
   public $kind;
   /**
-   * Token to pass in for pagination for the next page. This will not be present
-   * if this request does not have more results.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * The total number of volume annotations found.
-   *
    * @var int
    */
   public $totalItems;
 
   /**
-   * A list of Annotation Data.
-   *
-   * @param GeoAnnotationdata[] $items
+   * @param GeoAnnotationdata[]
    */
   public function setItems($items)
   {
@@ -59,9 +50,7 @@ class Annotationsdata extends \Google\Collection
     return $this->items;
   }
   /**
-   * Resource type
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -75,10 +64,7 @@ class Annotationsdata extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Token to pass in for pagination for the next page. This will not be present
-   * if this request does not have more results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -92,9 +78,7 @@ class Annotationsdata extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The total number of volume annotations found.
-   *
-   * @param int $totalItems
+   * @param int
    */
   public function setTotalItems($totalItems)
   {

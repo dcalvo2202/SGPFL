@@ -28,9 +28,7 @@ class GooglePrivacyDlpV2NumericalStatsResult extends \Google\Collection
   protected $quantileValuesDataType = 'array';
 
   /**
-   * Maximum value appearing in the column.
-   *
-   * @param GooglePrivacyDlpV2Value $maxValue
+   * @param GooglePrivacyDlpV2Value
    */
   public function setMaxValue(GooglePrivacyDlpV2Value $maxValue)
   {
@@ -44,9 +42,7 @@ class GooglePrivacyDlpV2NumericalStatsResult extends \Google\Collection
     return $this->maxValue;
   }
   /**
-   * Minimum value appearing in the column.
-   *
-   * @param GooglePrivacyDlpV2Value $minValue
+   * @param GooglePrivacyDlpV2Value
    */
   public function setMinValue(GooglePrivacyDlpV2Value $minValue)
   {
@@ -60,10 +56,7 @@ class GooglePrivacyDlpV2NumericalStatsResult extends \Google\Collection
     return $this->minValue;
   }
   /**
-   * List of 99 values that partition the set of field values into 100 equal
-   * sized buckets.
-   *
-   * @param GooglePrivacyDlpV2Value[] $quantileValues
+   * @param GooglePrivacyDlpV2Value[]
    */
   public function setQuantileValues($quantileValues)
   {

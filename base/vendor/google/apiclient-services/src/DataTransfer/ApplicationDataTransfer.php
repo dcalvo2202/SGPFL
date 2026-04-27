@@ -21,24 +21,18 @@ class ApplicationDataTransfer extends \Google\Collection
 {
   protected $collection_key = 'applicationTransferParams';
   /**
-   * The application's ID.
-   *
    * @var string
    */
   public $applicationId;
   protected $applicationTransferParamsType = ApplicationTransferParam::class;
   protected $applicationTransferParamsDataType = 'array';
   /**
-   * Read-only. Current status of transfer for this application.
-   *
    * @var string
    */
   public $applicationTransferStatus;
 
   /**
-   * The application's ID.
-   *
-   * @param string $applicationId
+   * @param string
    */
   public function setApplicationId($applicationId)
   {
@@ -52,14 +46,7 @@ class ApplicationDataTransfer extends \Google\Collection
     return $this->applicationId;
   }
   /**
-   * The transfer parameters for the application. These parameters are used to
-   * select the data which will get transferred in context of this application.
-   * For more information about the specific values available for each
-   * application, see the [Transfer
-   * parameters](https://developers.google.com/workspace/admin/data-
-   * transfer/v1/parameters) reference.
-   *
-   * @param ApplicationTransferParam[] $applicationTransferParams
+   * @param ApplicationTransferParam[]
    */
   public function setApplicationTransferParams($applicationTransferParams)
   {
@@ -73,9 +60,7 @@ class ApplicationDataTransfer extends \Google\Collection
     return $this->applicationTransferParams;
   }
   /**
-   * Read-only. Current status of transfer for this application.
-   *
-   * @param string $applicationTransferStatus
+   * @param string
    */
   public function setApplicationTransferStatus($applicationTransferStatus)
   {

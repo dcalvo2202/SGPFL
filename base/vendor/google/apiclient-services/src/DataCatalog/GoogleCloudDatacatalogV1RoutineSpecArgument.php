@@ -20,65 +20,34 @@ namespace Google\Service\DataCatalog;
 class GoogleCloudDatacatalogV1RoutineSpecArgument extends \Google\Model
 {
   /**
-   * Unspecified mode.
-   */
-  public const MODE_MODE_UNSPECIFIED = 'MODE_UNSPECIFIED';
-  /**
-   * The argument is input-only.
-   */
-  public const MODE_IN = 'IN';
-  /**
-   * The argument is output-only.
-   */
-  public const MODE_OUT = 'OUT';
-  /**
-   * The argument is both an input and an output.
-   */
-  public const MODE_INOUT = 'INOUT';
-  /**
-   * Specifies whether the argument is input or output.
-   *
    * @var string
    */
   public $mode;
   /**
-   * The name of the argument. A return argument of a function might not have a
-   * name.
-   *
    * @var string
    */
   public $name;
   /**
-   * Type of the argument. The exact value depends on the source system and the
-   * language.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Specifies whether the argument is input or output.
-   *
-   * Accepted values: MODE_UNSPECIFIED, IN, OUT, INOUT
-   *
-   * @param self::MODE_* $mode
+   * @param string
    */
   public function setMode($mode)
   {
     $this->mode = $mode;
   }
   /**
-   * @return self::MODE_*
+   * @return string
    */
   public function getMode()
   {
     return $this->mode;
   }
   /**
-   * The name of the argument. A return argument of a function might not have a
-   * name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -92,10 +61,7 @@ class GoogleCloudDatacatalogV1RoutineSpecArgument extends \Google\Model
     return $this->name;
   }
   /**
-   * Type of the argument. The exact value depends on the source system and the
-   * language.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

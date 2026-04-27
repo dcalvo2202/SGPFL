@@ -19,60 +19,30 @@ namespace Google\Service\Dfareporting;
 
 class Ad extends \Google\Collection
 {
-  public const COMPATIBILITY_DISPLAY = 'DISPLAY';
-  public const COMPATIBILITY_DISPLAY_INTERSTITIAL = 'DISPLAY_INTERSTITIAL';
-  /**
-   * Deprecated enum value. No longer supported.
-   */
-  public const COMPATIBILITY_APP = 'APP';
-  /**
-   * Deprecated enum value. No longer supported.
-   */
-  public const COMPATIBILITY_APP_INTERSTITIAL = 'APP_INTERSTITIAL';
-  public const COMPATIBILITY_IN_STREAM_VIDEO = 'IN_STREAM_VIDEO';
-  public const COMPATIBILITY_IN_STREAM_AUDIO = 'IN_STREAM_AUDIO';
-  public const TYPE_AD_SERVING_STANDARD_AD = 'AD_SERVING_STANDARD_AD';
-  public const TYPE_AD_SERVING_DEFAULT_AD = 'AD_SERVING_DEFAULT_AD';
-  public const TYPE_AD_SERVING_CLICK_TRACKER = 'AD_SERVING_CLICK_TRACKER';
-  public const TYPE_AD_SERVING_TRACKING = 'AD_SERVING_TRACKING';
-  public const TYPE_AD_SERVING_BRAND_SAFE_AD = 'AD_SERVING_BRAND_SAFE_AD';
   protected $collection_key = 'placementAssignments';
   /**
-   * Account ID of this ad. This is a read-only field that can be left blank.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * Whether this ad is active. When true, archived must be false.
-   *
    * @var bool
    */
   public $active;
   /**
-   * Advertiser ID of this ad. This is a required field on insertion.
-   *
    * @var string
    */
   public $advertiserId;
   protected $advertiserIdDimensionValueType = DimensionValue::class;
   protected $advertiserIdDimensionValueDataType = '';
   /**
-   * Whether this ad is archived. When true, active must be false.
-   *
    * @var bool
    */
   public $archived;
   /**
-   * Audience segment ID that is being targeted for this ad. Applicable when
-   * type is AD_SERVING_STANDARD_AD.
-   *
    * @var string
    */
   public $audienceSegmentId;
   /**
-   * Campaign ID of this ad. This is a required field on insertion.
-   *
    * @var string
    */
   public $campaignId;
@@ -83,26 +53,13 @@ class Ad extends \Google\Collection
   protected $clickThroughUrlSuffixPropertiesType = ClickThroughUrlSuffixProperties::class;
   protected $clickThroughUrlSuffixPropertiesDataType = '';
   /**
-   * Comments for this ad.
-   *
    * @var string
    */
   public $comments;
   /**
-   * Compatibility of this ad. Applicable when type is AD_SERVING_DEFAULT_AD.
-   * DISPLAY and DISPLAY_INTERSTITIAL refer to either rendering on desktop or on
-   * mobile devices or in mobile apps for regular or interstitial ads,
-   * respectively. APP and APP_INTERSTITIAL are only used for existing default
-   * ads. New mobile placements must be assigned DISPLAY or DISPLAY_INTERSTITIAL
-   * and default ads created for those placements will be limited to those
-   * compatibility types. IN_STREAM_VIDEO refers to rendering in-stream video
-   * ads developed with the VAST standard.
-   *
    * @var string
    */
   public $compatibility;
-  protected $contextualKeywordTargetingType = ContextualKeywordTargeting::class;
-  protected $contextualKeywordTargetingDataType = '';
   protected $createInfoType = LastModifiedInfo::class;
   protected $createInfoDataType = '';
   protected $creativeGroupAssignmentsType = CreativeGroupAssignment::class;
@@ -116,10 +73,6 @@ class Ad extends \Google\Collection
   protected $deliveryScheduleType = DeliverySchedule::class;
   protected $deliveryScheduleDataType = '';
   /**
-   * Whether this ad is a dynamic click tracker. Applicable when type is
-   * AD_SERVING_CLICK_TRACKER. This is a required field on insert, and is read-
-   * only after insert.
-   *
    * @var bool
    */
   public $dynamicClickTracker;
@@ -132,8 +85,6 @@ class Ad extends \Google\Collection
   protected $geoTargetingType = GeoTargeting::class;
   protected $geoTargetingDataType = '';
   /**
-   * ID of this ad. This is a read-only, auto-generated field.
-   *
    * @var string
    */
   public $id;
@@ -142,9 +93,6 @@ class Ad extends \Google\Collection
   protected $keyValueTargetingExpressionType = KeyValueTargetingExpression::class;
   protected $keyValueTargetingExpressionDataType = '';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#ad".
-   *
    * @var string
    */
   public $kind;
@@ -153,9 +101,6 @@ class Ad extends \Google\Collection
   protected $lastModifiedInfoType = LastModifiedInfo::class;
   protected $lastModifiedInfoDataType = '';
   /**
-   * Name of this ad. This is a required field and must be less than 256
-   * characters long.
-   *
    * @var string
    */
   public $name;
@@ -166,16 +111,10 @@ class Ad extends \Google\Collection
   protected $sizeType = Size::class;
   protected $sizeDataType = '';
   /**
-   * Whether this ad is ssl compliant. This is a read-only field that is auto-
-   * generated when the ad is inserted or updated.
-   *
    * @var bool
    */
   public $sslCompliant;
   /**
-   * Whether this ad requires ssl. This is a read-only field that is auto-
-   * generated when the ad is inserted or updated.
-   *
    * @var bool
    */
   public $sslRequired;
@@ -184,35 +123,22 @@ class Ad extends \Google\Collection
    */
   public $startTime;
   /**
-   * Subaccount ID of this ad. This is a read-only field that can be left blank.
-   *
    * @var string
    */
   public $subaccountId;
   /**
-   * Targeting template ID, used to apply preconfigured targeting information to
-   * this ad. This cannot be set while any of dayPartTargeting, geoTargeting,
-   * keyValueTargetingExpression, languageTargeting, remarketingListExpression,
-   * or technologyTargeting are set. Applicable when type is
-   * AD_SERVING_STANDARD_AD.
-   *
    * @var string
    */
   public $targetingTemplateId;
   protected $technologyTargetingType = TechnologyTargeting::class;
   protected $technologyTargetingDataType = '';
   /**
-   * Type of ad. This is a required field on insertion. Note that default ads (
-   * AD_SERVING_DEFAULT_AD) cannot be created directly (see Creative resource).
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Account ID of this ad. This is a read-only field that can be left blank.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -226,9 +152,7 @@ class Ad extends \Google\Collection
     return $this->accountId;
   }
   /**
-   * Whether this ad is active. When true, archived must be false.
-   *
-   * @param bool $active
+   * @param bool
    */
   public function setActive($active)
   {
@@ -242,9 +166,7 @@ class Ad extends \Google\Collection
     return $this->active;
   }
   /**
-   * Advertiser ID of this ad. This is a required field on insertion.
-   *
-   * @param string $advertiserId
+   * @param string
    */
   public function setAdvertiserId($advertiserId)
   {
@@ -258,10 +180,7 @@ class Ad extends \Google\Collection
     return $this->advertiserId;
   }
   /**
-   * Dimension value for the ID of the advertiser. This is a read-only, auto-
-   * generated field.
-   *
-   * @param DimensionValue $advertiserIdDimensionValue
+   * @param DimensionValue
    */
   public function setAdvertiserIdDimensionValue(DimensionValue $advertiserIdDimensionValue)
   {
@@ -275,9 +194,7 @@ class Ad extends \Google\Collection
     return $this->advertiserIdDimensionValue;
   }
   /**
-   * Whether this ad is archived. When true, active must be false.
-   *
-   * @param bool $archived
+   * @param bool
    */
   public function setArchived($archived)
   {
@@ -291,10 +208,7 @@ class Ad extends \Google\Collection
     return $this->archived;
   }
   /**
-   * Audience segment ID that is being targeted for this ad. Applicable when
-   * type is AD_SERVING_STANDARD_AD.
-   *
-   * @param string $audienceSegmentId
+   * @param string
    */
   public function setAudienceSegmentId($audienceSegmentId)
   {
@@ -308,9 +222,7 @@ class Ad extends \Google\Collection
     return $this->audienceSegmentId;
   }
   /**
-   * Campaign ID of this ad. This is a required field on insertion.
-   *
-   * @param string $campaignId
+   * @param string
    */
   public function setCampaignId($campaignId)
   {
@@ -324,10 +236,7 @@ class Ad extends \Google\Collection
     return $this->campaignId;
   }
   /**
-   * Dimension value for the ID of the campaign. This is a read-only, auto-
-   * generated field.
-   *
-   * @param DimensionValue $campaignIdDimensionValue
+   * @param DimensionValue
    */
   public function setCampaignIdDimensionValue(DimensionValue $campaignIdDimensionValue)
   {
@@ -341,10 +250,7 @@ class Ad extends \Google\Collection
     return $this->campaignIdDimensionValue;
   }
   /**
-   * Click-through URL for this ad. This is a required field on insertion.
-   * Applicable when type is AD_SERVING_CLICK_TRACKER.
-   *
-   * @param ClickThroughUrl $clickThroughUrl
+   * @param ClickThroughUrl
    */
   public function setClickThroughUrl(ClickThroughUrl $clickThroughUrl)
   {
@@ -358,10 +264,7 @@ class Ad extends \Google\Collection
     return $this->clickThroughUrl;
   }
   /**
-   * Click-through URL suffix properties for this ad. Applies to the URL in the
-   * ad or (if overriding ad properties) the URL in the creative.
-   *
-   * @param ClickThroughUrlSuffixProperties $clickThroughUrlSuffixProperties
+   * @param ClickThroughUrlSuffixProperties
    */
   public function setClickThroughUrlSuffixProperties(ClickThroughUrlSuffixProperties $clickThroughUrlSuffixProperties)
   {
@@ -375,9 +278,7 @@ class Ad extends \Google\Collection
     return $this->clickThroughUrlSuffixProperties;
   }
   /**
-   * Comments for this ad.
-   *
-   * @param string $comments
+   * @param string
    */
   public function setComments($comments)
   {
@@ -391,51 +292,21 @@ class Ad extends \Google\Collection
     return $this->comments;
   }
   /**
-   * Compatibility of this ad. Applicable when type is AD_SERVING_DEFAULT_AD.
-   * DISPLAY and DISPLAY_INTERSTITIAL refer to either rendering on desktop or on
-   * mobile devices or in mobile apps for regular or interstitial ads,
-   * respectively. APP and APP_INTERSTITIAL are only used for existing default
-   * ads. New mobile placements must be assigned DISPLAY or DISPLAY_INTERSTITIAL
-   * and default ads created for those placements will be limited to those
-   * compatibility types. IN_STREAM_VIDEO refers to rendering in-stream video
-   * ads developed with the VAST standard.
-   *
-   * Accepted values: DISPLAY, DISPLAY_INTERSTITIAL, APP, APP_INTERSTITIAL,
-   * IN_STREAM_VIDEO, IN_STREAM_AUDIO
-   *
-   * @param self::COMPATIBILITY_* $compatibility
+   * @param string
    */
   public function setCompatibility($compatibility)
   {
     $this->compatibility = $compatibility;
   }
   /**
-   * @return self::COMPATIBILITY_*
+   * @return string
    */
   public function getCompatibility()
   {
     return $this->compatibility;
   }
   /**
-   * Optional. Contextual keyword targeting information for this ad.
-   *
-   * @param ContextualKeywordTargeting $contextualKeywordTargeting
-   */
-  public function setContextualKeywordTargeting(ContextualKeywordTargeting $contextualKeywordTargeting)
-  {
-    $this->contextualKeywordTargeting = $contextualKeywordTargeting;
-  }
-  /**
-   * @return ContextualKeywordTargeting
-   */
-  public function getContextualKeywordTargeting()
-  {
-    return $this->contextualKeywordTargeting;
-  }
-  /**
-   * Information about the creation of this ad. This is a read-only field.
-   *
-   * @param LastModifiedInfo $createInfo
+   * @param LastModifiedInfo
    */
   public function setCreateInfo(LastModifiedInfo $createInfo)
   {
@@ -449,11 +320,7 @@ class Ad extends \Google\Collection
     return $this->createInfo;
   }
   /**
-   * Creative group assignments for this ad. Applicable when type is
-   * AD_SERVING_CLICK_TRACKER. Only one assignment per creative group number is
-   * allowed for a maximum of two assignments.
-   *
-   * @param CreativeGroupAssignment[] $creativeGroupAssignments
+   * @param CreativeGroupAssignment[]
    */
   public function setCreativeGroupAssignments($creativeGroupAssignments)
   {
@@ -467,12 +334,7 @@ class Ad extends \Google\Collection
     return $this->creativeGroupAssignments;
   }
   /**
-   * Creative rotation for this ad. Applicable when type is
-   * AD_SERVING_DEFAULT_AD, AD_SERVING_STANDARD_AD, or AD_SERVING_TRACKING. When
-   * type is AD_SERVING_DEFAULT_AD, this field should have exactly one
-   * creativeAssignment .
-   *
-   * @param CreativeRotation $creativeRotation
+   * @param CreativeRotation
    */
   public function setCreativeRotation(CreativeRotation $creativeRotation)
   {
@@ -486,11 +348,7 @@ class Ad extends \Google\Collection
     return $this->creativeRotation;
   }
   /**
-   * Time and day targeting information for this ad. This field must be left
-   * blank if the ad is using a targeting template. Applicable when type is
-   * AD_SERVING_STANDARD_AD.
-   *
-   * @param DayPartTargeting $dayPartTargeting
+   * @param DayPartTargeting
    */
   public function setDayPartTargeting(DayPartTargeting $dayPartTargeting)
   {
@@ -504,9 +362,7 @@ class Ad extends \Google\Collection
     return $this->dayPartTargeting;
   }
   /**
-   * Default click-through event tag properties for this ad.
-   *
-   * @param DefaultClickThroughEventTagProperties $defaultClickThroughEventTagProperties
+   * @param DefaultClickThroughEventTagProperties
    */
   public function setDefaultClickThroughEventTagProperties(DefaultClickThroughEventTagProperties $defaultClickThroughEventTagProperties)
   {
@@ -520,12 +376,7 @@ class Ad extends \Google\Collection
     return $this->defaultClickThroughEventTagProperties;
   }
   /**
-   * Delivery schedule information for this ad. Applicable when type is
-   * AD_SERVING_STANDARD_AD or AD_SERVING_TRACKING. This field along with
-   * subfields priority and impressionRatio are required on insertion when type
-   * is AD_SERVING_STANDARD_AD.
-   *
-   * @param DeliverySchedule $deliverySchedule
+   * @param DeliverySchedule
    */
   public function setDeliverySchedule(DeliverySchedule $deliverySchedule)
   {
@@ -539,11 +390,7 @@ class Ad extends \Google\Collection
     return $this->deliverySchedule;
   }
   /**
-   * Whether this ad is a dynamic click tracker. Applicable when type is
-   * AD_SERVING_CLICK_TRACKER. This is a required field on insert, and is read-
-   * only after insert.
-   *
-   * @param bool $dynamicClickTracker
+   * @param bool
    */
   public function setDynamicClickTracker($dynamicClickTracker)
   {
@@ -557,7 +404,7 @@ class Ad extends \Google\Collection
     return $this->dynamicClickTracker;
   }
   /**
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -571,9 +418,7 @@ class Ad extends \Google\Collection
     return $this->endTime;
   }
   /**
-   * Event tag overrides for this ad.
-   *
-   * @param EventTagOverride[] $eventTagOverrides
+   * @param EventTagOverride[]
    */
   public function setEventTagOverrides($eventTagOverrides)
   {
@@ -587,11 +432,7 @@ class Ad extends \Google\Collection
     return $this->eventTagOverrides;
   }
   /**
-   * Geographical targeting information for this ad. This field must be left
-   * blank if the ad is using a targeting template. Applicable when type is
-   * AD_SERVING_STANDARD_AD.
-   *
-   * @param GeoTargeting $geoTargeting
+   * @param GeoTargeting
    */
   public function setGeoTargeting(GeoTargeting $geoTargeting)
   {
@@ -605,9 +446,7 @@ class Ad extends \Google\Collection
     return $this->geoTargeting;
   }
   /**
-   * ID of this ad. This is a read-only, auto-generated field.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -621,10 +460,7 @@ class Ad extends \Google\Collection
     return $this->id;
   }
   /**
-   * Dimension value for the ID of this ad. This is a read-only, auto-generated
-   * field.
-   *
-   * @param DimensionValue $idDimensionValue
+   * @param DimensionValue
    */
   public function setIdDimensionValue(DimensionValue $idDimensionValue)
   {
@@ -638,11 +474,7 @@ class Ad extends \Google\Collection
     return $this->idDimensionValue;
   }
   /**
-   * Key-value targeting information for this ad. This field must be left blank
-   * if the ad is using a targeting template. Applicable when type is
-   * AD_SERVING_STANDARD_AD.
-   *
-   * @param KeyValueTargetingExpression $keyValueTargetingExpression
+   * @param KeyValueTargetingExpression
    */
   public function setKeyValueTargetingExpression(KeyValueTargetingExpression $keyValueTargetingExpression)
   {
@@ -656,10 +488,7 @@ class Ad extends \Google\Collection
     return $this->keyValueTargetingExpression;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#ad".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -673,11 +502,7 @@ class Ad extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Language targeting information for this ad. This field must be left blank
-   * if the ad is using a targeting template. Applicable when type is
-   * AD_SERVING_STANDARD_AD.
-   *
-   * @param LanguageTargeting $languageTargeting
+   * @param LanguageTargeting
    */
   public function setLanguageTargeting(LanguageTargeting $languageTargeting)
   {
@@ -691,10 +516,7 @@ class Ad extends \Google\Collection
     return $this->languageTargeting;
   }
   /**
-   * Information about the most recent modification of this ad. This is a read-
-   * only field.
-   *
-   * @param LastModifiedInfo $lastModifiedInfo
+   * @param LastModifiedInfo
    */
   public function setLastModifiedInfo(LastModifiedInfo $lastModifiedInfo)
   {
@@ -708,10 +530,7 @@ class Ad extends \Google\Collection
     return $this->lastModifiedInfo;
   }
   /**
-   * Name of this ad. This is a required field and must be less than 256
-   * characters long.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -725,9 +544,7 @@ class Ad extends \Google\Collection
     return $this->name;
   }
   /**
-   * Placement assignments for this ad.
-   *
-   * @param PlacementAssignment[] $placementAssignments
+   * @param PlacementAssignment[]
    */
   public function setPlacementAssignments($placementAssignments)
   {
@@ -741,11 +558,7 @@ class Ad extends \Google\Collection
     return $this->placementAssignments;
   }
   /**
-   * Remarketing list targeting expression for this ad. This field must be left
-   * blank if the ad is using a targeting template. Applicable when type is
-   * AD_SERVING_STANDARD_AD.
-   *
-   * @param ListTargetingExpression $remarketingListExpression
+   * @param ListTargetingExpression
    */
   public function setRemarketingListExpression(ListTargetingExpression $remarketingListExpression)
   {
@@ -759,9 +572,7 @@ class Ad extends \Google\Collection
     return $this->remarketingListExpression;
   }
   /**
-   * Size of this ad. Applicable when type is AD_SERVING_DEFAULT_AD.
-   *
-   * @param Size $size
+   * @param Size
    */
   public function setSize(Size $size)
   {
@@ -775,10 +586,7 @@ class Ad extends \Google\Collection
     return $this->size;
   }
   /**
-   * Whether this ad is ssl compliant. This is a read-only field that is auto-
-   * generated when the ad is inserted or updated.
-   *
-   * @param bool $sslCompliant
+   * @param bool
    */
   public function setSslCompliant($sslCompliant)
   {
@@ -792,10 +600,7 @@ class Ad extends \Google\Collection
     return $this->sslCompliant;
   }
   /**
-   * Whether this ad requires ssl. This is a read-only field that is auto-
-   * generated when the ad is inserted or updated.
-   *
-   * @param bool $sslRequired
+   * @param bool
    */
   public function setSslRequired($sslRequired)
   {
@@ -809,7 +614,7 @@ class Ad extends \Google\Collection
     return $this->sslRequired;
   }
   /**
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -823,9 +628,7 @@ class Ad extends \Google\Collection
     return $this->startTime;
   }
   /**
-   * Subaccount ID of this ad. This is a read-only field that can be left blank.
-   *
-   * @param string $subaccountId
+   * @param string
    */
   public function setSubaccountId($subaccountId)
   {
@@ -839,13 +642,7 @@ class Ad extends \Google\Collection
     return $this->subaccountId;
   }
   /**
-   * Targeting template ID, used to apply preconfigured targeting information to
-   * this ad. This cannot be set while any of dayPartTargeting, geoTargeting,
-   * keyValueTargetingExpression, languageTargeting, remarketingListExpression,
-   * or technologyTargeting are set. Applicable when type is
-   * AD_SERVING_STANDARD_AD.
-   *
-   * @param string $targetingTemplateId
+   * @param string
    */
   public function setTargetingTemplateId($targetingTemplateId)
   {
@@ -859,11 +656,7 @@ class Ad extends \Google\Collection
     return $this->targetingTemplateId;
   }
   /**
-   * Technology platform targeting information for this ad. This field must be
-   * left blank if the ad is using a targeting template. Applicable when type is
-   * AD_SERVING_STANDARD_AD.
-   *
-   * @param TechnologyTargeting $technologyTargeting
+   * @param TechnologyTargeting
    */
   public function setTechnologyTargeting(TechnologyTargeting $technologyTargeting)
   {
@@ -877,20 +670,14 @@ class Ad extends \Google\Collection
     return $this->technologyTargeting;
   }
   /**
-   * Type of ad. This is a required field on insertion. Note that default ads (
-   * AD_SERVING_DEFAULT_AD) cannot be created directly (see Creative resource).
-   *
-   * Accepted values: AD_SERVING_STANDARD_AD, AD_SERVING_DEFAULT_AD,
-   * AD_SERVING_CLICK_TRACKER, AD_SERVING_TRACKING, AD_SERVING_BRAND_SAFE_AD
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

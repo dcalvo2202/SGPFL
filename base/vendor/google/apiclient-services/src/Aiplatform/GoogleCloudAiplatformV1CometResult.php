@@ -20,16 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1CometResult extends \Google\Model
 {
   /**
-   * Output only. Comet score. Range depends on version.
-   *
    * @var float
    */
   public $score;
 
   /**
-   * Output only. Comet score. Range depends on version.
-   *
-   * @param float $score
+   * @param float
    */
   public function setScore($score)
   {

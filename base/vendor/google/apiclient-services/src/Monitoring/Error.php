@@ -20,8 +20,6 @@ namespace Google\Service\Monitoring;
 class Error extends \Google\Model
 {
   /**
-   * The number of points that couldn't be written because of status.
-   *
    * @var int
    */
   public $pointCount;
@@ -29,9 +27,7 @@ class Error extends \Google\Model
   protected $statusDataType = '';
 
   /**
-   * The number of points that couldn't be written because of status.
-   *
-   * @param int $pointCount
+   * @param int
    */
   public function setPointCount($pointCount)
   {
@@ -45,9 +41,7 @@ class Error extends \Google\Model
     return $this->pointCount;
   }
   /**
-   * The status of the requested write operation.
-   *
-   * @param Status $status
+   * @param Status
    */
   public function setStatus(Status $status)
   {

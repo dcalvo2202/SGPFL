@@ -20,30 +20,20 @@ namespace Google\Service\SA360;
 class GoogleAdsSearchads360V0ResourcesUserLocationView extends \Google\Model
 {
   /**
-   * Output only. Criterion Id for the country.
-   *
    * @var string
    */
   public $countryCriterionId;
   /**
-   * Output only. The resource name of the user location view. UserLocation view
-   * resource names have the form: `customers/{customer_id}/userLocationViews/{c
-   * ountry_criterion_id}~{targeting_location}`
-   *
    * @var string
    */
   public $resourceName;
   /**
-   * Output only. Indicates whether location was targeted or not.
-   *
    * @var bool
    */
   public $targetingLocation;
 
   /**
-   * Output only. Criterion Id for the country.
-   *
-   * @param string $countryCriterionId
+   * @param string
    */
   public function setCountryCriterionId($countryCriterionId)
   {
@@ -57,11 +47,7 @@ class GoogleAdsSearchads360V0ResourcesUserLocationView extends \Google\Model
     return $this->countryCriterionId;
   }
   /**
-   * Output only. The resource name of the user location view. UserLocation view
-   * resource names have the form: `customers/{customer_id}/userLocationViews/{c
-   * ountry_criterion_id}~{targeting_location}`
-   *
-   * @param string $resourceName
+   * @param string
    */
   public function setResourceName($resourceName)
   {
@@ -75,9 +61,7 @@ class GoogleAdsSearchads360V0ResourcesUserLocationView extends \Google\Model
     return $this->resourceName;
   }
   /**
-   * Output only. Indicates whether location was targeted or not.
-   *
-   * @param bool $targetingLocation
+   * @param bool
    */
   public function setTargetingLocation($targetingLocation)
   {

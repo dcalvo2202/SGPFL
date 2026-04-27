@@ -23,34 +23,20 @@ class CartData extends \Google\Collection
   protected $itemsType = CartDataItem::class;
   protected $itemsDataType = 'array';
   /**
-   * The feed labels associated with the feed where your items are uploaded. For
-   * more information, please refer to ​​
-   * https://support.google.com/merchants/answer/12453549. Providing the feed
-   * label reduces ambiguity in identifying the right offer details.
-   *
    * @var string
    */
   public $merchantFeedLabel;
   /**
-   * The language associated with the feed where your items are uploaded. Use
-   * ISO 639-1 language codes. Providing the feed language reduces ambiguity in
-   * identifying the right offer details.
-   *
    * @var string
    */
   public $merchantFeedLanguage;
   /**
-   * The Merchant Center ID where the items are uploaded. Providing Merchant
-   * Center ID reduces ambiguity in identifying the right offer details.
-   *
    * @var string
    */
   public $merchantId;
 
   /**
-   * Data of the items purchased.
-   *
-   * @param CartDataItem[] $items
+   * @param CartDataItem[]
    */
   public function setItems($items)
   {
@@ -64,12 +50,7 @@ class CartData extends \Google\Collection
     return $this->items;
   }
   /**
-   * The feed labels associated with the feed where your items are uploaded. For
-   * more information, please refer to ​​
-   * https://support.google.com/merchants/answer/12453549. Providing the feed
-   * label reduces ambiguity in identifying the right offer details.
-   *
-   * @param string $merchantFeedLabel
+   * @param string
    */
   public function setMerchantFeedLabel($merchantFeedLabel)
   {
@@ -83,11 +64,7 @@ class CartData extends \Google\Collection
     return $this->merchantFeedLabel;
   }
   /**
-   * The language associated with the feed where your items are uploaded. Use
-   * ISO 639-1 language codes. Providing the feed language reduces ambiguity in
-   * identifying the right offer details.
-   *
-   * @param string $merchantFeedLanguage
+   * @param string
    */
   public function setMerchantFeedLanguage($merchantFeedLanguage)
   {
@@ -101,10 +78,7 @@ class CartData extends \Google\Collection
     return $this->merchantFeedLanguage;
   }
   /**
-   * The Merchant Center ID where the items are uploaded. Providing Merchant
-   * Center ID reduces ambiguity in identifying the right offer details.
-   *
-   * @param string $merchantId
+   * @param string
    */
   public function setMerchantId($merchantId)
   {

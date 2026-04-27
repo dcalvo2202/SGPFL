@@ -23,26 +23,16 @@ class ListJobsResponse extends \Google\Collection
   protected $jobsType = Job::class;
   protected $jobsDataType = 'array';
   /**
-   * Optional. This token is included in the response if there are more results
-   * to fetch. To fetch additional results, provide this value as the page_token
-   * in a subsequent ListJobsRequest.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Output only. List of jobs with kms_key-encrypted parameters that could not
-   * be decrypted. A response to a jobs.get request may indicate the reason for
-   * the decryption failure for a specific job.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * Output only. Jobs list.
-   *
-   * @param Job[] $jobs
+   * @param Job[]
    */
   public function setJobs($jobs)
   {
@@ -56,11 +46,7 @@ class ListJobsResponse extends \Google\Collection
     return $this->jobs;
   }
   /**
-   * Optional. This token is included in the response if there are more results
-   * to fetch. To fetch additional results, provide this value as the page_token
-   * in a subsequent ListJobsRequest.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -74,11 +60,7 @@ class ListJobsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Output only. List of jobs with kms_key-encrypted parameters that could not
-   * be decrypted. A response to a jobs.get request may indicate the reason for
-   * the decryption failure for a specific job.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

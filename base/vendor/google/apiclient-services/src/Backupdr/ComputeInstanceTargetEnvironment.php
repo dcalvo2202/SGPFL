@@ -20,22 +20,16 @@ namespace Google\Service\Backupdr;
 class ComputeInstanceTargetEnvironment extends \Google\Model
 {
   /**
-   * Required. Target project for the Compute Engine instance.
-   *
    * @var string
    */
   public $project;
   /**
-   * Required. The zone of the Compute Engine instance.
-   *
    * @var string
    */
   public $zone;
 
   /**
-   * Required. Target project for the Compute Engine instance.
-   *
-   * @param string $project
+   * @param string
    */
   public function setProject($project)
   {
@@ -49,9 +43,7 @@ class ComputeInstanceTargetEnvironment extends \Google\Model
     return $this->project;
   }
   /**
-   * Required. The zone of the Compute Engine instance.
-   *
-   * @param string $zone
+   * @param string
    */
   public function setZone($zone)
   {

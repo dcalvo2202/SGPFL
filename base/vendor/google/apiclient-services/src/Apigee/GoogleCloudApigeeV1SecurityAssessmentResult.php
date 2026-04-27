@@ -20,9 +20,6 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1SecurityAssessmentResult extends \Google\Model
 {
   /**
-   * The time of the assessment of this resource. This could lag behind
-   * `assessment_time` due to caching within the backend.
-   *
    * @var string
    */
   public $createTime;
@@ -34,10 +31,7 @@ class GoogleCloudApigeeV1SecurityAssessmentResult extends \Google\Model
   protected $scoringResultDataType = '';
 
   /**
-   * The time of the assessment of this resource. This could lag behind
-   * `assessment_time` due to caching within the backend.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -51,9 +45,7 @@ class GoogleCloudApigeeV1SecurityAssessmentResult extends \Google\Model
     return $this->createTime;
   }
   /**
-   * The error status if scoring fails.
-   *
-   * @param GoogleRpcStatus $error
+   * @param GoogleRpcStatus
    */
   public function setError(GoogleRpcStatus $error)
   {
@@ -67,9 +59,7 @@ class GoogleCloudApigeeV1SecurityAssessmentResult extends \Google\Model
     return $this->error;
   }
   /**
-   * The assessed resource.
-   *
-   * @param GoogleCloudApigeeV1SecurityAssessmentResultResource $resource
+   * @param GoogleCloudApigeeV1SecurityAssessmentResultResource
    */
   public function setResource(GoogleCloudApigeeV1SecurityAssessmentResultResource $resource)
   {
@@ -83,9 +73,7 @@ class GoogleCloudApigeeV1SecurityAssessmentResult extends \Google\Model
     return $this->resource;
   }
   /**
-   * The result of the assessment.
-   *
-   * @param GoogleCloudApigeeV1SecurityAssessmentResultScoringResult $scoringResult
+   * @param GoogleCloudApigeeV1SecurityAssessmentResultScoringResult
    */
   public function setScoringResult(GoogleCloudApigeeV1SecurityAssessmentResultScoringResult $scoringResult)
   {

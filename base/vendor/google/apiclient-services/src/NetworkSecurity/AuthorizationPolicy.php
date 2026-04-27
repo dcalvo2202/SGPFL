@@ -19,85 +19,50 @@ namespace Google\Service\NetworkSecurity;
 
 class AuthorizationPolicy extends \Google\Collection
 {
-  /**
-   * Default value.
-   */
-  public const ACTION_ACTION_UNSPECIFIED = 'ACTION_UNSPECIFIED';
-  /**
-   * Grant access.
-   */
-  public const ACTION_ALLOW = 'ALLOW';
-  /**
-   * Deny access. Deny rules should be avoided unless they are used to provide a
-   * default "deny all" fallback.
-   */
-  public const ACTION_DENY = 'DENY';
   protected $collection_key = 'rules';
   /**
-   * Required. The action to take when a rule match is found. Possible values
-   * are "ALLOW" or "DENY".
-   *
    * @var string
    */
   public $action;
   /**
-   * Output only. The timestamp when the resource was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. Free-text description of the resource.
-   *
    * @var string
    */
   public $description;
   /**
-   * Optional. Set of label tags associated with the AuthorizationPolicy
-   * resource.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Required. Name of the AuthorizationPolicy resource. It matches pattern
-   * `projects/{project}/locations/{location}/authorizationPolicies/`.
-   *
    * @var string
    */
   public $name;
   protected $rulesType = Rule::class;
   protected $rulesDataType = 'array';
   /**
-   * Output only. The timestamp when the resource was updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Required. The action to take when a rule match is found. Possible values
-   * are "ALLOW" or "DENY".
-   *
-   * Accepted values: ACTION_UNSPECIFIED, ALLOW, DENY
-   *
-   * @param self::ACTION_* $action
+   * @param string
    */
   public function setAction($action)
   {
     $this->action = $action;
   }
   /**
-   * @return self::ACTION_*
+   * @return string
    */
   public function getAction()
   {
     return $this->action;
   }
   /**
-   * Output only. The timestamp when the resource was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -111,9 +76,7 @@ class AuthorizationPolicy extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Optional. Free-text description of the resource.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -127,10 +90,7 @@ class AuthorizationPolicy extends \Google\Collection
     return $this->description;
   }
   /**
-   * Optional. Set of label tags associated with the AuthorizationPolicy
-   * resource.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -144,10 +104,7 @@ class AuthorizationPolicy extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Required. Name of the AuthorizationPolicy resource. It matches pattern
-   * `projects/{project}/locations/{location}/authorizationPolicies/`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -161,13 +118,7 @@ class AuthorizationPolicy extends \Google\Collection
     return $this->name;
   }
   /**
-   * Optional. List of rules to match. Note that at least one of the rules must
-   * match in order for the action specified in the 'action' field to be taken.
-   * A rule is a match if there is a matching source and destination. If left
-   * blank, the action specified in the `action` field will be applied on every
-   * request.
-   *
-   * @param Rule[] $rules
+   * @param Rule[]
    */
   public function setRules($rules)
   {
@@ -181,9 +132,7 @@ class AuthorizationPolicy extends \Google\Collection
     return $this->rules;
   }
   /**
-   * Output only. The timestamp when the resource was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

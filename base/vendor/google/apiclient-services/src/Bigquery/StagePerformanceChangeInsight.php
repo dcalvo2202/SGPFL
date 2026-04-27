@@ -22,16 +22,12 @@ class StagePerformanceChangeInsight extends \Google\Model
   protected $inputDataChangeType = InputDataChange::class;
   protected $inputDataChangeDataType = '';
   /**
-   * Output only. The stage id that the insight mapped to.
-   *
    * @var string
    */
   public $stageId;
 
   /**
-   * Output only. Input data change insight of the query stage.
-   *
-   * @param InputDataChange $inputDataChange
+   * @param InputDataChange
    */
   public function setInputDataChange(InputDataChange $inputDataChange)
   {
@@ -45,9 +41,7 @@ class StagePerformanceChangeInsight extends \Google\Model
     return $this->inputDataChange;
   }
   /**
-   * Output only. The stage id that the insight mapped to.
-   *
-   * @param string $stageId
+   * @param string
    */
   public function setStageId($stageId)
   {

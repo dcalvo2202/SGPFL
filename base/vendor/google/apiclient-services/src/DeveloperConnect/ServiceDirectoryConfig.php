@@ -20,18 +20,12 @@ namespace Google\Service\DeveloperConnect;
 class ServiceDirectoryConfig extends \Google\Model
 {
   /**
-   * Required. The Service Directory service name. Format: projects/{project}/lo
-   * cations/{location}/namespaces/{namespace}/services/{service}.
-   *
    * @var string
    */
   public $service;
 
   /**
-   * Required. The Service Directory service name. Format: projects/{project}/lo
-   * cations/{location}/namespaces/{namespace}/services/{service}.
-   *
-   * @param string $service
+   * @param string
    */
   public function setService($service)
   {

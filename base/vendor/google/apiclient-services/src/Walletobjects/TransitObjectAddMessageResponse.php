@@ -23,9 +23,7 @@ class TransitObjectAddMessageResponse extends \Google\Model
   protected $resourceDataType = '';
 
   /**
-   * The updated TransitObject resource.
-   *
-   * @param TransitObject $resource
+   * @param TransitObject
    */
   public function setResource(TransitObject $resource)
   {

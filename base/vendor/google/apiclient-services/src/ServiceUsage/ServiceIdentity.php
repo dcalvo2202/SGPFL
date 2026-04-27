@@ -20,25 +20,16 @@ namespace Google\Service\ServiceUsage;
 class ServiceIdentity extends \Google\Model
 {
   /**
-   * The email address of the service account that a service producer would use
-   * to access consumer resources.
-   *
    * @var string
    */
   public $email;
   /**
-   * The unique and stable id of the service account. https://cloud.google.com/i
-   * am/reference/rest/v1/projects.serviceAccounts#ServiceAccount
-   *
    * @var string
    */
   public $uniqueId;
 
   /**
-   * The email address of the service account that a service producer would use
-   * to access consumer resources.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {
@@ -52,10 +43,7 @@ class ServiceIdentity extends \Google\Model
     return $this->email;
   }
   /**
-   * The unique and stable id of the service account. https://cloud.google.com/i
-   * am/reference/rest/v1/projects.serviceAccounts#ServiceAccount
-   *
-   * @param string $uniqueId
+   * @param string
    */
   public function setUniqueId($uniqueId)
   {

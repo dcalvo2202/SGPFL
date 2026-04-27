@@ -20,100 +20,40 @@ namespace Google\Service\VMwareEngine;
 class LoggingServer extends \Google\Model
 {
   /**
-   * Unspecified communications protocol. This is the default value.
-   */
-  public const PROTOCOL_PROTOCOL_UNSPECIFIED = 'PROTOCOL_UNSPECIFIED';
-  /**
-   * UDP
-   */
-  public const PROTOCOL_UDP = 'UDP';
-  /**
-   * TCP
-   */
-  public const PROTOCOL_TCP = 'TCP';
-  /**
-   * TLS
-   */
-  public const PROTOCOL_TLS = 'TLS';
-  /**
-   * SSL
-   */
-  public const PROTOCOL_SSL = 'SSL';
-  /**
-   * RELP
-   */
-  public const PROTOCOL_RELP = 'RELP';
-  /**
-   * The default value. This value should never be used.
-   */
-  public const SOURCE_TYPE_SOURCE_TYPE_UNSPECIFIED = 'SOURCE_TYPE_UNSPECIFIED';
-  /**
-   * Logs produced by ESXI hosts
-   */
-  public const SOURCE_TYPE_ESXI = 'ESXI';
-  /**
-   * Logs produced by vCenter server
-   */
-  public const SOURCE_TYPE_VCSA = 'VCSA';
-  /**
-   * Output only. Creation time of this resource.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Required. Fully-qualified domain name (FQDN) or IP Address of the logging
-   * server.
-   *
    * @var string
    */
   public $hostname;
   /**
-   * Output only. The resource name of this logging server. Resource names are
-   * schemeless URIs that follow the conventions in
-   * https://cloud.google.com/apis/design/resource_names. For example:
-   * `projects/my-project/locations/us-central1-a/privateClouds/my-
-   * cloud/loggingServers/my-logging-server`
-   *
    * @var string
    */
   public $name;
   /**
-   * Required. Port number at which the logging server receives logs.
-   *
    * @var int
    */
   public $port;
   /**
-   * Required. Protocol used by vCenter to send logs to a logging server.
-   *
    * @var string
    */
   public $protocol;
   /**
-   * Required. The type of component that produces logs that will be forwarded
-   * to this logging server.
-   *
    * @var string
    */
   public $sourceType;
   /**
-   * Output only. System-generated unique identifier for the resource.
-   *
    * @var string
    */
   public $uid;
   /**
-   * Output only. Last update time of this resource.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. Creation time of this resource.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -127,10 +67,7 @@ class LoggingServer extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Required. Fully-qualified domain name (FQDN) or IP Address of the logging
-   * server.
-   *
-   * @param string $hostname
+   * @param string
    */
   public function setHostname($hostname)
   {
@@ -144,13 +81,7 @@ class LoggingServer extends \Google\Model
     return $this->hostname;
   }
   /**
-   * Output only. The resource name of this logging server. Resource names are
-   * schemeless URIs that follow the conventions in
-   * https://cloud.google.com/apis/design/resource_names. For example:
-   * `projects/my-project/locations/us-central1-a/privateClouds/my-
-   * cloud/loggingServers/my-logging-server`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -164,9 +95,7 @@ class LoggingServer extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. Port number at which the logging server receives logs.
-   *
-   * @param int $port
+   * @param int
    */
   public function setPort($port)
   {
@@ -180,46 +109,35 @@ class LoggingServer extends \Google\Model
     return $this->port;
   }
   /**
-   * Required. Protocol used by vCenter to send logs to a logging server.
-   *
-   * Accepted values: PROTOCOL_UNSPECIFIED, UDP, TCP, TLS, SSL, RELP
-   *
-   * @param self::PROTOCOL_* $protocol
+   * @param string
    */
   public function setProtocol($protocol)
   {
     $this->protocol = $protocol;
   }
   /**
-   * @return self::PROTOCOL_*
+   * @return string
    */
   public function getProtocol()
   {
     return $this->protocol;
   }
   /**
-   * Required. The type of component that produces logs that will be forwarded
-   * to this logging server.
-   *
-   * Accepted values: SOURCE_TYPE_UNSPECIFIED, ESXI, VCSA
-   *
-   * @param self::SOURCE_TYPE_* $sourceType
+   * @param string
    */
   public function setSourceType($sourceType)
   {
     $this->sourceType = $sourceType;
   }
   /**
-   * @return self::SOURCE_TYPE_*
+   * @return string
    */
   public function getSourceType()
   {
     return $this->sourceType;
   }
   /**
-   * Output only. System-generated unique identifier for the resource.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {
@@ -233,9 +151,7 @@ class LoggingServer extends \Google\Model
     return $this->uid;
   }
   /**
-   * Output only. Last update time of this resource.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

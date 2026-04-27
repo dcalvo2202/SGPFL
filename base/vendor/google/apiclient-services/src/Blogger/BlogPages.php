@@ -20,22 +20,16 @@ namespace Google\Service\Blogger;
 class BlogPages extends \Google\Model
 {
   /**
-   * The URL of the container for pages in this blog.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * The count of pages in this blog.
-   *
    * @var int
    */
   public $totalItems;
 
   /**
-   * The URL of the container for pages in this blog.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -49,9 +43,7 @@ class BlogPages extends \Google\Model
     return $this->selfLink;
   }
   /**
-   * The count of pages in this blog.
-   *
-   * @param int $totalItems
+   * @param int
    */
   public function setTotalItems($totalItems)
   {

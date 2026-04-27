@@ -21,8 +21,6 @@ class SkaffoldModules extends \Google\Collection
 {
   protected $collection_key = 'configs';
   /**
-   * Optional. The Skaffold Config modules to use from the specified source.
-   *
    * @var string[]
    */
   public $configs;
@@ -34,9 +32,7 @@ class SkaffoldModules extends \Google\Collection
   protected $googleCloudStorageDataType = '';
 
   /**
-   * Optional. The Skaffold Config modules to use from the specified source.
-   *
-   * @param string[] $configs
+   * @param string[]
    */
   public function setConfigs($configs)
   {
@@ -50,9 +46,7 @@ class SkaffoldModules extends \Google\Collection
     return $this->configs;
   }
   /**
-   * Optional. Remote git repository containing the Skaffold Config modules.
-   *
-   * @param SkaffoldGitSource $git
+   * @param SkaffoldGitSource
    */
   public function setGit(SkaffoldGitSource $git)
   {
@@ -66,9 +60,7 @@ class SkaffoldModules extends \Google\Collection
     return $this->git;
   }
   /**
-   * Optional. Cloud Build V2 repository containing the Skaffold Config modules.
-   *
-   * @param SkaffoldGCBRepoSource $googleCloudBuildRepo
+   * @param SkaffoldGCBRepoSource
    */
   public function setGoogleCloudBuildRepo(SkaffoldGCBRepoSource $googleCloudBuildRepo)
   {
@@ -82,9 +74,7 @@ class SkaffoldModules extends \Google\Collection
     return $this->googleCloudBuildRepo;
   }
   /**
-   * Optional. Cloud Storage bucket containing the Skaffold Config modules.
-   *
-   * @param SkaffoldGCSSource $googleCloudStorage
+   * @param SkaffoldGCSSource
    */
   public function setGoogleCloudStorage(SkaffoldGCSSource $googleCloudStorage)
   {

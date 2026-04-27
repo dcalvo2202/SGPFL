@@ -20,20 +20,6 @@ namespace Google\Service\Games;
 class Instance extends \Google\Model
 {
   /**
-   * Instance is for Android.
-   */
-  public const PLATFORM_TYPE_ANDROID = 'ANDROID';
-  /**
-   * Instance is for iOS.
-   */
-  public const PLATFORM_TYPE_IOS = 'IOS';
-  /**
-   * Instance is for Web App.
-   */
-  public const PLATFORM_TYPE_WEB_APP = 'WEB_APP';
-  /**
-   * URI which shows where a user can acquire this instance.
-   *
    * @var string
    */
   public $acquisitionUri;
@@ -42,33 +28,22 @@ class Instance extends \Google\Model
   protected $iosInstanceType = InstanceIosDetails::class;
   protected $iosInstanceDataType = '';
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#instance`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Localized display name.
-   *
    * @var string
    */
   public $name;
   /**
-   * The platform type.
-   *
    * @var string
    */
   public $platformType;
   /**
-   * Flag to show if this game instance supports realtime play.
-   *
    * @var bool
    */
   public $realtimePlay;
   /**
-   * Flag to show if this game instance supports turn based play.
-   *
    * @var bool
    */
   public $turnBasedPlay;
@@ -76,9 +51,7 @@ class Instance extends \Google\Model
   protected $webInstanceDataType = '';
 
   /**
-   * URI which shows where a user can acquire this instance.
-   *
-   * @param string $acquisitionUri
+   * @param string
    */
   public function setAcquisitionUri($acquisitionUri)
   {
@@ -92,9 +65,7 @@ class Instance extends \Google\Model
     return $this->acquisitionUri;
   }
   /**
-   * Platform dependent details for Android.
-   *
-   * @param InstanceAndroidDetails $androidInstance
+   * @param InstanceAndroidDetails
    */
   public function setAndroidInstance(InstanceAndroidDetails $androidInstance)
   {
@@ -108,9 +79,7 @@ class Instance extends \Google\Model
     return $this->androidInstance;
   }
   /**
-   * Platform dependent details for iOS.
-   *
-   * @param InstanceIosDetails $iosInstance
+   * @param InstanceIosDetails
    */
   public function setIosInstance(InstanceIosDetails $iosInstance)
   {
@@ -124,10 +93,7 @@ class Instance extends \Google\Model
     return $this->iosInstance;
   }
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#instance`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -141,9 +107,7 @@ class Instance extends \Google\Model
     return $this->kind;
   }
   /**
-   * Localized display name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -157,27 +121,21 @@ class Instance extends \Google\Model
     return $this->name;
   }
   /**
-   * The platform type.
-   *
-   * Accepted values: ANDROID, IOS, WEB_APP
-   *
-   * @param self::PLATFORM_TYPE_* $platformType
+   * @param string
    */
   public function setPlatformType($platformType)
   {
     $this->platformType = $platformType;
   }
   /**
-   * @return self::PLATFORM_TYPE_*
+   * @return string
    */
   public function getPlatformType()
   {
     return $this->platformType;
   }
   /**
-   * Flag to show if this game instance supports realtime play.
-   *
-   * @param bool $realtimePlay
+   * @param bool
    */
   public function setRealtimePlay($realtimePlay)
   {
@@ -191,9 +149,7 @@ class Instance extends \Google\Model
     return $this->realtimePlay;
   }
   /**
-   * Flag to show if this game instance supports turn based play.
-   *
-   * @param bool $turnBasedPlay
+   * @param bool
    */
   public function setTurnBasedPlay($turnBasedPlay)
   {
@@ -207,9 +163,7 @@ class Instance extends \Google\Model
     return $this->turnBasedPlay;
   }
   /**
-   * Platform dependent details for Web.
-   *
-   * @param InstanceWebDetails $webInstance
+   * @param InstanceWebDetails
    */
   public function setWebInstance(InstanceWebDetails $webInstance)
   {

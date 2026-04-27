@@ -20,66 +20,34 @@ namespace Google\Service\AndroidPublisher;
 class InappproductsDeleteRequest extends \Google\Model
 {
   /**
-   * Defaults to PRODUCT_UPDATE_LATENCY_TOLERANCE_LATENCY_SENSITIVE.
-   */
-  public const LATENCY_TOLERANCE_PRODUCT_UPDATE_LATENCY_TOLERANCE_UNSPECIFIED = 'PRODUCT_UPDATE_LATENCY_TOLERANCE_UNSPECIFIED';
-  /**
-   * The update will propagate to clients within several minutes on average and
-   * up to a few hours in rare cases. Throughput is limited to 7,200 updates per
-   * app per hour.
-   */
-  public const LATENCY_TOLERANCE_PRODUCT_UPDATE_LATENCY_TOLERANCE_LATENCY_SENSITIVE = 'PRODUCT_UPDATE_LATENCY_TOLERANCE_LATENCY_SENSITIVE';
-  /**
-   * The update will propagate to clients within 24 hours. Supports high
-   * throughput of up to 720,000 updates per app per hour using batch
-   * modification methods.
-   */
-  public const LATENCY_TOLERANCE_PRODUCT_UPDATE_LATENCY_TOLERANCE_LATENCY_TOLERANT = 'PRODUCT_UPDATE_LATENCY_TOLERANCE_LATENCY_TOLERANT';
-  /**
-   * Optional. The latency tolerance for the propagation of this product update.
-   * Defaults to latency-sensitive.
-   *
    * @var string
    */
   public $latencyTolerance;
   /**
-   * Package name of the app.
-   *
    * @var string
    */
   public $packageName;
   /**
-   * Unique identifier for the in-app product.
-   *
    * @var string
    */
   public $sku;
 
   /**
-   * Optional. The latency tolerance for the propagation of this product update.
-   * Defaults to latency-sensitive.
-   *
-   * Accepted values: PRODUCT_UPDATE_LATENCY_TOLERANCE_UNSPECIFIED,
-   * PRODUCT_UPDATE_LATENCY_TOLERANCE_LATENCY_SENSITIVE,
-   * PRODUCT_UPDATE_LATENCY_TOLERANCE_LATENCY_TOLERANT
-   *
-   * @param self::LATENCY_TOLERANCE_* $latencyTolerance
+   * @param string
    */
   public function setLatencyTolerance($latencyTolerance)
   {
     $this->latencyTolerance = $latencyTolerance;
   }
   /**
-   * @return self::LATENCY_TOLERANCE_*
+   * @return string
    */
   public function getLatencyTolerance()
   {
     return $this->latencyTolerance;
   }
   /**
-   * Package name of the app.
-   *
-   * @param string $packageName
+   * @param string
    */
   public function setPackageName($packageName)
   {
@@ -93,9 +61,7 @@ class InappproductsDeleteRequest extends \Google\Model
     return $this->packageName;
   }
   /**
-   * Unique identifier for the in-app product.
-   *
-   * @param string $sku
+   * @param string
    */
   public function setSku($sku)
   {

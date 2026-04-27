@@ -20,43 +20,19 @@ namespace Google\Service\YouTube;
 class ChannelToStoreLinkDetailsMerchantAffiliateProgramDetails extends \Google\Model
 {
   /**
-   * Unspecified status.
-   */
-  public const STATUS_merchantAffiliateProgramStatusUnspecified = 'merchantAffiliateProgramStatusUnspecified';
-  /**
-   * Merchant is eligible for the merchant affiliate program.
-   */
-  public const STATUS_merchantAffiliateProgramStatusEligible = 'merchantAffiliateProgramStatusEligible';
-  /**
-   * Merchant affiliate program is active.
-   */
-  public const STATUS_merchantAffiliateProgramStatusActive = 'merchantAffiliateProgramStatusActive';
-  /**
-   * Merchant affiliate program is paused.
-   */
-  public const STATUS_merchantAffiliateProgramStatusPaused = 'merchantAffiliateProgramStatusPaused';
-  /**
-   * The current merchant affiliate program status.
-   *
    * @var string
    */
   public $status;
 
   /**
-   * The current merchant affiliate program status.
-   *
-   * Accepted values: merchantAffiliateProgramStatusUnspecified,
-   * merchantAffiliateProgramStatusEligible,
-   * merchantAffiliateProgramStatusActive, merchantAffiliateProgramStatusPaused
-   *
-   * @param self::STATUS_* $status
+   * @param string
    */
   public function setStatus($status)
   {
     $this->status = $status;
   }
   /**
-   * @return self::STATUS_*
+   * @return string
    */
   public function getStatus()
   {

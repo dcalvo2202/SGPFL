@@ -22,20 +22,12 @@ class JwtInsertResponse extends \Google\Model
   protected $resourcesType = Resources::class;
   protected $resourcesDataType = '';
   /**
-   * A URI that, when opened, will allow the end user to save the object(s)
-   * identified in the JWT to their Google account.
-   *
    * @var string
    */
   public $saveUri;
 
   /**
-   * Data that corresponds to the ids of the provided classes and objects in the
-   * JWT. resources will only include the non-empty arrays (i.e. if the JWT only
-   * includes eventTicketObjects, then that is the only field that will be
-   * present in resources).
-   *
-   * @param Resources $resources
+   * @param Resources
    */
   public function setResources(Resources $resources)
   {
@@ -49,10 +41,7 @@ class JwtInsertResponse extends \Google\Model
     return $this->resources;
   }
   /**
-   * A URI that, when opened, will allow the end user to save the object(s)
-   * identified in the JWT to their Google account.
-   *
-   * @param string $saveUri
+   * @param string
    */
   public function setSaveUri($saveUri)
   {

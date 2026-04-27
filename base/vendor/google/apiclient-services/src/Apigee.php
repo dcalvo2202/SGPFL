@@ -45,7 +45,6 @@ class Apigee extends \Google\Service
   public $hybrid_issuers;
   public $organizations;
   public $organizations_analytics_datastores;
-  public $organizations_apimServiceExtensions;
   public $organizations_apiproducts;
   public $organizations_apiproducts_attributes;
   public $organizations_apiproducts_rateplans;
@@ -60,8 +59,6 @@ class Apigee extends \Google\Service
   public $organizations_appgroups_apps;
   public $organizations_appgroups_apps_keys;
   public $organizations_appgroups_apps_keys_apiproducts;
-  public $organizations_appgroups_balance;
-  public $organizations_appgroups_subscriptions;
   public $organizations_apps;
   public $organizations_datacollectors;
   public $organizations_deployments;
@@ -121,7 +118,6 @@ class Apigee extends \Google\Service
   public $organizations_optimizedHostStats;
   public $organizations_reports;
   public $organizations_securityAssessmentResults;
-  public $organizations_securityFeedback;
   public $organizations_securityMonitoringConditions;
   public $organizations_securityProfiles;
   public $organizations_securityProfiles_environments;
@@ -416,86 +412,6 @@ class Apigee extends \Google\Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ],
-              ],
-            ],
-          ]
-        ]
-    );
-    $this->organizations_apimServiceExtensions = new Apigee\Resource\OrganizationsApimServiceExtensions(
-        $this,
-        $this->serviceName,
-        'apimServiceExtensions',
-        [
-          'methods' => [
-            'create' => [
-              'path' => 'v1/{+parent}/apimServiceExtensions',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'parent' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'apimServiceExtensionId' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],'delete' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'DELETE',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'get' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'list' => [
-              'path' => 'v1/{+parent}/apimServiceExtensions',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'parent' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'pageSize' => [
-                  'location' => 'query',
-                  'type' => 'integer',
-                ],
-                'pageToken' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],'patch' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'PATCH',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'allowMissing' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
-                'updateMask' => [
-                  'location' => 'query',
-                  'type' => 'string',
                 ],
               ],
             ],
@@ -912,26 +828,6 @@ class Apigee extends \Google\Service
                   'required' => true,
                 ],
               ],
-            ],'get' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'update' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'PUT',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
             ],
           ]
         ]
@@ -1108,26 +1004,6 @@ class Apigee extends \Google\Service
                   'required' => true,
                 ],
               ],
-            ],'getBalance' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'getMonetizationConfig' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
             ],'list' => [
               'path' => 'v1/{+parent}/appgroups',
               'httpMethod' => 'GET',
@@ -1162,16 +1038,6 @@ class Apigee extends \Google\Service
                 'action' => [
                   'location' => 'query',
                   'type' => 'string',
-                ],
-              ],
-            ],'updateMonetizationConfig' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'PUT',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
                 ],
               ],
             ],
@@ -1326,94 +1192,6 @@ class Apigee extends \Google\Service
                   'required' => true,
                 ],
                 'action' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],
-          ]
-        ]
-    );
-    $this->organizations_appgroups_balance = new Apigee\Resource\OrganizationsAppgroupsBalance(
-        $this,
-        $this->serviceName,
-        'balance',
-        [
-          'methods' => [
-            'adjust' => [
-              'path' => 'v1/{+name}:adjust',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'credit' => [
-              'path' => 'v1/{+name}:credit',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],
-          ]
-        ]
-    );
-    $this->organizations_appgroups_subscriptions = new Apigee\Resource\OrganizationsAppgroupsSubscriptions(
-        $this,
-        $this->serviceName,
-        'subscriptions',
-        [
-          'methods' => [
-            'create' => [
-              'path' => 'v1/{+parent}/subscriptions',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'parent' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'expire' => [
-              'path' => 'v1/{+name}:expire',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'get' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'list' => [
-              'path' => 'v1/{+parent}/subscriptions',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'parent' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'pageSize' => [
-                  'location' => 'query',
-                  'type' => 'integer',
-                ],
-                'pageToken' => [
                   'location' => 'query',
                   'type' => 'string',
                 ],
@@ -3338,26 +3116,6 @@ class Apigee extends \Google\Service
                   'required' => true,
                 ],
               ],
-            ],'get' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'update' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'PUT',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
             ],
           ]
         ]
@@ -3781,16 +3539,6 @@ class Apigee extends \Google\Service
                   'type' => 'string',
                 ],
               ],
-            ],'delete' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'DELETE',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
             ],'disable' => [
               'path' => 'v1/{+name}:disable',
               'httpMethod' => 'POST',
@@ -3839,20 +3587,6 @@ class Apigee extends \Google\Service
                   'type' => 'integer',
                 ],
                 'pageToken' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],'patch' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'PATCH',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'updateMask' => [
                   'location' => 'query',
                   'type' => 'string',
                 ],
@@ -4839,26 +4573,6 @@ class Apigee extends \Google\Service
                   'required' => true,
                 ],
               ],
-            ],'get' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'update' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'PUT',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
             ],
           ]
         ]
@@ -4967,10 +4681,6 @@ class Apigee extends \Google\Service
                 'pageToken' => [
                   'location' => 'query',
                   'type' => 'string',
-                ],
-                'returnPartialSuccess' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ],
               ],
             ],
@@ -5137,82 +4847,6 @@ class Apigee extends \Google\Service
           ]
         ]
     );
-    $this->organizations_securityFeedback = new Apigee\Resource\OrganizationsSecurityFeedback(
-        $this,
-        $this->serviceName,
-        'securityFeedback',
-        [
-          'methods' => [
-            'create' => [
-              'path' => 'v1/{+parent}/securityFeedback',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'parent' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'securityFeedbackId' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],'delete' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'DELETE',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'get' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'list' => [
-              'path' => 'v1/{+parent}/securityFeedback',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'parent' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'pageSize' => [
-                  'location' => 'query',
-                  'type' => 'integer',
-                ],
-                'pageToken' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],'patch' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'PATCH',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'updateMask' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],
-          ]
-        ]
-    );
     $this->organizations_securityMonitoringConditions = new Apigee\Resource\OrganizationsSecurityMonitoringConditions(
         $this,
         $this->serviceName,
@@ -5242,10 +4876,6 @@ class Apigee extends \Google\Service
                   'type' => 'string',
                   'required' => true,
                 ],
-                'riskAssessmentType' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
               ],
             ],'get' => [
               'path' => 'v1/{+name}',
@@ -5255,10 +4885,6 @@ class Apigee extends \Google\Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ],
-                'riskAssessmentType' => [
-                  'location' => 'query',
-                  'type' => 'string',
                 ],
               ],
             ],'list' => [
@@ -5279,10 +4905,6 @@ class Apigee extends \Google\Service
                   'type' => 'integer',
                 ],
                 'pageToken' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'riskAssessmentType' => [
                   'location' => 'query',
                   'type' => 'string',
                 ],
@@ -5468,10 +5090,6 @@ class Apigee extends \Google\Service
                   'type' => 'string',
                   'required' => true,
                 ],
-                'riskAssessmentType' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
               ],
             ],'get' => [
               'path' => 'v1/{+name}',
@@ -5481,10 +5099,6 @@ class Apigee extends \Google\Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ],
-                'riskAssessmentType' => [
-                  'location' => 'query',
-                  'type' => 'string',
                 ],
               ],
             ],'list' => [
@@ -5501,10 +5115,6 @@ class Apigee extends \Google\Service
                   'type' => 'integer',
                 ],
                 'pageToken' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'riskAssessmentType' => [
                   'location' => 'query',
                   'type' => 'string',
                 ],

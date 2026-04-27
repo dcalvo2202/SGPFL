@@ -22,8 +22,6 @@ class ElementaryStream extends \Google\Model
   protected $audioStreamType = AudioStream::class;
   protected $audioStreamDataType = '';
   /**
-   * A unique key for this elementary stream.
-   *
    * @var string
    */
   public $key;
@@ -33,9 +31,7 @@ class ElementaryStream extends \Google\Model
   protected $videoStreamDataType = '';
 
   /**
-   * Encoding of an audio stream.
-   *
-   * @param AudioStream $audioStream
+   * @param AudioStream
    */
   public function setAudioStream(AudioStream $audioStream)
   {
@@ -49,9 +45,7 @@ class ElementaryStream extends \Google\Model
     return $this->audioStream;
   }
   /**
-   * A unique key for this elementary stream.
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {
@@ -65,9 +59,7 @@ class ElementaryStream extends \Google\Model
     return $this->key;
   }
   /**
-   * Encoding of a text stream. For example, closed captions or subtitles.
-   *
-   * @param TextStream $textStream
+   * @param TextStream
    */
   public function setTextStream(TextStream $textStream)
   {
@@ -81,9 +73,7 @@ class ElementaryStream extends \Google\Model
     return $this->textStream;
   }
   /**
-   * Encoding of a video stream.
-   *
-   * @param VideoStream $videoStream
+   * @param VideoStream
    */
   public function setVideoStream(VideoStream $videoStream)
   {

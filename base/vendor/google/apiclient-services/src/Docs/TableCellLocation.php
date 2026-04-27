@@ -20,16 +20,10 @@ namespace Google\Service\Docs;
 class TableCellLocation extends \Google\Model
 {
   /**
-   * The zero-based column index. For example, the second column in the table
-   * has a column index of 1.
-   *
    * @var int
    */
   public $columnIndex;
   /**
-   * The zero-based row index. For example, the second row in the table has a
-   * row index of 1.
-   *
    * @var int
    */
   public $rowIndex;
@@ -37,10 +31,7 @@ class TableCellLocation extends \Google\Model
   protected $tableStartLocationDataType = '';
 
   /**
-   * The zero-based column index. For example, the second column in the table
-   * has a column index of 1.
-   *
-   * @param int $columnIndex
+   * @param int
    */
   public function setColumnIndex($columnIndex)
   {
@@ -54,10 +45,7 @@ class TableCellLocation extends \Google\Model
     return $this->columnIndex;
   }
   /**
-   * The zero-based row index. For example, the second row in the table has a
-   * row index of 1.
-   *
-   * @param int $rowIndex
+   * @param int
    */
   public function setRowIndex($rowIndex)
   {
@@ -71,9 +59,7 @@ class TableCellLocation extends \Google\Model
     return $this->rowIndex;
   }
   /**
-   * The location where the table starts in the document.
-   *
-   * @param Location $tableStartLocation
+   * @param Location
    */
   public function setTableStartLocation(Location $tableStartLocation)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\AccessApproval;
 class ApproveApprovalRequestMessage extends \Google\Model
 {
   /**
-   * The expiration time of this approval.
-   *
    * @var string
    */
   public $expireTime;
 
   /**
-   * The expiration time of this approval.
-   *
-   * @param string $expireTime
+   * @param string
    */
   public function setExpireTime($expireTime)
   {

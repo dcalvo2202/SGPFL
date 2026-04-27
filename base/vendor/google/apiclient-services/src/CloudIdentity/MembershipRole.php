@@ -22,9 +22,6 @@ class MembershipRole extends \Google\Model
   protected $expiryDetailType = ExpiryDetail::class;
   protected $expiryDetailDataType = '';
   /**
-   * The name of the `MembershipRole`. Must be one of `OWNER`, `MANAGER`,
-   * `MEMBER`.
-   *
    * @var string
    */
   public $name;
@@ -32,11 +29,7 @@ class MembershipRole extends \Google\Model
   protected $restrictionEvaluationsDataType = '';
 
   /**
-   * The expiry details of the `MembershipRole`. Expiry details are only
-   * supported for `MEMBER` `MembershipRoles`. May be set if `name` is `MEMBER`.
-   * Must not be set if `name` is any other value.
-   *
-   * @param ExpiryDetail $expiryDetail
+   * @param ExpiryDetail
    */
   public function setExpiryDetail(ExpiryDetail $expiryDetail)
   {
@@ -50,10 +43,7 @@ class MembershipRole extends \Google\Model
     return $this->expiryDetail;
   }
   /**
-   * The name of the `MembershipRole`. Must be one of `OWNER`, `MANAGER`,
-   * `MEMBER`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -67,9 +57,7 @@ class MembershipRole extends \Google\Model
     return $this->name;
   }
   /**
-   * Evaluations of restrictions applied to parent group on this membership.
-   *
-   * @param RestrictionEvaluations $restrictionEvaluations
+   * @param RestrictionEvaluations
    */
   public function setRestrictionEvaluations(RestrictionEvaluations $restrictionEvaluations)
   {

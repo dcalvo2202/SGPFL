@@ -20,16 +20,12 @@ namespace Google\Service\PlayIntegrity;
 class DecodeIntegrityTokenRequest extends \Google\Model
 {
   /**
-   * Encoded integrity token.
-   *
    * @var string
    */
   public $integrityToken;
 
   /**
-   * Encoded integrity token.
-   *
-   * @param string $integrityToken
+   * @param string
    */
   public function setIntegrityToken($integrityToken)
   {

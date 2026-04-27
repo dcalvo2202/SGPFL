@@ -21,34 +21,22 @@ class BiReservation extends \Google\Collection
 {
   protected $collection_key = 'preferredTables';
   /**
-   * Identifier. The resource name of the singleton BI reservation. Reservation
-   * names have the form
-   * `projects/{project_id}/locations/{location_id}/biReservation`.
-   *
    * @var string
    */
   public $name;
   protected $preferredTablesType = TableReference::class;
   protected $preferredTablesDataType = 'array';
   /**
-   * Optional. Size of a reservation, in bytes.
-   *
    * @var string
    */
   public $size;
   /**
-   * Output only. The last update timestamp of a reservation.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Identifier. The resource name of the singleton BI reservation. Reservation
-   * names have the form
-   * `projects/{project_id}/locations/{location_id}/biReservation`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -62,9 +50,7 @@ class BiReservation extends \Google\Collection
     return $this->name;
   }
   /**
-   * Optional. Preferred tables to use BI capacity for.
-   *
-   * @param TableReference[] $preferredTables
+   * @param TableReference[]
    */
   public function setPreferredTables($preferredTables)
   {
@@ -78,9 +64,7 @@ class BiReservation extends \Google\Collection
     return $this->preferredTables;
   }
   /**
-   * Optional. Size of a reservation, in bytes.
-   *
-   * @param string $size
+   * @param string
    */
   public function setSize($size)
   {
@@ -94,9 +78,7 @@ class BiReservation extends \Google\Collection
     return $this->size;
   }
   /**
-   * Output only. The last update timestamp of a reservation.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

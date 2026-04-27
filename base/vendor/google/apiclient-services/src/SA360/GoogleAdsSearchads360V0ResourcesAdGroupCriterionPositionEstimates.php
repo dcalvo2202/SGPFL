@@ -20,18 +20,12 @@ namespace Google\Service\SA360;
 class GoogleAdsSearchads360V0ResourcesAdGroupCriterionPositionEstimates extends \Google\Model
 {
   /**
-   * Output only. The estimate of the CPC bid required for ad to be displayed at
-   * the top of the first page of search results.
-   *
    * @var string
    */
   public $topOfPageCpcMicros;
 
   /**
-   * Output only. The estimate of the CPC bid required for ad to be displayed at
-   * the top of the first page of search results.
-   *
-   * @param string $topOfPageCpcMicros
+   * @param string
    */
   public function setTopOfPageCpcMicros($topOfPageCpcMicros)
   {

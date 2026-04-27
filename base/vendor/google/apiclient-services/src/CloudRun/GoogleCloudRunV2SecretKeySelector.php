@@ -20,29 +20,16 @@ namespace Google\Service\CloudRun;
 class GoogleCloudRunV2SecretKeySelector extends \Google\Model
 {
   /**
-   * Required. The name of the secret in Cloud Secret Manager. Format:
-   * {secret_name} if the secret is in the same project.
-   * projects/{project}/secrets/{secret_name} if the secret is in a different
-   * project.
-   *
    * @var string
    */
   public $secret;
   /**
-   * The Cloud Secret Manager secret version. Can be 'latest' for the latest
-   * version, an integer for a specific version, or a version alias.
-   *
    * @var string
    */
   public $version;
 
   /**
-   * Required. The name of the secret in Cloud Secret Manager. Format:
-   * {secret_name} if the secret is in the same project.
-   * projects/{project}/secrets/{secret_name} if the secret is in a different
-   * project.
-   *
-   * @param string $secret
+   * @param string
    */
   public function setSecret($secret)
   {
@@ -56,10 +43,7 @@ class GoogleCloudRunV2SecretKeySelector extends \Google\Model
     return $this->secret;
   }
   /**
-   * The Cloud Secret Manager secret version. Can be 'latest' for the latest
-   * version, an integer for a specific version, or a version alias.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

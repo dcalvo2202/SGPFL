@@ -20,90 +20,48 @@ namespace Google\Service\HangoutsChat;
 class GoogleAppsCardV1OpenLink extends \Google\Model
 {
   /**
-   * Default value. The card doesn't reload; nothing happens.
-   */
-  public const ON_CLOSE_NOTHING = 'NOTHING';
-  /**
-   * Reloads the card after the child window closes. If used in conjunction with
-   * [`OpenAs.OVERLAY`](https://developers.google.com/workspace/add-
-   * ons/reference/rpc/google.apps.card.v1#openas), the child window acts as a
-   * modal dialog and the parent card is blocked until the child window closes.
-   */
-  public const ON_CLOSE_RELOAD = 'RELOAD';
-  /**
-   * The link opens as a full-size window (if that's the frame used by the
-   * client).
-   */
-  public const OPEN_AS_FULL_SIZE = 'FULL_SIZE';
-  /**
-   * The link opens as an overlay, such as a pop-up.
-   */
-  public const OPEN_AS_OVERLAY = 'OVERLAY';
-  /**
-   * Whether the client forgets about a link after opening it, or observes it
-   * until the window closes. [Google Workspace add-
-   * ons](https://developers.google.com/workspace/add-ons):
-   *
    * @var string
    */
   public $onClose;
   /**
-   * How to open a link. [Google Workspace add-
-   * ons](https://developers.google.com/workspace/add-ons):
-   *
    * @var string
    */
   public $openAs;
   /**
-   * The URL to open. HTTP URLs are converted to HTTPS.
-   *
    * @var string
    */
   public $url;
 
   /**
-   * Whether the client forgets about a link after opening it, or observes it
-   * until the window closes. [Google Workspace add-
-   * ons](https://developers.google.com/workspace/add-ons):
-   *
-   * Accepted values: NOTHING, RELOAD
-   *
-   * @param self::ON_CLOSE_* $onClose
+   * @param string
    */
   public function setOnClose($onClose)
   {
     $this->onClose = $onClose;
   }
   /**
-   * @return self::ON_CLOSE_*
+   * @return string
    */
   public function getOnClose()
   {
     return $this->onClose;
   }
   /**
-   * How to open a link. [Google Workspace add-
-   * ons](https://developers.google.com/workspace/add-ons):
-   *
-   * Accepted values: FULL_SIZE, OVERLAY
-   *
-   * @param self::OPEN_AS_* $openAs
+   * @param string
    */
   public function setOpenAs($openAs)
   {
     $this->openAs = $openAs;
   }
   /**
-   * @return self::OPEN_AS_*
+   * @return string
    */
   public function getOpenAs()
   {
     return $this->openAs;
   }
   /**
-   * The URL to open. HTTP URLs are converted to HTTPS.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

@@ -20,53 +20,36 @@ namespace Google\Service\Books;
 class ReadingPosition extends \Google\Model
 {
   /**
-   * Position in an EPUB as a CFI.
-   *
    * @var string
    */
   public $epubCfiPosition;
   /**
-   * Position in a volume for image-based content.
-   *
    * @var string
    */
   public $gbImagePosition;
   /**
-   * Position in a volume for text-based content.
-   *
    * @var string
    */
   public $gbTextPosition;
   /**
-   * Resource type for a reading position.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Position in a PDF file.
-   *
    * @var string
    */
   public $pdfPosition;
   /**
-   * Timestamp when this reading position was last updated (formatted UTC
-   * timestamp with millisecond resolution).
-   *
    * @var string
    */
   public $updated;
   /**
-   * Volume id associated with this reading position.
-   *
    * @var string
    */
   public $volumeId;
 
   /**
-   * Position in an EPUB as a CFI.
-   *
-   * @param string $epubCfiPosition
+   * @param string
    */
   public function setEpubCfiPosition($epubCfiPosition)
   {
@@ -80,9 +63,7 @@ class ReadingPosition extends \Google\Model
     return $this->epubCfiPosition;
   }
   /**
-   * Position in a volume for image-based content.
-   *
-   * @param string $gbImagePosition
+   * @param string
    */
   public function setGbImagePosition($gbImagePosition)
   {
@@ -96,9 +77,7 @@ class ReadingPosition extends \Google\Model
     return $this->gbImagePosition;
   }
   /**
-   * Position in a volume for text-based content.
-   *
-   * @param string $gbTextPosition
+   * @param string
    */
   public function setGbTextPosition($gbTextPosition)
   {
@@ -112,9 +91,7 @@ class ReadingPosition extends \Google\Model
     return $this->gbTextPosition;
   }
   /**
-   * Resource type for a reading position.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -128,9 +105,7 @@ class ReadingPosition extends \Google\Model
     return $this->kind;
   }
   /**
-   * Position in a PDF file.
-   *
-   * @param string $pdfPosition
+   * @param string
    */
   public function setPdfPosition($pdfPosition)
   {
@@ -144,10 +119,7 @@ class ReadingPosition extends \Google\Model
     return $this->pdfPosition;
   }
   /**
-   * Timestamp when this reading position was last updated (formatted UTC
-   * timestamp with millisecond resolution).
-   *
-   * @param string $updated
+   * @param string
    */
   public function setUpdated($updated)
   {
@@ -161,9 +133,7 @@ class ReadingPosition extends \Google\Model
     return $this->updated;
   }
   /**
-   * Volume id associated with this reading position.
-   *
-   * @param string $volumeId
+   * @param string
    */
   public function setVolumeId($volumeId)
   {

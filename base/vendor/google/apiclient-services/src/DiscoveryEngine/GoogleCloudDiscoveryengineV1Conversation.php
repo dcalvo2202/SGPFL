@@ -19,58 +19,32 @@ namespace Google\Service\DiscoveryEngine;
 
 class GoogleCloudDiscoveryengineV1Conversation extends \Google\Collection
 {
-  /**
-   * Unknown.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Conversation is currently open.
-   */
-  public const STATE_IN_PROGRESS = 'IN_PROGRESS';
-  /**
-   * Conversation has been completed.
-   */
-  public const STATE_COMPLETED = 'COMPLETED';
   protected $collection_key = 'messages';
   /**
-   * Output only. The time the conversation finished.
-   *
    * @var string
    */
   public $endTime;
   protected $messagesType = GoogleCloudDiscoveryengineV1ConversationMessage::class;
   protected $messagesDataType = 'array';
   /**
-   * Immutable. Fully qualified name `projects/{project}/locations/global/collec
-   * tions/{collection}/dataStore/conversations` or `projects/{project}/location
-   * s/global/collections/{collection}/engines/conversations`.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The time the conversation started.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * The state of the Conversation.
-   *
    * @var string
    */
   public $state;
   /**
-   * A unique identifier for tracking users.
-   *
    * @var string
    */
   public $userPseudoId;
 
   /**
-   * Output only. The time the conversation finished.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -84,9 +58,7 @@ class GoogleCloudDiscoveryengineV1Conversation extends \Google\Collection
     return $this->endTime;
   }
   /**
-   * Conversation messages.
-   *
-   * @param GoogleCloudDiscoveryengineV1ConversationMessage[] $messages
+   * @param GoogleCloudDiscoveryengineV1ConversationMessage[]
    */
   public function setMessages($messages)
   {
@@ -100,11 +72,7 @@ class GoogleCloudDiscoveryengineV1Conversation extends \Google\Collection
     return $this->messages;
   }
   /**
-   * Immutable. Fully qualified name `projects/{project}/locations/global/collec
-   * tions/{collection}/dataStore/conversations` or `projects/{project}/location
-   * s/global/collections/{collection}/engines/conversations`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -118,9 +86,7 @@ class GoogleCloudDiscoveryengineV1Conversation extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. The time the conversation started.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -134,27 +100,21 @@ class GoogleCloudDiscoveryengineV1Conversation extends \Google\Collection
     return $this->startTime;
   }
   /**
-   * The state of the Conversation.
-   *
-   * Accepted values: STATE_UNSPECIFIED, IN_PROGRESS, COMPLETED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * A unique identifier for tracking users.
-   *
-   * @param string $userPseudoId
+   * @param string
    */
   public function setUserPseudoId($userPseudoId)
   {

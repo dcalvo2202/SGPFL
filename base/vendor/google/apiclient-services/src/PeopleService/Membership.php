@@ -27,9 +27,7 @@ class Membership extends \Google\Model
   protected $metadataDataType = '';
 
   /**
-   * The contact group membership.
-   *
-   * @param ContactGroupMembership $contactGroupMembership
+   * @param ContactGroupMembership
    */
   public function setContactGroupMembership(ContactGroupMembership $contactGroupMembership)
   {
@@ -43,9 +41,7 @@ class Membership extends \Google\Model
     return $this->contactGroupMembership;
   }
   /**
-   * Output only. The domain membership.
-   *
-   * @param DomainMembership $domainMembership
+   * @param DomainMembership
    */
   public function setDomainMembership(DomainMembership $domainMembership)
   {
@@ -59,9 +55,7 @@ class Membership extends \Google\Model
     return $this->domainMembership;
   }
   /**
-   * Metadata about the membership.
-   *
-   * @param FieldMetadata $metadata
+   * @param FieldMetadata
    */
   public function setMetadata(FieldMetadata $metadata)
   {

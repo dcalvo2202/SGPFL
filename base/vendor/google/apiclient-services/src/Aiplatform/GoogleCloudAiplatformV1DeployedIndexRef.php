@@ -20,28 +20,20 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1DeployedIndexRef extends \Google\Model
 {
   /**
-   * Immutable. The ID of the DeployedIndex in the above IndexEndpoint.
-   *
    * @var string
    */
   public $deployedIndexId;
   /**
-   * Output only. The display name of the DeployedIndex.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Immutable. A resource name of the IndexEndpoint.
-   *
    * @var string
    */
   public $indexEndpoint;
 
   /**
-   * Immutable. The ID of the DeployedIndex in the above IndexEndpoint.
-   *
-   * @param string $deployedIndexId
+   * @param string
    */
   public function setDeployedIndexId($deployedIndexId)
   {
@@ -55,9 +47,7 @@ class GoogleCloudAiplatformV1DeployedIndexRef extends \Google\Model
     return $this->deployedIndexId;
   }
   /**
-   * Output only. The display name of the DeployedIndex.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -71,9 +61,7 @@ class GoogleCloudAiplatformV1DeployedIndexRef extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Immutable. A resource name of the IndexEndpoint.
-   *
-   * @param string $indexEndpoint
+   * @param string
    */
   public function setIndexEndpoint($indexEndpoint)
   {

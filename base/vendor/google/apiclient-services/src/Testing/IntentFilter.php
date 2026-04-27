@@ -21,28 +21,20 @@ class IntentFilter extends \Google\Collection
 {
   protected $collection_key = 'categoryNames';
   /**
-   * The android:name value of the tag.
-   *
    * @var string[]
    */
   public $actionNames;
   /**
-   * The android:name value of the tag.
-   *
    * @var string[]
    */
   public $categoryNames;
   /**
-   * The android:mimeType value of the tag.
-   *
    * @var string
    */
   public $mimeType;
 
   /**
-   * The android:name value of the tag.
-   *
-   * @param string[] $actionNames
+   * @param string[]
    */
   public function setActionNames($actionNames)
   {
@@ -56,9 +48,7 @@ class IntentFilter extends \Google\Collection
     return $this->actionNames;
   }
   /**
-   * The android:name value of the tag.
-   *
-   * @param string[] $categoryNames
+   * @param string[]
    */
   public function setCategoryNames($categoryNames)
   {
@@ -72,9 +62,7 @@ class IntentFilter extends \Google\Collection
     return $this->categoryNames;
   }
   /**
-   * The android:mimeType value of the tag.
-   *
-   * @param string $mimeType
+   * @param string
    */
   public function setMimeType($mimeType)
   {

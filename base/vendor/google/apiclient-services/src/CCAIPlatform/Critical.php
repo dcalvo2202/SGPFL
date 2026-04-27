@@ -24,9 +24,7 @@ class Critical extends \Google\Collection
   protected $peakHoursDataType = 'array';
 
   /**
-   * Required. Hours during which the instance should not be updated.
-   *
-   * @param WeeklySchedule[] $peakHours
+   * @param WeeklySchedule[]
    */
   public function setPeakHours($peakHours)
   {

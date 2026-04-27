@@ -21,38 +21,20 @@ class GoogleCloudDatacatalogLineageV1BatchSearchLinkProcessesRequest extends \Go
 {
   protected $collection_key = 'links';
   /**
-   * Required. An array of links to check for their associated LineageProcesses.
-   * The maximum number of items in this array is 100. If the request contains
-   * more than 100 links, it returns the `INVALID_ARGUMENT` error. Format:
-   * `projects/{project}/locations/{location}/links/{link}`.
-   *
    * @var string[]
    */
   public $links;
   /**
-   * The maximum number of processes to return in a single page of the response.
-   * A page may contain fewer results than this value.
-   *
    * @var int
    */
   public $pageSize;
   /**
-   * The page token received from a previous `BatchSearchLinkProcesses` call.
-   * Use it to get the next page. When requesting subsequent pages of a
-   * response, remember that all parameters must match the values you provided
-   * in the original request.
-   *
    * @var string
    */
   public $pageToken;
 
   /**
-   * Required. An array of links to check for their associated LineageProcesses.
-   * The maximum number of items in this array is 100. If the request contains
-   * more than 100 links, it returns the `INVALID_ARGUMENT` error. Format:
-   * `projects/{project}/locations/{location}/links/{link}`.
-   *
-   * @param string[] $links
+   * @param string[]
    */
   public function setLinks($links)
   {
@@ -66,10 +48,7 @@ class GoogleCloudDatacatalogLineageV1BatchSearchLinkProcessesRequest extends \Go
     return $this->links;
   }
   /**
-   * The maximum number of processes to return in a single page of the response.
-   * A page may contain fewer results than this value.
-   *
-   * @param int $pageSize
+   * @param int
    */
   public function setPageSize($pageSize)
   {
@@ -83,12 +62,7 @@ class GoogleCloudDatacatalogLineageV1BatchSearchLinkProcessesRequest extends \Go
     return $this->pageSize;
   }
   /**
-   * The page token received from a previous `BatchSearchLinkProcesses` call.
-   * Use it to get the next page. When requesting subsequent pages of a
-   * response, remember that all parameters must match the values you provided
-   * in the original request.
-   *
-   * @param string $pageToken
+   * @param string
    */
   public function setPageToken($pageToken)
   {

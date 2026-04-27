@@ -19,98 +19,38 @@ namespace Google\Service\ContainerAnalysis;
 
 class DiscoveryOccurrence extends \Google\Collection
 {
-  /**
-   * Unknown.
-   */
-  public const ANALYSIS_STATUS_ANALYSIS_STATUS_UNSPECIFIED = 'ANALYSIS_STATUS_UNSPECIFIED';
-  /**
-   * Resource is known but no action has been taken yet.
-   */
-  public const ANALYSIS_STATUS_PENDING = 'PENDING';
-  /**
-   * Resource is being analyzed.
-   */
-  public const ANALYSIS_STATUS_SCANNING = 'SCANNING';
-  /**
-   * Analysis has finished successfully.
-   */
-  public const ANALYSIS_STATUS_FINISHED_SUCCESS = 'FINISHED_SUCCESS';
-  /**
-   * Analysis has completed.
-   */
-  public const ANALYSIS_STATUS_COMPLETE = 'COMPLETE';
-  /**
-   * Analysis has finished unsuccessfully, the analysis itself is in a bad
-   * state.
-   */
-  public const ANALYSIS_STATUS_FINISHED_FAILED = 'FINISHED_FAILED';
-  /**
-   * The resource is known not to be supported.
-   */
-  public const ANALYSIS_STATUS_FINISHED_UNSUPPORTED = 'FINISHED_UNSUPPORTED';
-  /**
-   * Unknown.
-   */
-  public const CONTINUOUS_ANALYSIS_CONTINUOUS_ANALYSIS_UNSPECIFIED = 'CONTINUOUS_ANALYSIS_UNSPECIFIED';
-  /**
-   * The resource is continuously analyzed.
-   */
-  public const CONTINUOUS_ANALYSIS_ACTIVE = 'ACTIVE';
-  /**
-   * The resource is ignored for continuous analysis.
-   */
-  public const CONTINUOUS_ANALYSIS_INACTIVE = 'INACTIVE';
-  protected $collection_key = 'files';
+  protected $collection_key = 'analysisError';
   protected $analysisCompletedType = AnalysisCompleted::class;
   protected $analysisCompletedDataType = '';
   protected $analysisErrorType = Status::class;
   protected $analysisErrorDataType = 'array';
   /**
-   * The status of discovery for the resource.
-   *
    * @var string
    */
   public $analysisStatus;
   protected $analysisStatusErrorType = Status::class;
   protected $analysisStatusErrorDataType = '';
   /**
-   * Output only. The time occurrences related to this discovery occurrence were
-   * archived.
-   *
    * @var string
    */
   public $archiveTime;
   /**
-   * Whether the resource is continuously analyzed.
-   *
    * @var string
    */
   public $continuousAnalysis;
   /**
-   * The CPE of the resource being scanned.
-   *
    * @var string
    */
   public $cpe;
-  protected $filesType = ContaineranalysisFile::class;
-  protected $filesDataType = 'array';
   /**
-   * The last time this resource was scanned.
-   *
    * @var string
    */
   public $lastScanTime;
-  /**
-   * The last time vulnerability scan results changed.
-   *
-   * @var string
-   */
-  public $lastVulnerabilityUpdateTime;
   protected $sbomStatusType = SBOMStatus::class;
   protected $sbomStatusDataType = '';
 
   /**
-   * @param AnalysisCompleted $analysisCompleted
+   * @param AnalysisCompleted
    */
   public function setAnalysisCompleted(AnalysisCompleted $analysisCompleted)
   {
@@ -124,10 +64,7 @@ class DiscoveryOccurrence extends \Google\Collection
     return $this->analysisCompleted;
   }
   /**
-   * Indicates any errors encountered during analysis of a resource. There could
-   * be 0 or more of these errors.
-   *
-   * @param Status[] $analysisError
+   * @param Status[]
    */
   public function setAnalysisError($analysisError)
   {
@@ -141,30 +78,21 @@ class DiscoveryOccurrence extends \Google\Collection
     return $this->analysisError;
   }
   /**
-   * The status of discovery for the resource.
-   *
-   * Accepted values: ANALYSIS_STATUS_UNSPECIFIED, PENDING, SCANNING,
-   * FINISHED_SUCCESS, COMPLETE, FINISHED_FAILED, FINISHED_UNSUPPORTED
-   *
-   * @param self::ANALYSIS_STATUS_* $analysisStatus
+   * @param string
    */
   public function setAnalysisStatus($analysisStatus)
   {
     $this->analysisStatus = $analysisStatus;
   }
   /**
-   * @return self::ANALYSIS_STATUS_*
+   * @return string
    */
   public function getAnalysisStatus()
   {
     return $this->analysisStatus;
   }
   /**
-   * When an error is encountered this will contain a LocalizedMessage under
-   * details to show to the user. The LocalizedMessage is output only and
-   * populated by the API.
-   *
-   * @param Status $analysisStatusError
+   * @param Status
    */
   public function setAnalysisStatusError(Status $analysisStatusError)
   {
@@ -178,10 +106,7 @@ class DiscoveryOccurrence extends \Google\Collection
     return $this->analysisStatusError;
   }
   /**
-   * Output only. The time occurrences related to this discovery occurrence were
-   * archived.
-   *
-   * @param string $archiveTime
+   * @param string
    */
   public function setArchiveTime($archiveTime)
   {
@@ -195,27 +120,21 @@ class DiscoveryOccurrence extends \Google\Collection
     return $this->archiveTime;
   }
   /**
-   * Whether the resource is continuously analyzed.
-   *
-   * Accepted values: CONTINUOUS_ANALYSIS_UNSPECIFIED, ACTIVE, INACTIVE
-   *
-   * @param self::CONTINUOUS_ANALYSIS_* $continuousAnalysis
+   * @param string
    */
   public function setContinuousAnalysis($continuousAnalysis)
   {
     $this->continuousAnalysis = $continuousAnalysis;
   }
   /**
-   * @return self::CONTINUOUS_ANALYSIS_*
+   * @return string
    */
   public function getContinuousAnalysis()
   {
     return $this->continuousAnalysis;
   }
   /**
-   * The CPE of the resource being scanned.
-   *
-   * @param string $cpe
+   * @param string
    */
   public function setCpe($cpe)
   {
@@ -229,25 +148,7 @@ class DiscoveryOccurrence extends \Google\Collection
     return $this->cpe;
   }
   /**
-   * Files that make up the resource described by the occurrence.
-   *
-   * @param ContaineranalysisFile[] $files
-   */
-  public function setFiles($files)
-  {
-    $this->files = $files;
-  }
-  /**
-   * @return ContaineranalysisFile[]
-   */
-  public function getFiles()
-  {
-    return $this->files;
-  }
-  /**
-   * The last time this resource was scanned.
-   *
-   * @param string $lastScanTime
+   * @param string
    */
   public function setLastScanTime($lastScanTime)
   {
@@ -261,25 +162,7 @@ class DiscoveryOccurrence extends \Google\Collection
     return $this->lastScanTime;
   }
   /**
-   * The last time vulnerability scan results changed.
-   *
-   * @param string $lastVulnerabilityUpdateTime
-   */
-  public function setLastVulnerabilityUpdateTime($lastVulnerabilityUpdateTime)
-  {
-    $this->lastVulnerabilityUpdateTime = $lastVulnerabilityUpdateTime;
-  }
-  /**
-   * @return string
-   */
-  public function getLastVulnerabilityUpdateTime()
-  {
-    return $this->lastVulnerabilityUpdateTime;
-  }
-  /**
-   * The status of an SBOM generation.
-   *
-   * @param SBOMStatus $sbomStatus
+   * @param SBOMStatus
    */
   public function setSbomStatus(SBOMStatus $sbomStatus)
   {

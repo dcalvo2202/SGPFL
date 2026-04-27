@@ -20,42 +20,28 @@ namespace Google\Service\Analytics;
 class GoalEventDetailsEventConditions extends \Google\Model
 {
   /**
-   * Type of comparison. Possible values are LESS_THAN, GREATER_THAN or EQUAL.
-   *
    * @var string
    */
   public $comparisonType;
   /**
-   * Value used for this comparison.
-   *
    * @var string
    */
   public $comparisonValue;
   /**
-   * Expression used for this match.
-   *
    * @var string
    */
   public $expression;
   /**
-   * Type of the match to be performed. Possible values are REGEXP, BEGINS_WITH,
-   * or EXACT.
-   *
    * @var string
    */
   public $matchType;
   /**
-   * Type of this event condition. Possible values are CATEGORY, ACTION, LABEL,
-   * or VALUE.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Type of comparison. Possible values are LESS_THAN, GREATER_THAN or EQUAL.
-   *
-   * @param string $comparisonType
+   * @param string
    */
   public function setComparisonType($comparisonType)
   {
@@ -69,9 +55,7 @@ class GoalEventDetailsEventConditions extends \Google\Model
     return $this->comparisonType;
   }
   /**
-   * Value used for this comparison.
-   *
-   * @param string $comparisonValue
+   * @param string
    */
   public function setComparisonValue($comparisonValue)
   {
@@ -85,9 +69,7 @@ class GoalEventDetailsEventConditions extends \Google\Model
     return $this->comparisonValue;
   }
   /**
-   * Expression used for this match.
-   *
-   * @param string $expression
+   * @param string
    */
   public function setExpression($expression)
   {
@@ -101,10 +83,7 @@ class GoalEventDetailsEventConditions extends \Google\Model
     return $this->expression;
   }
   /**
-   * Type of the match to be performed. Possible values are REGEXP, BEGINS_WITH,
-   * or EXACT.
-   *
-   * @param string $matchType
+   * @param string
    */
   public function setMatchType($matchType)
   {
@@ -118,10 +97,7 @@ class GoalEventDetailsEventConditions extends \Google\Model
     return $this->matchType;
   }
   /**
-   * Type of this event condition. Possible values are CATEGORY, ACTION, LABEL,
-   * or VALUE.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

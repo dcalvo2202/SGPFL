@@ -21,24 +21,18 @@ class ListReportsResponse extends \Google\Collection
 {
   protected $collection_key = 'unreachable';
   /**
-   * A token identifying a page of results the server should return.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $reportsType = Report::class;
   protected $reportsDataType = 'array';
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * A token identifying a page of results the server should return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -52,9 +46,7 @@ class ListReportsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The list of Reports.
-   *
-   * @param Report[] $reports
+   * @param Report[]
    */
   public function setReports($reports)
   {
@@ -68,9 +60,7 @@ class ListReportsResponse extends \Google\Collection
     return $this->reports;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

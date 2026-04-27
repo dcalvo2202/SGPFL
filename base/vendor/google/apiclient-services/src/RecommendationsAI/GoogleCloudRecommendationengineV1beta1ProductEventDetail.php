@@ -21,19 +21,10 @@ class GoogleCloudRecommendationengineV1beta1ProductEventDetail extends \Google\C
 {
   protected $collection_key = 'productDetails';
   /**
-   * Optional. The id or name of the associated shopping cart. This id is used
-   * to associate multiple items added or present in the cart before purchase.
-   * This can only be set for `add-to-cart`, `remove-from-cart`, `checkout-
-   * start`, `purchase-complete`, or `shopping-cart-page-view` events.
-   *
    * @var string
    */
   public $cartId;
   /**
-   * Required for `add-to-list` and `remove-from-list` events. The id or name of
-   * the list that the item is being added to or removed from. Other event types
-   * should not set this field.
-   *
    * @var string
    */
   public $listId;
@@ -44,21 +35,12 @@ class GoogleCloudRecommendationengineV1beta1ProductEventDetail extends \Google\C
   protected $purchaseTransactionType = GoogleCloudRecommendationengineV1beta1PurchaseTransaction::class;
   protected $purchaseTransactionDataType = '';
   /**
-   * At least one of search_query or page_categories is required for `search`
-   * events. Other event types should not set this field. The user's search
-   * query as UTF-8 encoded text with a length limit of 5 KiB.
-   *
    * @var string
    */
   public $searchQuery;
 
   /**
-   * Optional. The id or name of the associated shopping cart. This id is used
-   * to associate multiple items added or present in the cart before purchase.
-   * This can only be set for `add-to-cart`, `remove-from-cart`, `checkout-
-   * start`, `purchase-complete`, or `shopping-cart-page-view` events.
-   *
-   * @param string $cartId
+   * @param string
    */
   public function setCartId($cartId)
   {
@@ -72,11 +54,7 @@ class GoogleCloudRecommendationengineV1beta1ProductEventDetail extends \Google\C
     return $this->cartId;
   }
   /**
-   * Required for `add-to-list` and `remove-from-list` events. The id or name of
-   * the list that the item is being added to or removed from. Other event types
-   * should not set this field.
-   *
-   * @param string $listId
+   * @param string
    */
   public function setListId($listId)
   {
@@ -90,14 +68,7 @@ class GoogleCloudRecommendationengineV1beta1ProductEventDetail extends \Google\C
     return $this->listId;
   }
   /**
-   * Required for `category-page-view` events. At least one of search_query or
-   * page_categories is required for `search` events. Other event types should
-   * not set this field. The categories associated with a category page.
-   * Category pages include special pages such as sales or promotions. For
-   * instance, a special sale page may have the category hierarchy: categories :
-   * ["Sales", "2017 Black Friday Deals"].
-   *
-   * @param GoogleCloudRecommendationengineV1beta1CatalogItemCategoryHierarchy[] $pageCategories
+   * @param GoogleCloudRecommendationengineV1beta1CatalogItemCategoryHierarchy[]
    */
   public function setPageCategories($pageCategories)
   {
@@ -111,22 +82,7 @@ class GoogleCloudRecommendationengineV1beta1ProductEventDetail extends \Google\C
     return $this->pageCategories;
   }
   /**
-   * The main product details related to the event. This field is required for
-   * the following event types: * `add-to-cart` * `add-to-list` * `checkout-
-   * start` * `detail-page-view` * `purchase-complete` * `refund` * `remove-
-   * from-cart` * `remove-from-list` This field is optional for the following
-   * event types: * `page-visit` * `shopping-cart-page-view` - note that
-   * 'product_details' should be set for this unless the shopping cart is empty.
-   * * `search` (highly encouraged) In a `search` event, this field represents
-   * the products returned to the end user on the current page (the end user may
-   * have not finished broswing the whole page yet). When a new page is returned
-   * to the end user, after pagination/filtering/ordering even for the same
-   * query, a new SEARCH event with different product_details is desired. The
-   * end user may have not finished broswing the whole page yet. This field is
-   * not allowed for the following event types: * `category-page-view` * `home-
-   * page-view`
-   *
-   * @param GoogleCloudRecommendationengineV1beta1ProductDetail[] $productDetails
+   * @param GoogleCloudRecommendationengineV1beta1ProductDetail[]
    */
   public function setProductDetails($productDetails)
   {
@@ -140,11 +96,7 @@ class GoogleCloudRecommendationengineV1beta1ProductEventDetail extends \Google\C
     return $this->productDetails;
   }
   /**
-   * Optional. A transaction represents the entire purchase transaction.
-   * Required for `purchase-complete` events. Optional for `checkout-start`
-   * events. Other event types should not set this field.
-   *
-   * @param GoogleCloudRecommendationengineV1beta1PurchaseTransaction $purchaseTransaction
+   * @param GoogleCloudRecommendationengineV1beta1PurchaseTransaction
    */
   public function setPurchaseTransaction(GoogleCloudRecommendationengineV1beta1PurchaseTransaction $purchaseTransaction)
   {
@@ -158,11 +110,7 @@ class GoogleCloudRecommendationengineV1beta1ProductEventDetail extends \Google\C
     return $this->purchaseTransaction;
   }
   /**
-   * At least one of search_query or page_categories is required for `search`
-   * events. Other event types should not set this field. The user's search
-   * query as UTF-8 encoded text with a length limit of 5 KiB.
-   *
-   * @param string $searchQuery
+   * @param string
    */
   public function setSearchQuery($searchQuery)
   {

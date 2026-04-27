@@ -23,31 +23,18 @@ class AutonomousDatabaseConnectionStrings extends \Google\Collection
   protected $allConnectionStringsType = AllConnectionStrings::class;
   protected $allConnectionStringsDataType = '';
   /**
-   * Output only. The database service provides the least level of resources to
-   * each SQL statement, but supports the most number of concurrent SQL
-   * statements.
-   *
    * @var string
    */
   public $dedicated;
   /**
-   * Output only. The database service provides the highest level of resources
-   * to each SQL statement.
-   *
    * @var string
    */
   public $high;
   /**
-   * Output only. The database service provides the least level of resources to
-   * each SQL statement.
-   *
    * @var string
    */
   public $low;
   /**
-   * Output only. The database service provides a lower level of resources to
-   * each SQL statement.
-   *
    * @var string
    */
   public $medium;
@@ -55,10 +42,7 @@ class AutonomousDatabaseConnectionStrings extends \Google\Collection
   protected $profilesDataType = 'array';
 
   /**
-   * Output only. Returns all connection strings that can be used to connect to
-   * the Autonomous Database.
-   *
-   * @param AllConnectionStrings $allConnectionStrings
+   * @param AllConnectionStrings
    */
   public function setAllConnectionStrings(AllConnectionStrings $allConnectionStrings)
   {
@@ -72,11 +56,7 @@ class AutonomousDatabaseConnectionStrings extends \Google\Collection
     return $this->allConnectionStrings;
   }
   /**
-   * Output only. The database service provides the least level of resources to
-   * each SQL statement, but supports the most number of concurrent SQL
-   * statements.
-   *
-   * @param string $dedicated
+   * @param string
    */
   public function setDedicated($dedicated)
   {
@@ -90,10 +70,7 @@ class AutonomousDatabaseConnectionStrings extends \Google\Collection
     return $this->dedicated;
   }
   /**
-   * Output only. The database service provides the highest level of resources
-   * to each SQL statement.
-   *
-   * @param string $high
+   * @param string
    */
   public function setHigh($high)
   {
@@ -107,10 +84,7 @@ class AutonomousDatabaseConnectionStrings extends \Google\Collection
     return $this->high;
   }
   /**
-   * Output only. The database service provides the least level of resources to
-   * each SQL statement.
-   *
-   * @param string $low
+   * @param string
    */
   public function setLow($low)
   {
@@ -124,10 +98,7 @@ class AutonomousDatabaseConnectionStrings extends \Google\Collection
     return $this->low;
   }
   /**
-   * Output only. The database service provides a lower level of resources to
-   * each SQL statement.
-   *
-   * @param string $medium
+   * @param string
    */
   public function setMedium($medium)
   {
@@ -141,10 +112,7 @@ class AutonomousDatabaseConnectionStrings extends \Google\Collection
     return $this->medium;
   }
   /**
-   * Output only. A list of connection string profiles to allow clients to
-   * group, filter, and select values based on the structured metadata.
-   *
-   * @param DatabaseConnectionStringProfile[] $profiles
+   * @param DatabaseConnectionStringProfile[]
    */
   public function setProfiles($profiles)
   {

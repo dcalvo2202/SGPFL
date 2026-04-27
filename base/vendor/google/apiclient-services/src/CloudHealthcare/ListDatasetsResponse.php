@@ -23,17 +23,12 @@ class ListDatasetsResponse extends \Google\Collection
   protected $datasetsType = Dataset::class;
   protected $datasetsDataType = 'array';
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The first page of datasets.
-   *
-   * @param Dataset[] $datasets
+   * @param Dataset[]
    */
   public function setDatasets($datasets)
   {
@@ -47,10 +42,7 @@ class ListDatasetsResponse extends \Google\Collection
     return $this->datasets;
   }
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

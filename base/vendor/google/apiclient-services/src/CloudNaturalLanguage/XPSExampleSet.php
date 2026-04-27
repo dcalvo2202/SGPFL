@@ -22,28 +22,20 @@ class XPSExampleSet extends \Google\Model
   protected $fileSpecType = XPSFileSpec::class;
   protected $fileSpecDataType = '';
   /**
-   * Fingerprint of the example set.
-   *
    * @var string
    */
   public $fingerprint;
   /**
-   * Number of examples.
-   *
    * @var string
    */
   public $numExamples;
   /**
-   * Number of input sources.
-   *
    * @var string
    */
   public $numInputSources;
 
   /**
-   * File spec of the examples or input sources.
-   *
-   * @param XPSFileSpec $fileSpec
+   * @param XPSFileSpec
    */
   public function setFileSpec(XPSFileSpec $fileSpec)
   {
@@ -57,9 +49,7 @@ class XPSExampleSet extends \Google\Model
     return $this->fileSpec;
   }
   /**
-   * Fingerprint of the example set.
-   *
-   * @param string $fingerprint
+   * @param string
    */
   public function setFingerprint($fingerprint)
   {
@@ -73,9 +63,7 @@ class XPSExampleSet extends \Google\Model
     return $this->fingerprint;
   }
   /**
-   * Number of examples.
-   *
-   * @param string $numExamples
+   * @param string
    */
   public function setNumExamples($numExamples)
   {
@@ -89,9 +77,7 @@ class XPSExampleSet extends \Google\Model
     return $this->numExamples;
   }
   /**
-   * Number of input sources.
-   *
-   * @param string $numInputSources
+   * @param string
    */
   public function setNumInputSources($numInputSources)
   {

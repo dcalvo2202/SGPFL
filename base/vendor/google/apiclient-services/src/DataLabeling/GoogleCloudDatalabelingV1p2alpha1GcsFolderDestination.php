@@ -20,16 +20,12 @@ namespace Google\Service\DataLabeling;
 class GoogleCloudDatalabelingV1p2alpha1GcsFolderDestination extends \Google\Model
 {
   /**
-   * Required. Cloud Storage directory to export data to.
-   *
    * @var string
    */
   public $outputFolderUri;
 
   /**
-   * Required. Cloud Storage directory to export data to.
-   *
-   * @param string $outputFolderUri
+   * @param string
    */
   public function setOutputFolderUri($outputFolderUri)
   {

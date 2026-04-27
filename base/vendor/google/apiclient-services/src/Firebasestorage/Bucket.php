@@ -20,16 +20,12 @@ namespace Google\Service\Firebasestorage;
 class Bucket extends \Google\Model
 {
   /**
-   * Output only. Resource name of the bucket.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Output only. Resource name of the bucket.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

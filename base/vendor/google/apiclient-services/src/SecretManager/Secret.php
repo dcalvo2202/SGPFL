@@ -21,55 +21,28 @@ class Secret extends \Google\Collection
 {
   protected $collection_key = 'topics';
   /**
-   * Optional. Custom metadata about the secret. Annotations are distinct from
-   * various forms of labels. Annotations exist to allow client tools to store
-   * their own state information without requiring a database. Annotation keys
-   * must be between 1 and 63 characters long, have a UTF-8 encoding of maximum
-   * 128 bytes, begin and end with an alphanumeric character ([a-z0-9A-Z]), and
-   * may have dashes (-), underscores (_), dots (.), and alphanumerics in
-   * between these symbols. The total size of annotation keys and values must be
-   * less than 16KiB.
-   *
    * @var string[]
    */
   public $annotations;
   /**
-   * Output only. The time at which the Secret was created.
-   *
    * @var string
    */
   public $createTime;
   protected $customerManagedEncryptionType = CustomerManagedEncryption::class;
   protected $customerManagedEncryptionDataType = '';
   /**
-   * Optional. Etag of the currently stored Secret.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Optional. Timestamp in UTC when the Secret is scheduled to expire. This is
-   * always provided on output, regardless of what was sent on input.
-   *
    * @var string
    */
   public $expireTime;
   /**
-   * The labels assigned to this Secret. Label keys must be between 1 and 63
-   * characters long, have a UTF-8 encoding of maximum 128 bytes, and must
-   * conform to the following PCRE regular expression: `\p{Ll}\p{Lo}{0,62}`
-   * Label values must be between 0 and 63 characters long, have a UTF-8
-   * encoding of maximum 128 bytes, and must conform to the following PCRE
-   * regular expression: `[\p{Ll}\p{Lo}\p{N}_-]{0,63}` No more than 64 labels
-   * can be assigned to a given resource.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Output only. The resource name of the Secret in the format
-   * `projects/secrets`.
-   *
    * @var string
    */
   public $name;
@@ -77,58 +50,23 @@ class Secret extends \Google\Collection
   protected $replicationDataType = '';
   protected $rotationType = Rotation::class;
   protected $rotationDataType = '';
-  /**
-   * Optional. Input only. Immutable. Mapping of Tag keys/values directly bound
-   * to this resource. For example: "123/environment": "production",
-   * "123/costCenter": "marketing" Tags are used to organize and group
-   * resources. Tags can be used to control policy evaluation for the resource.
-   *
-   * @var string[]
-   */
-  public $tags;
   protected $topicsType = Topic::class;
   protected $topicsDataType = 'array';
   /**
-   * Input only. The TTL for the Secret.
-   *
    * @var string
    */
   public $ttl;
   /**
-   * Optional. Mapping from version alias to version name. A version alias is a
-   * string with a maximum length of 63 characters and can contain uppercase and
-   * lowercase letters, numerals, and the hyphen (`-`) and underscore ('_')
-   * characters. An alias string must start with a letter and cannot be the
-   * string 'latest' or 'NEW'. No more than 50 aliases can be assigned to a
-   * given secret. Version-Alias pairs will be viewable via GetSecret and
-   * modifiable via UpdateSecret. Access by alias is only be supported on
-   * GetSecretVersion and AccessSecretVersion.
-   *
    * @var string[]
    */
   public $versionAliases;
   /**
-   * Optional. Secret Version TTL after destruction request This is a part of
-   * the Delayed secret version destroy feature. For secret with TTL>0, version
-   * destruction doesn't happen immediately on calling destroy instead the
-   * version goes to a disabled state and destruction happens after the TTL
-   * expires.
-   *
    * @var string
    */
   public $versionDestroyTtl;
 
   /**
-   * Optional. Custom metadata about the secret. Annotations are distinct from
-   * various forms of labels. Annotations exist to allow client tools to store
-   * their own state information without requiring a database. Annotation keys
-   * must be between 1 and 63 characters long, have a UTF-8 encoding of maximum
-   * 128 bytes, begin and end with an alphanumeric character ([a-z0-9A-Z]), and
-   * may have dashes (-), underscores (_), dots (.), and alphanumerics in
-   * between these symbols. The total size of annotation keys and values must be
-   * less than 16KiB.
-   *
-   * @param string[] $annotations
+   * @param string[]
    */
   public function setAnnotations($annotations)
   {
@@ -142,9 +80,7 @@ class Secret extends \Google\Collection
     return $this->annotations;
   }
   /**
-   * Output only. The time at which the Secret was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -158,13 +94,7 @@ class Secret extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Optional. The customer-managed encryption configuration of the regionalized
-   * secrets. If no configuration is provided, Google-managed default encryption
-   * is used. Updates to the Secret encryption configuration only apply to
-   * SecretVersions added afterwards. They do not apply retroactively to
-   * existing SecretVersions.
-   *
-   * @param CustomerManagedEncryption $customerManagedEncryption
+   * @param CustomerManagedEncryption
    */
   public function setCustomerManagedEncryption(CustomerManagedEncryption $customerManagedEncryption)
   {
@@ -178,9 +108,7 @@ class Secret extends \Google\Collection
     return $this->customerManagedEncryption;
   }
   /**
-   * Optional. Etag of the currently stored Secret.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -194,10 +122,7 @@ class Secret extends \Google\Collection
     return $this->etag;
   }
   /**
-   * Optional. Timestamp in UTC when the Secret is scheduled to expire. This is
-   * always provided on output, regardless of what was sent on input.
-   *
-   * @param string $expireTime
+   * @param string
    */
   public function setExpireTime($expireTime)
   {
@@ -211,15 +136,7 @@ class Secret extends \Google\Collection
     return $this->expireTime;
   }
   /**
-   * The labels assigned to this Secret. Label keys must be between 1 and 63
-   * characters long, have a UTF-8 encoding of maximum 128 bytes, and must
-   * conform to the following PCRE regular expression: `\p{Ll}\p{Lo}{0,62}`
-   * Label values must be between 0 and 63 characters long, have a UTF-8
-   * encoding of maximum 128 bytes, and must conform to the following PCRE
-   * regular expression: `[\p{Ll}\p{Lo}\p{N}_-]{0,63}` No more than 64 labels
-   * can be assigned to a given resource.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -233,10 +150,7 @@ class Secret extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Output only. The resource name of the Secret in the format
-   * `projects/secrets`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -250,11 +164,7 @@ class Secret extends \Google\Collection
     return $this->name;
   }
   /**
-   * Optional. Immutable. The replication policy of the secret data attached to
-   * the Secret. The replication policy cannot be changed after the Secret has
-   * been created.
-   *
-   * @param Replication $replication
+   * @param Replication
    */
   public function setReplication(Replication $replication)
   {
@@ -268,10 +178,7 @@ class Secret extends \Google\Collection
     return $this->replication;
   }
   /**
-   * Optional. Rotation policy attached to the Secret. May be excluded if there
-   * is no rotation policy.
-   *
-   * @param Rotation $rotation
+   * @param Rotation
    */
   public function setRotation(Rotation $rotation)
   {
@@ -285,29 +192,7 @@ class Secret extends \Google\Collection
     return $this->rotation;
   }
   /**
-   * Optional. Input only. Immutable. Mapping of Tag keys/values directly bound
-   * to this resource. For example: "123/environment": "production",
-   * "123/costCenter": "marketing" Tags are used to organize and group
-   * resources. Tags can be used to control policy evaluation for the resource.
-   *
-   * @param string[] $tags
-   */
-  public function setTags($tags)
-  {
-    $this->tags = $tags;
-  }
-  /**
-   * @return string[]
-   */
-  public function getTags()
-  {
-    return $this->tags;
-  }
-  /**
-   * Optional. A list of up to 10 Pub/Sub topics to which messages are published
-   * when control plane operations are called on the secret or its versions.
-   *
-   * @param Topic[] $topics
+   * @param Topic[]
    */
   public function setTopics($topics)
   {
@@ -321,9 +206,7 @@ class Secret extends \Google\Collection
     return $this->topics;
   }
   /**
-   * Input only. The TTL for the Secret.
-   *
-   * @param string $ttl
+   * @param string
    */
   public function setTtl($ttl)
   {
@@ -337,16 +220,7 @@ class Secret extends \Google\Collection
     return $this->ttl;
   }
   /**
-   * Optional. Mapping from version alias to version name. A version alias is a
-   * string with a maximum length of 63 characters and can contain uppercase and
-   * lowercase letters, numerals, and the hyphen (`-`) and underscore ('_')
-   * characters. An alias string must start with a letter and cannot be the
-   * string 'latest' or 'NEW'. No more than 50 aliases can be assigned to a
-   * given secret. Version-Alias pairs will be viewable via GetSecret and
-   * modifiable via UpdateSecret. Access by alias is only be supported on
-   * GetSecretVersion and AccessSecretVersion.
-   *
-   * @param string[] $versionAliases
+   * @param string[]
    */
   public function setVersionAliases($versionAliases)
   {
@@ -360,13 +234,7 @@ class Secret extends \Google\Collection
     return $this->versionAliases;
   }
   /**
-   * Optional. Secret Version TTL after destruction request This is a part of
-   * the Delayed secret version destroy feature. For secret with TTL>0, version
-   * destruction doesn't happen immediately on calling destroy instead the
-   * version goes to a disabled state and destruction happens after the TTL
-   * expires.
-   *
-   * @param string $versionDestroyTtl
+   * @param string
    */
   public function setVersionDestroyTtl($versionDestroyTtl)
   {

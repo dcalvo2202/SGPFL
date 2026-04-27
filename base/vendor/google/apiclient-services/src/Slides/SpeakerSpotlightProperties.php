@@ -25,9 +25,7 @@ class SpeakerSpotlightProperties extends \Google\Model
   protected $shadowDataType = '';
 
   /**
-   * The outline of the Speaker Spotlight. If not set, it has no outline.
-   *
-   * @param Outline $outline
+   * @param Outline
    */
   public function setOutline(Outline $outline)
   {
@@ -41,9 +39,7 @@ class SpeakerSpotlightProperties extends \Google\Model
     return $this->outline;
   }
   /**
-   * The shadow of the Speaker Spotlight. If not set, it has no shadow.
-   *
-   * @param Shadow $shadow
+   * @param Shadow
    */
   public function setShadow(Shadow $shadow)
   {

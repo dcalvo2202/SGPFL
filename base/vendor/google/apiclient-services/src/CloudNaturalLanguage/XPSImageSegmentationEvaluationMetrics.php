@@ -24,10 +24,7 @@ class XPSImageSegmentationEvaluationMetrics extends \Google\Collection
   protected $confidenceMetricsEntriesDataType = 'array';
 
   /**
-   * Metrics that have confidence thresholds. Precision-recall curve can be
-   * derived from it.
-   *
-   * @param XPSImageSegmentationEvaluationMetricsConfidenceMetricsEntry[] $confidenceMetricsEntries
+   * @param XPSImageSegmentationEvaluationMetricsConfidenceMetricsEntry[]
    */
   public function setConfidenceMetricsEntries($confidenceMetricsEntries)
   {

@@ -19,62 +19,32 @@ namespace Google\Service\FirebaseDynamicLinks;
 
 class ManagedShortLink extends \Google\Collection
 {
-  /**
-   * Visibility of the link is not specified.
-   */
-  public const VISIBILITY_UNSPECIFIED_VISIBILITY = 'UNSPECIFIED_VISIBILITY';
-  /**
-   * Link created in console and should be shown in console.
-   */
-  public const VISIBILITY_UNARCHIVED = 'UNARCHIVED';
-  /**
-   * Link created in console and should not be shown in console (but can be
-   * shown in the console again if it is unarchived).
-   */
-  public const VISIBILITY_ARCHIVED = 'ARCHIVED';
-  /**
-   * Link created outside of console and should never be shown in console.
-   */
-  public const VISIBILITY_NEVER_SHOWN = 'NEVER_SHOWN';
   protected $collection_key = 'flaggedAttribute';
   /**
-   * Creation timestamp of the short link.
-   *
    * @var string
    */
   public $creationTime;
   /**
-   * Attributes that have been flagged about this short url.
-   *
    * @var string[]
    */
   public $flaggedAttribute;
   protected $infoType = DynamicLinkInfo::class;
   protected $infoDataType = '';
   /**
-   * Short durable link url, for example, "https://sample.app.goo.gl/xyz123".
-   * Required.
-   *
    * @var string
    */
   public $link;
   /**
-   * Link name defined by the creator. Required.
-   *
    * @var string
    */
   public $linkName;
   /**
-   * Visibility status of link.
-   *
    * @var string
    */
   public $visibility;
 
   /**
-   * Creation timestamp of the short link.
-   *
-   * @param string $creationTime
+   * @param string
    */
   public function setCreationTime($creationTime)
   {
@@ -88,9 +58,7 @@ class ManagedShortLink extends \Google\Collection
     return $this->creationTime;
   }
   /**
-   * Attributes that have been flagged about this short url.
-   *
-   * @param string[] $flaggedAttribute
+   * @param string[]
    */
   public function setFlaggedAttribute($flaggedAttribute)
   {
@@ -104,9 +72,7 @@ class ManagedShortLink extends \Google\Collection
     return $this->flaggedAttribute;
   }
   /**
-   * Full Dyamic Link info
-   *
-   * @param DynamicLinkInfo $info
+   * @param DynamicLinkInfo
    */
   public function setInfo(DynamicLinkInfo $info)
   {
@@ -120,10 +86,7 @@ class ManagedShortLink extends \Google\Collection
     return $this->info;
   }
   /**
-   * Short durable link url, for example, "https://sample.app.goo.gl/xyz123".
-   * Required.
-   *
-   * @param string $link
+   * @param string
    */
   public function setLink($link)
   {
@@ -137,9 +100,7 @@ class ManagedShortLink extends \Google\Collection
     return $this->link;
   }
   /**
-   * Link name defined by the creator. Required.
-   *
-   * @param string $linkName
+   * @param string
    */
   public function setLinkName($linkName)
   {
@@ -153,18 +114,14 @@ class ManagedShortLink extends \Google\Collection
     return $this->linkName;
   }
   /**
-   * Visibility status of link.
-   *
-   * Accepted values: UNSPECIFIED_VISIBILITY, UNARCHIVED, ARCHIVED, NEVER_SHOWN
-   *
-   * @param self::VISIBILITY_* $visibility
+   * @param string
    */
   public function setVisibility($visibility)
   {
     $this->visibility = $visibility;
   }
   /**
-   * @return self::VISIBILITY_*
+   * @return string
    */
   public function getVisibility()
   {

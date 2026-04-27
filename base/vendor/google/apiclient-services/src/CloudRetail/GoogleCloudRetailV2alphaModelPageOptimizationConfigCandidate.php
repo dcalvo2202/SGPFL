@@ -20,22 +20,12 @@ namespace Google\Service\CloudRetail;
 class GoogleCloudRetailV2alphaModelPageOptimizationConfigCandidate extends \Google\Model
 {
   /**
-   * This has to be a valid ServingConfig identifier. For example, for a
-   * ServingConfig with full name: `projects/locations/global/catalogs/default_c
-   * atalog/servingConfigs/my_candidate_config`, this would be
-   * `my_candidate_config`.
-   *
    * @var string
    */
   public $servingConfigId;
 
   /**
-   * This has to be a valid ServingConfig identifier. For example, for a
-   * ServingConfig with full name: `projects/locations/global/catalogs/default_c
-   * atalog/servingConfigs/my_candidate_config`, this would be
-   * `my_candidate_config`.
-   *
-   * @param string $servingConfigId
+   * @param string
    */
   public function setServingConfigId($servingConfigId)
   {

@@ -23,17 +23,12 @@ class GoogleCloudContactcenterinsightsV1ListAssessmentRulesResponse extends \Goo
   protected $assessmentRulesType = GoogleCloudContactcenterinsightsV1AssessmentRule::class;
   protected $assessmentRulesDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The assessment rules that match the request.
-   *
-   * @param GoogleCloudContactcenterinsightsV1AssessmentRule[] $assessmentRules
+   * @param GoogleCloudContactcenterinsightsV1AssessmentRule[]
    */
   public function setAssessmentRules($assessmentRules)
   {
@@ -47,10 +42,7 @@ class GoogleCloudContactcenterinsightsV1ListAssessmentRulesResponse extends \Goo
     return $this->assessmentRules;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

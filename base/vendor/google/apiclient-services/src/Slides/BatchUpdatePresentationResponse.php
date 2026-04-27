@@ -21,8 +21,6 @@ class BatchUpdatePresentationResponse extends \Google\Collection
 {
   protected $collection_key = 'replies';
   /**
-   * The presentation the updates were applied to.
-   *
    * @var string
    */
   public $presentationId;
@@ -32,9 +30,7 @@ class BatchUpdatePresentationResponse extends \Google\Collection
   protected $writeControlDataType = '';
 
   /**
-   * The presentation the updates were applied to.
-   *
-   * @param string $presentationId
+   * @param string
    */
   public function setPresentationId($presentationId)
   {
@@ -48,10 +44,7 @@ class BatchUpdatePresentationResponse extends \Google\Collection
     return $this->presentationId;
   }
   /**
-   * The reply of the updates. This maps 1:1 with the updates, although replies
-   * to some requests may be empty.
-   *
-   * @param Response[] $replies
+   * @param Response[]
    */
   public function setReplies($replies)
   {
@@ -65,9 +58,7 @@ class BatchUpdatePresentationResponse extends \Google\Collection
     return $this->replies;
   }
   /**
-   * The updated write control after applying the request.
-   *
-   * @param WriteControl $writeControl
+   * @param WriteControl
    */
   public function setWriteControl(WriteControl $writeControl)
   {

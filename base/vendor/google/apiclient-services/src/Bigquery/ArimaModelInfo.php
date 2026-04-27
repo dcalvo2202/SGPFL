@@ -25,62 +25,38 @@ class ArimaModelInfo extends \Google\Collection
   protected $arimaFittingMetricsType = ArimaFittingMetrics::class;
   protected $arimaFittingMetricsDataType = '';
   /**
-   * Whether Arima model fitted with drift or not. It is always false when d is
-   * not 1.
-   *
    * @var bool
    */
   public $hasDrift;
   /**
-   * If true, holiday_effect is a part of time series decomposition result.
-   *
    * @var bool
    */
   public $hasHolidayEffect;
   /**
-   * If true, spikes_and_dips is a part of time series decomposition result.
-   *
    * @var bool
    */
   public $hasSpikesAndDips;
   /**
-   * If true, step_changes is a part of time series decomposition result.
-   *
    * @var bool
    */
   public $hasStepChanges;
   protected $nonSeasonalOrderType = ArimaOrder::class;
   protected $nonSeasonalOrderDataType = '';
   /**
-   * Seasonal periods. Repeated because multiple periods are supported for one
-   * time series.
-   *
    * @var string[]
    */
   public $seasonalPeriods;
   /**
-   * The time_series_id value for this time series. It will be one of the unique
-   * values from the time_series_id_column specified during ARIMA model
-   * training. Only present when time_series_id_column training option was used.
-   *
    * @var string
    */
   public $timeSeriesId;
   /**
-   * The tuple of time_series_ids identifying this time series. It will be one
-   * of the unique tuples of values present in the time_series_id_columns
-   * specified during ARIMA model training. Only present when
-   * time_series_id_columns training option was used and the order of values
-   * here are same as the order of time_series_id_columns.
-   *
    * @var string[]
    */
   public $timeSeriesIds;
 
   /**
-   * Arima coefficients.
-   *
-   * @param ArimaCoefficients $arimaCoefficients
+   * @param ArimaCoefficients
    */
   public function setArimaCoefficients(ArimaCoefficients $arimaCoefficients)
   {
@@ -94,9 +70,7 @@ class ArimaModelInfo extends \Google\Collection
     return $this->arimaCoefficients;
   }
   /**
-   * Arima fitting metrics.
-   *
-   * @param ArimaFittingMetrics $arimaFittingMetrics
+   * @param ArimaFittingMetrics
    */
   public function setArimaFittingMetrics(ArimaFittingMetrics $arimaFittingMetrics)
   {
@@ -110,10 +84,7 @@ class ArimaModelInfo extends \Google\Collection
     return $this->arimaFittingMetrics;
   }
   /**
-   * Whether Arima model fitted with drift or not. It is always false when d is
-   * not 1.
-   *
-   * @param bool $hasDrift
+   * @param bool
    */
   public function setHasDrift($hasDrift)
   {
@@ -127,9 +98,7 @@ class ArimaModelInfo extends \Google\Collection
     return $this->hasDrift;
   }
   /**
-   * If true, holiday_effect is a part of time series decomposition result.
-   *
-   * @param bool $hasHolidayEffect
+   * @param bool
    */
   public function setHasHolidayEffect($hasHolidayEffect)
   {
@@ -143,9 +112,7 @@ class ArimaModelInfo extends \Google\Collection
     return $this->hasHolidayEffect;
   }
   /**
-   * If true, spikes_and_dips is a part of time series decomposition result.
-   *
-   * @param bool $hasSpikesAndDips
+   * @param bool
    */
   public function setHasSpikesAndDips($hasSpikesAndDips)
   {
@@ -159,9 +126,7 @@ class ArimaModelInfo extends \Google\Collection
     return $this->hasSpikesAndDips;
   }
   /**
-   * If true, step_changes is a part of time series decomposition result.
-   *
-   * @param bool $hasStepChanges
+   * @param bool
    */
   public function setHasStepChanges($hasStepChanges)
   {
@@ -175,9 +140,7 @@ class ArimaModelInfo extends \Google\Collection
     return $this->hasStepChanges;
   }
   /**
-   * Non-seasonal order.
-   *
-   * @param ArimaOrder $nonSeasonalOrder
+   * @param ArimaOrder
    */
   public function setNonSeasonalOrder(ArimaOrder $nonSeasonalOrder)
   {
@@ -191,10 +154,7 @@ class ArimaModelInfo extends \Google\Collection
     return $this->nonSeasonalOrder;
   }
   /**
-   * Seasonal periods. Repeated because multiple periods are supported for one
-   * time series.
-   *
-   * @param string[] $seasonalPeriods
+   * @param string[]
    */
   public function setSeasonalPeriods($seasonalPeriods)
   {
@@ -208,11 +168,7 @@ class ArimaModelInfo extends \Google\Collection
     return $this->seasonalPeriods;
   }
   /**
-   * The time_series_id value for this time series. It will be one of the unique
-   * values from the time_series_id_column specified during ARIMA model
-   * training. Only present when time_series_id_column training option was used.
-   *
-   * @param string $timeSeriesId
+   * @param string
    */
   public function setTimeSeriesId($timeSeriesId)
   {
@@ -226,13 +182,7 @@ class ArimaModelInfo extends \Google\Collection
     return $this->timeSeriesId;
   }
   /**
-   * The tuple of time_series_ids identifying this time series. It will be one
-   * of the unique tuples of values present in the time_series_id_columns
-   * specified during ARIMA model training. Only present when
-   * time_series_id_columns training option was used and the order of values
-   * here are same as the order of time_series_id_columns.
-   *
-   * @param string[] $timeSeriesIds
+   * @param string[]
    */
   public function setTimeSeriesIds($timeSeriesIds)
   {

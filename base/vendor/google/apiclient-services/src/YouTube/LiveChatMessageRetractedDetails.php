@@ -25,7 +25,7 @@ class LiveChatMessageRetractedDetails extends \Google\Model
   public $retractedMessageId;
 
   /**
-   * @param string $retractedMessageId
+   * @param string
    */
   public function setRetractedMessageId($retractedMessageId)
   {

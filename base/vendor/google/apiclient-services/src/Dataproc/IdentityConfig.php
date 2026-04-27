@@ -20,16 +20,12 @@ namespace Google\Service\Dataproc;
 class IdentityConfig extends \Google\Model
 {
   /**
-   * Required. Map of user to service account.
-   *
    * @var string[]
    */
   public $userServiceAccountMapping;
 
   /**
-   * Required. Map of user to service account.
-   *
-   * @param string[] $userServiceAccountMapping
+   * @param string[]
    */
   public function setUserServiceAccountMapping($userServiceAccountMapping)
   {

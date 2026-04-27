@@ -38,9 +38,13 @@ use Google\Service\Dialogflow\GoogleProtobufEmpty;
 class ProjectsLocationsAgents extends \Google\Service\Resource
 {
   /**
+   * Creates an agent in the specified location. Note: You should always train
+   * flows prior to sending them queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    * (agents.create)
    *
-   * @param string $parent
+   * @param string $parent Required. The location to create a agent for. Format:
+   * `projects//locations/`.
    * @param GoogleCloudDialogflowCxV3Agent $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudDialogflowCxV3Agent
@@ -53,9 +57,10 @@ class ProjectsLocationsAgents extends \Google\Service\Resource
     return $this->call('create', [$params], GoogleCloudDialogflowCxV3Agent::class);
   }
   /**
-   * (agents.delete)
+   * Deletes the specified agent. (agents.delete)
    *
-   * @param string $name
+   * @param string $name Required. The name of the agent to delete. Format:
+   * `projects//locations//agents/`.
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
    * @throws \Google\Service\Exception
@@ -67,9 +72,16 @@ class ProjectsLocationsAgents extends \Google\Service\Resource
     return $this->call('delete', [$params], GoogleProtobufEmpty::class);
   }
   /**
-   * (agents.export)
+   * Exports the specified agent to a binary file. This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-
+   * operation). The returned `Operation` type has the following method-specific
+   * fields: - `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-
+   * buffers/docs/reference/google.protobuf#struct) - `response`:
+   * ExportAgentResponse (agents.export)
    *
-   * @param string $name
+   * @param string $name Required. The name of the agent to export. Format:
+   * `projects//locations//agents/`.
    * @param GoogleCloudDialogflowCxV3ExportAgentRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
@@ -82,9 +94,10 @@ class ProjectsLocationsAgents extends \Google\Service\Resource
     return $this->call('export', [$params], GoogleLongrunningOperation::class);
   }
   /**
-   * (agents.get)
+   * Retrieves the specified agent. (agents.get)
    *
-   * @param string $name
+   * @param string $name Required. The name of the agent. Format:
+   * `projects//locations//agents/`.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudDialogflowCxV3Agent
    * @throws \Google\Service\Exception
@@ -96,12 +109,14 @@ class ProjectsLocationsAgents extends \Google\Service\Resource
     return $this->call('get', [$params], GoogleCloudDialogflowCxV3Agent::class);
   }
   /**
-   * (agents.getGenerativeSettings)
+   * Gets the generative settings for the agent. (agents.getGenerativeSettings)
    *
-   * @param string $name
+   * @param string $name Required. Format:
+   * `projects//locations//agents//generativeSettings`.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string languageCode
+   * @opt_param string languageCode Required. Language code of the generative
+   * settings.
    * @return GoogleCloudDialogflowCxV3GenerativeSettings
    * @throws \Google\Service\Exception
    */
@@ -112,12 +127,15 @@ class ProjectsLocationsAgents extends \Google\Service\Resource
     return $this->call('getGenerativeSettings', [$params], GoogleCloudDialogflowCxV3GenerativeSettings::class);
   }
   /**
-   * (agents.getValidationResult)
+   * Gets the latest agent validation result. Agent validation is performed when
+   * ValidateAgent is called. (agents.getValidationResult)
    *
-   * @param string $name
+   * @param string $name Required. The agent name. Format:
+   * `projects//locations//agents//validationResult`.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string languageCode
+   * @opt_param string languageCode If not specified, the agent's default language
+   * is used.
    * @return GoogleCloudDialogflowCxV3AgentValidationResult
    * @throws \Google\Service\Exception
    */
@@ -128,13 +146,17 @@ class ProjectsLocationsAgents extends \Google\Service\Resource
     return $this->call('getValidationResult', [$params], GoogleCloudDialogflowCxV3AgentValidationResult::class);
   }
   /**
+   * Returns the list of all agents in the specified location.
    * (agents.listProjectsLocationsAgents)
    *
-   * @param string $parent
+   * @param string $parent Required. The location to list all agents for. Format:
+   * `projects//locations/`.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param int pageSize
-   * @opt_param string pageToken
+   * @opt_param int pageSize The maximum number of items to return in a single
+   * page. By default 100 and at most 1000.
+   * @opt_param string pageToken The next_page_token value returned from a
+   * previous list request.
    * @return GoogleCloudDialogflowCxV3ListAgentsResponse
    * @throws \Google\Service\Exception
    */
@@ -145,13 +167,19 @@ class ProjectsLocationsAgents extends \Google\Service\Resource
     return $this->call('list', [$params], GoogleCloudDialogflowCxV3ListAgentsResponse::class);
   }
   /**
+   * Updates the specified agent. Note: You should always train flows prior to
+   * sending them queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    * (agents.patch)
    *
-   * @param string $name
+   * @param string $name The unique identifier of the agent. Required for the
+   * Agents.UpdateAgent method. Agents.CreateAgent populates the name
+   * automatically. Format: `projects//locations//agents/`.
    * @param GoogleCloudDialogflowCxV3Agent $postBody
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string updateMask
+   * @opt_param string updateMask The mask to control which fields get updated. If
+   * the mask is not present, all fields will be updated.
    * @return GoogleCloudDialogflowCxV3Agent
    * @throws \Google\Service\Exception
    */
@@ -162,9 +190,22 @@ class ProjectsLocationsAgents extends \Google\Service\Resource
     return $this->call('patch', [$params], GoogleCloudDialogflowCxV3Agent::class);
   }
   /**
+   * Restores the specified agent from a binary file. Replaces the current agent
+   * with a new one. Note that all existing resources in agent (e.g. intents,
+   * entity types, flows) will be removed. This method is a [long-running
+   * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-
+   * operation). The returned `Operation` type has the following method-specific
+   * fields: - `metadata`: An empty [Struct
+   * message](https://developers.google.com/protocol-
+   * buffers/docs/reference/google.protobuf#struct) - `response`: An [Empty
+   * message](https://developers.google.com/protocol-
+   * buffers/docs/reference/google.protobuf#empty) Note: You should always train
+   * flows prior to sending them queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    * (agents.restore)
    *
-   * @param string $name
+   * @param string $name Required. The name of the agent to restore into. Format:
+   * `projects//locations//agents/`.
    * @param GoogleCloudDialogflowCxV3RestoreAgentRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleLongrunningOperation
@@ -177,13 +218,16 @@ class ProjectsLocationsAgents extends \Google\Service\Resource
     return $this->call('restore', [$params], GoogleLongrunningOperation::class);
   }
   /**
+   * Updates the generative settings for the agent.
    * (agents.updateGenerativeSettings)
    *
-   * @param string $name
+   * @param string $name Format:
+   * `projects//locations//agents//generativeSettings`.
    * @param GoogleCloudDialogflowCxV3GenerativeSettings $postBody
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string updateMask
+   * @opt_param string updateMask Optional. The mask to control which fields get
+   * updated. If the mask is not present, all fields will be updated.
    * @return GoogleCloudDialogflowCxV3GenerativeSettings
    * @throws \Google\Service\Exception
    */
@@ -194,9 +238,12 @@ class ProjectsLocationsAgents extends \Google\Service\Resource
     return $this->call('updateGenerativeSettings', [$params], GoogleCloudDialogflowCxV3GenerativeSettings::class);
   }
   /**
-   * (agents.validate)
+   * Validates the specified agent and creates or updates validation results. The
+   * agent in draft version is validated. Please call this API after the training
+   * is completed to get the complete validation results. (agents.validate)
    *
-   * @param string $name
+   * @param string $name Required. The agent to validate. Format:
+   * `projects//locations//agents/`.
    * @param GoogleCloudDialogflowCxV3ValidateAgentRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudDialogflowCxV3AgentValidationResult

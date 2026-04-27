@@ -20,41 +20,19 @@ namespace Google\Service\Datastore;
 class GoogleDatastoreAdminV1MigrationStateEvent extends \Google\Model
 {
   /**
-   * Unspecified.
-   */
-  public const STATE_MIGRATION_STATE_UNSPECIFIED = 'MIGRATION_STATE_UNSPECIFIED';
-  /**
-   * The migration is running.
-   */
-  public const STATE_RUNNING = 'RUNNING';
-  /**
-   * The migration is paused.
-   */
-  public const STATE_PAUSED = 'PAUSED';
-  /**
-   * The migration is complete.
-   */
-  public const STATE_COMPLETE = 'COMPLETE';
-  /**
-   * The new state of the migration.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * The new state of the migration.
-   *
-   * Accepted values: MIGRATION_STATE_UNSPECIFIED, RUNNING, PAUSED, COMPLETE
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

@@ -21,30 +21,20 @@ class GoogleCloudChannelV1ListSubscribersResponse extends \Google\Collection
 {
   protected $collection_key = 'serviceAccounts';
   /**
-   * A token that can be sent as `page_token` to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * List of service accounts which have subscriber access to the topic.
-   *
    * @var string[]
    */
   public $serviceAccounts;
   /**
-   * Name of the topic registered with the reseller.
-   *
    * @var string
    */
   public $topic;
 
   /**
-   * A token that can be sent as `page_token` to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -58,9 +48,7 @@ class GoogleCloudChannelV1ListSubscribersResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * List of service accounts which have subscriber access to the topic.
-   *
-   * @param string[] $serviceAccounts
+   * @param string[]
    */
   public function setServiceAccounts($serviceAccounts)
   {
@@ -74,9 +62,7 @@ class GoogleCloudChannelV1ListSubscribersResponse extends \Google\Collection
     return $this->serviceAccounts;
   }
   /**
-   * Name of the topic registered with the reseller.
-   *
-   * @param string $topic
+   * @param string
    */
   public function setTopic($topic)
   {

@@ -57,7 +57,7 @@ class StageAttemptTasksSummary extends \Google\Model
   public $stageId;
 
   /**
-   * @param string $applicationId
+   * @param string
    */
   public function setApplicationId($applicationId)
   {
@@ -71,7 +71,7 @@ class StageAttemptTasksSummary extends \Google\Model
     return $this->applicationId;
   }
   /**
-   * @param int $numFailedTasks
+   * @param int
    */
   public function setNumFailedTasks($numFailedTasks)
   {
@@ -85,7 +85,7 @@ class StageAttemptTasksSummary extends \Google\Model
     return $this->numFailedTasks;
   }
   /**
-   * @param int $numKilledTasks
+   * @param int
    */
   public function setNumKilledTasks($numKilledTasks)
   {
@@ -99,7 +99,7 @@ class StageAttemptTasksSummary extends \Google\Model
     return $this->numKilledTasks;
   }
   /**
-   * @param int $numPendingTasks
+   * @param int
    */
   public function setNumPendingTasks($numPendingTasks)
   {
@@ -113,7 +113,7 @@ class StageAttemptTasksSummary extends \Google\Model
     return $this->numPendingTasks;
   }
   /**
-   * @param int $numRunningTasks
+   * @param int
    */
   public function setNumRunningTasks($numRunningTasks)
   {
@@ -127,7 +127,7 @@ class StageAttemptTasksSummary extends \Google\Model
     return $this->numRunningTasks;
   }
   /**
-   * @param int $numSuccessTasks
+   * @param int
    */
   public function setNumSuccessTasks($numSuccessTasks)
   {
@@ -141,7 +141,7 @@ class StageAttemptTasksSummary extends \Google\Model
     return $this->numSuccessTasks;
   }
   /**
-   * @param int $numTasks
+   * @param int
    */
   public function setNumTasks($numTasks)
   {
@@ -155,7 +155,7 @@ class StageAttemptTasksSummary extends \Google\Model
     return $this->numTasks;
   }
   /**
-   * @param int $stageAttemptId
+   * @param int
    */
   public function setStageAttemptId($stageAttemptId)
   {
@@ -169,7 +169,7 @@ class StageAttemptTasksSummary extends \Google\Model
     return $this->stageAttemptId;
   }
   /**
-   * @param string $stageId
+   * @param string
    */
   public function setStageId($stageId)
   {

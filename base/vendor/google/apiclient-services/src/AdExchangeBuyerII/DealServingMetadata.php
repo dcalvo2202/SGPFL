@@ -23,9 +23,7 @@ class DealServingMetadata extends \Google\Model
   protected $dealPauseStatusDataType = '';
 
   /**
-   * Output only. Tracks which parties (if any) have paused a deal.
-   *
-   * @param DealPauseStatus $dealPauseStatus
+   * @param DealPauseStatus
    */
   public function setDealPauseStatus(DealPauseStatus $dealPauseStatus)
   {

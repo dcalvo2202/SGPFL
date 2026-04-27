@@ -20,36 +20,24 @@ namespace Google\Service\ToolResults;
 class Thumbnail extends \Google\Model
 {
   /**
-   * The thumbnail's content type, i.e. "image/png". Always set.
-   *
    * @var string
    */
   public $contentType;
   /**
-   * The thumbnail file itself. That is, the bytes here are precisely the bytes
-   * that make up the thumbnail file; they can be served as an image as-is (with
-   * the appropriate content type.) Always set.
-   *
    * @var string
    */
   public $data;
   /**
-   * The height of the thumbnail, in pixels. Always set.
-   *
    * @var int
    */
   public $heightPx;
   /**
-   * The width of the thumbnail, in pixels. Always set.
-   *
    * @var int
    */
   public $widthPx;
 
   /**
-   * The thumbnail's content type, i.e. "image/png". Always set.
-   *
-   * @param string $contentType
+   * @param string
    */
   public function setContentType($contentType)
   {
@@ -63,11 +51,7 @@ class Thumbnail extends \Google\Model
     return $this->contentType;
   }
   /**
-   * The thumbnail file itself. That is, the bytes here are precisely the bytes
-   * that make up the thumbnail file; they can be served as an image as-is (with
-   * the appropriate content type.) Always set.
-   *
-   * @param string $data
+   * @param string
    */
   public function setData($data)
   {
@@ -81,9 +65,7 @@ class Thumbnail extends \Google\Model
     return $this->data;
   }
   /**
-   * The height of the thumbnail, in pixels. Always set.
-   *
-   * @param int $heightPx
+   * @param int
    */
   public function setHeightPx($heightPx)
   {
@@ -97,9 +79,7 @@ class Thumbnail extends \Google\Model
     return $this->heightPx;
   }
   /**
-   * The width of the thumbnail, in pixels. Always set.
-   *
-   * @param int $widthPx
+   * @param int
    */
   public function setWidthPx($widthPx)
   {

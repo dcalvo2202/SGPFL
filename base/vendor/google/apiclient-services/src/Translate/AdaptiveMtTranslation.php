@@ -20,16 +20,12 @@ namespace Google\Service\Translate;
 class AdaptiveMtTranslation extends \Google\Model
 {
   /**
-   * Output only. The translated text.
-   *
    * @var string
    */
   public $translatedText;
 
   /**
-   * Output only. The translated text.
-   *
-   * @param string $translatedText
+   * @param string
    */
   public function setTranslatedText($translatedText)
   {

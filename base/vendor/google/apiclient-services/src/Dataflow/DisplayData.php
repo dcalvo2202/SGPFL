@@ -20,90 +20,56 @@ namespace Google\Service\Dataflow;
 class DisplayData extends \Google\Model
 {
   /**
-   * Contains value if the data is of a boolean type.
-   *
    * @var bool
    */
   public $boolValue;
   /**
-   * Contains value if the data is of duration type.
-   *
    * @var string
    */
   public $durationValue;
   /**
-   * Contains value if the data is of float type.
-   *
    * @var float
    */
   public $floatValue;
   /**
-   * Contains value if the data is of int64 type.
-   *
    * @var string
    */
   public $int64Value;
   /**
-   * Contains value if the data is of java class type.
-   *
    * @var string
    */
   public $javaClassValue;
   /**
-   * The key identifying the display data. This is intended to be used as a
-   * label for the display data when viewed in a dax monitoring system.
-   *
    * @var string
    */
   public $key;
   /**
-   * An optional label to display in a dax UI for the element.
-   *
    * @var string
    */
   public $label;
   /**
-   * The namespace for the key. This is usually a class name or programming
-   * language namespace (i.e. python module) which defines the display data.
-   * This allows a dax monitoring system to specially handle the data and
-   * perform custom rendering.
-   *
    * @var string
    */
   public $namespace;
   /**
-   * A possible additional shorter value to display. For example a
-   * java_class_name_value of com.mypackage.MyDoFn will be stored with MyDoFn as
-   * the short_str_value and com.mypackage.MyDoFn as the java_class_name value.
-   * short_str_value can be displayed and java_class_name_value will be
-   * displayed as a tooltip.
-   *
    * @var string
    */
   public $shortStrValue;
   /**
-   * Contains value if the data is of string type.
-   *
    * @var string
    */
   public $strValue;
   /**
-   * Contains value if the data is of timestamp type.
-   *
    * @var string
    */
   public $timestampValue;
   /**
-   * An optional full URL.
-   *
    * @var string
    */
   public $url;
 
   /**
-   * Contains value if the data is of a boolean type.
-   *
-   * @param bool $boolValue
+   * @param bool
    */
   public function setBoolValue($boolValue)
   {
@@ -117,9 +83,7 @@ class DisplayData extends \Google\Model
     return $this->boolValue;
   }
   /**
-   * Contains value if the data is of duration type.
-   *
-   * @param string $durationValue
+   * @param string
    */
   public function setDurationValue($durationValue)
   {
@@ -133,9 +97,7 @@ class DisplayData extends \Google\Model
     return $this->durationValue;
   }
   /**
-   * Contains value if the data is of float type.
-   *
-   * @param float $floatValue
+   * @param float
    */
   public function setFloatValue($floatValue)
   {
@@ -149,9 +111,7 @@ class DisplayData extends \Google\Model
     return $this->floatValue;
   }
   /**
-   * Contains value if the data is of int64 type.
-   *
-   * @param string $int64Value
+   * @param string
    */
   public function setInt64Value($int64Value)
   {
@@ -165,9 +125,7 @@ class DisplayData extends \Google\Model
     return $this->int64Value;
   }
   /**
-   * Contains value if the data is of java class type.
-   *
-   * @param string $javaClassValue
+   * @param string
    */
   public function setJavaClassValue($javaClassValue)
   {
@@ -181,10 +139,7 @@ class DisplayData extends \Google\Model
     return $this->javaClassValue;
   }
   /**
-   * The key identifying the display data. This is intended to be used as a
-   * label for the display data when viewed in a dax monitoring system.
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {
@@ -198,9 +153,7 @@ class DisplayData extends \Google\Model
     return $this->key;
   }
   /**
-   * An optional label to display in a dax UI for the element.
-   *
-   * @param string $label
+   * @param string
    */
   public function setLabel($label)
   {
@@ -214,12 +167,7 @@ class DisplayData extends \Google\Model
     return $this->label;
   }
   /**
-   * The namespace for the key. This is usually a class name or programming
-   * language namespace (i.e. python module) which defines the display data.
-   * This allows a dax monitoring system to specially handle the data and
-   * perform custom rendering.
-   *
-   * @param string $namespace
+   * @param string
    */
   public function setNamespace($namespace)
   {
@@ -233,13 +181,7 @@ class DisplayData extends \Google\Model
     return $this->namespace;
   }
   /**
-   * A possible additional shorter value to display. For example a
-   * java_class_name_value of com.mypackage.MyDoFn will be stored with MyDoFn as
-   * the short_str_value and com.mypackage.MyDoFn as the java_class_name value.
-   * short_str_value can be displayed and java_class_name_value will be
-   * displayed as a tooltip.
-   *
-   * @param string $shortStrValue
+   * @param string
    */
   public function setShortStrValue($shortStrValue)
   {
@@ -253,9 +195,7 @@ class DisplayData extends \Google\Model
     return $this->shortStrValue;
   }
   /**
-   * Contains value if the data is of string type.
-   *
-   * @param string $strValue
+   * @param string
    */
   public function setStrValue($strValue)
   {
@@ -269,9 +209,7 @@ class DisplayData extends \Google\Model
     return $this->strValue;
   }
   /**
-   * Contains value if the data is of timestamp type.
-   *
-   * @param string $timestampValue
+   * @param string
    */
   public function setTimestampValue($timestampValue)
   {
@@ -285,9 +223,7 @@ class DisplayData extends \Google\Model
     return $this->timestampValue;
   }
   /**
-   * An optional full URL.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

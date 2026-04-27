@@ -20,34 +20,24 @@ namespace Google\Service\DataCatalog;
 class GoogleCloudDatacatalogV1CloudBigtableInstanceSpecCloudBigtableClusterSpec extends \Google\Model
 {
   /**
-   * Name of the cluster.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * A link back to the parent resource, in this case Instance.
-   *
    * @var string
    */
   public $linkedResource;
   /**
-   * Location of the cluster, typically a Cloud zone.
-   *
    * @var string
    */
   public $location;
   /**
-   * Type of the resource. For a cluster this would be "CLUSTER".
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Name of the cluster.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -61,9 +51,7 @@ class GoogleCloudDatacatalogV1CloudBigtableInstanceSpecCloudBigtableClusterSpec 
     return $this->displayName;
   }
   /**
-   * A link back to the parent resource, in this case Instance.
-   *
-   * @param string $linkedResource
+   * @param string
    */
   public function setLinkedResource($linkedResource)
   {
@@ -77,9 +65,7 @@ class GoogleCloudDatacatalogV1CloudBigtableInstanceSpecCloudBigtableClusterSpec 
     return $this->linkedResource;
   }
   /**
-   * Location of the cluster, typically a Cloud zone.
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -93,9 +79,7 @@ class GoogleCloudDatacatalogV1CloudBigtableInstanceSpecCloudBigtableClusterSpec 
     return $this->location;
   }
   /**
-   * Type of the resource. For a cluster this would be "CLUSTER".
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

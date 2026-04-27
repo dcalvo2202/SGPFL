@@ -20,78 +20,32 @@ namespace Google\Service\Container;
 class UpgradeDetails extends \Google\Model
 {
   /**
-   * Upgrade start type is unspecified.
-   */
-  public const START_TYPE_START_TYPE_UNSPECIFIED = 'START_TYPE_UNSPECIFIED';
-  /**
-   * Upgrade started automatically.
-   */
-  public const START_TYPE_AUTOMATIC = 'AUTOMATIC';
-  /**
-   * Upgrade started manually.
-   */
-  public const START_TYPE_MANUAL = 'MANUAL';
-  /**
-   * Upgrade state is unknown.
-   */
-  public const STATE_UNKNOWN = 'UNKNOWN';
-  /**
-   * Upgrade has failed with an error.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * Upgrade has succeeded.
-   */
-  public const STATE_SUCCEEDED = 'SUCCEEDED';
-  /**
-   * Upgrade has been canceled.
-   */
-  public const STATE_CANCELED = 'CANCELED';
-  /**
-   * Upgrade is running.
-   */
-  public const STATE_RUNNING = 'RUNNING';
-  /**
-   * The end timestamp of the upgrade.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * The version before the upgrade.
-   *
    * @var string
    */
   public $initialVersion;
   /**
-   * The start timestamp of the upgrade.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * The start type of the upgrade.
-   *
    * @var string
    */
   public $startType;
   /**
-   * Output only. The state of the upgrade.
-   *
    * @var string
    */
   public $state;
   /**
-   * The version after the upgrade.
-   *
    * @var string
    */
   public $targetVersion;
 
   /**
-   * The end timestamp of the upgrade.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -105,9 +59,7 @@ class UpgradeDetails extends \Google\Model
     return $this->endTime;
   }
   /**
-   * The version before the upgrade.
-   *
-   * @param string $initialVersion
+   * @param string
    */
   public function setInitialVersion($initialVersion)
   {
@@ -121,9 +73,7 @@ class UpgradeDetails extends \Google\Model
     return $this->initialVersion;
   }
   /**
-   * The start timestamp of the upgrade.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -137,45 +87,35 @@ class UpgradeDetails extends \Google\Model
     return $this->startTime;
   }
   /**
-   * The start type of the upgrade.
-   *
-   * Accepted values: START_TYPE_UNSPECIFIED, AUTOMATIC, MANUAL
-   *
-   * @param self::START_TYPE_* $startType
+   * @param string
    */
   public function setStartType($startType)
   {
     $this->startType = $startType;
   }
   /**
-   * @return self::START_TYPE_*
+   * @return string
    */
   public function getStartType()
   {
     return $this->startType;
   }
   /**
-   * Output only. The state of the upgrade.
-   *
-   * Accepted values: UNKNOWN, FAILED, SUCCEEDED, CANCELED, RUNNING
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * The version after the upgrade.
-   *
-   * @param string $targetVersion
+   * @param string
    */
   public function setTargetVersion($targetVersion)
   {

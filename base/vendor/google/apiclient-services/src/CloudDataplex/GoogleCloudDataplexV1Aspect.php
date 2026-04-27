@@ -22,41 +22,28 @@ class GoogleCloudDataplexV1Aspect extends \Google\Model
   protected $aspectSourceType = GoogleCloudDataplexV1AspectSource::class;
   protected $aspectSourceDataType = '';
   /**
-   * Output only. The resource name of the type used to create this Aspect.
-   *
    * @var string
    */
   public $aspectType;
   /**
-   * Output only. The time when the Aspect was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Required. The content of the aspect, according to its aspect type schema.
-   * The maximum size of the field is 120KB (encoded as UTF-8).
-   *
    * @var array[]
    */
   public $data;
   /**
-   * Output only. The path in the entry under which the aspect is attached.
-   *
    * @var string
    */
   public $path;
   /**
-   * Output only. The time when the Aspect was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Optional. Information related to the source system of the aspect.
-   *
-   * @param GoogleCloudDataplexV1AspectSource $aspectSource
+   * @param GoogleCloudDataplexV1AspectSource
    */
   public function setAspectSource(GoogleCloudDataplexV1AspectSource $aspectSource)
   {
@@ -70,9 +57,7 @@ class GoogleCloudDataplexV1Aspect extends \Google\Model
     return $this->aspectSource;
   }
   /**
-   * Output only. The resource name of the type used to create this Aspect.
-   *
-   * @param string $aspectType
+   * @param string
    */
   public function setAspectType($aspectType)
   {
@@ -86,9 +71,7 @@ class GoogleCloudDataplexV1Aspect extends \Google\Model
     return $this->aspectType;
   }
   /**
-   * Output only. The time when the Aspect was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -102,10 +85,7 @@ class GoogleCloudDataplexV1Aspect extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Required. The content of the aspect, according to its aspect type schema.
-   * The maximum size of the field is 120KB (encoded as UTF-8).
-   *
-   * @param array[] $data
+   * @param array[]
    */
   public function setData($data)
   {
@@ -119,9 +99,7 @@ class GoogleCloudDataplexV1Aspect extends \Google\Model
     return $this->data;
   }
   /**
-   * Output only. The path in the entry under which the aspect is attached.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {
@@ -135,9 +113,7 @@ class GoogleCloudDataplexV1Aspect extends \Google\Model
     return $this->path;
   }
   /**
-   * Output only. The time when the Aspect was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

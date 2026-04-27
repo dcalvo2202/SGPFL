@@ -22,10 +22,6 @@ class EventVenue extends \Google\Model
   protected $addressType = LocalizedString::class;
   protected $addressDataType = '';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * `"walletobjects#eventVenue"`.
-   *
-   * @deprecated
    * @var string
    */
   public $kind;
@@ -33,11 +29,7 @@ class EventVenue extends \Google\Model
   protected $nameDataType = '';
 
   /**
-   * The address of the venue, such as "24 Willie Mays Plaza\nSan Francisco, CA
-   * 94107". Address lines are separated by line feed (`\n`) characters. This is
-   * required.
-   *
-   * @param LocalizedString $address
+   * @param LocalizedString
    */
   public function setAddress(LocalizedString $address)
   {
@@ -51,18 +43,13 @@ class EventVenue extends \Google\Model
     return $this->address;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * `"walletobjects#eventVenue"`.
-   *
-   * @deprecated
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
     $this->kind = $kind;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getKind()
@@ -70,9 +57,7 @@ class EventVenue extends \Google\Model
     return $this->kind;
   }
   /**
-   * The name of the venue, such as "AT&T Park". This is required.
-   *
-   * @param LocalizedString $name
+   * @param LocalizedString
    */
   public function setName(LocalizedString $name)
   {

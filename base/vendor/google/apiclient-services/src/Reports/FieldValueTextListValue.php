@@ -21,16 +21,12 @@ class FieldValueTextListValue extends \Google\Collection
 {
   protected $collection_key = 'values';
   /**
-   * List of text values.
-   *
    * @var string[]
    */
   public $values;
 
   /**
-   * List of text values.
-   *
-   * @param string[] $values
+   * @param string[]
    */
   public function setValues($values)
   {

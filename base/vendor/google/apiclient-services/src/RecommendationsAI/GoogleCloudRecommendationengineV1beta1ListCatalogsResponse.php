@@ -23,16 +23,12 @@ class GoogleCloudRecommendationengineV1beta1ListCatalogsResponse extends \Google
   protected $catalogsType = GoogleCloudRecommendationengineV1beta1Catalog::class;
   protected $catalogsDataType = 'array';
   /**
-   * Pagination token, if not returned indicates the last page.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Output only. All the customer's catalogs.
-   *
-   * @param GoogleCloudRecommendationengineV1beta1Catalog[] $catalogs
+   * @param GoogleCloudRecommendationengineV1beta1Catalog[]
    */
   public function setCatalogs($catalogs)
   {
@@ -46,9 +42,7 @@ class GoogleCloudRecommendationengineV1beta1ListCatalogsResponse extends \Google
     return $this->catalogs;
   }
   /**
-   * Pagination token, if not returned indicates the last page.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

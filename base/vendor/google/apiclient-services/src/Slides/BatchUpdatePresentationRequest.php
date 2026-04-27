@@ -26,9 +26,7 @@ class BatchUpdatePresentationRequest extends \Google\Collection
   protected $writeControlDataType = '';
 
   /**
-   * A list of updates to apply to the presentation.
-   *
-   * @param Request[] $requests
+   * @param Request[]
    */
   public function setRequests($requests)
   {
@@ -42,9 +40,7 @@ class BatchUpdatePresentationRequest extends \Google\Collection
     return $this->requests;
   }
   /**
-   * Provides control over how write requests are executed.
-   *
-   * @param WriteControl $writeControl
+   * @param WriteControl
    */
   public function setWriteControl(WriteControl $writeControl)
   {

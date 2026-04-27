@@ -23,16 +23,12 @@ class DetectedItems extends \Google\Collection
   protected $itemsType = Item::class;
   protected $itemsDataType = 'array';
   /**
-   * Rich Results type
-   *
    * @var string
    */
   public $richResultType;
 
   /**
-   * List of Rich Results items.
-   *
-   * @param Item[] $items
+   * @param Item[]
    */
   public function setItems($items)
   {
@@ -46,9 +42,7 @@ class DetectedItems extends \Google\Collection
     return $this->items;
   }
   /**
-   * Rich Results type
-   *
-   * @param string $richResultType
+   * @param string
    */
   public function setRichResultType($richResultType)
   {

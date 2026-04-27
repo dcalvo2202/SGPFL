@@ -20,18 +20,12 @@ namespace Google\Service\Bigquery;
 class TableFieldSchemaRangeElementType extends \Google\Model
 {
   /**
-   * Required. The type of a field element. For more information, see
-   * TableFieldSchema.type.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Required. The type of a field element. For more information, see
-   * TableFieldSchema.type.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

@@ -23,18 +23,12 @@ class GoogleAdsHomeservicesLocalservicesV1SearchAccountReportsResponse extends \
   protected $accountReportsType = GoogleAdsHomeservicesLocalservicesV1AccountReport::class;
   protected $accountReportsDataType = 'array';
   /**
-   * Pagination token to retrieve the next page of results. When
-   * `next_page_token` is not filled in, there is no next page and the list
-   * returned is the last page in the result set.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * List of account reports which maps 1:1 to a particular linked GLS account.
-   *
-   * @param GoogleAdsHomeservicesLocalservicesV1AccountReport[] $accountReports
+   * @param GoogleAdsHomeservicesLocalservicesV1AccountReport[]
    */
   public function setAccountReports($accountReports)
   {
@@ -48,11 +42,7 @@ class GoogleAdsHomeservicesLocalservicesV1SearchAccountReportsResponse extends \
     return $this->accountReports;
   }
   /**
-   * Pagination token to retrieve the next page of results. When
-   * `next_page_token` is not filled in, there is no next page and the list
-   * returned is the last page in the result set.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

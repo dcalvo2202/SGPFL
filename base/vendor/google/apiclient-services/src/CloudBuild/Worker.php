@@ -20,16 +20,12 @@ namespace Google\Service\CloudBuild;
 class Worker extends \Google\Model
 {
   /**
-   * Optional. Machine type of a worker, default is "e2-standard-2".
-   *
    * @var string
    */
   public $machineType;
 
   /**
-   * Optional. Machine type of a worker, default is "e2-standard-2".
-   *
-   * @param string $machineType
+   * @param string
    */
   public function setMachineType($machineType)
   {

@@ -21,9 +21,6 @@ class PlatformTypesListResponse extends \Google\Collection
 {
   protected $collection_key = 'platformTypes';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#platformTypesListResponse".
-   *
    * @var string
    */
   public $kind;
@@ -31,10 +28,7 @@ class PlatformTypesListResponse extends \Google\Collection
   protected $platformTypesDataType = 'array';
 
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#platformTypesListResponse".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -48,9 +42,7 @@ class PlatformTypesListResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Platform type collection.
-   *
-   * @param PlatformType[] $platformTypes
+   * @param PlatformType[]
    */
   public function setPlatformTypes($platformTypes)
   {

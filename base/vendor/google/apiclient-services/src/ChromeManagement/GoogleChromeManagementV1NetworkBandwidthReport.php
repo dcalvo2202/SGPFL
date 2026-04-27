@@ -20,22 +20,16 @@ namespace Google\Service\ChromeManagement;
 class GoogleChromeManagementV1NetworkBandwidthReport extends \Google\Model
 {
   /**
-   * Output only. Download speed in kilobits per second.
-   *
    * @var string
    */
   public $downloadSpeedKbps;
   /**
-   * Output only. Timestamp of when the report was collected.
-   *
    * @var string
    */
   public $reportTime;
 
   /**
-   * Output only. Download speed in kilobits per second.
-   *
-   * @param string $downloadSpeedKbps
+   * @param string
    */
   public function setDownloadSpeedKbps($downloadSpeedKbps)
   {
@@ -49,9 +43,7 @@ class GoogleChromeManagementV1NetworkBandwidthReport extends \Google\Model
     return $this->downloadSpeedKbps;
   }
   /**
-   * Output only. Timestamp of when the report was collected.
-   *
-   * @param string $reportTime
+   * @param string
    */
   public function setReportTime($reportTime)
   {

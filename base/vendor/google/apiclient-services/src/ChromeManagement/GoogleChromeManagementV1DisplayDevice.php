@@ -20,64 +20,36 @@ namespace Google\Service\ChromeManagement;
 class GoogleChromeManagementV1DisplayDevice extends \Google\Model
 {
   /**
-   * Output only. Display height in millimeters.
-   *
    * @var int
    */
   public $displayHeightMm;
   /**
-   * Output only. Display device name.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. Display width in millimeters.
-   *
    * @var int
    */
   public $displayWidthMm;
   /**
-   * Output only. EDID version.
-   *
-   * @var string
-   */
-  public $edidVersion;
-  /**
-   * Output only. Is display internal or not.
-   *
    * @var bool
    */
   public $internal;
   /**
-   * Output only. Year of manufacture.
-   *
    * @var int
    */
   public $manufactureYear;
   /**
-   * Output only. Three letter manufacturer ID.
-   *
    * @var string
    */
   public $manufacturerId;
   /**
-   * Output only. Manufacturer product code.
-   *
    * @var int
    */
   public $modelId;
-  /**
-   * Output only. Serial number.
-   *
-   * @var int
-   */
-  public $serialNumber;
 
   /**
-   * Output only. Display height in millimeters.
-   *
-   * @param int $displayHeightMm
+   * @param int
    */
   public function setDisplayHeightMm($displayHeightMm)
   {
@@ -91,9 +63,7 @@ class GoogleChromeManagementV1DisplayDevice extends \Google\Model
     return $this->displayHeightMm;
   }
   /**
-   * Output only. Display device name.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -107,9 +77,7 @@ class GoogleChromeManagementV1DisplayDevice extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Output only. Display width in millimeters.
-   *
-   * @param int $displayWidthMm
+   * @param int
    */
   public function setDisplayWidthMm($displayWidthMm)
   {
@@ -123,25 +91,7 @@ class GoogleChromeManagementV1DisplayDevice extends \Google\Model
     return $this->displayWidthMm;
   }
   /**
-   * Output only. EDID version.
-   *
-   * @param string $edidVersion
-   */
-  public function setEdidVersion($edidVersion)
-  {
-    $this->edidVersion = $edidVersion;
-  }
-  /**
-   * @return string
-   */
-  public function getEdidVersion()
-  {
-    return $this->edidVersion;
-  }
-  /**
-   * Output only. Is display internal or not.
-   *
-   * @param bool $internal
+   * @param bool
    */
   public function setInternal($internal)
   {
@@ -155,9 +105,7 @@ class GoogleChromeManagementV1DisplayDevice extends \Google\Model
     return $this->internal;
   }
   /**
-   * Output only. Year of manufacture.
-   *
-   * @param int $manufactureYear
+   * @param int
    */
   public function setManufactureYear($manufactureYear)
   {
@@ -171,9 +119,7 @@ class GoogleChromeManagementV1DisplayDevice extends \Google\Model
     return $this->manufactureYear;
   }
   /**
-   * Output only. Three letter manufacturer ID.
-   *
-   * @param string $manufacturerId
+   * @param string
    */
   public function setManufacturerId($manufacturerId)
   {
@@ -187,9 +133,7 @@ class GoogleChromeManagementV1DisplayDevice extends \Google\Model
     return $this->manufacturerId;
   }
   /**
-   * Output only. Manufacturer product code.
-   *
-   * @param int $modelId
+   * @param int
    */
   public function setModelId($modelId)
   {
@@ -201,22 +145,6 @@ class GoogleChromeManagementV1DisplayDevice extends \Google\Model
   public function getModelId()
   {
     return $this->modelId;
-  }
-  /**
-   * Output only. Serial number.
-   *
-   * @param int $serialNumber
-   */
-  public function setSerialNumber($serialNumber)
-  {
-    $this->serialNumber = $serialNumber;
-  }
-  /**
-   * @return int
-   */
-  public function getSerialNumber()
-  {
-    return $this->serialNumber;
   }
 }
 

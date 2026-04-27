@@ -21,23 +21,16 @@ class WorkloadIdentityPoolAllowedLocations extends \Google\Collection
 {
   protected $collection_key = 'locations';
   /**
-   * Output only. The hex encoded bitmap of the trust boundary locations
-   *
    * @var string
    */
   public $encodedLocations;
   /**
-   * Output only. The human readable trust boundary locations. For example,
-   * ["us-central1", "europe-west1"]
-   *
    * @var string[]
    */
   public $locations;
 
   /**
-   * Output only. The hex encoded bitmap of the trust boundary locations
-   *
-   * @param string $encodedLocations
+   * @param string
    */
   public function setEncodedLocations($encodedLocations)
   {
@@ -51,10 +44,7 @@ class WorkloadIdentityPoolAllowedLocations extends \Google\Collection
     return $this->encodedLocations;
   }
   /**
-   * Output only. The human readable trust boundary locations. For example,
-   * ["us-central1", "europe-west1"]
-   *
-   * @param string[] $locations
+   * @param string[]
    */
   public function setLocations($locations)
   {

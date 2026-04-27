@@ -20,31 +20,20 @@ namespace Google\Service\DisplayVideo;
 class LanguageAssignedTargetingOptionDetails extends \Google\Model
 {
   /**
-   * Output only. The display name of the language (e.g., "French").
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Indicates if this option is being negatively targeted. All assigned
-   * language targeting options on the same resource must have the same value
-   * for this field.
-   *
    * @var bool
    */
   public $negative;
   /**
-   * Required. The targeting_option_id of a TargetingOption of type
-   * `TARGETING_TYPE_LANGUAGE`.
-   *
    * @var string
    */
   public $targetingOptionId;
 
   /**
-   * Output only. The display name of the language (e.g., "French").
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -58,11 +47,7 @@ class LanguageAssignedTargetingOptionDetails extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Indicates if this option is being negatively targeted. All assigned
-   * language targeting options on the same resource must have the same value
-   * for this field.
-   *
-   * @param bool $negative
+   * @param bool
    */
   public function setNegative($negative)
   {
@@ -76,10 +61,7 @@ class LanguageAssignedTargetingOptionDetails extends \Google\Model
     return $this->negative;
   }
   /**
-   * Required. The targeting_option_id of a TargetingOption of type
-   * `TARGETING_TYPE_LANGUAGE`.
-   *
-   * @param string $targetingOptionId
+   * @param string
    */
   public function setTargetingOptionId($targetingOptionId)
   {

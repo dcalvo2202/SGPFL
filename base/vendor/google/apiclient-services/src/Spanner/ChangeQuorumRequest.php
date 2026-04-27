@@ -20,20 +20,10 @@ namespace Google\Service\Spanner;
 class ChangeQuorumRequest extends \Google\Model
 {
   /**
-   * Optional. The etag is the hash of the `QuorumInfo`. The `ChangeQuorum`
-   * operation is only performed if the etag matches that of the `QuorumInfo` in
-   * the current database resource. Otherwise the API returns an `ABORTED`
-   * error. The etag is used for optimistic concurrency control as a way to help
-   * prevent simultaneous change quorum requests that could create a race
-   * condition.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Required. Name of the database in which to apply `ChangeQuorum`. Values are
-   * of the form `projects//instances//databases/`.
-   *
    * @var string
    */
   public $name;
@@ -41,14 +31,7 @@ class ChangeQuorumRequest extends \Google\Model
   protected $quorumTypeDataType = '';
 
   /**
-   * Optional. The etag is the hash of the `QuorumInfo`. The `ChangeQuorum`
-   * operation is only performed if the etag matches that of the `QuorumInfo` in
-   * the current database resource. Otherwise the API returns an `ABORTED`
-   * error. The etag is used for optimistic concurrency control as a way to help
-   * prevent simultaneous change quorum requests that could create a race
-   * condition.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -62,10 +45,7 @@ class ChangeQuorumRequest extends \Google\Model
     return $this->etag;
   }
   /**
-   * Required. Name of the database in which to apply `ChangeQuorum`. Values are
-   * of the form `projects//instances//databases/`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -79,9 +59,7 @@ class ChangeQuorumRequest extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. The type of this quorum.
-   *
-   * @param QuorumType $quorumType
+   * @param QuorumType
    */
   public function setQuorumType(QuorumType $quorumType)
   {

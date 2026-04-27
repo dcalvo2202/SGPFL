@@ -20,22 +20,16 @@ namespace Google\Service\Contentwarehouse;
 class GoogleCloudContentwarehouseV1QAResultHighlight extends \Google\Model
 {
   /**
-   * End index of the highlight, exclusive.
-   *
    * @var int
    */
   public $endIndex;
   /**
-   * Start index of the highlight.
-   *
    * @var int
    */
   public $startIndex;
 
   /**
-   * End index of the highlight, exclusive.
-   *
-   * @param int $endIndex
+   * @param int
    */
   public function setEndIndex($endIndex)
   {
@@ -49,9 +43,7 @@ class GoogleCloudContentwarehouseV1QAResultHighlight extends \Google\Model
     return $this->endIndex;
   }
   /**
-   * Start index of the highlight.
-   *
-   * @param int $startIndex
+   * @param int
    */
   public function setStartIndex($startIndex)
   {

@@ -26,9 +26,7 @@ class EventTicketObjectListResponse extends \Google\Collection
   protected $resourcesDataType = 'array';
 
   /**
-   * Pagination of the response.
-   *
-   * @param Pagination $pagination
+   * @param Pagination
    */
   public function setPagination(Pagination $pagination)
   {
@@ -42,9 +40,7 @@ class EventTicketObjectListResponse extends \Google\Collection
     return $this->pagination;
   }
   /**
-   * Resources corresponding to the list request.
-   *
-   * @param EventTicketObject[] $resources
+   * @param EventTicketObject[]
    */
   public function setResources($resources)
   {

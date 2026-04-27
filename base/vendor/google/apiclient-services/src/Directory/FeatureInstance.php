@@ -23,10 +23,7 @@ class FeatureInstance extends \Google\Model
   protected $featureDataType = '';
 
   /**
-   * The feature that this is an instance of. A calendar resource may have
-   * multiple instances of a feature.
-   *
-   * @param Feature $feature
+   * @param Feature
    */
   public function setFeature(Feature $feature)
   {

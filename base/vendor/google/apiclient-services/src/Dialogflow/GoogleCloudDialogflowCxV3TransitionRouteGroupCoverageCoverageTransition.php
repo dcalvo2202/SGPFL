@@ -27,7 +27,7 @@ class GoogleCloudDialogflowCxV3TransitionRouteGroupCoverageCoverageTransition ex
   protected $transitionRouteDataType = '';
 
   /**
-   * @param bool $covered
+   * @param bool
    */
   public function setCovered($covered)
   {
@@ -41,7 +41,7 @@ class GoogleCloudDialogflowCxV3TransitionRouteGroupCoverageCoverageTransition ex
     return $this->covered;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3TransitionRoute $transitionRoute
+   * @param GoogleCloudDialogflowCxV3TransitionRoute
    */
   public function setTransitionRoute(GoogleCloudDialogflowCxV3TransitionRoute $transitionRoute)
   {

@@ -20,18 +20,12 @@ namespace Google\Service\PubsubLite;
 class PubSubConfig extends \Google\Model
 {
   /**
-   * The name of the Pub/Sub topic. Structured like:
-   * projects/{project_number}/topics/{topic_id}. The topic may be changed.
-   *
    * @var string
    */
   public $topic;
 
   /**
-   * The name of the Pub/Sub topic. Structured like:
-   * projects/{project_number}/topics/{topic_id}. The topic may be changed.
-   *
-   * @param string $topic
+   * @param string
    */
   public function setTopic($topic)
   {

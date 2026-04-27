@@ -30,9 +30,7 @@ class ChannelBrandingSettings extends \Google\Collection
   protected $watchDataType = '';
 
   /**
-   * Branding properties for the channel view.
-   *
-   * @param ChannelSettings $channel
+   * @param ChannelSettings
    */
   public function setChannel(ChannelSettings $channel)
   {
@@ -46,17 +44,13 @@ class ChannelBrandingSettings extends \Google\Collection
     return $this->channel;
   }
   /**
-   * Additional experimental branding properties.
-   *
-   * @deprecated
-   * @param PropertyValue[] $hints
+   * @param PropertyValue[]
    */
   public function setHints($hints)
   {
     $this->hints = $hints;
   }
   /**
-   * @deprecated
    * @return PropertyValue[]
    */
   public function getHints()
@@ -64,9 +58,7 @@ class ChannelBrandingSettings extends \Google\Collection
     return $this->hints;
   }
   /**
-   * Branding properties for branding images.
-   *
-   * @param ImageSettings $image
+   * @param ImageSettings
    */
   public function setImage(ImageSettings $image)
   {
@@ -80,17 +72,13 @@ class ChannelBrandingSettings extends \Google\Collection
     return $this->image;
   }
   /**
-   * Branding properties for the watch page.
-   *
-   * @deprecated
-   * @param WatchSettings $watch
+   * @param WatchSettings
    */
   public function setWatch(WatchSettings $watch)
   {
     $this->watch = $watch;
   }
   /**
-   * @deprecated
    * @return WatchSettings
    */
   public function getWatch()

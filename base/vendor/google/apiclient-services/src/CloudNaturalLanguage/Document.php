@@ -20,58 +20,24 @@ namespace Google\Service\CloudNaturalLanguage;
 class Document extends \Google\Model
 {
   /**
-   * The content type is not specified.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * Plain text
-   */
-  public const TYPE_PLAIN_TEXT = 'PLAIN_TEXT';
-  /**
-   * HTML
-   */
-  public const TYPE_HTML = 'HTML';
-  /**
-   * The content of the input in string format. Cloud audit logging exempt since
-   * it is based on user data.
-   *
    * @var string
    */
   public $content;
   /**
-   * The Google Cloud Storage URI where the file content is located. This URI
-   * must be of the form: gs://bucket_name/object_name. For more details, see
-   * https://cloud.google.com/storage/docs/reference-uris. NOTE: Cloud Storage
-   * object versioning is not supported.
-   *
    * @var string
    */
   public $gcsContentUri;
   /**
-   * Optional. The language of the document (if not specified, the language is
-   * automatically detected). Both ISO and BCP-47 language codes are accepted.
-   * [Language Support](https://cloud.google.com/natural-
-   * language/docs/languages) lists currently supported languages for each API
-   * method. If the language (either specified by the caller or automatically
-   * detected) is not supported by the called API method, an `INVALID_ARGUMENT`
-   * error is returned.
-   *
    * @var string
    */
   public $languageCode;
   /**
-   * Required. If the type is not set or is `TYPE_UNSPECIFIED`, returns an
-   * `INVALID_ARGUMENT` error.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The content of the input in string format. Cloud audit logging exempt since
-   * it is based on user data.
-   *
-   * @param string $content
+   * @param string
    */
   public function setContent($content)
   {
@@ -85,12 +51,7 @@ class Document extends \Google\Model
     return $this->content;
   }
   /**
-   * The Google Cloud Storage URI where the file content is located. This URI
-   * must be of the form: gs://bucket_name/object_name. For more details, see
-   * https://cloud.google.com/storage/docs/reference-uris. NOTE: Cloud Storage
-   * object versioning is not supported.
-   *
-   * @param string $gcsContentUri
+   * @param string
    */
   public function setGcsContentUri($gcsContentUri)
   {
@@ -104,15 +65,7 @@ class Document extends \Google\Model
     return $this->gcsContentUri;
   }
   /**
-   * Optional. The language of the document (if not specified, the language is
-   * automatically detected). Both ISO and BCP-47 language codes are accepted.
-   * [Language Support](https://cloud.google.com/natural-
-   * language/docs/languages) lists currently supported languages for each API
-   * method. If the language (either specified by the caller or automatically
-   * detected) is not supported by the called API method, an `INVALID_ARGUMENT`
-   * error is returned.
-   *
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {
@@ -126,19 +79,14 @@ class Document extends \Google\Model
     return $this->languageCode;
   }
   /**
-   * Required. If the type is not set or is `TYPE_UNSPECIFIED`, returns an
-   * `INVALID_ARGUMENT` error.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, PLAIN_TEXT, HTML
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

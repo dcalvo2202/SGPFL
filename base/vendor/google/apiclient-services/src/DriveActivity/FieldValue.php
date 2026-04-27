@@ -37,9 +37,7 @@ class FieldValue extends \Google\Model
   protected $userListDataType = '';
 
   /**
-   * Date Field value.
-   *
-   * @param Date $date
+   * @param Date
    */
   public function setDate(Date $date)
   {
@@ -53,9 +51,7 @@ class FieldValue extends \Google\Model
     return $this->date;
   }
   /**
-   * Integer Field value.
-   *
-   * @param DriveactivityInteger $integer
+   * @param DriveactivityInteger
    */
   public function setInteger(DriveactivityInteger $integer)
   {
@@ -69,9 +65,7 @@ class FieldValue extends \Google\Model
     return $this->integer;
   }
   /**
-   * Selection Field value.
-   *
-   * @param Selection $selection
+   * @param Selection
    */
   public function setSelection(Selection $selection)
   {
@@ -85,9 +79,7 @@ class FieldValue extends \Google\Model
     return $this->selection;
   }
   /**
-   * Selection List Field value.
-   *
-   * @param SelectionList $selectionList
+   * @param SelectionList
    */
   public function setSelectionList(SelectionList $selectionList)
   {
@@ -101,9 +93,7 @@ class FieldValue extends \Google\Model
     return $this->selectionList;
   }
   /**
-   * Text Field value.
-   *
-   * @param Text $text
+   * @param Text
    */
   public function setText(Text $text)
   {
@@ -117,9 +107,7 @@ class FieldValue extends \Google\Model
     return $this->text;
   }
   /**
-   * Text List Field value.
-   *
-   * @param TextList $textList
+   * @param TextList
    */
   public function setTextList(TextList $textList)
   {
@@ -133,9 +121,7 @@ class FieldValue extends \Google\Model
     return $this->textList;
   }
   /**
-   * User Field value.
-   *
-   * @param SingleUser $user
+   * @param SingleUser
    */
   public function setUser(SingleUser $user)
   {
@@ -149,9 +135,7 @@ class FieldValue extends \Google\Model
     return $this->user;
   }
   /**
-   * User List Field value.
-   *
-   * @param UserList $userList
+   * @param UserList
    */
   public function setUserList(UserList $userList)
   {

@@ -26,9 +26,7 @@ class GoogleCloudVisionV1p4beta1TextAnnotationTextProperty extends \Google\Colle
   protected $detectedLanguagesDataType = 'array';
 
   /**
-   * Detected start or end of a text segment.
-   *
-   * @param GoogleCloudVisionV1p4beta1TextAnnotationDetectedBreak $detectedBreak
+   * @param GoogleCloudVisionV1p4beta1TextAnnotationDetectedBreak
    */
   public function setDetectedBreak(GoogleCloudVisionV1p4beta1TextAnnotationDetectedBreak $detectedBreak)
   {
@@ -42,9 +40,7 @@ class GoogleCloudVisionV1p4beta1TextAnnotationTextProperty extends \Google\Colle
     return $this->detectedBreak;
   }
   /**
-   * A list of detected languages together with confidence.
-   *
-   * @param GoogleCloudVisionV1p4beta1TextAnnotationDetectedLanguage[] $detectedLanguages
+   * @param GoogleCloudVisionV1p4beta1TextAnnotationDetectedLanguage[]
    */
   public function setDetectedLanguages($detectedLanguages)
   {

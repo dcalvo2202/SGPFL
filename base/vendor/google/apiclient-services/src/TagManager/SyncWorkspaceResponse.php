@@ -26,11 +26,7 @@ class SyncWorkspaceResponse extends \Google\Collection
   protected $syncStatusDataType = '';
 
   /**
-   * The merge conflict after sync. If this field is not empty, the sync is
-   * still treated as successful. But a version cannot be created until all
-   * conflicts are resolved.
-   *
-   * @param MergeConflict[] $mergeConflict
+   * @param MergeConflict[]
    */
   public function setMergeConflict($mergeConflict)
   {
@@ -44,9 +40,7 @@ class SyncWorkspaceResponse extends \Google\Collection
     return $this->mergeConflict;
   }
   /**
-   * Indicates whether synchronization caused a merge conflict or sync error.
-   *
-   * @param SyncStatus $syncStatus
+   * @param SyncStatus
    */
   public function setSyncStatus(SyncStatus $syncStatus)
   {

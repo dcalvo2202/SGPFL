@@ -22,14 +22,10 @@ class GoogleMapsPlacesV1PlaceReviewSummary extends \Google\Model
   protected $disclosureTextType = GoogleTypeLocalizedText::class;
   protected $disclosureTextDataType = '';
   /**
-   * A link where users can flag a problem with the summary.
-   *
    * @var string
    */
   public $flagContentUri;
   /**
-   * A link to show reviews of this place on Google Maps.
-   *
    * @var string
    */
   public $reviewsUri;
@@ -37,11 +33,7 @@ class GoogleMapsPlacesV1PlaceReviewSummary extends \Google\Model
   protected $textDataType = '';
 
   /**
-   * The AI disclosure message "Summarized with Gemini" (and its localized
-   * variants). This will be in the language specified in the request if
-   * available.
-   *
-   * @param GoogleTypeLocalizedText $disclosureText
+   * @param GoogleTypeLocalizedText
    */
   public function setDisclosureText(GoogleTypeLocalizedText $disclosureText)
   {
@@ -55,9 +47,7 @@ class GoogleMapsPlacesV1PlaceReviewSummary extends \Google\Model
     return $this->disclosureText;
   }
   /**
-   * A link where users can flag a problem with the summary.
-   *
-   * @param string $flagContentUri
+   * @param string
    */
   public function setFlagContentUri($flagContentUri)
   {
@@ -71,9 +61,7 @@ class GoogleMapsPlacesV1PlaceReviewSummary extends \Google\Model
     return $this->flagContentUri;
   }
   /**
-   * A link to show reviews of this place on Google Maps.
-   *
-   * @param string $reviewsUri
+   * @param string
    */
   public function setReviewsUri($reviewsUri)
   {
@@ -87,9 +75,7 @@ class GoogleMapsPlacesV1PlaceReviewSummary extends \Google\Model
     return $this->reviewsUri;
   }
   /**
-   * The summary of user reviews.
-   *
-   * @param GoogleTypeLocalizedText $text
+   * @param GoogleTypeLocalizedText
    */
   public function setText(GoogleTypeLocalizedText $text)
   {

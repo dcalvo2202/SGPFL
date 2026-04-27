@@ -20,36 +20,24 @@ namespace Google\Service\Reports;
 class ActivityId extends \Google\Model
 {
   /**
-   * Application name to which the event belongs. For possible values see the
-   * list of applications above in `applicationName`.
-   *
    * @var string
    */
   public $applicationName;
   /**
-   * The unique identifier for a Google Workspace account.
-   *
    * @var string
    */
   public $customerId;
   /**
-   * Time of occurrence of the activity. This is in UNIX epoch time in seconds.
-   *
    * @var string
    */
   public $time;
   /**
-   * Unique qualifier if multiple events have the same time.
-   *
    * @var string
    */
   public $uniqueQualifier;
 
   /**
-   * Application name to which the event belongs. For possible values see the
-   * list of applications above in `applicationName`.
-   *
-   * @param string $applicationName
+   * @param string
    */
   public function setApplicationName($applicationName)
   {
@@ -63,9 +51,7 @@ class ActivityId extends \Google\Model
     return $this->applicationName;
   }
   /**
-   * The unique identifier for a Google Workspace account.
-   *
-   * @param string $customerId
+   * @param string
    */
   public function setCustomerId($customerId)
   {
@@ -79,9 +65,7 @@ class ActivityId extends \Google\Model
     return $this->customerId;
   }
   /**
-   * Time of occurrence of the activity. This is in UNIX epoch time in seconds.
-   *
-   * @param string $time
+   * @param string
    */
   public function setTime($time)
   {
@@ -95,9 +79,7 @@ class ActivityId extends \Google\Model
     return $this->time;
   }
   /**
-   * Unique qualifier if multiple events have the same time.
-   *
-   * @param string $uniqueQualifier
+   * @param string
    */
   public function setUniqueQualifier($uniqueQualifier)
   {

@@ -23,23 +23,16 @@ class PlayerAchievementListResponse extends \Google\Collection
   protected $itemsType = PlayerAchievement::class;
   protected $itemsDataType = 'array';
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#playerAchievementListResponse`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Token corresponding to the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The achievements.
-   *
-   * @param PlayerAchievement[] $items
+   * @param PlayerAchievement[]
    */
   public function setItems($items)
   {
@@ -53,10 +46,7 @@ class PlayerAchievementListResponse extends \Google\Collection
     return $this->items;
   }
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#playerAchievementListResponse`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -70,9 +60,7 @@ class PlayerAchievementListResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Token corresponding to the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

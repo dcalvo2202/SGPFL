@@ -20,16 +20,12 @@ namespace Google\Service\AlertCenter;
 class StateSponsoredAttack extends \Google\Model
 {
   /**
-   * The email of the user this incident was created for.
-   *
    * @var string
    */
   public $email;
 
   /**
-   * The email of the user this incident was created for.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {

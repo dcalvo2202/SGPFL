@@ -23,17 +23,12 @@ class ListDockerImagesResponse extends \Google\Collection
   protected $dockerImagesType = DockerImage::class;
   protected $dockerImagesDataType = 'array';
   /**
-   * The token to retrieve the next page of artifacts, or empty if there are no
-   * more artifacts to return.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The docker images returned.
-   *
-   * @param DockerImage[] $dockerImages
+   * @param DockerImage[]
    */
   public function setDockerImages($dockerImages)
   {
@@ -47,10 +42,7 @@ class ListDockerImagesResponse extends \Google\Collection
     return $this->dockerImages;
   }
   /**
-   * The token to retrieve the next page of artifacts, or empty if there are no
-   * more artifacts to return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

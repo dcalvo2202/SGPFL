@@ -23,18 +23,12 @@ class SmartTapMerchantData extends \Google\Collection
   protected $authenticationKeysType = AuthenticationKey::class;
   protected $authenticationKeysDataType = 'array';
   /**
-   * Available only to Smart Tap enabled partners. Contact support for
-   * additional guidance.
-   *
    * @var string
    */
   public $smartTapMerchantId;
 
   /**
-   * Available only to Smart Tap enabled partners. Contact support for
-   * additional guidance.
-   *
-   * @param AuthenticationKey[] $authenticationKeys
+   * @param AuthenticationKey[]
    */
   public function setAuthenticationKeys($authenticationKeys)
   {
@@ -48,10 +42,7 @@ class SmartTapMerchantData extends \Google\Collection
     return $this->authenticationKeys;
   }
   /**
-   * Available only to Smart Tap enabled partners. Contact support for
-   * additional guidance.
-   *
-   * @param string $smartTapMerchantId
+   * @param string
    */
   public function setSmartTapMerchantId($smartTapMerchantId)
   {

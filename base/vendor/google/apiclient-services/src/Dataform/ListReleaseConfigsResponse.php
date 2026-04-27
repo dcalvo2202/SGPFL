@@ -21,26 +21,18 @@ class ListReleaseConfigsResponse extends \Google\Collection
 {
   protected $collection_key = 'unreachable';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $releaseConfigsType = ReleaseConfig::class;
   protected $releaseConfigsDataType = 'array';
   /**
-   * Locations which could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -54,9 +46,7 @@ class ListReleaseConfigsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * List of release configs.
-   *
-   * @param ReleaseConfig[] $releaseConfigs
+   * @param ReleaseConfig[]
    */
   public function setReleaseConfigs($releaseConfigs)
   {
@@ -70,9 +60,7 @@ class ListReleaseConfigsResponse extends \Google\Collection
     return $this->releaseConfigs;
   }
   /**
-   * Locations which could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

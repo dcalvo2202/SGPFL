@@ -21,65 +21,38 @@ class UserRole extends \Google\Collection
 {
   protected $collection_key = 'permissions';
   /**
-   * Account ID of this user role. This is a read-only field that can be left
-   * blank.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * Whether this is a default user role. Default user roles are created by the
-   * system for the account/subaccount and cannot be modified or deleted. Each
-   * default user role comes with a basic set of preassigned permissions.
-   *
    * @var bool
    */
   public $defaultUserRole;
   /**
-   * ID of this user role. This is a read-only, auto-generated field.
-   *
    * @var string
    */
   public $id;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#userRole".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Name of this user role. This is a required field. Must be less than 256
-   * characters long. If this user role is under a subaccount, the name must be
-   * unique among sites of the same subaccount. Otherwise, this user role is a
-   * top-level user role, and the name must be unique among top-level user roles
-   * of the same account.
-   *
    * @var string
    */
   public $name;
   /**
-   * ID of the user role that this user role is based on or copied from. This is
-   * a required field.
-   *
    * @var string
    */
   public $parentUserRoleId;
   protected $permissionsType = UserRolePermission::class;
   protected $permissionsDataType = 'array';
   /**
-   * Subaccount ID of this user role. This is a read-only field that can be left
-   * blank.
-   *
    * @var string
    */
   public $subaccountId;
 
   /**
-   * Account ID of this user role. This is a read-only field that can be left
-   * blank.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -93,11 +66,7 @@ class UserRole extends \Google\Collection
     return $this->accountId;
   }
   /**
-   * Whether this is a default user role. Default user roles are created by the
-   * system for the account/subaccount and cannot be modified or deleted. Each
-   * default user role comes with a basic set of preassigned permissions.
-   *
-   * @param bool $defaultUserRole
+   * @param bool
    */
   public function setDefaultUserRole($defaultUserRole)
   {
@@ -111,9 +80,7 @@ class UserRole extends \Google\Collection
     return $this->defaultUserRole;
   }
   /**
-   * ID of this user role. This is a read-only, auto-generated field.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -127,10 +94,7 @@ class UserRole extends \Google\Collection
     return $this->id;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#userRole".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -144,13 +108,7 @@ class UserRole extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Name of this user role. This is a required field. Must be less than 256
-   * characters long. If this user role is under a subaccount, the name must be
-   * unique among sites of the same subaccount. Otherwise, this user role is a
-   * top-level user role, and the name must be unique among top-level user roles
-   * of the same account.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -164,10 +122,7 @@ class UserRole extends \Google\Collection
     return $this->name;
   }
   /**
-   * ID of the user role that this user role is based on or copied from. This is
-   * a required field.
-   *
-   * @param string $parentUserRoleId
+   * @param string
    */
   public function setParentUserRoleId($parentUserRoleId)
   {
@@ -181,9 +136,7 @@ class UserRole extends \Google\Collection
     return $this->parentUserRoleId;
   }
   /**
-   * List of permissions associated with this user role.
-   *
-   * @param UserRolePermission[] $permissions
+   * @param UserRolePermission[]
    */
   public function setPermissions($permissions)
   {
@@ -197,10 +150,7 @@ class UserRole extends \Google\Collection
     return $this->permissions;
   }
   /**
-   * Subaccount ID of this user role. This is a read-only field that can be left
-   * blank.
-   *
-   * @param string $subaccountId
+   * @param string
    */
   public function setSubaccountId($subaccountId)
   {

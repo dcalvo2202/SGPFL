@@ -24,9 +24,7 @@ class BatchAnnotateImagesResponse extends \Google\Collection
   protected $responsesDataType = 'array';
 
   /**
-   * Individual responses to image annotation requests within the batch.
-   *
-   * @param AnnotateImageResponse[] $responses
+   * @param AnnotateImageResponse[]
    */
   public function setResponses($responses)
   {

@@ -20,38 +20,24 @@ namespace Google\Service\Storage;
 class BucketAutoclass extends \Google\Model
 {
   /**
-   * Whether or not Autoclass is enabled on this bucket
-   *
    * @var bool
    */
   public $enabled;
   /**
-   * The storage class that objects in the bucket eventually transition to if
-   * they are not read for a certain length of time. Valid values are NEARLINE
-   * and ARCHIVE.
-   *
    * @var string
    */
   public $terminalStorageClass;
   /**
-   * A date and time in RFC 3339 format representing the time of the most recent
-   * update to "terminalStorageClass".
-   *
    * @var string
    */
   public $terminalStorageClassUpdateTime;
   /**
-   * A date and time in RFC 3339 format representing the instant at which
-   * "enabled" was last toggled.
-   *
    * @var string
    */
   public $toggleTime;
 
   /**
-   * Whether or not Autoclass is enabled on this bucket
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {
@@ -65,11 +51,7 @@ class BucketAutoclass extends \Google\Model
     return $this->enabled;
   }
   /**
-   * The storage class that objects in the bucket eventually transition to if
-   * they are not read for a certain length of time. Valid values are NEARLINE
-   * and ARCHIVE.
-   *
-   * @param string $terminalStorageClass
+   * @param string
    */
   public function setTerminalStorageClass($terminalStorageClass)
   {
@@ -83,10 +65,7 @@ class BucketAutoclass extends \Google\Model
     return $this->terminalStorageClass;
   }
   /**
-   * A date and time in RFC 3339 format representing the time of the most recent
-   * update to "terminalStorageClass".
-   *
-   * @param string $terminalStorageClassUpdateTime
+   * @param string
    */
   public function setTerminalStorageClassUpdateTime($terminalStorageClassUpdateTime)
   {
@@ -100,10 +79,7 @@ class BucketAutoclass extends \Google\Model
     return $this->terminalStorageClassUpdateTime;
   }
   /**
-   * A date and time in RFC 3339 format representing the instant at which
-   * "enabled" was last toggled.
-   *
-   * @param string $toggleTime
+   * @param string
    */
   public function setToggleTime($toggleTime)
   {

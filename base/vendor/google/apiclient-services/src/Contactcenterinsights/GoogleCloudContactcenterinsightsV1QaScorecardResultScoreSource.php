@@ -19,44 +19,13 @@ namespace Google\Service\Contactcenterinsights;
 
 class GoogleCloudContactcenterinsightsV1QaScorecardResultScoreSource extends \Google\Collection
 {
-  /**
-   * Source type is unspecified.
-   */
-  public const SOURCE_TYPE_SOURCE_TYPE_UNSPECIFIED = 'SOURCE_TYPE_UNSPECIFIED';
-  /**
-   * Score is derived only from system-generated answers.
-   */
-  public const SOURCE_TYPE_SYSTEM_GENERATED_ONLY = 'SYSTEM_GENERATED_ONLY';
-  /**
-   * Score is derived from both system-generated answers, and includes any
-   * manual edits if they exist.
-   */
-  public const SOURCE_TYPE_INCLUDES_MANUAL_EDITS = 'INCLUDES_MANUAL_EDITS';
   protected $collection_key = 'qaTagResults';
-  /**
-   * The normalized score, which is the score divided by the potential score.
-   *
-   * @var 
-   */
   public $normalizedScore;
-  /**
-   * The maximum potential overall score of the scorecard. Any questions
-   * answered using `na_value` are excluded from this calculation.
-   *
-   * @var 
-   */
   public $potentialScore;
   protected $qaTagResultsType = GoogleCloudContactcenterinsightsV1QaScorecardResultQaTagResult::class;
   protected $qaTagResultsDataType = 'array';
-  /**
-   * The overall numerical score of the result.
-   *
-   * @var 
-   */
   public $score;
   /**
-   * What created the score.
-   *
    * @var string
    */
   public $sourceType;
@@ -78,9 +47,7 @@ class GoogleCloudContactcenterinsightsV1QaScorecardResultScoreSource extends \Go
     return $this->potentialScore;
   }
   /**
-   * Collection of tags and their scores.
-   *
-   * @param GoogleCloudContactcenterinsightsV1QaScorecardResultQaTagResult[] $qaTagResults
+   * @param GoogleCloudContactcenterinsightsV1QaScorecardResultQaTagResult[]
    */
   public function setQaTagResults($qaTagResults)
   {
@@ -102,19 +69,14 @@ class GoogleCloudContactcenterinsightsV1QaScorecardResultScoreSource extends \Go
     return $this->score;
   }
   /**
-   * What created the score.
-   *
-   * Accepted values: SOURCE_TYPE_UNSPECIFIED, SYSTEM_GENERATED_ONLY,
-   * INCLUDES_MANUAL_EDITS
-   *
-   * @param self::SOURCE_TYPE_* $sourceType
+   * @param string
    */
   public function setSourceType($sourceType)
   {
     $this->sourceType = $sourceType;
   }
   /**
-   * @return self::SOURCE_TYPE_*
+   * @return string
    */
   public function getSourceType()
   {

@@ -23,16 +23,12 @@ class GoogleCloudVisionV1p3beta1TextAnnotation extends \Google\Collection
   protected $pagesType = GoogleCloudVisionV1p3beta1Page::class;
   protected $pagesDataType = 'array';
   /**
-   * UTF-8 text detected on the pages.
-   *
    * @var string
    */
   public $text;
 
   /**
-   * List of pages detected by OCR.
-   *
-   * @param GoogleCloudVisionV1p3beta1Page[] $pages
+   * @param GoogleCloudVisionV1p3beta1Page[]
    */
   public function setPages($pages)
   {
@@ -46,9 +42,7 @@ class GoogleCloudVisionV1p3beta1TextAnnotation extends \Google\Collection
     return $this->pages;
   }
   /**
-   * UTF-8 text detected on the pages.
-   *
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {

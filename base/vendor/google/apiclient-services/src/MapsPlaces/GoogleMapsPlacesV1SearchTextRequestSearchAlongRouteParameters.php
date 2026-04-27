@@ -23,9 +23,7 @@ class GoogleMapsPlacesV1SearchTextRequestSearchAlongRouteParameters extends \Goo
   protected $polylineDataType = '';
 
   /**
-   * Required. The route polyline.
-   *
-   * @param GoogleMapsPlacesV1Polyline $polyline
+   * @param GoogleMapsPlacesV1Polyline
    */
   public function setPolyline(GoogleMapsPlacesV1Polyline $polyline)
   {

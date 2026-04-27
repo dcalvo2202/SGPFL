@@ -20,8 +20,6 @@ namespace Google\Service\VMMigrationService;
 class CutoverStep extends \Google\Model
 {
   /**
-   * The time the step has ended.
-   *
    * @var string
    */
   public $endTime;
@@ -36,16 +34,12 @@ class CutoverStep extends \Google\Model
   protected $shuttingDownSourceVmType = ShuttingDownSourceVMStep::class;
   protected $shuttingDownSourceVmDataType = '';
   /**
-   * The time the step has started.
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * The time the step has ended.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -59,9 +53,7 @@ class CutoverStep extends \Google\Model
     return $this->endTime;
   }
   /**
-   * Final sync step.
-   *
-   * @param ReplicationCycle $finalSync
+   * @param ReplicationCycle
    */
   public function setFinalSync(ReplicationCycle $finalSync)
   {
@@ -75,9 +67,7 @@ class CutoverStep extends \Google\Model
     return $this->finalSync;
   }
   /**
-   * Instantiating migrated VM step.
-   *
-   * @param InstantiatingMigratedVMStep $instantiatingMigratedVm
+   * @param InstantiatingMigratedVMStep
    */
   public function setInstantiatingMigratedVm(InstantiatingMigratedVMStep $instantiatingMigratedVm)
   {
@@ -91,9 +81,7 @@ class CutoverStep extends \Google\Model
     return $this->instantiatingMigratedVm;
   }
   /**
-   * Preparing VM disks step.
-   *
-   * @param PreparingVMDisksStep $preparingVmDisks
+   * @param PreparingVMDisksStep
    */
   public function setPreparingVmDisks(PreparingVMDisksStep $preparingVmDisks)
   {
@@ -107,9 +95,7 @@ class CutoverStep extends \Google\Model
     return $this->preparingVmDisks;
   }
   /**
-   * A replication cycle prior cutover step.
-   *
-   * @param ReplicationCycle $previousReplicationCycle
+   * @param ReplicationCycle
    */
   public function setPreviousReplicationCycle(ReplicationCycle $previousReplicationCycle)
   {
@@ -123,9 +109,7 @@ class CutoverStep extends \Google\Model
     return $this->previousReplicationCycle;
   }
   /**
-   * Shutting down VM step.
-   *
-   * @param ShuttingDownSourceVMStep $shuttingDownSourceVm
+   * @param ShuttingDownSourceVMStep
    */
   public function setShuttingDownSourceVm(ShuttingDownSourceVMStep $shuttingDownSourceVm)
   {
@@ -139,9 +123,7 @@ class CutoverStep extends \Google\Model
     return $this->shuttingDownSourceVm;
   }
   /**
-   * The time the step has started.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

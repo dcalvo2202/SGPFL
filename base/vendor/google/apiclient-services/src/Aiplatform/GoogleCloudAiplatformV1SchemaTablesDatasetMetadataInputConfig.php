@@ -25,7 +25,7 @@ class GoogleCloudAiplatformV1SchemaTablesDatasetMetadataInputConfig extends \Goo
   protected $gcsSourceDataType = '';
 
   /**
-   * @param GoogleCloudAiplatformV1SchemaTablesDatasetMetadataBigQuerySource $bigquerySource
+   * @param GoogleCloudAiplatformV1SchemaTablesDatasetMetadataBigQuerySource
    */
   public function setBigquerySource(GoogleCloudAiplatformV1SchemaTablesDatasetMetadataBigQuerySource $bigquerySource)
   {
@@ -39,7 +39,7 @@ class GoogleCloudAiplatformV1SchemaTablesDatasetMetadataInputConfig extends \Goo
     return $this->bigquerySource;
   }
   /**
-   * @param GoogleCloudAiplatformV1SchemaTablesDatasetMetadataGcsSource $gcsSource
+   * @param GoogleCloudAiplatformV1SchemaTablesDatasetMetadataGcsSource
    */
   public function setGcsSource(GoogleCloudAiplatformV1SchemaTablesDatasetMetadataGcsSource $gcsSource)
   {

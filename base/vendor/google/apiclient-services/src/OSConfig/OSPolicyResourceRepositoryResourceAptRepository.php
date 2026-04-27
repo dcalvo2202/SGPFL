@@ -19,75 +19,44 @@ namespace Google\Service\OSConfig;
 
 class OSPolicyResourceRepositoryResourceAptRepository extends \Google\Collection
 {
-  /**
-   * Unspecified is invalid.
-   */
-  public const ARCHIVE_TYPE_ARCHIVE_TYPE_UNSPECIFIED = 'ARCHIVE_TYPE_UNSPECIFIED';
-  /**
-   * Deb indicates that the archive contains binary files.
-   */
-  public const ARCHIVE_TYPE_DEB = 'DEB';
-  /**
-   * Deb-src indicates that the archive contains source files.
-   */
-  public const ARCHIVE_TYPE_DEB_SRC = 'DEB_SRC';
   protected $collection_key = 'components';
   /**
-   * Required. Type of archive files in this repository.
-   *
    * @var string
    */
   public $archiveType;
   /**
-   * Required. List of components for this repository. Must contain at least one
-   * item.
-   *
    * @var string[]
    */
   public $components;
   /**
-   * Required. Distribution of this repository.
-   *
    * @var string
    */
   public $distribution;
   /**
-   * URI of the key file for this repository. The agent maintains a keyring at
-   * `/etc/apt/trusted.gpg.d/osconfig_agent_managed.gpg`.
-   *
    * @var string
    */
   public $gpgKey;
   /**
-   * Required. URI for this repository.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * Required. Type of archive files in this repository.
-   *
-   * Accepted values: ARCHIVE_TYPE_UNSPECIFIED, DEB, DEB_SRC
-   *
-   * @param self::ARCHIVE_TYPE_* $archiveType
+   * @param string
    */
   public function setArchiveType($archiveType)
   {
     $this->archiveType = $archiveType;
   }
   /**
-   * @return self::ARCHIVE_TYPE_*
+   * @return string
    */
   public function getArchiveType()
   {
     return $this->archiveType;
   }
   /**
-   * Required. List of components for this repository. Must contain at least one
-   * item.
-   *
-   * @param string[] $components
+   * @param string[]
    */
   public function setComponents($components)
   {
@@ -101,9 +70,7 @@ class OSPolicyResourceRepositoryResourceAptRepository extends \Google\Collection
     return $this->components;
   }
   /**
-   * Required. Distribution of this repository.
-   *
-   * @param string $distribution
+   * @param string
    */
   public function setDistribution($distribution)
   {
@@ -117,10 +84,7 @@ class OSPolicyResourceRepositoryResourceAptRepository extends \Google\Collection
     return $this->distribution;
   }
   /**
-   * URI of the key file for this repository. The agent maintains a keyring at
-   * `/etc/apt/trusted.gpg.d/osconfig_agent_managed.gpg`.
-   *
-   * @param string $gpgKey
+   * @param string
    */
   public function setGpgKey($gpgKey)
   {
@@ -134,9 +98,7 @@ class OSPolicyResourceRepositoryResourceAptRepository extends \Google\Collection
     return $this->gpgKey;
   }
   /**
-   * Required. URI for this repository.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

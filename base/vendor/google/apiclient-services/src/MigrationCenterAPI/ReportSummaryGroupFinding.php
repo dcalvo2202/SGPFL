@@ -23,21 +23,14 @@ class ReportSummaryGroupFinding extends \Google\Collection
   protected $assetAggregateStatsType = ReportSummaryAssetAggregateStats::class;
   protected $assetAggregateStatsDataType = '';
   /**
-   * Description for the Group.
-   *
    * @var string
    */
   public $description;
   /**
-   * Display Name for the Group.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * This field is deprecated, do not rely on it having a value.
-   *
-   * @deprecated
    * @var string
    */
   public $overlappingAssetCount;
@@ -45,9 +38,7 @@ class ReportSummaryGroupFinding extends \Google\Collection
   protected $preferenceSetFindingsDataType = 'array';
 
   /**
-   * Summary statistics for all the assets in this group.
-   *
-   * @param ReportSummaryAssetAggregateStats $assetAggregateStats
+   * @param ReportSummaryAssetAggregateStats
    */
   public function setAssetAggregateStats(ReportSummaryAssetAggregateStats $assetAggregateStats)
   {
@@ -61,9 +52,7 @@ class ReportSummaryGroupFinding extends \Google\Collection
     return $this->assetAggregateStats;
   }
   /**
-   * Description for the Group.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -77,9 +66,7 @@ class ReportSummaryGroupFinding extends \Google\Collection
     return $this->description;
   }
   /**
-   * Display Name for the Group.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -93,17 +80,13 @@ class ReportSummaryGroupFinding extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * This field is deprecated, do not rely on it having a value.
-   *
-   * @deprecated
-   * @param string $overlappingAssetCount
+   * @param string
    */
   public function setOverlappingAssetCount($overlappingAssetCount)
   {
     $this->overlappingAssetCount = $overlappingAssetCount;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getOverlappingAssetCount()
@@ -111,9 +94,7 @@ class ReportSummaryGroupFinding extends \Google\Collection
     return $this->overlappingAssetCount;
   }
   /**
-   * Findings for each of the PreferenceSets for this group.
-   *
-   * @param ReportSummaryGroupPreferenceSetFinding[] $preferenceSetFindings
+   * @param ReportSummaryGroupPreferenceSetFinding[]
    */
   public function setPreferenceSetFindings($preferenceSetFindings)
   {

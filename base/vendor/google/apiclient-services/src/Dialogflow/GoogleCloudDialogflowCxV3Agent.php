@@ -51,7 +51,6 @@ class GoogleCloudDialogflowCxV3Agent extends \Google\Collection
    */
   public $enableSpellCorrection;
   /**
-   * @deprecated
    * @var bool
    */
   public $enableStackdriverLogging;
@@ -103,7 +102,7 @@ class GoogleCloudDialogflowCxV3Agent extends \Google\Collection
   public $timeZone;
 
   /**
-   * @param GoogleCloudDialogflowCxV3AdvancedSettings $advancedSettings
+   * @param GoogleCloudDialogflowCxV3AdvancedSettings
    */
   public function setAdvancedSettings(GoogleCloudDialogflowCxV3AdvancedSettings $advancedSettings)
   {
@@ -117,7 +116,7 @@ class GoogleCloudDialogflowCxV3Agent extends \Google\Collection
     return $this->advancedSettings;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3AgentAnswerFeedbackSettings $answerFeedbackSettings
+   * @param GoogleCloudDialogflowCxV3AgentAnswerFeedbackSettings
    */
   public function setAnswerFeedbackSettings(GoogleCloudDialogflowCxV3AgentAnswerFeedbackSettings $answerFeedbackSettings)
   {
@@ -131,7 +130,7 @@ class GoogleCloudDialogflowCxV3Agent extends \Google\Collection
     return $this->answerFeedbackSettings;
   }
   /**
-   * @param string $avatarUri
+   * @param string
    */
   public function setAvatarUri($avatarUri)
   {
@@ -145,7 +144,7 @@ class GoogleCloudDialogflowCxV3Agent extends \Google\Collection
     return $this->avatarUri;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3AgentClientCertificateSettings $clientCertificateSettings
+   * @param GoogleCloudDialogflowCxV3AgentClientCertificateSettings
    */
   public function setClientCertificateSettings(GoogleCloudDialogflowCxV3AgentClientCertificateSettings $clientCertificateSettings)
   {
@@ -159,7 +158,7 @@ class GoogleCloudDialogflowCxV3Agent extends \Google\Collection
     return $this->clientCertificateSettings;
   }
   /**
-   * @param string $defaultLanguageCode
+   * @param string
    */
   public function setDefaultLanguageCode($defaultLanguageCode)
   {
@@ -173,7 +172,7 @@ class GoogleCloudDialogflowCxV3Agent extends \Google\Collection
     return $this->defaultLanguageCode;
   }
   /**
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -187,7 +186,7 @@ class GoogleCloudDialogflowCxV3Agent extends \Google\Collection
     return $this->description;
   }
   /**
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -201,7 +200,7 @@ class GoogleCloudDialogflowCxV3Agent extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * @param bool $enableMultiLanguageTraining
+   * @param bool
    */
   public function setEnableMultiLanguageTraining($enableMultiLanguageTraining)
   {
@@ -215,7 +214,7 @@ class GoogleCloudDialogflowCxV3Agent extends \Google\Collection
     return $this->enableMultiLanguageTraining;
   }
   /**
-   * @param bool $enableSpellCorrection
+   * @param bool
    */
   public function setEnableSpellCorrection($enableSpellCorrection)
   {
@@ -229,15 +228,13 @@ class GoogleCloudDialogflowCxV3Agent extends \Google\Collection
     return $this->enableSpellCorrection;
   }
   /**
-   * @deprecated
-   * @param bool $enableStackdriverLogging
+   * @param bool
    */
   public function setEnableStackdriverLogging($enableStackdriverLogging)
   {
     $this->enableStackdriverLogging = $enableStackdriverLogging;
   }
   /**
-   * @deprecated
    * @return bool
    */
   public function getEnableStackdriverLogging()
@@ -245,7 +242,7 @@ class GoogleCloudDialogflowCxV3Agent extends \Google\Collection
     return $this->enableStackdriverLogging;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3AgentGenAppBuilderSettings $genAppBuilderSettings
+   * @param GoogleCloudDialogflowCxV3AgentGenAppBuilderSettings
    */
   public function setGenAppBuilderSettings(GoogleCloudDialogflowCxV3AgentGenAppBuilderSettings $genAppBuilderSettings)
   {
@@ -259,7 +256,7 @@ class GoogleCloudDialogflowCxV3Agent extends \Google\Collection
     return $this->genAppBuilderSettings;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3AgentGitIntegrationSettings $gitIntegrationSettings
+   * @param GoogleCloudDialogflowCxV3AgentGitIntegrationSettings
    */
   public function setGitIntegrationSettings(GoogleCloudDialogflowCxV3AgentGitIntegrationSettings $gitIntegrationSettings)
   {
@@ -273,7 +270,7 @@ class GoogleCloudDialogflowCxV3Agent extends \Google\Collection
     return $this->gitIntegrationSettings;
   }
   /**
-   * @param bool $locked
+   * @param bool
    */
   public function setLocked($locked)
   {
@@ -287,7 +284,7 @@ class GoogleCloudDialogflowCxV3Agent extends \Google\Collection
     return $this->locked;
   }
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -301,7 +298,7 @@ class GoogleCloudDialogflowCxV3Agent extends \Google\Collection
     return $this->name;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3AgentPersonalizationSettings $personalizationSettings
+   * @param GoogleCloudDialogflowCxV3AgentPersonalizationSettings
    */
   public function setPersonalizationSettings(GoogleCloudDialogflowCxV3AgentPersonalizationSettings $personalizationSettings)
   {
@@ -315,7 +312,7 @@ class GoogleCloudDialogflowCxV3Agent extends \Google\Collection
     return $this->personalizationSettings;
   }
   /**
-   * @param bool $satisfiesPzi
+   * @param bool
    */
   public function setSatisfiesPzi($satisfiesPzi)
   {
@@ -329,7 +326,7 @@ class GoogleCloudDialogflowCxV3Agent extends \Google\Collection
     return $this->satisfiesPzi;
   }
   /**
-   * @param bool $satisfiesPzs
+   * @param bool
    */
   public function setSatisfiesPzs($satisfiesPzs)
   {
@@ -343,7 +340,7 @@ class GoogleCloudDialogflowCxV3Agent extends \Google\Collection
     return $this->satisfiesPzs;
   }
   /**
-   * @param string $securitySettings
+   * @param string
    */
   public function setSecuritySettings($securitySettings)
   {
@@ -357,7 +354,7 @@ class GoogleCloudDialogflowCxV3Agent extends \Google\Collection
     return $this->securitySettings;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3SpeechToTextSettings $speechToTextSettings
+   * @param GoogleCloudDialogflowCxV3SpeechToTextSettings
    */
   public function setSpeechToTextSettings(GoogleCloudDialogflowCxV3SpeechToTextSettings $speechToTextSettings)
   {
@@ -371,7 +368,7 @@ class GoogleCloudDialogflowCxV3Agent extends \Google\Collection
     return $this->speechToTextSettings;
   }
   /**
-   * @param string $startFlow
+   * @param string
    */
   public function setStartFlow($startFlow)
   {
@@ -385,7 +382,7 @@ class GoogleCloudDialogflowCxV3Agent extends \Google\Collection
     return $this->startFlow;
   }
   /**
-   * @param string $startPlaybook
+   * @param string
    */
   public function setStartPlaybook($startPlaybook)
   {
@@ -399,7 +396,7 @@ class GoogleCloudDialogflowCxV3Agent extends \Google\Collection
     return $this->startPlaybook;
   }
   /**
-   * @param string[] $supportedLanguageCodes
+   * @param string[]
    */
   public function setSupportedLanguageCodes($supportedLanguageCodes)
   {
@@ -413,7 +410,7 @@ class GoogleCloudDialogflowCxV3Agent extends \Google\Collection
     return $this->supportedLanguageCodes;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3TextToSpeechSettings $textToSpeechSettings
+   * @param GoogleCloudDialogflowCxV3TextToSpeechSettings
    */
   public function setTextToSpeechSettings(GoogleCloudDialogflowCxV3TextToSpeechSettings $textToSpeechSettings)
   {
@@ -427,7 +424,7 @@ class GoogleCloudDialogflowCxV3Agent extends \Google\Collection
     return $this->textToSpeechSettings;
   }
   /**
-   * @param string $timeZone
+   * @param string
    */
   public function setTimeZone($timeZone)
   {

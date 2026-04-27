@@ -24,9 +24,7 @@ class SearchResponse extends \Google\Collection
   protected $resultsDataType = 'array';
 
   /**
-   * The results of the request.
-   *
-   * @param SearchResult[] $results
+   * @param SearchResult[]
    */
   public function setResults($results)
   {

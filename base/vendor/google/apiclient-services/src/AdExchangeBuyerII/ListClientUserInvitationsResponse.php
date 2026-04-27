@@ -23,18 +23,12 @@ class ListClientUserInvitationsResponse extends \Google\Collection
   protected $invitationsType = ClientUserInvitation::class;
   protected $invitationsDataType = 'array';
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * ListClientUserInvitationsRequest.pageToken field in the subsequent call to
-   * the clients.invitations.list method to retrieve the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The returned list of client users.
-   *
-   * @param ClientUserInvitation[] $invitations
+   * @param ClientUserInvitation[]
    */
   public function setInvitations($invitations)
   {
@@ -48,11 +42,7 @@ class ListClientUserInvitationsResponse extends \Google\Collection
     return $this->invitations;
   }
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * ListClientUserInvitationsRequest.pageToken field in the subsequent call to
-   * the clients.invitations.list method to retrieve the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

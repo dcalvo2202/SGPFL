@@ -20,24 +20,16 @@ namespace Google\Service\DataprocMetastore;
 class AlterMetadataResourceLocationRequest extends \Google\Model
 {
   /**
-   * Required. The new location URI for the metadata resource.
-   *
    * @var string
    */
   public $locationUri;
   /**
-   * Required. The relative metadata resource name in the following
-   * format.databases/{database_id} or databases/{database_id}/tables/{table_id}
-   * or databases/{database_id}/tables/{table_id}/partitions/{partition_id}
-   *
    * @var string
    */
   public $resourceName;
 
   /**
-   * Required. The new location URI for the metadata resource.
-   *
-   * @param string $locationUri
+   * @param string
    */
   public function setLocationUri($locationUri)
   {
@@ -51,11 +43,7 @@ class AlterMetadataResourceLocationRequest extends \Google\Model
     return $this->locationUri;
   }
   /**
-   * Required. The relative metadata resource name in the following
-   * format.databases/{database_id} or databases/{database_id}/tables/{table_id}
-   * or databases/{database_id}/tables/{table_id}/partitions/{partition_id}
-   *
-   * @param string $resourceName
+   * @param string
    */
   public function setResourceName($resourceName)
   {

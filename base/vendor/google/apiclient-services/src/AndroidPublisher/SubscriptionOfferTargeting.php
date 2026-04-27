@@ -25,9 +25,7 @@ class SubscriptionOfferTargeting extends \Google\Model
   protected $upgradeRuleDataType = '';
 
   /**
-   * Offer targeting rule for new user acquisition.
-   *
-   * @param AcquisitionTargetingRule $acquisitionRule
+   * @param AcquisitionTargetingRule
    */
   public function setAcquisitionRule(AcquisitionTargetingRule $acquisitionRule)
   {
@@ -41,9 +39,7 @@ class SubscriptionOfferTargeting extends \Google\Model
     return $this->acquisitionRule;
   }
   /**
-   * Offer targeting rule for upgrading users' existing plans.
-   *
-   * @param UpgradeTargetingRule $upgradeRule
+   * @param UpgradeTargetingRule
    */
   public function setUpgradeRule(UpgradeTargetingRule $upgradeRule)
   {

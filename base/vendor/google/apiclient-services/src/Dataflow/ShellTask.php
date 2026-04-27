@@ -20,22 +20,16 @@ namespace Google\Service\Dataflow;
 class ShellTask extends \Google\Model
 {
   /**
-   * The shell command to run.
-   *
    * @var string
    */
   public $command;
   /**
-   * Exit code for the task.
-   *
    * @var int
    */
   public $exitCode;
 
   /**
-   * The shell command to run.
-   *
-   * @param string $command
+   * @param string
    */
   public function setCommand($command)
   {
@@ -49,9 +43,7 @@ class ShellTask extends \Google\Model
     return $this->command;
   }
   /**
-   * Exit code for the task.
-   *
-   * @param int $exitCode
+   * @param int
    */
   public function setExitCode($exitCode)
   {

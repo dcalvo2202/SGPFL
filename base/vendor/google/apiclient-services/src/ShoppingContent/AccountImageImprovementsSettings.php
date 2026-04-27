@@ -20,16 +20,12 @@ namespace Google\Service\ShoppingContent;
 class AccountImageImprovementsSettings extends \Google\Model
 {
   /**
-   * Enables automatic image improvements.
-   *
    * @var bool
    */
   public $allowAutomaticImageImprovements;
 
   /**
-   * Enables automatic image improvements.
-   *
-   * @param bool $allowAutomaticImageImprovements
+   * @param bool
    */
   public function setAllowAutomaticImageImprovements($allowAutomaticImageImprovements)
   {

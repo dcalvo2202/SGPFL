@@ -24,10 +24,7 @@ class BulkEditNegativeKeywordsResponse extends \Google\Collection
   protected $negativeKeywordsDataType = 'array';
 
   /**
-   * The list of negative keywords that have been successfully created. This
-   * list will be absent if empty.
-   *
-   * @param NegativeKeyword[] $negativeKeywords
+   * @param NegativeKeyword[]
    */
   public function setNegativeKeywords($negativeKeywords)
   {

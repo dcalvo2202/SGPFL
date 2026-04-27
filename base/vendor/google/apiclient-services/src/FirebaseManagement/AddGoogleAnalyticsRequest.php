@@ -20,31 +20,16 @@ namespace Google\Service\FirebaseManagement;
 class AddGoogleAnalyticsRequest extends \Google\Model
 {
   /**
-   * The ID for the existing [Google Analytics
-   * account](http://www.google.com/analytics/) that you want to link with the
-   * `FirebaseProject`. Specifying this field will provision a new Google
-   * Analytics property in your Google Analytics account and associate the new
-   * property with the `FirebaseProject`.
-   *
    * @var string
    */
   public $analyticsAccountId;
   /**
-   * The ID for the existing Google Analytics property that you want to
-   * associate with the `FirebaseProject`.
-   *
    * @var string
    */
   public $analyticsPropertyId;
 
   /**
-   * The ID for the existing [Google Analytics
-   * account](http://www.google.com/analytics/) that you want to link with the
-   * `FirebaseProject`. Specifying this field will provision a new Google
-   * Analytics property in your Google Analytics account and associate the new
-   * property with the `FirebaseProject`.
-   *
-   * @param string $analyticsAccountId
+   * @param string
    */
   public function setAnalyticsAccountId($analyticsAccountId)
   {
@@ -58,10 +43,7 @@ class AddGoogleAnalyticsRequest extends \Google\Model
     return $this->analyticsAccountId;
   }
   /**
-   * The ID for the existing Google Analytics property that you want to
-   * associate with the `FirebaseProject`.
-   *
-   * @param string $analyticsPropertyId
+   * @param string
    */
   public function setAnalyticsPropertyId($analyticsPropertyId)
   {

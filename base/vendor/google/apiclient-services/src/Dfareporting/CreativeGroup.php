@@ -20,64 +20,38 @@ namespace Google\Service\Dfareporting;
 class CreativeGroup extends \Google\Model
 {
   /**
-   * Account ID of this creative group. This is a read-only field that can be
-   * left blank.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * Advertiser ID of this creative group. This is a required field on
-   * insertion.
-   *
    * @var string
    */
   public $advertiserId;
   protected $advertiserIdDimensionValueType = DimensionValue::class;
   protected $advertiserIdDimensionValueDataType = '';
   /**
-   * Subgroup of the creative group. Assign your creative groups to a subgroup
-   * in order to filter or manage them more easily. This field is required on
-   * insertion and is read-only after insertion. Acceptable values are 1 to 2,
-   * inclusive.
-   *
    * @var int
    */
   public $groupNumber;
   /**
-   * ID of this creative group. This is a read-only, auto-generated field.
-   *
    * @var string
    */
   public $id;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#creativeGroup".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Name of this creative group. This is a required field and must be less than
-   * 256 characters long and unique among creative groups of the same
-   * advertiser.
-   *
    * @var string
    */
   public $name;
   /**
-   * Subaccount ID of this creative group. This is a read-only field that can be
-   * left blank.
-   *
    * @var string
    */
   public $subaccountId;
 
   /**
-   * Account ID of this creative group. This is a read-only field that can be
-   * left blank.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -91,10 +65,7 @@ class CreativeGroup extends \Google\Model
     return $this->accountId;
   }
   /**
-   * Advertiser ID of this creative group. This is a required field on
-   * insertion.
-   *
-   * @param string $advertiserId
+   * @param string
    */
   public function setAdvertiserId($advertiserId)
   {
@@ -108,10 +79,7 @@ class CreativeGroup extends \Google\Model
     return $this->advertiserId;
   }
   /**
-   * Dimension value for the ID of the advertiser. This is a read-only, auto-
-   * generated field.
-   *
-   * @param DimensionValue $advertiserIdDimensionValue
+   * @param DimensionValue
    */
   public function setAdvertiserIdDimensionValue(DimensionValue $advertiserIdDimensionValue)
   {
@@ -125,12 +93,7 @@ class CreativeGroup extends \Google\Model
     return $this->advertiserIdDimensionValue;
   }
   /**
-   * Subgroup of the creative group. Assign your creative groups to a subgroup
-   * in order to filter or manage them more easily. This field is required on
-   * insertion and is read-only after insertion. Acceptable values are 1 to 2,
-   * inclusive.
-   *
-   * @param int $groupNumber
+   * @param int
    */
   public function setGroupNumber($groupNumber)
   {
@@ -144,9 +107,7 @@ class CreativeGroup extends \Google\Model
     return $this->groupNumber;
   }
   /**
-   * ID of this creative group. This is a read-only, auto-generated field.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -160,10 +121,7 @@ class CreativeGroup extends \Google\Model
     return $this->id;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#creativeGroup".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -177,11 +135,7 @@ class CreativeGroup extends \Google\Model
     return $this->kind;
   }
   /**
-   * Name of this creative group. This is a required field and must be less than
-   * 256 characters long and unique among creative groups of the same
-   * advertiser.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -195,10 +149,7 @@ class CreativeGroup extends \Google\Model
     return $this->name;
   }
   /**
-   * Subaccount ID of this creative group. This is a read-only field that can be
-   * left blank.
-   *
-   * @param string $subaccountId
+   * @param string
    */
   public function setSubaccountId($subaccountId)
   {

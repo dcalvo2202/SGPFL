@@ -24,10 +24,7 @@ class LabelValueRow extends \Google\Collection
   protected $columnsDataType = 'array';
 
   /**
-   * A list of labels and values. These will be displayed in a singular column,
-   * one after the other, not in multiple columns, despite the field name.
-   *
-   * @param LabelValue[] $columns
+   * @param LabelValue[]
    */
   public function setColumns($columns)
   {

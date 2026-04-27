@@ -20,25 +20,16 @@ namespace Google\Service\Dataform;
 class MoveDirectoryRequest extends \Google\Model
 {
   /**
-   * Required. The new path for the directory including directory name, rooted
-   * at workspace root.
-   *
    * @var string
    */
   public $newPath;
   /**
-   * Required. The directory's full path including directory name, relative to
-   * the workspace root.
-   *
    * @var string
    */
   public $path;
 
   /**
-   * Required. The new path for the directory including directory name, rooted
-   * at workspace root.
-   *
-   * @param string $newPath
+   * @param string
    */
   public function setNewPath($newPath)
   {
@@ -52,10 +43,7 @@ class MoveDirectoryRequest extends \Google\Model
     return $this->newPath;
   }
   /**
-   * Required. The directory's full path including directory name, relative to
-   * the workspace root.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {

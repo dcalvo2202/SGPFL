@@ -20,8 +20,6 @@ namespace Google\Service\PubsubLite;
 class ComputeTimeCursorRequest extends \Google\Model
 {
   /**
-   * Required. The partition for which we should compute the cursor.
-   *
    * @var string
    */
   public $partition;
@@ -29,9 +27,7 @@ class ComputeTimeCursorRequest extends \Google\Model
   protected $targetDataType = '';
 
   /**
-   * Required. The partition for which we should compute the cursor.
-   *
-   * @param string $partition
+   * @param string
    */
   public function setPartition($partition)
   {
@@ -45,10 +41,7 @@ class ComputeTimeCursorRequest extends \Google\Model
     return $this->partition;
   }
   /**
-   * Required. The target publish or event time. Specifying a future time will
-   * return an unset cursor.
-   *
-   * @param TimeTarget $target
+   * @param TimeTarget
    */
   public function setTarget(TimeTarget $target)
   {

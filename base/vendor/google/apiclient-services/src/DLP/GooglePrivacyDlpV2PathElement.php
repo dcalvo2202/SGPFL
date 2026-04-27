@@ -20,34 +20,20 @@ namespace Google\Service\DLP;
 class GooglePrivacyDlpV2PathElement extends \Google\Model
 {
   /**
-   * The auto-allocated ID of the entity. Never equal to zero. Values less than
-   * zero are discouraged and may not be supported in the future.
-   *
    * @var string
    */
   public $id;
   /**
-   * The kind of the entity. A kind matching regex `__.*__` is reserved/read-
-   * only. A kind must not contain more than 1500 bytes when UTF-8 encoded.
-   * Cannot be `""`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The name of the entity. A name matching regex `__.*__` is reserved/read-
-   * only. A name must not be more than 1500 bytes when UTF-8 encoded. Cannot be
-   * `""`.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The auto-allocated ID of the entity. Never equal to zero. Values less than
-   * zero are discouraged and may not be supported in the future.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -61,11 +47,7 @@ class GooglePrivacyDlpV2PathElement extends \Google\Model
     return $this->id;
   }
   /**
-   * The kind of the entity. A kind matching regex `__.*__` is reserved/read-
-   * only. A kind must not contain more than 1500 bytes when UTF-8 encoded.
-   * Cannot be `""`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -79,11 +61,7 @@ class GooglePrivacyDlpV2PathElement extends \Google\Model
     return $this->kind;
   }
   /**
-   * The name of the entity. A name matching regex `__.*__` is reserved/read-
-   * only. A name must not be more than 1500 bytes when UTF-8 encoded. Cannot be
-   * `""`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

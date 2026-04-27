@@ -21,42 +21,28 @@ class TriggerEntity extends \Google\Collection
 {
   protected $collection_key = 'triggeringEvents';
   /**
-   * Custom engine specific features.
-   *
    * @var array[]
    */
   public $customFeatures;
   /**
-   * The name of the trigger.
-   *
    * @var string
    */
   public $name;
   /**
-   * The SQL code which creates the trigger.
-   *
    * @var string
    */
   public $sqlCode;
   /**
-   * Indicates when the trigger fires, for example BEFORE STATEMENT, AFTER EACH
-   * ROW.
-   *
    * @var string
    */
   public $triggerType;
   /**
-   * The DML, DDL, or database events that fire the trigger, for example INSERT,
-   * UPDATE.
-   *
    * @var string[]
    */
   public $triggeringEvents;
 
   /**
-   * Custom engine specific features.
-   *
-   * @param array[] $customFeatures
+   * @param array[]
    */
   public function setCustomFeatures($customFeatures)
   {
@@ -70,9 +56,7 @@ class TriggerEntity extends \Google\Collection
     return $this->customFeatures;
   }
   /**
-   * The name of the trigger.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -86,9 +70,7 @@ class TriggerEntity extends \Google\Collection
     return $this->name;
   }
   /**
-   * The SQL code which creates the trigger.
-   *
-   * @param string $sqlCode
+   * @param string
    */
   public function setSqlCode($sqlCode)
   {
@@ -102,10 +84,7 @@ class TriggerEntity extends \Google\Collection
     return $this->sqlCode;
   }
   /**
-   * Indicates when the trigger fires, for example BEFORE STATEMENT, AFTER EACH
-   * ROW.
-   *
-   * @param string $triggerType
+   * @param string
    */
   public function setTriggerType($triggerType)
   {
@@ -119,10 +98,7 @@ class TriggerEntity extends \Google\Collection
     return $this->triggerType;
   }
   /**
-   * The DML, DDL, or database events that fire the trigger, for example INSERT,
-   * UPDATE.
-   *
-   * @param string[] $triggeringEvents
+   * @param string[]
    */
   public function setTriggeringEvents($triggeringEvents)
   {

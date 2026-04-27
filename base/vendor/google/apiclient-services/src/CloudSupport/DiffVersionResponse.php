@@ -20,22 +20,16 @@ namespace Google\Service\CloudSupport;
 class DiffVersionResponse extends \Google\Model
 {
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
    * @var string
    */
   public $objectSizeBytes;
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
    * @var string
    */
   public $objectVersion;
 
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
-   * @param string $objectSizeBytes
+   * @param string
    */
   public function setObjectSizeBytes($objectSizeBytes)
   {
@@ -49,9 +43,7 @@ class DiffVersionResponse extends \Google\Model
     return $this->objectSizeBytes;
   }
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
-   * @param string $objectVersion
+   * @param string
    */
   public function setObjectVersion($objectVersion)
   {

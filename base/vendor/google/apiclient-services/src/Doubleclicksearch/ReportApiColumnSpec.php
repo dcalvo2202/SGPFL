@@ -20,92 +20,48 @@ namespace Google\Service\Doubleclicksearch;
 class ReportApiColumnSpec extends \Google\Model
 {
   /**
-   * Name of a DoubleClick Search column to include in the report.
-   *
    * @var string
    */
   public $columnName;
   /**
-   * Segments a report by a custom dimension. The report must be scoped to an
-   * advertiser or lower, and the custom dimension must already be set up in
-   * DoubleClick Search. The custom dimension name, which appears in DoubleClick
-   * Search, is case sensitive.\ If used in a conversion report, returns the
-   * value of the specified custom dimension for the given conversion, if set.
-   * This column does not segment the conversion report.
-   *
    * @var string
    */
   public $customDimensionName;
   /**
-   * Name of a custom metric to include in the report. The report must be scoped
-   * to an advertiser or lower, and the custom metric must already be set up in
-   * DoubleClick Search. The custom metric name, which appears in DoubleClick
-   * Search, is case sensitive.
-   *
    * @var string
    */
   public $customMetricName;
   /**
-   * Inclusive day in YYYY-MM-DD format. When provided, this overrides the
-   * overall time range of the report for this column only. Must be provided
-   * together with `startDate`.
-   *
    * @var string
    */
   public $endDate;
   /**
-   * Synchronous report only. Set to `true` to group by this column. Defaults to
-   * `false`.
-   *
    * @var bool
    */
   public $groupByColumn;
   /**
-   * Text used to identify this column in the report output; defaults to
-   * `columnName` or `savedColumnName` when not specified. This can be used to
-   * prevent collisions between DoubleClick Search columns and saved columns
-   * with the same name.
-   *
    * @var string
    */
   public $headerText;
   /**
-   * The platform that is used to provide data for the custom dimension.
-   * Acceptable values are "floodlight".
-   *
    * @var string
    */
   public $platformSource;
   /**
-   * Returns metrics only for a specific type of product activity. Accepted
-   * values are: - "`sold`": returns metrics only for products that were sold -
-   * "`advertised`": returns metrics only for products that were advertised in a
-   * Shopping campaign, and that might or might not have been sold
-   *
    * @var string
    */
   public $productReportPerspective;
   /**
-   * Name of a saved column to include in the report. The report must be scoped
-   * at advertiser or lower, and this saved column must already be created in
-   * the DoubleClick Search UI.
-   *
    * @var string
    */
   public $savedColumnName;
   /**
-   * Inclusive date in YYYY-MM-DD format. When provided, this overrides the
-   * overall time range of the report for this column only. Must be provided
-   * together with `endDate`.
-   *
    * @var string
    */
   public $startDate;
 
   /**
-   * Name of a DoubleClick Search column to include in the report.
-   *
-   * @param string $columnName
+   * @param string
    */
   public function setColumnName($columnName)
   {
@@ -119,14 +75,7 @@ class ReportApiColumnSpec extends \Google\Model
     return $this->columnName;
   }
   /**
-   * Segments a report by a custom dimension. The report must be scoped to an
-   * advertiser or lower, and the custom dimension must already be set up in
-   * DoubleClick Search. The custom dimension name, which appears in DoubleClick
-   * Search, is case sensitive.\ If used in a conversion report, returns the
-   * value of the specified custom dimension for the given conversion, if set.
-   * This column does not segment the conversion report.
-   *
-   * @param string $customDimensionName
+   * @param string
    */
   public function setCustomDimensionName($customDimensionName)
   {
@@ -140,12 +89,7 @@ class ReportApiColumnSpec extends \Google\Model
     return $this->customDimensionName;
   }
   /**
-   * Name of a custom metric to include in the report. The report must be scoped
-   * to an advertiser or lower, and the custom metric must already be set up in
-   * DoubleClick Search. The custom metric name, which appears in DoubleClick
-   * Search, is case sensitive.
-   *
-   * @param string $customMetricName
+   * @param string
    */
   public function setCustomMetricName($customMetricName)
   {
@@ -159,11 +103,7 @@ class ReportApiColumnSpec extends \Google\Model
     return $this->customMetricName;
   }
   /**
-   * Inclusive day in YYYY-MM-DD format. When provided, this overrides the
-   * overall time range of the report for this column only. Must be provided
-   * together with `startDate`.
-   *
-   * @param string $endDate
+   * @param string
    */
   public function setEndDate($endDate)
   {
@@ -177,10 +117,7 @@ class ReportApiColumnSpec extends \Google\Model
     return $this->endDate;
   }
   /**
-   * Synchronous report only. Set to `true` to group by this column. Defaults to
-   * `false`.
-   *
-   * @param bool $groupByColumn
+   * @param bool
    */
   public function setGroupByColumn($groupByColumn)
   {
@@ -194,12 +131,7 @@ class ReportApiColumnSpec extends \Google\Model
     return $this->groupByColumn;
   }
   /**
-   * Text used to identify this column in the report output; defaults to
-   * `columnName` or `savedColumnName` when not specified. This can be used to
-   * prevent collisions between DoubleClick Search columns and saved columns
-   * with the same name.
-   *
-   * @param string $headerText
+   * @param string
    */
   public function setHeaderText($headerText)
   {
@@ -213,10 +145,7 @@ class ReportApiColumnSpec extends \Google\Model
     return $this->headerText;
   }
   /**
-   * The platform that is used to provide data for the custom dimension.
-   * Acceptable values are "floodlight".
-   *
-   * @param string $platformSource
+   * @param string
    */
   public function setPlatformSource($platformSource)
   {
@@ -230,12 +159,7 @@ class ReportApiColumnSpec extends \Google\Model
     return $this->platformSource;
   }
   /**
-   * Returns metrics only for a specific type of product activity. Accepted
-   * values are: - "`sold`": returns metrics only for products that were sold -
-   * "`advertised`": returns metrics only for products that were advertised in a
-   * Shopping campaign, and that might or might not have been sold
-   *
-   * @param string $productReportPerspective
+   * @param string
    */
   public function setProductReportPerspective($productReportPerspective)
   {
@@ -249,11 +173,7 @@ class ReportApiColumnSpec extends \Google\Model
     return $this->productReportPerspective;
   }
   /**
-   * Name of a saved column to include in the report. The report must be scoped
-   * at advertiser or lower, and this saved column must already be created in
-   * the DoubleClick Search UI.
-   *
-   * @param string $savedColumnName
+   * @param string
    */
   public function setSavedColumnName($savedColumnName)
   {
@@ -267,11 +187,7 @@ class ReportApiColumnSpec extends \Google\Model
     return $this->savedColumnName;
   }
   /**
-   * Inclusive date in YYYY-MM-DD format. When provided, this overrides the
-   * overall time range of the report for this column only. Must be provided
-   * together with `endDate`.
-   *
-   * @param string $startDate
+   * @param string
    */
   public function setStartDate($startDate)
   {

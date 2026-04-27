@@ -20,42 +20,20 @@ namespace Google\Service\Calendar;
 class EventFocusTimeProperties extends \Google\Model
 {
   /**
-   * Whether to decline meeting invitations which overlap Focus Time events.
-   * Valid values are declineNone, meaning that no meeting invitations are
-   * declined; declineAllConflictingInvitations, meaning that all conflicting
-   * meeting invitations that conflict with the event are declined; and
-   * declineOnlyNewConflictingInvitations, meaning that only new conflicting
-   * meeting invitations which arrive while the Focus Time event is present are
-   * to be declined.
-   *
    * @var string
    */
   public $autoDeclineMode;
   /**
-   * The status to mark the user in Chat and related products. This can be
-   * available or doNotDisturb.
-   *
    * @var string
    */
   public $chatStatus;
   /**
-   * Response message to set if an existing event or new invitation is
-   * automatically declined by Calendar.
-   *
    * @var string
    */
   public $declineMessage;
 
   /**
-   * Whether to decline meeting invitations which overlap Focus Time events.
-   * Valid values are declineNone, meaning that no meeting invitations are
-   * declined; declineAllConflictingInvitations, meaning that all conflicting
-   * meeting invitations that conflict with the event are declined; and
-   * declineOnlyNewConflictingInvitations, meaning that only new conflicting
-   * meeting invitations which arrive while the Focus Time event is present are
-   * to be declined.
-   *
-   * @param string $autoDeclineMode
+   * @param string
    */
   public function setAutoDeclineMode($autoDeclineMode)
   {
@@ -69,10 +47,7 @@ class EventFocusTimeProperties extends \Google\Model
     return $this->autoDeclineMode;
   }
   /**
-   * The status to mark the user in Chat and related products. This can be
-   * available or doNotDisturb.
-   *
-   * @param string $chatStatus
+   * @param string
    */
   public function setChatStatus($chatStatus)
   {
@@ -86,10 +61,7 @@ class EventFocusTimeProperties extends \Google\Model
     return $this->chatStatus;
   }
   /**
-   * Response message to set if an existing event or new invitation is
-   * automatically declined by Calendar.
-   *
-   * @param string $declineMessage
+   * @param string
    */
   public function setDeclineMessage($declineMessage)
   {

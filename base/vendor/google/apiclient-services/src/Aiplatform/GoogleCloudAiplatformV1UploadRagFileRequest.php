@@ -25,9 +25,7 @@ class GoogleCloudAiplatformV1UploadRagFileRequest extends \Google\Model
   protected $uploadRagFileConfigDataType = '';
 
   /**
-   * Required. The RagFile to upload.
-   *
-   * @param GoogleCloudAiplatformV1RagFile $ragFile
+   * @param GoogleCloudAiplatformV1RagFile
    */
   public function setRagFile(GoogleCloudAiplatformV1RagFile $ragFile)
   {
@@ -41,10 +39,7 @@ class GoogleCloudAiplatformV1UploadRagFileRequest extends \Google\Model
     return $this->ragFile;
   }
   /**
-   * Required. The config for the RagFiles to be uploaded into the RagCorpus.
-   * VertexRagDataService.UploadRagFile.
-   *
-   * @param GoogleCloudAiplatformV1UploadRagFileConfig $uploadRagFileConfig
+   * @param GoogleCloudAiplatformV1UploadRagFileConfig
    */
   public function setUploadRagFileConfig(GoogleCloudAiplatformV1UploadRagFileConfig $uploadRagFileConfig)
   {

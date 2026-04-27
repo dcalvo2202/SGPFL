@@ -27,10 +27,7 @@ class StatefulPolicyPreservedState extends \Google\Model
   protected $internalIPsDataType = 'map';
 
   /**
-   * Disks created on the instances that will be preserved on instance delete,
-   * update, etc. This map is keyed with the device names of the disks.
-   *
-   * @param StatefulPolicyPreservedStateDiskDevice[] $disks
+   * @param StatefulPolicyPreservedStateDiskDevice[]
    */
   public function setDisks($disks)
   {
@@ -44,11 +41,7 @@ class StatefulPolicyPreservedState extends \Google\Model
     return $this->disks;
   }
   /**
-   * External network IPs assigned to the instances that will be preserved on
-   * instance delete, update, etc. This map is keyed with the network interface
-   * name.
-   *
-   * @param StatefulPolicyPreservedStateNetworkIp[] $externalIPs
+   * @param StatefulPolicyPreservedStateNetworkIp[]
    */
   public function setExternalIPs($externalIPs)
   {
@@ -62,11 +55,7 @@ class StatefulPolicyPreservedState extends \Google\Model
     return $this->externalIPs;
   }
   /**
-   * Internal network IPs assigned to the instances that will be preserved on
-   * instance delete, update, etc. This map is keyed with the network interface
-   * name.
-   *
-   * @param StatefulPolicyPreservedStateNetworkIp[] $internalIPs
+   * @param StatefulPolicyPreservedStateNetworkIp[]
    */
   public function setInternalIPs($internalIPs)
   {

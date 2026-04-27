@@ -24,9 +24,7 @@ class ListForwardingAddressesResponse extends \Google\Collection
   protected $forwardingAddressesDataType = 'array';
 
   /**
-   * List of addresses that may be used for forwarding.
-   *
-   * @param ForwardingAddress[] $forwardingAddresses
+   * @param ForwardingAddress[]
    */
   public function setForwardingAddresses($forwardingAddresses)
   {

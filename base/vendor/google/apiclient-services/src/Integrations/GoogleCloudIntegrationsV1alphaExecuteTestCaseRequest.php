@@ -23,9 +23,7 @@ class GoogleCloudIntegrationsV1alphaExecuteTestCaseRequest extends \Google\Model
   protected $inputParametersDataType = 'map';
 
   /**
-   * Optional. Input parameters used by test case execution.
-   *
-   * @param GoogleCloudIntegrationsV1alphaValueType[] $inputParameters
+   * @param GoogleCloudIntegrationsV1alphaValueType[]
    */
   public function setInputParameters($inputParameters)
   {

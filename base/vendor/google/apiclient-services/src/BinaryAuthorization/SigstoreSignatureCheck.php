@@ -24,10 +24,7 @@ class SigstoreSignatureCheck extends \Google\Collection
   protected $sigstoreAuthoritiesDataType = 'array';
 
   /**
-   * Required. The authorities required by this check to verify the signature. A
-   * signature only needs to be verified by one authority to pass the check.
-   *
-   * @param SigstoreAuthority[] $sigstoreAuthorities
+   * @param SigstoreAuthority[]
    */
   public function setSigstoreAuthorities($sigstoreAuthorities)
   {

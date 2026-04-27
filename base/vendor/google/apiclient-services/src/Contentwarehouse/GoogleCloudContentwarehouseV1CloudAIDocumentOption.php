@@ -20,22 +20,16 @@ namespace Google\Service\Contentwarehouse;
 class GoogleCloudContentwarehouseV1CloudAIDocumentOption extends \Google\Model
 {
   /**
-   * If set, only selected entities will be converted to properties.
-   *
    * @var string[]
    */
   public $customizedEntitiesPropertiesConversions;
   /**
-   * Whether to convert all the entities to properties.
-   *
    * @var bool
    */
   public $enableEntitiesConversions;
 
   /**
-   * If set, only selected entities will be converted to properties.
-   *
-   * @param string[] $customizedEntitiesPropertiesConversions
+   * @param string[]
    */
   public function setCustomizedEntitiesPropertiesConversions($customizedEntitiesPropertiesConversions)
   {
@@ -49,9 +43,7 @@ class GoogleCloudContentwarehouseV1CloudAIDocumentOption extends \Google\Model
     return $this->customizedEntitiesPropertiesConversions;
   }
   /**
-   * Whether to convert all the entities to properties.
-   *
-   * @param bool $enableEntitiesConversions
+   * @param bool
    */
   public function setEnableEntitiesConversions($enableEntitiesConversions)
   {

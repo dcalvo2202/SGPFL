@@ -20,16 +20,12 @@ namespace Google\Service\DatabaseMigrationService;
 class SchemaEntity extends \Google\Model
 {
   /**
-   * Custom engine specific features.
-   *
    * @var array[]
    */
   public $customFeatures;
 
   /**
-   * Custom engine specific features.
-   *
-   * @param array[] $customFeatures
+   * @param array[]
    */
   public function setCustomFeatures($customFeatures)
   {

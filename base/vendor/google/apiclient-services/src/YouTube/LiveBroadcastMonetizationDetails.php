@@ -23,7 +23,7 @@ class LiveBroadcastMonetizationDetails extends \Google\Model
   protected $cuepointScheduleDataType = '';
 
   /**
-   * @param CuepointSchedule $cuepointSchedule
+   * @param CuepointSchedule
    */
   public function setCuepointSchedule(CuepointSchedule $cuepointSchedule)
   {

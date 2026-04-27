@@ -20,51 +20,28 @@ namespace Google\Service\BeyondCorp;
 class GoogleCloudBeyondcorpAppconnectionsV1AppConnectionGateway extends \Google\Model
 {
   /**
-   * Default value. This value is unused.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * Gateway hosted in a GCP regional managed instance group.
-   */
-  public const TYPE_GCP_REGIONAL_MIG = 'GCP_REGIONAL_MIG';
-  /**
-   * Required. AppGateway name in following format:
-   * `projects/{project_id}/locations/{location_id}/appgateways/{gateway_id}`
-   *
    * @var string
    */
   public $appGateway;
   /**
-   * Output only. Ingress port reserved on the gateways for this AppConnection,
-   * if not specified or zero, the default port is 19443.
-   *
    * @var int
    */
   public $ingressPort;
   /**
-   * Output only. L7 private service connection for this resource.
-   *
    * @var string
    */
   public $l7psc;
   /**
-   * Required. The type of hosting used by the gateway.
-   *
    * @var string
    */
   public $type;
   /**
-   * Output only. Server-defined URI for this resource.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * Required. AppGateway name in following format:
-   * `projects/{project_id}/locations/{location_id}/appgateways/{gateway_id}`
-   *
-   * @param string $appGateway
+   * @param string
    */
   public function setAppGateway($appGateway)
   {
@@ -78,10 +55,7 @@ class GoogleCloudBeyondcorpAppconnectionsV1AppConnectionGateway extends \Google\
     return $this->appGateway;
   }
   /**
-   * Output only. Ingress port reserved on the gateways for this AppConnection,
-   * if not specified or zero, the default port is 19443.
-   *
-   * @param int $ingressPort
+   * @param int
    */
   public function setIngressPort($ingressPort)
   {
@@ -95,9 +69,7 @@ class GoogleCloudBeyondcorpAppconnectionsV1AppConnectionGateway extends \Google\
     return $this->ingressPort;
   }
   /**
-   * Output only. L7 private service connection for this resource.
-   *
-   * @param string $l7psc
+   * @param string
    */
   public function setL7psc($l7psc)
   {
@@ -111,27 +83,21 @@ class GoogleCloudBeyondcorpAppconnectionsV1AppConnectionGateway extends \Google\
     return $this->l7psc;
   }
   /**
-   * Required. The type of hosting used by the gateway.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, GCP_REGIONAL_MIG
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * Output only. Server-defined URI for this resource.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

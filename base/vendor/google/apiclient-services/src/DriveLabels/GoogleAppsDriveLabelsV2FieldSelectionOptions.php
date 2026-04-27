@@ -26,10 +26,7 @@ class GoogleAppsDriveLabelsV2FieldSelectionOptions extends \Google\Collection
   protected $listOptionsDataType = '';
 
   /**
-   * The options available for this selection field. The list order is
-   * consistent, and modified with `insert_before_choice`.
-   *
-   * @param GoogleAppsDriveLabelsV2FieldSelectionOptionsChoice[] $choices
+   * @param GoogleAppsDriveLabelsV2FieldSelectionOptionsChoice[]
    */
   public function setChoices($choices)
   {
@@ -43,10 +40,7 @@ class GoogleAppsDriveLabelsV2FieldSelectionOptions extends \Google\Collection
     return $this->choices;
   }
   /**
-   * When specified, indicates this field supports a list of values. Once the
-   * field is published, this cannot be changed.
-   *
-   * @param GoogleAppsDriveLabelsV2FieldListOptions $listOptions
+   * @param GoogleAppsDriveLabelsV2FieldListOptions
    */
   public function setListOptions(GoogleAppsDriveLabelsV2FieldListOptions $listOptions)
   {

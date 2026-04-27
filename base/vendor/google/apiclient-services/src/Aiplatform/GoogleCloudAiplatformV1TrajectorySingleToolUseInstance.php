@@ -23,9 +23,7 @@ class GoogleCloudAiplatformV1TrajectorySingleToolUseInstance extends \Google\Mod
   protected $predictedTrajectoryDataType = '';
 
   /**
-   * Required. Spec for predicted tool call trajectory.
-   *
-   * @param GoogleCloudAiplatformV1Trajectory $predictedTrajectory
+   * @param GoogleCloudAiplatformV1Trajectory
    */
   public function setPredictedTrajectory(GoogleCloudAiplatformV1Trajectory $predictedTrajectory)
   {

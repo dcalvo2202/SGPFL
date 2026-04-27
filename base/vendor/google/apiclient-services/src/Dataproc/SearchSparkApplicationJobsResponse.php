@@ -21,10 +21,6 @@ class SearchSparkApplicationJobsResponse extends \Google\Collection
 {
   protected $collection_key = 'sparkApplicationJobs';
   /**
-   * This token is included in the response if there are more results to fetch.
-   * To fetch additional results, provide this value as the page_token in a
-   * subsequent SearchSparkApplicationJobsRequest.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -32,11 +28,7 @@ class SearchSparkApplicationJobsResponse extends \Google\Collection
   protected $sparkApplicationJobsDataType = 'array';
 
   /**
-   * This token is included in the response if there are more results to fetch.
-   * To fetch additional results, provide this value as the page_token in a
-   * subsequent SearchSparkApplicationJobsRequest.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -50,9 +42,7 @@ class SearchSparkApplicationJobsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Output only. Data corresponding to a spark job.
-   *
-   * @param JobData[] $sparkApplicationJobs
+   * @param JobData[]
    */
   public function setSparkApplicationJobs($sparkApplicationJobs)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\Dataflow;
 class StreamingScalingReportResponse extends \Google\Model
 {
   /**
-   * Maximum thread count limit;
-   *
    * @var int
    */
   public $maximumThreadCount;
 
   /**
-   * Maximum thread count limit;
-   *
-   * @param int $maximumThreadCount
+   * @param int
    */
   public function setMaximumThreadCount($maximumThreadCount)
   {

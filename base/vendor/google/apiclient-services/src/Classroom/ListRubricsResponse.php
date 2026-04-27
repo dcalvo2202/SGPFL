@@ -21,9 +21,6 @@ class ListRubricsResponse extends \Google\Collection
 {
   protected $collection_key = 'rubrics';
   /**
-   * Token identifying the next page of results to return. If empty, no further
-   * results are available.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListRubricsResponse extends \Google\Collection
   protected $rubricsDataType = 'array';
 
   /**
-   * Token identifying the next page of results to return. If empty, no further
-   * results are available.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class ListRubricsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Rubrics that match the request.
-   *
-   * @param Rubric[] $rubrics
+   * @param Rubric[]
    */
   public function setRubrics($rubrics)
   {

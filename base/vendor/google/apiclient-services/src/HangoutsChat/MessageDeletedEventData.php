@@ -23,10 +23,7 @@ class MessageDeletedEventData extends \Google\Model
   protected $messageDataType = '';
 
   /**
-   * The deleted message. Only the `name`, `createTime`, and `deletionMetadata`
-   * fields are populated.
-   *
-   * @param Message $message
+   * @param Message
    */
   public function setMessage(Message $message)
   {

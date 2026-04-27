@@ -20,63 +20,34 @@ namespace Google\Service\YouTube;
 class ChannelContentDetailsRelatedPlaylists extends \Google\Model
 {
   /**
-   * The ID of the playlist that contains the channel"s favorite videos. Use the
-   * playlistItems.insert and playlistItems.delete to add or remove items from
-   * that list.
-   *
-   * @deprecated
    * @var string
    */
   public $favorites;
   /**
-   * The ID of the playlist that contains the channel"s liked videos. Use the
-   * playlistItems.insert and playlistItems.delete to add or remove items from
-   * that list.
-   *
    * @var string
    */
   public $likes;
   /**
-   * The ID of the playlist that contains the channel"s uploaded videos. Use the
-   * videos.insert method to upload new videos and the videos.delete method to
-   * delete previously uploaded videos.
-   *
    * @var string
    */
   public $uploads;
   /**
-   * The ID of the playlist that contains the channel"s watch history. Use the
-   * playlistItems.insert and playlistItems.delete to add or remove items from
-   * that list.
-   *
-   * @deprecated
    * @var string
    */
   public $watchHistory;
   /**
-   * The ID of the playlist that contains the channel"s watch later playlist.
-   * Use the playlistItems.insert and playlistItems.delete to add or remove
-   * items from that list.
-   *
-   * @deprecated
    * @var string
    */
   public $watchLater;
 
   /**
-   * The ID of the playlist that contains the channel"s favorite videos. Use the
-   * playlistItems.insert and playlistItems.delete to add or remove items from
-   * that list.
-   *
-   * @deprecated
-   * @param string $favorites
+   * @param string
    */
   public function setFavorites($favorites)
   {
     $this->favorites = $favorites;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getFavorites()
@@ -84,11 +55,7 @@ class ChannelContentDetailsRelatedPlaylists extends \Google\Model
     return $this->favorites;
   }
   /**
-   * The ID of the playlist that contains the channel"s liked videos. Use the
-   * playlistItems.insert and playlistItems.delete to add or remove items from
-   * that list.
-   *
-   * @param string $likes
+   * @param string
    */
   public function setLikes($likes)
   {
@@ -102,11 +69,7 @@ class ChannelContentDetailsRelatedPlaylists extends \Google\Model
     return $this->likes;
   }
   /**
-   * The ID of the playlist that contains the channel"s uploaded videos. Use the
-   * videos.insert method to upload new videos and the videos.delete method to
-   * delete previously uploaded videos.
-   *
-   * @param string $uploads
+   * @param string
    */
   public function setUploads($uploads)
   {
@@ -120,19 +83,13 @@ class ChannelContentDetailsRelatedPlaylists extends \Google\Model
     return $this->uploads;
   }
   /**
-   * The ID of the playlist that contains the channel"s watch history. Use the
-   * playlistItems.insert and playlistItems.delete to add or remove items from
-   * that list.
-   *
-   * @deprecated
-   * @param string $watchHistory
+   * @param string
    */
   public function setWatchHistory($watchHistory)
   {
     $this->watchHistory = $watchHistory;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getWatchHistory()
@@ -140,19 +97,13 @@ class ChannelContentDetailsRelatedPlaylists extends \Google\Model
     return $this->watchHistory;
   }
   /**
-   * The ID of the playlist that contains the channel"s watch later playlist.
-   * Use the playlistItems.insert and playlistItems.delete to add or remove
-   * items from that list.
-   *
-   * @deprecated
-   * @param string $watchLater
+   * @param string
    */
   public function setWatchLater($watchLater)
   {
     $this->watchLater = $watchLater;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getWatchLater()

@@ -20,16 +20,12 @@ namespace Google\Service\Datastore;
 class KindExpression extends \Google\Model
 {
   /**
-   * The name of the kind.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The name of the kind.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

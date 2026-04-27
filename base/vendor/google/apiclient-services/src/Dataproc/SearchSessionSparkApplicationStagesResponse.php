@@ -21,10 +21,6 @@ class SearchSessionSparkApplicationStagesResponse extends \Google\Collection
 {
   protected $collection_key = 'sparkApplicationStages';
   /**
-   * This token is included in the response if there are more results to fetch.
-   * To fetch additional results, provide this value as the page_token in a
-   * subsequent SearchSessionSparkApplicationStages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -32,11 +28,7 @@ class SearchSessionSparkApplicationStagesResponse extends \Google\Collection
   protected $sparkApplicationStagesDataType = 'array';
 
   /**
-   * This token is included in the response if there are more results to fetch.
-   * To fetch additional results, provide this value as the page_token in a
-   * subsequent SearchSessionSparkApplicationStages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -50,9 +42,7 @@ class SearchSessionSparkApplicationStagesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Output only. Data corresponding to a stage.
-   *
-   * @param StageData[] $sparkApplicationStages
+   * @param StageData[]
    */
   public function setSparkApplicationStages($sparkApplicationStages)
   {

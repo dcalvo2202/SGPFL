@@ -20,34 +20,24 @@ namespace Google\Service\NetworkManagement;
 class CloudRunRevisionInfo extends \Google\Model
 {
   /**
-   * Name of a Cloud Run revision.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Location in which this revision is deployed.
-   *
    * @var string
    */
   public $location;
   /**
-   * URI of Cloud Run service this revision belongs to.
-   *
    * @var string
    */
   public $serviceUri;
   /**
-   * URI of a Cloud Run revision.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * Name of a Cloud Run revision.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -61,9 +51,7 @@ class CloudRunRevisionInfo extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Location in which this revision is deployed.
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -77,9 +65,7 @@ class CloudRunRevisionInfo extends \Google\Model
     return $this->location;
   }
   /**
-   * URI of Cloud Run service this revision belongs to.
-   *
-   * @param string $serviceUri
+   * @param string
    */
   public function setServiceUri($serviceUri)
   {
@@ -93,9 +79,7 @@ class CloudRunRevisionInfo extends \Google\Model
     return $this->serviceUri;
   }
   /**
-   * URI of a Cloud Run revision.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

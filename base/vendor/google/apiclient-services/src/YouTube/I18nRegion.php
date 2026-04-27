@@ -20,21 +20,14 @@ namespace Google\Service\YouTube;
 class I18nRegion extends \Google\Model
 {
   /**
-   * Etag of this resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * The ID that YouTube uses to uniquely identify the i18n region.
-   *
    * @var string
    */
   public $id;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "youtube#i18nRegion".
-   *
    * @var string
    */
   public $kind;
@@ -42,9 +35,7 @@ class I18nRegion extends \Google\Model
   protected $snippetDataType = '';
 
   /**
-   * Etag of this resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -58,9 +49,7 @@ class I18nRegion extends \Google\Model
     return $this->etag;
   }
   /**
-   * The ID that YouTube uses to uniquely identify the i18n region.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -74,10 +63,7 @@ class I18nRegion extends \Google\Model
     return $this->id;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "youtube#i18nRegion".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -91,10 +77,7 @@ class I18nRegion extends \Google\Model
     return $this->kind;
   }
   /**
-   * The snippet object contains basic details about the i18n region, such as
-   * region code and human-readable name.
-   *
-   * @param I18nRegionSnippet $snippet
+   * @param I18nRegionSnippet
    */
   public function setSnippet(I18nRegionSnippet $snippet)
   {

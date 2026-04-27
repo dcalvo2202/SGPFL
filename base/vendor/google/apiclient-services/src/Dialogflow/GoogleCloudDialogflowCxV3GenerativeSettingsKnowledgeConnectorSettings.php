@@ -45,7 +45,7 @@ class GoogleCloudDialogflowCxV3GenerativeSettingsKnowledgeConnectorSettings exte
   public $disableDataStoreFallback;
 
   /**
-   * @param string $agent
+   * @param string
    */
   public function setAgent($agent)
   {
@@ -59,7 +59,7 @@ class GoogleCloudDialogflowCxV3GenerativeSettingsKnowledgeConnectorSettings exte
     return $this->agent;
   }
   /**
-   * @param string $agentIdentity
+   * @param string
    */
   public function setAgentIdentity($agentIdentity)
   {
@@ -73,7 +73,7 @@ class GoogleCloudDialogflowCxV3GenerativeSettingsKnowledgeConnectorSettings exte
     return $this->agentIdentity;
   }
   /**
-   * @param string $agentScope
+   * @param string
    */
   public function setAgentScope($agentScope)
   {
@@ -87,7 +87,7 @@ class GoogleCloudDialogflowCxV3GenerativeSettingsKnowledgeConnectorSettings exte
     return $this->agentScope;
   }
   /**
-   * @param string $business
+   * @param string
    */
   public function setBusiness($business)
   {
@@ -101,7 +101,7 @@ class GoogleCloudDialogflowCxV3GenerativeSettingsKnowledgeConnectorSettings exte
     return $this->business;
   }
   /**
-   * @param string $businessDescription
+   * @param string
    */
   public function setBusinessDescription($businessDescription)
   {
@@ -115,7 +115,7 @@ class GoogleCloudDialogflowCxV3GenerativeSettingsKnowledgeConnectorSettings exte
     return $this->businessDescription;
   }
   /**
-   * @param bool $disableDataStoreFallback
+   * @param bool
    */
   public function setDisableDataStoreFallback($disableDataStoreFallback)
   {

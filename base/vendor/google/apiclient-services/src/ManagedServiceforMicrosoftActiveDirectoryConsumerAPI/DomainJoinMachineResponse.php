@@ -20,16 +20,12 @@ namespace Google\Service\ManagedServiceforMicrosoftActiveDirectoryConsumerAPI;
 class DomainJoinMachineResponse extends \Google\Model
 {
   /**
-   * Offline domain join blob as the response
-   *
    * @var string
    */
   public $domainJoinBlob;
 
   /**
-   * Offline domain join blob as the response
-   *
-   * @param string $domainJoinBlob
+   * @param string
    */
   public function setDomainJoinBlob($domainJoinBlob)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\DisplayVideo;
 class SubExchangeTargetingOptionDetails extends \Google\Model
 {
   /**
-   * Output only. The display name of the sub-exchange.
-   *
    * @var string
    */
   public $displayName;
 
   /**
-   * Output only. The display name of the sub-exchange.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {

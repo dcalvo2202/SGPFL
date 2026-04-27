@@ -20,11 +20,6 @@ namespace Google\Service\BigQueryDataTransfer;
 class StartManualTransferRunsRequest extends \Google\Model
 {
   /**
-   * A run_time timestamp for historical data files or reports that are
-   * scheduled to be transferred by the scheduled transfer run.
-   * requested_run_time must be a past time and cannot include future time
-   * values.
-   *
    * @var string
    */
   public $requestedRunTime;
@@ -32,12 +27,7 @@ class StartManualTransferRunsRequest extends \Google\Model
   protected $requestedTimeRangeDataType = '';
 
   /**
-   * A run_time timestamp for historical data files or reports that are
-   * scheduled to be transferred by the scheduled transfer run.
-   * requested_run_time must be a past time and cannot include future time
-   * values.
-   *
-   * @param string $requestedRunTime
+   * @param string
    */
   public function setRequestedRunTime($requestedRunTime)
   {
@@ -51,12 +41,7 @@ class StartManualTransferRunsRequest extends \Google\Model
     return $this->requestedRunTime;
   }
   /**
-   * A time_range start and end timestamp for historical data files or reports
-   * that are scheduled to be transferred by the scheduled transfer run.
-   * requested_time_range must be a past time and cannot include future time
-   * values.
-   *
-   * @param TimeRange $requestedTimeRange
+   * @param TimeRange
    */
   public function setRequestedTimeRange(TimeRange $requestedTimeRange)
   {

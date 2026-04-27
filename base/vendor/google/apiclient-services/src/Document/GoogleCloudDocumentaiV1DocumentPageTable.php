@@ -32,9 +32,7 @@ class GoogleCloudDocumentaiV1DocumentPageTable extends \Google\Collection
   protected $provenanceDataType = '';
 
   /**
-   * Body rows of the table.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentPageTableTableRow[] $bodyRows
+   * @param GoogleCloudDocumentaiV1DocumentPageTableTableRow[]
    */
   public function setBodyRows($bodyRows)
   {
@@ -48,9 +46,7 @@ class GoogleCloudDocumentaiV1DocumentPageTable extends \Google\Collection
     return $this->bodyRows;
   }
   /**
-   * A list of detected languages together with confidence.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentPageDetectedLanguage[] $detectedLanguages
+   * @param GoogleCloudDocumentaiV1DocumentPageDetectedLanguage[]
    */
   public function setDetectedLanguages($detectedLanguages)
   {
@@ -64,9 +60,7 @@ class GoogleCloudDocumentaiV1DocumentPageTable extends \Google\Collection
     return $this->detectedLanguages;
   }
   /**
-   * Header rows of the table.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentPageTableTableRow[] $headerRows
+   * @param GoogleCloudDocumentaiV1DocumentPageTableTableRow[]
    */
   public function setHeaderRows($headerRows)
   {
@@ -80,9 +74,7 @@ class GoogleCloudDocumentaiV1DocumentPageTable extends \Google\Collection
     return $this->headerRows;
   }
   /**
-   * Layout for Table.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentPageLayout $layout
+   * @param GoogleCloudDocumentaiV1DocumentPageLayout
    */
   public function setLayout(GoogleCloudDocumentaiV1DocumentPageLayout $layout)
   {
@@ -96,17 +88,13 @@ class GoogleCloudDocumentaiV1DocumentPageTable extends \Google\Collection
     return $this->layout;
   }
   /**
-   * The history of this table.
-   *
-   * @deprecated
-   * @param GoogleCloudDocumentaiV1DocumentProvenance $provenance
+   * @param GoogleCloudDocumentaiV1DocumentProvenance
    */
   public function setProvenance(GoogleCloudDocumentaiV1DocumentProvenance $provenance)
   {
     $this->provenance = $provenance;
   }
   /**
-   * @deprecated
    * @return GoogleCloudDocumentaiV1DocumentProvenance
    */
   public function getProvenance()

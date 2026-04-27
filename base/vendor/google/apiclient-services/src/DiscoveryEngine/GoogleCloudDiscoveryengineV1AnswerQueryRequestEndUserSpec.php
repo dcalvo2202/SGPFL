@@ -24,9 +24,7 @@ class GoogleCloudDiscoveryengineV1AnswerQueryRequestEndUserSpec extends \Google\
   protected $endUserMetadataDataType = 'array';
 
   /**
-   * Optional. End user metadata.
-   *
-   * @param GoogleCloudDiscoveryengineV1AnswerQueryRequestEndUserSpecEndUserMetaData[] $endUserMetadata
+   * @param GoogleCloudDiscoveryengineV1AnswerQueryRequestEndUserSpecEndUserMetaData[]
    */
   public function setEndUserMetadata($endUserMetadata)
   {

@@ -27,9 +27,7 @@ class AppHub extends \Google\Model
   protected $workloadDataType = '';
 
   /**
-   * Metadata associated with the application.
-   *
-   * @param AppHubApplication $application
+   * @param AppHubApplication
    */
   public function setApplication(AppHubApplication $application)
   {
@@ -43,9 +41,7 @@ class AppHub extends \Google\Model
     return $this->application;
   }
   /**
-   * Metadata associated with the service.
-   *
-   * @param AppHubService $service
+   * @param AppHubService
    */
   public function setService(AppHubService $service)
   {
@@ -59,9 +55,7 @@ class AppHub extends \Google\Model
     return $this->service;
   }
   /**
-   * Metadata associated with the workload.
-   *
-   * @param AppHubWorkload $workload
+   * @param AppHubWorkload
    */
   public function setWorkload(AppHubWorkload $workload)
   {

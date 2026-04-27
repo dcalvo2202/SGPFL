@@ -20,14 +20,10 @@ namespace Google\Service\Contactcenterinsights;
 class GoogleCloudContactcenterinsightsV1UndeployIssueModelMetadata extends \Google\Model
 {
   /**
-   * Output only. The time the operation was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. The time the operation finished running.
-   *
    * @var string
    */
   public $endTime;
@@ -35,9 +31,7 @@ class GoogleCloudContactcenterinsightsV1UndeployIssueModelMetadata extends \Goog
   protected $requestDataType = '';
 
   /**
-   * Output only. The time the operation was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -51,9 +45,7 @@ class GoogleCloudContactcenterinsightsV1UndeployIssueModelMetadata extends \Goog
     return $this->createTime;
   }
   /**
-   * Output only. The time the operation finished running.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -67,9 +59,7 @@ class GoogleCloudContactcenterinsightsV1UndeployIssueModelMetadata extends \Goog
     return $this->endTime;
   }
   /**
-   * The original request for undeployment.
-   *
-   * @param GoogleCloudContactcenterinsightsV1UndeployIssueModelRequest $request
+   * @param GoogleCloudContactcenterinsightsV1UndeployIssueModelRequest
    */
   public function setRequest(GoogleCloudContactcenterinsightsV1UndeployIssueModelRequest $request)
   {

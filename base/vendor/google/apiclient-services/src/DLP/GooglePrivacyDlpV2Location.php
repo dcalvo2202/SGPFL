@@ -30,12 +30,7 @@ class GooglePrivacyDlpV2Location extends \Google\Collection
   protected $contentLocationsDataType = 'array';
 
   /**
-   * Zero-based byte offsets delimiting the finding. These are relative to the
-   * finding's containing element. Note that when the content is not textual,
-   * this references the UTF-8 encoded textual representation of the content.
-   * Omitted if content is an image.
-   *
-   * @param GooglePrivacyDlpV2Range $byteRange
+   * @param GooglePrivacyDlpV2Range
    */
   public function setByteRange(GooglePrivacyDlpV2Range $byteRange)
   {
@@ -49,10 +44,7 @@ class GooglePrivacyDlpV2Location extends \Google\Collection
     return $this->byteRange;
   }
   /**
-   * Unicode character offsets delimiting the finding. These are relative to the
-   * finding's containing element. Provided when the content is text.
-   *
-   * @param GooglePrivacyDlpV2Range $codepointRange
+   * @param GooglePrivacyDlpV2Range
    */
   public function setCodepointRange(GooglePrivacyDlpV2Range $codepointRange)
   {
@@ -66,9 +58,7 @@ class GooglePrivacyDlpV2Location extends \Google\Collection
     return $this->codepointRange;
   }
   /**
-   * Information about the container where this finding occurred, if available.
-   *
-   * @param GooglePrivacyDlpV2Container $container
+   * @param GooglePrivacyDlpV2Container
    */
   public function setContainer(GooglePrivacyDlpV2Container $container)
   {
@@ -82,10 +72,7 @@ class GooglePrivacyDlpV2Location extends \Google\Collection
     return $this->container;
   }
   /**
-   * List of nested objects pointing to the precise location of the finding
-   * within the file or record.
-   *
-   * @param GooglePrivacyDlpV2ContentLocation[] $contentLocations
+   * @param GooglePrivacyDlpV2ContentLocation[]
    */
   public function setContentLocations($contentLocations)
   {

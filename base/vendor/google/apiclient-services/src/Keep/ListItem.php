@@ -21,8 +21,6 @@ class ListItem extends \Google\Collection
 {
   protected $collection_key = 'childListItems';
   /**
-   * Whether this item has been checked off or not.
-   *
    * @var bool
    */
   public $checked;
@@ -32,9 +30,7 @@ class ListItem extends \Google\Collection
   protected $textDataType = '';
 
   /**
-   * Whether this item has been checked off or not.
-   *
-   * @param bool $checked
+   * @param bool
    */
   public function setChecked($checked)
   {
@@ -48,10 +44,7 @@ class ListItem extends \Google\Collection
     return $this->checked;
   }
   /**
-   * If set, list of list items nested under this list item. Only one level of
-   * nesting is allowed.
-   *
-   * @param ListItem[] $childListItems
+   * @param ListItem[]
    */
   public function setChildListItems($childListItems)
   {
@@ -65,9 +58,7 @@ class ListItem extends \Google\Collection
     return $this->childListItems;
   }
   /**
-   * The text of this item. Length must be less than 1,000 characters.
-   *
-   * @param TextContent $text
+   * @param TextContent
    */
   public function setText(TextContent $text)
   {

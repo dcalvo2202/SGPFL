@@ -20,87 +20,44 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1EntryGroup extends \Google\Model
 {
   /**
-   * The default value. It is set for resources that were not subject for
-   * migration from Data Catalog service.
-   */
-  public const TRANSFER_STATUS_TRANSFER_STATUS_UNSPECIFIED = 'TRANSFER_STATUS_UNSPECIFIED';
-  /**
-   * Indicates that a resource was migrated from Data Catalog service but it
-   * hasn't been transferred yet. In particular the resource cannot be updated
-   * from Dataplex API.
-   */
-  public const TRANSFER_STATUS_TRANSFER_STATUS_MIGRATED = 'TRANSFER_STATUS_MIGRATED';
-  /**
-   * Indicates that a resource was transferred from Data Catalog service. The
-   * resource can only be updated from Dataplex API.
-   */
-  public const TRANSFER_STATUS_TRANSFER_STATUS_TRANSFERRED = 'TRANSFER_STATUS_TRANSFERRED';
-  /**
-   * Output only. The time when the EntryGroup was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. Description of the EntryGroup.
-   *
    * @var string
    */
   public $description;
   /**
-   * Optional. User friendly display name.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * This checksum is computed by the service, and might be sent on update and
-   * delete requests to ensure the client has an up-to-date value before
-   * proceeding.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Optional. User-defined labels for the EntryGroup.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Output only. The relative resource name of the EntryGroup, in the format pr
-   * ojects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_gr
-   * oup_id}.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Denotes the transfer status of the Entry Group. It is
-   * unspecified for Entry Group created from Dataplex API.
-   *
    * @var string
    */
   public $transferStatus;
   /**
-   * Output only. System generated globally unique ID for the EntryGroup. If you
-   * delete and recreate the EntryGroup with the same name, this ID will be
-   * different.
-   *
    * @var string
    */
   public $uid;
   /**
-   * Output only. The time when the EntryGroup was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. The time when the EntryGroup was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -114,9 +71,7 @@ class GoogleCloudDataplexV1EntryGroup extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Optional. Description of the EntryGroup.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -130,9 +85,7 @@ class GoogleCloudDataplexV1EntryGroup extends \Google\Model
     return $this->description;
   }
   /**
-   * Optional. User friendly display name.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -146,11 +99,7 @@ class GoogleCloudDataplexV1EntryGroup extends \Google\Model
     return $this->displayName;
   }
   /**
-   * This checksum is computed by the service, and might be sent on update and
-   * delete requests to ensure the client has an up-to-date value before
-   * proceeding.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -164,9 +113,7 @@ class GoogleCloudDataplexV1EntryGroup extends \Google\Model
     return $this->etag;
   }
   /**
-   * Optional. User-defined labels for the EntryGroup.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -180,11 +127,7 @@ class GoogleCloudDataplexV1EntryGroup extends \Google\Model
     return $this->labels;
   }
   /**
-   * Output only. The relative resource name of the EntryGroup, in the format pr
-   * ojects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_gr
-   * oup_id}.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -198,31 +141,21 @@ class GoogleCloudDataplexV1EntryGroup extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Denotes the transfer status of the Entry Group. It is
-   * unspecified for Entry Group created from Dataplex API.
-   *
-   * Accepted values: TRANSFER_STATUS_UNSPECIFIED, TRANSFER_STATUS_MIGRATED,
-   * TRANSFER_STATUS_TRANSFERRED
-   *
-   * @param self::TRANSFER_STATUS_* $transferStatus
+   * @param string
    */
   public function setTransferStatus($transferStatus)
   {
     $this->transferStatus = $transferStatus;
   }
   /**
-   * @return self::TRANSFER_STATUS_*
+   * @return string
    */
   public function getTransferStatus()
   {
     return $this->transferStatus;
   }
   /**
-   * Output only. System generated globally unique ID for the EntryGroup. If you
-   * delete and recreate the EntryGroup with the same name, this ID will be
-   * different.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {
@@ -236,9 +169,7 @@ class GoogleCloudDataplexV1EntryGroup extends \Google\Model
     return $this->uid;
   }
   /**
-   * Output only. The time when the EntryGroup was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

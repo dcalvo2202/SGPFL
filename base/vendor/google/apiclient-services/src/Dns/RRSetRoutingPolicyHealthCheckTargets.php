@@ -21,10 +21,6 @@ class RRSetRoutingPolicyHealthCheckTargets extends \Google\Collection
 {
   protected $collection_key = 'internalLoadBalancers';
   /**
-   * The Internet IP addresses to be health checked. The format matches the
-   * format of ResourceRecordSet.rrdata as defined in RFC 1035 (section 5) and
-   * RFC 1034 (section 3.6.1)
-   *
    * @var string[]
    */
   public $externalEndpoints;
@@ -32,11 +28,7 @@ class RRSetRoutingPolicyHealthCheckTargets extends \Google\Collection
   protected $internalLoadBalancersDataType = 'array';
 
   /**
-   * The Internet IP addresses to be health checked. The format matches the
-   * format of ResourceRecordSet.rrdata as defined in RFC 1035 (section 5) and
-   * RFC 1034 (section 3.6.1)
-   *
-   * @param string[] $externalEndpoints
+   * @param string[]
    */
   public function setExternalEndpoints($externalEndpoints)
   {
@@ -50,9 +42,7 @@ class RRSetRoutingPolicyHealthCheckTargets extends \Google\Collection
     return $this->externalEndpoints;
   }
   /**
-   * Configuration for internal load balancers to be health checked.
-   *
-   * @param RRSetRoutingPolicyLoadBalancerTarget[] $internalLoadBalancers
+   * @param RRSetRoutingPolicyLoadBalancerTarget[]
    */
   public function setInternalLoadBalancers($internalLoadBalancers)
   {

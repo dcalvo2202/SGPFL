@@ -19,64 +19,26 @@ namespace Google\Service\SecurityPosture;
 
 class PolicyDetails extends \Google\Collection
 {
-  /**
-   * Default value. This value is unused.
-   */
-  public const CONSTRAINT_TYPE_CONSTRAINT_TYPE_UNSPECIFIED = 'CONSTRAINT_TYPE_UNSPECIFIED';
-  /**
-   * A custom module for Security Health Analytics.
-   */
-  public const CONSTRAINT_TYPE_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE = 'SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE';
-  /**
-   * A custom organization policy constraint.
-   */
-  public const CONSTRAINT_TYPE_ORG_POLICY_CUSTOM = 'ORG_POLICY_CUSTOM';
-  /**
-   * A built-in detector for Security Health Analytics.
-   */
-  public const CONSTRAINT_TYPE_SECURITY_HEALTH_ANALYTICS_MODULE = 'SECURITY_HEALTH_ANALYTICS_MODULE';
-  /**
-   * A predefined organization policy constraint.
-   */
-  public const CONSTRAINT_TYPE_ORG_POLICY = 'ORG_POLICY';
-  /**
-   * A custom rego policy constraint.
-   */
-  public const CONSTRAINT_TYPE_REGO_POLICY = 'REGO_POLICY';
   protected $collection_key = 'complianceStandards';
   /**
-   * The compliance standards that the policy maps to. For example, `CIS-2.0
-   * 1.15`.
-   *
    * @var string[]
    */
   public $complianceStandards;
   /**
-   * Information about the constraint that was violated. The format of this
-   * information can change at any time without prior notice. Your application
-   * must not depend on this information in any way.
-   *
    * @var string
    */
   public $constraint;
   /**
-   * The type of constraint that was violated.
-   *
    * @var string
    */
   public $constraintType;
   /**
-   * A description of the policy.
-   *
    * @var string
    */
   public $description;
 
   /**
-   * The compliance standards that the policy maps to. For example, `CIS-2.0
-   * 1.15`.
-   *
-   * @param string[] $complianceStandards
+   * @param string[]
    */
   public function setComplianceStandards($complianceStandards)
   {
@@ -90,11 +52,7 @@ class PolicyDetails extends \Google\Collection
     return $this->complianceStandards;
   }
   /**
-   * Information about the constraint that was violated. The format of this
-   * information can change at any time without prior notice. Your application
-   * must not depend on this information in any way.
-   *
-   * @param string $constraint
+   * @param string
    */
   public function setConstraint($constraint)
   {
@@ -108,29 +66,21 @@ class PolicyDetails extends \Google\Collection
     return $this->constraint;
   }
   /**
-   * The type of constraint that was violated.
-   *
-   * Accepted values: CONSTRAINT_TYPE_UNSPECIFIED,
-   * SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULE, ORG_POLICY_CUSTOM,
-   * SECURITY_HEALTH_ANALYTICS_MODULE, ORG_POLICY, REGO_POLICY
-   *
-   * @param self::CONSTRAINT_TYPE_* $constraintType
+   * @param string
    */
   public function setConstraintType($constraintType)
   {
     $this->constraintType = $constraintType;
   }
   /**
-   * @return self::CONSTRAINT_TYPE_*
+   * @return string
    */
   public function getConstraintType()
   {
     return $this->constraintType;
   }
   /**
-   * A description of the policy.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {

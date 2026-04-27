@@ -32,13 +32,25 @@ use Google\Service\Dialogflow\GoogleProtobufEmpty;
 class ProjectsLocationsAgentsTransitionRouteGroups extends \Google\Service\Resource
 {
   /**
+   * Creates an TransitionRouteGroup in the specified flow. Note: You should
+   * always train a flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    * (transitionRouteGroups.create)
    *
-   * @param string $parent
+   * @param string $parent Required. The flow to create an TransitionRouteGroup
+   * for. Format: `projects//locations//agents//flows/` or
+   * `projects//locations//agents/` for agent-level groups.
    * @param GoogleCloudDialogflowCxV3TransitionRouteGroup $postBody
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string languageCode
+   * @opt_param string languageCode The language of the following fields in
+   * `TransitionRouteGroup`: *
+   * `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages` * `Tran
+   * sitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases` If
+   * not specified, the agent's default language is used. [Many
+   * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
+   * are supported. Note: languages must be enabled in the agent before they can
+   * be used.
    * @return GoogleCloudDialogflowCxV3TransitionRouteGroup
    * @throws \Google\Service\Exception
    */
@@ -49,12 +61,22 @@ class ProjectsLocationsAgentsTransitionRouteGroups extends \Google\Service\Resou
     return $this->call('create', [$params], GoogleCloudDialogflowCxV3TransitionRouteGroup::class);
   }
   /**
+   * Deletes the specified TransitionRouteGroup. Note: You should always train a
+   * flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    * (transitionRouteGroups.delete)
    *
-   * @param string $name
+   * @param string $name Required. The name of the TransitionRouteGroup to delete.
+   * Format: `projects//locations//agents//flows//transitionRouteGroups/` or
+   * `projects//locations//agents//transitionRouteGroups/`.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param bool force
+   * @opt_param bool force This field has no effect for transition route group
+   * that no page is using. If the transition route group is referenced by any
+   * page: * If `force` is set to false, an error will be returned with message
+   * indicating pages that reference the transition route group. * If `force` is
+   * set to true, Dialogflow will remove the transition route group, as well as
+   * any reference to it.
    * @return GoogleProtobufEmpty
    * @throws \Google\Service\Exception
    */
@@ -65,12 +87,21 @@ class ProjectsLocationsAgentsTransitionRouteGroups extends \Google\Service\Resou
     return $this->call('delete', [$params], GoogleProtobufEmpty::class);
   }
   /**
-   * (transitionRouteGroups.get)
+   * Retrieves the specified TransitionRouteGroup. (transitionRouteGroups.get)
    *
-   * @param string $name
+   * @param string $name Required. The name of the TransitionRouteGroup. Format:
+   * `projects//locations//agents//flows//transitionRouteGroups/` or
+   * `projects//locations//agents//transitionRouteGroups/`.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string languageCode
+   * @opt_param string languageCode The language to retrieve the transition route
+   * group for. The following fields are language dependent: *
+   * `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages` * `Tran
+   * sitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases` If
+   * not specified, the agent's default language is used. [Many
+   * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
+   * are supported. Note: languages must be enabled in the agent before they can
+   * be used.
    * @return GoogleCloudDialogflowCxV3TransitionRouteGroup
    * @throws \Google\Service\Exception
    */
@@ -81,14 +112,26 @@ class ProjectsLocationsAgentsTransitionRouteGroups extends \Google\Service\Resou
     return $this->call('get', [$params], GoogleCloudDialogflowCxV3TransitionRouteGroup::class);
   }
   /**
+   * Returns the list of all transition route groups in the specified flow.
    * (transitionRouteGroups.listProjectsLocationsAgentsTransitionRouteGroups)
    *
-   * @param string $parent
+   * @param string $parent Required. The flow to list all transition route groups
+   * for. Format: `projects//locations//agents//flows/` or
+   * `projects//locations//agents/.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string languageCode
-   * @opt_param int pageSize
-   * @opt_param string pageToken
+   * @opt_param string languageCode The language to list transition route groups
+   * for. The following fields are language dependent: *
+   * `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages` * `Tran
+   * sitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases` If
+   * not specified, the agent's default language is used. [Many
+   * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
+   * are supported. Note: languages must be enabled in the agent before they can
+   * be used.
+   * @opt_param int pageSize The maximum number of items to return in a single
+   * page. By default 100 and at most 1000.
+   * @opt_param string pageToken The next_page_token value returned from a
+   * previous list request.
    * @return GoogleCloudDialogflowCxV3ListTransitionRouteGroupsResponse
    * @throws \Google\Service\Exception
    */
@@ -99,14 +142,27 @@ class ProjectsLocationsAgentsTransitionRouteGroups extends \Google\Service\Resou
     return $this->call('list', [$params], GoogleCloudDialogflowCxV3ListTransitionRouteGroupsResponse::class);
   }
   /**
+   * Updates the specified TransitionRouteGroup. Note: You should always train a
+   * flow prior to sending it queries. See the [training
+   * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
    * (transitionRouteGroups.patch)
    *
-   * @param string $name
+   * @param string $name The unique identifier of the transition route group.
+   * TransitionRouteGroups.CreateTransitionRouteGroup populates the name
+   * automatically. Format:
+   * `projects//locations//agents//flows//transitionRouteGroups/` .
    * @param GoogleCloudDialogflowCxV3TransitionRouteGroup $postBody
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string languageCode
-   * @opt_param string updateMask
+   * @opt_param string languageCode The language of the following fields in
+   * `TransitionRouteGroup`: *
+   * `TransitionRouteGroup.transition_routes.trigger_fulfillment.messages` * `Tran
+   * sitionRouteGroup.transition_routes.trigger_fulfillment.conditional_cases` If
+   * not specified, the agent's default language is used. [Many
+   * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
+   * are supported. Note: languages must be enabled in the agent before they can
+   * be used.
+   * @opt_param string updateMask The mask to control which fields get updated.
    * @return GoogleCloudDialogflowCxV3TransitionRouteGroup
    * @throws \Google\Service\Exception
    */

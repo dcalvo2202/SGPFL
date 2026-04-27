@@ -24,10 +24,7 @@ class GoogleCloudAiplatformV1BatchCreateTensorboardRunsRequest extends \Google\C
   protected $requestsDataType = 'array';
 
   /**
-   * Required. The request message specifying the TensorboardRuns to create. A
-   * maximum of 1000 TensorboardRuns can be created in a batch.
-   *
-   * @param GoogleCloudAiplatformV1CreateTensorboardRunRequest[] $requests
+   * @param GoogleCloudAiplatformV1CreateTensorboardRunRequest[]
    */
   public function setRequests($requests)
   {

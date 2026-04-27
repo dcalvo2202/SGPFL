@@ -21,16 +21,12 @@ class GoogleCloudRecaptchaenterpriseV1FraudSignalsCardSignals extends \Google\Co
 {
   protected $collection_key = 'cardLabels';
   /**
-   * Output only. The labels for the payment card in this transaction.
-   *
    * @var string[]
    */
   public $cardLabels;
 
   /**
-   * Output only. The labels for the payment card in this transaction.
-   *
-   * @param string[] $cardLabels
+   * @param string[]
    */
   public function setCardLabels($cardLabels)
   {

@@ -23,9 +23,7 @@ class StateInfo extends \Google\Model
   protected $updateInfoDataType = '';
 
   /**
-   * Describes ongoing update on the cluster when cluster state is UPDATING.
-   *
-   * @param UpdateInfo $updateInfo
+   * @param UpdateInfo
    */
   public function setUpdateInfo(UpdateInfo $updateInfo)
   {

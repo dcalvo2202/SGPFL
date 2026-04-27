@@ -23,10 +23,7 @@ class GoogleCloudAiplatformV1NasJobOutput extends \Google\Model
   protected $multiTrialJobOutputDataType = '';
 
   /**
-   * Output only. The output of this multi-trial Neural Architecture Search
-   * (NAS) job.
-   *
-   * @param GoogleCloudAiplatformV1NasJobOutputMultiTrialJobOutput $multiTrialJobOutput
+   * @param GoogleCloudAiplatformV1NasJobOutputMultiTrialJobOutput
    */
   public function setMultiTrialJobOutput(GoogleCloudAiplatformV1NasJobOutputMultiTrialJobOutput $multiTrialJobOutput)
   {

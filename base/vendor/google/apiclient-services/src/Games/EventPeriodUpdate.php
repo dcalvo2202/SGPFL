@@ -21,9 +21,6 @@ class EventPeriodUpdate extends \Google\Collection
 {
   protected $collection_key = 'updates';
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#eventPeriodUpdate`.
-   *
    * @var string
    */
   public $kind;
@@ -33,10 +30,7 @@ class EventPeriodUpdate extends \Google\Collection
   protected $updatesDataType = 'array';
 
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#eventPeriodUpdate`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -50,9 +44,7 @@ class EventPeriodUpdate extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The time period being covered by this update.
-   *
-   * @param EventPeriodRange $timePeriod
+   * @param EventPeriodRange
    */
   public function setTimePeriod(EventPeriodRange $timePeriod)
   {
@@ -66,9 +58,7 @@ class EventPeriodUpdate extends \Google\Collection
     return $this->timePeriod;
   }
   /**
-   * The updates being made for this time period.
-   *
-   * @param EventUpdateRequest[] $updates
+   * @param EventUpdateRequest[]
    */
   public function setUpdates($updates)
   {

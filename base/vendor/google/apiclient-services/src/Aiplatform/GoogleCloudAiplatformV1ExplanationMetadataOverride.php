@@ -23,12 +23,7 @@ class GoogleCloudAiplatformV1ExplanationMetadataOverride extends \Google\Model
   protected $inputsDataType = 'map';
 
   /**
-   * Required. Overrides the input metadata of the features. The key is the name
-   * of the feature to be overridden. The keys specified here must exist in the
-   * input metadata to be overridden. If a feature is not specified here, the
-   * corresponding feature's input metadata is not overridden.
-   *
-   * @param GoogleCloudAiplatformV1ExplanationMetadataOverrideInputMetadataOverride[] $inputs
+   * @param GoogleCloudAiplatformV1ExplanationMetadataOverrideInputMetadataOverride[]
    */
   public function setInputs($inputs)
   {

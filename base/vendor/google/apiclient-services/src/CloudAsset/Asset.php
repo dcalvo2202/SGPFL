@@ -25,35 +25,16 @@ class Asset extends \Google\Collection
   protected $accessPolicyType = GoogleIdentityAccesscontextmanagerV1AccessPolicy::class;
   protected $accessPolicyDataType = '';
   /**
-   * The ancestry path of an asset in Google Cloud [resource
-   * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-
-   * resource-hierarchy), represented as a list of relative resource names. An
-   * ancestry path starts with the closest ancestor in the hierarchy and ends at
-   * root. If the asset is a project, folder, or organization, the ancestry path
-   * starts from the asset itself. Example: `["projects/123456789",
-   * "folders/5432", "organizations/1234"]`
-   *
    * @var string[]
    */
   public $ancestors;
-  protected $assetExceptionsType = AssetException::class;
-  protected $assetExceptionsDataType = 'array';
   /**
-   * The type of the asset. Example: `compute.googleapis.com/Disk` See
-   * [Supported asset types](https://cloud.google.com/asset-
-   * inventory/docs/supported-asset-types) for more information.
-   *
    * @var string
    */
   public $assetType;
   protected $iamPolicyType = Policy::class;
   protected $iamPolicyDataType = '';
   /**
-   * The full name of the asset. Example: `//compute.googleapis.com/projects/my_
-   * project_123/zones/zone1/instances/instance1` See [Resource names](https://c
-   * loud.google.com/apis/design/resource_names#full_resource_name) for more
-   * information.
-   *
    * @var string
    */
   public $name;
@@ -70,19 +51,12 @@ class Asset extends \Google\Collection
   protected $servicePerimeterType = GoogleIdentityAccesscontextmanagerV1ServicePerimeter::class;
   protected $servicePerimeterDataType = '';
   /**
-   * The last update timestamp of an asset. update_time is updated when
-   * create/update/delete operation is performed.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Also refer to the [access level user
-   * guide](https://cloud.google.com/access-context-
-   * manager/docs/overview#access-levels).
-   *
-   * @param GoogleIdentityAccesscontextmanagerV1AccessLevel $accessLevel
+   * @param GoogleIdentityAccesscontextmanagerV1AccessLevel
    */
   public function setAccessLevel(GoogleIdentityAccesscontextmanagerV1AccessLevel $accessLevel)
   {
@@ -96,11 +70,7 @@ class Asset extends \Google\Collection
     return $this->accessLevel;
   }
   /**
-   * Also refer to the [access policy user
-   * guide](https://cloud.google.com/access-context-
-   * manager/docs/overview#access-policies).
-   *
-   * @param GoogleIdentityAccesscontextmanagerV1AccessPolicy $accessPolicy
+   * @param GoogleIdentityAccesscontextmanagerV1AccessPolicy
    */
   public function setAccessPolicy(GoogleIdentityAccesscontextmanagerV1AccessPolicy $accessPolicy)
   {
@@ -114,15 +84,7 @@ class Asset extends \Google\Collection
     return $this->accessPolicy;
   }
   /**
-   * The ancestry path of an asset in Google Cloud [resource
-   * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-
-   * resource-hierarchy), represented as a list of relative resource names. An
-   * ancestry path starts with the closest ancestor in the hierarchy and ends at
-   * root. If the asset is a project, folder, or organization, the ancestry path
-   * starts from the asset itself. Example: `["projects/123456789",
-   * "folders/5432", "organizations/1234"]`
-   *
-   * @param string[] $ancestors
+   * @param string[]
    */
   public function setAncestors($ancestors)
   {
@@ -136,27 +98,7 @@ class Asset extends \Google\Collection
     return $this->ancestors;
   }
   /**
-   * The exceptions of a resource.
-   *
-   * @param AssetException[] $assetExceptions
-   */
-  public function setAssetExceptions($assetExceptions)
-  {
-    $this->assetExceptions = $assetExceptions;
-  }
-  /**
-   * @return AssetException[]
-   */
-  public function getAssetExceptions()
-  {
-    return $this->assetExceptions;
-  }
-  /**
-   * The type of the asset. Example: `compute.googleapis.com/Disk` See
-   * [Supported asset types](https://cloud.google.com/asset-
-   * inventory/docs/supported-asset-types) for more information.
-   *
-   * @param string $assetType
+   * @param string
    */
   public function setAssetType($assetType)
   {
@@ -170,16 +112,7 @@ class Asset extends \Google\Collection
     return $this->assetType;
   }
   /**
-   * A representation of the IAM policy set on a Google Cloud resource. There
-   * can be a maximum of one IAM policy set on any given resource. In addition,
-   * IAM policies inherit their granted access scope from any policies set on
-   * parent resources in the resource hierarchy. Therefore, the effectively
-   * policy is the union of both the policy set on this resource and each policy
-   * set on all of the resource's ancestry resource levels in the hierarchy. See
-   * [this topic](https://cloud.google.com/iam/help/allow-policies/inheritance)
-   * for more information.
-   *
-   * @param Policy $iamPolicy
+   * @param Policy
    */
   public function setIamPolicy(Policy $iamPolicy)
   {
@@ -193,12 +126,7 @@ class Asset extends \Google\Collection
     return $this->iamPolicy;
   }
   /**
-   * The full name of the asset. Example: `//compute.googleapis.com/projects/my_
-   * project_123/zones/zone1/instances/instance1` See [Resource names](https://c
-   * loud.google.com/apis/design/resource_names#full_resource_name) for more
-   * information.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -212,12 +140,7 @@ class Asset extends \Google\Collection
     return $this->name;
   }
   /**
-   * A representation of an [organization
-   * policy](https://cloud.google.com/resource-manager/docs/organization-
-   * policy/overview#organization_policy). There can be more than one
-   * organization policy with different constraints set on a given resource.
-   *
-   * @param GoogleCloudOrgpolicyV1Policy[] $orgPolicy
+   * @param GoogleCloudOrgpolicyV1Policy[]
    */
   public function setOrgPolicy($orgPolicy)
   {
@@ -231,11 +154,7 @@ class Asset extends \Google\Collection
     return $this->orgPolicy;
   }
   /**
-   * A representation of runtime OS Inventory information. See [this
-   * topic](https://cloud.google.com/compute/docs/instances/os-inventory-
-   * management) for more information.
-   *
-   * @param Inventory $osInventory
+   * @param Inventory
    */
   public function setOsInventory(Inventory $osInventory)
   {
@@ -249,9 +168,7 @@ class Asset extends \Google\Collection
     return $this->osInventory;
   }
   /**
-   * One related asset of the current asset.
-   *
-   * @param RelatedAsset $relatedAsset
+   * @param RelatedAsset
    */
   public function setRelatedAsset(RelatedAsset $relatedAsset)
   {
@@ -265,20 +182,13 @@ class Asset extends \Google\Collection
     return $this->relatedAsset;
   }
   /**
-   * DEPRECATED. This field only presents for the purpose of backward-
-   * compatibility. The server will never generate responses with this field.
-   * The related assets of the asset of one relationship type. One asset only
-   * represents one type of relationship.
-   *
-   * @deprecated
-   * @param RelatedAssets $relatedAssets
+   * @param RelatedAssets
    */
   public function setRelatedAssets(RelatedAssets $relatedAssets)
   {
     $this->relatedAssets = $relatedAssets;
   }
   /**
-   * @deprecated
    * @return RelatedAssets
    */
   public function getRelatedAssets()
@@ -286,9 +196,7 @@ class Asset extends \Google\Collection
     return $this->relatedAssets;
   }
   /**
-   * A representation of the resource.
-   *
-   * @param CloudassetResource $resource
+   * @param CloudassetResource
    */
   public function setResource(CloudassetResource $resource)
   {
@@ -302,10 +210,7 @@ class Asset extends \Google\Collection
     return $this->resource;
   }
   /**
-   * Also refer to the [service perimeter user
-   * guide](https://cloud.google.com/vpc-service-controls/docs/overview).
-   *
-   * @param GoogleIdentityAccesscontextmanagerV1ServicePerimeter $servicePerimeter
+   * @param GoogleIdentityAccesscontextmanagerV1ServicePerimeter
    */
   public function setServicePerimeter(GoogleIdentityAccesscontextmanagerV1ServicePerimeter $servicePerimeter)
   {
@@ -319,10 +224,7 @@ class Asset extends \Google\Collection
     return $this->servicePerimeter;
   }
   /**
-   * The last update timestamp of an asset. update_time is updated when
-   * create/update/delete operation is performed.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

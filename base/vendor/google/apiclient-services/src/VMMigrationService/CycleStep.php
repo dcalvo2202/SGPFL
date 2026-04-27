@@ -20,8 +20,6 @@ namespace Google\Service\VMMigrationService;
 class CycleStep extends \Google\Model
 {
   /**
-   * The time the cycle step has ended.
-   *
    * @var string
    */
   public $endTime;
@@ -32,16 +30,12 @@ class CycleStep extends \Google\Model
   protected $replicatingType = ReplicatingStep::class;
   protected $replicatingDataType = '';
   /**
-   * The time the cycle step has started.
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * The time the cycle step has ended.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -55,9 +49,7 @@ class CycleStep extends \Google\Model
     return $this->endTime;
   }
   /**
-   * Initializing replication step.
-   *
-   * @param InitializingReplicationStep $initializingReplication
+   * @param InitializingReplicationStep
    */
   public function setInitializingReplication(InitializingReplicationStep $initializingReplication)
   {
@@ -71,9 +63,7 @@ class CycleStep extends \Google\Model
     return $this->initializingReplication;
   }
   /**
-   * Post processing step.
-   *
-   * @param PostProcessingStep $postProcessing
+   * @param PostProcessingStep
    */
   public function setPostProcessing(PostProcessingStep $postProcessing)
   {
@@ -87,9 +77,7 @@ class CycleStep extends \Google\Model
     return $this->postProcessing;
   }
   /**
-   * Replicating step.
-   *
-   * @param ReplicatingStep $replicating
+   * @param ReplicatingStep
    */
   public function setReplicating(ReplicatingStep $replicating)
   {
@@ -103,9 +91,7 @@ class CycleStep extends \Google\Model
     return $this->replicating;
   }
   /**
-   * The time the cycle step has started.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

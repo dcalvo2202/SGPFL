@@ -23,70 +23,36 @@ class GoogleCloudRecommendationengineV1beta1CatalogItem extends \Google\Collecti
   protected $categoryHierarchiesType = GoogleCloudRecommendationengineV1beta1CatalogItemCategoryHierarchy::class;
   protected $categoryHierarchiesDataType = 'array';
   /**
-   * Optional. Catalog item description. UTF-8 encoded string with a length
-   * limit of 5 KiB.
-   *
    * @var string
    */
   public $description;
   /**
-   * Required. Catalog item identifier. UTF-8 encoded string with a length limit
-   * of 128 bytes. This id must be unique among all catalog items within the
-   * same catalog. It should also be used when logging user events in order for
-   * the user events to be joined with the Catalog.
-   *
    * @var string
    */
   public $id;
   protected $itemAttributesType = GoogleCloudRecommendationengineV1beta1FeatureMap::class;
   protected $itemAttributesDataType = '';
   /**
-   * Optional. Variant group identifier for prediction results. UTF-8 encoded
-   * string with a length limit of 128 bytes. This field must be enabled before
-   * it can be used. [Learn more](/recommendations-ai/docs/catalog#item-group-
-   * id).
-   *
    * @var string
    */
   public $itemGroupId;
   /**
-   * Optional. Deprecated. The model automatically detects the text language.
-   * Your catalog can include text in different languages, but duplicating
-   * catalog items to provide text in multiple languages can result in degraded
-   * model performance.
-   *
    * @var string
    */
   public $languageCode;
   protected $productMetadataType = GoogleCloudRecommendationengineV1beta1ProductCatalogItem::class;
   protected $productMetadataDataType = '';
   /**
-   * Optional. Filtering tags associated with the catalog item. Each tag should
-   * be a UTF-8 encoded string with a length limit of 1 KiB. This tag can be
-   * used for filtering recommendation results by passing the tag as part of the
-   * predict request filter.
-   *
    * @var string[]
    */
   public $tags;
   /**
-   * Required. Catalog item title. UTF-8 encoded string with a length limit of 1
-   * KiB.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * Required. Catalog item categories. This field is repeated for supporting
-   * one catalog item belonging to several parallel category hierarchies. For
-   * example, if a shoes product belongs to both ["Shoes & Accessories" ->
-   * "Shoes"] and ["Sports & Fitness" -> "Athletic Clothing" -> "Shoes"], it
-   * could be represented as: "categoryHierarchies": [ { "categories": ["Shoes &
-   * Accessories", "Shoes"]}, { "categories": ["Sports & Fitness", "Athletic
-   * Clothing", "Shoes"] } ]
-   *
-   * @param GoogleCloudRecommendationengineV1beta1CatalogItemCategoryHierarchy[] $categoryHierarchies
+   * @param GoogleCloudRecommendationengineV1beta1CatalogItemCategoryHierarchy[]
    */
   public function setCategoryHierarchies($categoryHierarchies)
   {
@@ -100,10 +66,7 @@ class GoogleCloudRecommendationengineV1beta1CatalogItem extends \Google\Collecti
     return $this->categoryHierarchies;
   }
   /**
-   * Optional. Catalog item description. UTF-8 encoded string with a length
-   * limit of 5 KiB.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -117,12 +80,7 @@ class GoogleCloudRecommendationengineV1beta1CatalogItem extends \Google\Collecti
     return $this->description;
   }
   /**
-   * Required. Catalog item identifier. UTF-8 encoded string with a length limit
-   * of 128 bytes. This id must be unique among all catalog items within the
-   * same catalog. It should also be used when logging user events in order for
-   * the user events to be joined with the Catalog.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -136,13 +94,7 @@ class GoogleCloudRecommendationengineV1beta1CatalogItem extends \Google\Collecti
     return $this->id;
   }
   /**
-   * Optional. Highly encouraged. Extra catalog item attributes to be included
-   * in the recommendation model. For example, for retail products, this could
-   * include the store name, vendor, style, color, etc. These are very strong
-   * signals for recommendation model, thus we highly recommend providing the
-   * item attributes here.
-   *
-   * @param GoogleCloudRecommendationengineV1beta1FeatureMap $itemAttributes
+   * @param GoogleCloudRecommendationengineV1beta1FeatureMap
    */
   public function setItemAttributes(GoogleCloudRecommendationengineV1beta1FeatureMap $itemAttributes)
   {
@@ -156,12 +108,7 @@ class GoogleCloudRecommendationengineV1beta1CatalogItem extends \Google\Collecti
     return $this->itemAttributes;
   }
   /**
-   * Optional. Variant group identifier for prediction results. UTF-8 encoded
-   * string with a length limit of 128 bytes. This field must be enabled before
-   * it can be used. [Learn more](/recommendations-ai/docs/catalog#item-group-
-   * id).
-   *
-   * @param string $itemGroupId
+   * @param string
    */
   public function setItemGroupId($itemGroupId)
   {
@@ -175,12 +122,7 @@ class GoogleCloudRecommendationengineV1beta1CatalogItem extends \Google\Collecti
     return $this->itemGroupId;
   }
   /**
-   * Optional. Deprecated. The model automatically detects the text language.
-   * Your catalog can include text in different languages, but duplicating
-   * catalog items to provide text in multiple languages can result in degraded
-   * model performance.
-   *
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {
@@ -194,9 +136,7 @@ class GoogleCloudRecommendationengineV1beta1CatalogItem extends \Google\Collecti
     return $this->languageCode;
   }
   /**
-   * Optional. Metadata specific to retail products.
-   *
-   * @param GoogleCloudRecommendationengineV1beta1ProductCatalogItem $productMetadata
+   * @param GoogleCloudRecommendationengineV1beta1ProductCatalogItem
    */
   public function setProductMetadata(GoogleCloudRecommendationengineV1beta1ProductCatalogItem $productMetadata)
   {
@@ -210,12 +150,7 @@ class GoogleCloudRecommendationengineV1beta1CatalogItem extends \Google\Collecti
     return $this->productMetadata;
   }
   /**
-   * Optional. Filtering tags associated with the catalog item. Each tag should
-   * be a UTF-8 encoded string with a length limit of 1 KiB. This tag can be
-   * used for filtering recommendation results by passing the tag as part of the
-   * predict request filter.
-   *
-   * @param string[] $tags
+   * @param string[]
    */
   public function setTags($tags)
   {
@@ -229,10 +164,7 @@ class GoogleCloudRecommendationengineV1beta1CatalogItem extends \Google\Collecti
     return $this->tags;
   }
   /**
-   * Required. Catalog item title. UTF-8 encoded string with a length limit of 1
-   * KiB.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

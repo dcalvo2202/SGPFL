@@ -21,10 +21,6 @@ class StageExecutionDetails extends \Google\Collection
 {
   protected $collection_key = 'workers';
   /**
-   * If present, this response does not contain all requested tasks. To obtain
-   * the next page of results, repeat the request with page_token set to this
-   * value.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -32,11 +28,7 @@ class StageExecutionDetails extends \Google\Collection
   protected $workersDataType = 'array';
 
   /**
-   * If present, this response does not contain all requested tasks. To obtain
-   * the next page of results, repeat the request with page_token set to this
-   * value.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -50,9 +42,7 @@ class StageExecutionDetails extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Workers that have done work on the stage.
-   *
-   * @param WorkerDetails[] $workers
+   * @param WorkerDetails[]
    */
   public function setWorkers($workers)
   {

@@ -19,183 +19,72 @@ namespace Google\Service\Backupdr;
 
 class AttachedDisk extends \Google\Collection
 {
-  /**
-   * Default value, which is unused.
-   */
-  public const DISK_INTERFACE_DISK_INTERFACE_UNSPECIFIED = 'DISK_INTERFACE_UNSPECIFIED';
-  /**
-   * SCSI Disk Interface.
-   */
-  public const DISK_INTERFACE_SCSI = 'SCSI';
-  /**
-   * NVME Disk Interface.
-   */
-  public const DISK_INTERFACE_NVME = 'NVME';
-  /**
-   * NVDIMM Disk Interface.
-   */
-  public const DISK_INTERFACE_NVDIMM = 'NVDIMM';
-  /**
-   * ISCSI Disk Interface.
-   */
-  public const DISK_INTERFACE_ISCSI = 'ISCSI';
-  /**
-   * Default value, which is unused.
-   */
-  public const DISK_TYPE_DEPRECATED_DISK_TYPE_UNSPECIFIED = 'DISK_TYPE_UNSPECIFIED';
-  /**
-   * A scratch disk type.
-   */
-  public const DISK_TYPE_DEPRECATED_SCRATCH = 'SCRATCH';
-  /**
-   * A persistent disk type.
-   */
-  public const DISK_TYPE_DEPRECATED_PERSISTENT = 'PERSISTENT';
-  /**
-   * Default value, which is unused.
-   */
-  public const MODE_DISK_MODE_UNSPECIFIED = 'DISK_MODE_UNSPECIFIED';
-  /**
-   * Attaches this disk in read-write mode. Only one virtual machine at a time
-   * can be attached to a disk in read-write mode.
-   */
-  public const MODE_READ_WRITE = 'READ_WRITE';
-  /**
-   * Attaches this disk in read-only mode. Multiple virtual machines can use a
-   * disk in read-only mode at a time.
-   */
-  public const MODE_READ_ONLY = 'READ_ONLY';
-  /**
-   * The disk is locked for administrative reasons. Nobody else can use the
-   * disk. This mode is used (for example) when taking a snapshot of a disk to
-   * prevent mounting the disk while it is being snapshotted.
-   */
-  public const MODE_LOCKED = 'LOCKED';
-  /**
-   * Default Disk state has not been preserved.
-   */
-  public const SAVED_STATE_DISK_SAVED_STATE_UNSPECIFIED = 'DISK_SAVED_STATE_UNSPECIFIED';
-  /**
-   * Disk state has been preserved.
-   */
-  public const SAVED_STATE_PRESERVED = 'PRESERVED';
-  /**
-   * Default value, which is unused.
-   */
-  public const TYPE_DISK_TYPE_UNSPECIFIED = 'DISK_TYPE_UNSPECIFIED';
-  /**
-   * A scratch disk type.
-   */
-  public const TYPE_SCRATCH = 'SCRATCH';
-  /**
-   * A persistent disk type.
-   */
-  public const TYPE_PERSISTENT = 'PERSISTENT';
   protected $collection_key = 'license';
   /**
-   * Optional. Specifies whether the disk will be auto-deleted when the instance
-   * is deleted (but not when the disk is detached from the instance).
-   *
    * @var bool
    */
   public $autoDelete;
   /**
-   * Optional. Indicates that this is a boot disk. The virtual machine will use
-   * the first partition of the disk for its root filesystem.
-   *
    * @var bool
    */
   public $boot;
   /**
-   * Optional. This is used as an identifier for the disks. This is the unique
-   * name has to provided to modify disk parameters like disk_name and
-   * replica_zones (in case of RePDs)
-   *
    * @var string
    */
   public $deviceName;
   protected $diskEncryptionKeyType = CustomerEncryptionKey::class;
   protected $diskEncryptionKeyDataType = '';
   /**
-   * Optional. Specifies the disk interface to use for attaching this disk.
-   *
    * @var string
    */
   public $diskInterface;
   /**
-   * Optional. The size of the disk in GB.
-   *
    * @var string
    */
   public $diskSizeGb;
   /**
-   * Optional. Output only. The URI of the disk type resource. For example:
-   * projects/project/zones/zone/diskTypes/pd-standard or pd-ssd
-   *
    * @var string
    */
   public $diskType;
   /**
-   * Specifies the type of the disk.
-   *
-   * @deprecated
    * @var string
    */
   public $diskTypeDeprecated;
   protected $guestOsFeatureType = GuestOsFeature::class;
   protected $guestOsFeatureDataType = 'array';
   /**
-   * Optional. A zero-based index to this disk, where 0 is reserved for the boot
-   * disk.
-   *
    * @var string
    */
   public $index;
   protected $initializeParamsType = InitializeParams::class;
   protected $initializeParamsDataType = '';
   /**
-   * Optional. Type of the resource.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Optional. Any valid publicly visible licenses.
-   *
    * @var string[]
    */
   public $license;
   /**
-   * Optional. The mode in which to attach this disk.
-   *
    * @var string
    */
   public $mode;
   /**
-   * Optional. Output only. The state of the disk.
-   *
    * @var string
    */
   public $savedState;
   /**
-   * Optional. Specifies a valid partial or full URL to an existing Persistent
-   * Disk resource.
-   *
    * @var string
    */
   public $source;
   /**
-   * Optional. Specifies the type of the disk.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Optional. Specifies whether the disk will be auto-deleted when the instance
-   * is deleted (but not when the disk is detached from the instance).
-   *
-   * @param bool $autoDelete
+   * @param bool
    */
   public function setAutoDelete($autoDelete)
   {
@@ -209,10 +98,7 @@ class AttachedDisk extends \Google\Collection
     return $this->autoDelete;
   }
   /**
-   * Optional. Indicates that this is a boot disk. The virtual machine will use
-   * the first partition of the disk for its root filesystem.
-   *
-   * @param bool $boot
+   * @param bool
    */
   public function setBoot($boot)
   {
@@ -226,11 +112,7 @@ class AttachedDisk extends \Google\Collection
     return $this->boot;
   }
   /**
-   * Optional. This is used as an identifier for the disks. This is the unique
-   * name has to provided to modify disk parameters like disk_name and
-   * replica_zones (in case of RePDs)
-   *
-   * @param string $deviceName
+   * @param string
    */
   public function setDeviceName($deviceName)
   {
@@ -244,10 +126,7 @@ class AttachedDisk extends \Google\Collection
     return $this->deviceName;
   }
   /**
-   * Optional. Encrypts or decrypts a disk using a customer-supplied encryption
-   * key.
-   *
-   * @param CustomerEncryptionKey $diskEncryptionKey
+   * @param CustomerEncryptionKey
    */
   public function setDiskEncryptionKey(CustomerEncryptionKey $diskEncryptionKey)
   {
@@ -261,27 +140,21 @@ class AttachedDisk extends \Google\Collection
     return $this->diskEncryptionKey;
   }
   /**
-   * Optional. Specifies the disk interface to use for attaching this disk.
-   *
-   * Accepted values: DISK_INTERFACE_UNSPECIFIED, SCSI, NVME, NVDIMM, ISCSI
-   *
-   * @param self::DISK_INTERFACE_* $diskInterface
+   * @param string
    */
   public function setDiskInterface($diskInterface)
   {
     $this->diskInterface = $diskInterface;
   }
   /**
-   * @return self::DISK_INTERFACE_*
+   * @return string
    */
   public function getDiskInterface()
   {
     return $this->diskInterface;
   }
   /**
-   * Optional. The size of the disk in GB.
-   *
-   * @param string $diskSizeGb
+   * @param string
    */
   public function setDiskSizeGb($diskSizeGb)
   {
@@ -295,10 +168,7 @@ class AttachedDisk extends \Google\Collection
     return $this->diskSizeGb;
   }
   /**
-   * Optional. Output only. The URI of the disk type resource. For example:
-   * projects/project/zones/zone/diskTypes/pd-standard or pd-ssd
-   *
-   * @param string $diskType
+   * @param string
    */
   public function setDiskType($diskType)
   {
@@ -312,30 +182,21 @@ class AttachedDisk extends \Google\Collection
     return $this->diskType;
   }
   /**
-   * Specifies the type of the disk.
-   *
-   * Accepted values: DISK_TYPE_UNSPECIFIED, SCRATCH, PERSISTENT
-   *
-   * @deprecated
-   * @param self::DISK_TYPE_DEPRECATED_* $diskTypeDeprecated
+   * @param string
    */
   public function setDiskTypeDeprecated($diskTypeDeprecated)
   {
     $this->diskTypeDeprecated = $diskTypeDeprecated;
   }
   /**
-   * @deprecated
-   * @return self::DISK_TYPE_DEPRECATED_*
+   * @return string
    */
   public function getDiskTypeDeprecated()
   {
     return $this->diskTypeDeprecated;
   }
   /**
-   * Optional. A list of features to enable on the guest operating system.
-   * Applicable only for bootable images.
-   *
-   * @param GuestOsFeature[] $guestOsFeature
+   * @param GuestOsFeature[]
    */
   public function setGuestOsFeature($guestOsFeature)
   {
@@ -349,10 +210,7 @@ class AttachedDisk extends \Google\Collection
     return $this->guestOsFeature;
   }
   /**
-   * Optional. A zero-based index to this disk, where 0 is reserved for the boot
-   * disk.
-   *
-   * @param string $index
+   * @param string
    */
   public function setIndex($index)
   {
@@ -366,9 +224,7 @@ class AttachedDisk extends \Google\Collection
     return $this->index;
   }
   /**
-   * Optional. Specifies the parameters to initialize this disk.
-   *
-   * @param InitializeParams $initializeParams
+   * @param InitializeParams
    */
   public function setInitializeParams(InitializeParams $initializeParams)
   {
@@ -382,9 +238,7 @@ class AttachedDisk extends \Google\Collection
     return $this->initializeParams;
   }
   /**
-   * Optional. Type of the resource.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -398,9 +252,7 @@ class AttachedDisk extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Optional. Any valid publicly visible licenses.
-   *
-   * @param string[] $license
+   * @param string[]
    */
   public function setLicense($license)
   {
@@ -414,46 +266,35 @@ class AttachedDisk extends \Google\Collection
     return $this->license;
   }
   /**
-   * Optional. The mode in which to attach this disk.
-   *
-   * Accepted values: DISK_MODE_UNSPECIFIED, READ_WRITE, READ_ONLY, LOCKED
-   *
-   * @param self::MODE_* $mode
+   * @param string
    */
   public function setMode($mode)
   {
     $this->mode = $mode;
   }
   /**
-   * @return self::MODE_*
+   * @return string
    */
   public function getMode()
   {
     return $this->mode;
   }
   /**
-   * Optional. Output only. The state of the disk.
-   *
-   * Accepted values: DISK_SAVED_STATE_UNSPECIFIED, PRESERVED
-   *
-   * @param self::SAVED_STATE_* $savedState
+   * @param string
    */
   public function setSavedState($savedState)
   {
     $this->savedState = $savedState;
   }
   /**
-   * @return self::SAVED_STATE_*
+   * @return string
    */
   public function getSavedState()
   {
     return $this->savedState;
   }
   /**
-   * Optional. Specifies a valid partial or full URL to an existing Persistent
-   * Disk resource.
-   *
-   * @param string $source
+   * @param string
    */
   public function setSource($source)
   {
@@ -467,18 +308,14 @@ class AttachedDisk extends \Google\Collection
     return $this->source;
   }
   /**
-   * Optional. Specifies the type of the disk.
-   *
-   * Accepted values: DISK_TYPE_UNSPECIFIED, SCRATCH, PERSISTENT
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

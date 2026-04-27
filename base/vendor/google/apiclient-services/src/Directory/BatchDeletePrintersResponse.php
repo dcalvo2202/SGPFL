@@ -23,16 +23,12 @@ class BatchDeletePrintersResponse extends \Google\Collection
   protected $failedPrintersType = FailureInfo::class;
   protected $failedPrintersDataType = 'array';
   /**
-   * A list of Printer.id that were successfully deleted.
-   *
    * @var string[]
    */
   public $printerIds;
 
   /**
-   * A list of update failures.
-   *
-   * @param FailureInfo[] $failedPrinters
+   * @param FailureInfo[]
    */
   public function setFailedPrinters($failedPrinters)
   {
@@ -46,9 +42,7 @@ class BatchDeletePrintersResponse extends \Google\Collection
     return $this->failedPrinters;
   }
   /**
-   * A list of Printer.id that were successfully deleted.
-   *
-   * @param string[] $printerIds
+   * @param string[]
    */
   public function setPrinterIds($printerIds)
   {

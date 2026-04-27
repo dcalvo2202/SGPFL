@@ -25,21 +25,10 @@ class RunRealtimeReportRequest extends \Google\Collection
   protected $dimensionsType = Dimension::class;
   protected $dimensionsDataType = 'array';
   /**
-   * The number of rows to return. If unspecified, 10,000 rows are returned. The
-   * API returns a maximum of 250,000 rows per request, no matter how many you
-   * ask for. `limit` must be positive. The API can also return fewer rows than
-   * the requested `limit`, if there aren't as many dimension values as the
-   * `limit`. For instance, there are fewer than 300 possible values for the
-   * dimension `country`, so when reporting on only `country`, you can't get
-   * more than 300 rows, even if you set `limit` to a higher value.
-   *
    * @var string
    */
   public $limit;
   /**
-   * Aggregation of metrics. Aggregated metric values will be shown in rows
-   * where the dimension_values are set to "RESERVED_(MetricAggregation)".
-   *
    * @var string[]
    */
   public $metricAggregations;
@@ -52,18 +41,12 @@ class RunRealtimeReportRequest extends \Google\Collection
   protected $orderBysType = OrderBy::class;
   protected $orderBysDataType = 'array';
   /**
-   * Toggles whether to return the current state of this Google Analytics
-   * property's Realtime quota. Quota is returned in
-   * [PropertyQuota](#PropertyQuota).
-   *
    * @var bool
    */
   public $returnPropertyQuota;
 
   /**
-   * The filter clause of dimensions. Metrics cannot be used in this filter.
-   *
-   * @param FilterExpression $dimensionFilter
+   * @param FilterExpression
    */
   public function setDimensionFilter(FilterExpression $dimensionFilter)
   {
@@ -77,9 +60,7 @@ class RunRealtimeReportRequest extends \Google\Collection
     return $this->dimensionFilter;
   }
   /**
-   * The dimensions requested and displayed.
-   *
-   * @param Dimension[] $dimensions
+   * @param Dimension[]
    */
   public function setDimensions($dimensions)
   {
@@ -93,15 +74,7 @@ class RunRealtimeReportRequest extends \Google\Collection
     return $this->dimensions;
   }
   /**
-   * The number of rows to return. If unspecified, 10,000 rows are returned. The
-   * API returns a maximum of 250,000 rows per request, no matter how many you
-   * ask for. `limit` must be positive. The API can also return fewer rows than
-   * the requested `limit`, if there aren't as many dimension values as the
-   * `limit`. For instance, there are fewer than 300 possible values for the
-   * dimension `country`, so when reporting on only `country`, you can't get
-   * more than 300 rows, even if you set `limit` to a higher value.
-   *
-   * @param string $limit
+   * @param string
    */
   public function setLimit($limit)
   {
@@ -115,10 +88,7 @@ class RunRealtimeReportRequest extends \Google\Collection
     return $this->limit;
   }
   /**
-   * Aggregation of metrics. Aggregated metric values will be shown in rows
-   * where the dimension_values are set to "RESERVED_(MetricAggregation)".
-   *
-   * @param string[] $metricAggregations
+   * @param string[]
    */
   public function setMetricAggregations($metricAggregations)
   {
@@ -132,10 +102,7 @@ class RunRealtimeReportRequest extends \Google\Collection
     return $this->metricAggregations;
   }
   /**
-   * The filter clause of metrics. Applied at post aggregation phase, similar to
-   * SQL having-clause. Dimensions cannot be used in this filter.
-   *
-   * @param FilterExpression $metricFilter
+   * @param FilterExpression
    */
   public function setMetricFilter(FilterExpression $metricFilter)
   {
@@ -149,9 +116,7 @@ class RunRealtimeReportRequest extends \Google\Collection
     return $this->metricFilter;
   }
   /**
-   * The metrics requested and displayed.
-   *
-   * @param Metric[] $metrics
+   * @param Metric[]
    */
   public function setMetrics($metrics)
   {
@@ -165,13 +130,7 @@ class RunRealtimeReportRequest extends \Google\Collection
     return $this->metrics;
   }
   /**
-   * The minute ranges of event data to read. If unspecified, one minute range
-   * for the last 30 minutes will be used. If multiple minute ranges are
-   * requested, each response row will contain a zero based minute range index.
-   * If two minute ranges overlap, the event data for the overlapping minutes is
-   * included in the response rows for both minute ranges.
-   *
-   * @param MinuteRange[] $minuteRanges
+   * @param MinuteRange[]
    */
   public function setMinuteRanges($minuteRanges)
   {
@@ -185,9 +144,7 @@ class RunRealtimeReportRequest extends \Google\Collection
     return $this->minuteRanges;
   }
   /**
-   * Specifies how rows are ordered in the response.
-   *
-   * @param OrderBy[] $orderBys
+   * @param OrderBy[]
    */
   public function setOrderBys($orderBys)
   {
@@ -201,11 +158,7 @@ class RunRealtimeReportRequest extends \Google\Collection
     return $this->orderBys;
   }
   /**
-   * Toggles whether to return the current state of this Google Analytics
-   * property's Realtime quota. Quota is returned in
-   * [PropertyQuota](#PropertyQuota).
-   *
-   * @param bool $returnPropertyQuota
+   * @param bool
    */
   public function setReturnPropertyQuota($returnPropertyQuota)
   {

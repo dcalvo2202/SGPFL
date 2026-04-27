@@ -20,8 +20,6 @@ namespace Google\Service\AndroidProvisioningPartner;
 class DeviceReference extends \Google\Model
 {
   /**
-   * The ID of the device.
-   *
    * @var string
    */
   public $deviceId;
@@ -29,9 +27,7 @@ class DeviceReference extends \Google\Model
   protected $deviceIdentifierDataType = '';
 
   /**
-   * The ID of the device.
-   *
-   * @param string $deviceId
+   * @param string
    */
   public function setDeviceId($deviceId)
   {
@@ -45,9 +41,7 @@ class DeviceReference extends \Google\Model
     return $this->deviceId;
   }
   /**
-   * The hardware IDs of the device.
-   *
-   * @param DeviceIdentifier $deviceIdentifier
+   * @param DeviceIdentifier
    */
   public function setDeviceIdentifier(DeviceIdentifier $deviceIdentifier)
   {

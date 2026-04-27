@@ -21,10 +21,6 @@ class ListServicesResponse extends \Google\Collection
 {
   protected $collection_key = 'services';
   /**
-   * A token to retrieve the next page of results. To retrieve the next page,
-   * call `ListServices` again with the `page_token` field set to this value.
-   * This field is empty if there are no more results to retrieve.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -32,11 +28,7 @@ class ListServicesResponse extends \Google\Collection
   protected $servicesDataType = 'array';
 
   /**
-   * A token to retrieve the next page of results. To retrieve the next page,
-   * call `ListServices` again with the `page_token` field set to this value.
-   * This field is empty if there are no more results to retrieve.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -50,9 +42,7 @@ class ListServicesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * A list of services.
-   *
-   * @param Service[] $services
+   * @param Service[]
    */
   public function setServices($services)
   {

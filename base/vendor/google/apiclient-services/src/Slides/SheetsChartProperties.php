@@ -23,9 +23,7 @@ class SheetsChartProperties extends \Google\Model
   protected $chartImagePropertiesDataType = '';
 
   /**
-   * The properties of the embedded chart image.
-   *
-   * @param ImageProperties $chartImageProperties
+   * @param ImageProperties
    */
   public function setChartImageProperties(ImageProperties $chartImageProperties)
   {

@@ -29,7 +29,7 @@ class GoogleCloudDialogflowCxV3beta1ExportTestCasesResponse extends \Google\Mode
   public $gcsUri;
 
   /**
-   * @param string $content
+   * @param string
    */
   public function setContent($content)
   {
@@ -43,7 +43,7 @@ class GoogleCloudDialogflowCxV3beta1ExportTestCasesResponse extends \Google\Mode
     return $this->content;
   }
   /**
-   * @param string $gcsUri
+   * @param string
    */
   public function setGcsUri($gcsUri)
   {

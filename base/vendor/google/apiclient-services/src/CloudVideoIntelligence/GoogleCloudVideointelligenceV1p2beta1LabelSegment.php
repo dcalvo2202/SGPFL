@@ -20,8 +20,6 @@ namespace Google\Service\CloudVideoIntelligence;
 class GoogleCloudVideointelligenceV1p2beta1LabelSegment extends \Google\Model
 {
   /**
-   * Confidence that the label is accurate. Range: [0, 1].
-   *
    * @var float
    */
   public $confidence;
@@ -29,9 +27,7 @@ class GoogleCloudVideointelligenceV1p2beta1LabelSegment extends \Google\Model
   protected $segmentDataType = '';
 
   /**
-   * Confidence that the label is accurate. Range: [0, 1].
-   *
-   * @param float $confidence
+   * @param float
    */
   public function setConfidence($confidence)
   {
@@ -45,9 +41,7 @@ class GoogleCloudVideointelligenceV1p2beta1LabelSegment extends \Google\Model
     return $this->confidence;
   }
   /**
-   * Video segment where a label was detected.
-   *
-   * @param GoogleCloudVideointelligenceV1p2beta1VideoSegment $segment
+   * @param GoogleCloudVideointelligenceV1p2beta1VideoSegment
    */
   public function setSegment(GoogleCloudVideointelligenceV1p2beta1VideoSegment $segment)
   {

@@ -21,8 +21,6 @@ class LoginProfile extends \Google\Collection
 {
   protected $collection_key = 'posixAccounts';
   /**
-   * Required. A unique user ID.
-   *
    * @var string
    */
   public $name;
@@ -32,9 +30,7 @@ class LoginProfile extends \Google\Collection
   protected $sshPublicKeysDataType = 'map';
 
   /**
-   * Required. A unique user ID.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -48,9 +44,7 @@ class LoginProfile extends \Google\Collection
     return $this->name;
   }
   /**
-   * The list of POSIX accounts associated with the user.
-   *
-   * @param PosixAccount[] $posixAccounts
+   * @param PosixAccount[]
    */
   public function setPosixAccounts($posixAccounts)
   {
@@ -64,9 +58,7 @@ class LoginProfile extends \Google\Collection
     return $this->posixAccounts;
   }
   /**
-   * A map from SSH public key fingerprint to the associated key object.
-   *
-   * @param SshPublicKey[] $sshPublicKeys
+   * @param SshPublicKey[]
    */
   public function setSshPublicKeys($sshPublicKeys)
   {

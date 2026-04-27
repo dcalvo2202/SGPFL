@@ -70,10 +70,6 @@ class Solar extends \Google\Service
               'path' => 'v1/buildingInsights:findClosest',
               'httpMethod' => 'GET',
               'parameters' => [
-                'exactQualityRequired' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
                 'experiments' => [
                   'location' => 'query',
                   'type' => 'string',

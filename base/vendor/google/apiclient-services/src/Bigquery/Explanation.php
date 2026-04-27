@@ -19,17 +19,8 @@ namespace Google\Service\Bigquery;
 
 class Explanation extends \Google\Model
 {
-  /**
-   * Attribution of feature.
-   *
-   * @var 
-   */
   public $attribution;
   /**
-   * The full feature name. For non-numerical features, will be formatted like
-   * `.`. Overall size of feature name will always be truncated to first 120
-   * characters.
-   *
    * @var string
    */
   public $featureName;
@@ -43,11 +34,7 @@ class Explanation extends \Google\Model
     return $this->attribution;
   }
   /**
-   * The full feature name. For non-numerical features, will be formatted like
-   * `.`. Overall size of feature name will always be truncated to first 120
-   * characters.
-   *
-   * @param string $featureName
+   * @param string
    */
   public function setFeatureName($featureName)
   {

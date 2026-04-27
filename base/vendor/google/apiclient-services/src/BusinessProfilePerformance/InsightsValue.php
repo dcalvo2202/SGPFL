@@ -20,22 +20,16 @@ namespace Google\Service\BusinessProfilePerformance;
 class InsightsValue extends \Google\Model
 {
   /**
-   * Represents the threshold below which the actual value falls.
-   *
    * @var string
    */
   public $threshold;
   /**
-   * Represents the actual value.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Represents the threshold below which the actual value falls.
-   *
-   * @param string $threshold
+   * @param string
    */
   public function setThreshold($threshold)
   {
@@ -49,9 +43,7 @@ class InsightsValue extends \Google\Model
     return $this->threshold;
   }
   /**
-   * Represents the actual value.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

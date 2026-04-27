@@ -22,30 +22,18 @@ class GoogleCloudVisionV1p2beta1Symbol extends \Google\Model
   protected $boundingBoxType = GoogleCloudVisionV1p2beta1BoundingPoly::class;
   protected $boundingBoxDataType = '';
   /**
-   * Confidence of the OCR results for the symbol. Range [0, 1].
-   *
    * @var float
    */
   public $confidence;
   protected $propertyType = GoogleCloudVisionV1p2beta1TextAnnotationTextProperty::class;
   protected $propertyDataType = '';
   /**
-   * The actual UTF-8 representation of the symbol.
-   *
    * @var string
    */
   public $text;
 
   /**
-   * The bounding box for the symbol. The vertices are in the order of top-left,
-   * top-right, bottom-right, bottom-left. When a rotation of the bounding box
-   * is detected the rotation is represented as around the top-left corner as
-   * defined when the text is read in the 'natural' orientation. For example: *
-   * when the text is horizontal it might look like: 0----1 | | 3----2 * when
-   * it's rotated 180 degrees around the top-left corner it becomes: 2----3 | |
-   * 1----0 and the vertex order will still be (0, 1, 2, 3).
-   *
-   * @param GoogleCloudVisionV1p2beta1BoundingPoly $boundingBox
+   * @param GoogleCloudVisionV1p2beta1BoundingPoly
    */
   public function setBoundingBox(GoogleCloudVisionV1p2beta1BoundingPoly $boundingBox)
   {
@@ -59,9 +47,7 @@ class GoogleCloudVisionV1p2beta1Symbol extends \Google\Model
     return $this->boundingBox;
   }
   /**
-   * Confidence of the OCR results for the symbol. Range [0, 1].
-   *
-   * @param float $confidence
+   * @param float
    */
   public function setConfidence($confidence)
   {
@@ -75,9 +61,7 @@ class GoogleCloudVisionV1p2beta1Symbol extends \Google\Model
     return $this->confidence;
   }
   /**
-   * Additional information detected for the symbol.
-   *
-   * @param GoogleCloudVisionV1p2beta1TextAnnotationTextProperty $property
+   * @param GoogleCloudVisionV1p2beta1TextAnnotationTextProperty
    */
   public function setProperty(GoogleCloudVisionV1p2beta1TextAnnotationTextProperty $property)
   {
@@ -91,9 +75,7 @@ class GoogleCloudVisionV1p2beta1Symbol extends \Google\Model
     return $this->property;
   }
   /**
-   * The actual UTF-8 representation of the symbol.
-   *
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {

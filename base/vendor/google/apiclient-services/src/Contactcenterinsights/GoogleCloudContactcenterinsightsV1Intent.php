@@ -20,22 +20,16 @@ namespace Google\Service\Contactcenterinsights;
 class GoogleCloudContactcenterinsightsV1Intent extends \Google\Model
 {
   /**
-   * The human-readable name of the intent.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * The unique identifier of the intent.
-   *
    * @var string
    */
   public $id;
 
   /**
-   * The human-readable name of the intent.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -49,9 +43,7 @@ class GoogleCloudContactcenterinsightsV1Intent extends \Google\Model
     return $this->displayName;
   }
   /**
-   * The unique identifier of the intent.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {

@@ -21,45 +21,30 @@ class ImageVersion extends \Google\Collection
 {
   protected $collection_key = 'supportedPythonVersions';
   /**
-   * Whether it is impossible to create an environment with the image version.
-   *
    * @var bool
    */
   public $creationDisabled;
   /**
-   * The string identifier of the ImageVersion, in the form:
-   * "composer-x.y.z-airflow-a.b.c"
-   *
    * @var string
    */
   public $imageVersionId;
   /**
-   * Whether this is the default ImageVersion used by Composer during
-   * environment creation if no input ImageVersion is specified.
-   *
    * @var bool
    */
   public $isDefault;
   protected $releaseDateType = Date::class;
   protected $releaseDateDataType = '';
   /**
-   * supported python versions
-   *
    * @var string[]
    */
   public $supportedPythonVersions;
   /**
-   * Whether it is impossible to upgrade an environment running with the image
-   * version.
-   *
    * @var bool
    */
   public $upgradeDisabled;
 
   /**
-   * Whether it is impossible to create an environment with the image version.
-   *
-   * @param bool $creationDisabled
+   * @param bool
    */
   public function setCreationDisabled($creationDisabled)
   {
@@ -73,10 +58,7 @@ class ImageVersion extends \Google\Collection
     return $this->creationDisabled;
   }
   /**
-   * The string identifier of the ImageVersion, in the form:
-   * "composer-x.y.z-airflow-a.b.c"
-   *
-   * @param string $imageVersionId
+   * @param string
    */
   public function setImageVersionId($imageVersionId)
   {
@@ -90,10 +72,7 @@ class ImageVersion extends \Google\Collection
     return $this->imageVersionId;
   }
   /**
-   * Whether this is the default ImageVersion used by Composer during
-   * environment creation if no input ImageVersion is specified.
-   *
-   * @param bool $isDefault
+   * @param bool
    */
   public function setIsDefault($isDefault)
   {
@@ -107,9 +86,7 @@ class ImageVersion extends \Google\Collection
     return $this->isDefault;
   }
   /**
-   * The date of the version release.
-   *
-   * @param Date $releaseDate
+   * @param Date
    */
   public function setReleaseDate(Date $releaseDate)
   {
@@ -123,9 +100,7 @@ class ImageVersion extends \Google\Collection
     return $this->releaseDate;
   }
   /**
-   * supported python versions
-   *
-   * @param string[] $supportedPythonVersions
+   * @param string[]
    */
   public function setSupportedPythonVersions($supportedPythonVersions)
   {
@@ -139,10 +114,7 @@ class ImageVersion extends \Google\Collection
     return $this->supportedPythonVersions;
   }
   /**
-   * Whether it is impossible to upgrade an environment running with the image
-   * version.
-   *
-   * @param bool $upgradeDisabled
+   * @param bool
    */
   public function setUpgradeDisabled($upgradeDisabled)
   {

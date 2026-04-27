@@ -20,74 +20,30 @@ namespace Google\Service\CloudTalentSolution;
 class DeviceInfo extends \Google\Model
 {
   /**
-   * The device type isn't specified.
-   */
-  public const DEVICE_TYPE_DEVICE_TYPE_UNSPECIFIED = 'DEVICE_TYPE_UNSPECIFIED';
-  /**
-   * A desktop web browser, such as, Chrome, Firefox, Safari, or Internet
-   * Explorer)
-   */
-  public const DEVICE_TYPE_WEB = 'WEB';
-  /**
-   * A mobile device web browser, such as a phone or tablet with a Chrome
-   * browser.
-   */
-  public const DEVICE_TYPE_MOBILE_WEB = 'MOBILE_WEB';
-  /**
-   * An Android device native application.
-   */
-  public const DEVICE_TYPE_ANDROID = 'ANDROID';
-  /**
-   * An iOS device native application.
-   */
-  public const DEVICE_TYPE_IOS = 'IOS';
-  /**
-   * A bot, as opposed to a device operated by human beings, such as a web
-   * crawler.
-   */
-  public const DEVICE_TYPE_BOT = 'BOT';
-  /**
-   * Other devices types.
-   */
-  public const DEVICE_TYPE_OTHER = 'OTHER';
-  /**
-   * Type of the device.
-   *
    * @var string
    */
   public $deviceType;
   /**
-   * A device-specific ID. The ID must be a unique identifier that distinguishes
-   * the device from other devices.
-   *
    * @var string
    */
   public $id;
 
   /**
-   * Type of the device.
-   *
-   * Accepted values: DEVICE_TYPE_UNSPECIFIED, WEB, MOBILE_WEB, ANDROID, IOS,
-   * BOT, OTHER
-   *
-   * @param self::DEVICE_TYPE_* $deviceType
+   * @param string
    */
   public function setDeviceType($deviceType)
   {
     $this->deviceType = $deviceType;
   }
   /**
-   * @return self::DEVICE_TYPE_*
+   * @return string
    */
   public function getDeviceType()
   {
     return $this->deviceType;
   }
   /**
-   * A device-specific ID. The ID must be a unique identifier that distinguishes
-   * the device from other devices.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {

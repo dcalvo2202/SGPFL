@@ -20,64 +20,34 @@ namespace Google\Service\Bigquery;
 class ScriptOptions extends \Google\Model
 {
   /**
-   * Default value.
-   */
-  public const KEY_RESULT_STATEMENT_KEY_RESULT_STATEMENT_KIND_UNSPECIFIED = 'KEY_RESULT_STATEMENT_KIND_UNSPECIFIED';
-  /**
-   * The last result determines the key result.
-   */
-  public const KEY_RESULT_STATEMENT_LAST = 'LAST';
-  /**
-   * The first SELECT statement determines the key result.
-   */
-  public const KEY_RESULT_STATEMENT_FIRST_SELECT = 'FIRST_SELECT';
-  /**
-   * Determines which statement in the script represents the "key result", used
-   * to populate the schema and query results of the script job. Default is
-   * LAST.
-   *
    * @var string
    */
   public $keyResultStatement;
   /**
-   * Limit on the number of bytes billed per statement. Exceeding this budget
-   * results in an error.
-   *
    * @var string
    */
   public $statementByteBudget;
   /**
-   * Timeout period for each statement in a script.
-   *
    * @var string
    */
   public $statementTimeoutMs;
 
   /**
-   * Determines which statement in the script represents the "key result", used
-   * to populate the schema and query results of the script job. Default is
-   * LAST.
-   *
-   * Accepted values: KEY_RESULT_STATEMENT_KIND_UNSPECIFIED, LAST, FIRST_SELECT
-   *
-   * @param self::KEY_RESULT_STATEMENT_* $keyResultStatement
+   * @param string
    */
   public function setKeyResultStatement($keyResultStatement)
   {
     $this->keyResultStatement = $keyResultStatement;
   }
   /**
-   * @return self::KEY_RESULT_STATEMENT_*
+   * @return string
    */
   public function getKeyResultStatement()
   {
     return $this->keyResultStatement;
   }
   /**
-   * Limit on the number of bytes billed per statement. Exceeding this budget
-   * results in an error.
-   *
-   * @param string $statementByteBudget
+   * @param string
    */
   public function setStatementByteBudget($statementByteBudget)
   {
@@ -91,9 +61,7 @@ class ScriptOptions extends \Google\Model
     return $this->statementByteBudget;
   }
   /**
-   * Timeout period for each statement in a script.
-   *
-   * @param string $statementTimeoutMs
+   * @param string
    */
   public function setStatementTimeoutMs($statementTimeoutMs)
   {

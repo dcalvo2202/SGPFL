@@ -20,16 +20,12 @@ namespace Google\Service\DataCatalog;
 class GoogleCloudDatacatalogV1PhysicalSchemaAvroSchema extends \Google\Model
 {
   /**
-   * JSON source of the Avro schema.
-   *
    * @var string
    */
   public $text;
 
   /**
-   * JSON source of the Avro schema.
-   *
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {

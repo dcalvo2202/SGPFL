@@ -19,71 +19,24 @@ namespace Google\Service\ServiceManagement;
 
 class Publishing extends \Google\Collection
 {
-  /**
-   * Not useful.
-   */
-  public const ORGANIZATION_CLIENT_LIBRARY_ORGANIZATION_UNSPECIFIED = 'CLIENT_LIBRARY_ORGANIZATION_UNSPECIFIED';
-  /**
-   * Google Cloud Platform Org.
-   */
-  public const ORGANIZATION_CLOUD = 'CLOUD';
-  /**
-   * Ads (Advertising) Org.
-   */
-  public const ORGANIZATION_ADS = 'ADS';
-  /**
-   * Photos Org.
-   */
-  public const ORGANIZATION_PHOTOS = 'PHOTOS';
-  /**
-   * Street View Org.
-   */
-  public const ORGANIZATION_STREET_VIEW = 'STREET_VIEW';
-  /**
-   * Shopping Org.
-   */
-  public const ORGANIZATION_SHOPPING = 'SHOPPING';
-  /**
-   * Geo Org.
-   */
-  public const ORGANIZATION_GEO = 'GEO';
-  /**
-   * Generative AI - https://developers.generativeai.google
-   */
-  public const ORGANIZATION_GENERATIVE_AI = 'GENERATIVE_AI';
   protected $collection_key = 'methodSettings';
   /**
-   * Used as a tracking tag when collecting data about the APIs developer
-   * relations artifacts like docs, packages delivered to package managers, etc.
-   * Example: "speech".
-   *
    * @var string
    */
   public $apiShortName;
   /**
-   * GitHub teams to be added to CODEOWNERS in the directory in GitHub
-   * containing source code for the client libraries for this API.
-   *
    * @var string[]
    */
   public $codeownerGithubTeams;
   /**
-   * A prefix used in sample code when demarking regions to be included in
-   * documentation.
-   *
    * @var string
    */
   public $docTagPrefix;
   /**
-   * Link to product home page. Example: https://cloud.google.com/asset-
-   * inventory/docs/overview
-   *
    * @var string
    */
   public $documentationUri;
   /**
-   * GitHub label to apply to issues and pull requests opened for this API.
-   *
    * @var string
    */
   public $githubLabel;
@@ -96,32 +49,20 @@ class Publishing extends \Google\Collection
    */
   public $newIssueUri;
   /**
-   * For whom the client library is being published.
-   *
    * @var string
    */
   public $organization;
   /**
-   * Optional link to proto reference documentation. Example:
-   * https://cloud.google.com/pubsub/lite/docs/reference/rpc
-   *
    * @var string
    */
   public $protoReferenceDocumentationUri;
   /**
-   * Optional link to REST reference documentation. Example:
-   * https://cloud.google.com/pubsub/lite/docs/reference/rest
-   *
    * @var string
    */
   public $restReferenceDocumentationUri;
 
   /**
-   * Used as a tracking tag when collecting data about the APIs developer
-   * relations artifacts like docs, packages delivered to package managers, etc.
-   * Example: "speech".
-   *
-   * @param string $apiShortName
+   * @param string
    */
   public function setApiShortName($apiShortName)
   {
@@ -135,10 +76,7 @@ class Publishing extends \Google\Collection
     return $this->apiShortName;
   }
   /**
-   * GitHub teams to be added to CODEOWNERS in the directory in GitHub
-   * containing source code for the client libraries for this API.
-   *
-   * @param string[] $codeownerGithubTeams
+   * @param string[]
    */
   public function setCodeownerGithubTeams($codeownerGithubTeams)
   {
@@ -152,10 +90,7 @@ class Publishing extends \Google\Collection
     return $this->codeownerGithubTeams;
   }
   /**
-   * A prefix used in sample code when demarking regions to be included in
-   * documentation.
-   *
-   * @param string $docTagPrefix
+   * @param string
    */
   public function setDocTagPrefix($docTagPrefix)
   {
@@ -169,10 +104,7 @@ class Publishing extends \Google\Collection
     return $this->docTagPrefix;
   }
   /**
-   * Link to product home page. Example: https://cloud.google.com/asset-
-   * inventory/docs/overview
-   *
-   * @param string $documentationUri
+   * @param string
    */
   public function setDocumentationUri($documentationUri)
   {
@@ -186,9 +118,7 @@ class Publishing extends \Google\Collection
     return $this->documentationUri;
   }
   /**
-   * GitHub label to apply to issues and pull requests opened for this API.
-   *
-   * @param string $githubLabel
+   * @param string
    */
   public function setGithubLabel($githubLabel)
   {
@@ -202,11 +132,7 @@ class Publishing extends \Google\Collection
     return $this->githubLabel;
   }
   /**
-   * Client library settings. If the same version string appears multiple times
-   * in this list, then the last one wins. Settings from earlier settings with
-   * the same version string are discarded.
-   *
-   * @param ClientLibrarySettings[] $librarySettings
+   * @param ClientLibrarySettings[]
    */
   public function setLibrarySettings($librarySettings)
   {
@@ -220,10 +146,7 @@ class Publishing extends \Google\Collection
     return $this->librarySettings;
   }
   /**
-   * A list of API method settings, e.g. the behavior for methods that use the
-   * long-running operation pattern.
-   *
-   * @param MethodSettings[] $methodSettings
+   * @param MethodSettings[]
    */
   public function setMethodSettings($methodSettings)
   {
@@ -237,7 +160,7 @@ class Publishing extends \Google\Collection
     return $this->methodSettings;
   }
   /**
-   * @param string $newIssueUri
+   * @param string
    */
   public function setNewIssueUri($newIssueUri)
   {
@@ -251,29 +174,21 @@ class Publishing extends \Google\Collection
     return $this->newIssueUri;
   }
   /**
-   * For whom the client library is being published.
-   *
-   * Accepted values: CLIENT_LIBRARY_ORGANIZATION_UNSPECIFIED, CLOUD, ADS,
-   * PHOTOS, STREET_VIEW, SHOPPING, GEO, GENERATIVE_AI
-   *
-   * @param self::ORGANIZATION_* $organization
+   * @param string
    */
   public function setOrganization($organization)
   {
     $this->organization = $organization;
   }
   /**
-   * @return self::ORGANIZATION_*
+   * @return string
    */
   public function getOrganization()
   {
     return $this->organization;
   }
   /**
-   * Optional link to proto reference documentation. Example:
-   * https://cloud.google.com/pubsub/lite/docs/reference/rpc
-   *
-   * @param string $protoReferenceDocumentationUri
+   * @param string
    */
   public function setProtoReferenceDocumentationUri($protoReferenceDocumentationUri)
   {
@@ -287,10 +202,7 @@ class Publishing extends \Google\Collection
     return $this->protoReferenceDocumentationUri;
   }
   /**
-   * Optional link to REST reference documentation. Example:
-   * https://cloud.google.com/pubsub/lite/docs/reference/rest
-   *
-   * @param string $restReferenceDocumentationUri
+   * @param string
    */
   public function setRestReferenceDocumentationUri($restReferenceDocumentationUri)
   {

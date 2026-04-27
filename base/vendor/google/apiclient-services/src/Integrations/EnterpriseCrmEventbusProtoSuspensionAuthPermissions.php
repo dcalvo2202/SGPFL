@@ -33,9 +33,7 @@ class EnterpriseCrmEventbusProtoSuspensionAuthPermissions extends \Google\Model
   public $mdbGroup;
 
   /**
-   * Represents a Gaia identity for a person or service account.
-   *
-   * @param EnterpriseCrmEventbusProtoSuspensionAuthPermissionsGaiaIdentity $gaiaIdentity
+   * @param EnterpriseCrmEventbusProtoSuspensionAuthPermissionsGaiaIdentity
    */
   public function setGaiaIdentity(EnterpriseCrmEventbusProtoSuspensionAuthPermissionsGaiaIdentity $gaiaIdentity)
   {
@@ -49,7 +47,7 @@ class EnterpriseCrmEventbusProtoSuspensionAuthPermissions extends \Google\Model
     return $this->gaiaIdentity;
   }
   /**
-   * @param EnterpriseCrmEventbusProtoSuspensionAuthPermissionsGaiaIdentity $googleGroup
+   * @param EnterpriseCrmEventbusProtoSuspensionAuthPermissionsGaiaIdentity
    */
   public function setGoogleGroup(EnterpriseCrmEventbusProtoSuspensionAuthPermissionsGaiaIdentity $googleGroup)
   {
@@ -63,7 +61,7 @@ class EnterpriseCrmEventbusProtoSuspensionAuthPermissions extends \Google\Model
     return $this->googleGroup;
   }
   /**
-   * @param string $loasRole
+   * @param string
    */
   public function setLoasRole($loasRole)
   {
@@ -77,7 +75,7 @@ class EnterpriseCrmEventbusProtoSuspensionAuthPermissions extends \Google\Model
     return $this->loasRole;
   }
   /**
-   * @param string $mdbGroup
+   * @param string
    */
   public function setMdbGroup($mdbGroup)
   {

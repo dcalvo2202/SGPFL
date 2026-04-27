@@ -29,7 +29,7 @@ class GoogleCloudDialogflowCxV3IntentCoverageIntent extends \Google\Model
   public $intent;
 
   /**
-   * @param bool $covered
+   * @param bool
    */
   public function setCovered($covered)
   {
@@ -43,7 +43,7 @@ class GoogleCloudDialogflowCxV3IntentCoverageIntent extends \Google\Model
     return $this->covered;
   }
   /**
-   * @param string $intent
+   * @param string
    */
   public function setIntent($intent)
   {

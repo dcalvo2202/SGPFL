@@ -20,52 +20,36 @@ namespace Google\Service\AirQuality;
 class HealthRecommendations extends \Google\Model
 {
   /**
-   * Sports and other strenuous outdoor activities.
-   *
    * @var string
    */
   public $athletes;
   /**
-   * Younger populations including children, toddlers, and babies.
-   *
    * @var string
    */
   public $children;
   /**
-   * Retirees and people older than the general population.
-   *
    * @var string
    */
   public $elderly;
   /**
-   * No specific sensitivities.
-   *
    * @var string
    */
   public $generalPopulation;
   /**
-   * Heart and circulatory system diseases.
-   *
    * @var string
    */
   public $heartDiseasePopulation;
   /**
-   * Respiratory related problems and asthma suffers.
-   *
    * @var string
    */
   public $lungDiseasePopulation;
   /**
-   * Women at all stages of pregnancy.
-   *
    * @var string
    */
   public $pregnantWomen;
 
   /**
-   * Sports and other strenuous outdoor activities.
-   *
-   * @param string $athletes
+   * @param string
    */
   public function setAthletes($athletes)
   {
@@ -79,9 +63,7 @@ class HealthRecommendations extends \Google\Model
     return $this->athletes;
   }
   /**
-   * Younger populations including children, toddlers, and babies.
-   *
-   * @param string $children
+   * @param string
    */
   public function setChildren($children)
   {
@@ -95,9 +77,7 @@ class HealthRecommendations extends \Google\Model
     return $this->children;
   }
   /**
-   * Retirees and people older than the general population.
-   *
-   * @param string $elderly
+   * @param string
    */
   public function setElderly($elderly)
   {
@@ -111,9 +91,7 @@ class HealthRecommendations extends \Google\Model
     return $this->elderly;
   }
   /**
-   * No specific sensitivities.
-   *
-   * @param string $generalPopulation
+   * @param string
    */
   public function setGeneralPopulation($generalPopulation)
   {
@@ -127,9 +105,7 @@ class HealthRecommendations extends \Google\Model
     return $this->generalPopulation;
   }
   /**
-   * Heart and circulatory system diseases.
-   *
-   * @param string $heartDiseasePopulation
+   * @param string
    */
   public function setHeartDiseasePopulation($heartDiseasePopulation)
   {
@@ -143,9 +119,7 @@ class HealthRecommendations extends \Google\Model
     return $this->heartDiseasePopulation;
   }
   /**
-   * Respiratory related problems and asthma suffers.
-   *
-   * @param string $lungDiseasePopulation
+   * @param string
    */
   public function setLungDiseasePopulation($lungDiseasePopulation)
   {
@@ -159,9 +133,7 @@ class HealthRecommendations extends \Google\Model
     return $this->lungDiseasePopulation;
   }
   /**
-   * Women at all stages of pregnancy.
-   *
-   * @param string $pregnantWomen
+   * @param string
    */
   public function setPregnantWomen($pregnantWomen)
   {

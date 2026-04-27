@@ -25,17 +25,12 @@ class ListJobsResponse extends \Google\Collection
   protected $metadataType = ResponseMetadata::class;
   protected $metadataDataType = '';
   /**
-   * A token to retrieve the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The Jobs for a given company. The maximum number of items returned is based
-   * on the limit field provided in the request.
-   *
-   * @param Job[] $jobs
+   * @param Job[]
    */
   public function setJobs($jobs)
   {
@@ -49,10 +44,7 @@ class ListJobsResponse extends \Google\Collection
     return $this->jobs;
   }
   /**
-   * Additional information for the API invocation, such as the request tracking
-   * id.
-   *
-   * @param ResponseMetadata $metadata
+   * @param ResponseMetadata
    */
   public function setMetadata(ResponseMetadata $metadata)
   {
@@ -66,9 +58,7 @@ class ListJobsResponse extends \Google\Collection
     return $this->metadata;
   }
   /**
-   * A token to retrieve the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

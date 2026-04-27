@@ -19,31 +19,6 @@ namespace Google\Service\DisplayVideo;
 
 class Partner extends \Google\Model
 {
-  /**
-   * Default value when status is not specified or is unknown in this version.
-   */
-  public const ENTITY_STATUS_ENTITY_STATUS_UNSPECIFIED = 'ENTITY_STATUS_UNSPECIFIED';
-  /**
-   * The entity is enabled to bid and spend budget.
-   */
-  public const ENTITY_STATUS_ENTITY_STATUS_ACTIVE = 'ENTITY_STATUS_ACTIVE';
-  /**
-   * The entity is archived. Bidding and budget spending are disabled. An entity
-   * can be deleted after archived. Deleted entities cannot be retrieved.
-   */
-  public const ENTITY_STATUS_ENTITY_STATUS_ARCHIVED = 'ENTITY_STATUS_ARCHIVED';
-  /**
-   * The entity is under draft. Bidding and budget spending are disabled.
-   */
-  public const ENTITY_STATUS_ENTITY_STATUS_DRAFT = 'ENTITY_STATUS_DRAFT';
-  /**
-   * Bidding and budget spending are paused for the entity.
-   */
-  public const ENTITY_STATUS_ENTITY_STATUS_PAUSED = 'ENTITY_STATUS_PAUSED';
-  /**
-   * The entity is scheduled for deletion.
-   */
-  public const ENTITY_STATUS_ENTITY_STATUS_SCHEDULED_FOR_DELETION = 'ENTITY_STATUS_SCHEDULED_FOR_DELETION';
   protected $adServerConfigType = PartnerAdServerConfig::class;
   protected $adServerConfigDataType = '';
   protected $billingConfigType = PartnerBillingConfig::class;
@@ -51,15 +26,10 @@ class Partner extends \Google\Model
   protected $dataAccessConfigType = PartnerDataAccessConfig::class;
   protected $dataAccessConfigDataType = '';
   /**
-   * The display name of the partner. Must be UTF-8 encoded with a maximum size
-   * of 240 bytes.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. The status of the partner.
-   *
    * @var string
    */
   public $entityStatus;
@@ -68,29 +38,20 @@ class Partner extends \Google\Model
   protected $generalConfigType = PartnerGeneralConfig::class;
   protected $generalConfigDataType = '';
   /**
-   * Output only. The resource name of the partner.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The unique ID of the partner. Assigned by the system.
-   *
    * @var string
    */
   public $partnerId;
   /**
-   * Output only. The timestamp when the partner was last updated. Assigned by
-   * the system.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Ad server related settings of the partner.
-   *
-   * @param PartnerAdServerConfig $adServerConfig
+   * @param PartnerAdServerConfig
    */
   public function setAdServerConfig(PartnerAdServerConfig $adServerConfig)
   {
@@ -104,9 +65,7 @@ class Partner extends \Google\Model
     return $this->adServerConfig;
   }
   /**
-   * Billing related settings of the partner.
-   *
-   * @param PartnerBillingConfig $billingConfig
+   * @param PartnerBillingConfig
    */
   public function setBillingConfig(PartnerBillingConfig $billingConfig)
   {
@@ -120,9 +79,7 @@ class Partner extends \Google\Model
     return $this->billingConfig;
   }
   /**
-   * Settings that control how partner data may be accessed.
-   *
-   * @param PartnerDataAccessConfig $dataAccessConfig
+   * @param PartnerDataAccessConfig
    */
   public function setDataAccessConfig(PartnerDataAccessConfig $dataAccessConfig)
   {
@@ -136,10 +93,7 @@ class Partner extends \Google\Model
     return $this->dataAccessConfig;
   }
   /**
-   * The display name of the partner. Must be UTF-8 encoded with a maximum size
-   * of 240 bytes.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -153,29 +107,21 @@ class Partner extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Output only. The status of the partner.
-   *
-   * Accepted values: ENTITY_STATUS_UNSPECIFIED, ENTITY_STATUS_ACTIVE,
-   * ENTITY_STATUS_ARCHIVED, ENTITY_STATUS_DRAFT, ENTITY_STATUS_PAUSED,
-   * ENTITY_STATUS_SCHEDULED_FOR_DELETION
-   *
-   * @param self::ENTITY_STATUS_* $entityStatus
+   * @param string
    */
   public function setEntityStatus($entityStatus)
   {
     $this->entityStatus = $entityStatus;
   }
   /**
-   * @return self::ENTITY_STATUS_*
+   * @return string
    */
   public function getEntityStatus()
   {
     return $this->entityStatus;
   }
   /**
-   * Settings that control which exchanges are enabled for the partner.
-   *
-   * @param ExchangeConfig $exchangeConfig
+   * @param ExchangeConfig
    */
   public function setExchangeConfig(ExchangeConfig $exchangeConfig)
   {
@@ -189,9 +135,7 @@ class Partner extends \Google\Model
     return $this->exchangeConfig;
   }
   /**
-   * General settings of the partner.
-   *
-   * @param PartnerGeneralConfig $generalConfig
+   * @param PartnerGeneralConfig
    */
   public function setGeneralConfig(PartnerGeneralConfig $generalConfig)
   {
@@ -205,9 +149,7 @@ class Partner extends \Google\Model
     return $this->generalConfig;
   }
   /**
-   * Output only. The resource name of the partner.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -221,9 +163,7 @@ class Partner extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The unique ID of the partner. Assigned by the system.
-   *
-   * @param string $partnerId
+   * @param string
    */
   public function setPartnerId($partnerId)
   {
@@ -237,10 +177,7 @@ class Partner extends \Google\Model
     return $this->partnerId;
   }
   /**
-   * Output only. The timestamp when the partner was last updated. Assigned by
-   * the system.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

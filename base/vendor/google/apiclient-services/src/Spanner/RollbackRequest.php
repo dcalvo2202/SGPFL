@@ -20,16 +20,12 @@ namespace Google\Service\Spanner;
 class RollbackRequest extends \Google\Model
 {
   /**
-   * Required. The transaction to roll back.
-   *
    * @var string
    */
   public $transactionId;
 
   /**
-   * Required. The transaction to roll back.
-   *
-   * @param string $transactionId
+   * @param string
    */
   public function setTransactionId($transactionId)
   {

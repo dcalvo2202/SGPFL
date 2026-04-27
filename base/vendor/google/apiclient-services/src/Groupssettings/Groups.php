@@ -23,584 +23,256 @@ class Groups extends \Google\Model
         "defaultSender" => "default_sender",
   ];
   /**
-   * Identifies whether members external to your organization can join the
-   * group. Possible values are: - true: G Suite users external to your
-   * organization can become members of this group.  - false: Users not
-   * belonging to the organization are not allowed to become members of this
-   * group.
-   *
    * @var string
    */
   public $allowExternalMembers;
   /**
-   * Deprecated. Allows Google to contact administrator of the group. - true:
-   * Allow Google to contact managers of this group. Occasionally Google may
-   * send updates on the latest features, ask for input on new features, or ask
-   * for permission to highlight your group.  - false: Google can not contact
-   * managers of this group.
-   *
    * @var string
    */
   public $allowGoogleCommunication;
   /**
-   * Allows posting from web. Possible values are: - true: Allows any member to
-   * post to the group forum.  - false: Members only use Gmail to communicate
-   * with the group.
-   *
    * @var string
    */
   public $allowWebPosting;
   /**
-   * Allows the group to be archived only. Possible values are: - true: Group is
-   * archived and the group is inactive. New messages to this group are
-   * rejected. The older archived messages are browseable and searchable.   - If
-   * true, the whoCanPostMessage property is set to NONE_CAN_POST.   - If
-   * reverted from true to false, whoCanPostMessages is set to
-   * ALL_MANAGERS_CAN_POST.   - false: The group is active and can receive
-   * messages.   - When false, updating whoCanPostMessage to NONE_CAN_POST,
-   * results in an error.
-   *
    * @var string
    */
   public $archiveOnly;
   /**
-   * Set the content of custom footer text. The maximum number of characters is
-   * 1,000.
-   *
    * @var string
    */
   public $customFooterText;
   /**
-   * An email address used when replying to a message if the replyTo property is
-   * set to REPLY_TO_CUSTOM. This address is defined by an account
-   * administrator. - When the group's ReplyTo property is set to
-   * REPLY_TO_CUSTOM, the customReplyTo property holds a custom email address
-   * used when replying to a message.  - If the group's ReplyTo property is set
-   * to REPLY_TO_CUSTOM, the customReplyTo property must have a text value or an
-   * error is returned.
-   *
    * @var string
    */
   public $customReplyTo;
   /**
-   * Specifies whether the group has a custom role that's included in one of the
-   * settings being merged. This field is read-only and update/patch requests to
-   * it are ignored. Possible values are: - true  - false
-   *
    * @var string
    */
   public $customRolesEnabledForSettingsToBeMerged;
   /**
-   * When a message is rejected, this is text for the rejection notification
-   * sent to the message's author. By default, this property is empty and has no
-   * value in the API's response body. The maximum notification text size is
-   * 10,000 characters. Note: Requires sendMessageDenyNotification property to
-   * be true.
-   *
    * @var string
    */
   public $defaultMessageDenyNotificationText;
   /**
-   * Default sender for members who can post messages as the group. Possible
-   * values are: - `DEFAULT_SELF`: By default messages will be sent from the
-   * user - `GROUP`: By default messages will be sent from the group
-   *
    * @var string
    */
   public $defaultSender;
   /**
-   * Description of the group. This property value may be an empty string if no
-   * group description has been entered. If entered, the maximum group
-   * description is no more than 300 characters.
-   *
    * @var string
    */
   public $description;
   /**
-   * The group's email address. This property can be updated using the Directory
-   * API. Note: Only a group owner can change a group's email address. A group
-   * manager can't do this. When you change your group's address using the
-   * Directory API or the control panel, you are changing the address your
-   * subscribers use to send email and the web address people use to access your
-   * group. People can't reach your group by visiting the old address.
-   *
    * @var string
    */
   public $email;
   /**
-   * Specifies whether a collaborative inbox will remain turned on for the
-   * group. Possible values are: - true  - false
-   *
    * @var string
    */
   public $enableCollaborativeInbox;
   /**
-   * Indicates if favorite replies should be displayed above other replies. -
-   * true: Favorite replies will be displayed above other replies.  - false:
-   * Favorite replies will not be displayed above other replies.
-   *
    * @var string
    */
   public $favoriteRepliesOnTop;
   /**
-   * Whether to include custom footer. Possible values are: - true  - false
-   *
    * @var string
    */
   public $includeCustomFooter;
   /**
-   * Enables the group to be included in the Global Address List. For more
-   * information, see the help center. Possible values are: - true: Group is
-   * included in the Global Address List.  - false: Group is not included in the
-   * Global Address List.
-   *
    * @var string
    */
   public $includeInGlobalAddressList;
   /**
-   * Allows the Group contents to be archived. Possible values are: - true:
-   * Archive messages sent to the group.  - false: Do not keep an archive of
-   * messages sent to this group. If false, previously archived messages remain
-   * in the archive.
-   *
    * @var string
    */
   public $isArchived;
   /**
-   * The type of the resource. It is always groupsSettings#groups.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Deprecated. The maximum size of a message is 25Mb.
-   *
    * @var int
    */
   public $maxMessageBytes;
   /**
-   * Enables members to post messages as the group. Possible values are: - true:
-   * Group member can post messages using the group's email address instead of
-   * their own email address. Message appear to originate from the group itself.
-   * Note: When true, any message moderation settings on individual users or new
-   * members do not apply to posts made on behalf of the group.  - false:
-   * Members can not post in behalf of the group's email address.
-   *
    * @var string
    */
   public $membersCanPostAsTheGroup;
   /**
-   * Deprecated. The default message display font always has a value of
-   * "DEFAULT_FONT".
-   *
    * @var string
    */
   public $messageDisplayFont;
   /**
-   * Moderation level of incoming messages. Possible values are: -
-   * MODERATE_ALL_MESSAGES: All messages are sent to the group owner's email
-   * address for approval. If approved, the message is sent to the group.  -
-   * MODERATE_NON_MEMBERS: All messages from non group members are sent to the
-   * group owner's email address for approval. If approved, the message is sent
-   * to the group.  - MODERATE_NEW_MEMBERS: All messages from new members are
-   * sent to the group owner's email address for approval. If approved, the
-   * message is sent to the group.  - MODERATE_NONE: No moderator approval is
-   * required. Messages are delivered directly to the group. Note: When the
-   * whoCanPostMessage is set to ANYONE_CAN_POST, we recommend the
-   * messageModerationLevel be set to MODERATE_NON_MEMBERS to protect the group
-   * from possible spam. When memberCanPostAsTheGroup is true, any message
-   * moderation settings on individual users or new members will not apply to
-   * posts made on behalf of the group.
-   *
    * @var string
    */
   public $messageModerationLevel;
   /**
-   * Name of the group, which has a maximum size of 75 characters.
-   *
    * @var string
    */
   public $name;
   /**
-   * The primary language for group. For a group's primary language use the
-   * language tags from the G Suite languages found at G Suite Email Settings
-   * API Email Language Tags.
-   *
    * @var string
    */
   public $primaryLanguage;
   /**
-   * Specifies who receives the default reply. Possible values are: -
-   * REPLY_TO_CUSTOM: For replies to messages, use the group's custom email
-   * address. When the group's ReplyTo property is set to REPLY_TO_CUSTOM, the
-   * customReplyTo property holds the custom email address used when replying to
-   * a message. If the group's ReplyTo property is set to REPLY_TO_CUSTOM, the
-   * customReplyTo property must have a value. Otherwise an error is returned.
-   * - REPLY_TO_SENDER: The reply sent to author of message.  - REPLY_TO_LIST:
-   * This reply message is sent to the group.  - REPLY_TO_OWNER: The reply is
-   * sent to the owner(s) of the group. This does not include the group's
-   * managers.  - REPLY_TO_IGNORE: Group users individually decide where the
-   * message reply is sent.  - REPLY_TO_MANAGERS: This reply message is sent to
-   * the group's managers, which includes all managers and the group owner.
-   *
    * @var string
    */
   public $replyTo;
   /**
-   * Allows a member to be notified if the member's message to the group is
-   * denied by the group owner. Possible values are: - true: When a message is
-   * rejected, send the deny message notification to the message author. The
-   * defaultMessageDenyNotificationText property is dependent on the
-   * sendMessageDenyNotification property being true.   - false: When a message
-   * is rejected, no notification is sent.
-   *
    * @var string
    */
   public $sendMessageDenyNotification;
   /**
-   * Deprecated. This is merged into the new whoCanDiscoverGroup setting. Allows
-   * the group to be visible in the Groups Directory. Possible values are: -
-   * true: All groups in the account are listed in the Groups directory.  -
-   * false: All groups in the account are not listed in the directory.
-   *
    * @var string
    */
   public $showInGroupDirectory;
   /**
-   * Specifies moderation levels for messages detected as spam. Possible values
-   * are: - ALLOW: Post the message to the group.  - MODERATE: Send the message
-   * to the moderation queue. This is the default.  - SILENTLY_MODERATE: Send
-   * the message to the moderation queue, but do not send notification to
-   * moderators.  - REJECT: Immediately reject the message.
-   *
    * @var string
    */
   public $spamModerationLevel;
   /**
-   * Deprecated. This is merged into the new whoCanModerateMembers setting.
-   * Permissions to add members. Possible values are: - ALL_MEMBERS_CAN_ADD:
-   * Managers and members can directly add new members.  - ALL_MANAGERS_CAN_ADD:
-   * Only managers can directly add new members. this includes the group's
-   * owner.  - ALL_OWNERS_CAN_ADD: Only owners can directly add new members.  -
-   * NONE_CAN_ADD: No one can directly add new members.
-   *
    * @var string
    */
   public $whoCanAdd;
   /**
-   * Deprecated. This functionality is no longer supported in the Google Groups
-   * UI. The value is always "NONE".
-   *
    * @var string
    */
   public $whoCanAddReferences;
   /**
-   * Specifies who can approve members who ask to join groups. This permission
-   * will be deprecated once it is merged into the new whoCanModerateMembers
-   * setting. Possible values are: - ALL_MEMBERS_CAN_APPROVE  -
-   * ALL_MANAGERS_CAN_APPROVE  - ALL_OWNERS_CAN_APPROVE  - NONE_CAN_APPROVE
-   *
    * @var string
    */
   public $whoCanApproveMembers;
   /**
-   * Deprecated. This is merged into the new whoCanModerateContent setting.
-   * Specifies who can approve pending messages in the moderation queue.
-   * Possible values are: - ALL_MEMBERS  - OWNERS_AND_MANAGERS  - OWNERS_ONLY  -
-   * NONE
-   *
    * @var string
    */
   public $whoCanApproveMessages;
   /**
-   * Deprecated. This is merged into the new whoCanAssistContent setting.
-   * Permission to assign topics in a forum to another user. Possible values
-   * are: - ALL_MEMBERS  - OWNERS_AND_MANAGERS  - MANAGERS_ONLY  - OWNERS_ONLY
-   * - NONE
-   *
    * @var string
    */
   public $whoCanAssignTopics;
   /**
-   * Specifies who can moderate metadata. Possible values are: - ALL_MEMBERS  -
-   * OWNERS_AND_MANAGERS  - MANAGERS_ONLY  - OWNERS_ONLY  - NONE
-   *
    * @var string
    */
   public $whoCanAssistContent;
   /**
-   * Specifies who can deny membership to users. This permission will be
-   * deprecated once it is merged into the new whoCanModerateMembers setting.
-   * Possible values are: - ALL_MEMBERS  - OWNERS_AND_MANAGERS  - OWNERS_ONLY  -
-   * NONE
-   *
    * @var string
    */
   public $whoCanBanUsers;
   /**
-   * Permission to contact owner of the group via web UI. Possible values are: -
-   * ALL_IN_DOMAIN_CAN_CONTACT  - ALL_MANAGERS_CAN_CONTACT  -
-   * ALL_MEMBERS_CAN_CONTACT  - ANYONE_CAN_CONTACT  - ALL_OWNERS_CAN_CONTACT
-   *
    * @var string
    */
   public $whoCanContactOwner;
   /**
-   * Deprecated. This is merged into the new whoCanModerateContent setting.
-   * Specifies who can delete replies to topics. (Authors can always delete
-   * their own posts). Possible values are: - ALL_MEMBERS  - OWNERS_AND_MANAGERS
-   * - OWNERS_ONLY  - NONE
-   *
    * @var string
    */
   public $whoCanDeleteAnyPost;
   /**
-   * Deprecated. This is merged into the new whoCanModerateContent setting.
-   * Specifies who can delete topics. Possible values are: - ALL_MEMBERS  -
-   * OWNERS_AND_MANAGERS  - OWNERS_ONLY  - NONE
-   *
    * @var string
    */
   public $whoCanDeleteTopics;
   /**
-   * Specifies the set of users for whom this group is discoverable. Possible
-   * values are: - ANYONE_CAN_DISCOVER  - ALL_IN_DOMAIN_CAN_DISCOVER  -
-   * ALL_MEMBERS_CAN_DISCOVER
-   *
    * @var string
    */
   public $whoCanDiscoverGroup;
   /**
-   * Deprecated. This is merged into the new whoCanAssistContent setting.
-   * Permission to enter free form tags for topics in a forum. Possible values
-   * are: - ALL_MEMBERS  - OWNERS_AND_MANAGERS  - MANAGERS_ONLY  - OWNERS_ONLY
-   * - NONE
-   *
    * @var string
    */
   public $whoCanEnterFreeFormTags;
   /**
-   * Deprecated. This is merged into the new whoCanModerateContent setting.
-   * Specifies who can hide posts by reporting them as abuse. Possible values
-   * are: - ALL_MEMBERS  - OWNERS_AND_MANAGERS  - OWNERS_ONLY  - NONE
-   *
    * @var string
    */
   public $whoCanHideAbuse;
   /**
-   * Deprecated. This is merged into the new whoCanModerateMembers setting.
-   * Permissions to invite new members. Possible values are: -
-   * ALL_MEMBERS_CAN_INVITE: Managers and members can invite a new member
-   * candidate.  - ALL_MANAGERS_CAN_INVITE: Only managers can invite a new
-   * member. This includes the group's owner.  - ALL_OWNERS_CAN_INVITE: Only
-   * owners can invite a new member.  - NONE_CAN_INVITE: No one can invite a new
-   * member candidate.
-   *
    * @var string
    */
   public $whoCanInvite;
   /**
-   * Permission to join group. Possible values are: - ANYONE_CAN_JOIN: Any
-   * Internet user who is outside your domain can access your Google Groups
-   * service and view the list of groups in your Groups directory. Warning:
-   * Group owners can add external addresses, outside of the domain to their
-   * groups. They can also allow people outside your domain to join their
-   * groups. If you later disable this option, any external addresses already
-   * added to users' groups remain in those groups.  - ALL_IN_DOMAIN_CAN_JOIN:
-   * Anyone in the account domain can join. This includes accounts with multiple
-   * domains.  - INVITED_CAN_JOIN: Candidates for membership can be invited to
-   * join.   - CAN_REQUEST_TO_JOIN: Non members can request an invitation to
-   * join.
-   *
    * @var string
    */
   public $whoCanJoin;
   /**
-   * Permission to leave the group. Possible values are: -
-   * ALL_MANAGERS_CAN_LEAVE  - ALL_MEMBERS_CAN_LEAVE  - NONE_CAN_LEAVE
-   *
    * @var string
    */
   public $whoCanLeaveGroup;
   /**
-   * Deprecated. This is merged into the new whoCanModerateContent setting.
-   * Specifies who can prevent users from posting replies to topics. Possible
-   * values are: - ALL_MEMBERS  - OWNERS_AND_MANAGERS  - OWNERS_ONLY  - NONE
-   *
    * @var string
    */
   public $whoCanLockTopics;
   /**
-   * Deprecated. This is merged into the new whoCanModerateContent setting.
-   * Specifies who can make topics appear at the top of the topic list. Possible
-   * values are: - ALL_MEMBERS  - OWNERS_AND_MANAGERS  - OWNERS_ONLY  - NONE
-   *
    * @var string
    */
   public $whoCanMakeTopicsSticky;
   /**
-   * Deprecated. This is merged into the new whoCanAssistContent setting.
-   * Permission to mark a topic as a duplicate of another topic. Possible values
-   * are: - ALL_MEMBERS  - OWNERS_AND_MANAGERS  - MANAGERS_ONLY  - OWNERS_ONLY
-   * - NONE
-   *
    * @var string
    */
   public $whoCanMarkDuplicate;
   /**
-   * Deprecated. This is merged into the new whoCanAssistContent setting.
-   * Permission to mark any other user's post as a favorite reply. Possible
-   * values are: - ALL_MEMBERS  - OWNERS_AND_MANAGERS  - MANAGERS_ONLY  -
-   * OWNERS_ONLY  - NONE
-   *
    * @var string
    */
   public $whoCanMarkFavoriteReplyOnAnyTopic;
   /**
-   * Deprecated. This is merged into the new whoCanAssistContent setting.
-   * Permission to mark a post for a topic they started as a favorite reply.
-   * Possible values are: - ALL_MEMBERS  - OWNERS_AND_MANAGERS  - MANAGERS_ONLY
-   * - OWNERS_ONLY  - NONE
-   *
    * @var string
    */
   public $whoCanMarkFavoriteReplyOnOwnTopic;
   /**
-   * Deprecated. This is merged into the new whoCanAssistContent setting.
-   * Permission to mark a topic as not needing a response. Possible values are:
-   * - ALL_MEMBERS  - OWNERS_AND_MANAGERS  - MANAGERS_ONLY  - OWNERS_ONLY  -
-   * NONE
-   *
    * @var string
    */
   public $whoCanMarkNoResponseNeeded;
   /**
-   * Specifies who can moderate content. Possible values are: - ALL_MEMBERS  -
-   * OWNERS_AND_MANAGERS  - OWNERS_ONLY  - NONE
-   *
    * @var string
    */
   public $whoCanModerateContent;
   /**
-   * Specifies who can manage members. Possible values are: - ALL_MEMBERS  -
-   * OWNERS_AND_MANAGERS  - OWNERS_ONLY  - NONE
-   *
    * @var string
    */
   public $whoCanModerateMembers;
   /**
-   * Deprecated. This is merged into the new whoCanModerateMembers setting.
-   * Specifies who can change group members' roles. Possible values are: -
-   * ALL_MEMBERS  - OWNERS_AND_MANAGERS  - OWNERS_ONLY  - NONE
-   *
    * @var string
    */
   public $whoCanModifyMembers;
   /**
-   * Deprecated. This is merged into the new whoCanAssistContent setting.
-   * Permission to change tags and categories. Possible values are: -
-   * ALL_MEMBERS  - OWNERS_AND_MANAGERS  - MANAGERS_ONLY  - OWNERS_ONLY  - NONE
-   *
    * @var string
    */
   public $whoCanModifyTagsAndCategories;
   /**
-   * Deprecated. This is merged into the new whoCanModerateContent setting.
-   * Specifies who can move topics into the group or forum. Possible values are:
-   * - ALL_MEMBERS  - OWNERS_AND_MANAGERS  - OWNERS_ONLY  - NONE
-   *
    * @var string
    */
   public $whoCanMoveTopicsIn;
   /**
-   * Deprecated. This is merged into the new whoCanModerateContent setting.
-   * Specifies who can move topics out of the group or forum. Possible values
-   * are: - ALL_MEMBERS  - OWNERS_AND_MANAGERS  - OWNERS_ONLY  - NONE
-   *
    * @var string
    */
   public $whoCanMoveTopicsOut;
   /**
-   * Deprecated. This is merged into the new whoCanModerateContent setting.
-   * Specifies who can post announcements, a special topic type. Possible values
-   * are: - ALL_MEMBERS  - OWNERS_AND_MANAGERS  - OWNERS_ONLY  - NONE
-   *
    * @var string
    */
   public $whoCanPostAnnouncements;
   /**
-   * Permissions to post messages. Possible values are: - NONE_CAN_POST: The
-   * group is disabled and archived. No one can post a message to this group.
-   * - When archiveOnly is false, updating whoCanPostMessage to NONE_CAN_POST,
-   * results in an error.  - If archiveOnly is reverted from true to false,
-   * whoCanPostMessages is set to ALL_MANAGERS_CAN_POST.   -
-   * ALL_MANAGERS_CAN_POST: Managers, including group owners, can post messages.
-   * - ALL_MEMBERS_CAN_POST: Any group member can post a message.  -
-   * ALL_OWNERS_CAN_POST: Only group owners can post a message.  -
-   * ALL_IN_DOMAIN_CAN_POST: Anyone in the account can post a message.   -
-   * ANYONE_CAN_POST: Any Internet user who outside your account can access your
-   * Google Groups service and post a message. Note: When whoCanPostMessage is
-   * set to ANYONE_CAN_POST, we recommend the messageModerationLevel be set to
-   * MODERATE_NON_MEMBERS to protect the group from possible spam.
-   *
    * @var string
    */
   public $whoCanPostMessage;
   /**
-   * Deprecated. This is merged into the new whoCanAssistContent setting.
-   * Permission to take topics in a forum. Possible values are: - ALL_MEMBERS  -
-   * OWNERS_AND_MANAGERS  - MANAGERS_ONLY  - OWNERS_ONLY  - NONE
-   *
    * @var string
    */
   public $whoCanTakeTopics;
   /**
-   * Deprecated. This is merged into the new whoCanAssistContent setting.
-   * Permission to unassign any topic in a forum. Possible values are: -
-   * ALL_MEMBERS  - OWNERS_AND_MANAGERS  - MANAGERS_ONLY  - OWNERS_ONLY  - NONE
-   *
    * @var string
    */
   public $whoCanUnassignTopic;
   /**
-   * Deprecated. This is merged into the new whoCanAssistContent setting.
-   * Permission to unmark any post from a favorite reply. Possible values are: -
-   * ALL_MEMBERS  - OWNERS_AND_MANAGERS  - MANAGERS_ONLY  - OWNERS_ONLY  - NONE
-   *
    * @var string
    */
   public $whoCanUnmarkFavoriteReplyOnAnyTopic;
   /**
-   * Permissions to view group messages. Possible values are: - ANYONE_CAN_VIEW:
-   * Any Internet user can view the group's messages.   -
-   * ALL_IN_DOMAIN_CAN_VIEW: Anyone in your account can view this group's
-   * messages.  - ALL_MEMBERS_CAN_VIEW: All group members can view the group's
-   * messages.  - ALL_MANAGERS_CAN_VIEW: Any group manager can view this group's
-   * messages.
-   *
    * @var string
    */
   public $whoCanViewGroup;
   /**
-   * Permissions to view membership. Possible values are: -
-   * ALL_IN_DOMAIN_CAN_VIEW: Anyone in the account can view the group members
-   * list. If a group already has external members, those members can still send
-   * email to this group.   - ALL_MEMBERS_CAN_VIEW: The group members can view
-   * the group members list.  - ALL_MANAGERS_CAN_VIEW: The group managers can
-   * view group members list.
-   *
    * @var string
    */
   public $whoCanViewMembership;
 
   /**
-   * Identifies whether members external to your organization can join the
-   * group. Possible values are: - true: G Suite users external to your
-   * organization can become members of this group.  - false: Users not
-   * belonging to the organization are not allowed to become members of this
-   * group.
-   *
-   * @param string $allowExternalMembers
+   * @param string
    */
   public function setAllowExternalMembers($allowExternalMembers)
   {
@@ -614,13 +286,7 @@ class Groups extends \Google\Model
     return $this->allowExternalMembers;
   }
   /**
-   * Deprecated. Allows Google to contact administrator of the group. - true:
-   * Allow Google to contact managers of this group. Occasionally Google may
-   * send updates on the latest features, ask for input on new features, or ask
-   * for permission to highlight your group.  - false: Google can not contact
-   * managers of this group.
-   *
-   * @param string $allowGoogleCommunication
+   * @param string
    */
   public function setAllowGoogleCommunication($allowGoogleCommunication)
   {
@@ -634,11 +300,7 @@ class Groups extends \Google\Model
     return $this->allowGoogleCommunication;
   }
   /**
-   * Allows posting from web. Possible values are: - true: Allows any member to
-   * post to the group forum.  - false: Members only use Gmail to communicate
-   * with the group.
-   *
-   * @param string $allowWebPosting
+   * @param string
    */
   public function setAllowWebPosting($allowWebPosting)
   {
@@ -652,16 +314,7 @@ class Groups extends \Google\Model
     return $this->allowWebPosting;
   }
   /**
-   * Allows the group to be archived only. Possible values are: - true: Group is
-   * archived and the group is inactive. New messages to this group are
-   * rejected. The older archived messages are browseable and searchable.   - If
-   * true, the whoCanPostMessage property is set to NONE_CAN_POST.   - If
-   * reverted from true to false, whoCanPostMessages is set to
-   * ALL_MANAGERS_CAN_POST.   - false: The group is active and can receive
-   * messages.   - When false, updating whoCanPostMessage to NONE_CAN_POST,
-   * results in an error.
-   *
-   * @param string $archiveOnly
+   * @param string
    */
   public function setArchiveOnly($archiveOnly)
   {
@@ -675,10 +328,7 @@ class Groups extends \Google\Model
     return $this->archiveOnly;
   }
   /**
-   * Set the content of custom footer text. The maximum number of characters is
-   * 1,000.
-   *
-   * @param string $customFooterText
+   * @param string
    */
   public function setCustomFooterText($customFooterText)
   {
@@ -692,15 +342,7 @@ class Groups extends \Google\Model
     return $this->customFooterText;
   }
   /**
-   * An email address used when replying to a message if the replyTo property is
-   * set to REPLY_TO_CUSTOM. This address is defined by an account
-   * administrator. - When the group's ReplyTo property is set to
-   * REPLY_TO_CUSTOM, the customReplyTo property holds a custom email address
-   * used when replying to a message.  - If the group's ReplyTo property is set
-   * to REPLY_TO_CUSTOM, the customReplyTo property must have a text value or an
-   * error is returned.
-   *
-   * @param string $customReplyTo
+   * @param string
    */
   public function setCustomReplyTo($customReplyTo)
   {
@@ -714,11 +356,7 @@ class Groups extends \Google\Model
     return $this->customReplyTo;
   }
   /**
-   * Specifies whether the group has a custom role that's included in one of the
-   * settings being merged. This field is read-only and update/patch requests to
-   * it are ignored. Possible values are: - true  - false
-   *
-   * @param string $customRolesEnabledForSettingsToBeMerged
+   * @param string
    */
   public function setCustomRolesEnabledForSettingsToBeMerged($customRolesEnabledForSettingsToBeMerged)
   {
@@ -732,13 +370,7 @@ class Groups extends \Google\Model
     return $this->customRolesEnabledForSettingsToBeMerged;
   }
   /**
-   * When a message is rejected, this is text for the rejection notification
-   * sent to the message's author. By default, this property is empty and has no
-   * value in the API's response body. The maximum notification text size is
-   * 10,000 characters. Note: Requires sendMessageDenyNotification property to
-   * be true.
-   *
-   * @param string $defaultMessageDenyNotificationText
+   * @param string
    */
   public function setDefaultMessageDenyNotificationText($defaultMessageDenyNotificationText)
   {
@@ -752,11 +384,7 @@ class Groups extends \Google\Model
     return $this->defaultMessageDenyNotificationText;
   }
   /**
-   * Default sender for members who can post messages as the group. Possible
-   * values are: - `DEFAULT_SELF`: By default messages will be sent from the
-   * user - `GROUP`: By default messages will be sent from the group
-   *
-   * @param string $defaultSender
+   * @param string
    */
   public function setDefaultSender($defaultSender)
   {
@@ -770,11 +398,7 @@ class Groups extends \Google\Model
     return $this->defaultSender;
   }
   /**
-   * Description of the group. This property value may be an empty string if no
-   * group description has been entered. If entered, the maximum group
-   * description is no more than 300 characters.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -788,14 +412,7 @@ class Groups extends \Google\Model
     return $this->description;
   }
   /**
-   * The group's email address. This property can be updated using the Directory
-   * API. Note: Only a group owner can change a group's email address. A group
-   * manager can't do this. When you change your group's address using the
-   * Directory API or the control panel, you are changing the address your
-   * subscribers use to send email and the web address people use to access your
-   * group. People can't reach your group by visiting the old address.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {
@@ -809,10 +426,7 @@ class Groups extends \Google\Model
     return $this->email;
   }
   /**
-   * Specifies whether a collaborative inbox will remain turned on for the
-   * group. Possible values are: - true  - false
-   *
-   * @param string $enableCollaborativeInbox
+   * @param string
    */
   public function setEnableCollaborativeInbox($enableCollaborativeInbox)
   {
@@ -826,11 +440,7 @@ class Groups extends \Google\Model
     return $this->enableCollaborativeInbox;
   }
   /**
-   * Indicates if favorite replies should be displayed above other replies. -
-   * true: Favorite replies will be displayed above other replies.  - false:
-   * Favorite replies will not be displayed above other replies.
-   *
-   * @param string $favoriteRepliesOnTop
+   * @param string
    */
   public function setFavoriteRepliesOnTop($favoriteRepliesOnTop)
   {
@@ -844,9 +454,7 @@ class Groups extends \Google\Model
     return $this->favoriteRepliesOnTop;
   }
   /**
-   * Whether to include custom footer. Possible values are: - true  - false
-   *
-   * @param string $includeCustomFooter
+   * @param string
    */
   public function setIncludeCustomFooter($includeCustomFooter)
   {
@@ -860,12 +468,7 @@ class Groups extends \Google\Model
     return $this->includeCustomFooter;
   }
   /**
-   * Enables the group to be included in the Global Address List. For more
-   * information, see the help center. Possible values are: - true: Group is
-   * included in the Global Address List.  - false: Group is not included in the
-   * Global Address List.
-   *
-   * @param string $includeInGlobalAddressList
+   * @param string
    */
   public function setIncludeInGlobalAddressList($includeInGlobalAddressList)
   {
@@ -879,12 +482,7 @@ class Groups extends \Google\Model
     return $this->includeInGlobalAddressList;
   }
   /**
-   * Allows the Group contents to be archived. Possible values are: - true:
-   * Archive messages sent to the group.  - false: Do not keep an archive of
-   * messages sent to this group. If false, previously archived messages remain
-   * in the archive.
-   *
-   * @param string $isArchived
+   * @param string
    */
   public function setIsArchived($isArchived)
   {
@@ -898,9 +496,7 @@ class Groups extends \Google\Model
     return $this->isArchived;
   }
   /**
-   * The type of the resource. It is always groupsSettings#groups.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -914,9 +510,7 @@ class Groups extends \Google\Model
     return $this->kind;
   }
   /**
-   * Deprecated. The maximum size of a message is 25Mb.
-   *
-   * @param int $maxMessageBytes
+   * @param int
    */
   public function setMaxMessageBytes($maxMessageBytes)
   {
@@ -930,14 +524,7 @@ class Groups extends \Google\Model
     return $this->maxMessageBytes;
   }
   /**
-   * Enables members to post messages as the group. Possible values are: - true:
-   * Group member can post messages using the group's email address instead of
-   * their own email address. Message appear to originate from the group itself.
-   * Note: When true, any message moderation settings on individual users or new
-   * members do not apply to posts made on behalf of the group.  - false:
-   * Members can not post in behalf of the group's email address.
-   *
-   * @param string $membersCanPostAsTheGroup
+   * @param string
    */
   public function setMembersCanPostAsTheGroup($membersCanPostAsTheGroup)
   {
@@ -951,10 +538,7 @@ class Groups extends \Google\Model
     return $this->membersCanPostAsTheGroup;
   }
   /**
-   * Deprecated. The default message display font always has a value of
-   * "DEFAULT_FONT".
-   *
-   * @param string $messageDisplayFont
+   * @param string
    */
   public function setMessageDisplayFont($messageDisplayFont)
   {
@@ -968,22 +552,7 @@ class Groups extends \Google\Model
     return $this->messageDisplayFont;
   }
   /**
-   * Moderation level of incoming messages. Possible values are: -
-   * MODERATE_ALL_MESSAGES: All messages are sent to the group owner's email
-   * address for approval. If approved, the message is sent to the group.  -
-   * MODERATE_NON_MEMBERS: All messages from non group members are sent to the
-   * group owner's email address for approval. If approved, the message is sent
-   * to the group.  - MODERATE_NEW_MEMBERS: All messages from new members are
-   * sent to the group owner's email address for approval. If approved, the
-   * message is sent to the group.  - MODERATE_NONE: No moderator approval is
-   * required. Messages are delivered directly to the group. Note: When the
-   * whoCanPostMessage is set to ANYONE_CAN_POST, we recommend the
-   * messageModerationLevel be set to MODERATE_NON_MEMBERS to protect the group
-   * from possible spam. When memberCanPostAsTheGroup is true, any message
-   * moderation settings on individual users or new members will not apply to
-   * posts made on behalf of the group.
-   *
-   * @param string $messageModerationLevel
+   * @param string
    */
   public function setMessageModerationLevel($messageModerationLevel)
   {
@@ -997,9 +566,7 @@ class Groups extends \Google\Model
     return $this->messageModerationLevel;
   }
   /**
-   * Name of the group, which has a maximum size of 75 characters.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -1013,11 +580,7 @@ class Groups extends \Google\Model
     return $this->name;
   }
   /**
-   * The primary language for group. For a group's primary language use the
-   * language tags from the G Suite languages found at G Suite Email Settings
-   * API Email Language Tags.
-   *
-   * @param string $primaryLanguage
+   * @param string
    */
   public function setPrimaryLanguage($primaryLanguage)
   {
@@ -1031,20 +594,7 @@ class Groups extends \Google\Model
     return $this->primaryLanguage;
   }
   /**
-   * Specifies who receives the default reply. Possible values are: -
-   * REPLY_TO_CUSTOM: For replies to messages, use the group's custom email
-   * address. When the group's ReplyTo property is set to REPLY_TO_CUSTOM, the
-   * customReplyTo property holds the custom email address used when replying to
-   * a message. If the group's ReplyTo property is set to REPLY_TO_CUSTOM, the
-   * customReplyTo property must have a value. Otherwise an error is returned.
-   * - REPLY_TO_SENDER: The reply sent to author of message.  - REPLY_TO_LIST:
-   * This reply message is sent to the group.  - REPLY_TO_OWNER: The reply is
-   * sent to the owner(s) of the group. This does not include the group's
-   * managers.  - REPLY_TO_IGNORE: Group users individually decide where the
-   * message reply is sent.  - REPLY_TO_MANAGERS: This reply message is sent to
-   * the group's managers, which includes all managers and the group owner.
-   *
-   * @param string $replyTo
+   * @param string
    */
   public function setReplyTo($replyTo)
   {
@@ -1058,14 +608,7 @@ class Groups extends \Google\Model
     return $this->replyTo;
   }
   /**
-   * Allows a member to be notified if the member's message to the group is
-   * denied by the group owner. Possible values are: - true: When a message is
-   * rejected, send the deny message notification to the message author. The
-   * defaultMessageDenyNotificationText property is dependent on the
-   * sendMessageDenyNotification property being true.   - false: When a message
-   * is rejected, no notification is sent.
-   *
-   * @param string $sendMessageDenyNotification
+   * @param string
    */
   public function setSendMessageDenyNotification($sendMessageDenyNotification)
   {
@@ -1079,12 +622,7 @@ class Groups extends \Google\Model
     return $this->sendMessageDenyNotification;
   }
   /**
-   * Deprecated. This is merged into the new whoCanDiscoverGroup setting. Allows
-   * the group to be visible in the Groups Directory. Possible values are: -
-   * true: All groups in the account are listed in the Groups directory.  -
-   * false: All groups in the account are not listed in the directory.
-   *
-   * @param string $showInGroupDirectory
+   * @param string
    */
   public function setShowInGroupDirectory($showInGroupDirectory)
   {
@@ -1098,13 +636,7 @@ class Groups extends \Google\Model
     return $this->showInGroupDirectory;
   }
   /**
-   * Specifies moderation levels for messages detected as spam. Possible values
-   * are: - ALLOW: Post the message to the group.  - MODERATE: Send the message
-   * to the moderation queue. This is the default.  - SILENTLY_MODERATE: Send
-   * the message to the moderation queue, but do not send notification to
-   * moderators.  - REJECT: Immediately reject the message.
-   *
-   * @param string $spamModerationLevel
+   * @param string
    */
   public function setSpamModerationLevel($spamModerationLevel)
   {
@@ -1118,14 +650,7 @@ class Groups extends \Google\Model
     return $this->spamModerationLevel;
   }
   /**
-   * Deprecated. This is merged into the new whoCanModerateMembers setting.
-   * Permissions to add members. Possible values are: - ALL_MEMBERS_CAN_ADD:
-   * Managers and members can directly add new members.  - ALL_MANAGERS_CAN_ADD:
-   * Only managers can directly add new members. this includes the group's
-   * owner.  - ALL_OWNERS_CAN_ADD: Only owners can directly add new members.  -
-   * NONE_CAN_ADD: No one can directly add new members.
-   *
-   * @param string $whoCanAdd
+   * @param string
    */
   public function setWhoCanAdd($whoCanAdd)
   {
@@ -1139,10 +664,7 @@ class Groups extends \Google\Model
     return $this->whoCanAdd;
   }
   /**
-   * Deprecated. This functionality is no longer supported in the Google Groups
-   * UI. The value is always "NONE".
-   *
-   * @param string $whoCanAddReferences
+   * @param string
    */
   public function setWhoCanAddReferences($whoCanAddReferences)
   {
@@ -1156,12 +678,7 @@ class Groups extends \Google\Model
     return $this->whoCanAddReferences;
   }
   /**
-   * Specifies who can approve members who ask to join groups. This permission
-   * will be deprecated once it is merged into the new whoCanModerateMembers
-   * setting. Possible values are: - ALL_MEMBERS_CAN_APPROVE  -
-   * ALL_MANAGERS_CAN_APPROVE  - ALL_OWNERS_CAN_APPROVE  - NONE_CAN_APPROVE
-   *
-   * @param string $whoCanApproveMembers
+   * @param string
    */
   public function setWhoCanApproveMembers($whoCanApproveMembers)
   {
@@ -1175,12 +692,7 @@ class Groups extends \Google\Model
     return $this->whoCanApproveMembers;
   }
   /**
-   * Deprecated. This is merged into the new whoCanModerateContent setting.
-   * Specifies who can approve pending messages in the moderation queue.
-   * Possible values are: - ALL_MEMBERS  - OWNERS_AND_MANAGERS  - OWNERS_ONLY  -
-   * NONE
-   *
-   * @param string $whoCanApproveMessages
+   * @param string
    */
   public function setWhoCanApproveMessages($whoCanApproveMessages)
   {
@@ -1194,12 +706,7 @@ class Groups extends \Google\Model
     return $this->whoCanApproveMessages;
   }
   /**
-   * Deprecated. This is merged into the new whoCanAssistContent setting.
-   * Permission to assign topics in a forum to another user. Possible values
-   * are: - ALL_MEMBERS  - OWNERS_AND_MANAGERS  - MANAGERS_ONLY  - OWNERS_ONLY
-   * - NONE
-   *
-   * @param string $whoCanAssignTopics
+   * @param string
    */
   public function setWhoCanAssignTopics($whoCanAssignTopics)
   {
@@ -1213,10 +720,7 @@ class Groups extends \Google\Model
     return $this->whoCanAssignTopics;
   }
   /**
-   * Specifies who can moderate metadata. Possible values are: - ALL_MEMBERS  -
-   * OWNERS_AND_MANAGERS  - MANAGERS_ONLY  - OWNERS_ONLY  - NONE
-   *
-   * @param string $whoCanAssistContent
+   * @param string
    */
   public function setWhoCanAssistContent($whoCanAssistContent)
   {
@@ -1230,12 +734,7 @@ class Groups extends \Google\Model
     return $this->whoCanAssistContent;
   }
   /**
-   * Specifies who can deny membership to users. This permission will be
-   * deprecated once it is merged into the new whoCanModerateMembers setting.
-   * Possible values are: - ALL_MEMBERS  - OWNERS_AND_MANAGERS  - OWNERS_ONLY  -
-   * NONE
-   *
-   * @param string $whoCanBanUsers
+   * @param string
    */
   public function setWhoCanBanUsers($whoCanBanUsers)
   {
@@ -1249,11 +748,7 @@ class Groups extends \Google\Model
     return $this->whoCanBanUsers;
   }
   /**
-   * Permission to contact owner of the group via web UI. Possible values are: -
-   * ALL_IN_DOMAIN_CAN_CONTACT  - ALL_MANAGERS_CAN_CONTACT  -
-   * ALL_MEMBERS_CAN_CONTACT  - ANYONE_CAN_CONTACT  - ALL_OWNERS_CAN_CONTACT
-   *
-   * @param string $whoCanContactOwner
+   * @param string
    */
   public function setWhoCanContactOwner($whoCanContactOwner)
   {
@@ -1267,12 +762,7 @@ class Groups extends \Google\Model
     return $this->whoCanContactOwner;
   }
   /**
-   * Deprecated. This is merged into the new whoCanModerateContent setting.
-   * Specifies who can delete replies to topics. (Authors can always delete
-   * their own posts). Possible values are: - ALL_MEMBERS  - OWNERS_AND_MANAGERS
-   * - OWNERS_ONLY  - NONE
-   *
-   * @param string $whoCanDeleteAnyPost
+   * @param string
    */
   public function setWhoCanDeleteAnyPost($whoCanDeleteAnyPost)
   {
@@ -1286,11 +776,7 @@ class Groups extends \Google\Model
     return $this->whoCanDeleteAnyPost;
   }
   /**
-   * Deprecated. This is merged into the new whoCanModerateContent setting.
-   * Specifies who can delete topics. Possible values are: - ALL_MEMBERS  -
-   * OWNERS_AND_MANAGERS  - OWNERS_ONLY  - NONE
-   *
-   * @param string $whoCanDeleteTopics
+   * @param string
    */
   public function setWhoCanDeleteTopics($whoCanDeleteTopics)
   {
@@ -1304,11 +790,7 @@ class Groups extends \Google\Model
     return $this->whoCanDeleteTopics;
   }
   /**
-   * Specifies the set of users for whom this group is discoverable. Possible
-   * values are: - ANYONE_CAN_DISCOVER  - ALL_IN_DOMAIN_CAN_DISCOVER  -
-   * ALL_MEMBERS_CAN_DISCOVER
-   *
-   * @param string $whoCanDiscoverGroup
+   * @param string
    */
   public function setWhoCanDiscoverGroup($whoCanDiscoverGroup)
   {
@@ -1322,12 +804,7 @@ class Groups extends \Google\Model
     return $this->whoCanDiscoverGroup;
   }
   /**
-   * Deprecated. This is merged into the new whoCanAssistContent setting.
-   * Permission to enter free form tags for topics in a forum. Possible values
-   * are: - ALL_MEMBERS  - OWNERS_AND_MANAGERS  - MANAGERS_ONLY  - OWNERS_ONLY
-   * - NONE
-   *
-   * @param string $whoCanEnterFreeFormTags
+   * @param string
    */
   public function setWhoCanEnterFreeFormTags($whoCanEnterFreeFormTags)
   {
@@ -1341,11 +818,7 @@ class Groups extends \Google\Model
     return $this->whoCanEnterFreeFormTags;
   }
   /**
-   * Deprecated. This is merged into the new whoCanModerateContent setting.
-   * Specifies who can hide posts by reporting them as abuse. Possible values
-   * are: - ALL_MEMBERS  - OWNERS_AND_MANAGERS  - OWNERS_ONLY  - NONE
-   *
-   * @param string $whoCanHideAbuse
+   * @param string
    */
   public function setWhoCanHideAbuse($whoCanHideAbuse)
   {
@@ -1359,15 +832,7 @@ class Groups extends \Google\Model
     return $this->whoCanHideAbuse;
   }
   /**
-   * Deprecated. This is merged into the new whoCanModerateMembers setting.
-   * Permissions to invite new members. Possible values are: -
-   * ALL_MEMBERS_CAN_INVITE: Managers and members can invite a new member
-   * candidate.  - ALL_MANAGERS_CAN_INVITE: Only managers can invite a new
-   * member. This includes the group's owner.  - ALL_OWNERS_CAN_INVITE: Only
-   * owners can invite a new member.  - NONE_CAN_INVITE: No one can invite a new
-   * member candidate.
-   *
-   * @param string $whoCanInvite
+   * @param string
    */
   public function setWhoCanInvite($whoCanInvite)
   {
@@ -1381,19 +846,7 @@ class Groups extends \Google\Model
     return $this->whoCanInvite;
   }
   /**
-   * Permission to join group. Possible values are: - ANYONE_CAN_JOIN: Any
-   * Internet user who is outside your domain can access your Google Groups
-   * service and view the list of groups in your Groups directory. Warning:
-   * Group owners can add external addresses, outside of the domain to their
-   * groups. They can also allow people outside your domain to join their
-   * groups. If you later disable this option, any external addresses already
-   * added to users' groups remain in those groups.  - ALL_IN_DOMAIN_CAN_JOIN:
-   * Anyone in the account domain can join. This includes accounts with multiple
-   * domains.  - INVITED_CAN_JOIN: Candidates for membership can be invited to
-   * join.   - CAN_REQUEST_TO_JOIN: Non members can request an invitation to
-   * join.
-   *
-   * @param string $whoCanJoin
+   * @param string
    */
   public function setWhoCanJoin($whoCanJoin)
   {
@@ -1407,10 +860,7 @@ class Groups extends \Google\Model
     return $this->whoCanJoin;
   }
   /**
-   * Permission to leave the group. Possible values are: -
-   * ALL_MANAGERS_CAN_LEAVE  - ALL_MEMBERS_CAN_LEAVE  - NONE_CAN_LEAVE
-   *
-   * @param string $whoCanLeaveGroup
+   * @param string
    */
   public function setWhoCanLeaveGroup($whoCanLeaveGroup)
   {
@@ -1424,11 +874,7 @@ class Groups extends \Google\Model
     return $this->whoCanLeaveGroup;
   }
   /**
-   * Deprecated. This is merged into the new whoCanModerateContent setting.
-   * Specifies who can prevent users from posting replies to topics. Possible
-   * values are: - ALL_MEMBERS  - OWNERS_AND_MANAGERS  - OWNERS_ONLY  - NONE
-   *
-   * @param string $whoCanLockTopics
+   * @param string
    */
   public function setWhoCanLockTopics($whoCanLockTopics)
   {
@@ -1442,11 +888,7 @@ class Groups extends \Google\Model
     return $this->whoCanLockTopics;
   }
   /**
-   * Deprecated. This is merged into the new whoCanModerateContent setting.
-   * Specifies who can make topics appear at the top of the topic list. Possible
-   * values are: - ALL_MEMBERS  - OWNERS_AND_MANAGERS  - OWNERS_ONLY  - NONE
-   *
-   * @param string $whoCanMakeTopicsSticky
+   * @param string
    */
   public function setWhoCanMakeTopicsSticky($whoCanMakeTopicsSticky)
   {
@@ -1460,12 +902,7 @@ class Groups extends \Google\Model
     return $this->whoCanMakeTopicsSticky;
   }
   /**
-   * Deprecated. This is merged into the new whoCanAssistContent setting.
-   * Permission to mark a topic as a duplicate of another topic. Possible values
-   * are: - ALL_MEMBERS  - OWNERS_AND_MANAGERS  - MANAGERS_ONLY  - OWNERS_ONLY
-   * - NONE
-   *
-   * @param string $whoCanMarkDuplicate
+   * @param string
    */
   public function setWhoCanMarkDuplicate($whoCanMarkDuplicate)
   {
@@ -1479,12 +916,7 @@ class Groups extends \Google\Model
     return $this->whoCanMarkDuplicate;
   }
   /**
-   * Deprecated. This is merged into the new whoCanAssistContent setting.
-   * Permission to mark any other user's post as a favorite reply. Possible
-   * values are: - ALL_MEMBERS  - OWNERS_AND_MANAGERS  - MANAGERS_ONLY  -
-   * OWNERS_ONLY  - NONE
-   *
-   * @param string $whoCanMarkFavoriteReplyOnAnyTopic
+   * @param string
    */
   public function setWhoCanMarkFavoriteReplyOnAnyTopic($whoCanMarkFavoriteReplyOnAnyTopic)
   {
@@ -1498,12 +930,7 @@ class Groups extends \Google\Model
     return $this->whoCanMarkFavoriteReplyOnAnyTopic;
   }
   /**
-   * Deprecated. This is merged into the new whoCanAssistContent setting.
-   * Permission to mark a post for a topic they started as a favorite reply.
-   * Possible values are: - ALL_MEMBERS  - OWNERS_AND_MANAGERS  - MANAGERS_ONLY
-   * - OWNERS_ONLY  - NONE
-   *
-   * @param string $whoCanMarkFavoriteReplyOnOwnTopic
+   * @param string
    */
   public function setWhoCanMarkFavoriteReplyOnOwnTopic($whoCanMarkFavoriteReplyOnOwnTopic)
   {
@@ -1517,12 +944,7 @@ class Groups extends \Google\Model
     return $this->whoCanMarkFavoriteReplyOnOwnTopic;
   }
   /**
-   * Deprecated. This is merged into the new whoCanAssistContent setting.
-   * Permission to mark a topic as not needing a response. Possible values are:
-   * - ALL_MEMBERS  - OWNERS_AND_MANAGERS  - MANAGERS_ONLY  - OWNERS_ONLY  -
-   * NONE
-   *
-   * @param string $whoCanMarkNoResponseNeeded
+   * @param string
    */
   public function setWhoCanMarkNoResponseNeeded($whoCanMarkNoResponseNeeded)
   {
@@ -1536,10 +958,7 @@ class Groups extends \Google\Model
     return $this->whoCanMarkNoResponseNeeded;
   }
   /**
-   * Specifies who can moderate content. Possible values are: - ALL_MEMBERS  -
-   * OWNERS_AND_MANAGERS  - OWNERS_ONLY  - NONE
-   *
-   * @param string $whoCanModerateContent
+   * @param string
    */
   public function setWhoCanModerateContent($whoCanModerateContent)
   {
@@ -1553,10 +972,7 @@ class Groups extends \Google\Model
     return $this->whoCanModerateContent;
   }
   /**
-   * Specifies who can manage members. Possible values are: - ALL_MEMBERS  -
-   * OWNERS_AND_MANAGERS  - OWNERS_ONLY  - NONE
-   *
-   * @param string $whoCanModerateMembers
+   * @param string
    */
   public function setWhoCanModerateMembers($whoCanModerateMembers)
   {
@@ -1570,11 +986,7 @@ class Groups extends \Google\Model
     return $this->whoCanModerateMembers;
   }
   /**
-   * Deprecated. This is merged into the new whoCanModerateMembers setting.
-   * Specifies who can change group members' roles. Possible values are: -
-   * ALL_MEMBERS  - OWNERS_AND_MANAGERS  - OWNERS_ONLY  - NONE
-   *
-   * @param string $whoCanModifyMembers
+   * @param string
    */
   public function setWhoCanModifyMembers($whoCanModifyMembers)
   {
@@ -1588,11 +1000,7 @@ class Groups extends \Google\Model
     return $this->whoCanModifyMembers;
   }
   /**
-   * Deprecated. This is merged into the new whoCanAssistContent setting.
-   * Permission to change tags and categories. Possible values are: -
-   * ALL_MEMBERS  - OWNERS_AND_MANAGERS  - MANAGERS_ONLY  - OWNERS_ONLY  - NONE
-   *
-   * @param string $whoCanModifyTagsAndCategories
+   * @param string
    */
   public function setWhoCanModifyTagsAndCategories($whoCanModifyTagsAndCategories)
   {
@@ -1606,11 +1014,7 @@ class Groups extends \Google\Model
     return $this->whoCanModifyTagsAndCategories;
   }
   /**
-   * Deprecated. This is merged into the new whoCanModerateContent setting.
-   * Specifies who can move topics into the group or forum. Possible values are:
-   * - ALL_MEMBERS  - OWNERS_AND_MANAGERS  - OWNERS_ONLY  - NONE
-   *
-   * @param string $whoCanMoveTopicsIn
+   * @param string
    */
   public function setWhoCanMoveTopicsIn($whoCanMoveTopicsIn)
   {
@@ -1624,11 +1028,7 @@ class Groups extends \Google\Model
     return $this->whoCanMoveTopicsIn;
   }
   /**
-   * Deprecated. This is merged into the new whoCanModerateContent setting.
-   * Specifies who can move topics out of the group or forum. Possible values
-   * are: - ALL_MEMBERS  - OWNERS_AND_MANAGERS  - OWNERS_ONLY  - NONE
-   *
-   * @param string $whoCanMoveTopicsOut
+   * @param string
    */
   public function setWhoCanMoveTopicsOut($whoCanMoveTopicsOut)
   {
@@ -1642,11 +1042,7 @@ class Groups extends \Google\Model
     return $this->whoCanMoveTopicsOut;
   }
   /**
-   * Deprecated. This is merged into the new whoCanModerateContent setting.
-   * Specifies who can post announcements, a special topic type. Possible values
-   * are: - ALL_MEMBERS  - OWNERS_AND_MANAGERS  - OWNERS_ONLY  - NONE
-   *
-   * @param string $whoCanPostAnnouncements
+   * @param string
    */
   public function setWhoCanPostAnnouncements($whoCanPostAnnouncements)
   {
@@ -1660,21 +1056,7 @@ class Groups extends \Google\Model
     return $this->whoCanPostAnnouncements;
   }
   /**
-   * Permissions to post messages. Possible values are: - NONE_CAN_POST: The
-   * group is disabled and archived. No one can post a message to this group.
-   * - When archiveOnly is false, updating whoCanPostMessage to NONE_CAN_POST,
-   * results in an error.  - If archiveOnly is reverted from true to false,
-   * whoCanPostMessages is set to ALL_MANAGERS_CAN_POST.   -
-   * ALL_MANAGERS_CAN_POST: Managers, including group owners, can post messages.
-   * - ALL_MEMBERS_CAN_POST: Any group member can post a message.  -
-   * ALL_OWNERS_CAN_POST: Only group owners can post a message.  -
-   * ALL_IN_DOMAIN_CAN_POST: Anyone in the account can post a message.   -
-   * ANYONE_CAN_POST: Any Internet user who outside your account can access your
-   * Google Groups service and post a message. Note: When whoCanPostMessage is
-   * set to ANYONE_CAN_POST, we recommend the messageModerationLevel be set to
-   * MODERATE_NON_MEMBERS to protect the group from possible spam.
-   *
-   * @param string $whoCanPostMessage
+   * @param string
    */
   public function setWhoCanPostMessage($whoCanPostMessage)
   {
@@ -1688,11 +1070,7 @@ class Groups extends \Google\Model
     return $this->whoCanPostMessage;
   }
   /**
-   * Deprecated. This is merged into the new whoCanAssistContent setting.
-   * Permission to take topics in a forum. Possible values are: - ALL_MEMBERS  -
-   * OWNERS_AND_MANAGERS  - MANAGERS_ONLY  - OWNERS_ONLY  - NONE
-   *
-   * @param string $whoCanTakeTopics
+   * @param string
    */
   public function setWhoCanTakeTopics($whoCanTakeTopics)
   {
@@ -1706,11 +1084,7 @@ class Groups extends \Google\Model
     return $this->whoCanTakeTopics;
   }
   /**
-   * Deprecated. This is merged into the new whoCanAssistContent setting.
-   * Permission to unassign any topic in a forum. Possible values are: -
-   * ALL_MEMBERS  - OWNERS_AND_MANAGERS  - MANAGERS_ONLY  - OWNERS_ONLY  - NONE
-   *
-   * @param string $whoCanUnassignTopic
+   * @param string
    */
   public function setWhoCanUnassignTopic($whoCanUnassignTopic)
   {
@@ -1724,11 +1098,7 @@ class Groups extends \Google\Model
     return $this->whoCanUnassignTopic;
   }
   /**
-   * Deprecated. This is merged into the new whoCanAssistContent setting.
-   * Permission to unmark any post from a favorite reply. Possible values are: -
-   * ALL_MEMBERS  - OWNERS_AND_MANAGERS  - MANAGERS_ONLY  - OWNERS_ONLY  - NONE
-   *
-   * @param string $whoCanUnmarkFavoriteReplyOnAnyTopic
+   * @param string
    */
   public function setWhoCanUnmarkFavoriteReplyOnAnyTopic($whoCanUnmarkFavoriteReplyOnAnyTopic)
   {
@@ -1742,14 +1112,7 @@ class Groups extends \Google\Model
     return $this->whoCanUnmarkFavoriteReplyOnAnyTopic;
   }
   /**
-   * Permissions to view group messages. Possible values are: - ANYONE_CAN_VIEW:
-   * Any Internet user can view the group's messages.   -
-   * ALL_IN_DOMAIN_CAN_VIEW: Anyone in your account can view this group's
-   * messages.  - ALL_MEMBERS_CAN_VIEW: All group members can view the group's
-   * messages.  - ALL_MANAGERS_CAN_VIEW: Any group manager can view this group's
-   * messages.
-   *
-   * @param string $whoCanViewGroup
+   * @param string
    */
   public function setWhoCanViewGroup($whoCanViewGroup)
   {
@@ -1763,14 +1126,7 @@ class Groups extends \Google\Model
     return $this->whoCanViewGroup;
   }
   /**
-   * Permissions to view membership. Possible values are: -
-   * ALL_IN_DOMAIN_CAN_VIEW: Anyone in the account can view the group members
-   * list. If a group already has external members, those members can still send
-   * email to this group.   - ALL_MEMBERS_CAN_VIEW: The group members can view
-   * the group members list.  - ALL_MANAGERS_CAN_VIEW: The group managers can
-   * view group members list.
-   *
-   * @param string $whoCanViewMembership
+   * @param string
    */
   public function setWhoCanViewMembership($whoCanViewMembership)
   {

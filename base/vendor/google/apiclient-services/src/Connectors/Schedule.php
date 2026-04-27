@@ -20,46 +20,10 @@ namespace Google\Service\Connectors;
 class Schedule extends \Google\Model
 {
   /**
-   * The day of the week is unspecified.
-   */
-  public const DAY_DAY_OF_WEEK_UNSPECIFIED = 'DAY_OF_WEEK_UNSPECIFIED';
-  /**
-   * Monday
-   */
-  public const DAY_MONDAY = 'MONDAY';
-  /**
-   * Tuesday
-   */
-  public const DAY_TUESDAY = 'TUESDAY';
-  /**
-   * Wednesday
-   */
-  public const DAY_WEDNESDAY = 'WEDNESDAY';
-  /**
-   * Thursday
-   */
-  public const DAY_THURSDAY = 'THURSDAY';
-  /**
-   * Friday
-   */
-  public const DAY_FRIDAY = 'FRIDAY';
-  /**
-   * Saturday
-   */
-  public const DAY_SATURDAY = 'SATURDAY';
-  /**
-   * Sunday
-   */
-  public const DAY_SUNDAY = 'SUNDAY';
-  /**
-   * Allows to define schedule that runs specified day of the week.
-   *
    * @var string
    */
   public $day;
   /**
-   * Output only. Duration of the time window, set by service producer.
-   *
    * @var string
    */
   public $duration;
@@ -67,28 +31,21 @@ class Schedule extends \Google\Model
   protected $startTimeDataType = '';
 
   /**
-   * Allows to define schedule that runs specified day of the week.
-   *
-   * Accepted values: DAY_OF_WEEK_UNSPECIFIED, MONDAY, TUESDAY, WEDNESDAY,
-   * THURSDAY, FRIDAY, SATURDAY, SUNDAY
-   *
-   * @param self::DAY_* $day
+   * @param string
    */
   public function setDay($day)
   {
     $this->day = $day;
   }
   /**
-   * @return self::DAY_*
+   * @return string
    */
   public function getDay()
   {
     return $this->day;
   }
   /**
-   * Output only. Duration of the time window, set by service producer.
-   *
-   * @param string $duration
+   * @param string
    */
   public function setDuration($duration)
   {
@@ -102,9 +59,7 @@ class Schedule extends \Google\Model
     return $this->duration;
   }
   /**
-   * Time within the window to start the operations.
-   *
-   * @param TimeOfDay $startTime
+   * @param TimeOfDay
    */
   public function setStartTime(TimeOfDay $startTime)
   {

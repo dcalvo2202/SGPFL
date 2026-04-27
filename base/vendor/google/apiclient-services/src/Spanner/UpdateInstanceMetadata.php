@@ -20,54 +20,26 @@ namespace Google\Service\Spanner;
 class UpdateInstanceMetadata extends \Google\Model
 {
   /**
-   * Not specified.
-   */
-  public const EXPECTED_FULFILLMENT_PERIOD_FULFILLMENT_PERIOD_UNSPECIFIED = 'FULFILLMENT_PERIOD_UNSPECIFIED';
-  /**
-   * Normal fulfillment period. The operation is expected to complete within
-   * minutes.
-   */
-  public const EXPECTED_FULFILLMENT_PERIOD_FULFILLMENT_PERIOD_NORMAL = 'FULFILLMENT_PERIOD_NORMAL';
-  /**
-   * Extended fulfillment period. It can take up to an hour for the operation to
-   * complete.
-   */
-  public const EXPECTED_FULFILLMENT_PERIOD_FULFILLMENT_PERIOD_EXTENDED = 'FULFILLMENT_PERIOD_EXTENDED';
-  /**
-   * The time at which this operation was cancelled. If set, this operation is
-   * in the process of undoing itself (which is guaranteed to succeed) and
-   * cannot be cancelled again.
-   *
    * @var string
    */
   public $cancelTime;
   /**
-   * The time at which this operation failed or was completed successfully.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * The expected fulfillment period of this update operation.
-   *
    * @var string
    */
   public $expectedFulfillmentPeriod;
   protected $instanceType = Instance::class;
   protected $instanceDataType = '';
   /**
-   * The time at which UpdateInstance request was received.
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * The time at which this operation was cancelled. If set, this operation is
-   * in the process of undoing itself (which is guaranteed to succeed) and
-   * cannot be cancelled again.
-   *
-   * @param string $cancelTime
+   * @param string
    */
   public function setCancelTime($cancelTime)
   {
@@ -81,9 +53,7 @@ class UpdateInstanceMetadata extends \Google\Model
     return $this->cancelTime;
   }
   /**
-   * The time at which this operation failed or was completed successfully.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -97,28 +67,21 @@ class UpdateInstanceMetadata extends \Google\Model
     return $this->endTime;
   }
   /**
-   * The expected fulfillment period of this update operation.
-   *
-   * Accepted values: FULFILLMENT_PERIOD_UNSPECIFIED, FULFILLMENT_PERIOD_NORMAL,
-   * FULFILLMENT_PERIOD_EXTENDED
-   *
-   * @param self::EXPECTED_FULFILLMENT_PERIOD_* $expectedFulfillmentPeriod
+   * @param string
    */
   public function setExpectedFulfillmentPeriod($expectedFulfillmentPeriod)
   {
     $this->expectedFulfillmentPeriod = $expectedFulfillmentPeriod;
   }
   /**
-   * @return self::EXPECTED_FULFILLMENT_PERIOD_*
+   * @return string
    */
   public function getExpectedFulfillmentPeriod()
   {
     return $this->expectedFulfillmentPeriod;
   }
   /**
-   * The desired end state of the update.
-   *
-   * @param Instance $instance
+   * @param Instance
    */
   public function setInstance(Instance $instance)
   {
@@ -132,9 +95,7 @@ class UpdateInstanceMetadata extends \Google\Model
     return $this->instance;
   }
   /**
-   * The time at which UpdateInstance request was received.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

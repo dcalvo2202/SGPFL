@@ -19,131 +19,56 @@ namespace Google\Service\Backupdr;
 
 class ManagementServer extends \Google\Collection
 {
-  /**
-   * State not set.
-   */
-  public const STATE_INSTANCE_STATE_UNSPECIFIED = 'INSTANCE_STATE_UNSPECIFIED';
-  /**
-   * The instance is being created.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * The instance has been created and is fully usable.
-   */
-  public const STATE_READY = 'READY';
-  /**
-   * The instance configuration is being updated. Certain kinds of updates may
-   * cause the instance to become unusable while the update is in progress.
-   */
-  public const STATE_UPDATING = 'UPDATING';
-  /**
-   * The instance is being deleted.
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * The instance is being repaired and may be unstable.
-   */
-  public const STATE_REPAIRING = 'REPAIRING';
-  /**
-   * Maintenance is being performed on this instance.
-   */
-  public const STATE_MAINTENANCE = 'MAINTENANCE';
-  /**
-   * The instance is experiencing an issue and might be unusable. You can get
-   * further details from the statusMessage field of Instance resource.
-   */
-  public const STATE_ERROR = 'ERROR';
-  /**
-   * Instance type is not mentioned.
-   */
-  public const TYPE_INSTANCE_TYPE_UNSPECIFIED = 'INSTANCE_TYPE_UNSPECIFIED';
-  /**
-   * Instance for backup and restore management (i.e., AGM).
-   */
-  public const TYPE_BACKUP_RESTORE = 'BACKUP_RESTORE';
   protected $collection_key = 'networks';
   /**
-   * Output only. The hostname or ip address of the exposed AGM endpoints, used
-   * by BAs to connect to BA proxy.
-   *
    * @var string[]
    */
   public $baProxyUri;
   /**
-   * Output only. The time when the instance was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. The description of the ManagementServer instance (2048 characters
-   * or less).
-   *
    * @var string
    */
   public $description;
   /**
-   * Optional. Server specified ETag for the ManagementServer resource to
-   * prevent simultaneous updates from overwiting each other.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Optional. Resource labels to represent user provided metadata. Labels
-   * currently defined: 1. migrate_from_go= If set to true, the MS is created in
-   * migration ready mode.
-   *
    * @var string[]
    */
   public $labels;
   protected $managementUriType = ManagementURI::class;
   protected $managementUriDataType = '';
   /**
-   * Output only. Identifier. The resource name.
-   *
    * @var string
    */
   public $name;
   protected $networksType = NetworkConfig::class;
   protected $networksDataType = 'array';
   /**
-   * Output only. The OAuth 2.0 client id is required to make API calls to the
-   * Backup and DR instance API of this ManagementServer. This is the value that
-   * should be provided in the 'aud' field of the OIDC ID Token (see openid
-   * specification https://openid.net/specs/openid-connect-
-   * core-1_0.html#IDToken).
-   *
    * @var string
    */
   public $oauth2ClientId;
   /**
-   * Output only. Reserved for future use.
-   *
    * @var bool
    */
   public $satisfiesPzi;
   /**
-   * Output only. Reserved for future use.
-   *
    * @var bool
    */
   public $satisfiesPzs;
   /**
-   * Output only. The ManagementServer state.
-   *
    * @var string
    */
   public $state;
   /**
-   * Optional. The type of the ManagementServer resource.
-   *
    * @var string
    */
   public $type;
   /**
-   * Output only. The time when the instance was updated.
-   *
    * @var string
    */
   public $updateTime;
@@ -153,10 +78,7 @@ class ManagementServer extends \Google\Collection
   protected $workforceIdentityBasedOauth2ClientIdDataType = '';
 
   /**
-   * Output only. The hostname or ip address of the exposed AGM endpoints, used
-   * by BAs to connect to BA proxy.
-   *
-   * @param string[] $baProxyUri
+   * @param string[]
    */
   public function setBaProxyUri($baProxyUri)
   {
@@ -170,9 +92,7 @@ class ManagementServer extends \Google\Collection
     return $this->baProxyUri;
   }
   /**
-   * Output only. The time when the instance was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -186,10 +106,7 @@ class ManagementServer extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Optional. The description of the ManagementServer instance (2048 characters
-   * or less).
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -203,10 +120,7 @@ class ManagementServer extends \Google\Collection
     return $this->description;
   }
   /**
-   * Optional. Server specified ETag for the ManagementServer resource to
-   * prevent simultaneous updates from overwiting each other.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -220,11 +134,7 @@ class ManagementServer extends \Google\Collection
     return $this->etag;
   }
   /**
-   * Optional. Resource labels to represent user provided metadata. Labels
-   * currently defined: 1. migrate_from_go= If set to true, the MS is created in
-   * migration ready mode.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -238,10 +148,7 @@ class ManagementServer extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Output only. The hostname or ip address of the exposed AGM endpoints, used
-   * by clients to connect to AGM/RD graphical user interface and APIs.
-   *
-   * @param ManagementURI $managementUri
+   * @param ManagementURI
    */
   public function setManagementUri(ManagementURI $managementUri)
   {
@@ -255,9 +162,7 @@ class ManagementServer extends \Google\Collection
     return $this->managementUri;
   }
   /**
-   * Output only. Identifier. The resource name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -271,11 +176,7 @@ class ManagementServer extends \Google\Collection
     return $this->name;
   }
   /**
-   * Optional. VPC networks to which the ManagementServer instance is connected.
-   * For this version, only a single network is supported. This field is
-   * optional if MS is created without PSA
-   *
-   * @param NetworkConfig[] $networks
+   * @param NetworkConfig[]
    */
   public function setNetworks($networks)
   {
@@ -289,13 +190,7 @@ class ManagementServer extends \Google\Collection
     return $this->networks;
   }
   /**
-   * Output only. The OAuth 2.0 client id is required to make API calls to the
-   * Backup and DR instance API of this ManagementServer. This is the value that
-   * should be provided in the 'aud' field of the OIDC ID Token (see openid
-   * specification https://openid.net/specs/openid-connect-
-   * core-1_0.html#IDToken).
-   *
-   * @param string $oauth2ClientId
+   * @param string
    */
   public function setOauth2ClientId($oauth2ClientId)
   {
@@ -309,9 +204,7 @@ class ManagementServer extends \Google\Collection
     return $this->oauth2ClientId;
   }
   /**
-   * Output only. Reserved for future use.
-   *
-   * @param bool $satisfiesPzi
+   * @param bool
    */
   public function setSatisfiesPzi($satisfiesPzi)
   {
@@ -325,9 +218,7 @@ class ManagementServer extends \Google\Collection
     return $this->satisfiesPzi;
   }
   /**
-   * Output only. Reserved for future use.
-   *
-   * @param bool $satisfiesPzs
+   * @param bool
    */
   public function setSatisfiesPzs($satisfiesPzs)
   {
@@ -341,46 +232,35 @@ class ManagementServer extends \Google\Collection
     return $this->satisfiesPzs;
   }
   /**
-   * Output only. The ManagementServer state.
-   *
-   * Accepted values: INSTANCE_STATE_UNSPECIFIED, CREATING, READY, UPDATING,
-   * DELETING, REPAIRING, MAINTENANCE, ERROR
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Optional. The type of the ManagementServer resource.
-   *
-   * Accepted values: INSTANCE_TYPE_UNSPECIFIED, BACKUP_RESTORE
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * Output only. The time when the instance was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -394,10 +274,7 @@ class ManagementServer extends \Google\Collection
     return $this->updateTime;
   }
   /**
-   * Output only. The hostnames of the exposed AGM endpoints for both types of
-   * user i.e. 1p and 3p, used to connect AGM/RM UI.
-   *
-   * @param WorkforceIdentityBasedManagementURI $workforceIdentityBasedManagementUri
+   * @param WorkforceIdentityBasedManagementURI
    */
   public function setWorkforceIdentityBasedManagementUri(WorkforceIdentityBasedManagementURI $workforceIdentityBasedManagementUri)
   {
@@ -411,9 +288,7 @@ class ManagementServer extends \Google\Collection
     return $this->workforceIdentityBasedManagementUri;
   }
   /**
-   * Output only. The OAuth client IDs for both types of user i.e. 1p and 3p.
-   *
-   * @param WorkforceIdentityBasedOAuth2ClientID $workforceIdentityBasedOauth2ClientId
+   * @param WorkforceIdentityBasedOAuth2ClientID
    */
   public function setWorkforceIdentityBasedOauth2ClientId(WorkforceIdentityBasedOAuth2ClientID $workforceIdentityBasedOauth2ClientId)
   {

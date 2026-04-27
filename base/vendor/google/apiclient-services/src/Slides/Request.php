@@ -109,9 +109,7 @@ class Request extends \Google\Model
   protected $updateVideoPropertiesDataType = '';
 
   /**
-   * Creates an image.
-   *
-   * @param CreateImageRequest $createImage
+   * @param CreateImageRequest
    */
   public function setCreateImage(CreateImageRequest $createImage)
   {
@@ -125,9 +123,7 @@ class Request extends \Google\Model
     return $this->createImage;
   }
   /**
-   * Creates a line.
-   *
-   * @param CreateLineRequest $createLine
+   * @param CreateLineRequest
    */
   public function setCreateLine(CreateLineRequest $createLine)
   {
@@ -141,9 +137,7 @@ class Request extends \Google\Model
     return $this->createLine;
   }
   /**
-   * Creates bullets for paragraphs.
-   *
-   * @param CreateParagraphBulletsRequest $createParagraphBullets
+   * @param CreateParagraphBulletsRequest
    */
   public function setCreateParagraphBullets(CreateParagraphBulletsRequest $createParagraphBullets)
   {
@@ -157,9 +151,7 @@ class Request extends \Google\Model
     return $this->createParagraphBullets;
   }
   /**
-   * Creates a new shape.
-   *
-   * @param CreateShapeRequest $createShape
+   * @param CreateShapeRequest
    */
   public function setCreateShape(CreateShapeRequest $createShape)
   {
@@ -173,9 +165,7 @@ class Request extends \Google\Model
     return $this->createShape;
   }
   /**
-   * Creates an embedded Google Sheets chart.
-   *
-   * @param CreateSheetsChartRequest $createSheetsChart
+   * @param CreateSheetsChartRequest
    */
   public function setCreateSheetsChart(CreateSheetsChartRequest $createSheetsChart)
   {
@@ -189,9 +179,7 @@ class Request extends \Google\Model
     return $this->createSheetsChart;
   }
   /**
-   * Creates a new slide.
-   *
-   * @param CreateSlideRequest $createSlide
+   * @param CreateSlideRequest
    */
   public function setCreateSlide(CreateSlideRequest $createSlide)
   {
@@ -205,9 +193,7 @@ class Request extends \Google\Model
     return $this->createSlide;
   }
   /**
-   * Creates a new table.
-   *
-   * @param CreateTableRequest $createTable
+   * @param CreateTableRequest
    */
   public function setCreateTable(CreateTableRequest $createTable)
   {
@@ -221,9 +207,7 @@ class Request extends \Google\Model
     return $this->createTable;
   }
   /**
-   * Creates a video.
-   *
-   * @param CreateVideoRequest $createVideo
+   * @param CreateVideoRequest
    */
   public function setCreateVideo(CreateVideoRequest $createVideo)
   {
@@ -237,9 +221,7 @@ class Request extends \Google\Model
     return $this->createVideo;
   }
   /**
-   * Deletes a page or page element from the presentation.
-   *
-   * @param DeleteObjectRequest $deleteObject
+   * @param DeleteObjectRequest
    */
   public function setDeleteObject(DeleteObjectRequest $deleteObject)
   {
@@ -253,9 +235,7 @@ class Request extends \Google\Model
     return $this->deleteObject;
   }
   /**
-   * Deletes bullets from paragraphs.
-   *
-   * @param DeleteParagraphBulletsRequest $deleteParagraphBullets
+   * @param DeleteParagraphBulletsRequest
    */
   public function setDeleteParagraphBullets(DeleteParagraphBulletsRequest $deleteParagraphBullets)
   {
@@ -269,9 +249,7 @@ class Request extends \Google\Model
     return $this->deleteParagraphBullets;
   }
   /**
-   * Deletes a column from a table.
-   *
-   * @param DeleteTableColumnRequest $deleteTableColumn
+   * @param DeleteTableColumnRequest
    */
   public function setDeleteTableColumn(DeleteTableColumnRequest $deleteTableColumn)
   {
@@ -285,9 +263,7 @@ class Request extends \Google\Model
     return $this->deleteTableColumn;
   }
   /**
-   * Deletes a row from a table.
-   *
-   * @param DeleteTableRowRequest $deleteTableRow
+   * @param DeleteTableRowRequest
    */
   public function setDeleteTableRow(DeleteTableRowRequest $deleteTableRow)
   {
@@ -301,9 +277,7 @@ class Request extends \Google\Model
     return $this->deleteTableRow;
   }
   /**
-   * Deletes text from a shape or a table cell.
-   *
-   * @param DeleteTextRequest $deleteText
+   * @param DeleteTextRequest
    */
   public function setDeleteText(DeleteTextRequest $deleteText)
   {
@@ -317,9 +291,7 @@ class Request extends \Google\Model
     return $this->deleteText;
   }
   /**
-   * Duplicates a slide or page element.
-   *
-   * @param DuplicateObjectRequest $duplicateObject
+   * @param DuplicateObjectRequest
    */
   public function setDuplicateObject(DuplicateObjectRequest $duplicateObject)
   {
@@ -333,9 +305,7 @@ class Request extends \Google\Model
     return $this->duplicateObject;
   }
   /**
-   * Groups objects, such as page elements.
-   *
-   * @param GroupObjectsRequest $groupObjects
+   * @param GroupObjectsRequest
    */
   public function setGroupObjects(GroupObjectsRequest $groupObjects)
   {
@@ -349,9 +319,7 @@ class Request extends \Google\Model
     return $this->groupObjects;
   }
   /**
-   * Inserts columns into a table.
-   *
-   * @param InsertTableColumnsRequest $insertTableColumns
+   * @param InsertTableColumnsRequest
    */
   public function setInsertTableColumns(InsertTableColumnsRequest $insertTableColumns)
   {
@@ -365,9 +333,7 @@ class Request extends \Google\Model
     return $this->insertTableColumns;
   }
   /**
-   * Inserts rows into a table.
-   *
-   * @param InsertTableRowsRequest $insertTableRows
+   * @param InsertTableRowsRequest
    */
   public function setInsertTableRows(InsertTableRowsRequest $insertTableRows)
   {
@@ -381,9 +347,7 @@ class Request extends \Google\Model
     return $this->insertTableRows;
   }
   /**
-   * Inserts text into a shape or table cell.
-   *
-   * @param InsertTextRequest $insertText
+   * @param InsertTextRequest
    */
   public function setInsertText(InsertTextRequest $insertText)
   {
@@ -397,9 +361,7 @@ class Request extends \Google\Model
     return $this->insertText;
   }
   /**
-   * Merges cells in a Table.
-   *
-   * @param MergeTableCellsRequest $mergeTableCells
+   * @param MergeTableCellsRequest
    */
   public function setMergeTableCells(MergeTableCellsRequest $mergeTableCells)
   {
@@ -413,9 +375,7 @@ class Request extends \Google\Model
     return $this->mergeTableCells;
   }
   /**
-   * Refreshes a Google Sheets chart.
-   *
-   * @param RefreshSheetsChartRequest $refreshSheetsChart
+   * @param RefreshSheetsChartRequest
    */
   public function setRefreshSheetsChart(RefreshSheetsChartRequest $refreshSheetsChart)
   {
@@ -429,9 +389,7 @@ class Request extends \Google\Model
     return $this->refreshSheetsChart;
   }
   /**
-   * Replaces all shapes matching some criteria with an image.
-   *
-   * @param ReplaceAllShapesWithImageRequest $replaceAllShapesWithImage
+   * @param ReplaceAllShapesWithImageRequest
    */
   public function setReplaceAllShapesWithImage(ReplaceAllShapesWithImageRequest $replaceAllShapesWithImage)
   {
@@ -445,9 +403,7 @@ class Request extends \Google\Model
     return $this->replaceAllShapesWithImage;
   }
   /**
-   * Replaces all shapes matching some criteria with a Google Sheets chart.
-   *
-   * @param ReplaceAllShapesWithSheetsChartRequest $replaceAllShapesWithSheetsChart
+   * @param ReplaceAllShapesWithSheetsChartRequest
    */
   public function setReplaceAllShapesWithSheetsChart(ReplaceAllShapesWithSheetsChartRequest $replaceAllShapesWithSheetsChart)
   {
@@ -461,9 +417,7 @@ class Request extends \Google\Model
     return $this->replaceAllShapesWithSheetsChart;
   }
   /**
-   * Replaces all instances of specified text.
-   *
-   * @param ReplaceAllTextRequest $replaceAllText
+   * @param ReplaceAllTextRequest
    */
   public function setReplaceAllText(ReplaceAllTextRequest $replaceAllText)
   {
@@ -477,9 +431,7 @@ class Request extends \Google\Model
     return $this->replaceAllText;
   }
   /**
-   * Replaces an existing image with a new image.
-   *
-   * @param ReplaceImageRequest $replaceImage
+   * @param ReplaceImageRequest
    */
   public function setReplaceImage(ReplaceImageRequest $replaceImage)
   {
@@ -493,10 +445,7 @@ class Request extends \Google\Model
     return $this->replaceImage;
   }
   /**
-   * Reroutes a line such that it's connected at the two closest connection
-   * sites on the connected page elements.
-   *
-   * @param RerouteLineRequest $rerouteLine
+   * @param RerouteLineRequest
    */
   public function setRerouteLine(RerouteLineRequest $rerouteLine)
   {
@@ -510,9 +459,7 @@ class Request extends \Google\Model
     return $this->rerouteLine;
   }
   /**
-   * Ungroups objects, such as groups.
-   *
-   * @param UngroupObjectsRequest $ungroupObjects
+   * @param UngroupObjectsRequest
    */
   public function setUngroupObjects(UngroupObjectsRequest $ungroupObjects)
   {
@@ -526,9 +473,7 @@ class Request extends \Google\Model
     return $this->ungroupObjects;
   }
   /**
-   * Unmerges cells in a Table.
-   *
-   * @param UnmergeTableCellsRequest $unmergeTableCells
+   * @param UnmergeTableCellsRequest
    */
   public function setUnmergeTableCells(UnmergeTableCellsRequest $unmergeTableCells)
   {
@@ -542,9 +487,7 @@ class Request extends \Google\Model
     return $this->unmergeTableCells;
   }
   /**
-   * Updates the properties of an Image.
-   *
-   * @param UpdateImagePropertiesRequest $updateImageProperties
+   * @param UpdateImagePropertiesRequest
    */
   public function setUpdateImageProperties(UpdateImagePropertiesRequest $updateImageProperties)
   {
@@ -558,9 +501,7 @@ class Request extends \Google\Model
     return $this->updateImageProperties;
   }
   /**
-   * Updates the category of a line.
-   *
-   * @param UpdateLineCategoryRequest $updateLineCategory
+   * @param UpdateLineCategoryRequest
    */
   public function setUpdateLineCategory(UpdateLineCategoryRequest $updateLineCategory)
   {
@@ -574,9 +515,7 @@ class Request extends \Google\Model
     return $this->updateLineCategory;
   }
   /**
-   * Updates the properties of a Line.
-   *
-   * @param UpdateLinePropertiesRequest $updateLineProperties
+   * @param UpdateLinePropertiesRequest
    */
   public function setUpdateLineProperties(UpdateLinePropertiesRequest $updateLineProperties)
   {
@@ -590,9 +529,7 @@ class Request extends \Google\Model
     return $this->updateLineProperties;
   }
   /**
-   * Updates the alt text title and/or description of a page element.
-   *
-   * @param UpdatePageElementAltTextRequest $updatePageElementAltText
+   * @param UpdatePageElementAltTextRequest
    */
   public function setUpdatePageElementAltText(UpdatePageElementAltTextRequest $updatePageElementAltText)
   {
@@ -606,9 +543,7 @@ class Request extends \Google\Model
     return $this->updatePageElementAltText;
   }
   /**
-   * Updates the transform of a page element.
-   *
-   * @param UpdatePageElementTransformRequest $updatePageElementTransform
+   * @param UpdatePageElementTransformRequest
    */
   public function setUpdatePageElementTransform(UpdatePageElementTransformRequest $updatePageElementTransform)
   {
@@ -622,9 +557,7 @@ class Request extends \Google\Model
     return $this->updatePageElementTransform;
   }
   /**
-   * Updates the Z-order of page elements.
-   *
-   * @param UpdatePageElementsZOrderRequest $updatePageElementsZOrder
+   * @param UpdatePageElementsZOrderRequest
    */
   public function setUpdatePageElementsZOrder(UpdatePageElementsZOrderRequest $updatePageElementsZOrder)
   {
@@ -638,9 +571,7 @@ class Request extends \Google\Model
     return $this->updatePageElementsZOrder;
   }
   /**
-   * Updates the properties of a Page.
-   *
-   * @param UpdatePagePropertiesRequest $updatePageProperties
+   * @param UpdatePagePropertiesRequest
    */
   public function setUpdatePageProperties(UpdatePagePropertiesRequest $updatePageProperties)
   {
@@ -654,9 +585,7 @@ class Request extends \Google\Model
     return $this->updatePageProperties;
   }
   /**
-   * Updates the styling of paragraphs within a Shape or Table.
-   *
-   * @param UpdateParagraphStyleRequest $updateParagraphStyle
+   * @param UpdateParagraphStyleRequest
    */
   public function setUpdateParagraphStyle(UpdateParagraphStyleRequest $updateParagraphStyle)
   {
@@ -670,9 +599,7 @@ class Request extends \Google\Model
     return $this->updateParagraphStyle;
   }
   /**
-   * Updates the properties of a Shape.
-   *
-   * @param UpdateShapePropertiesRequest $updateShapeProperties
+   * @param UpdateShapePropertiesRequest
    */
   public function setUpdateShapeProperties(UpdateShapePropertiesRequest $updateShapeProperties)
   {
@@ -686,9 +613,7 @@ class Request extends \Google\Model
     return $this->updateShapeProperties;
   }
   /**
-   * Updates the properties of a Slide
-   *
-   * @param UpdateSlidePropertiesRequest $updateSlideProperties
+   * @param UpdateSlidePropertiesRequest
    */
   public function setUpdateSlideProperties(UpdateSlidePropertiesRequest $updateSlideProperties)
   {
@@ -702,9 +627,7 @@ class Request extends \Google\Model
     return $this->updateSlideProperties;
   }
   /**
-   * Updates the position of a set of slides in the presentation.
-   *
-   * @param UpdateSlidesPositionRequest $updateSlidesPosition
+   * @param UpdateSlidesPositionRequest
    */
   public function setUpdateSlidesPosition(UpdateSlidesPositionRequest $updateSlidesPosition)
   {
@@ -718,9 +641,7 @@ class Request extends \Google\Model
     return $this->updateSlidesPosition;
   }
   /**
-   * Updates the properties of the table borders in a Table.
-   *
-   * @param UpdateTableBorderPropertiesRequest $updateTableBorderProperties
+   * @param UpdateTableBorderPropertiesRequest
    */
   public function setUpdateTableBorderProperties(UpdateTableBorderPropertiesRequest $updateTableBorderProperties)
   {
@@ -734,9 +655,7 @@ class Request extends \Google\Model
     return $this->updateTableBorderProperties;
   }
   /**
-   * Updates the properties of a TableCell.
-   *
-   * @param UpdateTableCellPropertiesRequest $updateTableCellProperties
+   * @param UpdateTableCellPropertiesRequest
    */
   public function setUpdateTableCellProperties(UpdateTableCellPropertiesRequest $updateTableCellProperties)
   {
@@ -750,9 +669,7 @@ class Request extends \Google\Model
     return $this->updateTableCellProperties;
   }
   /**
-   * Updates the properties of a Table column.
-   *
-   * @param UpdateTableColumnPropertiesRequest $updateTableColumnProperties
+   * @param UpdateTableColumnPropertiesRequest
    */
   public function setUpdateTableColumnProperties(UpdateTableColumnPropertiesRequest $updateTableColumnProperties)
   {
@@ -766,9 +683,7 @@ class Request extends \Google\Model
     return $this->updateTableColumnProperties;
   }
   /**
-   * Updates the properties of a Table row.
-   *
-   * @param UpdateTableRowPropertiesRequest $updateTableRowProperties
+   * @param UpdateTableRowPropertiesRequest
    */
   public function setUpdateTableRowProperties(UpdateTableRowPropertiesRequest $updateTableRowProperties)
   {
@@ -782,9 +697,7 @@ class Request extends \Google\Model
     return $this->updateTableRowProperties;
   }
   /**
-   * Updates the styling of text within a Shape or Table.
-   *
-   * @param UpdateTextStyleRequest $updateTextStyle
+   * @param UpdateTextStyleRequest
    */
   public function setUpdateTextStyle(UpdateTextStyleRequest $updateTextStyle)
   {
@@ -798,9 +711,7 @@ class Request extends \Google\Model
     return $this->updateTextStyle;
   }
   /**
-   * Updates the properties of a Video.
-   *
-   * @param UpdateVideoPropertiesRequest $updateVideoProperties
+   * @param UpdateVideoPropertiesRequest
    */
   public function setUpdateVideoProperties(UpdateVideoPropertiesRequest $updateVideoProperties)
   {

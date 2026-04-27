@@ -20,52 +20,36 @@ namespace Google\Service\MapsPlaces;
 class GoogleMapsPlacesV1PlaceParkingOptions extends \Google\Model
 {
   /**
-   * Place offers free garage parking.
-   *
    * @var bool
    */
   public $freeGarageParking;
   /**
-   * Place offers free parking lots.
-   *
    * @var bool
    */
   public $freeParkingLot;
   /**
-   * Place offers free street parking.
-   *
    * @var bool
    */
   public $freeStreetParking;
   /**
-   * Place offers paid garage parking.
-   *
    * @var bool
    */
   public $paidGarageParking;
   /**
-   * Place offers paid parking lots.
-   *
    * @var bool
    */
   public $paidParkingLot;
   /**
-   * Place offers paid street parking.
-   *
    * @var bool
    */
   public $paidStreetParking;
   /**
-   * Place offers valet parking.
-   *
    * @var bool
    */
   public $valetParking;
 
   /**
-   * Place offers free garage parking.
-   *
-   * @param bool $freeGarageParking
+   * @param bool
    */
   public function setFreeGarageParking($freeGarageParking)
   {
@@ -79,9 +63,7 @@ class GoogleMapsPlacesV1PlaceParkingOptions extends \Google\Model
     return $this->freeGarageParking;
   }
   /**
-   * Place offers free parking lots.
-   *
-   * @param bool $freeParkingLot
+   * @param bool
    */
   public function setFreeParkingLot($freeParkingLot)
   {
@@ -95,9 +77,7 @@ class GoogleMapsPlacesV1PlaceParkingOptions extends \Google\Model
     return $this->freeParkingLot;
   }
   /**
-   * Place offers free street parking.
-   *
-   * @param bool $freeStreetParking
+   * @param bool
    */
   public function setFreeStreetParking($freeStreetParking)
   {
@@ -111,9 +91,7 @@ class GoogleMapsPlacesV1PlaceParkingOptions extends \Google\Model
     return $this->freeStreetParking;
   }
   /**
-   * Place offers paid garage parking.
-   *
-   * @param bool $paidGarageParking
+   * @param bool
    */
   public function setPaidGarageParking($paidGarageParking)
   {
@@ -127,9 +105,7 @@ class GoogleMapsPlacesV1PlaceParkingOptions extends \Google\Model
     return $this->paidGarageParking;
   }
   /**
-   * Place offers paid parking lots.
-   *
-   * @param bool $paidParkingLot
+   * @param bool
    */
   public function setPaidParkingLot($paidParkingLot)
   {
@@ -143,9 +119,7 @@ class GoogleMapsPlacesV1PlaceParkingOptions extends \Google\Model
     return $this->paidParkingLot;
   }
   /**
-   * Place offers paid street parking.
-   *
-   * @param bool $paidStreetParking
+   * @param bool
    */
   public function setPaidStreetParking($paidStreetParking)
   {
@@ -159,9 +133,7 @@ class GoogleMapsPlacesV1PlaceParkingOptions extends \Google\Model
     return $this->paidStreetParking;
   }
   /**
-   * Place offers valet parking.
-   *
-   * @param bool $valetParking
+   * @param bool
    */
   public function setValetParking($valetParking)
   {

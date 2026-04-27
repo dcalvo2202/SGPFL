@@ -24,11 +24,7 @@ class FirstPartyAndPartnerAudienceGroup extends \Google\Collection
   protected $settingsDataType = 'array';
 
   /**
-   * Required. All first party and partner audience targeting settings in first
-   * party and partner audience group. Repeated settings with the same id are
-   * not allowed.
-   *
-   * @param FirstPartyAndPartnerAudienceTargetingSetting[] $settings
+   * @param FirstPartyAndPartnerAudienceTargetingSetting[]
    */
   public function setSettings($settings)
   {

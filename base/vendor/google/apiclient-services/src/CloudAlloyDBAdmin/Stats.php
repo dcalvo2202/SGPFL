@@ -20,34 +20,24 @@ namespace Google\Service\CloudAlloyDBAdmin;
 class Stats extends \Google\Model
 {
   /**
-   * Number of read pool instances which failed to upgrade.
-   *
    * @var int
    */
   public $failed;
   /**
-   * Number of read pool instances for which upgrade has not started.
-   *
    * @var int
    */
   public $notStarted;
   /**
-   * Number of read pool instances undergoing upgrade.
-   *
    * @var int
    */
   public $ongoing;
   /**
-   * Number of read pool instances successfully upgraded.
-   *
    * @var int
    */
   public $success;
 
   /**
-   * Number of read pool instances which failed to upgrade.
-   *
-   * @param int $failed
+   * @param int
    */
   public function setFailed($failed)
   {
@@ -61,9 +51,7 @@ class Stats extends \Google\Model
     return $this->failed;
   }
   /**
-   * Number of read pool instances for which upgrade has not started.
-   *
-   * @param int $notStarted
+   * @param int
    */
   public function setNotStarted($notStarted)
   {
@@ -77,9 +65,7 @@ class Stats extends \Google\Model
     return $this->notStarted;
   }
   /**
-   * Number of read pool instances undergoing upgrade.
-   *
-   * @param int $ongoing
+   * @param int
    */
   public function setOngoing($ongoing)
   {
@@ -93,9 +79,7 @@ class Stats extends \Google\Model
     return $this->ongoing;
   }
   /**
-   * Number of read pool instances successfully upgraded.
-   *
-   * @param int $success
+   * @param int
    */
   public function setSuccess($success)
   {

@@ -20,20 +20,12 @@ namespace Google\Service\Bigquery;
 class AvroOptions extends \Google\Model
 {
   /**
-   * Optional. If sourceFormat is set to "AVRO", indicates whether to interpret
-   * logical types as the corresponding BigQuery data type (for example,
-   * TIMESTAMP), instead of using the raw type (for example, INTEGER).
-   *
    * @var bool
    */
   public $useAvroLogicalTypes;
 
   /**
-   * Optional. If sourceFormat is set to "AVRO", indicates whether to interpret
-   * logical types as the corresponding BigQuery data type (for example,
-   * TIMESTAMP), instead of using the raw type (for example, INTEGER).
-   *
-   * @param bool $useAvroLogicalTypes
+   * @param bool
    */
   public function setUseAvroLogicalTypes($useAvroLogicalTypes)
   {

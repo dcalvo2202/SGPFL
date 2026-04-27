@@ -21,16 +21,12 @@ class StringList extends \Google\Collection
 {
   protected $collection_key = 'elements';
   /**
-   * Elements of the list.
-   *
    * @var string[]
    */
   public $elements;
 
   /**
-   * Elements of the list.
-   *
-   * @param string[] $elements
+   * @param string[]
    */
   public function setElements($elements)
   {

@@ -26,14 +26,10 @@ class TestSpecification extends \Google\Model
   protected $androidTestLoopType = AndroidTestLoop::class;
   protected $androidTestLoopDataType = '';
   /**
-   * Disables performance metrics recording. May reduce test latency.
-   *
    * @var bool
    */
   public $disablePerformanceMetrics;
   /**
-   * Disables video recording. May reduce test latency.
-   *
    * @var bool
    */
   public $disableVideoRecording;
@@ -48,17 +44,12 @@ class TestSpecification extends \Google\Model
   protected $testSetupType = TestSetup::class;
   protected $testSetupDataType = '';
   /**
-   * Max time a test execution is allowed to run before it is automatically
-   * cancelled. The default value is 5 min.
-   *
    * @var string
    */
   public $testTimeout;
 
   /**
-   * An Android instrumentation test.
-   *
-   * @param AndroidInstrumentationTest $androidInstrumentationTest
+   * @param AndroidInstrumentationTest
    */
   public function setAndroidInstrumentationTest(AndroidInstrumentationTest $androidInstrumentationTest)
   {
@@ -72,9 +63,7 @@ class TestSpecification extends \Google\Model
     return $this->androidInstrumentationTest;
   }
   /**
-   * An Android robo test.
-   *
-   * @param AndroidRoboTest $androidRoboTest
+   * @param AndroidRoboTest
    */
   public function setAndroidRoboTest(AndroidRoboTest $androidRoboTest)
   {
@@ -88,9 +77,7 @@ class TestSpecification extends \Google\Model
     return $this->androidRoboTest;
   }
   /**
-   * An Android Application with a Test Loop.
-   *
-   * @param AndroidTestLoop $androidTestLoop
+   * @param AndroidTestLoop
    */
   public function setAndroidTestLoop(AndroidTestLoop $androidTestLoop)
   {
@@ -104,9 +91,7 @@ class TestSpecification extends \Google\Model
     return $this->androidTestLoop;
   }
   /**
-   * Disables performance metrics recording. May reduce test latency.
-   *
-   * @param bool $disablePerformanceMetrics
+   * @param bool
    */
   public function setDisablePerformanceMetrics($disablePerformanceMetrics)
   {
@@ -120,9 +105,7 @@ class TestSpecification extends \Google\Model
     return $this->disablePerformanceMetrics;
   }
   /**
-   * Disables video recording. May reduce test latency.
-   *
-   * @param bool $disableVideoRecording
+   * @param bool
    */
   public function setDisableVideoRecording($disableVideoRecording)
   {
@@ -136,9 +119,7 @@ class TestSpecification extends \Google\Model
     return $this->disableVideoRecording;
   }
   /**
-   * An iOS Robo test.
-   *
-   * @param IosRoboTest $iosRoboTest
+   * @param IosRoboTest
    */
   public function setIosRoboTest(IosRoboTest $iosRoboTest)
   {
@@ -152,9 +133,7 @@ class TestSpecification extends \Google\Model
     return $this->iosRoboTest;
   }
   /**
-   * An iOS application with a test loop.
-   *
-   * @param IosTestLoop $iosTestLoop
+   * @param IosTestLoop
    */
   public function setIosTestLoop(IosTestLoop $iosTestLoop)
   {
@@ -168,9 +147,7 @@ class TestSpecification extends \Google\Model
     return $this->iosTestLoop;
   }
   /**
-   * Test setup requirements for iOS.
-   *
-   * @param IosTestSetup $iosTestSetup
+   * @param IosTestSetup
    */
   public function setIosTestSetup(IosTestSetup $iosTestSetup)
   {
@@ -184,9 +161,7 @@ class TestSpecification extends \Google\Model
     return $this->iosTestSetup;
   }
   /**
-   * An iOS XCTest, via an .xctestrun file.
-   *
-   * @param IosXcTest $iosXcTest
+   * @param IosXcTest
    */
   public function setIosXcTest(IosXcTest $iosXcTest)
   {
@@ -200,10 +175,7 @@ class TestSpecification extends \Google\Model
     return $this->iosXcTest;
   }
   /**
-   * Test setup requirements for Android e.g. files to install, bootstrap
-   * scripts.
-   *
-   * @param TestSetup $testSetup
+   * @param TestSetup
    */
   public function setTestSetup(TestSetup $testSetup)
   {
@@ -217,10 +189,7 @@ class TestSpecification extends \Google\Model
     return $this->testSetup;
   }
   /**
-   * Max time a test execution is allowed to run before it is automatically
-   * cancelled. The default value is 5 min.
-   *
-   * @param string $testTimeout
+   * @param string
    */
   public function setTestTimeout($testTimeout)
   {

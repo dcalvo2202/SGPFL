@@ -24,9 +24,7 @@ class ReactionBatchDeletedEventData extends \Google\Collection
   protected $reactionsDataType = 'array';
 
   /**
-   * A list of deleted reactions.
-   *
-   * @param ReactionDeletedEventData[] $reactions
+   * @param ReactionDeletedEventData[]
    */
   public function setReactions($reactions)
   {

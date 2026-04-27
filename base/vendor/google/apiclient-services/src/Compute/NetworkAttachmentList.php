@@ -21,8 +21,6 @@ class NetworkAttachmentList extends \Google\Collection
 {
   protected $collection_key = 'items';
   /**
-   * [Output Only] Unique identifier for the resource; defined by the server.
-   *
    * @var string
    */
   public $id;
@@ -33,18 +31,10 @@ class NetworkAttachmentList extends \Google\Collection
    */
   public $kind;
   /**
-   * [Output Only] This token allows you to get the next page of results for
-   * list requests. If the number of results is larger thanmaxResults, use the
-   * nextPageToken as a value for the query parameter pageToken in the next list
-   * request. Subsequent list requests will have their own nextPageToken to
-   * continue paging through the results.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * [Output Only] Server-defined URL for this resource.
-   *
    * @var string
    */
   public $selfLink;
@@ -52,9 +42,7 @@ class NetworkAttachmentList extends \Google\Collection
   protected $warningDataType = '';
 
   /**
-   * [Output Only] Unique identifier for the resource; defined by the server.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -68,9 +56,7 @@ class NetworkAttachmentList extends \Google\Collection
     return $this->id;
   }
   /**
-   * A list of NetworkAttachment resources.
-   *
-   * @param NetworkAttachment[] $items
+   * @param NetworkAttachment[]
    */
   public function setItems($items)
   {
@@ -84,7 +70,7 @@ class NetworkAttachmentList extends \Google\Collection
     return $this->items;
   }
   /**
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -98,13 +84,7 @@ class NetworkAttachmentList extends \Google\Collection
     return $this->kind;
   }
   /**
-   * [Output Only] This token allows you to get the next page of results for
-   * list requests. If the number of results is larger thanmaxResults, use the
-   * nextPageToken as a value for the query parameter pageToken in the next list
-   * request. Subsequent list requests will have their own nextPageToken to
-   * continue paging through the results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -118,9 +98,7 @@ class NetworkAttachmentList extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * [Output Only] Server-defined URL for this resource.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -134,9 +112,7 @@ class NetworkAttachmentList extends \Google\Collection
     return $this->selfLink;
   }
   /**
-   * [Output Only] Informational warning message.
-   *
-   * @param NetworkAttachmentListWarning $warning
+   * @param NetworkAttachmentListWarning
    */
   public function setWarning(NetworkAttachmentListWarning $warning)
   {

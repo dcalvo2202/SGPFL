@@ -21,9 +21,6 @@ class ListSpacesResponse extends \Google\Collection
 {
   protected $collection_key = 'spaces';
   /**
-   * You can send a token as `pageToken` to retrieve the next page of results.
-   * If empty, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListSpacesResponse extends \Google\Collection
   protected $spacesDataType = 'array';
 
   /**
-   * You can send a token as `pageToken` to retrieve the next page of results.
-   * If empty, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,11 +42,7 @@ class ListSpacesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * List of spaces in the requested (or first) page. Note: The
-   * `permissionSettings` field is not returned in the Space object for list
-   * requests.
-   *
-   * @param Space[] $spaces
+   * @param Space[]
    */
   public function setSpaces($spaces)
   {

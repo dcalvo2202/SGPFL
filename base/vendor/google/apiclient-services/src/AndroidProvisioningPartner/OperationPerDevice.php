@@ -29,9 +29,7 @@ class OperationPerDevice extends \Google\Model
   protected $updateMetadataDataType = '';
 
   /**
-   * A copy of the original device-claim request received by the server.
-   *
-   * @param PartnerClaim $claim
+   * @param PartnerClaim
    */
   public function setClaim(PartnerClaim $claim)
   {
@@ -45,9 +43,7 @@ class OperationPerDevice extends \Google\Model
     return $this->claim;
   }
   /**
-   * The processing result for each device.
-   *
-   * @param PerDeviceStatusInBatch $result
+   * @param PerDeviceStatusInBatch
    */
   public function setResult(PerDeviceStatusInBatch $result)
   {
@@ -61,9 +57,7 @@ class OperationPerDevice extends \Google\Model
     return $this->result;
   }
   /**
-   * A copy of the original device-unclaim request received by the server.
-   *
-   * @param PartnerUnclaim $unclaim
+   * @param PartnerUnclaim
    */
   public function setUnclaim(PartnerUnclaim $unclaim)
   {
@@ -77,9 +71,7 @@ class OperationPerDevice extends \Google\Model
     return $this->unclaim;
   }
   /**
-   * A copy of the original metadata-update request received by the server.
-   *
-   * @param UpdateMetadataArguments $updateMetadata
+   * @param UpdateMetadataArguments
    */
   public function setUpdateMetadata(UpdateMetadataArguments $updateMetadata)
   {

@@ -21,9 +21,6 @@ class GoogleCloudDocumentaiV1DocumentTextAnchor extends \Google\Collection
 {
   protected $collection_key = 'textSegments';
   /**
-   * Contains the content of the text span so that users do not have to look it
-   * up in the text_segments. It is always populated for formFields.
-   *
    * @var string
    */
   public $content;
@@ -31,10 +28,7 @@ class GoogleCloudDocumentaiV1DocumentTextAnchor extends \Google\Collection
   protected $textSegmentsDataType = 'array';
 
   /**
-   * Contains the content of the text span so that users do not have to look it
-   * up in the text_segments. It is always populated for formFields.
-   *
-   * @param string $content
+   * @param string
    */
   public function setContent($content)
   {
@@ -48,9 +42,7 @@ class GoogleCloudDocumentaiV1DocumentTextAnchor extends \Google\Collection
     return $this->content;
   }
   /**
-   * The text segments from the Document.text.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentTextAnchorTextSegment[] $textSegments
+   * @param GoogleCloudDocumentaiV1DocumentTextAnchorTextSegment[]
    */
   public function setTextSegments($textSegments)
   {

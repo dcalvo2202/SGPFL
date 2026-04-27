@@ -20,24 +20,16 @@ namespace Google\Service\YouTubeAnalytics;
 class GroupContentDetails extends \Google\Model
 {
   /**
-   * The number of items in the group.
-   *
    * @var string
    */
   public $itemCount;
   /**
-   * The type of resources that the group contains. Valid values for this
-   * property are: * `youtube#channel` * `youtube#playlist` * `youtube#video` *
-   * `youtubePartner#asset`
-   *
    * @var string
    */
   public $itemType;
 
   /**
-   * The number of items in the group.
-   *
-   * @param string $itemCount
+   * @param string
    */
   public function setItemCount($itemCount)
   {
@@ -51,11 +43,7 @@ class GroupContentDetails extends \Google\Model
     return $this->itemCount;
   }
   /**
-   * The type of resources that the group contains. Valid values for this
-   * property are: * `youtube#channel` * `youtube#playlist` * `youtube#video` *
-   * `youtubePartner#asset`
-   *
-   * @param string $itemType
+   * @param string
    */
   public function setItemType($itemType)
   {

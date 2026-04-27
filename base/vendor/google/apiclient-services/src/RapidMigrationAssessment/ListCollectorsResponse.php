@@ -23,22 +23,16 @@ class ListCollectorsResponse extends \Google\Collection
   protected $collectorsType = Collector::class;
   protected $collectorsDataType = 'array';
   /**
-   * A token identifying a page of results the server should return.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * The list of Collectors.
-   *
-   * @param Collector[] $collectors
+   * @param Collector[]
    */
   public function setCollectors($collectors)
   {
@@ -52,9 +46,7 @@ class ListCollectorsResponse extends \Google\Collection
     return $this->collectors;
   }
   /**
-   * A token identifying a page of results the server should return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -68,9 +60,7 @@ class ListCollectorsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

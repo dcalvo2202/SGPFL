@@ -28,9 +28,7 @@ class GoogleCloudApigeeV1Stats extends \Google\Collection
   protected $metaDataDataType = '';
 
   /**
-   * List of query results on the environment level.
-   *
-   * @param GoogleCloudApigeeV1StatsEnvironmentStats[] $environments
+   * @param GoogleCloudApigeeV1StatsEnvironmentStats[]
    */
   public function setEnvironments($environments)
   {
@@ -44,9 +42,7 @@ class GoogleCloudApigeeV1Stats extends \Google\Collection
     return $this->environments;
   }
   /**
-   * List of query results grouped by host.
-   *
-   * @param GoogleCloudApigeeV1StatsHostStats[] $hosts
+   * @param GoogleCloudApigeeV1StatsHostStats[]
    */
   public function setHosts($hosts)
   {
@@ -60,9 +56,7 @@ class GoogleCloudApigeeV1Stats extends \Google\Collection
     return $this->hosts;
   }
   /**
-   * Metadata information.
-   *
-   * @param GoogleCloudApigeeV1Metadata $metaData
+   * @param GoogleCloudApigeeV1Metadata
    */
   public function setMetaData(GoogleCloudApigeeV1Metadata $metaData)
   {

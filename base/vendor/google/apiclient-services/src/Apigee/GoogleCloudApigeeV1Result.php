@@ -24,19 +24,12 @@ class GoogleCloudApigeeV1Result extends \Google\Collection
         "actionResult" => "ActionResult",
   ];
   /**
-   * Type of the action result. Can be one of the five: DebugInfo,
-   * RequestMessage, ResponseMessage, ErrorMessage, VariableAccess
-   *
    * @var string
    */
   public $actionResult;
   protected $accessListType = GoogleCloudApigeeV1Access::class;
   protected $accessListDataType = 'array';
   /**
-   * Error message content. for example, "content" :
-   * "{\"fault\":{\"faultstring\":\"API timed
-   * out\",\"detail\":{\"errorcode\":\"flow.APITimedOut\"}}}"
-   *
    * @var string
    */
   public $content;
@@ -45,42 +38,28 @@ class GoogleCloudApigeeV1Result extends \Google\Collection
   protected $propertiesType = GoogleCloudApigeeV1Properties::class;
   protected $propertiesDataType = '';
   /**
-   * HTTP response phrase
-   *
    * @var string
    */
   public $reasonPhrase;
   /**
-   * HTTP response code
-   *
    * @var string
    */
   public $statusCode;
   /**
-   * Timestamp of when the result is recorded. Its format is dd-mm-yy
-   * hh:mm:ss:xxx. For example, `"timestamp" : "12-08-19 00:31:59:960"`
-   *
    * @var string
    */
   public $timestamp;
   /**
-   * The relative path of the api proxy. for example, `"uRI" : "/iloveapis"`
-   *
    * @var string
    */
   public $uRI;
   /**
-   * HTTP method verb
-   *
    * @var string
    */
   public $verb;
 
   /**
-   * Type of the action result. Can be one of the five: DebugInfo,
-   * RequestMessage, ResponseMessage, ErrorMessage, VariableAccess
-   *
-   * @param string $actionResult
+   * @param string
    */
   public function setActionResult($actionResult)
   {
@@ -94,10 +73,7 @@ class GoogleCloudApigeeV1Result extends \Google\Collection
     return $this->actionResult;
   }
   /**
-   * A list of variable access actions agaist the api proxy. Supported values:
-   * Get, Set, Remove.
-   *
-   * @param GoogleCloudApigeeV1Access[] $accessList
+   * @param GoogleCloudApigeeV1Access[]
    */
   public function setAccessList($accessList)
   {
@@ -111,11 +87,7 @@ class GoogleCloudApigeeV1Result extends \Google\Collection
     return $this->accessList;
   }
   /**
-   * Error message content. for example, "content" :
-   * "{\"fault\":{\"faultstring\":\"API timed
-   * out\",\"detail\":{\"errorcode\":\"flow.APITimedOut\"}}}"
-   *
-   * @param string $content
+   * @param string
    */
   public function setContent($content)
   {
@@ -129,11 +101,7 @@ class GoogleCloudApigeeV1Result extends \Google\Collection
     return $this->content;
   }
   /**
-   * A list of HTTP headers. for example, '"headers" : [ { "name" : "Content-
-   * Length", "value" : "83" }, { "name" : "Content-Type", "value" :
-   * "application/json" } ]'
-   *
-   * @param GoogleCloudApigeeV1Property[] $headers
+   * @param GoogleCloudApigeeV1Property[]
    */
   public function setHeaders($headers)
   {
@@ -147,9 +115,7 @@ class GoogleCloudApigeeV1Result extends \Google\Collection
     return $this->headers;
   }
   /**
-   * Name value pairs used for DebugInfo ActionResult.
-   *
-   * @param GoogleCloudApigeeV1Properties $properties
+   * @param GoogleCloudApigeeV1Properties
    */
   public function setProperties(GoogleCloudApigeeV1Properties $properties)
   {
@@ -163,9 +129,7 @@ class GoogleCloudApigeeV1Result extends \Google\Collection
     return $this->properties;
   }
   /**
-   * HTTP response phrase
-   *
-   * @param string $reasonPhrase
+   * @param string
    */
   public function setReasonPhrase($reasonPhrase)
   {
@@ -179,9 +143,7 @@ class GoogleCloudApigeeV1Result extends \Google\Collection
     return $this->reasonPhrase;
   }
   /**
-   * HTTP response code
-   *
-   * @param string $statusCode
+   * @param string
    */
   public function setStatusCode($statusCode)
   {
@@ -195,10 +157,7 @@ class GoogleCloudApigeeV1Result extends \Google\Collection
     return $this->statusCode;
   }
   /**
-   * Timestamp of when the result is recorded. Its format is dd-mm-yy
-   * hh:mm:ss:xxx. For example, `"timestamp" : "12-08-19 00:31:59:960"`
-   *
-   * @param string $timestamp
+   * @param string
    */
   public function setTimestamp($timestamp)
   {
@@ -212,9 +171,7 @@ class GoogleCloudApigeeV1Result extends \Google\Collection
     return $this->timestamp;
   }
   /**
-   * The relative path of the api proxy. for example, `"uRI" : "/iloveapis"`
-   *
-   * @param string $uRI
+   * @param string
    */
   public function setURI($uRI)
   {
@@ -228,9 +185,7 @@ class GoogleCloudApigeeV1Result extends \Google\Collection
     return $this->uRI;
   }
   /**
-   * HTTP method verb
-   *
-   * @param string $verb
+   * @param string
    */
   public function setVerb($verb)
   {

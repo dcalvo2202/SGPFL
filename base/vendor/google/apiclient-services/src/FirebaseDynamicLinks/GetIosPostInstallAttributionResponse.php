@@ -20,155 +20,72 @@ namespace Google\Service\FirebaseDynamicLinks;
 class GetIosPostInstallAttributionResponse extends \Google\Model
 {
   /**
-   * Unset.
-   */
-  public const ATTRIBUTION_CONFIDENCE_UNKNOWN_ATTRIBUTION_CONFIDENCE = 'UNKNOWN_ATTRIBUTION_CONFIDENCE';
-  /**
-   * Weak confidence, more than one matching link found or link suspected to be
-   * false positive.
-   */
-  public const ATTRIBUTION_CONFIDENCE_WEAK = 'WEAK';
-  /**
-   * Default confidence, match based on device heuristics.
-   */
-  public const ATTRIBUTION_CONFIDENCE_DEFAULT = 'DEFAULT';
-  /**
-   * Unique confidence, match based on "unique match link to check" or other
-   * means.
-   */
-  public const ATTRIBUTION_CONFIDENCE_UNIQUE = 'UNIQUE';
-  /**
-   * Unset.
-   */
-  public const REQUEST_IP_VERSION_UNKNOWN_IP_VERSION = 'UNKNOWN_IP_VERSION';
-  /**
-   * Request made from an IPv4 IP address.
-   */
-  public const REQUEST_IP_VERSION_IP_V4 = 'IP_V4';
-  /**
-   * Request made from an IPv6 IP address.
-   */
-  public const REQUEST_IP_VERSION_IP_V6 = 'IP_V6';
-  /**
-   * The minimum version for app, specified by dev through ?imv= parameter.
-   * Return to iSDK to allow app to evaluate if current version meets this.
-   *
    * @var string
    */
   public $appMinimumVersion;
   /**
-   * The confidence of the returned attribution.
-   *
    * @var string
    */
   public $attributionConfidence;
   /**
-   * The deep-link attributed post-install via one of several techniques (device
-   * heuristics, copy unique).
-   *
    * @var string
    */
   public $deepLink;
   /**
-   * User-agent specific custom-scheme URIs for iSDK to open. This will be set
-   * according to the user-agent tha the click was originally made in. There is
-   * no Safari-equivalent custom-scheme open URLs. ie:
-   * googlechrome://www.example.com ie: firefox://open-
-   * url?url=http://www.example.com ie: opera-http://example.com
-   *
    * @var string
    */
   public $externalBrowserDestinationLink;
   /**
-   * The link to navigate to update the app if min version is not met. This is
-   * either (in order): 1) fallback link (from ?ifl= parameter, if specified by
-   * developer) or 2) AppStore URL (from ?isi= parameter, if specified), or 3)
-   * the payload link (from required link= parameter).
-   *
    * @var string
    */
   public $fallbackLink;
   /**
-   * Invitation ID attributed post-install via one of several techniques (device
-   * heuristics, copy unique).
-   *
    * @var string
    */
   public $invitationId;
   /**
-   * Instruction for iSDK to attemmpt to perform strong match. For instance, if
-   * browser does not support/allow cookie or outside of support browsers, this
-   * will be false.
-   *
    * @var bool
    */
   public $isStrongMatchExecutable;
   /**
-   * Describes why match failed, ie: "discarded due to low confidence". This
-   * message will be publicly visible.
-   *
    * @var string
    */
   public $matchMessage;
   /**
-   * Which IP version the request was made from.
-   *
    * @var string
    */
   public $requestIpVersion;
   /**
-   * Entire FDL (short or long) attributed post-install via one of several
-   * techniques (device heuristics, copy unique).
-   *
    * @var string
    */
   public $requestedLink;
   /**
-   * The entire FDL, expanded from a short link. It is the same as the
-   * requested_link, if it is long. Parameters from this should not be used
-   * directly (ie: server can default utm_[campaign|medium|source] to a value
-   * when requested_link lack them, server determine the best fallback_link when
-   * requested_link specifies >1 fallback links).
-   *
    * @var string
    */
   public $resolvedLink;
   /**
-   * Scion campaign value to be propagated by iSDK to Scion at post-install.
-   *
    * @var string
    */
   public $utmCampaign;
   /**
-   * Scion content value to be propagated by iSDK to Scion at app-reopen.
-   *
    * @var string
    */
   public $utmContent;
   /**
-   * Scion medium value to be propagated by iSDK to Scion at post-install.
-   *
    * @var string
    */
   public $utmMedium;
   /**
-   * Scion source value to be propagated by iSDK to Scion at post-install.
-   *
    * @var string
    */
   public $utmSource;
   /**
-   * Scion term value to be propagated by iSDK to Scion at app-reopen.
-   *
    * @var string
    */
   public $utmTerm;
 
   /**
-   * The minimum version for app, specified by dev through ?imv= parameter.
-   * Return to iSDK to allow app to evaluate if current version meets this.
-   *
-   * @param string $appMinimumVersion
+   * @param string
    */
   public function setAppMinimumVersion($appMinimumVersion)
   {
@@ -182,28 +99,21 @@ class GetIosPostInstallAttributionResponse extends \Google\Model
     return $this->appMinimumVersion;
   }
   /**
-   * The confidence of the returned attribution.
-   *
-   * Accepted values: UNKNOWN_ATTRIBUTION_CONFIDENCE, WEAK, DEFAULT, UNIQUE
-   *
-   * @param self::ATTRIBUTION_CONFIDENCE_* $attributionConfidence
+   * @param string
    */
   public function setAttributionConfidence($attributionConfidence)
   {
     $this->attributionConfidence = $attributionConfidence;
   }
   /**
-   * @return self::ATTRIBUTION_CONFIDENCE_*
+   * @return string
    */
   public function getAttributionConfidence()
   {
     return $this->attributionConfidence;
   }
   /**
-   * The deep-link attributed post-install via one of several techniques (device
-   * heuristics, copy unique).
-   *
-   * @param string $deepLink
+   * @param string
    */
   public function setDeepLink($deepLink)
   {
@@ -217,13 +127,7 @@ class GetIosPostInstallAttributionResponse extends \Google\Model
     return $this->deepLink;
   }
   /**
-   * User-agent specific custom-scheme URIs for iSDK to open. This will be set
-   * according to the user-agent tha the click was originally made in. There is
-   * no Safari-equivalent custom-scheme open URLs. ie:
-   * googlechrome://www.example.com ie: firefox://open-
-   * url?url=http://www.example.com ie: opera-http://example.com
-   *
-   * @param string $externalBrowserDestinationLink
+   * @param string
    */
   public function setExternalBrowserDestinationLink($externalBrowserDestinationLink)
   {
@@ -237,12 +141,7 @@ class GetIosPostInstallAttributionResponse extends \Google\Model
     return $this->externalBrowserDestinationLink;
   }
   /**
-   * The link to navigate to update the app if min version is not met. This is
-   * either (in order): 1) fallback link (from ?ifl= parameter, if specified by
-   * developer) or 2) AppStore URL (from ?isi= parameter, if specified), or 3)
-   * the payload link (from required link= parameter).
-   *
-   * @param string $fallbackLink
+   * @param string
    */
   public function setFallbackLink($fallbackLink)
   {
@@ -256,10 +155,7 @@ class GetIosPostInstallAttributionResponse extends \Google\Model
     return $this->fallbackLink;
   }
   /**
-   * Invitation ID attributed post-install via one of several techniques (device
-   * heuristics, copy unique).
-   *
-   * @param string $invitationId
+   * @param string
    */
   public function setInvitationId($invitationId)
   {
@@ -273,11 +169,7 @@ class GetIosPostInstallAttributionResponse extends \Google\Model
     return $this->invitationId;
   }
   /**
-   * Instruction for iSDK to attemmpt to perform strong match. For instance, if
-   * browser does not support/allow cookie or outside of support browsers, this
-   * will be false.
-   *
-   * @param bool $isStrongMatchExecutable
+   * @param bool
    */
   public function setIsStrongMatchExecutable($isStrongMatchExecutable)
   {
@@ -291,10 +183,7 @@ class GetIosPostInstallAttributionResponse extends \Google\Model
     return $this->isStrongMatchExecutable;
   }
   /**
-   * Describes why match failed, ie: "discarded due to low confidence". This
-   * message will be publicly visible.
-   *
-   * @param string $matchMessage
+   * @param string
    */
   public function setMatchMessage($matchMessage)
   {
@@ -308,28 +197,21 @@ class GetIosPostInstallAttributionResponse extends \Google\Model
     return $this->matchMessage;
   }
   /**
-   * Which IP version the request was made from.
-   *
-   * Accepted values: UNKNOWN_IP_VERSION, IP_V4, IP_V6
-   *
-   * @param self::REQUEST_IP_VERSION_* $requestIpVersion
+   * @param string
    */
   public function setRequestIpVersion($requestIpVersion)
   {
     $this->requestIpVersion = $requestIpVersion;
   }
   /**
-   * @return self::REQUEST_IP_VERSION_*
+   * @return string
    */
   public function getRequestIpVersion()
   {
     return $this->requestIpVersion;
   }
   /**
-   * Entire FDL (short or long) attributed post-install via one of several
-   * techniques (device heuristics, copy unique).
-   *
-   * @param string $requestedLink
+   * @param string
    */
   public function setRequestedLink($requestedLink)
   {
@@ -343,13 +225,7 @@ class GetIosPostInstallAttributionResponse extends \Google\Model
     return $this->requestedLink;
   }
   /**
-   * The entire FDL, expanded from a short link. It is the same as the
-   * requested_link, if it is long. Parameters from this should not be used
-   * directly (ie: server can default utm_[campaign|medium|source] to a value
-   * when requested_link lack them, server determine the best fallback_link when
-   * requested_link specifies >1 fallback links).
-   *
-   * @param string $resolvedLink
+   * @param string
    */
   public function setResolvedLink($resolvedLink)
   {
@@ -363,9 +239,7 @@ class GetIosPostInstallAttributionResponse extends \Google\Model
     return $this->resolvedLink;
   }
   /**
-   * Scion campaign value to be propagated by iSDK to Scion at post-install.
-   *
-   * @param string $utmCampaign
+   * @param string
    */
   public function setUtmCampaign($utmCampaign)
   {
@@ -379,9 +253,7 @@ class GetIosPostInstallAttributionResponse extends \Google\Model
     return $this->utmCampaign;
   }
   /**
-   * Scion content value to be propagated by iSDK to Scion at app-reopen.
-   *
-   * @param string $utmContent
+   * @param string
    */
   public function setUtmContent($utmContent)
   {
@@ -395,9 +267,7 @@ class GetIosPostInstallAttributionResponse extends \Google\Model
     return $this->utmContent;
   }
   /**
-   * Scion medium value to be propagated by iSDK to Scion at post-install.
-   *
-   * @param string $utmMedium
+   * @param string
    */
   public function setUtmMedium($utmMedium)
   {
@@ -411,9 +281,7 @@ class GetIosPostInstallAttributionResponse extends \Google\Model
     return $this->utmMedium;
   }
   /**
-   * Scion source value to be propagated by iSDK to Scion at post-install.
-   *
-   * @param string $utmSource
+   * @param string
    */
   public function setUtmSource($utmSource)
   {
@@ -427,9 +295,7 @@ class GetIosPostInstallAttributionResponse extends \Google\Model
     return $this->utmSource;
   }
   /**
-   * Scion term value to be propagated by iSDK to Scion at app-reopen.
-   *
-   * @param string $utmTerm
+   * @param string
    */
   public function setUtmTerm($utmTerm)
   {

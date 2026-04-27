@@ -21,57 +21,38 @@ class GoogleDevtoolsArtifactregistryV1File extends \Google\Collection
 {
   protected $collection_key = 'hashes';
   /**
-   * Optional. Client specified annotations.
-   *
    * @var string[]
    */
   public $annotations;
   /**
-   * Output only. The time when the File was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. The time when the last attempt to refresh the file's data was
-   * made. Only set when the repository is remote.
-   *
    * @var string
    */
   public $fetchTime;
   protected $hashesType = Hash::class;
   protected $hashesDataType = 'array';
   /**
-   * The name of the file, for example: `projects/p1/locations/us-
-   * central1/repositories/repo1/files/a%2Fb%2Fc.txt`. If the file ID part
-   * contains slashes, they are escaped.
-   *
    * @var string
    */
   public $name;
   /**
-   * The name of the Package or Version that owns this file, if any.
-   *
    * @var string
    */
   public $owner;
   /**
-   * The size of the File in bytes.
-   *
    * @var string
    */
   public $sizeBytes;
   /**
-   * Output only. The time when the File was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Optional. Client specified annotations.
-   *
-   * @param string[] $annotations
+   * @param string[]
    */
   public function setAnnotations($annotations)
   {
@@ -85,9 +66,7 @@ class GoogleDevtoolsArtifactregistryV1File extends \Google\Collection
     return $this->annotations;
   }
   /**
-   * Output only. The time when the File was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -101,10 +80,7 @@ class GoogleDevtoolsArtifactregistryV1File extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Output only. The time when the last attempt to refresh the file's data was
-   * made. Only set when the repository is remote.
-   *
-   * @param string $fetchTime
+   * @param string
    */
   public function setFetchTime($fetchTime)
   {
@@ -118,9 +94,7 @@ class GoogleDevtoolsArtifactregistryV1File extends \Google\Collection
     return $this->fetchTime;
   }
   /**
-   * The hashes of the file content.
-   *
-   * @param Hash[] $hashes
+   * @param Hash[]
    */
   public function setHashes($hashes)
   {
@@ -134,11 +108,7 @@ class GoogleDevtoolsArtifactregistryV1File extends \Google\Collection
     return $this->hashes;
   }
   /**
-   * The name of the file, for example: `projects/p1/locations/us-
-   * central1/repositories/repo1/files/a%2Fb%2Fc.txt`. If the file ID part
-   * contains slashes, they are escaped.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -152,9 +122,7 @@ class GoogleDevtoolsArtifactregistryV1File extends \Google\Collection
     return $this->name;
   }
   /**
-   * The name of the Package or Version that owns this file, if any.
-   *
-   * @param string $owner
+   * @param string
    */
   public function setOwner($owner)
   {
@@ -168,9 +136,7 @@ class GoogleDevtoolsArtifactregistryV1File extends \Google\Collection
     return $this->owner;
   }
   /**
-   * The size of the File in bytes.
-   *
-   * @param string $sizeBytes
+   * @param string
    */
   public function setSizeBytes($sizeBytes)
   {
@@ -184,9 +150,7 @@ class GoogleDevtoolsArtifactregistryV1File extends \Google\Collection
     return $this->sizeBytes;
   }
   /**
-   * Output only. The time when the File was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

@@ -19,51 +19,14 @@ namespace Google\Service\CloudSearch;
 
 class ItemAcl extends \Google\Collection
 {
-  /**
-   * The default value when this item does not inherit an ACL. Use
-   * NOT_APPLICABLE when inheritAclFrom is empty. An item without ACL
-   * inheritance can still have ACLs supplied by its own readers and
-   * deniedReaders fields.
-   */
-  public const ACL_INHERITANCE_TYPE_NOT_APPLICABLE = 'NOT_APPLICABLE';
-  /**
-   * During an authorization conflict, the ACL of the child item determines its
-   * read access.
-   */
-  public const ACL_INHERITANCE_TYPE_CHILD_OVERRIDE = 'CHILD_OVERRIDE';
-  /**
-   * During an authorization conflict, the ACL of the parent item specified in
-   * the inheritAclFrom field determines read access.
-   */
-  public const ACL_INHERITANCE_TYPE_PARENT_OVERRIDE = 'PARENT_OVERRIDE';
-  /**
-   * Access is granted only if this item and the parent item specified in the
-   * inheritAclFrom field both permit read access.
-   */
-  public const ACL_INHERITANCE_TYPE_BOTH_PERMIT = 'BOTH_PERMIT';
   protected $collection_key = 'readers';
   /**
-   * Sets the type of access rules to apply when an item inherits its ACL from a
-   * parent. This should always be set in tandem with the inheritAclFrom field.
-   * Also, when the inheritAclFrom field is set, this field should be set to a
-   * valid AclInheritanceType.
-   *
    * @var string
    */
   public $aclInheritanceType;
   protected $deniedReadersType = Principal::class;
   protected $deniedReadersDataType = 'array';
   /**
-   * The name of the item to inherit the Access Permission List (ACL) from.
-   * Note: ACL inheritance *only* provides access permissions to child items and
-   * does not define structural relationships, nor does it provide convenient
-   * ways to delete large groups of items. Deleting an ACL parent from the index
-   * only alters the access permissions of child items that reference the parent
-   * in the inheritAclFrom field. The item is still in the index, but may not
-   * visible in search results. By contrast, deletion of a container item also
-   * deletes all items that reference the container via the containerName field.
-   * The maximum length for this field is 1536 characters.
-   *
    * @var string
    */
   public $inheritAclFrom;
@@ -73,34 +36,21 @@ class ItemAcl extends \Google\Collection
   protected $readersDataType = 'array';
 
   /**
-   * Sets the type of access rules to apply when an item inherits its ACL from a
-   * parent. This should always be set in tandem with the inheritAclFrom field.
-   * Also, when the inheritAclFrom field is set, this field should be set to a
-   * valid AclInheritanceType.
-   *
-   * Accepted values: NOT_APPLICABLE, CHILD_OVERRIDE, PARENT_OVERRIDE,
-   * BOTH_PERMIT
-   *
-   * @param self::ACL_INHERITANCE_TYPE_* $aclInheritanceType
+   * @param string
    */
   public function setAclInheritanceType($aclInheritanceType)
   {
     $this->aclInheritanceType = $aclInheritanceType;
   }
   /**
-   * @return self::ACL_INHERITANCE_TYPE_*
+   * @return string
    */
   public function getAclInheritanceType()
   {
     return $this->aclInheritanceType;
   }
   /**
-   * List of principals who are explicitly denied access to the item in search
-   * results. While principals are denied access by default, use denied readers
-   * to handle exceptions and override the list allowed readers. The maximum
-   * number of elements is 100.
-   *
-   * @param Principal[] $deniedReaders
+   * @param Principal[]
    */
   public function setDeniedReaders($deniedReaders)
   {
@@ -114,17 +64,7 @@ class ItemAcl extends \Google\Collection
     return $this->deniedReaders;
   }
   /**
-   * The name of the item to inherit the Access Permission List (ACL) from.
-   * Note: ACL inheritance *only* provides access permissions to child items and
-   * does not define structural relationships, nor does it provide convenient
-   * ways to delete large groups of items. Deleting an ACL parent from the index
-   * only alters the access permissions of child items that reference the parent
-   * in the inheritAclFrom field. The item is still in the index, but may not
-   * visible in search results. By contrast, deletion of a container item also
-   * deletes all items that reference the container via the containerName field.
-   * The maximum length for this field is 1536 characters.
-   *
-   * @param string $inheritAclFrom
+   * @param string
    */
   public function setInheritAclFrom($inheritAclFrom)
   {
@@ -138,12 +78,7 @@ class ItemAcl extends \Google\Collection
     return $this->inheritAclFrom;
   }
   /**
-   * Optional. List of owners for the item. This field has no bearing on
-   * document access permissions. It does, however, offer a slight ranking
-   * boosts items where the querying user is an owner. The maximum number of
-   * elements is 5.
-   *
-   * @param Principal[] $owners
+   * @param Principal[]
    */
   public function setOwners($owners)
   {
@@ -157,12 +92,7 @@ class ItemAcl extends \Google\Collection
     return $this->owners;
   }
   /**
-   * List of principals who are allowed to see the item in search results.
-   * Optional if inheriting permissions from another item or if the item is not
-   * intended to be visible, such as virtual containers. The maximum number of
-   * elements is 1000.
-   *
-   * @param Principal[] $readers
+   * @param Principal[]
    */
   public function setReaders($readers)
   {

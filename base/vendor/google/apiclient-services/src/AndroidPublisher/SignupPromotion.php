@@ -25,9 +25,7 @@ class SignupPromotion extends \Google\Model
   protected $vanityCodeDataType = '';
 
   /**
-   * A one-time code was applied.
-   *
-   * @param OneTimeCode $oneTimeCode
+   * @param OneTimeCode
    */
   public function setOneTimeCode(OneTimeCode $oneTimeCode)
   {
@@ -41,9 +39,7 @@ class SignupPromotion extends \Google\Model
     return $this->oneTimeCode;
   }
   /**
-   * A vanity code was applied.
-   *
-   * @param VanityCode $vanityCode
+   * @param VanityCode
    */
   public function setVanityCode(VanityCode $vanityCode)
   {

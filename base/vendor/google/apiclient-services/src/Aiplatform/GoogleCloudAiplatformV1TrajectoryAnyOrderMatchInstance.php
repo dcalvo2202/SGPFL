@@ -25,9 +25,7 @@ class GoogleCloudAiplatformV1TrajectoryAnyOrderMatchInstance extends \Google\Mod
   protected $referenceTrajectoryDataType = '';
 
   /**
-   * Required. Spec for predicted tool call trajectory.
-   *
-   * @param GoogleCloudAiplatformV1Trajectory $predictedTrajectory
+   * @param GoogleCloudAiplatformV1Trajectory
    */
   public function setPredictedTrajectory(GoogleCloudAiplatformV1Trajectory $predictedTrajectory)
   {
@@ -41,9 +39,7 @@ class GoogleCloudAiplatformV1TrajectoryAnyOrderMatchInstance extends \Google\Mod
     return $this->predictedTrajectory;
   }
   /**
-   * Required. Spec for reference tool call trajectory.
-   *
-   * @param GoogleCloudAiplatformV1Trajectory $referenceTrajectory
+   * @param GoogleCloudAiplatformV1Trajectory
    */
   public function setReferenceTrajectory(GoogleCloudAiplatformV1Trajectory $referenceTrajectory)
   {

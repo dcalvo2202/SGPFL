@@ -29,7 +29,7 @@ class GoogleCloudDialogflowV2beta1EncryptionSpec extends \Google\Model
   public $name;
 
   /**
-   * @param string $kmsKey
+   * @param string
    */
   public function setKmsKey($kmsKey)
   {
@@ -43,7 +43,7 @@ class GoogleCloudDialogflowV2beta1EncryptionSpec extends \Google\Model
     return $this->kmsKey;
   }
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

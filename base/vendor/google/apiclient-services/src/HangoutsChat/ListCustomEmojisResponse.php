@@ -23,17 +23,12 @@ class ListCustomEmojisResponse extends \Google\Collection
   protected $customEmojisType = CustomEmoji::class;
   protected $customEmojisDataType = 'array';
   /**
-   * A token that you can send as `pageToken` to retrieve the next page of
-   * results. If empty, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Unordered list. List of custom emojis.
-   *
-   * @param CustomEmoji[] $customEmojis
+   * @param CustomEmoji[]
    */
   public function setCustomEmojis($customEmojis)
   {
@@ -47,10 +42,7 @@ class ListCustomEmojisResponse extends \Google\Collection
     return $this->customEmojis;
   }
   /**
-   * A token that you can send as `pageToken` to retrieve the next page of
-   * results. If empty, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

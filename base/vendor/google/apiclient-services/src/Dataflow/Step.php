@@ -20,31 +20,20 @@ namespace Google\Service\Dataflow;
 class Step extends \Google\Model
 {
   /**
-   * The kind of step in the Cloud Dataflow job.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The name that identifies the step. This must be unique for each step with
-   * respect to all other steps in the Cloud Dataflow job.
-   *
    * @var string
    */
   public $name;
   /**
-   * Named properties associated with the step. Each kind of predefined step has
-   * its own required set of properties. Must be provided on Create. Only
-   * retrieved with JOB_VIEW_ALL.
-   *
    * @var array[]
    */
   public $properties;
 
   /**
-   * The kind of step in the Cloud Dataflow job.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -58,10 +47,7 @@ class Step extends \Google\Model
     return $this->kind;
   }
   /**
-   * The name that identifies the step. This must be unique for each step with
-   * respect to all other steps in the Cloud Dataflow job.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -75,11 +61,7 @@ class Step extends \Google\Model
     return $this->name;
   }
   /**
-   * Named properties associated with the step. Each kind of predefined step has
-   * its own required set of properties. Must be provided on Create. Only
-   * retrieved with JOB_VIEW_ALL.
-   *
-   * @param array[] $properties
+   * @param array[]
    */
   public function setProperties($properties)
   {

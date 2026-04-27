@@ -20,120 +20,68 @@ namespace Google\Service\AndroidPublisher;
 class ProductPurchase extends \Google\Model
 {
   /**
-   * The acknowledgement state of the inapp product. Possible values are: 0. Yet
-   * to be acknowledged 1. Acknowledged
-   *
    * @var int
    */
   public $acknowledgementState;
   /**
-   * The consumption state of the inapp product. Possible values are: 0. Yet to
-   * be consumed 1. Consumed
-   *
    * @var int
    */
   public $consumptionState;
   /**
-   * A developer-specified string that contains supplemental information about
-   * an order.
-   *
    * @var string
    */
   public $developerPayload;
   /**
-   * This kind represents an inappPurchase object in the androidpublisher
-   * service.
-   *
    * @var string
    */
   public $kind;
   /**
-   * An obfuscated version of the id that is uniquely associated with the user's
-   * account in your app. Only present if specified using https://developer.andr
-   * oid.com/reference/com/android/billingclient/api/BillingFlowParams.Builder#s
-   * etobfuscatedaccountid when the purchase was made.
-   *
    * @var string
    */
   public $obfuscatedExternalAccountId;
   /**
-   * An obfuscated version of the id that is uniquely associated with the user's
-   * profile in your app. Only present if specified using https://developer.andr
-   * oid.com/reference/com/android/billingclient/api/BillingFlowParams.Builder#s
-   * etobfuscatedprofileid when the purchase was made.
-   *
    * @var string
    */
   public $obfuscatedExternalProfileId;
   /**
-   * The order id associated with the purchase of the inapp product.
-   *
    * @var string
    */
   public $orderId;
   /**
-   * The inapp product SKU. May not be present.
-   *
    * @var string
    */
   public $productId;
   /**
-   * The purchase state of the order. Possible values are: 0. Purchased 1.
-   * Canceled 2. Pending
-   *
    * @var int
    */
   public $purchaseState;
   /**
-   * The time the product was purchased, in milliseconds since the epoch (Jan 1,
-   * 1970).
-   *
    * @var string
    */
   public $purchaseTimeMillis;
   /**
-   * The purchase token generated to identify this purchase. May not be present.
-   *
    * @var string
    */
   public $purchaseToken;
   /**
-   * The type of purchase of the inapp product. This field is only set if this
-   * purchase was not made using the standard in-app billing flow. Possible
-   * values are: 0. Test (i.e. purchased from a license testing account) 1.
-   * Promo (i.e. purchased using a promo code). Does not include Play Points
-   * purchases. 2. Rewarded (i.e. from watching a video ad instead of paying)
-   *
    * @var int
    */
   public $purchaseType;
   /**
-   * The quantity associated with the purchase of the inapp product. If not
-   * present, the quantity is 1.
-   *
    * @var int
    */
   public $quantity;
   /**
-   * The quantity eligible for refund, i.e. quantity that hasn't been refunded.
-   * The value reflects quantity-based partial refunds and full refunds.
-   *
    * @var int
    */
   public $refundableQuantity;
   /**
-   * ISO 3166-1 alpha-2 billing region code of the user at the time the product
-   * was granted.
-   *
    * @var string
    */
   public $regionCode;
 
   /**
-   * The acknowledgement state of the inapp product. Possible values are: 0. Yet
-   * to be acknowledged 1. Acknowledged
-   *
-   * @param int $acknowledgementState
+   * @param int
    */
   public function setAcknowledgementState($acknowledgementState)
   {
@@ -147,10 +95,7 @@ class ProductPurchase extends \Google\Model
     return $this->acknowledgementState;
   }
   /**
-   * The consumption state of the inapp product. Possible values are: 0. Yet to
-   * be consumed 1. Consumed
-   *
-   * @param int $consumptionState
+   * @param int
    */
   public function setConsumptionState($consumptionState)
   {
@@ -164,10 +109,7 @@ class ProductPurchase extends \Google\Model
     return $this->consumptionState;
   }
   /**
-   * A developer-specified string that contains supplemental information about
-   * an order.
-   *
-   * @param string $developerPayload
+   * @param string
    */
   public function setDeveloperPayload($developerPayload)
   {
@@ -181,10 +123,7 @@ class ProductPurchase extends \Google\Model
     return $this->developerPayload;
   }
   /**
-   * This kind represents an inappPurchase object in the androidpublisher
-   * service.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -198,12 +137,7 @@ class ProductPurchase extends \Google\Model
     return $this->kind;
   }
   /**
-   * An obfuscated version of the id that is uniquely associated with the user's
-   * account in your app. Only present if specified using https://developer.andr
-   * oid.com/reference/com/android/billingclient/api/BillingFlowParams.Builder#s
-   * etobfuscatedaccountid when the purchase was made.
-   *
-   * @param string $obfuscatedExternalAccountId
+   * @param string
    */
   public function setObfuscatedExternalAccountId($obfuscatedExternalAccountId)
   {
@@ -217,12 +151,7 @@ class ProductPurchase extends \Google\Model
     return $this->obfuscatedExternalAccountId;
   }
   /**
-   * An obfuscated version of the id that is uniquely associated with the user's
-   * profile in your app. Only present if specified using https://developer.andr
-   * oid.com/reference/com/android/billingclient/api/BillingFlowParams.Builder#s
-   * etobfuscatedprofileid when the purchase was made.
-   *
-   * @param string $obfuscatedExternalProfileId
+   * @param string
    */
   public function setObfuscatedExternalProfileId($obfuscatedExternalProfileId)
   {
@@ -236,9 +165,7 @@ class ProductPurchase extends \Google\Model
     return $this->obfuscatedExternalProfileId;
   }
   /**
-   * The order id associated with the purchase of the inapp product.
-   *
-   * @param string $orderId
+   * @param string
    */
   public function setOrderId($orderId)
   {
@@ -252,9 +179,7 @@ class ProductPurchase extends \Google\Model
     return $this->orderId;
   }
   /**
-   * The inapp product SKU. May not be present.
-   *
-   * @param string $productId
+   * @param string
    */
   public function setProductId($productId)
   {
@@ -268,10 +193,7 @@ class ProductPurchase extends \Google\Model
     return $this->productId;
   }
   /**
-   * The purchase state of the order. Possible values are: 0. Purchased 1.
-   * Canceled 2. Pending
-   *
-   * @param int $purchaseState
+   * @param int
    */
   public function setPurchaseState($purchaseState)
   {
@@ -285,10 +207,7 @@ class ProductPurchase extends \Google\Model
     return $this->purchaseState;
   }
   /**
-   * The time the product was purchased, in milliseconds since the epoch (Jan 1,
-   * 1970).
-   *
-   * @param string $purchaseTimeMillis
+   * @param string
    */
   public function setPurchaseTimeMillis($purchaseTimeMillis)
   {
@@ -302,9 +221,7 @@ class ProductPurchase extends \Google\Model
     return $this->purchaseTimeMillis;
   }
   /**
-   * The purchase token generated to identify this purchase. May not be present.
-   *
-   * @param string $purchaseToken
+   * @param string
    */
   public function setPurchaseToken($purchaseToken)
   {
@@ -318,13 +235,7 @@ class ProductPurchase extends \Google\Model
     return $this->purchaseToken;
   }
   /**
-   * The type of purchase of the inapp product. This field is only set if this
-   * purchase was not made using the standard in-app billing flow. Possible
-   * values are: 0. Test (i.e. purchased from a license testing account) 1.
-   * Promo (i.e. purchased using a promo code). Does not include Play Points
-   * purchases. 2. Rewarded (i.e. from watching a video ad instead of paying)
-   *
-   * @param int $purchaseType
+   * @param int
    */
   public function setPurchaseType($purchaseType)
   {
@@ -338,10 +249,7 @@ class ProductPurchase extends \Google\Model
     return $this->purchaseType;
   }
   /**
-   * The quantity associated with the purchase of the inapp product. If not
-   * present, the quantity is 1.
-   *
-   * @param int $quantity
+   * @param int
    */
   public function setQuantity($quantity)
   {
@@ -355,10 +263,7 @@ class ProductPurchase extends \Google\Model
     return $this->quantity;
   }
   /**
-   * The quantity eligible for refund, i.e. quantity that hasn't been refunded.
-   * The value reflects quantity-based partial refunds and full refunds.
-   *
-   * @param int $refundableQuantity
+   * @param int
    */
   public function setRefundableQuantity($refundableQuantity)
   {
@@ -372,10 +277,7 @@ class ProductPurchase extends \Google\Model
     return $this->refundableQuantity;
   }
   /**
-   * ISO 3166-1 alpha-2 billing region code of the user at the time the product
-   * was granted.
-   *
-   * @param string $regionCode
+   * @param string
    */
   public function setRegionCode($regionCode)
   {

@@ -37,7 +37,7 @@ class GoogleCloudDialogflowV2IntentTrainingPhrasePart extends \Google\Model
   public $userDefined;
 
   /**
-   * @param string $alias
+   * @param string
    */
   public function setAlias($alias)
   {
@@ -51,7 +51,7 @@ class GoogleCloudDialogflowV2IntentTrainingPhrasePart extends \Google\Model
     return $this->alias;
   }
   /**
-   * @param string $entityType
+   * @param string
    */
   public function setEntityType($entityType)
   {
@@ -65,7 +65,7 @@ class GoogleCloudDialogflowV2IntentTrainingPhrasePart extends \Google\Model
     return $this->entityType;
   }
   /**
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {
@@ -79,7 +79,7 @@ class GoogleCloudDialogflowV2IntentTrainingPhrasePart extends \Google\Model
     return $this->text;
   }
   /**
-   * @param bool $userDefined
+   * @param bool
    */
   public function setUserDefined($userDefined)
   {

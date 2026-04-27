@@ -19,168 +19,36 @@ namespace Google\Service\Bigquery;
 
 class Model extends \Google\Collection
 {
-  /**
-   * Default value.
-   */
-  public const MODEL_TYPE_MODEL_TYPE_UNSPECIFIED = 'MODEL_TYPE_UNSPECIFIED';
-  /**
-   * Linear regression model.
-   */
-  public const MODEL_TYPE_LINEAR_REGRESSION = 'LINEAR_REGRESSION';
-  /**
-   * Logistic regression based classification model.
-   */
-  public const MODEL_TYPE_LOGISTIC_REGRESSION = 'LOGISTIC_REGRESSION';
-  /**
-   * K-means clustering model.
-   */
-  public const MODEL_TYPE_KMEANS = 'KMEANS';
-  /**
-   * Matrix factorization model.
-   */
-  public const MODEL_TYPE_MATRIX_FACTORIZATION = 'MATRIX_FACTORIZATION';
-  /**
-   * DNN classifier model.
-   */
-  public const MODEL_TYPE_DNN_CLASSIFIER = 'DNN_CLASSIFIER';
-  /**
-   * An imported TensorFlow model.
-   */
-  public const MODEL_TYPE_TENSORFLOW = 'TENSORFLOW';
-  /**
-   * DNN regressor model.
-   */
-  public const MODEL_TYPE_DNN_REGRESSOR = 'DNN_REGRESSOR';
-  /**
-   * An imported XGBoost model.
-   */
-  public const MODEL_TYPE_XGBOOST = 'XGBOOST';
-  /**
-   * Boosted tree regressor model.
-   */
-  public const MODEL_TYPE_BOOSTED_TREE_REGRESSOR = 'BOOSTED_TREE_REGRESSOR';
-  /**
-   * Boosted tree classifier model.
-   */
-  public const MODEL_TYPE_BOOSTED_TREE_CLASSIFIER = 'BOOSTED_TREE_CLASSIFIER';
-  /**
-   * ARIMA model.
-   */
-  public const MODEL_TYPE_ARIMA = 'ARIMA';
-  /**
-   * AutoML Tables regression model.
-   */
-  public const MODEL_TYPE_AUTOML_REGRESSOR = 'AUTOML_REGRESSOR';
-  /**
-   * AutoML Tables classification model.
-   */
-  public const MODEL_TYPE_AUTOML_CLASSIFIER = 'AUTOML_CLASSIFIER';
-  /**
-   * Prinpical Component Analysis model.
-   */
-  public const MODEL_TYPE_PCA = 'PCA';
-  /**
-   * Wide-and-deep classifier model.
-   */
-  public const MODEL_TYPE_DNN_LINEAR_COMBINED_CLASSIFIER = 'DNN_LINEAR_COMBINED_CLASSIFIER';
-  /**
-   * Wide-and-deep regressor model.
-   */
-  public const MODEL_TYPE_DNN_LINEAR_COMBINED_REGRESSOR = 'DNN_LINEAR_COMBINED_REGRESSOR';
-  /**
-   * Autoencoder model.
-   */
-  public const MODEL_TYPE_AUTOENCODER = 'AUTOENCODER';
-  /**
-   * New name for the ARIMA model.
-   */
-  public const MODEL_TYPE_ARIMA_PLUS = 'ARIMA_PLUS';
-  /**
-   * ARIMA with external regressors.
-   */
-  public const MODEL_TYPE_ARIMA_PLUS_XREG = 'ARIMA_PLUS_XREG';
-  /**
-   * Random forest regressor model.
-   */
-  public const MODEL_TYPE_RANDOM_FOREST_REGRESSOR = 'RANDOM_FOREST_REGRESSOR';
-  /**
-   * Random forest classifier model.
-   */
-  public const MODEL_TYPE_RANDOM_FOREST_CLASSIFIER = 'RANDOM_FOREST_CLASSIFIER';
-  /**
-   * An imported TensorFlow Lite model.
-   */
-  public const MODEL_TYPE_TENSORFLOW_LITE = 'TENSORFLOW_LITE';
-  /**
-   * An imported ONNX model.
-   */
-  public const MODEL_TYPE_ONNX = 'ONNX';
-  /**
-   * Model to capture the columns and logic in the TRANSFORM clause along with
-   * statistics useful for ML analytic functions.
-   */
-  public const MODEL_TYPE_TRANSFORM_ONLY = 'TRANSFORM_ONLY';
-  /**
-   * The contribution analysis model.
-   */
-  public const MODEL_TYPE_CONTRIBUTION_ANALYSIS = 'CONTRIBUTION_ANALYSIS';
   protected $collection_key = 'transformColumns';
   /**
-   * The best trial_id across all training runs.
-   *
-   * @deprecated
    * @var string
    */
   public $bestTrialId;
   /**
-   * Output only. The time when this model was created, in millisecs since the
-   * epoch.
-   *
    * @var string
    */
   public $creationTime;
   /**
-   * Output only. The default trial_id to use in TVFs when the trial_id is not
-   * passed in. For single-objective [hyperparameter
-   * tuning](https://cloud.google.com/bigquery-ml/docs/reference/standard-
-   * sql/bigqueryml-syntax-hp-tuning-overview) models, this is the best trial
-   * ID. For multi-objective [hyperparameter
-   * tuning](https://cloud.google.com/bigquery-ml/docs/reference/standard-
-   * sql/bigqueryml-syntax-hp-tuning-overview) models, this is the smallest
-   * trial ID among all Pareto optimal trials.
-   *
    * @var string
    */
   public $defaultTrialId;
   /**
-   * Optional. A user-friendly description of this model.
-   *
    * @var string
    */
   public $description;
   protected $encryptionConfigurationType = EncryptionConfiguration::class;
   protected $encryptionConfigurationDataType = '';
   /**
-   * Output only. A hash of this resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Optional. The time when this model expires, in milliseconds since the
-   * epoch. If not present, the model will persist indefinitely. Expired models
-   * will be deleted and their storage reclaimed. The defaultTableExpirationMs
-   * property of the encapsulating dataset can be used to set a default
-   * expirationTime on newly created models.
-   *
    * @var string
    */
   public $expirationTime;
   protected $featureColumnsType = StandardSqlField::class;
   protected $featureColumnsDataType = 'array';
   /**
-   * Optional. A descriptive name for this model.
-   *
    * @var string
    */
   public $friendlyName;
@@ -191,47 +59,24 @@ class Model extends \Google\Collection
   protected $labelColumnsType = StandardSqlField::class;
   protected $labelColumnsDataType = 'array';
   /**
-   * The labels associated with this model. You can use these to organize and
-   * group your models. Label keys and values can be no longer than 63
-   * characters, can only contain lowercase letters, numeric characters,
-   * underscores and dashes. International characters are allowed. Label values
-   * are optional. Label keys must start with a letter and each label in the
-   * list must have a different key.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Output only. The time when this model was last modified, in millisecs since
-   * the epoch.
-   *
    * @var string
    */
   public $lastModifiedTime;
   /**
-   * Output only. The geographic location where the model resides. This value is
-   * inherited from the dataset.
-   *
    * @var string
    */
   public $location;
   protected $modelReferenceType = ModelReference::class;
   protected $modelReferenceDataType = '';
   /**
-   * Output only. Type of the model resource.
-   *
    * @var string
    */
   public $modelType;
   /**
-   * Output only. For single-objective [hyperparameter
-   * tuning](https://cloud.google.com/bigquery-ml/docs/reference/standard-
-   * sql/bigqueryml-syntax-hp-tuning-overview) models, it only contains the best
-   * trial. For multi-objective [hyperparameter
-   * tuning](https://cloud.google.com/bigquery-ml/docs/reference/standard-
-   * sql/bigqueryml-syntax-hp-tuning-overview) models, it contains all Pareto
-   * optimal trials sorted by trial_id.
-   *
    * @var string[]
    */
   public $optimalTrialIds;
@@ -243,17 +88,13 @@ class Model extends \Google\Collection
   protected $transformColumnsDataType = 'array';
 
   /**
-   * The best trial_id across all training runs.
-   *
-   * @deprecated
-   * @param string $bestTrialId
+   * @param string
    */
   public function setBestTrialId($bestTrialId)
   {
     $this->bestTrialId = $bestTrialId;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getBestTrialId()
@@ -261,10 +102,7 @@ class Model extends \Google\Collection
     return $this->bestTrialId;
   }
   /**
-   * Output only. The time when this model was created, in millisecs since the
-   * epoch.
-   *
-   * @param string $creationTime
+   * @param string
    */
   public function setCreationTime($creationTime)
   {
@@ -278,16 +116,7 @@ class Model extends \Google\Collection
     return $this->creationTime;
   }
   /**
-   * Output only. The default trial_id to use in TVFs when the trial_id is not
-   * passed in. For single-objective [hyperparameter
-   * tuning](https://cloud.google.com/bigquery-ml/docs/reference/standard-
-   * sql/bigqueryml-syntax-hp-tuning-overview) models, this is the best trial
-   * ID. For multi-objective [hyperparameter
-   * tuning](https://cloud.google.com/bigquery-ml/docs/reference/standard-
-   * sql/bigqueryml-syntax-hp-tuning-overview) models, this is the smallest
-   * trial ID among all Pareto optimal trials.
-   *
-   * @param string $defaultTrialId
+   * @param string
    */
   public function setDefaultTrialId($defaultTrialId)
   {
@@ -301,9 +130,7 @@ class Model extends \Google\Collection
     return $this->defaultTrialId;
   }
   /**
-   * Optional. A user-friendly description of this model.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -317,12 +144,7 @@ class Model extends \Google\Collection
     return $this->description;
   }
   /**
-   * Custom encryption configuration (e.g., Cloud KMS keys). This shows the
-   * encryption configuration of the model data while stored in BigQuery
-   * storage. This field can be used with PatchModel to update encryption key
-   * for an already encrypted model.
-   *
-   * @param EncryptionConfiguration $encryptionConfiguration
+   * @param EncryptionConfiguration
    */
   public function setEncryptionConfiguration(EncryptionConfiguration $encryptionConfiguration)
   {
@@ -336,9 +158,7 @@ class Model extends \Google\Collection
     return $this->encryptionConfiguration;
   }
   /**
-   * Output only. A hash of this resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -352,13 +172,7 @@ class Model extends \Google\Collection
     return $this->etag;
   }
   /**
-   * Optional. The time when this model expires, in milliseconds since the
-   * epoch. If not present, the model will persist indefinitely. Expired models
-   * will be deleted and their storage reclaimed. The defaultTableExpirationMs
-   * property of the encapsulating dataset can be used to set a default
-   * expirationTime on newly created models.
-   *
-   * @param string $expirationTime
+   * @param string
    */
   public function setExpirationTime($expirationTime)
   {
@@ -372,10 +186,7 @@ class Model extends \Google\Collection
     return $this->expirationTime;
   }
   /**
-   * Output only. Input feature columns for the model inference. If the model is
-   * trained with TRANSFORM clause, these are the input of the TRANSFORM clause.
-   *
-   * @param StandardSqlField[] $featureColumns
+   * @param StandardSqlField[]
    */
   public function setFeatureColumns($featureColumns)
   {
@@ -389,9 +200,7 @@ class Model extends \Google\Collection
     return $this->featureColumns;
   }
   /**
-   * Optional. A descriptive name for this model.
-   *
-   * @param string $friendlyName
+   * @param string
    */
   public function setFriendlyName($friendlyName)
   {
@@ -405,9 +214,7 @@ class Model extends \Google\Collection
     return $this->friendlyName;
   }
   /**
-   * Output only. All hyperparameter search spaces in this model.
-   *
-   * @param HparamSearchSpaces $hparamSearchSpaces
+   * @param HparamSearchSpaces
    */
   public function setHparamSearchSpaces(HparamSearchSpaces $hparamSearchSpaces)
   {
@@ -421,11 +228,7 @@ class Model extends \Google\Collection
     return $this->hparamSearchSpaces;
   }
   /**
-   * Output only. Trials of a [hyperparameter
-   * tuning](https://cloud.google.com/bigquery-ml/docs/reference/standard-
-   * sql/bigqueryml-syntax-hp-tuning-overview) model sorted by trial_id.
-   *
-   * @param HparamTuningTrial[] $hparamTrials
+   * @param HparamTuningTrial[]
    */
   public function setHparamTrials($hparamTrials)
   {
@@ -439,10 +242,7 @@ class Model extends \Google\Collection
     return $this->hparamTrials;
   }
   /**
-   * Output only. Label columns that were used to train this model. The output
-   * of the model will have a "predicted_" prefix to these columns.
-   *
-   * @param StandardSqlField[] $labelColumns
+   * @param StandardSqlField[]
    */
   public function setLabelColumns($labelColumns)
   {
@@ -456,14 +256,7 @@ class Model extends \Google\Collection
     return $this->labelColumns;
   }
   /**
-   * The labels associated with this model. You can use these to organize and
-   * group your models. Label keys and values can be no longer than 63
-   * characters, can only contain lowercase letters, numeric characters,
-   * underscores and dashes. International characters are allowed. Label values
-   * are optional. Label keys must start with a letter and each label in the
-   * list must have a different key.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -477,10 +270,7 @@ class Model extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Output only. The time when this model was last modified, in millisecs since
-   * the epoch.
-   *
-   * @param string $lastModifiedTime
+   * @param string
    */
   public function setLastModifiedTime($lastModifiedTime)
   {
@@ -494,10 +284,7 @@ class Model extends \Google\Collection
     return $this->lastModifiedTime;
   }
   /**
-   * Output only. The geographic location where the model resides. This value is
-   * inherited from the dataset.
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -511,9 +298,7 @@ class Model extends \Google\Collection
     return $this->location;
   }
   /**
-   * Required. Unique identifier for this model.
-   *
-   * @param ModelReference $modelReference
+   * @param ModelReference
    */
   public function setModelReference(ModelReference $modelReference)
   {
@@ -527,40 +312,21 @@ class Model extends \Google\Collection
     return $this->modelReference;
   }
   /**
-   * Output only. Type of the model resource.
-   *
-   * Accepted values: MODEL_TYPE_UNSPECIFIED, LINEAR_REGRESSION,
-   * LOGISTIC_REGRESSION, KMEANS, MATRIX_FACTORIZATION, DNN_CLASSIFIER,
-   * TENSORFLOW, DNN_REGRESSOR, XGBOOST, BOOSTED_TREE_REGRESSOR,
-   * BOOSTED_TREE_CLASSIFIER, ARIMA, AUTOML_REGRESSOR, AUTOML_CLASSIFIER, PCA,
-   * DNN_LINEAR_COMBINED_CLASSIFIER, DNN_LINEAR_COMBINED_REGRESSOR, AUTOENCODER,
-   * ARIMA_PLUS, ARIMA_PLUS_XREG, RANDOM_FOREST_REGRESSOR,
-   * RANDOM_FOREST_CLASSIFIER, TENSORFLOW_LITE, ONNX, TRANSFORM_ONLY,
-   * CONTRIBUTION_ANALYSIS
-   *
-   * @param self::MODEL_TYPE_* $modelType
+   * @param string
    */
   public function setModelType($modelType)
   {
     $this->modelType = $modelType;
   }
   /**
-   * @return self::MODEL_TYPE_*
+   * @return string
    */
   public function getModelType()
   {
     return $this->modelType;
   }
   /**
-   * Output only. For single-objective [hyperparameter
-   * tuning](https://cloud.google.com/bigquery-ml/docs/reference/standard-
-   * sql/bigqueryml-syntax-hp-tuning-overview) models, it only contains the best
-   * trial. For multi-objective [hyperparameter
-   * tuning](https://cloud.google.com/bigquery-ml/docs/reference/standard-
-   * sql/bigqueryml-syntax-hp-tuning-overview) models, it contains all Pareto
-   * optimal trials sorted by trial_id.
-   *
-   * @param string[] $optimalTrialIds
+   * @param string[]
    */
   public function setOptimalTrialIds($optimalTrialIds)
   {
@@ -574,9 +340,7 @@ class Model extends \Google\Collection
     return $this->optimalTrialIds;
   }
   /**
-   * Output only. Remote model info
-   *
-   * @param RemoteModelInfo $remoteModelInfo
+   * @param RemoteModelInfo
    */
   public function setRemoteModelInfo(RemoteModelInfo $remoteModelInfo)
   {
@@ -590,9 +354,7 @@ class Model extends \Google\Collection
     return $this->remoteModelInfo;
   }
   /**
-   * Information for all training runs in increasing order of start_time.
-   *
-   * @param TrainingRun[] $trainingRuns
+   * @param TrainingRun[]
    */
   public function setTrainingRuns($trainingRuns)
   {
@@ -606,12 +368,7 @@ class Model extends \Google\Collection
     return $this->trainingRuns;
   }
   /**
-   * Output only. This field will be populated if a TRANSFORM clause was used to
-   * train a model. TRANSFORM clause (if used) takes feature_columns as input
-   * and outputs transform_columns. transform_columns then are used to train the
-   * model.
-   *
-   * @param TransformColumn[] $transformColumns
+   * @param TransformColumn[]
    */
   public function setTransformColumns($transformColumns)
   {

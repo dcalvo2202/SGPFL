@@ -24,16 +24,12 @@ class RestoreFromCloudSQLRequest extends \Google\Model
   protected $clusterType = Cluster::class;
   protected $clusterDataType = '';
   /**
-   * Required. ID of the requesting object.
-   *
    * @var string
    */
   public $clusterId;
 
   /**
-   * Cluster created from CloudSQL backup run.
-   *
-   * @param CloudSQLBackupRunSource $cloudsqlBackupRunSource
+   * @param CloudSQLBackupRunSource
    */
   public function setCloudsqlBackupRunSource(CloudSQLBackupRunSource $cloudsqlBackupRunSource)
   {
@@ -47,9 +43,7 @@ class RestoreFromCloudSQLRequest extends \Google\Model
     return $this->cloudsqlBackupRunSource;
   }
   /**
-   * Required. The resource being created
-   *
-   * @param Cluster $cluster
+   * @param Cluster
    */
   public function setCluster(Cluster $cluster)
   {
@@ -63,9 +57,7 @@ class RestoreFromCloudSQLRequest extends \Google\Model
     return $this->cluster;
   }
   /**
-   * Required. ID of the requesting object.
-   *
-   * @param string $clusterId
+   * @param string
    */
   public function setClusterId($clusterId)
   {

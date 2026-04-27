@@ -20,24 +20,16 @@ namespace Google\Service\CloudDeploy;
 class BuildArtifact extends \Google\Model
 {
   /**
-   * Optional. Image name in Skaffold configuration.
-   *
    * @var string
    */
   public $image;
   /**
-   * Optional. Image tag to use. This will generally be the full path to an
-   * image, such as "gcr.io/my-project/busybox:1.2.3" or "gcr.io/my-
-   * project/busybox@sha256:abc123".
-   *
    * @var string
    */
   public $tag;
 
   /**
-   * Optional. Image name in Skaffold configuration.
-   *
-   * @param string $image
+   * @param string
    */
   public function setImage($image)
   {
@@ -51,11 +43,7 @@ class BuildArtifact extends \Google\Model
     return $this->image;
   }
   /**
-   * Optional. Image tag to use. This will generally be the full path to an
-   * image, such as "gcr.io/my-project/busybox:1.2.3" or "gcr.io/my-
-   * project/busybox@sha256:abc123".
-   *
-   * @param string $tag
+   * @param string
    */
   public function setTag($tag)
   {

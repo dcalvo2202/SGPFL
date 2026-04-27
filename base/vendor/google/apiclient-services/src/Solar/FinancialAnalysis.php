@@ -20,19 +20,12 @@ namespace Google\Service\Solar;
 class FinancialAnalysis extends \Google\Model
 {
   /**
-   * How much electricity the house uses in an average month, based on the bill
-   * size and the local electricity rates.
-   *
    * @var float
    */
   public $averageKwhPerMonth;
   protected $cashPurchaseSavingsType = CashPurchaseSavings::class;
   protected $cashPurchaseSavingsDataType = '';
   /**
-   * Whether this is the bill size selected to be the default bill for the area
-   * this building is in. Exactly one `FinancialAnalysis` in
-   * `BuildingSolarPotential` should have `default_bill` set.
-   *
    * @var bool
    */
   public $defaultBill;
@@ -45,19 +38,12 @@ class FinancialAnalysis extends \Google\Model
   protected $monthlyBillType = Money::class;
   protected $monthlyBillDataType = '';
   /**
-   * Index in solar_panel_configs of the optimum solar layout for this bill
-   * size. This can be -1 indicating that there is no layout. In this case, the
-   * remaining submessages will be omitted.
-   *
    * @var int
    */
   public $panelConfigIndex;
 
   /**
-   * How much electricity the house uses in an average month, based on the bill
-   * size and the local electricity rates.
-   *
-   * @param float $averageKwhPerMonth
+   * @param float
    */
   public function setAverageKwhPerMonth($averageKwhPerMonth)
   {
@@ -71,9 +57,7 @@ class FinancialAnalysis extends \Google\Model
     return $this->averageKwhPerMonth;
   }
   /**
-   * Cost and benefit of buying the solar panels with cash.
-   *
-   * @param CashPurchaseSavings $cashPurchaseSavings
+   * @param CashPurchaseSavings
    */
   public function setCashPurchaseSavings(CashPurchaseSavings $cashPurchaseSavings)
   {
@@ -87,11 +71,7 @@ class FinancialAnalysis extends \Google\Model
     return $this->cashPurchaseSavings;
   }
   /**
-   * Whether this is the bill size selected to be the default bill for the area
-   * this building is in. Exactly one `FinancialAnalysis` in
-   * `BuildingSolarPotential` should have `default_bill` set.
-   *
-   * @param bool $defaultBill
+   * @param bool
    */
   public function setDefaultBill($defaultBill)
   {
@@ -105,9 +85,7 @@ class FinancialAnalysis extends \Google\Model
     return $this->defaultBill;
   }
   /**
-   * Cost and benefit of buying the solar panels by financing the purchase.
-   *
-   * @param FinancedPurchaseSavings $financedPurchaseSavings
+   * @param FinancedPurchaseSavings
    */
   public function setFinancedPurchaseSavings(FinancedPurchaseSavings $financedPurchaseSavings)
   {
@@ -121,9 +99,7 @@ class FinancialAnalysis extends \Google\Model
     return $this->financedPurchaseSavings;
   }
   /**
-   * Financial information that applies regardless of the financing method used.
-   *
-   * @param FinancialDetails $financialDetails
+   * @param FinancialDetails
    */
   public function setFinancialDetails(FinancialDetails $financialDetails)
   {
@@ -137,9 +113,7 @@ class FinancialAnalysis extends \Google\Model
     return $this->financialDetails;
   }
   /**
-   * Cost and benefit of leasing the solar panels.
-   *
-   * @param LeasingSavings $leasingSavings
+   * @param LeasingSavings
    */
   public function setLeasingSavings(LeasingSavings $leasingSavings)
   {
@@ -153,9 +127,7 @@ class FinancialAnalysis extends \Google\Model
     return $this->leasingSavings;
   }
   /**
-   * The monthly electric bill this analysis assumes.
-   *
-   * @param Money $monthlyBill
+   * @param Money
    */
   public function setMonthlyBill(Money $monthlyBill)
   {
@@ -169,11 +141,7 @@ class FinancialAnalysis extends \Google\Model
     return $this->monthlyBill;
   }
   /**
-   * Index in solar_panel_configs of the optimum solar layout for this bill
-   * size. This can be -1 indicating that there is no layout. In this case, the
-   * remaining submessages will be omitted.
-   *
-   * @param int $panelConfigIndex
+   * @param int
    */
   public function setPanelConfigIndex($panelConfigIndex)
   {

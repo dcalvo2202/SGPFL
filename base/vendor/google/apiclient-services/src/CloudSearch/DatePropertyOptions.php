@@ -23,9 +23,7 @@ class DatePropertyOptions extends \Google\Model
   protected $operatorOptionsDataType = '';
 
   /**
-   * If set, describes how the date should be used as a search operator.
-   *
-   * @param DateOperatorOptions $operatorOptions
+   * @param DateOperatorOptions
    */
   public function setOperatorOptions(DateOperatorOptions $operatorOptions)
   {

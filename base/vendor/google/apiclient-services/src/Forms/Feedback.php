@@ -23,17 +23,12 @@ class Feedback extends \Google\Collection
   protected $materialType = ExtraMaterial::class;
   protected $materialDataType = 'array';
   /**
-   * Required. The main text of the feedback.
-   *
    * @var string
    */
   public $text;
 
   /**
-   * Additional information provided as part of the feedback, often used to
-   * point the respondent to more reading and resources.
-   *
-   * @param ExtraMaterial[] $material
+   * @param ExtraMaterial[]
    */
   public function setMaterial($material)
   {
@@ -47,9 +42,7 @@ class Feedback extends \Google\Collection
     return $this->material;
   }
   /**
-   * Required. The main text of the feedback.
-   *
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {

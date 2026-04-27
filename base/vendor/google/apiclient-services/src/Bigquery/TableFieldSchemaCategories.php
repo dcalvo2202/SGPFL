@@ -21,16 +21,12 @@ class TableFieldSchemaCategories extends \Google\Collection
 {
   protected $collection_key = 'names';
   /**
-   * Deprecated.
-   *
    * @var string[]
    */
   public $names;
 
   /**
-   * Deprecated.
-   *
-   * @param string[] $names
+   * @param string[]
    */
   public function setNames($names)
   {

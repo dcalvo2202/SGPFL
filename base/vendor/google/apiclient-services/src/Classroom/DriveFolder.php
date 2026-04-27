@@ -20,28 +20,20 @@ namespace Google\Service\Classroom;
 class DriveFolder extends \Google\Model
 {
   /**
-   * URL that can be used to access the Drive folder. Read-only.
-   *
    * @var string
    */
   public $alternateLink;
   /**
-   * Drive API resource ID.
-   *
    * @var string
    */
   public $id;
   /**
-   * Title of the Drive folder. Read-only.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * URL that can be used to access the Drive folder. Read-only.
-   *
-   * @param string $alternateLink
+   * @param string
    */
   public function setAlternateLink($alternateLink)
   {
@@ -55,9 +47,7 @@ class DriveFolder extends \Google\Model
     return $this->alternateLink;
   }
   /**
-   * Drive API resource ID.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -71,9 +61,7 @@ class DriveFolder extends \Google\Model
     return $this->id;
   }
   /**
-   * Title of the Drive folder. Read-only.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

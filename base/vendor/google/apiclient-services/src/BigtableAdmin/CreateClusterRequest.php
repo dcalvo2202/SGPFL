@@ -22,26 +22,16 @@ class CreateClusterRequest extends \Google\Model
   protected $clusterType = Cluster::class;
   protected $clusterDataType = '';
   /**
-   * Required. The ID to be used when referring to the new cluster within its
-   * instance, e.g., just `mycluster` rather than
-   * `projects/myproject/instances/myinstance/clusters/mycluster`.
-   *
    * @var string
    */
   public $clusterId;
   /**
-   * Required. The unique name of the instance in which to create the new
-   * cluster. Values are of the form `projects/{project}/instances/{instance}`.
-   *
    * @var string
    */
   public $parent;
 
   /**
-   * Required. The cluster to be created. Fields marked `OutputOnly` must be
-   * left blank.
-   *
-   * @param Cluster $cluster
+   * @param Cluster
    */
   public function setCluster(Cluster $cluster)
   {
@@ -55,11 +45,7 @@ class CreateClusterRequest extends \Google\Model
     return $this->cluster;
   }
   /**
-   * Required. The ID to be used when referring to the new cluster within its
-   * instance, e.g., just `mycluster` rather than
-   * `projects/myproject/instances/myinstance/clusters/mycluster`.
-   *
-   * @param string $clusterId
+   * @param string
    */
   public function setClusterId($clusterId)
   {
@@ -73,10 +59,7 @@ class CreateClusterRequest extends \Google\Model
     return $this->clusterId;
   }
   /**
-   * Required. The unique name of the instance in which to create the new
-   * cluster. Values are of the form `projects/{project}/instances/{instance}`.
-   *
-   * @param string $parent
+   * @param string
    */
   public function setParent($parent)
   {

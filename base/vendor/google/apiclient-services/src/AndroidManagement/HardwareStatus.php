@@ -21,55 +21,36 @@ class HardwareStatus extends \Google\Collection
 {
   protected $collection_key = 'skinTemperatures';
   /**
-   * Current battery temperatures in Celsius for each battery on the device.
-   *
    * @var float[]
    */
   public $batteryTemperatures;
   /**
-   * Current CPU temperatures in Celsius for each CPU on the device.
-   *
    * @var float[]
    */
   public $cpuTemperatures;
   /**
-   * CPU usages in percentage for each core available on the device. Usage is 0
-   * for each unplugged core. Empty array implies that CPU usage is not
-   * supported in the system.
-   *
    * @var float[]
    */
   public $cpuUsages;
   /**
-   * The time the measurements were taken.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Fan speeds in RPM for each fan on the device. Empty array means that there
-   * are no fans or fan speed is not supported on the system.
-   *
    * @var float[]
    */
   public $fanSpeeds;
   /**
-   * Current GPU temperatures in Celsius for each GPU on the device.
-   *
    * @var float[]
    */
   public $gpuTemperatures;
   /**
-   * Current device skin temperatures in Celsius.
-   *
    * @var float[]
    */
   public $skinTemperatures;
 
   /**
-   * Current battery temperatures in Celsius for each battery on the device.
-   *
-   * @param float[] $batteryTemperatures
+   * @param float[]
    */
   public function setBatteryTemperatures($batteryTemperatures)
   {
@@ -83,9 +64,7 @@ class HardwareStatus extends \Google\Collection
     return $this->batteryTemperatures;
   }
   /**
-   * Current CPU temperatures in Celsius for each CPU on the device.
-   *
-   * @param float[] $cpuTemperatures
+   * @param float[]
    */
   public function setCpuTemperatures($cpuTemperatures)
   {
@@ -99,11 +78,7 @@ class HardwareStatus extends \Google\Collection
     return $this->cpuTemperatures;
   }
   /**
-   * CPU usages in percentage for each core available on the device. Usage is 0
-   * for each unplugged core. Empty array implies that CPU usage is not
-   * supported in the system.
-   *
-   * @param float[] $cpuUsages
+   * @param float[]
    */
   public function setCpuUsages($cpuUsages)
   {
@@ -117,9 +92,7 @@ class HardwareStatus extends \Google\Collection
     return $this->cpuUsages;
   }
   /**
-   * The time the measurements were taken.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -133,10 +106,7 @@ class HardwareStatus extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Fan speeds in RPM for each fan on the device. Empty array means that there
-   * are no fans or fan speed is not supported on the system.
-   *
-   * @param float[] $fanSpeeds
+   * @param float[]
    */
   public function setFanSpeeds($fanSpeeds)
   {
@@ -150,9 +120,7 @@ class HardwareStatus extends \Google\Collection
     return $this->fanSpeeds;
   }
   /**
-   * Current GPU temperatures in Celsius for each GPU on the device.
-   *
-   * @param float[] $gpuTemperatures
+   * @param float[]
    */
   public function setGpuTemperatures($gpuTemperatures)
   {
@@ -166,9 +134,7 @@ class HardwareStatus extends \Google\Collection
     return $this->gpuTemperatures;
   }
   /**
-   * Current device skin temperatures in Celsius.
-   *
-   * @param float[] $skinTemperatures
+   * @param float[]
    */
   public function setSkinTemperatures($skinTemperatures)
   {

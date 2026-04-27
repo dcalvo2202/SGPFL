@@ -20,9 +20,6 @@ namespace Google\Service\Datastore;
 class RunQueryRequest extends \Google\Model
 {
   /**
-   * The ID of the database against which to make the request. '(default)' is
-   * not allowed; please use empty string '' to refer the default database.
-   *
    * @var string
    */
   public $databaseId;
@@ -40,10 +37,7 @@ class RunQueryRequest extends \Google\Model
   protected $readOptionsDataType = '';
 
   /**
-   * The ID of the database against which to make the request. '(default)' is
-   * not allowed; please use empty string '' to refer the default database.
-   *
-   * @param string $databaseId
+   * @param string
    */
   public function setDatabaseId($databaseId)
   {
@@ -57,10 +51,7 @@ class RunQueryRequest extends \Google\Model
     return $this->databaseId;
   }
   /**
-   * Optional. Explain options for the query. If set, additional query
-   * statistics will be returned. If not, only query results will be returned.
-   *
-   * @param ExplainOptions $explainOptions
+   * @param ExplainOptions
    */
   public function setExplainOptions(ExplainOptions $explainOptions)
   {
@@ -74,9 +65,7 @@ class RunQueryRequest extends \Google\Model
     return $this->explainOptions;
   }
   /**
-   * The GQL query to run. This query must be a non-aggregation query.
-   *
-   * @param GqlQuery $gqlQuery
+   * @param GqlQuery
    */
   public function setGqlQuery(GqlQuery $gqlQuery)
   {
@@ -90,11 +79,7 @@ class RunQueryRequest extends \Google\Model
     return $this->gqlQuery;
   }
   /**
-   * Entities are partitioned into subsets, identified by a partition ID.
-   * Queries are scoped to a single partition. This partition ID is normalized
-   * with the standard default context partition ID.
-   *
-   * @param PartitionId $partitionId
+   * @param PartitionId
    */
   public function setPartitionId(PartitionId $partitionId)
   {
@@ -108,10 +93,7 @@ class RunQueryRequest extends \Google\Model
     return $this->partitionId;
   }
   /**
-   * The properties to return. This field must not be set for a projection
-   * query. See LookupRequest.property_mask.
-   *
-   * @param PropertyMask $propertyMask
+   * @param PropertyMask
    */
   public function setPropertyMask(PropertyMask $propertyMask)
   {
@@ -125,9 +107,7 @@ class RunQueryRequest extends \Google\Model
     return $this->propertyMask;
   }
   /**
-   * The query to run.
-   *
-   * @param Query $query
+   * @param Query
    */
   public function setQuery(Query $query)
   {
@@ -141,9 +121,7 @@ class RunQueryRequest extends \Google\Model
     return $this->query;
   }
   /**
-   * The options for this query.
-   *
-   * @param ReadOptions $readOptions
+   * @param ReadOptions
    */
   public function setReadOptions(ReadOptions $readOptions)
   {

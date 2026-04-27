@@ -20,16 +20,12 @@ namespace Google\Service\TPU;
 class AccessConfig extends \Google\Model
 {
   /**
-   * Output only. An external IP address associated with the TPU worker.
-   *
    * @var string
    */
   public $externalIp;
 
   /**
-   * Output only. An external IP address associated with the TPU worker.
-   *
-   * @param string $externalIp
+   * @param string
    */
   public function setExternalIp($externalIp)
   {

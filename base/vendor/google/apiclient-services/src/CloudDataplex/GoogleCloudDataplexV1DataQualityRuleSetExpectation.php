@@ -21,16 +21,12 @@ class GoogleCloudDataplexV1DataQualityRuleSetExpectation extends \Google\Collect
 {
   protected $collection_key = 'values';
   /**
-   * Optional. Expected values for the column value.
-   *
    * @var string[]
    */
   public $values;
 
   /**
-   * Optional. Expected values for the column value.
-   *
-   * @param string[] $values
+   * @param string[]
    */
   public function setValues($values)
   {

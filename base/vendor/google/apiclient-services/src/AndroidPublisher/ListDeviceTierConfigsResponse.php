@@ -23,17 +23,12 @@ class ListDeviceTierConfigsResponse extends \Google\Collection
   protected $deviceTierConfigsType = DeviceTierConfig::class;
   protected $deviceTierConfigsDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Device tier configs created by the developer.
-   *
-   * @param DeviceTierConfig[] $deviceTierConfigs
+   * @param DeviceTierConfig[]
    */
   public function setDeviceTierConfigs($deviceTierConfigs)
   {
@@ -47,10 +42,7 @@ class ListDeviceTierConfigsResponse extends \Google\Collection
     return $this->deviceTierConfigs;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

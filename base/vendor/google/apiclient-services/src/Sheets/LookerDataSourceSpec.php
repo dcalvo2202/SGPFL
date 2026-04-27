@@ -20,28 +20,20 @@ namespace Google\Service\Sheets;
 class LookerDataSourceSpec extends \Google\Model
 {
   /**
-   * Name of a Looker model explore.
-   *
    * @var string
    */
   public $explore;
   /**
-   * A Looker instance URL.
-   *
    * @var string
    */
   public $instanceUri;
   /**
-   * Name of a Looker model.
-   *
    * @var string
    */
   public $model;
 
   /**
-   * Name of a Looker model explore.
-   *
-   * @param string $explore
+   * @param string
    */
   public function setExplore($explore)
   {
@@ -55,9 +47,7 @@ class LookerDataSourceSpec extends \Google\Model
     return $this->explore;
   }
   /**
-   * A Looker instance URL.
-   *
-   * @param string $instanceUri
+   * @param string
    */
   public function setInstanceUri($instanceUri)
   {
@@ -71,9 +61,7 @@ class LookerDataSourceSpec extends \Google\Model
     return $this->instanceUri;
   }
   /**
-   * Name of a Looker model.
-   *
-   * @param string $model
+   * @param string
    */
   public function setModel($model)
   {

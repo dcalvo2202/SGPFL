@@ -19,27 +19,15 @@ namespace Google\Service\Integrations;
 
 class EnterpriseCrmEventbusProtoConnectorsGenericConnectorTaskConfig extends \Google\Model
 {
-  public const OPERATION_OPERATION_UNSPECIFIED = 'OPERATION_UNSPECIFIED';
-  public const OPERATION_EXECUTE_ACTION = 'EXECUTE_ACTION';
-  public const OPERATION_LIST_ENTITIES = 'LIST_ENTITIES';
-  public const OPERATION_GET_ENTITY = 'GET_ENTITY';
-  public const OPERATION_CREATE_ENTITY = 'CREATE_ENTITY';
-  public const OPERATION_UPDATE_ENTITY = 'UPDATE_ENTITY';
-  public const OPERATION_DELETE_ENTITY = 'DELETE_ENTITY';
-  public const OPERATION_EXECUTE_QUERY = 'EXECUTE_QUERY';
   protected $connectionType = EnterpriseCrmEventbusProtoConnectorsConnection::class;
   protected $connectionDataType = '';
   /**
-   * Operation to perform using the configured connection.
-   *
    * @var string
    */
   public $operation;
 
   /**
-   * User-selected connection.
-   *
-   * @param EnterpriseCrmEventbusProtoConnectorsConnection $connection
+   * @param EnterpriseCrmEventbusProtoConnectorsConnection
    */
   public function setConnection(EnterpriseCrmEventbusProtoConnectorsConnection $connection)
   {
@@ -53,19 +41,14 @@ class EnterpriseCrmEventbusProtoConnectorsGenericConnectorTaskConfig extends \Go
     return $this->connection;
   }
   /**
-   * Operation to perform using the configured connection.
-   *
-   * Accepted values: OPERATION_UNSPECIFIED, EXECUTE_ACTION, LIST_ENTITIES,
-   * GET_ENTITY, CREATE_ENTITY, UPDATE_ENTITY, DELETE_ENTITY, EXECUTE_QUERY
-   *
-   * @param self::OPERATION_* $operation
+   * @param string
    */
   public function setOperation($operation)
   {
     $this->operation = $operation;
   }
   /**
-   * @return self::OPERATION_*
+   * @return string
    */
   public function getOperation()
   {

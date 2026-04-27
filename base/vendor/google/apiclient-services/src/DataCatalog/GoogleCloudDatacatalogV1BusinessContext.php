@@ -25,9 +25,7 @@ class GoogleCloudDatacatalogV1BusinessContext extends \Google\Model
   protected $entryOverviewDataType = '';
 
   /**
-   * Contact people for the entry.
-   *
-   * @param GoogleCloudDatacatalogV1Contacts $contacts
+   * @param GoogleCloudDatacatalogV1Contacts
    */
   public function setContacts(GoogleCloudDatacatalogV1Contacts $contacts)
   {
@@ -41,9 +39,7 @@ class GoogleCloudDatacatalogV1BusinessContext extends \Google\Model
     return $this->contacts;
   }
   /**
-   * Entry overview fields for rich text descriptions of entries.
-   *
-   * @param GoogleCloudDatacatalogV1EntryOverview $entryOverview
+   * @param GoogleCloudDatacatalogV1EntryOverview
    */
   public function setEntryOverview(GoogleCloudDatacatalogV1EntryOverview $entryOverview)
   {

@@ -20,56 +20,32 @@ namespace Google\Service\Games;
 class Leaderboard extends \Google\Model
 {
   /**
-   * Larger values are better; scores are sorted in descending order
-   */
-  public const ORDER_LARGER_IS_BETTER = 'LARGER_IS_BETTER';
-  /**
-   * Smaller values are better; scores are sorted in ascending order
-   */
-  public const ORDER_SMALLER_IS_BETTER = 'SMALLER_IS_BETTER';
-  /**
-   * The icon for the leaderboard.
-   *
    * @var string
    */
   public $iconUrl;
   /**
-   * The leaderboard ID.
-   *
    * @var string
    */
   public $id;
   /**
-   * Indicates whether the icon image being returned is a default image, or is
-   * game-provided.
-   *
    * @var bool
    */
   public $isIconUrlDefault;
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#leaderboard`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The name of the leaderboard.
-   *
    * @var string
    */
   public $name;
   /**
-   * How scores are ordered.
-   *
    * @var string
    */
   public $order;
 
   /**
-   * The icon for the leaderboard.
-   *
-   * @param string $iconUrl
+   * @param string
    */
   public function setIconUrl($iconUrl)
   {
@@ -83,9 +59,7 @@ class Leaderboard extends \Google\Model
     return $this->iconUrl;
   }
   /**
-   * The leaderboard ID.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -99,10 +73,7 @@ class Leaderboard extends \Google\Model
     return $this->id;
   }
   /**
-   * Indicates whether the icon image being returned is a default image, or is
-   * game-provided.
-   *
-   * @param bool $isIconUrlDefault
+   * @param bool
    */
   public function setIsIconUrlDefault($isIconUrlDefault)
   {
@@ -116,10 +87,7 @@ class Leaderboard extends \Google\Model
     return $this->isIconUrlDefault;
   }
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#leaderboard`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -133,9 +101,7 @@ class Leaderboard extends \Google\Model
     return $this->kind;
   }
   /**
-   * The name of the leaderboard.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -149,18 +115,14 @@ class Leaderboard extends \Google\Model
     return $this->name;
   }
   /**
-   * How scores are ordered.
-   *
-   * Accepted values: LARGER_IS_BETTER, SMALLER_IS_BETTER
-   *
-   * @param self::ORDER_* $order
+   * @param string
    */
   public function setOrder($order)
   {
     $this->order = $order;
   }
   /**
-   * @return self::ORDER_*
+   * @return string
    */
   public function getOrder()
   {

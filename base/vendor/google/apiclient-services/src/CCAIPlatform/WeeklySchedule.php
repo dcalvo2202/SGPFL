@@ -21,14 +21,10 @@ class WeeklySchedule extends \Google\Collection
 {
   protected $collection_key = 'days';
   /**
-   * Required. Days of the week this schedule applies to.
-   *
    * @var string[]
    */
   public $days;
   /**
-   * Optional. Duration of the schedule.
-   *
    * @var string
    */
   public $duration;
@@ -38,9 +34,7 @@ class WeeklySchedule extends \Google\Collection
   protected $startTimeDataType = '';
 
   /**
-   * Required. Days of the week this schedule applies to.
-   *
-   * @param string[] $days
+   * @param string[]
    */
   public function setDays($days)
   {
@@ -54,9 +48,7 @@ class WeeklySchedule extends \Google\Collection
     return $this->days;
   }
   /**
-   * Optional. Duration of the schedule.
-   *
-   * @param string $duration
+   * @param string
    */
   public function setDuration($duration)
   {
@@ -70,10 +62,7 @@ class WeeklySchedule extends \Google\Collection
     return $this->duration;
   }
   /**
-   * Optional. Daily end time of the schedule. If `end_time` is before
-   * `start_time`, the schedule will be considered as ending on the next day.
-   *
-   * @param TimeOfDay $endTime
+   * @param TimeOfDay
    */
   public function setEndTime(TimeOfDay $endTime)
   {
@@ -87,9 +76,7 @@ class WeeklySchedule extends \Google\Collection
     return $this->endTime;
   }
   /**
-   * Required. Daily start time of the schedule.
-   *
-   * @param TimeOfDay $startTime
+   * @param TimeOfDay
    */
   public function setStartTime(TimeOfDay $startTime)
   {

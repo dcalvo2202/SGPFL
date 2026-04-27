@@ -20,16 +20,12 @@ namespace Google\Service\SA360;
 class GoogleAdsSearchads360V0CommonAudienceInfo extends \Google\Model
 {
   /**
-   * The Audience resource name.
-   *
    * @var string
    */
   public $audience;
 
   /**
-   * The Audience resource name.
-   *
-   * @param string $audience
+   * @param string
    */
   public function setAudience($audience)
   {

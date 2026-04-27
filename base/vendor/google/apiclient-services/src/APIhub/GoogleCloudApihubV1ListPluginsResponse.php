@@ -21,9 +21,6 @@ class GoogleCloudApihubV1ListPluginsResponse extends \Google\Collection
 {
   protected $collection_key = 'plugins';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GoogleCloudApihubV1ListPluginsResponse extends \Google\Collection
   protected $pluginsDataType = 'array';
 
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class GoogleCloudApihubV1ListPluginsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The plugins from the specified parent resource.
-   *
-   * @param GoogleCloudApihubV1Plugin[] $plugins
+   * @param GoogleCloudApihubV1Plugin[]
    */
   public function setPlugins($plugins)
   {

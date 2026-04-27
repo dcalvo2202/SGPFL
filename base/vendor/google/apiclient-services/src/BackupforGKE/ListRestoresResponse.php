@@ -21,28 +21,18 @@ class ListRestoresResponse extends \Google\Collection
 {
   protected $collection_key = 'unreachable';
   /**
-   * A token which may be sent as page_token in a subsequent `ListRestores` call
-   * to retrieve the next page of results. If this field is omitted or empty,
-   * then there are no more results to return.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $restoresType = Restore::class;
   protected $restoresDataType = 'array';
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * A token which may be sent as page_token in a subsequent `ListRestores` call
-   * to retrieve the next page of results. If this field is omitted or empty,
-   * then there are no more results to return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -56,9 +46,7 @@ class ListRestoresResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The list of Restores matching the given criteria.
-   *
-   * @param Restore[] $restores
+   * @param Restore[]
    */
   public function setRestores($restores)
   {
@@ -72,9 +60,7 @@ class ListRestoresResponse extends \Google\Collection
     return $this->restores;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

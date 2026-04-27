@@ -20,44 +20,24 @@ namespace Google\Service\ManagedKafka;
 class Topic extends \Google\Model
 {
   /**
-   * Optional. Configurations for the topic that are overridden from the cluster
-   * defaults. The key of the map is a Kafka topic property name, for example:
-   * `cleanup.policy`, `compression.type`.
-   *
    * @var string[]
    */
   public $configs;
   /**
-   * Identifier. The name of the topic. The `topic` segment is used when
-   * connecting directly to the cluster. Structured like:
-   * projects/{project}/locations/{location}/clusters/{cluster}/topics/{topic}
-   *
    * @var string
    */
   public $name;
   /**
-   * Required. The number of partitions this topic has. The partition count can
-   * only be increased, not decreased. Please note that if partitions are
-   * increased for a topic that has a key, the partitioning logic or the
-   * ordering of the messages will be affected.
-   *
    * @var int
    */
   public $partitionCount;
   /**
-   * Required. Immutable. The number of replicas of each partition. A
-   * replication factor of 3 is recommended for high availability.
-   *
    * @var int
    */
   public $replicationFactor;
 
   /**
-   * Optional. Configurations for the topic that are overridden from the cluster
-   * defaults. The key of the map is a Kafka topic property name, for example:
-   * `cleanup.policy`, `compression.type`.
-   *
-   * @param string[] $configs
+   * @param string[]
    */
   public function setConfigs($configs)
   {
@@ -71,11 +51,7 @@ class Topic extends \Google\Model
     return $this->configs;
   }
   /**
-   * Identifier. The name of the topic. The `topic` segment is used when
-   * connecting directly to the cluster. Structured like:
-   * projects/{project}/locations/{location}/clusters/{cluster}/topics/{topic}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -89,12 +65,7 @@ class Topic extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. The number of partitions this topic has. The partition count can
-   * only be increased, not decreased. Please note that if partitions are
-   * increased for a topic that has a key, the partitioning logic or the
-   * ordering of the messages will be affected.
-   *
-   * @param int $partitionCount
+   * @param int
    */
   public function setPartitionCount($partitionCount)
   {
@@ -108,10 +79,7 @@ class Topic extends \Google\Model
     return $this->partitionCount;
   }
   /**
-   * Required. Immutable. The number of replicas of each partition. A
-   * replication factor of 3 is recommended for high availability.
-   *
-   * @param int $replicationFactor
+   * @param int
    */
   public function setReplicationFactor($replicationFactor)
   {

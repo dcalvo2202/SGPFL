@@ -19,837 +19,268 @@ namespace Google\Service\SA360;
 
 class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
 {
-  /**
-   * No value has been specified.
-   */
-  public const AD_FORMAT_TYPE_UNSPECIFIED = 'UNSPECIFIED';
-  /**
-   * Used for return value only. Represents value unknown in this version.
-   */
-  public const AD_FORMAT_TYPE_UNKNOWN = 'UNKNOWN';
-  /**
-   * An ad format that promotes a specific entity within a vertical, for
-   * example, a hotel ad in the Travel vertical on Search.
-   */
-  public const AD_FORMAT_TYPE_VERTICAL_ADS_PROMOTION = 'VERTICAL_ADS_PROMOTION';
-  /**
-   * An ad format for a booking link call-to-action within a vertical ad, for
-   * example a 'Book Now' link for a hotel ad.
-   */
-  public const AD_FORMAT_TYPE_VERTICAL_ADS_BOOKING_LINK = 'VERTICAL_ADS_BOOKING_LINK';
-  /**
-   * A standard text ad format. This is currently only used for ads on the
-   * Search network.
-   */
-  public const AD_FORMAT_TYPE_TEXT = 'TEXT';
-  /**
-   * Not specified.
-   */
-  public const AD_NETWORK_TYPE_UNSPECIFIED = 'UNSPECIFIED';
-  /**
-   * The value is unknown in this version.
-   */
-  public const AD_NETWORK_TYPE_UNKNOWN = 'UNKNOWN';
-  /**
-   * Google search.
-   */
-  public const AD_NETWORK_TYPE_SEARCH = 'SEARCH';
-  /**
-   * Search partners.
-   */
-  public const AD_NETWORK_TYPE_SEARCH_PARTNERS = 'SEARCH_PARTNERS';
-  /**
-   * Display Network.
-   */
-  public const AD_NETWORK_TYPE_CONTENT = 'CONTENT';
-  /**
-   * YouTube Search.
-   */
-  public const AD_NETWORK_TYPE_YOUTUBE_SEARCH = 'YOUTUBE_SEARCH';
-  /**
-   * YouTube Videos
-   */
-  public const AD_NETWORK_TYPE_YOUTUBE_WATCH = 'YOUTUBE_WATCH';
-  /**
-   * Cross-network.
-   */
-  public const AD_NETWORK_TYPE_MIXED = 'MIXED';
-  /**
-   * Not specified.
-   */
-  public const CONVERSION_ACTION_CATEGORY_UNSPECIFIED = 'UNSPECIFIED';
-  /**
-   * Used for return value only. Represents value unknown in this version.
-   */
-  public const CONVERSION_ACTION_CATEGORY_UNKNOWN = 'UNKNOWN';
-  /**
-   * Default category.
-   */
-  public const CONVERSION_ACTION_CATEGORY_DEFAULT = 'DEFAULT';
-  /**
-   * User visiting a page.
-   */
-  public const CONVERSION_ACTION_CATEGORY_PAGE_VIEW = 'PAGE_VIEW';
-  /**
-   * Purchase, sales, or "order placed" event.
-   */
-  public const CONVERSION_ACTION_CATEGORY_PURCHASE = 'PURCHASE';
-  /**
-   * Signup user action.
-   */
-  public const CONVERSION_ACTION_CATEGORY_SIGNUP = 'SIGNUP';
-  /**
-   * Lead-generating action.
-   */
-  public const CONVERSION_ACTION_CATEGORY_LEAD = 'LEAD';
-  /**
-   * Software download action (as for an app).
-   */
-  public const CONVERSION_ACTION_CATEGORY_DOWNLOAD = 'DOWNLOAD';
-  /**
-   * The addition of items to a shopping cart or bag on an advertiser site.
-   */
-  public const CONVERSION_ACTION_CATEGORY_ADD_TO_CART = 'ADD_TO_CART';
-  /**
-   * When someone enters the checkout flow on an advertiser site.
-   */
-  public const CONVERSION_ACTION_CATEGORY_BEGIN_CHECKOUT = 'BEGIN_CHECKOUT';
-  /**
-   * The start of a paid subscription for a product or service.
-   */
-  public const CONVERSION_ACTION_CATEGORY_SUBSCRIBE_PAID = 'SUBSCRIBE_PAID';
-  /**
-   * A call to indicate interest in an advertiser's offering.
-   */
-  public const CONVERSION_ACTION_CATEGORY_PHONE_CALL_LEAD = 'PHONE_CALL_LEAD';
-  /**
-   * A lead conversion imported from an external source into Google Ads.
-   */
-  public const CONVERSION_ACTION_CATEGORY_IMPORTED_LEAD = 'IMPORTED_LEAD';
-  /**
-   * A submission of a form on an advertiser site indicating business interest.
-   */
-  public const CONVERSION_ACTION_CATEGORY_SUBMIT_LEAD_FORM = 'SUBMIT_LEAD_FORM';
-  /**
-   * A booking of an appointment with an advertiser's business.
-   */
-  public const CONVERSION_ACTION_CATEGORY_BOOK_APPOINTMENT = 'BOOK_APPOINTMENT';
-  /**
-   * A quote or price estimate request.
-   */
-  public const CONVERSION_ACTION_CATEGORY_REQUEST_QUOTE = 'REQUEST_QUOTE';
-  /**
-   * A search for an advertiser's business location with intention to visit.
-   */
-  public const CONVERSION_ACTION_CATEGORY_GET_DIRECTIONS = 'GET_DIRECTIONS';
-  /**
-   * A click to an advertiser's partner's site.
-   */
-  public const CONVERSION_ACTION_CATEGORY_OUTBOUND_CLICK = 'OUTBOUND_CLICK';
-  /**
-   * A call, SMS, email, chat or other type of contact to an advertiser.
-   */
-  public const CONVERSION_ACTION_CATEGORY_CONTACT = 'CONTACT';
-  /**
-   * A website engagement event such as long site time or a Google Analytics
-   * (GA) Smart Goal. Intended to be used for GA, Firebase, GA Gold goal
-   * imports.
-   */
-  public const CONVERSION_ACTION_CATEGORY_ENGAGEMENT = 'ENGAGEMENT';
-  /**
-   * A visit to a physical store location.
-   */
-  public const CONVERSION_ACTION_CATEGORY_STORE_VISIT = 'STORE_VISIT';
-  /**
-   * A sale occurring in a physical store.
-   */
-  public const CONVERSION_ACTION_CATEGORY_STORE_SALE = 'STORE_SALE';
-  /**
-   * A lead conversion imported from an external source into Google Ads, that
-   * has been further qualified by the advertiser (marketing/sales team). In the
-   * lead-to-sale journey, advertisers get leads, then act on them by reaching
-   * out to the consumer. If the consumer is interested and may end up buying
-   * their product, the advertiser marks such leads as "qualified leads".
-   */
-  public const CONVERSION_ACTION_CATEGORY_QUALIFIED_LEAD = 'QUALIFIED_LEAD';
-  /**
-   * A lead conversion imported from an external source into Google Ads, that
-   * has further completed a chosen stage as defined by the lead gen advertiser.
-   */
-  public const CONVERSION_ACTION_CATEGORY_CONVERTED_LEAD = 'CONVERTED_LEAD';
-  /**
-   * User watches an ad from a channel and later watches either the same video
-   * or a video from the same channel as the ad.
-   */
-  public const CONVERSION_ACTION_CATEGORY_YOUTUBE_FOLLOW_ON_VIEWS = 'YOUTUBE_FOLLOW_ON_VIEWS';
-  /**
-   * Not specified.
-   */
-  public const DAY_OF_WEEK_UNSPECIFIED = 'UNSPECIFIED';
-  /**
-   * The value is unknown in this version.
-   */
-  public const DAY_OF_WEEK_UNKNOWN = 'UNKNOWN';
-  /**
-   * Monday.
-   */
-  public const DAY_OF_WEEK_MONDAY = 'MONDAY';
-  /**
-   * Tuesday.
-   */
-  public const DAY_OF_WEEK_TUESDAY = 'TUESDAY';
-  /**
-   * Wednesday.
-   */
-  public const DAY_OF_WEEK_WEDNESDAY = 'WEDNESDAY';
-  /**
-   * Thursday.
-   */
-  public const DAY_OF_WEEK_THURSDAY = 'THURSDAY';
-  /**
-   * Friday.
-   */
-  public const DAY_OF_WEEK_FRIDAY = 'FRIDAY';
-  /**
-   * Saturday.
-   */
-  public const DAY_OF_WEEK_SATURDAY = 'SATURDAY';
-  /**
-   * Sunday.
-   */
-  public const DAY_OF_WEEK_SUNDAY = 'SUNDAY';
-  /**
-   * Not specified.
-   */
-  public const DEVICE_UNSPECIFIED = 'UNSPECIFIED';
-  /**
-   * The value is unknown in this version.
-   */
-  public const DEVICE_UNKNOWN = 'UNKNOWN';
-  /**
-   * Mobile devices with full browsers.
-   */
-  public const DEVICE_MOBILE = 'MOBILE';
-  /**
-   * Tablets with full browsers.
-   */
-  public const DEVICE_TABLET = 'TABLET';
-  /**
-   * Computers.
-   */
-  public const DEVICE_DESKTOP = 'DESKTOP';
-  /**
-   * Smart TVs and game consoles.
-   */
-  public const DEVICE_CONNECTED_TV = 'CONNECTED_TV';
-  /**
-   * Other device types.
-   */
-  public const DEVICE_OTHER = 'OTHER';
-  /**
-   * Not specified.
-   */
-  public const PRODUCT_CHANNEL_UNSPECIFIED = 'UNSPECIFIED';
-  /**
-   * Used for return value only. Represents value unknown in this version.
-   */
-  public const PRODUCT_CHANNEL_UNKNOWN = 'UNKNOWN';
-  /**
-   * The item is sold online.
-   */
-  public const PRODUCT_CHANNEL_ONLINE = 'ONLINE';
-  /**
-   * The item is sold in local stores.
-   */
-  public const PRODUCT_CHANNEL_LOCAL = 'LOCAL';
-  /**
-   * Not specified.
-   */
-  public const PRODUCT_CHANNEL_EXCLUSIVITY_UNSPECIFIED = 'UNSPECIFIED';
-  /**
-   * Used for return value only. Represents value unknown in this version.
-   */
-  public const PRODUCT_CHANNEL_EXCLUSIVITY_UNKNOWN = 'UNKNOWN';
-  /**
-   * The item is sold through one channel only, either local stores or online as
-   * indicated by its ProductChannel.
-   */
-  public const PRODUCT_CHANNEL_EXCLUSIVITY_SINGLE_CHANNEL = 'SINGLE_CHANNEL';
-  /**
-   * The item is matched to its online or local stores counterpart, indicating
-   * it is available for purchase in both ShoppingProductChannels.
-   */
-  public const PRODUCT_CHANNEL_EXCLUSIVITY_MULTI_CHANNEL = 'MULTI_CHANNEL';
-  /**
-   * Not specified.
-   */
-  public const PRODUCT_CONDITION_UNSPECIFIED = 'UNSPECIFIED';
-  /**
-   * Used for return value only. Represents value unknown in this version.
-   */
-  public const PRODUCT_CONDITION_UNKNOWN = 'UNKNOWN';
-  /**
-   * The product condition is old.
-   */
-  public const PRODUCT_CONDITION_OLD = 'OLD';
-  /**
-   * The product condition is new.
-   */
-  public const PRODUCT_CONDITION_NEW = 'NEW';
-  /**
-   * The product condition is refurbished.
-   */
-  public const PRODUCT_CONDITION_REFURBISHED = 'REFURBISHED';
-  /**
-   * The product condition is used.
-   */
-  public const PRODUCT_CONDITION_USED = 'USED';
-  /**
-   * Not specified.
-   */
-  public const PRODUCT_SOLD_CONDITION_UNSPECIFIED = 'UNSPECIFIED';
-  /**
-   * Used for return value only. Represents value unknown in this version.
-   */
-  public const PRODUCT_SOLD_CONDITION_UNKNOWN = 'UNKNOWN';
-  /**
-   * The product condition is old.
-   */
-  public const PRODUCT_SOLD_CONDITION_OLD = 'OLD';
-  /**
-   * The product condition is new.
-   */
-  public const PRODUCT_SOLD_CONDITION_NEW = 'NEW';
-  /**
-   * The product condition is refurbished.
-   */
-  public const PRODUCT_SOLD_CONDITION_REFURBISHED = 'REFURBISHED';
-  /**
-   * The product condition is used.
-   */
-  public const PRODUCT_SOLD_CONDITION_USED = 'USED';
-  /**
-   * Not specified.
-   */
-  public const VERTICAL_ADS_VERTICAL_UNSPECIFIED = 'UNSPECIFIED';
-  /**
-   * Used for return value only. Represents value unknown in this version.
-   */
-  public const VERTICAL_ADS_VERTICAL_UNKNOWN = 'UNKNOWN';
-  /**
-   * Hotels travel vertical.
-   */
-  public const VERTICAL_ADS_VERTICAL_HOTELS = 'HOTELS';
-  /**
-   * Vacation rentals travel vertical.
-   */
-  public const VERTICAL_ADS_VERTICAL_VACATION_RENTALS = 'VACATION_RENTALS';
-  /**
-   * Rental cars travel vertical.
-   */
-  public const VERTICAL_ADS_VERTICAL_RENTAL_CARS = 'RENTAL_CARS';
-  /**
-   * Events travel vertical.
-   */
-  public const VERTICAL_ADS_VERTICAL_EVENTS = 'EVENTS';
-  /**
-   * Things to do travel vertical.
-   */
-  public const VERTICAL_ADS_VERTICAL_THINGS_TO_DO = 'THINGS_TO_DO';
-  /**
-   * Flights travel vertical.
-   */
-  public const VERTICAL_ADS_VERTICAL_FLIGHTS = 'FLIGHTS';
   protected $collection_key = 'rawEventConversionDimensions';
   /**
-   * Ad Format type.
-   *
-   * @var string
-   */
-  public $adFormatType;
-  /**
-   * Ad network type.
-   *
    * @var string
    */
   public $adNetworkType;
   protected $assetInteractionTargetType = GoogleAdsSearchads360V0CommonAssetInteractionTarget::class;
   protected $assetInteractionTargetDataType = '';
   /**
-   * Resource name of the conversion action.
-   *
    * @var string
    */
   public $conversionAction;
   /**
-   * Conversion action category.
-   *
    * @var string
    */
   public $conversionActionCategory;
   /**
-   * Conversion action name.
-   *
    * @var string
    */
   public $conversionActionName;
   protected $conversionCustomDimensionsType = GoogleAdsSearchads360V0CommonValue::class;
   protected $conversionCustomDimensionsDataType = 'array';
   /**
-   * Date to which metrics apply. yyyy-MM-dd format, for example, 2018-04-17.
-   *
    * @var string
    */
   public $date;
   /**
-   * Day of the week, for example, MONDAY.
-   *
    * @var string
    */
   public $dayOfWeek;
   /**
-   * Device to which metrics apply.
-   *
    * @var string
    */
   public $device;
   /**
-   * Resource name of the geo target constant that represents a city.
-   *
    * @var string
    */
   public $geoTargetCity;
   /**
-   * Resource name of the geo target constant that represents a country.
-   *
    * @var string
    */
   public $geoTargetCountry;
   /**
-   * Resource name of the geo target constant that represents a metro.
-   *
    * @var string
    */
   public $geoTargetMetro;
   /**
-   * Resource name of the geo target constant that represents a postal code.
-   *
-   * @var string
-   */
-  public $geoTargetPostalCode;
-  /**
-   * Resource name of the geo target constant that represents a region.
-   *
    * @var string
    */
   public $geoTargetRegion;
   /**
-   * Hour of day as a number between 0 and 23, inclusive.
-   *
    * @var int
    */
   public $hour;
   protected $keywordType = GoogleAdsSearchads360V0CommonKeyword::class;
   protected $keywordDataType = '';
   /**
-   * Month as represented by the date of the first day of a month. Formatted as
-   * yyyy-MM-dd.
-   *
    * @var string
    */
   public $month;
   /**
-   * Bidding category (level 1) of the product.
-   *
    * @var string
    */
   public $productBiddingCategoryLevel1;
   /**
-   * Bidding category (level 2) of the product.
-   *
    * @var string
    */
   public $productBiddingCategoryLevel2;
   /**
-   * Bidding category (level 3) of the product.
-   *
    * @var string
    */
   public $productBiddingCategoryLevel3;
   /**
-   * Bidding category (level 4) of the product.
-   *
    * @var string
    */
   public $productBiddingCategoryLevel4;
   /**
-   * Bidding category (level 5) of the product.
-   *
    * @var string
    */
   public $productBiddingCategoryLevel5;
   /**
-   * Brand of the product.
-   *
    * @var string
    */
   public $productBrand;
   /**
-   * Channel of the product.
-   *
    * @var string
    */
   public $productChannel;
   /**
-   * Channel exclusivity of the product.
-   *
    * @var string
    */
   public $productChannelExclusivity;
   /**
-   * Condition of the product.
-   *
    * @var string
    */
   public $productCondition;
   /**
-   * Resource name of the geo target constant for the country of sale of the
-   * product.
-   *
    * @var string
    */
   public $productCountry;
   /**
-   * Custom attribute 0 of the product.
-   *
    * @var string
    */
   public $productCustomAttribute0;
   /**
-   * Custom attribute 1 of the product.
-   *
    * @var string
    */
   public $productCustomAttribute1;
   /**
-   * Custom attribute 2 of the product.
-   *
    * @var string
    */
   public $productCustomAttribute2;
   /**
-   * Custom attribute 3 of the product.
-   *
    * @var string
    */
   public $productCustomAttribute3;
   /**
-   * Custom attribute 4 of the product.
-   *
    * @var string
    */
   public $productCustomAttribute4;
   /**
-   * Item ID of the product.
-   *
    * @var string
    */
   public $productItemId;
   /**
-   * Resource name of the language constant for the language of the product.
-   *
    * @var string
    */
   public $productLanguage;
   /**
-   * Bidding category (level 1) of the product sold.
-   *
    * @var string
    */
   public $productSoldBiddingCategoryLevel1;
   /**
-   * Bidding category (level 2) of the product sold.
-   *
    * @var string
    */
   public $productSoldBiddingCategoryLevel2;
   /**
-   * Bidding category (level 3) of the product sold.
-   *
    * @var string
    */
   public $productSoldBiddingCategoryLevel3;
   /**
-   * Bidding category (level 4) of the product sold.
-   *
    * @var string
    */
   public $productSoldBiddingCategoryLevel4;
   /**
-   * Bidding category (level 5) of the product sold.
-   *
    * @var string
    */
   public $productSoldBiddingCategoryLevel5;
   /**
-   * Brand of the product sold.
-   *
    * @var string
    */
   public $productSoldBrand;
   /**
-   * Condition of the product sold.
-   *
    * @var string
    */
   public $productSoldCondition;
   /**
-   * Custom attribute 0 of the product sold.
-   *
    * @var string
    */
   public $productSoldCustomAttribute0;
   /**
-   * Custom attribute 1 of the product sold.
-   *
    * @var string
    */
   public $productSoldCustomAttribute1;
   /**
-   * Custom attribute 2 of the product sold.
-   *
    * @var string
    */
   public $productSoldCustomAttribute2;
   /**
-   * Custom attribute 3 of the product sold.
-   *
    * @var string
    */
   public $productSoldCustomAttribute3;
   /**
-   * Custom attribute 4 of the product sold.
-   *
    * @var string
    */
   public $productSoldCustomAttribute4;
   /**
-   * Item ID of the product sold.
-   *
    * @var string
    */
   public $productSoldItemId;
   /**
-   * Title of the product sold.
-   *
    * @var string
    */
   public $productSoldTitle;
   /**
-   * Type (level 1) of the product sold.
-   *
    * @var string
    */
   public $productSoldTypeL1;
   /**
-   * Type (level 2) of the product sold.
-   *
    * @var string
    */
   public $productSoldTypeL2;
   /**
-   * Type (level 3) of the product sold.
-   *
    * @var string
    */
   public $productSoldTypeL3;
   /**
-   * Type (level 4) of the product sold.
-   *
    * @var string
    */
   public $productSoldTypeL4;
   /**
-   * Type (level 5) of the product sold.
-   *
    * @var string
    */
   public $productSoldTypeL5;
   /**
-   * Store ID of the product.
-   *
    * @var string
    */
   public $productStoreId;
   /**
-   * Title of the product.
-   *
    * @var string
    */
   public $productTitle;
   /**
-   * Type (level 1) of the product.
-   *
    * @var string
    */
   public $productTypeL1;
   /**
-   * Type (level 2) of the product.
-   *
    * @var string
    */
   public $productTypeL2;
   /**
-   * Type (level 3) of the product.
-   *
    * @var string
    */
   public $productTypeL3;
   /**
-   * Type (level 4) of the product.
-   *
    * @var string
    */
   public $productTypeL4;
   /**
-   * Type (level 5) of the product.
-   *
    * @var string
    */
   public $productTypeL5;
   /**
-   * Quarter as represented by the date of the first day of a quarter. Uses the
-   * calendar year for quarters, for example, the second quarter of 2018 starts
-   * on 2018-04-01. Formatted as yyyy-MM-dd.
-   *
    * @var string
    */
   public $quarter;
   protected $rawEventConversionDimensionsType = GoogleAdsSearchads360V0CommonValue::class;
   protected $rawEventConversionDimensionsDataType = 'array';
   /**
-   * The display names of participants in an event listing, like performers,
-   * speakers, or teams.
-   *
-   * @var string
-   */
-  public $verticalAdsEventParticipantDisplayNames;
-  /**
-   * The class of the hotel. Generally in the range of 1 to 5 stars, but fully
-   * customizable in the hotel feed.
-   *
-   * @var string
-   */
-  public $verticalAdsHotelClass;
-  /**
-   * The listing associated with a listing impression, click or conversion.
-   *
-   * @var string
-   */
-  public $verticalAdsListing;
-  /**
-   * The brand associated with a specific listing within a Vertical Ads context,
-   * for example, the brand of a car rental, a vacation home, or an event.
-   *
-   * @var string
-   */
-  public $verticalAdsListingBrand;
-  /**
-   * The city where the vertical ads listing is located.
-   *
-   * @var string
-   */
-  public $verticalAdsListingCity;
-  /**
-   * The country where the vertical ads listing is located.
-   *
-   * @var string
-   */
-  public $verticalAdsListingCountry;
-  /**
-   * The region where the vertical ads listing is located.
-   *
-   * @var string
-   */
-  public $verticalAdsListingRegion;
-  /**
-   * A specific partner account within a Partner Center (for example, Hotel
-   * Center) that supplies inventory feed data for Vertical Ads.
-   *
-   * @var string
-   */
-  public $verticalAdsPartnerAccount;
-  /**
-   * Type of vertical ad, such as Vacation Rentals, Car Rentals, or Events, used
-   * to categorize and segment data in the context of Vertical Ads.
-   *
-   * @var string
-   */
-  public $verticalAdsVertical;
-  /**
-   * Week as defined as Monday through Sunday, and represented by the date of
-   * Monday. Formatted as yyyy-MM-dd.
-   *
    * @var string
    */
   public $week;
   /**
-   * Year, formatted as yyyy.
-   *
    * @var int
    */
   public $year;
 
   /**
-   * Ad Format type.
-   *
-   * Accepted values: UNSPECIFIED, UNKNOWN, VERTICAL_ADS_PROMOTION,
-   * VERTICAL_ADS_BOOKING_LINK, TEXT
-   *
-   * @param self::AD_FORMAT_TYPE_* $adFormatType
-   */
-  public function setAdFormatType($adFormatType)
-  {
-    $this->adFormatType = $adFormatType;
-  }
-  /**
-   * @return self::AD_FORMAT_TYPE_*
-   */
-  public function getAdFormatType()
-  {
-    return $this->adFormatType;
-  }
-  /**
-   * Ad network type.
-   *
-   * Accepted values: UNSPECIFIED, UNKNOWN, SEARCH, SEARCH_PARTNERS, CONTENT,
-   * YOUTUBE_SEARCH, YOUTUBE_WATCH, MIXED
-   *
-   * @param self::AD_NETWORK_TYPE_* $adNetworkType
+   * @param string
    */
   public function setAdNetworkType($adNetworkType)
   {
     $this->adNetworkType = $adNetworkType;
   }
   /**
-   * @return self::AD_NETWORK_TYPE_*
+   * @return string
    */
   public function getAdNetworkType()
   {
     return $this->adNetworkType;
   }
   /**
-   * Only used with CustomerAsset, CampaignAsset and AdGroupAsset metrics.
-   * Indicates whether the interaction metrics occurred on the asset itself or a
-   * different asset or ad unit. Interactions (for example, clicks) are counted
-   * across all the parts of the served ad (for example, Ad itself and other
-   * components like Sitelinks) when they are served together. When
-   * interaction_on_this_asset is true, it means the interactions are on this
-   * specific asset and when interaction_on_this_asset is false, it means the
-   * interactions is not on this specific asset but on other parts of the served
-   * ad this asset is served with.
-   *
-   * @param GoogleAdsSearchads360V0CommonAssetInteractionTarget $assetInteractionTarget
+   * @param GoogleAdsSearchads360V0CommonAssetInteractionTarget
    */
   public function setAssetInteractionTarget(GoogleAdsSearchads360V0CommonAssetInteractionTarget $assetInteractionTarget)
   {
@@ -863,9 +294,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->assetInteractionTarget;
   }
   /**
-   * Resource name of the conversion action.
-   *
-   * @param string $conversionAction
+   * @param string
    */
   public function setConversionAction($conversionAction)
   {
@@ -879,32 +308,21 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->conversionAction;
   }
   /**
-   * Conversion action category.
-   *
-   * Accepted values: UNSPECIFIED, UNKNOWN, DEFAULT, PAGE_VIEW, PURCHASE,
-   * SIGNUP, LEAD, DOWNLOAD, ADD_TO_CART, BEGIN_CHECKOUT, SUBSCRIBE_PAID,
-   * PHONE_CALL_LEAD, IMPORTED_LEAD, SUBMIT_LEAD_FORM, BOOK_APPOINTMENT,
-   * REQUEST_QUOTE, GET_DIRECTIONS, OUTBOUND_CLICK, CONTACT, ENGAGEMENT,
-   * STORE_VISIT, STORE_SALE, QUALIFIED_LEAD, CONVERTED_LEAD,
-   * YOUTUBE_FOLLOW_ON_VIEWS
-   *
-   * @param self::CONVERSION_ACTION_CATEGORY_* $conversionActionCategory
+   * @param string
    */
   public function setConversionActionCategory($conversionActionCategory)
   {
     $this->conversionActionCategory = $conversionActionCategory;
   }
   /**
-   * @return self::CONVERSION_ACTION_CATEGORY_*
+   * @return string
    */
   public function getConversionActionCategory()
   {
     return $this->conversionActionCategory;
   }
   /**
-   * Conversion action name.
-   *
-   * @param string $conversionActionName
+   * @param string
    */
   public function setConversionActionName($conversionActionName)
   {
@@ -918,9 +336,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->conversionActionName;
   }
   /**
-   * The conversion custom dimensions.
-   *
-   * @param GoogleAdsSearchads360V0CommonValue[] $conversionCustomDimensions
+   * @param GoogleAdsSearchads360V0CommonValue[]
    */
   public function setConversionCustomDimensions($conversionCustomDimensions)
   {
@@ -934,9 +350,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->conversionCustomDimensions;
   }
   /**
-   * Date to which metrics apply. yyyy-MM-dd format, for example, 2018-04-17.
-   *
-   * @param string $date
+   * @param string
    */
   public function setDate($date)
   {
@@ -950,47 +364,35 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->date;
   }
   /**
-   * Day of the week, for example, MONDAY.
-   *
-   * Accepted values: UNSPECIFIED, UNKNOWN, MONDAY, TUESDAY, WEDNESDAY,
-   * THURSDAY, FRIDAY, SATURDAY, SUNDAY
-   *
-   * @param self::DAY_OF_WEEK_* $dayOfWeek
+   * @param string
    */
   public function setDayOfWeek($dayOfWeek)
   {
     $this->dayOfWeek = $dayOfWeek;
   }
   /**
-   * @return self::DAY_OF_WEEK_*
+   * @return string
    */
   public function getDayOfWeek()
   {
     return $this->dayOfWeek;
   }
   /**
-   * Device to which metrics apply.
-   *
-   * Accepted values: UNSPECIFIED, UNKNOWN, MOBILE, TABLET, DESKTOP,
-   * CONNECTED_TV, OTHER
-   *
-   * @param self::DEVICE_* $device
+   * @param string
    */
   public function setDevice($device)
   {
     $this->device = $device;
   }
   /**
-   * @return self::DEVICE_*
+   * @return string
    */
   public function getDevice()
   {
     return $this->device;
   }
   /**
-   * Resource name of the geo target constant that represents a city.
-   *
-   * @param string $geoTargetCity
+   * @param string
    */
   public function setGeoTargetCity($geoTargetCity)
   {
@@ -1004,9 +406,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->geoTargetCity;
   }
   /**
-   * Resource name of the geo target constant that represents a country.
-   *
-   * @param string $geoTargetCountry
+   * @param string
    */
   public function setGeoTargetCountry($geoTargetCountry)
   {
@@ -1020,9 +420,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->geoTargetCountry;
   }
   /**
-   * Resource name of the geo target constant that represents a metro.
-   *
-   * @param string $geoTargetMetro
+   * @param string
    */
   public function setGeoTargetMetro($geoTargetMetro)
   {
@@ -1036,25 +434,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->geoTargetMetro;
   }
   /**
-   * Resource name of the geo target constant that represents a postal code.
-   *
-   * @param string $geoTargetPostalCode
-   */
-  public function setGeoTargetPostalCode($geoTargetPostalCode)
-  {
-    $this->geoTargetPostalCode = $geoTargetPostalCode;
-  }
-  /**
-   * @return string
-   */
-  public function getGeoTargetPostalCode()
-  {
-    return $this->geoTargetPostalCode;
-  }
-  /**
-   * Resource name of the geo target constant that represents a region.
-   *
-   * @param string $geoTargetRegion
+   * @param string
    */
   public function setGeoTargetRegion($geoTargetRegion)
   {
@@ -1068,9 +448,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->geoTargetRegion;
   }
   /**
-   * Hour of day as a number between 0 and 23, inclusive.
-   *
-   * @param int $hour
+   * @param int
    */
   public function setHour($hour)
   {
@@ -1084,9 +462,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->hour;
   }
   /**
-   * Keyword criterion.
-   *
-   * @param GoogleAdsSearchads360V0CommonKeyword $keyword
+   * @param GoogleAdsSearchads360V0CommonKeyword
    */
   public function setKeyword(GoogleAdsSearchads360V0CommonKeyword $keyword)
   {
@@ -1100,10 +476,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->keyword;
   }
   /**
-   * Month as represented by the date of the first day of a month. Formatted as
-   * yyyy-MM-dd.
-   *
-   * @param string $month
+   * @param string
    */
   public function setMonth($month)
   {
@@ -1117,9 +490,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->month;
   }
   /**
-   * Bidding category (level 1) of the product.
-   *
-   * @param string $productBiddingCategoryLevel1
+   * @param string
    */
   public function setProductBiddingCategoryLevel1($productBiddingCategoryLevel1)
   {
@@ -1133,9 +504,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productBiddingCategoryLevel1;
   }
   /**
-   * Bidding category (level 2) of the product.
-   *
-   * @param string $productBiddingCategoryLevel2
+   * @param string
    */
   public function setProductBiddingCategoryLevel2($productBiddingCategoryLevel2)
   {
@@ -1149,9 +518,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productBiddingCategoryLevel2;
   }
   /**
-   * Bidding category (level 3) of the product.
-   *
-   * @param string $productBiddingCategoryLevel3
+   * @param string
    */
   public function setProductBiddingCategoryLevel3($productBiddingCategoryLevel3)
   {
@@ -1165,9 +532,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productBiddingCategoryLevel3;
   }
   /**
-   * Bidding category (level 4) of the product.
-   *
-   * @param string $productBiddingCategoryLevel4
+   * @param string
    */
   public function setProductBiddingCategoryLevel4($productBiddingCategoryLevel4)
   {
@@ -1181,9 +546,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productBiddingCategoryLevel4;
   }
   /**
-   * Bidding category (level 5) of the product.
-   *
-   * @param string $productBiddingCategoryLevel5
+   * @param string
    */
   public function setProductBiddingCategoryLevel5($productBiddingCategoryLevel5)
   {
@@ -1197,9 +560,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productBiddingCategoryLevel5;
   }
   /**
-   * Brand of the product.
-   *
-   * @param string $productBrand
+   * @param string
    */
   public function setProductBrand($productBrand)
   {
@@ -1213,64 +574,49 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productBrand;
   }
   /**
-   * Channel of the product.
-   *
-   * Accepted values: UNSPECIFIED, UNKNOWN, ONLINE, LOCAL
-   *
-   * @param self::PRODUCT_CHANNEL_* $productChannel
+   * @param string
    */
   public function setProductChannel($productChannel)
   {
     $this->productChannel = $productChannel;
   }
   /**
-   * @return self::PRODUCT_CHANNEL_*
+   * @return string
    */
   public function getProductChannel()
   {
     return $this->productChannel;
   }
   /**
-   * Channel exclusivity of the product.
-   *
-   * Accepted values: UNSPECIFIED, UNKNOWN, SINGLE_CHANNEL, MULTI_CHANNEL
-   *
-   * @param self::PRODUCT_CHANNEL_EXCLUSIVITY_* $productChannelExclusivity
+   * @param string
    */
   public function setProductChannelExclusivity($productChannelExclusivity)
   {
     $this->productChannelExclusivity = $productChannelExclusivity;
   }
   /**
-   * @return self::PRODUCT_CHANNEL_EXCLUSIVITY_*
+   * @return string
    */
   public function getProductChannelExclusivity()
   {
     return $this->productChannelExclusivity;
   }
   /**
-   * Condition of the product.
-   *
-   * Accepted values: UNSPECIFIED, UNKNOWN, OLD, NEW, REFURBISHED, USED
-   *
-   * @param self::PRODUCT_CONDITION_* $productCondition
+   * @param string
    */
   public function setProductCondition($productCondition)
   {
     $this->productCondition = $productCondition;
   }
   /**
-   * @return self::PRODUCT_CONDITION_*
+   * @return string
    */
   public function getProductCondition()
   {
     return $this->productCondition;
   }
   /**
-   * Resource name of the geo target constant for the country of sale of the
-   * product.
-   *
-   * @param string $productCountry
+   * @param string
    */
   public function setProductCountry($productCountry)
   {
@@ -1284,9 +630,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productCountry;
   }
   /**
-   * Custom attribute 0 of the product.
-   *
-   * @param string $productCustomAttribute0
+   * @param string
    */
   public function setProductCustomAttribute0($productCustomAttribute0)
   {
@@ -1300,9 +644,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productCustomAttribute0;
   }
   /**
-   * Custom attribute 1 of the product.
-   *
-   * @param string $productCustomAttribute1
+   * @param string
    */
   public function setProductCustomAttribute1($productCustomAttribute1)
   {
@@ -1316,9 +658,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productCustomAttribute1;
   }
   /**
-   * Custom attribute 2 of the product.
-   *
-   * @param string $productCustomAttribute2
+   * @param string
    */
   public function setProductCustomAttribute2($productCustomAttribute2)
   {
@@ -1332,9 +672,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productCustomAttribute2;
   }
   /**
-   * Custom attribute 3 of the product.
-   *
-   * @param string $productCustomAttribute3
+   * @param string
    */
   public function setProductCustomAttribute3($productCustomAttribute3)
   {
@@ -1348,9 +686,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productCustomAttribute3;
   }
   /**
-   * Custom attribute 4 of the product.
-   *
-   * @param string $productCustomAttribute4
+   * @param string
    */
   public function setProductCustomAttribute4($productCustomAttribute4)
   {
@@ -1364,9 +700,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productCustomAttribute4;
   }
   /**
-   * Item ID of the product.
-   *
-   * @param string $productItemId
+   * @param string
    */
   public function setProductItemId($productItemId)
   {
@@ -1380,9 +714,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productItemId;
   }
   /**
-   * Resource name of the language constant for the language of the product.
-   *
-   * @param string $productLanguage
+   * @param string
    */
   public function setProductLanguage($productLanguage)
   {
@@ -1396,9 +728,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productLanguage;
   }
   /**
-   * Bidding category (level 1) of the product sold.
-   *
-   * @param string $productSoldBiddingCategoryLevel1
+   * @param string
    */
   public function setProductSoldBiddingCategoryLevel1($productSoldBiddingCategoryLevel1)
   {
@@ -1412,9 +742,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productSoldBiddingCategoryLevel1;
   }
   /**
-   * Bidding category (level 2) of the product sold.
-   *
-   * @param string $productSoldBiddingCategoryLevel2
+   * @param string
    */
   public function setProductSoldBiddingCategoryLevel2($productSoldBiddingCategoryLevel2)
   {
@@ -1428,9 +756,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productSoldBiddingCategoryLevel2;
   }
   /**
-   * Bidding category (level 3) of the product sold.
-   *
-   * @param string $productSoldBiddingCategoryLevel3
+   * @param string
    */
   public function setProductSoldBiddingCategoryLevel3($productSoldBiddingCategoryLevel3)
   {
@@ -1444,9 +770,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productSoldBiddingCategoryLevel3;
   }
   /**
-   * Bidding category (level 4) of the product sold.
-   *
-   * @param string $productSoldBiddingCategoryLevel4
+   * @param string
    */
   public function setProductSoldBiddingCategoryLevel4($productSoldBiddingCategoryLevel4)
   {
@@ -1460,9 +784,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productSoldBiddingCategoryLevel4;
   }
   /**
-   * Bidding category (level 5) of the product sold.
-   *
-   * @param string $productSoldBiddingCategoryLevel5
+   * @param string
    */
   public function setProductSoldBiddingCategoryLevel5($productSoldBiddingCategoryLevel5)
   {
@@ -1476,9 +798,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productSoldBiddingCategoryLevel5;
   }
   /**
-   * Brand of the product sold.
-   *
-   * @param string $productSoldBrand
+   * @param string
    */
   public function setProductSoldBrand($productSoldBrand)
   {
@@ -1492,27 +812,21 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productSoldBrand;
   }
   /**
-   * Condition of the product sold.
-   *
-   * Accepted values: UNSPECIFIED, UNKNOWN, OLD, NEW, REFURBISHED, USED
-   *
-   * @param self::PRODUCT_SOLD_CONDITION_* $productSoldCondition
+   * @param string
    */
   public function setProductSoldCondition($productSoldCondition)
   {
     $this->productSoldCondition = $productSoldCondition;
   }
   /**
-   * @return self::PRODUCT_SOLD_CONDITION_*
+   * @return string
    */
   public function getProductSoldCondition()
   {
     return $this->productSoldCondition;
   }
   /**
-   * Custom attribute 0 of the product sold.
-   *
-   * @param string $productSoldCustomAttribute0
+   * @param string
    */
   public function setProductSoldCustomAttribute0($productSoldCustomAttribute0)
   {
@@ -1526,9 +840,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productSoldCustomAttribute0;
   }
   /**
-   * Custom attribute 1 of the product sold.
-   *
-   * @param string $productSoldCustomAttribute1
+   * @param string
    */
   public function setProductSoldCustomAttribute1($productSoldCustomAttribute1)
   {
@@ -1542,9 +854,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productSoldCustomAttribute1;
   }
   /**
-   * Custom attribute 2 of the product sold.
-   *
-   * @param string $productSoldCustomAttribute2
+   * @param string
    */
   public function setProductSoldCustomAttribute2($productSoldCustomAttribute2)
   {
@@ -1558,9 +868,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productSoldCustomAttribute2;
   }
   /**
-   * Custom attribute 3 of the product sold.
-   *
-   * @param string $productSoldCustomAttribute3
+   * @param string
    */
   public function setProductSoldCustomAttribute3($productSoldCustomAttribute3)
   {
@@ -1574,9 +882,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productSoldCustomAttribute3;
   }
   /**
-   * Custom attribute 4 of the product sold.
-   *
-   * @param string $productSoldCustomAttribute4
+   * @param string
    */
   public function setProductSoldCustomAttribute4($productSoldCustomAttribute4)
   {
@@ -1590,9 +896,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productSoldCustomAttribute4;
   }
   /**
-   * Item ID of the product sold.
-   *
-   * @param string $productSoldItemId
+   * @param string
    */
   public function setProductSoldItemId($productSoldItemId)
   {
@@ -1606,9 +910,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productSoldItemId;
   }
   /**
-   * Title of the product sold.
-   *
-   * @param string $productSoldTitle
+   * @param string
    */
   public function setProductSoldTitle($productSoldTitle)
   {
@@ -1622,9 +924,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productSoldTitle;
   }
   /**
-   * Type (level 1) of the product sold.
-   *
-   * @param string $productSoldTypeL1
+   * @param string
    */
   public function setProductSoldTypeL1($productSoldTypeL1)
   {
@@ -1638,9 +938,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productSoldTypeL1;
   }
   /**
-   * Type (level 2) of the product sold.
-   *
-   * @param string $productSoldTypeL2
+   * @param string
    */
   public function setProductSoldTypeL2($productSoldTypeL2)
   {
@@ -1654,9 +952,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productSoldTypeL2;
   }
   /**
-   * Type (level 3) of the product sold.
-   *
-   * @param string $productSoldTypeL3
+   * @param string
    */
   public function setProductSoldTypeL3($productSoldTypeL3)
   {
@@ -1670,9 +966,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productSoldTypeL3;
   }
   /**
-   * Type (level 4) of the product sold.
-   *
-   * @param string $productSoldTypeL4
+   * @param string
    */
   public function setProductSoldTypeL4($productSoldTypeL4)
   {
@@ -1686,9 +980,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productSoldTypeL4;
   }
   /**
-   * Type (level 5) of the product sold.
-   *
-   * @param string $productSoldTypeL5
+   * @param string
    */
   public function setProductSoldTypeL5($productSoldTypeL5)
   {
@@ -1702,9 +994,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productSoldTypeL5;
   }
   /**
-   * Store ID of the product.
-   *
-   * @param string $productStoreId
+   * @param string
    */
   public function setProductStoreId($productStoreId)
   {
@@ -1718,9 +1008,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productStoreId;
   }
   /**
-   * Title of the product.
-   *
-   * @param string $productTitle
+   * @param string
    */
   public function setProductTitle($productTitle)
   {
@@ -1734,9 +1022,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productTitle;
   }
   /**
-   * Type (level 1) of the product.
-   *
-   * @param string $productTypeL1
+   * @param string
    */
   public function setProductTypeL1($productTypeL1)
   {
@@ -1750,9 +1036,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productTypeL1;
   }
   /**
-   * Type (level 2) of the product.
-   *
-   * @param string $productTypeL2
+   * @param string
    */
   public function setProductTypeL2($productTypeL2)
   {
@@ -1766,9 +1050,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productTypeL2;
   }
   /**
-   * Type (level 3) of the product.
-   *
-   * @param string $productTypeL3
+   * @param string
    */
   public function setProductTypeL3($productTypeL3)
   {
@@ -1782,9 +1064,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productTypeL3;
   }
   /**
-   * Type (level 4) of the product.
-   *
-   * @param string $productTypeL4
+   * @param string
    */
   public function setProductTypeL4($productTypeL4)
   {
@@ -1798,9 +1078,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productTypeL4;
   }
   /**
-   * Type (level 5) of the product.
-   *
-   * @param string $productTypeL5
+   * @param string
    */
   public function setProductTypeL5($productTypeL5)
   {
@@ -1814,11 +1092,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->productTypeL5;
   }
   /**
-   * Quarter as represented by the date of the first day of a quarter. Uses the
-   * calendar year for quarters, for example, the second quarter of 2018 starts
-   * on 2018-04-01. Formatted as yyyy-MM-dd.
-   *
-   * @param string $quarter
+   * @param string
    */
   public function setQuarter($quarter)
   {
@@ -1832,9 +1106,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->quarter;
   }
   /**
-   * The raw event conversion dimensions.
-   *
-   * @param GoogleAdsSearchads360V0CommonValue[] $rawEventConversionDimensions
+   * @param GoogleAdsSearchads360V0CommonValue[]
    */
   public function setRawEventConversionDimensions($rawEventConversionDimensions)
   {
@@ -1848,162 +1120,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->rawEventConversionDimensions;
   }
   /**
-   * The display names of participants in an event listing, like performers,
-   * speakers, or teams.
-   *
-   * @param string $verticalAdsEventParticipantDisplayNames
-   */
-  public function setVerticalAdsEventParticipantDisplayNames($verticalAdsEventParticipantDisplayNames)
-  {
-    $this->verticalAdsEventParticipantDisplayNames = $verticalAdsEventParticipantDisplayNames;
-  }
-  /**
-   * @return string
-   */
-  public function getVerticalAdsEventParticipantDisplayNames()
-  {
-    return $this->verticalAdsEventParticipantDisplayNames;
-  }
-  /**
-   * The class of the hotel. Generally in the range of 1 to 5 stars, but fully
-   * customizable in the hotel feed.
-   *
-   * @param string $verticalAdsHotelClass
-   */
-  public function setVerticalAdsHotelClass($verticalAdsHotelClass)
-  {
-    $this->verticalAdsHotelClass = $verticalAdsHotelClass;
-  }
-  /**
-   * @return string
-   */
-  public function getVerticalAdsHotelClass()
-  {
-    return $this->verticalAdsHotelClass;
-  }
-  /**
-   * The listing associated with a listing impression, click or conversion.
-   *
-   * @param string $verticalAdsListing
-   */
-  public function setVerticalAdsListing($verticalAdsListing)
-  {
-    $this->verticalAdsListing = $verticalAdsListing;
-  }
-  /**
-   * @return string
-   */
-  public function getVerticalAdsListing()
-  {
-    return $this->verticalAdsListing;
-  }
-  /**
-   * The brand associated with a specific listing within a Vertical Ads context,
-   * for example, the brand of a car rental, a vacation home, or an event.
-   *
-   * @param string $verticalAdsListingBrand
-   */
-  public function setVerticalAdsListingBrand($verticalAdsListingBrand)
-  {
-    $this->verticalAdsListingBrand = $verticalAdsListingBrand;
-  }
-  /**
-   * @return string
-   */
-  public function getVerticalAdsListingBrand()
-  {
-    return $this->verticalAdsListingBrand;
-  }
-  /**
-   * The city where the vertical ads listing is located.
-   *
-   * @param string $verticalAdsListingCity
-   */
-  public function setVerticalAdsListingCity($verticalAdsListingCity)
-  {
-    $this->verticalAdsListingCity = $verticalAdsListingCity;
-  }
-  /**
-   * @return string
-   */
-  public function getVerticalAdsListingCity()
-  {
-    return $this->verticalAdsListingCity;
-  }
-  /**
-   * The country where the vertical ads listing is located.
-   *
-   * @param string $verticalAdsListingCountry
-   */
-  public function setVerticalAdsListingCountry($verticalAdsListingCountry)
-  {
-    $this->verticalAdsListingCountry = $verticalAdsListingCountry;
-  }
-  /**
-   * @return string
-   */
-  public function getVerticalAdsListingCountry()
-  {
-    return $this->verticalAdsListingCountry;
-  }
-  /**
-   * The region where the vertical ads listing is located.
-   *
-   * @param string $verticalAdsListingRegion
-   */
-  public function setVerticalAdsListingRegion($verticalAdsListingRegion)
-  {
-    $this->verticalAdsListingRegion = $verticalAdsListingRegion;
-  }
-  /**
-   * @return string
-   */
-  public function getVerticalAdsListingRegion()
-  {
-    return $this->verticalAdsListingRegion;
-  }
-  /**
-   * A specific partner account within a Partner Center (for example, Hotel
-   * Center) that supplies inventory feed data for Vertical Ads.
-   *
-   * @param string $verticalAdsPartnerAccount
-   */
-  public function setVerticalAdsPartnerAccount($verticalAdsPartnerAccount)
-  {
-    $this->verticalAdsPartnerAccount = $verticalAdsPartnerAccount;
-  }
-  /**
-   * @return string
-   */
-  public function getVerticalAdsPartnerAccount()
-  {
-    return $this->verticalAdsPartnerAccount;
-  }
-  /**
-   * Type of vertical ad, such as Vacation Rentals, Car Rentals, or Events, used
-   * to categorize and segment data in the context of Vertical Ads.
-   *
-   * Accepted values: UNSPECIFIED, UNKNOWN, HOTELS, VACATION_RENTALS,
-   * RENTAL_CARS, EVENTS, THINGS_TO_DO, FLIGHTS
-   *
-   * @param self::VERTICAL_ADS_VERTICAL_* $verticalAdsVertical
-   */
-  public function setVerticalAdsVertical($verticalAdsVertical)
-  {
-    $this->verticalAdsVertical = $verticalAdsVertical;
-  }
-  /**
-   * @return self::VERTICAL_ADS_VERTICAL_*
-   */
-  public function getVerticalAdsVertical()
-  {
-    return $this->verticalAdsVertical;
-  }
-  /**
-   * Week as defined as Monday through Sunday, and represented by the date of
-   * Monday. Formatted as yyyy-MM-dd.
-   *
-   * @param string $week
+   * @param string
    */
   public function setWeek($week)
   {
@@ -2017,9 +1134,7 @@ class GoogleAdsSearchads360V0CommonSegments extends \Google\Collection
     return $this->week;
   }
   /**
-   * Year, formatted as yyyy.
-   *
-   * @param int $year
+   * @param int
    */
   public function setYear($year)
   {

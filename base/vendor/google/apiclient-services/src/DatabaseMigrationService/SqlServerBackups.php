@@ -20,24 +20,16 @@ namespace Google\Service\DatabaseMigrationService;
 class SqlServerBackups extends \Google\Model
 {
   /**
-   * Required. The Cloud Storage bucket that stores backups for all replicated
-   * databases.
-   *
    * @var string
    */
   public $gcsBucket;
   /**
-   * Optional. Cloud Storage path inside the bucket that stores backups.
-   *
    * @var string
    */
   public $gcsPrefix;
 
   /**
-   * Required. The Cloud Storage bucket that stores backups for all replicated
-   * databases.
-   *
-   * @param string $gcsBucket
+   * @param string
    */
   public function setGcsBucket($gcsBucket)
   {
@@ -51,9 +43,7 @@ class SqlServerBackups extends \Google\Model
     return $this->gcsBucket;
   }
   /**
-   * Optional. Cloud Storage path inside the bucket that stores backups.
-   *
-   * @param string $gcsPrefix
+   * @param string
    */
   public function setGcsPrefix($gcsPrefix)
   {

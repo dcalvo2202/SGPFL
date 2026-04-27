@@ -22,23 +22,16 @@ class RestartMigrationJobRequest extends \Google\Model
   protected $objectsFilterType = MigrationJobObjectsConfig::class;
   protected $objectsFilterDataType = '';
   /**
-   * Optional. If true, only failed objects will be restarted.
-   *
    * @var bool
    */
   public $restartFailedObjects;
   /**
-   * Optional. Restart the migration job without running prior configuration
-   * verification. Defaults to `false`.
-   *
    * @var bool
    */
   public $skipValidation;
 
   /**
-   * Optional. The object filter to apply to the migration job.
-   *
-   * @param MigrationJobObjectsConfig $objectsFilter
+   * @param MigrationJobObjectsConfig
    */
   public function setObjectsFilter(MigrationJobObjectsConfig $objectsFilter)
   {
@@ -52,9 +45,7 @@ class RestartMigrationJobRequest extends \Google\Model
     return $this->objectsFilter;
   }
   /**
-   * Optional. If true, only failed objects will be restarted.
-   *
-   * @param bool $restartFailedObjects
+   * @param bool
    */
   public function setRestartFailedObjects($restartFailedObjects)
   {
@@ -68,10 +59,7 @@ class RestartMigrationJobRequest extends \Google\Model
     return $this->restartFailedObjects;
   }
   /**
-   * Optional. Restart the migration job without running prior configuration
-   * verification. Defaults to `false`.
-   *
-   * @param bool $skipValidation
+   * @param bool
    */
   public function setSkipValidation($skipValidation)
   {

@@ -23,16 +23,12 @@ class GoogleCloudIntegrationsV1alphaListIntegrationsResponse extends \Google\Col
   protected $integrationsType = GoogleCloudIntegrationsV1alphaIntegration::class;
   protected $integrationsDataType = 'array';
   /**
-   * The next page token for the response.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The integrations which match the request.
-   *
-   * @param GoogleCloudIntegrationsV1alphaIntegration[] $integrations
+   * @param GoogleCloudIntegrationsV1alphaIntegration[]
    */
   public function setIntegrations($integrations)
   {
@@ -46,9 +42,7 @@ class GoogleCloudIntegrationsV1alphaListIntegrationsResponse extends \Google\Col
     return $this->integrations;
   }
   /**
-   * The next page token for the response.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

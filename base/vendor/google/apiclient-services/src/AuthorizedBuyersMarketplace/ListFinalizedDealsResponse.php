@@ -23,16 +23,12 @@ class ListFinalizedDealsResponse extends \Google\Collection
   protected $finalizedDealsType = FinalizedDeal::class;
   protected $finalizedDealsDataType = 'array';
   /**
-   * Token to fetch the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of finalized deals.
-   *
-   * @param FinalizedDeal[] $finalizedDeals
+   * @param FinalizedDeal[]
    */
   public function setFinalizedDeals($finalizedDeals)
   {
@@ -46,9 +42,7 @@ class ListFinalizedDealsResponse extends \Google\Collection
     return $this->finalizedDeals;
   }
   /**
-   * Token to fetch the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

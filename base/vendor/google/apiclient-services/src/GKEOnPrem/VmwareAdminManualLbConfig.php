@@ -20,44 +20,28 @@ namespace Google\Service\GKEOnPrem;
 class VmwareAdminManualLbConfig extends \Google\Model
 {
   /**
-   * NodePort for add-ons server in the admin cluster.
-   *
    * @var int
    */
   public $addonsNodePort;
   /**
-   * NodePort for control plane service. The Kubernetes API server in the admin
-   * cluster is implemented as a Service of type NodePort (ex. 30968).
-   *
    * @var int
    */
   public $controlPlaneNodePort;
   /**
-   * NodePort for ingress service's http. The ingress service in the admin
-   * cluster is implemented as a Service of type NodePort (ex. 32527).
-   *
    * @var int
    */
   public $ingressHttpNodePort;
   /**
-   * NodePort for ingress service's https. The ingress service in the admin
-   * cluster is implemented as a Service of type NodePort (ex. 30139).
-   *
    * @var int
    */
   public $ingressHttpsNodePort;
   /**
-   * NodePort for konnectivity server service running as a sidecar in each kube-
-   * apiserver pod (ex. 30564).
-   *
    * @var int
    */
   public $konnectivityServerNodePort;
 
   /**
-   * NodePort for add-ons server in the admin cluster.
-   *
-   * @param int $addonsNodePort
+   * @param int
    */
   public function setAddonsNodePort($addonsNodePort)
   {
@@ -71,10 +55,7 @@ class VmwareAdminManualLbConfig extends \Google\Model
     return $this->addonsNodePort;
   }
   /**
-   * NodePort for control plane service. The Kubernetes API server in the admin
-   * cluster is implemented as a Service of type NodePort (ex. 30968).
-   *
-   * @param int $controlPlaneNodePort
+   * @param int
    */
   public function setControlPlaneNodePort($controlPlaneNodePort)
   {
@@ -88,10 +69,7 @@ class VmwareAdminManualLbConfig extends \Google\Model
     return $this->controlPlaneNodePort;
   }
   /**
-   * NodePort for ingress service's http. The ingress service in the admin
-   * cluster is implemented as a Service of type NodePort (ex. 32527).
-   *
-   * @param int $ingressHttpNodePort
+   * @param int
    */
   public function setIngressHttpNodePort($ingressHttpNodePort)
   {
@@ -105,10 +83,7 @@ class VmwareAdminManualLbConfig extends \Google\Model
     return $this->ingressHttpNodePort;
   }
   /**
-   * NodePort for ingress service's https. The ingress service in the admin
-   * cluster is implemented as a Service of type NodePort (ex. 30139).
-   *
-   * @param int $ingressHttpsNodePort
+   * @param int
    */
   public function setIngressHttpsNodePort($ingressHttpsNodePort)
   {
@@ -122,10 +97,7 @@ class VmwareAdminManualLbConfig extends \Google\Model
     return $this->ingressHttpsNodePort;
   }
   /**
-   * NodePort for konnectivity server service running as a sidecar in each kube-
-   * apiserver pod (ex. 30564).
-   *
-   * @param int $konnectivityServerNodePort
+   * @param int
    */
   public function setKonnectivityServerNodePort($konnectivityServerNodePort)
   {

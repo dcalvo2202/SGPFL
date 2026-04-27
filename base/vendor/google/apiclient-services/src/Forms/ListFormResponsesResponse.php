@@ -21,9 +21,6 @@ class ListFormResponsesResponse extends \Google\Collection
 {
   protected $collection_key = 'responses';
   /**
-   * If set, there are more responses. To get the next page of responses,
-   * provide this as `page_token` in a future request.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListFormResponsesResponse extends \Google\Collection
   protected $responsesDataType = 'array';
 
   /**
-   * If set, there are more responses. To get the next page of responses,
-   * provide this as `page_token` in a future request.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,10 +42,7 @@ class ListFormResponsesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The returned form responses. Note: The `formId` field is not returned in
-   * the `FormResponse` object for list requests.
-   *
-   * @param FormResponse[] $responses
+   * @param FormResponse[]
    */
   public function setResponses($responses)
   {

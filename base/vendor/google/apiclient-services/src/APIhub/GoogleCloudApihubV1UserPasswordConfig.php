@@ -22,18 +22,12 @@ class GoogleCloudApihubV1UserPasswordConfig extends \Google\Model
   protected $passwordType = GoogleCloudApihubV1Secret::class;
   protected $passwordDataType = '';
   /**
-   * Required. Username.
-   *
    * @var string
    */
   public $username;
 
   /**
-   * Required. Secret version reference containing the password. The
-   * `secretmanager.versions.access` permission should be granted to the service
-   * account accessing the secret.
-   *
-   * @param GoogleCloudApihubV1Secret $password
+   * @param GoogleCloudApihubV1Secret
    */
   public function setPassword(GoogleCloudApihubV1Secret $password)
   {
@@ -47,9 +41,7 @@ class GoogleCloudApihubV1UserPasswordConfig extends \Google\Model
     return $this->password;
   }
   /**
-   * Required. Username.
-   *
-   * @param string $username
+   * @param string
    */
   public function setUsername($username)
   {

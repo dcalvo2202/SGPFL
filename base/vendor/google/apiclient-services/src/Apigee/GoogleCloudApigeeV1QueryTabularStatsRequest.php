@@ -21,31 +21,20 @@ class GoogleCloudApigeeV1QueryTabularStatsRequest extends \Google\Collection
 {
   protected $collection_key = 'metrics';
   /**
-   * Required. List of dimension names to group the aggregations by.
-   *
    * @var string[]
    */
   public $dimensions;
   /**
-   * Filter further on specific dimension values. Follows the same grammar as
-   * custom report's filter expressions. Example, apiproxy eq 'foobar'.
-   * https://cloud.google.com/apigee/docs/api-platform/analytics/analytics-
-   * reference#filters
-   *
    * @var string
    */
   public $filter;
   protected $metricsType = GoogleCloudApigeeV1MetricAggregation::class;
   protected $metricsDataType = 'array';
   /**
-   * Page size represents the number of rows.
-   *
    * @var int
    */
   public $pageSize;
   /**
-   * Identifies a sequence of rows.
-   *
    * @var string
    */
   public $pageToken;
@@ -53,9 +42,7 @@ class GoogleCloudApigeeV1QueryTabularStatsRequest extends \Google\Collection
   protected $timeRangeDataType = '';
 
   /**
-   * Required. List of dimension names to group the aggregations by.
-   *
-   * @param string[] $dimensions
+   * @param string[]
    */
   public function setDimensions($dimensions)
   {
@@ -69,12 +56,7 @@ class GoogleCloudApigeeV1QueryTabularStatsRequest extends \Google\Collection
     return $this->dimensions;
   }
   /**
-   * Filter further on specific dimension values. Follows the same grammar as
-   * custom report's filter expressions. Example, apiproxy eq 'foobar'.
-   * https://cloud.google.com/apigee/docs/api-platform/analytics/analytics-
-   * reference#filters
-   *
-   * @param string $filter
+   * @param string
    */
   public function setFilter($filter)
   {
@@ -88,9 +70,7 @@ class GoogleCloudApigeeV1QueryTabularStatsRequest extends \Google\Collection
     return $this->filter;
   }
   /**
-   * Required. List of metrics and their aggregations.
-   *
-   * @param GoogleCloudApigeeV1MetricAggregation[] $metrics
+   * @param GoogleCloudApigeeV1MetricAggregation[]
    */
   public function setMetrics($metrics)
   {
@@ -104,9 +84,7 @@ class GoogleCloudApigeeV1QueryTabularStatsRequest extends \Google\Collection
     return $this->metrics;
   }
   /**
-   * Page size represents the number of rows.
-   *
-   * @param int $pageSize
+   * @param int
    */
   public function setPageSize($pageSize)
   {
@@ -120,9 +98,7 @@ class GoogleCloudApigeeV1QueryTabularStatsRequest extends \Google\Collection
     return $this->pageSize;
   }
   /**
-   * Identifies a sequence of rows.
-   *
-   * @param string $pageToken
+   * @param string
    */
   public function setPageToken($pageToken)
   {
@@ -136,9 +112,7 @@ class GoogleCloudApigeeV1QueryTabularStatsRequest extends \Google\Collection
     return $this->pageToken;
   }
   /**
-   * Time range for the stats.
-   *
-   * @param GoogleTypeInterval $timeRange
+   * @param GoogleTypeInterval
    */
   public function setTimeRange(GoogleTypeInterval $timeRange)
   {

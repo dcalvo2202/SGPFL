@@ -20,14 +20,10 @@ namespace Google\Service\DriveActivity;
 class FieldValueChange extends \Google\Model
 {
   /**
-   * The human-readable display name for this field.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * The ID of this field. Field IDs are unique within a Label.
-   *
    * @var string
    */
   public $fieldId;
@@ -37,9 +33,7 @@ class FieldValueChange extends \Google\Model
   protected $oldValueDataType = '';
 
   /**
-   * The human-readable display name for this field.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -53,9 +47,7 @@ class FieldValueChange extends \Google\Model
     return $this->displayName;
   }
   /**
-   * The ID of this field. Field IDs are unique within a Label.
-   *
-   * @param string $fieldId
+   * @param string
    */
   public function setFieldId($fieldId)
   {
@@ -69,10 +61,7 @@ class FieldValueChange extends \Google\Model
     return $this->fieldId;
   }
   /**
-   * The value that is now set on the field. If not present, the field was
-   * cleared. At least one of {old_value|new_value} is always set.
-   *
-   * @param FieldValue $newValue
+   * @param FieldValue
    */
   public function setNewValue(FieldValue $newValue)
   {
@@ -86,10 +75,7 @@ class FieldValueChange extends \Google\Model
     return $this->newValue;
   }
   /**
-   * The value that was previously set on the field. If not present, the field
-   * was newly set. At least one of {old_value|new_value} is always set.
-   *
-   * @param FieldValue $oldValue
+   * @param FieldValue
    */
   public function setOldValue(FieldValue $oldValue)
   {

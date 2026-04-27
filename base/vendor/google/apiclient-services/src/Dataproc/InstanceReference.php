@@ -20,34 +20,24 @@ namespace Google\Service\Dataproc;
 class InstanceReference extends \Google\Model
 {
   /**
-   * The unique identifier of the Compute Engine instance.
-   *
    * @var string
    */
   public $instanceId;
   /**
-   * The user-friendly name of the Compute Engine instance.
-   *
    * @var string
    */
   public $instanceName;
   /**
-   * The public ECIES key used for sharing data with this instance.
-   *
    * @var string
    */
   public $publicEciesKey;
   /**
-   * The public RSA key used for sharing data with this instance.
-   *
    * @var string
    */
   public $publicKey;
 
   /**
-   * The unique identifier of the Compute Engine instance.
-   *
-   * @param string $instanceId
+   * @param string
    */
   public function setInstanceId($instanceId)
   {
@@ -61,9 +51,7 @@ class InstanceReference extends \Google\Model
     return $this->instanceId;
   }
   /**
-   * The user-friendly name of the Compute Engine instance.
-   *
-   * @param string $instanceName
+   * @param string
    */
   public function setInstanceName($instanceName)
   {
@@ -77,9 +65,7 @@ class InstanceReference extends \Google\Model
     return $this->instanceName;
   }
   /**
-   * The public ECIES key used for sharing data with this instance.
-   *
-   * @param string $publicEciesKey
+   * @param string
    */
   public function setPublicEciesKey($publicEciesKey)
   {
@@ -93,9 +79,7 @@ class InstanceReference extends \Google\Model
     return $this->publicEciesKey;
   }
   /**
-   * The public RSA key used for sharing data with this instance.
-   *
-   * @param string $publicKey
+   * @param string
    */
   public function setPublicKey($publicKey)
   {

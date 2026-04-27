@@ -23,9 +23,7 @@ class RepositoryConfig extends \Google\Model
   protected $pypiRepositoryConfigDataType = '';
 
   /**
-   * Optional. Configuration for PyPi repository.
-   *
-   * @param PyPiRepositoryConfig $pypiRepositoryConfig
+   * @param PyPiRepositoryConfig
    */
   public function setPypiRepositoryConfig(PyPiRepositoryConfig $pypiRepositoryConfig)
   {

@@ -23,17 +23,12 @@ class ListAdUnitsResponse extends \Google\Collection
   protected $adUnitsType = AdUnit::class;
   protected $adUnitsDataType = 'array';
   /**
-   * If not empty, indicates that there may be more ad units for the request;
-   * this value should be passed in a new `ListAdUnitsRequest`.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The resulting ad units for the requested account.
-   *
-   * @param AdUnit[] $adUnits
+   * @param AdUnit[]
    */
   public function setAdUnits($adUnits)
   {
@@ -47,10 +42,7 @@ class ListAdUnitsResponse extends \Google\Collection
     return $this->adUnits;
   }
   /**
-   * If not empty, indicates that there may be more ad units for the request;
-   * this value should be passed in a new `ListAdUnitsRequest`.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

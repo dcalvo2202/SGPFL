@@ -44,10 +44,7 @@ class JobConfig extends \Google\Collection
   protected $spriteSheetsDataType = 'array';
 
   /**
-   * List of ad breaks. Specifies where to insert ad break tags in the output
-   * manifests.
-   *
-   * @param AdBreak[] $adBreaks
+   * @param AdBreak[]
    */
   public function setAdBreaks($adBreaks)
   {
@@ -61,10 +58,7 @@ class JobConfig extends \Google\Collection
     return $this->adBreaks;
   }
   /**
-   * List of edit atoms. Defines the ultimate timeline of the resulting file or
-   * manifest.
-   *
-   * @param EditAtom[] $editList
+   * @param EditAtom[]
    */
   public function setEditList($editList)
   {
@@ -78,9 +72,7 @@ class JobConfig extends \Google\Collection
     return $this->editList;
   }
   /**
-   * List of elementary streams.
-   *
-   * @param ElementaryStream[] $elementaryStreams
+   * @param ElementaryStream[]
    */
   public function setElementaryStreams($elementaryStreams)
   {
@@ -94,11 +86,7 @@ class JobConfig extends \Google\Collection
     return $this->elementaryStreams;
   }
   /**
-   * List of encryption configurations for the content. Each configuration has
-   * an ID. Specify this ID in the MuxStream.encryption_id field to indicate the
-   * configuration to use for that `MuxStream` output.
-   *
-   * @param Encryption[] $encryptions
+   * @param Encryption[]
    */
   public function setEncryptions($encryptions)
   {
@@ -112,9 +100,7 @@ class JobConfig extends \Google\Collection
     return $this->encryptions;
   }
   /**
-   * List of input assets stored in Cloud Storage.
-   *
-   * @param Input[] $inputs
+   * @param Input[]
    */
   public function setInputs($inputs)
   {
@@ -128,9 +114,7 @@ class JobConfig extends \Google\Collection
     return $this->inputs;
   }
   /**
-   * List of output manifests.
-   *
-   * @param Manifest[] $manifests
+   * @param Manifest[]
    */
   public function setManifests($manifests)
   {
@@ -144,9 +128,7 @@ class JobConfig extends \Google\Collection
     return $this->manifests;
   }
   /**
-   * List of multiplexing settings for output streams.
-   *
-   * @param MuxStream[] $muxStreams
+   * @param MuxStream[]
    */
   public function setMuxStreams($muxStreams)
   {
@@ -160,9 +142,7 @@ class JobConfig extends \Google\Collection
     return $this->muxStreams;
   }
   /**
-   * Output configuration.
-   *
-   * @param Output $output
+   * @param Output
    */
   public function setOutput(Output $output)
   {
@@ -176,9 +156,7 @@ class JobConfig extends \Google\Collection
     return $this->output;
   }
   /**
-   * List of overlays on the output video, in descending Z-order.
-   *
-   * @param Overlay[] $overlays
+   * @param Overlay[]
    */
   public function setOverlays($overlays)
   {
@@ -192,9 +170,7 @@ class JobConfig extends \Google\Collection
     return $this->overlays;
   }
   /**
-   * Destination on Pub/Sub.
-   *
-   * @param PubsubDestination $pubsubDestination
+   * @param PubsubDestination
    */
   public function setPubsubDestination(PubsubDestination $pubsubDestination)
   {
@@ -208,10 +184,7 @@ class JobConfig extends \Google\Collection
     return $this->pubsubDestination;
   }
   /**
-   * List of output sprite sheets. Spritesheets require at least one VideoStream
-   * in the Jobconfig.
-   *
-   * @param SpriteSheet[] $spriteSheets
+   * @param SpriteSheet[]
    */
   public function setSpriteSheets($spriteSheets)
   {

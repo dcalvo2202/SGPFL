@@ -26,10 +26,7 @@ class StepTemplate extends \Google\Collection
   protected $volumeMountsDataType = 'array';
 
   /**
-   * Optional. List of environment variables to set in the Step. Cannot be
-   * updated.
-   *
-   * @param EnvVar[] $env
+   * @param EnvVar[]
    */
   public function setEnv($env)
   {
@@ -43,9 +40,7 @@ class StepTemplate extends \Google\Collection
     return $this->env;
   }
   /**
-   * Optional. Pod volumes to mount into the container's filesystem.
-   *
-   * @param VolumeMount[] $volumeMounts
+   * @param VolumeMount[]
    */
   public function setVolumeMounts($volumeMounts)
   {

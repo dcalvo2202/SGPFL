@@ -20,40 +20,28 @@ namespace Google\Service\Docs;
 class CropPropertiesSuggestionState extends \Google\Model
 {
   /**
-   * Indicates if there was a suggested change to angle.
-   *
    * @var bool
    */
   public $angleSuggested;
   /**
-   * Indicates if there was a suggested change to offset_bottom.
-   *
    * @var bool
    */
   public $offsetBottomSuggested;
   /**
-   * Indicates if there was a suggested change to offset_left.
-   *
    * @var bool
    */
   public $offsetLeftSuggested;
   /**
-   * Indicates if there was a suggested change to offset_right.
-   *
    * @var bool
    */
   public $offsetRightSuggested;
   /**
-   * Indicates if there was a suggested change to offset_top.
-   *
    * @var bool
    */
   public $offsetTopSuggested;
 
   /**
-   * Indicates if there was a suggested change to angle.
-   *
-   * @param bool $angleSuggested
+   * @param bool
    */
   public function setAngleSuggested($angleSuggested)
   {
@@ -67,9 +55,7 @@ class CropPropertiesSuggestionState extends \Google\Model
     return $this->angleSuggested;
   }
   /**
-   * Indicates if there was a suggested change to offset_bottom.
-   *
-   * @param bool $offsetBottomSuggested
+   * @param bool
    */
   public function setOffsetBottomSuggested($offsetBottomSuggested)
   {
@@ -83,9 +69,7 @@ class CropPropertiesSuggestionState extends \Google\Model
     return $this->offsetBottomSuggested;
   }
   /**
-   * Indicates if there was a suggested change to offset_left.
-   *
-   * @param bool $offsetLeftSuggested
+   * @param bool
    */
   public function setOffsetLeftSuggested($offsetLeftSuggested)
   {
@@ -99,9 +83,7 @@ class CropPropertiesSuggestionState extends \Google\Model
     return $this->offsetLeftSuggested;
   }
   /**
-   * Indicates if there was a suggested change to offset_right.
-   *
-   * @param bool $offsetRightSuggested
+   * @param bool
    */
   public function setOffsetRightSuggested($offsetRightSuggested)
   {
@@ -115,9 +97,7 @@ class CropPropertiesSuggestionState extends \Google\Model
     return $this->offsetRightSuggested;
   }
   /**
-   * Indicates if there was a suggested change to offset_top.
-   *
-   * @param bool $offsetTopSuggested
+   * @param bool
    */
   public function setOffsetTopSuggested($offsetTopSuggested)
   {

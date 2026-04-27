@@ -23,22 +23,16 @@ class ListEvaluationsResponse extends \Google\Collection
   protected $evaluationsType = Evaluation::class;
   protected $evaluationsDataType = 'array';
   /**
-   * A token identifying a page of results the server should return.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * The list of evaluations.
-   *
-   * @param Evaluation[] $evaluations
+   * @param Evaluation[]
    */
   public function setEvaluations($evaluations)
   {
@@ -52,9 +46,7 @@ class ListEvaluationsResponse extends \Google\Collection
     return $this->evaluations;
   }
   /**
-   * A token identifying a page of results the server should return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -68,9 +60,7 @@ class ListEvaluationsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

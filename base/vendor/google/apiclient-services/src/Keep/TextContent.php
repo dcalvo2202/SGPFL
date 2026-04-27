@@ -20,18 +20,12 @@ namespace Google\Service\Keep;
 class TextContent extends \Google\Model
 {
   /**
-   * The text of the note. The limits on this vary with the specific field using
-   * this type.
-   *
    * @var string
    */
   public $text;
 
   /**
-   * The text of the note. The limits on this vary with the specific field using
-   * this type.
-   *
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {

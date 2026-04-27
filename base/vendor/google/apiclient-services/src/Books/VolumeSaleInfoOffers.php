@@ -20,14 +20,10 @@ namespace Google\Service\Books;
 class VolumeSaleInfoOffers extends \Google\Model
 {
   /**
-   * The finsky offer type (e.g., PURCHASE=0 RENTAL=3)
-   *
    * @var int
    */
   public $finskyOfferType;
   /**
-   * Indicates whether the offer is giftable.
-   *
    * @var bool
    */
   public $giftable;
@@ -39,9 +35,7 @@ class VolumeSaleInfoOffers extends \Google\Model
   protected $retailPriceDataType = '';
 
   /**
-   * The finsky offer type (e.g., PURCHASE=0 RENTAL=3)
-   *
-   * @param int $finskyOfferType
+   * @param int
    */
   public function setFinskyOfferType($finskyOfferType)
   {
@@ -55,9 +49,7 @@ class VolumeSaleInfoOffers extends \Google\Model
     return $this->finskyOfferType;
   }
   /**
-   * Indicates whether the offer is giftable.
-   *
-   * @param bool $giftable
+   * @param bool
    */
   public function setGiftable($giftable)
   {
@@ -71,9 +63,7 @@ class VolumeSaleInfoOffers extends \Google\Model
     return $this->giftable;
   }
   /**
-   * Offer list (=undiscounted) price in Micros.
-   *
-   * @param VolumeSaleInfoOffersListPrice $listPrice
+   * @param VolumeSaleInfoOffersListPrice
    */
   public function setListPrice(VolumeSaleInfoOffersListPrice $listPrice)
   {
@@ -87,9 +77,7 @@ class VolumeSaleInfoOffers extends \Google\Model
     return $this->listPrice;
   }
   /**
-   * The rental duration (for rental offers only).
-   *
-   * @param VolumeSaleInfoOffersRentalDuration $rentalDuration
+   * @param VolumeSaleInfoOffersRentalDuration
    */
   public function setRentalDuration(VolumeSaleInfoOffersRentalDuration $rentalDuration)
   {
@@ -103,9 +91,7 @@ class VolumeSaleInfoOffers extends \Google\Model
     return $this->rentalDuration;
   }
   /**
-   * Offer retail (=discounted) price in Micros
-   *
-   * @param VolumeSaleInfoOffersRetailPrice $retailPrice
+   * @param VolumeSaleInfoOffersRetailPrice
    */
   public function setRetailPrice(VolumeSaleInfoOffersRetailPrice $retailPrice)
   {

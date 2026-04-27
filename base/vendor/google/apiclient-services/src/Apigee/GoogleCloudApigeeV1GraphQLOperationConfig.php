@@ -21,9 +21,6 @@ class GoogleCloudApigeeV1GraphQLOperationConfig extends \Google\Collection
 {
   protected $collection_key = 'operations';
   /**
-   * Required. Name of the API proxy endpoint or remote service with which the
-   * GraphQL operation and quota are associated.
-   *
    * @var string
    */
   public $apiSource;
@@ -35,10 +32,7 @@ class GoogleCloudApigeeV1GraphQLOperationConfig extends \Google\Collection
   protected $quotaDataType = '';
 
   /**
-   * Required. Name of the API proxy endpoint or remote service with which the
-   * GraphQL operation and quota are associated.
-   *
-   * @param string $apiSource
+   * @param string
    */
   public function setApiSource($apiSource)
   {
@@ -52,9 +46,7 @@ class GoogleCloudApigeeV1GraphQLOperationConfig extends \Google\Collection
     return $this->apiSource;
   }
   /**
-   * Custom attributes associated with the operation.
-   *
-   * @param GoogleCloudApigeeV1Attribute[] $attributes
+   * @param GoogleCloudApigeeV1Attribute[]
    */
   public function setAttributes($attributes)
   {
@@ -68,14 +60,7 @@ class GoogleCloudApigeeV1GraphQLOperationConfig extends \Google\Collection
     return $this->attributes;
   }
   /**
-   * Required. List of GraphQL name/operation type pairs for the proxy or remote
-   * service to which quota will be applied. If only operation types are
-   * specified, the quota will be applied to all GraphQL requests irrespective
-   * of the GraphQL name. **Note**: Currently, you can specify only a single
-   * GraphQLOperation. Specifying more than one will cause the operation to
-   * fail.
-   *
-   * @param GoogleCloudApigeeV1GraphQLOperation[] $operations
+   * @param GoogleCloudApigeeV1GraphQLOperation[]
    */
   public function setOperations($operations)
   {
@@ -89,10 +74,7 @@ class GoogleCloudApigeeV1GraphQLOperationConfig extends \Google\Collection
     return $this->operations;
   }
   /**
-   * Quota parameters to be enforced for the resources, methods, and API source
-   * combination. If none are specified, quota enforcement will not be done.
-   *
-   * @param GoogleCloudApigeeV1Quota $quota
+   * @param GoogleCloudApigeeV1Quota
    */
   public function setQuota(GoogleCloudApigeeV1Quota $quota)
   {

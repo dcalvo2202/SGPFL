@@ -20,23 +20,16 @@ namespace Google\Service\Contentwarehouse;
 class CloudAiPlatformTenantresourceTenantServiceAccountIdentity extends \Google\Model
 {
   /**
-   * Output only. The email address of the generated service account.
-   *
    * @var string
    */
   public $serviceAccountEmail;
   /**
-   * Input/Output [Required]. The service that the service account belongs to.
-   * (e.g. cloudbuild.googleapis.com for GCB service accounts)
-   *
    * @var string
    */
   public $serviceName;
 
   /**
-   * Output only. The email address of the generated service account.
-   *
-   * @param string $serviceAccountEmail
+   * @param string
    */
   public function setServiceAccountEmail($serviceAccountEmail)
   {
@@ -50,10 +43,7 @@ class CloudAiPlatformTenantresourceTenantServiceAccountIdentity extends \Google\
     return $this->serviceAccountEmail;
   }
   /**
-   * Input/Output [Required]. The service that the service account belongs to.
-   * (e.g. cloudbuild.googleapis.com for GCB service accounts)
-   *
-   * @param string $serviceName
+   * @param string
    */
   public function setServiceName($serviceName)
   {

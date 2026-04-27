@@ -20,91 +20,38 @@ namespace Google\Service\CloudMemorystoreforMemcached;
 class Node extends \Google\Model
 {
   /**
-   * Memcache version is not specified by customer
-   */
-  public const MEMCACHE_VERSION_MEMCACHE_VERSION_UNSPECIFIED = 'MEMCACHE_VERSION_UNSPECIFIED';
-  /**
-   * Memcached 1.5 version.
-   */
-  public const MEMCACHE_VERSION_MEMCACHE_1_5 = 'MEMCACHE_1_5';
-  /**
-   * Memcached 1.6.15 version.
-   */
-  public const MEMCACHE_VERSION_MEMCACHE_1_6_15 = 'MEMCACHE_1_6_15';
-  /**
-   * Node state is not set.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Node is being created.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * Node has been created and ready to be used.
-   */
-  public const STATE_READY = 'READY';
-  /**
-   * Node is being deleted.
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * Node is being updated.
-   */
-  public const STATE_UPDATING = 'UPDATING';
-  /**
-   * Output only. Hostname or IP address of the Memcached node used by the
-   * clients to connect to the Memcached server on this node.
-   *
    * @var string
    */
   public $host;
   /**
-   * Output only. The full version of memcached server running on this node.
-   * e.g. - memcached-1.5.16
-   *
    * @var string
    */
   public $memcacheFullVersion;
   /**
-   * Output only. Major version of memcached server running on this node, e.g.
-   * MEMCACHE_1_5
-   *
    * @var string
    */
   public $memcacheVersion;
   /**
-   * Output only. Identifier of the Memcached node. The node id does not include
-   * project or location like the Memcached instance name.
-   *
    * @var string
    */
   public $nodeId;
   protected $parametersType = MemcacheParameters::class;
   protected $parametersDataType = '';
   /**
-   * Output only. The port number of the Memcached server on this node.
-   *
    * @var int
    */
   public $port;
   /**
-   * Output only. Current state of the Memcached node.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. Location (GCP Zone) for the Memcached node.
-   *
    * @var string
    */
   public $zone;
 
   /**
-   * Output only. Hostname or IP address of the Memcached node used by the
-   * clients to connect to the Memcached server on this node.
-   *
-   * @param string $host
+   * @param string
    */
   public function setHost($host)
   {
@@ -118,10 +65,7 @@ class Node extends \Google\Model
     return $this->host;
   }
   /**
-   * Output only. The full version of memcached server running on this node.
-   * e.g. - memcached-1.5.16
-   *
-   * @param string $memcacheFullVersion
+   * @param string
    */
   public function setMemcacheFullVersion($memcacheFullVersion)
   {
@@ -135,30 +79,21 @@ class Node extends \Google\Model
     return $this->memcacheFullVersion;
   }
   /**
-   * Output only. Major version of memcached server running on this node, e.g.
-   * MEMCACHE_1_5
-   *
-   * Accepted values: MEMCACHE_VERSION_UNSPECIFIED, MEMCACHE_1_5,
-   * MEMCACHE_1_6_15
-   *
-   * @param self::MEMCACHE_VERSION_* $memcacheVersion
+   * @param string
    */
   public function setMemcacheVersion($memcacheVersion)
   {
     $this->memcacheVersion = $memcacheVersion;
   }
   /**
-   * @return self::MEMCACHE_VERSION_*
+   * @return string
    */
   public function getMemcacheVersion()
   {
     return $this->memcacheVersion;
   }
   /**
-   * Output only. Identifier of the Memcached node. The node id does not include
-   * project or location like the Memcached instance name.
-   *
-   * @param string $nodeId
+   * @param string
    */
   public function setNodeId($nodeId)
   {
@@ -172,9 +107,7 @@ class Node extends \Google\Model
     return $this->nodeId;
   }
   /**
-   * User defined parameters currently applied to the node.
-   *
-   * @param MemcacheParameters $parameters
+   * @param MemcacheParameters
    */
   public function setParameters(MemcacheParameters $parameters)
   {
@@ -188,9 +121,7 @@ class Node extends \Google\Model
     return $this->parameters;
   }
   /**
-   * Output only. The port number of the Memcached server on this node.
-   *
-   * @param int $port
+   * @param int
    */
   public function setPort($port)
   {
@@ -204,27 +135,21 @@ class Node extends \Google\Model
     return $this->port;
   }
   /**
-   * Output only. Current state of the Memcached node.
-   *
-   * Accepted values: STATE_UNSPECIFIED, CREATING, READY, DELETING, UPDATING
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. Location (GCP Zone) for the Memcached node.
-   *
-   * @param string $zone
+   * @param string
    */
   public function setZone($zone)
   {

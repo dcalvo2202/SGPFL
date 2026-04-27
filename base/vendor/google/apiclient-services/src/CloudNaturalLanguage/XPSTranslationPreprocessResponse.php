@@ -20,22 +20,16 @@ namespace Google\Service\CloudNaturalLanguage;
 class XPSTranslationPreprocessResponse extends \Google\Model
 {
   /**
-   * Total example count parsed.
-   *
    * @var string
    */
   public $parsedExampleCount;
   /**
-   * Total valid example count.
-   *
    * @var string
    */
   public $validExampleCount;
 
   /**
-   * Total example count parsed.
-   *
-   * @param string $parsedExampleCount
+   * @param string
    */
   public function setParsedExampleCount($parsedExampleCount)
   {
@@ -49,9 +43,7 @@ class XPSTranslationPreprocessResponse extends \Google\Model
     return $this->parsedExampleCount;
   }
   /**
-   * Total valid example count.
-   *
-   * @param string $validExampleCount
+   * @param string
    */
   public function setValidExampleCount($validExampleCount)
   {

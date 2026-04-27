@@ -26,9 +26,7 @@ class TimeSeriesDescriptor extends \Google\Collection
   protected $pointDescriptorsDataType = 'array';
 
   /**
-   * Descriptors for the labels.
-   *
-   * @param LabelDescriptor[] $labelDescriptors
+   * @param LabelDescriptor[]
    */
   public function setLabelDescriptors($labelDescriptors)
   {
@@ -42,9 +40,7 @@ class TimeSeriesDescriptor extends \Google\Collection
     return $this->labelDescriptors;
   }
   /**
-   * Descriptors for the point data value columns.
-   *
-   * @param ValueDescriptor[] $pointDescriptors
+   * @param ValueDescriptor[]
    */
   public function setPointDescriptors($pointDescriptors)
   {

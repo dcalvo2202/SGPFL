@@ -20,24 +20,16 @@ namespace Google\Service\SmartDeviceManagement;
 class GoogleHomeEnterpriseSdmV1ExecuteDeviceCommandRequest extends \Google\Model
 {
   /**
-   * The command name to execute, represented by the fully qualified protobuf
-   * message name.
-   *
    * @var string
    */
   public $command;
   /**
-   * The command message to execute, represented as a Struct.
-   *
    * @var array[]
    */
   public $params;
 
   /**
-   * The command name to execute, represented by the fully qualified protobuf
-   * message name.
-   *
-   * @param string $command
+   * @param string
    */
   public function setCommand($command)
   {
@@ -51,9 +43,7 @@ class GoogleHomeEnterpriseSdmV1ExecuteDeviceCommandRequest extends \Google\Model
     return $this->command;
   }
   /**
-   * The command message to execute, represented as a Struct.
-   *
-   * @param array[] $params
+   * @param array[]
    */
   public function setParams($params)
   {

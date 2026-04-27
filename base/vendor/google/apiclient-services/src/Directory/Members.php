@@ -21,30 +21,22 @@ class Members extends \Google\Collection
 {
   protected $collection_key = 'members';
   /**
-   * ETag of the resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Kind of resource this is.
-   *
    * @var string
    */
   public $kind;
   protected $membersType = Member::class;
   protected $membersDataType = 'array';
   /**
-   * Token used to access next page of this result.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * ETag of the resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -58,9 +50,7 @@ class Members extends \Google\Collection
     return $this->etag;
   }
   /**
-   * Kind of resource this is.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -74,9 +64,7 @@ class Members extends \Google\Collection
     return $this->kind;
   }
   /**
-   * A list of member objects.
-   *
-   * @param Member[] $members
+   * @param Member[]
    */
   public function setMembers($members)
   {
@@ -90,9 +78,7 @@ class Members extends \Google\Collection
     return $this->members;
   }
   /**
-   * Token used to access next page of this result.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

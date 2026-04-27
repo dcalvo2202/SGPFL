@@ -19,51 +19,19 @@ namespace Google\Service\DataprocMetastore;
 
 class ScalingConfig extends \Google\Model
 {
-  /**
-   * Unspecified instance size
-   */
-  public const INSTANCE_SIZE_INSTANCE_SIZE_UNSPECIFIED = 'INSTANCE_SIZE_UNSPECIFIED';
-  /**
-   * Extra small instance size, maps to a scaling factor of 0.1.
-   */
-  public const INSTANCE_SIZE_EXTRA_SMALL = 'EXTRA_SMALL';
-  /**
-   * Small instance size, maps to a scaling factor of 0.5.
-   */
-  public const INSTANCE_SIZE_SMALL = 'SMALL';
-  /**
-   * Medium instance size, maps to a scaling factor of 1.0.
-   */
-  public const INSTANCE_SIZE_MEDIUM = 'MEDIUM';
-  /**
-   * Large instance size, maps to a scaling factor of 3.0.
-   */
-  public const INSTANCE_SIZE_LARGE = 'LARGE';
-  /**
-   * Extra large instance size, maps to a scaling factor of 6.0.
-   */
-  public const INSTANCE_SIZE_EXTRA_LARGE = 'EXTRA_LARGE';
   protected $autoscalingConfigType = AutoscalingConfig::class;
   protected $autoscalingConfigDataType = '';
   /**
-   * An enum of readable instance sizes, with each instance size mapping to a
-   * float value (e.g. InstanceSize.EXTRA_SMALL = scaling_factor(0.1))
-   *
    * @var string
    */
   public $instanceSize;
   /**
-   * Scaling factor, increments of 0.1 for values less than 1.0, and increments
-   * of 1.0 for values greater than 1.0.
-   *
    * @var float
    */
   public $scalingFactor;
 
   /**
-   * Optional. The autoscaling configuration.
-   *
-   * @param AutoscalingConfig $autoscalingConfig
+   * @param AutoscalingConfig
    */
   public function setAutoscalingConfig(AutoscalingConfig $autoscalingConfig)
   {
@@ -77,30 +45,21 @@ class ScalingConfig extends \Google\Model
     return $this->autoscalingConfig;
   }
   /**
-   * An enum of readable instance sizes, with each instance size mapping to a
-   * float value (e.g. InstanceSize.EXTRA_SMALL = scaling_factor(0.1))
-   *
-   * Accepted values: INSTANCE_SIZE_UNSPECIFIED, EXTRA_SMALL, SMALL, MEDIUM,
-   * LARGE, EXTRA_LARGE
-   *
-   * @param self::INSTANCE_SIZE_* $instanceSize
+   * @param string
    */
   public function setInstanceSize($instanceSize)
   {
     $this->instanceSize = $instanceSize;
   }
   /**
-   * @return self::INSTANCE_SIZE_*
+   * @return string
    */
   public function getInstanceSize()
   {
     return $this->instanceSize;
   }
   /**
-   * Scaling factor, increments of 0.1 for values less than 1.0, and increments
-   * of 1.0 for values greater than 1.0.
-   *
-   * @param float $scalingFactor
+   * @param float
    */
   public function setScalingFactor($scalingFactor)
   {

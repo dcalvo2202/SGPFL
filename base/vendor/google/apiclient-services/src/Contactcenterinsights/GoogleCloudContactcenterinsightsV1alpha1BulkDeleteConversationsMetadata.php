@@ -21,14 +21,10 @@ class GoogleCloudContactcenterinsightsV1alpha1BulkDeleteConversationsMetadata ex
 {
   protected $collection_key = 'partialErrors';
   /**
-   * The time the operation was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * The time the operation finished running.
-   *
    * @var string
    */
   public $endTime;
@@ -38,9 +34,7 @@ class GoogleCloudContactcenterinsightsV1alpha1BulkDeleteConversationsMetadata ex
   protected $requestDataType = '';
 
   /**
-   * The time the operation was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -54,9 +48,7 @@ class GoogleCloudContactcenterinsightsV1alpha1BulkDeleteConversationsMetadata ex
     return $this->createTime;
   }
   /**
-   * The time the operation finished running.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -70,10 +62,7 @@ class GoogleCloudContactcenterinsightsV1alpha1BulkDeleteConversationsMetadata ex
     return $this->endTime;
   }
   /**
-   * Partial errors during bulk delete conversations operation that might cause
-   * the operation output to be incomplete.
-   *
-   * @param GoogleRpcStatus[] $partialErrors
+   * @param GoogleRpcStatus[]
    */
   public function setPartialErrors($partialErrors)
   {
@@ -87,9 +76,7 @@ class GoogleCloudContactcenterinsightsV1alpha1BulkDeleteConversationsMetadata ex
     return $this->partialErrors;
   }
   /**
-   * The original request for bulk delete.
-   *
-   * @param GoogleCloudContactcenterinsightsV1alpha1BulkDeleteConversationsRequest $request
+   * @param GoogleCloudContactcenterinsightsV1alpha1BulkDeleteConversationsRequest
    */
   public function setRequest(GoogleCloudContactcenterinsightsV1alpha1BulkDeleteConversationsRequest $request)
   {

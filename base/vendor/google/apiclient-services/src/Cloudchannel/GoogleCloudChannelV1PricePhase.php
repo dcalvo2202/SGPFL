@@ -19,38 +19,16 @@ namespace Google\Service\Cloudchannel;
 
 class GoogleCloudChannelV1PricePhase extends \Google\Collection
 {
-  /**
-   * Not used.
-   */
-  public const PERIOD_TYPE_PERIOD_TYPE_UNSPECIFIED = 'PERIOD_TYPE_UNSPECIFIED';
-  /**
-   * Day.
-   */
-  public const PERIOD_TYPE_DAY = 'DAY';
-  /**
-   * Month.
-   */
-  public const PERIOD_TYPE_MONTH = 'MONTH';
-  /**
-   * Year.
-   */
-  public const PERIOD_TYPE_YEAR = 'YEAR';
   protected $collection_key = 'priceTiers';
   /**
-   * Defines first period for the phase.
-   *
    * @var int
    */
   public $firstPeriod;
   /**
-   * Defines first period for the phase.
-   *
    * @var int
    */
   public $lastPeriod;
   /**
-   * Defines the phase period type.
-   *
    * @var string
    */
   public $periodType;
@@ -60,9 +38,7 @@ class GoogleCloudChannelV1PricePhase extends \Google\Collection
   protected $priceTiersDataType = 'array';
 
   /**
-   * Defines first period for the phase.
-   *
-   * @param int $firstPeriod
+   * @param int
    */
   public function setFirstPeriod($firstPeriod)
   {
@@ -76,9 +52,7 @@ class GoogleCloudChannelV1PricePhase extends \Google\Collection
     return $this->firstPeriod;
   }
   /**
-   * Defines first period for the phase.
-   *
-   * @param int $lastPeriod
+   * @param int
    */
   public function setLastPeriod($lastPeriod)
   {
@@ -92,27 +66,21 @@ class GoogleCloudChannelV1PricePhase extends \Google\Collection
     return $this->lastPeriod;
   }
   /**
-   * Defines the phase period type.
-   *
-   * Accepted values: PERIOD_TYPE_UNSPECIFIED, DAY, MONTH, YEAR
-   *
-   * @param self::PERIOD_TYPE_* $periodType
+   * @param string
    */
   public function setPeriodType($periodType)
   {
     $this->periodType = $periodType;
   }
   /**
-   * @return self::PERIOD_TYPE_*
+   * @return string
    */
   public function getPeriodType()
   {
     return $this->periodType;
   }
   /**
-   * Price of the phase. Present if there are no price tiers.
-   *
-   * @param GoogleCloudChannelV1Price $price
+   * @param GoogleCloudChannelV1Price
    */
   public function setPrice(GoogleCloudChannelV1Price $price)
   {
@@ -126,9 +94,7 @@ class GoogleCloudChannelV1PricePhase extends \Google\Collection
     return $this->price;
   }
   /**
-   * Price by the resource tiers.
-   *
-   * @param GoogleCloudChannelV1PriceTier[] $priceTiers
+   * @param GoogleCloudChannelV1PriceTier[]
    */
   public function setPriceTiers($priceTiers)
   {

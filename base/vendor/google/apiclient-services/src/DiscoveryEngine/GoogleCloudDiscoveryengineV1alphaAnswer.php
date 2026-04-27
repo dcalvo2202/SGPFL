@@ -19,37 +19,12 @@ namespace Google\Service\DiscoveryEngine;
 
 class GoogleCloudDiscoveryengineV1alphaAnswer extends \Google\Collection
 {
-  /**
-   * Unknown.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Answer generation is currently in progress.
-   */
-  public const STATE_IN_PROGRESS = 'IN_PROGRESS';
-  /**
-   * Answer generation currently failed.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * Answer generation has succeeded.
-   */
-  public const STATE_SUCCEEDED = 'SUCCEEDED';
-  /**
-   * Answer generation is currently in progress.
-   */
-  public const STATE_STREAMING = 'STREAMING';
   protected $collection_key = 'steps';
   /**
-   * Additional answer-skipped reasons. This provides the reason for ignored
-   * cases. If nothing is skipped, this field is not set.
-   *
    * @var string[]
    */
   public $answerSkippedReasons;
   /**
-   * The textual answer.
-   *
    * @var string
    */
   public $answerText;
@@ -58,30 +33,17 @@ class GoogleCloudDiscoveryengineV1alphaAnswer extends \Google\Collection
   protected $citationsType = GoogleCloudDiscoveryengineV1alphaAnswerCitation::class;
   protected $citationsDataType = 'array';
   /**
-   * Output only. Answer completed timestamp.
-   *
    * @var string
    */
   public $completeTime;
   /**
-   * Output only. Answer creation timestamp.
-   *
    * @var string
    */
   public $createTime;
-  /**
-   * A score in the range of [0, 1] describing how grounded the answer is by the
-   * reference chunks.
-   *
-   * @var 
-   */
   public $groundingScore;
   protected $groundingSupportsType = GoogleCloudDiscoveryengineV1alphaAnswerGroundingSupport::class;
   protected $groundingSupportsDataType = 'array';
   /**
-   * Immutable. Fully qualified name `projects/{project}/locations/global/collec
-   * tions/{collection}/engines/{engine}/sessions/answers`
-   *
    * @var string
    */
   public $name;
@@ -90,16 +52,12 @@ class GoogleCloudDiscoveryengineV1alphaAnswer extends \Google\Collection
   protected $referencesType = GoogleCloudDiscoveryengineV1alphaAnswerReference::class;
   protected $referencesDataType = 'array';
   /**
-   * Suggested related questions.
-   *
    * @var string[]
    */
   public $relatedQuestions;
   protected $safetyRatingsType = GoogleCloudDiscoveryengineV1alphaSafetyRating::class;
   protected $safetyRatingsDataType = 'array';
   /**
-   * The state of the answer generation.
-   *
    * @var string
    */
   public $state;
@@ -107,10 +65,7 @@ class GoogleCloudDiscoveryengineV1alphaAnswer extends \Google\Collection
   protected $stepsDataType = 'array';
 
   /**
-   * Additional answer-skipped reasons. This provides the reason for ignored
-   * cases. If nothing is skipped, this field is not set.
-   *
-   * @param string[] $answerSkippedReasons
+   * @param string[]
    */
   public function setAnswerSkippedReasons($answerSkippedReasons)
   {
@@ -124,9 +79,7 @@ class GoogleCloudDiscoveryengineV1alphaAnswer extends \Google\Collection
     return $this->answerSkippedReasons;
   }
   /**
-   * The textual answer.
-   *
-   * @param string $answerText
+   * @param string
    */
   public function setAnswerText($answerText)
   {
@@ -140,9 +93,7 @@ class GoogleCloudDiscoveryengineV1alphaAnswer extends \Google\Collection
     return $this->answerText;
   }
   /**
-   * Output only. List of blob attachments in the answer.
-   *
-   * @param GoogleCloudDiscoveryengineV1alphaAnswerBlobAttachment[] $blobAttachments
+   * @param GoogleCloudDiscoveryengineV1alphaAnswerBlobAttachment[]
    */
   public function setBlobAttachments($blobAttachments)
   {
@@ -156,9 +107,7 @@ class GoogleCloudDiscoveryengineV1alphaAnswer extends \Google\Collection
     return $this->blobAttachments;
   }
   /**
-   * Citations.
-   *
-   * @param GoogleCloudDiscoveryengineV1alphaAnswerCitation[] $citations
+   * @param GoogleCloudDiscoveryengineV1alphaAnswerCitation[]
    */
   public function setCitations($citations)
   {
@@ -172,9 +121,7 @@ class GoogleCloudDiscoveryengineV1alphaAnswer extends \Google\Collection
     return $this->citations;
   }
   /**
-   * Output only. Answer completed timestamp.
-   *
-   * @param string $completeTime
+   * @param string
    */
   public function setCompleteTime($completeTime)
   {
@@ -188,9 +135,7 @@ class GoogleCloudDiscoveryengineV1alphaAnswer extends \Google\Collection
     return $this->completeTime;
   }
   /**
-   * Output only. Answer creation timestamp.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -212,9 +157,7 @@ class GoogleCloudDiscoveryengineV1alphaAnswer extends \Google\Collection
     return $this->groundingScore;
   }
   /**
-   * Optional. Grounding supports.
-   *
-   * @param GoogleCloudDiscoveryengineV1alphaAnswerGroundingSupport[] $groundingSupports
+   * @param GoogleCloudDiscoveryengineV1alphaAnswerGroundingSupport[]
    */
   public function setGroundingSupports($groundingSupports)
   {
@@ -228,10 +171,7 @@ class GoogleCloudDiscoveryengineV1alphaAnswer extends \Google\Collection
     return $this->groundingSupports;
   }
   /**
-   * Immutable. Fully qualified name `projects/{project}/locations/global/collec
-   * tions/{collection}/engines/{engine}/sessions/answers`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -245,9 +185,7 @@ class GoogleCloudDiscoveryengineV1alphaAnswer extends \Google\Collection
     return $this->name;
   }
   /**
-   * Query understanding information.
-   *
-   * @param GoogleCloudDiscoveryengineV1alphaAnswerQueryUnderstandingInfo $queryUnderstandingInfo
+   * @param GoogleCloudDiscoveryengineV1alphaAnswerQueryUnderstandingInfo
    */
   public function setQueryUnderstandingInfo(GoogleCloudDiscoveryengineV1alphaAnswerQueryUnderstandingInfo $queryUnderstandingInfo)
   {
@@ -261,9 +199,7 @@ class GoogleCloudDiscoveryengineV1alphaAnswer extends \Google\Collection
     return $this->queryUnderstandingInfo;
   }
   /**
-   * References.
-   *
-   * @param GoogleCloudDiscoveryengineV1alphaAnswerReference[] $references
+   * @param GoogleCloudDiscoveryengineV1alphaAnswerReference[]
    */
   public function setReferences($references)
   {
@@ -277,9 +213,7 @@ class GoogleCloudDiscoveryengineV1alphaAnswer extends \Google\Collection
     return $this->references;
   }
   /**
-   * Suggested related questions.
-   *
-   * @param string[] $relatedQuestions
+   * @param string[]
    */
   public function setRelatedQuestions($relatedQuestions)
   {
@@ -293,9 +227,7 @@ class GoogleCloudDiscoveryengineV1alphaAnswer extends \Google\Collection
     return $this->relatedQuestions;
   }
   /**
-   * Optional. Safety ratings.
-   *
-   * @param GoogleCloudDiscoveryengineV1alphaSafetyRating[] $safetyRatings
+   * @param GoogleCloudDiscoveryengineV1alphaSafetyRating[]
    */
   public function setSafetyRatings($safetyRatings)
   {
@@ -309,28 +241,21 @@ class GoogleCloudDiscoveryengineV1alphaAnswer extends \Google\Collection
     return $this->safetyRatings;
   }
   /**
-   * The state of the answer generation.
-   *
-   * Accepted values: STATE_UNSPECIFIED, IN_PROGRESS, FAILED, SUCCEEDED,
-   * STREAMING
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Answer generation steps.
-   *
-   * @param GoogleCloudDiscoveryengineV1alphaAnswerStep[] $steps
+   * @param GoogleCloudDiscoveryengineV1alphaAnswerStep[]
    */
   public function setSteps($steps)
   {

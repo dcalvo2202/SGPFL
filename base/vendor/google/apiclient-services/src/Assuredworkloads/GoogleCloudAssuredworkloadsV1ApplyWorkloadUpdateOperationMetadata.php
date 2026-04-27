@@ -20,54 +20,34 @@ namespace Google\Service\Assuredworkloads;
 class GoogleCloudAssuredworkloadsV1ApplyWorkloadUpdateOperationMetadata extends \Google\Model
 {
   /**
-   * Unspecified value.
-   */
-  public const ACTION_WORKLOAD_UPDATE_ACTION_UNSPECIFIED = 'WORKLOAD_UPDATE_ACTION_UNSPECIFIED';
-  /**
-   * The update is applied.
-   */
-  public const ACTION_APPLY = 'APPLY';
-  /**
-   * Optional. The time the operation was created.
-   *
    * @var string
    */
   public $action;
   /**
-   * Optional. Output only. The time the operation was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Required. The resource name of the update
-   *
    * @var string
    */
   public $updateName;
 
   /**
-   * Optional. The time the operation was created.
-   *
-   * Accepted values: WORKLOAD_UPDATE_ACTION_UNSPECIFIED, APPLY
-   *
-   * @param self::ACTION_* $action
+   * @param string
    */
   public function setAction($action)
   {
     $this->action = $action;
   }
   /**
-   * @return self::ACTION_*
+   * @return string
    */
   public function getAction()
   {
     return $this->action;
   }
   /**
-   * Optional. Output only. The time the operation was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -81,9 +61,7 @@ class GoogleCloudAssuredworkloadsV1ApplyWorkloadUpdateOperationMetadata extends 
     return $this->createTime;
   }
   /**
-   * Required. The resource name of the update
-   *
-   * @param string $updateName
+   * @param string
    */
   public function setUpdateName($updateName)
   {

@@ -26,9 +26,7 @@ class TargetPoolsScopedList extends \Google\Collection
   protected $warningDataType = '';
 
   /**
-   * A list of target pools contained in this scope.
-   *
-   * @param TargetPool[] $targetPools
+   * @param TargetPool[]
    */
   public function setTargetPools($targetPools)
   {
@@ -42,10 +40,7 @@ class TargetPoolsScopedList extends \Google\Collection
     return $this->targetPools;
   }
   /**
-   * Informational warning which replaces the list of addresses when the list is
-   * empty.
-   *
-   * @param TargetPoolsScopedListWarning $warning
+   * @param TargetPoolsScopedListWarning
    */
   public function setWarning(TargetPoolsScopedListWarning $warning)
   {

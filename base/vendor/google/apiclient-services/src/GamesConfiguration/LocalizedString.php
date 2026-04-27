@@ -20,30 +20,20 @@ namespace Google\Service\GamesConfiguration;
 class LocalizedString extends \Google\Model
 {
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `gamesConfiguration#localizedString`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The locale string.
-   *
    * @var string
    */
   public $locale;
   /**
-   * The string value.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `gamesConfiguration#localizedString`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -57,9 +47,7 @@ class LocalizedString extends \Google\Model
     return $this->kind;
   }
   /**
-   * The locale string.
-   *
-   * @param string $locale
+   * @param string
    */
   public function setLocale($locale)
   {
@@ -73,9 +61,7 @@ class LocalizedString extends \Google\Model
     return $this->locale;
   }
   /**
-   * The string value.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

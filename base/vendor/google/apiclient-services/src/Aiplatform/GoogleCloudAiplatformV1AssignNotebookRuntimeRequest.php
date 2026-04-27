@@ -22,24 +22,16 @@ class GoogleCloudAiplatformV1AssignNotebookRuntimeRequest extends \Google\Model
   protected $notebookRuntimeType = GoogleCloudAiplatformV1NotebookRuntime::class;
   protected $notebookRuntimeDataType = '';
   /**
-   * Optional. User specified ID for the notebook runtime.
-   *
    * @var string
    */
   public $notebookRuntimeId;
   /**
-   * Required. The resource name of the NotebookRuntimeTemplate based on which a
-   * NotebookRuntime will be assigned (reuse or create a new one).
-   *
    * @var string
    */
   public $notebookRuntimeTemplate;
 
   /**
-   * Required. Provide runtime specific information (e.g. runtime owner,
-   * notebook id) used for NotebookRuntime assignment.
-   *
-   * @param GoogleCloudAiplatformV1NotebookRuntime $notebookRuntime
+   * @param GoogleCloudAiplatformV1NotebookRuntime
    */
   public function setNotebookRuntime(GoogleCloudAiplatformV1NotebookRuntime $notebookRuntime)
   {
@@ -53,9 +45,7 @@ class GoogleCloudAiplatformV1AssignNotebookRuntimeRequest extends \Google\Model
     return $this->notebookRuntime;
   }
   /**
-   * Optional. User specified ID for the notebook runtime.
-   *
-   * @param string $notebookRuntimeId
+   * @param string
    */
   public function setNotebookRuntimeId($notebookRuntimeId)
   {
@@ -69,10 +59,7 @@ class GoogleCloudAiplatformV1AssignNotebookRuntimeRequest extends \Google\Model
     return $this->notebookRuntimeId;
   }
   /**
-   * Required. The resource name of the NotebookRuntimeTemplate based on which a
-   * NotebookRuntime will be assigned (reuse or create a new one).
-   *
-   * @param string $notebookRuntimeTemplate
+   * @param string
    */
   public function setNotebookRuntimeTemplate($notebookRuntimeTemplate)
   {

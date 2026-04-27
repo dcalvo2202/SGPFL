@@ -20,16 +20,12 @@ namespace Google\Service\MigrationCenterAPI;
 class ImportRowErrorCsvErrorDetails extends \Google\Model
 {
   /**
-   * The row number where the error was detected.
-   *
    * @var int
    */
   public $rowNumber;
 
   /**
-   * The row number where the error was detected.
-   *
-   * @param int $rowNumber
+   * @param int
    */
   public function setRowNumber($rowNumber)
   {

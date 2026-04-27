@@ -64,7 +64,7 @@ class StreamingQueryProgress extends \Google\Collection
   public $timestamp;
 
   /**
-   * @param string $batchDuration
+   * @param string
    */
   public function setBatchDuration($batchDuration)
   {
@@ -78,7 +78,7 @@ class StreamingQueryProgress extends \Google\Collection
     return $this->batchDuration;
   }
   /**
-   * @param string $batchId
+   * @param string
    */
   public function setBatchId($batchId)
   {
@@ -92,7 +92,7 @@ class StreamingQueryProgress extends \Google\Collection
     return $this->batchId;
   }
   /**
-   * @param string[] $durationMillis
+   * @param string[]
    */
   public function setDurationMillis($durationMillis)
   {
@@ -106,7 +106,7 @@ class StreamingQueryProgress extends \Google\Collection
     return $this->durationMillis;
   }
   /**
-   * @param string[] $eventTime
+   * @param string[]
    */
   public function setEventTime($eventTime)
   {
@@ -120,7 +120,7 @@ class StreamingQueryProgress extends \Google\Collection
     return $this->eventTime;
   }
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -134,7 +134,7 @@ class StreamingQueryProgress extends \Google\Collection
     return $this->name;
   }
   /**
-   * @param string[] $observedMetrics
+   * @param string[]
    */
   public function setObservedMetrics($observedMetrics)
   {
@@ -148,7 +148,7 @@ class StreamingQueryProgress extends \Google\Collection
     return $this->observedMetrics;
   }
   /**
-   * @param string $runId
+   * @param string
    */
   public function setRunId($runId)
   {
@@ -162,7 +162,7 @@ class StreamingQueryProgress extends \Google\Collection
     return $this->runId;
   }
   /**
-   * @param SinkProgress $sink
+   * @param SinkProgress
    */
   public function setSink(SinkProgress $sink)
   {
@@ -176,7 +176,7 @@ class StreamingQueryProgress extends \Google\Collection
     return $this->sink;
   }
   /**
-   * @param SourceProgress[] $sources
+   * @param SourceProgress[]
    */
   public function setSources($sources)
   {
@@ -190,7 +190,7 @@ class StreamingQueryProgress extends \Google\Collection
     return $this->sources;
   }
   /**
-   * @param StateOperatorProgress[] $stateOperators
+   * @param StateOperatorProgress[]
    */
   public function setStateOperators($stateOperators)
   {
@@ -204,7 +204,7 @@ class StreamingQueryProgress extends \Google\Collection
     return $this->stateOperators;
   }
   /**
-   * @param string $streamingQueryProgressId
+   * @param string
    */
   public function setStreamingQueryProgressId($streamingQueryProgressId)
   {
@@ -218,7 +218,7 @@ class StreamingQueryProgress extends \Google\Collection
     return $this->streamingQueryProgressId;
   }
   /**
-   * @param string $timestamp
+   * @param string
    */
   public function setTimestamp($timestamp)
   {

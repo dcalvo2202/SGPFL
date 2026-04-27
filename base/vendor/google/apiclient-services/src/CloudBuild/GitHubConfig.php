@@ -20,8 +20,6 @@ namespace Google\Service\CloudBuild;
 class GitHubConfig extends \Google\Model
 {
   /**
-   * Optional. GitHub App installation id.
-   *
    * @var string
    */
   public $appInstallationId;
@@ -29,9 +27,7 @@ class GitHubConfig extends \Google\Model
   protected $authorizerCredentialDataType = '';
 
   /**
-   * Optional. GitHub App installation id.
-   *
-   * @param string $appInstallationId
+   * @param string
    */
   public function setAppInstallationId($appInstallationId)
   {
@@ -45,11 +41,7 @@ class GitHubConfig extends \Google\Model
     return $this->appInstallationId;
   }
   /**
-   * Optional. OAuth credential of the account that authorized the Cloud Build
-   * GitHub App. It is recommended to use a robot account instead of a human
-   * user account. The OAuth token must be tied to the Cloud Build GitHub App.
-   *
-   * @param OAuthCredential $authorizerCredential
+   * @param OAuthCredential
    */
   public function setAuthorizerCredential(OAuthCredential $authorizerCredential)
   {

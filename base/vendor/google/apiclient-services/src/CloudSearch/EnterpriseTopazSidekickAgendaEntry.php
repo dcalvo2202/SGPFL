@@ -19,218 +19,116 @@ namespace Google\Service\CloudSearch;
 
 class EnterpriseTopazSidekickAgendaEntry extends \Google\Collection
 {
-  /**
-   * Stale.
-   */
-  public const CHRONOLOGY_STALE = 'STALE';
-  /**
-   * All day.
-   */
-  public const CHRONOLOGY_ALL_DAY = 'ALL_DAY';
-  /**
-   * Past.
-   */
-  public const CHRONOLOGY_PAST = 'PAST';
-  /**
-   * Recently past.
-   */
-  public const CHRONOLOGY_RECENTLY_PAST = 'RECENTLY_PAST';
-  /**
-   * Present.
-   */
-  public const CHRONOLOGY_PRESENT = 'PRESENT';
-  /**
-   * Near future.
-   */
-  public const CHRONOLOGY_NEAR_FUTURE = 'NEAR_FUTURE';
-  /**
-   * Future.
-   */
-  public const CHRONOLOGY_FUTURE = 'FUTURE';
-  /**
-   * Awaiting for the user to set the status.
-   */
-  public const CURRENT_USER_ATTENDING_STATUS_AWAITING = 'AWAITING';
-  /**
-   * Attending.
-   */
-  public const CURRENT_USER_ATTENDING_STATUS_YES = 'YES';
-  /**
-   * Not attending.
-   */
-  public const CURRENT_USER_ATTENDING_STATUS_NO = 'NO';
-  /**
-   * Tentatively attending.
-   */
-  public const CURRENT_USER_ATTENDING_STATUS_MAYBE = 'MAYBE';
   protected $collection_key = 'invitee';
   /**
-   * URL of the agenda item.
-   *
    * @var string
    */
   public $agendaItemUrl;
   /**
-   * The chronology from the present.
-   *
    * @var string
    */
   public $chronology;
   protected $creatorType = EnterpriseTopazSidekickPerson::class;
   protected $creatorDataType = '';
   /**
-   * Attendance status for the current user making the request. This is a
-   * convenience data member in order to avoid figuring out the same by
-   * iterating the invitee list above on the caller side.
-   *
    * @var string
    */
   public $currentUserAttendingStatus;
   /**
-   * Description of the agenda item (i.e., typically, summary in calendar
-   * event).
-   *
    * @var string
    */
   public $description;
   protected $documentType = EnterpriseTopazSidekickCommonDocument::class;
   protected $documentDataType = 'array';
   /**
-   * End date "Friday, August 26" in the user's timezone.
-   *
    * @var string
    */
   public $endDate;
   /**
-   * End time (HH:mm) in the user's timezone.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * End time in milliseconds
-   *
    * @var string
    */
   public $endTimeMs;
   /**
-   * Event id provided by Calendar API.
-   *
    * @var string
    */
   public $eventId;
   /**
-   * Whether the guests can invite other guests.
-   *
    * @var bool
    */
   public $guestsCanInviteOthers;
   /**
-   * Whether the guests can modify the event.
-   *
    * @var bool
    */
   public $guestsCanModify;
   /**
-   * Whether the guests of the event can be seen. If false, the user is going to
-   * be reported as the only attendee to the meeting, even though there may be
-   * more attendees.
-   *
    * @var bool
    */
   public $guestsCanSeeGuests;
   /**
-   * Hangout meeting identifier.
-   *
    * @var string
    */
   public $hangoutId;
   /**
-   * Absolute URL for the Hangout meeting.
-   *
    * @var string
    */
   public $hangoutUrl;
   protected $inviteeType = EnterpriseTopazSidekickPerson::class;
   protected $inviteeDataType = 'array';
   /**
-   * Whether the entry lasts all day.
-   *
    * @var bool
    */
   public $isAllDay;
   /**
-   * Last time the event was modified.
-   *
    * @var string
    */
   public $lastModificationTimeMs;
   /**
-   * Agenda item location.
-   *
    * @var string
    */
   public $location;
   /**
-   * Whether this should be notified to the user.
-   *
    * @var bool
    */
   public $notifyToUser;
   /**
-   * Whether guest list is not returned because number of attendees is too
-   * large.
-   *
    * @var bool
    */
   public $otherAttendeesExcluded;
   /**
-   * Whether the requester is the owner of the agenda entry.
-   *
    * @var bool
    */
   public $requesterIsOwner;
   /**
-   * Whether the details of this entry should be displayed to the user.
-   *
    * @var bool
    */
   public $showFullEventDetailsToUse;
   /**
-   * Start date "Friday, August 26" in the user's timezone.
-   *
    * @var string
    */
   public $startDate;
   /**
-   * Start time (HH:mm) in the user's timezone.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * Start time in milliseconds.
-   *
    * @var string
    */
   public $startTimeMs;
   /**
-   * User's calendar timezone;
-   *
    * @var string
    */
   public $timeZone;
   /**
-   * Title of the agenda item.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * URL of the agenda item.
-   *
-   * @param string $agendaItemUrl
+   * @param string
    */
   public function setAgendaItemUrl($agendaItemUrl)
   {
@@ -244,28 +142,21 @@ class EnterpriseTopazSidekickAgendaEntry extends \Google\Collection
     return $this->agendaItemUrl;
   }
   /**
-   * The chronology from the present.
-   *
-   * Accepted values: STALE, ALL_DAY, PAST, RECENTLY_PAST, PRESENT, NEAR_FUTURE,
-   * FUTURE
-   *
-   * @param self::CHRONOLOGY_* $chronology
+   * @param string
    */
   public function setChronology($chronology)
   {
     $this->chronology = $chronology;
   }
   /**
-   * @return self::CHRONOLOGY_*
+   * @return string
    */
   public function getChronology()
   {
     return $this->chronology;
   }
   /**
-   * Person who created the event.
-   *
-   * @param EnterpriseTopazSidekickPerson $creator
+   * @param EnterpriseTopazSidekickPerson
    */
   public function setCreator(EnterpriseTopazSidekickPerson $creator)
   {
@@ -279,30 +170,21 @@ class EnterpriseTopazSidekickAgendaEntry extends \Google\Collection
     return $this->creator;
   }
   /**
-   * Attendance status for the current user making the request. This is a
-   * convenience data member in order to avoid figuring out the same by
-   * iterating the invitee list above on the caller side.
-   *
-   * Accepted values: AWAITING, YES, NO, MAYBE
-   *
-   * @param self::CURRENT_USER_ATTENDING_STATUS_* $currentUserAttendingStatus
+   * @param string
    */
   public function setCurrentUserAttendingStatus($currentUserAttendingStatus)
   {
     $this->currentUserAttendingStatus = $currentUserAttendingStatus;
   }
   /**
-   * @return self::CURRENT_USER_ATTENDING_STATUS_*
+   * @return string
    */
   public function getCurrentUserAttendingStatus()
   {
     return $this->currentUserAttendingStatus;
   }
   /**
-   * Description of the agenda item (i.e., typically, summary in calendar
-   * event).
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -316,10 +198,7 @@ class EnterpriseTopazSidekickAgendaEntry extends \Google\Collection
     return $this->description;
   }
   /**
-   * Items related to the current AgendaEntry. E.g., related drive/mail/groups
-   * documents.
-   *
-   * @param EnterpriseTopazSidekickCommonDocument[] $document
+   * @param EnterpriseTopazSidekickCommonDocument[]
    */
   public function setDocument($document)
   {
@@ -333,9 +212,7 @@ class EnterpriseTopazSidekickAgendaEntry extends \Google\Collection
     return $this->document;
   }
   /**
-   * End date "Friday, August 26" in the user's timezone.
-   *
-   * @param string $endDate
+   * @param string
    */
   public function setEndDate($endDate)
   {
@@ -349,9 +226,7 @@ class EnterpriseTopazSidekickAgendaEntry extends \Google\Collection
     return $this->endDate;
   }
   /**
-   * End time (HH:mm) in the user's timezone.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -365,9 +240,7 @@ class EnterpriseTopazSidekickAgendaEntry extends \Google\Collection
     return $this->endTime;
   }
   /**
-   * End time in milliseconds
-   *
-   * @param string $endTimeMs
+   * @param string
    */
   public function setEndTimeMs($endTimeMs)
   {
@@ -381,9 +254,7 @@ class EnterpriseTopazSidekickAgendaEntry extends \Google\Collection
     return $this->endTimeMs;
   }
   /**
-   * Event id provided by Calendar API.
-   *
-   * @param string $eventId
+   * @param string
    */
   public function setEventId($eventId)
   {
@@ -397,9 +268,7 @@ class EnterpriseTopazSidekickAgendaEntry extends \Google\Collection
     return $this->eventId;
   }
   /**
-   * Whether the guests can invite other guests.
-   *
-   * @param bool $guestsCanInviteOthers
+   * @param bool
    */
   public function setGuestsCanInviteOthers($guestsCanInviteOthers)
   {
@@ -413,9 +282,7 @@ class EnterpriseTopazSidekickAgendaEntry extends \Google\Collection
     return $this->guestsCanInviteOthers;
   }
   /**
-   * Whether the guests can modify the event.
-   *
-   * @param bool $guestsCanModify
+   * @param bool
    */
   public function setGuestsCanModify($guestsCanModify)
   {
@@ -429,11 +296,7 @@ class EnterpriseTopazSidekickAgendaEntry extends \Google\Collection
     return $this->guestsCanModify;
   }
   /**
-   * Whether the guests of the event can be seen. If false, the user is going to
-   * be reported as the only attendee to the meeting, even though there may be
-   * more attendees.
-   *
-   * @param bool $guestsCanSeeGuests
+   * @param bool
    */
   public function setGuestsCanSeeGuests($guestsCanSeeGuests)
   {
@@ -447,9 +310,7 @@ class EnterpriseTopazSidekickAgendaEntry extends \Google\Collection
     return $this->guestsCanSeeGuests;
   }
   /**
-   * Hangout meeting identifier.
-   *
-   * @param string $hangoutId
+   * @param string
    */
   public function setHangoutId($hangoutId)
   {
@@ -463,9 +324,7 @@ class EnterpriseTopazSidekickAgendaEntry extends \Google\Collection
     return $this->hangoutId;
   }
   /**
-   * Absolute URL for the Hangout meeting.
-   *
-   * @param string $hangoutUrl
+   * @param string
    */
   public function setHangoutUrl($hangoutUrl)
   {
@@ -479,9 +338,7 @@ class EnterpriseTopazSidekickAgendaEntry extends \Google\Collection
     return $this->hangoutUrl;
   }
   /**
-   * People attending the meeting.
-   *
-   * @param EnterpriseTopazSidekickPerson[] $invitee
+   * @param EnterpriseTopazSidekickPerson[]
    */
   public function setInvitee($invitee)
   {
@@ -495,9 +352,7 @@ class EnterpriseTopazSidekickAgendaEntry extends \Google\Collection
     return $this->invitee;
   }
   /**
-   * Whether the entry lasts all day.
-   *
-   * @param bool $isAllDay
+   * @param bool
    */
   public function setIsAllDay($isAllDay)
   {
@@ -511,9 +366,7 @@ class EnterpriseTopazSidekickAgendaEntry extends \Google\Collection
     return $this->isAllDay;
   }
   /**
-   * Last time the event was modified.
-   *
-   * @param string $lastModificationTimeMs
+   * @param string
    */
   public function setLastModificationTimeMs($lastModificationTimeMs)
   {
@@ -527,9 +380,7 @@ class EnterpriseTopazSidekickAgendaEntry extends \Google\Collection
     return $this->lastModificationTimeMs;
   }
   /**
-   * Agenda item location.
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -543,9 +394,7 @@ class EnterpriseTopazSidekickAgendaEntry extends \Google\Collection
     return $this->location;
   }
   /**
-   * Whether this should be notified to the user.
-   *
-   * @param bool $notifyToUser
+   * @param bool
    */
   public function setNotifyToUser($notifyToUser)
   {
@@ -559,10 +408,7 @@ class EnterpriseTopazSidekickAgendaEntry extends \Google\Collection
     return $this->notifyToUser;
   }
   /**
-   * Whether guest list is not returned because number of attendees is too
-   * large.
-   *
-   * @param bool $otherAttendeesExcluded
+   * @param bool
    */
   public function setOtherAttendeesExcluded($otherAttendeesExcluded)
   {
@@ -576,9 +422,7 @@ class EnterpriseTopazSidekickAgendaEntry extends \Google\Collection
     return $this->otherAttendeesExcluded;
   }
   /**
-   * Whether the requester is the owner of the agenda entry.
-   *
-   * @param bool $requesterIsOwner
+   * @param bool
    */
   public function setRequesterIsOwner($requesterIsOwner)
   {
@@ -592,9 +436,7 @@ class EnterpriseTopazSidekickAgendaEntry extends \Google\Collection
     return $this->requesterIsOwner;
   }
   /**
-   * Whether the details of this entry should be displayed to the user.
-   *
-   * @param bool $showFullEventDetailsToUse
+   * @param bool
    */
   public function setShowFullEventDetailsToUse($showFullEventDetailsToUse)
   {
@@ -608,9 +450,7 @@ class EnterpriseTopazSidekickAgendaEntry extends \Google\Collection
     return $this->showFullEventDetailsToUse;
   }
   /**
-   * Start date "Friday, August 26" in the user's timezone.
-   *
-   * @param string $startDate
+   * @param string
    */
   public function setStartDate($startDate)
   {
@@ -624,9 +464,7 @@ class EnterpriseTopazSidekickAgendaEntry extends \Google\Collection
     return $this->startDate;
   }
   /**
-   * Start time (HH:mm) in the user's timezone.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -640,9 +478,7 @@ class EnterpriseTopazSidekickAgendaEntry extends \Google\Collection
     return $this->startTime;
   }
   /**
-   * Start time in milliseconds.
-   *
-   * @param string $startTimeMs
+   * @param string
    */
   public function setStartTimeMs($startTimeMs)
   {
@@ -656,9 +492,7 @@ class EnterpriseTopazSidekickAgendaEntry extends \Google\Collection
     return $this->startTimeMs;
   }
   /**
-   * User's calendar timezone;
-   *
-   * @param string $timeZone
+   * @param string
    */
   public function setTimeZone($timeZone)
   {
@@ -672,9 +506,7 @@ class EnterpriseTopazSidekickAgendaEntry extends \Google\Collection
     return $this->timeZone;
   }
   /**
-   * Title of the agenda item.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

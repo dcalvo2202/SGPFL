@@ -24,9 +24,6 @@ class GoogleDatastoreAdminV1beta1ImportEntitiesMetadata extends \Google\Model
   protected $entityFilterType = GoogleDatastoreAdminV1beta1EntityFilter::class;
   protected $entityFilterDataType = '';
   /**
-   * The location of the import metadata file. This will be the same value as
-   * the google.datastore.admin.v1beta1.ExportEntitiesResponse.output_url field.
-   *
    * @var string
    */
   public $inputUrl;
@@ -36,9 +33,7 @@ class GoogleDatastoreAdminV1beta1ImportEntitiesMetadata extends \Google\Model
   protected $progressEntitiesDataType = '';
 
   /**
-   * Metadata common to all Datastore Admin operations.
-   *
-   * @param GoogleDatastoreAdminV1beta1CommonMetadata $common
+   * @param GoogleDatastoreAdminV1beta1CommonMetadata
    */
   public function setCommon(GoogleDatastoreAdminV1beta1CommonMetadata $common)
   {
@@ -52,9 +47,7 @@ class GoogleDatastoreAdminV1beta1ImportEntitiesMetadata extends \Google\Model
     return $this->common;
   }
   /**
-   * Description of which entities are being imported.
-   *
-   * @param GoogleDatastoreAdminV1beta1EntityFilter $entityFilter
+   * @param GoogleDatastoreAdminV1beta1EntityFilter
    */
   public function setEntityFilter(GoogleDatastoreAdminV1beta1EntityFilter $entityFilter)
   {
@@ -68,10 +61,7 @@ class GoogleDatastoreAdminV1beta1ImportEntitiesMetadata extends \Google\Model
     return $this->entityFilter;
   }
   /**
-   * The location of the import metadata file. This will be the same value as
-   * the google.datastore.admin.v1beta1.ExportEntitiesResponse.output_url field.
-   *
-   * @param string $inputUrl
+   * @param string
    */
   public function setInputUrl($inputUrl)
   {
@@ -85,9 +75,7 @@ class GoogleDatastoreAdminV1beta1ImportEntitiesMetadata extends \Google\Model
     return $this->inputUrl;
   }
   /**
-   * An estimate of the number of bytes processed.
-   *
-   * @param GoogleDatastoreAdminV1beta1Progress $progressBytes
+   * @param GoogleDatastoreAdminV1beta1Progress
    */
   public function setProgressBytes(GoogleDatastoreAdminV1beta1Progress $progressBytes)
   {
@@ -101,9 +89,7 @@ class GoogleDatastoreAdminV1beta1ImportEntitiesMetadata extends \Google\Model
     return $this->progressBytes;
   }
   /**
-   * An estimate of the number of entities processed.
-   *
-   * @param GoogleDatastoreAdminV1beta1Progress $progressEntities
+   * @param GoogleDatastoreAdminV1beta1Progress
    */
   public function setProgressEntities(GoogleDatastoreAdminV1beta1Progress $progressEntities)
   {

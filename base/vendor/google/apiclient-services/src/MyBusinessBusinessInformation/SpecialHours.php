@@ -24,9 +24,7 @@ class SpecialHours extends \Google\Collection
   protected $specialHourPeriodsDataType = 'array';
 
   /**
-   * Required. A list of exceptions to the business's regular hours.
-   *
-   * @param SpecialHourPeriod[] $specialHourPeriods
+   * @param SpecialHourPeriod[]
    */
   public function setSpecialHourPeriods($specialHourPeriods)
   {

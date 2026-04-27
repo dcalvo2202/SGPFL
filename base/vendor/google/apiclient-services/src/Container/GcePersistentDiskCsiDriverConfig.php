@@ -20,16 +20,12 @@ namespace Google\Service\Container;
 class GcePersistentDiskCsiDriverConfig extends \Google\Model
 {
   /**
-   * Whether the Compute Engine PD CSI driver is enabled for this cluster.
-   *
    * @var bool
    */
   public $enabled;
 
   /**
-   * Whether the Compute Engine PD CSI driver is enabled for this cluster.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {

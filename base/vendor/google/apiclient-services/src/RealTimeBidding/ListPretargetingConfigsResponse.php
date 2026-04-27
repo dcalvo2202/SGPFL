@@ -21,10 +21,6 @@ class ListPretargetingConfigsResponse extends \Google\Collection
 {
   protected $collection_key = 'pretargetingConfigs';
   /**
-   * A token which can be passed to a subsequent call to the
-   * `ListPretargetingConfigs` method to retrieve the next page of results in
-   * ListPretargetingConfigsRequest.pageToken.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -32,11 +28,7 @@ class ListPretargetingConfigsResponse extends \Google\Collection
   protected $pretargetingConfigsDataType = 'array';
 
   /**
-   * A token which can be passed to a subsequent call to the
-   * `ListPretargetingConfigs` method to retrieve the next page of results in
-   * ListPretargetingConfigsRequest.pageToken.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -50,9 +42,7 @@ class ListPretargetingConfigsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * List of pretargeting configurations.
-   *
-   * @param PretargetingConfig[] $pretargetingConfigs
+   * @param PretargetingConfig[]
    */
   public function setPretargetingConfigs($pretargetingConfigs)
   {

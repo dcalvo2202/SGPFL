@@ -20,26 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1SchemaImageDataItem extends \Google\Model
 {
   /**
-   * Required. Google Cloud Storage URI points to the original image in user's
-   * bucket. The image is up to 30MB in size.
-   *
    * @var string
    */
   public $gcsUri;
   /**
-   * Output only. The mime type of the content of the image. Only the images in
-   * below listed mime types are supported. - image/jpeg - image/gif - image/png
-   * - image/webp - image/bmp - image/tiff - image/vnd.microsoft.icon
-   *
    * @var string
    */
   public $mimeType;
 
   /**
-   * Required. Google Cloud Storage URI points to the original image in user's
-   * bucket. The image is up to 30MB in size.
-   *
-   * @param string $gcsUri
+   * @param string
    */
   public function setGcsUri($gcsUri)
   {
@@ -53,11 +43,7 @@ class GoogleCloudAiplatformV1SchemaImageDataItem extends \Google\Model
     return $this->gcsUri;
   }
   /**
-   * Output only. The mime type of the content of the image. Only the images in
-   * below listed mime types are supported. - image/jpeg - image/gif - image/png
-   * - image/webp - image/bmp - image/tiff - image/vnd.microsoft.icon
-   *
-   * @param string $mimeType
+   * @param string
    */
   public function setMimeType($mimeType)
   {

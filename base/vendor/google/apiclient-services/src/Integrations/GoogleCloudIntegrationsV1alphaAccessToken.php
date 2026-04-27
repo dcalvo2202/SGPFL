@@ -20,44 +20,28 @@ namespace Google\Service\Integrations;
 class GoogleCloudIntegrationsV1alphaAccessToken extends \Google\Model
 {
   /**
-   * The access token encapsulating the security identity of a process or
-   * thread.
-   *
    * @var string
    */
   public $accessToken;
   /**
-   * Required. The approximate time until the access token retrieved is valid.
-   *
    * @var string
    */
   public $accessTokenExpireTime;
   /**
-   * If the access token will expire, use the refresh token to obtain another
-   * access token.
-   *
    * @var string
    */
   public $refreshToken;
   /**
-   * The approximate time until the refresh token retrieved is valid.
-   *
    * @var string
    */
   public $refreshTokenExpireTime;
   /**
-   * Only support "bearer" token in v1 as bearer token is the predominant type
-   * used with OAuth 2.0.
-   *
    * @var string
    */
   public $tokenType;
 
   /**
-   * The access token encapsulating the security identity of a process or
-   * thread.
-   *
-   * @param string $accessToken
+   * @param string
    */
   public function setAccessToken($accessToken)
   {
@@ -71,9 +55,7 @@ class GoogleCloudIntegrationsV1alphaAccessToken extends \Google\Model
     return $this->accessToken;
   }
   /**
-   * Required. The approximate time until the access token retrieved is valid.
-   *
-   * @param string $accessTokenExpireTime
+   * @param string
    */
   public function setAccessTokenExpireTime($accessTokenExpireTime)
   {
@@ -87,10 +69,7 @@ class GoogleCloudIntegrationsV1alphaAccessToken extends \Google\Model
     return $this->accessTokenExpireTime;
   }
   /**
-   * If the access token will expire, use the refresh token to obtain another
-   * access token.
-   *
-   * @param string $refreshToken
+   * @param string
    */
   public function setRefreshToken($refreshToken)
   {
@@ -104,9 +83,7 @@ class GoogleCloudIntegrationsV1alphaAccessToken extends \Google\Model
     return $this->refreshToken;
   }
   /**
-   * The approximate time until the refresh token retrieved is valid.
-   *
-   * @param string $refreshTokenExpireTime
+   * @param string
    */
   public function setRefreshTokenExpireTime($refreshTokenExpireTime)
   {
@@ -120,10 +97,7 @@ class GoogleCloudIntegrationsV1alphaAccessToken extends \Google\Model
     return $this->refreshTokenExpireTime;
   }
   /**
-   * Only support "bearer" token in v1 as bearer token is the predominant type
-   * used with OAuth 2.0.
-   *
-   * @param string $tokenType
+   * @param string
    */
   public function setTokenType($tokenType)
   {

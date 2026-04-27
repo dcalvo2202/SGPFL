@@ -23,9 +23,6 @@ class TimeWindows extends \Google\Collection
   protected $oneTimeWindowsType = OneTimeWindow::class;
   protected $oneTimeWindowsDataType = 'array';
   /**
-   * Required. The time zone in IANA format [IANA Time Zone
-   * Database](https://www.iana.org/time-zones) (e.g. America/New_York).
-   *
    * @var string
    */
   public $timeZone;
@@ -33,9 +30,7 @@ class TimeWindows extends \Google\Collection
   protected $weeklyWindowsDataType = 'array';
 
   /**
-   * Optional. One-time windows within which actions are restricted.
-   *
-   * @param OneTimeWindow[] $oneTimeWindows
+   * @param OneTimeWindow[]
    */
   public function setOneTimeWindows($oneTimeWindows)
   {
@@ -49,10 +44,7 @@ class TimeWindows extends \Google\Collection
     return $this->oneTimeWindows;
   }
   /**
-   * Required. The time zone in IANA format [IANA Time Zone
-   * Database](https://www.iana.org/time-zones) (e.g. America/New_York).
-   *
-   * @param string $timeZone
+   * @param string
    */
   public function setTimeZone($timeZone)
   {
@@ -66,9 +58,7 @@ class TimeWindows extends \Google\Collection
     return $this->timeZone;
   }
   /**
-   * Optional. Recurring weekly windows within which actions are restricted.
-   *
-   * @param WeeklyWindow[] $weeklyWindows
+   * @param WeeklyWindow[]
    */
   public function setWeeklyWindows($weeklyWindows)
   {

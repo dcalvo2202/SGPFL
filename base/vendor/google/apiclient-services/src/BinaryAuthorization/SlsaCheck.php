@@ -24,11 +24,7 @@ class SlsaCheck extends \Google\Collection
   protected $rulesDataType = 'array';
 
   /**
-   * Specifies a list of verification rules for the SLSA attestations. An image
-   * is considered compliant with the SlsaCheck if any of the rules are
-   * satisfied.
-   *
-   * @param VerificationRule[] $rules
+   * @param VerificationRule[]
    */
   public function setRules($rules)
   {

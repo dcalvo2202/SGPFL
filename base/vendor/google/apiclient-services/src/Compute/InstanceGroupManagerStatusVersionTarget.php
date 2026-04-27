@@ -20,22 +20,12 @@ namespace Google\Service\Compute;
 class InstanceGroupManagerStatusVersionTarget extends \Google\Model
 {
   /**
-   * Output only. A bit indicating whether version target has been reached in
-   * this managed instance group, i.e. all instances are in their target
-   * version. Instances' target version are specified byversion field on
-   * Instance Group Manager.
-   *
    * @var bool
    */
   public $isReached;
 
   /**
-   * Output only. A bit indicating whether version target has been reached in
-   * this managed instance group, i.e. all instances are in their target
-   * version. Instances' target version are specified byversion field on
-   * Instance Group Manager.
-   *
-   * @param bool $isReached
+   * @param bool
    */
   public function setIsReached($isReached)
   {

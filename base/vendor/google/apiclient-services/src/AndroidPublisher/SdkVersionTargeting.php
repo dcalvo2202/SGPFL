@@ -26,10 +26,7 @@ class SdkVersionTargeting extends \Google\Collection
   protected $valueDataType = 'array';
 
   /**
-   * Targeting of other sibling directories that were in the Bundle. For main
-   * splits this is targeting of other main splits.
-   *
-   * @param SdkVersion[] $alternatives
+   * @param SdkVersion[]
    */
   public function setAlternatives($alternatives)
   {
@@ -43,9 +40,7 @@ class SdkVersionTargeting extends \Google\Collection
     return $this->alternatives;
   }
   /**
-   * Value of an sdk version.
-   *
-   * @param SdkVersion[] $value
+   * @param SdkVersion[]
    */
   public function setValue($value)
   {

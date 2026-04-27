@@ -29,9 +29,7 @@ class DrmSystems extends \Google\Model
   protected $widevineDataType = '';
 
   /**
-   * Clearkey configuration.
-   *
-   * @param Clearkey $clearkey
+   * @param Clearkey
    */
   public function setClearkey(Clearkey $clearkey)
   {
@@ -45,9 +43,7 @@ class DrmSystems extends \Google\Model
     return $this->clearkey;
   }
   /**
-   * Fairplay configuration.
-   *
-   * @param Fairplay $fairplay
+   * @param Fairplay
    */
   public function setFairplay(Fairplay $fairplay)
   {
@@ -61,9 +57,7 @@ class DrmSystems extends \Google\Model
     return $this->fairplay;
   }
   /**
-   * Playready configuration.
-   *
-   * @param Playready $playready
+   * @param Playready
    */
   public function setPlayready(Playready $playready)
   {
@@ -77,9 +71,7 @@ class DrmSystems extends \Google\Model
     return $this->playready;
   }
   /**
-   * Widevine configuration.
-   *
-   * @param Widevine $widevine
+   * @param Widevine
    */
   public function setWidevine(Widevine $widevine)
   {

@@ -23,12 +23,7 @@ class RBACRoleBindingActuationState extends \Google\Model
   protected $rbacrolebindingStatesDataType = 'map';
 
   /**
-   * Output only. The state of RBACRoleBindings using custom roles that exist on
-   * the cluster, keyed by RBACRoleBinding resource name with format: projects/{
-   * project}/locations/{location}/scopes/{scope}/rbacrolebindings/{rbacrolebind
-   * ing}.
-   *
-   * @param RBACRoleBindingActuationRBACRoleBindingState[] $rbacrolebindingStates
+   * @param RBACRoleBindingActuationRBACRoleBindingState[]
    */
   public function setRbacrolebindingStates($rbacrolebindingStates)
   {

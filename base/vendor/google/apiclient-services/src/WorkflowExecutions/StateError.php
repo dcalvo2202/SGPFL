@@ -20,30 +20,16 @@ namespace Google\Service\WorkflowExecutions;
 class StateError extends \Google\Model
 {
   /**
-   * No type specified.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * Caused by an issue with KMS.
-   */
-  public const TYPE_KMS_ERROR = 'KMS_ERROR';
-  /**
-   * Provides specifics about the error.
-   *
    * @var string
    */
   public $details;
   /**
-   * The type of this state error.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Provides specifics about the error.
-   *
-   * @param string $details
+   * @param string
    */
   public function setDetails($details)
   {
@@ -57,18 +43,14 @@ class StateError extends \Google\Model
     return $this->details;
   }
   /**
-   * The type of this state error.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, KMS_ERROR
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

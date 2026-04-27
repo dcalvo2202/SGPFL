@@ -24,11 +24,7 @@ class GoogleCloudMlV1ListOptimalTrialsResponse extends \Google\Collection
   protected $trialsDataType = 'array';
 
   /**
-   * The pareto-optimal trials for multiple objective study or the optimal trial
-   * for single objective study. The definition of pareto-optimal can be checked
-   * in wiki page. https://en.wikipedia.org/wiki/Pareto_efficiency
-   *
-   * @param GoogleCloudMlV1Trial[] $trials
+   * @param GoogleCloudMlV1Trial[]
    */
   public function setTrials($trials)
   {

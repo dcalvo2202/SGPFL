@@ -23,9 +23,7 @@ class GoogleCloudContentwarehouseV1UpdateRuleSetRequest extends \Google\Model
   protected $ruleSetDataType = '';
 
   /**
-   * Required. The rule set to update.
-   *
-   * @param GoogleCloudContentwarehouseV1RuleSet $ruleSet
+   * @param GoogleCloudContentwarehouseV1RuleSet
    */
   public function setRuleSet(GoogleCloudContentwarehouseV1RuleSet $ruleSet)
   {

@@ -19,34 +19,18 @@ namespace Google\Service\Compute;
 
 class RouteAsPath extends \Google\Collection
 {
-  public const PATH_SEGMENT_TYPE_AS_CONFED_SEQUENCE = 'AS_CONFED_SEQUENCE';
-  public const PATH_SEGMENT_TYPE_AS_CONFED_SET = 'AS_CONFED_SET';
-  public const PATH_SEGMENT_TYPE_AS_SEQUENCE = 'AS_SEQUENCE';
-  public const PATH_SEGMENT_TYPE_AS_SET = 'AS_SET';
   protected $collection_key = 'asLists';
   /**
-   * [Output Only] The AS numbers of the AS Path.
-   *
    * @var string[]
    */
   public $asLists;
   /**
-   * [Output Only] The type of the AS Path, which can be one of the following
-   * values:  - 'AS_SET': unordered set of autonomous systems that the route in
-   * has traversed   - 'AS_SEQUENCE': ordered set of autonomous systems that the
-   * route has traversed   - 'AS_CONFED_SEQUENCE': ordered set of Member
-   * Autonomous Systems in the local confederation that the route has traversed
-   * - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local
-   * confederation that the route has traversed
-   *
    * @var string
    */
   public $pathSegmentType;
 
   /**
-   * [Output Only] The AS numbers of the AS Path.
-   *
-   * @param string[] $asLists
+   * @param string[]
    */
   public function setAsLists($asLists)
   {
@@ -60,24 +44,14 @@ class RouteAsPath extends \Google\Collection
     return $this->asLists;
   }
   /**
-   * [Output Only] The type of the AS Path, which can be one of the following
-   * values:  - 'AS_SET': unordered set of autonomous systems that the route in
-   * has traversed   - 'AS_SEQUENCE': ordered set of autonomous systems that the
-   * route has traversed   - 'AS_CONFED_SEQUENCE': ordered set of Member
-   * Autonomous Systems in the local confederation that the route has traversed
-   * - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local
-   * confederation that the route has traversed
-   *
-   * Accepted values: AS_CONFED_SEQUENCE, AS_CONFED_SET, AS_SEQUENCE, AS_SET
-   *
-   * @param self::PATH_SEGMENT_TYPE_* $pathSegmentType
+   * @param string
    */
   public function setPathSegmentType($pathSegmentType)
   {
     $this->pathSegmentType = $pathSegmentType;
   }
   /**
-   * @return self::PATH_SEGMENT_TYPE_*
+   * @return string
    */
   public function getPathSegmentType()
   {

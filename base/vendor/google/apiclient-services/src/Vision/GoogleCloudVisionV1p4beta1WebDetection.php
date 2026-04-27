@@ -34,10 +34,7 @@ class GoogleCloudVisionV1p4beta1WebDetection extends \Google\Collection
   protected $webEntitiesDataType = 'array';
 
   /**
-   * The service's best guess as to the topic of the request image. Inferred
-   * from similar images on the open web.
-   *
-   * @param GoogleCloudVisionV1p4beta1WebDetectionWebLabel[] $bestGuessLabels
+   * @param GoogleCloudVisionV1p4beta1WebDetectionWebLabel[]
    */
   public function setBestGuessLabels($bestGuessLabels)
   {
@@ -51,10 +48,7 @@ class GoogleCloudVisionV1p4beta1WebDetection extends \Google\Collection
     return $this->bestGuessLabels;
   }
   /**
-   * Fully matching images from the Internet. Can include resized copies of the
-   * query image.
-   *
-   * @param GoogleCloudVisionV1p4beta1WebDetectionWebImage[] $fullMatchingImages
+   * @param GoogleCloudVisionV1p4beta1WebDetectionWebImage[]
    */
   public function setFullMatchingImages($fullMatchingImages)
   {
@@ -68,9 +62,7 @@ class GoogleCloudVisionV1p4beta1WebDetection extends \Google\Collection
     return $this->fullMatchingImages;
   }
   /**
-   * Web pages containing the matching images from the Internet.
-   *
-   * @param GoogleCloudVisionV1p4beta1WebDetectionWebPage[] $pagesWithMatchingImages
+   * @param GoogleCloudVisionV1p4beta1WebDetectionWebPage[]
    */
   public function setPagesWithMatchingImages($pagesWithMatchingImages)
   {
@@ -84,11 +76,7 @@ class GoogleCloudVisionV1p4beta1WebDetection extends \Google\Collection
     return $this->pagesWithMatchingImages;
   }
   /**
-   * Partial matching images from the Internet. Those images are similar enough
-   * to share some key-point features. For example an original image will likely
-   * have partial matching for its crops.
-   *
-   * @param GoogleCloudVisionV1p4beta1WebDetectionWebImage[] $partialMatchingImages
+   * @param GoogleCloudVisionV1p4beta1WebDetectionWebImage[]
    */
   public function setPartialMatchingImages($partialMatchingImages)
   {
@@ -102,9 +90,7 @@ class GoogleCloudVisionV1p4beta1WebDetection extends \Google\Collection
     return $this->partialMatchingImages;
   }
   /**
-   * The visually similar image results.
-   *
-   * @param GoogleCloudVisionV1p4beta1WebDetectionWebImage[] $visuallySimilarImages
+   * @param GoogleCloudVisionV1p4beta1WebDetectionWebImage[]
    */
   public function setVisuallySimilarImages($visuallySimilarImages)
   {
@@ -118,9 +104,7 @@ class GoogleCloudVisionV1p4beta1WebDetection extends \Google\Collection
     return $this->visuallySimilarImages;
   }
   /**
-   * Deduced entities from similar images on the Internet.
-   *
-   * @param GoogleCloudVisionV1p4beta1WebDetectionWebEntity[] $webEntities
+   * @param GoogleCloudVisionV1p4beta1WebDetectionWebEntity[]
    */
   public function setWebEntities($webEntities)
   {

@@ -25,12 +25,7 @@ class SuggestedInlineObjectProperties extends \Google\Model
   protected $inlineObjectPropertiesSuggestionStateDataType = '';
 
   /**
-   * An InlineObjectProperties that only includes the changes made in this
-   * suggestion. This can be used along with the
-   * inline_object_properties_suggestion_state to see which fields have changed
-   * and their new values.
-   *
-   * @param InlineObjectProperties $inlineObjectProperties
+   * @param InlineObjectProperties
    */
   public function setInlineObjectProperties(InlineObjectProperties $inlineObjectProperties)
   {
@@ -44,10 +39,7 @@ class SuggestedInlineObjectProperties extends \Google\Model
     return $this->inlineObjectProperties;
   }
   /**
-   * A mask that indicates which of the fields on the base
-   * InlineObjectProperties have been changed in this suggestion.
-   *
-   * @param InlineObjectPropertiesSuggestionState $inlineObjectPropertiesSuggestionState
+   * @param InlineObjectPropertiesSuggestionState
    */
   public function setInlineObjectPropertiesSuggestionState(InlineObjectPropertiesSuggestionState $inlineObjectPropertiesSuggestionState)
   {

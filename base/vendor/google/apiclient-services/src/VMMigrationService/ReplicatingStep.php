@@ -20,37 +20,24 @@ namespace Google\Service\VMMigrationService;
 class ReplicatingStep extends \Google\Model
 {
   /**
-   * The source disks replication rate for the last 30 minutes in bytes per
-   * second.
-   *
    * @var string
    */
   public $lastThirtyMinutesAverageBytesPerSecond;
   /**
-   * The source disks replication rate for the last 2 minutes in bytes per
-   * second.
-   *
    * @var string
    */
   public $lastTwoMinutesAverageBytesPerSecond;
   /**
-   * Replicated bytes in the step.
-   *
    * @var string
    */
   public $replicatedBytes;
   /**
-   * Total bytes to be handled in the step.
-   *
    * @var string
    */
   public $totalBytes;
 
   /**
-   * The source disks replication rate for the last 30 minutes in bytes per
-   * second.
-   *
-   * @param string $lastThirtyMinutesAverageBytesPerSecond
+   * @param string
    */
   public function setLastThirtyMinutesAverageBytesPerSecond($lastThirtyMinutesAverageBytesPerSecond)
   {
@@ -64,10 +51,7 @@ class ReplicatingStep extends \Google\Model
     return $this->lastThirtyMinutesAverageBytesPerSecond;
   }
   /**
-   * The source disks replication rate for the last 2 minutes in bytes per
-   * second.
-   *
-   * @param string $lastTwoMinutesAverageBytesPerSecond
+   * @param string
    */
   public function setLastTwoMinutesAverageBytesPerSecond($lastTwoMinutesAverageBytesPerSecond)
   {
@@ -81,9 +65,7 @@ class ReplicatingStep extends \Google\Model
     return $this->lastTwoMinutesAverageBytesPerSecond;
   }
   /**
-   * Replicated bytes in the step.
-   *
-   * @param string $replicatedBytes
+   * @param string
    */
   public function setReplicatedBytes($replicatedBytes)
   {
@@ -97,9 +79,7 @@ class ReplicatingStep extends \Google\Model
     return $this->replicatedBytes;
   }
   /**
-   * Total bytes to be handled in the step.
-   *
-   * @param string $totalBytes
+   * @param string
    */
   public function setTotalBytes($totalBytes)
   {

@@ -26,16 +26,12 @@ class RoboStartingIntent extends \Google\Model
   protected $startActivityType = StartActivityIntent::class;
   protected $startActivityDataType = '';
   /**
-   * Timeout in seconds for each intent.
-   *
    * @var string
    */
   public $timeout;
 
   /**
-   * An intent that starts the main launcher activity.
-   *
-   * @param LauncherActivityIntent $launcherActivity
+   * @param LauncherActivityIntent
    */
   public function setLauncherActivity(LauncherActivityIntent $launcherActivity)
   {
@@ -49,9 +45,7 @@ class RoboStartingIntent extends \Google\Model
     return $this->launcherActivity;
   }
   /**
-   * Skips the starting activity
-   *
-   * @param NoActivityIntent $noActivity
+   * @param NoActivityIntent
    */
   public function setNoActivity(NoActivityIntent $noActivity)
   {
@@ -65,9 +59,7 @@ class RoboStartingIntent extends \Google\Model
     return $this->noActivity;
   }
   /**
-   * An intent that starts an activity with specific details.
-   *
-   * @param StartActivityIntent $startActivity
+   * @param StartActivityIntent
    */
   public function setStartActivity(StartActivityIntent $startActivity)
   {
@@ -81,9 +73,7 @@ class RoboStartingIntent extends \Google\Model
     return $this->startActivity;
   }
   /**
-   * Timeout in seconds for each intent.
-   *
-   * @param string $timeout
+   * @param string
    */
   public function setTimeout($timeout)
   {

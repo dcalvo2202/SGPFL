@@ -20,48 +20,24 @@ namespace Google\Service\GKEOnPrem;
 class EnrollBareMetalClusterRequest extends \Google\Model
 {
   /**
-   * Required. The admin cluster this bare metal user cluster belongs to. This
-   * is the full resource name of the admin cluster's fleet membership. In the
-   * future, references to other resource types might be allowed if admin
-   * clusters are modeled as their own resources.
-   *
    * @var string
    */
   public $adminClusterMembership;
   /**
-   * User provided OnePlatform identifier that is used as part of the resource
-   * name. This must be unique among all bare metal clusters within a project
-   * and location and will return a 409 if the cluster already exists.
-   * (https://tools.ietf.org/html/rfc1123) format.
-   *
    * @var string
    */
   public $bareMetalClusterId;
   /**
-   * Optional. The object name of the bare metal cluster custom resource on the
-   * associated admin cluster. This field is used to support conflicting
-   * resource names when enrolling existing clusters to the API. When not
-   * provided, this field will resolve to the bare_metal_cluster_id. Otherwise,
-   * it must match the object name of the bare metal cluster custom resource. It
-   * is not modifiable outside / beyond the enrollment operation.
-   *
    * @var string
    */
   public $localName;
   /**
-   * Optional. The namespace of the cluster.
-   *
    * @var string
    */
   public $localNamespace;
 
   /**
-   * Required. The admin cluster this bare metal user cluster belongs to. This
-   * is the full resource name of the admin cluster's fleet membership. In the
-   * future, references to other resource types might be allowed if admin
-   * clusters are modeled as their own resources.
-   *
-   * @param string $adminClusterMembership
+   * @param string
    */
   public function setAdminClusterMembership($adminClusterMembership)
   {
@@ -75,12 +51,7 @@ class EnrollBareMetalClusterRequest extends \Google\Model
     return $this->adminClusterMembership;
   }
   /**
-   * User provided OnePlatform identifier that is used as part of the resource
-   * name. This must be unique among all bare metal clusters within a project
-   * and location and will return a 409 if the cluster already exists.
-   * (https://tools.ietf.org/html/rfc1123) format.
-   *
-   * @param string $bareMetalClusterId
+   * @param string
    */
   public function setBareMetalClusterId($bareMetalClusterId)
   {
@@ -94,14 +65,7 @@ class EnrollBareMetalClusterRequest extends \Google\Model
     return $this->bareMetalClusterId;
   }
   /**
-   * Optional. The object name of the bare metal cluster custom resource on the
-   * associated admin cluster. This field is used to support conflicting
-   * resource names when enrolling existing clusters to the API. When not
-   * provided, this field will resolve to the bare_metal_cluster_id. Otherwise,
-   * it must match the object name of the bare metal cluster custom resource. It
-   * is not modifiable outside / beyond the enrollment operation.
-   *
-   * @param string $localName
+   * @param string
    */
   public function setLocalName($localName)
   {
@@ -115,9 +79,7 @@ class EnrollBareMetalClusterRequest extends \Google\Model
     return $this->localName;
   }
   /**
-   * Optional. The namespace of the cluster.
-   *
-   * @param string $localNamespace
+   * @param string
    */
   public function setLocalNamespace($localNamespace)
   {

@@ -23,50 +23,26 @@ class GoogleCloudDataplexV1AssetDiscoverySpec extends \Google\Collection
   protected $csvOptionsType = GoogleCloudDataplexV1AssetDiscoverySpecCsvOptions::class;
   protected $csvOptionsDataType = '';
   /**
-   * Optional. Whether discovery is enabled.
-   *
    * @var bool
    */
   public $enabled;
   /**
-   * Optional. The list of patterns to apply for selecting data to exclude
-   * during discovery. For Cloud Storage bucket assets, these are interpreted as
-   * glob patterns used to match object names. For BigQuery dataset assets,
-   * these are interpreted as patterns to match table names.
-   *
    * @var string[]
    */
   public $excludePatterns;
   /**
-   * Optional. The list of patterns to apply for selecting data to include
-   * during discovery if only a subset of the data should considered. For Cloud
-   * Storage bucket assets, these are interpreted as glob patterns used to match
-   * object names. For BigQuery dataset assets, these are interpreted as
-   * patterns to match table names.
-   *
    * @var string[]
    */
   public $includePatterns;
   protected $jsonOptionsType = GoogleCloudDataplexV1AssetDiscoverySpecJsonOptions::class;
   protected $jsonOptionsDataType = '';
   /**
-   * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for running
-   * discovery periodically. Successive discovery runs must be scheduled at
-   * least 60 minutes apart. The default value is to run discovery every 60
-   * minutes.To explicitly set a timezone to the cron tab, apply a prefix in the
-   * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or TZ=${IANA_TIME_ZONE}". The
-   * ${IANA_TIME_ZONE} may only be a valid string from IANA time zone database.
-   * For example, CRON_TZ=America/New_York 1 * * * *, or TZ=America/New_York 1 *
-   * * * *.
-   *
    * @var string
    */
   public $schedule;
 
   /**
-   * Optional. Configuration for CSV data.
-   *
-   * @param GoogleCloudDataplexV1AssetDiscoverySpecCsvOptions $csvOptions
+   * @param GoogleCloudDataplexV1AssetDiscoverySpecCsvOptions
    */
   public function setCsvOptions(GoogleCloudDataplexV1AssetDiscoverySpecCsvOptions $csvOptions)
   {
@@ -80,9 +56,7 @@ class GoogleCloudDataplexV1AssetDiscoverySpec extends \Google\Collection
     return $this->csvOptions;
   }
   /**
-   * Optional. Whether discovery is enabled.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {
@@ -96,12 +70,7 @@ class GoogleCloudDataplexV1AssetDiscoverySpec extends \Google\Collection
     return $this->enabled;
   }
   /**
-   * Optional. The list of patterns to apply for selecting data to exclude
-   * during discovery. For Cloud Storage bucket assets, these are interpreted as
-   * glob patterns used to match object names. For BigQuery dataset assets,
-   * these are interpreted as patterns to match table names.
-   *
-   * @param string[] $excludePatterns
+   * @param string[]
    */
   public function setExcludePatterns($excludePatterns)
   {
@@ -115,13 +84,7 @@ class GoogleCloudDataplexV1AssetDiscoverySpec extends \Google\Collection
     return $this->excludePatterns;
   }
   /**
-   * Optional. The list of patterns to apply for selecting data to include
-   * during discovery if only a subset of the data should considered. For Cloud
-   * Storage bucket assets, these are interpreted as glob patterns used to match
-   * object names. For BigQuery dataset assets, these are interpreted as
-   * patterns to match table names.
-   *
-   * @param string[] $includePatterns
+   * @param string[]
    */
   public function setIncludePatterns($includePatterns)
   {
@@ -135,9 +98,7 @@ class GoogleCloudDataplexV1AssetDiscoverySpec extends \Google\Collection
     return $this->includePatterns;
   }
   /**
-   * Optional. Configuration for Json data.
-   *
-   * @param GoogleCloudDataplexV1AssetDiscoverySpecJsonOptions $jsonOptions
+   * @param GoogleCloudDataplexV1AssetDiscoverySpecJsonOptions
    */
   public function setJsonOptions(GoogleCloudDataplexV1AssetDiscoverySpecJsonOptions $jsonOptions)
   {
@@ -151,16 +112,7 @@ class GoogleCloudDataplexV1AssetDiscoverySpec extends \Google\Collection
     return $this->jsonOptions;
   }
   /**
-   * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for running
-   * discovery periodically. Successive discovery runs must be scheduled at
-   * least 60 minutes apart. The default value is to run discovery every 60
-   * minutes.To explicitly set a timezone to the cron tab, apply a prefix in the
-   * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or TZ=${IANA_TIME_ZONE}". The
-   * ${IANA_TIME_ZONE} may only be a valid string from IANA time zone database.
-   * For example, CRON_TZ=America/New_York 1 * * * *, or TZ=America/New_York 1 *
-   * * * *.
-   *
-   * @param string $schedule
+   * @param string
    */
   public function setSchedule($schedule)
   {

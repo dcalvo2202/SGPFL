@@ -20,39 +20,24 @@ namespace Google\Service\ShoppingContent;
 class MethodQuota extends \Google\Model
 {
   /**
-   * Output only. The method name, for example `products.list`. Method name does
-   * not contain version because quota can be shared between different API
-   * versions of the same method.
-   *
    * @var string
    */
   public $method;
   /**
-   * Output only. The maximum number of calls allowed per day for the method.
-   *
    * @var string
    */
   public $quotaLimit;
   /**
-   * Output only. The maximum number of calls allowed per minute for the method.
-   *
    * @var string
    */
   public $quotaMinuteLimit;
   /**
-   * Output only. The current quota usage, meaning the number of calls already
-   * made to the method per day. Usage is reset every day at 12 PM midday UTC.
-   *
    * @var string
    */
   public $quotaUsage;
 
   /**
-   * Output only. The method name, for example `products.list`. Method name does
-   * not contain version because quota can be shared between different API
-   * versions of the same method.
-   *
-   * @param string $method
+   * @param string
    */
   public function setMethod($method)
   {
@@ -66,9 +51,7 @@ class MethodQuota extends \Google\Model
     return $this->method;
   }
   /**
-   * Output only. The maximum number of calls allowed per day for the method.
-   *
-   * @param string $quotaLimit
+   * @param string
    */
   public function setQuotaLimit($quotaLimit)
   {
@@ -82,9 +65,7 @@ class MethodQuota extends \Google\Model
     return $this->quotaLimit;
   }
   /**
-   * Output only. The maximum number of calls allowed per minute for the method.
-   *
-   * @param string $quotaMinuteLimit
+   * @param string
    */
   public function setQuotaMinuteLimit($quotaMinuteLimit)
   {
@@ -98,10 +79,7 @@ class MethodQuota extends \Google\Model
     return $this->quotaMinuteLimit;
   }
   /**
-   * Output only. The current quota usage, meaning the number of calls already
-   * made to the method per day. Usage is reset every day at 12 PM midday UTC.
-   *
-   * @param string $quotaUsage
+   * @param string
    */
   public function setQuotaUsage($quotaUsage)
   {

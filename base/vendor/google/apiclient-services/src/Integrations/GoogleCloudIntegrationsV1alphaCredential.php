@@ -19,59 +19,9 @@ namespace Google\Service\Integrations;
 
 class GoogleCloudIntegrationsV1alphaCredential extends \Google\Model
 {
-  /**
-   * Unspecified credential type
-   */
-  public const CREDENTIAL_TYPE_CREDENTIAL_TYPE_UNSPECIFIED = 'CREDENTIAL_TYPE_UNSPECIFIED';
-  /**
-   * Regular username/password pair.
-   */
-  public const CREDENTIAL_TYPE_USERNAME_AND_PASSWORD = 'USERNAME_AND_PASSWORD';
-  /**
-   * API key.
-   */
-  public const CREDENTIAL_TYPE_API_KEY = 'API_KEY';
-  /**
-   * OAuth 2.0 Authorization Code Grant Type.
-   */
-  public const CREDENTIAL_TYPE_OAUTH2_AUTHORIZATION_CODE = 'OAUTH2_AUTHORIZATION_CODE';
-  /**
-   * OAuth 2.0 Implicit Grant Type.
-   */
-  public const CREDENTIAL_TYPE_OAUTH2_IMPLICIT = 'OAUTH2_IMPLICIT';
-  /**
-   * OAuth 2.0 Client Credentials Grant Type.
-   */
-  public const CREDENTIAL_TYPE_OAUTH2_CLIENT_CREDENTIALS = 'OAUTH2_CLIENT_CREDENTIALS';
-  /**
-   * OAuth 2.0 Resource Owner Credentials Grant Type.
-   */
-  public const CREDENTIAL_TYPE_OAUTH2_RESOURCE_OWNER_CREDENTIALS = 'OAUTH2_RESOURCE_OWNER_CREDENTIALS';
-  /**
-   * JWT Token.
-   */
-  public const CREDENTIAL_TYPE_JWT = 'JWT';
-  /**
-   * Auth Token, e.g. bearer token.
-   */
-  public const CREDENTIAL_TYPE_AUTH_TOKEN = 'AUTH_TOKEN';
-  /**
-   * Service Account which can be used to generate token for authentication.
-   */
-  public const CREDENTIAL_TYPE_SERVICE_ACCOUNT = 'SERVICE_ACCOUNT';
-  /**
-   * Client Certificate only.
-   */
-  public const CREDENTIAL_TYPE_CLIENT_CERTIFICATE_ONLY = 'CLIENT_CERTIFICATE_ONLY';
-  /**
-   * Google OIDC ID Token
-   */
-  public const CREDENTIAL_TYPE_OIDC_TOKEN = 'OIDC_TOKEN';
   protected $authTokenType = GoogleCloudIntegrationsV1alphaAuthToken::class;
   protected $authTokenDataType = '';
   /**
-   * Credential type associated with auth config.
-   *
    * @var string
    */
   public $credentialType;
@@ -91,9 +41,7 @@ class GoogleCloudIntegrationsV1alphaCredential extends \Google\Model
   protected $usernameAndPasswordDataType = '';
 
   /**
-   * Auth token credential
-   *
-   * @param GoogleCloudIntegrationsV1alphaAuthToken $authToken
+   * @param GoogleCloudIntegrationsV1alphaAuthToken
    */
   public function setAuthToken(GoogleCloudIntegrationsV1alphaAuthToken $authToken)
   {
@@ -107,30 +55,21 @@ class GoogleCloudIntegrationsV1alphaCredential extends \Google\Model
     return $this->authToken;
   }
   /**
-   * Credential type associated with auth config.
-   *
-   * Accepted values: CREDENTIAL_TYPE_UNSPECIFIED, USERNAME_AND_PASSWORD,
-   * API_KEY, OAUTH2_AUTHORIZATION_CODE, OAUTH2_IMPLICIT,
-   * OAUTH2_CLIENT_CREDENTIALS, OAUTH2_RESOURCE_OWNER_CREDENTIALS, JWT,
-   * AUTH_TOKEN, SERVICE_ACCOUNT, CLIENT_CERTIFICATE_ONLY, OIDC_TOKEN
-   *
-   * @param self::CREDENTIAL_TYPE_* $credentialType
+   * @param string
    */
   public function setCredentialType($credentialType)
   {
     $this->credentialType = $credentialType;
   }
   /**
-   * @return self::CREDENTIAL_TYPE_*
+   * @return string
    */
   public function getCredentialType()
   {
     return $this->credentialType;
   }
   /**
-   * JWT credential
-   *
-   * @param GoogleCloudIntegrationsV1alphaJwt $jwt
+   * @param GoogleCloudIntegrationsV1alphaJwt
    */
   public function setJwt(GoogleCloudIntegrationsV1alphaJwt $jwt)
   {
@@ -144,11 +83,7 @@ class GoogleCloudIntegrationsV1alphaCredential extends \Google\Model
     return $this->jwt;
   }
   /**
-   * The api_key and oauth2_implicit are not covered in v1 and will be picked up
-   * once v1 is implemented. ApiKey api_key = 3; OAuth2 authorization code
-   * credential
-   *
-   * @param GoogleCloudIntegrationsV1alphaOAuth2AuthorizationCode $oauth2AuthorizationCode
+   * @param GoogleCloudIntegrationsV1alphaOAuth2AuthorizationCode
    */
   public function setOauth2AuthorizationCode(GoogleCloudIntegrationsV1alphaOAuth2AuthorizationCode $oauth2AuthorizationCode)
   {
@@ -162,9 +97,7 @@ class GoogleCloudIntegrationsV1alphaCredential extends \Google\Model
     return $this->oauth2AuthorizationCode;
   }
   /**
-   * OAuth2Implicit oauth2_implicit = 5; OAuth2 client credentials
-   *
-   * @param GoogleCloudIntegrationsV1alphaOAuth2ClientCredentials $oauth2ClientCredentials
+   * @param GoogleCloudIntegrationsV1alphaOAuth2ClientCredentials
    */
   public function setOauth2ClientCredentials(GoogleCloudIntegrationsV1alphaOAuth2ClientCredentials $oauth2ClientCredentials)
   {
@@ -178,9 +111,7 @@ class GoogleCloudIntegrationsV1alphaCredential extends \Google\Model
     return $this->oauth2ClientCredentials;
   }
   /**
-   * OAuth2 resource owner credentials
-   *
-   * @param GoogleCloudIntegrationsV1alphaOAuth2ResourceOwnerCredentials $oauth2ResourceOwnerCredentials
+   * @param GoogleCloudIntegrationsV1alphaOAuth2ResourceOwnerCredentials
    */
   public function setOauth2ResourceOwnerCredentials(GoogleCloudIntegrationsV1alphaOAuth2ResourceOwnerCredentials $oauth2ResourceOwnerCredentials)
   {
@@ -194,9 +125,7 @@ class GoogleCloudIntegrationsV1alphaCredential extends \Google\Model
     return $this->oauth2ResourceOwnerCredentials;
   }
   /**
-   * Google OIDC ID Token
-   *
-   * @param GoogleCloudIntegrationsV1alphaOidcToken $oidcToken
+   * @param GoogleCloudIntegrationsV1alphaOidcToken
    */
   public function setOidcToken(GoogleCloudIntegrationsV1alphaOidcToken $oidcToken)
   {
@@ -210,9 +139,7 @@ class GoogleCloudIntegrationsV1alphaCredential extends \Google\Model
     return $this->oidcToken;
   }
   /**
-   * Service account credential
-   *
-   * @param GoogleCloudIntegrationsV1alphaServiceAccountCredentials $serviceAccountCredentials
+   * @param GoogleCloudIntegrationsV1alphaServiceAccountCredentials
    */
   public function setServiceAccountCredentials(GoogleCloudIntegrationsV1alphaServiceAccountCredentials $serviceAccountCredentials)
   {
@@ -226,9 +153,7 @@ class GoogleCloudIntegrationsV1alphaCredential extends \Google\Model
     return $this->serviceAccountCredentials;
   }
   /**
-   * Username and password credential
-   *
-   * @param GoogleCloudIntegrationsV1alphaUsernameAndPassword $usernameAndPassword
+   * @param GoogleCloudIntegrationsV1alphaUsernameAndPassword
    */
   public function setUsernameAndPassword(GoogleCloudIntegrationsV1alphaUsernameAndPassword $usernameAndPassword)
   {

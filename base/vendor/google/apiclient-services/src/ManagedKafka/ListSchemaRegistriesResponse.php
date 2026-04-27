@@ -24,9 +24,7 @@ class ListSchemaRegistriesResponse extends \Google\Collection
   protected $schemaRegistriesDataType = 'array';
 
   /**
-   * The schema registry instances.
-   *
-   * @param SchemaRegistry[] $schemaRegistries
+   * @param SchemaRegistry[]
    */
   public function setSchemaRegistries($schemaRegistries)
   {

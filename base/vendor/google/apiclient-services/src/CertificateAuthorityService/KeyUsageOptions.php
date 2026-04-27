@@ -20,65 +20,44 @@ namespace Google\Service\CertificateAuthorityService;
 class KeyUsageOptions extends \Google\Model
 {
   /**
-   * The key may be used to sign certificates.
-   *
    * @var bool
    */
   public $certSign;
   /**
-   * The key may be used for cryptographic commitments. Note that this may also
-   * be referred to as "non-repudiation".
-   *
    * @var bool
    */
   public $contentCommitment;
   /**
-   * The key may be used sign certificate revocation lists.
-   *
    * @var bool
    */
   public $crlSign;
   /**
-   * The key may be used to encipher data.
-   *
    * @var bool
    */
   public $dataEncipherment;
   /**
-   * The key may be used to decipher only.
-   *
    * @var bool
    */
   public $decipherOnly;
   /**
-   * The key may be used for digital signatures.
-   *
    * @var bool
    */
   public $digitalSignature;
   /**
-   * The key may be used to encipher only.
-   *
    * @var bool
    */
   public $encipherOnly;
   /**
-   * The key may be used in a key agreement protocol.
-   *
    * @var bool
    */
   public $keyAgreement;
   /**
-   * The key may be used to encipher other keys.
-   *
    * @var bool
    */
   public $keyEncipherment;
 
   /**
-   * The key may be used to sign certificates.
-   *
-   * @param bool $certSign
+   * @param bool
    */
   public function setCertSign($certSign)
   {
@@ -92,10 +71,7 @@ class KeyUsageOptions extends \Google\Model
     return $this->certSign;
   }
   /**
-   * The key may be used for cryptographic commitments. Note that this may also
-   * be referred to as "non-repudiation".
-   *
-   * @param bool $contentCommitment
+   * @param bool
    */
   public function setContentCommitment($contentCommitment)
   {
@@ -109,9 +85,7 @@ class KeyUsageOptions extends \Google\Model
     return $this->contentCommitment;
   }
   /**
-   * The key may be used sign certificate revocation lists.
-   *
-   * @param bool $crlSign
+   * @param bool
    */
   public function setCrlSign($crlSign)
   {
@@ -125,9 +99,7 @@ class KeyUsageOptions extends \Google\Model
     return $this->crlSign;
   }
   /**
-   * The key may be used to encipher data.
-   *
-   * @param bool $dataEncipherment
+   * @param bool
    */
   public function setDataEncipherment($dataEncipherment)
   {
@@ -141,9 +113,7 @@ class KeyUsageOptions extends \Google\Model
     return $this->dataEncipherment;
   }
   /**
-   * The key may be used to decipher only.
-   *
-   * @param bool $decipherOnly
+   * @param bool
    */
   public function setDecipherOnly($decipherOnly)
   {
@@ -157,9 +127,7 @@ class KeyUsageOptions extends \Google\Model
     return $this->decipherOnly;
   }
   /**
-   * The key may be used for digital signatures.
-   *
-   * @param bool $digitalSignature
+   * @param bool
    */
   public function setDigitalSignature($digitalSignature)
   {
@@ -173,9 +141,7 @@ class KeyUsageOptions extends \Google\Model
     return $this->digitalSignature;
   }
   /**
-   * The key may be used to encipher only.
-   *
-   * @param bool $encipherOnly
+   * @param bool
    */
   public function setEncipherOnly($encipherOnly)
   {
@@ -189,9 +155,7 @@ class KeyUsageOptions extends \Google\Model
     return $this->encipherOnly;
   }
   /**
-   * The key may be used in a key agreement protocol.
-   *
-   * @param bool $keyAgreement
+   * @param bool
    */
   public function setKeyAgreement($keyAgreement)
   {
@@ -205,9 +169,7 @@ class KeyUsageOptions extends \Google\Model
     return $this->keyAgreement;
   }
   /**
-   * The key may be used to encipher other keys.
-   *
-   * @param bool $keyEncipherment
+   * @param bool
    */
   public function setKeyEncipherment($keyEncipherment)
   {

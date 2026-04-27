@@ -31,9 +31,7 @@ class GooglePrivacyDlpV2StorageConfig extends \Google\Model
   protected $timespanConfigDataType = '';
 
   /**
-   * BigQuery options.
-   *
-   * @param GooglePrivacyDlpV2BigQueryOptions $bigQueryOptions
+   * @param GooglePrivacyDlpV2BigQueryOptions
    */
   public function setBigQueryOptions(GooglePrivacyDlpV2BigQueryOptions $bigQueryOptions)
   {
@@ -47,9 +45,7 @@ class GooglePrivacyDlpV2StorageConfig extends \Google\Model
     return $this->bigQueryOptions;
   }
   /**
-   * Cloud Storage options.
-   *
-   * @param GooglePrivacyDlpV2CloudStorageOptions $cloudStorageOptions
+   * @param GooglePrivacyDlpV2CloudStorageOptions
    */
   public function setCloudStorageOptions(GooglePrivacyDlpV2CloudStorageOptions $cloudStorageOptions)
   {
@@ -63,9 +59,7 @@ class GooglePrivacyDlpV2StorageConfig extends \Google\Model
     return $this->cloudStorageOptions;
   }
   /**
-   * Google Cloud Datastore options.
-   *
-   * @param GooglePrivacyDlpV2DatastoreOptions $datastoreOptions
+   * @param GooglePrivacyDlpV2DatastoreOptions
    */
   public function setDatastoreOptions(GooglePrivacyDlpV2DatastoreOptions $datastoreOptions)
   {
@@ -79,9 +73,7 @@ class GooglePrivacyDlpV2StorageConfig extends \Google\Model
     return $this->datastoreOptions;
   }
   /**
-   * Hybrid inspection options.
-   *
-   * @param GooglePrivacyDlpV2HybridOptions $hybridOptions
+   * @param GooglePrivacyDlpV2HybridOptions
    */
   public function setHybridOptions(GooglePrivacyDlpV2HybridOptions $hybridOptions)
   {
@@ -95,9 +87,7 @@ class GooglePrivacyDlpV2StorageConfig extends \Google\Model
     return $this->hybridOptions;
   }
   /**
-   * Configuration of the timespan of the items to include in scanning.
-   *
-   * @param GooglePrivacyDlpV2TimespanConfig $timespanConfig
+   * @param GooglePrivacyDlpV2TimespanConfig
    */
   public function setTimespanConfig(GooglePrivacyDlpV2TimespanConfig $timespanConfig)
   {

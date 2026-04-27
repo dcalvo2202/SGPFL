@@ -23,17 +23,12 @@ class GoogleCloudDataplexV1ListEnvironmentsResponse extends \Google\Collection
   protected $environmentsType = GoogleCloudDataplexV1Environment::class;
   protected $environmentsDataType = 'array';
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Environments under the given parent lake.
-   *
-   * @param GoogleCloudDataplexV1Environment[] $environments
+   * @param GoogleCloudDataplexV1Environment[]
    */
   public function setEnvironments($environments)
   {
@@ -47,10 +42,7 @@ class GoogleCloudDataplexV1ListEnvironmentsResponse extends \Google\Collection
     return $this->environments;
   }
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

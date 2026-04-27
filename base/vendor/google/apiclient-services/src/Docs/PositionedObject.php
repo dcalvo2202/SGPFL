@@ -21,24 +21,16 @@ class PositionedObject extends \Google\Collection
 {
   protected $collection_key = 'suggestedDeletionIds';
   /**
-   * The ID of this positioned object.
-   *
    * @var string
    */
   public $objectId;
   protected $positionedObjectPropertiesType = PositionedObjectProperties::class;
   protected $positionedObjectPropertiesDataType = '';
   /**
-   * The suggested deletion IDs. If empty, then there are no suggested deletions
-   * of this content.
-   *
    * @var string[]
    */
   public $suggestedDeletionIds;
   /**
-   * The suggested insertion ID. If empty, then this is not a suggested
-   * insertion.
-   *
    * @var string
    */
   public $suggestedInsertionId;
@@ -46,9 +38,7 @@ class PositionedObject extends \Google\Collection
   protected $suggestedPositionedObjectPropertiesChangesDataType = 'map';
 
   /**
-   * The ID of this positioned object.
-   *
-   * @param string $objectId
+   * @param string
    */
   public function setObjectId($objectId)
   {
@@ -62,9 +52,7 @@ class PositionedObject extends \Google\Collection
     return $this->objectId;
   }
   /**
-   * The properties of this positioned object.
-   *
-   * @param PositionedObjectProperties $positionedObjectProperties
+   * @param PositionedObjectProperties
    */
   public function setPositionedObjectProperties(PositionedObjectProperties $positionedObjectProperties)
   {
@@ -78,10 +66,7 @@ class PositionedObject extends \Google\Collection
     return $this->positionedObjectProperties;
   }
   /**
-   * The suggested deletion IDs. If empty, then there are no suggested deletions
-   * of this content.
-   *
-   * @param string[] $suggestedDeletionIds
+   * @param string[]
    */
   public function setSuggestedDeletionIds($suggestedDeletionIds)
   {
@@ -95,10 +80,7 @@ class PositionedObject extends \Google\Collection
     return $this->suggestedDeletionIds;
   }
   /**
-   * The suggested insertion ID. If empty, then this is not a suggested
-   * insertion.
-   *
-   * @param string $suggestedInsertionId
+   * @param string
    */
   public function setSuggestedInsertionId($suggestedInsertionId)
   {
@@ -112,10 +94,7 @@ class PositionedObject extends \Google\Collection
     return $this->suggestedInsertionId;
   }
   /**
-   * The suggested changes to the positioned object properties, keyed by
-   * suggestion ID.
-   *
-   * @param SuggestedPositionedObjectProperties[] $suggestedPositionedObjectPropertiesChanges
+   * @param SuggestedPositionedObjectProperties[]
    */
   public function setSuggestedPositionedObjectPropertiesChanges($suggestedPositionedObjectPropertiesChanges)
   {

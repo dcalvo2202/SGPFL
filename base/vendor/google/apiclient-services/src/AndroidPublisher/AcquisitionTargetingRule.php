@@ -23,10 +23,7 @@ class AcquisitionTargetingRule extends \Google\Model
   protected $scopeDataType = '';
 
   /**
-   * Required. The scope of subscriptions this rule considers. Only allows "this
-   * subscription" and "any subscription in app".
-   *
-   * @param TargetingRuleScope $scope
+   * @param TargetingRuleScope
    */
   public function setScope(TargetingRuleScope $scope)
   {

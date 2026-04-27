@@ -19,67 +19,32 @@ namespace Google\Service\ChromeManagement;
 
 class GoogleChromeManagementV1ChromeAppInfo extends \Google\Collection
 {
-  /**
-   * Unspecified ItemType.
-   */
-  public const TYPE_ITEM_TYPE_UNSPECIFIED = 'ITEM_TYPE_UNSPECIFIED';
-  /**
-   * Chrome Extensions.
-   */
-  public const TYPE_EXTENSION = 'EXTENSION';
-  /**
-   * Any other type than extension.
-   */
-  public const TYPE_OTHERS = 'OTHERS';
   protected $collection_key = 'siteAccess';
   /**
-   * Output only. Whether the app or extension is built and maintained by
-   * Google. Version-specific field that will only be set when the requested app
-   * version is found.
-   *
    * @var bool
    */
   public $googleOwned;
   /**
-   * Output only. Whether the app or extension is in a published state in the
-   * Chrome Web Store.
-   *
    * @var bool
    */
   public $isCwsHosted;
   /**
-   * Output only. Whether an app supports policy for extensions.
-   *
    * @var bool
    */
   public $isExtensionPolicySupported;
   /**
-   * Output only. Whether the app is only for Kiosk mode on ChromeOS devices
-   *
    * @var bool
    */
   public $isKioskOnly;
   /**
-   * Output only. Whether the app or extension is a theme.
-   *
    * @var bool
    */
   public $isTheme;
   /**
-   * Output only. Whether this app is enabled for Kiosk mode on ChromeOS devices
-   *
    * @var bool
    */
   public $kioskEnabled;
   /**
-   * Output only. The version of this extension's manifest.
-   *
-   * @var string
-   */
-  public $manifestVersion;
-  /**
-   * Output only. The minimum number of users using this app.
-   *
    * @var int
    */
   public $minUserCount;
@@ -88,26 +53,16 @@ class GoogleChromeManagementV1ChromeAppInfo extends \Google\Collection
   protected $siteAccessType = GoogleChromeManagementV1ChromeAppSiteAccess::class;
   protected $siteAccessDataType = 'array';
   /**
-   * Output only. The app developer has enabled support for their app. Version-
-   * specific field that will only be set when the requested app version is
-   * found.
-   *
    * @var bool
    */
   public $supportEnabled;
   /**
-   * Output only. Types of an item in the Chrome Web Store
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Output only. Whether the app or extension is built and maintained by
-   * Google. Version-specific field that will only be set when the requested app
-   * version is found.
-   *
-   * @param bool $googleOwned
+   * @param bool
    */
   public function setGoogleOwned($googleOwned)
   {
@@ -121,10 +76,7 @@ class GoogleChromeManagementV1ChromeAppInfo extends \Google\Collection
     return $this->googleOwned;
   }
   /**
-   * Output only. Whether the app or extension is in a published state in the
-   * Chrome Web Store.
-   *
-   * @param bool $isCwsHosted
+   * @param bool
    */
   public function setIsCwsHosted($isCwsHosted)
   {
@@ -138,9 +90,7 @@ class GoogleChromeManagementV1ChromeAppInfo extends \Google\Collection
     return $this->isCwsHosted;
   }
   /**
-   * Output only. Whether an app supports policy for extensions.
-   *
-   * @param bool $isExtensionPolicySupported
+   * @param bool
    */
   public function setIsExtensionPolicySupported($isExtensionPolicySupported)
   {
@@ -154,9 +104,7 @@ class GoogleChromeManagementV1ChromeAppInfo extends \Google\Collection
     return $this->isExtensionPolicySupported;
   }
   /**
-   * Output only. Whether the app is only for Kiosk mode on ChromeOS devices
-   *
-   * @param bool $isKioskOnly
+   * @param bool
    */
   public function setIsKioskOnly($isKioskOnly)
   {
@@ -170,9 +118,7 @@ class GoogleChromeManagementV1ChromeAppInfo extends \Google\Collection
     return $this->isKioskOnly;
   }
   /**
-   * Output only. Whether the app or extension is a theme.
-   *
-   * @param bool $isTheme
+   * @param bool
    */
   public function setIsTheme($isTheme)
   {
@@ -186,9 +132,7 @@ class GoogleChromeManagementV1ChromeAppInfo extends \Google\Collection
     return $this->isTheme;
   }
   /**
-   * Output only. Whether this app is enabled for Kiosk mode on ChromeOS devices
-   *
-   * @param bool $kioskEnabled
+   * @param bool
    */
   public function setKioskEnabled($kioskEnabled)
   {
@@ -202,25 +146,7 @@ class GoogleChromeManagementV1ChromeAppInfo extends \Google\Collection
     return $this->kioskEnabled;
   }
   /**
-   * Output only. The version of this extension's manifest.
-   *
-   * @param string $manifestVersion
-   */
-  public function setManifestVersion($manifestVersion)
-  {
-    $this->manifestVersion = $manifestVersion;
-  }
-  /**
-   * @return string
-   */
-  public function getManifestVersion()
-  {
-    return $this->manifestVersion;
-  }
-  /**
-   * Output only. The minimum number of users using this app.
-   *
-   * @param int $minUserCount
+   * @param int
    */
   public function setMinUserCount($minUserCount)
   {
@@ -234,10 +160,7 @@ class GoogleChromeManagementV1ChromeAppInfo extends \Google\Collection
     return $this->minUserCount;
   }
   /**
-   * Output only. Every custom permission requested by the app. Version-specific
-   * field that will only be set when the requested app version is found.
-   *
-   * @param GoogleChromeManagementV1ChromeAppPermission[] $permissions
+   * @param GoogleChromeManagementV1ChromeAppPermission[]
    */
   public function setPermissions($permissions)
   {
@@ -251,13 +174,7 @@ class GoogleChromeManagementV1ChromeAppInfo extends \Google\Collection
     return $this->permissions;
   }
   /**
-   * Output only. Every permission giving access to domains or broad host
-   * patterns. ( e.g. www.google.com). This includes the matches from content
-   * scripts as well as hosts in the permissions node of the manifest. Version-
-   * specific field that will only be set when the requested app version is
-   * found.
-   *
-   * @param GoogleChromeManagementV1ChromeAppSiteAccess[] $siteAccess
+   * @param GoogleChromeManagementV1ChromeAppSiteAccess[]
    */
   public function setSiteAccess($siteAccess)
   {
@@ -271,11 +188,7 @@ class GoogleChromeManagementV1ChromeAppInfo extends \Google\Collection
     return $this->siteAccess;
   }
   /**
-   * Output only. The app developer has enabled support for their app. Version-
-   * specific field that will only be set when the requested app version is
-   * found.
-   *
-   * @param bool $supportEnabled
+   * @param bool
    */
   public function setSupportEnabled($supportEnabled)
   {
@@ -289,18 +202,14 @@ class GoogleChromeManagementV1ChromeAppInfo extends \Google\Collection
     return $this->supportEnabled;
   }
   /**
-   * Output only. Types of an item in the Chrome Web Store
-   *
-   * Accepted values: ITEM_TYPE_UNSPECIFIED, EXTENSION, OTHERS
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

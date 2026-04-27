@@ -20,38 +20,24 @@ namespace Google\Service\DatabaseMigrationService;
 class SqlAclEntry extends \Google\Model
 {
   /**
-   * The time when this access control entry expires in [RFC
-   * 3339](https://tools.ietf.org/html/rfc3339) format, for example:
-   * `2012-11-15T16:19:00.094Z`.
-   *
    * @var string
    */
   public $expireTime;
   /**
-   * A label to identify this entry.
-   *
    * @var string
    */
   public $label;
   /**
-   * Input only. The time-to-leave of this access control entry.
-   *
    * @var string
    */
   public $ttl;
   /**
-   * The allowlisted value for the access control list.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * The time when this access control entry expires in [RFC
-   * 3339](https://tools.ietf.org/html/rfc3339) format, for example:
-   * `2012-11-15T16:19:00.094Z`.
-   *
-   * @param string $expireTime
+   * @param string
    */
   public function setExpireTime($expireTime)
   {
@@ -65,9 +51,7 @@ class SqlAclEntry extends \Google\Model
     return $this->expireTime;
   }
   /**
-   * A label to identify this entry.
-   *
-   * @param string $label
+   * @param string
    */
   public function setLabel($label)
   {
@@ -81,9 +65,7 @@ class SqlAclEntry extends \Google\Model
     return $this->label;
   }
   /**
-   * Input only. The time-to-leave of this access control entry.
-   *
-   * @param string $ttl
+   * @param string
    */
   public function setTtl($ttl)
   {
@@ -97,9 +79,7 @@ class SqlAclEntry extends \Google\Model
     return $this->ttl;
   }
   /**
-   * The allowlisted value for the access control list.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

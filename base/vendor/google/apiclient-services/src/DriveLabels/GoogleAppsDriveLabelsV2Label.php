@@ -19,48 +19,22 @@ namespace Google\Service\DriveLabels;
 
 class GoogleAppsDriveLabelsV2Label extends \Google\Collection
 {
-  /**
-   * Unknown label type.
-   */
-  public const LABEL_TYPE_LABEL_TYPE_UNSPECIFIED = 'LABEL_TYPE_UNSPECIFIED';
-  /**
-   * Shared labels may be shared with users to apply to Drive items.
-   */
-  public const LABEL_TYPE_SHARED = 'SHARED';
-  /**
-   * Admin-owned label. Only creatable and editable by admins. Supports some
-   * additional admin-only features.
-   */
-  public const LABEL_TYPE_ADMIN = 'ADMIN';
-  /**
-   * A label owned by an internal Google application rather than a customer.
-   * These labels are read-only.
-   */
-  public const LABEL_TYPE_GOOGLE_APP = 'GOOGLE_APP';
   protected $collection_key = 'fields';
   protected $appliedCapabilitiesType = GoogleAppsDriveLabelsV2LabelAppliedCapabilities::class;
   protected $appliedCapabilitiesDataType = '';
   protected $appliedLabelPolicyType = GoogleAppsDriveLabelsV2LabelAppliedLabelPolicy::class;
   protected $appliedLabelPolicyDataType = '';
   /**
-   * Output only. The time this label was created.
-   *
    * @var string
    */
   public $createTime;
   protected $creatorType = GoogleAppsDriveLabelsV2UserInfo::class;
   protected $creatorDataType = '';
   /**
-   * Output only. The customer this label belongs to. For example:
-   * `customers/123abc789`.
-   *
    * @var string
    */
   public $customer;
   /**
-   * Output only. The time this label was disabled. This value has no meaning
-   * when the label isn't disabled.
-   *
    * @var string
    */
   public $disableTime;
@@ -68,28 +42,17 @@ class GoogleAppsDriveLabelsV2Label extends \Google\Collection
   protected $disablerDataType = '';
   protected $displayHintsType = GoogleAppsDriveLabelsV2LabelDisplayHints::class;
   protected $displayHintsDataType = '';
-  protected $enabledAppSettingsType = GoogleAppsDriveLabelsV2LabelEnabledAppSettings::class;
-  protected $enabledAppSettingsDataType = '';
   protected $fieldsType = GoogleAppsDriveLabelsV2Field::class;
   protected $fieldsDataType = 'array';
   /**
-   * Output only. Globally unique identifier of this label. ID makes up part of
-   * the label `name`, but unlike `name`, ID is consistent between revisions.
-   * Matches the regex: `([a-zA-Z0-9])+`.
-   *
    * @var string
    */
   public $id;
   /**
-   * Required. The type of label.
-   *
    * @var string
    */
   public $labelType;
   /**
-   * Custom URL to present to users to allow them to learn more about this label
-   * and how it should be used.
-   *
    * @var string
    */
   public $learnMoreUri;
@@ -98,38 +61,24 @@ class GoogleAppsDriveLabelsV2Label extends \Google\Collection
   protected $lockStatusType = GoogleAppsDriveLabelsV2LockStatus::class;
   protected $lockStatusDataType = '';
   /**
-   * Output only. Resource name of the label. Will be in the form of either:
-   * `labels/{id}` or `labels/{id}@{revision_id}` depending on the request. See
-   * `id` and `revision_id` below.
-   *
    * @var string
    */
   public $name;
   protected $propertiesType = GoogleAppsDriveLabelsV2LabelProperties::class;
   protected $propertiesDataType = '';
   /**
-   * Output only. The time this label was published. This value has no meaning
-   * when the label isn't published.
-   *
    * @var string
    */
   public $publishTime;
   protected $publisherType = GoogleAppsDriveLabelsV2UserInfo::class;
   protected $publisherDataType = '';
   /**
-   * Output only. The time this label revision was created.
-   *
    * @var string
    */
   public $revisionCreateTime;
   protected $revisionCreatorType = GoogleAppsDriveLabelsV2UserInfo::class;
   protected $revisionCreatorDataType = '';
   /**
-   * Output only. Revision ID of the label. Revision ID might be part of the
-   * label `name` depending on the request issued. A new revision is created
-   * whenever revisioned properties of a label are changed. Matches the regex:
-   * `([a-zA-Z0-9])+`.
-   *
    * @var string
    */
   public $revisionId;
@@ -137,9 +86,7 @@ class GoogleAppsDriveLabelsV2Label extends \Google\Collection
   protected $schemaCapabilitiesDataType = '';
 
   /**
-   * Output only. The capabilities related to this label on applied metadata.
-   *
-   * @param GoogleAppsDriveLabelsV2LabelAppliedCapabilities $appliedCapabilities
+   * @param GoogleAppsDriveLabelsV2LabelAppliedCapabilities
    */
   public function setAppliedCapabilities(GoogleAppsDriveLabelsV2LabelAppliedCapabilities $appliedCapabilities)
   {
@@ -153,9 +100,7 @@ class GoogleAppsDriveLabelsV2Label extends \Google\Collection
     return $this->appliedCapabilities;
   }
   /**
-   * Output only. Behavior of this label when it's applied to Drive items.
-   *
-   * @param GoogleAppsDriveLabelsV2LabelAppliedLabelPolicy $appliedLabelPolicy
+   * @param GoogleAppsDriveLabelsV2LabelAppliedLabelPolicy
    */
   public function setAppliedLabelPolicy(GoogleAppsDriveLabelsV2LabelAppliedLabelPolicy $appliedLabelPolicy)
   {
@@ -169,9 +114,7 @@ class GoogleAppsDriveLabelsV2Label extends \Google\Collection
     return $this->appliedLabelPolicy;
   }
   /**
-   * Output only. The time this label was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -185,9 +128,7 @@ class GoogleAppsDriveLabelsV2Label extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Output only. The user who created this label.
-   *
-   * @param GoogleAppsDriveLabelsV2UserInfo $creator
+   * @param GoogleAppsDriveLabelsV2UserInfo
    */
   public function setCreator(GoogleAppsDriveLabelsV2UserInfo $creator)
   {
@@ -201,10 +142,7 @@ class GoogleAppsDriveLabelsV2Label extends \Google\Collection
     return $this->creator;
   }
   /**
-   * Output only. The customer this label belongs to. For example:
-   * `customers/123abc789`.
-   *
-   * @param string $customer
+   * @param string
    */
   public function setCustomer($customer)
   {
@@ -218,10 +156,7 @@ class GoogleAppsDriveLabelsV2Label extends \Google\Collection
     return $this->customer;
   }
   /**
-   * Output only. The time this label was disabled. This value has no meaning
-   * when the label isn't disabled.
-   *
-   * @param string $disableTime
+   * @param string
    */
   public function setDisableTime($disableTime)
   {
@@ -235,10 +170,7 @@ class GoogleAppsDriveLabelsV2Label extends \Google\Collection
     return $this->disableTime;
   }
   /**
-   * Output only. The user who disabled this label. This value has no meaning
-   * when the label isn't disabled.
-   *
-   * @param GoogleAppsDriveLabelsV2UserInfo $disabler
+   * @param GoogleAppsDriveLabelsV2UserInfo
    */
   public function setDisabler(GoogleAppsDriveLabelsV2UserInfo $disabler)
   {
@@ -252,9 +184,7 @@ class GoogleAppsDriveLabelsV2Label extends \Google\Collection
     return $this->disabler;
   }
   /**
-   * Output only. UI display hints for rendering the label.
-   *
-   * @param GoogleAppsDriveLabelsV2LabelDisplayHints $displayHints
+   * @param GoogleAppsDriveLabelsV2LabelDisplayHints
    */
   public function setDisplayHints(GoogleAppsDriveLabelsV2LabelDisplayHints $displayHints)
   {
@@ -268,25 +198,7 @@ class GoogleAppsDriveLabelsV2Label extends \Google\Collection
     return $this->displayHints;
   }
   /**
-   * Optional. The `EnabledAppSettings` for this Label.
-   *
-   * @param GoogleAppsDriveLabelsV2LabelEnabledAppSettings $enabledAppSettings
-   */
-  public function setEnabledAppSettings(GoogleAppsDriveLabelsV2LabelEnabledAppSettings $enabledAppSettings)
-  {
-    $this->enabledAppSettings = $enabledAppSettings;
-  }
-  /**
-   * @return GoogleAppsDriveLabelsV2LabelEnabledAppSettings
-   */
-  public function getEnabledAppSettings()
-  {
-    return $this->enabledAppSettings;
-  }
-  /**
-   * List of fields in descending priority order.
-   *
-   * @param GoogleAppsDriveLabelsV2Field[] $fields
+   * @param GoogleAppsDriveLabelsV2Field[]
    */
   public function setFields($fields)
   {
@@ -300,11 +212,7 @@ class GoogleAppsDriveLabelsV2Label extends \Google\Collection
     return $this->fields;
   }
   /**
-   * Output only. Globally unique identifier of this label. ID makes up part of
-   * the label `name`, but unlike `name`, ID is consistent between revisions.
-   * Matches the regex: `([a-zA-Z0-9])+`.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -318,28 +226,21 @@ class GoogleAppsDriveLabelsV2Label extends \Google\Collection
     return $this->id;
   }
   /**
-   * Required. The type of label.
-   *
-   * Accepted values: LABEL_TYPE_UNSPECIFIED, SHARED, ADMIN, GOOGLE_APP
-   *
-   * @param self::LABEL_TYPE_* $labelType
+   * @param string
    */
   public function setLabelType($labelType)
   {
     $this->labelType = $labelType;
   }
   /**
-   * @return self::LABEL_TYPE_*
+   * @return string
    */
   public function getLabelType()
   {
     return $this->labelType;
   }
   /**
-   * Custom URL to present to users to allow them to learn more about this label
-   * and how it should be used.
-   *
-   * @param string $learnMoreUri
+   * @param string
    */
   public function setLearnMoreUri($learnMoreUri)
   {
@@ -353,10 +254,7 @@ class GoogleAppsDriveLabelsV2Label extends \Google\Collection
     return $this->learnMoreUri;
   }
   /**
-   * Output only. The lifecycle state of the label including whether it's
-   * published, deprecated, and has draft changes.
-   *
-   * @param GoogleAppsDriveLabelsV2Lifecycle $lifecycle
+   * @param GoogleAppsDriveLabelsV2Lifecycle
    */
   public function setLifecycle(GoogleAppsDriveLabelsV2Lifecycle $lifecycle)
   {
@@ -370,9 +268,7 @@ class GoogleAppsDriveLabelsV2Label extends \Google\Collection
     return $this->lifecycle;
   }
   /**
-   * Output only. The `LockStatus` of this label.
-   *
-   * @param GoogleAppsDriveLabelsV2LockStatus $lockStatus
+   * @param GoogleAppsDriveLabelsV2LockStatus
    */
   public function setLockStatus(GoogleAppsDriveLabelsV2LockStatus $lockStatus)
   {
@@ -386,11 +282,7 @@ class GoogleAppsDriveLabelsV2Label extends \Google\Collection
     return $this->lockStatus;
   }
   /**
-   * Output only. Resource name of the label. Will be in the form of either:
-   * `labels/{id}` or `labels/{id}@{revision_id}` depending on the request. See
-   * `id` and `revision_id` below.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -404,9 +296,7 @@ class GoogleAppsDriveLabelsV2Label extends \Google\Collection
     return $this->name;
   }
   /**
-   * Required. The basic properties of the label.
-   *
-   * @param GoogleAppsDriveLabelsV2LabelProperties $properties
+   * @param GoogleAppsDriveLabelsV2LabelProperties
    */
   public function setProperties(GoogleAppsDriveLabelsV2LabelProperties $properties)
   {
@@ -420,10 +310,7 @@ class GoogleAppsDriveLabelsV2Label extends \Google\Collection
     return $this->properties;
   }
   /**
-   * Output only. The time this label was published. This value has no meaning
-   * when the label isn't published.
-   *
-   * @param string $publishTime
+   * @param string
    */
   public function setPublishTime($publishTime)
   {
@@ -437,10 +324,7 @@ class GoogleAppsDriveLabelsV2Label extends \Google\Collection
     return $this->publishTime;
   }
   /**
-   * Output only. The user who published this label. This value has no meaning
-   * when the label isn't published.>>
-   *
-   * @param GoogleAppsDriveLabelsV2UserInfo $publisher
+   * @param GoogleAppsDriveLabelsV2UserInfo
    */
   public function setPublisher(GoogleAppsDriveLabelsV2UserInfo $publisher)
   {
@@ -454,9 +338,7 @@ class GoogleAppsDriveLabelsV2Label extends \Google\Collection
     return $this->publisher;
   }
   /**
-   * Output only. The time this label revision was created.
-   *
-   * @param string $revisionCreateTime
+   * @param string
    */
   public function setRevisionCreateTime($revisionCreateTime)
   {
@@ -470,9 +352,7 @@ class GoogleAppsDriveLabelsV2Label extends \Google\Collection
     return $this->revisionCreateTime;
   }
   /**
-   * Output only. The user who created this label revision.
-   *
-   * @param GoogleAppsDriveLabelsV2UserInfo $revisionCreator
+   * @param GoogleAppsDriveLabelsV2UserInfo
    */
   public function setRevisionCreator(GoogleAppsDriveLabelsV2UserInfo $revisionCreator)
   {
@@ -486,12 +366,7 @@ class GoogleAppsDriveLabelsV2Label extends \Google\Collection
     return $this->revisionCreator;
   }
   /**
-   * Output only. Revision ID of the label. Revision ID might be part of the
-   * label `name` depending on the request issued. A new revision is created
-   * whenever revisioned properties of a label are changed. Matches the regex:
-   * `([a-zA-Z0-9])+`.
-   *
-   * @param string $revisionId
+   * @param string
    */
   public function setRevisionId($revisionId)
   {
@@ -505,9 +380,7 @@ class GoogleAppsDriveLabelsV2Label extends \Google\Collection
     return $this->revisionId;
   }
   /**
-   * Output only. The capabilities the user has on this label.
-   *
-   * @param GoogleAppsDriveLabelsV2LabelSchemaCapabilities $schemaCapabilities
+   * @param GoogleAppsDriveLabelsV2LabelSchemaCapabilities
    */
   public function setSchemaCapabilities(GoogleAppsDriveLabelsV2LabelSchemaCapabilities $schemaCapabilities)
   {

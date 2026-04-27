@@ -19,85 +19,44 @@ namespace Google\Service\CloudMachineLearningEngine;
 
 class GoogleCloudMlV1Trial extends \Google\Collection
 {
-  /**
-   * The trial state is unspecified.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Indicates that a specific trial has been requested, but it has not yet been
-   * suggested by the service.
-   */
-  public const STATE_REQUESTED = 'REQUESTED';
-  /**
-   * Indicates that the trial has been suggested.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * Indicates that the trial is done, and either has a final_measurement set,
-   * or is marked as trial_infeasible.
-   */
-  public const STATE_COMPLETED = 'COMPLETED';
-  /**
-   * Indicates that the trial should stop according to the service.
-   */
-  public const STATE_STOPPING = 'STOPPING';
   protected $collection_key = 'parameters';
   /**
-   * Output only. The identifier of the client that originally requested this
-   * trial.
-   *
    * @var string
    */
   public $clientId;
   /**
-   * Output only. Time at which the trial's status changed to COMPLETED.
-   *
    * @var string
    */
   public $endTime;
   protected $finalMeasurementType = GoogleCloudMlV1Measurement::class;
   protected $finalMeasurementDataType = '';
   /**
-   * Output only. A human readable string describing why the trial is
-   * infeasible. This should only be set if trial_infeasible is true.
-   *
    * @var string
    */
   public $infeasibleReason;
   protected $measurementsType = GoogleCloudMlV1Measurement::class;
   protected $measurementsDataType = 'array';
   /**
-   * Output only. Name of the trial assigned by the service.
-   *
    * @var string
    */
   public $name;
   protected $parametersType = GoogleCloudMlV1TrialParameter::class;
   protected $parametersDataType = 'array';
   /**
-   * Output only. Time at which the trial was started.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * The detailed state of a trial.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. If true, the parameters in this trial are not attempted again.
-   *
    * @var bool
    */
   public $trialInfeasible;
 
   /**
-   * Output only. The identifier of the client that originally requested this
-   * trial.
-   *
-   * @param string $clientId
+   * @param string
    */
   public function setClientId($clientId)
   {
@@ -111,9 +70,7 @@ class GoogleCloudMlV1Trial extends \Google\Collection
     return $this->clientId;
   }
   /**
-   * Output only. Time at which the trial's status changed to COMPLETED.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -127,9 +84,7 @@ class GoogleCloudMlV1Trial extends \Google\Collection
     return $this->endTime;
   }
   /**
-   * The final measurement containing the objective value.
-   *
-   * @param GoogleCloudMlV1Measurement $finalMeasurement
+   * @param GoogleCloudMlV1Measurement
    */
   public function setFinalMeasurement(GoogleCloudMlV1Measurement $finalMeasurement)
   {
@@ -143,10 +98,7 @@ class GoogleCloudMlV1Trial extends \Google\Collection
     return $this->finalMeasurement;
   }
   /**
-   * Output only. A human readable string describing why the trial is
-   * infeasible. This should only be set if trial_infeasible is true.
-   *
-   * @param string $infeasibleReason
+   * @param string
    */
   public function setInfeasibleReason($infeasibleReason)
   {
@@ -160,11 +112,7 @@ class GoogleCloudMlV1Trial extends \Google\Collection
     return $this->infeasibleReason;
   }
   /**
-   * A list of measurements that are strictly lexicographically ordered by their
-   * induced tuples (steps, elapsed_time). These are used for early stopping
-   * computations.
-   *
-   * @param GoogleCloudMlV1Measurement[] $measurements
+   * @param GoogleCloudMlV1Measurement[]
    */
   public function setMeasurements($measurements)
   {
@@ -178,9 +126,7 @@ class GoogleCloudMlV1Trial extends \Google\Collection
     return $this->measurements;
   }
   /**
-   * Output only. Name of the trial assigned by the service.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -194,9 +140,7 @@ class GoogleCloudMlV1Trial extends \Google\Collection
     return $this->name;
   }
   /**
-   * The parameters of the trial.
-   *
-   * @param GoogleCloudMlV1TrialParameter[] $parameters
+   * @param GoogleCloudMlV1TrialParameter[]
    */
   public function setParameters($parameters)
   {
@@ -210,9 +154,7 @@ class GoogleCloudMlV1Trial extends \Google\Collection
     return $this->parameters;
   }
   /**
-   * Output only. Time at which the trial was started.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -226,27 +168,21 @@ class GoogleCloudMlV1Trial extends \Google\Collection
     return $this->startTime;
   }
   /**
-   * The detailed state of a trial.
-   *
-   * Accepted values: STATE_UNSPECIFIED, REQUESTED, ACTIVE, COMPLETED, STOPPING
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. If true, the parameters in this trial are not attempted again.
-   *
-   * @param bool $trialInfeasible
+   * @param bool
    */
   public function setTrialInfeasible($trialInfeasible)
   {

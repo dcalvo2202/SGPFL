@@ -20,9 +20,6 @@ namespace Google\Service\DLP;
 class GooglePrivacyDlpV2InfoTypeSummary extends \Google\Model
 {
   /**
-   * Not populated for predicted infotypes.
-   *
-   * @deprecated
    * @var int
    */
   public $estimatedPrevalence;
@@ -30,17 +27,13 @@ class GooglePrivacyDlpV2InfoTypeSummary extends \Google\Model
   protected $infoTypeDataType = '';
 
   /**
-   * Not populated for predicted infotypes.
-   *
-   * @deprecated
-   * @param int $estimatedPrevalence
+   * @param int
    */
   public function setEstimatedPrevalence($estimatedPrevalence)
   {
     $this->estimatedPrevalence = $estimatedPrevalence;
   }
   /**
-   * @deprecated
    * @return int
    */
   public function getEstimatedPrevalence()
@@ -48,9 +41,7 @@ class GooglePrivacyDlpV2InfoTypeSummary extends \Google\Model
     return $this->estimatedPrevalence;
   }
   /**
-   * The infoType.
-   *
-   * @param GooglePrivacyDlpV2InfoType $infoType
+   * @param GooglePrivacyDlpV2InfoType
    */
   public function setInfoType(GooglePrivacyDlpV2InfoType $infoType)
   {

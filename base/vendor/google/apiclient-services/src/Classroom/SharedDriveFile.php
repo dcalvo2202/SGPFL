@@ -19,35 +19,15 @@ namespace Google\Service\Classroom;
 
 class SharedDriveFile extends \Google\Model
 {
-  /**
-   * No sharing mode specified. This should never be returned.
-   */
-  public const SHARE_MODE_UNKNOWN_SHARE_MODE = 'UNKNOWN_SHARE_MODE';
-  /**
-   * Students can view the shared file.
-   */
-  public const SHARE_MODE_VIEW = 'VIEW';
-  /**
-   * Students can edit the shared file.
-   */
-  public const SHARE_MODE_EDIT = 'EDIT';
-  /**
-   * Students have a personal copy of the shared file.
-   */
-  public const SHARE_MODE_STUDENT_COPY = 'STUDENT_COPY';
   protected $driveFileType = DriveFile::class;
   protected $driveFileDataType = '';
   /**
-   * Mechanism by which students access the Drive item.
-   *
    * @var string
    */
   public $shareMode;
 
   /**
-   * Drive file details.
-   *
-   * @param DriveFile $driveFile
+   * @param DriveFile
    */
   public function setDriveFile(DriveFile $driveFile)
   {
@@ -61,18 +41,14 @@ class SharedDriveFile extends \Google\Model
     return $this->driveFile;
   }
   /**
-   * Mechanism by which students access the Drive item.
-   *
-   * Accepted values: UNKNOWN_SHARE_MODE, VIEW, EDIT, STUDENT_COPY
-   *
-   * @param self::SHARE_MODE_* $shareMode
+   * @param string
    */
   public function setShareMode($shareMode)
   {
     $this->shareMode = $shareMode;
   }
   /**
-   * @return self::SHARE_MODE_*
+   * @return string
    */
   public function getShareMode()
   {

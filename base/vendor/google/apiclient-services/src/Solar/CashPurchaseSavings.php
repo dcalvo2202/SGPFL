@@ -22,9 +22,6 @@ class CashPurchaseSavings extends \Google\Model
   protected $outOfPocketCostType = Money::class;
   protected $outOfPocketCostDataType = '';
   /**
-   * Number of years until payback occurs. A negative value means payback never
-   * occurs within the lifetime period.
-   *
    * @var float
    */
   public $paybackYears;
@@ -36,10 +33,7 @@ class CashPurchaseSavings extends \Google\Model
   protected $upfrontCostDataType = '';
 
   /**
-   * Initial cost before tax incentives: the amount that must be paid out-of-
-   * pocket. Contrast with `upfront_cost`, which is after tax incentives.
-   *
-   * @param Money $outOfPocketCost
+   * @param Money
    */
   public function setOutOfPocketCost(Money $outOfPocketCost)
   {
@@ -53,10 +47,7 @@ class CashPurchaseSavings extends \Google\Model
     return $this->outOfPocketCost;
   }
   /**
-   * Number of years until payback occurs. A negative value means payback never
-   * occurs within the lifetime period.
-   *
-   * @param float $paybackYears
+   * @param float
    */
   public function setPaybackYears($paybackYears)
   {
@@ -70,9 +61,7 @@ class CashPurchaseSavings extends \Google\Model
     return $this->paybackYears;
   }
   /**
-   * The value of all tax rebates.
-   *
-   * @param Money $rebateValue
+   * @param Money
    */
   public function setRebateValue(Money $rebateValue)
   {
@@ -86,9 +75,7 @@ class CashPurchaseSavings extends \Google\Model
     return $this->rebateValue;
   }
   /**
-   * How much is saved (or not) over the lifetime period.
-   *
-   * @param SavingsOverTime $savings
+   * @param SavingsOverTime
    */
   public function setSavings(SavingsOverTime $savings)
   {
@@ -102,11 +89,7 @@ class CashPurchaseSavings extends \Google\Model
     return $this->savings;
   }
   /**
-   * Initial cost after tax incentives: it's the amount that must be paid during
-   * first year. Contrast with `out_of_pocket_cost`, which is before tax
-   * incentives.
-   *
-   * @param Money $upfrontCost
+   * @param Money
    */
   public function setUpfrontCost(Money $upfrontCost)
   {

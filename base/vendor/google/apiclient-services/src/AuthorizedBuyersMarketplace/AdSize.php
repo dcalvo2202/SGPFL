@@ -20,52 +20,20 @@ namespace Google\Service\AuthorizedBuyersMarketplace;
 class AdSize extends \Google\Model
 {
   /**
-   * A placeholder for an undefined size type.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * Ad slot with size specified by height and width in pixels.
-   */
-  public const TYPE_PIXEL = 'PIXEL';
-  /**
-   * Special size to describe an interstitial ad slot.
-   */
-  public const TYPE_INTERSTITIAL = 'INTERSTITIAL';
-  /**
-   * Native (mobile) ads rendered by the publisher.
-   */
-  public const TYPE_NATIVE = 'NATIVE';
-  /**
-   * Fluid size (responsive size) can be resized automatically with the change
-   * of outside environment.
-   */
-  public const TYPE_FLUID = 'FLUID';
-  /**
-   * The height of the ad slot in pixels. This field will be present only when
-   * size type is `PIXEL`.
-   *
    * @var string
    */
   public $height;
   /**
-   * The type of the ad slot size.
-   *
    * @var string
    */
   public $type;
   /**
-   * The width of the ad slot in pixels. This field will be present only when
-   * size type is `PIXEL`.
-   *
    * @var string
    */
   public $width;
 
   /**
-   * The height of the ad slot in pixels. This field will be present only when
-   * size type is `PIXEL`.
-   *
-   * @param string $height
+   * @param string
    */
   public function setHeight($height)
   {
@@ -79,28 +47,21 @@ class AdSize extends \Google\Model
     return $this->height;
   }
   /**
-   * The type of the ad slot size.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, PIXEL, INTERSTITIAL, NATIVE, FLUID
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * The width of the ad slot in pixels. This field will be present only when
-   * size type is `PIXEL`.
-   *
-   * @param string $width
+   * @param string
    */
   public function setWidth($width)
   {

@@ -23,7 +23,7 @@ class SecurityPoliciesListPreconfiguredExpressionSetsResponse extends \Google\Mo
   protected $preconfiguredExpressionSetsDataType = '';
 
   /**
-   * @param SecurityPoliciesWafConfig $preconfiguredExpressionSets
+   * @param SecurityPoliciesWafConfig
    */
   public function setPreconfiguredExpressionSets(SecurityPoliciesWafConfig $preconfiguredExpressionSets)
   {

@@ -22,21 +22,12 @@ class ConsentErrors extends \Google\Model
   protected $errorType = Status::class;
   protected $errorDataType = '';
   /**
-   * The versioned name of the admin Consent resource, in the format `projects/{
-   * project_id}/locations/{location}/datasets/{dataset_id}/fhirStores/{fhir_sto
-   * re_id}/fhir/Consent/{resource_id}/_history/{version_id}`. For FHIR stores
-   * with `disable_resource_versioning=true`, the format is `projects/{project_i
-   * d}/locations/{location}/datasets/{dataset_id}/fhirStores/{fhir_store_id}/fh
-   * ir/Consent/{resource_id}`.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The error code and message.
-   *
-   * @param Status $error
+   * @param Status
    */
   public function setError(Status $error)
   {
@@ -50,14 +41,7 @@ class ConsentErrors extends \Google\Model
     return $this->error;
   }
   /**
-   * The versioned name of the admin Consent resource, in the format `projects/{
-   * project_id}/locations/{location}/datasets/{dataset_id}/fhirStores/{fhir_sto
-   * re_id}/fhir/Consent/{resource_id}/_history/{version_id}`. For FHIR stores
-   * with `disable_resource_versioning=true`, the format is `projects/{project_i
-   * d}/locations/{location}/datasets/{dataset_id}/fhirStores/{fhir_store_id}/fh
-   * ir/Consent/{resource_id}`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

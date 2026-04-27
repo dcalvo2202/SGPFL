@@ -20,25 +20,16 @@ namespace Google\Service\DLP;
 class GooglePrivacyDlpV2DiscoveryVertexDatasetConditions extends \Google\Model
 {
   /**
-   * Vertex AI dataset must have been created after this date. Used to avoid
-   * backfilling.
-   *
    * @var string
    */
   public $createdAfter;
   /**
-   * Minimum age a Vertex AI dataset must have. If set, the value must be 1 hour
-   * or greater.
-   *
    * @var string
    */
   public $minAge;
 
   /**
-   * Vertex AI dataset must have been created after this date. Used to avoid
-   * backfilling.
-   *
-   * @param string $createdAfter
+   * @param string
    */
   public function setCreatedAfter($createdAfter)
   {
@@ -52,10 +43,7 @@ class GooglePrivacyDlpV2DiscoveryVertexDatasetConditions extends \Google\Model
     return $this->createdAfter;
   }
   /**
-   * Minimum age a Vertex AI dataset must have. If set, the value must be 1 hour
-   * or greater.
-   *
-   * @param string $minAge
+   * @param string
    */
   public function setMinAge($minAge)
   {

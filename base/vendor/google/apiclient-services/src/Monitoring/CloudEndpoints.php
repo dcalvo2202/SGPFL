@@ -20,20 +20,12 @@ namespace Google\Service\Monitoring;
 class CloudEndpoints extends \Google\Model
 {
   /**
-   * The name of the Cloud Endpoints service underlying this service.
-   * Corresponds to the service resource label in the api monitored resource
-   * (https://cloud.google.com/monitoring/api/resources#tag_api).
-   *
    * @var string
    */
   public $service;
 
   /**
-   * The name of the Cloud Endpoints service underlying this service.
-   * Corresponds to the service resource label in the api monitored resource
-   * (https://cloud.google.com/monitoring/api/resources#tag_api).
-   *
-   * @param string $service
+   * @param string
    */
   public function setService($service)
   {

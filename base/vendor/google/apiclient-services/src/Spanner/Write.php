@@ -21,38 +21,20 @@ class Write extends \Google\Collection
 {
   protected $collection_key = 'values';
   /**
-   * The names of the columns in table to be written. The list of columns must
-   * contain enough columns to allow Cloud Spanner to derive values for all
-   * primary key columns in the row(s) to be modified.
-   *
    * @var string[]
    */
   public $columns;
   /**
-   * Required. The table whose rows will be written.
-   *
    * @var string
    */
   public $table;
   /**
-   * The values to be written. `values` can contain more than one list of
-   * values. If it does, then multiple rows are written, one for each entry in
-   * `values`. Each list in `values` must have exactly as many entries as there
-   * are entries in columns above. Sending multiple lists is equivalent to
-   * sending multiple `Mutation`s, each containing one `values` entry and
-   * repeating table and columns. Individual values in each list are encoded as
-   * described here.
-   *
    * @var array[]
    */
   public $values;
 
   /**
-   * The names of the columns in table to be written. The list of columns must
-   * contain enough columns to allow Cloud Spanner to derive values for all
-   * primary key columns in the row(s) to be modified.
-   *
-   * @param string[] $columns
+   * @param string[]
    */
   public function setColumns($columns)
   {
@@ -66,9 +48,7 @@ class Write extends \Google\Collection
     return $this->columns;
   }
   /**
-   * Required. The table whose rows will be written.
-   *
-   * @param string $table
+   * @param string
    */
   public function setTable($table)
   {
@@ -82,15 +62,7 @@ class Write extends \Google\Collection
     return $this->table;
   }
   /**
-   * The values to be written. `values` can contain more than one list of
-   * values. If it does, then multiple rows are written, one for each entry in
-   * `values`. Each list in `values` must have exactly as many entries as there
-   * are entries in columns above. Sending multiple lists is equivalent to
-   * sending multiple `Mutation`s, each containing one `values` entry and
-   * repeating table and columns. Individual values in each list are encoded as
-   * described here.
-   *
-   * @param array[] $values
+   * @param array[]
    */
   public function setValues($values)
   {

@@ -23,7 +23,7 @@ class HistoryMessageDeleted extends \Google\Model
   protected $messageDataType = '';
 
   /**
-   * @param Message $message
+   * @param Message
    */
   public function setMessage(Message $message)
   {

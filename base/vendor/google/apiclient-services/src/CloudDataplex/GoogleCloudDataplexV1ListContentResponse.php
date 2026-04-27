@@ -23,17 +23,12 @@ class GoogleCloudDataplexV1ListContentResponse extends \Google\Collection
   protected $contentType = GoogleCloudDataplexV1Content::class;
   protected $contentDataType = 'array';
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Content under the given parent lake.
-   *
-   * @param GoogleCloudDataplexV1Content[] $content
+   * @param GoogleCloudDataplexV1Content[]
    */
   public function setContent($content)
   {
@@ -47,10 +42,7 @@ class GoogleCloudDataplexV1ListContentResponse extends \Google\Collection
     return $this->content;
   }
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

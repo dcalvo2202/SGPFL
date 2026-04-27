@@ -20,28 +20,20 @@ namespace Google\Service\CloudSearch;
 class Date extends \Google\Model
 {
   /**
-   * Day of month. Must be from 1 to 31 and valid for the year and month.
-   *
    * @var int
    */
   public $day;
   /**
-   * Month of date. Must be from 1 to 12.
-   *
    * @var int
    */
   public $month;
   /**
-   * Year of date. Must be from 1 to 9999.
-   *
    * @var int
    */
   public $year;
 
   /**
-   * Day of month. Must be from 1 to 31 and valid for the year and month.
-   *
-   * @param int $day
+   * @param int
    */
   public function setDay($day)
   {
@@ -55,9 +47,7 @@ class Date extends \Google\Model
     return $this->day;
   }
   /**
-   * Month of date. Must be from 1 to 12.
-   *
-   * @param int $month
+   * @param int
    */
   public function setMonth($month)
   {
@@ -71,9 +61,7 @@ class Date extends \Google\Model
     return $this->month;
   }
   /**
-   * Year of date. Must be from 1 to 9999.
-   *
-   * @param int $year
+   * @param int
    */
   public function setYear($year)
   {

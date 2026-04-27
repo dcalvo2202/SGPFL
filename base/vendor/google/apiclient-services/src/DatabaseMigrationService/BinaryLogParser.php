@@ -25,9 +25,7 @@ class BinaryLogParser extends \Google\Model
   protected $oracleAsmLogFileAccessDataType = '';
 
   /**
-   * Use Oracle directories.
-   *
-   * @param LogFileDirectories $logFileDirectories
+   * @param LogFileDirectories
    */
   public function setLogFileDirectories(LogFileDirectories $logFileDirectories)
   {
@@ -41,9 +39,7 @@ class BinaryLogParser extends \Google\Model
     return $this->logFileDirectories;
   }
   /**
-   * Use Oracle ASM.
-   *
-   * @param OracleAsmLogFileAccess $oracleAsmLogFileAccess
+   * @param OracleAsmLogFileAccess
    */
   public function setOracleAsmLogFileAccess(OracleAsmLogFileAccess $oracleAsmLogFileAccess)
   {

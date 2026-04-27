@@ -21,16 +21,10 @@ class ListSecretVersionsResponse extends \Google\Collection
 {
   protected $collection_key = 'versions';
   /**
-   * A token to retrieve the next page of results. Pass this value in
-   * ListSecretVersionsRequest.page_token to retrieve the next page.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * The total number of SecretVersions but 0 when the ListSecretsRequest.filter
-   * field is set.
-   *
    * @var int
    */
   public $totalSize;
@@ -38,10 +32,7 @@ class ListSecretVersionsResponse extends \Google\Collection
   protected $versionsDataType = 'array';
 
   /**
-   * A token to retrieve the next page of results. Pass this value in
-   * ListSecretVersionsRequest.page_token to retrieve the next page.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -55,10 +46,7 @@ class ListSecretVersionsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The total number of SecretVersions but 0 when the ListSecretsRequest.filter
-   * field is set.
-   *
-   * @param int $totalSize
+   * @param int
    */
   public function setTotalSize($totalSize)
   {
@@ -72,9 +60,7 @@ class ListSecretVersionsResponse extends \Google\Collection
     return $this->totalSize;
   }
   /**
-   * The list of SecretVersions sorted in reverse by create_time (newest first).
-   *
-   * @param SecretVersion[] $versions
+   * @param SecretVersion[]
    */
   public function setVersions($versions)
   {

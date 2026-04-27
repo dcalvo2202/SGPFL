@@ -21,8 +21,6 @@ class ConfigurationVariables extends \Google\Collection
 {
   protected $collection_key = 'variableSet';
   /**
-   * The ID of the managed configurations settings.
-   *
    * @var string
    */
   public $mcmId;
@@ -30,9 +28,7 @@ class ConfigurationVariables extends \Google\Collection
   protected $variableSetDataType = 'array';
 
   /**
-   * The ID of the managed configurations settings.
-   *
-   * @param string $mcmId
+   * @param string
    */
   public function setMcmId($mcmId)
   {
@@ -46,9 +42,7 @@ class ConfigurationVariables extends \Google\Collection
     return $this->mcmId;
   }
   /**
-   * The variable set that is attributed to the user.
-   *
-   * @param VariableSet[] $variableSet
+   * @param VariableSet[]
    */
   public function setVariableSet($variableSet)
   {

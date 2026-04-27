@@ -20,20 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1ModelOriginalModelInfo extends \Google\Model
 {
   /**
-   * Output only. The resource name of the Model this Model is a copy of,
-   * including the revision. Format:
-   * `projects/{project}/locations/{location}/models/{model_id}@{version_id}`
-   *
    * @var string
    */
   public $model;
 
   /**
-   * Output only. The resource name of the Model this Model is a copy of,
-   * including the revision. Format:
-   * `projects/{project}/locations/{location}/models/{model_id}@{version_id}`
-   *
-   * @param string $model
+   * @param string
    */
   public function setModel($model)
   {

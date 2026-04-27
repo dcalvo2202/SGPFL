@@ -23,23 +23,16 @@ class AchievementDefinitionsListResponse extends \Google\Collection
   protected $itemsType = AchievementDefinition::class;
   protected $itemsDataType = 'array';
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#achievementDefinitionsListResponse`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Token corresponding to the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The achievement definitions.
-   *
-   * @param AchievementDefinition[] $items
+   * @param AchievementDefinition[]
    */
   public function setItems($items)
   {
@@ -53,10 +46,7 @@ class AchievementDefinitionsListResponse extends \Google\Collection
     return $this->items;
   }
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#achievementDefinitionsListResponse`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -70,9 +60,7 @@ class AchievementDefinitionsListResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Token corresponding to the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

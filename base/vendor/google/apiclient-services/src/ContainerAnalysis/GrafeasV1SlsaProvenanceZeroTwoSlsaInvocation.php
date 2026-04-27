@@ -31,7 +31,7 @@ class GrafeasV1SlsaProvenanceZeroTwoSlsaInvocation extends \Google\Model
   public $parameters;
 
   /**
-   * @param GrafeasV1SlsaProvenanceZeroTwoSlsaConfigSource $configSource
+   * @param GrafeasV1SlsaProvenanceZeroTwoSlsaConfigSource
    */
   public function setConfigSource(GrafeasV1SlsaProvenanceZeroTwoSlsaConfigSource $configSource)
   {
@@ -45,7 +45,7 @@ class GrafeasV1SlsaProvenanceZeroTwoSlsaInvocation extends \Google\Model
     return $this->configSource;
   }
   /**
-   * @param array[] $environment
+   * @param array[]
    */
   public function setEnvironment($environment)
   {
@@ -59,7 +59,7 @@ class GrafeasV1SlsaProvenanceZeroTwoSlsaInvocation extends \Google\Model
     return $this->environment;
   }
   /**
-   * @param array[] $parameters
+   * @param array[]
    */
   public function setParameters($parameters)
   {

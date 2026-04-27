@@ -31,36 +31,20 @@ class AggregateRequest extends \Google\Collection
   protected $bucketByTimeType = BucketByTime::class;
   protected $bucketByTimeDataType = '';
   /**
-   * The end of a window of time. Data that intersects with this time window
-   * will be aggregated. The time is in milliseconds since epoch, inclusive. The
-   * maximum allowed difference between start_time_millis // and end_time_millis
-   * is 7776000000 (roughly 90 days).
-   *
    * @var string
    */
   public $endTimeMillis;
   /**
-   * DO NOT POPULATE THIS FIELD. It is ignored.
-   *
-   * @deprecated
    * @var string[]
    */
   public $filteredDataQualityStandard;
   /**
-   * The start of a window of time. Data that intersects with this time window
-   * will be aggregated. The time is in milliseconds since epoch, inclusive.
-   *
    * @var string
    */
   public $startTimeMillis;
 
   /**
-   * The specification of data to be aggregated. At least one aggregateBy spec
-   * must be provided. All data that is specified will be aggregated using the
-   * same bucketing criteria. There will be one dataset in the response for
-   * every aggregateBy spec.
-   *
-   * @param AggregateBy[] $aggregateBy
+   * @param AggregateBy[]
    */
   public function setAggregateBy($aggregateBy)
   {
@@ -74,12 +58,7 @@ class AggregateRequest extends \Google\Collection
     return $this->aggregateBy;
   }
   /**
-   * Specifies that data be aggregated each activity segment recorded for a
-   * user. Similar to bucketByActivitySegment, but bucketing is done for each
-   * activity segment rather than all segments of the same type. Mutually
-   * exclusive of other bucketing specifications.
-   *
-   * @param BucketByActivity $bucketByActivitySegment
+   * @param BucketByActivity
    */
   public function setBucketByActivitySegment(BucketByActivity $bucketByActivitySegment)
   {
@@ -93,14 +72,7 @@ class AggregateRequest extends \Google\Collection
     return $this->bucketByActivitySegment;
   }
   /**
-   * Specifies that data be aggregated by the type of activity being performed
-   * when the data was recorded. All data that was recorded during a certain
-   * activity type (.for the given time range) will be aggregated into the same
-   * bucket. Data that was recorded while the user was not active will not be
-   * included in the response. Mutually exclusive of other bucketing
-   * specifications.
-   *
-   * @param BucketByActivity $bucketByActivityType
+   * @param BucketByActivity
    */
   public function setBucketByActivityType(BucketByActivity $bucketByActivityType)
   {
@@ -114,11 +86,7 @@ class AggregateRequest extends \Google\Collection
     return $this->bucketByActivityType;
   }
   /**
-   * Specifies that data be aggregated by user sessions. Data that does not fall
-   * within the time range of a session will not be included in the response.
-   * Mutually exclusive of other bucketing specifications.
-   *
-   * @param BucketBySession $bucketBySession
+   * @param BucketBySession
    */
   public function setBucketBySession(BucketBySession $bucketBySession)
   {
@@ -132,10 +100,7 @@ class AggregateRequest extends \Google\Collection
     return $this->bucketBySession;
   }
   /**
-   * Specifies that data be aggregated by a single time interval. Mutually
-   * exclusive of other bucketing specifications.
-   *
-   * @param BucketByTime $bucketByTime
+   * @param BucketByTime
    */
   public function setBucketByTime(BucketByTime $bucketByTime)
   {
@@ -149,12 +114,7 @@ class AggregateRequest extends \Google\Collection
     return $this->bucketByTime;
   }
   /**
-   * The end of a window of time. Data that intersects with this time window
-   * will be aggregated. The time is in milliseconds since epoch, inclusive. The
-   * maximum allowed difference between start_time_millis // and end_time_millis
-   * is 7776000000 (roughly 90 days).
-   *
-   * @param string $endTimeMillis
+   * @param string
    */
   public function setEndTimeMillis($endTimeMillis)
   {
@@ -168,17 +128,13 @@ class AggregateRequest extends \Google\Collection
     return $this->endTimeMillis;
   }
   /**
-   * DO NOT POPULATE THIS FIELD. It is ignored.
-   *
-   * @deprecated
-   * @param string[] $filteredDataQualityStandard
+   * @param string[]
    */
   public function setFilteredDataQualityStandard($filteredDataQualityStandard)
   {
     $this->filteredDataQualityStandard = $filteredDataQualityStandard;
   }
   /**
-   * @deprecated
    * @return string[]
    */
   public function getFilteredDataQualityStandard()
@@ -186,10 +142,7 @@ class AggregateRequest extends \Google\Collection
     return $this->filteredDataQualityStandard;
   }
   /**
-   * The start of a window of time. Data that intersects with this time window
-   * will be aggregated. The time is in milliseconds since epoch, inclusive.
-   *
-   * @param string $startTimeMillis
+   * @param string
    */
   public function setStartTimeMillis($startTimeMillis)
   {

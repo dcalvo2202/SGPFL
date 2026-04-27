@@ -23,17 +23,12 @@ class ListIdpCredentialsResponse extends \Google\Collection
   protected $idpCredentialsType = IdpCredential::class;
   protected $idpCredentialsDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The IdpCredentials from the specified InboundSamlSsoProfile.
-   *
-   * @param IdpCredential[] $idpCredentials
+   * @param IdpCredential[]
    */
   public function setIdpCredentials($idpCredentials)
   {
@@ -47,10 +42,7 @@ class ListIdpCredentialsResponse extends \Google\Collection
     return $this->idpCredentials;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

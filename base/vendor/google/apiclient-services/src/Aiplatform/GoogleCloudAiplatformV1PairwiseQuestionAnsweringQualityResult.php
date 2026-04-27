@@ -20,44 +20,20 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1PairwiseQuestionAnsweringQualityResult extends \Google\Model
 {
   /**
-   * Unspecified prediction choice.
-   */
-  public const PAIRWISE_CHOICE_PAIRWISE_CHOICE_UNSPECIFIED = 'PAIRWISE_CHOICE_UNSPECIFIED';
-  /**
-   * Baseline prediction wins
-   */
-  public const PAIRWISE_CHOICE_BASELINE = 'BASELINE';
-  /**
-   * Candidate prediction wins
-   */
-  public const PAIRWISE_CHOICE_CANDIDATE = 'CANDIDATE';
-  /**
-   * Winner cannot be determined
-   */
-  public const PAIRWISE_CHOICE_TIE = 'TIE';
-  /**
-   * Output only. Confidence for question answering quality score.
-   *
    * @var float
    */
   public $confidence;
   /**
-   * Output only. Explanation for question answering quality score.
-   *
    * @var string
    */
   public $explanation;
   /**
-   * Output only. Pairwise question answering prediction choice.
-   *
    * @var string
    */
   public $pairwiseChoice;
 
   /**
-   * Output only. Confidence for question answering quality score.
-   *
-   * @param float $confidence
+   * @param float
    */
   public function setConfidence($confidence)
   {
@@ -71,9 +47,7 @@ class GoogleCloudAiplatformV1PairwiseQuestionAnsweringQualityResult extends \Goo
     return $this->confidence;
   }
   /**
-   * Output only. Explanation for question answering quality score.
-   *
-   * @param string $explanation
+   * @param string
    */
   public function setExplanation($explanation)
   {
@@ -87,18 +61,14 @@ class GoogleCloudAiplatformV1PairwiseQuestionAnsweringQualityResult extends \Goo
     return $this->explanation;
   }
   /**
-   * Output only. Pairwise question answering prediction choice.
-   *
-   * Accepted values: PAIRWISE_CHOICE_UNSPECIFIED, BASELINE, CANDIDATE, TIE
-   *
-   * @param self::PAIRWISE_CHOICE_* $pairwiseChoice
+   * @param string
    */
   public function setPairwiseChoice($pairwiseChoice)
   {
     $this->pairwiseChoice = $pairwiseChoice;
   }
   /**
-   * @return self::PAIRWISE_CHOICE_*
+   * @return string
    */
   public function getPairwiseChoice()
   {

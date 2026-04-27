@@ -20,25 +20,16 @@ namespace Google\Service\Gmail;
 class KaclsKeyMetadata extends \Google\Model
 {
   /**
-   * Opaque data generated and used by the key access control list service.
-   * Maximum size: 8 KiB.
-   *
    * @var string
    */
   public $kaclsData;
   /**
-   * The URI of the key access control list service that manages the private
-   * key.
-   *
    * @var string
    */
   public $kaclsUri;
 
   /**
-   * Opaque data generated and used by the key access control list service.
-   * Maximum size: 8 KiB.
-   *
-   * @param string $kaclsData
+   * @param string
    */
   public function setKaclsData($kaclsData)
   {
@@ -52,10 +43,7 @@ class KaclsKeyMetadata extends \Google\Model
     return $this->kaclsData;
   }
   /**
-   * The URI of the key access control list service that manages the private
-   * key.
-   *
-   * @param string $kaclsUri
+   * @param string
    */
   public function setKaclsUri($kaclsUri)
   {

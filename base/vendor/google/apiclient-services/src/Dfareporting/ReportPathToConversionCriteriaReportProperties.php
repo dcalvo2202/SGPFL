@@ -20,83 +20,44 @@ namespace Google\Service\Dfareporting;
 class ReportPathToConversionCriteriaReportProperties extends \Google\Model
 {
   /**
-   * CM360 checks to see if a click interaction occurred within the specified
-   * period of time before a conversion. By default the value is pulled from
-   * Floodlight or you can manually enter a custom value. Valid values: 1-90.
-   *
    * @var int
    */
   public $clicksLookbackWindow;
   /**
-   * CM360 checks to see if an impression interaction occurred within the
-   * specified period of time before a conversion. By default the value is
-   * pulled from Floodlight or you can manually enter a custom value. Valid
-   * values: 1-90.
-   *
    * @var int
    */
   public $impressionsLookbackWindow;
   /**
-   * Deprecated: has no effect.
-   *
    * @var bool
    */
   public $includeAttributedIPConversions;
   /**
-   * Include conversions of users with a DoubleClick cookie but without an
-   * exposure. That means the user did not click or see an ad from the
-   * advertiser within the Floodlight group, or that the interaction happened
-   * outside the lookback window.
-   *
    * @var bool
    */
   public $includeUnattributedCookieConversions;
   /**
-   * Include conversions that have no associated cookies and no exposures. It’s
-   * therefore impossible to know how the user was exposed to your ads during
-   * the lookback window prior to a conversion.
-   *
    * @var bool
    */
   public $includeUnattributedIPConversions;
   /**
-   * The maximum number of click interactions to include in the report.
-   * Advertisers currently paying for E2C reports get up to 200 (100 clicks, 100
-   * impressions). If another advertiser in your network is paying for E2C, you
-   * can have up to 5 total exposures per report.
-   *
    * @var int
    */
   public $maximumClickInteractions;
   /**
-   * The maximum number of click interactions to include in the report.
-   * Advertisers currently paying for E2C reports get up to 200 (100 clicks, 100
-   * impressions). If another advertiser in your network is paying for E2C, you
-   * can have up to 5 total exposures per report.
-   *
    * @var int
    */
   public $maximumImpressionInteractions;
   /**
-   * The maximum amount of time that can take place between interactions (clicks
-   * or impressions) by the same user. Valid values: 1-90.
-   *
    * @var int
    */
   public $maximumInteractionGap;
   /**
-   * Enable pivoting on interaction path.
-   *
    * @var bool
    */
   public $pivotOnInteractionPath;
 
   /**
-   * CM360 checks to see if a click interaction occurred within the specified
-   * period of time before a conversion. By default the value is pulled from
-   * Floodlight or you can manually enter a custom value. Valid values: 1-90.
-   *
-   * @param int $clicksLookbackWindow
+   * @param int
    */
   public function setClicksLookbackWindow($clicksLookbackWindow)
   {
@@ -110,12 +71,7 @@ class ReportPathToConversionCriteriaReportProperties extends \Google\Model
     return $this->clicksLookbackWindow;
   }
   /**
-   * CM360 checks to see if an impression interaction occurred within the
-   * specified period of time before a conversion. By default the value is
-   * pulled from Floodlight or you can manually enter a custom value. Valid
-   * values: 1-90.
-   *
-   * @param int $impressionsLookbackWindow
+   * @param int
    */
   public function setImpressionsLookbackWindow($impressionsLookbackWindow)
   {
@@ -129,9 +85,7 @@ class ReportPathToConversionCriteriaReportProperties extends \Google\Model
     return $this->impressionsLookbackWindow;
   }
   /**
-   * Deprecated: has no effect.
-   *
-   * @param bool $includeAttributedIPConversions
+   * @param bool
    */
   public function setIncludeAttributedIPConversions($includeAttributedIPConversions)
   {
@@ -145,12 +99,7 @@ class ReportPathToConversionCriteriaReportProperties extends \Google\Model
     return $this->includeAttributedIPConversions;
   }
   /**
-   * Include conversions of users with a DoubleClick cookie but without an
-   * exposure. That means the user did not click or see an ad from the
-   * advertiser within the Floodlight group, or that the interaction happened
-   * outside the lookback window.
-   *
-   * @param bool $includeUnattributedCookieConversions
+   * @param bool
    */
   public function setIncludeUnattributedCookieConversions($includeUnattributedCookieConversions)
   {
@@ -164,11 +113,7 @@ class ReportPathToConversionCriteriaReportProperties extends \Google\Model
     return $this->includeUnattributedCookieConversions;
   }
   /**
-   * Include conversions that have no associated cookies and no exposures. It’s
-   * therefore impossible to know how the user was exposed to your ads during
-   * the lookback window prior to a conversion.
-   *
-   * @param bool $includeUnattributedIPConversions
+   * @param bool
    */
   public function setIncludeUnattributedIPConversions($includeUnattributedIPConversions)
   {
@@ -182,12 +127,7 @@ class ReportPathToConversionCriteriaReportProperties extends \Google\Model
     return $this->includeUnattributedIPConversions;
   }
   /**
-   * The maximum number of click interactions to include in the report.
-   * Advertisers currently paying for E2C reports get up to 200 (100 clicks, 100
-   * impressions). If another advertiser in your network is paying for E2C, you
-   * can have up to 5 total exposures per report.
-   *
-   * @param int $maximumClickInteractions
+   * @param int
    */
   public function setMaximumClickInteractions($maximumClickInteractions)
   {
@@ -201,12 +141,7 @@ class ReportPathToConversionCriteriaReportProperties extends \Google\Model
     return $this->maximumClickInteractions;
   }
   /**
-   * The maximum number of click interactions to include in the report.
-   * Advertisers currently paying for E2C reports get up to 200 (100 clicks, 100
-   * impressions). If another advertiser in your network is paying for E2C, you
-   * can have up to 5 total exposures per report.
-   *
-   * @param int $maximumImpressionInteractions
+   * @param int
    */
   public function setMaximumImpressionInteractions($maximumImpressionInteractions)
   {
@@ -220,10 +155,7 @@ class ReportPathToConversionCriteriaReportProperties extends \Google\Model
     return $this->maximumImpressionInteractions;
   }
   /**
-   * The maximum amount of time that can take place between interactions (clicks
-   * or impressions) by the same user. Valid values: 1-90.
-   *
-   * @param int $maximumInteractionGap
+   * @param int
    */
   public function setMaximumInteractionGap($maximumInteractionGap)
   {
@@ -237,9 +169,7 @@ class ReportPathToConversionCriteriaReportProperties extends \Google\Model
     return $this->maximumInteractionGap;
   }
   /**
-   * Enable pivoting on interaction path.
-   *
-   * @param bool $pivotOnInteractionPath
+   * @param bool
    */
   public function setPivotOnInteractionPath($pivotOnInteractionPath)
   {

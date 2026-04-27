@@ -21,42 +21,44 @@ class GoogleApiServiceusageV2betaConsumerPolicy extends \Google\Collection
 {
   protected $collection_key = 'enableRules';
   /**
-   * Output only. The time the policy was created. For singleton policies, this
-   * is the first touch of the policy.
-   *
+   * @var string[]
+   */
+  public $annotations;
+  /**
    * @var string
    */
   public $createTime;
   protected $enableRulesType = GoogleApiServiceusageV2betaEnableRule::class;
   protected $enableRulesDataType = 'array';
   /**
-   * An opaque tag indicating the current version of the policy, used for
-   * concurrency control.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Output only. The resource name of the policy. Only the `default` policy is
-   * supported: `projects/12345/consumerPolicies/default`,
-   * `folders/12345/consumerPolicies/default`,
-   * `organizations/12345/consumerPolicies/default`.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The time the policy was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. The time the policy was created. For singleton policies, this
-   * is the first touch of the policy.
-   *
-   * @param string $createTime
+   * @param string[]
+   */
+  public function setAnnotations($annotations)
+  {
+    $this->annotations = $annotations;
+  }
+  /**
+   * @return string[]
+   */
+  public function getAnnotations()
+  {
+    return $this->annotations;
+  }
+  /**
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -70,11 +72,7 @@ class GoogleApiServiceusageV2betaConsumerPolicy extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Enable rules define usable services, groups, and categories. There can
-   * currently be at most one `EnableRule`. This restriction will be lifted in
-   * later releases.
-   *
-   * @param GoogleApiServiceusageV2betaEnableRule[] $enableRules
+   * @param GoogleApiServiceusageV2betaEnableRule[]
    */
   public function setEnableRules($enableRules)
   {
@@ -88,10 +86,7 @@ class GoogleApiServiceusageV2betaConsumerPolicy extends \Google\Collection
     return $this->enableRules;
   }
   /**
-   * An opaque tag indicating the current version of the policy, used for
-   * concurrency control.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -105,12 +100,7 @@ class GoogleApiServiceusageV2betaConsumerPolicy extends \Google\Collection
     return $this->etag;
   }
   /**
-   * Output only. The resource name of the policy. Only the `default` policy is
-   * supported: `projects/12345/consumerPolicies/default`,
-   * `folders/12345/consumerPolicies/default`,
-   * `organizations/12345/consumerPolicies/default`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -124,9 +114,7 @@ class GoogleApiServiceusageV2betaConsumerPolicy extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. The time the policy was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

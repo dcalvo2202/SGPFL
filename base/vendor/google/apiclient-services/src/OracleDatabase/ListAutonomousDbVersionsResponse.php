@@ -23,16 +23,12 @@ class ListAutonomousDbVersionsResponse extends \Google\Collection
   protected $autonomousDbVersionsType = AutonomousDbVersion::class;
   protected $autonomousDbVersionsDataType = 'array';
   /**
-   * A token identifying a page of results the server should return.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of Autonomous Database versions.
-   *
-   * @param AutonomousDbVersion[] $autonomousDbVersions
+   * @param AutonomousDbVersion[]
    */
   public function setAutonomousDbVersions($autonomousDbVersions)
   {
@@ -46,9 +42,7 @@ class ListAutonomousDbVersionsResponse extends \Google\Collection
     return $this->autonomousDbVersions;
   }
   /**
-   * A token identifying a page of results the server should return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

@@ -20,60 +20,30 @@ namespace Google\Service\AndroidPublisher;
 class AssetModuleMetadata extends \Google\Model
 {
   /**
-   * Unspecified delivery type.
-   */
-  public const DELIVERY_TYPE_UNKNOWN_DELIVERY_TYPE = 'UNKNOWN_DELIVERY_TYPE';
-  /**
-   * This module will always be downloaded as part of the initial install of the
-   * app.
-   */
-  public const DELIVERY_TYPE_INSTALL_TIME = 'INSTALL_TIME';
-  /**
-   * This module is requested on-demand, which means it will not be part of the
-   * initial install, and will only be sent when requested by the client.
-   */
-  public const DELIVERY_TYPE_ON_DEMAND = 'ON_DEMAND';
-  /**
-   * This module will be downloaded immediately after initial install finishes.
-   * The app can be opened before these modules are downloaded.
-   */
-  public const DELIVERY_TYPE_FAST_FOLLOW = 'FAST_FOLLOW';
-  /**
-   * Indicates the delivery type for persistent install.
-   *
    * @var string
    */
   public $deliveryType;
   /**
-   * Module name.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Indicates the delivery type for persistent install.
-   *
-   * Accepted values: UNKNOWN_DELIVERY_TYPE, INSTALL_TIME, ON_DEMAND,
-   * FAST_FOLLOW
-   *
-   * @param self::DELIVERY_TYPE_* $deliveryType
+   * @param string
    */
   public function setDeliveryType($deliveryType)
   {
     $this->deliveryType = $deliveryType;
   }
   /**
-   * @return self::DELIVERY_TYPE_*
+   * @return string
    */
   public function getDeliveryType()
   {
     return $this->deliveryType;
   }
   /**
-   * Module name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

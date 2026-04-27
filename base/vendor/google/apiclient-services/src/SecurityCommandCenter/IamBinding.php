@@ -20,61 +20,34 @@ namespace Google\Service\SecurityCommandCenter;
 class IamBinding extends \Google\Model
 {
   /**
-   * Unspecified.
-   */
-  public const ACTION_ACTION_UNSPECIFIED = 'ACTION_UNSPECIFIED';
-  /**
-   * Addition of a Binding.
-   */
-  public const ACTION_ADD = 'ADD';
-  /**
-   * Removal of a Binding.
-   */
-  public const ACTION_REMOVE = 'REMOVE';
-  /**
-   * The action that was performed on a Binding.
-   *
    * @var string
    */
   public $action;
   /**
-   * A single identity requesting access for a Cloud Platform resource, for
-   * example, "foo@google.com".
-   *
    * @var string
    */
   public $member;
   /**
-   * Role that is assigned to "members". For example, "roles/viewer",
-   * "roles/editor", or "roles/owner".
-   *
    * @var string
    */
   public $role;
 
   /**
-   * The action that was performed on a Binding.
-   *
-   * Accepted values: ACTION_UNSPECIFIED, ADD, REMOVE
-   *
-   * @param self::ACTION_* $action
+   * @param string
    */
   public function setAction($action)
   {
     $this->action = $action;
   }
   /**
-   * @return self::ACTION_*
+   * @return string
    */
   public function getAction()
   {
     return $this->action;
   }
   /**
-   * A single identity requesting access for a Cloud Platform resource, for
-   * example, "foo@google.com".
-   *
-   * @param string $member
+   * @param string
    */
   public function setMember($member)
   {
@@ -88,10 +61,7 @@ class IamBinding extends \Google\Model
     return $this->member;
   }
   /**
-   * Role that is assigned to "members". For example, "roles/viewer",
-   * "roles/editor", or "roles/owner".
-   *
-   * @param string $role
+   * @param string
    */
   public function setRole($role)
   {

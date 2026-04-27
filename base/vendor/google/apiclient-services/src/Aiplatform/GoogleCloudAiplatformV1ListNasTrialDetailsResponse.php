@@ -23,17 +23,12 @@ class GoogleCloudAiplatformV1ListNasTrialDetailsResponse extends \Google\Collect
   protected $nasTrialDetailsType = GoogleCloudAiplatformV1NasTrialDetail::class;
   protected $nasTrialDetailsDataType = 'array';
   /**
-   * A token to retrieve the next page of results. Pass to
-   * ListNasTrialDetailsRequest.page_token to obtain that page.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * List of top NasTrials in the requested page.
-   *
-   * @param GoogleCloudAiplatformV1NasTrialDetail[] $nasTrialDetails
+   * @param GoogleCloudAiplatformV1NasTrialDetail[]
    */
   public function setNasTrialDetails($nasTrialDetails)
   {
@@ -47,10 +42,7 @@ class GoogleCloudAiplatformV1ListNasTrialDetailsResponse extends \Google\Collect
     return $this->nasTrialDetails;
   }
   /**
-   * A token to retrieve the next page of results. Pass to
-   * ListNasTrialDetailsRequest.page_token to obtain that page.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

@@ -117,10 +117,6 @@ class CloudShell extends \Google\Service
                   'location' => 'query',
                   'type' => 'string',
                 ],
-                'returnPartialSuccess' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
               ],
             ],
           ]
@@ -150,24 +146,6 @@ class CloudShell extends \Google\Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ],
-              ],
-            ],'generateAccessToken' => [
-              'path' => 'v1/{+environment}:generateAccessToken',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'environment' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'expireTime' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'ttl' => [
-                  'location' => 'query',
-                  'type' => 'string',
                 ],
               ],
             ],'get' => [

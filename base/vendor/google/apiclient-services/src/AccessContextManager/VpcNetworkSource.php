@@ -23,9 +23,7 @@ class VpcNetworkSource extends \Google\Model
   protected $vpcSubnetworkDataType = '';
 
   /**
-   * Sub-segment ranges of a VPC network.
-   *
-   * @param VpcSubNetwork $vpcSubnetwork
+   * @param VpcSubNetwork
    */
   public function setVpcSubnetwork(VpcSubNetwork $vpcSubnetwork)
   {

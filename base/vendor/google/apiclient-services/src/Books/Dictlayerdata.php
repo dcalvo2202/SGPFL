@@ -29,7 +29,7 @@ class Dictlayerdata extends \Google\Model
   public $kind;
 
   /**
-   * @param DictlayerdataCommon $common
+   * @param DictlayerdataCommon
    */
   public function setCommon(DictlayerdataCommon $common)
   {
@@ -43,7 +43,7 @@ class Dictlayerdata extends \Google\Model
     return $this->common;
   }
   /**
-   * @param DictlayerdataDict $dict
+   * @param DictlayerdataDict
    */
   public function setDict(DictlayerdataDict $dict)
   {
@@ -57,7 +57,7 @@ class Dictlayerdata extends \Google\Model
     return $this->dict;
   }
   /**
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

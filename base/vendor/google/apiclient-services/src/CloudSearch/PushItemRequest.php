@@ -20,9 +20,6 @@ namespace Google\Service\CloudSearch;
 class PushItemRequest extends \Google\Model
 {
   /**
-   * The name of connector making this call. Format:
-   * datasources/{source_id}/connectors/{ID}
-   *
    * @var string
    */
   public $connectorName;
@@ -32,10 +29,7 @@ class PushItemRequest extends \Google\Model
   protected $itemDataType = '';
 
   /**
-   * The name of connector making this call. Format:
-   * datasources/{source_id}/connectors/{ID}
-   *
-   * @param string $connectorName
+   * @param string
    */
   public function setConnectorName($connectorName)
   {
@@ -49,9 +43,7 @@ class PushItemRequest extends \Google\Model
     return $this->connectorName;
   }
   /**
-   * Common debug options.
-   *
-   * @param DebugOptions $debugOptions
+   * @param DebugOptions
    */
   public function setDebugOptions(DebugOptions $debugOptions)
   {
@@ -65,9 +57,7 @@ class PushItemRequest extends \Google\Model
     return $this->debugOptions;
   }
   /**
-   * Item to push onto the queue.
-   *
-   * @param PushItem $item
+   * @param PushItem
    */
   public function setItem(PushItem $item)
   {

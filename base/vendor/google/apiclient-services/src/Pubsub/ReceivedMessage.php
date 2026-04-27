@@ -20,24 +20,10 @@ namespace Google\Service\Pubsub;
 class ReceivedMessage extends \Google\Model
 {
   /**
-   * Optional. This ID can be used to acknowledge the received message.
-   *
    * @var string
    */
   public $ackId;
   /**
-   * Optional. The approximate number of times that Pub/Sub has attempted to
-   * deliver the associated message to a subscriber. More precisely, this is 1 +
-   * (number of NACKs) + (number of ack_deadline exceeds) for this message. A
-   * NACK is any call to ModifyAckDeadline with a 0 deadline. An ack_deadline
-   * exceeds event is whenever a message is not acknowledged within
-   * ack_deadline. Note that ack_deadline is initially
-   * Subscription.ackDeadlineSeconds, but may get extended automatically by the
-   * client library. Upon the first delivery of a given message,
-   * `delivery_attempt` will have a value of 1. The value is calculated at best
-   * effort and is approximate. If a DeadLetterPolicy is not set on the
-   * subscription, this will be 0.
-   *
    * @var int
    */
   public $deliveryAttempt;
@@ -45,9 +31,7 @@ class ReceivedMessage extends \Google\Model
   protected $messageDataType = '';
 
   /**
-   * Optional. This ID can be used to acknowledge the received message.
-   *
-   * @param string $ackId
+   * @param string
    */
   public function setAckId($ackId)
   {
@@ -61,19 +45,7 @@ class ReceivedMessage extends \Google\Model
     return $this->ackId;
   }
   /**
-   * Optional. The approximate number of times that Pub/Sub has attempted to
-   * deliver the associated message to a subscriber. More precisely, this is 1 +
-   * (number of NACKs) + (number of ack_deadline exceeds) for this message. A
-   * NACK is any call to ModifyAckDeadline with a 0 deadline. An ack_deadline
-   * exceeds event is whenever a message is not acknowledged within
-   * ack_deadline. Note that ack_deadline is initially
-   * Subscription.ackDeadlineSeconds, but may get extended automatically by the
-   * client library. Upon the first delivery of a given message,
-   * `delivery_attempt` will have a value of 1. The value is calculated at best
-   * effort and is approximate. If a DeadLetterPolicy is not set on the
-   * subscription, this will be 0.
-   *
-   * @param int $deliveryAttempt
+   * @param int
    */
   public function setDeliveryAttempt($deliveryAttempt)
   {
@@ -87,9 +59,7 @@ class ReceivedMessage extends \Google\Model
     return $this->deliveryAttempt;
   }
   /**
-   * Optional. The message.
-   *
-   * @param PubsubMessage $message
+   * @param PubsubMessage
    */
   public function setMessage(PubsubMessage $message)
   {

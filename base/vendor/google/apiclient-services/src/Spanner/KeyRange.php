@@ -21,39 +21,24 @@ class KeyRange extends \Google\Collection
 {
   protected $collection_key = 'startOpen';
   /**
-   * If the end is closed, then the range includes all rows whose first
-   * `len(end_closed)` key columns exactly match `end_closed`.
-   *
    * @var array[]
    */
   public $endClosed;
   /**
-   * If the end is open, then the range excludes rows whose first
-   * `len(end_open)` key columns exactly match `end_open`.
-   *
    * @var array[]
    */
   public $endOpen;
   /**
-   * If the start is closed, then the range includes all rows whose first
-   * `len(start_closed)` key columns exactly match `start_closed`.
-   *
    * @var array[]
    */
   public $startClosed;
   /**
-   * If the start is open, then the range excludes rows whose first
-   * `len(start_open)` key columns exactly match `start_open`.
-   *
    * @var array[]
    */
   public $startOpen;
 
   /**
-   * If the end is closed, then the range includes all rows whose first
-   * `len(end_closed)` key columns exactly match `end_closed`.
-   *
-   * @param array[] $endClosed
+   * @param array[]
    */
   public function setEndClosed($endClosed)
   {
@@ -67,10 +52,7 @@ class KeyRange extends \Google\Collection
     return $this->endClosed;
   }
   /**
-   * If the end is open, then the range excludes rows whose first
-   * `len(end_open)` key columns exactly match `end_open`.
-   *
-   * @param array[] $endOpen
+   * @param array[]
    */
   public function setEndOpen($endOpen)
   {
@@ -84,10 +66,7 @@ class KeyRange extends \Google\Collection
     return $this->endOpen;
   }
   /**
-   * If the start is closed, then the range includes all rows whose first
-   * `len(start_closed)` key columns exactly match `start_closed`.
-   *
-   * @param array[] $startClosed
+   * @param array[]
    */
   public function setStartClosed($startClosed)
   {
@@ -101,10 +80,7 @@ class KeyRange extends \Google\Collection
     return $this->startClosed;
   }
   /**
-   * If the start is open, then the range excludes rows whose first
-   * `len(start_open)` key columns exactly match `start_open`.
-   *
-   * @param array[] $startOpen
+   * @param array[]
    */
   public function setStartOpen($startOpen)
   {

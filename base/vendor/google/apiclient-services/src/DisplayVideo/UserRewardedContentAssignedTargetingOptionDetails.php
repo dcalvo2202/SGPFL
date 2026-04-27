@@ -20,36 +20,16 @@ namespace Google\Service\DisplayVideo;
 class UserRewardedContentAssignedTargetingOptionDetails extends \Google\Model
 {
   /**
-   * User rewarded content is not specified or is unknown in this version.
-   */
-  public const USER_REWARDED_CONTENT_USER_REWARDED_CONTENT_UNSPECIFIED = 'USER_REWARDED_CONTENT_UNSPECIFIED';
-  /**
-   * Represents ads where the user will see a reward after viewing.
-   */
-  public const USER_REWARDED_CONTENT_USER_REWARDED_CONTENT_USER_REWARDED = 'USER_REWARDED_CONTENT_USER_REWARDED';
-  /**
-   * Represents all other ads besides user-rewarded.
-   */
-  public const USER_REWARDED_CONTENT_USER_REWARDED_CONTENT_NOT_USER_REWARDED = 'USER_REWARDED_CONTENT_NOT_USER_REWARDED';
-  /**
-   * Required. The targeting_option_id field when targeting_type is
-   * `TARGETING_TYPE_USER_REWARDED_CONTENT`.
-   *
    * @var string
    */
   public $targetingOptionId;
   /**
-   * Output only. User rewarded content status for video ads.
-   *
    * @var string
    */
   public $userRewardedContent;
 
   /**
-   * Required. The targeting_option_id field when targeting_type is
-   * `TARGETING_TYPE_USER_REWARDED_CONTENT`.
-   *
-   * @param string $targetingOptionId
+   * @param string
    */
   public function setTargetingOptionId($targetingOptionId)
   {
@@ -63,20 +43,14 @@ class UserRewardedContentAssignedTargetingOptionDetails extends \Google\Model
     return $this->targetingOptionId;
   }
   /**
-   * Output only. User rewarded content status for video ads.
-   *
-   * Accepted values: USER_REWARDED_CONTENT_UNSPECIFIED,
-   * USER_REWARDED_CONTENT_USER_REWARDED,
-   * USER_REWARDED_CONTENT_NOT_USER_REWARDED
-   *
-   * @param self::USER_REWARDED_CONTENT_* $userRewardedContent
+   * @param string
    */
   public function setUserRewardedContent($userRewardedContent)
   {
     $this->userRewardedContent = $userRewardedContent;
   }
   /**
-   * @return self::USER_REWARDED_CONTENT_*
+   * @return string
    */
   public function getUserRewardedContent()
   {

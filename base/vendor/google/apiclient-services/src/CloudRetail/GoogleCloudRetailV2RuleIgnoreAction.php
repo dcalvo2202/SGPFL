@@ -21,16 +21,12 @@ class GoogleCloudRetailV2RuleIgnoreAction extends \Google\Collection
 {
   protected $collection_key = 'ignoreTerms';
   /**
-   * Terms to ignore in the search query.
-   *
    * @var string[]
    */
   public $ignoreTerms;
 
   /**
-   * Terms to ignore in the search query.
-   *
-   * @param string[] $ignoreTerms
+   * @param string[]
    */
   public function setIgnoreTerms($ignoreTerms)
   {

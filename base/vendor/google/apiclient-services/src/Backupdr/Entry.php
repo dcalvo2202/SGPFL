@@ -20,25 +20,16 @@ namespace Google\Service\Backupdr;
 class Entry extends \Google\Model
 {
   /**
-   * Optional. Key for the metadata entry.
-   *
    * @var string
    */
   public $key;
   /**
-   * Optional. Value for the metadata entry. These are free-form strings, and
-   * only have meaning as interpreted by the image running in the instance. The
-   * only restriction placed on values is that their size must be less than or
-   * equal to 262144 bytes (256 KiB).
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Optional. Key for the metadata entry.
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {
@@ -52,12 +43,7 @@ class Entry extends \Google\Model
     return $this->key;
   }
   /**
-   * Optional. Value for the metadata entry. These are free-form strings, and
-   * only have meaning as interpreted by the image running in the instance. The
-   * only restriction placed on values is that their size must be less than or
-   * equal to 262144 bytes (256 KiB).
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

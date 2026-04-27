@@ -24,9 +24,7 @@ class MessageBatchDeletedEventData extends \Google\Collection
   protected $messagesDataType = 'array';
 
   /**
-   * A list of deleted messages.
-   *
-   * @param MessageDeletedEventData[] $messages
+   * @param MessageDeletedEventData[]
    */
   public function setMessages($messages)
   {

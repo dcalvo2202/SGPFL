@@ -24,10 +24,7 @@ class GoogleCloudSecuritycenterV2ResourcePath extends \Google\Collection
   protected $nodesDataType = 'array';
 
   /**
-   * The list of nodes that make the up resource path, ordered from lowest level
-   * to highest level.
-   *
-   * @param GoogleCloudSecuritycenterV2ResourcePathNode[] $nodes
+   * @param GoogleCloudSecuritycenterV2ResourcePathNode[]
    */
   public function setNodes($nodes)
   {

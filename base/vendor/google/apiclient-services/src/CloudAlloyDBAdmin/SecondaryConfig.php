@@ -20,18 +20,12 @@ namespace Google\Service\CloudAlloyDBAdmin;
 class SecondaryConfig extends \Google\Model
 {
   /**
-   * The name of the primary cluster name with the format: *
-   * projects/{project}/locations/{region}/clusters/{cluster_id}
-   *
    * @var string
    */
   public $primaryClusterName;
 
   /**
-   * The name of the primary cluster name with the format: *
-   * projects/{project}/locations/{region}/clusters/{cluster_id}
-   *
-   * @param string $primaryClusterName
+   * @param string
    */
   public function setPrimaryClusterName($primaryClusterName)
   {

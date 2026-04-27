@@ -20,16 +20,12 @@ namespace Google\Service\Contactcenterinsights;
 class GoogleCloudContactcenterinsightsV1alpha1QueryPerformanceOverviewResponse extends \Google\Model
 {
   /**
-   * The summary text of the performance.
-   *
    * @var string
    */
   public $summaryText;
 
   /**
-   * The summary text of the performance.
-   *
-   * @param string $summaryText
+   * @param string
    */
   public function setSummaryText($summaryText)
   {

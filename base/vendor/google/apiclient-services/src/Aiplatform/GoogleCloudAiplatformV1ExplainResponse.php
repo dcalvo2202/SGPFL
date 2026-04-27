@@ -21,25 +21,18 @@ class GoogleCloudAiplatformV1ExplainResponse extends \Google\Collection
 {
   protected $collection_key = 'predictions';
   /**
-   * ID of the Endpoint's DeployedModel that served this explanation.
-   *
    * @var string
    */
   public $deployedModelId;
   protected $explanationsType = GoogleCloudAiplatformV1Explanation::class;
   protected $explanationsDataType = 'array';
   /**
-   * The predictions that are the output of the predictions call. Same as
-   * PredictResponse.predictions.
-   *
    * @var array[]
    */
   public $predictions;
 
   /**
-   * ID of the Endpoint's DeployedModel that served this explanation.
-   *
-   * @param string $deployedModelId
+   * @param string
    */
   public function setDeployedModelId($deployedModelId)
   {
@@ -53,10 +46,7 @@ class GoogleCloudAiplatformV1ExplainResponse extends \Google\Collection
     return $this->deployedModelId;
   }
   /**
-   * The explanations of the Model's PredictResponse.predictions. It has the
-   * same number of elements as instances to be explained.
-   *
-   * @param GoogleCloudAiplatformV1Explanation[] $explanations
+   * @param GoogleCloudAiplatformV1Explanation[]
    */
   public function setExplanations($explanations)
   {
@@ -70,10 +60,7 @@ class GoogleCloudAiplatformV1ExplainResponse extends \Google\Collection
     return $this->explanations;
   }
   /**
-   * The predictions that are the output of the predictions call. Same as
-   * PredictResponse.predictions.
-   *
-   * @param array[] $predictions
+   * @param array[]
    */
   public function setPredictions($predictions)
   {

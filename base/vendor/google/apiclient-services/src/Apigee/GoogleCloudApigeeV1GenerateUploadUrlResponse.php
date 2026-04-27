@@ -20,18 +20,12 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1GenerateUploadUrlResponse extends \Google\Model
 {
   /**
-   * The Google Cloud Storage signed URL that can be used to upload a new
-   * Archive zip file.
-   *
    * @var string
    */
   public $uploadUri;
 
   /**
-   * The Google Cloud Storage signed URL that can be used to upload a new
-   * Archive zip file.
-   *
-   * @param string $uploadUri
+   * @param string
    */
   public function setUploadUri($uploadUri)
   {

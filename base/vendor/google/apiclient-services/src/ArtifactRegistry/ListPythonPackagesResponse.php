@@ -21,9 +21,6 @@ class ListPythonPackagesResponse extends \Google\Collection
 {
   protected $collection_key = 'pythonPackages';
   /**
-   * The token to retrieve the next page of artifacts, or empty if there are no
-   * more artifacts to return.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListPythonPackagesResponse extends \Google\Collection
   protected $pythonPackagesDataType = 'array';
 
   /**
-   * The token to retrieve the next page of artifacts, or empty if there are no
-   * more artifacts to return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class ListPythonPackagesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The python packages returned.
-   *
-   * @param PythonPackage[] $pythonPackages
+   * @param PythonPackage[]
    */
   public function setPythonPackages($pythonPackages)
   {

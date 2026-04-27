@@ -26,7 +26,7 @@ class GaDataDataTable extends \Google\Collection
   protected $rowsDataType = 'array';
 
   /**
-   * @param GaDataDataTableCols[] $cols
+   * @param GaDataDataTableCols[]
    */
   public function setCols($cols)
   {
@@ -40,7 +40,7 @@ class GaDataDataTable extends \Google\Collection
     return $this->cols;
   }
   /**
-   * @param GaDataDataTableRows[] $rows
+   * @param GaDataDataTableRows[]
    */
   public function setRows($rows)
   {

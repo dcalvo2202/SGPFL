@@ -19,54 +19,23 @@ namespace Google\Service\SQLAdmin;
 
 class ImportContext extends \Google\Model
 {
-  /**
-   * Unknown file type.
-   */
-  public const FILE_TYPE_SQL_FILE_TYPE_UNSPECIFIED = 'SQL_FILE_TYPE_UNSPECIFIED';
-  /**
-   * File containing SQL statements.
-   */
-  public const FILE_TYPE_SQL = 'SQL';
-  /**
-   * File in CSV format.
-   */
-  public const FILE_TYPE_CSV = 'CSV';
-  public const FILE_TYPE_BAK = 'BAK';
-  /**
-   * TDE certificate.
-   */
-  public const FILE_TYPE_TDE = 'TDE';
   protected $bakImportOptionsType = ImportContextBakImportOptions::class;
   protected $bakImportOptionsDataType = '';
   protected $csvImportOptionsType = ImportContextCsvImportOptions::class;
   protected $csvImportOptionsDataType = '';
   /**
-   * The target database for the import. If `fileType` is `SQL`, this field is
-   * required only if the import file does not specify a database, and is
-   * overridden by any database specification in the import file. For entire
-   * instance parallel import operations, the database is overridden by the
-   * database name stored in subdirectory name. If `fileType` is `CSV`, one
-   * database must be specified.
-   *
    * @var string
    */
   public $database;
   /**
-   * The file type for the specified uri.\`SQL`: The file contains SQL
-   * statements. \`CSV`: The file contains CSV data.
-   *
    * @var string
    */
   public $fileType;
   /**
-   * The PostgreSQL user for this import operation. PostgreSQL instances only.
-   *
    * @var string
    */
   public $importUser;
   /**
-   * This is always `sql#importContext`.
-   *
    * @var string
    */
   public $kind;
@@ -75,19 +44,12 @@ class ImportContext extends \Google\Model
   protected $tdeImportOptionsType = ImportContextTdeImportOptions::class;
   protected $tdeImportOptionsDataType = '';
   /**
-   * Path to the import file in Cloud Storage, in the form
-   * `gs://bucketName/fileName`. Compressed gzip files (.gz) are supported when
-   * `fileType` is `SQL`. The instance must have write permissions to the bucket
-   * and read access to the file.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * Import parameters specific to SQL Server .BAK files
-   *
-   * @param ImportContextBakImportOptions $bakImportOptions
+   * @param ImportContextBakImportOptions
    */
   public function setBakImportOptions(ImportContextBakImportOptions $bakImportOptions)
   {
@@ -101,9 +63,7 @@ class ImportContext extends \Google\Model
     return $this->bakImportOptions;
   }
   /**
-   * Options for importing data as CSV.
-   *
-   * @param ImportContextCsvImportOptions $csvImportOptions
+   * @param ImportContextCsvImportOptions
    */
   public function setCsvImportOptions(ImportContextCsvImportOptions $csvImportOptions)
   {
@@ -117,14 +77,7 @@ class ImportContext extends \Google\Model
     return $this->csvImportOptions;
   }
   /**
-   * The target database for the import. If `fileType` is `SQL`, this field is
-   * required only if the import file does not specify a database, and is
-   * overridden by any database specification in the import file. For entire
-   * instance parallel import operations, the database is overridden by the
-   * database name stored in subdirectory name. If `fileType` is `CSV`, one
-   * database must be specified.
-   *
-   * @param string $database
+   * @param string
    */
   public function setDatabase($database)
   {
@@ -138,28 +91,21 @@ class ImportContext extends \Google\Model
     return $this->database;
   }
   /**
-   * The file type for the specified uri.\`SQL`: The file contains SQL
-   * statements. \`CSV`: The file contains CSV data.
-   *
-   * Accepted values: SQL_FILE_TYPE_UNSPECIFIED, SQL, CSV, BAK, TDE
-   *
-   * @param self::FILE_TYPE_* $fileType
+   * @param string
    */
   public function setFileType($fileType)
   {
     $this->fileType = $fileType;
   }
   /**
-   * @return self::FILE_TYPE_*
+   * @return string
    */
   public function getFileType()
   {
     return $this->fileType;
   }
   /**
-   * The PostgreSQL user for this import operation. PostgreSQL instances only.
-   *
-   * @param string $importUser
+   * @param string
    */
   public function setImportUser($importUser)
   {
@@ -173,9 +119,7 @@ class ImportContext extends \Google\Model
     return $this->importUser;
   }
   /**
-   * This is always `sql#importContext`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -189,9 +133,7 @@ class ImportContext extends \Google\Model
     return $this->kind;
   }
   /**
-   * Optional. Options for importing data from SQL statements.
-   *
-   * @param ImportContextSqlImportOptions $sqlImportOptions
+   * @param ImportContextSqlImportOptions
    */
   public function setSqlImportOptions(ImportContextSqlImportOptions $sqlImportOptions)
   {
@@ -205,9 +147,7 @@ class ImportContext extends \Google\Model
     return $this->sqlImportOptions;
   }
   /**
-   * Optional. Import parameters specific to SQL Server TDE certificates
-   *
-   * @param ImportContextTdeImportOptions $tdeImportOptions
+   * @param ImportContextTdeImportOptions
    */
   public function setTdeImportOptions(ImportContextTdeImportOptions $tdeImportOptions)
   {
@@ -221,12 +161,7 @@ class ImportContext extends \Google\Model
     return $this->tdeImportOptions;
   }
   /**
-   * Path to the import file in Cloud Storage, in the form
-   * `gs://bucketName/fileName`. Compressed gzip files (.gz) are supported when
-   * `fileType` is `SQL`. The instance must have write permissions to the bucket
-   * and read access to the file.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

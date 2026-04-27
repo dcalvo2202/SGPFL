@@ -20,22 +20,16 @@ namespace Google\Service\Networkconnectivity;
 class RouterApplianceInstance extends \Google\Model
 {
   /**
-   * The IP address on the VM to use for peering.
-   *
    * @var string
    */
   public $ipAddress;
   /**
-   * The URI of the VM.
-   *
    * @var string
    */
   public $virtualMachine;
 
   /**
-   * The IP address on the VM to use for peering.
-   *
-   * @param string $ipAddress
+   * @param string
    */
   public function setIpAddress($ipAddress)
   {
@@ -49,9 +43,7 @@ class RouterApplianceInstance extends \Google\Model
     return $this->ipAddress;
   }
   /**
-   * The URI of the VM.
-   *
-   * @param string $virtualMachine
+   * @param string
    */
   public function setVirtualMachine($virtualMachine)
   {

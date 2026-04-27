@@ -25,8 +25,6 @@ class AttributeContext extends \Google\Collection
   protected $destinationType = Peer::class;
   protected $destinationDataType = '';
   /**
-   * Supports extensions for advanced use cases, such as logs and metrics.
-   *
    * @var array[]
    */
   public $extensions;
@@ -42,9 +40,7 @@ class AttributeContext extends \Google\Collection
   protected $sourceDataType = '';
 
   /**
-   * Represents an API operation that is involved to a network activity.
-   *
-   * @param Api $api
+   * @param Api
    */
   public function setApi(Api $api)
   {
@@ -58,11 +54,7 @@ class AttributeContext extends \Google\Collection
     return $this->api;
   }
   /**
-   * The destination of a network activity, such as accepting a TCP connection.
-   * In a multi hop network activity, the destination represents the receiver of
-   * the last hop.
-   *
-   * @param Peer $destination
+   * @param Peer
    */
   public function setDestination(Peer $destination)
   {
@@ -76,9 +68,7 @@ class AttributeContext extends \Google\Collection
     return $this->destination;
   }
   /**
-   * Supports extensions for advanced use cases, such as logs and metrics.
-   *
-   * @param array[] $extensions
+   * @param array[]
    */
   public function setExtensions($extensions)
   {
@@ -92,11 +82,7 @@ class AttributeContext extends \Google\Collection
     return $this->extensions;
   }
   /**
-   * The origin of a network activity. In a multi hop network activity, the
-   * origin represents the sender of the first hop. For the first hop, the
-   * `source` and the `origin` must have the same content.
-   *
-   * @param Peer $origin
+   * @param Peer
    */
   public function setOrigin(Peer $origin)
   {
@@ -110,9 +96,7 @@ class AttributeContext extends \Google\Collection
     return $this->origin;
   }
   /**
-   * Represents a network request, such as an HTTP request.
-   *
-   * @param Request $request
+   * @param Request
    */
   public function setRequest(Request $request)
   {
@@ -126,11 +110,7 @@ class AttributeContext extends \Google\Collection
     return $this->request;
   }
   /**
-   * Represents a target resource that is involved with a network activity. If
-   * multiple resources are involved with an activity, this must be the primary
-   * one.
-   *
-   * @param ServicecontrolResource $resource
+   * @param ServicecontrolResource
    */
   public function setResource(ServicecontrolResource $resource)
   {
@@ -144,9 +124,7 @@ class AttributeContext extends \Google\Collection
     return $this->resource;
   }
   /**
-   * Represents a network response, such as an HTTP response.
-   *
-   * @param Response $response
+   * @param Response
    */
   public function setResponse(Response $response)
   {
@@ -160,11 +138,7 @@ class AttributeContext extends \Google\Collection
     return $this->response;
   }
   /**
-   * The source of a network activity, such as starting a TCP connection. In a
-   * multi hop network activity, the source represents the sender of the last
-   * hop.
-   *
-   * @param Peer $source
+   * @param Peer
    */
   public function setSource(Peer $source)
   {

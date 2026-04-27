@@ -20,22 +20,16 @@ namespace Google\Service\CloudNaturalLanguage;
 class XPSMetricEntryLabel extends \Google\Model
 {
   /**
-   * The name of the label.
-   *
    * @var string
    */
   public $labelName;
   /**
-   * The value of the label.
-   *
    * @var string
    */
   public $labelValue;
 
   /**
-   * The name of the label.
-   *
-   * @param string $labelName
+   * @param string
    */
   public function setLabelName($labelName)
   {
@@ -49,9 +43,7 @@ class XPSMetricEntryLabel extends \Google\Model
     return $this->labelName;
   }
   /**
-   * The value of the label.
-   *
-   * @param string $labelValue
+   * @param string
    */
   public function setLabelValue($labelValue)
   {

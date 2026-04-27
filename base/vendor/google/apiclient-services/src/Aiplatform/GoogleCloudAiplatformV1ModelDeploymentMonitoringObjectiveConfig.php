@@ -20,8 +20,6 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1ModelDeploymentMonitoringObjectiveConfig extends \Google\Model
 {
   /**
-   * The DeployedModel ID of the objective config.
-   *
    * @var string
    */
   public $deployedModelId;
@@ -29,9 +27,7 @@ class GoogleCloudAiplatformV1ModelDeploymentMonitoringObjectiveConfig extends \G
   protected $objectiveConfigDataType = '';
 
   /**
-   * The DeployedModel ID of the objective config.
-   *
-   * @param string $deployedModelId
+   * @param string
    */
   public function setDeployedModelId($deployedModelId)
   {
@@ -45,9 +41,7 @@ class GoogleCloudAiplatformV1ModelDeploymentMonitoringObjectiveConfig extends \G
     return $this->deployedModelId;
   }
   /**
-   * The objective config of for the modelmonitoring job of this deployed model.
-   *
-   * @param GoogleCloudAiplatformV1ModelMonitoringObjectiveConfig $objectiveConfig
+   * @param GoogleCloudAiplatformV1ModelMonitoringObjectiveConfig
    */
   public function setObjectiveConfig(GoogleCloudAiplatformV1ModelMonitoringObjectiveConfig $objectiveConfig)
   {

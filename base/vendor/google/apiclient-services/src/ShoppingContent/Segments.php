@@ -20,176 +20,88 @@ namespace Google\Service\ShoppingContent;
 class Segments extends \Google\Model
 {
   /**
-   * Not specified.
-   */
-  public const PROGRAM_PROGRAM_UNSPECIFIED = 'PROGRAM_UNSPECIFIED';
-  /**
-   * Shopping Ads.
-   */
-  public const PROGRAM_SHOPPING_ADS = 'SHOPPING_ADS';
-  /**
-   * Free Product Listing.
-   */
-  public const PROGRAM_FREE_PRODUCT_LISTING = 'FREE_PRODUCT_LISTING';
-  /**
-   * Free Local Product Listing.
-   */
-  public const PROGRAM_FREE_LOCAL_PRODUCT_LISTING = 'FREE_LOCAL_PRODUCT_LISTING';
-  /**
-   * *Deprecated*: This value is no longer supported. Retrieving all metrics for
-   * the `BUY_ON_GOOGLE_LISTING` program returns 0 starting from May 2024. Buy
-   * on Google Listing.
-   */
-  public const PROGRAM_BUY_ON_GOOGLE_LISTING = 'BUY_ON_GOOGLE_LISTING';
-  /**
-   * Brand of the product.
-   *
    * @var string
    */
   public $brand;
   /**
-   * [Product category (1st level)](https://developers.google.com/shopping-
-   * content/guides/reports/segmentation#category_and_product_type) in Google's
-   * product taxonomy.
-   *
    * @var string
    */
   public $categoryL1;
   /**
-   * [Product category (2nd level)](https://developers.google.com/shopping-
-   * content/guides/reports/segmentation#category_and_product_type) in Google's
-   * product taxonomy.
-   *
    * @var string
    */
   public $categoryL2;
   /**
-   * [Product category (3rd level)](https://developers.google.com/shopping-
-   * content/guides/reports/segmentation#category_and_product_type) in Google's
-   * product taxonomy.
-   *
    * @var string
    */
   public $categoryL3;
   /**
-   * [Product category (4th level)](https://developers.google.com/shopping-
-   * content/guides/reports/segmentation#category_and_product_type) in Google's
-   * product taxonomy.
-   *
    * @var string
    */
   public $categoryL4;
   /**
-   * [Product category (5th level)](https://developers.google.com/shopping-
-   * content/guides/reports/segmentation#category_and_product_type) in Google's
-   * product taxonomy.
-   *
    * @var string
    */
   public $categoryL5;
   /**
-   * Currency in which price metrics are represented, for example, if you select
-   * `ordered_item_sales_micros`, the returned value will be represented by this
-   * currency.
-   *
    * @var string
    */
   public $currencyCode;
   /**
-   * Custom label 0 for custom grouping of products.
-   *
    * @var string
    */
   public $customLabel0;
   /**
-   * Custom label 1 for custom grouping of products.
-   *
    * @var string
    */
   public $customLabel1;
   /**
-   * Custom label 2 for custom grouping of products.
-   *
    * @var string
    */
   public $customLabel2;
   /**
-   * Custom label 3 for custom grouping of products.
-   *
    * @var string
    */
   public $customLabel3;
   /**
-   * Custom label 4 for custom grouping of products.
-   *
    * @var string
    */
   public $customLabel4;
   /**
-   * Code of the country where the customer is located at the time of the event.
-   * Represented in the ISO 3166 format. If the customer country cannot be
-   * determined, a special 'ZZ' code is returned.
-   *
    * @var string
    */
   public $customerCountryCode;
   protected $dateType = Date::class;
   protected $dateDataType = '';
   /**
-   * Merchant-provided id of the product.
-   *
    * @var string
    */
   public $offerId;
   /**
-   * [Product type (1st level)](https://developers.google.com/shopping-
-   * content/guides/reports/segmentation#category_and_product_type) in
-   * merchant's own product taxonomy.
-   *
    * @var string
    */
   public $productTypeL1;
   /**
-   * [Product type (2nd level)](https://developers.google.com/shopping-
-   * content/guides/reports/segmentation#category_and_product_type) in
-   * merchant's own product taxonomy.
-   *
    * @var string
    */
   public $productTypeL2;
   /**
-   * [Product type (3rd level)](https://developers.google.com/shopping-
-   * content/guides/reports/segmentation#category_and_product_type) in
-   * merchant's own product taxonomy.
-   *
    * @var string
    */
   public $productTypeL3;
   /**
-   * [Product type (4th level)](https://developers.google.com/shopping-
-   * content/guides/reports/segmentation#category_and_product_type) in
-   * merchant's own product taxonomy.
-   *
    * @var string
    */
   public $productTypeL4;
   /**
-   * [Product type (5th level)](https://developers.google.com/shopping-
-   * content/guides/reports/segmentation#category_and_product_type) in
-   * merchant's own product taxonomy.
-   *
    * @var string
    */
   public $productTypeL5;
   /**
-   * Program to which metrics apply, for example, Free Product Listing.
-   *
    * @var string
    */
   public $program;
   /**
-   * Title of the product.
-   *
    * @var string
    */
   public $title;
@@ -197,9 +109,7 @@ class Segments extends \Google\Model
   protected $weekDataType = '';
 
   /**
-   * Brand of the product.
-   *
-   * @param string $brand
+   * @param string
    */
   public function setBrand($brand)
   {
@@ -213,11 +123,7 @@ class Segments extends \Google\Model
     return $this->brand;
   }
   /**
-   * [Product category (1st level)](https://developers.google.com/shopping-
-   * content/guides/reports/segmentation#category_and_product_type) in Google's
-   * product taxonomy.
-   *
-   * @param string $categoryL1
+   * @param string
    */
   public function setCategoryL1($categoryL1)
   {
@@ -231,11 +137,7 @@ class Segments extends \Google\Model
     return $this->categoryL1;
   }
   /**
-   * [Product category (2nd level)](https://developers.google.com/shopping-
-   * content/guides/reports/segmentation#category_and_product_type) in Google's
-   * product taxonomy.
-   *
-   * @param string $categoryL2
+   * @param string
    */
   public function setCategoryL2($categoryL2)
   {
@@ -249,11 +151,7 @@ class Segments extends \Google\Model
     return $this->categoryL2;
   }
   /**
-   * [Product category (3rd level)](https://developers.google.com/shopping-
-   * content/guides/reports/segmentation#category_and_product_type) in Google's
-   * product taxonomy.
-   *
-   * @param string $categoryL3
+   * @param string
    */
   public function setCategoryL3($categoryL3)
   {
@@ -267,11 +165,7 @@ class Segments extends \Google\Model
     return $this->categoryL3;
   }
   /**
-   * [Product category (4th level)](https://developers.google.com/shopping-
-   * content/guides/reports/segmentation#category_and_product_type) in Google's
-   * product taxonomy.
-   *
-   * @param string $categoryL4
+   * @param string
    */
   public function setCategoryL4($categoryL4)
   {
@@ -285,11 +179,7 @@ class Segments extends \Google\Model
     return $this->categoryL4;
   }
   /**
-   * [Product category (5th level)](https://developers.google.com/shopping-
-   * content/guides/reports/segmentation#category_and_product_type) in Google's
-   * product taxonomy.
-   *
-   * @param string $categoryL5
+   * @param string
    */
   public function setCategoryL5($categoryL5)
   {
@@ -303,11 +193,7 @@ class Segments extends \Google\Model
     return $this->categoryL5;
   }
   /**
-   * Currency in which price metrics are represented, for example, if you select
-   * `ordered_item_sales_micros`, the returned value will be represented by this
-   * currency.
-   *
-   * @param string $currencyCode
+   * @param string
    */
   public function setCurrencyCode($currencyCode)
   {
@@ -321,9 +207,7 @@ class Segments extends \Google\Model
     return $this->currencyCode;
   }
   /**
-   * Custom label 0 for custom grouping of products.
-   *
-   * @param string $customLabel0
+   * @param string
    */
   public function setCustomLabel0($customLabel0)
   {
@@ -337,9 +221,7 @@ class Segments extends \Google\Model
     return $this->customLabel0;
   }
   /**
-   * Custom label 1 for custom grouping of products.
-   *
-   * @param string $customLabel1
+   * @param string
    */
   public function setCustomLabel1($customLabel1)
   {
@@ -353,9 +235,7 @@ class Segments extends \Google\Model
     return $this->customLabel1;
   }
   /**
-   * Custom label 2 for custom grouping of products.
-   *
-   * @param string $customLabel2
+   * @param string
    */
   public function setCustomLabel2($customLabel2)
   {
@@ -369,9 +249,7 @@ class Segments extends \Google\Model
     return $this->customLabel2;
   }
   /**
-   * Custom label 3 for custom grouping of products.
-   *
-   * @param string $customLabel3
+   * @param string
    */
   public function setCustomLabel3($customLabel3)
   {
@@ -385,9 +263,7 @@ class Segments extends \Google\Model
     return $this->customLabel3;
   }
   /**
-   * Custom label 4 for custom grouping of products.
-   *
-   * @param string $customLabel4
+   * @param string
    */
   public function setCustomLabel4($customLabel4)
   {
@@ -401,11 +277,7 @@ class Segments extends \Google\Model
     return $this->customLabel4;
   }
   /**
-   * Code of the country where the customer is located at the time of the event.
-   * Represented in the ISO 3166 format. If the customer country cannot be
-   * determined, a special 'ZZ' code is returned.
-   *
-   * @param string $customerCountryCode
+   * @param string
    */
   public function setCustomerCountryCode($customerCountryCode)
   {
@@ -419,9 +291,7 @@ class Segments extends \Google\Model
     return $this->customerCountryCode;
   }
   /**
-   * Date in the merchant timezone to which metrics apply.
-   *
-   * @param Date $date
+   * @param Date
    */
   public function setDate(Date $date)
   {
@@ -435,9 +305,7 @@ class Segments extends \Google\Model
     return $this->date;
   }
   /**
-   * Merchant-provided id of the product.
-   *
-   * @param string $offerId
+   * @param string
    */
   public function setOfferId($offerId)
   {
@@ -451,11 +319,7 @@ class Segments extends \Google\Model
     return $this->offerId;
   }
   /**
-   * [Product type (1st level)](https://developers.google.com/shopping-
-   * content/guides/reports/segmentation#category_and_product_type) in
-   * merchant's own product taxonomy.
-   *
-   * @param string $productTypeL1
+   * @param string
    */
   public function setProductTypeL1($productTypeL1)
   {
@@ -469,11 +333,7 @@ class Segments extends \Google\Model
     return $this->productTypeL1;
   }
   /**
-   * [Product type (2nd level)](https://developers.google.com/shopping-
-   * content/guides/reports/segmentation#category_and_product_type) in
-   * merchant's own product taxonomy.
-   *
-   * @param string $productTypeL2
+   * @param string
    */
   public function setProductTypeL2($productTypeL2)
   {
@@ -487,11 +347,7 @@ class Segments extends \Google\Model
     return $this->productTypeL2;
   }
   /**
-   * [Product type (3rd level)](https://developers.google.com/shopping-
-   * content/guides/reports/segmentation#category_and_product_type) in
-   * merchant's own product taxonomy.
-   *
-   * @param string $productTypeL3
+   * @param string
    */
   public function setProductTypeL3($productTypeL3)
   {
@@ -505,11 +361,7 @@ class Segments extends \Google\Model
     return $this->productTypeL3;
   }
   /**
-   * [Product type (4th level)](https://developers.google.com/shopping-
-   * content/guides/reports/segmentation#category_and_product_type) in
-   * merchant's own product taxonomy.
-   *
-   * @param string $productTypeL4
+   * @param string
    */
   public function setProductTypeL4($productTypeL4)
   {
@@ -523,11 +375,7 @@ class Segments extends \Google\Model
     return $this->productTypeL4;
   }
   /**
-   * [Product type (5th level)](https://developers.google.com/shopping-
-   * content/guides/reports/segmentation#category_and_product_type) in
-   * merchant's own product taxonomy.
-   *
-   * @param string $productTypeL5
+   * @param string
    */
   public function setProductTypeL5($productTypeL5)
   {
@@ -541,28 +389,21 @@ class Segments extends \Google\Model
     return $this->productTypeL5;
   }
   /**
-   * Program to which metrics apply, for example, Free Product Listing.
-   *
-   * Accepted values: PROGRAM_UNSPECIFIED, SHOPPING_ADS, FREE_PRODUCT_LISTING,
-   * FREE_LOCAL_PRODUCT_LISTING, BUY_ON_GOOGLE_LISTING
-   *
-   * @param self::PROGRAM_* $program
+   * @param string
    */
   public function setProgram($program)
   {
     $this->program = $program;
   }
   /**
-   * @return self::PROGRAM_*
+   * @return string
    */
   public function getProgram()
   {
     return $this->program;
   }
   /**
-   * Title of the product.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -576,10 +417,7 @@ class Segments extends \Google\Model
     return $this->title;
   }
   /**
-   * First day of the week (Monday) of the metrics date in the merchant
-   * timezone.
-   *
-   * @param Date $week
+   * @param Date
    */
   public function setWeek(Date $week)
   {

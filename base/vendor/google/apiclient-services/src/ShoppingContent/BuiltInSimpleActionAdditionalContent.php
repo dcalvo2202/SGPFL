@@ -21,22 +21,16 @@ class BuiltInSimpleActionAdditionalContent extends \Google\Collection
 {
   protected $collection_key = 'paragraphs';
   /**
-   * Long text organized into paragraphs.
-   *
    * @var string[]
    */
   public $paragraphs;
   /**
-   * Title of the additional content;
-   *
    * @var string
    */
   public $title;
 
   /**
-   * Long text organized into paragraphs.
-   *
-   * @param string[] $paragraphs
+   * @param string[]
    */
   public function setParagraphs($paragraphs)
   {
@@ -50,9 +44,7 @@ class BuiltInSimpleActionAdditionalContent extends \Google\Collection
     return $this->paragraphs;
   }
   /**
-   * Title of the additional content;
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

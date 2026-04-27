@@ -23,9 +23,7 @@ class GoogleCloudDatalabelingV1beta1CreateInstructionRequest extends \Google\Mod
   protected $instructionDataType = '';
 
   /**
-   * Required. Instruction of how to perform the labeling task.
-   *
-   * @param GoogleCloudDatalabelingV1beta1Instruction $instruction
+   * @param GoogleCloudDatalabelingV1beta1Instruction
    */
   public function setInstruction(GoogleCloudDatalabelingV1beta1Instruction $instruction)
   {

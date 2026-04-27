@@ -19,75 +19,33 @@ namespace Google\Service\CloudDeploy;
 
 class JobRun extends \Google\Model
 {
-  /**
-   * The `JobRun` has an unspecified state.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The `JobRun` is in progress.
-   */
-  public const STATE_IN_PROGRESS = 'IN_PROGRESS';
-  /**
-   * The `JobRun` has succeeded.
-   */
-  public const STATE_SUCCEEDED = 'SUCCEEDED';
-  /**
-   * The `JobRun` has failed.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * The `JobRun` is terminating.
-   */
-  public const STATE_TERMINATING = 'TERMINATING';
-  /**
-   * The `JobRun` was terminated.
-   */
-  public const STATE_TERMINATED = 'TERMINATED';
   protected $advanceChildRolloutJobRunType = AdvanceChildRolloutJobRun::class;
   protected $advanceChildRolloutJobRunDataType = '';
-  protected $analysisJobRunType = AnalysisJobRun::class;
-  protected $analysisJobRunDataType = '';
   protected $createChildRolloutJobRunType = CreateChildRolloutJobRun::class;
   protected $createChildRolloutJobRunDataType = '';
   /**
-   * Output only. Time at which the `JobRun` was created.
-   *
    * @var string
    */
   public $createTime;
   protected $deployJobRunType = DeployJobRun::class;
   protected $deployJobRunDataType = '';
   /**
-   * Output only. Time at which the `JobRun` ended.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * Output only. This checksum is computed by the server based on the value of
-   * other fields, and may be sent on update and delete requests to ensure the
-   * client has an up-to-date value before proceeding.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Output only. ID of the `Rollout` job this `JobRun` corresponds to.
-   *
    * @var string
    */
   public $jobId;
   /**
-   * Output only. Name of the `JobRun`. Format is `projects/{project}/locations/
-   * {location}/deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollout
-   * s/{rollouts}/jobRuns/{uuid}`.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. ID of the `Rollout` phase this `JobRun` belongs in.
-   *
    * @var string
    */
   public $phaseId;
@@ -96,20 +54,14 @@ class JobRun extends \Google\Model
   protected $predeployJobRunType = PredeployJobRun::class;
   protected $predeployJobRunDataType = '';
   /**
-   * Output only. Time at which the `JobRun` was started.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * Output only. The current state of the `JobRun`.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. Unique identifier of the `JobRun`.
-   *
    * @var string
    */
   public $uid;
@@ -117,9 +69,7 @@ class JobRun extends \Google\Model
   protected $verifyJobRunDataType = '';
 
   /**
-   * Output only. Information specific to an advanceChildRollout `JobRun`
-   *
-   * @param AdvanceChildRolloutJobRun $advanceChildRolloutJobRun
+   * @param AdvanceChildRolloutJobRun
    */
   public function setAdvanceChildRolloutJobRun(AdvanceChildRolloutJobRun $advanceChildRolloutJobRun)
   {
@@ -133,25 +83,7 @@ class JobRun extends \Google\Model
     return $this->advanceChildRolloutJobRun;
   }
   /**
-   * Output only. Information specific to an analysis `JobRun`.
-   *
-   * @param AnalysisJobRun $analysisJobRun
-   */
-  public function setAnalysisJobRun(AnalysisJobRun $analysisJobRun)
-  {
-    $this->analysisJobRun = $analysisJobRun;
-  }
-  /**
-   * @return AnalysisJobRun
-   */
-  public function getAnalysisJobRun()
-  {
-    return $this->analysisJobRun;
-  }
-  /**
-   * Output only. Information specific to a createChildRollout `JobRun`.
-   *
-   * @param CreateChildRolloutJobRun $createChildRolloutJobRun
+   * @param CreateChildRolloutJobRun
    */
   public function setCreateChildRolloutJobRun(CreateChildRolloutJobRun $createChildRolloutJobRun)
   {
@@ -165,9 +97,7 @@ class JobRun extends \Google\Model
     return $this->createChildRolloutJobRun;
   }
   /**
-   * Output only. Time at which the `JobRun` was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -181,9 +111,7 @@ class JobRun extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. Information specific to a deploy `JobRun`.
-   *
-   * @param DeployJobRun $deployJobRun
+   * @param DeployJobRun
    */
   public function setDeployJobRun(DeployJobRun $deployJobRun)
   {
@@ -197,9 +125,7 @@ class JobRun extends \Google\Model
     return $this->deployJobRun;
   }
   /**
-   * Output only. Time at which the `JobRun` ended.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -213,11 +139,7 @@ class JobRun extends \Google\Model
     return $this->endTime;
   }
   /**
-   * Output only. This checksum is computed by the server based on the value of
-   * other fields, and may be sent on update and delete requests to ensure the
-   * client has an up-to-date value before proceeding.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -231,9 +153,7 @@ class JobRun extends \Google\Model
     return $this->etag;
   }
   /**
-   * Output only. ID of the `Rollout` job this `JobRun` corresponds to.
-   *
-   * @param string $jobId
+   * @param string
    */
   public function setJobId($jobId)
   {
@@ -247,11 +167,7 @@ class JobRun extends \Google\Model
     return $this->jobId;
   }
   /**
-   * Output only. Name of the `JobRun`. Format is `projects/{project}/locations/
-   * {location}/deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollout
-   * s/{rollouts}/jobRuns/{uuid}`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -265,9 +181,7 @@ class JobRun extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. ID of the `Rollout` phase this `JobRun` belongs in.
-   *
-   * @param string $phaseId
+   * @param string
    */
   public function setPhaseId($phaseId)
   {
@@ -281,9 +195,7 @@ class JobRun extends \Google\Model
     return $this->phaseId;
   }
   /**
-   * Output only. Information specific to a postdeploy `JobRun`.
-   *
-   * @param PostdeployJobRun $postdeployJobRun
+   * @param PostdeployJobRun
    */
   public function setPostdeployJobRun(PostdeployJobRun $postdeployJobRun)
   {
@@ -297,9 +209,7 @@ class JobRun extends \Google\Model
     return $this->postdeployJobRun;
   }
   /**
-   * Output only. Information specific to a predeploy `JobRun`.
-   *
-   * @param PredeployJobRun $predeployJobRun
+   * @param PredeployJobRun
    */
   public function setPredeployJobRun(PredeployJobRun $predeployJobRun)
   {
@@ -313,9 +223,7 @@ class JobRun extends \Google\Model
     return $this->predeployJobRun;
   }
   /**
-   * Output only. Time at which the `JobRun` was started.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -329,28 +237,21 @@ class JobRun extends \Google\Model
     return $this->startTime;
   }
   /**
-   * Output only. The current state of the `JobRun`.
-   *
-   * Accepted values: STATE_UNSPECIFIED, IN_PROGRESS, SUCCEEDED, FAILED,
-   * TERMINATING, TERMINATED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. Unique identifier of the `JobRun`.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {
@@ -364,9 +265,7 @@ class JobRun extends \Google\Model
     return $this->uid;
   }
   /**
-   * Output only. Information specific to a verify `JobRun`.
-   *
-   * @param VerifyJobRun $verifyJobRun
+   * @param VerifyJobRun
    */
   public function setVerifyJobRun(VerifyJobRun $verifyJobRun)
   {

@@ -20,35 +20,24 @@ namespace Google\Service\Contentwarehouse;
 class GoogleCloudDocumentaiV1DocumentPageImage extends \Google\Model
 {
   /**
-   * Raw byte content of the image.
-   *
    * @var string
    */
   public $content;
   /**
-   * Height of the image in pixels.
-   *
    * @var int
    */
   public $height;
   /**
-   * Encoding [media type (MIME type)](https://www.iana.org/assignments/media-
-   * types/media-types.xhtml) for the image.
-   *
    * @var string
    */
   public $mimeType;
   /**
-   * Width of the image in pixels.
-   *
    * @var int
    */
   public $width;
 
   /**
-   * Raw byte content of the image.
-   *
-   * @param string $content
+   * @param string
    */
   public function setContent($content)
   {
@@ -62,9 +51,7 @@ class GoogleCloudDocumentaiV1DocumentPageImage extends \Google\Model
     return $this->content;
   }
   /**
-   * Height of the image in pixels.
-   *
-   * @param int $height
+   * @param int
    */
   public function setHeight($height)
   {
@@ -78,10 +65,7 @@ class GoogleCloudDocumentaiV1DocumentPageImage extends \Google\Model
     return $this->height;
   }
   /**
-   * Encoding [media type (MIME type)](https://www.iana.org/assignments/media-
-   * types/media-types.xhtml) for the image.
-   *
-   * @param string $mimeType
+   * @param string
    */
   public function setMimeType($mimeType)
   {
@@ -95,9 +79,7 @@ class GoogleCloudDocumentaiV1DocumentPageImage extends \Google\Model
     return $this->mimeType;
   }
   /**
-   * Width of the image in pixels.
-   *
-   * @param int $width
+   * @param int
    */
   public function setWidth($width)
   {

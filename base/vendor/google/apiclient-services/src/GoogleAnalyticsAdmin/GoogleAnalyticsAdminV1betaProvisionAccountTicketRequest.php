@@ -22,17 +22,12 @@ class GoogleAnalyticsAdminV1betaProvisionAccountTicketRequest extends \Google\Mo
   protected $accountType = GoogleAnalyticsAdminV1betaAccount::class;
   protected $accountDataType = '';
   /**
-   * Redirect URI where the user will be sent after accepting Terms of Service.
-   * Must be configured in Cloud Console as a Redirect URI.
-   *
    * @var string
    */
   public $redirectUri;
 
   /**
-   * The account to create.
-   *
-   * @param GoogleAnalyticsAdminV1betaAccount $account
+   * @param GoogleAnalyticsAdminV1betaAccount
    */
   public function setAccount(GoogleAnalyticsAdminV1betaAccount $account)
   {
@@ -46,10 +41,7 @@ class GoogleAnalyticsAdminV1betaProvisionAccountTicketRequest extends \Google\Mo
     return $this->account;
   }
   /**
-   * Redirect URI where the user will be sent after accepting Terms of Service.
-   * Must be configured in Cloud Console as a Redirect URI.
-   *
-   * @param string $redirectUri
+   * @param string
    */
   public function setRedirectUri($redirectUri)
   {

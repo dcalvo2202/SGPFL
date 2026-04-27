@@ -24,9 +24,7 @@ class BatchCreatePerfSamplesRequest extends \Google\Collection
   protected $perfSamplesDataType = 'array';
 
   /**
-   * The set of PerfSamples to create should not include existing timestamps
-   *
-   * @param PerfSample[] $perfSamples
+   * @param PerfSample[]
    */
   public function setPerfSamples($perfSamples)
   {

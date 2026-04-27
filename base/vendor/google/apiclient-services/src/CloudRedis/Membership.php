@@ -26,10 +26,7 @@ class Membership extends \Google\Collection
   protected $secondaryClustersDataType = 'array';
 
   /**
-   * Output only. The primary cluster that acts as the source of replication for
-   * the secondary clusters.
-   *
-   * @param RemoteCluster $primaryCluster
+   * @param RemoteCluster
    */
   public function setPrimaryCluster(RemoteCluster $primaryCluster)
   {
@@ -43,10 +40,7 @@ class Membership extends \Google\Collection
     return $this->primaryCluster;
   }
   /**
-   * Output only. The list of secondary clusters replicating from the primary
-   * cluster.
-   *
-   * @param RemoteCluster[] $secondaryClusters
+   * @param RemoteCluster[]
    */
   public function setSecondaryClusters($secondaryClusters)
   {

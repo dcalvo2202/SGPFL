@@ -20,30 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1RagVectorDbConfigRagManagedDbANN extends \Google\Model
 {
   /**
-   * Number of leaf nodes in the tree-based structure. Each leaf node contains
-   * groups of closely related vectors along with their corresponding centroid.
-   * Recommended value is 10 * sqrt(num of RagFiles in your RagCorpus). Default
-   * value is 500.
-   *
    * @var int
    */
   public $leafCount;
   /**
-   * The depth of the tree-based structure. Only depth values of 2 and 3 are
-   * supported. Recommended value is 2 if you have if you have O(10K) files in
-   * the RagCorpus and set this to 3 if more than that. Default value is 2.
-   *
    * @var int
    */
   public $treeDepth;
 
   /**
-   * Number of leaf nodes in the tree-based structure. Each leaf node contains
-   * groups of closely related vectors along with their corresponding centroid.
-   * Recommended value is 10 * sqrt(num of RagFiles in your RagCorpus). Default
-   * value is 500.
-   *
-   * @param int $leafCount
+   * @param int
    */
   public function setLeafCount($leafCount)
   {
@@ -57,11 +43,7 @@ class GoogleCloudAiplatformV1RagVectorDbConfigRagManagedDbANN extends \Google\Mo
     return $this->leafCount;
   }
   /**
-   * The depth of the tree-based structure. Only depth values of 2 and 3 are
-   * supported. Recommended value is 2 if you have if you have O(10K) files in
-   * the RagCorpus and set this to 3 if more than that. Default value is 2.
-   *
-   * @param int $treeDepth
+   * @param int
    */
   public function setTreeDepth($treeDepth)
   {

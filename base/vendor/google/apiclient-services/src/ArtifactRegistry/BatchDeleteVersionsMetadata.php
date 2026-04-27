@@ -21,16 +21,12 @@ class BatchDeleteVersionsMetadata extends \Google\Collection
 {
   protected $collection_key = 'failedVersions';
   /**
-   * The versions the operation failed to delete.
-   *
    * @var string[]
    */
   public $failedVersions;
 
   /**
-   * The versions the operation failed to delete.
-   *
-   * @param string[] $failedVersions
+   * @param string[]
    */
   public function setFailedVersions($failedVersions)
   {

@@ -20,57 +20,34 @@ namespace Google\Service\Directory;
 class Customer extends \Google\Model
 {
   /**
-   * The customer's secondary contact email address. This email address cannot
-   * be on the same domain as the `customerDomain`
-   *
    * @var string
    */
   public $alternateEmail;
   /**
-   * The customer's creation time (Readonly)
-   *
    * @var string
    */
   public $customerCreationTime;
   /**
-   * The customer's primary domain name string. Do not include the `www` prefix
-   * when creating a new customer.
-   *
    * @var string
    */
   public $customerDomain;
   /**
-   * ETag of the resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * The unique ID for the customer's Google Workspace account. (Readonly)
-   *
    * @var string
    */
   public $id;
   /**
-   * Identifies the resource as a customer. Value: `admin#directory#customer`
-   *
    * @var string
    */
   public $kind;
   /**
-   * The customer's ISO 639-2 language code. See the [Language Codes](https://de
-   * velopers.google.com/workspace/admin/directory/v1/languages) page for the
-   * list of supported codes. Valid language codes outside the supported set
-   * will be accepted by the API but may lead to unexpected behavior. The
-   * default value is `en`.
-   *
    * @var string
    */
   public $language;
   /**
-   * The customer's contact phone number in
-   * [E.164](https://en.wikipedia.org/wiki/E.164) format.
-   *
    * @var string
    */
   public $phoneNumber;
@@ -78,10 +55,7 @@ class Customer extends \Google\Model
   protected $postalAddressDataType = '';
 
   /**
-   * The customer's secondary contact email address. This email address cannot
-   * be on the same domain as the `customerDomain`
-   *
-   * @param string $alternateEmail
+   * @param string
    */
   public function setAlternateEmail($alternateEmail)
   {
@@ -95,9 +69,7 @@ class Customer extends \Google\Model
     return $this->alternateEmail;
   }
   /**
-   * The customer's creation time (Readonly)
-   *
-   * @param string $customerCreationTime
+   * @param string
    */
   public function setCustomerCreationTime($customerCreationTime)
   {
@@ -111,10 +83,7 @@ class Customer extends \Google\Model
     return $this->customerCreationTime;
   }
   /**
-   * The customer's primary domain name string. Do not include the `www` prefix
-   * when creating a new customer.
-   *
-   * @param string $customerDomain
+   * @param string
    */
   public function setCustomerDomain($customerDomain)
   {
@@ -128,9 +97,7 @@ class Customer extends \Google\Model
     return $this->customerDomain;
   }
   /**
-   * ETag of the resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -144,9 +111,7 @@ class Customer extends \Google\Model
     return $this->etag;
   }
   /**
-   * The unique ID for the customer's Google Workspace account. (Readonly)
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -160,9 +125,7 @@ class Customer extends \Google\Model
     return $this->id;
   }
   /**
-   * Identifies the resource as a customer. Value: `admin#directory#customer`
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -176,13 +139,7 @@ class Customer extends \Google\Model
     return $this->kind;
   }
   /**
-   * The customer's ISO 639-2 language code. See the [Language Codes](https://de
-   * velopers.google.com/workspace/admin/directory/v1/languages) page for the
-   * list of supported codes. Valid language codes outside the supported set
-   * will be accepted by the API but may lead to unexpected behavior. The
-   * default value is `en`.
-   *
-   * @param string $language
+   * @param string
    */
   public function setLanguage($language)
   {
@@ -196,10 +153,7 @@ class Customer extends \Google\Model
     return $this->language;
   }
   /**
-   * The customer's contact phone number in
-   * [E.164](https://en.wikipedia.org/wiki/E.164) format.
-   *
-   * @param string $phoneNumber
+   * @param string
    */
   public function setPhoneNumber($phoneNumber)
   {
@@ -213,9 +167,7 @@ class Customer extends \Google\Model
     return $this->phoneNumber;
   }
   /**
-   * The customer's postal address information.
-   *
-   * @param CustomerPostalAddress $postalAddress
+   * @param CustomerPostalAddress
    */
   public function setPostalAddress(CustomerPostalAddress $postalAddress)
   {

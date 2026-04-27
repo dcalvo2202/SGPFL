@@ -23,9 +23,7 @@ class GoogleCloudIntegrationsV1alphaTakeoverEditLockResponse extends \Google\Mod
   protected $integrationVersionDataType = '';
 
   /**
-   * Version after the lock is acquired by the new user.
-   *
-   * @param GoogleCloudIntegrationsV1alphaIntegrationVersion $integrationVersion
+   * @param GoogleCloudIntegrationsV1alphaIntegrationVersion
    */
   public function setIntegrationVersion(GoogleCloudIntegrationsV1alphaIntegrationVersion $integrationVersion)
   {

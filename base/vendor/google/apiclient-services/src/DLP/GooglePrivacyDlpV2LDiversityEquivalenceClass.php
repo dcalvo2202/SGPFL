@@ -21,14 +21,10 @@ class GooglePrivacyDlpV2LDiversityEquivalenceClass extends \Google\Collection
 {
   protected $collection_key = 'topSensitiveValues';
   /**
-   * Size of the k-anonymity equivalence class.
-   *
    * @var string
    */
   public $equivalenceClassSize;
   /**
-   * Number of distinct sensitive values in this equivalence class.
-   *
    * @var string
    */
   public $numDistinctSensitiveValues;
@@ -38,9 +34,7 @@ class GooglePrivacyDlpV2LDiversityEquivalenceClass extends \Google\Collection
   protected $topSensitiveValuesDataType = 'array';
 
   /**
-   * Size of the k-anonymity equivalence class.
-   *
-   * @param string $equivalenceClassSize
+   * @param string
    */
   public function setEquivalenceClassSize($equivalenceClassSize)
   {
@@ -54,9 +48,7 @@ class GooglePrivacyDlpV2LDiversityEquivalenceClass extends \Google\Collection
     return $this->equivalenceClassSize;
   }
   /**
-   * Number of distinct sensitive values in this equivalence class.
-   *
-   * @param string $numDistinctSensitiveValues
+   * @param string
    */
   public function setNumDistinctSensitiveValues($numDistinctSensitiveValues)
   {
@@ -70,10 +62,7 @@ class GooglePrivacyDlpV2LDiversityEquivalenceClass extends \Google\Collection
     return $this->numDistinctSensitiveValues;
   }
   /**
-   * Quasi-identifier values defining the k-anonymity equivalence class. The
-   * order is always the same as the original request.
-   *
-   * @param GooglePrivacyDlpV2Value[] $quasiIdsValues
+   * @param GooglePrivacyDlpV2Value[]
    */
   public function setQuasiIdsValues($quasiIdsValues)
   {
@@ -87,9 +76,7 @@ class GooglePrivacyDlpV2LDiversityEquivalenceClass extends \Google\Collection
     return $this->quasiIdsValues;
   }
   /**
-   * Estimated frequencies of top sensitive values.
-   *
-   * @param GooglePrivacyDlpV2ValueFrequency[] $topSensitiveValues
+   * @param GooglePrivacyDlpV2ValueFrequency[]
    */
   public function setTopSensitiveValues($topSensitiveValues)
   {

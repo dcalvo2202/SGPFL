@@ -20,71 +20,48 @@ namespace Google\Service\AdSensePlatform;
 class Address extends \Google\Model
 {
   /**
-   * First line of address. Max length 64 bytes or 30 characters.
-   *
    * @var string
    */
   public $address1;
   /**
-   * Second line of address. Max length 64 bytes or 30 characters.
-   *
    * @var string
    */
   public $address2;
   /**
-   * City. Max length 60 bytes or 30 characters.
-   *
    * @var string
    */
   public $city;
   /**
-   * Name of the company. Max length 255 bytes or 34 characters.
-   *
    * @var string
    */
   public $company;
   /**
-   * Contact name of the company. Max length 128 bytes or 34 characters.
-   *
    * @var string
    */
   public $contact;
   /**
-   * Fax number with international code (i.e. +441234567890).
-   *
    * @var string
    */
   public $fax;
   /**
-   * Phone number with international code (i.e. +441234567890).
-   *
    * @var string
    */
   public $phone;
   /**
-   * Country/Region code. The region is specified as a CLDR region code (e.g.
-   * "US", "FR").
-   *
    * @var string
    */
   public $regionCode;
   /**
-   * State. Max length 60 bytes or 30 characters.
-   *
    * @var string
    */
   public $state;
   /**
-   * Zip/post code. Max length 10 bytes or 10 characters.
-   *
    * @var string
    */
   public $zip;
 
   /**
-   * First line of address. Max length 64 bytes or 30 characters.
-   *
-   * @param string $address1
+   * @param string
    */
   public function setAddress1($address1)
   {
@@ -98,9 +75,7 @@ class Address extends \Google\Model
     return $this->address1;
   }
   /**
-   * Second line of address. Max length 64 bytes or 30 characters.
-   *
-   * @param string $address2
+   * @param string
    */
   public function setAddress2($address2)
   {
@@ -114,9 +89,7 @@ class Address extends \Google\Model
     return $this->address2;
   }
   /**
-   * City. Max length 60 bytes or 30 characters.
-   *
-   * @param string $city
+   * @param string
    */
   public function setCity($city)
   {
@@ -130,9 +103,7 @@ class Address extends \Google\Model
     return $this->city;
   }
   /**
-   * Name of the company. Max length 255 bytes or 34 characters.
-   *
-   * @param string $company
+   * @param string
    */
   public function setCompany($company)
   {
@@ -146,9 +117,7 @@ class Address extends \Google\Model
     return $this->company;
   }
   /**
-   * Contact name of the company. Max length 128 bytes or 34 characters.
-   *
-   * @param string $contact
+   * @param string
    */
   public function setContact($contact)
   {
@@ -162,9 +131,7 @@ class Address extends \Google\Model
     return $this->contact;
   }
   /**
-   * Fax number with international code (i.e. +441234567890).
-   *
-   * @param string $fax
+   * @param string
    */
   public function setFax($fax)
   {
@@ -178,9 +145,7 @@ class Address extends \Google\Model
     return $this->fax;
   }
   /**
-   * Phone number with international code (i.e. +441234567890).
-   *
-   * @param string $phone
+   * @param string
    */
   public function setPhone($phone)
   {
@@ -194,10 +159,7 @@ class Address extends \Google\Model
     return $this->phone;
   }
   /**
-   * Country/Region code. The region is specified as a CLDR region code (e.g.
-   * "US", "FR").
-   *
-   * @param string $regionCode
+   * @param string
    */
   public function setRegionCode($regionCode)
   {
@@ -211,9 +173,7 @@ class Address extends \Google\Model
     return $this->regionCode;
   }
   /**
-   * State. Max length 60 bytes or 30 characters.
-   *
-   * @param string $state
+   * @param string
    */
   public function setState($state)
   {
@@ -227,9 +187,7 @@ class Address extends \Google\Model
     return $this->state;
   }
   /**
-   * Zip/post code. Max length 10 bytes or 10 characters.
-   *
-   * @param string $zip
+   * @param string
    */
   public function setZip($zip)
   {

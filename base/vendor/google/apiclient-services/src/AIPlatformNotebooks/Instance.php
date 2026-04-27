@@ -19,197 +19,74 @@ namespace Google\Service\AIPlatformNotebooks;
 
 class Instance extends \Google\Collection
 {
-  /**
-   * The instance substate is unknown.
-   */
-  public const HEALTH_STATE_HEALTH_STATE_UNSPECIFIED = 'HEALTH_STATE_UNSPECIFIED';
-  /**
-   * The instance is known to be in an healthy state (for example, critical
-   * daemons are running) Applies to ACTIVE state.
-   */
-  public const HEALTH_STATE_HEALTHY = 'HEALTHY';
-  /**
-   * The instance is known to be in an unhealthy state (for example, critical
-   * daemons are not running) Applies to ACTIVE state.
-   */
-  public const HEALTH_STATE_UNHEALTHY = 'UNHEALTHY';
-  /**
-   * The instance has not installed health monitoring agent. Applies to ACTIVE
-   * state.
-   */
-  public const HEALTH_STATE_AGENT_NOT_INSTALLED = 'AGENT_NOT_INSTALLED';
-  /**
-   * The instance health monitoring agent is not running. Applies to ACTIVE
-   * state.
-   */
-  public const HEALTH_STATE_AGENT_NOT_RUNNING = 'AGENT_NOT_RUNNING';
-  /**
-   * State is not specified.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The control logic is starting the instance.
-   */
-  public const STATE_STARTING = 'STARTING';
-  /**
-   * The control logic is installing required frameworks and registering the
-   * instance with notebook proxy
-   */
-  public const STATE_PROVISIONING = 'PROVISIONING';
-  /**
-   * The instance is running.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * The control logic is stopping the instance.
-   */
-  public const STATE_STOPPING = 'STOPPING';
-  /**
-   * The instance is stopped.
-   */
-  public const STATE_STOPPED = 'STOPPED';
-  /**
-   * The instance is deleted.
-   */
-  public const STATE_DELETED = 'DELETED';
-  /**
-   * The instance is upgrading.
-   */
-  public const STATE_UPGRADING = 'UPGRADING';
-  /**
-   * The instance is being created.
-   */
-  public const STATE_INITIALIZING = 'INITIALIZING';
-  /**
-   * The instance is suspending.
-   */
-  public const STATE_SUSPENDING = 'SUSPENDING';
-  /**
-   * The instance is suspended.
-   */
-  public const STATE_SUSPENDED = 'SUSPENDED';
   protected $collection_key = 'upgradeHistory';
   /**
-   * Output only. Instance creation time.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. Email address of entity that sent original CreateInstance
-   * request.
-   *
    * @var string
    */
   public $creator;
   /**
-   * Optional. If true, the notebook instance will not register with the proxy.
-   *
    * @var bool
    */
   public $disableProxyAccess;
   /**
-   * Optional. If true, deletion protection will be enabled for this Workbench
-   * Instance. If false, deletion protection will be disabled for this Workbench
-   * Instance.
-   *
    * @var bool
    */
   public $enableDeletionProtection;
   /**
-   * Optional. Flag to enable managed end user credentials for the instance.
-   *
-   * @var bool
-   */
-  public $enableManagedEuc;
-  /**
-   * Optional. Flag that specifies that a notebook can be accessed with third
-   * party identity provider.
-   *
    * @var bool
    */
   public $enableThirdPartyIdentity;
   protected $gceSetupType = GceSetup::class;
   protected $gceSetupDataType = '';
   /**
-   * Output only. Additional information about instance health. Example:
-   * healthInfo": { "docker_proxy_agent_status": "1", "docker_status": "1",
-   * "jupyterlab_api_status": "-1", "jupyterlab_status": "-1", "updated":
-   * "2020-10-18 09:40:03.573409" }
-   *
    * @var string[]
    */
   public $healthInfo;
   /**
-   * Output only. Instance health_state.
-   *
    * @var string
    */
   public $healthState;
   /**
-   * Output only. Unique ID of the resource.
-   *
    * @var string
    */
   public $id;
   /**
-   * Optional. The owner of this instance after creation. Format:
-   * `alias@example.com` Currently supports one owner only. If not specified,
-   * all of the service account users of your VM instance's service account can
-   * use the instance.
-   *
    * @var string[]
    */
   public $instanceOwners;
   /**
-   * Optional. Labels to apply to this instance. These can be later modified by
-   * the UpdateInstance method.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Output only. Identifier. The name of this notebook instance. Format:
-   * `projects/{project_id}/locations/{location}/instances/{instance_id}`
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The proxy endpoint that is used to access the Jupyter
-   * notebook.
-   *
    * @var string
    */
   public $proxyUri;
   /**
-   * Output only. Reserved for future use for Zone Isolation.
-   *
    * @var bool
    */
   public $satisfiesPzi;
   /**
-   * Output only. Reserved for future use for Zone Separation.
-   *
    * @var bool
    */
   public $satisfiesPzs;
   /**
-   * Output only. The state of this instance.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. The workforce pools proxy endpoint that is used to access the
-   * Jupyter notebook.
-   *
    * @var string
    */
   public $thirdPartyProxyUrl;
   /**
-   * Output only. Instance update time.
-   *
    * @var string
    */
   public $updateTime;
@@ -217,9 +94,7 @@ class Instance extends \Google\Collection
   protected $upgradeHistoryDataType = 'array';
 
   /**
-   * Output only. Instance creation time.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -233,10 +108,7 @@ class Instance extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Output only. Email address of entity that sent original CreateInstance
-   * request.
-   *
-   * @param string $creator
+   * @param string
    */
   public function setCreator($creator)
   {
@@ -250,9 +122,7 @@ class Instance extends \Google\Collection
     return $this->creator;
   }
   /**
-   * Optional. If true, the notebook instance will not register with the proxy.
-   *
-   * @param bool $disableProxyAccess
+   * @param bool
    */
   public function setDisableProxyAccess($disableProxyAccess)
   {
@@ -266,11 +136,7 @@ class Instance extends \Google\Collection
     return $this->disableProxyAccess;
   }
   /**
-   * Optional. If true, deletion protection will be enabled for this Workbench
-   * Instance. If false, deletion protection will be disabled for this Workbench
-   * Instance.
-   *
-   * @param bool $enableDeletionProtection
+   * @param bool
    */
   public function setEnableDeletionProtection($enableDeletionProtection)
   {
@@ -284,26 +150,7 @@ class Instance extends \Google\Collection
     return $this->enableDeletionProtection;
   }
   /**
-   * Optional. Flag to enable managed end user credentials for the instance.
-   *
-   * @param bool $enableManagedEuc
-   */
-  public function setEnableManagedEuc($enableManagedEuc)
-  {
-    $this->enableManagedEuc = $enableManagedEuc;
-  }
-  /**
-   * @return bool
-   */
-  public function getEnableManagedEuc()
-  {
-    return $this->enableManagedEuc;
-  }
-  /**
-   * Optional. Flag that specifies that a notebook can be accessed with third
-   * party identity provider.
-   *
-   * @param bool $enableThirdPartyIdentity
+   * @param bool
    */
   public function setEnableThirdPartyIdentity($enableThirdPartyIdentity)
   {
@@ -317,10 +164,7 @@ class Instance extends \Google\Collection
     return $this->enableThirdPartyIdentity;
   }
   /**
-   * Optional. Compute Engine setup for the notebook. Uses notebook-defined
-   * fields.
-   *
-   * @param GceSetup $gceSetup
+   * @param GceSetup
    */
   public function setGceSetup(GceSetup $gceSetup)
   {
@@ -334,12 +178,7 @@ class Instance extends \Google\Collection
     return $this->gceSetup;
   }
   /**
-   * Output only. Additional information about instance health. Example:
-   * healthInfo": { "docker_proxy_agent_status": "1", "docker_status": "1",
-   * "jupyterlab_api_status": "-1", "jupyterlab_status": "-1", "updated":
-   * "2020-10-18 09:40:03.573409" }
-   *
-   * @param string[] $healthInfo
+   * @param string[]
    */
   public function setHealthInfo($healthInfo)
   {
@@ -353,28 +192,21 @@ class Instance extends \Google\Collection
     return $this->healthInfo;
   }
   /**
-   * Output only. Instance health_state.
-   *
-   * Accepted values: HEALTH_STATE_UNSPECIFIED, HEALTHY, UNHEALTHY,
-   * AGENT_NOT_INSTALLED, AGENT_NOT_RUNNING
-   *
-   * @param self::HEALTH_STATE_* $healthState
+   * @param string
    */
   public function setHealthState($healthState)
   {
     $this->healthState = $healthState;
   }
   /**
-   * @return self::HEALTH_STATE_*
+   * @return string
    */
   public function getHealthState()
   {
     return $this->healthState;
   }
   /**
-   * Output only. Unique ID of the resource.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -388,12 +220,7 @@ class Instance extends \Google\Collection
     return $this->id;
   }
   /**
-   * Optional. The owner of this instance after creation. Format:
-   * `alias@example.com` Currently supports one owner only. If not specified,
-   * all of the service account users of your VM instance's service account can
-   * use the instance.
-   *
-   * @param string[] $instanceOwners
+   * @param string[]
    */
   public function setInstanceOwners($instanceOwners)
   {
@@ -407,10 +234,7 @@ class Instance extends \Google\Collection
     return $this->instanceOwners;
   }
   /**
-   * Optional. Labels to apply to this instance. These can be later modified by
-   * the UpdateInstance method.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -424,10 +248,7 @@ class Instance extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Output only. Identifier. The name of this notebook instance. Format:
-   * `projects/{project_id}/locations/{location}/instances/{instance_id}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -441,10 +262,7 @@ class Instance extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. The proxy endpoint that is used to access the Jupyter
-   * notebook.
-   *
-   * @param string $proxyUri
+   * @param string
    */
   public function setProxyUri($proxyUri)
   {
@@ -458,9 +276,7 @@ class Instance extends \Google\Collection
     return $this->proxyUri;
   }
   /**
-   * Output only. Reserved for future use for Zone Isolation.
-   *
-   * @param bool $satisfiesPzi
+   * @param bool
    */
   public function setSatisfiesPzi($satisfiesPzi)
   {
@@ -474,9 +290,7 @@ class Instance extends \Google\Collection
     return $this->satisfiesPzi;
   }
   /**
-   * Output only. Reserved for future use for Zone Separation.
-   *
-   * @param bool $satisfiesPzs
+   * @param bool
    */
   public function setSatisfiesPzs($satisfiesPzs)
   {
@@ -490,29 +304,21 @@ class Instance extends \Google\Collection
     return $this->satisfiesPzs;
   }
   /**
-   * Output only. The state of this instance.
-   *
-   * Accepted values: STATE_UNSPECIFIED, STARTING, PROVISIONING, ACTIVE,
-   * STOPPING, STOPPED, DELETED, UPGRADING, INITIALIZING, SUSPENDING, SUSPENDED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. The workforce pools proxy endpoint that is used to access the
-   * Jupyter notebook.
-   *
-   * @param string $thirdPartyProxyUrl
+   * @param string
    */
   public function setThirdPartyProxyUrl($thirdPartyProxyUrl)
   {
@@ -526,9 +332,7 @@ class Instance extends \Google\Collection
     return $this->thirdPartyProxyUrl;
   }
   /**
-   * Output only. Instance update time.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -542,9 +346,7 @@ class Instance extends \Google\Collection
     return $this->updateTime;
   }
   /**
-   * Output only. The upgrade history of this instance.
-   *
-   * @param UpgradeHistoryEntry[] $upgradeHistory
+   * @param UpgradeHistoryEntry[]
    */
   public function setUpgradeHistory($upgradeHistory)
   {

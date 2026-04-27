@@ -29,7 +29,7 @@ class GoogleCloudDialogflowCxV3beta1BargeInConfig extends \Google\Model
   public $totalDuration;
 
   /**
-   * @param string $noBargeInDuration
+   * @param string
    */
   public function setNoBargeInDuration($noBargeInDuration)
   {
@@ -43,7 +43,7 @@ class GoogleCloudDialogflowCxV3beta1BargeInConfig extends \Google\Model
     return $this->noBargeInDuration;
   }
   /**
-   * @param string $totalDuration
+   * @param string
    */
   public function setTotalDuration($totalDuration)
   {

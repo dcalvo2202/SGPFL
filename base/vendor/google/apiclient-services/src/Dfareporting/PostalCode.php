@@ -20,41 +20,28 @@ namespace Google\Service\Dfareporting;
 class PostalCode extends \Google\Model
 {
   /**
-   * Postal code. This is equivalent to the id field.
-   *
    * @var string
    */
   public $code;
   /**
-   * Country code of the country to which this postal code belongs.
-   *
    * @var string
    */
   public $countryCode;
   /**
-   * DART ID of the country to which this postal code belongs.
-   *
    * @var string
    */
   public $countryDartId;
   /**
-   * ID of this postal code.
-   *
    * @var string
    */
   public $id;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#postalCode".
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * Postal code. This is equivalent to the id field.
-   *
-   * @param string $code
+   * @param string
    */
   public function setCode($code)
   {
@@ -68,9 +55,7 @@ class PostalCode extends \Google\Model
     return $this->code;
   }
   /**
-   * Country code of the country to which this postal code belongs.
-   *
-   * @param string $countryCode
+   * @param string
    */
   public function setCountryCode($countryCode)
   {
@@ -84,9 +69,7 @@ class PostalCode extends \Google\Model
     return $this->countryCode;
   }
   /**
-   * DART ID of the country to which this postal code belongs.
-   *
-   * @param string $countryDartId
+   * @param string
    */
   public function setCountryDartId($countryDartId)
   {
@@ -100,9 +83,7 @@ class PostalCode extends \Google\Model
     return $this->countryDartId;
   }
   /**
-   * ID of this postal code.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -116,10 +97,7 @@ class PostalCode extends \Google\Model
     return $this->id;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#postalCode".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

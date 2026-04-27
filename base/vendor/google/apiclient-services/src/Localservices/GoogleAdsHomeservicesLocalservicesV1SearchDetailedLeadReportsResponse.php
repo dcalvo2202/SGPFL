@@ -23,18 +23,12 @@ class GoogleAdsHomeservicesLocalservicesV1SearchDetailedLeadReportsResponse exte
   protected $detailedLeadReportsType = GoogleAdsHomeservicesLocalservicesV1DetailedLeadReport::class;
   protected $detailedLeadReportsDataType = 'array';
   /**
-   * Pagination token to retrieve the next page of results. When
-   * `next_page_token` is not filled in, there is no next page and the list
-   * returned is the last page in the result set.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * List of detailed lead reports uniquely identified by external lead id.
-   *
-   * @param GoogleAdsHomeservicesLocalservicesV1DetailedLeadReport[] $detailedLeadReports
+   * @param GoogleAdsHomeservicesLocalservicesV1DetailedLeadReport[]
    */
   public function setDetailedLeadReports($detailedLeadReports)
   {
@@ -48,11 +42,7 @@ class GoogleAdsHomeservicesLocalservicesV1SearchDetailedLeadReportsResponse exte
     return $this->detailedLeadReports;
   }
   /**
-   * Pagination token to retrieve the next page of results. When
-   * `next_page_token` is not filled in, there is no next page and the list
-   * returned is the last page in the result set.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

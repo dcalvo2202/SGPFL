@@ -20,20 +20,12 @@ namespace Google\Service\Datastore;
 class PropertyReference extends \Google\Model
 {
   /**
-   * A reference to a property. Requires: * MUST be a dot-delimited (`.`) string
-   * of segments, where each segment conforms to entity property name
-   * limitations.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * A reference to a property. Requires: * MUST be a dot-delimited (`.`) string
-   * of segments, where each segment conforms to entity property name
-   * limitations.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

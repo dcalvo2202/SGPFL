@@ -21,16 +21,12 @@ class IntCandidates extends \Google\Collection
 {
   protected $collection_key = 'candidates';
   /**
-   * Candidates for the int parameter in increasing order.
-   *
    * @var string[]
    */
   public $candidates;
 
   /**
-   * Candidates for the int parameter in increasing order.
-   *
-   * @param string[] $candidates
+   * @param string[]
    */
   public function setCandidates($candidates)
   {

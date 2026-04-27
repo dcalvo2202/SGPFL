@@ -20,28 +20,20 @@ namespace Google\Service\Logging;
 class AppHubWorkload extends \Google\Model
 {
   /**
-   * Workload criticality type Example: "CRITICAL"
-   *
    * @var string
    */
   public $criticalityType;
   /**
-   * Workload environment type Example: "DEV"
-   *
    * @var string
    */
   public $environmentType;
   /**
-   * Workload Id. Example: "my-workload"
-   *
    * @var string
    */
   public $id;
 
   /**
-   * Workload criticality type Example: "CRITICAL"
-   *
-   * @param string $criticalityType
+   * @param string
    */
   public function setCriticalityType($criticalityType)
   {
@@ -55,9 +47,7 @@ class AppHubWorkload extends \Google\Model
     return $this->criticalityType;
   }
   /**
-   * Workload environment type Example: "DEV"
-   *
-   * @param string $environmentType
+   * @param string
    */
   public function setEnvironmentType($environmentType)
   {
@@ -71,9 +61,7 @@ class AppHubWorkload extends \Google\Model
     return $this->environmentType;
   }
   /**
-   * Workload Id. Example: "my-workload"
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {

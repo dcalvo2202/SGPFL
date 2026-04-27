@@ -20,8 +20,6 @@ namespace Google\Service\AndroidManagement;
 class LostModeLocationEvent extends \Google\Model
 {
   /**
-   * The battery level as a number between 0 and 100 inclusive
-   *
    * @var int
    */
   public $batteryLevel;
@@ -29,9 +27,7 @@ class LostModeLocationEvent extends \Google\Model
   protected $locationDataType = '';
 
   /**
-   * The battery level as a number between 0 and 100 inclusive
-   *
-   * @param int $batteryLevel
+   * @param int
    */
   public function setBatteryLevel($batteryLevel)
   {
@@ -45,9 +41,7 @@ class LostModeLocationEvent extends \Google\Model
     return $this->batteryLevel;
   }
   /**
-   * The device location
-   *
-   * @param Location $location
+   * @param Location
    */
   public function setLocation(Location $location)
   {

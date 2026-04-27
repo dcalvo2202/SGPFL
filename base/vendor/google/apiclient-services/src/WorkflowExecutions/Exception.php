@@ -20,16 +20,12 @@ namespace Google\Service\WorkflowExecutions;
 class Exception extends \Google\Model
 {
   /**
-   * Error message represented as a JSON string.
-   *
    * @var string
    */
   public $payload;
 
   /**
-   * Error message represented as a JSON string.
-   *
-   * @param string $payload
+   * @param string
    */
   public function setPayload($payload)
   {

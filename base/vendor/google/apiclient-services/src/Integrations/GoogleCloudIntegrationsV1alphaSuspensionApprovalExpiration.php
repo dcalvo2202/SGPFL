@@ -20,31 +20,20 @@ namespace Google\Service\Integrations;
 class GoogleCloudIntegrationsV1alphaSuspensionApprovalExpiration extends \Google\Model
 {
   /**
-   * Output only. Time after which the suspension expires, if no action taken.
-   *
    * @var string
    */
   public $expireTime;
   /**
-   * Whether the suspension will be REJECTED or LIFTED upon expiration. REJECTED
-   * is the default behavior.
-   *
    * @var bool
    */
   public $liftWhenExpired;
   /**
-   * Time after the previous suspension action reminder, if any, is sent using
-   * the selected notification option, for a suspension which is still
-   * PENDING_UNSPECIFIED.
-   *
    * @var string
    */
   public $remindTime;
 
   /**
-   * Output only. Time after which the suspension expires, if no action taken.
-   *
-   * @param string $expireTime
+   * @param string
    */
   public function setExpireTime($expireTime)
   {
@@ -58,10 +47,7 @@ class GoogleCloudIntegrationsV1alphaSuspensionApprovalExpiration extends \Google
     return $this->expireTime;
   }
   /**
-   * Whether the suspension will be REJECTED or LIFTED upon expiration. REJECTED
-   * is the default behavior.
-   *
-   * @param bool $liftWhenExpired
+   * @param bool
    */
   public function setLiftWhenExpired($liftWhenExpired)
   {
@@ -75,11 +61,7 @@ class GoogleCloudIntegrationsV1alphaSuspensionApprovalExpiration extends \Google
     return $this->liftWhenExpired;
   }
   /**
-   * Time after the previous suspension action reminder, if any, is sent using
-   * the selected notification option, for a suspension which is still
-   * PENDING_UNSPECIFIED.
-   *
-   * @param string $remindTime
+   * @param string
    */
   public function setRemindTime($remindTime)
   {

@@ -23,28 +23,18 @@ class GoogleCloudRecaptchaenterpriseV1Metrics extends \Google\Collection
   protected $challengeMetricsType = GoogleCloudRecaptchaenterpriseV1ChallengeMetrics::class;
   protected $challengeMetricsDataType = 'array';
   /**
-   * Output only. Identifier. The name of the metrics, in the format
-   * `projects/{project}/keys/{key}/metrics`.
-   *
    * @var string
    */
   public $name;
   protected $scoreMetricsType = GoogleCloudRecaptchaenterpriseV1ScoreMetrics::class;
   protected $scoreMetricsDataType = 'array';
   /**
-   * Inclusive start time aligned to a day in the America/Los_Angeles (Pacific)
-   * timezone.
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * Metrics are continuous and in order by dates, and in the granularity of
-   * day. Only challenge-based keys (CHECKBOX, INVISIBLE) have challenge-based
-   * data.
-   *
-   * @param GoogleCloudRecaptchaenterpriseV1ChallengeMetrics[] $challengeMetrics
+   * @param GoogleCloudRecaptchaenterpriseV1ChallengeMetrics[]
    */
   public function setChallengeMetrics($challengeMetrics)
   {
@@ -58,10 +48,7 @@ class GoogleCloudRecaptchaenterpriseV1Metrics extends \Google\Collection
     return $this->challengeMetrics;
   }
   /**
-   * Output only. Identifier. The name of the metrics, in the format
-   * `projects/{project}/keys/{key}/metrics`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -75,10 +62,7 @@ class GoogleCloudRecaptchaenterpriseV1Metrics extends \Google\Collection
     return $this->name;
   }
   /**
-   * Metrics are continuous and in order by dates, and in the granularity of
-   * day. All Key types should have score-based data.
-   *
-   * @param GoogleCloudRecaptchaenterpriseV1ScoreMetrics[] $scoreMetrics
+   * @param GoogleCloudRecaptchaenterpriseV1ScoreMetrics[]
    */
   public function setScoreMetrics($scoreMetrics)
   {
@@ -92,10 +76,7 @@ class GoogleCloudRecaptchaenterpriseV1Metrics extends \Google\Collection
     return $this->scoreMetrics;
   }
   /**
-   * Inclusive start time aligned to a day in the America/Los_Angeles (Pacific)
-   * timezone.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

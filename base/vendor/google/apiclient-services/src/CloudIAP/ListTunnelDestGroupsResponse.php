@@ -21,9 +21,6 @@ class ListTunnelDestGroupsResponse extends \Google\Collection
 {
   protected $collection_key = 'tunnelDestGroups';
   /**
-   * A token that you can send as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListTunnelDestGroupsResponse extends \Google\Collection
   protected $tunnelDestGroupsDataType = 'array';
 
   /**
-   * A token that you can send as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class ListTunnelDestGroupsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * TunnelDestGroup existing in the project.
-   *
-   * @param TunnelDestGroup[] $tunnelDestGroups
+   * @param TunnelDestGroup[]
    */
   public function setTunnelDestGroups($tunnelDestGroups)
   {

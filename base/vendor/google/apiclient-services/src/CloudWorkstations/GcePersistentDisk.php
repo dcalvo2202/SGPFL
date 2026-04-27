@@ -20,48 +20,24 @@ namespace Google\Service\CloudWorkstations;
 class GcePersistentDisk extends \Google\Model
 {
   /**
-   * Optional. Type of the disk to use. Defaults to `"pd-standard"`.
-   *
    * @var string
    */
   public $diskType;
   /**
-   * Optional. Whether the disk is read only. If true, the disk may be shared by
-   * multiple VMs and source_snapshot must be set.
-   *
    * @var bool
    */
   public $readOnly;
   /**
-   * Optional. Name of the disk image to use as the source for the disk. Must be
-   * empty if source_snapshot is set. Updating source_image will update content
-   * in the ephemeral directory after the workstation is restarted. Only file
-   * systems supported by Container-Optimized OS (COS) are explicitly supported.
-   * For a list of supported file systems, please refer to the [COS
-   * documentation](https://cloud.google.com/container-optimized-
-   * os/docs/concepts/supported-filesystems). This field is mutable.
-   *
    * @var string
    */
   public $sourceImage;
   /**
-   * Optional. Name of the snapshot to use as the source for the disk. Must be
-   * empty if source_image is set. Must be empty if read_only is false. Updating
-   * source_snapshot will update content in the ephemeral directory after the
-   * workstation is restarted. Only file systems supported by Container-
-   * Optimized OS (COS) are explicitly supported. For a list of supported file
-   * systems, see [the filesystems available in Container-Optimized
-   * OS](https://cloud.google.com/container-optimized-
-   * os/docs/concepts/supported-filesystems). This field is mutable.
-   *
    * @var string
    */
   public $sourceSnapshot;
 
   /**
-   * Optional. Type of the disk to use. Defaults to `"pd-standard"`.
-   *
-   * @param string $diskType
+   * @param string
    */
   public function setDiskType($diskType)
   {
@@ -75,10 +51,7 @@ class GcePersistentDisk extends \Google\Model
     return $this->diskType;
   }
   /**
-   * Optional. Whether the disk is read only. If true, the disk may be shared by
-   * multiple VMs and source_snapshot must be set.
-   *
-   * @param bool $readOnly
+   * @param bool
    */
   public function setReadOnly($readOnly)
   {
@@ -92,15 +65,7 @@ class GcePersistentDisk extends \Google\Model
     return $this->readOnly;
   }
   /**
-   * Optional. Name of the disk image to use as the source for the disk. Must be
-   * empty if source_snapshot is set. Updating source_image will update content
-   * in the ephemeral directory after the workstation is restarted. Only file
-   * systems supported by Container-Optimized OS (COS) are explicitly supported.
-   * For a list of supported file systems, please refer to the [COS
-   * documentation](https://cloud.google.com/container-optimized-
-   * os/docs/concepts/supported-filesystems). This field is mutable.
-   *
-   * @param string $sourceImage
+   * @param string
    */
   public function setSourceImage($sourceImage)
   {
@@ -114,16 +79,7 @@ class GcePersistentDisk extends \Google\Model
     return $this->sourceImage;
   }
   /**
-   * Optional. Name of the snapshot to use as the source for the disk. Must be
-   * empty if source_image is set. Must be empty if read_only is false. Updating
-   * source_snapshot will update content in the ephemeral directory after the
-   * workstation is restarted. Only file systems supported by Container-
-   * Optimized OS (COS) are explicitly supported. For a list of supported file
-   * systems, see [the filesystems available in Container-Optimized
-   * OS](https://cloud.google.com/container-optimized-
-   * os/docs/concepts/supported-filesystems). This field is mutable.
-   *
-   * @param string $sourceSnapshot
+   * @param string
    */
   public function setSourceSnapshot($sourceSnapshot)
   {

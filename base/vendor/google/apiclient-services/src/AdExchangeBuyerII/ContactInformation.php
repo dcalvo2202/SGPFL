@@ -20,22 +20,16 @@ namespace Google\Service\AdExchangeBuyerII;
 class ContactInformation extends \Google\Model
 {
   /**
-   * Email address for the contact.
-   *
    * @var string
    */
   public $email;
   /**
-   * The name of the contact.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Email address for the contact.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {
@@ -49,9 +43,7 @@ class ContactInformation extends \Google\Model
     return $this->email;
   }
   /**
-   * The name of the contact.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

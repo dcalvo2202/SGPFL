@@ -20,16 +20,12 @@ namespace Google\Service\CloudShell;
 class RemovePublicKeyRequest extends \Google\Model
 {
   /**
-   * Key that should be removed from the environment.
-   *
    * @var string
    */
   public $key;
 
   /**
-   * Key that should be removed from the environment.
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {

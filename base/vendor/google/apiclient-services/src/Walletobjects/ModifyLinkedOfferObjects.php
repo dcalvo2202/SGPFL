@@ -21,22 +21,16 @@ class ModifyLinkedOfferObjects extends \Google\Collection
 {
   protected $collection_key = 'removeLinkedOfferObjectIds';
   /**
-   * The linked offer object ids to add to the object.
-   *
    * @var string[]
    */
   public $addLinkedOfferObjectIds;
   /**
-   * The linked offer object ids to remove from the object.
-   *
    * @var string[]
    */
   public $removeLinkedOfferObjectIds;
 
   /**
-   * The linked offer object ids to add to the object.
-   *
-   * @param string[] $addLinkedOfferObjectIds
+   * @param string[]
    */
   public function setAddLinkedOfferObjectIds($addLinkedOfferObjectIds)
   {
@@ -50,9 +44,7 @@ class ModifyLinkedOfferObjects extends \Google\Collection
     return $this->addLinkedOfferObjectIds;
   }
   /**
-   * The linked offer object ids to remove from the object.
-   *
-   * @param string[] $removeLinkedOfferObjectIds
+   * @param string[]
    */
   public function setRemoveLinkedOfferObjectIds($removeLinkedOfferObjectIds)
   {

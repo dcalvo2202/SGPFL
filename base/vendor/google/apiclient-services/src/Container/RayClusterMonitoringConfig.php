@@ -20,16 +20,12 @@ namespace Google\Service\Container;
 class RayClusterMonitoringConfig extends \Google\Model
 {
   /**
-   * Enable metrics collection for Ray clusters.
-   *
    * @var bool
    */
   public $enabled;
 
   /**
-   * Enable metrics collection for Ray clusters.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {

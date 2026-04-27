@@ -33,7 +33,7 @@ class AggregationResult extends \Google\Model
   protected $sumDataType = '';
 
   /**
-   * @param AggregationResultCount $count
+   * @param AggregationResultCount
    */
   public function setCount(AggregationResultCount $count)
   {
@@ -47,7 +47,7 @@ class AggregationResult extends \Google\Model
     return $this->count;
   }
   /**
-   * @param string $field
+   * @param string
    */
   public function setField($field)
   {
@@ -61,7 +61,7 @@ class AggregationResult extends \Google\Model
     return $this->field;
   }
   /**
-   * @param AggregationResultFrequency $frequency
+   * @param AggregationResultFrequency
    */
   public function setFrequency(AggregationResultFrequency $frequency)
   {
@@ -75,7 +75,7 @@ class AggregationResult extends \Google\Model
     return $this->frequency;
   }
   /**
-   * @param AggregationResultHistogram $histogram
+   * @param AggregationResultHistogram
    */
   public function setHistogram(AggregationResultHistogram $histogram)
   {
@@ -89,7 +89,7 @@ class AggregationResult extends \Google\Model
     return $this->histogram;
   }
   /**
-   * @param AggregationResultSum $sum
+   * @param AggregationResultSum
    */
   public function setSum(AggregationResultSum $sum)
   {

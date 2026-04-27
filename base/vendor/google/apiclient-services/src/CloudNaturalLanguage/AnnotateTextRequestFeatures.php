@@ -20,34 +20,24 @@ namespace Google\Service\CloudNaturalLanguage;
 class AnnotateTextRequestFeatures extends \Google\Model
 {
   /**
-   * Optional. Classify the full document into categories.
-   *
    * @var bool
    */
   public $classifyText;
   /**
-   * Optional. Extract document-level sentiment.
-   *
    * @var bool
    */
   public $extractDocumentSentiment;
   /**
-   * Optional. Extract entities.
-   *
    * @var bool
    */
   public $extractEntities;
   /**
-   * Optional. Moderate the document for harmful and sensitive categories.
-   *
    * @var bool
    */
   public $moderateText;
 
   /**
-   * Optional. Classify the full document into categories.
-   *
-   * @param bool $classifyText
+   * @param bool
    */
   public function setClassifyText($classifyText)
   {
@@ -61,9 +51,7 @@ class AnnotateTextRequestFeatures extends \Google\Model
     return $this->classifyText;
   }
   /**
-   * Optional. Extract document-level sentiment.
-   *
-   * @param bool $extractDocumentSentiment
+   * @param bool
    */
   public function setExtractDocumentSentiment($extractDocumentSentiment)
   {
@@ -77,9 +65,7 @@ class AnnotateTextRequestFeatures extends \Google\Model
     return $this->extractDocumentSentiment;
   }
   /**
-   * Optional. Extract entities.
-   *
-   * @param bool $extractEntities
+   * @param bool
    */
   public function setExtractEntities($extractEntities)
   {
@@ -93,9 +79,7 @@ class AnnotateTextRequestFeatures extends \Google\Model
     return $this->extractEntities;
   }
   /**
-   * Optional. Moderate the document for harmful and sensitive categories.
-   *
-   * @param bool $moderateText
+   * @param bool
    */
   public function setModerateText($moderateText)
   {

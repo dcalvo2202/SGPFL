@@ -20,16 +20,12 @@ namespace Google\Service\Forms;
 class RowQuestion extends \Google\Model
 {
   /**
-   * Required. The title for the single row in the QuestionGroupItem.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * Required. The title for the single row in the QuestionGroupItem.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

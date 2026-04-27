@@ -20,18 +20,12 @@ namespace Google\Service\SQLAdmin;
 class SslCertsInsertRequest extends \Google\Model
 {
   /**
-   * User supplied name. Must be a distinct name from the other certificates for
-   * this instance.
-   *
    * @var string
    */
   public $commonName;
 
   /**
-   * User supplied name. Must be a distinct name from the other certificates for
-   * this instance.
-   *
-   * @param string $commonName
+   * @param string
    */
   public function setCommonName($commonName)
   {

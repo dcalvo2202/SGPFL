@@ -24,7 +24,7 @@ class GoogleCloudDialogflowV2beta1IntentMessageSimpleResponses extends \Google\C
   protected $simpleResponsesDataType = 'array';
 
   /**
-   * @param GoogleCloudDialogflowV2beta1IntentMessageSimpleResponse[] $simpleResponses
+   * @param GoogleCloudDialogflowV2beta1IntentMessageSimpleResponse[]
    */
   public function setSimpleResponses($simpleResponses)
   {

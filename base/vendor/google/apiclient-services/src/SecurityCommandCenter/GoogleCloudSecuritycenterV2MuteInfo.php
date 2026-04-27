@@ -26,9 +26,7 @@ class GoogleCloudSecuritycenterV2MuteInfo extends \Google\Collection
   protected $staticMuteDataType = '';
 
   /**
-   * The list of dynamic mute rules that currently match the finding.
-   *
-   * @param GoogleCloudSecuritycenterV2DynamicMuteRecord[] $dynamicMuteRecords
+   * @param GoogleCloudSecuritycenterV2DynamicMuteRecord[]
    */
   public function setDynamicMuteRecords($dynamicMuteRecords)
   {
@@ -42,10 +40,7 @@ class GoogleCloudSecuritycenterV2MuteInfo extends \Google\Collection
     return $this->dynamicMuteRecords;
   }
   /**
-   * If set, the static mute applied to this finding. Static mutes override
-   * dynamic mutes. If unset, there is no static mute.
-   *
-   * @param GoogleCloudSecuritycenterV2StaticMute $staticMute
+   * @param GoogleCloudSecuritycenterV2StaticMute
    */
   public function setStaticMute(GoogleCloudSecuritycenterV2StaticMute $staticMute)
   {

@@ -24,9 +24,7 @@ class GoogleCloudVisionV1p3beta1DominantColorsAnnotation extends \Google\Collect
   protected $colorsDataType = 'array';
 
   /**
-   * RGB color values with their score and pixel fraction.
-   *
-   * @param GoogleCloudVisionV1p3beta1ColorInfo[] $colors
+   * @param GoogleCloudVisionV1p3beta1ColorInfo[]
    */
   public function setColors($colors)
   {

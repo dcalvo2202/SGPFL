@@ -20,52 +20,28 @@ namespace Google\Service\CloudRetail;
 class GoogleCloudRetailV2CollectUserEventRequest extends \Google\Model
 {
   /**
-   * The event timestamp in milliseconds. This prevents browser caching of
-   * otherwise identical get requests. The name is abbreviated to reduce the
-   * payload bytes.
-   *
    * @var string
    */
   public $ets;
   /**
-   * The prebuilt rule name that can convert a specific type of raw_json. For
-   * example: "ga4_bq" rule for the GA4 user event schema.
-   *
    * @var string
    */
   public $prebuiltRule;
   /**
-   * An arbitrary serialized JSON string that contains necessary information
-   * that can comprise a user event. When this field is specified, the
-   * user_event field will be ignored. Note: line-delimited JSON is not
-   * supported, a single JSON only.
-   *
    * @var string
    */
   public $rawJson;
   /**
-   * The URL including cgi-parameters but excluding the hash fragment with a
-   * length limit of 5,000 characters. This is often more useful than the
-   * referer URL, because many browsers only send the domain for 3rd party
-   * requests.
-   *
    * @var string
    */
   public $uri;
   /**
-   * Required. URL encoded UserEvent proto with a length limit of 2,000,000
-   * characters.
-   *
    * @var string
    */
   public $userEvent;
 
   /**
-   * The event timestamp in milliseconds. This prevents browser caching of
-   * otherwise identical get requests. The name is abbreviated to reduce the
-   * payload bytes.
-   *
-   * @param string $ets
+   * @param string
    */
   public function setEts($ets)
   {
@@ -79,10 +55,7 @@ class GoogleCloudRetailV2CollectUserEventRequest extends \Google\Model
     return $this->ets;
   }
   /**
-   * The prebuilt rule name that can convert a specific type of raw_json. For
-   * example: "ga4_bq" rule for the GA4 user event schema.
-   *
-   * @param string $prebuiltRule
+   * @param string
    */
   public function setPrebuiltRule($prebuiltRule)
   {
@@ -96,12 +69,7 @@ class GoogleCloudRetailV2CollectUserEventRequest extends \Google\Model
     return $this->prebuiltRule;
   }
   /**
-   * An arbitrary serialized JSON string that contains necessary information
-   * that can comprise a user event. When this field is specified, the
-   * user_event field will be ignored. Note: line-delimited JSON is not
-   * supported, a single JSON only.
-   *
-   * @param string $rawJson
+   * @param string
    */
   public function setRawJson($rawJson)
   {
@@ -115,12 +83,7 @@ class GoogleCloudRetailV2CollectUserEventRequest extends \Google\Model
     return $this->rawJson;
   }
   /**
-   * The URL including cgi-parameters but excluding the hash fragment with a
-   * length limit of 5,000 characters. This is often more useful than the
-   * referer URL, because many browsers only send the domain for 3rd party
-   * requests.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {
@@ -134,10 +97,7 @@ class GoogleCloudRetailV2CollectUserEventRequest extends \Google\Model
     return $this->uri;
   }
   /**
-   * Required. URL encoded UserEvent proto with a length limit of 2,000,000
-   * characters.
-   *
-   * @param string $userEvent
+   * @param string
    */
   public function setUserEvent($userEvent)
   {

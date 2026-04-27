@@ -22,8 +22,6 @@ class ComputeMessageStatsRequest extends \Google\Model
   protected $endCursorType = Cursor::class;
   protected $endCursorDataType = '';
   /**
-   * Required. The partition for which we should compute message stats.
-   *
    * @var string
    */
   public $partition;
@@ -31,11 +29,7 @@ class ComputeMessageStatsRequest extends \Google\Model
   protected $startCursorDataType = '';
 
   /**
-   * The exclusive end of the range. The range is empty if end_cursor <=
-   * start_cursor. Specifying a start_cursor before the first message and an
-   * end_cursor after the last message will retrieve all messages.
-   *
-   * @param Cursor $endCursor
+   * @param Cursor
    */
   public function setEndCursor(Cursor $endCursor)
   {
@@ -49,9 +43,7 @@ class ComputeMessageStatsRequest extends \Google\Model
     return $this->endCursor;
   }
   /**
-   * Required. The partition for which we should compute message stats.
-   *
-   * @param string $partition
+   * @param string
    */
   public function setPartition($partition)
   {
@@ -65,9 +57,7 @@ class ComputeMessageStatsRequest extends \Google\Model
     return $this->partition;
   }
   /**
-   * The inclusive start of the range.
-   *
-   * @param Cursor $startCursor
+   * @param Cursor
    */
   public function setStartCursor(Cursor $startCursor)
   {

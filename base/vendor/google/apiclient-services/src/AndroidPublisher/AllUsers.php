@@ -20,16 +20,12 @@ namespace Google\Service\AndroidPublisher;
 class AllUsers extends \Google\Model
 {
   /**
-   * Required. Set to true if all set of users are needed.
-   *
    * @var bool
    */
   public $isAllUsersRequested;
 
   /**
-   * Required. Set to true if all set of users are needed.
-   *
-   * @param bool $isAllUsersRequested
+   * @param bool
    */
   public function setIsAllUsersRequested($isAllUsersRequested)
   {

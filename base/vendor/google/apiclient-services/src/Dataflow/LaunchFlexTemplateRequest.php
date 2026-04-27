@@ -22,17 +22,12 @@ class LaunchFlexTemplateRequest extends \Google\Model
   protected $launchParameterType = LaunchFlexTemplateParameter::class;
   protected $launchParameterDataType = '';
   /**
-   * If true, the request is validated but not actually executed. Defaults to
-   * false.
-   *
    * @var bool
    */
   public $validateOnly;
 
   /**
-   * Required. Parameter to launch a job form Flex Template.
-   *
-   * @param LaunchFlexTemplateParameter $launchParameter
+   * @param LaunchFlexTemplateParameter
    */
   public function setLaunchParameter(LaunchFlexTemplateParameter $launchParameter)
   {
@@ -46,10 +41,7 @@ class LaunchFlexTemplateRequest extends \Google\Model
     return $this->launchParameter;
   }
   /**
-   * If true, the request is validated but not actually executed. Defaults to
-   * false.
-   *
-   * @param bool $validateOnly
+   * @param bool
    */
   public function setValidateOnly($validateOnly)
   {

@@ -19,93 +19,50 @@ namespace Google\Service\NetworkManagement;
 
 class InstanceInfo extends \Google\Collection
 {
-  /**
-   * Default unspecified value.
-   */
-  public const STATUS_STATUS_UNSPECIFIED = 'STATUS_UNSPECIFIED';
-  /**
-   * The instance is running.
-   */
-  public const STATUS_RUNNING = 'RUNNING';
-  /**
-   * The instance has any status other than "RUNNING".
-   */
-  public const STATUS_NOT_RUNNING = 'NOT_RUNNING';
   protected $collection_key = 'networkTags';
   /**
-   * Name of a Compute Engine instance.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * External IP address of the network interface.
-   *
    * @var string
    */
   public $externalIp;
   /**
-   * Name of the network interface of a Compute Engine instance.
-   *
    * @var string
    */
   public $interface;
   /**
-   * Internal IP address of the network interface.
-   *
    * @var string
    */
   public $internalIp;
   /**
-   * Network tags configured on the instance.
-   *
    * @var string[]
    */
   public $networkTags;
   /**
-   * URI of a Compute Engine network.
-   *
    * @var string
    */
   public $networkUri;
   /**
-   * URI of the PSC network attachment the NIC is attached to (if relevant).
-   *
    * @var string
    */
   public $pscNetworkAttachmentUri;
   /**
-   * Indicates whether the Compute Engine instance is running. Deprecated: use
-   * the `status` field instead.
-   *
-   * @deprecated
    * @var bool
    */
   public $running;
   /**
-   * Service account authorized for the instance.
-   *
-   * @deprecated
    * @var string
    */
   public $serviceAccount;
   /**
-   * The status of the instance.
-   *
-   * @var string
-   */
-  public $status;
-  /**
-   * URI of a Compute Engine instance.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * Name of a Compute Engine instance.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -119,9 +76,7 @@ class InstanceInfo extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * External IP address of the network interface.
-   *
-   * @param string $externalIp
+   * @param string
    */
   public function setExternalIp($externalIp)
   {
@@ -135,9 +90,7 @@ class InstanceInfo extends \Google\Collection
     return $this->externalIp;
   }
   /**
-   * Name of the network interface of a Compute Engine instance.
-   *
-   * @param string $interface
+   * @param string
    */
   public function setInterface($interface)
   {
@@ -151,9 +104,7 @@ class InstanceInfo extends \Google\Collection
     return $this->interface;
   }
   /**
-   * Internal IP address of the network interface.
-   *
-   * @param string $internalIp
+   * @param string
    */
   public function setInternalIp($internalIp)
   {
@@ -167,9 +118,7 @@ class InstanceInfo extends \Google\Collection
     return $this->internalIp;
   }
   /**
-   * Network tags configured on the instance.
-   *
-   * @param string[] $networkTags
+   * @param string[]
    */
   public function setNetworkTags($networkTags)
   {
@@ -183,9 +132,7 @@ class InstanceInfo extends \Google\Collection
     return $this->networkTags;
   }
   /**
-   * URI of a Compute Engine network.
-   *
-   * @param string $networkUri
+   * @param string
    */
   public function setNetworkUri($networkUri)
   {
@@ -199,9 +146,7 @@ class InstanceInfo extends \Google\Collection
     return $this->networkUri;
   }
   /**
-   * URI of the PSC network attachment the NIC is attached to (if relevant).
-   *
-   * @param string $pscNetworkAttachmentUri
+   * @param string
    */
   public function setPscNetworkAttachmentUri($pscNetworkAttachmentUri)
   {
@@ -215,18 +160,13 @@ class InstanceInfo extends \Google\Collection
     return $this->pscNetworkAttachmentUri;
   }
   /**
-   * Indicates whether the Compute Engine instance is running. Deprecated: use
-   * the `status` field instead.
-   *
-   * @deprecated
-   * @param bool $running
+   * @param bool
    */
   public function setRunning($running)
   {
     $this->running = $running;
   }
   /**
-   * @deprecated
    * @return bool
    */
   public function getRunning()
@@ -234,17 +174,13 @@ class InstanceInfo extends \Google\Collection
     return $this->running;
   }
   /**
-   * Service account authorized for the instance.
-   *
-   * @deprecated
-   * @param string $serviceAccount
+   * @param string
    */
   public function setServiceAccount($serviceAccount)
   {
     $this->serviceAccount = $serviceAccount;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getServiceAccount()
@@ -252,27 +188,7 @@ class InstanceInfo extends \Google\Collection
     return $this->serviceAccount;
   }
   /**
-   * The status of the instance.
-   *
-   * Accepted values: STATUS_UNSPECIFIED, RUNNING, NOT_RUNNING
-   *
-   * @param self::STATUS_* $status
-   */
-  public function setStatus($status)
-  {
-    $this->status = $status;
-  }
-  /**
-   * @return self::STATUS_*
-   */
-  public function getStatus()
-  {
-    return $this->status;
-  }
-  /**
-   * URI of a Compute Engine instance.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

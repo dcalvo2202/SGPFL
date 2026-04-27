@@ -20,59 +20,34 @@ namespace Google\Service\DLP;
 class GooglePrivacyDlpV2SummaryResult extends \Google\Model
 {
   /**
-   * Unused
-   */
-  public const CODE_TRANSFORMATION_RESULT_CODE_UNSPECIFIED = 'TRANSFORMATION_RESULT_CODE_UNSPECIFIED';
-  /**
-   * Transformation completed without an error.
-   */
-  public const CODE_SUCCESS = 'SUCCESS';
-  /**
-   * Transformation had an error.
-   */
-  public const CODE_ERROR = 'ERROR';
-  /**
-   * Outcome of the transformation.
-   *
    * @var string
    */
   public $code;
   /**
-   * Number of transformations counted by this result.
-   *
    * @var string
    */
   public $count;
   /**
-   * A place for warnings or errors to show up if a transformation didn't work
-   * as expected.
-   *
    * @var string
    */
   public $details;
 
   /**
-   * Outcome of the transformation.
-   *
-   * Accepted values: TRANSFORMATION_RESULT_CODE_UNSPECIFIED, SUCCESS, ERROR
-   *
-   * @param self::CODE_* $code
+   * @param string
    */
   public function setCode($code)
   {
     $this->code = $code;
   }
   /**
-   * @return self::CODE_*
+   * @return string
    */
   public function getCode()
   {
     return $this->code;
   }
   /**
-   * Number of transformations counted by this result.
-   *
-   * @param string $count
+   * @param string
    */
   public function setCount($count)
   {
@@ -86,10 +61,7 @@ class GooglePrivacyDlpV2SummaryResult extends \Google\Model
     return $this->count;
   }
   /**
-   * A place for warnings or errors to show up if a transformation didn't work
-   * as expected.
-   *
-   * @param string $details
+   * @param string
    */
   public function setDetails($details)
   {

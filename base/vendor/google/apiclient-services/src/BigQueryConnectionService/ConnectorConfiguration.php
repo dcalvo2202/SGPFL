@@ -24,9 +24,6 @@ class ConnectorConfiguration extends \Google\Model
   protected $authenticationType = ConnectorConfigurationAuthentication::class;
   protected $authenticationDataType = '';
   /**
-   * Required. Immutable. The ID of the Connector these parameters are
-   * configured for.
-   *
    * @var string
    */
   public $connectorId;
@@ -36,9 +33,7 @@ class ConnectorConfiguration extends \Google\Model
   protected $networkDataType = '';
 
   /**
-   * Data asset.
-   *
-   * @param ConnectorConfigurationAsset $asset
+   * @param ConnectorConfigurationAsset
    */
   public function setAsset(ConnectorConfigurationAsset $asset)
   {
@@ -52,9 +47,7 @@ class ConnectorConfiguration extends \Google\Model
     return $this->asset;
   }
   /**
-   * Client authentication.
-   *
-   * @param ConnectorConfigurationAuthentication $authentication
+   * @param ConnectorConfigurationAuthentication
    */
   public function setAuthentication(ConnectorConfigurationAuthentication $authentication)
   {
@@ -68,10 +61,7 @@ class ConnectorConfiguration extends \Google\Model
     return $this->authentication;
   }
   /**
-   * Required. Immutable. The ID of the Connector these parameters are
-   * configured for.
-   *
-   * @param string $connectorId
+   * @param string
    */
   public function setConnectorId($connectorId)
   {
@@ -85,9 +75,7 @@ class ConnectorConfiguration extends \Google\Model
     return $this->connectorId;
   }
   /**
-   * Specifies how to reach the remote system this connection is pointing to.
-   *
-   * @param ConnectorConfigurationEndpoint $endpoint
+   * @param ConnectorConfigurationEndpoint
    */
   public function setEndpoint(ConnectorConfigurationEndpoint $endpoint)
   {
@@ -101,9 +89,7 @@ class ConnectorConfiguration extends \Google\Model
     return $this->endpoint;
   }
   /**
-   * Networking configuration.
-   *
-   * @param ConnectorConfigurationNetwork $network
+   * @param ConnectorConfigurationNetwork
    */
   public function setNetwork(ConnectorConfigurationNetwork $network)
   {

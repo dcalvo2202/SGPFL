@@ -22,18 +22,12 @@ class DatedValue extends \Google\Model
   protected $dateType = Date::class;
   protected $dateDataType = '';
   /**
-   * The value of the datapoint. This will not be present when the value is
-   * zero.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * The date that the datapoint corresponds to. This represents a month value
-   * if the day field is not set.
-   *
-   * @param Date $date
+   * @param Date
    */
   public function setDate(Date $date)
   {
@@ -47,10 +41,7 @@ class DatedValue extends \Google\Model
     return $this->date;
   }
   /**
-   * The value of the datapoint. This will not be present when the value is
-   * zero.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

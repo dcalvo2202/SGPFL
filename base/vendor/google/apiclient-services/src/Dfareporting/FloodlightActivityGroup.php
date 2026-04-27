@@ -19,89 +19,51 @@ namespace Google\Service\Dfareporting;
 
 class FloodlightActivityGroup extends \Google\Model
 {
-  public const TYPE_COUNTER = 'COUNTER';
-  public const TYPE_SALE = 'SALE';
   /**
-   * Account ID of this floodlight activity group. This is a read-only field
-   * that can be left blank.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * Advertiser ID of this floodlight activity group. If this field is left
-   * blank, the value will be copied over either from the floodlight
-   * configuration's advertiser or from the existing activity group's
-   * advertiser.
-   *
    * @var string
    */
   public $advertiserId;
   protected $advertiserIdDimensionValueType = DimensionValue::class;
   protected $advertiserIdDimensionValueDataType = '';
   /**
-   * Floodlight configuration ID of this floodlight activity group. This is a
-   * required field.
-   *
    * @var string
    */
   public $floodlightConfigurationId;
   protected $floodlightConfigurationIdDimensionValueType = DimensionValue::class;
   protected $floodlightConfigurationIdDimensionValueDataType = '';
   /**
-   * ID of this floodlight activity group. This is a read-only, auto-generated
-   * field.
-   *
    * @var string
    */
   public $id;
   protected $idDimensionValueType = DimensionValue::class;
   protected $idDimensionValueDataType = '';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#floodlightActivityGroup".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Name of this floodlight activity group. This is a required field. Must be
-   * less than 65 characters long and cannot contain quotes.
-   *
    * @var string
    */
   public $name;
   /**
-   * Subaccount ID of this floodlight activity group. This is a read-only field
-   * that can be left blank.
-   *
    * @var string
    */
   public $subaccountId;
   /**
-   * Value of the type= parameter in the floodlight tag, which the ad servers
-   * use to identify the activity group that the activity belongs to. This is
-   * optional: if empty, a new tag string will be generated for you. This string
-   * must be 1 to 8 characters long, with valid characters being a-z0-9[ _ ].
-   * This tag string must also be unique among activity groups of the same
-   * floodlight configuration. This field is read-only after insertion.
-   *
    * @var string
    */
   public $tagString;
   /**
-   * Type of the floodlight activity group. This is a required field that is
-   * read-only after insertion.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Account ID of this floodlight activity group. This is a read-only field
-   * that can be left blank.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -115,12 +77,7 @@ class FloodlightActivityGroup extends \Google\Model
     return $this->accountId;
   }
   /**
-   * Advertiser ID of this floodlight activity group. If this field is left
-   * blank, the value will be copied over either from the floodlight
-   * configuration's advertiser or from the existing activity group's
-   * advertiser.
-   *
-   * @param string $advertiserId
+   * @param string
    */
   public function setAdvertiserId($advertiserId)
   {
@@ -134,10 +91,7 @@ class FloodlightActivityGroup extends \Google\Model
     return $this->advertiserId;
   }
   /**
-   * Dimension value for the ID of the advertiser. This is a read-only, auto-
-   * generated field.
-   *
-   * @param DimensionValue $advertiserIdDimensionValue
+   * @param DimensionValue
    */
   public function setAdvertiserIdDimensionValue(DimensionValue $advertiserIdDimensionValue)
   {
@@ -151,10 +105,7 @@ class FloodlightActivityGroup extends \Google\Model
     return $this->advertiserIdDimensionValue;
   }
   /**
-   * Floodlight configuration ID of this floodlight activity group. This is a
-   * required field.
-   *
-   * @param string $floodlightConfigurationId
+   * @param string
    */
   public function setFloodlightConfigurationId($floodlightConfigurationId)
   {
@@ -168,10 +119,7 @@ class FloodlightActivityGroup extends \Google\Model
     return $this->floodlightConfigurationId;
   }
   /**
-   * Dimension value for the ID of the floodlight configuration. This is a read-
-   * only, auto-generated field.
-   *
-   * @param DimensionValue $floodlightConfigurationIdDimensionValue
+   * @param DimensionValue
    */
   public function setFloodlightConfigurationIdDimensionValue(DimensionValue $floodlightConfigurationIdDimensionValue)
   {
@@ -185,10 +133,7 @@ class FloodlightActivityGroup extends \Google\Model
     return $this->floodlightConfigurationIdDimensionValue;
   }
   /**
-   * ID of this floodlight activity group. This is a read-only, auto-generated
-   * field.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -202,10 +147,7 @@ class FloodlightActivityGroup extends \Google\Model
     return $this->id;
   }
   /**
-   * Dimension value for the ID of this floodlight activity group. This is a
-   * read-only, auto-generated field.
-   *
-   * @param DimensionValue $idDimensionValue
+   * @param DimensionValue
    */
   public function setIdDimensionValue(DimensionValue $idDimensionValue)
   {
@@ -219,10 +161,7 @@ class FloodlightActivityGroup extends \Google\Model
     return $this->idDimensionValue;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#floodlightActivityGroup".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -236,10 +175,7 @@ class FloodlightActivityGroup extends \Google\Model
     return $this->kind;
   }
   /**
-   * Name of this floodlight activity group. This is a required field. Must be
-   * less than 65 characters long and cannot contain quotes.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -253,10 +189,7 @@ class FloodlightActivityGroup extends \Google\Model
     return $this->name;
   }
   /**
-   * Subaccount ID of this floodlight activity group. This is a read-only field
-   * that can be left blank.
-   *
-   * @param string $subaccountId
+   * @param string
    */
   public function setSubaccountId($subaccountId)
   {
@@ -270,14 +203,7 @@ class FloodlightActivityGroup extends \Google\Model
     return $this->subaccountId;
   }
   /**
-   * Value of the type= parameter in the floodlight tag, which the ad servers
-   * use to identify the activity group that the activity belongs to. This is
-   * optional: if empty, a new tag string will be generated for you. This string
-   * must be 1 to 8 characters long, with valid characters being a-z0-9[ _ ].
-   * This tag string must also be unique among activity groups of the same
-   * floodlight configuration. This field is read-only after insertion.
-   *
-   * @param string $tagString
+   * @param string
    */
   public function setTagString($tagString)
   {
@@ -291,19 +217,14 @@ class FloodlightActivityGroup extends \Google\Model
     return $this->tagString;
   }
   /**
-   * Type of the floodlight activity group. This is a required field that is
-   * read-only after insertion.
-   *
-   * Accepted values: COUNTER, SALE
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

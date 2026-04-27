@@ -32,7 +32,7 @@ class GoogleCloudDialogflowV2HumanAgentAssistantEvent extends \Google\Collection
   protected $suggestionResultsDataType = 'array';
 
   /**
-   * @param string $conversation
+   * @param string
    */
   public function setConversation($conversation)
   {
@@ -46,7 +46,7 @@ class GoogleCloudDialogflowV2HumanAgentAssistantEvent extends \Google\Collection
     return $this->conversation;
   }
   /**
-   * @param string $participant
+   * @param string
    */
   public function setParticipant($participant)
   {
@@ -60,7 +60,7 @@ class GoogleCloudDialogflowV2HumanAgentAssistantEvent extends \Google\Collection
     return $this->participant;
   }
   /**
-   * @param GoogleCloudDialogflowV2SuggestionResult[] $suggestionResults
+   * @param GoogleCloudDialogflowV2SuggestionResult[]
    */
   public function setSuggestionResults($suggestionResults)
   {

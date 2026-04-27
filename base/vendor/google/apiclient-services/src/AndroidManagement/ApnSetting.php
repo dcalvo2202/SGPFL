@@ -19,289 +19,104 @@ namespace Google\Service\AndroidManagement;
 
 class ApnSetting extends \Google\Collection
 {
-  /**
-   * Unspecified. Defaults to NOT_ALWAYS_ON.
-   */
-  public const ALWAYS_ON_SETTING_ALWAYS_ON_SETTING_UNSPECIFIED = 'ALWAYS_ON_SETTING_UNSPECIFIED';
-  /**
-   * The PDU session brought up by this APN should not be always on.
-   */
-  public const ALWAYS_ON_SETTING_NOT_ALWAYS_ON = 'NOT_ALWAYS_ON';
-  /**
-   * The PDU session brought up by this APN should always be on. Supported on
-   * Android 15 and above. A NonComplianceDetail with API_LEVEL is reported if
-   * the Android version is less than 15.
-   */
-  public const ALWAYS_ON_SETTING_ALWAYS_ON = 'ALWAYS_ON';
-  /**
-   * Unspecified. If username is empty, defaults to NONE. Otherwise, defaults to
-   * PAP_OR_CHAP.
-   */
-  public const AUTH_TYPE_AUTH_TYPE_UNSPECIFIED = 'AUTH_TYPE_UNSPECIFIED';
-  /**
-   * Authentication is not required.
-   */
-  public const AUTH_TYPE_NONE = 'NONE';
-  /**
-   * Authentication type for PAP.
-   */
-  public const AUTH_TYPE_PAP = 'PAP';
-  /**
-   * Authentication type for CHAP.
-   */
-  public const AUTH_TYPE_CHAP = 'CHAP';
-  /**
-   * Authentication type for PAP or CHAP.
-   */
-  public const AUTH_TYPE_PAP_OR_CHAP = 'PAP_OR_CHAP';
-  /**
-   * The MVNO type is not specified.
-   */
-  public const MVNO_TYPE_MVNO_TYPE_UNSPECIFIED = 'MVNO_TYPE_UNSPECIFIED';
-  /**
-   * MVNO type for group identifier level 1.
-   */
-  public const MVNO_TYPE_GID = 'GID';
-  /**
-   * MVNO type for ICCID.
-   */
-  public const MVNO_TYPE_ICCID = 'ICCID';
-  /**
-   * MVNO type for IMSI.
-   */
-  public const MVNO_TYPE_IMSI = 'IMSI';
-  /**
-   * MVNO type for SPN (service provider name).
-   */
-  public const MVNO_TYPE_SPN = 'SPN';
-  /**
-   * The protocol is not specified.
-   */
-  public const PROTOCOL_PROTOCOL_UNSPECIFIED = 'PROTOCOL_UNSPECIFIED';
-  /**
-   * Internet protocol.
-   */
-  public const PROTOCOL_IP = 'IP';
-  /**
-   * Virtual PDP type introduced to handle dual IP stack UE capability.
-   */
-  public const PROTOCOL_IPV4V6 = 'IPV4V6';
-  /**
-   * Internet protocol, version 6.
-   */
-  public const PROTOCOL_IPV6 = 'IPV6';
-  /**
-   * Transfer of Non-IP data to external packet data network.
-   */
-  public const PROTOCOL_NON_IP = 'NON_IP';
-  /**
-   * Point to point protocol.
-   */
-  public const PROTOCOL_PPP = 'PPP';
-  /**
-   * Transfer of Unstructured data to the Data Network via N6.
-   */
-  public const PROTOCOL_UNSTRUCTURED = 'UNSTRUCTURED';
-  /**
-   * The protocol is not specified.
-   */
-  public const ROAMING_PROTOCOL_PROTOCOL_UNSPECIFIED = 'PROTOCOL_UNSPECIFIED';
-  /**
-   * Internet protocol.
-   */
-  public const ROAMING_PROTOCOL_IP = 'IP';
-  /**
-   * Virtual PDP type introduced to handle dual IP stack UE capability.
-   */
-  public const ROAMING_PROTOCOL_IPV4V6 = 'IPV4V6';
-  /**
-   * Internet protocol, version 6.
-   */
-  public const ROAMING_PROTOCOL_IPV6 = 'IPV6';
-  /**
-   * Transfer of Non-IP data to external packet data network.
-   */
-  public const ROAMING_PROTOCOL_NON_IP = 'NON_IP';
-  /**
-   * Point to point protocol.
-   */
-  public const ROAMING_PROTOCOL_PPP = 'PPP';
-  /**
-   * Transfer of Unstructured data to the Data Network via N6.
-   */
-  public const ROAMING_PROTOCOL_UNSTRUCTURED = 'UNSTRUCTURED';
   protected $collection_key = 'networkTypes';
   /**
-   * Optional. Whether User Plane resources have to be activated during every
-   * transition from CM-IDLE mode to CM-CONNECTED state for this APN. See 3GPP
-   * TS 23.501 section 5.6.13.
-   *
    * @var string
    */
   public $alwaysOnSetting;
   /**
-   * Required. Name of the APN. Policy will be rejected if this field is empty.
-   *
    * @var string
    */
   public $apn;
   /**
-   * Required. Usage categories for the APN. Policy will be rejected if this
-   * field is empty or contains APN_TYPE_UNSPECIFIED or duplicates. Multiple APN
-   * types can be set on fully managed devices. ENTERPRISE is the only allowed
-   * APN type on work profiles. A NonComplianceDetail with MANAGEMENT_MODE is
-   * reported for any other value on work profiles. APN types that are not
-   * supported on the device or management mode will be ignored. If this results
-   * in the empty list, the APN setting will be ignored, because apnTypes is a
-   * required field. A NonComplianceDetail with INVALID_VALUE is reported if
-   * none of the APN types are supported on the device or management mode.
-   *
    * @var string[]
    */
   public $apnTypes;
   /**
-   * Optional. Authentication type of the APN.
-   *
    * @var string
    */
   public $authType;
   /**
-   * Optional. Carrier ID for the APN. A value of 0 (default) means not set and
-   * negative values are rejected.
-   *
    * @var int
    */
   public $carrierId;
   /**
-   * Required. Human-readable name that describes the APN. Policy will be
-   * rejected if this field is empty.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Optional. MMS (Multimedia Messaging Service) proxy address of the APN which
-   * can be an IP address or hostname (not a URL).
-   *
    * @var string
    */
   public $mmsProxyAddress;
   /**
-   * Optional. MMS (Multimedia Messaging Service) proxy port of the APN. A value
-   * of 0 (default) means not set and negative values are rejected.
-   *
    * @var int
    */
   public $mmsProxyPort;
   /**
-   * Optional. MMSC (Multimedia Messaging Service Center) URI of the APN.
-   *
    * @var string
    */
   public $mmsc;
   /**
-   * Optional. The default MTU (Maximum Transmission Unit) size in bytes of the
-   * IPv4 routes brought up by this APN setting. A value of 0 (default) means
-   * not set and negative values are rejected. Supported on Android 13 and
-   * above. A NonComplianceDetail with API_LEVEL is reported if the Android
-   * version is less than 13.
-   *
    * @var int
    */
   public $mtuV4;
   /**
-   * Optional. The MTU (Maximum Transmission Unit) size of the IPv6 mobile
-   * interface to which the APN connected. A value of 0 (default) means not set
-   * and negative values are rejected. Supported on Android 13 and above. A
-   * NonComplianceDetail with API_LEVEL is reported if the Android version is
-   * less than 13.
-   *
    * @var int
    */
   public $mtuV6;
   /**
-   * Optional. MVNO match type for the APN.
-   *
    * @var string
    */
   public $mvnoType;
   /**
-   * Optional. Radio technologies (network types) the APN may use. Policy will
-   * be rejected if this field contains NETWORK_TYPE_UNSPECIFIED or duplicates.
-   *
    * @var string[]
    */
   public $networkTypes;
   /**
-   * Optional. The numeric operator ID of the APN. Numeric operator ID is
-   * defined as MCC (Mobile Country Code) + MNC (Mobile Network Code).
-   *
    * @var string
    */
   public $numericOperatorId;
   /**
-   * Optional. APN password of the APN.
-   *
    * @var string
    */
   public $password;
   /**
-   * Optional. The protocol to use to connect to this APN.
-   *
    * @var string
    */
   public $protocol;
   /**
-   * Optional. The proxy address of the APN.
-   *
    * @var string
    */
   public $proxyAddress;
   /**
-   * Optional. The proxy port of the APN. A value of 0 (default) means not set
-   * and negative values are rejected.
-   *
    * @var int
    */
   public $proxyPort;
   /**
-   * Optional. The protocol to use to connect to this APN while the device is
-   * roaming.
-   *
    * @var string
    */
   public $roamingProtocol;
   /**
-   * Optional. APN username of the APN.
-   *
    * @var string
    */
   public $username;
 
   /**
-   * Optional. Whether User Plane resources have to be activated during every
-   * transition from CM-IDLE mode to CM-CONNECTED state for this APN. See 3GPP
-   * TS 23.501 section 5.6.13.
-   *
-   * Accepted values: ALWAYS_ON_SETTING_UNSPECIFIED, NOT_ALWAYS_ON, ALWAYS_ON
-   *
-   * @param self::ALWAYS_ON_SETTING_* $alwaysOnSetting
+   * @param string
    */
   public function setAlwaysOnSetting($alwaysOnSetting)
   {
     $this->alwaysOnSetting = $alwaysOnSetting;
   }
   /**
-   * @return self::ALWAYS_ON_SETTING_*
+   * @return string
    */
   public function getAlwaysOnSetting()
   {
     return $this->alwaysOnSetting;
   }
   /**
-   * Required. Name of the APN. Policy will be rejected if this field is empty.
-   *
-   * @param string $apn
+   * @param string
    */
   public function setApn($apn)
   {
@@ -315,17 +130,7 @@ class ApnSetting extends \Google\Collection
     return $this->apn;
   }
   /**
-   * Required. Usage categories for the APN. Policy will be rejected if this
-   * field is empty or contains APN_TYPE_UNSPECIFIED or duplicates. Multiple APN
-   * types can be set on fully managed devices. ENTERPRISE is the only allowed
-   * APN type on work profiles. A NonComplianceDetail with MANAGEMENT_MODE is
-   * reported for any other value on work profiles. APN types that are not
-   * supported on the device or management mode will be ignored. If this results
-   * in the empty list, the APN setting will be ignored, because apnTypes is a
-   * required field. A NonComplianceDetail with INVALID_VALUE is reported if
-   * none of the APN types are supported on the device or management mode.
-   *
-   * @param string[] $apnTypes
+   * @param string[]
    */
   public function setApnTypes($apnTypes)
   {
@@ -339,28 +144,21 @@ class ApnSetting extends \Google\Collection
     return $this->apnTypes;
   }
   /**
-   * Optional. Authentication type of the APN.
-   *
-   * Accepted values: AUTH_TYPE_UNSPECIFIED, NONE, PAP, CHAP, PAP_OR_CHAP
-   *
-   * @param self::AUTH_TYPE_* $authType
+   * @param string
    */
   public function setAuthType($authType)
   {
     $this->authType = $authType;
   }
   /**
-   * @return self::AUTH_TYPE_*
+   * @return string
    */
   public function getAuthType()
   {
     return $this->authType;
   }
   /**
-   * Optional. Carrier ID for the APN. A value of 0 (default) means not set and
-   * negative values are rejected.
-   *
-   * @param int $carrierId
+   * @param int
    */
   public function setCarrierId($carrierId)
   {
@@ -374,10 +172,7 @@ class ApnSetting extends \Google\Collection
     return $this->carrierId;
   }
   /**
-   * Required. Human-readable name that describes the APN. Policy will be
-   * rejected if this field is empty.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -391,10 +186,7 @@ class ApnSetting extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Optional. MMS (Multimedia Messaging Service) proxy address of the APN which
-   * can be an IP address or hostname (not a URL).
-   *
-   * @param string $mmsProxyAddress
+   * @param string
    */
   public function setMmsProxyAddress($mmsProxyAddress)
   {
@@ -408,10 +200,7 @@ class ApnSetting extends \Google\Collection
     return $this->mmsProxyAddress;
   }
   /**
-   * Optional. MMS (Multimedia Messaging Service) proxy port of the APN. A value
-   * of 0 (default) means not set and negative values are rejected.
-   *
-   * @param int $mmsProxyPort
+   * @param int
    */
   public function setMmsProxyPort($mmsProxyPort)
   {
@@ -425,9 +214,7 @@ class ApnSetting extends \Google\Collection
     return $this->mmsProxyPort;
   }
   /**
-   * Optional. MMSC (Multimedia Messaging Service Center) URI of the APN.
-   *
-   * @param string $mmsc
+   * @param string
    */
   public function setMmsc($mmsc)
   {
@@ -441,13 +228,7 @@ class ApnSetting extends \Google\Collection
     return $this->mmsc;
   }
   /**
-   * Optional. The default MTU (Maximum Transmission Unit) size in bytes of the
-   * IPv4 routes brought up by this APN setting. A value of 0 (default) means
-   * not set and negative values are rejected. Supported on Android 13 and
-   * above. A NonComplianceDetail with API_LEVEL is reported if the Android
-   * version is less than 13.
-   *
-   * @param int $mtuV4
+   * @param int
    */
   public function setMtuV4($mtuV4)
   {
@@ -461,13 +242,7 @@ class ApnSetting extends \Google\Collection
     return $this->mtuV4;
   }
   /**
-   * Optional. The MTU (Maximum Transmission Unit) size of the IPv6 mobile
-   * interface to which the APN connected. A value of 0 (default) means not set
-   * and negative values are rejected. Supported on Android 13 and above. A
-   * NonComplianceDetail with API_LEVEL is reported if the Android version is
-   * less than 13.
-   *
-   * @param int $mtuV6
+   * @param int
    */
   public function setMtuV6($mtuV6)
   {
@@ -481,28 +256,21 @@ class ApnSetting extends \Google\Collection
     return $this->mtuV6;
   }
   /**
-   * Optional. MVNO match type for the APN.
-   *
-   * Accepted values: MVNO_TYPE_UNSPECIFIED, GID, ICCID, IMSI, SPN
-   *
-   * @param self::MVNO_TYPE_* $mvnoType
+   * @param string
    */
   public function setMvnoType($mvnoType)
   {
     $this->mvnoType = $mvnoType;
   }
   /**
-   * @return self::MVNO_TYPE_*
+   * @return string
    */
   public function getMvnoType()
   {
     return $this->mvnoType;
   }
   /**
-   * Optional. Radio technologies (network types) the APN may use. Policy will
-   * be rejected if this field contains NETWORK_TYPE_UNSPECIFIED or duplicates.
-   *
-   * @param string[] $networkTypes
+   * @param string[]
    */
   public function setNetworkTypes($networkTypes)
   {
@@ -516,10 +284,7 @@ class ApnSetting extends \Google\Collection
     return $this->networkTypes;
   }
   /**
-   * Optional. The numeric operator ID of the APN. Numeric operator ID is
-   * defined as MCC (Mobile Country Code) + MNC (Mobile Network Code).
-   *
-   * @param string $numericOperatorId
+   * @param string
    */
   public function setNumericOperatorId($numericOperatorId)
   {
@@ -533,9 +298,7 @@ class ApnSetting extends \Google\Collection
     return $this->numericOperatorId;
   }
   /**
-   * Optional. APN password of the APN.
-   *
-   * @param string $password
+   * @param string
    */
   public function setPassword($password)
   {
@@ -549,28 +312,21 @@ class ApnSetting extends \Google\Collection
     return $this->password;
   }
   /**
-   * Optional. The protocol to use to connect to this APN.
-   *
-   * Accepted values: PROTOCOL_UNSPECIFIED, IP, IPV4V6, IPV6, NON_IP, PPP,
-   * UNSTRUCTURED
-   *
-   * @param self::PROTOCOL_* $protocol
+   * @param string
    */
   public function setProtocol($protocol)
   {
     $this->protocol = $protocol;
   }
   /**
-   * @return self::PROTOCOL_*
+   * @return string
    */
   public function getProtocol()
   {
     return $this->protocol;
   }
   /**
-   * Optional. The proxy address of the APN.
-   *
-   * @param string $proxyAddress
+   * @param string
    */
   public function setProxyAddress($proxyAddress)
   {
@@ -584,10 +340,7 @@ class ApnSetting extends \Google\Collection
     return $this->proxyAddress;
   }
   /**
-   * Optional. The proxy port of the APN. A value of 0 (default) means not set
-   * and negative values are rejected.
-   *
-   * @param int $proxyPort
+   * @param int
    */
   public function setProxyPort($proxyPort)
   {
@@ -601,29 +354,21 @@ class ApnSetting extends \Google\Collection
     return $this->proxyPort;
   }
   /**
-   * Optional. The protocol to use to connect to this APN while the device is
-   * roaming.
-   *
-   * Accepted values: PROTOCOL_UNSPECIFIED, IP, IPV4V6, IPV6, NON_IP, PPP,
-   * UNSTRUCTURED
-   *
-   * @param self::ROAMING_PROTOCOL_* $roamingProtocol
+   * @param string
    */
   public function setRoamingProtocol($roamingProtocol)
   {
     $this->roamingProtocol = $roamingProtocol;
   }
   /**
-   * @return self::ROAMING_PROTOCOL_*
+   * @return string
    */
   public function getRoamingProtocol()
   {
     return $this->roamingProtocol;
   }
   /**
-   * Optional. APN username of the APN.
-   *
-   * @param string $username
+   * @param string
    */
   public function setUsername($username)
   {

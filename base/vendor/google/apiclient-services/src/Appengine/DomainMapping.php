@@ -21,15 +21,10 @@ class DomainMapping extends \Google\Collection
 {
   protected $collection_key = 'resourceRecords';
   /**
-   * Relative name of the domain serving the application. Example: example.com.
-   *
    * @var string
    */
   public $id;
   /**
-   * Output only. Full path to the DomainMapping resource in the API. Example:
-   * apps/myapp/domainMapping/example.com.@OutputOnly
-   *
    * @var string
    */
   public $name;
@@ -39,9 +34,7 @@ class DomainMapping extends \Google\Collection
   protected $sslSettingsDataType = '';
 
   /**
-   * Relative name of the domain serving the application. Example: example.com.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -55,10 +48,7 @@ class DomainMapping extends \Google\Collection
     return $this->id;
   }
   /**
-   * Output only. Full path to the DomainMapping resource in the API. Example:
-   * apps/myapp/domainMapping/example.com.@OutputOnly
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -72,11 +62,7 @@ class DomainMapping extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. The resource records required to configure this domain
-   * mapping. These records must be added to the domain's DNS configuration in
-   * order to serve the application via this domain mapping.@OutputOnly
-   *
-   * @param ResourceRecord[] $resourceRecords
+   * @param ResourceRecord[]
    */
   public function setResourceRecords($resourceRecords)
   {
@@ -90,10 +76,7 @@ class DomainMapping extends \Google\Collection
     return $this->resourceRecords;
   }
   /**
-   * SSL configuration for this domain. If unconfigured, this domain will not
-   * serve with SSL.
-   *
-   * @param SslSettings $sslSettings
+   * @param SslSettings
    */
   public function setSslSettings(SslSettings $sslSettings)
   {

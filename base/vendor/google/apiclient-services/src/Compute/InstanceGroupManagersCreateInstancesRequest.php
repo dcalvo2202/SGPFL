@@ -24,9 +24,7 @@ class InstanceGroupManagersCreateInstancesRequest extends \Google\Collection
   protected $instancesDataType = 'array';
 
   /**
-   * [Required] List of specifications of per-instance configs.
-   *
-   * @param PerInstanceConfig[] $instances
+   * @param PerInstanceConfig[]
    */
   public function setInstances($instances)
   {

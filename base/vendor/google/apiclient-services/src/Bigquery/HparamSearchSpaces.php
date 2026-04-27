@@ -65,9 +65,7 @@ class HparamSearchSpaces extends \Google\Model
   protected $walsAlphaDataType = '';
 
   /**
-   * Activation functions of neural network models.
-   *
-   * @param StringHparamSearchSpace $activationFn
+   * @param StringHparamSearchSpace
    */
   public function setActivationFn(StringHparamSearchSpace $activationFn)
   {
@@ -81,9 +79,7 @@ class HparamSearchSpaces extends \Google\Model
     return $this->activationFn;
   }
   /**
-   * Mini batch sample size.
-   *
-   * @param IntHparamSearchSpace $batchSize
+   * @param IntHparamSearchSpace
    */
   public function setBatchSize(IntHparamSearchSpace $batchSize)
   {
@@ -97,9 +93,7 @@ class HparamSearchSpaces extends \Google\Model
     return $this->batchSize;
   }
   /**
-   * Booster type for boosted tree models.
-   *
-   * @param StringHparamSearchSpace $boosterType
+   * @param StringHparamSearchSpace
    */
   public function setBoosterType(StringHparamSearchSpace $boosterType)
   {
@@ -113,9 +107,7 @@ class HparamSearchSpaces extends \Google\Model
     return $this->boosterType;
   }
   /**
-   * Subsample ratio of columns for each level for boosted tree models.
-   *
-   * @param DoubleHparamSearchSpace $colsampleBylevel
+   * @param DoubleHparamSearchSpace
    */
   public function setColsampleBylevel(DoubleHparamSearchSpace $colsampleBylevel)
   {
@@ -129,9 +121,7 @@ class HparamSearchSpaces extends \Google\Model
     return $this->colsampleBylevel;
   }
   /**
-   * Subsample ratio of columns for each node(split) for boosted tree models.
-   *
-   * @param DoubleHparamSearchSpace $colsampleBynode
+   * @param DoubleHparamSearchSpace
    */
   public function setColsampleBynode(DoubleHparamSearchSpace $colsampleBynode)
   {
@@ -145,10 +135,7 @@ class HparamSearchSpaces extends \Google\Model
     return $this->colsampleBynode;
   }
   /**
-   * Subsample ratio of columns when constructing each tree for boosted tree
-   * models.
-   *
-   * @param DoubleHparamSearchSpace $colsampleBytree
+   * @param DoubleHparamSearchSpace
    */
   public function setColsampleBytree(DoubleHparamSearchSpace $colsampleBytree)
   {
@@ -162,9 +149,7 @@ class HparamSearchSpaces extends \Google\Model
     return $this->colsampleBytree;
   }
   /**
-   * Dart normalization type for boosted tree models.
-   *
-   * @param StringHparamSearchSpace $dartNormalizeType
+   * @param StringHparamSearchSpace
    */
   public function setDartNormalizeType(StringHparamSearchSpace $dartNormalizeType)
   {
@@ -178,10 +163,7 @@ class HparamSearchSpaces extends \Google\Model
     return $this->dartNormalizeType;
   }
   /**
-   * Dropout probability for dnn model training and boosted tree models using
-   * dart booster.
-   *
-   * @param DoubleHparamSearchSpace $dropout
+   * @param DoubleHparamSearchSpace
    */
   public function setDropout(DoubleHparamSearchSpace $dropout)
   {
@@ -195,9 +177,7 @@ class HparamSearchSpaces extends \Google\Model
     return $this->dropout;
   }
   /**
-   * Hidden units for neural network models.
-   *
-   * @param IntArrayHparamSearchSpace $hiddenUnits
+   * @param IntArrayHparamSearchSpace
    */
   public function setHiddenUnits(IntArrayHparamSearchSpace $hiddenUnits)
   {
@@ -211,9 +191,7 @@ class HparamSearchSpaces extends \Google\Model
     return $this->hiddenUnits;
   }
   /**
-   * L1 regularization coefficient.
-   *
-   * @param DoubleHparamSearchSpace $l1Reg
+   * @param DoubleHparamSearchSpace
    */
   public function setL1Reg(DoubleHparamSearchSpace $l1Reg)
   {
@@ -227,9 +205,7 @@ class HparamSearchSpaces extends \Google\Model
     return $this->l1Reg;
   }
   /**
-   * L2 regularization coefficient.
-   *
-   * @param DoubleHparamSearchSpace $l2Reg
+   * @param DoubleHparamSearchSpace
    */
   public function setL2Reg(DoubleHparamSearchSpace $l2Reg)
   {
@@ -243,9 +219,7 @@ class HparamSearchSpaces extends \Google\Model
     return $this->l2Reg;
   }
   /**
-   * Learning rate of training jobs.
-   *
-   * @param DoubleHparamSearchSpace $learnRate
+   * @param DoubleHparamSearchSpace
    */
   public function setLearnRate(DoubleHparamSearchSpace $learnRate)
   {
@@ -259,9 +233,7 @@ class HparamSearchSpaces extends \Google\Model
     return $this->learnRate;
   }
   /**
-   * Maximum depth of a tree for boosted tree models.
-   *
-   * @param IntHparamSearchSpace $maxTreeDepth
+   * @param IntHparamSearchSpace
    */
   public function setMaxTreeDepth(IntHparamSearchSpace $maxTreeDepth)
   {
@@ -275,9 +247,7 @@ class HparamSearchSpaces extends \Google\Model
     return $this->maxTreeDepth;
   }
   /**
-   * Minimum split loss for boosted tree models.
-   *
-   * @param DoubleHparamSearchSpace $minSplitLoss
+   * @param DoubleHparamSearchSpace
    */
   public function setMinSplitLoss(DoubleHparamSearchSpace $minSplitLoss)
   {
@@ -291,9 +261,7 @@ class HparamSearchSpaces extends \Google\Model
     return $this->minSplitLoss;
   }
   /**
-   * Minimum sum of instance weight needed in a child for boosted tree models.
-   *
-   * @param IntHparamSearchSpace $minTreeChildWeight
+   * @param IntHparamSearchSpace
    */
   public function setMinTreeChildWeight(IntHparamSearchSpace $minTreeChildWeight)
   {
@@ -307,9 +275,7 @@ class HparamSearchSpaces extends \Google\Model
     return $this->minTreeChildWeight;
   }
   /**
-   * Number of clusters for k-means.
-   *
-   * @param IntHparamSearchSpace $numClusters
+   * @param IntHparamSearchSpace
    */
   public function setNumClusters(IntHparamSearchSpace $numClusters)
   {
@@ -323,9 +289,7 @@ class HparamSearchSpaces extends \Google\Model
     return $this->numClusters;
   }
   /**
-   * Number of latent factors to train on.
-   *
-   * @param IntHparamSearchSpace $numFactors
+   * @param IntHparamSearchSpace
    */
   public function setNumFactors(IntHparamSearchSpace $numFactors)
   {
@@ -339,9 +303,7 @@ class HparamSearchSpaces extends \Google\Model
     return $this->numFactors;
   }
   /**
-   * Number of parallel trees for boosted tree models.
-   *
-   * @param IntHparamSearchSpace $numParallelTree
+   * @param IntHparamSearchSpace
    */
   public function setNumParallelTree(IntHparamSearchSpace $numParallelTree)
   {
@@ -355,9 +317,7 @@ class HparamSearchSpaces extends \Google\Model
     return $this->numParallelTree;
   }
   /**
-   * Optimizer of TF models.
-   *
-   * @param StringHparamSearchSpace $optimizer
+   * @param StringHparamSearchSpace
    */
   public function setOptimizer(StringHparamSearchSpace $optimizer)
   {
@@ -371,10 +331,7 @@ class HparamSearchSpaces extends \Google\Model
     return $this->optimizer;
   }
   /**
-   * Subsample the training data to grow tree to prevent overfitting for boosted
-   * tree models.
-   *
-   * @param DoubleHparamSearchSpace $subsample
+   * @param DoubleHparamSearchSpace
    */
   public function setSubsample(DoubleHparamSearchSpace $subsample)
   {
@@ -388,9 +345,7 @@ class HparamSearchSpaces extends \Google\Model
     return $this->subsample;
   }
   /**
-   * Tree construction algorithm for boosted tree models.
-   *
-   * @param StringHparamSearchSpace $treeMethod
+   * @param StringHparamSearchSpace
    */
   public function setTreeMethod(StringHparamSearchSpace $treeMethod)
   {
@@ -404,10 +359,7 @@ class HparamSearchSpaces extends \Google\Model
     return $this->treeMethod;
   }
   /**
-   * Hyperparameter for matrix factoration when implicit feedback type is
-   * specified.
-   *
-   * @param DoubleHparamSearchSpace $walsAlpha
+   * @param DoubleHparamSearchSpace
    */
   public function setWalsAlpha(DoubleHparamSearchSpace $walsAlpha)
   {

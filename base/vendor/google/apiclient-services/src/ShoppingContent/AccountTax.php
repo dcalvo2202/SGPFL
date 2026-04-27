@@ -21,15 +21,10 @@ class AccountTax extends \Google\Collection
 {
   protected $collection_key = 'rules';
   /**
-   * Required. The ID of the account to which these account tax settings belong.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#accountTax`".
-   *
    * @var string
    */
   public $kind;
@@ -37,9 +32,7 @@ class AccountTax extends \Google\Collection
   protected $rulesDataType = 'array';
 
   /**
-   * Required. The ID of the account to which these account tax settings belong.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -53,10 +46,7 @@ class AccountTax extends \Google\Collection
     return $this->accountId;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#accountTax`".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -70,10 +60,7 @@ class AccountTax extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Tax rules. Updating the tax rules will enable "US" taxes (not reversible).
-   * Defining no rules is equivalent to not charging tax at all.
-   *
-   * @param AccountTaxTaxRule[] $rules
+   * @param AccountTaxTaxRule[]
    */
   public function setRules($rules)
   {

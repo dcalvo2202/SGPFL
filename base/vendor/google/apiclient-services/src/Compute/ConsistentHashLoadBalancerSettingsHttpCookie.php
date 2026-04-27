@@ -20,14 +20,10 @@ namespace Google\Service\Compute;
 class ConsistentHashLoadBalancerSettingsHttpCookie extends \Google\Model
 {
   /**
-   * Name of the cookie.
-   *
    * @var string
    */
   public $name;
   /**
-   * Path to set for the cookie.
-   *
    * @var string
    */
   public $path;
@@ -35,9 +31,7 @@ class ConsistentHashLoadBalancerSettingsHttpCookie extends \Google\Model
   protected $ttlDataType = '';
 
   /**
-   * Name of the cookie.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -51,9 +45,7 @@ class ConsistentHashLoadBalancerSettingsHttpCookie extends \Google\Model
     return $this->name;
   }
   /**
-   * Path to set for the cookie.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {
@@ -67,9 +59,7 @@ class ConsistentHashLoadBalancerSettingsHttpCookie extends \Google\Model
     return $this->path;
   }
   /**
-   * Lifetime of the cookie.
-   *
-   * @param Duration $ttl
+   * @param Duration
    */
   public function setTtl(Duration $ttl)
   {

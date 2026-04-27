@@ -37,7 +37,7 @@ class MemoryMetrics extends \Google\Model
   public $usedOnHeapStorageMemory;
 
   /**
-   * @param string $totalOffHeapStorageMemory
+   * @param string
    */
   public function setTotalOffHeapStorageMemory($totalOffHeapStorageMemory)
   {
@@ -51,7 +51,7 @@ class MemoryMetrics extends \Google\Model
     return $this->totalOffHeapStorageMemory;
   }
   /**
-   * @param string $totalOnHeapStorageMemory
+   * @param string
    */
   public function setTotalOnHeapStorageMemory($totalOnHeapStorageMemory)
   {
@@ -65,7 +65,7 @@ class MemoryMetrics extends \Google\Model
     return $this->totalOnHeapStorageMemory;
   }
   /**
-   * @param string $usedOffHeapStorageMemory
+   * @param string
    */
   public function setUsedOffHeapStorageMemory($usedOffHeapStorageMemory)
   {
@@ -79,7 +79,7 @@ class MemoryMetrics extends \Google\Model
     return $this->usedOffHeapStorageMemory;
   }
   /**
-   * @param string $usedOnHeapStorageMemory
+   * @param string
    */
   public function setUsedOnHeapStorageMemory($usedOnHeapStorageMemory)
   {

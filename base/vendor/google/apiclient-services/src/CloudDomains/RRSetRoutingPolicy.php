@@ -24,11 +24,6 @@ class RRSetRoutingPolicy extends \Google\Model
   protected $geoPolicyType = GeoPolicy::class;
   protected $geoPolicyDataType = '';
   /**
-   * The fully qualified URL of the HealthCheck to use for this
-   * RRSetRoutingPolicy. Format this URL like `https://www.googleapis.com/comput
-   * e/v1/projects/{project}/global/healthChecks/{healthCheck}`.
-   * https://cloud.google.com/compute/docs/reference/rest/v1/healthChecks
-   *
    * @var string
    */
   public $healthCheck;
@@ -40,7 +35,7 @@ class RRSetRoutingPolicy extends \Google\Model
   protected $wrrPolicyDataType = '';
 
   /**
-   * @param GeoPolicy $geo
+   * @param GeoPolicy
    */
   public function setGeo(GeoPolicy $geo)
   {
@@ -54,15 +49,13 @@ class RRSetRoutingPolicy extends \Google\Model
     return $this->geo;
   }
   /**
-   * @deprecated
-   * @param GeoPolicy $geoPolicy
+   * @param GeoPolicy
    */
   public function setGeoPolicy(GeoPolicy $geoPolicy)
   {
     $this->geoPolicy = $geoPolicy;
   }
   /**
-   * @deprecated
    * @return GeoPolicy
    */
   public function getGeoPolicy()
@@ -70,12 +63,7 @@ class RRSetRoutingPolicy extends \Google\Model
     return $this->geoPolicy;
   }
   /**
-   * The fully qualified URL of the HealthCheck to use for this
-   * RRSetRoutingPolicy. Format this URL like `https://www.googleapis.com/comput
-   * e/v1/projects/{project}/global/healthChecks/{healthCheck}`.
-   * https://cloud.google.com/compute/docs/reference/rest/v1/healthChecks
-   *
-   * @param string $healthCheck
+   * @param string
    */
   public function setHealthCheck($healthCheck)
   {
@@ -89,7 +77,7 @@ class RRSetRoutingPolicy extends \Google\Model
     return $this->healthCheck;
   }
   /**
-   * @param PrimaryBackupPolicy $primaryBackup
+   * @param PrimaryBackupPolicy
    */
   public function setPrimaryBackup(PrimaryBackupPolicy $primaryBackup)
   {
@@ -103,7 +91,7 @@ class RRSetRoutingPolicy extends \Google\Model
     return $this->primaryBackup;
   }
   /**
-   * @param WrrPolicy $wrr
+   * @param WrrPolicy
    */
   public function setWrr(WrrPolicy $wrr)
   {
@@ -117,15 +105,13 @@ class RRSetRoutingPolicy extends \Google\Model
     return $this->wrr;
   }
   /**
-   * @deprecated
-   * @param WrrPolicy $wrrPolicy
+   * @param WrrPolicy
    */
   public function setWrrPolicy(WrrPolicy $wrrPolicy)
   {
     $this->wrrPolicy = $wrrPolicy;
   }
   /**
-   * @deprecated
    * @return WrrPolicy
    */
   public function getWrrPolicy()

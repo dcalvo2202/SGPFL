@@ -26,9 +26,7 @@ class AssetSliceSet extends \Google\Collection
   protected $assetModuleMetadataDataType = '';
 
   /**
-   * Asset slices.
-   *
-   * @param ApkDescription[] $apkDescription
+   * @param ApkDescription[]
    */
   public function setApkDescription($apkDescription)
   {
@@ -42,9 +40,7 @@ class AssetSliceSet extends \Google\Collection
     return $this->apkDescription;
   }
   /**
-   * Module level metadata.
-   *
-   * @param AssetModuleMetadata $assetModuleMetadata
+   * @param AssetModuleMetadata
    */
   public function setAssetModuleMetadata(AssetModuleMetadata $assetModuleMetadata)
   {

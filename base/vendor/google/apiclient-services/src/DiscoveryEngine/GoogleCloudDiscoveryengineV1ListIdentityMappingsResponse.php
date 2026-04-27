@@ -23,17 +23,12 @@ class GoogleCloudDiscoveryengineV1ListIdentityMappingsResponse extends \Google\C
   protected $identityMappingEntriesType = GoogleCloudDiscoveryengineV1IdentityMappingEntry::class;
   protected $identityMappingEntriesDataType = 'array';
   /**
-   * A token that can be sent as `page_token` to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The Identity Mapping Entries.
-   *
-   * @param GoogleCloudDiscoveryengineV1IdentityMappingEntry[] $identityMappingEntries
+   * @param GoogleCloudDiscoveryengineV1IdentityMappingEntry[]
    */
   public function setIdentityMappingEntries($identityMappingEntries)
   {
@@ -47,10 +42,7 @@ class GoogleCloudDiscoveryengineV1ListIdentityMappingsResponse extends \Google\C
     return $this->identityMappingEntries;
   }
   /**
-   * A token that can be sent as `page_token` to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

@@ -22,81 +22,48 @@ class StatusReportingSettings extends \Google\Model
   protected $applicationReportingSettingsType = ApplicationReportingSettings::class;
   protected $applicationReportingSettingsDataType = '';
   /**
-   * Whether app reports are enabled.
-   *
    * @var bool
    */
   public $applicationReportsEnabled;
   /**
-   * Whether Common Criteria Mode reporting is enabled. This is supported only
-   * on company-owned devices.
-   *
    * @var bool
    */
   public $commonCriteriaModeEnabled;
   /**
-   * Optional. Whether defaultApplicationInfo reporting is enabled.
-   *
-   * @var bool
-   */
-  public $defaultApplicationInfoReportingEnabled;
-  /**
-   * Whether device settings reporting is enabled.
-   *
    * @var bool
    */
   public $deviceSettingsEnabled;
   /**
-   * Whether displays reporting is enabled. Report data is not available for
-   * personally owned devices with work profiles.
-   *
    * @var bool
    */
   public $displayInfoEnabled;
   /**
-   * Whether hardware status reporting is enabled. Report data is not available
-   * for personally owned devices with work profiles.
-   *
    * @var bool
    */
   public $hardwareStatusEnabled;
   /**
-   * Whether memory event reporting is enabled.
-   *
    * @var bool
    */
   public $memoryInfoEnabled;
   /**
-   * Whether network info reporting is enabled.
-   *
    * @var bool
    */
   public $networkInfoEnabled;
   /**
-   * Whether power management event reporting is enabled. Report data is not
-   * available for personally owned devices with work profiles.
-   *
    * @var bool
    */
   public $powerManagementEventsEnabled;
   /**
-   * Whether software info reporting is enabled.
-   *
    * @var bool
    */
   public $softwareInfoEnabled;
   /**
-   * Whether system properties reporting is enabled.
-   *
    * @var bool
    */
   public $systemPropertiesEnabled;
 
   /**
-   * Application reporting settings. Only applicable if
-   * application_reports_enabled is true.
-   *
-   * @param ApplicationReportingSettings $applicationReportingSettings
+   * @param ApplicationReportingSettings
    */
   public function setApplicationReportingSettings(ApplicationReportingSettings $applicationReportingSettings)
   {
@@ -110,9 +77,7 @@ class StatusReportingSettings extends \Google\Model
     return $this->applicationReportingSettings;
   }
   /**
-   * Whether app reports are enabled.
-   *
-   * @param bool $applicationReportsEnabled
+   * @param bool
    */
   public function setApplicationReportsEnabled($applicationReportsEnabled)
   {
@@ -126,10 +91,7 @@ class StatusReportingSettings extends \Google\Model
     return $this->applicationReportsEnabled;
   }
   /**
-   * Whether Common Criteria Mode reporting is enabled. This is supported only
-   * on company-owned devices.
-   *
-   * @param bool $commonCriteriaModeEnabled
+   * @param bool
    */
   public function setCommonCriteriaModeEnabled($commonCriteriaModeEnabled)
   {
@@ -143,25 +105,7 @@ class StatusReportingSettings extends \Google\Model
     return $this->commonCriteriaModeEnabled;
   }
   /**
-   * Optional. Whether defaultApplicationInfo reporting is enabled.
-   *
-   * @param bool $defaultApplicationInfoReportingEnabled
-   */
-  public function setDefaultApplicationInfoReportingEnabled($defaultApplicationInfoReportingEnabled)
-  {
-    $this->defaultApplicationInfoReportingEnabled = $defaultApplicationInfoReportingEnabled;
-  }
-  /**
-   * @return bool
-   */
-  public function getDefaultApplicationInfoReportingEnabled()
-  {
-    return $this->defaultApplicationInfoReportingEnabled;
-  }
-  /**
-   * Whether device settings reporting is enabled.
-   *
-   * @param bool $deviceSettingsEnabled
+   * @param bool
    */
   public function setDeviceSettingsEnabled($deviceSettingsEnabled)
   {
@@ -175,10 +119,7 @@ class StatusReportingSettings extends \Google\Model
     return $this->deviceSettingsEnabled;
   }
   /**
-   * Whether displays reporting is enabled. Report data is not available for
-   * personally owned devices with work profiles.
-   *
-   * @param bool $displayInfoEnabled
+   * @param bool
    */
   public function setDisplayInfoEnabled($displayInfoEnabled)
   {
@@ -192,10 +133,7 @@ class StatusReportingSettings extends \Google\Model
     return $this->displayInfoEnabled;
   }
   /**
-   * Whether hardware status reporting is enabled. Report data is not available
-   * for personally owned devices with work profiles.
-   *
-   * @param bool $hardwareStatusEnabled
+   * @param bool
    */
   public function setHardwareStatusEnabled($hardwareStatusEnabled)
   {
@@ -209,9 +147,7 @@ class StatusReportingSettings extends \Google\Model
     return $this->hardwareStatusEnabled;
   }
   /**
-   * Whether memory event reporting is enabled.
-   *
-   * @param bool $memoryInfoEnabled
+   * @param bool
    */
   public function setMemoryInfoEnabled($memoryInfoEnabled)
   {
@@ -225,9 +161,7 @@ class StatusReportingSettings extends \Google\Model
     return $this->memoryInfoEnabled;
   }
   /**
-   * Whether network info reporting is enabled.
-   *
-   * @param bool $networkInfoEnabled
+   * @param bool
    */
   public function setNetworkInfoEnabled($networkInfoEnabled)
   {
@@ -241,10 +175,7 @@ class StatusReportingSettings extends \Google\Model
     return $this->networkInfoEnabled;
   }
   /**
-   * Whether power management event reporting is enabled. Report data is not
-   * available for personally owned devices with work profiles.
-   *
-   * @param bool $powerManagementEventsEnabled
+   * @param bool
    */
   public function setPowerManagementEventsEnabled($powerManagementEventsEnabled)
   {
@@ -258,9 +189,7 @@ class StatusReportingSettings extends \Google\Model
     return $this->powerManagementEventsEnabled;
   }
   /**
-   * Whether software info reporting is enabled.
-   *
-   * @param bool $softwareInfoEnabled
+   * @param bool
    */
   public function setSoftwareInfoEnabled($softwareInfoEnabled)
   {
@@ -274,9 +203,7 @@ class StatusReportingSettings extends \Google\Model
     return $this->softwareInfoEnabled;
   }
   /**
-   * Whether system properties reporting is enabled.
-   *
-   * @param bool $systemPropertiesEnabled
+   * @param bool
    */
   public function setSystemPropertiesEnabled($systemPropertiesEnabled)
   {

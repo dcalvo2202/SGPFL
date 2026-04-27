@@ -20,106 +20,32 @@ namespace Google\Service\CloudComposer;
 class OperationMetadata extends \Google\Model
 {
   /**
-   * Unused.
-   */
-  public const OPERATION_TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * A resource creation operation.
-   */
-  public const OPERATION_TYPE_CREATE = 'CREATE';
-  /**
-   * A resource deletion operation.
-   */
-  public const OPERATION_TYPE_DELETE = 'DELETE';
-  /**
-   * A resource update operation.
-   */
-  public const OPERATION_TYPE_UPDATE = 'UPDATE';
-  /**
-   * A resource check operation.
-   */
-  public const OPERATION_TYPE_CHECK = 'CHECK';
-  /**
-   * Saves snapshot of the resource operation.
-   */
-  public const OPERATION_TYPE_SAVE_SNAPSHOT = 'SAVE_SNAPSHOT';
-  /**
-   * Loads snapshot of the resource operation.
-   */
-  public const OPERATION_TYPE_LOAD_SNAPSHOT = 'LOAD_SNAPSHOT';
-  /**
-   * Triggers failover of environment's Cloud SQL instance (only for highly
-   * resilient environments).
-   */
-  public const OPERATION_TYPE_DATABASE_FAILOVER = 'DATABASE_FAILOVER';
-  /**
-   * Migrates resource to a new major version.
-   */
-  public const OPERATION_TYPE_MIGRATE = 'MIGRATE';
-  /**
-   * Unused.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The operation has been created but is not yet started.
-   */
-  public const STATE_PENDING = 'PENDING';
-  /**
-   * The operation is underway.
-   */
-  public const STATE_RUNNING = 'RUNNING';
-  /**
-   * The operation completed successfully.
-   */
-  public const STATE_SUCCEEDED = 'SUCCEEDED';
-  public const STATE_SUCCESSFUL = 'SUCCESSFUL';
-  /**
-   * The operation is no longer running but did not succeed.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * Output only. The time the operation was submitted to the server.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. The time when the operation terminated, regardless of its
-   * success. This field is unset if the operation is still ongoing.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * Output only. The type of operation being performed.
-   *
    * @var string
    */
   public $operationType;
   /**
-   * Output only. The resource being operated on, as a [relative resource name](
-   * /apis/design/resource_names#relative_resource_name).
-   *
    * @var string
    */
   public $resource;
   /**
-   * Output only. The UUID of the resource being operated on.
-   *
    * @var string
    */
   public $resourceUuid;
   /**
-   * Output only. The current operation state.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Output only. The time the operation was submitted to the server.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -133,10 +59,7 @@ class OperationMetadata extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. The time when the operation terminated, regardless of its
-   * success. This field is unset if the operation is still ongoing.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -150,29 +73,21 @@ class OperationMetadata extends \Google\Model
     return $this->endTime;
   }
   /**
-   * Output only. The type of operation being performed.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, CREATE, DELETE, UPDATE, CHECK,
-   * SAVE_SNAPSHOT, LOAD_SNAPSHOT, DATABASE_FAILOVER, MIGRATE
-   *
-   * @param self::OPERATION_TYPE_* $operationType
+   * @param string
    */
   public function setOperationType($operationType)
   {
     $this->operationType = $operationType;
   }
   /**
-   * @return self::OPERATION_TYPE_*
+   * @return string
    */
   public function getOperationType()
   {
     return $this->operationType;
   }
   /**
-   * Output only. The resource being operated on, as a [relative resource name](
-   * /apis/design/resource_names#relative_resource_name).
-   *
-   * @param string $resource
+   * @param string
    */
   public function setResource($resource)
   {
@@ -186,9 +101,7 @@ class OperationMetadata extends \Google\Model
     return $this->resource;
   }
   /**
-   * Output only. The UUID of the resource being operated on.
-   *
-   * @param string $resourceUuid
+   * @param string
    */
   public function setResourceUuid($resourceUuid)
   {
@@ -202,19 +115,14 @@ class OperationMetadata extends \Google\Model
     return $this->resourceUuid;
   }
   /**
-   * Output only. The current operation state.
-   *
-   * Accepted values: STATE_UNSPECIFIED, PENDING, RUNNING, SUCCEEDED,
-   * SUCCESSFUL, FAILED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

@@ -20,41 +20,28 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1betaImportDocumentsMetadata extends \Google\Model
 {
   /**
-   * Operation create time.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Count of entries that encountered errors while processing.
-   *
    * @var string
    */
   public $failureCount;
   /**
-   * Count of entries that were processed successfully.
-   *
    * @var string
    */
   public $successCount;
   /**
-   * Total count of entries that were processed.
-   *
    * @var string
    */
   public $totalCount;
   /**
-   * Operation last update time. If the operation is done, this is also the
-   * finish time.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Operation create time.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -68,9 +55,7 @@ class GoogleCloudDiscoveryengineV1betaImportDocumentsMetadata extends \Google\Mo
     return $this->createTime;
   }
   /**
-   * Count of entries that encountered errors while processing.
-   *
-   * @param string $failureCount
+   * @param string
    */
   public function setFailureCount($failureCount)
   {
@@ -84,9 +69,7 @@ class GoogleCloudDiscoveryengineV1betaImportDocumentsMetadata extends \Google\Mo
     return $this->failureCount;
   }
   /**
-   * Count of entries that were processed successfully.
-   *
-   * @param string $successCount
+   * @param string
    */
   public function setSuccessCount($successCount)
   {
@@ -100,9 +83,7 @@ class GoogleCloudDiscoveryengineV1betaImportDocumentsMetadata extends \Google\Mo
     return $this->successCount;
   }
   /**
-   * Total count of entries that were processed.
-   *
-   * @param string $totalCount
+   * @param string
    */
   public function setTotalCount($totalCount)
   {
@@ -116,10 +97,7 @@ class GoogleCloudDiscoveryengineV1betaImportDocumentsMetadata extends \Google\Mo
     return $this->totalCount;
   }
   /**
-   * Operation last update time. If the operation is done, this is also the
-   * finish time.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

@@ -988,10 +988,6 @@ class DatabaseMigrationService extends \Google\Service
                   'location' => 'query',
                   'type' => 'string',
                 ],
-                'returnPartialSuccess' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
               ],
             ],
           ]
@@ -1021,10 +1017,6 @@ class DatabaseMigrationService extends \Google\Service
                   'type' => 'string',
                 ],
                 'skipValidation' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
-                'validateOnly' => [
                   'location' => 'query',
                   'type' => 'boolean',
                 ],

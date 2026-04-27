@@ -23,17 +23,12 @@ class GoogleCloudDatacatalogLineageV1ListLineageEventsResponse extends \Google\C
   protected $lineageEventsType = GoogleCloudDatacatalogLineageV1LineageEvent::class;
   protected $lineageEventsDataType = 'array';
   /**
-   * The token to specify as `page_token` in the next call to get the next page.
-   * If this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Lineage events from the specified project and location.
-   *
-   * @param GoogleCloudDatacatalogLineageV1LineageEvent[] $lineageEvents
+   * @param GoogleCloudDatacatalogLineageV1LineageEvent[]
    */
   public function setLineageEvents($lineageEvents)
   {
@@ -47,10 +42,7 @@ class GoogleCloudDatacatalogLineageV1ListLineageEventsResponse extends \Google\C
     return $this->lineageEvents;
   }
   /**
-   * The token to specify as `page_token` in the next call to get the next page.
-   * If this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

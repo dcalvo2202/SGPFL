@@ -20,26 +20,16 @@ namespace Google\Service\DriveActivity;
 class DriveReference extends \Google\Model
 {
   /**
-   * The resource name of the shared drive. The format is
-   * `COLLECTION_ID/DRIVE_ID`. Clients should not assume a specific collection
-   * ID for this resource name.
-   *
    * @var string
    */
   public $name;
   /**
-   * The title of the shared drive.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * The resource name of the shared drive. The format is
-   * `COLLECTION_ID/DRIVE_ID`. Clients should not assume a specific collection
-   * ID for this resource name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -53,9 +43,7 @@ class DriveReference extends \Google\Model
     return $this->name;
   }
   /**
-   * The title of the shared drive.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

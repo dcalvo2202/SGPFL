@@ -22,17 +22,12 @@ class GoogleCloudDatalabelingV1beta1ConfusionMatrixEntry extends \Google\Model
   protected $annotationSpecType = GoogleCloudDatalabelingV1beta1AnnotationSpec::class;
   protected $annotationSpecDataType = '';
   /**
-   * Number of items predicted to have this label. (The ground truth label for
-   * these items is the `Row.annotationSpec` of this entry's parent.)
-   *
    * @var int
    */
   public $itemCount;
 
   /**
-   * The annotation spec of a predicted label.
-   *
-   * @param GoogleCloudDatalabelingV1beta1AnnotationSpec $annotationSpec
+   * @param GoogleCloudDatalabelingV1beta1AnnotationSpec
    */
   public function setAnnotationSpec(GoogleCloudDatalabelingV1beta1AnnotationSpec $annotationSpec)
   {
@@ -46,10 +41,7 @@ class GoogleCloudDatalabelingV1beta1ConfusionMatrixEntry extends \Google\Model
     return $this->annotationSpec;
   }
   /**
-   * Number of items predicted to have this label. (The ground truth label for
-   * these items is the `Row.annotationSpec` of this entry's parent.)
-   *
-   * @param int $itemCount
+   * @param int
    */
   public function setItemCount($itemCount)
   {

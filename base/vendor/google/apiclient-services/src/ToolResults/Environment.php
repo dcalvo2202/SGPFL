@@ -27,35 +27,24 @@ class Environment extends \Google\Collection
   protected $dimensionValueType = EnvironmentDimensionValueEntry::class;
   protected $dimensionValueDataType = 'array';
   /**
-   * A short human-readable name to display in the UI. Maximum of 100
-   * characters. For example: Nexus 5, API 27.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. An Environment id.
-   *
    * @var string
    */
   public $environmentId;
   protected $environmentResultType = MergedResult::class;
   protected $environmentResultDataType = '';
   /**
-   * Output only. An Execution id.
-   *
    * @var string
    */
   public $executionId;
   /**
-   * Output only. A History id.
-   *
    * @var string
    */
   public $historyId;
   /**
-   * Output only. A Project id.
-   *
    * @var string
    */
   public $projectId;
@@ -65,10 +54,7 @@ class Environment extends \Google\Collection
   protected $shardSummariesDataType = 'array';
 
   /**
-   * Output only. The time when the Environment status was set to complete. This
-   * value will be set automatically when state transitions to COMPLETE.
-   *
-   * @param Timestamp $completionTime
+   * @param Timestamp
    */
   public function setCompletionTime(Timestamp $completionTime)
   {
@@ -82,9 +68,7 @@ class Environment extends \Google\Collection
     return $this->completionTime;
   }
   /**
-   * Output only. The time when the Environment was created.
-   *
-   * @param Timestamp $creationTime
+   * @param Timestamp
    */
   public function setCreationTime(Timestamp $creationTime)
   {
@@ -98,11 +82,7 @@ class Environment extends \Google\Collection
     return $this->creationTime;
   }
   /**
-   * Dimension values describing the environment. Dimension values always
-   * consist of "Model", "Version", "Locale", and "Orientation". - In response:
-   * always set - In create request: always set - In update request: never set
-   *
-   * @param EnvironmentDimensionValueEntry[] $dimensionValue
+   * @param EnvironmentDimensionValueEntry[]
    */
   public function setDimensionValue($dimensionValue)
   {
@@ -116,10 +96,7 @@ class Environment extends \Google\Collection
     return $this->dimensionValue;
   }
   /**
-   * A short human-readable name to display in the UI. Maximum of 100
-   * characters. For example: Nexus 5, API 27.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -133,9 +110,7 @@ class Environment extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Output only. An Environment id.
-   *
-   * @param string $environmentId
+   * @param string
    */
   public function setEnvironmentId($environmentId)
   {
@@ -149,9 +124,7 @@ class Environment extends \Google\Collection
     return $this->environmentId;
   }
   /**
-   * Merged result of the environment.
-   *
-   * @param MergedResult $environmentResult
+   * @param MergedResult
    */
   public function setEnvironmentResult(MergedResult $environmentResult)
   {
@@ -165,9 +138,7 @@ class Environment extends \Google\Collection
     return $this->environmentResult;
   }
   /**
-   * Output only. An Execution id.
-   *
-   * @param string $executionId
+   * @param string
    */
   public function setExecutionId($executionId)
   {
@@ -181,9 +152,7 @@ class Environment extends \Google\Collection
     return $this->executionId;
   }
   /**
-   * Output only. A History id.
-   *
-   * @param string $historyId
+   * @param string
    */
   public function setHistoryId($historyId)
   {
@@ -197,9 +166,7 @@ class Environment extends \Google\Collection
     return $this->historyId;
   }
   /**
-   * Output only. A Project id.
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {
@@ -213,9 +180,7 @@ class Environment extends \Google\Collection
     return $this->projectId;
   }
   /**
-   * The location where output files are stored in the user bucket.
-   *
-   * @param ResultsStorage $resultsStorage
+   * @param ResultsStorage
    */
   public function setResultsStorage(ResultsStorage $resultsStorage)
   {
@@ -229,10 +194,7 @@ class Environment extends \Google\Collection
     return $this->resultsStorage;
   }
   /**
-   * Output only. Summaries of shards. Only one shard will present unless
-   * sharding feature is enabled in TestExecutionService.
-   *
-   * @param ShardSummary[] $shardSummaries
+   * @param ShardSummary[]
    */
   public function setShardSummaries($shardSummaries)
   {

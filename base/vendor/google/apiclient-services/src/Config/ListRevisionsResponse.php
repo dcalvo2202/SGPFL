@@ -21,28 +21,18 @@ class ListRevisionsResponse extends \Google\Collection
 {
   protected $collection_key = 'unreachable';
   /**
-   * A token to request the next page of resources from the 'ListRevisions'
-   * method. The value of an empty string means that there are no more resources
-   * to return.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $revisionsType = Revision::class;
   protected $revisionsDataType = 'array';
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * A token to request the next page of resources from the 'ListRevisions'
-   * method. The value of an empty string means that there are no more resources
-   * to return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -56,9 +46,7 @@ class ListRevisionsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * List of Revisions.
-   *
-   * @param Revision[] $revisions
+   * @param Revision[]
    */
   public function setRevisions($revisions)
   {
@@ -72,9 +60,7 @@ class ListRevisionsResponse extends \Google\Collection
     return $this->revisions;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

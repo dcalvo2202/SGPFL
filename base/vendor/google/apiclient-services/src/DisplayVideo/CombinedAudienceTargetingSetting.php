@@ -20,18 +20,12 @@ namespace Google\Service\DisplayVideo;
 class CombinedAudienceTargetingSetting extends \Google\Model
 {
   /**
-   * Required. Combined audience id of combined audience targeting setting. This
-   * id is combined_audience_id.
-   *
    * @var string
    */
   public $combinedAudienceId;
 
   /**
-   * Required. Combined audience id of combined audience targeting setting. This
-   * id is combined_audience_id.
-   *
-   * @param string $combinedAudienceId
+   * @param string
    */
   public function setCombinedAudienceId($combinedAudienceId)
   {

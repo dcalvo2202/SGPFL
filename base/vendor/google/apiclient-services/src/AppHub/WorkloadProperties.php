@@ -19,74 +19,21 @@ namespace Google\Service\AppHub;
 
 class WorkloadProperties extends \Google\Model
 {
-  protected $extendedMetadataType = ExtendedMetadata::class;
-  protected $extendedMetadataDataType = 'map';
-  protected $functionalTypeType = FunctionalType::class;
-  protected $functionalTypeDataType = '';
   /**
-   * Output only. The service project identifier that the underlying cloud
-   * resource resides in. Empty for non-cloud resources.
-   *
    * @var string
    */
   public $gcpProject;
-  protected $identityType = Identity::class;
-  protected $identityDataType = '';
   /**
-   * Output only. The location that the underlying compute resource resides in
-   * (for example, us-west1).
-   *
    * @var string
    */
   public $location;
   /**
-   * Output only. The location that the underlying compute resource resides in
-   * if it is zonal (for example, us-west1-a).
-   *
    * @var string
    */
   public $zone;
 
   /**
-   * Output only. Additional metadata specific to the resource type. The key is
-   * a string that identifies the type of metadata and the value is the metadata
-   * contents specific to that type. Key format:
-   * `apphub.googleapis.com/{metadataType}`
-   *
-   * @param ExtendedMetadata[] $extendedMetadata
-   */
-  public function setExtendedMetadata($extendedMetadata)
-  {
-    $this->extendedMetadata = $extendedMetadata;
-  }
-  /**
-   * @return ExtendedMetadata[]
-   */
-  public function getExtendedMetadata()
-  {
-    return $this->extendedMetadata;
-  }
-  /**
-   * Output only. The type of the workload.
-   *
-   * @param FunctionalType $functionalType
-   */
-  public function setFunctionalType(FunctionalType $functionalType)
-  {
-    $this->functionalType = $functionalType;
-  }
-  /**
-   * @return FunctionalType
-   */
-  public function getFunctionalType()
-  {
-    return $this->functionalType;
-  }
-  /**
-   * Output only. The service project identifier that the underlying cloud
-   * resource resides in. Empty for non-cloud resources.
-   *
-   * @param string $gcpProject
+   * @param string
    */
   public function setGcpProject($gcpProject)
   {
@@ -100,26 +47,7 @@ class WorkloadProperties extends \Google\Model
     return $this->gcpProject;
   }
   /**
-   * Output only. The identity associated with the workload.
-   *
-   * @param Identity $identity
-   */
-  public function setIdentity(Identity $identity)
-  {
-    $this->identity = $identity;
-  }
-  /**
-   * @return Identity
-   */
-  public function getIdentity()
-  {
-    return $this->identity;
-  }
-  /**
-   * Output only. The location that the underlying compute resource resides in
-   * (for example, us-west1).
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -133,10 +61,7 @@ class WorkloadProperties extends \Google\Model
     return $this->location;
   }
   /**
-   * Output only. The location that the underlying compute resource resides in
-   * if it is zonal (for example, us-west1-a).
-   *
-   * @param string $zone
+   * @param string
    */
   public function setZone($zone)
   {

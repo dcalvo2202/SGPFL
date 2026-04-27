@@ -27,9 +27,7 @@ class LocationFilter extends \Google\Model
   protected $regionDataType = '';
 
   /**
-   * Area as a circle.
-   *
-   * @param Circle $circle
+   * @param Circle
    */
   public function setCircle(Circle $circle)
   {
@@ -43,9 +41,7 @@ class LocationFilter extends \Google\Model
     return $this->circle;
   }
   /**
-   * Custom area specified by a polygon.
-   *
-   * @param CustomArea $customArea
+   * @param CustomArea
    */
   public function setCustomArea(CustomArea $customArea)
   {
@@ -59,9 +55,7 @@ class LocationFilter extends \Google\Model
     return $this->customArea;
   }
   /**
-   * Area as region.
-   *
-   * @param Region $region
+   * @param Region
    */
   public function setRegion(Region $region)
   {

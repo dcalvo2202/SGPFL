@@ -25,7 +25,7 @@ class TableCell extends \Google\Model
   public $v;
 
   /**
-   * @param array $v
+   * @param array
    */
   public function setV($v)
   {

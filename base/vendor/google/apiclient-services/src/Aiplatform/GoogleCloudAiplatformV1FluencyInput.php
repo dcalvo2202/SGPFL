@@ -25,9 +25,7 @@ class GoogleCloudAiplatformV1FluencyInput extends \Google\Model
   protected $metricSpecDataType = '';
 
   /**
-   * Required. Fluency instance.
-   *
-   * @param GoogleCloudAiplatformV1FluencyInstance $instance
+   * @param GoogleCloudAiplatformV1FluencyInstance
    */
   public function setInstance(GoogleCloudAiplatformV1FluencyInstance $instance)
   {
@@ -41,9 +39,7 @@ class GoogleCloudAiplatformV1FluencyInput extends \Google\Model
     return $this->instance;
   }
   /**
-   * Required. Spec for fluency score metric.
-   *
-   * @param GoogleCloudAiplatformV1FluencySpec $metricSpec
+   * @param GoogleCloudAiplatformV1FluencySpec
    */
   public function setMetricSpec(GoogleCloudAiplatformV1FluencySpec $metricSpec)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\CloudComposer;
 class CloudDataLineageIntegration extends \Google\Model
 {
   /**
-   * Optional. Whether or not Cloud Data Lineage integration is enabled.
-   *
    * @var bool
    */
   public $enabled;
 
   /**
-   * Optional. Whether or not Cloud Data Lineage integration is enabled.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {

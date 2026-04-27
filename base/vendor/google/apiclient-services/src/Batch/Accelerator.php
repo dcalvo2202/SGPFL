@@ -20,40 +20,24 @@ namespace Google\Service\Batch;
 class Accelerator extends \Google\Model
 {
   /**
-   * The number of accelerators of this type.
-   *
    * @var string
    */
   public $count;
   /**
-   * Optional. The NVIDIA GPU driver version that should be installed for this
-   * type. You can define the specific driver version such as "470.103.01",
-   * following the driver version requirements in
-   * https://cloud.google.com/compute/docs/gpus/install-drivers-gpu#minimum-
-   * driver. Batch will install the specific accelerator driver if qualified.
-   *
    * @var string
    */
   public $driverVersion;
   /**
-   * Deprecated: please use instances[0].install_gpu_drivers instead.
-   *
-   * @deprecated
    * @var bool
    */
   public $installGpuDrivers;
   /**
-   * The accelerator type. For example, "nvidia-tesla-t4". See `gcloud compute
-   * accelerator-types list`.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The number of accelerators of this type.
-   *
-   * @param string $count
+   * @param string
    */
   public function setCount($count)
   {
@@ -67,13 +51,7 @@ class Accelerator extends \Google\Model
     return $this->count;
   }
   /**
-   * Optional. The NVIDIA GPU driver version that should be installed for this
-   * type. You can define the specific driver version such as "470.103.01",
-   * following the driver version requirements in
-   * https://cloud.google.com/compute/docs/gpus/install-drivers-gpu#minimum-
-   * driver. Batch will install the specific accelerator driver if qualified.
-   *
-   * @param string $driverVersion
+   * @param string
    */
   public function setDriverVersion($driverVersion)
   {
@@ -87,17 +65,13 @@ class Accelerator extends \Google\Model
     return $this->driverVersion;
   }
   /**
-   * Deprecated: please use instances[0].install_gpu_drivers instead.
-   *
-   * @deprecated
-   * @param bool $installGpuDrivers
+   * @param bool
    */
   public function setInstallGpuDrivers($installGpuDrivers)
   {
     $this->installGpuDrivers = $installGpuDrivers;
   }
   /**
-   * @deprecated
    * @return bool
    */
   public function getInstallGpuDrivers()
@@ -105,10 +79,7 @@ class Accelerator extends \Google\Model
     return $this->installGpuDrivers;
   }
   /**
-   * The accelerator type. For example, "nvidia-tesla-t4". See `gcloud compute
-   * accelerator-types list`.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

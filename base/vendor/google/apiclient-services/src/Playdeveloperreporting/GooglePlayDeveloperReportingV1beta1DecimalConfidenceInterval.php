@@ -25,9 +25,7 @@ class GooglePlayDeveloperReportingV1beta1DecimalConfidenceInterval extends \Goog
   protected $upperBoundDataType = '';
 
   /**
-   * The confidence interval's lower bound.
-   *
-   * @param GoogleTypeDecimal $lowerBound
+   * @param GoogleTypeDecimal
    */
   public function setLowerBound(GoogleTypeDecimal $lowerBound)
   {
@@ -41,9 +39,7 @@ class GooglePlayDeveloperReportingV1beta1DecimalConfidenceInterval extends \Goog
     return $this->lowerBound;
   }
   /**
-   * The confidence interval's upper bound.
-   *
-   * @param GoogleTypeDecimal $upperBound
+   * @param GoogleTypeDecimal
    */
   public function setUpperBound(GoogleTypeDecimal $upperBound)
   {

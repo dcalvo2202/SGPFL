@@ -21,9 +21,6 @@ class GoogleCloudChannelV1ListReportsResponse extends \Google\Collection
 {
   protected $collection_key = 'reports';
   /**
-   * Pass this token to FetchReportResultsRequest.page_token to retrieve the
-   * next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GoogleCloudChannelV1ListReportsResponse extends \Google\Collection
   protected $reportsDataType = 'array';
 
   /**
-   * Pass this token to FetchReportResultsRequest.page_token to retrieve the
-   * next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class GoogleCloudChannelV1ListReportsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The reports available to the partner.
-   *
-   * @param GoogleCloudChannelV1Report[] $reports
+   * @param GoogleCloudChannelV1Report[]
    */
   public function setReports($reports)
   {

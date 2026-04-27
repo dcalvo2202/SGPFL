@@ -23,23 +23,16 @@ class ListMetadataImportsResponse extends \Google\Collection
   protected $metadataImportsType = MetadataImport::class;
   protected $metadataImportsDataType = 'array';
   /**
-   * A token that can be sent as page_token to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * The imports in the specified service.
-   *
-   * @param MetadataImport[] $metadataImports
+   * @param MetadataImport[]
    */
   public function setMetadataImports($metadataImports)
   {
@@ -53,10 +46,7 @@ class ListMetadataImportsResponse extends \Google\Collection
     return $this->metadataImports;
   }
   /**
-   * A token that can be sent as page_token to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -70,9 +60,7 @@ class ListMetadataImportsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

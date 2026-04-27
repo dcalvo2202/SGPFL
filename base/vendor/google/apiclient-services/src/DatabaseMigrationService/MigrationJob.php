@@ -20,227 +20,54 @@ namespace Google\Service\DatabaseMigrationService;
 class MigrationJob extends \Google\Model
 {
   /**
-   * If not specified, defaults to LOGICAL
-   */
-  public const DUMP_TYPE_DUMP_TYPE_UNSPECIFIED = 'DUMP_TYPE_UNSPECIFIED';
-  /**
-   * Logical dump.
-   */
-  public const DUMP_TYPE_LOGICAL = 'LOGICAL';
-  /**
-   * Physical file-based dump. Supported for MySQL to CloudSQL for MySQL
-   * migrations only.
-   */
-  public const DUMP_TYPE_PHYSICAL = 'PHYSICAL';
-  /**
-   * The phase of the migration job is unknown.
-   */
-  public const PHASE_PHASE_UNSPECIFIED = 'PHASE_UNSPECIFIED';
-  /**
-   * The migration job is in the full dump phase.
-   */
-  public const PHASE_FULL_DUMP = 'FULL_DUMP';
-  /**
-   * The migration job is CDC phase.
-   */
-  public const PHASE_CDC = 'CDC';
-  /**
-   * The migration job is running the promote phase.
-   */
-  public const PHASE_PROMOTE_IN_PROGRESS = 'PROMOTE_IN_PROGRESS';
-  /**
-   * Only RDS flow - waiting for source writes to stop
-   */
-  public const PHASE_WAITING_FOR_SOURCE_WRITES_TO_STOP = 'WAITING_FOR_SOURCE_WRITES_TO_STOP';
-  /**
-   * Only RDS flow - the sources writes stopped, waiting for dump to begin
-   */
-  public const PHASE_PREPARING_THE_DUMP = 'PREPARING_THE_DUMP';
-  /**
-   * The migration job is ready to be promoted.
-   */
-  public const PHASE_READY_FOR_PROMOTE = 'READY_FOR_PROMOTE';
-  /**
-   * Unknown purpose. Will be defaulted to MIGRATE.
-   */
-  public const PURPOSE_PURPOSE_UNSPECIFIED = 'PURPOSE_UNSPECIFIED';
-  /**
-   * Standard migration job.
-   */
-  public const PURPOSE_MIGRATE = 'MIGRATE';
-  /**
-   * Failback replication job.
-   */
-  public const PURPOSE_FAILBACK = 'FAILBACK';
-  /**
-   * The state of the migration job is unknown.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The migration job is down for maintenance.
-   */
-  public const STATE_MAINTENANCE = 'MAINTENANCE';
-  /**
-   * The migration job is in draft mode and no resources are created.
-   */
-  public const STATE_DRAFT = 'DRAFT';
-  /**
-   * The migration job is being created.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * The migration job is created and not started.
-   */
-  public const STATE_NOT_STARTED = 'NOT_STARTED';
-  /**
-   * The migration job is running.
-   */
-  public const STATE_RUNNING = 'RUNNING';
-  /**
-   * The migration job failed.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * The migration job has been completed.
-   */
-  public const STATE_COMPLETED = 'COMPLETED';
-  /**
-   * The migration job is being deleted.
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * The migration job is being stopped.
-   */
-  public const STATE_STOPPING = 'STOPPING';
-  /**
-   * The migration job is currently stopped.
-   */
-  public const STATE_STOPPED = 'STOPPED';
-  /**
-   * The migration job has been deleted.
-   */
-  public const STATE_DELETED = 'DELETED';
-  /**
-   * The migration job is being updated.
-   */
-  public const STATE_UPDATING = 'UPDATING';
-  /**
-   * The migration job is starting.
-   */
-  public const STATE_STARTING = 'STARTING';
-  /**
-   * The migration job is restarting.
-   */
-  public const STATE_RESTARTING = 'RESTARTING';
-  /**
-   * The migration job is resuming.
-   */
-  public const STATE_RESUMING = 'RESUMING';
-  /**
-   * The type of the migration job is unknown.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * The migration job is a one time migration.
-   */
-  public const TYPE_ONE_TIME = 'ONE_TIME';
-  /**
-   * The migration job is a continuous migration.
-   */
-  public const TYPE_CONTINUOUS = 'CONTINUOUS';
-  /**
-   * The CMEK (customer-managed encryption key) fully qualified key name used
-   * for the migration job. This field supports all migration jobs types except
-   * for: * Mysql to Mysql (use the cmek field in the cloudsql connection
-   * profile instead). * PostrgeSQL to PostgreSQL (use the cmek field in the
-   * cloudsql connection profile instead). * PostgreSQL to AlloyDB (use the
-   * kms_key_name field in the alloydb connection profile instead). Each Cloud
-   * CMEK key has the following format:
-   * projects/[PROJECT]/locations/[REGION]/keyRings/[RING]/cryptoKeys/[KEY_NAME]
-   *
    * @var string
    */
   public $cmekKeyName;
   protected $conversionWorkspaceType = ConversionWorkspaceInfo::class;
   protected $conversionWorkspaceDataType = '';
   /**
-   * Output only. The timestamp when the migration job resource was created. A
-   * timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example:
-   * "2014-10-02T15:01:23.045123456Z".
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Required. The resource name (URI) of the destination connection profile.
-   *
    * @var string
    */
   public $destination;
   protected $destinationDatabaseType = DatabaseType::class;
   protected $destinationDatabaseDataType = '';
   /**
-   * The migration job display name.
-   *
    * @var string
    */
   public $displayName;
   protected $dumpFlagsType = DumpFlags::class;
   protected $dumpFlagsDataType = '';
   /**
-   * The path to the dump file in Google Cloud Storage, in the format:
-   * (gs://[BUCKET_NAME]/[OBJECT_NAME]). This field and the "dump_flags" field
-   * are mutually exclusive.
-   *
    * @var string
    */
   public $dumpPath;
   /**
-   * Optional. The type of the data dump. Supported for MySQL to CloudSQL for
-   * MySQL migrations only.
-   *
    * @var string
    */
   public $dumpType;
   /**
-   * Output only. The duration of the migration job (in seconds). A duration in
-   * seconds with up to nine fractional digits, terminated by 's'. Example:
-   * "3.5s".
-   *
    * @var string
    */
   public $duration;
   /**
-   * Output only. If the migration job is completed, the time when it was
-   * completed.
-   *
    * @var string
    */
   public $endTime;
   protected $errorType = Status::class;
   protected $errorDataType = '';
   /**
-   * This field can be used to select the entities to migrate as part of the
-   * migration job. It uses AIP-160 notation to select a subset of the entities
-   * configured on the associated conversion-workspace. This field should not be
-   * set on migration-jobs that are not associated with a conversion workspace.
-   *
    * @var string
    */
   public $filter;
   /**
-   * The resource labels for migration job to use to annotate any related
-   * underlying resources such as Compute Engine VMs. An object containing a
-   * list of "key": "value" pairs. Example: `{ "name": "wrench", "mass":
-   * "1.3kg", "count": "3" }`.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * The name (URI) of this migration job resource, in the form of:
-   * projects/{project}/locations/{location}/migrationJobs/{migrationJob}.
-   *
    * @var string
    */
   public $name;
@@ -248,47 +75,23 @@ class MigrationJob extends \Google\Model
   protected $objectsConfigDataType = '';
   protected $oracleToPostgresConfigType = OracleToPostgresConfig::class;
   protected $oracleToPostgresConfigDataType = '';
-  /**
-   * Optional. A failback replication pointer to the resource name (URI) of the
-   * original migration job.
-   *
-   * @var string
-   */
-  public $originalMigrationName;
   protected $performanceConfigType = PerformanceConfig::class;
   protected $performanceConfigDataType = '';
   /**
-   * Output only. The current migration job phase.
-   *
    * @var string
    */
   public $phase;
-  protected $postgresToSqlserverConfigType = PostgresToSqlServerConfig::class;
-  protected $postgresToSqlserverConfigDataType = '';
-  /**
-   * Output only. Migration job mode. Migration jobs can be standard forward
-   * jobs or failback migration jobs.
-   *
-   * @var string
-   */
-  public $purpose;
   protected $reverseSshConnectivityType = ReverseSshConnectivity::class;
   protected $reverseSshConnectivityDataType = '';
   /**
-   * Output only. Reserved for future use.
-   *
    * @var bool
    */
   public $satisfiesPzi;
   /**
-   * Output only. Reserved for future use.
-   *
    * @var bool
    */
   public $satisfiesPzs;
   /**
-   * Required. The resource name (URI) of the source connection profile.
-   *
    * @var string
    */
   public $source;
@@ -299,24 +102,16 @@ class MigrationJob extends \Google\Model
   protected $sqlserverToPostgresConfigType = SqlServerToPostgresConfig::class;
   protected $sqlserverToPostgresConfigDataType = '';
   /**
-   * The current migration job state.
-   *
    * @var string
    */
   public $state;
   protected $staticIpConnectivityType = StaticIpConnectivity::class;
   protected $staticIpConnectivityDataType = '';
   /**
-   * Required. The migration job type.
-   *
    * @var string
    */
   public $type;
   /**
-   * Output only. The timestamp when the migration job resource was last
-   * updated. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds.
-   * Example: "2014-10-02T15:01:23.045123456Z".
-   *
    * @var string
    */
   public $updateTime;
@@ -324,16 +119,7 @@ class MigrationJob extends \Google\Model
   protected $vpcPeeringConnectivityDataType = '';
 
   /**
-   * The CMEK (customer-managed encryption key) fully qualified key name used
-   * for the migration job. This field supports all migration jobs types except
-   * for: * Mysql to Mysql (use the cmek field in the cloudsql connection
-   * profile instead). * PostrgeSQL to PostgreSQL (use the cmek field in the
-   * cloudsql connection profile instead). * PostgreSQL to AlloyDB (use the
-   * kms_key_name field in the alloydb connection profile instead). Each Cloud
-   * CMEK key has the following format:
-   * projects/[PROJECT]/locations/[REGION]/keyRings/[RING]/cryptoKeys/[KEY_NAME]
-   *
-   * @param string $cmekKeyName
+   * @param string
    */
   public function setCmekKeyName($cmekKeyName)
   {
@@ -347,9 +133,7 @@ class MigrationJob extends \Google\Model
     return $this->cmekKeyName;
   }
   /**
-   * The conversion workspace used by the migration.
-   *
-   * @param ConversionWorkspaceInfo $conversionWorkspace
+   * @param ConversionWorkspaceInfo
    */
   public function setConversionWorkspace(ConversionWorkspaceInfo $conversionWorkspace)
   {
@@ -363,11 +147,7 @@ class MigrationJob extends \Google\Model
     return $this->conversionWorkspace;
   }
   /**
-   * Output only. The timestamp when the migration job resource was created. A
-   * timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example:
-   * "2014-10-02T15:01:23.045123456Z".
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -381,9 +161,7 @@ class MigrationJob extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Required. The resource name (URI) of the destination connection profile.
-   *
-   * @param string $destination
+   * @param string
    */
   public function setDestination($destination)
   {
@@ -397,9 +175,7 @@ class MigrationJob extends \Google\Model
     return $this->destination;
   }
   /**
-   * The database engine type and provider of the destination.
-   *
-   * @param DatabaseType $destinationDatabase
+   * @param DatabaseType
    */
   public function setDestinationDatabase(DatabaseType $destinationDatabase)
   {
@@ -413,9 +189,7 @@ class MigrationJob extends \Google\Model
     return $this->destinationDatabase;
   }
   /**
-   * The migration job display name.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -429,10 +203,7 @@ class MigrationJob extends \Google\Model
     return $this->displayName;
   }
   /**
-   * The initial dump flags. This field and the "dump_path" field are mutually
-   * exclusive.
-   *
-   * @param DumpFlags $dumpFlags
+   * @param DumpFlags
    */
   public function setDumpFlags(DumpFlags $dumpFlags)
   {
@@ -446,11 +217,7 @@ class MigrationJob extends \Google\Model
     return $this->dumpFlags;
   }
   /**
-   * The path to the dump file in Google Cloud Storage, in the format:
-   * (gs://[BUCKET_NAME]/[OBJECT_NAME]). This field and the "dump_flags" field
-   * are mutually exclusive.
-   *
-   * @param string $dumpPath
+   * @param string
    */
   public function setDumpPath($dumpPath)
   {
@@ -464,30 +231,21 @@ class MigrationJob extends \Google\Model
     return $this->dumpPath;
   }
   /**
-   * Optional. The type of the data dump. Supported for MySQL to CloudSQL for
-   * MySQL migrations only.
-   *
-   * Accepted values: DUMP_TYPE_UNSPECIFIED, LOGICAL, PHYSICAL
-   *
-   * @param self::DUMP_TYPE_* $dumpType
+   * @param string
    */
   public function setDumpType($dumpType)
   {
     $this->dumpType = $dumpType;
   }
   /**
-   * @return self::DUMP_TYPE_*
+   * @return string
    */
   public function getDumpType()
   {
     return $this->dumpType;
   }
   /**
-   * Output only. The duration of the migration job (in seconds). A duration in
-   * seconds with up to nine fractional digits, terminated by 's'. Example:
-   * "3.5s".
-   *
-   * @param string $duration
+   * @param string
    */
   public function setDuration($duration)
   {
@@ -501,10 +259,7 @@ class MigrationJob extends \Google\Model
     return $this->duration;
   }
   /**
-   * Output only. If the migration job is completed, the time when it was
-   * completed.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -518,9 +273,7 @@ class MigrationJob extends \Google\Model
     return $this->endTime;
   }
   /**
-   * Output only. The error details in case of state FAILED.
-   *
-   * @param Status $error
+   * @param Status
    */
   public function setError(Status $error)
   {
@@ -534,12 +287,7 @@ class MigrationJob extends \Google\Model
     return $this->error;
   }
   /**
-   * This field can be used to select the entities to migrate as part of the
-   * migration job. It uses AIP-160 notation to select a subset of the entities
-   * configured on the associated conversion-workspace. This field should not be
-   * set on migration-jobs that are not associated with a conversion workspace.
-   *
-   * @param string $filter
+   * @param string
    */
   public function setFilter($filter)
   {
@@ -553,12 +301,7 @@ class MigrationJob extends \Google\Model
     return $this->filter;
   }
   /**
-   * The resource labels for migration job to use to annotate any related
-   * underlying resources such as Compute Engine VMs. An object containing a
-   * list of "key": "value" pairs. Example: `{ "name": "wrench", "mass":
-   * "1.3kg", "count": "3" }`.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -572,10 +315,7 @@ class MigrationJob extends \Google\Model
     return $this->labels;
   }
   /**
-   * The name (URI) of this migration job resource, in the form of:
-   * projects/{project}/locations/{location}/migrationJobs/{migrationJob}.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -589,9 +329,7 @@ class MigrationJob extends \Google\Model
     return $this->name;
   }
   /**
-   * Optional. The objects that need to be migrated.
-   *
-   * @param MigrationJobObjectsConfig $objectsConfig
+   * @param MigrationJobObjectsConfig
    */
   public function setObjectsConfig(MigrationJobObjectsConfig $objectsConfig)
   {
@@ -605,10 +343,7 @@ class MigrationJob extends \Google\Model
     return $this->objectsConfig;
   }
   /**
-   * Configuration for heterogeneous **Oracle to Cloud SQL for PostgreSQL** and
-   * **Oracle to AlloyDB for PostgreSQL** migrations.
-   *
-   * @param OracleToPostgresConfig $oracleToPostgresConfig
+   * @param OracleToPostgresConfig
    */
   public function setOracleToPostgresConfig(OracleToPostgresConfig $oracleToPostgresConfig)
   {
@@ -622,26 +357,7 @@ class MigrationJob extends \Google\Model
     return $this->oracleToPostgresConfig;
   }
   /**
-   * Optional. A failback replication pointer to the resource name (URI) of the
-   * original migration job.
-   *
-   * @param string $originalMigrationName
-   */
-  public function setOriginalMigrationName($originalMigrationName)
-  {
-    $this->originalMigrationName = $originalMigrationName;
-  }
-  /**
-   * @return string
-   */
-  public function getOriginalMigrationName()
-  {
-    return $this->originalMigrationName;
-  }
-  /**
-   * Optional. Data dump parallelism settings used by the migration.
-   *
-   * @param PerformanceConfig $performanceConfig
+   * @param PerformanceConfig
    */
   public function setPerformanceConfig(PerformanceConfig $performanceConfig)
   {
@@ -655,65 +371,21 @@ class MigrationJob extends \Google\Model
     return $this->performanceConfig;
   }
   /**
-   * Output only. The current migration job phase.
-   *
-   * Accepted values: PHASE_UNSPECIFIED, FULL_DUMP, CDC, PROMOTE_IN_PROGRESS,
-   * WAITING_FOR_SOURCE_WRITES_TO_STOP, PREPARING_THE_DUMP, READY_FOR_PROMOTE
-   *
-   * @param self::PHASE_* $phase
+   * @param string
    */
   public function setPhase($phase)
   {
     $this->phase = $phase;
   }
   /**
-   * @return self::PHASE_*
+   * @return string
    */
   public function getPhase()
   {
     return $this->phase;
   }
   /**
-   * Configuration for heterogeneous failback migrations from **PostgreSQL to
-   * SQL Server**.
-   *
-   * @param PostgresToSqlServerConfig $postgresToSqlserverConfig
-   */
-  public function setPostgresToSqlserverConfig(PostgresToSqlServerConfig $postgresToSqlserverConfig)
-  {
-    $this->postgresToSqlserverConfig = $postgresToSqlserverConfig;
-  }
-  /**
-   * @return PostgresToSqlServerConfig
-   */
-  public function getPostgresToSqlserverConfig()
-  {
-    return $this->postgresToSqlserverConfig;
-  }
-  /**
-   * Output only. Migration job mode. Migration jobs can be standard forward
-   * jobs or failback migration jobs.
-   *
-   * Accepted values: PURPOSE_UNSPECIFIED, MIGRATE, FAILBACK
-   *
-   * @param self::PURPOSE_* $purpose
-   */
-  public function setPurpose($purpose)
-  {
-    $this->purpose = $purpose;
-  }
-  /**
-   * @return self::PURPOSE_*
-   */
-  public function getPurpose()
-  {
-    return $this->purpose;
-  }
-  /**
-   * The details needed to communicate to the source over Reverse SSH tunnel
-   * connectivity.
-   *
-   * @param ReverseSshConnectivity $reverseSshConnectivity
+   * @param ReverseSshConnectivity
    */
   public function setReverseSshConnectivity(ReverseSshConnectivity $reverseSshConnectivity)
   {
@@ -727,9 +399,7 @@ class MigrationJob extends \Google\Model
     return $this->reverseSshConnectivity;
   }
   /**
-   * Output only. Reserved for future use.
-   *
-   * @param bool $satisfiesPzi
+   * @param bool
    */
   public function setSatisfiesPzi($satisfiesPzi)
   {
@@ -743,9 +413,7 @@ class MigrationJob extends \Google\Model
     return $this->satisfiesPzi;
   }
   /**
-   * Output only. Reserved for future use.
-   *
-   * @param bool $satisfiesPzs
+   * @param bool
    */
   public function setSatisfiesPzs($satisfiesPzs)
   {
@@ -759,9 +427,7 @@ class MigrationJob extends \Google\Model
     return $this->satisfiesPzs;
   }
   /**
-   * Required. The resource name (URI) of the source connection profile.
-   *
-   * @param string $source
+   * @param string
    */
   public function setSource($source)
   {
@@ -775,9 +441,7 @@ class MigrationJob extends \Google\Model
     return $this->source;
   }
   /**
-   * The database engine type and provider of the source.
-   *
-   * @param DatabaseType $sourceDatabase
+   * @param DatabaseType
    */
   public function setSourceDatabase(DatabaseType $sourceDatabase)
   {
@@ -791,9 +455,7 @@ class MigrationJob extends \Google\Model
     return $this->sourceDatabase;
   }
   /**
-   * Optional. Configuration for SQL Server homogeneous migration.
-   *
-   * @param SqlServerHomogeneousMigrationJobConfig $sqlserverHomogeneousMigrationJobConfig
+   * @param SqlServerHomogeneousMigrationJobConfig
    */
   public function setSqlserverHomogeneousMigrationJobConfig(SqlServerHomogeneousMigrationJobConfig $sqlserverHomogeneousMigrationJobConfig)
   {
@@ -807,10 +469,7 @@ class MigrationJob extends \Google\Model
     return $this->sqlserverHomogeneousMigrationJobConfig;
   }
   /**
-   * Configuration for heterogeneous **SQL Server to Cloud SQL for PostgreSQL**
-   * migrations.
-   *
-   * @param SqlServerToPostgresConfig $sqlserverToPostgresConfig
+   * @param SqlServerToPostgresConfig
    */
   public function setSqlserverToPostgresConfig(SqlServerToPostgresConfig $sqlserverToPostgresConfig)
   {
@@ -824,29 +483,21 @@ class MigrationJob extends \Google\Model
     return $this->sqlserverToPostgresConfig;
   }
   /**
-   * The current migration job state.
-   *
-   * Accepted values: STATE_UNSPECIFIED, MAINTENANCE, DRAFT, CREATING,
-   * NOT_STARTED, RUNNING, FAILED, COMPLETED, DELETING, STOPPING, STOPPED,
-   * DELETED, UPDATING, STARTING, RESTARTING, RESUMING
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * static ip connectivity data (default, no additional details needed).
-   *
-   * @param StaticIpConnectivity $staticIpConnectivity
+   * @param StaticIpConnectivity
    */
   public function setStaticIpConnectivity(StaticIpConnectivity $staticIpConnectivity)
   {
@@ -860,29 +511,21 @@ class MigrationJob extends \Google\Model
     return $this->staticIpConnectivity;
   }
   /**
-   * Required. The migration job type.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, ONE_TIME, CONTINUOUS
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * Output only. The timestamp when the migration job resource was last
-   * updated. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds.
-   * Example: "2014-10-02T15:01:23.045123456Z".
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -896,9 +539,7 @@ class MigrationJob extends \Google\Model
     return $this->updateTime;
   }
   /**
-   * The details of the VPC network that the source database is located in.
-   *
-   * @param VpcPeeringConnectivity $vpcPeeringConnectivity
+   * @param VpcPeeringConnectivity
    */
   public function setVpcPeeringConnectivity(VpcPeeringConnectivity $vpcPeeringConnectivity)
   {

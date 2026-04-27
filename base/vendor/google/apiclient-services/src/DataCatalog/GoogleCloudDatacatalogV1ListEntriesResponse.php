@@ -23,17 +23,12 @@ class GoogleCloudDatacatalogV1ListEntriesResponse extends \Google\Collection
   protected $entriesType = GoogleCloudDatacatalogV1Entry::class;
   protected $entriesDataType = 'array';
   /**
-   * Pagination token of the next results page. Empty if there are no more items
-   * in results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Entry details.
-   *
-   * @param GoogleCloudDatacatalogV1Entry[] $entries
+   * @param GoogleCloudDatacatalogV1Entry[]
    */
   public function setEntries($entries)
   {
@@ -47,10 +42,7 @@ class GoogleCloudDatacatalogV1ListEntriesResponse extends \Google\Collection
     return $this->entries;
   }
   /**
-   * Pagination token of the next results page. Empty if there are no more items
-   * in results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

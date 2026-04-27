@@ -20,44 +20,28 @@ namespace Google\Service\SA360;
 class GoogleAdsSearchads360V0ResourcesLanguageConstant extends \Google\Model
 {
   /**
-   * Output only. The language code, for example, "en_US", "en_AU", "es", "fr",
-   * etc.
-   *
    * @var string
    */
   public $code;
   /**
-   * Output only. The ID of the language constant.
-   *
    * @var string
    */
   public $id;
   /**
-   * Output only. The full name of the language in English, for example,
-   * "English (US)", "Spanish", etc.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The resource name of the language constant. Language constant
-   * resource names have the form: `languageConstants/{criterion_id}`
-   *
    * @var string
    */
   public $resourceName;
   /**
-   * Output only. Whether the language is targetable.
-   *
    * @var bool
    */
   public $targetable;
 
   /**
-   * Output only. The language code, for example, "en_US", "en_AU", "es", "fr",
-   * etc.
-   *
-   * @param string $code
+   * @param string
    */
   public function setCode($code)
   {
@@ -71,9 +55,7 @@ class GoogleAdsSearchads360V0ResourcesLanguageConstant extends \Google\Model
     return $this->code;
   }
   /**
-   * Output only. The ID of the language constant.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -87,10 +69,7 @@ class GoogleAdsSearchads360V0ResourcesLanguageConstant extends \Google\Model
     return $this->id;
   }
   /**
-   * Output only. The full name of the language in English, for example,
-   * "English (US)", "Spanish", etc.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -104,10 +83,7 @@ class GoogleAdsSearchads360V0ResourcesLanguageConstant extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The resource name of the language constant. Language constant
-   * resource names have the form: `languageConstants/{criterion_id}`
-   *
-   * @param string $resourceName
+   * @param string
    */
   public function setResourceName($resourceName)
   {
@@ -121,9 +97,7 @@ class GoogleAdsSearchads360V0ResourcesLanguageConstant extends \Google\Model
     return $this->resourceName;
   }
   /**
-   * Output only. Whether the language is targetable.
-   *
-   * @param bool $targetable
+   * @param bool
    */
   public function setTargetable($targetable)
   {

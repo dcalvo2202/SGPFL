@@ -20,8 +20,6 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1SecurityAssessmentResultScoringResultAssessmentRecommendationRecommendation extends \Google\Model
 {
   /**
-   * The description of the recommendation.
-   *
    * @var string
    */
   public $description;
@@ -29,9 +27,7 @@ class GoogleCloudApigeeV1SecurityAssessmentResultScoringResultAssessmentRecommen
   protected $linkDataType = '';
 
   /**
-   * The description of the recommendation.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -45,9 +41,7 @@ class GoogleCloudApigeeV1SecurityAssessmentResultScoringResultAssessmentRecommen
     return $this->description;
   }
   /**
-   * The link for the recommendation.
-   *
-   * @param GoogleCloudApigeeV1SecurityAssessmentResultScoringResultAssessmentRecommendationRecommendationLink $link
+   * @param GoogleCloudApigeeV1SecurityAssessmentResultScoringResultAssessmentRecommendationRecommendationLink
    */
   public function setLink(GoogleCloudApigeeV1SecurityAssessmentResultScoringResultAssessmentRecommendationRecommendationLink $link)
   {

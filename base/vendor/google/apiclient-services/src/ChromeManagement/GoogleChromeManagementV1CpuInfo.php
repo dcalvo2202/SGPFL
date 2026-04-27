@@ -20,83 +20,42 @@ namespace Google\Service\ChromeManagement;
 class GoogleChromeManagementV1CpuInfo extends \Google\Model
 {
   /**
-   * Architecture unknown.
-   */
-  public const ARCHITECTURE_ARCHITECTURE_UNSPECIFIED = 'ARCHITECTURE_UNSPECIFIED';
-  /**
-   * x64 architecture
-   */
-  public const ARCHITECTURE_X64 = 'X64';
-  /**
-   * Output only. Architecture type for the CPU. * This field provides device
-   * information, which is static and will not change over time. * Data for this
-   * field is controlled via policy: [ReportDeviceCpuInfo](https://chromeenterpr
-   * ise.google/policies/#ReportDeviceCpuInfo) * Data Collection Frequency: Only
-   * at Upload * Default Data Reporting Frequency: 3 hours - Policy Controlled:
-   * Yes * Cache: If the device is offline, the collected data is stored
-   * locally, and will be reported when the device is next online: No * Reported
-   * for affiliated users only: N/A
-   *
    * @var string
    */
   public $architecture;
   /**
-   * Output only. Whether keylocker is configured.`TRUE` = Enabled; `FALSE` =
-   * disabled. Only reported if keylockerSupported = `TRUE`.
-   *
    * @var bool
    */
   public $keylockerConfigured;
   /**
-   * Output only. Whether keylocker is supported.
-   *
    * @var bool
    */
   public $keylockerSupported;
   /**
-   * Output only. The max CPU clock speed in kHz.
-   *
    * @var int
    */
   public $maxClockSpeed;
   /**
-   * Output only. The CPU model name. Example: Intel(R) Core(TM) i5-8250U CPU @
-   * 1.60GHz
-   *
    * @var string
    */
   public $model;
 
   /**
-   * Output only. Architecture type for the CPU. * This field provides device
-   * information, which is static and will not change over time. * Data for this
-   * field is controlled via policy: [ReportDeviceCpuInfo](https://chromeenterpr
-   * ise.google/policies/#ReportDeviceCpuInfo) * Data Collection Frequency: Only
-   * at Upload * Default Data Reporting Frequency: 3 hours - Policy Controlled:
-   * Yes * Cache: If the device is offline, the collected data is stored
-   * locally, and will be reported when the device is next online: No * Reported
-   * for affiliated users only: N/A
-   *
-   * Accepted values: ARCHITECTURE_UNSPECIFIED, X64
-   *
-   * @param self::ARCHITECTURE_* $architecture
+   * @param string
    */
   public function setArchitecture($architecture)
   {
     $this->architecture = $architecture;
   }
   /**
-   * @return self::ARCHITECTURE_*
+   * @return string
    */
   public function getArchitecture()
   {
     return $this->architecture;
   }
   /**
-   * Output only. Whether keylocker is configured.`TRUE` = Enabled; `FALSE` =
-   * disabled. Only reported if keylockerSupported = `TRUE`.
-   *
-   * @param bool $keylockerConfigured
+   * @param bool
    */
   public function setKeylockerConfigured($keylockerConfigured)
   {
@@ -110,9 +69,7 @@ class GoogleChromeManagementV1CpuInfo extends \Google\Model
     return $this->keylockerConfigured;
   }
   /**
-   * Output only. Whether keylocker is supported.
-   *
-   * @param bool $keylockerSupported
+   * @param bool
    */
   public function setKeylockerSupported($keylockerSupported)
   {
@@ -126,9 +83,7 @@ class GoogleChromeManagementV1CpuInfo extends \Google\Model
     return $this->keylockerSupported;
   }
   /**
-   * Output only. The max CPU clock speed in kHz.
-   *
-   * @param int $maxClockSpeed
+   * @param int
    */
   public function setMaxClockSpeed($maxClockSpeed)
   {
@@ -142,10 +97,7 @@ class GoogleChromeManagementV1CpuInfo extends \Google\Model
     return $this->maxClockSpeed;
   }
   /**
-   * Output only. The CPU model name. Example: Intel(R) Core(TM) i5-8250U CPU @
-   * 1.60GHz
-   *
-   * @param string $model
+   * @param string
    */
   public function setModel($model)
   {

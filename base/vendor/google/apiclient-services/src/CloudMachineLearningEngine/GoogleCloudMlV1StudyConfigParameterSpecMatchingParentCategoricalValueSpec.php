@@ -21,18 +21,12 @@ class GoogleCloudMlV1StudyConfigParameterSpecMatchingParentCategoricalValueSpec 
 {
   protected $collection_key = 'values';
   /**
-   * Matches values of the parent parameter with type 'CATEGORICAL'. All values
-   * must exist in `categorical_value_spec` of parent parameter.
-   *
    * @var string[]
    */
   public $values;
 
   /**
-   * Matches values of the parent parameter with type 'CATEGORICAL'. All values
-   * must exist in `categorical_value_spec` of parent parameter.
-   *
-   * @param string[] $values
+   * @param string[]
    */
   public function setValues($values)
   {

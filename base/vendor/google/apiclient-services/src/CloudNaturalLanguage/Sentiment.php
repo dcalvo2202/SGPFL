@@ -20,25 +20,16 @@ namespace Google\Service\CloudNaturalLanguage;
 class Sentiment extends \Google\Model
 {
   /**
-   * A non-negative number in the [0, +inf] range, which represents the absolute
-   * magnitude of sentiment regardless of score (positive or negative).
-   *
    * @var float
    */
   public $magnitude;
   /**
-   * Sentiment score between -1.0 (negative sentiment) and 1.0 (positive
-   * sentiment).
-   *
    * @var float
    */
   public $score;
 
   /**
-   * A non-negative number in the [0, +inf] range, which represents the absolute
-   * magnitude of sentiment regardless of score (positive or negative).
-   *
-   * @param float $magnitude
+   * @param float
    */
   public function setMagnitude($magnitude)
   {
@@ -52,10 +43,7 @@ class Sentiment extends \Google\Model
     return $this->magnitude;
   }
   /**
-   * Sentiment score between -1.0 (negative sentiment) and 1.0 (positive
-   * sentiment).
-   *
-   * @param float $score
+   * @param float
    */
   public function setScore($score)
   {

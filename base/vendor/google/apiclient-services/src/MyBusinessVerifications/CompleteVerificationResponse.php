@@ -23,9 +23,7 @@ class CompleteVerificationResponse extends \Google\Model
   protected $verificationDataType = '';
 
   /**
-   * The completed verification.
-   *
-   * @param Verification $verification
+   * @param Verification
    */
   public function setVerification(Verification $verification)
   {

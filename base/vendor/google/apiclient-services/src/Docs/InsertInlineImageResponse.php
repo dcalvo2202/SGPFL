@@ -20,16 +20,12 @@ namespace Google\Service\Docs;
 class InsertInlineImageResponse extends \Google\Model
 {
   /**
-   * The ID of the created InlineObject.
-   *
    * @var string
    */
   public $objectId;
 
   /**
-   * The ID of the created InlineObject.
-   *
-   * @param string $objectId
+   * @param string
    */
   public function setObjectId($objectId)
   {

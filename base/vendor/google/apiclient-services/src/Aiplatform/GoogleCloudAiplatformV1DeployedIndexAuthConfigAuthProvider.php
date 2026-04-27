@@ -21,28 +21,16 @@ class GoogleCloudAiplatformV1DeployedIndexAuthConfigAuthProvider extends \Google
 {
   protected $collection_key = 'audiences';
   /**
-   * A list of allowed JWT issuers. Each entry must be a valid Google service
-   * account, in the following format: `service-account-name@project-
-   * id.iam.gserviceaccount.com`
-   *
    * @var string[]
    */
   public $allowedIssuers;
   /**
-   * The list of JWT [audiences](https://tools.ietf.org/html/draft-ietf-oauth-
-   * json-web-token-32#section-4.1.3). that are allowed to access. A JWT
-   * containing any of these audiences will be accepted.
-   *
    * @var string[]
    */
   public $audiences;
 
   /**
-   * A list of allowed JWT issuers. Each entry must be a valid Google service
-   * account, in the following format: `service-account-name@project-
-   * id.iam.gserviceaccount.com`
-   *
-   * @param string[] $allowedIssuers
+   * @param string[]
    */
   public function setAllowedIssuers($allowedIssuers)
   {
@@ -56,11 +44,7 @@ class GoogleCloudAiplatformV1DeployedIndexAuthConfigAuthProvider extends \Google
     return $this->allowedIssuers;
   }
   /**
-   * The list of JWT [audiences](https://tools.ietf.org/html/draft-ietf-oauth-
-   * json-web-token-32#section-4.1.3). that are allowed to access. A JWT
-   * containing any of these audiences will be accepted.
-   *
-   * @param string[] $audiences
+   * @param string[]
    */
   public function setAudiences($audiences)
   {

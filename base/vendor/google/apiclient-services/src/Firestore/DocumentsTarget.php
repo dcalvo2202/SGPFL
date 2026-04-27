@@ -21,22 +21,12 @@ class DocumentsTarget extends \Google\Collection
 {
   protected $collection_key = 'documents';
   /**
-   * The names of the documents to retrieve. In the format:
-   * `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
-   * The request will fail if any of the document is not a child resource of the
-   * given `database`. Duplicate names will be elided.
-   *
    * @var string[]
    */
   public $documents;
 
   /**
-   * The names of the documents to retrieve. In the format:
-   * `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
-   * The request will fail if any of the document is not a child resource of the
-   * given `database`. Duplicate names will be elided.
-   *
-   * @param string[] $documents
+   * @param string[]
    */
   public function setDocuments($documents)
   {

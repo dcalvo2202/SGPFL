@@ -29,7 +29,7 @@ class GoogleCloudDialogflowV2ImportConversationDataOperationResponse extends \Go
   public $importCount;
 
   /**
-   * @param string $conversationDataset
+   * @param string
    */
   public function setConversationDataset($conversationDataset)
   {
@@ -43,7 +43,7 @@ class GoogleCloudDialogflowV2ImportConversationDataOperationResponse extends \Go
     return $this->conversationDataset;
   }
   /**
-   * @param int $importCount
+   * @param int
    */
   public function setImportCount($importCount)
   {

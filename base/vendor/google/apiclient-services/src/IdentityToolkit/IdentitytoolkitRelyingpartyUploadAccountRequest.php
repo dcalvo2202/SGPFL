@@ -21,8 +21,6 @@ class IdentitytoolkitRelyingpartyUploadAccountRequest extends \Google\Collection
 {
   protected $collection_key = 'users';
   /**
-   * Whether allow overwrite existing account when user local_id exists.
-   *
    * @var bool
    */
   public $allowOverwrite;
@@ -31,15 +29,10 @@ class IdentitytoolkitRelyingpartyUploadAccountRequest extends \Google\Collection
    */
   public $blockSize;
   /**
-   * The following 4 fields are for standard scrypt algorithm.
-   *
    * @var int
    */
   public $cpuMemCost;
   /**
-   * GCP project number of the requesting delegated app. Currently only intended
-   * for Firebase V1 migration.
-   *
    * @var string
    */
   public $delegatedProjectNumber;
@@ -48,14 +41,10 @@ class IdentitytoolkitRelyingpartyUploadAccountRequest extends \Google\Collection
    */
   public $dkLen;
   /**
-   * The password hash algorithm.
-   *
    * @var string
    */
   public $hashAlgorithm;
   /**
-   * Memory cost for hash calculation. Used by scrypt similar algorithms.
-   *
    * @var int
    */
   public $memoryCost;
@@ -64,34 +53,22 @@ class IdentitytoolkitRelyingpartyUploadAccountRequest extends \Google\Collection
    */
   public $parallelization;
   /**
-   * Rounds for hash calculation. Used by scrypt and similar algorithms.
-   *
    * @var int
    */
   public $rounds;
   /**
-   * The salt separator.
-   *
    * @var string
    */
   public $saltSeparator;
   /**
-   * If true, backend will do sanity check(including duplicate email and
-   * federated id) when uploading account.
-   *
    * @var bool
    */
   public $sanityCheck;
   /**
-   * The key for to hash the password.
-   *
    * @var string
    */
   public $signerKey;
   /**
-   * Specify which project (field value is actually project id) to operate. Only
-   * used when provided credential.
-   *
    * @var string
    */
   public $targetProjectId;
@@ -99,9 +76,7 @@ class IdentitytoolkitRelyingpartyUploadAccountRequest extends \Google\Collection
   protected $usersDataType = 'array';
 
   /**
-   * Whether allow overwrite existing account when user local_id exists.
-   *
-   * @param bool $allowOverwrite
+   * @param bool
    */
   public function setAllowOverwrite($allowOverwrite)
   {
@@ -115,7 +90,7 @@ class IdentitytoolkitRelyingpartyUploadAccountRequest extends \Google\Collection
     return $this->allowOverwrite;
   }
   /**
-   * @param int $blockSize
+   * @param int
    */
   public function setBlockSize($blockSize)
   {
@@ -129,9 +104,7 @@ class IdentitytoolkitRelyingpartyUploadAccountRequest extends \Google\Collection
     return $this->blockSize;
   }
   /**
-   * The following 4 fields are for standard scrypt algorithm.
-   *
-   * @param int $cpuMemCost
+   * @param int
    */
   public function setCpuMemCost($cpuMemCost)
   {
@@ -145,10 +118,7 @@ class IdentitytoolkitRelyingpartyUploadAccountRequest extends \Google\Collection
     return $this->cpuMemCost;
   }
   /**
-   * GCP project number of the requesting delegated app. Currently only intended
-   * for Firebase V1 migration.
-   *
-   * @param string $delegatedProjectNumber
+   * @param string
    */
   public function setDelegatedProjectNumber($delegatedProjectNumber)
   {
@@ -162,7 +132,7 @@ class IdentitytoolkitRelyingpartyUploadAccountRequest extends \Google\Collection
     return $this->delegatedProjectNumber;
   }
   /**
-   * @param int $dkLen
+   * @param int
    */
   public function setDkLen($dkLen)
   {
@@ -176,9 +146,7 @@ class IdentitytoolkitRelyingpartyUploadAccountRequest extends \Google\Collection
     return $this->dkLen;
   }
   /**
-   * The password hash algorithm.
-   *
-   * @param string $hashAlgorithm
+   * @param string
    */
   public function setHashAlgorithm($hashAlgorithm)
   {
@@ -192,9 +160,7 @@ class IdentitytoolkitRelyingpartyUploadAccountRequest extends \Google\Collection
     return $this->hashAlgorithm;
   }
   /**
-   * Memory cost for hash calculation. Used by scrypt similar algorithms.
-   *
-   * @param int $memoryCost
+   * @param int
    */
   public function setMemoryCost($memoryCost)
   {
@@ -208,7 +174,7 @@ class IdentitytoolkitRelyingpartyUploadAccountRequest extends \Google\Collection
     return $this->memoryCost;
   }
   /**
-   * @param int $parallelization
+   * @param int
    */
   public function setParallelization($parallelization)
   {
@@ -222,9 +188,7 @@ class IdentitytoolkitRelyingpartyUploadAccountRequest extends \Google\Collection
     return $this->parallelization;
   }
   /**
-   * Rounds for hash calculation. Used by scrypt and similar algorithms.
-   *
-   * @param int $rounds
+   * @param int
    */
   public function setRounds($rounds)
   {
@@ -238,9 +202,7 @@ class IdentitytoolkitRelyingpartyUploadAccountRequest extends \Google\Collection
     return $this->rounds;
   }
   /**
-   * The salt separator.
-   *
-   * @param string $saltSeparator
+   * @param string
    */
   public function setSaltSeparator($saltSeparator)
   {
@@ -254,10 +216,7 @@ class IdentitytoolkitRelyingpartyUploadAccountRequest extends \Google\Collection
     return $this->saltSeparator;
   }
   /**
-   * If true, backend will do sanity check(including duplicate email and
-   * federated id) when uploading account.
-   *
-   * @param bool $sanityCheck
+   * @param bool
    */
   public function setSanityCheck($sanityCheck)
   {
@@ -271,9 +230,7 @@ class IdentitytoolkitRelyingpartyUploadAccountRequest extends \Google\Collection
     return $this->sanityCheck;
   }
   /**
-   * The key for to hash the password.
-   *
-   * @param string $signerKey
+   * @param string
    */
   public function setSignerKey($signerKey)
   {
@@ -287,10 +244,7 @@ class IdentitytoolkitRelyingpartyUploadAccountRequest extends \Google\Collection
     return $this->signerKey;
   }
   /**
-   * Specify which project (field value is actually project id) to operate. Only
-   * used when provided credential.
-   *
-   * @param string $targetProjectId
+   * @param string
    */
   public function setTargetProjectId($targetProjectId)
   {
@@ -304,9 +258,7 @@ class IdentitytoolkitRelyingpartyUploadAccountRequest extends \Google\Collection
     return $this->targetProjectId;
   }
   /**
-   * The account info to be stored.
-   *
-   * @param UserInfo[] $users
+   * @param UserInfo[]
    */
   public function setUsers($users)
   {

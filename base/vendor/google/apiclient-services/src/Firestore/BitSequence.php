@@ -20,24 +20,16 @@ namespace Google\Service\Firestore;
 class BitSequence extends \Google\Model
 {
   /**
-   * The bytes that encode the bit sequence. May have a length of zero.
-   *
    * @var string
    */
   public $bitmap;
   /**
-   * The number of bits of the last byte in `bitmap` to ignore as "padding". If
-   * the length of `bitmap` is zero, then this value must be `0`. Otherwise,
-   * this value must be between 0 and 7, inclusive.
-   *
    * @var int
    */
   public $padding;
 
   /**
-   * The bytes that encode the bit sequence. May have a length of zero.
-   *
-   * @param string $bitmap
+   * @param string
    */
   public function setBitmap($bitmap)
   {
@@ -51,11 +43,7 @@ class BitSequence extends \Google\Model
     return $this->bitmap;
   }
   /**
-   * The number of bits of the last byte in `bitmap` to ignore as "padding". If
-   * the length of `bitmap` is zero, then this value must be `0`. Otherwise,
-   * this value must be between 0 and 7, inclusive.
-   *
-   * @param int $padding
+   * @param int
    */
   public function setPadding($padding)
   {

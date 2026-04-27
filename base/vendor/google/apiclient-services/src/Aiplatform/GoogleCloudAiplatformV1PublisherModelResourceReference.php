@@ -20,44 +20,30 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1PublisherModelResourceReference extends \Google\Model
 {
   /**
-   * Description of the resource.
-   *
-   * @deprecated
    * @var string
    */
   public $description;
   /**
-   * The resource name of the Google Cloud resource.
-   *
    * @var string
    */
   public $resourceName;
   /**
-   * The URI of the resource.
-   *
    * @var string
    */
   public $uri;
   /**
-   * Use case (CUJ) of the resource.
-   *
-   * @deprecated
    * @var string
    */
   public $useCase;
 
   /**
-   * Description of the resource.
-   *
-   * @deprecated
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
     $this->description = $description;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getDescription()
@@ -65,9 +51,7 @@ class GoogleCloudAiplatformV1PublisherModelResourceReference extends \Google\Mod
     return $this->description;
   }
   /**
-   * The resource name of the Google Cloud resource.
-   *
-   * @param string $resourceName
+   * @param string
    */
   public function setResourceName($resourceName)
   {
@@ -81,9 +65,7 @@ class GoogleCloudAiplatformV1PublisherModelResourceReference extends \Google\Mod
     return $this->resourceName;
   }
   /**
-   * The URI of the resource.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {
@@ -97,17 +79,13 @@ class GoogleCloudAiplatformV1PublisherModelResourceReference extends \Google\Mod
     return $this->uri;
   }
   /**
-   * Use case (CUJ) of the resource.
-   *
-   * @deprecated
-   * @param string $useCase
+   * @param string
    */
   public function setUseCase($useCase)
   {
     $this->useCase = $useCase;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getUseCase()

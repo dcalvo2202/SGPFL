@@ -23,17 +23,12 @@ class GoogleFirestoreAdminV1ListFieldsResponse extends \Google\Collection
   protected $fieldsType = GoogleFirestoreAdminV1Field::class;
   protected $fieldsDataType = 'array';
   /**
-   * A page token that may be used to request another page of results. If blank,
-   * this is the last page.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The requested fields.
-   *
-   * @param GoogleFirestoreAdminV1Field[] $fields
+   * @param GoogleFirestoreAdminV1Field[]
    */
   public function setFields($fields)
   {
@@ -47,10 +42,7 @@ class GoogleFirestoreAdminV1ListFieldsResponse extends \Google\Collection
     return $this->fields;
   }
   /**
-   * A page token that may be used to request another page of results. If blank,
-   * this is the last page.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

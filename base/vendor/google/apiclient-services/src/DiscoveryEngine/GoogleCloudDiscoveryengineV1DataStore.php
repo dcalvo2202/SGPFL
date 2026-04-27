@@ -19,67 +19,8 @@ namespace Google\Service\DiscoveryEngine;
 
 class GoogleCloudDiscoveryengineV1DataStore extends \Google\Collection
 {
-  /**
-   * Default value. For Spark and non-Spark non-configurable billing approach.
-   */
-  public const CONFIGURABLE_BILLING_APPROACH_CONFIGURABLE_BILLING_APPROACH_UNSPECIFIED = 'CONFIGURABLE_BILLING_APPROACH_UNSPECIFIED';
-  /**
-   * Use the subscription base + overage billing for indexing core for non
-   * embedding storage.
-   */
-  public const CONFIGURABLE_BILLING_APPROACH_CONFIGURABLE_SUBSCRIPTION_INDEXING_CORE = 'CONFIGURABLE_SUBSCRIPTION_INDEXING_CORE';
-  /**
-   * Use the consumption pay-as-you-go billing for embedding storage add-on.
-   */
-  public const CONFIGURABLE_BILLING_APPROACH_CONFIGURABLE_CONSUMPTION_EMBEDDING = 'CONFIGURABLE_CONSUMPTION_EMBEDDING';
-  /**
-   * Default value.
-   */
-  public const CONTENT_CONFIG_CONTENT_CONFIG_UNSPECIFIED = 'CONTENT_CONFIG_UNSPECIFIED';
-  /**
-   * Only contains documents without any Document.content.
-   */
-  public const CONTENT_CONFIG_NO_CONTENT = 'NO_CONTENT';
-  /**
-   * Only contains documents with Document.content.
-   */
-  public const CONTENT_CONFIG_CONTENT_REQUIRED = 'CONTENT_REQUIRED';
-  /**
-   * The data store is used for public website search.
-   */
-  public const CONTENT_CONFIG_PUBLIC_WEBSITE = 'PUBLIC_WEBSITE';
-  /**
-   * The data store is used for workspace search. Details of workspace data
-   * store are specified in the WorkspaceConfig.
-   */
-  public const CONTENT_CONFIG_GOOGLE_WORKSPACE = 'GOOGLE_WORKSPACE';
-  /**
-   * Value used when unset.
-   */
-  public const INDUSTRY_VERTICAL_INDUSTRY_VERTICAL_UNSPECIFIED = 'INDUSTRY_VERTICAL_UNSPECIFIED';
-  /**
-   * The generic vertical for documents that are not specific to any industry
-   * vertical.
-   */
-  public const INDUSTRY_VERTICAL_GENERIC = 'GENERIC';
-  /**
-   * The media industry vertical.
-   */
-  public const INDUSTRY_VERTICAL_MEDIA = 'MEDIA';
-  /**
-   * The healthcare FHIR vertical.
-   */
-  public const INDUSTRY_VERTICAL_HEALTHCARE_FHIR = 'HEALTHCARE_FHIR';
   protected $collection_key = 'solutionTypes';
   /**
-   * Immutable. Whether data in the DataStore has ACL information. If set to
-   * `true`, the source data must have ACL. ACL will be ingested when data is
-   * ingested by DocumentService.ImportDocuments methods. When ACL is enabled
-   * for the DataStore, Document can't be accessed by calling
-   * DocumentService.GetDocument or DocumentService.ListDocuments. Currently ACL
-   * is only supported in `GENERIC` industry vertical with non-`PUBLIC_WEBSITE`
-   * content config.
-   *
    * @var bool
    */
   public $aclEnabled;
@@ -90,100 +31,48 @@ class GoogleCloudDiscoveryengineV1DataStore extends \Google\Collection
   protected $cmekConfigType = GoogleCloudDiscoveryengineV1CmekConfig::class;
   protected $cmekConfigDataType = '';
   /**
-   * Optional. Configuration for configurable billing approach. See
-   *
-   * @var string
-   */
-  public $configurableBillingApproach;
-  /**
-   * Output only. The timestamp when configurable_billing_approach was last
-   * updated.
-   *
-   * @var string
-   */
-  public $configurableBillingApproachUpdateTime;
-  /**
-   * Immutable. The content config of the data store. If this field is unset,
-   * the server behavior defaults to ContentConfig.NO_CONTENT.
-   *
    * @var string
    */
   public $contentConfig;
   /**
-   * Output only. Timestamp the DataStore was created at.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. The id of the default Schema associated to this data store.
-   *
    * @var string
    */
   public $defaultSchemaId;
   /**
-   * Required. The data store display name. This field must be a UTF-8 encoded
-   * string with a length limit of 128 characters. Otherwise, an
-   * INVALID_ARGUMENT error is returned.
-   *
    * @var string
    */
   public $displayName;
   protected $documentProcessingConfigType = GoogleCloudDiscoveryengineV1DocumentProcessingConfig::class;
   protected $documentProcessingConfigDataType = '';
-  protected $federatedSearchConfigType = GoogleCloudDiscoveryengineV1DataStoreFederatedSearchConfig::class;
-  protected $federatedSearchConfigDataType = '';
   protected $healthcareFhirConfigType = GoogleCloudDiscoveryengineV1HealthcareFhirConfig::class;
   protected $healthcareFhirConfigDataType = '';
   /**
-   * Immutable. The fully qualified resource name of the associated
-   * IdentityMappingStore. This field can only be set for acl_enabled DataStores
-   * with `THIRD_PARTY` or `GSUITE` IdP. Format: `projects/{project}/locations/{
-   * location}/identityMappingStores/{identity_mapping_store}`.
-   *
    * @var string
    */
   public $identityMappingStore;
   /**
-   * Immutable. The industry vertical that the data store registers.
-   *
    * @var string
    */
   public $industryVertical;
   /**
-   * Optional. If set, this DataStore is an Infobot FAQ DataStore.
-   *
    * @var bool
    */
   public $isInfobotFaqDataStore;
   /**
-   * Input only. The KMS key to be used to protect this DataStore at creation
-   * time. Must be set for requests that need to comply with CMEK Org Policy
-   * protections. If this field is set and processed successfully, the DataStore
-   * will be protected by the KMS key, as indicated in the cmek_config field.
-   *
    * @var string
    */
   public $kmsKeyName;
   /**
-   * Immutable. Identifier. The full resource name of the data store. Format: `p
-   * rojects/{project}/locations/{location}/collections/{collection_id}/dataStor
-   * es/{data_store_id}`. This field must be a UTF-8 encoded string with a
-   * length limit of 1024 characters.
-   *
    * @var string
    */
   public $name;
-  protected $naturalLanguageQueryUnderstandingConfigType = GoogleCloudDiscoveryengineV1NaturalLanguageQueryUnderstandingConfig::class;
-  protected $naturalLanguageQueryUnderstandingConfigDataType = '';
   protected $servingConfigDataStoreType = GoogleCloudDiscoveryengineV1DataStoreServingConfigDataStore::class;
   protected $servingConfigDataStoreDataType = '';
   /**
-   * The solutions that the data store enrolls. Available solutions for each
-   * industry_vertical: * `MEDIA`: `SOLUTION_TYPE_RECOMMENDATION` and
-   * `SOLUTION_TYPE_SEARCH`. * `SITE_SEARCH`: `SOLUTION_TYPE_SEARCH` is
-   * automatically enrolled. Other solutions cannot be enrolled.
-   *
    * @var string[]
    */
   public $solutionTypes;
@@ -193,15 +82,7 @@ class GoogleCloudDiscoveryengineV1DataStore extends \Google\Collection
   protected $workspaceConfigDataType = '';
 
   /**
-   * Immutable. Whether data in the DataStore has ACL information. If set to
-   * `true`, the source data must have ACL. ACL will be ingested when data is
-   * ingested by DocumentService.ImportDocuments methods. When ACL is enabled
-   * for the DataStore, Document can't be accessed by calling
-   * DocumentService.GetDocument or DocumentService.ListDocuments. Currently ACL
-   * is only supported in `GENERIC` industry vertical with non-`PUBLIC_WEBSITE`
-   * content config.
-   *
-   * @param bool $aclEnabled
+   * @param bool
    */
   public function setAclEnabled($aclEnabled)
   {
@@ -215,9 +96,7 @@ class GoogleCloudDiscoveryengineV1DataStore extends \Google\Collection
     return $this->aclEnabled;
   }
   /**
-   * Optional. Configuration for advanced site search.
-   *
-   * @param GoogleCloudDiscoveryengineV1AdvancedSiteSearchConfig $advancedSiteSearchConfig
+   * @param GoogleCloudDiscoveryengineV1AdvancedSiteSearchConfig
    */
   public function setAdvancedSiteSearchConfig(GoogleCloudDiscoveryengineV1AdvancedSiteSearchConfig $advancedSiteSearchConfig)
   {
@@ -231,9 +110,7 @@ class GoogleCloudDiscoveryengineV1DataStore extends \Google\Collection
     return $this->advancedSiteSearchConfig;
   }
   /**
-   * Output only. Data size estimation for billing.
-   *
-   * @param GoogleCloudDiscoveryengineV1DataStoreBillingEstimation $billingEstimation
+   * @param GoogleCloudDiscoveryengineV1DataStoreBillingEstimation
    */
   public function setBillingEstimation(GoogleCloudDiscoveryengineV1DataStoreBillingEstimation $billingEstimation)
   {
@@ -247,9 +124,7 @@ class GoogleCloudDiscoveryengineV1DataStore extends \Google\Collection
     return $this->billingEstimation;
   }
   /**
-   * Output only. CMEK-related information for the DataStore.
-   *
-   * @param GoogleCloudDiscoveryengineV1CmekConfig $cmekConfig
+   * @param GoogleCloudDiscoveryengineV1CmekConfig
    */
   public function setCmekConfig(GoogleCloudDiscoveryengineV1CmekConfig $cmekConfig)
   {
@@ -263,65 +138,21 @@ class GoogleCloudDiscoveryengineV1DataStore extends \Google\Collection
     return $this->cmekConfig;
   }
   /**
-   * Optional. Configuration for configurable billing approach. See
-   *
-   * Accepted values: CONFIGURABLE_BILLING_APPROACH_UNSPECIFIED,
-   * CONFIGURABLE_SUBSCRIPTION_INDEXING_CORE, CONFIGURABLE_CONSUMPTION_EMBEDDING
-   *
-   * @param self::CONFIGURABLE_BILLING_APPROACH_* $configurableBillingApproach
-   */
-  public function setConfigurableBillingApproach($configurableBillingApproach)
-  {
-    $this->configurableBillingApproach = $configurableBillingApproach;
-  }
-  /**
-   * @return self::CONFIGURABLE_BILLING_APPROACH_*
-   */
-  public function getConfigurableBillingApproach()
-  {
-    return $this->configurableBillingApproach;
-  }
-  /**
-   * Output only. The timestamp when configurable_billing_approach was last
-   * updated.
-   *
-   * @param string $configurableBillingApproachUpdateTime
-   */
-  public function setConfigurableBillingApproachUpdateTime($configurableBillingApproachUpdateTime)
-  {
-    $this->configurableBillingApproachUpdateTime = $configurableBillingApproachUpdateTime;
-  }
-  /**
-   * @return string
-   */
-  public function getConfigurableBillingApproachUpdateTime()
-  {
-    return $this->configurableBillingApproachUpdateTime;
-  }
-  /**
-   * Immutable. The content config of the data store. If this field is unset,
-   * the server behavior defaults to ContentConfig.NO_CONTENT.
-   *
-   * Accepted values: CONTENT_CONFIG_UNSPECIFIED, NO_CONTENT, CONTENT_REQUIRED,
-   * PUBLIC_WEBSITE, GOOGLE_WORKSPACE
-   *
-   * @param self::CONTENT_CONFIG_* $contentConfig
+   * @param string
    */
   public function setContentConfig($contentConfig)
   {
     $this->contentConfig = $contentConfig;
   }
   /**
-   * @return self::CONTENT_CONFIG_*
+   * @return string
    */
   public function getContentConfig()
   {
     return $this->contentConfig;
   }
   /**
-   * Output only. Timestamp the DataStore was created at.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -335,9 +166,7 @@ class GoogleCloudDiscoveryengineV1DataStore extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Output only. The id of the default Schema associated to this data store.
-   *
-   * @param string $defaultSchemaId
+   * @param string
    */
   public function setDefaultSchemaId($defaultSchemaId)
   {
@@ -351,11 +180,7 @@ class GoogleCloudDiscoveryengineV1DataStore extends \Google\Collection
     return $this->defaultSchemaId;
   }
   /**
-   * Required. The data store display name. This field must be a UTF-8 encoded
-   * string with a length limit of 128 characters. Otherwise, an
-   * INVALID_ARGUMENT error is returned.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -369,9 +194,7 @@ class GoogleCloudDiscoveryengineV1DataStore extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Configuration for Document understanding and enrichment.
-   *
-   * @param GoogleCloudDiscoveryengineV1DocumentProcessingConfig $documentProcessingConfig
+   * @param GoogleCloudDiscoveryengineV1DocumentProcessingConfig
    */
   public function setDocumentProcessingConfig(GoogleCloudDiscoveryengineV1DocumentProcessingConfig $documentProcessingConfig)
   {
@@ -385,25 +208,7 @@ class GoogleCloudDiscoveryengineV1DataStore extends \Google\Collection
     return $this->documentProcessingConfig;
   }
   /**
-   * Optional. If set, this DataStore is a federated search DataStore.
-   *
-   * @param GoogleCloudDiscoveryengineV1DataStoreFederatedSearchConfig $federatedSearchConfig
-   */
-  public function setFederatedSearchConfig(GoogleCloudDiscoveryengineV1DataStoreFederatedSearchConfig $federatedSearchConfig)
-  {
-    $this->federatedSearchConfig = $federatedSearchConfig;
-  }
-  /**
-   * @return GoogleCloudDiscoveryengineV1DataStoreFederatedSearchConfig
-   */
-  public function getFederatedSearchConfig()
-  {
-    return $this->federatedSearchConfig;
-  }
-  /**
-   * Optional. Configuration for `HEALTHCARE_FHIR` vertical.
-   *
-   * @param GoogleCloudDiscoveryengineV1HealthcareFhirConfig $healthcareFhirConfig
+   * @param GoogleCloudDiscoveryengineV1HealthcareFhirConfig
    */
   public function setHealthcareFhirConfig(GoogleCloudDiscoveryengineV1HealthcareFhirConfig $healthcareFhirConfig)
   {
@@ -417,12 +222,7 @@ class GoogleCloudDiscoveryengineV1DataStore extends \Google\Collection
     return $this->healthcareFhirConfig;
   }
   /**
-   * Immutable. The fully qualified resource name of the associated
-   * IdentityMappingStore. This field can only be set for acl_enabled DataStores
-   * with `THIRD_PARTY` or `GSUITE` IdP. Format: `projects/{project}/locations/{
-   * location}/identityMappingStores/{identity_mapping_store}`.
-   *
-   * @param string $identityMappingStore
+   * @param string
    */
   public function setIdentityMappingStore($identityMappingStore)
   {
@@ -436,28 +236,21 @@ class GoogleCloudDiscoveryengineV1DataStore extends \Google\Collection
     return $this->identityMappingStore;
   }
   /**
-   * Immutable. The industry vertical that the data store registers.
-   *
-   * Accepted values: INDUSTRY_VERTICAL_UNSPECIFIED, GENERIC, MEDIA,
-   * HEALTHCARE_FHIR
-   *
-   * @param self::INDUSTRY_VERTICAL_* $industryVertical
+   * @param string
    */
   public function setIndustryVertical($industryVertical)
   {
     $this->industryVertical = $industryVertical;
   }
   /**
-   * @return self::INDUSTRY_VERTICAL_*
+   * @return string
    */
   public function getIndustryVertical()
   {
     return $this->industryVertical;
   }
   /**
-   * Optional. If set, this DataStore is an Infobot FAQ DataStore.
-   *
-   * @param bool $isInfobotFaqDataStore
+   * @param bool
    */
   public function setIsInfobotFaqDataStore($isInfobotFaqDataStore)
   {
@@ -471,12 +264,7 @@ class GoogleCloudDiscoveryengineV1DataStore extends \Google\Collection
     return $this->isInfobotFaqDataStore;
   }
   /**
-   * Input only. The KMS key to be used to protect this DataStore at creation
-   * time. Must be set for requests that need to comply with CMEK Org Policy
-   * protections. If this field is set and processed successfully, the DataStore
-   * will be protected by the KMS key, as indicated in the cmek_config field.
-   *
-   * @param string $kmsKeyName
+   * @param string
    */
   public function setKmsKeyName($kmsKeyName)
   {
@@ -490,12 +278,7 @@ class GoogleCloudDiscoveryengineV1DataStore extends \Google\Collection
     return $this->kmsKeyName;
   }
   /**
-   * Immutable. Identifier. The full resource name of the data store. Format: `p
-   * rojects/{project}/locations/{location}/collections/{collection_id}/dataStor
-   * es/{data_store_id}`. This field must be a UTF-8 encoded string with a
-   * length limit of 1024 characters.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -509,25 +292,7 @@ class GoogleCloudDiscoveryengineV1DataStore extends \Google\Collection
     return $this->name;
   }
   /**
-   * Optional. Configuration for Natural Language Query Understanding.
-   *
-   * @param GoogleCloudDiscoveryengineV1NaturalLanguageQueryUnderstandingConfig $naturalLanguageQueryUnderstandingConfig
-   */
-  public function setNaturalLanguageQueryUnderstandingConfig(GoogleCloudDiscoveryengineV1NaturalLanguageQueryUnderstandingConfig $naturalLanguageQueryUnderstandingConfig)
-  {
-    $this->naturalLanguageQueryUnderstandingConfig = $naturalLanguageQueryUnderstandingConfig;
-  }
-  /**
-   * @return GoogleCloudDiscoveryengineV1NaturalLanguageQueryUnderstandingConfig
-   */
-  public function getNaturalLanguageQueryUnderstandingConfig()
-  {
-    return $this->naturalLanguageQueryUnderstandingConfig;
-  }
-  /**
-   * Optional. Stores serving config at DataStore level.
-   *
-   * @param GoogleCloudDiscoveryengineV1DataStoreServingConfigDataStore $servingConfigDataStore
+   * @param GoogleCloudDiscoveryengineV1DataStoreServingConfigDataStore
    */
   public function setServingConfigDataStore(GoogleCloudDiscoveryengineV1DataStoreServingConfigDataStore $servingConfigDataStore)
   {
@@ -541,12 +306,7 @@ class GoogleCloudDiscoveryengineV1DataStore extends \Google\Collection
     return $this->servingConfigDataStore;
   }
   /**
-   * The solutions that the data store enrolls. Available solutions for each
-   * industry_vertical: * `MEDIA`: `SOLUTION_TYPE_RECOMMENDATION` and
-   * `SOLUTION_TYPE_SEARCH`. * `SITE_SEARCH`: `SOLUTION_TYPE_SEARCH` is
-   * automatically enrolled. Other solutions cannot be enrolled.
-   *
-   * @param string[] $solutionTypes
+   * @param string[]
    */
   public function setSolutionTypes($solutionTypes)
   {
@@ -560,16 +320,7 @@ class GoogleCloudDiscoveryengineV1DataStore extends \Google\Collection
     return $this->solutionTypes;
   }
   /**
-   * The start schema to use for this DataStore when provisioning it. If unset,
-   * a default vertical specialized schema will be used. This field is only used
-   * by CreateDataStore API, and will be ignored if used in other APIs. This
-   * field will be omitted from all API responses including CreateDataStore API.
-   * To retrieve a schema of a DataStore, use SchemaService.GetSchema API
-   * instead. The provided schema will be validated against certain rules on
-   * schema. Learn more from [this doc](https://cloud.google.com/generative-ai-
-   * app-builder/docs/provide-schema).
-   *
-   * @param GoogleCloudDiscoveryengineV1Schema $startingSchema
+   * @param GoogleCloudDiscoveryengineV1Schema
    */
   public function setStartingSchema(GoogleCloudDiscoveryengineV1Schema $startingSchema)
   {
@@ -583,11 +334,7 @@ class GoogleCloudDiscoveryengineV1DataStore extends \Google\Collection
     return $this->startingSchema;
   }
   /**
-   * Config to store data store type configuration for workspace data. This must
-   * be set when DataStore.content_config is set as
-   * DataStore.ContentConfig.GOOGLE_WORKSPACE.
-   *
-   * @param GoogleCloudDiscoveryengineV1WorkspaceConfig $workspaceConfig
+   * @param GoogleCloudDiscoveryengineV1WorkspaceConfig
    */
   public function setWorkspaceConfig(GoogleCloudDiscoveryengineV1WorkspaceConfig $workspaceConfig)
   {

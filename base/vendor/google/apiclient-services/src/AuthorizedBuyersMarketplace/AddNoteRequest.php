@@ -23,9 +23,7 @@ class AddNoteRequest extends \Google\Model
   protected $noteDataType = '';
 
   /**
-   * The note to add.
-   *
-   * @param Note $note
+   * @param Note
    */
   public function setNote(Note $note)
   {

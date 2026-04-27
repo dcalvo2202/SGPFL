@@ -21,22 +21,16 @@ class StopAirflowCommandResponse extends \Google\Collection
 {
   protected $collection_key = 'output';
   /**
-   * Whether the execution is still running.
-   *
    * @var bool
    */
   public $isDone;
   /**
-   * Output message from stopping execution request.
-   *
    * @var string[]
    */
   public $output;
 
   /**
-   * Whether the execution is still running.
-   *
-   * @param bool $isDone
+   * @param bool
    */
   public function setIsDone($isDone)
   {
@@ -50,9 +44,7 @@ class StopAirflowCommandResponse extends \Google\Collection
     return $this->isDone;
   }
   /**
-   * Output message from stopping execution request.
-   *
-   * @param string[] $output
+   * @param string[]
    */
   public function setOutput($output)
   {

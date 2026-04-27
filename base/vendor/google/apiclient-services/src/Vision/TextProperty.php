@@ -26,9 +26,7 @@ class TextProperty extends \Google\Collection
   protected $detectedLanguagesDataType = 'array';
 
   /**
-   * Detected start or end of a text segment.
-   *
-   * @param DetectedBreak $detectedBreak
+   * @param DetectedBreak
    */
   public function setDetectedBreak(DetectedBreak $detectedBreak)
   {
@@ -42,9 +40,7 @@ class TextProperty extends \Google\Collection
     return $this->detectedBreak;
   }
   /**
-   * A list of detected languages together with confidence.
-   *
-   * @param DetectedLanguage[] $detectedLanguages
+   * @param DetectedLanguage[]
    */
   public function setDetectedLanguages($detectedLanguages)
   {

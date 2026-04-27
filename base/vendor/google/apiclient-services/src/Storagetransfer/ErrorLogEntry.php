@@ -21,23 +21,16 @@ class ErrorLogEntry extends \Google\Collection
 {
   protected $collection_key = 'errorDetails';
   /**
-   * Optional. A list of messages that carry the error details.
-   *
    * @var string[]
    */
   public $errorDetails;
   /**
-   * Output only. A URL that refers to the target (a data source, a data sink,
-   * or an object) with which the error is associated.
-   *
    * @var string
    */
   public $url;
 
   /**
-   * Optional. A list of messages that carry the error details.
-   *
-   * @param string[] $errorDetails
+   * @param string[]
    */
   public function setErrorDetails($errorDetails)
   {
@@ -51,10 +44,7 @@ class ErrorLogEntry extends \Google\Collection
     return $this->errorDetails;
   }
   /**
-   * Output only. A URL that refers to the target (a data source, a data sink,
-   * or an object) with which the error is associated.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

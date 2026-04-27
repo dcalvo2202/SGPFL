@@ -21,77 +21,50 @@ class GoogleCloudRunV2Container extends \Google\Collection
 {
   protected $collection_key = 'volumeMounts';
   /**
-   * Arguments to the entrypoint. The docker image's CMD is used if this is not
-   * provided.
-   *
    * @var string[]
    */
   public $args;
   /**
-   * Base image for this container. Only supported for services. If set, it
-   * indicates that the service is enrolled into automatic base image update.
-   *
    * @var string
    */
   public $baseImageUri;
   protected $buildInfoType = GoogleCloudRunV2BuildInfo::class;
   protected $buildInfoDataType = '';
   /**
-   * Entrypoint array. Not executed within a shell. The docker image's
-   * ENTRYPOINT is used if this is not provided.
-   *
    * @var string[]
    */
   public $command;
   /**
-   * Names of the containers that must start before this container.
-   *
    * @var string[]
    */
   public $dependsOn;
   protected $envType = GoogleCloudRunV2EnvVar::class;
   protected $envDataType = 'array';
   /**
-   * Required. Name of the container image in Dockerhub, Google Artifact
-   * Registry, or Google Container Registry. If the host is not provided,
-   * Dockerhub is assumed.
-   *
    * @var string
    */
   public $image;
   protected $livenessProbeType = GoogleCloudRunV2Probe::class;
   protected $livenessProbeDataType = '';
   /**
-   * Name of the container specified as a DNS_LABEL (RFC 1123).
-   *
    * @var string
    */
   public $name;
   protected $portsType = GoogleCloudRunV2ContainerPort::class;
   protected $portsDataType = 'array';
-  protected $readinessProbeType = GoogleCloudRunV2Probe::class;
-  protected $readinessProbeDataType = '';
   protected $resourcesType = GoogleCloudRunV2ResourceRequirements::class;
   protected $resourcesDataType = '';
-  protected $sourceCodeType = GoogleCloudRunV2SourceCode::class;
-  protected $sourceCodeDataType = '';
   protected $startupProbeType = GoogleCloudRunV2Probe::class;
   protected $startupProbeDataType = '';
   protected $volumeMountsType = GoogleCloudRunV2VolumeMount::class;
   protected $volumeMountsDataType = 'array';
   /**
-   * Container's working directory. If not specified, the container runtime's
-   * default will be used, which might be configured in the container image.
-   *
    * @var string
    */
   public $workingDir;
 
   /**
-   * Arguments to the entrypoint. The docker image's CMD is used if this is not
-   * provided.
-   *
-   * @param string[] $args
+   * @param string[]
    */
   public function setArgs($args)
   {
@@ -105,10 +78,7 @@ class GoogleCloudRunV2Container extends \Google\Collection
     return $this->args;
   }
   /**
-   * Base image for this container. Only supported for services. If set, it
-   * indicates that the service is enrolled into automatic base image update.
-   *
-   * @param string $baseImageUri
+   * @param string
    */
   public function setBaseImageUri($baseImageUri)
   {
@@ -122,9 +92,7 @@ class GoogleCloudRunV2Container extends \Google\Collection
     return $this->baseImageUri;
   }
   /**
-   * Output only. The build info of the container image.
-   *
-   * @param GoogleCloudRunV2BuildInfo $buildInfo
+   * @param GoogleCloudRunV2BuildInfo
    */
   public function setBuildInfo(GoogleCloudRunV2BuildInfo $buildInfo)
   {
@@ -138,10 +106,7 @@ class GoogleCloudRunV2Container extends \Google\Collection
     return $this->buildInfo;
   }
   /**
-   * Entrypoint array. Not executed within a shell. The docker image's
-   * ENTRYPOINT is used if this is not provided.
-   *
-   * @param string[] $command
+   * @param string[]
    */
   public function setCommand($command)
   {
@@ -155,9 +120,7 @@ class GoogleCloudRunV2Container extends \Google\Collection
     return $this->command;
   }
   /**
-   * Names of the containers that must start before this container.
-   *
-   * @param string[] $dependsOn
+   * @param string[]
    */
   public function setDependsOn($dependsOn)
   {
@@ -171,9 +134,7 @@ class GoogleCloudRunV2Container extends \Google\Collection
     return $this->dependsOn;
   }
   /**
-   * List of environment variables to set in the container.
-   *
-   * @param GoogleCloudRunV2EnvVar[] $env
+   * @param GoogleCloudRunV2EnvVar[]
    */
   public function setEnv($env)
   {
@@ -187,11 +148,7 @@ class GoogleCloudRunV2Container extends \Google\Collection
     return $this->env;
   }
   /**
-   * Required. Name of the container image in Dockerhub, Google Artifact
-   * Registry, or Google Container Registry. If the host is not provided,
-   * Dockerhub is assumed.
-   *
-   * @param string $image
+   * @param string
    */
   public function setImage($image)
   {
@@ -205,10 +162,7 @@ class GoogleCloudRunV2Container extends \Google\Collection
     return $this->image;
   }
   /**
-   * Periodic probe of container liveness. Container will be restarted if the
-   * probe fails.
-   *
-   * @param GoogleCloudRunV2Probe $livenessProbe
+   * @param GoogleCloudRunV2Probe
    */
   public function setLivenessProbe(GoogleCloudRunV2Probe $livenessProbe)
   {
@@ -222,9 +176,7 @@ class GoogleCloudRunV2Container extends \Google\Collection
     return $this->livenessProbe;
   }
   /**
-   * Name of the container specified as a DNS_LABEL (RFC 1123).
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -238,13 +190,7 @@ class GoogleCloudRunV2Container extends \Google\Collection
     return $this->name;
   }
   /**
-   * List of ports to expose from the container. Only a single port can be
-   * specified. The specified ports must be listening on all interfaces
-   * (0.0.0.0) within the container to be accessible. If omitted, a port number
-   * will be chosen and passed to the container through the PORT environment
-   * variable for the container to listen on.
-   *
-   * @param GoogleCloudRunV2ContainerPort[] $ports
+   * @param GoogleCloudRunV2ContainerPort[]
    */
   public function setPorts($ports)
   {
@@ -258,25 +204,7 @@ class GoogleCloudRunV2Container extends \Google\Collection
     return $this->ports;
   }
   /**
-   * Readiness probe to be used for health checks.
-   *
-   * @param GoogleCloudRunV2Probe $readinessProbe
-   */
-  public function setReadinessProbe(GoogleCloudRunV2Probe $readinessProbe)
-  {
-    $this->readinessProbe = $readinessProbe;
-  }
-  /**
-   * @return GoogleCloudRunV2Probe
-   */
-  public function getReadinessProbe()
-  {
-    return $this->readinessProbe;
-  }
-  /**
-   * Compute Resource requirements by this container.
-   *
-   * @param GoogleCloudRunV2ResourceRequirements $resources
+   * @param GoogleCloudRunV2ResourceRequirements
    */
   public function setResources(GoogleCloudRunV2ResourceRequirements $resources)
   {
@@ -290,27 +218,7 @@ class GoogleCloudRunV2Container extends \Google\Collection
     return $this->resources;
   }
   /**
-   * Optional. Location of the source.
-   *
-   * @param GoogleCloudRunV2SourceCode $sourceCode
-   */
-  public function setSourceCode(GoogleCloudRunV2SourceCode $sourceCode)
-  {
-    $this->sourceCode = $sourceCode;
-  }
-  /**
-   * @return GoogleCloudRunV2SourceCode
-   */
-  public function getSourceCode()
-  {
-    return $this->sourceCode;
-  }
-  /**
-   * Startup probe of application within the container. All other probes are
-   * disabled if a startup probe is provided, until it succeeds. Container will
-   * not be added to service endpoints if the probe fails.
-   *
-   * @param GoogleCloudRunV2Probe $startupProbe
+   * @param GoogleCloudRunV2Probe
    */
   public function setStartupProbe(GoogleCloudRunV2Probe $startupProbe)
   {
@@ -324,9 +232,7 @@ class GoogleCloudRunV2Container extends \Google\Collection
     return $this->startupProbe;
   }
   /**
-   * Volume to mount into the container's filesystem.
-   *
-   * @param GoogleCloudRunV2VolumeMount[] $volumeMounts
+   * @param GoogleCloudRunV2VolumeMount[]
    */
   public function setVolumeMounts($volumeMounts)
   {
@@ -340,10 +246,7 @@ class GoogleCloudRunV2Container extends \Google\Collection
     return $this->volumeMounts;
   }
   /**
-   * Container's working directory. If not specified, the container runtime's
-   * default will be used, which might be configured in the container image.
-   *
-   * @param string $workingDir
+   * @param string
    */
   public function setWorkingDir($workingDir)
   {

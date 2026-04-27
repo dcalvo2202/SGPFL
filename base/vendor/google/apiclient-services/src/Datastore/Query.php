@@ -23,10 +23,6 @@ class Query extends \Google\Collection
   protected $distinctOnType = PropertyReference::class;
   protected $distinctOnDataType = 'array';
   /**
-   * An ending point for the query results. Query cursors are returned in query
-   * result batches and [can only be used to limit the same query](https://cloud
-   * .google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
-   *
    * @var string
    */
   public $endCursor;
@@ -37,17 +33,10 @@ class Query extends \Google\Collection
   protected $kindType = KindExpression::class;
   protected $kindDataType = 'array';
   /**
-   * The maximum number of results to return. Applies after all other
-   * constraints. Optional. Unspecified is interpreted as no limit. Must be >= 0
-   * if specified.
-   *
    * @var int
    */
   public $limit;
   /**
-   * The number of results to skip. Applies before limit, but after all other
-   * constraints. Optional. Must be >= 0 if specified.
-   *
    * @var int
    */
   public $offset;
@@ -56,22 +45,12 @@ class Query extends \Google\Collection
   protected $projectionType = Projection::class;
   protected $projectionDataType = 'array';
   /**
-   * A starting point for the query results. Query cursors are returned in query
-   * result batches and [can only be used to continue the same query](https://cl
-   * oud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
-   *
    * @var string
    */
   public $startCursor;
 
   /**
-   * The properties to make distinct. The query results will contain the first
-   * result for each distinct combination of values for the given properties (if
-   * empty, all results are returned). Requires: * If `order` is specified, the
-   * set of distinct on properties must appear before the non-distinct on
-   * properties in `order`.
-   *
-   * @param PropertyReference[] $distinctOn
+   * @param PropertyReference[]
    */
   public function setDistinctOn($distinctOn)
   {
@@ -85,11 +64,7 @@ class Query extends \Google\Collection
     return $this->distinctOn;
   }
   /**
-   * An ending point for the query results. Query cursors are returned in query
-   * result batches and [can only be used to limit the same query](https://cloud
-   * .google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
-   *
-   * @param string $endCursor
+   * @param string
    */
   public function setEndCursor($endCursor)
   {
@@ -103,9 +78,7 @@ class Query extends \Google\Collection
     return $this->endCursor;
   }
   /**
-   * The filter to apply.
-   *
-   * @param Filter $filter
+   * @param Filter
    */
   public function setFilter(Filter $filter)
   {
@@ -119,11 +92,7 @@ class Query extends \Google\Collection
     return $this->filter;
   }
   /**
-   * Optional. A potential Nearest Neighbors Search. Applies after all other
-   * filters and ordering. Finds the closest vector embeddings to the given
-   * query vector.
-   *
-   * @param FindNearest $findNearest
+   * @param FindNearest
    */
   public function setFindNearest(FindNearest $findNearest)
   {
@@ -137,10 +106,7 @@ class Query extends \Google\Collection
     return $this->findNearest;
   }
   /**
-   * The kinds to query (if empty, returns entities of all kinds). Currently at
-   * most 1 kind may be specified.
-   *
-   * @param KindExpression[] $kind
+   * @param KindExpression[]
    */
   public function setKind($kind)
   {
@@ -154,11 +120,7 @@ class Query extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The maximum number of results to return. Applies after all other
-   * constraints. Optional. Unspecified is interpreted as no limit. Must be >= 0
-   * if specified.
-   *
-   * @param int $limit
+   * @param int
    */
   public function setLimit($limit)
   {
@@ -172,10 +134,7 @@ class Query extends \Google\Collection
     return $this->limit;
   }
   /**
-   * The number of results to skip. Applies before limit, but after all other
-   * constraints. Optional. Must be >= 0 if specified.
-   *
-   * @param int $offset
+   * @param int
    */
   public function setOffset($offset)
   {
@@ -189,9 +148,7 @@ class Query extends \Google\Collection
     return $this->offset;
   }
   /**
-   * The order to apply to the query results (if empty, order is unspecified).
-   *
-   * @param PropertyOrder[] $order
+   * @param PropertyOrder[]
    */
   public function setOrder($order)
   {
@@ -205,9 +162,7 @@ class Query extends \Google\Collection
     return $this->order;
   }
   /**
-   * The projection to return. Defaults to returning all properties.
-   *
-   * @param Projection[] $projection
+   * @param Projection[]
    */
   public function setProjection($projection)
   {
@@ -221,11 +176,7 @@ class Query extends \Google\Collection
     return $this->projection;
   }
   /**
-   * A starting point for the query results. Query cursors are returned in query
-   * result batches and [can only be used to continue the same query](https://cl
-   * oud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
-   *
-   * @param string $startCursor
+   * @param string
    */
   public function setStartCursor($startCursor)
   {

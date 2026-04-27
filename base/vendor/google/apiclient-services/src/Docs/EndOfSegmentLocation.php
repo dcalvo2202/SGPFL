@@ -20,29 +20,16 @@ namespace Google\Service\Docs;
 class EndOfSegmentLocation extends \Google\Model
 {
   /**
-   * The ID of the header, footer or footnote the location is in. An empty
-   * segment ID signifies the document's body.
-   *
    * @var string
    */
   public $segmentId;
   /**
-   * The tab that the location is in. When omitted, the request is applied to
-   * the first tab. In a document containing a single tab: - If provided, must
-   * match the singular tab's ID. - If omitted, the request applies to the
-   * singular tab. In a document containing multiple tabs: - If provided, the
-   * request applies to the specified tab. - If omitted, the request applies to
-   * the first tab in the document.
-   *
    * @var string
    */
   public $tabId;
 
   /**
-   * The ID of the header, footer or footnote the location is in. An empty
-   * segment ID signifies the document's body.
-   *
-   * @param string $segmentId
+   * @param string
    */
   public function setSegmentId($segmentId)
   {
@@ -56,14 +43,7 @@ class EndOfSegmentLocation extends \Google\Model
     return $this->segmentId;
   }
   /**
-   * The tab that the location is in. When omitted, the request is applied to
-   * the first tab. In a document containing a single tab: - If provided, must
-   * match the singular tab's ID. - If omitted, the request applies to the
-   * singular tab. In a document containing multiple tabs: - If provided, the
-   * request applies to the specified tab. - If omitted, the request applies to
-   * the first tab in the document.
-   *
-   * @param string $tabId
+   * @param string
    */
   public function setTabId($tabId)
   {

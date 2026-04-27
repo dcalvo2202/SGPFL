@@ -24,9 +24,7 @@ class ListRuntimesResponse extends \Google\Collection
   protected $runtimesDataType = 'array';
 
   /**
-   * The runtimes that match the request.
-   *
-   * @param Runtime[] $runtimes
+   * @param Runtime[]
    */
   public function setRuntimes($runtimes)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\CloudRun;
 class GoogleCloudRunV2WorkerPoolScaling extends \Google\Model
 {
   /**
-   * Optional. The total number of instances in manual scaling mode.
-   *
    * @var int
    */
   public $manualInstanceCount;
 
   /**
-   * Optional. The total number of instances in manual scaling mode.
-   *
-   * @param int $manualInstanceCount
+   * @param int
    */
   public function setManualInstanceCount($manualInstanceCount)
   {

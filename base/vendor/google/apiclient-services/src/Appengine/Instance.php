@@ -19,157 +19,77 @@ namespace Google\Service\Appengine;
 
 class Instance extends \Google\Model
 {
-  public const AVAILABILITY_UNSPECIFIED = 'UNSPECIFIED';
-  public const AVAILABILITY_RESIDENT = 'RESIDENT';
-  public const AVAILABILITY_DYNAMIC = 'DYNAMIC';
   /**
-   * There is no liveness health check for the instance. Only applicable for
-   * instances in App Engine standard environment.
-   */
-  public const VM_LIVENESS_LIVENESS_STATE_UNSPECIFIED = 'LIVENESS_STATE_UNSPECIFIED';
-  /**
-   * The health checking system is aware of the instance but its health is not
-   * known at the moment.
-   */
-  public const VM_LIVENESS_UNKNOWN = 'UNKNOWN';
-  /**
-   * The instance is reachable i.e. a connection to the application health
-   * checking endpoint can be established, and conforms to the requirements
-   * defined by the health check.
-   */
-  public const VM_LIVENESS_HEALTHY = 'HEALTHY';
-  /**
-   * The instance is reachable, but does not conform to the requirements defined
-   * by the health check.
-   */
-  public const VM_LIVENESS_UNHEALTHY = 'UNHEALTHY';
-  /**
-   * The instance is being drained. The existing connections to the instance
-   * have time to complete, but the new ones are being refused.
-   */
-  public const VM_LIVENESS_DRAINING = 'DRAINING';
-  /**
-   * The instance is unreachable i.e. a connection to the application health
-   * checking endpoint cannot be established, or the server does not respond
-   * within the specified timeout.
-   */
-  public const VM_LIVENESS_TIMEOUT = 'TIMEOUT';
-  /**
-   * Output only. App Engine release this instance is running on.
-   *
    * @var string
    */
   public $appEngineRelease;
   /**
-   * Output only. Availability of the instance.
-   *
    * @var string
    */
   public $availability;
   /**
-   * Output only. Average latency (ms) over the last minute.
-   *
    * @var int
    */
   public $averageLatency;
   /**
-   * Output only. Number of errors since this instance was started.
-   *
    * @var int
    */
   public $errors;
   /**
-   * Output only. Relative name of the instance within the version. Example:
-   * instance-1.
-   *
    * @var string
    */
   public $id;
   /**
-   * Output only. Total memory in use (bytes).
-   *
    * @var string
    */
   public $memoryUsage;
   /**
-   * Output only. Full path to the Instance resource in the API. Example:
-   * apps/myapp/services/default/versions/v1/instances/instance-1.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Average queries per second (QPS) over the last minute.
-   *
    * @var float
    */
   public $qps;
   /**
-   * Output only. Number of requests since this instance was started.
-   *
    * @var int
    */
   public $requests;
   /**
-   * Output only. Time that this instance was started.@OutputOnly
-   *
    * @var string
    */
   public $startTime;
   /**
-   * Output only. Whether this instance is in debug mode. Only applicable for
-   * instances in App Engine flexible environment.
-   *
    * @var bool
    */
   public $vmDebugEnabled;
   /**
-   * Output only. Virtual machine ID of this instance. Only applicable for
-   * instances in App Engine flexible environment.
-   *
    * @var string
    */
   public $vmId;
   /**
-   * Output only. The IP address of this instance. Only applicable for instances
-   * in App Engine flexible environment.
-   *
    * @var string
    */
   public $vmIp;
   /**
-   * Output only. The liveness health check of this instance. Only applicable
-   * for instances in App Engine flexible environment.
-   *
    * @var string
    */
   public $vmLiveness;
   /**
-   * Output only. Name of the virtual machine where this instance lives. Only
-   * applicable for instances in App Engine flexible environment.
-   *
    * @var string
    */
   public $vmName;
   /**
-   * Output only. Status of the virtual machine where this instance lives. Only
-   * applicable for instances in App Engine flexible environment.
-   *
    * @var string
    */
   public $vmStatus;
   /**
-   * Output only. Zone where the virtual machine is located. Only applicable for
-   * instances in App Engine flexible environment.
-   *
    * @var string
    */
   public $vmZoneName;
 
   /**
-   * Output only. App Engine release this instance is running on.
-   *
-   * @param string $appEngineRelease
+   * @param string
    */
   public function setAppEngineRelease($appEngineRelease)
   {
@@ -183,27 +103,21 @@ class Instance extends \Google\Model
     return $this->appEngineRelease;
   }
   /**
-   * Output only. Availability of the instance.
-   *
-   * Accepted values: UNSPECIFIED, RESIDENT, DYNAMIC
-   *
-   * @param self::AVAILABILITY_* $availability
+   * @param string
    */
   public function setAvailability($availability)
   {
     $this->availability = $availability;
   }
   /**
-   * @return self::AVAILABILITY_*
+   * @return string
    */
   public function getAvailability()
   {
     return $this->availability;
   }
   /**
-   * Output only. Average latency (ms) over the last minute.
-   *
-   * @param int $averageLatency
+   * @param int
    */
   public function setAverageLatency($averageLatency)
   {
@@ -217,9 +131,7 @@ class Instance extends \Google\Model
     return $this->averageLatency;
   }
   /**
-   * Output only. Number of errors since this instance was started.
-   *
-   * @param int $errors
+   * @param int
    */
   public function setErrors($errors)
   {
@@ -233,10 +145,7 @@ class Instance extends \Google\Model
     return $this->errors;
   }
   /**
-   * Output only. Relative name of the instance within the version. Example:
-   * instance-1.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -250,9 +159,7 @@ class Instance extends \Google\Model
     return $this->id;
   }
   /**
-   * Output only. Total memory in use (bytes).
-   *
-   * @param string $memoryUsage
+   * @param string
    */
   public function setMemoryUsage($memoryUsage)
   {
@@ -266,10 +173,7 @@ class Instance extends \Google\Model
     return $this->memoryUsage;
   }
   /**
-   * Output only. Full path to the Instance resource in the API. Example:
-   * apps/myapp/services/default/versions/v1/instances/instance-1.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -283,9 +187,7 @@ class Instance extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Average queries per second (QPS) over the last minute.
-   *
-   * @param float $qps
+   * @param float
    */
   public function setQps($qps)
   {
@@ -299,9 +201,7 @@ class Instance extends \Google\Model
     return $this->qps;
   }
   /**
-   * Output only. Number of requests since this instance was started.
-   *
-   * @param int $requests
+   * @param int
    */
   public function setRequests($requests)
   {
@@ -315,9 +215,7 @@ class Instance extends \Google\Model
     return $this->requests;
   }
   /**
-   * Output only. Time that this instance was started.@OutputOnly
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -331,10 +229,7 @@ class Instance extends \Google\Model
     return $this->startTime;
   }
   /**
-   * Output only. Whether this instance is in debug mode. Only applicable for
-   * instances in App Engine flexible environment.
-   *
-   * @param bool $vmDebugEnabled
+   * @param bool
    */
   public function setVmDebugEnabled($vmDebugEnabled)
   {
@@ -348,10 +243,7 @@ class Instance extends \Google\Model
     return $this->vmDebugEnabled;
   }
   /**
-   * Output only. Virtual machine ID of this instance. Only applicable for
-   * instances in App Engine flexible environment.
-   *
-   * @param string $vmId
+   * @param string
    */
   public function setVmId($vmId)
   {
@@ -365,10 +257,7 @@ class Instance extends \Google\Model
     return $this->vmId;
   }
   /**
-   * Output only. The IP address of this instance. Only applicable for instances
-   * in App Engine flexible environment.
-   *
-   * @param string $vmIp
+   * @param string
    */
   public function setVmIp($vmIp)
   {
@@ -382,30 +271,21 @@ class Instance extends \Google\Model
     return $this->vmIp;
   }
   /**
-   * Output only. The liveness health check of this instance. Only applicable
-   * for instances in App Engine flexible environment.
-   *
-   * Accepted values: LIVENESS_STATE_UNSPECIFIED, UNKNOWN, HEALTHY, UNHEALTHY,
-   * DRAINING, TIMEOUT
-   *
-   * @param self::VM_LIVENESS_* $vmLiveness
+   * @param string
    */
   public function setVmLiveness($vmLiveness)
   {
     $this->vmLiveness = $vmLiveness;
   }
   /**
-   * @return self::VM_LIVENESS_*
+   * @return string
    */
   public function getVmLiveness()
   {
     return $this->vmLiveness;
   }
   /**
-   * Output only. Name of the virtual machine where this instance lives. Only
-   * applicable for instances in App Engine flexible environment.
-   *
-   * @param string $vmName
+   * @param string
    */
   public function setVmName($vmName)
   {
@@ -419,10 +299,7 @@ class Instance extends \Google\Model
     return $this->vmName;
   }
   /**
-   * Output only. Status of the virtual machine where this instance lives. Only
-   * applicable for instances in App Engine flexible environment.
-   *
-   * @param string $vmStatus
+   * @param string
    */
   public function setVmStatus($vmStatus)
   {
@@ -436,10 +313,7 @@ class Instance extends \Google\Model
     return $this->vmStatus;
   }
   /**
-   * Output only. Zone where the virtual machine is located. Only applicable for
-   * instances in App Engine flexible environment.
-   *
-   * @param string $vmZoneName
+   * @param string
    */
   public function setVmZoneName($vmZoneName)
   {

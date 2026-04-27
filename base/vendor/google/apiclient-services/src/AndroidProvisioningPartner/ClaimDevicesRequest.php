@@ -24,9 +24,7 @@ class ClaimDevicesRequest extends \Google\Collection
   protected $claimsDataType = 'array';
 
   /**
-   * Required. A list of device claims.
-   *
-   * @param PartnerClaim[] $claims
+   * @param PartnerClaim[]
    */
   public function setClaims($claims)
   {

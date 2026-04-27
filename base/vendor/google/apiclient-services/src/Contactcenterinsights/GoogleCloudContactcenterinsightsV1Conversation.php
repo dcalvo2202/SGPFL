@@ -19,33 +19,14 @@ namespace Google\Service\Contactcenterinsights;
 
 class GoogleCloudContactcenterinsightsV1Conversation extends \Google\Collection
 {
-  /**
-   * Default value for unspecified.
-   */
-  public const MEDIUM_MEDIUM_UNSPECIFIED = 'MEDIUM_UNSPECIFIED';
-  /**
-   * The format for conversations that took place over the phone.
-   */
-  public const MEDIUM_PHONE_CALL = 'PHONE_CALL';
-  /**
-   * The format for conversations that took place over chat.
-   */
-  public const MEDIUM_CHAT = 'CHAT';
   protected $collection_key = 'runtimeAnnotations';
   /**
-   * An opaque, user-specified string representing the human agent who handled
-   * the conversation.
-   *
    * @var string
    */
   public $agentId;
   protected $callMetadataType = GoogleCloudContactcenterinsightsV1ConversationCallMetadata::class;
   protected $callMetadataDataType = '';
-  protected $correlationInfoType = GoogleCloudContactcenterinsightsV1ConversationCorrelationInfo::class;
-  protected $correlationInfoDataType = '';
   /**
-   * Output only. The time at which the conversation was created.
-   *
    * @var string
    */
   public $createTime;
@@ -54,28 +35,18 @@ class GoogleCloudContactcenterinsightsV1Conversation extends \Google\Collection
   protected $dialogflowIntentsType = GoogleCloudContactcenterinsightsV1DialogflowIntent::class;
   protected $dialogflowIntentsDataType = 'map';
   /**
-   * Output only. The duration of the conversation.
-   *
    * @var string
    */
   public $duration;
   /**
-   * The time at which this conversation should expire. After this time, the
-   * conversation data and any associated analyses will be deleted.
-   *
    * @var string
    */
   public $expireTime;
   /**
-   * A map for the user to specify any custom fields. A maximum of 100 labels
-   * per conversation is allowed, with a maximum of 256 characters per entry.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * A user-specified language code for the conversation.
-   *
    * @var string
    */
   public $languageCode;
@@ -84,29 +55,18 @@ class GoogleCloudContactcenterinsightsV1Conversation extends \Google\Collection
   protected $latestSummaryType = GoogleCloudContactcenterinsightsV1ConversationSummarizationSuggestionData::class;
   protected $latestSummaryDataType = '';
   /**
-   * Immutable. The conversation medium.
-   *
    * @var string
    */
   public $medium;
   /**
-   * Input only. JSON metadata encoded as a string. This field is primarily used
-   * by Insights integrations with various telephony systems and must be in one
-   * of Insight's supported formats.
-   *
    * @var string
    */
   public $metadataJson;
   /**
-   * Immutable. The resource name of the conversation. Format:
-   * projects/{project}/locations/{location}/conversations/{conversation}
-   *
    * @var string
    */
   public $name;
   /**
-   * Obfuscated user ID which the customer sent to us.
-   *
    * @var string
    */
   public $obfuscatedUserId;
@@ -115,38 +75,26 @@ class GoogleCloudContactcenterinsightsV1Conversation extends \Google\Collection
   protected $runtimeAnnotationsType = GoogleCloudContactcenterinsightsV1RuntimeAnnotation::class;
   protected $runtimeAnnotationsDataType = 'array';
   /**
-   * The time at which the conversation started.
-   *
    * @var string
    */
   public $startTime;
   protected $transcriptType = GoogleCloudContactcenterinsightsV1ConversationTranscript::class;
   protected $transcriptDataType = '';
   /**
-   * Input only. The TTL for this resource. If specified, then this TTL will be
-   * used to calculate the expire time.
-   *
    * @var string
    */
   public $ttl;
   /**
-   * Output only. The number of turns in the conversation.
-   *
    * @var int
    */
   public $turnCount;
   /**
-   * Output only. The most recent time at which the conversation was updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * An opaque, user-specified string representing the human agent who handled
-   * the conversation.
-   *
-   * @param string $agentId
+   * @param string
    */
   public function setAgentId($agentId)
   {
@@ -160,9 +108,7 @@ class GoogleCloudContactcenterinsightsV1Conversation extends \Google\Collection
     return $this->agentId;
   }
   /**
-   * Call-specific metadata.
-   *
-   * @param GoogleCloudContactcenterinsightsV1ConversationCallMetadata $callMetadata
+   * @param GoogleCloudContactcenterinsightsV1ConversationCallMetadata
    */
   public function setCallMetadata(GoogleCloudContactcenterinsightsV1ConversationCallMetadata $callMetadata)
   {
@@ -176,25 +122,7 @@ class GoogleCloudContactcenterinsightsV1Conversation extends \Google\Collection
     return $this->callMetadata;
   }
   /**
-   * Output only. Info for correlating across conversations.
-   *
-   * @param GoogleCloudContactcenterinsightsV1ConversationCorrelationInfo $correlationInfo
-   */
-  public function setCorrelationInfo(GoogleCloudContactcenterinsightsV1ConversationCorrelationInfo $correlationInfo)
-  {
-    $this->correlationInfo = $correlationInfo;
-  }
-  /**
-   * @return GoogleCloudContactcenterinsightsV1ConversationCorrelationInfo
-   */
-  public function getCorrelationInfo()
-  {
-    return $this->correlationInfo;
-  }
-  /**
-   * Output only. The time at which the conversation was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -208,9 +136,7 @@ class GoogleCloudContactcenterinsightsV1Conversation extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * The source of the audio and transcription for the conversation.
-   *
-   * @param GoogleCloudContactcenterinsightsV1ConversationDataSource $dataSource
+   * @param GoogleCloudContactcenterinsightsV1ConversationDataSource
    */
   public function setDataSource(GoogleCloudContactcenterinsightsV1ConversationDataSource $dataSource)
   {
@@ -224,11 +150,7 @@ class GoogleCloudContactcenterinsightsV1Conversation extends \Google\Collection
     return $this->dataSource;
   }
   /**
-   * Output only. All the matched Dialogflow intents in the call. The key
-   * corresponds to a Dialogflow intent, format:
-   * projects/{project}/agent/{agent}/intents/{intent}
-   *
-   * @param GoogleCloudContactcenterinsightsV1DialogflowIntent[] $dialogflowIntents
+   * @param GoogleCloudContactcenterinsightsV1DialogflowIntent[]
    */
   public function setDialogflowIntents($dialogflowIntents)
   {
@@ -242,9 +164,7 @@ class GoogleCloudContactcenterinsightsV1Conversation extends \Google\Collection
     return $this->dialogflowIntents;
   }
   /**
-   * Output only. The duration of the conversation.
-   *
-   * @param string $duration
+   * @param string
    */
   public function setDuration($duration)
   {
@@ -258,10 +178,7 @@ class GoogleCloudContactcenterinsightsV1Conversation extends \Google\Collection
     return $this->duration;
   }
   /**
-   * The time at which this conversation should expire. After this time, the
-   * conversation data and any associated analyses will be deleted.
-   *
-   * @param string $expireTime
+   * @param string
    */
   public function setExpireTime($expireTime)
   {
@@ -275,10 +192,7 @@ class GoogleCloudContactcenterinsightsV1Conversation extends \Google\Collection
     return $this->expireTime;
   }
   /**
-   * A map for the user to specify any custom fields. A maximum of 100 labels
-   * per conversation is allowed, with a maximum of 256 characters per entry.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -292,9 +206,7 @@ class GoogleCloudContactcenterinsightsV1Conversation extends \Google\Collection
     return $this->labels;
   }
   /**
-   * A user-specified language code for the conversation.
-   *
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {
@@ -308,9 +220,7 @@ class GoogleCloudContactcenterinsightsV1Conversation extends \Google\Collection
     return $this->languageCode;
   }
   /**
-   * Output only. The conversation's latest analysis, if one exists.
-   *
-   * @param GoogleCloudContactcenterinsightsV1Analysis $latestAnalysis
+   * @param GoogleCloudContactcenterinsightsV1Analysis
    */
   public function setLatestAnalysis(GoogleCloudContactcenterinsightsV1Analysis $latestAnalysis)
   {
@@ -324,9 +234,7 @@ class GoogleCloudContactcenterinsightsV1Conversation extends \Google\Collection
     return $this->latestAnalysis;
   }
   /**
-   * Output only. Latest summary of the conversation.
-   *
-   * @param GoogleCloudContactcenterinsightsV1ConversationSummarizationSuggestionData $latestSummary
+   * @param GoogleCloudContactcenterinsightsV1ConversationSummarizationSuggestionData
    */
   public function setLatestSummary(GoogleCloudContactcenterinsightsV1ConversationSummarizationSuggestionData $latestSummary)
   {
@@ -340,29 +248,21 @@ class GoogleCloudContactcenterinsightsV1Conversation extends \Google\Collection
     return $this->latestSummary;
   }
   /**
-   * Immutable. The conversation medium.
-   *
-   * Accepted values: MEDIUM_UNSPECIFIED, PHONE_CALL, CHAT
-   *
-   * @param self::MEDIUM_* $medium
+   * @param string
    */
   public function setMedium($medium)
   {
     $this->medium = $medium;
   }
   /**
-   * @return self::MEDIUM_*
+   * @return string
    */
   public function getMedium()
   {
     return $this->medium;
   }
   /**
-   * Input only. JSON metadata encoded as a string. This field is primarily used
-   * by Insights integrations with various telephony systems and must be in one
-   * of Insight's supported formats.
-   *
-   * @param string $metadataJson
+   * @param string
    */
   public function setMetadataJson($metadataJson)
   {
@@ -376,10 +276,7 @@ class GoogleCloudContactcenterinsightsV1Conversation extends \Google\Collection
     return $this->metadataJson;
   }
   /**
-   * Immutable. The resource name of the conversation. Format:
-   * projects/{project}/locations/{location}/conversations/{conversation}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -393,9 +290,7 @@ class GoogleCloudContactcenterinsightsV1Conversation extends \Google\Collection
     return $this->name;
   }
   /**
-   * Obfuscated user ID which the customer sent to us.
-   *
-   * @param string $obfuscatedUserId
+   * @param string
    */
   public function setObfuscatedUserId($obfuscatedUserId)
   {
@@ -409,9 +304,7 @@ class GoogleCloudContactcenterinsightsV1Conversation extends \Google\Collection
     return $this->obfuscatedUserId;
   }
   /**
-   * Conversation metadata related to quality management.
-   *
-   * @param GoogleCloudContactcenterinsightsV1ConversationQualityMetadata $qualityMetadata
+   * @param GoogleCloudContactcenterinsightsV1ConversationQualityMetadata
    */
   public function setQualityMetadata(GoogleCloudContactcenterinsightsV1ConversationQualityMetadata $qualityMetadata)
   {
@@ -425,10 +318,7 @@ class GoogleCloudContactcenterinsightsV1Conversation extends \Google\Collection
     return $this->qualityMetadata;
   }
   /**
-   * Output only. The annotations that were generated during the customer and
-   * agent interaction.
-   *
-   * @param GoogleCloudContactcenterinsightsV1RuntimeAnnotation[] $runtimeAnnotations
+   * @param GoogleCloudContactcenterinsightsV1RuntimeAnnotation[]
    */
   public function setRuntimeAnnotations($runtimeAnnotations)
   {
@@ -442,9 +332,7 @@ class GoogleCloudContactcenterinsightsV1Conversation extends \Google\Collection
     return $this->runtimeAnnotations;
   }
   /**
-   * The time at which the conversation started.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -458,9 +346,7 @@ class GoogleCloudContactcenterinsightsV1Conversation extends \Google\Collection
     return $this->startTime;
   }
   /**
-   * Output only. The conversation transcript.
-   *
-   * @param GoogleCloudContactcenterinsightsV1ConversationTranscript $transcript
+   * @param GoogleCloudContactcenterinsightsV1ConversationTranscript
    */
   public function setTranscript(GoogleCloudContactcenterinsightsV1ConversationTranscript $transcript)
   {
@@ -474,10 +360,7 @@ class GoogleCloudContactcenterinsightsV1Conversation extends \Google\Collection
     return $this->transcript;
   }
   /**
-   * Input only. The TTL for this resource. If specified, then this TTL will be
-   * used to calculate the expire time.
-   *
-   * @param string $ttl
+   * @param string
    */
   public function setTtl($ttl)
   {
@@ -491,9 +374,7 @@ class GoogleCloudContactcenterinsightsV1Conversation extends \Google\Collection
     return $this->ttl;
   }
   /**
-   * Output only. The number of turns in the conversation.
-   *
-   * @param int $turnCount
+   * @param int
    */
   public function setTurnCount($turnCount)
   {
@@ -507,9 +388,7 @@ class GoogleCloudContactcenterinsightsV1Conversation extends \Google\Collection
     return $this->turnCount;
   }
   /**
-   * Output only. The most recent time at which the conversation was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

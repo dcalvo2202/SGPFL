@@ -37,7 +37,7 @@ class VolumeVolumeInfoPanelizationSummary extends \Google\Model
   public $imageBubbleVersion;
 
   /**
-   * @param bool $containsEpubBubbles
+   * @param bool
    */
   public function setContainsEpubBubbles($containsEpubBubbles)
   {
@@ -51,7 +51,7 @@ class VolumeVolumeInfoPanelizationSummary extends \Google\Model
     return $this->containsEpubBubbles;
   }
   /**
-   * @param bool $containsImageBubbles
+   * @param bool
    */
   public function setContainsImageBubbles($containsImageBubbles)
   {
@@ -65,7 +65,7 @@ class VolumeVolumeInfoPanelizationSummary extends \Google\Model
     return $this->containsImageBubbles;
   }
   /**
-   * @param string $epubBubbleVersion
+   * @param string
    */
   public function setEpubBubbleVersion($epubBubbleVersion)
   {
@@ -79,7 +79,7 @@ class VolumeVolumeInfoPanelizationSummary extends \Google\Model
     return $this->epubBubbleVersion;
   }
   /**
-   * @param string $imageBubbleVersion
+   * @param string
    */
   public function setImageBubbleVersion($imageBubbleVersion)
   {

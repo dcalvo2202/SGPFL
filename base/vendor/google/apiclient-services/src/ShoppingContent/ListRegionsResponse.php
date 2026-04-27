@@ -21,9 +21,6 @@ class ListRegionsResponse extends \Google\Collection
 {
   protected $collection_key = 'regions';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListRegionsResponse extends \Google\Collection
   protected $regionsDataType = 'array';
 
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class ListRegionsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The regions from the specified merchant.
-   *
-   * @param Region[] $regions
+   * @param Region[]
    */
   public function setRegions($regions)
   {

@@ -24,9 +24,7 @@ class GoogleCloudAiplatformV1FeatureNoiseSigma extends \Google\Collection
   protected $noiseSigmaDataType = 'array';
 
   /**
-   * Noise sigma per feature. No noise is added to features that are not set.
-   *
-   * @param GoogleCloudAiplatformV1FeatureNoiseSigmaNoiseSigmaForFeature[] $noiseSigma
+   * @param GoogleCloudAiplatformV1FeatureNoiseSigmaNoiseSigmaForFeature[]
    */
   public function setNoiseSigma($noiseSigma)
   {

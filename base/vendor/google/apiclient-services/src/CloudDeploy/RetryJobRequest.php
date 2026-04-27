@@ -21,29 +21,20 @@ class RetryJobRequest extends \Google\Collection
 {
   protected $collection_key = 'overrideDeployPolicy';
   /**
-   * Required. The job ID for the Job to retry.
-   *
    * @var string
    */
   public $jobId;
   /**
-   * Optional. Deploy policies to override. Format is
-   * `projects/{project}/locations/{location}/deployPolicies/{deployPolicy}`.
-   *
    * @var string[]
    */
   public $overrideDeployPolicy;
   /**
-   * Required. The phase ID the Job to retry belongs to.
-   *
    * @var string
    */
   public $phaseId;
 
   /**
-   * Required. The job ID for the Job to retry.
-   *
-   * @param string $jobId
+   * @param string
    */
   public function setJobId($jobId)
   {
@@ -57,10 +48,7 @@ class RetryJobRequest extends \Google\Collection
     return $this->jobId;
   }
   /**
-   * Optional. Deploy policies to override. Format is
-   * `projects/{project}/locations/{location}/deployPolicies/{deployPolicy}`.
-   *
-   * @param string[] $overrideDeployPolicy
+   * @param string[]
    */
   public function setOverrideDeployPolicy($overrideDeployPolicy)
   {
@@ -74,9 +62,7 @@ class RetryJobRequest extends \Google\Collection
     return $this->overrideDeployPolicy;
   }
   /**
-   * Required. The phase ID the Job to retry belongs to.
-   *
-   * @param string $phaseId
+   * @param string
    */
   public function setPhaseId($phaseId)
   {

@@ -20,262 +20,72 @@ namespace Google\Service\MyBusinessLodging;
 class LivingAreaAccessibility extends \Google\Model
 {
   /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const ADA_COMPLIANT_UNIT_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const ADA_COMPLIANT_UNIT_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const ADA_COMPLIANT_UNIT_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const ADA_COMPLIANT_UNIT_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const HEARING_ACCESSIBLE_DOORBELL_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const HEARING_ACCESSIBLE_DOORBELL_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const HEARING_ACCESSIBLE_DOORBELL_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const HEARING_ACCESSIBLE_DOORBELL_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const HEARING_ACCESSIBLE_FIRE_ALARM_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const HEARING_ACCESSIBLE_FIRE_ALARM_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const HEARING_ACCESSIBLE_FIRE_ALARM_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const HEARING_ACCESSIBLE_FIRE_ALARM_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const HEARING_ACCESSIBLE_UNIT_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const HEARING_ACCESSIBLE_UNIT_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const HEARING_ACCESSIBLE_UNIT_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const HEARING_ACCESSIBLE_UNIT_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const MOBILITY_ACCESSIBLE_BATHTUB_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const MOBILITY_ACCESSIBLE_BATHTUB_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const MOBILITY_ACCESSIBLE_BATHTUB_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const MOBILITY_ACCESSIBLE_BATHTUB_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const MOBILITY_ACCESSIBLE_SHOWER_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const MOBILITY_ACCESSIBLE_SHOWER_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const MOBILITY_ACCESSIBLE_SHOWER_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const MOBILITY_ACCESSIBLE_SHOWER_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const MOBILITY_ACCESSIBLE_TOILET_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const MOBILITY_ACCESSIBLE_TOILET_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const MOBILITY_ACCESSIBLE_TOILET_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const MOBILITY_ACCESSIBLE_TOILET_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const MOBILITY_ACCESSIBLE_UNIT_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const MOBILITY_ACCESSIBLE_UNIT_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const MOBILITY_ACCESSIBLE_UNIT_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const MOBILITY_ACCESSIBLE_UNIT_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * ADA compliant unit. A guestroom designed to accommodate the physical
-   * challenges of a guest with mobility and/or auditory and/or visual issues,
-   * as determined by legislative policy. Usually features enlarged doorways,
-   * roll-in showers with seats, bathroom grab bars, and communication equipment
-   * for the hearing and sight challenged.
-   *
    * @var bool
    */
   public $adaCompliantUnit;
   /**
-   * ADA compliant unit exception.
-   *
    * @var string
    */
   public $adaCompliantUnitException;
   /**
-   * Hearing-accessible doorbell. A visual indicator(s) of a knock or ring at
-   * the door.
-   *
    * @var bool
    */
   public $hearingAccessibleDoorbell;
   /**
-   * Hearing-accessible doorbell exception.
-   *
    * @var string
    */
   public $hearingAccessibleDoorbellException;
   /**
-   * Hearing-accessible fire alarm. A device that gives warning of a fire
-   * through flashing lights.
-   *
    * @var bool
    */
   public $hearingAccessibleFireAlarm;
   /**
-   * Hearing-accessible fire alarm exception.
-   *
    * @var string
    */
   public $hearingAccessibleFireAlarmException;
   /**
-   * Hearing-accessible unit. A guestroom designed to accommodate the physical
-   * challenges of a guest with auditory issues.
-   *
    * @var bool
    */
   public $hearingAccessibleUnit;
   /**
-   * Hearing-accessible unit exception.
-   *
    * @var string
    */
   public $hearingAccessibleUnitException;
   /**
-   * Mobility-accessible bathtub. A bathtub that accomodates the physically
-   * challenged with additional railings or hand grips, a transfer seat or lift,
-   * and/or a door to enable walking into the tub.
-   *
    * @var bool
    */
   public $mobilityAccessibleBathtub;
   /**
-   * Mobility-accessible bathtub exception.
-   *
    * @var string
    */
   public $mobilityAccessibleBathtubException;
   /**
-   * Mobility-accessible shower. A shower with an enlarged door or access point
-   * to accommodate a wheelchair or a waterproof seat for the physically
-   * challenged.
-   *
    * @var bool
    */
   public $mobilityAccessibleShower;
   /**
-   * Mobility-accessible shower exception.
-   *
    * @var string
    */
   public $mobilityAccessibleShowerException;
   /**
-   * Mobility-accessible toilet. A toilet with a higher seat, grab bars, and/or
-   * a larger area around it to accommodate the physically challenged.
-   *
    * @var bool
    */
   public $mobilityAccessibleToilet;
   /**
-   * Mobility-accessible toilet exception.
-   *
    * @var string
    */
   public $mobilityAccessibleToiletException;
   /**
-   * Mobility-accessible unit. A guestroom designed to accommodate the physical
-   * challenges of a guest with mobility and/or auditory and/or visual issues.
-   * Usually features enlarged doorways, roll-in showers with seats, bathroom
-   * grab bars, and communication equipment for the hearing and sight
-   * challenged.
-   *
    * @var bool
    */
   public $mobilityAccessibleUnit;
   /**
-   * Mobility-accessible unit exception.
-   *
    * @var string
    */
   public $mobilityAccessibleUnitException;
 
   /**
-   * ADA compliant unit. A guestroom designed to accommodate the physical
-   * challenges of a guest with mobility and/or auditory and/or visual issues,
-   * as determined by legislative policy. Usually features enlarged doorways,
-   * roll-in showers with seats, bathroom grab bars, and communication equipment
-   * for the hearing and sight challenged.
-   *
-   * @param bool $adaCompliantUnit
+   * @param bool
    */
   public function setAdaCompliantUnit($adaCompliantUnit)
   {
@@ -289,29 +99,21 @@ class LivingAreaAccessibility extends \Google\Model
     return $this->adaCompliantUnit;
   }
   /**
-   * ADA compliant unit exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::ADA_COMPLIANT_UNIT_EXCEPTION_* $adaCompliantUnitException
+   * @param string
    */
   public function setAdaCompliantUnitException($adaCompliantUnitException)
   {
     $this->adaCompliantUnitException = $adaCompliantUnitException;
   }
   /**
-   * @return self::ADA_COMPLIANT_UNIT_EXCEPTION_*
+   * @return string
    */
   public function getAdaCompliantUnitException()
   {
     return $this->adaCompliantUnitException;
   }
   /**
-   * Hearing-accessible doorbell. A visual indicator(s) of a knock or ring at
-   * the door.
-   *
-   * @param bool $hearingAccessibleDoorbell
+   * @param bool
    */
   public function setHearingAccessibleDoorbell($hearingAccessibleDoorbell)
   {
@@ -325,29 +127,21 @@ class LivingAreaAccessibility extends \Google\Model
     return $this->hearingAccessibleDoorbell;
   }
   /**
-   * Hearing-accessible doorbell exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::HEARING_ACCESSIBLE_DOORBELL_EXCEPTION_* $hearingAccessibleDoorbellException
+   * @param string
    */
   public function setHearingAccessibleDoorbellException($hearingAccessibleDoorbellException)
   {
     $this->hearingAccessibleDoorbellException = $hearingAccessibleDoorbellException;
   }
   /**
-   * @return self::HEARING_ACCESSIBLE_DOORBELL_EXCEPTION_*
+   * @return string
    */
   public function getHearingAccessibleDoorbellException()
   {
     return $this->hearingAccessibleDoorbellException;
   }
   /**
-   * Hearing-accessible fire alarm. A device that gives warning of a fire
-   * through flashing lights.
-   *
-   * @param bool $hearingAccessibleFireAlarm
+   * @param bool
    */
   public function setHearingAccessibleFireAlarm($hearingAccessibleFireAlarm)
   {
@@ -361,29 +155,21 @@ class LivingAreaAccessibility extends \Google\Model
     return $this->hearingAccessibleFireAlarm;
   }
   /**
-   * Hearing-accessible fire alarm exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::HEARING_ACCESSIBLE_FIRE_ALARM_EXCEPTION_* $hearingAccessibleFireAlarmException
+   * @param string
    */
   public function setHearingAccessibleFireAlarmException($hearingAccessibleFireAlarmException)
   {
     $this->hearingAccessibleFireAlarmException = $hearingAccessibleFireAlarmException;
   }
   /**
-   * @return self::HEARING_ACCESSIBLE_FIRE_ALARM_EXCEPTION_*
+   * @return string
    */
   public function getHearingAccessibleFireAlarmException()
   {
     return $this->hearingAccessibleFireAlarmException;
   }
   /**
-   * Hearing-accessible unit. A guestroom designed to accommodate the physical
-   * challenges of a guest with auditory issues.
-   *
-   * @param bool $hearingAccessibleUnit
+   * @param bool
    */
   public function setHearingAccessibleUnit($hearingAccessibleUnit)
   {
@@ -397,30 +183,21 @@ class LivingAreaAccessibility extends \Google\Model
     return $this->hearingAccessibleUnit;
   }
   /**
-   * Hearing-accessible unit exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::HEARING_ACCESSIBLE_UNIT_EXCEPTION_* $hearingAccessibleUnitException
+   * @param string
    */
   public function setHearingAccessibleUnitException($hearingAccessibleUnitException)
   {
     $this->hearingAccessibleUnitException = $hearingAccessibleUnitException;
   }
   /**
-   * @return self::HEARING_ACCESSIBLE_UNIT_EXCEPTION_*
+   * @return string
    */
   public function getHearingAccessibleUnitException()
   {
     return $this->hearingAccessibleUnitException;
   }
   /**
-   * Mobility-accessible bathtub. A bathtub that accomodates the physically
-   * challenged with additional railings or hand grips, a transfer seat or lift,
-   * and/or a door to enable walking into the tub.
-   *
-   * @param bool $mobilityAccessibleBathtub
+   * @param bool
    */
   public function setMobilityAccessibleBathtub($mobilityAccessibleBathtub)
   {
@@ -434,30 +211,21 @@ class LivingAreaAccessibility extends \Google\Model
     return $this->mobilityAccessibleBathtub;
   }
   /**
-   * Mobility-accessible bathtub exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::MOBILITY_ACCESSIBLE_BATHTUB_EXCEPTION_* $mobilityAccessibleBathtubException
+   * @param string
    */
   public function setMobilityAccessibleBathtubException($mobilityAccessibleBathtubException)
   {
     $this->mobilityAccessibleBathtubException = $mobilityAccessibleBathtubException;
   }
   /**
-   * @return self::MOBILITY_ACCESSIBLE_BATHTUB_EXCEPTION_*
+   * @return string
    */
   public function getMobilityAccessibleBathtubException()
   {
     return $this->mobilityAccessibleBathtubException;
   }
   /**
-   * Mobility-accessible shower. A shower with an enlarged door or access point
-   * to accommodate a wheelchair or a waterproof seat for the physically
-   * challenged.
-   *
-   * @param bool $mobilityAccessibleShower
+   * @param bool
    */
   public function setMobilityAccessibleShower($mobilityAccessibleShower)
   {
@@ -471,29 +239,21 @@ class LivingAreaAccessibility extends \Google\Model
     return $this->mobilityAccessibleShower;
   }
   /**
-   * Mobility-accessible shower exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::MOBILITY_ACCESSIBLE_SHOWER_EXCEPTION_* $mobilityAccessibleShowerException
+   * @param string
    */
   public function setMobilityAccessibleShowerException($mobilityAccessibleShowerException)
   {
     $this->mobilityAccessibleShowerException = $mobilityAccessibleShowerException;
   }
   /**
-   * @return self::MOBILITY_ACCESSIBLE_SHOWER_EXCEPTION_*
+   * @return string
    */
   public function getMobilityAccessibleShowerException()
   {
     return $this->mobilityAccessibleShowerException;
   }
   /**
-   * Mobility-accessible toilet. A toilet with a higher seat, grab bars, and/or
-   * a larger area around it to accommodate the physically challenged.
-   *
-   * @param bool $mobilityAccessibleToilet
+   * @param bool
    */
   public function setMobilityAccessibleToilet($mobilityAccessibleToilet)
   {
@@ -507,32 +267,21 @@ class LivingAreaAccessibility extends \Google\Model
     return $this->mobilityAccessibleToilet;
   }
   /**
-   * Mobility-accessible toilet exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::MOBILITY_ACCESSIBLE_TOILET_EXCEPTION_* $mobilityAccessibleToiletException
+   * @param string
    */
   public function setMobilityAccessibleToiletException($mobilityAccessibleToiletException)
   {
     $this->mobilityAccessibleToiletException = $mobilityAccessibleToiletException;
   }
   /**
-   * @return self::MOBILITY_ACCESSIBLE_TOILET_EXCEPTION_*
+   * @return string
    */
   public function getMobilityAccessibleToiletException()
   {
     return $this->mobilityAccessibleToiletException;
   }
   /**
-   * Mobility-accessible unit. A guestroom designed to accommodate the physical
-   * challenges of a guest with mobility and/or auditory and/or visual issues.
-   * Usually features enlarged doorways, roll-in showers with seats, bathroom
-   * grab bars, and communication equipment for the hearing and sight
-   * challenged.
-   *
-   * @param bool $mobilityAccessibleUnit
+   * @param bool
    */
   public function setMobilityAccessibleUnit($mobilityAccessibleUnit)
   {
@@ -546,19 +295,14 @@ class LivingAreaAccessibility extends \Google\Model
     return $this->mobilityAccessibleUnit;
   }
   /**
-   * Mobility-accessible unit exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::MOBILITY_ACCESSIBLE_UNIT_EXCEPTION_* $mobilityAccessibleUnitException
+   * @param string
    */
   public function setMobilityAccessibleUnitException($mobilityAccessibleUnitException)
   {
     $this->mobilityAccessibleUnitException = $mobilityAccessibleUnitException;
   }
   /**
-   * @return self::MOBILITY_ACCESSIBLE_UNIT_EXCEPTION_*
+   * @return string
    */
   public function getMobilityAccessibleUnitException()
   {

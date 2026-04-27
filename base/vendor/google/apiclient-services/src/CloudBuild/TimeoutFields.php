@@ -20,30 +20,20 @@ namespace Google\Service\CloudBuild;
 class TimeoutFields extends \Google\Model
 {
   /**
-   * Finally sets the maximum allowed duration of this pipeline's finally
-   *
    * @var string
    */
   public $finally;
   /**
-   * Pipeline sets the maximum allowed duration for execution of the entire
-   * pipeline. The sum of individual timeouts for tasks and finally must not
-   * exceed this value.
-   *
    * @var string
    */
   public $pipeline;
   /**
-   * Tasks sets the maximum allowed duration of this pipeline's tasks
-   *
    * @var string
    */
   public $tasks;
 
   /**
-   * Finally sets the maximum allowed duration of this pipeline's finally
-   *
-   * @param string $finally
+   * @param string
    */
   public function setFinally($finally)
   {
@@ -57,11 +47,7 @@ class TimeoutFields extends \Google\Model
     return $this->finally;
   }
   /**
-   * Pipeline sets the maximum allowed duration for execution of the entire
-   * pipeline. The sum of individual timeouts for tasks and finally must not
-   * exceed this value.
-   *
-   * @param string $pipeline
+   * @param string
    */
   public function setPipeline($pipeline)
   {
@@ -75,9 +61,7 @@ class TimeoutFields extends \Google\Model
     return $this->pipeline;
   }
   /**
-   * Tasks sets the maximum allowed duration of this pipeline's tasks
-   *
-   * @param string $tasks
+   * @param string
    */
   public function setTasks($tasks)
   {

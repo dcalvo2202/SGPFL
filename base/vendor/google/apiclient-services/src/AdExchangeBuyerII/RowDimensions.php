@@ -20,11 +20,6 @@ namespace Google\Service\AdExchangeBuyerII;
 class RowDimensions extends \Google\Model
 {
   /**
-   * The publisher identifier for this row, if a breakdown by [BreakdownDimensio
-   * n.PUBLISHER_IDENTIFIER](https://developers.google.com/authorized-buyers/api
-   * s/reference/rest/v2beta1/bidders.accounts.filterSets#FilterSet.BreakdownDim
-   * ension) was requested.
-   *
    * @var string
    */
   public $publisherIdentifier;
@@ -32,12 +27,7 @@ class RowDimensions extends \Google\Model
   protected $timeIntervalDataType = '';
 
   /**
-   * The publisher identifier for this row, if a breakdown by [BreakdownDimensio
-   * n.PUBLISHER_IDENTIFIER](https://developers.google.com/authorized-buyers/api
-   * s/reference/rest/v2beta1/bidders.accounts.filterSets#FilterSet.BreakdownDim
-   * ension) was requested.
-   *
-   * @param string $publisherIdentifier
+   * @param string
    */
   public function setPublisherIdentifier($publisherIdentifier)
   {
@@ -51,9 +41,7 @@ class RowDimensions extends \Google\Model
     return $this->publisherIdentifier;
   }
   /**
-   * The time interval that this row represents.
-   *
-   * @param TimeInterval $timeInterval
+   * @param TimeInterval
    */
   public function setTimeInterval(TimeInterval $timeInterval)
   {

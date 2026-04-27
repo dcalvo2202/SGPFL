@@ -27,12 +27,7 @@ class DenyMaintenancePeriod extends \Google\Model
   protected $timeDataType = '';
 
   /**
-   * Deny period end date. This can be: * A full date, with non-zero year, month
-   * and day values. * A month and day value, with a zero year. Allows recurring
-   * deny periods each year. Date matching this period will have to be before
-   * the end.
-   *
-   * @param Date $endDate
+   * @param Date
    */
   public function setEndDate(Date $endDate)
   {
@@ -46,12 +41,7 @@ class DenyMaintenancePeriod extends \Google\Model
     return $this->endDate;
   }
   /**
-   * Deny period start date. This can be: * A full date, with non-zero year,
-   * month and day values. * A month and day value, with a zero year. Allows
-   * recurring deny periods each year. Date matching this period will have to be
-   * the same or after the start.
-   *
-   * @param Date $startDate
+   * @param Date
    */
   public function setStartDate(Date $startDate)
   {
@@ -65,10 +55,7 @@ class DenyMaintenancePeriod extends \Google\Model
     return $this->startDate;
   }
   /**
-   * Time in UTC when the Blackout period starts on start_date and ends on
-   * end_date. This can be: * Full time. * All zeros for 00:00:00 UTC
-   *
-   * @param TimeOfDay $time
+   * @param TimeOfDay
    */
   public function setTime(TimeOfDay $time)
   {

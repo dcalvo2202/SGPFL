@@ -20,16 +20,12 @@ namespace Google\Service\Slides;
 class GroupObjectsResponse extends \Google\Model
 {
   /**
-   * The object ID of the created group.
-   *
    * @var string
    */
   public $objectId;
 
   /**
-   * The object ID of the created group.
-   *
-   * @param string $objectId
+   * @param string
    */
   public function setObjectId($objectId)
   {

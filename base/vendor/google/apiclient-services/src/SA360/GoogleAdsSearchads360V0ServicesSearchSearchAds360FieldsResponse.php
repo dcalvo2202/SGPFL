@@ -21,28 +21,18 @@ class GoogleAdsSearchads360V0ServicesSearchSearchAds360FieldsResponse extends \G
 {
   protected $collection_key = 'results';
   /**
-   * Pagination token used to retrieve the next page of results. Pass the
-   * content of this string as the `page_token` attribute of the next request.
-   * `next_page_token` is not returned for the last page.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $resultsType = GoogleAdsSearchads360V0ResourcesSearchAds360Field::class;
   protected $resultsDataType = 'array';
   /**
-   * Total number of results that match the query ignoring the LIMIT clause.
-   *
    * @var string
    */
   public $totalResultsCount;
 
   /**
-   * Pagination token used to retrieve the next page of results. Pass the
-   * content of this string as the `page_token` attribute of the next request.
-   * `next_page_token` is not returned for the last page.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -56,9 +46,7 @@ class GoogleAdsSearchads360V0ServicesSearchSearchAds360FieldsResponse extends \G
     return $this->nextPageToken;
   }
   /**
-   * The list of fields that matched the query.
-   *
-   * @param GoogleAdsSearchads360V0ResourcesSearchAds360Field[] $results
+   * @param GoogleAdsSearchads360V0ResourcesSearchAds360Field[]
    */
   public function setResults($results)
   {
@@ -72,9 +60,7 @@ class GoogleAdsSearchads360V0ServicesSearchSearchAds360FieldsResponse extends \G
     return $this->results;
   }
   /**
-   * Total number of results that match the query ignoring the LIMIT clause.
-   *
-   * @param string $totalResultsCount
+   * @param string
    */
   public function setTotalResultsCount($totalResultsCount)
   {

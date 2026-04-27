@@ -21,38 +21,26 @@ class ClusterUpgradeInfo extends \Google\Collection
 {
   protected $collection_key = 'upgradeDetails';
   /**
-   * The auto upgrade status.
-   *
    * @var string[]
    */
   public $autoUpgradeStatus;
   /**
-   * The cluster's current minor version's end of extended support timestamp.
-   *
    * @var string
    */
   public $endOfExtendedSupportTimestamp;
   /**
-   * The cluster's current minor version's end of standard support timestamp.
-   *
    * @var string
    */
   public $endOfStandardSupportTimestamp;
   /**
-   * minor_target_version indicates the target version for minor upgrade.
-   *
    * @var string
    */
   public $minorTargetVersion;
   /**
-   * patch_target_version indicates the target version for patch upgrade.
-   *
    * @var string
    */
   public $patchTargetVersion;
   /**
-   * The auto upgrade paused reason.
-   *
    * @var string[]
    */
   public $pausedReason;
@@ -60,9 +48,7 @@ class ClusterUpgradeInfo extends \Google\Collection
   protected $upgradeDetailsDataType = 'array';
 
   /**
-   * The auto upgrade status.
-   *
-   * @param string[] $autoUpgradeStatus
+   * @param string[]
    */
   public function setAutoUpgradeStatus($autoUpgradeStatus)
   {
@@ -76,9 +62,7 @@ class ClusterUpgradeInfo extends \Google\Collection
     return $this->autoUpgradeStatus;
   }
   /**
-   * The cluster's current minor version's end of extended support timestamp.
-   *
-   * @param string $endOfExtendedSupportTimestamp
+   * @param string
    */
   public function setEndOfExtendedSupportTimestamp($endOfExtendedSupportTimestamp)
   {
@@ -92,9 +76,7 @@ class ClusterUpgradeInfo extends \Google\Collection
     return $this->endOfExtendedSupportTimestamp;
   }
   /**
-   * The cluster's current minor version's end of standard support timestamp.
-   *
-   * @param string $endOfStandardSupportTimestamp
+   * @param string
    */
   public function setEndOfStandardSupportTimestamp($endOfStandardSupportTimestamp)
   {
@@ -108,9 +90,7 @@ class ClusterUpgradeInfo extends \Google\Collection
     return $this->endOfStandardSupportTimestamp;
   }
   /**
-   * minor_target_version indicates the target version for minor upgrade.
-   *
-   * @param string $minorTargetVersion
+   * @param string
    */
   public function setMinorTargetVersion($minorTargetVersion)
   {
@@ -124,9 +104,7 @@ class ClusterUpgradeInfo extends \Google\Collection
     return $this->minorTargetVersion;
   }
   /**
-   * patch_target_version indicates the target version for patch upgrade.
-   *
-   * @param string $patchTargetVersion
+   * @param string
    */
   public function setPatchTargetVersion($patchTargetVersion)
   {
@@ -140,9 +118,7 @@ class ClusterUpgradeInfo extends \Google\Collection
     return $this->patchTargetVersion;
   }
   /**
-   * The auto upgrade paused reason.
-   *
-   * @param string[] $pausedReason
+   * @param string[]
    */
   public function setPausedReason($pausedReason)
   {
@@ -156,9 +132,7 @@ class ClusterUpgradeInfo extends \Google\Collection
     return $this->pausedReason;
   }
   /**
-   * The list of past auto upgrades.
-   *
-   * @param UpgradeDetails[] $upgradeDetails
+   * @param UpgradeDetails[]
    */
   public function setUpgradeDetails($upgradeDetails)
   {

@@ -20,74 +20,24 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1alphaWorkspaceConfig extends \Google\Model
 {
   /**
-   * Defaults to an unspecified Workspace type.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * Workspace Data Store contains Drive data
-   */
-  public const TYPE_GOOGLE_DRIVE = 'GOOGLE_DRIVE';
-  /**
-   * Workspace Data Store contains Mail data
-   */
-  public const TYPE_GOOGLE_MAIL = 'GOOGLE_MAIL';
-  /**
-   * Workspace Data Store contains Sites data
-   */
-  public const TYPE_GOOGLE_SITES = 'GOOGLE_SITES';
-  /**
-   * Workspace Data Store contains Calendar data
-   */
-  public const TYPE_GOOGLE_CALENDAR = 'GOOGLE_CALENDAR';
-  /**
-   * Workspace Data Store contains Chat data
-   */
-  public const TYPE_GOOGLE_CHAT = 'GOOGLE_CHAT';
-  /**
-   * Workspace Data Store contains Groups data
-   */
-  public const TYPE_GOOGLE_GROUPS = 'GOOGLE_GROUPS';
-  /**
-   * Workspace Data Store contains Keep data
-   */
-  public const TYPE_GOOGLE_KEEP = 'GOOGLE_KEEP';
-  /**
-   * Workspace Data Store contains People data
-   */
-  public const TYPE_GOOGLE_PEOPLE = 'GOOGLE_PEOPLE';
-  /**
-   * Obfuscated Dasher customer ID.
-   *
    * @var string
    */
   public $dasherCustomerId;
   /**
-   * Optional. The super admin email address for the workspace that will be used
-   * for access token generation. For now we only use it for Native Google Drive
-   * connector data ingestion.
-   *
    * @var string
    */
   public $superAdminEmailAddress;
   /**
-   * Optional. The super admin service account for the workspace that will be
-   * used for access token generation. For now we only use it for Native Google
-   * Drive connector data ingestion.
-   *
    * @var string
    */
   public $superAdminServiceAccount;
   /**
-   * The Google Workspace data source.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Obfuscated Dasher customer ID.
-   *
-   * @param string $dasherCustomerId
+   * @param string
    */
   public function setDasherCustomerId($dasherCustomerId)
   {
@@ -101,11 +51,7 @@ class GoogleCloudDiscoveryengineV1alphaWorkspaceConfig extends \Google\Model
     return $this->dasherCustomerId;
   }
   /**
-   * Optional. The super admin email address for the workspace that will be used
-   * for access token generation. For now we only use it for Native Google Drive
-   * connector data ingestion.
-   *
-   * @param string $superAdminEmailAddress
+   * @param string
    */
   public function setSuperAdminEmailAddress($superAdminEmailAddress)
   {
@@ -119,11 +65,7 @@ class GoogleCloudDiscoveryengineV1alphaWorkspaceConfig extends \Google\Model
     return $this->superAdminEmailAddress;
   }
   /**
-   * Optional. The super admin service account for the workspace that will be
-   * used for access token generation. For now we only use it for Native Google
-   * Drive connector data ingestion.
-   *
-   * @param string $superAdminServiceAccount
+   * @param string
    */
   public function setSuperAdminServiceAccount($superAdminServiceAccount)
   {
@@ -137,19 +79,14 @@ class GoogleCloudDiscoveryengineV1alphaWorkspaceConfig extends \Google\Model
     return $this->superAdminServiceAccount;
   }
   /**
-   * The Google Workspace data source.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, GOOGLE_DRIVE, GOOGLE_MAIL, GOOGLE_SITES,
-   * GOOGLE_CALENDAR, GOOGLE_CHAT, GOOGLE_GROUPS, GOOGLE_KEEP, GOOGLE_PEOPLE
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

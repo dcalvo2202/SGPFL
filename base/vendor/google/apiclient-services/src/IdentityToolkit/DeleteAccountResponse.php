@@ -20,16 +20,12 @@ namespace Google\Service\IdentityToolkit;
 class DeleteAccountResponse extends \Google\Model
 {
   /**
-   * The fixed string "identitytoolkit#DeleteAccountResponse".
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * The fixed string "identitytoolkit#DeleteAccountResponse".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

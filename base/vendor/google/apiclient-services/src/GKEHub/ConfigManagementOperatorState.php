@@ -19,65 +19,34 @@ namespace Google\Service\GKEHub;
 
 class ConfigManagementOperatorState extends \Google\Collection
 {
-  /**
-   * Deployment's state cannot be determined.
-   */
-  public const DEPLOYMENT_STATE_DEPLOYMENT_STATE_UNSPECIFIED = 'DEPLOYMENT_STATE_UNSPECIFIED';
-  /**
-   * Deployment is not installed.
-   */
-  public const DEPLOYMENT_STATE_NOT_INSTALLED = 'NOT_INSTALLED';
-  /**
-   * Deployment is installed.
-   */
-  public const DEPLOYMENT_STATE_INSTALLED = 'INSTALLED';
-  /**
-   * Deployment was attempted to be installed, but has errors.
-   */
-  public const DEPLOYMENT_STATE_ERROR = 'ERROR';
-  /**
-   * Deployment is installing or terminating
-   */
-  public const DEPLOYMENT_STATE_PENDING = 'PENDING';
   protected $collection_key = 'errors';
   /**
-   * The state of the Operator's deployment.
-   *
    * @var string
    */
   public $deploymentState;
   protected $errorsType = ConfigManagementInstallError::class;
   protected $errorsDataType = 'array';
   /**
-   * The semenatic version number of the operator.
-   *
    * @var string
    */
   public $version;
 
   /**
-   * The state of the Operator's deployment.
-   *
-   * Accepted values: DEPLOYMENT_STATE_UNSPECIFIED, NOT_INSTALLED, INSTALLED,
-   * ERROR, PENDING
-   *
-   * @param self::DEPLOYMENT_STATE_* $deploymentState
+   * @param string
    */
   public function setDeploymentState($deploymentState)
   {
     $this->deploymentState = $deploymentState;
   }
   /**
-   * @return self::DEPLOYMENT_STATE_*
+   * @return string
    */
   public function getDeploymentState()
   {
     return $this->deploymentState;
   }
   /**
-   * Install errors.
-   *
-   * @param ConfigManagementInstallError[] $errors
+   * @param ConfigManagementInstallError[]
    */
   public function setErrors($errors)
   {
@@ -91,9 +60,7 @@ class ConfigManagementOperatorState extends \Google\Collection
     return $this->errors;
   }
   /**
-   * The semenatic version number of the operator.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

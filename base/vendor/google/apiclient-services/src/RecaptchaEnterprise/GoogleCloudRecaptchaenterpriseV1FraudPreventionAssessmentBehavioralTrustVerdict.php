@@ -20,20 +20,12 @@ namespace Google\Service\RecaptchaEnterprise;
 class GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentBehavioralTrustVerdict extends \Google\Model
 {
   /**
-   * Output only. Probability of this transaction attempt being executed in a
-   * behaviorally trustworthy way. Values are from 0.0 (lowest) to 1.0
-   * (highest).
-   *
    * @var float
    */
   public $trust;
 
   /**
-   * Output only. Probability of this transaction attempt being executed in a
-   * behaviorally trustworthy way. Values are from 0.0 (lowest) to 1.0
-   * (highest).
-   *
-   * @param float $trust
+   * @param float
    */
   public function setTrust($trust)
   {

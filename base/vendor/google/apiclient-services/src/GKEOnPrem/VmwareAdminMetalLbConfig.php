@@ -20,16 +20,12 @@ namespace Google\Service\GKEOnPrem;
 class VmwareAdminMetalLbConfig extends \Google\Model
 {
   /**
-   * Whether MetalLB is enabled.
-   *
    * @var bool
    */
   public $enabled;
 
   /**
-   * Whether MetalLB is enabled.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {

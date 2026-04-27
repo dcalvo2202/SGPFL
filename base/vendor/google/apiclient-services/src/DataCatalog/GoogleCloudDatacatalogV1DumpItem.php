@@ -23,9 +23,7 @@ class GoogleCloudDatacatalogV1DumpItem extends \Google\Model
   protected $taggedEntryDataType = '';
 
   /**
-   * Entry and its tags.
-   *
-   * @param GoogleCloudDatacatalogV1TaggedEntry $taggedEntry
+   * @param GoogleCloudDatacatalogV1TaggedEntry
    */
   public function setTaggedEntry(GoogleCloudDatacatalogV1TaggedEntry $taggedEntry)
   {

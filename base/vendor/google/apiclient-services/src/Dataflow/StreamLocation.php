@@ -29,9 +29,7 @@ class StreamLocation extends \Google\Model
   protected $streamingStageLocationDataType = '';
 
   /**
-   * The stream is a custom source.
-   *
-   * @param CustomSourceLocation $customSourceLocation
+   * @param CustomSourceLocation
    */
   public function setCustomSourceLocation(CustomSourceLocation $customSourceLocation)
   {
@@ -45,9 +43,7 @@ class StreamLocation extends \Google\Model
     return $this->customSourceLocation;
   }
   /**
-   * The stream is a pubsub stream.
-   *
-   * @param PubsubLocation $pubsubLocation
+   * @param PubsubLocation
    */
   public function setPubsubLocation(PubsubLocation $pubsubLocation)
   {
@@ -61,9 +57,7 @@ class StreamLocation extends \Google\Model
     return $this->pubsubLocation;
   }
   /**
-   * The stream is a streaming side input.
-   *
-   * @param StreamingSideInputLocation $sideInputLocation
+   * @param StreamingSideInputLocation
    */
   public function setSideInputLocation(StreamingSideInputLocation $sideInputLocation)
   {
@@ -77,10 +71,7 @@ class StreamLocation extends \Google\Model
     return $this->sideInputLocation;
   }
   /**
-   * The stream is part of another computation within the current streaming
-   * Dataflow job.
-   *
-   * @param StreamingStageLocation $streamingStageLocation
+   * @param StreamingStageLocation
    */
   public function setStreamingStageLocation(StreamingStageLocation $streamingStageLocation)
   {

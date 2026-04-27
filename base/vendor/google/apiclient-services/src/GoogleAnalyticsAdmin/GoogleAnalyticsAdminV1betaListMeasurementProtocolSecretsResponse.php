@@ -23,17 +23,12 @@ class GoogleAnalyticsAdminV1betaListMeasurementProtocolSecretsResponse extends \
   protected $measurementProtocolSecretsType = GoogleAnalyticsAdminV1betaMeasurementProtocolSecret::class;
   protected $measurementProtocolSecretsDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * A list of secrets for the parent stream specified in the request.
-   *
-   * @param GoogleAnalyticsAdminV1betaMeasurementProtocolSecret[] $measurementProtocolSecrets
+   * @param GoogleAnalyticsAdminV1betaMeasurementProtocolSecret[]
    */
   public function setMeasurementProtocolSecrets($measurementProtocolSecrets)
   {
@@ -47,10 +42,7 @@ class GoogleAnalyticsAdminV1betaListMeasurementProtocolSecretsResponse extends \
     return $this->measurementProtocolSecrets;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

@@ -22,33 +22,20 @@ class MerchantCenterDestination extends \Google\Model
   protected $attributionSettingsType = AttributionSettings::class;
   protected $attributionSettingsDataType = '';
   /**
-   * Required. Three-letter currency code (ISO 4217). The currency code defines
-   * in which currency the conversions sent to this destination will be reported
-   * in Merchant Center.
-   *
    * @var string
    */
   public $currencyCode;
   /**
-   * Output only. Merchant Center Destination ID.
-   *
    * @var string
    */
   public $destinationId;
   /**
-   * Required. Merchant-specified display name for the destination. This is the
-   * name that identifies the conversion source within the Merchant Center UI.
-   * Limited to 64 characters.
-   *
    * @var string
    */
   public $displayName;
 
   /**
-   * Required. Attribution settings being used for the Merchant Center
-   * Destination.
-   *
-   * @param AttributionSettings $attributionSettings
+   * @param AttributionSettings
    */
   public function setAttributionSettings(AttributionSettings $attributionSettings)
   {
@@ -62,11 +49,7 @@ class MerchantCenterDestination extends \Google\Model
     return $this->attributionSettings;
   }
   /**
-   * Required. Three-letter currency code (ISO 4217). The currency code defines
-   * in which currency the conversions sent to this destination will be reported
-   * in Merchant Center.
-   *
-   * @param string $currencyCode
+   * @param string
    */
   public function setCurrencyCode($currencyCode)
   {
@@ -80,9 +63,7 @@ class MerchantCenterDestination extends \Google\Model
     return $this->currencyCode;
   }
   /**
-   * Output only. Merchant Center Destination ID.
-   *
-   * @param string $destinationId
+   * @param string
    */
   public function setDestinationId($destinationId)
   {
@@ -96,11 +77,7 @@ class MerchantCenterDestination extends \Google\Model
     return $this->destinationId;
   }
   /**
-   * Required. Merchant-specified display name for the destination. This is the
-   * name that identifies the conversion source within the Merchant Center UI.
-   * Limited to 64 characters.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {

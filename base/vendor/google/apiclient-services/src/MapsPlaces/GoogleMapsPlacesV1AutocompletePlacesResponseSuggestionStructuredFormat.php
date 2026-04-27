@@ -25,9 +25,7 @@ class GoogleMapsPlacesV1AutocompletePlacesResponseSuggestionStructuredFormat ext
   protected $secondaryTextDataType = '';
 
   /**
-   * Represents the name of the Place or query.
-   *
-   * @param GoogleMapsPlacesV1AutocompletePlacesResponseSuggestionFormattableText $mainText
+   * @param GoogleMapsPlacesV1AutocompletePlacesResponseSuggestionFormattableText
    */
   public function setMainText(GoogleMapsPlacesV1AutocompletePlacesResponseSuggestionFormattableText $mainText)
   {
@@ -41,10 +39,7 @@ class GoogleMapsPlacesV1AutocompletePlacesResponseSuggestionStructuredFormat ext
     return $this->mainText;
   }
   /**
-   * Represents additional disambiguating features (such as a city or region) to
-   * further identify the Place or refine the query.
-   *
-   * @param GoogleMapsPlacesV1AutocompletePlacesResponseSuggestionFormattableText $secondaryText
+   * @param GoogleMapsPlacesV1AutocompletePlacesResponseSuggestionFormattableText
    */
   public function setSecondaryText(GoogleMapsPlacesV1AutocompletePlacesResponseSuggestionFormattableText $secondaryText)
   {

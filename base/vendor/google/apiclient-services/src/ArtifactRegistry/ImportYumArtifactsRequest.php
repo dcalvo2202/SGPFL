@@ -23,9 +23,7 @@ class ImportYumArtifactsRequest extends \Google\Model
   protected $gcsSourceDataType = '';
 
   /**
-   * Google Cloud Storage location where input content is located.
-   *
-   * @param ImportYumArtifactsGcsSource $gcsSource
+   * @param ImportYumArtifactsGcsSource
    */
   public function setGcsSource(ImportYumArtifactsGcsSource $gcsSource)
   {

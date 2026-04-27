@@ -31,9 +31,7 @@ class IosTest extends \Google\Model
   protected $testTimeoutDataType = '';
 
   /**
-   * Information about the application under test.
-   *
-   * @param IosAppInfo $iosAppInfo
+   * @param IosAppInfo
    */
   public function setIosAppInfo(IosAppInfo $iosAppInfo)
   {
@@ -47,9 +45,7 @@ class IosTest extends \Google\Model
     return $this->iosAppInfo;
   }
   /**
-   * An iOS Robo test.
-   *
-   * @param IosRoboTest $iosRoboTest
+   * @param IosRoboTest
    */
   public function setIosRoboTest(IosRoboTest $iosRoboTest)
   {
@@ -63,9 +59,7 @@ class IosTest extends \Google\Model
     return $this->iosRoboTest;
   }
   /**
-   * An iOS test loop.
-   *
-   * @param IosTestLoop $iosTestLoop
+   * @param IosTestLoop
    */
   public function setIosTestLoop(IosTestLoop $iosTestLoop)
   {
@@ -79,9 +73,7 @@ class IosTest extends \Google\Model
     return $this->iosTestLoop;
   }
   /**
-   * An iOS XCTest.
-   *
-   * @param IosXcTest $iosXcTest
+   * @param IosXcTest
    */
   public function setIosXcTest(IosXcTest $iosXcTest)
   {
@@ -95,9 +87,7 @@ class IosTest extends \Google\Model
     return $this->iosXcTest;
   }
   /**
-   * Max time a test is allowed to run before it is automatically cancelled.
-   *
-   * @param Duration $testTimeout
+   * @param Duration
    */
   public function setTestTimeout(Duration $testTimeout)
   {

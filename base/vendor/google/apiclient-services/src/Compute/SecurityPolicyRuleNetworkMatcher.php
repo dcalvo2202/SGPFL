@@ -21,50 +21,30 @@ class SecurityPolicyRuleNetworkMatcher extends \Google\Collection
 {
   protected $collection_key = 'userDefinedFields';
   /**
-   * Destination IPv4/IPv6 addresses or CIDR prefixes, in standard text format.
-   *
    * @var string[]
    */
   public $destIpRanges;
   /**
-   * Destination port numbers for TCP/UDP/SCTP. Each element can be a 16-bit
-   * unsigned decimal number (e.g. "80") or range (e.g. "0-1023").
-   *
    * @var string[]
    */
   public $destPorts;
   /**
-   * IPv4 protocol / IPv6 next header (after extension headers). Each element
-   * can be an 8-bit unsigned decimal number (e.g. "6"), range (e.g. "253-254"),
-   * or one of the following protocol names: "tcp", "udp", "icmp", "esp", "ah",
-   * "ipip", or "sctp".
-   *
    * @var string[]
    */
   public $ipProtocols;
   /**
-   * BGP Autonomous System Number associated with the source IP address.
-   *
    * @var string[]
    */
   public $srcAsns;
   /**
-   * Source IPv4/IPv6 addresses or CIDR prefixes, in standard text format.
-   *
    * @var string[]
    */
   public $srcIpRanges;
   /**
-   * Source port numbers for TCP/UDP/SCTP. Each element can be a 16-bit unsigned
-   * decimal number (e.g. "80") or range (e.g. "0-1023").
-   *
    * @var string[]
    */
   public $srcPorts;
   /**
-   * Two-letter ISO 3166-1 alpha-2 country code associated with the source IP
-   * address.
-   *
    * @var string[]
    */
   public $srcRegionCodes;
@@ -72,9 +52,7 @@ class SecurityPolicyRuleNetworkMatcher extends \Google\Collection
   protected $userDefinedFieldsDataType = 'array';
 
   /**
-   * Destination IPv4/IPv6 addresses or CIDR prefixes, in standard text format.
-   *
-   * @param string[] $destIpRanges
+   * @param string[]
    */
   public function setDestIpRanges($destIpRanges)
   {
@@ -88,10 +66,7 @@ class SecurityPolicyRuleNetworkMatcher extends \Google\Collection
     return $this->destIpRanges;
   }
   /**
-   * Destination port numbers for TCP/UDP/SCTP. Each element can be a 16-bit
-   * unsigned decimal number (e.g. "80") or range (e.g. "0-1023").
-   *
-   * @param string[] $destPorts
+   * @param string[]
    */
   public function setDestPorts($destPorts)
   {
@@ -105,12 +80,7 @@ class SecurityPolicyRuleNetworkMatcher extends \Google\Collection
     return $this->destPorts;
   }
   /**
-   * IPv4 protocol / IPv6 next header (after extension headers). Each element
-   * can be an 8-bit unsigned decimal number (e.g. "6"), range (e.g. "253-254"),
-   * or one of the following protocol names: "tcp", "udp", "icmp", "esp", "ah",
-   * "ipip", or "sctp".
-   *
-   * @param string[] $ipProtocols
+   * @param string[]
    */
   public function setIpProtocols($ipProtocols)
   {
@@ -124,9 +94,7 @@ class SecurityPolicyRuleNetworkMatcher extends \Google\Collection
     return $this->ipProtocols;
   }
   /**
-   * BGP Autonomous System Number associated with the source IP address.
-   *
-   * @param string[] $srcAsns
+   * @param string[]
    */
   public function setSrcAsns($srcAsns)
   {
@@ -140,9 +108,7 @@ class SecurityPolicyRuleNetworkMatcher extends \Google\Collection
     return $this->srcAsns;
   }
   /**
-   * Source IPv4/IPv6 addresses or CIDR prefixes, in standard text format.
-   *
-   * @param string[] $srcIpRanges
+   * @param string[]
    */
   public function setSrcIpRanges($srcIpRanges)
   {
@@ -156,10 +122,7 @@ class SecurityPolicyRuleNetworkMatcher extends \Google\Collection
     return $this->srcIpRanges;
   }
   /**
-   * Source port numbers for TCP/UDP/SCTP. Each element can be a 16-bit unsigned
-   * decimal number (e.g. "80") or range (e.g. "0-1023").
-   *
-   * @param string[] $srcPorts
+   * @param string[]
    */
   public function setSrcPorts($srcPorts)
   {
@@ -173,10 +136,7 @@ class SecurityPolicyRuleNetworkMatcher extends \Google\Collection
     return $this->srcPorts;
   }
   /**
-   * Two-letter ISO 3166-1 alpha-2 country code associated with the source IP
-   * address.
-   *
-   * @param string[] $srcRegionCodes
+   * @param string[]
    */
   public function setSrcRegionCodes($srcRegionCodes)
   {
@@ -190,10 +150,7 @@ class SecurityPolicyRuleNetworkMatcher extends \Google\Collection
     return $this->srcRegionCodes;
   }
   /**
-   * User-defined fields. Each element names a defined field and lists the
-   * matching values for that field.
-   *
-   * @param SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch[] $userDefinedFields
+   * @param SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch[]
    */
   public function setUserDefinedFields($userDefinedFields)
   {

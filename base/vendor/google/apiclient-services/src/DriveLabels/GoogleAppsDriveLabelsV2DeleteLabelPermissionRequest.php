@@ -20,23 +20,16 @@ namespace Google\Service\DriveLabels;
 class GoogleAppsDriveLabelsV2DeleteLabelPermissionRequest extends \Google\Model
 {
   /**
-   * Required. Label permission resource name.
-   *
    * @var string
    */
   public $name;
   /**
-   * Set to `true` in order to use the user's admin credentials. The server will
-   * verify the user is an admin for the label before allowing access.
-   *
    * @var bool
    */
   public $useAdminAccess;
 
   /**
-   * Required. Label permission resource name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -50,10 +43,7 @@ class GoogleAppsDriveLabelsV2DeleteLabelPermissionRequest extends \Google\Model
     return $this->name;
   }
   /**
-   * Set to `true` in order to use the user's admin credentials. The server will
-   * verify the user is an admin for the label before allowing access.
-   *
-   * @param bool $useAdminAccess
+   * @param bool
    */
   public function setUseAdminAccess($useAdminAccess)
   {

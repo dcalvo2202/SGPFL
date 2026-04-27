@@ -24,17 +24,12 @@ class InputField extends \Google\Model
   protected $choiceInputType = InputFieldChoiceInput::class;
   protected $choiceInputDataType = '';
   /**
-   * Not for display but need to be sent back for the given input field.
-   *
    * @var string
    */
   public $id;
   protected $labelType = TextWithTooltip::class;
   protected $labelDataType = '';
   /**
-   * Whether the field is required. The action button needs to stay disabled
-   * till values for all required fields are provided.
-   *
    * @var bool
    */
   public $required;
@@ -42,11 +37,7 @@ class InputField extends \Google\Model
   protected $textInputDataType = '';
 
   /**
-   * Input field to provide a boolean value. Corresponds to the [html input
-   * type=checkbox](https://www.w3.org/TR/2012/WD-html-
-   * markup-20121025/input.checkbox.html#input.checkbox).
-   *
-   * @param InputFieldCheckboxInput $checkboxInput
+   * @param InputFieldCheckboxInput
    */
   public function setCheckboxInput(InputFieldCheckboxInput $checkboxInput)
   {
@@ -60,11 +51,7 @@ class InputField extends \Google\Model
     return $this->checkboxInput;
   }
   /**
-   * Input field to select one of the offered choices. Corresponds to the [html
-   * input type=radio](https://www.w3.org/TR/2012/WD-html-
-   * markup-20121025/input.radio.html#input.radio).
-   *
-   * @param InputFieldChoiceInput $choiceInput
+   * @param InputFieldChoiceInput
    */
   public function setChoiceInput(InputFieldChoiceInput $choiceInput)
   {
@@ -78,9 +65,7 @@ class InputField extends \Google\Model
     return $this->choiceInput;
   }
   /**
-   * Not for display but need to be sent back for the given input field.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -94,9 +79,7 @@ class InputField extends \Google\Model
     return $this->id;
   }
   /**
-   * Input field label. There may be more information to be shown in a tooltip.
-   *
-   * @param TextWithTooltip $label
+   * @param TextWithTooltip
    */
   public function setLabel(TextWithTooltip $label)
   {
@@ -110,10 +93,7 @@ class InputField extends \Google\Model
     return $this->label;
   }
   /**
-   * Whether the field is required. The action button needs to stay disabled
-   * till values for all required fields are provided.
-   *
-   * @param bool $required
+   * @param bool
    */
   public function setRequired($required)
   {
@@ -127,13 +107,7 @@ class InputField extends \Google\Model
     return $this->required;
   }
   /**
-   * Input field to provide text information. Corresponds to the [html input
-   * type=text](https://www.w3.org/TR/2012/WD-html-
-   * markup-20121025/input.text.html#input.text) or [html
-   * textarea](https://www.w3.org/TR/2012/WD-html-
-   * markup-20121025/textarea.html#textarea).
-   *
-   * @param InputFieldTextInput $textInput
+   * @param InputFieldTextInput
    */
   public function setTextInput(InputFieldTextInput $textInput)
   {

@@ -20,28 +20,20 @@ namespace Google\Service\Integrations;
 class GoogleCloudConnectorsV1AuthConfigOauth2JwtBearerJwtClaims extends \Google\Model
 {
   /**
-   * Optional. Value for the "aud" claim.
-   *
    * @var string
    */
   public $audience;
   /**
-   * Optional. Value for the "iss" claim.
-   *
    * @var string
    */
   public $issuer;
   /**
-   * Optional. Value for the "sub" claim.
-   *
    * @var string
    */
   public $subject;
 
   /**
-   * Optional. Value for the "aud" claim.
-   *
-   * @param string $audience
+   * @param string
    */
   public function setAudience($audience)
   {
@@ -55,9 +47,7 @@ class GoogleCloudConnectorsV1AuthConfigOauth2JwtBearerJwtClaims extends \Google\
     return $this->audience;
   }
   /**
-   * Optional. Value for the "iss" claim.
-   *
-   * @param string $issuer
+   * @param string
    */
   public function setIssuer($issuer)
   {
@@ -71,9 +61,7 @@ class GoogleCloudConnectorsV1AuthConfigOauth2JwtBearerJwtClaims extends \Google\
     return $this->issuer;
   }
   /**
-   * Optional. Value for the "sub" claim.
-   *
-   * @param string $subject
+   * @param string
    */
   public function setSubject($subject)
   {

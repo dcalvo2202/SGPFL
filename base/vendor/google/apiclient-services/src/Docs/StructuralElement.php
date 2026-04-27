@@ -20,9 +20,6 @@ namespace Google\Service\Docs;
 class StructuralElement extends \Google\Model
 {
   /**
-   * The zero-based end index of this structural element, exclusive, in UTF-16
-   * code units.
-   *
    * @var int
    */
   public $endIndex;
@@ -31,9 +28,6 @@ class StructuralElement extends \Google\Model
   protected $sectionBreakType = SectionBreak::class;
   protected $sectionBreakDataType = '';
   /**
-   * The zero-based start index of this structural element, in UTF-16 code
-   * units.
-   *
    * @var int
    */
   public $startIndex;
@@ -43,10 +37,7 @@ class StructuralElement extends \Google\Model
   protected $tableOfContentsDataType = '';
 
   /**
-   * The zero-based end index of this structural element, exclusive, in UTF-16
-   * code units.
-   *
-   * @param int $endIndex
+   * @param int
    */
   public function setEndIndex($endIndex)
   {
@@ -60,9 +51,7 @@ class StructuralElement extends \Google\Model
     return $this->endIndex;
   }
   /**
-   * A paragraph type of structural element.
-   *
-   * @param Paragraph $paragraph
+   * @param Paragraph
    */
   public function setParagraph(Paragraph $paragraph)
   {
@@ -76,9 +65,7 @@ class StructuralElement extends \Google\Model
     return $this->paragraph;
   }
   /**
-   * A section break type of structural element.
-   *
-   * @param SectionBreak $sectionBreak
+   * @param SectionBreak
    */
   public function setSectionBreak(SectionBreak $sectionBreak)
   {
@@ -92,10 +79,7 @@ class StructuralElement extends \Google\Model
     return $this->sectionBreak;
   }
   /**
-   * The zero-based start index of this structural element, in UTF-16 code
-   * units.
-   *
-   * @param int $startIndex
+   * @param int
    */
   public function setStartIndex($startIndex)
   {
@@ -109,9 +93,7 @@ class StructuralElement extends \Google\Model
     return $this->startIndex;
   }
   /**
-   * A table type of structural element.
-   *
-   * @param Table $table
+   * @param Table
    */
   public function setTable(Table $table)
   {
@@ -125,9 +107,7 @@ class StructuralElement extends \Google\Model
     return $this->table;
   }
   /**
-   * A table of contents type of structural element.
-   *
-   * @param TableOfContents $tableOfContents
+   * @param TableOfContents
    */
   public function setTableOfContents(TableOfContents $tableOfContents)
   {

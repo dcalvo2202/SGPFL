@@ -25,11 +25,7 @@ class SuggestedParagraphStyle extends \Google\Model
   protected $paragraphStyleSuggestionStateDataType = '';
 
   /**
-   * A ParagraphStyle that only includes the changes made in this suggestion.
-   * This can be used along with the paragraph_style_suggestion_state to see
-   * which fields have changed and their new values.
-   *
-   * @param ParagraphStyle $paragraphStyle
+   * @param ParagraphStyle
    */
   public function setParagraphStyle(ParagraphStyle $paragraphStyle)
   {
@@ -43,10 +39,7 @@ class SuggestedParagraphStyle extends \Google\Model
     return $this->paragraphStyle;
   }
   /**
-   * A mask that indicates which of the fields on the base ParagraphStyle have
-   * been changed in this suggestion.
-   *
-   * @param ParagraphStyleSuggestionState $paragraphStyleSuggestionState
+   * @param ParagraphStyleSuggestionState
    */
   public function setParagraphStyleSuggestionState(ParagraphStyleSuggestionState $paragraphStyleSuggestionState)
   {

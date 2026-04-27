@@ -20,33 +20,20 @@ namespace Google\Service\Appengine;
 class UrlDispatchRule extends \Google\Model
 {
   /**
-   * Domain name to match against. The wildcard "*" is supported if specified
-   * before a period: "*.".Defaults to matching all domains: "*".
-   *
    * @var string
    */
   public $domain;
   /**
-   * Pathname within the host. Must start with a "/". A single "*" can be
-   * included at the end of the path.The sum of the lengths of the domain and
-   * path may not exceed 100 characters.
-   *
    * @var string
    */
   public $path;
   /**
-   * Resource ID of a service in this application that should serve the matched
-   * request. The service must already exist. Example: default.
-   *
    * @var string
    */
   public $service;
 
   /**
-   * Domain name to match against. The wildcard "*" is supported if specified
-   * before a period: "*.".Defaults to matching all domains: "*".
-   *
-   * @param string $domain
+   * @param string
    */
   public function setDomain($domain)
   {
@@ -60,11 +47,7 @@ class UrlDispatchRule extends \Google\Model
     return $this->domain;
   }
   /**
-   * Pathname within the host. Must start with a "/". A single "*" can be
-   * included at the end of the path.The sum of the lengths of the domain and
-   * path may not exceed 100 characters.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {
@@ -78,10 +61,7 @@ class UrlDispatchRule extends \Google\Model
     return $this->path;
   }
   /**
-   * Resource ID of a service in this application that should serve the matched
-   * request. The service must already exist. Example: default.
-   *
-   * @param string $service
+   * @param string
    */
   public function setService($service)
   {

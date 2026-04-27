@@ -24,9 +24,7 @@ class HostsEntryList extends \Google\Collection
   protected $entriesDataType = 'array';
 
   /**
-   * Hosts entries.
-   *
-   * @param HostsEntry[] $entries
+   * @param HostsEntry[]
    */
   public function setEntries($entries)
   {

@@ -23,17 +23,12 @@ class DatasetAccessEntry extends \Google\Collection
   protected $datasetType = DatasetReference::class;
   protected $datasetDataType = '';
   /**
-   * Which resources in the dataset this entry applies to. Currently, only views
-   * are supported, but additional target types may be added in the future.
-   *
    * @var string[]
    */
   public $targetTypes;
 
   /**
-   * The dataset this entry applies to
-   *
-   * @param DatasetReference $dataset
+   * @param DatasetReference
    */
   public function setDataset(DatasetReference $dataset)
   {
@@ -47,10 +42,7 @@ class DatasetAccessEntry extends \Google\Collection
     return $this->dataset;
   }
   /**
-   * Which resources in the dataset this entry applies to. Currently, only views
-   * are supported, but additional target types may be added in the future.
-   *
-   * @param string[] $targetTypes
+   * @param string[]
    */
   public function setTargetTypes($targetTypes)
   {

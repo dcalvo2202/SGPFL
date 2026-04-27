@@ -23,9 +23,7 @@ class VmwareControlPlaneV2Config extends \Google\Model
   protected $controlPlaneIpBlockDataType = '';
 
   /**
-   * Static IP addresses for the control plane nodes.
-   *
-   * @param VmwareIpBlock $controlPlaneIpBlock
+   * @param VmwareIpBlock
    */
   public function setControlPlaneIpBlock(VmwareIpBlock $controlPlaneIpBlock)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\AndroidPublisher;
 class CancellationEvent extends \Google\Model
 {
   /**
-   * The time when the order was canceled.
-   *
    * @var string
    */
   public $eventTime;
 
   /**
-   * The time when the order was canceled.
-   *
-   * @param string $eventTime
+   * @param string
    */
   public function setEventTime($eventTime)
   {

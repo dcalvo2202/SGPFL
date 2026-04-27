@@ -21,20 +21,12 @@ class Category extends \Google\Collection
 {
   protected $collection_key = 'serviceTypes';
   /**
-   * Output only. The human-readable name of the category. This is set when
-   * reading the location. When modifying the location, `category_id` must be
-   * set.
-   *
    * @var string
    */
   public $displayName;
   protected $moreHoursTypesType = MoreHoursType::class;
   protected $moreHoursTypesDataType = 'array';
   /**
-   * Required. A stable ID (provided by Google) for this category. The value
-   * must be specified when modifying the category (when creating or updating a
-   * location).
-   *
    * @var string
    */
   public $name;
@@ -42,11 +34,7 @@ class Category extends \Google\Collection
   protected $serviceTypesDataType = 'array';
 
   /**
-   * Output only. The human-readable name of the category. This is set when
-   * reading the location. When modifying the location, `category_id` must be
-   * set.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -60,10 +48,7 @@ class Category extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Output only. More hours types that are available for this business
-   * category.
-   *
-   * @param MoreHoursType[] $moreHoursTypes
+   * @param MoreHoursType[]
    */
   public function setMoreHoursTypes($moreHoursTypes)
   {
@@ -77,11 +62,7 @@ class Category extends \Google\Collection
     return $this->moreHoursTypes;
   }
   /**
-   * Required. A stable ID (provided by Google) for this category. The value
-   * must be specified when modifying the category (when creating or updating a
-   * location).
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -95,10 +76,7 @@ class Category extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. A list of all the service types that are available for this
-   * business category.
-   *
-   * @param ServiceType[] $serviceTypes
+   * @param ServiceType[]
    */
   public function setServiceTypes($serviceTypes)
   {

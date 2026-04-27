@@ -20,26 +20,16 @@ namespace Google\Service\DLP;
 class GooglePrivacyDlpV2CloudStorageRegex extends \Google\Model
 {
   /**
-   * Optional. Regex to test the bucket name against. If empty, all buckets
-   * match. Example: "marketing2021" or "(marketing)\d{4}" will both match the
-   * bucket gs://marketing2021
-   *
    * @var string
    */
   public $bucketNameRegex;
   /**
-   * Optional. For organizations, if unset, will match all projects.
-   *
    * @var string
    */
   public $projectIdRegex;
 
   /**
-   * Optional. Regex to test the bucket name against. If empty, all buckets
-   * match. Example: "marketing2021" or "(marketing)\d{4}" will both match the
-   * bucket gs://marketing2021
-   *
-   * @param string $bucketNameRegex
+   * @param string
    */
   public function setBucketNameRegex($bucketNameRegex)
   {
@@ -53,9 +43,7 @@ class GooglePrivacyDlpV2CloudStorageRegex extends \Google\Model
     return $this->bucketNameRegex;
   }
   /**
-   * Optional. For organizations, if unset, will match all projects.
-   *
-   * @param string $projectIdRegex
+   * @param string
    */
   public function setProjectIdRegex($projectIdRegex)
   {

@@ -20,22 +20,16 @@ namespace Google\Service\VMMigrationService;
 class AwsSecurityGroup extends \Google\Model
 {
   /**
-   * The AWS security group id.
-   *
    * @var string
    */
   public $id;
   /**
-   * The AWS security group name.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The AWS security group id.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -49,9 +43,7 @@ class AwsSecurityGroup extends \Google\Model
     return $this->id;
   }
   /**
-   * The AWS security group name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

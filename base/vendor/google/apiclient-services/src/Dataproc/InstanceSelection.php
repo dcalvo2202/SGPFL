@@ -21,26 +21,16 @@ class InstanceSelection extends \Google\Collection
 {
   protected $collection_key = 'machineTypes';
   /**
-   * Optional. Full machine-type names, e.g. "n1-standard-16".
-   *
    * @var string[]
    */
   public $machineTypes;
   /**
-   * Optional. Preference of this instance selection. Lower number means higher
-   * preference. Dataproc will first try to create a VM based on the machine-
-   * type with priority rank and fallback to next rank based on availability.
-   * Machine types and instance selections with the same priority have the same
-   * preference.
-   *
    * @var int
    */
   public $rank;
 
   /**
-   * Optional. Full machine-type names, e.g. "n1-standard-16".
-   *
-   * @param string[] $machineTypes
+   * @param string[]
    */
   public function setMachineTypes($machineTypes)
   {
@@ -54,13 +44,7 @@ class InstanceSelection extends \Google\Collection
     return $this->machineTypes;
   }
   /**
-   * Optional. Preference of this instance selection. Lower number means higher
-   * preference. Dataproc will first try to create a VM based on the machine-
-   * type with priority rank and fallback to next rank based on availability.
-   * Machine types and instance selections with the same priority have the same
-   * preference.
-   *
-   * @param int $rank
+   * @param int
    */
   public function setRank($rank)
   {

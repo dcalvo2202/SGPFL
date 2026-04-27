@@ -19,78 +19,24 @@ namespace Google\Service\CloudFunctions;
 
 class GoogleCloudFunctionsV2Stage extends \Google\Collection
 {
-  /**
-   * Not specified. Invalid name.
-   */
-  public const NAME_NAME_UNSPECIFIED = 'NAME_UNSPECIFIED';
-  /**
-   * Artifact Registry Stage
-   */
-  public const NAME_ARTIFACT_REGISTRY = 'ARTIFACT_REGISTRY';
-  /**
-   * Build Stage
-   */
-  public const NAME_BUILD = 'BUILD';
-  /**
-   * Service Stage
-   */
-  public const NAME_SERVICE = 'SERVICE';
-  /**
-   * Trigger Stage
-   */
-  public const NAME_TRIGGER = 'TRIGGER';
-  /**
-   * Service Rollback Stage
-   */
-  public const NAME_SERVICE_ROLLBACK = 'SERVICE_ROLLBACK';
-  /**
-   * Trigger Rollback Stage
-   */
-  public const NAME_TRIGGER_ROLLBACK = 'TRIGGER_ROLLBACK';
-  /**
-   * Not specified. Invalid state.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Stage has not started.
-   */
-  public const STATE_NOT_STARTED = 'NOT_STARTED';
-  /**
-   * Stage is in progress.
-   */
-  public const STATE_IN_PROGRESS = 'IN_PROGRESS';
-  /**
-   * Stage has completed.
-   */
-  public const STATE_COMPLETE = 'COMPLETE';
   protected $collection_key = 'stateMessages';
   /**
-   * Message describing the Stage
-   *
    * @var string
    */
   public $message;
   /**
-   * Name of the Stage. This will be unique for each Stage.
-   *
    * @var string
    */
   public $name;
   /**
-   * Resource of the Stage
-   *
    * @var string
    */
   public $resource;
   /**
-   * Link to the current Stage resource
-   *
    * @var string
    */
   public $resourceUri;
   /**
-   * Current state of the Stage
-   *
    * @var string
    */
   public $state;
@@ -98,9 +44,7 @@ class GoogleCloudFunctionsV2Stage extends \Google\Collection
   protected $stateMessagesDataType = 'array';
 
   /**
-   * Message describing the Stage
-   *
-   * @param string $message
+   * @param string
    */
   public function setMessage($message)
   {
@@ -114,28 +58,21 @@ class GoogleCloudFunctionsV2Stage extends \Google\Collection
     return $this->message;
   }
   /**
-   * Name of the Stage. This will be unique for each Stage.
-   *
-   * Accepted values: NAME_UNSPECIFIED, ARTIFACT_REGISTRY, BUILD, SERVICE,
-   * TRIGGER, SERVICE_ROLLBACK, TRIGGER_ROLLBACK
-   *
-   * @param self::NAME_* $name
+   * @param string
    */
   public function setName($name)
   {
     $this->name = $name;
   }
   /**
-   * @return self::NAME_*
+   * @return string
    */
   public function getName()
   {
     return $this->name;
   }
   /**
-   * Resource of the Stage
-   *
-   * @param string $resource
+   * @param string
    */
   public function setResource($resource)
   {
@@ -149,9 +86,7 @@ class GoogleCloudFunctionsV2Stage extends \Google\Collection
     return $this->resource;
   }
   /**
-   * Link to the current Stage resource
-   *
-   * @param string $resourceUri
+   * @param string
    */
   public function setResourceUri($resourceUri)
   {
@@ -165,27 +100,21 @@ class GoogleCloudFunctionsV2Stage extends \Google\Collection
     return $this->resourceUri;
   }
   /**
-   * Current state of the Stage
-   *
-   * Accepted values: STATE_UNSPECIFIED, NOT_STARTED, IN_PROGRESS, COMPLETE
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * State messages from the current Stage.
-   *
-   * @param GoogleCloudFunctionsV2StateMessage[] $stateMessages
+   * @param GoogleCloudFunctionsV2StateMessage[]
    */
   public function setStateMessages($stateMessages)
   {

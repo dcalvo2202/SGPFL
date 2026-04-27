@@ -21,101 +21,48 @@ class GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlTablesInputs exten
 {
   protected $collection_key = 'transformations';
   /**
-   * Additional experiment flags for the Tables training pipeline.
-   *
    * @var string[]
    */
   public $additionalExperiments;
   /**
-   * Use the entire training budget. This disables the early stopping feature.
-   * By default, the early stopping feature is enabled, which means that AutoML
-   * Tables might stop training before the entire training budget has been used.
-   *
    * @var bool
    */
   public $disableEarlyStopping;
   protected $exportEvaluatedDataItemsConfigType = GoogleCloudAiplatformV1SchemaTrainingjobDefinitionExportEvaluatedDataItemsConfig::class;
   protected $exportEvaluatedDataItemsConfigDataType = '';
   /**
-   * Objective function the model is optimizing towards. The training process
-   * creates a model that maximizes/minimizes the value of the objective
-   * function over the validation set. The supported optimization objectives
-   * depend on the prediction type. If the field is not set, a default objective
-   * function is used. classification (binary): "maximize-au-roc" (default) -
-   * Maximize the area under the receiver operating characteristic (ROC) curve.
-   * "minimize-log-loss" - Minimize log loss. "maximize-au-prc" - Maximize the
-   * area under the precision-recall curve. "maximize-precision-at-recall" -
-   * Maximize precision for a specified recall value. "maximize-recall-at-
-   * precision" - Maximize recall for a specified precision value.
-   * classification (multi-class): "minimize-log-loss" (default) - Minimize log
-   * loss. regression: "minimize-rmse" (default) - Minimize root-mean-squared
-   * error (RMSE). "minimize-mae" - Minimize mean-absolute error (MAE).
-   * "minimize-rmsle" - Minimize root-mean-squared log error (RMSLE).
-   *
    * @var string
    */
   public $optimizationObjective;
   /**
-   * Required when optimization_objective is "maximize-recall-at-precision".
-   * Must be between 0 and 1, inclusive.
-   *
    * @var float
    */
   public $optimizationObjectivePrecisionValue;
   /**
-   * Required when optimization_objective is "maximize-precision-at-recall".
-   * Must be between 0 and 1, inclusive.
-   *
    * @var float
    */
   public $optimizationObjectiveRecallValue;
   /**
-   * The type of prediction the Model is to produce. "classification" - Predict
-   * one out of multiple target values is picked for each row. "regression" -
-   * Predict a value based on its relation to other values. This type is
-   * available only to columns that contain semantically numeric values, i.e.
-   * integers or floating point number, even if stored as e.g. strings.
-   *
    * @var string
    */
   public $predictionType;
   /**
-   * The column name of the target column that the model is to predict.
-   *
    * @var string
    */
   public $targetColumn;
   /**
-   * Required. The train budget of creating this model, expressed in milli node
-   * hours i.e. 1,000 value in this field means 1 node hour. The training cost
-   * of the model will not exceed this budget. The final cost will be attempted
-   * to be close to the budget, though may end up being (even) noticeably
-   * smaller - at the backend's discretion. This especially may happen when
-   * further model training ceases to provide any improvements. If the budget is
-   * set to a value known to be insufficient to train a model for the given
-   * dataset, the training won't be attempted and will error. The train budget
-   * must be between 1,000 and 72,000 milli node hours, inclusive.
-   *
    * @var string
    */
   public $trainBudgetMilliNodeHours;
   protected $transformationsType = GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlTablesInputsTransformation::class;
   protected $transformationsDataType = 'array';
   /**
-   * Column name that should be used as the weight column. Higher values in this
-   * column give more importance to the row during model training. The column
-   * must have numeric values between 0 and 10000 inclusively; 0 means the row
-   * is ignored for training. If weight column field is not set, then all rows
-   * are assumed to have equal weight of 1.
-   *
    * @var string
    */
   public $weightColumnName;
 
   /**
-   * Additional experiment flags for the Tables training pipeline.
-   *
-   * @param string[] $additionalExperiments
+   * @param string[]
    */
   public function setAdditionalExperiments($additionalExperiments)
   {
@@ -129,11 +76,7 @@ class GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlTablesInputs exten
     return $this->additionalExperiments;
   }
   /**
-   * Use the entire training budget. This disables the early stopping feature.
-   * By default, the early stopping feature is enabled, which means that AutoML
-   * Tables might stop training before the entire training budget has been used.
-   *
-   * @param bool $disableEarlyStopping
+   * @param bool
    */
   public function setDisableEarlyStopping($disableEarlyStopping)
   {
@@ -147,10 +90,7 @@ class GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlTablesInputs exten
     return $this->disableEarlyStopping;
   }
   /**
-   * Configuration for exporting test set predictions to a BigQuery table. If
-   * this configuration is absent, then the export is not performed.
-   *
-   * @param GoogleCloudAiplatformV1SchemaTrainingjobDefinitionExportEvaluatedDataItemsConfig $exportEvaluatedDataItemsConfig
+   * @param GoogleCloudAiplatformV1SchemaTrainingjobDefinitionExportEvaluatedDataItemsConfig
    */
   public function setExportEvaluatedDataItemsConfig(GoogleCloudAiplatformV1SchemaTrainingjobDefinitionExportEvaluatedDataItemsConfig $exportEvaluatedDataItemsConfig)
   {
@@ -164,22 +104,7 @@ class GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlTablesInputs exten
     return $this->exportEvaluatedDataItemsConfig;
   }
   /**
-   * Objective function the model is optimizing towards. The training process
-   * creates a model that maximizes/minimizes the value of the objective
-   * function over the validation set. The supported optimization objectives
-   * depend on the prediction type. If the field is not set, a default objective
-   * function is used. classification (binary): "maximize-au-roc" (default) -
-   * Maximize the area under the receiver operating characteristic (ROC) curve.
-   * "minimize-log-loss" - Minimize log loss. "maximize-au-prc" - Maximize the
-   * area under the precision-recall curve. "maximize-precision-at-recall" -
-   * Maximize precision for a specified recall value. "maximize-recall-at-
-   * precision" - Maximize recall for a specified precision value.
-   * classification (multi-class): "minimize-log-loss" (default) - Minimize log
-   * loss. regression: "minimize-rmse" (default) - Minimize root-mean-squared
-   * error (RMSE). "minimize-mae" - Minimize mean-absolute error (MAE).
-   * "minimize-rmsle" - Minimize root-mean-squared log error (RMSLE).
-   *
-   * @param string $optimizationObjective
+   * @param string
    */
   public function setOptimizationObjective($optimizationObjective)
   {
@@ -193,10 +118,7 @@ class GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlTablesInputs exten
     return $this->optimizationObjective;
   }
   /**
-   * Required when optimization_objective is "maximize-recall-at-precision".
-   * Must be between 0 and 1, inclusive.
-   *
-   * @param float $optimizationObjectivePrecisionValue
+   * @param float
    */
   public function setOptimizationObjectivePrecisionValue($optimizationObjectivePrecisionValue)
   {
@@ -210,10 +132,7 @@ class GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlTablesInputs exten
     return $this->optimizationObjectivePrecisionValue;
   }
   /**
-   * Required when optimization_objective is "maximize-precision-at-recall".
-   * Must be between 0 and 1, inclusive.
-   *
-   * @param float $optimizationObjectiveRecallValue
+   * @param float
    */
   public function setOptimizationObjectiveRecallValue($optimizationObjectiveRecallValue)
   {
@@ -227,13 +146,7 @@ class GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlTablesInputs exten
     return $this->optimizationObjectiveRecallValue;
   }
   /**
-   * The type of prediction the Model is to produce. "classification" - Predict
-   * one out of multiple target values is picked for each row. "regression" -
-   * Predict a value based on its relation to other values. This type is
-   * available only to columns that contain semantically numeric values, i.e.
-   * integers or floating point number, even if stored as e.g. strings.
-   *
-   * @param string $predictionType
+   * @param string
    */
   public function setPredictionType($predictionType)
   {
@@ -247,9 +160,7 @@ class GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlTablesInputs exten
     return $this->predictionType;
   }
   /**
-   * The column name of the target column that the model is to predict.
-   *
-   * @param string $targetColumn
+   * @param string
    */
   public function setTargetColumn($targetColumn)
   {
@@ -263,17 +174,7 @@ class GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlTablesInputs exten
     return $this->targetColumn;
   }
   /**
-   * Required. The train budget of creating this model, expressed in milli node
-   * hours i.e. 1,000 value in this field means 1 node hour. The training cost
-   * of the model will not exceed this budget. The final cost will be attempted
-   * to be close to the budget, though may end up being (even) noticeably
-   * smaller - at the backend's discretion. This especially may happen when
-   * further model training ceases to provide any improvements. If the budget is
-   * set to a value known to be insufficient to train a model for the given
-   * dataset, the training won't be attempted and will error. The train budget
-   * must be between 1,000 and 72,000 milli node hours, inclusive.
-   *
-   * @param string $trainBudgetMilliNodeHours
+   * @param string
    */
   public function setTrainBudgetMilliNodeHours($trainBudgetMilliNodeHours)
   {
@@ -287,12 +188,7 @@ class GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlTablesInputs exten
     return $this->trainBudgetMilliNodeHours;
   }
   /**
-   * Each transformation will apply transform function to given input column.
-   * And the result will be used for training. When creating transformation for
-   * BigQuery Struct column, the column should be flattened using "." as the
-   * delimiter.
-   *
-   * @param GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlTablesInputsTransformation[] $transformations
+   * @param GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlTablesInputsTransformation[]
    */
   public function setTransformations($transformations)
   {
@@ -306,13 +202,7 @@ class GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlTablesInputs exten
     return $this->transformations;
   }
   /**
-   * Column name that should be used as the weight column. Higher values in this
-   * column give more importance to the row during model training. The column
-   * must have numeric values between 0 and 10000 inclusively; 0 means the row
-   * is ignored for training. If weight column field is not set, then all rows
-   * are assumed to have equal weight of 1.
-   *
-   * @param string $weightColumnName
+   * @param string
    */
   public function setWeightColumnName($weightColumnName)
   {

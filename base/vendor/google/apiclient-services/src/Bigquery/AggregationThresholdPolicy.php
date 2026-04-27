@@ -21,30 +21,16 @@ class AggregationThresholdPolicy extends \Google\Collection
 {
   protected $collection_key = 'privacyUnitColumns';
   /**
-   * Optional. The privacy unit column(s) associated with this policy. For now,
-   * only one column per data source object (table, view) is allowed as a
-   * privacy unit column. Representing as a repeated field in metadata for
-   * extensibility to multiple columns in future. Duplicates and Repeated struct
-   * fields are not allowed. For nested fields, use dot notation ("outer.inner")
-   *
    * @var string[]
    */
   public $privacyUnitColumns;
   /**
-   * Optional. The threshold for the "aggregation threshold" policy.
-   *
    * @var string
    */
   public $threshold;
 
   /**
-   * Optional. The privacy unit column(s) associated with this policy. For now,
-   * only one column per data source object (table, view) is allowed as a
-   * privacy unit column. Representing as a repeated field in metadata for
-   * extensibility to multiple columns in future. Duplicates and Repeated struct
-   * fields are not allowed. For nested fields, use dot notation ("outer.inner")
-   *
-   * @param string[] $privacyUnitColumns
+   * @param string[]
    */
   public function setPrivacyUnitColumns($privacyUnitColumns)
   {
@@ -58,9 +44,7 @@ class AggregationThresholdPolicy extends \Google\Collection
     return $this->privacyUnitColumns;
   }
   /**
-   * Optional. The threshold for the "aggregation threshold" policy.
-   *
-   * @param string $threshold
+   * @param string
    */
   public function setThreshold($threshold)
   {

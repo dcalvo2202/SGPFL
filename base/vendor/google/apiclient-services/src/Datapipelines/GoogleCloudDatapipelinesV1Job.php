@@ -20,59 +20,24 @@ namespace Google\Service\Datapipelines;
 class GoogleCloudDatapipelinesV1Job extends \Google\Model
 {
   /**
-   * The job state isn't specified.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The job is waiting to start execution.
-   */
-  public const STATE_STATE_PENDING = 'STATE_PENDING';
-  /**
-   * The job is executing.
-   */
-  public const STATE_STATE_RUNNING = 'STATE_RUNNING';
-  /**
-   * The job has finished execution successfully.
-   */
-  public const STATE_STATE_DONE = 'STATE_DONE';
-  /**
-   * The job has finished execution with a failure.
-   */
-  public const STATE_STATE_FAILED = 'STATE_FAILED';
-  /**
-   * The job has been terminated upon user request.
-   */
-  public const STATE_STATE_CANCELLED = 'STATE_CANCELLED';
-  /**
-   * Output only. The time of job creation.
-   *
    * @var string
    */
   public $createTime;
   protected $dataflowJobDetailsType = GoogleCloudDatapipelinesV1DataflowJobDetails::class;
   protected $dataflowJobDetailsDataType = '';
   /**
-   * Output only. The time of job termination. This is absent if the job is
-   * still running.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * Output only. The internal ID for the job.
-   *
    * @var string
    */
   public $id;
   /**
-   * Required. The fully qualified resource name for the job.
-   *
    * @var string
    */
   public $name;
   /**
-   * The current state of the job.
-   *
    * @var string
    */
   public $state;
@@ -80,9 +45,7 @@ class GoogleCloudDatapipelinesV1Job extends \Google\Model
   protected $statusDataType = '';
 
   /**
-   * Output only. The time of job creation.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -96,9 +59,7 @@ class GoogleCloudDatapipelinesV1Job extends \Google\Model
     return $this->createTime;
   }
   /**
-   * All the details that are specific to a Dataflow job.
-   *
-   * @param GoogleCloudDatapipelinesV1DataflowJobDetails $dataflowJobDetails
+   * @param GoogleCloudDatapipelinesV1DataflowJobDetails
    */
   public function setDataflowJobDetails(GoogleCloudDatapipelinesV1DataflowJobDetails $dataflowJobDetails)
   {
@@ -112,10 +73,7 @@ class GoogleCloudDatapipelinesV1Job extends \Google\Model
     return $this->dataflowJobDetails;
   }
   /**
-   * Output only. The time of job termination. This is absent if the job is
-   * still running.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -129,9 +87,7 @@ class GoogleCloudDatapipelinesV1Job extends \Google\Model
     return $this->endTime;
   }
   /**
-   * Output only. The internal ID for the job.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -145,9 +101,7 @@ class GoogleCloudDatapipelinesV1Job extends \Google\Model
     return $this->id;
   }
   /**
-   * Required. The fully qualified resource name for the job.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -161,29 +115,21 @@ class GoogleCloudDatapipelinesV1Job extends \Google\Model
     return $this->name;
   }
   /**
-   * The current state of the job.
-   *
-   * Accepted values: STATE_UNSPECIFIED, STATE_PENDING, STATE_RUNNING,
-   * STATE_DONE, STATE_FAILED, STATE_CANCELLED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Status capturing any error code or message related to job creation or
-   * execution.
-   *
-   * @param GoogleRpcStatus $status
+   * @param GoogleRpcStatus
    */
   public function setStatus(GoogleRpcStatus $status)
   {

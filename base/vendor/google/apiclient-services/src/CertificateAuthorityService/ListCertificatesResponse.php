@@ -23,23 +23,16 @@ class ListCertificatesResponse extends \Google\Collection
   protected $certificatesType = Certificate::class;
   protected $certificatesDataType = 'array';
   /**
-   * A token to retrieve next page of results. Pass this value in
-   * ListCertificatesRequest.page_token to retrieve the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * A list of locations (e.g. "us-west1") that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * The list of Certificates.
-   *
-   * @param Certificate[] $certificates
+   * @param Certificate[]
    */
   public function setCertificates($certificates)
   {
@@ -53,10 +46,7 @@ class ListCertificatesResponse extends \Google\Collection
     return $this->certificates;
   }
   /**
-   * A token to retrieve next page of results. Pass this value in
-   * ListCertificatesRequest.page_token to retrieve the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -70,9 +60,7 @@ class ListCertificatesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * A list of locations (e.g. "us-west1") that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

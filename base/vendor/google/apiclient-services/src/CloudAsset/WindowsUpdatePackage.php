@@ -23,60 +23,40 @@ class WindowsUpdatePackage extends \Google\Collection
   protected $categoriesType = WindowsUpdateCategory::class;
   protected $categoriesDataType = 'array';
   /**
-   * The localized description of the update package.
-   *
    * @var string
    */
   public $description;
   /**
-   * A collection of Microsoft Knowledge Base article IDs that are associated
-   * with the update package.
-   *
    * @var string[]
    */
   public $kbArticleIds;
   /**
-   * The last published date of the update, in (UTC) date and time.
-   *
    * @var string
    */
   public $lastDeploymentChangeTime;
   /**
-   * A collection of URLs that provide more information about the update
-   * package.
-   *
    * @var string[]
    */
   public $moreInfoUrls;
   /**
-   * The revision number of this update package.
-   *
    * @var int
    */
   public $revisionNumber;
   /**
-   * A hyperlink to the language-specific support information for the update.
-   *
    * @var string
    */
   public $supportUrl;
   /**
-   * The localized title of the update package.
-   *
    * @var string
    */
   public $title;
   /**
-   * Gets the identifier of an update package. Stays the same across revisions.
-   *
    * @var string
    */
   public $updateId;
 
   /**
-   * The categories that are associated with this update package.
-   *
-   * @param WindowsUpdateCategory[] $categories
+   * @param WindowsUpdateCategory[]
    */
   public function setCategories($categories)
   {
@@ -90,9 +70,7 @@ class WindowsUpdatePackage extends \Google\Collection
     return $this->categories;
   }
   /**
-   * The localized description of the update package.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -106,10 +84,7 @@ class WindowsUpdatePackage extends \Google\Collection
     return $this->description;
   }
   /**
-   * A collection of Microsoft Knowledge Base article IDs that are associated
-   * with the update package.
-   *
-   * @param string[] $kbArticleIds
+   * @param string[]
    */
   public function setKbArticleIds($kbArticleIds)
   {
@@ -123,9 +98,7 @@ class WindowsUpdatePackage extends \Google\Collection
     return $this->kbArticleIds;
   }
   /**
-   * The last published date of the update, in (UTC) date and time.
-   *
-   * @param string $lastDeploymentChangeTime
+   * @param string
    */
   public function setLastDeploymentChangeTime($lastDeploymentChangeTime)
   {
@@ -139,10 +112,7 @@ class WindowsUpdatePackage extends \Google\Collection
     return $this->lastDeploymentChangeTime;
   }
   /**
-   * A collection of URLs that provide more information about the update
-   * package.
-   *
-   * @param string[] $moreInfoUrls
+   * @param string[]
    */
   public function setMoreInfoUrls($moreInfoUrls)
   {
@@ -156,9 +126,7 @@ class WindowsUpdatePackage extends \Google\Collection
     return $this->moreInfoUrls;
   }
   /**
-   * The revision number of this update package.
-   *
-   * @param int $revisionNumber
+   * @param int
    */
   public function setRevisionNumber($revisionNumber)
   {
@@ -172,9 +140,7 @@ class WindowsUpdatePackage extends \Google\Collection
     return $this->revisionNumber;
   }
   /**
-   * A hyperlink to the language-specific support information for the update.
-   *
-   * @param string $supportUrl
+   * @param string
    */
   public function setSupportUrl($supportUrl)
   {
@@ -188,9 +154,7 @@ class WindowsUpdatePackage extends \Google\Collection
     return $this->supportUrl;
   }
   /**
-   * The localized title of the update package.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -204,9 +168,7 @@ class WindowsUpdatePackage extends \Google\Collection
     return $this->title;
   }
   /**
-   * Gets the identifier of an update package. Stays the same across revisions.
-   *
-   * @param string $updateId
+   * @param string
    */
   public function setUpdateId($updateId)
   {

@@ -26,10 +26,7 @@ class TestRulesetResponse extends \Google\Collection
   protected $testResultsDataType = 'array';
 
   /**
-   * Syntactic and semantic `Source` issues of varying severity. Issues of
-   * `ERROR` severity will prevent tests from executing.
-   *
-   * @param Issue[] $issues
+   * @param Issue[]
    */
   public function setIssues($issues)
   {
@@ -43,11 +40,7 @@ class TestRulesetResponse extends \Google\Collection
     return $this->issues;
   }
   /**
-   * The set of test results given the test cases in the `TestSuite`. The
-   * results will appear in the same order as the test cases appear in the
-   * `TestSuite`.
-   *
-   * @param TestResult[] $testResults
+   * @param TestResult[]
    */
   public function setTestResults($testResults)
   {

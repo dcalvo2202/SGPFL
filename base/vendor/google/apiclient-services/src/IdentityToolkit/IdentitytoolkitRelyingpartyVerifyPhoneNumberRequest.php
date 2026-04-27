@@ -36,9 +36,6 @@ class IdentitytoolkitRelyingpartyVerifyPhoneNumberRequest extends \Google\Model
    */
   public $phoneNumber;
   /**
-   * The session info previously returned by IdentityToolkit-
-   * SendVerificationCode.
-   *
    * @var string
    */
   public $sessionInfo;
@@ -52,7 +49,7 @@ class IdentitytoolkitRelyingpartyVerifyPhoneNumberRequest extends \Google\Model
   public $verificationProof;
 
   /**
-   * @param string $code
+   * @param string
    */
   public function setCode($code)
   {
@@ -66,7 +63,7 @@ class IdentitytoolkitRelyingpartyVerifyPhoneNumberRequest extends \Google\Model
     return $this->code;
   }
   /**
-   * @param string $idToken
+   * @param string
    */
   public function setIdToken($idToken)
   {
@@ -80,7 +77,7 @@ class IdentitytoolkitRelyingpartyVerifyPhoneNumberRequest extends \Google\Model
     return $this->idToken;
   }
   /**
-   * @param string $operation
+   * @param string
    */
   public function setOperation($operation)
   {
@@ -94,7 +91,7 @@ class IdentitytoolkitRelyingpartyVerifyPhoneNumberRequest extends \Google\Model
     return $this->operation;
   }
   /**
-   * @param string $phoneNumber
+   * @param string
    */
   public function setPhoneNumber($phoneNumber)
   {
@@ -108,10 +105,7 @@ class IdentitytoolkitRelyingpartyVerifyPhoneNumberRequest extends \Google\Model
     return $this->phoneNumber;
   }
   /**
-   * The session info previously returned by IdentityToolkit-
-   * SendVerificationCode.
-   *
-   * @param string $sessionInfo
+   * @param string
    */
   public function setSessionInfo($sessionInfo)
   {
@@ -125,7 +119,7 @@ class IdentitytoolkitRelyingpartyVerifyPhoneNumberRequest extends \Google\Model
     return $this->sessionInfo;
   }
   /**
-   * @param string $temporaryProof
+   * @param string
    */
   public function setTemporaryProof($temporaryProof)
   {
@@ -139,7 +133,7 @@ class IdentitytoolkitRelyingpartyVerifyPhoneNumberRequest extends \Google\Model
     return $this->temporaryProof;
   }
   /**
-   * @param string $verificationProof
+   * @param string
    */
   public function setVerificationProof($verificationProof)
   {

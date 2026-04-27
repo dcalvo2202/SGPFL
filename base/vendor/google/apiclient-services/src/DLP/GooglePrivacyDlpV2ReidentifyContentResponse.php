@@ -25,9 +25,7 @@ class GooglePrivacyDlpV2ReidentifyContentResponse extends \Google\Model
   protected $overviewDataType = '';
 
   /**
-   * The re-identified item.
-   *
-   * @param GooglePrivacyDlpV2ContentItem $item
+   * @param GooglePrivacyDlpV2ContentItem
    */
   public function setItem(GooglePrivacyDlpV2ContentItem $item)
   {
@@ -41,9 +39,7 @@ class GooglePrivacyDlpV2ReidentifyContentResponse extends \Google\Model
     return $this->item;
   }
   /**
-   * An overview of the changes that were made to the `item`.
-   *
-   * @param GooglePrivacyDlpV2TransformationOverview $overview
+   * @param GooglePrivacyDlpV2TransformationOverview
    */
   public function setOverview(GooglePrivacyDlpV2TransformationOverview $overview)
   {

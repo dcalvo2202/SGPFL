@@ -21,15 +21,6 @@ class ServicePerimeterConfig extends \Google\Collection
 {
   protected $collection_key = 'restrictedServices';
   /**
-   * A list of `AccessLevel` resource names that allow resources within the
-   * `ServicePerimeter` to be accessed from the internet. `AccessLevels` listed
-   * must be in the same policy as this `ServicePerimeter`. Referencing a
-   * nonexistent `AccessLevel` is a syntax error. If no `AccessLevel` names are
-   * listed, resources within the perimeter can only be accessed via Google
-   * Cloud calls with request origins within the perimeter. Example:
-   * `"accessPolicies/MY_POLICY/accessLevels/MY_LEVEL"`. For Service Perimeter
-   * Bridge, must be empty.
-   *
    * @var string[]
    */
   public $accessLevels;
@@ -38,20 +29,10 @@ class ServicePerimeterConfig extends \Google\Collection
   protected $ingressPoliciesType = IngressPolicy::class;
   protected $ingressPoliciesDataType = 'array';
   /**
-   * A list of Google Cloud resources that are inside of the service perimeter.
-   * Currently only projects and VPCs are allowed. Project format:
-   * `projects/{project_number}` VPC network format:
-   * `//compute.googleapis.com/projects/{PROJECT_ID}/global/networks/{NAME}`.
-   *
    * @var string[]
    */
   public $resources;
   /**
-   * Google Cloud services that are subject to the Service Perimeter
-   * restrictions. For example, if `storage.googleapis.com` is specified, access
-   * to the storage buckets inside the perimeter must meet the perimeter's
-   * access restrictions.
-   *
    * @var string[]
    */
   public $restrictedServices;
@@ -59,16 +40,7 @@ class ServicePerimeterConfig extends \Google\Collection
   protected $vpcAccessibleServicesDataType = '';
 
   /**
-   * A list of `AccessLevel` resource names that allow resources within the
-   * `ServicePerimeter` to be accessed from the internet. `AccessLevels` listed
-   * must be in the same policy as this `ServicePerimeter`. Referencing a
-   * nonexistent `AccessLevel` is a syntax error. If no `AccessLevel` names are
-   * listed, resources within the perimeter can only be accessed via Google
-   * Cloud calls with request origins within the perimeter. Example:
-   * `"accessPolicies/MY_POLICY/accessLevels/MY_LEVEL"`. For Service Perimeter
-   * Bridge, must be empty.
-   *
-   * @param string[] $accessLevels
+   * @param string[]
    */
   public function setAccessLevels($accessLevels)
   {
@@ -82,12 +54,7 @@ class ServicePerimeterConfig extends \Google\Collection
     return $this->accessLevels;
   }
   /**
-   * List of EgressPolicies to apply to the perimeter. A perimeter may have
-   * multiple EgressPolicies, each of which is evaluated separately. Access is
-   * granted if any EgressPolicy grants it. Must be empty for a perimeter
-   * bridge.
-   *
-   * @param EgressPolicy[] $egressPolicies
+   * @param EgressPolicy[]
    */
   public function setEgressPolicies($egressPolicies)
   {
@@ -101,12 +68,7 @@ class ServicePerimeterConfig extends \Google\Collection
     return $this->egressPolicies;
   }
   /**
-   * List of IngressPolicies to apply to the perimeter. A perimeter may have
-   * multiple IngressPolicies, each of which is evaluated separately. Access is
-   * granted if any Ingress Policy grants it. Must be empty for a perimeter
-   * bridge.
-   *
-   * @param IngressPolicy[] $ingressPolicies
+   * @param IngressPolicy[]
    */
   public function setIngressPolicies($ingressPolicies)
   {
@@ -120,12 +82,7 @@ class ServicePerimeterConfig extends \Google\Collection
     return $this->ingressPolicies;
   }
   /**
-   * A list of Google Cloud resources that are inside of the service perimeter.
-   * Currently only projects and VPCs are allowed. Project format:
-   * `projects/{project_number}` VPC network format:
-   * `//compute.googleapis.com/projects/{PROJECT_ID}/global/networks/{NAME}`.
-   *
-   * @param string[] $resources
+   * @param string[]
    */
   public function setResources($resources)
   {
@@ -139,12 +96,7 @@ class ServicePerimeterConfig extends \Google\Collection
     return $this->resources;
   }
   /**
-   * Google Cloud services that are subject to the Service Perimeter
-   * restrictions. For example, if `storage.googleapis.com` is specified, access
-   * to the storage buckets inside the perimeter must meet the perimeter's
-   * access restrictions.
-   *
-   * @param string[] $restrictedServices
+   * @param string[]
    */
   public function setRestrictedServices($restrictedServices)
   {
@@ -158,9 +110,7 @@ class ServicePerimeterConfig extends \Google\Collection
     return $this->restrictedServices;
   }
   /**
-   * Configuration for APIs allowed within Perimeter.
-   *
-   * @param VpcAccessibleServices $vpcAccessibleServices
+   * @param VpcAccessibleServices
    */
   public function setVpcAccessibleServices(VpcAccessibleServices $vpcAccessibleServices)
   {

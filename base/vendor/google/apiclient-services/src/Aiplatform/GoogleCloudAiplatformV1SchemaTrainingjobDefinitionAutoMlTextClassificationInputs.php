@@ -25,7 +25,7 @@ class GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlTextClassification
   public $multiLabel;
 
   /**
-   * @param bool $multiLabel
+   * @param bool
    */
   public function setMultiLabel($multiLabel)
   {

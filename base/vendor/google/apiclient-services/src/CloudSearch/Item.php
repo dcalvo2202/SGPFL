@@ -19,51 +19,25 @@ namespace Google\Service\CloudSearch;
 
 class Item extends \Google\Model
 {
-  public const ITEM_TYPE_UNSPECIFIED = 'UNSPECIFIED';
-  /**
-   * An item that is indexed for the only purpose of serving information. These
-   * items cannot be referred in containerName or inheritAclFrom fields.
-   */
-  public const ITEM_TYPE_CONTENT_ITEM = 'CONTENT_ITEM';
-  /**
-   * An item that gets indexed and whose purpose is to supply other items with
-   * ACLs and/or contain other items.
-   */
-  public const ITEM_TYPE_CONTAINER_ITEM = 'CONTAINER_ITEM';
-  /**
-   * An item that does not get indexed, but otherwise has the same purpose as
-   * CONTAINER_ITEM.
-   */
-  public const ITEM_TYPE_VIRTUAL_CONTAINER_ITEM = 'VIRTUAL_CONTAINER_ITEM';
   protected $aclType = ItemAcl::class;
   protected $aclDataType = '';
   protected $contentType = ItemContent::class;
   protected $contentDataType = '';
   /**
-   * The type for this item.
-   *
    * @var string
    */
   public $itemType;
   protected $metadataType = ItemMetadata::class;
   protected $metadataDataType = '';
   /**
-   * The name of the Item. Format: datasources/{source_id}/items/{item_id} This
-   * is a required field. The maximum length is 1536 characters.
-   *
    * @var string
    */
   public $name;
   /**
-   * Additional state connector can store for this item. The maximum length is
-   * 10000 bytes.
-   *
    * @var string
    */
   public $payload;
   /**
-   * Queue this item belongs to. The maximum length is 100 characters.
-   *
    * @var string
    */
   public $queue;
@@ -72,24 +46,12 @@ class Item extends \Google\Model
   protected $structuredDataType = ItemStructuredData::class;
   protected $structuredDataDataType = '';
   /**
-   * Required. The indexing system stores the version from the datasource as a
-   * byte string and compares the Item version in the index to the version of
-   * the queued Item using lexical ordering. Cloud Search Indexing won't index
-   * or delete any queued item with a version value that is less than or equal
-   * to the version of the currently indexed item. The maximum length for this
-   * field is 1024 bytes. For information on how item version affects the
-   * deletion process, refer to [Handle revisions after manual
-   * deletes](https://developers.google.com/workspace/cloud-
-   * search/docs/guides/operations).
-   *
    * @var string
    */
   public $version;
 
   /**
-   * Access control list for this item.
-   *
-   * @param ItemAcl $acl
+   * @param ItemAcl
    */
   public function setAcl(ItemAcl $acl)
   {
@@ -103,9 +65,7 @@ class Item extends \Google\Model
     return $this->acl;
   }
   /**
-   * Item content to be indexed and made text searchable.
-   *
-   * @param ItemContent $content
+   * @param ItemContent
    */
   public function setContent(ItemContent $content)
   {
@@ -119,28 +79,21 @@ class Item extends \Google\Model
     return $this->content;
   }
   /**
-   * The type for this item.
-   *
-   * Accepted values: UNSPECIFIED, CONTENT_ITEM, CONTAINER_ITEM,
-   * VIRTUAL_CONTAINER_ITEM
-   *
-   * @param self::ITEM_TYPE_* $itemType
+   * @param string
    */
   public function setItemType($itemType)
   {
     $this->itemType = $itemType;
   }
   /**
-   * @return self::ITEM_TYPE_*
+   * @return string
    */
   public function getItemType()
   {
     return $this->itemType;
   }
   /**
-   * The metadata information.
-   *
-   * @param ItemMetadata $metadata
+   * @param ItemMetadata
    */
   public function setMetadata(ItemMetadata $metadata)
   {
@@ -154,10 +107,7 @@ class Item extends \Google\Model
     return $this->metadata;
   }
   /**
-   * The name of the Item. Format: datasources/{source_id}/items/{item_id} This
-   * is a required field. The maximum length is 1536 characters.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -171,10 +121,7 @@ class Item extends \Google\Model
     return $this->name;
   }
   /**
-   * Additional state connector can store for this item. The maximum length is
-   * 10000 bytes.
-   *
-   * @param string $payload
+   * @param string
    */
   public function setPayload($payload)
   {
@@ -188,9 +135,7 @@ class Item extends \Google\Model
     return $this->payload;
   }
   /**
-   * Queue this item belongs to. The maximum length is 100 characters.
-   *
-   * @param string $queue
+   * @param string
    */
   public function setQueue($queue)
   {
@@ -204,9 +149,7 @@ class Item extends \Google\Model
     return $this->queue;
   }
   /**
-   * Status of the item. Output only field.
-   *
-   * @param ItemStatus $status
+   * @param ItemStatus
    */
   public function setStatus(ItemStatus $status)
   {
@@ -220,10 +163,7 @@ class Item extends \Google\Model
     return $this->status;
   }
   /**
-   * The structured data for the item that should conform to a registered object
-   * definition in the schema for the data source.
-   *
-   * @param ItemStructuredData $structuredData
+   * @param ItemStructuredData
    */
   public function setStructuredData(ItemStructuredData $structuredData)
   {
@@ -237,17 +177,7 @@ class Item extends \Google\Model
     return $this->structuredData;
   }
   /**
-   * Required. The indexing system stores the version from the datasource as a
-   * byte string and compares the Item version in the index to the version of
-   * the queued Item using lexical ordering. Cloud Search Indexing won't index
-   * or delete any queued item with a version value that is less than or equal
-   * to the version of the currently indexed item. The maximum length for this
-   * field is 1024 bytes. For information on how item version affects the
-   * deletion process, refer to [Handle revisions after manual
-   * deletes](https://developers.google.com/workspace/cloud-
-   * search/docs/guides/operations).
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

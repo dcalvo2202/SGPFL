@@ -20,16 +20,12 @@ namespace Google\Service\Container;
 class BigQueryDestination extends \Google\Model
 {
   /**
-   * The ID of a BigQuery Dataset.
-   *
    * @var string
    */
   public $datasetId;
 
   /**
-   * The ID of a BigQuery Dataset.
-   *
-   * @param string $datasetId
+   * @param string
    */
   public function setDatasetId($datasetId)
   {

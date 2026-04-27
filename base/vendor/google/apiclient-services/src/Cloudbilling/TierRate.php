@@ -19,13 +19,6 @@ namespace Google\Service\Cloudbilling;
 
 class TierRate extends \Google\Model
 {
-  /**
-   * Usage is priced at this rate only after this amount. Example:
-   * start_usage_amount of 10 indicates that the usage will be priced at the
-   * unit_price after the first 10 usage_units.
-   *
-   * @var 
-   */
   public $startUsageAmount;
   protected $unitPriceType = Money::class;
   protected $unitPriceDataType = '';
@@ -39,10 +32,7 @@ class TierRate extends \Google\Model
     return $this->startUsageAmount;
   }
   /**
-   * The price per unit of usage. Example: unit_price of amount $10 indicates
-   * that each unit will cost $10.
-   *
-   * @param Money $unitPrice
+   * @param Money
    */
   public function setUnitPrice(Money $unitPrice)
   {

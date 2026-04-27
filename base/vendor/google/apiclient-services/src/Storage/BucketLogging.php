@@ -20,22 +20,16 @@ namespace Google\Service\Storage;
 class BucketLogging extends \Google\Model
 {
   /**
-   * The destination bucket where the current bucket's logs should be placed.
-   *
    * @var string
    */
   public $logBucket;
   /**
-   * A prefix for log object names.
-   *
    * @var string
    */
   public $logObjectPrefix;
 
   /**
-   * The destination bucket where the current bucket's logs should be placed.
-   *
-   * @param string $logBucket
+   * @param string
    */
   public function setLogBucket($logBucket)
   {
@@ -49,9 +43,7 @@ class BucketLogging extends \Google\Model
     return $this->logBucket;
   }
   /**
-   * A prefix for log object names.
-   *
-   * @param string $logObjectPrefix
+   * @param string
    */
   public function setLogObjectPrefix($logObjectPrefix)
   {

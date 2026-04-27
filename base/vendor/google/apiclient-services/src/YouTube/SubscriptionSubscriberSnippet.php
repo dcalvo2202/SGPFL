@@ -20,30 +20,22 @@ namespace Google\Service\YouTube;
 class SubscriptionSubscriberSnippet extends \Google\Model
 {
   /**
-   * The channel ID of the subscriber.
-   *
    * @var string
    */
   public $channelId;
   /**
-   * The description of the subscriber.
-   *
    * @var string
    */
   public $description;
   protected $thumbnailsType = ThumbnailDetails::class;
   protected $thumbnailsDataType = '';
   /**
-   * The title of the subscriber.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * The channel ID of the subscriber.
-   *
-   * @param string $channelId
+   * @param string
    */
   public function setChannelId($channelId)
   {
@@ -57,9 +49,7 @@ class SubscriptionSubscriberSnippet extends \Google\Model
     return $this->channelId;
   }
   /**
-   * The description of the subscriber.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -73,9 +63,7 @@ class SubscriptionSubscriberSnippet extends \Google\Model
     return $this->description;
   }
   /**
-   * Thumbnails for this subscriber.
-   *
-   * @param ThumbnailDetails $thumbnails
+   * @param ThumbnailDetails
    */
   public function setThumbnails(ThumbnailDetails $thumbnails)
   {
@@ -89,9 +77,7 @@ class SubscriptionSubscriberSnippet extends \Google\Model
     return $this->thumbnails;
   }
   /**
-   * The title of the subscriber.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

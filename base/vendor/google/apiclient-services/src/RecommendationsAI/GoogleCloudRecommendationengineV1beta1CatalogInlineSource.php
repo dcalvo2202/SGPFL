@@ -24,10 +24,7 @@ class GoogleCloudRecommendationengineV1beta1CatalogInlineSource extends \Google\
   protected $catalogItemsDataType = 'array';
 
   /**
-   * Optional. A list of catalog items to update/create. Recommended max of 10k
-   * items.
-   *
-   * @param GoogleCloudRecommendationengineV1beta1CatalogItem[] $catalogItems
+   * @param GoogleCloudRecommendationengineV1beta1CatalogItem[]
    */
   public function setCatalogItems($catalogItems)
   {

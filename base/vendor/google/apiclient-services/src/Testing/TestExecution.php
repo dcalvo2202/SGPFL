@@ -19,88 +19,23 @@ namespace Google\Service\Testing;
 
 class TestExecution extends \Google\Model
 {
-  /**
-   * Do not use. For proto versioning only.
-   */
-  public const STATE_TEST_STATE_UNSPECIFIED = 'TEST_STATE_UNSPECIFIED';
-  /**
-   * The execution or matrix is being validated.
-   */
-  public const STATE_VALIDATING = 'VALIDATING';
-  /**
-   * The execution or matrix is waiting for resources to become available.
-   */
-  public const STATE_PENDING = 'PENDING';
-  /**
-   * The execution is currently being processed. Can only be set on an
-   * execution.
-   */
-  public const STATE_RUNNING = 'RUNNING';
-  /**
-   * The execution or matrix has terminated normally. On a matrix this means
-   * that the matrix level processing completed normally, but individual
-   * executions may be in an ERROR state.
-   */
-  public const STATE_FINISHED = 'FINISHED';
-  /**
-   * The execution or matrix has stopped because it encountered an
-   * infrastructure failure.
-   */
-  public const STATE_ERROR = 'ERROR';
-  /**
-   * The execution was not run because it corresponds to a unsupported
-   * environment. Can only be set on an execution.
-   */
-  public const STATE_UNSUPPORTED_ENVIRONMENT = 'UNSUPPORTED_ENVIRONMENT';
-  /**
-   * The execution was not run because the provided inputs are incompatible with
-   * the requested environment. Example: requested AndroidVersion is lower than
-   * APK's minSdkVersion Can only be set on an execution.
-   */
-  public const STATE_INCOMPATIBLE_ENVIRONMENT = 'INCOMPATIBLE_ENVIRONMENT';
-  /**
-   * The execution was not run because the provided inputs are incompatible with
-   * the requested architecture. Example: requested device does not support
-   * running the native code in the supplied APK Can only be set on an
-   * execution.
-   */
-  public const STATE_INCOMPATIBLE_ARCHITECTURE = 'INCOMPATIBLE_ARCHITECTURE';
-  /**
-   * The user cancelled the execution. Can only be set on an execution.
-   */
-  public const STATE_CANCELLED = 'CANCELLED';
-  /**
-   * The execution or matrix was not run because the provided inputs are not
-   * valid. Examples: input file is not of the expected type, is
-   * malformed/corrupt, or was flagged as malware
-   */
-  public const STATE_INVALID = 'INVALID';
   protected $environmentType = Environment::class;
   protected $environmentDataType = '';
   /**
-   * Output only. Unique id set by the service.
-   *
    * @var string
    */
   public $id;
   /**
-   * Output only. Id of the containing TestMatrix.
-   *
    * @var string
    */
   public $matrixId;
   /**
-   * Output only. The cloud project that owns the test execution.
-   *
    * @var string
    */
   public $projectId;
   protected $shardType = Shard::class;
   protected $shardDataType = '';
   /**
-   * Output only. Indicates the current progress of the test execution (e.g.,
-   * FINISHED).
-   *
    * @var string
    */
   public $state;
@@ -109,8 +44,6 @@ class TestExecution extends \Google\Model
   protected $testSpecificationType = TestSpecification::class;
   protected $testSpecificationDataType = '';
   /**
-   * Output only. The time this test execution was initially created.
-   *
    * @var string
    */
   public $timestamp;
@@ -118,9 +51,7 @@ class TestExecution extends \Google\Model
   protected $toolResultsStepDataType = '';
 
   /**
-   * Output only. How the host machine(s) are configured.
-   *
-   * @param Environment $environment
+   * @param Environment
    */
   public function setEnvironment(Environment $environment)
   {
@@ -134,9 +65,7 @@ class TestExecution extends \Google\Model
     return $this->environment;
   }
   /**
-   * Output only. Unique id set by the service.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -150,9 +79,7 @@ class TestExecution extends \Google\Model
     return $this->id;
   }
   /**
-   * Output only. Id of the containing TestMatrix.
-   *
-   * @param string $matrixId
+   * @param string
    */
   public function setMatrixId($matrixId)
   {
@@ -166,9 +93,7 @@ class TestExecution extends \Google\Model
     return $this->matrixId;
   }
   /**
-   * Output only. The cloud project that owns the test execution.
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {
@@ -182,9 +107,7 @@ class TestExecution extends \Google\Model
     return $this->projectId;
   }
   /**
-   * Output only. Details about the shard.
-   *
-   * @param Shard $shard
+   * @param Shard
    */
   public function setShard(Shard $shard)
   {
@@ -198,30 +121,21 @@ class TestExecution extends \Google\Model
     return $this->shard;
   }
   /**
-   * Output only. Indicates the current progress of the test execution (e.g.,
-   * FINISHED).
-   *
-   * Accepted values: TEST_STATE_UNSPECIFIED, VALIDATING, PENDING, RUNNING,
-   * FINISHED, ERROR, UNSUPPORTED_ENVIRONMENT, INCOMPATIBLE_ENVIRONMENT,
-   * INCOMPATIBLE_ARCHITECTURE, CANCELLED, INVALID
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. Additional details about the running test.
-   *
-   * @param TestDetails $testDetails
+   * @param TestDetails
    */
   public function setTestDetails(TestDetails $testDetails)
   {
@@ -235,9 +149,7 @@ class TestExecution extends \Google\Model
     return $this->testDetails;
   }
   /**
-   * Output only. How to run the test.
-   *
-   * @param TestSpecification $testSpecification
+   * @param TestSpecification
    */
   public function setTestSpecification(TestSpecification $testSpecification)
   {
@@ -251,9 +163,7 @@ class TestExecution extends \Google\Model
     return $this->testSpecification;
   }
   /**
-   * Output only. The time this test execution was initially created.
-   *
-   * @param string $timestamp
+   * @param string
    */
   public function setTimestamp($timestamp)
   {
@@ -267,9 +177,7 @@ class TestExecution extends \Google\Model
     return $this->timestamp;
   }
   /**
-   * Output only. Where the results for this execution are written.
-   *
-   * @param ToolResultsStep $toolResultsStep
+   * @param ToolResultsStep
    */
   public function setToolResultsStep(ToolResultsStep $toolResultsStep)
   {

@@ -34,7 +34,7 @@ class RddOperationCluster extends \Google\Collection
   public $rddClusterId;
 
   /**
-   * @param RddOperationCluster[] $childClusters
+   * @param RddOperationCluster[]
    */
   public function setChildClusters($childClusters)
   {
@@ -48,7 +48,7 @@ class RddOperationCluster extends \Google\Collection
     return $this->childClusters;
   }
   /**
-   * @param RddOperationNode[] $childNodes
+   * @param RddOperationNode[]
    */
   public function setChildNodes($childNodes)
   {
@@ -62,7 +62,7 @@ class RddOperationCluster extends \Google\Collection
     return $this->childNodes;
   }
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -76,7 +76,7 @@ class RddOperationCluster extends \Google\Collection
     return $this->name;
   }
   /**
-   * @param string $rddClusterId
+   * @param string
    */
   public function setRddClusterId($rddClusterId)
   {

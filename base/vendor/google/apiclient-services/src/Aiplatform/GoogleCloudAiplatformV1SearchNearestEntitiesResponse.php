@@ -23,9 +23,7 @@ class GoogleCloudAiplatformV1SearchNearestEntitiesResponse extends \Google\Model
   protected $nearestNeighborsDataType = '';
 
   /**
-   * The nearest neighbors of the query entity.
-   *
-   * @param GoogleCloudAiplatformV1NearestNeighbors $nearestNeighbors
+   * @param GoogleCloudAiplatformV1NearestNeighbors
    */
   public function setNearestNeighbors(GoogleCloudAiplatformV1NearestNeighbors $nearestNeighbors)
   {

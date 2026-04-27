@@ -19,13 +19,6 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowCxV3beta1DataStoreConnection extends \Google\Model
 {
-  public const DATA_STORE_TYPE_DATA_STORE_TYPE_UNSPECIFIED = 'DATA_STORE_TYPE_UNSPECIFIED';
-  public const DATA_STORE_TYPE_PUBLIC_WEB = 'PUBLIC_WEB';
-  public const DATA_STORE_TYPE_UNSTRUCTURED = 'UNSTRUCTURED';
-  public const DATA_STORE_TYPE_STRUCTURED = 'STRUCTURED';
-  public const DOCUMENT_PROCESSING_MODE_DOCUMENT_PROCESSING_MODE_UNSPECIFIED = 'DOCUMENT_PROCESSING_MODE_UNSPECIFIED';
-  public const DOCUMENT_PROCESSING_MODE_DOCUMENTS = 'DOCUMENTS';
-  public const DOCUMENT_PROCESSING_MODE_CHUNKS = 'CHUNKS';
   /**
    * @var string
    */
@@ -40,7 +33,7 @@ class GoogleCloudDialogflowCxV3beta1DataStoreConnection extends \Google\Model
   public $documentProcessingMode;
 
   /**
-   * @param string $dataStore
+   * @param string
    */
   public function setDataStore($dataStore)
   {
@@ -54,28 +47,28 @@ class GoogleCloudDialogflowCxV3beta1DataStoreConnection extends \Google\Model
     return $this->dataStore;
   }
   /**
-   * @param self::DATA_STORE_TYPE_* $dataStoreType
+   * @param string
    */
   public function setDataStoreType($dataStoreType)
   {
     $this->dataStoreType = $dataStoreType;
   }
   /**
-   * @return self::DATA_STORE_TYPE_*
+   * @return string
    */
   public function getDataStoreType()
   {
     return $this->dataStoreType;
   }
   /**
-   * @param self::DOCUMENT_PROCESSING_MODE_* $documentProcessingMode
+   * @param string
    */
   public function setDocumentProcessingMode($documentProcessingMode)
   {
     $this->documentProcessingMode = $documentProcessingMode;
   }
   /**
-   * @return self::DOCUMENT_PROCESSING_MODE_*
+   * @return string
    */
   public function getDocumentProcessingMode()
   {

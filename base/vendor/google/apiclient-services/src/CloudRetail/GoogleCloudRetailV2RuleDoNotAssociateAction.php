@@ -21,29 +21,20 @@ class GoogleCloudRetailV2RuleDoNotAssociateAction extends \Google\Collection
 {
   protected $collection_key = 'terms';
   /**
-   * Cannot contain duplicates or the query term. Can specify up to 100 terms.
-   *
    * @var string[]
    */
   public $doNotAssociateTerms;
   /**
-   * Terms from the search query. Will not consider do_not_associate_terms for
-   * search if in search query. Can specify up to 100 terms.
-   *
    * @var string[]
    */
   public $queryTerms;
   /**
-   * Will be [deprecated = true] post migration;
-   *
    * @var string[]
    */
   public $terms;
 
   /**
-   * Cannot contain duplicates or the query term. Can specify up to 100 terms.
-   *
-   * @param string[] $doNotAssociateTerms
+   * @param string[]
    */
   public function setDoNotAssociateTerms($doNotAssociateTerms)
   {
@@ -57,10 +48,7 @@ class GoogleCloudRetailV2RuleDoNotAssociateAction extends \Google\Collection
     return $this->doNotAssociateTerms;
   }
   /**
-   * Terms from the search query. Will not consider do_not_associate_terms for
-   * search if in search query. Can specify up to 100 terms.
-   *
-   * @param string[] $queryTerms
+   * @param string[]
    */
   public function setQueryTerms($queryTerms)
   {
@@ -74,9 +62,7 @@ class GoogleCloudRetailV2RuleDoNotAssociateAction extends \Google\Collection
     return $this->queryTerms;
   }
   /**
-   * Will be [deprecated = true] post migration;
-   *
-   * @param string[] $terms
+   * @param string[]
    */
   public function setTerms($terms)
   {

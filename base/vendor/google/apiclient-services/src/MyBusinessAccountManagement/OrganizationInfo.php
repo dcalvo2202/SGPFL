@@ -22,22 +22,16 @@ class OrganizationInfo extends \Google\Model
   protected $addressType = PostalAddress::class;
   protected $addressDataType = '';
   /**
-   * Output only. The contact number for the organization.
-   *
    * @var string
    */
   public $phoneNumber;
   /**
-   * Output only. The registered domain for the account.
-   *
    * @var string
    */
   public $registeredDomain;
 
   /**
-   * Output only. The postal address for the account.
-   *
-   * @param PostalAddress $address
+   * @param PostalAddress
    */
   public function setAddress(PostalAddress $address)
   {
@@ -51,9 +45,7 @@ class OrganizationInfo extends \Google\Model
     return $this->address;
   }
   /**
-   * Output only. The contact number for the organization.
-   *
-   * @param string $phoneNumber
+   * @param string
    */
   public function setPhoneNumber($phoneNumber)
   {
@@ -67,9 +59,7 @@ class OrganizationInfo extends \Google\Model
     return $this->phoneNumber;
   }
   /**
-   * Output only. The registered domain for the account.
-   *
-   * @param string $registeredDomain
+   * @param string
    */
   public function setRegisteredDomain($registeredDomain)
   {

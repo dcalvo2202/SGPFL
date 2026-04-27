@@ -21,22 +21,16 @@ class EncounteredNonAndroidUiWidgetScreen extends \Google\Collection
 {
   protected $collection_key = 'screenIds';
   /**
-   * Number of encountered distinct screens with non Android UI widgets.
-   *
    * @var int
    */
   public $distinctScreens;
   /**
-   * Subset of screens which contain non Android UI widgets.
-   *
    * @var string[]
    */
   public $screenIds;
 
   /**
-   * Number of encountered distinct screens with non Android UI widgets.
-   *
-   * @param int $distinctScreens
+   * @param int
    */
   public function setDistinctScreens($distinctScreens)
   {
@@ -50,9 +44,7 @@ class EncounteredNonAndroidUiWidgetScreen extends \Google\Collection
     return $this->distinctScreens;
   }
   /**
-   * Subset of screens which contain non Android UI widgets.
-   *
-   * @param string[] $screenIds
+   * @param string[]
    */
   public function setScreenIds($screenIds)
   {

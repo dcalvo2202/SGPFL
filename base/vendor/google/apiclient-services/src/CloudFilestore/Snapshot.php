@@ -20,79 +20,36 @@ namespace Google\Service\CloudFilestore;
 class Snapshot extends \Google\Model
 {
   /**
-   * State not set.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Snapshot is being created.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * Snapshot is available for use.
-   */
-  public const STATE_READY = 'READY';
-  /**
-   * Snapshot is being deleted.
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * Output only. The time when the snapshot was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * A description of the snapshot with 2048 characters or less. Requests with
-   * longer descriptions will be rejected.
-   *
    * @var string
    */
   public $description;
   /**
-   * Output only. The amount of bytes needed to allocate a full copy of the
-   * snapshot content
-   *
    * @var string
    */
   public $filesystemUsedBytes;
   /**
-   * Resource labels to represent user provided metadata.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Output only. The resource name of the snapshot, in the format `projects/{pr
-   * oject_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapsh
-   * ot_id}`.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The snapshot state.
-   *
    * @var string
    */
   public $state;
   /**
-   * Optional. Input only. Immutable. Tag key-value pairs bound to this
-   * resource. Each key must be a namespaced name and each value a short name.
-   * Example: "123456789012/environment" : "production",
-   * "123456789013/costCenter" : "marketing" See the documentation for more
-   * information: - Namespaced name: https://cloud.google.com/resource-
-   * manager/docs/tags/tags-creating-and-managing#retrieving_tag_key - Short
-   * name: https://cloud.google.com/resource-manager/docs/tags/tags-creating-
-   * and-managing#retrieving_tag_value
-   *
    * @var string[]
    */
   public $tags;
 
   /**
-   * Output only. The time when the snapshot was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -106,10 +63,7 @@ class Snapshot extends \Google\Model
     return $this->createTime;
   }
   /**
-   * A description of the snapshot with 2048 characters or less. Requests with
-   * longer descriptions will be rejected.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -123,10 +77,7 @@ class Snapshot extends \Google\Model
     return $this->description;
   }
   /**
-   * Output only. The amount of bytes needed to allocate a full copy of the
-   * snapshot content
-   *
-   * @param string $filesystemUsedBytes
+   * @param string
    */
   public function setFilesystemUsedBytes($filesystemUsedBytes)
   {
@@ -140,9 +91,7 @@ class Snapshot extends \Google\Model
     return $this->filesystemUsedBytes;
   }
   /**
-   * Resource labels to represent user provided metadata.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -156,11 +105,7 @@ class Snapshot extends \Google\Model
     return $this->labels;
   }
   /**
-   * Output only. The resource name of the snapshot, in the format `projects/{pr
-   * oject_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapsh
-   * ot_id}`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -174,34 +119,21 @@ class Snapshot extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The snapshot state.
-   *
-   * Accepted values: STATE_UNSPECIFIED, CREATING, READY, DELETING
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Optional. Input only. Immutable. Tag key-value pairs bound to this
-   * resource. Each key must be a namespaced name and each value a short name.
-   * Example: "123456789012/environment" : "production",
-   * "123456789013/costCenter" : "marketing" See the documentation for more
-   * information: - Namespaced name: https://cloud.google.com/resource-
-   * manager/docs/tags/tags-creating-and-managing#retrieving_tag_key - Short
-   * name: https://cloud.google.com/resource-manager/docs/tags/tags-creating-
-   * and-managing#retrieving_tag_value
-   *
-   * @param string[] $tags
+   * @param string[]
    */
   public function setTags($tags)
   {

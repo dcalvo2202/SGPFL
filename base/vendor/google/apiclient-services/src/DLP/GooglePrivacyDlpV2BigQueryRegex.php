@@ -20,29 +20,20 @@ namespace Google\Service\DLP;
 class GooglePrivacyDlpV2BigQueryRegex extends \Google\Model
 {
   /**
-   * If unset, this property matches all datasets.
-   *
    * @var string
    */
   public $datasetIdRegex;
   /**
-   * For organizations, if unset, will match all projects. Has no effect for
-   * data profile configurations created within a project.
-   *
    * @var string
    */
   public $projectIdRegex;
   /**
-   * If unset, this property matches all tables.
-   *
    * @var string
    */
   public $tableIdRegex;
 
   /**
-   * If unset, this property matches all datasets.
-   *
-   * @param string $datasetIdRegex
+   * @param string
    */
   public function setDatasetIdRegex($datasetIdRegex)
   {
@@ -56,10 +47,7 @@ class GooglePrivacyDlpV2BigQueryRegex extends \Google\Model
     return $this->datasetIdRegex;
   }
   /**
-   * For organizations, if unset, will match all projects. Has no effect for
-   * data profile configurations created within a project.
-   *
-   * @param string $projectIdRegex
+   * @param string
    */
   public function setProjectIdRegex($projectIdRegex)
   {
@@ -73,9 +61,7 @@ class GooglePrivacyDlpV2BigQueryRegex extends \Google\Model
     return $this->projectIdRegex;
   }
   /**
-   * If unset, this property matches all tables.
-   *
-   * @param string $tableIdRegex
+   * @param string
    */
   public function setTableIdRegex($tableIdRegex)
   {

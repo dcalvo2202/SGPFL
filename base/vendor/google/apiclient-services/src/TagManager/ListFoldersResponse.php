@@ -23,16 +23,12 @@ class ListFoldersResponse extends \Google\Collection
   protected $folderType = Folder::class;
   protected $folderDataType = 'array';
   /**
-   * Continuation token for fetching the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * All GTM Folders of a GTM Container.
-   *
-   * @param Folder[] $folder
+   * @param Folder[]
    */
   public function setFolder($folder)
   {
@@ -46,9 +42,7 @@ class ListFoldersResponse extends \Google\Collection
     return $this->folder;
   }
   /**
-   * Continuation token for fetching the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

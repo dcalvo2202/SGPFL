@@ -20,16 +20,12 @@ namespace Google\Service\HangoutsChat;
 class AttachedGif extends \Google\Model
 {
   /**
-   * Output only. The URL that hosts the GIF image.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * Output only. The URL that hosts the GIF image.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

@@ -17,90 +17,41 @@
 
 namespace Google\Service\VMwareEngine;
 
-class Cluster extends \Google\Collection
+class Cluster extends \Google\Model
 {
-  /**
-   * The default value. This value should never be used.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The Cluster is operational and can be used by the user.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * The Cluster is being deployed.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * Adding or removing of a node to the cluster, any other cluster specific
-   * updates.
-   */
-  public const STATE_UPDATING = 'UPDATING';
-  /**
-   * The Cluster is being deleted.
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * The Cluster is undergoing maintenance, for example: a failed node is
-   * getting replaced.
-   */
-  public const STATE_REPAIRING = 'REPAIRING';
-  protected $collection_key = 'datastoreMountConfig';
   protected $autoscalingSettingsType = AutoscalingSettings::class;
   protected $autoscalingSettingsDataType = '';
   /**
-   * Output only. Creation time of this resource.
-   *
    * @var string
    */
   public $createTime;
-  protected $datastoreMountConfigType = DatastoreMountConfig::class;
-  protected $datastoreMountConfigDataType = 'array';
   /**
-   * Output only. True if the cluster is a management cluster; false otherwise.
-   * There can only be one management cluster in a private cloud and it has to
-   * be the first one.
-   *
    * @var bool
    */
   public $management;
   /**
-   * Output only. Identifier. The resource name of this cluster. Resource names
-   * are schemeless URIs that follow the conventions in
-   * https://cloud.google.com/apis/design/resource_names. For example:
-   * `projects/my-project/locations/us-central1-a/privateClouds/my-
-   * cloud/clusters/my-cluster`
-   *
    * @var string
    */
   public $name;
   protected $nodeTypeConfigsType = NodeTypeConfig::class;
   protected $nodeTypeConfigsDataType = 'map';
   /**
-   * Output only. State of the resource.
-   *
    * @var string
    */
   public $state;
   protected $stretchedClusterConfigType = StretchedClusterConfig::class;
   protected $stretchedClusterConfigDataType = '';
   /**
-   * Output only. System-generated unique identifier for the resource.
-   *
    * @var string
    */
   public $uid;
   /**
-   * Output only. Last update time of this resource.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Optional. Configuration of the autoscaling applied to this cluster.
-   *
-   * @param AutoscalingSettings $autoscalingSettings
+   * @param AutoscalingSettings
    */
   public function setAutoscalingSettings(AutoscalingSettings $autoscalingSettings)
   {
@@ -114,9 +65,7 @@ class Cluster extends \Google\Collection
     return $this->autoscalingSettings;
   }
   /**
-   * Output only. Creation time of this resource.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -130,27 +79,7 @@ class Cluster extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Output only. Configuration of a mounted datastore.
-   *
-   * @param DatastoreMountConfig[] $datastoreMountConfig
-   */
-  public function setDatastoreMountConfig($datastoreMountConfig)
-  {
-    $this->datastoreMountConfig = $datastoreMountConfig;
-  }
-  /**
-   * @return DatastoreMountConfig[]
-   */
-  public function getDatastoreMountConfig()
-  {
-    return $this->datastoreMountConfig;
-  }
-  /**
-   * Output only. True if the cluster is a management cluster; false otherwise.
-   * There can only be one management cluster in a private cloud and it has to
-   * be the first one.
-   *
-   * @param bool $management
+   * @param bool
    */
   public function setManagement($management)
   {
@@ -164,13 +93,7 @@ class Cluster extends \Google\Collection
     return $this->management;
   }
   /**
-   * Output only. Identifier. The resource name of this cluster. Resource names
-   * are schemeless URIs that follow the conventions in
-   * https://cloud.google.com/apis/design/resource_names. For example:
-   * `projects/my-project/locations/us-central1-a/privateClouds/my-
-   * cloud/clusters/my-cluster`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -184,10 +107,7 @@ class Cluster extends \Google\Collection
     return $this->name;
   }
   /**
-   * Required. The map of cluster node types in this cluster, where the key is
-   * canonical identifier of the node type (corresponds to the `NodeType`).
-   *
-   * @param NodeTypeConfig[] $nodeTypeConfigs
+   * @param NodeTypeConfig[]
    */
   public function setNodeTypeConfigs($nodeTypeConfigs)
   {
@@ -201,29 +121,21 @@ class Cluster extends \Google\Collection
     return $this->nodeTypeConfigs;
   }
   /**
-   * Output only. State of the resource.
-   *
-   * Accepted values: STATE_UNSPECIFIED, ACTIVE, CREATING, UPDATING, DELETING,
-   * REPAIRING
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Optional. Configuration of a stretched cluster. Required for clusters that
-   * belong to a STRETCHED private cloud.
-   *
-   * @param StretchedClusterConfig $stretchedClusterConfig
+   * @param StretchedClusterConfig
    */
   public function setStretchedClusterConfig(StretchedClusterConfig $stretchedClusterConfig)
   {
@@ -237,9 +149,7 @@ class Cluster extends \Google\Collection
     return $this->stretchedClusterConfig;
   }
   /**
-   * Output only. System-generated unique identifier for the resource.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {
@@ -253,9 +163,7 @@ class Cluster extends \Google\Collection
     return $this->uid;
   }
   /**
-   * Output only. Last update time of this resource.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

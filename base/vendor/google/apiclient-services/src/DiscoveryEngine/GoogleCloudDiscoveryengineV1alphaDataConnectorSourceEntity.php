@@ -20,45 +20,20 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1alphaDataConnectorSourceEntity extends \Google\Model
 {
   /**
-   * Output only. The full resource name of the associated data store for the
-   * source entity. Format: `projects/locations/collections/dataStores`. When
-   * the connector is initialized by the DataConnectorService.SetUpDataConnector
-   * method, a DataStore is automatically created for each source entity.
-   *
    * @var string
    */
   public $dataStore;
   /**
-   * The name of the entity. Supported values by data source: * Salesforce:
-   * `Lead`, `Opportunity`, `Contact`, `Account`, `Case`, `Contract`, `Campaign`
-   * * Jira: `Issue` * Confluence: `Content`, `Space`
-   *
    * @var string
    */
   public $entityName;
   protected $healthcareFhirConfigType = GoogleCloudDiscoveryengineV1alphaHealthcareFhirConfig::class;
   protected $healthcareFhirConfigDataType = '';
   /**
-   * The parameters for the entity to facilitate data ingestion in json string
-   * format.
-   *
-   * @var string
-   */
-  public $jsonParams;
-  /**
-   * Attributes for indexing. Key: Field name. Value: The key property to map a
-   * field to, such as `title`, and `description`. Supported key properties: *
-   * `title`: The title for data record. This would be displayed on search
-   * results. * `description`: The description for data record. This would be
-   * displayed on search results.
-   *
    * @var string[]
    */
   public $keyPropertyMappings;
   /**
-   * The parameters for the entity to facilitate data ingestion in structured
-   * json format.
-   *
    * @var array[]
    */
   public $params;
@@ -66,12 +41,7 @@ class GoogleCloudDiscoveryengineV1alphaDataConnectorSourceEntity extends \Google
   protected $startingSchemaDataType = '';
 
   /**
-   * Output only. The full resource name of the associated data store for the
-   * source entity. Format: `projects/locations/collections/dataStores`. When
-   * the connector is initialized by the DataConnectorService.SetUpDataConnector
-   * method, a DataStore is automatically created for each source entity.
-   *
-   * @param string $dataStore
+   * @param string
    */
   public function setDataStore($dataStore)
   {
@@ -85,11 +55,7 @@ class GoogleCloudDiscoveryengineV1alphaDataConnectorSourceEntity extends \Google
     return $this->dataStore;
   }
   /**
-   * The name of the entity. Supported values by data source: * Salesforce:
-   * `Lead`, `Opportunity`, `Contact`, `Account`, `Case`, `Contract`, `Campaign`
-   * * Jira: `Issue` * Confluence: `Content`, `Space`
-   *
-   * @param string $entityName
+   * @param string
    */
   public function setEntityName($entityName)
   {
@@ -103,9 +69,7 @@ class GoogleCloudDiscoveryengineV1alphaDataConnectorSourceEntity extends \Google
     return $this->entityName;
   }
   /**
-   * Optional. Configuration for `HEALTHCARE_FHIR` vertical.
-   *
-   * @param GoogleCloudDiscoveryengineV1alphaHealthcareFhirConfig $healthcareFhirConfig
+   * @param GoogleCloudDiscoveryengineV1alphaHealthcareFhirConfig
    */
   public function setHealthcareFhirConfig(GoogleCloudDiscoveryengineV1alphaHealthcareFhirConfig $healthcareFhirConfig)
   {
@@ -119,30 +83,7 @@ class GoogleCloudDiscoveryengineV1alphaDataConnectorSourceEntity extends \Google
     return $this->healthcareFhirConfig;
   }
   /**
-   * The parameters for the entity to facilitate data ingestion in json string
-   * format.
-   *
-   * @param string $jsonParams
-   */
-  public function setJsonParams($jsonParams)
-  {
-    $this->jsonParams = $jsonParams;
-  }
-  /**
-   * @return string
-   */
-  public function getJsonParams()
-  {
-    return $this->jsonParams;
-  }
-  /**
-   * Attributes for indexing. Key: Field name. Value: The key property to map a
-   * field to, such as `title`, and `description`. Supported key properties: *
-   * `title`: The title for data record. This would be displayed on search
-   * results. * `description`: The description for data record. This would be
-   * displayed on search results.
-   *
-   * @param string[] $keyPropertyMappings
+   * @param string[]
    */
   public function setKeyPropertyMappings($keyPropertyMappings)
   {
@@ -156,10 +97,7 @@ class GoogleCloudDiscoveryengineV1alphaDataConnectorSourceEntity extends \Google
     return $this->keyPropertyMappings;
   }
   /**
-   * The parameters for the entity to facilitate data ingestion in structured
-   * json format.
-   *
-   * @param array[] $params
+   * @param array[]
    */
   public function setParams($params)
   {
@@ -173,17 +111,7 @@ class GoogleCloudDiscoveryengineV1alphaDataConnectorSourceEntity extends \Google
     return $this->params;
   }
   /**
-   * Optional. The start schema to use for the DataStore created from this
-   * SourceEntity. If unset, a default vertical specialized schema will be used.
-   * This field is only used by SetUpDataConnector API, and will be ignored if
-   * used in other APIs. This field will be omitted from all API responses
-   * including GetDataConnector API. To retrieve a schema of a DataStore, use
-   * SchemaService.GetSchema API instead. The provided schema will be validated
-   * against certain rules on schema. Learn more from [this
-   * doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-
-   * schema).
-   *
-   * @param GoogleCloudDiscoveryengineV1alphaSchema $startingSchema
+   * @param GoogleCloudDiscoveryengineV1alphaSchema
    */
   public function setStartingSchema(GoogleCloudDiscoveryengineV1alphaSchema $startingSchema)
   {

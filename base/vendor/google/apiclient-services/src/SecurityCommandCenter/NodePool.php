@@ -21,8 +21,6 @@ class NodePool extends \Google\Collection
 {
   protected $collection_key = 'nodes';
   /**
-   * Kubernetes node pool name.
-   *
    * @var string
    */
   public $name;
@@ -30,9 +28,7 @@ class NodePool extends \Google\Collection
   protected $nodesDataType = 'array';
 
   /**
-   * Kubernetes node pool name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -46,9 +42,7 @@ class NodePool extends \Google\Collection
     return $this->name;
   }
   /**
-   * Nodes associated with the finding.
-   *
-   * @param Node[] $nodes
+   * @param Node[]
    */
   public function setNodes($nodes)
   {

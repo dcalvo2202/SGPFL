@@ -20,16 +20,12 @@ namespace Google\Service\CloudRetail;
 class GoogleCloudRetailV2CompleteQueryResponseRecentSearchResult extends \Google\Model
 {
   /**
-   * The recent search query.
-   *
    * @var string
    */
   public $recentSearch;
 
   /**
-   * The recent search query.
-   *
-   * @param string $recentSearch
+   * @param string
    */
   public function setRecentSearch($recentSearch)
   {

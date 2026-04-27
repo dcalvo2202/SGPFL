@@ -20,16 +20,12 @@ namespace Google\Service\NetworkServices;
 class RetryFilterPerRouteConfig extends \Google\Model
 {
   /**
-   * The name of the crypto key to use for encrypting event data.
-   *
    * @var string
    */
   public $cryptoKeyName;
 
   /**
-   * The name of the crypto key to use for encrypting event data.
-   *
-   * @param string $cryptoKeyName
+   * @param string
    */
   public function setCryptoKeyName($cryptoKeyName)
   {

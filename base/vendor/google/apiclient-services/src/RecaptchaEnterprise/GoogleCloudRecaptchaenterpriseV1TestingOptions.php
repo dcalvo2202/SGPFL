@@ -20,61 +20,30 @@ namespace Google\Service\RecaptchaEnterprise;
 class GoogleCloudRecaptchaenterpriseV1TestingOptions extends \Google\Model
 {
   /**
-   * Perform the normal risk analysis and return either nocaptcha or a challenge
-   * depending on risk and trust factors.
-   */
-  public const TESTING_CHALLENGE_TESTING_CHALLENGE_UNSPECIFIED = 'TESTING_CHALLENGE_UNSPECIFIED';
-  /**
-   * Challenge requests for this key always return a nocaptcha, which does not
-   * require a solution.
-   */
-  public const TESTING_CHALLENGE_NOCAPTCHA = 'NOCAPTCHA';
-  /**
-   * Challenge requests for this key always return an unsolvable challenge.
-   */
-  public const TESTING_CHALLENGE_UNSOLVABLE_CHALLENGE = 'UNSOLVABLE_CHALLENGE';
-  /**
-   * Optional. For challenge-based keys only (CHECKBOX, INVISIBLE), all
-   * challenge requests for this site return nocaptcha if NOCAPTCHA, or an
-   * unsolvable challenge if CHALLENGE.
-   *
    * @var string
    */
   public $testingChallenge;
   /**
-   * Optional. All assessments for this Key return this score. Must be between 0
-   * (likely not legitimate) and 1 (likely legitimate) inclusive.
-   *
    * @var float
    */
   public $testingScore;
 
   /**
-   * Optional. For challenge-based keys only (CHECKBOX, INVISIBLE), all
-   * challenge requests for this site return nocaptcha if NOCAPTCHA, or an
-   * unsolvable challenge if CHALLENGE.
-   *
-   * Accepted values: TESTING_CHALLENGE_UNSPECIFIED, NOCAPTCHA,
-   * UNSOLVABLE_CHALLENGE
-   *
-   * @param self::TESTING_CHALLENGE_* $testingChallenge
+   * @param string
    */
   public function setTestingChallenge($testingChallenge)
   {
     $this->testingChallenge = $testingChallenge;
   }
   /**
-   * @return self::TESTING_CHALLENGE_*
+   * @return string
    */
   public function getTestingChallenge()
   {
     return $this->testingChallenge;
   }
   /**
-   * Optional. All assessments for this Key return this score. Must be between 0
-   * (likely not legitimate) and 1 (likely legitimate) inclusive.
-   *
-   * @param float $testingScore
+   * @param float
    */
   public function setTestingScore($testingScore)
   {

@@ -21,30 +21,16 @@ class VideoSuggestionsTagSuggestion extends \Google\Collection
 {
   protected $collection_key = 'categoryRestricts';
   /**
-   * A set of video categories for which the tag is relevant. You can use this
-   * information to display appropriate tag suggestions based on the video
-   * category that the video uploader associates with the video. By default, tag
-   * suggestions are relevant for all categories if there are no restricts
-   * defined for the keyword.
-   *
    * @var string[]
    */
   public $categoryRestricts;
   /**
-   * The keyword tag suggested for the video.
-   *
    * @var string
    */
   public $tag;
 
   /**
-   * A set of video categories for which the tag is relevant. You can use this
-   * information to display appropriate tag suggestions based on the video
-   * category that the video uploader associates with the video. By default, tag
-   * suggestions are relevant for all categories if there are no restricts
-   * defined for the keyword.
-   *
-   * @param string[] $categoryRestricts
+   * @param string[]
    */
   public function setCategoryRestricts($categoryRestricts)
   {
@@ -58,9 +44,7 @@ class VideoSuggestionsTagSuggestion extends \Google\Collection
     return $this->categoryRestricts;
   }
   /**
-   * The keyword tag suggested for the video.
-   *
-   * @param string $tag
+   * @param string
    */
   public function setTag($tag)
   {

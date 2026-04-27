@@ -20,96 +20,28 @@ namespace Google\Service\Datastore;
 class GoogleDatastoreAdminV1CommonMetadata extends \Google\Model
 {
   /**
-   * Unspecified.
-   */
-  public const OPERATION_TYPE_OPERATION_TYPE_UNSPECIFIED = 'OPERATION_TYPE_UNSPECIFIED';
-  /**
-   * ExportEntities.
-   */
-  public const OPERATION_TYPE_EXPORT_ENTITIES = 'EXPORT_ENTITIES';
-  /**
-   * ImportEntities.
-   */
-  public const OPERATION_TYPE_IMPORT_ENTITIES = 'IMPORT_ENTITIES';
-  /**
-   * CreateIndex.
-   */
-  public const OPERATION_TYPE_CREATE_INDEX = 'CREATE_INDEX';
-  /**
-   * DeleteIndex.
-   */
-  public const OPERATION_TYPE_DELETE_INDEX = 'DELETE_INDEX';
-  /**
-   * Unspecified.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Request is being prepared for processing.
-   */
-  public const STATE_INITIALIZING = 'INITIALIZING';
-  /**
-   * Request is actively being processed.
-   */
-  public const STATE_PROCESSING = 'PROCESSING';
-  /**
-   * Request is in the process of being cancelled after user called
-   * google.longrunning.Operations.CancelOperation on the operation.
-   */
-  public const STATE_CANCELLING = 'CANCELLING';
-  /**
-   * Request has been processed and is in its finalization stage.
-   */
-  public const STATE_FINALIZING = 'FINALIZING';
-  /**
-   * Request has completed successfully.
-   */
-  public const STATE_SUCCESSFUL = 'SUCCESSFUL';
-  /**
-   * Request has finished being processed, but encountered an error.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * Request has finished being cancelled after user called
-   * google.longrunning.Operations.CancelOperation.
-   */
-  public const STATE_CANCELLED = 'CANCELLED';
-  /**
-   * The time the operation ended, either successfully or otherwise.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * The client-assigned labels which were provided when the operation was
-   * created. May also include additional labels.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * The type of the operation. Can be used as a filter in
-   * ListOperationsRequest.
-   *
    * @var string
    */
   public $operationType;
   /**
-   * The time that work began on the operation.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * The current state of the Operation.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * The time the operation ended, either successfully or otherwise.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -123,10 +55,7 @@ class GoogleDatastoreAdminV1CommonMetadata extends \Google\Model
     return $this->endTime;
   }
   /**
-   * The client-assigned labels which were provided when the operation was
-   * created. May also include additional labels.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -140,29 +69,21 @@ class GoogleDatastoreAdminV1CommonMetadata extends \Google\Model
     return $this->labels;
   }
   /**
-   * The type of the operation. Can be used as a filter in
-   * ListOperationsRequest.
-   *
-   * Accepted values: OPERATION_TYPE_UNSPECIFIED, EXPORT_ENTITIES,
-   * IMPORT_ENTITIES, CREATE_INDEX, DELETE_INDEX
-   *
-   * @param self::OPERATION_TYPE_* $operationType
+   * @param string
    */
   public function setOperationType($operationType)
   {
     $this->operationType = $operationType;
   }
   /**
-   * @return self::OPERATION_TYPE_*
+   * @return string
    */
   public function getOperationType()
   {
     return $this->operationType;
   }
   /**
-   * The time that work began on the operation.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -176,19 +97,14 @@ class GoogleDatastoreAdminV1CommonMetadata extends \Google\Model
     return $this->startTime;
   }
   /**
-   * The current state of the Operation.
-   *
-   * Accepted values: STATE_UNSPECIFIED, INITIALIZING, PROCESSING, CANCELLING,
-   * FINALIZING, SUCCESSFUL, FAILED, CANCELLED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

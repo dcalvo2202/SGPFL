@@ -20,63 +20,32 @@ namespace Google\Service\CloudRetail;
 class GoogleCloudRetailV2AttributesConfig extends \Google\Model
 {
   /**
-   * Value used when unset. In this case, server behavior defaults to
-   * CATALOG_LEVEL_ATTRIBUTE_CONFIG.
-   */
-  public const ATTRIBUTE_CONFIG_LEVEL_ATTRIBUTE_CONFIG_LEVEL_UNSPECIFIED = 'ATTRIBUTE_CONFIG_LEVEL_UNSPECIFIED';
-  /**
-   * At this level, we honor the attribute configurations set in
-   * Product.attributes.
-   */
-  public const ATTRIBUTE_CONFIG_LEVEL_PRODUCT_LEVEL_ATTRIBUTE_CONFIG = 'PRODUCT_LEVEL_ATTRIBUTE_CONFIG';
-  /**
-   * At this level, we honor the attribute configurations set in
-   * `CatalogConfig.attribute_configs`.
-   */
-  public const ATTRIBUTE_CONFIG_LEVEL_CATALOG_LEVEL_ATTRIBUTE_CONFIG = 'CATALOG_LEVEL_ATTRIBUTE_CONFIG';
-  /**
-   * Output only. The AttributeConfigLevel used for this catalog.
-   *
    * @var string
    */
   public $attributeConfigLevel;
   protected $catalogAttributesType = GoogleCloudRetailV2CatalogAttribute::class;
   protected $catalogAttributesDataType = 'map';
   /**
-   * Required. Immutable. The fully qualified resource name of the attribute
-   * config. Format: `projects/locations/catalogs/attributesConfig`
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Output only. The AttributeConfigLevel used for this catalog.
-   *
-   * Accepted values: ATTRIBUTE_CONFIG_LEVEL_UNSPECIFIED,
-   * PRODUCT_LEVEL_ATTRIBUTE_CONFIG, CATALOG_LEVEL_ATTRIBUTE_CONFIG
-   *
-   * @param self::ATTRIBUTE_CONFIG_LEVEL_* $attributeConfigLevel
+   * @param string
    */
   public function setAttributeConfigLevel($attributeConfigLevel)
   {
     $this->attributeConfigLevel = $attributeConfigLevel;
   }
   /**
-   * @return self::ATTRIBUTE_CONFIG_LEVEL_*
+   * @return string
    */
   public function getAttributeConfigLevel()
   {
     return $this->attributeConfigLevel;
   }
   /**
-   * Enable attribute(s) config at catalog level. For example, indexable,
-   * dynamic_facetable, or searchable for each attribute. The key is catalog
-   * attribute's name. For example: `color`, `brands`,
-   * `attributes.custom_attribute`, such as `attributes.xyz`. The maximum number
-   * of catalog attributes allowed in a request is 1000.
-   *
-   * @param GoogleCloudRetailV2CatalogAttribute[] $catalogAttributes
+   * @param GoogleCloudRetailV2CatalogAttribute[]
    */
   public function setCatalogAttributes($catalogAttributes)
   {
@@ -90,10 +59,7 @@ class GoogleCloudRetailV2AttributesConfig extends \Google\Model
     return $this->catalogAttributes;
   }
   /**
-   * Required. Immutable. The fully qualified resource name of the attribute
-   * config. Format: `projects/locations/catalogs/attributesConfig`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

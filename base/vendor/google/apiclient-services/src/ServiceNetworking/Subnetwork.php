@@ -21,35 +21,22 @@ class Subnetwork extends \Google\Collection
 {
   protected $collection_key = 'secondaryIpRanges';
   /**
-   * Subnetwork CIDR range in `10.x.x.x/y` format.
-   *
    * @var string
    */
   public $ipCidrRange;
   /**
-   * Subnetwork name. See https://cloud.google.com/compute/docs/vpc/
-   *
    * @var string
    */
   public $name;
   /**
-   * In the Shared VPC host project, the VPC network that's peered with the
-   * consumer network. For example: `projects/1234321/global/networks/host-
-   * network`
-   *
    * @var string
    */
   public $network;
   /**
-   * This is a discovered subnet that is not within the current consumer
-   * allocated ranges.
-   *
    * @var bool
    */
   public $outsideAllocation;
   /**
-   * GCP region where the subnetwork is located.
-   *
    * @var string
    */
   public $region;
@@ -57,9 +44,7 @@ class Subnetwork extends \Google\Collection
   protected $secondaryIpRangesDataType = 'array';
 
   /**
-   * Subnetwork CIDR range in `10.x.x.x/y` format.
-   *
-   * @param string $ipCidrRange
+   * @param string
    */
   public function setIpCidrRange($ipCidrRange)
   {
@@ -73,9 +58,7 @@ class Subnetwork extends \Google\Collection
     return $this->ipCidrRange;
   }
   /**
-   * Subnetwork name. See https://cloud.google.com/compute/docs/vpc/
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -89,11 +72,7 @@ class Subnetwork extends \Google\Collection
     return $this->name;
   }
   /**
-   * In the Shared VPC host project, the VPC network that's peered with the
-   * consumer network. For example: `projects/1234321/global/networks/host-
-   * network`
-   *
-   * @param string $network
+   * @param string
    */
   public function setNetwork($network)
   {
@@ -107,10 +86,7 @@ class Subnetwork extends \Google\Collection
     return $this->network;
   }
   /**
-   * This is a discovered subnet that is not within the current consumer
-   * allocated ranges.
-   *
-   * @param bool $outsideAllocation
+   * @param bool
    */
   public function setOutsideAllocation($outsideAllocation)
   {
@@ -124,9 +100,7 @@ class Subnetwork extends \Google\Collection
     return $this->outsideAllocation;
   }
   /**
-   * GCP region where the subnetwork is located.
-   *
-   * @param string $region
+   * @param string
    */
   public function setRegion($region)
   {
@@ -140,9 +114,7 @@ class Subnetwork extends \Google\Collection
     return $this->region;
   }
   /**
-   * List of secondary IP ranges in this subnetwork.
-   *
-   * @param SecondaryIpRange[] $secondaryIpRanges
+   * @param SecondaryIpRange[]
    */
   public function setSecondaryIpRanges($secondaryIpRanges)
   {

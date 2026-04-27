@@ -26,10 +26,7 @@ class BatchCreatePrintersResponse extends \Google\Collection
   protected $printersDataType = 'array';
 
   /**
-   * A list of create failures. Printer IDs are not populated, as printer were
-   * not created.
-   *
-   * @param FailureInfo[] $failures
+   * @param FailureInfo[]
    */
   public function setFailures($failures)
   {
@@ -43,9 +40,7 @@ class BatchCreatePrintersResponse extends \Google\Collection
     return $this->failures;
   }
   /**
-   * A list of successfully created printers with their IDs populated.
-   *
-   * @param Printer[] $printers
+   * @param Printer[]
    */
   public function setPrinters($printers)
   {

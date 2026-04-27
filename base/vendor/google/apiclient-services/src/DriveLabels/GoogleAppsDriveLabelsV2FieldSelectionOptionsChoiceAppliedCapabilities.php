@@ -20,28 +20,20 @@ namespace Google\Service\DriveLabels;
 class GoogleAppsDriveLabelsV2FieldSelectionOptionsChoiceAppliedCapabilities extends \Google\Model
 {
   /**
-   * Whether the user can read related applied metadata on items.
-   *
    * @var bool
    */
   public $canRead;
   /**
-   * Whether the user can use this choice in search queries.
-   *
    * @var bool
    */
   public $canSearch;
   /**
-   * Whether the user can select this choice on an item.
-   *
    * @var bool
    */
   public $canSelect;
 
   /**
-   * Whether the user can read related applied metadata on items.
-   *
-   * @param bool $canRead
+   * @param bool
    */
   public function setCanRead($canRead)
   {
@@ -55,9 +47,7 @@ class GoogleAppsDriveLabelsV2FieldSelectionOptionsChoiceAppliedCapabilities exte
     return $this->canRead;
   }
   /**
-   * Whether the user can use this choice in search queries.
-   *
-   * @param bool $canSearch
+   * @param bool
    */
   public function setCanSearch($canSearch)
   {
@@ -71,9 +61,7 @@ class GoogleAppsDriveLabelsV2FieldSelectionOptionsChoiceAppliedCapabilities exte
     return $this->canSearch;
   }
   /**
-   * Whether the user can select this choice on an item.
-   *
-   * @param bool $canSelect
+   * @param bool
    */
   public function setCanSelect($canSelect)
   {

@@ -23,16 +23,12 @@ class GoogleCloudRetailV2ListControlsResponse extends \Google\Collection
   protected $controlsType = GoogleCloudRetailV2Control::class;
   protected $controlsDataType = 'array';
   /**
-   * Pagination token, if not returned indicates the last page.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * All the Controls for a given catalog.
-   *
-   * @param GoogleCloudRetailV2Control[] $controls
+   * @param GoogleCloudRetailV2Control[]
    */
   public function setControls($controls)
   {
@@ -46,9 +42,7 @@ class GoogleCloudRetailV2ListControlsResponse extends \Google\Collection
     return $this->controls;
   }
   /**
-   * Pagination token, if not returned indicates the last page.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

@@ -20,18 +20,12 @@ namespace Google\Service\AndroidPublisher;
 class GeneratedUniversalApk extends \Google\Model
 {
   /**
-   * Download ID, which uniquely identifies the APK to download. Should be
-   * supplied to `generatedapks.download` method.
-   *
    * @var string
    */
   public $downloadId;
 
   /**
-   * Download ID, which uniquely identifies the APK to download. Should be
-   * supplied to `generatedapks.download` method.
-   *
-   * @param string $downloadId
+   * @param string
    */
   public function setDownloadId($downloadId)
   {

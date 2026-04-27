@@ -20,35 +20,24 @@ namespace Google\Service\GKEOnPrem;
 class UpgradeDependency extends \Google\Model
 {
   /**
-   * Current version of the dependency e.g. 1.15.0.
-   *
    * @var string
    */
   public $currentVersion;
   /**
-   * Membership names are formatted as `projects//locations//memberships/`.
-   *
    * @var string
    */
   public $membership;
   /**
-   * Resource name of the dependency.
-   *
    * @var string
    */
   public $resourceName;
   /**
-   * Target version of the dependency e.g. 1.16.1. This is the version the
-   * dependency needs to be upgraded to before a resource can be upgraded.
-   *
    * @var string
    */
   public $targetVersion;
 
   /**
-   * Current version of the dependency e.g. 1.15.0.
-   *
-   * @param string $currentVersion
+   * @param string
    */
   public function setCurrentVersion($currentVersion)
   {
@@ -62,9 +51,7 @@ class UpgradeDependency extends \Google\Model
     return $this->currentVersion;
   }
   /**
-   * Membership names are formatted as `projects//locations//memberships/`.
-   *
-   * @param string $membership
+   * @param string
    */
   public function setMembership($membership)
   {
@@ -78,9 +65,7 @@ class UpgradeDependency extends \Google\Model
     return $this->membership;
   }
   /**
-   * Resource name of the dependency.
-   *
-   * @param string $resourceName
+   * @param string
    */
   public function setResourceName($resourceName)
   {
@@ -94,10 +79,7 @@ class UpgradeDependency extends \Google\Model
     return $this->resourceName;
   }
   /**
-   * Target version of the dependency e.g. 1.16.1. This is the version the
-   * dependency needs to be upgraded to before a resource can be upgraded.
-   *
-   * @param string $targetVersion
+   * @param string
    */
   public function setTargetVersion($targetVersion)
   {

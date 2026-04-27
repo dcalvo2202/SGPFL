@@ -24,9 +24,7 @@ class BatchUpdateSubscriptionsResponse extends \Google\Collection
   protected $subscriptionsDataType = 'array';
 
   /**
-   * The updated subscriptions list.
-   *
-   * @param Subscription[] $subscriptions
+   * @param Subscription[]
    */
   public function setSubscriptions($subscriptions)
   {

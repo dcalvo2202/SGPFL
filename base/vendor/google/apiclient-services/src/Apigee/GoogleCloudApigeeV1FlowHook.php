@@ -20,42 +20,24 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1FlowHook extends \Google\Model
 {
   /**
-   * Optional. Flag that specifies whether execution should continue if the flow
-   * hook throws an exception. Set to `true` to continue execution. Set to
-   * `false` to stop execution if the flow hook throws an exception. Defaults to
-   * `true`.
-   *
    * @var bool
    */
   public $continueOnError;
   /**
-   * Description of the flow hook.
-   *
    * @var string
    */
   public $description;
   /**
-   * Output only. Where in the API call flow the flow hook is invoked. Must be
-   * one of `PreProxyFlowHook`, `PostProxyFlowHook`, `PreTargetFlowHook`, or
-   * `PostTargetFlowHook`.
-   *
    * @var string
    */
   public $flowHookPoint;
   /**
-   * Shared flow attached to this flow hook, or empty if there is none attached.
-   *
    * @var string
    */
   public $sharedFlow;
 
   /**
-   * Optional. Flag that specifies whether execution should continue if the flow
-   * hook throws an exception. Set to `true` to continue execution. Set to
-   * `false` to stop execution if the flow hook throws an exception. Defaults to
-   * `true`.
-   *
-   * @param bool $continueOnError
+   * @param bool
    */
   public function setContinueOnError($continueOnError)
   {
@@ -69,9 +51,7 @@ class GoogleCloudApigeeV1FlowHook extends \Google\Model
     return $this->continueOnError;
   }
   /**
-   * Description of the flow hook.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -85,11 +65,7 @@ class GoogleCloudApigeeV1FlowHook extends \Google\Model
     return $this->description;
   }
   /**
-   * Output only. Where in the API call flow the flow hook is invoked. Must be
-   * one of `PreProxyFlowHook`, `PostProxyFlowHook`, `PreTargetFlowHook`, or
-   * `PostTargetFlowHook`.
-   *
-   * @param string $flowHookPoint
+   * @param string
    */
   public function setFlowHookPoint($flowHookPoint)
   {
@@ -103,9 +79,7 @@ class GoogleCloudApigeeV1FlowHook extends \Google\Model
     return $this->flowHookPoint;
   }
   /**
-   * Shared flow attached to this flow hook, or empty if there is none attached.
-   *
-   * @param string $sharedFlow
+   * @param string
    */
   public function setSharedFlow($sharedFlow)
   {

@@ -20,57 +20,28 @@ namespace Google\Service\Pubsub;
 class PubsubMessage extends \Google\Model
 {
   /**
-   * Optional. Attributes for this message. If this field is empty, the message
-   * must contain non-empty data. This can be used to filter messages on the
-   * subscription.
-   *
    * @var string[]
    */
   public $attributes;
   /**
-   * Optional. The message data field. If this field is empty, the message must
-   * contain at least one attribute.
-   *
    * @var string
    */
   public $data;
   /**
-   * ID of this message, assigned by the server when the message is published.
-   * Guaranteed to be unique within the topic. This value may be read by a
-   * subscriber that receives a `PubsubMessage` via a `Pull` call or a push
-   * delivery. It must not be populated by the publisher in a `Publish` call.
-   *
    * @var string
    */
   public $messageId;
   /**
-   * Optional. If non-empty, identifies related messages for which publish order
-   * should be respected. If a `Subscription` has `enable_message_ordering` set
-   * to `true`, messages published with the same non-empty `ordering_key` value
-   * will be delivered to subscribers in the order in which they are received by
-   * the Pub/Sub system. All `PubsubMessage`s published in a given
-   * `PublishRequest` must specify the same `ordering_key` value. For more
-   * information, see [ordering
-   * messages](https://cloud.google.com/pubsub/docs/ordering).
-   *
    * @var string
    */
   public $orderingKey;
   /**
-   * The time at which the message was published, populated by the server when
-   * it receives the `Publish` call. It must not be populated by the publisher
-   * in a `Publish` call.
-   *
    * @var string
    */
   public $publishTime;
 
   /**
-   * Optional. Attributes for this message. If this field is empty, the message
-   * must contain non-empty data. This can be used to filter messages on the
-   * subscription.
-   *
-   * @param string[] $attributes
+   * @param string[]
    */
   public function setAttributes($attributes)
   {
@@ -84,10 +55,7 @@ class PubsubMessage extends \Google\Model
     return $this->attributes;
   }
   /**
-   * Optional. The message data field. If this field is empty, the message must
-   * contain at least one attribute.
-   *
-   * @param string $data
+   * @param string
    */
   public function setData($data)
   {
@@ -101,12 +69,7 @@ class PubsubMessage extends \Google\Model
     return $this->data;
   }
   /**
-   * ID of this message, assigned by the server when the message is published.
-   * Guaranteed to be unique within the topic. This value may be read by a
-   * subscriber that receives a `PubsubMessage` via a `Pull` call or a push
-   * delivery. It must not be populated by the publisher in a `Publish` call.
-   *
-   * @param string $messageId
+   * @param string
    */
   public function setMessageId($messageId)
   {
@@ -120,16 +83,7 @@ class PubsubMessage extends \Google\Model
     return $this->messageId;
   }
   /**
-   * Optional. If non-empty, identifies related messages for which publish order
-   * should be respected. If a `Subscription` has `enable_message_ordering` set
-   * to `true`, messages published with the same non-empty `ordering_key` value
-   * will be delivered to subscribers in the order in which they are received by
-   * the Pub/Sub system. All `PubsubMessage`s published in a given
-   * `PublishRequest` must specify the same `ordering_key` value. For more
-   * information, see [ordering
-   * messages](https://cloud.google.com/pubsub/docs/ordering).
-   *
-   * @param string $orderingKey
+   * @param string
    */
   public function setOrderingKey($orderingKey)
   {
@@ -143,11 +97,7 @@ class PubsubMessage extends \Google\Model
     return $this->orderingKey;
   }
   /**
-   * The time at which the message was published, populated by the server when
-   * it receives the `Publish` call. It must not be populated by the publisher
-   * in a `Publish` call.
-   *
-   * @param string $publishTime
+   * @param string
    */
   public function setPublishTime($publishTime)
   {

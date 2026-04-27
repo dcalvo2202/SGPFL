@@ -20,132 +20,90 @@ namespace Google\Service\Docs;
 class ParagraphStyleSuggestionState extends \Google\Model
 {
   /**
-   * Indicates if there was a suggested change to alignment.
-   *
    * @var bool
    */
   public $alignmentSuggested;
   /**
-   * Indicates if there was a suggested change to avoid_widow_and_orphan.
-   *
    * @var bool
    */
   public $avoidWidowAndOrphanSuggested;
   /**
-   * Indicates if there was a suggested change to border_between.
-   *
    * @var bool
    */
   public $borderBetweenSuggested;
   /**
-   * Indicates if there was a suggested change to border_bottom.
-   *
    * @var bool
    */
   public $borderBottomSuggested;
   /**
-   * Indicates if there was a suggested change to border_left.
-   *
    * @var bool
    */
   public $borderLeftSuggested;
   /**
-   * Indicates if there was a suggested change to border_right.
-   *
    * @var bool
    */
   public $borderRightSuggested;
   /**
-   * Indicates if there was a suggested change to border_top.
-   *
    * @var bool
    */
   public $borderTopSuggested;
   /**
-   * Indicates if there was a suggested change to direction.
-   *
    * @var bool
    */
   public $directionSuggested;
   /**
-   * Indicates if there was a suggested change to heading_id.
-   *
    * @var bool
    */
   public $headingIdSuggested;
   /**
-   * Indicates if there was a suggested change to indent_end.
-   *
    * @var bool
    */
   public $indentEndSuggested;
   /**
-   * Indicates if there was a suggested change to indent_first_line.
-   *
    * @var bool
    */
   public $indentFirstLineSuggested;
   /**
-   * Indicates if there was a suggested change to indent_start.
-   *
    * @var bool
    */
   public $indentStartSuggested;
   /**
-   * Indicates if there was a suggested change to keep_lines_together.
-   *
    * @var bool
    */
   public $keepLinesTogetherSuggested;
   /**
-   * Indicates if there was a suggested change to keep_with_next.
-   *
    * @var bool
    */
   public $keepWithNextSuggested;
   /**
-   * Indicates if there was a suggested change to line_spacing.
-   *
    * @var bool
    */
   public $lineSpacingSuggested;
   /**
-   * Indicates if there was a suggested change to named_style_type.
-   *
    * @var bool
    */
   public $namedStyleTypeSuggested;
   /**
-   * Indicates if there was a suggested change to page_break_before.
-   *
    * @var bool
    */
   public $pageBreakBeforeSuggested;
   protected $shadingSuggestionStateType = ShadingSuggestionState::class;
   protected $shadingSuggestionStateDataType = '';
   /**
-   * Indicates if there was a suggested change to space_above.
-   *
    * @var bool
    */
   public $spaceAboveSuggested;
   /**
-   * Indicates if there was a suggested change to space_below.
-   *
    * @var bool
    */
   public $spaceBelowSuggested;
   /**
-   * Indicates if there was a suggested change to spacing_mode.
-   *
    * @var bool
    */
   public $spacingModeSuggested;
 
   /**
-   * Indicates if there was a suggested change to alignment.
-   *
-   * @param bool $alignmentSuggested
+   * @param bool
    */
   public function setAlignmentSuggested($alignmentSuggested)
   {
@@ -159,9 +117,7 @@ class ParagraphStyleSuggestionState extends \Google\Model
     return $this->alignmentSuggested;
   }
   /**
-   * Indicates if there was a suggested change to avoid_widow_and_orphan.
-   *
-   * @param bool $avoidWidowAndOrphanSuggested
+   * @param bool
    */
   public function setAvoidWidowAndOrphanSuggested($avoidWidowAndOrphanSuggested)
   {
@@ -175,9 +131,7 @@ class ParagraphStyleSuggestionState extends \Google\Model
     return $this->avoidWidowAndOrphanSuggested;
   }
   /**
-   * Indicates if there was a suggested change to border_between.
-   *
-   * @param bool $borderBetweenSuggested
+   * @param bool
    */
   public function setBorderBetweenSuggested($borderBetweenSuggested)
   {
@@ -191,9 +145,7 @@ class ParagraphStyleSuggestionState extends \Google\Model
     return $this->borderBetweenSuggested;
   }
   /**
-   * Indicates if there was a suggested change to border_bottom.
-   *
-   * @param bool $borderBottomSuggested
+   * @param bool
    */
   public function setBorderBottomSuggested($borderBottomSuggested)
   {
@@ -207,9 +159,7 @@ class ParagraphStyleSuggestionState extends \Google\Model
     return $this->borderBottomSuggested;
   }
   /**
-   * Indicates if there was a suggested change to border_left.
-   *
-   * @param bool $borderLeftSuggested
+   * @param bool
    */
   public function setBorderLeftSuggested($borderLeftSuggested)
   {
@@ -223,9 +173,7 @@ class ParagraphStyleSuggestionState extends \Google\Model
     return $this->borderLeftSuggested;
   }
   /**
-   * Indicates if there was a suggested change to border_right.
-   *
-   * @param bool $borderRightSuggested
+   * @param bool
    */
   public function setBorderRightSuggested($borderRightSuggested)
   {
@@ -239,9 +187,7 @@ class ParagraphStyleSuggestionState extends \Google\Model
     return $this->borderRightSuggested;
   }
   /**
-   * Indicates if there was a suggested change to border_top.
-   *
-   * @param bool $borderTopSuggested
+   * @param bool
    */
   public function setBorderTopSuggested($borderTopSuggested)
   {
@@ -255,9 +201,7 @@ class ParagraphStyleSuggestionState extends \Google\Model
     return $this->borderTopSuggested;
   }
   /**
-   * Indicates if there was a suggested change to direction.
-   *
-   * @param bool $directionSuggested
+   * @param bool
    */
   public function setDirectionSuggested($directionSuggested)
   {
@@ -271,9 +215,7 @@ class ParagraphStyleSuggestionState extends \Google\Model
     return $this->directionSuggested;
   }
   /**
-   * Indicates if there was a suggested change to heading_id.
-   *
-   * @param bool $headingIdSuggested
+   * @param bool
    */
   public function setHeadingIdSuggested($headingIdSuggested)
   {
@@ -287,9 +229,7 @@ class ParagraphStyleSuggestionState extends \Google\Model
     return $this->headingIdSuggested;
   }
   /**
-   * Indicates if there was a suggested change to indent_end.
-   *
-   * @param bool $indentEndSuggested
+   * @param bool
    */
   public function setIndentEndSuggested($indentEndSuggested)
   {
@@ -303,9 +243,7 @@ class ParagraphStyleSuggestionState extends \Google\Model
     return $this->indentEndSuggested;
   }
   /**
-   * Indicates if there was a suggested change to indent_first_line.
-   *
-   * @param bool $indentFirstLineSuggested
+   * @param bool
    */
   public function setIndentFirstLineSuggested($indentFirstLineSuggested)
   {
@@ -319,9 +257,7 @@ class ParagraphStyleSuggestionState extends \Google\Model
     return $this->indentFirstLineSuggested;
   }
   /**
-   * Indicates if there was a suggested change to indent_start.
-   *
-   * @param bool $indentStartSuggested
+   * @param bool
    */
   public function setIndentStartSuggested($indentStartSuggested)
   {
@@ -335,9 +271,7 @@ class ParagraphStyleSuggestionState extends \Google\Model
     return $this->indentStartSuggested;
   }
   /**
-   * Indicates if there was a suggested change to keep_lines_together.
-   *
-   * @param bool $keepLinesTogetherSuggested
+   * @param bool
    */
   public function setKeepLinesTogetherSuggested($keepLinesTogetherSuggested)
   {
@@ -351,9 +285,7 @@ class ParagraphStyleSuggestionState extends \Google\Model
     return $this->keepLinesTogetherSuggested;
   }
   /**
-   * Indicates if there was a suggested change to keep_with_next.
-   *
-   * @param bool $keepWithNextSuggested
+   * @param bool
    */
   public function setKeepWithNextSuggested($keepWithNextSuggested)
   {
@@ -367,9 +299,7 @@ class ParagraphStyleSuggestionState extends \Google\Model
     return $this->keepWithNextSuggested;
   }
   /**
-   * Indicates if there was a suggested change to line_spacing.
-   *
-   * @param bool $lineSpacingSuggested
+   * @param bool
    */
   public function setLineSpacingSuggested($lineSpacingSuggested)
   {
@@ -383,9 +313,7 @@ class ParagraphStyleSuggestionState extends \Google\Model
     return $this->lineSpacingSuggested;
   }
   /**
-   * Indicates if there was a suggested change to named_style_type.
-   *
-   * @param bool $namedStyleTypeSuggested
+   * @param bool
    */
   public function setNamedStyleTypeSuggested($namedStyleTypeSuggested)
   {
@@ -399,9 +327,7 @@ class ParagraphStyleSuggestionState extends \Google\Model
     return $this->namedStyleTypeSuggested;
   }
   /**
-   * Indicates if there was a suggested change to page_break_before.
-   *
-   * @param bool $pageBreakBeforeSuggested
+   * @param bool
    */
   public function setPageBreakBeforeSuggested($pageBreakBeforeSuggested)
   {
@@ -415,10 +341,7 @@ class ParagraphStyleSuggestionState extends \Google\Model
     return $this->pageBreakBeforeSuggested;
   }
   /**
-   * A mask that indicates which of the fields in shading have been changed in
-   * this suggestion.
-   *
-   * @param ShadingSuggestionState $shadingSuggestionState
+   * @param ShadingSuggestionState
    */
   public function setShadingSuggestionState(ShadingSuggestionState $shadingSuggestionState)
   {
@@ -432,9 +355,7 @@ class ParagraphStyleSuggestionState extends \Google\Model
     return $this->shadingSuggestionState;
   }
   /**
-   * Indicates if there was a suggested change to space_above.
-   *
-   * @param bool $spaceAboveSuggested
+   * @param bool
    */
   public function setSpaceAboveSuggested($spaceAboveSuggested)
   {
@@ -448,9 +369,7 @@ class ParagraphStyleSuggestionState extends \Google\Model
     return $this->spaceAboveSuggested;
   }
   /**
-   * Indicates if there was a suggested change to space_below.
-   *
-   * @param bool $spaceBelowSuggested
+   * @param bool
    */
   public function setSpaceBelowSuggested($spaceBelowSuggested)
   {
@@ -464,9 +383,7 @@ class ParagraphStyleSuggestionState extends \Google\Model
     return $this->spaceBelowSuggested;
   }
   /**
-   * Indicates if there was a suggested change to spacing_mode.
-   *
-   * @param bool $spacingModeSuggested
+   * @param bool
    */
   public function setSpacingModeSuggested($spacingModeSuggested)
   {

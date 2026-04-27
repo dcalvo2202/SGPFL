@@ -23,17 +23,12 @@ class GoogleCloudDataplexV1ListEntitiesResponse extends \Google\Collection
   protected $entitiesType = GoogleCloudDataplexV1Entity::class;
   protected $entitiesDataType = 'array';
   /**
-   * Token to retrieve the next page of results, or empty if there are no
-   * remaining results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Entities in the specified parent zone.
-   *
-   * @param GoogleCloudDataplexV1Entity[] $entities
+   * @param GoogleCloudDataplexV1Entity[]
    */
   public function setEntities($entities)
   {
@@ -47,10 +42,7 @@ class GoogleCloudDataplexV1ListEntitiesResponse extends \Google\Collection
     return $this->entities;
   }
   /**
-   * Token to retrieve the next page of results, or empty if there are no
-   * remaining results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

@@ -29,11 +29,7 @@ class GooglePrivacyDlpV2ImageTransformation extends \Google\Model
   protected $selectedInfoTypesDataType = '';
 
   /**
-   * Apply transformation to all findings not specified in other
-   * ImageTransformation's selected_info_types. Only one instance is allowed
-   * within the ImageTransformations message.
-   *
-   * @param GooglePrivacyDlpV2AllInfoTypes $allInfoTypes
+   * @param GooglePrivacyDlpV2AllInfoTypes
    */
   public function setAllInfoTypes(GooglePrivacyDlpV2AllInfoTypes $allInfoTypes)
   {
@@ -47,10 +43,7 @@ class GooglePrivacyDlpV2ImageTransformation extends \Google\Model
     return $this->allInfoTypes;
   }
   /**
-   * Apply transformation to all text that doesn't match an infoType. Only one
-   * instance is allowed within the ImageTransformations message.
-   *
-   * @param GooglePrivacyDlpV2AllText $allText
+   * @param GooglePrivacyDlpV2AllText
    */
   public function setAllText(GooglePrivacyDlpV2AllText $allText)
   {
@@ -64,10 +57,7 @@ class GooglePrivacyDlpV2ImageTransformation extends \Google\Model
     return $this->allText;
   }
   /**
-   * The color to use when redacting content from an image. If not specified,
-   * the default is black.
-   *
-   * @param GooglePrivacyDlpV2Color $redactionColor
+   * @param GooglePrivacyDlpV2Color
    */
   public function setRedactionColor(GooglePrivacyDlpV2Color $redactionColor)
   {
@@ -81,9 +71,7 @@ class GooglePrivacyDlpV2ImageTransformation extends \Google\Model
     return $this->redactionColor;
   }
   /**
-   * Apply transformation to the selected info_types.
-   *
-   * @param GooglePrivacyDlpV2SelectedInfoTypes $selectedInfoTypes
+   * @param GooglePrivacyDlpV2SelectedInfoTypes
    */
   public function setSelectedInfoTypes(GooglePrivacyDlpV2SelectedInfoTypes $selectedInfoTypes)
   {

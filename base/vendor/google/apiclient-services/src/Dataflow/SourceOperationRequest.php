@@ -22,39 +22,26 @@ class SourceOperationRequest extends \Google\Model
   protected $getMetadataType = SourceGetMetadataRequest::class;
   protected $getMetadataDataType = '';
   /**
-   * User-provided name of the Read instruction for this source.
-   *
    * @var string
    */
   public $name;
   /**
-   * System-defined name for the Read instruction for this source in the
-   * original workflow graph.
-   *
    * @var string
    */
   public $originalName;
   protected $splitType = SourceSplitRequest::class;
   protected $splitDataType = '';
   /**
-   * System-defined name of the stage containing the source operation. Unique
-   * across the workflow.
-   *
    * @var string
    */
   public $stageName;
   /**
-   * System-defined name of the Read instruction for this source. Unique across
-   * the workflow.
-   *
    * @var string
    */
   public $systemName;
 
   /**
-   * Information about a request to get metadata about a source.
-   *
-   * @param SourceGetMetadataRequest $getMetadata
+   * @param SourceGetMetadataRequest
    */
   public function setGetMetadata(SourceGetMetadataRequest $getMetadata)
   {
@@ -68,9 +55,7 @@ class SourceOperationRequest extends \Google\Model
     return $this->getMetadata;
   }
   /**
-   * User-provided name of the Read instruction for this source.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -84,10 +69,7 @@ class SourceOperationRequest extends \Google\Model
     return $this->name;
   }
   /**
-   * System-defined name for the Read instruction for this source in the
-   * original workflow graph.
-   *
-   * @param string $originalName
+   * @param string
    */
   public function setOriginalName($originalName)
   {
@@ -101,9 +83,7 @@ class SourceOperationRequest extends \Google\Model
     return $this->originalName;
   }
   /**
-   * Information about a request to split a source.
-   *
-   * @param SourceSplitRequest $split
+   * @param SourceSplitRequest
    */
   public function setSplit(SourceSplitRequest $split)
   {
@@ -117,10 +97,7 @@ class SourceOperationRequest extends \Google\Model
     return $this->split;
   }
   /**
-   * System-defined name of the stage containing the source operation. Unique
-   * across the workflow.
-   *
-   * @param string $stageName
+   * @param string
    */
   public function setStageName($stageName)
   {
@@ -134,10 +111,7 @@ class SourceOperationRequest extends \Google\Model
     return $this->stageName;
   }
   /**
-   * System-defined name of the Read instruction for this source. Unique across
-   * the workflow.
-   *
-   * @param string $systemName
+   * @param string
    */
   public function setSystemName($systemName)
   {

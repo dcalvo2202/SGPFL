@@ -23,17 +23,12 @@ class GoogleCloudDatacatalogV1ListEntryGroupsResponse extends \Google\Collection
   protected $entryGroupsType = GoogleCloudDatacatalogV1EntryGroup::class;
   protected $entryGroupsDataType = 'array';
   /**
-   * Pagination token to specify in the next call to retrieve the next page of
-   * results. Empty if there are no more items.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Entry group details.
-   *
-   * @param GoogleCloudDatacatalogV1EntryGroup[] $entryGroups
+   * @param GoogleCloudDatacatalogV1EntryGroup[]
    */
   public function setEntryGroups($entryGroups)
   {
@@ -47,10 +42,7 @@ class GoogleCloudDatacatalogV1ListEntryGroupsResponse extends \Google\Collection
     return $this->entryGroups;
   }
   /**
-   * Pagination token to specify in the next call to retrieve the next page of
-   * results. Empty if there are no more items.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

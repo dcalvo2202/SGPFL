@@ -20,70 +20,38 @@ namespace Google\Service\Cloudchannel;
 class GoogleCloudChannelV1CloudIdentityInfo extends \Google\Model
 {
   /**
-   * Not used.
-   */
-  public const CUSTOMER_TYPE_CUSTOMER_TYPE_UNSPECIFIED = 'CUSTOMER_TYPE_UNSPECIFIED';
-  /**
-   * Domain-owning customer which needs domain verification to use services.
-   */
-  public const CUSTOMER_TYPE_DOMAIN = 'DOMAIN';
-  /**
-   * Team customer which needs email verification to use services.
-   */
-  public const CUSTOMER_TYPE_TEAM = 'TEAM';
-  /**
-   * Output only. URI of Customer's Admin console dashboard.
-   *
    * @var string
    */
   public $adminConsoleUri;
   /**
-   * The alternate email.
-   *
    * @var string
    */
   public $alternateEmail;
   /**
-   * CustomerType indicates verification type needed for using services.
-   *
    * @var string
    */
   public $customerType;
   protected $eduDataType = GoogleCloudChannelV1EduData::class;
   protected $eduDataDataType = '';
   /**
-   * Output only. Whether the domain is verified. This field is not returned for
-   * a Customer's cloud_identity_info resource. Partners can use the
-   * domains.get() method of the Workspace SDK's Directory API, or listen to the
-   * PRIMARY_DOMAIN_VERIFIED Pub/Sub event in to track domain verification of
-   * their resolve Workspace customers.
-   *
    * @var bool
    */
   public $isDomainVerified;
   /**
-   * Language code.
-   *
    * @var string
    */
   public $languageCode;
   /**
-   * Phone number associated with the Cloud Identity.
-   *
    * @var string
    */
   public $phoneNumber;
   /**
-   * Output only. The primary domain name.
-   *
    * @var string
    */
   public $primaryDomain;
 
   /**
-   * Output only. URI of Customer's Admin console dashboard.
-   *
-   * @param string $adminConsoleUri
+   * @param string
    */
   public function setAdminConsoleUri($adminConsoleUri)
   {
@@ -97,9 +65,7 @@ class GoogleCloudChannelV1CloudIdentityInfo extends \Google\Model
     return $this->adminConsoleUri;
   }
   /**
-   * The alternate email.
-   *
-   * @param string $alternateEmail
+   * @param string
    */
   public function setAlternateEmail($alternateEmail)
   {
@@ -113,27 +79,21 @@ class GoogleCloudChannelV1CloudIdentityInfo extends \Google\Model
     return $this->alternateEmail;
   }
   /**
-   * CustomerType indicates verification type needed for using services.
-   *
-   * Accepted values: CUSTOMER_TYPE_UNSPECIFIED, DOMAIN, TEAM
-   *
-   * @param self::CUSTOMER_TYPE_* $customerType
+   * @param string
    */
   public function setCustomerType($customerType)
   {
     $this->customerType = $customerType;
   }
   /**
-   * @return self::CUSTOMER_TYPE_*
+   * @return string
    */
   public function getCustomerType()
   {
     return $this->customerType;
   }
   /**
-   * Edu information about the customer.
-   *
-   * @param GoogleCloudChannelV1EduData $eduData
+   * @param GoogleCloudChannelV1EduData
    */
   public function setEduData(GoogleCloudChannelV1EduData $eduData)
   {
@@ -147,13 +107,7 @@ class GoogleCloudChannelV1CloudIdentityInfo extends \Google\Model
     return $this->eduData;
   }
   /**
-   * Output only. Whether the domain is verified. This field is not returned for
-   * a Customer's cloud_identity_info resource. Partners can use the
-   * domains.get() method of the Workspace SDK's Directory API, or listen to the
-   * PRIMARY_DOMAIN_VERIFIED Pub/Sub event in to track domain verification of
-   * their resolve Workspace customers.
-   *
-   * @param bool $isDomainVerified
+   * @param bool
    */
   public function setIsDomainVerified($isDomainVerified)
   {
@@ -167,9 +121,7 @@ class GoogleCloudChannelV1CloudIdentityInfo extends \Google\Model
     return $this->isDomainVerified;
   }
   /**
-   * Language code.
-   *
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {
@@ -183,9 +135,7 @@ class GoogleCloudChannelV1CloudIdentityInfo extends \Google\Model
     return $this->languageCode;
   }
   /**
-   * Phone number associated with the Cloud Identity.
-   *
-   * @param string $phoneNumber
+   * @param string
    */
   public function setPhoneNumber($phoneNumber)
   {
@@ -199,9 +149,7 @@ class GoogleCloudChannelV1CloudIdentityInfo extends \Google\Model
     return $this->phoneNumber;
   }
   /**
-   * Output only. The primary domain name.
-   *
-   * @param string $primaryDomain
+   * @param string
    */
   public function setPrimaryDomain($primaryDomain)
   {

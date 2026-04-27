@@ -21,92 +21,46 @@ class GrpcRoute extends \Google\Collection
 {
   protected $collection_key = 'rules';
   /**
-   * Output only. The timestamp when the resource was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. A free-text description of the resource. Max length 1024
-   * characters.
-   *
    * @var string
    */
   public $description;
   /**
-   * Optional. Gateways defines a list of gateways this GrpcRoute is attached
-   * to, as one of the routing rules to route the requests served by the
-   * gateway. Each gateway reference should match the pattern:
-   * `projects/locations/gateways/`
-   *
    * @var string[]
    */
   public $gateways;
   /**
-   * Required. Service hostnames with an optional port for which this route
-   * describes traffic. Format: [:] Hostname is the fully qualified domain name
-   * of a network host. This matches the RFC 1123 definition of a hostname with
-   * 2 notable exceptions: - IPs are not allowed. - A hostname may be prefixed
-   * with a wildcard label (`*.`). The wildcard label must appear by itself as
-   * the first label. Hostname can be "precise" which is a domain name without
-   * the terminating dot of a network host (e.g. `foo.example.com`) or
-   * "wildcard", which is a domain name prefixed with a single wildcard label
-   * (e.g. `*.example.com`). Note that as per RFC1035 and RFC1123, a label must
-   * consist of lower case alphanumeric characters or '-', and must start and
-   * end with an alphanumeric character. No other punctuation is allowed. The
-   * routes associated with a Mesh or Gateway must have unique hostnames. If you
-   * attempt to attach multiple routes with conflicting hostnames, the
-   * configuration will be rejected. For example, while it is acceptable for
-   * routes for the hostnames `*.foo.bar.com` and `*.bar.com` to be associated
-   * with the same route, it is not possible to associate two routes both with
-   * `*.bar.com` or both with `bar.com`. If a port is specified, then gRPC
-   * clients must use the channel URI with the port to match this rule (i.e.
-   * "xds:service:123"), otherwise they must supply the URI without a port (i.e.
-   * "xds:service").
-   *
    * @var string[]
    */
   public $hostnames;
   /**
-   * Optional. Set of label tags associated with the GrpcRoute resource.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Optional. Meshes defines a list of meshes this GrpcRoute is attached to, as
-   * one of the routing rules to route the requests served by the mesh. Each
-   * mesh reference should match the pattern: `projects/locations/meshes/`
-   *
    * @var string[]
    */
   public $meshes;
   /**
-   * Identifier. Name of the GrpcRoute resource. It matches pattern
-   * `projects/locations/grpcRoutes/`
-   *
    * @var string
    */
   public $name;
   protected $rulesType = GrpcRouteRouteRule::class;
   protected $rulesDataType = 'array';
   /**
-   * Output only. Server-defined URL of this resource
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * Output only. The timestamp when the resource was updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. The timestamp when the resource was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -120,10 +74,7 @@ class GrpcRoute extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Optional. A free-text description of the resource. Max length 1024
-   * characters.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -137,12 +88,7 @@ class GrpcRoute extends \Google\Collection
     return $this->description;
   }
   /**
-   * Optional. Gateways defines a list of gateways this GrpcRoute is attached
-   * to, as one of the routing rules to route the requests served by the
-   * gateway. Each gateway reference should match the pattern:
-   * `projects/locations/gateways/`
-   *
-   * @param string[] $gateways
+   * @param string[]
    */
   public function setGateways($gateways)
   {
@@ -156,28 +102,7 @@ class GrpcRoute extends \Google\Collection
     return $this->gateways;
   }
   /**
-   * Required. Service hostnames with an optional port for which this route
-   * describes traffic. Format: [:] Hostname is the fully qualified domain name
-   * of a network host. This matches the RFC 1123 definition of a hostname with
-   * 2 notable exceptions: - IPs are not allowed. - A hostname may be prefixed
-   * with a wildcard label (`*.`). The wildcard label must appear by itself as
-   * the first label. Hostname can be "precise" which is a domain name without
-   * the terminating dot of a network host (e.g. `foo.example.com`) or
-   * "wildcard", which is a domain name prefixed with a single wildcard label
-   * (e.g. `*.example.com`). Note that as per RFC1035 and RFC1123, a label must
-   * consist of lower case alphanumeric characters or '-', and must start and
-   * end with an alphanumeric character. No other punctuation is allowed. The
-   * routes associated with a Mesh or Gateway must have unique hostnames. If you
-   * attempt to attach multiple routes with conflicting hostnames, the
-   * configuration will be rejected. For example, while it is acceptable for
-   * routes for the hostnames `*.foo.bar.com` and `*.bar.com` to be associated
-   * with the same route, it is not possible to associate two routes both with
-   * `*.bar.com` or both with `bar.com`. If a port is specified, then gRPC
-   * clients must use the channel URI with the port to match this rule (i.e.
-   * "xds:service:123"), otherwise they must supply the URI without a port (i.e.
-   * "xds:service").
-   *
-   * @param string[] $hostnames
+   * @param string[]
    */
   public function setHostnames($hostnames)
   {
@@ -191,9 +116,7 @@ class GrpcRoute extends \Google\Collection
     return $this->hostnames;
   }
   /**
-   * Optional. Set of label tags associated with the GrpcRoute resource.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -207,11 +130,7 @@ class GrpcRoute extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Optional. Meshes defines a list of meshes this GrpcRoute is attached to, as
-   * one of the routing rules to route the requests served by the mesh. Each
-   * mesh reference should match the pattern: `projects/locations/meshes/`
-   *
-   * @param string[] $meshes
+   * @param string[]
    */
   public function setMeshes($meshes)
   {
@@ -225,10 +144,7 @@ class GrpcRoute extends \Google\Collection
     return $this->meshes;
   }
   /**
-   * Identifier. Name of the GrpcRoute resource. It matches pattern
-   * `projects/locations/grpcRoutes/`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -242,12 +158,7 @@ class GrpcRoute extends \Google\Collection
     return $this->name;
   }
   /**
-   * Required. A list of detailed rules defining how to route traffic. Within a
-   * single GrpcRoute, the GrpcRoute.RouteAction associated with the first
-   * matching GrpcRoute.RouteRule will be executed. At least one rule must be
-   * supplied.
-   *
-   * @param GrpcRouteRouteRule[] $rules
+   * @param GrpcRouteRouteRule[]
    */
   public function setRules($rules)
   {
@@ -261,9 +172,7 @@ class GrpcRoute extends \Google\Collection
     return $this->rules;
   }
   /**
-   * Output only. Server-defined URL of this resource
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -277,9 +186,7 @@ class GrpcRoute extends \Google\Collection
     return $this->selfLink;
   }
   /**
-   * Output only. The timestamp when the resource was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

@@ -21,18 +21,12 @@ class GoogleCloudDataplexV1DataQualitySpecPostScanActionsRecipients extends \Goo
 {
   protected $collection_key = 'emails';
   /**
-   * Optional. The email recipients who will receive the DataQualityScan results
-   * report.
-   *
    * @var string[]
    */
   public $emails;
 
   /**
-   * Optional. The email recipients who will receive the DataQualityScan results
-   * report.
-   *
-   * @param string[] $emails
+   * @param string[]
    */
   public function setEmails($emails)
   {

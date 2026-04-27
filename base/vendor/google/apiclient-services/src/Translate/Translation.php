@@ -20,41 +20,22 @@ namespace Google\Service\Translate;
 class Translation extends \Google\Model
 {
   /**
-   * The ISO-639 language code of source text in the initial request, detected
-   * automatically, if no source language was passed within the initial request.
-   * If the source language was passed, auto-detection of the language does not
-   * occur and this field is empty.
-   *
    * @var string
    */
   public $detectedLanguageCode;
   protected $glossaryConfigType = TranslateTextGlossaryConfig::class;
   protected $glossaryConfigDataType = '';
   /**
-   * Only present when `model` is present in the request. `model` here is
-   * normalized to have project number. For example: If the `model` requested in
-   * TranslationTextRequest is `projects/{project-id}/locations/{location-
-   * id}/models/general/nmt` then `model` here would be normalized to
-   * `projects/{project-number}/locations/{location-id}/models/general/nmt`.
-   *
    * @var string
    */
   public $model;
   /**
-   * Text translated into the target language. If an error occurs during
-   * translation, this field might be excluded from the response.
-   *
    * @var string
    */
   public $translatedText;
 
   /**
-   * The ISO-639 language code of source text in the initial request, detected
-   * automatically, if no source language was passed within the initial request.
-   * If the source language was passed, auto-detection of the language does not
-   * occur and this field is empty.
-   *
-   * @param string $detectedLanguageCode
+   * @param string
    */
   public function setDetectedLanguageCode($detectedLanguageCode)
   {
@@ -68,9 +49,7 @@ class Translation extends \Google\Model
     return $this->detectedLanguageCode;
   }
   /**
-   * The `glossary_config` used for this translation.
-   *
-   * @param TranslateTextGlossaryConfig $glossaryConfig
+   * @param TranslateTextGlossaryConfig
    */
   public function setGlossaryConfig(TranslateTextGlossaryConfig $glossaryConfig)
   {
@@ -84,13 +63,7 @@ class Translation extends \Google\Model
     return $this->glossaryConfig;
   }
   /**
-   * Only present when `model` is present in the request. `model` here is
-   * normalized to have project number. For example: If the `model` requested in
-   * TranslationTextRequest is `projects/{project-id}/locations/{location-
-   * id}/models/general/nmt` then `model` here would be normalized to
-   * `projects/{project-number}/locations/{location-id}/models/general/nmt`.
-   *
-   * @param string $model
+   * @param string
    */
   public function setModel($model)
   {
@@ -104,10 +77,7 @@ class Translation extends \Google\Model
     return $this->model;
   }
   /**
-   * Text translated into the target language. If an error occurs during
-   * translation, this field might be excluded from the response.
-   *
-   * @param string $translatedText
+   * @param string
    */
   public function setTranslatedText($translatedText)
   {

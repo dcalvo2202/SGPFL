@@ -24,9 +24,7 @@ class NetworkPolicy extends \Google\Collection
   protected $networkInterfacesDataType = 'array';
 
   /**
-   * Network configurations.
-   *
-   * @param NetworkInterface[] $networkInterfaces
+   * @param NetworkInterface[]
    */
   public function setNetworkInterfaces($networkInterfaces)
   {

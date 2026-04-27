@@ -20,46 +20,26 @@ namespace Google\Service\WebRisk;
 class GoogleLongrunningOperation extends \Google\Model
 {
   /**
-   * If the value is `false`, it means the operation is still in progress. If
-   * `true`, the operation is completed, and either `error` or `response` is
-   * available.
-   *
    * @var bool
    */
   public $done;
   protected $errorType = GoogleRpcStatus::class;
   protected $errorDataType = '';
   /**
-   * Contains a `SubmitUriMetadata` object.
-   *
    * @var array[]
    */
   public $metadata;
   /**
-   * Matches the `/v1/{project-name}/operations/{operation-id}` pattern.
-   *
    * @var string
    */
   public $name;
   /**
-   * The normal, successful response of the operation. If the original method
-   * returns no data on success, such as `Delete`, the response is
-   * `google.protobuf.Empty`. If the original method is standard
-   * `Get`/`Create`/`Update`, the response should be the resource. For other
-   * methods, the response should have the type `XxxResponse`, where `Xxx` is
-   * the original method name. For example, if the original method name is
-   * `TakeSnapshot()`, the inferred response type is `TakeSnapshotResponse`.
-   *
    * @var array[]
    */
   public $response;
 
   /**
-   * If the value is `false`, it means the operation is still in progress. If
-   * `true`, the operation is completed, and either `error` or `response` is
-   * available.
-   *
-   * @param bool $done
+   * @param bool
    */
   public function setDone($done)
   {
@@ -73,9 +53,7 @@ class GoogleLongrunningOperation extends \Google\Model
     return $this->done;
   }
   /**
-   * The error result of the operation in case of failure or cancellation.
-   *
-   * @param GoogleRpcStatus $error
+   * @param GoogleRpcStatus
    */
   public function setError(GoogleRpcStatus $error)
   {
@@ -89,9 +67,7 @@ class GoogleLongrunningOperation extends \Google\Model
     return $this->error;
   }
   /**
-   * Contains a `SubmitUriMetadata` object.
-   *
-   * @param array[] $metadata
+   * @param array[]
    */
   public function setMetadata($metadata)
   {
@@ -105,9 +81,7 @@ class GoogleLongrunningOperation extends \Google\Model
     return $this->metadata;
   }
   /**
-   * Matches the `/v1/{project-name}/operations/{operation-id}` pattern.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -121,15 +95,7 @@ class GoogleLongrunningOperation extends \Google\Model
     return $this->name;
   }
   /**
-   * The normal, successful response of the operation. If the original method
-   * returns no data on success, such as `Delete`, the response is
-   * `google.protobuf.Empty`. If the original method is standard
-   * `Get`/`Create`/`Update`, the response should be the resource. For other
-   * methods, the response should have the type `XxxResponse`, where `Xxx` is
-   * the original method name. For example, if the original method name is
-   * `TakeSnapshot()`, the inferred response type is `TakeSnapshotResponse`.
-   *
-   * @param array[] $response
+   * @param array[]
    */
   public function setResponse($response)
   {

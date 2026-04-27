@@ -20,29 +20,20 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1ExternalApiElasticSearchParams extends \Google\Model
 {
   /**
-   * The ElasticSearch index to use.
-   *
    * @var string
    */
   public $index;
   /**
-   * Optional. Number of hits (chunks) to request. When specified, it is passed
-   * to Elasticsearch as the `num_hits` param.
-   *
    * @var int
    */
   public $numHits;
   /**
-   * The ElasticSearch search template to use.
-   *
    * @var string
    */
   public $searchTemplate;
 
   /**
-   * The ElasticSearch index to use.
-   *
-   * @param string $index
+   * @param string
    */
   public function setIndex($index)
   {
@@ -56,10 +47,7 @@ class GoogleCloudAiplatformV1ExternalApiElasticSearchParams extends \Google\Mode
     return $this->index;
   }
   /**
-   * Optional. Number of hits (chunks) to request. When specified, it is passed
-   * to Elasticsearch as the `num_hits` param.
-   *
-   * @param int $numHits
+   * @param int
    */
   public function setNumHits($numHits)
   {
@@ -73,9 +61,7 @@ class GoogleCloudAiplatformV1ExternalApiElasticSearchParams extends \Google\Mode
     return $this->numHits;
   }
   /**
-   * The ElasticSearch search template to use.
-   *
-   * @param string $searchTemplate
+   * @param string
    */
   public function setSearchTemplate($searchTemplate)
   {

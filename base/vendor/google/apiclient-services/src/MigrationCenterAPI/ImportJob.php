@@ -20,84 +20,36 @@ namespace Google\Service\MigrationCenterAPI;
 class ImportJob extends \Google\Model
 {
   /**
-   * Default value.
-   */
-  public const STATE_IMPORT_JOB_STATE_UNSPECIFIED = 'IMPORT_JOB_STATE_UNSPECIFIED';
-  /**
-   * The import job is pending.
-   */
-  public const STATE_IMPORT_JOB_STATE_PENDING = 'IMPORT_JOB_STATE_PENDING';
-  /**
-   * The processing of the import job is ongoing.
-   */
-  public const STATE_IMPORT_JOB_STATE_RUNNING = 'IMPORT_JOB_STATE_RUNNING';
-  /**
-   * The import job processing has completed.
-   */
-  public const STATE_IMPORT_JOB_STATE_COMPLETED = 'IMPORT_JOB_STATE_COMPLETED';
-  /**
-   * The import job failed to be processed.
-   */
-  public const STATE_IMPORT_JOB_STATE_FAILED = 'IMPORT_JOB_STATE_FAILED';
-  /**
-   * The import job is being validated.
-   */
-  public const STATE_IMPORT_JOB_STATE_VALIDATING = 'IMPORT_JOB_STATE_VALIDATING';
-  /**
-   * The import job contains blocking errors.
-   */
-  public const STATE_IMPORT_JOB_STATE_FAILED_VALIDATION = 'IMPORT_JOB_STATE_FAILED_VALIDATION';
-  /**
-   * The validation of the job completed with no blocking errors.
-   */
-  public const STATE_IMPORT_JOB_STATE_READY = 'IMPORT_JOB_STATE_READY';
-  /**
-   * Required. Reference to a source.
-   *
    * @var string
    */
   public $assetSource;
   /**
-   * Output only. The timestamp when the import job was completed.
-   *
    * @var string
    */
   public $completeTime;
   /**
-   * Output only. The timestamp when the import job was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. User-friendly display name. Maximum length is 256 characters.
-   *
    * @var string
    */
   public $displayName;
   protected $executionReportType = ExecutionReport::class;
   protected $executionReportDataType = '';
   /**
-   * Labels as key value pairs.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Output only. The full name of the import job.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The state of the import job.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. The timestamp when the import job was last updated.
-   *
    * @var string
    */
   public $updateTime;
@@ -105,9 +57,7 @@ class ImportJob extends \Google\Model
   protected $validationReportDataType = '';
 
   /**
-   * Required. Reference to a source.
-   *
-   * @param string $assetSource
+   * @param string
    */
   public function setAssetSource($assetSource)
   {
@@ -121,9 +71,7 @@ class ImportJob extends \Google\Model
     return $this->assetSource;
   }
   /**
-   * Output only. The timestamp when the import job was completed.
-   *
-   * @param string $completeTime
+   * @param string
    */
   public function setCompleteTime($completeTime)
   {
@@ -137,9 +85,7 @@ class ImportJob extends \Google\Model
     return $this->completeTime;
   }
   /**
-   * Output only. The timestamp when the import job was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -153,9 +99,7 @@ class ImportJob extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Optional. User-friendly display name. Maximum length is 256 characters.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -169,9 +113,7 @@ class ImportJob extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Output only. The report with the results of running the import job.
-   *
-   * @param ExecutionReport $executionReport
+   * @param ExecutionReport
    */
   public function setExecutionReport(ExecutionReport $executionReport)
   {
@@ -185,9 +127,7 @@ class ImportJob extends \Google\Model
     return $this->executionReport;
   }
   /**
-   * Labels as key value pairs.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -201,9 +141,7 @@ class ImportJob extends \Google\Model
     return $this->labels;
   }
   /**
-   * Output only. The full name of the import job.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -217,30 +155,21 @@ class ImportJob extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The state of the import job.
-   *
-   * Accepted values: IMPORT_JOB_STATE_UNSPECIFIED, IMPORT_JOB_STATE_PENDING,
-   * IMPORT_JOB_STATE_RUNNING, IMPORT_JOB_STATE_COMPLETED,
-   * IMPORT_JOB_STATE_FAILED, IMPORT_JOB_STATE_VALIDATING,
-   * IMPORT_JOB_STATE_FAILED_VALIDATION, IMPORT_JOB_STATE_READY
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. The timestamp when the import job was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -254,9 +183,7 @@ class ImportJob extends \Google\Model
     return $this->updateTime;
   }
   /**
-   * Output only. The report with the validation results of the import job.
-   *
-   * @param ValidationReport $validationReport
+   * @param ValidationReport
    */
   public function setValidationReport(ValidationReport $validationReport)
   {

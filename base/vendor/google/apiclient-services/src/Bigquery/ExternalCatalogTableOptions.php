@@ -20,20 +20,10 @@ namespace Google\Service\Bigquery;
 class ExternalCatalogTableOptions extends \Google\Model
 {
   /**
-   * Optional. A connection ID that specifies the credentials to be used to read
-   * external storage, such as Azure Blob, Cloud Storage, or Amazon S3. This
-   * connection is needed to read the open source table from BigQuery. The
-   * connection_id format must be either `..` or
-   * `projects//locations//connections/`.
-   *
    * @var string
    */
   public $connectionId;
   /**
-   * Optional. A map of the key-value pairs defining the parameters and
-   * properties of the open source table. Corresponds with Hive metastore table
-   * parameters. Maximum size of 4MiB.
-   *
    * @var string[]
    */
   public $parameters;
@@ -41,13 +31,7 @@ class ExternalCatalogTableOptions extends \Google\Model
   protected $storageDescriptorDataType = '';
 
   /**
-   * Optional. A connection ID that specifies the credentials to be used to read
-   * external storage, such as Azure Blob, Cloud Storage, or Amazon S3. This
-   * connection is needed to read the open source table from BigQuery. The
-   * connection_id format must be either `..` or
-   * `projects//locations//connections/`.
-   *
-   * @param string $connectionId
+   * @param string
    */
   public function setConnectionId($connectionId)
   {
@@ -61,11 +45,7 @@ class ExternalCatalogTableOptions extends \Google\Model
     return $this->connectionId;
   }
   /**
-   * Optional. A map of the key-value pairs defining the parameters and
-   * properties of the open source table. Corresponds with Hive metastore table
-   * parameters. Maximum size of 4MiB.
-   *
-   * @param string[] $parameters
+   * @param string[]
    */
   public function setParameters($parameters)
   {
@@ -79,10 +59,7 @@ class ExternalCatalogTableOptions extends \Google\Model
     return $this->parameters;
   }
   /**
-   * Optional. A storage descriptor containing information about the physical
-   * storage of this table.
-   *
-   * @param StorageDescriptor $storageDescriptor
+   * @param StorageDescriptor
    */
   public function setStorageDescriptor(StorageDescriptor $storageDescriptor)
   {

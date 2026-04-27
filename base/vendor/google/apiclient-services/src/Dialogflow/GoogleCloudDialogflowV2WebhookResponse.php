@@ -42,7 +42,7 @@ class GoogleCloudDialogflowV2WebhookResponse extends \Google\Collection
   public $source;
 
   /**
-   * @param GoogleCloudDialogflowV2EventInput $followupEventInput
+   * @param GoogleCloudDialogflowV2EventInput
    */
   public function setFollowupEventInput(GoogleCloudDialogflowV2EventInput $followupEventInput)
   {
@@ -56,7 +56,7 @@ class GoogleCloudDialogflowV2WebhookResponse extends \Google\Collection
     return $this->followupEventInput;
   }
   /**
-   * @param GoogleCloudDialogflowV2IntentMessage[] $fulfillmentMessages
+   * @param GoogleCloudDialogflowV2IntentMessage[]
    */
   public function setFulfillmentMessages($fulfillmentMessages)
   {
@@ -70,7 +70,7 @@ class GoogleCloudDialogflowV2WebhookResponse extends \Google\Collection
     return $this->fulfillmentMessages;
   }
   /**
-   * @param string $fulfillmentText
+   * @param string
    */
   public function setFulfillmentText($fulfillmentText)
   {
@@ -84,7 +84,7 @@ class GoogleCloudDialogflowV2WebhookResponse extends \Google\Collection
     return $this->fulfillmentText;
   }
   /**
-   * @param GoogleCloudDialogflowV2Context[] $outputContexts
+   * @param GoogleCloudDialogflowV2Context[]
    */
   public function setOutputContexts($outputContexts)
   {
@@ -98,7 +98,7 @@ class GoogleCloudDialogflowV2WebhookResponse extends \Google\Collection
     return $this->outputContexts;
   }
   /**
-   * @param array[] $payload
+   * @param array[]
    */
   public function setPayload($payload)
   {
@@ -112,7 +112,7 @@ class GoogleCloudDialogflowV2WebhookResponse extends \Google\Collection
     return $this->payload;
   }
   /**
-   * @param GoogleCloudDialogflowV2SessionEntityType[] $sessionEntityTypes
+   * @param GoogleCloudDialogflowV2SessionEntityType[]
    */
   public function setSessionEntityTypes($sessionEntityTypes)
   {
@@ -126,7 +126,7 @@ class GoogleCloudDialogflowV2WebhookResponse extends \Google\Collection
     return $this->sessionEntityTypes;
   }
   /**
-   * @param string $source
+   * @param string
    */
   public function setSource($source)
   {

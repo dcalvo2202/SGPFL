@@ -23,23 +23,16 @@ class CommitWorkspaceChangesRequest extends \Google\Collection
   protected $authorType = CommitAuthor::class;
   protected $authorDataType = '';
   /**
-   * Optional. The commit's message.
-   *
    * @var string
    */
   public $commitMessage;
   /**
-   * Optional. Full file paths to commit including filename, rooted at workspace
-   * root. If left empty, all files will be committed.
-   *
    * @var string[]
    */
   public $paths;
 
   /**
-   * Required. The commit's author.
-   *
-   * @param CommitAuthor $author
+   * @param CommitAuthor
    */
   public function setAuthor(CommitAuthor $author)
   {
@@ -53,9 +46,7 @@ class CommitWorkspaceChangesRequest extends \Google\Collection
     return $this->author;
   }
   /**
-   * Optional. The commit's message.
-   *
-   * @param string $commitMessage
+   * @param string
    */
   public function setCommitMessage($commitMessage)
   {
@@ -69,10 +60,7 @@ class CommitWorkspaceChangesRequest extends \Google\Collection
     return $this->commitMessage;
   }
   /**
-   * Optional. Full file paths to commit including filename, rooted at workspace
-   * root. If left empty, all files will be committed.
-   *
-   * @param string[] $paths
+   * @param string[]
    */
   public function setPaths($paths)
   {

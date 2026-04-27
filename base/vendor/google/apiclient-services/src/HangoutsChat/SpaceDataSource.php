@@ -20,18 +20,12 @@ namespace Google\Service\HangoutsChat;
 class SpaceDataSource extends \Google\Model
 {
   /**
-   * If set to `true`, the multiselect menu selects the current Google Chat
-   * space as an item by default.
-   *
    * @var bool
    */
   public $defaultToCurrentSpace;
 
   /**
-   * If set to `true`, the multiselect menu selects the current Google Chat
-   * space as an item by default.
-   *
-   * @param bool $defaultToCurrentSpace
+   * @param bool
    */
   public function setDefaultToCurrentSpace($defaultToCurrentSpace)
   {

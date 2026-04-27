@@ -23,23 +23,16 @@ class GoogleCloudDataplexV1ListDataAttributesResponse extends \Google\Collection
   protected $dataAttributesType = GoogleCloudDataplexV1DataAttribute::class;
   protected $dataAttributesDataType = 'array';
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachableLocations;
 
   /**
-   * DataAttributes under the given parent DataTaxonomy.
-   *
-   * @param GoogleCloudDataplexV1DataAttribute[] $dataAttributes
+   * @param GoogleCloudDataplexV1DataAttribute[]
    */
   public function setDataAttributes($dataAttributes)
   {
@@ -53,10 +46,7 @@ class GoogleCloudDataplexV1ListDataAttributesResponse extends \Google\Collection
     return $this->dataAttributes;
   }
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -70,9 +60,7 @@ class GoogleCloudDataplexV1ListDataAttributesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachableLocations
+   * @param string[]
    */
   public function setUnreachableLocations($unreachableLocations)
   {

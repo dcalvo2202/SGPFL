@@ -20,64 +20,20 @@ namespace Google\Service\Appengine;
 class SslSettings extends \Google\Model
 {
   /**
-   * Defaults to AUTOMATIC.
-   */
-  public const SSL_MANAGEMENT_TYPE_SSL_MANAGEMENT_TYPE_UNSPECIFIED = 'SSL_MANAGEMENT_TYPE_UNSPECIFIED';
-  /**
-   * SSL support for this domain is configured automatically. The mapped SSL
-   * certificate will be automatically renewed.
-   */
-  public const SSL_MANAGEMENT_TYPE_AUTOMATIC = 'AUTOMATIC';
-  /**
-   * SSL support for this domain is configured manually by the user. Either the
-   * domain has no SSL support or a user-obtained SSL certificate has been
-   * explicitly mapped to this domain.
-   */
-  public const SSL_MANAGEMENT_TYPE_MANUAL = 'MANUAL';
-  /**
-   * ID of the AuthorizedCertificate resource configuring SSL for the
-   * application. Clearing this field will remove SSL support.By default, a
-   * managed certificate is automatically created for every domain mapping. To
-   * omit SSL support or to configure SSL manually, specify
-   * SslManagementType.MANUAL on a CREATE or UPDATE request. You must be
-   * authorized to administer the AuthorizedCertificate resource to manually map
-   * it to a DomainMapping resource. Example: 12345.
-   *
    * @var string
    */
   public $certificateId;
   /**
-   * Output only. ID of the managed AuthorizedCertificate resource currently
-   * being provisioned, if applicable. Until the new managed certificate has
-   * been successfully provisioned, the previous SSL state will be preserved.
-   * Once the provisioning process completes, the certificate_id field will
-   * reflect the new managed certificate and this field will be left empty. To
-   * remove SSL support while there is still a pending managed certificate,
-   * clear the certificate_id field with an
-   * UpdateDomainMappingRequest.@OutputOnly
-   *
    * @var string
    */
   public $pendingManagedCertificateId;
   /**
-   * SSL management type for this domain. If AUTOMATIC, a managed certificate is
-   * automatically provisioned. If MANUAL, certificate_id must be manually
-   * specified in order to configure SSL for this domain.
-   *
    * @var string
    */
   public $sslManagementType;
 
   /**
-   * ID of the AuthorizedCertificate resource configuring SSL for the
-   * application. Clearing this field will remove SSL support.By default, a
-   * managed certificate is automatically created for every domain mapping. To
-   * omit SSL support or to configure SSL manually, specify
-   * SslManagementType.MANUAL on a CREATE or UPDATE request. You must be
-   * authorized to administer the AuthorizedCertificate resource to manually map
-   * it to a DomainMapping resource. Example: 12345.
-   *
-   * @param string $certificateId
+   * @param string
    */
   public function setCertificateId($certificateId)
   {
@@ -91,16 +47,7 @@ class SslSettings extends \Google\Model
     return $this->certificateId;
   }
   /**
-   * Output only. ID of the managed AuthorizedCertificate resource currently
-   * being provisioned, if applicable. Until the new managed certificate has
-   * been successfully provisioned, the previous SSL state will be preserved.
-   * Once the provisioning process completes, the certificate_id field will
-   * reflect the new managed certificate and this field will be left empty. To
-   * remove SSL support while there is still a pending managed certificate,
-   * clear the certificate_id field with an
-   * UpdateDomainMappingRequest.@OutputOnly
-   *
-   * @param string $pendingManagedCertificateId
+   * @param string
    */
   public function setPendingManagedCertificateId($pendingManagedCertificateId)
   {
@@ -114,20 +61,14 @@ class SslSettings extends \Google\Model
     return $this->pendingManagedCertificateId;
   }
   /**
-   * SSL management type for this domain. If AUTOMATIC, a managed certificate is
-   * automatically provisioned. If MANUAL, certificate_id must be manually
-   * specified in order to configure SSL for this domain.
-   *
-   * Accepted values: SSL_MANAGEMENT_TYPE_UNSPECIFIED, AUTOMATIC, MANUAL
-   *
-   * @param self::SSL_MANAGEMENT_TYPE_* $sslManagementType
+   * @param string
    */
   public function setSslManagementType($sslManagementType)
   {
     $this->sslManagementType = $sslManagementType;
   }
   /**
-   * @return self::SSL_MANAGEMENT_TYPE_*
+   * @return string
    */
   public function getSslManagementType()
   {

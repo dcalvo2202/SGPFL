@@ -22,16 +22,12 @@ class ReviewReplyResult extends \Google\Model
   protected $lastEditedType = Timestamp::class;
   protected $lastEditedDataType = '';
   /**
-   * The reply text that was applied.
-   *
    * @var string
    */
   public $replyText;
 
   /**
-   * The time at which the reply took effect.
-   *
-   * @param Timestamp $lastEdited
+   * @param Timestamp
    */
   public function setLastEdited(Timestamp $lastEdited)
   {
@@ -45,9 +41,7 @@ class ReviewReplyResult extends \Google\Model
     return $this->lastEdited;
   }
   /**
-   * The reply text that was applied.
-   *
-   * @param string $replyText
+   * @param string
    */
   public function setReplyText($replyText)
   {

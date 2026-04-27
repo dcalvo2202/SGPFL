@@ -24,9 +24,7 @@ class CalendarListEntryNotificationSettings extends \Google\Collection
   protected $notificationsDataType = 'array';
 
   /**
-   * The list of notifications set for this calendar.
-   *
-   * @param CalendarNotification[] $notifications
+   * @param CalendarNotification[]
    */
   public function setNotifications($notifications)
   {

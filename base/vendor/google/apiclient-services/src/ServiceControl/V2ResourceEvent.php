@@ -20,87 +20,32 @@ namespace Google\Service\ServiceControl;
 class V2ResourceEvent extends \Google\Model
 {
   /**
-   * Default value. Do not use.
-   */
-  public const PATH_API_PATH_UNSPECIFIED = 'API_PATH_UNSPECIFIED';
-  /**
-   * The request path.
-   */
-  public const PATH_REQUEST = 'REQUEST';
-  /**
-   * The response path.
-   */
-  public const PATH_RESPONSE = 'RESPONSE';
-  /**
-   * The resource event type is unclear. We do not expect any events to fall
-   * into this category.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * The resource is created/inserted.
-   */
-  public const TYPE_CREATE = 'CREATE';
-  /**
-   * The resource is updated.
-   */
-  public const TYPE_UPDATE = 'UPDATE';
-  /**
-   * The resource is deleted.
-   */
-  public const TYPE_DELETE = 'DELETE';
-  /**
-   * The resource is un-deleted.
-   */
-  public const TYPE_UNDELETE = 'UNDELETE';
-  /**
-   * The ESF unique context id of the api request, from which this resource
-   * event originated. This field is only needed for CAIS integration via api
-   * annotation. See go/cais-lro-delete for more details.
-   *
    * @var string
    */
   public $contextId;
   /**
-   * The destinations field determines which backend services should handle the
-   * event. This should be specified as a comma-delimited string.
-   *
    * @var string
    */
   public $destinations;
   protected $parentType = ServicecontrolResource::class;
   protected $parentDataType = '';
   /**
-   * The api path the resource event was created in. This should match the
-   * source of the `payload` field. For direct integrations with Chemist, this
-   * should generally be the RESPONSE. go/resource-event-pipeline-type
-   *
    * @var string
    */
   public $path;
   /**
-   * The payload contains metadata associated with the resource event. A
-   * ResourceEventPayloadStatus is provided instead if the original payload
-   * cannot be returned due to a limitation (e.g. size limit).
-   *
    * @var array[]
    */
   public $payload;
   protected $resourceType = ServicecontrolResource::class;
   protected $resourceDataType = '';
   /**
-   * The resource event type determines how the backend service should process
-   * the event.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The ESF unique context id of the api request, from which this resource
-   * event originated. This field is only needed for CAIS integration via api
-   * annotation. See go/cais-lro-delete for more details.
-   *
-   * @param string $contextId
+   * @param string
    */
   public function setContextId($contextId)
   {
@@ -114,10 +59,7 @@ class V2ResourceEvent extends \Google\Model
     return $this->contextId;
   }
   /**
-   * The destinations field determines which backend services should handle the
-   * event. This should be specified as a comma-delimited string.
-   *
-   * @param string $destinations
+   * @param string
    */
   public function setDestinations($destinations)
   {
@@ -131,9 +73,7 @@ class V2ResourceEvent extends \Google\Model
     return $this->destinations;
   }
   /**
-   * The parent resource for the resource.
-   *
-   * @param ServicecontrolResource $parent
+   * @param ServicecontrolResource
    */
   public function setParent(ServicecontrolResource $parent)
   {
@@ -147,31 +87,21 @@ class V2ResourceEvent extends \Google\Model
     return $this->parent;
   }
   /**
-   * The api path the resource event was created in. This should match the
-   * source of the `payload` field. For direct integrations with Chemist, this
-   * should generally be the RESPONSE. go/resource-event-pipeline-type
-   *
-   * Accepted values: API_PATH_UNSPECIFIED, REQUEST, RESPONSE
-   *
-   * @param self::PATH_* $path
+   * @param string
    */
   public function setPath($path)
   {
     $this->path = $path;
   }
   /**
-   * @return self::PATH_*
+   * @return string
    */
   public function getPath()
   {
     return $this->path;
   }
   /**
-   * The payload contains metadata associated with the resource event. A
-   * ResourceEventPayloadStatus is provided instead if the original payload
-   * cannot be returned due to a limitation (e.g. size limit).
-   *
-   * @param array[] $payload
+   * @param array[]
    */
   public function setPayload($payload)
   {
@@ -185,9 +115,7 @@ class V2ResourceEvent extends \Google\Model
     return $this->payload;
   }
   /**
-   * The resource associated with the event.
-   *
-   * @param ServicecontrolResource $resource
+   * @param ServicecontrolResource
    */
   public function setResource(ServicecontrolResource $resource)
   {
@@ -201,19 +129,14 @@ class V2ResourceEvent extends \Google\Model
     return $this->resource;
   }
   /**
-   * The resource event type determines how the backend service should process
-   * the event.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, CREATE, UPDATE, DELETE, UNDELETE
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

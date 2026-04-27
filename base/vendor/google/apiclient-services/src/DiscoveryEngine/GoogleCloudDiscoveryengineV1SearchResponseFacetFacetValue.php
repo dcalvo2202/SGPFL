@@ -20,24 +20,18 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1SearchResponseFacetFacetValue extends \Google\Model
 {
   /**
-   * Number of items that have this facet value.
-   *
    * @var string
    */
   public $count;
   protected $intervalType = GoogleCloudDiscoveryengineV1Interval::class;
   protected $intervalDataType = '';
   /**
-   * Text value of a facet, such as "Black" for facet "colors".
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Number of items that have this facet value.
-   *
-   * @param string $count
+   * @param string
    */
   public function setCount($count)
   {
@@ -51,10 +45,7 @@ class GoogleCloudDiscoveryengineV1SearchResponseFacetFacetValue extends \Google\
     return $this->count;
   }
   /**
-   * Interval value for a facet, such as 10, 20) for facet "price". It matches
-   * [SearchRequest.FacetSpec.FacetKey.intervals.
-   *
-   * @param GoogleCloudDiscoveryengineV1Interval $interval
+   * @param GoogleCloudDiscoveryengineV1Interval
    */
   public function setInterval(GoogleCloudDiscoveryengineV1Interval $interval)
   {
@@ -68,9 +59,7 @@ class GoogleCloudDiscoveryengineV1SearchResponseFacetFacetValue extends \Google\
     return $this->interval;
   }
   /**
-   * Text value of a facet, such as "Black" for facet "colors".
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

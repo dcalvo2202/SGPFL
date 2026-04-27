@@ -20,20 +20,12 @@ namespace Google\Service\Dataflow;
 class WorkerShutdownNotice extends \Google\Model
 {
   /**
-   * The reason for the worker shutdown. Current possible values are: "UNKNOWN":
-   * shutdown reason is unknown. "PREEMPTION": shutdown reason is preemption.
-   * Other possible reasons may be added in the future.
-   *
    * @var string
    */
   public $reason;
 
   /**
-   * The reason for the worker shutdown. Current possible values are: "UNKNOWN":
-   * shutdown reason is unknown. "PREEMPTION": shutdown reason is preemption.
-   * Other possible reasons may be added in the future.
-   *
-   * @param string $reason
+   * @param string
    */
   public function setReason($reason)
   {

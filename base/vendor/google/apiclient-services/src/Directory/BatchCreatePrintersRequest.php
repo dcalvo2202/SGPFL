@@ -24,9 +24,7 @@ class BatchCreatePrintersRequest extends \Google\Collection
   protected $requestsDataType = 'array';
 
   /**
-   * A list of Printers to be created. Max 50 at a time.
-   *
-   * @param CreatePrinterRequest[] $requests
+   * @param CreatePrinterRequest[]
    */
   public function setRequests($requests)
   {

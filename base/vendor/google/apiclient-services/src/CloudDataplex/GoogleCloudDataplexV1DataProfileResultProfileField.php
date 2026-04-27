@@ -20,39 +20,22 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1DataProfileResultProfileField extends \Google\Model
 {
   /**
-   * Output only. The mode of the field. Possible values include: REQUIRED, if
-   * it is a required field. NULLABLE, if it is an optional field. REPEATED, if
-   * it is a repeated field.
-   *
    * @var string
    */
   public $mode;
   /**
-   * Output only. The name of the field.
-   *
    * @var string
    */
   public $name;
   protected $profileType = GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfo::class;
   protected $profileDataType = '';
   /**
-   * Output only. The data type retrieved from the schema of the data source.
-   * For instance, for a BigQuery native table, it is the BigQuery Table Schema
-   * (https://cloud.google.com/bigquery/docs/reference/rest/v2/tables#tablefield
-   * schema). For a Dataplex Universal Catalog Entity, it is the Entity Schema (
-   * https://cloud.google.com/dataplex/docs/reference/rpc/google.cloud.dataplex.
-   * v1#type_3).
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Output only. The mode of the field. Possible values include: REQUIRED, if
-   * it is a required field. NULLABLE, if it is an optional field. REPEATED, if
-   * it is a repeated field.
-   *
-   * @param string $mode
+   * @param string
    */
   public function setMode($mode)
   {
@@ -66,9 +49,7 @@ class GoogleCloudDataplexV1DataProfileResultProfileField extends \Google\Model
     return $this->mode;
   }
   /**
-   * Output only. The name of the field.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -82,9 +63,7 @@ class GoogleCloudDataplexV1DataProfileResultProfileField extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Profile information for the corresponding field.
-   *
-   * @param GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfo $profile
+   * @param GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfo
    */
   public function setProfile(GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfo $profile)
   {
@@ -98,14 +77,7 @@ class GoogleCloudDataplexV1DataProfileResultProfileField extends \Google\Model
     return $this->profile;
   }
   /**
-   * Output only. The data type retrieved from the schema of the data source.
-   * For instance, for a BigQuery native table, it is the BigQuery Table Schema
-   * (https://cloud.google.com/bigquery/docs/reference/rest/v2/tables#tablefield
-   * schema). For a Dataplex Universal Catalog Entity, it is the Entity Schema (
-   * https://cloud.google.com/dataplex/docs/reference/rpc/google.cloud.dataplex.
-   * v1#type_3).
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

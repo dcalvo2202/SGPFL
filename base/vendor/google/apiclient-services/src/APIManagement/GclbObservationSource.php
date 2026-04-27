@@ -24,11 +24,7 @@ class GclbObservationSource extends \Google\Collection
   protected $pscNetworkConfigsDataType = 'array';
 
   /**
-   * Required. The VPC networks where traffic will be observed. All load
-   * balancers within this network will be observed. Currently, this is limited
-   * to only one network.
-   *
-   * @param GclbObservationSourcePscNetworkConfig[] $pscNetworkConfigs
+   * @param GclbObservationSourcePscNetworkConfig[]
    */
   public function setPscNetworkConfigs($pscNetworkConfigs)
   {

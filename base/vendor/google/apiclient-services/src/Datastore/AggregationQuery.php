@@ -26,11 +26,7 @@ class AggregationQuery extends \Google\Collection
   protected $nestedQueryDataType = '';
 
   /**
-   * Optional. Series of aggregations to apply over the results of the
-   * `nested_query`. Requires: * A minimum of one and maximum of five
-   * aggregations per query.
-   *
-   * @param Aggregation[] $aggregations
+   * @param Aggregation[]
    */
   public function setAggregations($aggregations)
   {
@@ -44,9 +40,7 @@ class AggregationQuery extends \Google\Collection
     return $this->aggregations;
   }
   /**
-   * Nested query for aggregation
-   *
-   * @param Query $nestedQuery
+   * @param Query
    */
   public function setNestedQuery(Query $nestedQuery)
   {

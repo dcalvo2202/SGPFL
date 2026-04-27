@@ -22,13 +22,6 @@ class ServiceAccountDelegationInfo extends \Google\Model
   protected $firstPartyPrincipalType = FirstPartyPrincipal::class;
   protected $firstPartyPrincipalDataType = '';
   /**
-   * A string representing the principal_subject associated with the identity.
-   * For most identities, the format will be
-   * `principal://iam.googleapis.com/{identity pool name}/subject/{subject)`
-   * except for some GKE identities (GKE_WORKLOAD, FREEFORM, GKE_HUB_WORKLOAD)
-   * that are still in the legacy format `serviceAccount:{identity pool
-   * name}[{subject}]`
-   *
    * @var string
    */
   public $principalSubject;
@@ -36,9 +29,7 @@ class ServiceAccountDelegationInfo extends \Google\Model
   protected $thirdPartyPrincipalDataType = '';
 
   /**
-   * First party (Google) identity as the real authority.
-   *
-   * @param FirstPartyPrincipal $firstPartyPrincipal
+   * @param FirstPartyPrincipal
    */
   public function setFirstPartyPrincipal(FirstPartyPrincipal $firstPartyPrincipal)
   {
@@ -52,14 +43,7 @@ class ServiceAccountDelegationInfo extends \Google\Model
     return $this->firstPartyPrincipal;
   }
   /**
-   * A string representing the principal_subject associated with the identity.
-   * For most identities, the format will be
-   * `principal://iam.googleapis.com/{identity pool name}/subject/{subject)`
-   * except for some GKE identities (GKE_WORKLOAD, FREEFORM, GKE_HUB_WORKLOAD)
-   * that are still in the legacy format `serviceAccount:{identity pool
-   * name}[{subject}]`
-   *
-   * @param string $principalSubject
+   * @param string
    */
   public function setPrincipalSubject($principalSubject)
   {
@@ -73,9 +57,7 @@ class ServiceAccountDelegationInfo extends \Google\Model
     return $this->principalSubject;
   }
   /**
-   * Third party identity as the real authority.
-   *
-   * @param ThirdPartyPrincipal $thirdPartyPrincipal
+   * @param ThirdPartyPrincipal
    */
   public function setThirdPartyPrincipal(ThirdPartyPrincipal $thirdPartyPrincipal)
   {

@@ -22,16 +22,12 @@ class GoogleCloudAiplatformV1RagChunk extends \Google\Model
   protected $pageSpanType = GoogleCloudAiplatformV1RagChunkPageSpan::class;
   protected $pageSpanDataType = '';
   /**
-   * The content of the chunk.
-   *
    * @var string
    */
   public $text;
 
   /**
-   * If populated, represents where the chunk starts and ends in the document.
-   *
-   * @param GoogleCloudAiplatformV1RagChunkPageSpan $pageSpan
+   * @param GoogleCloudAiplatformV1RagChunkPageSpan
    */
   public function setPageSpan(GoogleCloudAiplatformV1RagChunkPageSpan $pageSpan)
   {
@@ -45,9 +41,7 @@ class GoogleCloudAiplatformV1RagChunk extends \Google\Model
     return $this->pageSpan;
   }
   /**
-   * The content of the chunk.
-   *
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {

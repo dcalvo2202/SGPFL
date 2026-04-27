@@ -20,16 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1BatchImportEvaluatedAnnotationsResponse extends \Google\Model
 {
   /**
-   * Output only. Number of EvaluatedAnnotations imported.
-   *
    * @var int
    */
   public $importedEvaluatedAnnotationsCount;
 
   /**
-   * Output only. Number of EvaluatedAnnotations imported.
-   *
-   * @param int $importedEvaluatedAnnotationsCount
+   * @param int
    */
   public function setImportedEvaluatedAnnotationsCount($importedEvaluatedAnnotationsCount)
   {

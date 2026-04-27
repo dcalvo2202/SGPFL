@@ -21,12 +21,6 @@ class AddSplitPointsRequest extends \Google\Collection
 {
   protected $collection_key = 'splitPoints';
   /**
-   * Optional. A user-supplied tag associated with the split points. For
-   * example, "initial_data_load", "special_event_1". Defaults to
-   * "CloudAddSplitPointsAPI" if not specified. The length of the tag must not
-   * exceed 50 characters, or else it is trimmed. Only valid UTF8 characters are
-   * allowed.
-   *
    * @var string
    */
   public $initiator;
@@ -34,13 +28,7 @@ class AddSplitPointsRequest extends \Google\Collection
   protected $splitPointsDataType = 'array';
 
   /**
-   * Optional. A user-supplied tag associated with the split points. For
-   * example, "initial_data_load", "special_event_1". Defaults to
-   * "CloudAddSplitPointsAPI" if not specified. The length of the tag must not
-   * exceed 50 characters, or else it is trimmed. Only valid UTF8 characters are
-   * allowed.
-   *
-   * @param string $initiator
+   * @param string
    */
   public function setInitiator($initiator)
   {
@@ -54,9 +42,7 @@ class AddSplitPointsRequest extends \Google\Collection
     return $this->initiator;
   }
   /**
-   * Required. The split points to add.
-   *
-   * @param SplitPoints[] $splitPoints
+   * @param SplitPoints[]
    */
   public function setSplitPoints($splitPoints)
   {

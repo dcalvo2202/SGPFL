@@ -23,9 +23,7 @@ class PeopleSuggestion extends \Google\Model
   protected $personDataType = '';
 
   /**
-   * Suggested person. All fields of the person object might not be populated.
-   *
-   * @param Person $person
+   * @param Person
    */
   public function setPerson(Person $person)
   {

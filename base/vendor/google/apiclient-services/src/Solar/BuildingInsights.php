@@ -20,33 +20,6 @@ namespace Google\Service\Solar;
 class BuildingInsights extends \Google\Model
 {
   /**
-   * No quality is known.
-   */
-  public const IMAGERY_QUALITY_IMAGERY_QUALITY_UNSPECIFIED = 'IMAGERY_QUALITY_UNSPECIFIED';
-  /**
-   * Solar data is derived from aerial imagery captured at low-altitude and
-   * processed at 0.1 m/pixel.
-   */
-  public const IMAGERY_QUALITY_HIGH = 'HIGH';
-  /**
-   * Solar data is derived from enhanced aerial imagery captured at high-
-   * altitude and processed at 0.25 m/pixel.
-   */
-  public const IMAGERY_QUALITY_MEDIUM = 'MEDIUM';
-  /**
-   * Solar data is derived from enhanced satellite imagery processed at 0.25
-   * m/pixel.
-   */
-  public const IMAGERY_QUALITY_LOW = 'LOW';
-  /**
-   * Solar data is derived from enhanced satellite imagery processed at 0.25
-   * m/pixel.
-   */
-  public const IMAGERY_QUALITY_BASE = 'BASE';
-  /**
-   * Administrative area 1 (e.g., in the US, the state) that contains this
-   * building. For example, in the US, the abbreviation might be "MA" or "CA."
-   *
    * @var string
    */
   public $administrativeArea;
@@ -59,43 +32,30 @@ class BuildingInsights extends \Google\Model
   protected $imageryProcessedDateType = Date::class;
   protected $imageryProcessedDateDataType = '';
   /**
-   * The quality of the imagery used to compute the data for this building.
-   *
    * @var string
    */
   public $imageryQuality;
   /**
-   * The resource name for the building, of the format `buildings/{place_id}`.
-   *
    * @var string
    */
   public $name;
   /**
-   * Postal code (e.g., US zip code) this building is contained by.
-   *
    * @var string
    */
   public $postalCode;
   /**
-   * Region code for the country (or region) this building is in.
-   *
    * @var string
    */
   public $regionCode;
   protected $solarPotentialType = SolarPotential::class;
   protected $solarPotentialDataType = '';
   /**
-   * Statistical area (e.g., US census tract) this building is in.
-   *
    * @var string
    */
   public $statisticalArea;
 
   /**
-   * Administrative area 1 (e.g., in the US, the state) that contains this
-   * building. For example, in the US, the abbreviation might be "MA" or "CA."
-   *
-   * @param string $administrativeArea
+   * @param string
    */
   public function setAdministrativeArea($administrativeArea)
   {
@@ -109,9 +69,7 @@ class BuildingInsights extends \Google\Model
     return $this->administrativeArea;
   }
   /**
-   * The bounding box of the building.
-   *
-   * @param LatLngBox $boundingBox
+   * @param LatLngBox
    */
   public function setBoundingBox(LatLngBox $boundingBox)
   {
@@ -125,9 +83,7 @@ class BuildingInsights extends \Google\Model
     return $this->boundingBox;
   }
   /**
-   * A point near the center of the building.
-   *
-   * @param LatLng $center
+   * @param LatLng
    */
   public function setCenter(LatLng $center)
   {
@@ -141,9 +97,7 @@ class BuildingInsights extends \Google\Model
     return $this->center;
   }
   /**
-   * Date that the underlying imagery was acquired. This is approximate.
-   *
-   * @param Date $imageryDate
+   * @param Date
    */
   public function setImageryDate(Date $imageryDate)
   {
@@ -157,9 +111,7 @@ class BuildingInsights extends \Google\Model
     return $this->imageryDate;
   }
   /**
-   * When processing was completed on this imagery.
-   *
-   * @param Date $imageryProcessedDate
+   * @param Date
    */
   public function setImageryProcessedDate(Date $imageryProcessedDate)
   {
@@ -173,27 +125,21 @@ class BuildingInsights extends \Google\Model
     return $this->imageryProcessedDate;
   }
   /**
-   * The quality of the imagery used to compute the data for this building.
-   *
-   * Accepted values: IMAGERY_QUALITY_UNSPECIFIED, HIGH, MEDIUM, LOW, BASE
-   *
-   * @param self::IMAGERY_QUALITY_* $imageryQuality
+   * @param string
    */
   public function setImageryQuality($imageryQuality)
   {
     $this->imageryQuality = $imageryQuality;
   }
   /**
-   * @return self::IMAGERY_QUALITY_*
+   * @return string
    */
   public function getImageryQuality()
   {
     return $this->imageryQuality;
   }
   /**
-   * The resource name for the building, of the format `buildings/{place_id}`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -207,9 +153,7 @@ class BuildingInsights extends \Google\Model
     return $this->name;
   }
   /**
-   * Postal code (e.g., US zip code) this building is contained by.
-   *
-   * @param string $postalCode
+   * @param string
    */
   public function setPostalCode($postalCode)
   {
@@ -223,9 +167,7 @@ class BuildingInsights extends \Google\Model
     return $this->postalCode;
   }
   /**
-   * Region code for the country (or region) this building is in.
-   *
-   * @param string $regionCode
+   * @param string
    */
   public function setRegionCode($regionCode)
   {
@@ -239,9 +181,7 @@ class BuildingInsights extends \Google\Model
     return $this->regionCode;
   }
   /**
-   * Solar potential of the building.
-   *
-   * @param SolarPotential $solarPotential
+   * @param SolarPotential
    */
   public function setSolarPotential(SolarPotential $solarPotential)
   {
@@ -255,9 +195,7 @@ class BuildingInsights extends \Google\Model
     return $this->solarPotential;
   }
   /**
-   * Statistical area (e.g., US census tract) this building is in.
-   *
-   * @param string $statisticalArea
+   * @param string
    */
   public function setStatisticalArea($statisticalArea)
   {

@@ -21,29 +21,20 @@ class DocumentRemove extends \Google\Collection
 {
   protected $collection_key = 'removedTargetIds';
   /**
-   * The resource name of the Document that has gone out of view.
-   *
    * @var string
    */
   public $document;
   /**
-   * The read timestamp at which the remove was observed. Greater or equal to
-   * the `commit_time` of the change/delete/remove.
-   *
    * @var string
    */
   public $readTime;
   /**
-   * A set of target IDs for targets that previously matched this document.
-   *
    * @var int[]
    */
   public $removedTargetIds;
 
   /**
-   * The resource name of the Document that has gone out of view.
-   *
-   * @param string $document
+   * @param string
    */
   public function setDocument($document)
   {
@@ -57,10 +48,7 @@ class DocumentRemove extends \Google\Collection
     return $this->document;
   }
   /**
-   * The read timestamp at which the remove was observed. Greater or equal to
-   * the `commit_time` of the change/delete/remove.
-   *
-   * @param string $readTime
+   * @param string
    */
   public function setReadTime($readTime)
   {
@@ -74,9 +62,7 @@ class DocumentRemove extends \Google\Collection
     return $this->readTime;
   }
   /**
-   * A set of target IDs for targets that previously matched this document.
-   *
-   * @param int[] $removedTargetIds
+   * @param int[]
    */
   public function setRemovedTargetIds($removedTargetIds)
   {

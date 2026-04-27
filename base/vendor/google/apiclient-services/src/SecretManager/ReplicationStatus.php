@@ -25,11 +25,7 @@ class ReplicationStatus extends \Google\Model
   protected $userManagedDataType = '';
 
   /**
-   * Describes the replication status of a SecretVersion with automatic
-   * replication. Only populated if the parent Secret has an automatic
-   * replication policy.
-   *
-   * @param AutomaticStatus $automatic
+   * @param AutomaticStatus
    */
   public function setAutomatic(AutomaticStatus $automatic)
   {
@@ -43,11 +39,7 @@ class ReplicationStatus extends \Google\Model
     return $this->automatic;
   }
   /**
-   * Describes the replication status of a SecretVersion with user-managed
-   * replication. Only populated if the parent Secret has a user-managed
-   * replication policy.
-   *
-   * @param UserManagedStatus $userManaged
+   * @param UserManagedStatus
    */
   public function setUserManaged(UserManagedStatus $userManaged)
   {

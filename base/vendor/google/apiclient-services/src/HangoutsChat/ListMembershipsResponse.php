@@ -23,17 +23,12 @@ class ListMembershipsResponse extends \Google\Collection
   protected $membershipsType = Membership::class;
   protected $membershipsDataType = 'array';
   /**
-   * A token that you can send as `pageToken` to retrieve the next page of
-   * results. If empty, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Unordered list. List of memberships in the requested (or first) page.
-   *
-   * @param Membership[] $memberships
+   * @param Membership[]
    */
   public function setMemberships($memberships)
   {
@@ -47,10 +42,7 @@ class ListMembershipsResponse extends \Google\Collection
     return $this->memberships;
   }
   /**
-   * A token that you can send as `pageToken` to retrieve the next page of
-   * results. If empty, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

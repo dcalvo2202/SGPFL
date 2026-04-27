@@ -23,9 +23,7 @@ class GooglePrivacyDlpV2FileStoreRegex extends \Google\Model
   protected $cloudStorageRegexDataType = '';
 
   /**
-   * Optional. Regex for Cloud Storage.
-   *
-   * @param GooglePrivacyDlpV2CloudStorageRegex $cloudStorageRegex
+   * @param GooglePrivacyDlpV2CloudStorageRegex
    */
   public function setCloudStorageRegex(GooglePrivacyDlpV2CloudStorageRegex $cloudStorageRegex)
   {

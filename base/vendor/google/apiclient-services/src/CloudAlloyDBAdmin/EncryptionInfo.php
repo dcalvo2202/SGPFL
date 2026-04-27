@@ -19,59 +19,32 @@ namespace Google\Service\CloudAlloyDBAdmin;
 
 class EncryptionInfo extends \Google\Collection
 {
-  /**
-   * Encryption type not specified. Defaults to GOOGLE_DEFAULT_ENCRYPTION.
-   */
-  public const ENCRYPTION_TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * The data is encrypted at rest with a key that is fully managed by Google.
-   * No key version will be populated. This is the default state.
-   */
-  public const ENCRYPTION_TYPE_GOOGLE_DEFAULT_ENCRYPTION = 'GOOGLE_DEFAULT_ENCRYPTION';
-  /**
-   * The data is encrypted at rest with a key that is managed by the customer.
-   * KMS key versions will be populated.
-   */
-  public const ENCRYPTION_TYPE_CUSTOMER_MANAGED_ENCRYPTION = 'CUSTOMER_MANAGED_ENCRYPTION';
   protected $collection_key = 'kmsKeyVersions';
   /**
-   * Output only. Type of encryption.
-   *
    * @var string
    */
   public $encryptionType;
   /**
-   * Output only. Cloud KMS key versions that are being used to protect the
-   * database or the backup.
-   *
    * @var string[]
    */
   public $kmsKeyVersions;
 
   /**
-   * Output only. Type of encryption.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, GOOGLE_DEFAULT_ENCRYPTION,
-   * CUSTOMER_MANAGED_ENCRYPTION
-   *
-   * @param self::ENCRYPTION_TYPE_* $encryptionType
+   * @param string
    */
   public function setEncryptionType($encryptionType)
   {
     $this->encryptionType = $encryptionType;
   }
   /**
-   * @return self::ENCRYPTION_TYPE_*
+   * @return string
    */
   public function getEncryptionType()
   {
     return $this->encryptionType;
   }
   /**
-   * Output only. Cloud KMS key versions that are being used to protect the
-   * database or the backup.
-   *
-   * @param string[] $kmsKeyVersions
+   * @param string[]
    */
   public function setKmsKeyVersions($kmsKeyVersions)
   {

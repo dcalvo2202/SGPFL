@@ -26,9 +26,7 @@ class SubnetworksScopedList extends \Google\Collection
   protected $warningDataType = '';
 
   /**
-   * A list of subnetworks contained in this scope.
-   *
-   * @param Subnetwork[] $subnetworks
+   * @param Subnetwork[]
    */
   public function setSubnetworks($subnetworks)
   {
@@ -42,9 +40,7 @@ class SubnetworksScopedList extends \Google\Collection
     return $this->subnetworks;
   }
   /**
-   * An informational warning that appears when the list of addresses is empty.
-   *
-   * @param SubnetworksScopedListWarning $warning
+   * @param SubnetworksScopedListWarning
    */
   public function setWarning(SubnetworksScopedListWarning $warning)
   {

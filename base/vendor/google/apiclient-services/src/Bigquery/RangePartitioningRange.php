@@ -20,28 +20,20 @@ namespace Google\Service\Bigquery;
 class RangePartitioningRange extends \Google\Model
 {
   /**
-   * [Experimental] The end of range partitioning, exclusive.
-   *
    * @var string
    */
   public $end;
   /**
-   * [Experimental] The width of each interval.
-   *
    * @var string
    */
   public $interval;
   /**
-   * [Experimental] The start of range partitioning, inclusive.
-   *
    * @var string
    */
   public $start;
 
   /**
-   * [Experimental] The end of range partitioning, exclusive.
-   *
-   * @param string $end
+   * @param string
    */
   public function setEnd($end)
   {
@@ -55,9 +47,7 @@ class RangePartitioningRange extends \Google\Model
     return $this->end;
   }
   /**
-   * [Experimental] The width of each interval.
-   *
-   * @param string $interval
+   * @param string
    */
   public function setInterval($interval)
   {
@@ -71,9 +61,7 @@ class RangePartitioningRange extends \Google\Model
     return $this->interval;
   }
   /**
-   * [Experimental] The start of range partitioning, inclusive.
-   *
-   * @param string $start
+   * @param string
    */
   public function setStart($start)
   {

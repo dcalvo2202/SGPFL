@@ -28,7 +28,7 @@ class GoogleCloudDialogflowCxV3ListSecuritySettingsResponse extends \Google\Coll
   protected $securitySettingsDataType = 'array';
 
   /**
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -42,7 +42,7 @@ class GoogleCloudDialogflowCxV3ListSecuritySettingsResponse extends \Google\Coll
     return $this->nextPageToken;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3SecuritySettings[] $securitySettings
+   * @param GoogleCloudDialogflowCxV3SecuritySettings[]
    */
   public function setSecuritySettings($securitySettings)
   {

@@ -24,11 +24,7 @@ class GoogleCloudAiplatformV1BatchMigrateResourcesRequest extends \Google\Collec
   protected $migrateResourceRequestsDataType = 'array';
 
   /**
-   * Required. The request messages specifying the resources to migrate. They
-   * must be in the same location as the destination. Up to 50 resources can be
-   * migrated in one batch.
-   *
-   * @param GoogleCloudAiplatformV1MigrateResourceRequest[] $migrateResourceRequests
+   * @param GoogleCloudAiplatformV1MigrateResourceRequest[]
    */
   public function setMigrateResourceRequests($migrateResourceRequests)
   {

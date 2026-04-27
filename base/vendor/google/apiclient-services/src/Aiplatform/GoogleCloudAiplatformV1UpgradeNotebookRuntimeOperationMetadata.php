@@ -22,17 +22,12 @@ class GoogleCloudAiplatformV1UpgradeNotebookRuntimeOperationMetadata extends \Go
   protected $genericMetadataType = GoogleCloudAiplatformV1GenericOperationMetadata::class;
   protected $genericMetadataDataType = '';
   /**
-   * A human-readable message that shows the intermediate progress details of
-   * NotebookRuntime.
-   *
    * @var string
    */
   public $progressMessage;
 
   /**
-   * The operation generic information.
-   *
-   * @param GoogleCloudAiplatformV1GenericOperationMetadata $genericMetadata
+   * @param GoogleCloudAiplatformV1GenericOperationMetadata
    */
   public function setGenericMetadata(GoogleCloudAiplatformV1GenericOperationMetadata $genericMetadata)
   {
@@ -46,10 +41,7 @@ class GoogleCloudAiplatformV1UpgradeNotebookRuntimeOperationMetadata extends \Go
     return $this->genericMetadata;
   }
   /**
-   * A human-readable message that shows the intermediate progress details of
-   * NotebookRuntime.
-   *
-   * @param string $progressMessage
+   * @param string
    */
   public function setProgressMessage($progressMessage)
   {

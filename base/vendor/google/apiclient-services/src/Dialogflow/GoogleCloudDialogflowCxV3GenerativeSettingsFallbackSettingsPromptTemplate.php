@@ -33,7 +33,7 @@ class GoogleCloudDialogflowCxV3GenerativeSettingsFallbackSettingsPromptTemplate 
   public $promptText;
 
   /**
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -47,7 +47,7 @@ class GoogleCloudDialogflowCxV3GenerativeSettingsFallbackSettingsPromptTemplate 
     return $this->displayName;
   }
   /**
-   * @param bool $frozen
+   * @param bool
    */
   public function setFrozen($frozen)
   {
@@ -61,7 +61,7 @@ class GoogleCloudDialogflowCxV3GenerativeSettingsFallbackSettingsPromptTemplate 
     return $this->frozen;
   }
   /**
-   * @param string $promptText
+   * @param string
    */
   public function setPromptText($promptText)
   {

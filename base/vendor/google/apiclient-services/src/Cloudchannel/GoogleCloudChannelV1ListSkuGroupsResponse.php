@@ -21,9 +21,6 @@ class GoogleCloudChannelV1ListSkuGroupsResponse extends \Google\Collection
 {
   protected $collection_key = 'skuGroups';
   /**
-   * A token to retrieve the next page of results. Pass to
-   * ListSkuGroupsRequest.page_token to obtain that page.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GoogleCloudChannelV1ListSkuGroupsResponse extends \Google\Collection
   protected $skuGroupsDataType = 'array';
 
   /**
-   * A token to retrieve the next page of results. Pass to
-   * ListSkuGroupsRequest.page_token to obtain that page.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class GoogleCloudChannelV1ListSkuGroupsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The list of SKU groups requested.
-   *
-   * @param GoogleCloudChannelV1SkuGroup[] $skuGroups
+   * @param GoogleCloudChannelV1SkuGroup[]
    */
   public function setSkuGroups($skuGroups)
   {

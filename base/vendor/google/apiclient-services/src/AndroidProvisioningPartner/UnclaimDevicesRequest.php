@@ -24,9 +24,7 @@ class UnclaimDevicesRequest extends \Google\Collection
   protected $unclaimsDataType = 'array';
 
   /**
-   * Required. The list of devices to unclaim.
-   *
-   * @param PartnerUnclaim[] $unclaims
+   * @param PartnerUnclaim[]
    */
   public function setUnclaims($unclaims)
   {

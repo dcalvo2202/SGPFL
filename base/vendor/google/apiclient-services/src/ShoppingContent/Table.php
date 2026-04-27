@@ -23,8 +23,6 @@ class Table extends \Google\Collection
   protected $columnHeadersType = Headers::class;
   protected $columnHeadersDataType = '';
   /**
-   * Name of the table. Required for subtables, ignored for the main table.
-   *
    * @var string
    */
   public $name;
@@ -34,10 +32,7 @@ class Table extends \Google\Collection
   protected $rowsDataType = 'array';
 
   /**
-   * Headers of the table's columns. Optional: if not set then the table has
-   * only one dimension.
-   *
-   * @param Headers $columnHeaders
+   * @param Headers
    */
   public function setColumnHeaders(Headers $columnHeaders)
   {
@@ -51,9 +46,7 @@ class Table extends \Google\Collection
     return $this->columnHeaders;
   }
   /**
-   * Name of the table. Required for subtables, ignored for the main table.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -67,9 +60,7 @@ class Table extends \Google\Collection
     return $this->name;
   }
   /**
-   * Headers of the table's rows. Required.
-   *
-   * @param Headers $rowHeaders
+   * @param Headers
    */
   public function setRowHeaders(Headers $rowHeaders)
   {
@@ -83,10 +74,7 @@ class Table extends \Google\Collection
     return $this->rowHeaders;
   }
   /**
-   * The list of rows that constitute the table. Must have the same length as
-   * `rowHeaders`. Required.
-   *
-   * @param Row[] $rows
+   * @param Row[]
    */
   public function setRows($rows)
   {

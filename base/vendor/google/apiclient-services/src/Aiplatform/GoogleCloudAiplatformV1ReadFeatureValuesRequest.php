@@ -20,10 +20,6 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1ReadFeatureValuesRequest extends \Google\Model
 {
   /**
-   * Required. ID for a specific entity. For example, for a machine learning
-   * model predicting user clicks on a website, an entity ID could be
-   * `user_123`.
-   *
    * @var string
    */
   public $entityId;
@@ -31,11 +27,7 @@ class GoogleCloudAiplatformV1ReadFeatureValuesRequest extends \Google\Model
   protected $featureSelectorDataType = '';
 
   /**
-   * Required. ID for a specific entity. For example, for a machine learning
-   * model predicting user clicks on a website, an entity ID could be
-   * `user_123`.
-   *
-   * @param string $entityId
+   * @param string
    */
   public function setEntityId($entityId)
   {
@@ -49,9 +41,7 @@ class GoogleCloudAiplatformV1ReadFeatureValuesRequest extends \Google\Model
     return $this->entityId;
   }
   /**
-   * Required. Selector choosing Features of the target EntityType.
-   *
-   * @param GoogleCloudAiplatformV1FeatureSelector $featureSelector
+   * @param GoogleCloudAiplatformV1FeatureSelector
    */
   public function setFeatureSelector(GoogleCloudAiplatformV1FeatureSelector $featureSelector)
   {

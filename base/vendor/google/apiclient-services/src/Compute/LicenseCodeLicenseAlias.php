@@ -20,23 +20,16 @@ namespace Google\Service\Compute;
 class LicenseCodeLicenseAlias extends \Google\Model
 {
   /**
-   * Output only. [Output Only] Description of this License Code.
-   *
    * @var string
    */
   public $description;
   /**
-   * Output only. [Output Only] URL of license corresponding to this License
-   * Code.
-   *
    * @var string
    */
   public $selfLink;
 
   /**
-   * Output only. [Output Only] Description of this License Code.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -50,10 +43,7 @@ class LicenseCodeLicenseAlias extends \Google\Model
     return $this->description;
   }
   /**
-   * Output only. [Output Only] URL of license corresponding to this License
-   * Code.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {

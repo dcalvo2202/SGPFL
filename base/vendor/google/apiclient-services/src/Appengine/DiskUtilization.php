@@ -20,34 +20,24 @@ namespace Google\Service\Appengine;
 class DiskUtilization extends \Google\Model
 {
   /**
-   * Target bytes read per second.
-   *
    * @var int
    */
   public $targetReadBytesPerSecond;
   /**
-   * Target ops read per seconds.
-   *
    * @var int
    */
   public $targetReadOpsPerSecond;
   /**
-   * Target bytes written per second.
-   *
    * @var int
    */
   public $targetWriteBytesPerSecond;
   /**
-   * Target ops written per second.
-   *
    * @var int
    */
   public $targetWriteOpsPerSecond;
 
   /**
-   * Target bytes read per second.
-   *
-   * @param int $targetReadBytesPerSecond
+   * @param int
    */
   public function setTargetReadBytesPerSecond($targetReadBytesPerSecond)
   {
@@ -61,9 +51,7 @@ class DiskUtilization extends \Google\Model
     return $this->targetReadBytesPerSecond;
   }
   /**
-   * Target ops read per seconds.
-   *
-   * @param int $targetReadOpsPerSecond
+   * @param int
    */
   public function setTargetReadOpsPerSecond($targetReadOpsPerSecond)
   {
@@ -77,9 +65,7 @@ class DiskUtilization extends \Google\Model
     return $this->targetReadOpsPerSecond;
   }
   /**
-   * Target bytes written per second.
-   *
-   * @param int $targetWriteBytesPerSecond
+   * @param int
    */
   public function setTargetWriteBytesPerSecond($targetWriteBytesPerSecond)
   {
@@ -93,9 +79,7 @@ class DiskUtilization extends \Google\Model
     return $this->targetWriteBytesPerSecond;
   }
   /**
-   * Target ops written per second.
-   *
-   * @param int $targetWriteOpsPerSecond
+   * @param int
    */
   public function setTargetWriteOpsPerSecond($targetWriteOpsPerSecond)
   {

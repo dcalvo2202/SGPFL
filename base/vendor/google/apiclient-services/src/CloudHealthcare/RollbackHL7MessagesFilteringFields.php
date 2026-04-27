@@ -21,16 +21,12 @@ class RollbackHL7MessagesFilteringFields extends \Google\Collection
 {
   protected $collection_key = 'operationIds';
   /**
-   * Optional. A list of operation IDs to roll back.
-   *
    * @var string[]
    */
   public $operationIds;
 
   /**
-   * Optional. A list of operation IDs to roll back.
-   *
-   * @param string[] $operationIds
+   * @param string[]
    */
   public function setOperationIds($operationIds)
   {

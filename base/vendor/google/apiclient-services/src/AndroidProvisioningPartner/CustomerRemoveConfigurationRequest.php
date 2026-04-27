@@ -23,10 +23,7 @@ class CustomerRemoveConfigurationRequest extends \Google\Model
   protected $deviceDataType = '';
 
   /**
-   * Required. The device to remove the configuration from. There are custom
-   * validations in RemoveConfigurationRequestValidator
-   *
-   * @param DeviceReference $device
+   * @param DeviceReference
    */
   public function setDevice(DeviceReference $device)
   {

@@ -20,27 +20,16 @@ namespace Google\Service\Compute;
 class BulkInsertInstanceResourcePerInstanceProperties extends \Google\Model
 {
   /**
-   * Specifies the hostname of the instance. More details in:
-   * https://cloud.google.com/compute/docs/instances/custom-hostname-
-   * vm#naming_convention
-   *
    * @var string
    */
   public $hostname;
   /**
-   * Output only. This field is only temporary. It will be removed. Do not use
-   * it.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Specifies the hostname of the instance. More details in:
-   * https://cloud.google.com/compute/docs/instances/custom-hostname-
-   * vm#naming_convention
-   *
-   * @param string $hostname
+   * @param string
    */
   public function setHostname($hostname)
   {
@@ -54,10 +43,7 @@ class BulkInsertInstanceResourcePerInstanceProperties extends \Google\Model
     return $this->hostname;
   }
   /**
-   * Output only. This field is only temporary. It will be removed. Do not use
-   * it.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

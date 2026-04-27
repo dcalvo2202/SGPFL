@@ -21,37 +21,22 @@ class JobStatistics3 extends \Google\Collection
 {
   protected $collection_key = 'timeline';
   /**
-   * Output only. The number of bad records encountered. Note that if the job
-   * has failed because of more bad records encountered than the maximum allowed
-   * in the load job configuration, then this number can be less than the total
-   * number of bad records present in the input data.
-   *
    * @var string
    */
   public $badRecords;
   /**
-   * Output only. Number of bytes of source data in a load job.
-   *
    * @var string
    */
   public $inputFileBytes;
   /**
-   * Output only. Number of source files in a load job.
-   *
    * @var string
    */
   public $inputFiles;
   /**
-   * Output only. Size of the loaded data in bytes. Note that while a load job
-   * is in the running state, this value may change.
-   *
    * @var string
    */
   public $outputBytes;
   /**
-   * Output only. Number of rows imported in a load job. Note that while an
-   * import job is in the running state, this value may change.
-   *
    * @var string
    */
   public $outputRows;
@@ -59,12 +44,7 @@ class JobStatistics3 extends \Google\Collection
   protected $timelineDataType = 'array';
 
   /**
-   * Output only. The number of bad records encountered. Note that if the job
-   * has failed because of more bad records encountered than the maximum allowed
-   * in the load job configuration, then this number can be less than the total
-   * number of bad records present in the input data.
-   *
-   * @param string $badRecords
+   * @param string
    */
   public function setBadRecords($badRecords)
   {
@@ -78,9 +58,7 @@ class JobStatistics3 extends \Google\Collection
     return $this->badRecords;
   }
   /**
-   * Output only. Number of bytes of source data in a load job.
-   *
-   * @param string $inputFileBytes
+   * @param string
    */
   public function setInputFileBytes($inputFileBytes)
   {
@@ -94,9 +72,7 @@ class JobStatistics3 extends \Google\Collection
     return $this->inputFileBytes;
   }
   /**
-   * Output only. Number of source files in a load job.
-   *
-   * @param string $inputFiles
+   * @param string
    */
   public function setInputFiles($inputFiles)
   {
@@ -110,10 +86,7 @@ class JobStatistics3 extends \Google\Collection
     return $this->inputFiles;
   }
   /**
-   * Output only. Size of the loaded data in bytes. Note that while a load job
-   * is in the running state, this value may change.
-   *
-   * @param string $outputBytes
+   * @param string
    */
   public function setOutputBytes($outputBytes)
   {
@@ -127,10 +100,7 @@ class JobStatistics3 extends \Google\Collection
     return $this->outputBytes;
   }
   /**
-   * Output only. Number of rows imported in a load job. Note that while an
-   * import job is in the running state, this value may change.
-   *
-   * @param string $outputRows
+   * @param string
    */
   public function setOutputRows($outputRows)
   {
@@ -144,9 +114,7 @@ class JobStatistics3 extends \Google\Collection
     return $this->outputRows;
   }
   /**
-   * Output only. Describes a timeline of job execution.
-   *
-   * @param QueryTimelineSample[] $timeline
+   * @param QueryTimelineSample[]
    */
   public function setTimeline($timeline)
   {

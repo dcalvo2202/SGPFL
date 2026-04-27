@@ -20,38 +20,20 @@ namespace Google\Service\Directory;
 class UserLanguage extends \Google\Model
 {
   /**
-   * Other language. User can provide their own language name if there is no
-   * corresponding ISO 639 language code. If this is set, `languageCode` can't
-   * be set.
-   *
    * @var string
    */
   public $customLanguage;
   /**
-   * ISO 639 string representation of a language. See [Language Codes](/admin-
-   * sdk/directory/v1/languages) for the list of supported codes. Valid language
-   * codes outside the supported set will be accepted by the API but may lead to
-   * unexpected behavior. Illegal values cause `SchemaException`. If this is
-   * set, `customLanguage` can't be set.
-   *
    * @var string
    */
   public $languageCode;
   /**
-   * Optional. If present, controls whether the specified `languageCode` is the
-   * user's preferred language. If `customLanguage` is set, this can't be set.
-   * Allowed values are `preferred` and `not_preferred`.
-   *
    * @var string
    */
   public $preference;
 
   /**
-   * Other language. User can provide their own language name if there is no
-   * corresponding ISO 639 language code. If this is set, `languageCode` can't
-   * be set.
-   *
-   * @param string $customLanguage
+   * @param string
    */
   public function setCustomLanguage($customLanguage)
   {
@@ -65,13 +47,7 @@ class UserLanguage extends \Google\Model
     return $this->customLanguage;
   }
   /**
-   * ISO 639 string representation of a language. See [Language Codes](/admin-
-   * sdk/directory/v1/languages) for the list of supported codes. Valid language
-   * codes outside the supported set will be accepted by the API but may lead to
-   * unexpected behavior. Illegal values cause `SchemaException`. If this is
-   * set, `customLanguage` can't be set.
-   *
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {
@@ -85,11 +61,7 @@ class UserLanguage extends \Google\Model
     return $this->languageCode;
   }
   /**
-   * Optional. If present, controls whether the specified `languageCode` is the
-   * user's preferred language. If `customLanguage` is set, this can't be set.
-   * Allowed values are `preferred` and `not_preferred`.
-   *
-   * @param string $preference
+   * @param string
    */
   public function setPreference($preference)
   {

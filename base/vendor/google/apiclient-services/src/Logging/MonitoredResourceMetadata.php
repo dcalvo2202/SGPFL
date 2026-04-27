@@ -20,32 +20,16 @@ namespace Google\Service\Logging;
 class MonitoredResourceMetadata extends \Google\Model
 {
   /**
-   * Output only. Values for predefined system metadata labels. System labels
-   * are a kind of metadata extracted by Google, including "machine_image",
-   * "vpc", "subnet_id", "security_group", "name", etc. System label values can
-   * be only strings, Boolean values, or a list of strings. For example: {
-   * "name": "my-test-instance", "security_group": ["a", "b", "c"],
-   * "spot_instance": false }
-   *
    * @var array[]
    */
   public $systemLabels;
   /**
-   * Output only. A map of user-defined metadata labels.
-   *
    * @var string[]
    */
   public $userLabels;
 
   /**
-   * Output only. Values for predefined system metadata labels. System labels
-   * are a kind of metadata extracted by Google, including "machine_image",
-   * "vpc", "subnet_id", "security_group", "name", etc. System label values can
-   * be only strings, Boolean values, or a list of strings. For example: {
-   * "name": "my-test-instance", "security_group": ["a", "b", "c"],
-   * "spot_instance": false }
-   *
-   * @param array[] $systemLabels
+   * @param array[]
    */
   public function setSystemLabels($systemLabels)
   {
@@ -59,9 +43,7 @@ class MonitoredResourceMetadata extends \Google\Model
     return $this->systemLabels;
   }
   /**
-   * Output only. A map of user-defined metadata labels.
-   *
-   * @param string[] $userLabels
+   * @param string[]
    */
   public function setUserLabels($userLabels)
   {

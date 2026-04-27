@@ -21,13 +21,9 @@ class HostAppDataSourceMarkup extends \Google\Model
 {
   protected $chatDataSourceType = ChatClientDataSourceMarkup::class;
   protected $chatDataSourceDataType = '';
-  protected $workflowDataSourceType = WorkflowDataSourceMarkup::class;
-  protected $workflowDataSourceDataType = '';
 
   /**
-   * A data source from Google Chat.
-   *
-   * @param ChatClientDataSourceMarkup $chatDataSource
+   * @param ChatClientDataSourceMarkup
    */
   public function setChatDataSource(ChatClientDataSourceMarkup $chatDataSource)
   {
@@ -39,22 +35,6 @@ class HostAppDataSourceMarkup extends \Google\Model
   public function getChatDataSource()
   {
     return $this->chatDataSource;
-  }
-  /**
-   * A data source from Google Workflow.
-   *
-   * @param WorkflowDataSourceMarkup $workflowDataSource
-   */
-  public function setWorkflowDataSource(WorkflowDataSourceMarkup $workflowDataSource)
-  {
-    $this->workflowDataSource = $workflowDataSource;
-  }
-  /**
-   * @return WorkflowDataSourceMarkup
-   */
-  public function getWorkflowDataSource()
-  {
-    return $this->workflowDataSource;
   }
 }
 

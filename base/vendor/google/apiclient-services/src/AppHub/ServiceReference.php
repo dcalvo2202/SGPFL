@@ -20,18 +20,12 @@ namespace Google\Service\AppHub;
 class ServiceReference extends \Google\Model
 {
   /**
-   * Output only. The underlying resource URI. For example, URI of Forwarding
-   * Rule, URL Map, and Backend Service.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * Output only. The underlying resource URI. For example, URI of Forwarding
-   * Rule, URL Map, and Backend Service.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

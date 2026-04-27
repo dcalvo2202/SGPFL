@@ -25,10 +25,7 @@ class ImportDicomDataRequest extends \Google\Model
   protected $gcsSourceDataType = '';
 
   /**
-   * Optional. The blob storage settings for the data imported by this
-   * operation.
-   *
-   * @param BlobStorageSettings $blobStorageSettings
+   * @param BlobStorageSettings
    */
   public function setBlobStorageSettings(BlobStorageSettings $blobStorageSettings)
   {
@@ -42,11 +39,7 @@ class ImportDicomDataRequest extends \Google\Model
     return $this->blobStorageSettings;
   }
   /**
-   * Cloud Storage source data location and import configuration. The Cloud
-   * Healthcare Service Agent requires the `roles/storage.objectViewer` Cloud
-   * IAM roles on the Cloud Storage location.
-   *
-   * @param GoogleCloudHealthcareV1DicomGcsSource $gcsSource
+   * @param GoogleCloudHealthcareV1DicomGcsSource
    */
   public function setGcsSource(GoogleCloudHealthcareV1DicomGcsSource $gcsSource)
   {

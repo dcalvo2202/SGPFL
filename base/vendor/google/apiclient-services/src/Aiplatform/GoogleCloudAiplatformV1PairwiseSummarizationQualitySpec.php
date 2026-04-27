@@ -20,24 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1PairwiseSummarizationQualitySpec extends \Google\Model
 {
   /**
-   * Optional. Whether to use instance.reference to compute pairwise
-   * summarization quality.
-   *
    * @var bool
    */
   public $useReference;
   /**
-   * Optional. Which version to use for evaluation.
-   *
    * @var int
    */
   public $version;
 
   /**
-   * Optional. Whether to use instance.reference to compute pairwise
-   * summarization quality.
-   *
-   * @param bool $useReference
+   * @param bool
    */
   public function setUseReference($useReference)
   {
@@ -51,9 +43,7 @@ class GoogleCloudAiplatformV1PairwiseSummarizationQualitySpec extends \Google\Mo
     return $this->useReference;
   }
   /**
-   * Optional. Which version to use for evaluation.
-   *
-   * @param int $version
+   * @param int
    */
   public function setVersion($version)
   {

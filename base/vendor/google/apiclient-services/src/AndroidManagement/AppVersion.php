@@ -21,37 +21,24 @@ class AppVersion extends \Google\Collection
 {
   protected $collection_key = 'trackIds';
   /**
-   * If the value is True, it indicates that this version is a production track.
-   *
    * @var bool
    */
   public $production;
   /**
-   * Track identifiers that the app version is published in. This does not
-   * include the production track (see production instead).
-   *
    * @var string[]
    */
   public $trackIds;
   /**
-   * Unique increasing identifier for the app version.
-   *
    * @var int
    */
   public $versionCode;
   /**
-   * The string used in the Play store by the app developer to identify the
-   * version. The string is not necessarily unique or localized (for example,
-   * the string could be "1.4").
-   *
    * @var string
    */
   public $versionString;
 
   /**
-   * If the value is True, it indicates that this version is a production track.
-   *
-   * @param bool $production
+   * @param bool
    */
   public function setProduction($production)
   {
@@ -65,10 +52,7 @@ class AppVersion extends \Google\Collection
     return $this->production;
   }
   /**
-   * Track identifiers that the app version is published in. This does not
-   * include the production track (see production instead).
-   *
-   * @param string[] $trackIds
+   * @param string[]
    */
   public function setTrackIds($trackIds)
   {
@@ -82,9 +66,7 @@ class AppVersion extends \Google\Collection
     return $this->trackIds;
   }
   /**
-   * Unique increasing identifier for the app version.
-   *
-   * @param int $versionCode
+   * @param int
    */
   public function setVersionCode($versionCode)
   {
@@ -98,11 +80,7 @@ class AppVersion extends \Google\Collection
     return $this->versionCode;
   }
   /**
-   * The string used in the Play store by the app developer to identify the
-   * version. The string is not necessarily unique or localized (for example,
-   * the string could be "1.4").
-   *
-   * @param string $versionString
+   * @param string
    */
   public function setVersionString($versionString)
   {

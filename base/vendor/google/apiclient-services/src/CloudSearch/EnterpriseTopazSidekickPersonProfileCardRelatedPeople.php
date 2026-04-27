@@ -19,23 +19,16 @@ namespace Google\Service\CloudSearch;
 
 class EnterpriseTopazSidekickPersonProfileCardRelatedPeople extends \Google\Collection
 {
-  public const RELATION_UNKNOWN = 'UNKNOWN';
-  public const RELATION_MANAGER = 'MANAGER';
-  public const RELATION_DIRECT_REPORT = 'DIRECT_REPORT';
   protected $collection_key = 'relatedPerson';
   protected $relatedPersonType = EnterpriseTopazSidekickCommonPerson::class;
   protected $relatedPersonDataType = 'array';
   /**
-   * Relation type.
-   *
    * @var string
    */
   public $relation;
 
   /**
-   * Related people.
-   *
-   * @param EnterpriseTopazSidekickCommonPerson[] $relatedPerson
+   * @param EnterpriseTopazSidekickCommonPerson[]
    */
   public function setRelatedPerson($relatedPerson)
   {
@@ -49,18 +42,14 @@ class EnterpriseTopazSidekickPersonProfileCardRelatedPeople extends \Google\Coll
     return $this->relatedPerson;
   }
   /**
-   * Relation type.
-   *
-   * Accepted values: UNKNOWN, MANAGER, DIRECT_REPORT
-   *
-   * @param self::RELATION_* $relation
+   * @param string
    */
   public function setRelation($relation)
   {
     $this->relation = $relation;
   }
   /**
-   * @return self::RELATION_*
+   * @return string
    */
   public function getRelation()
   {

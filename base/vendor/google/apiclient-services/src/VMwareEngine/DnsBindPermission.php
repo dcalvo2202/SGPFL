@@ -21,14 +21,6 @@ class DnsBindPermission extends \Google\Collection
 {
   protected $collection_key = 'principals';
   /**
-   * Required. Output only. The name of the resource which stores the
-   * users/service accounts having the permission to bind to the corresponding
-   * intranet VPC of the consumer project. DnsBindPermission is a global
-   * resource and location can only be global. Resource names are schemeless
-   * URIs that follow the conventions in
-   * https://cloud.google.com/apis/design/resource_names. For example:
-   * `projects/my-project/locations/global/dnsBindPermission`
-   *
    * @var string
    */
   public $name;
@@ -36,15 +28,7 @@ class DnsBindPermission extends \Google\Collection
   protected $principalsDataType = 'array';
 
   /**
-   * Required. Output only. The name of the resource which stores the
-   * users/service accounts having the permission to bind to the corresponding
-   * intranet VPC of the consumer project. DnsBindPermission is a global
-   * resource and location can only be global. Resource names are schemeless
-   * URIs that follow the conventions in
-   * https://cloud.google.com/apis/design/resource_names. For example:
-   * `projects/my-project/locations/global/dnsBindPermission`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -58,10 +42,7 @@ class DnsBindPermission extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. Users/Service accounts which have access for binding on the
-   * intranet VPC project corresponding to the consumer project.
-   *
-   * @param Principal[] $principals
+   * @param Principal[]
    */
   public function setPrincipals($principals)
   {

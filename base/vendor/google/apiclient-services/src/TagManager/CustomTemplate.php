@@ -20,67 +20,46 @@ namespace Google\Service\TagManager;
 class CustomTemplate extends \Google\Model
 {
   /**
-   * GTM Account ID.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * GTM Container ID.
-   *
    * @var string
    */
   public $containerId;
   /**
-   * The fingerprint of the GTM Custom Template as computed at storage time.
-   * This value is recomputed whenever the template is modified.
-   *
    * @var string
    */
   public $fingerprint;
   protected $galleryReferenceType = GalleryReference::class;
   protected $galleryReferenceDataType = '';
   /**
-   * Custom Template display name.
-   *
    * @var string
    */
   public $name;
   /**
-   * GTM Custom Template's API relative path.
-   *
    * @var string
    */
   public $path;
   /**
-   * Auto generated link to the tag manager UI
-   *
    * @var string
    */
   public $tagManagerUrl;
   /**
-   * The custom template in text format.
-   *
    * @var string
    */
   public $templateData;
   /**
-   * The Custom Template ID uniquely identifies the GTM custom template.
-   *
    * @var string
    */
   public $templateId;
   /**
-   * GTM Workspace ID.
-   *
    * @var string
    */
   public $workspaceId;
 
   /**
-   * GTM Account ID.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -94,9 +73,7 @@ class CustomTemplate extends \Google\Model
     return $this->accountId;
   }
   /**
-   * GTM Container ID.
-   *
-   * @param string $containerId
+   * @param string
    */
   public function setContainerId($containerId)
   {
@@ -110,10 +87,7 @@ class CustomTemplate extends \Google\Model
     return $this->containerId;
   }
   /**
-   * The fingerprint of the GTM Custom Template as computed at storage time.
-   * This value is recomputed whenever the template is modified.
-   *
-   * @param string $fingerprint
+   * @param string
    */
   public function setFingerprint($fingerprint)
   {
@@ -127,9 +101,7 @@ class CustomTemplate extends \Google\Model
     return $this->fingerprint;
   }
   /**
-   * A reference to the Community Template Gallery entry.
-   *
-   * @param GalleryReference $galleryReference
+   * @param GalleryReference
    */
   public function setGalleryReference(GalleryReference $galleryReference)
   {
@@ -143,9 +115,7 @@ class CustomTemplate extends \Google\Model
     return $this->galleryReference;
   }
   /**
-   * Custom Template display name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -159,9 +129,7 @@ class CustomTemplate extends \Google\Model
     return $this->name;
   }
   /**
-   * GTM Custom Template's API relative path.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {
@@ -175,9 +143,7 @@ class CustomTemplate extends \Google\Model
     return $this->path;
   }
   /**
-   * Auto generated link to the tag manager UI
-   *
-   * @param string $tagManagerUrl
+   * @param string
    */
   public function setTagManagerUrl($tagManagerUrl)
   {
@@ -191,9 +157,7 @@ class CustomTemplate extends \Google\Model
     return $this->tagManagerUrl;
   }
   /**
-   * The custom template in text format.
-   *
-   * @param string $templateData
+   * @param string
    */
   public function setTemplateData($templateData)
   {
@@ -207,9 +171,7 @@ class CustomTemplate extends \Google\Model
     return $this->templateData;
   }
   /**
-   * The Custom Template ID uniquely identifies the GTM custom template.
-   *
-   * @param string $templateId
+   * @param string
    */
   public function setTemplateId($templateId)
   {
@@ -223,9 +185,7 @@ class CustomTemplate extends \Google\Model
     return $this->templateId;
   }
   /**
-   * GTM Workspace ID.
-   *
-   * @param string $workspaceId
+   * @param string
    */
   public function setWorkspaceId($workspaceId)
   {

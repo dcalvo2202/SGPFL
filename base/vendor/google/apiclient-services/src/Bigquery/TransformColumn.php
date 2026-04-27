@@ -20,14 +20,10 @@ namespace Google\Service\Bigquery;
 class TransformColumn extends \Google\Model
 {
   /**
-   * Output only. Name of the column.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The SQL expression used in the column transform.
-   *
    * @var string
    */
   public $transformSql;
@@ -35,9 +31,7 @@ class TransformColumn extends \Google\Model
   protected $typeDataType = '';
 
   /**
-   * Output only. Name of the column.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -51,9 +45,7 @@ class TransformColumn extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The SQL expression used in the column transform.
-   *
-   * @param string $transformSql
+   * @param string
    */
   public function setTransformSql($transformSql)
   {
@@ -67,9 +59,7 @@ class TransformColumn extends \Google\Model
     return $this->transformSql;
   }
   /**
-   * Output only. Data type of the column after the transform.
-   *
-   * @param StandardSqlDataType $type
+   * @param StandardSqlDataType
    */
   public function setType(StandardSqlDataType $type)
   {

@@ -25,7 +25,7 @@ class InputQuantileMetrics extends \Google\Model
   protected $recordsReadDataType = '';
 
   /**
-   * @param Quantiles $bytesRead
+   * @param Quantiles
    */
   public function setBytesRead(Quantiles $bytesRead)
   {
@@ -39,7 +39,7 @@ class InputQuantileMetrics extends \Google\Model
     return $this->bytesRead;
   }
   /**
-   * @param Quantiles $recordsRead
+   * @param Quantiles
    */
   public function setRecordsRead(Quantiles $recordsRead)
   {

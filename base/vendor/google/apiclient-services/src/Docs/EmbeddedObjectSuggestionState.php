@@ -20,8 +20,6 @@ namespace Google\Service\Docs;
 class EmbeddedObjectSuggestionState extends \Google\Model
 {
   /**
-   * Indicates if there was a suggested change to description.
-   *
    * @var bool
    */
   public $descriptionSuggested;
@@ -34,42 +32,30 @@ class EmbeddedObjectSuggestionState extends \Google\Model
   protected $linkedContentReferenceSuggestionStateType = LinkedContentReferenceSuggestionState::class;
   protected $linkedContentReferenceSuggestionStateDataType = '';
   /**
-   * Indicates if there was a suggested change to margin_bottom.
-   *
    * @var bool
    */
   public $marginBottomSuggested;
   /**
-   * Indicates if there was a suggested change to margin_left.
-   *
    * @var bool
    */
   public $marginLeftSuggested;
   /**
-   * Indicates if there was a suggested change to margin_right.
-   *
    * @var bool
    */
   public $marginRightSuggested;
   /**
-   * Indicates if there was a suggested change to margin_top.
-   *
    * @var bool
    */
   public $marginTopSuggested;
   protected $sizeSuggestionStateType = SizeSuggestionState::class;
   protected $sizeSuggestionStateDataType = '';
   /**
-   * Indicates if there was a suggested change to title.
-   *
    * @var bool
    */
   public $titleSuggested;
 
   /**
-   * Indicates if there was a suggested change to description.
-   *
-   * @param bool $descriptionSuggested
+   * @param bool
    */
   public function setDescriptionSuggested($descriptionSuggested)
   {
@@ -83,10 +69,7 @@ class EmbeddedObjectSuggestionState extends \Google\Model
     return $this->descriptionSuggested;
   }
   /**
-   * A mask that indicates which of the fields in embedded_drawing_properties
-   * have been changed in this suggestion.
-   *
-   * @param EmbeddedDrawingPropertiesSuggestionState $embeddedDrawingPropertiesSuggestionState
+   * @param EmbeddedDrawingPropertiesSuggestionState
    */
   public function setEmbeddedDrawingPropertiesSuggestionState(EmbeddedDrawingPropertiesSuggestionState $embeddedDrawingPropertiesSuggestionState)
   {
@@ -100,10 +83,7 @@ class EmbeddedObjectSuggestionState extends \Google\Model
     return $this->embeddedDrawingPropertiesSuggestionState;
   }
   /**
-   * A mask that indicates which of the fields in embedded_object_border have
-   * been changed in this suggestion.
-   *
-   * @param EmbeddedObjectBorderSuggestionState $embeddedObjectBorderSuggestionState
+   * @param EmbeddedObjectBorderSuggestionState
    */
   public function setEmbeddedObjectBorderSuggestionState(EmbeddedObjectBorderSuggestionState $embeddedObjectBorderSuggestionState)
   {
@@ -117,10 +97,7 @@ class EmbeddedObjectSuggestionState extends \Google\Model
     return $this->embeddedObjectBorderSuggestionState;
   }
   /**
-   * A mask that indicates which of the fields in image_properties have been
-   * changed in this suggestion.
-   *
-   * @param ImagePropertiesSuggestionState $imagePropertiesSuggestionState
+   * @param ImagePropertiesSuggestionState
    */
   public function setImagePropertiesSuggestionState(ImagePropertiesSuggestionState $imagePropertiesSuggestionState)
   {
@@ -134,10 +111,7 @@ class EmbeddedObjectSuggestionState extends \Google\Model
     return $this->imagePropertiesSuggestionState;
   }
   /**
-   * A mask that indicates which of the fields in linked_content_reference have
-   * been changed in this suggestion.
-   *
-   * @param LinkedContentReferenceSuggestionState $linkedContentReferenceSuggestionState
+   * @param LinkedContentReferenceSuggestionState
    */
   public function setLinkedContentReferenceSuggestionState(LinkedContentReferenceSuggestionState $linkedContentReferenceSuggestionState)
   {
@@ -151,9 +125,7 @@ class EmbeddedObjectSuggestionState extends \Google\Model
     return $this->linkedContentReferenceSuggestionState;
   }
   /**
-   * Indicates if there was a suggested change to margin_bottom.
-   *
-   * @param bool $marginBottomSuggested
+   * @param bool
    */
   public function setMarginBottomSuggested($marginBottomSuggested)
   {
@@ -167,9 +139,7 @@ class EmbeddedObjectSuggestionState extends \Google\Model
     return $this->marginBottomSuggested;
   }
   /**
-   * Indicates if there was a suggested change to margin_left.
-   *
-   * @param bool $marginLeftSuggested
+   * @param bool
    */
   public function setMarginLeftSuggested($marginLeftSuggested)
   {
@@ -183,9 +153,7 @@ class EmbeddedObjectSuggestionState extends \Google\Model
     return $this->marginLeftSuggested;
   }
   /**
-   * Indicates if there was a suggested change to margin_right.
-   *
-   * @param bool $marginRightSuggested
+   * @param bool
    */
   public function setMarginRightSuggested($marginRightSuggested)
   {
@@ -199,9 +167,7 @@ class EmbeddedObjectSuggestionState extends \Google\Model
     return $this->marginRightSuggested;
   }
   /**
-   * Indicates if there was a suggested change to margin_top.
-   *
-   * @param bool $marginTopSuggested
+   * @param bool
    */
   public function setMarginTopSuggested($marginTopSuggested)
   {
@@ -215,10 +181,7 @@ class EmbeddedObjectSuggestionState extends \Google\Model
     return $this->marginTopSuggested;
   }
   /**
-   * A mask that indicates which of the fields in size have been changed in this
-   * suggestion.
-   *
-   * @param SizeSuggestionState $sizeSuggestionState
+   * @param SizeSuggestionState
    */
   public function setSizeSuggestionState(SizeSuggestionState $sizeSuggestionState)
   {
@@ -232,9 +195,7 @@ class EmbeddedObjectSuggestionState extends \Google\Model
     return $this->sizeSuggestionState;
   }
   /**
-   * Indicates if there was a suggested change to title.
-   *
-   * @param bool $titleSuggested
+   * @param bool
    */
   public function setTitleSuggested($titleSuggested)
   {

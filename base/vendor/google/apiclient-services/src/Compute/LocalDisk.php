@@ -20,30 +20,20 @@ namespace Google\Service\Compute;
 class LocalDisk extends \Google\Model
 {
   /**
-   * Specifies the number of such disks.
-   *
    * @var int
    */
   public $diskCount;
   /**
-   * Specifies the size of the disk in base-2 GB.
-   *
    * @var int
    */
   public $diskSizeGb;
   /**
-   * Specifies the desired disk type on the node. This disk type must be a local
-   * storage type (e.g.: local-ssd). Note that for nodeTemplates, this should be
-   * the name of the disk type and not its URL.
-   *
    * @var string
    */
   public $diskType;
 
   /**
-   * Specifies the number of such disks.
-   *
-   * @param int $diskCount
+   * @param int
    */
   public function setDiskCount($diskCount)
   {
@@ -57,9 +47,7 @@ class LocalDisk extends \Google\Model
     return $this->diskCount;
   }
   /**
-   * Specifies the size of the disk in base-2 GB.
-   *
-   * @param int $diskSizeGb
+   * @param int
    */
   public function setDiskSizeGb($diskSizeGb)
   {
@@ -73,11 +61,7 @@ class LocalDisk extends \Google\Model
     return $this->diskSizeGb;
   }
   /**
-   * Specifies the desired disk type on the node. This disk type must be a local
-   * storage type (e.g.: local-ssd). Note that for nodeTemplates, this should be
-   * the name of the disk type and not its URL.
-   *
-   * @param string $diskType
+   * @param string
    */
   public function setDiskType($diskType)
   {

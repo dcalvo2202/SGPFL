@@ -20,22 +20,16 @@ namespace Google\Service\VMMigrationService;
 class Tag extends \Google\Model
 {
   /**
-   * Required. Key of tag.
-   *
    * @var string
    */
   public $key;
   /**
-   * Required. Value of tag.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Required. Key of tag.
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {
@@ -49,9 +43,7 @@ class Tag extends \Google\Model
     return $this->key;
   }
   /**
-   * Required. Value of tag.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

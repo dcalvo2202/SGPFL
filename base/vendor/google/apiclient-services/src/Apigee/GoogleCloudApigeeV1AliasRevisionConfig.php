@@ -20,28 +20,10 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1AliasRevisionConfig extends \Google\Model
 {
   /**
-   * Alias type is not specified.
-   */
-  public const TYPE_ALIAS_TYPE_UNSPECIFIED = 'ALIAS_TYPE_UNSPECIFIED';
-  /**
-   * Certificate.
-   */
-  public const TYPE_CERT = 'CERT';
-  /**
-   * Key/certificate pair.
-   */
-  public const TYPE_KEY_CERT = 'KEY_CERT';
-  /**
-   * Location of the alias file. For example, a Google Cloud Storage URI.
-   *
    * @var string
    */
   public $location;
   /**
-   * Name of the alias revision included in the keystore in the following
-   * format: `organizations/{org}/environments/{env}/keystores/{keystore}/aliase
-   * s/{alias}/revisions/{rev}`
-   *
    * @var string
    */
   public $name;
@@ -51,9 +33,7 @@ class GoogleCloudApigeeV1AliasRevisionConfig extends \Google\Model
   public $type;
 
   /**
-   * Location of the alias file. For example, a Google Cloud Storage URI.
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -67,11 +47,7 @@ class GoogleCloudApigeeV1AliasRevisionConfig extends \Google\Model
     return $this->location;
   }
   /**
-   * Name of the alias revision included in the keystore in the following
-   * format: `organizations/{org}/environments/{env}/keystores/{keystore}/aliase
-   * s/{alias}/revisions/{rev}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -85,14 +61,14 @@ class GoogleCloudApigeeV1AliasRevisionConfig extends \Google\Model
     return $this->name;
   }
   /**
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

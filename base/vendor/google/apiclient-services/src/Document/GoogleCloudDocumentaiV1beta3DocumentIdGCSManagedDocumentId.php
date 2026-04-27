@@ -20,31 +20,22 @@ namespace Google\Service\Document;
 class GoogleCloudDocumentaiV1beta3DocumentIdGCSManagedDocumentId extends \Google\Model
 {
   /**
-   * Id of the document (indexed) managed by Content Warehouse.
-   *
-   * @deprecated
    * @var string
    */
   public $cwDocId;
   /**
-   * Required. The Cloud Storage URI where the actual document is stored.
-   *
    * @var string
    */
   public $gcsUri;
 
   /**
-   * Id of the document (indexed) managed by Content Warehouse.
-   *
-   * @deprecated
-   * @param string $cwDocId
+   * @param string
    */
   public function setCwDocId($cwDocId)
   {
     $this->cwDocId = $cwDocId;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getCwDocId()
@@ -52,9 +43,7 @@ class GoogleCloudDocumentaiV1beta3DocumentIdGCSManagedDocumentId extends \Google
     return $this->cwDocId;
   }
   /**
-   * Required. The Cloud Storage URI where the actual document is stored.
-   *
-   * @param string $gcsUri
+   * @param string
    */
   public function setGcsUri($gcsUri)
   {

@@ -25,9 +25,7 @@ class SearchResult extends \Google\Model
   protected $fileDataType = '';
 
   /**
-   * Details when search result is a directory.
-   *
-   * @param DirectorySearchResult $directory
+   * @param DirectorySearchResult
    */
   public function setDirectory(DirectorySearchResult $directory)
   {
@@ -41,9 +39,7 @@ class SearchResult extends \Google\Model
     return $this->directory;
   }
   /**
-   * Details when search result is a file.
-   *
-   * @param FileSearchResult $file
+   * @param FileSearchResult
    */
   public function setFile(FileSearchResult $file)
   {

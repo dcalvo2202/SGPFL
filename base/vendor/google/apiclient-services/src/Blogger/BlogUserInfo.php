@@ -27,16 +27,12 @@ class BlogUserInfo extends \Google\Model
   protected $blogUserInfoType = BlogPerUserInfo::class;
   protected $blogUserInfoDataType = '';
   /**
-   * The kind of this entity. Always blogger#blogUserInfo.
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * The Blog resource.
-   *
-   * @param Blog $blog
+   * @param Blog
    */
   public function setBlog(Blog $blog)
   {
@@ -50,9 +46,7 @@ class BlogUserInfo extends \Google\Model
     return $this->blog;
   }
   /**
-   * Information about a User for the Blog.
-   *
-   * @param BlogPerUserInfo $blogUserInfo
+   * @param BlogPerUserInfo
    */
   public function setBlogUserInfo(BlogPerUserInfo $blogUserInfo)
   {
@@ -66,9 +60,7 @@ class BlogUserInfo extends \Google\Model
     return $this->blogUserInfo;
   }
   /**
-   * The kind of this entity. Always blogger#blogUserInfo.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

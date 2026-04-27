@@ -23,16 +23,12 @@ class TableEntity extends \Google\Collection
   protected $columnsType = ColumnEntity::class;
   protected $columnsDataType = 'array';
   /**
-   * Comment associated with the table.
-   *
    * @var string
    */
   public $comment;
   protected $constraintsType = ConstraintEntity::class;
   protected $constraintsDataType = 'array';
   /**
-   * Custom engine specific features.
-   *
    * @var array[]
    */
   public $customFeatures;
@@ -42,9 +38,7 @@ class TableEntity extends \Google\Collection
   protected $triggersDataType = 'array';
 
   /**
-   * Table columns.
-   *
-   * @param ColumnEntity[] $columns
+   * @param ColumnEntity[]
    */
   public function setColumns($columns)
   {
@@ -58,9 +52,7 @@ class TableEntity extends \Google\Collection
     return $this->columns;
   }
   /**
-   * Comment associated with the table.
-   *
-   * @param string $comment
+   * @param string
    */
   public function setComment($comment)
   {
@@ -74,9 +66,7 @@ class TableEntity extends \Google\Collection
     return $this->comment;
   }
   /**
-   * Table constraints.
-   *
-   * @param ConstraintEntity[] $constraints
+   * @param ConstraintEntity[]
    */
   public function setConstraints($constraints)
   {
@@ -90,9 +80,7 @@ class TableEntity extends \Google\Collection
     return $this->constraints;
   }
   /**
-   * Custom engine specific features.
-   *
-   * @param array[] $customFeatures
+   * @param array[]
    */
   public function setCustomFeatures($customFeatures)
   {
@@ -106,9 +94,7 @@ class TableEntity extends \Google\Collection
     return $this->customFeatures;
   }
   /**
-   * Table indices.
-   *
-   * @param IndexEntity[] $indices
+   * @param IndexEntity[]
    */
   public function setIndices($indices)
   {
@@ -122,9 +108,7 @@ class TableEntity extends \Google\Collection
     return $this->indices;
   }
   /**
-   * Table triggers.
-   *
-   * @param TriggerEntity[] $triggers
+   * @param TriggerEntity[]
    */
   public function setTriggers($triggers)
   {

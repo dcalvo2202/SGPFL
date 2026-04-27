@@ -21,18 +21,12 @@ class TestPermissionsRequest extends \Google\Collection
 {
   protected $collection_key = 'permissions';
   /**
-   * The set of permissions to check for the 'resource'. Permissions with
-   * wildcards (such as '*' or 'storage.*') are not allowed.
-   *
    * @var string[]
    */
   public $permissions;
 
   /**
-   * The set of permissions to check for the 'resource'. Permissions with
-   * wildcards (such as '*' or 'storage.*') are not allowed.
-   *
-   * @param string[] $permissions
+   * @param string[]
    */
   public function setPermissions($permissions)
   {

@@ -20,38 +20,16 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1GovernanceEventEntity extends \Google\Model
 {
   /**
-   * An unspecified Entity type.
-   */
-  public const ENTITY_TYPE_ENTITY_TYPE_UNSPECIFIED = 'ENTITY_TYPE_UNSPECIFIED';
-  /**
-   * Table entity type.
-   */
-  public const ENTITY_TYPE_TABLE = 'TABLE';
-  /**
-   * Fileset entity type.
-   */
-  public const ENTITY_TYPE_FILESET = 'FILESET';
-  /**
-   * The Entity resource the log event is associated with. Format: projects/{pro
-   * ject_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entiti
-   * es/{entity_id}
-   *
    * @var string
    */
   public $entity;
   /**
-   * Type of entity.
-   *
    * @var string
    */
   public $entityType;
 
   /**
-   * The Entity resource the log event is associated with. Format: projects/{pro
-   * ject_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entiti
-   * es/{entity_id}
-   *
-   * @param string $entity
+   * @param string
    */
   public function setEntity($entity)
   {
@@ -65,18 +43,14 @@ class GoogleCloudDataplexV1GovernanceEventEntity extends \Google\Model
     return $this->entity;
   }
   /**
-   * Type of entity.
-   *
-   * Accepted values: ENTITY_TYPE_UNSPECIFIED, TABLE, FILESET
-   *
-   * @param self::ENTITY_TYPE_* $entityType
+   * @param string
    */
   public function setEntityType($entityType)
   {
     $this->entityType = $entityType;
   }
   /**
-   * @return self::ENTITY_TYPE_*
+   * @return string
    */
   public function getEntityType()
   {

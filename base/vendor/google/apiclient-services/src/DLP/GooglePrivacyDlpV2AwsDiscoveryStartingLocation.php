@@ -20,29 +20,16 @@ namespace Google\Service\DLP;
 class GooglePrivacyDlpV2AwsDiscoveryStartingLocation extends \Google\Model
 {
   /**
-   * The AWS account ID that this discovery config applies to. Within an AWS
-   * organization, you can find the AWS account ID inside an AWS account ARN.
-   * Example: arn:{partition}:organizations::{management_account_id}:account/{or
-   * g_id}/{account_id}
-   *
    * @var string
    */
   public $accountId;
   /**
-   * All AWS assets stored in Asset Inventory that didn't match other AWS
-   * discovery configs.
-   *
    * @var bool
    */
   public $allAssetInventoryAssets;
 
   /**
-   * The AWS account ID that this discovery config applies to. Within an AWS
-   * organization, you can find the AWS account ID inside an AWS account ARN.
-   * Example: arn:{partition}:organizations::{management_account_id}:account/{or
-   * g_id}/{account_id}
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -56,10 +43,7 @@ class GooglePrivacyDlpV2AwsDiscoveryStartingLocation extends \Google\Model
     return $this->accountId;
   }
   /**
-   * All AWS assets stored in Asset Inventory that didn't match other AWS
-   * discovery configs.
-   *
-   * @param bool $allAssetInventoryAssets
+   * @param bool
    */
   public function setAllAssetInventoryAssets($allAssetInventoryAssets)
   {

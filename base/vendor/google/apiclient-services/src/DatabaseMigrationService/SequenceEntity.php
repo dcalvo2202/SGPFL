@@ -20,55 +20,36 @@ namespace Google\Service\DatabaseMigrationService;
 class SequenceEntity extends \Google\Model
 {
   /**
-   * Indicates number of entries to cache / precreate.
-   *
    * @var string
    */
   public $cache;
   /**
-   * Custom engine specific features.
-   *
    * @var array[]
    */
   public $customFeatures;
   /**
-   * Indicates whether the sequence value should cycle through.
-   *
    * @var bool
    */
   public $cycle;
   /**
-   * Increment value for the sequence.
-   *
    * @var string
    */
   public $increment;
   /**
-   * Maximum number for the sequence represented as bytes to accommodate large.
-   * numbers
-   *
    * @var string
    */
   public $maxValue;
   /**
-   * Minimum number for the sequence represented as bytes to accommodate large.
-   * numbers
-   *
    * @var string
    */
   public $minValue;
   /**
-   * Start number for the sequence represented as bytes to accommodate large.
-   * numbers
-   *
    * @var string
    */
   public $startValue;
 
   /**
-   * Indicates number of entries to cache / precreate.
-   *
-   * @param string $cache
+   * @param string
    */
   public function setCache($cache)
   {
@@ -82,9 +63,7 @@ class SequenceEntity extends \Google\Model
     return $this->cache;
   }
   /**
-   * Custom engine specific features.
-   *
-   * @param array[] $customFeatures
+   * @param array[]
    */
   public function setCustomFeatures($customFeatures)
   {
@@ -98,9 +77,7 @@ class SequenceEntity extends \Google\Model
     return $this->customFeatures;
   }
   /**
-   * Indicates whether the sequence value should cycle through.
-   *
-   * @param bool $cycle
+   * @param bool
    */
   public function setCycle($cycle)
   {
@@ -114,9 +91,7 @@ class SequenceEntity extends \Google\Model
     return $this->cycle;
   }
   /**
-   * Increment value for the sequence.
-   *
-   * @param string $increment
+   * @param string
    */
   public function setIncrement($increment)
   {
@@ -130,10 +105,7 @@ class SequenceEntity extends \Google\Model
     return $this->increment;
   }
   /**
-   * Maximum number for the sequence represented as bytes to accommodate large.
-   * numbers
-   *
-   * @param string $maxValue
+   * @param string
    */
   public function setMaxValue($maxValue)
   {
@@ -147,10 +119,7 @@ class SequenceEntity extends \Google\Model
     return $this->maxValue;
   }
   /**
-   * Minimum number for the sequence represented as bytes to accommodate large.
-   * numbers
-   *
-   * @param string $minValue
+   * @param string
    */
   public function setMinValue($minValue)
   {
@@ -164,10 +133,7 @@ class SequenceEntity extends \Google\Model
     return $this->minValue;
   }
   /**
-   * Start number for the sequence represented as bytes to accommodate large.
-   * numbers
-   *
-   * @param string $startValue
+   * @param string
    */
   public function setStartValue($startValue)
   {

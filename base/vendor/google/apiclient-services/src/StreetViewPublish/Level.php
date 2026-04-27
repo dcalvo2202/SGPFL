@@ -20,28 +20,13 @@ namespace Google\Service\StreetViewPublish;
 class Level extends \Google\Model
 {
   /**
-   * Required. A name assigned to this Level, restricted to 3 characters.
-   * Consider how the elevator buttons would be labeled for this level if there
-   * was an elevator.
-   *
    * @var string
    */
   public $name;
-  /**
-   * Optional. Floor number, used for ordering. 0 indicates the ground level, 1
-   * indicates the first level above ground level, -1 indicates the first level
-   * under ground level. Non-integer values are OK.
-   *
-   * @var 
-   */
   public $number;
 
   /**
-   * Required. A name assigned to this Level, restricted to 3 characters.
-   * Consider how the elevator buttons would be labeled for this level if there
-   * was an elevator.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

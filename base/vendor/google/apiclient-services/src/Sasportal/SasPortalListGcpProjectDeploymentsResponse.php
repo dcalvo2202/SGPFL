@@ -24,9 +24,7 @@ class SasPortalListGcpProjectDeploymentsResponse extends \Google\Collection
   protected $deploymentsDataType = 'array';
 
   /**
-   * Optional. Deployments associated with the GCP project
-   *
-   * @param SasPortalGcpProjectDeployment[] $deployments
+   * @param SasPortalGcpProjectDeployment[]
    */
   public function setDeployments($deployments)
   {

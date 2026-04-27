@@ -20,51 +20,36 @@ namespace Google\Service\MigrationCenterAPI;
 class BiosDetails extends \Google\Model
 {
   /**
-   * BIOS name. This fields is deprecated. Please use the `id` field instead.
-   *
-   * @deprecated
    * @var string
    */
   public $biosName;
   /**
-   * BIOS ID.
-   *
    * @var string
    */
   public $id;
   /**
-   * BIOS manufacturer.
-   *
    * @var string
    */
   public $manufacturer;
   protected $releaseDateType = Date::class;
   protected $releaseDateDataType = '';
   /**
-   * SMBIOS UUID.
-   *
    * @var string
    */
   public $smbiosUuid;
   /**
-   * BIOS version.
-   *
    * @var string
    */
   public $version;
 
   /**
-   * BIOS name. This fields is deprecated. Please use the `id` field instead.
-   *
-   * @deprecated
-   * @param string $biosName
+   * @param string
    */
   public function setBiosName($biosName)
   {
     $this->biosName = $biosName;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getBiosName()
@@ -72,9 +57,7 @@ class BiosDetails extends \Google\Model
     return $this->biosName;
   }
   /**
-   * BIOS ID.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -88,9 +71,7 @@ class BiosDetails extends \Google\Model
     return $this->id;
   }
   /**
-   * BIOS manufacturer.
-   *
-   * @param string $manufacturer
+   * @param string
    */
   public function setManufacturer($manufacturer)
   {
@@ -104,9 +85,7 @@ class BiosDetails extends \Google\Model
     return $this->manufacturer;
   }
   /**
-   * BIOS release date.
-   *
-   * @param Date $releaseDate
+   * @param Date
    */
   public function setReleaseDate(Date $releaseDate)
   {
@@ -120,9 +99,7 @@ class BiosDetails extends \Google\Model
     return $this->releaseDate;
   }
   /**
-   * SMBIOS UUID.
-   *
-   * @param string $smbiosUuid
+   * @param string
    */
   public function setSmbiosUuid($smbiosUuid)
   {
@@ -136,9 +113,7 @@ class BiosDetails extends \Google\Model
     return $this->smbiosUuid;
   }
   /**
-   * BIOS version.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

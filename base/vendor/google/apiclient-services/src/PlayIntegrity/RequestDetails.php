@@ -20,36 +20,24 @@ namespace Google\Service\PlayIntegrity;
 class RequestDetails extends \Google\Model
 {
   /**
-   * Nonce that was provided in the request (which is base64 web-safe no-wrap).
-   *
    * @var string
    */
   public $nonce;
   /**
-   * Request hash that was provided in the request.
-   *
    * @var string
    */
   public $requestHash;
   /**
-   * Required. Application package name this attestation was requested for.
-   * Note: This field makes no guarantees or promises on the caller integrity.
-   * For details on application integrity, check application_integrity.
-   *
    * @var string
    */
   public $requestPackageName;
   /**
-   * Required. Timestamp, in milliseconds, of the integrity application request.
-   *
    * @var string
    */
   public $timestampMillis;
 
   /**
-   * Nonce that was provided in the request (which is base64 web-safe no-wrap).
-   *
-   * @param string $nonce
+   * @param string
    */
   public function setNonce($nonce)
   {
@@ -63,9 +51,7 @@ class RequestDetails extends \Google\Model
     return $this->nonce;
   }
   /**
-   * Request hash that was provided in the request.
-   *
-   * @param string $requestHash
+   * @param string
    */
   public function setRequestHash($requestHash)
   {
@@ -79,11 +65,7 @@ class RequestDetails extends \Google\Model
     return $this->requestHash;
   }
   /**
-   * Required. Application package name this attestation was requested for.
-   * Note: This field makes no guarantees or promises on the caller integrity.
-   * For details on application integrity, check application_integrity.
-   *
-   * @param string $requestPackageName
+   * @param string
    */
   public function setRequestPackageName($requestPackageName)
   {
@@ -97,9 +79,7 @@ class RequestDetails extends \Google\Model
     return $this->requestPackageName;
   }
   /**
-   * Required. Timestamp, in milliseconds, of the integrity application request.
-   *
-   * @param string $timestampMillis
+   * @param string
    */
   public function setTimestampMillis($timestampMillis)
   {

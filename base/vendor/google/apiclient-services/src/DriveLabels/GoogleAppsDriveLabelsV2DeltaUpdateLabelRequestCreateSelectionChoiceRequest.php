@@ -22,16 +22,12 @@ class GoogleAppsDriveLabelsV2DeltaUpdateLabelRequestCreateSelectionChoiceRequest
   protected $choiceType = GoogleAppsDriveLabelsV2FieldSelectionOptionsChoice::class;
   protected $choiceDataType = '';
   /**
-   * Required. The selection field in which a choice will be created.
-   *
    * @var string
    */
   public $fieldId;
 
   /**
-   * Required. The choice to create.
-   *
-   * @param GoogleAppsDriveLabelsV2FieldSelectionOptionsChoice $choice
+   * @param GoogleAppsDriveLabelsV2FieldSelectionOptionsChoice
    */
   public function setChoice(GoogleAppsDriveLabelsV2FieldSelectionOptionsChoice $choice)
   {
@@ -45,9 +41,7 @@ class GoogleAppsDriveLabelsV2DeltaUpdateLabelRequestCreateSelectionChoiceRequest
     return $this->choice;
   }
   /**
-   * Required. The selection field in which a choice will be created.
-   *
-   * @param string $fieldId
+   * @param string
    */
   public function setFieldId($fieldId)
   {

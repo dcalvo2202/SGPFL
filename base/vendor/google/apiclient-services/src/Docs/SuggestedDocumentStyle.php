@@ -25,11 +25,7 @@ class SuggestedDocumentStyle extends \Google\Model
   protected $documentStyleSuggestionStateDataType = '';
 
   /**
-   * A DocumentStyle that only includes the changes made in this suggestion.
-   * This can be used along with the document_style_suggestion_state to see
-   * which fields have changed and their new values.
-   *
-   * @param DocumentStyle $documentStyle
+   * @param DocumentStyle
    */
   public function setDocumentStyle(DocumentStyle $documentStyle)
   {
@@ -43,10 +39,7 @@ class SuggestedDocumentStyle extends \Google\Model
     return $this->documentStyle;
   }
   /**
-   * A mask that indicates which of the fields on the base DocumentStyle have
-   * been changed in this suggestion.
-   *
-   * @param DocumentStyleSuggestionState $documentStyleSuggestionState
+   * @param DocumentStyleSuggestionState
    */
   public function setDocumentStyleSuggestionState(DocumentStyleSuggestionState $documentStyleSuggestionState)
   {

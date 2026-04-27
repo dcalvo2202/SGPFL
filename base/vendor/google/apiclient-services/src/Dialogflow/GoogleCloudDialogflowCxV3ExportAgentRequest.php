@@ -19,9 +19,6 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowCxV3ExportAgentRequest extends \Google\Model
 {
-  public const DATA_FORMAT_DATA_FORMAT_UNSPECIFIED = 'DATA_FORMAT_UNSPECIFIED';
-  public const DATA_FORMAT_BLOB = 'BLOB';
-  public const DATA_FORMAT_JSON_PACKAGE = 'JSON_PACKAGE';
   /**
    * @var string
    */
@@ -42,7 +39,7 @@ class GoogleCloudDialogflowCxV3ExportAgentRequest extends \Google\Model
   public $includeBigqueryExportSettings;
 
   /**
-   * @param string $agentUri
+   * @param string
    */
   public function setAgentUri($agentUri)
   {
@@ -56,21 +53,21 @@ class GoogleCloudDialogflowCxV3ExportAgentRequest extends \Google\Model
     return $this->agentUri;
   }
   /**
-   * @param self::DATA_FORMAT_* $dataFormat
+   * @param string
    */
   public function setDataFormat($dataFormat)
   {
     $this->dataFormat = $dataFormat;
   }
   /**
-   * @return self::DATA_FORMAT_*
+   * @return string
    */
   public function getDataFormat()
   {
     return $this->dataFormat;
   }
   /**
-   * @param string $environment
+   * @param string
    */
   public function setEnvironment($environment)
   {
@@ -84,7 +81,7 @@ class GoogleCloudDialogflowCxV3ExportAgentRequest extends \Google\Model
     return $this->environment;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3ExportAgentRequestGitDestination $gitDestination
+   * @param GoogleCloudDialogflowCxV3ExportAgentRequestGitDestination
    */
   public function setGitDestination(GoogleCloudDialogflowCxV3ExportAgentRequestGitDestination $gitDestination)
   {
@@ -98,7 +95,7 @@ class GoogleCloudDialogflowCxV3ExportAgentRequest extends \Google\Model
     return $this->gitDestination;
   }
   /**
-   * @param bool $includeBigqueryExportSettings
+   * @param bool
    */
   public function setIncludeBigqueryExportSettings($includeBigqueryExportSettings)
   {

@@ -21,16 +21,12 @@ class ChromeOsMoveDevicesToOu extends \Google\Collection
 {
   protected $collection_key = 'deviceIds';
   /**
-   * Chrome OS devices to be moved to OU
-   *
    * @var string[]
    */
   public $deviceIds;
 
   /**
-   * Chrome OS devices to be moved to OU
-   *
-   * @param string[] $deviceIds
+   * @param string[]
    */
   public function setDeviceIds($deviceIds)
   {

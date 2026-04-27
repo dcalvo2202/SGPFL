@@ -24,8 +24,6 @@ class UrlInspectionResult extends \Google\Model
   protected $indexStatusResultType = IndexStatusInspectionResult::class;
   protected $indexStatusResultDataType = '';
   /**
-   * Link to Search Console URL inspection.
-   *
    * @var string
    */
   public $inspectionResultLink;
@@ -35,9 +33,7 @@ class UrlInspectionResult extends \Google\Model
   protected $richResultsResultDataType = '';
 
   /**
-   * Result of the AMP analysis. Absent if the page is not an AMP page.
-   *
-   * @param AmpInspectionResult $ampResult
+   * @param AmpInspectionResult
    */
   public function setAmpResult(AmpInspectionResult $ampResult)
   {
@@ -51,9 +47,7 @@ class UrlInspectionResult extends \Google\Model
     return $this->ampResult;
   }
   /**
-   * Result of the index status analysis.
-   *
-   * @param IndexStatusInspectionResult $indexStatusResult
+   * @param IndexStatusInspectionResult
    */
   public function setIndexStatusResult(IndexStatusInspectionResult $indexStatusResult)
   {
@@ -67,9 +61,7 @@ class UrlInspectionResult extends \Google\Model
     return $this->indexStatusResult;
   }
   /**
-   * Link to Search Console URL inspection.
-   *
-   * @param string $inspectionResultLink
+   * @param string
    */
   public function setInspectionResultLink($inspectionResultLink)
   {
@@ -83,17 +75,13 @@ class UrlInspectionResult extends \Google\Model
     return $this->inspectionResultLink;
   }
   /**
-   * Result of the Mobile usability analysis.
-   *
-   * @deprecated
-   * @param MobileUsabilityInspectionResult $mobileUsabilityResult
+   * @param MobileUsabilityInspectionResult
    */
   public function setMobileUsabilityResult(MobileUsabilityInspectionResult $mobileUsabilityResult)
   {
     $this->mobileUsabilityResult = $mobileUsabilityResult;
   }
   /**
-   * @deprecated
    * @return MobileUsabilityInspectionResult
    */
   public function getMobileUsabilityResult()
@@ -101,10 +89,7 @@ class UrlInspectionResult extends \Google\Model
     return $this->mobileUsabilityResult;
   }
   /**
-   * Result of the Rich Results analysis. Absent if there are no rich results
-   * found.
-   *
-   * @param RichResultsInspectionResult $richResultsResult
+   * @param RichResultsInspectionResult
    */
   public function setRichResultsResult(RichResultsInspectionResult $richResultsResult)
   {

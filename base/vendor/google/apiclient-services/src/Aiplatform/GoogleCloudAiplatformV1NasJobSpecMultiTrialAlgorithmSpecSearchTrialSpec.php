@@ -20,23 +20,14 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1NasJobSpecMultiTrialAlgorithmSpecSearchTrialSpec extends \Google\Model
 {
   /**
-   * The number of failed trials that need to be seen before failing the NasJob.
-   * If set to 0, Vertex AI decides how many trials must fail before the whole
-   * job fails.
-   *
    * @var int
    */
   public $maxFailedTrialCount;
   /**
-   * Required. The maximum number of trials to run in parallel.
-   *
    * @var int
    */
   public $maxParallelTrialCount;
   /**
-   * Required. The maximum number of Neural Architecture Search (NAS) trials to
-   * run.
-   *
    * @var int
    */
   public $maxTrialCount;
@@ -44,11 +35,7 @@ class GoogleCloudAiplatformV1NasJobSpecMultiTrialAlgorithmSpecSearchTrialSpec ex
   protected $searchTrialJobSpecDataType = '';
 
   /**
-   * The number of failed trials that need to be seen before failing the NasJob.
-   * If set to 0, Vertex AI decides how many trials must fail before the whole
-   * job fails.
-   *
-   * @param int $maxFailedTrialCount
+   * @param int
    */
   public function setMaxFailedTrialCount($maxFailedTrialCount)
   {
@@ -62,9 +49,7 @@ class GoogleCloudAiplatformV1NasJobSpecMultiTrialAlgorithmSpecSearchTrialSpec ex
     return $this->maxFailedTrialCount;
   }
   /**
-   * Required. The maximum number of trials to run in parallel.
-   *
-   * @param int $maxParallelTrialCount
+   * @param int
    */
   public function setMaxParallelTrialCount($maxParallelTrialCount)
   {
@@ -78,10 +63,7 @@ class GoogleCloudAiplatformV1NasJobSpecMultiTrialAlgorithmSpecSearchTrialSpec ex
     return $this->maxParallelTrialCount;
   }
   /**
-   * Required. The maximum number of Neural Architecture Search (NAS) trials to
-   * run.
-   *
-   * @param int $maxTrialCount
+   * @param int
    */
   public function setMaxTrialCount($maxTrialCount)
   {
@@ -95,10 +77,7 @@ class GoogleCloudAiplatformV1NasJobSpecMultiTrialAlgorithmSpecSearchTrialSpec ex
     return $this->maxTrialCount;
   }
   /**
-   * Required. The spec of a search trial job. The same spec applies to all
-   * search trials.
-   *
-   * @param GoogleCloudAiplatformV1CustomJobSpec $searchTrialJobSpec
+   * @param GoogleCloudAiplatformV1CustomJobSpec
    */
   public function setSearchTrialJobSpec(GoogleCloudAiplatformV1CustomJobSpec $searchTrialJobSpec)
   {

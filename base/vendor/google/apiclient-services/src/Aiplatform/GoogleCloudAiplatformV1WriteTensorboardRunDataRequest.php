@@ -21,10 +21,6 @@ class GoogleCloudAiplatformV1WriteTensorboardRunDataRequest extends \Google\Coll
 {
   protected $collection_key = 'timeSeriesData';
   /**
-   * Required. The resource name of the TensorboardRun to write data to. Format:
-   * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experim
-   * ents/{experiment}/runs/{run}`
-   *
    * @var string
    */
   public $tensorboardRun;
@@ -32,11 +28,7 @@ class GoogleCloudAiplatformV1WriteTensorboardRunDataRequest extends \Google\Coll
   protected $timeSeriesDataDataType = 'array';
 
   /**
-   * Required. The resource name of the TensorboardRun to write data to. Format:
-   * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experim
-   * ents/{experiment}/runs/{run}`
-   *
-   * @param string $tensorboardRun
+   * @param string
    */
   public function setTensorboardRun($tensorboardRun)
   {
@@ -50,12 +42,7 @@ class GoogleCloudAiplatformV1WriteTensorboardRunDataRequest extends \Google\Coll
     return $this->tensorboardRun;
   }
   /**
-   * Required. The TensorboardTimeSeries data to write. Values with in a time
-   * series are indexed by their step value. Repeated writes to the same step
-   * will overwrite the existing value for that step. The upper limit of data
-   * points per write request is 5000.
-   *
-   * @param GoogleCloudAiplatformV1TimeSeriesData[] $timeSeriesData
+   * @param GoogleCloudAiplatformV1TimeSeriesData[]
    */
   public function setTimeSeriesData($timeSeriesData)
   {

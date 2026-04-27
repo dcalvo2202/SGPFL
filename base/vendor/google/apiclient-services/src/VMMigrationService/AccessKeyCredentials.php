@@ -20,29 +20,20 @@ namespace Google\Service\VMMigrationService;
 class AccessKeyCredentials extends \Google\Model
 {
   /**
-   * AWS access key ID.
-   *
    * @var string
    */
   public $accessKeyId;
   /**
-   * Input only. AWS secret access key.
-   *
    * @var string
    */
   public $secretAccessKey;
   /**
-   * Input only. AWS session token. Used only when AWS security token service
-   * (STS) is responsible for creating the temporary credentials.
-   *
    * @var string
    */
   public $sessionToken;
 
   /**
-   * AWS access key ID.
-   *
-   * @param string $accessKeyId
+   * @param string
    */
   public function setAccessKeyId($accessKeyId)
   {
@@ -56,9 +47,7 @@ class AccessKeyCredentials extends \Google\Model
     return $this->accessKeyId;
   }
   /**
-   * Input only. AWS secret access key.
-   *
-   * @param string $secretAccessKey
+   * @param string
    */
   public function setSecretAccessKey($secretAccessKey)
   {
@@ -72,10 +61,7 @@ class AccessKeyCredentials extends \Google\Model
     return $this->secretAccessKey;
   }
   /**
-   * Input only. AWS session token. Used only when AWS security token service
-   * (STS) is responsible for creating the temporary credentials.
-   *
-   * @param string $sessionToken
+   * @param string
    */
   public function setSessionToken($sessionToken)
   {

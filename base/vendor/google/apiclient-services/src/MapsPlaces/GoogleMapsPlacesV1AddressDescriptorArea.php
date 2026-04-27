@@ -20,64 +20,36 @@ namespace Google\Service\MapsPlaces;
 class GoogleMapsPlacesV1AddressDescriptorArea extends \Google\Model
 {
   /**
-   * The containment is unspecified.
-   */
-  public const CONTAINMENT_CONTAINMENT_UNSPECIFIED = 'CONTAINMENT_UNSPECIFIED';
-  /**
-   * The target location is within the area region, close to the center.
-   */
-  public const CONTAINMENT_WITHIN = 'WITHIN';
-  /**
-   * The target location is within the area region, close to the edge.
-   */
-  public const CONTAINMENT_OUTSKIRTS = 'OUTSKIRTS';
-  /**
-   * The target location is outside the area region, but close by.
-   */
-  public const CONTAINMENT_NEAR = 'NEAR';
-  /**
-   * Defines the spatial relationship between the target location and the area.
-   *
    * @var string
    */
   public $containment;
   protected $displayNameType = GoogleTypeLocalizedText::class;
   protected $displayNameDataType = '';
   /**
-   * The area's resource name.
-   *
    * @var string
    */
   public $name;
   /**
-   * The area's place id.
-   *
    * @var string
    */
   public $placeId;
 
   /**
-   * Defines the spatial relationship between the target location and the area.
-   *
-   * Accepted values: CONTAINMENT_UNSPECIFIED, WITHIN, OUTSKIRTS, NEAR
-   *
-   * @param self::CONTAINMENT_* $containment
+   * @param string
    */
   public function setContainment($containment)
   {
     $this->containment = $containment;
   }
   /**
-   * @return self::CONTAINMENT_*
+   * @return string
    */
   public function getContainment()
   {
     return $this->containment;
   }
   /**
-   * The area's display name.
-   *
-   * @param GoogleTypeLocalizedText $displayName
+   * @param GoogleTypeLocalizedText
    */
   public function setDisplayName(GoogleTypeLocalizedText $displayName)
   {
@@ -91,9 +63,7 @@ class GoogleMapsPlacesV1AddressDescriptorArea extends \Google\Model
     return $this->displayName;
   }
   /**
-   * The area's resource name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -107,9 +77,7 @@ class GoogleMapsPlacesV1AddressDescriptorArea extends \Google\Model
     return $this->name;
   }
   /**
-   * The area's place id.
-   *
-   * @param string $placeId
+   * @param string
    */
   public function setPlaceId($placeId)
   {

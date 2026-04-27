@@ -20,56 +20,30 @@ namespace Google\Service\ContainerAnalysis;
 class ContaineranalysisGoogleDevtoolsCloudbuildV1BuildWarning extends \Google\Model
 {
   /**
-   * Should not be used.
-   */
-  public const PRIORITY_PRIORITY_UNSPECIFIED = 'PRIORITY_UNSPECIFIED';
-  /**
-   * e.g. deprecation warnings and alternative feature highlights.
-   */
-  public const PRIORITY_INFO = 'INFO';
-  /**
-   * e.g. automated detection of possible issues with the build.
-   */
-  public const PRIORITY_WARNING = 'WARNING';
-  /**
-   * e.g. alerts that a feature used in the build is pending removal
-   */
-  public const PRIORITY_ALERT = 'ALERT';
-  /**
-   * The priority for this warning.
-   *
    * @var string
    */
   public $priority;
   /**
-   * Explanation of the warning generated.
-   *
    * @var string
    */
   public $text;
 
   /**
-   * The priority for this warning.
-   *
-   * Accepted values: PRIORITY_UNSPECIFIED, INFO, WARNING, ALERT
-   *
-   * @param self::PRIORITY_* $priority
+   * @param string
    */
   public function setPriority($priority)
   {
     $this->priority = $priority;
   }
   /**
-   * @return self::PRIORITY_*
+   * @return string
    */
   public function getPriority()
   {
     return $this->priority;
   }
   /**
-   * Explanation of the warning generated.
-   *
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {

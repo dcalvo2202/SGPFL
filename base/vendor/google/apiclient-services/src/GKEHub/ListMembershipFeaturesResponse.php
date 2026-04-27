@@ -23,24 +23,16 @@ class ListMembershipFeaturesResponse extends \Google\Collection
   protected $membershipFeaturesType = MembershipFeature::class;
   protected $membershipFeaturesDataType = 'array';
   /**
-   * A token to request the next page of resources from the
-   * `ListMembershipFeatures` method. The value of an empty string means that
-   * there are no more resources to return.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * List of locations that could not be reached while fetching this list.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * The list of matching MembershipFeatures.
-   *
-   * @param MembershipFeature[] $membershipFeatures
+   * @param MembershipFeature[]
    */
   public function setMembershipFeatures($membershipFeatures)
   {
@@ -54,11 +46,7 @@ class ListMembershipFeaturesResponse extends \Google\Collection
     return $this->membershipFeatures;
   }
   /**
-   * A token to request the next page of resources from the
-   * `ListMembershipFeatures` method. The value of an empty string means that
-   * there are no more resources to return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -72,9 +60,7 @@ class ListMembershipFeaturesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * List of locations that could not be reached while fetching this list.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

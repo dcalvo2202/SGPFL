@@ -21,14 +21,10 @@ class DatabaseDetails extends \Google\Collection
 {
   protected $collection_key = 'schemas';
   /**
-   * Optional. The allocated storage for the database in bytes.
-   *
    * @var string
    */
   public $allocatedStorageBytes;
   /**
-   * Required. The name of the database.
-   *
    * @var string
    */
   public $databaseName;
@@ -38,9 +34,7 @@ class DatabaseDetails extends \Google\Collection
   protected $schemasDataType = 'array';
 
   /**
-   * Optional. The allocated storage for the database in bytes.
-   *
-   * @param string $allocatedStorageBytes
+   * @param string
    */
   public function setAllocatedStorageBytes($allocatedStorageBytes)
   {
@@ -54,9 +48,7 @@ class DatabaseDetails extends \Google\Collection
     return $this->allocatedStorageBytes;
   }
   /**
-   * Required. The name of the database.
-   *
-   * @param string $databaseName
+   * @param string
    */
   public function setDatabaseName($databaseName)
   {
@@ -70,10 +62,7 @@ class DatabaseDetails extends \Google\Collection
     return $this->databaseName;
   }
   /**
-   * Required. The parent database deployment that contains the logical
-   * database.
-   *
-   * @param DatabaseDetailsParentDatabaseDeployment $parentDatabaseDeployment
+   * @param DatabaseDetailsParentDatabaseDeployment
    */
   public function setParentDatabaseDeployment(DatabaseDetailsParentDatabaseDeployment $parentDatabaseDeployment)
   {
@@ -87,9 +76,7 @@ class DatabaseDetails extends \Google\Collection
     return $this->parentDatabaseDeployment;
   }
   /**
-   * Optional. The database schemas.
-   *
-   * @param DatabaseSchema[] $schemas
+   * @param DatabaseSchema[]
    */
   public function setSchemas($schemas)
   {

@@ -19,50 +19,18 @@ namespace Google\Service\Bigquery;
 
 class JoinRestrictionPolicy extends \Google\Collection
 {
-  /**
-   * A join is neither required nor restricted on any column. Default value.
-   */
-  public const JOIN_CONDITION_JOIN_CONDITION_UNSPECIFIED = 'JOIN_CONDITION_UNSPECIFIED';
-  /**
-   * A join is required on at least one of the specified columns.
-   */
-  public const JOIN_CONDITION_JOIN_ANY = 'JOIN_ANY';
-  /**
-   * A join is required on all specified columns.
-   */
-  public const JOIN_CONDITION_JOIN_ALL = 'JOIN_ALL';
-  /**
-   * A join is not required, but if present it is only permitted on
-   * 'join_allowed_columns'
-   */
-  public const JOIN_CONDITION_JOIN_NOT_REQUIRED = 'JOIN_NOT_REQUIRED';
-  /**
-   * Joins are blocked for all queries.
-   */
-  public const JOIN_CONDITION_JOIN_BLOCKED = 'JOIN_BLOCKED';
   protected $collection_key = 'joinAllowedColumns';
   /**
-   * Optional. The only columns that joins are allowed on. This field is must be
-   * specified for join_conditions JOIN_ANY and JOIN_ALL and it cannot be set
-   * for JOIN_BLOCKED.
-   *
    * @var string[]
    */
   public $joinAllowedColumns;
   /**
-   * Optional. Specifies if a join is required or not on queries for the view.
-   * Default is JOIN_CONDITION_UNSPECIFIED.
-   *
    * @var string
    */
   public $joinCondition;
 
   /**
-   * Optional. The only columns that joins are allowed on. This field is must be
-   * specified for join_conditions JOIN_ANY and JOIN_ALL and it cannot be set
-   * for JOIN_BLOCKED.
-   *
-   * @param string[] $joinAllowedColumns
+   * @param string[]
    */
   public function setJoinAllowedColumns($joinAllowedColumns)
   {
@@ -76,20 +44,14 @@ class JoinRestrictionPolicy extends \Google\Collection
     return $this->joinAllowedColumns;
   }
   /**
-   * Optional. Specifies if a join is required or not on queries for the view.
-   * Default is JOIN_CONDITION_UNSPECIFIED.
-   *
-   * Accepted values: JOIN_CONDITION_UNSPECIFIED, JOIN_ANY, JOIN_ALL,
-   * JOIN_NOT_REQUIRED, JOIN_BLOCKED
-   *
-   * @param self::JOIN_CONDITION_* $joinCondition
+   * @param string
    */
   public function setJoinCondition($joinCondition)
   {
     $this->joinCondition = $joinCondition;
   }
   /**
-   * @return self::JOIN_CONDITION_*
+   * @return string
    */
   public function getJoinCondition()
   {

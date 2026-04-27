@@ -20,30 +20,16 @@ namespace Google\Service\Contactcenterinsights;
 class GoogleCloudContactcenterinsightsV1BulkDeleteFeedbackLabelsRequest extends \Google\Model
 {
   /**
-   * Optional. A filter to reduce results to a specific subset. Supports
-   * disjunctions (OR) and conjunctions (AND). Supported fields: *
-   * `issue_model_id` * `qa_question_id` * `qa_scorecard_id` * `min_create_time`
-   * * `max_create_time` * `min_update_time` * `max_update_time` *
-   * `feedback_label_type`: QUALITY_AI, TOPIC_MODELING
-   *
    * @var string
    */
   public $filter;
   /**
-   * Required. The parent resource for new feedback labels.
-   *
    * @var string
    */
   public $parent;
 
   /**
-   * Optional. A filter to reduce results to a specific subset. Supports
-   * disjunctions (OR) and conjunctions (AND). Supported fields: *
-   * `issue_model_id` * `qa_question_id` * `qa_scorecard_id` * `min_create_time`
-   * * `max_create_time` * `min_update_time` * `max_update_time` *
-   * `feedback_label_type`: QUALITY_AI, TOPIC_MODELING
-   *
-   * @param string $filter
+   * @param string
    */
   public function setFilter($filter)
   {
@@ -57,9 +43,7 @@ class GoogleCloudContactcenterinsightsV1BulkDeleteFeedbackLabelsRequest extends 
     return $this->filter;
   }
   /**
-   * Required. The parent resource for new feedback labels.
-   *
-   * @param string $parent
+   * @param string
    */
   public function setParent($parent)
   {

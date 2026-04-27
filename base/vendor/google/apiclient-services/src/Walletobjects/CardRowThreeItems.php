@@ -27,10 +27,7 @@ class CardRowThreeItems extends \Google\Model
   protected $startItemDataType = '';
 
   /**
-   * The item to be displayed at the end of the row. This item will be aligned
-   * to the right.
-   *
-   * @param TemplateItem $endItem
+   * @param TemplateItem
    */
   public function setEndItem(TemplateItem $endItem)
   {
@@ -44,10 +41,7 @@ class CardRowThreeItems extends \Google\Model
     return $this->endItem;
   }
   /**
-   * The item to be displayed in the middle of the row. This item will be
-   * centered between the start and end items.
-   *
-   * @param TemplateItem $middleItem
+   * @param TemplateItem
    */
   public function setMiddleItem(TemplateItem $middleItem)
   {
@@ -61,10 +55,7 @@ class CardRowThreeItems extends \Google\Model
     return $this->middleItem;
   }
   /**
-   * The item to be displayed at the start of the row. This item will be aligned
-   * to the left.
-   *
-   * @param TemplateItem $startItem
+   * @param TemplateItem
    */
   public function setStartItem(TemplateItem $startItem)
   {

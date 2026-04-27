@@ -24,9 +24,7 @@ class ImagesDeleteAllResponse extends \Google\Collection
   protected $deletedDataType = 'array';
 
   /**
-   * The deleted images.
-   *
-   * @param Image[] $deleted
+   * @param Image[]
    */
   public function setDeleted($deleted)
   {

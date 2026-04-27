@@ -20,46 +20,32 @@ namespace Google\Service\Config;
 class LockInfo extends \Google\Model
 {
   /**
-   * Time that the lock was taken.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Extra information to store with the lock, provided by the caller.
-   *
    * @var string
    */
   public $info;
   /**
-   * Unique ID for the lock to be overridden with generation ID in the backend.
-   *
    * @var string
    */
   public $lockId;
   /**
-   * Terraform operation, provided by the caller.
-   *
    * @var string
    */
   public $operation;
   /**
-   * Terraform version
-   *
    * @var string
    */
   public $version;
   /**
-   * user@hostname when available
-   *
    * @var string
    */
   public $who;
 
   /**
-   * Time that the lock was taken.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -73,9 +59,7 @@ class LockInfo extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Extra information to store with the lock, provided by the caller.
-   *
-   * @param string $info
+   * @param string
    */
   public function setInfo($info)
   {
@@ -89,9 +73,7 @@ class LockInfo extends \Google\Model
     return $this->info;
   }
   /**
-   * Unique ID for the lock to be overridden with generation ID in the backend.
-   *
-   * @param string $lockId
+   * @param string
    */
   public function setLockId($lockId)
   {
@@ -105,9 +87,7 @@ class LockInfo extends \Google\Model
     return $this->lockId;
   }
   /**
-   * Terraform operation, provided by the caller.
-   *
-   * @param string $operation
+   * @param string
    */
   public function setOperation($operation)
   {
@@ -121,9 +101,7 @@ class LockInfo extends \Google\Model
     return $this->operation;
   }
   /**
-   * Terraform version
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {
@@ -137,9 +115,7 @@ class LockInfo extends \Google\Model
     return $this->version;
   }
   /**
-   * user@hostname when available
-   *
-   * @param string $who
+   * @param string
    */
   public function setWho($who)
   {

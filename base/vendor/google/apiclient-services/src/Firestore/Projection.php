@@ -24,10 +24,7 @@ class Projection extends \Google\Collection
   protected $fieldsDataType = 'array';
 
   /**
-   * The fields to return. If empty, all fields are returned. To only return the
-   * name of the document, use `['__name__']`.
-   *
-   * @param FieldReference[] $fields
+   * @param FieldReference[]
    */
   public function setFields($fields)
   {

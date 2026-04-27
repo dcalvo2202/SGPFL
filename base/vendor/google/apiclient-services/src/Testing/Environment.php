@@ -25,9 +25,7 @@ class Environment extends \Google\Model
   protected $iosDeviceDataType = '';
 
   /**
-   * An Android device which must be used with an Android test.
-   *
-   * @param AndroidDevice $androidDevice
+   * @param AndroidDevice
    */
   public function setAndroidDevice(AndroidDevice $androidDevice)
   {
@@ -41,9 +39,7 @@ class Environment extends \Google\Model
     return $this->androidDevice;
   }
   /**
-   * An iOS device which must be used with an iOS test.
-   *
-   * @param IosDevice $iosDevice
+   * @param IosDevice
    */
   public function setIosDevice(IosDevice $iosDevice)
   {

@@ -25,10 +25,7 @@ class AsymmetricAutoscalingOption extends \Google\Model
   protected $replicaSelectionDataType = '';
 
   /**
-   * Optional. Overrides applied to the top-level autoscaling configuration for
-   * the selected replicas.
-   *
-   * @param AutoscalingConfigOverrides $overrides
+   * @param AutoscalingConfigOverrides
    */
   public function setOverrides(AutoscalingConfigOverrides $overrides)
   {
@@ -42,10 +39,7 @@ class AsymmetricAutoscalingOption extends \Google\Model
     return $this->overrides;
   }
   /**
-   * Required. Selects the replicas to which this AsymmetricAutoscalingOption
-   * applies. Only read-only replicas are supported.
-   *
-   * @param InstanceReplicaSelection $replicaSelection
+   * @param InstanceReplicaSelection
    */
   public function setReplicaSelection(InstanceReplicaSelection $replicaSelection)
   {

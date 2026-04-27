@@ -20,91 +20,50 @@ namespace Google\Service\Directory;
 class OrgUnit extends \Google\Model
 {
   /**
-   * This field is deprecated and setting its value has no effect.
-   *
-   * @deprecated
    * @var bool
    */
   public $blockInheritance;
   /**
-   * Description of the organizational unit.
-   *
    * @var string
    */
   public $description;
   /**
-   * ETag of the resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * The type of the API resource. For Orgunits resources, the value is
-   * `admin#directory#orgUnit`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The organizational unit's path name. For example, an organizational unit's
-   * name within the /corp/support/sales_support parent path is sales_support.
-   * Required.
-   *
    * @var string
    */
   public $name;
   /**
-   * The unique ID of the organizational unit.
-   *
    * @var string
    */
   public $orgUnitId;
   /**
-   * The full path to the organizational unit. The `orgUnitPath` is a derived
-   * property. When listed, it is derived from `parentOrgunitPath` and
-   * organizational unit's `name`. For example, for an organizational unit named
-   * 'apps' under parent organization '/engineering', the orgUnitPath is
-   * '/engineering/apps'. In order to edit an `orgUnitPath`, either update the
-   * name of the organization or the `parentOrgunitPath`. A user's
-   * organizational unit determines which Google Workspace services the user has
-   * access to. If the user is moved to a new organization, the user's access
-   * changes. For more information about organization structures, see the
-   * [administration help center](https://support.google.com/a/answer/4352075).
-   * For more information about moving a user to a different organization, see
-   * [Update a user](https://developers.google.com/workspace/admin/directory/v1/
-   * guides/manage-users.html#update_user).
-   *
    * @var string
    */
   public $orgUnitPath;
   /**
-   * The unique ID of the parent organizational unit. Required, unless
-   * `parentOrgUnitPath` is set.
-   *
    * @var string
    */
   public $parentOrgUnitId;
   /**
-   * The organizational unit's parent path. For example, /corp/sales is the
-   * parent path for /corp/sales/sales_support organizational unit. Required,
-   * unless `parentOrgUnitId` is set.
-   *
    * @var string
    */
   public $parentOrgUnitPath;
 
   /**
-   * This field is deprecated and setting its value has no effect.
-   *
-   * @deprecated
-   * @param bool $blockInheritance
+   * @param bool
    */
   public function setBlockInheritance($blockInheritance)
   {
     $this->blockInheritance = $blockInheritance;
   }
   /**
-   * @deprecated
    * @return bool
    */
   public function getBlockInheritance()
@@ -112,9 +71,7 @@ class OrgUnit extends \Google\Model
     return $this->blockInheritance;
   }
   /**
-   * Description of the organizational unit.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -128,9 +85,7 @@ class OrgUnit extends \Google\Model
     return $this->description;
   }
   /**
-   * ETag of the resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -144,10 +99,7 @@ class OrgUnit extends \Google\Model
     return $this->etag;
   }
   /**
-   * The type of the API resource. For Orgunits resources, the value is
-   * `admin#directory#orgUnit`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -161,11 +113,7 @@ class OrgUnit extends \Google\Model
     return $this->kind;
   }
   /**
-   * The organizational unit's path name. For example, an organizational unit's
-   * name within the /corp/support/sales_support parent path is sales_support.
-   * Required.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -179,9 +127,7 @@ class OrgUnit extends \Google\Model
     return $this->name;
   }
   /**
-   * The unique ID of the organizational unit.
-   *
-   * @param string $orgUnitId
+   * @param string
    */
   public function setOrgUnitId($orgUnitId)
   {
@@ -195,21 +141,7 @@ class OrgUnit extends \Google\Model
     return $this->orgUnitId;
   }
   /**
-   * The full path to the organizational unit. The `orgUnitPath` is a derived
-   * property. When listed, it is derived from `parentOrgunitPath` and
-   * organizational unit's `name`. For example, for an organizational unit named
-   * 'apps' under parent organization '/engineering', the orgUnitPath is
-   * '/engineering/apps'. In order to edit an `orgUnitPath`, either update the
-   * name of the organization or the `parentOrgunitPath`. A user's
-   * organizational unit determines which Google Workspace services the user has
-   * access to. If the user is moved to a new organization, the user's access
-   * changes. For more information about organization structures, see the
-   * [administration help center](https://support.google.com/a/answer/4352075).
-   * For more information about moving a user to a different organization, see
-   * [Update a user](https://developers.google.com/workspace/admin/directory/v1/
-   * guides/manage-users.html#update_user).
-   *
-   * @param string $orgUnitPath
+   * @param string
    */
   public function setOrgUnitPath($orgUnitPath)
   {
@@ -223,10 +155,7 @@ class OrgUnit extends \Google\Model
     return $this->orgUnitPath;
   }
   /**
-   * The unique ID of the parent organizational unit. Required, unless
-   * `parentOrgUnitPath` is set.
-   *
-   * @param string $parentOrgUnitId
+   * @param string
    */
   public function setParentOrgUnitId($parentOrgUnitId)
   {
@@ -240,11 +169,7 @@ class OrgUnit extends \Google\Model
     return $this->parentOrgUnitId;
   }
   /**
-   * The organizational unit's parent path. For example, /corp/sales is the
-   * parent path for /corp/sales/sales_support organizational unit. Required,
-   * unless `parentOrgUnitId` is set.
-   *
-   * @param string $parentOrgUnitPath
+   * @param string
    */
   public function setParentOrgUnitPath($parentOrgUnitPath)
   {

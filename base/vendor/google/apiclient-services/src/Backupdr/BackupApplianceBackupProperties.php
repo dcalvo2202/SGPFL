@@ -20,37 +20,24 @@ namespace Google\Service\Backupdr;
 class BackupApplianceBackupProperties extends \Google\Model
 {
   /**
-   * Output only. The time when this backup object was finalized (if none,
-   * backup is not finalized).
-   *
    * @var string
    */
   public $finalizeTime;
   /**
-   * Output only. The numeric generation ID of the backup (monotonically
-   * increasing).
-   *
    * @var int
    */
   public $generationId;
   /**
-   * Optional. The latest timestamp of data available in this Backup.
-   *
    * @var string
    */
   public $recoveryRangeEndTime;
   /**
-   * Optional. The earliest timestamp of data available in this Backup.
-   *
    * @var string
    */
   public $recoveryRangeStartTime;
 
   /**
-   * Output only. The time when this backup object was finalized (if none,
-   * backup is not finalized).
-   *
-   * @param string $finalizeTime
+   * @param string
    */
   public function setFinalizeTime($finalizeTime)
   {
@@ -64,10 +51,7 @@ class BackupApplianceBackupProperties extends \Google\Model
     return $this->finalizeTime;
   }
   /**
-   * Output only. The numeric generation ID of the backup (monotonically
-   * increasing).
-   *
-   * @param int $generationId
+   * @param int
    */
   public function setGenerationId($generationId)
   {
@@ -81,9 +65,7 @@ class BackupApplianceBackupProperties extends \Google\Model
     return $this->generationId;
   }
   /**
-   * Optional. The latest timestamp of data available in this Backup.
-   *
-   * @param string $recoveryRangeEndTime
+   * @param string
    */
   public function setRecoveryRangeEndTime($recoveryRangeEndTime)
   {
@@ -97,9 +79,7 @@ class BackupApplianceBackupProperties extends \Google\Model
     return $this->recoveryRangeEndTime;
   }
   /**
-   * Optional. The earliest timestamp of data available in this Backup.
-   *
-   * @param string $recoveryRangeStartTime
+   * @param string
    */
   public function setRecoveryRangeStartTime($recoveryRangeStartTime)
   {

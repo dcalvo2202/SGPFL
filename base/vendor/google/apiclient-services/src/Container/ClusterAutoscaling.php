@@ -19,59 +19,18 @@ namespace Google\Service\Container;
 
 class ClusterAutoscaling extends \Google\Collection
 {
-  /**
-   * Use default configuration.
-   */
-  public const AUTOPILOT_GENERAL_PROFILE_AUTOPILOT_GENERAL_PROFILE_UNSPECIFIED = 'AUTOPILOT_GENERAL_PROFILE_UNSPECIFIED';
-  /**
-   * Avoid extra IP consumption.
-   */
-  public const AUTOPILOT_GENERAL_PROFILE_NO_PERFORMANCE = 'NO_PERFORMANCE';
-  /**
-   * Use default configuration.
-   */
-  public const AUTOPILOT_GENERAL_PROFILE_NONE = 'NONE';
-  /**
-   * No change to autoscaling configuration.
-   */
-  public const AUTOSCALING_PROFILE_PROFILE_UNSPECIFIED = 'PROFILE_UNSPECIFIED';
-  /**
-   * Prioritize optimizing utilization of resources.
-   */
-  public const AUTOSCALING_PROFILE_OPTIMIZE_UTILIZATION = 'OPTIMIZE_UTILIZATION';
-  /**
-   * Use default (balanced) autoscaling configuration.
-   */
-  public const AUTOSCALING_PROFILE_BALANCED = 'BALANCED';
   protected $collection_key = 'resourceLimits';
   /**
-   * Autopilot general profile for the cluster, which defines the configuration
-   * for the cluster.
-   *
-   * @var string
-   */
-  public $autopilotGeneralProfile;
-  /**
-   * The list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * NodePool's nodes can be created by NAP.
-   *
    * @var string[]
    */
   public $autoprovisioningLocations;
   protected $autoprovisioningNodePoolDefaultsType = AutoprovisioningNodePoolDefaults::class;
   protected $autoprovisioningNodePoolDefaultsDataType = '';
   /**
-   * Defines autoscaling behaviour.
-   *
    * @var string
    */
   public $autoscalingProfile;
-  protected $defaultComputeClassConfigType = DefaultComputeClassConfig::class;
-  protected $defaultComputeClassConfigDataType = '';
   /**
-   * Enables automatic node pool creation and deletion.
-   *
    * @var bool
    */
   public $enableNodeAutoprovisioning;
@@ -79,31 +38,7 @@ class ClusterAutoscaling extends \Google\Collection
   protected $resourceLimitsDataType = 'array';
 
   /**
-   * Autopilot general profile for the cluster, which defines the configuration
-   * for the cluster.
-   *
-   * Accepted values: AUTOPILOT_GENERAL_PROFILE_UNSPECIFIED, NO_PERFORMANCE,
-   * NONE
-   *
-   * @param self::AUTOPILOT_GENERAL_PROFILE_* $autopilotGeneralProfile
-   */
-  public function setAutopilotGeneralProfile($autopilotGeneralProfile)
-  {
-    $this->autopilotGeneralProfile = $autopilotGeneralProfile;
-  }
-  /**
-   * @return self::AUTOPILOT_GENERAL_PROFILE_*
-   */
-  public function getAutopilotGeneralProfile()
-  {
-    return $this->autopilotGeneralProfile;
-  }
-  /**
-   * The list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * NodePool's nodes can be created by NAP.
-   *
-   * @param string[] $autoprovisioningLocations
+   * @param string[]
    */
   public function setAutoprovisioningLocations($autoprovisioningLocations)
   {
@@ -117,10 +52,7 @@ class ClusterAutoscaling extends \Google\Collection
     return $this->autoprovisioningLocations;
   }
   /**
-   * AutoprovisioningNodePoolDefaults contains defaults for a node pool created
-   * by NAP.
-   *
-   * @param AutoprovisioningNodePoolDefaults $autoprovisioningNodePoolDefaults
+   * @param AutoprovisioningNodePoolDefaults
    */
   public function setAutoprovisioningNodePoolDefaults(AutoprovisioningNodePoolDefaults $autoprovisioningNodePoolDefaults)
   {
@@ -134,43 +66,21 @@ class ClusterAutoscaling extends \Google\Collection
     return $this->autoprovisioningNodePoolDefaults;
   }
   /**
-   * Defines autoscaling behaviour.
-   *
-   * Accepted values: PROFILE_UNSPECIFIED, OPTIMIZE_UTILIZATION, BALANCED
-   *
-   * @param self::AUTOSCALING_PROFILE_* $autoscalingProfile
+   * @param string
    */
   public function setAutoscalingProfile($autoscalingProfile)
   {
     $this->autoscalingProfile = $autoscalingProfile;
   }
   /**
-   * @return self::AUTOSCALING_PROFILE_*
+   * @return string
    */
   public function getAutoscalingProfile()
   {
     return $this->autoscalingProfile;
   }
   /**
-   * Default compute class is a configuration for default compute class.
-   *
-   * @param DefaultComputeClassConfig $defaultComputeClassConfig
-   */
-  public function setDefaultComputeClassConfig(DefaultComputeClassConfig $defaultComputeClassConfig)
-  {
-    $this->defaultComputeClassConfig = $defaultComputeClassConfig;
-  }
-  /**
-   * @return DefaultComputeClassConfig
-   */
-  public function getDefaultComputeClassConfig()
-  {
-    return $this->defaultComputeClassConfig;
-  }
-  /**
-   * Enables automatic node pool creation and deletion.
-   *
-   * @param bool $enableNodeAutoprovisioning
+   * @param bool
    */
   public function setEnableNodeAutoprovisioning($enableNodeAutoprovisioning)
   {
@@ -184,10 +94,7 @@ class ClusterAutoscaling extends \Google\Collection
     return $this->enableNodeAutoprovisioning;
   }
   /**
-   * Contains global constraints regarding minimum and maximum amount of
-   * resources in the cluster.
-   *
-   * @param ResourceLimit[] $resourceLimits
+   * @param ResourceLimit[]
    */
   public function setResourceLimits($resourceLimits)
   {

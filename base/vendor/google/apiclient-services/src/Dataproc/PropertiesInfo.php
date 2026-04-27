@@ -23,9 +23,7 @@ class PropertiesInfo extends \Google\Model
   protected $autotuningPropertiesDataType = 'map';
 
   /**
-   * Output only. Properties set by autotuning engine.
-   *
-   * @param ValueInfo[] $autotuningProperties
+   * @param ValueInfo[]
    */
   public function setAutotuningProperties($autotuningProperties)
   {

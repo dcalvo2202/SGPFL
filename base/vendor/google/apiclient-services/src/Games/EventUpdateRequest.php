@@ -20,29 +20,20 @@ namespace Google\Service\Games;
 class EventUpdateRequest extends \Google\Model
 {
   /**
-   * The ID of the event being modified in this update.
-   *
    * @var string
    */
   public $definitionId;
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#eventUpdateRequest`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The number of times this event occurred in this time period.
-   *
    * @var string
    */
   public $updateCount;
 
   /**
-   * The ID of the event being modified in this update.
-   *
-   * @param string $definitionId
+   * @param string
    */
   public function setDefinitionId($definitionId)
   {
@@ -56,10 +47,7 @@ class EventUpdateRequest extends \Google\Model
     return $this->definitionId;
   }
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#eventUpdateRequest`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -73,9 +61,7 @@ class EventUpdateRequest extends \Google\Model
     return $this->kind;
   }
   /**
-   * The number of times this event occurred in this time period.
-   *
-   * @param string $updateCount
+   * @param string
    */
   public function setUpdateCount($updateCount)
   {

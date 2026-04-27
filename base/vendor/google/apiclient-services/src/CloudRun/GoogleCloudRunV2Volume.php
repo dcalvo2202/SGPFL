@@ -26,8 +26,6 @@ class GoogleCloudRunV2Volume extends \Google\Model
   protected $gcsType = GoogleCloudRunV2GCSVolumeSource::class;
   protected $gcsDataType = '';
   /**
-   * Required. Volume's name.
-   *
    * @var string
    */
   public $name;
@@ -37,11 +35,7 @@ class GoogleCloudRunV2Volume extends \Google\Model
   protected $secretDataType = '';
 
   /**
-   * For Cloud SQL volumes, contains the specific instances that should be
-   * mounted. Visit https://cloud.google.com/sql/docs/mysql/connect-run for more
-   * information on how to connect Cloud SQL and Cloud Run.
-   *
-   * @param GoogleCloudRunV2CloudSqlInstance $cloudSqlInstance
+   * @param GoogleCloudRunV2CloudSqlInstance
    */
   public function setCloudSqlInstance(GoogleCloudRunV2CloudSqlInstance $cloudSqlInstance)
   {
@@ -55,9 +49,7 @@ class GoogleCloudRunV2Volume extends \Google\Model
     return $this->cloudSqlInstance;
   }
   /**
-   * Ephemeral storage used as a shared volume.
-   *
-   * @param GoogleCloudRunV2EmptyDirVolumeSource $emptyDir
+   * @param GoogleCloudRunV2EmptyDirVolumeSource
    */
   public function setEmptyDir(GoogleCloudRunV2EmptyDirVolumeSource $emptyDir)
   {
@@ -71,9 +63,7 @@ class GoogleCloudRunV2Volume extends \Google\Model
     return $this->emptyDir;
   }
   /**
-   * Persistent storage backed by a Google Cloud Storage bucket.
-   *
-   * @param GoogleCloudRunV2GCSVolumeSource $gcs
+   * @param GoogleCloudRunV2GCSVolumeSource
    */
   public function setGcs(GoogleCloudRunV2GCSVolumeSource $gcs)
   {
@@ -87,9 +77,7 @@ class GoogleCloudRunV2Volume extends \Google\Model
     return $this->gcs;
   }
   /**
-   * Required. Volume's name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -103,9 +91,7 @@ class GoogleCloudRunV2Volume extends \Google\Model
     return $this->name;
   }
   /**
-   * For NFS Voumes, contains the path to the nfs Volume
-   *
-   * @param GoogleCloudRunV2NFSVolumeSource $nfs
+   * @param GoogleCloudRunV2NFSVolumeSource
    */
   public function setNfs(GoogleCloudRunV2NFSVolumeSource $nfs)
   {
@@ -119,9 +105,7 @@ class GoogleCloudRunV2Volume extends \Google\Model
     return $this->nfs;
   }
   /**
-   * Secret represents a secret that should populate this volume.
-   *
-   * @param GoogleCloudRunV2SecretVolumeSource $secret
+   * @param GoogleCloudRunV2SecretVolumeSource
    */
   public function setSecret(GoogleCloudRunV2SecretVolumeSource $secret)
   {

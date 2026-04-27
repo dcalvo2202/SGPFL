@@ -20,71 +20,48 @@ namespace Google\Service\Storage;
 class HmacKeyMetadata extends \Google\Model
 {
   /**
-   * The ID of the HMAC Key.
-   *
    * @var string
    */
   public $accessId;
   /**
-   * HTTP 1.1 Entity tag for the HMAC key.
-   *
    * @var string
    */
   public $etag;
   /**
-   * The ID of the HMAC key, including the Project ID and the Access ID.
-   *
    * @var string
    */
   public $id;
   /**
-   * The kind of item this is. For HMAC Key metadata, this is always
-   * storage#hmacKeyMetadata.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Project ID owning the service account to which the key authenticates.
-   *
    * @var string
    */
   public $projectId;
   /**
-   * The link to this resource.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * The email address of the key's associated service account.
-   *
    * @var string
    */
   public $serviceAccountEmail;
   /**
-   * The state of the key. Can be one of ACTIVE, INACTIVE, or DELETED.
-   *
    * @var string
    */
   public $state;
   /**
-   * The creation time of the HMAC key in RFC 3339 format.
-   *
    * @var string
    */
   public $timeCreated;
   /**
-   * The last modification time of the HMAC key metadata in RFC 3339 format.
-   *
    * @var string
    */
   public $updated;
 
   /**
-   * The ID of the HMAC Key.
-   *
-   * @param string $accessId
+   * @param string
    */
   public function setAccessId($accessId)
   {
@@ -98,9 +75,7 @@ class HmacKeyMetadata extends \Google\Model
     return $this->accessId;
   }
   /**
-   * HTTP 1.1 Entity tag for the HMAC key.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -114,9 +89,7 @@ class HmacKeyMetadata extends \Google\Model
     return $this->etag;
   }
   /**
-   * The ID of the HMAC key, including the Project ID and the Access ID.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -130,10 +103,7 @@ class HmacKeyMetadata extends \Google\Model
     return $this->id;
   }
   /**
-   * The kind of item this is. For HMAC Key metadata, this is always
-   * storage#hmacKeyMetadata.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -147,9 +117,7 @@ class HmacKeyMetadata extends \Google\Model
     return $this->kind;
   }
   /**
-   * Project ID owning the service account to which the key authenticates.
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {
@@ -163,9 +131,7 @@ class HmacKeyMetadata extends \Google\Model
     return $this->projectId;
   }
   /**
-   * The link to this resource.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -179,9 +145,7 @@ class HmacKeyMetadata extends \Google\Model
     return $this->selfLink;
   }
   /**
-   * The email address of the key's associated service account.
-   *
-   * @param string $serviceAccountEmail
+   * @param string
    */
   public function setServiceAccountEmail($serviceAccountEmail)
   {
@@ -195,9 +159,7 @@ class HmacKeyMetadata extends \Google\Model
     return $this->serviceAccountEmail;
   }
   /**
-   * The state of the key. Can be one of ACTIVE, INACTIVE, or DELETED.
-   *
-   * @param string $state
+   * @param string
    */
   public function setState($state)
   {
@@ -211,9 +173,7 @@ class HmacKeyMetadata extends \Google\Model
     return $this->state;
   }
   /**
-   * The creation time of the HMAC key in RFC 3339 format.
-   *
-   * @param string $timeCreated
+   * @param string
    */
   public function setTimeCreated($timeCreated)
   {
@@ -227,9 +187,7 @@ class HmacKeyMetadata extends \Google\Model
     return $this->timeCreated;
   }
   /**
-   * The last modification time of the HMAC key metadata in RFC 3339 format.
-   *
-   * @param string $updated
+   * @param string
    */
   public function setUpdated($updated)
   {

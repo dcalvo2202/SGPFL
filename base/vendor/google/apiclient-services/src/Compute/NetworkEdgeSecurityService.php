@@ -20,90 +20,48 @@ namespace Google\Service\Compute;
 class NetworkEdgeSecurityService extends \Google\Model
 {
   /**
-   * Output only. [Output Only] Creation timestamp inRFC3339 text format.
-   *
    * @var string
    */
   public $creationTimestamp;
   /**
-   * An optional description of this resource. Provide this property when you
-   * create the resource.
-   *
    * @var string
    */
   public $description;
   /**
-   * Fingerprint of this resource. A hash of the contents stored in this object.
-   * This field is used in optimistic locking. This field will be ignored when
-   * inserting a NetworkEdgeSecurityService. An up-to-date fingerprint must be
-   * provided in order to update the NetworkEdgeSecurityService, otherwise the
-   * request will fail with error412 conditionNotMet.
-   *
-   * To see the latest fingerprint, make a get() request to retrieve a
-   * NetworkEdgeSecurityService.
-   *
    * @var string
    */
   public $fingerprint;
   /**
-   * Output only. [Output Only] The unique identifier for the resource. This
-   * identifier is defined by the server.
-   *
    * @var string
    */
   public $id;
   /**
-   * Output only. [Output only] Type of the resource.
-   * Alwayscompute#networkEdgeSecurityService for NetworkEdgeSecurityServices
-   *
    * @var string
    */
   public $kind;
   /**
-   * Name of the resource. Provided by the client when the resource is created.
-   * The name must be 1-63 characters long, and comply withRFC1035.
-   * Specifically, the name must be 1-63 characters long and match the regular
-   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character
-   * must be a lowercase letter, and all following characters must be a dash,
-   * lowercase letter, or digit, except the last character, which cannot be a
-   * dash.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. [Output Only] URL of the region where the resource resides.
-   * You must specify this field as part of the HTTP request URL. It is not
-   * settable as a field in the request body.
-   *
    * @var string
    */
   public $region;
   /**
-   * The resource URL for the network edge security service associated with this
-   * network edge security service.
-   *
    * @var string
    */
   public $securityPolicy;
   /**
-   * Output only. [Output Only] Server-defined URL for the resource.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * Output only. [Output Only] Server-defined URL for this resource with the
-   * resource id.
-   *
    * @var string
    */
   public $selfLinkWithId;
 
   /**
-   * Output only. [Output Only] Creation timestamp inRFC3339 text format.
-   *
-   * @param string $creationTimestamp
+   * @param string
    */
   public function setCreationTimestamp($creationTimestamp)
   {
@@ -117,10 +75,7 @@ class NetworkEdgeSecurityService extends \Google\Model
     return $this->creationTimestamp;
   }
   /**
-   * An optional description of this resource. Provide this property when you
-   * create the resource.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -134,16 +89,7 @@ class NetworkEdgeSecurityService extends \Google\Model
     return $this->description;
   }
   /**
-   * Fingerprint of this resource. A hash of the contents stored in this object.
-   * This field is used in optimistic locking. This field will be ignored when
-   * inserting a NetworkEdgeSecurityService. An up-to-date fingerprint must be
-   * provided in order to update the NetworkEdgeSecurityService, otherwise the
-   * request will fail with error412 conditionNotMet.
-   *
-   * To see the latest fingerprint, make a get() request to retrieve a
-   * NetworkEdgeSecurityService.
-   *
-   * @param string $fingerprint
+   * @param string
    */
   public function setFingerprint($fingerprint)
   {
@@ -157,10 +103,7 @@ class NetworkEdgeSecurityService extends \Google\Model
     return $this->fingerprint;
   }
   /**
-   * Output only. [Output Only] The unique identifier for the resource. This
-   * identifier is defined by the server.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -174,10 +117,7 @@ class NetworkEdgeSecurityService extends \Google\Model
     return $this->id;
   }
   /**
-   * Output only. [Output only] Type of the resource.
-   * Alwayscompute#networkEdgeSecurityService for NetworkEdgeSecurityServices
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -191,15 +131,7 @@ class NetworkEdgeSecurityService extends \Google\Model
     return $this->kind;
   }
   /**
-   * Name of the resource. Provided by the client when the resource is created.
-   * The name must be 1-63 characters long, and comply withRFC1035.
-   * Specifically, the name must be 1-63 characters long and match the regular
-   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character
-   * must be a lowercase letter, and all following characters must be a dash,
-   * lowercase letter, or digit, except the last character, which cannot be a
-   * dash.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -213,11 +145,7 @@ class NetworkEdgeSecurityService extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. [Output Only] URL of the region where the resource resides.
-   * You must specify this field as part of the HTTP request URL. It is not
-   * settable as a field in the request body.
-   *
-   * @param string $region
+   * @param string
    */
   public function setRegion($region)
   {
@@ -231,10 +159,7 @@ class NetworkEdgeSecurityService extends \Google\Model
     return $this->region;
   }
   /**
-   * The resource URL for the network edge security service associated with this
-   * network edge security service.
-   *
-   * @param string $securityPolicy
+   * @param string
    */
   public function setSecurityPolicy($securityPolicy)
   {
@@ -248,9 +173,7 @@ class NetworkEdgeSecurityService extends \Google\Model
     return $this->securityPolicy;
   }
   /**
-   * Output only. [Output Only] Server-defined URL for the resource.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -264,10 +187,7 @@ class NetworkEdgeSecurityService extends \Google\Model
     return $this->selfLink;
   }
   /**
-   * Output only. [Output Only] Server-defined URL for this resource with the
-   * resource id.
-   *
-   * @param string $selfLinkWithId
+   * @param string
    */
   public function setSelfLinkWithId($selfLinkWithId)
   {

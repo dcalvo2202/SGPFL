@@ -19,39 +19,15 @@ namespace Google\Service\CloudAsset;
 
 class TemporalAsset extends \Google\Model
 {
-  /**
-   * prior_asset is not applicable for the current asset.
-   */
-  public const PRIOR_ASSET_STATE_PRIOR_ASSET_STATE_UNSPECIFIED = 'PRIOR_ASSET_STATE_UNSPECIFIED';
-  /**
-   * prior_asset is populated correctly.
-   */
-  public const PRIOR_ASSET_STATE_PRESENT = 'PRESENT';
-  /**
-   * Failed to set prior_asset.
-   */
-  public const PRIOR_ASSET_STATE_INVALID = 'INVALID';
-  /**
-   * Current asset is the first known state.
-   */
-  public const PRIOR_ASSET_STATE_DOES_NOT_EXIST = 'DOES_NOT_EXIST';
-  /**
-   * prior_asset is a deletion.
-   */
-  public const PRIOR_ASSET_STATE_DELETED = 'DELETED';
   protected $assetType = Asset::class;
   protected $assetDataType = '';
   /**
-   * Whether the asset has been deleted or not.
-   *
    * @var bool
    */
   public $deleted;
   protected $priorAssetType = Asset::class;
   protected $priorAssetDataType = '';
   /**
-   * State of prior_asset.
-   *
    * @var string
    */
   public $priorAssetState;
@@ -59,9 +35,7 @@ class TemporalAsset extends \Google\Model
   protected $windowDataType = '';
 
   /**
-   * An asset in Google Cloud.
-   *
-   * @param Asset $asset
+   * @param Asset
    */
   public function setAsset(Asset $asset)
   {
@@ -75,9 +49,7 @@ class TemporalAsset extends \Google\Model
     return $this->asset;
   }
   /**
-   * Whether the asset has been deleted or not.
-   *
-   * @param bool $deleted
+   * @param bool
    */
   public function setDeleted($deleted)
   {
@@ -91,10 +63,7 @@ class TemporalAsset extends \Google\Model
     return $this->deleted;
   }
   /**
-   * Prior copy of the asset. Populated if prior_asset_state is PRESENT.
-   * Currently this is only set for responses in Real-Time Feed.
-   *
-   * @param Asset $priorAsset
+   * @param Asset
    */
   public function setPriorAsset(Asset $priorAsset)
   {
@@ -108,28 +77,21 @@ class TemporalAsset extends \Google\Model
     return $this->priorAsset;
   }
   /**
-   * State of prior_asset.
-   *
-   * Accepted values: PRIOR_ASSET_STATE_UNSPECIFIED, PRESENT, INVALID,
-   * DOES_NOT_EXIST, DELETED
-   *
-   * @param self::PRIOR_ASSET_STATE_* $priorAssetState
+   * @param string
    */
   public function setPriorAssetState($priorAssetState)
   {
     $this->priorAssetState = $priorAssetState;
   }
   /**
-   * @return self::PRIOR_ASSET_STATE_*
+   * @return string
    */
   public function getPriorAssetState()
   {
     return $this->priorAssetState;
   }
   /**
-   * The time window when the asset data and state was observed.
-   *
-   * @param TimeWindow $window
+   * @param TimeWindow
    */
   public function setWindow(TimeWindow $window)
   {

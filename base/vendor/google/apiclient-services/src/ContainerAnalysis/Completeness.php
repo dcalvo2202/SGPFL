@@ -20,32 +20,20 @@ namespace Google\Service\ContainerAnalysis;
 class Completeness extends \Google\Model
 {
   /**
-   * If true, the builder claims that recipe.arguments is complete, meaning that
-   * all external inputs are properly captured in the recipe.
-   *
    * @var bool
    */
   public $arguments;
   /**
-   * If true, the builder claims that recipe.environment is claimed to be
-   * complete.
-   *
    * @var bool
    */
   public $environment;
   /**
-   * If true, the builder claims that materials are complete, usually through
-   * some controls to prevent network access. Sometimes called "hermetic".
-   *
    * @var bool
    */
   public $materials;
 
   /**
-   * If true, the builder claims that recipe.arguments is complete, meaning that
-   * all external inputs are properly captured in the recipe.
-   *
-   * @param bool $arguments
+   * @param bool
    */
   public function setArguments($arguments)
   {
@@ -59,10 +47,7 @@ class Completeness extends \Google\Model
     return $this->arguments;
   }
   /**
-   * If true, the builder claims that recipe.environment is claimed to be
-   * complete.
-   *
-   * @param bool $environment
+   * @param bool
    */
   public function setEnvironment($environment)
   {
@@ -76,10 +61,7 @@ class Completeness extends \Google\Model
     return $this->environment;
   }
   /**
-   * If true, the builder claims that materials are complete, usually through
-   * some controls to prevent network access. Sometimes called "hermetic".
-   *
-   * @param bool $materials
+   * @param bool
    */
   public function setMaterials($materials)
   {

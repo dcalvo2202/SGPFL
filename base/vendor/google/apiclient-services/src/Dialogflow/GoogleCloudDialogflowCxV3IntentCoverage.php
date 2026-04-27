@@ -28,7 +28,7 @@ class GoogleCloudDialogflowCxV3IntentCoverage extends \Google\Collection
   protected $intentsDataType = 'array';
 
   /**
-   * @param float $coverageScore
+   * @param float
    */
   public function setCoverageScore($coverageScore)
   {
@@ -42,7 +42,7 @@ class GoogleCloudDialogflowCxV3IntentCoverage extends \Google\Collection
     return $this->coverageScore;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3IntentCoverageIntent[] $intents
+   * @param GoogleCloudDialogflowCxV3IntentCoverageIntent[]
    */
   public function setIntents($intents)
   {

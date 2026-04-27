@@ -21,9 +21,6 @@ class GoogleCloudChannelV1Row extends \Google\Collection
 {
   protected $collection_key = 'values';
   /**
-   * The key for the partition this row belongs to. This field is empty if the
-   * report is not partitioned.
-   *
    * @var string
    */
   public $partitionKey;
@@ -31,10 +28,7 @@ class GoogleCloudChannelV1Row extends \Google\Collection
   protected $valuesDataType = 'array';
 
   /**
-   * The key for the partition this row belongs to. This field is empty if the
-   * report is not partitioned.
-   *
-   * @param string $partitionKey
+   * @param string
    */
   public function setPartitionKey($partitionKey)
   {
@@ -48,9 +42,7 @@ class GoogleCloudChannelV1Row extends \Google\Collection
     return $this->partitionKey;
   }
   /**
-   * The list of values in the row.
-   *
-   * @param GoogleCloudChannelV1ReportValue[] $values
+   * @param GoogleCloudChannelV1ReportValue[]
    */
   public function setValues($values)
   {

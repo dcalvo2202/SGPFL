@@ -20,36 +20,24 @@ namespace Google\Service\Classroom;
 class Form extends \Google\Model
 {
   /**
-   * URL of the form.
-   *
    * @var string
    */
   public $formUrl;
   /**
-   * URL of the form responses document. Only set if responses have been
-   * recorded and only when the requesting user is an editor of the form. Read-
-   * only.
-   *
    * @var string
    */
   public $responseUrl;
   /**
-   * URL of a thumbnail image of the Form. Read-only.
-   *
    * @var string
    */
   public $thumbnailUrl;
   /**
-   * Title of the Form. Read-only.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * URL of the form.
-   *
-   * @param string $formUrl
+   * @param string
    */
   public function setFormUrl($formUrl)
   {
@@ -63,11 +51,7 @@ class Form extends \Google\Model
     return $this->formUrl;
   }
   /**
-   * URL of the form responses document. Only set if responses have been
-   * recorded and only when the requesting user is an editor of the form. Read-
-   * only.
-   *
-   * @param string $responseUrl
+   * @param string
    */
   public function setResponseUrl($responseUrl)
   {
@@ -81,9 +65,7 @@ class Form extends \Google\Model
     return $this->responseUrl;
   }
   /**
-   * URL of a thumbnail image of the Form. Read-only.
-   *
-   * @param string $thumbnailUrl
+   * @param string
    */
   public function setThumbnailUrl($thumbnailUrl)
   {
@@ -97,9 +79,7 @@ class Form extends \Google\Model
     return $this->thumbnailUrl;
   }
   /**
-   * Title of the Form. Read-only.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

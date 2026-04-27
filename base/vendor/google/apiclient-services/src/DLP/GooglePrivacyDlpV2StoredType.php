@@ -20,26 +20,16 @@ namespace Google\Service\DLP;
 class GooglePrivacyDlpV2StoredType extends \Google\Model
 {
   /**
-   * Timestamp indicating when the version of the `StoredInfoType` used for
-   * inspection was created. Output-only field, populated by the system.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Resource name of the requested `StoredInfoType`, for example
-   * `organizations/433245324/storedInfoTypes/432452342` or `projects/project-
-   * id/storedInfoTypes/432452342`.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Timestamp indicating when the version of the `StoredInfoType` used for
-   * inspection was created. Output-only field, populated by the system.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -53,11 +43,7 @@ class GooglePrivacyDlpV2StoredType extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Resource name of the requested `StoredInfoType`, for example
-   * `organizations/433245324/storedInfoTypes/432452342` or `projects/project-
-   * id/storedInfoTypes/432452342`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

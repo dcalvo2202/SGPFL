@@ -20,8 +20,6 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1FetchFeatureValuesResponseFeatureNameValuePairListFeatureNameValuePair extends \Google\Model
 {
   /**
-   * Feature short name.
-   *
    * @var string
    */
   public $name;
@@ -29,9 +27,7 @@ class GoogleCloudAiplatformV1FetchFeatureValuesResponseFeatureNameValuePairListF
   protected $valueDataType = '';
 
   /**
-   * Feature short name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -45,9 +41,7 @@ class GoogleCloudAiplatformV1FetchFeatureValuesResponseFeatureNameValuePairListF
     return $this->name;
   }
   /**
-   * Feature value.
-   *
-   * @param GoogleCloudAiplatformV1FeatureValue $value
+   * @param GoogleCloudAiplatformV1FeatureValue
    */
   public function setValue(GoogleCloudAiplatformV1FeatureValue $value)
   {

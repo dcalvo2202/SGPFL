@@ -20,22 +20,16 @@ namespace Google\Service\Docs;
 class SizeSuggestionState extends \Google\Model
 {
   /**
-   * Indicates if there was a suggested change to height.
-   *
    * @var bool
    */
   public $heightSuggested;
   /**
-   * Indicates if there was a suggested change to width.
-   *
    * @var bool
    */
   public $widthSuggested;
 
   /**
-   * Indicates if there was a suggested change to height.
-   *
-   * @param bool $heightSuggested
+   * @param bool
    */
   public function setHeightSuggested($heightSuggested)
   {
@@ -49,9 +43,7 @@ class SizeSuggestionState extends \Google\Model
     return $this->heightSuggested;
   }
   /**
-   * Indicates if there was a suggested change to width.
-   *
-   * @param bool $widthSuggested
+   * @param bool
    */
   public function setWidthSuggested($widthSuggested)
   {

@@ -20,51 +20,24 @@ namespace Google\Service\ChromeManagement;
 class GoogleChromeManagementVersionsV1DeviceInfo extends \Google\Model
 {
   /**
-   * Represents an unspecified device type.
-   */
-  public const DEVICE_TYPE_DEVICE_TYPE_UNSPECIFIED = 'DEVICE_TYPE_UNSPECIFIED';
-  /**
-   * Represents a Chrome browser device.
-   */
-  public const DEVICE_TYPE_CHROME_BROWSER = 'CHROME_BROWSER';
-  /**
-   * Output only. Device ID that identifies the affiliated device on which the
-   * profile exists. If the device type is CHROME_BROWSER, then this represents
-   * a unique Directory API ID of the device that can be used in Admin SDK
-   * Browsers API.
-   *
    * @var string
    */
   public $affiliatedDeviceId;
   /**
-   * Output only. Type of the device on which the profile exists.
-   *
    * @var string
    */
   public $deviceType;
   /**
-   * Output only. Hostname of the device on which the profile exists.
-   *
    * @var string
    */
   public $hostname;
   /**
-   * Output only. Machine name of the device on which the profile exists. On
-   * platforms which do not report the machine name (currently iOS and Android)
-   * this is instead set to the browser's device_id - but note that this is a
-   * different device_id than the |affiliated_device_id|.
-   *
    * @var string
    */
   public $machine;
 
   /**
-   * Output only. Device ID that identifies the affiliated device on which the
-   * profile exists. If the device type is CHROME_BROWSER, then this represents
-   * a unique Directory API ID of the device that can be used in Admin SDK
-   * Browsers API.
-   *
-   * @param string $affiliatedDeviceId
+   * @param string
    */
   public function setAffiliatedDeviceId($affiliatedDeviceId)
   {
@@ -78,27 +51,21 @@ class GoogleChromeManagementVersionsV1DeviceInfo extends \Google\Model
     return $this->affiliatedDeviceId;
   }
   /**
-   * Output only. Type of the device on which the profile exists.
-   *
-   * Accepted values: DEVICE_TYPE_UNSPECIFIED, CHROME_BROWSER
-   *
-   * @param self::DEVICE_TYPE_* $deviceType
+   * @param string
    */
   public function setDeviceType($deviceType)
   {
     $this->deviceType = $deviceType;
   }
   /**
-   * @return self::DEVICE_TYPE_*
+   * @return string
    */
   public function getDeviceType()
   {
     return $this->deviceType;
   }
   /**
-   * Output only. Hostname of the device on which the profile exists.
-   *
-   * @param string $hostname
+   * @param string
    */
   public function setHostname($hostname)
   {
@@ -112,12 +79,7 @@ class GoogleChromeManagementVersionsV1DeviceInfo extends \Google\Model
     return $this->hostname;
   }
   /**
-   * Output only. Machine name of the device on which the profile exists. On
-   * platforms which do not report the machine name (currently iOS and Android)
-   * this is instead set to the browser's device_id - but note that this is a
-   * different device_id than the |affiliated_device_id|.
-   *
-   * @param string $machine
+   * @param string
    */
   public function setMachine($machine)
   {

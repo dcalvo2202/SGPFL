@@ -20,29 +20,16 @@ namespace Google\Service\Games;
 class ScopedPlayerIds extends \Google\Model
 {
   /**
-   * Identifier of the player across all games of the given developer. Every
-   * player has the same developer_player_key in all games of one developer.
-   * Developer player key changes for the game if the game is transferred to
-   * another developer. Note that game_player_id will stay unchanged.
-   *
    * @var string
    */
   public $developerPlayerKey;
   /**
-   * Game-scoped player identifier. This is the same id that is returned in
-   * GetPlayer game_player_id field.
-   *
    * @var string
    */
   public $gamePlayerId;
 
   /**
-   * Identifier of the player across all games of the given developer. Every
-   * player has the same developer_player_key in all games of one developer.
-   * Developer player key changes for the game if the game is transferred to
-   * another developer. Note that game_player_id will stay unchanged.
-   *
-   * @param string $developerPlayerKey
+   * @param string
    */
   public function setDeveloperPlayerKey($developerPlayerKey)
   {
@@ -56,10 +43,7 @@ class ScopedPlayerIds extends \Google\Model
     return $this->developerPlayerKey;
   }
   /**
-   * Game-scoped player identifier. This is the same id that is returned in
-   * GetPlayer game_player_id field.
-   *
-   * @param string $gamePlayerId
+   * @param string
    */
   public function setGamePlayerId($gamePlayerId)
   {

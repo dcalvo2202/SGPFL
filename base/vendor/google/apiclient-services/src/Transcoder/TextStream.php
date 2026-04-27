@@ -21,25 +21,14 @@ class TextStream extends \Google\Collection
 {
   protected $collection_key = 'mapping';
   /**
-   * The codec for this text stream. The default is `webvtt`. Supported text
-   * codecs: - `srt` - `ttml` - `cea608` - `cea708` - `webvtt`
-   *
    * @var string
    */
   public $codec;
   /**
-   * The name for this particular text stream that will be added to the HLS/DASH
-   * manifest. Not supported in MP4 files.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
-   * information, see
-   * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier. Not
-   * supported in MP4 files.
-   *
    * @var string
    */
   public $languageCode;
@@ -47,10 +36,7 @@ class TextStream extends \Google\Collection
   protected $mappingDataType = 'array';
 
   /**
-   * The codec for this text stream. The default is `webvtt`. Supported text
-   * codecs: - `srt` - `ttml` - `cea608` - `cea708` - `webvtt`
-   *
-   * @param string $codec
+   * @param string
    */
   public function setCodec($codec)
   {
@@ -64,10 +50,7 @@ class TextStream extends \Google\Collection
     return $this->codec;
   }
   /**
-   * The name for this particular text stream that will be added to the HLS/DASH
-   * manifest. Not supported in MP4 files.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -81,12 +64,7 @@ class TextStream extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
-   * information, see
-   * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier. Not
-   * supported in MP4 files.
-   *
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {
@@ -100,9 +78,7 @@ class TextStream extends \Google\Collection
     return $this->languageCode;
   }
   /**
-   * The mapping for the JobConfig.edit_list atoms with text EditAtom.inputs.
-   *
-   * @param TextMapping[] $mapping
+   * @param TextMapping[]
    */
   public function setMapping($mapping)
   {

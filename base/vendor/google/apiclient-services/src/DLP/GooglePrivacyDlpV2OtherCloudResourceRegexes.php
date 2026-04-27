@@ -24,11 +24,7 @@ class GooglePrivacyDlpV2OtherCloudResourceRegexes extends \Google\Collection
   protected $patternsDataType = 'array';
 
   /**
-   * A group of regular expression patterns to match against one or more
-   * resources. Maximum of 100 entries. The sum of all regular expression's
-   * length can't exceed 10 KiB.
-   *
-   * @param GooglePrivacyDlpV2OtherCloudResourceRegex[] $patterns
+   * @param GooglePrivacyDlpV2OtherCloudResourceRegex[]
    */
   public function setPatterns($patterns)
   {

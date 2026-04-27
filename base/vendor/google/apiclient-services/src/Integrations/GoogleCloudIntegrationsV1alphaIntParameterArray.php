@@ -21,16 +21,12 @@ class GoogleCloudIntegrationsV1alphaIntParameterArray extends \Google\Collection
 {
   protected $collection_key = 'intValues';
   /**
-   * Integer array.
-   *
    * @var string[]
    */
   public $intValues;
 
   /**
-   * Integer array.
-   *
-   * @param string[] $intValues
+   * @param string[]
    */
   public function setIntValues($intValues)
   {

@@ -23,9 +23,7 @@ class AsyncBatchAnnotateImagesResponse extends \Google\Model
   protected $outputConfigDataType = '';
 
   /**
-   * The output location and metadata from AsyncBatchAnnotateImagesRequest.
-   *
-   * @param OutputConfig $outputConfig
+   * @param OutputConfig
    */
   public function setOutputConfig(OutputConfig $outputConfig)
   {

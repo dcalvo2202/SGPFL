@@ -20,16 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1SchemaVisualInspectionClassificationLabelSavedQueryMetadata extends \Google\Model
 {
   /**
-   * Whether or not the classification label is multi_label.
-   *
    * @var bool
    */
   public $multiLabel;
 
   /**
-   * Whether or not the classification label is multi_label.
-   *
-   * @param bool $multiLabel
+   * @param bool
    */
   public function setMultiLabel($multiLabel)
   {

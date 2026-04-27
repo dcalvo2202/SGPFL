@@ -20,14 +20,10 @@ namespace Google\Service\Bigquery;
 class QueryParameterTypeStructTypes extends \Google\Model
 {
   /**
-   * Optional. Human-oriented description of the field.
-   *
    * @var string
    */
   public $description;
   /**
-   * Optional. The name of this field.
-   *
    * @var string
    */
   public $name;
@@ -35,9 +31,7 @@ class QueryParameterTypeStructTypes extends \Google\Model
   protected $typeDataType = '';
 
   /**
-   * Optional. Human-oriented description of the field.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -51,9 +45,7 @@ class QueryParameterTypeStructTypes extends \Google\Model
     return $this->description;
   }
   /**
-   * Optional. The name of this field.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -67,9 +59,7 @@ class QueryParameterTypeStructTypes extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. The type of this field.
-   *
-   * @param QueryParameterType $type
+   * @param QueryParameterType
    */
   public function setType(QueryParameterType $type)
   {

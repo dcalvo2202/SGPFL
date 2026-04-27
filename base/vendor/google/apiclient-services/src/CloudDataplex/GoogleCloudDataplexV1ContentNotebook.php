@@ -20,33 +20,19 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1ContentNotebook extends \Google\Model
 {
   /**
-   * Kernel Type unspecified.
-   */
-  public const KERNEL_TYPE_KERNEL_TYPE_UNSPECIFIED = 'KERNEL_TYPE_UNSPECIFIED';
-  /**
-   * Python 3 Kernel.
-   */
-  public const KERNEL_TYPE_PYTHON3 = 'PYTHON3';
-  /**
-   * Required. Kernel Type of the notebook.
-   *
    * @var string
    */
   public $kernelType;
 
   /**
-   * Required. Kernel Type of the notebook.
-   *
-   * Accepted values: KERNEL_TYPE_UNSPECIFIED, PYTHON3
-   *
-   * @param self::KERNEL_TYPE_* $kernelType
+   * @param string
    */
   public function setKernelType($kernelType)
   {
     $this->kernelType = $kernelType;
   }
   /**
-   * @return self::KERNEL_TYPE_*
+   * @return string
    */
   public function getKernelType()
   {

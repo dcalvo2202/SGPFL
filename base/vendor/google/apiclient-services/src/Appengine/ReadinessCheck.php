@@ -20,57 +20,36 @@ namespace Google\Service\Appengine;
 class ReadinessCheck extends \Google\Model
 {
   /**
-   * A maximum time limit on application initialization, measured from moment
-   * the application successfully replies to a healthcheck until it is ready to
-   * serve traffic.
-   *
    * @var string
    */
   public $appStartTimeout;
   /**
-   * Interval between health checks.
-   *
    * @var string
    */
   public $checkInterval;
   /**
-   * Number of consecutive failed checks required before removing traffic.
-   *
    * @var string
    */
   public $failureThreshold;
   /**
-   * Host header to send when performing a HTTP Readiness check. Example:
-   * "myapp.appspot.com"
-   *
    * @var string
    */
   public $host;
   /**
-   * The request path.
-   *
    * @var string
    */
   public $path;
   /**
-   * Number of consecutive successful checks required before receiving traffic.
-   *
    * @var string
    */
   public $successThreshold;
   /**
-   * Time before the check is considered failed.
-   *
    * @var string
    */
   public $timeout;
 
   /**
-   * A maximum time limit on application initialization, measured from moment
-   * the application successfully replies to a healthcheck until it is ready to
-   * serve traffic.
-   *
-   * @param string $appStartTimeout
+   * @param string
    */
   public function setAppStartTimeout($appStartTimeout)
   {
@@ -84,9 +63,7 @@ class ReadinessCheck extends \Google\Model
     return $this->appStartTimeout;
   }
   /**
-   * Interval between health checks.
-   *
-   * @param string $checkInterval
+   * @param string
    */
   public function setCheckInterval($checkInterval)
   {
@@ -100,9 +77,7 @@ class ReadinessCheck extends \Google\Model
     return $this->checkInterval;
   }
   /**
-   * Number of consecutive failed checks required before removing traffic.
-   *
-   * @param string $failureThreshold
+   * @param string
    */
   public function setFailureThreshold($failureThreshold)
   {
@@ -116,10 +91,7 @@ class ReadinessCheck extends \Google\Model
     return $this->failureThreshold;
   }
   /**
-   * Host header to send when performing a HTTP Readiness check. Example:
-   * "myapp.appspot.com"
-   *
-   * @param string $host
+   * @param string
    */
   public function setHost($host)
   {
@@ -133,9 +105,7 @@ class ReadinessCheck extends \Google\Model
     return $this->host;
   }
   /**
-   * The request path.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {
@@ -149,9 +119,7 @@ class ReadinessCheck extends \Google\Model
     return $this->path;
   }
   /**
-   * Number of consecutive successful checks required before receiving traffic.
-   *
-   * @param string $successThreshold
+   * @param string
    */
   public function setSuccessThreshold($successThreshold)
   {
@@ -165,9 +133,7 @@ class ReadinessCheck extends \Google\Model
     return $this->successThreshold;
   }
   /**
-   * Time before the check is considered failed.
-   *
-   * @param string $timeout
+   * @param string
    */
   public function setTimeout($timeout)
   {

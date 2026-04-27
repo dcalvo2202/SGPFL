@@ -20,54 +20,36 @@ namespace Google\Service\YouTubeReporting;
 class Report extends \Google\Model
 {
   /**
-   * The date/time when this report was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * The URL from which the report can be downloaded (max. 1000 characters).
-   *
    * @var string
    */
   public $downloadUrl;
   /**
-   * The end of the time period that the report instance covers. The value is
-   * exclusive.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * The server-generated ID of the report.
-   *
    * @var string
    */
   public $id;
   /**
-   * The date/time when the job this report belongs to will expire/expired.
-   *
    * @var string
    */
   public $jobExpireTime;
   /**
-   * The ID of the job that created this report.
-   *
    * @var string
    */
   public $jobId;
   /**
-   * The start of the time period that the report instance covers. The value is
-   * inclusive.
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * The date/time when this report was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -81,9 +63,7 @@ class Report extends \Google\Model
     return $this->createTime;
   }
   /**
-   * The URL from which the report can be downloaded (max. 1000 characters).
-   *
-   * @param string $downloadUrl
+   * @param string
    */
   public function setDownloadUrl($downloadUrl)
   {
@@ -97,10 +77,7 @@ class Report extends \Google\Model
     return $this->downloadUrl;
   }
   /**
-   * The end of the time period that the report instance covers. The value is
-   * exclusive.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -114,9 +91,7 @@ class Report extends \Google\Model
     return $this->endTime;
   }
   /**
-   * The server-generated ID of the report.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -130,9 +105,7 @@ class Report extends \Google\Model
     return $this->id;
   }
   /**
-   * The date/time when the job this report belongs to will expire/expired.
-   *
-   * @param string $jobExpireTime
+   * @param string
    */
   public function setJobExpireTime($jobExpireTime)
   {
@@ -146,9 +119,7 @@ class Report extends \Google\Model
     return $this->jobExpireTime;
   }
   /**
-   * The ID of the job that created this report.
-   *
-   * @param string $jobId
+   * @param string
    */
   public function setJobId($jobId)
   {
@@ -162,10 +133,7 @@ class Report extends \Google\Model
     return $this->jobId;
   }
   /**
-   * The start of the time period that the report instance covers. The value is
-   * inclusive.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

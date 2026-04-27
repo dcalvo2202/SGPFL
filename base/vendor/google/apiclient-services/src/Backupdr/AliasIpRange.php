@@ -20,24 +20,16 @@ namespace Google\Service\Backupdr;
 class AliasIpRange extends \Google\Model
 {
   /**
-   * Optional. The IP alias ranges to allocate for this interface.
-   *
    * @var string
    */
   public $ipCidrRange;
   /**
-   * Optional. The name of a subnetwork secondary IP range from which to
-   * allocate an IP alias range. If not specified, the primary range of the
-   * subnetwork is used.
-   *
    * @var string
    */
   public $subnetworkRangeName;
 
   /**
-   * Optional. The IP alias ranges to allocate for this interface.
-   *
-   * @param string $ipCidrRange
+   * @param string
    */
   public function setIpCidrRange($ipCidrRange)
   {
@@ -51,11 +43,7 @@ class AliasIpRange extends \Google\Model
     return $this->ipCidrRange;
   }
   /**
-   * Optional. The name of a subnetwork secondary IP range from which to
-   * allocate an IP alias range. If not specified, the primary range of the
-   * subnetwork is used.
-   *
-   * @param string $subnetworkRangeName
+   * @param string
    */
   public function setSubnetworkRangeName($subnetworkRangeName)
   {

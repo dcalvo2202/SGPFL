@@ -23,16 +23,12 @@ class GoogleCloudDiscoveryengineV1ListEnginesResponse extends \Google\Collection
   protected $enginesType = GoogleCloudDiscoveryengineV1Engine::class;
   protected $enginesDataType = 'array';
   /**
-   * Not supported.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * All the customer's Engines.
-   *
-   * @param GoogleCloudDiscoveryengineV1Engine[] $engines
+   * @param GoogleCloudDiscoveryengineV1Engine[]
    */
   public function setEngines($engines)
   {
@@ -46,9 +42,7 @@ class GoogleCloudDiscoveryengineV1ListEnginesResponse extends \Google\Collection
     return $this->engines;
   }
   /**
-   * Not supported.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

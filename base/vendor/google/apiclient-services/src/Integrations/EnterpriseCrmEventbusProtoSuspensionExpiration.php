@@ -20,31 +20,20 @@ namespace Google\Service\Integrations;
 class EnterpriseCrmEventbusProtoSuspensionExpiration extends \Google\Model
 {
   /**
-   * Milliseconds after which the suspension expires, if no action taken.
-   *
    * @var int
    */
   public $expireAfterMs;
   /**
-   * Whether the suspension will be REJECTED or LIFTED upon expiration. REJECTED
-   * is the default behavior.
-   *
    * @var bool
    */
   public $liftWhenExpired;
   /**
-   * Milliseconds after which the previous suspension action reminder, if any,
-   * is sent using the selected notification option, for a suspension which is
-   * still PENDING_UNSPECIFIED.
-   *
    * @var int
    */
   public $remindAfterMs;
 
   /**
-   * Milliseconds after which the suspension expires, if no action taken.
-   *
-   * @param int $expireAfterMs
+   * @param int
    */
   public function setExpireAfterMs($expireAfterMs)
   {
@@ -58,10 +47,7 @@ class EnterpriseCrmEventbusProtoSuspensionExpiration extends \Google\Model
     return $this->expireAfterMs;
   }
   /**
-   * Whether the suspension will be REJECTED or LIFTED upon expiration. REJECTED
-   * is the default behavior.
-   *
-   * @param bool $liftWhenExpired
+   * @param bool
    */
   public function setLiftWhenExpired($liftWhenExpired)
   {
@@ -75,11 +61,7 @@ class EnterpriseCrmEventbusProtoSuspensionExpiration extends \Google\Model
     return $this->liftWhenExpired;
   }
   /**
-   * Milliseconds after which the previous suspension action reminder, if any,
-   * is sent using the selected notification option, for a suspension which is
-   * still PENDING_UNSPECIFIED.
-   *
-   * @param int $remindAfterMs
+   * @param int
    */
   public function setRemindAfterMs($remindAfterMs)
   {

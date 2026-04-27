@@ -21,32 +21,16 @@ class Context extends \Google\Collection
 {
   protected $collection_key = 'subjects';
   /**
-   * Identifier. The name of the context. Structured like: `projects/{project}/l
-   * ocations/{location}/schemaRegistries/{schema_registry}/contexts/{context}`
-   * The context name {context} can contain the following: * Up to 255
-   * characters. * Allowed characters: letters (uppercase or lowercase),
-   * numbers, and the following special characters: `.`, `-`, `_`, `+`, `%`, and
-   * `~`.
-   *
    * @var string
    */
   public $name;
   /**
-   * Optional. The subjects of the context.
-   *
    * @var string[]
    */
   public $subjects;
 
   /**
-   * Identifier. The name of the context. Structured like: `projects/{project}/l
-   * ocations/{location}/schemaRegistries/{schema_registry}/contexts/{context}`
-   * The context name {context} can contain the following: * Up to 255
-   * characters. * Allowed characters: letters (uppercase or lowercase),
-   * numbers, and the following special characters: `.`, `-`, `_`, `+`, `%`, and
-   * `~`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -60,9 +44,7 @@ class Context extends \Google\Collection
     return $this->name;
   }
   /**
-   * Optional. The subjects of the context.
-   *
-   * @param string[] $subjects
+   * @param string[]
    */
   public function setSubjects($subjects)
   {

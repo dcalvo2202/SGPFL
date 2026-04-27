@@ -20,25 +20,16 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleApiMetric extends \Google\Model
 {
   /**
-   * The set of label values that uniquely identify this metric. All labels
-   * listed in the `MetricDescriptor` must be assigned values.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * An existing metric type, see google.api.MetricDescriptor. For example,
-   * `custom.googleapis.com/invoice/paid/amount`.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The set of label values that uniquely identify this metric. All labels
-   * listed in the `MetricDescriptor` must be assigned values.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -52,10 +43,7 @@ class GoogleApiMetric extends \Google\Model
     return $this->labels;
   }
   /**
-   * An existing metric type, see google.api.MetricDescriptor. For example,
-   * `custom.googleapis.com/invoice/paid/amount`.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

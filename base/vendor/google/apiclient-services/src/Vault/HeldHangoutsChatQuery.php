@@ -20,18 +20,12 @@ namespace Google\Service\Vault;
 class HeldHangoutsChatQuery extends \Google\Model
 {
   /**
-   * To include messages in Chat spaces the user was a member of, set to
-   * **true**.
-   *
    * @var bool
    */
   public $includeRooms;
 
   /**
-   * To include messages in Chat spaces the user was a member of, set to
-   * **true**.
-   *
-   * @param bool $includeRooms
+   * @param bool
    */
   public function setIncludeRooms($includeRooms)
   {

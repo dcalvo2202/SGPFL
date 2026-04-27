@@ -19,23 +19,12 @@ namespace Google\Service\AdMob;
 
 class ReportRowMetricValue extends \Google\Model
 {
-  /**
-   * Double precision (approximate) decimal values. Rates are from 0 to 1.
-   *
-   * @var 
-   */
   public $doubleValue;
   /**
-   * Metric integer value.
-   *
    * @var string
    */
   public $integerValue;
   /**
-   * Amount in micros. One million is equivalent to one unit. Currency value is
-   * in the unit (USD, EUR or other) specified by the request. For example,
-   * $6.50 whould be represented as 6500000 micros.
-   *
    * @var string
    */
   public $microsValue;
@@ -49,9 +38,7 @@ class ReportRowMetricValue extends \Google\Model
     return $this->doubleValue;
   }
   /**
-   * Metric integer value.
-   *
-   * @param string $integerValue
+   * @param string
    */
   public function setIntegerValue($integerValue)
   {
@@ -65,11 +52,7 @@ class ReportRowMetricValue extends \Google\Model
     return $this->integerValue;
   }
   /**
-   * Amount in micros. One million is equivalent to one unit. Currency value is
-   * in the unit (USD, EUR or other) specified by the request. For example,
-   * $6.50 whould be represented as 6500000 micros.
-   *
-   * @param string $microsValue
+   * @param string
    */
   public function setMicrosValue($microsValue)
   {

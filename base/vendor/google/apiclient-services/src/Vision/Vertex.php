@@ -20,22 +20,16 @@ namespace Google\Service\Vision;
 class Vertex extends \Google\Model
 {
   /**
-   * X coordinate.
-   *
    * @var int
    */
   public $x;
   /**
-   * Y coordinate.
-   *
    * @var int
    */
   public $y;
 
   /**
-   * X coordinate.
-   *
-   * @param int $x
+   * @param int
    */
   public function setX($x)
   {
@@ -49,9 +43,7 @@ class Vertex extends \Google\Model
     return $this->x;
   }
   /**
-   * Y coordinate.
-   *
-   * @param int $y
+   * @param int
    */
   public function setY($y)
   {

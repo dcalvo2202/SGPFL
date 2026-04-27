@@ -20,22 +20,16 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1Session extends \Google\Model
 {
   /**
-   * The debug session ID.
-   *
    * @var string
    */
   public $id;
   /**
-   * The first transaction creation timestamp in millisecond, recorded by UAP.
-   *
    * @var string
    */
   public $timestampMs;
 
   /**
-   * The debug session ID.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -49,9 +43,7 @@ class GoogleCloudApigeeV1Session extends \Google\Model
     return $this->id;
   }
   /**
-   * The first transaction creation timestamp in millisecond, recorded by UAP.
-   *
-   * @param string $timestampMs
+   * @param string
    */
   public function setTimestampMs($timestampMs)
   {

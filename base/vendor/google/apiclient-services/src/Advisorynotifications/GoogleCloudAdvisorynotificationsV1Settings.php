@@ -20,19 +20,10 @@ namespace Google\Service\Advisorynotifications;
 class GoogleCloudAdvisorynotificationsV1Settings extends \Google\Model
 {
   /**
-   * Required. Fingerprint for optimistic concurrency returned in Get requests.
-   * Must be provided for Update requests. If the value provided does not match
-   * the value known to the server, ABORTED will be thrown, and the client
-   * should retry the read-modify-write cycle.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Identifier. The resource name of the settings to retrieve. Format:
-   * organizations/{organization}/locations/{location}/settings or
-   * projects/{projects}/locations/{location}/settings.
-   *
    * @var string
    */
   public $name;
@@ -40,12 +31,7 @@ class GoogleCloudAdvisorynotificationsV1Settings extends \Google\Model
   protected $notificationSettingsDataType = 'map';
 
   /**
-   * Required. Fingerprint for optimistic concurrency returned in Get requests.
-   * Must be provided for Update requests. If the value provided does not match
-   * the value known to the server, ABORTED will be thrown, and the client
-   * should retry the read-modify-write cycle.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -59,11 +45,7 @@ class GoogleCloudAdvisorynotificationsV1Settings extends \Google\Model
     return $this->etag;
   }
   /**
-   * Identifier. The resource name of the settings to retrieve. Format:
-   * organizations/{organization}/locations/{location}/settings or
-   * projects/{projects}/locations/{location}/settings.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -77,11 +59,7 @@ class GoogleCloudAdvisorynotificationsV1Settings extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. Map of each notification type and its settings to get/set all
-   * settings at once. The server will validate the value for each notification
-   * type.
-   *
-   * @param GoogleCloudAdvisorynotificationsV1NotificationSettings[] $notificationSettings
+   * @param GoogleCloudAdvisorynotificationsV1NotificationSettings[]
    */
   public function setNotificationSettings($notificationSettings)
   {

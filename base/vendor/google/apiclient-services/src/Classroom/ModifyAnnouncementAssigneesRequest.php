@@ -20,21 +20,6 @@ namespace Google\Service\Classroom;
 class ModifyAnnouncementAssigneesRequest extends \Google\Model
 {
   /**
-   * No mode specified. This is never returned.
-   */
-  public const ASSIGNEE_MODE_ASSIGNEE_MODE_UNSPECIFIED = 'ASSIGNEE_MODE_UNSPECIFIED';
-  /**
-   * All students can see the item. This is the default state.
-   */
-  public const ASSIGNEE_MODE_ALL_STUDENTS = 'ALL_STUDENTS';
-  /**
-   * A subset of the students can see the item.
-   */
-  public const ASSIGNEE_MODE_INDIVIDUAL_STUDENTS = 'INDIVIDUAL_STUDENTS';
-  /**
-   * Mode of the announcement describing whether it is accessible by all
-   * students or specified individual students.
-   *
    * @var string
    */
   public $assigneeMode;
@@ -42,30 +27,21 @@ class ModifyAnnouncementAssigneesRequest extends \Google\Model
   protected $modifyIndividualStudentsOptionsDataType = '';
 
   /**
-   * Mode of the announcement describing whether it is accessible by all
-   * students or specified individual students.
-   *
-   * Accepted values: ASSIGNEE_MODE_UNSPECIFIED, ALL_STUDENTS,
-   * INDIVIDUAL_STUDENTS
-   *
-   * @param self::ASSIGNEE_MODE_* $assigneeMode
+   * @param string
    */
   public function setAssigneeMode($assigneeMode)
   {
     $this->assigneeMode = $assigneeMode;
   }
   /**
-   * @return self::ASSIGNEE_MODE_*
+   * @return string
    */
   public function getAssigneeMode()
   {
     return $this->assigneeMode;
   }
   /**
-   * Set which students can view or cannot view the announcement. Must be
-   * specified only when `assigneeMode` is `INDIVIDUAL_STUDENTS`.
-   *
-   * @param ModifyIndividualStudentsOptions $modifyIndividualStudentsOptions
+   * @param ModifyIndividualStudentsOptions
    */
   public function setModifyIndividualStudentsOptions(ModifyIndividualStudentsOptions $modifyIndividualStudentsOptions)
   {

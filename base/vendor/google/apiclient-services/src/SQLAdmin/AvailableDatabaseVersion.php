@@ -20,29 +20,20 @@ namespace Google\Service\SQLAdmin;
 class AvailableDatabaseVersion extends \Google\Model
 {
   /**
-   * The database version's display name.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * The version's major version name.
-   *
    * @var string
    */
   public $majorVersion;
   /**
-   * The database version name. For MySQL 8.0, this string provides the database
-   * major and minor version.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The database version's display name.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -56,9 +47,7 @@ class AvailableDatabaseVersion extends \Google\Model
     return $this->displayName;
   }
   /**
-   * The version's major version name.
-   *
-   * @param string $majorVersion
+   * @param string
    */
   public function setMajorVersion($majorVersion)
   {
@@ -72,10 +61,7 @@ class AvailableDatabaseVersion extends \Google\Model
     return $this->majorVersion;
   }
   /**
-   * The database version name. For MySQL 8.0, this string provides the database
-   * major and minor version.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

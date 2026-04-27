@@ -20,16 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1ReadFeatureValuesResponseFeatureDescriptor extends \Google\Model
 {
   /**
-   * Feature ID.
-   *
    * @var string
    */
   public $id;
 
   /**
-   * Feature ID.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {

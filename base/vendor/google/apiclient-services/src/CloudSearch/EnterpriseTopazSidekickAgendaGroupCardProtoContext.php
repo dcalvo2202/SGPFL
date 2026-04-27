@@ -20,42 +20,20 @@ namespace Google\Service\CloudSearch;
 class EnterpriseTopazSidekickAgendaGroupCardProtoContext extends \Google\Model
 {
   /**
-   * No specific event was requested.
-   */
-  public const EVENTS_RESTRICT_NONE = 'NONE';
-  /**
-   * The next meeting was requested.
-   */
-  public const EVENTS_RESTRICT_NEXT_MEETING = 'NEXT_MEETING';
-  /**
-   * User friendly free text that describes the context of the card (e.g. "Next
-   * meeting with Bob"). This is largely only applicable when the card is
-   * generated from a query.
-   *
    * @var string
    */
   public $context;
   /**
-   * Localized free text that describes the dates represented by the card.
-   * Currently, the card will only represent a single day.
-   *
    * @var string
    */
   public $date;
   /**
-   * Represents restrictions applied to the events requested in the user's
-   * query.
-   *
    * @var string
    */
   public $eventsRestrict;
 
   /**
-   * User friendly free text that describes the context of the card (e.g. "Next
-   * meeting with Bob"). This is largely only applicable when the card is
-   * generated from a query.
-   *
-   * @param string $context
+   * @param string
    */
   public function setContext($context)
   {
@@ -69,10 +47,7 @@ class EnterpriseTopazSidekickAgendaGroupCardProtoContext extends \Google\Model
     return $this->context;
   }
   /**
-   * Localized free text that describes the dates represented by the card.
-   * Currently, the card will only represent a single day.
-   *
-   * @param string $date
+   * @param string
    */
   public function setDate($date)
   {
@@ -86,19 +61,14 @@ class EnterpriseTopazSidekickAgendaGroupCardProtoContext extends \Google\Model
     return $this->date;
   }
   /**
-   * Represents restrictions applied to the events requested in the user's
-   * query.
-   *
-   * Accepted values: NONE, NEXT_MEETING
-   *
-   * @param self::EVENTS_RESTRICT_* $eventsRestrict
+   * @param string
    */
   public function setEventsRestrict($eventsRestrict)
   {
     $this->eventsRestrict = $eventsRestrict;
   }
   /**
-   * @return self::EVENTS_RESTRICT_*
+   * @return string
    */
   public function getEventsRestrict()
   {

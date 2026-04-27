@@ -20,51 +20,10 @@ namespace Google\Service\GKEOnPrem;
 class BareMetalAdminCluster extends \Google\Model
 {
   /**
-   * Not set.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The PROVISIONING state indicates the cluster is being created.
-   */
-  public const STATE_PROVISIONING = 'PROVISIONING';
-  /**
-   * The RUNNING state indicates the cluster has been created and is fully
-   * usable.
-   */
-  public const STATE_RUNNING = 'RUNNING';
-  /**
-   * The RECONCILING state indicates that the cluster is being updated. It
-   * remains available, but potentially with degraded performance.
-   */
-  public const STATE_RECONCILING = 'RECONCILING';
-  /**
-   * The STOPPING state indicates the cluster is being deleted.
-   */
-  public const STATE_STOPPING = 'STOPPING';
-  /**
-   * The ERROR state indicates the cluster is in a broken unrecoverable state.
-   */
-  public const STATE_ERROR = 'ERROR';
-  /**
-   * The DEGRADED state indicates the cluster requires user action to restore
-   * full functionality.
-   */
-  public const STATE_DEGRADED = 'DEGRADED';
-  /**
-   * Annotations on the bare metal admin cluster. This field has the same
-   * restrictions as Kubernetes annotations. The total size of all keys and
-   * values combined is limited to 256k. Key can have 2 segments: prefix
-   * (optional) and name (required), separated by a slash (/). Prefix must be a
-   * DNS subdomain. Name must be 63 characters or less, begin and end with
-   * alphanumerics, with dashes (-), underscores (_), dots (.), and
-   * alphanumerics between.
-   *
    * @var string[]
    */
   public $annotations;
   /**
-   * The Anthos clusters on bare metal version for the bare metal admin cluster.
-   *
    * @var string
    */
   public $bareMetalVersion;
@@ -75,36 +34,22 @@ class BareMetalAdminCluster extends \Google\Model
   protected $controlPlaneType = BareMetalAdminControlPlaneConfig::class;
   protected $controlPlaneDataType = '';
   /**
-   * Output only. The time at which this bare metal admin cluster was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. The time at which this bare metal admin cluster was deleted.
-   * If the resource is not deleted, this must be empty
-   *
    * @var string
    */
   public $deleteTime;
   /**
-   * A human readable description of this bare metal admin cluster.
-   *
    * @var string
    */
   public $description;
   /**
-   * Output only. The IP address name of bare metal admin cluster's API server.
-   *
    * @var string
    */
   public $endpoint;
   /**
-   * This checksum is computed by the server based on the value of other fields,
-   * and may be sent on update and delete requests to ensure the client has an
-   * up-to-date value before proceeding. Allows clients to perform consistent
-   * read-modify-writes through optimistic concurrency control.
-   *
    * @var string
    */
   public $etag;
@@ -113,15 +58,6 @@ class BareMetalAdminCluster extends \Google\Model
   protected $loadBalancerType = BareMetalAdminLoadBalancerConfig::class;
   protected $loadBalancerDataType = '';
   /**
-   * Output only. The object name of the bare metal cluster custom resource.
-   * This field is used to support conflicting names when enrolling existing
-   * clusters to the API. When used as a part of cluster enrollment, this field
-   * will differ from the ID in the resource name. For new clusters, this field
-   * will match the user provided cluster name and be visible in the last
-   * component of the resource name. It is not modifiable. All users should use
-   * this name to access their cluster using gkectl or kubectl and should expect
-   * to see the local name when viewing admin cluster controller logs.
-   *
    * @var string
    */
   public $localName;
@@ -130,8 +66,6 @@ class BareMetalAdminCluster extends \Google\Model
   protected $maintenanceStatusType = BareMetalAdminMaintenanceStatus::class;
   protected $maintenanceStatusDataType = '';
   /**
-   * Immutable. The bare metal admin cluster resource name.
-   *
    * @var string
    */
   public $name;
@@ -146,17 +80,12 @@ class BareMetalAdminCluster extends \Google\Model
   protected $proxyType = BareMetalAdminProxyConfig::class;
   protected $proxyDataType = '';
   /**
-   * Output only. If set, there are currently changes in flight to the bare
-   * metal Admin Cluster.
-   *
    * @var bool
    */
   public $reconciling;
   protected $securityConfigType = BareMetalAdminSecurityConfig::class;
   protected $securityConfigDataType = '';
   /**
-   * Output only. The current state of the bare metal admin cluster.
-   *
    * @var string
    */
   public $state;
@@ -165,15 +94,10 @@ class BareMetalAdminCluster extends \Google\Model
   protected $storageType = BareMetalAdminStorageConfig::class;
   protected $storageDataType = '';
   /**
-   * Output only. The unique identifier of the bare metal admin cluster.
-   *
    * @var string
    */
   public $uid;
   /**
-   * Output only. The time at which this bare metal admin cluster was last
-   * updated.
-   *
    * @var string
    */
   public $updateTime;
@@ -181,15 +105,7 @@ class BareMetalAdminCluster extends \Google\Model
   protected $validationCheckDataType = '';
 
   /**
-   * Annotations on the bare metal admin cluster. This field has the same
-   * restrictions as Kubernetes annotations. The total size of all keys and
-   * values combined is limited to 256k. Key can have 2 segments: prefix
-   * (optional) and name (required), separated by a slash (/). Prefix must be a
-   * DNS subdomain. Name must be 63 characters or less, begin and end with
-   * alphanumerics, with dashes (-), underscores (_), dots (.), and
-   * alphanumerics between.
-   *
-   * @param string[] $annotations
+   * @param string[]
    */
   public function setAnnotations($annotations)
   {
@@ -203,9 +119,7 @@ class BareMetalAdminCluster extends \Google\Model
     return $this->annotations;
   }
   /**
-   * The Anthos clusters on bare metal version for the bare metal admin cluster.
-   *
-   * @param string $bareMetalVersion
+   * @param string
    */
   public function setBareMetalVersion($bareMetalVersion)
   {
@@ -219,9 +133,7 @@ class BareMetalAdminCluster extends \Google\Model
     return $this->bareMetalVersion;
   }
   /**
-   * Binary Authorization related configurations.
-   *
-   * @param BinaryAuthorization $binaryAuthorization
+   * @param BinaryAuthorization
    */
   public function setBinaryAuthorization(BinaryAuthorization $binaryAuthorization)
   {
@@ -235,9 +147,7 @@ class BareMetalAdminCluster extends \Google\Model
     return $this->binaryAuthorization;
   }
   /**
-   * Cluster operations configuration.
-   *
-   * @param BareMetalAdminClusterOperationsConfig $clusterOperations
+   * @param BareMetalAdminClusterOperationsConfig
    */
   public function setClusterOperations(BareMetalAdminClusterOperationsConfig $clusterOperations)
   {
@@ -251,9 +161,7 @@ class BareMetalAdminCluster extends \Google\Model
     return $this->clusterOperations;
   }
   /**
-   * Control plane configuration.
-   *
-   * @param BareMetalAdminControlPlaneConfig $controlPlane
+   * @param BareMetalAdminControlPlaneConfig
    */
   public function setControlPlane(BareMetalAdminControlPlaneConfig $controlPlane)
   {
@@ -267,9 +175,7 @@ class BareMetalAdminCluster extends \Google\Model
     return $this->controlPlane;
   }
   /**
-   * Output only. The time at which this bare metal admin cluster was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -283,10 +189,7 @@ class BareMetalAdminCluster extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. The time at which this bare metal admin cluster was deleted.
-   * If the resource is not deleted, this must be empty
-   *
-   * @param string $deleteTime
+   * @param string
    */
   public function setDeleteTime($deleteTime)
   {
@@ -300,9 +203,7 @@ class BareMetalAdminCluster extends \Google\Model
     return $this->deleteTime;
   }
   /**
-   * A human readable description of this bare metal admin cluster.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -316,9 +217,7 @@ class BareMetalAdminCluster extends \Google\Model
     return $this->description;
   }
   /**
-   * Output only. The IP address name of bare metal admin cluster's API server.
-   *
-   * @param string $endpoint
+   * @param string
    */
   public function setEndpoint($endpoint)
   {
@@ -332,12 +231,7 @@ class BareMetalAdminCluster extends \Google\Model
     return $this->endpoint;
   }
   /**
-   * This checksum is computed by the server based on the value of other fields,
-   * and may be sent on update and delete requests to ensure the client has an
-   * up-to-date value before proceeding. Allows clients to perform consistent
-   * read-modify-writes through optimistic concurrency control.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -351,9 +245,7 @@ class BareMetalAdminCluster extends \Google\Model
     return $this->etag;
   }
   /**
-   * Output only. Fleet configuration for the cluster.
-   *
-   * @param Fleet $fleet
+   * @param Fleet
    */
   public function setFleet(Fleet $fleet)
   {
@@ -367,9 +259,7 @@ class BareMetalAdminCluster extends \Google\Model
     return $this->fleet;
   }
   /**
-   * Load balancer configuration.
-   *
-   * @param BareMetalAdminLoadBalancerConfig $loadBalancer
+   * @param BareMetalAdminLoadBalancerConfig
    */
   public function setLoadBalancer(BareMetalAdminLoadBalancerConfig $loadBalancer)
   {
@@ -383,16 +273,7 @@ class BareMetalAdminCluster extends \Google\Model
     return $this->loadBalancer;
   }
   /**
-   * Output only. The object name of the bare metal cluster custom resource.
-   * This field is used to support conflicting names when enrolling existing
-   * clusters to the API. When used as a part of cluster enrollment, this field
-   * will differ from the ID in the resource name. For new clusters, this field
-   * will match the user provided cluster name and be visible in the last
-   * component of the resource name. It is not modifiable. All users should use
-   * this name to access their cluster using gkectl or kubectl and should expect
-   * to see the local name when viewing admin cluster controller logs.
-   *
-   * @param string $localName
+   * @param string
    */
   public function setLocalName($localName)
   {
@@ -406,9 +287,7 @@ class BareMetalAdminCluster extends \Google\Model
     return $this->localName;
   }
   /**
-   * Maintenance configuration.
-   *
-   * @param BareMetalAdminMaintenanceConfig $maintenanceConfig
+   * @param BareMetalAdminMaintenanceConfig
    */
   public function setMaintenanceConfig(BareMetalAdminMaintenanceConfig $maintenanceConfig)
   {
@@ -422,9 +301,7 @@ class BareMetalAdminCluster extends \Google\Model
     return $this->maintenanceConfig;
   }
   /**
-   * Output only. MaintenanceStatus representing state of maintenance.
-   *
-   * @param BareMetalAdminMaintenanceStatus $maintenanceStatus
+   * @param BareMetalAdminMaintenanceStatus
    */
   public function setMaintenanceStatus(BareMetalAdminMaintenanceStatus $maintenanceStatus)
   {
@@ -438,9 +315,7 @@ class BareMetalAdminCluster extends \Google\Model
     return $this->maintenanceStatus;
   }
   /**
-   * Immutable. The bare metal admin cluster resource name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -454,9 +329,7 @@ class BareMetalAdminCluster extends \Google\Model
     return $this->name;
   }
   /**
-   * Network configuration.
-   *
-   * @param BareMetalAdminNetworkConfig $networkConfig
+   * @param BareMetalAdminNetworkConfig
    */
   public function setNetworkConfig(BareMetalAdminNetworkConfig $networkConfig)
   {
@@ -470,9 +343,7 @@ class BareMetalAdminCluster extends \Google\Model
     return $this->networkConfig;
   }
   /**
-   * Node access related configurations.
-   *
-   * @param BareMetalAdminNodeAccessConfig $nodeAccessConfig
+   * @param BareMetalAdminNodeAccessConfig
    */
   public function setNodeAccessConfig(BareMetalAdminNodeAccessConfig $nodeAccessConfig)
   {
@@ -486,9 +357,7 @@ class BareMetalAdminCluster extends \Google\Model
     return $this->nodeAccessConfig;
   }
   /**
-   * Workload node configuration.
-   *
-   * @param BareMetalAdminWorkloadNodeConfig $nodeConfig
+   * @param BareMetalAdminWorkloadNodeConfig
    */
   public function setNodeConfig(BareMetalAdminWorkloadNodeConfig $nodeConfig)
   {
@@ -502,9 +371,7 @@ class BareMetalAdminCluster extends \Google\Model
     return $this->nodeConfig;
   }
   /**
-   * OS environment related configurations.
-   *
-   * @param BareMetalAdminOsEnvironmentConfig $osEnvironmentConfig
+   * @param BareMetalAdminOsEnvironmentConfig
    */
   public function setOsEnvironmentConfig(BareMetalAdminOsEnvironmentConfig $osEnvironmentConfig)
   {
@@ -518,9 +385,7 @@ class BareMetalAdminCluster extends \Google\Model
     return $this->osEnvironmentConfig;
   }
   /**
-   * Proxy configuration.
-   *
-   * @param BareMetalAdminProxyConfig $proxy
+   * @param BareMetalAdminProxyConfig
    */
   public function setProxy(BareMetalAdminProxyConfig $proxy)
   {
@@ -534,10 +399,7 @@ class BareMetalAdminCluster extends \Google\Model
     return $this->proxy;
   }
   /**
-   * Output only. If set, there are currently changes in flight to the bare
-   * metal Admin Cluster.
-   *
-   * @param bool $reconciling
+   * @param bool
    */
   public function setReconciling($reconciling)
   {
@@ -551,9 +413,7 @@ class BareMetalAdminCluster extends \Google\Model
     return $this->reconciling;
   }
   /**
-   * Security related configuration.
-   *
-   * @param BareMetalAdminSecurityConfig $securityConfig
+   * @param BareMetalAdminSecurityConfig
    */
   public function setSecurityConfig(BareMetalAdminSecurityConfig $securityConfig)
   {
@@ -567,28 +427,21 @@ class BareMetalAdminCluster extends \Google\Model
     return $this->securityConfig;
   }
   /**
-   * Output only. The current state of the bare metal admin cluster.
-   *
-   * Accepted values: STATE_UNSPECIFIED, PROVISIONING, RUNNING, RECONCILING,
-   * STOPPING, ERROR, DEGRADED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. ResourceStatus representing detailed cluster status.
-   *
-   * @param ResourceStatus $status
+   * @param ResourceStatus
    */
   public function setStatus(ResourceStatus $status)
   {
@@ -602,9 +455,7 @@ class BareMetalAdminCluster extends \Google\Model
     return $this->status;
   }
   /**
-   * Storage configuration.
-   *
-   * @param BareMetalAdminStorageConfig $storage
+   * @param BareMetalAdminStorageConfig
    */
   public function setStorage(BareMetalAdminStorageConfig $storage)
   {
@@ -618,9 +469,7 @@ class BareMetalAdminCluster extends \Google\Model
     return $this->storage;
   }
   /**
-   * Output only. The unique identifier of the bare metal admin cluster.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {
@@ -634,10 +483,7 @@ class BareMetalAdminCluster extends \Google\Model
     return $this->uid;
   }
   /**
-   * Output only. The time at which this bare metal admin cluster was last
-   * updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -651,10 +497,7 @@ class BareMetalAdminCluster extends \Google\Model
     return $this->updateTime;
   }
   /**
-   * Output only. ValidationCheck representing the result of the preflight
-   * check.
-   *
-   * @param ValidationCheck $validationCheck
+   * @param ValidationCheck
    */
   public function setValidationCheck(ValidationCheck $validationCheck)
   {

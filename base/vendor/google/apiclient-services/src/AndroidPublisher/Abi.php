@@ -20,54 +20,19 @@ namespace Google\Service\AndroidPublisher;
 class Abi extends \Google\Model
 {
   /**
-   * Unspecified abi.
-   */
-  public const ALIAS_UNSPECIFIED_CPU_ARCHITECTURE = 'UNSPECIFIED_CPU_ARCHITECTURE';
-  /**
-   * ARMEABI abi.
-   */
-  public const ALIAS_ARMEABI = 'ARMEABI';
-  /**
-   * ARMEABI_V7A abi.
-   */
-  public const ALIAS_ARMEABI_V7A = 'ARMEABI_V7A';
-  /**
-   * ARM64_V8A abi.
-   */
-  public const ALIAS_ARM64_V8A = 'ARM64_V8A';
-  /**
-   * X86 abi.
-   */
-  public const ALIAS_X86 = 'X86';
-  /**
-   * X86_64 abi.
-   */
-  public const ALIAS_X86_64 = 'X86_64';
-  /**
-   * RISCV64 abi.
-   */
-  public const ALIAS_RISCV64 = 'RISCV64';
-  /**
-   * Alias for an abi.
-   *
    * @var string
    */
   public $alias;
 
   /**
-   * Alias for an abi.
-   *
-   * Accepted values: UNSPECIFIED_CPU_ARCHITECTURE, ARMEABI, ARMEABI_V7A,
-   * ARM64_V8A, X86, X86_64, RISCV64
-   *
-   * @param self::ALIAS_* $alias
+   * @param string
    */
   public function setAlias($alias)
   {
     $this->alias = $alias;
   }
   /**
-   * @return self::ALIAS_*
+   * @return string
    */
   public function getAlias()
   {

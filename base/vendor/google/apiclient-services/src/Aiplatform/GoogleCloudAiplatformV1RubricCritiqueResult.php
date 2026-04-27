@@ -20,23 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1RubricCritiqueResult extends \Google\Model
 {
   /**
-   * Output only. Rubric to be evaluated.
-   *
    * @var string
    */
   public $rubric;
   /**
-   * Output only. Verdict for the rubric - true if the rubric is met, false
-   * otherwise.
-   *
    * @var bool
    */
   public $verdict;
 
   /**
-   * Output only. Rubric to be evaluated.
-   *
-   * @param string $rubric
+   * @param string
    */
   public function setRubric($rubric)
   {
@@ -50,10 +43,7 @@ class GoogleCloudAiplatformV1RubricCritiqueResult extends \Google\Model
     return $this->rubric;
   }
   /**
-   * Output only. Verdict for the rubric - true if the rubric is met, false
-   * otherwise.
-   *
-   * @param bool $verdict
+   * @param bool
    */
   public function setVerdict($verdict)
   {

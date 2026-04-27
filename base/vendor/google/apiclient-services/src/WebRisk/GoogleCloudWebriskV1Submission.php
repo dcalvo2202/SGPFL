@@ -20,18 +20,12 @@ namespace Google\Service\WebRisk;
 class GoogleCloudWebriskV1Submission extends \Google\Model
 {
   /**
-   * Required. The URI that is being reported for malicious content to be
-   * analyzed.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * Required. The URI that is being reported for malicious content to be
-   * analyzed.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

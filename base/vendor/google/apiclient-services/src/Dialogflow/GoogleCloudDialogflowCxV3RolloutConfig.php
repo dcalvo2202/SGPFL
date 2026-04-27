@@ -32,7 +32,7 @@ class GoogleCloudDialogflowCxV3RolloutConfig extends \Google\Collection
   protected $rolloutStepsDataType = 'array';
 
   /**
-   * @param string $failureCondition
+   * @param string
    */
   public function setFailureCondition($failureCondition)
   {
@@ -46,7 +46,7 @@ class GoogleCloudDialogflowCxV3RolloutConfig extends \Google\Collection
     return $this->failureCondition;
   }
   /**
-   * @param string $rolloutCondition
+   * @param string
    */
   public function setRolloutCondition($rolloutCondition)
   {
@@ -60,7 +60,7 @@ class GoogleCloudDialogflowCxV3RolloutConfig extends \Google\Collection
     return $this->rolloutCondition;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3RolloutConfigRolloutStep[] $rolloutSteps
+   * @param GoogleCloudDialogflowCxV3RolloutConfigRolloutStep[]
    */
   public function setRolloutSteps($rolloutSteps)
   {

@@ -21,82 +21,52 @@ class GoogleCloudApigeeV1AppGroupApp extends \Google\Collection
 {
   protected $collection_key = 'scopes';
   /**
-   * List of API products associated with the AppGroup app.
-   *
    * @var string[]
    */
   public $apiProducts;
   /**
-   * Immutable. Name of the parent AppGroup whose resource name format is of
-   * syntax (organizations/appgroups).
-   *
    * @var string
    */
   public $appGroup;
   /**
-   * Immutable. ID of the AppGroup app.
-   *
    * @var string
    */
   public $appId;
   protected $attributesType = GoogleCloudApigeeV1Attribute::class;
   protected $attributesDataType = 'array';
   /**
-   * Callback URL used by OAuth 2.0 authorization servers to communicate
-   * authorization codes back to AppGroup apps.
-   *
    * @var string
    */
   public $callbackUrl;
   /**
-   * Output only. Time the AppGroup app was created in milliseconds since epoch.
-   *
    * @var string
    */
   public $createdAt;
   protected $credentialsType = GoogleCloudApigeeV1Credential::class;
   protected $credentialsDataType = 'array';
   /**
-   * Immutable. Expiration time, in seconds, for the consumer key that is
-   * generated for the AppGroup app. If not set or left to the default value of
-   * `-1`, the API key never expires. The expiration time can't be updated after
-   * it is set.
-   *
    * @var string
    */
   public $keyExpiresIn;
   /**
-   * Output only. Time the AppGroup app was modified in milliseconds since
-   * epoch.
-   *
    * @var string
    */
   public $lastModifiedAt;
   /**
-   * Immutable. Name of the AppGroup app whose resource name format is of syntax
-   * (organizations/appgroups/apps).
-   *
    * @var string
    */
   public $name;
   /**
-   * Scopes to apply to the AppGroup app. The specified scopes must already
-   * exist for the API product that you associate with the AppGroup app.
-   *
    * @var string[]
    */
   public $scopes;
   /**
-   * Status of the App. Valid values include `approved` or `revoked`.
-   *
    * @var string
    */
   public $status;
 
   /**
-   * List of API products associated with the AppGroup app.
-   *
-   * @param string[] $apiProducts
+   * @param string[]
    */
   public function setApiProducts($apiProducts)
   {
@@ -110,10 +80,7 @@ class GoogleCloudApigeeV1AppGroupApp extends \Google\Collection
     return $this->apiProducts;
   }
   /**
-   * Immutable. Name of the parent AppGroup whose resource name format is of
-   * syntax (organizations/appgroups).
-   *
-   * @param string $appGroup
+   * @param string
    */
   public function setAppGroup($appGroup)
   {
@@ -127,9 +94,7 @@ class GoogleCloudApigeeV1AppGroupApp extends \Google\Collection
     return $this->appGroup;
   }
   /**
-   * Immutable. ID of the AppGroup app.
-   *
-   * @param string $appId
+   * @param string
    */
   public function setAppId($appId)
   {
@@ -143,9 +108,7 @@ class GoogleCloudApigeeV1AppGroupApp extends \Google\Collection
     return $this->appId;
   }
   /**
-   * List of attributes for the AppGroup app.
-   *
-   * @param GoogleCloudApigeeV1Attribute[] $attributes
+   * @param GoogleCloudApigeeV1Attribute[]
    */
   public function setAttributes($attributes)
   {
@@ -159,10 +122,7 @@ class GoogleCloudApigeeV1AppGroupApp extends \Google\Collection
     return $this->attributes;
   }
   /**
-   * Callback URL used by OAuth 2.0 authorization servers to communicate
-   * authorization codes back to AppGroup apps.
-   *
-   * @param string $callbackUrl
+   * @param string
    */
   public function setCallbackUrl($callbackUrl)
   {
@@ -176,9 +136,7 @@ class GoogleCloudApigeeV1AppGroupApp extends \Google\Collection
     return $this->callbackUrl;
   }
   /**
-   * Output only. Time the AppGroup app was created in milliseconds since epoch.
-   *
-   * @param string $createdAt
+   * @param string
    */
   public function setCreatedAt($createdAt)
   {
@@ -192,10 +150,7 @@ class GoogleCloudApigeeV1AppGroupApp extends \Google\Collection
     return $this->createdAt;
   }
   /**
-   * Output only. Set of credentials for the AppGroup app consisting of the
-   * consumer key/secret pairs associated with the API products.
-   *
-   * @param GoogleCloudApigeeV1Credential[] $credentials
+   * @param GoogleCloudApigeeV1Credential[]
    */
   public function setCredentials($credentials)
   {
@@ -209,12 +164,7 @@ class GoogleCloudApigeeV1AppGroupApp extends \Google\Collection
     return $this->credentials;
   }
   /**
-   * Immutable. Expiration time, in seconds, for the consumer key that is
-   * generated for the AppGroup app. If not set or left to the default value of
-   * `-1`, the API key never expires. The expiration time can't be updated after
-   * it is set.
-   *
-   * @param string $keyExpiresIn
+   * @param string
    */
   public function setKeyExpiresIn($keyExpiresIn)
   {
@@ -228,10 +178,7 @@ class GoogleCloudApigeeV1AppGroupApp extends \Google\Collection
     return $this->keyExpiresIn;
   }
   /**
-   * Output only. Time the AppGroup app was modified in milliseconds since
-   * epoch.
-   *
-   * @param string $lastModifiedAt
+   * @param string
    */
   public function setLastModifiedAt($lastModifiedAt)
   {
@@ -245,10 +192,7 @@ class GoogleCloudApigeeV1AppGroupApp extends \Google\Collection
     return $this->lastModifiedAt;
   }
   /**
-   * Immutable. Name of the AppGroup app whose resource name format is of syntax
-   * (organizations/appgroups/apps).
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -262,10 +206,7 @@ class GoogleCloudApigeeV1AppGroupApp extends \Google\Collection
     return $this->name;
   }
   /**
-   * Scopes to apply to the AppGroup app. The specified scopes must already
-   * exist for the API product that you associate with the AppGroup app.
-   *
-   * @param string[] $scopes
+   * @param string[]
    */
   public function setScopes($scopes)
   {
@@ -279,9 +220,7 @@ class GoogleCloudApigeeV1AppGroupApp extends \Google\Collection
     return $this->scopes;
   }
   /**
-   * Status of the App. Valid values include `approved` or `revoked`.
-   *
-   * @param string $status
+   * @param string
    */
   public function setStatus($status)
   {

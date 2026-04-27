@@ -19,108 +19,45 @@ namespace Google\Service\Dfareporting;
 
 class CreativeCustomEvent extends \Google\Model
 {
-  public const ADVERTISER_CUSTOM_EVENT_TYPE_ADVERTISER_EVENT_TIMER = 'ADVERTISER_EVENT_TIMER';
-  public const ADVERTISER_CUSTOM_EVENT_TYPE_ADVERTISER_EVENT_EXIT = 'ADVERTISER_EVENT_EXIT';
-  public const ADVERTISER_CUSTOM_EVENT_TYPE_ADVERTISER_EVENT_COUNTER = 'ADVERTISER_EVENT_COUNTER';
   /**
-   * The creative is a Flash creative.
-   */
-  public const ARTWORK_TYPE_ARTWORK_TYPE_FLASH = 'ARTWORK_TYPE_FLASH';
-  /**
-   * The creative is HTML5.
-   */
-  public const ARTWORK_TYPE_ARTWORK_TYPE_HTML5 = 'ARTWORK_TYPE_HTML5';
-  /**
-   * The creative is HTML5 if available, Flash otherwise.
-   */
-  public const ARTWORK_TYPE_ARTWORK_TYPE_MIXED = 'ARTWORK_TYPE_MIXED';
-  /**
-   * The creative is Image.
-   */
-  public const ARTWORK_TYPE_ARTWORK_TYPE_IMAGE = 'ARTWORK_TYPE_IMAGE';
-  /**
-   * New tab
-   */
-  public const TARGET_TYPE_TARGET_BLANK = 'TARGET_BLANK';
-  /**
-   * Current tab
-   */
-  public const TARGET_TYPE_TARGET_TOP = 'TARGET_TOP';
-  /**
-   * Same frame
-   */
-  public const TARGET_TYPE_TARGET_SELF = 'TARGET_SELF';
-  /**
-   * Parent frame
-   */
-  public const TARGET_TYPE_TARGET_PARENT = 'TARGET_PARENT';
-  /**
-   * New window with properties specified in window_properties
-   */
-  public const TARGET_TYPE_TARGET_POPUP = 'TARGET_POPUP';
-  /**
-   * Unique ID of this event used by Reporting and Data Transfer. This is a
-   * read-only field.
-   *
    * @var string
    */
   public $advertiserCustomEventId;
   /**
-   * User-entered name for the event.
-   *
    * @var string
    */
   public $advertiserCustomEventName;
   /**
-   * Type of the event. This is a read-only field.
-   *
    * @var string
    */
   public $advertiserCustomEventType;
   /**
-   * Artwork label column, used to link events in Campaign Manager back to
-   * events in Studio. This is a required field and should not be modified after
-   * insertion.
-   *
    * @var string
    */
   public $artworkLabel;
   /**
-   * Artwork type used by the creative.This is a read-only field.
-   *
    * @var string
    */
   public $artworkType;
   protected $exitClickThroughUrlType = CreativeClickThroughUrl::class;
   protected $exitClickThroughUrlDataType = '';
   /**
-   * ID of this event. This is a required field and should not be modified after
-   * insertion.
-   *
    * @var string
    */
   public $id;
   protected $popupWindowPropertiesType = PopupWindowProperties::class;
   protected $popupWindowPropertiesDataType = '';
   /**
-   * Target type used by the event.
-   *
    * @var string
    */
   public $targetType;
   /**
-   * Video reporting ID, used to differentiate multiple videos in a single
-   * creative. This is a read-only field.
-   *
    * @var string
    */
   public $videoReportingId;
 
   /**
-   * Unique ID of this event used by Reporting and Data Transfer. This is a
-   * read-only field.
-   *
-   * @param string $advertiserCustomEventId
+   * @param string
    */
   public function setAdvertiserCustomEventId($advertiserCustomEventId)
   {
@@ -134,9 +71,7 @@ class CreativeCustomEvent extends \Google\Model
     return $this->advertiserCustomEventId;
   }
   /**
-   * User-entered name for the event.
-   *
-   * @param string $advertiserCustomEventName
+   * @param string
    */
   public function setAdvertiserCustomEventName($advertiserCustomEventName)
   {
@@ -150,30 +85,21 @@ class CreativeCustomEvent extends \Google\Model
     return $this->advertiserCustomEventName;
   }
   /**
-   * Type of the event. This is a read-only field.
-   *
-   * Accepted values: ADVERTISER_EVENT_TIMER, ADVERTISER_EVENT_EXIT,
-   * ADVERTISER_EVENT_COUNTER
-   *
-   * @param self::ADVERTISER_CUSTOM_EVENT_TYPE_* $advertiserCustomEventType
+   * @param string
    */
   public function setAdvertiserCustomEventType($advertiserCustomEventType)
   {
     $this->advertiserCustomEventType = $advertiserCustomEventType;
   }
   /**
-   * @return self::ADVERTISER_CUSTOM_EVENT_TYPE_*
+   * @return string
    */
   public function getAdvertiserCustomEventType()
   {
     return $this->advertiserCustomEventType;
   }
   /**
-   * Artwork label column, used to link events in Campaign Manager back to
-   * events in Studio. This is a required field and should not be modified after
-   * insertion.
-   *
-   * @param string $artworkLabel
+   * @param string
    */
   public function setArtworkLabel($artworkLabel)
   {
@@ -187,29 +113,21 @@ class CreativeCustomEvent extends \Google\Model
     return $this->artworkLabel;
   }
   /**
-   * Artwork type used by the creative.This is a read-only field.
-   *
-   * Accepted values: ARTWORK_TYPE_FLASH, ARTWORK_TYPE_HTML5,
-   * ARTWORK_TYPE_MIXED, ARTWORK_TYPE_IMAGE
-   *
-   * @param self::ARTWORK_TYPE_* $artworkType
+   * @param string
    */
   public function setArtworkType($artworkType)
   {
     $this->artworkType = $artworkType;
   }
   /**
-   * @return self::ARTWORK_TYPE_*
+   * @return string
    */
   public function getArtworkType()
   {
     return $this->artworkType;
   }
   /**
-   * Exit click-through URL for the event. This field is used only for exit
-   * events.
-   *
-   * @param CreativeClickThroughUrl $exitClickThroughUrl
+   * @param CreativeClickThroughUrl
    */
   public function setExitClickThroughUrl(CreativeClickThroughUrl $exitClickThroughUrl)
   {
@@ -223,10 +141,7 @@ class CreativeCustomEvent extends \Google\Model
     return $this->exitClickThroughUrl;
   }
   /**
-   * ID of this event. This is a required field and should not be modified after
-   * insertion.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -240,10 +155,7 @@ class CreativeCustomEvent extends \Google\Model
     return $this->id;
   }
   /**
-   * Properties for rich media popup windows. This field is used only for exit
-   * events.
-   *
-   * @param PopupWindowProperties $popupWindowProperties
+   * @param PopupWindowProperties
    */
   public function setPopupWindowProperties(PopupWindowProperties $popupWindowProperties)
   {
@@ -257,29 +169,21 @@ class CreativeCustomEvent extends \Google\Model
     return $this->popupWindowProperties;
   }
   /**
-   * Target type used by the event.
-   *
-   * Accepted values: TARGET_BLANK, TARGET_TOP, TARGET_SELF, TARGET_PARENT,
-   * TARGET_POPUP
-   *
-   * @param self::TARGET_TYPE_* $targetType
+   * @param string
    */
   public function setTargetType($targetType)
   {
     $this->targetType = $targetType;
   }
   /**
-   * @return self::TARGET_TYPE_*
+   * @return string
    */
   public function getTargetType()
   {
     return $this->targetType;
   }
   /**
-   * Video reporting ID, used to differentiate multiple videos in a single
-   * creative. This is a read-only field.
-   *
-   * @param string $videoReportingId
+   * @param string
    */
   public function setVideoReportingId($videoReportingId)
   {

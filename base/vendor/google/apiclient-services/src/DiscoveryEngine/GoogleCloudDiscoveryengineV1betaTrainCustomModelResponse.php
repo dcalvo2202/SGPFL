@@ -24,35 +24,18 @@ class GoogleCloudDiscoveryengineV1betaTrainCustomModelResponse extends \Google\C
   protected $errorConfigDataType = '';
   protected $errorSamplesType = GoogleRpcStatus::class;
   protected $errorSamplesDataType = 'array';
-  /**
-   * The metrics of the trained model.
-   *
-   * @var []
-   */
   public $metrics;
   /**
-   * Fully qualified name of the CustomTuningModel.
-   *
    * @var string
    */
   public $modelName;
   /**
-   * The trained model status. Possible values are: * **bad-data**: The training
-   * data quality is bad. * **no-improvement**: Tuning didn't improve
-   * performance. Won't deploy. * **in-progress**: Model training job creation
-   * is in progress. * **training**: Model is actively training. *
-   * **evaluating**: The model is evaluating trained metrics. * **indexing**:
-   * The model trained metrics are indexing. * **ready**: The model is ready for
-   * serving.
-   *
    * @var string
    */
   public $modelStatus;
 
   /**
-   * Echoes the destination for the complete errors in the request if set.
-   *
-   * @param GoogleCloudDiscoveryengineV1betaImportErrorConfig $errorConfig
+   * @param GoogleCloudDiscoveryengineV1betaImportErrorConfig
    */
   public function setErrorConfig(GoogleCloudDiscoveryengineV1betaImportErrorConfig $errorConfig)
   {
@@ -66,9 +49,7 @@ class GoogleCloudDiscoveryengineV1betaTrainCustomModelResponse extends \Google\C
     return $this->errorConfig;
   }
   /**
-   * A sample of errors encountered while processing the data.
-   *
-   * @param GoogleRpcStatus[] $errorSamples
+   * @param GoogleRpcStatus[]
    */
   public function setErrorSamples($errorSamples)
   {
@@ -90,9 +71,7 @@ class GoogleCloudDiscoveryengineV1betaTrainCustomModelResponse extends \Google\C
     return $this->metrics;
   }
   /**
-   * Fully qualified name of the CustomTuningModel.
-   *
-   * @param string $modelName
+   * @param string
    */
   public function setModelName($modelName)
   {
@@ -106,15 +85,7 @@ class GoogleCloudDiscoveryengineV1betaTrainCustomModelResponse extends \Google\C
     return $this->modelName;
   }
   /**
-   * The trained model status. Possible values are: * **bad-data**: The training
-   * data quality is bad. * **no-improvement**: Tuning didn't improve
-   * performance. Won't deploy. * **in-progress**: Model training job creation
-   * is in progress. * **training**: Model is actively training. *
-   * **evaluating**: The model is evaluating trained metrics. * **indexing**:
-   * The model trained metrics are indexing. * **ready**: The model is ready for
-   * serving.
-   *
-   * @param string $modelStatus
+   * @param string
    */
   public function setModelStatus($modelStatus)
   {

@@ -20,18 +20,12 @@ namespace Google\Service\Compute;
 class BackendBucketUsedBy extends \Google\Model
 {
   /**
-   * Output only. [Output Only] Server-defined URL for UrlMaps referencing that
-   * BackendBucket.
-   *
    * @var string
    */
   public $reference;
 
   /**
-   * Output only. [Output Only] Server-defined URL for UrlMaps referencing that
-   * BackendBucket.
-   *
-   * @param string $reference
+   * @param string
    */
   public function setReference($reference)
   {

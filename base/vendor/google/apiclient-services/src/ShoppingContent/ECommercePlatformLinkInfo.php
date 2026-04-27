@@ -20,16 +20,12 @@ namespace Google\Service\ShoppingContent;
 class ECommercePlatformLinkInfo extends \Google\Model
 {
   /**
-   * The id used by the third party service provider to identify the merchant.
-   *
    * @var string
    */
   public $externalAccountId;
 
   /**
-   * The id used by the third party service provider to identify the merchant.
-   *
-   * @param string $externalAccountId
+   * @param string
    */
   public function setExternalAccountId($externalAccountId)
   {

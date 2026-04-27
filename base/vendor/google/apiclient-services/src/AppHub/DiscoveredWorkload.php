@@ -20,10 +20,6 @@ namespace Google\Service\AppHub;
 class DiscoveredWorkload extends \Google\Model
 {
   /**
-   * Identifier. The resource name of the discovered workload. Format:
-   * `"projects/{host-project-
-   * id}/locations/{location}/discoveredWorkloads/{uuid}"`
-   *
    * @var string
    */
   public $name;
@@ -33,11 +29,7 @@ class DiscoveredWorkload extends \Google\Model
   protected $workloadReferenceDataType = '';
 
   /**
-   * Identifier. The resource name of the discovered workload. Format:
-   * `"projects/{host-project-
-   * id}/locations/{location}/discoveredWorkloads/{uuid}"`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -51,10 +43,7 @@ class DiscoveredWorkload extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Properties of an underlying compute resource represented by
-   * the Workload. These are immutable.
-   *
-   * @param WorkloadProperties $workloadProperties
+   * @param WorkloadProperties
    */
   public function setWorkloadProperties(WorkloadProperties $workloadProperties)
   {
@@ -68,10 +57,7 @@ class DiscoveredWorkload extends \Google\Model
     return $this->workloadProperties;
   }
   /**
-   * Output only. Reference of an underlying compute resource represented by the
-   * Workload. These are immutable.
-   *
-   * @param WorkloadReference $workloadReference
+   * @param WorkloadReference
    */
   public function setWorkloadReference(WorkloadReference $workloadReference)
   {

@@ -20,34 +20,24 @@ namespace Google\Service\SecurityCommandCenter;
 class Package extends \Google\Model
 {
   /**
-   * The CPE URI where the vulnerability was detected.
-   *
    * @var string
    */
   public $cpeUri;
   /**
-   * The name of the package where the vulnerability was detected.
-   *
    * @var string
    */
   public $packageName;
   /**
-   * Type of package, for example, os, maven, or go.
-   *
    * @var string
    */
   public $packageType;
   /**
-   * The version of the package.
-   *
    * @var string
    */
   public $packageVersion;
 
   /**
-   * The CPE URI where the vulnerability was detected.
-   *
-   * @param string $cpeUri
+   * @param string
    */
   public function setCpeUri($cpeUri)
   {
@@ -61,9 +51,7 @@ class Package extends \Google\Model
     return $this->cpeUri;
   }
   /**
-   * The name of the package where the vulnerability was detected.
-   *
-   * @param string $packageName
+   * @param string
    */
   public function setPackageName($packageName)
   {
@@ -77,9 +65,7 @@ class Package extends \Google\Model
     return $this->packageName;
   }
   /**
-   * Type of package, for example, os, maven, or go.
-   *
-   * @param string $packageType
+   * @param string
    */
   public function setPackageType($packageType)
   {
@@ -93,9 +79,7 @@ class Package extends \Google\Model
     return $this->packageType;
   }
   /**
-   * The version of the package.
-   *
-   * @param string $packageVersion
+   * @param string
    */
   public function setPackageVersion($packageVersion)
   {

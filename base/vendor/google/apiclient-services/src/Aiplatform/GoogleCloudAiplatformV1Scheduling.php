@@ -20,77 +20,28 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1Scheduling extends \Google\Model
 {
   /**
-   * Strategy will default to STANDARD.
-   */
-  public const STRATEGY_STRATEGY_UNSPECIFIED = 'STRATEGY_UNSPECIFIED';
-  /**
-   * Deprecated. Regular on-demand provisioning strategy.
-   *
-   * @deprecated
-   */
-  public const STRATEGY_ON_DEMAND = 'ON_DEMAND';
-  /**
-   * Deprecated. Low cost by making potential use of spot resources.
-   *
-   * @deprecated
-   */
-  public const STRATEGY_LOW_COST = 'LOW_COST';
-  /**
-   * Standard provisioning strategy uses regular on-demand resources.
-   */
-  public const STRATEGY_STANDARD = 'STANDARD';
-  /**
-   * Spot provisioning strategy uses spot resources.
-   */
-  public const STRATEGY_SPOT = 'SPOT';
-  /**
-   * Flex Start strategy uses DWS to queue for resources.
-   */
-  public const STRATEGY_FLEX_START = 'FLEX_START';
-  /**
-   * Optional. Indicates if the job should retry for internal errors after the
-   * job starts running. If true, overrides
-   * `Scheduling.restart_job_on_worker_restart` to false.
-   *
    * @var bool
    */
   public $disableRetries;
   /**
-   * Optional. This is the maximum duration that a job will wait for the
-   * requested resources to be provisioned if the scheduling strategy is set to
-   * [Strategy.DWS_FLEX_START]. If set to 0, the job will wait indefinitely. The
-   * default is 24 hours.
-   *
    * @var string
    */
   public $maxWaitDuration;
   /**
-   * Optional. Restarts the entire CustomJob if a worker gets restarted. This
-   * feature can be used by distributed training jobs that are not resilient to
-   * workers leaving and joining a job.
-   *
    * @var bool
    */
   public $restartJobOnWorkerRestart;
   /**
-   * Optional. This determines which type of scheduling strategy to use.
-   *
    * @var string
    */
   public $strategy;
   /**
-   * Optional. The maximum job running time. The default is 7 days.
-   *
    * @var string
    */
   public $timeout;
 
   /**
-   * Optional. Indicates if the job should retry for internal errors after the
-   * job starts running. If true, overrides
-   * `Scheduling.restart_job_on_worker_restart` to false.
-   *
-   * @param bool $disableRetries
+   * @param bool
    */
   public function setDisableRetries($disableRetries)
   {
@@ -104,12 +55,7 @@ class GoogleCloudAiplatformV1Scheduling extends \Google\Model
     return $this->disableRetries;
   }
   /**
-   * Optional. This is the maximum duration that a job will wait for the
-   * requested resources to be provisioned if the scheduling strategy is set to
-   * [Strategy.DWS_FLEX_START]. If set to 0, the job will wait indefinitely. The
-   * default is 24 hours.
-   *
-   * @param string $maxWaitDuration
+   * @param string
    */
   public function setMaxWaitDuration($maxWaitDuration)
   {
@@ -123,11 +69,7 @@ class GoogleCloudAiplatformV1Scheduling extends \Google\Model
     return $this->maxWaitDuration;
   }
   /**
-   * Optional. Restarts the entire CustomJob if a worker gets restarted. This
-   * feature can be used by distributed training jobs that are not resilient to
-   * workers leaving and joining a job.
-   *
-   * @param bool $restartJobOnWorkerRestart
+   * @param bool
    */
   public function setRestartJobOnWorkerRestart($restartJobOnWorkerRestart)
   {
@@ -141,28 +83,21 @@ class GoogleCloudAiplatformV1Scheduling extends \Google\Model
     return $this->restartJobOnWorkerRestart;
   }
   /**
-   * Optional. This determines which type of scheduling strategy to use.
-   *
-   * Accepted values: STRATEGY_UNSPECIFIED, ON_DEMAND, LOW_COST, STANDARD, SPOT,
-   * FLEX_START
-   *
-   * @param self::STRATEGY_* $strategy
+   * @param string
    */
   public function setStrategy($strategy)
   {
     $this->strategy = $strategy;
   }
   /**
-   * @return self::STRATEGY_*
+   * @return string
    */
   public function getStrategy()
   {
     return $this->strategy;
   }
   /**
-   * Optional. The maximum job running time. The default is 7 days.
-   *
-   * @param string $timeout
+   * @param string
    */
   public function setTimeout($timeout)
   {

@@ -26,10 +26,7 @@ class GoogleCloudIntegrationsV1alphaConditionalFailurePolicies extends \Google\C
   protected $failurePoliciesDataType = 'array';
 
   /**
-   * The default failure policy to be applied if no conditional failure policy
-   * matches.
-   *
-   * @param GoogleCloudIntegrationsV1alphaFailurePolicy $defaultFailurePolicy
+   * @param GoogleCloudIntegrationsV1alphaFailurePolicy
    */
   public function setDefaultFailurePolicy(GoogleCloudIntegrationsV1alphaFailurePolicy $defaultFailurePolicy)
   {
@@ -43,9 +40,7 @@ class GoogleCloudIntegrationsV1alphaConditionalFailurePolicies extends \Google\C
     return $this->defaultFailurePolicy;
   }
   /**
-   * The list of failure policies that will be applied to the task in order.
-   *
-   * @param GoogleCloudIntegrationsV1alphaFailurePolicy[] $failurePolicies
+   * @param GoogleCloudIntegrationsV1alphaFailurePolicy[]
    */
   public function setFailurePolicies($failurePolicies)
   {

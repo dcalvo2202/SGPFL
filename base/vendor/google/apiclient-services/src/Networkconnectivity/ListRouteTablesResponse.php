@@ -21,28 +21,18 @@ class ListRouteTablesResponse extends \Google\Collection
 {
   protected $collection_key = 'unreachable';
   /**
-   * The token for the next page of the response. To see more results, use this
-   * value as the page_token for your next request. If this value is empty,
-   * there are no more results.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $routeTablesType = RouteTable::class;
   protected $routeTablesDataType = 'array';
   /**
-   * Hubs that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * The token for the next page of the response. To see more results, use this
-   * value as the page_token for your next request. If this value is empty,
-   * there are no more results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -56,9 +46,7 @@ class ListRouteTablesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The requested route tables.
-   *
-   * @param RouteTable[] $routeTables
+   * @param RouteTable[]
    */
   public function setRouteTables($routeTables)
   {
@@ -72,9 +60,7 @@ class ListRouteTablesResponse extends \Google\Collection
     return $this->routeTables;
   }
   /**
-   * Hubs that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

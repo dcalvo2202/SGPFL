@@ -19,61 +19,36 @@ namespace Google\Service\CloudBuild;
 
 class PipelineRun extends \Google\Collection
 {
-  /**
-   * Default enum type; should not be used.
-   */
-  public const PIPELINE_RUN_STATUS_PIPELINE_RUN_STATUS_UNSPECIFIED = 'PIPELINE_RUN_STATUS_UNSPECIFIED';
-  /**
-   * Cancelled status.
-   */
-  public const PIPELINE_RUN_STATUS_PIPELINE_RUN_CANCELLED = 'PIPELINE_RUN_CANCELLED';
   protected $collection_key = 'workspaces';
   /**
-   * User annotations. See https://google.aip.dev/128#annotations
-   *
    * @var string[]
    */
   public $annotations;
   protected $childReferencesType = ChildStatusReference::class;
   protected $childReferencesDataType = 'array';
   /**
-   * Output only. Time the pipeline completed.
-   *
    * @var string
    */
   public $completionTime;
   protected $conditionsType = GoogleDevtoolsCloudbuildV2Condition::class;
   protected $conditionsDataType = 'array';
   /**
-   * Output only. Time at which the request to create the `PipelineRun` was
-   * received.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Needed for declarative-friendly resources.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Output only. FinallyStartTime is when all non-finally tasks have been
-   * completed and only finally tasks are being executed. +optional
-   *
    * @var string
    */
   public $finallyStartTime;
   /**
-   * Output only. GCB default params.
-   *
    * @var string[]
    */
   public $gcbParams;
   /**
-   * Output only. The `PipelineRun` name with format
-   * `projects/{project}/locations/{location}/pipelineRuns/{pipeline_run}`
-   *
    * @var string
    */
   public $name;
@@ -82,26 +57,18 @@ class PipelineRun extends \Google\Collection
   protected $pipelineRefType = PipelineRef::class;
   protected $pipelineRefDataType = '';
   /**
-   * Pipelinerun status the user can provide. Used for cancellation.
-   *
    * @var string
    */
   public $pipelineRunStatus;
   protected $pipelineSpecType = PipelineSpec::class;
   protected $pipelineSpecDataType = '';
   /**
-   * Output only. Inline pipelineSpec yaml string, used by workflow run
-   * requests.
-   *
    * @var string
    */
   public $pipelineSpecYaml;
   protected $provenanceType = Provenance::class;
   protected $provenanceDataType = '';
   /**
-   * Output only. The `Record` of this `PipelineRun`. Format: `projects/{project
-   * }/locations/{location}/results/{result_id}/records/{record_id}`
-   *
    * @var string
    */
   public $record;
@@ -112,47 +79,32 @@ class PipelineRun extends \Google\Collection
   protected $securityType = Security::class;
   protected $securityDataType = '';
   /**
-   * Service account used in the Pipeline. Deprecated; please use
-   * security.service_account instead.
-   *
-   * @deprecated
    * @var string
    */
   public $serviceAccount;
   protected $skippedTasksType = SkippedTask::class;
   protected $skippedTasksDataType = 'array';
   /**
-   * Output only. Time the pipeline is actually started.
-   *
    * @var string
    */
   public $startTime;
   protected $timeoutsType = TimeoutFields::class;
   protected $timeoutsDataType = '';
   /**
-   * Output only. A unique identifier for the `PipelineRun`.
-   *
    * @var string
    */
   public $uid;
   /**
-   * Output only. Time at which the request to update the `PipelineRun` was
-   * received.
-   *
    * @var string
    */
   public $updateTime;
   protected $workerType = Worker::class;
   protected $workerDataType = '';
   /**
-   * Output only. The WorkerPool used to run this PipelineRun.
-   *
    * @var string
    */
   public $workerPool;
   /**
-   * Output only. The Workflow used to create this PipelineRun.
-   *
    * @var string
    */
   public $workflow;
@@ -160,9 +112,7 @@ class PipelineRun extends \Google\Collection
   protected $workspacesDataType = 'array';
 
   /**
-   * User annotations. See https://google.aip.dev/128#annotations
-   *
-   * @param string[] $annotations
+   * @param string[]
    */
   public function setAnnotations($annotations)
   {
@@ -176,10 +126,7 @@ class PipelineRun extends \Google\Collection
     return $this->annotations;
   }
   /**
-   * Output only. List of TaskRun and Run names and PipelineTask names for
-   * children of this PipelineRun.
-   *
-   * @param ChildStatusReference[] $childReferences
+   * @param ChildStatusReference[]
    */
   public function setChildReferences($childReferences)
   {
@@ -193,9 +140,7 @@ class PipelineRun extends \Google\Collection
     return $this->childReferences;
   }
   /**
-   * Output only. Time the pipeline completed.
-   *
-   * @param string $completionTime
+   * @param string
    */
   public function setCompletionTime($completionTime)
   {
@@ -209,10 +154,7 @@ class PipelineRun extends \Google\Collection
     return $this->completionTime;
   }
   /**
-   * Output only. Kubernetes Conditions convention for PipelineRun status and
-   * error.
-   *
-   * @param GoogleDevtoolsCloudbuildV2Condition[] $conditions
+   * @param GoogleDevtoolsCloudbuildV2Condition[]
    */
   public function setConditions($conditions)
   {
@@ -226,10 +168,7 @@ class PipelineRun extends \Google\Collection
     return $this->conditions;
   }
   /**
-   * Output only. Time at which the request to create the `PipelineRun` was
-   * received.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -243,9 +182,7 @@ class PipelineRun extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Needed for declarative-friendly resources.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -259,10 +196,7 @@ class PipelineRun extends \Google\Collection
     return $this->etag;
   }
   /**
-   * Output only. FinallyStartTime is when all non-finally tasks have been
-   * completed and only finally tasks are being executed. +optional
-   *
-   * @param string $finallyStartTime
+   * @param string
    */
   public function setFinallyStartTime($finallyStartTime)
   {
@@ -276,9 +210,7 @@ class PipelineRun extends \Google\Collection
     return $this->finallyStartTime;
   }
   /**
-   * Output only. GCB default params.
-   *
-   * @param string[] $gcbParams
+   * @param string[]
    */
   public function setGcbParams($gcbParams)
   {
@@ -292,10 +224,7 @@ class PipelineRun extends \Google\Collection
     return $this->gcbParams;
   }
   /**
-   * Output only. The `PipelineRun` name with format
-   * `projects/{project}/locations/{location}/pipelineRuns/{pipeline_run}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -309,9 +238,7 @@ class PipelineRun extends \Google\Collection
     return $this->name;
   }
   /**
-   * Params is a list of parameter names and values.
-   *
-   * @param Param[] $params
+   * @param Param[]
    */
   public function setParams($params)
   {
@@ -325,9 +252,7 @@ class PipelineRun extends \Google\Collection
     return $this->params;
   }
   /**
-   * PipelineRef refer to a specific instance of a Pipeline.
-   *
-   * @param PipelineRef $pipelineRef
+   * @param PipelineRef
    */
   public function setPipelineRef(PipelineRef $pipelineRef)
   {
@@ -341,27 +266,21 @@ class PipelineRun extends \Google\Collection
     return $this->pipelineRef;
   }
   /**
-   * Pipelinerun status the user can provide. Used for cancellation.
-   *
-   * Accepted values: PIPELINE_RUN_STATUS_UNSPECIFIED, PIPELINE_RUN_CANCELLED
-   *
-   * @param self::PIPELINE_RUN_STATUS_* $pipelineRunStatus
+   * @param string
    */
   public function setPipelineRunStatus($pipelineRunStatus)
   {
     $this->pipelineRunStatus = $pipelineRunStatus;
   }
   /**
-   * @return self::PIPELINE_RUN_STATUS_*
+   * @return string
    */
   public function getPipelineRunStatus()
   {
     return $this->pipelineRunStatus;
   }
   /**
-   * PipelineSpec defines the desired state of Pipeline.
-   *
-   * @param PipelineSpec $pipelineSpec
+   * @param PipelineSpec
    */
   public function setPipelineSpec(PipelineSpec $pipelineSpec)
   {
@@ -375,10 +294,7 @@ class PipelineRun extends \Google\Collection
     return $this->pipelineSpec;
   }
   /**
-   * Output only. Inline pipelineSpec yaml string, used by workflow run
-   * requests.
-   *
-   * @param string $pipelineSpecYaml
+   * @param string
    */
   public function setPipelineSpecYaml($pipelineSpecYaml)
   {
@@ -392,9 +308,7 @@ class PipelineRun extends \Google\Collection
     return $this->pipelineSpecYaml;
   }
   /**
-   * Optional. Provenance configuration.
-   *
-   * @param Provenance $provenance
+   * @param Provenance
    */
   public function setProvenance(Provenance $provenance)
   {
@@ -408,10 +322,7 @@ class PipelineRun extends \Google\Collection
     return $this->provenance;
   }
   /**
-   * Output only. The `Record` of this `PipelineRun`. Format: `projects/{project
-   * }/locations/{location}/results/{result_id}/records/{record_id}`
-   *
-   * @param string $record
+   * @param string
    */
   public function setRecord($record)
   {
@@ -425,9 +336,7 @@ class PipelineRun extends \Google\Collection
     return $this->record;
   }
   /**
-   * Output only. The exact PipelineSpec used to instantiate the run.
-   *
-   * @param PipelineSpec $resolvedPipelineSpec
+   * @param PipelineSpec
    */
   public function setResolvedPipelineSpec(PipelineSpec $resolvedPipelineSpec)
   {
@@ -441,10 +350,7 @@ class PipelineRun extends \Google\Collection
     return $this->resolvedPipelineSpec;
   }
   /**
-   * Optional. Output only. List of results written out by the pipeline's
-   * containers
-   *
-   * @param PipelineRunResult[] $results
+   * @param PipelineRunResult[]
    */
   public function setResults($results)
   {
@@ -458,9 +364,7 @@ class PipelineRun extends \Google\Collection
     return $this->results;
   }
   /**
-   * Optional. Security configuration.
-   *
-   * @param Security $security
+   * @param Security
    */
   public function setSecurity(Security $security)
   {
@@ -474,18 +378,13 @@ class PipelineRun extends \Google\Collection
     return $this->security;
   }
   /**
-   * Service account used in the Pipeline. Deprecated; please use
-   * security.service_account instead.
-   *
-   * @deprecated
-   * @param string $serviceAccount
+   * @param string
    */
   public function setServiceAccount($serviceAccount)
   {
     $this->serviceAccount = $serviceAccount;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getServiceAccount()
@@ -493,10 +392,7 @@ class PipelineRun extends \Google\Collection
     return $this->serviceAccount;
   }
   /**
-   * Output only. List of tasks that were skipped due to when expressions
-   * evaluating to false.
-   *
-   * @param SkippedTask[] $skippedTasks
+   * @param SkippedTask[]
    */
   public function setSkippedTasks($skippedTasks)
   {
@@ -510,9 +406,7 @@ class PipelineRun extends \Google\Collection
     return $this->skippedTasks;
   }
   /**
-   * Output only. Time the pipeline is actually started.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -526,11 +420,7 @@ class PipelineRun extends \Google\Collection
     return $this->startTime;
   }
   /**
-   * Time after which the Pipeline times out. Currently three keys are accepted
-   * in the map pipeline, tasks and finally with Timeouts.pipeline >=
-   * Timeouts.tasks + Timeouts.finally
-   *
-   * @param TimeoutFields $timeouts
+   * @param TimeoutFields
    */
   public function setTimeouts(TimeoutFields $timeouts)
   {
@@ -544,9 +434,7 @@ class PipelineRun extends \Google\Collection
     return $this->timeouts;
   }
   /**
-   * Output only. A unique identifier for the `PipelineRun`.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {
@@ -560,10 +448,7 @@ class PipelineRun extends \Google\Collection
     return $this->uid;
   }
   /**
-   * Output only. Time at which the request to update the `PipelineRun` was
-   * received.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -577,9 +462,7 @@ class PipelineRun extends \Google\Collection
     return $this->updateTime;
   }
   /**
-   * Optional. Worker configuration.
-   *
-   * @param Worker $worker
+   * @param Worker
    */
   public function setWorker(Worker $worker)
   {
@@ -593,9 +476,7 @@ class PipelineRun extends \Google\Collection
     return $this->worker;
   }
   /**
-   * Output only. The WorkerPool used to run this PipelineRun.
-   *
-   * @param string $workerPool
+   * @param string
    */
   public function setWorkerPool($workerPool)
   {
@@ -609,9 +490,7 @@ class PipelineRun extends \Google\Collection
     return $this->workerPool;
   }
   /**
-   * Output only. The Workflow used to create this PipelineRun.
-   *
-   * @param string $workflow
+   * @param string
    */
   public function setWorkflow($workflow)
   {
@@ -625,9 +504,7 @@ class PipelineRun extends \Google\Collection
     return $this->workflow;
   }
   /**
-   * Workspaces is a list of WorkspaceBindings from volumes to workspaces.
-   *
-   * @param WorkspaceBinding[] $workspaces
+   * @param WorkspaceBinding[]
    */
   public function setWorkspaces($workspaces)
   {

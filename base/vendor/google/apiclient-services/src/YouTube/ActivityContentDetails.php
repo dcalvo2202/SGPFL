@@ -43,10 +43,7 @@ class ActivityContentDetails extends \Google\Model
   protected $uploadDataType = '';
 
   /**
-   * The bulletin object contains details about a channel bulletin post. This
-   * object is only present if the snippet.type is bulletin.
-   *
-   * @param ActivityContentDetailsBulletin $bulletin
+   * @param ActivityContentDetailsBulletin
    */
   public function setBulletin(ActivityContentDetailsBulletin $bulletin)
   {
@@ -60,11 +57,7 @@ class ActivityContentDetails extends \Google\Model
     return $this->bulletin;
   }
   /**
-   * The channelItem object contains details about a resource which was added to
-   * a channel. This property is only present if the snippet.type is
-   * channelItem.
-   *
-   * @param ActivityContentDetailsChannelItem $channelItem
+   * @param ActivityContentDetailsChannelItem
    */
   public function setChannelItem(ActivityContentDetailsChannelItem $channelItem)
   {
@@ -78,10 +71,7 @@ class ActivityContentDetails extends \Google\Model
     return $this->channelItem;
   }
   /**
-   * The comment object contains information about a resource that received a
-   * comment. This property is only present if the snippet.type is comment.
-   *
-   * @param ActivityContentDetailsComment $comment
+   * @param ActivityContentDetailsComment
    */
   public function setComment(ActivityContentDetailsComment $comment)
   {
@@ -95,11 +85,7 @@ class ActivityContentDetails extends \Google\Model
     return $this->comment;
   }
   /**
-   * The favorite object contains information about a video that was marked as a
-   * favorite video. This property is only present if the snippet.type is
-   * favorite.
-   *
-   * @param ActivityContentDetailsFavorite $favorite
+   * @param ActivityContentDetailsFavorite
    */
   public function setFavorite(ActivityContentDetailsFavorite $favorite)
   {
@@ -113,11 +99,7 @@ class ActivityContentDetails extends \Google\Model
     return $this->favorite;
   }
   /**
-   * The like object contains information about a resource that received a
-   * positive (like) rating. This property is only present if the snippet.type
-   * is like.
-   *
-   * @param ActivityContentDetailsLike $like
+   * @param ActivityContentDetailsLike
    */
   public function setLike(ActivityContentDetailsLike $like)
   {
@@ -131,10 +113,7 @@ class ActivityContentDetails extends \Google\Model
     return $this->like;
   }
   /**
-   * The playlistItem object contains information about a new playlist item.
-   * This property is only present if the snippet.type is playlistItem.
-   *
-   * @param ActivityContentDetailsPlaylistItem $playlistItem
+   * @param ActivityContentDetailsPlaylistItem
    */
   public function setPlaylistItem(ActivityContentDetailsPlaylistItem $playlistItem)
   {
@@ -148,11 +127,7 @@ class ActivityContentDetails extends \Google\Model
     return $this->playlistItem;
   }
   /**
-   * The promotedItem object contains details about a resource which is being
-   * promoted. This property is only present if the snippet.type is
-   * promotedItem.
-   *
-   * @param ActivityContentDetailsPromotedItem $promotedItem
+   * @param ActivityContentDetailsPromotedItem
    */
   public function setPromotedItem(ActivityContentDetailsPromotedItem $promotedItem)
   {
@@ -166,11 +141,7 @@ class ActivityContentDetails extends \Google\Model
     return $this->promotedItem;
   }
   /**
-   * The recommendation object contains information about a recommended
-   * resource. This property is only present if the snippet.type is
-   * recommendation.
-   *
-   * @param ActivityContentDetailsRecommendation $recommendation
+   * @param ActivityContentDetailsRecommendation
    */
   public function setRecommendation(ActivityContentDetailsRecommendation $recommendation)
   {
@@ -184,10 +155,7 @@ class ActivityContentDetails extends \Google\Model
     return $this->recommendation;
   }
   /**
-   * The social object contains details about a social network post. This
-   * property is only present if the snippet.type is social.
-   *
-   * @param ActivityContentDetailsSocial $social
+   * @param ActivityContentDetailsSocial
    */
   public function setSocial(ActivityContentDetailsSocial $social)
   {
@@ -201,11 +169,7 @@ class ActivityContentDetails extends \Google\Model
     return $this->social;
   }
   /**
-   * The subscription object contains information about a channel that a user
-   * subscribed to. This property is only present if the snippet.type is
-   * subscription.
-   *
-   * @param ActivityContentDetailsSubscription $subscription
+   * @param ActivityContentDetailsSubscription
    */
   public function setSubscription(ActivityContentDetailsSubscription $subscription)
   {
@@ -219,10 +183,7 @@ class ActivityContentDetails extends \Google\Model
     return $this->subscription;
   }
   /**
-   * The upload object contains information about the uploaded video. This
-   * property is only present if the snippet.type is upload.
-   *
-   * @param ActivityContentDetailsUpload $upload
+   * @param ActivityContentDetailsUpload
    */
   public function setUpload(ActivityContentDetailsUpload $upload)
   {

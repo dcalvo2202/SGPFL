@@ -23,12 +23,7 @@ class GoogleCloudContactcenterinsightsV1InitializeEncryptionSpecRequest extends 
   protected $encryptionSpecDataType = '';
 
   /**
-   * Required. The encryption spec used for CMEK encryption. It is required that
-   * the kms key is in the same region as the endpoint. The same key will be
-   * used for all provisioned resources, if encryption is available. If the
-   * `kms_key_name` field is left empty, no encryption will be enforced.
-   *
-   * @param GoogleCloudContactcenterinsightsV1EncryptionSpec $encryptionSpec
+   * @param GoogleCloudContactcenterinsightsV1EncryptionSpec
    */
   public function setEncryptionSpec(GoogleCloudContactcenterinsightsV1EncryptionSpec $encryptionSpec)
   {

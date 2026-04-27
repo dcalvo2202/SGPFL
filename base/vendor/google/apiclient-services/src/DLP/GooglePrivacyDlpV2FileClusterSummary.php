@@ -33,10 +33,6 @@ class GooglePrivacyDlpV2FileClusterSummary extends \Google\Collection
   protected $fileStoreInfoTypeSummariesType = GooglePrivacyDlpV2FileStoreInfoTypeSummary::class;
   protected $fileStoreInfoTypeSummariesDataType = 'array';
   /**
-   * True if no files exist in this cluster. If the file store had more files
-   * than could be listed, this will be false even if no files for this cluster
-   * were seen and file_extensions_seen is empty.
-   *
    * @var bool
    */
   public $noFilesExist;
@@ -44,9 +40,7 @@ class GooglePrivacyDlpV2FileClusterSummary extends \Google\Collection
   protected $sensitivityScoreDataType = '';
 
   /**
-   * The data risk level of this cluster. RISK_LOW if nothing has been scanned.
-   *
-   * @param GooglePrivacyDlpV2DataRiskLevel $dataRiskLevel
+   * @param GooglePrivacyDlpV2DataRiskLevel
    */
   public function setDataRiskLevel(GooglePrivacyDlpV2DataRiskLevel $dataRiskLevel)
   {
@@ -60,10 +54,7 @@ class GooglePrivacyDlpV2FileClusterSummary extends \Google\Collection
     return $this->dataRiskLevel;
   }
   /**
-   * A list of errors detected while scanning this cluster. The list is
-   * truncated to 10 per cluster.
-   *
-   * @param GooglePrivacyDlpV2Error[] $errors
+   * @param GooglePrivacyDlpV2Error[]
    */
   public function setErrors($errors)
   {
@@ -77,9 +68,7 @@ class GooglePrivacyDlpV2FileClusterSummary extends \Google\Collection
     return $this->errors;
   }
   /**
-   * The file cluster type.
-   *
-   * @param GooglePrivacyDlpV2FileClusterType $fileClusterType
+   * @param GooglePrivacyDlpV2FileClusterType
    */
   public function setFileClusterType(GooglePrivacyDlpV2FileClusterType $fileClusterType)
   {
@@ -93,11 +82,7 @@ class GooglePrivacyDlpV2FileClusterSummary extends \Google\Collection
     return $this->fileClusterType;
   }
   /**
-   * A sample of file types scanned in this cluster. Empty if no files were
-   * scanned. File extensions can be derived from the file name or the file
-   * content.
-   *
-   * @param GooglePrivacyDlpV2FileExtensionInfo[] $fileExtensionsScanned
+   * @param GooglePrivacyDlpV2FileExtensionInfo[]
    */
   public function setFileExtensionsScanned($fileExtensionsScanned)
   {
@@ -111,10 +96,7 @@ class GooglePrivacyDlpV2FileClusterSummary extends \Google\Collection
     return $this->fileExtensionsScanned;
   }
   /**
-   * A sample of file types seen in this cluster. Empty if no files were seen.
-   * File extensions can be derived from the file name or the file content.
-   *
-   * @param GooglePrivacyDlpV2FileExtensionInfo[] $fileExtensionsSeen
+   * @param GooglePrivacyDlpV2FileExtensionInfo[]
    */
   public function setFileExtensionsSeen($fileExtensionsSeen)
   {
@@ -128,9 +110,7 @@ class GooglePrivacyDlpV2FileClusterSummary extends \Google\Collection
     return $this->fileExtensionsSeen;
   }
   /**
-   * InfoTypes detected in this cluster.
-   *
-   * @param GooglePrivacyDlpV2FileStoreInfoTypeSummary[] $fileStoreInfoTypeSummaries
+   * @param GooglePrivacyDlpV2FileStoreInfoTypeSummary[]
    */
   public function setFileStoreInfoTypeSummaries($fileStoreInfoTypeSummaries)
   {
@@ -144,11 +124,7 @@ class GooglePrivacyDlpV2FileClusterSummary extends \Google\Collection
     return $this->fileStoreInfoTypeSummaries;
   }
   /**
-   * True if no files exist in this cluster. If the file store had more files
-   * than could be listed, this will be false even if no files for this cluster
-   * were seen and file_extensions_seen is empty.
-   *
-   * @param bool $noFilesExist
+   * @param bool
    */
   public function setNoFilesExist($noFilesExist)
   {
@@ -162,10 +138,7 @@ class GooglePrivacyDlpV2FileClusterSummary extends \Google\Collection
     return $this->noFilesExist;
   }
   /**
-   * The sensitivity score of this cluster. The score will be SENSITIVITY_LOW if
-   * nothing has been scanned.
-   *
-   * @param GooglePrivacyDlpV2SensitivityScore $sensitivityScore
+   * @param GooglePrivacyDlpV2SensitivityScore
    */
   public function setSensitivityScore(GooglePrivacyDlpV2SensitivityScore $sensitivityScore)
   {

@@ -20,24 +20,16 @@ namespace Google\Service\Games;
 class PlayerExperienceInfo extends \Google\Model
 {
   /**
-   * The current number of experience points for the player.
-   *
    * @var string
    */
   public $currentExperiencePoints;
   protected $currentLevelType = PlayerLevel::class;
   protected $currentLevelDataType = '';
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#playerExperienceInfo`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The timestamp when the player was leveled up, in millis since Unix epoch
-   * UTC.
-   *
    * @var string
    */
   public $lastLevelUpTimestampMillis;
@@ -45,9 +37,7 @@ class PlayerExperienceInfo extends \Google\Model
   protected $nextLevelDataType = '';
 
   /**
-   * The current number of experience points for the player.
-   *
-   * @param string $currentExperiencePoints
+   * @param string
    */
   public function setCurrentExperiencePoints($currentExperiencePoints)
   {
@@ -61,9 +51,7 @@ class PlayerExperienceInfo extends \Google\Model
     return $this->currentExperiencePoints;
   }
   /**
-   * The current level of the player.
-   *
-   * @param PlayerLevel $currentLevel
+   * @param PlayerLevel
    */
   public function setCurrentLevel(PlayerLevel $currentLevel)
   {
@@ -77,10 +65,7 @@ class PlayerExperienceInfo extends \Google\Model
     return $this->currentLevel;
   }
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#playerExperienceInfo`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -94,10 +79,7 @@ class PlayerExperienceInfo extends \Google\Model
     return $this->kind;
   }
   /**
-   * The timestamp when the player was leveled up, in millis since Unix epoch
-   * UTC.
-   *
-   * @param string $lastLevelUpTimestampMillis
+   * @param string
    */
   public function setLastLevelUpTimestampMillis($lastLevelUpTimestampMillis)
   {
@@ -111,10 +93,7 @@ class PlayerExperienceInfo extends \Google\Model
     return $this->lastLevelUpTimestampMillis;
   }
   /**
-   * The next level of the player. If the current level is the maximum level,
-   * this should be same as the current level.
-   *
-   * @param PlayerLevel $nextLevel
+   * @param PlayerLevel
    */
   public function setNextLevel(PlayerLevel $nextLevel)
   {

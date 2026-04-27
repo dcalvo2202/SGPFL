@@ -28,9 +28,7 @@ class GoogleCloudDocumentaiUiv1beta3ExportDocumentsMetadata extends \Google\Coll
   protected $splitExportStatsDataType = 'array';
 
   /**
-   * The basic metadata of the long-running operation.
-   *
-   * @param GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata $commonMetadata
+   * @param GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata
    */
   public function setCommonMetadata(GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata $commonMetadata)
   {
@@ -44,9 +42,7 @@ class GoogleCloudDocumentaiUiv1beta3ExportDocumentsMetadata extends \Google\Coll
     return $this->commonMetadata;
   }
   /**
-   * The list of response details of each document.
-   *
-   * @param GoogleCloudDocumentaiUiv1beta3ExportDocumentsMetadataIndividualExportStatus[] $individualExportStatuses
+   * @param GoogleCloudDocumentaiUiv1beta3ExportDocumentsMetadataIndividualExportStatus[]
    */
   public function setIndividualExportStatuses($individualExportStatuses)
   {
@@ -60,9 +56,7 @@ class GoogleCloudDocumentaiUiv1beta3ExportDocumentsMetadata extends \Google\Coll
     return $this->individualExportStatuses;
   }
   /**
-   * The list of statistics for each dataset split type.
-   *
-   * @param GoogleCloudDocumentaiUiv1beta3ExportDocumentsMetadataSplitExportStat[] $splitExportStats
+   * @param GoogleCloudDocumentaiUiv1beta3ExportDocumentsMetadataSplitExportStat[]
    */
   public function setSplitExportStats($splitExportStats)
   {

@@ -21,22 +21,16 @@ class SetTablePrimaryKey extends \Google\Collection
 {
   protected $collection_key = 'primaryKeyColumns';
   /**
-   * Optional. Name for the primary key
-   *
    * @var string
    */
   public $primaryKey;
   /**
-   * Required. List of column names for the primary key
-   *
    * @var string[]
    */
   public $primaryKeyColumns;
 
   /**
-   * Optional. Name for the primary key
-   *
-   * @param string $primaryKey
+   * @param string
    */
   public function setPrimaryKey($primaryKey)
   {
@@ -50,9 +44,7 @@ class SetTablePrimaryKey extends \Google\Collection
     return $this->primaryKey;
   }
   /**
-   * Required. List of column names for the primary key
-   *
-   * @param string[] $primaryKeyColumns
+   * @param string[]
    */
   public function setPrimaryKeyColumns($primaryKeyColumns)
   {

@@ -29,9 +29,7 @@ class GooglePrivacyDlpV2DeidentifyConfig extends \Google\Model
   protected $transformationErrorHandlingDataType = '';
 
   /**
-   * Treat the dataset as an image and redact.
-   *
-   * @param GooglePrivacyDlpV2ImageTransformations $imageTransformations
+   * @param GooglePrivacyDlpV2ImageTransformations
    */
   public function setImageTransformations(GooglePrivacyDlpV2ImageTransformations $imageTransformations)
   {
@@ -45,10 +43,7 @@ class GooglePrivacyDlpV2DeidentifyConfig extends \Google\Model
     return $this->imageTransformations;
   }
   /**
-   * Treat the dataset as free-form text and apply the same free text
-   * transformation everywhere.
-   *
-   * @param GooglePrivacyDlpV2InfoTypeTransformations $infoTypeTransformations
+   * @param GooglePrivacyDlpV2InfoTypeTransformations
    */
   public function setInfoTypeTransformations(GooglePrivacyDlpV2InfoTypeTransformations $infoTypeTransformations)
   {
@@ -62,11 +57,7 @@ class GooglePrivacyDlpV2DeidentifyConfig extends \Google\Model
     return $this->infoTypeTransformations;
   }
   /**
-   * Treat the dataset as structured. Transformations can be applied to specific
-   * locations within structured datasets, such as transforming a column within
-   * a table.
-   *
-   * @param GooglePrivacyDlpV2RecordTransformations $recordTransformations
+   * @param GooglePrivacyDlpV2RecordTransformations
    */
   public function setRecordTransformations(GooglePrivacyDlpV2RecordTransformations $recordTransformations)
   {
@@ -80,10 +71,7 @@ class GooglePrivacyDlpV2DeidentifyConfig extends \Google\Model
     return $this->recordTransformations;
   }
   /**
-   * Mode for handling transformation errors. If left unspecified, the default
-   * mode is `TransformationErrorHandling.ThrowError`.
-   *
-   * @param GooglePrivacyDlpV2TransformationErrorHandling $transformationErrorHandling
+   * @param GooglePrivacyDlpV2TransformationErrorHandling
    */
   public function setTransformationErrorHandling(GooglePrivacyDlpV2TransformationErrorHandling $transformationErrorHandling)
   {

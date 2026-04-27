@@ -21,95 +21,64 @@ class Result extends \Google\Collection
 {
   protected $collection_key = 'labels';
   /**
-   * Indicates the ID of Google's cached version of the search result.
-   *
    * @var string
    */
   public $cacheId;
   /**
-   * An abridged version of this search result’s URL, e.g. www.example.com.
-   *
    * @var string
    */
   public $displayLink;
   /**
-   * The file format of the search result.
-   *
    * @var string
    */
   public $fileFormat;
   /**
-   * The URL displayed after the snippet for each search result.
-   *
    * @var string
    */
   public $formattedUrl;
   /**
-   * The HTML-formatted URL displayed after the snippet for each search result.
-   *
    * @var string
    */
   public $htmlFormattedUrl;
   /**
-   * The snippet of the search result, in HTML.
-   *
    * @var string
    */
   public $htmlSnippet;
   /**
-   * The title of the search result, in HTML.
-   *
    * @var string
    */
   public $htmlTitle;
   protected $imageType = ResultImage::class;
   protected $imageDataType = '';
   /**
-   * A unique identifier for the type of current object. For this API, it is
-   * `customsearch#result.`
-   *
    * @var string
    */
   public $kind;
   protected $labelsType = ResultLabels::class;
   protected $labelsDataType = 'array';
   /**
-   * The full URL to which the search result is pointing, e.g.
-   * http://www.example.com/foo/bar.
-   *
    * @var string
    */
   public $link;
   /**
-   * The MIME type of the search result.
-   *
    * @var string
    */
   public $mime;
   /**
-   * Contains [PageMap](https://developers.google.com/custom-
-   * search/docs/structured_data#pagemaps) information for this search result.
-   *
    * @var array[]
    */
   public $pagemap;
   /**
-   * The snippet of the search result, in plain text.
-   *
    * @var string
    */
   public $snippet;
   /**
-   * The title of the search result, in plain text.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * Indicates the ID of Google's cached version of the search result.
-   *
-   * @param string $cacheId
+   * @param string
    */
   public function setCacheId($cacheId)
   {
@@ -123,9 +92,7 @@ class Result extends \Google\Collection
     return $this->cacheId;
   }
   /**
-   * An abridged version of this search result’s URL, e.g. www.example.com.
-   *
-   * @param string $displayLink
+   * @param string
    */
   public function setDisplayLink($displayLink)
   {
@@ -139,9 +106,7 @@ class Result extends \Google\Collection
     return $this->displayLink;
   }
   /**
-   * The file format of the search result.
-   *
-   * @param string $fileFormat
+   * @param string
    */
   public function setFileFormat($fileFormat)
   {
@@ -155,9 +120,7 @@ class Result extends \Google\Collection
     return $this->fileFormat;
   }
   /**
-   * The URL displayed after the snippet for each search result.
-   *
-   * @param string $formattedUrl
+   * @param string
    */
   public function setFormattedUrl($formattedUrl)
   {
@@ -171,9 +134,7 @@ class Result extends \Google\Collection
     return $this->formattedUrl;
   }
   /**
-   * The HTML-formatted URL displayed after the snippet for each search result.
-   *
-   * @param string $htmlFormattedUrl
+   * @param string
    */
   public function setHtmlFormattedUrl($htmlFormattedUrl)
   {
@@ -187,9 +148,7 @@ class Result extends \Google\Collection
     return $this->htmlFormattedUrl;
   }
   /**
-   * The snippet of the search result, in HTML.
-   *
-   * @param string $htmlSnippet
+   * @param string
    */
   public function setHtmlSnippet($htmlSnippet)
   {
@@ -203,9 +162,7 @@ class Result extends \Google\Collection
     return $this->htmlSnippet;
   }
   /**
-   * The title of the search result, in HTML.
-   *
-   * @param string $htmlTitle
+   * @param string
    */
   public function setHtmlTitle($htmlTitle)
   {
@@ -219,9 +176,7 @@ class Result extends \Google\Collection
     return $this->htmlTitle;
   }
   /**
-   * Image belonging to a custom search result.
-   *
-   * @param ResultImage $image
+   * @param ResultImage
    */
   public function setImage(ResultImage $image)
   {
@@ -235,10 +190,7 @@ class Result extends \Google\Collection
     return $this->image;
   }
   /**
-   * A unique identifier for the type of current object. For this API, it is
-   * `customsearch#result.`
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -252,9 +204,7 @@ class Result extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Encapsulates all information about refinement labels.
-   *
-   * @param ResultLabels[] $labels
+   * @param ResultLabels[]
    */
   public function setLabels($labels)
   {
@@ -268,10 +218,7 @@ class Result extends \Google\Collection
     return $this->labels;
   }
   /**
-   * The full URL to which the search result is pointing, e.g.
-   * http://www.example.com/foo/bar.
-   *
-   * @param string $link
+   * @param string
    */
   public function setLink($link)
   {
@@ -285,9 +232,7 @@ class Result extends \Google\Collection
     return $this->link;
   }
   /**
-   * The MIME type of the search result.
-   *
-   * @param string $mime
+   * @param string
    */
   public function setMime($mime)
   {
@@ -301,10 +246,7 @@ class Result extends \Google\Collection
     return $this->mime;
   }
   /**
-   * Contains [PageMap](https://developers.google.com/custom-
-   * search/docs/structured_data#pagemaps) information for this search result.
-   *
-   * @param array[] $pagemap
+   * @param array[]
    */
   public function setPagemap($pagemap)
   {
@@ -318,9 +260,7 @@ class Result extends \Google\Collection
     return $this->pagemap;
   }
   /**
-   * The snippet of the search result, in plain text.
-   *
-   * @param string $snippet
+   * @param string
    */
   public function setSnippet($snippet)
   {
@@ -334,9 +274,7 @@ class Result extends \Google\Collection
     return $this->snippet;
   }
   /**
-   * The title of the search result, in plain text.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

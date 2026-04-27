@@ -23,16 +23,12 @@ class ListConnectionsResponse extends \Google\Collection
   protected $connectionsType = Connection::class;
   protected $connectionsDataType = 'array';
   /**
-   * Next page token.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * List of connections.
-   *
-   * @param Connection[] $connections
+   * @param Connection[]
    */
   public function setConnections($connections)
   {
@@ -46,9 +42,7 @@ class ListConnectionsResponse extends \Google\Collection
     return $this->connections;
   }
   /**
-   * Next page token.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

@@ -21,108 +21,22 @@ class LinkedRouterApplianceInstances extends \Google\Collection
 {
   protected $collection_key = 'instances';
   /**
-   * Optional. Dynamic routes overlapped/encompassed by exclude export ranges
-   * are excluded during export to hub.
-   *
-   * @var string[]
-   */
-  public $excludeExportRanges;
-  /**
-   * Optional. Hub routes overlapped/encompassed by exclude import ranges are
-   * excluded during import from hub.
-   *
-   * @var string[]
-   */
-  public $excludeImportRanges;
-  /**
-   * Optional. Dynamic routes fully encompassed by include export ranges are
-   * included during export to hub.
-   *
-   * @var string[]
-   */
-  public $includeExportRanges;
-  /**
-   * Optional. Hub routes fully encompassed by include import ranges are
-   * included during import from hub.
-   *
    * @var string[]
    */
   public $includeImportRanges;
   protected $instancesType = RouterApplianceInstance::class;
   protected $instancesDataType = 'array';
   /**
-   * A value that controls whether site-to-site data transfer is enabled for
-   * these resources. Data transfer is available only in [supported
-   * locations](https://cloud.google.com/network-connectivity/docs/network-
-   * connectivity-center/concepts/locations).
-   *
    * @var bool
    */
   public $siteToSiteDataTransfer;
   /**
-   * Output only. The VPC network where these router appliance instances are
-   * located.
-   *
    * @var string
    */
   public $vpcNetwork;
 
   /**
-   * Optional. Dynamic routes overlapped/encompassed by exclude export ranges
-   * are excluded during export to hub.
-   *
-   * @param string[] $excludeExportRanges
-   */
-  public function setExcludeExportRanges($excludeExportRanges)
-  {
-    $this->excludeExportRanges = $excludeExportRanges;
-  }
-  /**
-   * @return string[]
-   */
-  public function getExcludeExportRanges()
-  {
-    return $this->excludeExportRanges;
-  }
-  /**
-   * Optional. Hub routes overlapped/encompassed by exclude import ranges are
-   * excluded during import from hub.
-   *
-   * @param string[] $excludeImportRanges
-   */
-  public function setExcludeImportRanges($excludeImportRanges)
-  {
-    $this->excludeImportRanges = $excludeImportRanges;
-  }
-  /**
-   * @return string[]
-   */
-  public function getExcludeImportRanges()
-  {
-    return $this->excludeImportRanges;
-  }
-  /**
-   * Optional. Dynamic routes fully encompassed by include export ranges are
-   * included during export to hub.
-   *
-   * @param string[] $includeExportRanges
-   */
-  public function setIncludeExportRanges($includeExportRanges)
-  {
-    $this->includeExportRanges = $includeExportRanges;
-  }
-  /**
-   * @return string[]
-   */
-  public function getIncludeExportRanges()
-  {
-    return $this->includeExportRanges;
-  }
-  /**
-   * Optional. Hub routes fully encompassed by include import ranges are
-   * included during import from hub.
-   *
-   * @param string[] $includeImportRanges
+   * @param string[]
    */
   public function setIncludeImportRanges($includeImportRanges)
   {
@@ -136,9 +50,7 @@ class LinkedRouterApplianceInstances extends \Google\Collection
     return $this->includeImportRanges;
   }
   /**
-   * The list of router appliance instances.
-   *
-   * @param RouterApplianceInstance[] $instances
+   * @param RouterApplianceInstance[]
    */
   public function setInstances($instances)
   {
@@ -152,12 +64,7 @@ class LinkedRouterApplianceInstances extends \Google\Collection
     return $this->instances;
   }
   /**
-   * A value that controls whether site-to-site data transfer is enabled for
-   * these resources. Data transfer is available only in [supported
-   * locations](https://cloud.google.com/network-connectivity/docs/network-
-   * connectivity-center/concepts/locations).
-   *
-   * @param bool $siteToSiteDataTransfer
+   * @param bool
    */
   public function setSiteToSiteDataTransfer($siteToSiteDataTransfer)
   {
@@ -171,10 +78,7 @@ class LinkedRouterApplianceInstances extends \Google\Collection
     return $this->siteToSiteDataTransfer;
   }
   /**
-   * Output only. The VPC network where these router appliance instances are
-   * located.
-   *
-   * @param string $vpcNetwork
+   * @param string
    */
   public function setVpcNetwork($vpcNetwork)
   {

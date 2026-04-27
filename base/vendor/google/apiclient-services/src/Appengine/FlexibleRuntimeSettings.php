@@ -20,22 +20,16 @@ namespace Google\Service\Appengine;
 class FlexibleRuntimeSettings extends \Google\Model
 {
   /**
-   * The operating system of the application runtime.
-   *
    * @var string
    */
   public $operatingSystem;
   /**
-   * The runtime version of an App Engine flexible application.
-   *
    * @var string
    */
   public $runtimeVersion;
 
   /**
-   * The operating system of the application runtime.
-   *
-   * @param string $operatingSystem
+   * @param string
    */
   public function setOperatingSystem($operatingSystem)
   {
@@ -49,9 +43,7 @@ class FlexibleRuntimeSettings extends \Google\Model
     return $this->operatingSystem;
   }
   /**
-   * The runtime version of an App Engine flexible application.
-   *
-   * @param string $runtimeVersion
+   * @param string
    */
   public function setRuntimeVersion($runtimeVersion)
   {

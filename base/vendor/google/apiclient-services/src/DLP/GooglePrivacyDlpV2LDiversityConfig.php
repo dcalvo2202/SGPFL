@@ -26,11 +26,7 @@ class GooglePrivacyDlpV2LDiversityConfig extends \Google\Collection
   protected $sensitiveAttributeDataType = '';
 
   /**
-   * Set of quasi-identifiers indicating how equivalence classes are defined for
-   * the l-diversity computation. When multiple fields are specified, they are
-   * considered a single composite key.
-   *
-   * @param GooglePrivacyDlpV2FieldId[] $quasiIds
+   * @param GooglePrivacyDlpV2FieldId[]
    */
   public function setQuasiIds($quasiIds)
   {
@@ -44,9 +40,7 @@ class GooglePrivacyDlpV2LDiversityConfig extends \Google\Collection
     return $this->quasiIds;
   }
   /**
-   * Sensitive field for computing the l-value.
-   *
-   * @param GooglePrivacyDlpV2FieldId $sensitiveAttribute
+   * @param GooglePrivacyDlpV2FieldId
    */
   public function setSensitiveAttribute(GooglePrivacyDlpV2FieldId $sensitiveAttribute)
   {

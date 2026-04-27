@@ -25,9 +25,7 @@ class GooglePrivacyDlpV2TransformationErrorHandling extends \Google\Model
   protected $throwErrorDataType = '';
 
   /**
-   * Ignore errors
-   *
-   * @param GooglePrivacyDlpV2LeaveUntransformed $leaveUntransformed
+   * @param GooglePrivacyDlpV2LeaveUntransformed
    */
   public function setLeaveUntransformed(GooglePrivacyDlpV2LeaveUntransformed $leaveUntransformed)
   {
@@ -41,9 +39,7 @@ class GooglePrivacyDlpV2TransformationErrorHandling extends \Google\Model
     return $this->leaveUntransformed;
   }
   /**
-   * Throw an error
-   *
-   * @param GooglePrivacyDlpV2ThrowError $throwError
+   * @param GooglePrivacyDlpV2ThrowError
    */
   public function setThrowError(GooglePrivacyDlpV2ThrowError $throwError)
   {

@@ -22,16 +22,12 @@ class GoogleCloudContactcenterinsightsV1alpha1CreateIssueModelRequest extends \G
   protected $issueModelType = GoogleCloudContactcenterinsightsV1alpha1IssueModel::class;
   protected $issueModelDataType = '';
   /**
-   * Required. The parent resource of the issue model.
-   *
    * @var string
    */
   public $parent;
 
   /**
-   * Required. The issue model to create.
-   *
-   * @param GoogleCloudContactcenterinsightsV1alpha1IssueModel $issueModel
+   * @param GoogleCloudContactcenterinsightsV1alpha1IssueModel
    */
   public function setIssueModel(GoogleCloudContactcenterinsightsV1alpha1IssueModel $issueModel)
   {
@@ -45,9 +41,7 @@ class GoogleCloudContactcenterinsightsV1alpha1CreateIssueModelRequest extends \G
     return $this->issueModel;
   }
   /**
-   * Required. The parent resource of the issue model.
-   *
-   * @param string $parent
+   * @param string
    */
   public function setParent($parent)
   {

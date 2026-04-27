@@ -19,155 +19,66 @@ namespace Google\Service\CloudSupport;
 
 class CloudsupportCase extends \Google\Collection
 {
-  /**
-   * Priority is undefined or has not been set yet.
-   */
-  public const PRIORITY_PRIORITY_UNSPECIFIED = 'PRIORITY_UNSPECIFIED';
-  /**
-   * Extreme impact on a production service. Service is hard down.
-   */
-  public const PRIORITY_P0 = 'P0';
-  /**
-   * Critical impact on a production service. Service is currently unusable.
-   */
-  public const PRIORITY_P1 = 'P1';
-  /**
-   * Severe impact on a production service. Service is usable but greatly
-   * impaired.
-   */
-  public const PRIORITY_P2 = 'P2';
-  /**
-   * Medium impact on a production service. Service is available, but moderately
-   * impaired.
-   */
-  public const PRIORITY_P3 = 'P3';
-  /**
-   * General questions or minor issues. Production service is fully available.
-   */
-  public const PRIORITY_P4 = 'P4';
-  /**
-   * Case is in an unknown state.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The case has been created but no one is assigned to work on it yet.
-   */
-  public const STATE_NEW = 'NEW';
-  /**
-   * The case is currently being handled by Google support.
-   */
-  public const STATE_IN_PROGRESS_GOOGLE_SUPPORT = 'IN_PROGRESS_GOOGLE_SUPPORT';
-  /**
-   * Google is waiting for a response.
-   */
-  public const STATE_ACTION_REQUIRED = 'ACTION_REQUIRED';
-  /**
-   * A solution has been offered for the case, but it isn't yet closed.
-   */
-  public const STATE_SOLUTION_PROVIDED = 'SOLUTION_PROVIDED';
-  /**
-   * The case has been resolved.
-   */
-  public const STATE_CLOSED = 'CLOSED';
   protected $collection_key = 'subscriberEmailAddresses';
   protected $classificationType = CaseClassification::class;
   protected $classificationDataType = '';
   /**
-   * A user-supplied email address to send case update notifications for. This
-   * should only be used in BYOID flows, where we cannot infer the user's email
-   * address directly from their EUCs.
-   *
    * @var string
    */
   public $contactEmail;
   /**
-   * Output only. The time this case was created.
-   *
    * @var string
    */
   public $createTime;
   protected $creatorType = Actor::class;
   protected $creatorDataType = '';
   /**
-   * A broad description of the issue.
-   *
    * @var string
    */
   public $description;
   /**
-   * The short summary of the issue reported in this case.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Whether the case is currently escalated.
-   *
    * @var bool
    */
   public $escalated;
   /**
-   * The language the user has requested to receive support in. This should be a
-   * BCP 47 language code (e.g., `"en"`, `"zh-CN"`, `"zh-TW"`, `"ja"`, `"ko"`).
-   * If no language or an unsupported language is specified, this field defaults
-   * to English (en). Language selection during case creation may affect your
-   * available support options. For a list of supported languages and their
-   * support working hours, see: https://cloud.google.com/support/docs/language-
-   * working-hours
-   *
    * @var string
    */
   public $languageCode;
   /**
-   * Identifier. The resource name for the case.
-   *
    * @var string
    */
   public $name;
   /**
-   * The priority of this case.
-   *
    * @var string
    */
   public $priority;
   /**
-   * Output only. The current status of the support case.
-   *
    * @var string
    */
   public $state;
   /**
-   * The email addresses to receive updates on this case.
-   *
    * @var string[]
    */
   public $subscriberEmailAddresses;
   /**
-   * Whether this case was created for internal API testing and should not be
-   * acted on by the support team.
-   *
    * @var bool
    */
   public $testCase;
   /**
-   * The timezone of the user who created the support case. It should be in a
-   * format IANA recognizes: https://www.iana.org/time-zones. There is no
-   * additional validation done by the API.
-   *
    * @var string
    */
   public $timeZone;
   /**
-   * Output only. The time this case was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * The issue classification applicable to this case.
-   *
-   * @param CaseClassification $classification
+   * @param CaseClassification
    */
   public function setClassification(CaseClassification $classification)
   {
@@ -181,11 +92,7 @@ class CloudsupportCase extends \Google\Collection
     return $this->classification;
   }
   /**
-   * A user-supplied email address to send case update notifications for. This
-   * should only be used in BYOID flows, where we cannot infer the user's email
-   * address directly from their EUCs.
-   *
-   * @param string $contactEmail
+   * @param string
    */
   public function setContactEmail($contactEmail)
   {
@@ -199,9 +106,7 @@ class CloudsupportCase extends \Google\Collection
     return $this->contactEmail;
   }
   /**
-   * Output only. The time this case was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -215,10 +120,7 @@ class CloudsupportCase extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * The user who created the case. Note: The name and email will be obfuscated
-   * if the case was created by Google Support.
-   *
-   * @param Actor $creator
+   * @param Actor
    */
   public function setCreator(Actor $creator)
   {
@@ -232,9 +134,7 @@ class CloudsupportCase extends \Google\Collection
     return $this->creator;
   }
   /**
-   * A broad description of the issue.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -248,9 +148,7 @@ class CloudsupportCase extends \Google\Collection
     return $this->description;
   }
   /**
-   * The short summary of the issue reported in this case.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -264,9 +162,7 @@ class CloudsupportCase extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Whether the case is currently escalated.
-   *
-   * @param bool $escalated
+   * @param bool
    */
   public function setEscalated($escalated)
   {
@@ -280,15 +176,7 @@ class CloudsupportCase extends \Google\Collection
     return $this->escalated;
   }
   /**
-   * The language the user has requested to receive support in. This should be a
-   * BCP 47 language code (e.g., `"en"`, `"zh-CN"`, `"zh-TW"`, `"ja"`, `"ko"`).
-   * If no language or an unsupported language is specified, this field defaults
-   * to English (en). Language selection during case creation may affect your
-   * available support options. For a list of supported languages and their
-   * support working hours, see: https://cloud.google.com/support/docs/language-
-   * working-hours
-   *
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {
@@ -302,9 +190,7 @@ class CloudsupportCase extends \Google\Collection
     return $this->languageCode;
   }
   /**
-   * Identifier. The resource name for the case.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -318,46 +204,35 @@ class CloudsupportCase extends \Google\Collection
     return $this->name;
   }
   /**
-   * The priority of this case.
-   *
-   * Accepted values: PRIORITY_UNSPECIFIED, P0, P1, P2, P3, P4
-   *
-   * @param self::PRIORITY_* $priority
+   * @param string
    */
   public function setPriority($priority)
   {
     $this->priority = $priority;
   }
   /**
-   * @return self::PRIORITY_*
+   * @return string
    */
   public function getPriority()
   {
     return $this->priority;
   }
   /**
-   * Output only. The current status of the support case.
-   *
-   * Accepted values: STATE_UNSPECIFIED, NEW, IN_PROGRESS_GOOGLE_SUPPORT,
-   * ACTION_REQUIRED, SOLUTION_PROVIDED, CLOSED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * The email addresses to receive updates on this case.
-   *
-   * @param string[] $subscriberEmailAddresses
+   * @param string[]
    */
   public function setSubscriberEmailAddresses($subscriberEmailAddresses)
   {
@@ -371,10 +246,7 @@ class CloudsupportCase extends \Google\Collection
     return $this->subscriberEmailAddresses;
   }
   /**
-   * Whether this case was created for internal API testing and should not be
-   * acted on by the support team.
-   *
-   * @param bool $testCase
+   * @param bool
    */
   public function setTestCase($testCase)
   {
@@ -388,11 +260,7 @@ class CloudsupportCase extends \Google\Collection
     return $this->testCase;
   }
   /**
-   * The timezone of the user who created the support case. It should be in a
-   * format IANA recognizes: https://www.iana.org/time-zones. There is no
-   * additional validation done by the API.
-   *
-   * @param string $timeZone
+   * @param string
    */
   public function setTimeZone($timeZone)
   {
@@ -406,9 +274,7 @@ class CloudsupportCase extends \Google\Collection
     return $this->timeZone;
   }
   /**
-   * Output only. The time this case was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

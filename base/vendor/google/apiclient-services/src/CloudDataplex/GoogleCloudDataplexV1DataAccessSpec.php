@@ -21,20 +21,12 @@ class GoogleCloudDataplexV1DataAccessSpec extends \Google\Collection
 {
   protected $collection_key = 'readers';
   /**
-   * Optional. The format of strings follows the pattern followed by IAM in the
-   * bindings. user:{email}, serviceAccount:{email} group:{email}. The set of
-   * principals to be granted reader role on data stored within resources.
-   *
    * @var string[]
    */
   public $readers;
 
   /**
-   * Optional. The format of strings follows the pattern followed by IAM in the
-   * bindings. user:{email}, serviceAccount:{email} group:{email}. The set of
-   * principals to be granted reader role on data stored within resources.
-   *
-   * @param string[] $readers
+   * @param string[]
    */
   public function setReaders($readers)
   {

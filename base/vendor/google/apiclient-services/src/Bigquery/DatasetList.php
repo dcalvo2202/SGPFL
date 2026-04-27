@@ -23,42 +23,24 @@ class DatasetList extends \Google\Collection
   protected $datasetsType = DatasetListDatasets::class;
   protected $datasetsDataType = 'array';
   /**
-   * Output only. A hash value of the results page. You can use this property to
-   * determine if the page has changed since the last request.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Output only. The resource type. This property always returns the value
-   * "bigquery#datasetList"
-   *
    * @var string
    */
   public $kind;
   /**
-   * A token that can be used to request the next results page. This property is
-   * omitted on the final results page.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * A list of skipped locations that were unreachable. For more information
-   * about BigQuery locations, see:
-   * https://cloud.google.com/bigquery/docs/locations. Example: "europe-west5"
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * An array of the dataset resources in the project. Each resource contains
-   * basic information. For full information about a particular dataset
-   * resource, use the Datasets: get method. This property is omitted when there
-   * are no datasets in the project.
-   *
-   * @param DatasetListDatasets[] $datasets
+   * @param DatasetListDatasets[]
    */
   public function setDatasets($datasets)
   {
@@ -72,10 +54,7 @@ class DatasetList extends \Google\Collection
     return $this->datasets;
   }
   /**
-   * Output only. A hash value of the results page. You can use this property to
-   * determine if the page has changed since the last request.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -89,10 +68,7 @@ class DatasetList extends \Google\Collection
     return $this->etag;
   }
   /**
-   * Output only. The resource type. This property always returns the value
-   * "bigquery#datasetList"
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -106,10 +82,7 @@ class DatasetList extends \Google\Collection
     return $this->kind;
   }
   /**
-   * A token that can be used to request the next results page. This property is
-   * omitted on the final results page.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -123,11 +96,7 @@ class DatasetList extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * A list of skipped locations that were unreachable. For more information
-   * about BigQuery locations, see:
-   * https://cloud.google.com/bigquery/docs/locations. Example: "europe-west5"
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

@@ -20,28 +20,20 @@ namespace Google\Service\Dfareporting;
 class DimensionFilter extends \Google\Model
 {
   /**
-   * The name of the dimension to filter.
-   *
    * @var string
    */
   public $dimensionName;
   /**
-   * The kind of resource this is, in this case dfareporting#dimensionFilter.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The value of the dimension to filter.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * The name of the dimension to filter.
-   *
-   * @param string $dimensionName
+   * @param string
    */
   public function setDimensionName($dimensionName)
   {
@@ -55,9 +47,7 @@ class DimensionFilter extends \Google\Model
     return $this->dimensionName;
   }
   /**
-   * The kind of resource this is, in this case dfareporting#dimensionFilter.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -71,9 +61,7 @@ class DimensionFilter extends \Google\Model
     return $this->kind;
   }
   /**
-   * The value of the dimension to filter.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

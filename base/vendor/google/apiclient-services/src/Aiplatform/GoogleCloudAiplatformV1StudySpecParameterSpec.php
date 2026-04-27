@@ -19,26 +19,6 @@ namespace Google\Service\Aiplatform;
 
 class GoogleCloudAiplatformV1StudySpecParameterSpec extends \Google\Collection
 {
-  /**
-   * By default, no scaling is applied.
-   */
-  public const SCALE_TYPE_SCALE_TYPE_UNSPECIFIED = 'SCALE_TYPE_UNSPECIFIED';
-  /**
-   * Scales the feasible space to (0, 1) linearly.
-   */
-  public const SCALE_TYPE_UNIT_LINEAR_SCALE = 'UNIT_LINEAR_SCALE';
-  /**
-   * Scales the feasible space logarithmically to (0, 1). The entire feasible
-   * space must be strictly positive.
-   */
-  public const SCALE_TYPE_UNIT_LOG_SCALE = 'UNIT_LOG_SCALE';
-  /**
-   * Scales the feasible space "reverse" logarithmically to (0, 1). The result
-   * is that values close to the top of the feasible space are spread out more
-   * than points near the bottom. The entire feasible space must be strictly
-   * positive.
-   */
-  public const SCALE_TYPE_UNIT_REVERSE_LOG_SCALE = 'UNIT_REVERSE_LOG_SCALE';
   protected $collection_key = 'conditionalParameterSpecs';
   protected $categoricalValueSpecType = GoogleCloudAiplatformV1StudySpecParameterSpecCategoricalValueSpec::class;
   protected $categoricalValueSpecDataType = '';
@@ -51,24 +31,16 @@ class GoogleCloudAiplatformV1StudySpecParameterSpec extends \Google\Collection
   protected $integerValueSpecType = GoogleCloudAiplatformV1StudySpecParameterSpecIntegerValueSpec::class;
   protected $integerValueSpecDataType = '';
   /**
-   * Required. The ID of the parameter. Must not contain whitespaces and must be
-   * unique amongst all ParameterSpecs.
-   *
    * @var string
    */
   public $parameterId;
   /**
-   * How the parameter should be scaled. Leave unset for `CATEGORICAL`
-   * parameters.
-   *
    * @var string
    */
   public $scaleType;
 
   /**
-   * The value spec for a 'CATEGORICAL' parameter.
-   *
-   * @param GoogleCloudAiplatformV1StudySpecParameterSpecCategoricalValueSpec $categoricalValueSpec
+   * @param GoogleCloudAiplatformV1StudySpecParameterSpecCategoricalValueSpec
    */
   public function setCategoricalValueSpec(GoogleCloudAiplatformV1StudySpecParameterSpecCategoricalValueSpec $categoricalValueSpec)
   {
@@ -82,12 +54,7 @@ class GoogleCloudAiplatformV1StudySpecParameterSpec extends \Google\Collection
     return $this->categoricalValueSpec;
   }
   /**
-   * A conditional parameter node is active if the parameter's value matches the
-   * conditional node's parent_value_condition. If two items in
-   * conditional_parameter_specs have the same name, they must have disjoint
-   * parent_value_condition.
-   *
-   * @param GoogleCloudAiplatformV1StudySpecParameterSpecConditionalParameterSpec[] $conditionalParameterSpecs
+   * @param GoogleCloudAiplatformV1StudySpecParameterSpecConditionalParameterSpec[]
    */
   public function setConditionalParameterSpecs($conditionalParameterSpecs)
   {
@@ -101,9 +68,7 @@ class GoogleCloudAiplatformV1StudySpecParameterSpec extends \Google\Collection
     return $this->conditionalParameterSpecs;
   }
   /**
-   * The value spec for a 'DISCRETE' parameter.
-   *
-   * @param GoogleCloudAiplatformV1StudySpecParameterSpecDiscreteValueSpec $discreteValueSpec
+   * @param GoogleCloudAiplatformV1StudySpecParameterSpecDiscreteValueSpec
    */
   public function setDiscreteValueSpec(GoogleCloudAiplatformV1StudySpecParameterSpecDiscreteValueSpec $discreteValueSpec)
   {
@@ -117,9 +82,7 @@ class GoogleCloudAiplatformV1StudySpecParameterSpec extends \Google\Collection
     return $this->discreteValueSpec;
   }
   /**
-   * The value spec for a 'DOUBLE' parameter.
-   *
-   * @param GoogleCloudAiplatformV1StudySpecParameterSpecDoubleValueSpec $doubleValueSpec
+   * @param GoogleCloudAiplatformV1StudySpecParameterSpecDoubleValueSpec
    */
   public function setDoubleValueSpec(GoogleCloudAiplatformV1StudySpecParameterSpecDoubleValueSpec $doubleValueSpec)
   {
@@ -133,9 +96,7 @@ class GoogleCloudAiplatformV1StudySpecParameterSpec extends \Google\Collection
     return $this->doubleValueSpec;
   }
   /**
-   * The value spec for an 'INTEGER' parameter.
-   *
-   * @param GoogleCloudAiplatformV1StudySpecParameterSpecIntegerValueSpec $integerValueSpec
+   * @param GoogleCloudAiplatformV1StudySpecParameterSpecIntegerValueSpec
    */
   public function setIntegerValueSpec(GoogleCloudAiplatformV1StudySpecParameterSpecIntegerValueSpec $integerValueSpec)
   {
@@ -149,10 +110,7 @@ class GoogleCloudAiplatformV1StudySpecParameterSpec extends \Google\Collection
     return $this->integerValueSpec;
   }
   /**
-   * Required. The ID of the parameter. Must not contain whitespaces and must be
-   * unique amongst all ParameterSpecs.
-   *
-   * @param string $parameterId
+   * @param string
    */
   public function setParameterId($parameterId)
   {
@@ -166,20 +124,14 @@ class GoogleCloudAiplatformV1StudySpecParameterSpec extends \Google\Collection
     return $this->parameterId;
   }
   /**
-   * How the parameter should be scaled. Leave unset for `CATEGORICAL`
-   * parameters.
-   *
-   * Accepted values: SCALE_TYPE_UNSPECIFIED, UNIT_LINEAR_SCALE, UNIT_LOG_SCALE,
-   * UNIT_REVERSE_LOG_SCALE
-   *
-   * @param self::SCALE_TYPE_* $scaleType
+   * @param string
    */
   public function setScaleType($scaleType)
   {
     $this->scaleType = $scaleType;
   }
   /**
-   * @return self::SCALE_TYPE_*
+   * @return string
    */
   public function getScaleType()
   {

@@ -19,75 +19,22 @@ namespace Google\Service\DisplayVideo;
 
 class ParentEntityFilter extends \Google\Collection
 {
-  /**
-   * Default value when type is unspecified or is unknown in this version.
-   */
-  public const FILTER_TYPE_FILTER_TYPE_UNSPECIFIED = 'FILTER_TYPE_UNSPECIFIED';
-  /**
-   * If selected, no filter will be applied to the download. Can only be used if
-   * an Advertiser is specified in CreateSdfDownloadTaskRequest.
-   */
-  public const FILTER_TYPE_FILTER_TYPE_NONE = 'FILTER_TYPE_NONE';
-  /**
-   * Advertiser ID. If selected, all filter IDs must be Advertiser IDs that
-   * belong to the Partner specified in CreateSdfDownloadTaskRequest.
-   */
-  public const FILTER_TYPE_FILTER_TYPE_ADVERTISER_ID = 'FILTER_TYPE_ADVERTISER_ID';
-  /**
-   * Campaign ID. If selected, all filter IDs must be Campaign IDs that belong
-   * to the Advertiser or Partner specified in CreateSdfDownloadTaskRequest.
-   */
-  public const FILTER_TYPE_FILTER_TYPE_CAMPAIGN_ID = 'FILTER_TYPE_CAMPAIGN_ID';
-  /**
-   * Media Product ID. If selected, all filter IDs must be Media Product IDs
-   * that belong to the Advertiser or Partner specified in
-   * CreateSdfDownloadTaskRequest. Can only be used for downloading
-   * `FILE_TYPE_MEDIA_PRODUCT`.
-   */
-  public const FILTER_TYPE_FILTER_TYPE_MEDIA_PRODUCT_ID = 'FILTER_TYPE_MEDIA_PRODUCT_ID';
-  /**
-   * Insertion Order ID. If selected, all filter IDs must be Insertion Order IDs
-   * that belong to the Advertiser or Partner specified in
-   * CreateSdfDownloadTaskRequest. Can only be used for downloading
-   * `FILE_TYPE_INSERTION_ORDER`, `FILE_TYPE_LINE_ITEM`,
-   * `FILE_TYPE_LINE_ITEM_QA`, `FILE_TYPE_AD_GROUP`, `FILE_TYPE_AD_GROUP_QA`,
-   * and `FILE_TYPE_AD`.
-   */
-  public const FILTER_TYPE_FILTER_TYPE_INSERTION_ORDER_ID = 'FILTER_TYPE_INSERTION_ORDER_ID';
-  /**
-   * Line Item ID. If selected, all filter IDs must be Line Item IDs that belong
-   * to the Advertiser or Partner specified in CreateSdfDownloadTaskRequest. Can
-   * only be used for downloading `FILE_TYPE_LINE_ITEM`,
-   * `FILE_TYPE_LINE_ITEM_QA`,`FILE_TYPE_AD_GROUP`, `FILE_TYPE_AD_GROUP_QA`, and
-   * `FILE_TYPE_AD`.
-   */
-  public const FILTER_TYPE_FILTER_TYPE_LINE_ITEM_ID = 'FILTER_TYPE_LINE_ITEM_ID';
   protected $collection_key = 'filterIds';
   /**
-   * Required. File types that will be returned.
-   *
    * @var string[]
    */
   public $fileType;
   /**
-   * The IDs of the specified filter type. This is used to filter entities to
-   * fetch. If filter type is not `FILTER_TYPE_NONE`, at least one ID must be
-   * specified.
-   *
    * @var string[]
    */
   public $filterIds;
   /**
-   * Required. Filter type used to filter fetched entities.
-   *
    * @var string
    */
   public $filterType;
 
   /**
-   * Required. File types that will be returned.
-   *
-   * @param string[] $fileType
+   * @param string[]
    */
   public function setFileType($fileType)
   {
@@ -101,11 +48,7 @@ class ParentEntityFilter extends \Google\Collection
     return $this->fileType;
   }
   /**
-   * The IDs of the specified filter type. This is used to filter entities to
-   * fetch. If filter type is not `FILTER_TYPE_NONE`, at least one ID must be
-   * specified.
-   *
-   * @param string[] $filterIds
+   * @param string[]
    */
   public function setFilterIds($filterIds)
   {
@@ -119,21 +62,14 @@ class ParentEntityFilter extends \Google\Collection
     return $this->filterIds;
   }
   /**
-   * Required. Filter type used to filter fetched entities.
-   *
-   * Accepted values: FILTER_TYPE_UNSPECIFIED, FILTER_TYPE_NONE,
-   * FILTER_TYPE_ADVERTISER_ID, FILTER_TYPE_CAMPAIGN_ID,
-   * FILTER_TYPE_MEDIA_PRODUCT_ID, FILTER_TYPE_INSERTION_ORDER_ID,
-   * FILTER_TYPE_LINE_ITEM_ID
-   *
-   * @param self::FILTER_TYPE_* $filterType
+   * @param string
    */
   public function setFilterType($filterType)
   {
     $this->filterType = $filterType;
   }
   /**
-   * @return self::FILTER_TYPE_*
+   * @return string
    */
   public function getFilterType()
   {

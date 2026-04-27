@@ -20,25 +20,16 @@ namespace Google\Service\Compute;
 class PacketMirroringMirroredResourceInfoSubnetInfo extends \Google\Model
 {
   /**
-   * Output only. [Output Only] Unique identifier for the subnetwork; defined by
-   * the server.
-   *
    * @var string
    */
   public $canonicalUrl;
   /**
-   * Resource URL to the subnetwork for which traffic from/to all VM instances
-   * will be mirrored.
-   *
    * @var string
    */
   public $url;
 
   /**
-   * Output only. [Output Only] Unique identifier for the subnetwork; defined by
-   * the server.
-   *
-   * @param string $canonicalUrl
+   * @param string
    */
   public function setCanonicalUrl($canonicalUrl)
   {
@@ -52,10 +43,7 @@ class PacketMirroringMirroredResourceInfoSubnetInfo extends \Google\Model
     return $this->canonicalUrl;
   }
   /**
-   * Resource URL to the subnetwork for which traffic from/to all VM instances
-   * will be mirrored.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

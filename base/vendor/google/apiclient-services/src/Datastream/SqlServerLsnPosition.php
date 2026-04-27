@@ -20,16 +20,12 @@ namespace Google\Service\Datastream;
 class SqlServerLsnPosition extends \Google\Model
 {
   /**
-   * Required. Log sequence number (LSN) from where Logs will be read
-   *
    * @var string
    */
   public $lsn;
 
   /**
-   * Required. Log sequence number (LSN) from where Logs will be read
-   *
-   * @param string $lsn
+   * @param string
    */
   public function setLsn($lsn)
   {

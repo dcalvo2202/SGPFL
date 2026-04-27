@@ -25,9 +25,7 @@ class GoogleCloudDatacatalogLineageV1EventLink extends \Google\Model
   protected $targetDataType = '';
 
   /**
-   * Required. Reference to the source entity
-   *
-   * @param GoogleCloudDatacatalogLineageV1EntityReference $source
+   * @param GoogleCloudDatacatalogLineageV1EntityReference
    */
   public function setSource(GoogleCloudDatacatalogLineageV1EntityReference $source)
   {
@@ -41,9 +39,7 @@ class GoogleCloudDatacatalogLineageV1EventLink extends \Google\Model
     return $this->source;
   }
   /**
-   * Required. Reference to the target entity
-   *
-   * @param GoogleCloudDatacatalogLineageV1EntityReference $target
+   * @param GoogleCloudDatacatalogLineageV1EntityReference
    */
   public function setTarget(GoogleCloudDatacatalogLineageV1EntityReference $target)
   {

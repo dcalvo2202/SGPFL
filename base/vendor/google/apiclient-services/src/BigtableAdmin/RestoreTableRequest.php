@@ -20,26 +20,16 @@ namespace Google\Service\BigtableAdmin;
 class RestoreTableRequest extends \Google\Model
 {
   /**
-   * Name of the backup from which to restore. Values are of the form
-   * `projects//instances//clusters//backups/`.
-   *
    * @var string
    */
   public $backup;
   /**
-   * Required. The id of the table to create and restore to. This table must not
-   * already exist. The `table_id` appended to `parent` forms the full table
-   * name of the form `projects//instances//tables/`.
-   *
    * @var string
    */
   public $tableId;
 
   /**
-   * Name of the backup from which to restore. Values are of the form
-   * `projects//instances//clusters//backups/`.
-   *
-   * @param string $backup
+   * @param string
    */
   public function setBackup($backup)
   {
@@ -53,11 +43,7 @@ class RestoreTableRequest extends \Google\Model
     return $this->backup;
   }
   /**
-   * Required. The id of the table to create and restore to. This table must not
-   * already exist. The `table_id` appended to `parent` forms the full table
-   * name of the form `projects//instances//tables/`.
-   *
-   * @param string $tableId
+   * @param string
    */
   public function setTableId($tableId)
   {

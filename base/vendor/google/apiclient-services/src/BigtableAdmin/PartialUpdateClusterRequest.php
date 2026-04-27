@@ -22,17 +22,12 @@ class PartialUpdateClusterRequest extends \Google\Model
   protected $clusterType = Cluster::class;
   protected $clusterDataType = '';
   /**
-   * Required. The subset of Cluster fields which should be replaced.
-   *
    * @var string
    */
   public $updateMask;
 
   /**
-   * Required. The Cluster which contains the partial updates to be applied,
-   * subject to the update_mask.
-   *
-   * @param Cluster $cluster
+   * @param Cluster
    */
   public function setCluster(Cluster $cluster)
   {
@@ -46,9 +41,7 @@ class PartialUpdateClusterRequest extends \Google\Model
     return $this->cluster;
   }
   /**
-   * Required. The subset of Cluster fields which should be replaced.
-   *
-   * @param string $updateMask
+   * @param string
    */
   public function setUpdateMask($updateMask)
   {

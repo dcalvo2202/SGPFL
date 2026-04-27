@@ -21,8 +21,6 @@ class GoogleCloudDocumentaiV1DocumentPageTableTableCell extends \Google\Collecti
 {
   protected $collection_key = 'detectedLanguages';
   /**
-   * How many columns this cell spans.
-   *
    * @var int
    */
   public $colSpan;
@@ -31,16 +29,12 @@ class GoogleCloudDocumentaiV1DocumentPageTableTableCell extends \Google\Collecti
   protected $layoutType = GoogleCloudDocumentaiV1DocumentPageLayout::class;
   protected $layoutDataType = '';
   /**
-   * How many rows this cell spans.
-   *
    * @var int
    */
   public $rowSpan;
 
   /**
-   * How many columns this cell spans.
-   *
-   * @param int $colSpan
+   * @param int
    */
   public function setColSpan($colSpan)
   {
@@ -54,9 +48,7 @@ class GoogleCloudDocumentaiV1DocumentPageTableTableCell extends \Google\Collecti
     return $this->colSpan;
   }
   /**
-   * A list of detected languages together with confidence.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentPageDetectedLanguage[] $detectedLanguages
+   * @param GoogleCloudDocumentaiV1DocumentPageDetectedLanguage[]
    */
   public function setDetectedLanguages($detectedLanguages)
   {
@@ -70,9 +62,7 @@ class GoogleCloudDocumentaiV1DocumentPageTableTableCell extends \Google\Collecti
     return $this->detectedLanguages;
   }
   /**
-   * Layout for TableCell.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentPageLayout $layout
+   * @param GoogleCloudDocumentaiV1DocumentPageLayout
    */
   public function setLayout(GoogleCloudDocumentaiV1DocumentPageLayout $layout)
   {
@@ -86,9 +76,7 @@ class GoogleCloudDocumentaiV1DocumentPageTableTableCell extends \Google\Collecti
     return $this->layout;
   }
   /**
-   * How many rows this cell spans.
-   *
-   * @param int $rowSpan
+   * @param int
    */
   public function setRowSpan($rowSpan)
   {

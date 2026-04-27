@@ -20,22 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1ModelEvaluationSliceSliceSliceSpecRange extends \Google\Model
 {
   /**
-   * Exclusive high value for the range.
-   *
    * @var float
    */
   public $high;
   /**
-   * Inclusive low value for the range.
-   *
    * @var float
    */
   public $low;
 
   /**
-   * Exclusive high value for the range.
-   *
-   * @param float $high
+   * @param float
    */
   public function setHigh($high)
   {
@@ -49,9 +43,7 @@ class GoogleCloudAiplatformV1ModelEvaluationSliceSliceSliceSpecRange extends \Go
     return $this->high;
   }
   /**
-   * Inclusive low value for the range.
-   *
-   * @param float $low
+   * @param float
    */
   public function setLow($low)
   {

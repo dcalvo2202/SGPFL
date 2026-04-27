@@ -24,9 +24,7 @@ class FileUploadAnswers extends \Google\Collection
   protected $answersDataType = 'array';
 
   /**
-   * Output only. All submitted files for a FileUpload question.
-   *
-   * @param FileUploadAnswer[] $answers
+   * @param FileUploadAnswer[]
    */
   public function setAnswers($answers)
   {

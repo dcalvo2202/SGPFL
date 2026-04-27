@@ -33,7 +33,7 @@ class GoogleCloudDialogflowCxV3RolloutConfigRolloutStep extends \Google\Model
   public $trafficPercent;
 
   /**
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -47,7 +47,7 @@ class GoogleCloudDialogflowCxV3RolloutConfigRolloutStep extends \Google\Model
     return $this->displayName;
   }
   /**
-   * @param string $minDuration
+   * @param string
    */
   public function setMinDuration($minDuration)
   {
@@ -61,7 +61,7 @@ class GoogleCloudDialogflowCxV3RolloutConfigRolloutStep extends \Google\Model
     return $this->minDuration;
   }
   /**
-   * @param int $trafficPercent
+   * @param int
    */
   public function setTrafficPercent($trafficPercent)
   {

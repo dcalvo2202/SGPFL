@@ -19,53 +19,20 @@ namespace Google\Service\CloudDomains;
 
 class RegisterParameters extends \Google\Collection
 {
-  /**
-   * The availability is unspecified.
-   */
-  public const AVAILABILITY_AVAILABILITY_UNSPECIFIED = 'AVAILABILITY_UNSPECIFIED';
-  /**
-   * The domain is available for registration.
-   */
-  public const AVAILABILITY_AVAILABLE = 'AVAILABLE';
-  /**
-   * The domain is not available for registration. Generally this means it is
-   * already registered to another party.
-   */
-  public const AVAILABILITY_UNAVAILABLE = 'UNAVAILABLE';
-  /**
-   * The domain is not currently supported by Cloud Domains, but may be
-   * available elsewhere.
-   */
-  public const AVAILABILITY_UNSUPPORTED = 'UNSUPPORTED';
-  /**
-   * Cloud Domains is unable to determine domain availability, generally due to
-   * system maintenance at the domain name registry.
-   */
-  public const AVAILABILITY_UNKNOWN = 'UNKNOWN';
   protected $collection_key = 'supportedPrivacy';
   /**
-   * Indicates whether the domain is available for registration. This value is
-   * accurate when obtained by calling `RetrieveRegisterParameters`, but is
-   * approximate when obtained by calling `SearchDomains`.
-   *
    * @var string
    */
   public $availability;
   /**
-   * The domain name. Unicode domain names are expressed in Punycode format.
-   *
    * @var string
    */
   public $domainName;
   /**
-   * Notices about special properties of the domain.
-   *
    * @var string[]
    */
   public $domainNotices;
   /**
-   * Contact privacy options that the domain supports.
-   *
    * @var string[]
    */
   public $supportedPrivacy;
@@ -73,30 +40,21 @@ class RegisterParameters extends \Google\Collection
   protected $yearlyPriceDataType = '';
 
   /**
-   * Indicates whether the domain is available for registration. This value is
-   * accurate when obtained by calling `RetrieveRegisterParameters`, but is
-   * approximate when obtained by calling `SearchDomains`.
-   *
-   * Accepted values: AVAILABILITY_UNSPECIFIED, AVAILABLE, UNAVAILABLE,
-   * UNSUPPORTED, UNKNOWN
-   *
-   * @param self::AVAILABILITY_* $availability
+   * @param string
    */
   public function setAvailability($availability)
   {
     $this->availability = $availability;
   }
   /**
-   * @return self::AVAILABILITY_*
+   * @return string
    */
   public function getAvailability()
   {
     return $this->availability;
   }
   /**
-   * The domain name. Unicode domain names are expressed in Punycode format.
-   *
-   * @param string $domainName
+   * @param string
    */
   public function setDomainName($domainName)
   {
@@ -110,9 +68,7 @@ class RegisterParameters extends \Google\Collection
     return $this->domainName;
   }
   /**
-   * Notices about special properties of the domain.
-   *
-   * @param string[] $domainNotices
+   * @param string[]
    */
   public function setDomainNotices($domainNotices)
   {
@@ -126,9 +82,7 @@ class RegisterParameters extends \Google\Collection
     return $this->domainNotices;
   }
   /**
-   * Contact privacy options that the domain supports.
-   *
-   * @param string[] $supportedPrivacy
+   * @param string[]
    */
   public function setSupportedPrivacy($supportedPrivacy)
   {
@@ -142,9 +96,7 @@ class RegisterParameters extends \Google\Collection
     return $this->supportedPrivacy;
   }
   /**
-   * Price to register or renew the domain for one year.
-   *
-   * @param Money $yearlyPrice
+   * @param Money
    */
   public function setYearlyPrice(Money $yearlyPrice)
   {

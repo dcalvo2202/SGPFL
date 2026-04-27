@@ -23,25 +23,16 @@ class ListDraftsResponse extends \Google\Collection
   protected $draftsType = Draft::class;
   protected $draftsDataType = 'array';
   /**
-   * Token to retrieve the next page of results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Estimated total number of results.
-   *
    * @var string
    */
   public $resultSizeEstimate;
 
   /**
-   * List of drafts. Note that the `Message` property in each `Draft` resource
-   * only contains an `id` and a `threadId`. The [`messages.get`](https://develo
-   * pers.google.com/workspace/gmail/api/v1/reference/users/messages/get) method
-   * can fetch additional message details.
-   *
-   * @param Draft[] $drafts
+   * @param Draft[]
    */
   public function setDrafts($drafts)
   {
@@ -55,9 +46,7 @@ class ListDraftsResponse extends \Google\Collection
     return $this->drafts;
   }
   /**
-   * Token to retrieve the next page of results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -71,9 +60,7 @@ class ListDraftsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Estimated total number of results.
-   *
-   * @param string $resultSizeEstimate
+   * @param string
    */
   public function setResultSizeEstimate($resultSizeEstimate)
   {

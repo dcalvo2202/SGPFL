@@ -19,50 +19,20 @@ namespace Google\Service\CloudBuild;
 
 class StepRef extends \Google\Collection
 {
-  /**
-   * Default enum type; should not be used.
-   */
-  public const RESOLVER_RESOLVER_NAME_UNSPECIFIED = 'RESOLVER_NAME_UNSPECIFIED';
-  /**
-   * Bundles resolver. https://tekton.dev/docs/pipelines/bundle-resolver/
-   */
-  public const RESOLVER_BUNDLES = 'BUNDLES';
-  /**
-   * GCB repo resolver.
-   */
-  public const RESOLVER_GCB_REPO = 'GCB_REPO';
-  /**
-   * Simple Git resolver. https://tekton.dev/docs/pipelines/git-resolver/
-   */
-  public const RESOLVER_GIT = 'GIT';
-  /**
-   * Developer Connect resolver.
-   */
-  public const RESOLVER_DEVELOPER_CONNECT = 'DEVELOPER_CONNECT';
-  /**
-   * Default resolver.
-   */
-  public const RESOLVER_DEFAULT = 'DEFAULT';
   protected $collection_key = 'params';
   /**
-   * Optional. Name of the step.
-   *
    * @var string
    */
   public $name;
   protected $paramsType = Param::class;
   protected $paramsDataType = 'array';
   /**
-   * Optional. Type of the resolver.
-   *
    * @var string
    */
   public $resolver;
 
   /**
-   * Optional. Name of the step.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -76,9 +46,7 @@ class StepRef extends \Google\Collection
     return $this->name;
   }
   /**
-   * Optional. Parameters used to control the resolution.
-   *
-   * @param Param[] $params
+   * @param Param[]
    */
   public function setParams($params)
   {
@@ -92,19 +60,14 @@ class StepRef extends \Google\Collection
     return $this->params;
   }
   /**
-   * Optional. Type of the resolver.
-   *
-   * Accepted values: RESOLVER_NAME_UNSPECIFIED, BUNDLES, GCB_REPO, GIT,
-   * DEVELOPER_CONNECT, DEFAULT
-   *
-   * @param self::RESOLVER_* $resolver
+   * @param string
    */
   public function setResolver($resolver)
   {
     $this->resolver = $resolver;
   }
   /**
-   * @return self::RESOLVER_*
+   * @return string
    */
   public function getResolver()
   {

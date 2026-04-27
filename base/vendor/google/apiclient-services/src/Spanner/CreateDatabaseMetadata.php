@@ -20,16 +20,12 @@ namespace Google\Service\Spanner;
 class CreateDatabaseMetadata extends \Google\Model
 {
   /**
-   * The database being created.
-   *
    * @var string
    */
   public $database;
 
   /**
-   * The database being created.
-   *
-   * @param string $database
+   * @param string
    */
   public function setDatabase($database)
   {

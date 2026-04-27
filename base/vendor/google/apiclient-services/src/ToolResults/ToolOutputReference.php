@@ -27,10 +27,7 @@ class ToolOutputReference extends \Google\Model
   protected $testCaseDataType = '';
 
   /**
-   * The creation time of the file. - In response: present if set by
-   * create/update request - In create/update request: optional
-   *
-   * @param Timestamp $creationTime
+   * @param Timestamp
    */
   public function setCreationTime(Timestamp $creationTime)
   {
@@ -44,10 +41,7 @@ class ToolOutputReference extends \Google\Model
     return $this->creationTime;
   }
   /**
-   * A FileReference to an output file. - In response: always set - In
-   * create/update request: always set
-   *
-   * @param FileReference $output
+   * @param FileReference
    */
   public function setOutput(FileReference $output)
   {
@@ -61,10 +55,7 @@ class ToolOutputReference extends \Google\Model
     return $this->output;
   }
   /**
-   * The test case to which this output file belongs. - In response: present if
-   * set by create/update request - In create/update request: optional
-   *
-   * @param TestCaseReference $testCase
+   * @param TestCaseReference
    */
   public function setTestCase(TestCaseReference $testCase)
   {

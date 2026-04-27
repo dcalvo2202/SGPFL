@@ -20,25 +20,18 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1RateRange extends \Google\Model
 {
   /**
-   * Ending value of the range. Set to 0 or `null` for the last range of values.
-   *
    * @var string
    */
   public $end;
   protected $feeType = GoogleTypeMoney::class;
   protected $feeDataType = '';
   /**
-   * Starting value of the range. Set to 0 or `null` for the initial range of
-   * values.
-   *
    * @var string
    */
   public $start;
 
   /**
-   * Ending value of the range. Set to 0 or `null` for the last range of values.
-   *
-   * @param string $end
+   * @param string
    */
   public function setEnd($end)
   {
@@ -52,9 +45,7 @@ class GoogleCloudApigeeV1RateRange extends \Google\Model
     return $this->end;
   }
   /**
-   * Fee to charge when total number of API calls falls within this range.
-   *
-   * @param GoogleTypeMoney $fee
+   * @param GoogleTypeMoney
    */
   public function setFee(GoogleTypeMoney $fee)
   {
@@ -68,10 +59,7 @@ class GoogleCloudApigeeV1RateRange extends \Google\Model
     return $this->fee;
   }
   /**
-   * Starting value of the range. Set to 0 or `null` for the initial range of
-   * values.
-   *
-   * @param string $start
+   * @param string
    */
   public function setStart($start)
   {

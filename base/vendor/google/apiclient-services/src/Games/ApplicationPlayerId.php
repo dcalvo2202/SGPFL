@@ -20,22 +20,16 @@ namespace Google\Service\Games;
 class ApplicationPlayerId extends \Google\Model
 {
   /**
-   * The application that this player identifier is for.
-   *
    * @var string
    */
   public $applicationId;
   /**
-   * The player identifier for the application.
-   *
    * @var string
    */
   public $playerId;
 
   /**
-   * The application that this player identifier is for.
-   *
-   * @param string $applicationId
+   * @param string
    */
   public function setApplicationId($applicationId)
   {
@@ -49,9 +43,7 @@ class ApplicationPlayerId extends \Google\Model
     return $this->applicationId;
   }
   /**
-   * The player identifier for the application.
-   *
-   * @param string $playerId
+   * @param string
    */
   public function setPlayerId($playerId)
   {

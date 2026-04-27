@@ -21,9 +21,6 @@ class GoogleCloudApihubV1ListPluginInstancesResponse extends \Google\Collection
 {
   protected $collection_key = 'pluginInstances';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GoogleCloudApihubV1ListPluginInstancesResponse extends \Google\Collection
   protected $pluginInstancesDataType = 'array';
 
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class GoogleCloudApihubV1ListPluginInstancesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The plugin instances from the specified parent resource.
-   *
-   * @param GoogleCloudApihubV1PluginInstance[] $pluginInstances
+   * @param GoogleCloudApihubV1PluginInstance[]
    */
   public function setPluginInstances($pluginInstances)
   {

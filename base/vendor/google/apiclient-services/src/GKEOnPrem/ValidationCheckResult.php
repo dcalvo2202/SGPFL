@@ -20,60 +20,28 @@ namespace Google\Service\GKEOnPrem;
 class ValidationCheckResult extends \Google\Model
 {
   /**
-   * The default value. The check result is unknown.
-   */
-  public const STATE_STATE_UNKNOWN = 'STATE_UNKNOWN';
-  /**
-   * The check failed.
-   */
-  public const STATE_STATE_FAILURE = 'STATE_FAILURE';
-  /**
-   * The check was skipped.
-   */
-  public const STATE_STATE_SKIPPED = 'STATE_SKIPPED';
-  /**
-   * The check itself failed to complete.
-   */
-  public const STATE_STATE_FATAL = 'STATE_FATAL';
-  /**
-   * The check encountered a warning.
-   */
-  public const STATE_STATE_WARNING = 'STATE_WARNING';
-  /**
-   * The category of the validation.
-   *
    * @var string
    */
   public $category;
   /**
-   * The description of the validation check.
-   *
    * @var string
    */
   public $description;
   /**
-   * Detailed failure information, which might be unformatted.
-   *
    * @var string
    */
   public $details;
   /**
-   * A human-readable message of the check failure.
-   *
    * @var string
    */
   public $reason;
   /**
-   * The validation check state.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * The category of the validation.
-   *
-   * @param string $category
+   * @param string
    */
   public function setCategory($category)
   {
@@ -87,9 +55,7 @@ class ValidationCheckResult extends \Google\Model
     return $this->category;
   }
   /**
-   * The description of the validation check.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -103,9 +69,7 @@ class ValidationCheckResult extends \Google\Model
     return $this->description;
   }
   /**
-   * Detailed failure information, which might be unformatted.
-   *
-   * @param string $details
+   * @param string
    */
   public function setDetails($details)
   {
@@ -119,9 +83,7 @@ class ValidationCheckResult extends \Google\Model
     return $this->details;
   }
   /**
-   * A human-readable message of the check failure.
-   *
-   * @param string $reason
+   * @param string
    */
   public function setReason($reason)
   {
@@ -135,19 +97,14 @@ class ValidationCheckResult extends \Google\Model
     return $this->reason;
   }
   /**
-   * The validation check state.
-   *
-   * Accepted values: STATE_UNKNOWN, STATE_FAILURE, STATE_SKIPPED, STATE_FATAL,
-   * STATE_WARNING
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

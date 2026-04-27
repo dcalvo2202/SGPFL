@@ -24,9 +24,7 @@ class RetrievePlayerTokensResponse extends \Google\Collection
   protected $tokensDataType = 'array';
 
   /**
-   * Required. Recall tokens associated with the requested PGS Player principal
-   *
-   * @param RecallToken[] $tokens
+   * @param RecallToken[]
    */
   public function setTokens($tokens)
   {

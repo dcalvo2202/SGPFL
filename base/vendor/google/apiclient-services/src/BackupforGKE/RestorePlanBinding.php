@@ -20,65 +20,36 @@ namespace Google\Service\BackupforGKE;
 class RestorePlanBinding extends \Google\Model
 {
   /**
-   * Output only. The fully qualified name of the BackupPlan bound to the
-   * specified RestorePlan. `projects/locations/backukpPlans/{backup_plan}`
-   *
    * @var string
    */
   public $backupPlan;
   /**
-   * Output only. The timestamp when this binding was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. `etag` is used for optimistic concurrency control as a way to
-   * help prevent simultaneous updates of a RestorePlanBinding from overwriting
-   * each other. It is strongly suggested that systems make use of the 'etag' in
-   * the read-modify-write cycle to perform RestorePlanBinding updates in order
-   * to avoid race conditions: An `etag` is returned in the response to
-   * `GetRestorePlanBinding`, and systems are expected to put that etag in the
-   * request to `UpdateRestorePlanBinding` or `DeleteRestorePlanBinding` to
-   * ensure that their change will be applied to the same version of the
-   * resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Identifier. The fully qualified name of the RestorePlanBinding.
-   * `projects/locations/restoreChannels/restorePlanBindings`
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The fully qualified name of the RestorePlan bound to this
-   * RestoreChannel. `projects/locations/restorePlans/{restore_plan}`
-   *
    * @var string
    */
   public $restorePlan;
   /**
-   * Output only. Server generated global unique identifier of
-   * [UUID4](https://en.wikipedia.org/wiki/Universally_unique_identifier)
-   *
    * @var string
    */
   public $uid;
   /**
-   * Output only. The timestamp when this binding was created.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. The fully qualified name of the BackupPlan bound to the
-   * specified RestorePlan. `projects/locations/backukpPlans/{backup_plan}`
-   *
-   * @param string $backupPlan
+   * @param string
    */
   public function setBackupPlan($backupPlan)
   {
@@ -92,9 +63,7 @@ class RestorePlanBinding extends \Google\Model
     return $this->backupPlan;
   }
   /**
-   * Output only. The timestamp when this binding was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -108,17 +77,7 @@ class RestorePlanBinding extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. `etag` is used for optimistic concurrency control as a way to
-   * help prevent simultaneous updates of a RestorePlanBinding from overwriting
-   * each other. It is strongly suggested that systems make use of the 'etag' in
-   * the read-modify-write cycle to perform RestorePlanBinding updates in order
-   * to avoid race conditions: An `etag` is returned in the response to
-   * `GetRestorePlanBinding`, and systems are expected to put that etag in the
-   * request to `UpdateRestorePlanBinding` or `DeleteRestorePlanBinding` to
-   * ensure that their change will be applied to the same version of the
-   * resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -132,10 +91,7 @@ class RestorePlanBinding extends \Google\Model
     return $this->etag;
   }
   /**
-   * Identifier. The fully qualified name of the RestorePlanBinding.
-   * `projects/locations/restoreChannels/restorePlanBindings`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -149,10 +105,7 @@ class RestorePlanBinding extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The fully qualified name of the RestorePlan bound to this
-   * RestoreChannel. `projects/locations/restorePlans/{restore_plan}`
-   *
-   * @param string $restorePlan
+   * @param string
    */
   public function setRestorePlan($restorePlan)
   {
@@ -166,10 +119,7 @@ class RestorePlanBinding extends \Google\Model
     return $this->restorePlan;
   }
   /**
-   * Output only. Server generated global unique identifier of
-   * [UUID4](https://en.wikipedia.org/wiki/Universally_unique_identifier)
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {
@@ -183,9 +133,7 @@ class RestorePlanBinding extends \Google\Model
     return $this->uid;
   }
   /**
-   * Output only. The timestamp when this binding was created.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

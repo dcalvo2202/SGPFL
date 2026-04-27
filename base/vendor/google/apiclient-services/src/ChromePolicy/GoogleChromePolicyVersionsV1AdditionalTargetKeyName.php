@@ -20,22 +20,16 @@ namespace Google\Service\ChromePolicy;
 class GoogleChromePolicyVersionsV1AdditionalTargetKeyName extends \Google\Model
 {
   /**
-   * Key name.
-   *
    * @var string
    */
   public $key;
   /**
-   * Key description.
-   *
    * @var string
    */
   public $keyDescription;
 
   /**
-   * Key name.
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {
@@ -49,9 +43,7 @@ class GoogleChromePolicyVersionsV1AdditionalTargetKeyName extends \Google\Model
     return $this->key;
   }
   /**
-   * Key description.
-   *
-   * @param string $keyDescription
+   * @param string
    */
   public function setKeyDescription($keyDescription)
   {

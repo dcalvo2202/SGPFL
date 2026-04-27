@@ -24,14 +24,12 @@ class QueryCountByStatus extends \Google\Model
    */
   public $count;
   /**
-   * This represents the http status code.
-   *
    * @var int
    */
   public $statusCode;
 
   /**
-   * @param string $count
+   * @param string
    */
   public function setCount($count)
   {
@@ -45,9 +43,7 @@ class QueryCountByStatus extends \Google\Model
     return $this->count;
   }
   /**
-   * This represents the http status code.
-   *
-   * @param int $statusCode
+   * @param int
    */
   public function setStatusCode($statusCode)
   {

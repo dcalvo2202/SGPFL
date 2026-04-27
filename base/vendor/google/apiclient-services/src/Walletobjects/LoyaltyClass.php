@@ -19,121 +19,16 @@ namespace Google\Service\Walletobjects;
 
 class LoyaltyClass extends \Google\Collection
 {
-  /**
-   * Unspecified preference.
-   */
-  public const MULTIPLE_DEVICES_AND_HOLDERS_ALLOWED_STATUS_STATUS_UNSPECIFIED = 'STATUS_UNSPECIFIED';
-  /**
-   * The Pass object is shareable by a user and can be saved by any number of
-   * different users, and on any number of devices. Partners typically use this
-   * setup for passes that do not need to be restricted to a single user or
-   * pinned to a single device.
-   */
-  public const MULTIPLE_DEVICES_AND_HOLDERS_ALLOWED_STATUS_MULTIPLE_HOLDERS = 'MULTIPLE_HOLDERS';
-  /**
-   * An object can only be saved by one user, but this user can view and use it
-   * on multiple of their devices. Once the first user saves the object, no
-   * other user will be allowed to view or save it.
-   */
-  public const MULTIPLE_DEVICES_AND_HOLDERS_ALLOWED_STATUS_ONE_USER_ALL_DEVICES = 'ONE_USER_ALL_DEVICES';
-  /**
-   * An object can only be saved by one user on a single device. Intended for
-   * use by select partners in limited circumstances. An example use case is a
-   * transit ticket that should be "device pinned", meaning it can be saved,
-   * viewed and used only by a single user on a single device. Contact support
-   * for additional information.
-   */
-  public const MULTIPLE_DEVICES_AND_HOLDERS_ALLOWED_STATUS_ONE_USER_ONE_DEVICE = 'ONE_USER_ONE_DEVICE';
-  /**
-   * Legacy alias for `MULTIPLE_HOLDERS`. Deprecated.
-   *
-   * @deprecated
-   */
-  public const MULTIPLE_DEVICES_AND_HOLDERS_ALLOWED_STATUS_multipleHolders = 'multipleHolders';
-  /**
-   * Legacy alias for `ONE_USER_ALL_DEVICES`. Deprecated.
-   *
-   * @deprecated
-   */
-  public const MULTIPLE_DEVICES_AND_HOLDERS_ALLOWED_STATUS_oneUserAllDevices = 'oneUserAllDevices';
-  /**
-   * Legacy alias for `ONE_USER_ONE_DEVICE`. Deprecated.
-   *
-   * @deprecated
-   */
-  public const MULTIPLE_DEVICES_AND_HOLDERS_ALLOWED_STATUS_oneUserOneDevice = 'oneUserOneDevice';
-  /**
-   * Default behavior is no notifications sent.
-   */
-  public const NOTIFY_PREFERENCE_NOTIFICATION_SETTINGS_FOR_UPDATES_UNSPECIFIED = 'NOTIFICATION_SETTINGS_FOR_UPDATES_UNSPECIFIED';
-  /**
-   * This value will result in a notification being sent, if the updated fields
-   * are part of an allowlist.
-   */
-  public const NOTIFY_PREFERENCE_NOTIFY_ON_UPDATE = 'NOTIFY_ON_UPDATE';
-  public const REVIEW_STATUS_REVIEW_STATUS_UNSPECIFIED = 'REVIEW_STATUS_UNSPECIFIED';
-  public const REVIEW_STATUS_UNDER_REVIEW = 'UNDER_REVIEW';
-  /**
-   * Legacy alias for `UNDER_REVIEW`. Deprecated.
-   *
-   * @deprecated
-   */
-  public const REVIEW_STATUS_underReview = 'underReview';
-  public const REVIEW_STATUS_APPROVED = 'APPROVED';
-  /**
-   * Legacy alias for `APPROVED`. Deprecated.
-   *
-   * @deprecated
-   */
-  public const REVIEW_STATUS_approved = 'approved';
-  public const REVIEW_STATUS_REJECTED = 'REJECTED';
-  /**
-   * Legacy alias for `REJECTED`. Deprecated.
-   *
-   * @deprecated
-   */
-  public const REVIEW_STATUS_rejected = 'rejected';
-  public const REVIEW_STATUS_DRAFT = 'DRAFT';
-  /**
-   * Legacy alias for `DRAFT`. Deprecated.
-   *
-   * @deprecated
-   */
-  public const REVIEW_STATUS_draft = 'draft';
-  /**
-   * Default value, same as UNLOCK_NOT_REQUIRED.
-   */
-  public const VIEW_UNLOCK_REQUIREMENT_VIEW_UNLOCK_REQUIREMENT_UNSPECIFIED = 'VIEW_UNLOCK_REQUIREMENT_UNSPECIFIED';
-  /**
-   * Default behavior for all the existing Passes if ViewUnlockRequirement is
-   * not set.
-   */
-  public const VIEW_UNLOCK_REQUIREMENT_UNLOCK_NOT_REQUIRED = 'UNLOCK_NOT_REQUIRED';
-  /**
-   * Requires the user to unlock their device each time the pass is viewed. If
-   * the user removes their device lock after saving the pass, then they will be
-   * prompted to create a device lock before the pass can be viewed.
-   */
-  public const VIEW_UNLOCK_REQUIREMENT_UNLOCK_REQUIRED_TO_VIEW = 'UNLOCK_REQUIRED_TO_VIEW';
   protected $collection_key = 'valueAddedModuleData';
   /**
-   * The account ID label, such as "Member ID." Recommended maximum length is 15
-   * characters to ensure full string is displayed on smaller screens.
-   *
    * @var string
    */
   public $accountIdLabel;
   /**
-   * The account name label, such as "Member Name." Recommended maximum length
-   * is 15 characters to ensure full string is displayed on smaller screens.
-   *
    * @var string
    */
   public $accountNameLabel;
   /**
-   * Deprecated. Use `multipleDevicesAndHoldersAllowedStatus` instead.
-   *
-   * @deprecated
    * @var bool
    */
   public $allowMultipleUsersPerObject;
@@ -144,45 +39,24 @@ class LoyaltyClass extends \Google\Collection
   protected $classTemplateInfoType = ClassTemplateInfo::class;
   protected $classTemplateInfoDataType = '';
   /**
-   * Country code used to display the card's country (when the user is not in
-   * that country), as well as to display localized content when content is not
-   * available in the user's locale.
-   *
    * @var string
    */
   public $countryCode;
   protected $discoverableProgramType = DiscoverableProgram::class;
   protected $discoverableProgramDataType = '';
   /**
-   * Identifies whether this class supports Smart Tap. The `redemptionIssuers`
-   * and one of object level `smartTapRedemptionLevel`, barcode.value`, or
-   * `accountId` fields must also be set up correctly in order for a pass to
-   * support Smart Tap.
-   *
    * @var bool
    */
   public $enableSmartTap;
   protected $heroImageType = Image::class;
   protected $heroImageDataType = '';
   /**
-   * The background color for the card. If not set the dominant color of the
-   * hero image is used, and if no hero image is set, the dominant color of the
-   * logo is used. The format is #rrggbb where rrggbb is a hex RGB triplet, such
-   * as `#ffcc00`. You can also use the shorthand version of the RGB triplet
-   * which is #rgb, such as `#fc0`.
-   *
    * @var string
    */
   public $hexBackgroundColor;
   protected $homepageUriType = Uri::class;
   protected $homepageUriDataType = '';
   /**
-   * Required. The unique identifier for a class. This ID must be unique across
-   * all classes from an issuer. This value should follow the format issuer ID.
-   * identifier where the former is issued by Google and latter is chosen by
-   * you. Your unique identifier should only include alphanumeric characters,
-   * '.', '_', or '-'.
-   *
    * @var string
    */
   public $id;
@@ -191,17 +65,10 @@ class LoyaltyClass extends \Google\Collection
   protected $infoModuleDataType = InfoModuleData::class;
   protected $infoModuleDataDataType = '';
   /**
-   * Required. The issuer name. Recommended maximum length is 20 characters to
-   * ensure full string is displayed on smaller screens.
-   *
    * @var string
    */
   public $issuerName;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * `"walletobjects#loyaltyClass"`.
-   *
-   * @deprecated
    * @var string
    */
   public $kind;
@@ -230,83 +97,42 @@ class LoyaltyClass extends \Google\Collection
   protected $messagesType = Message::class;
   protected $messagesDataType = 'array';
   /**
-   * Identifies whether multiple users and devices will save the same object
-   * referencing this class.
-   *
    * @var string
    */
   public $multipleDevicesAndHoldersAllowedStatus;
   /**
-   * Whether or not field updates to this class should trigger notifications.
-   * When set to NOTIFY, we will attempt to trigger a field update notification
-   * to users. These notifications will only be sent to users if the field is
-   * part of an allowlist. If not specified, no notification will be triggered.
-   * This setting is ephemeral and needs to be set with each PATCH or UPDATE
-   * request, otherwise a notification will not be triggered.
-   *
    * @var string
    */
   public $notifyPreference;
   protected $programLogoType = Image::class;
   protected $programLogoDataType = '';
   /**
-   * Required. The program name, such as "Adam's Apparel". The app may display
-   * an ellipsis after the first 20 characters to ensure full string is
-   * displayed on smaller screens.
-   *
    * @var string
    */
   public $programName;
   /**
-   * Identifies which redemption issuers can redeem the pass over Smart Tap.
-   * Redemption issuers are identified by their issuer ID. Redemption issuers
-   * must have at least one Smart Tap key configured. The `enableSmartTap` and
-   * one of object level `smartTapRedemptionValue`, barcode.value`, or
-   * `accountId` fields must also be set up correctly in order for a pass to
-   * support Smart Tap.
-   *
    * @var string[]
    */
   public $redemptionIssuers;
   protected $reviewType = Review::class;
   protected $reviewDataType = '';
   /**
-   * Required. The status of the class. This field can be set to `draft` or
-   * `underReview` using the insert, patch, or update API calls. Once the review
-   * state is changed from `draft` it may not be changed back to `draft`. You
-   * should keep this field to `draft` when the class is under development. A
-   * `draft` class cannot be used to create any object. You should set this
-   * field to `underReview` when you believe the class is ready for use. The
-   * platform will automatically set this field to `approved` and it can be
-   * immediately used to create or migrate objects. When updating an already
-   * `approved` class you should keep setting this field to `underReview`.
-   *
    * @var string
    */
   public $reviewStatus;
   /**
-   * The rewards tier, such as "Gold" or "Platinum." Recommended maximum length
-   * is 7 characters to ensure full string is displayed on smaller screens.
-   *
    * @var string
    */
   public $rewardsTier;
   /**
-   * The rewards tier label, such as "Rewards Tier." Recommended maximum length
-   * is 9 characters to ensure full string is displayed on smaller screens.
-   *
    * @var string
    */
   public $rewardsTierLabel;
   /**
-   * The secondary rewards tier, such as "Gold" or "Platinum."
-   *
    * @var string
    */
   public $secondaryRewardsTier;
   /**
-   * The secondary rewards tier label, such as "Rewards Tier."
-   *
    * @var string
    */
   public $secondaryRewardsTierLabel;
@@ -317,15 +143,10 @@ class LoyaltyClass extends \Google\Collection
   protected $valueAddedModuleDataType = ValueAddedModuleData::class;
   protected $valueAddedModuleDataDataType = 'array';
   /**
-   * Deprecated
-   *
-   * @deprecated
    * @var string
    */
   public $version;
   /**
-   * View Unlock Requirement options for the loyalty card.
-   *
    * @var string
    */
   public $viewUnlockRequirement;
@@ -335,10 +156,7 @@ class LoyaltyClass extends \Google\Collection
   protected $wordMarkDataType = '';
 
   /**
-   * The account ID label, such as "Member ID." Recommended maximum length is 15
-   * characters to ensure full string is displayed on smaller screens.
-   *
-   * @param string $accountIdLabel
+   * @param string
    */
   public function setAccountIdLabel($accountIdLabel)
   {
@@ -352,10 +170,7 @@ class LoyaltyClass extends \Google\Collection
     return $this->accountIdLabel;
   }
   /**
-   * The account name label, such as "Member Name." Recommended maximum length
-   * is 15 characters to ensure full string is displayed on smaller screens.
-   *
-   * @param string $accountNameLabel
+   * @param string
    */
   public function setAccountNameLabel($accountNameLabel)
   {
@@ -369,17 +184,13 @@ class LoyaltyClass extends \Google\Collection
     return $this->accountNameLabel;
   }
   /**
-   * Deprecated. Use `multipleDevicesAndHoldersAllowedStatus` instead.
-   *
-   * @deprecated
-   * @param bool $allowMultipleUsersPerObject
+   * @param bool
    */
   public function setAllowMultipleUsersPerObject($allowMultipleUsersPerObject)
   {
     $this->allowMultipleUsersPerObject = $allowMultipleUsersPerObject;
   }
   /**
-   * @deprecated
    * @return bool
    */
   public function getAllowMultipleUsersPerObject()
@@ -387,11 +198,7 @@ class LoyaltyClass extends \Google\Collection
     return $this->allowMultipleUsersPerObject;
   }
   /**
-   * Optional app or website link that will be displayed as a button on the
-   * front of the pass. If AppLinkData is provided for the corresponding object
-   * that will be used instead.
-   *
-   * @param AppLinkData $appLinkData
+   * @param AppLinkData
    */
   public function setAppLinkData(AppLinkData $appLinkData)
   {
@@ -405,11 +212,7 @@ class LoyaltyClass extends \Google\Collection
     return $this->appLinkData;
   }
   /**
-   * Callback options to be used to call the issuer back for every save/delete
-   * of an object for this class by the end-user. All objects of this class are
-   * eligible for the callback.
-   *
-   * @param CallbackOptions $callbackOptions
+   * @param CallbackOptions
    */
   public function setCallbackOptions(CallbackOptions $callbackOptions)
   {
@@ -423,10 +226,7 @@ class LoyaltyClass extends \Google\Collection
     return $this->callbackOptions;
   }
   /**
-   * Template information about how the class should be displayed. If unset,
-   * Google will fallback to a default set of fields to display.
-   *
-   * @param ClassTemplateInfo $classTemplateInfo
+   * @param ClassTemplateInfo
    */
   public function setClassTemplateInfo(ClassTemplateInfo $classTemplateInfo)
   {
@@ -440,11 +240,7 @@ class LoyaltyClass extends \Google\Collection
     return $this->classTemplateInfo;
   }
   /**
-   * Country code used to display the card's country (when the user is not in
-   * that country), as well as to display localized content when content is not
-   * available in the user's locale.
-   *
-   * @param string $countryCode
+   * @param string
    */
   public function setCountryCode($countryCode)
   {
@@ -458,10 +254,7 @@ class LoyaltyClass extends \Google\Collection
     return $this->countryCode;
   }
   /**
-   * Information about how the class may be discovered and instantiated from
-   * within the Google Pay app.
-   *
-   * @param DiscoverableProgram $discoverableProgram
+   * @param DiscoverableProgram
    */
   public function setDiscoverableProgram(DiscoverableProgram $discoverableProgram)
   {
@@ -475,12 +268,7 @@ class LoyaltyClass extends \Google\Collection
     return $this->discoverableProgram;
   }
   /**
-   * Identifies whether this class supports Smart Tap. The `redemptionIssuers`
-   * and one of object level `smartTapRedemptionLevel`, barcode.value`, or
-   * `accountId` fields must also be set up correctly in order for a pass to
-   * support Smart Tap.
-   *
-   * @param bool $enableSmartTap
+   * @param bool
    */
   public function setEnableSmartTap($enableSmartTap)
   {
@@ -494,10 +282,7 @@ class LoyaltyClass extends \Google\Collection
     return $this->enableSmartTap;
   }
   /**
-   * Optional banner image displayed on the front of the card. If none is
-   * present, nothing will be displayed. The image will display at 100% width.
-   *
-   * @param Image $heroImage
+   * @param Image
    */
   public function setHeroImage(Image $heroImage)
   {
@@ -511,13 +296,7 @@ class LoyaltyClass extends \Google\Collection
     return $this->heroImage;
   }
   /**
-   * The background color for the card. If not set the dominant color of the
-   * hero image is used, and if no hero image is set, the dominant color of the
-   * logo is used. The format is #rrggbb where rrggbb is a hex RGB triplet, such
-   * as `#ffcc00`. You can also use the shorthand version of the RGB triplet
-   * which is #rgb, such as `#fc0`.
-   *
-   * @param string $hexBackgroundColor
+   * @param string
    */
   public function setHexBackgroundColor($hexBackgroundColor)
   {
@@ -531,12 +310,7 @@ class LoyaltyClass extends \Google\Collection
     return $this->hexBackgroundColor;
   }
   /**
-   * The URI of your application's home page. Populating the URI in this field
-   * results in the exact same behavior as populating an URI in linksModuleData
-   * (when an object is rendered, a link to the homepage is shown in what would
-   * usually be thought of as the linksModuleData section of the object).
-   *
-   * @param Uri $homepageUri
+   * @param Uri
    */
   public function setHomepageUri(Uri $homepageUri)
   {
@@ -550,13 +324,7 @@ class LoyaltyClass extends \Google\Collection
     return $this->homepageUri;
   }
   /**
-   * Required. The unique identifier for a class. This ID must be unique across
-   * all classes from an issuer. This value should follow the format issuer ID.
-   * identifier where the former is issued by Google and latter is chosen by
-   * you. Your unique identifier should only include alphanumeric characters,
-   * '.', '_', or '-'.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -570,10 +338,7 @@ class LoyaltyClass extends \Google\Collection
     return $this->id;
   }
   /**
-   * Image module data. The maximum number of these fields displayed is 1 from
-   * object level and 1 for class object level.
-   *
-   * @param ImageModuleData[] $imageModulesData
+   * @param ImageModuleData[]
    */
   public function setImageModulesData($imageModulesData)
   {
@@ -587,17 +352,13 @@ class LoyaltyClass extends \Google\Collection
     return $this->imageModulesData;
   }
   /**
-   * Deprecated. Use textModulesData instead.
-   *
-   * @deprecated
-   * @param InfoModuleData $infoModuleData
+   * @param InfoModuleData
    */
   public function setInfoModuleData(InfoModuleData $infoModuleData)
   {
     $this->infoModuleData = $infoModuleData;
   }
   /**
-   * @deprecated
    * @return InfoModuleData
    */
   public function getInfoModuleData()
@@ -605,10 +366,7 @@ class LoyaltyClass extends \Google\Collection
     return $this->infoModuleData;
   }
   /**
-   * Required. The issuer name. Recommended maximum length is 20 characters to
-   * ensure full string is displayed on smaller screens.
-   *
-   * @param string $issuerName
+   * @param string
    */
   public function setIssuerName($issuerName)
   {
@@ -622,18 +380,13 @@ class LoyaltyClass extends \Google\Collection
     return $this->issuerName;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * `"walletobjects#loyaltyClass"`.
-   *
-   * @deprecated
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
     $this->kind = $kind;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getKind()
@@ -641,10 +394,7 @@ class LoyaltyClass extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Links module data. If links module data is also defined on the object, both
-   * will be displayed.
-   *
-   * @param LinksModuleData $linksModuleData
+   * @param LinksModuleData
    */
   public function setLinksModuleData(LinksModuleData $linksModuleData)
   {
@@ -658,10 +408,7 @@ class LoyaltyClass extends \Google\Collection
     return $this->linksModuleData;
   }
   /**
-   * Translated strings for the account_id_label. Recommended maximum length is
-   * 15 characters to ensure full string is displayed on smaller screens.
-   *
-   * @param LocalizedString $localizedAccountIdLabel
+   * @param LocalizedString
    */
   public function setLocalizedAccountIdLabel(LocalizedString $localizedAccountIdLabel)
   {
@@ -675,10 +422,7 @@ class LoyaltyClass extends \Google\Collection
     return $this->localizedAccountIdLabel;
   }
   /**
-   * Translated strings for the account_name_label. Recommended maximum length
-   * is 15 characters to ensure full string is displayed on smaller screens.
-   *
-   * @param LocalizedString $localizedAccountNameLabel
+   * @param LocalizedString
    */
   public function setLocalizedAccountNameLabel(LocalizedString $localizedAccountNameLabel)
   {
@@ -692,10 +436,7 @@ class LoyaltyClass extends \Google\Collection
     return $this->localizedAccountNameLabel;
   }
   /**
-   * Translated strings for the issuer_name. Recommended maximum length is 20
-   * characters to ensure full string is displayed on smaller screens.
-   *
-   * @param LocalizedString $localizedIssuerName
+   * @param LocalizedString
    */
   public function setLocalizedIssuerName(LocalizedString $localizedIssuerName)
   {
@@ -709,11 +450,7 @@ class LoyaltyClass extends \Google\Collection
     return $this->localizedIssuerName;
   }
   /**
-   * Translated strings for the program_name. The app may display an ellipsis
-   * after the first 20 characters to ensure full string is displayed on smaller
-   * screens.
-   *
-   * @param LocalizedString $localizedProgramName
+   * @param LocalizedString
    */
   public function setLocalizedProgramName(LocalizedString $localizedProgramName)
   {
@@ -727,10 +464,7 @@ class LoyaltyClass extends \Google\Collection
     return $this->localizedProgramName;
   }
   /**
-   * Translated strings for the rewards_tier. Recommended maximum length is 7
-   * characters to ensure full string is displayed on smaller screens.
-   *
-   * @param LocalizedString $localizedRewardsTier
+   * @param LocalizedString
    */
   public function setLocalizedRewardsTier(LocalizedString $localizedRewardsTier)
   {
@@ -744,10 +478,7 @@ class LoyaltyClass extends \Google\Collection
     return $this->localizedRewardsTier;
   }
   /**
-   * Translated strings for the rewards_tier_label. Recommended maximum length
-   * is 9 characters to ensure full string is displayed on smaller screens.
-   *
-   * @param LocalizedString $localizedRewardsTierLabel
+   * @param LocalizedString
    */
   public function setLocalizedRewardsTierLabel(LocalizedString $localizedRewardsTierLabel)
   {
@@ -761,9 +492,7 @@ class LoyaltyClass extends \Google\Collection
     return $this->localizedRewardsTierLabel;
   }
   /**
-   * Translated strings for the secondary_rewards_tier.
-   *
-   * @param LocalizedString $localizedSecondaryRewardsTier
+   * @param LocalizedString
    */
   public function setLocalizedSecondaryRewardsTier(LocalizedString $localizedSecondaryRewardsTier)
   {
@@ -777,9 +506,7 @@ class LoyaltyClass extends \Google\Collection
     return $this->localizedSecondaryRewardsTier;
   }
   /**
-   * Translated strings for the secondary_rewards_tier_label.
-   *
-   * @param LocalizedString $localizedSecondaryRewardsTierLabel
+   * @param LocalizedString
    */
   public function setLocalizedSecondaryRewardsTierLabel(LocalizedString $localizedSecondaryRewardsTierLabel)
   {
@@ -793,17 +520,13 @@ class LoyaltyClass extends \Google\Collection
     return $this->localizedSecondaryRewardsTierLabel;
   }
   /**
-   * Note: This field is currently not supported to trigger geo notifications.
-   *
-   * @deprecated
-   * @param LatLongPoint[] $locations
+   * @param LatLongPoint[]
    */
   public function setLocations($locations)
   {
     $this->locations = $locations;
   }
   /**
-   * @deprecated
    * @return LatLongPoint[]
    */
   public function getLocations()
@@ -811,12 +534,7 @@ class LoyaltyClass extends \Google\Collection
     return $this->locations;
   }
   /**
-   * Merchant locations. There is a maximum of ten on the class. Any additional
-   * MerchantLocations added beyond the 10 will be rejected. These locations
-   * will trigger a notification when a user enters within a Google-set radius
-   * of the point. This field replaces the deprecated LatLongPoints.
-   *
-   * @param MerchantLocation[] $merchantLocations
+   * @param MerchantLocation[]
    */
   public function setMerchantLocations($merchantLocations)
   {
@@ -830,10 +548,7 @@ class LoyaltyClass extends \Google\Collection
     return $this->merchantLocations;
   }
   /**
-   * An array of messages displayed in the app. All users of this object will
-   * receive its associated messages. The maximum number of these fields is 10.
-   *
-   * @param Message[] $messages
+   * @param Message[]
    */
   public function setMessages($messages)
   {
@@ -847,55 +562,35 @@ class LoyaltyClass extends \Google\Collection
     return $this->messages;
   }
   /**
-   * Identifies whether multiple users and devices will save the same object
-   * referencing this class.
-   *
-   * Accepted values: STATUS_UNSPECIFIED, MULTIPLE_HOLDERS,
-   * ONE_USER_ALL_DEVICES, ONE_USER_ONE_DEVICE, multipleHolders,
-   * oneUserAllDevices, oneUserOneDevice
-   *
-   * @param self::MULTIPLE_DEVICES_AND_HOLDERS_ALLOWED_STATUS_* $multipleDevicesAndHoldersAllowedStatus
+   * @param string
    */
   public function setMultipleDevicesAndHoldersAllowedStatus($multipleDevicesAndHoldersAllowedStatus)
   {
     $this->multipleDevicesAndHoldersAllowedStatus = $multipleDevicesAndHoldersAllowedStatus;
   }
   /**
-   * @return self::MULTIPLE_DEVICES_AND_HOLDERS_ALLOWED_STATUS_*
+   * @return string
    */
   public function getMultipleDevicesAndHoldersAllowedStatus()
   {
     return $this->multipleDevicesAndHoldersAllowedStatus;
   }
   /**
-   * Whether or not field updates to this class should trigger notifications.
-   * When set to NOTIFY, we will attempt to trigger a field update notification
-   * to users. These notifications will only be sent to users if the field is
-   * part of an allowlist. If not specified, no notification will be triggered.
-   * This setting is ephemeral and needs to be set with each PATCH or UPDATE
-   * request, otherwise a notification will not be triggered.
-   *
-   * Accepted values: NOTIFICATION_SETTINGS_FOR_UPDATES_UNSPECIFIED,
-   * NOTIFY_ON_UPDATE
-   *
-   * @param self::NOTIFY_PREFERENCE_* $notifyPreference
+   * @param string
    */
   public function setNotifyPreference($notifyPreference)
   {
     $this->notifyPreference = $notifyPreference;
   }
   /**
-   * @return self::NOTIFY_PREFERENCE_*
+   * @return string
    */
   public function getNotifyPreference()
   {
     return $this->notifyPreference;
   }
   /**
-   * Required. The logo of the loyalty program or company. This logo is
-   * displayed in both the details and list views of the app.
-   *
-   * @param Image $programLogo
+   * @param Image
    */
   public function setProgramLogo(Image $programLogo)
   {
@@ -909,11 +604,7 @@ class LoyaltyClass extends \Google\Collection
     return $this->programLogo;
   }
   /**
-   * Required. The program name, such as "Adam's Apparel". The app may display
-   * an ellipsis after the first 20 characters to ensure full string is
-   * displayed on smaller screens.
-   *
-   * @param string $programName
+   * @param string
    */
   public function setProgramName($programName)
   {
@@ -927,14 +618,7 @@ class LoyaltyClass extends \Google\Collection
     return $this->programName;
   }
   /**
-   * Identifies which redemption issuers can redeem the pass over Smart Tap.
-   * Redemption issuers are identified by their issuer ID. Redemption issuers
-   * must have at least one Smart Tap key configured. The `enableSmartTap` and
-   * one of object level `smartTapRedemptionValue`, barcode.value`, or
-   * `accountId` fields must also be set up correctly in order for a pass to
-   * support Smart Tap.
-   *
-   * @param string[] $redemptionIssuers
+   * @param string[]
    */
   public function setRedemptionIssuers($redemptionIssuers)
   {
@@ -948,10 +632,7 @@ class LoyaltyClass extends \Google\Collection
     return $this->redemptionIssuers;
   }
   /**
-   * The review comments set by the platform when a class is marked `approved`
-   * or `rejected`.
-   *
-   * @param Review $review
+   * @param Review
    */
   public function setReview(Review $review)
   {
@@ -965,37 +646,21 @@ class LoyaltyClass extends \Google\Collection
     return $this->review;
   }
   /**
-   * Required. The status of the class. This field can be set to `draft` or
-   * `underReview` using the insert, patch, or update API calls. Once the review
-   * state is changed from `draft` it may not be changed back to `draft`. You
-   * should keep this field to `draft` when the class is under development. A
-   * `draft` class cannot be used to create any object. You should set this
-   * field to `underReview` when you believe the class is ready for use. The
-   * platform will automatically set this field to `approved` and it can be
-   * immediately used to create or migrate objects. When updating an already
-   * `approved` class you should keep setting this field to `underReview`.
-   *
-   * Accepted values: REVIEW_STATUS_UNSPECIFIED, UNDER_REVIEW, underReview,
-   * APPROVED, approved, REJECTED, rejected, DRAFT, draft
-   *
-   * @param self::REVIEW_STATUS_* $reviewStatus
+   * @param string
    */
   public function setReviewStatus($reviewStatus)
   {
     $this->reviewStatus = $reviewStatus;
   }
   /**
-   * @return self::REVIEW_STATUS_*
+   * @return string
    */
   public function getReviewStatus()
   {
     return $this->reviewStatus;
   }
   /**
-   * The rewards tier, such as "Gold" or "Platinum." Recommended maximum length
-   * is 7 characters to ensure full string is displayed on smaller screens.
-   *
-   * @param string $rewardsTier
+   * @param string
    */
   public function setRewardsTier($rewardsTier)
   {
@@ -1009,10 +674,7 @@ class LoyaltyClass extends \Google\Collection
     return $this->rewardsTier;
   }
   /**
-   * The rewards tier label, such as "Rewards Tier." Recommended maximum length
-   * is 9 characters to ensure full string is displayed on smaller screens.
-   *
-   * @param string $rewardsTierLabel
+   * @param string
    */
   public function setRewardsTierLabel($rewardsTierLabel)
   {
@@ -1026,9 +688,7 @@ class LoyaltyClass extends \Google\Collection
     return $this->rewardsTierLabel;
   }
   /**
-   * The secondary rewards tier, such as "Gold" or "Platinum."
-   *
-   * @param string $secondaryRewardsTier
+   * @param string
    */
   public function setSecondaryRewardsTier($secondaryRewardsTier)
   {
@@ -1042,9 +702,7 @@ class LoyaltyClass extends \Google\Collection
     return $this->secondaryRewardsTier;
   }
   /**
-   * The secondary rewards tier label, such as "Rewards Tier."
-   *
-   * @param string $secondaryRewardsTierLabel
+   * @param string
    */
   public function setSecondaryRewardsTierLabel($secondaryRewardsTierLabel)
   {
@@ -1058,10 +716,7 @@ class LoyaltyClass extends \Google\Collection
     return $this->secondaryRewardsTierLabel;
   }
   /**
-   * Optional information about the security animation. If this is set a
-   * security animation will be rendered on pass details.
-   *
-   * @param SecurityAnimation $securityAnimation
+   * @param SecurityAnimation
    */
   public function setSecurityAnimation(SecurityAnimation $securityAnimation)
   {
@@ -1075,11 +730,7 @@ class LoyaltyClass extends \Google\Collection
     return $this->securityAnimation;
   }
   /**
-   * Text module data. If text module data is also defined on the class, both
-   * will be displayed. The maximum number of these fields displayed is 10 from
-   * the object and 10 from the class.
-   *
-   * @param TextModuleData[] $textModulesData
+   * @param TextModuleData[]
    */
   public function setTextModulesData($textModulesData)
   {
@@ -1093,10 +744,7 @@ class LoyaltyClass extends \Google\Collection
     return $this->textModulesData;
   }
   /**
-   * Optional value added module data. Maximum of fifteen on the class. For a
-   * pass only fifteen will be displayed, prioritizing those from the object.
-   *
-   * @param ValueAddedModuleData[] $valueAddedModuleData
+   * @param ValueAddedModuleData[]
    */
   public function setValueAddedModuleData($valueAddedModuleData)
   {
@@ -1110,17 +758,13 @@ class LoyaltyClass extends \Google\Collection
     return $this->valueAddedModuleData;
   }
   /**
-   * Deprecated
-   *
-   * @deprecated
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {
     $this->version = $version;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getVersion()
@@ -1128,29 +772,21 @@ class LoyaltyClass extends \Google\Collection
     return $this->version;
   }
   /**
-   * View Unlock Requirement options for the loyalty card.
-   *
-   * Accepted values: VIEW_UNLOCK_REQUIREMENT_UNSPECIFIED, UNLOCK_NOT_REQUIRED,
-   * UNLOCK_REQUIRED_TO_VIEW
-   *
-   * @param self::VIEW_UNLOCK_REQUIREMENT_* $viewUnlockRequirement
+   * @param string
    */
   public function setViewUnlockRequirement($viewUnlockRequirement)
   {
     $this->viewUnlockRequirement = $viewUnlockRequirement;
   }
   /**
-   * @return self::VIEW_UNLOCK_REQUIREMENT_*
+   * @return string
    */
   public function getViewUnlockRequirement()
   {
     return $this->viewUnlockRequirement;
   }
   /**
-   * The wide logo of the loyalty program or company. When provided, this will
-   * be used in place of the program logo in the top left of the card view.
-   *
-   * @param Image $wideProgramLogo
+   * @param Image
    */
   public function setWideProgramLogo(Image $wideProgramLogo)
   {
@@ -1164,17 +800,13 @@ class LoyaltyClass extends \Google\Collection
     return $this->wideProgramLogo;
   }
   /**
-   * Deprecated.
-   *
-   * @deprecated
-   * @param Image $wordMark
+   * @param Image
    */
   public function setWordMark(Image $wordMark)
   {
     $this->wordMark = $wordMark;
   }
   /**
-   * @deprecated
    * @return Image
    */
   public function getWordMark()

@@ -25,7 +25,7 @@ class ForwardingRuleReference extends \Google\Model
   public $forwardingRule;
 
   /**
-   * @param string $forwardingRule
+   * @param string
    */
   public function setForwardingRule($forwardingRule)
   {

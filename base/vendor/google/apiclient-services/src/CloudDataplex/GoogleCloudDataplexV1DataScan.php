@@ -20,48 +20,6 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1DataScan extends \Google\Model
 {
   /**
-   * State is not specified.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Resource is active, i.e., ready to use.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * Resource is under creation.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * Resource is under deletion.
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * Resource is active but has unresolved actions.
-   */
-  public const STATE_ACTION_REQUIRED = 'ACTION_REQUIRED';
-  /**
-   * The data scan type is unspecified.
-   */
-  public const TYPE_DATA_SCAN_TYPE_UNSPECIFIED = 'DATA_SCAN_TYPE_UNSPECIFIED';
-  /**
-   * Data quality scan.
-   */
-  public const TYPE_DATA_QUALITY = 'DATA_QUALITY';
-  /**
-   * Data profile scan.
-   */
-  public const TYPE_DATA_PROFILE = 'DATA_PROFILE';
-  /**
-   * Data discovery scan.
-   */
-  public const TYPE_DATA_DISCOVERY = 'DATA_DISCOVERY';
-  /**
-   * Data documentation scan.
-   */
-  public const TYPE_DATA_DOCUMENTATION = 'DATA_DOCUMENTATION';
-  /**
-   * Output only. The time when the scan was created.
-   *
    * @var string
    */
   public $createTime;
@@ -71,10 +29,6 @@ class GoogleCloudDataplexV1DataScan extends \Google\Model
   protected $dataDiscoveryResultDataType = '';
   protected $dataDiscoverySpecType = GoogleCloudDataplexV1DataDiscoverySpec::class;
   protected $dataDiscoverySpecDataType = '';
-  protected $dataDocumentationResultType = GoogleCloudDataplexV1DataDocumentationResult::class;
-  protected $dataDocumentationResultDataType = '';
-  protected $dataDocumentationSpecType = GoogleCloudDataplexV1DataDocumentationSpec::class;
-  protected $dataDocumentationSpecDataType = '';
   protected $dataProfileResultType = GoogleCloudDataplexV1DataProfileResult::class;
   protected $dataProfileResultDataType = '';
   protected $dataProfileSpecType = GoogleCloudDataplexV1DataProfileSpec::class;
@@ -84,68 +38,44 @@ class GoogleCloudDataplexV1DataScan extends \Google\Model
   protected $dataQualitySpecType = GoogleCloudDataplexV1DataQualitySpec::class;
   protected $dataQualitySpecDataType = '';
   /**
-   * Optional. Description of the scan. Must be between 1-1024 characters.
-   *
    * @var string
    */
   public $description;
   /**
-   * Optional. User friendly display name. Must be between 1-256 characters.
-   *
    * @var string
    */
   public $displayName;
-  protected $executionIdentityType = GoogleCloudDataplexV1ExecutionIdentity::class;
-  protected $executionIdentityDataType = '';
   protected $executionSpecType = GoogleCloudDataplexV1DataScanExecutionSpec::class;
   protected $executionSpecDataType = '';
   protected $executionStatusType = GoogleCloudDataplexV1DataScanExecutionStatus::class;
   protected $executionStatusDataType = '';
   /**
-   * Optional. User-defined labels for the scan.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Output only. Identifier. The relative resource name of the scan, of the
-   * form: projects/{project}/locations/{location_id}/dataScans/{datascan_id},
-   * where project refers to a project_id or project_number and location_id
-   * refers to a Google Cloud region.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Current state of the DataScan.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. The type of DataScan.
-   *
    * @var string
    */
   public $type;
   /**
-   * Output only. System generated globally unique ID for the scan. This ID will
-   * be different if the scan is deleted and re-created with the same name.
-   *
    * @var string
    */
   public $uid;
   /**
-   * Output only. The time when the scan was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. The time when the scan was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -159,9 +89,7 @@ class GoogleCloudDataplexV1DataScan extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Required. The data source for DataScan.
-   *
-   * @param GoogleCloudDataplexV1DataSource $data
+   * @param GoogleCloudDataplexV1DataSource
    */
   public function setData(GoogleCloudDataplexV1DataSource $data)
   {
@@ -175,9 +103,7 @@ class GoogleCloudDataplexV1DataScan extends \Google\Model
     return $this->data;
   }
   /**
-   * Output only. The result of a data discovery scan.
-   *
-   * @param GoogleCloudDataplexV1DataDiscoveryResult $dataDiscoveryResult
+   * @param GoogleCloudDataplexV1DataDiscoveryResult
    */
   public function setDataDiscoveryResult(GoogleCloudDataplexV1DataDiscoveryResult $dataDiscoveryResult)
   {
@@ -191,9 +117,7 @@ class GoogleCloudDataplexV1DataScan extends \Google\Model
     return $this->dataDiscoveryResult;
   }
   /**
-   * Settings for a data discovery scan.
-   *
-   * @param GoogleCloudDataplexV1DataDiscoverySpec $dataDiscoverySpec
+   * @param GoogleCloudDataplexV1DataDiscoverySpec
    */
   public function setDataDiscoverySpec(GoogleCloudDataplexV1DataDiscoverySpec $dataDiscoverySpec)
   {
@@ -207,41 +131,7 @@ class GoogleCloudDataplexV1DataScan extends \Google\Model
     return $this->dataDiscoverySpec;
   }
   /**
-   * Output only. The result of a data documentation scan.
-   *
-   * @param GoogleCloudDataplexV1DataDocumentationResult $dataDocumentationResult
-   */
-  public function setDataDocumentationResult(GoogleCloudDataplexV1DataDocumentationResult $dataDocumentationResult)
-  {
-    $this->dataDocumentationResult = $dataDocumentationResult;
-  }
-  /**
-   * @return GoogleCloudDataplexV1DataDocumentationResult
-   */
-  public function getDataDocumentationResult()
-  {
-    return $this->dataDocumentationResult;
-  }
-  /**
-   * Settings for a data documentation scan.
-   *
-   * @param GoogleCloudDataplexV1DataDocumentationSpec $dataDocumentationSpec
-   */
-  public function setDataDocumentationSpec(GoogleCloudDataplexV1DataDocumentationSpec $dataDocumentationSpec)
-  {
-    $this->dataDocumentationSpec = $dataDocumentationSpec;
-  }
-  /**
-   * @return GoogleCloudDataplexV1DataDocumentationSpec
-   */
-  public function getDataDocumentationSpec()
-  {
-    return $this->dataDocumentationSpec;
-  }
-  /**
-   * Output only. The result of a data profile scan.
-   *
-   * @param GoogleCloudDataplexV1DataProfileResult $dataProfileResult
+   * @param GoogleCloudDataplexV1DataProfileResult
    */
   public function setDataProfileResult(GoogleCloudDataplexV1DataProfileResult $dataProfileResult)
   {
@@ -255,9 +145,7 @@ class GoogleCloudDataplexV1DataScan extends \Google\Model
     return $this->dataProfileResult;
   }
   /**
-   * Settings for a data profile scan.
-   *
-   * @param GoogleCloudDataplexV1DataProfileSpec $dataProfileSpec
+   * @param GoogleCloudDataplexV1DataProfileSpec
    */
   public function setDataProfileSpec(GoogleCloudDataplexV1DataProfileSpec $dataProfileSpec)
   {
@@ -271,9 +159,7 @@ class GoogleCloudDataplexV1DataScan extends \Google\Model
     return $this->dataProfileSpec;
   }
   /**
-   * Output only. The result of a data quality scan.
-   *
-   * @param GoogleCloudDataplexV1DataQualityResult $dataQualityResult
+   * @param GoogleCloudDataplexV1DataQualityResult
    */
   public function setDataQualityResult(GoogleCloudDataplexV1DataQualityResult $dataQualityResult)
   {
@@ -287,9 +173,7 @@ class GoogleCloudDataplexV1DataScan extends \Google\Model
     return $this->dataQualityResult;
   }
   /**
-   * Settings for a data quality scan.
-   *
-   * @param GoogleCloudDataplexV1DataQualitySpec $dataQualitySpec
+   * @param GoogleCloudDataplexV1DataQualitySpec
    */
   public function setDataQualitySpec(GoogleCloudDataplexV1DataQualitySpec $dataQualitySpec)
   {
@@ -303,9 +187,7 @@ class GoogleCloudDataplexV1DataScan extends \Google\Model
     return $this->dataQualitySpec;
   }
   /**
-   * Optional. Description of the scan. Must be between 1-1024 characters.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -319,9 +201,7 @@ class GoogleCloudDataplexV1DataScan extends \Google\Model
     return $this->description;
   }
   /**
-   * Optional. User friendly display name. Must be between 1-256 characters.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -335,27 +215,7 @@ class GoogleCloudDataplexV1DataScan extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Optional. Immutable. The identity to run the datascan. If not specified,
-   * defaults to the Dataplex Service Agent.
-   *
-   * @param GoogleCloudDataplexV1ExecutionIdentity $executionIdentity
-   */
-  public function setExecutionIdentity(GoogleCloudDataplexV1ExecutionIdentity $executionIdentity)
-  {
-    $this->executionIdentity = $executionIdentity;
-  }
-  /**
-   * @return GoogleCloudDataplexV1ExecutionIdentity
-   */
-  public function getExecutionIdentity()
-  {
-    return $this->executionIdentity;
-  }
-  /**
-   * Optional. DataScan execution settings.If not specified, the fields in it
-   * will use their default values.
-   *
-   * @param GoogleCloudDataplexV1DataScanExecutionSpec $executionSpec
+   * @param GoogleCloudDataplexV1DataScanExecutionSpec
    */
   public function setExecutionSpec(GoogleCloudDataplexV1DataScanExecutionSpec $executionSpec)
   {
@@ -369,9 +229,7 @@ class GoogleCloudDataplexV1DataScan extends \Google\Model
     return $this->executionSpec;
   }
   /**
-   * Output only. Status of the data scan execution.
-   *
-   * @param GoogleCloudDataplexV1DataScanExecutionStatus $executionStatus
+   * @param GoogleCloudDataplexV1DataScanExecutionStatus
    */
   public function setExecutionStatus(GoogleCloudDataplexV1DataScanExecutionStatus $executionStatus)
   {
@@ -385,9 +243,7 @@ class GoogleCloudDataplexV1DataScan extends \Google\Model
     return $this->executionStatus;
   }
   /**
-   * Optional. User-defined labels for the scan.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -401,12 +257,7 @@ class GoogleCloudDataplexV1DataScan extends \Google\Model
     return $this->labels;
   }
   /**
-   * Output only. Identifier. The relative resource name of the scan, of the
-   * form: projects/{project}/locations/{location_id}/dataScans/{datascan_id},
-   * where project refers to a project_id or project_number and location_id
-   * refers to a Google Cloud region.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -420,48 +271,35 @@ class GoogleCloudDataplexV1DataScan extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Current state of the DataScan.
-   *
-   * Accepted values: STATE_UNSPECIFIED, ACTIVE, CREATING, DELETING,
-   * ACTION_REQUIRED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. The type of DataScan.
-   *
-   * Accepted values: DATA_SCAN_TYPE_UNSPECIFIED, DATA_QUALITY, DATA_PROFILE,
-   * DATA_DISCOVERY, DATA_DOCUMENTATION
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * Output only. System generated globally unique ID for the scan. This ID will
-   * be different if the scan is deleted and re-created with the same name.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {
@@ -475,9 +313,7 @@ class GoogleCloudDataplexV1DataScan extends \Google\Model
     return $this->uid;
   }
   /**
-   * Output only. The time when the scan was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

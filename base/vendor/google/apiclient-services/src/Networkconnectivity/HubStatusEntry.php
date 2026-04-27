@@ -20,17 +20,10 @@ namespace Google\Service\Networkconnectivity;
 class HubStatusEntry extends \Google\Model
 {
   /**
-   * The number of propagated Private Service Connect connections with this
-   * status. If the `group_by` field was not set in the request message, the
-   * value of this field is 1.
-   *
    * @var int
    */
   public $count;
   /**
-   * The fields that this entry is grouped by. This has the same value as the
-   * `group_by` field in the request message.
-   *
    * @var string
    */
   public $groupBy;
@@ -38,11 +31,7 @@ class HubStatusEntry extends \Google\Model
   protected $pscPropagationStatusDataType = '';
 
   /**
-   * The number of propagated Private Service Connect connections with this
-   * status. If the `group_by` field was not set in the request message, the
-   * value of this field is 1.
-   *
-   * @param int $count
+   * @param int
    */
   public function setCount($count)
   {
@@ -56,10 +45,7 @@ class HubStatusEntry extends \Google\Model
     return $this->count;
   }
   /**
-   * The fields that this entry is grouped by. This has the same value as the
-   * `group_by` field in the request message.
-   *
-   * @param string $groupBy
+   * @param string
    */
   public function setGroupBy($groupBy)
   {
@@ -73,9 +59,7 @@ class HubStatusEntry extends \Google\Model
     return $this->groupBy;
   }
   /**
-   * The Private Service Connect propagation status.
-   *
-   * @param PscPropagationStatus $pscPropagationStatus
+   * @param PscPropagationStatus
    */
   public function setPscPropagationStatus(PscPropagationStatus $pscPropagationStatus)
   {

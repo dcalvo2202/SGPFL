@@ -20,10 +20,6 @@ namespace Google\Service\Integrations;
 class EnterpriseCrmEventbusProtoPropertyEntry extends \Google\Model
 {
   /**
-   * Key is used to retrieve the corresponding property value. This should be
-   * unique for a given fired event. The Tasks should be aware of the keys used
-   * while firing the events for them to be able to retrieve the values.
-   *
    * @var string
    */
   public $key;
@@ -31,11 +27,7 @@ class EnterpriseCrmEventbusProtoPropertyEntry extends \Google\Model
   protected $valueDataType = '';
 
   /**
-   * Key is used to retrieve the corresponding property value. This should be
-   * unique for a given fired event. The Tasks should be aware of the keys used
-   * while firing the events for them to be able to retrieve the values.
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {
@@ -49,10 +41,7 @@ class EnterpriseCrmEventbusProtoPropertyEntry extends \Google\Model
     return $this->key;
   }
   /**
-   * Values for the defined keys. Each value can either be string, int, double
-   * or any proto message.
-   *
-   * @param EnterpriseCrmEventbusProtoValueType $value
+   * @param EnterpriseCrmEventbusProtoValueType
    */
   public function setValue(EnterpriseCrmEventbusProtoValueType $value)
   {

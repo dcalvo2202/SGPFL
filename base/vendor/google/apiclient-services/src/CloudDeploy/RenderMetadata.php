@@ -23,13 +23,9 @@ class RenderMetadata extends \Google\Model
   protected $cloudRunDataType = '';
   protected $customType = CustomMetadata::class;
   protected $customDataType = '';
-  protected $kubernetesType = KubernetesRenderMetadata::class;
-  protected $kubernetesDataType = '';
 
   /**
-   * Output only. Metadata associated with rendering for Cloud Run.
-   *
-   * @param CloudRunRenderMetadata $cloudRun
+   * @param CloudRunRenderMetadata
    */
   public function setCloudRun(CloudRunRenderMetadata $cloudRun)
   {
@@ -43,9 +39,7 @@ class RenderMetadata extends \Google\Model
     return $this->cloudRun;
   }
   /**
-   * Output only. Custom metadata provided by user-defined render operation.
-   *
-   * @param CustomMetadata $custom
+   * @param CustomMetadata
    */
   public function setCustom(CustomMetadata $custom)
   {
@@ -57,23 +51,6 @@ class RenderMetadata extends \Google\Model
   public function getCustom()
   {
     return $this->custom;
-  }
-  /**
-   * Output only. Metadata associated with rendering for a Kubernetes cluster
-   * (GKE or GKE Enterprise target).
-   *
-   * @param KubernetesRenderMetadata $kubernetes
-   */
-  public function setKubernetes(KubernetesRenderMetadata $kubernetes)
-  {
-    $this->kubernetes = $kubernetes;
-  }
-  /**
-   * @return KubernetesRenderMetadata
-   */
-  public function getKubernetes()
-  {
-    return $this->kubernetes;
   }
 }
 

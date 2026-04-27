@@ -20,38 +20,19 @@ namespace Google\Service\CloudRetail;
 class GoogleCloudRetailV2SearchRequestPersonalizationSpec extends \Google\Model
 {
   /**
-   * Default value. In this case, server behavior defaults to Mode.AUTO.
-   */
-  public const MODE_MODE_UNSPECIFIED = 'MODE_UNSPECIFIED';
-  /**
-   * Let CRS decide whether to use personalization based on quality of user
-   * event data.
-   */
-  public const MODE_AUTO = 'AUTO';
-  /**
-   * Disable personalization.
-   */
-  public const MODE_DISABLED = 'DISABLED';
-  /**
-   * Defaults to Mode.AUTO.
-   *
    * @var string
    */
   public $mode;
 
   /**
-   * Defaults to Mode.AUTO.
-   *
-   * Accepted values: MODE_UNSPECIFIED, AUTO, DISABLED
-   *
-   * @param self::MODE_* $mode
+   * @param string
    */
   public function setMode($mode)
   {
     $this->mode = $mode;
   }
   /**
-   * @return self::MODE_*
+   * @return string
    */
   public function getMode()
   {

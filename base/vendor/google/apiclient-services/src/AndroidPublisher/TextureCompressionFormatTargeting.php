@@ -26,9 +26,7 @@ class TextureCompressionFormatTargeting extends \Google\Collection
   protected $valueDataType = 'array';
 
   /**
-   * List of alternative TCFs (TCFs targeted by the sibling splits).
-   *
-   * @param TextureCompressionFormat[] $alternatives
+   * @param TextureCompressionFormat[]
    */
   public function setAlternatives($alternatives)
   {
@@ -42,9 +40,7 @@ class TextureCompressionFormatTargeting extends \Google\Collection
     return $this->alternatives;
   }
   /**
-   * The list of targeted TCFs. Should not be empty.
-   *
-   * @param TextureCompressionFormat[] $value
+   * @param TextureCompressionFormat[]
    */
   public function setValue($value)
   {

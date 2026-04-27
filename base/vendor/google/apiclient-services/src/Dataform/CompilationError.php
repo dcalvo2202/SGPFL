@@ -22,30 +22,20 @@ class CompilationError extends \Google\Model
   protected $actionTargetType = Target::class;
   protected $actionTargetDataType = '';
   /**
-   * Output only. The error's top level message.
-   *
    * @var string
    */
   public $message;
   /**
-   * Output only. The path of the file where this error occurred, if available,
-   * relative to the project root.
-   *
    * @var string
    */
   public $path;
   /**
-   * Output only. The error's full stack trace.
-   *
    * @var string
    */
   public $stack;
 
   /**
-   * Output only. The identifier of the action where this error occurred, if
-   * available.
-   *
-   * @param Target $actionTarget
+   * @param Target
    */
   public function setActionTarget(Target $actionTarget)
   {
@@ -59,9 +49,7 @@ class CompilationError extends \Google\Model
     return $this->actionTarget;
   }
   /**
-   * Output only. The error's top level message.
-   *
-   * @param string $message
+   * @param string
    */
   public function setMessage($message)
   {
@@ -75,10 +63,7 @@ class CompilationError extends \Google\Model
     return $this->message;
   }
   /**
-   * Output only. The path of the file where this error occurred, if available,
-   * relative to the project root.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {
@@ -92,9 +77,7 @@ class CompilationError extends \Google\Model
     return $this->path;
   }
   /**
-   * Output only. The error's full stack trace.
-   *
-   * @param string $stack
+   * @param string
    */
   public function setStack($stack)
   {

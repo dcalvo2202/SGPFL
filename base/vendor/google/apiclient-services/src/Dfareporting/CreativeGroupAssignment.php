@@ -19,25 +19,17 @@ namespace Google\Service\Dfareporting;
 
 class CreativeGroupAssignment extends \Google\Model
 {
-  public const CREATIVE_GROUP_NUMBER_CREATIVE_GROUP_ONE = 'CREATIVE_GROUP_ONE';
-  public const CREATIVE_GROUP_NUMBER_CREATIVE_GROUP_TWO = 'CREATIVE_GROUP_TWO';
   /**
-   * ID of the creative group to be assigned.
-   *
    * @var string
    */
   public $creativeGroupId;
   /**
-   * Creative group number of the creative group assignment.
-   *
    * @var string
    */
   public $creativeGroupNumber;
 
   /**
-   * ID of the creative group to be assigned.
-   *
-   * @param string $creativeGroupId
+   * @param string
    */
   public function setCreativeGroupId($creativeGroupId)
   {
@@ -51,18 +43,14 @@ class CreativeGroupAssignment extends \Google\Model
     return $this->creativeGroupId;
   }
   /**
-   * Creative group number of the creative group assignment.
-   *
-   * Accepted values: CREATIVE_GROUP_ONE, CREATIVE_GROUP_TWO
-   *
-   * @param self::CREATIVE_GROUP_NUMBER_* $creativeGroupNumber
+   * @param string
    */
   public function setCreativeGroupNumber($creativeGroupNumber)
   {
     $this->creativeGroupNumber = $creativeGroupNumber;
   }
   /**
-   * @return self::CREATIVE_GROUP_NUMBER_*
+   * @return string
    */
   public function getCreativeGroupNumber()
   {

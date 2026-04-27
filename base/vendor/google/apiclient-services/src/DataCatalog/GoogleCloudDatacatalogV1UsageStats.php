@@ -20,34 +20,24 @@ namespace Google\Service\DataCatalog;
 class GoogleCloudDatacatalogV1UsageStats extends \Google\Model
 {
   /**
-   * The number of cancelled attempts to use the underlying entry.
-   *
    * @var float
    */
   public $totalCancellations;
   /**
-   * The number of successful uses of the underlying entry.
-   *
    * @var float
    */
   public $totalCompletions;
   /**
-   * Total time spent only on successful uses, in milliseconds.
-   *
    * @var float
    */
   public $totalExecutionTimeForCompletionsMillis;
   /**
-   * The number of failed attempts to use the underlying entry.
-   *
    * @var float
    */
   public $totalFailures;
 
   /**
-   * The number of cancelled attempts to use the underlying entry.
-   *
-   * @param float $totalCancellations
+   * @param float
    */
   public function setTotalCancellations($totalCancellations)
   {
@@ -61,9 +51,7 @@ class GoogleCloudDatacatalogV1UsageStats extends \Google\Model
     return $this->totalCancellations;
   }
   /**
-   * The number of successful uses of the underlying entry.
-   *
-   * @param float $totalCompletions
+   * @param float
    */
   public function setTotalCompletions($totalCompletions)
   {
@@ -77,9 +65,7 @@ class GoogleCloudDatacatalogV1UsageStats extends \Google\Model
     return $this->totalCompletions;
   }
   /**
-   * Total time spent only on successful uses, in milliseconds.
-   *
-   * @param float $totalExecutionTimeForCompletionsMillis
+   * @param float
    */
   public function setTotalExecutionTimeForCompletionsMillis($totalExecutionTimeForCompletionsMillis)
   {
@@ -93,9 +79,7 @@ class GoogleCloudDatacatalogV1UsageStats extends \Google\Model
     return $this->totalExecutionTimeForCompletionsMillis;
   }
   /**
-   * The number of failed attempts to use the underlying entry.
-   *
-   * @param float $totalFailures
+   * @param float
    */
   public function setTotalFailures($totalFailures)
   {

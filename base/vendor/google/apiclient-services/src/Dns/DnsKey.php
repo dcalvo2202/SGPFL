@@ -19,65 +19,34 @@ namespace Google\Service\Dns;
 
 class DnsKey extends \Google\Collection
 {
-  public const ALGORITHM_rsasha1 = 'rsasha1';
-  public const ALGORITHM_rsasha256 = 'rsasha256';
-  public const ALGORITHM_rsasha512 = 'rsasha512';
-  public const ALGORITHM_ecdsap256sha256 = 'ecdsap256sha256';
-  public const ALGORITHM_ecdsap384sha384 = 'ecdsap384sha384';
-  public const TYPE_keySigning = 'keySigning';
-  public const TYPE_zoneSigning = 'zoneSigning';
   protected $collection_key = 'digests';
   /**
-   * String mnemonic specifying the DNSSEC algorithm of this key. Immutable
-   * after creation time.
-   *
    * @var string
    */
   public $algorithm;
   /**
-   * The time that this resource was created in the control plane. This is in
-   * RFC3339 text format. Output only.
-   *
    * @var string
    */
   public $creationTime;
   /**
-   * A mutable string of at most 1024 characters associated with this resource
-   * for the user's convenience. Has no effect on the resource's function.
-   *
    * @var string
    */
   public $description;
   protected $digestsType = DnsKeyDigest::class;
   protected $digestsDataType = 'array';
   /**
-   * Unique identifier for the resource; defined by the server (output only).
-   *
    * @var string
    */
   public $id;
   /**
-   * Active keys are used to sign subsequent changes to the ManagedZone.
-   * Inactive keys are still present as DNSKEY Resource Records for the use of
-   * resolvers validating existing signatures.
-   *
    * @var bool
    */
   public $isActive;
   /**
-   * Length of the key in bits. Specified at creation time, and then immutable.
-   *
    * @var string
    */
   public $keyLength;
   /**
-   * The key tag is a non-cryptographic hash of the a DNSKEY resource record
-   * associated with this DnsKey. The key tag can be used to identify a DNSKEY
-   * more quickly (but it is not a unique identifier). In particular, the key
-   * tag is used in a parent zone's DS record to point at the DNSKEY in this
-   * child ManagedZone. The key tag is a number in the range [0, 65535] and the
-   * algorithm to calculate it is specified in RFC4034 Appendix B. Output only.
-   *
    * @var int
    */
   public $keyTag;
@@ -86,47 +55,30 @@ class DnsKey extends \Google\Collection
    */
   public $kind;
   /**
-   * Base64 encoded public half of this key. Output only.
-   *
    * @var string
    */
   public $publicKey;
   /**
-   * One of "KEY_SIGNING" or "ZONE_SIGNING". Keys of type KEY_SIGNING have the
-   * Secure Entry Point flag set and, when active, are used to sign only
-   * resource record sets of type DNSKEY. Otherwise, the Secure Entry Point flag
-   * is cleared, and this key is used to sign only resource record sets of other
-   * types. Immutable after creation time.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * String mnemonic specifying the DNSSEC algorithm of this key. Immutable
-   * after creation time.
-   *
-   * Accepted values: rsasha1, rsasha256, rsasha512, ecdsap256sha256,
-   * ecdsap384sha384
-   *
-   * @param self::ALGORITHM_* $algorithm
+   * @param string
    */
   public function setAlgorithm($algorithm)
   {
     $this->algorithm = $algorithm;
   }
   /**
-   * @return self::ALGORITHM_*
+   * @return string
    */
   public function getAlgorithm()
   {
     return $this->algorithm;
   }
   /**
-   * The time that this resource was created in the control plane. This is in
-   * RFC3339 text format. Output only.
-   *
-   * @param string $creationTime
+   * @param string
    */
   public function setCreationTime($creationTime)
   {
@@ -140,10 +92,7 @@ class DnsKey extends \Google\Collection
     return $this->creationTime;
   }
   /**
-   * A mutable string of at most 1024 characters associated with this resource
-   * for the user's convenience. Has no effect on the resource's function.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -157,11 +106,7 @@ class DnsKey extends \Google\Collection
     return $this->description;
   }
   /**
-   * Cryptographic hashes of the DNSKEY resource record associated with this
-   * DnsKey. These digests are needed to construct a DS record that points at
-   * this DNS key. Output only.
-   *
-   * @param DnsKeyDigest[] $digests
+   * @param DnsKeyDigest[]
    */
   public function setDigests($digests)
   {
@@ -175,9 +120,7 @@ class DnsKey extends \Google\Collection
     return $this->digests;
   }
   /**
-   * Unique identifier for the resource; defined by the server (output only).
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -191,11 +134,7 @@ class DnsKey extends \Google\Collection
     return $this->id;
   }
   /**
-   * Active keys are used to sign subsequent changes to the ManagedZone.
-   * Inactive keys are still present as DNSKEY Resource Records for the use of
-   * resolvers validating existing signatures.
-   *
-   * @param bool $isActive
+   * @param bool
    */
   public function setIsActive($isActive)
   {
@@ -209,9 +148,7 @@ class DnsKey extends \Google\Collection
     return $this->isActive;
   }
   /**
-   * Length of the key in bits. Specified at creation time, and then immutable.
-   *
-   * @param string $keyLength
+   * @param string
    */
   public function setKeyLength($keyLength)
   {
@@ -225,14 +162,7 @@ class DnsKey extends \Google\Collection
     return $this->keyLength;
   }
   /**
-   * The key tag is a non-cryptographic hash of the a DNSKEY resource record
-   * associated with this DnsKey. The key tag can be used to identify a DNSKEY
-   * more quickly (but it is not a unique identifier). In particular, the key
-   * tag is used in a parent zone's DS record to point at the DNSKEY in this
-   * child ManagedZone. The key tag is a number in the range [0, 65535] and the
-   * algorithm to calculate it is specified in RFC4034 Appendix B. Output only.
-   *
-   * @param int $keyTag
+   * @param int
    */
   public function setKeyTag($keyTag)
   {
@@ -246,7 +176,7 @@ class DnsKey extends \Google\Collection
     return $this->keyTag;
   }
   /**
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -260,9 +190,7 @@ class DnsKey extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Base64 encoded public half of this key. Output only.
-   *
-   * @param string $publicKey
+   * @param string
    */
   public function setPublicKey($publicKey)
   {
@@ -276,22 +204,14 @@ class DnsKey extends \Google\Collection
     return $this->publicKey;
   }
   /**
-   * One of "KEY_SIGNING" or "ZONE_SIGNING". Keys of type KEY_SIGNING have the
-   * Secure Entry Point flag set and, when active, are used to sign only
-   * resource record sets of type DNSKEY. Otherwise, the Secure Entry Point flag
-   * is cleared, and this key is used to sign only resource record sets of other
-   * types. Immutable after creation time.
-   *
-   * Accepted values: keySigning, zoneSigning
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

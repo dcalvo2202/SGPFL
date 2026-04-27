@@ -20,28 +20,16 @@ namespace Google\Service\AndroidPublisher;
 class SubscriptionDeferralInfo extends \Google\Model
 {
   /**
-   * The desired next expiry time to assign to the subscription, in milliseconds
-   * since the Epoch. The given time must be later/greater than the current
-   * expiry time for the subscription.
-   *
    * @var string
    */
   public $desiredExpiryTimeMillis;
   /**
-   * The expected expiry time for the subscription. If the current expiry time
-   * for the subscription is not the value specified here, the deferral will not
-   * occur.
-   *
    * @var string
    */
   public $expectedExpiryTimeMillis;
 
   /**
-   * The desired next expiry time to assign to the subscription, in milliseconds
-   * since the Epoch. The given time must be later/greater than the current
-   * expiry time for the subscription.
-   *
-   * @param string $desiredExpiryTimeMillis
+   * @param string
    */
   public function setDesiredExpiryTimeMillis($desiredExpiryTimeMillis)
   {
@@ -55,11 +43,7 @@ class SubscriptionDeferralInfo extends \Google\Model
     return $this->desiredExpiryTimeMillis;
   }
   /**
-   * The expected expiry time for the subscription. If the current expiry time
-   * for the subscription is not the value specified here, the deferral will not
-   * occur.
-   *
-   * @param string $expectedExpiryTimeMillis
+   * @param string
    */
   public function setExpectedExpiryTimeMillis($expectedExpiryTimeMillis)
   {

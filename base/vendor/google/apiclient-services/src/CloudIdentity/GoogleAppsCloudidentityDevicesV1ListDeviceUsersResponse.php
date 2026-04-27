@@ -23,17 +23,12 @@ class GoogleAppsCloudidentityDevicesV1ListDeviceUsersResponse extends \Google\Co
   protected $deviceUsersType = GoogleAppsCloudidentityDevicesV1DeviceUser::class;
   protected $deviceUsersDataType = 'array';
   /**
-   * Token to retrieve the next page of results. Empty if there are no more
-   * results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Devices meeting the list restrictions.
-   *
-   * @param GoogleAppsCloudidentityDevicesV1DeviceUser[] $deviceUsers
+   * @param GoogleAppsCloudidentityDevicesV1DeviceUser[]
    */
   public function setDeviceUsers($deviceUsers)
   {
@@ -47,10 +42,7 @@ class GoogleAppsCloudidentityDevicesV1ListDeviceUsersResponse extends \Google\Co
     return $this->deviceUsers;
   }
   /**
-   * Token to retrieve the next page of results. Empty if there are no more
-   * results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

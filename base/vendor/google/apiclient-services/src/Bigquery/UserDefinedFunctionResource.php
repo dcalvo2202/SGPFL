@@ -20,27 +20,16 @@ namespace Google\Service\Bigquery;
 class UserDefinedFunctionResource extends \Google\Model
 {
   /**
-   * [Pick one] An inline resource that contains code for a user-defined
-   * function (UDF). Providing a inline code resource is equivalent to providing
-   * a URI for a file containing the same code.
-   *
    * @var string
    */
   public $inlineCode;
   /**
-   * [Pick one] A code resource to load from a Google Cloud Storage URI
-   * (gs://bucket/path).
-   *
    * @var string
    */
   public $resourceUri;
 
   /**
-   * [Pick one] An inline resource that contains code for a user-defined
-   * function (UDF). Providing a inline code resource is equivalent to providing
-   * a URI for a file containing the same code.
-   *
-   * @param string $inlineCode
+   * @param string
    */
   public function setInlineCode($inlineCode)
   {
@@ -54,10 +43,7 @@ class UserDefinedFunctionResource extends \Google\Model
     return $this->inlineCode;
   }
   /**
-   * [Pick one] A code resource to load from a Google Cloud Storage URI
-   * (gs://bucket/path).
-   *
-   * @param string $resourceUri
+   * @param string
    */
   public function setResourceUri($resourceUri)
   {

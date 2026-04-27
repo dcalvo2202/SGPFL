@@ -21,9 +21,6 @@ class LookupRequest extends \Google\Collection
 {
   protected $collection_key = 'keys';
   /**
-   * The ID of the database against which to make the request. '(default)' is
-   * not allowed; please use empty string '' to refer the default database.
-   *
    * @var string
    */
   public $databaseId;
@@ -35,10 +32,7 @@ class LookupRequest extends \Google\Collection
   protected $readOptionsDataType = '';
 
   /**
-   * The ID of the database against which to make the request. '(default)' is
-   * not allowed; please use empty string '' to refer the default database.
-   *
-   * @param string $databaseId
+   * @param string
    */
   public function setDatabaseId($databaseId)
   {
@@ -52,9 +46,7 @@ class LookupRequest extends \Google\Collection
     return $this->databaseId;
   }
   /**
-   * Required. Keys of entities to look up.
-   *
-   * @param Key[] $keys
+   * @param Key[]
    */
   public function setKeys($keys)
   {
@@ -68,12 +60,7 @@ class LookupRequest extends \Google\Collection
     return $this->keys;
   }
   /**
-   * The properties to return. Defaults to returning all properties. If this
-   * field is set and an entity has a property not referenced in the mask, it
-   * will be absent from LookupResponse.found.entity.properties. The entity's
-   * key is always returned.
-   *
-   * @param PropertyMask $propertyMask
+   * @param PropertyMask
    */
   public function setPropertyMask(PropertyMask $propertyMask)
   {
@@ -87,9 +74,7 @@ class LookupRequest extends \Google\Collection
     return $this->propertyMask;
   }
   /**
-   * The options for this lookup request.
-   *
-   * @param ReadOptions $readOptions
+   * @param ReadOptions
    */
   public function setReadOptions(ReadOptions $readOptions)
   {

@@ -20,25 +20,16 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1KeyValueEntry extends \Google\Model
 {
   /**
-   * Resource URI that can be used to identify the scope of the key value map
-   * entries.
-   *
    * @var string
    */
   public $name;
   /**
-   * Required. Data or payload that is being retrieved and associated with the
-   * unique key.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Resource URI that can be used to identify the scope of the key value map
-   * entries.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -52,10 +43,7 @@ class GoogleCloudApigeeV1KeyValueEntry extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. Data or payload that is being retrieved and associated with the
-   * unique key.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

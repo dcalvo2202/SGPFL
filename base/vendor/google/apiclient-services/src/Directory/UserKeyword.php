@@ -20,32 +20,20 @@ namespace Google\Service\Directory;
 class UserKeyword extends \Google\Model
 {
   /**
-   * Custom Type.
-   *
    * @var string
    */
   public $customType;
   /**
-   * Each entry can have a type which indicates standard type of that entry. For
-   * example keyword could be of type occupation or outlook. In addition to the
-   * standard type an entry can have a custom type and can give it any name.
-   * Such types should have the CUSTOM value as type and also have a customType
-   * value.
-   *
    * @var string
    */
   public $type;
   /**
-   * Keyword.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Custom Type.
-   *
-   * @param string $customType
+   * @param string
    */
   public function setCustomType($customType)
   {
@@ -59,13 +47,7 @@ class UserKeyword extends \Google\Model
     return $this->customType;
   }
   /**
-   * Each entry can have a type which indicates standard type of that entry. For
-   * example keyword could be of type occupation or outlook. In addition to the
-   * standard type an entry can have a custom type and can give it any name.
-   * Such types should have the CUSTOM value as type and also have a customType
-   * value.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {
@@ -79,9 +61,7 @@ class UserKeyword extends \Google\Model
     return $this->type;
   }
   /**
-   * Keyword.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

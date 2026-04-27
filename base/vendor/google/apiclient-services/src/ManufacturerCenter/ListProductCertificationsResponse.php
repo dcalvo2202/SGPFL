@@ -21,9 +21,6 @@ class ListProductCertificationsResponse extends \Google\Collection
 {
   protected $collection_key = 'productCertifications';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListProductCertificationsResponse extends \Google\Collection
   protected $productCertificationsDataType = 'array';
 
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class ListProductCertificationsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The product certifications from the specified certification body.
-   *
-   * @param ProductCertification[] $productCertifications
+   * @param ProductCertification[]
    */
   public function setProductCertifications($productCertifications)
   {

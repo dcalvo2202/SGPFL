@@ -23,16 +23,12 @@ class GoogleCloudAiplatformV1FeatureViewFeatureRegistrySource extends \Google\Co
   protected $featureGroupsType = GoogleCloudAiplatformV1FeatureViewFeatureRegistrySourceFeatureGroup::class;
   protected $featureGroupsDataType = 'array';
   /**
-   * Optional. The project number of the parent project of the Feature Groups.
-   *
    * @var string
    */
   public $projectNumber;
 
   /**
-   * Required. List of features that need to be synced to Online Store.
-   *
-   * @param GoogleCloudAiplatformV1FeatureViewFeatureRegistrySourceFeatureGroup[] $featureGroups
+   * @param GoogleCloudAiplatformV1FeatureViewFeatureRegistrySourceFeatureGroup[]
    */
   public function setFeatureGroups($featureGroups)
   {
@@ -46,9 +42,7 @@ class GoogleCloudAiplatformV1FeatureViewFeatureRegistrySource extends \Google\Co
     return $this->featureGroups;
   }
   /**
-   * Optional. The project number of the parent project of the Feature Groups.
-   *
-   * @param string $projectNumber
+   * @param string
    */
   public function setProjectNumber($projectNumber)
   {

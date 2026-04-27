@@ -24,9 +24,7 @@ class ClientStatusResponse extends \Google\Collection
   protected $configDataType = 'array';
 
   /**
-   * Client configs for the clients specified in the ClientStatusRequest.
-   *
-   * @param ClientConfig[] $config
+   * @param ClientConfig[]
    */
   public function setConfig($config)
   {

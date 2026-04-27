@@ -20,32 +20,20 @@ namespace Google\Service\CloudTalentSolution;
 class SpellingCorrection extends \Google\Model
 {
   /**
-   * Indicates if the query was corrected by the spell checker.
-   *
    * @var bool
    */
   public $corrected;
   /**
-   * Corrected output with html tags to highlight the corrected words. Corrected
-   * words are called out with the "*...*" html tags. For example, the user
-   * input query is "software enginear", where the second word, "enginear," is
-   * incorrect. It should be "engineer". When spelling correction is enabled,
-   * this value is "software *engineer*".
-   *
    * @var string
    */
   public $correctedHtml;
   /**
-   * Correction output consisting of the corrected keyword string.
-   *
    * @var string
    */
   public $correctedText;
 
   /**
-   * Indicates if the query was corrected by the spell checker.
-   *
-   * @param bool $corrected
+   * @param bool
    */
   public function setCorrected($corrected)
   {
@@ -59,13 +47,7 @@ class SpellingCorrection extends \Google\Model
     return $this->corrected;
   }
   /**
-   * Corrected output with html tags to highlight the corrected words. Corrected
-   * words are called out with the "*...*" html tags. For example, the user
-   * input query is "software enginear", where the second word, "enginear," is
-   * incorrect. It should be "engineer". When spelling correction is enabled,
-   * this value is "software *engineer*".
-   *
-   * @param string $correctedHtml
+   * @param string
    */
   public function setCorrectedHtml($correctedHtml)
   {
@@ -79,9 +61,7 @@ class SpellingCorrection extends \Google\Model
     return $this->correctedHtml;
   }
   /**
-   * Correction output consisting of the corrected keyword string.
-   *
-   * @param string $correctedText
+   * @param string
    */
   public function setCorrectedText($correctedText)
   {

@@ -23,17 +23,12 @@ class ListCssesResponse extends \Google\Collection
   protected $cssesType = Css::class;
   protected $cssesDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The CSS domains affiliated with the specified CSS group.
-   *
-   * @param Css[] $csses
+   * @param Css[]
    */
   public function setCsses($csses)
   {
@@ -47,10 +42,7 @@ class ListCssesResponse extends \Google\Collection
     return $this->csses;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

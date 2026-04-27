@@ -20,61 +20,36 @@ namespace Google\Service\GoogleAnalyticsAdmin;
 class GoogleAnalyticsAdminV1betaGoogleAdsLink extends \Google\Model
 {
   /**
-   * Enable personalized advertising features with this integration.
-   * Automatically publish my Google Analytics audience lists and Google
-   * Analytics remarketing events/parameters to the linked Google Ads account.
-   * If this field is not set on create/update, it will be defaulted to true.
-   *
    * @var bool
    */
   public $adsPersonalizationEnabled;
   /**
-   * Output only. If true, this link is for a Google Ads manager account.
-   *
    * @var bool
    */
   public $canManageClients;
   /**
-   * Output only. Time when this link was originally created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. Email address of the user that created the link. An empty
-   * string will be returned if the email address can't be retrieved.
-   *
    * @var string
    */
   public $creatorEmailAddress;
   /**
-   * Immutable. Google Ads customer ID.
-   *
    * @var string
    */
   public $customerId;
   /**
-   * Identifier. Format:
-   * properties/{propertyId}/googleAdsLinks/{googleAdsLinkId} Note:
-   * googleAdsLinkId is not the Google Ads customer ID.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Time when this link was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Enable personalized advertising features with this integration.
-   * Automatically publish my Google Analytics audience lists and Google
-   * Analytics remarketing events/parameters to the linked Google Ads account.
-   * If this field is not set on create/update, it will be defaulted to true.
-   *
-   * @param bool $adsPersonalizationEnabled
+   * @param bool
    */
   public function setAdsPersonalizationEnabled($adsPersonalizationEnabled)
   {
@@ -88,9 +63,7 @@ class GoogleAnalyticsAdminV1betaGoogleAdsLink extends \Google\Model
     return $this->adsPersonalizationEnabled;
   }
   /**
-   * Output only. If true, this link is for a Google Ads manager account.
-   *
-   * @param bool $canManageClients
+   * @param bool
    */
   public function setCanManageClients($canManageClients)
   {
@@ -104,9 +77,7 @@ class GoogleAnalyticsAdminV1betaGoogleAdsLink extends \Google\Model
     return $this->canManageClients;
   }
   /**
-   * Output only. Time when this link was originally created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -120,10 +91,7 @@ class GoogleAnalyticsAdminV1betaGoogleAdsLink extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. Email address of the user that created the link. An empty
-   * string will be returned if the email address can't be retrieved.
-   *
-   * @param string $creatorEmailAddress
+   * @param string
    */
   public function setCreatorEmailAddress($creatorEmailAddress)
   {
@@ -137,9 +105,7 @@ class GoogleAnalyticsAdminV1betaGoogleAdsLink extends \Google\Model
     return $this->creatorEmailAddress;
   }
   /**
-   * Immutable. Google Ads customer ID.
-   *
-   * @param string $customerId
+   * @param string
    */
   public function setCustomerId($customerId)
   {
@@ -153,11 +119,7 @@ class GoogleAnalyticsAdminV1betaGoogleAdsLink extends \Google\Model
     return $this->customerId;
   }
   /**
-   * Identifier. Format:
-   * properties/{propertyId}/googleAdsLinks/{googleAdsLinkId} Note:
-   * googleAdsLinkId is not the Google Ads customer ID.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -171,9 +133,7 @@ class GoogleAnalyticsAdminV1betaGoogleAdsLink extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Time when this link was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

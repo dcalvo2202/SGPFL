@@ -21,9 +21,6 @@ class VideoFormatsListResponse extends \Google\Collection
 {
   protected $collection_key = 'videoFormats';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#videoFormatsListResponse".
-   *
    * @var string
    */
   public $kind;
@@ -31,10 +28,7 @@ class VideoFormatsListResponse extends \Google\Collection
   protected $videoFormatsDataType = 'array';
 
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#videoFormatsListResponse".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -48,9 +42,7 @@ class VideoFormatsListResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Video format collection.
-   *
-   * @param VideoFormat[] $videoFormats
+   * @param VideoFormat[]
    */
   public function setVideoFormats($videoFormats)
   {

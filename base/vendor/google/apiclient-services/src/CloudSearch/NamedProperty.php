@@ -34,10 +34,6 @@ class NamedProperty extends \Google\Model
   protected $integerValuesType = IntegerValues::class;
   protected $integerValuesDataType = '';
   /**
-   * The name of the property. This name should correspond to the name of the
-   * property that was registered for object definition in the schema. The
-   * maximum allowable length for this property is 256 characters.
-   *
    * @var string
    */
   public $name;
@@ -49,7 +45,7 @@ class NamedProperty extends \Google\Model
   protected $timestampValuesDataType = '';
 
   /**
-   * @param bool $booleanValue
+   * @param bool
    */
   public function setBooleanValue($booleanValue)
   {
@@ -63,7 +59,7 @@ class NamedProperty extends \Google\Model
     return $this->booleanValue;
   }
   /**
-   * @param DateValues $dateValues
+   * @param DateValues
    */
   public function setDateValues(DateValues $dateValues)
   {
@@ -77,7 +73,7 @@ class NamedProperty extends \Google\Model
     return $this->dateValues;
   }
   /**
-   * @param DoubleValues $doubleValues
+   * @param DoubleValues
    */
   public function setDoubleValues(DoubleValues $doubleValues)
   {
@@ -91,7 +87,7 @@ class NamedProperty extends \Google\Model
     return $this->doubleValues;
   }
   /**
-   * @param EnumValues $enumValues
+   * @param EnumValues
    */
   public function setEnumValues(EnumValues $enumValues)
   {
@@ -105,7 +101,7 @@ class NamedProperty extends \Google\Model
     return $this->enumValues;
   }
   /**
-   * @param HtmlValues $htmlValues
+   * @param HtmlValues
    */
   public function setHtmlValues(HtmlValues $htmlValues)
   {
@@ -119,7 +115,7 @@ class NamedProperty extends \Google\Model
     return $this->htmlValues;
   }
   /**
-   * @param IntegerValues $integerValues
+   * @param IntegerValues
    */
   public function setIntegerValues(IntegerValues $integerValues)
   {
@@ -133,11 +129,7 @@ class NamedProperty extends \Google\Model
     return $this->integerValues;
   }
   /**
-   * The name of the property. This name should correspond to the name of the
-   * property that was registered for object definition in the schema. The
-   * maximum allowable length for this property is 256 characters.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -151,7 +143,7 @@ class NamedProperty extends \Google\Model
     return $this->name;
   }
   /**
-   * @param ObjectValues $objectValues
+   * @param ObjectValues
    */
   public function setObjectValues(ObjectValues $objectValues)
   {
@@ -165,7 +157,7 @@ class NamedProperty extends \Google\Model
     return $this->objectValues;
   }
   /**
-   * @param TextValues $textValues
+   * @param TextValues
    */
   public function setTextValues(TextValues $textValues)
   {
@@ -179,7 +171,7 @@ class NamedProperty extends \Google\Model
     return $this->textValues;
   }
   /**
-   * @param TimestampValues $timestampValues
+   * @param TimestampValues
    */
   public function setTimestampValues(TimestampValues $timestampValues)
   {

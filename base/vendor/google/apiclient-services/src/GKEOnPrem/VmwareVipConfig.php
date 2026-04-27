@@ -20,25 +20,16 @@ namespace Google\Service\GKEOnPrem;
 class VmwareVipConfig extends \Google\Model
 {
   /**
-   * The VIP which you previously set aside for the Kubernetes API of this
-   * cluster.
-   *
    * @var string
    */
   public $controlPlaneVip;
   /**
-   * The VIP which you previously set aside for ingress traffic into this
-   * cluster.
-   *
    * @var string
    */
   public $ingressVip;
 
   /**
-   * The VIP which you previously set aside for the Kubernetes API of this
-   * cluster.
-   *
-   * @param string $controlPlaneVip
+   * @param string
    */
   public function setControlPlaneVip($controlPlaneVip)
   {
@@ -52,10 +43,7 @@ class VmwareVipConfig extends \Google\Model
     return $this->controlPlaneVip;
   }
   /**
-   * The VIP which you previously set aside for ingress traffic into this
-   * cluster.
-   *
-   * @param string $ingressVip
+   * @param string
    */
   public function setIngressVip($ingressVip)
   {

@@ -20,22 +20,16 @@ namespace Google\Service\SecurityCommandCenter;
 class GoogleCloudSecuritycenterV2Label extends \Google\Model
 {
   /**
-   * Name of the label.
-   *
    * @var string
    */
   public $name;
   /**
-   * Value that corresponds to the label's name.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Name of the label.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -49,9 +43,7 @@ class GoogleCloudSecuritycenterV2Label extends \Google\Model
     return $this->name;
   }
   /**
-   * Value that corresponds to the label's name.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

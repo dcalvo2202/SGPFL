@@ -21,49 +21,20 @@ class SoftwareConfig extends \Google\Collection
 {
   protected $collection_key = 'optionalComponents';
   /**
-   * Optional. The version of software inside the cluster. It must be one of the
-   * supported Dataproc Versions
-   * (https://cloud.google.com/dataproc/docs/concepts/versioning/dataproc-
-   * versions#supported-dataproc-image-versions), such as "1.2" (including a
-   * subminor version, such as "1.2.29"), or the "preview" version
-   * (https://cloud.google.com/dataproc/docs/concepts/versioning/dataproc-
-   * versions#other_versions). If unspecified, it defaults to the latest Debian
-   * version.
-   *
    * @var string
    */
   public $imageVersion;
   /**
-   * Optional. The set of components to activate on the cluster.
-   *
    * @var string[]
    */
   public $optionalComponents;
   /**
-   * Optional. The properties to set on daemon config files.Property keys are
-   * specified in prefix:property format, for example core:hadoop.tmp.dir. The
-   * following are supported prefixes and their mappings: capacity-scheduler:
-   * capacity-scheduler.xml core: core-site.xml distcp: distcp-default.xml hdfs:
-   * hdfs-site.xml hive: hive-site.xml mapred: mapred-site.xml pig:
-   * pig.properties spark: spark-defaults.conf yarn: yarn-site.xmlFor more
-   * information, see Cluster properties
-   * (https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
-   *
    * @var string[]
    */
   public $properties;
 
   /**
-   * Optional. The version of software inside the cluster. It must be one of the
-   * supported Dataproc Versions
-   * (https://cloud.google.com/dataproc/docs/concepts/versioning/dataproc-
-   * versions#supported-dataproc-image-versions), such as "1.2" (including a
-   * subminor version, such as "1.2.29"), or the "preview" version
-   * (https://cloud.google.com/dataproc/docs/concepts/versioning/dataproc-
-   * versions#other_versions). If unspecified, it defaults to the latest Debian
-   * version.
-   *
-   * @param string $imageVersion
+   * @param string
    */
   public function setImageVersion($imageVersion)
   {
@@ -77,9 +48,7 @@ class SoftwareConfig extends \Google\Collection
     return $this->imageVersion;
   }
   /**
-   * Optional. The set of components to activate on the cluster.
-   *
-   * @param string[] $optionalComponents
+   * @param string[]
    */
   public function setOptionalComponents($optionalComponents)
   {
@@ -93,16 +62,7 @@ class SoftwareConfig extends \Google\Collection
     return $this->optionalComponents;
   }
   /**
-   * Optional. The properties to set on daemon config files.Property keys are
-   * specified in prefix:property format, for example core:hadoop.tmp.dir. The
-   * following are supported prefixes and their mappings: capacity-scheduler:
-   * capacity-scheduler.xml core: core-site.xml distcp: distcp-default.xml hdfs:
-   * hdfs-site.xml hive: hive-site.xml mapred: mapred-site.xml pig:
-   * pig.properties spark: spark-defaults.conf yarn: yarn-site.xmlFor more
-   * information, see Cluster properties
-   * (https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
-   *
-   * @param string[] $properties
+   * @param string[]
    */
   public function setProperties($properties)
   {

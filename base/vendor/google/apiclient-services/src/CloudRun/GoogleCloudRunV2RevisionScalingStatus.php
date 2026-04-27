@@ -20,16 +20,12 @@ namespace Google\Service\CloudRun;
 class GoogleCloudRunV2RevisionScalingStatus extends \Google\Model
 {
   /**
-   * The current number of min instances provisioned for this revision.
-   *
    * @var int
    */
   public $desiredMinInstanceCount;
 
   /**
-   * The current number of min instances provisioned for this revision.
-   *
-   * @param int $desiredMinInstanceCount
+   * @param int
    */
   public function setDesiredMinInstanceCount($desiredMinInstanceCount)
   {

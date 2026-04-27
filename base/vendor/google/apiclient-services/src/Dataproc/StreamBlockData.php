@@ -57,7 +57,7 @@ class StreamBlockData extends \Google\Model
   public $useMemory;
 
   /**
-   * @param bool $deserialized
+   * @param bool
    */
   public function setDeserialized($deserialized)
   {
@@ -71,7 +71,7 @@ class StreamBlockData extends \Google\Model
     return $this->deserialized;
   }
   /**
-   * @param string $diskSize
+   * @param string
    */
   public function setDiskSize($diskSize)
   {
@@ -85,7 +85,7 @@ class StreamBlockData extends \Google\Model
     return $this->diskSize;
   }
   /**
-   * @param string $executorId
+   * @param string
    */
   public function setExecutorId($executorId)
   {
@@ -99,7 +99,7 @@ class StreamBlockData extends \Google\Model
     return $this->executorId;
   }
   /**
-   * @param string $hostPort
+   * @param string
    */
   public function setHostPort($hostPort)
   {
@@ -113,7 +113,7 @@ class StreamBlockData extends \Google\Model
     return $this->hostPort;
   }
   /**
-   * @param string $memSize
+   * @param string
    */
   public function setMemSize($memSize)
   {
@@ -127,7 +127,7 @@ class StreamBlockData extends \Google\Model
     return $this->memSize;
   }
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -141,7 +141,7 @@ class StreamBlockData extends \Google\Model
     return $this->name;
   }
   /**
-   * @param string $storageLevel
+   * @param string
    */
   public function setStorageLevel($storageLevel)
   {
@@ -155,7 +155,7 @@ class StreamBlockData extends \Google\Model
     return $this->storageLevel;
   }
   /**
-   * @param bool $useDisk
+   * @param bool
    */
   public function setUseDisk($useDisk)
   {
@@ -169,7 +169,7 @@ class StreamBlockData extends \Google\Model
     return $this->useDisk;
   }
   /**
-   * @param bool $useMemory
+   * @param bool
    */
   public function setUseMemory($useMemory)
   {

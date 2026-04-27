@@ -20,88 +20,40 @@ namespace Google\Service\Apigateway;
 class ApigatewayGateway extends \Google\Model
 {
   /**
-   * Gateway does not have a state yet.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Gateway is being created.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * Gateway is running and ready for requests.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * Gateway creation failed.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * Gateway is being deleted.
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * Gateway is being updated.
-   */
-  public const STATE_UPDATING = 'UPDATING';
-  /**
-   * Required. Resource name of the API Config for this Gateway. Format:
-   * projects/{project}/locations/global/apis/{api}/configs/{apiConfig}
-   *
    * @var string
    */
   public $apiConfig;
   /**
-   * Output only. Created time.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. The default API Gateway host name of the form
-   * `{gateway_id}-{hash}.{region_code}.gateway.dev`.
-   *
    * @var string
    */
   public $defaultHostname;
   /**
-   * Optional. Display name.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Optional. Resource labels to represent user-provided metadata. Refer to
-   * cloud documentation on labels for more details.
-   * https://cloud.google.com/compute/docs/labeling-resources
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Output only. Resource name of the Gateway. Format:
-   * projects/{project}/locations/{location}/gateways/{gateway}
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The current state of the Gateway.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. Updated time.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Required. Resource name of the API Config for this Gateway. Format:
-   * projects/{project}/locations/global/apis/{api}/configs/{apiConfig}
-   *
-   * @param string $apiConfig
+   * @param string
    */
   public function setApiConfig($apiConfig)
   {
@@ -115,9 +67,7 @@ class ApigatewayGateway extends \Google\Model
     return $this->apiConfig;
   }
   /**
-   * Output only. Created time.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -131,10 +81,7 @@ class ApigatewayGateway extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. The default API Gateway host name of the form
-   * `{gateway_id}-{hash}.{region_code}.gateway.dev`.
-   *
-   * @param string $defaultHostname
+   * @param string
    */
   public function setDefaultHostname($defaultHostname)
   {
@@ -148,9 +95,7 @@ class ApigatewayGateway extends \Google\Model
     return $this->defaultHostname;
   }
   /**
-   * Optional. Display name.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -164,11 +109,7 @@ class ApigatewayGateway extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Optional. Resource labels to represent user-provided metadata. Refer to
-   * cloud documentation on labels for more details.
-   * https://cloud.google.com/compute/docs/labeling-resources
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -182,10 +123,7 @@ class ApigatewayGateway extends \Google\Model
     return $this->labels;
   }
   /**
-   * Output only. Resource name of the Gateway. Format:
-   * projects/{project}/locations/{location}/gateways/{gateway}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -199,28 +137,21 @@ class ApigatewayGateway extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The current state of the Gateway.
-   *
-   * Accepted values: STATE_UNSPECIFIED, CREATING, ACTIVE, FAILED, DELETING,
-   * UPDATING
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. Updated time.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

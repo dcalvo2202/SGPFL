@@ -24,9 +24,7 @@ class ListSmimeInfoResponse extends \Google\Collection
   protected $smimeInfoDataType = 'array';
 
   /**
-   * List of SmimeInfo.
-   *
-   * @param SmimeInfo[] $smimeInfo
+   * @param SmimeInfo[]
    */
   public function setSmimeInfo($smimeInfo)
   {

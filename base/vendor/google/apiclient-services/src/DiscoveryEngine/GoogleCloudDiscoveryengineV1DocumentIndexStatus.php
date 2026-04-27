@@ -23,27 +23,16 @@ class GoogleCloudDiscoveryengineV1DocumentIndexStatus extends \Google\Collection
   protected $errorSamplesType = GoogleRpcStatus::class;
   protected $errorSamplesDataType = 'array';
   /**
-   * The time when the document was indexed. If this field is populated, it
-   * means the document has been indexed. While documents typically become
-   * searchable within seconds of indexing, it can sometimes take up to a few
-   * hours.
-   *
    * @var string
    */
   public $indexTime;
   /**
-   * Immutable. The message indicates the document index is in progress. If this
-   * field is populated, the document index is pending.
-   *
    * @var string
    */
   public $pendingMessage;
 
   /**
-   * A sample of errors encountered while indexing the document. If this field
-   * is populated, the document is not indexed due to errors.
-   *
-   * @param GoogleRpcStatus[] $errorSamples
+   * @param GoogleRpcStatus[]
    */
   public function setErrorSamples($errorSamples)
   {
@@ -57,12 +46,7 @@ class GoogleCloudDiscoveryengineV1DocumentIndexStatus extends \Google\Collection
     return $this->errorSamples;
   }
   /**
-   * The time when the document was indexed. If this field is populated, it
-   * means the document has been indexed. While documents typically become
-   * searchable within seconds of indexing, it can sometimes take up to a few
-   * hours.
-   *
-   * @param string $indexTime
+   * @param string
    */
   public function setIndexTime($indexTime)
   {
@@ -76,10 +60,7 @@ class GoogleCloudDiscoveryengineV1DocumentIndexStatus extends \Google\Collection
     return $this->indexTime;
   }
   /**
-   * Immutable. The message indicates the document index is in progress. If this
-   * field is populated, the document index is pending.
-   *
-   * @param string $pendingMessage
+   * @param string
    */
   public function setPendingMessage($pendingMessage)
   {

@@ -21,9 +21,6 @@ class GoogleCloudContactcenterinsightsV1ListPhraseMatchersResponse extends \Goog
 {
   protected $collection_key = 'phraseMatchers';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GoogleCloudContactcenterinsightsV1ListPhraseMatchersResponse extends \Goog
   protected $phraseMatchersDataType = 'array';
 
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class GoogleCloudContactcenterinsightsV1ListPhraseMatchersResponse extends \Goog
     return $this->nextPageToken;
   }
   /**
-   * The phrase matchers that match the request.
-   *
-   * @param GoogleCloudContactcenterinsightsV1PhraseMatcher[] $phraseMatchers
+   * @param GoogleCloudContactcenterinsightsV1PhraseMatcher[]
    */
   public function setPhraseMatchers($phraseMatchers)
   {

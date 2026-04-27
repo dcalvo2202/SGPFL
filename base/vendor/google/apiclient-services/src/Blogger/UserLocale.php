@@ -20,28 +20,20 @@ namespace Google\Service\Blogger;
 class UserLocale extends \Google\Model
 {
   /**
-   * The country this blog's locale is set to.
-   *
    * @var string
    */
   public $country;
   /**
-   * The language this blog is authored in.
-   *
    * @var string
    */
   public $language;
   /**
-   * The language variant this blog is authored in.
-   *
    * @var string
    */
   public $variant;
 
   /**
-   * The country this blog's locale is set to.
-   *
-   * @param string $country
+   * @param string
    */
   public function setCountry($country)
   {
@@ -55,9 +47,7 @@ class UserLocale extends \Google\Model
     return $this->country;
   }
   /**
-   * The language this blog is authored in.
-   *
-   * @param string $language
+   * @param string
    */
   public function setLanguage($language)
   {
@@ -71,9 +61,7 @@ class UserLocale extends \Google\Model
     return $this->language;
   }
   /**
-   * The language variant this blog is authored in.
-   *
-   * @param string $variant
+   * @param string
    */
   public function setVariant($variant)
   {

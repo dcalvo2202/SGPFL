@@ -20,16 +20,12 @@ namespace Google\Service\CloudSearch;
 class ResponseDebugInfo extends \Google\Model
 {
   /**
-   * General debug info formatted for display.
-   *
    * @var string
    */
   public $formattedDebugInfo;
 
   /**
-   * General debug info formatted for display.
-   *
-   * @param string $formattedDebugInfo
+   * @param string
    */
   public function setFormattedDebugInfo($formattedDebugInfo)
   {

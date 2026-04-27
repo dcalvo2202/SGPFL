@@ -21,22 +21,14 @@ class GoogleAnalyticsAdminV1betaAccountSummary extends \Google\Collection
 {
   protected $collection_key = 'propertySummaries';
   /**
-   * Resource name of account referred to by this account summary Format:
-   * accounts/{account_id} Example: "accounts/1000"
-   *
    * @var string
    */
   public $account;
   /**
-   * Display name for the account referred to in this account summary.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Identifier. Resource name for this account summary. Format:
-   * accountSummaries/{account_id} Example: "accountSummaries/1000"
-   *
    * @var string
    */
   public $name;
@@ -44,10 +36,7 @@ class GoogleAnalyticsAdminV1betaAccountSummary extends \Google\Collection
   protected $propertySummariesDataType = 'array';
 
   /**
-   * Resource name of account referred to by this account summary Format:
-   * accounts/{account_id} Example: "accounts/1000"
-   *
-   * @param string $account
+   * @param string
    */
   public function setAccount($account)
   {
@@ -61,9 +50,7 @@ class GoogleAnalyticsAdminV1betaAccountSummary extends \Google\Collection
     return $this->account;
   }
   /**
-   * Display name for the account referred to in this account summary.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -77,10 +64,7 @@ class GoogleAnalyticsAdminV1betaAccountSummary extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Identifier. Resource name for this account summary. Format:
-   * accountSummaries/{account_id} Example: "accountSummaries/1000"
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -94,9 +78,7 @@ class GoogleAnalyticsAdminV1betaAccountSummary extends \Google\Collection
     return $this->name;
   }
   /**
-   * List of summaries for child accounts of this account.
-   *
-   * @param GoogleAnalyticsAdminV1betaPropertySummary[] $propertySummaries
+   * @param GoogleAnalyticsAdminV1betaPropertySummary[]
    */
   public function setPropertySummaries($propertySummaries)
   {

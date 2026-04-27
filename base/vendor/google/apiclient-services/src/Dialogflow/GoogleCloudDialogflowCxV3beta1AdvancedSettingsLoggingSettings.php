@@ -33,7 +33,7 @@ class GoogleCloudDialogflowCxV3beta1AdvancedSettingsLoggingSettings extends \Goo
   public $enableStackdriverLogging;
 
   /**
-   * @param bool $enableConsentBasedRedaction
+   * @param bool
    */
   public function setEnableConsentBasedRedaction($enableConsentBasedRedaction)
   {
@@ -47,7 +47,7 @@ class GoogleCloudDialogflowCxV3beta1AdvancedSettingsLoggingSettings extends \Goo
     return $this->enableConsentBasedRedaction;
   }
   /**
-   * @param bool $enableInteractionLogging
+   * @param bool
    */
   public function setEnableInteractionLogging($enableInteractionLogging)
   {
@@ -61,7 +61,7 @@ class GoogleCloudDialogflowCxV3beta1AdvancedSettingsLoggingSettings extends \Goo
     return $this->enableInteractionLogging;
   }
   /**
-   * @param bool $enableStackdriverLogging
+   * @param bool
    */
   public function setEnableStackdriverLogging($enableStackdriverLogging)
   {

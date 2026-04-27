@@ -20,29 +20,20 @@ namespace Google\Service\Books;
 class VolumeAccessInfoEpub extends \Google\Model
 {
   /**
-   * URL to retrieve ACS token for epub download. (In LITE projection.)
-   *
    * @var string
    */
   public $acsTokenLink;
   /**
-   * URL to download epub. (In LITE projection.)
-   *
    * @var string
    */
   public $downloadLink;
   /**
-   * Is a flowing text epub available either as public domain or for purchase.
-   * (In LITE projection.)
-   *
    * @var bool
    */
   public $isAvailable;
 
   /**
-   * URL to retrieve ACS token for epub download. (In LITE projection.)
-   *
-   * @param string $acsTokenLink
+   * @param string
    */
   public function setAcsTokenLink($acsTokenLink)
   {
@@ -56,9 +47,7 @@ class VolumeAccessInfoEpub extends \Google\Model
     return $this->acsTokenLink;
   }
   /**
-   * URL to download epub. (In LITE projection.)
-   *
-   * @param string $downloadLink
+   * @param string
    */
   public function setDownloadLink($downloadLink)
   {
@@ -72,10 +61,7 @@ class VolumeAccessInfoEpub extends \Google\Model
     return $this->downloadLink;
   }
   /**
-   * Is a flowing text epub available either as public domain or for purchase.
-   * (In LITE projection.)
-   *
-   * @param bool $isAvailable
+   * @param bool
    */
   public function setIsAvailable($isAvailable)
   {

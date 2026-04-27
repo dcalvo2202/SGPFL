@@ -20,20 +20,12 @@ namespace Google\Service\Firebaseappcheck;
 class GoogleFirebaseAppcheckV1ExchangeSafetyNetTokenRequest extends \Google\Model
 {
   /**
-   * Required. The [SafetyNet attestation response](https://developer.android.co
-   * m/training/safetynet/attestation#request-attestation-step) issued to your
-   * app.
-   *
    * @var string
    */
   public $safetyNetToken;
 
   /**
-   * Required. The [SafetyNet attestation response](https://developer.android.co
-   * m/training/safetynet/attestation#request-attestation-step) issued to your
-   * app.
-   *
-   * @param string $safetyNetToken
+   * @param string
    */
   public function setSafetyNetToken($safetyNetToken)
   {

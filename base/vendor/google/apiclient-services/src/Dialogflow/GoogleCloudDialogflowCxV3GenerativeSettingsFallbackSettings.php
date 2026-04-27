@@ -28,7 +28,7 @@ class GoogleCloudDialogflowCxV3GenerativeSettingsFallbackSettings extends \Googl
   public $selectedPrompt;
 
   /**
-   * @param GoogleCloudDialogflowCxV3GenerativeSettingsFallbackSettingsPromptTemplate[] $promptTemplates
+   * @param GoogleCloudDialogflowCxV3GenerativeSettingsFallbackSettingsPromptTemplate[]
    */
   public function setPromptTemplates($promptTemplates)
   {
@@ -42,7 +42,7 @@ class GoogleCloudDialogflowCxV3GenerativeSettingsFallbackSettings extends \Googl
     return $this->promptTemplates;
   }
   /**
-   * @param string $selectedPrompt
+   * @param string
    */
   public function setSelectedPrompt($selectedPrompt)
   {

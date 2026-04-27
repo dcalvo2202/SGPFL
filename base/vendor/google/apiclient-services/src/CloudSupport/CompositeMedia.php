@@ -20,97 +20,54 @@ namespace Google\Service\CloudSupport;
 class CompositeMedia extends \Google\Model
 {
   /**
-   * # gdata.* are outside protos with mising documentation
-   */
-  public const REFERENCE_TYPE_PATH = 'PATH';
-  /**
-   * # gdata.* are outside protos with mising documentation
-   */
-  public const REFERENCE_TYPE_BLOB_REF = 'BLOB_REF';
-  /**
-   * # gdata.* are outside protos with mising documentation
-   */
-  public const REFERENCE_TYPE_INLINE = 'INLINE';
-  /**
-   * # gdata.* are outside protos with mising documentation
-   */
-  public const REFERENCE_TYPE_BIGSTORE_REF = 'BIGSTORE_REF';
-  /**
-   * # gdata.* are outside protos with mising documentation
-   */
-  public const REFERENCE_TYPE_COSMO_BINARY_REFERENCE = 'COSMO_BINARY_REFERENCE';
-  /**
-   * # gdata.* are outside protos with mising documentation
-   *
-   * @deprecated
    * @var string
    */
   public $blobRef;
   protected $blobstore2InfoType = Blobstore2Info::class;
   protected $blobstore2InfoDataType = '';
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
    * @var string
    */
   public $cosmoBinaryReference;
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
    * @var string
    */
   public $crc32cHash;
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
    * @var string
    */
   public $inline;
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
    * @var string
    */
   public $length;
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
    * @var string
    */
   public $md5Hash;
   protected $objectIdType = ObjectId::class;
   protected $objectIdDataType = '';
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
    * @var string
    */
   public $path;
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
    * @var string
    */
   public $referenceType;
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
    * @var string
    */
   public $sha1Hash;
 
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
-   * @deprecated
-   * @param string $blobRef
+   * @param string
    */
   public function setBlobRef($blobRef)
   {
     $this->blobRef = $blobRef;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getBlobRef()
@@ -118,9 +75,7 @@ class CompositeMedia extends \Google\Model
     return $this->blobRef;
   }
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
-   * @param Blobstore2Info $blobstore2Info
+   * @param Blobstore2Info
    */
   public function setBlobstore2Info(Blobstore2Info $blobstore2Info)
   {
@@ -134,9 +89,7 @@ class CompositeMedia extends \Google\Model
     return $this->blobstore2Info;
   }
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
-   * @param string $cosmoBinaryReference
+   * @param string
    */
   public function setCosmoBinaryReference($cosmoBinaryReference)
   {
@@ -150,9 +103,7 @@ class CompositeMedia extends \Google\Model
     return $this->cosmoBinaryReference;
   }
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
-   * @param string $crc32cHash
+   * @param string
    */
   public function setCrc32cHash($crc32cHash)
   {
@@ -166,9 +117,7 @@ class CompositeMedia extends \Google\Model
     return $this->crc32cHash;
   }
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
-   * @param string $inline
+   * @param string
    */
   public function setInline($inline)
   {
@@ -182,9 +131,7 @@ class CompositeMedia extends \Google\Model
     return $this->inline;
   }
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
-   * @param string $length
+   * @param string
    */
   public function setLength($length)
   {
@@ -198,9 +145,7 @@ class CompositeMedia extends \Google\Model
     return $this->length;
   }
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
-   * @param string $md5Hash
+   * @param string
    */
   public function setMd5Hash($md5Hash)
   {
@@ -214,9 +159,7 @@ class CompositeMedia extends \Google\Model
     return $this->md5Hash;
   }
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
-   * @param ObjectId $objectId
+   * @param ObjectId
    */
   public function setObjectId(ObjectId $objectId)
   {
@@ -230,9 +173,7 @@ class CompositeMedia extends \Google\Model
     return $this->objectId;
   }
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {
@@ -246,28 +187,21 @@ class CompositeMedia extends \Google\Model
     return $this->path;
   }
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
-   * Accepted values: PATH, BLOB_REF, INLINE, BIGSTORE_REF,
-   * COSMO_BINARY_REFERENCE
-   *
-   * @param self::REFERENCE_TYPE_* $referenceType
+   * @param string
    */
   public function setReferenceType($referenceType)
   {
     $this->referenceType = $referenceType;
   }
   /**
-   * @return self::REFERENCE_TYPE_*
+   * @return string
    */
   public function getReferenceType()
   {
     return $this->referenceType;
   }
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
-   * @param string $sha1Hash
+   * @param string
    */
   public function setSha1Hash($sha1Hash)
   {

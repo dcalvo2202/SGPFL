@@ -23,12 +23,7 @@ class ModuleViewConstraints extends \Google\Model
   protected $displayIntervalDataType = '';
 
   /**
-   * The period of time that the module will be displayed to users. Can define
-   * both a `startTime` and `endTime`. The module is displayed immediately after
-   * insertion unless a `startTime` is set. The module is displayed indefinitely
-   * if `endTime` is not set.
-   *
-   * @param TimeInterval $displayInterval
+   * @param TimeInterval
    */
   public function setDisplayInterval(TimeInterval $displayInterval)
   {

@@ -20,188 +20,78 @@ namespace Google\Service\CloudIdentity;
 class GoogleAppsCloudidentityDevicesV1BrowserInfo extends \Google\Model
 {
   /**
-   * Management state is not specified.
-   */
-  public const BROWSER_MANAGEMENT_STATE_UNSPECIFIED = 'UNSPECIFIED';
-  /**
-   * Browser/Profile is not managed by any customer.
-   */
-  public const BROWSER_MANAGEMENT_STATE_UNMANAGED = 'UNMANAGED';
-  /**
-   * Browser/Profile is managed, but by some other customer.
-   */
-  public const BROWSER_MANAGEMENT_STATE_MANAGED_BY_OTHER_DOMAIN = 'MANAGED_BY_OTHER_DOMAIN';
-  /**
-   * Profile is managed by customer.
-   */
-  public const BROWSER_MANAGEMENT_STATE_PROFILE_MANAGED = 'PROFILE_MANAGED';
-  /**
-   * Browser is managed by customer.
-   */
-  public const BROWSER_MANAGEMENT_STATE_BROWSER_MANAGED = 'BROWSER_MANAGED';
-  /**
-   * Password protection is not specified.
-   */
-  public const PASSWORD_PROTECTION_WARNING_TRIGGER_PASSWORD_PROTECTION_TRIGGER_UNSPECIFIED = 'PASSWORD_PROTECTION_TRIGGER_UNSPECIFIED';
-  /**
-   * Password reuse is never detected.
-   */
-  public const PASSWORD_PROTECTION_WARNING_TRIGGER_PROTECTION_OFF = 'PROTECTION_OFF';
-  /**
-   * Warning is shown when the user reuses their protected password on a non-
-   * allowed site.
-   */
-  public const PASSWORD_PROTECTION_WARNING_TRIGGER_PASSWORD_REUSE = 'PASSWORD_REUSE';
-  /**
-   * Warning is shown when the user reuses their protected password on a
-   * phishing site.
-   */
-  public const PASSWORD_PROTECTION_WARNING_TRIGGER_PHISHING_REUSE = 'PHISHING_REUSE';
-  /**
-   * Browser protection level is not specified.
-   */
-  public const SAFE_BROWSING_PROTECTION_LEVEL_SAFE_BROWSING_LEVEL_UNSPECIFIED = 'SAFE_BROWSING_LEVEL_UNSPECIFIED';
-  /**
-   * No protection against dangerous websites, downloads, and extensions.
-   */
-  public const SAFE_BROWSING_PROTECTION_LEVEL_DISABLED = 'DISABLED';
-  /**
-   * Standard protection against websites, downloads, and extensions that are
-   * known to be dangerous.
-   */
-  public const SAFE_BROWSING_PROTECTION_LEVEL_STANDARD = 'STANDARD';
-  /**
-   * Faster, proactive protection against dangerous websites, downloads, and
-   * extensions.
-   */
-  public const SAFE_BROWSING_PROTECTION_LEVEL_ENHANCED = 'ENHANCED';
-  /**
-   * Output only. Browser's management state.
-   *
    * @var string
    */
   public $browserManagementState;
   /**
-   * Version of the request initiating browser. E.g. `91.0.4442.4`.
-   *
    * @var string
    */
   public $browserVersion;
   /**
-   * Current state of [built-in DNS
-   * client](https://chromeenterprise.google/policies/#BuiltInDnsClientEnabled).
-   *
    * @var bool
    */
   public $isBuiltInDnsClientEnabled;
   /**
-   * Current state of [bulk data analysis](https://chromeenterprise.google/polic
-   * ies/#OnBulkDataEntryEnterpriseConnector). Set to true if provider list from
-   * Chrome is non-empty.
-   *
    * @var bool
    */
   public $isBulkDataEntryAnalysisEnabled;
   /**
-   * Deprecated: This field is not used for Chrome version 118 and later.
-   * Current state of [Chrome
-   * Cleanup](https://chromeenterprise.google/policies/#ChromeCleanupEnabled).
-   *
-   * @deprecated
    * @var bool
    */
   public $isChromeCleanupEnabled;
   /**
-   * Current state of [Chrome Remote Desktop
-   * app](https://chromeenterprise.google/policies/#URLBlocklist).
-   *
    * @var bool
    */
   public $isChromeRemoteDesktopAppBlocked;
   /**
-   * Current state of [file download analysis](https://chromeenterprise.google/p
-   * olicies/#OnFileDownloadedEnterpriseConnector). Set to true if provider list
-   * from Chrome is non-empty.
-   *
    * @var bool
    */
   public $isFileDownloadAnalysisEnabled;
   /**
-   * Current state of [file upload analysis](https://chromeenterprise.google/pol
-   * icies/#OnFileAttachedEnterpriseConnector). Set to true if provider list
-   * from Chrome is non-empty.
-   *
    * @var bool
    */
   public $isFileUploadAnalysisEnabled;
   /**
-   * Current state of [real-time URL check](https://chromeenterprise.google/poli
-   * cies/#EnterpriseRealTimeUrlCheckMode). Set to true if provider list from
-   * Chrome is non-empty.
-   *
    * @var bool
    */
   public $isRealtimeUrlCheckEnabled;
   /**
-   * Current state of [security event analysis](https://chromeenterprise.google/
-   * policies/#OnSecurityEventEnterpriseConnector). Set to true if provider list
-   * from Chrome is non-empty.
-   *
    * @var bool
    */
   public $isSecurityEventAnalysisEnabled;
   /**
-   * Current state of [site isolation](https://chromeenterprise.google/policies/
-   * ?policy=IsolateOrigins).
-   *
    * @var bool
    */
   public $isSiteIsolationEnabled;
   /**
-   * Current state of [third-party blocking](https://chromeenterprise.google/pol
-   * icies/#ThirdPartyBlockingEnabled).
-   *
    * @var bool
    */
   public $isThirdPartyBlockingEnabled;
   /**
-   * Current state of [password protection trigger](https://chromeenterprise.goo
-   * gle/policies/#PasswordProtectionWarningTrigger).
-   *
    * @var string
    */
   public $passwordProtectionWarningTrigger;
   /**
-   * Current state of [Safe Browsing protection level](https://chromeenterprise.
-   * google/policies/#SafeBrowsingProtectionLevel).
-   *
    * @var string
    */
   public $safeBrowsingProtectionLevel;
 
   /**
-   * Output only. Browser's management state.
-   *
-   * Accepted values: UNSPECIFIED, UNMANAGED, MANAGED_BY_OTHER_DOMAIN,
-   * PROFILE_MANAGED, BROWSER_MANAGED
-   *
-   * @param self::BROWSER_MANAGEMENT_STATE_* $browserManagementState
+   * @param string
    */
   public function setBrowserManagementState($browserManagementState)
   {
     $this->browserManagementState = $browserManagementState;
   }
   /**
-   * @return self::BROWSER_MANAGEMENT_STATE_*
+   * @return string
    */
   public function getBrowserManagementState()
   {
     return $this->browserManagementState;
   }
   /**
-   * Version of the request initiating browser. E.g. `91.0.4442.4`.
-   *
-   * @param string $browserVersion
+   * @param string
    */
   public function setBrowserVersion($browserVersion)
   {
@@ -215,10 +105,7 @@ class GoogleAppsCloudidentityDevicesV1BrowserInfo extends \Google\Model
     return $this->browserVersion;
   }
   /**
-   * Current state of [built-in DNS
-   * client](https://chromeenterprise.google/policies/#BuiltInDnsClientEnabled).
-   *
-   * @param bool $isBuiltInDnsClientEnabled
+   * @param bool
    */
   public function setIsBuiltInDnsClientEnabled($isBuiltInDnsClientEnabled)
   {
@@ -232,11 +119,7 @@ class GoogleAppsCloudidentityDevicesV1BrowserInfo extends \Google\Model
     return $this->isBuiltInDnsClientEnabled;
   }
   /**
-   * Current state of [bulk data analysis](https://chromeenterprise.google/polic
-   * ies/#OnBulkDataEntryEnterpriseConnector). Set to true if provider list from
-   * Chrome is non-empty.
-   *
-   * @param bool $isBulkDataEntryAnalysisEnabled
+   * @param bool
    */
   public function setIsBulkDataEntryAnalysisEnabled($isBulkDataEntryAnalysisEnabled)
   {
@@ -250,19 +133,13 @@ class GoogleAppsCloudidentityDevicesV1BrowserInfo extends \Google\Model
     return $this->isBulkDataEntryAnalysisEnabled;
   }
   /**
-   * Deprecated: This field is not used for Chrome version 118 and later.
-   * Current state of [Chrome
-   * Cleanup](https://chromeenterprise.google/policies/#ChromeCleanupEnabled).
-   *
-   * @deprecated
-   * @param bool $isChromeCleanupEnabled
+   * @param bool
    */
   public function setIsChromeCleanupEnabled($isChromeCleanupEnabled)
   {
     $this->isChromeCleanupEnabled = $isChromeCleanupEnabled;
   }
   /**
-   * @deprecated
    * @return bool
    */
   public function getIsChromeCleanupEnabled()
@@ -270,10 +147,7 @@ class GoogleAppsCloudidentityDevicesV1BrowserInfo extends \Google\Model
     return $this->isChromeCleanupEnabled;
   }
   /**
-   * Current state of [Chrome Remote Desktop
-   * app](https://chromeenterprise.google/policies/#URLBlocklist).
-   *
-   * @param bool $isChromeRemoteDesktopAppBlocked
+   * @param bool
    */
   public function setIsChromeRemoteDesktopAppBlocked($isChromeRemoteDesktopAppBlocked)
   {
@@ -287,11 +161,7 @@ class GoogleAppsCloudidentityDevicesV1BrowserInfo extends \Google\Model
     return $this->isChromeRemoteDesktopAppBlocked;
   }
   /**
-   * Current state of [file download analysis](https://chromeenterprise.google/p
-   * olicies/#OnFileDownloadedEnterpriseConnector). Set to true if provider list
-   * from Chrome is non-empty.
-   *
-   * @param bool $isFileDownloadAnalysisEnabled
+   * @param bool
    */
   public function setIsFileDownloadAnalysisEnabled($isFileDownloadAnalysisEnabled)
   {
@@ -305,11 +175,7 @@ class GoogleAppsCloudidentityDevicesV1BrowserInfo extends \Google\Model
     return $this->isFileDownloadAnalysisEnabled;
   }
   /**
-   * Current state of [file upload analysis](https://chromeenterprise.google/pol
-   * icies/#OnFileAttachedEnterpriseConnector). Set to true if provider list
-   * from Chrome is non-empty.
-   *
-   * @param bool $isFileUploadAnalysisEnabled
+   * @param bool
    */
   public function setIsFileUploadAnalysisEnabled($isFileUploadAnalysisEnabled)
   {
@@ -323,11 +189,7 @@ class GoogleAppsCloudidentityDevicesV1BrowserInfo extends \Google\Model
     return $this->isFileUploadAnalysisEnabled;
   }
   /**
-   * Current state of [real-time URL check](https://chromeenterprise.google/poli
-   * cies/#EnterpriseRealTimeUrlCheckMode). Set to true if provider list from
-   * Chrome is non-empty.
-   *
-   * @param bool $isRealtimeUrlCheckEnabled
+   * @param bool
    */
   public function setIsRealtimeUrlCheckEnabled($isRealtimeUrlCheckEnabled)
   {
@@ -341,11 +203,7 @@ class GoogleAppsCloudidentityDevicesV1BrowserInfo extends \Google\Model
     return $this->isRealtimeUrlCheckEnabled;
   }
   /**
-   * Current state of [security event analysis](https://chromeenterprise.google/
-   * policies/#OnSecurityEventEnterpriseConnector). Set to true if provider list
-   * from Chrome is non-empty.
-   *
-   * @param bool $isSecurityEventAnalysisEnabled
+   * @param bool
    */
   public function setIsSecurityEventAnalysisEnabled($isSecurityEventAnalysisEnabled)
   {
@@ -359,10 +217,7 @@ class GoogleAppsCloudidentityDevicesV1BrowserInfo extends \Google\Model
     return $this->isSecurityEventAnalysisEnabled;
   }
   /**
-   * Current state of [site isolation](https://chromeenterprise.google/policies/
-   * ?policy=IsolateOrigins).
-   *
-   * @param bool $isSiteIsolationEnabled
+   * @param bool
    */
   public function setIsSiteIsolationEnabled($isSiteIsolationEnabled)
   {
@@ -376,10 +231,7 @@ class GoogleAppsCloudidentityDevicesV1BrowserInfo extends \Google\Model
     return $this->isSiteIsolationEnabled;
   }
   /**
-   * Current state of [third-party blocking](https://chromeenterprise.google/pol
-   * icies/#ThirdPartyBlockingEnabled).
-   *
-   * @param bool $isThirdPartyBlockingEnabled
+   * @param bool
    */
   public function setIsThirdPartyBlockingEnabled($isThirdPartyBlockingEnabled)
   {
@@ -393,40 +245,28 @@ class GoogleAppsCloudidentityDevicesV1BrowserInfo extends \Google\Model
     return $this->isThirdPartyBlockingEnabled;
   }
   /**
-   * Current state of [password protection trigger](https://chromeenterprise.goo
-   * gle/policies/#PasswordProtectionWarningTrigger).
-   *
-   * Accepted values: PASSWORD_PROTECTION_TRIGGER_UNSPECIFIED, PROTECTION_OFF,
-   * PASSWORD_REUSE, PHISHING_REUSE
-   *
-   * @param self::PASSWORD_PROTECTION_WARNING_TRIGGER_* $passwordProtectionWarningTrigger
+   * @param string
    */
   public function setPasswordProtectionWarningTrigger($passwordProtectionWarningTrigger)
   {
     $this->passwordProtectionWarningTrigger = $passwordProtectionWarningTrigger;
   }
   /**
-   * @return self::PASSWORD_PROTECTION_WARNING_TRIGGER_*
+   * @return string
    */
   public function getPasswordProtectionWarningTrigger()
   {
     return $this->passwordProtectionWarningTrigger;
   }
   /**
-   * Current state of [Safe Browsing protection level](https://chromeenterprise.
-   * google/policies/#SafeBrowsingProtectionLevel).
-   *
-   * Accepted values: SAFE_BROWSING_LEVEL_UNSPECIFIED, DISABLED, STANDARD,
-   * ENHANCED
-   *
-   * @param self::SAFE_BROWSING_PROTECTION_LEVEL_* $safeBrowsingProtectionLevel
+   * @param string
    */
   public function setSafeBrowsingProtectionLevel($safeBrowsingProtectionLevel)
   {
     $this->safeBrowsingProtectionLevel = $safeBrowsingProtectionLevel;
   }
   /**
-   * @return self::SAFE_BROWSING_PROTECTION_LEVEL_*
+   * @return string
    */
   public function getSafeBrowsingProtectionLevel()
   {

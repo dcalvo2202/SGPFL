@@ -20,22 +20,16 @@ namespace Google\Service\Document;
 class GoogleCloudDocumentaiV1DocumentChunkedDocumentChunkChunkPageSpan extends \Google\Model
 {
   /**
-   * Page where chunk ends in the document.
-   *
    * @var int
    */
   public $pageEnd;
   /**
-   * Page where chunk starts in the document.
-   *
    * @var int
    */
   public $pageStart;
 
   /**
-   * Page where chunk ends in the document.
-   *
-   * @param int $pageEnd
+   * @param int
    */
   public function setPageEnd($pageEnd)
   {
@@ -49,9 +43,7 @@ class GoogleCloudDocumentaiV1DocumentChunkedDocumentChunkChunkPageSpan extends \
     return $this->pageEnd;
   }
   /**
-   * Page where chunk starts in the document.
-   *
-   * @param int $pageStart
+   * @param int
    */
   public function setPageStart($pageStart)
   {

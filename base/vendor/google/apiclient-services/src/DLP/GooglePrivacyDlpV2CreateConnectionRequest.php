@@ -23,9 +23,7 @@ class GooglePrivacyDlpV2CreateConnectionRequest extends \Google\Model
   protected $connectionDataType = '';
 
   /**
-   * Required. The connection resource.
-   *
-   * @param GooglePrivacyDlpV2Connection $connection
+   * @param GooglePrivacyDlpV2Connection
    */
   public function setConnection(GooglePrivacyDlpV2Connection $connection)
   {

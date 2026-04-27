@@ -20,72 +20,24 @@ namespace Google\Service\CloudDeploy;
 class DeliveryPipelineNotificationEvent extends \Google\Model
 {
   /**
-   * Type is unspecified.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * A Pub/Sub notification failed to be sent.
-   */
-  public const TYPE_TYPE_PUBSUB_NOTIFICATION_FAILURE = 'TYPE_PUBSUB_NOTIFICATION_FAILURE';
-  /**
-   * Resource state changed.
-   */
-  public const TYPE_TYPE_RESOURCE_STATE_CHANGE = 'TYPE_RESOURCE_STATE_CHANGE';
-  /**
-   * A process aborted.
-   */
-  public const TYPE_TYPE_PROCESS_ABORTED = 'TYPE_PROCESS_ABORTED';
-  /**
-   * Restriction check failed.
-   */
-  public const TYPE_TYPE_RESTRICTION_VIOLATED = 'TYPE_RESTRICTION_VIOLATED';
-  /**
-   * Resource deleted.
-   */
-  public const TYPE_TYPE_RESOURCE_DELETED = 'TYPE_RESOURCE_DELETED';
-  /**
-   * Rollout updated.
-   */
-  public const TYPE_TYPE_ROLLOUT_UPDATE = 'TYPE_ROLLOUT_UPDATE';
-  /**
-   * Deploy Policy evaluation.
-   */
-  public const TYPE_TYPE_DEPLOY_POLICY_EVALUATION = 'TYPE_DEPLOY_POLICY_EVALUATION';
-  /**
-   * Deprecated: This field is never used. Use release_render log type instead.
-   *
-   * @deprecated
-   */
-  public const TYPE_TYPE_RENDER_STATUES_CHANGE = 'TYPE_RENDER_STATUES_CHANGE';
-  /**
-   * The name of the `Delivery Pipeline`.
-   *
    * @var string
    */
   public $deliveryPipeline;
   /**
-   * Debug message for when a notification fails to send.
-   *
    * @var string
    */
   public $message;
   /**
-   * Unique identifier of the `DeliveryPipeline`.
-   *
    * @var string
    */
   public $pipelineUid;
   /**
-   * Type of this notification, e.g. for a Pub/Sub failure.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The name of the `Delivery Pipeline`.
-   *
-   * @param string $deliveryPipeline
+   * @param string
    */
   public function setDeliveryPipeline($deliveryPipeline)
   {
@@ -99,9 +51,7 @@ class DeliveryPipelineNotificationEvent extends \Google\Model
     return $this->deliveryPipeline;
   }
   /**
-   * Debug message for when a notification fails to send.
-   *
-   * @param string $message
+   * @param string
    */
   public function setMessage($message)
   {
@@ -115,9 +65,7 @@ class DeliveryPipelineNotificationEvent extends \Google\Model
     return $this->message;
   }
   /**
-   * Unique identifier of the `DeliveryPipeline`.
-   *
-   * @param string $pipelineUid
+   * @param string
    */
   public function setPipelineUid($pipelineUid)
   {
@@ -131,21 +79,14 @@ class DeliveryPipelineNotificationEvent extends \Google\Model
     return $this->pipelineUid;
   }
   /**
-   * Type of this notification, e.g. for a Pub/Sub failure.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, TYPE_PUBSUB_NOTIFICATION_FAILURE,
-   * TYPE_RESOURCE_STATE_CHANGE, TYPE_PROCESS_ABORTED,
-   * TYPE_RESTRICTION_VIOLATED, TYPE_RESOURCE_DELETED, TYPE_ROLLOUT_UPDATE,
-   * TYPE_DEPLOY_POLICY_EVALUATION, TYPE_RENDER_STATUES_CHANGE
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

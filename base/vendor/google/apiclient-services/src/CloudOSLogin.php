@@ -47,7 +47,6 @@ class CloudOSLogin extends \Google\Service
   const COMPUTE_READONLY =
       "https://www.googleapis.com/auth/compute.readonly";
 
-  public $projects_locations;
   public $users;
   public $users_projects;
   public $users_sshPublicKeys;
@@ -70,26 +69,6 @@ class CloudOSLogin extends \Google\Service
     $this->version = 'v1';
     $this->serviceName = 'oslogin';
 
-    $this->projects_locations = new CloudOSLogin\Resource\ProjectsLocations(
-        $this,
-        $this->serviceName,
-        'locations',
-        [
-          'methods' => [
-            'signSshPublicKey' => [
-              'path' => 'v1/{+parent}:signSshPublicKey',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'parent' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],
-          ]
-        ]
-    );
     $this->users = new CloudOSLogin\Resource\Users(
         $this,
         $this->serviceName,
@@ -146,16 +125,6 @@ class CloudOSLogin extends \Google\Service
             'delete' => [
               'path' => 'v1/{+name}',
               'httpMethod' => 'DELETE',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'provisionPosixAccount' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'POST',
               'parameters' => [
                 'name' => [
                   'location' => 'path',

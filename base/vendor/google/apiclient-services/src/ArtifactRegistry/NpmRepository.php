@@ -19,28 +19,15 @@ namespace Google\Service\ArtifactRegistry;
 
 class NpmRepository extends \Google\Model
 {
-  /**
-   * Unspecified repository.
-   */
-  public const PUBLIC_REPOSITORY_PUBLIC_REPOSITORY_UNSPECIFIED = 'PUBLIC_REPOSITORY_UNSPECIFIED';
-  /**
-   * npmjs.
-   */
-  public const PUBLIC_REPOSITORY_NPMJS = 'NPMJS';
   protected $customRepositoryType = GoogleDevtoolsArtifactregistryV1RemoteRepositoryConfigNpmRepositoryCustomRepository::class;
   protected $customRepositoryDataType = '';
   /**
-   * One of the publicly available Npm repositories supported by Artifact
-   * Registry.
-   *
    * @var string
    */
   public $publicRepository;
 
   /**
-   * Customer-specified remote repository.
-   *
-   * @param GoogleDevtoolsArtifactregistryV1RemoteRepositoryConfigNpmRepositoryCustomRepository $customRepository
+   * @param GoogleDevtoolsArtifactregistryV1RemoteRepositoryConfigNpmRepositoryCustomRepository
    */
   public function setCustomRepository(GoogleDevtoolsArtifactregistryV1RemoteRepositoryConfigNpmRepositoryCustomRepository $customRepository)
   {
@@ -54,19 +41,14 @@ class NpmRepository extends \Google\Model
     return $this->customRepository;
   }
   /**
-   * One of the publicly available Npm repositories supported by Artifact
-   * Registry.
-   *
-   * Accepted values: PUBLIC_REPOSITORY_UNSPECIFIED, NPMJS
-   *
-   * @param self::PUBLIC_REPOSITORY_* $publicRepository
+   * @param string
    */
   public function setPublicRepository($publicRepository)
   {
     $this->publicRepository = $publicRepository;
   }
   /**
-   * @return self::PUBLIC_REPOSITORY_*
+   * @return string
    */
   public function getPublicRepository()
   {

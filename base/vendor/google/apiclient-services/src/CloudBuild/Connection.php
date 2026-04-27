@@ -20,8 +20,6 @@ namespace Google\Service\CloudBuild;
 class Connection extends \Google\Model
 {
   /**
-   * Optional. Allows clients to store small amounts of arbitrary data.
-   *
    * @var string[]
    */
   public $annotations;
@@ -30,24 +28,14 @@ class Connection extends \Google\Model
   protected $bitbucketDataCenterConfigType = BitbucketDataCenterConfig::class;
   protected $bitbucketDataCenterConfigDataType = '';
   /**
-   * Output only. Server assigned timestamp for when the connection was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. If disabled is set to true, functionality is disabled for this
-   * connection. Repository based API methods and webhooks processing for
-   * repositories in this connection will be disabled.
-   *
    * @var bool
    */
   public $disabled;
   /**
-   * This checksum is computed by the server based on the value of other fields,
-   * and may be sent on update and delete requests to ensure the client has an
-   * up-to-date value before proceeding.
-   *
    * @var string
    */
   public $etag;
@@ -60,30 +48,20 @@ class Connection extends \Google\Model
   protected $installationStateType = InstallationState::class;
   protected $installationStateDataType = '';
   /**
-   * Immutable. The resource name of the connection, in the format
-   * `projects/{project}/locations/{location}/connections/{connection_id}`.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Set to true when the connection is being set up or updated in
-   * the background.
-   *
    * @var bool
    */
   public $reconciling;
   /**
-   * Output only. Server assigned timestamp for when the connection was updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Optional. Allows clients to store small amounts of arbitrary data.
-   *
-   * @param string[] $annotations
+   * @param string[]
    */
   public function setAnnotations($annotations)
   {
@@ -97,9 +75,7 @@ class Connection extends \Google\Model
     return $this->annotations;
   }
   /**
-   * Configuration for connections to Bitbucket Cloud.
-   *
-   * @param BitbucketCloudConfig $bitbucketCloudConfig
+   * @param BitbucketCloudConfig
    */
   public function setBitbucketCloudConfig(BitbucketCloudConfig $bitbucketCloudConfig)
   {
@@ -113,9 +89,7 @@ class Connection extends \Google\Model
     return $this->bitbucketCloudConfig;
   }
   /**
-   * Configuration for connections to Bitbucket Data Center.
-   *
-   * @param BitbucketDataCenterConfig $bitbucketDataCenterConfig
+   * @param BitbucketDataCenterConfig
    */
   public function setBitbucketDataCenterConfig(BitbucketDataCenterConfig $bitbucketDataCenterConfig)
   {
@@ -129,9 +103,7 @@ class Connection extends \Google\Model
     return $this->bitbucketDataCenterConfig;
   }
   /**
-   * Output only. Server assigned timestamp for when the connection was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -145,11 +117,7 @@ class Connection extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Optional. If disabled is set to true, functionality is disabled for this
-   * connection. Repository based API methods and webhooks processing for
-   * repositories in this connection will be disabled.
-   *
-   * @param bool $disabled
+   * @param bool
    */
   public function setDisabled($disabled)
   {
@@ -163,11 +131,7 @@ class Connection extends \Google\Model
     return $this->disabled;
   }
   /**
-   * This checksum is computed by the server based on the value of other fields,
-   * and may be sent on update and delete requests to ensure the client has an
-   * up-to-date value before proceeding.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -181,9 +145,7 @@ class Connection extends \Google\Model
     return $this->etag;
   }
   /**
-   * Configuration for connections to github.com.
-   *
-   * @param GitHubConfig $githubConfig
+   * @param GitHubConfig
    */
   public function setGithubConfig(GitHubConfig $githubConfig)
   {
@@ -197,9 +159,7 @@ class Connection extends \Google\Model
     return $this->githubConfig;
   }
   /**
-   * Configuration for connections to an instance of GitHub Enterprise.
-   *
-   * @param GoogleDevtoolsCloudbuildV2GitHubEnterpriseConfig $githubEnterpriseConfig
+   * @param GoogleDevtoolsCloudbuildV2GitHubEnterpriseConfig
    */
   public function setGithubEnterpriseConfig(GoogleDevtoolsCloudbuildV2GitHubEnterpriseConfig $githubEnterpriseConfig)
   {
@@ -213,10 +173,7 @@ class Connection extends \Google\Model
     return $this->githubEnterpriseConfig;
   }
   /**
-   * Configuration for connections to gitlab.com or an instance of GitLab
-   * Enterprise.
-   *
-   * @param GoogleDevtoolsCloudbuildV2GitLabConfig $gitlabConfig
+   * @param GoogleDevtoolsCloudbuildV2GitLabConfig
    */
   public function setGitlabConfig(GoogleDevtoolsCloudbuildV2GitLabConfig $gitlabConfig)
   {
@@ -230,9 +187,7 @@ class Connection extends \Google\Model
     return $this->gitlabConfig;
   }
   /**
-   * Output only. Installation state of the Connection.
-   *
-   * @param InstallationState $installationState
+   * @param InstallationState
    */
   public function setInstallationState(InstallationState $installationState)
   {
@@ -246,10 +201,7 @@ class Connection extends \Google\Model
     return $this->installationState;
   }
   /**
-   * Immutable. The resource name of the connection, in the format
-   * `projects/{project}/locations/{location}/connections/{connection_id}`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -263,10 +215,7 @@ class Connection extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Set to true when the connection is being set up or updated in
-   * the background.
-   *
-   * @param bool $reconciling
+   * @param bool
    */
   public function setReconciling($reconciling)
   {
@@ -280,9 +229,7 @@ class Connection extends \Google\Model
     return $this->reconciling;
   }
   /**
-   * Output only. Server assigned timestamp for when the connection was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

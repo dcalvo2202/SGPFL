@@ -30,9 +30,7 @@ class SlsaProvenance extends \Google\Collection
   protected $recipeDataType = '';
 
   /**
-   * required
-   *
-   * @param SlsaBuilder $builder
+   * @param SlsaBuilder
    */
   public function setBuilder(SlsaBuilder $builder)
   {
@@ -46,12 +44,7 @@ class SlsaProvenance extends \Google\Collection
     return $this->builder;
   }
   /**
-   * The collection of artifacts that influenced the build including sources,
-   * dependencies, build tools, base images, and so on. This is considered to be
-   * incomplete unless metadata.completeness.materials is true. Unset or null is
-   * equivalent to empty.
-   *
-   * @param Material[] $materials
+   * @param Material[]
    */
   public function setMaterials($materials)
   {
@@ -65,7 +58,7 @@ class SlsaProvenance extends \Google\Collection
     return $this->materials;
   }
   /**
-   * @param SlsaMetadata $metadata
+   * @param SlsaMetadata
    */
   public function setMetadata(SlsaMetadata $metadata)
   {
@@ -79,12 +72,7 @@ class SlsaProvenance extends \Google\Collection
     return $this->metadata;
   }
   /**
-   * Identifies the configuration used for the build. When combined with
-   * materials, this SHOULD fully describe the build, such that re-running this
-   * recipe results in bit-for-bit identical output (if the build is
-   * reproducible). required
-   *
-   * @param SlsaRecipe $recipe
+   * @param SlsaRecipe
    */
   public function setRecipe(SlsaRecipe $recipe)
   {

@@ -23,10 +23,6 @@ class MarketplaceTargeting extends \Google\Collection
   protected $daypartTargetingType = DayPartTargeting::class;
   protected $daypartTargetingDataType = '';
   /**
-   * Output only. The sensitive content category label IDs excluded. Refer to
-   * this file https://storage.googleapis.com/adx-rtb-dictionaries/content-
-   * labels.txt for category IDs.
-   *
    * @var string[]
    */
   public $excludedSensitiveCategoryIds;
@@ -48,9 +44,7 @@ class MarketplaceTargeting extends \Google\Collection
   protected $videoTargetingDataType = '';
 
   /**
-   * Daypart targeting information.
-   *
-   * @param DayPartTargeting $daypartTargeting
+   * @param DayPartTargeting
    */
   public function setDaypartTargeting(DayPartTargeting $daypartTargeting)
   {
@@ -64,11 +58,7 @@ class MarketplaceTargeting extends \Google\Collection
     return $this->daypartTargeting;
   }
   /**
-   * Output only. The sensitive content category label IDs excluded. Refer to
-   * this file https://storage.googleapis.com/adx-rtb-dictionaries/content-
-   * labels.txt for category IDs.
-   *
-   * @param string[] $excludedSensitiveCategoryIds
+   * @param string[]
    */
   public function setExcludedSensitiveCategoryIds($excludedSensitiveCategoryIds)
   {
@@ -82,9 +72,7 @@ class MarketplaceTargeting extends \Google\Collection
     return $this->excludedSensitiveCategoryIds;
   }
   /**
-   * Output only. Geo criteria IDs to be included/excluded.
-   *
-   * @param CriteriaTargeting $geoTargeting
+   * @param CriteriaTargeting
    */
   public function setGeoTargeting(CriteriaTargeting $geoTargeting)
   {
@@ -98,9 +86,7 @@ class MarketplaceTargeting extends \Google\Collection
     return $this->geoTargeting;
   }
   /**
-   * Output only. Inventory sizes to be included/excluded.
-   *
-   * @param InventorySizeTargeting $inventorySizeTargeting
+   * @param InventorySizeTargeting
    */
   public function setInventorySizeTargeting(InventorySizeTargeting $inventorySizeTargeting)
   {
@@ -114,9 +100,7 @@ class MarketplaceTargeting extends \Google\Collection
     return $this->inventorySizeTargeting;
   }
   /**
-   * Output only. Inventory type targeting information.
-   *
-   * @param InventoryTypeTargeting $inventoryTypeTargeting
+   * @param InventoryTypeTargeting
    */
   public function setInventoryTypeTargeting(InventoryTypeTargeting $inventoryTypeTargeting)
   {
@@ -130,10 +114,7 @@ class MarketplaceTargeting extends \Google\Collection
     return $this->inventoryTypeTargeting;
   }
   /**
-   * Output only. Placement targeting information, for example, URL, mobile
-   * applications.
-   *
-   * @param PlacementTargeting $placementTargeting
+   * @param PlacementTargeting
    */
   public function setPlacementTargeting(PlacementTargeting $placementTargeting)
   {
@@ -147,10 +128,7 @@ class MarketplaceTargeting extends \Google\Collection
     return $this->placementTargeting;
   }
   /**
-   * Output only. Technology targeting information, for example, operating
-   * system, device category.
-   *
-   * @param TechnologyTargeting $technologyTargeting
+   * @param TechnologyTargeting
    */
   public function setTechnologyTargeting(TechnologyTargeting $technologyTargeting)
   {
@@ -164,10 +142,7 @@ class MarketplaceTargeting extends \Google\Collection
     return $this->technologyTargeting;
   }
   /**
-   * Buyer user list targeting information. User lists can be uploaded using
-   * https://developers.google.com/authorized-buyers/rtb/bulk-uploader.
-   *
-   * @param CriteriaTargeting $userListTargeting
+   * @param CriteriaTargeting
    */
   public function setUserListTargeting(CriteriaTargeting $userListTargeting)
   {
@@ -181,11 +156,7 @@ class MarketplaceTargeting extends \Google\Collection
     return $this->userListTargeting;
   }
   /**
-   * Output only. The verticals included or excluded as defined in
-   * https://developers.google.com/authorized-buyers/rtb/downloads/publisher-
-   * verticals
-   *
-   * @param CriteriaTargeting $verticalTargeting
+   * @param CriteriaTargeting
    */
   public function setVerticalTargeting(CriteriaTargeting $verticalTargeting)
   {
@@ -199,9 +170,7 @@ class MarketplaceTargeting extends \Google\Collection
     return $this->verticalTargeting;
   }
   /**
-   * Output only. Video targeting information.
-   *
-   * @param VideoTargeting $videoTargeting
+   * @param VideoTargeting
    */
   public function setVideoTargeting(VideoTargeting $videoTargeting)
   {

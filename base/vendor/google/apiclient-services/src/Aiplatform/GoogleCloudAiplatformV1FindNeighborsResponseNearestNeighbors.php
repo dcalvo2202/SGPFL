@@ -21,8 +21,6 @@ class GoogleCloudAiplatformV1FindNeighborsResponseNearestNeighbors extends \Goog
 {
   protected $collection_key = 'neighbors';
   /**
-   * The ID of the query datapoint.
-   *
    * @var string
    */
   public $id;
@@ -30,9 +28,7 @@ class GoogleCloudAiplatformV1FindNeighborsResponseNearestNeighbors extends \Goog
   protected $neighborsDataType = 'array';
 
   /**
-   * The ID of the query datapoint.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -46,9 +42,7 @@ class GoogleCloudAiplatformV1FindNeighborsResponseNearestNeighbors extends \Goog
     return $this->id;
   }
   /**
-   * All its neighbors.
-   *
-   * @param GoogleCloudAiplatformV1FindNeighborsResponseNeighbor[] $neighbors
+   * @param GoogleCloudAiplatformV1FindNeighborsResponseNeighbor[]
    */
   public function setNeighbors($neighbors)
   {

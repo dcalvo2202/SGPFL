@@ -19,21 +19,12 @@ namespace Google\Service\CloudDataplex;
 
 class GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoStringFieldInfo extends \Google\Model
 {
-  /**
-   * Output only. Average length of non-null values in the scanned data.
-   *
-   * @var 
-   */
   public $averageLength;
   /**
-   * Output only. Maximum length of non-null values in the scanned data.
-   *
    * @var string
    */
   public $maxLength;
   /**
-   * Output only. Minimum length of non-null values in the scanned data.
-   *
    * @var string
    */
   public $minLength;
@@ -47,9 +38,7 @@ class GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoStringFieldIn
     return $this->averageLength;
   }
   /**
-   * Output only. Maximum length of non-null values in the scanned data.
-   *
-   * @param string $maxLength
+   * @param string
    */
   public function setMaxLength($maxLength)
   {
@@ -63,9 +52,7 @@ class GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoStringFieldIn
     return $this->maxLength;
   }
   /**
-   * Output only. Minimum length of non-null values in the scanned data.
-   *
-   * @param string $minLength
+   * @param string
    */
   public function setMinLength($minLength)
   {

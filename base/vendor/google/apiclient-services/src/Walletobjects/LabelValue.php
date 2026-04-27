@@ -20,10 +20,6 @@ namespace Google\Service\Walletobjects;
 class LabelValue extends \Google\Model
 {
   /**
-   * The label for a specific row and column. Recommended maximum is 15
-   * characters for a two-column layout and 30 characters for a one-column
-   * layout.
-   *
    * @var string
    */
   public $label;
@@ -32,20 +28,12 @@ class LabelValue extends \Google\Model
   protected $localizedValueType = LocalizedString::class;
   protected $localizedValueDataType = '';
   /**
-   * The value for a specific row and column. Recommended maximum is 15
-   * characters for a two-column layout and 30 characters for a one-column
-   * layout.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * The label for a specific row and column. Recommended maximum is 15
-   * characters for a two-column layout and 30 characters for a one-column
-   * layout.
-   *
-   * @param string $label
+   * @param string
    */
   public function setLabel($label)
   {
@@ -59,10 +47,7 @@ class LabelValue extends \Google\Model
     return $this->label;
   }
   /**
-   * Translated strings for the label. Recommended maximum is 15 characters for
-   * a two-column layout and 30 characters for a one-column layout.
-   *
-   * @param LocalizedString $localizedLabel
+   * @param LocalizedString
    */
   public function setLocalizedLabel(LocalizedString $localizedLabel)
   {
@@ -76,10 +61,7 @@ class LabelValue extends \Google\Model
     return $this->localizedLabel;
   }
   /**
-   * Translated strings for the value. Recommended maximum is 15 characters for
-   * a two-column layout and 30 characters for a one-column layout.
-   *
-   * @param LocalizedString $localizedValue
+   * @param LocalizedString
    */
   public function setLocalizedValue(LocalizedString $localizedValue)
   {
@@ -93,11 +75,7 @@ class LabelValue extends \Google\Model
     return $this->localizedValue;
   }
   /**
-   * The value for a specific row and column. Recommended maximum is 15
-   * characters for a two-column layout and 30 characters for a one-column
-   * layout.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

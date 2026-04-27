@@ -21,8 +21,6 @@ class GetCustomerIndexStatsResponse extends \Google\Collection
 {
   protected $collection_key = 'stats';
   /**
-   * Average item count for the given date range for which billing is done.
-   *
    * @var string
    */
   public $averageIndexedItemCount;
@@ -30,9 +28,7 @@ class GetCustomerIndexStatsResponse extends \Google\Collection
   protected $statsDataType = 'array';
 
   /**
-   * Average item count for the given date range for which billing is done.
-   *
-   * @param string $averageIndexedItemCount
+   * @param string
    */
   public function setAverageIndexedItemCount($averageIndexedItemCount)
   {
@@ -46,9 +42,7 @@ class GetCustomerIndexStatsResponse extends \Google\Collection
     return $this->averageIndexedItemCount;
   }
   /**
-   * Summary of indexed item counts, one for each day in the requested range.
-   *
-   * @param CustomerIndexStats[] $stats
+   * @param CustomerIndexStats[]
    */
   public function setStats($stats)
   {

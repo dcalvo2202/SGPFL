@@ -23,23 +23,16 @@ class UsersListResponse extends \Google\Collection
   protected $itemsType = User::class;
   protected $itemsDataType = 'array';
   /**
-   * This is always `sql#usersList`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Unused.
-   *
-   * @deprecated
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * List of user resources in the instance.
-   *
-   * @param User[] $items
+   * @param User[]
    */
   public function setItems($items)
   {
@@ -53,9 +46,7 @@ class UsersListResponse extends \Google\Collection
     return $this->items;
   }
   /**
-   * This is always `sql#usersList`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -69,17 +60,13 @@ class UsersListResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Unused.
-   *
-   * @deprecated
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
     $this->nextPageToken = $nextPageToken;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getNextPageToken()

@@ -23,53 +23,36 @@ class OperationMetadataV1Alpha extends \Google\Collection
   protected $createVersionMetadataType = CreateVersionMetadataV1Alpha::class;
   protected $createVersionMetadataDataType = '';
   /**
-   * Time that this operation completed.@OutputOnly
-   *
    * @var string
    */
   public $endTime;
   /**
-   * Ephemeral message that may change every time the operation is polled.
-   * @OutputOnly
-   *
    * @var string
    */
   public $ephemeralMessage;
   /**
-   * Time that this operation was created.@OutputOnly
-   *
    * @var string
    */
   public $insertTime;
   /**
-   * API method that initiated this operation. Example:
-   * google.appengine.v1alpha.Versions.CreateVersion.@OutputOnly
-   *
    * @var string
    */
   public $method;
   /**
-   * Name of the resource that this operation is acting on. Example:
-   * apps/myapp/services/default.@OutputOnly
-   *
    * @var string
    */
   public $target;
   /**
-   * User who requested this operation.@OutputOnly
-   *
    * @var string
    */
   public $user;
   /**
-   * Durable messages that persist on every operation poll. @OutputOnly
-   *
    * @var string[]
    */
   public $warning;
 
   /**
-   * @param CreateVersionMetadataV1Alpha $createVersionMetadata
+   * @param CreateVersionMetadataV1Alpha
    */
   public function setCreateVersionMetadata(CreateVersionMetadataV1Alpha $createVersionMetadata)
   {
@@ -83,9 +66,7 @@ class OperationMetadataV1Alpha extends \Google\Collection
     return $this->createVersionMetadata;
   }
   /**
-   * Time that this operation completed.@OutputOnly
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -99,10 +80,7 @@ class OperationMetadataV1Alpha extends \Google\Collection
     return $this->endTime;
   }
   /**
-   * Ephemeral message that may change every time the operation is polled.
-   * @OutputOnly
-   *
-   * @param string $ephemeralMessage
+   * @param string
    */
   public function setEphemeralMessage($ephemeralMessage)
   {
@@ -116,9 +94,7 @@ class OperationMetadataV1Alpha extends \Google\Collection
     return $this->ephemeralMessage;
   }
   /**
-   * Time that this operation was created.@OutputOnly
-   *
-   * @param string $insertTime
+   * @param string
    */
   public function setInsertTime($insertTime)
   {
@@ -132,10 +108,7 @@ class OperationMetadataV1Alpha extends \Google\Collection
     return $this->insertTime;
   }
   /**
-   * API method that initiated this operation. Example:
-   * google.appengine.v1alpha.Versions.CreateVersion.@OutputOnly
-   *
-   * @param string $method
+   * @param string
    */
   public function setMethod($method)
   {
@@ -149,10 +122,7 @@ class OperationMetadataV1Alpha extends \Google\Collection
     return $this->method;
   }
   /**
-   * Name of the resource that this operation is acting on. Example:
-   * apps/myapp/services/default.@OutputOnly
-   *
-   * @param string $target
+   * @param string
    */
   public function setTarget($target)
   {
@@ -166,9 +136,7 @@ class OperationMetadataV1Alpha extends \Google\Collection
     return $this->target;
   }
   /**
-   * User who requested this operation.@OutputOnly
-   *
-   * @param string $user
+   * @param string
    */
   public function setUser($user)
   {
@@ -182,9 +150,7 @@ class OperationMetadataV1Alpha extends \Google\Collection
     return $this->user;
   }
   /**
-   * Durable messages that persist on every operation poll. @OutputOnly
-   *
-   * @param string[] $warning
+   * @param string[]
    */
   public function setWarning($warning)
   {

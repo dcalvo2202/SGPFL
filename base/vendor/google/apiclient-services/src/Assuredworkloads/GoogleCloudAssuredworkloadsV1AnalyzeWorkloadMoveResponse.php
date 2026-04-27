@@ -23,16 +23,12 @@ class GoogleCloudAssuredworkloadsV1AnalyzeWorkloadMoveResponse extends \Google\C
   protected $assetMoveAnalysesType = GoogleCloudAssuredworkloadsV1AssetMoveAnalysis::class;
   protected $assetMoveAnalysesDataType = 'array';
   /**
-   * The next page token. Is empty if the last page is reached.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * List of analysis results for each asset in scope.
-   *
-   * @param GoogleCloudAssuredworkloadsV1AssetMoveAnalysis[] $assetMoveAnalyses
+   * @param GoogleCloudAssuredworkloadsV1AssetMoveAnalysis[]
    */
   public function setAssetMoveAnalyses($assetMoveAnalyses)
   {
@@ -46,9 +42,7 @@ class GoogleCloudAssuredworkloadsV1AnalyzeWorkloadMoveResponse extends \Google\C
     return $this->assetMoveAnalyses;
   }
   /**
-   * The next page token. Is empty if the last page is reached.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

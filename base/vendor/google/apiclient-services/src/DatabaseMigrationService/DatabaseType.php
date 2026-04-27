@@ -20,95 +20,37 @@ namespace Google\Service\DatabaseMigrationService;
 class DatabaseType extends \Google\Model
 {
   /**
-   * The source database engine of the migration job is unknown.
-   */
-  public const ENGINE_DATABASE_ENGINE_UNSPECIFIED = 'DATABASE_ENGINE_UNSPECIFIED';
-  /**
-   * The source engine is MySQL.
-   */
-  public const ENGINE_MYSQL = 'MYSQL';
-  /**
-   * The source engine is PostgreSQL.
-   */
-  public const ENGINE_POSTGRESQL = 'POSTGRESQL';
-  /**
-   * The source engine is SQL Server.
-   */
-  public const ENGINE_SQLSERVER = 'SQLSERVER';
-  /**
-   * The source engine is Oracle.
-   */
-  public const ENGINE_ORACLE = 'ORACLE';
-  /**
-   * Use this value for on-premise source database instances and ORACLE.
-   */
-  public const PROVIDER_DATABASE_PROVIDER_UNSPECIFIED = 'DATABASE_PROVIDER_UNSPECIFIED';
-  /**
-   * Cloud SQL is the source instance provider.
-   */
-  public const PROVIDER_CLOUDSQL = 'CLOUDSQL';
-  /**
-   * Amazon RDS is the source instance provider.
-   */
-  public const PROVIDER_RDS = 'RDS';
-  /**
-   * Amazon Aurora is the source instance provider.
-   */
-  public const PROVIDER_AURORA = 'AURORA';
-  /**
-   * AlloyDB for PostgreSQL is the source instance provider.
-   */
-  public const PROVIDER_ALLOYDB = 'ALLOYDB';
-  /**
-   * Microsoft Azure Database for MySQL/PostgreSQL.
-   */
-  public const PROVIDER_AZURE_DATABASE = 'AZURE_DATABASE';
-  /**
-   * The database engine.
-   *
    * @var string
    */
   public $engine;
   /**
-   * The database provider.
-   *
    * @var string
    */
   public $provider;
 
   /**
-   * The database engine.
-   *
-   * Accepted values: DATABASE_ENGINE_UNSPECIFIED, MYSQL, POSTGRESQL, SQLSERVER,
-   * ORACLE
-   *
-   * @param self::ENGINE_* $engine
+   * @param string
    */
   public function setEngine($engine)
   {
     $this->engine = $engine;
   }
   /**
-   * @return self::ENGINE_*
+   * @return string
    */
   public function getEngine()
   {
     return $this->engine;
   }
   /**
-   * The database provider.
-   *
-   * Accepted values: DATABASE_PROVIDER_UNSPECIFIED, CLOUDSQL, RDS, AURORA,
-   * ALLOYDB, AZURE_DATABASE
-   *
-   * @param self::PROVIDER_* $provider
+   * @param string
    */
   public function setProvider($provider)
   {
     $this->provider = $provider;
   }
   /**
-   * @return self::PROVIDER_*
+   * @return string
    */
   public function getProvider()
   {

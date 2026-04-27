@@ -20,20 +20,12 @@ namespace Google\Service\FirebaseAppHosting;
 class RunService extends \Google\Model
 {
   /**
-   * Optional. The name of the Cloud Run [`service`](https://cloud.google.com/ru
-   * n/docs/reference/rest/v2/projects.locations.services#resource:-service), in
-   * the format: `projects/{project}/locations/{location}/services/{serviceId}`
-   *
    * @var string
    */
   public $service;
 
   /**
-   * Optional. The name of the Cloud Run [`service`](https://cloud.google.com/ru
-   * n/docs/reference/rest/v2/projects.locations.services#resource:-service), in
-   * the format: `projects/{project}/locations/{location}/services/{serviceId}`
-   *
-   * @param string $service
+   * @param string
    */
   public function setService($service)
   {

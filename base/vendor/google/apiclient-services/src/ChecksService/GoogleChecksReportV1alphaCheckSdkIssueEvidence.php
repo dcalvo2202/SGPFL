@@ -22,16 +22,12 @@ class GoogleChecksReportV1alphaCheckSdkIssueEvidence extends \Google\Model
   protected $sdkType = GoogleChecksReportV1alphaSdk::class;
   protected $sdkDataType = '';
   /**
-   * The SDK version.
-   *
    * @var string
    */
   public $sdkVersion;
 
   /**
-   * The SDK with an issue.
-   *
-   * @param GoogleChecksReportV1alphaSdk $sdk
+   * @param GoogleChecksReportV1alphaSdk
    */
   public function setSdk(GoogleChecksReportV1alphaSdk $sdk)
   {
@@ -45,9 +41,7 @@ class GoogleChecksReportV1alphaCheckSdkIssueEvidence extends \Google\Model
     return $this->sdk;
   }
   /**
-   * The SDK version.
-   *
-   * @param string $sdkVersion
+   * @param string
    */
   public function setSdkVersion($sdkVersion)
   {

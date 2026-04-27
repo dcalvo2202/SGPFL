@@ -21,37 +21,26 @@ class Workspace extends \Google\Collection
 {
   protected $collection_key = 'tables';
   /**
-   * Time when the workspace was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * The human readable title of the workspace.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * The resource name of the workspace. Workspace names have the form
-   * `workspaces/{workspace}`.
-   *
    * @var string
    */
   public $name;
   protected $tablesType = Table::class;
   protected $tablesDataType = 'array';
   /**
-   * Time when the workspace was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Time when the workspace was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -65,9 +54,7 @@ class Workspace extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * The human readable title of the workspace.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -81,10 +68,7 @@ class Workspace extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * The resource name of the workspace. Workspace names have the form
-   * `workspaces/{workspace}`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -98,9 +82,7 @@ class Workspace extends \Google\Collection
     return $this->name;
   }
   /**
-   * The list of tables in the workspace.
-   *
-   * @param Table[] $tables
+   * @param Table[]
    */
   public function setTables($tables)
   {
@@ -114,9 +96,7 @@ class Workspace extends \Google\Collection
     return $this->tables;
   }
   /**
-   * Time when the workspace was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

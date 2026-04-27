@@ -22,21 +22,14 @@ class Playlist extends \Google\Model
   protected $contentDetailsType = PlaylistContentDetails::class;
   protected $contentDetailsDataType = '';
   /**
-   * Etag of this resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * The ID that YouTube uses to uniquely identify the playlist.
-   *
    * @var string
    */
   public $id;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "youtube#playlist".
-   *
    * @var string
    */
   public $kind;
@@ -50,9 +43,7 @@ class Playlist extends \Google\Model
   protected $statusDataType = '';
 
   /**
-   * The contentDetails object contains information like video count.
-   *
-   * @param PlaylistContentDetails $contentDetails
+   * @param PlaylistContentDetails
    */
   public function setContentDetails(PlaylistContentDetails $contentDetails)
   {
@@ -66,9 +57,7 @@ class Playlist extends \Google\Model
     return $this->contentDetails;
   }
   /**
-   * Etag of this resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -82,9 +71,7 @@ class Playlist extends \Google\Model
     return $this->etag;
   }
   /**
-   * The ID that YouTube uses to uniquely identify the playlist.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -98,10 +85,7 @@ class Playlist extends \Google\Model
     return $this->id;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "youtube#playlist".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -115,9 +99,7 @@ class Playlist extends \Google\Model
     return $this->kind;
   }
   /**
-   * Localizations for different languages
-   *
-   * @param PlaylistLocalization[] $localizations
+   * @param PlaylistLocalization[]
    */
   public function setLocalizations($localizations)
   {
@@ -131,10 +113,7 @@ class Playlist extends \Google\Model
     return $this->localizations;
   }
   /**
-   * The player object contains information that you would use to play the
-   * playlist in an embedded player.
-   *
-   * @param PlaylistPlayer $player
+   * @param PlaylistPlayer
    */
   public function setPlayer(PlaylistPlayer $player)
   {
@@ -148,10 +127,7 @@ class Playlist extends \Google\Model
     return $this->player;
   }
   /**
-   * The snippet object contains basic details about the playlist, such as its
-   * title and description.
-   *
-   * @param PlaylistSnippet $snippet
+   * @param PlaylistSnippet
    */
   public function setSnippet(PlaylistSnippet $snippet)
   {
@@ -165,9 +141,7 @@ class Playlist extends \Google\Model
     return $this->snippet;
   }
   /**
-   * The status object contains status information for the playlist.
-   *
-   * @param PlaylistStatus $status
+   * @param PlaylistStatus
    */
   public function setStatus(PlaylistStatus $status)
   {

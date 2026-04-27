@@ -25,10 +25,7 @@ class GoogleCloudChannelV1RunReportJobResponse extends \Google\Model
   protected $reportMetadataDataType = '';
 
   /**
-   * Pass `report_job.name` to FetchReportResultsRequest.report_job to retrieve
-   * the report's results.
-   *
-   * @param GoogleCloudChannelV1ReportJob $reportJob
+   * @param GoogleCloudChannelV1ReportJob
    */
   public function setReportJob(GoogleCloudChannelV1ReportJob $reportJob)
   {
@@ -42,11 +39,7 @@ class GoogleCloudChannelV1RunReportJobResponse extends \Google\Model
     return $this->reportJob;
   }
   /**
-   * The metadata for the report's results (display name, columns, row count,
-   * and date range). If you view this before the operation finishes, you may
-   * see incomplete data.
-   *
-   * @param GoogleCloudChannelV1ReportResultsMetadata $reportMetadata
+   * @param GoogleCloudChannelV1ReportResultsMetadata
    */
   public function setReportMetadata(GoogleCloudChannelV1ReportResultsMetadata $reportMetadata)
   {

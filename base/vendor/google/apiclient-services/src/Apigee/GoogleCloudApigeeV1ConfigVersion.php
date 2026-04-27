@@ -20,22 +20,16 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1ConfigVersion extends \Google\Model
 {
   /**
-   * Major version of the API proxy configuration schema.
-   *
    * @var int
    */
   public $majorVersion;
   /**
-   * Minor version of the API proxy configuration schema.
-   *
    * @var int
    */
   public $minorVersion;
 
   /**
-   * Major version of the API proxy configuration schema.
-   *
-   * @param int $majorVersion
+   * @param int
    */
   public function setMajorVersion($majorVersion)
   {
@@ -49,9 +43,7 @@ class GoogleCloudApigeeV1ConfigVersion extends \Google\Model
     return $this->majorVersion;
   }
   /**
-   * Minor version of the API proxy configuration schema.
-   *
-   * @param int $minorVersion
+   * @param int
    */
   public function setMinorVersion($minorVersion)
   {

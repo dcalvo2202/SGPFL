@@ -25,9 +25,7 @@ class SharingEnvironmentConfig extends \Google\Model
   protected $defaultExchangeConfigDataType = '';
 
   /**
-   * Data Clean Room (DCR), used for privacy-safe and secured data sharing.
-   *
-   * @param DcrExchangeConfig $dcrExchangeConfig
+   * @param DcrExchangeConfig
    */
   public function setDcrExchangeConfig(DcrExchangeConfig $dcrExchangeConfig)
   {
@@ -41,9 +39,7 @@ class SharingEnvironmentConfig extends \Google\Model
     return $this->dcrExchangeConfig;
   }
   /**
-   * Default Analytics Hub data exchange, used for secured data sharing.
-   *
-   * @param DefaultExchangeConfig $defaultExchangeConfig
+   * @param DefaultExchangeConfig
    */
   public function setDefaultExchangeConfig(DefaultExchangeConfig $defaultExchangeConfig)
   {

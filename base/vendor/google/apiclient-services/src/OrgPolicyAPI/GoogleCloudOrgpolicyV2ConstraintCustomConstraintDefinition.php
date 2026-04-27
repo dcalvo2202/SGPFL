@@ -19,76 +19,42 @@ namespace Google\Service\OrgPolicyAPI;
 
 class GoogleCloudOrgpolicyV2ConstraintCustomConstraintDefinition extends \Google\Collection
 {
-  /**
-   * This is only used for distinguishing unset values and should never be used.
-   * Results in an error.
-   */
-  public const ACTION_TYPE_ACTION_TYPE_UNSPECIFIED = 'ACTION_TYPE_UNSPECIFIED';
-  /**
-   * Allowed action type.
-   */
-  public const ACTION_TYPE_ALLOW = 'ALLOW';
-  /**
-   * Deny action type.
-   */
-  public const ACTION_TYPE_DENY = 'DENY';
   protected $collection_key = 'resourceTypes';
   /**
-   * Allow or deny type.
-   *
    * @var string
    */
   public $actionType;
   /**
-   * Org policy condition/expression. For example:
-   * `resource.instanceName.matches("(production|test)_(.+_)?[\d]+")` or,
-   * `resource.management.auto_upgrade == true` The max length of the condition
-   * is 1000 characters.
-   *
    * @var string
    */
   public $condition;
   /**
-   * All the operations being applied for this constraint.
-   *
    * @var string[]
    */
   public $methodTypes;
   protected $parametersType = GoogleCloudOrgpolicyV2ConstraintCustomConstraintDefinitionParameter::class;
   protected $parametersDataType = 'map';
   /**
-   * The resource instance type that this policy applies to, in the format `/`.
-   * Example: * `compute.googleapis.com/Instance`.
-   *
    * @var string[]
    */
   public $resourceTypes;
 
   /**
-   * Allow or deny type.
-   *
-   * Accepted values: ACTION_TYPE_UNSPECIFIED, ALLOW, DENY
-   *
-   * @param self::ACTION_TYPE_* $actionType
+   * @param string
    */
   public function setActionType($actionType)
   {
     $this->actionType = $actionType;
   }
   /**
-   * @return self::ACTION_TYPE_*
+   * @return string
    */
   public function getActionType()
   {
     return $this->actionType;
   }
   /**
-   * Org policy condition/expression. For example:
-   * `resource.instanceName.matches("(production|test)_(.+_)?[\d]+")` or,
-   * `resource.management.auto_upgrade == true` The max length of the condition
-   * is 1000 characters.
-   *
-   * @param string $condition
+   * @param string
    */
   public function setCondition($condition)
   {
@@ -102,9 +68,7 @@ class GoogleCloudOrgpolicyV2ConstraintCustomConstraintDefinition extends \Google
     return $this->condition;
   }
   /**
-   * All the operations being applied for this constraint.
-   *
-   * @param string[] $methodTypes
+   * @param string[]
    */
   public function setMethodTypes($methodTypes)
   {
@@ -118,10 +82,7 @@ class GoogleCloudOrgpolicyV2ConstraintCustomConstraintDefinition extends \Google
     return $this->methodTypes;
   }
   /**
-   * Stores the structure of `Parameters` used by the constraint condition. The
-   * key of `map` represents the name of the parameter.
-   *
-   * @param GoogleCloudOrgpolicyV2ConstraintCustomConstraintDefinitionParameter[] $parameters
+   * @param GoogleCloudOrgpolicyV2ConstraintCustomConstraintDefinitionParameter[]
    */
   public function setParameters($parameters)
   {
@@ -135,10 +96,7 @@ class GoogleCloudOrgpolicyV2ConstraintCustomConstraintDefinition extends \Google
     return $this->parameters;
   }
   /**
-   * The resource instance type that this policy applies to, in the format `/`.
-   * Example: * `compute.googleapis.com/Instance`.
-   *
-   * @param string[] $resourceTypes
+   * @param string[]
    */
   public function setResourceTypes($resourceTypes)
   {

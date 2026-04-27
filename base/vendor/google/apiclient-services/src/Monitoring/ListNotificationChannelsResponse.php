@@ -21,29 +21,18 @@ class ListNotificationChannelsResponse extends \Google\Collection
 {
   protected $collection_key = 'notificationChannels';
   /**
-   * If not empty, indicates that there may be more results that match the
-   * request. Use the value in the page_token field in a subsequent request to
-   * fetch the next set of results. If empty, all results have been returned.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $notificationChannelsType = NotificationChannel::class;
   protected $notificationChannelsDataType = 'array';
   /**
-   * The total number of notification channels in all pages. This number is only
-   * an estimate, and may change in subsequent pages. https://aip.dev/158
-   *
    * @var int
    */
   public $totalSize;
 
   /**
-   * If not empty, indicates that there may be more results that match the
-   * request. Use the value in the page_token field in a subsequent request to
-   * fetch the next set of results. If empty, all results have been returned.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -57,9 +46,7 @@ class ListNotificationChannelsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The notification channels defined for the specified project.
-   *
-   * @param NotificationChannel[] $notificationChannels
+   * @param NotificationChannel[]
    */
   public function setNotificationChannels($notificationChannels)
   {
@@ -73,10 +60,7 @@ class ListNotificationChannelsResponse extends \Google\Collection
     return $this->notificationChannels;
   }
   /**
-   * The total number of notification channels in all pages. This number is only
-   * an estimate, and may change in subsequent pages. https://aip.dev/158
-   *
-   * @param int $totalSize
+   * @param int
    */
   public function setTotalSize($totalSize)
   {

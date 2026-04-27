@@ -20,26 +20,16 @@ namespace Google\Service\CloudDeploy;
 class DeliveryPipelineAttribute extends \Google\Model
 {
   /**
-   * Optional. ID of the `DeliveryPipeline`. The value of this field could be
-   * one of the following: * The last segment of a pipeline name * "*", all
-   * delivery pipelines in a location
-   *
    * @var string
    */
   public $id;
   /**
-   * DeliveryPipeline labels.
-   *
    * @var string[]
    */
   public $labels;
 
   /**
-   * Optional. ID of the `DeliveryPipeline`. The value of this field could be
-   * one of the following: * The last segment of a pipeline name * "*", all
-   * delivery pipelines in a location
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -53,9 +43,7 @@ class DeliveryPipelineAttribute extends \Google\Model
     return $this->id;
   }
   /**
-   * DeliveryPipeline labels.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {

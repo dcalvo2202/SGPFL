@@ -29,11 +29,7 @@ class TableRowsProperties extends \Google\Model
   protected $secondBandColorStyleDataType = '';
 
   /**
-   * The first color that is alternating. If this field is set, the first banded
-   * row is filled with the specified color. Otherwise, the first banded row is
-   * filled with a default color.
-   *
-   * @param ColorStyle $firstBandColorStyle
+   * @param ColorStyle
    */
   public function setFirstBandColorStyle(ColorStyle $firstBandColorStyle)
   {
@@ -47,14 +43,7 @@ class TableRowsProperties extends \Google\Model
     return $this->firstBandColorStyle;
   }
   /**
-   * The color of the last row. If this field is not set a footer is not added,
-   * the last row is filled with either first_band_color_style or
-   * second_band_color_style, depending on the color of the previous row. If
-   * updating an existing table without a footer to have a footer, the range
-   * will be expanded by 1 row. If updating an existing table with a footer and
-   * removing a footer, the range will be shrunk by 1 row.
-   *
-   * @param ColorStyle $footerColorStyle
+   * @param ColorStyle
    */
   public function setFooterColorStyle(ColorStyle $footerColorStyle)
   {
@@ -68,11 +57,7 @@ class TableRowsProperties extends \Google\Model
     return $this->footerColorStyle;
   }
   /**
-   * The color of the header row. If this field is set, the header row is filled
-   * with the specified color. Otherwise, the header row is filled with a
-   * default color.
-   *
-   * @param ColorStyle $headerColorStyle
+   * @param ColorStyle
    */
   public function setHeaderColorStyle(ColorStyle $headerColorStyle)
   {
@@ -86,11 +71,7 @@ class TableRowsProperties extends \Google\Model
     return $this->headerColorStyle;
   }
   /**
-   * The second color that is alternating. If this field is set, the second
-   * banded row is filled with the specified color. Otherwise, the second banded
-   * row is filled with a default color.
-   *
-   * @param ColorStyle $secondBandColorStyle
+   * @param ColorStyle
    */
   public function setSecondBandColorStyle(ColorStyle $secondBandColorStyle)
   {

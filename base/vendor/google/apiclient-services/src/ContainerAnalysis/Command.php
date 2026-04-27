@@ -21,49 +21,32 @@ class Command extends \Google\Collection
 {
   protected $collection_key = 'waitFor';
   /**
-   * Command-line arguments used when executing this command.
-   *
    * @var string[]
    */
   public $args;
   /**
-   * Working directory (relative to project source root) used when running this
-   * command.
-   *
    * @var string
    */
   public $dir;
   /**
-   * Environment variables set before running this command.
-   *
    * @var string[]
    */
   public $env;
   /**
-   * Optional unique identifier for this command, used in wait_for to reference
-   * this command as a dependency.
-   *
    * @var string
    */
   public $id;
   /**
-   * Required. Name of the command, as presented on the command line, or if the
-   * command is packaged as a Docker container, as presented to `docker pull`.
-   *
    * @var string
    */
   public $name;
   /**
-   * The ID(s) of the command(s) that this command depends on.
-   *
    * @var string[]
    */
   public $waitFor;
 
   /**
-   * Command-line arguments used when executing this command.
-   *
-   * @param string[] $args
+   * @param string[]
    */
   public function setArgs($args)
   {
@@ -77,10 +60,7 @@ class Command extends \Google\Collection
     return $this->args;
   }
   /**
-   * Working directory (relative to project source root) used when running this
-   * command.
-   *
-   * @param string $dir
+   * @param string
    */
   public function setDir($dir)
   {
@@ -94,9 +74,7 @@ class Command extends \Google\Collection
     return $this->dir;
   }
   /**
-   * Environment variables set before running this command.
-   *
-   * @param string[] $env
+   * @param string[]
    */
   public function setEnv($env)
   {
@@ -110,10 +88,7 @@ class Command extends \Google\Collection
     return $this->env;
   }
   /**
-   * Optional unique identifier for this command, used in wait_for to reference
-   * this command as a dependency.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -127,10 +102,7 @@ class Command extends \Google\Collection
     return $this->id;
   }
   /**
-   * Required. Name of the command, as presented on the command line, or if the
-   * command is packaged as a Docker container, as presented to `docker pull`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -144,9 +116,7 @@ class Command extends \Google\Collection
     return $this->name;
   }
   /**
-   * The ID(s) of the command(s) that this command depends on.
-   *
-   * @param string[] $waitFor
+   * @param string[]
    */
   public function setWaitFor($waitFor)
   {

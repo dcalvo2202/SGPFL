@@ -20,28 +20,18 @@ namespace Google\Service\Contactcenterinsights;
 class GoogleCloudContactcenterinsightsV1AssessmentRule extends \Google\Model
 {
   /**
-   * If true, apply this rule to conversations. Otherwise, this rule is
-   * inactive.
-   *
    * @var bool
    */
   public $active;
   /**
-   * Output only. The time at which this assessment rule was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Display Name of the assessment rule.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Identifier. The resource name of the assessment rule. Format:
-   * projects/{project}/locations/{location}/assessmentRules/{assessment_rule}
-   *
    * @var string
    */
   public $name;
@@ -50,18 +40,12 @@ class GoogleCloudContactcenterinsightsV1AssessmentRule extends \Google\Model
   protected $scheduleInfoType = GoogleCloudContactcenterinsightsV1ScheduleInfo::class;
   protected $scheduleInfoDataType = '';
   /**
-   * Output only. The most recent time at which this assessment rule was
-   * updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * If true, apply this rule to conversations. Otherwise, this rule is
-   * inactive.
-   *
-   * @param bool $active
+   * @param bool
    */
   public function setActive($active)
   {
@@ -75,9 +59,7 @@ class GoogleCloudContactcenterinsightsV1AssessmentRule extends \Google\Model
     return $this->active;
   }
   /**
-   * Output only. The time at which this assessment rule was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -91,9 +73,7 @@ class GoogleCloudContactcenterinsightsV1AssessmentRule extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Display Name of the assessment rule.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -107,10 +87,7 @@ class GoogleCloudContactcenterinsightsV1AssessmentRule extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Identifier. The resource name of the assessment rule. Format:
-   * projects/{project}/locations/{location}/assessmentRules/{assessment_rule}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -124,9 +101,7 @@ class GoogleCloudContactcenterinsightsV1AssessmentRule extends \Google\Model
     return $this->name;
   }
   /**
-   * The sample rule for the assessment rule.
-   *
-   * @param GoogleCloudContactcenterinsightsV1SampleRule $sampleRule
+   * @param GoogleCloudContactcenterinsightsV1SampleRule
    */
   public function setSampleRule(GoogleCloudContactcenterinsightsV1SampleRule $sampleRule)
   {
@@ -140,9 +115,7 @@ class GoogleCloudContactcenterinsightsV1AssessmentRule extends \Google\Model
     return $this->sampleRule;
   }
   /**
-   * Schedule info for the assessment rule.
-   *
-   * @param GoogleCloudContactcenterinsightsV1ScheduleInfo $scheduleInfo
+   * @param GoogleCloudContactcenterinsightsV1ScheduleInfo
    */
   public function setScheduleInfo(GoogleCloudContactcenterinsightsV1ScheduleInfo $scheduleInfo)
   {
@@ -156,10 +129,7 @@ class GoogleCloudContactcenterinsightsV1AssessmentRule extends \Google\Model
     return $this->scheduleInfo;
   }
   /**
-   * Output only. The most recent time at which this assessment rule was
-   * updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

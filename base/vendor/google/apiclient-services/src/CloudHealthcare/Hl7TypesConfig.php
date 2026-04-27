@@ -26,9 +26,7 @@ class Hl7TypesConfig extends \Google\Collection
   protected $versionDataType = 'array';
 
   /**
-   * The HL7v2 type definitions.
-   *
-   * @param Type[] $type
+   * @param Type[]
    */
   public function setType($type)
   {
@@ -42,10 +40,7 @@ class Hl7TypesConfig extends \Google\Collection
     return $this->type;
   }
   /**
-   * The version selectors that this config applies to. A message must match ALL
-   * version sources to apply.
-   *
-   * @param VersionSource[] $version
+   * @param VersionSource[]
    */
   public function setVersion($version)
   {

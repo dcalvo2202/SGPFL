@@ -20,45 +20,10 @@ namespace Google\Service\Dfareporting;
 class AccountUserProfile extends \Google\Model
 {
   /**
-   * Internal profile, but is not a trafficker.
-   */
-  public const TRAFFICKER_TYPE_INTERNAL_NON_TRAFFICKER = 'INTERNAL_NON_TRAFFICKER';
-  /**
-   * Internal profile who is a trafficker.
-   */
-  public const TRAFFICKER_TYPE_INTERNAL_TRAFFICKER = 'INTERNAL_TRAFFICKER';
-  /**
-   * External profile who is a trafficker.
-   */
-  public const TRAFFICKER_TYPE_EXTERNAL_TRAFFICKER = 'EXTERNAL_TRAFFICKER';
-  /**
-   * Normal user managed by the customer.
-   */
-  public const USER_ACCESS_TYPE_NORMAL_USER = 'NORMAL_USER';
-  /**
-   * Super user managed by internal support teams.
-   */
-  public const USER_ACCESS_TYPE_SUPER_USER = 'SUPER_USER';
-  /**
-   * Internal administrator having super user access to only a specific set of
-   * networks.
-   */
-  public const USER_ACCESS_TYPE_INTERNAL_ADMINISTRATOR = 'INTERNAL_ADMINISTRATOR';
-  /**
-   * A super-user without permission to mutate any data.
-   */
-  public const USER_ACCESS_TYPE_READ_ONLY_SUPER_USER = 'READ_ONLY_SUPER_USER';
-  /**
-   * Account ID of the user profile. This is a read-only field that can be left
-   * blank.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * Whether this user profile is active. This defaults to false, and must be
-   * set true on insert for the user profile to be usable.
-   *
    * @var bool
    */
   public $active;
@@ -67,87 +32,52 @@ class AccountUserProfile extends \Google\Model
   protected $campaignFilterType = ObjectFilter::class;
   protected $campaignFilterDataType = '';
   /**
-   * Comments for this user profile.
-   *
    * @var string
    */
   public $comments;
   /**
-   * Email of the user profile. The email address must be linked to a Google
-   * Account. This field is required on insertion and is read-only after
-   * insertion.
-   *
    * @var string
    */
   public $email;
   /**
-   * ID of the user profile. This is a read-only, auto-generated field.
-   *
    * @var string
    */
   public $id;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#accountUserProfile".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Locale of the user profile. This is a required field. Acceptable values
-   * are: - "cs" (Czech) - "de" (German) - "en" (English) - "en-GB" (English
-   * United Kingdom) - "es" (Spanish) - "fr" (French) - "it" (Italian) - "ja"
-   * (Japanese) - "ko" (Korean) - "pl" (Polish) - "pt-BR" (Portuguese Brazil) -
-   * "ru" (Russian) - "sv" (Swedish) - "tr" (Turkish) - "zh-CN" (Chinese
-   * Simplified) - "zh-TW" (Chinese Traditional)
-   *
    * @var string
    */
   public $locale;
   /**
-   * Name of the user profile. This is a required field. Must be less than 64
-   * characters long, must be globally unique, and cannot contain whitespace or
-   * any of the following characters: "&;<>"#%,".
-   *
    * @var string
    */
   public $name;
   protected $siteFilterType = ObjectFilter::class;
   protected $siteFilterDataType = '';
   /**
-   * Subaccount ID of the user profile. This is a read-only field that can be
-   * left blank.
-   *
    * @var string
    */
   public $subaccountId;
   /**
-   * Trafficker type of this user profile. This is a read-only field.
-   *
    * @var string
    */
   public $traffickerType;
   /**
-   * User type of the user profile. This is a read-only field that can be left
-   * blank.
-   *
    * @var string
    */
   public $userAccessType;
   protected $userRoleFilterType = ObjectFilter::class;
   protected $userRoleFilterDataType = '';
   /**
-   * User role ID of the user profile. This is a required field.
-   *
    * @var string
    */
   public $userRoleId;
 
   /**
-   * Account ID of the user profile. This is a read-only field that can be left
-   * blank.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -161,10 +91,7 @@ class AccountUserProfile extends \Google\Model
     return $this->accountId;
   }
   /**
-   * Whether this user profile is active. This defaults to false, and must be
-   * set true on insert for the user profile to be usable.
-   *
-   * @param bool $active
+   * @param bool
    */
   public function setActive($active)
   {
@@ -178,9 +105,7 @@ class AccountUserProfile extends \Google\Model
     return $this->active;
   }
   /**
-   * Filter that describes which advertisers are visible to the user profile.
-   *
-   * @param ObjectFilter $advertiserFilter
+   * @param ObjectFilter
    */
   public function setAdvertiserFilter(ObjectFilter $advertiserFilter)
   {
@@ -194,9 +119,7 @@ class AccountUserProfile extends \Google\Model
     return $this->advertiserFilter;
   }
   /**
-   * Filter that describes which campaigns are visible to the user profile.
-   *
-   * @param ObjectFilter $campaignFilter
+   * @param ObjectFilter
    */
   public function setCampaignFilter(ObjectFilter $campaignFilter)
   {
@@ -210,9 +133,7 @@ class AccountUserProfile extends \Google\Model
     return $this->campaignFilter;
   }
   /**
-   * Comments for this user profile.
-   *
-   * @param string $comments
+   * @param string
    */
   public function setComments($comments)
   {
@@ -226,11 +147,7 @@ class AccountUserProfile extends \Google\Model
     return $this->comments;
   }
   /**
-   * Email of the user profile. The email address must be linked to a Google
-   * Account. This field is required on insertion and is read-only after
-   * insertion.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {
@@ -244,9 +161,7 @@ class AccountUserProfile extends \Google\Model
     return $this->email;
   }
   /**
-   * ID of the user profile. This is a read-only, auto-generated field.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -260,10 +175,7 @@ class AccountUserProfile extends \Google\Model
     return $this->id;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#accountUserProfile".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -277,14 +189,7 @@ class AccountUserProfile extends \Google\Model
     return $this->kind;
   }
   /**
-   * Locale of the user profile. This is a required field. Acceptable values
-   * are: - "cs" (Czech) - "de" (German) - "en" (English) - "en-GB" (English
-   * United Kingdom) - "es" (Spanish) - "fr" (French) - "it" (Italian) - "ja"
-   * (Japanese) - "ko" (Korean) - "pl" (Polish) - "pt-BR" (Portuguese Brazil) -
-   * "ru" (Russian) - "sv" (Swedish) - "tr" (Turkish) - "zh-CN" (Chinese
-   * Simplified) - "zh-TW" (Chinese Traditional)
-   *
-   * @param string $locale
+   * @param string
    */
   public function setLocale($locale)
   {
@@ -298,11 +203,7 @@ class AccountUserProfile extends \Google\Model
     return $this->locale;
   }
   /**
-   * Name of the user profile. This is a required field. Must be less than 64
-   * characters long, must be globally unique, and cannot contain whitespace or
-   * any of the following characters: "&;<>"#%,".
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -316,9 +217,7 @@ class AccountUserProfile extends \Google\Model
     return $this->name;
   }
   /**
-   * Filter that describes which sites are visible to the user profile.
-   *
-   * @param ObjectFilter $siteFilter
+   * @param ObjectFilter
    */
   public function setSiteFilter(ObjectFilter $siteFilter)
   {
@@ -332,10 +231,7 @@ class AccountUserProfile extends \Google\Model
     return $this->siteFilter;
   }
   /**
-   * Subaccount ID of the user profile. This is a read-only field that can be
-   * left blank.
-   *
-   * @param string $subaccountId
+   * @param string
    */
   public function setSubaccountId($subaccountId)
   {
@@ -349,48 +245,35 @@ class AccountUserProfile extends \Google\Model
     return $this->subaccountId;
   }
   /**
-   * Trafficker type of this user profile. This is a read-only field.
-   *
-   * Accepted values: INTERNAL_NON_TRAFFICKER, INTERNAL_TRAFFICKER,
-   * EXTERNAL_TRAFFICKER
-   *
-   * @param self::TRAFFICKER_TYPE_* $traffickerType
+   * @param string
    */
   public function setTraffickerType($traffickerType)
   {
     $this->traffickerType = $traffickerType;
   }
   /**
-   * @return self::TRAFFICKER_TYPE_*
+   * @return string
    */
   public function getTraffickerType()
   {
     return $this->traffickerType;
   }
   /**
-   * User type of the user profile. This is a read-only field that can be left
-   * blank.
-   *
-   * Accepted values: NORMAL_USER, SUPER_USER, INTERNAL_ADMINISTRATOR,
-   * READ_ONLY_SUPER_USER
-   *
-   * @param self::USER_ACCESS_TYPE_* $userAccessType
+   * @param string
    */
   public function setUserAccessType($userAccessType)
   {
     $this->userAccessType = $userAccessType;
   }
   /**
-   * @return self::USER_ACCESS_TYPE_*
+   * @return string
    */
   public function getUserAccessType()
   {
     return $this->userAccessType;
   }
   /**
-   * Filter that describes which user roles are visible to the user profile.
-   *
-   * @param ObjectFilter $userRoleFilter
+   * @param ObjectFilter
    */
   public function setUserRoleFilter(ObjectFilter $userRoleFilter)
   {
@@ -404,9 +287,7 @@ class AccountUserProfile extends \Google\Model
     return $this->userRoleFilter;
   }
   /**
-   * User role ID of the user profile. This is a required field.
-   *
-   * @param string $userRoleId
+   * @param string
    */
   public function setUserRoleId($userRoleId)
   {

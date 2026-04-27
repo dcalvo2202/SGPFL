@@ -20,34 +20,24 @@ namespace Google\Service\StreetViewPublish;
 class Measurement3d extends \Google\Model
 {
   /**
-   * The timestamp of the IMU measurement.
-   *
    * @var string
    */
   public $captureTime;
   /**
-   * The sensor measurement in the x axis.
-   *
    * @var float
    */
   public $x;
   /**
-   * The sensor measurement in the y axis.
-   *
    * @var float
    */
   public $y;
   /**
-   * The sensor measurement in the z axis.
-   *
    * @var float
    */
   public $z;
 
   /**
-   * The timestamp of the IMU measurement.
-   *
-   * @param string $captureTime
+   * @param string
    */
   public function setCaptureTime($captureTime)
   {
@@ -61,9 +51,7 @@ class Measurement3d extends \Google\Model
     return $this->captureTime;
   }
   /**
-   * The sensor measurement in the x axis.
-   *
-   * @param float $x
+   * @param float
    */
   public function setX($x)
   {
@@ -77,9 +65,7 @@ class Measurement3d extends \Google\Model
     return $this->x;
   }
   /**
-   * The sensor measurement in the y axis.
-   *
-   * @param float $y
+   * @param float
    */
   public function setY($y)
   {
@@ -93,9 +79,7 @@ class Measurement3d extends \Google\Model
     return $this->y;
   }
   /**
-   * The sensor measurement in the z axis.
-   *
-   * @param float $z
+   * @param float
    */
   public function setZ($z)
   {

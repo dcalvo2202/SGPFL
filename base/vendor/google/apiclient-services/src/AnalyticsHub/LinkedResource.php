@@ -20,31 +20,20 @@ namespace Google\Service\AnalyticsHub;
 class LinkedResource extends \Google\Model
 {
   /**
-   * Output only. Name of the linked dataset, e.g.
-   * projects/subscriberproject/datasets/linked_dataset
-   *
    * @var string
    */
   public $linkedDataset;
   /**
-   * Output only. Name of the Pub/Sub subscription, e.g.
-   * projects/subscriberproject/subscriptions/subscriptions/sub_id
-   *
    * @var string
    */
   public $linkedPubsubSubscription;
   /**
-   * Output only. Listing for which linked resource is created.
-   *
    * @var string
    */
   public $listing;
 
   /**
-   * Output only. Name of the linked dataset, e.g.
-   * projects/subscriberproject/datasets/linked_dataset
-   *
-   * @param string $linkedDataset
+   * @param string
    */
   public function setLinkedDataset($linkedDataset)
   {
@@ -58,10 +47,7 @@ class LinkedResource extends \Google\Model
     return $this->linkedDataset;
   }
   /**
-   * Output only. Name of the Pub/Sub subscription, e.g.
-   * projects/subscriberproject/subscriptions/subscriptions/sub_id
-   *
-   * @param string $linkedPubsubSubscription
+   * @param string
    */
   public function setLinkedPubsubSubscription($linkedPubsubSubscription)
   {
@@ -75,9 +61,7 @@ class LinkedResource extends \Google\Model
     return $this->linkedPubsubSubscription;
   }
   /**
-   * Output only. Listing for which linked resource is created.
-   *
-   * @param string $listing
+   * @param string
    */
   public function setListing($listing)
   {

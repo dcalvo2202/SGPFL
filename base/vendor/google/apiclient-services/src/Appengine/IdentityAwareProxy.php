@@ -20,41 +20,24 @@ namespace Google\Service\Appengine;
 class IdentityAwareProxy extends \Google\Model
 {
   /**
-   * Whether the serving infrastructure will authenticate and authorize all
-   * incoming requests.If true, the oauth2_client_id and oauth2_client_secret
-   * fields must be non-empty.
-   *
    * @var bool
    */
   public $enabled;
   /**
-   * OAuth2 client ID to use for the authentication flow.
-   *
    * @var string
    */
   public $oauth2ClientId;
   /**
-   * OAuth2 client secret to use for the authentication flow.For security
-   * reasons, this value cannot be retrieved via the API. Instead, the SHA-256
-   * hash of the value is returned in the oauth2_client_secret_sha256
-   * field.@InputOnly
-   *
    * @var string
    */
   public $oauth2ClientSecret;
   /**
-   * Output only. Hex-encoded SHA-256 hash of the client secret.@OutputOnly
-   *
    * @var string
    */
   public $oauth2ClientSecretSha256;
 
   /**
-   * Whether the serving infrastructure will authenticate and authorize all
-   * incoming requests.If true, the oauth2_client_id and oauth2_client_secret
-   * fields must be non-empty.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {
@@ -68,9 +51,7 @@ class IdentityAwareProxy extends \Google\Model
     return $this->enabled;
   }
   /**
-   * OAuth2 client ID to use for the authentication flow.
-   *
-   * @param string $oauth2ClientId
+   * @param string
    */
   public function setOauth2ClientId($oauth2ClientId)
   {
@@ -84,12 +65,7 @@ class IdentityAwareProxy extends \Google\Model
     return $this->oauth2ClientId;
   }
   /**
-   * OAuth2 client secret to use for the authentication flow.For security
-   * reasons, this value cannot be retrieved via the API. Instead, the SHA-256
-   * hash of the value is returned in the oauth2_client_secret_sha256
-   * field.@InputOnly
-   *
-   * @param string $oauth2ClientSecret
+   * @param string
    */
   public function setOauth2ClientSecret($oauth2ClientSecret)
   {
@@ -103,9 +79,7 @@ class IdentityAwareProxy extends \Google\Model
     return $this->oauth2ClientSecret;
   }
   /**
-   * Output only. Hex-encoded SHA-256 hash of the client secret.@OutputOnly
-   *
-   * @param string $oauth2ClientSecretSha256
+   * @param string
    */
   public function setOauth2ClientSecretSha256($oauth2ClientSecretSha256)
   {

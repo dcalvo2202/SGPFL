@@ -20,24 +20,16 @@ namespace Google\Service\Compute;
 class ManagedInstanceVersion extends \Google\Model
 {
   /**
-   * Output only. [Output Only] The intended template of the instance. This
-   * field is empty when current_action is one of { DELETING, ABANDONING }.
-   *
    * @var string
    */
   public $instanceTemplate;
   /**
-   * Output only. [Output Only] Name of the version.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Output only. [Output Only] The intended template of the instance. This
-   * field is empty when current_action is one of { DELETING, ABANDONING }.
-   *
-   * @param string $instanceTemplate
+   * @param string
    */
   public function setInstanceTemplate($instanceTemplate)
   {
@@ -51,9 +43,7 @@ class ManagedInstanceVersion extends \Google\Model
     return $this->instanceTemplate;
   }
   /**
-   * Output only. [Output Only] Name of the version.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

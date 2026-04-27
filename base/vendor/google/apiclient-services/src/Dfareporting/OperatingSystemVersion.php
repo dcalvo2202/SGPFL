@@ -20,34 +20,22 @@ namespace Google\Service\Dfareporting;
 class OperatingSystemVersion extends \Google\Model
 {
   /**
-   * ID of this operating system version.
-   *
    * @var string
    */
   public $id;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#operatingSystemVersion".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Major version (leftmost number) of this operating system version.
-   *
    * @var string
    */
   public $majorVersion;
   /**
-   * Minor version (number after the first dot) of this operating system
-   * version.
-   *
    * @var string
    */
   public $minorVersion;
   /**
-   * Name of this operating system version.
-   *
    * @var string
    */
   public $name;
@@ -55,9 +43,7 @@ class OperatingSystemVersion extends \Google\Model
   protected $operatingSystemDataType = '';
 
   /**
-   * ID of this operating system version.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -71,10 +57,7 @@ class OperatingSystemVersion extends \Google\Model
     return $this->id;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#operatingSystemVersion".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -88,9 +71,7 @@ class OperatingSystemVersion extends \Google\Model
     return $this->kind;
   }
   /**
-   * Major version (leftmost number) of this operating system version.
-   *
-   * @param string $majorVersion
+   * @param string
    */
   public function setMajorVersion($majorVersion)
   {
@@ -104,10 +85,7 @@ class OperatingSystemVersion extends \Google\Model
     return $this->majorVersion;
   }
   /**
-   * Minor version (number after the first dot) of this operating system
-   * version.
-   *
-   * @param string $minorVersion
+   * @param string
    */
   public function setMinorVersion($minorVersion)
   {
@@ -121,9 +99,7 @@ class OperatingSystemVersion extends \Google\Model
     return $this->minorVersion;
   }
   /**
-   * Name of this operating system version.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -137,9 +113,7 @@ class OperatingSystemVersion extends \Google\Model
     return $this->name;
   }
   /**
-   * Operating system of this operating system version.
-   *
-   * @param OperatingSystem $operatingSystem
+   * @param OperatingSystem
    */
   public function setOperatingSystem(OperatingSystem $operatingSystem)
   {

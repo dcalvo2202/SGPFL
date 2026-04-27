@@ -26,9 +26,7 @@ class GoogleCloudIntegrationsV1alphaUseTemplateResponse extends \Google\Collecti
   protected $subIntegrationVersionsDataType = 'array';
 
   /**
-   * IntegrationVersion which is created.
-   *
-   * @param GoogleCloudIntegrationsV1alphaIntegrationVersion $integrationVersion
+   * @param GoogleCloudIntegrationsV1alphaIntegrationVersion
    */
   public function setIntegrationVersion(GoogleCloudIntegrationsV1alphaIntegrationVersion $integrationVersion)
   {
@@ -42,9 +40,7 @@ class GoogleCloudIntegrationsV1alphaUseTemplateResponse extends \Google\Collecti
     return $this->integrationVersion;
   }
   /**
-   * Sub integration versions which are created.
-   *
-   * @param GoogleCloudIntegrationsV1alphaIntegrationVersion[] $subIntegrationVersions
+   * @param GoogleCloudIntegrationsV1alphaIntegrationVersion[]
    */
   public function setSubIntegrationVersions($subIntegrationVersions)
   {

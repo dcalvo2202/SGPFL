@@ -20,40 +20,28 @@ namespace Google\Service\Dfareporting;
 class DfpSettings extends \Google\Model
 {
   /**
-   * Ad Manager network code for this directory site.
-   *
    * @var string
    */
   public $dfpNetworkCode;
   /**
-   * Ad Manager network name for this directory site.
-   *
    * @var string
    */
   public $dfpNetworkName;
   /**
-   * Whether this directory site accepts programmatic placements.
-   *
    * @var bool
    */
   public $programmaticPlacementAccepted;
   /**
-   * Whether this directory site accepts publisher-paid tags.
-   *
    * @var bool
    */
   public $pubPaidPlacementAccepted;
   /**
-   * Whether this directory site is available only via Publisher Portal.
-   *
    * @var bool
    */
   public $publisherPortalOnly;
 
   /**
-   * Ad Manager network code for this directory site.
-   *
-   * @param string $dfpNetworkCode
+   * @param string
    */
   public function setDfpNetworkCode($dfpNetworkCode)
   {
@@ -67,9 +55,7 @@ class DfpSettings extends \Google\Model
     return $this->dfpNetworkCode;
   }
   /**
-   * Ad Manager network name for this directory site.
-   *
-   * @param string $dfpNetworkName
+   * @param string
    */
   public function setDfpNetworkName($dfpNetworkName)
   {
@@ -83,9 +69,7 @@ class DfpSettings extends \Google\Model
     return $this->dfpNetworkName;
   }
   /**
-   * Whether this directory site accepts programmatic placements.
-   *
-   * @param bool $programmaticPlacementAccepted
+   * @param bool
    */
   public function setProgrammaticPlacementAccepted($programmaticPlacementAccepted)
   {
@@ -99,9 +83,7 @@ class DfpSettings extends \Google\Model
     return $this->programmaticPlacementAccepted;
   }
   /**
-   * Whether this directory site accepts publisher-paid tags.
-   *
-   * @param bool $pubPaidPlacementAccepted
+   * @param bool
    */
   public function setPubPaidPlacementAccepted($pubPaidPlacementAccepted)
   {
@@ -115,9 +97,7 @@ class DfpSettings extends \Google\Model
     return $this->pubPaidPlacementAccepted;
   }
   /**
-   * Whether this directory site is available only via Publisher Portal.
-   *
-   * @param bool $publisherPortalOnly
+   * @param bool
    */
   public function setPublisherPortalOnly($publisherPortalOnly)
   {

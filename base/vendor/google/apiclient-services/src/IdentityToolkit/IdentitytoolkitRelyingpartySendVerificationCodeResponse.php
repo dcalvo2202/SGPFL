@@ -20,16 +20,12 @@ namespace Google\Service\IdentityToolkit;
 class IdentitytoolkitRelyingpartySendVerificationCodeResponse extends \Google\Model
 {
   /**
-   * Encrypted session information
-   *
    * @var string
    */
   public $sessionInfo;
 
   /**
-   * Encrypted session information
-   *
-   * @param string $sessionInfo
+   * @param string
    */
   public function setSessionInfo($sessionInfo)
   {

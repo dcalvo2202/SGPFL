@@ -23,23 +23,16 @@ class Activities extends \Google\Collection
   protected $filtersType = DimensionValue::class;
   protected $filtersDataType = 'array';
   /**
-   * The kind of resource this is, in this case dfareporting#activities.
-   *
    * @var string
    */
   public $kind;
   /**
-   * List of names of floodlight activity metrics.
-   *
    * @var string[]
    */
   public $metricNames;
 
   /**
-   * List of activity filters. The dimension values need to be all either of
-   * type "dfa:activity" or "dfa:activityGroup".
-   *
-   * @param DimensionValue[] $filters
+   * @param DimensionValue[]
    */
   public function setFilters($filters)
   {
@@ -53,9 +46,7 @@ class Activities extends \Google\Collection
     return $this->filters;
   }
   /**
-   * The kind of resource this is, in this case dfareporting#activities.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -69,9 +60,7 @@ class Activities extends \Google\Collection
     return $this->kind;
   }
   /**
-   * List of names of floodlight activity metrics.
-   *
-   * @param string[] $metricNames
+   * @param string[]
    */
   public function setMetricNames($metricNames)
   {

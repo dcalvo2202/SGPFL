@@ -20,48 +20,20 @@ namespace Google\Service\Container;
 class Fleet extends \Google\Model
 {
   /**
-   * The MembershipType is not set.
-   */
-  public const MEMBERSHIP_TYPE_MEMBERSHIP_TYPE_UNSPECIFIED = 'MEMBERSHIP_TYPE_UNSPECIFIED';
-  /**
-   * The membership supports only lightweight compatible features.
-   */
-  public const MEMBERSHIP_TYPE_LIGHTWEIGHT = 'LIGHTWEIGHT';
-  /**
-   * Output only. The full resource name of the registered fleet membership of
-   * the cluster, in the format
-   * `//gkehub.googleapis.com/projects/locations/memberships`.
-   *
    * @var string
    */
   public $membership;
   /**
-   * The type of the cluster's fleet membership.
-   *
-   * @var string
-   */
-  public $membershipType;
-  /**
-   * Output only. Whether the cluster has been registered through the fleet API.
-   *
    * @var bool
    */
   public $preRegistered;
   /**
-   * The Fleet host project(project ID or project number) where this cluster
-   * will be registered to. This field cannot be changed after the cluster has
-   * been registered.
-   *
    * @var string
    */
   public $project;
 
   /**
-   * Output only. The full resource name of the registered fleet membership of
-   * the cluster, in the format
-   * `//gkehub.googleapis.com/projects/locations/memberships`.
-   *
-   * @param string $membership
+   * @param string
    */
   public function setMembership($membership)
   {
@@ -75,27 +47,7 @@ class Fleet extends \Google\Model
     return $this->membership;
   }
   /**
-   * The type of the cluster's fleet membership.
-   *
-   * Accepted values: MEMBERSHIP_TYPE_UNSPECIFIED, LIGHTWEIGHT
-   *
-   * @param self::MEMBERSHIP_TYPE_* $membershipType
-   */
-  public function setMembershipType($membershipType)
-  {
-    $this->membershipType = $membershipType;
-  }
-  /**
-   * @return self::MEMBERSHIP_TYPE_*
-   */
-  public function getMembershipType()
-  {
-    return $this->membershipType;
-  }
-  /**
-   * Output only. Whether the cluster has been registered through the fleet API.
-   *
-   * @param bool $preRegistered
+   * @param bool
    */
   public function setPreRegistered($preRegistered)
   {
@@ -109,11 +61,7 @@ class Fleet extends \Google\Model
     return $this->preRegistered;
   }
   /**
-   * The Fleet host project(project ID or project number) where this cluster
-   * will be registered to. This field cannot be changed after the cluster has
-   * been registered.
-   *
-   * @param string $project
+   * @param string
    */
   public function setProject($project)
   {

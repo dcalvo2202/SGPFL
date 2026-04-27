@@ -23,9 +23,7 @@ class ExportClusterResponse extends \Google\Model
   protected $gcsDestinationDataType = '';
 
   /**
-   * Required. Option to export data to cloud storage.
-   *
-   * @param GcsDestination $gcsDestination
+   * @param GcsDestination
    */
   public function setGcsDestination(GcsDestination $gcsDestination)
   {

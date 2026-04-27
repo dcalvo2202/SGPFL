@@ -21,26 +21,16 @@ class PhoneNumbers extends \Google\Collection
 {
   protected $collection_key = 'additionalPhones';
   /**
-   * Optional. Up to two phone numbers (mobile or landline, no fax) at which
-   * your business can be called, in addition to your primary phone number.
-   *
    * @var string[]
    */
   public $additionalPhones;
   /**
-   * Required. A phone number that connects to your individual business location
-   * as directly as possible. Use a local phone number instead of a central,
-   * call center helpline number whenever possible.
-   *
    * @var string
    */
   public $primaryPhone;
 
   /**
-   * Optional. Up to two phone numbers (mobile or landline, no fax) at which
-   * your business can be called, in addition to your primary phone number.
-   *
-   * @param string[] $additionalPhones
+   * @param string[]
    */
   public function setAdditionalPhones($additionalPhones)
   {
@@ -54,11 +44,7 @@ class PhoneNumbers extends \Google\Collection
     return $this->additionalPhones;
   }
   /**
-   * Required. A phone number that connects to your individual business location
-   * as directly as possible. Use a local phone number instead of a central,
-   * call center helpline number whenever possible.
-   *
-   * @param string $primaryPhone
+   * @param string
    */
   public function setPrimaryPhone($primaryPhone)
   {

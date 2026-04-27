@@ -23,10 +23,7 @@ class Assignment extends \Google\Model
   protected $studentWorkFolderDataType = '';
 
   /**
-   * Drive folder where attachments from student submissions are placed. This is
-   * only populated for course teachers and administrators.
-   *
-   * @param DriveFolder $studentWorkFolder
+   * @param DriveFolder
    */
   public function setStudentWorkFolder(DriveFolder $studentWorkFolder)
   {

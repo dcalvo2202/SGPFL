@@ -20,16 +20,12 @@ namespace Google\Service\Container;
 class ComplianceStandard extends \Google\Model
 {
   /**
-   * Name of the compliance standard.
-   *
    * @var string
    */
   public $standard;
 
   /**
-   * Name of the compliance standard.
-   *
-   * @param string $standard
+   * @param string
    */
   public function setStandard($standard)
   {

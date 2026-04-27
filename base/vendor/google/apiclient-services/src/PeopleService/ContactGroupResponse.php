@@ -22,8 +22,6 @@ class ContactGroupResponse extends \Google\Model
   protected $contactGroupType = ContactGroup::class;
   protected $contactGroupDataType = '';
   /**
-   * The original requested resource name.
-   *
    * @var string
    */
   public $requestedResourceName;
@@ -31,9 +29,7 @@ class ContactGroupResponse extends \Google\Model
   protected $statusDataType = '';
 
   /**
-   * The contact group.
-   *
-   * @param ContactGroup $contactGroup
+   * @param ContactGroup
    */
   public function setContactGroup(ContactGroup $contactGroup)
   {
@@ -47,9 +43,7 @@ class ContactGroupResponse extends \Google\Model
     return $this->contactGroup;
   }
   /**
-   * The original requested resource name.
-   *
-   * @param string $requestedResourceName
+   * @param string
    */
   public function setRequestedResourceName($requestedResourceName)
   {
@@ -63,9 +57,7 @@ class ContactGroupResponse extends \Google\Model
     return $this->requestedResourceName;
   }
   /**
-   * The status of the response.
-   *
-   * @param Status $status
+   * @param Status
    */
   public function setStatus(Status $status)
   {

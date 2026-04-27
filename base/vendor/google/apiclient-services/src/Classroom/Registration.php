@@ -22,25 +22,18 @@ class Registration extends \Google\Model
   protected $cloudPubsubTopicType = CloudPubsubTopic::class;
   protected $cloudPubsubTopicDataType = '';
   /**
-   * The time until which the `Registration` is effective. This is a read-only
-   * field assigned by the server.
-   *
    * @var string
    */
   public $expiryTime;
   protected $feedType = Feed::class;
   protected $feedDataType = '';
   /**
-   * A server-generated unique identifier for this `Registration`. Read-only.
-   *
    * @var string
    */
   public $registrationId;
 
   /**
-   * The Cloud Pub/Sub topic that notifications are to be sent to.
-   *
-   * @param CloudPubsubTopic $cloudPubsubTopic
+   * @param CloudPubsubTopic
    */
   public function setCloudPubsubTopic(CloudPubsubTopic $cloudPubsubTopic)
   {
@@ -54,10 +47,7 @@ class Registration extends \Google\Model
     return $this->cloudPubsubTopic;
   }
   /**
-   * The time until which the `Registration` is effective. This is a read-only
-   * field assigned by the server.
-   *
-   * @param string $expiryTime
+   * @param string
    */
   public function setExpiryTime($expiryTime)
   {
@@ -71,10 +61,7 @@ class Registration extends \Google\Model
     return $this->expiryTime;
   }
   /**
-   * Specification for the class of notifications that Classroom should deliver
-   * to the destination.
-   *
-   * @param Feed $feed
+   * @param Feed
    */
   public function setFeed(Feed $feed)
   {
@@ -88,9 +75,7 @@ class Registration extends \Google\Model
     return $this->feed;
   }
   /**
-   * A server-generated unique identifier for this `Registration`. Read-only.
-   *
-   * @param string $registrationId
+   * @param string
    */
   public function setRegistrationId($registrationId)
   {

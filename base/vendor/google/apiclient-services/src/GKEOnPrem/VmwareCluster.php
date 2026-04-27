@@ -20,61 +20,14 @@ namespace Google\Service\GKEOnPrem;
 class VmwareCluster extends \Google\Model
 {
   /**
-   * Not set.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The PROVISIONING state indicates the cluster is being created.
-   */
-  public const STATE_PROVISIONING = 'PROVISIONING';
-  /**
-   * The RUNNING state indicates the cluster has been created and is fully
-   * usable.
-   */
-  public const STATE_RUNNING = 'RUNNING';
-  /**
-   * The RECONCILING state indicates that the cluster is being updated. It
-   * remains available, but potentially with degraded performance.
-   */
-  public const STATE_RECONCILING = 'RECONCILING';
-  /**
-   * The STOPPING state indicates the cluster is being deleted.
-   */
-  public const STATE_STOPPING = 'STOPPING';
-  /**
-   * The ERROR state indicates the cluster is in a broken unrecoverable state.
-   */
-  public const STATE_ERROR = 'ERROR';
-  /**
-   * The DEGRADED state indicates the cluster requires user action to restore
-   * full functionality.
-   */
-  public const STATE_DEGRADED = 'DEGRADED';
-  /**
-   * Required. The admin cluster this VMware user cluster belongs to. This is
-   * the full resource name of the admin cluster's fleet membership. In the
-   * future, references to other resource types might be allowed if admin
-   * clusters are modeled as their own resources.
-   *
    * @var string
    */
   public $adminClusterMembership;
   /**
-   * Output only. The resource name of the VMware admin cluster hosting this
-   * user cluster.
-   *
    * @var string
    */
   public $adminClusterName;
   /**
-   * Annotations on the VMware user cluster. This field has the same
-   * restrictions as Kubernetes annotations. The total size of all keys and
-   * values combined is limited to 256k. Key can have 2 segments: prefix
-   * (optional) and name (required), separated by a slash (/). Prefix must be a
-   * DNS subdomain. Name must be 63 characters or less, begin and end with
-   * alphanumerics, with dashes (-), underscores (_), dots (.), and
-   * alphanumerics between.
-   *
    * @var string[]
    */
   public $annotations;
@@ -89,55 +42,36 @@ class VmwareCluster extends \Google\Model
   protected $controlPlaneNodeType = VmwareControlPlaneNodeConfig::class;
   protected $controlPlaneNodeDataType = '';
   /**
-   * Output only. The time at which VMware user cluster was created.
-   *
    * @var string
    */
   public $createTime;
   protected $dataplaneV2Type = VmwareDataplaneV2Config::class;
   protected $dataplaneV2DataType = '';
   /**
-   * Output only. The time at which VMware user cluster was deleted.
-   *
    * @var string
    */
   public $deleteTime;
   /**
-   * A human readable description of this VMware user cluster.
-   *
    * @var string
    */
   public $description;
   /**
-   * Disable bundled ingress.
-   *
    * @var bool
    */
   public $disableBundledIngress;
   /**
-   * Enable advanced cluster.
-   *
    * @var bool
    */
   public $enableAdvancedCluster;
   /**
-   * Enable control plane V2. Default to false.
-   *
    * @var bool
    */
   public $enableControlPlaneV2;
   /**
-   * Output only. The DNS name of VMware user cluster's API server.
-   *
    * @var string
    */
   public $endpoint;
   /**
-   * This checksum is computed by the server based on the value of other fields,
-   * and may be sent on update and delete requests to ensure the client has an
-   * up-to-date value before proceeding. Allows clients to perform consistent
-   * read-modify-writes through optimistic concurrency control.
-   *
    * @var string
    */
   public $etag;
@@ -146,43 +80,24 @@ class VmwareCluster extends \Google\Model
   protected $loadBalancerType = VmwareLoadBalancerConfig::class;
   protected $loadBalancerDataType = '';
   /**
-   * Output only. The object name of the VMware OnPremUserCluster custom
-   * resource on the associated admin cluster. This field is used to support
-   * conflicting names when enrolling existing clusters to the API. When used as
-   * a part of cluster enrollment, this field will differ from the ID in the
-   * resource name. For new clusters, this field will match the user provided
-   * cluster name and be visible in the last component of the resource name. It
-   * is not modifiable. All users should use this name to access their cluster
-   * using gkectl or kubectl and should expect to see the local name when
-   * viewing admin cluster controller logs.
-   *
    * @var string
    */
   public $localName;
   /**
-   * Immutable. The VMware user cluster resource name.
-   *
    * @var string
    */
   public $name;
   protected $networkConfigType = VmwareNetworkConfig::class;
   protected $networkConfigDataType = '';
   /**
-   * Required. The Anthos clusters on the VMware version for your user cluster.
-   *
    * @var string
    */
   public $onPremVersion;
   /**
-   * Output only. If set, there are currently changes in flight to the VMware
-   * user cluster.
-   *
    * @var bool
    */
   public $reconciling;
   /**
-   * Output only. The current state of VMware user cluster.
-   *
    * @var string
    */
   public $state;
@@ -191,14 +106,10 @@ class VmwareCluster extends \Google\Model
   protected $storageType = VmwareStorageConfig::class;
   protected $storageDataType = '';
   /**
-   * Output only. The unique identifier of the VMware user cluster.
-   *
    * @var string
    */
   public $uid;
   /**
-   * Output only. The time at which VMware user cluster was last updated.
-   *
    * @var string
    */
   public $updateTime;
@@ -209,19 +120,12 @@ class VmwareCluster extends \Google\Model
   protected $vcenterType = VmwareVCenterConfig::class;
   protected $vcenterDataType = '';
   /**
-   * Enable VM tracking.
-   *
    * @var bool
    */
   public $vmTrackingEnabled;
 
   /**
-   * Required. The admin cluster this VMware user cluster belongs to. This is
-   * the full resource name of the admin cluster's fleet membership. In the
-   * future, references to other resource types might be allowed if admin
-   * clusters are modeled as their own resources.
-   *
-   * @param string $adminClusterMembership
+   * @param string
    */
   public function setAdminClusterMembership($adminClusterMembership)
   {
@@ -235,10 +139,7 @@ class VmwareCluster extends \Google\Model
     return $this->adminClusterMembership;
   }
   /**
-   * Output only. The resource name of the VMware admin cluster hosting this
-   * user cluster.
-   *
-   * @param string $adminClusterName
+   * @param string
    */
   public function setAdminClusterName($adminClusterName)
   {
@@ -252,15 +153,7 @@ class VmwareCluster extends \Google\Model
     return $this->adminClusterName;
   }
   /**
-   * Annotations on the VMware user cluster. This field has the same
-   * restrictions as Kubernetes annotations. The total size of all keys and
-   * values combined is limited to 256k. Key can have 2 segments: prefix
-   * (optional) and name (required), separated by a slash (/). Prefix must be a
-   * DNS subdomain. Name must be 63 characters or less, begin and end with
-   * alphanumerics, with dashes (-), underscores (_), dots (.), and
-   * alphanumerics between.
-   *
-   * @param string[] $annotations
+   * @param string[]
    */
   public function setAnnotations($annotations)
   {
@@ -274,10 +167,7 @@ class VmwareCluster extends \Google\Model
     return $this->annotations;
   }
   /**
-   * AAGConfig specifies whether to spread VMware user cluster nodes across at
-   * least three physical hosts in the datacenter.
-   *
-   * @param VmwareAAGConfig $antiAffinityGroups
+   * @param VmwareAAGConfig
    */
   public function setAntiAffinityGroups(VmwareAAGConfig $antiAffinityGroups)
   {
@@ -291,9 +181,7 @@ class VmwareCluster extends \Google\Model
     return $this->antiAffinityGroups;
   }
   /**
-   * RBAC policy that will be applied and managed by the Anthos On-Prem API.
-   *
-   * @param Authorization $authorization
+   * @param Authorization
    */
   public function setAuthorization(Authorization $authorization)
   {
@@ -307,9 +195,7 @@ class VmwareCluster extends \Google\Model
     return $this->authorization;
   }
   /**
-   * Configuration for auto repairing.
-   *
-   * @param VmwareAutoRepairConfig $autoRepairConfig
+   * @param VmwareAutoRepairConfig
    */
   public function setAutoRepairConfig(VmwareAutoRepairConfig $autoRepairConfig)
   {
@@ -323,9 +209,7 @@ class VmwareCluster extends \Google\Model
     return $this->autoRepairConfig;
   }
   /**
-   * Binary Authorization related configurations.
-   *
-   * @param BinaryAuthorization $binaryAuthorization
+   * @param BinaryAuthorization
    */
   public function setBinaryAuthorization(BinaryAuthorization $binaryAuthorization)
   {
@@ -339,9 +223,7 @@ class VmwareCluster extends \Google\Model
     return $this->binaryAuthorization;
   }
   /**
-   * VMware user cluster control plane nodes must have either 1 or 3 replicas.
-   *
-   * @param VmwareControlPlaneNodeConfig $controlPlaneNode
+   * @param VmwareControlPlaneNodeConfig
    */
   public function setControlPlaneNode(VmwareControlPlaneNodeConfig $controlPlaneNode)
   {
@@ -355,9 +237,7 @@ class VmwareCluster extends \Google\Model
     return $this->controlPlaneNode;
   }
   /**
-   * Output only. The time at which VMware user cluster was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -371,9 +251,7 @@ class VmwareCluster extends \Google\Model
     return $this->createTime;
   }
   /**
-   * VmwareDataplaneV2Config specifies configuration for Dataplane V2.
-   *
-   * @param VmwareDataplaneV2Config $dataplaneV2
+   * @param VmwareDataplaneV2Config
    */
   public function setDataplaneV2(VmwareDataplaneV2Config $dataplaneV2)
   {
@@ -387,9 +265,7 @@ class VmwareCluster extends \Google\Model
     return $this->dataplaneV2;
   }
   /**
-   * Output only. The time at which VMware user cluster was deleted.
-   *
-   * @param string $deleteTime
+   * @param string
    */
   public function setDeleteTime($deleteTime)
   {
@@ -403,9 +279,7 @@ class VmwareCluster extends \Google\Model
     return $this->deleteTime;
   }
   /**
-   * A human readable description of this VMware user cluster.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -419,9 +293,7 @@ class VmwareCluster extends \Google\Model
     return $this->description;
   }
   /**
-   * Disable bundled ingress.
-   *
-   * @param bool $disableBundledIngress
+   * @param bool
    */
   public function setDisableBundledIngress($disableBundledIngress)
   {
@@ -435,9 +307,7 @@ class VmwareCluster extends \Google\Model
     return $this->disableBundledIngress;
   }
   /**
-   * Enable advanced cluster.
-   *
-   * @param bool $enableAdvancedCluster
+   * @param bool
    */
   public function setEnableAdvancedCluster($enableAdvancedCluster)
   {
@@ -451,9 +321,7 @@ class VmwareCluster extends \Google\Model
     return $this->enableAdvancedCluster;
   }
   /**
-   * Enable control plane V2. Default to false.
-   *
-   * @param bool $enableControlPlaneV2
+   * @param bool
    */
   public function setEnableControlPlaneV2($enableControlPlaneV2)
   {
@@ -467,9 +335,7 @@ class VmwareCluster extends \Google\Model
     return $this->enableControlPlaneV2;
   }
   /**
-   * Output only. The DNS name of VMware user cluster's API server.
-   *
-   * @param string $endpoint
+   * @param string
    */
   public function setEndpoint($endpoint)
   {
@@ -483,12 +349,7 @@ class VmwareCluster extends \Google\Model
     return $this->endpoint;
   }
   /**
-   * This checksum is computed by the server based on the value of other fields,
-   * and may be sent on update and delete requests to ensure the client has an
-   * up-to-date value before proceeding. Allows clients to perform consistent
-   * read-modify-writes through optimistic concurrency control.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -502,9 +363,7 @@ class VmwareCluster extends \Google\Model
     return $this->etag;
   }
   /**
-   * Output only. Fleet configuration for the cluster.
-   *
-   * @param Fleet $fleet
+   * @param Fleet
    */
   public function setFleet(Fleet $fleet)
   {
@@ -518,9 +377,7 @@ class VmwareCluster extends \Google\Model
     return $this->fleet;
   }
   /**
-   * Load balancer configuration.
-   *
-   * @param VmwareLoadBalancerConfig $loadBalancer
+   * @param VmwareLoadBalancerConfig
    */
   public function setLoadBalancer(VmwareLoadBalancerConfig $loadBalancer)
   {
@@ -534,17 +391,7 @@ class VmwareCluster extends \Google\Model
     return $this->loadBalancer;
   }
   /**
-   * Output only. The object name of the VMware OnPremUserCluster custom
-   * resource on the associated admin cluster. This field is used to support
-   * conflicting names when enrolling existing clusters to the API. When used as
-   * a part of cluster enrollment, this field will differ from the ID in the
-   * resource name. For new clusters, this field will match the user provided
-   * cluster name and be visible in the last component of the resource name. It
-   * is not modifiable. All users should use this name to access their cluster
-   * using gkectl or kubectl and should expect to see the local name when
-   * viewing admin cluster controller logs.
-   *
-   * @param string $localName
+   * @param string
    */
   public function setLocalName($localName)
   {
@@ -558,9 +405,7 @@ class VmwareCluster extends \Google\Model
     return $this->localName;
   }
   /**
-   * Immutable. The VMware user cluster resource name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -574,9 +419,7 @@ class VmwareCluster extends \Google\Model
     return $this->name;
   }
   /**
-   * The VMware user cluster network configuration.
-   *
-   * @param VmwareNetworkConfig $networkConfig
+   * @param VmwareNetworkConfig
    */
   public function setNetworkConfig(VmwareNetworkConfig $networkConfig)
   {
@@ -590,9 +433,7 @@ class VmwareCluster extends \Google\Model
     return $this->networkConfig;
   }
   /**
-   * Required. The Anthos clusters on the VMware version for your user cluster.
-   *
-   * @param string $onPremVersion
+   * @param string
    */
   public function setOnPremVersion($onPremVersion)
   {
@@ -606,10 +447,7 @@ class VmwareCluster extends \Google\Model
     return $this->onPremVersion;
   }
   /**
-   * Output only. If set, there are currently changes in flight to the VMware
-   * user cluster.
-   *
-   * @param bool $reconciling
+   * @param bool
    */
   public function setReconciling($reconciling)
   {
@@ -623,28 +461,21 @@ class VmwareCluster extends \Google\Model
     return $this->reconciling;
   }
   /**
-   * Output only. The current state of VMware user cluster.
-   *
-   * Accepted values: STATE_UNSPECIFIED, PROVISIONING, RUNNING, RECONCILING,
-   * STOPPING, ERROR, DEGRADED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. ResourceStatus representing detailed cluster state.
-   *
-   * @param ResourceStatus $status
+   * @param ResourceStatus
    */
   public function setStatus(ResourceStatus $status)
   {
@@ -658,9 +489,7 @@ class VmwareCluster extends \Google\Model
     return $this->status;
   }
   /**
-   * Storage configuration.
-   *
-   * @param VmwareStorageConfig $storage
+   * @param VmwareStorageConfig
    */
   public function setStorage(VmwareStorageConfig $storage)
   {
@@ -674,9 +503,7 @@ class VmwareCluster extends \Google\Model
     return $this->storage;
   }
   /**
-   * Output only. The unique identifier of the VMware user cluster.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {
@@ -690,9 +517,7 @@ class VmwareCluster extends \Google\Model
     return $this->uid;
   }
   /**
-   * Output only. The time at which VMware user cluster was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -706,9 +531,7 @@ class VmwareCluster extends \Google\Model
     return $this->updateTime;
   }
   /**
-   * Specifies upgrade policy for the cluster.
-   *
-   * @param VmwareClusterUpgradePolicy $upgradePolicy
+   * @param VmwareClusterUpgradePolicy
    */
   public function setUpgradePolicy(VmwareClusterUpgradePolicy $upgradePolicy)
   {
@@ -722,10 +545,7 @@ class VmwareCluster extends \Google\Model
     return $this->upgradePolicy;
   }
   /**
-   * Output only. ValidationCheck represents the result of the preflight check
-   * job.
-   *
-   * @param ValidationCheck $validationCheck
+   * @param ValidationCheck
    */
   public function setValidationCheck(ValidationCheck $validationCheck)
   {
@@ -739,10 +559,7 @@ class VmwareCluster extends \Google\Model
     return $this->validationCheck;
   }
   /**
-   * VmwareVCenterConfig specifies vCenter config for the user cluster. If
-   * unspecified, it is inherited from the admin cluster.
-   *
-   * @param VmwareVCenterConfig $vcenter
+   * @param VmwareVCenterConfig
    */
   public function setVcenter(VmwareVCenterConfig $vcenter)
   {
@@ -756,9 +573,7 @@ class VmwareCluster extends \Google\Model
     return $this->vcenter;
   }
   /**
-   * Enable VM tracking.
-   *
-   * @param bool $vmTrackingEnabled
+   * @param bool
    */
   public function setVmTrackingEnabled($vmTrackingEnabled)
   {

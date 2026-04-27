@@ -19,37 +19,20 @@ namespace Google\Service\Walletobjects;
 
 class SecurityAnimation extends \Google\Model
 {
-  public const ANIMATION_TYPE_ANIMATION_UNSPECIFIED = 'ANIMATION_UNSPECIFIED';
   /**
-   * Default Foil & Shimmer animation
-   */
-  public const ANIMATION_TYPE_FOIL_SHIMMER = 'FOIL_SHIMMER';
-  /**
-   * Legacy alias for `FOIL_SHIMMER`. Deprecated.
-   *
-   * @deprecated
-   */
-  public const ANIMATION_TYPE_foilShimmer = 'foilShimmer';
-  /**
-   * Type of animation.
-   *
    * @var string
    */
   public $animationType;
 
   /**
-   * Type of animation.
-   *
-   * Accepted values: ANIMATION_UNSPECIFIED, FOIL_SHIMMER, foilShimmer
-   *
-   * @param self::ANIMATION_TYPE_* $animationType
+   * @param string
    */
   public function setAnimationType($animationType)
   {
     $this->animationType = $animationType;
   }
   /**
-   * @return self::ANIMATION_TYPE_*
+   * @return string
    */
   public function getAnimationType()
   {

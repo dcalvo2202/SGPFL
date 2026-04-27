@@ -21,27 +21,18 @@ class GoogleCloudApigeeV1DimensionMetric extends \Google\Collection
 {
   protected $collection_key = 'metrics';
   /**
-   * Individual dimension names. E.g. ["dim1_name", "dim2_name"].
-   *
    * @var string[]
    */
   public $individualNames;
   protected $metricsType = GoogleCloudApigeeV1Metric::class;
   protected $metricsDataType = 'array';
   /**
-   * Comma joined dimension names. E.g. "dim1_name,dim2_name". Deprecated. If
-   * name already has comma before join, we may get wrong splits. Please use
-   * individual_names.
-   *
-   * @deprecated
    * @var string
    */
   public $name;
 
   /**
-   * Individual dimension names. E.g. ["dim1_name", "dim2_name"].
-   *
-   * @param string[] $individualNames
+   * @param string[]
    */
   public function setIndividualNames($individualNames)
   {
@@ -55,9 +46,7 @@ class GoogleCloudApigeeV1DimensionMetric extends \Google\Collection
     return $this->individualNames;
   }
   /**
-   * List of metrics.
-   *
-   * @param GoogleCloudApigeeV1Metric[] $metrics
+   * @param GoogleCloudApigeeV1Metric[]
    */
   public function setMetrics($metrics)
   {
@@ -71,19 +60,13 @@ class GoogleCloudApigeeV1DimensionMetric extends \Google\Collection
     return $this->metrics;
   }
   /**
-   * Comma joined dimension names. E.g. "dim1_name,dim2_name". Deprecated. If
-   * name already has comma before join, we may get wrong splits. Please use
-   * individual_names.
-   *
-   * @deprecated
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
     $this->name = $name;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getName()

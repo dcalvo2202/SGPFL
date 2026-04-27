@@ -20,22 +20,16 @@ namespace Google\Service\FirebaseAppDistribution;
 class GdataDiffVersionResponse extends \Google\Model
 {
   /**
-   * The total size of the server object.
-   *
    * @var string
    */
   public $objectSizeBytes;
   /**
-   * The version of the object stored at the server.
-   *
    * @var string
    */
   public $objectVersion;
 
   /**
-   * The total size of the server object.
-   *
-   * @param string $objectSizeBytes
+   * @param string
    */
   public function setObjectSizeBytes($objectSizeBytes)
   {
@@ -49,9 +43,7 @@ class GdataDiffVersionResponse extends \Google\Model
     return $this->objectSizeBytes;
   }
   /**
-   * The version of the object stored at the server.
-   *
-   * @param string $objectVersion
+   * @param string
    */
   public function setObjectVersion($objectVersion)
   {

@@ -20,25 +20,16 @@ namespace Google\Service\Contentwarehouse;
 class CloudAiPlatformTenantresourceServiceAccountIdentity extends \Google\Model
 {
   /**
-   * Output only. The service account email that has been created.
-   *
    * @var string
    */
   public $serviceAccountEmail;
   /**
-   * Input/Output [Optional]. The tag that configures the service account, as
-   * defined in google3/configs/production/cdpush/acl-zanzibar-cloud-
-   * prod/activation_grants/activation_grants.gcl. Note: The default P4 service
-   * account has the empty tag.
-   *
    * @var string
    */
   public $tag;
 
   /**
-   * Output only. The service account email that has been created.
-   *
-   * @param string $serviceAccountEmail
+   * @param string
    */
   public function setServiceAccountEmail($serviceAccountEmail)
   {
@@ -52,12 +43,7 @@ class CloudAiPlatformTenantresourceServiceAccountIdentity extends \Google\Model
     return $this->serviceAccountEmail;
   }
   /**
-   * Input/Output [Optional]. The tag that configures the service account, as
-   * defined in google3/configs/production/cdpush/acl-zanzibar-cloud-
-   * prod/activation_grants/activation_grants.gcl. Note: The default P4 service
-   * account has the empty tag.
-   *
-   * @param string $tag
+   * @param string
    */
   public function setTag($tag)
   {

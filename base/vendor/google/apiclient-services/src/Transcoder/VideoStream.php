@@ -27,9 +27,7 @@ class VideoStream extends \Google\Model
   protected $vp9DataType = '';
 
   /**
-   * H264 codec settings.
-   *
-   * @param H264CodecSettings $h264
+   * @param H264CodecSettings
    */
   public function setH264(H264CodecSettings $h264)
   {
@@ -43,9 +41,7 @@ class VideoStream extends \Google\Model
     return $this->h264;
   }
   /**
-   * H265 codec settings.
-   *
-   * @param H265CodecSettings $h265
+   * @param H265CodecSettings
    */
   public function setH265(H265CodecSettings $h265)
   {
@@ -59,9 +55,7 @@ class VideoStream extends \Google\Model
     return $this->h265;
   }
   /**
-   * VP9 codec settings.
-   *
-   * @param Vp9CodecSettings $vp9
+   * @param Vp9CodecSettings
    */
   public function setVp9(Vp9CodecSettings $vp9)
   {

@@ -21,9 +21,6 @@ class ListRowsResponse extends \Google\Collection
 {
   protected $collection_key = 'rows';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is empty, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListRowsResponse extends \Google\Collection
   protected $rowsDataType = 'array';
 
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is empty, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class ListRowsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The rows from the specified table.
-   *
-   * @param Row[] $rows
+   * @param Row[]
    */
   public function setRows($rows)
   {

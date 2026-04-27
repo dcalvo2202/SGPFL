@@ -20,16 +20,12 @@ namespace Google\Service\AndroidEnterprise;
 class AdministratorWebTokenSpecWebApps extends \Google\Model
 {
   /**
-   * Whether the Web Apps page is displayed. Default is true.
-   *
    * @var bool
    */
   public $enabled;
 
   /**
-   * Whether the Web Apps page is displayed. Default is true.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {

@@ -19,40 +19,24 @@ namespace Google\Service\Dfareporting;
 
 class FloodlightConfiguration extends \Google\Collection
 {
-  public const FIRST_DAY_OF_WEEK_SUNDAY = 'SUNDAY';
-  public const FIRST_DAY_OF_WEEK_MONDAY = 'MONDAY';
-  public const NATURAL_SEARCH_CONVERSION_ATTRIBUTION_OPTION_EXCLUDE_NATURAL_SEARCH_CONVERSION_ATTRIBUTION = 'EXCLUDE_NATURAL_SEARCH_CONVERSION_ATTRIBUTION';
-  public const NATURAL_SEARCH_CONVERSION_ATTRIBUTION_OPTION_INCLUDE_NATURAL_SEARCH_CONVERSION_ATTRIBUTION = 'INCLUDE_NATURAL_SEARCH_CONVERSION_ATTRIBUTION';
-  public const NATURAL_SEARCH_CONVERSION_ATTRIBUTION_OPTION_INCLUDE_NATURAL_SEARCH_TIERED_CONVERSION_ATTRIBUTION = 'INCLUDE_NATURAL_SEARCH_TIERED_CONVERSION_ATTRIBUTION';
   protected $collection_key = 'userDefinedVariableConfigurations';
   /**
-   * Account ID of this floodlight configuration. This is a read-only field that
-   * can be left blank.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * Advertiser ID of the parent advertiser of this floodlight configuration.
-   *
    * @var string
    */
   public $advertiserId;
   protected $advertiserIdDimensionValueType = DimensionValue::class;
   protected $advertiserIdDimensionValueDataType = '';
   /**
-   * Whether advertiser data is shared with Google Analytics.
-   *
    * @var bool
    */
   public $analyticsDataSharingEnabled;
   protected $customViewabilityMetricType = CustomViewabilityMetric::class;
   protected $customViewabilityMetricDataType = '';
   /**
-   * Whether the exposure-to-conversion report is enabled. This report shows
-   * detailed pathway information on up to 10 of the most recent ad exposures
-   * seen by a user before converting.
-   *
    * @var bool
    */
   public $exposureToConversionEnabled;
@@ -61,41 +45,28 @@ class FloodlightConfiguration extends \Google\Collection
    */
   public $firstDayOfWeek;
   /**
-   * ID of this floodlight configuration. This is a read-only, auto-generated
-   * field.
-   *
    * @var string
    */
   public $id;
   protected $idDimensionValueType = DimensionValue::class;
   protected $idDimensionValueDataType = '';
   /**
-   * Whether in-app attribution tracking is enabled.
-   *
    * @var bool
    */
   public $inAppAttributionTrackingEnabled;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#floodlightConfiguration".
-   *
    * @var string
    */
   public $kind;
   protected $lookbackConfigurationType = LookbackConfiguration::class;
   protected $lookbackConfigurationDataType = '';
   /**
-   * Types of attribution options for natural search conversions.
-   *
    * @var string
    */
   public $naturalSearchConversionAttributionOption;
   protected $omnitureSettingsType = OmnitureSettings::class;
   protected $omnitureSettingsDataType = '';
   /**
-   * Subaccount ID of this floodlight configuration. This is a read-only field
-   * that can be left blank.
-   *
    * @var string
    */
   public $subaccountId;
@@ -107,10 +78,7 @@ class FloodlightConfiguration extends \Google\Collection
   protected $userDefinedVariableConfigurationsDataType = 'array';
 
   /**
-   * Account ID of this floodlight configuration. This is a read-only field that
-   * can be left blank.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -124,9 +92,7 @@ class FloodlightConfiguration extends \Google\Collection
     return $this->accountId;
   }
   /**
-   * Advertiser ID of the parent advertiser of this floodlight configuration.
-   *
-   * @param string $advertiserId
+   * @param string
    */
   public function setAdvertiserId($advertiserId)
   {
@@ -140,10 +106,7 @@ class FloodlightConfiguration extends \Google\Collection
     return $this->advertiserId;
   }
   /**
-   * Dimension value for the ID of the advertiser. This is a read-only, auto-
-   * generated field.
-   *
-   * @param DimensionValue $advertiserIdDimensionValue
+   * @param DimensionValue
    */
   public function setAdvertiserIdDimensionValue(DimensionValue $advertiserIdDimensionValue)
   {
@@ -157,9 +120,7 @@ class FloodlightConfiguration extends \Google\Collection
     return $this->advertiserIdDimensionValue;
   }
   /**
-   * Whether advertiser data is shared with Google Analytics.
-   *
-   * @param bool $analyticsDataSharingEnabled
+   * @param bool
    */
   public function setAnalyticsDataSharingEnabled($analyticsDataSharingEnabled)
   {
@@ -173,9 +134,7 @@ class FloodlightConfiguration extends \Google\Collection
     return $this->analyticsDataSharingEnabled;
   }
   /**
-   * Custom Viewability metric for the floodlight configuration.
-   *
-   * @param CustomViewabilityMetric $customViewabilityMetric
+   * @param CustomViewabilityMetric
    */
   public function setCustomViewabilityMetric(CustomViewabilityMetric $customViewabilityMetric)
   {
@@ -189,11 +148,7 @@ class FloodlightConfiguration extends \Google\Collection
     return $this->customViewabilityMetric;
   }
   /**
-   * Whether the exposure-to-conversion report is enabled. This report shows
-   * detailed pathway information on up to 10 of the most recent ad exposures
-   * seen by a user before converting.
-   *
-   * @param bool $exposureToConversionEnabled
+   * @param bool
    */
   public function setExposureToConversionEnabled($exposureToConversionEnabled)
   {
@@ -207,24 +162,21 @@ class FloodlightConfiguration extends \Google\Collection
     return $this->exposureToConversionEnabled;
   }
   /**
-   * @param self::FIRST_DAY_OF_WEEK_* $firstDayOfWeek
+   * @param string
    */
   public function setFirstDayOfWeek($firstDayOfWeek)
   {
     $this->firstDayOfWeek = $firstDayOfWeek;
   }
   /**
-   * @return self::FIRST_DAY_OF_WEEK_*
+   * @return string
    */
   public function getFirstDayOfWeek()
   {
     return $this->firstDayOfWeek;
   }
   /**
-   * ID of this floodlight configuration. This is a read-only, auto-generated
-   * field.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -238,10 +190,7 @@ class FloodlightConfiguration extends \Google\Collection
     return $this->id;
   }
   /**
-   * Dimension value for the ID of this floodlight configuration. This is a
-   * read-only, auto-generated field.
-   *
-   * @param DimensionValue $idDimensionValue
+   * @param DimensionValue
    */
   public function setIdDimensionValue(DimensionValue $idDimensionValue)
   {
@@ -255,9 +204,7 @@ class FloodlightConfiguration extends \Google\Collection
     return $this->idDimensionValue;
   }
   /**
-   * Whether in-app attribution tracking is enabled.
-   *
-   * @param bool $inAppAttributionTrackingEnabled
+   * @param bool
    */
   public function setInAppAttributionTrackingEnabled($inAppAttributionTrackingEnabled)
   {
@@ -271,10 +218,7 @@ class FloodlightConfiguration extends \Google\Collection
     return $this->inAppAttributionTrackingEnabled;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#floodlightConfiguration".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -288,9 +232,7 @@ class FloodlightConfiguration extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Lookback window settings for this floodlight configuration.
-   *
-   * @param LookbackConfiguration $lookbackConfiguration
+   * @param LookbackConfiguration
    */
   public function setLookbackConfiguration(LookbackConfiguration $lookbackConfiguration)
   {
@@ -304,29 +246,21 @@ class FloodlightConfiguration extends \Google\Collection
     return $this->lookbackConfiguration;
   }
   /**
-   * Types of attribution options for natural search conversions.
-   *
-   * Accepted values: EXCLUDE_NATURAL_SEARCH_CONVERSION_ATTRIBUTION,
-   * INCLUDE_NATURAL_SEARCH_CONVERSION_ATTRIBUTION,
-   * INCLUDE_NATURAL_SEARCH_TIERED_CONVERSION_ATTRIBUTION
-   *
-   * @param self::NATURAL_SEARCH_CONVERSION_ATTRIBUTION_OPTION_* $naturalSearchConversionAttributionOption
+   * @param string
    */
   public function setNaturalSearchConversionAttributionOption($naturalSearchConversionAttributionOption)
   {
     $this->naturalSearchConversionAttributionOption = $naturalSearchConversionAttributionOption;
   }
   /**
-   * @return self::NATURAL_SEARCH_CONVERSION_ATTRIBUTION_OPTION_*
+   * @return string
    */
   public function getNaturalSearchConversionAttributionOption()
   {
     return $this->naturalSearchConversionAttributionOption;
   }
   /**
-   * Settings for Campaign Manager Omniture integration.
-   *
-   * @param OmnitureSettings $omnitureSettings
+   * @param OmnitureSettings
    */
   public function setOmnitureSettings(OmnitureSettings $omnitureSettings)
   {
@@ -340,10 +274,7 @@ class FloodlightConfiguration extends \Google\Collection
     return $this->omnitureSettings;
   }
   /**
-   * Subaccount ID of this floodlight configuration. This is a read-only field
-   * that can be left blank.
-   *
-   * @param string $subaccountId
+   * @param string
    */
   public function setSubaccountId($subaccountId)
   {
@@ -357,9 +288,7 @@ class FloodlightConfiguration extends \Google\Collection
     return $this->subaccountId;
   }
   /**
-   * Configuration settings for dynamic and image floodlight tags.
-   *
-   * @param TagSettings $tagSettings
+   * @param TagSettings
    */
   public function setTagSettings(TagSettings $tagSettings)
   {
@@ -373,9 +302,7 @@ class FloodlightConfiguration extends \Google\Collection
     return $this->tagSettings;
   }
   /**
-   * List of third-party authentication tokens enabled for this configuration.
-   *
-   * @param ThirdPartyAuthenticationToken[] $thirdPartyAuthenticationTokens
+   * @param ThirdPartyAuthenticationToken[]
    */
   public function setThirdPartyAuthenticationTokens($thirdPartyAuthenticationTokens)
   {
@@ -389,9 +316,7 @@ class FloodlightConfiguration extends \Google\Collection
     return $this->thirdPartyAuthenticationTokens;
   }
   /**
-   * List of user defined variables enabled for this configuration.
-   *
-   * @param UserDefinedVariableConfiguration[] $userDefinedVariableConfigurations
+   * @param UserDefinedVariableConfiguration[]
    */
   public function setUserDefinedVariableConfigurations($userDefinedVariableConfigurations)
   {

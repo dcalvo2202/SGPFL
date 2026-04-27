@@ -19,23 +19,9 @@ namespace Google\Service\Aiplatform;
 
 class GoogleCloudAiplatformV1ExternalApi extends \Google\Model
 {
-  /**
-   * Unspecified API spec. This value should not be used.
-   */
-  public const API_SPEC_API_SPEC_UNSPECIFIED = 'API_SPEC_UNSPECIFIED';
-  /**
-   * Simple search API spec.
-   */
-  public const API_SPEC_SIMPLE_SEARCH = 'SIMPLE_SEARCH';
-  /**
-   * Elastic search API spec.
-   */
-  public const API_SPEC_ELASTIC_SEARCH = 'ELASTIC_SEARCH';
   protected $apiAuthType = GoogleCloudAiplatformV1ApiAuth::class;
   protected $apiAuthDataType = '';
   /**
-   * The API spec that the external API implements.
-   *
    * @var string
    */
   public $apiSpec;
@@ -44,10 +30,6 @@ class GoogleCloudAiplatformV1ExternalApi extends \Google\Model
   protected $elasticSearchParamsType = GoogleCloudAiplatformV1ExternalApiElasticSearchParams::class;
   protected $elasticSearchParamsDataType = '';
   /**
-   * The endpoint of the external API. The system will call the API at this
-   * endpoint to retrieve the data for grounding. Example:
-   * https://acme.com:443/search
-   *
    * @var string
    */
   public $endpoint;
@@ -55,18 +37,13 @@ class GoogleCloudAiplatformV1ExternalApi extends \Google\Model
   protected $simpleSearchParamsDataType = '';
 
   /**
-   * The authentication config to access the API. Deprecated. Please use
-   * auth_config instead.
-   *
-   * @deprecated
-   * @param GoogleCloudAiplatformV1ApiAuth $apiAuth
+   * @param GoogleCloudAiplatformV1ApiAuth
    */
   public function setApiAuth(GoogleCloudAiplatformV1ApiAuth $apiAuth)
   {
     $this->apiAuth = $apiAuth;
   }
   /**
-   * @deprecated
    * @return GoogleCloudAiplatformV1ApiAuth
    */
   public function getApiAuth()
@@ -74,27 +51,21 @@ class GoogleCloudAiplatformV1ExternalApi extends \Google\Model
     return $this->apiAuth;
   }
   /**
-   * The API spec that the external API implements.
-   *
-   * Accepted values: API_SPEC_UNSPECIFIED, SIMPLE_SEARCH, ELASTIC_SEARCH
-   *
-   * @param self::API_SPEC_* $apiSpec
+   * @param string
    */
   public function setApiSpec($apiSpec)
   {
     $this->apiSpec = $apiSpec;
   }
   /**
-   * @return self::API_SPEC_*
+   * @return string
    */
   public function getApiSpec()
   {
     return $this->apiSpec;
   }
   /**
-   * The authentication config to access the API.
-   *
-   * @param GoogleCloudAiplatformV1AuthConfig $authConfig
+   * @param GoogleCloudAiplatformV1AuthConfig
    */
   public function setAuthConfig(GoogleCloudAiplatformV1AuthConfig $authConfig)
   {
@@ -108,9 +79,7 @@ class GoogleCloudAiplatformV1ExternalApi extends \Google\Model
     return $this->authConfig;
   }
   /**
-   * Parameters for the elastic search API.
-   *
-   * @param GoogleCloudAiplatformV1ExternalApiElasticSearchParams $elasticSearchParams
+   * @param GoogleCloudAiplatformV1ExternalApiElasticSearchParams
    */
   public function setElasticSearchParams(GoogleCloudAiplatformV1ExternalApiElasticSearchParams $elasticSearchParams)
   {
@@ -124,11 +93,7 @@ class GoogleCloudAiplatformV1ExternalApi extends \Google\Model
     return $this->elasticSearchParams;
   }
   /**
-   * The endpoint of the external API. The system will call the API at this
-   * endpoint to retrieve the data for grounding. Example:
-   * https://acme.com:443/search
-   *
-   * @param string $endpoint
+   * @param string
    */
   public function setEndpoint($endpoint)
   {
@@ -142,9 +107,7 @@ class GoogleCloudAiplatformV1ExternalApi extends \Google\Model
     return $this->endpoint;
   }
   /**
-   * Parameters for the simple search API.
-   *
-   * @param GoogleCloudAiplatformV1ExternalApiSimpleSearchParams $simpleSearchParams
+   * @param GoogleCloudAiplatformV1ExternalApiSimpleSearchParams
    */
   public function setSimpleSearchParams(GoogleCloudAiplatformV1ExternalApiSimpleSearchParams $simpleSearchParams)
   {

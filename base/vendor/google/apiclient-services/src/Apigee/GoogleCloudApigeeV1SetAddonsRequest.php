@@ -23,9 +23,7 @@ class GoogleCloudApigeeV1SetAddonsRequest extends \Google\Model
   protected $addonsConfigDataType = '';
 
   /**
-   * Required. Add-on configurations.
-   *
-   * @param GoogleCloudApigeeV1AddonsConfig $addonsConfig
+   * @param GoogleCloudApigeeV1AddonsConfig
    */
   public function setAddonsConfig(GoogleCloudApigeeV1AddonsConfig $addonsConfig)
   {

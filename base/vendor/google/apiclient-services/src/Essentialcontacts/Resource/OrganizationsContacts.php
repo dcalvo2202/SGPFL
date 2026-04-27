@@ -39,8 +39,8 @@ class OrganizationsContacts extends \Google\Service\Resource
    * resources. (contacts.compute)
    *
    * @param string $parent Required. The name of the resource to compute contacts
-   * for. Format: organizations/{organization}, folders/{folder} or
-   * projects/{project} (where {project} is the project number)
+   * for. Format: organizations/{organization_id}, folders/{folder_id} or
+   * projects/{project_id}
    * @param array $optParams Optional parameters.
    *
    * @opt_param string notificationCategories The categories of notifications to
@@ -67,8 +67,8 @@ class OrganizationsContacts extends \Google\Service\Resource
    * Adds a new contact for a resource. (contacts.create)
    *
    * @param string $parent Required. The resource to save this contact for.
-   * Format: organizations/{organization}, folders/{folder} or projects/{project}
-   * (where {project} is the project number)
+   * Format: organizations/{organization_id}, folders/{folder_id} or
+   * projects/{project_id}
    * @param GoogleCloudEssentialcontactsV1Contact $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudEssentialcontactsV1Contact
@@ -84,9 +84,9 @@ class OrganizationsContacts extends \Google\Service\Resource
    * Deletes a contact. (contacts.delete)
    *
    * @param string $name Required. The name of the contact to delete. Format:
-   * organizations/{organization}/contacts/{contact},
-   * folders/{folder}/contacts/{contact} or projects/{project}/contacts/{contact}
-   * (where {project} is the project number)
+   * organizations/{organization_id}/contacts/{contact_id},
+   * folders/{folder_id}/contacts/{contact_id} or
+   * projects/{project_id}/contacts/{contact_id}
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
    * @throws \Google\Service\Exception
@@ -101,9 +101,9 @@ class OrganizationsContacts extends \Google\Service\Resource
    * Gets a single contact. (contacts.get)
    *
    * @param string $name Required. The name of the contact to retrieve. Format:
-   * organizations/{organization}/contacts/{contact},
-   * folders/{folder}/contacts/{contact} or projects/{project}/contacts/{contact}
-   * (where {project} is the project number)
+   * organizations/{organization_id}/contacts/{contact_id},
+   * folders/{folder_id}/contacts/{contact_id} or
+   * projects/{project_id}/contacts/{contact_id}
    * @param array $optParams Optional parameters.
    * @return GoogleCloudEssentialcontactsV1Contact
    * @throws \Google\Service\Exception
@@ -119,8 +119,7 @@ class OrganizationsContacts extends \Google\Service\Resource
    * (contacts.listOrganizationsContacts)
    *
    * @param string $parent Required. The parent resource name. Format:
-   * organizations/{organization}, folders/{folder} or projects/{project} (where
-   * {project} is the project number)
+   * organizations/{organization_id}, folders/{folder_id} or projects/{project_id}
    * @param array $optParams Optional parameters.
    *
    * @opt_param int pageSize Optional. The maximum number of results to return
@@ -169,8 +168,7 @@ class OrganizationsContacts extends \Google\Service\Resource
    * @param string $resource Required. The name of the resource to send the test
    * message for. All contacts must either be set directly on this resource or
    * inherited from another resource that is an ancestor of this one. Format:
-   * organizations/{organization}, folders/{folder} or projects/{project} (where
-   * {project} is the project number)
+   * organizations/{organization_id}, folders/{folder_id} or projects/{project_id}
    * @param GoogleCloudEssentialcontactsV1SendTestMessageRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty

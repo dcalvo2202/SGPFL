@@ -20,44 +20,26 @@ namespace Google\Service\Datastore;
 class EntityResult extends \Google\Model
 {
   /**
-   * The time at which the entity was created. This field is set for `FULL`
-   * entity results. If this entity is missing, this field will not be set.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * A cursor that points to the position after the result entity. Set only when
-   * the `EntityResult` is part of a `QueryResultBatch` message.
-   *
    * @var string
    */
   public $cursor;
   protected $entityType = Entity::class;
   protected $entityDataType = '';
   /**
-   * The time at which the entity was last changed. This field is set for `FULL`
-   * entity results. If this entity is missing, this field will not be set.
-   *
    * @var string
    */
   public $updateTime;
   /**
-   * The version of the entity, a strictly positive number that monotonically
-   * increases with changes to the entity. This field is set for `FULL` entity
-   * results. For missing entities in `LookupResponse`, this is the version of
-   * the snapshot that was used to look up the entity, and it is always set
-   * except for eventually consistent reads.
-   *
    * @var string
    */
   public $version;
 
   /**
-   * The time at which the entity was created. This field is set for `FULL`
-   * entity results. If this entity is missing, this field will not be set.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -71,10 +53,7 @@ class EntityResult extends \Google\Model
     return $this->createTime;
   }
   /**
-   * A cursor that points to the position after the result entity. Set only when
-   * the `EntityResult` is part of a `QueryResultBatch` message.
-   *
-   * @param string $cursor
+   * @param string
    */
   public function setCursor($cursor)
   {
@@ -88,9 +67,7 @@ class EntityResult extends \Google\Model
     return $this->cursor;
   }
   /**
-   * The resulting entity.
-   *
-   * @param Entity $entity
+   * @param Entity
    */
   public function setEntity(Entity $entity)
   {
@@ -104,10 +81,7 @@ class EntityResult extends \Google\Model
     return $this->entity;
   }
   /**
-   * The time at which the entity was last changed. This field is set for `FULL`
-   * entity results. If this entity is missing, this field will not be set.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -121,13 +95,7 @@ class EntityResult extends \Google\Model
     return $this->updateTime;
   }
   /**
-   * The version of the entity, a strictly positive number that monotonically
-   * increases with changes to the entity. This field is set for `FULL` entity
-   * results. For missing entities in `LookupResponse`, this is the version of
-   * the snapshot that was used to look up the entity, and it is always set
-   * except for eventually consistent reads.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

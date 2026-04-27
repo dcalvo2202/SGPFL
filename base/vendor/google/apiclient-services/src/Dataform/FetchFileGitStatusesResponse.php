@@ -24,10 +24,7 @@ class FetchFileGitStatusesResponse extends \Google\Collection
   protected $uncommittedFileChangesDataType = 'array';
 
   /**
-   * A list of all files which have uncommitted Git changes. There will only be
-   * a single entry for any given file.
-   *
-   * @param UncommittedFileChange[] $uncommittedFileChanges
+   * @param UncommittedFileChange[]
    */
   public function setUncommittedFileChanges($uncommittedFileChanges)
   {

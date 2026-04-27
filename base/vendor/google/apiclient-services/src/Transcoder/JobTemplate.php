@@ -22,24 +22,16 @@ class JobTemplate extends \Google\Model
   protected $configType = JobConfig::class;
   protected $configDataType = '';
   /**
-   * The labels associated with this job template. You can use these to organize
-   * and group your job templates.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * The resource name of the job template. Format: `projects/{project_number}/l
-   * ocations/{location}/jobTemplates/{job_template}`
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The configuration for this template.
-   *
-   * @param JobConfig $config
+   * @param JobConfig
    */
   public function setConfig(JobConfig $config)
   {
@@ -53,10 +45,7 @@ class JobTemplate extends \Google\Model
     return $this->config;
   }
   /**
-   * The labels associated with this job template. You can use these to organize
-   * and group your job templates.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -70,10 +59,7 @@ class JobTemplate extends \Google\Model
     return $this->labels;
   }
   /**
-   * The resource name of the job template. Format: `projects/{project_number}/l
-   * ocations/{location}/jobTemplates/{job_template}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

@@ -20,41 +20,24 @@ namespace Google\Service\Eventarc;
 class GoogleChannelConfig extends \Google\Model
 {
   /**
-   * Optional. Resource name of a KMS crypto key (managed by the user) used to
-   * encrypt/decrypt their event data. It must match the pattern
-   * `projects/locations/keyRings/cryptoKeys`.
-   *
    * @var string
    */
   public $cryptoKeyName;
   /**
-   * Optional. Resource labels.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Required. The resource name of the config. Must be in the format of,
-   * `projects/{project}/locations/{location}/googleChannelConfig`. In API
-   * responses, the config name always includes the projectID, regardless of
-   * whether the projectID or projectNumber was provided.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The last-modified time.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Optional. Resource name of a KMS crypto key (managed by the user) used to
-   * encrypt/decrypt their event data. It must match the pattern
-   * `projects/locations/keyRings/cryptoKeys`.
-   *
-   * @param string $cryptoKeyName
+   * @param string
    */
   public function setCryptoKeyName($cryptoKeyName)
   {
@@ -68,9 +51,7 @@ class GoogleChannelConfig extends \Google\Model
     return $this->cryptoKeyName;
   }
   /**
-   * Optional. Resource labels.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -84,12 +65,7 @@ class GoogleChannelConfig extends \Google\Model
     return $this->labels;
   }
   /**
-   * Required. The resource name of the config. Must be in the format of,
-   * `projects/{project}/locations/{location}/googleChannelConfig`. In API
-   * responses, the config name always includes the projectID, regardless of
-   * whether the projectID or projectNumber was provided.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -103,9 +79,7 @@ class GoogleChannelConfig extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The last-modified time.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

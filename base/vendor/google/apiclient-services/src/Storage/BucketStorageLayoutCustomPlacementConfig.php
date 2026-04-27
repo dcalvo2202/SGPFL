@@ -21,16 +21,12 @@ class BucketStorageLayoutCustomPlacementConfig extends \Google\Collection
 {
   protected $collection_key = 'dataLocations';
   /**
-   * The list of regional locations in which data is placed.
-   *
    * @var string[]
    */
   public $dataLocations;
 
   /**
-   * The list of regional locations in which data is placed.
-   *
-   * @param string[] $dataLocations
+   * @param string[]
    */
   public function setDataLocations($dataLocations)
   {

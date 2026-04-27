@@ -20,35 +20,24 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1ReasoningEngineSpecPackageSpec extends \Google\Model
 {
   /**
-   * Optional. The Cloud Storage URI of the dependency files in tar.gz format.
-   *
    * @var string
    */
   public $dependencyFilesGcsUri;
   /**
-   * Optional. The Cloud Storage URI of the pickled python object.
-   *
    * @var string
    */
   public $pickleObjectGcsUri;
   /**
-   * Optional. The Python version. Supported values are 3.9, 3.10, 3.11, 3.12,
-   * 3.13, 3.14. If not specified, the default value is 3.10.
-   *
    * @var string
    */
   public $pythonVersion;
   /**
-   * Optional. The Cloud Storage URI of the `requirements.txt` file
-   *
    * @var string
    */
   public $requirementsGcsUri;
 
   /**
-   * Optional. The Cloud Storage URI of the dependency files in tar.gz format.
-   *
-   * @param string $dependencyFilesGcsUri
+   * @param string
    */
   public function setDependencyFilesGcsUri($dependencyFilesGcsUri)
   {
@@ -62,9 +51,7 @@ class GoogleCloudAiplatformV1ReasoningEngineSpecPackageSpec extends \Google\Mode
     return $this->dependencyFilesGcsUri;
   }
   /**
-   * Optional. The Cloud Storage URI of the pickled python object.
-   *
-   * @param string $pickleObjectGcsUri
+   * @param string
    */
   public function setPickleObjectGcsUri($pickleObjectGcsUri)
   {
@@ -78,10 +65,7 @@ class GoogleCloudAiplatformV1ReasoningEngineSpecPackageSpec extends \Google\Mode
     return $this->pickleObjectGcsUri;
   }
   /**
-   * Optional. The Python version. Supported values are 3.9, 3.10, 3.11, 3.12,
-   * 3.13, 3.14. If not specified, the default value is 3.10.
-   *
-   * @param string $pythonVersion
+   * @param string
    */
   public function setPythonVersion($pythonVersion)
   {
@@ -95,9 +79,7 @@ class GoogleCloudAiplatformV1ReasoningEngineSpecPackageSpec extends \Google\Mode
     return $this->pythonVersion;
   }
   /**
-   * Optional. The Cloud Storage URI of the `requirements.txt` file
-   *
-   * @param string $requirementsGcsUri
+   * @param string
    */
   public function setRequirementsGcsUri($requirementsGcsUri)
   {

@@ -21,25 +21,16 @@ class SchemaRegistry extends \Google\Collection
 {
   protected $collection_key = 'contexts';
   /**
-   * Output only. The contexts of the schema registry instance.
-   *
    * @var string[]
    */
   public $contexts;
   /**
-   * Identifier. The name of the schema registry instance. Structured like: `pro
-   * jects/{project}/locations/{location}/schemaRegistries/{schema_registry}`
-   * The instance name {schema_registry} can contain the following: * Up to 255
-   * characters. * Letters (uppercase or lowercase), numbers, and underscores.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Output only. The contexts of the schema registry instance.
-   *
-   * @param string[] $contexts
+   * @param string[]
    */
   public function setContexts($contexts)
   {
@@ -53,12 +44,7 @@ class SchemaRegistry extends \Google\Collection
     return $this->contexts;
   }
   /**
-   * Identifier. The name of the schema registry instance. Structured like: `pro
-   * jects/{project}/locations/{location}/schemaRegistries/{schema_registry}`
-   * The instance name {schema_registry} can contain the following: * Up to 255
-   * characters. * Letters (uppercase or lowercase), numbers, and underscores.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

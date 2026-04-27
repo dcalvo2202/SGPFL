@@ -20,44 +20,28 @@ namespace Google\Service\NetworkServices;
 class GatewayRouteView extends \Google\Model
 {
   /**
-   * Output only. Identifier. Full path name of the GatewayRouteView resource.
-   * Format: projects/{project_number}/locations/{location}/gateways/{gateway}/r
-   * outeViews/{route_view}
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The resource id for the route.
-   *
    * @var string
    */
   public $routeId;
   /**
-   * Output only. Location where the route exists.
-   *
    * @var string
    */
   public $routeLocation;
   /**
-   * Output only. Project number where the route exists.
-   *
    * @var string
    */
   public $routeProjectNumber;
   /**
-   * Output only. Type of the route: HttpRoute,GrpcRoute,TcpRoute, or TlsRoute
-   *
    * @var string
    */
   public $routeType;
 
   /**
-   * Output only. Identifier. Full path name of the GatewayRouteView resource.
-   * Format: projects/{project_number}/locations/{location}/gateways/{gateway}/r
-   * outeViews/{route_view}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -71,9 +55,7 @@ class GatewayRouteView extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The resource id for the route.
-   *
-   * @param string $routeId
+   * @param string
    */
   public function setRouteId($routeId)
   {
@@ -87,9 +69,7 @@ class GatewayRouteView extends \Google\Model
     return $this->routeId;
   }
   /**
-   * Output only. Location where the route exists.
-   *
-   * @param string $routeLocation
+   * @param string
    */
   public function setRouteLocation($routeLocation)
   {
@@ -103,9 +83,7 @@ class GatewayRouteView extends \Google\Model
     return $this->routeLocation;
   }
   /**
-   * Output only. Project number where the route exists.
-   *
-   * @param string $routeProjectNumber
+   * @param string
    */
   public function setRouteProjectNumber($routeProjectNumber)
   {
@@ -119,9 +97,7 @@ class GatewayRouteView extends \Google\Model
     return $this->routeProjectNumber;
   }
   /**
-   * Output only. Type of the route: HttpRoute,GrpcRoute,TcpRoute, or TlsRoute
-   *
-   * @param string $routeType
+   * @param string
    */
   public function setRouteType($routeType)
   {

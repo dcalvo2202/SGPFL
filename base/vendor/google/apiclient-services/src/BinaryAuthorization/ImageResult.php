@@ -19,51 +19,25 @@ namespace Google\Service\BinaryAuthorization;
 
 class ImageResult extends \Google\Model
 {
-  /**
-   * Not specified. This should never be used.
-   */
-  public const VERDICT_IMAGE_VERDICT_UNSPECIFIED = 'IMAGE_VERDICT_UNSPECIFIED';
-  /**
-   * Image conforms to the policy.
-   */
-  public const VERDICT_CONFORMANT = 'CONFORMANT';
-  /**
-   * Image does not conform to the policy.
-   */
-  public const VERDICT_NON_CONFORMANT = 'NON_CONFORMANT';
-  /**
-   * Error evaluating the image. Non-conformance has precedence over errors.
-   */
-  public const VERDICT_ERROR = 'ERROR';
   protected $allowlistResultType = AllowlistResult::class;
   protected $allowlistResultDataType = '';
   protected $checkSetResultType = CheckSetResult::class;
   protected $checkSetResultDataType = '';
   /**
-   * Explanation of this image result. Only populated if no check sets were
-   * evaluated.
-   *
    * @var string
    */
   public $explanation;
   /**
-   * Image URI from the request.
-   *
    * @var string
    */
   public $imageUri;
   /**
-   * The result of evaluating this image.
-   *
    * @var string
    */
   public $verdict;
 
   /**
-   * If the image was exempted by a top-level allow_pattern, contains the
-   * allowlist pattern that the image name matched.
-   *
-   * @param AllowlistResult $allowlistResult
+   * @param AllowlistResult
    */
   public function setAllowlistResult(AllowlistResult $allowlistResult)
   {
@@ -77,10 +51,7 @@ class ImageResult extends \Google\Model
     return $this->allowlistResult;
   }
   /**
-   * If a check set was evaluated, contains the result of the check set. Empty
-   * if there were no check sets.
-   *
-   * @param CheckSetResult $checkSetResult
+   * @param CheckSetResult
    */
   public function setCheckSetResult(CheckSetResult $checkSetResult)
   {
@@ -94,10 +65,7 @@ class ImageResult extends \Google\Model
     return $this->checkSetResult;
   }
   /**
-   * Explanation of this image result. Only populated if no check sets were
-   * evaluated.
-   *
-   * @param string $explanation
+   * @param string
    */
   public function setExplanation($explanation)
   {
@@ -111,9 +79,7 @@ class ImageResult extends \Google\Model
     return $this->explanation;
   }
   /**
-   * Image URI from the request.
-   *
-   * @param string $imageUri
+   * @param string
    */
   public function setImageUri($imageUri)
   {
@@ -127,19 +93,14 @@ class ImageResult extends \Google\Model
     return $this->imageUri;
   }
   /**
-   * The result of evaluating this image.
-   *
-   * Accepted values: IMAGE_VERDICT_UNSPECIFIED, CONFORMANT, NON_CONFORMANT,
-   * ERROR
-   *
-   * @param self::VERDICT_* $verdict
+   * @param string
    */
   public function setVerdict($verdict)
   {
     $this->verdict = $verdict;
   }
   /**
-   * @return self::VERDICT_*
+   * @return string
    */
   public function getVerdict()
   {

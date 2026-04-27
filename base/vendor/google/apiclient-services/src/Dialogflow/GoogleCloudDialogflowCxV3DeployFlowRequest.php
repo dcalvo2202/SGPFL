@@ -25,7 +25,7 @@ class GoogleCloudDialogflowCxV3DeployFlowRequest extends \Google\Model
   public $flowVersion;
 
   /**
-   * @param string $flowVersion
+   * @param string
    */
   public function setFlowVersion($flowVersion)
   {

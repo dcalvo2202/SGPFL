@@ -21,35 +21,24 @@ class IdentitytoolkitRelyingpartySetProjectConfigRequest extends \Google\Collect
 {
   protected $collection_key = 'idpConfig';
   /**
-   * Whether to allow password user sign in or sign up.
-   *
    * @var bool
    */
   public $allowPasswordUser;
   /**
-   * Browser API key, needed when making http request to Apiary.
-   *
    * @var string
    */
   public $apiKey;
   /**
-   * Authorized domains for widget redirect.
-   *
    * @var string[]
    */
   public $authorizedDomains;
   protected $changeEmailTemplateType = EmailTemplate::class;
   protected $changeEmailTemplateDataType = '';
   /**
-   * GCP project number of the requesting delegated app. Currently only intended
-   * for Firebase V1 migration.
-   *
    * @var string
    */
   public $delegatedProjectNumber;
   /**
-   * Whether to enable anonymous user.
-   *
    * @var bool
    */
   public $enableAnonymousUser;
@@ -60,8 +49,6 @@ class IdentitytoolkitRelyingpartySetProjectConfigRequest extends \Google\Collect
   protected $resetPasswordTemplateType = EmailTemplate::class;
   protected $resetPasswordTemplateDataType = '';
   /**
-   * Whether to use email sending provided by Firebear.
-   *
    * @var bool
    */
   public $useEmailSending;
@@ -69,9 +56,7 @@ class IdentitytoolkitRelyingpartySetProjectConfigRequest extends \Google\Collect
   protected $verifyEmailTemplateDataType = '';
 
   /**
-   * Whether to allow password user sign in or sign up.
-   *
-   * @param bool $allowPasswordUser
+   * @param bool
    */
   public function setAllowPasswordUser($allowPasswordUser)
   {
@@ -85,9 +70,7 @@ class IdentitytoolkitRelyingpartySetProjectConfigRequest extends \Google\Collect
     return $this->allowPasswordUser;
   }
   /**
-   * Browser API key, needed when making http request to Apiary.
-   *
-   * @param string $apiKey
+   * @param string
    */
   public function setApiKey($apiKey)
   {
@@ -101,9 +84,7 @@ class IdentitytoolkitRelyingpartySetProjectConfigRequest extends \Google\Collect
     return $this->apiKey;
   }
   /**
-   * Authorized domains for widget redirect.
-   *
-   * @param string[] $authorizedDomains
+   * @param string[]
    */
   public function setAuthorizedDomains($authorizedDomains)
   {
@@ -117,9 +98,7 @@ class IdentitytoolkitRelyingpartySetProjectConfigRequest extends \Google\Collect
     return $this->authorizedDomains;
   }
   /**
-   * Change email template.
-   *
-   * @param EmailTemplate $changeEmailTemplate
+   * @param EmailTemplate
    */
   public function setChangeEmailTemplate(EmailTemplate $changeEmailTemplate)
   {
@@ -133,10 +112,7 @@ class IdentitytoolkitRelyingpartySetProjectConfigRequest extends \Google\Collect
     return $this->changeEmailTemplate;
   }
   /**
-   * GCP project number of the requesting delegated app. Currently only intended
-   * for Firebase V1 migration.
-   *
-   * @param string $delegatedProjectNumber
+   * @param string
    */
   public function setDelegatedProjectNumber($delegatedProjectNumber)
   {
@@ -150,9 +126,7 @@ class IdentitytoolkitRelyingpartySetProjectConfigRequest extends \Google\Collect
     return $this->delegatedProjectNumber;
   }
   /**
-   * Whether to enable anonymous user.
-   *
-   * @param bool $enableAnonymousUser
+   * @param bool
    */
   public function setEnableAnonymousUser($enableAnonymousUser)
   {
@@ -166,9 +140,7 @@ class IdentitytoolkitRelyingpartySetProjectConfigRequest extends \Google\Collect
     return $this->enableAnonymousUser;
   }
   /**
-   * Oauth2 provider configuration.
-   *
-   * @param IdpConfig[] $idpConfig
+   * @param IdpConfig[]
    */
   public function setIdpConfig($idpConfig)
   {
@@ -182,9 +154,7 @@ class IdentitytoolkitRelyingpartySetProjectConfigRequest extends \Google\Collect
     return $this->idpConfig;
   }
   /**
-   * Legacy reset password email template.
-   *
-   * @param EmailTemplate $legacyResetPasswordTemplate
+   * @param EmailTemplate
    */
   public function setLegacyResetPasswordTemplate(EmailTemplate $legacyResetPasswordTemplate)
   {
@@ -198,9 +168,7 @@ class IdentitytoolkitRelyingpartySetProjectConfigRequest extends \Google\Collect
     return $this->legacyResetPasswordTemplate;
   }
   /**
-   * Reset password email template.
-   *
-   * @param EmailTemplate $resetPasswordTemplate
+   * @param EmailTemplate
    */
   public function setResetPasswordTemplate(EmailTemplate $resetPasswordTemplate)
   {
@@ -214,9 +182,7 @@ class IdentitytoolkitRelyingpartySetProjectConfigRequest extends \Google\Collect
     return $this->resetPasswordTemplate;
   }
   /**
-   * Whether to use email sending provided by Firebear.
-   *
-   * @param bool $useEmailSending
+   * @param bool
    */
   public function setUseEmailSending($useEmailSending)
   {
@@ -230,9 +196,7 @@ class IdentitytoolkitRelyingpartySetProjectConfigRequest extends \Google\Collect
     return $this->useEmailSending;
   }
   /**
-   * Verify email template.
-   *
-   * @param EmailTemplate $verifyEmailTemplate
+   * @param EmailTemplate
    */
   public function setVerifyEmailTemplate(EmailTemplate $verifyEmailTemplate)
   {

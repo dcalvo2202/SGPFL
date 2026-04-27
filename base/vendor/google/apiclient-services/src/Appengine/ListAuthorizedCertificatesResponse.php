@@ -23,16 +23,12 @@ class ListAuthorizedCertificatesResponse extends \Google\Collection
   protected $certificatesType = AuthorizedCertificate::class;
   protected $certificatesDataType = 'array';
   /**
-   * Continuation token for fetching the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The SSL certificates the user is authorized to administer.
-   *
-   * @param AuthorizedCertificate[] $certificates
+   * @param AuthorizedCertificate[]
    */
   public function setCertificates($certificates)
   {
@@ -46,9 +42,7 @@ class ListAuthorizedCertificatesResponse extends \Google\Collection
     return $this->certificates;
   }
   /**
-   * Continuation token for fetching the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

@@ -23,17 +23,12 @@ class ListPublisherAccountsResponse extends \Google\Collection
   protected $accountType = PublisherAccount::class;
   protected $accountDataType = 'array';
   /**
-   * If not empty, indicates that there might be more accounts for the request;
-   * you must pass this value in a new `ListPublisherAccountsRequest`.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Publisher that the client credentials can access.
-   *
-   * @param PublisherAccount[] $account
+   * @param PublisherAccount[]
    */
   public function setAccount($account)
   {
@@ -47,10 +42,7 @@ class ListPublisherAccountsResponse extends \Google\Collection
     return $this->account;
   }
   /**
-   * If not empty, indicates that there might be more accounts for the request;
-   * you must pass this value in a new `ListPublisherAccountsRequest`.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

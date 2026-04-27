@@ -20,22 +20,16 @@ namespace Google\Service\AccessContextManager;
 class Application extends \Google\Model
 {
   /**
-   * The OAuth client ID of the application.
-   *
    * @var string
    */
   public $clientId;
   /**
-   * The name of the application. Example: "Cloud Console"
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The OAuth client ID of the application.
-   *
-   * @param string $clientId
+   * @param string
    */
   public function setClientId($clientId)
   {
@@ -49,9 +43,7 @@ class Application extends \Google\Model
     return $this->clientId;
   }
   /**
-   * The name of the application. Example: "Cloud Console"
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

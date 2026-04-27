@@ -20,35 +20,22 @@ namespace Google\Service\PeopleService;
 class FieldMetadata extends \Google\Model
 {
   /**
-   * Output only. True if the field is the primary field for all sources in the
-   * person. Each person will have at most one field with `primary` set to true.
-   *
    * @var bool
    */
   public $primary;
   protected $sourceType = Source::class;
   protected $sourceDataType = '';
   /**
-   * True if the field is the primary field for the source. Each source must
-   * have at most one field with `source_primary` set to true.
-   *
    * @var bool
    */
   public $sourcePrimary;
   /**
-   * Output only. True if the field is verified; false if the field is
-   * unverified. A verified field is typically a name, email address, phone
-   * number, or website that has been confirmed to be owned by the person.
-   *
    * @var bool
    */
   public $verified;
 
   /**
-   * Output only. True if the field is the primary field for all sources in the
-   * person. Each person will have at most one field with `primary` set to true.
-   *
-   * @param bool $primary
+   * @param bool
    */
   public function setPrimary($primary)
   {
@@ -62,9 +49,7 @@ class FieldMetadata extends \Google\Model
     return $this->primary;
   }
   /**
-   * The source of the field.
-   *
-   * @param Source $source
+   * @param Source
    */
   public function setSource(Source $source)
   {
@@ -78,10 +63,7 @@ class FieldMetadata extends \Google\Model
     return $this->source;
   }
   /**
-   * True if the field is the primary field for the source. Each source must
-   * have at most one field with `source_primary` set to true.
-   *
-   * @param bool $sourcePrimary
+   * @param bool
    */
   public function setSourcePrimary($sourcePrimary)
   {
@@ -95,11 +77,7 @@ class FieldMetadata extends \Google\Model
     return $this->sourcePrimary;
   }
   /**
-   * Output only. True if the field is verified; false if the field is
-   * unverified. A verified field is typically a name, email address, phone
-   * number, or website that has been confirmed to be owned by the person.
-   *
-   * @param bool $verified
+   * @param bool
    */
   public function setVerified($verified)
   {

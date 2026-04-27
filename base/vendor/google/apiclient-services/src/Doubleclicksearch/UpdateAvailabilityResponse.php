@@ -24,9 +24,7 @@ class UpdateAvailabilityResponse extends \Google\Collection
   protected $availabilitiesDataType = 'array';
 
   /**
-   * The availabilities being returned.
-   *
-   * @param Availability[] $availabilities
+   * @param Availability[]
    */
   public function setAvailabilities($availabilities)
   {

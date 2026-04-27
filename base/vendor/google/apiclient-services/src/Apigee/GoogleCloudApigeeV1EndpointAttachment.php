@@ -20,134 +20,46 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1EndpointAttachment extends \Google\Model
 {
   /**
-   * The connection state has not been set.
-   */
-  public const CONNECTION_STATE_CONNECTION_STATE_UNSPECIFIED = 'CONNECTION_STATE_UNSPECIFIED';
-  /**
-   * The connection state is unavailable at this time, possibly because the
-   * endpoint attachment is currently being provisioned.
-   */
-  public const CONNECTION_STATE_UNAVAILABLE = 'UNAVAILABLE';
-  /**
-   * The connection is pending acceptance by the PSC producer.
-   */
-  public const CONNECTION_STATE_PENDING = 'PENDING';
-  /**
-   * The connection has been accepted by the PSC producer.
-   */
-  public const CONNECTION_STATE_ACCEPTED = 'ACCEPTED';
-  /**
-   * The connection has been rejected by the PSC producer.
-   */
-  public const CONNECTION_STATE_REJECTED = 'REJECTED';
-  /**
-   * The connection has been closed by the PSC producer and will not serve
-   * traffic going forward.
-   */
-  public const CONNECTION_STATE_CLOSED = 'CLOSED';
-  /**
-   * The connection has been frozen by the PSC producer and will not serve
-   * traffic.
-   */
-  public const CONNECTION_STATE_FROZEN = 'FROZEN';
-  /**
-   * The connection has been accepted by the PSC producer, but it is not ready
-   * to serve the traffic due to producer side issues.
-   */
-  public const CONNECTION_STATE_NEEDS_ATTENTION = 'NEEDS_ATTENTION';
-  /**
-   * The connection has been accepted by the PSC producer, but it will only
-   * serve capacity limited traffic. The producer needs to take further actions
-   * to increase capacity for this connection.
-   */
-  public const CONNECTION_STATE_ACCEPTED_LIMITED_CAPACITY = 'ACCEPTED_LIMITED_CAPACITY';
-  /**
-   * Resource is in an unspecified state.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Resource is being created.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * Resource is provisioned and ready to use.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * The resource is being deleted.
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * The resource is being updated.
-   */
-  public const STATE_UPDATING = 'UPDATING';
-  /**
-   * Output only. State of the endpoint attachment connection to the service
-   * attachment.
-   *
    * @var string
    */
   public $connectionState;
   /**
-   * Output only. Host that can be used in either the HTTP target endpoint
-   * directly or as the host in target server.
-   *
    * @var string
    */
   public $host;
   /**
-   * Required. Location of the endpoint attachment.
-   *
    * @var string
    */
   public $location;
   /**
-   * Name of the endpoint attachment. Use the following structure in your
-   * request: `organizations/{org}/endpointAttachments/{endpoint_attachment}`
-   *
    * @var string
    */
   public $name;
   /**
-   * Format: projects/regions/serviceAttachments
-   *
    * @var string
    */
   public $serviceAttachment;
   /**
-   * Output only. State of the endpoint attachment. Values other than `ACTIVE`
-   * mean the resource is not ready to use.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Output only. State of the endpoint attachment connection to the service
-   * attachment.
-   *
-   * Accepted values: CONNECTION_STATE_UNSPECIFIED, UNAVAILABLE, PENDING,
-   * ACCEPTED, REJECTED, CLOSED, FROZEN, NEEDS_ATTENTION,
-   * ACCEPTED_LIMITED_CAPACITY
-   *
-   * @param self::CONNECTION_STATE_* $connectionState
+   * @param string
    */
   public function setConnectionState($connectionState)
   {
     $this->connectionState = $connectionState;
   }
   /**
-   * @return self::CONNECTION_STATE_*
+   * @return string
    */
   public function getConnectionState()
   {
     return $this->connectionState;
   }
   /**
-   * Output only. Host that can be used in either the HTTP target endpoint
-   * directly or as the host in target server.
-   *
-   * @param string $host
+   * @param string
    */
   public function setHost($host)
   {
@@ -161,9 +73,7 @@ class GoogleCloudApigeeV1EndpointAttachment extends \Google\Model
     return $this->host;
   }
   /**
-   * Required. Location of the endpoint attachment.
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -177,10 +87,7 @@ class GoogleCloudApigeeV1EndpointAttachment extends \Google\Model
     return $this->location;
   }
   /**
-   * Name of the endpoint attachment. Use the following structure in your
-   * request: `organizations/{org}/endpointAttachments/{endpoint_attachment}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -194,9 +101,7 @@ class GoogleCloudApigeeV1EndpointAttachment extends \Google\Model
     return $this->name;
   }
   /**
-   * Format: projects/regions/serviceAttachments
-   *
-   * @param string $serviceAttachment
+   * @param string
    */
   public function setServiceAttachment($serviceAttachment)
   {
@@ -210,19 +115,14 @@ class GoogleCloudApigeeV1EndpointAttachment extends \Google\Model
     return $this->serviceAttachment;
   }
   /**
-   * Output only. State of the endpoint attachment. Values other than `ACTIVE`
-   * mean the resource is not ready to use.
-   *
-   * Accepted values: STATE_UNSPECIFIED, CREATING, ACTIVE, DELETING, UPDATING
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

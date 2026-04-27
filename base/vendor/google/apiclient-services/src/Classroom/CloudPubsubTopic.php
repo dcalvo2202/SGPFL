@@ -20,18 +20,12 @@ namespace Google\Service\Classroom;
 class CloudPubsubTopic extends \Google\Model
 {
   /**
-   * The `name` field of a Cloud Pub/Sub [Topic](https://cloud.google.com/pubsub
-   * /docs/reference/rest/v1/projects.topics#Topic).
-   *
    * @var string
    */
   public $topicName;
 
   /**
-   * The `name` field of a Cloud Pub/Sub [Topic](https://cloud.google.com/pubsub
-   * /docs/reference/rest/v1/projects.topics#Topic).
-   *
-   * @param string $topicName
+   * @param string
    */
   public function setTopicName($topicName)
   {

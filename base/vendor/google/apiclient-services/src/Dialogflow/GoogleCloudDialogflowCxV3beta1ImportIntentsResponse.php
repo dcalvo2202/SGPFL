@@ -28,7 +28,7 @@ class GoogleCloudDialogflowCxV3beta1ImportIntentsResponse extends \Google\Collec
   public $intents;
 
   /**
-   * @param GoogleCloudDialogflowCxV3beta1ImportIntentsResponseConflictingResources $conflictingResources
+   * @param GoogleCloudDialogflowCxV3beta1ImportIntentsResponseConflictingResources
    */
   public function setConflictingResources(GoogleCloudDialogflowCxV3beta1ImportIntentsResponseConflictingResources $conflictingResources)
   {
@@ -42,7 +42,7 @@ class GoogleCloudDialogflowCxV3beta1ImportIntentsResponse extends \Google\Collec
     return $this->conflictingResources;
   }
   /**
-   * @param string[] $intents
+   * @param string[]
    */
   public function setIntents($intents)
   {

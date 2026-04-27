@@ -20,18 +20,12 @@ namespace Google\Service\HomeGraphService;
 class QueryResponsePayload extends \Google\Model
 {
   /**
-   * States of the devices. Map of third-party device ID to struct of device
-   * states.
-   *
    * @var array[]
    */
   public $devices;
 
   /**
-   * States of the devices. Map of third-party device ID to struct of device
-   * states.
-   *
-   * @param array[] $devices
+   * @param array[]
    */
   public function setDevices($devices)
   {

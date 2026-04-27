@@ -20,143 +20,48 @@ namespace Google\Service\DataCatalog;
 class GoogleCloudDatacatalogV1SearchCatalogResult extends \Google\Model
 {
   /**
-   * Default unknown system.
-   */
-  public const INTEGRATED_SYSTEM_INTEGRATED_SYSTEM_UNSPECIFIED = 'INTEGRATED_SYSTEM_UNSPECIFIED';
-  /**
-   * BigQuery.
-   */
-  public const INTEGRATED_SYSTEM_BIGQUERY = 'BIGQUERY';
-  /**
-   * Cloud Pub/Sub.
-   */
-  public const INTEGRATED_SYSTEM_CLOUD_PUBSUB = 'CLOUD_PUBSUB';
-  /**
-   * Dataproc Metastore.
-   */
-  public const INTEGRATED_SYSTEM_DATAPROC_METASTORE = 'DATAPROC_METASTORE';
-  /**
-   * Dataplex Universal Catalog.
-   */
-  public const INTEGRATED_SYSTEM_DATAPLEX = 'DATAPLEX';
-  /**
-   * Cloud Spanner
-   */
-  public const INTEGRATED_SYSTEM_CLOUD_SPANNER = 'CLOUD_SPANNER';
-  /**
-   * Cloud Bigtable
-   */
-  public const INTEGRATED_SYSTEM_CLOUD_BIGTABLE = 'CLOUD_BIGTABLE';
-  /**
-   * Cloud Sql
-   */
-  public const INTEGRATED_SYSTEM_CLOUD_SQL = 'CLOUD_SQL';
-  /**
-   * Looker
-   */
-  public const INTEGRATED_SYSTEM_LOOKER = 'LOOKER';
-  /**
-   * Vertex AI
-   */
-  public const INTEGRATED_SYSTEM_VERTEX_AI = 'VERTEX_AI';
-  /**
-   * Default unknown type.
-   */
-  public const SEARCH_RESULT_TYPE_SEARCH_RESULT_TYPE_UNSPECIFIED = 'SEARCH_RESULT_TYPE_UNSPECIFIED';
-  /**
-   * An Entry.
-   */
-  public const SEARCH_RESULT_TYPE_ENTRY = 'ENTRY';
-  /**
-   * A TagTemplate.
-   */
-  public const SEARCH_RESULT_TYPE_TAG_TEMPLATE = 'TAG_TEMPLATE';
-  /**
-   * An EntryGroup.
-   */
-  public const SEARCH_RESULT_TYPE_ENTRY_GROUP = 'ENTRY_GROUP';
-  /**
-   * Entry description that can consist of several sentences or paragraphs that
-   * describe entry contents.
-   *
    * @var string
    */
   public $description;
   /**
-   * The display name of the result.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Fully qualified name (FQN) of the resource. FQNs take two forms: * For non-
-   * regionalized resources:
-   * `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}` * For
-   * regionalized resources:
-   * `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
-   * Example for a DPMS table: `dataproc_metastore:PROJECT_ID.LOCATION_ID.INSTAN
-   * CE_ID.DATABASE_ID.TABLE_ID`
-   *
    * @var string
    */
   public $fullyQualifiedName;
   /**
-   * Output only. The source system that Data Catalog automatically integrates
-   * with, such as BigQuery, Cloud Pub/Sub, or Dataproc Metastore.
-   *
    * @var string
    */
   public $integratedSystem;
   /**
-   * The full name of the Google Cloud resource the entry belongs to. For more
-   * information, see [Full Resource Name]
-   * (/apis/design/resource_names#full_resource_name). Example: `//bigquery.goog
-   * leapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID`
-   *
    * @var string
    */
   public $linkedResource;
   /**
-   * The last modification timestamp of the entry in the source system.
-   *
    * @var string
    */
   public $modifyTime;
   /**
-   * The relative name of the resource in URL format. Examples: * `projects/{PRO
-   * JECT_ID}/locations/{LOCATION_ID}/entryGroups/{ENTRY_GROUP_ID}/entries/{ENTR
-   * Y_ID}` * `projects/{PROJECT_ID}/tagTemplates/{TAG_TEMPLATE_ID}`
-   *
    * @var string
    */
   public $relativeResourceName;
   /**
-   * Sub-type of the search result. A dot-delimited full type of the resource.
-   * The same type you specify in the `type` search predicate. Examples:
-   * `entry.table`, `entry.dataStream`, `tagTemplate`.
-   *
    * @var string
    */
   public $searchResultSubtype;
   /**
-   * Type of the search result. You can use this field to determine which get
-   * method to call to fetch the full resource.
-   *
    * @var string
    */
   public $searchResultType;
   /**
-   * Custom source system that you can manually integrate Data Catalog with.
-   *
    * @var string
    */
   public $userSpecifiedSystem;
 
   /**
-   * Entry description that can consist of several sentences or paragraphs that
-   * describe entry contents.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -170,9 +75,7 @@ class GoogleCloudDatacatalogV1SearchCatalogResult extends \Google\Model
     return $this->description;
   }
   /**
-   * The display name of the result.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -186,15 +89,7 @@ class GoogleCloudDatacatalogV1SearchCatalogResult extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Fully qualified name (FQN) of the resource. FQNs take two forms: * For non-
-   * regionalized resources:
-   * `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}` * For
-   * regionalized resources:
-   * `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
-   * Example for a DPMS table: `dataproc_metastore:PROJECT_ID.LOCATION_ID.INSTAN
-   * CE_ID.DATABASE_ID.TABLE_ID`
-   *
-   * @param string $fullyQualifiedName
+   * @param string
    */
   public function setFullyQualifiedName($fullyQualifiedName)
   {
@@ -208,33 +103,21 @@ class GoogleCloudDatacatalogV1SearchCatalogResult extends \Google\Model
     return $this->fullyQualifiedName;
   }
   /**
-   * Output only. The source system that Data Catalog automatically integrates
-   * with, such as BigQuery, Cloud Pub/Sub, or Dataproc Metastore.
-   *
-   * Accepted values: INTEGRATED_SYSTEM_UNSPECIFIED, BIGQUERY, CLOUD_PUBSUB,
-   * DATAPROC_METASTORE, DATAPLEX, CLOUD_SPANNER, CLOUD_BIGTABLE, CLOUD_SQL,
-   * LOOKER, VERTEX_AI
-   *
-   * @param self::INTEGRATED_SYSTEM_* $integratedSystem
+   * @param string
    */
   public function setIntegratedSystem($integratedSystem)
   {
     $this->integratedSystem = $integratedSystem;
   }
   /**
-   * @return self::INTEGRATED_SYSTEM_*
+   * @return string
    */
   public function getIntegratedSystem()
   {
     return $this->integratedSystem;
   }
   /**
-   * The full name of the Google Cloud resource the entry belongs to. For more
-   * information, see [Full Resource Name]
-   * (/apis/design/resource_names#full_resource_name). Example: `//bigquery.goog
-   * leapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID`
-   *
-   * @param string $linkedResource
+   * @param string
    */
   public function setLinkedResource($linkedResource)
   {
@@ -248,9 +131,7 @@ class GoogleCloudDatacatalogV1SearchCatalogResult extends \Google\Model
     return $this->linkedResource;
   }
   /**
-   * The last modification timestamp of the entry in the source system.
-   *
-   * @param string $modifyTime
+   * @param string
    */
   public function setModifyTime($modifyTime)
   {
@@ -264,11 +145,7 @@ class GoogleCloudDatacatalogV1SearchCatalogResult extends \Google\Model
     return $this->modifyTime;
   }
   /**
-   * The relative name of the resource in URL format. Examples: * `projects/{PRO
-   * JECT_ID}/locations/{LOCATION_ID}/entryGroups/{ENTRY_GROUP_ID}/entries/{ENTR
-   * Y_ID}` * `projects/{PROJECT_ID}/tagTemplates/{TAG_TEMPLATE_ID}`
-   *
-   * @param string $relativeResourceName
+   * @param string
    */
   public function setRelativeResourceName($relativeResourceName)
   {
@@ -282,11 +159,7 @@ class GoogleCloudDatacatalogV1SearchCatalogResult extends \Google\Model
     return $this->relativeResourceName;
   }
   /**
-   * Sub-type of the search result. A dot-delimited full type of the resource.
-   * The same type you specify in the `type` search predicate. Examples:
-   * `entry.table`, `entry.dataStream`, `tagTemplate`.
-   *
-   * @param string $searchResultSubtype
+   * @param string
    */
   public function setSearchResultSubtype($searchResultSubtype)
   {
@@ -300,29 +173,21 @@ class GoogleCloudDatacatalogV1SearchCatalogResult extends \Google\Model
     return $this->searchResultSubtype;
   }
   /**
-   * Type of the search result. You can use this field to determine which get
-   * method to call to fetch the full resource.
-   *
-   * Accepted values: SEARCH_RESULT_TYPE_UNSPECIFIED, ENTRY, TAG_TEMPLATE,
-   * ENTRY_GROUP
-   *
-   * @param self::SEARCH_RESULT_TYPE_* $searchResultType
+   * @param string
    */
   public function setSearchResultType($searchResultType)
   {
     $this->searchResultType = $searchResultType;
   }
   /**
-   * @return self::SEARCH_RESULT_TYPE_*
+   * @return string
    */
   public function getSearchResultType()
   {
     return $this->searchResultType;
   }
   /**
-   * Custom source system that you can manually integrate Data Catalog with.
-   *
-   * @param string $userSpecifiedSystem
+   * @param string
    */
   public function setUserSpecifiedSystem($userSpecifiedSystem)
   {

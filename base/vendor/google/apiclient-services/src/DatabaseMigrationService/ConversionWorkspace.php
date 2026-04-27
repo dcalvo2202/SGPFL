@@ -20,128 +20,52 @@ namespace Google\Service\DatabaseMigrationService;
 class ConversionWorkspace extends \Google\Model
 {
   /**
-   * Use this value for on-premise source database instances and ORACLE.
-   */
-  public const DESTINATION_PROVIDER_DATABASE_PROVIDER_UNSPECIFIED = 'DATABASE_PROVIDER_UNSPECIFIED';
-  /**
-   * Cloud SQL is the source instance provider.
-   */
-  public const DESTINATION_PROVIDER_CLOUDSQL = 'CLOUDSQL';
-  /**
-   * Amazon RDS is the source instance provider.
-   */
-  public const DESTINATION_PROVIDER_RDS = 'RDS';
-  /**
-   * Amazon Aurora is the source instance provider.
-   */
-  public const DESTINATION_PROVIDER_AURORA = 'AURORA';
-  /**
-   * AlloyDB for PostgreSQL is the source instance provider.
-   */
-  public const DESTINATION_PROVIDER_ALLOYDB = 'ALLOYDB';
-  /**
-   * Microsoft Azure Database for MySQL/PostgreSQL.
-   */
-  public const DESTINATION_PROVIDER_AZURE_DATABASE = 'AZURE_DATABASE';
-  /**
-   * Use this value for on-premise source database instances and ORACLE.
-   */
-  public const SOURCE_PROVIDER_DATABASE_PROVIDER_UNSPECIFIED = 'DATABASE_PROVIDER_UNSPECIFIED';
-  /**
-   * Cloud SQL is the source instance provider.
-   */
-  public const SOURCE_PROVIDER_CLOUDSQL = 'CLOUDSQL';
-  /**
-   * Amazon RDS is the source instance provider.
-   */
-  public const SOURCE_PROVIDER_RDS = 'RDS';
-  /**
-   * Amazon Aurora is the source instance provider.
-   */
-  public const SOURCE_PROVIDER_AURORA = 'AURORA';
-  /**
-   * AlloyDB for PostgreSQL is the source instance provider.
-   */
-  public const SOURCE_PROVIDER_ALLOYDB = 'ALLOYDB';
-  /**
-   * Microsoft Azure Database for MySQL/PostgreSQL.
-   */
-  public const SOURCE_PROVIDER_AZURE_DATABASE = 'AZURE_DATABASE';
-  /**
-   * Output only. The timestamp when the workspace resource was created.
-   *
    * @var string
    */
   public $createTime;
   protected $destinationType = DatabaseEngineInfo::class;
   protected $destinationDataType = '';
   /**
-   * Optional. The provider for the destination database.
-   *
    * @var string
    */
   public $destinationProvider;
   /**
-   * Optional. The display name for the workspace.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Optional. A generic list of settings for the workspace. The settings are
-   * database pair dependant and can indicate default behavior for the mapping
-   * rules engine or turn on or off specific features. Such examples can be:
-   * convert_foreign_key_to_interleave=true, skip_triggers=false,
-   * ignore_non_table_synonyms=true
-   *
    * @var string[]
    */
   public $globalSettings;
   /**
-   * Output only. Whether the workspace has uncommitted changes (changes which
-   * were made after the workspace was committed).
-   *
    * @var bool
    */
   public $hasUncommittedChanges;
   /**
-   * Output only. The latest commit ID.
-   *
    * @var string
    */
   public $latestCommitId;
   /**
-   * Output only. The timestamp when the workspace was committed.
-   *
    * @var string
    */
   public $latestCommitTime;
   /**
-   * Full name of the workspace resource, in the form of: projects/{project}/loc
-   * ations/{location}/conversionWorkspaces/{conversion_workspace}.
-   *
    * @var string
    */
   public $name;
   protected $sourceType = DatabaseEngineInfo::class;
   protected $sourceDataType = '';
   /**
-   * Optional. The provider for the source database.
-   *
    * @var string
    */
   public $sourceProvider;
   /**
-   * Output only. The timestamp when the workspace resource was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. The timestamp when the workspace resource was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -155,9 +79,7 @@ class ConversionWorkspace extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Required. The destination engine details.
-   *
-   * @param DatabaseEngineInfo $destination
+   * @param DatabaseEngineInfo
    */
   public function setDestination(DatabaseEngineInfo $destination)
   {
@@ -171,28 +93,21 @@ class ConversionWorkspace extends \Google\Model
     return $this->destination;
   }
   /**
-   * Optional. The provider for the destination database.
-   *
-   * Accepted values: DATABASE_PROVIDER_UNSPECIFIED, CLOUDSQL, RDS, AURORA,
-   * ALLOYDB, AZURE_DATABASE
-   *
-   * @param self::DESTINATION_PROVIDER_* $destinationProvider
+   * @param string
    */
   public function setDestinationProvider($destinationProvider)
   {
     $this->destinationProvider = $destinationProvider;
   }
   /**
-   * @return self::DESTINATION_PROVIDER_*
+   * @return string
    */
   public function getDestinationProvider()
   {
     return $this->destinationProvider;
   }
   /**
-   * Optional. The display name for the workspace.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -206,13 +121,7 @@ class ConversionWorkspace extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Optional. A generic list of settings for the workspace. The settings are
-   * database pair dependant and can indicate default behavior for the mapping
-   * rules engine or turn on or off specific features. Such examples can be:
-   * convert_foreign_key_to_interleave=true, skip_triggers=false,
-   * ignore_non_table_synonyms=true
-   *
-   * @param string[] $globalSettings
+   * @param string[]
    */
   public function setGlobalSettings($globalSettings)
   {
@@ -226,10 +135,7 @@ class ConversionWorkspace extends \Google\Model
     return $this->globalSettings;
   }
   /**
-   * Output only. Whether the workspace has uncommitted changes (changes which
-   * were made after the workspace was committed).
-   *
-   * @param bool $hasUncommittedChanges
+   * @param bool
    */
   public function setHasUncommittedChanges($hasUncommittedChanges)
   {
@@ -243,9 +149,7 @@ class ConversionWorkspace extends \Google\Model
     return $this->hasUncommittedChanges;
   }
   /**
-   * Output only. The latest commit ID.
-   *
-   * @param string $latestCommitId
+   * @param string
    */
   public function setLatestCommitId($latestCommitId)
   {
@@ -259,9 +163,7 @@ class ConversionWorkspace extends \Google\Model
     return $this->latestCommitId;
   }
   /**
-   * Output only. The timestamp when the workspace was committed.
-   *
-   * @param string $latestCommitTime
+   * @param string
    */
   public function setLatestCommitTime($latestCommitTime)
   {
@@ -275,10 +177,7 @@ class ConversionWorkspace extends \Google\Model
     return $this->latestCommitTime;
   }
   /**
-   * Full name of the workspace resource, in the form of: projects/{project}/loc
-   * ations/{location}/conversionWorkspaces/{conversion_workspace}.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -292,9 +191,7 @@ class ConversionWorkspace extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. The source engine details.
-   *
-   * @param DatabaseEngineInfo $source
+   * @param DatabaseEngineInfo
    */
   public function setSource(DatabaseEngineInfo $source)
   {
@@ -308,28 +205,21 @@ class ConversionWorkspace extends \Google\Model
     return $this->source;
   }
   /**
-   * Optional. The provider for the source database.
-   *
-   * Accepted values: DATABASE_PROVIDER_UNSPECIFIED, CLOUDSQL, RDS, AURORA,
-   * ALLOYDB, AZURE_DATABASE
-   *
-   * @param self::SOURCE_PROVIDER_* $sourceProvider
+   * @param string
    */
   public function setSourceProvider($sourceProvider)
   {
     $this->sourceProvider = $sourceProvider;
   }
   /**
-   * @return self::SOURCE_PROVIDER_*
+   * @return string
    */
   public function getSourceProvider()
   {
     return $this->sourceProvider;
   }
   /**
-   * Output only. The timestamp when the workspace resource was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

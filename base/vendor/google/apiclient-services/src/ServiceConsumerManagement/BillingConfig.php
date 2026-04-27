@@ -20,18 +20,12 @@ namespace Google\Service\ServiceConsumerManagement;
 class BillingConfig extends \Google\Model
 {
   /**
-   * Name of the billing account. For example
-   * `billingAccounts/012345-567890-ABCDEF`.
-   *
    * @var string
    */
   public $billingAccount;
 
   /**
-   * Name of the billing account. For example
-   * `billingAccounts/012345-567890-ABCDEF`.
-   *
-   * @param string $billingAccount
+   * @param string
    */
   public function setBillingAccount($billingAccount)
   {

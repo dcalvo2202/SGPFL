@@ -21,68 +21,37 @@ class GoogleCloudContactcenterinsightsV1QaScorecardResult extends \Google\Collec
 {
   protected $collection_key = 'scoreSources';
   /**
-   * ID of the agent that handled the conversation.
-   *
    * @var string
    */
   public $agentId;
   /**
-   * The conversation scored by this result.
-   *
    * @var string
    */
   public $conversation;
   /**
-   * Output only. The timestamp that the revision was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Identifier. The name of the scorecard result. Format: projects/{project}/lo
-   * cations/{location}/qaScorecardResults/{qa_scorecard_result}
-   *
    * @var string
    */
   public $name;
-  /**
-   * The normalized score, which is the score divided by the potential score.
-   * Any manual edits are included if they exist.
-   *
-   * @var 
-   */
   public $normalizedScore;
-  /**
-   * The maximum potential overall score of the scorecard. Any questions
-   * answered using `na_value` are excluded from this calculation.
-   *
-   * @var 
-   */
   public $potentialScore;
   protected $qaAnswersType = GoogleCloudContactcenterinsightsV1QaAnswer::class;
   protected $qaAnswersDataType = 'array';
   /**
-   * The QaScorecardRevision scored by this result.
-   *
    * @var string
    */
   public $qaScorecardRevision;
   protected $qaTagResultsType = GoogleCloudContactcenterinsightsV1QaScorecardResultQaTagResult::class;
   protected $qaTagResultsDataType = 'array';
-  /**
-   * The overall numerical score of the result, incorporating any manual edits
-   * if they exist.
-   *
-   * @var 
-   */
   public $score;
   protected $scoreSourcesType = GoogleCloudContactcenterinsightsV1QaScorecardResultScoreSource::class;
   protected $scoreSourcesDataType = 'array';
 
   /**
-   * ID of the agent that handled the conversation.
-   *
-   * @param string $agentId
+   * @param string
    */
   public function setAgentId($agentId)
   {
@@ -96,9 +65,7 @@ class GoogleCloudContactcenterinsightsV1QaScorecardResult extends \Google\Collec
     return $this->agentId;
   }
   /**
-   * The conversation scored by this result.
-   *
-   * @param string $conversation
+   * @param string
    */
   public function setConversation($conversation)
   {
@@ -112,9 +79,7 @@ class GoogleCloudContactcenterinsightsV1QaScorecardResult extends \Google\Collec
     return $this->conversation;
   }
   /**
-   * Output only. The timestamp that the revision was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -128,10 +93,7 @@ class GoogleCloudContactcenterinsightsV1QaScorecardResult extends \Google\Collec
     return $this->createTime;
   }
   /**
-   * Identifier. The name of the scorecard result. Format: projects/{project}/lo
-   * cations/{location}/qaScorecardResults/{qa_scorecard_result}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -161,9 +123,7 @@ class GoogleCloudContactcenterinsightsV1QaScorecardResult extends \Google\Collec
     return $this->potentialScore;
   }
   /**
-   * Set of QaAnswers represented in the result.
-   *
-   * @param GoogleCloudContactcenterinsightsV1QaAnswer[] $qaAnswers
+   * @param GoogleCloudContactcenterinsightsV1QaAnswer[]
    */
   public function setQaAnswers($qaAnswers)
   {
@@ -177,9 +137,7 @@ class GoogleCloudContactcenterinsightsV1QaScorecardResult extends \Google\Collec
     return $this->qaAnswers;
   }
   /**
-   * The QaScorecardRevision scored by this result.
-   *
-   * @param string $qaScorecardRevision
+   * @param string
    */
   public function setQaScorecardRevision($qaScorecardRevision)
   {
@@ -193,9 +151,7 @@ class GoogleCloudContactcenterinsightsV1QaScorecardResult extends \Google\Collec
     return $this->qaScorecardRevision;
   }
   /**
-   * Collection of tags and their scores.
-   *
-   * @param GoogleCloudContactcenterinsightsV1QaScorecardResultQaTagResult[] $qaTagResults
+   * @param GoogleCloudContactcenterinsightsV1QaScorecardResultQaTagResult[]
    */
   public function setQaTagResults($qaTagResults)
   {
@@ -217,9 +173,7 @@ class GoogleCloudContactcenterinsightsV1QaScorecardResult extends \Google\Collec
     return $this->score;
   }
   /**
-   * List of all individual score sets.
-   *
-   * @param GoogleCloudContactcenterinsightsV1QaScorecardResultScoreSource[] $scoreSources
+   * @param GoogleCloudContactcenterinsightsV1QaScorecardResultScoreSource[]
    */
   public function setScoreSources($scoreSources)
   {

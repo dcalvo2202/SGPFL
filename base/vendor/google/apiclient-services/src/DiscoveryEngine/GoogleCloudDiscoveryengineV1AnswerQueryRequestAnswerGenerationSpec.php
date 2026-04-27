@@ -20,64 +20,26 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1AnswerQueryRequestAnswerGenerationSpec extends \Google\Model
 {
   /**
-   * Language code for Answer. Use language tags defined by
-   * [BCP47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt). Note: This is an
-   * experimental feature.
-   *
    * @var string
    */
   public $answerLanguageCode;
   /**
-   * Specifies whether to filter out adversarial queries. The default value is
-   * `false`. Google employs search-query classification to detect adversarial
-   * queries. No answer is returned if the search query is classified as an
-   * adversarial query. For example, a user might ask a question regarding
-   * negative comments about the company or submit a query designed to generate
-   * unsafe, policy-violating output. If this field is set to `true`, we skip
-   * generating answers for adversarial queries and return fallback messages
-   * instead.
-   *
    * @var bool
    */
   public $ignoreAdversarialQuery;
   /**
-   * Optional. Specifies whether to filter out jail-breaking queries. The
-   * default value is `false`. Google employs search-query classification to
-   * detect jail-breaking queries. No summary is returned if the search query is
-   * classified as a jail-breaking query. A user might add instructions to the
-   * query to change the tone, style, language, content of the answer, or ask
-   * the model to act as a different entity, e.g. "Reply in the tone of a
-   * competing company's CEO". If this field is set to `true`, we skip
-   * generating summaries for jail-breaking queries and return fallback messages
-   * instead.
-   *
    * @var bool
    */
   public $ignoreJailBreakingQuery;
   /**
-   * Specifies whether to filter out queries that have low relevance. If this
-   * field is set to `false`, all search results are used regardless of
-   * relevance to generate answers. If set to `true` or unset, the behavior will
-   * be determined automatically by the service.
-   *
    * @var bool
    */
   public $ignoreLowRelevantContent;
   /**
-   * Specifies whether to filter out queries that are not answer-seeking. The
-   * default value is `false`. Google employs search-query classification to
-   * detect answer-seeking queries. No answer is returned if the search query is
-   * classified as a non-answer seeking query. If this field is set to `true`,
-   * we skip generating answers for non-answer seeking queries and return
-   * fallback messages instead.
-   *
    * @var bool
    */
   public $ignoreNonAnswerSeekingQuery;
   /**
-   * Specifies whether to include citation metadata in the answer. The default
-   * value is `false`.
-   *
    * @var bool
    */
   public $includeCitations;
@@ -87,11 +49,7 @@ class GoogleCloudDiscoveryengineV1AnswerQueryRequestAnswerGenerationSpec extends
   protected $promptSpecDataType = '';
 
   /**
-   * Language code for Answer. Use language tags defined by
-   * [BCP47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt). Note: This is an
-   * experimental feature.
-   *
-   * @param string $answerLanguageCode
+   * @param string
    */
   public function setAnswerLanguageCode($answerLanguageCode)
   {
@@ -105,16 +63,7 @@ class GoogleCloudDiscoveryengineV1AnswerQueryRequestAnswerGenerationSpec extends
     return $this->answerLanguageCode;
   }
   /**
-   * Specifies whether to filter out adversarial queries. The default value is
-   * `false`. Google employs search-query classification to detect adversarial
-   * queries. No answer is returned if the search query is classified as an
-   * adversarial query. For example, a user might ask a question regarding
-   * negative comments about the company or submit a query designed to generate
-   * unsafe, policy-violating output. If this field is set to `true`, we skip
-   * generating answers for adversarial queries and return fallback messages
-   * instead.
-   *
-   * @param bool $ignoreAdversarialQuery
+   * @param bool
    */
   public function setIgnoreAdversarialQuery($ignoreAdversarialQuery)
   {
@@ -128,17 +77,7 @@ class GoogleCloudDiscoveryengineV1AnswerQueryRequestAnswerGenerationSpec extends
     return $this->ignoreAdversarialQuery;
   }
   /**
-   * Optional. Specifies whether to filter out jail-breaking queries. The
-   * default value is `false`. Google employs search-query classification to
-   * detect jail-breaking queries. No summary is returned if the search query is
-   * classified as a jail-breaking query. A user might add instructions to the
-   * query to change the tone, style, language, content of the answer, or ask
-   * the model to act as a different entity, e.g. "Reply in the tone of a
-   * competing company's CEO". If this field is set to `true`, we skip
-   * generating summaries for jail-breaking queries and return fallback messages
-   * instead.
-   *
-   * @param bool $ignoreJailBreakingQuery
+   * @param bool
    */
   public function setIgnoreJailBreakingQuery($ignoreJailBreakingQuery)
   {
@@ -152,12 +91,7 @@ class GoogleCloudDiscoveryengineV1AnswerQueryRequestAnswerGenerationSpec extends
     return $this->ignoreJailBreakingQuery;
   }
   /**
-   * Specifies whether to filter out queries that have low relevance. If this
-   * field is set to `false`, all search results are used regardless of
-   * relevance to generate answers. If set to `true` or unset, the behavior will
-   * be determined automatically by the service.
-   *
-   * @param bool $ignoreLowRelevantContent
+   * @param bool
    */
   public function setIgnoreLowRelevantContent($ignoreLowRelevantContent)
   {
@@ -171,14 +105,7 @@ class GoogleCloudDiscoveryengineV1AnswerQueryRequestAnswerGenerationSpec extends
     return $this->ignoreLowRelevantContent;
   }
   /**
-   * Specifies whether to filter out queries that are not answer-seeking. The
-   * default value is `false`. Google employs search-query classification to
-   * detect answer-seeking queries. No answer is returned if the search query is
-   * classified as a non-answer seeking query. If this field is set to `true`,
-   * we skip generating answers for non-answer seeking queries and return
-   * fallback messages instead.
-   *
-   * @param bool $ignoreNonAnswerSeekingQuery
+   * @param bool
    */
   public function setIgnoreNonAnswerSeekingQuery($ignoreNonAnswerSeekingQuery)
   {
@@ -192,10 +119,7 @@ class GoogleCloudDiscoveryengineV1AnswerQueryRequestAnswerGenerationSpec extends
     return $this->ignoreNonAnswerSeekingQuery;
   }
   /**
-   * Specifies whether to include citation metadata in the answer. The default
-   * value is `false`.
-   *
-   * @param bool $includeCitations
+   * @param bool
    */
   public function setIncludeCitations($includeCitations)
   {
@@ -209,9 +133,7 @@ class GoogleCloudDiscoveryengineV1AnswerQueryRequestAnswerGenerationSpec extends
     return $this->includeCitations;
   }
   /**
-   * Answer generation model specification.
-   *
-   * @param GoogleCloudDiscoveryengineV1AnswerQueryRequestAnswerGenerationSpecModelSpec $modelSpec
+   * @param GoogleCloudDiscoveryengineV1AnswerQueryRequestAnswerGenerationSpecModelSpec
    */
   public function setModelSpec(GoogleCloudDiscoveryengineV1AnswerQueryRequestAnswerGenerationSpecModelSpec $modelSpec)
   {
@@ -225,9 +147,7 @@ class GoogleCloudDiscoveryengineV1AnswerQueryRequestAnswerGenerationSpec extends
     return $this->modelSpec;
   }
   /**
-   * Answer generation prompt specification.
-   *
-   * @param GoogleCloudDiscoveryengineV1AnswerQueryRequestAnswerGenerationSpecPromptSpec $promptSpec
+   * @param GoogleCloudDiscoveryengineV1AnswerQueryRequestAnswerGenerationSpecPromptSpec
    */
   public function setPromptSpec(GoogleCloudDiscoveryengineV1AnswerQueryRequestAnswerGenerationSpecPromptSpec $promptSpec)
   {

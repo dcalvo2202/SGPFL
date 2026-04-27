@@ -25,10 +25,7 @@ class GoogleCloudRecaptchaenterpriseV1ScoreMetrics extends \Google\Model
   protected $overallMetricsDataType = '';
 
   /**
-   * Action-based metrics. The map key is the action name which specified by the
-   * site owners at time of the "execute" client-side call.
-   *
-   * @param GoogleCloudRecaptchaenterpriseV1ScoreDistribution[] $actionMetrics
+   * @param GoogleCloudRecaptchaenterpriseV1ScoreDistribution[]
    */
   public function setActionMetrics($actionMetrics)
   {
@@ -42,9 +39,7 @@ class GoogleCloudRecaptchaenterpriseV1ScoreMetrics extends \Google\Model
     return $this->actionMetrics;
   }
   /**
-   * Aggregated score metrics for all traffic.
-   *
-   * @param GoogleCloudRecaptchaenterpriseV1ScoreDistribution $overallMetrics
+   * @param GoogleCloudRecaptchaenterpriseV1ScoreDistribution
    */
   public function setOverallMetrics(GoogleCloudRecaptchaenterpriseV1ScoreDistribution $overallMetrics)
   {

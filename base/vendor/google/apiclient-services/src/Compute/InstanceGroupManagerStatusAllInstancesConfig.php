@@ -20,25 +20,16 @@ namespace Google\Service\Compute;
 class InstanceGroupManagerStatusAllInstancesConfig extends \Google\Model
 {
   /**
-   * Output only. Current all-instances configuration revision. This value is in
-   * RFC3339 text format.
-   *
    * @var string
    */
   public $currentRevision;
   /**
-   * Output only. A bit indicating whether this configuration has been applied
-   * to all managed instances in the group.
-   *
    * @var bool
    */
   public $effective;
 
   /**
-   * Output only. Current all-instances configuration revision. This value is in
-   * RFC3339 text format.
-   *
-   * @param string $currentRevision
+   * @param string
    */
   public function setCurrentRevision($currentRevision)
   {
@@ -52,10 +43,7 @@ class InstanceGroupManagerStatusAllInstancesConfig extends \Google\Model
     return $this->currentRevision;
   }
   /**
-   * Output only. A bit indicating whether this configuration has been applied
-   * to all managed instances in the group.
-   *
-   * @param bool $effective
+   * @param bool
    */
   public function setEffective($effective)
   {

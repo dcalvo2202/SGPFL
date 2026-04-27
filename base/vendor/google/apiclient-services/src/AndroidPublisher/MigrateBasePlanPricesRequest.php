@@ -19,47 +19,20 @@ namespace Google\Service\AndroidPublisher;
 
 class MigrateBasePlanPricesRequest extends \Google\Collection
 {
-  /**
-   * Defaults to PRODUCT_UPDATE_LATENCY_TOLERANCE_LATENCY_SENSITIVE.
-   */
-  public const LATENCY_TOLERANCE_PRODUCT_UPDATE_LATENCY_TOLERANCE_UNSPECIFIED = 'PRODUCT_UPDATE_LATENCY_TOLERANCE_UNSPECIFIED';
-  /**
-   * The update will propagate to clients within several minutes on average and
-   * up to a few hours in rare cases. Throughput is limited to 7,200 updates per
-   * app per hour.
-   */
-  public const LATENCY_TOLERANCE_PRODUCT_UPDATE_LATENCY_TOLERANCE_LATENCY_SENSITIVE = 'PRODUCT_UPDATE_LATENCY_TOLERANCE_LATENCY_SENSITIVE';
-  /**
-   * The update will propagate to clients within 24 hours. Supports high
-   * throughput of up to 720,000 updates per app per hour using batch
-   * modification methods.
-   */
-  public const LATENCY_TOLERANCE_PRODUCT_UPDATE_LATENCY_TOLERANCE_LATENCY_TOLERANT = 'PRODUCT_UPDATE_LATENCY_TOLERANCE_LATENCY_TOLERANT';
   protected $collection_key = 'regionalPriceMigrations';
   /**
-   * Required. The unique base plan ID of the base plan to update prices on.
-   *
    * @var string
    */
   public $basePlanId;
   /**
-   * Optional. The latency tolerance for the propagation of this product update.
-   * Defaults to latency-sensitive.
-   *
    * @var string
    */
   public $latencyTolerance;
   /**
-   * Required. Package name of the parent app. Must be equal to the package_name
-   * field on the Subscription resource.
-   *
    * @var string
    */
   public $packageName;
   /**
-   * Required. The ID of the subscription to update. Must be equal to the
-   * product_id field on the Subscription resource.
-   *
    * @var string
    */
   public $productId;
@@ -69,9 +42,7 @@ class MigrateBasePlanPricesRequest extends \Google\Collection
   protected $regionsVersionDataType = '';
 
   /**
-   * Required. The unique base plan ID of the base plan to update prices on.
-   *
-   * @param string $basePlanId
+   * @param string
    */
   public function setBasePlanId($basePlanId)
   {
@@ -85,31 +56,21 @@ class MigrateBasePlanPricesRequest extends \Google\Collection
     return $this->basePlanId;
   }
   /**
-   * Optional. The latency tolerance for the propagation of this product update.
-   * Defaults to latency-sensitive.
-   *
-   * Accepted values: PRODUCT_UPDATE_LATENCY_TOLERANCE_UNSPECIFIED,
-   * PRODUCT_UPDATE_LATENCY_TOLERANCE_LATENCY_SENSITIVE,
-   * PRODUCT_UPDATE_LATENCY_TOLERANCE_LATENCY_TOLERANT
-   *
-   * @param self::LATENCY_TOLERANCE_* $latencyTolerance
+   * @param string
    */
   public function setLatencyTolerance($latencyTolerance)
   {
     $this->latencyTolerance = $latencyTolerance;
   }
   /**
-   * @return self::LATENCY_TOLERANCE_*
+   * @return string
    */
   public function getLatencyTolerance()
   {
     return $this->latencyTolerance;
   }
   /**
-   * Required. Package name of the parent app. Must be equal to the package_name
-   * field on the Subscription resource.
-   *
-   * @param string $packageName
+   * @param string
    */
   public function setPackageName($packageName)
   {
@@ -123,10 +84,7 @@ class MigrateBasePlanPricesRequest extends \Google\Collection
     return $this->packageName;
   }
   /**
-   * Required. The ID of the subscription to update. Must be equal to the
-   * product_id field on the Subscription resource.
-   *
-   * @param string $productId
+   * @param string
    */
   public function setProductId($productId)
   {
@@ -140,9 +98,7 @@ class MigrateBasePlanPricesRequest extends \Google\Collection
     return $this->productId;
   }
   /**
-   * Required. The regional prices to update.
-   *
-   * @param RegionalPriceMigrationConfig[] $regionalPriceMigrations
+   * @param RegionalPriceMigrationConfig[]
    */
   public function setRegionalPriceMigrations($regionalPriceMigrations)
   {
@@ -156,10 +112,7 @@ class MigrateBasePlanPricesRequest extends \Google\Collection
     return $this->regionalPriceMigrations;
   }
   /**
-   * Required. The version of the available regions being used for the
-   * regional_price_migrations.
-   *
-   * @param RegionsVersion $regionsVersion
+   * @param RegionsVersion
    */
   public function setRegionsVersion(RegionsVersion $regionsVersion)
   {

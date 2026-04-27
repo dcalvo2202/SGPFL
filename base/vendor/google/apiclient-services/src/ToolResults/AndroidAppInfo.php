@@ -20,34 +20,24 @@ namespace Google\Service\ToolResults;
 class AndroidAppInfo extends \Google\Model
 {
   /**
-   * The name of the app. Optional
-   *
    * @var string
    */
   public $name;
   /**
-   * The package name of the app. Required.
-   *
    * @var string
    */
   public $packageName;
   /**
-   * The internal version code of the app. Optional.
-   *
    * @var string
    */
   public $versionCode;
   /**
-   * The version name of the app. Optional.
-   *
    * @var string
    */
   public $versionName;
 
   /**
-   * The name of the app. Optional
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -61,9 +51,7 @@ class AndroidAppInfo extends \Google\Model
     return $this->name;
   }
   /**
-   * The package name of the app. Required.
-   *
-   * @param string $packageName
+   * @param string
    */
   public function setPackageName($packageName)
   {
@@ -77,9 +65,7 @@ class AndroidAppInfo extends \Google\Model
     return $this->packageName;
   }
   /**
-   * The internal version code of the app. Optional.
-   *
-   * @param string $versionCode
+   * @param string
    */
   public function setVersionCode($versionCode)
   {
@@ -93,9 +79,7 @@ class AndroidAppInfo extends \Google\Model
     return $this->versionCode;
   }
   /**
-   * The version name of the app. Optional.
-   *
-   * @param string $versionName
+   * @param string
    */
   public function setVersionName($versionName)
   {

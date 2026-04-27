@@ -20,16 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1RougeMetricValue extends \Google\Model
 {
   /**
-   * Output only. Rouge score.
-   *
    * @var float
    */
   public $score;
 
   /**
-   * Output only. Rouge score.
-   *
-   * @param float $score
+   * @param float
    */
   public function setScore($score)
   {

@@ -21,10 +21,6 @@ class OSPolicyResourcePackageResourceMSI extends \Google\Collection
 {
   protected $collection_key = 'properties';
   /**
-   * Additional properties to use during installation. This should be in the
-   * format of Property=Setting. Appended to the defaults of `ACTION=INSTALL
-   * REBOOT=ReallySuppress`.
-   *
    * @var string[]
    */
   public $properties;
@@ -32,11 +28,7 @@ class OSPolicyResourcePackageResourceMSI extends \Google\Collection
   protected $sourceDataType = '';
 
   /**
-   * Additional properties to use during installation. This should be in the
-   * format of Property=Setting. Appended to the defaults of `ACTION=INSTALL
-   * REBOOT=ReallySuppress`.
-   *
-   * @param string[] $properties
+   * @param string[]
    */
   public function setProperties($properties)
   {
@@ -50,9 +42,7 @@ class OSPolicyResourcePackageResourceMSI extends \Google\Collection
     return $this->properties;
   }
   /**
-   * Required. The MSI package.
-   *
-   * @param OSPolicyResourceFile $source
+   * @param OSPolicyResourceFile
    */
   public function setSource(OSPolicyResourceFile $source)
   {

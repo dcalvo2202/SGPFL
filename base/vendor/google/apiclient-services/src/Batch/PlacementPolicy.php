@@ -20,32 +20,16 @@ namespace Google\Service\Batch;
 class PlacementPolicy extends \Google\Model
 {
   /**
-   * UNSPECIFIED vs. COLLOCATED (default UNSPECIFIED). Use COLLOCATED when you
-   * want VMs to be located close to each other for low network latency between
-   * the VMs. No placement policy will be generated when collocation is
-   * UNSPECIFIED.
-   *
    * @var string
    */
   public $collocation;
   /**
-   * When specified, causes the job to fail if more than max_distance logical
-   * switches are required between VMs. Batch uses the most compact possible
-   * placement of VMs even when max_distance is not specified. An explicit
-   * max_distance makes that level of compactness a strict requirement. Not yet
-   * implemented
-   *
    * @var string
    */
   public $maxDistance;
 
   /**
-   * UNSPECIFIED vs. COLLOCATED (default UNSPECIFIED). Use COLLOCATED when you
-   * want VMs to be located close to each other for low network latency between
-   * the VMs. No placement policy will be generated when collocation is
-   * UNSPECIFIED.
-   *
-   * @param string $collocation
+   * @param string
    */
   public function setCollocation($collocation)
   {
@@ -59,13 +43,7 @@ class PlacementPolicy extends \Google\Model
     return $this->collocation;
   }
   /**
-   * When specified, causes the job to fail if more than max_distance logical
-   * switches are required between VMs. Batch uses the most compact possible
-   * placement of VMs even when max_distance is not specified. An explicit
-   * max_distance makes that level of compactness a strict requirement. Not yet
-   * implemented
-   *
-   * @param string $maxDistance
+   * @param string
    */
   public function setMaxDistance($maxDistance)
   {

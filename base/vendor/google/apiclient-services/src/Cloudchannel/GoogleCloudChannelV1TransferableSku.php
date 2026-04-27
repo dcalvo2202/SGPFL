@@ -27,10 +27,7 @@ class GoogleCloudChannelV1TransferableSku extends \Google\Model
   protected $transferEligibilityDataType = '';
 
   /**
-   * Optional. The customer to transfer has an entitlement with the populated
-   * legacy SKU.
-   *
-   * @param GoogleCloudChannelV1Sku $legacySku
+   * @param GoogleCloudChannelV1Sku
    */
   public function setLegacySku(GoogleCloudChannelV1Sku $legacySku)
   {
@@ -44,9 +41,7 @@ class GoogleCloudChannelV1TransferableSku extends \Google\Model
     return $this->legacySku;
   }
   /**
-   * The SKU pertaining to the provisioning resource as specified in the Offer.
-   *
-   * @param GoogleCloudChannelV1Sku $sku
+   * @param GoogleCloudChannelV1Sku
    */
   public function setSku(GoogleCloudChannelV1Sku $sku)
   {
@@ -60,9 +55,7 @@ class GoogleCloudChannelV1TransferableSku extends \Google\Model
     return $this->sku;
   }
   /**
-   * Describes the transfer eligibility of a SKU.
-   *
-   * @param GoogleCloudChannelV1TransferEligibility $transferEligibility
+   * @param GoogleCloudChannelV1TransferEligibility
    */
   public function setTransferEligibility(GoogleCloudChannelV1TransferEligibility $transferEligibility)
   {

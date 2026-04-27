@@ -19,9 +19,6 @@ namespace Google\Service\ChromePolicy;
 
 class Proto2EnumDescriptorProto extends \Google\Collection
 {
-  public const VISIBILITY_VISIBILITY_UNSET = 'VISIBILITY_UNSET';
-  public const VISIBILITY_VISIBILITY_LOCAL = 'VISIBILITY_LOCAL';
-  public const VISIBILITY_VISIBILITY_EXPORT = 'VISIBILITY_EXPORT';
   protected $collection_key = 'value';
   /**
    * @var string
@@ -30,14 +27,12 @@ class Proto2EnumDescriptorProto extends \Google\Collection
   protected $valueType = Proto2EnumValueDescriptorProto::class;
   protected $valueDataType = 'array';
   /**
-   * Support for `export` and `local` keywords on enums.
-   *
    * @var string
    */
   public $visibility;
 
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -51,7 +46,7 @@ class Proto2EnumDescriptorProto extends \Google\Collection
     return $this->name;
   }
   /**
-   * @param Proto2EnumValueDescriptorProto[] $value
+   * @param Proto2EnumValueDescriptorProto[]
    */
   public function setValue($value)
   {
@@ -65,18 +60,14 @@ class Proto2EnumDescriptorProto extends \Google\Collection
     return $this->value;
   }
   /**
-   * Support for `export` and `local` keywords on enums.
-   *
-   * Accepted values: VISIBILITY_UNSET, VISIBILITY_LOCAL, VISIBILITY_EXPORT
-   *
-   * @param self::VISIBILITY_* $visibility
+   * @param string
    */
   public function setVisibility($visibility)
   {
     $this->visibility = $visibility;
   }
   /**
-   * @return self::VISIBILITY_*
+   * @return string
    */
   public function getVisibility()
   {

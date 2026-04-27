@@ -21,55 +21,22 @@ class RowAccessPolicy extends \Google\Collection
 {
   protected $collection_key = 'grantees';
   /**
-   * Output only. The time when this row access policy was created, in
-   * milliseconds since the epoch.
-   *
    * @var string
    */
   public $creationTime;
   /**
-   * Output only. A hash of this resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Required. A SQL boolean expression that represents the rows defined by this
-   * row access policy, similar to the boolean expression in a WHERE clause of a
-   * SELECT query on a table. References to other tables, routines, and
-   * temporary functions are not supported. Examples: region="EU" date_field =
-   * CAST('2019-9-27' as DATE) nullable_field is not NULL numeric_field BETWEEN
-   * 1.0 AND 5.0
-   *
    * @var string
    */
   public $filterPredicate;
   /**
-   * Optional. Input only. The optional list of iam_member users or groups that
-   * specifies the initial members that the row-level access policy should be
-   * created with. grantees types: - "user:alice@example.com": An email address
-   * that represents a specific Google account. - "serviceAccount:my-other-
-   * app@appspot.gserviceaccount.com": An email address that represents a
-   * service account. - "group:admins@example.com": An email address that
-   * represents a Google group. - "domain:example.com":The Google Workspace
-   * domain (primary) that represents all the users of that domain. -
-   * "allAuthenticatedUsers": A special identifier that represents all service
-   * accounts and all users on the internet who have authenticated with a Google
-   * Account. This identifier includes accounts that aren't connected to a
-   * Google Workspace or Cloud Identity domain, such as personal Gmail accounts.
-   * Users who aren't authenticated, such as anonymous visitors, aren't
-   * included. - "allUsers":A special identifier that represents anyone who is
-   * on the internet, including authenticated and unauthenticated users. Because
-   * BigQuery requires authentication before a user can access the service,
-   * allUsers includes only authenticated users.
-   *
    * @var string[]
    */
   public $grantees;
   /**
-   * Output only. The time when this row access policy was last modified, in
-   * milliseconds since the epoch.
-   *
    * @var string
    */
   public $lastModifiedTime;
@@ -77,10 +44,7 @@ class RowAccessPolicy extends \Google\Collection
   protected $rowAccessPolicyReferenceDataType = '';
 
   /**
-   * Output only. The time when this row access policy was created, in
-   * milliseconds since the epoch.
-   *
-   * @param string $creationTime
+   * @param string
    */
   public function setCreationTime($creationTime)
   {
@@ -94,9 +58,7 @@ class RowAccessPolicy extends \Google\Collection
     return $this->creationTime;
   }
   /**
-   * Output only. A hash of this resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -110,14 +72,7 @@ class RowAccessPolicy extends \Google\Collection
     return $this->etag;
   }
   /**
-   * Required. A SQL boolean expression that represents the rows defined by this
-   * row access policy, similar to the boolean expression in a WHERE clause of a
-   * SELECT query on a table. References to other tables, routines, and
-   * temporary functions are not supported. Examples: region="EU" date_field =
-   * CAST('2019-9-27' as DATE) nullable_field is not NULL numeric_field BETWEEN
-   * 1.0 AND 5.0
-   *
-   * @param string $filterPredicate
+   * @param string
    */
   public function setFilterPredicate($filterPredicate)
   {
@@ -131,25 +86,7 @@ class RowAccessPolicy extends \Google\Collection
     return $this->filterPredicate;
   }
   /**
-   * Optional. Input only. The optional list of iam_member users or groups that
-   * specifies the initial members that the row-level access policy should be
-   * created with. grantees types: - "user:alice@example.com": An email address
-   * that represents a specific Google account. - "serviceAccount:my-other-
-   * app@appspot.gserviceaccount.com": An email address that represents a
-   * service account. - "group:admins@example.com": An email address that
-   * represents a Google group. - "domain:example.com":The Google Workspace
-   * domain (primary) that represents all the users of that domain. -
-   * "allAuthenticatedUsers": A special identifier that represents all service
-   * accounts and all users on the internet who have authenticated with a Google
-   * Account. This identifier includes accounts that aren't connected to a
-   * Google Workspace or Cloud Identity domain, such as personal Gmail accounts.
-   * Users who aren't authenticated, such as anonymous visitors, aren't
-   * included. - "allUsers":A special identifier that represents anyone who is
-   * on the internet, including authenticated and unauthenticated users. Because
-   * BigQuery requires authentication before a user can access the service,
-   * allUsers includes only authenticated users.
-   *
-   * @param string[] $grantees
+   * @param string[]
    */
   public function setGrantees($grantees)
   {
@@ -163,10 +100,7 @@ class RowAccessPolicy extends \Google\Collection
     return $this->grantees;
   }
   /**
-   * Output only. The time when this row access policy was last modified, in
-   * milliseconds since the epoch.
-   *
-   * @param string $lastModifiedTime
+   * @param string
    */
   public function setLastModifiedTime($lastModifiedTime)
   {
@@ -180,9 +114,7 @@ class RowAccessPolicy extends \Google\Collection
     return $this->lastModifiedTime;
   }
   /**
-   * Required. Reference describing the ID of this row access policy.
-   *
-   * @param RowAccessPolicyReference $rowAccessPolicyReference
+   * @param RowAccessPolicyReference
    */
   public function setRowAccessPolicyReference(RowAccessPolicyReference $rowAccessPolicyReference)
   {

@@ -28,9 +28,7 @@ class AndroidDeviceCatalog extends \Google\Collection
   protected $versionsDataType = 'array';
 
   /**
-   * The set of supported Android device models.
-   *
-   * @param AndroidModel[] $models
+   * @param AndroidModel[]
    */
   public function setModels($models)
   {
@@ -44,9 +42,7 @@ class AndroidDeviceCatalog extends \Google\Collection
     return $this->models;
   }
   /**
-   * The set of supported runtime configurations.
-   *
-   * @param AndroidRuntimeConfiguration $runtimeConfiguration
+   * @param AndroidRuntimeConfiguration
    */
   public function setRuntimeConfiguration(AndroidRuntimeConfiguration $runtimeConfiguration)
   {
@@ -60,9 +56,7 @@ class AndroidDeviceCatalog extends \Google\Collection
     return $this->runtimeConfiguration;
   }
   /**
-   * The set of supported Android OS versions.
-   *
-   * @param AndroidVersion[] $versions
+   * @param AndroidVersion[]
    */
   public function setVersions($versions)
   {

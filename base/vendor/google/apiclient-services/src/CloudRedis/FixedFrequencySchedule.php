@@ -23,10 +23,7 @@ class FixedFrequencySchedule extends \Google\Model
   protected $startTimeDataType = '';
 
   /**
-   * Required. The start time of every automated backup in UTC. It must be set
-   * to the start of an hour. This field is required.
-   *
-   * @param TimeOfDay $startTime
+   * @param TimeOfDay
    */
   public function setStartTime(TimeOfDay $startTime)
   {

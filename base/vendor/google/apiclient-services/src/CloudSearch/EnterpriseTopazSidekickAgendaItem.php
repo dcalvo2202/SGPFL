@@ -27,7 +27,7 @@ class EnterpriseTopazSidekickAgendaItem extends \Google\Model
   protected $meetingDataType = '';
 
   /**
-   * @param EnterpriseTopazSidekickConflictingEventsCardProto $conflictedGroup
+   * @param EnterpriseTopazSidekickConflictingEventsCardProto
    */
   public function setConflictedGroup(EnterpriseTopazSidekickConflictingEventsCardProto $conflictedGroup)
   {
@@ -41,7 +41,7 @@ class EnterpriseTopazSidekickAgendaItem extends \Google\Model
     return $this->conflictedGroup;
   }
   /**
-   * @param EnterpriseTopazSidekickGap $gapBefore
+   * @param EnterpriseTopazSidekickGap
    */
   public function setGapBefore(EnterpriseTopazSidekickGap $gapBefore)
   {
@@ -55,7 +55,7 @@ class EnterpriseTopazSidekickAgendaItem extends \Google\Model
     return $this->gapBefore;
   }
   /**
-   * @param EnterpriseTopazSidekickAgendaEntry $meeting
+   * @param EnterpriseTopazSidekickAgendaEntry
    */
   public function setMeeting(EnterpriseTopazSidekickAgendaEntry $meeting)
   {

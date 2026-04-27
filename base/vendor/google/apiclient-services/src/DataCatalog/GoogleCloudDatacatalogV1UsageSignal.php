@@ -22,14 +22,10 @@ class GoogleCloudDatacatalogV1UsageSignal extends \Google\Model
   protected $commonUsageWithinTimeRangeType = GoogleCloudDatacatalogV1CommonUsageStats::class;
   protected $commonUsageWithinTimeRangeDataType = 'map';
   /**
-   * Favorite count in the source system.
-   *
    * @var string
    */
   public $favoriteCount;
   /**
-   * The end timestamp of the duration of usage statistics.
-   *
    * @var string
    */
   public $updateTime;
@@ -37,10 +33,7 @@ class GoogleCloudDatacatalogV1UsageSignal extends \Google\Model
   protected $usageWithinTimeRangeDataType = 'map';
 
   /**
-   * Common usage statistics over each of the predefined time ranges. Supported
-   * time ranges are `{"24H", "7D", "30D", "Lifetime"}`.
-   *
-   * @param GoogleCloudDatacatalogV1CommonUsageStats[] $commonUsageWithinTimeRange
+   * @param GoogleCloudDatacatalogV1CommonUsageStats[]
    */
   public function setCommonUsageWithinTimeRange($commonUsageWithinTimeRange)
   {
@@ -54,9 +47,7 @@ class GoogleCloudDatacatalogV1UsageSignal extends \Google\Model
     return $this->commonUsageWithinTimeRange;
   }
   /**
-   * Favorite count in the source system.
-   *
-   * @param string $favoriteCount
+   * @param string
    */
   public function setFavoriteCount($favoriteCount)
   {
@@ -70,9 +61,7 @@ class GoogleCloudDatacatalogV1UsageSignal extends \Google\Model
     return $this->favoriteCount;
   }
   /**
-   * The end timestamp of the duration of usage statistics.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -86,10 +75,7 @@ class GoogleCloudDatacatalogV1UsageSignal extends \Google\Model
     return $this->updateTime;
   }
   /**
-   * Output only. BigQuery usage statistics over each of the predefined time
-   * ranges. Supported time ranges are `{"24H", "7D", "30D"}`.
-   *
-   * @param GoogleCloudDatacatalogV1UsageStats[] $usageWithinTimeRange
+   * @param GoogleCloudDatacatalogV1UsageStats[]
    */
   public function setUsageWithinTimeRange($usageWithinTimeRange)
   {

@@ -19,29 +19,15 @@ namespace Google\Service\ServiceUsage;
 
 class GetServiceIdentityResponse extends \Google\Model
 {
-  /**
-   * Default service identity state. This value is used if the state is omitted.
-   */
-  public const STATE_IDENTITY_STATE_UNSPECIFIED = 'IDENTITY_STATE_UNSPECIFIED';
-  /**
-   * Service identity has been created and can be used.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
   protected $identityType = ServiceIdentity::class;
   protected $identityDataType = '';
   /**
-   * Service identity state.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Service identity that service producer can use to access consumer
-   * resources. If exists is true, it contains email and unique_id. If exists is
-   * false, it contains pre-constructed email and empty unique_id.
-   *
-   * @param ServiceIdentity $identity
+   * @param ServiceIdentity
    */
   public function setIdentity(ServiceIdentity $identity)
   {
@@ -55,18 +41,14 @@ class GetServiceIdentityResponse extends \Google\Model
     return $this->identity;
   }
   /**
-   * Service identity state.
-   *
-   * Accepted values: IDENTITY_STATE_UNSPECIFIED, ACTIVE
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

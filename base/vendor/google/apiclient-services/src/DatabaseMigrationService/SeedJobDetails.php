@@ -20,16 +20,12 @@ namespace Google\Service\DatabaseMigrationService;
 class SeedJobDetails extends \Google\Model
 {
   /**
-   * Output only. The connection profile which was used for the seed job.
-   *
    * @var string
    */
   public $connectionProfile;
 
   /**
-   * Output only. The connection profile which was used for the seed job.
-   *
-   * @param string $connectionProfile
+   * @param string
    */
   public function setConnectionProfile($connectionProfile)
   {

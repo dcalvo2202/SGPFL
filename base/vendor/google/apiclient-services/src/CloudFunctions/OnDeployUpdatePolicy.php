@@ -20,18 +20,12 @@ namespace Google\Service\CloudFunctions;
 class OnDeployUpdatePolicy extends \Google\Model
 {
   /**
-   * Output only. contains the runtime version which was used during latest
-   * function deployment.
-   *
    * @var string
    */
   public $runtimeVersion;
 
   /**
-   * Output only. contains the runtime version which was used during latest
-   * function deployment.
-   *
-   * @param string $runtimeVersion
+   * @param string
    */
   public function setRuntimeVersion($runtimeVersion)
   {

@@ -21,32 +21,22 @@ class Activities extends \Google\Collection
 {
   protected $collection_key = 'items';
   /**
-   * ETag of the resource.
-   *
    * @var string
    */
   public $etag;
   protected $itemsType = Activity::class;
   protected $itemsDataType = 'array';
   /**
-   * The type of API resource. For an activity report, the value is
-   * `reports#activities`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Token for retrieving the follow-on next page of the report. The
-   * `nextPageToken` value is used in the request's `pageToken` query string.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * ETag of the resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -60,9 +50,7 @@ class Activities extends \Google\Collection
     return $this->etag;
   }
   /**
-   * Each activity record in the response.
-   *
-   * @param Activity[] $items
+   * @param Activity[]
    */
   public function setItems($items)
   {
@@ -76,10 +64,7 @@ class Activities extends \Google\Collection
     return $this->items;
   }
   /**
-   * The type of API resource. For an activity report, the value is
-   * `reports#activities`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -93,10 +78,7 @@ class Activities extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Token for retrieving the follow-on next page of the report. The
-   * `nextPageToken` value is used in the request's `pageToken` query string.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

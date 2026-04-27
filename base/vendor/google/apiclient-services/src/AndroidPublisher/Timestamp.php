@@ -20,24 +20,16 @@ namespace Google\Service\AndroidPublisher;
 class Timestamp extends \Google\Model
 {
   /**
-   * Non-negative fractions of a second at nanosecond resolution. Must be from 0
-   * to 999,999,999 inclusive.
-   *
    * @var int
    */
   public $nanos;
   /**
-   * Represents seconds of UTC time since Unix epoch.
-   *
    * @var string
    */
   public $seconds;
 
   /**
-   * Non-negative fractions of a second at nanosecond resolution. Must be from 0
-   * to 999,999,999 inclusive.
-   *
-   * @param int $nanos
+   * @param int
    */
   public function setNanos($nanos)
   {
@@ -51,9 +43,7 @@ class Timestamp extends \Google\Model
     return $this->nanos;
   }
   /**
-   * Represents seconds of UTC time since Unix epoch.
-   *
-   * @param string $seconds
+   * @param string
    */
   public function setSeconds($seconds)
   {

@@ -20,28 +20,20 @@ namespace Google\Service\Integrations;
 class GoogleCloudIntegrationsV1alphaRuntimeActionSchema extends \Google\Model
 {
   /**
-   * Name of the action.
-   *
    * @var string
    */
   public $action;
   /**
-   * Input parameter schema for the action.
-   *
    * @var string
    */
   public $inputSchema;
   /**
-   * Output parameter schema for the action.
-   *
    * @var string
    */
   public $outputSchema;
 
   /**
-   * Name of the action.
-   *
-   * @param string $action
+   * @param string
    */
   public function setAction($action)
   {
@@ -55,9 +47,7 @@ class GoogleCloudIntegrationsV1alphaRuntimeActionSchema extends \Google\Model
     return $this->action;
   }
   /**
-   * Input parameter schema for the action.
-   *
-   * @param string $inputSchema
+   * @param string
    */
   public function setInputSchema($inputSchema)
   {
@@ -71,9 +61,7 @@ class GoogleCloudIntegrationsV1alphaRuntimeActionSchema extends \Google\Model
     return $this->inputSchema;
   }
   /**
-   * Output parameter schema for the action.
-   *
-   * @param string $outputSchema
+   * @param string
    */
   public function setOutputSchema($outputSchema)
   {

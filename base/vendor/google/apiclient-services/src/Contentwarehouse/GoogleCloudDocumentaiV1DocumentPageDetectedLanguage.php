@@ -20,24 +20,16 @@ namespace Google\Service\Contentwarehouse;
 class GoogleCloudDocumentaiV1DocumentPageDetectedLanguage extends \Google\Model
 {
   /**
-   * Confidence of detected language. Range `[0, 1]`.
-   *
    * @var float
    */
   public $confidence;
   /**
-   * The [BCP-47 language
-   * code](https://www.unicode.org/reports/tr35/#Unicode_locale_identifier),
-   * such as `en-US` or `sr-Latn`.
-   *
    * @var string
    */
   public $languageCode;
 
   /**
-   * Confidence of detected language. Range `[0, 1]`.
-   *
-   * @param float $confidence
+   * @param float
    */
   public function setConfidence($confidence)
   {
@@ -51,11 +43,7 @@ class GoogleCloudDocumentaiV1DocumentPageDetectedLanguage extends \Google\Model
     return $this->confidence;
   }
   /**
-   * The [BCP-47 language
-   * code](https://www.unicode.org/reports/tr35/#Unicode_locale_identifier),
-   * such as `en-US` or `sr-Latn`.
-   *
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {

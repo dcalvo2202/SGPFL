@@ -20,32 +20,20 @@ namespace Google\Service\Compute;
 class ResourcePolicyHourlyCycle extends \Google\Model
 {
   /**
-   * Output only. [Output only] Duration of the time window, automatically
-   * chosen to be smallest possible in the given scenario.
-   *
    * @var string
    */
   public $duration;
   /**
-   * Defines a schedule with units measured in hours. The value determines how
-   * many hours pass between the start of each cycle.
-   *
    * @var int
    */
   public $hoursInCycle;
   /**
-   * Time within the window to start the operations. It must be in format
-   * "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * Output only. [Output only] Duration of the time window, automatically
-   * chosen to be smallest possible in the given scenario.
-   *
-   * @param string $duration
+   * @param string
    */
   public function setDuration($duration)
   {
@@ -59,10 +47,7 @@ class ResourcePolicyHourlyCycle extends \Google\Model
     return $this->duration;
   }
   /**
-   * Defines a schedule with units measured in hours. The value determines how
-   * many hours pass between the start of each cycle.
-   *
-   * @param int $hoursInCycle
+   * @param int
    */
   public function setHoursInCycle($hoursInCycle)
   {
@@ -76,10 +61,7 @@ class ResourcePolicyHourlyCycle extends \Google\Model
     return $this->hoursInCycle;
   }
   /**
-   * Time within the window to start the operations. It must be in format
-   * "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

@@ -20,22 +20,16 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1DataDocumentationResultQuery extends \Google\Model
 {
   /**
-   * Output only. The description for the query.
-   *
    * @var string
    */
   public $description;
   /**
-   * Output only. The SQL query string which can be executed.
-   *
    * @var string
    */
   public $sql;
 
   /**
-   * Output only. The description for the query.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -49,9 +43,7 @@ class GoogleCloudDataplexV1DataDocumentationResultQuery extends \Google\Model
     return $this->description;
   }
   /**
-   * Output only. The SQL query string which can be executed.
-   *
-   * @param string $sql
+   * @param string
    */
   public function setSql($sql)
   {

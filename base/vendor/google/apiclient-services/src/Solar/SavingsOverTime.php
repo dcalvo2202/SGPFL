@@ -20,9 +20,6 @@ namespace Google\Service\Solar;
 class SavingsOverTime extends \Google\Model
 {
   /**
-   * Indicates whether this scenario is financially viable. Will be false for
-   * scenarios with poor financial viability (e.g., money-losing).
-   *
    * @var bool
    */
   public $financiallyViable;
@@ -38,10 +35,7 @@ class SavingsOverTime extends \Google\Model
   protected $savingsYear20DataType = '';
 
   /**
-   * Indicates whether this scenario is financially viable. Will be false for
-   * scenarios with poor financial viability (e.g., money-losing).
-   *
-   * @param bool $financiallyViable
+   * @param bool
    */
   public function setFinanciallyViable($financiallyViable)
   {
@@ -55,10 +49,7 @@ class SavingsOverTime extends \Google\Model
     return $this->financiallyViable;
   }
   /**
-   * Using the assumed discount rate, what is the present value of the
-   * cumulative lifetime savings?
-   *
-   * @param Money $presentValueOfSavingsLifetime
+   * @param Money
    */
   public function setPresentValueOfSavingsLifetime(Money $presentValueOfSavingsLifetime)
   {
@@ -72,10 +63,7 @@ class SavingsOverTime extends \Google\Model
     return $this->presentValueOfSavingsLifetime;
   }
   /**
-   * Using the assumed discount rate, what is the present value of the
-   * cumulative 20-year savings?
-   *
-   * @param Money $presentValueOfSavingsYear20
+   * @param Money
    */
   public function setPresentValueOfSavingsYear20(Money $presentValueOfSavingsYear20)
   {
@@ -89,9 +77,7 @@ class SavingsOverTime extends \Google\Model
     return $this->presentValueOfSavingsYear20;
   }
   /**
-   * Savings in the entire panel lifetime.
-   *
-   * @param Money $savingsLifetime
+   * @param Money
    */
   public function setSavingsLifetime(Money $savingsLifetime)
   {
@@ -105,9 +91,7 @@ class SavingsOverTime extends \Google\Model
     return $this->savingsLifetime;
   }
   /**
-   * Savings in the first year after panel installation.
-   *
-   * @param Money $savingsYear1
+   * @param Money
    */
   public function setSavingsYear1(Money $savingsYear1)
   {
@@ -121,9 +105,7 @@ class SavingsOverTime extends \Google\Model
     return $this->savingsYear1;
   }
   /**
-   * Savings in the first twenty years after panel installation.
-   *
-   * @param Money $savingsYear20
+   * @param Money
    */
   public function setSavingsYear20(Money $savingsYear20)
   {

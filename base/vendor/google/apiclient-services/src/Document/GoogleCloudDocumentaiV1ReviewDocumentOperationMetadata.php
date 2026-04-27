@@ -22,16 +22,12 @@ class GoogleCloudDocumentaiV1ReviewDocumentOperationMetadata extends \Google\Mod
   protected $commonMetadataType = GoogleCloudDocumentaiV1CommonOperationMetadata::class;
   protected $commonMetadataDataType = '';
   /**
-   * The Crowd Compute question ID.
-   *
    * @var string
    */
   public $questionId;
 
   /**
-   * The basic metadata of the long-running operation.
-   *
-   * @param GoogleCloudDocumentaiV1CommonOperationMetadata $commonMetadata
+   * @param GoogleCloudDocumentaiV1CommonOperationMetadata
    */
   public function setCommonMetadata(GoogleCloudDocumentaiV1CommonOperationMetadata $commonMetadata)
   {
@@ -45,9 +41,7 @@ class GoogleCloudDocumentaiV1ReviewDocumentOperationMetadata extends \Google\Mod
     return $this->commonMetadata;
   }
   /**
-   * The Crowd Compute question ID.
-   *
-   * @param string $questionId
+   * @param string
    */
   public function setQuestionId($questionId)
   {

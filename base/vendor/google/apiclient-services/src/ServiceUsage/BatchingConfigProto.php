@@ -25,9 +25,7 @@ class BatchingConfigProto extends \Google\Model
   protected $thresholdsDataType = '';
 
   /**
-   * The request and response fields used in batching.
-   *
-   * @param BatchingDescriptorProto $batchDescriptor
+   * @param BatchingDescriptorProto
    */
   public function setBatchDescriptor(BatchingDescriptorProto $batchDescriptor)
   {
@@ -41,9 +39,7 @@ class BatchingConfigProto extends \Google\Model
     return $this->batchDescriptor;
   }
   /**
-   * The thresholds which trigger a batched request to be sent.
-   *
-   * @param BatchingSettingsProto $thresholds
+   * @param BatchingSettingsProto
    */
   public function setThresholds(BatchingSettingsProto $thresholds)
   {

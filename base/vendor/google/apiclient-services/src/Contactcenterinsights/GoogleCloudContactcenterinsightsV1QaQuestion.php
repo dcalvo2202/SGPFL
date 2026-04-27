@@ -19,102 +19,48 @@ namespace Google\Service\Contactcenterinsights;
 
 class GoogleCloudContactcenterinsightsV1QaQuestion extends \Google\Collection
 {
-  /**
-   * The type of the question is unspecified.
-   */
-  public const QUESTION_TYPE_QA_QUESTION_TYPE_UNSPECIFIED = 'QA_QUESTION_TYPE_UNSPECIFIED';
-  /**
-   * The default question type. The question is fully customizable by the user.
-   */
-  public const QUESTION_TYPE_CUSTOMIZABLE = 'CUSTOMIZABLE';
-  /**
-   * The question type is using a predefined model provided by CCAI teams. Users
-   * are not allowed to edit the question_body, answer_choices, upload feedback
-   * labels for the question nor fine-tune the question. However, users may edit
-   * other fields like question tags, question order, etc.
-   */
-  public const QUESTION_TYPE_PREDEFINED = 'PREDEFINED';
   protected $collection_key = 'tags';
   /**
-   * Short, descriptive string, used in the UI where it's not practical to
-   * display the full question body. E.g., "Greeting".
-   *
    * @var string
    */
   public $abbreviation;
   protected $answerChoicesType = GoogleCloudContactcenterinsightsV1QaQuestionAnswerChoice::class;
   protected $answerChoicesDataType = 'array';
   /**
-   * Instructions describing how to determine the answer.
-   *
    * @var string
    */
   public $answerInstructions;
   /**
-   * Output only. The time at which this question was created.
-   *
    * @var string
    */
   public $createTime;
   protected $metricsType = GoogleCloudContactcenterinsightsV1QaQuestionMetrics::class;
   protected $metricsDataType = '';
   /**
-   * Identifier. The resource name of the question. Format: projects/{project}/l
-   * ocations/{location}/qaScorecards/{qa_scorecard}/revisions/{revision}/qaQues
-   * tions/{qa_question}
-   *
    * @var string
    */
   public $name;
   /**
-   * Defines the order of the question within its parent scorecard revision.
-   *
    * @var int
    */
   public $order;
-  protected $predefinedQuestionConfigType = GoogleCloudContactcenterinsightsV1QaQuestionPredefinedQuestionConfig::class;
-  protected $predefinedQuestionConfigDataType = '';
-  protected $qaQuestionDataOptionsType = GoogleCloudContactcenterinsightsV1QaQuestionQaQuestionDataOptions::class;
-  protected $qaQuestionDataOptionsDataType = '';
   /**
-   * Question text. E.g., "Did the agent greet the customer?"
-   *
    * @var string
    */
   public $questionBody;
   /**
-   * The type of question.
-   *
-   * @var string
-   */
-  public $questionType;
-  /**
-   * Questions are tagged for categorization and scoring. Tags can either be: -
-   * Default Tags: These are predefined categories. They are identified by their
-   * string value (e.g., "BUSINESS", "COMPLIANCE", and "CUSTOMER"). - Custom
-   * Tags: These are user-defined categories. They are identified by their full
-   * resource name (e.g.,
-   * projects/{project}/locations/{location}/qaQuestionTags/{qa_question_tag}).
-   * Both default and custom tags are used to group questions and to influence
-   * the scoring of each question.
-   *
    * @var string[]
    */
   public $tags;
   protected $tuningMetadataType = GoogleCloudContactcenterinsightsV1QaQuestionTuningMetadata::class;
   protected $tuningMetadataDataType = '';
   /**
-   * Output only. The most recent time at which the question was updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Short, descriptive string, used in the UI where it's not practical to
-   * display the full question body. E.g., "Greeting".
-   *
-   * @param string $abbreviation
+   * @param string
    */
   public function setAbbreviation($abbreviation)
   {
@@ -128,9 +74,7 @@ class GoogleCloudContactcenterinsightsV1QaQuestion extends \Google\Collection
     return $this->abbreviation;
   }
   /**
-   * A list of valid answers to the question, which the LLM must choose from.
-   *
-   * @param GoogleCloudContactcenterinsightsV1QaQuestionAnswerChoice[] $answerChoices
+   * @param GoogleCloudContactcenterinsightsV1QaQuestionAnswerChoice[]
    */
   public function setAnswerChoices($answerChoices)
   {
@@ -144,9 +88,7 @@ class GoogleCloudContactcenterinsightsV1QaQuestion extends \Google\Collection
     return $this->answerChoices;
   }
   /**
-   * Instructions describing how to determine the answer.
-   *
-   * @param string $answerInstructions
+   * @param string
    */
   public function setAnswerInstructions($answerInstructions)
   {
@@ -160,9 +102,7 @@ class GoogleCloudContactcenterinsightsV1QaQuestion extends \Google\Collection
     return $this->answerInstructions;
   }
   /**
-   * Output only. The time at which this question was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -176,12 +116,7 @@ class GoogleCloudContactcenterinsightsV1QaQuestion extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Metrics of the underlying tuned LLM over a holdout/test set while fine
-   * tuning the underlying LLM for the given question. This field will only be
-   * populated if and only if the question is part of a scorecard revision that
-   * has been tuned.
-   *
-   * @param GoogleCloudContactcenterinsightsV1QaQuestionMetrics $metrics
+   * @param GoogleCloudContactcenterinsightsV1QaQuestionMetrics
    */
   public function setMetrics(GoogleCloudContactcenterinsightsV1QaQuestionMetrics $metrics)
   {
@@ -195,11 +130,7 @@ class GoogleCloudContactcenterinsightsV1QaQuestion extends \Google\Collection
     return $this->metrics;
   }
   /**
-   * Identifier. The resource name of the question. Format: projects/{project}/l
-   * ocations/{location}/qaScorecards/{qa_scorecard}/revisions/{revision}/qaQues
-   * tions/{qa_question}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -213,9 +144,7 @@ class GoogleCloudContactcenterinsightsV1QaQuestion extends \Google\Collection
     return $this->name;
   }
   /**
-   * Defines the order of the question within its parent scorecard revision.
-   *
-   * @param int $order
+   * @param int
    */
   public function setOrder($order)
   {
@@ -229,42 +158,7 @@ class GoogleCloudContactcenterinsightsV1QaQuestion extends \Google\Collection
     return $this->order;
   }
   /**
-   * The configuration of the predefined question. This field will only be set
-   * if the Question Type is predefined.
-   *
-   * @param GoogleCloudContactcenterinsightsV1QaQuestionPredefinedQuestionConfig $predefinedQuestionConfig
-   */
-  public function setPredefinedQuestionConfig(GoogleCloudContactcenterinsightsV1QaQuestionPredefinedQuestionConfig $predefinedQuestionConfig)
-  {
-    $this->predefinedQuestionConfig = $predefinedQuestionConfig;
-  }
-  /**
-   * @return GoogleCloudContactcenterinsightsV1QaQuestionPredefinedQuestionConfig
-   */
-  public function getPredefinedQuestionConfig()
-  {
-    return $this->predefinedQuestionConfig;
-  }
-  /**
-   * Options for configuring the data used to generate the QA question.
-   *
-   * @param GoogleCloudContactcenterinsightsV1QaQuestionQaQuestionDataOptions $qaQuestionDataOptions
-   */
-  public function setQaQuestionDataOptions(GoogleCloudContactcenterinsightsV1QaQuestionQaQuestionDataOptions $qaQuestionDataOptions)
-  {
-    $this->qaQuestionDataOptions = $qaQuestionDataOptions;
-  }
-  /**
-   * @return GoogleCloudContactcenterinsightsV1QaQuestionQaQuestionDataOptions
-   */
-  public function getQaQuestionDataOptions()
-  {
-    return $this->qaQuestionDataOptions;
-  }
-  /**
-   * Question text. E.g., "Did the agent greet the customer?"
-   *
-   * @param string $questionBody
+   * @param string
    */
   public function setQuestionBody($questionBody)
   {
@@ -278,34 +172,7 @@ class GoogleCloudContactcenterinsightsV1QaQuestion extends \Google\Collection
     return $this->questionBody;
   }
   /**
-   * The type of question.
-   *
-   * Accepted values: QA_QUESTION_TYPE_UNSPECIFIED, CUSTOMIZABLE, PREDEFINED
-   *
-   * @param self::QUESTION_TYPE_* $questionType
-   */
-  public function setQuestionType($questionType)
-  {
-    $this->questionType = $questionType;
-  }
-  /**
-   * @return self::QUESTION_TYPE_*
-   */
-  public function getQuestionType()
-  {
-    return $this->questionType;
-  }
-  /**
-   * Questions are tagged for categorization and scoring. Tags can either be: -
-   * Default Tags: These are predefined categories. They are identified by their
-   * string value (e.g., "BUSINESS", "COMPLIANCE", and "CUSTOMER"). - Custom
-   * Tags: These are user-defined categories. They are identified by their full
-   * resource name (e.g.,
-   * projects/{project}/locations/{location}/qaQuestionTags/{qa_question_tag}).
-   * Both default and custom tags are used to group questions and to influence
-   * the scoring of each question.
-   *
-   * @param string[] $tags
+   * @param string[]
    */
   public function setTags($tags)
   {
@@ -319,11 +186,7 @@ class GoogleCloudContactcenterinsightsV1QaQuestion extends \Google\Collection
     return $this->tags;
   }
   /**
-   * Metadata about the tuning operation for the question.This field will only
-   * be populated if and only if the question is part of a scorecard revision
-   * that has been tuned.
-   *
-   * @param GoogleCloudContactcenterinsightsV1QaQuestionTuningMetadata $tuningMetadata
+   * @param GoogleCloudContactcenterinsightsV1QaQuestionTuningMetadata
    */
   public function setTuningMetadata(GoogleCloudContactcenterinsightsV1QaQuestionTuningMetadata $tuningMetadata)
   {
@@ -337,9 +200,7 @@ class GoogleCloudContactcenterinsightsV1QaQuestion extends \Google\Collection
     return $this->tuningMetadata;
   }
   /**
-   * Output only. The most recent time at which the question was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

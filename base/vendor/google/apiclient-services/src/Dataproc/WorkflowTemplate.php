@@ -21,20 +21,10 @@ class WorkflowTemplate extends \Google\Collection
 {
   protected $collection_key = 'parameters';
   /**
-   * Output only. The time template was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. Timeout duration for the DAG of jobs, expressed in seconds (see
-   * JSON representation of duration (https://developers.google.com/protocol-
-   * buffers/docs/proto3#json)). The timeout duration must be from 10 minutes
-   * ("600s") to 24 hours ("86400s"). The timer begins when the first job is
-   * submitted. If the workflow is running at the end of the timeout period, any
-   * remaining jobs are cancelled, the workflow is ended, and if the workflow
-   * was running on a managed cluster, the cluster is deleted.
-   *
    * @var string
    */
   public $dagTimeout;
@@ -47,27 +37,10 @@ class WorkflowTemplate extends \Google\Collection
   protected $jobsType = OrderedJob::class;
   protected $jobsDataType = 'array';
   /**
-   * Optional. The labels to associate with this template. These labels will be
-   * propagated to all jobs and clusters created by the workflow instance.Label
-   * keys must contain 1 to 63 characters, and must conform to RFC 1035
-   * (https://www.ietf.org/rfc/rfc1035.txt).Label values may be empty, but, if
-   * present, must contain 1 to 63 characters, and must conform to RFC 1035
-   * (https://www.ietf.org/rfc/rfc1035.txt).No more than 32 labels can be
-   * associated with a template.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Output only. The resource name of the workflow template, as described in
-   * https://cloud.google.com/apis/design/resource_names. For
-   * projects.regions.workflowTemplates, the resource name of the template has
-   * the following format:
-   * projects/{project_id}/regions/{region}/workflowTemplates/{template_id} For
-   * projects.locations.workflowTemplates, the resource name of the template has
-   * the following format:
-   * projects/{project_id}/locations/{location}/workflowTemplates/{template_id}
-   *
    * @var string
    */
   public $name;
@@ -76,29 +49,16 @@ class WorkflowTemplate extends \Google\Collection
   protected $placementType = WorkflowTemplatePlacement::class;
   protected $placementDataType = '';
   /**
-   * Output only. The time template was last updated.
-   *
    * @var string
    */
   public $updateTime;
   /**
-   * Optional. Used to perform a consistent read-modify-write.This field should
-   * be left blank for a CreateWorkflowTemplate request. It is required for an
-   * UpdateWorkflowTemplate request, and must match the current server version.
-   * A typical update template flow would fetch the current template with a
-   * GetWorkflowTemplate request, which will return the current template with
-   * the version field filled in with the current server version. The user
-   * updates other fields in the template, then returns it as part of the
-   * UpdateWorkflowTemplate request.
-   *
    * @var int
    */
   public $version;
 
   /**
-   * Output only. The time template was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -112,15 +72,7 @@ class WorkflowTemplate extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Optional. Timeout duration for the DAG of jobs, expressed in seconds (see
-   * JSON representation of duration (https://developers.google.com/protocol-
-   * buffers/docs/proto3#json)). The timeout duration must be from 10 minutes
-   * ("600s") to 24 hours ("86400s"). The timer begins when the first job is
-   * submitted. If the workflow is running at the end of the timeout period, any
-   * remaining jobs are cancelled, the workflow is ended, and if the workflow
-   * was running on a managed cluster, the cluster is deleted.
-   *
-   * @param string $dagTimeout
+   * @param string
    */
   public function setDagTimeout($dagTimeout)
   {
@@ -134,10 +86,7 @@ class WorkflowTemplate extends \Google\Collection
     return $this->dagTimeout;
   }
   /**
-   * Optional. Encryption settings for encrypting workflow template job
-   * arguments.
-   *
-   * @param GoogleCloudDataprocV1WorkflowTemplateEncryptionConfig $encryptionConfig
+   * @param GoogleCloudDataprocV1WorkflowTemplateEncryptionConfig
    */
   public function setEncryptionConfig(GoogleCloudDataprocV1WorkflowTemplateEncryptionConfig $encryptionConfig)
   {
@@ -151,7 +100,7 @@ class WorkflowTemplate extends \Google\Collection
     return $this->encryptionConfig;
   }
   /**
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -165,9 +114,7 @@ class WorkflowTemplate extends \Google\Collection
     return $this->id;
   }
   /**
-   * Required. The Directed Acyclic Graph of Jobs to submit.
-   *
-   * @param OrderedJob[] $jobs
+   * @param OrderedJob[]
    */
   public function setJobs($jobs)
   {
@@ -181,15 +128,7 @@ class WorkflowTemplate extends \Google\Collection
     return $this->jobs;
   }
   /**
-   * Optional. The labels to associate with this template. These labels will be
-   * propagated to all jobs and clusters created by the workflow instance.Label
-   * keys must contain 1 to 63 characters, and must conform to RFC 1035
-   * (https://www.ietf.org/rfc/rfc1035.txt).Label values may be empty, but, if
-   * present, must contain 1 to 63 characters, and must conform to RFC 1035
-   * (https://www.ietf.org/rfc/rfc1035.txt).No more than 32 labels can be
-   * associated with a template.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -203,16 +142,7 @@ class WorkflowTemplate extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Output only. The resource name of the workflow template, as described in
-   * https://cloud.google.com/apis/design/resource_names. For
-   * projects.regions.workflowTemplates, the resource name of the template has
-   * the following format:
-   * projects/{project_id}/regions/{region}/workflowTemplates/{template_id} For
-   * projects.locations.workflowTemplates, the resource name of the template has
-   * the following format:
-   * projects/{project_id}/locations/{location}/workflowTemplates/{template_id}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -226,11 +156,7 @@ class WorkflowTemplate extends \Google\Collection
     return $this->name;
   }
   /**
-   * Optional. Template parameters whose values are substituted into the
-   * template. Values for parameters must be provided when the template is
-   * instantiated.
-   *
-   * @param TemplateParameter[] $parameters
+   * @param TemplateParameter[]
    */
   public function setParameters($parameters)
   {
@@ -244,9 +170,7 @@ class WorkflowTemplate extends \Google\Collection
     return $this->parameters;
   }
   /**
-   * Required. WorkflowTemplate scheduling information.
-   *
-   * @param WorkflowTemplatePlacement $placement
+   * @param WorkflowTemplatePlacement
    */
   public function setPlacement(WorkflowTemplatePlacement $placement)
   {
@@ -260,9 +184,7 @@ class WorkflowTemplate extends \Google\Collection
     return $this->placement;
   }
   /**
-   * Output only. The time template was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -276,16 +198,7 @@ class WorkflowTemplate extends \Google\Collection
     return $this->updateTime;
   }
   /**
-   * Optional. Used to perform a consistent read-modify-write.This field should
-   * be left blank for a CreateWorkflowTemplate request. It is required for an
-   * UpdateWorkflowTemplate request, and must match the current server version.
-   * A typical update template flow would fetch the current template with a
-   * GetWorkflowTemplate request, which will return the current template with
-   * the version field filled in with the current server version. The user
-   * updates other fields in the template, then returns it as part of the
-   * UpdateWorkflowTemplate request.
-   *
-   * @param int $version
+   * @param int
    */
   public function setVersion($version)
   {

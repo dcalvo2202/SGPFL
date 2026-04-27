@@ -20,16 +20,12 @@ namespace Google\Service\SmartDeviceManagement;
 class GoogleHomeEnterpriseSdmV1ExecuteDeviceCommandResponse extends \Google\Model
 {
   /**
-   * The results of executing the command.
-   *
    * @var array[]
    */
   public $results;
 
   /**
-   * The results of executing the command.
-   *
-   * @param array[] $results
+   * @param array[]
    */
   public function setResults($results)
   {

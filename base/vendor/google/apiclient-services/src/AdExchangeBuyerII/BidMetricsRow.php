@@ -37,9 +37,7 @@ class BidMetricsRow extends \Google\Model
   protected $viewableImpressionsDataType = '';
 
   /**
-   * The number of bids that Ad Exchange received from the buyer.
-   *
-   * @param MetricValue $bids
+   * @param MetricValue
    */
   public function setBids(MetricValue $bids)
   {
@@ -53,9 +51,7 @@ class BidMetricsRow extends \Google\Model
     return $this->bids;
   }
   /**
-   * The number of bids that were permitted to compete in the auction.
-   *
-   * @param MetricValue $bidsInAuction
+   * @param MetricValue
    */
   public function setBidsInAuction(MetricValue $bidsInAuction)
   {
@@ -69,10 +65,7 @@ class BidMetricsRow extends \Google\Model
     return $this->bidsInAuction;
   }
   /**
-   * The number of bids for which the buyer was billed. Also called valid
-   * impressions as invalid impressions are not billed.
-   *
-   * @param MetricValue $billedImpressions
+   * @param MetricValue
    */
   public function setBilledImpressions(MetricValue $billedImpressions)
   {
@@ -86,9 +79,7 @@ class BidMetricsRow extends \Google\Model
     return $this->billedImpressions;
   }
   /**
-   * The number of bids that won the auction.
-   *
-   * @param MetricValue $impressionsWon
+   * @param MetricValue
    */
   public function setImpressionsWon(MetricValue $impressionsWon)
   {
@@ -102,10 +93,7 @@ class BidMetricsRow extends \Google\Model
     return $this->impressionsWon;
   }
   /**
-   * The number of bids for which the corresponding impression was measurable
-   * for viewability (as defined by Active View).
-   *
-   * @param MetricValue $measurableImpressions
+   * @param MetricValue
    */
   public function setMeasurableImpressions(MetricValue $measurableImpressions)
   {
@@ -119,10 +107,7 @@ class BidMetricsRow extends \Google\Model
     return $this->measurableImpressions;
   }
   /**
-   * The number of bids that won the auction and also won the mediation
-   * waterfall (if any).
-   *
-   * @param MetricValue $reachedQueries
+   * @param MetricValue
    */
   public function setReachedQueries(MetricValue $reachedQueries)
   {
@@ -136,9 +121,7 @@ class BidMetricsRow extends \Google\Model
     return $this->reachedQueries;
   }
   /**
-   * The values of all dimensions associated with metric values in this row.
-   *
-   * @param RowDimensions $rowDimensions
+   * @param RowDimensions
    */
   public function setRowDimensions(RowDimensions $rowDimensions)
   {
@@ -152,10 +135,7 @@ class BidMetricsRow extends \Google\Model
     return $this->rowDimensions;
   }
   /**
-   * The number of bids for which the corresponding impression was viewable (as
-   * defined by Active View).
-   *
-   * @param MetricValue $viewableImpressions
+   * @param MetricValue
    */
   public function setViewableImpressions(MetricValue $viewableImpressions)
   {

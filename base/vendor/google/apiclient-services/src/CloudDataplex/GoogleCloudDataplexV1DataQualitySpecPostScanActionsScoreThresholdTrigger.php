@@ -20,16 +20,12 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1DataQualitySpecPostScanActionsScoreThresholdTrigger extends \Google\Model
 {
   /**
-   * Optional. The score range is in 0,100.
-   *
    * @var float
    */
   public $scoreThreshold;
 
   /**
-   * Optional. The score range is in 0,100.
-   *
-   * @param float $scoreThreshold
+   * @param float
    */
   public function setScoreThreshold($scoreThreshold)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\StreetViewPublish;
 class PhotoId extends \Google\Model
 {
   /**
-   * A unique identifier for a photo.
-   *
    * @var string
    */
   public $id;
 
   /**
-   * A unique identifier for a photo.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {

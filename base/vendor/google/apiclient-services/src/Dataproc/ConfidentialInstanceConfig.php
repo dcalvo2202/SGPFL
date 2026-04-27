@@ -20,18 +20,12 @@ namespace Google\Service\Dataproc;
 class ConfidentialInstanceConfig extends \Google\Model
 {
   /**
-   * Optional. Defines whether the instance should have confidential compute
-   * enabled.
-   *
    * @var bool
    */
   public $enableConfidentialCompute;
 
   /**
-   * Optional. Defines whether the instance should have confidential compute
-   * enabled.
-   *
-   * @param bool $enableConfidentialCompute
+   * @param bool
    */
   public function setEnableConfidentialCompute($enableConfidentialCompute)
   {

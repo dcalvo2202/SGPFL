@@ -20,22 +20,16 @@ namespace Google\Service\ToolResults;
 class RoboScriptExecution extends \Google\Model
 {
   /**
-   * The number of Robo script actions executed successfully.
-   *
    * @var int
    */
   public $successfulActions;
   /**
-   * The total number of actions in the Robo script.
-   *
    * @var int
    */
   public $totalActions;
 
   /**
-   * The number of Robo script actions executed successfully.
-   *
-   * @param int $successfulActions
+   * @param int
    */
   public function setSuccessfulActions($successfulActions)
   {
@@ -49,9 +43,7 @@ class RoboScriptExecution extends \Google\Model
     return $this->successfulActions;
   }
   /**
-   * The total number of actions in the Robo script.
-   *
-   * @param int $totalActions
+   * @param int
    */
   public function setTotalActions($totalActions)
   {

@@ -22,20 +22,10 @@ class LeasingSavings extends \Google\Model
   protected $annualLeasingCostType = Money::class;
   protected $annualLeasingCostDataType = '';
   /**
-   * Whether leases are allowed in this juristiction (leases are not allowed in
-   * some states). If this field is false, then the values in this message
-   * should probably be ignored.
-   *
    * @var bool
    */
   public $leasesAllowed;
   /**
-   * Whether leases are supported in this juristiction by the financial
-   * calculation engine. If this field is false, then the values in this message
-   * should probably be ignored. This is independent of `leases_allowed`: in
-   * some areas leases are allowed, but under conditions that aren't handled by
-   * the financial models.
-   *
    * @var bool
    */
   public $leasesSupported;
@@ -43,9 +33,7 @@ class LeasingSavings extends \Google\Model
   protected $savingsDataType = '';
 
   /**
-   * Estimated annual leasing cost.
-   *
-   * @param Money $annualLeasingCost
+   * @param Money
    */
   public function setAnnualLeasingCost(Money $annualLeasingCost)
   {
@@ -59,11 +47,7 @@ class LeasingSavings extends \Google\Model
     return $this->annualLeasingCost;
   }
   /**
-   * Whether leases are allowed in this juristiction (leases are not allowed in
-   * some states). If this field is false, then the values in this message
-   * should probably be ignored.
-   *
-   * @param bool $leasesAllowed
+   * @param bool
    */
   public function setLeasesAllowed($leasesAllowed)
   {
@@ -77,13 +61,7 @@ class LeasingSavings extends \Google\Model
     return $this->leasesAllowed;
   }
   /**
-   * Whether leases are supported in this juristiction by the financial
-   * calculation engine. If this field is false, then the values in this message
-   * should probably be ignored. This is independent of `leases_allowed`: in
-   * some areas leases are allowed, but under conditions that aren't handled by
-   * the financial models.
-   *
-   * @param bool $leasesSupported
+   * @param bool
    */
   public function setLeasesSupported($leasesSupported)
   {
@@ -97,9 +75,7 @@ class LeasingSavings extends \Google\Model
     return $this->leasesSupported;
   }
   /**
-   * How much is saved (or not) over the lifetime period.
-   *
-   * @param SavingsOverTime $savings
+   * @param SavingsOverTime
    */
   public function setSavings(SavingsOverTime $savings)
   {

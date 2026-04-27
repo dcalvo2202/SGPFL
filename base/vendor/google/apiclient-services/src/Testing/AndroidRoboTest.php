@@ -19,60 +19,30 @@ namespace Google\Service\Testing;
 
 class AndroidRoboTest extends \Google\Collection
 {
-  /**
-   * This means that the server should choose the mode. Recommended.
-   */
-  public const ROBO_MODE_ROBO_MODE_UNSPECIFIED = 'ROBO_MODE_UNSPECIFIED';
-  /**
-   * Runs Robo in UIAutomator-only mode without app resigning
-   */
-  public const ROBO_MODE_ROBO_VERSION_1 = 'ROBO_VERSION_1';
-  /**
-   * Deprecated: Use ROBO_VERSION_1 instead for all use cases. Runs Robo in
-   * standard Espresso with UIAutomator fallback
-   *
-   * @deprecated
-   */
-  public const ROBO_MODE_ROBO_VERSION_2 = 'ROBO_VERSION_2';
   protected $collection_key = 'startingIntents';
   protected $appApkType = FileReference::class;
   protected $appApkDataType = '';
   protected $appBundleType = AppBundle::class;
   protected $appBundleDataType = '';
   /**
-   * The initial activity that should be used to start the app.
-   *
    * @var string
    */
   public $appInitialActivity;
   /**
-   * The java package for the application under test. The default value is
-   * determined by examining the application's manifest.
-   *
    * @var string
    */
   public $appPackageId;
   /**
-   * The max depth of the traversal stack Robo can explore. Needs to be at least
-   * 2 to make Robo explore the app beyond the first activity. Default is 50.
-   *
-   * @deprecated
    * @var int
    */
   public $maxDepth;
   /**
-   * The max number of steps Robo can execute. Default is no limit.
-   *
-   * @deprecated
    * @var int
    */
   public $maxSteps;
   protected $roboDirectivesType = RoboDirective::class;
   protected $roboDirectivesDataType = 'array';
   /**
-   * The mode in which Robo should run. Most clients should allow the server to
-   * populate this field automatically.
-   *
    * @var string
    */
   public $roboMode;
@@ -82,9 +52,7 @@ class AndroidRoboTest extends \Google\Collection
   protected $startingIntentsDataType = 'array';
 
   /**
-   * The APK for the application under test.
-   *
-   * @param FileReference $appApk
+   * @param FileReference
    */
   public function setAppApk(FileReference $appApk)
   {
@@ -98,9 +66,7 @@ class AndroidRoboTest extends \Google\Collection
     return $this->appApk;
   }
   /**
-   * A multi-apk app bundle for the application under test.
-   *
-   * @param AppBundle $appBundle
+   * @param AppBundle
    */
   public function setAppBundle(AppBundle $appBundle)
   {
@@ -114,9 +80,7 @@ class AndroidRoboTest extends \Google\Collection
     return $this->appBundle;
   }
   /**
-   * The initial activity that should be used to start the app.
-   *
-   * @param string $appInitialActivity
+   * @param string
    */
   public function setAppInitialActivity($appInitialActivity)
   {
@@ -130,10 +94,7 @@ class AndroidRoboTest extends \Google\Collection
     return $this->appInitialActivity;
   }
   /**
-   * The java package for the application under test. The default value is
-   * determined by examining the application's manifest.
-   *
-   * @param string $appPackageId
+   * @param string
    */
   public function setAppPackageId($appPackageId)
   {
@@ -147,18 +108,13 @@ class AndroidRoboTest extends \Google\Collection
     return $this->appPackageId;
   }
   /**
-   * The max depth of the traversal stack Robo can explore. Needs to be at least
-   * 2 to make Robo explore the app beyond the first activity. Default is 50.
-   *
-   * @deprecated
-   * @param int $maxDepth
+   * @param int
    */
   public function setMaxDepth($maxDepth)
   {
     $this->maxDepth = $maxDepth;
   }
   /**
-   * @deprecated
    * @return int
    */
   public function getMaxDepth()
@@ -166,17 +122,13 @@ class AndroidRoboTest extends \Google\Collection
     return $this->maxDepth;
   }
   /**
-   * The max number of steps Robo can execute. Default is no limit.
-   *
-   * @deprecated
-   * @param int $maxSteps
+   * @param int
    */
   public function setMaxSteps($maxSteps)
   {
     $this->maxSteps = $maxSteps;
   }
   /**
-   * @deprecated
    * @return int
    */
   public function getMaxSteps()
@@ -184,11 +136,7 @@ class AndroidRoboTest extends \Google\Collection
     return $this->maxSteps;
   }
   /**
-   * A set of directives Robo should apply during the crawl. This allows users
-   * to customize the crawl. For example, the username and password for a test
-   * account can be provided.
-   *
-   * @param RoboDirective[] $roboDirectives
+   * @param RoboDirective[]
    */
   public function setRoboDirectives($roboDirectives)
   {
@@ -202,29 +150,21 @@ class AndroidRoboTest extends \Google\Collection
     return $this->roboDirectives;
   }
   /**
-   * The mode in which Robo should run. Most clients should allow the server to
-   * populate this field automatically.
-   *
-   * Accepted values: ROBO_MODE_UNSPECIFIED, ROBO_VERSION_1, ROBO_VERSION_2
-   *
-   * @param self::ROBO_MODE_* $roboMode
+   * @param string
    */
   public function setRoboMode($roboMode)
   {
     $this->roboMode = $roboMode;
   }
   /**
-   * @return self::ROBO_MODE_*
+   * @return string
    */
   public function getRoboMode()
   {
     return $this->roboMode;
   }
   /**
-   * A JSON file with a sequence of actions Robo should perform as a prologue
-   * for the crawl.
-   *
-   * @param FileReference $roboScript
+   * @param FileReference
    */
   public function setRoboScript(FileReference $roboScript)
   {
@@ -238,12 +178,7 @@ class AndroidRoboTest extends \Google\Collection
     return $this->roboScript;
   }
   /**
-   * The intents used to launch the app for the crawl. If none are provided,
-   * then the main launcher activity is launched. If some are provided, then
-   * only those provided are launched (the main launcher activity must be
-   * provided explicitly).
-   *
-   * @param RoboStartingIntent[] $startingIntents
+   * @param RoboStartingIntent[]
    */
   public function setStartingIntents($startingIntents)
   {

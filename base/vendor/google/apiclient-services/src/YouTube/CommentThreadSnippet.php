@@ -20,53 +20,34 @@ namespace Google\Service\YouTube;
 class CommentThreadSnippet extends \Google\Model
 {
   /**
-   * Whether the current viewer of the thread can reply to it. This is viewer
-   * specific - other viewers may see a different value for this field.
-   *
    * @var bool
    */
   public $canReply;
   /**
-   * The YouTube channel the comments in the thread refer to or the channel with
-   * the video the comments refer to. If neither video_id nor post_id is set the
-   * comments refer to the channel itself.
-   *
    * @var string
    */
   public $channelId;
   /**
-   * Whether the thread (and therefore all its comments) is visible to all
-   * YouTube users.
-   *
    * @var bool
    */
   public $isPublic;
   /**
-   * The ID of the post the comments refer to, if any.
-   *
    * @var string
    */
   public $postId;
   protected $topLevelCommentType = Comment::class;
   protected $topLevelCommentDataType = '';
   /**
-   * The total number of replies (not including the top level comment).
-   *
    * @var string
    */
   public $totalReplyCount;
   /**
-   * The ID of the video the comments refer to, if any.
-   *
    * @var string
    */
   public $videoId;
 
   /**
-   * Whether the current viewer of the thread can reply to it. This is viewer
-   * specific - other viewers may see a different value for this field.
-   *
-   * @param bool $canReply
+   * @param bool
    */
   public function setCanReply($canReply)
   {
@@ -80,11 +61,7 @@ class CommentThreadSnippet extends \Google\Model
     return $this->canReply;
   }
   /**
-   * The YouTube channel the comments in the thread refer to or the channel with
-   * the video the comments refer to. If neither video_id nor post_id is set the
-   * comments refer to the channel itself.
-   *
-   * @param string $channelId
+   * @param string
    */
   public function setChannelId($channelId)
   {
@@ -98,10 +75,7 @@ class CommentThreadSnippet extends \Google\Model
     return $this->channelId;
   }
   /**
-   * Whether the thread (and therefore all its comments) is visible to all
-   * YouTube users.
-   *
-   * @param bool $isPublic
+   * @param bool
    */
   public function setIsPublic($isPublic)
   {
@@ -115,9 +89,7 @@ class CommentThreadSnippet extends \Google\Model
     return $this->isPublic;
   }
   /**
-   * The ID of the post the comments refer to, if any.
-   *
-   * @param string $postId
+   * @param string
    */
   public function setPostId($postId)
   {
@@ -131,9 +103,7 @@ class CommentThreadSnippet extends \Google\Model
     return $this->postId;
   }
   /**
-   * The top level comment of this thread.
-   *
-   * @param Comment $topLevelComment
+   * @param Comment
    */
   public function setTopLevelComment(Comment $topLevelComment)
   {
@@ -147,9 +117,7 @@ class CommentThreadSnippet extends \Google\Model
     return $this->topLevelComment;
   }
   /**
-   * The total number of replies (not including the top level comment).
-   *
-   * @param string $totalReplyCount
+   * @param string
    */
   public function setTotalReplyCount($totalReplyCount)
   {
@@ -163,9 +131,7 @@ class CommentThreadSnippet extends \Google\Model
     return $this->totalReplyCount;
   }
   /**
-   * The ID of the video the comments refer to, if any.
-   *
-   * @param string $videoId
+   * @param string
    */
   public function setVideoId($videoId)
   {

@@ -23,16 +23,12 @@ class GoogleAppsDriveLabelsV2ListLabelPermissionsResponse extends \Google\Collec
   protected $labelPermissionsType = GoogleAppsDriveLabelsV2LabelPermission::class;
   protected $labelPermissionsDataType = 'array';
   /**
-   * The token of the next page in the response.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Label permissions.
-   *
-   * @param GoogleAppsDriveLabelsV2LabelPermission[] $labelPermissions
+   * @param GoogleAppsDriveLabelsV2LabelPermission[]
    */
   public function setLabelPermissions($labelPermissions)
   {
@@ -46,9 +42,7 @@ class GoogleAppsDriveLabelsV2ListLabelPermissionsResponse extends \Google\Collec
     return $this->labelPermissions;
   }
   /**
-   * The token of the next page in the response.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

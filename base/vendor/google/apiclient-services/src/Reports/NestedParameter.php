@@ -21,52 +21,36 @@ class NestedParameter extends \Google\Collection
 {
   protected $collection_key = 'multiValue';
   /**
-   * Boolean value of the parameter.
-   *
    * @var bool
    */
   public $boolValue;
   /**
-   * Integer value of the parameter.
-   *
    * @var string
    */
   public $intValue;
   /**
-   * Multiple boolean values of the parameter.
-   *
    * @var bool[]
    */
   public $multiBoolValue;
   /**
-   * Multiple integer values of the parameter.
-   *
    * @var string[]
    */
   public $multiIntValue;
   /**
-   * Multiple string values of the parameter.
-   *
    * @var string[]
    */
   public $multiValue;
   /**
-   * The name of the parameter.
-   *
    * @var string
    */
   public $name;
   /**
-   * String value of the parameter.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Boolean value of the parameter.
-   *
-   * @param bool $boolValue
+   * @param bool
    */
   public function setBoolValue($boolValue)
   {
@@ -80,9 +64,7 @@ class NestedParameter extends \Google\Collection
     return $this->boolValue;
   }
   /**
-   * Integer value of the parameter.
-   *
-   * @param string $intValue
+   * @param string
    */
   public function setIntValue($intValue)
   {
@@ -96,9 +78,7 @@ class NestedParameter extends \Google\Collection
     return $this->intValue;
   }
   /**
-   * Multiple boolean values of the parameter.
-   *
-   * @param bool[] $multiBoolValue
+   * @param bool[]
    */
   public function setMultiBoolValue($multiBoolValue)
   {
@@ -112,9 +92,7 @@ class NestedParameter extends \Google\Collection
     return $this->multiBoolValue;
   }
   /**
-   * Multiple integer values of the parameter.
-   *
-   * @param string[] $multiIntValue
+   * @param string[]
    */
   public function setMultiIntValue($multiIntValue)
   {
@@ -128,9 +106,7 @@ class NestedParameter extends \Google\Collection
     return $this->multiIntValue;
   }
   /**
-   * Multiple string values of the parameter.
-   *
-   * @param string[] $multiValue
+   * @param string[]
    */
   public function setMultiValue($multiValue)
   {
@@ -144,9 +120,7 @@ class NestedParameter extends \Google\Collection
     return $this->multiValue;
   }
   /**
-   * The name of the parameter.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -160,9 +134,7 @@ class NestedParameter extends \Google\Collection
     return $this->name;
   }
   /**
-   * String value of the parameter.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

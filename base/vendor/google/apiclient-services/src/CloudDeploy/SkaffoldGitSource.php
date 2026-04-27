@@ -20,28 +20,20 @@ namespace Google\Service\CloudDeploy;
 class SkaffoldGitSource extends \Google\Model
 {
   /**
-   * Optional. Relative path from the repository root to the Skaffold file.
-   *
    * @var string
    */
   public $path;
   /**
-   * Optional. Git branch or tag to use when cloning the repository.
-   *
    * @var string
    */
   public $ref;
   /**
-   * Required. Git repository the package should be cloned from.
-   *
    * @var string
    */
   public $repo;
 
   /**
-   * Optional. Relative path from the repository root to the Skaffold file.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {
@@ -55,9 +47,7 @@ class SkaffoldGitSource extends \Google\Model
     return $this->path;
   }
   /**
-   * Optional. Git branch or tag to use when cloning the repository.
-   *
-   * @param string $ref
+   * @param string
    */
   public function setRef($ref)
   {
@@ -71,9 +61,7 @@ class SkaffoldGitSource extends \Google\Model
     return $this->ref;
   }
   /**
-   * Required. Git repository the package should be cloned from.
-   *
-   * @param string $repo
+   * @param string
    */
   public function setRepo($repo)
   {

@@ -20,28 +20,20 @@ namespace Google\Service\Dataflow;
 class ParameterMetadataEnumOption extends \Google\Model
 {
   /**
-   * Optional. The description to display for the enum option.
-   *
    * @var string
    */
   public $description;
   /**
-   * Optional. The label to display for the enum option.
-   *
    * @var string
    */
   public $label;
   /**
-   * Required. The value of the enum option.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Optional. The description to display for the enum option.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -55,9 +47,7 @@ class ParameterMetadataEnumOption extends \Google\Model
     return $this->description;
   }
   /**
-   * Optional. The label to display for the enum option.
-   *
-   * @param string $label
+   * @param string
    */
   public function setLabel($label)
   {
@@ -71,9 +61,7 @@ class ParameterMetadataEnumOption extends \Google\Model
     return $this->label;
   }
   /**
-   * Required. The value of the enum option.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\Container;
 class GkeBackupAgentConfig extends \Google\Model
 {
   /**
-   * Whether the Backup for GKE agent is enabled for this cluster.
-   *
    * @var bool
    */
   public $enabled;
 
   /**
-   * Whether the Backup for GKE agent is enabled for this cluster.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {

@@ -24,11 +24,7 @@ class SearchChainsResponse extends \Google\Collection
   protected $chainsDataType = 'array';
 
   /**
-   * Chains that match the queried chain_display_name in SearchChainsRequest. If
-   * there are no matches, this field will be empty. Results are listed in order
-   * of relevance.
-   *
-   * @param Chain[] $chains
+   * @param Chain[]
    */
   public function setChains($chains)
   {

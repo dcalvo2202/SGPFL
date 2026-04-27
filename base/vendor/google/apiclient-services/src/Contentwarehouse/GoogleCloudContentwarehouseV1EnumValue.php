@@ -20,18 +20,12 @@ namespace Google\Service\Contentwarehouse;
 class GoogleCloudContentwarehouseV1EnumValue extends \Google\Model
 {
   /**
-   * String value of the enum field. This must match defined set of enums in
-   * document schema using EnumTypeOptions.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * String value of the enum field. This must match defined set of enums in
-   * document schema using EnumTypeOptions.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

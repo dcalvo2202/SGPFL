@@ -24,9 +24,7 @@ class ImagesListResponse extends \Google\Collection
   protected $imagesDataType = 'array';
 
   /**
-   * All listed Images.
-   *
-   * @param Image[] $images
+   * @param Image[]
    */
   public function setImages($images)
   {

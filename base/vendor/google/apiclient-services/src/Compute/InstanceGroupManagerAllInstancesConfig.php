@@ -23,15 +23,7 @@ class InstanceGroupManagerAllInstancesConfig extends \Google\Model
   protected $propertiesDataType = '';
 
   /**
-   * Properties to set on all instances in the group.
-   *
-   * You can add or modify properties using theinstanceGroupManagers.patch
-   * orregionInstanceGroupManagers.patch. After settingallInstancesConfig on the
-   * group, you must update the group's instances to apply the configuration. To
-   * apply the configuration, set the group's updatePolicy.type field to use
-   * proactive updates or use the applyUpdatesToInstances method.
-   *
-   * @param InstancePropertiesPatch $properties
+   * @param InstancePropertiesPatch
    */
   public function setProperties(InstancePropertiesPatch $properties)
   {

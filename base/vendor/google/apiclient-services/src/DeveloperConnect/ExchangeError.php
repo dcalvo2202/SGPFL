@@ -20,23 +20,16 @@ namespace Google\Service\DeveloperConnect;
 class ExchangeError extends \Google\Model
 {
   /**
-   * https://datatracker.ietf.org/doc/html/rfc6749#section-5.2 - error
-   *
    * @var string
    */
   public $code;
   /**
-   * https://datatracker.ietf.org/doc/html/rfc6749#section-5.2 -
-   * error_description
-   *
    * @var string
    */
   public $description;
 
   /**
-   * https://datatracker.ietf.org/doc/html/rfc6749#section-5.2 - error
-   *
-   * @param string $code
+   * @param string
    */
   public function setCode($code)
   {
@@ -50,10 +43,7 @@ class ExchangeError extends \Google\Model
     return $this->code;
   }
   /**
-   * https://datatracker.ietf.org/doc/html/rfc6749#section-5.2 -
-   * error_description
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {

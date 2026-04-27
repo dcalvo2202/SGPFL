@@ -21,8 +21,6 @@ class LeaseWorkItemResponse extends \Google\Collection
 {
   protected $collection_key = 'workItems';
   /**
-   * Untranslated bag-of-bytes WorkResponse for UnifiedWorker.
-   *
    * @var array[]
    */
   public $unifiedWorkerResponse;
@@ -30,9 +28,7 @@ class LeaseWorkItemResponse extends \Google\Collection
   protected $workItemsDataType = 'array';
 
   /**
-   * Untranslated bag-of-bytes WorkResponse for UnifiedWorker.
-   *
-   * @param array[] $unifiedWorkerResponse
+   * @param array[]
    */
   public function setUnifiedWorkerResponse($unifiedWorkerResponse)
   {
@@ -46,9 +42,7 @@ class LeaseWorkItemResponse extends \Google\Collection
     return $this->unifiedWorkerResponse;
   }
   /**
-   * A list of the leased WorkItems.
-   *
-   * @param WorkItem[] $workItems
+   * @param WorkItem[]
    */
   public function setWorkItems($workItems)
   {

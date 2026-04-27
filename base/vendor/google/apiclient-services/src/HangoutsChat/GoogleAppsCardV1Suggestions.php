@@ -24,10 +24,7 @@ class GoogleAppsCardV1Suggestions extends \Google\Collection
   protected $itemsDataType = 'array';
 
   /**
-   * A list of suggestions used for autocomplete recommendations in text input
-   * fields.
-   *
-   * @param GoogleAppsCardV1SuggestionItem[] $items
+   * @param GoogleAppsCardV1SuggestionItem[]
    */
   public function setItems($items)
   {

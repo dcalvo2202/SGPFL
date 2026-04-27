@@ -20,35 +20,24 @@ namespace Google\Service\Assuredworkloads;
 class GoogleCloudAssuredworkloadsV1WorkloadPartnerPermissions extends \Google\Model
 {
   /**
-   * Optional. Allow partner to view support case details for an AXT log
-   *
    * @var bool
    */
   public $accessTransparencyLogsSupportCaseViewer;
   /**
-   * Optional. Allow partner to view violation alerts.
-   *
    * @var bool
    */
   public $assuredWorkloadsMonitoring;
   /**
-   * Optional. Allow the partner to view inspectability logs and monitoring
-   * violations.
-   *
    * @var bool
    */
   public $dataLogsViewer;
   /**
-   * Optional. Allow partner to view access approval logs.
-   *
    * @var bool
    */
   public $serviceAccessApprover;
 
   /**
-   * Optional. Allow partner to view support case details for an AXT log
-   *
-   * @param bool $accessTransparencyLogsSupportCaseViewer
+   * @param bool
    */
   public function setAccessTransparencyLogsSupportCaseViewer($accessTransparencyLogsSupportCaseViewer)
   {
@@ -62,9 +51,7 @@ class GoogleCloudAssuredworkloadsV1WorkloadPartnerPermissions extends \Google\Mo
     return $this->accessTransparencyLogsSupportCaseViewer;
   }
   /**
-   * Optional. Allow partner to view violation alerts.
-   *
-   * @param bool $assuredWorkloadsMonitoring
+   * @param bool
    */
   public function setAssuredWorkloadsMonitoring($assuredWorkloadsMonitoring)
   {
@@ -78,10 +65,7 @@ class GoogleCloudAssuredworkloadsV1WorkloadPartnerPermissions extends \Google\Mo
     return $this->assuredWorkloadsMonitoring;
   }
   /**
-   * Optional. Allow the partner to view inspectability logs and monitoring
-   * violations.
-   *
-   * @param bool $dataLogsViewer
+   * @param bool
    */
   public function setDataLogsViewer($dataLogsViewer)
   {
@@ -95,9 +79,7 @@ class GoogleCloudAssuredworkloadsV1WorkloadPartnerPermissions extends \Google\Mo
     return $this->dataLogsViewer;
   }
   /**
-   * Optional. Allow partner to view access approval logs.
-   *
-   * @param bool $serviceAccessApprover
+   * @param bool
    */
   public function setServiceAccessApprover($serviceAccessApprover)
   {

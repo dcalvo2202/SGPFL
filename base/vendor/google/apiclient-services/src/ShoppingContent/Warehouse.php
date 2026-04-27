@@ -24,16 +24,10 @@ class Warehouse extends \Google\Model
   protected $cutoffTimeType = WarehouseCutoffTime::class;
   protected $cutoffTimeDataType = '';
   /**
-   * Required. The number of days it takes for this warehouse to pack up and
-   * ship an item. This is on the warehouse level, but can be overridden on the
-   * offer level based on the attributes of an item.
-   *
    * @var string
    */
   public $handlingDays;
   /**
-   * Required. The name of the warehouse. Must be unique within account.
-   *
    * @var string
    */
   public $name;
@@ -41,10 +35,7 @@ class Warehouse extends \Google\Model
   protected $shippingAddressDataType = '';
 
   /**
-   * Business days of the warehouse. If not set, will be Monday to Friday by
-   * default.
-   *
-   * @param BusinessDayConfig $businessDayConfig
+   * @param BusinessDayConfig
    */
   public function setBusinessDayConfig(BusinessDayConfig $businessDayConfig)
   {
@@ -58,11 +49,7 @@ class Warehouse extends \Google\Model
     return $this->businessDayConfig;
   }
   /**
-   * Required. The latest time of day that an order can be accepted and begin
-   * processing. Later orders will be processed in the next day. The time is
-   * based on the warehouse postal code.
-   *
-   * @param WarehouseCutoffTime $cutoffTime
+   * @param WarehouseCutoffTime
    */
   public function setCutoffTime(WarehouseCutoffTime $cutoffTime)
   {
@@ -76,11 +63,7 @@ class Warehouse extends \Google\Model
     return $this->cutoffTime;
   }
   /**
-   * Required. The number of days it takes for this warehouse to pack up and
-   * ship an item. This is on the warehouse level, but can be overridden on the
-   * offer level based on the attributes of an item.
-   *
-   * @param string $handlingDays
+   * @param string
    */
   public function setHandlingDays($handlingDays)
   {
@@ -94,9 +77,7 @@ class Warehouse extends \Google\Model
     return $this->handlingDays;
   }
   /**
-   * Required. The name of the warehouse. Must be unique within account.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -110,9 +91,7 @@ class Warehouse extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. Shipping address of the warehouse.
-   *
-   * @param Address $shippingAddress
+   * @param Address
    */
   public function setShippingAddress(Address $shippingAddress)
   {

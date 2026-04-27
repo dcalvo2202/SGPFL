@@ -23,18 +23,12 @@ class ListCseKeyPairsResponse extends \Google\Collection
   protected $cseKeyPairsType = CseKeyPair::class;
   protected $cseKeyPairsDataType = 'array';
   /**
-   * Pagination token to be passed to a subsequent ListCseKeyPairs call in order
-   * to retrieve the next page of key pairs. If this value is not returned, then
-   * no further pages remain.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * One page of the list of CSE key pairs installed for the user.
-   *
-   * @param CseKeyPair[] $cseKeyPairs
+   * @param CseKeyPair[]
    */
   public function setCseKeyPairs($cseKeyPairs)
   {
@@ -48,11 +42,7 @@ class ListCseKeyPairsResponse extends \Google\Collection
     return $this->cseKeyPairs;
   }
   /**
-   * Pagination token to be passed to a subsequent ListCseKeyPairs call in order
-   * to retrieve the next page of key pairs. If this value is not returned, then
-   * no further pages remain.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

@@ -31,9 +31,7 @@ class HealthAndSafety extends \Google\Model
   protected $physicalDistancingDataType = '';
 
   /**
-   * Enhanced cleaning measures implemented by the hotel during COVID-19.
-   *
-   * @param EnhancedCleaning $enhancedCleaning
+   * @param EnhancedCleaning
    */
   public function setEnhancedCleaning(EnhancedCleaning $enhancedCleaning)
   {
@@ -47,9 +45,7 @@ class HealthAndSafety extends \Google\Model
     return $this->enhancedCleaning;
   }
   /**
-   * Increased food safety measures implemented by the hotel during COVID-19.
-   *
-   * @param IncreasedFoodSafety $increasedFoodSafety
+   * @param IncreasedFoodSafety
    */
   public function setIncreasedFoodSafety(IncreasedFoodSafety $increasedFoodSafety)
   {
@@ -63,9 +59,7 @@ class HealthAndSafety extends \Google\Model
     return $this->increasedFoodSafety;
   }
   /**
-   * Minimized contact measures implemented by the hotel during COVID-19.
-   *
-   * @param MinimizedContact $minimizedContact
+   * @param MinimizedContact
    */
   public function setMinimizedContact(MinimizedContact $minimizedContact)
   {
@@ -79,9 +73,7 @@ class HealthAndSafety extends \Google\Model
     return $this->minimizedContact;
   }
   /**
-   * Personal protection measures implemented by the hotel during COVID-19.
-   *
-   * @param PersonalProtection $personalProtection
+   * @param PersonalProtection
    */
   public function setPersonalProtection(PersonalProtection $personalProtection)
   {
@@ -95,9 +87,7 @@ class HealthAndSafety extends \Google\Model
     return $this->personalProtection;
   }
   /**
-   * Physical distancing measures implemented by the hotel during COVID-19.
-   *
-   * @param PhysicalDistancing $physicalDistancing
+   * @param PhysicalDistancing
    */
   public function setPhysicalDistancing(PhysicalDistancing $physicalDistancing)
   {

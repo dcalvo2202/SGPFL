@@ -21,9 +21,6 @@ class GoogleCloudContactcenterinsightsV1ListQaQuestionsResponse extends \Google\
 {
   protected $collection_key = 'qaQuestions';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GoogleCloudContactcenterinsightsV1ListQaQuestionsResponse extends \Google\
   protected $qaQuestionsDataType = 'array';
 
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class GoogleCloudContactcenterinsightsV1ListQaQuestionsResponse extends \Google\
     return $this->nextPageToken;
   }
   /**
-   * The QaQuestions under the parent.
-   *
-   * @param GoogleCloudContactcenterinsightsV1QaQuestion[] $qaQuestions
+   * @param GoogleCloudContactcenterinsightsV1QaQuestion[]
    */
   public function setQaQuestions($qaQuestions)
   {

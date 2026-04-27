@@ -21,24 +21,16 @@ class GoogleCloudApigeeV1QueryTimeSeriesStatsResponseSequence extends \Google\Co
 {
   protected $collection_key = 'points';
   /**
-   * Map of dimensions and their values that uniquely identifies a time series
-   * sequence.
-   *
    * @var string[]
    */
   public $dimensions;
   /**
-   * List of points. First value of each inner list is a timestamp.
-   *
    * @var array[]
    */
   public $points;
 
   /**
-   * Map of dimensions and their values that uniquely identifies a time series
-   * sequence.
-   *
-   * @param string[] $dimensions
+   * @param string[]
    */
   public function setDimensions($dimensions)
   {
@@ -52,9 +44,7 @@ class GoogleCloudApigeeV1QueryTimeSeriesStatsResponseSequence extends \Google\Co
     return $this->dimensions;
   }
   /**
-   * List of points. First value of each inner list is a timestamp.
-   *
-   * @param array[] $points
+   * @param array[]
    */
   public function setPoints($points)
   {

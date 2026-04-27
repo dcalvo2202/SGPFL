@@ -20,30 +20,20 @@ namespace Google\Service\CloudHealthcare;
 class SchemaSegment extends \Google\Model
 {
   /**
-   * The maximum number of times this segment can be present in this group. 0 or
-   * -1 means unbounded.
-   *
    * @var int
    */
   public $maxOccurs;
   /**
-   * The minimum number of times this segment can be present in this group.
-   *
    * @var int
    */
   public $minOccurs;
   /**
-   * The Segment type. For example, "PID".
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The maximum number of times this segment can be present in this group. 0 or
-   * -1 means unbounded.
-   *
-   * @param int $maxOccurs
+   * @param int
    */
   public function setMaxOccurs($maxOccurs)
   {
@@ -57,9 +47,7 @@ class SchemaSegment extends \Google\Model
     return $this->maxOccurs;
   }
   /**
-   * The minimum number of times this segment can be present in this group.
-   *
-   * @param int $minOccurs
+   * @param int
    */
   public function setMinOccurs($minOccurs)
   {
@@ -73,9 +61,7 @@ class SchemaSegment extends \Google\Model
     return $this->minOccurs;
   }
   /**
-   * The Segment type. For example, "PID".
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

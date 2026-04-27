@@ -20,24 +20,16 @@ namespace Google\Service\APIhub;
 class GoogleCloudApihubV1Path extends \Google\Model
 {
   /**
-   * Optional. A short description for the path applicable to all operations.
-   *
    * @var string
    */
   public $description;
   /**
-   * Optional. Complete path relative to server endpoint. Note: Even though this
-   * field is optional, it is required for CreateApiOperation API and we will
-   * fail the request if not provided.
-   *
    * @var string
    */
   public $path;
 
   /**
-   * Optional. A short description for the path applicable to all operations.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -51,11 +43,7 @@ class GoogleCloudApihubV1Path extends \Google\Model
     return $this->description;
   }
   /**
-   * Optional. Complete path relative to server endpoint. Note: Even though this
-   * field is optional, it is required for CreateApiOperation API and we will
-   * fail the request if not provided.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {

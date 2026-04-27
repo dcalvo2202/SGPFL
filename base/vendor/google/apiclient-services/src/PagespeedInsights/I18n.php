@@ -23,10 +23,7 @@ class I18n extends \Google\Model
   protected $rendererFormattedStringsDataType = '';
 
   /**
-   * Internationalized strings that are formatted to the locale in
-   * configSettings.
-   *
-   * @param RendererFormattedStrings $rendererFormattedStrings
+   * @param RendererFormattedStrings
    */
   public function setRendererFormattedStrings(RendererFormattedStrings $rendererFormattedStrings)
   {

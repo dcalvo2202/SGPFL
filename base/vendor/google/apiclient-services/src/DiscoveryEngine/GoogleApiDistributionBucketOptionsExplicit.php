@@ -20,11 +20,6 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleApiDistributionBucketOptionsExplicit extends \Google\Collection
 {
   protected $collection_key = 'bounds';
-  /**
-   * The values must be monotonically increasing.
-   *
-   * @var []
-   */
   public $bounds;
 
   public function setBounds($bounds)

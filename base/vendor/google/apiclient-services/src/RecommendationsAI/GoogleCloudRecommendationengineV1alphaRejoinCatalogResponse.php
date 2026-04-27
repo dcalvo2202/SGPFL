@@ -20,16 +20,12 @@ namespace Google\Service\RecommendationsAI;
 class GoogleCloudRecommendationengineV1alphaRejoinCatalogResponse extends \Google\Model
 {
   /**
-   * Number of user events that were joined with latest catalog items.
-   *
    * @var string
    */
   public $rejoinedUserEventsCount;
 
   /**
-   * Number of user events that were joined with latest catalog items.
-   *
-   * @param string $rejoinedUserEventsCount
+   * @param string
    */
   public function setRejoinedUserEventsCount($rejoinedUserEventsCount)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\Storagetransfer;
 class RunTransferJobRequest extends \Google\Model
 {
   /**
-   * Required. The ID of the Google Cloud project that owns the transfer job.
-   *
    * @var string
    */
   public $projectId;
 
   /**
-   * Required. The ID of the Google Cloud project that owns the transfer job.
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {

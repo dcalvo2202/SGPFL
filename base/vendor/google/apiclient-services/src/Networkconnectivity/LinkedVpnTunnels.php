@@ -21,111 +21,24 @@ class LinkedVpnTunnels extends \Google\Collection
 {
   protected $collection_key = 'uris';
   /**
-   * Optional. Dynamic routes overlapped/encompassed by exclude export ranges
-   * are excluded during export to hub.
-   *
-   * @var string[]
-   */
-  public $excludeExportRanges;
-  /**
-   * Optional. Hub routes overlapped/encompassed by exclude import ranges are
-   * excluded during import from hub.
-   *
-   * @var string[]
-   */
-  public $excludeImportRanges;
-  /**
-   * Optional. Dynamic routes fully encompassed by include export ranges are
-   * included during export to hub.
-   *
-   * @var string[]
-   */
-  public $includeExportRanges;
-  /**
-   * Optional. Hub routes fully encompassed by include import ranges are
-   * included during import from hub.
-   *
    * @var string[]
    */
   public $includeImportRanges;
   /**
-   * A value that controls whether site-to-site data transfer is enabled for
-   * these resources. Data transfer is available only in [supported
-   * locations](https://cloud.google.com/network-connectivity/docs/network-
-   * connectivity-center/concepts/locations).
-   *
    * @var bool
    */
   public $siteToSiteDataTransfer;
   /**
-   * The URIs of linked VPN tunnel resources.
-   *
    * @var string[]
    */
   public $uris;
   /**
-   * Output only. The VPC network where these VPN tunnels are located.
-   *
    * @var string
    */
   public $vpcNetwork;
 
   /**
-   * Optional. Dynamic routes overlapped/encompassed by exclude export ranges
-   * are excluded during export to hub.
-   *
-   * @param string[] $excludeExportRanges
-   */
-  public function setExcludeExportRanges($excludeExportRanges)
-  {
-    $this->excludeExportRanges = $excludeExportRanges;
-  }
-  /**
-   * @return string[]
-   */
-  public function getExcludeExportRanges()
-  {
-    return $this->excludeExportRanges;
-  }
-  /**
-   * Optional. Hub routes overlapped/encompassed by exclude import ranges are
-   * excluded during import from hub.
-   *
-   * @param string[] $excludeImportRanges
-   */
-  public function setExcludeImportRanges($excludeImportRanges)
-  {
-    $this->excludeImportRanges = $excludeImportRanges;
-  }
-  /**
-   * @return string[]
-   */
-  public function getExcludeImportRanges()
-  {
-    return $this->excludeImportRanges;
-  }
-  /**
-   * Optional. Dynamic routes fully encompassed by include export ranges are
-   * included during export to hub.
-   *
-   * @param string[] $includeExportRanges
-   */
-  public function setIncludeExportRanges($includeExportRanges)
-  {
-    $this->includeExportRanges = $includeExportRanges;
-  }
-  /**
-   * @return string[]
-   */
-  public function getIncludeExportRanges()
-  {
-    return $this->includeExportRanges;
-  }
-  /**
-   * Optional. Hub routes fully encompassed by include import ranges are
-   * included during import from hub.
-   *
-   * @param string[] $includeImportRanges
+   * @param string[]
    */
   public function setIncludeImportRanges($includeImportRanges)
   {
@@ -139,12 +52,7 @@ class LinkedVpnTunnels extends \Google\Collection
     return $this->includeImportRanges;
   }
   /**
-   * A value that controls whether site-to-site data transfer is enabled for
-   * these resources. Data transfer is available only in [supported
-   * locations](https://cloud.google.com/network-connectivity/docs/network-
-   * connectivity-center/concepts/locations).
-   *
-   * @param bool $siteToSiteDataTransfer
+   * @param bool
    */
   public function setSiteToSiteDataTransfer($siteToSiteDataTransfer)
   {
@@ -158,9 +66,7 @@ class LinkedVpnTunnels extends \Google\Collection
     return $this->siteToSiteDataTransfer;
   }
   /**
-   * The URIs of linked VPN tunnel resources.
-   *
-   * @param string[] $uris
+   * @param string[]
    */
   public function setUris($uris)
   {
@@ -174,9 +80,7 @@ class LinkedVpnTunnels extends \Google\Collection
     return $this->uris;
   }
   /**
-   * Output only. The VPC network where these VPN tunnels are located.
-   *
-   * @param string $vpcNetwork
+   * @param string
    */
   public function setVpcNetwork($vpcNetwork)
   {

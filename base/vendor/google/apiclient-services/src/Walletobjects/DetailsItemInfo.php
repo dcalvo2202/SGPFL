@@ -23,9 +23,7 @@ class DetailsItemInfo extends \Google\Model
   protected $itemDataType = '';
 
   /**
-   * The item to be displayed in the details list.
-   *
-   * @param TemplateItem $item
+   * @param TemplateItem
    */
   public function setItem(TemplateItem $item)
   {

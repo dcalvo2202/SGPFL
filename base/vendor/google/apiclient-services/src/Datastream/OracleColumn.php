@@ -20,64 +20,44 @@ namespace Google\Service\Datastream;
 class OracleColumn extends \Google\Model
 {
   /**
-   * The column name.
-   *
    * @var string
    */
   public $column;
   /**
-   * The Oracle data type.
-   *
    * @var string
    */
   public $dataType;
   /**
-   * Column encoding.
-   *
    * @var string
    */
   public $encoding;
   /**
-   * Column length.
-   *
    * @var int
    */
   public $length;
   /**
-   * Whether or not the column can accept a null value.
-   *
    * @var bool
    */
   public $nullable;
   /**
-   * The ordinal position of the column in the table.
-   *
    * @var int
    */
   public $ordinalPosition;
   /**
-   * Column precision.
-   *
    * @var int
    */
   public $precision;
   /**
-   * Whether or not the column represents a primary key.
-   *
    * @var bool
    */
   public $primaryKey;
   /**
-   * Column scale.
-   *
    * @var int
    */
   public $scale;
 
   /**
-   * The column name.
-   *
-   * @param string $column
+   * @param string
    */
   public function setColumn($column)
   {
@@ -91,9 +71,7 @@ class OracleColumn extends \Google\Model
     return $this->column;
   }
   /**
-   * The Oracle data type.
-   *
-   * @param string $dataType
+   * @param string
    */
   public function setDataType($dataType)
   {
@@ -107,9 +85,7 @@ class OracleColumn extends \Google\Model
     return $this->dataType;
   }
   /**
-   * Column encoding.
-   *
-   * @param string $encoding
+   * @param string
    */
   public function setEncoding($encoding)
   {
@@ -123,9 +99,7 @@ class OracleColumn extends \Google\Model
     return $this->encoding;
   }
   /**
-   * Column length.
-   *
-   * @param int $length
+   * @param int
    */
   public function setLength($length)
   {
@@ -139,9 +113,7 @@ class OracleColumn extends \Google\Model
     return $this->length;
   }
   /**
-   * Whether or not the column can accept a null value.
-   *
-   * @param bool $nullable
+   * @param bool
    */
   public function setNullable($nullable)
   {
@@ -155,9 +127,7 @@ class OracleColumn extends \Google\Model
     return $this->nullable;
   }
   /**
-   * The ordinal position of the column in the table.
-   *
-   * @param int $ordinalPosition
+   * @param int
    */
   public function setOrdinalPosition($ordinalPosition)
   {
@@ -171,9 +141,7 @@ class OracleColumn extends \Google\Model
     return $this->ordinalPosition;
   }
   /**
-   * Column precision.
-   *
-   * @param int $precision
+   * @param int
    */
   public function setPrecision($precision)
   {
@@ -187,9 +155,7 @@ class OracleColumn extends \Google\Model
     return $this->precision;
   }
   /**
-   * Whether or not the column represents a primary key.
-   *
-   * @param bool $primaryKey
+   * @param bool
    */
   public function setPrimaryKey($primaryKey)
   {
@@ -203,9 +169,7 @@ class OracleColumn extends \Google\Model
     return $this->primaryKey;
   }
   /**
-   * Column scale.
-   *
-   * @param int $scale
+   * @param int
    */
   public function setScale($scale)
   {

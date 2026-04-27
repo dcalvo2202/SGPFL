@@ -20,16 +20,12 @@ namespace Google\Service\Directory;
 class UserUndelete extends \Google\Model
 {
   /**
-   * OrgUnit of User
-   *
    * @var string
    */
   public $orgUnitPath;
 
   /**
-   * OrgUnit of User
-   *
-   * @param string $orgUnitPath
+   * @param string
    */
   public function setOrgUnitPath($orgUnitPath)
   {

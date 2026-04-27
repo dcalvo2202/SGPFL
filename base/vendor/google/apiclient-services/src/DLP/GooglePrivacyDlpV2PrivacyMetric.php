@@ -33,9 +33,7 @@ class GooglePrivacyDlpV2PrivacyMetric extends \Google\Model
   protected $numericalStatsConfigDataType = '';
 
   /**
-   * Categorical stats
-   *
-   * @param GooglePrivacyDlpV2CategoricalStatsConfig $categoricalStatsConfig
+   * @param GooglePrivacyDlpV2CategoricalStatsConfig
    */
   public function setCategoricalStatsConfig(GooglePrivacyDlpV2CategoricalStatsConfig $categoricalStatsConfig)
   {
@@ -49,9 +47,7 @@ class GooglePrivacyDlpV2PrivacyMetric extends \Google\Model
     return $this->categoricalStatsConfig;
   }
   /**
-   * delta-presence
-   *
-   * @param GooglePrivacyDlpV2DeltaPresenceEstimationConfig $deltaPresenceEstimationConfig
+   * @param GooglePrivacyDlpV2DeltaPresenceEstimationConfig
    */
   public function setDeltaPresenceEstimationConfig(GooglePrivacyDlpV2DeltaPresenceEstimationConfig $deltaPresenceEstimationConfig)
   {
@@ -65,9 +61,7 @@ class GooglePrivacyDlpV2PrivacyMetric extends \Google\Model
     return $this->deltaPresenceEstimationConfig;
   }
   /**
-   * K-anonymity
-   *
-   * @param GooglePrivacyDlpV2KAnonymityConfig $kAnonymityConfig
+   * @param GooglePrivacyDlpV2KAnonymityConfig
    */
   public function setKAnonymityConfig(GooglePrivacyDlpV2KAnonymityConfig $kAnonymityConfig)
   {
@@ -81,9 +75,7 @@ class GooglePrivacyDlpV2PrivacyMetric extends \Google\Model
     return $this->kAnonymityConfig;
   }
   /**
-   * k-map
-   *
-   * @param GooglePrivacyDlpV2KMapEstimationConfig $kMapEstimationConfig
+   * @param GooglePrivacyDlpV2KMapEstimationConfig
    */
   public function setKMapEstimationConfig(GooglePrivacyDlpV2KMapEstimationConfig $kMapEstimationConfig)
   {
@@ -97,9 +89,7 @@ class GooglePrivacyDlpV2PrivacyMetric extends \Google\Model
     return $this->kMapEstimationConfig;
   }
   /**
-   * l-diversity
-   *
-   * @param GooglePrivacyDlpV2LDiversityConfig $lDiversityConfig
+   * @param GooglePrivacyDlpV2LDiversityConfig
    */
   public function setLDiversityConfig(GooglePrivacyDlpV2LDiversityConfig $lDiversityConfig)
   {
@@ -113,9 +103,7 @@ class GooglePrivacyDlpV2PrivacyMetric extends \Google\Model
     return $this->lDiversityConfig;
   }
   /**
-   * Numerical stats
-   *
-   * @param GooglePrivacyDlpV2NumericalStatsConfig $numericalStatsConfig
+   * @param GooglePrivacyDlpV2NumericalStatsConfig
    */
   public function setNumericalStatsConfig(GooglePrivacyDlpV2NumericalStatsConfig $numericalStatsConfig)
   {

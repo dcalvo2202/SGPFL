@@ -23,18 +23,12 @@ class GoogleCloudAiplatformV1ListModelVersionsResponse extends \Google\Collectio
   protected $modelsType = GoogleCloudAiplatformV1Model::class;
   protected $modelsDataType = 'array';
   /**
-   * A token to retrieve the next page of results. Pass to
-   * ListModelVersionsRequest.page_token to obtain that page.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * List of Model versions in the requested page. In the returned Model name
-   * field, version ID instead of regvision tag will be included.
-   *
-   * @param GoogleCloudAiplatformV1Model[] $models
+   * @param GoogleCloudAiplatformV1Model[]
    */
   public function setModels($models)
   {
@@ -48,10 +42,7 @@ class GoogleCloudAiplatformV1ListModelVersionsResponse extends \Google\Collectio
     return $this->models;
   }
   /**
-   * A token to retrieve the next page of results. Pass to
-   * ListModelVersionsRequest.page_token to obtain that page.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

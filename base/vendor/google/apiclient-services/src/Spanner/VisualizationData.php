@@ -19,65 +19,34 @@ namespace Google\Service\Spanner;
 
 class VisualizationData extends \Google\Collection
 {
-  /**
-   * Required default value
-   */
-  public const KEY_UNIT_KEY_UNIT_UNSPECIFIED = 'KEY_UNIT_UNSPECIFIED';
-  /**
-   * Each entry corresponds to one key
-   */
-  public const KEY_UNIT_KEY = 'KEY';
-  /**
-   * Each entry corresponds to a chunk of keys
-   */
-  public const KEY_UNIT_CHUNK = 'CHUNK';
   protected $collection_key = 'prefixNodes';
   /**
-   * The token signifying the end of a data_source.
-   *
    * @var string
    */
   public $dataSourceEndToken;
   /**
-   * The token delimiting a datasource name from the rest of a key in a
-   * data_source.
-   *
    * @var string
    */
   public $dataSourceSeparatorToken;
   protected $diagnosticMessagesType = DiagnosticMessage::class;
   protected $diagnosticMessagesDataType = 'array';
   /**
-   * We discretize the entire keyspace into buckets. Assuming each bucket has an
-   * inclusive keyrange and covers keys from k(i) ... k(n). In this case k(n)
-   * would be an end key for a given range. end_key_string is the collection of
-   * all such end keys
-   *
    * @var string[]
    */
   public $endKeyStrings;
   /**
-   * Whether this scan contains PII.
-   *
    * @var bool
    */
   public $hasPii;
   /**
-   * Keys of key ranges that contribute significantly to a given metric Can be
-   * thought of as heavy hitters.
-   *
    * @var string[]
    */
   public $indexedKeys;
   /**
-   * The token delimiting the key prefixes.
-   *
    * @var string
    */
   public $keySeparator;
   /**
-   * The unit for the key: e.g. 'key' or 'chunk'.
-   *
    * @var string
    */
   public $keyUnit;
@@ -87,9 +56,7 @@ class VisualizationData extends \Google\Collection
   protected $prefixNodesDataType = 'array';
 
   /**
-   * The token signifying the end of a data_source.
-   *
-   * @param string $dataSourceEndToken
+   * @param string
    */
   public function setDataSourceEndToken($dataSourceEndToken)
   {
@@ -103,10 +70,7 @@ class VisualizationData extends \Google\Collection
     return $this->dataSourceEndToken;
   }
   /**
-   * The token delimiting a datasource name from the rest of a key in a
-   * data_source.
-   *
-   * @param string $dataSourceSeparatorToken
+   * @param string
    */
   public function setDataSourceSeparatorToken($dataSourceSeparatorToken)
   {
@@ -120,9 +84,7 @@ class VisualizationData extends \Google\Collection
     return $this->dataSourceSeparatorToken;
   }
   /**
-   * The list of messages (info, alerts, ...)
-   *
-   * @param DiagnosticMessage[] $diagnosticMessages
+   * @param DiagnosticMessage[]
    */
   public function setDiagnosticMessages($diagnosticMessages)
   {
@@ -136,12 +98,7 @@ class VisualizationData extends \Google\Collection
     return $this->diagnosticMessages;
   }
   /**
-   * We discretize the entire keyspace into buckets. Assuming each bucket has an
-   * inclusive keyrange and covers keys from k(i) ... k(n). In this case k(n)
-   * would be an end key for a given range. end_key_string is the collection of
-   * all such end keys
-   *
-   * @param string[] $endKeyStrings
+   * @param string[]
    */
   public function setEndKeyStrings($endKeyStrings)
   {
@@ -155,9 +112,7 @@ class VisualizationData extends \Google\Collection
     return $this->endKeyStrings;
   }
   /**
-   * Whether this scan contains PII.
-   *
-   * @param bool $hasPii
+   * @param bool
    */
   public function setHasPii($hasPii)
   {
@@ -171,10 +126,7 @@ class VisualizationData extends \Google\Collection
     return $this->hasPii;
   }
   /**
-   * Keys of key ranges that contribute significantly to a given metric Can be
-   * thought of as heavy hitters.
-   *
-   * @param string[] $indexedKeys
+   * @param string[]
    */
   public function setIndexedKeys($indexedKeys)
   {
@@ -188,9 +140,7 @@ class VisualizationData extends \Google\Collection
     return $this->indexedKeys;
   }
   /**
-   * The token delimiting the key prefixes.
-   *
-   * @param string $keySeparator
+   * @param string
    */
   public function setKeySeparator($keySeparator)
   {
@@ -204,27 +154,21 @@ class VisualizationData extends \Google\Collection
     return $this->keySeparator;
   }
   /**
-   * The unit for the key: e.g. 'key' or 'chunk'.
-   *
-   * Accepted values: KEY_UNIT_UNSPECIFIED, KEY, CHUNK
-   *
-   * @param self::KEY_UNIT_* $keyUnit
+   * @param string
    */
   public function setKeyUnit($keyUnit)
   {
     $this->keyUnit = $keyUnit;
   }
   /**
-   * @return self::KEY_UNIT_*
+   * @return string
    */
   public function getKeyUnit()
   {
     return $this->keyUnit;
   }
   /**
-   * The list of data objects for each metric.
-   *
-   * @param Metric[] $metrics
+   * @param Metric[]
    */
   public function setMetrics($metrics)
   {
@@ -238,9 +182,7 @@ class VisualizationData extends \Google\Collection
     return $this->metrics;
   }
   /**
-   * The list of extracted key prefix nodes used in the key prefix hierarchy.
-   *
-   * @param PrefixNode[] $prefixNodes
+   * @param PrefixNode[]
    */
   public function setPrefixNodes($prefixNodes)
   {

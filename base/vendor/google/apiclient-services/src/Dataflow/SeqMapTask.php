@@ -23,37 +23,26 @@ class SeqMapTask extends \Google\Collection
   protected $inputsType = SideInputInfo::class;
   protected $inputsDataType = 'array';
   /**
-   * The user-provided name of the SeqDo operation.
-   *
    * @var string
    */
   public $name;
   protected $outputInfosType = SeqMapTaskOutputInfo::class;
   protected $outputInfosDataType = 'array';
   /**
-   * System-defined name of the stage containing the SeqDo operation. Unique
-   * across the workflow.
-   *
    * @var string
    */
   public $stageName;
   /**
-   * System-defined name of the SeqDo operation. Unique across the workflow.
-   *
    * @var string
    */
   public $systemName;
   /**
-   * The user function to invoke.
-   *
    * @var array[]
    */
   public $userFn;
 
   /**
-   * Information about each of the inputs.
-   *
-   * @param SideInputInfo[] $inputs
+   * @param SideInputInfo[]
    */
   public function setInputs($inputs)
   {
@@ -67,9 +56,7 @@ class SeqMapTask extends \Google\Collection
     return $this->inputs;
   }
   /**
-   * The user-provided name of the SeqDo operation.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -83,9 +70,7 @@ class SeqMapTask extends \Google\Collection
     return $this->name;
   }
   /**
-   * Information about each of the outputs.
-   *
-   * @param SeqMapTaskOutputInfo[] $outputInfos
+   * @param SeqMapTaskOutputInfo[]
    */
   public function setOutputInfos($outputInfos)
   {
@@ -99,10 +84,7 @@ class SeqMapTask extends \Google\Collection
     return $this->outputInfos;
   }
   /**
-   * System-defined name of the stage containing the SeqDo operation. Unique
-   * across the workflow.
-   *
-   * @param string $stageName
+   * @param string
    */
   public function setStageName($stageName)
   {
@@ -116,9 +98,7 @@ class SeqMapTask extends \Google\Collection
     return $this->stageName;
   }
   /**
-   * System-defined name of the SeqDo operation. Unique across the workflow.
-   *
-   * @param string $systemName
+   * @param string
    */
   public function setSystemName($systemName)
   {
@@ -132,9 +112,7 @@ class SeqMapTask extends \Google\Collection
     return $this->systemName;
   }
   /**
-   * The user function to invoke.
-   *
-   * @param array[] $userFn
+   * @param array[]
    */
   public function setUserFn($userFn)
   {

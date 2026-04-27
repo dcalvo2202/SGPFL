@@ -25,9 +25,7 @@ class DeviceFile extends \Google\Model
   protected $regularFileDataType = '';
 
   /**
-   * A reference to an opaque binary blob file.
-   *
-   * @param ObbFile $obbFile
+   * @param ObbFile
    */
   public function setObbFile(ObbFile $obbFile)
   {
@@ -41,9 +39,7 @@ class DeviceFile extends \Google\Model
     return $this->obbFile;
   }
   /**
-   * A reference to a regular file.
-   *
-   * @param RegularFile $regularFile
+   * @param RegularFile
    */
   public function setRegularFile(RegularFile $regularFile)
   {

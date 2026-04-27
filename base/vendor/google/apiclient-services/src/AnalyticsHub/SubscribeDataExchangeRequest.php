@@ -20,32 +20,22 @@ namespace Google\Service\AnalyticsHub;
 class SubscribeDataExchangeRequest extends \Google\Model
 {
   /**
-   * Required. The parent resource path of the Subscription. e.g.
-   * `projects/subscriberproject/locations/us`
-   *
    * @var string
    */
   public $destination;
   protected $destinationDatasetType = DestinationDataset::class;
   protected $destinationDatasetDataType = '';
   /**
-   * Email of the subscriber.
-   *
    * @var string
    */
   public $subscriberContact;
   /**
-   * Required. Name of the subscription to create. e.g. `subscription1`
-   *
    * @var string
    */
   public $subscription;
 
   /**
-   * Required. The parent resource path of the Subscription. e.g.
-   * `projects/subscriberproject/locations/us`
-   *
-   * @param string $destination
+   * @param string
    */
   public function setDestination($destination)
   {
@@ -59,9 +49,7 @@ class SubscribeDataExchangeRequest extends \Google\Model
     return $this->destination;
   }
   /**
-   * Optional. BigQuery destination dataset to create for the subscriber.
-   *
-   * @param DestinationDataset $destinationDataset
+   * @param DestinationDataset
    */
   public function setDestinationDataset(DestinationDataset $destinationDataset)
   {
@@ -75,9 +63,7 @@ class SubscribeDataExchangeRequest extends \Google\Model
     return $this->destinationDataset;
   }
   /**
-   * Email of the subscriber.
-   *
-   * @param string $subscriberContact
+   * @param string
    */
   public function setSubscriberContact($subscriberContact)
   {
@@ -91,9 +77,7 @@ class SubscribeDataExchangeRequest extends \Google\Model
     return $this->subscriberContact;
   }
   /**
-   * Required. Name of the subscription to create. e.g. `subscription1`
-   *
-   * @param string $subscription
+   * @param string
    */
   public function setSubscription($subscription)
   {

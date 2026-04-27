@@ -20,39 +20,19 @@ namespace Google\Service\CloudComposer;
 class TaskLogsRetentionConfig extends \Google\Model
 {
   /**
-   * This configuration is not specified by the user.
-   */
-  public const STORAGE_MODE_TASK_LOGS_STORAGE_MODE_UNSPECIFIED = 'TASK_LOGS_STORAGE_MODE_UNSPECIFIED';
-  /**
-   * Store task logs in Cloud Logging and in the environment's Cloud Storage
-   * bucket.
-   */
-  public const STORAGE_MODE_CLOUD_LOGGING_AND_CLOUD_STORAGE = 'CLOUD_LOGGING_AND_CLOUD_STORAGE';
-  /**
-   * Store task logs in Cloud Logging only.
-   */
-  public const STORAGE_MODE_CLOUD_LOGGING_ONLY = 'CLOUD_LOGGING_ONLY';
-  /**
-   * Optional. The mode of storage for Airflow workers task logs.
-   *
    * @var string
    */
   public $storageMode;
 
   /**
-   * Optional. The mode of storage for Airflow workers task logs.
-   *
-   * Accepted values: TASK_LOGS_STORAGE_MODE_UNSPECIFIED,
-   * CLOUD_LOGGING_AND_CLOUD_STORAGE, CLOUD_LOGGING_ONLY
-   *
-   * @param self::STORAGE_MODE_* $storageMode
+   * @param string
    */
   public function setStorageMode($storageMode)
   {
     $this->storageMode = $storageMode;
   }
   /**
-   * @return self::STORAGE_MODE_*
+   * @return string
    */
   public function getStorageMode()
   {

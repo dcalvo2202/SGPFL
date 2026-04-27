@@ -28,15 +28,6 @@ class SqlCondition extends \Google\Model
   protected $minutesType = Minutes::class;
   protected $minutesDataType = '';
   /**
-   * Required. The Log Analytics SQL query to run, as a string. The query must
-   * conform to the required shape. Specifically, the query must not try to
-   * filter the input by time. A filter will automatically be applied to filter
-   * the input so that the query receives all rows received since the last time
-   * the query was run.For example, the following query extracts all log entries
-   * containing an HTTP request: SELECT timestamp, log_name, severity,
-   * http_request, resource, labels FROM my-project.global._Default._AllLogs
-   * WHERE http_request IS NOT NULL
-   *
    * @var string
    */
   public $query;
@@ -44,9 +35,7 @@ class SqlCondition extends \Google\Model
   protected $rowCountTestDataType = '';
 
   /**
-   * Test the boolean value in the indicated column.
-   *
-   * @param BooleanTest $booleanTest
+   * @param BooleanTest
    */
   public function setBooleanTest(BooleanTest $booleanTest)
   {
@@ -60,9 +49,7 @@ class SqlCondition extends \Google\Model
     return $this->booleanTest;
   }
   /**
-   * Schedule the query to execute every so many days.
-   *
-   * @param Daily $daily
+   * @param Daily
    */
   public function setDaily(Daily $daily)
   {
@@ -76,9 +63,7 @@ class SqlCondition extends \Google\Model
     return $this->daily;
   }
   /**
-   * Schedule the query to execute every so many hours.
-   *
-   * @param Hourly $hourly
+   * @param Hourly
    */
   public function setHourly(Hourly $hourly)
   {
@@ -92,9 +77,7 @@ class SqlCondition extends \Google\Model
     return $this->hourly;
   }
   /**
-   * Schedule the query to execute every so many minutes.
-   *
-   * @param Minutes $minutes
+   * @param Minutes
    */
   public function setMinutes(Minutes $minutes)
   {
@@ -108,16 +91,7 @@ class SqlCondition extends \Google\Model
     return $this->minutes;
   }
   /**
-   * Required. The Log Analytics SQL query to run, as a string. The query must
-   * conform to the required shape. Specifically, the query must not try to
-   * filter the input by time. A filter will automatically be applied to filter
-   * the input so that the query receives all rows received since the last time
-   * the query was run.For example, the following query extracts all log entries
-   * containing an HTTP request: SELECT timestamp, log_name, severity,
-   * http_request, resource, labels FROM my-project.global._Default._AllLogs
-   * WHERE http_request IS NOT NULL
-   *
-   * @param string $query
+   * @param string
    */
   public function setQuery($query)
   {
@@ -131,9 +105,7 @@ class SqlCondition extends \Google\Model
     return $this->query;
   }
   /**
-   * Test the row count against a threshold.
-   *
-   * @param RowCountTest $rowCountTest
+   * @param RowCountTest
    */
   public function setRowCountTest(RowCountTest $rowCountTest)
   {

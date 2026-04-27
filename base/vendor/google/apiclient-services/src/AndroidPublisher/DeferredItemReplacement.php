@@ -20,16 +20,12 @@ namespace Google\Service\AndroidPublisher;
 class DeferredItemReplacement extends \Google\Model
 {
   /**
-   * The product_id going to replace the existing product_id.
-   *
    * @var string
    */
   public $productId;
 
   /**
-   * The product_id going to replace the existing product_id.
-   *
-   * @param string $productId
+   * @param string
    */
   public function setProductId($productId)
   {

@@ -23,17 +23,12 @@ class SqlServerTable extends \Google\Collection
   protected $columnsType = SqlServerColumn::class;
   protected $columnsDataType = 'array';
   /**
-   * The table name.
-   *
    * @var string
    */
   public $table;
 
   /**
-   * SQLServer columns in the schema. When unspecified as part of
-   * include/exclude objects, includes/excludes everything.
-   *
-   * @param SqlServerColumn[] $columns
+   * @param SqlServerColumn[]
    */
   public function setColumns($columns)
   {
@@ -47,9 +42,7 @@ class SqlServerTable extends \Google\Collection
     return $this->columns;
   }
   /**
-   * The table name.
-   *
-   * @param string $table
+   * @param string
    */
   public function setTable($table)
   {

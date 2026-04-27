@@ -24,9 +24,7 @@ class GoogleCloudRetailV2betaImportCompletionDataResponse extends \Google\Collec
   protected $errorSamplesDataType = 'array';
 
   /**
-   * A sample of errors encountered while processing the request.
-   *
-   * @param GoogleRpcStatus[] $errorSamples
+   * @param GoogleRpcStatus[]
    */
   public function setErrorSamples($errorSamples)
   {

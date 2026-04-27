@@ -20,22 +20,16 @@ namespace Google\Service\Dataflow;
 class Parameter extends \Google\Model
 {
   /**
-   * Key or name for this parameter.
-   *
    * @var string
    */
   public $key;
   /**
-   * Value for this parameter.
-   *
    * @var array
    */
   public $value;
 
   /**
-   * Key or name for this parameter.
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {
@@ -49,9 +43,7 @@ class Parameter extends \Google\Model
     return $this->key;
   }
   /**
-   * Value for this parameter.
-   *
-   * @param array $value
+   * @param array
    */
   public function setValue($value)
   {

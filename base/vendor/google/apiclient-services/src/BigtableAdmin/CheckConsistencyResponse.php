@@ -20,18 +20,12 @@ namespace Google\Service\BigtableAdmin;
 class CheckConsistencyResponse extends \Google\Model
 {
   /**
-   * True only if the token is consistent. A token is consistent if replication
-   * has caught up with the restrictions specified in the request.
-   *
    * @var bool
    */
   public $consistent;
 
   /**
-   * True only if the token is consistent. A token is consistent if replication
-   * has caught up with the restrictions specified in the request.
-   *
-   * @param bool $consistent
+   * @param bool
    */
   public function setConsistent($consistent)
   {

@@ -21,52 +21,24 @@ class GoogleFirestoreAdminV1ExportDocumentsRequest extends \Google\Collection
 {
   protected $collection_key = 'namespaceIds';
   /**
-   * IDs of the collection groups to export. Unspecified means all collection
-   * groups. Each collection group in this list must be unique.
-   *
    * @var string[]
    */
   public $collectionIds;
   /**
-   * An empty list represents all namespaces. This is the preferred usage for
-   * databases that don't use namespaces. An empty string element represents the
-   * default namespace. This should be used if the database has data in non-
-   * default namespaces, but doesn't want to include them. Each namespace in
-   * this list must be unique.
-   *
    * @var string[]
    */
   public $namespaceIds;
   /**
-   * The output URI. Currently only supports Google Cloud Storage URIs of the
-   * form: `gs://BUCKET_NAME[/NAMESPACE_PATH]`, where `BUCKET_NAME` is the name
-   * of the Google Cloud Storage bucket and `NAMESPACE_PATH` is an optional
-   * Google Cloud Storage namespace path. When choosing a name, be sure to
-   * consider Google Cloud Storage naming guidelines:
-   * https://cloud.google.com/storage/docs/naming. If the URI is a bucket
-   * (without a namespace path), a prefix will be generated based on the start
-   * time.
-   *
    * @var string
    */
   public $outputUriPrefix;
   /**
-   * The timestamp that corresponds to the version of the database to be
-   * exported. The timestamp must be in the past, rounded to the minute and not
-   * older than earliestVersionTime. If specified, then the exported documents
-   * will represent a consistent view of the database at the provided time.
-   * Otherwise, there are no guarantees about the consistency of the exported
-   * documents.
-   *
    * @var string
    */
   public $snapshotTime;
 
   /**
-   * IDs of the collection groups to export. Unspecified means all collection
-   * groups. Each collection group in this list must be unique.
-   *
-   * @param string[] $collectionIds
+   * @param string[]
    */
   public function setCollectionIds($collectionIds)
   {
@@ -80,13 +52,7 @@ class GoogleFirestoreAdminV1ExportDocumentsRequest extends \Google\Collection
     return $this->collectionIds;
   }
   /**
-   * An empty list represents all namespaces. This is the preferred usage for
-   * databases that don't use namespaces. An empty string element represents the
-   * default namespace. This should be used if the database has data in non-
-   * default namespaces, but doesn't want to include them. Each namespace in
-   * this list must be unique.
-   *
-   * @param string[] $namespaceIds
+   * @param string[]
    */
   public function setNamespaceIds($namespaceIds)
   {
@@ -100,16 +66,7 @@ class GoogleFirestoreAdminV1ExportDocumentsRequest extends \Google\Collection
     return $this->namespaceIds;
   }
   /**
-   * The output URI. Currently only supports Google Cloud Storage URIs of the
-   * form: `gs://BUCKET_NAME[/NAMESPACE_PATH]`, where `BUCKET_NAME` is the name
-   * of the Google Cloud Storage bucket and `NAMESPACE_PATH` is an optional
-   * Google Cloud Storage namespace path. When choosing a name, be sure to
-   * consider Google Cloud Storage naming guidelines:
-   * https://cloud.google.com/storage/docs/naming. If the URI is a bucket
-   * (without a namespace path), a prefix will be generated based on the start
-   * time.
-   *
-   * @param string $outputUriPrefix
+   * @param string
    */
   public function setOutputUriPrefix($outputUriPrefix)
   {
@@ -123,14 +80,7 @@ class GoogleFirestoreAdminV1ExportDocumentsRequest extends \Google\Collection
     return $this->outputUriPrefix;
   }
   /**
-   * The timestamp that corresponds to the version of the database to be
-   * exported. The timestamp must be in the past, rounded to the minute and not
-   * older than earliestVersionTime. If specified, then the exported documents
-   * will represent a consistent view of the database at the provided time.
-   * Otherwise, there are no guarantees about the consistency of the exported
-   * documents.
-   *
-   * @param string $snapshotTime
+   * @param string
    */
   public function setSnapshotTime($snapshotTime)
   {

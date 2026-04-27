@@ -20,57 +20,32 @@ namespace Google\Service\ShoppingContent;
 class HolidaysHoliday extends \Google\Model
 {
   /**
-   * The CLDR territory code of the country in which the holiday is available.
-   * For example, "US", "DE", "GB". A holiday cutoff can only be configured in a
-   * shipping settings service with matching delivery country. Always present.
-   *
    * @var string
    */
   public $countryCode;
   /**
-   * Date of the holiday, in ISO 8601 format. For example, "2016-12-25" for
-   * Christmas 2016. Always present.
-   *
    * @var string
    */
   public $date;
   /**
-   * Date on which the order has to arrive at the customer's, in ISO 8601
-   * format. For example, "2016-12-24" for 24th December 2016. Always present.
-   *
    * @var string
    */
   public $deliveryGuaranteeDate;
   /**
-   * Hour of the day in the delivery location's timezone on the guaranteed
-   * delivery date by which the order has to arrive at the customer's. Possible
-   * values are: 0 (midnight), 1, ..., 12 (noon), 13, ..., 23. Always present.
-   *
    * @var string
    */
   public $deliveryGuaranteeHour;
   /**
-   * Unique identifier for the holiday to be used when configuring holiday
-   * cutoffs. Always present.
-   *
    * @var string
    */
   public $id;
   /**
-   * The holiday type. Always present. Acceptable values are: - "`Christmas`" -
-   * "`Easter`" - "`Father's Day`" - "`Halloween`" - "`Independence Day (USA)`"
-   * - "`Mother's Day`" - "`Thanksgiving`" - "`Valentine's Day`"
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The CLDR territory code of the country in which the holiday is available.
-   * For example, "US", "DE", "GB". A holiday cutoff can only be configured in a
-   * shipping settings service with matching delivery country. Always present.
-   *
-   * @param string $countryCode
+   * @param string
    */
   public function setCountryCode($countryCode)
   {
@@ -84,10 +59,7 @@ class HolidaysHoliday extends \Google\Model
     return $this->countryCode;
   }
   /**
-   * Date of the holiday, in ISO 8601 format. For example, "2016-12-25" for
-   * Christmas 2016. Always present.
-   *
-   * @param string $date
+   * @param string
    */
   public function setDate($date)
   {
@@ -101,10 +73,7 @@ class HolidaysHoliday extends \Google\Model
     return $this->date;
   }
   /**
-   * Date on which the order has to arrive at the customer's, in ISO 8601
-   * format. For example, "2016-12-24" for 24th December 2016. Always present.
-   *
-   * @param string $deliveryGuaranteeDate
+   * @param string
    */
   public function setDeliveryGuaranteeDate($deliveryGuaranteeDate)
   {
@@ -118,11 +87,7 @@ class HolidaysHoliday extends \Google\Model
     return $this->deliveryGuaranteeDate;
   }
   /**
-   * Hour of the day in the delivery location's timezone on the guaranteed
-   * delivery date by which the order has to arrive at the customer's. Possible
-   * values are: 0 (midnight), 1, ..., 12 (noon), 13, ..., 23. Always present.
-   *
-   * @param string $deliveryGuaranteeHour
+   * @param string
    */
   public function setDeliveryGuaranteeHour($deliveryGuaranteeHour)
   {
@@ -136,10 +101,7 @@ class HolidaysHoliday extends \Google\Model
     return $this->deliveryGuaranteeHour;
   }
   /**
-   * Unique identifier for the holiday to be used when configuring holiday
-   * cutoffs. Always present.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -153,11 +115,7 @@ class HolidaysHoliday extends \Google\Model
     return $this->id;
   }
   /**
-   * The holiday type. Always present. Acceptable values are: - "`Christmas`" -
-   * "`Easter`" - "`Father's Day`" - "`Halloween`" - "`Independence Day (USA)`"
-   * - "`Mother's Day`" - "`Thanksgiving`" - "`Valentine's Day`"
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

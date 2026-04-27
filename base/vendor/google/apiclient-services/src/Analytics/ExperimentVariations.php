@@ -20,50 +20,25 @@ namespace Google\Service\Analytics;
 class ExperimentVariations extends \Google\Model
 {
   /**
-   * The name of the variation. This field is required when creating an
-   * experiment. This field may not be changed for an experiment whose status is
-   * ENDED.
-   *
    * @var string
    */
   public $name;
   /**
-   * Status of the variation. Possible values: "ACTIVE", "INACTIVE". INACTIVE
-   * variations are not served. This field may not be changed for an experiment
-   * whose status is ENDED.
-   *
    * @var string
    */
   public $status;
   /**
-   * The URL of the variation. This field may not be changed for an experiment
-   * whose status is RUNNING or ENDED.
-   *
    * @var string
    */
   public $url;
-  /**
-   * Weight that this variation should receive. Only present if the experiment
-   * is running. This field is read-only.
-   *
-   * @var 
-   */
   public $weight;
   /**
-   * True if the experiment has ended and this variation performed
-   * (statistically) significantly better than the original. This field is read-
-   * only.
-   *
    * @var bool
    */
   public $won;
 
   /**
-   * The name of the variation. This field is required when creating an
-   * experiment. This field may not be changed for an experiment whose status is
-   * ENDED.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -77,11 +52,7 @@ class ExperimentVariations extends \Google\Model
     return $this->name;
   }
   /**
-   * Status of the variation. Possible values: "ACTIVE", "INACTIVE". INACTIVE
-   * variations are not served. This field may not be changed for an experiment
-   * whose status is ENDED.
-   *
-   * @param string $status
+   * @param string
    */
   public function setStatus($status)
   {
@@ -95,10 +66,7 @@ class ExperimentVariations extends \Google\Model
     return $this->status;
   }
   /**
-   * The URL of the variation. This field may not be changed for an experiment
-   * whose status is RUNNING or ENDED.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {
@@ -120,11 +88,7 @@ class ExperimentVariations extends \Google\Model
     return $this->weight;
   }
   /**
-   * True if the experiment has ended and this variation performed
-   * (statistically) significantly better than the original. This field is read-
-   * only.
-   *
-   * @param bool $won
+   * @param bool
    */
   public function setWon($won)
   {

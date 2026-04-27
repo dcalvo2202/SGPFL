@@ -23,9 +23,7 @@ class GoogleChecksAisafetyV1alphaClassifyContentRequestInputContent extends \Goo
   protected $textInputDataType = '';
 
   /**
-   * Content in text format.
-   *
-   * @param GoogleChecksAisafetyV1alphaTextInput $textInput
+   * @param GoogleChecksAisafetyV1alphaTextInput
    */
   public function setTextInput(GoogleChecksAisafetyV1alphaTextInput $textInput)
   {

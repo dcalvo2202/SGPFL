@@ -23,16 +23,12 @@ class GoogleCloudDocumentaiV1DocumentPageImageQualityScores extends \Google\Coll
   protected $detectedDefectsType = GoogleCloudDocumentaiV1DocumentPageImageQualityScoresDetectedDefect::class;
   protected $detectedDefectsDataType = 'array';
   /**
-   * The overall quality score. Range `[0, 1]` where `1` is perfect quality.
-   *
    * @var float
    */
   public $qualityScore;
 
   /**
-   * A list of detected defects.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentPageImageQualityScoresDetectedDefect[] $detectedDefects
+   * @param GoogleCloudDocumentaiV1DocumentPageImageQualityScoresDetectedDefect[]
    */
   public function setDetectedDefects($detectedDefects)
   {
@@ -46,9 +42,7 @@ class GoogleCloudDocumentaiV1DocumentPageImageQualityScores extends \Google\Coll
     return $this->detectedDefects;
   }
   /**
-   * The overall quality score. Range `[0, 1]` where `1` is perfect quality.
-   *
-   * @param float $qualityScore
+   * @param float
    */
   public function setQualityScore($qualityScore)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1RuntimeApiSecurityConfig extends \Google\Model
 {
   /**
-   * If the API Security is enabled or not.
-   *
    * @var bool
    */
   public $enabled;
 
   /**
-   * If the API Security is enabled or not.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {

@@ -20,18 +20,12 @@ namespace Google\Service\Translate;
 class TransliterationConfig extends \Google\Model
 {
   /**
-   * If true, source text in romanized form can be translated to the target
-   * language.
-   *
    * @var bool
    */
   public $enableTransliteration;
 
   /**
-   * If true, source text in romanized form can be translated to the target
-   * language.
-   *
-   * @param bool $enableTransliteration
+   * @param bool
    */
   public function setEnableTransliteration($enableTransliteration)
   {

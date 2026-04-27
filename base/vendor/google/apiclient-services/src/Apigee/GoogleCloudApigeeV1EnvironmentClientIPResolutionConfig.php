@@ -23,9 +23,7 @@ class GoogleCloudApigeeV1EnvironmentClientIPResolutionConfig extends \Google\Mod
   protected $headerIndexAlgorithmDataType = '';
 
   /**
-   * Resolves the client ip based on a custom header.
-   *
-   * @param GoogleCloudApigeeV1EnvironmentClientIPResolutionConfigHeaderIndexAlgorithm $headerIndexAlgorithm
+   * @param GoogleCloudApigeeV1EnvironmentClientIPResolutionConfigHeaderIndexAlgorithm
    */
   public function setHeaderIndexAlgorithm(GoogleCloudApigeeV1EnvironmentClientIPResolutionConfigHeaderIndexAlgorithm $headerIndexAlgorithm)
   {

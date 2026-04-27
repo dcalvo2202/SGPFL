@@ -20,11 +20,6 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1SuggestTrialsMetadata extends \Google\Model
 {
   /**
-   * The identifier of the client that is requesting the suggestion. If multiple
-   * SuggestTrialsRequests have the same `client_id`, the service will return
-   * the identical suggested Trial if the Trial is pending, and provide a new
-   * Trial if the last suggested Trial was completed.
-   *
    * @var string
    */
   public $clientId;
@@ -32,12 +27,7 @@ class GoogleCloudAiplatformV1SuggestTrialsMetadata extends \Google\Model
   protected $genericMetadataDataType = '';
 
   /**
-   * The identifier of the client that is requesting the suggestion. If multiple
-   * SuggestTrialsRequests have the same `client_id`, the service will return
-   * the identical suggested Trial if the Trial is pending, and provide a new
-   * Trial if the last suggested Trial was completed.
-   *
-   * @param string $clientId
+   * @param string
    */
   public function setClientId($clientId)
   {
@@ -51,9 +41,7 @@ class GoogleCloudAiplatformV1SuggestTrialsMetadata extends \Google\Model
     return $this->clientId;
   }
   /**
-   * Operation metadata for suggesting Trials.
-   *
-   * @param GoogleCloudAiplatformV1GenericOperationMetadata $genericMetadata
+   * @param GoogleCloudAiplatformV1GenericOperationMetadata
    */
   public function setGenericMetadata(GoogleCloudAiplatformV1GenericOperationMetadata $genericMetadata)
   {

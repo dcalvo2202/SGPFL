@@ -20,48 +20,20 @@ namespace Google\Service\Contentwarehouse;
 class GoogleCloudContentwarehouseV1ActionOutput extends \Google\Model
 {
   /**
-   * The unknown state.
-   */
-  public const ACTION_STATE_UNKNOWN = 'UNKNOWN';
-  /**
-   * State indicating action executed successfully.
-   */
-  public const ACTION_STATE_ACTION_SUCCEEDED = 'ACTION_SUCCEEDED';
-  /**
-   * State indicating action failed.
-   */
-  public const ACTION_STATE_ACTION_FAILED = 'ACTION_FAILED';
-  /**
-   * State indicating action timed out.
-   */
-  public const ACTION_STATE_ACTION_TIMED_OUT = 'ACTION_TIMED_OUT';
-  /**
-   * State indicating action is pending.
-   */
-  public const ACTION_STATE_ACTION_PENDING = 'ACTION_PENDING';
-  /**
-   * ID of the action.
-   *
    * @var string
    */
   public $actionId;
   /**
-   * State of an action.
-   *
    * @var string
    */
   public $actionState;
   /**
-   * Action execution output message.
-   *
    * @var string
    */
   public $outputMessage;
 
   /**
-   * ID of the action.
-   *
-   * @param string $actionId
+   * @param string
    */
   public function setActionId($actionId)
   {
@@ -75,28 +47,21 @@ class GoogleCloudContentwarehouseV1ActionOutput extends \Google\Model
     return $this->actionId;
   }
   /**
-   * State of an action.
-   *
-   * Accepted values: UNKNOWN, ACTION_SUCCEEDED, ACTION_FAILED,
-   * ACTION_TIMED_OUT, ACTION_PENDING
-   *
-   * @param self::ACTION_STATE_* $actionState
+   * @param string
    */
   public function setActionState($actionState)
   {
     $this->actionState = $actionState;
   }
   /**
-   * @return self::ACTION_STATE_*
+   * @return string
    */
   public function getActionState()
   {
     return $this->actionState;
   }
   /**
-   * Action execution output message.
-   *
-   * @param string $outputMessage
+   * @param string
    */
   public function setOutputMessage($outputMessage)
   {

@@ -21,18 +21,12 @@ class GoogleCloudIntegrationsV1alphaUnshareTemplateRequest extends \Google\Colle
 {
   protected $collection_key = 'resourceNames';
   /**
-   * Optional. Project name resources to unshare the template. The project names
-   * is expected in resource format Ex: projects/{project-number}
-   *
    * @var string[]
    */
   public $resourceNames;
 
   /**
-   * Optional. Project name resources to unshare the template. The project names
-   * is expected in resource format Ex: projects/{project-number}
-   *
-   * @param string[] $resourceNames
+   * @param string[]
    */
   public function setResourceNames($resourceNames)
   {

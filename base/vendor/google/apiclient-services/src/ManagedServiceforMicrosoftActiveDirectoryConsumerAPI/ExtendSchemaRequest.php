@@ -20,30 +20,20 @@ namespace Google\Service\ManagedServiceforMicrosoftActiveDirectoryConsumerAPI;
 class ExtendSchemaRequest extends \Google\Model
 {
   /**
-   * Required. Description for Schema Change.
-   *
    * @var string
    */
   public $description;
   /**
-   * File uploaded as a byte stream input.
-   *
    * @var string
    */
   public $fileContents;
   /**
-   * File stored in Cloud Storage bucket and represented in the form
-   * projects/{project_id}/buckets/{bucket_name}/objects/{object_name} File
-   * should be in the same project as the domain.
-   *
    * @var string
    */
   public $gcsPath;
 
   /**
-   * Required. Description for Schema Change.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -57,9 +47,7 @@ class ExtendSchemaRequest extends \Google\Model
     return $this->description;
   }
   /**
-   * File uploaded as a byte stream input.
-   *
-   * @param string $fileContents
+   * @param string
    */
   public function setFileContents($fileContents)
   {
@@ -73,11 +61,7 @@ class ExtendSchemaRequest extends \Google\Model
     return $this->fileContents;
   }
   /**
-   * File stored in Cloud Storage bucket and represented in the form
-   * projects/{project_id}/buckets/{bucket_name}/objects/{object_name} File
-   * should be in the same project as the domain.
-   *
-   * @param string $gcsPath
+   * @param string
    */
   public function setGcsPath($gcsPath)
   {

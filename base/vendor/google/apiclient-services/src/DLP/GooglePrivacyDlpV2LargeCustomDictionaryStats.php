@@ -20,16 +20,12 @@ namespace Google\Service\DLP;
 class GooglePrivacyDlpV2LargeCustomDictionaryStats extends \Google\Model
 {
   /**
-   * Approximate number of distinct phrases in the dictionary.
-   *
    * @var string
    */
   public $approxNumPhrases;
 
   /**
-   * Approximate number of distinct phrases in the dictionary.
-   *
-   * @param string $approxNumPhrases
+   * @param string
    */
   public function setApproxNumPhrases($approxNumPhrases)
   {

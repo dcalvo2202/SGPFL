@@ -21,19 +21,10 @@ class GoogleCloudVideointelligenceV1p2beta1SpeechRecognitionAlternative extends 
 {
   protected $collection_key = 'words';
   /**
-   * Output only. The confidence estimate between 0.0 and 1.0. A higher number
-   * indicates an estimated greater likelihood that the recognized words are
-   * correct. This field is set only for the top alternative. This field is not
-   * guaranteed to be accurate and users should not rely on it to be always
-   * provided. The default of 0.0 is a sentinel value indicating `confidence`
-   * was not set.
-   *
    * @var float
    */
   public $confidence;
   /**
-   * Transcript text representing the words that the user spoke.
-   *
    * @var string
    */
   public $transcript;
@@ -41,14 +32,7 @@ class GoogleCloudVideointelligenceV1p2beta1SpeechRecognitionAlternative extends 
   protected $wordsDataType = 'array';
 
   /**
-   * Output only. The confidence estimate between 0.0 and 1.0. A higher number
-   * indicates an estimated greater likelihood that the recognized words are
-   * correct. This field is set only for the top alternative. This field is not
-   * guaranteed to be accurate and users should not rely on it to be always
-   * provided. The default of 0.0 is a sentinel value indicating `confidence`
-   * was not set.
-   *
-   * @param float $confidence
+   * @param float
    */
   public function setConfidence($confidence)
   {
@@ -62,9 +46,7 @@ class GoogleCloudVideointelligenceV1p2beta1SpeechRecognitionAlternative extends 
     return $this->confidence;
   }
   /**
-   * Transcript text representing the words that the user spoke.
-   *
-   * @param string $transcript
+   * @param string
    */
   public function setTranscript($transcript)
   {
@@ -78,11 +60,7 @@ class GoogleCloudVideointelligenceV1p2beta1SpeechRecognitionAlternative extends 
     return $this->transcript;
   }
   /**
-   * Output only. A list of word-specific information for each recognized word.
-   * Note: When `enable_speaker_diarization` is set to true, you will see all
-   * the words from the beginning of the audio.
-   *
-   * @param GoogleCloudVideointelligenceV1p2beta1WordInfo[] $words
+   * @param GoogleCloudVideointelligenceV1p2beta1WordInfo[]
    */
   public function setWords($words)
   {

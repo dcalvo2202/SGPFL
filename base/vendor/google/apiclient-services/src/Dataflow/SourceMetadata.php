@@ -20,34 +20,20 @@ namespace Google\Service\Dataflow;
 class SourceMetadata extends \Google\Model
 {
   /**
-   * An estimate of the total size (in bytes) of the data that would be read
-   * from this source. This estimate is in terms of external storage size,
-   * before any decompression or other processing done by the reader.
-   *
    * @var string
    */
   public $estimatedSizeBytes;
   /**
-   * Specifies that the size of this source is known to be infinite (this is a
-   * streaming source).
-   *
    * @var bool
    */
   public $infinite;
   /**
-   * Whether this source is known to produce key/value pairs with the (encoded)
-   * keys in lexicographically sorted order.
-   *
    * @var bool
    */
   public $producesSortedKeys;
 
   /**
-   * An estimate of the total size (in bytes) of the data that would be read
-   * from this source. This estimate is in terms of external storage size,
-   * before any decompression or other processing done by the reader.
-   *
-   * @param string $estimatedSizeBytes
+   * @param string
    */
   public function setEstimatedSizeBytes($estimatedSizeBytes)
   {
@@ -61,10 +47,7 @@ class SourceMetadata extends \Google\Model
     return $this->estimatedSizeBytes;
   }
   /**
-   * Specifies that the size of this source is known to be infinite (this is a
-   * streaming source).
-   *
-   * @param bool $infinite
+   * @param bool
    */
   public function setInfinite($infinite)
   {
@@ -78,10 +61,7 @@ class SourceMetadata extends \Google\Model
     return $this->infinite;
   }
   /**
-   * Whether this source is known to produce key/value pairs with the (encoded)
-   * keys in lexicographically sorted order.
-   *
-   * @param bool $producesSortedKeys
+   * @param bool
    */
   public function setProducesSortedKeys($producesSortedKeys)
   {

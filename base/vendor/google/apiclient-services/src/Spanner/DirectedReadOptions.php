@@ -25,11 +25,7 @@ class DirectedReadOptions extends \Google\Model
   protected $includeReplicasDataType = '';
 
   /**
-   * `Exclude_replicas` indicates that specified replicas should be excluded
-   * from serving requests. Spanner doesn't route requests to the replicas in
-   * this list.
-   *
-   * @param ExcludeReplicas $excludeReplicas
+   * @param ExcludeReplicas
    */
   public function setExcludeReplicas(ExcludeReplicas $excludeReplicas)
   {
@@ -43,13 +39,7 @@ class DirectedReadOptions extends \Google\Model
     return $this->excludeReplicas;
   }
   /**
-   * `Include_replicas` indicates the order of replicas (as they appear in this
-   * list) to process the request. If `auto_failover_disabled` is set to `true`
-   * and all replicas are exhausted without finding a healthy replica, Spanner
-   * waits for a replica in the list to become available, requests might fail
-   * due to `DEADLINE_EXCEEDED` errors.
-   *
-   * @param IncludeReplicas $includeReplicas
+   * @param IncludeReplicas
    */
   public function setIncludeReplicas(IncludeReplicas $includeReplicas)
   {

@@ -32,7 +32,7 @@ class GoogleCloudDialogflowV2ImportConversationDataOperationMetadata extends \Go
   protected $partialFailuresDataType = 'array';
 
   /**
-   * @param string $conversationDataset
+   * @param string
    */
   public function setConversationDataset($conversationDataset)
   {
@@ -46,7 +46,7 @@ class GoogleCloudDialogflowV2ImportConversationDataOperationMetadata extends \Go
     return $this->conversationDataset;
   }
   /**
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -60,7 +60,7 @@ class GoogleCloudDialogflowV2ImportConversationDataOperationMetadata extends \Go
     return $this->createTime;
   }
   /**
-   * @param GoogleRpcStatus[] $partialFailures
+   * @param GoogleRpcStatus[]
    */
   public function setPartialFailures($partialFailures)
   {

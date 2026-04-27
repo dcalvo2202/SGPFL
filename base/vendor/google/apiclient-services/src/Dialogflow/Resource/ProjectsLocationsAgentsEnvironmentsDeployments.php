@@ -31,9 +31,10 @@ use Google\Service\Dialogflow\GoogleCloudDialogflowCxV3ListDeploymentsResponse;
 class ProjectsLocationsAgentsEnvironmentsDeployments extends \Google\Service\Resource
 {
   /**
-   * (deployments.get)
+   * Retrieves the specified Deployment. (deployments.get)
    *
-   * @param string $name
+   * @param string $name Required. The name of the Deployment. Format:
+   * `projects//locations//agents//environments//deployments/`.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudDialogflowCxV3Deployment
    * @throws \Google\Service\Exception
@@ -45,13 +46,17 @@ class ProjectsLocationsAgentsEnvironmentsDeployments extends \Google\Service\Res
     return $this->call('get', [$params], GoogleCloudDialogflowCxV3Deployment::class);
   }
   /**
+   * Returns the list of all deployments in the specified Environment.
    * (deployments.listProjectsLocationsAgentsEnvironmentsDeployments)
    *
-   * @param string $parent
+   * @param string $parent Required. The Environment to list all environments for.
+   * Format: `projects//locations//agents//environments/`.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param int pageSize
-   * @opt_param string pageToken
+   * @opt_param int pageSize The maximum number of items to return in a single
+   * page. By default 20 and at most 100.
+   * @opt_param string pageToken The next_page_token value returned from a
+   * previous list request.
    * @return GoogleCloudDialogflowCxV3ListDeploymentsResponse
    * @throws \Google\Service\Exception
    */

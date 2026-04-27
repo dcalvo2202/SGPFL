@@ -24,25 +24,16 @@ class Colors extends \Google\Model
   protected $eventType = ColorDefinition::class;
   protected $eventDataType = 'map';
   /**
-   * Type of the resource ("calendar#colors").
-   *
    * @var string
    */
   public $kind;
   /**
-   * Last modification time of the color palette (as a RFC3339 timestamp). Read-
-   * only.
-   *
    * @var string
    */
   public $updated;
 
   /**
-   * A global palette of calendar colors, mapping from the color ID to its
-   * definition. A calendarListEntry resource refers to one of these color IDs
-   * in its colorId field. Read-only.
-   *
-   * @param ColorDefinition[] $calendar
+   * @param ColorDefinition[]
    */
   public function setCalendar($calendar)
   {
@@ -56,11 +47,7 @@ class Colors extends \Google\Model
     return $this->calendar;
   }
   /**
-   * A global palette of event colors, mapping from the color ID to its
-   * definition. An event resource may refer to one of these color IDs in its
-   * colorId field. Read-only.
-   *
-   * @param ColorDefinition[] $event
+   * @param ColorDefinition[]
    */
   public function setEvent($event)
   {
@@ -74,9 +61,7 @@ class Colors extends \Google\Model
     return $this->event;
   }
   /**
-   * Type of the resource ("calendar#colors").
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -90,10 +75,7 @@ class Colors extends \Google\Model
     return $this->kind;
   }
   /**
-   * Last modification time of the color palette (as a RFC3339 timestamp). Read-
-   * only.
-   *
-   * @param string $updated
+   * @param string
    */
   public function setUpdated($updated)
   {

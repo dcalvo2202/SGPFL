@@ -20,16 +20,12 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1AdvancedApiOpsConfig extends \Google\Model
 {
   /**
-   * Flag that specifies whether the Advanced API Ops add-on is enabled.
-   *
    * @var bool
    */
   public $enabled;
 
   /**
-   * Flag that specifies whether the Advanced API Ops add-on is enabled.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {

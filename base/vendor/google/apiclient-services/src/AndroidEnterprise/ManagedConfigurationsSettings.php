@@ -20,30 +20,20 @@ namespace Google\Service\AndroidEnterprise;
 class ManagedConfigurationsSettings extends \Google\Model
 {
   /**
-   * The last updated time of the managed configuration settings in milliseconds
-   * since 1970-01-01T00:00:00Z.
-   *
    * @var string
    */
   public $lastUpdatedTimestampMillis;
   /**
-   * The ID of the managed configurations settings.
-   *
    * @var string
    */
   public $mcmId;
   /**
-   * The name of the managed configurations settings.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The last updated time of the managed configuration settings in milliseconds
-   * since 1970-01-01T00:00:00Z.
-   *
-   * @param string $lastUpdatedTimestampMillis
+   * @param string
    */
   public function setLastUpdatedTimestampMillis($lastUpdatedTimestampMillis)
   {
@@ -57,9 +47,7 @@ class ManagedConfigurationsSettings extends \Google\Model
     return $this->lastUpdatedTimestampMillis;
   }
   /**
-   * The ID of the managed configurations settings.
-   *
-   * @param string $mcmId
+   * @param string
    */
   public function setMcmId($mcmId)
   {
@@ -73,9 +61,7 @@ class ManagedConfigurationsSettings extends \Google\Model
     return $this->mcmId;
   }
   /**
-   * The name of the managed configurations settings.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

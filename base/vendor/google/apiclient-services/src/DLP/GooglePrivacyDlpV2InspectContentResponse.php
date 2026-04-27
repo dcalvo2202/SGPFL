@@ -23,9 +23,7 @@ class GooglePrivacyDlpV2InspectContentResponse extends \Google\Model
   protected $resultDataType = '';
 
   /**
-   * The findings.
-   *
-   * @param GooglePrivacyDlpV2InspectResult $result
+   * @param GooglePrivacyDlpV2InspectResult
    */
   public function setResult(GooglePrivacyDlpV2InspectResult $result)
   {

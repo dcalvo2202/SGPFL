@@ -20,46 +20,28 @@ namespace Google\Service\Meet;
 class ConferenceRecord extends \Google\Model
 {
   /**
-   * Output only. Timestamp when the conference ended. Set for past conferences.
-   * Unset if the conference is ongoing.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * Output only. Server enforced expiration time for when this conference
-   * record resource is deleted. The resource is deleted 30 days after the
-   * conference ends.
-   *
    * @var string
    */
   public $expireTime;
   /**
-   * Identifier. Resource name of the conference record. Format:
-   * `conferenceRecords/{conference_record}` where `{conference_record}` is a
-   * unique ID for each instance of a call within a space.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The space where the conference was held.
-   *
    * @var string
    */
   public $space;
   /**
-   * Output only. Timestamp when the conference started. Always set.
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * Output only. Timestamp when the conference ended. Set for past conferences.
-   * Unset if the conference is ongoing.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -73,11 +55,7 @@ class ConferenceRecord extends \Google\Model
     return $this->endTime;
   }
   /**
-   * Output only. Server enforced expiration time for when this conference
-   * record resource is deleted. The resource is deleted 30 days after the
-   * conference ends.
-   *
-   * @param string $expireTime
+   * @param string
    */
   public function setExpireTime($expireTime)
   {
@@ -91,11 +69,7 @@ class ConferenceRecord extends \Google\Model
     return $this->expireTime;
   }
   /**
-   * Identifier. Resource name of the conference record. Format:
-   * `conferenceRecords/{conference_record}` where `{conference_record}` is a
-   * unique ID for each instance of a call within a space.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -109,9 +83,7 @@ class ConferenceRecord extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The space where the conference was held.
-   *
-   * @param string $space
+   * @param string
    */
   public function setSpace($space)
   {
@@ -125,9 +97,7 @@ class ConferenceRecord extends \Google\Model
     return $this->space;
   }
   /**
-   * Output only. Timestamp when the conference started. Always set.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

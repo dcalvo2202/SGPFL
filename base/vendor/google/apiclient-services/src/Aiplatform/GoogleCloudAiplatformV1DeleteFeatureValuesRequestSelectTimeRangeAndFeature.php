@@ -22,10 +22,6 @@ class GoogleCloudAiplatformV1DeleteFeatureValuesRequestSelectTimeRangeAndFeature
   protected $featureSelectorType = GoogleCloudAiplatformV1FeatureSelector::class;
   protected $featureSelectorDataType = '';
   /**
-   * If set, data will not be deleted from online storage. When time range is
-   * older than the data in online storage, setting this to be true will make
-   * the deletion have no impact on online serving.
-   *
    * @var bool
    */
   public $skipOnlineStorageDelete;
@@ -33,10 +29,7 @@ class GoogleCloudAiplatformV1DeleteFeatureValuesRequestSelectTimeRangeAndFeature
   protected $timeRangeDataType = '';
 
   /**
-   * Required. Selectors choosing which feature values to be deleted from the
-   * EntityType.
-   *
-   * @param GoogleCloudAiplatformV1FeatureSelector $featureSelector
+   * @param GoogleCloudAiplatformV1FeatureSelector
    */
   public function setFeatureSelector(GoogleCloudAiplatformV1FeatureSelector $featureSelector)
   {
@@ -50,11 +43,7 @@ class GoogleCloudAiplatformV1DeleteFeatureValuesRequestSelectTimeRangeAndFeature
     return $this->featureSelector;
   }
   /**
-   * If set, data will not be deleted from online storage. When time range is
-   * older than the data in online storage, setting this to be true will make
-   * the deletion have no impact on online serving.
-   *
-   * @param bool $skipOnlineStorageDelete
+   * @param bool
    */
   public function setSkipOnlineStorageDelete($skipOnlineStorageDelete)
   {
@@ -68,10 +57,7 @@ class GoogleCloudAiplatformV1DeleteFeatureValuesRequestSelectTimeRangeAndFeature
     return $this->skipOnlineStorageDelete;
   }
   /**
-   * Required. Select feature generated within a half-inclusive time range. The
-   * time range is lower inclusive and upper exclusive.
-   *
-   * @param GoogleTypeInterval $timeRange
+   * @param GoogleTypeInterval
    */
   public function setTimeRange(GoogleTypeInterval $timeRange)
   {

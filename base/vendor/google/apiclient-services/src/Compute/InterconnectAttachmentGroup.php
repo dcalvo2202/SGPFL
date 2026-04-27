@@ -24,81 +24,44 @@ class InterconnectAttachmentGroup extends \Google\Model
   protected $configuredType = InterconnectAttachmentGroupConfigured::class;
   protected $configuredDataType = '';
   /**
-   * Output only. [Output Only] Creation timestamp inRFC3339 text format.
-   *
    * @var string
    */
   public $creationTimestamp;
   /**
-   * An optional description of this resource. Provide this property when you
-   * create the resource.
-   *
    * @var string
    */
   public $description;
   /**
-   * Opaque system-generated token that uniquely identifies the configuration.
-   * If provided when patching a configuration in update mode, the provided
-   * token must match the current token or the update is rejected. This provides
-   * a reliable means of doing read-modify-write (optimistic locking) as
-   * described byAIP 154.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Output only. [Output Only] The unique identifier for the resource type. The
-   * server generates this identifier.
-   *
    * @var string
    */
   public $id;
   protected $intentType = InterconnectAttachmentGroupIntent::class;
   protected $intentDataType = '';
   /**
-   * The URL of an InterconnectGroup that groups these Attachments'
-   * Interconnects. Customers do not need to set this unless directed by Google
-   * Support.
-   *
    * @var string
    */
   public $interconnectGroup;
   /**
-   * Output only. [Output Only] Type of the resource. Always
-   * compute#interconnectAttachmentGroup.
-   *
    * @var string
    */
   public $kind;
   protected $logicalStructureType = InterconnectAttachmentGroupLogicalStructure::class;
   protected $logicalStructureDataType = '';
   /**
-   * Name of the resource. Provided by the client when the resource is created.
-   * The name must be 1-63 characters long, and comply withRFC1035.
-   * Specifically, the name must be 1-63 characters long and match the regular
-   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character
-   * must be a lowercase letter, and all following characters must be a dash,
-   * lowercase letter, or digit, except the last character, which cannot be a
-   * dash.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. [Output Only] Server-defined URL for the resource.
-   *
    * @var string
    */
   public $selfLink;
 
   /**
-   * Attachments in the AttachmentGroup. Keys are arbitrary user-specified
-   * strings. Users are encouraged, but not required, to use their preferred
-   * format for resource links as keys. Note that there are add-members and
-   * remove-members methods in gcloud. The size of this map is limited by an
-   * "Attachments per group" quota.
-   *
-   * @param InterconnectAttachmentGroupAttachment[] $attachments
+   * @param InterconnectAttachmentGroupAttachment[]
    */
   public function setAttachments($attachments)
   {
@@ -112,7 +75,7 @@ class InterconnectAttachmentGroup extends \Google\Model
     return $this->attachments;
   }
   /**
-   * @param InterconnectAttachmentGroupConfigured $configured
+   * @param InterconnectAttachmentGroupConfigured
    */
   public function setConfigured(InterconnectAttachmentGroupConfigured $configured)
   {
@@ -126,9 +89,7 @@ class InterconnectAttachmentGroup extends \Google\Model
     return $this->configured;
   }
   /**
-   * Output only. [Output Only] Creation timestamp inRFC3339 text format.
-   *
-   * @param string $creationTimestamp
+   * @param string
    */
   public function setCreationTimestamp($creationTimestamp)
   {
@@ -142,10 +103,7 @@ class InterconnectAttachmentGroup extends \Google\Model
     return $this->creationTimestamp;
   }
   /**
-   * An optional description of this resource. Provide this property when you
-   * create the resource.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -159,13 +117,7 @@ class InterconnectAttachmentGroup extends \Google\Model
     return $this->description;
   }
   /**
-   * Opaque system-generated token that uniquely identifies the configuration.
-   * If provided when patching a configuration in update mode, the provided
-   * token must match the current token or the update is rejected. This provides
-   * a reliable means of doing read-modify-write (optimistic locking) as
-   * described byAIP 154.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -179,10 +131,7 @@ class InterconnectAttachmentGroup extends \Google\Model
     return $this->etag;
   }
   /**
-   * Output only. [Output Only] The unique identifier for the resource type. The
-   * server generates this identifier.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -196,7 +145,7 @@ class InterconnectAttachmentGroup extends \Google\Model
     return $this->id;
   }
   /**
-   * @param InterconnectAttachmentGroupIntent $intent
+   * @param InterconnectAttachmentGroupIntent
    */
   public function setIntent(InterconnectAttachmentGroupIntent $intent)
   {
@@ -210,11 +159,7 @@ class InterconnectAttachmentGroup extends \Google\Model
     return $this->intent;
   }
   /**
-   * The URL of an InterconnectGroup that groups these Attachments'
-   * Interconnects. Customers do not need to set this unless directed by Google
-   * Support.
-   *
-   * @param string $interconnectGroup
+   * @param string
    */
   public function setInterconnectGroup($interconnectGroup)
   {
@@ -228,10 +173,7 @@ class InterconnectAttachmentGroup extends \Google\Model
     return $this->interconnectGroup;
   }
   /**
-   * Output only. [Output Only] Type of the resource. Always
-   * compute#interconnectAttachmentGroup.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -245,7 +187,7 @@ class InterconnectAttachmentGroup extends \Google\Model
     return $this->kind;
   }
   /**
-   * @param InterconnectAttachmentGroupLogicalStructure $logicalStructure
+   * @param InterconnectAttachmentGroupLogicalStructure
    */
   public function setLogicalStructure(InterconnectAttachmentGroupLogicalStructure $logicalStructure)
   {
@@ -259,15 +201,7 @@ class InterconnectAttachmentGroup extends \Google\Model
     return $this->logicalStructure;
   }
   /**
-   * Name of the resource. Provided by the client when the resource is created.
-   * The name must be 1-63 characters long, and comply withRFC1035.
-   * Specifically, the name must be 1-63 characters long and match the regular
-   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character
-   * must be a lowercase letter, and all following characters must be a dash,
-   * lowercase letter, or digit, except the last character, which cannot be a
-   * dash.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -281,9 +215,7 @@ class InterconnectAttachmentGroup extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. [Output Only] Server-defined URL for the resource.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {

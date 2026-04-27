@@ -20,41 +20,16 @@ namespace Google\Service\AndroidPublisher;
 class PrepaidBasePlanType extends \Google\Model
 {
   /**
-   * Unspecified state.
-   */
-  public const TIME_EXTENSION_TIME_EXTENSION_UNSPECIFIED = 'TIME_EXTENSION_UNSPECIFIED';
-  /**
-   * Time extension is active. Users are allowed to top-up or extend their
-   * prepaid plan.
-   */
-  public const TIME_EXTENSION_TIME_EXTENSION_ACTIVE = 'TIME_EXTENSION_ACTIVE';
-  /**
-   * Time extension is inactive. Users cannot top-up or extend their prepaid
-   * plan.
-   */
-  public const TIME_EXTENSION_TIME_EXTENSION_INACTIVE = 'TIME_EXTENSION_INACTIVE';
-  /**
-   * Required. Immutable. Subscription period, specified in ISO 8601 format. For
-   * a list of acceptable billing periods, refer to the help center. The
-   * duration is immutable after the base plan is created.
-   *
    * @var string
    */
   public $billingPeriodDuration;
   /**
-   * Whether users should be able to extend this prepaid base plan in Google
-   * Play surfaces. Defaults to TIME_EXTENSION_ACTIVE if not specified.
-   *
    * @var string
    */
   public $timeExtension;
 
   /**
-   * Required. Immutable. Subscription period, specified in ISO 8601 format. For
-   * a list of acceptable billing periods, refer to the help center. The
-   * duration is immutable after the base plan is created.
-   *
-   * @param string $billingPeriodDuration
+   * @param string
    */
   public function setBillingPeriodDuration($billingPeriodDuration)
   {
@@ -68,20 +43,14 @@ class PrepaidBasePlanType extends \Google\Model
     return $this->billingPeriodDuration;
   }
   /**
-   * Whether users should be able to extend this prepaid base plan in Google
-   * Play surfaces. Defaults to TIME_EXTENSION_ACTIVE if not specified.
-   *
-   * Accepted values: TIME_EXTENSION_UNSPECIFIED, TIME_EXTENSION_ACTIVE,
-   * TIME_EXTENSION_INACTIVE
-   *
-   * @param self::TIME_EXTENSION_* $timeExtension
+   * @param string
    */
   public function setTimeExtension($timeExtension)
   {
     $this->timeExtension = $timeExtension;
   }
   /**
-   * @return self::TIME_EXTENSION_*
+   * @return string
    */
   public function getTimeExtension()
   {

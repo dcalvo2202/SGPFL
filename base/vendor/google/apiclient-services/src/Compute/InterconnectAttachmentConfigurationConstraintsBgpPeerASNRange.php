@@ -29,7 +29,7 @@ class InterconnectAttachmentConfigurationConstraintsBgpPeerASNRange extends \Goo
   public $min;
 
   /**
-   * @param string $max
+   * @param string
    */
   public function setMax($max)
   {
@@ -43,7 +43,7 @@ class InterconnectAttachmentConfigurationConstraintsBgpPeerASNRange extends \Goo
     return $this->max;
   }
   /**
-   * @param string $min
+   * @param string
    */
   public function setMin($min)
   {

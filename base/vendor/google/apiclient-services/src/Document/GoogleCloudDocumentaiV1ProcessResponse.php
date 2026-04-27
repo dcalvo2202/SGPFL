@@ -25,10 +25,7 @@ class GoogleCloudDocumentaiV1ProcessResponse extends \Google\Model
   protected $humanReviewStatusDataType = '';
 
   /**
-   * The document payload, will populate fields based on the processor's
-   * behavior.
-   *
-   * @param GoogleCloudDocumentaiV1Document $document
+   * @param GoogleCloudDocumentaiV1Document
    */
   public function setDocument(GoogleCloudDocumentaiV1Document $document)
   {
@@ -42,9 +39,7 @@ class GoogleCloudDocumentaiV1ProcessResponse extends \Google\Model
     return $this->document;
   }
   /**
-   * The status of human review on the processed document.
-   *
-   * @param GoogleCloudDocumentaiV1HumanReviewStatus $humanReviewStatus
+   * @param GoogleCloudDocumentaiV1HumanReviewStatus
    */
   public function setHumanReviewStatus(GoogleCloudDocumentaiV1HumanReviewStatus $humanReviewStatus)
   {

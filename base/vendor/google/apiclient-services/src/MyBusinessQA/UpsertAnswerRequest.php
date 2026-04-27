@@ -23,9 +23,7 @@ class UpsertAnswerRequest extends \Google\Model
   protected $answerDataType = '';
 
   /**
-   * Required. The new answer.
-   *
-   * @param Answer $answer
+   * @param Answer
    */
   public function setAnswer(Answer $answer)
   {

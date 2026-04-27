@@ -21,46 +21,30 @@ class Datafeed extends \Google\Collection
 {
   protected $collection_key = 'targets';
   /**
-   * The two-letter ISO 639-1 language in which the attributes are defined in
-   * the data feed.
-   *
    * @var string
    */
   public $attributeLanguage;
   /**
-   * Required. The type of data feed. For product inventory feeds, only feeds
-   * for local stores, not online stores, are supported. Acceptable values are:
-   * - "`local products`" - "`product inventory`" - "`products`"
-   *
    * @var string
    */
   public $contentType;
   protected $fetchScheduleType = DatafeedFetchSchedule::class;
   protected $fetchScheduleDataType = '';
   /**
-   * Required. The filename of the feed. All feeds must have a unique file name.
-   *
    * @var string
    */
   public $fileName;
   protected $formatType = DatafeedFormat::class;
   protected $formatDataType = '';
   /**
-   * Required for update. The ID of the data feed.
-   *
    * @var string
    */
   public $id;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#datafeed`"
-   *
    * @var string
    */
   public $kind;
   /**
-   * Required for insert. A descriptive name of the data feed.
-   *
    * @var string
    */
   public $name;
@@ -68,10 +52,7 @@ class Datafeed extends \Google\Collection
   protected $targetsDataType = 'array';
 
   /**
-   * The two-letter ISO 639-1 language in which the attributes are defined in
-   * the data feed.
-   *
-   * @param string $attributeLanguage
+   * @param string
    */
   public function setAttributeLanguage($attributeLanguage)
   {
@@ -85,11 +66,7 @@ class Datafeed extends \Google\Collection
     return $this->attributeLanguage;
   }
   /**
-   * Required. The type of data feed. For product inventory feeds, only feeds
-   * for local stores, not online stores, are supported. Acceptable values are:
-   * - "`local products`" - "`product inventory`" - "`products`"
-   *
-   * @param string $contentType
+   * @param string
    */
   public function setContentType($contentType)
   {
@@ -103,9 +80,7 @@ class Datafeed extends \Google\Collection
     return $this->contentType;
   }
   /**
-   * Fetch schedule for the feed file.
-   *
-   * @param DatafeedFetchSchedule $fetchSchedule
+   * @param DatafeedFetchSchedule
    */
   public function setFetchSchedule(DatafeedFetchSchedule $fetchSchedule)
   {
@@ -119,9 +94,7 @@ class Datafeed extends \Google\Collection
     return $this->fetchSchedule;
   }
   /**
-   * Required. The filename of the feed. All feeds must have a unique file name.
-   *
-   * @param string $fileName
+   * @param string
    */
   public function setFileName($fileName)
   {
@@ -135,9 +108,7 @@ class Datafeed extends \Google\Collection
     return $this->fileName;
   }
   /**
-   * Format of the feed file.
-   *
-   * @param DatafeedFormat $format
+   * @param DatafeedFormat
    */
   public function setFormat(DatafeedFormat $format)
   {
@@ -151,9 +122,7 @@ class Datafeed extends \Google\Collection
     return $this->format;
   }
   /**
-   * Required for update. The ID of the data feed.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -167,10 +136,7 @@ class Datafeed extends \Google\Collection
     return $this->id;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#datafeed`"
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -184,9 +150,7 @@ class Datafeed extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Required for insert. A descriptive name of the data feed.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -200,9 +164,7 @@ class Datafeed extends \Google\Collection
     return $this->name;
   }
   /**
-   * The targets this feed should apply to (country, language, destinations).
-   *
-   * @param DatafeedTarget[] $targets
+   * @param DatafeedTarget[]
    */
   public function setTargets($targets)
   {

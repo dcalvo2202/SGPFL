@@ -20,111 +20,54 @@ namespace Google\Service\DLP;
 class GooglePrivacyDlpV2Finding extends \Google\Model
 {
   /**
-   * Default value; same as POSSIBLE.
-   */
-  public const LIKELIHOOD_LIKELIHOOD_UNSPECIFIED = 'LIKELIHOOD_UNSPECIFIED';
-  /**
-   * Highest chance of a false positive.
-   */
-  public const LIKELIHOOD_VERY_UNLIKELY = 'VERY_UNLIKELY';
-  /**
-   * High chance of a false positive.
-   */
-  public const LIKELIHOOD_UNLIKELY = 'UNLIKELY';
-  /**
-   * Some matching signals. The default value.
-   */
-  public const LIKELIHOOD_POSSIBLE = 'POSSIBLE';
-  /**
-   * Low chance of a false positive.
-   */
-  public const LIKELIHOOD_LIKELY = 'LIKELY';
-  /**
-   * Confidence level is high. Lowest chance of a false positive.
-   */
-  public const LIKELIHOOD_VERY_LIKELY = 'VERY_LIKELY';
-  /**
-   * Timestamp when finding was detected.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * The unique finding id.
-   *
    * @var string
    */
   public $findingId;
   protected $infoTypeType = GooglePrivacyDlpV2InfoType::class;
   protected $infoTypeDataType = '';
   /**
-   * Time the job started that produced this finding.
-   *
    * @var string
    */
   public $jobCreateTime;
   /**
-   * The job that stored the finding.
-   *
    * @var string
    */
   public $jobName;
   /**
-   * The labels associated with this `Finding`. Label keys must be between 1 and
-   * 63 characters long and must conform to the following regular expression:
-   * `[a-z]([-a-z0-9]*[a-z0-9])?`. Label values must be between 0 and 63
-   * characters long and must conform to the regular expression
-   * `([a-z]([-a-z0-9]*[a-z0-9])?)?`. No more than 10 labels can be associated
-   * with a given finding. Examples: * `"environment" : "production"` *
-   * `"pipeline" : "etl"`
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Confidence of how likely it is that the `info_type` is correct.
-   *
    * @var string
    */
   public $likelihood;
   protected $locationType = GooglePrivacyDlpV2Location::class;
   protected $locationDataType = '';
   /**
-   * Resource name in format
-   * projects/{project}/locations/{location}/findings/{finding} Populated only
-   * when viewing persisted findings.
-   *
    * @var string
    */
   public $name;
   /**
-   * The content that was found. Even if the content is not textual, it may be
-   * converted to a textual representation here. Provided if `include_quote` is
-   * true and the finding is less than or equal to 4096 bytes long. If the
-   * finding exceeds 4096 bytes in length, the quote may be omitted.
-   *
    * @var string
    */
   public $quote;
   protected $quoteInfoType = GooglePrivacyDlpV2QuoteInfo::class;
   protected $quoteInfoDataType = '';
   /**
-   * The job that stored the finding.
-   *
    * @var string
    */
   public $resourceName;
   /**
-   * Job trigger name, if applicable, for this finding.
-   *
    * @var string
    */
   public $triggerName;
 
   /**
-   * Timestamp when finding was detected.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -138,9 +81,7 @@ class GooglePrivacyDlpV2Finding extends \Google\Model
     return $this->createTime;
   }
   /**
-   * The unique finding id.
-   *
-   * @param string $findingId
+   * @param string
    */
   public function setFindingId($findingId)
   {
@@ -154,10 +95,7 @@ class GooglePrivacyDlpV2Finding extends \Google\Model
     return $this->findingId;
   }
   /**
-   * The type of content that might have been found. Provided if
-   * `excluded_types` is false.
-   *
-   * @param GooglePrivacyDlpV2InfoType $infoType
+   * @param GooglePrivacyDlpV2InfoType
    */
   public function setInfoType(GooglePrivacyDlpV2InfoType $infoType)
   {
@@ -171,9 +109,7 @@ class GooglePrivacyDlpV2Finding extends \Google\Model
     return $this->infoType;
   }
   /**
-   * Time the job started that produced this finding.
-   *
-   * @param string $jobCreateTime
+   * @param string
    */
   public function setJobCreateTime($jobCreateTime)
   {
@@ -187,9 +123,7 @@ class GooglePrivacyDlpV2Finding extends \Google\Model
     return $this->jobCreateTime;
   }
   /**
-   * The job that stored the finding.
-   *
-   * @param string $jobName
+   * @param string
    */
   public function setJobName($jobName)
   {
@@ -203,15 +137,7 @@ class GooglePrivacyDlpV2Finding extends \Google\Model
     return $this->jobName;
   }
   /**
-   * The labels associated with this `Finding`. Label keys must be between 1 and
-   * 63 characters long and must conform to the following regular expression:
-   * `[a-z]([-a-z0-9]*[a-z0-9])?`. Label values must be between 0 and 63
-   * characters long and must conform to the regular expression
-   * `([a-z]([-a-z0-9]*[a-z0-9])?)?`. No more than 10 labels can be associated
-   * with a given finding. Examples: * `"environment" : "production"` *
-   * `"pipeline" : "etl"`
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -225,28 +151,21 @@ class GooglePrivacyDlpV2Finding extends \Google\Model
     return $this->labels;
   }
   /**
-   * Confidence of how likely it is that the `info_type` is correct.
-   *
-   * Accepted values: LIKELIHOOD_UNSPECIFIED, VERY_UNLIKELY, UNLIKELY, POSSIBLE,
-   * LIKELY, VERY_LIKELY
-   *
-   * @param self::LIKELIHOOD_* $likelihood
+   * @param string
    */
   public function setLikelihood($likelihood)
   {
     $this->likelihood = $likelihood;
   }
   /**
-   * @return self::LIKELIHOOD_*
+   * @return string
    */
   public function getLikelihood()
   {
     return $this->likelihood;
   }
   /**
-   * Where the content was found.
-   *
-   * @param GooglePrivacyDlpV2Location $location
+   * @param GooglePrivacyDlpV2Location
    */
   public function setLocation(GooglePrivacyDlpV2Location $location)
   {
@@ -260,11 +179,7 @@ class GooglePrivacyDlpV2Finding extends \Google\Model
     return $this->location;
   }
   /**
-   * Resource name in format
-   * projects/{project}/locations/{location}/findings/{finding} Populated only
-   * when viewing persisted findings.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -278,12 +193,7 @@ class GooglePrivacyDlpV2Finding extends \Google\Model
     return $this->name;
   }
   /**
-   * The content that was found. Even if the content is not textual, it may be
-   * converted to a textual representation here. Provided if `include_quote` is
-   * true and the finding is less than or equal to 4096 bytes long. If the
-   * finding exceeds 4096 bytes in length, the quote may be omitted.
-   *
-   * @param string $quote
+   * @param string
    */
   public function setQuote($quote)
   {
@@ -297,11 +207,7 @@ class GooglePrivacyDlpV2Finding extends \Google\Model
     return $this->quote;
   }
   /**
-   * Contains data parsed from quotes. Only populated if include_quote was set
-   * to true and a supported infoType was requested. Currently supported
-   * infoTypes: DATE, DATE_OF_BIRTH and TIME.
-   *
-   * @param GooglePrivacyDlpV2QuoteInfo $quoteInfo
+   * @param GooglePrivacyDlpV2QuoteInfo
    */
   public function setQuoteInfo(GooglePrivacyDlpV2QuoteInfo $quoteInfo)
   {
@@ -315,9 +221,7 @@ class GooglePrivacyDlpV2Finding extends \Google\Model
     return $this->quoteInfo;
   }
   /**
-   * The job that stored the finding.
-   *
-   * @param string $resourceName
+   * @param string
    */
   public function setResourceName($resourceName)
   {
@@ -331,9 +235,7 @@ class GooglePrivacyDlpV2Finding extends \Google\Model
     return $this->resourceName;
   }
   /**
-   * Job trigger name, if applicable, for this finding.
-   *
-   * @param string $triggerName
+   * @param string
    */
   public function setTriggerName($triggerName)
   {

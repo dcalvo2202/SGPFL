@@ -21,25 +21,16 @@ class SiteTranscodeSetting extends \Google\Collection
 {
   protected $collection_key = 'enabledVideoFormats';
   /**
-   * Allowlist of video formats to be served to this site template. Set this
-   * list to null or empty to serve all video formats.
-   *
    * @var int[]
    */
   public $enabledVideoFormats;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#siteTranscodeSetting".
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * Allowlist of video formats to be served to this site template. Set this
-   * list to null or empty to serve all video formats.
-   *
-   * @param int[] $enabledVideoFormats
+   * @param int[]
    */
   public function setEnabledVideoFormats($enabledVideoFormats)
   {
@@ -53,10 +44,7 @@ class SiteTranscodeSetting extends \Google\Collection
     return $this->enabledVideoFormats;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#siteTranscodeSetting".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

@@ -20,8 +20,6 @@ namespace Google\Service\Slides;
 class UnmergeTableCellsRequest extends \Google\Model
 {
   /**
-   * The object ID of the table.
-   *
    * @var string
    */
   public $objectId;
@@ -29,9 +27,7 @@ class UnmergeTableCellsRequest extends \Google\Model
   protected $tableRangeDataType = '';
 
   /**
-   * The object ID of the table.
-   *
-   * @param string $objectId
+   * @param string
    */
   public function setObjectId($objectId)
   {
@@ -45,13 +41,7 @@ class UnmergeTableCellsRequest extends \Google\Model
     return $this->objectId;
   }
   /**
-   * The table range specifying which cells of the table to unmerge. All merged
-   * cells in this range will be unmerged, and cells that are already unmerged
-   * will not be affected. If the range has no merged cells, the request will do
-   * nothing. If there is text in any of the merged cells, the text will remain
-   * in the upper-left ("head") cell of the resulting block of unmerged cells.
-   *
-   * @param TableRange $tableRange
+   * @param TableRange
    */
   public function setTableRange(TableRange $tableRange)
   {

@@ -20,56 +20,26 @@ namespace Google\Service\APIManagement;
 class ObservationSource extends \Google\Model
 {
   /**
-   * Unspecified state
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Source is in the creating state
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * Source has been created and is ready to use
-   */
-  public const STATE_CREATED = 'CREATED';
-  /**
-   * Source is being deleted
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * Source is in an error state
-   */
-  public const STATE_ERROR = 'ERROR';
-  /**
-   * Output only. [Output only] Create time stamp
-   *
    * @var string
    */
   public $createTime;
   protected $gclbObservationSourceType = GclbObservationSource::class;
   protected $gclbObservationSourceDataType = '';
   /**
-   * Identifier. name of resource For MVP, each region can only have 1 source.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The observation source state
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. [Output only] Update time stamp
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. [Output only] Create time stamp
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -83,9 +53,7 @@ class ObservationSource extends \Google\Model
     return $this->createTime;
   }
   /**
-   * The GCLB observation source
-   *
-   * @param GclbObservationSource $gclbObservationSource
+   * @param GclbObservationSource
    */
   public function setGclbObservationSource(GclbObservationSource $gclbObservationSource)
   {
@@ -99,9 +67,7 @@ class ObservationSource extends \Google\Model
     return $this->gclbObservationSource;
   }
   /**
-   * Identifier. name of resource For MVP, each region can only have 1 source.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -115,27 +81,21 @@ class ObservationSource extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The observation source state
-   *
-   * Accepted values: STATE_UNSPECIFIED, CREATING, CREATED, DELETING, ERROR
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. [Output only] Update time stamp
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

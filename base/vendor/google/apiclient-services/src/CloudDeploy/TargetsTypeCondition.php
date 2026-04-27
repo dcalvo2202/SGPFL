@@ -20,24 +20,16 @@ namespace Google\Service\CloudDeploy;
 class TargetsTypeCondition extends \Google\Model
 {
   /**
-   * Human readable error message.
-   *
    * @var string
    */
   public $errorDetails;
   /**
-   * True if the targets are all a comparable type. For example this is true if
-   * all targets are GKE clusters. This is false if some targets are Cloud Run
-   * targets and others are GKE clusters.
-   *
    * @var bool
    */
   public $status;
 
   /**
-   * Human readable error message.
-   *
-   * @param string $errorDetails
+   * @param string
    */
   public function setErrorDetails($errorDetails)
   {
@@ -51,11 +43,7 @@ class TargetsTypeCondition extends \Google\Model
     return $this->errorDetails;
   }
   /**
-   * True if the targets are all a comparable type. For example this is true if
-   * all targets are GKE clusters. This is false if some targets are Cloud Run
-   * targets and others are GKE clusters.
-   *
-   * @param bool $status
+   * @param bool
    */
   public function setStatus($status)
   {

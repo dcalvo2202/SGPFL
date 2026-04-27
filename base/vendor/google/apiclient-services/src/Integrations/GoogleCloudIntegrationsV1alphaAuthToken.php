@@ -20,22 +20,16 @@ namespace Google\Service\Integrations;
 class GoogleCloudIntegrationsV1alphaAuthToken extends \Google\Model
 {
   /**
-   * The token for the auth type.
-   *
    * @var string
    */
   public $token;
   /**
-   * Authentication type, e.g. "Basic", "Bearer", etc.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The token for the auth type.
-   *
-   * @param string $token
+   * @param string
    */
   public function setToken($token)
   {
@@ -49,9 +43,7 @@ class GoogleCloudIntegrationsV1alphaAuthToken extends \Google\Model
     return $this->token;
   }
   /**
-   * Authentication type, e.g. "Basic", "Bearer", etc.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

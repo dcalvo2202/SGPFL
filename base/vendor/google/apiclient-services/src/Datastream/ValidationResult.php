@@ -24,10 +24,7 @@ class ValidationResult extends \Google\Collection
   protected $validationsDataType = 'array';
 
   /**
-   * A list of validations (includes both executed as well as not executed
-   * validations).
-   *
-   * @param Validation[] $validations
+   * @param Validation[]
    */
   public function setValidations($validations)
   {

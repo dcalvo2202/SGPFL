@@ -24,9 +24,7 @@ class GoogleCloudApigeeV1ListHybridIssuersResponse extends \Google\Collection
   protected $issuersDataType = 'array';
 
   /**
-   * Lists of hybrid services and its trusted issuer email ids.
-   *
-   * @param GoogleCloudApigeeV1ServiceIssuersMapping[] $issuers
+   * @param GoogleCloudApigeeV1ServiceIssuersMapping[]
    */
   public function setIssuers($issuers)
   {

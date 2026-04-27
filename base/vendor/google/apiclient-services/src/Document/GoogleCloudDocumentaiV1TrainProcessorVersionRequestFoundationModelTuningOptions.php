@@ -20,37 +20,16 @@ namespace Google\Service\Document;
 class GoogleCloudDocumentaiV1TrainProcessorVersionRequestFoundationModelTuningOptions extends \Google\Model
 {
   /**
-   * Optional. The multiplier to apply to the recommended learning rate. Valid
-   * values are between 0.1 and 10. If not provided, recommended learning rate
-   * will be used.
-   *
    * @var float
    */
   public $learningRateMultiplier;
   /**
-   * Optional. Resource name of a previously fine tuned version id to copy the
-   * overwritten configs from. The base_processor_version should be newer than
-   * the base processor version used to fine tune this provided processor
-   * version. Format: `projects/{project}/locations/{location}/processors/{proce
-   * ssor}/processorVersions/{processorVersion}`.
-   *
-   * @var string
-   */
-  public $previousFineTunedProcessorVersionName;
-  /**
-   * Optional. The number of steps to run for model tuning. Valid values are
-   * between 1 and 400. If not provided, recommended steps will be used.
-   *
    * @var int
    */
   public $trainSteps;
 
   /**
-   * Optional. The multiplier to apply to the recommended learning rate. Valid
-   * values are between 0.1 and 10. If not provided, recommended learning rate
-   * will be used.
-   *
-   * @param float $learningRateMultiplier
+   * @param float
    */
   public function setLearningRateMultiplier($learningRateMultiplier)
   {
@@ -64,30 +43,7 @@ class GoogleCloudDocumentaiV1TrainProcessorVersionRequestFoundationModelTuningOp
     return $this->learningRateMultiplier;
   }
   /**
-   * Optional. Resource name of a previously fine tuned version id to copy the
-   * overwritten configs from. The base_processor_version should be newer than
-   * the base processor version used to fine tune this provided processor
-   * version. Format: `projects/{project}/locations/{location}/processors/{proce
-   * ssor}/processorVersions/{processorVersion}`.
-   *
-   * @param string $previousFineTunedProcessorVersionName
-   */
-  public function setPreviousFineTunedProcessorVersionName($previousFineTunedProcessorVersionName)
-  {
-    $this->previousFineTunedProcessorVersionName = $previousFineTunedProcessorVersionName;
-  }
-  /**
-   * @return string
-   */
-  public function getPreviousFineTunedProcessorVersionName()
-  {
-    return $this->previousFineTunedProcessorVersionName;
-  }
-  /**
-   * Optional. The number of steps to run for model tuning. Valid values are
-   * between 1 and 400. If not provided, recommended steps will be used.
-   *
-   * @param int $trainSteps
+   * @param int
    */
   public function setTrainSteps($trainSteps)
   {

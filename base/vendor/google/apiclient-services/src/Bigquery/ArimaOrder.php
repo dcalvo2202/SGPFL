@@ -20,28 +20,20 @@ namespace Google\Service\Bigquery;
 class ArimaOrder extends \Google\Model
 {
   /**
-   * Order of the differencing part.
-   *
    * @var string
    */
   public $d;
   /**
-   * Order of the autoregressive part.
-   *
    * @var string
    */
   public $p;
   /**
-   * Order of the moving-average part.
-   *
    * @var string
    */
   public $q;
 
   /**
-   * Order of the differencing part.
-   *
-   * @param string $d
+   * @param string
    */
   public function setD($d)
   {
@@ -55,9 +47,7 @@ class ArimaOrder extends \Google\Model
     return $this->d;
   }
   /**
-   * Order of the autoregressive part.
-   *
-   * @param string $p
+   * @param string
    */
   public function setP($p)
   {
@@ -71,9 +61,7 @@ class ArimaOrder extends \Google\Model
     return $this->p;
   }
   /**
-   * Order of the moving-average part.
-   *
-   * @param string $q
+   * @param string
    */
   public function setQ($q)
   {

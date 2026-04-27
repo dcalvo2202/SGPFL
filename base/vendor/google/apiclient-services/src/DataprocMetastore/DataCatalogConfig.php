@@ -20,20 +20,12 @@ namespace Google\Service\DataprocMetastore;
 class DataCatalogConfig extends \Google\Model
 {
   /**
-   * Optional. Defines whether the metastore metadata should be synced to Data
-   * Catalog. The default value is to disable syncing metastore metadata to Data
-   * Catalog.
-   *
    * @var bool
    */
   public $enabled;
 
   /**
-   * Optional. Defines whether the metastore metadata should be synced to Data
-   * Catalog. The default value is to disable syncing metastore metadata to Data
-   * Catalog.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {

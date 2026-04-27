@@ -20,41 +20,28 @@ namespace Google\Service\ToolResults;
 class AndroidRoboTest extends \Google\Model
 {
   /**
-   * The initial activity that should be used to start the app. Optional
-   *
    * @var string
    */
   public $appInitialActivity;
   /**
-   * The java package for the bootstrap. Optional
-   *
    * @var string
    */
   public $bootstrapPackageId;
   /**
-   * The runner class for the bootstrap. Optional
-   *
    * @var string
    */
   public $bootstrapRunnerClass;
   /**
-   * The max depth of the traversal stack Robo can explore. Optional
-   *
    * @var int
    */
   public $maxDepth;
   /**
-   * The max number of steps/actions Robo can execute. Default is no limit (0).
-   * Optional
-   *
    * @var int
    */
   public $maxSteps;
 
   /**
-   * The initial activity that should be used to start the app. Optional
-   *
-   * @param string $appInitialActivity
+   * @param string
    */
   public function setAppInitialActivity($appInitialActivity)
   {
@@ -68,9 +55,7 @@ class AndroidRoboTest extends \Google\Model
     return $this->appInitialActivity;
   }
   /**
-   * The java package for the bootstrap. Optional
-   *
-   * @param string $bootstrapPackageId
+   * @param string
    */
   public function setBootstrapPackageId($bootstrapPackageId)
   {
@@ -84,9 +69,7 @@ class AndroidRoboTest extends \Google\Model
     return $this->bootstrapPackageId;
   }
   /**
-   * The runner class for the bootstrap. Optional
-   *
-   * @param string $bootstrapRunnerClass
+   * @param string
    */
   public function setBootstrapRunnerClass($bootstrapRunnerClass)
   {
@@ -100,9 +83,7 @@ class AndroidRoboTest extends \Google\Model
     return $this->bootstrapRunnerClass;
   }
   /**
-   * The max depth of the traversal stack Robo can explore. Optional
-   *
-   * @param int $maxDepth
+   * @param int
    */
   public function setMaxDepth($maxDepth)
   {
@@ -116,10 +97,7 @@ class AndroidRoboTest extends \Google\Model
     return $this->maxDepth;
   }
   /**
-   * The max number of steps/actions Robo can execute. Default is no limit (0).
-   * Optional
-   *
-   * @param int $maxSteps
+   * @param int
    */
   public function setMaxSteps($maxSteps)
   {

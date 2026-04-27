@@ -20,32 +20,20 @@ namespace Google\Service\Cloudchannel;
 class GoogleCloudChannelV1RegisterSubscriberRequest extends \Google\Model
 {
   /**
-   * Optional. Resource name of the account. Required if integrator is not
-   * provided. Otherwise, leave this field empty/unset.
-   *
    * @var string
    */
   public $account;
   /**
-   * Optional. Resource name of the integrator. Required if account is not
-   * provided. Otherwise, leave this field empty/unset.
-   *
    * @var string
    */
   public $integrator;
   /**
-   * Required. Service account that provides subscriber access to the registered
-   * topic.
-   *
    * @var string
    */
   public $serviceAccount;
 
   /**
-   * Optional. Resource name of the account. Required if integrator is not
-   * provided. Otherwise, leave this field empty/unset.
-   *
-   * @param string $account
+   * @param string
    */
   public function setAccount($account)
   {
@@ -59,10 +47,7 @@ class GoogleCloudChannelV1RegisterSubscriberRequest extends \Google\Model
     return $this->account;
   }
   /**
-   * Optional. Resource name of the integrator. Required if account is not
-   * provided. Otherwise, leave this field empty/unset.
-   *
-   * @param string $integrator
+   * @param string
    */
   public function setIntegrator($integrator)
   {
@@ -76,10 +61,7 @@ class GoogleCloudChannelV1RegisterSubscriberRequest extends \Google\Model
     return $this->integrator;
   }
   /**
-   * Required. Service account that provides subscriber access to the registered
-   * topic.
-   *
-   * @param string $serviceAccount
+   * @param string
    */
   public function setServiceAccount($serviceAccount)
   {

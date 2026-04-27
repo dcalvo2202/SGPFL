@@ -19,50 +19,34 @@ namespace Google\Service\Walletobjects;
 
 class RotatingBarcodeTotpDetails extends \Google\Collection
 {
-  public const ALGORITHM_TOTP_ALGORITHM_UNSPECIFIED = 'TOTP_ALGORITHM_UNSPECIFIED';
-  /**
-   * TOTP algorithm from RFC 6238 with the SHA1 hash function
-   */
-  public const ALGORITHM_TOTP_SHA1 = 'TOTP_SHA1';
   protected $collection_key = 'parameters';
   /**
-   * The TOTP algorithm used to generate the OTP.
-   *
    * @var string
    */
   public $algorithm;
   protected $parametersType = RotatingBarcodeTotpDetailsTotpParameters::class;
   protected $parametersDataType = 'array';
   /**
-   * The time interval used for the TOTP value generation, in milliseconds.
-   *
    * @var string
    */
   public $periodMillis;
 
   /**
-   * The TOTP algorithm used to generate the OTP.
-   *
-   * Accepted values: TOTP_ALGORITHM_UNSPECIFIED, TOTP_SHA1
-   *
-   * @param self::ALGORITHM_* $algorithm
+   * @param string
    */
   public function setAlgorithm($algorithm)
   {
     $this->algorithm = $algorithm;
   }
   /**
-   * @return self::ALGORITHM_*
+   * @return string
    */
   public function getAlgorithm()
   {
     return $this->algorithm;
   }
   /**
-   * The TOTP parameters for each of the {totp_value_*} substitutions. The
-   * TotpParameters at index n is used for the {totp_value_n} substitution.
-   *
-   * @param RotatingBarcodeTotpDetailsTotpParameters[] $parameters
+   * @param RotatingBarcodeTotpDetailsTotpParameters[]
    */
   public function setParameters($parameters)
   {
@@ -76,9 +60,7 @@ class RotatingBarcodeTotpDetails extends \Google\Collection
     return $this->parameters;
   }
   /**
-   * The time interval used for the TOTP value generation, in milliseconds.
-   *
-   * @param string $periodMillis
+   * @param string
    */
   public function setPeriodMillis($periodMillis)
   {

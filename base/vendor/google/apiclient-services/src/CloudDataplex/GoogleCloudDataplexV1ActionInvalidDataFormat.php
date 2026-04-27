@@ -21,28 +21,20 @@ class GoogleCloudDataplexV1ActionInvalidDataFormat extends \Google\Collection
 {
   protected $collection_key = 'sampledDataLocations';
   /**
-   * The expected data format of the entity.
-   *
    * @var string
    */
   public $expectedFormat;
   /**
-   * The new unexpected data format within the entity.
-   *
    * @var string
    */
   public $newFormat;
   /**
-   * The list of data locations sampled and used for format/schema inference.
-   *
    * @var string[]
    */
   public $sampledDataLocations;
 
   /**
-   * The expected data format of the entity.
-   *
-   * @param string $expectedFormat
+   * @param string
    */
   public function setExpectedFormat($expectedFormat)
   {
@@ -56,9 +48,7 @@ class GoogleCloudDataplexV1ActionInvalidDataFormat extends \Google\Collection
     return $this->expectedFormat;
   }
   /**
-   * The new unexpected data format within the entity.
-   *
-   * @param string $newFormat
+   * @param string
    */
   public function setNewFormat($newFormat)
   {
@@ -72,9 +62,7 @@ class GoogleCloudDataplexV1ActionInvalidDataFormat extends \Google\Collection
     return $this->newFormat;
   }
   /**
-   * The list of data locations sampled and used for format/schema inference.
-   *
-   * @param string[] $sampledDataLocations
+   * @param string[]
    */
   public function setSampledDataLocations($sampledDataLocations)
   {

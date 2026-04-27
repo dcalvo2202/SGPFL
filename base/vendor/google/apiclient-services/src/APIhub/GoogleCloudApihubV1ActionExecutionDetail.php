@@ -20,16 +20,12 @@ namespace Google\Service\APIhub;
 class GoogleCloudApihubV1ActionExecutionDetail extends \Google\Model
 {
   /**
-   * Required. The action id of the plugin to execute.
-   *
    * @var string
    */
   public $actionId;
 
   /**
-   * Required. The action id of the plugin to execute.
-   *
-   * @param string $actionId
+   * @param string
    */
   public function setActionId($actionId)
   {

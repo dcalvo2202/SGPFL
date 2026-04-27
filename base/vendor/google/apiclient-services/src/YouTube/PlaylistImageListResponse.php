@@ -23,31 +23,22 @@ class PlaylistImageListResponse extends \Google\Collection
   protected $itemsType = PlaylistImage::class;
   protected $itemsDataType = 'array';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "youtube#playlistImageListResponse".
-   *
    * @var string
    */
   public $kind;
   /**
-   * The token that can be used as the value of the pageToken parameter to
-   * retrieve the next page in the result set.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $pageInfoType = PageInfo::class;
   protected $pageInfoDataType = '';
   /**
-   * The token that can be used as the value of the pageToken parameter to
-   * retrieve the previous page in the result set.
-   *
    * @var string
    */
   public $prevPageToken;
 
   /**
-   * @param PlaylistImage[] $items
+   * @param PlaylistImage[]
    */
   public function setItems($items)
   {
@@ -61,10 +52,7 @@ class PlaylistImageListResponse extends \Google\Collection
     return $this->items;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "youtube#playlistImageListResponse".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -78,10 +66,7 @@ class PlaylistImageListResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The token that can be used as the value of the pageToken parameter to
-   * retrieve the next page in the result set.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -95,9 +80,7 @@ class PlaylistImageListResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * General pagination information.
-   *
-   * @param PageInfo $pageInfo
+   * @param PageInfo
    */
   public function setPageInfo(PageInfo $pageInfo)
   {
@@ -111,10 +94,7 @@ class PlaylistImageListResponse extends \Google\Collection
     return $this->pageInfo;
   }
   /**
-   * The token that can be used as the value of the pageToken parameter to
-   * retrieve the previous page in the result set.
-   *
-   * @param string $prevPageToken
+   * @param string
    */
   public function setPrevPageToken($prevPageToken)
   {

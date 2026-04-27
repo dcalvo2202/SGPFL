@@ -20,18 +20,12 @@ namespace Google\Service\Games;
 class ResetPersonaRequest extends \Google\Model
 {
   /**
-   * Value of the 'persona' field as it was provided by the client in
-   * LinkPersona RPC
-   *
    * @var string
    */
   public $persona;
 
   /**
-   * Value of the 'persona' field as it was provided by the client in
-   * LinkPersona RPC
-   *
-   * @param string $persona
+   * @param string
    */
   public function setPersona($persona)
   {

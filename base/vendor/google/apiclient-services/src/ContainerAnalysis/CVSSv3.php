@@ -19,44 +19,11 @@ namespace Google\Service\ContainerAnalysis;
 
 class CVSSv3 extends \Google\Model
 {
-  public const ATTACK_COMPLEXITY_ATTACK_COMPLEXITY_UNSPECIFIED = 'ATTACK_COMPLEXITY_UNSPECIFIED';
-  public const ATTACK_COMPLEXITY_ATTACK_COMPLEXITY_LOW = 'ATTACK_COMPLEXITY_LOW';
-  public const ATTACK_COMPLEXITY_ATTACK_COMPLEXITY_HIGH = 'ATTACK_COMPLEXITY_HIGH';
-  public const ATTACK_VECTOR_ATTACK_VECTOR_UNSPECIFIED = 'ATTACK_VECTOR_UNSPECIFIED';
-  public const ATTACK_VECTOR_ATTACK_VECTOR_NETWORK = 'ATTACK_VECTOR_NETWORK';
-  public const ATTACK_VECTOR_ATTACK_VECTOR_ADJACENT = 'ATTACK_VECTOR_ADJACENT';
-  public const ATTACK_VECTOR_ATTACK_VECTOR_LOCAL = 'ATTACK_VECTOR_LOCAL';
-  public const ATTACK_VECTOR_ATTACK_VECTOR_PHYSICAL = 'ATTACK_VECTOR_PHYSICAL';
-  public const AVAILABILITY_IMPACT_IMPACT_UNSPECIFIED = 'IMPACT_UNSPECIFIED';
-  public const AVAILABILITY_IMPACT_IMPACT_HIGH = 'IMPACT_HIGH';
-  public const AVAILABILITY_IMPACT_IMPACT_LOW = 'IMPACT_LOW';
-  public const AVAILABILITY_IMPACT_IMPACT_NONE = 'IMPACT_NONE';
-  public const CONFIDENTIALITY_IMPACT_IMPACT_UNSPECIFIED = 'IMPACT_UNSPECIFIED';
-  public const CONFIDENTIALITY_IMPACT_IMPACT_HIGH = 'IMPACT_HIGH';
-  public const CONFIDENTIALITY_IMPACT_IMPACT_LOW = 'IMPACT_LOW';
-  public const CONFIDENTIALITY_IMPACT_IMPACT_NONE = 'IMPACT_NONE';
-  public const INTEGRITY_IMPACT_IMPACT_UNSPECIFIED = 'IMPACT_UNSPECIFIED';
-  public const INTEGRITY_IMPACT_IMPACT_HIGH = 'IMPACT_HIGH';
-  public const INTEGRITY_IMPACT_IMPACT_LOW = 'IMPACT_LOW';
-  public const INTEGRITY_IMPACT_IMPACT_NONE = 'IMPACT_NONE';
-  public const PRIVILEGES_REQUIRED_PRIVILEGES_REQUIRED_UNSPECIFIED = 'PRIVILEGES_REQUIRED_UNSPECIFIED';
-  public const PRIVILEGES_REQUIRED_PRIVILEGES_REQUIRED_NONE = 'PRIVILEGES_REQUIRED_NONE';
-  public const PRIVILEGES_REQUIRED_PRIVILEGES_REQUIRED_LOW = 'PRIVILEGES_REQUIRED_LOW';
-  public const PRIVILEGES_REQUIRED_PRIVILEGES_REQUIRED_HIGH = 'PRIVILEGES_REQUIRED_HIGH';
-  public const SCOPE_SCOPE_UNSPECIFIED = 'SCOPE_UNSPECIFIED';
-  public const SCOPE_SCOPE_UNCHANGED = 'SCOPE_UNCHANGED';
-  public const SCOPE_SCOPE_CHANGED = 'SCOPE_CHANGED';
-  public const USER_INTERACTION_USER_INTERACTION_UNSPECIFIED = 'USER_INTERACTION_UNSPECIFIED';
-  public const USER_INTERACTION_USER_INTERACTION_NONE = 'USER_INTERACTION_NONE';
-  public const USER_INTERACTION_USER_INTERACTION_REQUIRED = 'USER_INTERACTION_REQUIRED';
   /**
    * @var string
    */
   public $attackComplexity;
   /**
-   * Base Metrics Represents the intrinsic characteristics of a vulnerability
-   * that are constant over time and across user environments.
-   *
    * @var string
    */
   public $attackVector;
@@ -65,8 +32,6 @@ class CVSSv3 extends \Google\Model
    */
   public $availabilityImpact;
   /**
-   * The base score is a function of the base metric scores.
-   *
    * @var float
    */
   public $baseScore;
@@ -100,57 +65,49 @@ class CVSSv3 extends \Google\Model
   public $userInteraction;
 
   /**
-   * @param self::ATTACK_COMPLEXITY_* $attackComplexity
+   * @param string
    */
   public function setAttackComplexity($attackComplexity)
   {
     $this->attackComplexity = $attackComplexity;
   }
   /**
-   * @return self::ATTACK_COMPLEXITY_*
+   * @return string
    */
   public function getAttackComplexity()
   {
     return $this->attackComplexity;
   }
   /**
-   * Base Metrics Represents the intrinsic characteristics of a vulnerability
-   * that are constant over time and across user environments.
-   *
-   * Accepted values: ATTACK_VECTOR_UNSPECIFIED, ATTACK_VECTOR_NETWORK,
-   * ATTACK_VECTOR_ADJACENT, ATTACK_VECTOR_LOCAL, ATTACK_VECTOR_PHYSICAL
-   *
-   * @param self::ATTACK_VECTOR_* $attackVector
+   * @param string
    */
   public function setAttackVector($attackVector)
   {
     $this->attackVector = $attackVector;
   }
   /**
-   * @return self::ATTACK_VECTOR_*
+   * @return string
    */
   public function getAttackVector()
   {
     return $this->attackVector;
   }
   /**
-   * @param self::AVAILABILITY_IMPACT_* $availabilityImpact
+   * @param string
    */
   public function setAvailabilityImpact($availabilityImpact)
   {
     $this->availabilityImpact = $availabilityImpact;
   }
   /**
-   * @return self::AVAILABILITY_IMPACT_*
+   * @return string
    */
   public function getAvailabilityImpact()
   {
     return $this->availabilityImpact;
   }
   /**
-   * The base score is a function of the base metric scores.
-   *
-   * @param float $baseScore
+   * @param float
    */
   public function setBaseScore($baseScore)
   {
@@ -164,21 +121,21 @@ class CVSSv3 extends \Google\Model
     return $this->baseScore;
   }
   /**
-   * @param self::CONFIDENTIALITY_IMPACT_* $confidentialityImpact
+   * @param string
    */
   public function setConfidentialityImpact($confidentialityImpact)
   {
     $this->confidentialityImpact = $confidentialityImpact;
   }
   /**
-   * @return self::CONFIDENTIALITY_IMPACT_*
+   * @return string
    */
   public function getConfidentialityImpact()
   {
     return $this->confidentialityImpact;
   }
   /**
-   * @param float $exploitabilityScore
+   * @param float
    */
   public function setExploitabilityScore($exploitabilityScore)
   {
@@ -192,7 +149,7 @@ class CVSSv3 extends \Google\Model
     return $this->exploitabilityScore;
   }
   /**
-   * @param float $impactScore
+   * @param float
    */
   public function setImpactScore($impactScore)
   {
@@ -206,56 +163,56 @@ class CVSSv3 extends \Google\Model
     return $this->impactScore;
   }
   /**
-   * @param self::INTEGRITY_IMPACT_* $integrityImpact
+   * @param string
    */
   public function setIntegrityImpact($integrityImpact)
   {
     $this->integrityImpact = $integrityImpact;
   }
   /**
-   * @return self::INTEGRITY_IMPACT_*
+   * @return string
    */
   public function getIntegrityImpact()
   {
     return $this->integrityImpact;
   }
   /**
-   * @param self::PRIVILEGES_REQUIRED_* $privilegesRequired
+   * @param string
    */
   public function setPrivilegesRequired($privilegesRequired)
   {
     $this->privilegesRequired = $privilegesRequired;
   }
   /**
-   * @return self::PRIVILEGES_REQUIRED_*
+   * @return string
    */
   public function getPrivilegesRequired()
   {
     return $this->privilegesRequired;
   }
   /**
-   * @param self::SCOPE_* $scope
+   * @param string
    */
   public function setScope($scope)
   {
     $this->scope = $scope;
   }
   /**
-   * @return self::SCOPE_*
+   * @return string
    */
   public function getScope()
   {
     return $this->scope;
   }
   /**
-   * @param self::USER_INTERACTION_* $userInteraction
+   * @param string
    */
   public function setUserInteraction($userInteraction)
   {
     $this->userInteraction = $userInteraction;
   }
   /**
-   * @return self::USER_INTERACTION_*
+   * @return string
    */
   public function getUserInteraction()
   {

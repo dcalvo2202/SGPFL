@@ -20,29 +20,20 @@ namespace Google\Service\Document;
 class GoogleCloudDocumentaiV1OcrConfigPremiumFeatures extends \Google\Model
 {
   /**
-   * Turn on font identification model and return font style information.
-   *
    * @var bool
    */
   public $computeStyleInfo;
   /**
-   * Turn on the model that can extract LaTeX math formulas.
-   *
    * @var bool
    */
   public $enableMathOcr;
   /**
-   * Turn on selection mark detector in OCR engine. Only available in OCR 2.0
-   * (and later) processors.
-   *
    * @var bool
    */
   public $enableSelectionMarkDetection;
 
   /**
-   * Turn on font identification model and return font style information.
-   *
-   * @param bool $computeStyleInfo
+   * @param bool
    */
   public function setComputeStyleInfo($computeStyleInfo)
   {
@@ -56,9 +47,7 @@ class GoogleCloudDocumentaiV1OcrConfigPremiumFeatures extends \Google\Model
     return $this->computeStyleInfo;
   }
   /**
-   * Turn on the model that can extract LaTeX math formulas.
-   *
-   * @param bool $enableMathOcr
+   * @param bool
    */
   public function setEnableMathOcr($enableMathOcr)
   {
@@ -72,10 +61,7 @@ class GoogleCloudDocumentaiV1OcrConfigPremiumFeatures extends \Google\Model
     return $this->enableMathOcr;
   }
   /**
-   * Turn on selection mark detector in OCR engine. Only available in OCR 2.0
-   * (and later) processors.
-   *
-   * @param bool $enableSelectionMarkDetection
+   * @param bool
    */
   public function setEnableSelectionMarkDetection($enableSelectionMarkDetection)
   {

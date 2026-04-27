@@ -21,10 +21,6 @@ class ListSecurityProfilesResponse extends \Google\Collection
 {
   protected $collection_key = 'securityProfiles';
   /**
-   * If there might be more results than those appearing in this response, then
-   * `next_page_token` is included. To get the next set of results, call this
-   * method again using the value of `next_page_token` as `page_token`.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -32,11 +28,7 @@ class ListSecurityProfilesResponse extends \Google\Collection
   protected $securityProfilesDataType = 'array';
 
   /**
-   * If there might be more results than those appearing in this response, then
-   * `next_page_token` is included. To get the next set of results, call this
-   * method again using the value of `next_page_token` as `page_token`.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -50,9 +42,7 @@ class ListSecurityProfilesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * List of SecurityProfile resources.
-   *
-   * @param SecurityProfile[] $securityProfiles
+   * @param SecurityProfile[]
    */
   public function setSecurityProfiles($securityProfiles)
   {

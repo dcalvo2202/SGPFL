@@ -19,69 +19,22 @@ namespace Google\Service\Aiplatform;
 
 class GoogleCloudAiplatformV1FeatureStatsAnomaly extends \Google\Model
 {
-  /**
-   * This is the threshold used when detecting anomalies. The threshold can be
-   * changed by user, so this one might be different from ThresholdConfig.value.
-   *
-   * @var 
-   */
   public $anomalyDetectionThreshold;
   /**
-   * Path of the anomaly file for current feature values in Cloud Storage
-   * bucket. Format: gs:/anomalies. Example:
-   * gs://monitoring_bucket/feature_name/anomalies. Stats are stored as binary
-   * format with Protobuf message Anoamlies are stored as binary format with
-   * Protobuf message [tensorflow.metadata.v0.AnomalyInfo] (https://github.com/t
-   * ensorflow/metadata/blob/master/tensorflow_metadata/proto/v0/anomalies.proto
-   * ).
-   *
    * @var string
    */
   public $anomalyUri;
-  /**
-   * Deviation from the current stats to baseline stats. 1. For categorical
-   * feature, the distribution distance is calculated by L-inifinity norm. 2.
-   * For numerical feature, the distribution distance is calculated by
-   * Jensen–Shannon divergence.
-   *
-   * @var 
-   */
   public $distributionDeviation;
   /**
-   * The end timestamp of window where stats were generated. For objectives
-   * where time window doesn't make sense (e.g. Featurestore Snapshot
-   * Monitoring), end_time indicates the timestamp of the data used to generate
-   * stats (e.g. timestamp we take snapshots for feature values).
-   *
    * @var string
    */
   public $endTime;
-  /**
-   * Feature importance score, only populated when cross-feature monitoring is
-   * enabled. For now only used to represent feature attribution score within
-   * range [0, 1] for
-   * ModelDeploymentMonitoringObjectiveType.FEATURE_ATTRIBUTION_SKEW and
-   * ModelDeploymentMonitoringObjectiveType.FEATURE_ATTRIBUTION_DRIFT.
-   *
-   * @var 
-   */
   public $score;
   /**
-   * The start timestamp of window where stats were generated. For objectives
-   * where time window doesn't make sense (e.g. Featurestore Snapshot
-   * Monitoring), start_time is only used to indicate the monitoring intervals,
-   * so it always equals to (end_time - monitoring_interval).
-   *
    * @var string
    */
   public $startTime;
   /**
-   * Path of the stats file for current feature values in Cloud Storage bucket.
-   * Format: gs:/stats. Example: gs://monitoring_bucket/feature_name/stats.
-   * Stats are stored as binary format with Protobuf message [tensorflow.metadat
-   * a.v0.FeatureNameStatistics](https://github.com/tensorflow/metadata/blob/mas
-   * ter/tensorflow_metadata/proto/v0/statistics.proto).
-   *
    * @var string
    */
   public $statsUri;
@@ -95,15 +48,7 @@ class GoogleCloudAiplatformV1FeatureStatsAnomaly extends \Google\Model
     return $this->anomalyDetectionThreshold;
   }
   /**
-   * Path of the anomaly file for current feature values in Cloud Storage
-   * bucket. Format: gs:/anomalies. Example:
-   * gs://monitoring_bucket/feature_name/anomalies. Stats are stored as binary
-   * format with Protobuf message Anoamlies are stored as binary format with
-   * Protobuf message [tensorflow.metadata.v0.AnomalyInfo] (https://github.com/t
-   * ensorflow/metadata/blob/master/tensorflow_metadata/proto/v0/anomalies.proto
-   * ).
-   *
-   * @param string $anomalyUri
+   * @param string
    */
   public function setAnomalyUri($anomalyUri)
   {
@@ -125,12 +70,7 @@ class GoogleCloudAiplatformV1FeatureStatsAnomaly extends \Google\Model
     return $this->distributionDeviation;
   }
   /**
-   * The end timestamp of window where stats were generated. For objectives
-   * where time window doesn't make sense (e.g. Featurestore Snapshot
-   * Monitoring), end_time indicates the timestamp of the data used to generate
-   * stats (e.g. timestamp we take snapshots for feature values).
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -152,12 +92,7 @@ class GoogleCloudAiplatformV1FeatureStatsAnomaly extends \Google\Model
     return $this->score;
   }
   /**
-   * The start timestamp of window where stats were generated. For objectives
-   * where time window doesn't make sense (e.g. Featurestore Snapshot
-   * Monitoring), start_time is only used to indicate the monitoring intervals,
-   * so it always equals to (end_time - monitoring_interval).
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -171,13 +106,7 @@ class GoogleCloudAiplatformV1FeatureStatsAnomaly extends \Google\Model
     return $this->startTime;
   }
   /**
-   * Path of the stats file for current feature values in Cloud Storage bucket.
-   * Format: gs:/stats. Example: gs://monitoring_bucket/feature_name/stats.
-   * Stats are stored as binary format with Protobuf message [tensorflow.metadat
-   * a.v0.FeatureNameStatistics](https://github.com/tensorflow/metadata/blob/mas
-   * ter/tensorflow_metadata/proto/v0/statistics.proto).
-   *
-   * @param string $statsUri
+   * @param string
    */
   public function setStatsUri($statsUri)
   {

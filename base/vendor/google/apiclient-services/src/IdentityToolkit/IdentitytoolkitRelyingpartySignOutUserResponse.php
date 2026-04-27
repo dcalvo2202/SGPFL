@@ -20,16 +20,12 @@ namespace Google\Service\IdentityToolkit;
 class IdentitytoolkitRelyingpartySignOutUserResponse extends \Google\Model
 {
   /**
-   * The local ID of the user.
-   *
    * @var string
    */
   public $localId;
 
   /**
-   * The local ID of the user.
-   *
-   * @param string $localId
+   * @param string
    */
   public function setLocalId($localId)
   {

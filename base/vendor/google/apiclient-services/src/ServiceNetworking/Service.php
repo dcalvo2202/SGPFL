@@ -31,9 +31,6 @@ class Service extends \Google\Collection
   protected $billingType = Billing::class;
   protected $billingDataType = '';
   /**
-   * Obsolete. Do not use. This field has no semantic meaning. The service
-   * config compiler always sets this field to `3`.
-   *
    * @var string
    */
   public $configVersion;
@@ -52,11 +49,6 @@ class Service extends \Google\Collection
   protected $httpType = Http::class;
   protected $httpDataType = '';
   /**
-   * A unique ID for a specific instance of this message, typically assigned by
-   * the client for tracking purpose. Must be no longer than 63 characters and
-   * only lower case letters, digits, '.', '_' and '-' are allowed. If empty,
-   * the server may choose to generate one instead.
-   *
    * @var string
    */
   public $id;
@@ -71,17 +63,10 @@ class Service extends \Google\Collection
   protected $monitoringType = Monitoring::class;
   protected $monitoringDataType = '';
   /**
-   * The service name, which is a DNS-like logical identifier for the service,
-   * such as `calendar.googleapis.com`. The service name typically goes through
-   * DNS verification to make sure the owner of the service also owns the DNS
-   * name.
-   *
    * @var string
    */
   public $name;
   /**
-   * The Google project that owns this service.
-   *
    * @var string
    */
   public $producerProjectId;
@@ -96,9 +81,6 @@ class Service extends \Google\Collection
   protected $systemTypesType = Type::class;
   protected $systemTypesDataType = 'array';
   /**
-   * The product title for this service, it is the name displayed in Google
-   * Cloud Console.
-   *
    * @var string
    */
   public $title;
@@ -108,13 +90,7 @@ class Service extends \Google\Collection
   protected $usageDataType = '';
 
   /**
-   * A list of API interfaces exported by this service. Only the `name` field of
-   * the google.protobuf.Api needs to be provided by the configuration author,
-   * as the remaining fields will be derived from the IDL during the
-   * normalization process. It is an error to specify an API interface here
-   * which cannot be resolved against the associated IDL files.
-   *
-   * @param Api[] $apis
+   * @param Api[]
    */
   public function setApis($apis)
   {
@@ -128,12 +104,7 @@ class Service extends \Google\Collection
     return $this->apis;
   }
   /**
-   * Configuration aspects. This is a repeated field to allow multiple aspects
-   * to be configured. The kind field in each ConfigAspect specifies the type of
-   * aspect. The spec field contains the configuration for that aspect. The
-   * schema for the spec field is defined by the backend service owners.
-   *
-   * @param Aspect[] $aspects
+   * @param Aspect[]
    */
   public function setAspects($aspects)
   {
@@ -147,9 +118,7 @@ class Service extends \Google\Collection
     return $this->aspects;
   }
   /**
-   * Auth configuration.
-   *
-   * @param Authentication $authentication
+   * @param Authentication
    */
   public function setAuthentication(Authentication $authentication)
   {
@@ -163,9 +132,7 @@ class Service extends \Google\Collection
     return $this->authentication;
   }
   /**
-   * API backend configuration.
-   *
-   * @param Backend $backend
+   * @param Backend
    */
   public function setBackend(Backend $backend)
   {
@@ -179,9 +146,7 @@ class Service extends \Google\Collection
     return $this->backend;
   }
   /**
-   * Billing configuration.
-   *
-   * @param Billing $billing
+   * @param Billing
    */
   public function setBilling(Billing $billing)
   {
@@ -195,10 +160,7 @@ class Service extends \Google\Collection
     return $this->billing;
   }
   /**
-   * Obsolete. Do not use. This field has no semantic meaning. The service
-   * config compiler always sets this field to `3`.
-   *
-   * @param string $configVersion
+   * @param string
    */
   public function setConfigVersion($configVersion)
   {
@@ -212,9 +174,7 @@ class Service extends \Google\Collection
     return $this->configVersion;
   }
   /**
-   * Context configuration.
-   *
-   * @param Context $context
+   * @param Context
    */
   public function setContext(Context $context)
   {
@@ -228,9 +188,7 @@ class Service extends \Google\Collection
     return $this->context;
   }
   /**
-   * Configuration for the service control plane.
-   *
-   * @param Control $control
+   * @param Control
    */
   public function setControl(Control $control)
   {
@@ -244,9 +202,7 @@ class Service extends \Google\Collection
     return $this->control;
   }
   /**
-   * Custom error configuration.
-   *
-   * @param CustomError $customError
+   * @param CustomError
    */
   public function setCustomError(CustomError $customError)
   {
@@ -260,9 +216,7 @@ class Service extends \Google\Collection
     return $this->customError;
   }
   /**
-   * Additional API documentation.
-   *
-   * @param Documentation $documentation
+   * @param Documentation
    */
   public function setDocumentation(Documentation $documentation)
   {
@@ -276,11 +230,7 @@ class Service extends \Google\Collection
     return $this->documentation;
   }
   /**
-   * Configuration for network endpoints. If this is empty, then an endpoint
-   * with the same name as the service is automatically generated to service all
-   * defined APIs.
-   *
-   * @param Endpoint[] $endpoints
+   * @param Endpoint[]
    */
   public function setEndpoints($endpoints)
   {
@@ -294,13 +244,7 @@ class Service extends \Google\Collection
     return $this->endpoints;
   }
   /**
-   * A list of all enum types included in this API service. Enums referenced
-   * directly or indirectly by the `apis` are automatically included. Enums
-   * which are not referenced but shall be included should be listed here by
-   * name by the configuration author. Example: enums: - name:
-   * google.someapi.v1.SomeEnum
-   *
-   * @param Enum[] $enums
+   * @param Enum[]
    */
   public function setEnums($enums)
   {
@@ -314,9 +258,7 @@ class Service extends \Google\Collection
     return $this->enums;
   }
   /**
-   * HTTP configuration.
-   *
-   * @param Http $http
+   * @param Http
    */
   public function setHttp(Http $http)
   {
@@ -330,12 +272,7 @@ class Service extends \Google\Collection
     return $this->http;
   }
   /**
-   * A unique ID for a specific instance of this message, typically assigned by
-   * the client for tracking purpose. Must be no longer than 63 characters and
-   * only lower case letters, digits, '.', '_' and '-' are allowed. If empty,
-   * the server may choose to generate one instead.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -349,9 +286,7 @@ class Service extends \Google\Collection
     return $this->id;
   }
   /**
-   * Logging configuration.
-   *
-   * @param Logging $logging
+   * @param Logging
    */
   public function setLogging(Logging $logging)
   {
@@ -365,9 +300,7 @@ class Service extends \Google\Collection
     return $this->logging;
   }
   /**
-   * Defines the logs used by this service.
-   *
-   * @param LogDescriptor[] $logs
+   * @param LogDescriptor[]
    */
   public function setLogs($logs)
   {
@@ -381,9 +314,7 @@ class Service extends \Google\Collection
     return $this->logs;
   }
   /**
-   * Defines the metrics used by this service.
-   *
-   * @param MetricDescriptor[] $metrics
+   * @param MetricDescriptor[]
    */
   public function setMetrics($metrics)
   {
@@ -397,10 +328,7 @@ class Service extends \Google\Collection
     return $this->metrics;
   }
   /**
-   * Defines the monitored resources used by this service. This is required by
-   * the `Service.monitoring` and `Service.logging` configurations.
-   *
-   * @param MonitoredResourceDescriptor[] $monitoredResources
+   * @param MonitoredResourceDescriptor[]
    */
   public function setMonitoredResources($monitoredResources)
   {
@@ -414,9 +342,7 @@ class Service extends \Google\Collection
     return $this->monitoredResources;
   }
   /**
-   * Monitoring configuration.
-   *
-   * @param Monitoring $monitoring
+   * @param Monitoring
    */
   public function setMonitoring(Monitoring $monitoring)
   {
@@ -430,12 +356,7 @@ class Service extends \Google\Collection
     return $this->monitoring;
   }
   /**
-   * The service name, which is a DNS-like logical identifier for the service,
-   * such as `calendar.googleapis.com`. The service name typically goes through
-   * DNS verification to make sure the owner of the service also owns the DNS
-   * name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -449,9 +370,7 @@ class Service extends \Google\Collection
     return $this->name;
   }
   /**
-   * The Google project that owns this service.
-   *
-   * @param string $producerProjectId
+   * @param string
    */
   public function setProducerProjectId($producerProjectId)
   {
@@ -465,11 +384,7 @@ class Service extends \Google\Collection
     return $this->producerProjectId;
   }
   /**
-   * Settings for [Google Cloud Client
-   * libraries](https://cloud.google.com/apis/docs/cloud-client-libraries)
-   * generated from APIs defined as protocol buffers.
-   *
-   * @param Publishing $publishing
+   * @param Publishing
    */
   public function setPublishing(Publishing $publishing)
   {
@@ -483,9 +398,7 @@ class Service extends \Google\Collection
     return $this->publishing;
   }
   /**
-   * Quota configuration.
-   *
-   * @param Quota $quota
+   * @param Quota
    */
   public function setQuota(Quota $quota)
   {
@@ -499,9 +412,7 @@ class Service extends \Google\Collection
     return $this->quota;
   }
   /**
-   * Output only. The source information for this configuration if available.
-   *
-   * @param SourceInfo $sourceInfo
+   * @param SourceInfo
    */
   public function setSourceInfo(SourceInfo $sourceInfo)
   {
@@ -515,9 +426,7 @@ class Service extends \Google\Collection
     return $this->sourceInfo;
   }
   /**
-   * System parameter configuration.
-   *
-   * @param SystemParameters $systemParameters
+   * @param SystemParameters
    */
   public function setSystemParameters(SystemParameters $systemParameters)
   {
@@ -531,13 +440,7 @@ class Service extends \Google\Collection
     return $this->systemParameters;
   }
   /**
-   * A list of all proto message types included in this API service. It serves
-   * similar purpose as [google.api.Service.types], except that these types are
-   * not needed by user-defined APIs. Therefore, they will not show up in the
-   * generated discovery doc. This field should only be used to define system
-   * APIs in ESF.
-   *
-   * @param Type[] $systemTypes
+   * @param Type[]
    */
   public function setSystemTypes($systemTypes)
   {
@@ -551,10 +454,7 @@ class Service extends \Google\Collection
     return $this->systemTypes;
   }
   /**
-   * The product title for this service, it is the name displayed in Google
-   * Cloud Console.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -568,13 +468,7 @@ class Service extends \Google\Collection
     return $this->title;
   }
   /**
-   * A list of all proto message types included in this API service. Types
-   * referenced directly or indirectly by the `apis` are automatically included.
-   * Messages which are not referenced but shall be included, such as types used
-   * by the `google.protobuf.Any` type, should be listed here by name by the
-   * configuration author. Example: types: - name: google.protobuf.Int32
-   *
-   * @param Type[] $types
+   * @param Type[]
    */
   public function setTypes($types)
   {
@@ -588,9 +482,7 @@ class Service extends \Google\Collection
     return $this->types;
   }
   /**
-   * Configuration controlling usage of this service.
-   *
-   * @param Usage $usage
+   * @param Usage
    */
   public function setUsage(Usage $usage)
   {

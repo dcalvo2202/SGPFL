@@ -20,16 +20,12 @@ namespace Google\Service\GKEHub;
 class ConfigManagementBinauthzVersion extends \Google\Model
 {
   /**
-   * The version of the binauthz webhook.
-   *
    * @var string
    */
   public $webhookVersion;
 
   /**
-   * The version of the binauthz webhook.
-   *
-   * @param string $webhookVersion
+   * @param string
    */
   public function setWebhookVersion($webhookVersion)
   {

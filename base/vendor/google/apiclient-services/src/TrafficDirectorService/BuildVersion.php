@@ -20,9 +20,6 @@ namespace Google\Service\TrafficDirectorService;
 class BuildVersion extends \Google\Model
 {
   /**
-   * Free-form build information. Envoy defines several well known keys in the
-   * source/common/version/version.h file
-   *
    * @var array[]
    */
   public $metadata;
@@ -30,10 +27,7 @@ class BuildVersion extends \Google\Model
   protected $versionDataType = '';
 
   /**
-   * Free-form build information. Envoy defines several well known keys in the
-   * source/common/version/version.h file
-   *
-   * @param array[] $metadata
+   * @param array[]
    */
   public function setMetadata($metadata)
   {
@@ -47,9 +41,7 @@ class BuildVersion extends \Google\Model
     return $this->metadata;
   }
   /**
-   * SemVer version of extension.
-   *
-   * @param SemanticVersion $version
+   * @param SemanticVersion
    */
   public function setVersion(SemanticVersion $version)
   {

@@ -23,9 +23,7 @@ class ConnectorConfigurationNetwork extends \Google\Model
   protected $privateServiceConnectDataType = '';
 
   /**
-   * Private Service Connect networking configuration.
-   *
-   * @param ConnectorConfigurationPrivateServiceConnect $privateServiceConnect
+   * @param ConnectorConfigurationPrivateServiceConnect
    */
   public function setPrivateServiceConnect(ConnectorConfigurationPrivateServiceConnect $privateServiceConnect)
   {

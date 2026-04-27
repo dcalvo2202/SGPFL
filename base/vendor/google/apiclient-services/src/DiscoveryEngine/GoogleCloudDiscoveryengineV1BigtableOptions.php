@@ -22,19 +22,12 @@ class GoogleCloudDiscoveryengineV1BigtableOptions extends \Google\Model
   protected $familiesType = GoogleCloudDiscoveryengineV1BigtableOptionsBigtableColumnFamily::class;
   protected $familiesDataType = 'map';
   /**
-   * The field name used for saving row key value in the document. The name has
-   * to match the pattern `a-zA-Z0-9*`.
-   *
    * @var string
    */
   public $keyFieldName;
 
   /**
-   * The mapping from family names to an object that contains column families
-   * level information for the given column family. If a family is not present
-   * in this map it will be ignored.
-   *
-   * @param GoogleCloudDiscoveryengineV1BigtableOptionsBigtableColumnFamily[] $families
+   * @param GoogleCloudDiscoveryengineV1BigtableOptionsBigtableColumnFamily[]
    */
   public function setFamilies($families)
   {
@@ -48,10 +41,7 @@ class GoogleCloudDiscoveryengineV1BigtableOptions extends \Google\Model
     return $this->families;
   }
   /**
-   * The field name used for saving row key value in the document. The name has
-   * to match the pattern `a-zA-Z0-9*`.
-   *
-   * @param string $keyFieldName
+   * @param string
    */
   public function setKeyFieldName($keyFieldName)
   {

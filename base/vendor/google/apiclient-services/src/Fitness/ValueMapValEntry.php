@@ -27,7 +27,7 @@ class ValueMapValEntry extends \Google\Model
   protected $valueDataType = '';
 
   /**
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {
@@ -41,7 +41,7 @@ class ValueMapValEntry extends \Google\Model
     return $this->key;
   }
   /**
-   * @param MapValue $value
+   * @param MapValue
    */
   public function setValue(MapValue $value)
   {

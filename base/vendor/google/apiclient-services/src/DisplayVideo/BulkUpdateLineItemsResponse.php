@@ -23,30 +23,20 @@ class BulkUpdateLineItemsResponse extends \Google\Collection
   protected $errorsType = Status::class;
   protected $errorsDataType = 'array';
   /**
-   * The IDs of line items that failed to update.
-   *
    * @var string[]
    */
   public $failedLineItemIds;
   /**
-   * The IDs of line items that are skipped for updates. For example,
-   * unnecessary mutates that will result in effectively no changes to line
-   * items will be skipped and corresponding line item IDs can be tracked here.
-   *
    * @var string[]
    */
   public $skippedLineItemIds;
   /**
-   * The IDs of successfully updated line items.
-   *
    * @var string[]
    */
   public $updatedLineItemIds;
 
   /**
-   * Errors returned by line items that failed to update.
-   *
-   * @param Status[] $errors
+   * @param Status[]
    */
   public function setErrors($errors)
   {
@@ -60,9 +50,7 @@ class BulkUpdateLineItemsResponse extends \Google\Collection
     return $this->errors;
   }
   /**
-   * The IDs of line items that failed to update.
-   *
-   * @param string[] $failedLineItemIds
+   * @param string[]
    */
   public function setFailedLineItemIds($failedLineItemIds)
   {
@@ -76,11 +64,7 @@ class BulkUpdateLineItemsResponse extends \Google\Collection
     return $this->failedLineItemIds;
   }
   /**
-   * The IDs of line items that are skipped for updates. For example,
-   * unnecessary mutates that will result in effectively no changes to line
-   * items will be skipped and corresponding line item IDs can be tracked here.
-   *
-   * @param string[] $skippedLineItemIds
+   * @param string[]
    */
   public function setSkippedLineItemIds($skippedLineItemIds)
   {
@@ -94,9 +78,7 @@ class BulkUpdateLineItemsResponse extends \Google\Collection
     return $this->skippedLineItemIds;
   }
   /**
-   * The IDs of successfully updated line items.
-   *
-   * @param string[] $updatedLineItemIds
+   * @param string[]
    */
   public function setUpdatedLineItemIds($updatedLineItemIds)
   {

@@ -25,7 +25,7 @@ class GoogleCloudDialogflowV2GeneratorSuggestionToolCallInfo extends \Google\Mod
   protected $toolCallResultDataType = '';
 
   /**
-   * @param GoogleCloudDialogflowV2ToolCall $toolCall
+   * @param GoogleCloudDialogflowV2ToolCall
    */
   public function setToolCall(GoogleCloudDialogflowV2ToolCall $toolCall)
   {
@@ -39,7 +39,7 @@ class GoogleCloudDialogflowV2GeneratorSuggestionToolCallInfo extends \Google\Mod
     return $this->toolCall;
   }
   /**
-   * @param GoogleCloudDialogflowV2ToolCallResult $toolCallResult
+   * @param GoogleCloudDialogflowV2ToolCallResult
    */
   public function setToolCallResult(GoogleCloudDialogflowV2ToolCallResult $toolCallResult)
   {

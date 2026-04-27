@@ -25,7 +25,7 @@ class GoogleCloudAiplatformV1SchemaTrainingjobDefinitionSeq2SeqPlusForecastingIn
   public $columnName;
 
   /**
-   * @param string $columnName
+   * @param string
    */
   public function setColumnName($columnName)
   {

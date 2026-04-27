@@ -20,18 +20,12 @@ namespace Google\Service\Sasportal;
 class SasPortalProvisionDeploymentResponse extends \Google\Model
 {
   /**
-   * Optional. Optional error message if the provisioning request is not
-   * successful.
-   *
    * @var string
    */
   public $errorMessage;
 
   /**
-   * Optional. Optional error message if the provisioning request is not
-   * successful.
-   *
-   * @param string $errorMessage
+   * @param string
    */
   public function setErrorMessage($errorMessage)
   {

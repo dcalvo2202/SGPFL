@@ -23,30 +23,16 @@ class GoogleMapsAddressvalidationV1Geocode extends \Google\Collection
   protected $boundsType = GoogleGeoTypeViewport::class;
   protected $boundsDataType = '';
   /**
-   * The size of the geocoded place, in meters. This is another measure of the
-   * coarseness of the geocoded location, but in physical size rather than in
-   * semantic meaning.
-   *
    * @var float
    */
   public $featureSizeMeters;
   protected $locationType = GoogleTypeLatLng::class;
   protected $locationDataType = '';
   /**
-   * The PlaceID of the place this input geocodes to. For more information about
-   * Place IDs see
-   * [here](https://developers.google.com/maps/documentation/places/web-
-   * service/place-id).
-   *
    * @var string
    */
   public $placeId;
   /**
-   * The type(s) of place that the input geocoded to. For example, `['locality',
-   * 'political']`. The full list of types can be found
-   * [here](https://developers.google.com/maps/documentation/geocoding/requests-
-   * geocoding#Types).
-   *
    * @var string[]
    */
   public $placeTypes;
@@ -54,9 +40,7 @@ class GoogleMapsAddressvalidationV1Geocode extends \Google\Collection
   protected $plusCodeDataType = '';
 
   /**
-   * The bounds of the geocoded place.
-   *
-   * @param GoogleGeoTypeViewport $bounds
+   * @param GoogleGeoTypeViewport
    */
   public function setBounds(GoogleGeoTypeViewport $bounds)
   {
@@ -70,11 +54,7 @@ class GoogleMapsAddressvalidationV1Geocode extends \Google\Collection
     return $this->bounds;
   }
   /**
-   * The size of the geocoded place, in meters. This is another measure of the
-   * coarseness of the geocoded location, but in physical size rather than in
-   * semantic meaning.
-   *
-   * @param float $featureSizeMeters
+   * @param float
    */
   public function setFeatureSizeMeters($featureSizeMeters)
   {
@@ -88,16 +68,7 @@ class GoogleMapsAddressvalidationV1Geocode extends \Google\Collection
     return $this->featureSizeMeters;
   }
   /**
-   * The geocoded location of the input. Using place IDs is preferred over using
-   * addresses, latitude/longitude coordinates, or plus codes. Using coordinates
-   * when routing or calculating driving directions will always result in the
-   * point being snapped to the road nearest to those coordinates. This may not
-   * be a road that will quickly or safely lead to the destination and may not
-   * be near an access point to the property. Additionally, when a location is
-   * reverse geocoded, there is no guarantee that the returned address will
-   * match the original.
-   *
-   * @param GoogleTypeLatLng $location
+   * @param GoogleTypeLatLng
    */
   public function setLocation(GoogleTypeLatLng $location)
   {
@@ -111,12 +82,7 @@ class GoogleMapsAddressvalidationV1Geocode extends \Google\Collection
     return $this->location;
   }
   /**
-   * The PlaceID of the place this input geocodes to. For more information about
-   * Place IDs see
-   * [here](https://developers.google.com/maps/documentation/places/web-
-   * service/place-id).
-   *
-   * @param string $placeId
+   * @param string
    */
   public function setPlaceId($placeId)
   {
@@ -130,12 +96,7 @@ class GoogleMapsAddressvalidationV1Geocode extends \Google\Collection
     return $this->placeId;
   }
   /**
-   * The type(s) of place that the input geocoded to. For example, `['locality',
-   * 'political']`. The full list of types can be found
-   * [here](https://developers.google.com/maps/documentation/geocoding/requests-
-   * geocoding#Types).
-   *
-   * @param string[] $placeTypes
+   * @param string[]
    */
   public function setPlaceTypes($placeTypes)
   {
@@ -149,9 +110,7 @@ class GoogleMapsAddressvalidationV1Geocode extends \Google\Collection
     return $this->placeTypes;
   }
   /**
-   * The plus code corresponding to the `location`.
-   *
-   * @param GoogleMapsAddressvalidationV1PlusCode $plusCode
+   * @param GoogleMapsAddressvalidationV1PlusCode
    */
   public function setPlusCode(GoogleMapsAddressvalidationV1PlusCode $plusCode)
   {

@@ -20,36 +20,16 @@ namespace Google\Service\AnalyticsHub;
 class OidcToken extends \Google\Model
 {
   /**
-   * Optional. Audience to be used when generating OIDC token. The audience
-   * claim identifies the recipients that the JWT is intended for. The audience
-   * value is a single case-sensitive string. Having multiple values (array) for
-   * the audience field is not supported. More info about the OIDC JWT token
-   * audience here: https://tools.ietf.org/html/rfc7519#section-4.1.3 Note: if
-   * not specified, the Push endpoint URL will be used.
-   *
    * @var string
    */
   public $audience;
   /**
-   * Optional. [Service account
-   * email](https://cloud.google.com/iam/docs/service-accounts) used for
-   * generating the OIDC token. For more information on setting up
-   * authentication, see [Push
-   * subscriptions](https://cloud.google.com/pubsub/docs/push).
-   *
    * @var string
    */
   public $serviceAccountEmail;
 
   /**
-   * Optional. Audience to be used when generating OIDC token. The audience
-   * claim identifies the recipients that the JWT is intended for. The audience
-   * value is a single case-sensitive string. Having multiple values (array) for
-   * the audience field is not supported. More info about the OIDC JWT token
-   * audience here: https://tools.ietf.org/html/rfc7519#section-4.1.3 Note: if
-   * not specified, the Push endpoint URL will be used.
-   *
-   * @param string $audience
+   * @param string
    */
   public function setAudience($audience)
   {
@@ -63,13 +43,7 @@ class OidcToken extends \Google\Model
     return $this->audience;
   }
   /**
-   * Optional. [Service account
-   * email](https://cloud.google.com/iam/docs/service-accounts) used for
-   * generating the OIDC token. For more information on setting up
-   * authentication, see [Push
-   * subscriptions](https://cloud.google.com/pubsub/docs/push).
-   *
-   * @param string $serviceAccountEmail
+   * @param string
    */
   public function setServiceAccountEmail($serviceAccountEmail)
   {

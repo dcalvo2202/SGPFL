@@ -20,22 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1RagFileChunkingConfigFixedLengthChunking extends \Google\Model
 {
   /**
-   * The overlap between chunks.
-   *
    * @var int
    */
   public $chunkOverlap;
   /**
-   * The size of the chunks.
-   *
    * @var int
    */
   public $chunkSize;
 
   /**
-   * The overlap between chunks.
-   *
-   * @param int $chunkOverlap
+   * @param int
    */
   public function setChunkOverlap($chunkOverlap)
   {
@@ -49,9 +43,7 @@ class GoogleCloudAiplatformV1RagFileChunkingConfigFixedLengthChunking extends \G
     return $this->chunkOverlap;
   }
   /**
-   * The size of the chunks.
-   *
-   * @param int $chunkSize
+   * @param int
    */
   public function setChunkSize($chunkSize)
   {

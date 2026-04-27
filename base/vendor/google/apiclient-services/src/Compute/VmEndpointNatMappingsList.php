@@ -21,35 +21,20 @@ class VmEndpointNatMappingsList extends \Google\Collection
 {
   protected $collection_key = 'result';
   /**
-   * [Output Only] The unique identifier for the resource. This identifier is
-   * defined by the server.
-   *
    * @var string
    */
   public $id;
   /**
-   * Output only. [Output Only] Type of resource.
-   * Alwayscompute#vmEndpointNatMappingsList for lists of Nat mappings of VM
-   * endpoints.
-   *
    * @var string
    */
   public $kind;
   /**
-   * [Output Only] This token allows you to get the next page of results for
-   * list requests. If the number of results is larger thanmaxResults, use the
-   * nextPageToken as a value for the query parameter pageToken in the next list
-   * request. Subsequent list requests will have their own nextPageToken to
-   * continue paging through the results.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $resultType = VmEndpointNatMappings::class;
   protected $resultDataType = 'array';
   /**
-   * Output only. [Output Only] Server-defined URL for this resource.
-   *
    * @var string
    */
   public $selfLink;
@@ -57,10 +42,7 @@ class VmEndpointNatMappingsList extends \Google\Collection
   protected $warningDataType = '';
 
   /**
-   * [Output Only] The unique identifier for the resource. This identifier is
-   * defined by the server.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -74,11 +56,7 @@ class VmEndpointNatMappingsList extends \Google\Collection
     return $this->id;
   }
   /**
-   * Output only. [Output Only] Type of resource.
-   * Alwayscompute#vmEndpointNatMappingsList for lists of Nat mappings of VM
-   * endpoints.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -92,13 +70,7 @@ class VmEndpointNatMappingsList extends \Google\Collection
     return $this->kind;
   }
   /**
-   * [Output Only] This token allows you to get the next page of results for
-   * list requests. If the number of results is larger thanmaxResults, use the
-   * nextPageToken as a value for the query parameter pageToken in the next list
-   * request. Subsequent list requests will have their own nextPageToken to
-   * continue paging through the results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -112,9 +84,7 @@ class VmEndpointNatMappingsList extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * [Output Only] A list of Nat mapping information of VM endpoints.
-   *
-   * @param VmEndpointNatMappings[] $result
+   * @param VmEndpointNatMappings[]
    */
   public function setResult($result)
   {
@@ -128,9 +98,7 @@ class VmEndpointNatMappingsList extends \Google\Collection
     return $this->result;
   }
   /**
-   * Output only. [Output Only] Server-defined URL for this resource.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -144,9 +112,7 @@ class VmEndpointNatMappingsList extends \Google\Collection
     return $this->selfLink;
   }
   /**
-   * [Output Only] Informational warning message.
-   *
-   * @param VmEndpointNatMappingsListWarning $warning
+   * @param VmEndpointNatMappingsListWarning
    */
   public function setWarning(VmEndpointNatMappingsListWarning $warning)
   {

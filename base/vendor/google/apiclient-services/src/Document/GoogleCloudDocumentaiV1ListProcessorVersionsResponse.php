@@ -21,8 +21,6 @@ class GoogleCloudDocumentaiV1ListProcessorVersionsResponse extends \Google\Colle
 {
   protected $collection_key = 'processorVersions';
   /**
-   * Points to the next processor, otherwise empty.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -30,9 +28,7 @@ class GoogleCloudDocumentaiV1ListProcessorVersionsResponse extends \Google\Colle
   protected $processorVersionsDataType = 'array';
 
   /**
-   * Points to the next processor, otherwise empty.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -46,9 +42,7 @@ class GoogleCloudDocumentaiV1ListProcessorVersionsResponse extends \Google\Colle
     return $this->nextPageToken;
   }
   /**
-   * The list of processors.
-   *
-   * @param GoogleCloudDocumentaiV1ProcessorVersion[] $processorVersions
+   * @param GoogleCloudDocumentaiV1ProcessorVersion[]
    */
   public function setProcessorVersions($processorVersions)
   {

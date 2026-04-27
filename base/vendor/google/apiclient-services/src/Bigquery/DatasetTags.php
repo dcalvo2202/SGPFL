@@ -20,24 +20,16 @@ namespace Google\Service\Bigquery;
 class DatasetTags extends \Google\Model
 {
   /**
-   * Required. The namespaced friendly name of the tag key, e.g.
-   * "12345/environment" where 12345 is org id.
-   *
    * @var string
    */
   public $tagKey;
   /**
-   * Required. The friendly short name of the tag value, e.g. "production".
-   *
    * @var string
    */
   public $tagValue;
 
   /**
-   * Required. The namespaced friendly name of the tag key, e.g.
-   * "12345/environment" where 12345 is org id.
-   *
-   * @param string $tagKey
+   * @param string
    */
   public function setTagKey($tagKey)
   {
@@ -51,9 +43,7 @@ class DatasetTags extends \Google\Model
     return $this->tagKey;
   }
   /**
-   * Required. The friendly short name of the tag value, e.g. "production".
-   *
-   * @param string $tagValue
+   * @param string
    */
   public function setTagValue($tagValue)
   {

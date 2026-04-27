@@ -20,8 +20,6 @@ namespace Google\Service\YouTubeReporting;
 class GdataDiffUploadResponse extends \Google\Model
 {
   /**
-   * gdata
-   *
    * @var string
    */
   public $objectVersion;
@@ -29,9 +27,7 @@ class GdataDiffUploadResponse extends \Google\Model
   protected $originalObjectDataType = '';
 
   /**
-   * gdata
-   *
-   * @param string $objectVersion
+   * @param string
    */
   public function setObjectVersion($objectVersion)
   {
@@ -45,9 +41,7 @@ class GdataDiffUploadResponse extends \Google\Model
     return $this->objectVersion;
   }
   /**
-   * gdata
-   *
-   * @param GdataCompositeMedia $originalObject
+   * @param GdataCompositeMedia
    */
   public function setOriginalObject(GdataCompositeMedia $originalObject)
   {

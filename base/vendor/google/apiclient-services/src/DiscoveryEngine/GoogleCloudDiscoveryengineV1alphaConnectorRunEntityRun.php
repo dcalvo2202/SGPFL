@@ -19,143 +19,58 @@ namespace Google\Service\DiscoveryEngine;
 
 class GoogleCloudDiscoveryengineV1alphaConnectorRunEntityRun extends \Google\Collection
 {
-  /**
-   * Default value.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The data sync is ongoing.
-   */
-  public const STATE_RUNNING = 'RUNNING';
-  /**
-   * The data sync is finished.
-   */
-  public const STATE_SUCCEEDED = 'SUCCEEDED';
-  /**
-   * The data sync is failed.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * Data sync has been running longer than expected and is still running at the
-   * time the next run is supposed to start.
-   */
-  public const STATE_OVERRUN = 'OVERRUN';
-  /**
-   * Data sync was scheduled but has been cancelled.
-   */
-  public const STATE_CANCELLED = 'CANCELLED';
-  /**
-   * Data sync is about to start.
-   */
-  public const STATE_PENDING = 'PENDING';
-  /**
-   * The data sync completed with non-fatal errors.
-   */
-  public const STATE_WARNING = 'WARNING';
-  /**
-   * An ongoing connector run has been running longer than expected, causing
-   * this run to be skipped.
-   */
-  public const STATE_SKIPPED = 'SKIPPED';
-  /**
-   * Sync type unspecified.
-   */
-  public const SYNC_TYPE_SYNC_TYPE_UNSPECIFIED = 'SYNC_TYPE_UNSPECIFIED';
-  /**
-   * Sync triggers full sync of all documents.
-   */
-  public const SYNC_TYPE_FULL = 'FULL';
-  /**
-   * Incremental sync of updated documents.
-   */
-  public const SYNC_TYPE_INCREMENTAL = 'INCREMENTAL';
-  /**
-   * Realtime sync.
-   */
-  public const SYNC_TYPE_REALTIME = 'REALTIME';
-  /**
-   * Scala sync.
-   */
-  public const SYNC_TYPE_SCALA_SYNC = 'SCALA_SYNC';
   protected $collection_key = 'errors';
   /**
-   * Optional. The number of documents deleted.
-   *
    * @var string
    */
   public $deletedRecordCount;
   /**
-   * The name of the source entity.
-   *
    * @var string
    */
   public $entityName;
   /**
-   * Optional. The total number of documents failed at sync at indexing stage.
-   *
    * @var string
    */
   public $errorRecordCount;
   protected $errorsType = GoogleRpcStatus::class;
   protected $errorsDataType = 'array';
   /**
-   * Optional. The number of documents extracted from connector source, ready to
-   * be ingested to VAIS.
-   *
    * @var string
    */
   public $extractedRecordCount;
   /**
-   * Optional. The number of documents indexed.
-   *
    * @var string
    */
   public $indexedRecordCount;
   protected $progressType = GoogleCloudDiscoveryengineV1alphaConnectorRunEntityRunProgress::class;
   protected $progressDataType = '';
   /**
-   * Optional. The number of documents scheduled to be crawled/extracted from
-   * connector source. This only applies to third party connectors.
-   *
    * @var string
    */
   public $scheduledRecordCount;
   /**
-   * Optional. The number of requests sent to 3p API.
-   *
    * @var string
    */
   public $sourceApiRequestCount;
   /**
-   * The state of the entity's sync run.
-   *
    * @var string
    */
   public $state;
   /**
-   * Timestamp at which the entity sync state was last updated.
-   *
    * @var string
    */
   public $stateUpdateTime;
   /**
-   * The timestamp for either extracted_documents_count, indexed_documents_count
-   * and error_documents_count was last updated.
-   *
    * @var string
    */
   public $statsUpdateTime;
   /**
-   * Sync type of this run.
-   *
    * @var string
    */
   public $syncType;
 
   /**
-   * Optional. The number of documents deleted.
-   *
-   * @param string $deletedRecordCount
+   * @param string
    */
   public function setDeletedRecordCount($deletedRecordCount)
   {
@@ -169,9 +84,7 @@ class GoogleCloudDiscoveryengineV1alphaConnectorRunEntityRun extends \Google\Col
     return $this->deletedRecordCount;
   }
   /**
-   * The name of the source entity.
-   *
-   * @param string $entityName
+   * @param string
    */
   public function setEntityName($entityName)
   {
@@ -185,9 +98,7 @@ class GoogleCloudDiscoveryengineV1alphaConnectorRunEntityRun extends \Google\Col
     return $this->entityName;
   }
   /**
-   * Optional. The total number of documents failed at sync at indexing stage.
-   *
-   * @param string $errorRecordCount
+   * @param string
    */
   public function setErrorRecordCount($errorRecordCount)
   {
@@ -201,10 +112,7 @@ class GoogleCloudDiscoveryengineV1alphaConnectorRunEntityRun extends \Google\Col
     return $this->errorRecordCount;
   }
   /**
-   * The errors from the entity's sync run. Only exist if running into an error
-   * state. Contains error code and error message.
-   *
-   * @param GoogleRpcStatus[] $errors
+   * @param GoogleRpcStatus[]
    */
   public function setErrors($errors)
   {
@@ -218,10 +126,7 @@ class GoogleCloudDiscoveryengineV1alphaConnectorRunEntityRun extends \Google\Col
     return $this->errors;
   }
   /**
-   * Optional. The number of documents extracted from connector source, ready to
-   * be ingested to VAIS.
-   *
-   * @param string $extractedRecordCount
+   * @param string
    */
   public function setExtractedRecordCount($extractedRecordCount)
   {
@@ -235,9 +140,7 @@ class GoogleCloudDiscoveryengineV1alphaConnectorRunEntityRun extends \Google\Col
     return $this->extractedRecordCount;
   }
   /**
-   * Optional. The number of documents indexed.
-   *
-   * @param string $indexedRecordCount
+   * @param string
    */
   public function setIndexedRecordCount($indexedRecordCount)
   {
@@ -251,9 +154,7 @@ class GoogleCloudDiscoveryengineV1alphaConnectorRunEntityRun extends \Google\Col
     return $this->indexedRecordCount;
   }
   /**
-   * Metadata to generate the progress bar.
-   *
-   * @param GoogleCloudDiscoveryengineV1alphaConnectorRunEntityRunProgress $progress
+   * @param GoogleCloudDiscoveryengineV1alphaConnectorRunEntityRunProgress
    */
   public function setProgress(GoogleCloudDiscoveryengineV1alphaConnectorRunEntityRunProgress $progress)
   {
@@ -267,10 +168,7 @@ class GoogleCloudDiscoveryengineV1alphaConnectorRunEntityRun extends \Google\Col
     return $this->progress;
   }
   /**
-   * Optional. The number of documents scheduled to be crawled/extracted from
-   * connector source. This only applies to third party connectors.
-   *
-   * @param string $scheduledRecordCount
+   * @param string
    */
   public function setScheduledRecordCount($scheduledRecordCount)
   {
@@ -284,9 +182,7 @@ class GoogleCloudDiscoveryengineV1alphaConnectorRunEntityRun extends \Google\Col
     return $this->scheduledRecordCount;
   }
   /**
-   * Optional. The number of requests sent to 3p API.
-   *
-   * @param string $sourceApiRequestCount
+   * @param string
    */
   public function setSourceApiRequestCount($sourceApiRequestCount)
   {
@@ -300,28 +196,21 @@ class GoogleCloudDiscoveryengineV1alphaConnectorRunEntityRun extends \Google\Col
     return $this->sourceApiRequestCount;
   }
   /**
-   * The state of the entity's sync run.
-   *
-   * Accepted values: STATE_UNSPECIFIED, RUNNING, SUCCEEDED, FAILED, OVERRUN,
-   * CANCELLED, PENDING, WARNING, SKIPPED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Timestamp at which the entity sync state was last updated.
-   *
-   * @param string $stateUpdateTime
+   * @param string
    */
   public function setStateUpdateTime($stateUpdateTime)
   {
@@ -335,10 +224,7 @@ class GoogleCloudDiscoveryengineV1alphaConnectorRunEntityRun extends \Google\Col
     return $this->stateUpdateTime;
   }
   /**
-   * The timestamp for either extracted_documents_count, indexed_documents_count
-   * and error_documents_count was last updated.
-   *
-   * @param string $statsUpdateTime
+   * @param string
    */
   public function setStatsUpdateTime($statsUpdateTime)
   {
@@ -352,19 +238,14 @@ class GoogleCloudDiscoveryengineV1alphaConnectorRunEntityRun extends \Google\Col
     return $this->statsUpdateTime;
   }
   /**
-   * Sync type of this run.
-   *
-   * Accepted values: SYNC_TYPE_UNSPECIFIED, FULL, INCREMENTAL, REALTIME,
-   * SCALA_SYNC
-   *
-   * @param self::SYNC_TYPE_* $syncType
+   * @param string
    */
   public function setSyncType($syncType)
   {
     $this->syncType = $syncType;
   }
   /**
-   * @return self::SYNC_TYPE_*
+   * @return string
    */
   public function getSyncType()
   {

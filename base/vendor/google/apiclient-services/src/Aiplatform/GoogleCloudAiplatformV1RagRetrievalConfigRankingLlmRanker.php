@@ -20,20 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1RagRetrievalConfigRankingLlmRanker extends \Google\Model
 {
   /**
-   * Optional. The model name used for ranking. See [Supported
-   * models](https://cloud.google.com/vertex-ai/generative-ai/docs/model-
-   * reference/inference#supported-models).
-   *
    * @var string
    */
   public $modelName;
 
   /**
-   * Optional. The model name used for ranking. See [Supported
-   * models](https://cloud.google.com/vertex-ai/generative-ai/docs/model-
-   * reference/inference#supported-models).
-   *
-   * @param string $modelName
+   * @param string
    */
   public function setModelName($modelName)
   {

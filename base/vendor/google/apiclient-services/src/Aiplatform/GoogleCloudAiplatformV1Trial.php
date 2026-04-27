@@ -19,123 +19,52 @@ namespace Google\Service\Aiplatform;
 
 class GoogleCloudAiplatformV1Trial extends \Google\Collection
 {
-  /**
-   * The Trial state is unspecified.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Indicates that a specific Trial has been requested, but it has not yet been
-   * suggested by the service.
-   */
-  public const STATE_REQUESTED = 'REQUESTED';
-  /**
-   * Indicates that the Trial has been suggested.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * Indicates that the Trial should stop according to the service.
-   */
-  public const STATE_STOPPING = 'STOPPING';
-  /**
-   * Indicates that the Trial is completed successfully.
-   */
-  public const STATE_SUCCEEDED = 'SUCCEEDED';
-  /**
-   * Indicates that the Trial should not be attempted again. The service will
-   * set a Trial to INFEASIBLE when it's done but missing the final_measurement.
-   */
-  public const STATE_INFEASIBLE = 'INFEASIBLE';
   protected $collection_key = 'parameters';
   /**
-   * Output only. The identifier of the client that originally requested this
-   * Trial. Each client is identified by a unique client_id. When a client asks
-   * for a suggestion, Vertex AI Vizier will assign it a Trial. The client
-   * should evaluate the Trial, complete it, and report back to Vertex AI
-   * Vizier. If suggestion is asked again by same client_id before the Trial is
-   * completed, the same Trial will be returned. Multiple clients with different
-   * client_ids can ask for suggestions simultaneously, each of them will get
-   * their own Trial.
-   *
    * @var string
    */
   public $clientId;
   /**
-   * Output only. The CustomJob name linked to the Trial. It's set for a
-   * HyperparameterTuningJob's Trial.
-   *
    * @var string
    */
   public $customJob;
   /**
-   * Output only. Time when the Trial's status changed to `SUCCEEDED` or
-   * `INFEASIBLE`.
-   *
    * @var string
    */
   public $endTime;
   protected $finalMeasurementType = GoogleCloudAiplatformV1Measurement::class;
   protected $finalMeasurementDataType = '';
   /**
-   * Output only. The identifier of the Trial assigned by the service.
-   *
    * @var string
    */
   public $id;
   /**
-   * Output only. A human readable string describing why the Trial is
-   * infeasible. This is set only if Trial state is `INFEASIBLE`.
-   *
    * @var string
    */
   public $infeasibleReason;
   protected $measurementsType = GoogleCloudAiplatformV1Measurement::class;
   protected $measurementsDataType = 'array';
   /**
-   * Output only. Resource name of the Trial assigned by the service.
-   *
    * @var string
    */
   public $name;
   protected $parametersType = GoogleCloudAiplatformV1TrialParameter::class;
   protected $parametersDataType = 'array';
   /**
-   * Output only. Time when the Trial was started.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * Output only. The detailed state of the Trial.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. URIs for accessing [interactive
-   * shells](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-
-   * interactive-shell) (one URI for each training node). Only available if this
-   * trial is part of a HyperparameterTuningJob and the job's
-   * trial_job_spec.enable_web_access field is `true`. The keys are names of
-   * each node used for the trial; for example, `workerpool0-0` for the primary
-   * node, `workerpool1-0` for the first node in the second worker pool, and
-   * `workerpool1-1` for the second node in the second worker pool. The values
-   * are the URIs for each node's interactive shell.
-   *
    * @var string[]
    */
   public $webAccessUris;
 
   /**
-   * Output only. The identifier of the client that originally requested this
-   * Trial. Each client is identified by a unique client_id. When a client asks
-   * for a suggestion, Vertex AI Vizier will assign it a Trial. The client
-   * should evaluate the Trial, complete it, and report back to Vertex AI
-   * Vizier. If suggestion is asked again by same client_id before the Trial is
-   * completed, the same Trial will be returned. Multiple clients with different
-   * client_ids can ask for suggestions simultaneously, each of them will get
-   * their own Trial.
-   *
-   * @param string $clientId
+   * @param string
    */
   public function setClientId($clientId)
   {
@@ -149,10 +78,7 @@ class GoogleCloudAiplatformV1Trial extends \Google\Collection
     return $this->clientId;
   }
   /**
-   * Output only. The CustomJob name linked to the Trial. It's set for a
-   * HyperparameterTuningJob's Trial.
-   *
-   * @param string $customJob
+   * @param string
    */
   public function setCustomJob($customJob)
   {
@@ -166,10 +92,7 @@ class GoogleCloudAiplatformV1Trial extends \Google\Collection
     return $this->customJob;
   }
   /**
-   * Output only. Time when the Trial's status changed to `SUCCEEDED` or
-   * `INFEASIBLE`.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -183,9 +106,7 @@ class GoogleCloudAiplatformV1Trial extends \Google\Collection
     return $this->endTime;
   }
   /**
-   * Output only. The final measurement containing the objective value.
-   *
-   * @param GoogleCloudAiplatformV1Measurement $finalMeasurement
+   * @param GoogleCloudAiplatformV1Measurement
    */
   public function setFinalMeasurement(GoogleCloudAiplatformV1Measurement $finalMeasurement)
   {
@@ -199,9 +120,7 @@ class GoogleCloudAiplatformV1Trial extends \Google\Collection
     return $this->finalMeasurement;
   }
   /**
-   * Output only. The identifier of the Trial assigned by the service.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -215,10 +134,7 @@ class GoogleCloudAiplatformV1Trial extends \Google\Collection
     return $this->id;
   }
   /**
-   * Output only. A human readable string describing why the Trial is
-   * infeasible. This is set only if Trial state is `INFEASIBLE`.
-   *
-   * @param string $infeasibleReason
+   * @param string
    */
   public function setInfeasibleReason($infeasibleReason)
   {
@@ -232,11 +148,7 @@ class GoogleCloudAiplatformV1Trial extends \Google\Collection
     return $this->infeasibleReason;
   }
   /**
-   * Output only. A list of measurements that are strictly lexicographically
-   * ordered by their induced tuples (steps, elapsed_duration). These are used
-   * for early stopping computations.
-   *
-   * @param GoogleCloudAiplatformV1Measurement[] $measurements
+   * @param GoogleCloudAiplatformV1Measurement[]
    */
   public function setMeasurements($measurements)
   {
@@ -250,9 +162,7 @@ class GoogleCloudAiplatformV1Trial extends \Google\Collection
     return $this->measurements;
   }
   /**
-   * Output only. Resource name of the Trial assigned by the service.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -266,9 +176,7 @@ class GoogleCloudAiplatformV1Trial extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. The parameters of the Trial.
-   *
-   * @param GoogleCloudAiplatformV1TrialParameter[] $parameters
+   * @param GoogleCloudAiplatformV1TrialParameter[]
    */
   public function setParameters($parameters)
   {
@@ -282,9 +190,7 @@ class GoogleCloudAiplatformV1Trial extends \Google\Collection
     return $this->parameters;
   }
   /**
-   * Output only. Time when the Trial was started.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -298,36 +204,21 @@ class GoogleCloudAiplatformV1Trial extends \Google\Collection
     return $this->startTime;
   }
   /**
-   * Output only. The detailed state of the Trial.
-   *
-   * Accepted values: STATE_UNSPECIFIED, REQUESTED, ACTIVE, STOPPING, SUCCEEDED,
-   * INFEASIBLE
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. URIs for accessing [interactive
-   * shells](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-
-   * interactive-shell) (one URI for each training node). Only available if this
-   * trial is part of a HyperparameterTuningJob and the job's
-   * trial_job_spec.enable_web_access field is `true`. The keys are names of
-   * each node used for the trial; for example, `workerpool0-0` for the primary
-   * node, `workerpool1-0` for the first node in the second worker pool, and
-   * `workerpool1-1` for the second node in the second worker pool. The values
-   * are the URIs for each node's interactive shell.
-   *
-   * @param string[] $webAccessUris
+   * @param string[]
    */
   public function setWebAccessUris($webAccessUris)
   {

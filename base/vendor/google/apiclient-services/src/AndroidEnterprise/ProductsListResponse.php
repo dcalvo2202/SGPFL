@@ -28,9 +28,7 @@ class ProductsListResponse extends \Google\Collection
   protected $tokenPaginationDataType = '';
 
   /**
-   * General pagination information.
-   *
-   * @param PageInfo $pageInfo
+   * @param PageInfo
    */
   public function setPageInfo(PageInfo $pageInfo)
   {
@@ -44,10 +42,7 @@ class ProductsListResponse extends \Google\Collection
     return $this->pageInfo;
   }
   /**
-   * Information about a product (e.g. an app) in the Google Play store, for
-   * display to an enterprise admin.
-   *
-   * @param Product[] $product
+   * @param Product[]
    */
   public function setProduct($product)
   {
@@ -61,9 +56,7 @@ class ProductsListResponse extends \Google\Collection
     return $this->product;
   }
   /**
-   * Pagination information for token pagination.
-   *
-   * @param TokenPagination $tokenPagination
+   * @param TokenPagination
    */
   public function setTokenPagination(TokenPagination $tokenPagination)
   {

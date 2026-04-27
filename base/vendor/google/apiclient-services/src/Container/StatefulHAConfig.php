@@ -20,16 +20,12 @@ namespace Google\Service\Container;
 class StatefulHAConfig extends \Google\Model
 {
   /**
-   * Whether the Stateful HA add-on is enabled for this cluster.
-   *
    * @var bool
    */
   public $enabled;
 
   /**
-   * Whether the Stateful HA add-on is enabled for this cluster.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {

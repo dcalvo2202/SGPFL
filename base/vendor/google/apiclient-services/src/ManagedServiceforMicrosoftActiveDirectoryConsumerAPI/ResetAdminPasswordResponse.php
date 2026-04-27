@@ -20,16 +20,12 @@ namespace Google\Service\ManagedServiceforMicrosoftActiveDirectoryConsumerAPI;
 class ResetAdminPasswordResponse extends \Google\Model
 {
   /**
-   * A random password. See admin for more information.
-   *
    * @var string
    */
   public $password;
 
   /**
-   * A random password. See admin for more information.
-   *
-   * @param string $password
+   * @param string
    */
   public function setPassword($password)
   {

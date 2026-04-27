@@ -23,9 +23,7 @@ class Copy extends \Google\Model
   protected $originalObjectDataType = '';
 
   /**
-   * The original object.
-   *
-   * @param TargetReference $originalObject
+   * @param TargetReference
    */
   public function setOriginalObject(TargetReference $originalObject)
   {

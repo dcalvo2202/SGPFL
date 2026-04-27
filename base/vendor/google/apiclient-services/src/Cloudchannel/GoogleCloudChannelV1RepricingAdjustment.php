@@ -23,9 +23,7 @@ class GoogleCloudChannelV1RepricingAdjustment extends \Google\Model
   protected $percentageAdjustmentDataType = '';
 
   /**
-   * Flat markup or markdown on an entire bill.
-   *
-   * @param GoogleCloudChannelV1PercentageAdjustment $percentageAdjustment
+   * @param GoogleCloudChannelV1PercentageAdjustment
    */
   public function setPercentageAdjustment(GoogleCloudChannelV1PercentageAdjustment $percentageAdjustment)
   {

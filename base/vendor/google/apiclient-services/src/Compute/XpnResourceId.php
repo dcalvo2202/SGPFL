@@ -19,29 +19,17 @@ namespace Google\Service\Compute;
 
 class XpnResourceId extends \Google\Model
 {
-  public const TYPE_PROJECT = 'PROJECT';
-  public const TYPE_XPN_RESOURCE_TYPE_UNSPECIFIED = 'XPN_RESOURCE_TYPE_UNSPECIFIED';
   /**
-   * The ID of the service resource. In the case of projects, this field
-   * supports project id (e.g., my-project-123) and project number (e.g.
-   * 12345678).
-   *
    * @var string
    */
   public $id;
   /**
-   * The type of the service resource.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The ID of the service resource. In the case of projects, this field
-   * supports project id (e.g., my-project-123) and project number (e.g.
-   * 12345678).
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -55,18 +43,14 @@ class XpnResourceId extends \Google\Model
     return $this->id;
   }
   /**
-   * The type of the service resource.
-   *
-   * Accepted values: PROJECT, XPN_RESOURCE_TYPE_UNSPECIFIED
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

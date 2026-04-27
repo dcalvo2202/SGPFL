@@ -22,31 +22,16 @@ class DeidentifyDatasetRequest extends \Google\Model
   protected $configType = DeidentifyConfig::class;
   protected $configDataType = '';
   /**
-   * Required. The name of the dataset resource to create and write the redacted
-   * data to. * The destination dataset must not exist. * The destination
-   * dataset must be in the same location as the source dataset. De-identifying
-   * data across multiple locations is not supported.
-   *
    * @var string
    */
   public $destinationDataset;
   /**
-   * Cloud Storage location to read the JSON
-   * cloud.healthcare.deidentify.DeidentifyConfig from, overriding the default
-   * config. Must be of the form `gs://{bucket_id}/path/to/object`. The Cloud
-   * Storage location must grant the Cloud IAM role `roles/storage.objectViewer`
-   * to the project's Cloud Healthcare Service Agent service account. Only one
-   * of `config` and `gcs_config_uri` can be specified.
-   *
    * @var string
    */
   public $gcsConfigUri;
 
   /**
-   * Deidentify configuration. Only one of `config` and `gcs_config_uri` can be
-   * specified.
-   *
-   * @param DeidentifyConfig $config
+   * @param DeidentifyConfig
    */
   public function setConfig(DeidentifyConfig $config)
   {
@@ -60,12 +45,7 @@ class DeidentifyDatasetRequest extends \Google\Model
     return $this->config;
   }
   /**
-   * Required. The name of the dataset resource to create and write the redacted
-   * data to. * The destination dataset must not exist. * The destination
-   * dataset must be in the same location as the source dataset. De-identifying
-   * data across multiple locations is not supported.
-   *
-   * @param string $destinationDataset
+   * @param string
    */
   public function setDestinationDataset($destinationDataset)
   {
@@ -79,14 +59,7 @@ class DeidentifyDatasetRequest extends \Google\Model
     return $this->destinationDataset;
   }
   /**
-   * Cloud Storage location to read the JSON
-   * cloud.healthcare.deidentify.DeidentifyConfig from, overriding the default
-   * config. Must be of the form `gs://{bucket_id}/path/to/object`. The Cloud
-   * Storage location must grant the Cloud IAM role `roles/storage.objectViewer`
-   * to the project's Cloud Healthcare Service Agent service account. Only one
-   * of `config` and `gcs_config_uri` can be specified.
-   *
-   * @param string $gcsConfigUri
+   * @param string
    */
   public function setGcsConfigUri($gcsConfigUri)
   {

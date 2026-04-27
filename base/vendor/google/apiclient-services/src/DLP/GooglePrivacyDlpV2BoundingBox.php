@@ -20,34 +20,24 @@ namespace Google\Service\DLP;
 class GooglePrivacyDlpV2BoundingBox extends \Google\Model
 {
   /**
-   * Height of the bounding box in pixels.
-   *
    * @var int
    */
   public $height;
   /**
-   * Left coordinate of the bounding box. (0,0) is upper left.
-   *
    * @var int
    */
   public $left;
   /**
-   * Top coordinate of the bounding box. (0,0) is upper left.
-   *
    * @var int
    */
   public $top;
   /**
-   * Width of the bounding box in pixels.
-   *
    * @var int
    */
   public $width;
 
   /**
-   * Height of the bounding box in pixels.
-   *
-   * @param int $height
+   * @param int
    */
   public function setHeight($height)
   {
@@ -61,9 +51,7 @@ class GooglePrivacyDlpV2BoundingBox extends \Google\Model
     return $this->height;
   }
   /**
-   * Left coordinate of the bounding box. (0,0) is upper left.
-   *
-   * @param int $left
+   * @param int
    */
   public function setLeft($left)
   {
@@ -77,9 +65,7 @@ class GooglePrivacyDlpV2BoundingBox extends \Google\Model
     return $this->left;
   }
   /**
-   * Top coordinate of the bounding box. (0,0) is upper left.
-   *
-   * @param int $top
+   * @param int
    */
   public function setTop($top)
   {
@@ -93,9 +79,7 @@ class GooglePrivacyDlpV2BoundingBox extends \Google\Model
     return $this->top;
   }
   /**
-   * Width of the bounding box in pixels.
-   *
-   * @param int $width
+   * @param int
    */
   public function setWidth($width)
   {

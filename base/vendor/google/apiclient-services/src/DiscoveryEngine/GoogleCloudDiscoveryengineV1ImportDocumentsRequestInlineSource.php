@@ -24,10 +24,7 @@ class GoogleCloudDiscoveryengineV1ImportDocumentsRequestInlineSource extends \Go
   protected $documentsDataType = 'array';
 
   /**
-   * Required. A list of documents to update/create. Each document must have a
-   * valid Document.id. Recommended max of 100 items.
-   *
-   * @param GoogleCloudDiscoveryengineV1Document[] $documents
+   * @param GoogleCloudDiscoveryengineV1Document[]
    */
   public function setDocuments($documents)
   {

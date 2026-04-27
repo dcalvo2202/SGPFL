@@ -23,17 +23,12 @@ class SalesforceObject extends \Google\Collection
   protected $fieldsType = SalesforceField::class;
   protected $fieldsDataType = 'array';
   /**
-   * The object name.
-   *
    * @var string
    */
   public $objectName;
 
   /**
-   * Salesforce fields. When unspecified as part of include objects, includes
-   * everything, when unspecified as part of exclude objects, excludes nothing.
-   *
-   * @param SalesforceField[] $fields
+   * @param SalesforceField[]
    */
   public function setFields($fields)
   {
@@ -47,9 +42,7 @@ class SalesforceObject extends \Google\Collection
     return $this->fields;
   }
   /**
-   * The object name.
-   *
-   * @param string $objectName
+   * @param string
    */
   public function setObjectName($objectName)
   {

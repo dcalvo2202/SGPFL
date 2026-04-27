@@ -20,28 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1ExportFeatureValuesRequestSnapshotExport extends \Google\Model
 {
   /**
-   * Exports Feature values as of this timestamp. If not set, retrieve values as
-   * of now. Timestamp, if present, must not have higher than millisecond
-   * precision.
-   *
    * @var string
    */
   public $snapshotTime;
   /**
-   * Excludes Feature values with feature generation timestamp before this
-   * timestamp. If not set, retrieve oldest values kept in Feature Store.
-   * Timestamp, if present, must not have higher than millisecond precision.
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * Exports Feature values as of this timestamp. If not set, retrieve values as
-   * of now. Timestamp, if present, must not have higher than millisecond
-   * precision.
-   *
-   * @param string $snapshotTime
+   * @param string
    */
   public function setSnapshotTime($snapshotTime)
   {
@@ -55,11 +43,7 @@ class GoogleCloudAiplatformV1ExportFeatureValuesRequestSnapshotExport extends \G
     return $this->snapshotTime;
   }
   /**
-   * Excludes Feature values with feature generation timestamp before this
-   * timestamp. If not set, retrieve oldest values kept in Feature Store.
-   * Timestamp, if present, must not have higher than millisecond precision.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

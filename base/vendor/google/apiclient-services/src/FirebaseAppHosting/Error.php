@@ -20,39 +20,18 @@ namespace Google\Service\FirebaseAppHosting;
 class Error extends \Google\Model
 {
   /**
-   * Indicates that generic error occurred outside of the Cloud Build or Cloud
-   * Run processes, such as a pre-empted or user-canceled App Hosting Build.
-   */
-  public const ERROR_SOURCE_ERROR_SOURCE_UNSPECIFIED = 'ERROR_SOURCE_UNSPECIFIED';
-  /**
-   * Indicates that the build failed during the Cloud Build process, such as a
-   * build timeout.
-   */
-  public const ERROR_SOURCE_CLOUD_BUILD = 'CLOUD_BUILD';
-  /**
-   * Indicates that the build failed during the Cloud Run process, such as a
-   * service creation failure.
-   */
-  public const ERROR_SOURCE_CLOUD_RUN = 'CLOUD_RUN';
-  /**
-   * Output only. Resource link
-   *
    * @var string
    */
   public $cloudResource;
   protected $errorType = Status::class;
   protected $errorDataType = '';
   /**
-   * Output only. The source of the error for the build, if in a `FAILED` state.
-   *
    * @var string
    */
   public $errorSource;
 
   /**
-   * Output only. Resource link
-   *
-   * @param string $cloudResource
+   * @param string
    */
   public function setCloudResource($cloudResource)
   {
@@ -66,10 +45,7 @@ class Error extends \Google\Model
     return $this->cloudResource;
   }
   /**
-   * Output only. A status and (human readable) error message for the build, if
-   * in a `FAILED` state.
-   *
-   * @param Status $error
+   * @param Status
    */
   public function setError(Status $error)
   {
@@ -83,18 +59,14 @@ class Error extends \Google\Model
     return $this->error;
   }
   /**
-   * Output only. The source of the error for the build, if in a `FAILED` state.
-   *
-   * Accepted values: ERROR_SOURCE_UNSPECIFIED, CLOUD_BUILD, CLOUD_RUN
-   *
-   * @param self::ERROR_SOURCE_* $errorSource
+   * @param string
    */
   public function setErrorSource($errorSource)
   {
     $this->errorSource = $errorSource;
   }
   /**
-   * @return self::ERROR_SOURCE_*
+   * @return string
    */
   public function getErrorSource()
   {

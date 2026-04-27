@@ -23,9 +23,7 @@ class RubySettings extends \Google\Model
   protected $commonDataType = '';
 
   /**
-   * Some settings.
-   *
-   * @param CommonLanguageSettings $common
+   * @param CommonLanguageSettings
    */
   public function setCommon(CommonLanguageSettings $common)
   {

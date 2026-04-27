@@ -23,9 +23,7 @@ class GoogleCloudAiplatformV1SchemaPromptInstancePromptExecution extends \Google
   protected $argumentsDataType = 'map';
 
   /**
-   * Maps variable names to their value.
-   *
-   * @param GoogleCloudAiplatformV1SchemaPromptInstanceVariableValue[] $arguments
+   * @param GoogleCloudAiplatformV1SchemaPromptInstanceVariableValue[]
    */
   public function setArguments($arguments)
   {

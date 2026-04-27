@@ -22,45 +22,28 @@ class BitbucketDataCenterConfig extends \Google\Model
   protected $authorizerCredentialType = UserCredential::class;
   protected $authorizerCredentialDataType = '';
   /**
-   * Required. The URI of the Bitbucket Data Center host this connection is for.
-   *
    * @var string
    */
   public $hostUri;
   protected $readAuthorizerCredentialType = UserCredential::class;
   protected $readAuthorizerCredentialDataType = '';
   /**
-   * Output only. Version of the Bitbucket Data Center server running on the
-   * `host_uri`.
-   *
    * @var string
    */
   public $serverVersion;
   protected $serviceDirectoryConfigType = ServiceDirectoryConfig::class;
   protected $serviceDirectoryConfigDataType = '';
   /**
-   * Optional. SSL certificate authority to trust when making requests to
-   * Bitbucket Data Center.
-   *
    * @var string
    */
   public $sslCaCertificate;
   /**
-   * Required. Immutable. SecretManager resource containing the webhook secret
-   * used to verify webhook events, formatted as `projects/secrets/versions` or
-   * `projects/locations/secrets/versions` (if regional secrets are supported in
-   * that location). This is used to validate webhooks.
-   *
    * @var string
    */
   public $webhookSecretSecretVersion;
 
   /**
-   * Required. An http access token with the minimum `Repository admin` scope
-   * access. This is needed to create webhooks. It's recommended to use a system
-   * account to generate these credentials.
-   *
-   * @param UserCredential $authorizerCredential
+   * @param UserCredential
    */
   public function setAuthorizerCredential(UserCredential $authorizerCredential)
   {
@@ -74,9 +57,7 @@ class BitbucketDataCenterConfig extends \Google\Model
     return $this->authorizerCredential;
   }
   /**
-   * Required. The URI of the Bitbucket Data Center host this connection is for.
-   *
-   * @param string $hostUri
+   * @param string
    */
   public function setHostUri($hostUri)
   {
@@ -90,10 +71,7 @@ class BitbucketDataCenterConfig extends \Google\Model
     return $this->hostUri;
   }
   /**
-   * Required. An http access token with the minimum `Repository read` access.
-   * It's recommended to use a system account to generate the credentials.
-   *
-   * @param UserCredential $readAuthorizerCredential
+   * @param UserCredential
    */
   public function setReadAuthorizerCredential(UserCredential $readAuthorizerCredential)
   {
@@ -107,10 +85,7 @@ class BitbucketDataCenterConfig extends \Google\Model
     return $this->readAuthorizerCredential;
   }
   /**
-   * Output only. Version of the Bitbucket Data Center server running on the
-   * `host_uri`.
-   *
-   * @param string $serverVersion
+   * @param string
    */
   public function setServerVersion($serverVersion)
   {
@@ -124,13 +99,7 @@ class BitbucketDataCenterConfig extends \Google\Model
     return $this->serverVersion;
   }
   /**
-   * Optional. Configuration for using Service Directory to privately connect to
-   * a Bitbucket Data Center instance. This should only be set if the Bitbucket
-   * Data Center is hosted on-premises and not reachable by public internet. If
-   * this field is left empty, calls to the Bitbucket Data Center will be made
-   * over the public internet.
-   *
-   * @param ServiceDirectoryConfig $serviceDirectoryConfig
+   * @param ServiceDirectoryConfig
    */
   public function setServiceDirectoryConfig(ServiceDirectoryConfig $serviceDirectoryConfig)
   {
@@ -144,10 +113,7 @@ class BitbucketDataCenterConfig extends \Google\Model
     return $this->serviceDirectoryConfig;
   }
   /**
-   * Optional. SSL certificate authority to trust when making requests to
-   * Bitbucket Data Center.
-   *
-   * @param string $sslCaCertificate
+   * @param string
    */
   public function setSslCaCertificate($sslCaCertificate)
   {
@@ -161,12 +127,7 @@ class BitbucketDataCenterConfig extends \Google\Model
     return $this->sslCaCertificate;
   }
   /**
-   * Required. Immutable. SecretManager resource containing the webhook secret
-   * used to verify webhook events, formatted as `projects/secrets/versions` or
-   * `projects/locations/secrets/versions` (if regional secrets are supported in
-   * that location). This is used to validate webhooks.
-   *
-   * @param string $webhookSecretSecretVersion
+   * @param string
    */
   public function setWebhookSecretSecretVersion($webhookSecretSecretVersion)
   {

@@ -23,22 +23,16 @@ class ListAuthzPoliciesResponse extends \Google\Collection
   protected $authzPoliciesType = AuthzPolicy::class;
   protected $authzPoliciesDataType = 'array';
   /**
-   * A token identifying a page of results that the server returns.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * The list of `AuthzPolicy` resources.
-   *
-   * @param AuthzPolicy[] $authzPolicies
+   * @param AuthzPolicy[]
    */
   public function setAuthzPolicies($authzPolicies)
   {
@@ -52,9 +46,7 @@ class ListAuthzPoliciesResponse extends \Google\Collection
     return $this->authzPolicies;
   }
   /**
-   * A token identifying a page of results that the server returns.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -68,9 +60,7 @@ class ListAuthzPoliciesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

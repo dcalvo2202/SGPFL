@@ -20,72 +20,36 @@ namespace Google\Service\Recommender;
 class GoogleCloudRecommenderV1Operation extends \Google\Model
 {
   /**
-   * Type of this operation. Contains one of 'add', 'remove', 'replace', 'move',
-   * 'copy', 'test' and custom operations. This field is case-insensitive and
-   * always populated.
-   *
    * @var string
    */
   public $action;
   /**
-   * Path to the target field being operated on. If the operation is at the
-   * resource level, then path should be "/". This field is always populated.
-   *
    * @var string
    */
   public $path;
   /**
-   * Set of filters to apply if `path` refers to array elements or nested array
-   * elements in order to narrow down to a single unique element that is being
-   * tested/modified. This is intended to be an exact match per filter. To
-   * perform advanced matching, use path_value_matchers. * Example: ``` {
-   * "/versions/name" : "it-123" "/versions/targetSize/percent": 20 } ``` *
-   * Example: ``` { "/bindings/role": "roles/owner" "/bindings/condition" : null
-   * } ``` * Example: ``` { "/bindings/role": "roles/owner" "/bindings/members"
-   * : ["x@example.com", "y@example.com"] } ``` When both path_filters and
-   * path_value_matchers are set, an implicit AND must be performed.
-   *
    * @var array[]
    */
   public $pathFilters;
   protected $pathValueMatchersType = GoogleCloudRecommenderV1ValueMatcher::class;
   protected $pathValueMatchersDataType = 'map';
   /**
-   * Contains the fully qualified resource name. This field is always populated.
-   * ex: //cloudresourcemanager.googleapis.com/projects/foo.
-   *
    * @var string
    */
   public $resource;
   /**
-   * Type of GCP resource being modified/tested. This field is always populated.
-   * Example: cloudresourcemanager.googleapis.com/Project,
-   * compute.googleapis.com/Instance
-   *
    * @var string
    */
   public $resourceType;
   /**
-   * Can be set with action 'copy' or 'move' to indicate the source field within
-   * resource or source_resource, ignored if provided for other operation types.
-   *
    * @var string
    */
   public $sourcePath;
   /**
-   * Can be set with action 'copy' to copy resource configuration across
-   * different resources of the same type. Example: A resource clone can be done
-   * via action = 'copy', path = "/", from = "/", source_resource = and
-   * resource_name = . This field is empty for all other values of `action`.
-   *
    * @var string
    */
   public $sourceResource;
   /**
-   * Value for the `path` field. Will be set for actions:'add'/'replace'. Maybe
-   * set for action: 'test'. Either this or `value_matcher` will be set for
-   * 'test' operation. An exact match must be performed.
-   *
    * @var array
    */
   public $value;
@@ -93,11 +57,7 @@ class GoogleCloudRecommenderV1Operation extends \Google\Model
   protected $valueMatcherDataType = '';
 
   /**
-   * Type of this operation. Contains one of 'add', 'remove', 'replace', 'move',
-   * 'copy', 'test' and custom operations. This field is case-insensitive and
-   * always populated.
-   *
-   * @param string $action
+   * @param string
    */
   public function setAction($action)
   {
@@ -111,10 +71,7 @@ class GoogleCloudRecommenderV1Operation extends \Google\Model
     return $this->action;
   }
   /**
-   * Path to the target field being operated on. If the operation is at the
-   * resource level, then path should be "/". This field is always populated.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {
@@ -128,17 +85,7 @@ class GoogleCloudRecommenderV1Operation extends \Google\Model
     return $this->path;
   }
   /**
-   * Set of filters to apply if `path` refers to array elements or nested array
-   * elements in order to narrow down to a single unique element that is being
-   * tested/modified. This is intended to be an exact match per filter. To
-   * perform advanced matching, use path_value_matchers. * Example: ``` {
-   * "/versions/name" : "it-123" "/versions/targetSize/percent": 20 } ``` *
-   * Example: ``` { "/bindings/role": "roles/owner" "/bindings/condition" : null
-   * } ``` * Example: ``` { "/bindings/role": "roles/owner" "/bindings/members"
-   * : ["x@example.com", "y@example.com"] } ``` When both path_filters and
-   * path_value_matchers are set, an implicit AND must be performed.
-   *
-   * @param array[] $pathFilters
+   * @param array[]
    */
   public function setPathFilters($pathFilters)
   {
@@ -152,13 +99,7 @@ class GoogleCloudRecommenderV1Operation extends \Google\Model
     return $this->pathFilters;
   }
   /**
-   * Similar to path_filters, this contains set of filters to apply if `path`
-   * field refers to array elements. This is meant to support value matching
-   * beyond exact match. To perform exact match, use path_filters. When both
-   * path_filters and path_value_matchers are set, an implicit AND must be
-   * performed.
-   *
-   * @param GoogleCloudRecommenderV1ValueMatcher[] $pathValueMatchers
+   * @param GoogleCloudRecommenderV1ValueMatcher[]
    */
   public function setPathValueMatchers($pathValueMatchers)
   {
@@ -172,10 +113,7 @@ class GoogleCloudRecommenderV1Operation extends \Google\Model
     return $this->pathValueMatchers;
   }
   /**
-   * Contains the fully qualified resource name. This field is always populated.
-   * ex: //cloudresourcemanager.googleapis.com/projects/foo.
-   *
-   * @param string $resource
+   * @param string
    */
   public function setResource($resource)
   {
@@ -189,11 +127,7 @@ class GoogleCloudRecommenderV1Operation extends \Google\Model
     return $this->resource;
   }
   /**
-   * Type of GCP resource being modified/tested. This field is always populated.
-   * Example: cloudresourcemanager.googleapis.com/Project,
-   * compute.googleapis.com/Instance
-   *
-   * @param string $resourceType
+   * @param string
    */
   public function setResourceType($resourceType)
   {
@@ -207,10 +141,7 @@ class GoogleCloudRecommenderV1Operation extends \Google\Model
     return $this->resourceType;
   }
   /**
-   * Can be set with action 'copy' or 'move' to indicate the source field within
-   * resource or source_resource, ignored if provided for other operation types.
-   *
-   * @param string $sourcePath
+   * @param string
    */
   public function setSourcePath($sourcePath)
   {
@@ -224,12 +155,7 @@ class GoogleCloudRecommenderV1Operation extends \Google\Model
     return $this->sourcePath;
   }
   /**
-   * Can be set with action 'copy' to copy resource configuration across
-   * different resources of the same type. Example: A resource clone can be done
-   * via action = 'copy', path = "/", from = "/", source_resource = and
-   * resource_name = . This field is empty for all other values of `action`.
-   *
-   * @param string $sourceResource
+   * @param string
    */
   public function setSourceResource($sourceResource)
   {
@@ -243,11 +169,7 @@ class GoogleCloudRecommenderV1Operation extends \Google\Model
     return $this->sourceResource;
   }
   /**
-   * Value for the `path` field. Will be set for actions:'add'/'replace'. Maybe
-   * set for action: 'test'. Either this or `value_matcher` will be set for
-   * 'test' operation. An exact match must be performed.
-   *
-   * @param array $value
+   * @param array
    */
   public function setValue($value)
   {
@@ -261,10 +183,7 @@ class GoogleCloudRecommenderV1Operation extends \Google\Model
     return $this->value;
   }
   /**
-   * Can be set for action 'test' for advanced matching for the value of 'path'
-   * field. Either this or `value` will be set for 'test' operation.
-   *
-   * @param GoogleCloudRecommenderV1ValueMatcher $valueMatcher
+   * @param GoogleCloudRecommenderV1ValueMatcher
    */
   public function setValueMatcher(GoogleCloudRecommenderV1ValueMatcher $valueMatcher)
   {

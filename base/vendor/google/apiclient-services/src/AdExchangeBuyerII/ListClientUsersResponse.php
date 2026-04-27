@@ -21,10 +21,6 @@ class ListClientUsersResponse extends \Google\Collection
 {
   protected $collection_key = 'users';
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * ListClientUsersRequest.pageToken field in the subsequent call to the
-   * clients.invitations.list method to retrieve the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -32,11 +28,7 @@ class ListClientUsersResponse extends \Google\Collection
   protected $usersDataType = 'array';
 
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * ListClientUsersRequest.pageToken field in the subsequent call to the
-   * clients.invitations.list method to retrieve the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -50,9 +42,7 @@ class ListClientUsersResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The returned list of client users.
-   *
-   * @param ClientUser[] $users
+   * @param ClientUser[]
    */
   public function setUsers($users)
   {

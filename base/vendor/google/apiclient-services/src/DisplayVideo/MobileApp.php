@@ -20,52 +20,24 @@ namespace Google\Service\DisplayVideo;
 class MobileApp extends \Google\Model
 {
   /**
-   * Platform is not specified.
-   */
-  public const PLATFORM_PLATFORM_UNSPECIFIED = 'PLATFORM_UNSPECIFIED';
-  /**
-   * iOS platform.
-   */
-  public const PLATFORM_IOS = 'IOS';
-  /**
-   * Android platform.
-   */
-  public const PLATFORM_ANDROID = 'ANDROID';
-  /**
-   * Required. The ID of the app provided by the platform store. Android apps
-   * are identified by the bundle ID used by Android's Play store, such as
-   * `com.google.android.gm`. iOS apps are identified by a nine-digit app ID
-   * used by Apple's App store, such as `422689480`.
-   *
    * @var string
    */
   public $appId;
   /**
-   * Output only. The app name.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. The app platform.
-   *
    * @var string
    */
   public $platform;
   /**
-   * Output only. The app publisher.
-   *
    * @var string
    */
   public $publisher;
 
   /**
-   * Required. The ID of the app provided by the platform store. Android apps
-   * are identified by the bundle ID used by Android's Play store, such as
-   * `com.google.android.gm`. iOS apps are identified by a nine-digit app ID
-   * used by Apple's App store, such as `422689480`.
-   *
-   * @param string $appId
+   * @param string
    */
   public function setAppId($appId)
   {
@@ -79,9 +51,7 @@ class MobileApp extends \Google\Model
     return $this->appId;
   }
   /**
-   * Output only. The app name.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -95,27 +65,21 @@ class MobileApp extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Output only. The app platform.
-   *
-   * Accepted values: PLATFORM_UNSPECIFIED, IOS, ANDROID
-   *
-   * @param self::PLATFORM_* $platform
+   * @param string
    */
   public function setPlatform($platform)
   {
     $this->platform = $platform;
   }
   /**
-   * @return self::PLATFORM_*
+   * @return string
    */
   public function getPlatform()
   {
     return $this->platform;
   }
   /**
-   * Output only. The app publisher.
-   *
-   * @param string $publisher
+   * @param string
    */
   public function setPublisher($publisher)
   {

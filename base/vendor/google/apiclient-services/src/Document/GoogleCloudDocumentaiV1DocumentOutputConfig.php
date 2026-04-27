@@ -23,9 +23,7 @@ class GoogleCloudDocumentaiV1DocumentOutputConfig extends \Google\Model
   protected $gcsOutputConfigDataType = '';
 
   /**
-   * Output config to write the results to Cloud Storage.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentOutputConfigGcsOutputConfig $gcsOutputConfig
+   * @param GoogleCloudDocumentaiV1DocumentOutputConfigGcsOutputConfig
    */
   public function setGcsOutputConfig(GoogleCloudDocumentaiV1DocumentOutputConfigGcsOutputConfig $gcsOutputConfig)
   {

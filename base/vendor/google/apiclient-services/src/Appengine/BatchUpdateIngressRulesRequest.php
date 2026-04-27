@@ -24,9 +24,7 @@ class BatchUpdateIngressRulesRequest extends \Google\Collection
   protected $ingressRulesDataType = 'array';
 
   /**
-   * A list of FirewallRules to replace the existing set.
-   *
-   * @param FirewallRule[] $ingressRules
+   * @param FirewallRule[]
    */
   public function setIngressRules($ingressRules)
   {

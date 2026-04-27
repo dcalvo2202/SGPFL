@@ -20,52 +20,28 @@ namespace Google\Service\CloudSupport;
 class Blobstore2Info extends \Google\Model
 {
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
    * @var string
    */
   public $blobGeneration;
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
    * @var string
    */
   public $blobId;
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
-   * @var string
-   */
-  public $downloadExternalReadToken;
-  /**
-   * # gdata.* are outside protos with mising documentation
-   *
    * @var string
    */
   public $downloadReadHandle;
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
    * @var string
    */
   public $readToken;
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
-   * @var string
-   */
-  public $uploadFragmentListCreationInfo;
-  /**
-   * # gdata.* are outside protos with mising documentation
-   *
    * @var string
    */
   public $uploadMetadataContainer;
 
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
-   * @param string $blobGeneration
+   * @param string
    */
   public function setBlobGeneration($blobGeneration)
   {
@@ -79,9 +55,7 @@ class Blobstore2Info extends \Google\Model
     return $this->blobGeneration;
   }
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
-   * @param string $blobId
+   * @param string
    */
   public function setBlobId($blobId)
   {
@@ -95,25 +69,7 @@ class Blobstore2Info extends \Google\Model
     return $this->blobId;
   }
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
-   * @param string $downloadExternalReadToken
-   */
-  public function setDownloadExternalReadToken($downloadExternalReadToken)
-  {
-    $this->downloadExternalReadToken = $downloadExternalReadToken;
-  }
-  /**
-   * @return string
-   */
-  public function getDownloadExternalReadToken()
-  {
-    return $this->downloadExternalReadToken;
-  }
-  /**
-   * # gdata.* are outside protos with mising documentation
-   *
-   * @param string $downloadReadHandle
+   * @param string
    */
   public function setDownloadReadHandle($downloadReadHandle)
   {
@@ -127,9 +83,7 @@ class Blobstore2Info extends \Google\Model
     return $this->downloadReadHandle;
   }
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
-   * @param string $readToken
+   * @param string
    */
   public function setReadToken($readToken)
   {
@@ -143,25 +97,7 @@ class Blobstore2Info extends \Google\Model
     return $this->readToken;
   }
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
-   * @param string $uploadFragmentListCreationInfo
-   */
-  public function setUploadFragmentListCreationInfo($uploadFragmentListCreationInfo)
-  {
-    $this->uploadFragmentListCreationInfo = $uploadFragmentListCreationInfo;
-  }
-  /**
-   * @return string
-   */
-  public function getUploadFragmentListCreationInfo()
-  {
-    return $this->uploadFragmentListCreationInfo;
-  }
-  /**
-   * # gdata.* are outside protos with mising documentation
-   *
-   * @param string $uploadMetadataContainer
+   * @param string
    */
   public function setUploadMetadataContainer($uploadMetadataContainer)
   {

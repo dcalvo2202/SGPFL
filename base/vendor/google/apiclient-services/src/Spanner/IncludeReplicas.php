@@ -21,10 +21,6 @@ class IncludeReplicas extends \Google\Collection
 {
   protected $collection_key = 'replicaSelections';
   /**
-   * If `true`, Spanner doesn't route requests to a replica outside the
-   * <`include_replicas` list when all of the specified replicas are unavailable
-   * or unhealthy. Default value is `false`.
-   *
    * @var bool
    */
   public $autoFailoverDisabled;
@@ -32,11 +28,7 @@ class IncludeReplicas extends \Google\Collection
   protected $replicaSelectionsDataType = 'array';
 
   /**
-   * If `true`, Spanner doesn't route requests to a replica outside the
-   * <`include_replicas` list when all of the specified replicas are unavailable
-   * or unhealthy. Default value is `false`.
-   *
-   * @param bool $autoFailoverDisabled
+   * @param bool
    */
   public function setAutoFailoverDisabled($autoFailoverDisabled)
   {
@@ -50,9 +42,7 @@ class IncludeReplicas extends \Google\Collection
     return $this->autoFailoverDisabled;
   }
   /**
-   * The directed read replica selector.
-   *
-   * @param ReplicaSelection[] $replicaSelections
+   * @param ReplicaSelection[]
    */
   public function setReplicaSelections($replicaSelections)
   {

@@ -23,9 +23,7 @@ class EmptyResponse extends \Google\Model
   protected $errorsDataType = '';
 
   /**
-   * Apiary error details
-   *
-   * @param Errors $errors
+   * @param Errors
    */
   public function setErrors(Errors $errors)
   {

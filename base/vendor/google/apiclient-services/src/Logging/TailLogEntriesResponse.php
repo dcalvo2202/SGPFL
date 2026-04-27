@@ -26,11 +26,7 @@ class TailLogEntriesResponse extends \Google\Collection
   protected $suppressionInfoDataType = 'array';
 
   /**
-   * A list of log entries. Each response in the stream will order entries with
-   * increasing values of LogEntry.timestamp. Ordering is not guaranteed between
-   * separate responses.
-   *
-   * @param LogEntry[] $entries
+   * @param LogEntry[]
    */
   public function setEntries($entries)
   {
@@ -44,13 +40,7 @@ class TailLogEntriesResponse extends \Google\Collection
     return $this->entries;
   }
   /**
-   * If entries that otherwise would have been included in the session were not
-   * sent back to the client, counts of relevant entries omitted from the
-   * session with the reason that they were not included. There will be at most
-   * one of each reason per response. The counts represent the number of
-   * suppressed entries since the last streamed response.
-   *
-   * @param SuppressionInfo[] $suppressionInfo
+   * @param SuppressionInfo[]
    */
   public function setSuppressionInfo($suppressionInfo)
   {

@@ -20,23 +20,16 @@ namespace Google\Service\Integrations;
 class GoogleCloudIntegrationsV1alphaCreateAppsScriptProjectRequest extends \Google\Model
 {
   /**
-   * The name of the Apps Script project to be created.
-   *
    * @var string
    */
   public $appsScriptProject;
   /**
-   * The auth config id necessary to fetch the necessary credentials to create
-   * the project for external clients
-   *
    * @var string
    */
   public $authConfigId;
 
   /**
-   * The name of the Apps Script project to be created.
-   *
-   * @param string $appsScriptProject
+   * @param string
    */
   public function setAppsScriptProject($appsScriptProject)
   {
@@ -50,10 +43,7 @@ class GoogleCloudIntegrationsV1alphaCreateAppsScriptProjectRequest extends \Goog
     return $this->appsScriptProject;
   }
   /**
-   * The auth config id necessary to fetch the necessary credentials to create
-   * the project for external clients
-   *
-   * @param string $authConfigId
+   * @param string
    */
   public function setAuthConfigId($authConfigId)
   {

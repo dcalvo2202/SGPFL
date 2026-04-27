@@ -23,14 +23,10 @@ class Chain extends \Google\Collection
   protected $chainNamesType = ChainName::class;
   protected $chainNamesDataType = 'array';
   /**
-   * Number of locations that are part of this chain.
-   *
    * @var int
    */
   public $locationCount;
   /**
-   * Required. The chain's resource name, in the format `chains/{chain_id}`.
-   *
    * @var string
    */
   public $name;
@@ -38,9 +34,7 @@ class Chain extends \Google\Collection
   protected $websitesDataType = 'array';
 
   /**
-   * Names of the chain.
-   *
-   * @param ChainName[] $chainNames
+   * @param ChainName[]
    */
   public function setChainNames($chainNames)
   {
@@ -54,9 +48,7 @@ class Chain extends \Google\Collection
     return $this->chainNames;
   }
   /**
-   * Number of locations that are part of this chain.
-   *
-   * @param int $locationCount
+   * @param int
    */
   public function setLocationCount($locationCount)
   {
@@ -70,9 +62,7 @@ class Chain extends \Google\Collection
     return $this->locationCount;
   }
   /**
-   * Required. The chain's resource name, in the format `chains/{chain_id}`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -86,9 +76,7 @@ class Chain extends \Google\Collection
     return $this->name;
   }
   /**
-   * Websites of the chain.
-   *
-   * @param ChainUri[] $websites
+   * @param ChainUri[]
    */
   public function setWebsites($websites)
   {

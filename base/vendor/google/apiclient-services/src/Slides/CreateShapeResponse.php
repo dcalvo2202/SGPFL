@@ -20,16 +20,12 @@ namespace Google\Service\Slides;
 class CreateShapeResponse extends \Google\Model
 {
   /**
-   * The object ID of the created shape.
-   *
    * @var string
    */
   public $objectId;
 
   /**
-   * The object ID of the created shape.
-   *
-   * @param string $objectId
+   * @param string
    */
   public function setObjectId($objectId)
   {

@@ -20,43 +20,28 @@ namespace Google\Service\Contactcenterinsights;
 class GoogleCloudContactcenterinsightsV1View extends \Google\Model
 {
   /**
-   * Output only. The time at which this view was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * The human-readable display name of the view.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Immutable. The resource name of the view. Format:
-   * projects/{project}/locations/{location}/views/{view}
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The most recent time at which the view was updated.
-   *
    * @var string
    */
   public $updateTime;
   /**
-   * A filter to reduce conversation results to a specific subset. Refer to
-   * https://cloud.google.com/contact-center/insights/docs/filtering for
-   * details.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Output only. The time at which this view was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -70,9 +55,7 @@ class GoogleCloudContactcenterinsightsV1View extends \Google\Model
     return $this->createTime;
   }
   /**
-   * The human-readable display name of the view.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -86,10 +69,7 @@ class GoogleCloudContactcenterinsightsV1View extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Immutable. The resource name of the view. Format:
-   * projects/{project}/locations/{location}/views/{view}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -103,9 +83,7 @@ class GoogleCloudContactcenterinsightsV1View extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The most recent time at which the view was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -119,11 +97,7 @@ class GoogleCloudContactcenterinsightsV1View extends \Google\Model
     return $this->updateTime;
   }
   /**
-   * A filter to reduce conversation results to a specific subset. Refer to
-   * https://cloud.google.com/contact-center/insights/docs/filtering for
-   * details.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

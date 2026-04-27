@@ -23,22 +23,16 @@ class ListInsightsConfigsResponse extends \Google\Collection
   protected $insightsConfigsType = InsightsConfig::class;
   protected $insightsConfigsDataType = 'array';
   /**
-   * A token identifying a page of results the server should return.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * The list of InsightsConfigs.
-   *
-   * @param InsightsConfig[] $insightsConfigs
+   * @param InsightsConfig[]
    */
   public function setInsightsConfigs($insightsConfigs)
   {
@@ -52,9 +46,7 @@ class ListInsightsConfigsResponse extends \Google\Collection
     return $this->insightsConfigs;
   }
   /**
-   * A token identifying a page of results the server should return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -68,9 +60,7 @@ class ListInsightsConfigsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

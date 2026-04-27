@@ -22,27 +22,16 @@ class ClickTag extends \Google\Model
   protected $clickThroughUrlType = CreativeClickThroughUrl::class;
   protected $clickThroughUrlDataType = '';
   /**
-   * Advertiser event name associated with the click tag. This field is used by
-   * DISPLAY_IMAGE_GALLERY and HTML5_BANNER creatives. Applicable to DISPLAY
-   * when the primary asset type is not HTML_IMAGE.
-   *
    * @var string
    */
   public $eventName;
   /**
-   * Parameter name for the specified click tag. For DISPLAY_IMAGE_GALLERY
-   * creative assets, this field must match the value of the creative asset's
-   * creativeAssetId.name field.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Parameter value for the specified click tag. This field contains a click-
-   * through url.
-   *
-   * @param CreativeClickThroughUrl $clickThroughUrl
+   * @param CreativeClickThroughUrl
    */
   public function setClickThroughUrl(CreativeClickThroughUrl $clickThroughUrl)
   {
@@ -56,11 +45,7 @@ class ClickTag extends \Google\Model
     return $this->clickThroughUrl;
   }
   /**
-   * Advertiser event name associated with the click tag. This field is used by
-   * DISPLAY_IMAGE_GALLERY and HTML5_BANNER creatives. Applicable to DISPLAY
-   * when the primary asset type is not HTML_IMAGE.
-   *
-   * @param string $eventName
+   * @param string
    */
   public function setEventName($eventName)
   {
@@ -74,11 +59,7 @@ class ClickTag extends \Google\Model
     return $this->eventName;
   }
   /**
-   * Parameter name for the specified click tag. For DISPLAY_IMAGE_GALLERY
-   * creative assets, this field must match the value of the creative asset's
-   * creativeAssetId.name field.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

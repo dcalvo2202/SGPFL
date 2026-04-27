@@ -29,7 +29,7 @@ class GoogleCloudDialogflowCxV3ResourceName extends \Google\Model
   public $name;
 
   /**
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -43,7 +43,7 @@ class GoogleCloudDialogflowCxV3ResourceName extends \Google\Model
     return $this->displayName;
   }
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

@@ -19,54 +19,22 @@ namespace Google\Service\Contentwarehouse;
 
 class GoogleCloudContentwarehouseV1HistogramQueryPropertyNameFilter extends \Google\Collection
 {
-  /**
-   * Count the documents per property name.
-   */
-  public const YA_XIS_HISTOGRAM_YAXIS_DOCUMENT = 'HISTOGRAM_YAXIS_DOCUMENT';
-  /**
-   * Count the properties per property name.
-   */
-  public const YA_XIS_HISTOGRAM_YAXIS_PROPERTY = 'HISTOGRAM_YAXIS_PROPERTY';
   protected $collection_key = 'propertyNames';
   /**
-   * This filter specifies the exact document schema(s)
-   * Document.document_schema_name to run histogram query against. It is
-   * optional. It will perform histogram for property names for all the document
-   * schemas if it is not set. At most 10 document schema names are allowed.
-   * Format: projects/{project_number}/locations/{location}/documentSchemas/{doc
-   * ument_schema_id}.
-   *
    * @var string[]
    */
   public $documentSchemas;
   /**
-   * It is optional. It will perform histogram for all the property names if it
-   * is not set. The properties need to be defined with the is_filterable flag
-   * set to true and the name of the property should be in the format:
-   * "schemaId.propertyName". The property needs to be defined in the schema.
-   * Example: the schema id is abc. Then the name of property for property
-   * MORTGAGE_TYPE will be "abc.MORTGAGE_TYPE".
-   *
    * @var string[]
    */
   public $propertyNames;
   /**
-   * By default, the y_axis is HISTOGRAM_YAXIS_DOCUMENT if this field is not
-   * set.
-   *
    * @var string
    */
   public $yAxis;
 
   /**
-   * This filter specifies the exact document schema(s)
-   * Document.document_schema_name to run histogram query against. It is
-   * optional. It will perform histogram for property names for all the document
-   * schemas if it is not set. At most 10 document schema names are allowed.
-   * Format: projects/{project_number}/locations/{location}/documentSchemas/{doc
-   * ument_schema_id}.
-   *
-   * @param string[] $documentSchemas
+   * @param string[]
    */
   public function setDocumentSchemas($documentSchemas)
   {
@@ -80,14 +48,7 @@ class GoogleCloudContentwarehouseV1HistogramQueryPropertyNameFilter extends \Goo
     return $this->documentSchemas;
   }
   /**
-   * It is optional. It will perform histogram for all the property names if it
-   * is not set. The properties need to be defined with the is_filterable flag
-   * set to true and the name of the property should be in the format:
-   * "schemaId.propertyName". The property needs to be defined in the schema.
-   * Example: the schema id is abc. Then the name of property for property
-   * MORTGAGE_TYPE will be "abc.MORTGAGE_TYPE".
-   *
-   * @param string[] $propertyNames
+   * @param string[]
    */
   public function setPropertyNames($propertyNames)
   {
@@ -101,19 +62,14 @@ class GoogleCloudContentwarehouseV1HistogramQueryPropertyNameFilter extends \Goo
     return $this->propertyNames;
   }
   /**
-   * By default, the y_axis is HISTOGRAM_YAXIS_DOCUMENT if this field is not
-   * set.
-   *
-   * Accepted values: HISTOGRAM_YAXIS_DOCUMENT, HISTOGRAM_YAXIS_PROPERTY
-   *
-   * @param self::Y_AXIS_* $yAxis
+   * @param string
    */
   public function setYAxis($yAxis)
   {
     $this->yAxis = $yAxis;
   }
   /**
-   * @return self::Y_AXIS_*
+   * @return string
    */
   public function getYAxis()
   {

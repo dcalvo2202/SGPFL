@@ -19,27 +19,13 @@ namespace Google\Service\CloudNaturalLanguage;
 
 class XPSImageObjectDetectionModelSpec extends \Google\Model
 {
-  public const STOP_REASON_TRAIN_STOP_REASON_UNSPECIFIED = 'TRAIN_STOP_REASON_UNSPECIFIED';
-  public const STOP_REASON_TRAIN_STOP_REASON_BUDGET_REACHED = 'TRAIN_STOP_REASON_BUDGET_REACHED';
   /**
-   * Model fully converged, can not be resumbed training.
-   */
-  public const STOP_REASON_TRAIN_STOP_REASON_MODEL_CONVERGED = 'TRAIN_STOP_REASON_MODEL_CONVERGED';
-  /**
-   * Model early converged, can be further trained till full convergency.
-   */
-  public const STOP_REASON_TRAIN_STOP_REASON_MODEL_EARLY_STOPPED = 'TRAIN_STOP_REASON_MODEL_EARLY_STOPPED';
-  /**
-   * Total number of classes.
-   *
    * @var string
    */
   public $classCount;
   protected $exportModelSpecType = XPSImageExportModelSpec::class;
   protected $exportModelSpecDataType = '';
   /**
-   * Max number of bounding box.
-   *
    * @var string
    */
   public $maxBoundingBoxCount;
@@ -48,24 +34,16 @@ class XPSImageObjectDetectionModelSpec extends \Google\Model
   protected $modelServingSpecType = XPSImageModelServingSpec::class;
   protected $modelServingSpecDataType = '';
   /**
-   * Stop reason for training job, e.g. 'TRAIN_BUDGET_REACHED',
-   * 'MODEL_CONVERGED'.
-   *
    * @var string
    */
   public $stopReason;
   /**
-   * The actual train cost of creating this model, expressed in node seconds,
-   * i.e. 3,600 value in this field means 1 node hour.
-   *
    * @var string
    */
   public $trainCostNodeSeconds;
 
   /**
-   * Total number of classes.
-   *
-   * @param string $classCount
+   * @param string
    */
   public function setClassCount($classCount)
   {
@@ -79,7 +57,7 @@ class XPSImageObjectDetectionModelSpec extends \Google\Model
     return $this->classCount;
   }
   /**
-   * @param XPSImageExportModelSpec $exportModelSpec
+   * @param XPSImageExportModelSpec
    */
   public function setExportModelSpec(XPSImageExportModelSpec $exportModelSpec)
   {
@@ -93,9 +71,7 @@ class XPSImageObjectDetectionModelSpec extends \Google\Model
     return $this->exportModelSpec;
   }
   /**
-   * Max number of bounding box.
-   *
-   * @param string $maxBoundingBoxCount
+   * @param string
    */
   public function setMaxBoundingBoxCount($maxBoundingBoxCount)
   {
@@ -109,9 +85,7 @@ class XPSImageObjectDetectionModelSpec extends \Google\Model
     return $this->maxBoundingBoxCount;
   }
   /**
-   * ## The fields below are only populated under uCAIP request scope.
-   *
-   * @param XPSImageModelArtifactSpec $modelArtifactSpec
+   * @param XPSImageModelArtifactSpec
    */
   public function setModelArtifactSpec(XPSImageModelArtifactSpec $modelArtifactSpec)
   {
@@ -125,7 +99,7 @@ class XPSImageObjectDetectionModelSpec extends \Google\Model
     return $this->modelArtifactSpec;
   }
   /**
-   * @param XPSImageModelServingSpec $modelServingSpec
+   * @param XPSImageModelServingSpec
    */
   public function setModelServingSpec(XPSImageModelServingSpec $modelServingSpec)
   {
@@ -139,31 +113,21 @@ class XPSImageObjectDetectionModelSpec extends \Google\Model
     return $this->modelServingSpec;
   }
   /**
-   * Stop reason for training job, e.g. 'TRAIN_BUDGET_REACHED',
-   * 'MODEL_CONVERGED'.
-   *
-   * Accepted values: TRAIN_STOP_REASON_UNSPECIFIED,
-   * TRAIN_STOP_REASON_BUDGET_REACHED, TRAIN_STOP_REASON_MODEL_CONVERGED,
-   * TRAIN_STOP_REASON_MODEL_EARLY_STOPPED
-   *
-   * @param self::STOP_REASON_* $stopReason
+   * @param string
    */
   public function setStopReason($stopReason)
   {
     $this->stopReason = $stopReason;
   }
   /**
-   * @return self::STOP_REASON_*
+   * @return string
    */
   public function getStopReason()
   {
     return $this->stopReason;
   }
   /**
-   * The actual train cost of creating this model, expressed in node seconds,
-   * i.e. 3,600 value in this field means 1 node hour.
-   *
-   * @param string $trainCostNodeSeconds
+   * @param string
    */
   public function setTrainCostNodeSeconds($trainCostNodeSeconds)
   {

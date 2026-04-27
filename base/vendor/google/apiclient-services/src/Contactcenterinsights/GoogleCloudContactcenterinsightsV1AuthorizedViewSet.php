@@ -20,35 +20,24 @@ namespace Google\Service\Contactcenterinsights;
 class GoogleCloudContactcenterinsightsV1AuthorizedViewSet extends \Google\Model
 {
   /**
-   * Output only. Create time.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Display Name. Limit 64 characters.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Identifier. The resource name of the AuthorizedViewSet. Format: projects/{p
-   * roject}/locations/{location}/authorizedViewSets/{authorized_view_set}
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Update time.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. Create time.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -62,9 +51,7 @@ class GoogleCloudContactcenterinsightsV1AuthorizedViewSet extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Display Name. Limit 64 characters.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -78,10 +65,7 @@ class GoogleCloudContactcenterinsightsV1AuthorizedViewSet extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Identifier. The resource name of the AuthorizedViewSet. Format: projects/{p
-   * roject}/locations/{location}/authorizedViewSets/{authorized_view_set}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -95,9 +79,7 @@ class GoogleCloudContactcenterinsightsV1AuthorizedViewSet extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Update time.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

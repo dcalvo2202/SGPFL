@@ -20,26 +20,16 @@ namespace Google\Service\CloudHealthcare;
 class KmsWrappedCryptoKey extends \Google\Model
 {
   /**
-   * Required. The resource name of the KMS CryptoKey to use for unwrapping. For
-   * example, `projects/{project_id}/locations/{location_id}/keyRings/{keyring}/
-   * cryptoKeys/{key}`.
-   *
    * @var string
    */
   public $cryptoKey;
   /**
-   * Required. The wrapped data crypto key.
-   *
    * @var string
    */
   public $wrappedKey;
 
   /**
-   * Required. The resource name of the KMS CryptoKey to use for unwrapping. For
-   * example, `projects/{project_id}/locations/{location_id}/keyRings/{keyring}/
-   * cryptoKeys/{key}`.
-   *
-   * @param string $cryptoKey
+   * @param string
    */
   public function setCryptoKey($cryptoKey)
   {
@@ -53,9 +43,7 @@ class KmsWrappedCryptoKey extends \Google\Model
     return $this->cryptoKey;
   }
   /**
-   * Required. The wrapped data crypto key.
-   *
-   * @param string $wrappedKey
+   * @param string
    */
   public function setWrappedKey($wrappedKey)
   {

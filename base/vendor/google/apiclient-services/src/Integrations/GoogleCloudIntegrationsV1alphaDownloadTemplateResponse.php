@@ -20,16 +20,12 @@ namespace Google\Service\Integrations;
 class GoogleCloudIntegrationsV1alphaDownloadTemplateResponse extends \Google\Model
 {
   /**
-   * String representation of the template.
-   *
    * @var string
    */
   public $content;
 
   /**
-   * String representation of the template.
-   *
-   * @param string $content
+   * @param string
    */
   public function setContent($content)
   {

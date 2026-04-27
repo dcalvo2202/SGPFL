@@ -20,28 +20,20 @@ namespace Google\Service\VMMigrationService;
 class AzureDiskDetails extends \Google\Model
 {
   /**
-   * Output only. Azure disk ID.
-   *
    * @var string
    */
   public $diskId;
   /**
-   * Output only. The ordinal number of the disk.
-   *
    * @var int
    */
   public $diskNumber;
   /**
-   * Output only. Size in GB.
-   *
    * @var string
    */
   public $sizeGb;
 
   /**
-   * Output only. Azure disk ID.
-   *
-   * @param string $diskId
+   * @param string
    */
   public function setDiskId($diskId)
   {
@@ -55,9 +47,7 @@ class AzureDiskDetails extends \Google\Model
     return $this->diskId;
   }
   /**
-   * Output only. The ordinal number of the disk.
-   *
-   * @param int $diskNumber
+   * @param int
    */
   public function setDiskNumber($diskNumber)
   {
@@ -71,9 +61,7 @@ class AzureDiskDetails extends \Google\Model
     return $this->diskNumber;
   }
   /**
-   * Output only. Size in GB.
-   *
-   * @param string $sizeGb
+   * @param string
    */
   public function setSizeGb($sizeGb)
   {

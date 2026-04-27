@@ -21,24 +21,18 @@ class Asps extends \Google\Collection
 {
   protected $collection_key = 'items';
   /**
-   * ETag of the resource.
-   *
    * @var string
    */
   public $etag;
   protected $itemsType = Asp::class;
   protected $itemsDataType = 'array';
   /**
-   * The type of the API resource. This is always `admin#directory#aspList`.
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * ETag of the resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -52,9 +46,7 @@ class Asps extends \Google\Collection
     return $this->etag;
   }
   /**
-   * A list of ASP resources.
-   *
-   * @param Asp[] $items
+   * @param Asp[]
    */
   public function setItems($items)
   {
@@ -68,9 +60,7 @@ class Asps extends \Google\Collection
     return $this->items;
   }
   /**
-   * The type of the API resource. This is always `admin#directory#aspList`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

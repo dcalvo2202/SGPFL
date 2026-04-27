@@ -24,9 +24,7 @@ class GooglePrivacyDlpV2KAnonymityResult extends \Google\Collection
   protected $equivalenceClassHistogramBucketsDataType = 'array';
 
   /**
-   * Histogram of k-anonymity equivalence classes.
-   *
-   * @param GooglePrivacyDlpV2KAnonymityHistogramBucket[] $equivalenceClassHistogramBuckets
+   * @param GooglePrivacyDlpV2KAnonymityHistogramBucket[]
    */
   public function setEquivalenceClassHistogramBuckets($equivalenceClassHistogramBuckets)
   {

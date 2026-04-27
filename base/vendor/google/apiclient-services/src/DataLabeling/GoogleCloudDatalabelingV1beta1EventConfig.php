@@ -21,35 +21,20 @@ class GoogleCloudDatalabelingV1beta1EventConfig extends \Google\Collection
 {
   protected $collection_key = 'annotationSpecSets';
   /**
-   * Required. The list of annotation spec set resource name. Similar to video
-   * classification, we support selecting event from multiple AnnotationSpecSet
-   * at the same time.
-   *
    * @var string[]
    */
   public $annotationSpecSets;
   /**
-   * Videos will be cut to smaller clips to make it easier for labelers to work
-   * on. Users can configure is field in seconds, if not set, default value is
-   * 60s.
-   *
    * @var int
    */
   public $clipLength;
   /**
-   * The overlap length between different video clips. Users can configure is
-   * field in seconds, if not set, default value is 1s.
-   *
    * @var int
    */
   public $overlapLength;
 
   /**
-   * Required. The list of annotation spec set resource name. Similar to video
-   * classification, we support selecting event from multiple AnnotationSpecSet
-   * at the same time.
-   *
-   * @param string[] $annotationSpecSets
+   * @param string[]
    */
   public function setAnnotationSpecSets($annotationSpecSets)
   {
@@ -63,11 +48,7 @@ class GoogleCloudDatalabelingV1beta1EventConfig extends \Google\Collection
     return $this->annotationSpecSets;
   }
   /**
-   * Videos will be cut to smaller clips to make it easier for labelers to work
-   * on. Users can configure is field in seconds, if not set, default value is
-   * 60s.
-   *
-   * @param int $clipLength
+   * @param int
    */
   public function setClipLength($clipLength)
   {
@@ -81,10 +62,7 @@ class GoogleCloudDatalabelingV1beta1EventConfig extends \Google\Collection
     return $this->clipLength;
   }
   /**
-   * The overlap length between different video clips. Users can configure is
-   * field in seconds, if not set, default value is 1s.
-   *
-   * @param int $overlapLength
+   * @param int
    */
   public function setOverlapLength($overlapLength)
   {

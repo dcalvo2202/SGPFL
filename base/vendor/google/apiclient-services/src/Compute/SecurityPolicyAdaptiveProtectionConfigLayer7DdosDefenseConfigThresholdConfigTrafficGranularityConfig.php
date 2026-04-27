@@ -19,36 +19,21 @@ namespace Google\Service\Compute;
 
 class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig extends \Google\Model
 {
-  public const TYPE_HTTP_HEADER_HOST = 'HTTP_HEADER_HOST';
-  public const TYPE_HTTP_PATH = 'HTTP_PATH';
-  public const TYPE_UNSPECIFIED_TYPE = 'UNSPECIFIED_TYPE';
   /**
-   * If enabled, traffic matching each unique value for the specified type
-   * constitutes a separate traffic unit. It can only be set to true if `value`
-   * is empty.
-   *
    * @var bool
    */
   public $enableEachUniqueValue;
   /**
-   * Type of this configuration.
-   *
    * @var string
    */
   public $type;
   /**
-   * Requests that match this value constitute a granular traffic unit.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * If enabled, traffic matching each unique value for the specified type
-   * constitutes a separate traffic unit. It can only be set to true if `value`
-   * is empty.
-   *
-   * @param bool $enableEachUniqueValue
+   * @param bool
    */
   public function setEnableEachUniqueValue($enableEachUniqueValue)
   {
@@ -62,27 +47,21 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
     return $this->enableEachUniqueValue;
   }
   /**
-   * Type of this configuration.
-   *
-   * Accepted values: HTTP_HEADER_HOST, HTTP_PATH, UNSPECIFIED_TYPE
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * Requests that match this value constitute a granular traffic unit.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

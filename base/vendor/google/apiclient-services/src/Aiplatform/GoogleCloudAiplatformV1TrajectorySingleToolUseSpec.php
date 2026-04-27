@@ -20,16 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1TrajectorySingleToolUseSpec extends \Google\Model
 {
   /**
-   * Required. Spec for tool name to be checked for in the predicted trajectory.
-   *
    * @var string
    */
   public $toolName;
 
   /**
-   * Required. Spec for tool name to be checked for in the predicted trajectory.
-   *
-   * @param string $toolName
+   * @param string
    */
   public function setToolName($toolName)
   {

@@ -24,7 +24,7 @@ class GoogleCloudApigeeV1ListApiProxiesResponse extends \Google\Collection
   protected $proxiesDataType = 'array';
 
   /**
-   * @param GoogleCloudApigeeV1ApiProxy[] $proxies
+   * @param GoogleCloudApigeeV1ApiProxy[]
    */
   public function setProxies($proxies)
   {

@@ -20,8 +20,6 @@ namespace Google\Service\Storage;
 class BucketStorageLayout extends \Google\Model
 {
   /**
-   * The name of the bucket.
-   *
    * @var string
    */
   public $bucket;
@@ -30,29 +28,20 @@ class BucketStorageLayout extends \Google\Model
   protected $hierarchicalNamespaceType = BucketStorageLayoutHierarchicalNamespace::class;
   protected $hierarchicalNamespaceDataType = '';
   /**
-   * The kind of item this is. For storage layout, this is always
-   * storage#storageLayout.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The location of the bucket.
-   *
    * @var string
    */
   public $location;
   /**
-   * The type of the bucket location.
-   *
    * @var string
    */
   public $locationType;
 
   /**
-   * The name of the bucket.
-   *
-   * @param string $bucket
+   * @param string
    */
   public function setBucket($bucket)
   {
@@ -66,9 +55,7 @@ class BucketStorageLayout extends \Google\Model
     return $this->bucket;
   }
   /**
-   * The bucket's custom placement configuration for Custom Dual Regions.
-   *
-   * @param BucketStorageLayoutCustomPlacementConfig $customPlacementConfig
+   * @param BucketStorageLayoutCustomPlacementConfig
    */
   public function setCustomPlacementConfig(BucketStorageLayoutCustomPlacementConfig $customPlacementConfig)
   {
@@ -82,9 +69,7 @@ class BucketStorageLayout extends \Google\Model
     return $this->customPlacementConfig;
   }
   /**
-   * The bucket's hierarchical namespace configuration.
-   *
-   * @param BucketStorageLayoutHierarchicalNamespace $hierarchicalNamespace
+   * @param BucketStorageLayoutHierarchicalNamespace
    */
   public function setHierarchicalNamespace(BucketStorageLayoutHierarchicalNamespace $hierarchicalNamespace)
   {
@@ -98,10 +83,7 @@ class BucketStorageLayout extends \Google\Model
     return $this->hierarchicalNamespace;
   }
   /**
-   * The kind of item this is. For storage layout, this is always
-   * storage#storageLayout.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -115,9 +97,7 @@ class BucketStorageLayout extends \Google\Model
     return $this->kind;
   }
   /**
-   * The location of the bucket.
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -131,9 +111,7 @@ class BucketStorageLayout extends \Google\Model
     return $this->location;
   }
   /**
-   * The type of the bucket location.
-   *
-   * @param string $locationType
+   * @param string
    */
   public function setLocationType($locationType)
   {

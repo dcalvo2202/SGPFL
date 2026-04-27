@@ -29,7 +29,7 @@ class GoogleCloudDialogflowCxV3WebhookRequestSentimentAnalysisResult extends \Go
   public $score;
 
   /**
-   * @param float $magnitude
+   * @param float
    */
   public function setMagnitude($magnitude)
   {
@@ -43,7 +43,7 @@ class GoogleCloudDialogflowCxV3WebhookRequestSentimentAnalysisResult extends \Go
     return $this->magnitude;
   }
   /**
-   * @param float $score
+   * @param float
    */
   public function setScore($score)
   {

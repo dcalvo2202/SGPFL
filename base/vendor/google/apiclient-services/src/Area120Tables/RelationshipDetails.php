@@ -20,16 +20,12 @@ namespace Google\Service\Area120Tables;
 class RelationshipDetails extends \Google\Model
 {
   /**
-   * The name of the table this relationship is linked to.
-   *
    * @var string
    */
   public $linkedTable;
 
   /**
-   * The name of the table this relationship is linked to.
-   *
-   * @param string $linkedTable
+   * @param string
    */
   public function setLinkedTable($linkedTable)
   {

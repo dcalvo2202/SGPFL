@@ -22,26 +22,18 @@ class ContainerSpec extends \Google\Model
   protected $defaultEnvironmentType = FlexTemplateRuntimeEnvironment::class;
   protected $defaultEnvironmentDataType = '';
   /**
-   * Name of the docker container image. E.g., gcr.io/project/some-image
-   *
    * @var string
    */
   public $image;
   /**
-   * Cloud Storage path to self-signed certificate of private registry.
-   *
    * @var string
    */
   public $imageRepositoryCertPath;
   /**
-   * Secret Manager secret id for password to authenticate to private registry.
-   *
    * @var string
    */
   public $imageRepositoryPasswordSecretId;
   /**
-   * Secret Manager secret id for username to authenticate to private registry.
-   *
    * @var string
    */
   public $imageRepositoryUsernameSecretId;
@@ -51,9 +43,7 @@ class ContainerSpec extends \Google\Model
   protected $sdkInfoDataType = '';
 
   /**
-   * Default runtime environment for the job.
-   *
-   * @param FlexTemplateRuntimeEnvironment $defaultEnvironment
+   * @param FlexTemplateRuntimeEnvironment
    */
   public function setDefaultEnvironment(FlexTemplateRuntimeEnvironment $defaultEnvironment)
   {
@@ -67,9 +57,7 @@ class ContainerSpec extends \Google\Model
     return $this->defaultEnvironment;
   }
   /**
-   * Name of the docker container image. E.g., gcr.io/project/some-image
-   *
-   * @param string $image
+   * @param string
    */
   public function setImage($image)
   {
@@ -83,9 +71,7 @@ class ContainerSpec extends \Google\Model
     return $this->image;
   }
   /**
-   * Cloud Storage path to self-signed certificate of private registry.
-   *
-   * @param string $imageRepositoryCertPath
+   * @param string
    */
   public function setImageRepositoryCertPath($imageRepositoryCertPath)
   {
@@ -99,9 +85,7 @@ class ContainerSpec extends \Google\Model
     return $this->imageRepositoryCertPath;
   }
   /**
-   * Secret Manager secret id for password to authenticate to private registry.
-   *
-   * @param string $imageRepositoryPasswordSecretId
+   * @param string
    */
   public function setImageRepositoryPasswordSecretId($imageRepositoryPasswordSecretId)
   {
@@ -115,9 +99,7 @@ class ContainerSpec extends \Google\Model
     return $this->imageRepositoryPasswordSecretId;
   }
   /**
-   * Secret Manager secret id for username to authenticate to private registry.
-   *
-   * @param string $imageRepositoryUsernameSecretId
+   * @param string
    */
   public function setImageRepositoryUsernameSecretId($imageRepositoryUsernameSecretId)
   {
@@ -131,9 +113,7 @@ class ContainerSpec extends \Google\Model
     return $this->imageRepositoryUsernameSecretId;
   }
   /**
-   * Metadata describing a template including description and validation rules.
-   *
-   * @param TemplateMetadata $metadata
+   * @param TemplateMetadata
    */
   public function setMetadata(TemplateMetadata $metadata)
   {
@@ -147,9 +127,7 @@ class ContainerSpec extends \Google\Model
     return $this->metadata;
   }
   /**
-   * Required. SDK info of the Flex Template.
-   *
-   * @param SDKInfo $sdkInfo
+   * @param SDKInfo
    */
   public function setSdkInfo(SDKInfo $sdkInfo)
   {

@@ -19,50 +19,23 @@ namespace Google\Service\Datastore;
 
 class ReadOptions extends \Google\Model
 {
-  /**
-   * Unspecified. This value must not be used.
-   */
-  public const READ_CONSISTENCY_READ_CONSISTENCY_UNSPECIFIED = 'READ_CONSISTENCY_UNSPECIFIED';
-  /**
-   * Strong consistency.
-   */
-  public const READ_CONSISTENCY_STRONG = 'STRONG';
-  /**
-   * Eventual consistency.
-   */
-  public const READ_CONSISTENCY_EVENTUAL = 'EVENTUAL';
   protected $newTransactionType = TransactionOptions::class;
   protected $newTransactionDataType = '';
   /**
-   * The non-transactional read consistency to use.
-   *
    * @var string
    */
   public $readConsistency;
   /**
-   * Reads entities as they were at the given time. This value is only supported
-   * for Cloud Firestore in Datastore mode. This must be a microsecond precision
-   * timestamp within the past one hour, or if Point-in-Time Recovery is
-   * enabled, can additionally be a whole minute timestamp within the past 7
-   * days.
-   *
    * @var string
    */
   public $readTime;
   /**
-   * The identifier of the transaction in which to read. A transaction
-   * identifier is returned by a call to Datastore.BeginTransaction.
-   *
    * @var string
    */
   public $transaction;
 
   /**
-   * Options for beginning a new transaction for this request. The new
-   * transaction identifier will be returned in the corresponding response as
-   * either LookupResponse.transaction or RunQueryResponse.transaction.
-   *
-   * @param TransactionOptions $newTransaction
+   * @param TransactionOptions
    */
   public function setNewTransaction(TransactionOptions $newTransaction)
   {
@@ -76,31 +49,21 @@ class ReadOptions extends \Google\Model
     return $this->newTransaction;
   }
   /**
-   * The non-transactional read consistency to use.
-   *
-   * Accepted values: READ_CONSISTENCY_UNSPECIFIED, STRONG, EVENTUAL
-   *
-   * @param self::READ_CONSISTENCY_* $readConsistency
+   * @param string
    */
   public function setReadConsistency($readConsistency)
   {
     $this->readConsistency = $readConsistency;
   }
   /**
-   * @return self::READ_CONSISTENCY_*
+   * @return string
    */
   public function getReadConsistency()
   {
     return $this->readConsistency;
   }
   /**
-   * Reads entities as they were at the given time. This value is only supported
-   * for Cloud Firestore in Datastore mode. This must be a microsecond precision
-   * timestamp within the past one hour, or if Point-in-Time Recovery is
-   * enabled, can additionally be a whole minute timestamp within the past 7
-   * days.
-   *
-   * @param string $readTime
+   * @param string
    */
   public function setReadTime($readTime)
   {
@@ -114,10 +77,7 @@ class ReadOptions extends \Google\Model
     return $this->readTime;
   }
   /**
-   * The identifier of the transaction in which to read. A transaction
-   * identifier is returned by a call to Datastore.BeginTransaction.
-   *
-   * @param string $transaction
+   * @param string
    */
   public function setTransaction($transaction)
   {

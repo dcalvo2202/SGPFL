@@ -23,17 +23,12 @@ class TransferDomainRequest extends \Google\Collection
   protected $authorizationCodeType = AuthorizationCode::class;
   protected $authorizationCodeDataType = '';
   /**
-   * The list of contact notices that you acknowledge. The notices needed here
-   * depend on the values specified in `registration.contact_settings`.
-   *
    * @var string[]
    */
   public $contactNotices;
   protected $registrationType = Registration::class;
   protected $registrationDataType = '';
   /**
-   * Validate the request without actually transferring the domain.
-   *
    * @var bool
    */
   public $validateOnly;
@@ -41,10 +36,7 @@ class TransferDomainRequest extends \Google\Collection
   protected $yearlyPriceDataType = '';
 
   /**
-   * The domain's transfer authorization code. You can obtain this from the
-   * domain's current registrar.
-   *
-   * @param AuthorizationCode $authorizationCode
+   * @param AuthorizationCode
    */
   public function setAuthorizationCode(AuthorizationCode $authorizationCode)
   {
@@ -58,10 +50,7 @@ class TransferDomainRequest extends \Google\Collection
     return $this->authorizationCode;
   }
   /**
-   * The list of contact notices that you acknowledge. The notices needed here
-   * depend on the values specified in `registration.contact_settings`.
-   *
-   * @param string[] $contactNotices
+   * @param string[]
    */
   public function setContactNotices($contactNotices)
   {
@@ -75,13 +64,7 @@ class TransferDomainRequest extends \Google\Collection
     return $this->contactNotices;
   }
   /**
-   * Required. The complete `Registration` resource to be created. You can leave
-   * `registration.dns_settings` unset to import the domain's current DNS
-   * configuration from its current registrar. Use this option only if you are
-   * sure that the domain's current DNS service does not cease upon transfer, as
-   * is often the case for DNS services provided for free by the registrar.
-   *
-   * @param Registration $registration
+   * @param Registration
    */
   public function setRegistration(Registration $registration)
   {
@@ -95,9 +78,7 @@ class TransferDomainRequest extends \Google\Collection
     return $this->registration;
   }
   /**
-   * Validate the request without actually transferring the domain.
-   *
-   * @param bool $validateOnly
+   * @param bool
    */
   public function setValidateOnly($validateOnly)
   {
@@ -111,11 +92,7 @@ class TransferDomainRequest extends \Google\Collection
     return $this->validateOnly;
   }
   /**
-   * Required. Acknowledgement of the price to transfer or renew the domain for
-   * one year. Call `RetrieveTransferParameters` to obtain the price, which you
-   * must acknowledge.
-   *
-   * @param Money $yearlyPrice
+   * @param Money
    */
   public function setYearlyPrice(Money $yearlyPrice)
   {

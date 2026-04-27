@@ -25,9 +25,6 @@ class CrossDimensionReachReportCompatibleFields extends \Google\Collection
   protected $dimensionFiltersType = Dimension::class;
   protected $dimensionFiltersDataType = 'array';
   /**
-   * The kind of resource this is, in this case
-   * dfareporting#crossDimensionReachReportCompatibleFields.
-   *
    * @var string
    */
   public $kind;
@@ -37,10 +34,7 @@ class CrossDimensionReachReportCompatibleFields extends \Google\Collection
   protected $overlapMetricsDataType = 'array';
 
   /**
-   * Dimensions which are compatible to be selected in the "breakdown" section
-   * of the report.
-   *
-   * @param Dimension[] $breakdown
+   * @param Dimension[]
    */
   public function setBreakdown($breakdown)
   {
@@ -54,10 +48,7 @@ class CrossDimensionReachReportCompatibleFields extends \Google\Collection
     return $this->breakdown;
   }
   /**
-   * Dimensions which are compatible to be selected in the "dimensionFilters"
-   * section of the report.
-   *
-   * @param Dimension[] $dimensionFilters
+   * @param Dimension[]
    */
   public function setDimensionFilters($dimensionFilters)
   {
@@ -71,10 +62,7 @@ class CrossDimensionReachReportCompatibleFields extends \Google\Collection
     return $this->dimensionFilters;
   }
   /**
-   * The kind of resource this is, in this case
-   * dfareporting#crossDimensionReachReportCompatibleFields.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -88,10 +76,7 @@ class CrossDimensionReachReportCompatibleFields extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Metrics which are compatible to be selected in the "metricNames" section of
-   * the report.
-   *
-   * @param Metric[] $metrics
+   * @param Metric[]
    */
   public function setMetrics($metrics)
   {
@@ -105,10 +90,7 @@ class CrossDimensionReachReportCompatibleFields extends \Google\Collection
     return $this->metrics;
   }
   /**
-   * Metrics which are compatible to be selected in the "overlapMetricNames"
-   * section of the report.
-   *
-   * @param Metric[] $overlapMetrics
+   * @param Metric[]
    */
   public function setOverlapMetrics($overlapMetrics)
   {

@@ -19,37 +19,26 @@ namespace Google\Service\Compute;
 
 class BgpRoute extends \Google\Collection
 {
-  public const ORIGIN_BGP_ORIGIN_EGP = 'BGP_ORIGIN_EGP';
-  public const ORIGIN_BGP_ORIGIN_IGP = 'BGP_ORIGIN_IGP';
-  public const ORIGIN_BGP_ORIGIN_INCOMPLETE = 'BGP_ORIGIN_INCOMPLETE';
   protected $collection_key = 'communities';
   protected $asPathsType = BgpRouteAsPath::class;
   protected $asPathsDataType = 'array';
   /**
-   * Output only. [Output only] BGP communities in human-readable A:B format.
-   *
    * @var string[]
    */
   public $communities;
   protected $destinationType = BgpRouteNetworkLayerReachabilityInformation::class;
   protected $destinationDataType = '';
   /**
-   * Output only. [Output only] BGP multi-exit discriminator
-   *
    * @var string
    */
   public $med;
   /**
-   * Output only. [Output only] BGP origin (EGP, IGP or INCOMPLETE)
-   *
    * @var string
    */
   public $origin;
 
   /**
-   * Output only. [Output only] AS-PATH for the route
-   *
-   * @param BgpRouteAsPath[] $asPaths
+   * @param BgpRouteAsPath[]
    */
   public function setAsPaths($asPaths)
   {
@@ -63,9 +52,7 @@ class BgpRoute extends \Google\Collection
     return $this->asPaths;
   }
   /**
-   * Output only. [Output only] BGP communities in human-readable A:B format.
-   *
-   * @param string[] $communities
+   * @param string[]
    */
   public function setCommunities($communities)
   {
@@ -79,10 +66,7 @@ class BgpRoute extends \Google\Collection
     return $this->communities;
   }
   /**
-   * Output only. [Output only] Destination IP range for the route, in human-
-   * readable CIDR format
-   *
-   * @param BgpRouteNetworkLayerReachabilityInformation $destination
+   * @param BgpRouteNetworkLayerReachabilityInformation
    */
   public function setDestination(BgpRouteNetworkLayerReachabilityInformation $destination)
   {
@@ -96,9 +80,7 @@ class BgpRoute extends \Google\Collection
     return $this->destination;
   }
   /**
-   * Output only. [Output only] BGP multi-exit discriminator
-   *
-   * @param string $med
+   * @param string
    */
   public function setMed($med)
   {
@@ -112,18 +94,14 @@ class BgpRoute extends \Google\Collection
     return $this->med;
   }
   /**
-   * Output only. [Output only] BGP origin (EGP, IGP or INCOMPLETE)
-   *
-   * Accepted values: BGP_ORIGIN_EGP, BGP_ORIGIN_IGP, BGP_ORIGIN_INCOMPLETE
-   *
-   * @param self::ORIGIN_* $origin
+   * @param string
    */
   public function setOrigin($origin)
   {
     $this->origin = $origin;
   }
   /**
-   * @return self::ORIGIN_*
+   * @return string
    */
   public function getOrigin()
   {

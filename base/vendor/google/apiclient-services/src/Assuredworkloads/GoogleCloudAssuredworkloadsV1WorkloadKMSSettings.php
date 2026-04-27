@@ -20,28 +20,16 @@ namespace Google\Service\Assuredworkloads;
 class GoogleCloudAssuredworkloadsV1WorkloadKMSSettings extends \Google\Model
 {
   /**
-   * Required. Input only. Immutable. The time at which the Key Management
-   * Service will automatically create a new version of the crypto key and mark
-   * it as the primary.
-   *
    * @var string
    */
   public $nextRotationTime;
   /**
-   * Required. Input only. Immutable. [next_rotation_time] will be advanced by
-   * this period when the Key Management Service automatically rotates a key.
-   * Must be at least 24 hours and at most 876,000 hours.
-   *
    * @var string
    */
   public $rotationPeriod;
 
   /**
-   * Required. Input only. Immutable. The time at which the Key Management
-   * Service will automatically create a new version of the crypto key and mark
-   * it as the primary.
-   *
-   * @param string $nextRotationTime
+   * @param string
    */
   public function setNextRotationTime($nextRotationTime)
   {
@@ -55,11 +43,7 @@ class GoogleCloudAssuredworkloadsV1WorkloadKMSSettings extends \Google\Model
     return $this->nextRotationTime;
   }
   /**
-   * Required. Input only. Immutable. [next_rotation_time] will be advanced by
-   * this period when the Key Management Service automatically rotates a key.
-   * Must be at least 24 hours and at most 876,000 hours.
-   *
-   * @param string $rotationPeriod
+   * @param string
    */
   public function setRotationPeriod($rotationPeriod)
   {

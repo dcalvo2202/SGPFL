@@ -23,19 +23,12 @@ class ListAccessProposalsResponse extends \Google\Collection
   protected $accessProposalsType = AccessProposal::class;
   protected $accessProposalsDataType = 'array';
   /**
-   * The continuation token for the next page of results. This will be absent if
-   * the end of the results list has been reached. If the token is rejected for
-   * any reason, it should be discarded, and pagination should be restarted from
-   * the first page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of access proposals. This field is only populated in Drive API v3.
-   *
-   * @param AccessProposal[] $accessProposals
+   * @param AccessProposal[]
    */
   public function setAccessProposals($accessProposals)
   {
@@ -49,12 +42,7 @@ class ListAccessProposalsResponse extends \Google\Collection
     return $this->accessProposals;
   }
   /**
-   * The continuation token for the next page of results. This will be absent if
-   * the end of the results list has been reached. If the token is rejected for
-   * any reason, it should be discarded, and pagination should be restarted from
-   * the first page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

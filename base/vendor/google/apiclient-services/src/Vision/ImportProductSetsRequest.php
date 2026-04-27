@@ -23,9 +23,7 @@ class ImportProductSetsRequest extends \Google\Model
   protected $inputConfigDataType = '';
 
   /**
-   * Required. The input content for the list of requests.
-   *
-   * @param ImportProductSetsInputConfig $inputConfig
+   * @param ImportProductSetsInputConfig
    */
   public function setInputConfig(ImportProductSetsInputConfig $inputConfig)
   {

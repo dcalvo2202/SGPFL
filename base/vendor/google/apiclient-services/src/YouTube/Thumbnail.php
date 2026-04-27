@@ -20,28 +20,20 @@ namespace Google\Service\YouTube;
 class Thumbnail extends \Google\Model
 {
   /**
-   * (Optional) Height of the thumbnail image.
-   *
    * @var string
    */
   public $height;
   /**
-   * The thumbnail image's URL.
-   *
    * @var string
    */
   public $url;
   /**
-   * (Optional) Width of the thumbnail image.
-   *
    * @var string
    */
   public $width;
 
   /**
-   * (Optional) Height of the thumbnail image.
-   *
-   * @param string $height
+   * @param string
    */
   public function setHeight($height)
   {
@@ -55,9 +47,7 @@ class Thumbnail extends \Google\Model
     return $this->height;
   }
   /**
-   * The thumbnail image's URL.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {
@@ -71,9 +61,7 @@ class Thumbnail extends \Google\Model
     return $this->url;
   }
   /**
-   * (Optional) Width of the thumbnail image.
-   *
-   * @param string $width
+   * @param string
    */
   public function setWidth($width)
   {

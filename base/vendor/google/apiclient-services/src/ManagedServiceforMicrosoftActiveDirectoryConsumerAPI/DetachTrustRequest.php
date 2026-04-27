@@ -23,9 +23,7 @@ class DetachTrustRequest extends \Google\Model
   protected $trustDataType = '';
 
   /**
-   * Required. The domain trust resource to removed.
-   *
-   * @param Trust $trust
+   * @param Trust
    */
   public function setTrust(Trust $trust)
   {

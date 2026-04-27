@@ -23,11 +23,7 @@ class ComputeTimeCursorResponse extends \Google\Model
   protected $cursorDataType = '';
 
   /**
-   * If present, the cursor references the first message with time greater than
-   * or equal to the specified target time. If such a message cannot be found,
-   * the cursor will be unset (i.e. `cursor` is not present).
-   *
-   * @param Cursor $cursor
+   * @param Cursor
    */
   public function setCursor(Cursor $cursor)
   {

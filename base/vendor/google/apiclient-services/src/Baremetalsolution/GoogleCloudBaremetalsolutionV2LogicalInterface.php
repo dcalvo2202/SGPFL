@@ -21,36 +21,24 @@ class GoogleCloudBaremetalsolutionV2LogicalInterface extends \Google\Collection
 {
   protected $collection_key = 'logicalNetworkInterfaces';
   /**
-   * The index of the logical interface mapping to the index of the hardware
-   * bond or nic on the chosen network template. This field is deprecated.
-   *
-   * @deprecated
    * @var int
    */
   public $interfaceIndex;
   protected $logicalNetworkInterfacesType = LogicalNetworkInterface::class;
   protected $logicalNetworkInterfacesDataType = 'array';
   /**
-   * Interface name. This is of syntax or and forms part of the network template
-   * name.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The index of the logical interface mapping to the index of the hardware
-   * bond or nic on the chosen network template. This field is deprecated.
-   *
-   * @deprecated
-   * @param int $interfaceIndex
+   * @param int
    */
   public function setInterfaceIndex($interfaceIndex)
   {
     $this->interfaceIndex = $interfaceIndex;
   }
   /**
-   * @deprecated
    * @return int
    */
   public function getInterfaceIndex()
@@ -58,9 +46,7 @@ class GoogleCloudBaremetalsolutionV2LogicalInterface extends \Google\Collection
     return $this->interfaceIndex;
   }
   /**
-   * List of logical network interfaces within a logical interface.
-   *
-   * @param LogicalNetworkInterface[] $logicalNetworkInterfaces
+   * @param LogicalNetworkInterface[]
    */
   public function setLogicalNetworkInterfaces($logicalNetworkInterfaces)
   {
@@ -74,10 +60,7 @@ class GoogleCloudBaremetalsolutionV2LogicalInterface extends \Google\Collection
     return $this->logicalNetworkInterfaces;
   }
   /**
-   * Interface name. This is of syntax or and forms part of the network template
-   * name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

@@ -19,101 +19,58 @@ namespace Google\Service\CloudSearch;
 
 class QueryOperator extends \Google\Collection
 {
-  /**
-   * Invalid value.
-   */
-  public const TYPE_UNKNOWN = 'UNKNOWN';
-  public const TYPE_INTEGER = 'INTEGER';
-  public const TYPE_DOUBLE = 'DOUBLE';
-  public const TYPE_TIMESTAMP = 'TIMESTAMP';
-  public const TYPE_BOOLEAN = 'BOOLEAN';
-  public const TYPE_ENUM = 'ENUM';
-  public const TYPE_DATE = 'DATE';
-  public const TYPE_TEXT = 'TEXT';
-  public const TYPE_HTML = 'HTML';
   protected $collection_key = 'enumValues';
   /**
-   * Display name of the operator
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Potential list of values for the opeatror field. This field is only filled
-   * when we can safely enumerate all the possible values of this operator.
-   *
    * @var string[]
    */
   public $enumValues;
   /**
-   * Indicates the operator name that can be used to isolate the property using
-   * the greater-than operator.
-   *
    * @var string
    */
   public $greaterThanOperatorName;
   /**
-   * Can this operator be used to get facets.
-   *
    * @var bool
    */
   public $isFacetable;
   /**
-   * Indicates if multiple values can be set for this property.
-   *
    * @var bool
    */
   public $isRepeatable;
   /**
-   * Will the property associated with this facet be returned as part of search
-   * results.
-   *
    * @var bool
    */
   public $isReturnable;
   /**
-   * Can this operator be used to sort results.
-   *
    * @var bool
    */
   public $isSortable;
   /**
-   * Can get suggestions for this field.
-   *
    * @var bool
    */
   public $isSuggestable;
   /**
-   * Indicates the operator name that can be used to isolate the property using
-   * the less-than operator.
-   *
    * @var string
    */
   public $lessThanOperatorName;
   /**
-   * The name of the object corresponding to the operator. This field is only
-   * filled for schema-specific operators, and is unset for common operators.
-   *
    * @var string
    */
   public $objectType;
   /**
-   * The name of the operator.
-   *
    * @var string
    */
   public $operatorName;
   /**
-   * The type of the operator.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Display name of the operator
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -127,10 +84,7 @@ class QueryOperator extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Potential list of values for the opeatror field. This field is only filled
-   * when we can safely enumerate all the possible values of this operator.
-   *
-   * @param string[] $enumValues
+   * @param string[]
    */
   public function setEnumValues($enumValues)
   {
@@ -144,10 +98,7 @@ class QueryOperator extends \Google\Collection
     return $this->enumValues;
   }
   /**
-   * Indicates the operator name that can be used to isolate the property using
-   * the greater-than operator.
-   *
-   * @param string $greaterThanOperatorName
+   * @param string
    */
   public function setGreaterThanOperatorName($greaterThanOperatorName)
   {
@@ -161,9 +112,7 @@ class QueryOperator extends \Google\Collection
     return $this->greaterThanOperatorName;
   }
   /**
-   * Can this operator be used to get facets.
-   *
-   * @param bool $isFacetable
+   * @param bool
    */
   public function setIsFacetable($isFacetable)
   {
@@ -177,9 +126,7 @@ class QueryOperator extends \Google\Collection
     return $this->isFacetable;
   }
   /**
-   * Indicates if multiple values can be set for this property.
-   *
-   * @param bool $isRepeatable
+   * @param bool
    */
   public function setIsRepeatable($isRepeatable)
   {
@@ -193,10 +140,7 @@ class QueryOperator extends \Google\Collection
     return $this->isRepeatable;
   }
   /**
-   * Will the property associated with this facet be returned as part of search
-   * results.
-   *
-   * @param bool $isReturnable
+   * @param bool
    */
   public function setIsReturnable($isReturnable)
   {
@@ -210,9 +154,7 @@ class QueryOperator extends \Google\Collection
     return $this->isReturnable;
   }
   /**
-   * Can this operator be used to sort results.
-   *
-   * @param bool $isSortable
+   * @param bool
    */
   public function setIsSortable($isSortable)
   {
@@ -226,9 +168,7 @@ class QueryOperator extends \Google\Collection
     return $this->isSortable;
   }
   /**
-   * Can get suggestions for this field.
-   *
-   * @param bool $isSuggestable
+   * @param bool
    */
   public function setIsSuggestable($isSuggestable)
   {
@@ -242,10 +182,7 @@ class QueryOperator extends \Google\Collection
     return $this->isSuggestable;
   }
   /**
-   * Indicates the operator name that can be used to isolate the property using
-   * the less-than operator.
-   *
-   * @param string $lessThanOperatorName
+   * @param string
    */
   public function setLessThanOperatorName($lessThanOperatorName)
   {
@@ -259,10 +196,7 @@ class QueryOperator extends \Google\Collection
     return $this->lessThanOperatorName;
   }
   /**
-   * The name of the object corresponding to the operator. This field is only
-   * filled for schema-specific operators, and is unset for common operators.
-   *
-   * @param string $objectType
+   * @param string
    */
   public function setObjectType($objectType)
   {
@@ -276,9 +210,7 @@ class QueryOperator extends \Google\Collection
     return $this->objectType;
   }
   /**
-   * The name of the operator.
-   *
-   * @param string $operatorName
+   * @param string
    */
   public function setOperatorName($operatorName)
   {
@@ -292,19 +224,14 @@ class QueryOperator extends \Google\Collection
     return $this->operatorName;
   }
   /**
-   * The type of the operator.
-   *
-   * Accepted values: UNKNOWN, INTEGER, DOUBLE, TIMESTAMP, BOOLEAN, ENUM, DATE,
-   * TEXT, HTML
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

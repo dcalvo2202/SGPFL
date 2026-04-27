@@ -21,72 +21,44 @@ class PlaylistSnippet extends \Google\Collection
 {
   protected $collection_key = 'tags';
   /**
-   * The ID that YouTube uses to uniquely identify the channel that published
-   * the playlist.
-   *
    * @var string
    */
   public $channelId;
   /**
-   * The channel title of the channel that the video belongs to.
-   *
    * @var string
    */
   public $channelTitle;
   /**
-   * The language of the playlist's default title and description.
-   *
    * @var string
    */
   public $defaultLanguage;
   /**
-   * The playlist's description.
-   *
    * @var string
    */
   public $description;
   protected $localizedType = PlaylistLocalization::class;
   protected $localizedDataType = '';
   /**
-   * The date and time that the playlist was created.
-   *
    * @var string
    */
   public $publishedAt;
   /**
-   * Keyword tags associated with the playlist.
-   *
-   * @deprecated
    * @var string[]
    */
   public $tags;
   /**
-   * Note: if the playlist has a custom thumbnail, this field will not be
-   * populated. The video id selected by the user that will be used as the
-   * thumbnail of this playlist. This field defaults to the first publicly
-   * viewable video in the playlist, if: 1. The user has never selected a video
-   * to be the thumbnail of the playlist. 2. The user selects a video to be the
-   * thumbnail, and then removes that video from the playlist. 3. The user
-   * selects a non-owned video to be the thumbnail, but that video becomes
-   * private, or gets deleted.
-   *
    * @var string
    */
   public $thumbnailVideoId;
   protected $thumbnailsType = ThumbnailDetails::class;
   protected $thumbnailsDataType = '';
   /**
-   * The playlist's title.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * The ID that YouTube uses to uniquely identify the channel that published
-   * the playlist.
-   *
-   * @param string $channelId
+   * @param string
    */
   public function setChannelId($channelId)
   {
@@ -100,9 +72,7 @@ class PlaylistSnippet extends \Google\Collection
     return $this->channelId;
   }
   /**
-   * The channel title of the channel that the video belongs to.
-   *
-   * @param string $channelTitle
+   * @param string
    */
   public function setChannelTitle($channelTitle)
   {
@@ -116,9 +86,7 @@ class PlaylistSnippet extends \Google\Collection
     return $this->channelTitle;
   }
   /**
-   * The language of the playlist's default title and description.
-   *
-   * @param string $defaultLanguage
+   * @param string
    */
   public function setDefaultLanguage($defaultLanguage)
   {
@@ -132,9 +100,7 @@ class PlaylistSnippet extends \Google\Collection
     return $this->defaultLanguage;
   }
   /**
-   * The playlist's description.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -148,9 +114,7 @@ class PlaylistSnippet extends \Google\Collection
     return $this->description;
   }
   /**
-   * Localized title and description, read-only.
-   *
-   * @param PlaylistLocalization $localized
+   * @param PlaylistLocalization
    */
   public function setLocalized(PlaylistLocalization $localized)
   {
@@ -164,9 +128,7 @@ class PlaylistSnippet extends \Google\Collection
     return $this->localized;
   }
   /**
-   * The date and time that the playlist was created.
-   *
-   * @param string $publishedAt
+   * @param string
    */
   public function setPublishedAt($publishedAt)
   {
@@ -180,17 +142,13 @@ class PlaylistSnippet extends \Google\Collection
     return $this->publishedAt;
   }
   /**
-   * Keyword tags associated with the playlist.
-   *
-   * @deprecated
-   * @param string[] $tags
+   * @param string[]
    */
   public function setTags($tags)
   {
     $this->tags = $tags;
   }
   /**
-   * @deprecated
    * @return string[]
    */
   public function getTags()
@@ -198,16 +156,7 @@ class PlaylistSnippet extends \Google\Collection
     return $this->tags;
   }
   /**
-   * Note: if the playlist has a custom thumbnail, this field will not be
-   * populated. The video id selected by the user that will be used as the
-   * thumbnail of this playlist. This field defaults to the first publicly
-   * viewable video in the playlist, if: 1. The user has never selected a video
-   * to be the thumbnail of the playlist. 2. The user selects a video to be the
-   * thumbnail, and then removes that video from the playlist. 3. The user
-   * selects a non-owned video to be the thumbnail, but that video becomes
-   * private, or gets deleted.
-   *
-   * @param string $thumbnailVideoId
+   * @param string
    */
   public function setThumbnailVideoId($thumbnailVideoId)
   {
@@ -221,11 +170,7 @@ class PlaylistSnippet extends \Google\Collection
     return $this->thumbnailVideoId;
   }
   /**
-   * A map of thumbnail images associated with the playlist. For each object in
-   * the map, the key is the name of the thumbnail image, and the value is an
-   * object that contains other information about the thumbnail.
-   *
-   * @param ThumbnailDetails $thumbnails
+   * @param ThumbnailDetails
    */
   public function setThumbnails(ThumbnailDetails $thumbnails)
   {
@@ -239,9 +184,7 @@ class PlaylistSnippet extends \Google\Collection
     return $this->thumbnails;
   }
   /**
-   * The playlist's title.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

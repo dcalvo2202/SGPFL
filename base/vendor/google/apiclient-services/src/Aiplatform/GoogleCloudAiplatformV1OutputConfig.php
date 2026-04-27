@@ -23,9 +23,7 @@ class GoogleCloudAiplatformV1OutputConfig extends \Google\Model
   protected $gcsDestinationDataType = '';
 
   /**
-   * Cloud storage destination for evaluation output.
-   *
-   * @param GoogleCloudAiplatformV1GcsDestination $gcsDestination
+   * @param GoogleCloudAiplatformV1GcsDestination
    */
   public function setGcsDestination(GoogleCloudAiplatformV1GcsDestination $gcsDestination)
   {

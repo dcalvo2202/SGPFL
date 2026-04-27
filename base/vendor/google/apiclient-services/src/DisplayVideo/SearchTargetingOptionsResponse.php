@@ -21,10 +21,6 @@ class SearchTargetingOptionsResponse extends \Google\Collection
 {
   protected $collection_key = 'targetingOptions';
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * page_token field in the subsequent call to `SearchTargetingOptions` method
-   * to retrieve the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -32,11 +28,7 @@ class SearchTargetingOptionsResponse extends \Google\Collection
   protected $targetingOptionsDataType = 'array';
 
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * page_token field in the subsequent call to `SearchTargetingOptions` method
-   * to retrieve the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -50,10 +42,7 @@ class SearchTargetingOptionsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The list of targeting options that match the search criteria. This list
-   * will be absent if empty.
-   *
-   * @param TargetingOption[] $targetingOptions
+   * @param TargetingOption[]
    */
   public function setTargetingOptions($targetingOptions)
   {

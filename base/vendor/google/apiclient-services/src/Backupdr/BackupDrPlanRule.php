@@ -20,24 +20,16 @@ namespace Google\Service\Backupdr;
 class BackupDrPlanRule extends \Google\Model
 {
   /**
-   * Output only. Timestamp of the latest successful backup created via this
-   * backup rule.
-   *
    * @var string
    */
   public $lastSuccessfulBackupTime;
   /**
-   * Output only. Unique Id of the backup rule.
-   *
    * @var string
    */
   public $ruleId;
 
   /**
-   * Output only. Timestamp of the latest successful backup created via this
-   * backup rule.
-   *
-   * @param string $lastSuccessfulBackupTime
+   * @param string
    */
   public function setLastSuccessfulBackupTime($lastSuccessfulBackupTime)
   {
@@ -51,9 +43,7 @@ class BackupDrPlanRule extends \Google\Model
     return $this->lastSuccessfulBackupTime;
   }
   /**
-   * Output only. Unique Id of the backup rule.
-   *
-   * @param string $ruleId
+   * @param string
    */
   public function setRuleId($ruleId)
   {

@@ -20,74 +20,37 @@ namespace Google\Service\AndroidEnterprise;
 class GoogleAuthenticationSettings extends \Google\Model
 {
   /**
-   * This value is unused.
-   */
-  public const DEDICATED_DEVICES_ALLOWED_dedicatedDevicesAllowedUnspecified = 'dedicatedDevicesAllowedUnspecified';
-  /**
-   * Dedicated devices are not allowed.
-   */
-  public const DEDICATED_DEVICES_ALLOWED_disallowed = 'disallowed';
-  /**
-   * Dedicated devices are allowed.
-   */
-  public const DEDICATED_DEVICES_ALLOWED_allowed = 'allowed';
-  /**
-   * This value is unused.
-   */
-  public const GOOGLE_AUTHENTICATION_REQUIRED_googleAuthenticationRequiredUnspecified = 'googleAuthenticationRequiredUnspecified';
-  /**
-   * Google authentication is not required.
-   */
-  public const GOOGLE_AUTHENTICATION_REQUIRED_notRequired = 'notRequired';
-  /**
-   * User is required to be successfully authenticated by Google.
-   */
-  public const GOOGLE_AUTHENTICATION_REQUIRED_required = 'required';
-  /**
-   * Whether dedicated devices are allowed.
-   *
    * @var string
    */
   public $dedicatedDevicesAllowed;
   /**
-   * Whether Google authentication is required.
-   *
    * @var string
    */
   public $googleAuthenticationRequired;
 
   /**
-   * Whether dedicated devices are allowed.
-   *
-   * Accepted values: dedicatedDevicesAllowedUnspecified, disallowed, allowed
-   *
-   * @param self::DEDICATED_DEVICES_ALLOWED_* $dedicatedDevicesAllowed
+   * @param string
    */
   public function setDedicatedDevicesAllowed($dedicatedDevicesAllowed)
   {
     $this->dedicatedDevicesAllowed = $dedicatedDevicesAllowed;
   }
   /**
-   * @return self::DEDICATED_DEVICES_ALLOWED_*
+   * @return string
    */
   public function getDedicatedDevicesAllowed()
   {
     return $this->dedicatedDevicesAllowed;
   }
   /**
-   * Whether Google authentication is required.
-   *
-   * Accepted values: googleAuthenticationRequiredUnspecified, notRequired,
-   * required
-   *
-   * @param self::GOOGLE_AUTHENTICATION_REQUIRED_* $googleAuthenticationRequired
+   * @param string
    */
   public function setGoogleAuthenticationRequired($googleAuthenticationRequired)
   {
     $this->googleAuthenticationRequired = $googleAuthenticationRequired;
   }
   /**
-   * @return self::GOOGLE_AUTHENTICATION_REQUIRED_*
+   * @return string
    */
   public function getGoogleAuthenticationRequired()
   {

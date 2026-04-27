@@ -19,23 +19,15 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowCxV3DetectIntentRequest extends \Google\Model
 {
-  public const RESPONSE_VIEW_DETECT_INTENT_RESPONSE_VIEW_UNSPECIFIED = 'DETECT_INTENT_RESPONSE_VIEW_UNSPECIFIED';
-  public const RESPONSE_VIEW_DETECT_INTENT_RESPONSE_VIEW_FULL = 'DETECT_INTENT_RESPONSE_VIEW_FULL';
-  public const RESPONSE_VIEW_DETECT_INTENT_RESPONSE_VIEW_BASIC = 'DETECT_INTENT_RESPONSE_VIEW_BASIC';
-  public const RESPONSE_VIEW_DETECT_INTENT_RESPONSE_VIEW_DEFAULT = 'DETECT_INTENT_RESPONSE_VIEW_DEFAULT';
   protected $outputAudioConfigType = GoogleCloudDialogflowCxV3OutputAudioConfig::class;
   protected $outputAudioConfigDataType = '';
   protected $queryInputType = GoogleCloudDialogflowCxV3QueryInput::class;
   protected $queryInputDataType = '';
   protected $queryParamsType = GoogleCloudDialogflowCxV3QueryParameters::class;
   protected $queryParamsDataType = '';
-  /**
-   * @var string
-   */
-  public $responseView;
 
   /**
-   * @param GoogleCloudDialogflowCxV3OutputAudioConfig $outputAudioConfig
+   * @param GoogleCloudDialogflowCxV3OutputAudioConfig
    */
   public function setOutputAudioConfig(GoogleCloudDialogflowCxV3OutputAudioConfig $outputAudioConfig)
   {
@@ -49,7 +41,7 @@ class GoogleCloudDialogflowCxV3DetectIntentRequest extends \Google\Model
     return $this->outputAudioConfig;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3QueryInput $queryInput
+   * @param GoogleCloudDialogflowCxV3QueryInput
    */
   public function setQueryInput(GoogleCloudDialogflowCxV3QueryInput $queryInput)
   {
@@ -63,7 +55,7 @@ class GoogleCloudDialogflowCxV3DetectIntentRequest extends \Google\Model
     return $this->queryInput;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3QueryParameters $queryParams
+   * @param GoogleCloudDialogflowCxV3QueryParameters
    */
   public function setQueryParams(GoogleCloudDialogflowCxV3QueryParameters $queryParams)
   {
@@ -75,20 +67,6 @@ class GoogleCloudDialogflowCxV3DetectIntentRequest extends \Google\Model
   public function getQueryParams()
   {
     return $this->queryParams;
-  }
-  /**
-   * @param self::RESPONSE_VIEW_* $responseView
-   */
-  public function setResponseView($responseView)
-  {
-    $this->responseView = $responseView;
-  }
-  /**
-   * @return self::RESPONSE_VIEW_*
-   */
-  public function getResponseView()
-  {
-    return $this->responseView;
   }
 }
 

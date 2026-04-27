@@ -20,85 +20,42 @@ namespace Google\Service\Dfareporting;
 class UserRolePermission extends \Google\Model
 {
   /**
-   * Not available by default.
-   */
-  public const AVAILABILITY_NOT_AVAILABLE_BY_DEFAULT = 'NOT_AVAILABLE_BY_DEFAULT';
-  /**
-   * Available by default to accounts only.
-   */
-  public const AVAILABILITY_ACCOUNT_BY_DEFAULT = 'ACCOUNT_BY_DEFAULT';
-  /**
-   * Available by default to both accounts and subaccounts.
-   */
-  public const AVAILABILITY_SUBACCOUNT_AND_ACCOUNT_BY_DEFAULT = 'SUBACCOUNT_AND_ACCOUNT_BY_DEFAULT';
-  /**
-   * Always available to accounts.
-   */
-  public const AVAILABILITY_ACCOUNT_ALWAYS = 'ACCOUNT_ALWAYS';
-  /**
-   * Always available to both accounts and subaccounts.
-   */
-  public const AVAILABILITY_SUBACCOUNT_AND_ACCOUNT_ALWAYS = 'SUBACCOUNT_AND_ACCOUNT_ALWAYS';
-  /**
-   * Available for user profile permissions only.
-   */
-  public const AVAILABILITY_USER_PROFILE_ONLY = 'USER_PROFILE_ONLY';
-  /**
-   * Levels of availability for a user role permission.
-   *
    * @var string
    */
   public $availability;
   /**
-   * ID of this user role permission.
-   *
    * @var string
    */
   public $id;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#userRolePermission".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Name of this user role permission.
-   *
    * @var string
    */
   public $name;
   /**
-   * ID of the permission group that this user role permission belongs to.
-   *
    * @var string
    */
   public $permissionGroupId;
 
   /**
-   * Levels of availability for a user role permission.
-   *
-   * Accepted values: NOT_AVAILABLE_BY_DEFAULT, ACCOUNT_BY_DEFAULT,
-   * SUBACCOUNT_AND_ACCOUNT_BY_DEFAULT, ACCOUNT_ALWAYS,
-   * SUBACCOUNT_AND_ACCOUNT_ALWAYS, USER_PROFILE_ONLY
-   *
-   * @param self::AVAILABILITY_* $availability
+   * @param string
    */
   public function setAvailability($availability)
   {
     $this->availability = $availability;
   }
   /**
-   * @return self::AVAILABILITY_*
+   * @return string
    */
   public function getAvailability()
   {
     return $this->availability;
   }
   /**
-   * ID of this user role permission.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -112,10 +69,7 @@ class UserRolePermission extends \Google\Model
     return $this->id;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#userRolePermission".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -129,9 +83,7 @@ class UserRolePermission extends \Google\Model
     return $this->kind;
   }
   /**
-   * Name of this user role permission.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -145,9 +97,7 @@ class UserRolePermission extends \Google\Model
     return $this->name;
   }
   /**
-   * ID of the permission group that this user role permission belongs to.
-   *
-   * @param string $permissionGroupId
+   * @param string
    */
   public function setPermissionGroupId($permissionGroupId)
   {

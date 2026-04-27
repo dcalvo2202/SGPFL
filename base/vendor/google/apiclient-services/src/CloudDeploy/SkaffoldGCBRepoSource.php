@@ -20,31 +20,20 @@ namespace Google\Service\CloudDeploy;
 class SkaffoldGCBRepoSource extends \Google\Model
 {
   /**
-   * Optional. Relative path from the repository root to the Skaffold Config
-   * file.
-   *
    * @var string
    */
   public $path;
   /**
-   * Optional. Branch or tag to use when cloning the repository.
-   *
    * @var string
    */
   public $ref;
   /**
-   * Required. Name of the Cloud Build V2 Repository. Format is projects/{projec
-   * t}/locations/{location}/connections/{connection}/repositories/{repository}.
-   *
    * @var string
    */
   public $repository;
 
   /**
-   * Optional. Relative path from the repository root to the Skaffold Config
-   * file.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {
@@ -58,9 +47,7 @@ class SkaffoldGCBRepoSource extends \Google\Model
     return $this->path;
   }
   /**
-   * Optional. Branch or tag to use when cloning the repository.
-   *
-   * @param string $ref
+   * @param string
    */
   public function setRef($ref)
   {
@@ -74,10 +61,7 @@ class SkaffoldGCBRepoSource extends \Google\Model
     return $this->ref;
   }
   /**
-   * Required. Name of the Cloud Build V2 Repository. Format is projects/{projec
-   * t}/locations/{location}/connections/{connection}/repositories/{repository}.
-   *
-   * @param string $repository
+   * @param string
    */
   public function setRepository($repository)
   {

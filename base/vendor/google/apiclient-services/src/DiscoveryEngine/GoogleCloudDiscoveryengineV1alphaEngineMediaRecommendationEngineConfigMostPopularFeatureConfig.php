@@ -20,20 +20,12 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1alphaEngineMediaRecommendationEngineConfigMostPopularFeatureConfig extends \Google\Model
 {
   /**
-   * The time window of which the engine is queried at training and prediction
-   * time. Positive integers only. The value translates to the last X days of
-   * events. Currently required for the `most-popular-items` engine.
-   *
    * @var string
    */
   public $timeWindowDays;
 
   /**
-   * The time window of which the engine is queried at training and prediction
-   * time. Positive integers only. The value translates to the last X days of
-   * events. Currently required for the `most-popular-items` engine.
-   *
-   * @param string $timeWindowDays
+   * @param string
    */
   public function setTimeWindowDays($timeWindowDays)
   {

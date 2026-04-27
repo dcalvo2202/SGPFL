@@ -19,38 +19,6 @@ namespace Google\Service\Compute;
 
 class HealthStatusForNetworkEndpoint extends \Google\Model
 {
-  /**
-   * Endpoint is being drained.
-   */
-  public const HEALTH_STATE_DRAINING = 'DRAINING';
-  /**
-   * Endpoint is healthy.
-   */
-  public const HEALTH_STATE_HEALTHY = 'HEALTHY';
-  /**
-   * Endpoint is unhealthy.
-   */
-  public const HEALTH_STATE_UNHEALTHY = 'UNHEALTHY';
-  /**
-   * Health status of the endpoint is unknown.
-   */
-  public const HEALTH_STATE_UNKNOWN = 'UNKNOWN';
-  /**
-   * Endpoint is being drained.
-   */
-  public const IPV6_HEALTH_STATE_DRAINING = 'DRAINING';
-  /**
-   * Endpoint is healthy.
-   */
-  public const IPV6_HEALTH_STATE_HEALTHY = 'HEALTHY';
-  /**
-   * Endpoint is unhealthy.
-   */
-  public const IPV6_HEALTH_STATE_UNHEALTHY = 'UNHEALTHY';
-  /**
-   * Health status of the endpoint is unknown.
-   */
-  public const IPV6_HEALTH_STATE_UNKNOWN = 'UNKNOWN';
   protected $backendServiceType = BackendServiceReference::class;
   protected $backendServiceDataType = '';
   protected $forwardingRuleType = ForwardingRuleReference::class;
@@ -60,25 +28,16 @@ class HealthStatusForNetworkEndpoint extends \Google\Model
   protected $healthCheckServiceType = HealthCheckServiceReference::class;
   protected $healthCheckServiceDataType = '';
   /**
-   * Health state of the network endpoint determined based on the health checks
-   * configured.
-   *
    * @var string
    */
   public $healthState;
   /**
-   * Health state of the ipv6 network endpoint determined based on the health
-   * checks configured.
-   *
    * @var string
    */
   public $ipv6HealthState;
 
   /**
-   * URL of the backend service associated with the health state of the network
-   * endpoint.
-   *
-   * @param BackendServiceReference $backendService
+   * @param BackendServiceReference
    */
   public function setBackendService(BackendServiceReference $backendService)
   {
@@ -92,10 +51,7 @@ class HealthStatusForNetworkEndpoint extends \Google\Model
     return $this->backendService;
   }
   /**
-   * URL of the forwarding rule associated with the health state of the network
-   * endpoint.
-   *
-   * @param ForwardingRuleReference $forwardingRule
+   * @param ForwardingRuleReference
    */
   public function setForwardingRule(ForwardingRuleReference $forwardingRule)
   {
@@ -109,10 +65,7 @@ class HealthStatusForNetworkEndpoint extends \Google\Model
     return $this->forwardingRule;
   }
   /**
-   * URL of the health check associated with the health state of the network
-   * endpoint.
-   *
-   * @param HealthCheckReference $healthCheck
+   * @param HealthCheckReference
    */
   public function setHealthCheck(HealthCheckReference $healthCheck)
   {
@@ -126,10 +79,7 @@ class HealthStatusForNetworkEndpoint extends \Google\Model
     return $this->healthCheck;
   }
   /**
-   * URL of the health check service associated with the health state of the
-   * network endpoint.
-   *
-   * @param HealthCheckServiceReference $healthCheckService
+   * @param HealthCheckServiceReference
    */
   public function setHealthCheckService(HealthCheckServiceReference $healthCheckService)
   {
@@ -143,38 +93,28 @@ class HealthStatusForNetworkEndpoint extends \Google\Model
     return $this->healthCheckService;
   }
   /**
-   * Health state of the network endpoint determined based on the health checks
-   * configured.
-   *
-   * Accepted values: DRAINING, HEALTHY, UNHEALTHY, UNKNOWN
-   *
-   * @param self::HEALTH_STATE_* $healthState
+   * @param string
    */
   public function setHealthState($healthState)
   {
     $this->healthState = $healthState;
   }
   /**
-   * @return self::HEALTH_STATE_*
+   * @return string
    */
   public function getHealthState()
   {
     return $this->healthState;
   }
   /**
-   * Health state of the ipv6 network endpoint determined based on the health
-   * checks configured.
-   *
-   * Accepted values: DRAINING, HEALTHY, UNHEALTHY, UNKNOWN
-   *
-   * @param self::IPV6_HEALTH_STATE_* $ipv6HealthState
+   * @param string
    */
   public function setIpv6HealthState($ipv6HealthState)
   {
     $this->ipv6HealthState = $ipv6HealthState;
   }
   /**
-   * @return self::IPV6_HEALTH_STATE_*
+   * @return string
    */
   public function getIpv6HealthState()
   {

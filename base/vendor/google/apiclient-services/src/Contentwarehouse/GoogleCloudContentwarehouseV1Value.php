@@ -20,8 +20,6 @@ namespace Google\Service\Contentwarehouse;
 class GoogleCloudContentwarehouseV1Value extends \Google\Model
 {
   /**
-   * Represents a boolean value.
-   *
    * @var bool
    */
   public $booleanValue;
@@ -30,20 +28,14 @@ class GoogleCloudContentwarehouseV1Value extends \Google\Model
   protected $enumValueType = GoogleCloudContentwarehouseV1EnumValue::class;
   protected $enumValueDataType = '';
   /**
-   * Represents a float value.
-   *
    * @var float
    */
   public $floatValue;
   /**
-   * Represents a integer value.
-   *
    * @var int
    */
   public $intValue;
   /**
-   * Represents a string value.
-   *
    * @var string
    */
   public $stringValue;
@@ -51,9 +43,7 @@ class GoogleCloudContentwarehouseV1Value extends \Google\Model
   protected $timestampValueDataType = '';
 
   /**
-   * Represents a boolean value.
-   *
-   * @param bool $booleanValue
+   * @param bool
    */
   public function setBooleanValue($booleanValue)
   {
@@ -67,9 +57,7 @@ class GoogleCloudContentwarehouseV1Value extends \Google\Model
     return $this->booleanValue;
   }
   /**
-   * Represents a datetime value.
-   *
-   * @param GoogleTypeDateTime $datetimeValue
+   * @param GoogleTypeDateTime
    */
   public function setDatetimeValue(GoogleTypeDateTime $datetimeValue)
   {
@@ -83,9 +71,7 @@ class GoogleCloudContentwarehouseV1Value extends \Google\Model
     return $this->datetimeValue;
   }
   /**
-   * Represents an enum value.
-   *
-   * @param GoogleCloudContentwarehouseV1EnumValue $enumValue
+   * @param GoogleCloudContentwarehouseV1EnumValue
    */
   public function setEnumValue(GoogleCloudContentwarehouseV1EnumValue $enumValue)
   {
@@ -99,9 +85,7 @@ class GoogleCloudContentwarehouseV1Value extends \Google\Model
     return $this->enumValue;
   }
   /**
-   * Represents a float value.
-   *
-   * @param float $floatValue
+   * @param float
    */
   public function setFloatValue($floatValue)
   {
@@ -115,9 +99,7 @@ class GoogleCloudContentwarehouseV1Value extends \Google\Model
     return $this->floatValue;
   }
   /**
-   * Represents a integer value.
-   *
-   * @param int $intValue
+   * @param int
    */
   public function setIntValue($intValue)
   {
@@ -131,9 +113,7 @@ class GoogleCloudContentwarehouseV1Value extends \Google\Model
     return $this->intValue;
   }
   /**
-   * Represents a string value.
-   *
-   * @param string $stringValue
+   * @param string
    */
   public function setStringValue($stringValue)
   {
@@ -147,9 +127,7 @@ class GoogleCloudContentwarehouseV1Value extends \Google\Model
     return $this->stringValue;
   }
   /**
-   * Represents a timestamp value.
-   *
-   * @param GoogleCloudContentwarehouseV1TimestampValue $timestampValue
+   * @param GoogleCloudContentwarehouseV1TimestampValue
    */
   public function setTimestampValue(GoogleCloudContentwarehouseV1TimestampValue $timestampValue)
   {

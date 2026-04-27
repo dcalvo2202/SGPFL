@@ -25,16 +25,12 @@ class GoogleCloudRetailV2alphaModelPageOptimizationConfigPanel extends \Google\C
   protected $defaultCandidateType = GoogleCloudRetailV2alphaModelPageOptimizationConfigCandidate::class;
   protected $defaultCandidateDataType = '';
   /**
-   * Optional. The name to display for the panel.
-   *
    * @var string
    */
   public $displayName;
 
   /**
-   * Required. The candidates to consider on the panel.
-   *
-   * @param GoogleCloudRetailV2alphaModelPageOptimizationConfigCandidate[] $candidates
+   * @param GoogleCloudRetailV2alphaModelPageOptimizationConfigCandidate[]
    */
   public function setCandidates($candidates)
   {
@@ -48,10 +44,7 @@ class GoogleCloudRetailV2alphaModelPageOptimizationConfigPanel extends \Google\C
     return $this->candidates;
   }
   /**
-   * Required. The default candidate. If the model fails at serving time, we
-   * fall back to the default.
-   *
-   * @param GoogleCloudRetailV2alphaModelPageOptimizationConfigCandidate $defaultCandidate
+   * @param GoogleCloudRetailV2alphaModelPageOptimizationConfigCandidate
    */
   public function setDefaultCandidate(GoogleCloudRetailV2alphaModelPageOptimizationConfigCandidate $defaultCandidate)
   {
@@ -65,9 +58,7 @@ class GoogleCloudRetailV2alphaModelPageOptimizationConfigPanel extends \Google\C
     return $this->defaultCandidate;
   }
   /**
-   * Optional. The name to display for the panel.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {

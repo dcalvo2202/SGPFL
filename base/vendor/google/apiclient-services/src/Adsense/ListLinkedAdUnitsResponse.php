@@ -23,17 +23,12 @@ class ListLinkedAdUnitsResponse extends \Google\Collection
   protected $adUnitsType = AdUnit::class;
   protected $adUnitsDataType = 'array';
   /**
-   * Continuation token used to page through ad units. To retrieve the next page
-   * of the results, set the next request's "page_token" value to this.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The ad units returned in the list response.
-   *
-   * @param AdUnit[] $adUnits
+   * @param AdUnit[]
    */
   public function setAdUnits($adUnits)
   {
@@ -47,10 +42,7 @@ class ListLinkedAdUnitsResponse extends \Google\Collection
     return $this->adUnits;
   }
   /**
-   * Continuation token used to page through ad units. To retrieve the next page
-   * of the results, set the next request's "page_token" value to this.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

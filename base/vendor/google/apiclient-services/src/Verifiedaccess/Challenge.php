@@ -20,16 +20,12 @@ namespace Google\Service\Verifiedaccess;
 class Challenge extends \Google\Model
 {
   /**
-   * Generated challenge, the bytes representation of SignedData.
-   *
    * @var string
    */
   public $challenge;
 
   /**
-   * Generated challenge, the bytes representation of SignedData.
-   *
-   * @param string $challenge
+   * @param string
    */
   public function setChallenge($challenge)
   {

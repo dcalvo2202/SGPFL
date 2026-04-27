@@ -35,9 +35,7 @@ class EvaluationMetrics extends \Google\Model
   protected $regressionMetricsDataType = '';
 
   /**
-   * Populated for ARIMA models.
-   *
-   * @param ArimaForecastingMetrics $arimaForecastingMetrics
+   * @param ArimaForecastingMetrics
    */
   public function setArimaForecastingMetrics(ArimaForecastingMetrics $arimaForecastingMetrics)
   {
@@ -51,9 +49,7 @@ class EvaluationMetrics extends \Google\Model
     return $this->arimaForecastingMetrics;
   }
   /**
-   * Populated for binary classification/classifier models.
-   *
-   * @param BinaryClassificationMetrics $binaryClassificationMetrics
+   * @param BinaryClassificationMetrics
    */
   public function setBinaryClassificationMetrics(BinaryClassificationMetrics $binaryClassificationMetrics)
   {
@@ -67,9 +63,7 @@ class EvaluationMetrics extends \Google\Model
     return $this->binaryClassificationMetrics;
   }
   /**
-   * Populated for clustering models.
-   *
-   * @param ClusteringMetrics $clusteringMetrics
+   * @param ClusteringMetrics
    */
   public function setClusteringMetrics(ClusteringMetrics $clusteringMetrics)
   {
@@ -83,10 +77,7 @@ class EvaluationMetrics extends \Google\Model
     return $this->clusteringMetrics;
   }
   /**
-   * Evaluation metrics when the model is a dimensionality reduction model,
-   * which currently includes PCA.
-   *
-   * @param DimensionalityReductionMetrics $dimensionalityReductionMetrics
+   * @param DimensionalityReductionMetrics
    */
   public function setDimensionalityReductionMetrics(DimensionalityReductionMetrics $dimensionalityReductionMetrics)
   {
@@ -100,9 +91,7 @@ class EvaluationMetrics extends \Google\Model
     return $this->dimensionalityReductionMetrics;
   }
   /**
-   * Populated for multi-class classification/classifier models.
-   *
-   * @param MultiClassClassificationMetrics $multiClassClassificationMetrics
+   * @param MultiClassClassificationMetrics
    */
   public function setMultiClassClassificationMetrics(MultiClassClassificationMetrics $multiClassClassificationMetrics)
   {
@@ -116,9 +105,7 @@ class EvaluationMetrics extends \Google\Model
     return $this->multiClassClassificationMetrics;
   }
   /**
-   * Populated for implicit feedback type matrix factorization models.
-   *
-   * @param RankingMetrics $rankingMetrics
+   * @param RankingMetrics
    */
   public function setRankingMetrics(RankingMetrics $rankingMetrics)
   {
@@ -132,10 +119,7 @@ class EvaluationMetrics extends \Google\Model
     return $this->rankingMetrics;
   }
   /**
-   * Populated for regression models and explicit feedback type matrix
-   * factorization models.
-   *
-   * @param RegressionMetrics $regressionMetrics
+   * @param RegressionMetrics
    */
   public function setRegressionMetrics(RegressionMetrics $regressionMetrics)
   {

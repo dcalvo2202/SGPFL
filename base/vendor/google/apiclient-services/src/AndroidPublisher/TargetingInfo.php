@@ -23,8 +23,6 @@ class TargetingInfo extends \Google\Collection
   protected $assetSliceSetType = AssetSliceSet::class;
   protected $assetSliceSetDataType = 'array';
   /**
-   * The package name of this app.
-   *
    * @var string
    */
   public $packageName;
@@ -32,9 +30,7 @@ class TargetingInfo extends \Google\Collection
   protected $variantDataType = 'array';
 
   /**
-   * List of created asset slices.
-   *
-   * @param AssetSliceSet[] $assetSliceSet
+   * @param AssetSliceSet[]
    */
   public function setAssetSliceSet($assetSliceSet)
   {
@@ -48,9 +44,7 @@ class TargetingInfo extends \Google\Collection
     return $this->assetSliceSet;
   }
   /**
-   * The package name of this app.
-   *
-   * @param string $packageName
+   * @param string
    */
   public function setPackageName($packageName)
   {
@@ -64,9 +58,7 @@ class TargetingInfo extends \Google\Collection
     return $this->packageName;
   }
   /**
-   * List of the created variants.
-   *
-   * @param SplitApkVariant[] $variant
+   * @param SplitApkVariant[]
    */
   public function setVariant($variant)
   {

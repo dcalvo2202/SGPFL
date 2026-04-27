@@ -28,7 +28,7 @@ class ListTestCasesResponse extends \Google\Collection
   protected $testCasesDataType = 'array';
 
   /**
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -42,9 +42,7 @@ class ListTestCasesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * List of test cases.
-   *
-   * @param TestCase[] $testCases
+   * @param TestCase[]
    */
   public function setTestCases($testCases)
   {

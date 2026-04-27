@@ -33,7 +33,7 @@ class SqlPlanMetric extends \Google\Model
   public $name;
 
   /**
-   * @param string $accumulatorId
+   * @param string
    */
   public function setAccumulatorId($accumulatorId)
   {
@@ -47,7 +47,7 @@ class SqlPlanMetric extends \Google\Model
     return $this->accumulatorId;
   }
   /**
-   * @param string $metricType
+   * @param string
    */
   public function setMetricType($metricType)
   {
@@ -61,7 +61,7 @@ class SqlPlanMetric extends \Google\Model
     return $this->metricType;
   }
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

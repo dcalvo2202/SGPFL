@@ -21,41 +21,28 @@ class CollectionStatusDestinationStatus extends \Google\Collection
 {
   protected $collection_key = 'pendingCountries';
   /**
-   * Country codes (ISO 3166-1 alpha-2) where the collection is approved.
-   *
    * @var string[]
    */
   public $approvedCountries;
   /**
-   * The name of the destination
-   *
    * @var string
    */
   public $destination;
   /**
-   * Country codes (ISO 3166-1 alpha-2) where the collection is disapproved.
-   *
    * @var string[]
    */
   public $disapprovedCountries;
   /**
-   * Country codes (ISO 3166-1 alpha-2) where the collection is pending
-   * approval.
-   *
    * @var string[]
    */
   public $pendingCountries;
   /**
-   * The status for the specified destination in the collections target country.
-   *
    * @var string
    */
   public $status;
 
   /**
-   * Country codes (ISO 3166-1 alpha-2) where the collection is approved.
-   *
-   * @param string[] $approvedCountries
+   * @param string[]
    */
   public function setApprovedCountries($approvedCountries)
   {
@@ -69,9 +56,7 @@ class CollectionStatusDestinationStatus extends \Google\Collection
     return $this->approvedCountries;
   }
   /**
-   * The name of the destination
-   *
-   * @param string $destination
+   * @param string
    */
   public function setDestination($destination)
   {
@@ -85,9 +70,7 @@ class CollectionStatusDestinationStatus extends \Google\Collection
     return $this->destination;
   }
   /**
-   * Country codes (ISO 3166-1 alpha-2) where the collection is disapproved.
-   *
-   * @param string[] $disapprovedCountries
+   * @param string[]
    */
   public function setDisapprovedCountries($disapprovedCountries)
   {
@@ -101,10 +84,7 @@ class CollectionStatusDestinationStatus extends \Google\Collection
     return $this->disapprovedCountries;
   }
   /**
-   * Country codes (ISO 3166-1 alpha-2) where the collection is pending
-   * approval.
-   *
-   * @param string[] $pendingCountries
+   * @param string[]
    */
   public function setPendingCountries($pendingCountries)
   {
@@ -118,9 +98,7 @@ class CollectionStatusDestinationStatus extends \Google\Collection
     return $this->pendingCountries;
   }
   /**
-   * The status for the specified destination in the collections target country.
-   *
-   * @param string $status
+   * @param string
    */
   public function setStatus($status)
   {

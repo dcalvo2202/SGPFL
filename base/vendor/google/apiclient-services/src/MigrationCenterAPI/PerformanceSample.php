@@ -28,17 +28,12 @@ class PerformanceSample extends \Google\Model
   protected $networkType = NetworkUsageSample::class;
   protected $networkDataType = '';
   /**
-   * Time the sample was collected. If omitted, the frame report time will be
-   * used.
-   *
    * @var string
    */
   public $sampleTime;
 
   /**
-   * CPU usage sample.
-   *
-   * @param CpuUsageSample $cpu
+   * @param CpuUsageSample
    */
   public function setCpu(CpuUsageSample $cpu)
   {
@@ -52,9 +47,7 @@ class PerformanceSample extends \Google\Model
     return $this->cpu;
   }
   /**
-   * Disk usage sample.
-   *
-   * @param DiskUsageSample $disk
+   * @param DiskUsageSample
    */
   public function setDisk(DiskUsageSample $disk)
   {
@@ -68,9 +61,7 @@ class PerformanceSample extends \Google\Model
     return $this->disk;
   }
   /**
-   * Memory usage sample.
-   *
-   * @param MemoryUsageSample $memory
+   * @param MemoryUsageSample
    */
   public function setMemory(MemoryUsageSample $memory)
   {
@@ -84,9 +75,7 @@ class PerformanceSample extends \Google\Model
     return $this->memory;
   }
   /**
-   * Network usage sample.
-   *
-   * @param NetworkUsageSample $network
+   * @param NetworkUsageSample
    */
   public function setNetwork(NetworkUsageSample $network)
   {
@@ -100,10 +89,7 @@ class PerformanceSample extends \Google\Model
     return $this->network;
   }
   /**
-   * Time the sample was collected. If omitted, the frame report time will be
-   * used.
-   *
-   * @param string $sampleTime
+   * @param string
    */
   public function setSampleTime($sampleTime)
   {

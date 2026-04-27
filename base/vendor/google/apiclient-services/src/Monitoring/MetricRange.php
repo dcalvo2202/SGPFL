@@ -22,18 +22,12 @@ class MetricRange extends \Google\Model
   protected $rangeType = GoogleMonitoringV3Range::class;
   protected $rangeDataType = '';
   /**
-   * A monitoring filter (https://cloud.google.com/monitoring/api/v3/filters)
-   * specifying the TimeSeries to use for evaluating window quality.
-   *
    * @var string
    */
   public $timeSeries;
 
   /**
-   * Range of values considered "good." For a one-sided range, set one bound to
-   * an infinite value.
-   *
-   * @param GoogleMonitoringV3Range $range
+   * @param GoogleMonitoringV3Range
    */
   public function setRange(GoogleMonitoringV3Range $range)
   {
@@ -47,10 +41,7 @@ class MetricRange extends \Google\Model
     return $this->range;
   }
   /**
-   * A monitoring filter (https://cloud.google.com/monitoring/api/v3/filters)
-   * specifying the TimeSeries to use for evaluating window quality.
-   *
-   * @param string $timeSeries
+   * @param string
    */
   public function setTimeSeries($timeSeries)
   {

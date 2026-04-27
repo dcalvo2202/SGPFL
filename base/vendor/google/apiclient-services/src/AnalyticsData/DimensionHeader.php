@@ -20,16 +20,12 @@ namespace Google\Service\AnalyticsData;
 class DimensionHeader extends \Google\Model
 {
   /**
-   * The dimension's name.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The dimension's name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

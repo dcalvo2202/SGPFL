@@ -24,10 +24,7 @@ class GoogleCloudApigeeV1GrpcOperationGroup extends \Google\Collection
   protected $operationConfigsDataType = 'array';
 
   /**
-   * Required. List of operation configurations for either Apigee API proxies
-   * that are associated with this API product.
-   *
-   * @param GoogleCloudApigeeV1GrpcOperationConfig[] $operationConfigs
+   * @param GoogleCloudApigeeV1GrpcOperationConfig[]
    */
   public function setOperationConfigs($operationConfigs)
   {

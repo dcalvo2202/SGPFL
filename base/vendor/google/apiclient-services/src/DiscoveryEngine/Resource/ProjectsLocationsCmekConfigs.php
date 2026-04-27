@@ -89,7 +89,7 @@ class ProjectsLocationsCmekConfigs extends \Google\Service\Resource
    *
    * @param string $name Required. The name of the CmekConfig of the form
    * `projects/{project}/locations/{location}/cmekConfig` or
-   * `projects/{project}/locations/{location}/cmekConfigs/{cmek_config}`.
+   * `projects/{project}/locations/{location}/cmekConfigs/{cmekConfig}`.
    * @param GoogleCloudDiscoveryengineV1CmekConfig $postBody
    * @param array $optParams Optional parameters.
    *

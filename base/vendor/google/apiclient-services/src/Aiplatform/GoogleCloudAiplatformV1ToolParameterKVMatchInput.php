@@ -26,9 +26,7 @@ class GoogleCloudAiplatformV1ToolParameterKVMatchInput extends \Google\Collectio
   protected $metricSpecDataType = '';
 
   /**
-   * Required. Repeated tool parameter key value match instances.
-   *
-   * @param GoogleCloudAiplatformV1ToolParameterKVMatchInstance[] $instances
+   * @param GoogleCloudAiplatformV1ToolParameterKVMatchInstance[]
    */
   public function setInstances($instances)
   {
@@ -42,9 +40,7 @@ class GoogleCloudAiplatformV1ToolParameterKVMatchInput extends \Google\Collectio
     return $this->instances;
   }
   /**
-   * Required. Spec for tool parameter key value match metric.
-   *
-   * @param GoogleCloudAiplatformV1ToolParameterKVMatchSpec $metricSpec
+   * @param GoogleCloudAiplatformV1ToolParameterKVMatchSpec
    */
   public function setMetricSpec(GoogleCloudAiplatformV1ToolParameterKVMatchSpec $metricSpec)
   {

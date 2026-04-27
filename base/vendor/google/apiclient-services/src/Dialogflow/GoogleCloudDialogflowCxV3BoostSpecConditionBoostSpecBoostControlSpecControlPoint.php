@@ -29,7 +29,7 @@ class GoogleCloudDialogflowCxV3BoostSpecConditionBoostSpecBoostControlSpecContro
   public $boostAmount;
 
   /**
-   * @param string $attributeValue
+   * @param string
    */
   public function setAttributeValue($attributeValue)
   {
@@ -43,7 +43,7 @@ class GoogleCloudDialogflowCxV3BoostSpecConditionBoostSpecBoostControlSpecContro
     return $this->attributeValue;
   }
   /**
-   * @param float $boostAmount
+   * @param float
    */
   public function setBoostAmount($boostAmount)
   {

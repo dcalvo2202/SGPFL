@@ -27,9 +27,7 @@ class Address extends \Google\Model
   protected $socketAddressDataType = '';
 
   /**
-   * Specifies a user-space address handled by :ref:`internal listeners `.
-   *
-   * @param EnvoyInternalAddress $envoyInternalAddress
+   * @param EnvoyInternalAddress
    */
   public function setEnvoyInternalAddress(EnvoyInternalAddress $envoyInternalAddress)
   {
@@ -43,7 +41,7 @@ class Address extends \Google\Model
     return $this->envoyInternalAddress;
   }
   /**
-   * @param Pipe $pipe
+   * @param Pipe
    */
   public function setPipe(Pipe $pipe)
   {
@@ -57,7 +55,7 @@ class Address extends \Google\Model
     return $this->pipe;
   }
   /**
-   * @param SocketAddress $socketAddress
+   * @param SocketAddress
    */
   public function setSocketAddress(SocketAddress $socketAddress)
   {

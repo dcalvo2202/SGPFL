@@ -20,8 +20,6 @@ namespace Google\Service\Slides;
 class TextRun extends \Google\Model
 {
   /**
-   * The text of this run.
-   *
    * @var string
    */
   public $content;
@@ -29,9 +27,7 @@ class TextRun extends \Google\Model
   protected $styleDataType = '';
 
   /**
-   * The text of this run.
-   *
-   * @param string $content
+   * @param string
    */
   public function setContent($content)
   {
@@ -45,9 +41,7 @@ class TextRun extends \Google\Model
     return $this->content;
   }
   /**
-   * The styling applied to this run.
-   *
-   * @param TextStyle $style
+   * @param TextStyle
    */
   public function setStyle(TextStyle $style)
   {

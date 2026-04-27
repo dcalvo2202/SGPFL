@@ -20,16 +20,12 @@ namespace Google\Service\Docs;
 class InsertInlineSheetsChartResponse extends \Google\Model
 {
   /**
-   * The object ID of the inserted chart.
-   *
    * @var string
    */
   public $objectId;
 
   /**
-   * The object ID of the inserted chart.
-   *
-   * @param string $objectId
+   * @param string
    */
   public function setObjectId($objectId)
   {

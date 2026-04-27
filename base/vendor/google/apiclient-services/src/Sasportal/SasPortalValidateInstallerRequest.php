@@ -20,31 +20,20 @@ namespace Google\Service\Sasportal;
 class SasPortalValidateInstallerRequest extends \Google\Model
 {
   /**
-   * Required. JSON Web Token signed using a CPI private key. Payload must
-   * include a "secret" claim whose value is the secret.
-   *
    * @var string
    */
   public $encodedSecret;
   /**
-   * Required. Unique installer id (CPI ID) from the Certified Professional
-   * Installers database.
-   *
    * @var string
    */
   public $installerId;
   /**
-   * Required. Secret returned by the GenerateSecret.
-   *
    * @var string
    */
   public $secret;
 
   /**
-   * Required. JSON Web Token signed using a CPI private key. Payload must
-   * include a "secret" claim whose value is the secret.
-   *
-   * @param string $encodedSecret
+   * @param string
    */
   public function setEncodedSecret($encodedSecret)
   {
@@ -58,10 +47,7 @@ class SasPortalValidateInstallerRequest extends \Google\Model
     return $this->encodedSecret;
   }
   /**
-   * Required. Unique installer id (CPI ID) from the Certified Professional
-   * Installers database.
-   *
-   * @param string $installerId
+   * @param string
    */
   public function setInstallerId($installerId)
   {
@@ -75,9 +61,7 @@ class SasPortalValidateInstallerRequest extends \Google\Model
     return $this->installerId;
   }
   /**
-   * Required. Secret returned by the GenerateSecret.
-   *
-   * @param string $secret
+   * @param string
    */
   public function setSecret($secret)
   {

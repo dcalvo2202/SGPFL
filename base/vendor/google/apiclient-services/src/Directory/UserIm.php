@@ -20,52 +20,32 @@ namespace Google\Service\Directory;
 class UserIm extends \Google\Model
 {
   /**
-   * Custom protocol.
-   *
    * @var string
    */
   public $customProtocol;
   /**
-   * Custom type.
-   *
    * @var string
    */
   public $customType;
   /**
-   * Instant messenger id.
-   *
    * @var string
    */
   public $im;
   /**
-   * If this is user's primary im. Only one entry could be marked as primary.
-   *
    * @var bool
    */
   public $primary;
   /**
-   * Protocol used in the instant messenger. It should be one of the values from
-   * ImProtocolTypes map. Similar to type it can take a CUSTOM value and specify
-   * the custom name in customProtocol field.
-   *
    * @var string
    */
   public $protocol;
   /**
-   * Each entry can have a type which indicates standard types of that entry.
-   * For example instant messengers could be of home work etc. In addition to
-   * the standard type an entry can have a custom type and can take any value.
-   * Such types should have the CUSTOM value as type and also have a customType
-   * value.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Custom protocol.
-   *
-   * @param string $customProtocol
+   * @param string
    */
   public function setCustomProtocol($customProtocol)
   {
@@ -79,9 +59,7 @@ class UserIm extends \Google\Model
     return $this->customProtocol;
   }
   /**
-   * Custom type.
-   *
-   * @param string $customType
+   * @param string
    */
   public function setCustomType($customType)
   {
@@ -95,9 +73,7 @@ class UserIm extends \Google\Model
     return $this->customType;
   }
   /**
-   * Instant messenger id.
-   *
-   * @param string $im
+   * @param string
    */
   public function setIm($im)
   {
@@ -111,9 +87,7 @@ class UserIm extends \Google\Model
     return $this->im;
   }
   /**
-   * If this is user's primary im. Only one entry could be marked as primary.
-   *
-   * @param bool $primary
+   * @param bool
    */
   public function setPrimary($primary)
   {
@@ -127,11 +101,7 @@ class UserIm extends \Google\Model
     return $this->primary;
   }
   /**
-   * Protocol used in the instant messenger. It should be one of the values from
-   * ImProtocolTypes map. Similar to type it can take a CUSTOM value and specify
-   * the custom name in customProtocol field.
-   *
-   * @param string $protocol
+   * @param string
    */
   public function setProtocol($protocol)
   {
@@ -145,13 +115,7 @@ class UserIm extends \Google\Model
     return $this->protocol;
   }
   /**
-   * Each entry can have a type which indicates standard types of that entry.
-   * For example instant messengers could be of home work etc. In addition to
-   * the standard type an entry can have a custom type and can take any value.
-   * Such types should have the CUSTOM value as type and also have a customType
-   * value.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

@@ -23,9 +23,7 @@ class GooglePrivacyDlpV2CryptoHashConfig extends \Google\Model
   protected $cryptoKeyDataType = '';
 
   /**
-   * The key used by the hash function.
-   *
-   * @param GooglePrivacyDlpV2CryptoKey $cryptoKey
+   * @param GooglePrivacyDlpV2CryptoKey
    */
   public function setCryptoKey(GooglePrivacyDlpV2CryptoKey $cryptoKey)
   {

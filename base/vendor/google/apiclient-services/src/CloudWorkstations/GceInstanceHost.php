@@ -20,28 +20,20 @@ namespace Google\Service\CloudWorkstations;
 class GceInstanceHost extends \Google\Model
 {
   /**
-   * Optional. Output only. The ID of the Compute Engine instance.
-   *
    * @var string
    */
   public $id;
   /**
-   * Optional. Output only. The name of the Compute Engine instance.
-   *
    * @var string
    */
   public $name;
   /**
-   * Optional. Output only. The zone of the Compute Engine instance.
-   *
    * @var string
    */
   public $zone;
 
   /**
-   * Optional. Output only. The ID of the Compute Engine instance.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -55,9 +47,7 @@ class GceInstanceHost extends \Google\Model
     return $this->id;
   }
   /**
-   * Optional. Output only. The name of the Compute Engine instance.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -71,9 +61,7 @@ class GceInstanceHost extends \Google\Model
     return $this->name;
   }
   /**
-   * Optional. Output only. The zone of the Compute Engine instance.
-   *
-   * @param string $zone
+   * @param string
    */
   public function setZone($zone)
   {

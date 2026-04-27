@@ -23,25 +23,16 @@ class ListCryptoKeyVersionsResponse extends \Google\Collection
   protected $cryptoKeyVersionsType = CryptoKeyVersion::class;
   protected $cryptoKeyVersionsDataType = 'array';
   /**
-   * A token to retrieve next page of results. Pass this value in
-   * ListCryptoKeyVersionsRequest.page_token to retrieve the next page of
-   * results.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * The total number of CryptoKeyVersions that matched the query. This field is
-   * not populated if ListCryptoKeyVersionsRequest.filter is applied.
-   *
    * @var int
    */
   public $totalSize;
 
   /**
-   * The list of CryptoKeyVersions.
-   *
-   * @param CryptoKeyVersion[] $cryptoKeyVersions
+   * @param CryptoKeyVersion[]
    */
   public function setCryptoKeyVersions($cryptoKeyVersions)
   {
@@ -55,11 +46,7 @@ class ListCryptoKeyVersionsResponse extends \Google\Collection
     return $this->cryptoKeyVersions;
   }
   /**
-   * A token to retrieve next page of results. Pass this value in
-   * ListCryptoKeyVersionsRequest.page_token to retrieve the next page of
-   * results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -73,10 +60,7 @@ class ListCryptoKeyVersionsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The total number of CryptoKeyVersions that matched the query. This field is
-   * not populated if ListCryptoKeyVersionsRequest.filter is applied.
-   *
-   * @param int $totalSize
+   * @param int
    */
   public function setTotalSize($totalSize)
   {

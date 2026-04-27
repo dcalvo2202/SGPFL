@@ -21,43 +21,24 @@ class CloudRunConfig extends \Google\Collection
 {
   protected $collection_key = 'stableRevisionTags';
   /**
-   * Optional. Whether Cloud Deploy should update the traffic stanza in a Cloud
-   * Run Service on the user's behalf to facilitate traffic splitting. This is
-   * required to be true for CanaryDeployments, but optional for
-   * CustomCanaryDeployments.
-   *
    * @var bool
    */
   public $automaticTrafficControl;
   /**
-   * Optional. A list of tags that are added to the canary revision while the
-   * canary phase is in progress.
-   *
    * @var string[]
    */
   public $canaryRevisionTags;
   /**
-   * Optional. A list of tags that are added to the prior revision while the
-   * canary phase is in progress.
-   *
    * @var string[]
    */
   public $priorRevisionTags;
   /**
-   * Optional. A list of tags that are added to the final stable revision when
-   * the stable phase is applied.
-   *
    * @var string[]
    */
   public $stableRevisionTags;
 
   /**
-   * Optional. Whether Cloud Deploy should update the traffic stanza in a Cloud
-   * Run Service on the user's behalf to facilitate traffic splitting. This is
-   * required to be true for CanaryDeployments, but optional for
-   * CustomCanaryDeployments.
-   *
-   * @param bool $automaticTrafficControl
+   * @param bool
    */
   public function setAutomaticTrafficControl($automaticTrafficControl)
   {
@@ -71,10 +52,7 @@ class CloudRunConfig extends \Google\Collection
     return $this->automaticTrafficControl;
   }
   /**
-   * Optional. A list of tags that are added to the canary revision while the
-   * canary phase is in progress.
-   *
-   * @param string[] $canaryRevisionTags
+   * @param string[]
    */
   public function setCanaryRevisionTags($canaryRevisionTags)
   {
@@ -88,10 +66,7 @@ class CloudRunConfig extends \Google\Collection
     return $this->canaryRevisionTags;
   }
   /**
-   * Optional. A list of tags that are added to the prior revision while the
-   * canary phase is in progress.
-   *
-   * @param string[] $priorRevisionTags
+   * @param string[]
    */
   public function setPriorRevisionTags($priorRevisionTags)
   {
@@ -105,10 +80,7 @@ class CloudRunConfig extends \Google\Collection
     return $this->priorRevisionTags;
   }
   /**
-   * Optional. A list of tags that are added to the final stable revision when
-   * the stable phase is applied.
-   *
-   * @param string[] $stableRevisionTags
+   * @param string[]
    */
   public function setStableRevisionTags($stableRevisionTags)
   {

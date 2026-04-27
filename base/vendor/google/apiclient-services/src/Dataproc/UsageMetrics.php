@@ -20,45 +20,32 @@ namespace Google\Service\Dataproc;
 class UsageMetrics extends \Google\Model
 {
   /**
-   * Optional. DEPRECATED Accelerator type being used, if any
-   *
    * @var string
    */
   public $acceleratorType;
   /**
-   * Optional. DEPRECATED Accelerator usage in (milliAccelerator x seconds) (see
-   * Dataproc Serverless pricing (https://cloud.google.com/dataproc-
-   * serverless/pricing)).
-   *
    * @var string
    */
   public $milliAcceleratorSeconds;
   /**
-   * Optional. DCU (Dataproc Compute Units) usage in (milliDCU x seconds) (see
-   * Dataproc Serverless pricing (https://cloud.google.com/dataproc-
-   * serverless/pricing)).
-   *
    * @var string
    */
   public $milliDcuSeconds;
   /**
-   * Optional. Shuffle storage usage in (GB x seconds) (see Dataproc Serverless
-   * pricing (https://cloud.google.com/dataproc-serverless/pricing)).
-   *
+   * @var string
+   */
+  public $milliSlotSeconds;
+  /**
    * @var string
    */
   public $shuffleStorageGbSeconds;
   /**
-   * Optional. The timestamp of the usage metrics.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Optional. DEPRECATED Accelerator type being used, if any
-   *
-   * @param string $acceleratorType
+   * @param string
    */
   public function setAcceleratorType($acceleratorType)
   {
@@ -72,11 +59,7 @@ class UsageMetrics extends \Google\Model
     return $this->acceleratorType;
   }
   /**
-   * Optional. DEPRECATED Accelerator usage in (milliAccelerator x seconds) (see
-   * Dataproc Serverless pricing (https://cloud.google.com/dataproc-
-   * serverless/pricing)).
-   *
-   * @param string $milliAcceleratorSeconds
+   * @param string
    */
   public function setMilliAcceleratorSeconds($milliAcceleratorSeconds)
   {
@@ -90,11 +73,7 @@ class UsageMetrics extends \Google\Model
     return $this->milliAcceleratorSeconds;
   }
   /**
-   * Optional. DCU (Dataproc Compute Units) usage in (milliDCU x seconds) (see
-   * Dataproc Serverless pricing (https://cloud.google.com/dataproc-
-   * serverless/pricing)).
-   *
-   * @param string $milliDcuSeconds
+   * @param string
    */
   public function setMilliDcuSeconds($milliDcuSeconds)
   {
@@ -108,10 +87,21 @@ class UsageMetrics extends \Google\Model
     return $this->milliDcuSeconds;
   }
   /**
-   * Optional. Shuffle storage usage in (GB x seconds) (see Dataproc Serverless
-   * pricing (https://cloud.google.com/dataproc-serverless/pricing)).
-   *
-   * @param string $shuffleStorageGbSeconds
+   * @param string
+   */
+  public function setMilliSlotSeconds($milliSlotSeconds)
+  {
+    $this->milliSlotSeconds = $milliSlotSeconds;
+  }
+  /**
+   * @return string
+   */
+  public function getMilliSlotSeconds()
+  {
+    return $this->milliSlotSeconds;
+  }
+  /**
+   * @param string
    */
   public function setShuffleStorageGbSeconds($shuffleStorageGbSeconds)
   {
@@ -125,9 +115,7 @@ class UsageMetrics extends \Google\Model
     return $this->shuffleStorageGbSeconds;
   }
   /**
-   * Optional. The timestamp of the usage metrics.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

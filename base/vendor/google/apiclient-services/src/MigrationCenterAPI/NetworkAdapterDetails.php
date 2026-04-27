@@ -20,24 +20,18 @@ namespace Google\Service\MigrationCenterAPI;
 class NetworkAdapterDetails extends \Google\Model
 {
   /**
-   * Network adapter type (e.g. VMXNET3).
-   *
    * @var string
    */
   public $adapterType;
   protected $addressesType = NetworkAddressList::class;
   protected $addressesDataType = '';
   /**
-   * MAC address.
-   *
    * @var string
    */
   public $macAddress;
 
   /**
-   * Network adapter type (e.g. VMXNET3).
-   *
-   * @param string $adapterType
+   * @param string
    */
   public function setAdapterType($adapterType)
   {
@@ -51,9 +45,7 @@ class NetworkAdapterDetails extends \Google\Model
     return $this->adapterType;
   }
   /**
-   * NetworkAddressList
-   *
-   * @param NetworkAddressList $addresses
+   * @param NetworkAddressList
    */
   public function setAddresses(NetworkAddressList $addresses)
   {
@@ -67,9 +59,7 @@ class NetworkAdapterDetails extends \Google\Model
     return $this->addresses;
   }
   /**
-   * MAC address.
-   *
-   * @param string $macAddress
+   * @param string
    */
   public function setMacAddress($macAddress)
   {

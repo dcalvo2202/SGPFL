@@ -20,20 +20,12 @@ namespace Google\Service\GKEOnPrem;
 class Fleet extends \Google\Model
 {
   /**
-   * Output only. The name of the managed fleet Membership resource associated
-   * to this cluster. Membership names are formatted as
-   * `projects//locations//memberships/`.
-   *
    * @var string
    */
   public $membership;
 
   /**
-   * Output only. The name of the managed fleet Membership resource associated
-   * to this cluster. Membership names are formatted as
-   * `projects//locations//memberships/`.
-   *
-   * @param string $membership
+   * @param string
    */
   public function setMembership($membership)
   {

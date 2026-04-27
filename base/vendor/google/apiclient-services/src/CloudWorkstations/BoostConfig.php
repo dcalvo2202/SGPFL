@@ -23,66 +23,28 @@ class BoostConfig extends \Google\Collection
   protected $acceleratorsType = Accelerator::class;
   protected $acceleratorsDataType = 'array';
   /**
-   * Optional. The size of the boot disk for the VM in gigabytes (GB). The
-   * minimum boot disk size is `30` GB. Defaults to `50` GB.
-   *
    * @var int
    */
   public $bootDiskSizeGb;
   /**
-   * Optional. Whether to enable nested virtualization on boosted Cloud
-   * Workstations VMs running using this boost configuration. Defaults to false.
-   * Nested virtualization lets you run virtual machine (VM) instances inside
-   * your workstation. Before enabling nested virtualization, consider the
-   * following important considerations. Cloud Workstations instances are
-   * subject to the [same restrictions as Compute Engine
-   * instances](https://cloud.google.com/compute/docs/instances/nested-
-   * virtualization/overview#restrictions): * **Organization policy**: projects,
-   * folders, or organizations may be restricted from creating nested VMs if the
-   * **Disable VM nested virtualization** constraint is enforced in the
-   * organization policy. For more information, see the Compute Engine section,
-   * [Checking whether nested virtualization is
-   * allowed](https://cloud.google.com/compute/docs/instances/nested-
-   * virtualization/managing-
-   * constraint#checking_whether_nested_virtualization_is_allowed). *
-   * **Performance**: nested VMs might experience a 10% or greater decrease in
-   * performance for workloads that are CPU-bound and possibly greater than a
-   * 10% decrease for workloads that are input/output bound. * **Machine Type**:
-   * nested virtualization can only be enabled on boost configurations that
-   * specify a machine_type in the N1 or N2 machine series.
-   *
    * @var bool
    */
   public $enableNestedVirtualization;
   /**
-   * Required. The ID to be used for the boost configuration.
-   *
    * @var string
    */
   public $id;
   /**
-   * Optional. The type of machine that boosted VM instances will use—for
-   * example, `e2-standard-4`. For more information about machine types that
-   * Cloud Workstations supports, see the list of [available machine
-   * types](https://cloud.google.com/workstations/docs/available-machine-types).
-   * Defaults to `e2-standard-4`.
-   *
    * @var string
    */
   public $machineType;
   /**
-   * Optional. The number of boost VMs that the system should keep idle so that
-   * workstations can be boosted quickly. Defaults to `0`.
-   *
    * @var int
    */
   public $poolSize;
 
   /**
-   * Optional. A list of the type and count of accelerator cards attached to the
-   * boost instance. Defaults to `none`.
-   *
-   * @param Accelerator[] $accelerators
+   * @param Accelerator[]
    */
   public function setAccelerators($accelerators)
   {
@@ -96,10 +58,7 @@ class BoostConfig extends \Google\Collection
     return $this->accelerators;
   }
   /**
-   * Optional. The size of the boot disk for the VM in gigabytes (GB). The
-   * minimum boot disk size is `30` GB. Defaults to `50` GB.
-   *
-   * @param int $bootDiskSizeGb
+   * @param int
    */
   public function setBootDiskSizeGb($bootDiskSizeGb)
   {
@@ -113,28 +72,7 @@ class BoostConfig extends \Google\Collection
     return $this->bootDiskSizeGb;
   }
   /**
-   * Optional. Whether to enable nested virtualization on boosted Cloud
-   * Workstations VMs running using this boost configuration. Defaults to false.
-   * Nested virtualization lets you run virtual machine (VM) instances inside
-   * your workstation. Before enabling nested virtualization, consider the
-   * following important considerations. Cloud Workstations instances are
-   * subject to the [same restrictions as Compute Engine
-   * instances](https://cloud.google.com/compute/docs/instances/nested-
-   * virtualization/overview#restrictions): * **Organization policy**: projects,
-   * folders, or organizations may be restricted from creating nested VMs if the
-   * **Disable VM nested virtualization** constraint is enforced in the
-   * organization policy. For more information, see the Compute Engine section,
-   * [Checking whether nested virtualization is
-   * allowed](https://cloud.google.com/compute/docs/instances/nested-
-   * virtualization/managing-
-   * constraint#checking_whether_nested_virtualization_is_allowed). *
-   * **Performance**: nested VMs might experience a 10% or greater decrease in
-   * performance for workloads that are CPU-bound and possibly greater than a
-   * 10% decrease for workloads that are input/output bound. * **Machine Type**:
-   * nested virtualization can only be enabled on boost configurations that
-   * specify a machine_type in the N1 or N2 machine series.
-   *
-   * @param bool $enableNestedVirtualization
+   * @param bool
    */
   public function setEnableNestedVirtualization($enableNestedVirtualization)
   {
@@ -148,9 +86,7 @@ class BoostConfig extends \Google\Collection
     return $this->enableNestedVirtualization;
   }
   /**
-   * Required. The ID to be used for the boost configuration.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -164,13 +100,7 @@ class BoostConfig extends \Google\Collection
     return $this->id;
   }
   /**
-   * Optional. The type of machine that boosted VM instances will use—for
-   * example, `e2-standard-4`. For more information about machine types that
-   * Cloud Workstations supports, see the list of [available machine
-   * types](https://cloud.google.com/workstations/docs/available-machine-types).
-   * Defaults to `e2-standard-4`.
-   *
-   * @param string $machineType
+   * @param string
    */
   public function setMachineType($machineType)
   {
@@ -184,10 +114,7 @@ class BoostConfig extends \Google\Collection
     return $this->machineType;
   }
   /**
-   * Optional. The number of boost VMs that the system should keep idle so that
-   * workstations can be boosted quickly. Defaults to `0`.
-   *
-   * @param int $poolSize
+   * @param int
    */
   public function setPoolSize($poolSize)
   {

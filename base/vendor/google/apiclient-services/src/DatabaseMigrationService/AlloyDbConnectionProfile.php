@@ -20,9 +20,6 @@ namespace Google\Service\DatabaseMigrationService;
 class AlloyDbConnectionProfile extends \Google\Model
 {
   /**
-   * Required. The AlloyDB cluster ID that this connection profile is associated
-   * with.
-   *
    * @var string
    */
   public $clusterId;
@@ -30,10 +27,7 @@ class AlloyDbConnectionProfile extends \Google\Model
   protected $settingsDataType = '';
 
   /**
-   * Required. The AlloyDB cluster ID that this connection profile is associated
-   * with.
-   *
-   * @param string $clusterId
+   * @param string
    */
   public function setClusterId($clusterId)
   {
@@ -47,9 +41,7 @@ class AlloyDbConnectionProfile extends \Google\Model
     return $this->clusterId;
   }
   /**
-   * Immutable. Metadata used to create the destination AlloyDB cluster.
-   *
-   * @param AlloyDbSettings $settings
+   * @param AlloyDbSettings
    */
   public function setSettings(AlloyDbSettings $settings)
   {

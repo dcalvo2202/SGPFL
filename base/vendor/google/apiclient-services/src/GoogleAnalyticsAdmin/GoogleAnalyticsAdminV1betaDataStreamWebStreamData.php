@@ -20,31 +20,20 @@ namespace Google\Service\GoogleAnalyticsAdmin;
 class GoogleAnalyticsAdminV1betaDataStreamWebStreamData extends \Google\Model
 {
   /**
-   * Domain name of the web app being measured, or empty. Example:
-   * "http://www.google.com", "https://www.google.com"
-   *
    * @var string
    */
   public $defaultUri;
   /**
-   * Output only. ID of the corresponding web app in Firebase, if any. This ID
-   * can change if the web app is deleted and recreated.
-   *
    * @var string
    */
   public $firebaseAppId;
   /**
-   * Output only. Analytics Measurement ID. Example: "G-1A2BCD345E"
-   *
    * @var string
    */
   public $measurementId;
 
   /**
-   * Domain name of the web app being measured, or empty. Example:
-   * "http://www.google.com", "https://www.google.com"
-   *
-   * @param string $defaultUri
+   * @param string
    */
   public function setDefaultUri($defaultUri)
   {
@@ -58,10 +47,7 @@ class GoogleAnalyticsAdminV1betaDataStreamWebStreamData extends \Google\Model
     return $this->defaultUri;
   }
   /**
-   * Output only. ID of the corresponding web app in Firebase, if any. This ID
-   * can change if the web app is deleted and recreated.
-   *
-   * @param string $firebaseAppId
+   * @param string
    */
   public function setFirebaseAppId($firebaseAppId)
   {
@@ -75,9 +61,7 @@ class GoogleAnalyticsAdminV1betaDataStreamWebStreamData extends \Google\Model
     return $this->firebaseAppId;
   }
   /**
-   * Output only. Analytics Measurement ID. Example: "G-1A2BCD345E"
-   *
-   * @param string $measurementId
+   * @param string
    */
   public function setMeasurementId($measurementId)
   {

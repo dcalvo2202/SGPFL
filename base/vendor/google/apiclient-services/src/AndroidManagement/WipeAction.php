@@ -20,25 +20,16 @@ namespace Google\Service\AndroidManagement;
 class WipeAction extends \Google\Model
 {
   /**
-   * Whether the factory-reset protection data is preserved on the device. This
-   * setting doesn’t apply to work profiles.
-   *
    * @var bool
    */
   public $preserveFrp;
   /**
-   * Number of days the policy is non-compliant before the device or work
-   * profile is wiped. wipeAfterDays must be greater than blockAfterDays.
-   *
    * @var int
    */
   public $wipeAfterDays;
 
   /**
-   * Whether the factory-reset protection data is preserved on the device. This
-   * setting doesn’t apply to work profiles.
-   *
-   * @param bool $preserveFrp
+   * @param bool
    */
   public function setPreserveFrp($preserveFrp)
   {
@@ -52,10 +43,7 @@ class WipeAction extends \Google\Model
     return $this->preserveFrp;
   }
   /**
-   * Number of days the policy is non-compliant before the device or work
-   * profile is wiped. wipeAfterDays must be greater than blockAfterDays.
-   *
-   * @param int $wipeAfterDays
+   * @param int
    */
   public function setWipeAfterDays($wipeAfterDays)
   {

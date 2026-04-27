@@ -24,11 +24,7 @@ class InappproductsBatchDeleteRequest extends \Google\Collection
   protected $requestsDataType = 'array';
 
   /**
-   * Individual delete requests. At least one request is required. Can contain
-   * up to 100 requests. All requests must correspond to different in-app
-   * products.
-   *
-   * @param InappproductsDeleteRequest[] $requests
+   * @param InappproductsDeleteRequest[]
    */
   public function setRequests($requests)
   {

@@ -21,9 +21,6 @@ class GoogleCloudDatacatalogLineageV1ListRunsResponse extends \Google\Collection
 {
   protected $collection_key = 'runs';
   /**
-   * The token to specify as `page_token` in the next call to get the next page.
-   * If this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GoogleCloudDatacatalogLineageV1ListRunsResponse extends \Google\Collection
   protected $runsDataType = 'array';
 
   /**
-   * The token to specify as `page_token` in the next call to get the next page.
-   * If this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class GoogleCloudDatacatalogLineageV1ListRunsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The runs from the specified project and location.
-   *
-   * @param GoogleCloudDatacatalogLineageV1Run[] $runs
+   * @param GoogleCloudDatacatalogLineageV1Run[]
    */
   public function setRuns($runs)
   {

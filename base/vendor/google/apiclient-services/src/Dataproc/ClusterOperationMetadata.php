@@ -21,38 +21,26 @@ class ClusterOperationMetadata extends \Google\Collection
 {
   protected $collection_key = 'warnings';
   /**
-   * Output only. Child operation ids
-   *
    * @var string[]
    */
   public $childOperationIds;
   /**
-   * Output only. Name of the cluster for the operation.
-   *
    * @var string
    */
   public $clusterName;
   /**
-   * Output only. Cluster UUID for the operation.
-   *
    * @var string
    */
   public $clusterUuid;
   /**
-   * Output only. Short description of operation.
-   *
    * @var string
    */
   public $description;
   /**
-   * Output only. Labels associated with the operation
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Output only. The operation type.
-   *
    * @var string
    */
   public $operationType;
@@ -61,16 +49,12 @@ class ClusterOperationMetadata extends \Google\Collection
   protected $statusHistoryType = ClusterOperationStatus::class;
   protected $statusHistoryDataType = 'array';
   /**
-   * Output only. Errors encountered during operation execution.
-   *
    * @var string[]
    */
   public $warnings;
 
   /**
-   * Output only. Child operation ids
-   *
-   * @param string[] $childOperationIds
+   * @param string[]
    */
   public function setChildOperationIds($childOperationIds)
   {
@@ -84,9 +68,7 @@ class ClusterOperationMetadata extends \Google\Collection
     return $this->childOperationIds;
   }
   /**
-   * Output only. Name of the cluster for the operation.
-   *
-   * @param string $clusterName
+   * @param string
    */
   public function setClusterName($clusterName)
   {
@@ -100,9 +82,7 @@ class ClusterOperationMetadata extends \Google\Collection
     return $this->clusterName;
   }
   /**
-   * Output only. Cluster UUID for the operation.
-   *
-   * @param string $clusterUuid
+   * @param string
    */
   public function setClusterUuid($clusterUuid)
   {
@@ -116,9 +96,7 @@ class ClusterOperationMetadata extends \Google\Collection
     return $this->clusterUuid;
   }
   /**
-   * Output only. Short description of operation.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -132,9 +110,7 @@ class ClusterOperationMetadata extends \Google\Collection
     return $this->description;
   }
   /**
-   * Output only. Labels associated with the operation
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -148,9 +124,7 @@ class ClusterOperationMetadata extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Output only. The operation type.
-   *
-   * @param string $operationType
+   * @param string
    */
   public function setOperationType($operationType)
   {
@@ -164,9 +138,7 @@ class ClusterOperationMetadata extends \Google\Collection
     return $this->operationType;
   }
   /**
-   * Output only. Current operation status.
-   *
-   * @param ClusterOperationStatus $status
+   * @param ClusterOperationStatus
    */
   public function setStatus(ClusterOperationStatus $status)
   {
@@ -180,9 +152,7 @@ class ClusterOperationMetadata extends \Google\Collection
     return $this->status;
   }
   /**
-   * Output only. The previous operation status.
-   *
-   * @param ClusterOperationStatus[] $statusHistory
+   * @param ClusterOperationStatus[]
    */
   public function setStatusHistory($statusHistory)
   {
@@ -196,9 +166,7 @@ class ClusterOperationMetadata extends \Google\Collection
     return $this->statusHistory;
   }
   /**
-   * Output only. Errors encountered during operation execution.
-   *
-   * @param string[] $warnings
+   * @param string[]
    */
   public function setWarnings($warnings)
   {

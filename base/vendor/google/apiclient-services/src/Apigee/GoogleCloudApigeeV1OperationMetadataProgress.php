@@ -19,39 +19,25 @@ namespace Google\Service\Apigee;
 
 class GoogleCloudApigeeV1OperationMetadataProgress extends \Google\Model
 {
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  public const STATE_NOT_STARTED = 'NOT_STARTED';
-  public const STATE_IN_PROGRESS = 'IN_PROGRESS';
-  public const STATE_FINISHED = 'FINISHED';
   /**
-   * Description of the operation's progress.
-   *
    * @var string
    */
   public $description;
   /**
-   * The additional details of the progress.
-   *
    * @var array[]
    */
   public $details;
   /**
-   * The percentage of the operation progress.
-   *
    * @var int
    */
   public $percentDone;
   /**
-   * State of the operation.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Description of the operation's progress.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -65,9 +51,7 @@ class GoogleCloudApigeeV1OperationMetadataProgress extends \Google\Model
     return $this->description;
   }
   /**
-   * The additional details of the progress.
-   *
-   * @param array[] $details
+   * @param array[]
    */
   public function setDetails($details)
   {
@@ -81,9 +65,7 @@ class GoogleCloudApigeeV1OperationMetadataProgress extends \Google\Model
     return $this->details;
   }
   /**
-   * The percentage of the operation progress.
-   *
-   * @param int $percentDone
+   * @param int
    */
   public function setPercentDone($percentDone)
   {
@@ -97,18 +79,14 @@ class GoogleCloudApigeeV1OperationMetadataProgress extends \Google\Model
     return $this->percentDone;
   }
   /**
-   * State of the operation.
-   *
-   * Accepted values: STATE_UNSPECIFIED, NOT_STARTED, IN_PROGRESS, FINISHED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

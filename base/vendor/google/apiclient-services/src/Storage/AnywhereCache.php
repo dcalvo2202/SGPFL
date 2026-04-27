@@ -20,91 +20,56 @@ namespace Google\Service\Storage;
 class AnywhereCache extends \Google\Model
 {
   /**
-   * The cache-level entry admission policy.
-   *
    * @var string
    */
   public $admissionPolicy;
   /**
-   * The ID of the Anywhere cache instance.
-   *
    * @var string
    */
   public $anywhereCacheId;
   /**
-   * The name of the bucket containing this cache instance.
-   *
    * @var string
    */
   public $bucket;
   /**
-   * The creation time of the cache instance in RFC 3339 format.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * The ID of the resource, including the project number, bucket name and
-   * anywhere cache ID.
-   *
    * @var string
    */
   public $id;
   /**
-   * Specifies whether objects are ingested into the cache upon write.
-   *
-   * @var bool
-   */
-  public $ingestOnWrite;
-  /**
-   * The kind of item this is. For Anywhere Cache, this is always
-   * storage#anywhereCache.
-   *
    * @var string
    */
   public $kind;
   /**
-   * True if the cache instance has an active Update long-running operation.
-   *
    * @var bool
    */
   public $pendingUpdate;
   /**
-   * The link to this cache instance.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * The current state of the cache instance.
-   *
    * @var string
    */
   public $state;
   /**
-   * The TTL of all cache entries in whole seconds. e.g., "7200s".
-   *
    * @var string
    */
   public $ttl;
   /**
-   * The modification time of the cache instance metadata in RFC 3339 format.
-   *
    * @var string
    */
   public $updateTime;
   /**
-   * The zone in which the cache instance is running. For example, us-
-   * central1-a.
-   *
    * @var string
    */
   public $zone;
 
   /**
-   * The cache-level entry admission policy.
-   *
-   * @param string $admissionPolicy
+   * @param string
    */
   public function setAdmissionPolicy($admissionPolicy)
   {
@@ -118,9 +83,7 @@ class AnywhereCache extends \Google\Model
     return $this->admissionPolicy;
   }
   /**
-   * The ID of the Anywhere cache instance.
-   *
-   * @param string $anywhereCacheId
+   * @param string
    */
   public function setAnywhereCacheId($anywhereCacheId)
   {
@@ -134,9 +97,7 @@ class AnywhereCache extends \Google\Model
     return $this->anywhereCacheId;
   }
   /**
-   * The name of the bucket containing this cache instance.
-   *
-   * @param string $bucket
+   * @param string
    */
   public function setBucket($bucket)
   {
@@ -150,9 +111,7 @@ class AnywhereCache extends \Google\Model
     return $this->bucket;
   }
   /**
-   * The creation time of the cache instance in RFC 3339 format.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -166,10 +125,7 @@ class AnywhereCache extends \Google\Model
     return $this->createTime;
   }
   /**
-   * The ID of the resource, including the project number, bucket name and
-   * anywhere cache ID.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -183,26 +139,7 @@ class AnywhereCache extends \Google\Model
     return $this->id;
   }
   /**
-   * Specifies whether objects are ingested into the cache upon write.
-   *
-   * @param bool $ingestOnWrite
-   */
-  public function setIngestOnWrite($ingestOnWrite)
-  {
-    $this->ingestOnWrite = $ingestOnWrite;
-  }
-  /**
-   * @return bool
-   */
-  public function getIngestOnWrite()
-  {
-    return $this->ingestOnWrite;
-  }
-  /**
-   * The kind of item this is. For Anywhere Cache, this is always
-   * storage#anywhereCache.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -216,9 +153,7 @@ class AnywhereCache extends \Google\Model
     return $this->kind;
   }
   /**
-   * True if the cache instance has an active Update long-running operation.
-   *
-   * @param bool $pendingUpdate
+   * @param bool
    */
   public function setPendingUpdate($pendingUpdate)
   {
@@ -232,9 +167,7 @@ class AnywhereCache extends \Google\Model
     return $this->pendingUpdate;
   }
   /**
-   * The link to this cache instance.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -248,9 +181,7 @@ class AnywhereCache extends \Google\Model
     return $this->selfLink;
   }
   /**
-   * The current state of the cache instance.
-   *
-   * @param string $state
+   * @param string
    */
   public function setState($state)
   {
@@ -264,9 +195,7 @@ class AnywhereCache extends \Google\Model
     return $this->state;
   }
   /**
-   * The TTL of all cache entries in whole seconds. e.g., "7200s".
-   *
-   * @param string $ttl
+   * @param string
    */
   public function setTtl($ttl)
   {
@@ -280,9 +209,7 @@ class AnywhereCache extends \Google\Model
     return $this->ttl;
   }
   /**
-   * The modification time of the cache instance metadata in RFC 3339 format.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -296,10 +223,7 @@ class AnywhereCache extends \Google\Model
     return $this->updateTime;
   }
   /**
-   * The zone in which the cache instance is running. For example, us-
-   * central1-a.
-   *
-   * @param string $zone
+   * @param string
    */
   public function setZone($zone)
   {

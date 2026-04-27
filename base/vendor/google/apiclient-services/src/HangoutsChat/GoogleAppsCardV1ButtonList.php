@@ -24,9 +24,7 @@ class GoogleAppsCardV1ButtonList extends \Google\Collection
   protected $buttonsDataType = 'array';
 
   /**
-   * An array of buttons.
-   *
-   * @param GoogleAppsCardV1Button[] $buttons
+   * @param GoogleAppsCardV1Button[]
    */
   public function setButtons($buttons)
   {

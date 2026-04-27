@@ -19,17 +19,7 @@ namespace Google\Service\TrafficDirectorService;
 
 class DoubleRange extends \Google\Model
 {
-  /**
-   * end of the range (exclusive)
-   *
-   * @var 
-   */
   public $end;
-  /**
-   * start of the range (inclusive)
-   *
-   * @var 
-   */
   public $start;
 
   public function setEnd($end)

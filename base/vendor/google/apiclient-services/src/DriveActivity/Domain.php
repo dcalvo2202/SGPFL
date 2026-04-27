@@ -20,22 +20,16 @@ namespace Google\Service\DriveActivity;
 class Domain extends \Google\Model
 {
   /**
-   * An opaque string used to identify this domain.
-   *
    * @var string
    */
   public $legacyId;
   /**
-   * The name of the domain, e.g. `google.com`.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * An opaque string used to identify this domain.
-   *
-   * @param string $legacyId
+   * @param string
    */
   public function setLegacyId($legacyId)
   {
@@ -49,9 +43,7 @@ class Domain extends \Google\Model
     return $this->legacyId;
   }
   /**
-   * The name of the domain, e.g. `google.com`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

@@ -23,22 +23,12 @@ class ListHotTabletsResponse extends \Google\Collection
   protected $hotTabletsType = HotTablet::class;
   protected $hotTabletsDataType = 'array';
   /**
-   * Set if not all hot tablets could be returned in a single response. Pass
-   * this value to `page_token` in another request to get the next page of
-   * results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * List of hot tablets in the tables of the requested cluster that fall within
-   * the requested time range. Hot tablets are ordered by node cpu usage
-   * percent. If there are multiple hot tablets that correspond to the same
-   * tablet within a 15-minute interval, only the hot tablet with the highest
-   * node cpu usage will be included in the response.
-   *
-   * @param HotTablet[] $hotTablets
+   * @param HotTablet[]
    */
   public function setHotTablets($hotTablets)
   {
@@ -52,11 +42,7 @@ class ListHotTabletsResponse extends \Google\Collection
     return $this->hotTablets;
   }
   /**
-   * Set if not all hot tablets could be returned in a single response. Pass
-   * this value to `page_token` in another request to get the next page of
-   * results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

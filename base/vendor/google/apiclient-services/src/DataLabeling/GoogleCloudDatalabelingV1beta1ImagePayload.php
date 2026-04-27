@@ -20,34 +20,24 @@ namespace Google\Service\DataLabeling;
 class GoogleCloudDatalabelingV1beta1ImagePayload extends \Google\Model
 {
   /**
-   * A byte string of a thumbnail image.
-   *
    * @var string
    */
   public $imageThumbnail;
   /**
-   * Image uri from the user bucket.
-   *
    * @var string
    */
   public $imageUri;
   /**
-   * Image format.
-   *
    * @var string
    */
   public $mimeType;
   /**
-   * Signed uri of the image file in the service bucket.
-   *
    * @var string
    */
   public $signedUri;
 
   /**
-   * A byte string of a thumbnail image.
-   *
-   * @param string $imageThumbnail
+   * @param string
    */
   public function setImageThumbnail($imageThumbnail)
   {
@@ -61,9 +51,7 @@ class GoogleCloudDatalabelingV1beta1ImagePayload extends \Google\Model
     return $this->imageThumbnail;
   }
   /**
-   * Image uri from the user bucket.
-   *
-   * @param string $imageUri
+   * @param string
    */
   public function setImageUri($imageUri)
   {
@@ -77,9 +65,7 @@ class GoogleCloudDatalabelingV1beta1ImagePayload extends \Google\Model
     return $this->imageUri;
   }
   /**
-   * Image format.
-   *
-   * @param string $mimeType
+   * @param string
    */
   public function setMimeType($mimeType)
   {
@@ -93,9 +79,7 @@ class GoogleCloudDatalabelingV1beta1ImagePayload extends \Google\Model
     return $this->mimeType;
   }
   /**
-   * Signed uri of the image file in the service bucket.
-   *
-   * @param string $signedUri
+   * @param string
    */
   public function setSignedUri($signedUri)
   {

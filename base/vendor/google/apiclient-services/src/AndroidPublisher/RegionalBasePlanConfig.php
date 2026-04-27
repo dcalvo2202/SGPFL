@@ -20,31 +20,18 @@ namespace Google\Service\AndroidPublisher;
 class RegionalBasePlanConfig extends \Google\Model
 {
   /**
-   * Whether the base plan in the specified region is available for new
-   * subscribers. Existing subscribers will not have their subscription canceled
-   * if this value is set to false. If not specified, this will default to
-   * false.
-   *
    * @var bool
    */
   public $newSubscriberAvailability;
   protected $priceType = Money::class;
   protected $priceDataType = '';
   /**
-   * Required. Region code this configuration applies to, as defined by ISO
-   * 3166-2, e.g. "US".
-   *
    * @var string
    */
   public $regionCode;
 
   /**
-   * Whether the base plan in the specified region is available for new
-   * subscribers. Existing subscribers will not have their subscription canceled
-   * if this value is set to false. If not specified, this will default to
-   * false.
-   *
-   * @param bool $newSubscriberAvailability
+   * @param bool
    */
   public function setNewSubscriberAvailability($newSubscriberAvailability)
   {
@@ -58,11 +45,7 @@ class RegionalBasePlanConfig extends \Google\Model
     return $this->newSubscriberAvailability;
   }
   /**
-   * The price of the base plan in the specified region. Must be set if the base
-   * plan is available to new subscribers. Must be set in the currency that is
-   * linked to the specified region.
-   *
-   * @param Money $price
+   * @param Money
    */
   public function setPrice(Money $price)
   {
@@ -76,10 +59,7 @@ class RegionalBasePlanConfig extends \Google\Model
     return $this->price;
   }
   /**
-   * Required. Region code this configuration applies to, as defined by ISO
-   * 3166-2, e.g. "US".
-   *
-   * @param string $regionCode
+   * @param string
    */
   public function setRegionCode($regionCode)
   {

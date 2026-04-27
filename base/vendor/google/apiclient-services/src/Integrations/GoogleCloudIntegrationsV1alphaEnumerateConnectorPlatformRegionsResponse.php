@@ -21,16 +21,12 @@ class GoogleCloudIntegrationsV1alphaEnumerateConnectorPlatformRegionsResponse ex
 {
   protected $collection_key = 'regions';
   /**
-   * All regions where Connector Platform is provisioned.
-   *
    * @var string[]
    */
   public $regions;
 
   /**
-   * All regions where Connector Platform is provisioned.
-   *
-   * @param string[] $regions
+   * @param string[]
    */
   public function setRegions($regions)
   {

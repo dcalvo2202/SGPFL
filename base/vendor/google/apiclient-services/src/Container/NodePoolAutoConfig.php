@@ -29,9 +29,7 @@ class NodePoolAutoConfig extends \Google\Model
   protected $resourceManagerTagsDataType = '';
 
   /**
-   * Output only. Configuration options for Linux nodes.
-   *
-   * @param LinuxNodeConfig $linuxNodeConfig
+   * @param LinuxNodeConfig
    */
   public function setLinuxNodeConfig(LinuxNodeConfig $linuxNodeConfig)
   {
@@ -45,12 +43,7 @@ class NodePoolAutoConfig extends \Google\Model
     return $this->linuxNodeConfig;
   }
   /**
-   * The list of instance tags applied to all nodes. Tags are used to identify
-   * valid sources or targets for network firewalls and are specified by the
-   * client during cluster creation. Each tag within the list must comply with
-   * RFC1035.
-   *
-   * @param NetworkTags $networkTags
+   * @param NetworkTags
    */
   public function setNetworkTags(NetworkTags $networkTags)
   {
@@ -64,10 +57,7 @@ class NodePoolAutoConfig extends \Google\Model
     return $this->networkTags;
   }
   /**
-   * NodeKubeletConfig controls the defaults for autoprovisioned node-pools.
-   * Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
-   *
-   * @param NodeKubeletConfig $nodeKubeletConfig
+   * @param NodeKubeletConfig
    */
   public function setNodeKubeletConfig(NodeKubeletConfig $nodeKubeletConfig)
   {
@@ -81,10 +71,7 @@ class NodePoolAutoConfig extends \Google\Model
     return $this->nodeKubeletConfig;
   }
   /**
-   * Resource manager tag keys and values to be attached to the nodes for
-   * managing Compute Engine firewalls using Network Firewall Policies.
-   *
-   * @param ResourceManagerTags $resourceManagerTags
+   * @param ResourceManagerTags
    */
   public function setResourceManagerTags(ResourceManagerTags $resourceManagerTags)
   {

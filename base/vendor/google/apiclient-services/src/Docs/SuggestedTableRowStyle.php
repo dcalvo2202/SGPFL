@@ -25,11 +25,7 @@ class SuggestedTableRowStyle extends \Google\Model
   protected $tableRowStyleSuggestionStateDataType = '';
 
   /**
-   * A TableRowStyle that only includes the changes made in this suggestion.
-   * This can be used along with the table_row_style_suggestion_state to see
-   * which fields have changed and their new values.
-   *
-   * @param TableRowStyle $tableRowStyle
+   * @param TableRowStyle
    */
   public function setTableRowStyle(TableRowStyle $tableRowStyle)
   {
@@ -43,10 +39,7 @@ class SuggestedTableRowStyle extends \Google\Model
     return $this->tableRowStyle;
   }
   /**
-   * A mask that indicates which of the fields on the base TableRowStyle have
-   * been changed in this suggestion.
-   *
-   * @param TableRowStyleSuggestionState $tableRowStyleSuggestionState
+   * @param TableRowStyleSuggestionState
    */
   public function setTableRowStyleSuggestionState(TableRowStyleSuggestionState $tableRowStyleSuggestionState)
   {

@@ -20,43 +20,24 @@ namespace Google\Service\Firestore;
 class ExecutionStats extends \Google\Model
 {
   /**
-   * Debugging statistics from the execution of the query. Note that the
-   * debugging stats are subject to change as Firestore evolves. It could
-   * include: { "indexes_entries_scanned": "1000", "documents_scanned": "20",
-   * "billing_details" : { "documents_billable": "20", "index_entries_billable":
-   * "1000", "min_query_cost": "0" } }
-   *
    * @var array[]
    */
   public $debugStats;
   /**
-   * Total time to execute the query in the backend.
-   *
    * @var string
    */
   public $executionDuration;
   /**
-   * Total billable read operations.
-   *
    * @var string
    */
   public $readOperations;
   /**
-   * Total number of results returned, including documents, projections,
-   * aggregation results, keys.
-   *
    * @var string
    */
   public $resultsReturned;
 
   /**
-   * Debugging statistics from the execution of the query. Note that the
-   * debugging stats are subject to change as Firestore evolves. It could
-   * include: { "indexes_entries_scanned": "1000", "documents_scanned": "20",
-   * "billing_details" : { "documents_billable": "20", "index_entries_billable":
-   * "1000", "min_query_cost": "0" } }
-   *
-   * @param array[] $debugStats
+   * @param array[]
    */
   public function setDebugStats($debugStats)
   {
@@ -70,9 +51,7 @@ class ExecutionStats extends \Google\Model
     return $this->debugStats;
   }
   /**
-   * Total time to execute the query in the backend.
-   *
-   * @param string $executionDuration
+   * @param string
    */
   public function setExecutionDuration($executionDuration)
   {
@@ -86,9 +65,7 @@ class ExecutionStats extends \Google\Model
     return $this->executionDuration;
   }
   /**
-   * Total billable read operations.
-   *
-   * @param string $readOperations
+   * @param string
    */
   public function setReadOperations($readOperations)
   {
@@ -102,10 +79,7 @@ class ExecutionStats extends \Google\Model
     return $this->readOperations;
   }
   /**
-   * Total number of results returned, including documents, projections,
-   * aggregation results, keys.
-   *
-   * @param string $resultsReturned
+   * @param string
    */
   public function setResultsReturned($resultsReturned)
   {

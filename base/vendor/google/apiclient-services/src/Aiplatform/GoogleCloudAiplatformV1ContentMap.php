@@ -23,9 +23,7 @@ class GoogleCloudAiplatformV1ContentMap extends \Google\Model
   protected $valuesDataType = 'map';
 
   /**
-   * Optional. Map of placeholder to contents.
-   *
-   * @param GoogleCloudAiplatformV1ContentMapContents[] $values
+   * @param GoogleCloudAiplatformV1ContentMapContents[]
    */
   public function setValues($values)
   {

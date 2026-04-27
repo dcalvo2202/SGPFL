@@ -23,17 +23,12 @@ class GoogleAppsCloudidentityDevicesV1ListClientStatesResponse extends \Google\C
   protected $clientStatesType = GoogleAppsCloudidentityDevicesV1ClientState::class;
   protected $clientStatesDataType = 'array';
   /**
-   * Token to retrieve the next page of results. Empty if there are no more
-   * results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Client states meeting the list restrictions.
-   *
-   * @param GoogleAppsCloudidentityDevicesV1ClientState[] $clientStates
+   * @param GoogleAppsCloudidentityDevicesV1ClientState[]
    */
   public function setClientStates($clientStates)
   {
@@ -47,10 +42,7 @@ class GoogleAppsCloudidentityDevicesV1ListClientStatesResponse extends \Google\C
     return $this->clientStates;
   }
   /**
-   * Token to retrieve the next page of results. Empty if there are no more
-   * results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

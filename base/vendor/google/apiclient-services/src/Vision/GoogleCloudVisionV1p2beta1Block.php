@@ -19,42 +19,14 @@ namespace Google\Service\Vision;
 
 class GoogleCloudVisionV1p2beta1Block extends \Google\Collection
 {
-  /**
-   * Unknown block type.
-   */
-  public const BLOCK_TYPE_UNKNOWN = 'UNKNOWN';
-  /**
-   * Regular text block.
-   */
-  public const BLOCK_TYPE_TEXT = 'TEXT';
-  /**
-   * Table block.
-   */
-  public const BLOCK_TYPE_TABLE = 'TABLE';
-  /**
-   * Image block.
-   */
-  public const BLOCK_TYPE_PICTURE = 'PICTURE';
-  /**
-   * Horizontal/vertical line box.
-   */
-  public const BLOCK_TYPE_RULER = 'RULER';
-  /**
-   * Barcode block.
-   */
-  public const BLOCK_TYPE_BARCODE = 'BARCODE';
   protected $collection_key = 'paragraphs';
   /**
-   * Detected block type (text, image etc) for this block.
-   *
    * @var string
    */
   public $blockType;
   protected $boundingBoxType = GoogleCloudVisionV1p2beta1BoundingPoly::class;
   protected $boundingBoxDataType = '';
   /**
-   * Confidence of the OCR results on the block. Range [0, 1].
-   *
    * @var float
    */
   public $confidence;
@@ -64,33 +36,21 @@ class GoogleCloudVisionV1p2beta1Block extends \Google\Collection
   protected $propertyDataType = '';
 
   /**
-   * Detected block type (text, image etc) for this block.
-   *
-   * Accepted values: UNKNOWN, TEXT, TABLE, PICTURE, RULER, BARCODE
-   *
-   * @param self::BLOCK_TYPE_* $blockType
+   * @param string
    */
   public function setBlockType($blockType)
   {
     $this->blockType = $blockType;
   }
   /**
-   * @return self::BLOCK_TYPE_*
+   * @return string
    */
   public function getBlockType()
   {
     return $this->blockType;
   }
   /**
-   * The bounding box for the block. The vertices are in the order of top-left,
-   * top-right, bottom-right, bottom-left. When a rotation of the bounding box
-   * is detected the rotation is represented as around the top-left corner as
-   * defined when the text is read in the 'natural' orientation. For example: *
-   * when the text is horizontal it might look like: 0----1 | | 3----2 * when
-   * it's rotated 180 degrees around the top-left corner it becomes: 2----3 | |
-   * 1----0 and the vertex order will still be (0, 1, 2, 3).
-   *
-   * @param GoogleCloudVisionV1p2beta1BoundingPoly $boundingBox
+   * @param GoogleCloudVisionV1p2beta1BoundingPoly
    */
   public function setBoundingBox(GoogleCloudVisionV1p2beta1BoundingPoly $boundingBox)
   {
@@ -104,9 +64,7 @@ class GoogleCloudVisionV1p2beta1Block extends \Google\Collection
     return $this->boundingBox;
   }
   /**
-   * Confidence of the OCR results on the block. Range [0, 1].
-   *
-   * @param float $confidence
+   * @param float
    */
   public function setConfidence($confidence)
   {
@@ -120,9 +78,7 @@ class GoogleCloudVisionV1p2beta1Block extends \Google\Collection
     return $this->confidence;
   }
   /**
-   * List of paragraphs in this block (if this blocks is of type text).
-   *
-   * @param GoogleCloudVisionV1p2beta1Paragraph[] $paragraphs
+   * @param GoogleCloudVisionV1p2beta1Paragraph[]
    */
   public function setParagraphs($paragraphs)
   {
@@ -136,9 +92,7 @@ class GoogleCloudVisionV1p2beta1Block extends \Google\Collection
     return $this->paragraphs;
   }
   /**
-   * Additional information detected for the block.
-   *
-   * @param GoogleCloudVisionV1p2beta1TextAnnotationTextProperty $property
+   * @param GoogleCloudVisionV1p2beta1TextAnnotationTextProperty
    */
   public function setProperty(GoogleCloudVisionV1p2beta1TextAnnotationTextProperty $property)
   {

@@ -25,7 +25,7 @@ class OutputQuantileMetrics extends \Google\Model
   protected $recordsWrittenDataType = '';
 
   /**
-   * @param Quantiles $bytesWritten
+   * @param Quantiles
    */
   public function setBytesWritten(Quantiles $bytesWritten)
   {
@@ -39,7 +39,7 @@ class OutputQuantileMetrics extends \Google\Model
     return $this->bytesWritten;
   }
   /**
-   * @param Quantiles $recordsWritten
+   * @param Quantiles
    */
   public function setRecordsWritten(Quantiles $recordsWritten)
   {

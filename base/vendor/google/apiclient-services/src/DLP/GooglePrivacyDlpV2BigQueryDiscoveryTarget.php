@@ -29,11 +29,7 @@ class GooglePrivacyDlpV2BigQueryDiscoveryTarget extends \Google\Model
   protected $filterDataType = '';
 
   /**
-   * How often and when to update profiles. New tables that match both the
-   * filter and conditions are scanned as quickly as possible depending on
-   * system capacity.
-   *
-   * @param GooglePrivacyDlpV2DiscoveryGenerationCadence $cadence
+   * @param GooglePrivacyDlpV2DiscoveryGenerationCadence
    */
   public function setCadence(GooglePrivacyDlpV2DiscoveryGenerationCadence $cadence)
   {
@@ -47,10 +43,7 @@ class GooglePrivacyDlpV2BigQueryDiscoveryTarget extends \Google\Model
     return $this->cadence;
   }
   /**
-   * In addition to matching the filter, these conditions must be true before a
-   * profile is generated.
-   *
-   * @param GooglePrivacyDlpV2DiscoveryBigQueryConditions $conditions
+   * @param GooglePrivacyDlpV2DiscoveryBigQueryConditions
    */
   public function setConditions(GooglePrivacyDlpV2DiscoveryBigQueryConditions $conditions)
   {
@@ -64,9 +57,7 @@ class GooglePrivacyDlpV2BigQueryDiscoveryTarget extends \Google\Model
     return $this->conditions;
   }
   /**
-   * Tables that match this filter will not have profiles created.
-   *
-   * @param GooglePrivacyDlpV2Disabled $disabled
+   * @param GooglePrivacyDlpV2Disabled
    */
   public function setDisabled(GooglePrivacyDlpV2Disabled $disabled)
   {
@@ -80,10 +71,7 @@ class GooglePrivacyDlpV2BigQueryDiscoveryTarget extends \Google\Model
     return $this->disabled;
   }
   /**
-   * Required. The tables the discovery cadence applies to. The first target
-   * with a matching filter will be the one to apply to a table.
-   *
-   * @param GooglePrivacyDlpV2DiscoveryBigQueryFilter $filter
+   * @param GooglePrivacyDlpV2DiscoveryBigQueryFilter
    */
   public function setFilter(GooglePrivacyDlpV2DiscoveryBigQueryFilter $filter)
   {

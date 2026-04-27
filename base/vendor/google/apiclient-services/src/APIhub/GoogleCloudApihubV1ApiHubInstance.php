@@ -19,87 +19,39 @@ namespace Google\Service\APIhub;
 
 class GoogleCloudApihubV1ApiHubInstance extends \Google\Model
 {
-  /**
-   * The default value. This value is used if the state is omitted.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The ApiHub instance has not been initialized or has been deleted.
-   */
-  public const STATE_INACTIVE = 'INACTIVE';
-  /**
-   * The ApiHub instance is being created.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * The ApiHub instance has been created and is ready for use.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * The ApiHub instance is being updated.
-   */
-  public const STATE_UPDATING = 'UPDATING';
-  /**
-   * The ApiHub instance is being deleted.
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * The ApiHub instance encountered an error during a state change.
-   */
-  public const STATE_FAILED = 'FAILED';
   protected $configType = GoogleCloudApihubV1Config::class;
   protected $configDataType = '';
   /**
-   * Output only. Creation timestamp.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. Description of the ApiHub instance.
-   *
    * @var string
    */
   public $description;
   /**
-   * Optional. Instance labels to represent user-provided metadata. Refer to
-   * cloud documentation on labels for more details.
-   * https://cloud.google.com/compute/docs/labeling-resources
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Identifier. Format:
-   * `projects/{project}/locations/{location}/apiHubInstances/{apiHubInstance}`.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The current state of the ApiHub instance.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. Extra information about ApiHub instance state. Currently the
-   * message would be populated when state is `FAILED`.
-   *
    * @var string
    */
   public $stateMessage;
   /**
-   * Output only. Last update timestamp.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Required. Config of the ApiHub instance.
-   *
-   * @param GoogleCloudApihubV1Config $config
+   * @param GoogleCloudApihubV1Config
    */
   public function setConfig(GoogleCloudApihubV1Config $config)
   {
@@ -113,9 +65,7 @@ class GoogleCloudApihubV1ApiHubInstance extends \Google\Model
     return $this->config;
   }
   /**
-   * Output only. Creation timestamp.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -129,9 +79,7 @@ class GoogleCloudApihubV1ApiHubInstance extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Optional. Description of the ApiHub instance.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -145,11 +93,7 @@ class GoogleCloudApihubV1ApiHubInstance extends \Google\Model
     return $this->description;
   }
   /**
-   * Optional. Instance labels to represent user-provided metadata. Refer to
-   * cloud documentation on labels for more details.
-   * https://cloud.google.com/compute/docs/labeling-resources
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -163,10 +107,7 @@ class GoogleCloudApihubV1ApiHubInstance extends \Google\Model
     return $this->labels;
   }
   /**
-   * Identifier. Format:
-   * `projects/{project}/locations/{location}/apiHubInstances/{apiHubInstance}`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -180,29 +121,21 @@ class GoogleCloudApihubV1ApiHubInstance extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The current state of the ApiHub instance.
-   *
-   * Accepted values: STATE_UNSPECIFIED, INACTIVE, CREATING, ACTIVE, UPDATING,
-   * DELETING, FAILED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. Extra information about ApiHub instance state. Currently the
-   * message would be populated when state is `FAILED`.
-   *
-   * @param string $stateMessage
+   * @param string
    */
   public function setStateMessage($stateMessage)
   {
@@ -216,9 +149,7 @@ class GoogleCloudApihubV1ApiHubInstance extends \Google\Model
     return $this->stateMessage;
   }
   /**
-   * Output only. Last update timestamp.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

@@ -25,31 +25,20 @@ class GroupsCountResult extends \Google\Collection
   protected $accountCountsType = AccountCount::class;
   protected $accountCountsDataType = 'array';
   /**
-   * Total number of accounts that can be queried and have more than zero
-   * messages.
-   *
    * @var string
    */
   public $matchingAccountsCount;
   /**
-   * When **DataScope** is **HELD_DATA**, these accounts in the request are not
-   * queried because they are not on hold. For other data scope, this field is
-   * not set.
-   *
    * @var string[]
    */
   public $nonQueryableAccounts;
   /**
-   * Total number of accounts involved in this count operation.
-   *
    * @var string
    */
   public $queriedAccountsCount;
 
   /**
-   * Error occurred when querying these accounts.
-   *
-   * @param AccountCountError[] $accountCountErrors
+   * @param AccountCountError[]
    */
   public function setAccountCountErrors($accountCountErrors)
   {
@@ -63,9 +52,7 @@ class GroupsCountResult extends \Google\Collection
     return $this->accountCountErrors;
   }
   /**
-   * Subtotal count per matching account that have more than zero messages.
-   *
-   * @param AccountCount[] $accountCounts
+   * @param AccountCount[]
    */
   public function setAccountCounts($accountCounts)
   {
@@ -79,10 +66,7 @@ class GroupsCountResult extends \Google\Collection
     return $this->accountCounts;
   }
   /**
-   * Total number of accounts that can be queried and have more than zero
-   * messages.
-   *
-   * @param string $matchingAccountsCount
+   * @param string
    */
   public function setMatchingAccountsCount($matchingAccountsCount)
   {
@@ -96,11 +80,7 @@ class GroupsCountResult extends \Google\Collection
     return $this->matchingAccountsCount;
   }
   /**
-   * When **DataScope** is **HELD_DATA**, these accounts in the request are not
-   * queried because they are not on hold. For other data scope, this field is
-   * not set.
-   *
-   * @param string[] $nonQueryableAccounts
+   * @param string[]
    */
   public function setNonQueryableAccounts($nonQueryableAccounts)
   {
@@ -114,9 +94,7 @@ class GroupsCountResult extends \Google\Collection
     return $this->nonQueryableAccounts;
   }
   /**
-   * Total number of accounts involved in this count operation.
-   *
-   * @param string $queriedAccountsCount
+   * @param string
    */
   public function setQueriedAccountsCount($queriedAccountsCount)
   {

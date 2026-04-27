@@ -20,24 +20,12 @@ namespace Google\Service\Slides;
 class WriteControl extends \Google\Model
 {
   /**
-   * The revision ID of the presentation required for the write request. If
-   * specified and the required revision ID doesn't match the presentation's
-   * current revision ID, the request is not processed and returns a 400 bad
-   * request error. When a required revision ID is returned in a response, it
-   * indicates the revision ID of the document after the request was applied.
-   *
    * @var string
    */
   public $requiredRevisionId;
 
   /**
-   * The revision ID of the presentation required for the write request. If
-   * specified and the required revision ID doesn't match the presentation's
-   * current revision ID, the request is not processed and returns a 400 bad
-   * request error. When a required revision ID is returned in a response, it
-   * indicates the revision ID of the document after the request was applied.
-   *
-   * @param string $requiredRevisionId
+   * @param string
    */
   public function setRequiredRevisionId($requiredRevisionId)
   {

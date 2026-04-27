@@ -19,52 +19,8 @@ namespace Google\Service\Aiplatform;
 
 class GoogleCloudAiplatformV1StudySpec extends \Google\Collection
 {
-  /**
-   * The default algorithm used by Vertex AI for [hyperparameter
-   * tuning](https://cloud.google.com/vertex-ai/docs/training/hyperparameter-
-   * tuning-overview) and [Vertex AI Vizier](https://cloud.google.com/vertex-
-   * ai/docs/vizier).
-   */
-  public const ALGORITHM_ALGORITHM_UNSPECIFIED = 'ALGORITHM_UNSPECIFIED';
-  /**
-   * Simple grid search within the feasible space. To use grid search, all
-   * parameters must be `INTEGER`, `CATEGORICAL`, or `DISCRETE`.
-   */
-  public const ALGORITHM_GRID_SEARCH = 'GRID_SEARCH';
-  /**
-   * Simple random search within the feasible space.
-   */
-  public const ALGORITHM_RANDOM_SEARCH = 'RANDOM_SEARCH';
-  /**
-   * Will be treated as LAST_MEASUREMENT.
-   */
-  public const MEASUREMENT_SELECTION_TYPE_MEASUREMENT_SELECTION_TYPE_UNSPECIFIED = 'MEASUREMENT_SELECTION_TYPE_UNSPECIFIED';
-  /**
-   * Use the last measurement reported.
-   */
-  public const MEASUREMENT_SELECTION_TYPE_LAST_MEASUREMENT = 'LAST_MEASUREMENT';
-  /**
-   * Use the best measurement reported.
-   */
-  public const MEASUREMENT_SELECTION_TYPE_BEST_MEASUREMENT = 'BEST_MEASUREMENT';
-  /**
-   * The default noise level chosen by Vertex AI.
-   */
-  public const OBSERVATION_NOISE_OBSERVATION_NOISE_UNSPECIFIED = 'OBSERVATION_NOISE_UNSPECIFIED';
-  /**
-   * Vertex AI assumes that the objective function is (nearly) perfectly
-   * reproducible, and will never repeat the same Trial parameters.
-   */
-  public const OBSERVATION_NOISE_LOW = 'LOW';
-  /**
-   * Vertex AI will estimate the amount of noise in metric evaluations, it may
-   * repeat the same Trial parameters more than once.
-   */
-  public const OBSERVATION_NOISE_HIGH = 'HIGH';
   protected $collection_key = 'parameters';
   /**
-   * The search algorithm specified for the Study.
-   *
    * @var string
    */
   public $algorithm;
@@ -73,8 +29,6 @@ class GoogleCloudAiplatformV1StudySpec extends \Google\Collection
   protected $decayCurveStoppingSpecType = GoogleCloudAiplatformV1StudySpecDecayCurveAutomatedStoppingSpec::class;
   protected $decayCurveStoppingSpecDataType = '';
   /**
-   * Describe which measurement selection type will be used
-   *
    * @var string
    */
   public $measurementSelectionType;
@@ -83,10 +37,6 @@ class GoogleCloudAiplatformV1StudySpec extends \Google\Collection
   protected $metricsType = GoogleCloudAiplatformV1StudySpecMetricSpec::class;
   protected $metricsDataType = 'array';
   /**
-   * The observation noise level of the study. Currently only supported by the
-   * Vertex AI Vizier service. Not supported by HyperparameterTuningJob or
-   * TrainingPipeline.
-   *
    * @var string
    */
   public $observationNoise;
@@ -96,27 +46,21 @@ class GoogleCloudAiplatformV1StudySpec extends \Google\Collection
   protected $studyStoppingConfigDataType = '';
 
   /**
-   * The search algorithm specified for the Study.
-   *
-   * Accepted values: ALGORITHM_UNSPECIFIED, GRID_SEARCH, RANDOM_SEARCH
-   *
-   * @param self::ALGORITHM_* $algorithm
+   * @param string
    */
   public function setAlgorithm($algorithm)
   {
     $this->algorithm = $algorithm;
   }
   /**
-   * @return self::ALGORITHM_*
+   * @return string
    */
   public function getAlgorithm()
   {
     return $this->algorithm;
   }
   /**
-   * The automated early stopping spec using convex stopping rule.
-   *
-   * @param GoogleCloudAiplatformV1StudySpecConvexAutomatedStoppingSpec $convexAutomatedStoppingSpec
+   * @param GoogleCloudAiplatformV1StudySpecConvexAutomatedStoppingSpec
    */
   public function setConvexAutomatedStoppingSpec(GoogleCloudAiplatformV1StudySpecConvexAutomatedStoppingSpec $convexAutomatedStoppingSpec)
   {
@@ -130,9 +74,7 @@ class GoogleCloudAiplatformV1StudySpec extends \Google\Collection
     return $this->convexAutomatedStoppingSpec;
   }
   /**
-   * The automated early stopping spec using decay curve rule.
-   *
-   * @param GoogleCloudAiplatformV1StudySpecDecayCurveAutomatedStoppingSpec $decayCurveStoppingSpec
+   * @param GoogleCloudAiplatformV1StudySpecDecayCurveAutomatedStoppingSpec
    */
   public function setDecayCurveStoppingSpec(GoogleCloudAiplatformV1StudySpecDecayCurveAutomatedStoppingSpec $decayCurveStoppingSpec)
   {
@@ -146,28 +88,21 @@ class GoogleCloudAiplatformV1StudySpec extends \Google\Collection
     return $this->decayCurveStoppingSpec;
   }
   /**
-   * Describe which measurement selection type will be used
-   *
-   * Accepted values: MEASUREMENT_SELECTION_TYPE_UNSPECIFIED, LAST_MEASUREMENT,
-   * BEST_MEASUREMENT
-   *
-   * @param self::MEASUREMENT_SELECTION_TYPE_* $measurementSelectionType
+   * @param string
    */
   public function setMeasurementSelectionType($measurementSelectionType)
   {
     $this->measurementSelectionType = $measurementSelectionType;
   }
   /**
-   * @return self::MEASUREMENT_SELECTION_TYPE_*
+   * @return string
    */
   public function getMeasurementSelectionType()
   {
     return $this->measurementSelectionType;
   }
   /**
-   * The automated early stopping spec using median rule.
-   *
-   * @param GoogleCloudAiplatformV1StudySpecMedianAutomatedStoppingSpec $medianAutomatedStoppingSpec
+   * @param GoogleCloudAiplatformV1StudySpecMedianAutomatedStoppingSpec
    */
   public function setMedianAutomatedStoppingSpec(GoogleCloudAiplatformV1StudySpecMedianAutomatedStoppingSpec $medianAutomatedStoppingSpec)
   {
@@ -181,9 +116,7 @@ class GoogleCloudAiplatformV1StudySpec extends \Google\Collection
     return $this->medianAutomatedStoppingSpec;
   }
   /**
-   * Required. Metric specs for the Study.
-   *
-   * @param GoogleCloudAiplatformV1StudySpecMetricSpec[] $metrics
+   * @param GoogleCloudAiplatformV1StudySpecMetricSpec[]
    */
   public function setMetrics($metrics)
   {
@@ -197,29 +130,21 @@ class GoogleCloudAiplatformV1StudySpec extends \Google\Collection
     return $this->metrics;
   }
   /**
-   * The observation noise level of the study. Currently only supported by the
-   * Vertex AI Vizier service. Not supported by HyperparameterTuningJob or
-   * TrainingPipeline.
-   *
-   * Accepted values: OBSERVATION_NOISE_UNSPECIFIED, LOW, HIGH
-   *
-   * @param self::OBSERVATION_NOISE_* $observationNoise
+   * @param string
    */
   public function setObservationNoise($observationNoise)
   {
     $this->observationNoise = $observationNoise;
   }
   /**
-   * @return self::OBSERVATION_NOISE_*
+   * @return string
    */
   public function getObservationNoise()
   {
     return $this->observationNoise;
   }
   /**
-   * Required. The set of parameters to tune.
-   *
-   * @param GoogleCloudAiplatformV1StudySpecParameterSpec[] $parameters
+   * @param GoogleCloudAiplatformV1StudySpecParameterSpec[]
    */
   public function setParameters($parameters)
   {
@@ -233,10 +158,7 @@ class GoogleCloudAiplatformV1StudySpec extends \Google\Collection
     return $this->parameters;
   }
   /**
-   * Conditions for automated stopping of a Study. Enable automated stopping by
-   * configuring at least one condition.
-   *
-   * @param GoogleCloudAiplatformV1StudySpecStudyStoppingConfig $studyStoppingConfig
+   * @param GoogleCloudAiplatformV1StudySpecStudyStoppingConfig
    */
   public function setStudyStoppingConfig(GoogleCloudAiplatformV1StudySpecStudyStoppingConfig $studyStoppingConfig)
   {

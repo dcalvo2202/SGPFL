@@ -21,8 +21,6 @@ class ListServiceConfigsResponse extends \Google\Collection
 {
   protected $collection_key = 'serviceConfigs';
   /**
-   * The token of the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -30,9 +28,7 @@ class ListServiceConfigsResponse extends \Google\Collection
   protected $serviceConfigsDataType = 'array';
 
   /**
-   * The token of the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -46,9 +42,7 @@ class ListServiceConfigsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The list of service configuration resources.
-   *
-   * @param Service[] $serviceConfigs
+   * @param Service[]
    */
   public function setServiceConfigs($serviceConfigs)
   {

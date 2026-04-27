@@ -20,36 +20,21 @@ namespace Google\Service\SecurityCommandCenter;
 class Requests extends \Google\Model
 {
   /**
-   * Allowed RPS (requests per second) over the long term.
-   *
    * @var int
    */
   public $longTermAllowed;
   /**
-   * Denied RPS (requests per second) over the long term.
-   *
    * @var int
    */
   public $longTermDenied;
-  /**
-   * For 'Increasing deny ratio', the ratio is the denied traffic divided by the
-   * allowed traffic. For 'Allowed traffic spike', the ratio is the allowed
-   * traffic in the short term divided by allowed traffic in the long term.
-   *
-   * @var 
-   */
   public $ratio;
   /**
-   * Allowed RPS (requests per second) in the short term.
-   *
    * @var int
    */
   public $shortTermAllowed;
 
   /**
-   * Allowed RPS (requests per second) over the long term.
-   *
-   * @param int $longTermAllowed
+   * @param int
    */
   public function setLongTermAllowed($longTermAllowed)
   {
@@ -63,9 +48,7 @@ class Requests extends \Google\Model
     return $this->longTermAllowed;
   }
   /**
-   * Denied RPS (requests per second) over the long term.
-   *
-   * @param int $longTermDenied
+   * @param int
    */
   public function setLongTermDenied($longTermDenied)
   {
@@ -87,9 +70,7 @@ class Requests extends \Google\Model
     return $this->ratio;
   }
   /**
-   * Allowed RPS (requests per second) in the short term.
-   *
-   * @param int $shortTermAllowed
+   * @param int
    */
   public function setShortTermAllowed($shortTermAllowed)
   {

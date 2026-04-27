@@ -20,32 +20,20 @@ namespace Google\Service\Logging;
 class CopyLogEntriesRequest extends \Google\Model
 {
   /**
-   * Required. Destination to which to copy log entries. For example:
-   * "storage.googleapis.com/GCS_BUCKET"
-   *
    * @var string
    */
   public $destination;
   /**
-   * Optional. A filter specifying which log entries to copy. The filter must be
-   * no more than 20k characters. An empty filter matches all log entries.
-   *
    * @var string
    */
   public $filter;
   /**
-   * Required. Log bucket from which to copy log entries.For
-   * example:"projects/my-project/locations/global/buckets/my-source-bucket"
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Required. Destination to which to copy log entries. For example:
-   * "storage.googleapis.com/GCS_BUCKET"
-   *
-   * @param string $destination
+   * @param string
    */
   public function setDestination($destination)
   {
@@ -59,10 +47,7 @@ class CopyLogEntriesRequest extends \Google\Model
     return $this->destination;
   }
   /**
-   * Optional. A filter specifying which log entries to copy. The filter must be
-   * no more than 20k characters. An empty filter matches all log entries.
-   *
-   * @param string $filter
+   * @param string
    */
   public function setFilter($filter)
   {
@@ -76,10 +61,7 @@ class CopyLogEntriesRequest extends \Google\Model
     return $this->filter;
   }
   /**
-   * Required. Log bucket from which to copy log entries.For
-   * example:"projects/my-project/locations/global/buckets/my-source-bucket"
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

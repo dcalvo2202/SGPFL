@@ -21,9 +21,6 @@ class GoogleCloudApihubV1ListRuntimeProjectAttachmentsResponse extends \Google\C
 {
   protected $collection_key = 'runtimeProjectAttachments';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GoogleCloudApihubV1ListRuntimeProjectAttachmentsResponse extends \Google\C
   protected $runtimeProjectAttachmentsDataType = 'array';
 
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class GoogleCloudApihubV1ListRuntimeProjectAttachmentsResponse extends \Google\C
     return $this->nextPageToken;
   }
   /**
-   * List of runtime project attachments.
-   *
-   * @param GoogleCloudApihubV1RuntimeProjectAttachment[] $runtimeProjectAttachments
+   * @param GoogleCloudApihubV1RuntimeProjectAttachment[]
    */
   public function setRuntimeProjectAttachments($runtimeProjectAttachments)
   {

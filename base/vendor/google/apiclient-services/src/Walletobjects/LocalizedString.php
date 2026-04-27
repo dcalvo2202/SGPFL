@@ -23,10 +23,6 @@ class LocalizedString extends \Google\Collection
   protected $defaultValueType = TranslatedString::class;
   protected $defaultValueDataType = '';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * `"walletobjects#localizedString"`.
-   *
-   * @deprecated
    * @var string
    */
   public $kind;
@@ -34,10 +30,7 @@ class LocalizedString extends \Google\Collection
   protected $translatedValuesDataType = 'array';
 
   /**
-   * Contains the string to be displayed if no appropriate translation is
-   * available.
-   *
-   * @param TranslatedString $defaultValue
+   * @param TranslatedString
    */
   public function setDefaultValue(TranslatedString $defaultValue)
   {
@@ -51,18 +44,13 @@ class LocalizedString extends \Google\Collection
     return $this->defaultValue;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * `"walletobjects#localizedString"`.
-   *
-   * @deprecated
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
     $this->kind = $kind;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getKind()
@@ -70,9 +58,7 @@ class LocalizedString extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Contains the translations for the string.
-   *
-   * @param TranslatedString[] $translatedValues
+   * @param TranslatedString[]
    */
   public function setTranslatedValues($translatedValues)
   {

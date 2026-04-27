@@ -20,22 +20,16 @@ namespace Google\Service\AIPlatformNotebooks;
 class Snapshot extends \Google\Model
 {
   /**
-   * Required. The project ID of the snapshot.
-   *
    * @var string
    */
   public $projectId;
   /**
-   * Required. The ID of the snapshot.
-   *
    * @var string
    */
   public $snapshotId;
 
   /**
-   * Required. The project ID of the snapshot.
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {
@@ -49,9 +43,7 @@ class Snapshot extends \Google\Model
     return $this->projectId;
   }
   /**
-   * Required. The ID of the snapshot.
-   *
-   * @param string $snapshotId
+   * @param string
    */
   public function setSnapshotId($snapshotId)
   {

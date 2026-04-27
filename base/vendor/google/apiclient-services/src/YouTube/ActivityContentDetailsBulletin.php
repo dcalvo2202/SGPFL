@@ -23,10 +23,7 @@ class ActivityContentDetailsBulletin extends \Google\Model
   protected $resourceIdDataType = '';
 
   /**
-   * The resourceId object contains information that identifies the resource
-   * associated with a bulletin post. @mutable youtube.activities.insert
-   *
-   * @param ResourceId $resourceId
+   * @param ResourceId
    */
   public function setResourceId(ResourceId $resourceId)
   {

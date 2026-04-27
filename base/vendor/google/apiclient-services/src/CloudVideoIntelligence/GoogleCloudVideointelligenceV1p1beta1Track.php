@@ -23,8 +23,6 @@ class GoogleCloudVideointelligenceV1p1beta1Track extends \Google\Collection
   protected $attributesType = GoogleCloudVideointelligenceV1p1beta1DetectedAttribute::class;
   protected $attributesDataType = 'array';
   /**
-   * Optional. The confidence score of the tracked object.
-   *
    * @var float
    */
   public $confidence;
@@ -34,9 +32,7 @@ class GoogleCloudVideointelligenceV1p1beta1Track extends \Google\Collection
   protected $timestampedObjectsDataType = 'array';
 
   /**
-   * Optional. Attributes in the track level.
-   *
-   * @param GoogleCloudVideointelligenceV1p1beta1DetectedAttribute[] $attributes
+   * @param GoogleCloudVideointelligenceV1p1beta1DetectedAttribute[]
    */
   public function setAttributes($attributes)
   {
@@ -50,9 +46,7 @@ class GoogleCloudVideointelligenceV1p1beta1Track extends \Google\Collection
     return $this->attributes;
   }
   /**
-   * Optional. The confidence score of the tracked object.
-   *
-   * @param float $confidence
+   * @param float
    */
   public function setConfidence($confidence)
   {
@@ -66,9 +60,7 @@ class GoogleCloudVideointelligenceV1p1beta1Track extends \Google\Collection
     return $this->confidence;
   }
   /**
-   * Video segment of a track.
-   *
-   * @param GoogleCloudVideointelligenceV1p1beta1VideoSegment $segment
+   * @param GoogleCloudVideointelligenceV1p1beta1VideoSegment
    */
   public function setSegment(GoogleCloudVideointelligenceV1p1beta1VideoSegment $segment)
   {
@@ -82,9 +74,7 @@ class GoogleCloudVideointelligenceV1p1beta1Track extends \Google\Collection
     return $this->segment;
   }
   /**
-   * The object with timestamp and attributes per frame in the track.
-   *
-   * @param GoogleCloudVideointelligenceV1p1beta1TimestampedObject[] $timestampedObjects
+   * @param GoogleCloudVideointelligenceV1p1beta1TimestampedObject[]
    */
   public function setTimestampedObjects($timestampedObjects)
   {

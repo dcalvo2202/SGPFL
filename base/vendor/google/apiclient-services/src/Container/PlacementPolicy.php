@@ -20,42 +20,20 @@ namespace Google\Service\Container;
 class PlacementPolicy extends \Google\Model
 {
   /**
-   * TYPE_UNSPECIFIED specifies no requirements on nodes placement.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * COMPACT specifies node placement in the same availability domain to ensure
-   * low communication latency.
-   */
-  public const TYPE_COMPACT = 'COMPACT';
-  /**
-   * If set, refers to the name of a custom resource policy supplied by the
-   * user. The resource policy must be in the same project and region as the
-   * node pool. If not found, InvalidArgument error is returned.
-   *
    * @var string
    */
   public $policyName;
   /**
-   * Optional. TPU placement topology for pod slice node pool.
-   * https://cloud.google.com/tpu/docs/types-topologies#tpu_topologies
-   *
    * @var string
    */
   public $tpuTopology;
   /**
-   * The type of placement.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * If set, refers to the name of a custom resource policy supplied by the
-   * user. The resource policy must be in the same project and region as the
-   * node pool. If not found, InvalidArgument error is returned.
-   *
-   * @param string $policyName
+   * @param string
    */
   public function setPolicyName($policyName)
   {
@@ -69,10 +47,7 @@ class PlacementPolicy extends \Google\Model
     return $this->policyName;
   }
   /**
-   * Optional. TPU placement topology for pod slice node pool.
-   * https://cloud.google.com/tpu/docs/types-topologies#tpu_topologies
-   *
-   * @param string $tpuTopology
+   * @param string
    */
   public function setTpuTopology($tpuTopology)
   {
@@ -86,18 +61,14 @@ class PlacementPolicy extends \Google\Model
     return $this->tpuTopology;
   }
   /**
-   * The type of placement.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, COMPACT
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

@@ -23,9 +23,7 @@ class GoogleCloudVisionV1p4beta1AsyncBatchAnnotateImagesResponse extends \Google
   protected $outputConfigDataType = '';
 
   /**
-   * The output location and metadata from AsyncBatchAnnotateImagesRequest.
-   *
-   * @param GoogleCloudVisionV1p4beta1OutputConfig $outputConfig
+   * @param GoogleCloudVisionV1p4beta1OutputConfig
    */
   public function setOutputConfig(GoogleCloudVisionV1p4beta1OutputConfig $outputConfig)
   {

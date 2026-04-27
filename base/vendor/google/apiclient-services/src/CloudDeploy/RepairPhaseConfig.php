@@ -25,9 +25,7 @@ class RepairPhaseConfig extends \Google\Model
   protected $rollbackDataType = '';
 
   /**
-   * Optional. Retries a failed job.
-   *
-   * @param Retry $retry
+   * @param Retry
    */
   public function setRetry(Retry $retry)
   {
@@ -41,9 +39,7 @@ class RepairPhaseConfig extends \Google\Model
     return $this->retry;
   }
   /**
-   * Optional. Rolls back a `Rollout`.
-   *
-   * @param Rollback $rollback
+   * @param Rollback
    */
   public function setRollback(Rollback $rollback)
   {

@@ -21,20 +21,12 @@ class AcknowledgeRequest extends \Google\Collection
 {
   protected $collection_key = 'ackIds';
   /**
-   * Required. The acknowledgment ID for the messages being acknowledged that
-   * was returned by the Pub/Sub system in the `Pull` response. Must not be
-   * empty.
-   *
    * @var string[]
    */
   public $ackIds;
 
   /**
-   * Required. The acknowledgment ID for the messages being acknowledged that
-   * was returned by the Pub/Sub system in the `Pull` response. Must not be
-   * empty.
-   *
-   * @param string[] $ackIds
+   * @param string[]
    */
   public function setAckIds($ackIds)
   {

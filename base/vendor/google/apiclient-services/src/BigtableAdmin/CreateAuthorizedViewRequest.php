@@ -22,27 +22,16 @@ class CreateAuthorizedViewRequest extends \Google\Model
   protected $authorizedViewType = AuthorizedView::class;
   protected $authorizedViewDataType = '';
   /**
-   * Required. The id of the AuthorizedView to create. This AuthorizedView must
-   * not already exist. The `authorized_view_id` appended to `parent` forms the
-   * full AuthorizedView name of the form `projects/{project}/instances/{instanc
-   * e}/tables/{table}/authorizedView/{authorized_view}`.
-   *
    * @var string
    */
   public $authorizedViewId;
   /**
-   * Required. This is the name of the table the AuthorizedView belongs to.
-   * Values are of the form
-   * `projects/{project}/instances/{instance}/tables/{table}`.
-   *
    * @var string
    */
   public $parent;
 
   /**
-   * Required. The AuthorizedView to create.
-   *
-   * @param AuthorizedView $authorizedView
+   * @param AuthorizedView
    */
   public function setAuthorizedView(AuthorizedView $authorizedView)
   {
@@ -56,12 +45,7 @@ class CreateAuthorizedViewRequest extends \Google\Model
     return $this->authorizedView;
   }
   /**
-   * Required. The id of the AuthorizedView to create. This AuthorizedView must
-   * not already exist. The `authorized_view_id` appended to `parent` forms the
-   * full AuthorizedView name of the form `projects/{project}/instances/{instanc
-   * e}/tables/{table}/authorizedView/{authorized_view}`.
-   *
-   * @param string $authorizedViewId
+   * @param string
    */
   public function setAuthorizedViewId($authorizedViewId)
   {
@@ -75,11 +59,7 @@ class CreateAuthorizedViewRequest extends \Google\Model
     return $this->authorizedViewId;
   }
   /**
-   * Required. This is the name of the table the AuthorizedView belongs to.
-   * Values are of the form
-   * `projects/{project}/instances/{instance}/tables/{table}`.
-   *
-   * @param string $parent
+   * @param string
    */
   public function setParent($parent)
   {

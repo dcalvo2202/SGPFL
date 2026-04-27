@@ -20,28 +20,20 @@ namespace Google\Service\Contactcenterinsights;
 class GoogleCloudContactcenterinsightsV1alpha1DimensionIssueDimensionMetadata extends \Google\Model
 {
   /**
-   * The issue display name.
-   *
    * @var string
    */
   public $issueDisplayName;
   /**
-   * The issue ID.
-   *
    * @var string
    */
   public $issueId;
   /**
-   * The parent issue model ID.
-   *
    * @var string
    */
   public $issueModelId;
 
   /**
-   * The issue display name.
-   *
-   * @param string $issueDisplayName
+   * @param string
    */
   public function setIssueDisplayName($issueDisplayName)
   {
@@ -55,9 +47,7 @@ class GoogleCloudContactcenterinsightsV1alpha1DimensionIssueDimensionMetadata ex
     return $this->issueDisplayName;
   }
   /**
-   * The issue ID.
-   *
-   * @param string $issueId
+   * @param string
    */
   public function setIssueId($issueId)
   {
@@ -71,9 +61,7 @@ class GoogleCloudContactcenterinsightsV1alpha1DimensionIssueDimensionMetadata ex
     return $this->issueId;
   }
   /**
-   * The parent issue model ID.
-   *
-   * @param string $issueModelId
+   * @param string
    */
   public function setIssueModelId($issueModelId)
   {

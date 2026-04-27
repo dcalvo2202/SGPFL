@@ -20,18 +20,12 @@ namespace Google\Service\SA360;
 class GoogleAdsSearchads360V0ResourcesAdGroupCriterionQualityInfo extends \Google\Model
 {
   /**
-   * Output only. The quality score. This field may not be populated if Google
-   * does not have enough information to determine a value.
-   *
    * @var int
    */
   public $qualityScore;
 
   /**
-   * Output only. The quality score. This field may not be populated if Google
-   * does not have enough information to determine a value.
-   *
-   * @param int $qualityScore
+   * @param int
    */
   public function setQualityScore($qualityScore)
   {

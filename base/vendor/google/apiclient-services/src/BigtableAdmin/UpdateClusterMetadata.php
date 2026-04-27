@@ -20,24 +20,18 @@ namespace Google\Service\BigtableAdmin;
 class UpdateClusterMetadata extends \Google\Model
 {
   /**
-   * The time at which the operation failed or was completed successfully.
-   *
    * @var string
    */
   public $finishTime;
   protected $originalRequestType = Cluster::class;
   protected $originalRequestDataType = '';
   /**
-   * The time at which the original request was received.
-   *
    * @var string
    */
   public $requestTime;
 
   /**
-   * The time at which the operation failed or was completed successfully.
-   *
-   * @param string $finishTime
+   * @param string
    */
   public function setFinishTime($finishTime)
   {
@@ -51,9 +45,7 @@ class UpdateClusterMetadata extends \Google\Model
     return $this->finishTime;
   }
   /**
-   * The request that prompted the initiation of this UpdateCluster operation.
-   *
-   * @param Cluster $originalRequest
+   * @param Cluster
    */
   public function setOriginalRequest(Cluster $originalRequest)
   {
@@ -67,9 +59,7 @@ class UpdateClusterMetadata extends \Google\Model
     return $this->originalRequest;
   }
   /**
-   * The time at which the original request was received.
-   *
-   * @param string $requestTime
+   * @param string
    */
   public function setRequestTime($requestTime)
   {

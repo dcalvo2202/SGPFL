@@ -20,16 +20,12 @@ namespace Google\Service\Books;
 class VolumeSearchInfo extends \Google\Model
 {
   /**
-   * A text snippet containing the search query.
-   *
    * @var string
    */
   public $textSnippet;
 
   /**
-   * A text snippet containing the search query.
-   *
-   * @param string $textSnippet
+   * @param string
    */
   public function setTextSnippet($textSnippet)
   {

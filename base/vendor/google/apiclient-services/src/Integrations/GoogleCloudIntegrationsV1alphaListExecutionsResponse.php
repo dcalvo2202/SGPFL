@@ -25,24 +25,18 @@ class GoogleCloudIntegrationsV1alphaListExecutionsResponse extends \Google\Colle
   protected $executionsType = GoogleCloudIntegrationsV1alphaExecution::class;
   protected $executionsDataType = 'array';
   /**
-   * The token used to retrieve the next page results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Required. The detailed information of requested executions.
-   *
-   * @deprecated
-   * @param EnterpriseCrmFrontendsEventbusProtoEventExecutionInfo[] $executionInfos
+   * @param EnterpriseCrmFrontendsEventbusProtoEventExecutionInfo[]
    */
   public function setExecutionInfos($executionInfos)
   {
     $this->executionInfos = $executionInfos;
   }
   /**
-   * @deprecated
    * @return EnterpriseCrmFrontendsEventbusProtoEventExecutionInfo[]
    */
   public function getExecutionInfos()
@@ -50,9 +44,7 @@ class GoogleCloudIntegrationsV1alphaListExecutionsResponse extends \Google\Colle
     return $this->executionInfos;
   }
   /**
-   * The detailed information of requested executions
-   *
-   * @param GoogleCloudIntegrationsV1alphaExecution[] $executions
+   * @param GoogleCloudIntegrationsV1alphaExecution[]
    */
   public function setExecutions($executions)
   {
@@ -66,9 +58,7 @@ class GoogleCloudIntegrationsV1alphaListExecutionsResponse extends \Google\Colle
     return $this->executions;
   }
   /**
-   * The token used to retrieve the next page results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

@@ -20,24 +20,16 @@ namespace Google\Service\ShoppingContent;
 class AccountIdentifier extends \Google\Model
 {
   /**
-   * The aggregator ID, set for aggregators and subaccounts (in that case, it
-   * represents the aggregator of the subaccount).
-   *
    * @var string
    */
   public $aggregatorId;
   /**
-   * The merchant account ID, set for individual accounts and subaccounts.
-   *
    * @var string
    */
   public $merchantId;
 
   /**
-   * The aggregator ID, set for aggregators and subaccounts (in that case, it
-   * represents the aggregator of the subaccount).
-   *
-   * @param string $aggregatorId
+   * @param string
    */
   public function setAggregatorId($aggregatorId)
   {
@@ -51,9 +43,7 @@ class AccountIdentifier extends \Google\Model
     return $this->aggregatorId;
   }
   /**
-   * The merchant account ID, set for individual accounts and subaccounts.
-   *
-   * @param string $merchantId
+   * @param string
    */
   public function setMerchantId($merchantId)
   {

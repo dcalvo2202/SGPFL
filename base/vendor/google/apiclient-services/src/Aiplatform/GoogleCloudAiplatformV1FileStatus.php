@@ -20,35 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1FileStatus extends \Google\Model
 {
   /**
-   * RagFile state is unspecified.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * RagFile resource has been created and indexed successfully.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * RagFile resource is in a problematic state. See `error_message` field for
-   * details.
-   */
-  public const STATE_ERROR = 'ERROR';
-  /**
-   * Output only. Only when the `state` field is ERROR.
-   *
    * @var string
    */
   public $errorStatus;
   /**
-   * Output only. RagFile state.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Output only. Only when the `state` field is ERROR.
-   *
-   * @param string $errorStatus
+   * @param string
    */
   public function setErrorStatus($errorStatus)
   {
@@ -62,18 +43,14 @@ class GoogleCloudAiplatformV1FileStatus extends \Google\Model
     return $this->errorStatus;
   }
   /**
-   * Output only. RagFile state.
-   *
-   * Accepted values: STATE_UNSPECIFIED, ACTIVE, ERROR
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

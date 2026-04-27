@@ -21,9 +21,6 @@ class ListScansResponse extends \Google\Collection
 {
   protected $collection_key = 'scans';
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListScansResponse extends \Google\Collection
   protected $scansDataType = 'array';
 
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class ListScansResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Available scans based on the list query parameters.
-   *
-   * @param Scan[] $scans
+   * @param Scan[]
    */
   public function setScans($scans)
   {

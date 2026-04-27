@@ -20,18 +20,12 @@ namespace Google\Service\AIPlatformNotebooks;
 class DefaultValues extends \Google\Model
 {
   /**
-   * Output only. The default machine type used by the backend if not provided
-   * by the user.
-   *
    * @var string
    */
   public $machineType;
 
   /**
-   * Output only. The default machine type used by the backend if not provided
-   * by the user.
-   *
-   * @param string $machineType
+   * @param string
    */
   public function setMachineType($machineType)
   {

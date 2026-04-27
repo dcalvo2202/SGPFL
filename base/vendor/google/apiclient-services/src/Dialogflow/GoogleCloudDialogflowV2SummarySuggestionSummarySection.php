@@ -29,7 +29,7 @@ class GoogleCloudDialogflowV2SummarySuggestionSummarySection extends \Google\Mod
   public $summary;
 
   /**
-   * @param string $section
+   * @param string
    */
   public function setSection($section)
   {
@@ -43,7 +43,7 @@ class GoogleCloudDialogflowV2SummarySuggestionSummarySection extends \Google\Mod
     return $this->section;
   }
   /**
-   * @param string $summary
+   * @param string
    */
   public function setSummary($summary)
   {

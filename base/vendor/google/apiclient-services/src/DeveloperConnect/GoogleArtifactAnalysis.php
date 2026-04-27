@@ -20,16 +20,12 @@ namespace Google\Service\DeveloperConnect;
 class GoogleArtifactAnalysis extends \Google\Model
 {
   /**
-   * Required. The project id of the project where the provenance is stored.
-   *
    * @var string
    */
   public $projectId;
 
   /**
-   * Required. The project id of the project where the provenance is stored.
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {

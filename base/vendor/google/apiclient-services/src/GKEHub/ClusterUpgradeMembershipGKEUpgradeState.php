@@ -25,9 +25,7 @@ class ClusterUpgradeMembershipGKEUpgradeState extends \Google\Model
   protected $upgradeDataType = '';
 
   /**
-   * Status of the upgrade.
-   *
-   * @param ClusterUpgradeUpgradeStatus $status
+   * @param ClusterUpgradeUpgradeStatus
    */
   public function setStatus(ClusterUpgradeUpgradeStatus $status)
   {
@@ -41,9 +39,7 @@ class ClusterUpgradeMembershipGKEUpgradeState extends \Google\Model
     return $this->status;
   }
   /**
-   * Which upgrade to track the state.
-   *
-   * @param ClusterUpgradeGKEUpgrade $upgrade
+   * @param ClusterUpgradeGKEUpgrade
    */
   public function setUpgrade(ClusterUpgradeGKEUpgrade $upgrade)
   {

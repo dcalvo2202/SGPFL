@@ -20,26 +20,16 @@ namespace Google\Service\CloudDomains;
 class EmailForwarding extends \Google\Model
 {
   /**
-   * An alias recipient email that forwards emails to the
-   * `target_email_address`. For example, `admin@example.com` or `*@example.com`
-   * (wildcard alias forwards all the emails under the registered domain).
-   *
    * @var string
    */
   public $alias;
   /**
-   * Target email that receives emails sent to the `alias`.
-   *
    * @var string
    */
   public $targetEmailAddress;
 
   /**
-   * An alias recipient email that forwards emails to the
-   * `target_email_address`. For example, `admin@example.com` or `*@example.com`
-   * (wildcard alias forwards all the emails under the registered domain).
-   *
-   * @param string $alias
+   * @param string
    */
   public function setAlias($alias)
   {
@@ -53,9 +43,7 @@ class EmailForwarding extends \Google\Model
     return $this->alias;
   }
   /**
-   * Target email that receives emails sent to the `alias`.
-   *
-   * @param string $targetEmailAddress
+   * @param string
    */
   public function setTargetEmailAddress($targetEmailAddress)
   {

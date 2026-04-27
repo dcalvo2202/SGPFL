@@ -20,54 +20,26 @@ namespace Google\Service\Assuredworkloads;
 class GoogleCloudAssuredworkloadsV1WorkloadUpdate extends \Google\Model
 {
   /**
-   * Unspecified.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The update is available to be applied.
-   */
-  public const STATE_AVAILABLE = 'AVAILABLE';
-  /**
-   * The update has been applied.
-   */
-  public const STATE_APPLIED = 'APPLIED';
-  /**
-   * The update has been withdrawn by the service.
-   */
-  public const STATE_WITHDRAWN = 'WITHDRAWN';
-  /**
-   * The time the update was created.
-   *
    * @var string
    */
   public $createTime;
   protected $detailsType = GoogleCloudAssuredworkloadsV1UpdateDetails::class;
   protected $detailsDataType = '';
   /**
-   * Output only. Immutable. Identifier. Resource name of the WorkloadUpdate.
-   * Format: organizations/{organization}/locations/{location}/workloads/{worklo
-   * ad}/updates/{update}
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The state of the update.
-   *
    * @var string
    */
   public $state;
   /**
-   * The time the update was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * The time the update was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -81,9 +53,7 @@ class GoogleCloudAssuredworkloadsV1WorkloadUpdate extends \Google\Model
     return $this->createTime;
   }
   /**
-   * The details of the update.
-   *
-   * @param GoogleCloudAssuredworkloadsV1UpdateDetails $details
+   * @param GoogleCloudAssuredworkloadsV1UpdateDetails
    */
   public function setDetails(GoogleCloudAssuredworkloadsV1UpdateDetails $details)
   {
@@ -97,11 +67,7 @@ class GoogleCloudAssuredworkloadsV1WorkloadUpdate extends \Google\Model
     return $this->details;
   }
   /**
-   * Output only. Immutable. Identifier. Resource name of the WorkloadUpdate.
-   * Format: organizations/{organization}/locations/{location}/workloads/{worklo
-   * ad}/updates/{update}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -115,27 +81,21 @@ class GoogleCloudAssuredworkloadsV1WorkloadUpdate extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The state of the update.
-   *
-   * Accepted values: STATE_UNSPECIFIED, AVAILABLE, APPLIED, WITHDRAWN
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * The time the update was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

@@ -20,20 +20,12 @@ namespace Google\Service\AndroidPublisher;
 class OfferTag extends \Google\Model
 {
   /**
-   * Must conform with RFC-1034. That is, this string can only contain lower-
-   * case letters (a-z), numbers (0-9), and hyphens (-), and be at most 20
-   * characters.
-   *
    * @var string
    */
   public $tag;
 
   /**
-   * Must conform with RFC-1034. That is, this string can only contain lower-
-   * case letters (a-z), numbers (0-9), and hyphens (-), and be at most 20
-   * characters.
-   *
-   * @param string $tag
+   * @param string
    */
   public function setTag($tag)
   {

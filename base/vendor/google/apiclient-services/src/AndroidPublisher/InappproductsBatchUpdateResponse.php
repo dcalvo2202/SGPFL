@@ -24,9 +24,7 @@ class InappproductsBatchUpdateResponse extends \Google\Collection
   protected $inappproductsDataType = 'array';
 
   /**
-   * The updated or inserted in-app products.
-   *
-   * @param InAppProduct[] $inappproducts
+   * @param InAppProduct[]
    */
   public function setInappproducts($inappproducts)
   {

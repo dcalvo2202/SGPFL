@@ -24,9 +24,7 @@ class TransferMisconfiguration extends \Google\Collection
   protected $errorsDataType = 'array';
 
   /**
-   * Details for each invalid transfer or forward.
-   *
-   * @param TransferError[] $errors
+   * @param TransferError[]
    */
   public function setErrors($errors)
   {

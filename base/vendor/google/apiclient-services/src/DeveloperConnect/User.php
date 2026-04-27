@@ -20,36 +20,24 @@ namespace Google\Service\DeveloperConnect;
 class User extends \Google\Model
 {
   /**
-   * Output only. The timestamp when the user was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. Developer Connect automatically converts user identity to some
-   * human readable description, e.g., email address.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. The timestamp when the token was last requested.
-   *
    * @var string
    */
   public $lastTokenRequestTime;
   /**
-   * Identifier. Resource name of the user, in the format
-   * `projects/locations/accountConnectors/users`.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Output only. The timestamp when the user was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -63,10 +51,7 @@ class User extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. Developer Connect automatically converts user identity to some
-   * human readable description, e.g., email address.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -80,9 +65,7 @@ class User extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Output only. The timestamp when the token was last requested.
-   *
-   * @param string $lastTokenRequestTime
+   * @param string
    */
   public function setLastTokenRequestTime($lastTokenRequestTime)
   {
@@ -96,10 +79,7 @@ class User extends \Google\Model
     return $this->lastTokenRequestTime;
   }
   /**
-   * Identifier. Resource name of the user, in the format
-   * `projects/locations/accountConnectors/users`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

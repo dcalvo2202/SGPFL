@@ -20,29 +20,20 @@ namespace Google\Service\Compute;
 class InterconnectCircuitInfo extends \Google\Model
 {
   /**
-   * Customer-side demarc ID for this circuit.
-   *
    * @var string
    */
   public $customerDemarcId;
   /**
-   * Google-assigned unique ID for this circuit. Assigned at circuit turn-up.
-   *
    * @var string
    */
   public $googleCircuitId;
   /**
-   * Google-side demarc ID for this circuit. Assigned at circuit turn-up and
-   * provided by Google to the customer in the LOA.
-   *
    * @var string
    */
   public $googleDemarcId;
 
   /**
-   * Customer-side demarc ID for this circuit.
-   *
-   * @param string $customerDemarcId
+   * @param string
    */
   public function setCustomerDemarcId($customerDemarcId)
   {
@@ -56,9 +47,7 @@ class InterconnectCircuitInfo extends \Google\Model
     return $this->customerDemarcId;
   }
   /**
-   * Google-assigned unique ID for this circuit. Assigned at circuit turn-up.
-   *
-   * @param string $googleCircuitId
+   * @param string
    */
   public function setGoogleCircuitId($googleCircuitId)
   {
@@ -72,10 +61,7 @@ class InterconnectCircuitInfo extends \Google\Model
     return $this->googleCircuitId;
   }
   /**
-   * Google-side demarc ID for this circuit. Assigned at circuit turn-up and
-   * provided by Google to the customer in the LOA.
-   *
-   * @param string $googleDemarcId
+   * @param string
    */
   public function setGoogleDemarcId($googleDemarcId)
   {

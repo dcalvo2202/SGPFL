@@ -23,15 +23,10 @@ class GoogleCloudDiscoveryengineV1SearchResponseSummary extends \Google\Collecti
   protected $safetyAttributesType = GoogleCloudDiscoveryengineV1SearchResponseSummarySafetyAttributes::class;
   protected $safetyAttributesDataType = '';
   /**
-   * Additional summary-skipped reasons. This provides the reason for ignored
-   * cases. If nothing is skipped, this field is not set.
-   *
    * @var string[]
    */
   public $summarySkippedReasons;
   /**
-   * The summary content.
-   *
    * @var string
    */
   public $summaryText;
@@ -39,10 +34,7 @@ class GoogleCloudDiscoveryengineV1SearchResponseSummary extends \Google\Collecti
   protected $summaryWithMetadataDataType = '';
 
   /**
-   * A collection of Safety Attribute categories and their associated confidence
-   * scores.
-   *
-   * @param GoogleCloudDiscoveryengineV1SearchResponseSummarySafetyAttributes $safetyAttributes
+   * @param GoogleCloudDiscoveryengineV1SearchResponseSummarySafetyAttributes
    */
   public function setSafetyAttributes(GoogleCloudDiscoveryengineV1SearchResponseSummarySafetyAttributes $safetyAttributes)
   {
@@ -56,10 +48,7 @@ class GoogleCloudDiscoveryengineV1SearchResponseSummary extends \Google\Collecti
     return $this->safetyAttributes;
   }
   /**
-   * Additional summary-skipped reasons. This provides the reason for ignored
-   * cases. If nothing is skipped, this field is not set.
-   *
-   * @param string[] $summarySkippedReasons
+   * @param string[]
    */
   public function setSummarySkippedReasons($summarySkippedReasons)
   {
@@ -73,9 +62,7 @@ class GoogleCloudDiscoveryengineV1SearchResponseSummary extends \Google\Collecti
     return $this->summarySkippedReasons;
   }
   /**
-   * The summary content.
-   *
-   * @param string $summaryText
+   * @param string
    */
   public function setSummaryText($summaryText)
   {
@@ -89,9 +76,7 @@ class GoogleCloudDiscoveryengineV1SearchResponseSummary extends \Google\Collecti
     return $this->summaryText;
   }
   /**
-   * Summary with metadata information.
-   *
-   * @param GoogleCloudDiscoveryengineV1SearchResponseSummarySummaryWithMetadata $summaryWithMetadata
+   * @param GoogleCloudDiscoveryengineV1SearchResponseSummarySummaryWithMetadata
    */
   public function setSummaryWithMetadata(GoogleCloudDiscoveryengineV1SearchResponseSummarySummaryWithMetadata $summaryWithMetadata)
   {

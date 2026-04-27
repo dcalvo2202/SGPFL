@@ -24,17 +24,12 @@ class SqlDefinition extends \Google\Model
   protected $loadType = LoadConfig::class;
   protected $loadDataType = '';
   /**
-   * The SQL query representing the data preparation steps. Formatted as a Pipe
-   * SQL query statement.
-   *
    * @var string
    */
   public $query;
 
   /**
-   * Error table configuration,
-   *
-   * @param ErrorTable $errorTable
+   * @param ErrorTable
    */
   public function setErrorTable(ErrorTable $errorTable)
   {
@@ -48,9 +43,7 @@ class SqlDefinition extends \Google\Model
     return $this->errorTable;
   }
   /**
-   * Load configuration.
-   *
-   * @param LoadConfig $load
+   * @param LoadConfig
    */
   public function setLoad(LoadConfig $load)
   {
@@ -64,10 +57,7 @@ class SqlDefinition extends \Google\Model
     return $this->load;
   }
   /**
-   * The SQL query representing the data preparation steps. Formatted as a Pipe
-   * SQL query statement.
-   *
-   * @param string $query
+   * @param string
    */
   public function setQuery($query)
   {

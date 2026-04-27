@@ -41,7 +41,6 @@ class VMwareEngine extends \Google\Service
 
   public $projects_locations;
   public $projects_locations_announcements;
-  public $projects_locations_datastores;
   public $projects_locations_dnsBindPermission;
   public $projects_locations_networkPeerings;
   public $projects_locations_networkPeerings_peeringRoutes;
@@ -183,110 +182,6 @@ class VMwareEngine extends \Google\Service
           ]
         ]
     );
-    $this->projects_locations_datastores = new VMwareEngine\Resource\ProjectsLocationsDatastores(
-        $this,
-        $this->serviceName,
-        'datastores',
-        [
-          'methods' => [
-            'create' => [
-              'path' => 'v1/{+parent}/datastores',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'parent' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'datastoreId' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'requestId' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],'delete' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'DELETE',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'etag' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'requestId' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],'get' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'list' => [
-              'path' => 'v1/{+parent}/datastores',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'parent' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'filter' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'orderBy' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'pageSize' => [
-                  'location' => 'query',
-                  'type' => 'integer',
-                ],
-                'pageToken' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'requestId' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],'patch' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'PATCH',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'requestId' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'updateMask' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],
-          ]
-        ]
-    );
     $this->projects_locations_dnsBindPermission = new VMwareEngine\Resource\ProjectsLocationsDnsBindPermission(
         $this,
         $this->serviceName,
@@ -340,10 +235,6 @@ class VMwareEngine extends \Google\Service
                   'location' => 'query',
                   'type' => 'string',
                 ],
-                'validateOnly' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
               ],
             ],'delete' => [
               'path' => 'v1/{+name}',
@@ -411,10 +302,6 @@ class VMwareEngine extends \Google\Service
                 'updateMask' => [
                   'location' => 'query',
                   'type' => 'string',
-                ],
-                'validateOnly' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ],
               ],
             ],
@@ -475,10 +362,6 @@ class VMwareEngine extends \Google\Service
                 'requestId' => [
                   'location' => 'query',
                   'type' => 'string',
-                ],
-                'validateOnly' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ],
               ],
             ],'delete' => [
@@ -566,10 +449,6 @@ class VMwareEngine extends \Google\Service
                   'location' => 'query',
                   'type' => 'string',
                 ],
-                'validateOnly' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
               ],
             ],
           ]
@@ -597,10 +476,6 @@ class VMwareEngine extends \Google\Service
                 'requestId' => [
                   'location' => 'query',
                   'type' => 'string',
-                ],
-                'validateOnly' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ],
               ],
             ],'delete' => [
@@ -669,10 +544,6 @@ class VMwareEngine extends \Google\Service
                 'updateMask' => [
                   'location' => 'query',
                   'type' => 'string',
-                ],
-                'validateOnly' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ],
               ],
             ],
@@ -767,10 +638,6 @@ class VMwareEngine extends \Google\Service
                 'pageToken' => [
                   'location' => 'query',
                   'type' => 'string',
-                ],
-                'returnPartialSuccess' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ],
               ],
             ],
@@ -903,20 +770,6 @@ class VMwareEngine extends \Google\Service
                 'updateMask' => [
                   'location' => 'query',
                   'type' => 'string',
-                ],
-                'validateOnly' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
-              ],
-            ],'privateCloudDeletionNow' => [
-              'path' => 'v1/{+name}:privateCloudDeletionNow',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
                 ],
               ],
             ],'resetNsxCredentials' => [
@@ -1107,16 +960,6 @@ class VMwareEngine extends \Google\Service
                   'type' => 'string',
                 ],
               ],
-            ],'mountDatastore' => [
-              'path' => 'v1/{+name}:mountDatastore',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
             ],'patch' => [
               'path' => 'v1/{+name}',
               'httpMethod' => 'PATCH',
@@ -1154,16 +997,6 @@ class VMwareEngine extends \Google\Service
               'httpMethod' => 'POST',
               'parameters' => [
                 'resource' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'unmountDatastore' => [
-              'path' => 'v1/{+name}:unmountDatastore',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'name' => [
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -1234,10 +1067,6 @@ class VMwareEngine extends \Google\Service
                   'location' => 'query',
                   'type' => 'string',
                 ],
-                'validateOnly' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
               ],
             ],'delete' => [
               'path' => 'v1/{+name}',
@@ -1305,10 +1134,6 @@ class VMwareEngine extends \Google\Service
                 'updateMask' => [
                   'location' => 'query',
                   'type' => 'string',
-                ],
-                'validateOnly' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ],
               ],
             ],
@@ -1746,10 +1571,6 @@ class VMwareEngine extends \Google\Service
                   'location' => 'query',
                   'type' => 'string',
                 ],
-                'validateOnly' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
               ],
             ],'delete' => [
               'path' => 'v1/{+name}',
@@ -1818,10 +1639,6 @@ class VMwareEngine extends \Google\Service
                   'location' => 'query',
                   'type' => 'string',
                 ],
-                'validateOnly' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
               ],
             ],
           ]
@@ -1873,10 +1690,6 @@ class VMwareEngine extends \Google\Service
                 'requestId' => [
                   'location' => 'query',
                   'type' => 'string',
-                ],
-                'validateOnly' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ],
                 'vmwareEngineNetworkId' => [
                   'location' => 'query',
@@ -1953,10 +1766,6 @@ class VMwareEngine extends \Google\Service
                 'updateMask' => [
                   'location' => 'query',
                   'type' => 'string',
-                ],
-                'validateOnly' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ],
               ],
             ],

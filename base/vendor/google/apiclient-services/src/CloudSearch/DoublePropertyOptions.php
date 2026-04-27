@@ -23,9 +23,7 @@ class DoublePropertyOptions extends \Google\Model
   protected $operatorOptionsDataType = '';
 
   /**
-   * If set, describes how the double should be used as a search operator.
-   *
-   * @param DoubleOperatorOptions $operatorOptions
+   * @param DoubleOperatorOptions
    */
   public function setOperatorOptions(DoubleOperatorOptions $operatorOptions)
   {

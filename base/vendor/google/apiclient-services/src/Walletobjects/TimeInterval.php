@@ -22,10 +22,6 @@ class TimeInterval extends \Google\Model
   protected $endType = DateTime::class;
   protected $endDataType = '';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * `"walletobjects#timeInterval"`.
-   *
-   * @deprecated
    * @var string
    */
   public $kind;
@@ -33,10 +29,7 @@ class TimeInterval extends \Google\Model
   protected $startDataType = '';
 
   /**
-   * End time of the interval. Offset is not required. If an offset is provided
-   * and `start` time is set, `start` must also include an offset.
-   *
-   * @param DateTime $end
+   * @param DateTime
    */
   public function setEnd(DateTime $end)
   {
@@ -50,18 +43,13 @@ class TimeInterval extends \Google\Model
     return $this->end;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * `"walletobjects#timeInterval"`.
-   *
-   * @deprecated
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
     $this->kind = $kind;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getKind()
@@ -69,10 +57,7 @@ class TimeInterval extends \Google\Model
     return $this->kind;
   }
   /**
-   * Start time of the interval. Offset is not required. If an offset is
-   * provided and `end` time is set, `end` must also include an offset.
-   *
-   * @param DateTime $start
+   * @param DateTime
    */
   public function setStart(DateTime $start)
   {

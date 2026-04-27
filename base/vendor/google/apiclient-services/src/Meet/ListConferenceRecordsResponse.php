@@ -23,17 +23,12 @@ class ListConferenceRecordsResponse extends \Google\Collection
   protected $conferenceRecordsType = ConferenceRecord::class;
   protected $conferenceRecordsDataType = 'array';
   /**
-   * Token to be circulated back for further List call if current List does NOT
-   * include all the Conferences. Unset if all conferences have been returned.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * List of conferences in one page.
-   *
-   * @param ConferenceRecord[] $conferenceRecords
+   * @param ConferenceRecord[]
    */
   public function setConferenceRecords($conferenceRecords)
   {
@@ -47,10 +42,7 @@ class ListConferenceRecordsResponse extends \Google\Collection
     return $this->conferenceRecords;
   }
   /**
-   * Token to be circulated back for further List call if current List does NOT
-   * include all the Conferences. Unset if all conferences have been returned.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

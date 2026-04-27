@@ -20,16 +20,12 @@ namespace Google\Service\Contactcenterinsights;
 class GoogleCloudContactcenterinsightsV1DialogflowIntent extends \Google\Model
 {
   /**
-   * The human-readable name of the intent.
-   *
    * @var string
    */
   public $displayName;
 
   /**
-   * The human-readable name of the intent.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {

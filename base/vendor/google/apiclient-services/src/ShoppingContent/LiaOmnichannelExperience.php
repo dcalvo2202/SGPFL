@@ -21,32 +21,20 @@ class LiaOmnichannelExperience extends \Google\Collection
 {
   protected $collection_key = 'pickupTypes';
   /**
-   * The CLDR country code (for example, "US").
-   *
    * @var string
    */
   public $country;
   /**
-   * The Local Store Front (LSF) type for this country. Acceptable values are: -
-   * "`ghlsf`" (Google-Hosted Local Store Front) - "`mhlsfBasic`" (Merchant-
-   * Hosted Local Store Front Basic) - "`mhlsfFull`" (Merchant-Hosted Local
-   * Store Front Full) More details about these types can be found here.
-   *
    * @var string
    */
   public $lsfType;
   /**
-   * The Pickup types for this country. Acceptable values are: - "`pickupToday`"
-   * - "`pickupLater`"
-   *
    * @var string[]
    */
   public $pickupTypes;
 
   /**
-   * The CLDR country code (for example, "US").
-   *
-   * @param string $country
+   * @param string
    */
   public function setCountry($country)
   {
@@ -60,12 +48,7 @@ class LiaOmnichannelExperience extends \Google\Collection
     return $this->country;
   }
   /**
-   * The Local Store Front (LSF) type for this country. Acceptable values are: -
-   * "`ghlsf`" (Google-Hosted Local Store Front) - "`mhlsfBasic`" (Merchant-
-   * Hosted Local Store Front Basic) - "`mhlsfFull`" (Merchant-Hosted Local
-   * Store Front Full) More details about these types can be found here.
-   *
-   * @param string $lsfType
+   * @param string
    */
   public function setLsfType($lsfType)
   {
@@ -79,10 +62,7 @@ class LiaOmnichannelExperience extends \Google\Collection
     return $this->lsfType;
   }
   /**
-   * The Pickup types for this country. Acceptable values are: - "`pickupToday`"
-   * - "`pickupLater`"
-   *
-   * @param string[] $pickupTypes
+   * @param string[]
    */
   public function setPickupTypes($pickupTypes)
   {

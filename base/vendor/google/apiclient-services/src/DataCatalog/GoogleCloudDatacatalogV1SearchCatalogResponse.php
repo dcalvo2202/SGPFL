@@ -21,35 +21,22 @@ class GoogleCloudDatacatalogV1SearchCatalogResponse extends \Google\Collection
 {
   protected $collection_key = 'unreachable';
   /**
-   * Pagination token that can be used in subsequent calls to retrieve the next
-   * page of results.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $resultsType = GoogleCloudDatacatalogV1SearchCatalogResult::class;
   protected $resultsDataType = 'array';
   /**
-   * The approximate total number of entries matched by the query.
-   *
    * @var int
    */
   public $totalSize;
   /**
-   * Unreachable locations. Search results don't include data from those
-   * locations. To get additional information on an error, repeat the search
-   * request and restrict it to specific locations by setting the
-   * `SearchCatalogRequest.scope.restricted_locations` parameter.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * Pagination token that can be used in subsequent calls to retrieve the next
-   * page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -63,9 +50,7 @@ class GoogleCloudDatacatalogV1SearchCatalogResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Search results.
-   *
-   * @param GoogleCloudDatacatalogV1SearchCatalogResult[] $results
+   * @param GoogleCloudDatacatalogV1SearchCatalogResult[]
    */
   public function setResults($results)
   {
@@ -79,9 +64,7 @@ class GoogleCloudDatacatalogV1SearchCatalogResponse extends \Google\Collection
     return $this->results;
   }
   /**
-   * The approximate total number of entries matched by the query.
-   *
-   * @param int $totalSize
+   * @param int
    */
   public function setTotalSize($totalSize)
   {
@@ -95,12 +78,7 @@ class GoogleCloudDatacatalogV1SearchCatalogResponse extends \Google\Collection
     return $this->totalSize;
   }
   /**
-   * Unreachable locations. Search results don't include data from those
-   * locations. To get additional information on an error, repeat the search
-   * request and restrict it to specific locations by setting the
-   * `SearchCatalogRequest.scope.restricted_locations` parameter.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

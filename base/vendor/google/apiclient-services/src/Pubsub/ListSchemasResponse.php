@@ -21,9 +21,6 @@ class ListSchemasResponse extends \Google\Collection
 {
   protected $collection_key = 'schemas';
   /**
-   * If not empty, indicates that there may be more schemas that match the
-   * request; this value should be passed in a new `ListSchemasRequest`.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListSchemasResponse extends \Google\Collection
   protected $schemasDataType = 'array';
 
   /**
-   * If not empty, indicates that there may be more schemas that match the
-   * request; this value should be passed in a new `ListSchemasRequest`.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class ListSchemasResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The resulting schemas.
-   *
-   * @param Schema[] $schemas
+   * @param Schema[]
    */
   public function setSchemas($schemas)
   {

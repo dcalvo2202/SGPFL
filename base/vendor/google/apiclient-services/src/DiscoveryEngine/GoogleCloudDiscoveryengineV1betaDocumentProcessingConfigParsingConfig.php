@@ -27,9 +27,7 @@ class GoogleCloudDiscoveryengineV1betaDocumentProcessingConfigParsingConfig exte
   protected $ocrParsingConfigDataType = '';
 
   /**
-   * Configurations applied to digital parser.
-   *
-   * @param GoogleCloudDiscoveryengineV1betaDocumentProcessingConfigParsingConfigDigitalParsingConfig $digitalParsingConfig
+   * @param GoogleCloudDiscoveryengineV1betaDocumentProcessingConfigParsingConfigDigitalParsingConfig
    */
   public function setDigitalParsingConfig(GoogleCloudDiscoveryengineV1betaDocumentProcessingConfigParsingConfigDigitalParsingConfig $digitalParsingConfig)
   {
@@ -43,9 +41,7 @@ class GoogleCloudDiscoveryengineV1betaDocumentProcessingConfigParsingConfig exte
     return $this->digitalParsingConfig;
   }
   /**
-   * Configurations applied to layout parser.
-   *
-   * @param GoogleCloudDiscoveryengineV1betaDocumentProcessingConfigParsingConfigLayoutParsingConfig $layoutParsingConfig
+   * @param GoogleCloudDiscoveryengineV1betaDocumentProcessingConfigParsingConfigLayoutParsingConfig
    */
   public function setLayoutParsingConfig(GoogleCloudDiscoveryengineV1betaDocumentProcessingConfigParsingConfigLayoutParsingConfig $layoutParsingConfig)
   {
@@ -59,9 +55,7 @@ class GoogleCloudDiscoveryengineV1betaDocumentProcessingConfigParsingConfig exte
     return $this->layoutParsingConfig;
   }
   /**
-   * Configurations applied to OCR parser. Currently it only applies to PDFs.
-   *
-   * @param GoogleCloudDiscoveryengineV1betaDocumentProcessingConfigParsingConfigOcrParsingConfig $ocrParsingConfig
+   * @param GoogleCloudDiscoveryengineV1betaDocumentProcessingConfigParsingConfigOcrParsingConfig
    */
   public function setOcrParsingConfig(GoogleCloudDiscoveryengineV1betaDocumentProcessingConfigParsingConfigOcrParsingConfig $ocrParsingConfig)
   {

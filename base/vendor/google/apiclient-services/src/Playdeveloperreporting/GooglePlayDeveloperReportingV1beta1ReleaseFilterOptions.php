@@ -24,10 +24,7 @@ class GooglePlayDeveloperReportingV1beta1ReleaseFilterOptions extends \Google\Co
   protected $tracksDataType = 'array';
 
   /**
-   * List of tracks to filter releases over. Provides the grouping of version
-   * codes under releases and tracks.
-   *
-   * @param GooglePlayDeveloperReportingV1beta1Track[] $tracks
+   * @param GooglePlayDeveloperReportingV1beta1Track[]
    */
   public function setTracks($tracks)
   {

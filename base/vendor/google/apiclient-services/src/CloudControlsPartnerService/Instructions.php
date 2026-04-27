@@ -25,9 +25,7 @@ class Instructions extends \Google\Model
   protected $gcloudInstructionsDataType = '';
 
   /**
-   * Remediation instructions to resolve violation via cloud console
-   *
-   * @param Console $consoleInstructions
+   * @param Console
    */
   public function setConsoleInstructions(Console $consoleInstructions)
   {
@@ -41,9 +39,7 @@ class Instructions extends \Google\Model
     return $this->consoleInstructions;
   }
   /**
-   * Remediation instructions to resolve violation via gcloud cli
-   *
-   * @param Gcloud $gcloudInstructions
+   * @param Gcloud
    */
   public function setGcloudInstructions(Gcloud $gcloudInstructions)
   {

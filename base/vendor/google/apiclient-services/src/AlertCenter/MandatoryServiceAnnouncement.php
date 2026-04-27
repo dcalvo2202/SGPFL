@@ -20,22 +20,16 @@ namespace Google\Service\AlertCenter;
 class MandatoryServiceAnnouncement extends \Google\Model
 {
   /**
-   * Detailed, freeform text describing the announcement
-   *
    * @var string
    */
   public $description;
   /**
-   * One line summary of the announcement
-   *
    * @var string
    */
   public $title;
 
   /**
-   * Detailed, freeform text describing the announcement
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -49,9 +43,7 @@ class MandatoryServiceAnnouncement extends \Google\Model
     return $this->description;
   }
   /**
-   * One line summary of the announcement
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

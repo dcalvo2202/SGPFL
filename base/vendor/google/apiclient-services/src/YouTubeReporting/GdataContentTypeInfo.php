@@ -20,52 +20,28 @@ namespace Google\Service\YouTubeReporting;
 class GdataContentTypeInfo extends \Google\Model
 {
   /**
-   * gdata
-   *
    * @var string
    */
   public $bestGuess;
   /**
-   * gdata
-   *
    * @var string
    */
   public $fromBytes;
   /**
-   * gdata
-   *
    * @var string
    */
   public $fromFileName;
   /**
-   * gdata
-   *
-   * @var string
-   */
-  public $fromFusionId;
-  /**
-   * gdata
-   *
    * @var string
    */
   public $fromHeader;
   /**
-   * gdata
-   *
    * @var string
    */
   public $fromUrlPath;
-  /**
-   * gdata
-   *
-   * @var string
-   */
-  public $fusionIdDetectionMetadata;
 
   /**
-   * gdata
-   *
-   * @param string $bestGuess
+   * @param string
    */
   public function setBestGuess($bestGuess)
   {
@@ -79,9 +55,7 @@ class GdataContentTypeInfo extends \Google\Model
     return $this->bestGuess;
   }
   /**
-   * gdata
-   *
-   * @param string $fromBytes
+   * @param string
    */
   public function setFromBytes($fromBytes)
   {
@@ -95,9 +69,7 @@ class GdataContentTypeInfo extends \Google\Model
     return $this->fromBytes;
   }
   /**
-   * gdata
-   *
-   * @param string $fromFileName
+   * @param string
    */
   public function setFromFileName($fromFileName)
   {
@@ -111,25 +83,7 @@ class GdataContentTypeInfo extends \Google\Model
     return $this->fromFileName;
   }
   /**
-   * gdata
-   *
-   * @param string $fromFusionId
-   */
-  public function setFromFusionId($fromFusionId)
-  {
-    $this->fromFusionId = $fromFusionId;
-  }
-  /**
-   * @return string
-   */
-  public function getFromFusionId()
-  {
-    return $this->fromFusionId;
-  }
-  /**
-   * gdata
-   *
-   * @param string $fromHeader
+   * @param string
    */
   public function setFromHeader($fromHeader)
   {
@@ -143,9 +97,7 @@ class GdataContentTypeInfo extends \Google\Model
     return $this->fromHeader;
   }
   /**
-   * gdata
-   *
-   * @param string $fromUrlPath
+   * @param string
    */
   public function setFromUrlPath($fromUrlPath)
   {
@@ -157,22 +109,6 @@ class GdataContentTypeInfo extends \Google\Model
   public function getFromUrlPath()
   {
     return $this->fromUrlPath;
-  }
-  /**
-   * gdata
-   *
-   * @param string $fusionIdDetectionMetadata
-   */
-  public function setFusionIdDetectionMetadata($fusionIdDetectionMetadata)
-  {
-    $this->fusionIdDetectionMetadata = $fusionIdDetectionMetadata;
-  }
-  /**
-   * @return string
-   */
-  public function getFusionIdDetectionMetadata()
-  {
-    return $this->fusionIdDetectionMetadata;
   }
 }
 

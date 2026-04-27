@@ -20,24 +20,16 @@ namespace Google\Service\Compute;
 class LocalizedMessage extends \Google\Model
 {
   /**
-   * The locale used following the specification defined at https://www.rfc-
-   * editor.org/rfc/bcp/bcp47.txt. Examples are: "en-US", "fr-CH", "es-MX"
-   *
    * @var string
    */
   public $locale;
   /**
-   * The localized error message in the above locale.
-   *
    * @var string
    */
   public $message;
 
   /**
-   * The locale used following the specification defined at https://www.rfc-
-   * editor.org/rfc/bcp/bcp47.txt. Examples are: "en-US", "fr-CH", "es-MX"
-   *
-   * @param string $locale
+   * @param string
    */
   public function setLocale($locale)
   {
@@ -51,9 +43,7 @@ class LocalizedMessage extends \Google\Model
     return $this->locale;
   }
   /**
-   * The localized error message in the above locale.
-   *
-   * @param string $message
+   * @param string
    */
   public function setMessage($message)
   {

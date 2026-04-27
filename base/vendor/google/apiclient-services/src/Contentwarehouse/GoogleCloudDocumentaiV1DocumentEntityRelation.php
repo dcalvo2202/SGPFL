@@ -20,28 +20,20 @@ namespace Google\Service\Contentwarehouse;
 class GoogleCloudDocumentaiV1DocumentEntityRelation extends \Google\Model
 {
   /**
-   * Object entity id.
-   *
    * @var string
    */
   public $objectId;
   /**
-   * Relationship description.
-   *
    * @var string
    */
   public $relation;
   /**
-   * Subject entity id.
-   *
    * @var string
    */
   public $subjectId;
 
   /**
-   * Object entity id.
-   *
-   * @param string $objectId
+   * @param string
    */
   public function setObjectId($objectId)
   {
@@ -55,9 +47,7 @@ class GoogleCloudDocumentaiV1DocumentEntityRelation extends \Google\Model
     return $this->objectId;
   }
   /**
-   * Relationship description.
-   *
-   * @param string $relation
+   * @param string
    */
   public function setRelation($relation)
   {
@@ -71,9 +61,7 @@ class GoogleCloudDocumentaiV1DocumentEntityRelation extends \Google\Model
     return $this->relation;
   }
   /**
-   * Subject entity id.
-   *
-   * @param string $subjectId
+   * @param string
    */
   public function setSubjectId($subjectId)
   {

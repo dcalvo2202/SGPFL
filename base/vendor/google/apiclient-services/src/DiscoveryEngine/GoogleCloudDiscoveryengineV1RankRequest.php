@@ -21,58 +21,30 @@ class GoogleCloudDiscoveryengineV1RankRequest extends \Google\Collection
 {
   protected $collection_key = 'records';
   /**
-   * If true, the response will contain only record ID and score. By default, it
-   * is false, the response will contain record details.
-   *
    * @var bool
    */
   public $ignoreRecordDetailsInResponse;
   /**
-   * The identifier of the model to use. It is one of: * `semantic-
-   * ranker-512@latest`: Semantic ranking model with maximum input token size
-   * 512. It is set to `semantic-ranker-512@latest` by default if unspecified.
-   *
    * @var string
    */
   public $model;
   /**
-   * The query to use.
-   *
    * @var string
    */
   public $query;
   protected $recordsType = GoogleCloudDiscoveryengineV1RankingRecord::class;
   protected $recordsDataType = 'array';
   /**
-   * The number of results to return. If this is unset or no bigger than zero,
-   * returns all results.
-   *
    * @var int
    */
   public $topN;
   /**
-   * The user labels applied to a resource must meet the following requirements:
-   * * Each resource can have multiple labels, up to a maximum of 64. * Each
-   * label must be a key-value pair. * Keys have a minimum length of 1 character
-   * and a maximum length of 63 characters and cannot be empty. Values can be
-   * empty and have a maximum length of 63 characters. * Keys and values can
-   * contain only lowercase letters, numeric characters, underscores, and
-   * dashes. All characters must use UTF-8 encoding, and international
-   * characters are allowed. * The key portion of a label must be unique.
-   * However, you can use the same key with multiple resources. * Keys must
-   * start with a lowercase letter or international character. See [Google Cloud
-   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-
-   * labels#requirements) for more details.
-   *
    * @var string[]
    */
   public $userLabels;
 
   /**
-   * If true, the response will contain only record ID and score. By default, it
-   * is false, the response will contain record details.
-   *
-   * @param bool $ignoreRecordDetailsInResponse
+   * @param bool
    */
   public function setIgnoreRecordDetailsInResponse($ignoreRecordDetailsInResponse)
   {
@@ -86,11 +58,7 @@ class GoogleCloudDiscoveryengineV1RankRequest extends \Google\Collection
     return $this->ignoreRecordDetailsInResponse;
   }
   /**
-   * The identifier of the model to use. It is one of: * `semantic-
-   * ranker-512@latest`: Semantic ranking model with maximum input token size
-   * 512. It is set to `semantic-ranker-512@latest` by default if unspecified.
-   *
-   * @param string $model
+   * @param string
    */
   public function setModel($model)
   {
@@ -104,9 +72,7 @@ class GoogleCloudDiscoveryengineV1RankRequest extends \Google\Collection
     return $this->model;
   }
   /**
-   * The query to use.
-   *
-   * @param string $query
+   * @param string
    */
   public function setQuery($query)
   {
@@ -120,9 +86,7 @@ class GoogleCloudDiscoveryengineV1RankRequest extends \Google\Collection
     return $this->query;
   }
   /**
-   * Required. A list of records to rank.
-   *
-   * @param GoogleCloudDiscoveryengineV1RankingRecord[] $records
+   * @param GoogleCloudDiscoveryengineV1RankingRecord[]
    */
   public function setRecords($records)
   {
@@ -136,10 +100,7 @@ class GoogleCloudDiscoveryengineV1RankRequest extends \Google\Collection
     return $this->records;
   }
   /**
-   * The number of results to return. If this is unset or no bigger than zero,
-   * returns all results.
-   *
-   * @param int $topN
+   * @param int
    */
   public function setTopN($topN)
   {
@@ -153,20 +114,7 @@ class GoogleCloudDiscoveryengineV1RankRequest extends \Google\Collection
     return $this->topN;
   }
   /**
-   * The user labels applied to a resource must meet the following requirements:
-   * * Each resource can have multiple labels, up to a maximum of 64. * Each
-   * label must be a key-value pair. * Keys have a minimum length of 1 character
-   * and a maximum length of 63 characters and cannot be empty. Values can be
-   * empty and have a maximum length of 63 characters. * Keys and values can
-   * contain only lowercase letters, numeric characters, underscores, and
-   * dashes. All characters must use UTF-8 encoding, and international
-   * characters are allowed. * The key portion of a label must be unique.
-   * However, you can use the same key with multiple resources. * Keys must
-   * start with a lowercase letter or international character. See [Google Cloud
-   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-
-   * labels#requirements) for more details.
-   *
-   * @param string[] $userLabels
+   * @param string[]
    */
   public function setUserLabels($userLabels)
   {

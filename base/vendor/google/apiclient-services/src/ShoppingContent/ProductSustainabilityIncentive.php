@@ -19,42 +19,16 @@ namespace Google\Service\ShoppingContent;
 
 class ProductSustainabilityIncentive extends \Google\Model
 {
-  /**
-   * Unspecified or unknown sustainability incentive type.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * Program offering tax liability reductions for electric vehicles and, in
-   * some countries, plug-in hybrids. These reductions can be based on a
-   * specific amount or a percentage of the sale price.
-   */
-  public const TYPE_EV_TAX_CREDIT = 'EV_TAX_CREDIT';
-  /**
-   * A subsidy program, often called an environmental bonus, provides a purchase
-   * grant for electric vehicles and, in some countries, plug-in hybrids. The
-   * grant amount may be a fixed sum or a percentage of the sale price.
-   */
-  public const TYPE_EV_PRICE_DISCOUNT = 'EV_PRICE_DISCOUNT';
   protected $amountType = Price::class;
   protected $amountDataType = '';
-  /**
-   * Optional. The percentage of the sale price that the incentive is applied
-   * to.
-   *
-   * @var 
-   */
   public $percentage;
   /**
-   * Required. Sustainability incentive program.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Optional. The fixed amount of the incentive.
-   *
-   * @param Price $amount
+   * @param Price
    */
   public function setAmount(Price $amount)
   {
@@ -76,18 +50,14 @@ class ProductSustainabilityIncentive extends \Google\Model
     return $this->percentage;
   }
   /**
-   * Required. Sustainability incentive program.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, EV_TAX_CREDIT, EV_PRICE_DISCOUNT
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

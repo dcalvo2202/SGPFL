@@ -20,16 +20,12 @@ namespace Google\Service\Eventarc;
 class GoogleCloudEventarcV1PipelineMessagePayloadFormatProtobufFormat extends \Google\Model
 {
   /**
-   * Optional. The entire schema definition is stored in this field.
-   *
    * @var string
    */
   public $schemaDefinition;
 
   /**
-   * Optional. The entire schema definition is stored in this field.
-   *
-   * @param string $schemaDefinition
+   * @param string
    */
   public function setSchemaDefinition($schemaDefinition)
   {

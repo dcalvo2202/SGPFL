@@ -22,59 +22,36 @@ class SavedQuery extends \Google\Model
   protected $contentType = QueryContent::class;
   protected $contentDataType = '';
   /**
-   * Output only. The create time of this saved query.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. The account's email address who has created this saved query.
-   *
    * @var string
    */
   public $creator;
   /**
-   * The description of this saved query. This value should be fewer than 255
-   * characters.
-   *
    * @var string
    */
   public $description;
   /**
-   * Labels applied on the resource. This value should not contain more than 10
-   * entries. The key and value of each entry must be non-empty and fewer than
-   * 64 characters.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Output only. The last update time of this saved query.
-   *
    * @var string
    */
   public $lastUpdateTime;
   /**
-   * Output only. The account's email address who has updated this saved query
-   * most recently.
-   *
    * @var string
    */
   public $lastUpdater;
   /**
-   * The resource name of the saved query. The format must be: *
-   * projects/project_number/savedQueries/saved_query_id *
-   * folders/folder_number/savedQueries/saved_query_id *
-   * organizations/organization_number/savedQueries/saved_query_id
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The query content.
-   *
-   * @param QueryContent $content
+   * @param QueryContent
    */
   public function setContent(QueryContent $content)
   {
@@ -88,9 +65,7 @@ class SavedQuery extends \Google\Model
     return $this->content;
   }
   /**
-   * Output only. The create time of this saved query.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -104,9 +79,7 @@ class SavedQuery extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. The account's email address who has created this saved query.
-   *
-   * @param string $creator
+   * @param string
    */
   public function setCreator($creator)
   {
@@ -120,10 +93,7 @@ class SavedQuery extends \Google\Model
     return $this->creator;
   }
   /**
-   * The description of this saved query. This value should be fewer than 255
-   * characters.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -137,11 +107,7 @@ class SavedQuery extends \Google\Model
     return $this->description;
   }
   /**
-   * Labels applied on the resource. This value should not contain more than 10
-   * entries. The key and value of each entry must be non-empty and fewer than
-   * 64 characters.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -155,9 +121,7 @@ class SavedQuery extends \Google\Model
     return $this->labels;
   }
   /**
-   * Output only. The last update time of this saved query.
-   *
-   * @param string $lastUpdateTime
+   * @param string
    */
   public function setLastUpdateTime($lastUpdateTime)
   {
@@ -171,10 +135,7 @@ class SavedQuery extends \Google\Model
     return $this->lastUpdateTime;
   }
   /**
-   * Output only. The account's email address who has updated this saved query
-   * most recently.
-   *
-   * @param string $lastUpdater
+   * @param string
    */
   public function setLastUpdater($lastUpdater)
   {
@@ -188,12 +149,7 @@ class SavedQuery extends \Google\Model
     return $this->lastUpdater;
   }
   /**
-   * The resource name of the saved query. The format must be: *
-   * projects/project_number/savedQueries/saved_query_id *
-   * folders/folder_number/savedQueries/saved_query_id *
-   * organizations/organization_number/savedQueries/saved_query_id
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

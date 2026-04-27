@@ -20,16 +20,12 @@ namespace Google\Service\AdExchangeBuyerII;
 class RealtimeTimeRange extends \Google\Model
 {
   /**
-   * The start timestamp of the real-time RTB metrics aggregation.
-   *
    * @var string
    */
   public $startTimestamp;
 
   /**
-   * The start timestamp of the real-time RTB metrics aggregation.
-   *
-   * @param string $startTimestamp
+   * @param string
    */
   public function setStartTimestamp($startTimestamp)
   {

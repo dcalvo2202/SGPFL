@@ -28,9 +28,7 @@ class ComputeEngineDisksTargetDetails extends \Google\Collection
   protected $vmTargetDetailsDataType = '';
 
   /**
-   * The details of each created Persistent Disk.
-   *
-   * @param PersistentDisk[] $disks
+   * @param PersistentDisk[]
    */
   public function setDisks($disks)
   {
@@ -44,9 +42,7 @@ class ComputeEngineDisksTargetDetails extends \Google\Collection
     return $this->disks;
   }
   /**
-   * Details of the disks-only migration target.
-   *
-   * @param DisksMigrationDisksTargetDetails $disksTargetDetails
+   * @param DisksMigrationDisksTargetDetails
    */
   public function setDisksTargetDetails(DisksMigrationDisksTargetDetails $disksTargetDetails)
   {
@@ -60,9 +56,7 @@ class ComputeEngineDisksTargetDetails extends \Google\Collection
     return $this->disksTargetDetails;
   }
   /**
-   * Details for the VM the migrated data disks are attached to.
-   *
-   * @param DisksMigrationVmTargetDetails $vmTargetDetails
+   * @param DisksMigrationVmTargetDetails
    */
   public function setVmTargetDetails(DisksMigrationVmTargetDetails $vmTargetDetails)
   {

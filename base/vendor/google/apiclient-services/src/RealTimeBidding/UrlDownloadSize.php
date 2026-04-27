@@ -20,22 +20,16 @@ namespace Google\Service\RealTimeBidding;
 class UrlDownloadSize extends \Google\Model
 {
   /**
-   * Download size of the URL in kilobytes.
-   *
    * @var int
    */
   public $downloadSizeKb;
   /**
-   * The normalized URL with query parameters and fragment removed.
-   *
    * @var string
    */
   public $normalizedUrl;
 
   /**
-   * Download size of the URL in kilobytes.
-   *
-   * @param int $downloadSizeKb
+   * @param int
    */
   public function setDownloadSizeKb($downloadSizeKb)
   {
@@ -49,9 +43,7 @@ class UrlDownloadSize extends \Google\Model
     return $this->downloadSizeKb;
   }
   /**
-   * The normalized URL with query parameters and fragment removed.
-   *
-   * @param string $normalizedUrl
+   * @param string
    */
   public function setNormalizedUrl($normalizedUrl)
   {

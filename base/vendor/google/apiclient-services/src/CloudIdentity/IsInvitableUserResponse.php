@@ -20,16 +20,12 @@ namespace Google\Service\CloudIdentity;
 class IsInvitableUserResponse extends \Google\Model
 {
   /**
-   * Returns true if the email address is invitable.
-   *
    * @var bool
    */
   public $isInvitableUser;
 
   /**
-   * Returns true if the email address is invitable.
-   *
-   * @param bool $isInvitableUser
+   * @param bool
    */
   public function setIsInvitableUser($isInvitableUser)
   {

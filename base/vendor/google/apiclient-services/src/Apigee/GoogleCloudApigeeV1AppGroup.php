@@ -21,75 +21,46 @@ class GoogleCloudApigeeV1AppGroup extends \Google\Collection
 {
   protected $collection_key = 'attributes';
   /**
-   * Output only. Internal identifier that cannot be edited
-   *
    * @var string
    */
   public $appGroupId;
   protected $attributesType = GoogleCloudApigeeV1Attribute::class;
   protected $attributesDataType = 'array';
   /**
-   * channel identifier identifies the owner maintaing this grouping.
-   *
    * @var string
    */
   public $channelId;
   /**
-   * A reference to the associated storefront/marketplace.
-   *
    * @var string
    */
   public $channelUri;
   /**
-   * Output only. Created time as milliseconds since epoch.
-   *
    * @var string
    */
   public $createdAt;
   /**
-   * app group name displayed in the UI
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Optional. Email of the AppGroup.
-   *
-   * @var string
-   */
-  public $email;
-  /**
-   * Output only. Modified time as milliseconds since epoch.
-   *
    * @var string
    */
   public $lastModifiedAt;
   /**
-   * Immutable. Name of the AppGroup. Characters you can use in the name are
-   * restricted to: A-Z0-9._\-$ %.
-   *
    * @var string
    */
   public $name;
   /**
-   * Immutable. the org the app group is created
-   *
    * @var string
    */
   public $organization;
   /**
-   * Valid values are `active` or `inactive`. Note that the status of the
-   * AppGroup should be updated via UpdateAppGroupRequest by setting the action
-   * as `active` or `inactive`.
-   *
    * @var string
    */
   public $status;
 
   /**
-   * Output only. Internal identifier that cannot be edited
-   *
-   * @param string $appGroupId
+   * @param string
    */
   public function setAppGroupId($appGroupId)
   {
@@ -103,9 +74,7 @@ class GoogleCloudApigeeV1AppGroup extends \Google\Collection
     return $this->appGroupId;
   }
   /**
-   * A list of attributes
-   *
-   * @param GoogleCloudApigeeV1Attribute[] $attributes
+   * @param GoogleCloudApigeeV1Attribute[]
    */
   public function setAttributes($attributes)
   {
@@ -119,9 +88,7 @@ class GoogleCloudApigeeV1AppGroup extends \Google\Collection
     return $this->attributes;
   }
   /**
-   * channel identifier identifies the owner maintaing this grouping.
-   *
-   * @param string $channelId
+   * @param string
    */
   public function setChannelId($channelId)
   {
@@ -135,9 +102,7 @@ class GoogleCloudApigeeV1AppGroup extends \Google\Collection
     return $this->channelId;
   }
   /**
-   * A reference to the associated storefront/marketplace.
-   *
-   * @param string $channelUri
+   * @param string
    */
   public function setChannelUri($channelUri)
   {
@@ -151,9 +116,7 @@ class GoogleCloudApigeeV1AppGroup extends \Google\Collection
     return $this->channelUri;
   }
   /**
-   * Output only. Created time as milliseconds since epoch.
-   *
-   * @param string $createdAt
+   * @param string
    */
   public function setCreatedAt($createdAt)
   {
@@ -167,9 +130,7 @@ class GoogleCloudApigeeV1AppGroup extends \Google\Collection
     return $this->createdAt;
   }
   /**
-   * app group name displayed in the UI
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -183,25 +144,7 @@ class GoogleCloudApigeeV1AppGroup extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Optional. Email of the AppGroup.
-   *
-   * @param string $email
-   */
-  public function setEmail($email)
-  {
-    $this->email = $email;
-  }
-  /**
-   * @return string
-   */
-  public function getEmail()
-  {
-    return $this->email;
-  }
-  /**
-   * Output only. Modified time as milliseconds since epoch.
-   *
-   * @param string $lastModifiedAt
+   * @param string
    */
   public function setLastModifiedAt($lastModifiedAt)
   {
@@ -215,10 +158,7 @@ class GoogleCloudApigeeV1AppGroup extends \Google\Collection
     return $this->lastModifiedAt;
   }
   /**
-   * Immutable. Name of the AppGroup. Characters you can use in the name are
-   * restricted to: A-Z0-9._\-$ %.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -232,9 +172,7 @@ class GoogleCloudApigeeV1AppGroup extends \Google\Collection
     return $this->name;
   }
   /**
-   * Immutable. the org the app group is created
-   *
-   * @param string $organization
+   * @param string
    */
   public function setOrganization($organization)
   {
@@ -248,11 +186,7 @@ class GoogleCloudApigeeV1AppGroup extends \Google\Collection
     return $this->organization;
   }
   /**
-   * Valid values are `active` or `inactive`. Note that the status of the
-   * AppGroup should be updated via UpdateAppGroupRequest by setting the action
-   * as `active` or `inactive`.
-   *
-   * @param string $status
+   * @param string
    */
   public function setStatus($status)
   {

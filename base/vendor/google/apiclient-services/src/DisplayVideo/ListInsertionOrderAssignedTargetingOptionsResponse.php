@@ -23,20 +23,12 @@ class ListInsertionOrderAssignedTargetingOptionsResponse extends \Google\Collect
   protected $assignedTargetingOptionsType = AssignedTargetingOption::class;
   protected $assignedTargetingOptionsDataType = 'array';
   /**
-   * A token identifying the next page of results. This value should be
-   * specified as the pageToken in a subsequent
-   * ListInsertionOrderAssignedTargetingOptionsRequest to fetch the next page of
-   * results. This token will be absent if there are no more
-   * assigned_targeting_options to return.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of assigned targeting options. This list will be absent if empty.
-   *
-   * @param AssignedTargetingOption[] $assignedTargetingOptions
+   * @param AssignedTargetingOption[]
    */
   public function setAssignedTargetingOptions($assignedTargetingOptions)
   {
@@ -50,13 +42,7 @@ class ListInsertionOrderAssignedTargetingOptionsResponse extends \Google\Collect
     return $this->assignedTargetingOptions;
   }
   /**
-   * A token identifying the next page of results. This value should be
-   * specified as the pageToken in a subsequent
-   * ListInsertionOrderAssignedTargetingOptionsRequest to fetch the next page of
-   * results. This token will be absent if there are no more
-   * assigned_targeting_options to return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

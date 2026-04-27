@@ -21,47 +21,32 @@ class GoogleCloudApigeeV1SecurityReportMetadata extends \Google\Collection
 {
   protected $collection_key = 'metrics';
   /**
-   * Dimensions of the SecurityReport.
-   *
    * @var string[]
    */
   public $dimensions;
   /**
-   * End timestamp of the query range.
-   *
    * @var string
    */
   public $endTimestamp;
   /**
-   * Metrics of the SecurityReport. Example:
-   * ["name:bot_count,func:sum,alias:sum_bot_count"]
-   *
    * @var string[]
    */
   public $metrics;
   /**
-   * MIME type / Output format.
-   *
    * @var string
    */
   public $mimeType;
   /**
-   * Start timestamp of the query range.
-   *
    * @var string
    */
   public $startTimestamp;
   /**
-   * Query GroupBy time unit. Example: "seconds", "minute", "hour"
-   *
    * @var string
    */
   public $timeUnit;
 
   /**
-   * Dimensions of the SecurityReport.
-   *
-   * @param string[] $dimensions
+   * @param string[]
    */
   public function setDimensions($dimensions)
   {
@@ -75,9 +60,7 @@ class GoogleCloudApigeeV1SecurityReportMetadata extends \Google\Collection
     return $this->dimensions;
   }
   /**
-   * End timestamp of the query range.
-   *
-   * @param string $endTimestamp
+   * @param string
    */
   public function setEndTimestamp($endTimestamp)
   {
@@ -91,10 +74,7 @@ class GoogleCloudApigeeV1SecurityReportMetadata extends \Google\Collection
     return $this->endTimestamp;
   }
   /**
-   * Metrics of the SecurityReport. Example:
-   * ["name:bot_count,func:sum,alias:sum_bot_count"]
-   *
-   * @param string[] $metrics
+   * @param string[]
    */
   public function setMetrics($metrics)
   {
@@ -108,9 +88,7 @@ class GoogleCloudApigeeV1SecurityReportMetadata extends \Google\Collection
     return $this->metrics;
   }
   /**
-   * MIME type / Output format.
-   *
-   * @param string $mimeType
+   * @param string
    */
   public function setMimeType($mimeType)
   {
@@ -124,9 +102,7 @@ class GoogleCloudApigeeV1SecurityReportMetadata extends \Google\Collection
     return $this->mimeType;
   }
   /**
-   * Start timestamp of the query range.
-   *
-   * @param string $startTimestamp
+   * @param string
    */
   public function setStartTimestamp($startTimestamp)
   {
@@ -140,9 +116,7 @@ class GoogleCloudApigeeV1SecurityReportMetadata extends \Google\Collection
     return $this->startTimestamp;
   }
   /**
-   * Query GroupBy time unit. Example: "seconds", "minute", "hour"
-   *
-   * @param string $timeUnit
+   * @param string
    */
   public function setTimeUnit($timeUnit)
   {

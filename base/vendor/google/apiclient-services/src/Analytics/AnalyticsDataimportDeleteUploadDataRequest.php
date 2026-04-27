@@ -21,16 +21,12 @@ class AnalyticsDataimportDeleteUploadDataRequest extends \Google\Collection
 {
   protected $collection_key = 'customDataImportUids';
   /**
-   * A list of upload UIDs.
-   *
    * @var string[]
    */
   public $customDataImportUids;
 
   /**
-   * A list of upload UIDs.
-   *
-   * @param string[] $customDataImportUids
+   * @param string[]
    */
   public function setCustomDataImportUids($customDataImportUids)
   {

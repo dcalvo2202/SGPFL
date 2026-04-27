@@ -22,28 +22,20 @@ class GoogleCloudContactcenterinsightsV1CreateAnalysisOperationMetadata extends 
   protected $annotatorSelectorType = GoogleCloudContactcenterinsightsV1AnnotatorSelector::class;
   protected $annotatorSelectorDataType = '';
   /**
-   * Output only. The Conversation that this Analysis Operation belongs to.
-   *
    * @var string
    */
   public $conversation;
   /**
-   * Output only. The time the operation was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. The time the operation finished running.
-   *
    * @var string
    */
   public $endTime;
 
   /**
-   * Output only. The annotator selector used for the analysis (if any).
-   *
-   * @param GoogleCloudContactcenterinsightsV1AnnotatorSelector $annotatorSelector
+   * @param GoogleCloudContactcenterinsightsV1AnnotatorSelector
    */
   public function setAnnotatorSelector(GoogleCloudContactcenterinsightsV1AnnotatorSelector $annotatorSelector)
   {
@@ -57,9 +49,7 @@ class GoogleCloudContactcenterinsightsV1CreateAnalysisOperationMetadata extends 
     return $this->annotatorSelector;
   }
   /**
-   * Output only. The Conversation that this Analysis Operation belongs to.
-   *
-   * @param string $conversation
+   * @param string
    */
   public function setConversation($conversation)
   {
@@ -73,9 +63,7 @@ class GoogleCloudContactcenterinsightsV1CreateAnalysisOperationMetadata extends 
     return $this->conversation;
   }
   /**
-   * Output only. The time the operation was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -89,9 +77,7 @@ class GoogleCloudContactcenterinsightsV1CreateAnalysisOperationMetadata extends 
     return $this->createTime;
   }
   /**
-   * Output only. The time the operation finished running.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {

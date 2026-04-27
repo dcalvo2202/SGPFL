@@ -20,24 +20,16 @@ namespace Google\Service\Dataproc;
 class ClusterSelector extends \Google\Model
 {
   /**
-   * Required. The cluster labels. Cluster must have all labels to match.
-   *
    * @var string[]
    */
   public $clusterLabels;
   /**
-   * Optional. The zone where workflow process executes. This parameter does not
-   * affect the selection of the cluster.If unspecified, the zone of the first
-   * cluster matching the selector is used.
-   *
    * @var string
    */
   public $zone;
 
   /**
-   * Required. The cluster labels. Cluster must have all labels to match.
-   *
-   * @param string[] $clusterLabels
+   * @param string[]
    */
   public function setClusterLabels($clusterLabels)
   {
@@ -51,11 +43,7 @@ class ClusterSelector extends \Google\Model
     return $this->clusterLabels;
   }
   /**
-   * Optional. The zone where workflow process executes. This parameter does not
-   * affect the selection of the cluster.If unspecified, the zone of the first
-   * cluster matching the selector is used.
-   *
-   * @param string $zone
+   * @param string
    */
   public function setZone($zone)
   {

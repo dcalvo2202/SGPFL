@@ -23,10 +23,7 @@ class GoogleCloudContentwarehouseV1DeleteDocumentLinkRequest extends \Google\Mod
   protected $requestMetadataDataType = '';
 
   /**
-   * The meta information collected about the document creator, used to enforce
-   * access control for the service.
-   *
-   * @param GoogleCloudContentwarehouseV1RequestMetadata $requestMetadata
+   * @param GoogleCloudContentwarehouseV1RequestMetadata
    */
   public function setRequestMetadata(GoogleCloudContentwarehouseV1RequestMetadata $requestMetadata)
   {

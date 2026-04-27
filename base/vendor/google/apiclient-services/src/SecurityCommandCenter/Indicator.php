@@ -21,30 +21,22 @@ class Indicator extends \Google\Collection
 {
   protected $collection_key = 'uris';
   /**
-   * List of domains associated to the Finding.
-   *
    * @var string[]
    */
   public $domains;
   /**
-   * The list of IP addresses that are associated with the finding.
-   *
    * @var string[]
    */
   public $ipAddresses;
   protected $signaturesType = ProcessSignature::class;
   protected $signaturesDataType = 'array';
   /**
-   * The list of URIs associated to the Findings.
-   *
    * @var string[]
    */
   public $uris;
 
   /**
-   * List of domains associated to the Finding.
-   *
-   * @param string[] $domains
+   * @param string[]
    */
   public function setDomains($domains)
   {
@@ -58,9 +50,7 @@ class Indicator extends \Google\Collection
     return $this->domains;
   }
   /**
-   * The list of IP addresses that are associated with the finding.
-   *
-   * @param string[] $ipAddresses
+   * @param string[]
    */
   public function setIpAddresses($ipAddresses)
   {
@@ -74,10 +64,7 @@ class Indicator extends \Google\Collection
     return $this->ipAddresses;
   }
   /**
-   * The list of matched signatures indicating that the given process is present
-   * in the environment.
-   *
-   * @param ProcessSignature[] $signatures
+   * @param ProcessSignature[]
    */
   public function setSignatures($signatures)
   {
@@ -91,9 +78,7 @@ class Indicator extends \Google\Collection
     return $this->signatures;
   }
   /**
-   * The list of URIs associated to the Findings.
-   *
-   * @param string[] $uris
+   * @param string[]
    */
   public function setUris($uris)
   {

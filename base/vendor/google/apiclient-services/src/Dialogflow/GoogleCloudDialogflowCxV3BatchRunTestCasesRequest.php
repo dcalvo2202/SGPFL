@@ -30,7 +30,7 @@ class GoogleCloudDialogflowCxV3BatchRunTestCasesRequest extends \Google\Collecti
   public $testCases;
 
   /**
-   * @param string $environment
+   * @param string
    */
   public function setEnvironment($environment)
   {
@@ -44,7 +44,7 @@ class GoogleCloudDialogflowCxV3BatchRunTestCasesRequest extends \Google\Collecti
     return $this->environment;
   }
   /**
-   * @param string[] $testCases
+   * @param string[]
    */
   public function setTestCases($testCases)
   {

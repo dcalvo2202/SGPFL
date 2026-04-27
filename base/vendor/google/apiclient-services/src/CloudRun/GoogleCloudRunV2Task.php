@@ -19,31 +19,12 @@ namespace Google\Service\CloudRun;
 
 class GoogleCloudRunV2Task extends \Google\Collection
 {
-  /**
-   * Unspecified
-   */
-  public const EXECUTION_ENVIRONMENT_EXECUTION_ENVIRONMENT_UNSPECIFIED = 'EXECUTION_ENVIRONMENT_UNSPECIFIED';
-  /**
-   * Uses the First Generation environment.
-   */
-  public const EXECUTION_ENVIRONMENT_EXECUTION_ENVIRONMENT_GEN1 = 'EXECUTION_ENVIRONMENT_GEN1';
-  /**
-   * Uses Second Generation environment.
-   */
-  public const EXECUTION_ENVIRONMENT_EXECUTION_ENVIRONMENT_GEN2 = 'EXECUTION_ENVIRONMENT_GEN2';
   protected $collection_key = 'volumes';
   /**
-   * Output only. Unstructured key value map that may be set by external tools
-   * to store and arbitrary metadata. They are not queryable and should be
-   * preserved when modifying objects.
-   *
    * @var string[]
    */
   public $annotations;
   /**
-   * Output only. Represents time when the Task was completed. It is not
-   * guaranteed to be set in happens-before order across separate operations.
-   *
    * @var string
    */
   public $completionTime;
@@ -52,186 +33,106 @@ class GoogleCloudRunV2Task extends \Google\Collection
   protected $containersType = GoogleCloudRunV2Container::class;
   protected $containersDataType = 'array';
   /**
-   * Output only. Represents time when the task was created by the system. It is
-   * not guaranteed to be set in happens-before order across separate
-   * operations.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. For a deleted resource, the deletion time. It is only
-   * populated as a response to a Delete request.
-   *
    * @var string
    */
   public $deleteTime;
   /**
-   * Output only. A reference to a customer managed encryption key (CMEK) to use
-   * to encrypt this container image. For more information, go to
-   * https://cloud.google.com/run/docs/securing/using-cmek
-   *
    * @var string
    */
   public $encryptionKey;
   /**
-   * Output only. A system-generated fingerprint for this version of the
-   * resource. May be used to detect modification conflict during updates.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Output only. The name of the parent Execution.
-   *
    * @var string
    */
   public $execution;
   /**
-   * The execution environment being used to host this Task.
-   *
    * @var string
    */
   public $executionEnvironment;
   /**
-   * Output only. For a deleted resource, the time after which it will be
-   * permamently deleted. It is only populated as a response to a Delete
-   * request.
-   *
    * @var string
    */
   public $expireTime;
   /**
-   * Output only. A number that monotonically increases every time the user
-   * modifies the desired state.
-   *
    * @var string
    */
   public $generation;
   /**
-   * Optional. Output only. True if GPU zonal redundancy is disabled on this
-   * task.
-   *
    * @var bool
    */
   public $gpuZonalRedundancyDisabled;
   /**
-   * Output only. Index of the Task, unique per execution, and beginning at 0.
-   *
    * @var int
    */
   public $index;
   /**
-   * Output only. The name of the parent Job.
-   *
    * @var string
    */
   public $job;
   /**
-   * Output only. Unstructured key value map that can be used to organize and
-   * categorize objects. User-provided labels are shared with Google's billing
-   * system, so they can be used to filter, or break down billing charges by
-   * team, component, environment, state, etc. For more information, visit
-   * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
-   * https://cloud.google.com/run/docs/configuring/labels
-   *
    * @var string[]
    */
   public $labels;
   protected $lastAttemptResultType = GoogleCloudRunV2TaskAttemptResult::class;
   protected $lastAttemptResultDataType = '';
   /**
-   * Output only. URI where logs for this execution can be found in Cloud
-   * Console.
-   *
    * @var string
    */
   public $logUri;
   /**
-   * Number of retries allowed per Task, before marking this Task failed.
-   *
    * @var int
    */
   public $maxRetries;
   /**
-   * Output only. The unique name of this Task.
-   *
    * @var string
    */
   public $name;
   protected $nodeSelectorType = GoogleCloudRunV2NodeSelector::class;
   protected $nodeSelectorDataType = '';
   /**
-   * Output only. The generation of this Task. See comments in `Job.reconciling`
-   * for additional information on reconciliation process in Cloud Run.
-   *
    * @var string
    */
   public $observedGeneration;
   /**
-   * Output only. Indicates whether the resource's reconciliation is still in
-   * progress. See comments in `Job.reconciling` for additional information on
-   * reconciliation process in Cloud Run.
-   *
    * @var bool
    */
   public $reconciling;
   /**
-   * Output only. The number of times this Task was retried. Tasks are retried
-   * when they fail up to the maxRetries limit.
-   *
    * @var int
    */
   public $retried;
   /**
-   * Output only. Reserved for future use.
-   *
    * @var bool
    */
   public $satisfiesPzs;
   /**
-   * Output only. Represents time when the task was scheduled to run by the
-   * system. It is not guaranteed to be set in happens-before order across
-   * separate operations.
-   *
    * @var string
    */
   public $scheduledTime;
   /**
-   * Email address of the IAM service account associated with the Task of a Job.
-   * The service account represents the identity of the running task, and
-   * determines what permissions the task has. If not provided, the task will
-   * use the project's default service account.
-   *
    * @var string
    */
   public $serviceAccount;
   /**
-   * Output only. Represents time when the task started to run. It is not
-   * guaranteed to be set in happens-before order across separate operations.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * Max allowed time duration the Task may be active before the system will
-   * actively try to mark it failed and kill associated containers. This applies
-   * per attempt of a task, meaning each retry can run for the full timeout.
-   *
    * @var string
    */
   public $timeout;
   /**
-   * Output only. Server assigned unique identifier for the Task. The value is a
-   * UUID4 string and guaranteed to remain unchanged until the resource is
-   * deleted.
-   *
    * @var string
    */
   public $uid;
   /**
-   * Output only. The last-modified time.
-   *
    * @var string
    */
   public $updateTime;
@@ -241,11 +142,7 @@ class GoogleCloudRunV2Task extends \Google\Collection
   protected $vpcAccessDataType = '';
 
   /**
-   * Output only. Unstructured key value map that may be set by external tools
-   * to store and arbitrary metadata. They are not queryable and should be
-   * preserved when modifying objects.
-   *
-   * @param string[] $annotations
+   * @param string[]
    */
   public function setAnnotations($annotations)
   {
@@ -259,10 +156,7 @@ class GoogleCloudRunV2Task extends \Google\Collection
     return $this->annotations;
   }
   /**
-   * Output only. Represents time when the Task was completed. It is not
-   * guaranteed to be set in happens-before order across separate operations.
-   *
-   * @param string $completionTime
+   * @param string
    */
   public function setCompletionTime($completionTime)
   {
@@ -276,10 +170,7 @@ class GoogleCloudRunV2Task extends \Google\Collection
     return $this->completionTime;
   }
   /**
-   * Output only. The Condition of this Task, containing its readiness status,
-   * and detailed error information in case it did not reach the desired state.
-   *
-   * @param GoogleCloudRunV2Condition[] $conditions
+   * @param GoogleCloudRunV2Condition[]
    */
   public function setConditions($conditions)
   {
@@ -293,10 +184,7 @@ class GoogleCloudRunV2Task extends \Google\Collection
     return $this->conditions;
   }
   /**
-   * Holds the single container that defines the unit of execution for this
-   * task.
-   *
-   * @param GoogleCloudRunV2Container[] $containers
+   * @param GoogleCloudRunV2Container[]
    */
   public function setContainers($containers)
   {
@@ -310,11 +198,7 @@ class GoogleCloudRunV2Task extends \Google\Collection
     return $this->containers;
   }
   /**
-   * Output only. Represents time when the task was created by the system. It is
-   * not guaranteed to be set in happens-before order across separate
-   * operations.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -328,10 +212,7 @@ class GoogleCloudRunV2Task extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Output only. For a deleted resource, the deletion time. It is only
-   * populated as a response to a Delete request.
-   *
-   * @param string $deleteTime
+   * @param string
    */
   public function setDeleteTime($deleteTime)
   {
@@ -345,11 +226,7 @@ class GoogleCloudRunV2Task extends \Google\Collection
     return $this->deleteTime;
   }
   /**
-   * Output only. A reference to a customer managed encryption key (CMEK) to use
-   * to encrypt this container image. For more information, go to
-   * https://cloud.google.com/run/docs/securing/using-cmek
-   *
-   * @param string $encryptionKey
+   * @param string
    */
   public function setEncryptionKey($encryptionKey)
   {
@@ -363,10 +240,7 @@ class GoogleCloudRunV2Task extends \Google\Collection
     return $this->encryptionKey;
   }
   /**
-   * Output only. A system-generated fingerprint for this version of the
-   * resource. May be used to detect modification conflict during updates.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -380,9 +254,7 @@ class GoogleCloudRunV2Task extends \Google\Collection
     return $this->etag;
   }
   /**
-   * Output only. The name of the parent Execution.
-   *
-   * @param string $execution
+   * @param string
    */
   public function setExecution($execution)
   {
@@ -396,30 +268,21 @@ class GoogleCloudRunV2Task extends \Google\Collection
     return $this->execution;
   }
   /**
-   * The execution environment being used to host this Task.
-   *
-   * Accepted values: EXECUTION_ENVIRONMENT_UNSPECIFIED,
-   * EXECUTION_ENVIRONMENT_GEN1, EXECUTION_ENVIRONMENT_GEN2
-   *
-   * @param self::EXECUTION_ENVIRONMENT_* $executionEnvironment
+   * @param string
    */
   public function setExecutionEnvironment($executionEnvironment)
   {
     $this->executionEnvironment = $executionEnvironment;
   }
   /**
-   * @return self::EXECUTION_ENVIRONMENT_*
+   * @return string
    */
   public function getExecutionEnvironment()
   {
     return $this->executionEnvironment;
   }
   /**
-   * Output only. For a deleted resource, the time after which it will be
-   * permamently deleted. It is only populated as a response to a Delete
-   * request.
-   *
-   * @param string $expireTime
+   * @param string
    */
   public function setExpireTime($expireTime)
   {
@@ -433,10 +296,7 @@ class GoogleCloudRunV2Task extends \Google\Collection
     return $this->expireTime;
   }
   /**
-   * Output only. A number that monotonically increases every time the user
-   * modifies the desired state.
-   *
-   * @param string $generation
+   * @param string
    */
   public function setGeneration($generation)
   {
@@ -450,10 +310,7 @@ class GoogleCloudRunV2Task extends \Google\Collection
     return $this->generation;
   }
   /**
-   * Optional. Output only. True if GPU zonal redundancy is disabled on this
-   * task.
-   *
-   * @param bool $gpuZonalRedundancyDisabled
+   * @param bool
    */
   public function setGpuZonalRedundancyDisabled($gpuZonalRedundancyDisabled)
   {
@@ -467,9 +324,7 @@ class GoogleCloudRunV2Task extends \Google\Collection
     return $this->gpuZonalRedundancyDisabled;
   }
   /**
-   * Output only. Index of the Task, unique per execution, and beginning at 0.
-   *
-   * @param int $index
+   * @param int
    */
   public function setIndex($index)
   {
@@ -483,9 +338,7 @@ class GoogleCloudRunV2Task extends \Google\Collection
     return $this->index;
   }
   /**
-   * Output only. The name of the parent Job.
-   *
-   * @param string $job
+   * @param string
    */
   public function setJob($job)
   {
@@ -499,14 +352,7 @@ class GoogleCloudRunV2Task extends \Google\Collection
     return $this->job;
   }
   /**
-   * Output only. Unstructured key value map that can be used to organize and
-   * categorize objects. User-provided labels are shared with Google's billing
-   * system, so they can be used to filter, or break down billing charges by
-   * team, component, environment, state, etc. For more information, visit
-   * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
-   * https://cloud.google.com/run/docs/configuring/labels
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -520,9 +366,7 @@ class GoogleCloudRunV2Task extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Output only. Result of the last attempt of this Task.
-   *
-   * @param GoogleCloudRunV2TaskAttemptResult $lastAttemptResult
+   * @param GoogleCloudRunV2TaskAttemptResult
    */
   public function setLastAttemptResult(GoogleCloudRunV2TaskAttemptResult $lastAttemptResult)
   {
@@ -536,10 +380,7 @@ class GoogleCloudRunV2Task extends \Google\Collection
     return $this->lastAttemptResult;
   }
   /**
-   * Output only. URI where logs for this execution can be found in Cloud
-   * Console.
-   *
-   * @param string $logUri
+   * @param string
    */
   public function setLogUri($logUri)
   {
@@ -553,9 +394,7 @@ class GoogleCloudRunV2Task extends \Google\Collection
     return $this->logUri;
   }
   /**
-   * Number of retries allowed per Task, before marking this Task failed.
-   *
-   * @param int $maxRetries
+   * @param int
    */
   public function setMaxRetries($maxRetries)
   {
@@ -569,9 +408,7 @@ class GoogleCloudRunV2Task extends \Google\Collection
     return $this->maxRetries;
   }
   /**
-   * Output only. The unique name of this Task.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -585,9 +422,7 @@ class GoogleCloudRunV2Task extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. The node selector for the task.
-   *
-   * @param GoogleCloudRunV2NodeSelector $nodeSelector
+   * @param GoogleCloudRunV2NodeSelector
    */
   public function setNodeSelector(GoogleCloudRunV2NodeSelector $nodeSelector)
   {
@@ -601,10 +436,7 @@ class GoogleCloudRunV2Task extends \Google\Collection
     return $this->nodeSelector;
   }
   /**
-   * Output only. The generation of this Task. See comments in `Job.reconciling`
-   * for additional information on reconciliation process in Cloud Run.
-   *
-   * @param string $observedGeneration
+   * @param string
    */
   public function setObservedGeneration($observedGeneration)
   {
@@ -618,11 +450,7 @@ class GoogleCloudRunV2Task extends \Google\Collection
     return $this->observedGeneration;
   }
   /**
-   * Output only. Indicates whether the resource's reconciliation is still in
-   * progress. See comments in `Job.reconciling` for additional information on
-   * reconciliation process in Cloud Run.
-   *
-   * @param bool $reconciling
+   * @param bool
    */
   public function setReconciling($reconciling)
   {
@@ -636,10 +464,7 @@ class GoogleCloudRunV2Task extends \Google\Collection
     return $this->reconciling;
   }
   /**
-   * Output only. The number of times this Task was retried. Tasks are retried
-   * when they fail up to the maxRetries limit.
-   *
-   * @param int $retried
+   * @param int
    */
   public function setRetried($retried)
   {
@@ -653,9 +478,7 @@ class GoogleCloudRunV2Task extends \Google\Collection
     return $this->retried;
   }
   /**
-   * Output only. Reserved for future use.
-   *
-   * @param bool $satisfiesPzs
+   * @param bool
    */
   public function setSatisfiesPzs($satisfiesPzs)
   {
@@ -669,11 +492,7 @@ class GoogleCloudRunV2Task extends \Google\Collection
     return $this->satisfiesPzs;
   }
   /**
-   * Output only. Represents time when the task was scheduled to run by the
-   * system. It is not guaranteed to be set in happens-before order across
-   * separate operations.
-   *
-   * @param string $scheduledTime
+   * @param string
    */
   public function setScheduledTime($scheduledTime)
   {
@@ -687,12 +506,7 @@ class GoogleCloudRunV2Task extends \Google\Collection
     return $this->scheduledTime;
   }
   /**
-   * Email address of the IAM service account associated with the Task of a Job.
-   * The service account represents the identity of the running task, and
-   * determines what permissions the task has. If not provided, the task will
-   * use the project's default service account.
-   *
-   * @param string $serviceAccount
+   * @param string
    */
   public function setServiceAccount($serviceAccount)
   {
@@ -706,10 +520,7 @@ class GoogleCloudRunV2Task extends \Google\Collection
     return $this->serviceAccount;
   }
   /**
-   * Output only. Represents time when the task started to run. It is not
-   * guaranteed to be set in happens-before order across separate operations.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -723,11 +534,7 @@ class GoogleCloudRunV2Task extends \Google\Collection
     return $this->startTime;
   }
   /**
-   * Max allowed time duration the Task may be active before the system will
-   * actively try to mark it failed and kill associated containers. This applies
-   * per attempt of a task, meaning each retry can run for the full timeout.
-   *
-   * @param string $timeout
+   * @param string
    */
   public function setTimeout($timeout)
   {
@@ -741,11 +548,7 @@ class GoogleCloudRunV2Task extends \Google\Collection
     return $this->timeout;
   }
   /**
-   * Output only. Server assigned unique identifier for the Task. The value is a
-   * UUID4 string and guaranteed to remain unchanged until the resource is
-   * deleted.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {
@@ -759,9 +562,7 @@ class GoogleCloudRunV2Task extends \Google\Collection
     return $this->uid;
   }
   /**
-   * Output only. The last-modified time.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -775,9 +576,7 @@ class GoogleCloudRunV2Task extends \Google\Collection
     return $this->updateTime;
   }
   /**
-   * A list of Volumes to make available to containers.
-   *
-   * @param GoogleCloudRunV2Volume[] $volumes
+   * @param GoogleCloudRunV2Volume[]
    */
   public function setVolumes($volumes)
   {
@@ -791,11 +590,7 @@ class GoogleCloudRunV2Task extends \Google\Collection
     return $this->volumes;
   }
   /**
-   * Output only. VPC Access configuration to use for this Task. For more
-   * information, visit
-   * https://cloud.google.com/run/docs/configuring/connecting-vpc.
-   *
-   * @param GoogleCloudRunV2VpcAccess $vpcAccess
+   * @param GoogleCloudRunV2VpcAccess
    */
   public function setVpcAccess(GoogleCloudRunV2VpcAccess $vpcAccess)
   {

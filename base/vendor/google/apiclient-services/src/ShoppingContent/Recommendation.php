@@ -29,65 +29,36 @@ class Recommendation extends \Google\Collection
   protected $defaultCallToActionType = RecommendationCallToAction::class;
   protected $defaultCallToActionDataType = '';
   /**
-   * Optional. Localized recommendation description. The localization the {@link
-   * `GenerateRecommendationsRequest.language_code`} field in {@link
-   * `GenerateRecommendationsRequest`} requests.
-   *
    * @var string
    */
   public $defaultDescription;
   /**
-   * Optional. A numerical score of the impact from the recommendation's
-   * description. For example, a recommendation might suggest an upward trend in
-   * sales for a certain product. Higher number means larger impact.
-   *
    * @var int
    */
   public $numericalImpact;
   /**
-   * Optional. Indicates whether a user needs to pay when they complete the user
-   * journey suggested by the recommendation.
-   *
    * @var bool
    */
   public $paid;
   /**
-   * Optional. Localized recommendation name. The localization uses the {@link
-   * `GenerateRecommendationsRequest.language_code`} field in {@link
-   * `GenerateRecommendationsRequest`} requests.
-   *
    * @var string
    */
   public $recommendationName;
   /**
-   * Optional. Subtype of the recommendations. Only applicable when multiple
-   * recommendations can be generated per type, and is used as an identifier of
-   * recommendation under the same recommendation type.
-   *
    * @var string
    */
   public $subType;
   /**
-   * Optional. Localized Recommendation Title. Localization uses the {@link
-   * `GenerateRecommendationsRequest.language_code`} field in {@link
-   * `GenerateRecommendationsRequest`} requests.
-   *
    * @var string
    */
   public $title;
   /**
-   * Output only. Type of the recommendation. List of currently available
-   * recommendation types: - OPPORTUNITY_CREATE_NEW_COLLECTION -
-   * OPPORTUNITY_CREATE_EMAIL_CAMPAIGN
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Output only. CTAs of this recommendation. Repeated.
-   *
-   * @param RecommendationCallToAction[] $additionalCallToAction
+   * @param RecommendationCallToAction[]
    */
   public function setAdditionalCallToAction($additionalCallToAction)
   {
@@ -101,12 +72,7 @@ class Recommendation extends \Google\Collection
     return $this->additionalCallToAction;
   }
   /**
-   * Output only. List of additional localized descriptions for a
-   * recommendation. Localication uses the `languageCode` field in
-   * `GenerateRecommendations` requests. Not all description types are
-   * guaranteed to be present and we recommend to rely on default description.
-   *
-   * @param RecommendationDescription[] $additionalDescriptions
+   * @param RecommendationDescription[]
    */
   public function setAdditionalDescriptions($additionalDescriptions)
   {
@@ -120,9 +86,7 @@ class Recommendation extends \Google\Collection
     return $this->additionalDescriptions;
   }
   /**
-   * Output only. Any creatives attached to the recommendation. Repeated.
-   *
-   * @param RecommendationCreative[] $creative
+   * @param RecommendationCreative[]
    */
   public function setCreative($creative)
   {
@@ -136,9 +100,7 @@ class Recommendation extends \Google\Collection
     return $this->creative;
   }
   /**
-   * Optional. Default CTA of the recommendation.
-   *
-   * @param RecommendationCallToAction $defaultCallToAction
+   * @param RecommendationCallToAction
    */
   public function setDefaultCallToAction(RecommendationCallToAction $defaultCallToAction)
   {
@@ -152,11 +114,7 @@ class Recommendation extends \Google\Collection
     return $this->defaultCallToAction;
   }
   /**
-   * Optional. Localized recommendation description. The localization the {@link
-   * `GenerateRecommendationsRequest.language_code`} field in {@link
-   * `GenerateRecommendationsRequest`} requests.
-   *
-   * @param string $defaultDescription
+   * @param string
    */
   public function setDefaultDescription($defaultDescription)
   {
@@ -170,11 +128,7 @@ class Recommendation extends \Google\Collection
     return $this->defaultDescription;
   }
   /**
-   * Optional. A numerical score of the impact from the recommendation's
-   * description. For example, a recommendation might suggest an upward trend in
-   * sales for a certain product. Higher number means larger impact.
-   *
-   * @param int $numericalImpact
+   * @param int
    */
   public function setNumericalImpact($numericalImpact)
   {
@@ -188,10 +142,7 @@ class Recommendation extends \Google\Collection
     return $this->numericalImpact;
   }
   /**
-   * Optional. Indicates whether a user needs to pay when they complete the user
-   * journey suggested by the recommendation.
-   *
-   * @param bool $paid
+   * @param bool
    */
   public function setPaid($paid)
   {
@@ -205,11 +156,7 @@ class Recommendation extends \Google\Collection
     return $this->paid;
   }
   /**
-   * Optional. Localized recommendation name. The localization uses the {@link
-   * `GenerateRecommendationsRequest.language_code`} field in {@link
-   * `GenerateRecommendationsRequest`} requests.
-   *
-   * @param string $recommendationName
+   * @param string
    */
   public function setRecommendationName($recommendationName)
   {
@@ -223,11 +170,7 @@ class Recommendation extends \Google\Collection
     return $this->recommendationName;
   }
   /**
-   * Optional. Subtype of the recommendations. Only applicable when multiple
-   * recommendations can be generated per type, and is used as an identifier of
-   * recommendation under the same recommendation type.
-   *
-   * @param string $subType
+   * @param string
    */
   public function setSubType($subType)
   {
@@ -241,11 +184,7 @@ class Recommendation extends \Google\Collection
     return $this->subType;
   }
   /**
-   * Optional. Localized Recommendation Title. Localization uses the {@link
-   * `GenerateRecommendationsRequest.language_code`} field in {@link
-   * `GenerateRecommendationsRequest`} requests.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -259,11 +198,7 @@ class Recommendation extends \Google\Collection
     return $this->title;
   }
   /**
-   * Output only. Type of the recommendation. List of currently available
-   * recommendation types: - OPPORTUNITY_CREATE_NEW_COLLECTION -
-   * OPPORTUNITY_CREATE_EMAIL_CAMPAIGN
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

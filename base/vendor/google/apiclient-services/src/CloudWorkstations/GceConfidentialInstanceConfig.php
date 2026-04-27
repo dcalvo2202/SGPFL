@@ -20,16 +20,12 @@ namespace Google\Service\CloudWorkstations;
 class GceConfidentialInstanceConfig extends \Google\Model
 {
   /**
-   * Optional. Whether the instance has confidential compute enabled.
-   *
    * @var bool
    */
   public $enableConfidentialCompute;
 
   /**
-   * Optional. Whether the instance has confidential compute enabled.
-   *
-   * @param bool $enableConfidentialCompute
+   * @param bool
    */
   public function setEnableConfidentialCompute($enableConfidentialCompute)
   {

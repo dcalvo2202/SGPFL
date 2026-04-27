@@ -23,18 +23,10 @@ class ResourceStatus extends \Google\Collection
   protected $conditionsType = ResourceCondition::class;
   protected $conditionsDataType = 'array';
   /**
-   * Human-friendly representation of the error message from controller. The
-   * error message can be temporary as the controller controller creates a
-   * cluster or node pool. If the error message persists for a longer period of
-   * time, it can be used to surface error message to indicate real problems
-   * requiring user intervention.
-   *
    * @var string
    */
   public $errorMessage;
   /**
-   * Reflect current version of the resource.
-   *
    * @var string
    */
   public $version;
@@ -42,10 +34,7 @@ class ResourceStatus extends \Google\Collection
   protected $versionsDataType = '';
 
   /**
-   * ResourceCondition provide a standard mechanism for higher-level status
-   * reporting from controller.
-   *
-   * @param ResourceCondition[] $conditions
+   * @param ResourceCondition[]
    */
   public function setConditions($conditions)
   {
@@ -59,13 +48,7 @@ class ResourceStatus extends \Google\Collection
     return $this->conditions;
   }
   /**
-   * Human-friendly representation of the error message from controller. The
-   * error message can be temporary as the controller controller creates a
-   * cluster or node pool. If the error message persists for a longer period of
-   * time, it can be used to surface error message to indicate real problems
-   * requiring user intervention.
-   *
-   * @param string $errorMessage
+   * @param string
    */
   public function setErrorMessage($errorMessage)
   {
@@ -79,9 +62,7 @@ class ResourceStatus extends \Google\Collection
     return $this->errorMessage;
   }
   /**
-   * Reflect current version of the resource.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {
@@ -95,10 +76,7 @@ class ResourceStatus extends \Google\Collection
     return $this->version;
   }
   /**
-   * Shows the mapping of a given version to the number of machines under this
-   * version.
-   *
-   * @param Versions $versions
+   * @param Versions
    */
   public function setVersions(Versions $versions)
   {

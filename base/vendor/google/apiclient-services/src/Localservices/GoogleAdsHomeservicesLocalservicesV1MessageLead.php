@@ -20,34 +20,24 @@ namespace Google\Service\Localservices;
 class GoogleAdsHomeservicesLocalservicesV1MessageLead extends \Google\Model
 {
   /**
-   * Consumer phone number associated with the message lead.
-   *
    * @var string
    */
   public $consumerPhoneNumber;
   /**
-   * Name of the customer who created the lead.
-   *
    * @var string
    */
   public $customerName;
   /**
-   * The job type of the specified lead.
-   *
    * @var string
    */
   public $jobType;
   /**
-   * The postal code of the customer who created the lead.
-   *
    * @var string
    */
   public $postalCode;
 
   /**
-   * Consumer phone number associated with the message lead.
-   *
-   * @param string $consumerPhoneNumber
+   * @param string
    */
   public function setConsumerPhoneNumber($consumerPhoneNumber)
   {
@@ -61,9 +51,7 @@ class GoogleAdsHomeservicesLocalservicesV1MessageLead extends \Google\Model
     return $this->consumerPhoneNumber;
   }
   /**
-   * Name of the customer who created the lead.
-   *
-   * @param string $customerName
+   * @param string
    */
   public function setCustomerName($customerName)
   {
@@ -77,9 +65,7 @@ class GoogleAdsHomeservicesLocalservicesV1MessageLead extends \Google\Model
     return $this->customerName;
   }
   /**
-   * The job type of the specified lead.
-   *
-   * @param string $jobType
+   * @param string
    */
   public function setJobType($jobType)
   {
@@ -93,9 +79,7 @@ class GoogleAdsHomeservicesLocalservicesV1MessageLead extends \Google\Model
     return $this->jobType;
   }
   /**
-   * The postal code of the customer who created the lead.
-   *
-   * @param string $postalCode
+   * @param string
    */
   public function setPostalCode($postalCode)
   {

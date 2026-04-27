@@ -20,16 +20,12 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1alphaAnswerStepActionSearchAction extends \Google\Model
 {
   /**
-   * The query to search.
-   *
    * @var string
    */
   public $query;
 
   /**
-   * The query to search.
-   *
-   * @param string $query
+   * @param string
    */
   public function setQuery($query)
   {

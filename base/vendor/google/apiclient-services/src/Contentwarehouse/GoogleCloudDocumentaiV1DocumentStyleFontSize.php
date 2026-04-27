@@ -20,22 +20,16 @@ namespace Google\Service\Contentwarehouse;
 class GoogleCloudDocumentaiV1DocumentStyleFontSize extends \Google\Model
 {
   /**
-   * Font size for the text.
-   *
    * @var float
    */
   public $size;
   /**
-   * Unit for the font size. Follows CSS naming (such as `in`, `px`, and `pt`).
-   *
    * @var string
    */
   public $unit;
 
   /**
-   * Font size for the text.
-   *
-   * @param float $size
+   * @param float
    */
   public function setSize($size)
   {
@@ -49,9 +43,7 @@ class GoogleCloudDocumentaiV1DocumentStyleFontSize extends \Google\Model
     return $this->size;
   }
   /**
-   * Unit for the font size. Follows CSS naming (such as `in`, `px`, and `pt`).
-   *
-   * @param string $unit
+   * @param string
    */
   public function setUnit($unit)
   {

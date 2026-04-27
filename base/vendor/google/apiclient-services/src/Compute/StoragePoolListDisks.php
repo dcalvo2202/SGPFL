@@ -25,41 +25,24 @@ class StoragePoolListDisks extends \Google\Collection
    */
   public $etag;
   /**
-   * Output only. [Output Only] Unique identifier for the resource; defined by
-   * the server.
-   *
    * @var string
    */
   public $id;
   protected $itemsType = StoragePoolDisk::class;
   protected $itemsDataType = 'array';
   /**
-   * Output only. [Output Only] Type of resource.
-   * Alwayscompute#storagePoolListDisks for lists of disks in a storagePool.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Output only. [Output Only] This token allows you to get the next page of
-   * results for list requests. If the number of results is larger
-   * thanmaxResults, use the nextPageToken as a value for the query parameter
-   * pageToken in the next list request. Subsequent list requests will have
-   * their own nextPageToken to continue paging through the results.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Output only. [Output Only] Server-defined URL for this resource.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * Output only. [Output Only] Unreachable resources. end_interface:
-   * MixerListResponseWithEtagBuilder
-   *
    * @var string[]
    */
   public $unreachables;
@@ -67,7 +50,7 @@ class StoragePoolListDisks extends \Google\Collection
   protected $warningDataType = '';
 
   /**
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -81,10 +64,7 @@ class StoragePoolListDisks extends \Google\Collection
     return $this->etag;
   }
   /**
-   * Output only. [Output Only] Unique identifier for the resource; defined by
-   * the server.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -98,9 +78,7 @@ class StoragePoolListDisks extends \Google\Collection
     return $this->id;
   }
   /**
-   * A list of StoragePoolDisk resources.
-   *
-   * @param StoragePoolDisk[] $items
+   * @param StoragePoolDisk[]
    */
   public function setItems($items)
   {
@@ -114,10 +92,7 @@ class StoragePoolListDisks extends \Google\Collection
     return $this->items;
   }
   /**
-   * Output only. [Output Only] Type of resource.
-   * Alwayscompute#storagePoolListDisks for lists of disks in a storagePool.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -131,13 +106,7 @@ class StoragePoolListDisks extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Output only. [Output Only] This token allows you to get the next page of
-   * results for list requests. If the number of results is larger
-   * thanmaxResults, use the nextPageToken as a value for the query parameter
-   * pageToken in the next list request. Subsequent list requests will have
-   * their own nextPageToken to continue paging through the results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -151,9 +120,7 @@ class StoragePoolListDisks extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Output only. [Output Only] Server-defined URL for this resource.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -167,10 +134,7 @@ class StoragePoolListDisks extends \Google\Collection
     return $this->selfLink;
   }
   /**
-   * Output only. [Output Only] Unreachable resources. end_interface:
-   * MixerListResponseWithEtagBuilder
-   *
-   * @param string[] $unreachables
+   * @param string[]
    */
   public function setUnreachables($unreachables)
   {
@@ -184,9 +148,7 @@ class StoragePoolListDisks extends \Google\Collection
     return $this->unreachables;
   }
   /**
-   * Output only. [Output Only] Informational warning message.
-   *
-   * @param StoragePoolListDisksWarning $warning
+   * @param StoragePoolListDisksWarning
    */
   public function setWarning(StoragePoolListDisksWarning $warning)
   {

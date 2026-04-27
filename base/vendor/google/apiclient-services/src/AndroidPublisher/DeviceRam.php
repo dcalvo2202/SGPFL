@@ -20,22 +20,16 @@ namespace Google\Service\AndroidPublisher;
 class DeviceRam extends \Google\Model
 {
   /**
-   * Maximum RAM in bytes (bound excluded).
-   *
    * @var string
    */
   public $maxBytes;
   /**
-   * Minimum RAM in bytes (bound included).
-   *
    * @var string
    */
   public $minBytes;
 
   /**
-   * Maximum RAM in bytes (bound excluded).
-   *
-   * @param string $maxBytes
+   * @param string
    */
   public function setMaxBytes($maxBytes)
   {
@@ -49,9 +43,7 @@ class DeviceRam extends \Google\Model
     return $this->maxBytes;
   }
   /**
-   * Minimum RAM in bytes (bound included).
-   *
-   * @param string $minBytes
+   * @param string
    */
   public function setMinBytes($minBytes)
   {

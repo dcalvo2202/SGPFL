@@ -22,8 +22,6 @@ class GoogleCloudChannelV1Sku extends \Google\Model
   protected $marketingInfoType = GoogleCloudChannelV1MarketingInfo::class;
   protected $marketingInfoDataType = '';
   /**
-   * Resource Name of the SKU. Format: products/{product_id}/skus/{sku_id}
-   *
    * @var string
    */
   public $name;
@@ -31,9 +29,7 @@ class GoogleCloudChannelV1Sku extends \Google\Model
   protected $productDataType = '';
 
   /**
-   * Marketing information for the SKU.
-   *
-   * @param GoogleCloudChannelV1MarketingInfo $marketingInfo
+   * @param GoogleCloudChannelV1MarketingInfo
    */
   public function setMarketingInfo(GoogleCloudChannelV1MarketingInfo $marketingInfo)
   {
@@ -47,9 +43,7 @@ class GoogleCloudChannelV1Sku extends \Google\Model
     return $this->marketingInfo;
   }
   /**
-   * Resource Name of the SKU. Format: products/{product_id}/skus/{sku_id}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -63,9 +57,7 @@ class GoogleCloudChannelV1Sku extends \Google\Model
     return $this->name;
   }
   /**
-   * Product the SKU is associated with.
-   *
-   * @param GoogleCloudChannelV1Product $product
+   * @param GoogleCloudChannelV1Product
    */
   public function setProduct(GoogleCloudChannelV1Product $product)
   {

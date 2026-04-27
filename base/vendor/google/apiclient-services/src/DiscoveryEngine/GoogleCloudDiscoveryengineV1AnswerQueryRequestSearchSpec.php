@@ -25,9 +25,7 @@ class GoogleCloudDiscoveryengineV1AnswerQueryRequestSearchSpec extends \Google\M
   protected $searchResultListDataType = '';
 
   /**
-   * Search parameters.
-   *
-   * @param GoogleCloudDiscoveryengineV1AnswerQueryRequestSearchSpecSearchParams $searchParams
+   * @param GoogleCloudDiscoveryengineV1AnswerQueryRequestSearchSpecSearchParams
    */
   public function setSearchParams(GoogleCloudDiscoveryengineV1AnswerQueryRequestSearchSpecSearchParams $searchParams)
   {
@@ -41,9 +39,7 @@ class GoogleCloudDiscoveryengineV1AnswerQueryRequestSearchSpec extends \Google\M
     return $this->searchParams;
   }
   /**
-   * Search result list.
-   *
-   * @param GoogleCloudDiscoveryengineV1AnswerQueryRequestSearchSpecSearchResultList $searchResultList
+   * @param GoogleCloudDiscoveryengineV1AnswerQueryRequestSearchSpecSearchResultList
    */
   public function setSearchResultList(GoogleCloudDiscoveryengineV1AnswerQueryRequestSearchSpecSearchResultList $searchResultList)
   {

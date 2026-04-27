@@ -20,61 +20,28 @@ namespace Google\Service\Gmail;
 class SmtpMsa extends \Google\Model
 {
   /**
-   * Unspecified security mode.
-   */
-  public const SECURITY_MODE_securityModeUnspecified = 'securityModeUnspecified';
-  /**
-   * Communication with the remote SMTP service is unsecured. Requires port 25.
-   */
-  public const SECURITY_MODE_none = 'none';
-  /**
-   * Communication with the remote SMTP service is secured using SSL.
-   */
-  public const SECURITY_MODE_ssl = 'ssl';
-  /**
-   * Communication with the remote SMTP service is secured using STARTTLS.
-   */
-  public const SECURITY_MODE_starttls = 'starttls';
-  /**
-   * The hostname of the SMTP service. Required.
-   *
    * @var string
    */
   public $host;
   /**
-   * The password that will be used for authentication with the SMTP service.
-   * This is a write-only field that can be specified in requests to create or
-   * update SendAs settings; it is never populated in responses.
-   *
    * @var string
    */
   public $password;
   /**
-   * The port of the SMTP service. Required.
-   *
    * @var int
    */
   public $port;
   /**
-   * The protocol that will be used to secure communication with the SMTP
-   * service. Required.
-   *
    * @var string
    */
   public $securityMode;
   /**
-   * The username that will be used for authentication with the SMTP service.
-   * This is a write-only field that can be specified in requests to create or
-   * update SendAs settings; it is never populated in responses.
-   *
    * @var string
    */
   public $username;
 
   /**
-   * The hostname of the SMTP service. Required.
-   *
-   * @param string $host
+   * @param string
    */
   public function setHost($host)
   {
@@ -88,11 +55,7 @@ class SmtpMsa extends \Google\Model
     return $this->host;
   }
   /**
-   * The password that will be used for authentication with the SMTP service.
-   * This is a write-only field that can be specified in requests to create or
-   * update SendAs settings; it is never populated in responses.
-   *
-   * @param string $password
+   * @param string
    */
   public function setPassword($password)
   {
@@ -106,9 +69,7 @@ class SmtpMsa extends \Google\Model
     return $this->password;
   }
   /**
-   * The port of the SMTP service. Required.
-   *
-   * @param int $port
+   * @param int
    */
   public function setPort($port)
   {
@@ -122,30 +83,21 @@ class SmtpMsa extends \Google\Model
     return $this->port;
   }
   /**
-   * The protocol that will be used to secure communication with the SMTP
-   * service. Required.
-   *
-   * Accepted values: securityModeUnspecified, none, ssl, starttls
-   *
-   * @param self::SECURITY_MODE_* $securityMode
+   * @param string
    */
   public function setSecurityMode($securityMode)
   {
     $this->securityMode = $securityMode;
   }
   /**
-   * @return self::SECURITY_MODE_*
+   * @return string
    */
   public function getSecurityMode()
   {
     return $this->securityMode;
   }
   /**
-   * The username that will be used for authentication with the SMTP service.
-   * This is a write-only field that can be specified in requests to create or
-   * update SendAs settings; it is never populated in responses.
-   *
-   * @param string $username
+   * @param string
    */
   public function setUsername($username)
   {

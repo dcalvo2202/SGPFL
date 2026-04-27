@@ -23,9 +23,7 @@ class GoogleCloudRetailV2betaModelModelFeaturesConfig extends \Google\Model
   protected $frequentlyBoughtTogetherConfigDataType = '';
 
   /**
-   * Additional configs for frequently-bought-together models.
-   *
-   * @param GoogleCloudRetailV2betaModelFrequentlyBoughtTogetherFeaturesConfig $frequentlyBoughtTogetherConfig
+   * @param GoogleCloudRetailV2betaModelFrequentlyBoughtTogetherFeaturesConfig
    */
   public function setFrequentlyBoughtTogetherConfig(GoogleCloudRetailV2betaModelFrequentlyBoughtTogetherFeaturesConfig $frequentlyBoughtTogetherConfig)
   {

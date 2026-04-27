@@ -26,9 +26,7 @@ class ImportProductSetsResponse extends \Google\Collection
   protected $statusesDataType = 'array';
 
   /**
-   * The list of reference_images that are imported successfully.
-   *
-   * @param ReferenceImage[] $referenceImages
+   * @param ReferenceImage[]
    */
   public function setReferenceImages($referenceImages)
   {
@@ -42,12 +40,7 @@ class ImportProductSetsResponse extends \Google\Collection
     return $this->referenceImages;
   }
   /**
-   * The rpc status for each ImportProductSet request, including both successes
-   * and errors. The number of statuses here matches the number of lines in the
-   * csv file, and statuses[i] stores the success or failure status of
-   * processing the i-th line of the csv, starting from line 0.
-   *
-   * @param Status[] $statuses
+   * @param Status[]
    */
   public function setStatuses($statuses)
   {

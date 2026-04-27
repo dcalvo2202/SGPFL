@@ -20,22 +20,16 @@ namespace Google\Service\AlertCenter;
 class RuleInfo extends \Google\Model
 {
   /**
-   * User provided name of the rule.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Resource name that uniquely identifies the rule.
-   *
    * @var string
    */
   public $resourceName;
 
   /**
-   * User provided name of the rule.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -49,9 +43,7 @@ class RuleInfo extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Resource name that uniquely identifies the rule.
-   *
-   * @param string $resourceName
+   * @param string
    */
   public function setResourceName($resourceName)
   {

@@ -20,8 +20,6 @@ namespace Google\Service\Docs;
 class InsertTableRequest extends \Google\Model
 {
   /**
-   * The number of columns in the table.
-   *
    * @var int
    */
   public $columns;
@@ -30,16 +28,12 @@ class InsertTableRequest extends \Google\Model
   protected $locationType = Location::class;
   protected $locationDataType = '';
   /**
-   * The number of rows in the table.
-   *
    * @var int
    */
   public $rows;
 
   /**
-   * The number of columns in the table.
-   *
-   * @param int $columns
+   * @param int
    */
   public function setColumns($columns)
   {
@@ -53,11 +47,7 @@ class InsertTableRequest extends \Google\Model
     return $this->columns;
   }
   /**
-   * Inserts the table at the end of the given header, footer or document body.
-   * A newline character will be inserted before the inserted table. Tables
-   * cannot be inserted inside a footnote.
-   *
-   * @param EndOfSegmentLocation $endOfSegmentLocation
+   * @param EndOfSegmentLocation
    */
   public function setEndOfSegmentLocation(EndOfSegmentLocation $endOfSegmentLocation)
   {
@@ -71,14 +61,7 @@ class InsertTableRequest extends \Google\Model
     return $this->endOfSegmentLocation;
   }
   /**
-   * Inserts the table at a specific model index. A newline character will be
-   * inserted before the inserted table, therefore the table start index will be
-   * at the specified location index + 1. The table must be inserted inside the
-   * bounds of an existing Paragraph. For instance, it cannot be inserted at a
-   * table's start index (i.e. between an existing table and its preceding
-   * paragraph). Tables cannot be inserted inside a footnote or equation.
-   *
-   * @param Location $location
+   * @param Location
    */
   public function setLocation(Location $location)
   {
@@ -92,9 +75,7 @@ class InsertTableRequest extends \Google\Model
     return $this->location;
   }
   /**
-   * The number of rows in the table.
-   *
-   * @param int $rows
+   * @param int
    */
   public function setRows($rows)
   {

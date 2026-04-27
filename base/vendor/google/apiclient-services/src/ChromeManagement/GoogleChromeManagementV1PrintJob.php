@@ -20,150 +20,74 @@ namespace Google\Service\ChromeManagement;
 class GoogleChromeManagementV1PrintJob extends \Google\Model
 {
   /**
-   * Unspecified.
-   */
-  public const COLOR_MODE_COLOR_MODE_UNSPECIFIED = 'COLOR_MODE_UNSPECIFIED';
-  /**
-   * Black and white.
-   */
-  public const COLOR_MODE_BLACK_AND_WHITE = 'BLACK_AND_WHITE';
-  /**
-   * Color.
-   */
-  public const COLOR_MODE_COLOR = 'COLOR';
-  /**
-   * Unspecified.
-   */
-  public const DUPLEX_MODE_DUPLEX_MODE_UNSPECIFIED = 'DUPLEX_MODE_UNSPECIFIED';
-  /**
-   * One-sided.
-   */
-  public const DUPLEX_MODE_ONE_SIDED = 'ONE_SIDED';
-  /**
-   * Two-sided flipping over long edge.
-   */
-  public const DUPLEX_MODE_TWO_SIDED_LONG_EDGE = 'TWO_SIDED_LONG_EDGE';
-  /**
-   * Two-sided flipping over short edge.
-   */
-  public const DUPLEX_MODE_TWO_SIDED_SHORT_EDGE = 'TWO_SIDED_SHORT_EDGE';
-  /**
-   * Print job is in an unspecified state.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The document was successfully printed.
-   */
-  public const STATE_PRINTED = 'PRINTED';
-  /**
-   * Print job was cancelled.
-   */
-  public const STATE_CANCELLED = 'CANCELLED';
-  /**
-   * Print job failed.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * Color mode.
-   *
    * @var string
    */
   public $colorMode;
   /**
-   * Print job completion timestamp.
-   *
    * @var string
    */
   public $completeTime;
   /**
-   * Number of copies.
-   *
    * @var int
    */
   public $copyCount;
   /**
-   * Print job creation timestamp.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Number of pages in the document.
-   *
    * @var int
    */
   public $documentPageCount;
   /**
-   * Duplex mode.
-   *
    * @var string
    */
   public $duplexMode;
   /**
-   * Unique ID of the print job.
-   *
    * @var string
    */
   public $id;
   /**
-   * Name of the printer used for printing.
-   *
    * @var string
    */
   public $printer;
   /**
-   * API ID of the printer used for printing.
-   *
    * @var string
    */
   public $printerId;
   /**
-   * The final state of the job.
-   *
    * @var string
    */
   public $state;
   /**
-   * The title of the document.
-   *
    * @var string
    */
   public $title;
   /**
-   * The primary e-mail address of the user who submitted the print job.
-   *
    * @var string
    */
   public $userEmail;
   /**
-   * The unique Directory API ID of the user who submitted the print job.
-   *
    * @var string
    */
   public $userId;
 
   /**
-   * Color mode.
-   *
-   * Accepted values: COLOR_MODE_UNSPECIFIED, BLACK_AND_WHITE, COLOR
-   *
-   * @param self::COLOR_MODE_* $colorMode
+   * @param string
    */
   public function setColorMode($colorMode)
   {
     $this->colorMode = $colorMode;
   }
   /**
-   * @return self::COLOR_MODE_*
+   * @return string
    */
   public function getColorMode()
   {
     return $this->colorMode;
   }
   /**
-   * Print job completion timestamp.
-   *
-   * @param string $completeTime
+   * @param string
    */
   public function setCompleteTime($completeTime)
   {
@@ -177,9 +101,7 @@ class GoogleChromeManagementV1PrintJob extends \Google\Model
     return $this->completeTime;
   }
   /**
-   * Number of copies.
-   *
-   * @param int $copyCount
+   * @param int
    */
   public function setCopyCount($copyCount)
   {
@@ -193,9 +115,7 @@ class GoogleChromeManagementV1PrintJob extends \Google\Model
     return $this->copyCount;
   }
   /**
-   * Print job creation timestamp.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -209,9 +129,7 @@ class GoogleChromeManagementV1PrintJob extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Number of pages in the document.
-   *
-   * @param int $documentPageCount
+   * @param int
    */
   public function setDocumentPageCount($documentPageCount)
   {
@@ -225,28 +143,21 @@ class GoogleChromeManagementV1PrintJob extends \Google\Model
     return $this->documentPageCount;
   }
   /**
-   * Duplex mode.
-   *
-   * Accepted values: DUPLEX_MODE_UNSPECIFIED, ONE_SIDED, TWO_SIDED_LONG_EDGE,
-   * TWO_SIDED_SHORT_EDGE
-   *
-   * @param self::DUPLEX_MODE_* $duplexMode
+   * @param string
    */
   public function setDuplexMode($duplexMode)
   {
     $this->duplexMode = $duplexMode;
   }
   /**
-   * @return self::DUPLEX_MODE_*
+   * @return string
    */
   public function getDuplexMode()
   {
     return $this->duplexMode;
   }
   /**
-   * Unique ID of the print job.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -260,9 +171,7 @@ class GoogleChromeManagementV1PrintJob extends \Google\Model
     return $this->id;
   }
   /**
-   * Name of the printer used for printing.
-   *
-   * @param string $printer
+   * @param string
    */
   public function setPrinter($printer)
   {
@@ -276,9 +185,7 @@ class GoogleChromeManagementV1PrintJob extends \Google\Model
     return $this->printer;
   }
   /**
-   * API ID of the printer used for printing.
-   *
-   * @param string $printerId
+   * @param string
    */
   public function setPrinterId($printerId)
   {
@@ -292,27 +199,21 @@ class GoogleChromeManagementV1PrintJob extends \Google\Model
     return $this->printerId;
   }
   /**
-   * The final state of the job.
-   *
-   * Accepted values: STATE_UNSPECIFIED, PRINTED, CANCELLED, FAILED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * The title of the document.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -326,9 +227,7 @@ class GoogleChromeManagementV1PrintJob extends \Google\Model
     return $this->title;
   }
   /**
-   * The primary e-mail address of the user who submitted the print job.
-   *
-   * @param string $userEmail
+   * @param string
    */
   public function setUserEmail($userEmail)
   {
@@ -342,9 +241,7 @@ class GoogleChromeManagementV1PrintJob extends \Google\Model
     return $this->userEmail;
   }
   /**
-   * The unique Directory API ID of the user who submitted the print job.
-   *
-   * @param string $userId
+   * @param string
    */
   public function setUserId($userId)
   {

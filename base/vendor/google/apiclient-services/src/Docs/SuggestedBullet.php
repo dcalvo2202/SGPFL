@@ -25,11 +25,7 @@ class SuggestedBullet extends \Google\Model
   protected $bulletSuggestionStateDataType = '';
 
   /**
-   * A Bullet that only includes the changes made in this suggestion. This can
-   * be used along with the bullet_suggestion_state to see which fields have
-   * changed and their new values.
-   *
-   * @param Bullet $bullet
+   * @param Bullet
    */
   public function setBullet(Bullet $bullet)
   {
@@ -43,10 +39,7 @@ class SuggestedBullet extends \Google\Model
     return $this->bullet;
   }
   /**
-   * A mask that indicates which of the fields on the base Bullet have been
-   * changed in this suggestion.
-   *
-   * @param BulletSuggestionState $bulletSuggestionState
+   * @param BulletSuggestionState
    */
   public function setBulletSuggestionState(BulletSuggestionState $bulletSuggestionState)
   {

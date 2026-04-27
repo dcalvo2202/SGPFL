@@ -20,25 +20,16 @@ namespace Google\Service\TrafficDirectorService;
 class Pipe extends \Google\Model
 {
   /**
-   * The mode for the Pipe. Not applicable for abstract sockets.
-   *
    * @var string
    */
   public $mode;
   /**
-   * Unix Domain Socket path. On Linux, paths starting with '@' will use the
-   * abstract namespace. The starting '@' is replaced by a null byte by Envoy.
-   * Paths starting with '@' will result in an error in environments other than
-   * Linux.
-   *
    * @var string
    */
   public $path;
 
   /**
-   * The mode for the Pipe. Not applicable for abstract sockets.
-   *
-   * @param string $mode
+   * @param string
    */
   public function setMode($mode)
   {
@@ -52,12 +43,7 @@ class Pipe extends \Google\Model
     return $this->mode;
   }
   /**
-   * Unix Domain Socket path. On Linux, paths starting with '@' will use the
-   * abstract namespace. The starting '@' is replaced by a null byte by Envoy.
-   * Paths starting with '@' will result in an error in environments other than
-   * Linux.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {

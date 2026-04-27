@@ -20,18 +20,12 @@ namespace Google\Service\CloudDeploy;
 class CloudRunLocation extends \Google\Model
 {
   /**
-   * Required. The location for the Cloud Run Service. Format must be
-   * `projects/{project}/locations/{location}`.
-   *
    * @var string
    */
   public $location;
 
   /**
-   * Required. The location for the Cloud Run Service. Format must be
-   * `projects/{project}/locations/{location}`.
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {

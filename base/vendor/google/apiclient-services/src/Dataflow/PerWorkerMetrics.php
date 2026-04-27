@@ -24,9 +24,7 @@ class PerWorkerMetrics extends \Google\Collection
   protected $perStepNamespaceMetricsDataType = 'array';
 
   /**
-   * Optional. Metrics for a particular unfused step and namespace.
-   *
-   * @param PerStepNamespaceMetrics[] $perStepNamespaceMetrics
+   * @param PerStepNamespaceMetrics[]
    */
   public function setPerStepNamespaceMetrics($perStepNamespaceMetrics)
   {

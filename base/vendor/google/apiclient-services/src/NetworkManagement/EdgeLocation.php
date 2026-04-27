@@ -20,16 +20,12 @@ namespace Google\Service\NetworkManagement;
 class EdgeLocation extends \Google\Model
 {
   /**
-   * Name of the metropolitan area.
-   *
    * @var string
    */
   public $metropolitanArea;
 
   /**
-   * Name of the metropolitan area.
-   *
-   * @param string $metropolitanArea
+   * @param string
    */
   public function setMetropolitanArea($metropolitanArea)
   {

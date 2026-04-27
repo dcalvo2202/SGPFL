@@ -20,60 +20,28 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1SchemaVideoObjectTrackingAnnotation extends \Google\Model
 {
   /**
-   * The resource Id of the AnnotationSpec that this Annotation pertains to.
-   *
    * @var string
    */
   public $annotationSpecId;
   /**
-   * The display name of the AnnotationSpec that this Annotation pertains to.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * The instance of the object, expressed as a positive integer. Used to track
-   * the same object across different frames.
-   *
    * @var string
    */
   public $instanceId;
   /**
-   * A time (frame) of a video to which this annotation pertains. Represented as
-   * the duration since the video's start.
-   *
    * @var string
    */
   public $timeOffset;
-  /**
-   * The rightmost coordinate of the bounding box.
-   *
-   * @var 
-   */
   public $xMax;
-  /**
-   * The leftmost coordinate of the bounding box.
-   *
-   * @var 
-   */
   public $xMin;
-  /**
-   * The bottommost coordinate of the bounding box.
-   *
-   * @var 
-   */
   public $yMax;
-  /**
-   * The topmost coordinate of the bounding box.
-   *
-   * @var 
-   */
   public $yMin;
 
   /**
-   * The resource Id of the AnnotationSpec that this Annotation pertains to.
-   *
-   * @param string $annotationSpecId
+   * @param string
    */
   public function setAnnotationSpecId($annotationSpecId)
   {
@@ -87,9 +55,7 @@ class GoogleCloudAiplatformV1SchemaVideoObjectTrackingAnnotation extends \Google
     return $this->annotationSpecId;
   }
   /**
-   * The display name of the AnnotationSpec that this Annotation pertains to.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -103,10 +69,7 @@ class GoogleCloudAiplatformV1SchemaVideoObjectTrackingAnnotation extends \Google
     return $this->displayName;
   }
   /**
-   * The instance of the object, expressed as a positive integer. Used to track
-   * the same object across different frames.
-   *
-   * @param string $instanceId
+   * @param string
    */
   public function setInstanceId($instanceId)
   {
@@ -120,10 +83,7 @@ class GoogleCloudAiplatformV1SchemaVideoObjectTrackingAnnotation extends \Google
     return $this->instanceId;
   }
   /**
-   * A time (frame) of a video to which this annotation pertains. Represented as
-   * the duration since the video's start.
-   *
-   * @param string $timeOffset
+   * @param string
    */
   public function setTimeOffset($timeOffset)
   {

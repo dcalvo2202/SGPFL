@@ -24,10 +24,7 @@ class CustomerListDpcsResponse extends \Google\Collection
   protected $dpcsDataType = 'array';
 
   /**
-   * The list of DPCs available to the customer that support zero-touch
-   * enrollment.
-   *
-   * @param Dpc[] $dpcs
+   * @param Dpc[]
    */
   public function setDpcs($dpcs)
   {

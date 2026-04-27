@@ -20,29 +20,20 @@ namespace Google\Service\IdentityToolkit;
 class GetRecaptchaParamResponse extends \Google\Model
 {
   /**
-   * The fixed string "identitytoolkit#GetRecaptchaParamResponse".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Site key registered at recaptcha.
-   *
    * @var string
    */
   public $recaptchaSiteKey;
   /**
-   * The stoken field for the recaptcha widget, used to request captcha
-   * challenge.
-   *
    * @var string
    */
   public $recaptchaStoken;
 
   /**
-   * The fixed string "identitytoolkit#GetRecaptchaParamResponse".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -56,9 +47,7 @@ class GetRecaptchaParamResponse extends \Google\Model
     return $this->kind;
   }
   /**
-   * Site key registered at recaptcha.
-   *
-   * @param string $recaptchaSiteKey
+   * @param string
    */
   public function setRecaptchaSiteKey($recaptchaSiteKey)
   {
@@ -72,10 +61,7 @@ class GetRecaptchaParamResponse extends \Google\Model
     return $this->recaptchaSiteKey;
   }
   /**
-   * The stoken field for the recaptcha widget, used to request captcha
-   * challenge.
-   *
-   * @param string $recaptchaStoken
+   * @param string
    */
   public function setRecaptchaStoken($recaptchaStoken)
   {

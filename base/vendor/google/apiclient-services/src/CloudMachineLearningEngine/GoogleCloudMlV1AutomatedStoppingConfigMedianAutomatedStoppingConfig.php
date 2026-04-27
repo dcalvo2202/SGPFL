@@ -20,22 +20,12 @@ namespace Google\Service\CloudMachineLearningEngine;
 class GoogleCloudMlV1AutomatedStoppingConfigMedianAutomatedStoppingConfig extends \Google\Model
 {
   /**
-   * If true, the median automated stopping rule applies to
-   * measurement.use_elapsed_time, which means the elapsed_time field of the
-   * current trial's latest measurement is used to compute the median objective
-   * value for each completed trial.
-   *
    * @var bool
    */
   public $useElapsedTime;
 
   /**
-   * If true, the median automated stopping rule applies to
-   * measurement.use_elapsed_time, which means the elapsed_time field of the
-   * current trial's latest measurement is used to compute the median objective
-   * value for each completed trial.
-   *
-   * @param bool $useElapsedTime
+   * @param bool
    */
   public function setUseElapsedTime($useElapsedTime)
   {

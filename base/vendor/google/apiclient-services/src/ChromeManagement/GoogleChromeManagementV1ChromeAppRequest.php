@@ -20,57 +20,36 @@ namespace Google\Service\ChromeManagement;
 class GoogleChromeManagementV1ChromeAppRequest extends \Google\Model
 {
   /**
-   * Output only. Format:
-   * app_details=customers/{customer_id}/apps/chrome/{app_id}
-   *
    * @var string
    */
   public $appDetails;
   /**
-   * Output only. Unique store identifier for the app. Example:
-   * "gmbmikajjgmnabiglmofipeabaddhgne" for the Save to Google Drive Chrome
-   * extension.
-   *
    * @var string
    */
   public $appId;
   /**
-   * Output only. The uri for the detail page of the item.
-   *
    * @var string
    */
   public $detailUri;
   /**
-   * Output only. App's display name.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. A link to an image that can be used as an icon for the
-   * product.
-   *
    * @var string
    */
   public $iconUri;
   /**
-   * Output only. The timestamp of the most recently made request for this app.
-   *
    * @var string
    */
   public $latestRequestTime;
   /**
-   * Output only. Total count of requests for this app.
-   *
    * @var string
    */
   public $requestCount;
 
   /**
-   * Output only. Format:
-   * app_details=customers/{customer_id}/apps/chrome/{app_id}
-   *
-   * @param string $appDetails
+   * @param string
    */
   public function setAppDetails($appDetails)
   {
@@ -84,11 +63,7 @@ class GoogleChromeManagementV1ChromeAppRequest extends \Google\Model
     return $this->appDetails;
   }
   /**
-   * Output only. Unique store identifier for the app. Example:
-   * "gmbmikajjgmnabiglmofipeabaddhgne" for the Save to Google Drive Chrome
-   * extension.
-   *
-   * @param string $appId
+   * @param string
    */
   public function setAppId($appId)
   {
@@ -102,9 +77,7 @@ class GoogleChromeManagementV1ChromeAppRequest extends \Google\Model
     return $this->appId;
   }
   /**
-   * Output only. The uri for the detail page of the item.
-   *
-   * @param string $detailUri
+   * @param string
    */
   public function setDetailUri($detailUri)
   {
@@ -118,9 +91,7 @@ class GoogleChromeManagementV1ChromeAppRequest extends \Google\Model
     return $this->detailUri;
   }
   /**
-   * Output only. App's display name.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -134,10 +105,7 @@ class GoogleChromeManagementV1ChromeAppRequest extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Output only. A link to an image that can be used as an icon for the
-   * product.
-   *
-   * @param string $iconUri
+   * @param string
    */
   public function setIconUri($iconUri)
   {
@@ -151,9 +119,7 @@ class GoogleChromeManagementV1ChromeAppRequest extends \Google\Model
     return $this->iconUri;
   }
   /**
-   * Output only. The timestamp of the most recently made request for this app.
-   *
-   * @param string $latestRequestTime
+   * @param string
    */
   public function setLatestRequestTime($latestRequestTime)
   {
@@ -167,9 +133,7 @@ class GoogleChromeManagementV1ChromeAppRequest extends \Google\Model
     return $this->latestRequestTime;
   }
   /**
-   * Output only. Total count of requests for this app.
-   *
-   * @param string $requestCount
+   * @param string
    */
   public function setRequestCount($requestCount)
   {

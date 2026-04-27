@@ -20,124 +20,54 @@ namespace Google\Service\BackupforGKE;
 class VolumeRestore extends \Google\Model
 {
   /**
-   * This is an illegal state and should not be encountered.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * A volume for the restore was identified and restore process is about to
-   * start.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * The volume is currently being restored.
-   */
-  public const STATE_RESTORING = 'RESTORING';
-  /**
-   * The volume has been successfully restored.
-   */
-  public const STATE_SUCCEEDED = 'SUCCEEDED';
-  /**
-   * The volume restoration process failed.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * This VolumeRestore resource is in the process of being deleted.
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * Default
-   */
-  public const VOLUME_TYPE_VOLUME_TYPE_UNSPECIFIED = 'VOLUME_TYPE_UNSPECIFIED';
-  /**
-   * Compute Engine Persistent Disk volume
-   */
-  public const VOLUME_TYPE_GCE_PERSISTENT_DISK = 'GCE_PERSISTENT_DISK';
-  /**
-   * Output only. The timestamp when the associated underlying volume
-   * restoration completed.
-   *
    * @var string
    */
   public $completeTime;
   /**
-   * Output only. The timestamp when this VolumeRestore resource was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. `etag` is used for optimistic concurrency control as a way to
-   * help prevent simultaneous updates of a volume restore from overwriting each
-   * other. It is strongly suggested that systems make use of the `etag` in the
-   * read-modify-write cycle to perform volume restore updates in order to avoid
-   * race conditions.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Output only. Full name of the VolumeRestore resource. Format:
-   * `projects/locations/restorePlans/restores/volumeRestores`
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The current state of this VolumeRestore.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. A human readable message explaining why the VolumeRestore is
-   * in its current state.
-   *
    * @var string
    */
   public $stateMessage;
   protected $targetPvcType = NamespacedName::class;
   protected $targetPvcDataType = '';
   /**
-   * Output only. Server generated global unique identifier of
-   * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) format.
-   *
    * @var string
    */
   public $uid;
   /**
-   * Output only. The timestamp when this VolumeRestore resource was last
-   * updated.
-   *
    * @var string
    */
   public $updateTime;
   /**
-   * Output only. The full name of the VolumeBackup from which the volume will
-   * be restored. Format:
-   * `projects/locations/backupPlans/backups/volumeBackups`.
-   *
    * @var string
    */
   public $volumeBackup;
   /**
-   * Output only. A storage system-specific opaque handler to the underlying
-   * volume created for the target PVC from the volume backup.
-   *
    * @var string
    */
   public $volumeHandle;
   /**
-   * Output only. The type of volume provisioned
-   *
    * @var string
    */
   public $volumeType;
 
   /**
-   * Output only. The timestamp when the associated underlying volume
-   * restoration completed.
-   *
-   * @param string $completeTime
+   * @param string
    */
   public function setCompleteTime($completeTime)
   {
@@ -151,9 +81,7 @@ class VolumeRestore extends \Google\Model
     return $this->completeTime;
   }
   /**
-   * Output only. The timestamp when this VolumeRestore resource was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -167,13 +95,7 @@ class VolumeRestore extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. `etag` is used for optimistic concurrency control as a way to
-   * help prevent simultaneous updates of a volume restore from overwriting each
-   * other. It is strongly suggested that systems make use of the `etag` in the
-   * read-modify-write cycle to perform volume restore updates in order to avoid
-   * race conditions.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -187,10 +109,7 @@ class VolumeRestore extends \Google\Model
     return $this->etag;
   }
   /**
-   * Output only. Full name of the VolumeRestore resource. Format:
-   * `projects/locations/restorePlans/restores/volumeRestores`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -204,29 +123,21 @@ class VolumeRestore extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The current state of this VolumeRestore.
-   *
-   * Accepted values: STATE_UNSPECIFIED, CREATING, RESTORING, SUCCEEDED, FAILED,
-   * DELETING
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. A human readable message explaining why the VolumeRestore is
-   * in its current state.
-   *
-   * @param string $stateMessage
+   * @param string
    */
   public function setStateMessage($stateMessage)
   {
@@ -240,9 +151,7 @@ class VolumeRestore extends \Google\Model
     return $this->stateMessage;
   }
   /**
-   * Output only. The reference to the target Kubernetes PVC to be restored.
-   *
-   * @param NamespacedName $targetPvc
+   * @param NamespacedName
    */
   public function setTargetPvc(NamespacedName $targetPvc)
   {
@@ -256,10 +165,7 @@ class VolumeRestore extends \Google\Model
     return $this->targetPvc;
   }
   /**
-   * Output only. Server generated global unique identifier of
-   * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) format.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {
@@ -273,10 +179,7 @@ class VolumeRestore extends \Google\Model
     return $this->uid;
   }
   /**
-   * Output only. The timestamp when this VolumeRestore resource was last
-   * updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -290,11 +193,7 @@ class VolumeRestore extends \Google\Model
     return $this->updateTime;
   }
   /**
-   * Output only. The full name of the VolumeBackup from which the volume will
-   * be restored. Format:
-   * `projects/locations/backupPlans/backups/volumeBackups`.
-   *
-   * @param string $volumeBackup
+   * @param string
    */
   public function setVolumeBackup($volumeBackup)
   {
@@ -308,10 +207,7 @@ class VolumeRestore extends \Google\Model
     return $this->volumeBackup;
   }
   /**
-   * Output only. A storage system-specific opaque handler to the underlying
-   * volume created for the target PVC from the volume backup.
-   *
-   * @param string $volumeHandle
+   * @param string
    */
   public function setVolumeHandle($volumeHandle)
   {
@@ -325,18 +221,14 @@ class VolumeRestore extends \Google\Model
     return $this->volumeHandle;
   }
   /**
-   * Output only. The type of volume provisioned
-   *
-   * Accepted values: VOLUME_TYPE_UNSPECIFIED, GCE_PERSISTENT_DISK
-   *
-   * @param self::VOLUME_TYPE_* $volumeType
+   * @param string
    */
   public function setVolumeType($volumeType)
   {
     $this->volumeType = $volumeType;
   }
   /**
-   * @return self::VOLUME_TYPE_*
+   * @return string
    */
   public function getVolumeType()
   {

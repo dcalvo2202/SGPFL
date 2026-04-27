@@ -20,22 +20,16 @@ namespace Google\Service\Compute;
 class InterconnectDiagnosticsARPEntry extends \Google\Model
 {
   /**
-   * The IP address of this ARP neighbor.
-   *
    * @var string
    */
   public $ipAddress;
   /**
-   * The MAC address of this ARP neighbor.
-   *
    * @var string
    */
   public $macAddress;
 
   /**
-   * The IP address of this ARP neighbor.
-   *
-   * @param string $ipAddress
+   * @param string
    */
   public function setIpAddress($ipAddress)
   {
@@ -49,9 +43,7 @@ class InterconnectDiagnosticsARPEntry extends \Google\Model
     return $this->ipAddress;
   }
   /**
-   * The MAC address of this ARP neighbor.
-   *
-   * @param string $macAddress
+   * @param string
    */
   public function setMacAddress($macAddress)
   {

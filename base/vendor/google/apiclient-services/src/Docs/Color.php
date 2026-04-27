@@ -23,9 +23,7 @@ class Color extends \Google\Model
   protected $rgbColorDataType = '';
 
   /**
-   * The RGB color value.
-   *
-   * @param RgbColor $rgbColor
+   * @param RgbColor
    */
   public function setRgbColor(RgbColor $rgbColor)
   {

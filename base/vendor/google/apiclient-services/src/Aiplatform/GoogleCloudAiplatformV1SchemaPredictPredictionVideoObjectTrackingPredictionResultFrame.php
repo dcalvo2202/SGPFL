@@ -20,44 +20,28 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1SchemaPredictPredictionVideoObjectTrackingPredictionResultFrame extends \Google\Model
 {
   /**
-   * A time (frame) of a video in which the object has been detected. Expressed
-   * as a number of seconds as measured from the start of the video, with
-   * fractions up to a microsecond precision, and with "s" appended at the end.
-   *
    * @var string
    */
   public $timeOffset;
   /**
-   * The rightmost coordinate of the bounding box.
-   *
    * @var float
    */
   public $xMax;
   /**
-   * The leftmost coordinate of the bounding box.
-   *
    * @var float
    */
   public $xMin;
   /**
-   * The bottommost coordinate of the bounding box.
-   *
    * @var float
    */
   public $yMax;
   /**
-   * The topmost coordinate of the bounding box.
-   *
    * @var float
    */
   public $yMin;
 
   /**
-   * A time (frame) of a video in which the object has been detected. Expressed
-   * as a number of seconds as measured from the start of the video, with
-   * fractions up to a microsecond precision, and with "s" appended at the end.
-   *
-   * @param string $timeOffset
+   * @param string
    */
   public function setTimeOffset($timeOffset)
   {
@@ -71,9 +55,7 @@ class GoogleCloudAiplatformV1SchemaPredictPredictionVideoObjectTrackingPredictio
     return $this->timeOffset;
   }
   /**
-   * The rightmost coordinate of the bounding box.
-   *
-   * @param float $xMax
+   * @param float
    */
   public function setXMax($xMax)
   {
@@ -87,9 +69,7 @@ class GoogleCloudAiplatformV1SchemaPredictPredictionVideoObjectTrackingPredictio
     return $this->xMax;
   }
   /**
-   * The leftmost coordinate of the bounding box.
-   *
-   * @param float $xMin
+   * @param float
    */
   public function setXMin($xMin)
   {
@@ -103,9 +83,7 @@ class GoogleCloudAiplatformV1SchemaPredictPredictionVideoObjectTrackingPredictio
     return $this->xMin;
   }
   /**
-   * The bottommost coordinate of the bounding box.
-   *
-   * @param float $yMax
+   * @param float
    */
   public function setYMax($yMax)
   {
@@ -119,9 +97,7 @@ class GoogleCloudAiplatformV1SchemaPredictPredictionVideoObjectTrackingPredictio
     return $this->yMax;
   }
   /**
-   * The topmost coordinate of the bounding box.
-   *
-   * @param float $yMin
+   * @param float
    */
   public function setYMin($yMin)
   {

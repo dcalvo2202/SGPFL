@@ -25,42 +25,21 @@ class IterationResult extends \Google\Collection
   protected $clusterInfosType = ClusterInfo::class;
   protected $clusterInfosDataType = 'array';
   /**
-   * Time taken to run the iteration in milliseconds.
-   *
    * @var string
    */
   public $durationMs;
-  /**
-   * Loss computed on the eval data at the end of iteration.
-   *
-   * @var 
-   */
   public $evalLoss;
   /**
-   * Index of the iteration, 0 based.
-   *
    * @var int
    */
   public $index;
-  /**
-   * Learn rate used for this iteration.
-   *
-   * @var 
-   */
   public $learnRate;
   protected $principalComponentInfosType = PrincipalComponentInfo::class;
   protected $principalComponentInfosDataType = 'array';
-  /**
-   * Loss computed on the training data at the end of iteration.
-   *
-   * @var 
-   */
   public $trainingLoss;
 
   /**
-   * Arima result.
-   *
-   * @param ArimaResult $arimaResult
+   * @param ArimaResult
    */
   public function setArimaResult(ArimaResult $arimaResult)
   {
@@ -74,9 +53,7 @@ class IterationResult extends \Google\Collection
     return $this->arimaResult;
   }
   /**
-   * Information about top clusters for clustering models.
-   *
-   * @param ClusterInfo[] $clusterInfos
+   * @param ClusterInfo[]
    */
   public function setClusterInfos($clusterInfos)
   {
@@ -90,9 +67,7 @@ class IterationResult extends \Google\Collection
     return $this->clusterInfos;
   }
   /**
-   * Time taken to run the iteration in milliseconds.
-   *
-   * @param string $durationMs
+   * @param string
    */
   public function setDurationMs($durationMs)
   {
@@ -114,9 +89,7 @@ class IterationResult extends \Google\Collection
     return $this->evalLoss;
   }
   /**
-   * Index of the iteration, 0 based.
-   *
-   * @param int $index
+   * @param int
    */
   public function setIndex($index)
   {
@@ -138,9 +111,7 @@ class IterationResult extends \Google\Collection
     return $this->learnRate;
   }
   /**
-   * The information of the principal components.
-   *
-   * @param PrincipalComponentInfo[] $principalComponentInfos
+   * @param PrincipalComponentInfo[]
    */
   public function setPrincipalComponentInfos($principalComponentInfos)
   {

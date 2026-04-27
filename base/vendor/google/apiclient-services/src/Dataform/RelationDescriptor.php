@@ -21,24 +21,18 @@ class RelationDescriptor extends \Google\Collection
 {
   protected $collection_key = 'columns';
   /**
-   * A set of BigQuery labels that should be applied to the relation.
-   *
    * @var string[]
    */
   public $bigqueryLabels;
   protected $columnsType = ColumnDescriptor::class;
   protected $columnsDataType = 'array';
   /**
-   * A text description of the relation.
-   *
    * @var string
    */
   public $description;
 
   /**
-   * A set of BigQuery labels that should be applied to the relation.
-   *
-   * @param string[] $bigqueryLabels
+   * @param string[]
    */
   public function setBigqueryLabels($bigqueryLabels)
   {
@@ -52,9 +46,7 @@ class RelationDescriptor extends \Google\Collection
     return $this->bigqueryLabels;
   }
   /**
-   * A list of descriptions of columns within the relation.
-   *
-   * @param ColumnDescriptor[] $columns
+   * @param ColumnDescriptor[]
    */
   public function setColumns($columns)
   {
@@ -68,9 +60,7 @@ class RelationDescriptor extends \Google\Collection
     return $this->columns;
   }
   /**
-   * A text description of the relation.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {

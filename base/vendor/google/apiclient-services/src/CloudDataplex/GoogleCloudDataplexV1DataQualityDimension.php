@@ -20,18 +20,12 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1DataQualityDimension extends \Google\Model
 {
   /**
-   * Output only. The dimension name a rule belongs to. Custom dimension name is
-   * supported with all uppercase letters and maximum length of 30 characters.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Output only. The dimension name a rule belongs to. Custom dimension name is
-   * supported with all uppercase letters and maximum length of 30 characters.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

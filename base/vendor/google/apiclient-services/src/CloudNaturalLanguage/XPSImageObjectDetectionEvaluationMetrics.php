@@ -21,27 +21,18 @@ class XPSImageObjectDetectionEvaluationMetrics extends \Google\Collection
 {
   protected $collection_key = 'boundingBoxMetricsEntries';
   /**
-   * The single metric for bounding boxes evaluation: the mean_average_precision
-   * averaged over all bounding_box_metrics_entries.
-   *
    * @var float
    */
   public $boundingBoxMeanAveragePrecision;
   protected $boundingBoxMetricsEntriesType = XPSBoundingBoxMetricsEntry::class;
   protected $boundingBoxMetricsEntriesDataType = 'array';
   /**
-   * The total number of bounding boxes (i.e. summed over all images) the ground
-   * truth used to create this evaluation had.
-   *
    * @var int
    */
   public $evaluatedBoundingBoxCount;
 
   /**
-   * The single metric for bounding boxes evaluation: the mean_average_precision
-   * averaged over all bounding_box_metrics_entries.
-   *
-   * @param float $boundingBoxMeanAveragePrecision
+   * @param float
    */
   public function setBoundingBoxMeanAveragePrecision($boundingBoxMeanAveragePrecision)
   {
@@ -55,11 +46,7 @@ class XPSImageObjectDetectionEvaluationMetrics extends \Google\Collection
     return $this->boundingBoxMeanAveragePrecision;
   }
   /**
-   * The bounding boxes match metrics for each Intersection-over-union threshold
-   * 0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and each label confidence threshold
-   * 0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 pair.
-   *
-   * @param XPSBoundingBoxMetricsEntry[] $boundingBoxMetricsEntries
+   * @param XPSBoundingBoxMetricsEntry[]
    */
   public function setBoundingBoxMetricsEntries($boundingBoxMetricsEntries)
   {
@@ -73,10 +60,7 @@ class XPSImageObjectDetectionEvaluationMetrics extends \Google\Collection
     return $this->boundingBoxMetricsEntries;
   }
   /**
-   * The total number of bounding boxes (i.e. summed over all images) the ground
-   * truth used to create this evaluation had.
-   *
-   * @param int $evaluatedBoundingBoxCount
+   * @param int
    */
   public function setEvaluatedBoundingBoxCount($evaluatedBoundingBoxCount)
   {

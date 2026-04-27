@@ -21,87 +21,50 @@ class GoogleCloudDataplexV1DataAttributeBinding extends \Google\Collection
 {
   protected $collection_key = 'paths';
   /**
-   * Optional. List of attributes to be associated with the resource, provided
-   * in the form: projects/{project}/locations/{location}/dataTaxonomies/{dataTa
-   * xonomy}/attributes/{data_attribute_id}
-   *
    * @var string[]
    */
   public $attributes;
   /**
-   * Output only. The time when the DataAttributeBinding was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. Description of the DataAttributeBinding.
-   *
    * @var string
    */
   public $description;
   /**
-   * Optional. User friendly display name.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * This checksum is computed by the server based on the value of other fields,
-   * and may be sent on update and delete requests to ensure the client has an
-   * up-to-date value before proceeding. Etags must be used when calling the
-   * DeleteDataAttributeBinding and the UpdateDataAttributeBinding method.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Optional. User-defined labels for the DataAttributeBinding.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Output only. The relative resource name of the Data Attribute Binding, of
-   * the form: projects/{project_number}/locations/{location}/dataAttributeBindi
-   * ngs/{data_attribute_binding_id}
-   *
    * @var string
    */
   public $name;
   protected $pathsType = GoogleCloudDataplexV1DataAttributeBindingPath::class;
   protected $pathsDataType = 'array';
   /**
-   * Optional. Immutable. The resource name of the resource that is associated
-   * to attributes. Presently, only entity resource is supported in the form: pr
-   * ojects/{project}/locations/{location}/lakes/{lake}/zones/{zone}/entities/{e
-   * ntity_id} Must belong in the same project and region as the attribute
-   * binding, and there can only exist one active binding for a resource.
-   *
    * @var string
    */
   public $resource;
   /**
-   * Output only. System generated globally unique ID for the
-   * DataAttributeBinding. This ID will be different if the DataAttributeBinding
-   * is deleted and re-created with the same name.
-   *
    * @var string
    */
   public $uid;
   /**
-   * Output only. The time when the DataAttributeBinding was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Optional. List of attributes to be associated with the resource, provided
-   * in the form: projects/{project}/locations/{location}/dataTaxonomies/{dataTa
-   * xonomy}/attributes/{data_attribute_id}
-   *
-   * @param string[] $attributes
+   * @param string[]
    */
   public function setAttributes($attributes)
   {
@@ -115,9 +78,7 @@ class GoogleCloudDataplexV1DataAttributeBinding extends \Google\Collection
     return $this->attributes;
   }
   /**
-   * Output only. The time when the DataAttributeBinding was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -131,9 +92,7 @@ class GoogleCloudDataplexV1DataAttributeBinding extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Optional. Description of the DataAttributeBinding.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -147,9 +106,7 @@ class GoogleCloudDataplexV1DataAttributeBinding extends \Google\Collection
     return $this->description;
   }
   /**
-   * Optional. User friendly display name.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -163,12 +120,7 @@ class GoogleCloudDataplexV1DataAttributeBinding extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * This checksum is computed by the server based on the value of other fields,
-   * and may be sent on update and delete requests to ensure the client has an
-   * up-to-date value before proceeding. Etags must be used when calling the
-   * DeleteDataAttributeBinding and the UpdateDataAttributeBinding method.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -182,9 +134,7 @@ class GoogleCloudDataplexV1DataAttributeBinding extends \Google\Collection
     return $this->etag;
   }
   /**
-   * Optional. User-defined labels for the DataAttributeBinding.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -198,11 +148,7 @@ class GoogleCloudDataplexV1DataAttributeBinding extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Output only. The relative resource name of the Data Attribute Binding, of
-   * the form: projects/{project_number}/locations/{location}/dataAttributeBindi
-   * ngs/{data_attribute_binding_id}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -216,10 +162,7 @@ class GoogleCloudDataplexV1DataAttributeBinding extends \Google\Collection
     return $this->name;
   }
   /**
-   * Optional. The list of paths for items within the associated resource (eg.
-   * columns and partitions within a table) along with attribute bindings.
-   *
-   * @param GoogleCloudDataplexV1DataAttributeBindingPath[] $paths
+   * @param GoogleCloudDataplexV1DataAttributeBindingPath[]
    */
   public function setPaths($paths)
   {
@@ -233,13 +176,7 @@ class GoogleCloudDataplexV1DataAttributeBinding extends \Google\Collection
     return $this->paths;
   }
   /**
-   * Optional. Immutable. The resource name of the resource that is associated
-   * to attributes. Presently, only entity resource is supported in the form: pr
-   * ojects/{project}/locations/{location}/lakes/{lake}/zones/{zone}/entities/{e
-   * ntity_id} Must belong in the same project and region as the attribute
-   * binding, and there can only exist one active binding for a resource.
-   *
-   * @param string $resource
+   * @param string
    */
   public function setResource($resource)
   {
@@ -253,11 +190,7 @@ class GoogleCloudDataplexV1DataAttributeBinding extends \Google\Collection
     return $this->resource;
   }
   /**
-   * Output only. System generated globally unique ID for the
-   * DataAttributeBinding. This ID will be different if the DataAttributeBinding
-   * is deleted and re-created with the same name.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {
@@ -271,9 +204,7 @@ class GoogleCloudDataplexV1DataAttributeBinding extends \Google\Collection
     return $this->uid;
   }
   /**
-   * Output only. The time when the DataAttributeBinding was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

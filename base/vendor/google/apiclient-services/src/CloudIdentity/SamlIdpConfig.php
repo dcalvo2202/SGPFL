@@ -20,45 +20,24 @@ namespace Google\Service\CloudIdentity;
 class SamlIdpConfig extends \Google\Model
 {
   /**
-   * The **Change Password URL** of the identity provider. Users will be sent to
-   * this URL when changing their passwords at `myaccount.google.com`. This
-   * takes precedence over the change password URL configured at customer-level.
-   * Must use `HTTPS`.
-   *
    * @var string
    */
   public $changePasswordUri;
   /**
-   * Required. The SAML **Entity ID** of the identity provider.
-   *
    * @var string
    */
   public $entityId;
   /**
-   * The **Logout Redirect URL** (sign-out page URL) of the identity provider.
-   * When a user clicks the sign-out link on a Google page, they will be
-   * redirected to this URL. This is a pure redirect with no attached SAML
-   * `LogoutRequest` i.e. SAML single logout is not supported. Must use `HTTPS`.
-   *
    * @var string
    */
   public $logoutRedirectUri;
   /**
-   * Required. The `SingleSignOnService` endpoint location (sign-in page URL) of
-   * the identity provider. This is the URL where the `AuthnRequest` will be
-   * sent. Must use `HTTPS`. Assumed to accept the `HTTP-Redirect` binding.
-   *
    * @var string
    */
   public $singleSignOnServiceUri;
 
   /**
-   * The **Change Password URL** of the identity provider. Users will be sent to
-   * this URL when changing their passwords at `myaccount.google.com`. This
-   * takes precedence over the change password URL configured at customer-level.
-   * Must use `HTTPS`.
-   *
-   * @param string $changePasswordUri
+   * @param string
    */
   public function setChangePasswordUri($changePasswordUri)
   {
@@ -72,9 +51,7 @@ class SamlIdpConfig extends \Google\Model
     return $this->changePasswordUri;
   }
   /**
-   * Required. The SAML **Entity ID** of the identity provider.
-   *
-   * @param string $entityId
+   * @param string
    */
   public function setEntityId($entityId)
   {
@@ -88,12 +65,7 @@ class SamlIdpConfig extends \Google\Model
     return $this->entityId;
   }
   /**
-   * The **Logout Redirect URL** (sign-out page URL) of the identity provider.
-   * When a user clicks the sign-out link on a Google page, they will be
-   * redirected to this URL. This is a pure redirect with no attached SAML
-   * `LogoutRequest` i.e. SAML single logout is not supported. Must use `HTTPS`.
-   *
-   * @param string $logoutRedirectUri
+   * @param string
    */
   public function setLogoutRedirectUri($logoutRedirectUri)
   {
@@ -107,11 +79,7 @@ class SamlIdpConfig extends \Google\Model
     return $this->logoutRedirectUri;
   }
   /**
-   * Required. The `SingleSignOnService` endpoint location (sign-in page URL) of
-   * the identity provider. This is the URL where the `AuthnRequest` will be
-   * sent. Must use `HTTPS`. Assumed to accept the `HTTP-Redirect` binding.
-   *
-   * @param string $singleSignOnServiceUri
+   * @param string
    */
   public function setSingleSignOnServiceUri($singleSignOnServiceUri)
   {

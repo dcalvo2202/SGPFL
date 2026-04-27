@@ -24,9 +24,7 @@ class UpdateDeviceMetadataInBatchRequest extends \Google\Collection
   protected $updatesDataType = 'array';
 
   /**
-   * Required. The list of metadata updates.
-   *
-   * @param UpdateMetadataArguments[] $updates
+   * @param UpdateMetadataArguments[]
    */
   public function setUpdates($updates)
   {

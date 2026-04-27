@@ -21,36 +21,26 @@ class GooglePrivacyDlpV2CategoricalStatsHistogramBucket extends \Google\Collecti
 {
   protected $collection_key = 'bucketValues';
   /**
-   * Total number of values in this bucket.
-   *
    * @var string
    */
   public $bucketSize;
   /**
-   * Total number of distinct values in this bucket.
-   *
    * @var string
    */
   public $bucketValueCount;
   protected $bucketValuesType = GooglePrivacyDlpV2ValueFrequency::class;
   protected $bucketValuesDataType = 'array';
   /**
-   * Lower bound on the value frequency of the values in this bucket.
-   *
    * @var string
    */
   public $valueFrequencyLowerBound;
   /**
-   * Upper bound on the value frequency of the values in this bucket.
-   *
    * @var string
    */
   public $valueFrequencyUpperBound;
 
   /**
-   * Total number of values in this bucket.
-   *
-   * @param string $bucketSize
+   * @param string
    */
   public function setBucketSize($bucketSize)
   {
@@ -64,9 +54,7 @@ class GooglePrivacyDlpV2CategoricalStatsHistogramBucket extends \Google\Collecti
     return $this->bucketSize;
   }
   /**
-   * Total number of distinct values in this bucket.
-   *
-   * @param string $bucketValueCount
+   * @param string
    */
   public function setBucketValueCount($bucketValueCount)
   {
@@ -80,10 +68,7 @@ class GooglePrivacyDlpV2CategoricalStatsHistogramBucket extends \Google\Collecti
     return $this->bucketValueCount;
   }
   /**
-   * Sample of value frequencies in this bucket. The total number of values
-   * returned per bucket is capped at 20.
-   *
-   * @param GooglePrivacyDlpV2ValueFrequency[] $bucketValues
+   * @param GooglePrivacyDlpV2ValueFrequency[]
    */
   public function setBucketValues($bucketValues)
   {
@@ -97,9 +82,7 @@ class GooglePrivacyDlpV2CategoricalStatsHistogramBucket extends \Google\Collecti
     return $this->bucketValues;
   }
   /**
-   * Lower bound on the value frequency of the values in this bucket.
-   *
-   * @param string $valueFrequencyLowerBound
+   * @param string
    */
   public function setValueFrequencyLowerBound($valueFrequencyLowerBound)
   {
@@ -113,9 +96,7 @@ class GooglePrivacyDlpV2CategoricalStatsHistogramBucket extends \Google\Collecti
     return $this->valueFrequencyLowerBound;
   }
   /**
-   * Upper bound on the value frequency of the values in this bucket.
-   *
-   * @param string $valueFrequencyUpperBound
+   * @param string
    */
   public function setValueFrequencyUpperBound($valueFrequencyUpperBound)
   {

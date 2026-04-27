@@ -20,56 +20,30 @@ namespace Google\Service\MigrationCenterAPI;
 class SqlServerTraceFlag extends \Google\Model
 {
   /**
-   * Unspecified.
-   */
-  public const SCOPE_SCOPE_UNSPECIFIED = 'SCOPE_UNSPECIFIED';
-  /**
-   * Off.
-   */
-  public const SCOPE_OFF = 'OFF';
-  /**
-   * Global.
-   */
-  public const SCOPE_GLOBAL = 'GLOBAL';
-  /**
-   * Session.
-   */
-  public const SCOPE_SESSION = 'SESSION';
-  /**
-   * Required. The trace flag scope.
-   *
    * @var string
    */
   public $scope;
   /**
-   * Required. The trace flag name.
-   *
    * @var string
    */
   public $traceFlagName;
 
   /**
-   * Required. The trace flag scope.
-   *
-   * Accepted values: SCOPE_UNSPECIFIED, OFF, GLOBAL, SESSION
-   *
-   * @param self::SCOPE_* $scope
+   * @param string
    */
   public function setScope($scope)
   {
     $this->scope = $scope;
   }
   /**
-   * @return self::SCOPE_*
+   * @return string
    */
   public function getScope()
   {
     return $this->scope;
   }
   /**
-   * Required. The trace flag name.
-   *
-   * @param string $traceFlagName
+   * @param string
    */
   public function setTraceFlagName($traceFlagName)
   {

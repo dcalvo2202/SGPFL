@@ -21,8 +21,6 @@ class GoogleCloudVideointelligenceV1p3beta1ObjectTrackingAnnotation extends \Goo
 {
   protected $collection_key = 'frames';
   /**
-   * Object category's labeling confidence of this track.
-   *
    * @var float
    */
   public $confidence;
@@ -33,26 +31,16 @@ class GoogleCloudVideointelligenceV1p3beta1ObjectTrackingAnnotation extends \Goo
   protected $segmentType = GoogleCloudVideointelligenceV1p3beta1VideoSegment::class;
   protected $segmentDataType = '';
   /**
-   * Streaming mode ONLY. In streaming mode, we do not know the end time of a
-   * tracked object before it is completed. Hence, there is no VideoSegment info
-   * returned. Instead, we provide a unique identifiable integer track_id so
-   * that the customers can correlate the results of the ongoing
-   * ObjectTrackAnnotation of the same track_id over time.
-   *
    * @var string
    */
   public $trackId;
   /**
-   * Feature version.
-   *
    * @var string
    */
   public $version;
 
   /**
-   * Object category's labeling confidence of this track.
-   *
-   * @param float $confidence
+   * @param float
    */
   public function setConfidence($confidence)
   {
@@ -66,9 +54,7 @@ class GoogleCloudVideointelligenceV1p3beta1ObjectTrackingAnnotation extends \Goo
     return $this->confidence;
   }
   /**
-   * Entity to specify the object category that this track is labeled as.
-   *
-   * @param GoogleCloudVideointelligenceV1p3beta1Entity $entity
+   * @param GoogleCloudVideointelligenceV1p3beta1Entity
    */
   public function setEntity(GoogleCloudVideointelligenceV1p3beta1Entity $entity)
   {
@@ -82,12 +68,7 @@ class GoogleCloudVideointelligenceV1p3beta1ObjectTrackingAnnotation extends \Goo
     return $this->entity;
   }
   /**
-   * Information corresponding to all frames where this object track appears.
-   * Non-streaming batch mode: it may be one or multiple ObjectTrackingFrame
-   * messages in frames. Streaming mode: it can only be one ObjectTrackingFrame
-   * message in frames.
-   *
-   * @param GoogleCloudVideointelligenceV1p3beta1ObjectTrackingFrame[] $frames
+   * @param GoogleCloudVideointelligenceV1p3beta1ObjectTrackingFrame[]
    */
   public function setFrames($frames)
   {
@@ -101,10 +82,7 @@ class GoogleCloudVideointelligenceV1p3beta1ObjectTrackingAnnotation extends \Goo
     return $this->frames;
   }
   /**
-   * Non-streaming batch mode ONLY. Each object track corresponds to one video
-   * segment where it appears.
-   *
-   * @param GoogleCloudVideointelligenceV1p3beta1VideoSegment $segment
+   * @param GoogleCloudVideointelligenceV1p3beta1VideoSegment
    */
   public function setSegment(GoogleCloudVideointelligenceV1p3beta1VideoSegment $segment)
   {
@@ -118,13 +96,7 @@ class GoogleCloudVideointelligenceV1p3beta1ObjectTrackingAnnotation extends \Goo
     return $this->segment;
   }
   /**
-   * Streaming mode ONLY. In streaming mode, we do not know the end time of a
-   * tracked object before it is completed. Hence, there is no VideoSegment info
-   * returned. Instead, we provide a unique identifiable integer track_id so
-   * that the customers can correlate the results of the ongoing
-   * ObjectTrackAnnotation of the same track_id over time.
-   *
-   * @param string $trackId
+   * @param string
    */
   public function setTrackId($trackId)
   {
@@ -138,9 +110,7 @@ class GoogleCloudVideointelligenceV1p3beta1ObjectTrackingAnnotation extends \Goo
     return $this->trackId;
   }
   /**
-   * Feature version.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

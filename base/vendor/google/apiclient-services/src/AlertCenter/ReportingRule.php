@@ -20,30 +20,20 @@ namespace Google\Service\AlertCenter;
 class ReportingRule extends \Google\Model
 {
   /**
-   * Any other associated alert details, for example, AlertConfiguration.
-   *
    * @var string
    */
   public $alertDetails;
   /**
-   * Rule name
-   *
    * @var string
    */
   public $name;
   /**
-   * Alert Rule query Sample Query query { condition { filter {
-   * expected_application_id: 777491262838 expected_event_name:
-   * "indexable_content_change" filter_op: IN } } conjunction_operator: OR }
-   *
    * @var string
    */
   public $query;
 
   /**
-   * Any other associated alert details, for example, AlertConfiguration.
-   *
-   * @param string $alertDetails
+   * @param string
    */
   public function setAlertDetails($alertDetails)
   {
@@ -57,9 +47,7 @@ class ReportingRule extends \Google\Model
     return $this->alertDetails;
   }
   /**
-   * Rule name
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -73,11 +61,7 @@ class ReportingRule extends \Google\Model
     return $this->name;
   }
   /**
-   * Alert Rule query Sample Query query { condition { filter {
-   * expected_application_id: 777491262838 expected_event_name:
-   * "indexable_content_change" filter_op: IN } } conjunction_operator: OR }
-   *
-   * @param string $query
+   * @param string
    */
   public function setQuery($query)
   {

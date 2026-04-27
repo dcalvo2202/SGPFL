@@ -23,17 +23,12 @@ class MasterAuthorizedNetworksConfig extends \Google\Collection
   protected $cidrBlocksType = CidrBlock::class;
   protected $cidrBlocksDataType = 'array';
   /**
-   * Optional. Whether or not master authorized networks feature is enabled.
-   *
    * @var bool
    */
   public $enabled;
 
   /**
-   * Up to 50 external networks that could access Kubernetes master through
-   * HTTPS.
-   *
-   * @param CidrBlock[] $cidrBlocks
+   * @param CidrBlock[]
    */
   public function setCidrBlocks($cidrBlocks)
   {
@@ -47,9 +42,7 @@ class MasterAuthorizedNetworksConfig extends \Google\Collection
     return $this->cidrBlocks;
   }
   /**
-   * Optional. Whether or not master authorized networks feature is enabled.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {

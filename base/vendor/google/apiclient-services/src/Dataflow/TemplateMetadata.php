@@ -21,58 +21,38 @@ class TemplateMetadata extends \Google\Collection
 {
   protected $collection_key = 'parameters';
   /**
-   * Optional. Indicates the default streaming mode for a streaming template.
-   * Only valid if both supports_at_least_once and supports_exactly_once are
-   * true. Possible values: UNSPECIFIED, EXACTLY_ONCE and AT_LEAST_ONCE
-   *
    * @var string
    */
   public $defaultStreamingMode;
   /**
-   * Optional. A description of the template.
-   *
    * @var string
    */
   public $description;
   /**
-   * Required. The name of the template.
-   *
    * @var string
    */
   public $name;
   protected $parametersType = ParameterMetadata::class;
   protected $parametersDataType = 'array';
   /**
-   * Optional. Indicates if the template is streaming or not.
-   *
    * @var bool
    */
   public $streaming;
   /**
-   * Optional. Indicates if the streaming template supports at least once mode.
-   *
    * @var bool
    */
   public $supportsAtLeastOnce;
   /**
-   * Optional. Indicates if the streaming template supports exactly once mode.
-   *
    * @var bool
    */
   public $supportsExactlyOnce;
   /**
-   * Optional. For future use.
-   *
    * @var string
    */
   public $yamlDefinition;
 
   /**
-   * Optional. Indicates the default streaming mode for a streaming template.
-   * Only valid if both supports_at_least_once and supports_exactly_once are
-   * true. Possible values: UNSPECIFIED, EXACTLY_ONCE and AT_LEAST_ONCE
-   *
-   * @param string $defaultStreamingMode
+   * @param string
    */
   public function setDefaultStreamingMode($defaultStreamingMode)
   {
@@ -86,9 +66,7 @@ class TemplateMetadata extends \Google\Collection
     return $this->defaultStreamingMode;
   }
   /**
-   * Optional. A description of the template.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -102,9 +80,7 @@ class TemplateMetadata extends \Google\Collection
     return $this->description;
   }
   /**
-   * Required. The name of the template.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -118,9 +94,7 @@ class TemplateMetadata extends \Google\Collection
     return $this->name;
   }
   /**
-   * The parameters for the template.
-   *
-   * @param ParameterMetadata[] $parameters
+   * @param ParameterMetadata[]
    */
   public function setParameters($parameters)
   {
@@ -134,9 +108,7 @@ class TemplateMetadata extends \Google\Collection
     return $this->parameters;
   }
   /**
-   * Optional. Indicates if the template is streaming or not.
-   *
-   * @param bool $streaming
+   * @param bool
    */
   public function setStreaming($streaming)
   {
@@ -150,9 +122,7 @@ class TemplateMetadata extends \Google\Collection
     return $this->streaming;
   }
   /**
-   * Optional. Indicates if the streaming template supports at least once mode.
-   *
-   * @param bool $supportsAtLeastOnce
+   * @param bool
    */
   public function setSupportsAtLeastOnce($supportsAtLeastOnce)
   {
@@ -166,9 +136,7 @@ class TemplateMetadata extends \Google\Collection
     return $this->supportsAtLeastOnce;
   }
   /**
-   * Optional. Indicates if the streaming template supports exactly once mode.
-   *
-   * @param bool $supportsExactlyOnce
+   * @param bool
    */
   public function setSupportsExactlyOnce($supportsExactlyOnce)
   {
@@ -182,9 +150,7 @@ class TemplateMetadata extends \Google\Collection
     return $this->supportsExactlyOnce;
   }
   /**
-   * Optional. For future use.
-   *
-   * @param string $yamlDefinition
+   * @param string
    */
   public function setYamlDefinition($yamlDefinition)
   {

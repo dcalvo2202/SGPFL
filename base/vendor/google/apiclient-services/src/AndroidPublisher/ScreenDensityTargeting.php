@@ -26,10 +26,7 @@ class ScreenDensityTargeting extends \Google\Collection
   protected $valueDataType = 'array';
 
   /**
-   * Targeting of other sibling directories that were in the Bundle. For main
-   * splits this is targeting of other main splits.
-   *
-   * @param ScreenDensity[] $alternatives
+   * @param ScreenDensity[]
    */
   public function setAlternatives($alternatives)
   {
@@ -43,9 +40,7 @@ class ScreenDensityTargeting extends \Google\Collection
     return $this->alternatives;
   }
   /**
-   * Value of a screen density.
-   *
-   * @param ScreenDensity[] $value
+   * @param ScreenDensity[]
    */
   public function setValue($value)
   {

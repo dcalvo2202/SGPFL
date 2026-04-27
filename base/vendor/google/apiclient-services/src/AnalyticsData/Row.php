@@ -26,10 +26,7 @@ class Row extends \Google\Collection
   protected $metricValuesDataType = 'array';
 
   /**
-   * List of requested dimension values. In a PivotReport, dimension_values are
-   * only listed for dimensions included in a pivot.
-   *
-   * @param DimensionValue[] $dimensionValues
+   * @param DimensionValue[]
    */
   public function setDimensionValues($dimensionValues)
   {
@@ -43,9 +40,7 @@ class Row extends \Google\Collection
     return $this->dimensionValues;
   }
   /**
-   * List of requested visible metric values.
-   *
-   * @param MetricValue[] $metricValues
+   * @param MetricValue[]
    */
   public function setMetricValues($metricValues)
   {

@@ -20,22 +20,16 @@ namespace Google\Service\CloudControlsPartnerService;
 class ConnectionError extends \Google\Model
 {
   /**
-   * The error domain for the error
-   *
    * @var string
    */
   public $errorDomain;
   /**
-   * The error message for the error
-   *
    * @var string
    */
   public $errorMessage;
 
   /**
-   * The error domain for the error
-   *
-   * @param string $errorDomain
+   * @param string
    */
   public function setErrorDomain($errorDomain)
   {
@@ -49,9 +43,7 @@ class ConnectionError extends \Google\Model
     return $this->errorDomain;
   }
   /**
-   * The error message for the error
-   *
-   * @param string $errorMessage
+   * @param string
    */
   public function setErrorMessage($errorMessage)
   {

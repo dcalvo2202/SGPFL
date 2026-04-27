@@ -22,16 +22,12 @@ class BloomFilter extends \Google\Model
   protected $bitsType = BitSequence::class;
   protected $bitsDataType = '';
   /**
-   * The number of hashes used by the algorithm.
-   *
    * @var int
    */
   public $hashCount;
 
   /**
-   * The bloom filter data.
-   *
-   * @param BitSequence $bits
+   * @param BitSequence
    */
   public function setBits(BitSequence $bits)
   {
@@ -45,9 +41,7 @@ class BloomFilter extends \Google\Model
     return $this->bits;
   }
   /**
-   * The number of hashes used by the algorithm.
-   *
-   * @param int $hashCount
+   * @param int
    */
   public function setHashCount($hashCount)
   {

@@ -21,27 +21,18 @@ class SolarPanelConfig extends \Google\Collection
 {
   protected $collection_key = 'roofSegmentSummaries';
   /**
-   * Total number of panels. Note that this is redundant to (the sum of) the
-   * corresponding fields in roof_segment_summaries.
-   *
    * @var int
    */
   public $panelsCount;
   protected $roofSegmentSummariesType = RoofSegmentSummary::class;
   protected $roofSegmentSummariesDataType = 'array';
   /**
-   * How much sunlight energy this layout captures over the course of a year, in
-   * DC kWh, assuming the panels described above.
-   *
    * @var float
    */
   public $yearlyEnergyDcKwh;
 
   /**
-   * Total number of panels. Note that this is redundant to (the sum of) the
-   * corresponding fields in roof_segment_summaries.
-   *
-   * @param int $panelsCount
+   * @param int
    */
   public function setPanelsCount($panelsCount)
   {
@@ -55,11 +46,7 @@ class SolarPanelConfig extends \Google\Collection
     return $this->panelsCount;
   }
   /**
-   * Information about the production of each roof segment that is carrying at
-   * least one panel in this layout. `roof_segment_summaries[i]` describes the
-   * i-th roof segment, including its size, expected production and orientation.
-   *
-   * @param RoofSegmentSummary[] $roofSegmentSummaries
+   * @param RoofSegmentSummary[]
    */
   public function setRoofSegmentSummaries($roofSegmentSummaries)
   {
@@ -73,10 +60,7 @@ class SolarPanelConfig extends \Google\Collection
     return $this->roofSegmentSummaries;
   }
   /**
-   * How much sunlight energy this layout captures over the course of a year, in
-   * DC kWh, assuming the panels described above.
-   *
-   * @param float $yearlyEnergyDcKwh
+   * @param float
    */
   public function setYearlyEnergyDcKwh($yearlyEnergyDcKwh)
   {

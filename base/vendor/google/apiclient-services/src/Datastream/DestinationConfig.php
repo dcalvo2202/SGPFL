@@ -22,9 +22,6 @@ class DestinationConfig extends \Google\Model
   protected $bigqueryDestinationConfigType = BigQueryDestinationConfig::class;
   protected $bigqueryDestinationConfigDataType = '';
   /**
-   * Required. Destination connection profile resource. Format:
-   * `projects/{project}/locations/{location}/connectionProfiles/{name}`
-   *
    * @var string
    */
   public $destinationConnectionProfile;
@@ -32,9 +29,7 @@ class DestinationConfig extends \Google\Model
   protected $gcsDestinationConfigDataType = '';
 
   /**
-   * BigQuery destination configuration.
-   *
-   * @param BigQueryDestinationConfig $bigqueryDestinationConfig
+   * @param BigQueryDestinationConfig
    */
   public function setBigqueryDestinationConfig(BigQueryDestinationConfig $bigqueryDestinationConfig)
   {
@@ -48,10 +43,7 @@ class DestinationConfig extends \Google\Model
     return $this->bigqueryDestinationConfig;
   }
   /**
-   * Required. Destination connection profile resource. Format:
-   * `projects/{project}/locations/{location}/connectionProfiles/{name}`
-   *
-   * @param string $destinationConnectionProfile
+   * @param string
    */
   public function setDestinationConnectionProfile($destinationConnectionProfile)
   {
@@ -65,9 +57,7 @@ class DestinationConfig extends \Google\Model
     return $this->destinationConnectionProfile;
   }
   /**
-   * A configuration for how data should be loaded to Cloud Storage.
-   *
-   * @param GcsDestinationConfig $gcsDestinationConfig
+   * @param GcsDestinationConfig
    */
   public function setGcsDestinationConfig(GcsDestinationConfig $gcsDestinationConfig)
   {

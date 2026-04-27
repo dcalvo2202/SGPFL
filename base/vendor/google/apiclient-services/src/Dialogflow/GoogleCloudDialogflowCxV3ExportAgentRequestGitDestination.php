@@ -29,7 +29,7 @@ class GoogleCloudDialogflowCxV3ExportAgentRequestGitDestination extends \Google\
   public $trackingBranch;
 
   /**
-   * @param string $commitMessage
+   * @param string
    */
   public function setCommitMessage($commitMessage)
   {
@@ -43,7 +43,7 @@ class GoogleCloudDialogflowCxV3ExportAgentRequestGitDestination extends \Google\
     return $this->commitMessage;
   }
   /**
-   * @param string $trackingBranch
+   * @param string
    */
   public function setTrackingBranch($trackingBranch)
   {

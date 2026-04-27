@@ -21,39 +21,24 @@ class Callback extends \Google\Collection
 {
   protected $collection_key = 'availablePayloads';
   /**
-   * Output only. The payloads received by the callback that have not been
-   * processed by a waiting execution step.
-   *
    * @var string[]
    */
   public $availablePayloads;
   /**
-   * Output only. The method accepted by the callback. For example: GET, POST,
-   * PUT.
-   *
    * @var string
    */
   public $method;
   /**
-   * Output only. The resource name of the callback. Format: projects/{project}/
-   * locations/{location}/workflows/{workflow}/executions/{execution}/callback/{
-   * callback}
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Number of execution steps waiting on this callback.
-   *
    * @var string
    */
   public $waiters;
 
   /**
-   * Output only. The payloads received by the callback that have not been
-   * processed by a waiting execution step.
-   *
-   * @param string[] $availablePayloads
+   * @param string[]
    */
   public function setAvailablePayloads($availablePayloads)
   {
@@ -67,10 +52,7 @@ class Callback extends \Google\Collection
     return $this->availablePayloads;
   }
   /**
-   * Output only. The method accepted by the callback. For example: GET, POST,
-   * PUT.
-   *
-   * @param string $method
+   * @param string
    */
   public function setMethod($method)
   {
@@ -84,11 +66,7 @@ class Callback extends \Google\Collection
     return $this->method;
   }
   /**
-   * Output only. The resource name of the callback. Format: projects/{project}/
-   * locations/{location}/workflows/{workflow}/executions/{execution}/callback/{
-   * callback}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -102,9 +80,7 @@ class Callback extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. Number of execution steps waiting on this callback.
-   *
-   * @param string $waiters
+   * @param string
    */
   public function setWaiters($waiters)
   {

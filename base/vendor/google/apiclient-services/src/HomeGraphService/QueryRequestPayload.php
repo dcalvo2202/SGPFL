@@ -24,9 +24,7 @@ class QueryRequestPayload extends \Google\Collection
   protected $devicesDataType = 'array';
 
   /**
-   * Third-party device IDs for which to get the device states.
-   *
-   * @param AgentDeviceId[] $devices
+   * @param AgentDeviceId[]
    */
   public function setDevices($devices)
   {

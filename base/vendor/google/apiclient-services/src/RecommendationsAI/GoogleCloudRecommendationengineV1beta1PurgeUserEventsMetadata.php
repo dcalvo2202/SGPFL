@@ -20,22 +20,16 @@ namespace Google\Service\RecommendationsAI;
 class GoogleCloudRecommendationengineV1beta1PurgeUserEventsMetadata extends \Google\Model
 {
   /**
-   * Operation create time.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * The ID of the request / operation.
-   *
    * @var string
    */
   public $operationName;
 
   /**
-   * Operation create time.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -49,9 +43,7 @@ class GoogleCloudRecommendationengineV1beta1PurgeUserEventsMetadata extends \Goo
     return $this->createTime;
   }
   /**
-   * The ID of the request / operation.
-   *
-   * @param string $operationName
+   * @param string
    */
   public function setOperationName($operationName)
   {

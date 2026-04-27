@@ -19,62 +19,32 @@ namespace Google\Service\SecurityPosture;
 
 class PostureTemplate extends \Google\Collection
 {
-  /**
-   * Default value. This value is unused.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The posture template follows the latest controls and standards.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * The posture template uses outdated controls and standards. We recommend
-   * that you use a newer revision of the posture template.
-   */
-  public const STATE_DEPRECATED = 'DEPRECATED';
   protected $collection_key = 'policySets';
   /**
-   * Output only. The categories that the posture template belongs to, as
-   * determined by the Security Posture API.
-   *
    * @var string[]
    */
   public $categories;
   /**
-   * Output only. A description of the posture template.
-   *
    * @var string
    */
   public $description;
   /**
-   * Output only. Identifier. The name of the posture template, in the format `o
-   * rganizations/{organization}/locations/global/postureTemplates/{posture_temp
-   * late}`.
-   *
    * @var string
    */
   public $name;
   protected $policySetsType = PolicySet::class;
   protected $policySetsDataType = 'array';
   /**
-   * Output only. A string that identifies the revision of the posture template.
-   *
    * @var string
    */
   public $revisionId;
   /**
-   * Output only. The state of the posture template at the specified
-   * `revision_id`.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Output only. The categories that the posture template belongs to, as
-   * determined by the Security Posture API.
-   *
-   * @param string[] $categories
+   * @param string[]
    */
   public function setCategories($categories)
   {
@@ -88,9 +58,7 @@ class PostureTemplate extends \Google\Collection
     return $this->categories;
   }
   /**
-   * Output only. A description of the posture template.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -104,11 +72,7 @@ class PostureTemplate extends \Google\Collection
     return $this->description;
   }
   /**
-   * Output only. Identifier. The name of the posture template, in the format `o
-   * rganizations/{organization}/locations/global/postureTemplates/{posture_temp
-   * late}`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -122,9 +86,7 @@ class PostureTemplate extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. The PolicySet resources that the posture template includes.
-   *
-   * @param PolicySet[] $policySets
+   * @param PolicySet[]
    */
   public function setPolicySets($policySets)
   {
@@ -138,9 +100,7 @@ class PostureTemplate extends \Google\Collection
     return $this->policySets;
   }
   /**
-   * Output only. A string that identifies the revision of the posture template.
-   *
-   * @param string $revisionId
+   * @param string
    */
   public function setRevisionId($revisionId)
   {
@@ -154,19 +114,14 @@ class PostureTemplate extends \Google\Collection
     return $this->revisionId;
   }
   /**
-   * Output only. The state of the posture template at the specified
-   * `revision_id`.
-   *
-   * Accepted values: STATE_UNSPECIFIED, ACTIVE, DEPRECATED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

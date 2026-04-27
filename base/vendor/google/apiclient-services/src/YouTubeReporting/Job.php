@@ -20,49 +20,32 @@ namespace Google\Service\YouTubeReporting;
 class Job extends \Google\Model
 {
   /**
-   * The creation date/time of the job.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * The date/time when this job will expire/expired. After a job expired, no
-   * new reports are generated.
-   *
    * @var string
    */
   public $expireTime;
   /**
-   * The server-generated ID of the job (max. 40 characters).
-   *
    * @var string
    */
   public $id;
   /**
-   * The name of the job (max. 100 characters).
-   *
    * @var string
    */
   public $name;
   /**
-   * The type of reports this job creates. Corresponds to the ID of a
-   * ReportType.
-   *
    * @var string
    */
   public $reportTypeId;
   /**
-   * True if this a system-managed job that cannot be modified by the user;
-   * otherwise false.
-   *
    * @var bool
    */
   public $systemManaged;
 
   /**
-   * The creation date/time of the job.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -76,10 +59,7 @@ class Job extends \Google\Model
     return $this->createTime;
   }
   /**
-   * The date/time when this job will expire/expired. After a job expired, no
-   * new reports are generated.
-   *
-   * @param string $expireTime
+   * @param string
    */
   public function setExpireTime($expireTime)
   {
@@ -93,9 +73,7 @@ class Job extends \Google\Model
     return $this->expireTime;
   }
   /**
-   * The server-generated ID of the job (max. 40 characters).
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -109,9 +87,7 @@ class Job extends \Google\Model
     return $this->id;
   }
   /**
-   * The name of the job (max. 100 characters).
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -125,10 +101,7 @@ class Job extends \Google\Model
     return $this->name;
   }
   /**
-   * The type of reports this job creates. Corresponds to the ID of a
-   * ReportType.
-   *
-   * @param string $reportTypeId
+   * @param string
    */
   public function setReportTypeId($reportTypeId)
   {
@@ -142,10 +115,7 @@ class Job extends \Google\Model
     return $this->reportTypeId;
   }
   /**
-   * True if this a system-managed job that cannot be modified by the user;
-   * otherwise false.
-   *
-   * @param bool $systemManaged
+   * @param bool
    */
   public function setSystemManaged($systemManaged)
   {

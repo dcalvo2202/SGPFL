@@ -21,59 +21,38 @@ class GetIosReopenAttributionResponse extends \Google\Collection
 {
   protected $collection_key = 'warning';
   /**
-   * The deep-link attributed the app universal link open. For both regular FDL
-   * links and invite FDL links.
-   *
    * @var string
    */
   public $deepLink;
   /**
-   * Optional invitation ID, for only invite typed requested FDL links.
-   *
    * @var string
    */
   public $invitationId;
   /**
-   * FDL input value of the "&imv=" parameter, minimum app version to be
-   * returned to Google Firebase SDK running on iOS-9.
-   *
    * @var string
    */
   public $iosMinAppVersion;
   /**
-   * The entire FDL, expanded from a short link. It is the same as the
-   * requested_link, if it is long.
-   *
    * @var string
    */
   public $resolvedLink;
   /**
-   * Scion campaign value to be propagated by iSDK to Scion at app-reopen.
-   *
    * @var string
    */
   public $utmCampaign;
   /**
-   * Scion content value to be propagated by iSDK to Scion at app-reopen.
-   *
    * @var string
    */
   public $utmContent;
   /**
-   * Scion medium value to be propagated by iSDK to Scion at app-reopen.
-   *
    * @var string
    */
   public $utmMedium;
   /**
-   * Scion source value to be propagated by iSDK to Scion at app-reopen.
-   *
    * @var string
    */
   public $utmSource;
   /**
-   * Scion term value to be propagated by iSDK to Scion at app-reopen.
-   *
    * @var string
    */
   public $utmTerm;
@@ -81,10 +60,7 @@ class GetIosReopenAttributionResponse extends \Google\Collection
   protected $warningDataType = 'array';
 
   /**
-   * The deep-link attributed the app universal link open. For both regular FDL
-   * links and invite FDL links.
-   *
-   * @param string $deepLink
+   * @param string
    */
   public function setDeepLink($deepLink)
   {
@@ -98,9 +74,7 @@ class GetIosReopenAttributionResponse extends \Google\Collection
     return $this->deepLink;
   }
   /**
-   * Optional invitation ID, for only invite typed requested FDL links.
-   *
-   * @param string $invitationId
+   * @param string
    */
   public function setInvitationId($invitationId)
   {
@@ -114,10 +88,7 @@ class GetIosReopenAttributionResponse extends \Google\Collection
     return $this->invitationId;
   }
   /**
-   * FDL input value of the "&imv=" parameter, minimum app version to be
-   * returned to Google Firebase SDK running on iOS-9.
-   *
-   * @param string $iosMinAppVersion
+   * @param string
    */
   public function setIosMinAppVersion($iosMinAppVersion)
   {
@@ -131,10 +102,7 @@ class GetIosReopenAttributionResponse extends \Google\Collection
     return $this->iosMinAppVersion;
   }
   /**
-   * The entire FDL, expanded from a short link. It is the same as the
-   * requested_link, if it is long.
-   *
-   * @param string $resolvedLink
+   * @param string
    */
   public function setResolvedLink($resolvedLink)
   {
@@ -148,9 +116,7 @@ class GetIosReopenAttributionResponse extends \Google\Collection
     return $this->resolvedLink;
   }
   /**
-   * Scion campaign value to be propagated by iSDK to Scion at app-reopen.
-   *
-   * @param string $utmCampaign
+   * @param string
    */
   public function setUtmCampaign($utmCampaign)
   {
@@ -164,9 +130,7 @@ class GetIosReopenAttributionResponse extends \Google\Collection
     return $this->utmCampaign;
   }
   /**
-   * Scion content value to be propagated by iSDK to Scion at app-reopen.
-   *
-   * @param string $utmContent
+   * @param string
    */
   public function setUtmContent($utmContent)
   {
@@ -180,9 +144,7 @@ class GetIosReopenAttributionResponse extends \Google\Collection
     return $this->utmContent;
   }
   /**
-   * Scion medium value to be propagated by iSDK to Scion at app-reopen.
-   *
-   * @param string $utmMedium
+   * @param string
    */
   public function setUtmMedium($utmMedium)
   {
@@ -196,9 +158,7 @@ class GetIosReopenAttributionResponse extends \Google\Collection
     return $this->utmMedium;
   }
   /**
-   * Scion source value to be propagated by iSDK to Scion at app-reopen.
-   *
-   * @param string $utmSource
+   * @param string
    */
   public function setUtmSource($utmSource)
   {
@@ -212,9 +172,7 @@ class GetIosReopenAttributionResponse extends \Google\Collection
     return $this->utmSource;
   }
   /**
-   * Scion term value to be propagated by iSDK to Scion at app-reopen.
-   *
-   * @param string $utmTerm
+   * @param string
    */
   public function setUtmTerm($utmTerm)
   {
@@ -228,9 +186,7 @@ class GetIosReopenAttributionResponse extends \Google\Collection
     return $this->utmTerm;
   }
   /**
-   * Optional warnings associated this API request.
-   *
-   * @param DynamicLinkWarning[] $warning
+   * @param DynamicLinkWarning[]
    */
   public function setWarning($warning)
   {

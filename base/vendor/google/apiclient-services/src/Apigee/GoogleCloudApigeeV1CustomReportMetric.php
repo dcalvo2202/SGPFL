@@ -20,22 +20,16 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1CustomReportMetric extends \Google\Model
 {
   /**
-   * aggregate function
-   *
    * @var string
    */
   public $function;
   /**
-   * name of the metric
-   *
    * @var string
    */
   public $name;
 
   /**
-   * aggregate function
-   *
-   * @param string $function
+   * @param string
    */
   public function setFunction($function)
   {
@@ -49,9 +43,7 @@ class GoogleCloudApigeeV1CustomReportMetric extends \Google\Model
     return $this->function;
   }
   /**
-   * name of the metric
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

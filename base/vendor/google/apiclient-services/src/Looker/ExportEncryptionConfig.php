@@ -20,16 +20,12 @@ namespace Google\Service\Looker;
 class ExportEncryptionConfig extends \Google\Model
 {
   /**
-   * Required. Name of the CMEK key in KMS.
-   *
    * @var string
    */
   public $kmsKeyName;
 
   /**
-   * Required. Name of the CMEK key in KMS.
-   *
-   * @param string $kmsKeyName
+   * @param string
    */
   public function setKmsKeyName($kmsKeyName)
   {

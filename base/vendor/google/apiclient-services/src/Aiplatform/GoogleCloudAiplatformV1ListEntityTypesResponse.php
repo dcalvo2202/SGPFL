@@ -23,17 +23,12 @@ class GoogleCloudAiplatformV1ListEntityTypesResponse extends \Google\Collection
   protected $entityTypesType = GoogleCloudAiplatformV1EntityType::class;
   protected $entityTypesDataType = 'array';
   /**
-   * A token, which can be sent as ListEntityTypesRequest.page_token to retrieve
-   * the next page. If this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The EntityTypes matching the request.
-   *
-   * @param GoogleCloudAiplatformV1EntityType[] $entityTypes
+   * @param GoogleCloudAiplatformV1EntityType[]
    */
   public function setEntityTypes($entityTypes)
   {
@@ -47,10 +42,7 @@ class GoogleCloudAiplatformV1ListEntityTypesResponse extends \Google\Collection
     return $this->entityTypes;
   }
   /**
-   * A token, which can be sent as ListEntityTypesRequest.page_token to retrieve
-   * the next page. If this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

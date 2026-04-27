@@ -20,20 +20,14 @@ namespace Google\Service\Books;
 class FamilyInfoMembership extends \Google\Model
 {
   /**
-   * Restrictions on user buying and acquiring content.
-   *
    * @var string
    */
   public $acquirePermission;
   /**
-   * The age group of the user.
-   *
    * @var string
    */
   public $ageGroup;
   /**
-   * The maximum allowed maturity rating for the user.
-   *
    * @var string
    */
   public $allowedMaturityRating;
@@ -42,16 +36,12 @@ class FamilyInfoMembership extends \Google\Model
    */
   public $isInFamily;
   /**
-   * The role of the user in the family.
-   *
    * @var string
    */
   public $role;
 
   /**
-   * Restrictions on user buying and acquiring content.
-   *
-   * @param string $acquirePermission
+   * @param string
    */
   public function setAcquirePermission($acquirePermission)
   {
@@ -65,9 +55,7 @@ class FamilyInfoMembership extends \Google\Model
     return $this->acquirePermission;
   }
   /**
-   * The age group of the user.
-   *
-   * @param string $ageGroup
+   * @param string
    */
   public function setAgeGroup($ageGroup)
   {
@@ -81,9 +69,7 @@ class FamilyInfoMembership extends \Google\Model
     return $this->ageGroup;
   }
   /**
-   * The maximum allowed maturity rating for the user.
-   *
-   * @param string $allowedMaturityRating
+   * @param string
    */
   public function setAllowedMaturityRating($allowedMaturityRating)
   {
@@ -97,7 +83,7 @@ class FamilyInfoMembership extends \Google\Model
     return $this->allowedMaturityRating;
   }
   /**
-   * @param bool $isInFamily
+   * @param bool
    */
   public function setIsInFamily($isInFamily)
   {
@@ -111,9 +97,7 @@ class FamilyInfoMembership extends \Google\Model
     return $this->isInFamily;
   }
   /**
-   * The role of the user in the family.
-   *
-   * @param string $role
+   * @param string
    */
   public function setRole($role)
   {

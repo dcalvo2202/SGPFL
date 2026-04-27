@@ -20,22 +20,12 @@ namespace Google\Service\Container;
 class MemoryManager extends \Google\Model
 {
   /**
-   * Controls the memory management policy on the Node. See
-   * https://kubernetes.io/docs/tasks/administer-cluster/memory-
-   * manager/#policies The following values are allowed. * "none" * "static" The
-   * default value is 'none' if unspecified.
-   *
    * @var string
    */
   public $policy;
 
   /**
-   * Controls the memory management policy on the Node. See
-   * https://kubernetes.io/docs/tasks/administer-cluster/memory-
-   * manager/#policies The following values are allowed. * "none" * "static" The
-   * default value is 'none' if unspecified.
-   *
-   * @param string $policy
+   * @param string
    */
   public function setPolicy($policy)
   {

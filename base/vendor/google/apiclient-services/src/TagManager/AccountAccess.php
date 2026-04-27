@@ -19,30 +19,20 @@ namespace Google\Service\TagManager;
 
 class AccountAccess extends \Google\Model
 {
-  public const PERMISSION_accountPermissionUnspecified = 'accountPermissionUnspecified';
-  public const PERMISSION_noAccess = 'noAccess';
-  public const PERMISSION_user = 'user';
-  public const PERMISSION_admin = 'admin';
   /**
-   * Whether the user has no access, user access, or admin access to an account.
-   *
    * @var string
    */
   public $permission;
 
   /**
-   * Whether the user has no access, user access, or admin access to an account.
-   *
-   * Accepted values: accountPermissionUnspecified, noAccess, user, admin
-   *
-   * @param self::PERMISSION_* $permission
+   * @param string
    */
   public function setPermission($permission)
   {
     $this->permission = $permission;
   }
   /**
-   * @return self::PERMISSION_*
+   * @return string
    */
   public function getPermission()
   {

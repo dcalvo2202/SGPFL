@@ -21,53 +21,32 @@ class GoogleCloudDataplexV1AspectTypeMetadataTemplateAnnotations extends \Google
 {
   protected $collection_key = 'stringValues';
   /**
-   * Optional. Marks a field as deprecated. You can include a deprecation
-   * message.
-   *
    * @var string
    */
   public $deprecated;
   /**
-   * Optional. Description for a field.
-   *
    * @var string
    */
   public $description;
   /**
-   * Optional. Display name for a field.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Optional. Display order for a field. You can use this to reorder where a
-   * field is rendered.
-   *
    * @var int
    */
   public $displayOrder;
   /**
-   * Optional. You can use String Type annotations to specify special meaning to
-   * string fields. The following values are supported: richText: The field must
-   * be interpreted as a rich text field. url: A fully qualified URL link.
-   * resource: A service qualified resource reference.
-   *
    * @var string
    */
   public $stringType;
   /**
-   * Optional. Suggested hints for string fields. You can use them to suggest
-   * values to users through console.
-   *
    * @var string[]
    */
   public $stringValues;
 
   /**
-   * Optional. Marks a field as deprecated. You can include a deprecation
-   * message.
-   *
-   * @param string $deprecated
+   * @param string
    */
   public function setDeprecated($deprecated)
   {
@@ -81,9 +60,7 @@ class GoogleCloudDataplexV1AspectTypeMetadataTemplateAnnotations extends \Google
     return $this->deprecated;
   }
   /**
-   * Optional. Description for a field.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -97,9 +74,7 @@ class GoogleCloudDataplexV1AspectTypeMetadataTemplateAnnotations extends \Google
     return $this->description;
   }
   /**
-   * Optional. Display name for a field.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -113,10 +88,7 @@ class GoogleCloudDataplexV1AspectTypeMetadataTemplateAnnotations extends \Google
     return $this->displayName;
   }
   /**
-   * Optional. Display order for a field. You can use this to reorder where a
-   * field is rendered.
-   *
-   * @param int $displayOrder
+   * @param int
    */
   public function setDisplayOrder($displayOrder)
   {
@@ -130,12 +102,7 @@ class GoogleCloudDataplexV1AspectTypeMetadataTemplateAnnotations extends \Google
     return $this->displayOrder;
   }
   /**
-   * Optional. You can use String Type annotations to specify special meaning to
-   * string fields. The following values are supported: richText: The field must
-   * be interpreted as a rich text field. url: A fully qualified URL link.
-   * resource: A service qualified resource reference.
-   *
-   * @param string $stringType
+   * @param string
    */
   public function setStringType($stringType)
   {
@@ -149,10 +116,7 @@ class GoogleCloudDataplexV1AspectTypeMetadataTemplateAnnotations extends \Google
     return $this->stringType;
   }
   /**
-   * Optional. Suggested hints for string fields. You can use them to suggest
-   * values to users through console.
-   *
-   * @param string[] $stringValues
+   * @param string[]
    */
   public function setStringValues($stringValues)
   {

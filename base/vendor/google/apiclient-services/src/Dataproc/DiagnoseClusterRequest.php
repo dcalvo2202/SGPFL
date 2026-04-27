@@ -19,73 +19,36 @@ namespace Google\Service\Dataproc;
 
 class DiagnoseClusterRequest extends \Google\Collection
 {
-  /**
-   * Tarball Access unspecified. Falls back to default access of the bucket
-   */
-  public const TARBALL_ACCESS_TARBALL_ACCESS_UNSPECIFIED = 'TARBALL_ACCESS_UNSPECIFIED';
-  /**
-   * Google Cloud Support group has read access to the diagnostic tarball
-   */
-  public const TARBALL_ACCESS_GOOGLE_CLOUD_SUPPORT = 'GOOGLE_CLOUD_SUPPORT';
-  /**
-   * Google Cloud Dataproc Diagnose service account has read access to the
-   * diagnostic tarball
-   */
-  public const TARBALL_ACCESS_GOOGLE_DATAPROC_DIAGNOSE = 'GOOGLE_DATAPROC_DIAGNOSE';
   protected $collection_key = 'yarnApplicationIds';
   protected $diagnosisIntervalType = Interval::class;
   protected $diagnosisIntervalDataType = '';
   /**
-   * Optional. DEPRECATED Specifies the job on which diagnosis is to be
-   * performed. Format: projects/{project}/regions/{region}/jobs/{job}
-   *
-   * @deprecated
    * @var string
    */
   public $job;
   /**
-   * Optional. Specifies a list of jobs on which diagnosis is to be performed.
-   * Format: projects/{project}/regions/{region}/jobs/{job}
-   *
    * @var string[]
    */
   public $jobs;
   /**
-   * Optional. (Optional) The access type to the diagnostic tarball. If not
-   * specified, falls back to default access of the bucket
-   *
    * @var string
    */
   public $tarballAccess;
   /**
-   * Optional. (Optional) The output Cloud Storage directory for the diagnostic
-   * tarball. If not specified, a task-specific directory in the cluster's
-   * staging bucket will be used.
-   *
    * @var string
    */
   public $tarballGcsDir;
   /**
-   * Optional. DEPRECATED Specifies the yarn application on which diagnosis is
-   * to be performed.
-   *
-   * @deprecated
    * @var string
    */
   public $yarnApplicationId;
   /**
-   * Optional. Specifies a list of yarn applications on which diagnosis is to be
-   * performed.
-   *
    * @var string[]
    */
   public $yarnApplicationIds;
 
   /**
-   * Optional. Time interval in which diagnosis should be carried out on the
-   * cluster.
-   *
-   * @param Interval $diagnosisInterval
+   * @param Interval
    */
   public function setDiagnosisInterval(Interval $diagnosisInterval)
   {
@@ -99,18 +62,13 @@ class DiagnoseClusterRequest extends \Google\Collection
     return $this->diagnosisInterval;
   }
   /**
-   * Optional. DEPRECATED Specifies the job on which diagnosis is to be
-   * performed. Format: projects/{project}/regions/{region}/jobs/{job}
-   *
-   * @deprecated
-   * @param string $job
+   * @param string
    */
   public function setJob($job)
   {
     $this->job = $job;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getJob()
@@ -118,10 +76,7 @@ class DiagnoseClusterRequest extends \Google\Collection
     return $this->job;
   }
   /**
-   * Optional. Specifies a list of jobs on which diagnosis is to be performed.
-   * Format: projects/{project}/regions/{region}/jobs/{job}
-   *
-   * @param string[] $jobs
+   * @param string[]
    */
   public function setJobs($jobs)
   {
@@ -135,31 +90,21 @@ class DiagnoseClusterRequest extends \Google\Collection
     return $this->jobs;
   }
   /**
-   * Optional. (Optional) The access type to the diagnostic tarball. If not
-   * specified, falls back to default access of the bucket
-   *
-   * Accepted values: TARBALL_ACCESS_UNSPECIFIED, GOOGLE_CLOUD_SUPPORT,
-   * GOOGLE_DATAPROC_DIAGNOSE
-   *
-   * @param self::TARBALL_ACCESS_* $tarballAccess
+   * @param string
    */
   public function setTarballAccess($tarballAccess)
   {
     $this->tarballAccess = $tarballAccess;
   }
   /**
-   * @return self::TARBALL_ACCESS_*
+   * @return string
    */
   public function getTarballAccess()
   {
     return $this->tarballAccess;
   }
   /**
-   * Optional. (Optional) The output Cloud Storage directory for the diagnostic
-   * tarball. If not specified, a task-specific directory in the cluster's
-   * staging bucket will be used.
-   *
-   * @param string $tarballGcsDir
+   * @param string
    */
   public function setTarballGcsDir($tarballGcsDir)
   {
@@ -173,18 +118,13 @@ class DiagnoseClusterRequest extends \Google\Collection
     return $this->tarballGcsDir;
   }
   /**
-   * Optional. DEPRECATED Specifies the yarn application on which diagnosis is
-   * to be performed.
-   *
-   * @deprecated
-   * @param string $yarnApplicationId
+   * @param string
    */
   public function setYarnApplicationId($yarnApplicationId)
   {
     $this->yarnApplicationId = $yarnApplicationId;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getYarnApplicationId()
@@ -192,10 +132,7 @@ class DiagnoseClusterRequest extends \Google\Collection
     return $this->yarnApplicationId;
   }
   /**
-   * Optional. Specifies a list of yarn applications on which diagnosis is to be
-   * performed.
-   *
-   * @param string[] $yarnApplicationIds
+   * @param string[]
    */
   public function setYarnApplicationIds($yarnApplicationIds)
   {

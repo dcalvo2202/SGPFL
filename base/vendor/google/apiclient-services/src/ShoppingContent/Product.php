@@ -21,103 +21,68 @@ class Product extends \Google\Collection
 {
   protected $collection_key = 'taxes';
   /**
-   * Additional URLs of images of the item.
-   *
    * @var string[]
    */
   public $additionalImageLinks;
   /**
-   * Additional cut of the item. Used together with size_type to represent
-   * combined size types for apparel items.
-   *
    * @var string
    */
   public $additionalSizeType;
   /**
-   * Used to group items in an arbitrary way. Only for CPA%, discouraged
-   * otherwise.
-   *
    * @var string
    */
   public $adsGrouping;
   /**
-   * Similar to ads_grouping, but only works on CPC.
-   *
    * @var string[]
    */
   public $adsLabels;
   /**
-   * Allows advertisers to override the item URL when the product is shown
-   * within the context of Product Ads.
-   *
    * @var string
    */
   public $adsRedirect;
   /**
-   * Should be set to true if the item is targeted towards adults.
-   *
    * @var bool
    */
   public $adult;
   /**
-   * Target age group of the item.
-   *
    * @var string
    */
   public $ageGroup;
   protected $autoPricingMinPriceType = Price::class;
   protected $autoPricingMinPriceDataType = '';
   /**
-   * Availability status of the item.
-   *
    * @var string
    */
   public $availability;
   /**
-   * The day a pre-ordered product becomes available for delivery, in ISO 8601
-   * format.
-   *
    * @var string
    */
   public $availabilityDate;
   /**
-   * Brand of the item.
-   *
    * @var string
    */
   public $brand;
   /**
-   * URL for the canonical version of your item's landing page.
-   *
    * @var string
    */
   public $canonicalLink;
   protected $certificationsType = ProductCertification::class;
   protected $certificationsDataType = 'array';
   /**
-   * Required. The item's channel (online or local). Acceptable values are: -
-   * "`local`" - "`online`"
-   *
    * @var string
    */
   public $channel;
   protected $cloudExportAdditionalPropertiesType = CloudExportAdditionalProperties::class;
   protected $cloudExportAdditionalPropertiesDataType = 'array';
   /**
-   * Color of the item.
-   *
    * @var string
    */
   public $color;
   /**
-   * Condition or state of the item.
-   *
    * @var string
    */
   public $condition;
   /**
-   * Required. The two-letter ISO 639-1 language code for the item.
-   *
    * @var string
    */
   public $contentLanguage;
@@ -126,217 +91,123 @@ class Product extends \Google\Collection
   protected $customAttributesType = CustomAttribute::class;
   protected $customAttributesDataType = 'array';
   /**
-   * Custom label 0 for custom grouping of items in a Shopping campaign.
-   *
    * @var string
    */
   public $customLabel0;
   /**
-   * Custom label 1 for custom grouping of items in a Shopping campaign.
-   *
    * @var string
    */
   public $customLabel1;
   /**
-   * Custom label 2 for custom grouping of items in a Shopping campaign.
-   *
    * @var string
    */
   public $customLabel2;
   /**
-   * Custom label 3 for custom grouping of items in a Shopping campaign.
-   *
    * @var string
    */
   public $customLabel3;
   /**
-   * Custom label 4 for custom grouping of items in a Shopping campaign.
-   *
    * @var string
    */
   public $customLabel4;
   /**
-   * Description of the item.
-   *
    * @var string
    */
   public $description;
   /**
-   * The date time when an offer becomes visible in search results across
-   * Google’s YouTube surfaces, in [ISO
-   * 8601](http://en.wikipedia.org/wiki/ISO_8601) format. See [Disclosure
-   * date](https://support.google.com/merchants/answer/13034208) for more
-   * information.
-   *
    * @var string
    */
   public $disclosureDate;
   /**
-   * An identifier for an item for dynamic remarketing campaigns.
-   *
    * @var string
    */
   public $displayAdsId;
   /**
-   * URL directly to your item's landing page for dynamic remarketing campaigns.
-   *
    * @var string
    */
   public $displayAdsLink;
   /**
-   * Advertiser-specified recommendations.
-   *
    * @var string[]
    */
   public $displayAdsSimilarIds;
   /**
-   * Title of an item for dynamic remarketing campaigns.
-   *
    * @var string
    */
   public $displayAdsTitle;
-  /**
-   * Offer margin for dynamic remarketing campaigns.
-   *
-   * @var 
-   */
   public $displayAdsValue;
   /**
-   * The energy efficiency class as defined in EU directive 2010/30/EU.
-   *
    * @var string
    */
   public $energyEfficiencyClass;
   /**
-   * The list of [destinations to
-   * exclude](//support.google.com/merchants/answer/6324486) for this target
-   * (corresponds to cleared check boxes in Merchant Center). Products that are
-   * excluded from all destinations for more than 7 days are automatically
-   * deleted.
-   *
    * @var string[]
    */
   public $excludedDestinations;
   /**
-   * Date on which the item should expire, as specified upon insertion, in ISO
-   * 8601 format. The actual expiration date in Google Shopping is exposed in
-   * `productstatuses` as `googleExpirationDate` and might be earlier if
-   * `expirationDate` is too far in the future.
-   *
    * @var string
    */
   public $expirationDate;
   /**
-   * Required for multi-seller accounts. Use this attribute if you're a
-   * marketplace uploading products for various sellers to your multi-seller
-   * account.
-   *
    * @var string
    */
   public $externalSellerId;
   /**
-   * Feed label for the item. Either `targetCountry` or `feedLabel` is required.
-   * Must be less than or equal to 20 uppercase letters (A-Z), numbers (0-9),
-   * and dashes (-).
-   *
    * @var string
    */
   public $feedLabel;
   protected $freeShippingThresholdType = FreeShippingThreshold::class;
   protected $freeShippingThresholdDataType = 'array';
   /**
-   * Target gender of the item.
-   *
    * @var string
    */
   public $gender;
   /**
-   * Google's category of the item (see [Google product
-   * taxonomy](https://support.google.com/merchants/answer/1705911)). When
-   * querying products, this field will contain the user provided value. There
-   * is currently no way to get back the auto assigned google product categories
-   * through the API.
-   *
    * @var string
    */
   public $googleProductCategory;
   /**
-   * Global Trade Item Number (GTIN) of the item.
-   *
    * @var string
    */
   public $gtin;
   /**
-   * The REST ID of the product. Content API methods that operate on products
-   * take this as their `productId` parameter. The REST ID for a product has one
-   * of the 2 forms channel:contentLanguage: targetCountry: offerId or
-   * channel:contentLanguage:feedLabel: offerId.
-   *
    * @var string
    */
   public $id;
   /**
-   * False when the item does not have unique product identifiers appropriate to
-   * its category, such as GTIN, MPN, and brand. Required according to the
-   * Unique Product Identifier Rules for all target countries except for Canada.
-   *
    * @var bool
    */
   public $identifierExists;
   /**
-   * URL of an image of the item.
-   *
    * @var string
    */
   public $imageLink;
   /**
-   * The list of [destinations to
-   * include](//support.google.com/merchants/answer/7501026) for this target
-   * (corresponds to checked check boxes in Merchant Center). Default
-   * destinations are always included unless provided in `excludedDestinations`.
-   *
    * @var string[]
    */
   public $includedDestinations;
   protected $installmentType = Installment::class;
   protected $installmentDataType = '';
   /**
-   * Whether the item is a merchant-defined bundle. A bundle is a custom
-   * grouping of different products sold by a merchant for a single price.
-   *
    * @var bool
    */
   public $isBundle;
   /**
-   * Shared identifier for all variants of the same product.
-   *
    * @var string
    */
   public $itemGroupId;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#product`"
-   *
    * @var string
    */
   public $kind;
   /**
-   * Additional URLs of lifestyle images of the item. Used to explicitly
-   * identify images that showcase your item in a real-world context. See the
-   * Help Center article for more information.
-   *
    * @var string[]
    */
   public $lifestyleImageLinks;
   /**
-   * URL directly linking to your item's page on your website.
-   *
    * @var string
    */
   public $link;
   /**
-   * URL template for merchant hosted local storefront.
-   *
    * @var string
    */
   public $linkTemplate;
@@ -345,98 +216,58 @@ class Product extends \Google\Collection
   protected $loyaltyProgramsType = LoyaltyProgram::class;
   protected $loyaltyProgramsDataType = 'array';
   /**
-   * The material of which the item is made.
-   *
    * @var string
    */
   public $material;
   /**
-   * The energy efficiency class as defined in EU directive 2010/30/EU.
-   *
    * @var string
    */
   public $maxEnergyEfficiencyClass;
   /**
-   * Maximal product handling time (in business days).
-   *
    * @var string
    */
   public $maxHandlingTime;
-  protected $maximumRetailPriceType = Price::class;
-  protected $maximumRetailPriceDataType = '';
   /**
-   * The energy efficiency class as defined in EU directive 2010/30/EU.
-   *
    * @var string
    */
   public $minEnergyEfficiencyClass;
   /**
-   * Minimal product handling time (in business days).
-   *
    * @var string
    */
   public $minHandlingTime;
   /**
-   * URL for the mobile-optimized version of your item's landing page.
-   *
    * @var string
    */
   public $mobileLink;
   /**
-   * URL template for merchant hosted local storefront optimized for mobile
-   * devices.
-   *
    * @var string
    */
   public $mobileLinkTemplate;
   /**
-   * Manufacturer Part Number (MPN) of the item.
-   *
    * @var string
    */
   public $mpn;
   /**
-   * The number of identical products in a merchant-defined multipack.
-   *
    * @var string
    */
   public $multipack;
   /**
-   * Required. A unique identifier for the item. Leading and trailing
-   * whitespaces are stripped and multiple whitespaces are replaced by a single
-   * whitespace upon submission. Only valid unicode characters are accepted. See
-   * the products feed specification for details. *Note:* Content API methods
-   * that operate on products take the REST ID of the product, *not* this
-   * identifier.
-   *
    * @var string
    */
   public $offerId;
   /**
-   * The item's pattern (for example, polka dots).
-   *
    * @var string
    */
   public $pattern;
   /**
-   * Publication of this item should be temporarily paused. Acceptable values
-   * are: - "`ads`"
-   *
    * @var string
    */
   public $pause;
   /**
-   * The pick up option for the item. Acceptable values are: - "`buy`" -
-   * "`reserve`" - "`ship to store`" - "`not supported`"
-   *
    * @var string
    */
   public $pickupMethod;
   /**
-   * Item store pickup timeline. Acceptable values are: - "`same day`" - "`next
-   * day`" - "`2-day`" - "`3-day`" - "`4-day`" - "`5-day`" - "`6-day`" -
-   * "`7-day`" - "`multi-week`"
-   *
    * @var string
    */
   public $pickupSla;
@@ -447,16 +278,12 @@ class Product extends \Google\Collection
   protected $productHeightType = ProductDimension::class;
   protected $productHeightDataType = '';
   /**
-   * Bullet points describing the most relevant highlights of a product.
-   *
    * @var string[]
    */
   public $productHighlights;
   protected $productLengthType = ProductDimension::class;
   protected $productLengthDataType = '';
   /**
-   * Categories of the item (formatted as in product data specification).
-   *
    * @var string[]
    */
   public $productTypes;
@@ -465,24 +292,16 @@ class Product extends \Google\Collection
   protected $productWidthType = ProductDimension::class;
   protected $productWidthDataType = '';
   /**
-   * The unique ID of a promotion.
-   *
    * @var string[]
    */
   public $promotionIds;
   protected $salePriceType = Price::class;
   protected $salePriceDataType = '';
   /**
-   * Date range during which the item is on sale (see product data specification
-   * ).
-   *
    * @var string
    */
   public $salePriceEffectiveDate;
   /**
-   * The quantity of the product that is available for selling on Google.
-   * Supported only for online products.
-   *
    * @var string
    */
   public $sellOnGoogleQuantity;
@@ -491,9 +310,6 @@ class Product extends \Google\Collection
   protected $shippingHeightType = ProductShippingDimension::class;
   protected $shippingHeightDataType = '';
   /**
-   * The shipping label of the product, used to group product in account-level
-   * shipping rules.
-   *
    * @var string
    */
   public $shippingLabel;
@@ -504,37 +320,22 @@ class Product extends \Google\Collection
   protected $shippingWidthType = ProductShippingDimension::class;
   protected $shippingWidthDataType = '';
   /**
-   * List of country codes (ISO 3166-1 alpha-2) to exclude the offer from
-   * Shopping Ads destination. Countries from this list are removed from
-   * countries configured in MC feed settings.
-   *
    * @var string[]
    */
   public $shoppingAdsExcludedCountries;
   /**
-   * System in which the size is specified. Recommended for apparel items.
-   *
    * @var string
    */
   public $sizeSystem;
   /**
-   * The cut of the item. Recommended for apparel items.
-   *
    * @var string
    */
   public $sizeType;
   /**
-   * Size of the item. Only one value is allowed. For variants with different
-   * sizes, insert a separate product for each size with the same `itemGroupId`
-   * value (see size definition).
-   *
    * @var string[]
    */
   public $sizes;
   /**
-   * Output only. The source of the offer, that is, how the offer was created.
-   * Acceptable values are: - "`api`" - "`crawl`" - "`feed`"
-   *
    * @var string
    */
   public $source;
@@ -547,30 +348,20 @@ class Product extends \Google\Collection
   protected $sustainabilityIncentivesType = ProductSustainabilityIncentive::class;
   protected $sustainabilityIncentivesDataType = 'array';
   /**
-   * Required. The CLDR territory code for the item's country of sale.
-   *
    * @var string
    */
   public $targetCountry;
   /**
-   * The tax category of the product, used to configure detailed tax nexus in
-   * account-level tax settings.
-   *
    * @var string
    */
   public $taxCategory;
   protected $taxesType = ProductTax::class;
   protected $taxesDataType = 'array';
   /**
-   * Title of the item.
-   *
    * @var string
    */
   public $title;
   /**
-   * The transit time label of the product, used to group product in account-
-   * level transit time tables.
-   *
    * @var string
    */
   public $transitTimeLabel;
@@ -579,16 +370,12 @@ class Product extends \Google\Collection
   protected $unitPricingMeasureType = ProductUnitPricingMeasure::class;
   protected $unitPricingMeasureDataType = '';
   /**
-   * URL of the 3D model of the item to provide more visuals.
-   *
    * @var string
    */
   public $virtualModelLink;
 
   /**
-   * Additional URLs of images of the item.
-   *
-   * @param string[] $additionalImageLinks
+   * @param string[]
    */
   public function setAdditionalImageLinks($additionalImageLinks)
   {
@@ -602,10 +389,7 @@ class Product extends \Google\Collection
     return $this->additionalImageLinks;
   }
   /**
-   * Additional cut of the item. Used together with size_type to represent
-   * combined size types for apparel items.
-   *
-   * @param string $additionalSizeType
+   * @param string
    */
   public function setAdditionalSizeType($additionalSizeType)
   {
@@ -619,10 +403,7 @@ class Product extends \Google\Collection
     return $this->additionalSizeType;
   }
   /**
-   * Used to group items in an arbitrary way. Only for CPA%, discouraged
-   * otherwise.
-   *
-   * @param string $adsGrouping
+   * @param string
    */
   public function setAdsGrouping($adsGrouping)
   {
@@ -636,9 +417,7 @@ class Product extends \Google\Collection
     return $this->adsGrouping;
   }
   /**
-   * Similar to ads_grouping, but only works on CPC.
-   *
-   * @param string[] $adsLabels
+   * @param string[]
    */
   public function setAdsLabels($adsLabels)
   {
@@ -652,10 +431,7 @@ class Product extends \Google\Collection
     return $this->adsLabels;
   }
   /**
-   * Allows advertisers to override the item URL when the product is shown
-   * within the context of Product Ads.
-   *
-   * @param string $adsRedirect
+   * @param string
    */
   public function setAdsRedirect($adsRedirect)
   {
@@ -669,9 +445,7 @@ class Product extends \Google\Collection
     return $this->adsRedirect;
   }
   /**
-   * Should be set to true if the item is targeted towards adults.
-   *
-   * @param bool $adult
+   * @param bool
    */
   public function setAdult($adult)
   {
@@ -685,9 +459,7 @@ class Product extends \Google\Collection
     return $this->adult;
   }
   /**
-   * Target age group of the item.
-   *
-   * @param string $ageGroup
+   * @param string
    */
   public function setAgeGroup($ageGroup)
   {
@@ -701,13 +473,7 @@ class Product extends \Google\Collection
     return $this->ageGroup;
   }
   /**
-   * A safeguard in the [Automated
-   * Discounts](//support.google.com/merchants/answer/10295759) and [Dynamic
-   * Promotions](//support.google.com/merchants/answer/13949249) projects,
-   * ensuring that discounts on merchants' offers do not fall below this value,
-   * thereby preserving the offer's value and profitability.
-   *
-   * @param Price $autoPricingMinPrice
+   * @param Price
    */
   public function setAutoPricingMinPrice(Price $autoPricingMinPrice)
   {
@@ -721,9 +487,7 @@ class Product extends \Google\Collection
     return $this->autoPricingMinPrice;
   }
   /**
-   * Availability status of the item.
-   *
-   * @param string $availability
+   * @param string
    */
   public function setAvailability($availability)
   {
@@ -737,10 +501,7 @@ class Product extends \Google\Collection
     return $this->availability;
   }
   /**
-   * The day a pre-ordered product becomes available for delivery, in ISO 8601
-   * format.
-   *
-   * @param string $availabilityDate
+   * @param string
    */
   public function setAvailabilityDate($availabilityDate)
   {
@@ -754,9 +515,7 @@ class Product extends \Google\Collection
     return $this->availabilityDate;
   }
   /**
-   * Brand of the item.
-   *
-   * @param string $brand
+   * @param string
    */
   public function setBrand($brand)
   {
@@ -770,9 +529,7 @@ class Product extends \Google\Collection
     return $this->brand;
   }
   /**
-   * URL for the canonical version of your item's landing page.
-   *
-   * @param string $canonicalLink
+   * @param string
    */
   public function setCanonicalLink($canonicalLink)
   {
@@ -786,12 +543,7 @@ class Product extends \Google\Collection
     return $this->canonicalLink;
   }
   /**
-   * Product
-   * [certification](https://support.google.com/merchants/answer/13528839),
-   * introduced for EU energy efficiency labeling compliance using the [EU
-   * EPREL](https://eprel.ec.europa.eu/screen/home) database.
-   *
-   * @param ProductCertification[] $certifications
+   * @param ProductCertification[]
    */
   public function setCertifications($certifications)
   {
@@ -805,10 +557,7 @@ class Product extends \Google\Collection
     return $this->certifications;
   }
   /**
-   * Required. The item's channel (online or local). Acceptable values are: -
-   * "`local`" - "`online`"
-   *
-   * @param string $channel
+   * @param string
    */
   public function setChannel($channel)
   {
@@ -822,9 +571,7 @@ class Product extends \Google\Collection
     return $this->channel;
   }
   /**
-   * Extra fields to export to the Cloud Retail program.
-   *
-   * @param CloudExportAdditionalProperties[] $cloudExportAdditionalProperties
+   * @param CloudExportAdditionalProperties[]
    */
   public function setCloudExportAdditionalProperties($cloudExportAdditionalProperties)
   {
@@ -838,9 +585,7 @@ class Product extends \Google\Collection
     return $this->cloudExportAdditionalProperties;
   }
   /**
-   * Color of the item.
-   *
-   * @param string $color
+   * @param string
    */
   public function setColor($color)
   {
@@ -854,9 +599,7 @@ class Product extends \Google\Collection
     return $this->color;
   }
   /**
-   * Condition or state of the item.
-   *
-   * @param string $condition
+   * @param string
    */
   public function setCondition($condition)
   {
@@ -870,9 +613,7 @@ class Product extends \Google\Collection
     return $this->condition;
   }
   /**
-   * Required. The two-letter ISO 639-1 language code for the item.
-   *
-   * @param string $contentLanguage
+   * @param string
    */
   public function setContentLanguage($contentLanguage)
   {
@@ -886,9 +627,7 @@ class Product extends \Google\Collection
     return $this->contentLanguage;
   }
   /**
-   * Cost of goods sold. Used for gross profit reporting.
-   *
-   * @param Price $costOfGoodsSold
+   * @param Price
    */
   public function setCostOfGoodsSold(Price $costOfGoodsSold)
   {
@@ -902,13 +641,7 @@ class Product extends \Google\Collection
     return $this->costOfGoodsSold;
   }
   /**
-   * A list of custom (merchant-provided) attributes. It can also be used for
-   * submitting any attribute of the feed specification in its generic form (for
-   * example, `{ "name": "size type", "value": "regular" }`). This is useful for
-   * submitting attributes not explicitly exposed by the API, such as additional
-   * attributes used for Buy on Google (formerly known as Shopping Actions).
-   *
-   * @param CustomAttribute[] $customAttributes
+   * @param CustomAttribute[]
    */
   public function setCustomAttributes($customAttributes)
   {
@@ -922,9 +655,7 @@ class Product extends \Google\Collection
     return $this->customAttributes;
   }
   /**
-   * Custom label 0 for custom grouping of items in a Shopping campaign.
-   *
-   * @param string $customLabel0
+   * @param string
    */
   public function setCustomLabel0($customLabel0)
   {
@@ -938,9 +669,7 @@ class Product extends \Google\Collection
     return $this->customLabel0;
   }
   /**
-   * Custom label 1 for custom grouping of items in a Shopping campaign.
-   *
-   * @param string $customLabel1
+   * @param string
    */
   public function setCustomLabel1($customLabel1)
   {
@@ -954,9 +683,7 @@ class Product extends \Google\Collection
     return $this->customLabel1;
   }
   /**
-   * Custom label 2 for custom grouping of items in a Shopping campaign.
-   *
-   * @param string $customLabel2
+   * @param string
    */
   public function setCustomLabel2($customLabel2)
   {
@@ -970,9 +697,7 @@ class Product extends \Google\Collection
     return $this->customLabel2;
   }
   /**
-   * Custom label 3 for custom grouping of items in a Shopping campaign.
-   *
-   * @param string $customLabel3
+   * @param string
    */
   public function setCustomLabel3($customLabel3)
   {
@@ -986,9 +711,7 @@ class Product extends \Google\Collection
     return $this->customLabel3;
   }
   /**
-   * Custom label 4 for custom grouping of items in a Shopping campaign.
-   *
-   * @param string $customLabel4
+   * @param string
    */
   public function setCustomLabel4($customLabel4)
   {
@@ -1002,9 +725,7 @@ class Product extends \Google\Collection
     return $this->customLabel4;
   }
   /**
-   * Description of the item.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -1018,13 +739,7 @@ class Product extends \Google\Collection
     return $this->description;
   }
   /**
-   * The date time when an offer becomes visible in search results across
-   * Google’s YouTube surfaces, in [ISO
-   * 8601](http://en.wikipedia.org/wiki/ISO_8601) format. See [Disclosure
-   * date](https://support.google.com/merchants/answer/13034208) for more
-   * information.
-   *
-   * @param string $disclosureDate
+   * @param string
    */
   public function setDisclosureDate($disclosureDate)
   {
@@ -1038,9 +753,7 @@ class Product extends \Google\Collection
     return $this->disclosureDate;
   }
   /**
-   * An identifier for an item for dynamic remarketing campaigns.
-   *
-   * @param string $displayAdsId
+   * @param string
    */
   public function setDisplayAdsId($displayAdsId)
   {
@@ -1054,9 +767,7 @@ class Product extends \Google\Collection
     return $this->displayAdsId;
   }
   /**
-   * URL directly to your item's landing page for dynamic remarketing campaigns.
-   *
-   * @param string $displayAdsLink
+   * @param string
    */
   public function setDisplayAdsLink($displayAdsLink)
   {
@@ -1070,9 +781,7 @@ class Product extends \Google\Collection
     return $this->displayAdsLink;
   }
   /**
-   * Advertiser-specified recommendations.
-   *
-   * @param string[] $displayAdsSimilarIds
+   * @param string[]
    */
   public function setDisplayAdsSimilarIds($displayAdsSimilarIds)
   {
@@ -1086,9 +795,7 @@ class Product extends \Google\Collection
     return $this->displayAdsSimilarIds;
   }
   /**
-   * Title of an item for dynamic remarketing campaigns.
-   *
-   * @param string $displayAdsTitle
+   * @param string
    */
   public function setDisplayAdsTitle($displayAdsTitle)
   {
@@ -1110,9 +817,7 @@ class Product extends \Google\Collection
     return $this->displayAdsValue;
   }
   /**
-   * The energy efficiency class as defined in EU directive 2010/30/EU.
-   *
-   * @param string $energyEfficiencyClass
+   * @param string
    */
   public function setEnergyEfficiencyClass($energyEfficiencyClass)
   {
@@ -1126,13 +831,7 @@ class Product extends \Google\Collection
     return $this->energyEfficiencyClass;
   }
   /**
-   * The list of [destinations to
-   * exclude](//support.google.com/merchants/answer/6324486) for this target
-   * (corresponds to cleared check boxes in Merchant Center). Products that are
-   * excluded from all destinations for more than 7 days are automatically
-   * deleted.
-   *
-   * @param string[] $excludedDestinations
+   * @param string[]
    */
   public function setExcludedDestinations($excludedDestinations)
   {
@@ -1146,12 +845,7 @@ class Product extends \Google\Collection
     return $this->excludedDestinations;
   }
   /**
-   * Date on which the item should expire, as specified upon insertion, in ISO
-   * 8601 format. The actual expiration date in Google Shopping is exposed in
-   * `productstatuses` as `googleExpirationDate` and might be earlier if
-   * `expirationDate` is too far in the future.
-   *
-   * @param string $expirationDate
+   * @param string
    */
   public function setExpirationDate($expirationDate)
   {
@@ -1165,11 +859,7 @@ class Product extends \Google\Collection
     return $this->expirationDate;
   }
   /**
-   * Required for multi-seller accounts. Use this attribute if you're a
-   * marketplace uploading products for various sellers to your multi-seller
-   * account.
-   *
-   * @param string $externalSellerId
+   * @param string
    */
   public function setExternalSellerId($externalSellerId)
   {
@@ -1183,11 +873,7 @@ class Product extends \Google\Collection
     return $this->externalSellerId;
   }
   /**
-   * Feed label for the item. Either `targetCountry` or `feedLabel` is required.
-   * Must be less than or equal to 20 uppercase letters (A-Z), numbers (0-9),
-   * and dashes (-).
-   *
-   * @param string $feedLabel
+   * @param string
    */
   public function setFeedLabel($feedLabel)
   {
@@ -1201,9 +887,7 @@ class Product extends \Google\Collection
     return $this->feedLabel;
   }
   /**
-   * Optional. Conditions to be met for a product to have free shipping.
-   *
-   * @param FreeShippingThreshold[] $freeShippingThreshold
+   * @param FreeShippingThreshold[]
    */
   public function setFreeShippingThreshold($freeShippingThreshold)
   {
@@ -1217,9 +901,7 @@ class Product extends \Google\Collection
     return $this->freeShippingThreshold;
   }
   /**
-   * Target gender of the item.
-   *
-   * @param string $gender
+   * @param string
    */
   public function setGender($gender)
   {
@@ -1233,13 +915,7 @@ class Product extends \Google\Collection
     return $this->gender;
   }
   /**
-   * Google's category of the item (see [Google product
-   * taxonomy](https://support.google.com/merchants/answer/1705911)). When
-   * querying products, this field will contain the user provided value. There
-   * is currently no way to get back the auto assigned google product categories
-   * through the API.
-   *
-   * @param string $googleProductCategory
+   * @param string
    */
   public function setGoogleProductCategory($googleProductCategory)
   {
@@ -1253,9 +929,7 @@ class Product extends \Google\Collection
     return $this->googleProductCategory;
   }
   /**
-   * Global Trade Item Number (GTIN) of the item.
-   *
-   * @param string $gtin
+   * @param string
    */
   public function setGtin($gtin)
   {
@@ -1269,12 +943,7 @@ class Product extends \Google\Collection
     return $this->gtin;
   }
   /**
-   * The REST ID of the product. Content API methods that operate on products
-   * take this as their `productId` parameter. The REST ID for a product has one
-   * of the 2 forms channel:contentLanguage: targetCountry: offerId or
-   * channel:contentLanguage:feedLabel: offerId.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -1288,11 +957,7 @@ class Product extends \Google\Collection
     return $this->id;
   }
   /**
-   * False when the item does not have unique product identifiers appropriate to
-   * its category, such as GTIN, MPN, and brand. Required according to the
-   * Unique Product Identifier Rules for all target countries except for Canada.
-   *
-   * @param bool $identifierExists
+   * @param bool
    */
   public function setIdentifierExists($identifierExists)
   {
@@ -1306,9 +971,7 @@ class Product extends \Google\Collection
     return $this->identifierExists;
   }
   /**
-   * URL of an image of the item.
-   *
-   * @param string $imageLink
+   * @param string
    */
   public function setImageLink($imageLink)
   {
@@ -1322,12 +985,7 @@ class Product extends \Google\Collection
     return $this->imageLink;
   }
   /**
-   * The list of [destinations to
-   * include](//support.google.com/merchants/answer/7501026) for this target
-   * (corresponds to checked check boxes in Merchant Center). Default
-   * destinations are always included unless provided in `excludedDestinations`.
-   *
-   * @param string[] $includedDestinations
+   * @param string[]
    */
   public function setIncludedDestinations($includedDestinations)
   {
@@ -1341,9 +999,7 @@ class Product extends \Google\Collection
     return $this->includedDestinations;
   }
   /**
-   * Number and amount of installments to pay for an item.
-   *
-   * @param Installment $installment
+   * @param Installment
    */
   public function setInstallment(Installment $installment)
   {
@@ -1357,10 +1013,7 @@ class Product extends \Google\Collection
     return $this->installment;
   }
   /**
-   * Whether the item is a merchant-defined bundle. A bundle is a custom
-   * grouping of different products sold by a merchant for a single price.
-   *
-   * @param bool $isBundle
+   * @param bool
    */
   public function setIsBundle($isBundle)
   {
@@ -1374,9 +1027,7 @@ class Product extends \Google\Collection
     return $this->isBundle;
   }
   /**
-   * Shared identifier for all variants of the same product.
-   *
-   * @param string $itemGroupId
+   * @param string
    */
   public function setItemGroupId($itemGroupId)
   {
@@ -1390,10 +1041,7 @@ class Product extends \Google\Collection
     return $this->itemGroupId;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#product`"
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -1407,11 +1055,7 @@ class Product extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Additional URLs of lifestyle images of the item. Used to explicitly
-   * identify images that showcase your item in a real-world context. See the
-   * Help Center article for more information.
-   *
-   * @param string[] $lifestyleImageLinks
+   * @param string[]
    */
   public function setLifestyleImageLinks($lifestyleImageLinks)
   {
@@ -1425,9 +1069,7 @@ class Product extends \Google\Collection
     return $this->lifestyleImageLinks;
   }
   /**
-   * URL directly linking to your item's page on your website.
-   *
-   * @param string $link
+   * @param string
    */
   public function setLink($link)
   {
@@ -1441,9 +1083,7 @@ class Product extends \Google\Collection
     return $this->link;
   }
   /**
-   * URL template for merchant hosted local storefront.
-   *
-   * @param string $linkTemplate
+   * @param string
    */
   public function setLinkTemplate($linkTemplate)
   {
@@ -1457,13 +1097,7 @@ class Product extends \Google\Collection
     return $this->linkTemplate;
   }
   /**
-   * Loyalty program information that is used to surface loyalty benefits ( for
-   * example, better pricing, points, etc) to the user of this item. This
-   * signular field points to the latest uploaded loyalty program info. This
-   * field will be deprecated in the coming weeks and should not be used in
-   * favor of the plural 'LoyaltyProgram' field below.
-   *
-   * @param LoyaltyProgram $loyaltyProgram
+   * @param LoyaltyProgram
    */
   public function setLoyaltyProgram(LoyaltyProgram $loyaltyProgram)
   {
@@ -1477,11 +1111,7 @@ class Product extends \Google\Collection
     return $this->loyaltyProgram;
   }
   /**
-   * Optional. A list of loyalty program information that is used to surface
-   * loyalty benefits (for example, better pricing, points, etc) to the user of
-   * this item.
-   *
-   * @param LoyaltyProgram[] $loyaltyPrograms
+   * @param LoyaltyProgram[]
    */
   public function setLoyaltyPrograms($loyaltyPrograms)
   {
@@ -1495,9 +1125,7 @@ class Product extends \Google\Collection
     return $this->loyaltyPrograms;
   }
   /**
-   * The material of which the item is made.
-   *
-   * @param string $material
+   * @param string
    */
   public function setMaterial($material)
   {
@@ -1511,9 +1139,7 @@ class Product extends \Google\Collection
     return $this->material;
   }
   /**
-   * The energy efficiency class as defined in EU directive 2010/30/EU.
-   *
-   * @param string $maxEnergyEfficiencyClass
+   * @param string
    */
   public function setMaxEnergyEfficiencyClass($maxEnergyEfficiencyClass)
   {
@@ -1527,9 +1153,7 @@ class Product extends \Google\Collection
     return $this->maxEnergyEfficiencyClass;
   }
   /**
-   * Maximal product handling time (in business days).
-   *
-   * @param string $maxHandlingTime
+   * @param string
    */
   public function setMaxHandlingTime($maxHandlingTime)
   {
@@ -1543,25 +1167,7 @@ class Product extends \Google\Collection
     return $this->maxHandlingTime;
   }
   /**
-   * Maximum retail price (MRP) of the item. Applicable to India only.
-   *
-   * @param Price $maximumRetailPrice
-   */
-  public function setMaximumRetailPrice(Price $maximumRetailPrice)
-  {
-    $this->maximumRetailPrice = $maximumRetailPrice;
-  }
-  /**
-   * @return Price
-   */
-  public function getMaximumRetailPrice()
-  {
-    return $this->maximumRetailPrice;
-  }
-  /**
-   * The energy efficiency class as defined in EU directive 2010/30/EU.
-   *
-   * @param string $minEnergyEfficiencyClass
+   * @param string
    */
   public function setMinEnergyEfficiencyClass($minEnergyEfficiencyClass)
   {
@@ -1575,9 +1181,7 @@ class Product extends \Google\Collection
     return $this->minEnergyEfficiencyClass;
   }
   /**
-   * Minimal product handling time (in business days).
-   *
-   * @param string $minHandlingTime
+   * @param string
    */
   public function setMinHandlingTime($minHandlingTime)
   {
@@ -1591,9 +1195,7 @@ class Product extends \Google\Collection
     return $this->minHandlingTime;
   }
   /**
-   * URL for the mobile-optimized version of your item's landing page.
-   *
-   * @param string $mobileLink
+   * @param string
    */
   public function setMobileLink($mobileLink)
   {
@@ -1607,10 +1209,7 @@ class Product extends \Google\Collection
     return $this->mobileLink;
   }
   /**
-   * URL template for merchant hosted local storefront optimized for mobile
-   * devices.
-   *
-   * @param string $mobileLinkTemplate
+   * @param string
    */
   public function setMobileLinkTemplate($mobileLinkTemplate)
   {
@@ -1624,9 +1223,7 @@ class Product extends \Google\Collection
     return $this->mobileLinkTemplate;
   }
   /**
-   * Manufacturer Part Number (MPN) of the item.
-   *
-   * @param string $mpn
+   * @param string
    */
   public function setMpn($mpn)
   {
@@ -1640,9 +1237,7 @@ class Product extends \Google\Collection
     return $this->mpn;
   }
   /**
-   * The number of identical products in a merchant-defined multipack.
-   *
-   * @param string $multipack
+   * @param string
    */
   public function setMultipack($multipack)
   {
@@ -1656,14 +1251,7 @@ class Product extends \Google\Collection
     return $this->multipack;
   }
   /**
-   * Required. A unique identifier for the item. Leading and trailing
-   * whitespaces are stripped and multiple whitespaces are replaced by a single
-   * whitespace upon submission. Only valid unicode characters are accepted. See
-   * the products feed specification for details. *Note:* Content API methods
-   * that operate on products take the REST ID of the product, *not* this
-   * identifier.
-   *
-   * @param string $offerId
+   * @param string
    */
   public function setOfferId($offerId)
   {
@@ -1677,9 +1265,7 @@ class Product extends \Google\Collection
     return $this->offerId;
   }
   /**
-   * The item's pattern (for example, polka dots).
-   *
-   * @param string $pattern
+   * @param string
    */
   public function setPattern($pattern)
   {
@@ -1693,10 +1279,7 @@ class Product extends \Google\Collection
     return $this->pattern;
   }
   /**
-   * Publication of this item should be temporarily paused. Acceptable values
-   * are: - "`ads`"
-   *
-   * @param string $pause
+   * @param string
    */
   public function setPause($pause)
   {
@@ -1710,10 +1293,7 @@ class Product extends \Google\Collection
     return $this->pause;
   }
   /**
-   * The pick up option for the item. Acceptable values are: - "`buy`" -
-   * "`reserve`" - "`ship to store`" - "`not supported`"
-   *
-   * @param string $pickupMethod
+   * @param string
    */
   public function setPickupMethod($pickupMethod)
   {
@@ -1727,11 +1307,7 @@ class Product extends \Google\Collection
     return $this->pickupMethod;
   }
   /**
-   * Item store pickup timeline. Acceptable values are: - "`same day`" - "`next
-   * day`" - "`2-day`" - "`3-day`" - "`4-day`" - "`5-day`" - "`6-day`" -
-   * "`7-day`" - "`multi-week`"
-   *
-   * @param string $pickupSla
+   * @param string
    */
   public function setPickupSla($pickupSla)
   {
@@ -1745,9 +1321,7 @@ class Product extends \Google\Collection
     return $this->pickupSla;
   }
   /**
-   * Price of the item.
-   *
-   * @param Price $price
+   * @param Price
    */
   public function setPrice(Price $price)
   {
@@ -1761,9 +1335,7 @@ class Product extends \Google\Collection
     return $this->price;
   }
   /**
-   * Technical specification or additional product details.
-   *
-   * @param ProductProductDetail[] $productDetails
+   * @param ProductProductDetail[]
    */
   public function setProductDetails($productDetails)
   {
@@ -1777,10 +1349,7 @@ class Product extends \Google\Collection
     return $this->productDetails;
   }
   /**
-   * The height of the product in the units provided. The value must be between
-   * 0 (exclusive) and 3000 (inclusive).
-   *
-   * @param ProductDimension $productHeight
+   * @param ProductDimension
    */
   public function setProductHeight(ProductDimension $productHeight)
   {
@@ -1794,9 +1363,7 @@ class Product extends \Google\Collection
     return $this->productHeight;
   }
   /**
-   * Bullet points describing the most relevant highlights of a product.
-   *
-   * @param string[] $productHighlights
+   * @param string[]
    */
   public function setProductHighlights($productHighlights)
   {
@@ -1810,10 +1377,7 @@ class Product extends \Google\Collection
     return $this->productHighlights;
   }
   /**
-   * The length of the product in the units provided. The value must be between
-   * 0 (exclusive) and 3000 (inclusive).
-   *
-   * @param ProductDimension $productLength
+   * @param ProductDimension
    */
   public function setProductLength(ProductDimension $productLength)
   {
@@ -1827,9 +1391,7 @@ class Product extends \Google\Collection
     return $this->productLength;
   }
   /**
-   * Categories of the item (formatted as in product data specification).
-   *
-   * @param string[] $productTypes
+   * @param string[]
    */
   public function setProductTypes($productTypes)
   {
@@ -1843,10 +1405,7 @@ class Product extends \Google\Collection
     return $this->productTypes;
   }
   /**
-   * The weight of the product in the units provided. The value must be between
-   * 0 (exclusive) and 2000 (inclusive).
-   *
-   * @param ProductWeight $productWeight
+   * @param ProductWeight
    */
   public function setProductWeight(ProductWeight $productWeight)
   {
@@ -1860,10 +1419,7 @@ class Product extends \Google\Collection
     return $this->productWeight;
   }
   /**
-   * The width of the product in the units provided. The value must be between 0
-   * (exclusive) and 3000 (inclusive).
-   *
-   * @param ProductDimension $productWidth
+   * @param ProductDimension
    */
   public function setProductWidth(ProductDimension $productWidth)
   {
@@ -1877,9 +1433,7 @@ class Product extends \Google\Collection
     return $this->productWidth;
   }
   /**
-   * The unique ID of a promotion.
-   *
-   * @param string[] $promotionIds
+   * @param string[]
    */
   public function setPromotionIds($promotionIds)
   {
@@ -1893,9 +1447,7 @@ class Product extends \Google\Collection
     return $this->promotionIds;
   }
   /**
-   * Advertised sale price of the item.
-   *
-   * @param Price $salePrice
+   * @param Price
    */
   public function setSalePrice(Price $salePrice)
   {
@@ -1909,10 +1461,7 @@ class Product extends \Google\Collection
     return $this->salePrice;
   }
   /**
-   * Date range during which the item is on sale (see product data specification
-   * ).
-   *
-   * @param string $salePriceEffectiveDate
+   * @param string
    */
   public function setSalePriceEffectiveDate($salePriceEffectiveDate)
   {
@@ -1926,10 +1475,7 @@ class Product extends \Google\Collection
     return $this->salePriceEffectiveDate;
   }
   /**
-   * The quantity of the product that is available for selling on Google.
-   * Supported only for online products.
-   *
-   * @param string $sellOnGoogleQuantity
+   * @param string
    */
   public function setSellOnGoogleQuantity($sellOnGoogleQuantity)
   {
@@ -1943,9 +1489,7 @@ class Product extends \Google\Collection
     return $this->sellOnGoogleQuantity;
   }
   /**
-   * Shipping rules.
-   *
-   * @param ProductShipping[] $shipping
+   * @param ProductShipping[]
    */
   public function setShipping($shipping)
   {
@@ -1959,9 +1503,7 @@ class Product extends \Google\Collection
     return $this->shipping;
   }
   /**
-   * Height of the item for shipping.
-   *
-   * @param ProductShippingDimension $shippingHeight
+   * @param ProductShippingDimension
    */
   public function setShippingHeight(ProductShippingDimension $shippingHeight)
   {
@@ -1975,10 +1517,7 @@ class Product extends \Google\Collection
     return $this->shippingHeight;
   }
   /**
-   * The shipping label of the product, used to group product in account-level
-   * shipping rules.
-   *
-   * @param string $shippingLabel
+   * @param string
    */
   public function setShippingLabel($shippingLabel)
   {
@@ -1992,9 +1531,7 @@ class Product extends \Google\Collection
     return $this->shippingLabel;
   }
   /**
-   * Length of the item for shipping.
-   *
-   * @param ProductShippingDimension $shippingLength
+   * @param ProductShippingDimension
    */
   public function setShippingLength(ProductShippingDimension $shippingLength)
   {
@@ -2008,9 +1545,7 @@ class Product extends \Google\Collection
     return $this->shippingLength;
   }
   /**
-   * Weight of the item for shipping.
-   *
-   * @param ProductShippingWeight $shippingWeight
+   * @param ProductShippingWeight
    */
   public function setShippingWeight(ProductShippingWeight $shippingWeight)
   {
@@ -2024,9 +1559,7 @@ class Product extends \Google\Collection
     return $this->shippingWeight;
   }
   /**
-   * Width of the item for shipping.
-   *
-   * @param ProductShippingDimension $shippingWidth
+   * @param ProductShippingDimension
    */
   public function setShippingWidth(ProductShippingDimension $shippingWidth)
   {
@@ -2040,11 +1573,7 @@ class Product extends \Google\Collection
     return $this->shippingWidth;
   }
   /**
-   * List of country codes (ISO 3166-1 alpha-2) to exclude the offer from
-   * Shopping Ads destination. Countries from this list are removed from
-   * countries configured in MC feed settings.
-   *
-   * @param string[] $shoppingAdsExcludedCountries
+   * @param string[]
    */
   public function setShoppingAdsExcludedCountries($shoppingAdsExcludedCountries)
   {
@@ -2058,9 +1587,7 @@ class Product extends \Google\Collection
     return $this->shoppingAdsExcludedCountries;
   }
   /**
-   * System in which the size is specified. Recommended for apparel items.
-   *
-   * @param string $sizeSystem
+   * @param string
    */
   public function setSizeSystem($sizeSystem)
   {
@@ -2074,9 +1601,7 @@ class Product extends \Google\Collection
     return $this->sizeSystem;
   }
   /**
-   * The cut of the item. Recommended for apparel items.
-   *
-   * @param string $sizeType
+   * @param string
    */
   public function setSizeType($sizeType)
   {
@@ -2090,11 +1615,7 @@ class Product extends \Google\Collection
     return $this->sizeType;
   }
   /**
-   * Size of the item. Only one value is allowed. For variants with different
-   * sizes, insert a separate product for each size with the same `itemGroupId`
-   * value (see size definition).
-   *
-   * @param string[] $sizes
+   * @param string[]
    */
   public function setSizes($sizes)
   {
@@ -2108,10 +1629,7 @@ class Product extends \Google\Collection
     return $this->sizes;
   }
   /**
-   * Output only. The source of the offer, that is, how the offer was created.
-   * Acceptable values are: - "`api`" - "`crawl`" - "`feed`"
-   *
-   * @param string $source
+   * @param string
    */
   public function setSource($source)
   {
@@ -2125,9 +1643,7 @@ class Product extends \Google\Collection
     return $this->source;
   }
   /**
-   * Structured description, for algorithmically (AI)-generated descriptions.
-   *
-   * @param ProductStructuredDescription $structuredDescription
+   * @param ProductStructuredDescription
    */
   public function setStructuredDescription(ProductStructuredDescription $structuredDescription)
   {
@@ -2141,9 +1657,7 @@ class Product extends \Google\Collection
     return $this->structuredDescription;
   }
   /**
-   * Structured title, for algorithmically (AI)-generated titles.
-   *
-   * @param ProductStructuredTitle $structuredTitle
+   * @param ProductStructuredTitle
    */
   public function setStructuredTitle(ProductStructuredTitle $structuredTitle)
   {
@@ -2157,10 +1671,7 @@ class Product extends \Google\Collection
     return $this->structuredTitle;
   }
   /**
-   * Number of periods (months or years) and amount of payment per period for an
-   * item with an associated subscription contract.
-   *
-   * @param ProductSubscriptionCost $subscriptionCost
+   * @param ProductSubscriptionCost
    */
   public function setSubscriptionCost(ProductSubscriptionCost $subscriptionCost)
   {
@@ -2174,9 +1685,7 @@ class Product extends \Google\Collection
     return $this->subscriptionCost;
   }
   /**
-   * Optional. The list of sustainability incentive programs.
-   *
-   * @param ProductSustainabilityIncentive[] $sustainabilityIncentives
+   * @param ProductSustainabilityIncentive[]
    */
   public function setSustainabilityIncentives($sustainabilityIncentives)
   {
@@ -2190,9 +1699,7 @@ class Product extends \Google\Collection
     return $this->sustainabilityIncentives;
   }
   /**
-   * Required. The CLDR territory code for the item's country of sale.
-   *
-   * @param string $targetCountry
+   * @param string
    */
   public function setTargetCountry($targetCountry)
   {
@@ -2206,10 +1713,7 @@ class Product extends \Google\Collection
     return $this->targetCountry;
   }
   /**
-   * The tax category of the product, used to configure detailed tax nexus in
-   * account-level tax settings.
-   *
-   * @param string $taxCategory
+   * @param string
    */
   public function setTaxCategory($taxCategory)
   {
@@ -2223,9 +1727,7 @@ class Product extends \Google\Collection
     return $this->taxCategory;
   }
   /**
-   * Tax information.
-   *
-   * @param ProductTax[] $taxes
+   * @param ProductTax[]
    */
   public function setTaxes($taxes)
   {
@@ -2239,9 +1741,7 @@ class Product extends \Google\Collection
     return $this->taxes;
   }
   /**
-   * Title of the item.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -2255,10 +1755,7 @@ class Product extends \Google\Collection
     return $this->title;
   }
   /**
-   * The transit time label of the product, used to group product in account-
-   * level transit time tables.
-   *
-   * @param string $transitTimeLabel
+   * @param string
    */
   public function setTransitTimeLabel($transitTimeLabel)
   {
@@ -2272,9 +1769,7 @@ class Product extends \Google\Collection
     return $this->transitTimeLabel;
   }
   /**
-   * The preference of the denominator of the unit price.
-   *
-   * @param ProductUnitPricingBaseMeasure $unitPricingBaseMeasure
+   * @param ProductUnitPricingBaseMeasure
    */
   public function setUnitPricingBaseMeasure(ProductUnitPricingBaseMeasure $unitPricingBaseMeasure)
   {
@@ -2288,9 +1783,7 @@ class Product extends \Google\Collection
     return $this->unitPricingBaseMeasure;
   }
   /**
-   * The measure and dimension of an item.
-   *
-   * @param ProductUnitPricingMeasure $unitPricingMeasure
+   * @param ProductUnitPricingMeasure
    */
   public function setUnitPricingMeasure(ProductUnitPricingMeasure $unitPricingMeasure)
   {
@@ -2304,9 +1797,7 @@ class Product extends \Google\Collection
     return $this->unitPricingMeasure;
   }
   /**
-   * URL of the 3D model of the item to provide more visuals.
-   *
-   * @param string $virtualModelLink
+   * @param string
    */
   public function setVirtualModelLink($virtualModelLink)
   {

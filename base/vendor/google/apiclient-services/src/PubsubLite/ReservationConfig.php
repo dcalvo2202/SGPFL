@@ -20,20 +20,12 @@ namespace Google\Service\PubsubLite;
 class ReservationConfig extends \Google\Model
 {
   /**
-   * The Reservation to use for this topic's throughput capacity. Structured
-   * like: projects/{project_number}/locations/{location}/reservations/{reservat
-   * ion_id}
-   *
    * @var string
    */
   public $throughputReservation;
 
   /**
-   * The Reservation to use for this topic's throughput capacity. Structured
-   * like: projects/{project_number}/locations/{location}/reservations/{reservat
-   * ion_id}
-   *
-   * @param string $throughputReservation
+   * @param string
    */
   public function setThroughputReservation($throughputReservation)
   {

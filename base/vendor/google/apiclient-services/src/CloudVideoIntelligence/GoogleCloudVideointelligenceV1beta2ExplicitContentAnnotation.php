@@ -23,16 +23,12 @@ class GoogleCloudVideointelligenceV1beta2ExplicitContentAnnotation extends \Goog
   protected $framesType = GoogleCloudVideointelligenceV1beta2ExplicitContentFrame::class;
   protected $framesDataType = 'array';
   /**
-   * Feature version.
-   *
    * @var string
    */
   public $version;
 
   /**
-   * All video frames where explicit content was detected.
-   *
-   * @param GoogleCloudVideointelligenceV1beta2ExplicitContentFrame[] $frames
+   * @param GoogleCloudVideointelligenceV1beta2ExplicitContentFrame[]
    */
   public function setFrames($frames)
   {
@@ -46,9 +42,7 @@ class GoogleCloudVideointelligenceV1beta2ExplicitContentAnnotation extends \Goog
     return $this->frames;
   }
   /**
-   * Feature version.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

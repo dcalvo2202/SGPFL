@@ -20,36 +20,26 @@ namespace Google\Service\ShoppingContent;
 class LocalinventoryCustomBatchRequestEntry extends \Google\Model
 {
   /**
-   * An entry ID, unique within the batch request.
-   *
    * @var string
    */
   public $batchId;
   protected $localInventoryType = LocalInventory::class;
   protected $localInventoryDataType = '';
   /**
-   * The ID of the managing account.
-   *
    * @var string
    */
   public $merchantId;
   /**
-   * Method of the batch request entry. Acceptable values are: - "`insert`"
-   *
    * @var string
    */
   public $method;
   /**
-   * The ID of the product for which to update local inventory.
-   *
    * @var string
    */
   public $productId;
 
   /**
-   * An entry ID, unique within the batch request.
-   *
-   * @param string $batchId
+   * @param string
    */
   public function setBatchId($batchId)
   {
@@ -63,9 +53,7 @@ class LocalinventoryCustomBatchRequestEntry extends \Google\Model
     return $this->batchId;
   }
   /**
-   * Local inventory of the product.
-   *
-   * @param LocalInventory $localInventory
+   * @param LocalInventory
    */
   public function setLocalInventory(LocalInventory $localInventory)
   {
@@ -79,9 +67,7 @@ class LocalinventoryCustomBatchRequestEntry extends \Google\Model
     return $this->localInventory;
   }
   /**
-   * The ID of the managing account.
-   *
-   * @param string $merchantId
+   * @param string
    */
   public function setMerchantId($merchantId)
   {
@@ -95,9 +81,7 @@ class LocalinventoryCustomBatchRequestEntry extends \Google\Model
     return $this->merchantId;
   }
   /**
-   * Method of the batch request entry. Acceptable values are: - "`insert`"
-   *
-   * @param string $method
+   * @param string
    */
   public function setMethod($method)
   {
@@ -111,9 +95,7 @@ class LocalinventoryCustomBatchRequestEntry extends \Google\Model
     return $this->method;
   }
   /**
-   * The ID of the product for which to update local inventory.
-   *
-   * @param string $productId
+   * @param string
    */
   public function setProductId($productId)
   {

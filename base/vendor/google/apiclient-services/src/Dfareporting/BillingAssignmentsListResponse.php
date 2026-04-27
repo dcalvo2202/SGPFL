@@ -23,17 +23,12 @@ class BillingAssignmentsListResponse extends \Google\Collection
   protected $billingAssignmentsType = BillingAssignment::class;
   protected $billingAssignmentsDataType = 'array';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#billingAssignmentsListResponse".
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * Billing assignments collection.
-   *
-   * @param BillingAssignment[] $billingAssignments
+   * @param BillingAssignment[]
    */
   public function setBillingAssignments($billingAssignments)
   {
@@ -47,10 +42,7 @@ class BillingAssignmentsListResponse extends \Google\Collection
     return $this->billingAssignments;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#billingAssignmentsListResponse".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

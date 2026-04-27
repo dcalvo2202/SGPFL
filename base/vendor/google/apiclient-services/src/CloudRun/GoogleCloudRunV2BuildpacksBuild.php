@@ -20,62 +20,36 @@ namespace Google\Service\CloudRun;
 class GoogleCloudRunV2BuildpacksBuild extends \Google\Model
 {
   /**
-   * Optional. The base image to use for the build.
-   *
    * @var string
    */
   public $baseImage;
   /**
-   * Optional. cache_image_uri is the GCR/AR URL where the cache image will be
-   * stored. cache_image_uri is optional and omitting it will disable caching.
-   * This URL must be stable across builds. It is used to derive a build-
-   * specific temporary URL by substituting the tag with the build ID. The build
-   * will clean up the temporary image on a best-effort basis.
-   *
    * @var string
    */
   public $cacheImageUri;
   /**
-   * Optional. Whether or not the application container will be enrolled in
-   * automatic base image updates. When true, the application will be built on a
-   * scratch base image, so the base layers can be appended at run time.
-   *
    * @var bool
    */
   public $enableAutomaticUpdates;
   /**
-   * Optional. User-provided build-time environment variables.
-   *
    * @var string[]
    */
   public $environmentVariables;
   /**
-   * Optional. Name of the function target if the source is a function source.
-   * Required for function builds.
-   *
    * @var string
    */
   public $functionTarget;
   /**
-   * Optional. project_descriptor stores the path to the project descriptor
-   * file. When empty, it means that there is no project descriptor file in the
-   * source.
-   *
    * @var string
    */
   public $projectDescriptor;
   /**
-   * The runtime name, e.g. 'go113'. Leave blank for generic builds.
-   *
-   * @deprecated
    * @var string
    */
   public $runtime;
 
   /**
-   * Optional. The base image to use for the build.
-   *
-   * @param string $baseImage
+   * @param string
    */
   public function setBaseImage($baseImage)
   {
@@ -89,13 +63,7 @@ class GoogleCloudRunV2BuildpacksBuild extends \Google\Model
     return $this->baseImage;
   }
   /**
-   * Optional. cache_image_uri is the GCR/AR URL where the cache image will be
-   * stored. cache_image_uri is optional and omitting it will disable caching.
-   * This URL must be stable across builds. It is used to derive a build-
-   * specific temporary URL by substituting the tag with the build ID. The build
-   * will clean up the temporary image on a best-effort basis.
-   *
-   * @param string $cacheImageUri
+   * @param string
    */
   public function setCacheImageUri($cacheImageUri)
   {
@@ -109,11 +77,7 @@ class GoogleCloudRunV2BuildpacksBuild extends \Google\Model
     return $this->cacheImageUri;
   }
   /**
-   * Optional. Whether or not the application container will be enrolled in
-   * automatic base image updates. When true, the application will be built on a
-   * scratch base image, so the base layers can be appended at run time.
-   *
-   * @param bool $enableAutomaticUpdates
+   * @param bool
    */
   public function setEnableAutomaticUpdates($enableAutomaticUpdates)
   {
@@ -127,9 +91,7 @@ class GoogleCloudRunV2BuildpacksBuild extends \Google\Model
     return $this->enableAutomaticUpdates;
   }
   /**
-   * Optional. User-provided build-time environment variables.
-   *
-   * @param string[] $environmentVariables
+   * @param string[]
    */
   public function setEnvironmentVariables($environmentVariables)
   {
@@ -143,10 +105,7 @@ class GoogleCloudRunV2BuildpacksBuild extends \Google\Model
     return $this->environmentVariables;
   }
   /**
-   * Optional. Name of the function target if the source is a function source.
-   * Required for function builds.
-   *
-   * @param string $functionTarget
+   * @param string
    */
   public function setFunctionTarget($functionTarget)
   {
@@ -160,11 +119,7 @@ class GoogleCloudRunV2BuildpacksBuild extends \Google\Model
     return $this->functionTarget;
   }
   /**
-   * Optional. project_descriptor stores the path to the project descriptor
-   * file. When empty, it means that there is no project descriptor file in the
-   * source.
-   *
-   * @param string $projectDescriptor
+   * @param string
    */
   public function setProjectDescriptor($projectDescriptor)
   {
@@ -178,17 +133,13 @@ class GoogleCloudRunV2BuildpacksBuild extends \Google\Model
     return $this->projectDescriptor;
   }
   /**
-   * The runtime name, e.g. 'go113'. Leave blank for generic builds.
-   *
-   * @deprecated
-   * @param string $runtime
+   * @param string
    */
   public function setRuntime($runtime)
   {
     $this->runtime = $runtime;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getRuntime()

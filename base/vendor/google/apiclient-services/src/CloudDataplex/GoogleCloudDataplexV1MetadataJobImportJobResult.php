@@ -20,66 +20,44 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1MetadataJobImportJobResult extends \Google\Model
 {
   /**
-   * Output only. The total number of entries that were created.
-   *
    * @var string
    */
   public $createdEntries;
   /**
-   * Output only. The total number of entry links that were successfully
-   * created.
-   *
    * @var string
    */
   public $createdEntryLinks;
   /**
-   * Output only. The total number of entries that were deleted.
-   *
    * @var string
    */
   public $deletedEntries;
   /**
-   * Output only. The total number of entry links that were successfully
-   * deleted.
-   *
    * @var string
    */
   public $deletedEntryLinks;
   /**
-   * Output only. The total number of entries that were recreated.
-   *
    * @var string
    */
   public $recreatedEntries;
   /**
-   * Output only. The total number of entries that were unchanged.
-   *
    * @var string
    */
   public $unchangedEntries;
   /**
-   * Output only. The total number of entry links that were left unchanged.
-   *
    * @var string
    */
   public $unchangedEntryLinks;
   /**
-   * Output only. The time when the status was updated.
-   *
    * @var string
    */
   public $updateTime;
   /**
-   * Output only. The total number of entries that were updated.
-   *
    * @var string
    */
   public $updatedEntries;
 
   /**
-   * Output only. The total number of entries that were created.
-   *
-   * @param string $createdEntries
+   * @param string
    */
   public function setCreatedEntries($createdEntries)
   {
@@ -93,10 +71,7 @@ class GoogleCloudDataplexV1MetadataJobImportJobResult extends \Google\Model
     return $this->createdEntries;
   }
   /**
-   * Output only. The total number of entry links that were successfully
-   * created.
-   *
-   * @param string $createdEntryLinks
+   * @param string
    */
   public function setCreatedEntryLinks($createdEntryLinks)
   {
@@ -110,9 +85,7 @@ class GoogleCloudDataplexV1MetadataJobImportJobResult extends \Google\Model
     return $this->createdEntryLinks;
   }
   /**
-   * Output only. The total number of entries that were deleted.
-   *
-   * @param string $deletedEntries
+   * @param string
    */
   public function setDeletedEntries($deletedEntries)
   {
@@ -126,10 +99,7 @@ class GoogleCloudDataplexV1MetadataJobImportJobResult extends \Google\Model
     return $this->deletedEntries;
   }
   /**
-   * Output only. The total number of entry links that were successfully
-   * deleted.
-   *
-   * @param string $deletedEntryLinks
+   * @param string
    */
   public function setDeletedEntryLinks($deletedEntryLinks)
   {
@@ -143,9 +113,7 @@ class GoogleCloudDataplexV1MetadataJobImportJobResult extends \Google\Model
     return $this->deletedEntryLinks;
   }
   /**
-   * Output only. The total number of entries that were recreated.
-   *
-   * @param string $recreatedEntries
+   * @param string
    */
   public function setRecreatedEntries($recreatedEntries)
   {
@@ -159,9 +127,7 @@ class GoogleCloudDataplexV1MetadataJobImportJobResult extends \Google\Model
     return $this->recreatedEntries;
   }
   /**
-   * Output only. The total number of entries that were unchanged.
-   *
-   * @param string $unchangedEntries
+   * @param string
    */
   public function setUnchangedEntries($unchangedEntries)
   {
@@ -175,9 +141,7 @@ class GoogleCloudDataplexV1MetadataJobImportJobResult extends \Google\Model
     return $this->unchangedEntries;
   }
   /**
-   * Output only. The total number of entry links that were left unchanged.
-   *
-   * @param string $unchangedEntryLinks
+   * @param string
    */
   public function setUnchangedEntryLinks($unchangedEntryLinks)
   {
@@ -191,9 +155,7 @@ class GoogleCloudDataplexV1MetadataJobImportJobResult extends \Google\Model
     return $this->unchangedEntryLinks;
   }
   /**
-   * Output only. The time when the status was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -207,9 +169,7 @@ class GoogleCloudDataplexV1MetadataJobImportJobResult extends \Google\Model
     return $this->updateTime;
   }
   /**
-   * Output only. The total number of entries that were updated.
-   *
-   * @param string $updatedEntries
+   * @param string
    */
   public function setUpdatedEntries($updatedEntries)
   {

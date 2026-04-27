@@ -20,16 +20,12 @@ namespace Google\Service\BigQueryDataTransfer;
 class UserInfo extends \Google\Model
 {
   /**
-   * E-mail address of the user.
-   *
    * @var string
    */
   public $email;
 
   /**
-   * E-mail address of the user.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {

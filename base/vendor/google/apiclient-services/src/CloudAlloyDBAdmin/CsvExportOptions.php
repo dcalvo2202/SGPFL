@@ -20,44 +20,24 @@ namespace Google\Service\CloudAlloyDBAdmin;
 class CsvExportOptions extends \Google\Model
 {
   /**
-   * Optional. Specifies the character that should appear before a data
-   * character that needs to be escaped. The default is the same as quote
-   * character. The value of this argument has to be a character in Hex ASCII
-   * Code.
-   *
    * @var string
    */
   public $escapeCharacter;
   /**
-   * Optional. Specifies the character that separates columns within each row
-   * (line) of the file. The default is comma. The value of this argument has to
-   * be a character in Hex ASCII Code.
-   *
    * @var string
    */
   public $fieldDelimiter;
   /**
-   * Optional. Specifies the quoting character to be used when a data value is
-   * quoted. The default is double-quote. The value of this argument has to be a
-   * character in Hex ASCII Code.
-   *
    * @var string
    */
   public $quoteCharacter;
   /**
-   * Required. The SELECT query used to extract the data.
-   *
    * @var string
    */
   public $selectQuery;
 
   /**
-   * Optional. Specifies the character that should appear before a data
-   * character that needs to be escaped. The default is the same as quote
-   * character. The value of this argument has to be a character in Hex ASCII
-   * Code.
-   *
-   * @param string $escapeCharacter
+   * @param string
    */
   public function setEscapeCharacter($escapeCharacter)
   {
@@ -71,11 +51,7 @@ class CsvExportOptions extends \Google\Model
     return $this->escapeCharacter;
   }
   /**
-   * Optional. Specifies the character that separates columns within each row
-   * (line) of the file. The default is comma. The value of this argument has to
-   * be a character in Hex ASCII Code.
-   *
-   * @param string $fieldDelimiter
+   * @param string
    */
   public function setFieldDelimiter($fieldDelimiter)
   {
@@ -89,11 +65,7 @@ class CsvExportOptions extends \Google\Model
     return $this->fieldDelimiter;
   }
   /**
-   * Optional. Specifies the quoting character to be used when a data value is
-   * quoted. The default is double-quote. The value of this argument has to be a
-   * character in Hex ASCII Code.
-   *
-   * @param string $quoteCharacter
+   * @param string
    */
   public function setQuoteCharacter($quoteCharacter)
   {
@@ -107,9 +79,7 @@ class CsvExportOptions extends \Google\Model
     return $this->quoteCharacter;
   }
   /**
-   * Required. The SELECT query used to extract the data.
-   *
-   * @param string $selectQuery
+   * @param string
    */
   public function setSelectQuery($selectQuery)
   {

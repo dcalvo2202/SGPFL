@@ -19,29 +19,10 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowV2ToolCall extends \Google\Model
 {
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  public const STATE_TRIGGERED = 'TRIGGERED';
-  public const STATE_NEEDS_CONFIRMATION = 'NEEDS_CONFIRMATION';
   /**
    * @var string
    */
   public $action;
-  /**
-   * @var string
-   */
-  public $answerRecord;
-  /**
-   * @var string
-   */
-  public $cesApp;
-  /**
-   * @var string
-   */
-  public $cesTool;
-  /**
-   * @var string
-   */
-  public $cesToolset;
   /**
    * @var string
    */
@@ -53,22 +34,10 @@ class GoogleCloudDialogflowV2ToolCall extends \Google\Model
   /**
    * @var string
    */
-  public $state;
-  /**
-   * @var string
-   */
   public $tool;
-  /**
-   * @var string
-   */
-  public $toolDisplayDetails;
-  /**
-   * @var string
-   */
-  public $toolDisplayName;
 
   /**
-   * @param string $action
+   * @param string
    */
   public function setAction($action)
   {
@@ -82,63 +51,7 @@ class GoogleCloudDialogflowV2ToolCall extends \Google\Model
     return $this->action;
   }
   /**
-   * @param string $answerRecord
-   */
-  public function setAnswerRecord($answerRecord)
-  {
-    $this->answerRecord = $answerRecord;
-  }
-  /**
-   * @return string
-   */
-  public function getAnswerRecord()
-  {
-    return $this->answerRecord;
-  }
-  /**
-   * @param string $cesApp
-   */
-  public function setCesApp($cesApp)
-  {
-    $this->cesApp = $cesApp;
-  }
-  /**
-   * @return string
-   */
-  public function getCesApp()
-  {
-    return $this->cesApp;
-  }
-  /**
-   * @param string $cesTool
-   */
-  public function setCesTool($cesTool)
-  {
-    $this->cesTool = $cesTool;
-  }
-  /**
-   * @return string
-   */
-  public function getCesTool()
-  {
-    return $this->cesTool;
-  }
-  /**
-   * @param string $cesToolset
-   */
-  public function setCesToolset($cesToolset)
-  {
-    $this->cesToolset = $cesToolset;
-  }
-  /**
-   * @return string
-   */
-  public function getCesToolset()
-  {
-    return $this->cesToolset;
-  }
-  /**
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -152,7 +65,7 @@ class GoogleCloudDialogflowV2ToolCall extends \Google\Model
     return $this->createTime;
   }
   /**
-   * @param array[] $inputParameters
+   * @param array[]
    */
   public function setInputParameters($inputParameters)
   {
@@ -166,21 +79,7 @@ class GoogleCloudDialogflowV2ToolCall extends \Google\Model
     return $this->inputParameters;
   }
   /**
-   * @param self::STATE_* $state
-   */
-  public function setState($state)
-  {
-    $this->state = $state;
-  }
-  /**
-   * @return self::STATE_*
-   */
-  public function getState()
-  {
-    return $this->state;
-  }
-  /**
-   * @param string $tool
+   * @param string
    */
   public function setTool($tool)
   {
@@ -192,34 +91,6 @@ class GoogleCloudDialogflowV2ToolCall extends \Google\Model
   public function getTool()
   {
     return $this->tool;
-  }
-  /**
-   * @param string $toolDisplayDetails
-   */
-  public function setToolDisplayDetails($toolDisplayDetails)
-  {
-    $this->toolDisplayDetails = $toolDisplayDetails;
-  }
-  /**
-   * @return string
-   */
-  public function getToolDisplayDetails()
-  {
-    return $this->toolDisplayDetails;
-  }
-  /**
-   * @param string $toolDisplayName
-   */
-  public function setToolDisplayName($toolDisplayName)
-  {
-    $this->toolDisplayName = $toolDisplayName;
-  }
-  /**
-   * @return string
-   */
-  public function getToolDisplayName()
-  {
-    return $this->toolDisplayName;
   }
 }
 

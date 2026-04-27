@@ -33,9 +33,7 @@ class Request extends \Google\Model
   protected $updateSettingsDataType = '';
 
   /**
-   * Create a new item.
-   *
-   * @param CreateItemRequest $createItem
+   * @param CreateItemRequest
    */
   public function setCreateItem(CreateItemRequest $createItem)
   {
@@ -49,9 +47,7 @@ class Request extends \Google\Model
     return $this->createItem;
   }
   /**
-   * Delete an item.
-   *
-   * @param DeleteItemRequest $deleteItem
+   * @param DeleteItemRequest
    */
   public function setDeleteItem(DeleteItemRequest $deleteItem)
   {
@@ -65,9 +61,7 @@ class Request extends \Google\Model
     return $this->deleteItem;
   }
   /**
-   * Move an item to a specified location.
-   *
-   * @param MoveItemRequest $moveItem
+   * @param MoveItemRequest
    */
   public function setMoveItem(MoveItemRequest $moveItem)
   {
@@ -81,9 +75,7 @@ class Request extends \Google\Model
     return $this->moveItem;
   }
   /**
-   * Update Form's Info.
-   *
-   * @param UpdateFormInfoRequest $updateFormInfo
+   * @param UpdateFormInfoRequest
    */
   public function setUpdateFormInfo(UpdateFormInfoRequest $updateFormInfo)
   {
@@ -97,9 +89,7 @@ class Request extends \Google\Model
     return $this->updateFormInfo;
   }
   /**
-   * Update an item.
-   *
-   * @param UpdateItemRequest $updateItem
+   * @param UpdateItemRequest
    */
   public function setUpdateItem(UpdateItemRequest $updateItem)
   {
@@ -113,9 +103,7 @@ class Request extends \Google\Model
     return $this->updateItem;
   }
   /**
-   * Updates the Form's settings.
-   *
-   * @param UpdateSettingsRequest $updateSettings
+   * @param UpdateSettingsRequest
    */
   public function setUpdateSettings(UpdateSettingsRequest $updateSettings)
   {

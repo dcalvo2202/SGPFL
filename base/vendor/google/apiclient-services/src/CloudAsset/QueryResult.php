@@ -21,30 +21,22 @@ class QueryResult extends \Google\Collection
 {
   protected $collection_key = 'rows';
   /**
-   * Token to retrieve the next page of the results.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Each row hold a query result in the format of `Struct`.
-   *
    * @var array[]
    */
   public $rows;
   protected $schemaType = TableSchema::class;
   protected $schemaDataType = '';
   /**
-   * Total rows of the whole query results.
-   *
    * @var string
    */
   public $totalRows;
 
   /**
-   * Token to retrieve the next page of the results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -58,9 +50,7 @@ class QueryResult extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Each row hold a query result in the format of `Struct`.
-   *
-   * @param array[] $rows
+   * @param array[]
    */
   public function setRows($rows)
   {
@@ -74,9 +64,7 @@ class QueryResult extends \Google\Collection
     return $this->rows;
   }
   /**
-   * Describes the format of the [rows].
-   *
-   * @param TableSchema $schema
+   * @param TableSchema
    */
   public function setSchema(TableSchema $schema)
   {
@@ -90,9 +78,7 @@ class QueryResult extends \Google\Collection
     return $this->schema;
   }
   /**
-   * Total rows of the whole query results.
-   *
-   * @param string $totalRows
+   * @param string
    */
   public function setTotalRows($totalRows)
   {

@@ -20,39 +20,16 @@ namespace Google\Service\SecurityCommandCenter;
 class StaticMute extends \Google\Model
 {
   /**
-   * Unspecified.
-   */
-  public const STATE_MUTE_UNSPECIFIED = 'MUTE_UNSPECIFIED';
-  /**
-   * Finding has been muted.
-   */
-  public const STATE_MUTED = 'MUTED';
-  /**
-   * Finding has been unmuted.
-   */
-  public const STATE_UNMUTED = 'UNMUTED';
-  /**
-   * Finding has never been muted/unmuted.
-   */
-  public const STATE_UNDEFINED = 'UNDEFINED';
-  /**
-   * When the static mute was applied.
-   *
    * @var string
    */
   public $applyTime;
   /**
-   * The static mute state. If the value is `MUTED` or `UNMUTED`, then the
-   * finding's overall mute state will have the same value.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * When the static mute was applied.
-   *
-   * @param string $applyTime
+   * @param string
    */
   public function setApplyTime($applyTime)
   {
@@ -66,19 +43,14 @@ class StaticMute extends \Google\Model
     return $this->applyTime;
   }
   /**
-   * The static mute state. If the value is `MUTED` or `UNMUTED`, then the
-   * finding's overall mute state will have the same value.
-   *
-   * Accepted values: MUTE_UNSPECIFIED, MUTED, UNMUTED, UNDEFINED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

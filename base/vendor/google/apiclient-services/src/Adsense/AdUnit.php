@@ -19,54 +19,27 @@ namespace Google\Service\Adsense;
 
 class AdUnit extends \Google\Model
 {
-  /**
-   * State unspecified.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Ad unit has been activated by the user.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * Ad unit has been archived by the user. Note that archived ad units are only
-   * removed from the default view in the UI. Archived ad units can still serve
-   * ads.
-   */
-  public const STATE_ARCHIVED = 'ARCHIVED';
   protected $contentAdsSettingsType = ContentAdsSettings::class;
   protected $contentAdsSettingsDataType = '';
   /**
-   * Required. Display name of the ad unit, as provided when the ad unit was
-   * created.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. Resource name of the ad unit. Format:
-   * accounts/{account}/adclients/{adclient}/adunits/{adunit}
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Unique ID of the ad unit as used in the `AD_UNIT_ID` reporting
-   * dimension.
-   *
    * @var string
    */
   public $reportingDimensionId;
   /**
-   * Required. State of the ad unit.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Required. Settings specific to content ads (AFC).
-   *
-   * @param ContentAdsSettings $contentAdsSettings
+   * @param ContentAdsSettings
    */
   public function setContentAdsSettings(ContentAdsSettings $contentAdsSettings)
   {
@@ -80,10 +53,7 @@ class AdUnit extends \Google\Model
     return $this->contentAdsSettings;
   }
   /**
-   * Required. Display name of the ad unit, as provided when the ad unit was
-   * created.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -97,10 +67,7 @@ class AdUnit extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Output only. Resource name of the ad unit. Format:
-   * accounts/{account}/adclients/{adclient}/adunits/{adunit}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -114,10 +81,7 @@ class AdUnit extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Unique ID of the ad unit as used in the `AD_UNIT_ID` reporting
-   * dimension.
-   *
-   * @param string $reportingDimensionId
+   * @param string
    */
   public function setReportingDimensionId($reportingDimensionId)
   {
@@ -131,18 +95,14 @@ class AdUnit extends \Google\Model
     return $this->reportingDimensionId;
   }
   /**
-   * Required. State of the ad unit.
-   *
-   * Accepted values: STATE_UNSPECIFIED, ACTIVE, ARCHIVED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

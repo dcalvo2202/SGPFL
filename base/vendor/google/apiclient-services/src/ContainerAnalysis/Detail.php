@@ -20,15 +20,10 @@ namespace Google\Service\ContainerAnalysis;
 class Detail extends \Google\Model
 {
   /**
-   * Required. The [CPE URI](https://cpe.mitre.org/specification/) this
-   * vulnerability affects.
-   *
    * @var string
    */
   public $affectedCpeUri;
   /**
-   * Required. The package this vulnerability affects.
-   *
    * @var string
    */
   public $affectedPackage;
@@ -37,75 +32,46 @@ class Detail extends \Google\Model
   protected $affectedVersionStartType = Version::class;
   protected $affectedVersionStartDataType = '';
   /**
-   * A vendor-specific description of this vulnerability.
-   *
    * @var string
    */
   public $description;
   /**
-   * The distro recommended [CPE URI](https://cpe.mitre.org/specification/) to
-   * update to that contains a fix for this vulnerability. It is possible for
-   * this to be different from the affected_cpe_uri.
-   *
    * @var string
    */
   public $fixedCpeUri;
   /**
-   * The distro recommended package to update to that contains a fix for this
-   * vulnerability. It is possible for this to be different from the
-   * affected_package.
-   *
    * @var string
    */
   public $fixedPackage;
   protected $fixedVersionType = Version::class;
   protected $fixedVersionDataType = '';
   /**
-   * Whether this detail is obsolete. Occurrences are expected not to point to
-   * obsolete details.
-   *
    * @var bool
    */
   public $isObsolete;
   /**
-   * The type of package; whether native or non native (e.g., ruby gems, node.js
-   * packages, etc.).
-   *
    * @var string
    */
   public $packageType;
   /**
-   * The distro assigned severity of this vulnerability.
-   *
    * @var string
    */
   public $severityName;
   /**
-   * The source from which the information in this Detail was obtained.
-   *
    * @var string
    */
   public $source;
   /**
-   * The time this information was last changed at the source. This is an
-   * upstream timestamp from the underlying information source - e.g. Ubuntu
-   * security tracker.
-   *
    * @var string
    */
   public $sourceUpdateTime;
   /**
-   * The name of the vendor of the product.
-   *
    * @var string
    */
   public $vendor;
 
   /**
-   * Required. The [CPE URI](https://cpe.mitre.org/specification/) this
-   * vulnerability affects.
-   *
-   * @param string $affectedCpeUri
+   * @param string
    */
   public function setAffectedCpeUri($affectedCpeUri)
   {
@@ -119,9 +85,7 @@ class Detail extends \Google\Model
     return $this->affectedCpeUri;
   }
   /**
-   * Required. The package this vulnerability affects.
-   *
-   * @param string $affectedPackage
+   * @param string
    */
   public function setAffectedPackage($affectedPackage)
   {
@@ -135,15 +99,7 @@ class Detail extends \Google\Model
     return $this->affectedPackage;
   }
   /**
-   * The version number at the end of an interval in which this vulnerability
-   * exists. A vulnerability can affect a package between version numbers that
-   * are disjoint sets of intervals (example: [1.0.0-1.1.0], [2.4.6-2.4.8] and
-   * [4.5.6-4.6.8]) each of which will be represented in its own Detail. If a
-   * specific affected version is provided by a vulnerability database,
-   * affected_version_start and affected_version_end will be the same in that
-   * Detail.
-   *
-   * @param Version $affectedVersionEnd
+   * @param Version
    */
   public function setAffectedVersionEnd(Version $affectedVersionEnd)
   {
@@ -157,15 +113,7 @@ class Detail extends \Google\Model
     return $this->affectedVersionEnd;
   }
   /**
-   * The version number at the start of an interval in which this vulnerability
-   * exists. A vulnerability can affect a package between version numbers that
-   * are disjoint sets of intervals (example: [1.0.0-1.1.0], [2.4.6-2.4.8] and
-   * [4.5.6-4.6.8]) each of which will be represented in its own Detail. If a
-   * specific affected version is provided by a vulnerability database,
-   * affected_version_start and affected_version_end will be the same in that
-   * Detail.
-   *
-   * @param Version $affectedVersionStart
+   * @param Version
    */
   public function setAffectedVersionStart(Version $affectedVersionStart)
   {
@@ -179,9 +127,7 @@ class Detail extends \Google\Model
     return $this->affectedVersionStart;
   }
   /**
-   * A vendor-specific description of this vulnerability.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -195,11 +141,7 @@ class Detail extends \Google\Model
     return $this->description;
   }
   /**
-   * The distro recommended [CPE URI](https://cpe.mitre.org/specification/) to
-   * update to that contains a fix for this vulnerability. It is possible for
-   * this to be different from the affected_cpe_uri.
-   *
-   * @param string $fixedCpeUri
+   * @param string
    */
   public function setFixedCpeUri($fixedCpeUri)
   {
@@ -213,11 +155,7 @@ class Detail extends \Google\Model
     return $this->fixedCpeUri;
   }
   /**
-   * The distro recommended package to update to that contains a fix for this
-   * vulnerability. It is possible for this to be different from the
-   * affected_package.
-   *
-   * @param string $fixedPackage
+   * @param string
    */
   public function setFixedPackage($fixedPackage)
   {
@@ -231,11 +169,7 @@ class Detail extends \Google\Model
     return $this->fixedPackage;
   }
   /**
-   * The distro recommended version to update to that contains a fix for this
-   * vulnerability. Setting this to VersionKind.MAXIMUM means no such version is
-   * yet available.
-   *
-   * @param Version $fixedVersion
+   * @param Version
    */
   public function setFixedVersion(Version $fixedVersion)
   {
@@ -249,10 +183,7 @@ class Detail extends \Google\Model
     return $this->fixedVersion;
   }
   /**
-   * Whether this detail is obsolete. Occurrences are expected not to point to
-   * obsolete details.
-   *
-   * @param bool $isObsolete
+   * @param bool
    */
   public function setIsObsolete($isObsolete)
   {
@@ -266,10 +197,7 @@ class Detail extends \Google\Model
     return $this->isObsolete;
   }
   /**
-   * The type of package; whether native or non native (e.g., ruby gems, node.js
-   * packages, etc.).
-   *
-   * @param string $packageType
+   * @param string
    */
   public function setPackageType($packageType)
   {
@@ -283,9 +211,7 @@ class Detail extends \Google\Model
     return $this->packageType;
   }
   /**
-   * The distro assigned severity of this vulnerability.
-   *
-   * @param string $severityName
+   * @param string
    */
   public function setSeverityName($severityName)
   {
@@ -299,9 +225,7 @@ class Detail extends \Google\Model
     return $this->severityName;
   }
   /**
-   * The source from which the information in this Detail was obtained.
-   *
-   * @param string $source
+   * @param string
    */
   public function setSource($source)
   {
@@ -315,11 +239,7 @@ class Detail extends \Google\Model
     return $this->source;
   }
   /**
-   * The time this information was last changed at the source. This is an
-   * upstream timestamp from the underlying information source - e.g. Ubuntu
-   * security tracker.
-   *
-   * @param string $sourceUpdateTime
+   * @param string
    */
   public function setSourceUpdateTime($sourceUpdateTime)
   {
@@ -333,9 +253,7 @@ class Detail extends \Google\Model
     return $this->sourceUpdateTime;
   }
   /**
-   * The name of the vendor of the product.
-   *
-   * @param string $vendor
+   * @param string
    */
   public function setVendor($vendor)
   {

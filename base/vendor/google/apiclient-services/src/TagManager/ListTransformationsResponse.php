@@ -21,8 +21,6 @@ class ListTransformationsResponse extends \Google\Collection
 {
   protected $collection_key = 'transformation';
   /**
-   * Continuation token for fetching the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -30,9 +28,7 @@ class ListTransformationsResponse extends \Google\Collection
   protected $transformationDataType = 'array';
 
   /**
-   * Continuation token for fetching the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -46,9 +42,7 @@ class ListTransformationsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * All GTM Transformations of a GTM Container.
-   *
-   * @param Transformation[] $transformation
+   * @param Transformation[]
    */
   public function setTransformation($transformation)
   {

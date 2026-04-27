@@ -21,24 +21,14 @@ class ConnectionPoolConfig extends \Google\Collection
 {
   protected $collection_key = 'flags';
   /**
-   * Whether managed connection pooling is enabled.
-   *
    * @var bool
    */
   public $connectionPoolingEnabled;
   protected $flagsType = ConnectionPoolFlags::class;
   protected $flagsDataType = 'array';
-  /**
-   * Output only. Number of connection poolers.
-   *
-   * @var int
-   */
-  public $poolerCount;
 
   /**
-   * Whether managed connection pooling is enabled.
-   *
-   * @param bool $connectionPoolingEnabled
+   * @param bool
    */
   public function setConnectionPoolingEnabled($connectionPoolingEnabled)
   {
@@ -52,9 +42,7 @@ class ConnectionPoolConfig extends \Google\Collection
     return $this->connectionPoolingEnabled;
   }
   /**
-   * Optional. List of connection pool configuration flags.
-   *
-   * @param ConnectionPoolFlags[] $flags
+   * @param ConnectionPoolFlags[]
    */
   public function setFlags($flags)
   {
@@ -66,22 +54,6 @@ class ConnectionPoolConfig extends \Google\Collection
   public function getFlags()
   {
     return $this->flags;
-  }
-  /**
-   * Output only. Number of connection poolers.
-   *
-   * @param int $poolerCount
-   */
-  public function setPoolerCount($poolerCount)
-  {
-    $this->poolerCount = $poolerCount;
-  }
-  /**
-   * @return int
-   */
-  public function getPoolerCount()
-  {
-    return $this->poolerCount;
   }
 }
 

@@ -21,14 +21,10 @@ class ListDiscoveredProfilesResponse extends \Google\Collection
 {
   protected $collection_key = 'workloadProfiles';
   /**
-   * Output only. A token identifying a page of results the server should return
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
@@ -36,9 +32,7 @@ class ListDiscoveredProfilesResponse extends \Google\Collection
   protected $workloadProfilesDataType = 'array';
 
   /**
-   * Output only. A token identifying a page of results the server should return
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -52,9 +46,7 @@ class ListDiscoveredProfilesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {
@@ -68,9 +60,7 @@ class ListDiscoveredProfilesResponse extends \Google\Collection
     return $this->unreachable;
   }
   /**
-   * Output only. The list of workload profiles
-   *
-   * @param WorkloadProfile[] $workloadProfiles
+   * @param WorkloadProfile[]
    */
   public function setWorkloadProfiles($workloadProfiles)
   {

@@ -22,16 +22,12 @@ class CertificateAuthority extends \Google\Model
   protected $managedServerCaType = ManagedCertificateAuthority::class;
   protected $managedServerCaDataType = '';
   /**
-   * Identifier. Unique name of the resource in this scope including project,
-   * location and cluster using the form: `projects/{project}/locations/{locatio
-   * n}/clusters/{cluster}/certificateAuthority`
-   *
    * @var string
    */
   public $name;
 
   /**
-   * @param ManagedCertificateAuthority $managedServerCa
+   * @param ManagedCertificateAuthority
    */
   public function setManagedServerCa(ManagedCertificateAuthority $managedServerCa)
   {
@@ -45,11 +41,7 @@ class CertificateAuthority extends \Google\Model
     return $this->managedServerCa;
   }
   /**
-   * Identifier. Unique name of the resource in this scope including project,
-   * location and cluster using the form: `projects/{project}/locations/{locatio
-   * n}/clusters/{cluster}/certificateAuthority`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

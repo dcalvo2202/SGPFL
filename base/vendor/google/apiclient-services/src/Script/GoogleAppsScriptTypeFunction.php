@@ -21,22 +21,16 @@ class GoogleAppsScriptTypeFunction extends \Google\Collection
 {
   protected $collection_key = 'parameters';
   /**
-   * The function name in the script project.
-   *
    * @var string
    */
   public $name;
   /**
-   * The ordered list of parameter names of the function in the script project.
-   *
    * @var string[]
    */
   public $parameters;
 
   /**
-   * The function name in the script project.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -50,9 +44,7 @@ class GoogleAppsScriptTypeFunction extends \Google\Collection
     return $this->name;
   }
   /**
-   * The ordered list of parameter names of the function in the script project.
-   *
-   * @param string[] $parameters
+   * @param string[]
    */
   public function setParameters($parameters)
   {

@@ -20,37 +20,24 @@ namespace Google\Service\Doubleclicksearch;
 class ReportRequestTimeRange extends \Google\Model
 {
   /**
-   * Inclusive UTC timestamp in RFC format, e.g., `2013-07-16T10:16:23.555Z`.
-   * See additional references on how changed attribute reports work.
-   *
    * @var string
    */
   public $changedAttributesSinceTimestamp;
   /**
-   * Inclusive UTC timestamp in RFC format, e.g., `2013-07-16T10:16:23.555Z`.
-   * See additional references on how changed metrics reports work.
-   *
    * @var string
    */
   public $changedMetricsSinceTimestamp;
   /**
-   * Inclusive date in YYYY-MM-DD format.
-   *
    * @var string
    */
   public $endDate;
   /**
-   * Inclusive date in YYYY-MM-DD format.
-   *
    * @var string
    */
   public $startDate;
 
   /**
-   * Inclusive UTC timestamp in RFC format, e.g., `2013-07-16T10:16:23.555Z`.
-   * See additional references on how changed attribute reports work.
-   *
-   * @param string $changedAttributesSinceTimestamp
+   * @param string
    */
   public function setChangedAttributesSinceTimestamp($changedAttributesSinceTimestamp)
   {
@@ -64,10 +51,7 @@ class ReportRequestTimeRange extends \Google\Model
     return $this->changedAttributesSinceTimestamp;
   }
   /**
-   * Inclusive UTC timestamp in RFC format, e.g., `2013-07-16T10:16:23.555Z`.
-   * See additional references on how changed metrics reports work.
-   *
-   * @param string $changedMetricsSinceTimestamp
+   * @param string
    */
   public function setChangedMetricsSinceTimestamp($changedMetricsSinceTimestamp)
   {
@@ -81,9 +65,7 @@ class ReportRequestTimeRange extends \Google\Model
     return $this->changedMetricsSinceTimestamp;
   }
   /**
-   * Inclusive date in YYYY-MM-DD format.
-   *
-   * @param string $endDate
+   * @param string
    */
   public function setEndDate($endDate)
   {
@@ -97,9 +79,7 @@ class ReportRequestTimeRange extends \Google\Model
     return $this->endDate;
   }
   /**
-   * Inclusive date in YYYY-MM-DD format.
-   *
-   * @param string $startDate
+   * @param string
    */
   public function setStartDate($startDate)
   {

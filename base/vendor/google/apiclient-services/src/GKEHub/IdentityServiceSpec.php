@@ -26,9 +26,7 @@ class IdentityServiceSpec extends \Google\Collection
   protected $identityServiceOptionsDataType = '';
 
   /**
-   * A member may support multiple auth methods.
-   *
-   * @param IdentityServiceAuthMethod[] $authMethods
+   * @param IdentityServiceAuthMethod[]
    */
   public function setAuthMethods($authMethods)
   {
@@ -42,9 +40,7 @@ class IdentityServiceSpec extends \Google\Collection
     return $this->authMethods;
   }
   /**
-   * Optional. non-protocol-related configuration options.
-   *
-   * @param IdentityServiceIdentityServiceOptions $identityServiceOptions
+   * @param IdentityServiceIdentityServiceOptions
    */
   public function setIdentityServiceOptions(IdentityServiceIdentityServiceOptions $identityServiceOptions)
   {

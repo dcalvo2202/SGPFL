@@ -20,9 +20,6 @@ namespace Google\Service\Docs;
 class InsertTableRowRequest extends \Google\Model
 {
   /**
-   * Whether to insert new row below the reference cell location. - `True`:
-   * insert below the cell. - `False`: insert above the cell.
-   *
    * @var bool
    */
   public $insertBelow;
@@ -30,10 +27,7 @@ class InsertTableRowRequest extends \Google\Model
   protected $tableCellLocationDataType = '';
 
   /**
-   * Whether to insert new row below the reference cell location. - `True`:
-   * insert below the cell. - `False`: insert above the cell.
-   *
-   * @param bool $insertBelow
+   * @param bool
    */
   public function setInsertBelow($insertBelow)
   {
@@ -47,12 +41,7 @@ class InsertTableRowRequest extends \Google\Model
     return $this->insertBelow;
   }
   /**
-   * The reference table cell location from which rows will be inserted. A new
-   * row will be inserted above (or below) the row where the reference cell is.
-   * If the reference cell is a merged cell, a new row will be inserted above
-   * (or below) the merged cell.
-   *
-   * @param TableCellLocation $tableCellLocation
+   * @param TableCellLocation
    */
   public function setTableCellLocation(TableCellLocation $tableCellLocation)
   {

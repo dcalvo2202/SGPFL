@@ -21,14 +21,10 @@ class GoogleChromeManagementVersionsV1ReportingDataExtensionPolicyData extends \
 {
   protected $collection_key = 'policyData';
   /**
-   * Output only. ID of the extension.
-   *
    * @var string
    */
   public $extensionId;
   /**
-   * Output only. Name of the extension.
-   *
    * @var string
    */
   public $extensionName;
@@ -36,9 +32,7 @@ class GoogleChromeManagementVersionsV1ReportingDataExtensionPolicyData extends \
   protected $policyDataDataType = 'array';
 
   /**
-   * Output only. ID of the extension.
-   *
-   * @param string $extensionId
+   * @param string
    */
   public function setExtensionId($extensionId)
   {
@@ -52,9 +46,7 @@ class GoogleChromeManagementVersionsV1ReportingDataExtensionPolicyData extends \
     return $this->extensionId;
   }
   /**
-   * Output only. Name of the extension.
-   *
-   * @param string $extensionName
+   * @param string
    */
   public function setExtensionName($extensionName)
   {
@@ -68,9 +60,7 @@ class GoogleChromeManagementVersionsV1ReportingDataExtensionPolicyData extends \
     return $this->extensionName;
   }
   /**
-   * Output only. Information of the policies applied on the extension.
-   *
-   * @param GoogleChromeManagementVersionsV1ReportingDataPolicyData[] $policyData
+   * @param GoogleChromeManagementVersionsV1ReportingDataPolicyData[]
    */
   public function setPolicyData($policyData)
   {

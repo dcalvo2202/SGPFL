@@ -20,14 +20,10 @@ namespace Google\Service\Contactcenterinsights;
 class GoogleCloudContactcenterinsightsV1alpha1CreateIssueMetadata extends \Google\Model
 {
   /**
-   * Output only. The time the operation was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. The time the operation finished running.
-   *
    * @var string
    */
   public $endTime;
@@ -35,9 +31,7 @@ class GoogleCloudContactcenterinsightsV1alpha1CreateIssueMetadata extends \Googl
   protected $requestDataType = '';
 
   /**
-   * Output only. The time the operation was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -51,9 +45,7 @@ class GoogleCloudContactcenterinsightsV1alpha1CreateIssueMetadata extends \Googl
     return $this->createTime;
   }
   /**
-   * Output only. The time the operation finished running.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -67,9 +59,7 @@ class GoogleCloudContactcenterinsightsV1alpha1CreateIssueMetadata extends \Googl
     return $this->endTime;
   }
   /**
-   * The original request for creation.
-   *
-   * @param GoogleCloudContactcenterinsightsV1alpha1CreateIssueRequest $request
+   * @param GoogleCloudContactcenterinsightsV1alpha1CreateIssueRequest
    */
   public function setRequest(GoogleCloudContactcenterinsightsV1alpha1CreateIssueRequest $request)
   {

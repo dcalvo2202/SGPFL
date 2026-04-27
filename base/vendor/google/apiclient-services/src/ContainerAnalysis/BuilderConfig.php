@@ -25,7 +25,7 @@ class BuilderConfig extends \Google\Model
   public $id;
 
   /**
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {

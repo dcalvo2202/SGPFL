@@ -21,24 +21,18 @@ class GoogleCloudDiscoveryengineV1SearchResponseSummaryCitation extends \Google\
 {
   protected $collection_key = 'sources';
   /**
-   * End of the attributed segment, exclusive.
-   *
    * @var string
    */
   public $endIndex;
   protected $sourcesType = GoogleCloudDiscoveryengineV1SearchResponseSummaryCitationSource::class;
   protected $sourcesDataType = 'array';
   /**
-   * Index indicates the start of the segment, measured in bytes/unicode.
-   *
    * @var string
    */
   public $startIndex;
 
   /**
-   * End of the attributed segment, exclusive.
-   *
-   * @param string $endIndex
+   * @param string
    */
   public function setEndIndex($endIndex)
   {
@@ -52,9 +46,7 @@ class GoogleCloudDiscoveryengineV1SearchResponseSummaryCitation extends \Google\
     return $this->endIndex;
   }
   /**
-   * Citation sources for the attributed segment.
-   *
-   * @param GoogleCloudDiscoveryengineV1SearchResponseSummaryCitationSource[] $sources
+   * @param GoogleCloudDiscoveryengineV1SearchResponseSummaryCitationSource[]
    */
   public function setSources($sources)
   {
@@ -68,9 +60,7 @@ class GoogleCloudDiscoveryengineV1SearchResponseSummaryCitation extends \Google\
     return $this->sources;
   }
   /**
-   * Index indicates the start of the segment, measured in bytes/unicode.
-   *
-   * @param string $startIndex
+   * @param string
    */
   public function setStartIndex($startIndex)
   {

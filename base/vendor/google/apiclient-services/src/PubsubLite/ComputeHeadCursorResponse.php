@@ -23,9 +23,7 @@ class ComputeHeadCursorResponse extends \Google\Model
   protected $headCursorDataType = '';
 
   /**
-   * The head cursor.
-   *
-   * @param Cursor $headCursor
+   * @param Cursor
    */
   public function setHeadCursor(Cursor $headCursor)
   {

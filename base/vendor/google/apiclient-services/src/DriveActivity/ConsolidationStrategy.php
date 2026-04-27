@@ -25,9 +25,7 @@ class ConsolidationStrategy extends \Google\Model
   protected $noneDataType = '';
 
   /**
-   * The individual activities are consolidated using the legacy strategy.
-   *
-   * @param Legacy $legacy
+   * @param Legacy
    */
   public function setLegacy(Legacy $legacy)
   {
@@ -41,9 +39,7 @@ class ConsolidationStrategy extends \Google\Model
     return $this->legacy;
   }
   /**
-   * The individual activities are not consolidated.
-   *
-   * @param NoConsolidation $none
+   * @param NoConsolidation
    */
   public function setNone(NoConsolidation $none)
   {

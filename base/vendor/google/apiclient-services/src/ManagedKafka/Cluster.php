@@ -17,113 +17,45 @@
 
 namespace Google\Service\ManagedKafka;
 
-class Cluster extends \Google\Collection
+class Cluster extends \Google\Model
 {
-  /**
-   * A state was not specified.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The cluster is being created.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * The cluster is active.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * The cluster is being deleted.
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * The cluster is being updated.
-   */
-  public const STATE_UPDATING = 'UPDATING';
-  protected $collection_key = 'brokerDetails';
-  protected $brokerDetailsType = BrokerDetails::class;
-  protected $brokerDetailsDataType = 'array';
   protected $capacityConfigType = CapacityConfig::class;
   protected $capacityConfigDataType = '';
   /**
-   * Output only. The time when the cluster was created.
-   *
    * @var string
    */
   public $createTime;
   protected $gcpConfigType = GcpConfig::class;
   protected $gcpConfigDataType = '';
   /**
-   * Output only. Only populated when FULL view is requested. The Kafka version
-   * of the cluster.
-   *
-   * @var string
-   */
-  public $kafkaVersion;
-  /**
-   * Optional. Labels as key value pairs.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Identifier. The name of the cluster. Structured like:
-   * projects/{project_number}/locations/{location}/clusters/{cluster_id}
-   *
    * @var string
    */
   public $name;
   protected $rebalanceConfigType = RebalanceConfig::class;
   protected $rebalanceConfigDataType = '';
   /**
-   * Output only. Reserved for future use.
-   *
    * @var bool
    */
   public $satisfiesPzi;
   /**
-   * Output only. Reserved for future use.
-   *
    * @var bool
    */
   public $satisfiesPzs;
   /**
-   * Output only. The current state of the cluster.
-   *
    * @var string
    */
   public $state;
-  protected $tlsConfigType = TlsConfig::class;
-  protected $tlsConfigDataType = '';
-  protected $updateOptionsType = UpdateOptions::class;
-  protected $updateOptionsDataType = '';
   /**
-   * Output only. The time when the cluster was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. Only populated when FULL view is requested. Details of each
-   * broker in the cluster.
-   *
-   * @param BrokerDetails[] $brokerDetails
-   */
-  public function setBrokerDetails($brokerDetails)
-  {
-    $this->brokerDetails = $brokerDetails;
-  }
-  /**
-   * @return BrokerDetails[]
-   */
-  public function getBrokerDetails()
-  {
-    return $this->brokerDetails;
-  }
-  /**
-   * Required. Capacity configuration for the Kafka cluster.
-   *
-   * @param CapacityConfig $capacityConfig
+   * @param CapacityConfig
    */
   public function setCapacityConfig(CapacityConfig $capacityConfig)
   {
@@ -137,9 +69,7 @@ class Cluster extends \Google\Collection
     return $this->capacityConfig;
   }
   /**
-   * Output only. The time when the cluster was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -153,10 +83,7 @@ class Cluster extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Required. Configuration properties for a Kafka cluster deployed to Google
-   * Cloud Platform.
-   *
-   * @param GcpConfig $gcpConfig
+   * @param GcpConfig
    */
   public function setGcpConfig(GcpConfig $gcpConfig)
   {
@@ -170,26 +97,7 @@ class Cluster extends \Google\Collection
     return $this->gcpConfig;
   }
   /**
-   * Output only. Only populated when FULL view is requested. The Kafka version
-   * of the cluster.
-   *
-   * @param string $kafkaVersion
-   */
-  public function setKafkaVersion($kafkaVersion)
-  {
-    $this->kafkaVersion = $kafkaVersion;
-  }
-  /**
-   * @return string
-   */
-  public function getKafkaVersion()
-  {
-    return $this->kafkaVersion;
-  }
-  /**
-   * Optional. Labels as key value pairs.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -203,10 +111,7 @@ class Cluster extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Identifier. The name of the cluster. Structured like:
-   * projects/{project_number}/locations/{location}/clusters/{cluster_id}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -220,9 +125,7 @@ class Cluster extends \Google\Collection
     return $this->name;
   }
   /**
-   * Optional. Rebalance configuration for the Kafka cluster.
-   *
-   * @param RebalanceConfig $rebalanceConfig
+   * @param RebalanceConfig
    */
   public function setRebalanceConfig(RebalanceConfig $rebalanceConfig)
   {
@@ -236,9 +139,7 @@ class Cluster extends \Google\Collection
     return $this->rebalanceConfig;
   }
   /**
-   * Output only. Reserved for future use.
-   *
-   * @param bool $satisfiesPzi
+   * @param bool
    */
   public function setSatisfiesPzi($satisfiesPzi)
   {
@@ -252,9 +153,7 @@ class Cluster extends \Google\Collection
     return $this->satisfiesPzi;
   }
   /**
-   * Output only. Reserved for future use.
-   *
-   * @param bool $satisfiesPzs
+   * @param bool
    */
   public function setSatisfiesPzs($satisfiesPzs)
   {
@@ -268,60 +167,21 @@ class Cluster extends \Google\Collection
     return $this->satisfiesPzs;
   }
   /**
-   * Output only. The current state of the cluster.
-   *
-   * Accepted values: STATE_UNSPECIFIED, CREATING, ACTIVE, DELETING, UPDATING
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Optional. TLS configuration for the Kafka cluster.
-   *
-   * @param TlsConfig $tlsConfig
-   */
-  public function setTlsConfig(TlsConfig $tlsConfig)
-  {
-    $this->tlsConfig = $tlsConfig;
-  }
-  /**
-   * @return TlsConfig
-   */
-  public function getTlsConfig()
-  {
-    return $this->tlsConfig;
-  }
-  /**
-   * Optional. UpdateOptions represents options that control how updates to the
-   * cluster are applied.
-   *
-   * @param UpdateOptions $updateOptions
-   */
-  public function setUpdateOptions(UpdateOptions $updateOptions)
-  {
-    $this->updateOptions = $updateOptions;
-  }
-  /**
-   * @return UpdateOptions
-   */
-  public function getUpdateOptions()
-  {
-    return $this->updateOptions;
-  }
-  /**
-   * Output only. The time when the cluster was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

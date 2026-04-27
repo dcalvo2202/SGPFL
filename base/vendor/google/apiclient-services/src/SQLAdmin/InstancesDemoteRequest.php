@@ -23,9 +23,7 @@ class InstancesDemoteRequest extends \Google\Model
   protected $demoteContextDataType = '';
 
   /**
-   * Required. Contains details about the demote operation.
-   *
-   * @param DemoteContext $demoteContext
+   * @param DemoteContext
    */
   public function setDemoteContext(DemoteContext $demoteContext)
   {

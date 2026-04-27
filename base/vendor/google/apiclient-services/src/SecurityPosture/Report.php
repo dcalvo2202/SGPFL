@@ -20,31 +20,22 @@ namespace Google\Service\SecurityPosture;
 class Report extends \Google\Model
 {
   /**
-   * Output only. The time at which the report was created.
-   *
    * @var string
    */
   public $createTime;
   protected $iacValidationReportType = IaCValidationReport::class;
   protected $iacValidationReportDataType = '';
   /**
-   * Required. The name of the report, in the format
-   * `organizations/{organization}/locations/global/reports/{report_id}`.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The time at which the report was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. The time at which the report was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -58,9 +49,7 @@ class Report extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. An infrastructure-as-code (IaC) validation report.
-   *
-   * @param IaCValidationReport $iacValidationReport
+   * @param IaCValidationReport
    */
   public function setIacValidationReport(IaCValidationReport $iacValidationReport)
   {
@@ -74,10 +63,7 @@ class Report extends \Google\Model
     return $this->iacValidationReport;
   }
   /**
-   * Required. The name of the report, in the format
-   * `organizations/{organization}/locations/global/reports/{report_id}`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -91,9 +77,7 @@ class Report extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The time at which the report was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

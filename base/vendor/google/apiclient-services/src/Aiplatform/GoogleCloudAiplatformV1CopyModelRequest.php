@@ -22,36 +22,20 @@ class GoogleCloudAiplatformV1CopyModelRequest extends \Google\Model
   protected $encryptionSpecType = GoogleCloudAiplatformV1EncryptionSpec::class;
   protected $encryptionSpecDataType = '';
   /**
-   * Optional. Copy source_model into a new Model with this ID. The ID will
-   * become the final component of the model resource name. This value may be up
-   * to 63 characters, and valid characters are `[a-z0-9_-]`. The first
-   * character cannot be a number or hyphen.
-   *
    * @var string
    */
   public $modelId;
   /**
-   * Optional. Specify this field to copy source_model into this existing Model
-   * as a new version. Format:
-   * `projects/{project}/locations/{location}/models/{model}`
-   *
    * @var string
    */
   public $parentModel;
   /**
-   * Required. The resource name of the Model to copy. That Model must be in the
-   * same Project. Format:
-   * `projects/{project}/locations/{location}/models/{model}`
-   *
    * @var string
    */
   public $sourceModel;
 
   /**
-   * Customer-managed encryption key options. If this is set, then the Model
-   * copy will be encrypted with the provided encryption key.
-   *
-   * @param GoogleCloudAiplatformV1EncryptionSpec $encryptionSpec
+   * @param GoogleCloudAiplatformV1EncryptionSpec
    */
   public function setEncryptionSpec(GoogleCloudAiplatformV1EncryptionSpec $encryptionSpec)
   {
@@ -65,12 +49,7 @@ class GoogleCloudAiplatformV1CopyModelRequest extends \Google\Model
     return $this->encryptionSpec;
   }
   /**
-   * Optional. Copy source_model into a new Model with this ID. The ID will
-   * become the final component of the model resource name. This value may be up
-   * to 63 characters, and valid characters are `[a-z0-9_-]`. The first
-   * character cannot be a number or hyphen.
-   *
-   * @param string $modelId
+   * @param string
    */
   public function setModelId($modelId)
   {
@@ -84,11 +63,7 @@ class GoogleCloudAiplatformV1CopyModelRequest extends \Google\Model
     return $this->modelId;
   }
   /**
-   * Optional. Specify this field to copy source_model into this existing Model
-   * as a new version. Format:
-   * `projects/{project}/locations/{location}/models/{model}`
-   *
-   * @param string $parentModel
+   * @param string
    */
   public function setParentModel($parentModel)
   {
@@ -102,11 +77,7 @@ class GoogleCloudAiplatformV1CopyModelRequest extends \Google\Model
     return $this->parentModel;
   }
   /**
-   * Required. The resource name of the Model to copy. That Model must be in the
-   * same Project. Format:
-   * `projects/{project}/locations/{location}/models/{model}`
-   *
-   * @param string $sourceModel
+   * @param string
    */
   public function setSourceModel($sourceModel)
   {

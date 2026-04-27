@@ -21,26 +21,16 @@ class Equation extends \Google\Collection
 {
   protected $collection_key = 'suggestedInsertionIds';
   /**
-   * The suggested deletion IDs. If empty, then there are no suggested deletions
-   * of this content.
-   *
    * @var string[]
    */
   public $suggestedDeletionIds;
   /**
-   * The suggested insertion IDs. An Equation may have multiple insertion IDs if
-   * it's a nested suggested change. If empty, then this is not a suggested
-   * insertion.
-   *
    * @var string[]
    */
   public $suggestedInsertionIds;
 
   /**
-   * The suggested deletion IDs. If empty, then there are no suggested deletions
-   * of this content.
-   *
-   * @param string[] $suggestedDeletionIds
+   * @param string[]
    */
   public function setSuggestedDeletionIds($suggestedDeletionIds)
   {
@@ -54,11 +44,7 @@ class Equation extends \Google\Collection
     return $this->suggestedDeletionIds;
   }
   /**
-   * The suggested insertion IDs. An Equation may have multiple insertion IDs if
-   * it's a nested suggested change. If empty, then this is not a suggested
-   * insertion.
-   *
-   * @param string[] $suggestedInsertionIds
+   * @param string[]
    */
   public function setSuggestedInsertionIds($suggestedInsertionIds)
   {

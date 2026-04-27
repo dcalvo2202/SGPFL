@@ -19,59 +19,30 @@ namespace Google\Service\SecurityCommandCenter;
 
 class IpRules extends \Google\Collection
 {
-  /**
-   * Unspecified direction value.
-   */
-  public const DIRECTION_DIRECTION_UNSPECIFIED = 'DIRECTION_UNSPECIFIED';
-  /**
-   * Ingress direction value.
-   */
-  public const DIRECTION_INGRESS = 'INGRESS';
-  /**
-   * Egress direction value.
-   */
-  public const DIRECTION_EGRESS = 'EGRESS';
   protected $collection_key = 'sourceIpRanges';
   protected $allowedType = Allowed::class;
   protected $allowedDataType = '';
   protected $deniedType = Denied::class;
   protected $deniedDataType = '';
   /**
-   * If destination IP ranges are specified, the firewall rule applies only to
-   * traffic that has a destination IP address in these ranges. These ranges
-   * must be expressed in CIDR format. Only supports IPv4.
-   *
    * @var string[]
    */
   public $destinationIpRanges;
   /**
-   * The direction that the rule is applicable to, one of ingress or egress.
-   *
    * @var string
    */
   public $direction;
   /**
-   * Name of the network protocol service, such as FTP, that is exposed by the
-   * open port. Follows the naming convention available at:
-   * https://www.iana.org/assignments/service-names-port-numbers/service-names-
-   * port-numbers.xhtml.
-   *
    * @var string[]
    */
   public $exposedServices;
   /**
-   * If source IP ranges are specified, the firewall rule applies only to
-   * traffic that has a source IP address in these ranges. These ranges must be
-   * expressed in CIDR format. Only supports IPv4.
-   *
    * @var string[]
    */
   public $sourceIpRanges;
 
   /**
-   * Tuple with allowed rules.
-   *
-   * @param Allowed $allowed
+   * @param Allowed
    */
   public function setAllowed(Allowed $allowed)
   {
@@ -85,9 +56,7 @@ class IpRules extends \Google\Collection
     return $this->allowed;
   }
   /**
-   * Tuple with denied rules.
-   *
-   * @param Denied $denied
+   * @param Denied
    */
   public function setDenied(Denied $denied)
   {
@@ -101,11 +70,7 @@ class IpRules extends \Google\Collection
     return $this->denied;
   }
   /**
-   * If destination IP ranges are specified, the firewall rule applies only to
-   * traffic that has a destination IP address in these ranges. These ranges
-   * must be expressed in CIDR format. Only supports IPv4.
-   *
-   * @param string[] $destinationIpRanges
+   * @param string[]
    */
   public function setDestinationIpRanges($destinationIpRanges)
   {
@@ -119,30 +84,21 @@ class IpRules extends \Google\Collection
     return $this->destinationIpRanges;
   }
   /**
-   * The direction that the rule is applicable to, one of ingress or egress.
-   *
-   * Accepted values: DIRECTION_UNSPECIFIED, INGRESS, EGRESS
-   *
-   * @param self::DIRECTION_* $direction
+   * @param string
    */
   public function setDirection($direction)
   {
     $this->direction = $direction;
   }
   /**
-   * @return self::DIRECTION_*
+   * @return string
    */
   public function getDirection()
   {
     return $this->direction;
   }
   /**
-   * Name of the network protocol service, such as FTP, that is exposed by the
-   * open port. Follows the naming convention available at:
-   * https://www.iana.org/assignments/service-names-port-numbers/service-names-
-   * port-numbers.xhtml.
-   *
-   * @param string[] $exposedServices
+   * @param string[]
    */
   public function setExposedServices($exposedServices)
   {
@@ -156,11 +112,7 @@ class IpRules extends \Google\Collection
     return $this->exposedServices;
   }
   /**
-   * If source IP ranges are specified, the firewall rule applies only to
-   * traffic that has a source IP address in these ranges. These ranges must be
-   * expressed in CIDR format. Only supports IPv4.
-   *
-   * @param string[] $sourceIpRanges
+   * @param string[]
    */
   public function setSourceIpRanges($sourceIpRanges)
   {

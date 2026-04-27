@@ -20,16 +20,10 @@ namespace Google\Service\ServiceControl;
 class CheckResponse extends \Google\Model
 {
   /**
-   * Optional response metadata that will be emitted as dynamic metadata to be
-   * consumed by the caller of ServiceController. For compatibility with the
-   * ext_authz interface.
-   *
    * @var array[]
    */
   public $dynamicMetadata;
   /**
-   * Returns a set of request contexts generated from the `CheckRequest`.
-   *
    * @var string[]
    */
   public $headers;
@@ -37,11 +31,7 @@ class CheckResponse extends \Google\Model
   protected $statusDataType = '';
 
   /**
-   * Optional response metadata that will be emitted as dynamic metadata to be
-   * consumed by the caller of ServiceController. For compatibility with the
-   * ext_authz interface.
-   *
-   * @param array[] $dynamicMetadata
+   * @param array[]
    */
   public function setDynamicMetadata($dynamicMetadata)
   {
@@ -55,9 +45,7 @@ class CheckResponse extends \Google\Model
     return $this->dynamicMetadata;
   }
   /**
-   * Returns a set of request contexts generated from the `CheckRequest`.
-   *
-   * @param string[] $headers
+   * @param string[]
    */
   public function setHeaders($headers)
   {
@@ -71,11 +59,7 @@ class CheckResponse extends \Google\Model
     return $this->headers;
   }
   /**
-   * Operation is allowed when this field is not set. Any non-'OK' status
-   * indicates a denial; google.rpc.Status.details would contain additional
-   * details about the denial.
-   *
-   * @param Status $status
+   * @param Status
    */
   public function setStatus(Status $status)
   {

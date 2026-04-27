@@ -21,8 +21,6 @@ class GoogleCloudDocumentaiV1ListProcessorTypesResponse extends \Google\Collecti
 {
   protected $collection_key = 'processorTypes';
   /**
-   * Points to the next page, otherwise empty.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -30,9 +28,7 @@ class GoogleCloudDocumentaiV1ListProcessorTypesResponse extends \Google\Collecti
   protected $processorTypesDataType = 'array';
 
   /**
-   * Points to the next page, otherwise empty.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -46,9 +42,7 @@ class GoogleCloudDocumentaiV1ListProcessorTypesResponse extends \Google\Collecti
     return $this->nextPageToken;
   }
   /**
-   * The processor types.
-   *
-   * @param GoogleCloudDocumentaiV1ProcessorType[] $processorTypes
+   * @param GoogleCloudDocumentaiV1ProcessorType[]
    */
   public function setProcessorTypes($processorTypes)
   {

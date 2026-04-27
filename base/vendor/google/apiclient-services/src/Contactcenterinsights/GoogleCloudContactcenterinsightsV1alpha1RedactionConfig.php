@@ -20,25 +20,16 @@ namespace Google\Service\Contactcenterinsights;
 class GoogleCloudContactcenterinsightsV1alpha1RedactionConfig extends \Google\Model
 {
   /**
-   * The fully-qualified DLP deidentify template resource name. Format:
-   * `projects/{project}/deidentifyTemplates/{template}`
-   *
    * @var string
    */
   public $deidentifyTemplate;
   /**
-   * The fully-qualified DLP inspect template resource name. Format:
-   * `projects/{project}/locations/{location}/inspectTemplates/{template}`
-   *
    * @var string
    */
   public $inspectTemplate;
 
   /**
-   * The fully-qualified DLP deidentify template resource name. Format:
-   * `projects/{project}/deidentifyTemplates/{template}`
-   *
-   * @param string $deidentifyTemplate
+   * @param string
    */
   public function setDeidentifyTemplate($deidentifyTemplate)
   {
@@ -52,10 +43,7 @@ class GoogleCloudContactcenterinsightsV1alpha1RedactionConfig extends \Google\Mo
     return $this->deidentifyTemplate;
   }
   /**
-   * The fully-qualified DLP inspect template resource name. Format:
-   * `projects/{project}/locations/{location}/inspectTemplates/{template}`
-   *
-   * @param string $inspectTemplate
+   * @param string
    */
   public function setInspectTemplate($inspectTemplate)
   {

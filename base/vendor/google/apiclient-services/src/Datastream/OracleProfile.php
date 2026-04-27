@@ -20,20 +20,14 @@ namespace Google\Service\Datastream;
 class OracleProfile extends \Google\Model
 {
   /**
-   * Connection string attributes
-   *
    * @var string[]
    */
   public $connectionAttributes;
   /**
-   * Required. Database for the Oracle connection.
-   *
    * @var string
    */
   public $databaseService;
   /**
-   * Required. Hostname for the Oracle connection.
-   *
    * @var string
    */
   public $hostname;
@@ -42,36 +36,24 @@ class OracleProfile extends \Google\Model
   protected $oracleSslConfigType = OracleSslConfig::class;
   protected $oracleSslConfigDataType = '';
   /**
-   * Optional. Password for the Oracle connection. Mutually exclusive with the
-   * `secret_manager_stored_password` field.
-   *
    * @var string
    */
   public $password;
   /**
-   * Port for the Oracle connection, default value is 1521.
-   *
    * @var int
    */
   public $port;
   /**
-   * Optional. A reference to a Secret Manager resource name storing the Oracle
-   * connection password. Mutually exclusive with the `password` field.
-   *
    * @var string
    */
   public $secretManagerStoredPassword;
   /**
-   * Required. Username for the Oracle connection.
-   *
    * @var string
    */
   public $username;
 
   /**
-   * Connection string attributes
-   *
-   * @param string[] $connectionAttributes
+   * @param string[]
    */
   public function setConnectionAttributes($connectionAttributes)
   {
@@ -85,9 +67,7 @@ class OracleProfile extends \Google\Model
     return $this->connectionAttributes;
   }
   /**
-   * Required. Database for the Oracle connection.
-   *
-   * @param string $databaseService
+   * @param string
    */
   public function setDatabaseService($databaseService)
   {
@@ -101,9 +81,7 @@ class OracleProfile extends \Google\Model
     return $this->databaseService;
   }
   /**
-   * Required. Hostname for the Oracle connection.
-   *
-   * @param string $hostname
+   * @param string
    */
   public function setHostname($hostname)
   {
@@ -117,9 +95,7 @@ class OracleProfile extends \Google\Model
     return $this->hostname;
   }
   /**
-   * Optional. Configuration for Oracle ASM connection.
-   *
-   * @param OracleAsmConfig $oracleAsmConfig
+   * @param OracleAsmConfig
    */
   public function setOracleAsmConfig(OracleAsmConfig $oracleAsmConfig)
   {
@@ -133,9 +109,7 @@ class OracleProfile extends \Google\Model
     return $this->oracleAsmConfig;
   }
   /**
-   * Optional. SSL configuration for the Oracle connection.
-   *
-   * @param OracleSslConfig $oracleSslConfig
+   * @param OracleSslConfig
    */
   public function setOracleSslConfig(OracleSslConfig $oracleSslConfig)
   {
@@ -149,10 +123,7 @@ class OracleProfile extends \Google\Model
     return $this->oracleSslConfig;
   }
   /**
-   * Optional. Password for the Oracle connection. Mutually exclusive with the
-   * `secret_manager_stored_password` field.
-   *
-   * @param string $password
+   * @param string
    */
   public function setPassword($password)
   {
@@ -166,9 +137,7 @@ class OracleProfile extends \Google\Model
     return $this->password;
   }
   /**
-   * Port for the Oracle connection, default value is 1521.
-   *
-   * @param int $port
+   * @param int
    */
   public function setPort($port)
   {
@@ -182,10 +151,7 @@ class OracleProfile extends \Google\Model
     return $this->port;
   }
   /**
-   * Optional. A reference to a Secret Manager resource name storing the Oracle
-   * connection password. Mutually exclusive with the `password` field.
-   *
-   * @param string $secretManagerStoredPassword
+   * @param string
    */
   public function setSecretManagerStoredPassword($secretManagerStoredPassword)
   {
@@ -199,9 +165,7 @@ class OracleProfile extends \Google\Model
     return $this->secretManagerStoredPassword;
   }
   /**
-   * Required. Username for the Oracle connection.
-   *
-   * @param string $username
+   * @param string
    */
   public function setUsername($username)
   {

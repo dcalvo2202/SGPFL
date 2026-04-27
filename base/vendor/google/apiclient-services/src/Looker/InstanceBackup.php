@@ -20,58 +20,26 @@ namespace Google\Service\Looker;
 class InstanceBackup extends \Google\Model
 {
   /**
-   * The state of the backup is unknown.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The backup is being created.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * The backup is being deleted.
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * The backup is active and ready to use.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * The backup failed.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * Output only. The time when the backup was started.
-   *
    * @var string
    */
   public $createTime;
   protected $encryptionConfigType = EncryptionConfig::class;
   protected $encryptionConfigDataType = '';
   /**
-   * Output only. The time when the backup will be deleted.
-   *
    * @var string
    */
   public $expireTime;
   /**
-   * Immutable. The relative resource name of the backup, in the following form:
-   * `projects/{project_number}/locations/{location_id}/instances/{instance_id}/
-   * backups/{backup}`
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The current state of the backup.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Output only. The time when the backup was started.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -85,9 +53,7 @@ class InstanceBackup extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. Current status of the CMEK encryption
-   *
-   * @param EncryptionConfig $encryptionConfig
+   * @param EncryptionConfig
    */
   public function setEncryptionConfig(EncryptionConfig $encryptionConfig)
   {
@@ -101,9 +67,7 @@ class InstanceBackup extends \Google\Model
     return $this->encryptionConfig;
   }
   /**
-   * Output only. The time when the backup will be deleted.
-   *
-   * @param string $expireTime
+   * @param string
    */
   public function setExpireTime($expireTime)
   {
@@ -117,11 +81,7 @@ class InstanceBackup extends \Google\Model
     return $this->expireTime;
   }
   /**
-   * Immutable. The relative resource name of the backup, in the following form:
-   * `projects/{project_number}/locations/{location_id}/instances/{instance_id}/
-   * backups/{backup}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -135,18 +95,14 @@ class InstanceBackup extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The current state of the backup.
-   *
-   * Accepted values: STATE_UNSPECIFIED, CREATING, DELETING, ACTIVE, FAILED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

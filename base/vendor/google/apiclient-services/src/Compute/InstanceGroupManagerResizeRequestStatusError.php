@@ -24,10 +24,7 @@ class InstanceGroupManagerResizeRequestStatusError extends \Google\Collection
   protected $errorsDataType = 'array';
 
   /**
-   * [Output Only] The array of errors encountered while processing this
-   * operation.
-   *
-   * @param InstanceGroupManagerResizeRequestStatusErrorErrors[] $errors
+   * @param InstanceGroupManagerResizeRequestStatusErrorErrors[]
    */
   public function setErrors($errors)
   {

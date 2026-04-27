@@ -19,62 +19,20 @@ namespace Google\Service\Backupdr;
 
 class ComputeInstanceRestoreProperties extends \Google\Collection
 {
-  /**
-   * Default value. This value is unused.
-   */
-  public const KEY_REVOCATION_ACTION_TYPE_KEY_REVOCATION_ACTION_TYPE_UNSPECIFIED = 'KEY_REVOCATION_ACTION_TYPE_UNSPECIFIED';
-  /**
-   * Indicates user chose no operation.
-   */
-  public const KEY_REVOCATION_ACTION_TYPE_NONE = 'NONE';
-  /**
-   * Indicates user chose to opt for VM shutdown on key revocation.
-   */
-  public const KEY_REVOCATION_ACTION_TYPE_STOP = 'STOP';
-  /**
-   * Default value. This value is unused.
-   */
-  public const PRIVATE_IPV6_GOOGLE_ACCESS_INSTANCE_PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED = 'INSTANCE_PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED';
-  /**
-   * Each network interface inherits PrivateIpv6GoogleAccess from its
-   * subnetwork.
-   */
-  public const PRIVATE_IPV6_GOOGLE_ACCESS_INHERIT_FROM_SUBNETWORK = 'INHERIT_FROM_SUBNETWORK';
-  /**
-   * Outbound private IPv6 access from VMs in this subnet to Google services. If
-   * specified, the subnetwork who is attached to the instance's default network
-   * interface will be assigned an internal IPv6 prefix if it doesn't have
-   * before.
-   */
-  public const PRIVATE_IPV6_GOOGLE_ACCESS_ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 'ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE';
-  /**
-   * Bidirectional private IPv6 access to/from Google services. If specified,
-   * the subnetwork who is attached to the instance's default network interface
-   * will be assigned an internal IPv6 prefix if it doesn't have before.
-   */
-  public const PRIVATE_IPV6_GOOGLE_ACCESS_ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 'ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE';
   protected $collection_key = 'serviceAccounts';
   protected $advancedMachineFeaturesType = AdvancedMachineFeatures::class;
   protected $advancedMachineFeaturesDataType = '';
   /**
-   * Optional. Allows this instance to send and receive packets with non-
-   * matching destination or source IPs.
-   *
    * @var bool
    */
   public $canIpForward;
   protected $confidentialInstanceConfigType = ConfidentialInstanceConfig::class;
   protected $confidentialInstanceConfigDataType = '';
   /**
-   * Optional. Whether the resource should be protected against deletion.
-   *
    * @var bool
    */
   public $deletionProtection;
   /**
-   * Optional. An optional description of this resource. Provide this property
-   * when you create the resource.
-   *
    * @var string
    */
   public $description;
@@ -85,47 +43,30 @@ class ComputeInstanceRestoreProperties extends \Google\Collection
   protected $guestAcceleratorsType = AcceleratorConfig::class;
   protected $guestAcceleratorsDataType = 'array';
   /**
-   * Optional. Specifies the hostname of the instance. The specified hostname
-   * must be RFC1035 compliant. If hostname is not specified, the default
-   * hostname is [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global
-   * DNS, and [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal
-   * DNS.
-   *
    * @var string
    */
   public $hostname;
   protected $instanceEncryptionKeyType = CustomerEncryptionKey::class;
   protected $instanceEncryptionKeyDataType = '';
   /**
-   * Optional. KeyRevocationActionType of the instance.
-   *
    * @var string
    */
   public $keyRevocationActionType;
   /**
-   * Optional. Labels to apply to this instance.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Optional. Full or partial URL of the machine type resource to use for this
-   * instance.
-   *
    * @var string
    */
   public $machineType;
   protected $metadataType = Metadata::class;
   protected $metadataDataType = '';
   /**
-   * Optional. Minimum CPU platform to use for this instance.
-   *
    * @var string
    */
   public $minCpuPlatform;
   /**
-   * Required. Name of the compute instance.
-   *
    * @var string
    */
   public $name;
@@ -136,18 +77,12 @@ class ComputeInstanceRestoreProperties extends \Google\Collection
   protected $paramsType = InstanceParams::class;
   protected $paramsDataType = '';
   /**
-   * Optional. The private IPv6 google access type for the VM. If not specified,
-   * use INHERIT_FROM_SUBNETWORK as default.
-   *
    * @var string
    */
   public $privateIpv6GoogleAccess;
   protected $reservationAffinityType = AllocationAffinity::class;
   protected $reservationAffinityDataType = '';
   /**
-   * Optional. Resource policies applied to this instance. By default, no
-   * resource policies will be applied.
-   *
    * @var string[]
    */
   public $resourcePolicies;
@@ -159,9 +94,7 @@ class ComputeInstanceRestoreProperties extends \Google\Collection
   protected $tagsDataType = '';
 
   /**
-   * Optional. Controls for advanced machine-related behavior features.
-   *
-   * @param AdvancedMachineFeatures $advancedMachineFeatures
+   * @param AdvancedMachineFeatures
    */
   public function setAdvancedMachineFeatures(AdvancedMachineFeatures $advancedMachineFeatures)
   {
@@ -175,10 +108,7 @@ class ComputeInstanceRestoreProperties extends \Google\Collection
     return $this->advancedMachineFeatures;
   }
   /**
-   * Optional. Allows this instance to send and receive packets with non-
-   * matching destination or source IPs.
-   *
-   * @param bool $canIpForward
+   * @param bool
    */
   public function setCanIpForward($canIpForward)
   {
@@ -192,9 +122,7 @@ class ComputeInstanceRestoreProperties extends \Google\Collection
     return $this->canIpForward;
   }
   /**
-   * Optional. Controls Confidential compute options on the instance
-   *
-   * @param ConfidentialInstanceConfig $confidentialInstanceConfig
+   * @param ConfidentialInstanceConfig
    */
   public function setConfidentialInstanceConfig(ConfidentialInstanceConfig $confidentialInstanceConfig)
   {
@@ -208,9 +136,7 @@ class ComputeInstanceRestoreProperties extends \Google\Collection
     return $this->confidentialInstanceConfig;
   }
   /**
-   * Optional. Whether the resource should be protected against deletion.
-   *
-   * @param bool $deletionProtection
+   * @param bool
    */
   public function setDeletionProtection($deletionProtection)
   {
@@ -224,10 +150,7 @@ class ComputeInstanceRestoreProperties extends \Google\Collection
     return $this->deletionProtection;
   }
   /**
-   * Optional. An optional description of this resource. Provide this property
-   * when you create the resource.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -241,11 +164,7 @@ class ComputeInstanceRestoreProperties extends \Google\Collection
     return $this->description;
   }
   /**
-   * Optional. Array of disks associated with this instance. Persistent disks
-   * must be created before you can assign them. Source regional persistent
-   * disks will be restored with default replica zones if not specified.
-   *
-   * @param AttachedDisk[] $disks
+   * @param AttachedDisk[]
    */
   public function setDisks($disks)
   {
@@ -259,9 +178,7 @@ class ComputeInstanceRestoreProperties extends \Google\Collection
     return $this->disks;
   }
   /**
-   * Optional. Enables display device for the instance.
-   *
-   * @param DisplayDevice $displayDevice
+   * @param DisplayDevice
    */
   public function setDisplayDevice(DisplayDevice $displayDevice)
   {
@@ -275,10 +192,7 @@ class ComputeInstanceRestoreProperties extends \Google\Collection
     return $this->displayDevice;
   }
   /**
-   * Optional. A list of the type and count of accelerator cards attached to the
-   * instance.
-   *
-   * @param AcceleratorConfig[] $guestAccelerators
+   * @param AcceleratorConfig[]
    */
   public function setGuestAccelerators($guestAccelerators)
   {
@@ -292,13 +206,7 @@ class ComputeInstanceRestoreProperties extends \Google\Collection
     return $this->guestAccelerators;
   }
   /**
-   * Optional. Specifies the hostname of the instance. The specified hostname
-   * must be RFC1035 compliant. If hostname is not specified, the default
-   * hostname is [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global
-   * DNS, and [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal
-   * DNS.
-   *
-   * @param string $hostname
+   * @param string
    */
   public function setHostname($hostname)
   {
@@ -312,10 +220,7 @@ class ComputeInstanceRestoreProperties extends \Google\Collection
     return $this->hostname;
   }
   /**
-   * Optional. Encrypts suspended data for an instance with a customer-managed
-   * encryption key.
-   *
-   * @param CustomerEncryptionKey $instanceEncryptionKey
+   * @param CustomerEncryptionKey
    */
   public function setInstanceEncryptionKey(CustomerEncryptionKey $instanceEncryptionKey)
   {
@@ -329,27 +234,21 @@ class ComputeInstanceRestoreProperties extends \Google\Collection
     return $this->instanceEncryptionKey;
   }
   /**
-   * Optional. KeyRevocationActionType of the instance.
-   *
-   * Accepted values: KEY_REVOCATION_ACTION_TYPE_UNSPECIFIED, NONE, STOP
-   *
-   * @param self::KEY_REVOCATION_ACTION_TYPE_* $keyRevocationActionType
+   * @param string
    */
   public function setKeyRevocationActionType($keyRevocationActionType)
   {
     $this->keyRevocationActionType = $keyRevocationActionType;
   }
   /**
-   * @return self::KEY_REVOCATION_ACTION_TYPE_*
+   * @return string
    */
   public function getKeyRevocationActionType()
   {
     return $this->keyRevocationActionType;
   }
   /**
-   * Optional. Labels to apply to this instance.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -363,10 +262,7 @@ class ComputeInstanceRestoreProperties extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Optional. Full or partial URL of the machine type resource to use for this
-   * instance.
-   *
-   * @param string $machineType
+   * @param string
    */
   public function setMachineType($machineType)
   {
@@ -380,9 +276,7 @@ class ComputeInstanceRestoreProperties extends \Google\Collection
     return $this->machineType;
   }
   /**
-   * Optional. This includes custom metadata and predefined keys.
-   *
-   * @param Metadata $metadata
+   * @param Metadata
    */
   public function setMetadata(Metadata $metadata)
   {
@@ -396,9 +290,7 @@ class ComputeInstanceRestoreProperties extends \Google\Collection
     return $this->metadata;
   }
   /**
-   * Optional. Minimum CPU platform to use for this instance.
-   *
-   * @param string $minCpuPlatform
+   * @param string
    */
   public function setMinCpuPlatform($minCpuPlatform)
   {
@@ -412,9 +304,7 @@ class ComputeInstanceRestoreProperties extends \Google\Collection
     return $this->minCpuPlatform;
   }
   /**
-   * Required. Name of the compute instance.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -428,12 +318,7 @@ class ComputeInstanceRestoreProperties extends \Google\Collection
     return $this->name;
   }
   /**
-   * Optional. An array of network configurations for this instance. These
-   * specify how interfaces are configured to interact with other network
-   * services, such as connecting to the internet. Multiple interfaces are
-   * supported per instance. Required to restore in different project or region.
-   *
-   * @param NetworkInterface[] $networkInterfaces
+   * @param NetworkInterface[]
    */
   public function setNetworkInterfaces($networkInterfaces)
   {
@@ -447,9 +332,7 @@ class ComputeInstanceRestoreProperties extends \Google\Collection
     return $this->networkInterfaces;
   }
   /**
-   * Optional. Configure network performance such as egress bandwidth tier.
-   *
-   * @param NetworkPerformanceConfig $networkPerformanceConfig
+   * @param NetworkPerformanceConfig
    */
   public function setNetworkPerformanceConfig(NetworkPerformanceConfig $networkPerformanceConfig)
   {
@@ -463,10 +346,7 @@ class ComputeInstanceRestoreProperties extends \Google\Collection
     return $this->networkPerformanceConfig;
   }
   /**
-   * Input only. Additional params passed with the request, but not persisted as
-   * part of resource payload.
-   *
-   * @param InstanceParams $params
+   * @param InstanceParams
    */
   public function setParams(InstanceParams $params)
   {
@@ -480,30 +360,21 @@ class ComputeInstanceRestoreProperties extends \Google\Collection
     return $this->params;
   }
   /**
-   * Optional. The private IPv6 google access type for the VM. If not specified,
-   * use INHERIT_FROM_SUBNETWORK as default.
-   *
-   * Accepted values: INSTANCE_PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED,
-   * INHERIT_FROM_SUBNETWORK, ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE,
-   * ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE
-   *
-   * @param self::PRIVATE_IPV6_GOOGLE_ACCESS_* $privateIpv6GoogleAccess
+   * @param string
    */
   public function setPrivateIpv6GoogleAccess($privateIpv6GoogleAccess)
   {
     $this->privateIpv6GoogleAccess = $privateIpv6GoogleAccess;
   }
   /**
-   * @return self::PRIVATE_IPV6_GOOGLE_ACCESS_*
+   * @return string
    */
   public function getPrivateIpv6GoogleAccess()
   {
     return $this->privateIpv6GoogleAccess;
   }
   /**
-   * Optional. Specifies the reservations that this instance can consume from.
-   *
-   * @param AllocationAffinity $reservationAffinity
+   * @param AllocationAffinity
    */
   public function setReservationAffinity(AllocationAffinity $reservationAffinity)
   {
@@ -517,10 +388,7 @@ class ComputeInstanceRestoreProperties extends \Google\Collection
     return $this->reservationAffinity;
   }
   /**
-   * Optional. Resource policies applied to this instance. By default, no
-   * resource policies will be applied.
-   *
-   * @param string[] $resourcePolicies
+   * @param string[]
    */
   public function setResourcePolicies($resourcePolicies)
   {
@@ -534,9 +402,7 @@ class ComputeInstanceRestoreProperties extends \Google\Collection
     return $this->resourcePolicies;
   }
   /**
-   * Optional. Sets the scheduling options for this instance.
-   *
-   * @param Scheduling $scheduling
+   * @param Scheduling
    */
   public function setScheduling(Scheduling $scheduling)
   {
@@ -550,11 +416,7 @@ class ComputeInstanceRestoreProperties extends \Google\Collection
     return $this->scheduling;
   }
   /**
-   * Optional. A list of service accounts, with their specified scopes,
-   * authorized for this instance. Only one service account per VM instance is
-   * supported.
-   *
-   * @param ServiceAccount[] $serviceAccounts
+   * @param ServiceAccount[]
    */
   public function setServiceAccounts($serviceAccounts)
   {
@@ -568,11 +430,7 @@ class ComputeInstanceRestoreProperties extends \Google\Collection
     return $this->serviceAccounts;
   }
   /**
-   * Optional. Tags to apply to this instance. Tags are used to identify valid
-   * sources or targets for network firewalls and are specified by the client
-   * during instance creation.
-   *
-   * @param Tags $tags
+   * @param Tags
    */
   public function setTags(Tags $tags)
   {

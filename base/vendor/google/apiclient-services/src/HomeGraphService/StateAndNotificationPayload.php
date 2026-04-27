@@ -23,9 +23,7 @@ class StateAndNotificationPayload extends \Google\Model
   protected $devicesDataType = '';
 
   /**
-   * The devices for updating state and sending notifications.
-   *
-   * @param ReportStateAndNotificationDevice $devices
+   * @param ReportStateAndNotificationDevice
    */
   public function setDevices(ReportStateAndNotificationDevice $devices)
   {

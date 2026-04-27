@@ -22,27 +22,16 @@ class SearchGoogleLocationsRequest extends \Google\Model
   protected $locationType = Location::class;
   protected $locationDataType = '';
   /**
-   * The number of matches to return. The default value is 3, with a maximum of
-   * 10. Note that latency may increase if more are requested. There is no
-   * pagination.
-   *
    * @var int
    */
   public $pageSize;
   /**
-   * Text query to search for. The search results from a query string will be
-   * less accurate than if providing an exact location, but can provide more
-   * inexact matches.
-   *
    * @var string
    */
   public $query;
 
   /**
-   * Location to search for. If provided, will find locations which match the
-   * provided location details, which must include a value for the title.
-   *
-   * @param Location $location
+   * @param Location
    */
   public function setLocation(Location $location)
   {
@@ -56,11 +45,7 @@ class SearchGoogleLocationsRequest extends \Google\Model
     return $this->location;
   }
   /**
-   * The number of matches to return. The default value is 3, with a maximum of
-   * 10. Note that latency may increase if more are requested. There is no
-   * pagination.
-   *
-   * @param int $pageSize
+   * @param int
    */
   public function setPageSize($pageSize)
   {
@@ -74,11 +59,7 @@ class SearchGoogleLocationsRequest extends \Google\Model
     return $this->pageSize;
   }
   /**
-   * Text query to search for. The search results from a query string will be
-   * less accurate than if providing an exact location, but can provide more
-   * inexact matches.
-   *
-   * @param string $query
+   * @param string
    */
   public function setQuery($query)
   {

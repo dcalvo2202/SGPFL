@@ -20,16 +20,12 @@ namespace Google\Service\DisplayVideo;
 class InventorySourceAccessorsPartnerAccessor extends \Google\Model
 {
   /**
-   * The ID of the partner.
-   *
    * @var string
    */
   public $partnerId;
 
   /**
-   * The ID of the partner.
-   *
-   * @param string $partnerId
+   * @param string
    */
   public function setPartnerId($partnerId)
   {

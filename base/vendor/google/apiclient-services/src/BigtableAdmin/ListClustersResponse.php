@@ -23,26 +23,16 @@ class ListClustersResponse extends \Google\Collection
   protected $clustersType = Cluster::class;
   protected $clustersDataType = 'array';
   /**
-   * Locations from which Cluster information could not be retrieved, due to an
-   * outage or some other transient condition. Clusters from these locations may
-   * be missing from `clusters`, or may only have partial information returned.
-   * Values are of the form `projects//locations/`
-   *
    * @var string[]
    */
   public $failedLocations;
   /**
-   * DEPRECATED: This field is unused and ignored.
-   *
-   * @deprecated
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of requested clusters.
-   *
-   * @param Cluster[] $clusters
+   * @param Cluster[]
    */
   public function setClusters($clusters)
   {
@@ -56,12 +46,7 @@ class ListClustersResponse extends \Google\Collection
     return $this->clusters;
   }
   /**
-   * Locations from which Cluster information could not be retrieved, due to an
-   * outage or some other transient condition. Clusters from these locations may
-   * be missing from `clusters`, or may only have partial information returned.
-   * Values are of the form `projects//locations/`
-   *
-   * @param string[] $failedLocations
+   * @param string[]
    */
   public function setFailedLocations($failedLocations)
   {
@@ -75,17 +60,13 @@ class ListClustersResponse extends \Google\Collection
     return $this->failedLocations;
   }
   /**
-   * DEPRECATED: This field is unused and ignored.
-   *
-   * @deprecated
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
     $this->nextPageToken = $nextPageToken;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getNextPageToken()

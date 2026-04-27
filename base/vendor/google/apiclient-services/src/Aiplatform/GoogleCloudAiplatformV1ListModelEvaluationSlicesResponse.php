@@ -23,17 +23,12 @@ class GoogleCloudAiplatformV1ListModelEvaluationSlicesResponse extends \Google\C
   protected $modelEvaluationSlicesType = GoogleCloudAiplatformV1ModelEvaluationSlice::class;
   protected $modelEvaluationSlicesDataType = 'array';
   /**
-   * A token to retrieve next page of results. Pass to
-   * ListModelEvaluationSlicesRequest.page_token to obtain that page.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * List of ModelEvaluations in the requested page.
-   *
-   * @param GoogleCloudAiplatformV1ModelEvaluationSlice[] $modelEvaluationSlices
+   * @param GoogleCloudAiplatformV1ModelEvaluationSlice[]
    */
   public function setModelEvaluationSlices($modelEvaluationSlices)
   {
@@ -47,10 +42,7 @@ class GoogleCloudAiplatformV1ListModelEvaluationSlicesResponse extends \Google\C
     return $this->modelEvaluationSlices;
   }
   /**
-   * A token to retrieve next page of results. Pass to
-   * ListModelEvaluationSlicesRequest.page_token to obtain that page.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

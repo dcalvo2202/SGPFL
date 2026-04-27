@@ -25,9 +25,7 @@ class RecognizeRequest extends \Google\Model
   protected $configDataType = '';
 
   /**
-   * Required. The audio data to be recognized.
-   *
-   * @param RecognitionAudio $audio
+   * @param RecognitionAudio
    */
   public function setAudio(RecognitionAudio $audio)
   {
@@ -41,10 +39,7 @@ class RecognizeRequest extends \Google\Model
     return $this->audio;
   }
   /**
-   * Required. Provides information to the recognizer that specifies how to
-   * process the request.
-   *
-   * @param RecognitionConfig $config
+   * @param RecognitionConfig
    */
   public function setConfig(RecognitionConfig $config)
   {

@@ -21,11 +21,6 @@ class ListUserListsResponse extends \Google\Collection
 {
   protected $collection_key = 'userLists';
   /**
-   * The continuation page token to send back to the server in a subsequent
-   * request. Due to a currently known issue, it is recommended that the caller
-   * keep invoking the list method until the time a next page token is not
-   * returned, even if the result set is empty.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -33,12 +28,7 @@ class ListUserListsResponse extends \Google\Collection
   protected $userListsDataType = 'array';
 
   /**
-   * The continuation page token to send back to the server in a subsequent
-   * request. Due to a currently known issue, it is recommended that the caller
-   * keep invoking the list method until the time a next page token is not
-   * returned, even if the result set is empty.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -52,9 +42,7 @@ class ListUserListsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * List of user lists from the search.
-   *
-   * @param UserList[] $userLists
+   * @param UserList[]
    */
   public function setUserLists($userLists)
   {

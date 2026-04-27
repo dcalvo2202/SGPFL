@@ -19,302 +19,112 @@ namespace Google\Service\NetworkManagement;
 
 class RouteInfo extends \Google\Collection
 {
-  /**
-   * Unspecified type. Default value.
-   */
-  public const NEXT_HOP_TYPE_NEXT_HOP_TYPE_UNSPECIFIED = 'NEXT_HOP_TYPE_UNSPECIFIED';
-  /**
-   * Next hop is an IP address.
-   */
-  public const NEXT_HOP_TYPE_NEXT_HOP_IP = 'NEXT_HOP_IP';
-  /**
-   * Next hop is a Compute Engine instance.
-   */
-  public const NEXT_HOP_TYPE_NEXT_HOP_INSTANCE = 'NEXT_HOP_INSTANCE';
-  /**
-   * Next hop is a VPC network gateway.
-   */
-  public const NEXT_HOP_TYPE_NEXT_HOP_NETWORK = 'NEXT_HOP_NETWORK';
-  /**
-   * Next hop is a peering VPC. This scenario only happens when the user doesn't
-   * have permissions to the project where the next hop resource is located.
-   */
-  public const NEXT_HOP_TYPE_NEXT_HOP_PEERING = 'NEXT_HOP_PEERING';
-  /**
-   * Next hop is an interconnect.
-   */
-  public const NEXT_HOP_TYPE_NEXT_HOP_INTERCONNECT = 'NEXT_HOP_INTERCONNECT';
-  /**
-   * Next hop is a VPN tunnel.
-   */
-  public const NEXT_HOP_TYPE_NEXT_HOP_VPN_TUNNEL = 'NEXT_HOP_VPN_TUNNEL';
-  /**
-   * Next hop is a VPN gateway. This scenario only happens when tracing
-   * connectivity from an on-premises network to Google Cloud through a VPN. The
-   * analysis simulates a packet departing from the on-premises network through
-   * a VPN tunnel and arriving at a Cloud VPN gateway.
-   */
-  public const NEXT_HOP_TYPE_NEXT_HOP_VPN_GATEWAY = 'NEXT_HOP_VPN_GATEWAY';
-  /**
-   * Next hop is an internet gateway.
-   */
-  public const NEXT_HOP_TYPE_NEXT_HOP_INTERNET_GATEWAY = 'NEXT_HOP_INTERNET_GATEWAY';
-  /**
-   * Next hop is blackhole; that is, the next hop either does not exist or is
-   * unusable.
-   */
-  public const NEXT_HOP_TYPE_NEXT_HOP_BLACKHOLE = 'NEXT_HOP_BLACKHOLE';
-  /**
-   * Next hop is the forwarding rule of an Internal Load Balancer.
-   */
-  public const NEXT_HOP_TYPE_NEXT_HOP_ILB = 'NEXT_HOP_ILB';
-  /**
-   * Next hop is a [router appliance instance](https://cloud.google.com/network-
-   * connectivity/docs/network-connectivity-center/concepts/ra-overview).
-   */
-  public const NEXT_HOP_TYPE_NEXT_HOP_ROUTER_APPLIANCE = 'NEXT_HOP_ROUTER_APPLIANCE';
-  /**
-   * Next hop is an NCC hub. This scenario only happens when the user doesn't
-   * have permissions to the project where the next hop resource is located.
-   */
-  public const NEXT_HOP_TYPE_NEXT_HOP_NCC_HUB = 'NEXT_HOP_NCC_HUB';
-  /**
-   * Next hop is Secure Web Proxy Gateway.
-   */
-  public const NEXT_HOP_TYPE_SECURE_WEB_PROXY_GATEWAY = 'SECURE_WEB_PROXY_GATEWAY';
-  /**
-   * Unspecified scope. Default value.
-   */
-  public const ROUTE_SCOPE_ROUTE_SCOPE_UNSPECIFIED = 'ROUTE_SCOPE_UNSPECIFIED';
-  /**
-   * Route is applicable to packets in Network.
-   */
-  public const ROUTE_SCOPE_NETWORK = 'NETWORK';
-  /**
-   * Route is applicable to packets using NCC Hub's routing table.
-   */
-  public const ROUTE_SCOPE_NCC_HUB = 'NCC_HUB';
-  /**
-   * Unspecified type. Default value.
-   */
-  public const ROUTE_TYPE_ROUTE_TYPE_UNSPECIFIED = 'ROUTE_TYPE_UNSPECIFIED';
-  /**
-   * Route is a subnet route automatically created by the system.
-   */
-  public const ROUTE_TYPE_SUBNET = 'SUBNET';
-  /**
-   * Static route created by the user, including the default route to the
-   * internet.
-   */
-  public const ROUTE_TYPE_STATIC = 'STATIC';
-  /**
-   * Dynamic route exchanged between BGP peers.
-   */
-  public const ROUTE_TYPE_DYNAMIC = 'DYNAMIC';
-  /**
-   * A subnet route received from peering network or NCC Hub.
-   */
-  public const ROUTE_TYPE_PEERING_SUBNET = 'PEERING_SUBNET';
-  /**
-   * A static route received from peering network.
-   */
-  public const ROUTE_TYPE_PEERING_STATIC = 'PEERING_STATIC';
-  /**
-   * A dynamic route received from peering network or NCC Hub.
-   */
-  public const ROUTE_TYPE_PEERING_DYNAMIC = 'PEERING_DYNAMIC';
-  /**
-   * Policy based route.
-   */
-  public const ROUTE_TYPE_POLICY_BASED = 'POLICY_BASED';
-  /**
-   * Advertised route. Synthetic route which is used to transition from the
-   * StartFromPrivateNetwork state in Connectivity tests.
-   */
-  public const ROUTE_TYPE_ADVERTISED = 'ADVERTISED';
   protected $collection_key = 'srcPortRanges';
   /**
-   * For ADVERTISED routes, the URI of their next hop, i.e. the URI of the
-   * hybrid endpoint (VPN tunnel, Interconnect attachment, NCC router appliance)
-   * the advertised prefix is advertised through, or URI of the source peered
-   * network. Deprecated in favor of the next_hop_uri field, not used in new
-   * tests.
-   *
-   * @deprecated
    * @var string
    */
   public $advertisedRouteNextHopUri;
   /**
-   * For ADVERTISED dynamic routes, the URI of the Cloud Router that advertised
-   * the corresponding IP prefix.
-   *
    * @var string
    */
   public $advertisedRouteSourceRouterUri;
   /**
-   * Destination IP range of the route.
-   *
    * @var string
    */
   public $destIpRange;
   /**
-   * Destination port ranges of the route. POLICY_BASED routes only.
-   *
    * @var string[]
    */
   public $destPortRanges;
   /**
-   * Name of a route.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Instance tags of the route.
-   *
    * @var string[]
    */
   public $instanceTags;
   /**
-   * For PEERING_SUBNET and PEERING_DYNAMIC routes that are advertised by NCC
-   * Hub, the URI of the corresponding route in NCC Hub's routing table.
-   *
    * @var string
    */
   public $nccHubRouteUri;
   /**
-   * URI of the NCC Hub the route is advertised by. PEERING_SUBNET and
-   * PEERING_DYNAMIC routes that are advertised by NCC Hub only.
-   *
    * @var string
    */
   public $nccHubUri;
   /**
-   * URI of the destination NCC Spoke. PEERING_SUBNET and PEERING_DYNAMIC routes
-   * that are advertised by NCC Hub only.
-   *
    * @var string
    */
   public $nccSpokeUri;
   /**
-   * URI of a VPC network where route is located.
-   *
    * @var string
    */
   public $networkUri;
   /**
-   * String type of the next hop of the route (for example, "VPN tunnel").
-   * Deprecated in favor of the next_hop_type and next_hop_uri fields, not used
-   * in new tests.
-   *
-   * @deprecated
    * @var string
    */
   public $nextHop;
   /**
-   * URI of a VPC network where the next hop resource is located.
-   *
    * @var string
    */
   public $nextHopNetworkUri;
   /**
-   * Type of next hop.
-   *
    * @var string
    */
   public $nextHopType;
   /**
-   * URI of the next hop resource.
-   *
    * @var string
    */
   public $nextHopUri;
   /**
-   * For PEERING_SUBNET, PEERING_STATIC and PEERING_DYNAMIC routes, the name of
-   * the originating SUBNET/STATIC/DYNAMIC route.
-   *
    * @var string
    */
   public $originatingRouteDisplayName;
   /**
-   * For PEERING_SUBNET and PEERING_STATIC routes, the URI of the originating
-   * SUBNET/STATIC route.
-   *
    * @var string
    */
   public $originatingRouteUri;
   /**
-   * Priority of the route.
-   *
    * @var int
    */
   public $priority;
   /**
-   * Protocols of the route. POLICY_BASED routes only.
-   *
    * @var string[]
    */
   public $protocols;
   /**
-   * Region of the route. DYNAMIC, PEERING_DYNAMIC, POLICY_BASED and ADVERTISED
-   * routes only. If set for POLICY_BASED route, this is a region of VLAN
-   * attachments for Cloud Interconnect the route applies to. If set to "all"
-   * for POLICY_BASED route, the route applies to VLAN attachments of Cloud
-   * Interconnect in all regions.
-   *
    * @var string
    */
   public $region;
   /**
-   * Indicates where route is applicable. Deprecated, routes with NCC_HUB scope
-   * are not included in the trace in new tests.
-   *
-   * @deprecated
    * @var string
    */
   public $routeScope;
   /**
-   * Type of route.
-   *
    * @var string
    */
   public $routeType;
   /**
-   * Source IP address range of the route. POLICY_BASED routes only.
-   *
    * @var string
    */
   public $srcIpRange;
   /**
-   * Source port ranges of the route. POLICY_BASED routes only.
-   *
    * @var string[]
    */
   public $srcPortRanges;
   /**
-   * URI of a route. SUBNET, STATIC, PEERING_SUBNET (only for peering network)
-   * and POLICY_BASED routes only.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * For ADVERTISED routes, the URI of their next hop, i.e. the URI of the
-   * hybrid endpoint (VPN tunnel, Interconnect attachment, NCC router appliance)
-   * the advertised prefix is advertised through, or URI of the source peered
-   * network. Deprecated in favor of the next_hop_uri field, not used in new
-   * tests.
-   *
-   * @deprecated
-   * @param string $advertisedRouteNextHopUri
+   * @param string
    */
   public function setAdvertisedRouteNextHopUri($advertisedRouteNextHopUri)
   {
     $this->advertisedRouteNextHopUri = $advertisedRouteNextHopUri;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getAdvertisedRouteNextHopUri()
@@ -322,10 +132,7 @@ class RouteInfo extends \Google\Collection
     return $this->advertisedRouteNextHopUri;
   }
   /**
-   * For ADVERTISED dynamic routes, the URI of the Cloud Router that advertised
-   * the corresponding IP prefix.
-   *
-   * @param string $advertisedRouteSourceRouterUri
+   * @param string
    */
   public function setAdvertisedRouteSourceRouterUri($advertisedRouteSourceRouterUri)
   {
@@ -339,9 +146,7 @@ class RouteInfo extends \Google\Collection
     return $this->advertisedRouteSourceRouterUri;
   }
   /**
-   * Destination IP range of the route.
-   *
-   * @param string $destIpRange
+   * @param string
    */
   public function setDestIpRange($destIpRange)
   {
@@ -355,9 +160,7 @@ class RouteInfo extends \Google\Collection
     return $this->destIpRange;
   }
   /**
-   * Destination port ranges of the route. POLICY_BASED routes only.
-   *
-   * @param string[] $destPortRanges
+   * @param string[]
    */
   public function setDestPortRanges($destPortRanges)
   {
@@ -371,9 +174,7 @@ class RouteInfo extends \Google\Collection
     return $this->destPortRanges;
   }
   /**
-   * Name of a route.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -387,9 +188,7 @@ class RouteInfo extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Instance tags of the route.
-   *
-   * @param string[] $instanceTags
+   * @param string[]
    */
   public function setInstanceTags($instanceTags)
   {
@@ -403,10 +202,7 @@ class RouteInfo extends \Google\Collection
     return $this->instanceTags;
   }
   /**
-   * For PEERING_SUBNET and PEERING_DYNAMIC routes that are advertised by NCC
-   * Hub, the URI of the corresponding route in NCC Hub's routing table.
-   *
-   * @param string $nccHubRouteUri
+   * @param string
    */
   public function setNccHubRouteUri($nccHubRouteUri)
   {
@@ -420,10 +216,7 @@ class RouteInfo extends \Google\Collection
     return $this->nccHubRouteUri;
   }
   /**
-   * URI of the NCC Hub the route is advertised by. PEERING_SUBNET and
-   * PEERING_DYNAMIC routes that are advertised by NCC Hub only.
-   *
-   * @param string $nccHubUri
+   * @param string
    */
   public function setNccHubUri($nccHubUri)
   {
@@ -437,10 +230,7 @@ class RouteInfo extends \Google\Collection
     return $this->nccHubUri;
   }
   /**
-   * URI of the destination NCC Spoke. PEERING_SUBNET and PEERING_DYNAMIC routes
-   * that are advertised by NCC Hub only.
-   *
-   * @param string $nccSpokeUri
+   * @param string
    */
   public function setNccSpokeUri($nccSpokeUri)
   {
@@ -454,9 +244,7 @@ class RouteInfo extends \Google\Collection
     return $this->nccSpokeUri;
   }
   /**
-   * URI of a VPC network where route is located.
-   *
-   * @param string $networkUri
+   * @param string
    */
   public function setNetworkUri($networkUri)
   {
@@ -470,19 +258,13 @@ class RouteInfo extends \Google\Collection
     return $this->networkUri;
   }
   /**
-   * String type of the next hop of the route (for example, "VPN tunnel").
-   * Deprecated in favor of the next_hop_type and next_hop_uri fields, not used
-   * in new tests.
-   *
-   * @deprecated
-   * @param string $nextHop
+   * @param string
    */
   public function setNextHop($nextHop)
   {
     $this->nextHop = $nextHop;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getNextHop()
@@ -490,9 +272,7 @@ class RouteInfo extends \Google\Collection
     return $this->nextHop;
   }
   /**
-   * URI of a VPC network where the next hop resource is located.
-   *
-   * @param string $nextHopNetworkUri
+   * @param string
    */
   public function setNextHopNetworkUri($nextHopNetworkUri)
   {
@@ -506,31 +286,21 @@ class RouteInfo extends \Google\Collection
     return $this->nextHopNetworkUri;
   }
   /**
-   * Type of next hop.
-   *
-   * Accepted values: NEXT_HOP_TYPE_UNSPECIFIED, NEXT_HOP_IP, NEXT_HOP_INSTANCE,
-   * NEXT_HOP_NETWORK, NEXT_HOP_PEERING, NEXT_HOP_INTERCONNECT,
-   * NEXT_HOP_VPN_TUNNEL, NEXT_HOP_VPN_GATEWAY, NEXT_HOP_INTERNET_GATEWAY,
-   * NEXT_HOP_BLACKHOLE, NEXT_HOP_ILB, NEXT_HOP_ROUTER_APPLIANCE,
-   * NEXT_HOP_NCC_HUB, SECURE_WEB_PROXY_GATEWAY
-   *
-   * @param self::NEXT_HOP_TYPE_* $nextHopType
+   * @param string
    */
   public function setNextHopType($nextHopType)
   {
     $this->nextHopType = $nextHopType;
   }
   /**
-   * @return self::NEXT_HOP_TYPE_*
+   * @return string
    */
   public function getNextHopType()
   {
     return $this->nextHopType;
   }
   /**
-   * URI of the next hop resource.
-   *
-   * @param string $nextHopUri
+   * @param string
    */
   public function setNextHopUri($nextHopUri)
   {
@@ -544,10 +314,7 @@ class RouteInfo extends \Google\Collection
     return $this->nextHopUri;
   }
   /**
-   * For PEERING_SUBNET, PEERING_STATIC and PEERING_DYNAMIC routes, the name of
-   * the originating SUBNET/STATIC/DYNAMIC route.
-   *
-   * @param string $originatingRouteDisplayName
+   * @param string
    */
   public function setOriginatingRouteDisplayName($originatingRouteDisplayName)
   {
@@ -561,10 +328,7 @@ class RouteInfo extends \Google\Collection
     return $this->originatingRouteDisplayName;
   }
   /**
-   * For PEERING_SUBNET and PEERING_STATIC routes, the URI of the originating
-   * SUBNET/STATIC route.
-   *
-   * @param string $originatingRouteUri
+   * @param string
    */
   public function setOriginatingRouteUri($originatingRouteUri)
   {
@@ -578,9 +342,7 @@ class RouteInfo extends \Google\Collection
     return $this->originatingRouteUri;
   }
   /**
-   * Priority of the route.
-   *
-   * @param int $priority
+   * @param int
    */
   public function setPriority($priority)
   {
@@ -594,9 +356,7 @@ class RouteInfo extends \Google\Collection
     return $this->priority;
   }
   /**
-   * Protocols of the route. POLICY_BASED routes only.
-   *
-   * @param string[] $protocols
+   * @param string[]
    */
   public function setProtocols($protocols)
   {
@@ -610,13 +370,7 @@ class RouteInfo extends \Google\Collection
     return $this->protocols;
   }
   /**
-   * Region of the route. DYNAMIC, PEERING_DYNAMIC, POLICY_BASED and ADVERTISED
-   * routes only. If set for POLICY_BASED route, this is a region of VLAN
-   * attachments for Cloud Interconnect the route applies to. If set to "all"
-   * for POLICY_BASED route, the route applies to VLAN attachments of Cloud
-   * Interconnect in all regions.
-   *
-   * @param string $region
+   * @param string
    */
   public function setRegion($region)
   {
@@ -630,49 +384,35 @@ class RouteInfo extends \Google\Collection
     return $this->region;
   }
   /**
-   * Indicates where route is applicable. Deprecated, routes with NCC_HUB scope
-   * are not included in the trace in new tests.
-   *
-   * Accepted values: ROUTE_SCOPE_UNSPECIFIED, NETWORK, NCC_HUB
-   *
-   * @deprecated
-   * @param self::ROUTE_SCOPE_* $routeScope
+   * @param string
    */
   public function setRouteScope($routeScope)
   {
     $this->routeScope = $routeScope;
   }
   /**
-   * @deprecated
-   * @return self::ROUTE_SCOPE_*
+   * @return string
    */
   public function getRouteScope()
   {
     return $this->routeScope;
   }
   /**
-   * Type of route.
-   *
-   * Accepted values: ROUTE_TYPE_UNSPECIFIED, SUBNET, STATIC, DYNAMIC,
-   * PEERING_SUBNET, PEERING_STATIC, PEERING_DYNAMIC, POLICY_BASED, ADVERTISED
-   *
-   * @param self::ROUTE_TYPE_* $routeType
+   * @param string
    */
   public function setRouteType($routeType)
   {
     $this->routeType = $routeType;
   }
   /**
-   * @return self::ROUTE_TYPE_*
+   * @return string
    */
   public function getRouteType()
   {
     return $this->routeType;
   }
   /**
-   * Source IP address range of the route. POLICY_BASED routes only.
-   *
-   * @param string $srcIpRange
+   * @param string
    */
   public function setSrcIpRange($srcIpRange)
   {
@@ -686,9 +426,7 @@ class RouteInfo extends \Google\Collection
     return $this->srcIpRange;
   }
   /**
-   * Source port ranges of the route. POLICY_BASED routes only.
-   *
-   * @param string[] $srcPortRanges
+   * @param string[]
    */
   public function setSrcPortRanges($srcPortRanges)
   {
@@ -702,10 +440,7 @@ class RouteInfo extends \Google\Collection
     return $this->srcPortRanges;
   }
   /**
-   * URI of a route. SUBNET, STATIC, PEERING_SUBNET (only for peering network)
-   * and POLICY_BASED routes only.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

@@ -24,10 +24,7 @@ class GoogleCloudDataplexV1DataProfileResultProfile extends \Google\Collection
   protected $fieldsDataType = 'array';
 
   /**
-   * Output only. List of fields with structural and profile information for
-   * each field.
-   *
-   * @param GoogleCloudDataplexV1DataProfileResultProfileField[] $fields
+   * @param GoogleCloudDataplexV1DataProfileResultProfileField[]
    */
   public function setFields($fields)
   {

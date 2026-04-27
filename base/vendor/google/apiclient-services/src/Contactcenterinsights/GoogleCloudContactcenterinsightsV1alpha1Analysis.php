@@ -24,31 +24,20 @@ class GoogleCloudContactcenterinsightsV1alpha1Analysis extends \Google\Model
   protected $annotatorSelectorType = GoogleCloudContactcenterinsightsV1alpha1AnnotatorSelector::class;
   protected $annotatorSelectorDataType = '';
   /**
-   * Output only. The time at which the analysis was created, which occurs when
-   * the long-running operation completes.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Immutable. The resource name of the analysis. Format: projects/{project}/lo
-   * cations/{location}/conversations/{conversation}/analyses/{analysis}
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The time at which the analysis was requested.
-   *
    * @var string
    */
   public $requestTime;
 
   /**
-   * Output only. The result of the analysis, which is populated when the
-   * analysis finishes.
-   *
-   * @param GoogleCloudContactcenterinsightsV1alpha1AnalysisResult $analysisResult
+   * @param GoogleCloudContactcenterinsightsV1alpha1AnalysisResult
    */
   public function setAnalysisResult(GoogleCloudContactcenterinsightsV1alpha1AnalysisResult $analysisResult)
   {
@@ -62,10 +51,7 @@ class GoogleCloudContactcenterinsightsV1alpha1Analysis extends \Google\Model
     return $this->analysisResult;
   }
   /**
-   * To select the annotators to run and the phrase matchers to use (if any). If
-   * not specified, all annotators will be run.
-   *
-   * @param GoogleCloudContactcenterinsightsV1alpha1AnnotatorSelector $annotatorSelector
+   * @param GoogleCloudContactcenterinsightsV1alpha1AnnotatorSelector
    */
   public function setAnnotatorSelector(GoogleCloudContactcenterinsightsV1alpha1AnnotatorSelector $annotatorSelector)
   {
@@ -79,10 +65,7 @@ class GoogleCloudContactcenterinsightsV1alpha1Analysis extends \Google\Model
     return $this->annotatorSelector;
   }
   /**
-   * Output only. The time at which the analysis was created, which occurs when
-   * the long-running operation completes.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -96,10 +79,7 @@ class GoogleCloudContactcenterinsightsV1alpha1Analysis extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Immutable. The resource name of the analysis. Format: projects/{project}/lo
-   * cations/{location}/conversations/{conversation}/analyses/{analysis}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -113,9 +93,7 @@ class GoogleCloudContactcenterinsightsV1alpha1Analysis extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The time at which the analysis was requested.
-   *
-   * @param string $requestTime
+   * @param string
    */
   public function setRequestTime($requestTime)
   {

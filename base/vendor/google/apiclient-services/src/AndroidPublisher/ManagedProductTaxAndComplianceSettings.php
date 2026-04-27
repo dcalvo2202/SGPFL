@@ -17,71 +17,35 @@
 
 namespace Google\Service\AndroidPublisher;
 
-class ManagedProductTaxAndComplianceSettings extends \Google\Collection
+class ManagedProductTaxAndComplianceSettings extends \Google\Model
 {
-  public const EEA_WITHDRAWAL_RIGHT_TYPE_WITHDRAWAL_RIGHT_TYPE_UNSPECIFIED = 'WITHDRAWAL_RIGHT_TYPE_UNSPECIFIED';
-  public const EEA_WITHDRAWAL_RIGHT_TYPE_WITHDRAWAL_RIGHT_DIGITAL_CONTENT = 'WITHDRAWAL_RIGHT_DIGITAL_CONTENT';
-  public const EEA_WITHDRAWAL_RIGHT_TYPE_WITHDRAWAL_RIGHT_SERVICE = 'WITHDRAWAL_RIGHT_SERVICE';
-  protected $collection_key = 'regionalProductAgeRatingInfos';
   /**
-   * Digital content or service classification for products distributed to users
-   * in the European Economic Area (EEA). The withdrawal regime under EEA
-   * consumer laws depends on this classification. Refer to the [Help Center
-   * article](https://support.google.com/googleplay/android-
-   * developer/answer/10463498) for more information.
-   *
    * @var string
    */
   public $eeaWithdrawalRightType;
   /**
-   * Whether this in-app product is declared as a product representing a
-   * tokenized digital asset.
-   *
    * @var bool
    */
   public $isTokenizedDigitalAsset;
-  /**
-   * Product tax category code to assign to the in-app product. Product tax
-   * category determines the transaction tax rates applied to the product. Refer
-   * to the [Help Center article](https://support.google.com/googleplay/android-
-   * developer/answer/16408159) for more information.
-   *
-   * @var string
-   */
-  public $productTaxCategoryCode;
-  protected $regionalProductAgeRatingInfosType = RegionalProductAgeRatingInfo::class;
-  protected $regionalProductAgeRatingInfosDataType = 'array';
   protected $taxRateInfoByRegionCodeType = RegionalTaxRateInfo::class;
   protected $taxRateInfoByRegionCodeDataType = 'map';
 
   /**
-   * Digital content or service classification for products distributed to users
-   * in the European Economic Area (EEA). The withdrawal regime under EEA
-   * consumer laws depends on this classification. Refer to the [Help Center
-   * article](https://support.google.com/googleplay/android-
-   * developer/answer/10463498) for more information.
-   *
-   * Accepted values: WITHDRAWAL_RIGHT_TYPE_UNSPECIFIED,
-   * WITHDRAWAL_RIGHT_DIGITAL_CONTENT, WITHDRAWAL_RIGHT_SERVICE
-   *
-   * @param self::EEA_WITHDRAWAL_RIGHT_TYPE_* $eeaWithdrawalRightType
+   * @param string
    */
   public function setEeaWithdrawalRightType($eeaWithdrawalRightType)
   {
     $this->eeaWithdrawalRightType = $eeaWithdrawalRightType;
   }
   /**
-   * @return self::EEA_WITHDRAWAL_RIGHT_TYPE_*
+   * @return string
    */
   public function getEeaWithdrawalRightType()
   {
     return $this->eeaWithdrawalRightType;
   }
   /**
-   * Whether this in-app product is declared as a product representing a
-   * tokenized digital asset.
-   *
-   * @param bool $isTokenizedDigitalAsset
+   * @param bool
    */
   public function setIsTokenizedDigitalAsset($isTokenizedDigitalAsset)
   {
@@ -95,46 +59,7 @@ class ManagedProductTaxAndComplianceSettings extends \Google\Collection
     return $this->isTokenizedDigitalAsset;
   }
   /**
-   * Product tax category code to assign to the in-app product. Product tax
-   * category determines the transaction tax rates applied to the product. Refer
-   * to the [Help Center article](https://support.google.com/googleplay/android-
-   * developer/answer/16408159) for more information.
-   *
-   * @param string $productTaxCategoryCode
-   */
-  public function setProductTaxCategoryCode($productTaxCategoryCode)
-  {
-    $this->productTaxCategoryCode = $productTaxCategoryCode;
-  }
-  /**
-   * @return string
-   */
-  public function getProductTaxCategoryCode()
-  {
-    return $this->productTaxCategoryCode;
-  }
-  /**
-   * Regional age rating information. Currently this field is only supported for
-   * region code `US`.
-   *
-   * @param RegionalProductAgeRatingInfo[] $regionalProductAgeRatingInfos
-   */
-  public function setRegionalProductAgeRatingInfos($regionalProductAgeRatingInfos)
-  {
-    $this->regionalProductAgeRatingInfos = $regionalProductAgeRatingInfos;
-  }
-  /**
-   * @return RegionalProductAgeRatingInfo[]
-   */
-  public function getRegionalProductAgeRatingInfos()
-  {
-    return $this->regionalProductAgeRatingInfos;
-  }
-  /**
-   * A mapping from region code to tax rate details. The keys are region codes
-   * as defined by Unicode's "CLDR".
-   *
-   * @param RegionalTaxRateInfo[] $taxRateInfoByRegionCode
+   * @param RegionalTaxRateInfo[]
    */
   public function setTaxRateInfoByRegionCode($taxRateInfoByRegionCode)
   {

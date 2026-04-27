@@ -20,16 +20,12 @@ namespace Google\Service\Integrations;
 class EnterpriseCrmEventbusProtoNextTeardownTask extends \Google\Model
 {
   /**
-   * Required. Name of the next teardown task.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Required. Name of the next teardown task.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

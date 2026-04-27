@@ -20,28 +20,20 @@ namespace Google\Service\DisplayVideo;
 class VideoAdInventoryControl extends \Google\Model
 {
   /**
-   * Optional. Whether ads can serve as in-feed format.
-   *
    * @var bool
    */
   public $allowInFeed;
   /**
-   * Optional. Whether ads can serve as in-stream format.
-   *
    * @var bool
    */
   public $allowInStream;
   /**
-   * Optional. Whether ads can serve as shorts format.
-   *
    * @var bool
    */
   public $allowShorts;
 
   /**
-   * Optional. Whether ads can serve as in-feed format.
-   *
-   * @param bool $allowInFeed
+   * @param bool
    */
   public function setAllowInFeed($allowInFeed)
   {
@@ -55,9 +47,7 @@ class VideoAdInventoryControl extends \Google\Model
     return $this->allowInFeed;
   }
   /**
-   * Optional. Whether ads can serve as in-stream format.
-   *
-   * @param bool $allowInStream
+   * @param bool
    */
   public function setAllowInStream($allowInStream)
   {
@@ -71,9 +61,7 @@ class VideoAdInventoryControl extends \Google\Model
     return $this->allowInStream;
   }
   /**
-   * Optional. Whether ads can serve as shorts format.
-   *
-   * @param bool $allowShorts
+   * @param bool
    */
   public function setAllowShorts($allowShorts)
   {

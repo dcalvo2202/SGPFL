@@ -23,9 +23,7 @@ class ModifyMembershipRolesResponse extends \Google\Model
   protected $membershipDataType = '';
 
   /**
-   * The `Membership` resource after modifying its `MembershipRole`s.
-   *
-   * @param Membership $membership
+   * @param Membership
    */
   public function setMembership(Membership $membership)
   {

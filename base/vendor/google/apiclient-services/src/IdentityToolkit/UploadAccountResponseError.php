@@ -20,22 +20,16 @@ namespace Google\Service\IdentityToolkit;
 class UploadAccountResponseError extends \Google\Model
 {
   /**
-   * The index of the malformed account, starting from 0.
-   *
    * @var int
    */
   public $index;
   /**
-   * Detailed error message for the account info.
-   *
    * @var string
    */
   public $message;
 
   /**
-   * The index of the malformed account, starting from 0.
-   *
-   * @param int $index
+   * @param int
    */
   public function setIndex($index)
   {
@@ -49,9 +43,7 @@ class UploadAccountResponseError extends \Google\Model
     return $this->index;
   }
   /**
-   * Detailed error message for the account info.
-   *
-   * @param string $message
+   * @param string
    */
   public function setMessage($message)
   {

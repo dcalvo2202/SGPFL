@@ -19,24 +19,20 @@ namespace Google\Service\Compute;
 
 class InterconnectGroupIntent extends \Google\Model
 {
-  public const TOPOLOGY_CAPABILITY_NO_SLA = 'NO_SLA';
-  public const TOPOLOGY_CAPABILITY_PRODUCTION_CRITICAL = 'PRODUCTION_CRITICAL';
-  public const TOPOLOGY_CAPABILITY_PRODUCTION_NON_CRITICAL = 'PRODUCTION_NON_CRITICAL';
-  public const TOPOLOGY_CAPABILITY_UNSPECIFIED = 'UNSPECIFIED';
   /**
    * @var string
    */
   public $topologyCapability;
 
   /**
-   * @param self::TOPOLOGY_CAPABILITY_* $topologyCapability
+   * @param string
    */
   public function setTopologyCapability($topologyCapability)
   {
     $this->topologyCapability = $topologyCapability;
   }
   /**
-   * @return self::TOPOLOGY_CAPABILITY_*
+   * @return string
    */
   public function getTopologyCapability()
   {

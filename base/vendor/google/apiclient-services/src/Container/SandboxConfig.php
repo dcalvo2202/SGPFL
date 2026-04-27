@@ -20,33 +20,19 @@ namespace Google\Service\Container;
 class SandboxConfig extends \Google\Model
 {
   /**
-   * Default value. This should not be used.
-   */
-  public const TYPE_UNSPECIFIED = 'UNSPECIFIED';
-  /**
-   * Run sandbox using gvisor.
-   */
-  public const TYPE_GVISOR = 'GVISOR';
-  /**
-   * Type of the sandbox to use for the node.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Type of the sandbox to use for the node.
-   *
-   * Accepted values: UNSPECIFIED, GVISOR
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

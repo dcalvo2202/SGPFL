@@ -23,8 +23,6 @@ class ListTenantsResponse extends \Google\Collection
   protected $metadataType = ResponseMetadata::class;
   protected $metadataDataType = '';
   /**
-   * A token to retrieve the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -32,10 +30,7 @@ class ListTenantsResponse extends \Google\Collection
   protected $tenantsDataType = 'array';
 
   /**
-   * Additional information for the API invocation, such as the request tracking
-   * id.
-   *
-   * @param ResponseMetadata $metadata
+   * @param ResponseMetadata
    */
   public function setMetadata(ResponseMetadata $metadata)
   {
@@ -49,9 +44,7 @@ class ListTenantsResponse extends \Google\Collection
     return $this->metadata;
   }
   /**
-   * A token to retrieve the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -65,9 +58,7 @@ class ListTenantsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Tenants for the current client.
-   *
-   * @param Tenant[] $tenants
+   * @param Tenant[]
    */
   public function setTenants($tenants)
   {

@@ -23,19 +23,12 @@ class ConfigSource extends \Google\Collection
   protected $filesType = ConfigFile::class;
   protected $filesDataType = 'array';
   /**
-   * A unique ID for a specific instance of this message, typically assigned by
-   * the client for tracking purpose. If empty, the server may choose to
-   * generate one instead.
-   *
    * @var string
    */
   public $id;
 
   /**
-   * Set of source configuration files that are used to generate a service
-   * configuration (`google.api.Service`).
-   *
-   * @param ConfigFile[] $files
+   * @param ConfigFile[]
    */
   public function setFiles($files)
   {
@@ -49,11 +42,7 @@ class ConfigSource extends \Google\Collection
     return $this->files;
   }
   /**
-   * A unique ID for a specific instance of this message, typically assigned by
-   * the client for tracking purpose. If empty, the server may choose to
-   * generate one instead.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {

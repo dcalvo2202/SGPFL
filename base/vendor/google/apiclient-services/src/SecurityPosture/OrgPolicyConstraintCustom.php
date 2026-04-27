@@ -26,9 +26,7 @@ class OrgPolicyConstraintCustom extends \Google\Collection
   protected $policyRulesDataType = 'array';
 
   /**
-   * Required. Metadata for the constraint.
-   *
-   * @param GoogleCloudSecuritypostureV1CustomConstraint $customConstraint
+   * @param GoogleCloudSecuritypostureV1CustomConstraint
    */
   public function setCustomConstraint(GoogleCloudSecuritypostureV1CustomConstraint $customConstraint)
   {
@@ -42,9 +40,7 @@ class OrgPolicyConstraintCustom extends \Google\Collection
     return $this->customConstraint;
   }
   /**
-   * Required. The rules enforced by the constraint.
-   *
-   * @param GoogleCloudSecuritypostureV1PolicyRule[] $policyRules
+   * @param GoogleCloudSecuritypostureV1PolicyRule[]
    */
   public function setPolicyRules($policyRules)
   {

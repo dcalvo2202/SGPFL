@@ -23,10 +23,7 @@ class GoogleAppsCloudidentityDevicesV1CancelWipeDeviceResponse extends \Google\M
   protected $deviceDataType = '';
 
   /**
-   * Resultant Device object for the action. Note that asset tags will not be
-   * returned in the device object.
-   *
-   * @param GoogleAppsCloudidentityDevicesV1Device $device
+   * @param GoogleAppsCloudidentityDevicesV1Device
    */
   public function setDevice(GoogleAppsCloudidentityDevicesV1Device $device)
   {

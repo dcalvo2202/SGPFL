@@ -23,29 +23,20 @@ class ListAssetsResponse extends \Google\Collection
   protected $listAssetsResultsType = ListAssetsResult::class;
   protected $listAssetsResultsDataType = 'array';
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Time used for executing the list request.
-   *
    * @var string
    */
   public $readTime;
   /**
-   * The total number of assets matching the query.
-   *
    * @var int
    */
   public $totalSize;
 
   /**
-   * Assets matching the list request.
-   *
-   * @param ListAssetsResult[] $listAssetsResults
+   * @param ListAssetsResult[]
    */
   public function setListAssetsResults($listAssetsResults)
   {
@@ -59,10 +50,7 @@ class ListAssetsResponse extends \Google\Collection
     return $this->listAssetsResults;
   }
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -76,9 +64,7 @@ class ListAssetsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Time used for executing the list request.
-   *
-   * @param string $readTime
+   * @param string
    */
   public function setReadTime($readTime)
   {
@@ -92,9 +78,7 @@ class ListAssetsResponse extends \Google\Collection
     return $this->readTime;
   }
   /**
-   * The total number of assets matching the query.
-   *
-   * @param int $totalSize
+   * @param int
    */
   public function setTotalSize($totalSize)
   {

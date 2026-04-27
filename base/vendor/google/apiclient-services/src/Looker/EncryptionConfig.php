@@ -20,43 +20,20 @@ namespace Google\Service\Looker;
 class EncryptionConfig extends \Google\Model
 {
   /**
-   * CMEK status not specified.
-   */
-  public const KMS_KEY_STATE_KMS_KEY_STATE_UNSPECIFIED = 'KMS_KEY_STATE_UNSPECIFIED';
-  /**
-   * CMEK key is currently valid.
-   */
-  public const KMS_KEY_STATE_VALID = 'VALID';
-  /**
-   * CMEK key is currently revoked (instance should in restricted mode).
-   */
-  public const KMS_KEY_STATE_REVOKED = 'REVOKED';
-  /**
-   * Name of the CMEK key in KMS (input parameter).
-   *
    * @var string
    */
   public $kmsKeyName;
   /**
-   * Output only. Full name and version of the CMEK key currently in use to
-   * encrypt Looker data. Format: `projects/{project}/locations/{location}/keyRi
-   * ngs/{ring}/cryptoKeys/{key}/cryptoKeyVersions/{version}`. Empty if CMEK is
-   * not configured in this instance.
-   *
    * @var string
    */
   public $kmsKeyNameVersion;
   /**
-   * Output only. Status of the CMEK key.
-   *
    * @var string
    */
   public $kmsKeyState;
 
   /**
-   * Name of the CMEK key in KMS (input parameter).
-   *
-   * @param string $kmsKeyName
+   * @param string
    */
   public function setKmsKeyName($kmsKeyName)
   {
@@ -70,12 +47,7 @@ class EncryptionConfig extends \Google\Model
     return $this->kmsKeyName;
   }
   /**
-   * Output only. Full name and version of the CMEK key currently in use to
-   * encrypt Looker data. Format: `projects/{project}/locations/{location}/keyRi
-   * ngs/{ring}/cryptoKeys/{key}/cryptoKeyVersions/{version}`. Empty if CMEK is
-   * not configured in this instance.
-   *
-   * @param string $kmsKeyNameVersion
+   * @param string
    */
   public function setKmsKeyNameVersion($kmsKeyNameVersion)
   {
@@ -89,18 +61,14 @@ class EncryptionConfig extends \Google\Model
     return $this->kmsKeyNameVersion;
   }
   /**
-   * Output only. Status of the CMEK key.
-   *
-   * Accepted values: KMS_KEY_STATE_UNSPECIFIED, VALID, REVOKED
-   *
-   * @param self::KMS_KEY_STATE_* $kmsKeyState
+   * @param string
    */
   public function setKmsKeyState($kmsKeyState)
   {
     $this->kmsKeyState = $kmsKeyState;
   }
   /**
-   * @return self::KMS_KEY_STATE_*
+   * @return string
    */
   public function getKmsKeyState()
   {

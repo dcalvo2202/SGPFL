@@ -20,26 +20,16 @@ namespace Google\Service\Firestore;
 class CollectionSelector extends \Google\Model
 {
   /**
-   * When false, selects only collections that are immediate children of the
-   * `parent` specified in the containing `RunQueryRequest`. When true, selects
-   * all descendant collections.
-   *
    * @var bool
    */
   public $allDescendants;
   /**
-   * The collection ID. When set, selects only collections with this ID.
-   *
    * @var string
    */
   public $collectionId;
 
   /**
-   * When false, selects only collections that are immediate children of the
-   * `parent` specified in the containing `RunQueryRequest`. When true, selects
-   * all descendant collections.
-   *
-   * @param bool $allDescendants
+   * @param bool
    */
   public function setAllDescendants($allDescendants)
   {
@@ -53,9 +43,7 @@ class CollectionSelector extends \Google\Model
     return $this->allDescendants;
   }
   /**
-   * The collection ID. When set, selects only collections with this ID.
-   *
-   * @param string $collectionId
+   * @param string
    */
   public function setCollectionId($collectionId)
   {

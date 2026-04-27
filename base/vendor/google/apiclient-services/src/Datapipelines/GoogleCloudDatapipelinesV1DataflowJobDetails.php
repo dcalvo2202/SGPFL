@@ -20,28 +20,15 @@ namespace Google\Service\Datapipelines;
 class GoogleCloudDatapipelinesV1DataflowJobDetails extends \Google\Model
 {
   /**
-   * Output only. The current number of workers used to run the jobs. Only set
-   * to a value if the job is still running.
-   *
    * @var int
    */
   public $currentWorkers;
-  /**
-   * Cached version of all the metrics of interest for the job. This value gets
-   * stored here when the job is terminated. As long as the job is running, this
-   * field is populated from the Dataflow API.
-   *
-   * @var []
-   */
   public $resourceInfo;
   protected $sdkVersionType = GoogleCloudDatapipelinesV1SdkVersion::class;
   protected $sdkVersionDataType = '';
 
   /**
-   * Output only. The current number of workers used to run the jobs. Only set
-   * to a value if the job is still running.
-   *
-   * @param int $currentWorkers
+   * @param int
    */
   public function setCurrentWorkers($currentWorkers)
   {
@@ -63,9 +50,7 @@ class GoogleCloudDatapipelinesV1DataflowJobDetails extends \Google\Model
     return $this->resourceInfo;
   }
   /**
-   * Output only. The SDK version used to run the job.
-   *
-   * @param GoogleCloudDatapipelinesV1SdkVersion $sdkVersion
+   * @param GoogleCloudDatapipelinesV1SdkVersion
    */
   public function setSdkVersion(GoogleCloudDatapipelinesV1SdkVersion $sdkVersion)
   {

@@ -20,33 +20,20 @@ namespace Google\Service\DatabaseMigrationService;
 class ConvertConversionWorkspaceRequest extends \Google\Model
 {
   /**
-   * Optional. Specifies whether the conversion workspace is to be committed
-   * automatically after the conversion.
-   *
    * @var bool
    */
   public $autoCommit;
   /**
-   * Optional. Automatically convert the full entity path for each entity
-   * specified by the filter. For example, if the filter specifies a table, that
-   * table schema (and database if there is one) will also be converted.
-   *
    * @var bool
    */
   public $convertFullPath;
   /**
-   * Optional. Filter the entities to convert. Leaving this field empty will
-   * convert all of the entities. Supports Google AIP-160 style filtering.
-   *
    * @var string
    */
   public $filter;
 
   /**
-   * Optional. Specifies whether the conversion workspace is to be committed
-   * automatically after the conversion.
-   *
-   * @param bool $autoCommit
+   * @param bool
    */
   public function setAutoCommit($autoCommit)
   {
@@ -60,11 +47,7 @@ class ConvertConversionWorkspaceRequest extends \Google\Model
     return $this->autoCommit;
   }
   /**
-   * Optional. Automatically convert the full entity path for each entity
-   * specified by the filter. For example, if the filter specifies a table, that
-   * table schema (and database if there is one) will also be converted.
-   *
-   * @param bool $convertFullPath
+   * @param bool
    */
   public function setConvertFullPath($convertFullPath)
   {
@@ -78,10 +61,7 @@ class ConvertConversionWorkspaceRequest extends \Google\Model
     return $this->convertFullPath;
   }
   /**
-   * Optional. Filter the entities to convert. Leaving this field empty will
-   * convert all of the entities. Supports Google AIP-160 style filtering.
-   *
-   * @param string $filter
+   * @param string
    */
   public function setFilter($filter)
   {

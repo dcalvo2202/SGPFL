@@ -21,20 +21,12 @@ class RemoveTargetedSitesRequest extends \Google\Collection
 {
   protected $collection_key = 'sites';
   /**
-   * A list of site URLs to stop targeting in the pretargeting configuration.
-   * These values will be removed from the list of targeted URLs in
-   * PretargetingConfig.webTargeting.values.
-   *
    * @var string[]
    */
   public $sites;
 
   /**
-   * A list of site URLs to stop targeting in the pretargeting configuration.
-   * These values will be removed from the list of targeted URLs in
-   * PretargetingConfig.webTargeting.values.
-   *
-   * @param string[] $sites
+   * @param string[]
    */
   public function setSites($sites)
   {

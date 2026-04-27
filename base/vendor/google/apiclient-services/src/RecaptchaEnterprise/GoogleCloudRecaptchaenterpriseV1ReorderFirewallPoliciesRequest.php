@@ -21,18 +21,12 @@ class GoogleCloudRecaptchaenterpriseV1ReorderFirewallPoliciesRequest extends \Go
 {
   protected $collection_key = 'names';
   /**
-   * Required. A list containing all policy names, in the new order. Each name
-   * is in the format `projects/{project}/firewallpolicies/{firewallpolicy}`.
-   *
    * @var string[]
    */
   public $names;
 
   /**
-   * Required. A list containing all policy names, in the new order. Each name
-   * is in the format `projects/{project}/firewallpolicies/{firewallpolicy}`.
-   *
-   * @param string[] $names
+   * @param string[]
    */
   public function setNames($names)
   {

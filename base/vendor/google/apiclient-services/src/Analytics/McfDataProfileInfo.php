@@ -20,46 +20,32 @@ namespace Google\Service\Analytics;
 class McfDataProfileInfo extends \Google\Model
 {
   /**
-   * Account ID to which this view (profile) belongs.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * Internal ID for the web property to which this view (profile) belongs.
-   *
    * @var string
    */
   public $internalWebPropertyId;
   /**
-   * View (Profile) ID.
-   *
    * @var string
    */
   public $profileId;
   /**
-   * View (Profile) name.
-   *
    * @var string
    */
   public $profileName;
   /**
-   * Table ID for view (profile).
-   *
    * @var string
    */
   public $tableId;
   /**
-   * Web Property ID to which this view (profile) belongs.
-   *
    * @var string
    */
   public $webPropertyId;
 
   /**
-   * Account ID to which this view (profile) belongs.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -73,9 +59,7 @@ class McfDataProfileInfo extends \Google\Model
     return $this->accountId;
   }
   /**
-   * Internal ID for the web property to which this view (profile) belongs.
-   *
-   * @param string $internalWebPropertyId
+   * @param string
    */
   public function setInternalWebPropertyId($internalWebPropertyId)
   {
@@ -89,9 +73,7 @@ class McfDataProfileInfo extends \Google\Model
     return $this->internalWebPropertyId;
   }
   /**
-   * View (Profile) ID.
-   *
-   * @param string $profileId
+   * @param string
    */
   public function setProfileId($profileId)
   {
@@ -105,9 +87,7 @@ class McfDataProfileInfo extends \Google\Model
     return $this->profileId;
   }
   /**
-   * View (Profile) name.
-   *
-   * @param string $profileName
+   * @param string
    */
   public function setProfileName($profileName)
   {
@@ -121,9 +101,7 @@ class McfDataProfileInfo extends \Google\Model
     return $this->profileName;
   }
   /**
-   * Table ID for view (profile).
-   *
-   * @param string $tableId
+   * @param string
    */
   public function setTableId($tableId)
   {
@@ -137,9 +115,7 @@ class McfDataProfileInfo extends \Google\Model
     return $this->tableId;
   }
   /**
-   * Web Property ID to which this view (profile) belongs.
-   *
-   * @param string $webPropertyId
+   * @param string
    */
   public function setWebPropertyId($webPropertyId)
   {

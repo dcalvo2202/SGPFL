@@ -23,28 +23,20 @@ class FetchAccessTokenResponse extends \Google\Collection
   protected $exchangeErrorType = ExchangeError::class;
   protected $exchangeErrorDataType = '';
   /**
-   * Expiration timestamp. Can be empty if unknown or non-expiring.
-   *
    * @var string
    */
   public $expirationTime;
   /**
-   * The scopes of the access token.
-   *
    * @var string[]
    */
   public $scopes;
   /**
-   * The token content.
-   *
    * @var string
    */
   public $token;
 
   /**
-   * The error resulted from exchanging OAuth tokens from the service provider.
-   *
-   * @param ExchangeError $exchangeError
+   * @param ExchangeError
    */
   public function setExchangeError(ExchangeError $exchangeError)
   {
@@ -58,9 +50,7 @@ class FetchAccessTokenResponse extends \Google\Collection
     return $this->exchangeError;
   }
   /**
-   * Expiration timestamp. Can be empty if unknown or non-expiring.
-   *
-   * @param string $expirationTime
+   * @param string
    */
   public function setExpirationTime($expirationTime)
   {
@@ -74,9 +64,7 @@ class FetchAccessTokenResponse extends \Google\Collection
     return $this->expirationTime;
   }
   /**
-   * The scopes of the access token.
-   *
-   * @param string[] $scopes
+   * @param string[]
    */
   public function setScopes($scopes)
   {
@@ -90,9 +78,7 @@ class FetchAccessTokenResponse extends \Google\Collection
     return $this->scopes;
   }
   /**
-   * The token content.
-   *
-   * @param string $token
+   * @param string
    */
   public function setToken($token)
   {

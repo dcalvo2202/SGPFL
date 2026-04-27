@@ -23,9 +23,7 @@ class ProjectsEnableXpnResourceRequest extends \Google\Model
   protected $xpnResourceDataType = '';
 
   /**
-   * Service resource (a.k.a service project) ID.
-   *
-   * @param XpnResourceId $xpnResource
+   * @param XpnResourceId
    */
   public function setXpnResource(XpnResourceId $xpnResource)
   {

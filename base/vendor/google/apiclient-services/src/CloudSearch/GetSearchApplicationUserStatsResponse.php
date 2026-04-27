@@ -24,7 +24,7 @@ class GetSearchApplicationUserStatsResponse extends \Google\Collection
   protected $statsDataType = 'array';
 
   /**
-   * @param SearchApplicationUserStats[] $stats
+   * @param SearchApplicationUserStats[]
    */
   public function setStats($stats)
   {

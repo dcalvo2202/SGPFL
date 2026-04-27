@@ -21,25 +21,16 @@ class GoogleCloudAiplatformV1RetrieveContextsRequestVertexRagStoreRagResource ex
 {
   protected $collection_key = 'ragFileIds';
   /**
-   * Optional. RagCorpora resource name. Format:
-   * `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}`
-   *
    * @var string
    */
   public $ragCorpus;
   /**
-   * Optional. rag_file_id. The files should be in the same rag_corpus set in
-   * rag_corpus field.
-   *
    * @var string[]
    */
   public $ragFileIds;
 
   /**
-   * Optional. RagCorpora resource name. Format:
-   * `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}`
-   *
-   * @param string $ragCorpus
+   * @param string
    */
   public function setRagCorpus($ragCorpus)
   {
@@ -53,10 +44,7 @@ class GoogleCloudAiplatformV1RetrieveContextsRequestVertexRagStoreRagResource ex
     return $this->ragCorpus;
   }
   /**
-   * Optional. rag_file_id. The files should be in the same rag_corpus set in
-   * rag_corpus field.
-   *
-   * @param string[] $ragFileIds
+   * @param string[]
    */
   public function setRagFileIds($ragFileIds)
   {

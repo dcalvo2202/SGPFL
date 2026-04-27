@@ -19,104 +19,47 @@ namespace Google\Service\Gmail;
 
 class Label extends \Google\Model
 {
-  /**
-   * Show the label in the label list.
-   */
-  public const LABEL_LIST_VISIBILITY_labelShow = 'labelShow';
-  /**
-   * Show the label if there are any unread messages with that label.
-   */
-  public const LABEL_LIST_VISIBILITY_labelShowIfUnread = 'labelShowIfUnread';
-  /**
-   * Do not show the label in the label list.
-   */
-  public const LABEL_LIST_VISIBILITY_labelHide = 'labelHide';
-  /**
-   * Show the label in the message list.
-   */
-  public const MESSAGE_LIST_VISIBILITY_show = 'show';
-  /**
-   * Do not show the label in the message list.
-   */
-  public const MESSAGE_LIST_VISIBILITY_hide = 'hide';
-  /**
-   * Labels created by Gmail.
-   */
-  public const TYPE_system = 'system';
-  /**
-   * Custom labels created by the user or application.
-   */
-  public const TYPE_user = 'user';
   protected $colorType = LabelColor::class;
   protected $colorDataType = '';
   /**
-   * The immutable ID of the label.
-   *
    * @var string
    */
   public $id;
   /**
-   * The visibility of the label in the label list in the Gmail web interface.
-   *
    * @var string
    */
   public $labelListVisibility;
   /**
-   * The visibility of messages with this label in the message list in the Gmail
-   * web interface.
-   *
    * @var string
    */
   public $messageListVisibility;
   /**
-   * The total number of messages with the label.
-   *
    * @var int
    */
   public $messagesTotal;
   /**
-   * The number of unread messages with the label.
-   *
    * @var int
    */
   public $messagesUnread;
   /**
-   * The display name of the label.
-   *
    * @var string
    */
   public $name;
   /**
-   * The total number of threads with the label.
-   *
    * @var int
    */
   public $threadsTotal;
   /**
-   * The number of unread threads with the label.
-   *
    * @var int
    */
   public $threadsUnread;
   /**
-   * The owner type for the label. User labels are created by the user and can
-   * be modified and deleted by the user and can be applied to any message or
-   * thread. System labels are internally created and cannot be added, modified,
-   * or deleted. System labels may be able to be applied to or removed from
-   * messages and threads under some circumstances but this is not guaranteed.
-   * For example, users can apply and remove the `INBOX` and `UNREAD` labels
-   * from messages and threads, but cannot apply or remove the `DRAFTS` or
-   * `SENT` labels from messages or threads.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The color to assign to the label. Color is only available for labels that
-   * have their `type` set to `user`.
-   *
-   * @param LabelColor $color
+   * @param LabelColor
    */
   public function setColor(LabelColor $color)
   {
@@ -130,9 +73,7 @@ class Label extends \Google\Model
     return $this->color;
   }
   /**
-   * The immutable ID of the label.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -146,46 +87,35 @@ class Label extends \Google\Model
     return $this->id;
   }
   /**
-   * The visibility of the label in the label list in the Gmail web interface.
-   *
-   * Accepted values: labelShow, labelShowIfUnread, labelHide
-   *
-   * @param self::LABEL_LIST_VISIBILITY_* $labelListVisibility
+   * @param string
    */
   public function setLabelListVisibility($labelListVisibility)
   {
     $this->labelListVisibility = $labelListVisibility;
   }
   /**
-   * @return self::LABEL_LIST_VISIBILITY_*
+   * @return string
    */
   public function getLabelListVisibility()
   {
     return $this->labelListVisibility;
   }
   /**
-   * The visibility of messages with this label in the message list in the Gmail
-   * web interface.
-   *
-   * Accepted values: show, hide
-   *
-   * @param self::MESSAGE_LIST_VISIBILITY_* $messageListVisibility
+   * @param string
    */
   public function setMessageListVisibility($messageListVisibility)
   {
     $this->messageListVisibility = $messageListVisibility;
   }
   /**
-   * @return self::MESSAGE_LIST_VISIBILITY_*
+   * @return string
    */
   public function getMessageListVisibility()
   {
     return $this->messageListVisibility;
   }
   /**
-   * The total number of messages with the label.
-   *
-   * @param int $messagesTotal
+   * @param int
    */
   public function setMessagesTotal($messagesTotal)
   {
@@ -199,9 +129,7 @@ class Label extends \Google\Model
     return $this->messagesTotal;
   }
   /**
-   * The number of unread messages with the label.
-   *
-   * @param int $messagesUnread
+   * @param int
    */
   public function setMessagesUnread($messagesUnread)
   {
@@ -215,9 +143,7 @@ class Label extends \Google\Model
     return $this->messagesUnread;
   }
   /**
-   * The display name of the label.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -231,9 +157,7 @@ class Label extends \Google\Model
     return $this->name;
   }
   /**
-   * The total number of threads with the label.
-   *
-   * @param int $threadsTotal
+   * @param int
    */
   public function setThreadsTotal($threadsTotal)
   {
@@ -247,9 +171,7 @@ class Label extends \Google\Model
     return $this->threadsTotal;
   }
   /**
-   * The number of unread threads with the label.
-   *
-   * @param int $threadsUnread
+   * @param int
    */
   public function setThreadsUnread($threadsUnread)
   {
@@ -263,25 +185,14 @@ class Label extends \Google\Model
     return $this->threadsUnread;
   }
   /**
-   * The owner type for the label. User labels are created by the user and can
-   * be modified and deleted by the user and can be applied to any message or
-   * thread. System labels are internally created and cannot be added, modified,
-   * or deleted. System labels may be able to be applied to or removed from
-   * messages and threads under some circumstances but this is not guaranteed.
-   * For example, users can apply and remove the `INBOX` and `UNREAD` labels
-   * from messages and threads, but cannot apply or remove the `DRAFTS` or
-   * `SENT` labels from messages or threads.
-   *
-   * Accepted values: system, user
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

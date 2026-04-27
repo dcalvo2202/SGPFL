@@ -21,9 +21,6 @@ class ListSearchApplicationsResponse extends \Google\Collection
 {
   protected $collection_key = 'searchApplications';
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListSearchApplicationsResponse extends \Google\Collection
   protected $searchApplicationsDataType = 'array';
 
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,7 +42,7 @@ class ListSearchApplicationsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * @param SearchApplication[] $searchApplications
+   * @param SearchApplication[]
    */
   public function setSearchApplications($searchApplications)
   {

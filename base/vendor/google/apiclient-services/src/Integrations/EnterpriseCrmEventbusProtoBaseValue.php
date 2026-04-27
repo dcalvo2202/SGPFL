@@ -24,17 +24,12 @@ class EnterpriseCrmEventbusProtoBaseValue extends \Google\Model
   protected $literalValueType = EnterpriseCrmEventbusProtoParameterValueType::class;
   protected $literalValueDataType = '';
   /**
-   * Start with a reference value to dereference.
-   *
    * @var string
    */
   public $referenceValue;
 
   /**
-   * Start with a function that does not build on existing values. Eg.
-   * CurrentTime, Min, Max, Exists, etc.
-   *
-   * @param EnterpriseCrmEventbusProtoFunction $baseFunction
+   * @param EnterpriseCrmEventbusProtoFunction
    */
   public function setBaseFunction(EnterpriseCrmEventbusProtoFunction $baseFunction)
   {
@@ -48,9 +43,7 @@ class EnterpriseCrmEventbusProtoBaseValue extends \Google\Model
     return $this->baseFunction;
   }
   /**
-   * Start with a literal value.
-   *
-   * @param EnterpriseCrmEventbusProtoParameterValueType $literalValue
+   * @param EnterpriseCrmEventbusProtoParameterValueType
    */
   public function setLiteralValue(EnterpriseCrmEventbusProtoParameterValueType $literalValue)
   {
@@ -64,9 +57,7 @@ class EnterpriseCrmEventbusProtoBaseValue extends \Google\Model
     return $this->literalValue;
   }
   /**
-   * Start with a reference value to dereference.
-   *
-   * @param string $referenceValue
+   * @param string
    */
   public function setReferenceValue($referenceValue)
   {

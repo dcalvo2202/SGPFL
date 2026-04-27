@@ -23,90 +23,58 @@ class GoogleCloudApigeeV1SharedFlowRevision extends \Google\Collection
   protected $configurationVersionType = GoogleCloudApigeeV1ConfigVersion::class;
   protected $configurationVersionDataType = '';
   /**
-   * A textual description of the shared flow revision.
-   *
    * @var string
    */
   public $contextInfo;
   /**
-   * Time at which this shared flow revision was created, in milliseconds since
-   * epoch.
-   *
    * @var string
    */
   public $createdAt;
   /**
-   * Description of the shared flow revision.
-   *
    * @var string
    */
   public $description;
   /**
-   * The human readable name of this shared flow.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * A Key-Value map of metadata about this shared flow revision.
-   *
    * @var string[]
    */
   public $entityMetaDataAsProperties;
   /**
-   * Time at which this shared flow revision was most recently modified, in
-   * milliseconds since epoch.
-   *
    * @var string
    */
   public $lastModifiedAt;
   /**
-   * The resource ID of the parent shared flow.
-   *
    * @var string
    */
   public $name;
   /**
-   * A list of policy names included in this shared flow revision.
-   *
    * @var string[]
    */
   public $policies;
   protected $resourceFilesType = GoogleCloudApigeeV1ResourceFiles::class;
   protected $resourceFilesDataType = '';
   /**
-   * A list of the resources included in this shared flow revision formatted as
-   * "{type}://{name}".
-   *
    * @var string[]
    */
   public $resources;
   /**
-   * The resource ID of this revision.
-   *
    * @var string
    */
   public $revision;
   /**
-   * A list of the shared flow names included in this shared flow revision.
-   *
    * @var string[]
    */
   public $sharedFlows;
   /**
-   * The string "Application"
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The version of the configuration schema to which this shared flow conforms.
-   * The only supported value currently is majorVersion 4 and minorVersion 0.
-   * This setting may be used in the future to enable evolution of the shared
-   * flow format.
-   *
-   * @param GoogleCloudApigeeV1ConfigVersion $configurationVersion
+   * @param GoogleCloudApigeeV1ConfigVersion
    */
   public function setConfigurationVersion(GoogleCloudApigeeV1ConfigVersion $configurationVersion)
   {
@@ -120,9 +88,7 @@ class GoogleCloudApigeeV1SharedFlowRevision extends \Google\Collection
     return $this->configurationVersion;
   }
   /**
-   * A textual description of the shared flow revision.
-   *
-   * @param string $contextInfo
+   * @param string
    */
   public function setContextInfo($contextInfo)
   {
@@ -136,10 +102,7 @@ class GoogleCloudApigeeV1SharedFlowRevision extends \Google\Collection
     return $this->contextInfo;
   }
   /**
-   * Time at which this shared flow revision was created, in milliseconds since
-   * epoch.
-   *
-   * @param string $createdAt
+   * @param string
    */
   public function setCreatedAt($createdAt)
   {
@@ -153,9 +116,7 @@ class GoogleCloudApigeeV1SharedFlowRevision extends \Google\Collection
     return $this->createdAt;
   }
   /**
-   * Description of the shared flow revision.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -169,9 +130,7 @@ class GoogleCloudApigeeV1SharedFlowRevision extends \Google\Collection
     return $this->description;
   }
   /**
-   * The human readable name of this shared flow.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -185,9 +144,7 @@ class GoogleCloudApigeeV1SharedFlowRevision extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * A Key-Value map of metadata about this shared flow revision.
-   *
-   * @param string[] $entityMetaDataAsProperties
+   * @param string[]
    */
   public function setEntityMetaDataAsProperties($entityMetaDataAsProperties)
   {
@@ -201,10 +158,7 @@ class GoogleCloudApigeeV1SharedFlowRevision extends \Google\Collection
     return $this->entityMetaDataAsProperties;
   }
   /**
-   * Time at which this shared flow revision was most recently modified, in
-   * milliseconds since epoch.
-   *
-   * @param string $lastModifiedAt
+   * @param string
    */
   public function setLastModifiedAt($lastModifiedAt)
   {
@@ -218,9 +172,7 @@ class GoogleCloudApigeeV1SharedFlowRevision extends \Google\Collection
     return $this->lastModifiedAt;
   }
   /**
-   * The resource ID of the parent shared flow.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -234,9 +186,7 @@ class GoogleCloudApigeeV1SharedFlowRevision extends \Google\Collection
     return $this->name;
   }
   /**
-   * A list of policy names included in this shared flow revision.
-   *
-   * @param string[] $policies
+   * @param string[]
    */
   public function setPolicies($policies)
   {
@@ -250,9 +200,7 @@ class GoogleCloudApigeeV1SharedFlowRevision extends \Google\Collection
     return $this->policies;
   }
   /**
-   * The resource files included in this shared flow revision.
-   *
-   * @param GoogleCloudApigeeV1ResourceFiles $resourceFiles
+   * @param GoogleCloudApigeeV1ResourceFiles
    */
   public function setResourceFiles(GoogleCloudApigeeV1ResourceFiles $resourceFiles)
   {
@@ -266,10 +214,7 @@ class GoogleCloudApigeeV1SharedFlowRevision extends \Google\Collection
     return $this->resourceFiles;
   }
   /**
-   * A list of the resources included in this shared flow revision formatted as
-   * "{type}://{name}".
-   *
-   * @param string[] $resources
+   * @param string[]
    */
   public function setResources($resources)
   {
@@ -283,9 +228,7 @@ class GoogleCloudApigeeV1SharedFlowRevision extends \Google\Collection
     return $this->resources;
   }
   /**
-   * The resource ID of this revision.
-   *
-   * @param string $revision
+   * @param string
    */
   public function setRevision($revision)
   {
@@ -299,9 +242,7 @@ class GoogleCloudApigeeV1SharedFlowRevision extends \Google\Collection
     return $this->revision;
   }
   /**
-   * A list of the shared flow names included in this shared flow revision.
-   *
-   * @param string[] $sharedFlows
+   * @param string[]
    */
   public function setSharedFlows($sharedFlows)
   {
@@ -315,9 +256,7 @@ class GoogleCloudApigeeV1SharedFlowRevision extends \Google\Collection
     return $this->sharedFlows;
   }
   /**
-   * The string "Application"
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

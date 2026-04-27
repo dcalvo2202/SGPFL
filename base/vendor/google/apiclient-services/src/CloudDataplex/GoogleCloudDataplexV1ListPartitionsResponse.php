@@ -21,9 +21,6 @@ class GoogleCloudDataplexV1ListPartitionsResponse extends \Google\Collection
 {
   protected $collection_key = 'partitions';
   /**
-   * Token to retrieve the next page of results, or empty if there are no
-   * remaining results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GoogleCloudDataplexV1ListPartitionsResponse extends \Google\Collection
   protected $partitionsDataType = 'array';
 
   /**
-   * Token to retrieve the next page of results, or empty if there are no
-   * remaining results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class GoogleCloudDataplexV1ListPartitionsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Partitions under the specified parent entity.
-   *
-   * @param GoogleCloudDataplexV1Partition[] $partitions
+   * @param GoogleCloudDataplexV1Partition[]
    */
   public function setPartitions($partitions)
   {

@@ -23,9 +23,7 @@ class SearchResult extends \Google\Model
   protected $personDataType = '';
 
   /**
-   * The matched Person.
-   *
-   * @param Person $person
+   * @param Person
    */
   public function setPerson(Person $person)
   {

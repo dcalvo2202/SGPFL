@@ -21,26 +21,16 @@ class BareMetalIslandModeCidrConfig extends \Google\Collection
 {
   protected $collection_key = 'serviceAddressCidrBlocks';
   /**
-   * Required. All pods in the cluster are assigned an RFC1918 IPv4 address from
-   * these ranges. This field cannot be changed after creation.
-   *
    * @var string[]
    */
   public $podAddressCidrBlocks;
   /**
-   * Required. All services in the cluster are assigned an RFC1918 IPv4 address
-   * from these ranges. This field is mutable after creation starting with
-   * version 1.15.
-   *
    * @var string[]
    */
   public $serviceAddressCidrBlocks;
 
   /**
-   * Required. All pods in the cluster are assigned an RFC1918 IPv4 address from
-   * these ranges. This field cannot be changed after creation.
-   *
-   * @param string[] $podAddressCidrBlocks
+   * @param string[]
    */
   public function setPodAddressCidrBlocks($podAddressCidrBlocks)
   {
@@ -54,11 +44,7 @@ class BareMetalIslandModeCidrConfig extends \Google\Collection
     return $this->podAddressCidrBlocks;
   }
   /**
-   * Required. All services in the cluster are assigned an RFC1918 IPv4 address
-   * from these ranges. This field is mutable after creation starting with
-   * version 1.15.
-   *
-   * @param string[] $serviceAddressCidrBlocks
+   * @param string[]
    */
   public function setServiceAddressCidrBlocks($serviceAddressCidrBlocks)
   {

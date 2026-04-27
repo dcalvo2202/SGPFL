@@ -24,9 +24,7 @@ class GoogleCloudAiplatformV1TrajectoryInOrderMatchResults extends \Google\Colle
   protected $trajectoryInOrderMatchMetricValuesDataType = 'array';
 
   /**
-   * Output only. TrajectoryInOrderMatch metric values.
-   *
-   * @param GoogleCloudAiplatformV1TrajectoryInOrderMatchMetricValue[] $trajectoryInOrderMatchMetricValues
+   * @param GoogleCloudAiplatformV1TrajectoryInOrderMatchMetricValue[]
    */
   public function setTrajectoryInOrderMatchMetricValues($trajectoryInOrderMatchMetricValues)
   {

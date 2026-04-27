@@ -19,237 +19,121 @@ namespace Google\Service\Merchant;
 
 class ProductReviewAttributes extends \Google\Collection
 {
-  /**
-   * Collection method unspecified.
-   */
-  public const COLLECTION_METHOD_COLLECTION_METHOD_UNSPECIFIED = 'COLLECTION_METHOD_UNSPECIFIED';
-  /**
-   * The user was not responding to a specific solicitation when they submitted
-   * the review.
-   */
-  public const COLLECTION_METHOD_UNSOLICITED = 'UNSOLICITED';
-  /**
-   * The user submitted the review in response to a solicitation after
-   * fulfillment of the user's order.
-   */
-  public const COLLECTION_METHOD_POST_FULFILLMENT = 'POST_FULFILLMENT';
   protected $collection_key = 'skus';
   /**
-   * Optional. The name of the aggregator of the product reviews. A publisher
-   * may use a reviews aggregator to manage reviews and provide the feeds. This
-   * element indicates the use of an aggregator and contains information about
-   * the aggregator.
-   *
    * @var string
    */
   public $aggregatorName;
   /**
-   * Optional. Contains ASINs (Amazon Standard Identification Numbers)
-   * associated with a product.
-   *
    * @var string[]
    */
   public $asins;
   /**
-   * Optional. Contains brand names associated with a product.
-   *
    * @var string[]
    */
   public $brands;
   /**
-   * Optional. The method used to collect the review.
-   *
    * @var string
    */
   public $collectionMethod;
   /**
-   * Optional. Contains the disadvantages based on the opinion of the reviewer.
-   * Omit boilerplate text like "con:" unless it was written by the reviewer.
-   *
    * @var string[]
    */
   public $cons;
   /**
-   * Optional. The content of the review. If empty, the content might still get
-   * populated from pros and cons.
-   *
    * @var string
    */
   public $content;
   /**
-   * Optional. Contains GTINs (global trade item numbers) associated with a
-   * product. Sub-types of GTINs (e.g. UPC, EAN, ISBN, JAN) are supported.
-   *
    * @var string[]
    */
   public $gtins;
   /**
-   * Optional. Indicates whether the review is incentivized.
-   *
-   * @var bool
-   */
-  public $isIncentivizedReview;
-  /**
-   * Optional. Indicates whether the review is marked as spam in the publisher's
-   * system.
-   *
    * @var bool
    */
   public $isSpam;
   /**
-   * Optional. Indicates whether the reviewer's purchase is verified.
-   *
-   * @var bool
-   */
-  public $isVerifiedPurchase;
-  /**
-   * Optional. The maximum possible number for the rating. The value of the max
-   * rating must be greater than the value of the min attribute.
-   *
    * @var string
    */
   public $maxRating;
   /**
-   * Optional. Contains the ratings associated with the review. The minimum
-   * possible number for the rating. This should be the worst possible rating
-   * and should not be a value for no rating.
-   *
    * @var string
    */
   public $minRating;
   /**
-   * Optional. Contains MPNs (manufacturer part numbers) associated with a
-   * product.
-   *
    * @var string[]
    */
   public $mpns;
   /**
-   * Optional. The URI of the product. This URI can have the same value as the
-   * `review_link` element, if the review URI and the product URI are the same.
-   *
    * @var string[]
    */
   public $productLinks;
   /**
-   * Optional. Descriptive name of a product.
-   *
    * @var string[]
    */
   public $productNames;
   /**
-   * Optional. Contains the advantages based on the opinion of the reviewer.
-   * Omit boilerplate text like "pro:" unless it was written by the reviewer.
-   *
    * @var string[]
    */
   public $pros;
   /**
-   * Optional. A link to the company favicon of the publisher. The image
-   * dimensions should be favicon size: 16x16 pixels. The image format should be
-   * GIF, JPG or PNG.
-   *
    * @var string
    */
   public $publisherFavicon;
   /**
-   * Optional. The name of the publisher of the product reviews. The information
-   * about the publisher, which may be a retailer, manufacturer, reviews service
-   * company, or any entity that publishes product reviews.
-   *
    * @var string
    */
   public $publisherName;
-  /**
-   * Optional. The reviewer's overall rating of the product.
-   *
-   * @var 
-   */
   public $rating;
   /**
-   * Optional. The country of the review defined by ISO 3166-1 Alpha-2 Country
-   * Code.
-   *
    * @var string
    */
   public $reviewCountry;
   /**
-   * Optional. The language of the review defined by BCP-47 language code.
-   *
    * @var string
    */
   public $reviewLanguage;
   protected $reviewLinkType = ReviewLink::class;
   protected $reviewLinkDataType = '';
   /**
-   * Required. The timestamp indicating when the review was written.
-   *
    * @var string
    */
   public $reviewTime;
   /**
-   * Optional. The author of the product review. A permanent, unique identifier
-   * for the author of the review in the publisher's system.
-   *
    * @var string
    */
   public $reviewerId;
   /**
-   * Optional. A URI to an image of the reviewed product created by the review
-   * author. The URI does not have to end with an image file extension.
-   *
    * @var string[]
    */
   public $reviewerImageLinks;
   /**
-   * Optional. Set to true if the reviewer should remain anonymous.
-   *
    * @var bool
    */
   public $reviewerIsAnonymous;
   /**
-   * Optional. The name of the reviewer of the product review.
-   *
    * @var string
    */
   public $reviewerUsername;
   /**
-   * Optional. Contains SKUs (stock keeping units) associated with a product.
-   * Often this matches the product Offer Id in the product feed.
-   *
    * @var string[]
    */
   public $skus;
   /**
-   * Optional. The name of the subclient of the product reviews. The subclient
-   * is an identifier of the product review source. It should be equivalent to
-   * the directory provided in the file data source path.
-   *
    * @var string
    */
   public $subclientName;
   /**
-   * Optional. The title of the review.
-   *
    * @var string
    */
   public $title;
   /**
-   * Optional. A permanent, unique identifier for the transaction associated
-   * with the review in the publisher's system. This ID can be used to indicate
-   * that multiple reviews are associated with the same transaction.
-   *
    * @var string
    */
   public $transactionId;
 
   /**
-   * Optional. The name of the aggregator of the product reviews. A publisher
-   * may use a reviews aggregator to manage reviews and provide the feeds. This
-   * element indicates the use of an aggregator and contains information about
-   * the aggregator.
-   *
-   * @param string $aggregatorName
+   * @param string
    */
   public function setAggregatorName($aggregatorName)
   {
@@ -263,10 +147,7 @@ class ProductReviewAttributes extends \Google\Collection
     return $this->aggregatorName;
   }
   /**
-   * Optional. Contains ASINs (Amazon Standard Identification Numbers)
-   * associated with a product.
-   *
-   * @param string[] $asins
+   * @param string[]
    */
   public function setAsins($asins)
   {
@@ -280,9 +161,7 @@ class ProductReviewAttributes extends \Google\Collection
     return $this->asins;
   }
   /**
-   * Optional. Contains brand names associated with a product.
-   *
-   * @param string[] $brands
+   * @param string[]
    */
   public function setBrands($brands)
   {
@@ -296,29 +175,21 @@ class ProductReviewAttributes extends \Google\Collection
     return $this->brands;
   }
   /**
-   * Optional. The method used to collect the review.
-   *
-   * Accepted values: COLLECTION_METHOD_UNSPECIFIED, UNSOLICITED,
-   * POST_FULFILLMENT
-   *
-   * @param self::COLLECTION_METHOD_* $collectionMethod
+   * @param string
    */
   public function setCollectionMethod($collectionMethod)
   {
     $this->collectionMethod = $collectionMethod;
   }
   /**
-   * @return self::COLLECTION_METHOD_*
+   * @return string
    */
   public function getCollectionMethod()
   {
     return $this->collectionMethod;
   }
   /**
-   * Optional. Contains the disadvantages based on the opinion of the reviewer.
-   * Omit boilerplate text like "con:" unless it was written by the reviewer.
-   *
-   * @param string[] $cons
+   * @param string[]
    */
   public function setCons($cons)
   {
@@ -332,10 +203,7 @@ class ProductReviewAttributes extends \Google\Collection
     return $this->cons;
   }
   /**
-   * Optional. The content of the review. If empty, the content might still get
-   * populated from pros and cons.
-   *
-   * @param string $content
+   * @param string
    */
   public function setContent($content)
   {
@@ -349,10 +217,7 @@ class ProductReviewAttributes extends \Google\Collection
     return $this->content;
   }
   /**
-   * Optional. Contains GTINs (global trade item numbers) associated with a
-   * product. Sub-types of GTINs (e.g. UPC, EAN, ISBN, JAN) are supported.
-   *
-   * @param string[] $gtins
+   * @param string[]
    */
   public function setGtins($gtins)
   {
@@ -366,26 +231,7 @@ class ProductReviewAttributes extends \Google\Collection
     return $this->gtins;
   }
   /**
-   * Optional. Indicates whether the review is incentivized.
-   *
-   * @param bool $isIncentivizedReview
-   */
-  public function setIsIncentivizedReview($isIncentivizedReview)
-  {
-    $this->isIncentivizedReview = $isIncentivizedReview;
-  }
-  /**
-   * @return bool
-   */
-  public function getIsIncentivizedReview()
-  {
-    return $this->isIncentivizedReview;
-  }
-  /**
-   * Optional. Indicates whether the review is marked as spam in the publisher's
-   * system.
-   *
-   * @param bool $isSpam
+   * @param bool
    */
   public function setIsSpam($isSpam)
   {
@@ -399,26 +245,7 @@ class ProductReviewAttributes extends \Google\Collection
     return $this->isSpam;
   }
   /**
-   * Optional. Indicates whether the reviewer's purchase is verified.
-   *
-   * @param bool $isVerifiedPurchase
-   */
-  public function setIsVerifiedPurchase($isVerifiedPurchase)
-  {
-    $this->isVerifiedPurchase = $isVerifiedPurchase;
-  }
-  /**
-   * @return bool
-   */
-  public function getIsVerifiedPurchase()
-  {
-    return $this->isVerifiedPurchase;
-  }
-  /**
-   * Optional. The maximum possible number for the rating. The value of the max
-   * rating must be greater than the value of the min attribute.
-   *
-   * @param string $maxRating
+   * @param string
    */
   public function setMaxRating($maxRating)
   {
@@ -432,11 +259,7 @@ class ProductReviewAttributes extends \Google\Collection
     return $this->maxRating;
   }
   /**
-   * Optional. Contains the ratings associated with the review. The minimum
-   * possible number for the rating. This should be the worst possible rating
-   * and should not be a value for no rating.
-   *
-   * @param string $minRating
+   * @param string
    */
   public function setMinRating($minRating)
   {
@@ -450,10 +273,7 @@ class ProductReviewAttributes extends \Google\Collection
     return $this->minRating;
   }
   /**
-   * Optional. Contains MPNs (manufacturer part numbers) associated with a
-   * product.
-   *
-   * @param string[] $mpns
+   * @param string[]
    */
   public function setMpns($mpns)
   {
@@ -467,10 +287,7 @@ class ProductReviewAttributes extends \Google\Collection
     return $this->mpns;
   }
   /**
-   * Optional. The URI of the product. This URI can have the same value as the
-   * `review_link` element, if the review URI and the product URI are the same.
-   *
-   * @param string[] $productLinks
+   * @param string[]
    */
   public function setProductLinks($productLinks)
   {
@@ -484,9 +301,7 @@ class ProductReviewAttributes extends \Google\Collection
     return $this->productLinks;
   }
   /**
-   * Optional. Descriptive name of a product.
-   *
-   * @param string[] $productNames
+   * @param string[]
    */
   public function setProductNames($productNames)
   {
@@ -500,10 +315,7 @@ class ProductReviewAttributes extends \Google\Collection
     return $this->productNames;
   }
   /**
-   * Optional. Contains the advantages based on the opinion of the reviewer.
-   * Omit boilerplate text like "pro:" unless it was written by the reviewer.
-   *
-   * @param string[] $pros
+   * @param string[]
    */
   public function setPros($pros)
   {
@@ -517,11 +329,7 @@ class ProductReviewAttributes extends \Google\Collection
     return $this->pros;
   }
   /**
-   * Optional. A link to the company favicon of the publisher. The image
-   * dimensions should be favicon size: 16x16 pixels. The image format should be
-   * GIF, JPG or PNG.
-   *
-   * @param string $publisherFavicon
+   * @param string
    */
   public function setPublisherFavicon($publisherFavicon)
   {
@@ -535,11 +343,7 @@ class ProductReviewAttributes extends \Google\Collection
     return $this->publisherFavicon;
   }
   /**
-   * Optional. The name of the publisher of the product reviews. The information
-   * about the publisher, which may be a retailer, manufacturer, reviews service
-   * company, or any entity that publishes product reviews.
-   *
-   * @param string $publisherName
+   * @param string
    */
   public function setPublisherName($publisherName)
   {
@@ -561,10 +365,7 @@ class ProductReviewAttributes extends \Google\Collection
     return $this->rating;
   }
   /**
-   * Optional. The country of the review defined by ISO 3166-1 Alpha-2 Country
-   * Code.
-   *
-   * @param string $reviewCountry
+   * @param string
    */
   public function setReviewCountry($reviewCountry)
   {
@@ -578,9 +379,7 @@ class ProductReviewAttributes extends \Google\Collection
     return $this->reviewCountry;
   }
   /**
-   * Optional. The language of the review defined by BCP-47 language code.
-   *
-   * @param string $reviewLanguage
+   * @param string
    */
   public function setReviewLanguage($reviewLanguage)
   {
@@ -594,9 +393,7 @@ class ProductReviewAttributes extends \Google\Collection
     return $this->reviewLanguage;
   }
   /**
-   * Optional. The URI of the review landing page.
-   *
-   * @param ReviewLink $reviewLink
+   * @param ReviewLink
    */
   public function setReviewLink(ReviewLink $reviewLink)
   {
@@ -610,9 +407,7 @@ class ProductReviewAttributes extends \Google\Collection
     return $this->reviewLink;
   }
   /**
-   * Required. The timestamp indicating when the review was written.
-   *
-   * @param string $reviewTime
+   * @param string
    */
   public function setReviewTime($reviewTime)
   {
@@ -626,10 +421,7 @@ class ProductReviewAttributes extends \Google\Collection
     return $this->reviewTime;
   }
   /**
-   * Optional. The author of the product review. A permanent, unique identifier
-   * for the author of the review in the publisher's system.
-   *
-   * @param string $reviewerId
+   * @param string
    */
   public function setReviewerId($reviewerId)
   {
@@ -643,10 +435,7 @@ class ProductReviewAttributes extends \Google\Collection
     return $this->reviewerId;
   }
   /**
-   * Optional. A URI to an image of the reviewed product created by the review
-   * author. The URI does not have to end with an image file extension.
-   *
-   * @param string[] $reviewerImageLinks
+   * @param string[]
    */
   public function setReviewerImageLinks($reviewerImageLinks)
   {
@@ -660,9 +449,7 @@ class ProductReviewAttributes extends \Google\Collection
     return $this->reviewerImageLinks;
   }
   /**
-   * Optional. Set to true if the reviewer should remain anonymous.
-   *
-   * @param bool $reviewerIsAnonymous
+   * @param bool
    */
   public function setReviewerIsAnonymous($reviewerIsAnonymous)
   {
@@ -676,9 +463,7 @@ class ProductReviewAttributes extends \Google\Collection
     return $this->reviewerIsAnonymous;
   }
   /**
-   * Optional. The name of the reviewer of the product review.
-   *
-   * @param string $reviewerUsername
+   * @param string
    */
   public function setReviewerUsername($reviewerUsername)
   {
@@ -692,10 +477,7 @@ class ProductReviewAttributes extends \Google\Collection
     return $this->reviewerUsername;
   }
   /**
-   * Optional. Contains SKUs (stock keeping units) associated with a product.
-   * Often this matches the product Offer Id in the product feed.
-   *
-   * @param string[] $skus
+   * @param string[]
    */
   public function setSkus($skus)
   {
@@ -709,11 +491,7 @@ class ProductReviewAttributes extends \Google\Collection
     return $this->skus;
   }
   /**
-   * Optional. The name of the subclient of the product reviews. The subclient
-   * is an identifier of the product review source. It should be equivalent to
-   * the directory provided in the file data source path.
-   *
-   * @param string $subclientName
+   * @param string
    */
   public function setSubclientName($subclientName)
   {
@@ -727,9 +505,7 @@ class ProductReviewAttributes extends \Google\Collection
     return $this->subclientName;
   }
   /**
-   * Optional. The title of the review.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -743,11 +519,7 @@ class ProductReviewAttributes extends \Google\Collection
     return $this->title;
   }
   /**
-   * Optional. A permanent, unique identifier for the transaction associated
-   * with the review in the publisher's system. This ID can be used to indicate
-   * that multiple reviews are associated with the same transaction.
-   *
-   * @param string $transactionId
+   * @param string
    */
   public function setTransactionId($transactionId)
   {

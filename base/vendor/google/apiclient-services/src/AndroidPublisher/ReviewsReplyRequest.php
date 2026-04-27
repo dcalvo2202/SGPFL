@@ -20,18 +20,12 @@ namespace Google\Service\AndroidPublisher;
 class ReviewsReplyRequest extends \Google\Model
 {
   /**
-   * The text to set as the reply. Replies of more than approximately 350
-   * characters will be rejected. HTML tags will be stripped.
-   *
    * @var string
    */
   public $replyText;
 
   /**
-   * The text to set as the reply. Replies of more than approximately 350
-   * characters will be rejected. HTML tags will be stripped.
-   *
-   * @param string $replyText
+   * @param string
    */
   public function setReplyText($replyText)
   {

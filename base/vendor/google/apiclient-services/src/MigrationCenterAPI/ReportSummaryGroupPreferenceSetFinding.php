@@ -22,14 +22,10 @@ class ReportSummaryGroupPreferenceSetFinding extends \Google\Model
   protected $computeEngineFindingType = ReportSummaryComputeEngineFinding::class;
   protected $computeEngineFindingDataType = '';
   /**
-   * Description for the Preference Set.
-   *
    * @var string
    */
   public $description;
   /**
-   * Display Name of the Preference Set
-   *
    * @var string
    */
   public $displayName;
@@ -53,9 +49,7 @@ class ReportSummaryGroupPreferenceSetFinding extends \Google\Model
   protected $vmwareEngineFindingDataType = '';
 
   /**
-   * A set of findings that applies to Compute Engine machines in the input.
-   *
-   * @param ReportSummaryComputeEngineFinding $computeEngineFinding
+   * @param ReportSummaryComputeEngineFinding
    */
   public function setComputeEngineFinding(ReportSummaryComputeEngineFinding $computeEngineFinding)
   {
@@ -69,9 +63,7 @@ class ReportSummaryGroupPreferenceSetFinding extends \Google\Model
     return $this->computeEngineFinding;
   }
   /**
-   * Description for the Preference Set.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -85,9 +77,7 @@ class ReportSummaryGroupPreferenceSetFinding extends \Google\Model
     return $this->description;
   }
   /**
-   * Display Name of the Preference Set
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -101,9 +91,7 @@ class ReportSummaryGroupPreferenceSetFinding extends \Google\Model
     return $this->displayName;
   }
   /**
-   * A set of preferences that applies to all machines in the context.
-   *
-   * @param VirtualMachinePreferences $machinePreferences
+   * @param VirtualMachinePreferences
    */
   public function setMachinePreferences(VirtualMachinePreferences $machinePreferences)
   {
@@ -117,9 +105,7 @@ class ReportSummaryGroupPreferenceSetFinding extends \Google\Model
     return $this->machinePreferences;
   }
   /**
-   * Compute monthly cost for this preference set.
-   *
-   * @param Money $monthlyCostCompute
+   * @param Money
    */
   public function setMonthlyCostCompute(Money $monthlyCostCompute)
   {
@@ -133,9 +119,7 @@ class ReportSummaryGroupPreferenceSetFinding extends \Google\Model
     return $this->monthlyCostCompute;
   }
   /**
-   * Network Egress monthly cost for this preference set.
-   *
-   * @param Money $monthlyCostNetworkEgress
+   * @param Money
    */
   public function setMonthlyCostNetworkEgress(Money $monthlyCostNetworkEgress)
   {
@@ -149,9 +133,7 @@ class ReportSummaryGroupPreferenceSetFinding extends \Google\Model
     return $this->monthlyCostNetworkEgress;
   }
   /**
-   * Licensing monthly cost for this preference set.
-   *
-   * @param Money $monthlyCostOsLicense
+   * @param Money
    */
   public function setMonthlyCostOsLicense(Money $monthlyCostOsLicense)
   {
@@ -165,9 +147,7 @@ class ReportSummaryGroupPreferenceSetFinding extends \Google\Model
     return $this->monthlyCostOsLicense;
   }
   /**
-   * Miscellaneous monthly cost for this preference set.
-   *
-   * @param Money $monthlyCostOther
+   * @param Money
    */
   public function setMonthlyCostOther(Money $monthlyCostOther)
   {
@@ -181,9 +161,7 @@ class ReportSummaryGroupPreferenceSetFinding extends \Google\Model
     return $this->monthlyCostOther;
   }
   /**
-   * Storage monthly cost for this preference set.
-   *
-   * @param Money $monthlyCostStorage
+   * @param Money
    */
   public function setMonthlyCostStorage(Money $monthlyCostStorage)
   {
@@ -197,9 +175,7 @@ class ReportSummaryGroupPreferenceSetFinding extends \Google\Model
     return $this->monthlyCostStorage;
   }
   /**
-   * Total monthly cost for this preference set.
-   *
-   * @param Money $monthlyCostTotal
+   * @param Money
    */
   public function setMonthlyCostTotal(Money $monthlyCostTotal)
   {
@@ -213,9 +189,7 @@ class ReportSummaryGroupPreferenceSetFinding extends \Google\Model
     return $this->monthlyCostTotal;
   }
   /**
-   * A set of findings that applies to Sole-Tenant machines in the input.
-   *
-   * @param ReportSummarySoleTenantFinding $soleTenantFinding
+   * @param ReportSummarySoleTenantFinding
    */
   public function setSoleTenantFinding(ReportSummarySoleTenantFinding $soleTenantFinding)
   {
@@ -229,9 +203,7 @@ class ReportSummaryGroupPreferenceSetFinding extends \Google\Model
     return $this->soleTenantFinding;
   }
   /**
-   * A set of findings that applies to VMWare machines in the input.
-   *
-   * @param ReportSummaryVmwareEngineFinding $vmwareEngineFinding
+   * @param ReportSummaryVmwareEngineFinding
    */
   public function setVmwareEngineFinding(ReportSummaryVmwareEngineFinding $vmwareEngineFinding)
   {

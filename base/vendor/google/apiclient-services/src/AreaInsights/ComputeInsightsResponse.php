@@ -21,8 +21,6 @@ class ComputeInsightsResponse extends \Google\Collection
 {
   protected $collection_key = 'placeInsights';
   /**
-   * Result for Insights.INSIGHT_COUNT.
-   *
    * @var string
    */
   public $count;
@@ -30,9 +28,7 @@ class ComputeInsightsResponse extends \Google\Collection
   protected $placeInsightsDataType = 'array';
 
   /**
-   * Result for Insights.INSIGHT_COUNT.
-   *
-   * @param string $count
+   * @param string
    */
   public function setCount($count)
   {
@@ -46,9 +42,7 @@ class ComputeInsightsResponse extends \Google\Collection
     return $this->count;
   }
   /**
-   * Result for Insights.INSIGHT_PLACES.
-   *
-   * @param PlaceInsight[] $placeInsights
+   * @param PlaceInsight[]
    */
   public function setPlaceInsights($placeInsights)
   {

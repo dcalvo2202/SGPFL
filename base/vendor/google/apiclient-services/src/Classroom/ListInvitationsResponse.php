@@ -23,17 +23,12 @@ class ListInvitationsResponse extends \Google\Collection
   protected $invitationsType = Invitation::class;
   protected $invitationsDataType = 'array';
   /**
-   * Token identifying the next page of results to return. If empty, no further
-   * results are available.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Invitations that match the list request.
-   *
-   * @param Invitation[] $invitations
+   * @param Invitation[]
    */
   public function setInvitations($invitations)
   {
@@ -47,10 +42,7 @@ class ListInvitationsResponse extends \Google\Collection
     return $this->invitations;
   }
   /**
-   * Token identifying the next page of results to return. If empty, no further
-   * results are available.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

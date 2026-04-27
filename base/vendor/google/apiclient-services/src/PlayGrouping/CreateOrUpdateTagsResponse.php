@@ -24,9 +24,7 @@ class CreateOrUpdateTagsResponse extends \Google\Collection
   protected $tagsDataType = 'array';
 
   /**
-   * All requested tags are returned, including pre-existing ones.
-   *
-   * @param Tag[] $tags
+   * @param Tag[]
    */
   public function setTags($tags)
   {

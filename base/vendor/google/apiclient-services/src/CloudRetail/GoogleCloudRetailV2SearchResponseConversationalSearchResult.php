@@ -25,28 +25,14 @@ class GoogleCloudRetailV2SearchResponseConversationalSearchResult extends \Googl
   protected $additionalFiltersType = GoogleCloudRetailV2SearchResponseConversationalSearchResultAdditionalFilter::class;
   protected $additionalFiltersDataType = 'array';
   /**
-   * Conversation UUID. This field will be stored in client side storage to
-   * maintain the conversation session with server and will be used for next
-   * search request's SearchRequest.ConversationalSearchSpec.conversation_id to
-   * restore conversation state in server.
-   *
    * @var string
    */
   public $conversationId;
   /**
-   * The follow-up question. e.g., `What is the color?`
-   *
    * @var string
    */
   public $followupQuestion;
   /**
-   * The current refined query for the conversational search. This field will be
-   * used in customer UI that the query in the search bar should be replaced
-   * with the refined query. For example, if SearchRequest.query is `dress` and
-   * next SearchRequest.ConversationalSearchSpec.UserAnswer.text_answer is `red
-   * color`, which does not match any product attribute value filters, the
-   * refined query will be `dress, red color`.
-   *
    * @var string
    */
   public $refinedQuery;
@@ -54,12 +40,7 @@ class GoogleCloudRetailV2SearchResponseConversationalSearchResult extends \Googl
   protected $suggestedAnswersDataType = 'array';
 
   /**
-   * This is the incremental additional filters implied from the current user
-   * answer. User should add the suggested addition filters to the previous
-   * SearchRequest.filter, and use the merged filter in the follow up search
-   * request.
-   *
-   * @param GoogleCloudRetailV2SearchResponseConversationalSearchResultAdditionalFilter $additionalFilter
+   * @param GoogleCloudRetailV2SearchResponseConversationalSearchResultAdditionalFilter
    */
   public function setAdditionalFilter(GoogleCloudRetailV2SearchResponseConversationalSearchResultAdditionalFilter $additionalFilter)
   {
@@ -73,19 +54,13 @@ class GoogleCloudRetailV2SearchResponseConversationalSearchResult extends \Googl
     return $this->additionalFilter;
   }
   /**
-   * This field is deprecated but will be kept for backward compatibility. There
-   * is expected to have only one additional filter and the value will be the
-   * same to the same as field `additional_filter`.
-   *
-   * @deprecated
-   * @param GoogleCloudRetailV2SearchResponseConversationalSearchResultAdditionalFilter[] $additionalFilters
+   * @param GoogleCloudRetailV2SearchResponseConversationalSearchResultAdditionalFilter[]
    */
   public function setAdditionalFilters($additionalFilters)
   {
     $this->additionalFilters = $additionalFilters;
   }
   /**
-   * @deprecated
    * @return GoogleCloudRetailV2SearchResponseConversationalSearchResultAdditionalFilter[]
    */
   public function getAdditionalFilters()
@@ -93,12 +68,7 @@ class GoogleCloudRetailV2SearchResponseConversationalSearchResult extends \Googl
     return $this->additionalFilters;
   }
   /**
-   * Conversation UUID. This field will be stored in client side storage to
-   * maintain the conversation session with server and will be used for next
-   * search request's SearchRequest.ConversationalSearchSpec.conversation_id to
-   * restore conversation state in server.
-   *
-   * @param string $conversationId
+   * @param string
    */
   public function setConversationId($conversationId)
   {
@@ -112,9 +82,7 @@ class GoogleCloudRetailV2SearchResponseConversationalSearchResult extends \Googl
     return $this->conversationId;
   }
   /**
-   * The follow-up question. e.g., `What is the color?`
-   *
-   * @param string $followupQuestion
+   * @param string
    */
   public function setFollowupQuestion($followupQuestion)
   {
@@ -128,14 +96,7 @@ class GoogleCloudRetailV2SearchResponseConversationalSearchResult extends \Googl
     return $this->followupQuestion;
   }
   /**
-   * The current refined query for the conversational search. This field will be
-   * used in customer UI that the query in the search bar should be replaced
-   * with the refined query. For example, if SearchRequest.query is `dress` and
-   * next SearchRequest.ConversationalSearchSpec.UserAnswer.text_answer is `red
-   * color`, which does not match any product attribute value filters, the
-   * refined query will be `dress, red color`.
-   *
-   * @param string $refinedQuery
+   * @param string
    */
   public function setRefinedQuery($refinedQuery)
   {
@@ -149,9 +110,7 @@ class GoogleCloudRetailV2SearchResponseConversationalSearchResult extends \Googl
     return $this->refinedQuery;
   }
   /**
-   * The answer options provided to client for the follow-up question.
-   *
-   * @param GoogleCloudRetailV2SearchResponseConversationalSearchResultSuggestedAnswer[] $suggestedAnswers
+   * @param GoogleCloudRetailV2SearchResponseConversationalSearchResultSuggestedAnswer[]
    */
   public function setSuggestedAnswers($suggestedAnswers)
   {

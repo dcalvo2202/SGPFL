@@ -26,9 +26,7 @@ class GoogleCloudRetailV2SearchRequestConversationalSearchSpecUserAnswerSelected
   protected $productAttributeValuesDataType = 'array';
 
   /**
-   * This field specifies the selected answer which is a attribute key-value.
-   *
-   * @param GoogleCloudRetailV2ProductAttributeValue $productAttributeValue
+   * @param GoogleCloudRetailV2ProductAttributeValue
    */
   public function setProductAttributeValue(GoogleCloudRetailV2ProductAttributeValue $productAttributeValue)
   {
@@ -42,17 +40,13 @@ class GoogleCloudRetailV2SearchRequestConversationalSearchSpecUserAnswerSelected
     return $this->productAttributeValue;
   }
   /**
-   * This field is deprecated and should not be set.
-   *
-   * @deprecated
-   * @param GoogleCloudRetailV2ProductAttributeValue[] $productAttributeValues
+   * @param GoogleCloudRetailV2ProductAttributeValue[]
    */
   public function setProductAttributeValues($productAttributeValues)
   {
     $this->productAttributeValues = $productAttributeValues;
   }
   /**
-   * @deprecated
    * @return GoogleCloudRetailV2ProductAttributeValue[]
    */
   public function getProductAttributeValues()

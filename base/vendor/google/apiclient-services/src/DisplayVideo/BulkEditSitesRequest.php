@@ -21,30 +21,22 @@ class BulkEditSitesRequest extends \Google\Collection
 {
   protected $collection_key = 'deletedSites';
   /**
-   * The ID of the advertiser that owns the parent channel.
-   *
    * @var string
    */
   public $advertiserId;
   protected $createdSitesType = Site::class;
   protected $createdSitesDataType = 'array';
   /**
-   * The sites to delete in batch, specified as a list of site url_or_app_ids.
-   *
    * @var string[]
    */
   public $deletedSites;
   /**
-   * The ID of the partner that owns the parent channel.
-   *
    * @var string
    */
   public $partnerId;
 
   /**
-   * The ID of the advertiser that owns the parent channel.
-   *
-   * @param string $advertiserId
+   * @param string
    */
   public function setAdvertiserId($advertiserId)
   {
@@ -58,9 +50,7 @@ class BulkEditSitesRequest extends \Google\Collection
     return $this->advertiserId;
   }
   /**
-   * The sites to create in batch, specified as a list of Sites.
-   *
-   * @param Site[] $createdSites
+   * @param Site[]
    */
   public function setCreatedSites($createdSites)
   {
@@ -74,9 +64,7 @@ class BulkEditSitesRequest extends \Google\Collection
     return $this->createdSites;
   }
   /**
-   * The sites to delete in batch, specified as a list of site url_or_app_ids.
-   *
-   * @param string[] $deletedSites
+   * @param string[]
    */
   public function setDeletedSites($deletedSites)
   {
@@ -90,9 +78,7 @@ class BulkEditSitesRequest extends \Google\Collection
     return $this->deletedSites;
   }
   /**
-   * The ID of the partner that owns the parent channel.
-   *
-   * @param string $partnerId
+   * @param string
    */
   public function setPartnerId($partnerId)
   {

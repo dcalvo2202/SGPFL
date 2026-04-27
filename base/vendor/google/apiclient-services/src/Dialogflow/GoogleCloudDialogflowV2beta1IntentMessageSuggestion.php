@@ -25,7 +25,7 @@ class GoogleCloudDialogflowV2beta1IntentMessageSuggestion extends \Google\Model
   public $title;
 
   /**
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

@@ -23,10 +23,7 @@ class BareMetalAdminControlPlaneNodePoolConfig extends \Google\Model
   protected $nodePoolConfigDataType = '';
 
   /**
-   * Required. The generic configuration for a node pool running the control
-   * plane.
-   *
-   * @param BareMetalNodePoolConfig $nodePoolConfig
+   * @param BareMetalNodePoolConfig
    */
   public function setNodePoolConfig(BareMetalNodePoolConfig $nodePoolConfig)
   {

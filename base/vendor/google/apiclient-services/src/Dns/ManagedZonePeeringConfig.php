@@ -27,7 +27,7 @@ class ManagedZonePeeringConfig extends \Google\Model
   protected $targetNetworkDataType = '';
 
   /**
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -41,9 +41,7 @@ class ManagedZonePeeringConfig extends \Google\Model
     return $this->kind;
   }
   /**
-   * The network with which to peer.
-   *
-   * @param ManagedZonePeeringConfigTargetNetwork $targetNetwork
+   * @param ManagedZonePeeringConfigTargetNetwork
    */
   public function setTargetNetwork(ManagedZonePeeringConfigTargetNetwork $targetNetwork)
   {

@@ -45,7 +45,7 @@ class OffersItemsItems extends \Google\Model
   public $volumeId;
 
   /**
-   * @param string $author
+   * @param string
    */
   public function setAuthor($author)
   {
@@ -59,7 +59,7 @@ class OffersItemsItems extends \Google\Model
     return $this->author;
   }
   /**
-   * @param string $canonicalVolumeLink
+   * @param string
    */
   public function setCanonicalVolumeLink($canonicalVolumeLink)
   {
@@ -73,7 +73,7 @@ class OffersItemsItems extends \Google\Model
     return $this->canonicalVolumeLink;
   }
   /**
-   * @param string $coverUrl
+   * @param string
    */
   public function setCoverUrl($coverUrl)
   {
@@ -87,7 +87,7 @@ class OffersItemsItems extends \Google\Model
     return $this->coverUrl;
   }
   /**
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -101,7 +101,7 @@ class OffersItemsItems extends \Google\Model
     return $this->description;
   }
   /**
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -115,7 +115,7 @@ class OffersItemsItems extends \Google\Model
     return $this->title;
   }
   /**
-   * @param string $volumeId
+   * @param string
    */
   public function setVolumeId($volumeId)
   {

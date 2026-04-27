@@ -23,10 +23,7 @@ class FhirFilter extends \Google\Model
   protected $resourcesDataType = '';
 
   /**
-   * List of resources to include in the output. If this list is empty or not
-   * specified, all resources are included in the output.
-   *
-   * @param Resources $resources
+   * @param Resources
    */
   public function setResources(Resources $resources)
   {

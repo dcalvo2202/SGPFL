@@ -20,40 +20,28 @@ namespace Google\Service\CivicInfo;
 class CivicinfoSchemaV2ElectionOfficial extends \Google\Model
 {
   /**
-   * The email address of the election official.
-   *
    * @var string
    */
   public $emailAddress;
   /**
-   * The fax number of the election official.
-   *
    * @var string
    */
   public $faxNumber;
   /**
-   * The full name of the election official.
-   *
    * @var string
    */
   public $name;
   /**
-   * The office phone number of the election official.
-   *
    * @var string
    */
   public $officePhoneNumber;
   /**
-   * The title of the election official.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * The email address of the election official.
-   *
-   * @param string $emailAddress
+   * @param string
    */
   public function setEmailAddress($emailAddress)
   {
@@ -67,9 +55,7 @@ class CivicinfoSchemaV2ElectionOfficial extends \Google\Model
     return $this->emailAddress;
   }
   /**
-   * The fax number of the election official.
-   *
-   * @param string $faxNumber
+   * @param string
    */
   public function setFaxNumber($faxNumber)
   {
@@ -83,9 +69,7 @@ class CivicinfoSchemaV2ElectionOfficial extends \Google\Model
     return $this->faxNumber;
   }
   /**
-   * The full name of the election official.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -99,9 +83,7 @@ class CivicinfoSchemaV2ElectionOfficial extends \Google\Model
     return $this->name;
   }
   /**
-   * The office phone number of the election official.
-   *
-   * @param string $officePhoneNumber
+   * @param string
    */
   public function setOfficePhoneNumber($officePhoneNumber)
   {
@@ -115,9 +97,7 @@ class CivicinfoSchemaV2ElectionOfficial extends \Google\Model
     return $this->officePhoneNumber;
   }
   /**
-   * The title of the election official.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

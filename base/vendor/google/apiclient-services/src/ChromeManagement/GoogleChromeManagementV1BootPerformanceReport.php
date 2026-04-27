@@ -20,66 +20,32 @@ namespace Google\Service\ChromeManagement;
 class GoogleChromeManagementV1BootPerformanceReport extends \Google\Model
 {
   /**
-   * Shutdown reason is not specified.
-   */
-  public const SHUTDOWN_REASON_SHUTDOWN_REASON_UNSPECIFIED = 'SHUTDOWN_REASON_UNSPECIFIED';
-  /**
-   * User initiated.
-   */
-  public const SHUTDOWN_REASON_USER_REQUEST = 'USER_REQUEST';
-  /**
-   * System update initiated.
-   */
-  public const SHUTDOWN_REASON_SYSTEM_UPDATE = 'SYSTEM_UPDATE';
-  /**
-   * Shutdown due to low battery.
-   */
-  public const SHUTDOWN_REASON_LOW_BATTERY = 'LOW_BATTERY';
-  /**
-   * Shutdown due to other reasons.
-   */
-  public const SHUTDOWN_REASON_OTHER = 'OTHER';
-  /**
-   * Total time to boot up.
-   *
    * @var string
    */
   public $bootUpDuration;
   /**
-   * The timestamp when power came on.
-   *
    * @var string
    */
   public $bootUpTime;
   /**
-   * Timestamp when the report was collected.
-   *
    * @var string
    */
   public $reportTime;
   /**
-   * Total time since shutdown start to power off.
-   *
    * @var string
    */
   public $shutdownDuration;
   /**
-   * The shutdown reason.
-   *
    * @var string
    */
   public $shutdownReason;
   /**
-   * The timestamp when shutdown.
-   *
    * @var string
    */
   public $shutdownTime;
 
   /**
-   * Total time to boot up.
-   *
-   * @param string $bootUpDuration
+   * @param string
    */
   public function setBootUpDuration($bootUpDuration)
   {
@@ -93,9 +59,7 @@ class GoogleChromeManagementV1BootPerformanceReport extends \Google\Model
     return $this->bootUpDuration;
   }
   /**
-   * The timestamp when power came on.
-   *
-   * @param string $bootUpTime
+   * @param string
    */
   public function setBootUpTime($bootUpTime)
   {
@@ -109,9 +73,7 @@ class GoogleChromeManagementV1BootPerformanceReport extends \Google\Model
     return $this->bootUpTime;
   }
   /**
-   * Timestamp when the report was collected.
-   *
-   * @param string $reportTime
+   * @param string
    */
   public function setReportTime($reportTime)
   {
@@ -125,9 +87,7 @@ class GoogleChromeManagementV1BootPerformanceReport extends \Google\Model
     return $this->reportTime;
   }
   /**
-   * Total time since shutdown start to power off.
-   *
-   * @param string $shutdownDuration
+   * @param string
    */
   public function setShutdownDuration($shutdownDuration)
   {
@@ -141,28 +101,21 @@ class GoogleChromeManagementV1BootPerformanceReport extends \Google\Model
     return $this->shutdownDuration;
   }
   /**
-   * The shutdown reason.
-   *
-   * Accepted values: SHUTDOWN_REASON_UNSPECIFIED, USER_REQUEST, SYSTEM_UPDATE,
-   * LOW_BATTERY, OTHER
-   *
-   * @param self::SHUTDOWN_REASON_* $shutdownReason
+   * @param string
    */
   public function setShutdownReason($shutdownReason)
   {
     $this->shutdownReason = $shutdownReason;
   }
   /**
-   * @return self::SHUTDOWN_REASON_*
+   * @return string
    */
   public function getShutdownReason()
   {
     return $this->shutdownReason;
   }
   /**
-   * The timestamp when shutdown.
-   *
-   * @param string $shutdownTime
+   * @param string
    */
   public function setShutdownTime($shutdownTime)
   {

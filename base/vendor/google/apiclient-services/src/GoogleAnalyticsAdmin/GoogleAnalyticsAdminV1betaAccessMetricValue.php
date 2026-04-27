@@ -20,16 +20,12 @@ namespace Google\Service\GoogleAnalyticsAdmin;
 class GoogleAnalyticsAdminV1betaAccessMetricValue extends \Google\Model
 {
   /**
-   * The measurement value. For example, this value may be '13'.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * The measurement value. For example, this value may be '13'.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

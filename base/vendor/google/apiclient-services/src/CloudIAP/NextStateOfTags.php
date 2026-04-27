@@ -27,7 +27,7 @@ class NextStateOfTags extends \Google\Model
   protected $tagsPartialStateDataType = '';
 
   /**
-   * @param TagsFullState $tagsFullState
+   * @param TagsFullState
    */
   public function setTagsFullState(TagsFullState $tagsFullState)
   {
@@ -41,7 +41,7 @@ class NextStateOfTags extends \Google\Model
     return $this->tagsFullState;
   }
   /**
-   * @param TagsFullStateForChildResource $tagsFullStateForChildResource
+   * @param TagsFullStateForChildResource
    */
   public function setTagsFullStateForChildResource(TagsFullStateForChildResource $tagsFullStateForChildResource)
   {
@@ -55,7 +55,7 @@ class NextStateOfTags extends \Google\Model
     return $this->tagsFullStateForChildResource;
   }
   /**
-   * @param TagsPartialState $tagsPartialState
+   * @param TagsPartialState
    */
   public function setTagsPartialState(TagsPartialState $tagsPartialState)
   {

@@ -23,24 +23,16 @@ class ListCertificateTemplatesResponse extends \Google\Collection
   protected $certificateTemplatesType = CertificateTemplate::class;
   protected $certificateTemplatesDataType = 'array';
   /**
-   * A token to retrieve next page of results. Pass this value in
-   * ListCertificateTemplatesRequest.page_token to retrieve the next page of
-   * results.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * A list of locations (e.g. "us-west1") that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * The list of CertificateTemplates.
-   *
-   * @param CertificateTemplate[] $certificateTemplates
+   * @param CertificateTemplate[]
    */
   public function setCertificateTemplates($certificateTemplates)
   {
@@ -54,11 +46,7 @@ class ListCertificateTemplatesResponse extends \Google\Collection
     return $this->certificateTemplates;
   }
   /**
-   * A token to retrieve next page of results. Pass this value in
-   * ListCertificateTemplatesRequest.page_token to retrieve the next page of
-   * results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -72,9 +60,7 @@ class ListCertificateTemplatesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * A list of locations (e.g. "us-west1") that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

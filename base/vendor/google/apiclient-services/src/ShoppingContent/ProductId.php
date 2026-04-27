@@ -20,18 +20,12 @@ namespace Google\Service\ShoppingContent;
 class ProductId extends \Google\Model
 {
   /**
-   * The Content API ID of the product, in the form
-   * `channel:contentLanguage:targetCountry:offerId`.
-   *
    * @var string
    */
   public $productId;
 
   /**
-   * The Content API ID of the product, in the form
-   * `channel:contentLanguage:targetCountry:offerId`.
-   *
-   * @param string $productId
+   * @param string
    */
   public function setProductId($productId)
   {

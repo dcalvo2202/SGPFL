@@ -20,64 +20,28 @@ namespace Google\Service\CloudScheduler;
 class RetryConfig extends \Google\Model
 {
   /**
-   * The maximum amount of time to wait before retrying a job after it fails.
-   * The default value of this field is 1 hour.
-   *
    * @var string
    */
   public $maxBackoffDuration;
   /**
-   * The time between retries will double `max_doublings` times. A job's retry
-   * interval starts at min_backoff_duration, then doubles `max_doublings`
-   * times, then increases linearly, and finally retries at intervals of
-   * max_backoff_duration up to retry_count times. For examples, see [Retry
-   * jobs](/scheduler/docs/configuring/retry-jobs#max-doublings). The default
-   * value of this field is 5.
-   *
    * @var int
    */
   public $maxDoublings;
   /**
-   * The time limit for retrying a failed job, measured from the time when an
-   * execution was first attempted. If specified with retry_count, the job will
-   * be retried until both limits are reached. The default value for
-   * max_retry_duration is zero, which means retry duration is unlimited.
-   * However, if retry_count is also 0, a job attempt won't be retried if it
-   * fails.
-   *
    * @var string
    */
   public $maxRetryDuration;
   /**
-   * The minimum amount of time to wait before retrying a job after it fails.
-   * The default value of this field is 5 seconds.
-   *
    * @var string
    */
   public $minBackoffDuration;
   /**
-   * The number of attempts that the system will make to run a job using the
-   * exponential backoff procedure described by max_doublings. The default value
-   * of retry_count is zero. If retry_count is 0 (and if max_retry_duration is
-   * also 0), a job attempt won't be retried if it fails. Instead, Cloud
-   * Scheduler system will wait for the next scheduled execution time. Setting
-   * retry_count to 0 doesn't prevent failed jobs from running according to
-   * schedule after the failure. If retry_count is set to a non-zero number,
-   * Cloud Scheduler will retry the failed job, using exponential backoff, for
-   * retry_count times until the job succeeds or the number of retries is
-   * exhausted. Note that the next scheduled execution time might be skipped if
-   * the retries continue through that time. Values greater than 5 and negative
-   * values are not allowed.
-   *
    * @var int
    */
   public $retryCount;
 
   /**
-   * The maximum amount of time to wait before retrying a job after it fails.
-   * The default value of this field is 1 hour.
-   *
-   * @param string $maxBackoffDuration
+   * @param string
    */
   public function setMaxBackoffDuration($maxBackoffDuration)
   {
@@ -91,14 +55,7 @@ class RetryConfig extends \Google\Model
     return $this->maxBackoffDuration;
   }
   /**
-   * The time between retries will double `max_doublings` times. A job's retry
-   * interval starts at min_backoff_duration, then doubles `max_doublings`
-   * times, then increases linearly, and finally retries at intervals of
-   * max_backoff_duration up to retry_count times. For examples, see [Retry
-   * jobs](/scheduler/docs/configuring/retry-jobs#max-doublings). The default
-   * value of this field is 5.
-   *
-   * @param int $maxDoublings
+   * @param int
    */
   public function setMaxDoublings($maxDoublings)
   {
@@ -112,14 +69,7 @@ class RetryConfig extends \Google\Model
     return $this->maxDoublings;
   }
   /**
-   * The time limit for retrying a failed job, measured from the time when an
-   * execution was first attempted. If specified with retry_count, the job will
-   * be retried until both limits are reached. The default value for
-   * max_retry_duration is zero, which means retry duration is unlimited.
-   * However, if retry_count is also 0, a job attempt won't be retried if it
-   * fails.
-   *
-   * @param string $maxRetryDuration
+   * @param string
    */
   public function setMaxRetryDuration($maxRetryDuration)
   {
@@ -133,10 +83,7 @@ class RetryConfig extends \Google\Model
     return $this->maxRetryDuration;
   }
   /**
-   * The minimum amount of time to wait before retrying a job after it fails.
-   * The default value of this field is 5 seconds.
-   *
-   * @param string $minBackoffDuration
+   * @param string
    */
   public function setMinBackoffDuration($minBackoffDuration)
   {
@@ -150,20 +97,7 @@ class RetryConfig extends \Google\Model
     return $this->minBackoffDuration;
   }
   /**
-   * The number of attempts that the system will make to run a job using the
-   * exponential backoff procedure described by max_doublings. The default value
-   * of retry_count is zero. If retry_count is 0 (and if max_retry_duration is
-   * also 0), a job attempt won't be retried if it fails. Instead, Cloud
-   * Scheduler system will wait for the next scheduled execution time. Setting
-   * retry_count to 0 doesn't prevent failed jobs from running according to
-   * schedule after the failure. If retry_count is set to a non-zero number,
-   * Cloud Scheduler will retry the failed job, using exponential backoff, for
-   * retry_count times until the job succeeds or the number of retries is
-   * exhausted. Note that the next scheduled execution time might be skipped if
-   * the retries continue through that time. Values greater than 5 and negative
-   * values are not allowed.
-   *
-   * @param int $retryCount
+   * @param int
    */
   public function setRetryCount($retryCount)
   {

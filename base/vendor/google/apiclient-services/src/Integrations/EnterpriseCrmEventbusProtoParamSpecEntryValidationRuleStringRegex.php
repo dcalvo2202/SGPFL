@@ -20,24 +20,16 @@ namespace Google\Service\Integrations;
 class EnterpriseCrmEventbusProtoParamSpecEntryValidationRuleStringRegex extends \Google\Model
 {
   /**
-   * Whether the regex matcher is applied exclusively (if true, matching values
-   * will be rejected).
-   *
    * @var bool
    */
   public $exclusive;
   /**
-   * The regex applied to the input value(s).
-   *
    * @var string
    */
   public $regex;
 
   /**
-   * Whether the regex matcher is applied exclusively (if true, matching values
-   * will be rejected).
-   *
-   * @param bool $exclusive
+   * @param bool
    */
   public function setExclusive($exclusive)
   {
@@ -51,9 +43,7 @@ class EnterpriseCrmEventbusProtoParamSpecEntryValidationRuleStringRegex extends 
     return $this->exclusive;
   }
   /**
-   * The regex applied to the input value(s).
-   *
-   * @param string $regex
+   * @param string
    */
   public function setRegex($regex)
   {

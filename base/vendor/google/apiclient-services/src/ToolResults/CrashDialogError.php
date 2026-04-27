@@ -20,16 +20,12 @@ namespace Google\Service\ToolResults;
 class CrashDialogError extends \Google\Model
 {
   /**
-   * The name of the package that caused the dialog.
-   *
    * @var string
    */
   public $crashPackage;
 
   /**
-   * The name of the package that caused the dialog.
-   *
-   * @param string $crashPackage
+   * @param string
    */
   public function setCrashPackage($crashPackage)
   {

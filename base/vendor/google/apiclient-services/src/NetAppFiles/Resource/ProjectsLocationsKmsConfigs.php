@@ -125,8 +125,7 @@ class ProjectsLocationsKmsConfigs extends \Google\Service\Resource
   /**
    * Updates the Kms config properties with the full spec (kmsConfigs.patch)
    *
-   * @param string $name Identifier. Name of the KmsConfig. Format:
-   * `projects/{project}/locations/{location}/kmsConfigs/{kms_config}`
+   * @param string $name Identifier. Name of the KmsConfig.
    * @param KmsConfig $postBody
    * @param array $optParams Optional parameters.
    *

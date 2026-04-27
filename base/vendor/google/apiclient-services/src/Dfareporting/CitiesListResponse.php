@@ -23,17 +23,12 @@ class CitiesListResponse extends \Google\Collection
   protected $citiesType = City::class;
   protected $citiesDataType = 'array';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#citiesListResponse".
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * City collection.
-   *
-   * @param City[] $cities
+   * @param City[]
    */
   public function setCities($cities)
   {
@@ -47,10 +42,7 @@ class CitiesListResponse extends \Google\Collection
     return $this->cities;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#citiesListResponse".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

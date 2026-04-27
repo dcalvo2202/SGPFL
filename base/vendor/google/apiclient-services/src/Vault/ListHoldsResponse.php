@@ -23,17 +23,12 @@ class ListHoldsResponse extends \Google\Collection
   protected $holdsType = Hold::class;
   protected $holdsDataType = 'array';
   /**
-   * Page token to retrieve the next page of results in the list. If this is
-   * empty, then there are no more holds to list.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of holds.
-   *
-   * @param Hold[] $holds
+   * @param Hold[]
    */
   public function setHolds($holds)
   {
@@ -47,10 +42,7 @@ class ListHoldsResponse extends \Google\Collection
     return $this->holds;
   }
   /**
-   * Page token to retrieve the next page of results in the list. If this is
-   * empty, then there are no more holds to list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

@@ -20,18 +20,12 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1AnswerQueryRequestAnswerGenerationSpecModelSpec extends \Google\Model
 {
   /**
-   * Model version. If not set, it will use the default stable model. Allowed
-   * values are: stable, preview.
-   *
    * @var string
    */
   public $modelVersion;
 
   /**
-   * Model version. If not set, it will use the default stable model. Allowed
-   * values are: stable, preview.
-   *
-   * @param string $modelVersion
+   * @param string
    */
   public function setModelVersion($modelVersion)
   {

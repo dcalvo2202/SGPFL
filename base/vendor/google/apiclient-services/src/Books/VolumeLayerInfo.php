@@ -24,9 +24,7 @@ class VolumeLayerInfo extends \Google\Collection
   protected $layersDataType = 'array';
 
   /**
-   * A layer should appear here if and only if the layer exists for this book.
-   *
-   * @param VolumeLayerInfoLayers[] $layers
+   * @param VolumeLayerInfoLayers[]
    */
   public function setLayers($layers)
   {

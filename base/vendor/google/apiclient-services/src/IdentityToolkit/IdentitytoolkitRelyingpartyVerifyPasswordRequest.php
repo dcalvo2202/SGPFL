@@ -20,80 +20,52 @@ namespace Google\Service\IdentityToolkit;
 class IdentitytoolkitRelyingpartyVerifyPasswordRequest extends \Google\Model
 {
   /**
-   * The captcha challenge.
-   *
    * @var string
    */
   public $captchaChallenge;
   /**
-   * Response to the captcha.
-   *
    * @var string
    */
   public $captchaResponse;
   /**
-   * GCP project number of the requesting delegated app. Currently only intended
-   * for Firebase V1 migration.
-   *
    * @var string
    */
   public $delegatedProjectNumber;
   /**
-   * The email of the user.
-   *
    * @var string
    */
   public $email;
   /**
-   * The GITKit token of the authenticated user.
-   *
    * @var string
    */
   public $idToken;
   /**
-   * Instance id token of the app.
-   *
    * @var string
    */
   public $instanceId;
   /**
-   * The password inputed by the user.
-   *
    * @var string
    */
   public $password;
   /**
-   * The GITKit token for the non-trusted IDP, which is to be confirmed by the
-   * user.
-   *
    * @var string
    */
   public $pendingIdToken;
   /**
-   * Whether return sts id token and refresh token instead of gitkit token.
-   *
    * @var bool
    */
   public $returnSecureToken;
   /**
-   * For multi-tenant use cases, in order to construct sign-in URL with the
-   * correct IDP parameters, Firebear needs to know which Tenant to retrieve IDP
-   * configs from.
-   *
    * @var string
    */
   public $tenantId;
   /**
-   * Tenant project number to be used for idp discovery.
-   *
    * @var string
    */
   public $tenantProjectNumber;
 
   /**
-   * The captcha challenge.
-   *
-   * @param string $captchaChallenge
+   * @param string
    */
   public function setCaptchaChallenge($captchaChallenge)
   {
@@ -107,9 +79,7 @@ class IdentitytoolkitRelyingpartyVerifyPasswordRequest extends \Google\Model
     return $this->captchaChallenge;
   }
   /**
-   * Response to the captcha.
-   *
-   * @param string $captchaResponse
+   * @param string
    */
   public function setCaptchaResponse($captchaResponse)
   {
@@ -123,10 +93,7 @@ class IdentitytoolkitRelyingpartyVerifyPasswordRequest extends \Google\Model
     return $this->captchaResponse;
   }
   /**
-   * GCP project number of the requesting delegated app. Currently only intended
-   * for Firebase V1 migration.
-   *
-   * @param string $delegatedProjectNumber
+   * @param string
    */
   public function setDelegatedProjectNumber($delegatedProjectNumber)
   {
@@ -140,9 +107,7 @@ class IdentitytoolkitRelyingpartyVerifyPasswordRequest extends \Google\Model
     return $this->delegatedProjectNumber;
   }
   /**
-   * The email of the user.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {
@@ -156,9 +121,7 @@ class IdentitytoolkitRelyingpartyVerifyPasswordRequest extends \Google\Model
     return $this->email;
   }
   /**
-   * The GITKit token of the authenticated user.
-   *
-   * @param string $idToken
+   * @param string
    */
   public function setIdToken($idToken)
   {
@@ -172,9 +135,7 @@ class IdentitytoolkitRelyingpartyVerifyPasswordRequest extends \Google\Model
     return $this->idToken;
   }
   /**
-   * Instance id token of the app.
-   *
-   * @param string $instanceId
+   * @param string
    */
   public function setInstanceId($instanceId)
   {
@@ -188,9 +149,7 @@ class IdentitytoolkitRelyingpartyVerifyPasswordRequest extends \Google\Model
     return $this->instanceId;
   }
   /**
-   * The password inputed by the user.
-   *
-   * @param string $password
+   * @param string
    */
   public function setPassword($password)
   {
@@ -204,10 +163,7 @@ class IdentitytoolkitRelyingpartyVerifyPasswordRequest extends \Google\Model
     return $this->password;
   }
   /**
-   * The GITKit token for the non-trusted IDP, which is to be confirmed by the
-   * user.
-   *
-   * @param string $pendingIdToken
+   * @param string
    */
   public function setPendingIdToken($pendingIdToken)
   {
@@ -221,9 +177,7 @@ class IdentitytoolkitRelyingpartyVerifyPasswordRequest extends \Google\Model
     return $this->pendingIdToken;
   }
   /**
-   * Whether return sts id token and refresh token instead of gitkit token.
-   *
-   * @param bool $returnSecureToken
+   * @param bool
    */
   public function setReturnSecureToken($returnSecureToken)
   {
@@ -237,11 +191,7 @@ class IdentitytoolkitRelyingpartyVerifyPasswordRequest extends \Google\Model
     return $this->returnSecureToken;
   }
   /**
-   * For multi-tenant use cases, in order to construct sign-in URL with the
-   * correct IDP parameters, Firebear needs to know which Tenant to retrieve IDP
-   * configs from.
-   *
-   * @param string $tenantId
+   * @param string
    */
   public function setTenantId($tenantId)
   {
@@ -255,9 +205,7 @@ class IdentitytoolkitRelyingpartyVerifyPasswordRequest extends \Google\Model
     return $this->tenantId;
   }
   /**
-   * Tenant project number to be used for idp discovery.
-   *
-   * @param string $tenantProjectNumber
+   * @param string
    */
   public function setTenantProjectNumber($tenantProjectNumber)
   {

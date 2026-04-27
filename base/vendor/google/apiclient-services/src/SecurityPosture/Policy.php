@@ -25,23 +25,16 @@ class Policy extends \Google\Collection
   protected $constraintType = Constraint::class;
   protected $constraintDataType = '';
   /**
-   * Optional. A description of the policy.
-   *
    * @var string
    */
   public $description;
   /**
-   * Required. A user-specified identifier for the policy. In a PolicySet, each
-   * policy must have a unique identifier.
-   *
    * @var string
    */
   public $policyId;
 
   /**
-   * Optional. The compliance standards that the policy helps enforce.
-   *
-   * @param ComplianceStandard[] $complianceStandards
+   * @param ComplianceStandard[]
    */
   public function setComplianceStandards($complianceStandards)
   {
@@ -55,9 +48,7 @@ class Policy extends \Google\Collection
     return $this->complianceStandards;
   }
   /**
-   * Required. The constraints that the policy includes.
-   *
-   * @param Constraint $constraint
+   * @param Constraint
    */
   public function setConstraint(Constraint $constraint)
   {
@@ -71,9 +62,7 @@ class Policy extends \Google\Collection
     return $this->constraint;
   }
   /**
-   * Optional. A description of the policy.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -87,10 +76,7 @@ class Policy extends \Google\Collection
     return $this->description;
   }
   /**
-   * Required. A user-specified identifier for the policy. In a PolicySet, each
-   * policy must have a unique identifier.
-   *
-   * @param string $policyId
+   * @param string
    */
   public function setPolicyId($policyId)
   {

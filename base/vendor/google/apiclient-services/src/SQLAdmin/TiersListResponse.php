@@ -23,16 +23,12 @@ class TiersListResponse extends \Google\Collection
   protected $itemsType = Tier::class;
   protected $itemsDataType = 'array';
   /**
-   * This is always `sql#tiersList`.
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * List of tiers.
-   *
-   * @param Tier[] $items
+   * @param Tier[]
    */
   public function setItems($items)
   {
@@ -46,9 +42,7 @@ class TiersListResponse extends \Google\Collection
     return $this->items;
   }
   /**
-   * This is always `sql#tiersList`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1alphaIdpConfigExternalIdpConfig extends \Google\Model
 {
   /**
-   * Workforce pool name. Example: "locations/global/workforcePools/pool_id"
-   *
    * @var string
    */
   public $workforcePoolName;
 
   /**
-   * Workforce pool name. Example: "locations/global/workforcePools/pool_id"
-   *
-   * @param string $workforcePoolName
+   * @param string
    */
   public function setWorkforcePoolName($workforcePoolName)
   {

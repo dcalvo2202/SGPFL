@@ -20,44 +20,16 @@ namespace Google\Service\ChromeManagement;
 class GoogleChromeManagementV1HttpsLatencyRoutineData extends \Google\Model
 {
   /**
-   * HTTPS latency problem not specified.
-   */
-  public const PROBLEM_HTTPS_LATENCY_PROBLEM_UNSPECIFIED = 'HTTPS_LATENCY_PROBLEM_UNSPECIFIED';
-  /**
-   * One or more DNS resolutions resulted in a failure.
-   */
-  public const PROBLEM_FAILED_DNS_RESOLUTIONS = 'FAILED_DNS_RESOLUTIONS';
-  /**
-   * One or more HTTPS requests resulted in a failure.
-   */
-  public const PROBLEM_FAILED_HTTPS_REQUESTS = 'FAILED_HTTPS_REQUESTS';
-  /**
-   * Average HTTPS request latency time between 500ms and 1000ms is high.
-   */
-  public const PROBLEM_HIGH_LATENCY = 'HIGH_LATENCY';
-  /**
-   * Average HTTPS request latency time greater than 1000ms is very high.
-   */
-  public const PROBLEM_VERY_HIGH_LATENCY = 'VERY_HIGH_LATENCY';
-  /**
-   * Output only. HTTPS latency if routine succeeded or failed because of
-   * HIGH_LATENCY or VERY_HIGH_LATENCY.
-   *
    * @var string
    */
   public $latency;
   /**
-   * Output only. HTTPS latency routine problem if a problem occurred.
-   *
    * @var string
    */
   public $problem;
 
   /**
-   * Output only. HTTPS latency if routine succeeded or failed because of
-   * HIGH_LATENCY or VERY_HIGH_LATENCY.
-   *
-   * @param string $latency
+   * @param string
    */
   public function setLatency($latency)
   {
@@ -71,19 +43,14 @@ class GoogleChromeManagementV1HttpsLatencyRoutineData extends \Google\Model
     return $this->latency;
   }
   /**
-   * Output only. HTTPS latency routine problem if a problem occurred.
-   *
-   * Accepted values: HTTPS_LATENCY_PROBLEM_UNSPECIFIED, FAILED_DNS_RESOLUTIONS,
-   * FAILED_HTTPS_REQUESTS, HIGH_LATENCY, VERY_HIGH_LATENCY
-   *
-   * @param self::PROBLEM_* $problem
+   * @param string
    */
   public function setProblem($problem)
   {
     $this->problem = $problem;
   }
   /**
-   * @return self::PROBLEM_*
+   * @return string
    */
   public function getProblem()
   {

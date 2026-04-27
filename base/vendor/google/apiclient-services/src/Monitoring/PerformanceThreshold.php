@@ -23,17 +23,10 @@ class PerformanceThreshold extends \Google\Model
   protected $basicSliPerformanceDataType = '';
   protected $performanceType = RequestBasedSli::class;
   protected $performanceDataType = '';
-  /**
-   * If window performance >= threshold, the window is counted as good.
-   *
-   * @var 
-   */
   public $threshold;
 
   /**
-   * BasicSli to evaluate to judge window quality.
-   *
-   * @param BasicSli $basicSliPerformance
+   * @param BasicSli
    */
   public function setBasicSliPerformance(BasicSli $basicSliPerformance)
   {
@@ -47,9 +40,7 @@ class PerformanceThreshold extends \Google\Model
     return $this->basicSliPerformance;
   }
   /**
-   * RequestBasedSli to evaluate to judge window quality.
-   *
-   * @param RequestBasedSli $performance
+   * @param RequestBasedSli
    */
   public function setPerformance(RequestBasedSli $performance)
   {

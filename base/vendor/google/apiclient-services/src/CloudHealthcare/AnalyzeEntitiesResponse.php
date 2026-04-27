@@ -25,10 +25,6 @@ class AnalyzeEntitiesResponse extends \Google\Collection
   protected $entityMentionsType = EntityMention::class;
   protected $entityMentionsDataType = 'array';
   /**
-   * The FHIR bundle ([`R4`](http://hl7.org/fhir/R4/bundle.html)) that includes
-   * all the entities, the entity mentions, and the relationships in JSON
-   * format.
-   *
    * @var string
    */
   public $fhirBundle;
@@ -36,11 +32,7 @@ class AnalyzeEntitiesResponse extends \Google\Collection
   protected $relationshipsDataType = 'array';
 
   /**
-   * The union of all the candidate entities that the entity_mentions in this
-   * response could link to. These are UMLS concepts or normalized mention
-   * content.
-   *
-   * @param Entity[] $entities
+   * @param Entity[]
    */
   public function setEntities($entities)
   {
@@ -54,10 +46,7 @@ class AnalyzeEntitiesResponse extends \Google\Collection
     return $this->entities;
   }
   /**
-   * The `entity_mentions` field contains all the annotated medical entities
-   * that were mentioned in the provided document.
-   *
-   * @param EntityMention[] $entityMentions
+   * @param EntityMention[]
    */
   public function setEntityMentions($entityMentions)
   {
@@ -71,11 +60,7 @@ class AnalyzeEntitiesResponse extends \Google\Collection
     return $this->entityMentions;
   }
   /**
-   * The FHIR bundle ([`R4`](http://hl7.org/fhir/R4/bundle.html)) that includes
-   * all the entities, the entity mentions, and the relationships in JSON
-   * format.
-   *
-   * @param string $fhirBundle
+   * @param string
    */
   public function setFhirBundle($fhirBundle)
   {
@@ -89,10 +74,7 @@ class AnalyzeEntitiesResponse extends \Google\Collection
     return $this->fhirBundle;
   }
   /**
-   * relationships contains all the binary relationships that were identified
-   * between entity mentions within the provided document.
-   *
-   * @param EntityMentionRelationship[] $relationships
+   * @param EntityMentionRelationship[]
    */
   public function setRelationships($relationships)
   {

@@ -20,17 +20,10 @@ namespace Google\Service\Spanner;
 class RestoreDatabaseRequest extends \Google\Model
 {
   /**
-   * Name of the backup from which to restore. Values are of the form
-   * `projects//instances//backups/`.
-   *
    * @var string
    */
   public $backup;
   /**
-   * Required. The id of the database to create and restore to. This database
-   * must not already exist. The `database_id` appended to `parent` forms the
-   * full database name of the form `projects//instances//databases/`.
-   *
    * @var string
    */
   public $databaseId;
@@ -38,10 +31,7 @@ class RestoreDatabaseRequest extends \Google\Model
   protected $encryptionConfigDataType = '';
 
   /**
-   * Name of the backup from which to restore. Values are of the form
-   * `projects//instances//backups/`.
-   *
-   * @param string $backup
+   * @param string
    */
   public function setBackup($backup)
   {
@@ -55,11 +45,7 @@ class RestoreDatabaseRequest extends \Google\Model
     return $this->backup;
   }
   /**
-   * Required. The id of the database to create and restore to. This database
-   * must not already exist. The `database_id` appended to `parent` forms the
-   * full database name of the form `projects//instances//databases/`.
-   *
-   * @param string $databaseId
+   * @param string
    */
   public function setDatabaseId($databaseId)
   {
@@ -73,13 +59,7 @@ class RestoreDatabaseRequest extends \Google\Model
     return $this->databaseId;
   }
   /**
-   * Optional. An encryption configuration describing the encryption type and
-   * key resources in Cloud KMS used to encrypt/decrypt the database to restore
-   * to. If this field is not specified, the restored database will use the same
-   * encryption configuration as the backup by default, namely encryption_type =
-   * `USE_CONFIG_DEFAULT_OR_BACKUP_ENCRYPTION`.
-   *
-   * @param RestoreDatabaseEncryptionConfig $encryptionConfig
+   * @param RestoreDatabaseEncryptionConfig
    */
   public function setEncryptionConfig(RestoreDatabaseEncryptionConfig $encryptionConfig)
   {

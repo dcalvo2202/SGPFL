@@ -21,9 +21,6 @@ class GoogleSecuritySafebrowsingV5FullHash extends \Google\Collection
 {
   protected $collection_key = 'fullHashDetails';
   /**
-   * The matching full hash. This is the SHA256 hash. The length will be exactly
-   * 32 bytes.
-   *
    * @var string
    */
   public $fullHash;
@@ -31,10 +28,7 @@ class GoogleSecuritySafebrowsingV5FullHash extends \Google\Collection
   protected $fullHashDetailsDataType = 'array';
 
   /**
-   * The matching full hash. This is the SHA256 hash. The length will be exactly
-   * 32 bytes.
-   *
-   * @param string $fullHash
+   * @param string
    */
   public function setFullHash($fullHash)
   {
@@ -48,10 +42,7 @@ class GoogleSecuritySafebrowsingV5FullHash extends \Google\Collection
     return $this->fullHash;
   }
   /**
-   * Unordered list. A repeated field identifying the details relevant to this
-   * full hash.
-   *
-   * @param GoogleSecuritySafebrowsingV5FullHashFullHashDetail[] $fullHashDetails
+   * @param GoogleSecuritySafebrowsingV5FullHashFullHashDetail[]
    */
   public function setFullHashDetails($fullHashDetails)
   {

@@ -20,28 +20,16 @@ namespace Google\Service\TrafficDirectorService;
 class TypedExtensionConfig extends \Google\Model
 {
   /**
-   * The name of an extension. This is not used to select the extension, instead
-   * it serves the role of an opaque identifier.
-   *
    * @var string
    */
   public $name;
   /**
-   * The typed config for the extension. The type URL will be used to identify
-   * the extension. In the case that the type URL is *xds.type.v3.TypedStruct*
-   * (or, for historical reasons, *udpa.type.v1.TypedStruct*), the inner type
-   * URL of *TypedStruct* will be utilized. See the :ref:`extension
-   * configuration overview ` for further details.
-   *
    * @var array[]
    */
   public $typedConfig;
 
   /**
-   * The name of an extension. This is not used to select the extension, instead
-   * it serves the role of an opaque identifier.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -55,13 +43,7 @@ class TypedExtensionConfig extends \Google\Model
     return $this->name;
   }
   /**
-   * The typed config for the extension. The type URL will be used to identify
-   * the extension. In the case that the type URL is *xds.type.v3.TypedStruct*
-   * (or, for historical reasons, *udpa.type.v1.TypedStruct*), the inner type
-   * URL of *TypedStruct* will be utilized. See the :ref:`extension
-   * configuration overview ` for further details.
-   *
-   * @param array[] $typedConfig
+   * @param array[]
    */
   public function setTypedConfig($typedConfig)
   {

@@ -20,22 +20,16 @@ namespace Google\Service\Analytics;
 class CustomMetricParentLink extends \Google\Model
 {
   /**
-   * Link to the property to which the custom metric belongs.
-   *
    * @var string
    */
   public $href;
   /**
-   * Type of the parent link. Set to "analytics#webproperty".
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Link to the property to which the custom metric belongs.
-   *
-   * @param string $href
+   * @param string
    */
   public function setHref($href)
   {
@@ -49,9 +43,7 @@ class CustomMetricParentLink extends \Google\Model
     return $this->href;
   }
   /**
-   * Type of the parent link. Set to "analytics#webproperty".
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

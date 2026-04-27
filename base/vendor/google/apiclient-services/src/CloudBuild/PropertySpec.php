@@ -20,33 +20,19 @@ namespace Google\Service\CloudBuild;
 class PropertySpec extends \Google\Model
 {
   /**
-   * Default enum type; should not be used.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * Default
-   */
-  public const TYPE_STRING = 'STRING';
-  /**
-   * A type for the object.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * A type for the object.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, STRING
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

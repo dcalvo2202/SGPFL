@@ -20,34 +20,24 @@ namespace Google\Service\DriveLabels;
 class GoogleAppsDriveLabelsV2FieldSelectionOptionsChoiceSchemaCapabilities extends \Google\Model
 {
   /**
-   * Whether the user can delete this choice.
-   *
    * @var bool
    */
   public $canDelete;
   /**
-   * Whether the user can disable this choice.
-   *
    * @var bool
    */
   public $canDisable;
   /**
-   * Whether the user can enable this choice.
-   *
    * @var bool
    */
   public $canEnable;
   /**
-   * Whether the user can update this choice.
-   *
    * @var bool
    */
   public $canUpdate;
 
   /**
-   * Whether the user can delete this choice.
-   *
-   * @param bool $canDelete
+   * @param bool
    */
   public function setCanDelete($canDelete)
   {
@@ -61,9 +51,7 @@ class GoogleAppsDriveLabelsV2FieldSelectionOptionsChoiceSchemaCapabilities exten
     return $this->canDelete;
   }
   /**
-   * Whether the user can disable this choice.
-   *
-   * @param bool $canDisable
+   * @param bool
    */
   public function setCanDisable($canDisable)
   {
@@ -77,9 +65,7 @@ class GoogleAppsDriveLabelsV2FieldSelectionOptionsChoiceSchemaCapabilities exten
     return $this->canDisable;
   }
   /**
-   * Whether the user can enable this choice.
-   *
-   * @param bool $canEnable
+   * @param bool
    */
   public function setCanEnable($canEnable)
   {
@@ -93,9 +79,7 @@ class GoogleAppsDriveLabelsV2FieldSelectionOptionsChoiceSchemaCapabilities exten
     return $this->canEnable;
   }
   /**
-   * Whether the user can update this choice.
-   *
-   * @param bool $canUpdate
+   * @param bool
    */
   public function setCanUpdate($canUpdate)
   {

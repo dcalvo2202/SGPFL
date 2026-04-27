@@ -20,22 +20,16 @@ namespace Google\Service\MyBusinessBusinessInformation;
 class ChainName extends \Google\Model
 {
   /**
-   * The display name for this chain.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * The BCP 47 code of language of the name.
-   *
    * @var string
    */
   public $languageCode;
 
   /**
-   * The display name for this chain.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -49,9 +43,7 @@ class ChainName extends \Google\Model
     return $this->displayName;
   }
   /**
-   * The BCP 47 code of language of the name.
-   *
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {

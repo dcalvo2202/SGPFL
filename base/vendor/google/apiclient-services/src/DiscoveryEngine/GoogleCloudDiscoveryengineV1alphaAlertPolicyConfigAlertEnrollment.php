@@ -20,35 +20,16 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1alphaAlertPolicyConfigAlertEnrollment extends \Google\Model
 {
   /**
-   * Default value. Used for customers who have not responded to the alert
-   * policy.
-   */
-  public const ENROLL_STATE_ENROLL_STATES_UNSPECIFIED = 'ENROLL_STATES_UNSPECIFIED';
-  /**
-   * Customer is enrolled in this policy.
-   */
-  public const ENROLL_STATE_ENROLLED = 'ENROLLED';
-  /**
-   * Customer declined this policy.
-   */
-  public const ENROLL_STATE_DECLINED = 'DECLINED';
-  /**
-   * Immutable. The id of an alert.
-   *
    * @var string
    */
   public $alertId;
   /**
-   * Required. The enrollment status of a customer.
-   *
    * @var string
    */
   public $enrollState;
 
   /**
-   * Immutable. The id of an alert.
-   *
-   * @param string $alertId
+   * @param string
    */
   public function setAlertId($alertId)
   {
@@ -62,18 +43,14 @@ class GoogleCloudDiscoveryengineV1alphaAlertPolicyConfigAlertEnrollment extends 
     return $this->alertId;
   }
   /**
-   * Required. The enrollment status of a customer.
-   *
-   * Accepted values: ENROLL_STATES_UNSPECIFIED, ENROLLED, DECLINED
-   *
-   * @param self::ENROLL_STATE_* $enrollState
+   * @param string
    */
   public function setEnrollState($enrollState)
   {
     $this->enrollState = $enrollState;
   }
   /**
-   * @return self::ENROLL_STATE_*
+   * @return string
    */
   public function getEnrollState()
   {

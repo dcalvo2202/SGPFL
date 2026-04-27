@@ -20,16 +20,12 @@ namespace Google\Service\CloudRedis;
 class UpgradeInstanceRequest extends \Google\Model
 {
   /**
-   * Required. Specifies the target version of Redis software to upgrade to.
-   *
    * @var string
    */
   public $redisVersion;
 
   /**
-   * Required. Specifies the target version of Redis software to upgrade to.
-   *
-   * @param string $redisVersion
+   * @param string
    */
   public function setRedisVersion($redisVersion)
   {

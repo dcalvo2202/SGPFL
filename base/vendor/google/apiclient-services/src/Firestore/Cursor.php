@@ -21,9 +21,6 @@ class Cursor extends \Google\Collection
 {
   protected $collection_key = 'values';
   /**
-   * If the position is just before or just after the given values, relative to
-   * the sort order defined by the query.
-   *
    * @var bool
    */
   public $before;
@@ -31,10 +28,7 @@ class Cursor extends \Google\Collection
   protected $valuesDataType = 'array';
 
   /**
-   * If the position is just before or just after the given values, relative to
-   * the sort order defined by the query.
-   *
-   * @param bool $before
+   * @param bool
    */
   public function setBefore($before)
   {
@@ -48,11 +42,7 @@ class Cursor extends \Google\Collection
     return $this->before;
   }
   /**
-   * The values that represent a position, in the order they appear in the order
-   * by clause of a query. Can contain fewer values than specified in the order
-   * by clause.
-   *
-   * @param Value[] $values
+   * @param Value[]
    */
   public function setValues($values)
   {

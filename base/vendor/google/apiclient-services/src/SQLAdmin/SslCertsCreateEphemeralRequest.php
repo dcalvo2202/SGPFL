@@ -24,22 +24,16 @@ class SslCertsCreateEphemeralRequest extends \Google\Model
         "publicKey" => "public_key",
   ];
   /**
-   * Access token to include in the signed certificate.
-   *
    * @var string
    */
   public $accessToken;
   /**
-   * PEM encoded public key to include in the signed certificate.
-   *
    * @var string
    */
   public $publicKey;
 
   /**
-   * Access token to include in the signed certificate.
-   *
-   * @param string $accessToken
+   * @param string
    */
   public function setAccessToken($accessToken)
   {
@@ -53,9 +47,7 @@ class SslCertsCreateEphemeralRequest extends \Google\Model
     return $this->accessToken;
   }
   /**
-   * PEM encoded public key to include in the signed certificate.
-   *
-   * @param string $publicKey
+   * @param string
    */
   public function setPublicKey($publicKey)
   {

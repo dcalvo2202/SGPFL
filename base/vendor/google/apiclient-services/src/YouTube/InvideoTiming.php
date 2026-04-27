@@ -19,38 +19,21 @@ namespace Google\Service\YouTube;
 
 class InvideoTiming extends \Google\Model
 {
-  public const TYPE_offsetFromStart = 'offsetFromStart';
-  public const TYPE_offsetFromEnd = 'offsetFromEnd';
   /**
-   * Defines the duration in milliseconds for which the promotion should be
-   * displayed. If missing, the client should use the default.
-   *
    * @var string
    */
   public $durationMs;
   /**
-   * Defines the time at which the promotion will appear. Depending on the value
-   * of type the value of the offsetMs field will represent a time offset from
-   * the start or from the end of the video, expressed in milliseconds.
-   *
    * @var string
    */
   public $offsetMs;
   /**
-   * Describes a timing type. If the value is offsetFromStart, then the offsetMs
-   * field represents an offset from the start of the video. If the value is
-   * offsetFromEnd, then the offsetMs field represents an offset from the end of
-   * the video.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Defines the duration in milliseconds for which the promotion should be
-   * displayed. If missing, the client should use the default.
-   *
-   * @param string $durationMs
+   * @param string
    */
   public function setDurationMs($durationMs)
   {
@@ -64,11 +47,7 @@ class InvideoTiming extends \Google\Model
     return $this->durationMs;
   }
   /**
-   * Defines the time at which the promotion will appear. Depending on the value
-   * of type the value of the offsetMs field will represent a time offset from
-   * the start or from the end of the video, expressed in milliseconds.
-   *
-   * @param string $offsetMs
+   * @param string
    */
   public function setOffsetMs($offsetMs)
   {
@@ -82,21 +61,14 @@ class InvideoTiming extends \Google\Model
     return $this->offsetMs;
   }
   /**
-   * Describes a timing type. If the value is offsetFromStart, then the offsetMs
-   * field represents an offset from the start of the video. If the value is
-   * offsetFromEnd, then the offsetMs field represents an offset from the end of
-   * the video.
-   *
-   * Accepted values: offsetFromStart, offsetFromEnd
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

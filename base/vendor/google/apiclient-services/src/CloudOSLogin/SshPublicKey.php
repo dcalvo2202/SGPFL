@@ -20,35 +20,24 @@ namespace Google\Service\CloudOSLogin;
 class SshPublicKey extends \Google\Model
 {
   /**
-   * An expiration time in microseconds since epoch.
-   *
    * @var string
    */
   public $expirationTimeUsec;
   /**
-   * Output only. The SHA-256 fingerprint of the SSH public key.
-   *
    * @var string
    */
   public $fingerprint;
   /**
-   * Required. Public key text in SSH format, defined by
-   * [RFC4253](https://www.ietf.org/rfc/rfc4253.txt) section 6.6.
-   *
    * @var string
    */
   public $key;
   /**
-   * Output only. The canonical resource name.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * An expiration time in microseconds since epoch.
-   *
-   * @param string $expirationTimeUsec
+   * @param string
    */
   public function setExpirationTimeUsec($expirationTimeUsec)
   {
@@ -62,9 +51,7 @@ class SshPublicKey extends \Google\Model
     return $this->expirationTimeUsec;
   }
   /**
-   * Output only. The SHA-256 fingerprint of the SSH public key.
-   *
-   * @param string $fingerprint
+   * @param string
    */
   public function setFingerprint($fingerprint)
   {
@@ -78,10 +65,7 @@ class SshPublicKey extends \Google\Model
     return $this->fingerprint;
   }
   /**
-   * Required. Public key text in SSH format, defined by
-   * [RFC4253](https://www.ietf.org/rfc/rfc4253.txt) section 6.6.
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {
@@ -95,9 +79,7 @@ class SshPublicKey extends \Google\Model
     return $this->key;
   }
   /**
-   * Output only. The canonical resource name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

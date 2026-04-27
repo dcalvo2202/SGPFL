@@ -24,9 +24,7 @@ class GoogleCloudDiscoveryengineV1DocumentAclInfo extends \Google\Collection
   protected $readersDataType = 'array';
 
   /**
-   * Readers of the document.
-   *
-   * @param GoogleCloudDiscoveryengineV1DocumentAclInfoAccessRestriction[] $readers
+   * @param GoogleCloudDiscoveryengineV1DocumentAclInfoAccessRestriction[]
    */
   public function setReaders($readers)
   {

@@ -23,15 +23,10 @@ class InstancesListResponse extends \Google\Collection
   protected $itemsType = DatabaseInstance::class;
   protected $itemsDataType = 'array';
   /**
-   * This is always `sql#instancesList`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The continuation token, used to page through large result sets. Provide
-   * this value in a subsequent request to return the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -39,9 +34,7 @@ class InstancesListResponse extends \Google\Collection
   protected $warningsDataType = 'array';
 
   /**
-   * List of database instance resources.
-   *
-   * @param DatabaseInstance[] $items
+   * @param DatabaseInstance[]
    */
   public function setItems($items)
   {
@@ -55,9 +48,7 @@ class InstancesListResponse extends \Google\Collection
     return $this->items;
   }
   /**
-   * This is always `sql#instancesList`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -71,10 +62,7 @@ class InstancesListResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The continuation token, used to page through large result sets. Provide
-   * this value in a subsequent request to return the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -88,9 +76,7 @@ class InstancesListResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * List of warnings that occurred while handling the request.
-   *
-   * @param ApiWarning[] $warnings
+   * @param ApiWarning[]
    */
   public function setWarnings($warnings)
   {

@@ -20,45 +20,18 @@ namespace Google\Service\SA360;
 class GoogleAdsSearchads360V0ResourcesLabel extends \Google\Model
 {
   /**
-   * Not specified.
-   */
-  public const STATUS_UNSPECIFIED = 'UNSPECIFIED';
-  /**
-   * Used for return value only. Represents value unknown in this version.
-   */
-  public const STATUS_UNKNOWN = 'UNKNOWN';
-  /**
-   * Label is enabled.
-   */
-  public const STATUS_ENABLED = 'ENABLED';
-  /**
-   * Label is removed.
-   */
-  public const STATUS_REMOVED = 'REMOVED';
-  /**
-   * Output only. ID of the label. Read only.
-   *
    * @var string
    */
   public $id;
   /**
-   * The name of the label. This field is required and should not be empty when
-   * creating a new label. The length of this string should be between 1 and 80,
-   * inclusive.
-   *
    * @var string
    */
   public $name;
   /**
-   * Immutable. Name of the resource. Label resource names have the form:
-   * `customers/{owner_customer_id}/labels/{label_id}`
-   *
    * @var string
    */
   public $resourceName;
   /**
-   * Output only. Status of the label. Read only.
-   *
    * @var string
    */
   public $status;
@@ -66,9 +39,7 @@ class GoogleAdsSearchads360V0ResourcesLabel extends \Google\Model
   protected $textLabelDataType = '';
 
   /**
-   * Output only. ID of the label. Read only.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -82,11 +53,7 @@ class GoogleAdsSearchads360V0ResourcesLabel extends \Google\Model
     return $this->id;
   }
   /**
-   * The name of the label. This field is required and should not be empty when
-   * creating a new label. The length of this string should be between 1 and 80,
-   * inclusive.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -100,10 +67,7 @@ class GoogleAdsSearchads360V0ResourcesLabel extends \Google\Model
     return $this->name;
   }
   /**
-   * Immutable. Name of the resource. Label resource names have the form:
-   * `customers/{owner_customer_id}/labels/{label_id}`
-   *
-   * @param string $resourceName
+   * @param string
    */
   public function setResourceName($resourceName)
   {
@@ -117,27 +81,21 @@ class GoogleAdsSearchads360V0ResourcesLabel extends \Google\Model
     return $this->resourceName;
   }
   /**
-   * Output only. Status of the label. Read only.
-   *
-   * Accepted values: UNSPECIFIED, UNKNOWN, ENABLED, REMOVED
-   *
-   * @param self::STATUS_* $status
+   * @param string
    */
   public function setStatus($status)
   {
     $this->status = $status;
   }
   /**
-   * @return self::STATUS_*
+   * @return string
    */
   public function getStatus()
   {
     return $this->status;
   }
   /**
-   * A type of label displaying text on a colored background.
-   *
-   * @param GoogleAdsSearchads360V0CommonTextLabel $textLabel
+   * @param GoogleAdsSearchads360V0CommonTextLabel
    */
   public function setTextLabel(GoogleAdsSearchads360V0CommonTextLabel $textLabel)
   {

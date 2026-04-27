@@ -23,18 +23,12 @@ class ListConsentsResponse extends \Google\Collection
   protected $consentsType = Consent::class;
   protected $consentsDataType = 'array';
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The returned Consents. The maximum number of Consents returned is
-   * determined by the value of page_size in the ListConsentsRequest.
-   *
-   * @param Consent[] $consents
+   * @param Consent[]
    */
   public function setConsents($consents)
   {
@@ -48,10 +42,7 @@ class ListConsentsResponse extends \Google\Collection
     return $this->consents;
   }
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

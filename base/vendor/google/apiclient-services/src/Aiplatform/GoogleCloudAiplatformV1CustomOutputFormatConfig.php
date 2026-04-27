@@ -20,16 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1CustomOutputFormatConfig extends \Google\Model
 {
   /**
-   * Optional. Whether to return raw output.
-   *
    * @var bool
    */
   public $returnRawOutput;
 
   /**
-   * Optional. Whether to return raw output.
-   *
-   * @param bool $returnRawOutput
+   * @param bool
    */
   public function setReturnRawOutput($returnRawOutput)
   {

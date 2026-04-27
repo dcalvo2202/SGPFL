@@ -20,37 +20,24 @@ namespace Google\Service\Spanner;
 class BackupInfo extends \Google\Model
 {
   /**
-   * Name of the backup.
-   *
    * @var string
    */
   public $backup;
   /**
-   * The time the CreateBackup request was received.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Name of the database the backup was created from.
-   *
    * @var string
    */
   public $sourceDatabase;
   /**
-   * The backup contains an externally consistent copy of `source_database` at
-   * the timestamp specified by `version_time`. If the CreateBackup request did
-   * not specify `version_time`, the `version_time` of the backup is equivalent
-   * to the `create_time`.
-   *
    * @var string
    */
   public $versionTime;
 
   /**
-   * Name of the backup.
-   *
-   * @param string $backup
+   * @param string
    */
   public function setBackup($backup)
   {
@@ -64,9 +51,7 @@ class BackupInfo extends \Google\Model
     return $this->backup;
   }
   /**
-   * The time the CreateBackup request was received.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -80,9 +65,7 @@ class BackupInfo extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Name of the database the backup was created from.
-   *
-   * @param string $sourceDatabase
+   * @param string
    */
   public function setSourceDatabase($sourceDatabase)
   {
@@ -96,12 +79,7 @@ class BackupInfo extends \Google\Model
     return $this->sourceDatabase;
   }
   /**
-   * The backup contains an externally consistent copy of `source_database` at
-   * the timestamp specified by `version_time`. If the CreateBackup request did
-   * not specify `version_time`, the `version_time` of the backup is equivalent
-   * to the `create_time`.
-   *
-   * @param string $versionTime
+   * @param string
    */
   public function setVersionTime($versionTime)
   {

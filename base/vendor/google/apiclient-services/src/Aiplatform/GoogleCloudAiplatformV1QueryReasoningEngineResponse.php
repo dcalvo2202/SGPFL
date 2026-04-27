@@ -20,16 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1QueryReasoningEngineResponse extends \Google\Model
 {
   /**
-   * Response provided by users in JSON object format.
-   *
    * @var array
    */
   public $output;
 
   /**
-   * Response provided by users in JSON object format.
-   *
-   * @param array $output
+   * @param array
    */
   public function setOutput($output)
   {

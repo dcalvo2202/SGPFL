@@ -20,18 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1SchemaTrainingjobDefinitionCustomJobMetadata extends \Google\Model
 {
   /**
-   * The resource name of the CustomJob that has been created to carry out this
-   * custom task.
-   *
    * @var string
    */
   public $backingCustomJob;
 
   /**
-   * The resource name of the CustomJob that has been created to carry out this
-   * custom task.
-   *
-   * @param string $backingCustomJob
+   * @param string
    */
   public function setBackingCustomJob($backingCustomJob)
   {

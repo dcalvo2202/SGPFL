@@ -20,76 +20,48 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1Glossary extends \Google\Model
 {
   /**
-   * Output only. The number of GlossaryCategories in the Glossary.
-   *
    * @var int
    */
   public $categoryCount;
   /**
-   * Output only. The time at which the Glossary was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. The user-mutable description of the Glossary.
-   *
    * @var string
    */
   public $description;
   /**
-   * Optional. User friendly display name of the Glossary. This is user-mutable.
-   * This will be same as the GlossaryId, if not specified.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Optional. Needed for resource freshness validation. This checksum is
-   * computed by the server based on the value of other fields, and may be sent
-   * on update and delete requests to ensure the client has an up-to-date value
-   * before proceeding.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Optional. User-defined labels for the Glossary.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Output only. Identifier. The resource name of the Glossary. Format: project
-   * s/{project_id_or_number}/locations/{location_id}/glossaries/{glossary_id}
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The number of GlossaryTerms in the Glossary.
-   *
    * @var int
    */
   public $termCount;
   /**
-   * Output only. System generated unique id for the Glossary. This ID will be
-   * different if the Glossary is deleted and re-created with the same name.
-   *
    * @var string
    */
   public $uid;
   /**
-   * Output only. The time at which the Glossary was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. The number of GlossaryCategories in the Glossary.
-   *
-   * @param int $categoryCount
+   * @param int
    */
   public function setCategoryCount($categoryCount)
   {
@@ -103,9 +75,7 @@ class GoogleCloudDataplexV1Glossary extends \Google\Model
     return $this->categoryCount;
   }
   /**
-   * Output only. The time at which the Glossary was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -119,9 +89,7 @@ class GoogleCloudDataplexV1Glossary extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Optional. The user-mutable description of the Glossary.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -135,10 +103,7 @@ class GoogleCloudDataplexV1Glossary extends \Google\Model
     return $this->description;
   }
   /**
-   * Optional. User friendly display name of the Glossary. This is user-mutable.
-   * This will be same as the GlossaryId, if not specified.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -152,12 +117,7 @@ class GoogleCloudDataplexV1Glossary extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Optional. Needed for resource freshness validation. This checksum is
-   * computed by the server based on the value of other fields, and may be sent
-   * on update and delete requests to ensure the client has an up-to-date value
-   * before proceeding.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -171,9 +131,7 @@ class GoogleCloudDataplexV1Glossary extends \Google\Model
     return $this->etag;
   }
   /**
-   * Optional. User-defined labels for the Glossary.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -187,10 +145,7 @@ class GoogleCloudDataplexV1Glossary extends \Google\Model
     return $this->labels;
   }
   /**
-   * Output only. Identifier. The resource name of the Glossary. Format: project
-   * s/{project_id_or_number}/locations/{location_id}/glossaries/{glossary_id}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -204,9 +159,7 @@ class GoogleCloudDataplexV1Glossary extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The number of GlossaryTerms in the Glossary.
-   *
-   * @param int $termCount
+   * @param int
    */
   public function setTermCount($termCount)
   {
@@ -220,10 +173,7 @@ class GoogleCloudDataplexV1Glossary extends \Google\Model
     return $this->termCount;
   }
   /**
-   * Output only. System generated unique id for the Glossary. This ID will be
-   * different if the Glossary is deleted and re-created with the same name.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {
@@ -237,9 +187,7 @@ class GoogleCloudDataplexV1Glossary extends \Google\Model
     return $this->uid;
   }
   /**
-   * Output only. The time at which the Glossary was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

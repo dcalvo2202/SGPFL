@@ -19,37 +19,23 @@ namespace Google\Service\Integrations;
 
 class EnterpriseCrmEventbusProtoExternalTraffic extends \Google\Model
 {
-  public const SOURCE_SOURCE_UNSPECIFIED = 'SOURCE_UNSPECIFIED';
-  public const SOURCE_APIGEE = 'APIGEE';
-  public const SOURCE_SECURITY = 'SECURITY';
   /**
-   * Indicates the client enables internal IP feature, this is applicable for
-   * internal clients only.
-   *
    * @var bool
    */
   public $enableInternalIp;
   /**
-   * User’s GCP project id the traffic is referring to.
-   *
    * @var string
    */
   public $gcpProjectId;
   /**
-   * User’s GCP project number the traffic is referring to.
-   *
    * @var string
    */
   public $gcpProjectNumber;
   /**
-   * Location for the user's request.
-   *
    * @var string
    */
   public $location;
   /**
-   * Enqueue the execution request due to quota issue
-   *
    * @var bool
    */
   public $retryRequestForQuota;
@@ -59,10 +45,7 @@ class EnterpriseCrmEventbusProtoExternalTraffic extends \Google\Model
   public $source;
 
   /**
-   * Indicates the client enables internal IP feature, this is applicable for
-   * internal clients only.
-   *
-   * @param bool $enableInternalIp
+   * @param bool
    */
   public function setEnableInternalIp($enableInternalIp)
   {
@@ -76,9 +59,7 @@ class EnterpriseCrmEventbusProtoExternalTraffic extends \Google\Model
     return $this->enableInternalIp;
   }
   /**
-   * User’s GCP project id the traffic is referring to.
-   *
-   * @param string $gcpProjectId
+   * @param string
    */
   public function setGcpProjectId($gcpProjectId)
   {
@@ -92,9 +73,7 @@ class EnterpriseCrmEventbusProtoExternalTraffic extends \Google\Model
     return $this->gcpProjectId;
   }
   /**
-   * User’s GCP project number the traffic is referring to.
-   *
-   * @param string $gcpProjectNumber
+   * @param string
    */
   public function setGcpProjectNumber($gcpProjectNumber)
   {
@@ -108,9 +87,7 @@ class EnterpriseCrmEventbusProtoExternalTraffic extends \Google\Model
     return $this->gcpProjectNumber;
   }
   /**
-   * Location for the user's request.
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -124,9 +101,7 @@ class EnterpriseCrmEventbusProtoExternalTraffic extends \Google\Model
     return $this->location;
   }
   /**
-   * Enqueue the execution request due to quota issue
-   *
-   * @param bool $retryRequestForQuota
+   * @param bool
    */
   public function setRetryRequestForQuota($retryRequestForQuota)
   {
@@ -140,14 +115,14 @@ class EnterpriseCrmEventbusProtoExternalTraffic extends \Google\Model
     return $this->retryRequestForQuota;
   }
   /**
-   * @param self::SOURCE_* $source
+   * @param string
    */
   public function setSource($source)
   {
     $this->source = $source;
   }
   /**
-   * @return self::SOURCE_*
+   * @return string
    */
   public function getSource()
   {

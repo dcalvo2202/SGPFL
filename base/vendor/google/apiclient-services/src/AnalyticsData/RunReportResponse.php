@@ -23,10 +23,6 @@ class RunReportResponse extends \Google\Collection
   protected $dimensionHeadersType = DimensionHeader::class;
   protected $dimensionHeadersDataType = 'array';
   /**
-   * Identifies what kind of resource this message is. This `kind` is always the
-   * fixed string "analyticsData#runReport". Useful to distinguish between
-   * response types in JSON.
-   *
    * @var string
    */
   public $kind;
@@ -41,14 +37,6 @@ class RunReportResponse extends \Google\Collection
   protected $propertyQuotaType = PropertyQuota::class;
   protected $propertyQuotaDataType = '';
   /**
-   * The total number of rows in the query result. `rowCount` is independent of
-   * the number of rows returned in the response, the `limit` request parameter,
-   * and the `offset` request parameter. For example if a query returns 175 rows
-   * and includes `limit` of 50 in the API request, the response will contain
-   * `rowCount` of 175 but only 50 rows. To learn more about this pagination
-   * parameter, see [Pagination](https://developers.google.com/analytics/devguid
-   * es/reporting/data/v1/basics#pagination).
-   *
    * @var int
    */
   public $rowCount;
@@ -58,10 +46,7 @@ class RunReportResponse extends \Google\Collection
   protected $totalsDataType = 'array';
 
   /**
-   * Describes dimension columns. The number of DimensionHeaders and ordering of
-   * DimensionHeaders matches the dimensions present in rows.
-   *
-   * @param DimensionHeader[] $dimensionHeaders
+   * @param DimensionHeader[]
    */
   public function setDimensionHeaders($dimensionHeaders)
   {
@@ -75,11 +60,7 @@ class RunReportResponse extends \Google\Collection
     return $this->dimensionHeaders;
   }
   /**
-   * Identifies what kind of resource this message is. This `kind` is always the
-   * fixed string "analyticsData#runReport". Useful to distinguish between
-   * response types in JSON.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -93,9 +74,7 @@ class RunReportResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * If requested, the maximum values of metrics.
-   *
-   * @param Row[] $maximums
+   * @param Row[]
    */
   public function setMaximums($maximums)
   {
@@ -109,9 +88,7 @@ class RunReportResponse extends \Google\Collection
     return $this->maximums;
   }
   /**
-   * Metadata for the report.
-   *
-   * @param ResponseMetaData $metadata
+   * @param ResponseMetaData
    */
   public function setMetadata(ResponseMetaData $metadata)
   {
@@ -125,10 +102,7 @@ class RunReportResponse extends \Google\Collection
     return $this->metadata;
   }
   /**
-   * Describes metric columns. The number of MetricHeaders and ordering of
-   * MetricHeaders matches the metrics present in rows.
-   *
-   * @param MetricHeader[] $metricHeaders
+   * @param MetricHeader[]
    */
   public function setMetricHeaders($metricHeaders)
   {
@@ -142,9 +116,7 @@ class RunReportResponse extends \Google\Collection
     return $this->metricHeaders;
   }
   /**
-   * If requested, the minimum values of metrics.
-   *
-   * @param Row[] $minimums
+   * @param Row[]
    */
   public function setMinimums($minimums)
   {
@@ -158,9 +130,7 @@ class RunReportResponse extends \Google\Collection
     return $this->minimums;
   }
   /**
-   * This Google Analytics property's quota state including this request.
-   *
-   * @param PropertyQuota $propertyQuota
+   * @param PropertyQuota
    */
   public function setPropertyQuota(PropertyQuota $propertyQuota)
   {
@@ -174,15 +144,7 @@ class RunReportResponse extends \Google\Collection
     return $this->propertyQuota;
   }
   /**
-   * The total number of rows in the query result. `rowCount` is independent of
-   * the number of rows returned in the response, the `limit` request parameter,
-   * and the `offset` request parameter. For example if a query returns 175 rows
-   * and includes `limit` of 50 in the API request, the response will contain
-   * `rowCount` of 175 but only 50 rows. To learn more about this pagination
-   * parameter, see [Pagination](https://developers.google.com/analytics/devguid
-   * es/reporting/data/v1/basics#pagination).
-   *
-   * @param int $rowCount
+   * @param int
    */
   public function setRowCount($rowCount)
   {
@@ -196,9 +158,7 @@ class RunReportResponse extends \Google\Collection
     return $this->rowCount;
   }
   /**
-   * Rows of dimension value combinations and metric values in the report.
-   *
-   * @param Row[] $rows
+   * @param Row[]
    */
   public function setRows($rows)
   {
@@ -212,9 +172,7 @@ class RunReportResponse extends \Google\Collection
     return $this->rows;
   }
   /**
-   * If requested, the totaled values of metrics.
-   *
-   * @param Row[] $totals
+   * @param Row[]
    */
   public function setTotals($totals)
   {

@@ -24,18 +24,12 @@ class ReportHeader extends \Google\Model
   protected $localizationSettingsType = LocalizationSettings::class;
   protected $localizationSettingsDataType = '';
   /**
-   * The report time zone. The value is a time-zone ID as specified by the CLDR
-   * project, for example, "America/Los_Angeles".
-   *
    * @var string
    */
   public $reportingTimeZone;
 
   /**
-   * The date range for which the report is generated. This is identical to the
-   * range specified in the report request.
-   *
-   * @param DateRange $dateRange
+   * @param DateRange
    */
   public function setDateRange(DateRange $dateRange)
   {
@@ -49,10 +43,7 @@ class ReportHeader extends \Google\Model
     return $this->dateRange;
   }
   /**
-   * Localization settings of the report. This is identical to the settings in
-   * the report request.
-   *
-   * @param LocalizationSettings $localizationSettings
+   * @param LocalizationSettings
    */
   public function setLocalizationSettings(LocalizationSettings $localizationSettings)
   {
@@ -66,10 +57,7 @@ class ReportHeader extends \Google\Model
     return $this->localizationSettings;
   }
   /**
-   * The report time zone. The value is a time-zone ID as specified by the CLDR
-   * project, for example, "America/Los_Angeles".
-   *
-   * @param string $reportingTimeZone
+   * @param string
    */
   public function setReportingTimeZone($reportingTimeZone)
   {

@@ -19,12 +19,6 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowCxV3Example extends \Google\Collection
 {
-  public const CONVERSATION_STATE_OUTPUT_STATE_UNSPECIFIED = 'OUTPUT_STATE_UNSPECIFIED';
-  public const CONVERSATION_STATE_OUTPUT_STATE_OK = 'OUTPUT_STATE_OK';
-  public const CONVERSATION_STATE_OUTPUT_STATE_CANCELLED = 'OUTPUT_STATE_CANCELLED';
-  public const CONVERSATION_STATE_OUTPUT_STATE_FAILED = 'OUTPUT_STATE_FAILED';
-  public const CONVERSATION_STATE_OUTPUT_STATE_ESCALATED = 'OUTPUT_STATE_ESCALATED';
-  public const CONVERSATION_STATE_OUTPUT_STATE_PENDING = 'OUTPUT_STATE_PENDING';
   protected $collection_key = 'actions';
   protected $actionsType = GoogleCloudDialogflowCxV3Action::class;
   protected $actionsDataType = 'array';
@@ -66,7 +60,7 @@ class GoogleCloudDialogflowCxV3Example extends \Google\Collection
   public $updateTime;
 
   /**
-   * @param GoogleCloudDialogflowCxV3Action[] $actions
+   * @param GoogleCloudDialogflowCxV3Action[]
    */
   public function setActions($actions)
   {
@@ -80,21 +74,21 @@ class GoogleCloudDialogflowCxV3Example extends \Google\Collection
     return $this->actions;
   }
   /**
-   * @param self::CONVERSATION_STATE_* $conversationState
+   * @param string
    */
   public function setConversationState($conversationState)
   {
     $this->conversationState = $conversationState;
   }
   /**
-   * @return self::CONVERSATION_STATE_*
+   * @return string
    */
   public function getConversationState()
   {
     return $this->conversationState;
   }
   /**
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -108,7 +102,7 @@ class GoogleCloudDialogflowCxV3Example extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -122,7 +116,7 @@ class GoogleCloudDialogflowCxV3Example extends \Google\Collection
     return $this->description;
   }
   /**
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -136,7 +130,7 @@ class GoogleCloudDialogflowCxV3Example extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {
@@ -150,7 +144,7 @@ class GoogleCloudDialogflowCxV3Example extends \Google\Collection
     return $this->languageCode;
   }
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -164,7 +158,7 @@ class GoogleCloudDialogflowCxV3Example extends \Google\Collection
     return $this->name;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3PlaybookInput $playbookInput
+   * @param GoogleCloudDialogflowCxV3PlaybookInput
    */
   public function setPlaybookInput(GoogleCloudDialogflowCxV3PlaybookInput $playbookInput)
   {
@@ -178,7 +172,7 @@ class GoogleCloudDialogflowCxV3Example extends \Google\Collection
     return $this->playbookInput;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3PlaybookOutput $playbookOutput
+   * @param GoogleCloudDialogflowCxV3PlaybookOutput
    */
   public function setPlaybookOutput(GoogleCloudDialogflowCxV3PlaybookOutput $playbookOutput)
   {
@@ -192,7 +186,7 @@ class GoogleCloudDialogflowCxV3Example extends \Google\Collection
     return $this->playbookOutput;
   }
   /**
-   * @param string $tokenCount
+   * @param string
    */
   public function setTokenCount($tokenCount)
   {
@@ -206,7 +200,7 @@ class GoogleCloudDialogflowCxV3Example extends \Google\Collection
     return $this->tokenCount;
   }
   /**
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

@@ -23,17 +23,12 @@ class GoogleCloudContentwarehouseV1ListLinkedSourcesResponse extends \Google\Col
   protected $documentLinksType = GoogleCloudContentwarehouseV1DocumentLink::class;
   protected $documentLinksDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Source document-links.
-   *
-   * @param GoogleCloudContentwarehouseV1DocumentLink[] $documentLinks
+   * @param GoogleCloudContentwarehouseV1DocumentLink[]
    */
   public function setDocumentLinks($documentLinks)
   {
@@ -47,10 +42,7 @@ class GoogleCloudContentwarehouseV1ListLinkedSourcesResponse extends \Google\Col
     return $this->documentLinks;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

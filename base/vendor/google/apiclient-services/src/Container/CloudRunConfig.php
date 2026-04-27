@@ -20,34 +20,16 @@ namespace Google\Service\Container;
 class CloudRunConfig extends \Google\Model
 {
   /**
-   * Load balancer type for Cloud Run is unspecified.
-   */
-  public const LOAD_BALANCER_TYPE_LOAD_BALANCER_TYPE_UNSPECIFIED = 'LOAD_BALANCER_TYPE_UNSPECIFIED';
-  /**
-   * Install external load balancer for Cloud Run.
-   */
-  public const LOAD_BALANCER_TYPE_LOAD_BALANCER_TYPE_EXTERNAL = 'LOAD_BALANCER_TYPE_EXTERNAL';
-  /**
-   * Install internal load balancer for Cloud Run.
-   */
-  public const LOAD_BALANCER_TYPE_LOAD_BALANCER_TYPE_INTERNAL = 'LOAD_BALANCER_TYPE_INTERNAL';
-  /**
-   * Whether Cloud Run addon is enabled for this cluster.
-   *
    * @var bool
    */
   public $disabled;
   /**
-   * Which load balancer type is installed for Cloud Run.
-   *
    * @var string
    */
   public $loadBalancerType;
 
   /**
-   * Whether Cloud Run addon is enabled for this cluster.
-   *
-   * @param bool $disabled
+   * @param bool
    */
   public function setDisabled($disabled)
   {
@@ -61,19 +43,14 @@ class CloudRunConfig extends \Google\Model
     return $this->disabled;
   }
   /**
-   * Which load balancer type is installed for Cloud Run.
-   *
-   * Accepted values: LOAD_BALANCER_TYPE_UNSPECIFIED,
-   * LOAD_BALANCER_TYPE_EXTERNAL, LOAD_BALANCER_TYPE_INTERNAL
-   *
-   * @param self::LOAD_BALANCER_TYPE_* $loadBalancerType
+   * @param string
    */
   public function setLoadBalancerType($loadBalancerType)
   {
     $this->loadBalancerType = $loadBalancerType;
   }
   /**
-   * @return self::LOAD_BALANCER_TYPE_*
+   * @return string
    */
   public function getLoadBalancerType()
   {

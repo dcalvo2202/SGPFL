@@ -21,9 +21,6 @@ class GoogleChecksRepoScanV1alphaListRepoScansResponse extends \Google\Collectio
 {
   protected $collection_key = 'repoScans';
   /**
-   * A token which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GoogleChecksRepoScanV1alphaListRepoScansResponse extends \Google\Collectio
   protected $repoScansDataType = 'array';
 
   /**
-   * A token which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class GoogleChecksRepoScanV1alphaListRepoScansResponse extends \Google\Collectio
     return $this->nextPageToken;
   }
   /**
-   * The repo scans for the specified app.
-   *
-   * @param GoogleChecksRepoScanV1alphaRepoScan[] $repoScans
+   * @param GoogleChecksRepoScanV1alphaRepoScan[]
    */
   public function setRepoScans($repoScans)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\HomeGraphService;
 class ReportStateAndNotificationResponse extends \Google\Model
 {
   /**
-   * Request ID copied from ReportStateAndNotificationRequest.
-   *
    * @var string
    */
   public $requestId;
 
   /**
-   * Request ID copied from ReportStateAndNotificationRequest.
-   *
-   * @param string $requestId
+   * @param string
    */
   public function setRequestId($requestId)
   {

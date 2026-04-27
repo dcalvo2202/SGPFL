@@ -20,18 +20,12 @@ namespace Google\Service\CloudAlloyDBAdmin;
 class GcsDestination extends \Google\Model
 {
   /**
-   * Required. The path to the file in Google Cloud Storage where the export
-   * will be stored. The URI is in the form `gs://bucketName/fileName`.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * Required. The path to the file in Google Cloud Storage where the export
-   * will be stored. The URI is in the form `gs://bucketName/fileName`.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

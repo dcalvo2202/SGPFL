@@ -20,71 +20,46 @@ namespace Google\Service\Directory;
 class SchemaFieldSpec extends \Google\Model
 {
   /**
-   * Display Name of the field.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * The ETag of the field.
-   *
    * @var string
    */
   public $etag;
   /**
-   * The unique identifier of the field (Read-only)
-   *
    * @var string
    */
   public $fieldId;
   /**
-   * The name of the field.
-   *
    * @var string
    */
   public $fieldName;
   /**
-   * The type of the field.
-   *
    * @var string
    */
   public $fieldType;
   /**
-   * Boolean specifying whether the field is indexed or not. Default: `true`.
-   *
    * @var bool
    */
   public $indexed;
   /**
-   * The kind of resource this is. For schema fields this is always
-   * `admin#directory#schema#fieldspec`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * A boolean specifying whether this is a multi-valued field or not. Default:
-   * `false`.
-   *
    * @var bool
    */
   public $multiValued;
   protected $numericIndexingSpecType = SchemaFieldSpecNumericIndexingSpec::class;
   protected $numericIndexingSpecDataType = '';
   /**
-   * Specifies who can view values of this field. See [Retrieve users as a non-a
-   * dministrator](https://developers.google.com/workspace/admin/directory/v1/gu
-   * ides/manage-users#retrieve_users_non_admin) for more information. Note: It
-   * may take up to 24 hours for changes to this field to be reflected.
-   *
    * @var string
    */
   public $readAccessType;
 
   /**
-   * Display Name of the field.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -98,9 +73,7 @@ class SchemaFieldSpec extends \Google\Model
     return $this->displayName;
   }
   /**
-   * The ETag of the field.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -114,9 +87,7 @@ class SchemaFieldSpec extends \Google\Model
     return $this->etag;
   }
   /**
-   * The unique identifier of the field (Read-only)
-   *
-   * @param string $fieldId
+   * @param string
    */
   public function setFieldId($fieldId)
   {
@@ -130,9 +101,7 @@ class SchemaFieldSpec extends \Google\Model
     return $this->fieldId;
   }
   /**
-   * The name of the field.
-   *
-   * @param string $fieldName
+   * @param string
    */
   public function setFieldName($fieldName)
   {
@@ -146,9 +115,7 @@ class SchemaFieldSpec extends \Google\Model
     return $this->fieldName;
   }
   /**
-   * The type of the field.
-   *
-   * @param string $fieldType
+   * @param string
    */
   public function setFieldType($fieldType)
   {
@@ -162,9 +129,7 @@ class SchemaFieldSpec extends \Google\Model
     return $this->fieldType;
   }
   /**
-   * Boolean specifying whether the field is indexed or not. Default: `true`.
-   *
-   * @param bool $indexed
+   * @param bool
    */
   public function setIndexed($indexed)
   {
@@ -178,10 +143,7 @@ class SchemaFieldSpec extends \Google\Model
     return $this->indexed;
   }
   /**
-   * The kind of resource this is. For schema fields this is always
-   * `admin#directory#schema#fieldspec`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -195,10 +157,7 @@ class SchemaFieldSpec extends \Google\Model
     return $this->kind;
   }
   /**
-   * A boolean specifying whether this is a multi-valued field or not. Default:
-   * `false`.
-   *
-   * @param bool $multiValued
+   * @param bool
    */
   public function setMultiValued($multiValued)
   {
@@ -212,11 +171,7 @@ class SchemaFieldSpec extends \Google\Model
     return $this->multiValued;
   }
   /**
-   * Indexing spec for a numeric field. By default, only exact match queries
-   * will be supported for numeric fields. Setting the `numericIndexingSpec`
-   * allows range queries to be supported.
-   *
-   * @param SchemaFieldSpecNumericIndexingSpec $numericIndexingSpec
+   * @param SchemaFieldSpecNumericIndexingSpec
    */
   public function setNumericIndexingSpec(SchemaFieldSpecNumericIndexingSpec $numericIndexingSpec)
   {
@@ -230,12 +185,7 @@ class SchemaFieldSpec extends \Google\Model
     return $this->numericIndexingSpec;
   }
   /**
-   * Specifies who can view values of this field. See [Retrieve users as a non-a
-   * dministrator](https://developers.google.com/workspace/admin/directory/v1/gu
-   * ides/manage-users#retrieve_users_non_admin) for more information. Note: It
-   * may take up to 24 hours for changes to this field to be reflected.
-   *
-   * @param string $readAccessType
+   * @param string
    */
   public function setReadAccessType($readAccessType)
   {

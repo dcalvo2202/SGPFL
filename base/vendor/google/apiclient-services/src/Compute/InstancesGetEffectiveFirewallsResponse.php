@@ -26,9 +26,7 @@ class InstancesGetEffectiveFirewallsResponse extends \Google\Collection
   protected $firewallsDataType = 'array';
 
   /**
-   * [Output Only] Effective firewalls from firewall policies.
-   *
-   * @param InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy[] $firewallPolicys
+   * @param InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy[]
    */
   public function setFirewallPolicys($firewallPolicys)
   {
@@ -42,9 +40,7 @@ class InstancesGetEffectiveFirewallsResponse extends \Google\Collection
     return $this->firewallPolicys;
   }
   /**
-   * Effective firewalls on the instance.
-   *
-   * @param Firewall[] $firewalls
+   * @param Firewall[]
    */
   public function setFirewalls($firewalls)
   {

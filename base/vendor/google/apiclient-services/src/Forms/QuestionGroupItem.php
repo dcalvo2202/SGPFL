@@ -28,11 +28,7 @@ class QuestionGroupItem extends \Google\Collection
   protected $questionsDataType = 'array';
 
   /**
-   * The question group is a grid with rows of multiple choice questions that
-   * share the same options. When `grid` is set, all questions in the group must
-   * be of kind `row`.
-   *
-   * @param Grid $grid
+   * @param Grid
    */
   public function setGrid(Grid $grid)
   {
@@ -46,9 +42,7 @@ class QuestionGroupItem extends \Google\Collection
     return $this->grid;
   }
   /**
-   * The image displayed within the question group above the specific questions.
-   *
-   * @param Image $image
+   * @param Image
    */
   public function setImage(Image $image)
   {
@@ -62,11 +56,7 @@ class QuestionGroupItem extends \Google\Collection
     return $this->image;
   }
   /**
-   * Required. A list of questions that belong in this question group. A
-   * question must only belong to one group. The `kind` of the group may affect
-   * what types of questions are allowed.
-   *
-   * @param Question[] $questions
+   * @param Question[]
    */
   public function setQuestions($questions)
   {

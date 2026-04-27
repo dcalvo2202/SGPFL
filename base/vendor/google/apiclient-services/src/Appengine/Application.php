@@ -19,92 +19,28 @@ namespace Google\Service\Appengine;
 
 class Application extends \Google\Collection
 {
-  /**
-   * Database type is unspecified.
-   */
-  public const DATABASE_TYPE_DATABASE_TYPE_UNSPECIFIED = 'DATABASE_TYPE_UNSPECIFIED';
-  /**
-   * Cloud Datastore
-   */
-  public const DATABASE_TYPE_CLOUD_DATASTORE = 'CLOUD_DATASTORE';
-  /**
-   * Cloud Firestore Native
-   */
-  public const DATABASE_TYPE_CLOUD_FIRESTORE = 'CLOUD_FIRESTORE';
-  /**
-   * Cloud Firestore in Datastore Mode
-   */
-  public const DATABASE_TYPE_CLOUD_DATASTORE_COMPATIBILITY = 'CLOUD_DATASTORE_COMPATIBILITY';
-  /**
-   * Serving status is unspecified.
-   */
-  public const SERVING_STATUS_UNSPECIFIED = 'UNSPECIFIED';
-  /**
-   * Application is serving.
-   */
-  public const SERVING_STATUS_SERVING = 'SERVING';
-  /**
-   * Application has been disabled by the user.
-   */
-  public const SERVING_STATUS_USER_DISABLED = 'USER_DISABLED';
-  /**
-   * Application has been disabled by the system.
-   */
-  public const SERVING_STATUS_SYSTEM_DISABLED = 'SYSTEM_DISABLED';
-  /**
-   * Required by linter. Will work same as DEFAULT
-   */
-  public const SSL_POLICY_SSL_POLICY_UNSPECIFIED = 'SSL_POLICY_UNSPECIFIED';
-  /**
-   * DEFAULT is to allow all TLS versions and cipher suites supported by App
-   * Engine
-   */
-  public const SSL_POLICY_DEFAULT = 'DEFAULT';
-  /**
-   * MODERN is to allow only TLS 1.2 and TLS 1.3 along with Modern cipher suites
-   * only
-   */
-  public const SSL_POLICY_MODERN = 'MODERN';
   protected $collection_key = 'dispatchRules';
   /**
-   * Google Apps authentication domain that controls which users can access this
-   * application.Defaults to open access for any Google Account.
-   *
    * @var string
    */
   public $authDomain;
   /**
-   * Output only. Google Cloud Storage bucket that can be used for storing files
-   * associated with this application. This bucket is associated with the
-   * application and can be used by the gcloud deployment commands.@OutputOnly
-   *
    * @var string
    */
   public $codeBucket;
   /**
-   * The type of the Cloud Firestore or Cloud Datastore database associated with
-   * this application.
-   *
    * @var string
    */
   public $databaseType;
   /**
-   * Output only. Google Cloud Storage bucket that can be used by this
-   * application to store content.@OutputOnly
-   *
    * @var string
    */
   public $defaultBucket;
   /**
-   * Cookie expiration policy for this application.
-   *
    * @var string
    */
   public $defaultCookieExpiration;
   /**
-   * Output only. Hostname used to reach this application, as resolved by App
-   * Engine.@OutputOnly
-   *
    * @var string
    */
   public $defaultHostname;
@@ -113,37 +49,20 @@ class Application extends \Google\Collection
   protected $featureSettingsType = FeatureSettings::class;
   protected $featureSettingsDataType = '';
   /**
-   * Output only. The Google Container Registry domain used for storing managed
-   * build docker images for this application.
-   *
    * @var string
    */
   public $gcrDomain;
   /**
-   * Additional Google Generated Customer Metadata, this field won't be provided
-   * by default and can be requested by setting the IncludeExtraData field in
-   * GetApplicationRequest
-   *
    * @var array[]
    */
   public $generatedCustomerMetadata;
   protected $iapType = IdentityAwareProxy::class;
   protected $iapDataType = '';
   /**
-   * Identifier of the Application resource. This identifier is equivalent to
-   * the project ID of the Google Cloud Platform project where you want to
-   * deploy your application. Example: myapp.
-   *
    * @var string
    */
   public $id;
   /**
-   * Location from which this application runs. Application instances run out of
-   * the data centers in the specified location, which is also where all of the
-   * application's end user content is stored.Defaults to us-central.View the
-   * list of supported locations
-   * (https://cloud.google.com/appengine/docs/locations).
-   *
    * @var string
    */
   public $locationId;
@@ -152,32 +71,20 @@ class Application extends \Google\Collection
    */
   public $name;
   /**
-   * The service account associated with the application. This is the app-level
-   * default identity. If no identity provided during create version, Admin API
-   * will fallback to this one.
-   *
    * @var string
    */
   public $serviceAccount;
   /**
-   * Serving status of this application.
-   *
    * @var string
    */
   public $servingStatus;
   /**
-   * The SSL policy that will be applied to the application. If set to Modern it
-   * will restrict traffic with TLS < 1.2 and allow only Modern Ciphers suite
-   *
    * @var string
    */
   public $sslPolicy;
 
   /**
-   * Google Apps authentication domain that controls which users can access this
-   * application.Defaults to open access for any Google Account.
-   *
-   * @param string $authDomain
+   * @param string
    */
   public function setAuthDomain($authDomain)
   {
@@ -191,11 +98,7 @@ class Application extends \Google\Collection
     return $this->authDomain;
   }
   /**
-   * Output only. Google Cloud Storage bucket that can be used for storing files
-   * associated with this application. This bucket is associated with the
-   * application and can be used by the gcloud deployment commands.@OutputOnly
-   *
-   * @param string $codeBucket
+   * @param string
    */
   public function setCodeBucket($codeBucket)
   {
@@ -209,30 +112,21 @@ class Application extends \Google\Collection
     return $this->codeBucket;
   }
   /**
-   * The type of the Cloud Firestore or Cloud Datastore database associated with
-   * this application.
-   *
-   * Accepted values: DATABASE_TYPE_UNSPECIFIED, CLOUD_DATASTORE,
-   * CLOUD_FIRESTORE, CLOUD_DATASTORE_COMPATIBILITY
-   *
-   * @param self::DATABASE_TYPE_* $databaseType
+   * @param string
    */
   public function setDatabaseType($databaseType)
   {
     $this->databaseType = $databaseType;
   }
   /**
-   * @return self::DATABASE_TYPE_*
+   * @return string
    */
   public function getDatabaseType()
   {
     return $this->databaseType;
   }
   /**
-   * Output only. Google Cloud Storage bucket that can be used by this
-   * application to store content.@OutputOnly
-   *
-   * @param string $defaultBucket
+   * @param string
    */
   public function setDefaultBucket($defaultBucket)
   {
@@ -246,9 +140,7 @@ class Application extends \Google\Collection
     return $this->defaultBucket;
   }
   /**
-   * Cookie expiration policy for this application.
-   *
-   * @param string $defaultCookieExpiration
+   * @param string
    */
   public function setDefaultCookieExpiration($defaultCookieExpiration)
   {
@@ -262,10 +154,7 @@ class Application extends \Google\Collection
     return $this->defaultCookieExpiration;
   }
   /**
-   * Output only. Hostname used to reach this application, as resolved by App
-   * Engine.@OutputOnly
-   *
-   * @param string $defaultHostname
+   * @param string
    */
   public function setDefaultHostname($defaultHostname)
   {
@@ -279,11 +168,7 @@ class Application extends \Google\Collection
     return $this->defaultHostname;
   }
   /**
-   * HTTP path dispatch rules for requests to the application that do not
-   * explicitly target a service or version. Rules are order-dependent. Up to 20
-   * dispatch rules can be supported.
-   *
-   * @param UrlDispatchRule[] $dispatchRules
+   * @param UrlDispatchRule[]
    */
   public function setDispatchRules($dispatchRules)
   {
@@ -297,9 +182,7 @@ class Application extends \Google\Collection
     return $this->dispatchRules;
   }
   /**
-   * The feature specific settings to be used in the application.
-   *
-   * @param FeatureSettings $featureSettings
+   * @param FeatureSettings
    */
   public function setFeatureSettings(FeatureSettings $featureSettings)
   {
@@ -313,10 +196,7 @@ class Application extends \Google\Collection
     return $this->featureSettings;
   }
   /**
-   * Output only. The Google Container Registry domain used for storing managed
-   * build docker images for this application.
-   *
-   * @param string $gcrDomain
+   * @param string
    */
   public function setGcrDomain($gcrDomain)
   {
@@ -330,11 +210,7 @@ class Application extends \Google\Collection
     return $this->gcrDomain;
   }
   /**
-   * Additional Google Generated Customer Metadata, this field won't be provided
-   * by default and can be requested by setting the IncludeExtraData field in
-   * GetApplicationRequest
-   *
-   * @param array[] $generatedCustomerMetadata
+   * @param array[]
    */
   public function setGeneratedCustomerMetadata($generatedCustomerMetadata)
   {
@@ -348,7 +224,7 @@ class Application extends \Google\Collection
     return $this->generatedCustomerMetadata;
   }
   /**
-   * @param IdentityAwareProxy $iap
+   * @param IdentityAwareProxy
    */
   public function setIap(IdentityAwareProxy $iap)
   {
@@ -362,11 +238,7 @@ class Application extends \Google\Collection
     return $this->iap;
   }
   /**
-   * Identifier of the Application resource. This identifier is equivalent to
-   * the project ID of the Google Cloud Platform project where you want to
-   * deploy your application. Example: myapp.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -380,13 +252,7 @@ class Application extends \Google\Collection
     return $this->id;
   }
   /**
-   * Location from which this application runs. Application instances run out of
-   * the data centers in the specified location, which is also where all of the
-   * application's end user content is stored.Defaults to us-central.View the
-   * list of supported locations
-   * (https://cloud.google.com/appengine/docs/locations).
-   *
-   * @param string $locationId
+   * @param string
    */
   public function setLocationId($locationId)
   {
@@ -400,7 +266,7 @@ class Application extends \Google\Collection
     return $this->locationId;
   }
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -414,11 +280,7 @@ class Application extends \Google\Collection
     return $this->name;
   }
   /**
-   * The service account associated with the application. This is the app-level
-   * default identity. If no identity provided during create version, Admin API
-   * will fallback to this one.
-   *
-   * @param string $serviceAccount
+   * @param string
    */
   public function setServiceAccount($serviceAccount)
   {
@@ -432,37 +294,28 @@ class Application extends \Google\Collection
     return $this->serviceAccount;
   }
   /**
-   * Serving status of this application.
-   *
-   * Accepted values: UNSPECIFIED, SERVING, USER_DISABLED, SYSTEM_DISABLED
-   *
-   * @param self::SERVING_STATUS_* $servingStatus
+   * @param string
    */
   public function setServingStatus($servingStatus)
   {
     $this->servingStatus = $servingStatus;
   }
   /**
-   * @return self::SERVING_STATUS_*
+   * @return string
    */
   public function getServingStatus()
   {
     return $this->servingStatus;
   }
   /**
-   * The SSL policy that will be applied to the application. If set to Modern it
-   * will restrict traffic with TLS < 1.2 and allow only Modern Ciphers suite
-   *
-   * Accepted values: SSL_POLICY_UNSPECIFIED, DEFAULT, MODERN
-   *
-   * @param self::SSL_POLICY_* $sslPolicy
+   * @param string
    */
   public function setSslPolicy($sslPolicy)
   {
     $this->sslPolicy = $sslPolicy;
   }
   /**
-   * @return self::SSL_POLICY_*
+   * @return string
    */
   public function getSslPolicy()
   {

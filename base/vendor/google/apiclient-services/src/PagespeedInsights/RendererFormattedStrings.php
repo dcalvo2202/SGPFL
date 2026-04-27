@@ -20,331 +20,200 @@ namespace Google\Service\PagespeedInsights;
 class RendererFormattedStrings extends \Google\Model
 {
   /**
-   * The tooltip text on an expandable chevron icon.
-   *
    * @var string
    */
   public $auditGroupExpandTooltip;
   /**
-   * Text link pointing to the Lighthouse scoring calculator. This link
-   * immediately follows a sentence stating the performance score is calculated
-   * from the perf metrics.
-   *
    * @var string
    */
   public $calculatorLink;
   /**
-   * The label for the initial request in a critical request chain.
-   *
    * @var string
    */
   public $crcInitialNavigation;
   /**
-   * The label for values shown in the summary of critical request chains.
-   *
    * @var string
    */
   public $crcLongestDurationLabel;
   /**
-   * Option in a dropdown menu that copies the Lighthouse JSON object to the
-   * system clipboard.
-   *
    * @var string
    */
   public $dropdownCopyJSON;
   /**
-   * Option in a dropdown menu that toggles the themeing of the report between
-   * Light(default) and Dark themes.
-   *
    * @var string
    */
   public $dropdownDarkTheme;
   /**
-   * Option in a dropdown menu that opens a full Lighthouse report in a print
-   * dialog.
-   *
    * @var string
    */
   public $dropdownPrintExpanded;
   /**
-   * Option in a dropdown menu that opens a small, summary report in a print
-   * dialog.
-   *
    * @var string
    */
   public $dropdownPrintSummary;
   /**
-   * Option in a dropdown menu that saves the current report as a new GitHub
-   * Gist.
-   *
    * @var string
    */
   public $dropdownSaveGist;
   /**
-   * Option in a dropdown menu that saves the Lighthouse report HTML locally to
-   * the system as a '.html' file.
-   *
    * @var string
    */
   public $dropdownSaveHTML;
   /**
-   * Option in a dropdown menu that saves the Lighthouse JSON object to the
-   * local system as a '.json' file.
-   *
    * @var string
    */
   public $dropdownSaveJSON;
   /**
-   * Option in a dropdown menu that opens the current report in the Lighthouse
-   * Viewer Application.
-   *
    * @var string
    */
   public $dropdownViewer;
   /**
-   * The label shown next to an audit or metric that has had an error.
-   *
    * @var string
    */
   public $errorLabel;
   /**
-   * The error string shown next to an erroring audit.
-   *
    * @var string
    */
   public $errorMissingAuditInfo;
   /**
-   * Label for button to create an issue against the Lighthouse GitHub project.
-   *
    * @var string
    */
   public $footerIssue;
   /**
-   * The title of the lab data performance category.
-   *
    * @var string
    */
   public $labDataTitle;
   /**
-   * The disclaimer shown under performance explaining that the network can
-   * vary.
-   *
    * @var string
    */
   public $lsPerformanceCategoryDescription;
   /**
-   * The heading shown above a list of audits that were not computerd in the
-   * run.
-   *
    * @var string
    */
   public $manualAuditsGroupTitle;
   /**
-   * The heading shown above a list of audits that do not apply to a page.
-   *
    * @var string
    */
   public $notApplicableAuditsGroupTitle;
   /**
-   * The heading for the estimated page load savings opportunity of an audit.
-   *
    * @var string
    */
   public $opportunityResourceColumnLabel;
   /**
-   * The heading for the estimated page load savings of opportunity audits.
-   *
    * @var string
    */
   public $opportunitySavingsColumnLabel;
   /**
-   * The heading that is shown above a list of audits that are passing.
-   *
    * @var string
    */
   public $passedAuditsGroupTitle;
   /**
-   * Descriptive explanation for emulation setting when emulating a generic
-   * desktop form factor, as opposed to a mobile-device like form factor.
-   *
    * @var string
    */
   public $runtimeDesktopEmulation;
   /**
-   * Descriptive explanation for emulation setting when emulating a Nexus 5X
-   * mobile device.
-   *
    * @var string
    */
   public $runtimeMobileEmulation;
   /**
-   * Descriptive explanation for emulation setting when no device emulation is
-   * set.
-   *
    * @var string
    */
   public $runtimeNoEmulation;
   /**
-   * Label for a row in a table that shows the version of the Axe library used
-   *
    * @var string
    */
   public $runtimeSettingsAxeVersion;
   /**
-   * Label for a row in a table that shows the estimated CPU power of the
-   * machine running Lighthouse. Example row values: 532, 1492, 783.
-   *
    * @var string
    */
   public $runtimeSettingsBenchmark;
   /**
-   * Label for a row in a table that describes the CPU throttling conditions
-   * that were used during a Lighthouse run, if any.
-   *
    * @var string
    */
   public $runtimeSettingsCPUThrottling;
   /**
-   * Label for a row in a table that shows in what tool Lighthouse is being run
-   * (e.g. The lighthouse CLI, Chrome DevTools, Lightrider, WebPageTest, etc).
-   *
    * @var string
    */
   public $runtimeSettingsChannel;
   /**
-   * Label for a row in a table that describes the kind of device that was
-   * emulated for the Lighthouse run. Example values for row elements: 'No
-   * Emulation', 'Emulated Desktop', etc.
-   *
    * @var string
    */
   public $runtimeSettingsDevice;
   /**
-   * Label for a row in a table that shows the time at which a Lighthouse run
-   * was conducted; formatted as a timestamp, e.g. Jan 1, 1970 12:00 AM UTC.
-   *
    * @var string
    */
   public $runtimeSettingsFetchTime;
   /**
-   * Label for a row in a table that describes the network throttling conditions
-   * that were used during a Lighthouse run, if any.
-   *
    * @var string
    */
   public $runtimeSettingsNetworkThrottling;
   /**
-   * Title of the Runtime settings table in a Lighthouse report. Runtime
-   * settings are the environment configurations that a specific report used at
-   * auditing time.
-   *
    * @var string
    */
   public $runtimeSettingsTitle;
   /**
-   * Label for a row in a table that shows the User Agent that was detected on
-   * the Host machine that ran Lighthouse.
-   *
    * @var string
    */
   public $runtimeSettingsUA;
   /**
-   * Label for a row in a table that shows the User Agent that was used to send
-   * out all network requests during the Lighthouse run.
-   *
    * @var string
    */
   public $runtimeSettingsUANetwork;
   /**
-   * Label for a row in a table that shows the URL that was audited during a
-   * Lighthouse run.
-   *
    * @var string
    */
   public $runtimeSettingsUrl;
   /**
-   * Descriptive explanation for a runtime setting that is set to an unknown
-   * value.
-   *
    * @var string
    */
   public $runtimeUnknown;
   /**
-   * The label that explains the score gauges scale (0-49, 50-89, 90-100).
-   *
    * @var string
    */
   public $scorescaleLabel;
   /**
-   * Label preceding a radio control for filtering the list of audits. The radio
-   * choices are various performance metrics (FCP, LCP, TBT), and if chosen, the
-   * audits in the report are hidden if they are not relevant to the selected
-   * metric.
-   *
    * @var string
    */
   public $showRelevantAudits;
   /**
-   * The label for the button to show only a few lines of a snippet
-   *
    * @var string
    */
   public $snippetCollapseButtonLabel;
   /**
-   * The label for the button to show all lines of a snippet
-   *
    * @var string
    */
   public $snippetExpandButtonLabel;
   /**
-   * This label is for a filter checkbox above a table of items
-   *
    * @var string
    */
   public $thirdPartyResourcesLabel;
   /**
-   * Descriptive explanation for environment throttling that was provided by the
-   * runtime environment instead of provided by Lighthouse throttling.
-   *
    * @var string
    */
   public $throttlingProvided;
   /**
-   * The label shown preceding important warnings that may have invalidated an
-   * entire report.
-   *
    * @var string
    */
   public $toplevelWarningsMessage;
   /**
-   * The disclaimer shown below a performance metric value.
-   *
    * @var string
    */
   public $varianceDisclaimer;
   /**
-   * Label for a button that opens the Treemap App
-   *
    * @var string
    */
   public $viewTreemapLabel;
   /**
-   * The heading that is shown above a list of audits that have warnings
-   *
    * @var string
    */
   public $warningAuditsGroupTitle;
   /**
-   * The label shown above a bulleted list of warnings.
-   *
    * @var string
    */
   public $warningHeader;
 
   /**
-   * The tooltip text on an expandable chevron icon.
-   *
-   * @param string $auditGroupExpandTooltip
+   * @param string
    */
   public function setAuditGroupExpandTooltip($auditGroupExpandTooltip)
   {
@@ -358,11 +227,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->auditGroupExpandTooltip;
   }
   /**
-   * Text link pointing to the Lighthouse scoring calculator. This link
-   * immediately follows a sentence stating the performance score is calculated
-   * from the perf metrics.
-   *
-   * @param string $calculatorLink
+   * @param string
    */
   public function setCalculatorLink($calculatorLink)
   {
@@ -376,9 +241,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->calculatorLink;
   }
   /**
-   * The label for the initial request in a critical request chain.
-   *
-   * @param string $crcInitialNavigation
+   * @param string
    */
   public function setCrcInitialNavigation($crcInitialNavigation)
   {
@@ -392,9 +255,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->crcInitialNavigation;
   }
   /**
-   * The label for values shown in the summary of critical request chains.
-   *
-   * @param string $crcLongestDurationLabel
+   * @param string
    */
   public function setCrcLongestDurationLabel($crcLongestDurationLabel)
   {
@@ -408,10 +269,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->crcLongestDurationLabel;
   }
   /**
-   * Option in a dropdown menu that copies the Lighthouse JSON object to the
-   * system clipboard.
-   *
-   * @param string $dropdownCopyJSON
+   * @param string
    */
   public function setDropdownCopyJSON($dropdownCopyJSON)
   {
@@ -425,10 +283,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->dropdownCopyJSON;
   }
   /**
-   * Option in a dropdown menu that toggles the themeing of the report between
-   * Light(default) and Dark themes.
-   *
-   * @param string $dropdownDarkTheme
+   * @param string
    */
   public function setDropdownDarkTheme($dropdownDarkTheme)
   {
@@ -442,10 +297,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->dropdownDarkTheme;
   }
   /**
-   * Option in a dropdown menu that opens a full Lighthouse report in a print
-   * dialog.
-   *
-   * @param string $dropdownPrintExpanded
+   * @param string
    */
   public function setDropdownPrintExpanded($dropdownPrintExpanded)
   {
@@ -459,10 +311,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->dropdownPrintExpanded;
   }
   /**
-   * Option in a dropdown menu that opens a small, summary report in a print
-   * dialog.
-   *
-   * @param string $dropdownPrintSummary
+   * @param string
    */
   public function setDropdownPrintSummary($dropdownPrintSummary)
   {
@@ -476,10 +325,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->dropdownPrintSummary;
   }
   /**
-   * Option in a dropdown menu that saves the current report as a new GitHub
-   * Gist.
-   *
-   * @param string $dropdownSaveGist
+   * @param string
    */
   public function setDropdownSaveGist($dropdownSaveGist)
   {
@@ -493,10 +339,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->dropdownSaveGist;
   }
   /**
-   * Option in a dropdown menu that saves the Lighthouse report HTML locally to
-   * the system as a '.html' file.
-   *
-   * @param string $dropdownSaveHTML
+   * @param string
    */
   public function setDropdownSaveHTML($dropdownSaveHTML)
   {
@@ -510,10 +353,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->dropdownSaveHTML;
   }
   /**
-   * Option in a dropdown menu that saves the Lighthouse JSON object to the
-   * local system as a '.json' file.
-   *
-   * @param string $dropdownSaveJSON
+   * @param string
    */
   public function setDropdownSaveJSON($dropdownSaveJSON)
   {
@@ -527,10 +367,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->dropdownSaveJSON;
   }
   /**
-   * Option in a dropdown menu that opens the current report in the Lighthouse
-   * Viewer Application.
-   *
-   * @param string $dropdownViewer
+   * @param string
    */
   public function setDropdownViewer($dropdownViewer)
   {
@@ -544,9 +381,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->dropdownViewer;
   }
   /**
-   * The label shown next to an audit or metric that has had an error.
-   *
-   * @param string $errorLabel
+   * @param string
    */
   public function setErrorLabel($errorLabel)
   {
@@ -560,9 +395,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->errorLabel;
   }
   /**
-   * The error string shown next to an erroring audit.
-   *
-   * @param string $errorMissingAuditInfo
+   * @param string
    */
   public function setErrorMissingAuditInfo($errorMissingAuditInfo)
   {
@@ -576,9 +409,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->errorMissingAuditInfo;
   }
   /**
-   * Label for button to create an issue against the Lighthouse GitHub project.
-   *
-   * @param string $footerIssue
+   * @param string
    */
   public function setFooterIssue($footerIssue)
   {
@@ -592,9 +423,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->footerIssue;
   }
   /**
-   * The title of the lab data performance category.
-   *
-   * @param string $labDataTitle
+   * @param string
    */
   public function setLabDataTitle($labDataTitle)
   {
@@ -608,10 +437,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->labDataTitle;
   }
   /**
-   * The disclaimer shown under performance explaining that the network can
-   * vary.
-   *
-   * @param string $lsPerformanceCategoryDescription
+   * @param string
    */
   public function setLsPerformanceCategoryDescription($lsPerformanceCategoryDescription)
   {
@@ -625,10 +451,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->lsPerformanceCategoryDescription;
   }
   /**
-   * The heading shown above a list of audits that were not computerd in the
-   * run.
-   *
-   * @param string $manualAuditsGroupTitle
+   * @param string
    */
   public function setManualAuditsGroupTitle($manualAuditsGroupTitle)
   {
@@ -642,9 +465,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->manualAuditsGroupTitle;
   }
   /**
-   * The heading shown above a list of audits that do not apply to a page.
-   *
-   * @param string $notApplicableAuditsGroupTitle
+   * @param string
    */
   public function setNotApplicableAuditsGroupTitle($notApplicableAuditsGroupTitle)
   {
@@ -658,9 +479,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->notApplicableAuditsGroupTitle;
   }
   /**
-   * The heading for the estimated page load savings opportunity of an audit.
-   *
-   * @param string $opportunityResourceColumnLabel
+   * @param string
    */
   public function setOpportunityResourceColumnLabel($opportunityResourceColumnLabel)
   {
@@ -674,9 +493,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->opportunityResourceColumnLabel;
   }
   /**
-   * The heading for the estimated page load savings of opportunity audits.
-   *
-   * @param string $opportunitySavingsColumnLabel
+   * @param string
    */
   public function setOpportunitySavingsColumnLabel($opportunitySavingsColumnLabel)
   {
@@ -690,9 +507,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->opportunitySavingsColumnLabel;
   }
   /**
-   * The heading that is shown above a list of audits that are passing.
-   *
-   * @param string $passedAuditsGroupTitle
+   * @param string
    */
   public function setPassedAuditsGroupTitle($passedAuditsGroupTitle)
   {
@@ -706,10 +521,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->passedAuditsGroupTitle;
   }
   /**
-   * Descriptive explanation for emulation setting when emulating a generic
-   * desktop form factor, as opposed to a mobile-device like form factor.
-   *
-   * @param string $runtimeDesktopEmulation
+   * @param string
    */
   public function setRuntimeDesktopEmulation($runtimeDesktopEmulation)
   {
@@ -723,10 +535,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->runtimeDesktopEmulation;
   }
   /**
-   * Descriptive explanation for emulation setting when emulating a Nexus 5X
-   * mobile device.
-   *
-   * @param string $runtimeMobileEmulation
+   * @param string
    */
   public function setRuntimeMobileEmulation($runtimeMobileEmulation)
   {
@@ -740,10 +549,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->runtimeMobileEmulation;
   }
   /**
-   * Descriptive explanation for emulation setting when no device emulation is
-   * set.
-   *
-   * @param string $runtimeNoEmulation
+   * @param string
    */
   public function setRuntimeNoEmulation($runtimeNoEmulation)
   {
@@ -757,9 +563,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->runtimeNoEmulation;
   }
   /**
-   * Label for a row in a table that shows the version of the Axe library used
-   *
-   * @param string $runtimeSettingsAxeVersion
+   * @param string
    */
   public function setRuntimeSettingsAxeVersion($runtimeSettingsAxeVersion)
   {
@@ -773,10 +577,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->runtimeSettingsAxeVersion;
   }
   /**
-   * Label for a row in a table that shows the estimated CPU power of the
-   * machine running Lighthouse. Example row values: 532, 1492, 783.
-   *
-   * @param string $runtimeSettingsBenchmark
+   * @param string
    */
   public function setRuntimeSettingsBenchmark($runtimeSettingsBenchmark)
   {
@@ -790,10 +591,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->runtimeSettingsBenchmark;
   }
   /**
-   * Label for a row in a table that describes the CPU throttling conditions
-   * that were used during a Lighthouse run, if any.
-   *
-   * @param string $runtimeSettingsCPUThrottling
+   * @param string
    */
   public function setRuntimeSettingsCPUThrottling($runtimeSettingsCPUThrottling)
   {
@@ -807,10 +605,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->runtimeSettingsCPUThrottling;
   }
   /**
-   * Label for a row in a table that shows in what tool Lighthouse is being run
-   * (e.g. The lighthouse CLI, Chrome DevTools, Lightrider, WebPageTest, etc).
-   *
-   * @param string $runtimeSettingsChannel
+   * @param string
    */
   public function setRuntimeSettingsChannel($runtimeSettingsChannel)
   {
@@ -824,11 +619,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->runtimeSettingsChannel;
   }
   /**
-   * Label for a row in a table that describes the kind of device that was
-   * emulated for the Lighthouse run. Example values for row elements: 'No
-   * Emulation', 'Emulated Desktop', etc.
-   *
-   * @param string $runtimeSettingsDevice
+   * @param string
    */
   public function setRuntimeSettingsDevice($runtimeSettingsDevice)
   {
@@ -842,10 +633,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->runtimeSettingsDevice;
   }
   /**
-   * Label for a row in a table that shows the time at which a Lighthouse run
-   * was conducted; formatted as a timestamp, e.g. Jan 1, 1970 12:00 AM UTC.
-   *
-   * @param string $runtimeSettingsFetchTime
+   * @param string
    */
   public function setRuntimeSettingsFetchTime($runtimeSettingsFetchTime)
   {
@@ -859,10 +647,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->runtimeSettingsFetchTime;
   }
   /**
-   * Label for a row in a table that describes the network throttling conditions
-   * that were used during a Lighthouse run, if any.
-   *
-   * @param string $runtimeSettingsNetworkThrottling
+   * @param string
    */
   public function setRuntimeSettingsNetworkThrottling($runtimeSettingsNetworkThrottling)
   {
@@ -876,11 +661,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->runtimeSettingsNetworkThrottling;
   }
   /**
-   * Title of the Runtime settings table in a Lighthouse report. Runtime
-   * settings are the environment configurations that a specific report used at
-   * auditing time.
-   *
-   * @param string $runtimeSettingsTitle
+   * @param string
    */
   public function setRuntimeSettingsTitle($runtimeSettingsTitle)
   {
@@ -894,10 +675,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->runtimeSettingsTitle;
   }
   /**
-   * Label for a row in a table that shows the User Agent that was detected on
-   * the Host machine that ran Lighthouse.
-   *
-   * @param string $runtimeSettingsUA
+   * @param string
    */
   public function setRuntimeSettingsUA($runtimeSettingsUA)
   {
@@ -911,10 +689,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->runtimeSettingsUA;
   }
   /**
-   * Label for a row in a table that shows the User Agent that was used to send
-   * out all network requests during the Lighthouse run.
-   *
-   * @param string $runtimeSettingsUANetwork
+   * @param string
    */
   public function setRuntimeSettingsUANetwork($runtimeSettingsUANetwork)
   {
@@ -928,10 +703,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->runtimeSettingsUANetwork;
   }
   /**
-   * Label for a row in a table that shows the URL that was audited during a
-   * Lighthouse run.
-   *
-   * @param string $runtimeSettingsUrl
+   * @param string
    */
   public function setRuntimeSettingsUrl($runtimeSettingsUrl)
   {
@@ -945,10 +717,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->runtimeSettingsUrl;
   }
   /**
-   * Descriptive explanation for a runtime setting that is set to an unknown
-   * value.
-   *
-   * @param string $runtimeUnknown
+   * @param string
    */
   public function setRuntimeUnknown($runtimeUnknown)
   {
@@ -962,9 +731,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->runtimeUnknown;
   }
   /**
-   * The label that explains the score gauges scale (0-49, 50-89, 90-100).
-   *
-   * @param string $scorescaleLabel
+   * @param string
    */
   public function setScorescaleLabel($scorescaleLabel)
   {
@@ -978,12 +745,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->scorescaleLabel;
   }
   /**
-   * Label preceding a radio control for filtering the list of audits. The radio
-   * choices are various performance metrics (FCP, LCP, TBT), and if chosen, the
-   * audits in the report are hidden if they are not relevant to the selected
-   * metric.
-   *
-   * @param string $showRelevantAudits
+   * @param string
    */
   public function setShowRelevantAudits($showRelevantAudits)
   {
@@ -997,9 +759,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->showRelevantAudits;
   }
   /**
-   * The label for the button to show only a few lines of a snippet
-   *
-   * @param string $snippetCollapseButtonLabel
+   * @param string
    */
   public function setSnippetCollapseButtonLabel($snippetCollapseButtonLabel)
   {
@@ -1013,9 +773,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->snippetCollapseButtonLabel;
   }
   /**
-   * The label for the button to show all lines of a snippet
-   *
-   * @param string $snippetExpandButtonLabel
+   * @param string
    */
   public function setSnippetExpandButtonLabel($snippetExpandButtonLabel)
   {
@@ -1029,9 +787,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->snippetExpandButtonLabel;
   }
   /**
-   * This label is for a filter checkbox above a table of items
-   *
-   * @param string $thirdPartyResourcesLabel
+   * @param string
    */
   public function setThirdPartyResourcesLabel($thirdPartyResourcesLabel)
   {
@@ -1045,10 +801,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->thirdPartyResourcesLabel;
   }
   /**
-   * Descriptive explanation for environment throttling that was provided by the
-   * runtime environment instead of provided by Lighthouse throttling.
-   *
-   * @param string $throttlingProvided
+   * @param string
    */
   public function setThrottlingProvided($throttlingProvided)
   {
@@ -1062,10 +815,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->throttlingProvided;
   }
   /**
-   * The label shown preceding important warnings that may have invalidated an
-   * entire report.
-   *
-   * @param string $toplevelWarningsMessage
+   * @param string
    */
   public function setToplevelWarningsMessage($toplevelWarningsMessage)
   {
@@ -1079,9 +829,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->toplevelWarningsMessage;
   }
   /**
-   * The disclaimer shown below a performance metric value.
-   *
-   * @param string $varianceDisclaimer
+   * @param string
    */
   public function setVarianceDisclaimer($varianceDisclaimer)
   {
@@ -1095,9 +843,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->varianceDisclaimer;
   }
   /**
-   * Label for a button that opens the Treemap App
-   *
-   * @param string $viewTreemapLabel
+   * @param string
    */
   public function setViewTreemapLabel($viewTreemapLabel)
   {
@@ -1111,9 +857,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->viewTreemapLabel;
   }
   /**
-   * The heading that is shown above a list of audits that have warnings
-   *
-   * @param string $warningAuditsGroupTitle
+   * @param string
    */
   public function setWarningAuditsGroupTitle($warningAuditsGroupTitle)
   {
@@ -1127,9 +871,7 @@ class RendererFormattedStrings extends \Google\Model
     return $this->warningAuditsGroupTitle;
   }
   /**
-   * The label shown above a bulleted list of warnings.
-   *
-   * @param string $warningHeader
+   * @param string
    */
   public function setWarningHeader($warningHeader)
   {

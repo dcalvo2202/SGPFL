@@ -23,42 +23,28 @@ class GcpMetadata extends \Google\Collection
   protected $foldersType = GoogleCloudSecuritycenterV2Folder::class;
   protected $foldersDataType = 'array';
   /**
-   * The name of the organization that the resource belongs to.
-   *
    * @var string
    */
   public $organization;
   /**
-   * The full resource name of resource's parent.
-   *
    * @var string
    */
   public $parent;
   /**
-   * The human readable name of resource's parent.
-   *
    * @var string
    */
   public $parentDisplayName;
   /**
-   * The full resource name of project that the resource belongs to.
-   *
    * @var string
    */
   public $project;
   /**
-   * The project ID that the resource belongs to.
-   *
    * @var string
    */
   public $projectDisplayName;
 
   /**
-   * Output only. Contains a Folder message for each folder in the assets
-   * ancestry. The first folder is the deepest nested folder, and the last
-   * folder is the folder directly under the Organization.
-   *
-   * @param GoogleCloudSecuritycenterV2Folder[] $folders
+   * @param GoogleCloudSecuritycenterV2Folder[]
    */
   public function setFolders($folders)
   {
@@ -72,9 +58,7 @@ class GcpMetadata extends \Google\Collection
     return $this->folders;
   }
   /**
-   * The name of the organization that the resource belongs to.
-   *
-   * @param string $organization
+   * @param string
    */
   public function setOrganization($organization)
   {
@@ -88,9 +72,7 @@ class GcpMetadata extends \Google\Collection
     return $this->organization;
   }
   /**
-   * The full resource name of resource's parent.
-   *
-   * @param string $parent
+   * @param string
    */
   public function setParent($parent)
   {
@@ -104,9 +86,7 @@ class GcpMetadata extends \Google\Collection
     return $this->parent;
   }
   /**
-   * The human readable name of resource's parent.
-   *
-   * @param string $parentDisplayName
+   * @param string
    */
   public function setParentDisplayName($parentDisplayName)
   {
@@ -120,9 +100,7 @@ class GcpMetadata extends \Google\Collection
     return $this->parentDisplayName;
   }
   /**
-   * The full resource name of project that the resource belongs to.
-   *
-   * @param string $project
+   * @param string
    */
   public function setProject($project)
   {
@@ -136,9 +114,7 @@ class GcpMetadata extends \Google\Collection
     return $this->project;
   }
   /**
-   * The project ID that the resource belongs to.
-   *
-   * @param string $projectDisplayName
+   * @param string
    */
   public function setProjectDisplayName($projectDisplayName)
   {

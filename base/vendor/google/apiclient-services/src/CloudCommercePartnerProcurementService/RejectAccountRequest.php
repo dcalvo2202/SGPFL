@@ -20,29 +20,16 @@ namespace Google\Service\CloudCommercePartnerProcurementService;
 class RejectAccountRequest extends \Google\Model
 {
   /**
-   * The name of the approval being rejected. If absent and there is only one
-   * approval possible, that approval will be rejected. If absent and there are
-   * many approvals possible, the request will fail with a 400 Bad Request.
-   * Optional.
-   *
    * @var string
    */
   public $approvalName;
   /**
-   * Free form text string explaining the rejection reason. Max allowed length:
-   * 256 bytes. Longer strings will be truncated.
-   *
    * @var string
    */
   public $reason;
 
   /**
-   * The name of the approval being rejected. If absent and there is only one
-   * approval possible, that approval will be rejected. If absent and there are
-   * many approvals possible, the request will fail with a 400 Bad Request.
-   * Optional.
-   *
-   * @param string $approvalName
+   * @param string
    */
   public function setApprovalName($approvalName)
   {
@@ -56,10 +43,7 @@ class RejectAccountRequest extends \Google\Model
     return $this->approvalName;
   }
   /**
-   * Free form text string explaining the rejection reason. Max allowed length:
-   * 256 bytes. Longer strings will be truncated.
-   *
-   * @param string $reason
+   * @param string
    */
   public function setReason($reason)
   {

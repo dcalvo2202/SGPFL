@@ -20,82 +20,40 @@ namespace Google\Service\MigrationCenterAPI;
 class NetworkConnection extends \Google\Model
 {
   /**
-   * Connection state is unknown or unspecified.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The connection is being opened.
-   */
-  public const STATE_OPENING = 'OPENING';
-  /**
-   * The connection is open.
-   */
-  public const STATE_OPEN = 'OPEN';
-  /**
-   * Listening for incoming connections.
-   */
-  public const STATE_LISTEN = 'LISTEN';
-  /**
-   * The connection is being closed.
-   */
-  public const STATE_CLOSING = 'CLOSING';
-  /**
-   * The connection is closed.
-   */
-  public const STATE_CLOSED = 'CLOSED';
-  /**
-   * Local IP address.
-   *
    * @var string
    */
   public $localIpAddress;
   /**
-   * Local port.
-   *
    * @var int
    */
   public $localPort;
   /**
-   * Process ID.
-   *
    * @var string
    */
   public $pid;
   /**
-   * Process or service name.
-   *
    * @var string
    */
   public $processName;
   /**
-   * Connection protocol (e.g. TCP/UDP).
-   *
    * @var string
    */
   public $protocol;
   /**
-   * Remote IP address.
-   *
    * @var string
    */
   public $remoteIpAddress;
   /**
-   * Remote port.
-   *
    * @var int
    */
   public $remotePort;
   /**
-   * Network connection state.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Local IP address.
-   *
-   * @param string $localIpAddress
+   * @param string
    */
   public function setLocalIpAddress($localIpAddress)
   {
@@ -109,9 +67,7 @@ class NetworkConnection extends \Google\Model
     return $this->localIpAddress;
   }
   /**
-   * Local port.
-   *
-   * @param int $localPort
+   * @param int
    */
   public function setLocalPort($localPort)
   {
@@ -125,9 +81,7 @@ class NetworkConnection extends \Google\Model
     return $this->localPort;
   }
   /**
-   * Process ID.
-   *
-   * @param string $pid
+   * @param string
    */
   public function setPid($pid)
   {
@@ -141,9 +95,7 @@ class NetworkConnection extends \Google\Model
     return $this->pid;
   }
   /**
-   * Process or service name.
-   *
-   * @param string $processName
+   * @param string
    */
   public function setProcessName($processName)
   {
@@ -157,9 +109,7 @@ class NetworkConnection extends \Google\Model
     return $this->processName;
   }
   /**
-   * Connection protocol (e.g. TCP/UDP).
-   *
-   * @param string $protocol
+   * @param string
    */
   public function setProtocol($protocol)
   {
@@ -173,9 +123,7 @@ class NetworkConnection extends \Google\Model
     return $this->protocol;
   }
   /**
-   * Remote IP address.
-   *
-   * @param string $remoteIpAddress
+   * @param string
    */
   public function setRemoteIpAddress($remoteIpAddress)
   {
@@ -189,9 +137,7 @@ class NetworkConnection extends \Google\Model
     return $this->remoteIpAddress;
   }
   /**
-   * Remote port.
-   *
-   * @param int $remotePort
+   * @param int
    */
   public function setRemotePort($remotePort)
   {
@@ -205,18 +151,14 @@ class NetworkConnection extends \Google\Model
     return $this->remotePort;
   }
   /**
-   * Network connection state.
-   *
-   * Accepted values: STATE_UNSPECIFIED, OPENING, OPEN, LISTEN, CLOSING, CLOSED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

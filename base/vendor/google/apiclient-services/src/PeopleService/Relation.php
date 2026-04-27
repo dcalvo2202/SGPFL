@@ -20,37 +20,22 @@ namespace Google\Service\PeopleService;
 class Relation extends \Google\Model
 {
   /**
-   * Output only. The type of the relation translated and formatted in the
-   * viewer's account locale or the locale specified in the Accept-Language HTTP
-   * header.
-   *
    * @var string
    */
   public $formattedType;
   protected $metadataType = FieldMetadata::class;
   protected $metadataDataType = '';
   /**
-   * The name of the other person this relation refers to.
-   *
    * @var string
    */
   public $person;
   /**
-   * The person's relation to the other person. The type can be custom or one of
-   * these predefined values: * `spouse` * `child` * `mother` * `father` *
-   * `parent` * `brother` * `sister` * `friend` * `relative` * `domesticPartner`
-   * * `manager` * `assistant` * `referredBy` * `partner`
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Output only. The type of the relation translated and formatted in the
-   * viewer's account locale or the locale specified in the Accept-Language HTTP
-   * header.
-   *
-   * @param string $formattedType
+   * @param string
    */
   public function setFormattedType($formattedType)
   {
@@ -64,9 +49,7 @@ class Relation extends \Google\Model
     return $this->formattedType;
   }
   /**
-   * Metadata about the relation.
-   *
-   * @param FieldMetadata $metadata
+   * @param FieldMetadata
    */
   public function setMetadata(FieldMetadata $metadata)
   {
@@ -80,9 +63,7 @@ class Relation extends \Google\Model
     return $this->metadata;
   }
   /**
-   * The name of the other person this relation refers to.
-   *
-   * @param string $person
+   * @param string
    */
   public function setPerson($person)
   {
@@ -96,12 +77,7 @@ class Relation extends \Google\Model
     return $this->person;
   }
   /**
-   * The person's relation to the other person. The type can be custom or one of
-   * these predefined values: * `spouse` * `child` * `mother` * `father` *
-   * `parent` * `brother` * `sister` * `friend` * `relative` * `domesticPartner`
-   * * `manager` * `assistant` * `referredBy` * `partner`
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

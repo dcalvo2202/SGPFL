@@ -20,22 +20,16 @@ namespace Google\Service\DriveActivity;
 class Selection extends \Google\Model
 {
   /**
-   * Selection value as human-readable display string.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Selection value as Field Choice ID.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Selection value as human-readable display string.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -49,9 +43,7 @@ class Selection extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Selection value as Field Choice ID.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

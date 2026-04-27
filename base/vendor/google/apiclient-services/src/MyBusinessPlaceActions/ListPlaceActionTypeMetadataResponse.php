@@ -21,11 +21,6 @@ class ListPlaceActionTypeMetadataResponse extends \Google\Collection
 {
   protected $collection_key = 'placeActionTypeMetadata';
   /**
-   * If the number of action types exceeded the requested page size, this field
-   * will be populated with a token to fetch the next page on a subsequent call
-   * to `placeActionTypeMetadata.list`. If there are no more results, this field
-   * will not be present in the response.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -33,12 +28,7 @@ class ListPlaceActionTypeMetadataResponse extends \Google\Collection
   protected $placeActionTypeMetadataDataType = 'array';
 
   /**
-   * If the number of action types exceeded the requested page size, this field
-   * will be populated with a token to fetch the next page on a subsequent call
-   * to `placeActionTypeMetadata.list`. If there are no more results, this field
-   * will not be present in the response.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -52,9 +42,7 @@ class ListPlaceActionTypeMetadataResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * A collection of metadata for the available place action types.
-   *
-   * @param PlaceActionTypeMetadata[] $placeActionTypeMetadata
+   * @param PlaceActionTypeMetadata[]
    */
   public function setPlaceActionTypeMetadata($placeActionTypeMetadata)
   {

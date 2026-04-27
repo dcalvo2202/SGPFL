@@ -19,50 +19,28 @@ namespace Google\Service\Aiplatform;
 
 class GoogleCloudAiplatformV1ExamplesOverride extends \Google\Collection
 {
-  /**
-   * Unspecified format. Must not be used.
-   */
-  public const DATA_FORMAT_DATA_FORMAT_UNSPECIFIED = 'DATA_FORMAT_UNSPECIFIED';
-  /**
-   * Provided data is a set of model inputs.
-   */
-  public const DATA_FORMAT_INSTANCES = 'INSTANCES';
-  /**
-   * Provided data is a set of embeddings.
-   */
-  public const DATA_FORMAT_EMBEDDINGS = 'EMBEDDINGS';
   protected $collection_key = 'restrictions';
   /**
-   * The number of neighbors to return that have the same crowding tag.
-   *
    * @var int
    */
   public $crowdingCount;
   /**
-   * The format of the data being provided with each call.
-   *
    * @var string
    */
   public $dataFormat;
   /**
-   * The number of neighbors to return.
-   *
    * @var int
    */
   public $neighborCount;
   protected $restrictionsType = GoogleCloudAiplatformV1ExamplesRestrictionsNamespace::class;
   protected $restrictionsDataType = 'array';
   /**
-   * If true, return the embeddings instead of neighbors.
-   *
    * @var bool
    */
   public $returnEmbeddings;
 
   /**
-   * The number of neighbors to return that have the same crowding tag.
-   *
-   * @param int $crowdingCount
+   * @param int
    */
   public function setCrowdingCount($crowdingCount)
   {
@@ -76,27 +54,21 @@ class GoogleCloudAiplatformV1ExamplesOverride extends \Google\Collection
     return $this->crowdingCount;
   }
   /**
-   * The format of the data being provided with each call.
-   *
-   * Accepted values: DATA_FORMAT_UNSPECIFIED, INSTANCES, EMBEDDINGS
-   *
-   * @param self::DATA_FORMAT_* $dataFormat
+   * @param string
    */
   public function setDataFormat($dataFormat)
   {
     $this->dataFormat = $dataFormat;
   }
   /**
-   * @return self::DATA_FORMAT_*
+   * @return string
    */
   public function getDataFormat()
   {
     return $this->dataFormat;
   }
   /**
-   * The number of neighbors to return.
-   *
-   * @param int $neighborCount
+   * @param int
    */
   public function setNeighborCount($neighborCount)
   {
@@ -110,9 +82,7 @@ class GoogleCloudAiplatformV1ExamplesOverride extends \Google\Collection
     return $this->neighborCount;
   }
   /**
-   * Restrict the resulting nearest neighbors to respect these constraints.
-   *
-   * @param GoogleCloudAiplatformV1ExamplesRestrictionsNamespace[] $restrictions
+   * @param GoogleCloudAiplatformV1ExamplesRestrictionsNamespace[]
    */
   public function setRestrictions($restrictions)
   {
@@ -126,9 +96,7 @@ class GoogleCloudAiplatformV1ExamplesOverride extends \Google\Collection
     return $this->restrictions;
   }
   /**
-   * If true, return the embeddings instead of neighbors.
-   *
-   * @param bool $returnEmbeddings
+   * @param bool
    */
   public function setReturnEmbeddings($returnEmbeddings)
   {

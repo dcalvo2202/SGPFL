@@ -20,16 +20,12 @@ namespace Google\Service\VMMigrationService;
 class DisksMigrationVmTargetDetails extends \Google\Model
 {
   /**
-   * Output only. The URI of the Compute Engine VM.
-   *
    * @var string
    */
   public $vmUri;
 
   /**
-   * Output only. The URI of the Compute Engine VM.
-   *
-   * @param string $vmUri
+   * @param string
    */
   public function setVmUri($vmUri)
   {

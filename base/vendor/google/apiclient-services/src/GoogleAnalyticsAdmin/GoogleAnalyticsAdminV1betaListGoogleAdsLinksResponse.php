@@ -23,17 +23,12 @@ class GoogleAnalyticsAdminV1betaListGoogleAdsLinksResponse extends \Google\Colle
   protected $googleAdsLinksType = GoogleAnalyticsAdminV1betaGoogleAdsLink::class;
   protected $googleAdsLinksDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * List of GoogleAdsLinks.
-   *
-   * @param GoogleAnalyticsAdminV1betaGoogleAdsLink[] $googleAdsLinks
+   * @param GoogleAnalyticsAdminV1betaGoogleAdsLink[]
    */
   public function setGoogleAdsLinks($googleAdsLinks)
   {
@@ -47,10 +42,7 @@ class GoogleAnalyticsAdminV1betaListGoogleAdsLinksResponse extends \Google\Colle
     return $this->googleAdsLinks;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

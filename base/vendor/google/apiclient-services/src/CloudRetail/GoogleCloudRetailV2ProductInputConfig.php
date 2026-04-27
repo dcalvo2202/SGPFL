@@ -27,9 +27,7 @@ class GoogleCloudRetailV2ProductInputConfig extends \Google\Model
   protected $productInlineSourceDataType = '';
 
   /**
-   * BigQuery input source.
-   *
-   * @param GoogleCloudRetailV2BigQuerySource $bigQuerySource
+   * @param GoogleCloudRetailV2BigQuerySource
    */
   public function setBigQuerySource(GoogleCloudRetailV2BigQuerySource $bigQuerySource)
   {
@@ -43,9 +41,7 @@ class GoogleCloudRetailV2ProductInputConfig extends \Google\Model
     return $this->bigQuerySource;
   }
   /**
-   * Google Cloud Storage location for the input content.
-   *
-   * @param GoogleCloudRetailV2GcsSource $gcsSource
+   * @param GoogleCloudRetailV2GcsSource
    */
   public function setGcsSource(GoogleCloudRetailV2GcsSource $gcsSource)
   {
@@ -59,9 +55,7 @@ class GoogleCloudRetailV2ProductInputConfig extends \Google\Model
     return $this->gcsSource;
   }
   /**
-   * The Inline source for the input content for products.
-   *
-   * @param GoogleCloudRetailV2ProductInlineSource $productInlineSource
+   * @param GoogleCloudRetailV2ProductInlineSource
    */
   public function setProductInlineSource(GoogleCloudRetailV2ProductInlineSource $productInlineSource)
   {

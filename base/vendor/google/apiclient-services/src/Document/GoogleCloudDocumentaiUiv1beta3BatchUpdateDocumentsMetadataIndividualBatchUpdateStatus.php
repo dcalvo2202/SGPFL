@@ -25,9 +25,7 @@ class GoogleCloudDocumentaiUiv1beta3BatchUpdateDocumentsMetadataIndividualBatchU
   protected $statusDataType = '';
 
   /**
-   * The document id of the document.
-   *
-   * @param GoogleCloudDocumentaiUiv1beta3DocumentId $documentId
+   * @param GoogleCloudDocumentaiUiv1beta3DocumentId
    */
   public function setDocumentId(GoogleCloudDocumentaiUiv1beta3DocumentId $documentId)
   {
@@ -41,9 +39,7 @@ class GoogleCloudDocumentaiUiv1beta3BatchUpdateDocumentsMetadataIndividualBatchU
     return $this->documentId;
   }
   /**
-   * The status of updating the document in storage.
-   *
-   * @param GoogleRpcStatus $status
+   * @param GoogleRpcStatus
    */
   public function setStatus(GoogleRpcStatus $status)
   {

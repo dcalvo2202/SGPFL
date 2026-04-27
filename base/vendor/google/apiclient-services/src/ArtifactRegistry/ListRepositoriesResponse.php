@@ -21,9 +21,6 @@ class ListRepositoriesResponse extends \Google\Collection
 {
   protected $collection_key = 'repositories';
   /**
-   * The token to retrieve the next page of repositories, or empty if there are
-   * no more repositories to return.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListRepositoriesResponse extends \Google\Collection
   protected $repositoriesDataType = 'array';
 
   /**
-   * The token to retrieve the next page of repositories, or empty if there are
-   * no more repositories to return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class ListRepositoriesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The repositories returned.
-   *
-   * @param Repository[] $repositories
+   * @param Repository[]
    */
   public function setRepositories($repositories)
   {

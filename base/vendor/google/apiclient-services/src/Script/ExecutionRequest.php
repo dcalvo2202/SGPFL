@@ -21,53 +21,24 @@ class ExecutionRequest extends \Google\Collection
 {
   protected $collection_key = 'parameters';
   /**
-   * If `true` and the user is an owner of the script, the script runs at the
-   * most recently saved version rather than the version deployed for use with
-   * the Apps Script API. Optional; default is `false`.
-   *
    * @var bool
    */
   public $devMode;
   /**
-   * The name of the function to execute in the given script. The name does not
-   * include parentheses or parameters. It can reference a function in an
-   * included library such as `Library.libFunction1`.
-   *
    * @var string
    */
   public $function;
   /**
-   * The parameters to be passed to the function being executed. The object type
-   * for each parameter should match the expected type in Apps Script.
-   * Parameters cannot be Apps Script-specific object types (such as a
-   * `Document` or a `Calendar`); they can only be primitive types such as
-   * `string`, `number`, `array`, `object`, or `boolean`. Optional.
-   *
    * @var array[]
    */
   public $parameters;
   /**
-   * *Deprecated*. For use with Android add-ons only. An ID that represents the
-   * user's current session in the Android app for Google Docs or Sheets,
-   * included as extra data in the
-   * [Intent](https://developer.android.com/guide/components/intents-
-   * filters.html) that launches the add-on. When an Android add-on is run with
-   * a session state, it gains the privileges of a
-   * [bound](https://developers.google.com/apps-script/guides/bound) script—that
-   * is, it can access information like the user's current cursor position (in
-   * Docs) or selected cell (in Sheets). To retrieve the state, call `Intent.get
-   * StringExtra("com.google.android.apps.docs.addons.SessionState")`. Optional.
-   *
    * @var string
    */
   public $sessionState;
 
   /**
-   * If `true` and the user is an owner of the script, the script runs at the
-   * most recently saved version rather than the version deployed for use with
-   * the Apps Script API. Optional; default is `false`.
-   *
-   * @param bool $devMode
+   * @param bool
    */
   public function setDevMode($devMode)
   {
@@ -81,11 +52,7 @@ class ExecutionRequest extends \Google\Collection
     return $this->devMode;
   }
   /**
-   * The name of the function to execute in the given script. The name does not
-   * include parentheses or parameters. It can reference a function in an
-   * included library such as `Library.libFunction1`.
-   *
-   * @param string $function
+   * @param string
    */
   public function setFunction($function)
   {
@@ -99,13 +66,7 @@ class ExecutionRequest extends \Google\Collection
     return $this->function;
   }
   /**
-   * The parameters to be passed to the function being executed. The object type
-   * for each parameter should match the expected type in Apps Script.
-   * Parameters cannot be Apps Script-specific object types (such as a
-   * `Document` or a `Calendar`); they can only be primitive types such as
-   * `string`, `number`, `array`, `object`, or `boolean`. Optional.
-   *
-   * @param array[] $parameters
+   * @param array[]
    */
   public function setParameters($parameters)
   {
@@ -119,18 +80,7 @@ class ExecutionRequest extends \Google\Collection
     return $this->parameters;
   }
   /**
-   * *Deprecated*. For use with Android add-ons only. An ID that represents the
-   * user's current session in the Android app for Google Docs or Sheets,
-   * included as extra data in the
-   * [Intent](https://developer.android.com/guide/components/intents-
-   * filters.html) that launches the add-on. When an Android add-on is run with
-   * a session state, it gains the privileges of a
-   * [bound](https://developers.google.com/apps-script/guides/bound) script—that
-   * is, it can access information like the user's current cursor position (in
-   * Docs) or selected cell (in Sheets). To retrieve the state, call `Intent.get
-   * StringExtra("com.google.android.apps.docs.addons.SessionState")`. Optional.
-   *
-   * @param string $sessionState
+   * @param string
    */
   public function setSessionState($sessionState)
   {

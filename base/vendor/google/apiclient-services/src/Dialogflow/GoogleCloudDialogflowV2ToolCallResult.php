@@ -26,22 +26,6 @@ class GoogleCloudDialogflowV2ToolCallResult extends \Google\Model
   /**
    * @var string
    */
-  public $answerRecord;
-  /**
-   * @var string
-   */
-  public $cesApp;
-  /**
-   * @var string
-   */
-  public $cesTool;
-  /**
-   * @var string
-   */
-  public $cesToolset;
-  /**
-   * @var string
-   */
   public $content;
   /**
    * @var string
@@ -59,7 +43,7 @@ class GoogleCloudDialogflowV2ToolCallResult extends \Google\Model
   public $tool;
 
   /**
-   * @param string $action
+   * @param string
    */
   public function setAction($action)
   {
@@ -73,63 +57,7 @@ class GoogleCloudDialogflowV2ToolCallResult extends \Google\Model
     return $this->action;
   }
   /**
-   * @param string $answerRecord
-   */
-  public function setAnswerRecord($answerRecord)
-  {
-    $this->answerRecord = $answerRecord;
-  }
-  /**
-   * @return string
-   */
-  public function getAnswerRecord()
-  {
-    return $this->answerRecord;
-  }
-  /**
-   * @param string $cesApp
-   */
-  public function setCesApp($cesApp)
-  {
-    $this->cesApp = $cesApp;
-  }
-  /**
-   * @return string
-   */
-  public function getCesApp()
-  {
-    return $this->cesApp;
-  }
-  /**
-   * @param string $cesTool
-   */
-  public function setCesTool($cesTool)
-  {
-    $this->cesTool = $cesTool;
-  }
-  /**
-   * @return string
-   */
-  public function getCesTool()
-  {
-    return $this->cesTool;
-  }
-  /**
-   * @param string $cesToolset
-   */
-  public function setCesToolset($cesToolset)
-  {
-    $this->cesToolset = $cesToolset;
-  }
-  /**
-   * @return string
-   */
-  public function getCesToolset()
-  {
-    return $this->cesToolset;
-  }
-  /**
-   * @param string $content
+   * @param string
    */
   public function setContent($content)
   {
@@ -143,7 +71,7 @@ class GoogleCloudDialogflowV2ToolCallResult extends \Google\Model
     return $this->content;
   }
   /**
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -157,7 +85,7 @@ class GoogleCloudDialogflowV2ToolCallResult extends \Google\Model
     return $this->createTime;
   }
   /**
-   * @param GoogleCloudDialogflowV2ToolCallResultError $error
+   * @param GoogleCloudDialogflowV2ToolCallResultError
    */
   public function setError(GoogleCloudDialogflowV2ToolCallResultError $error)
   {
@@ -171,7 +99,7 @@ class GoogleCloudDialogflowV2ToolCallResult extends \Google\Model
     return $this->error;
   }
   /**
-   * @param string $rawContent
+   * @param string
    */
   public function setRawContent($rawContent)
   {
@@ -185,7 +113,7 @@ class GoogleCloudDialogflowV2ToolCallResult extends \Google\Model
     return $this->rawContent;
   }
   /**
-   * @param string $tool
+   * @param string
    */
   public function setTool($tool)
   {

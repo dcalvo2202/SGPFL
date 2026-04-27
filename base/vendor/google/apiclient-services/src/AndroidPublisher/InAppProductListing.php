@@ -21,28 +21,20 @@ class InAppProductListing extends \Google\Collection
 {
   protected $collection_key = 'benefits';
   /**
-   * Localized entitlement benefits for a subscription.
-   *
    * @var string[]
    */
   public $benefits;
   /**
-   * Description for the store listing.
-   *
    * @var string
    */
   public $description;
   /**
-   * Title for the store listing.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * Localized entitlement benefits for a subscription.
-   *
-   * @param string[] $benefits
+   * @param string[]
    */
   public function setBenefits($benefits)
   {
@@ -56,9 +48,7 @@ class InAppProductListing extends \Google\Collection
     return $this->benefits;
   }
   /**
-   * Description for the store listing.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -72,9 +62,7 @@ class InAppProductListing extends \Google\Collection
     return $this->description;
   }
   /**
-   * Title for the store listing.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

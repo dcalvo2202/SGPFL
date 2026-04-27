@@ -20,23 +20,16 @@ namespace Google\Service\Analytics;
 class McfDataRowsConversionPathValue extends \Google\Model
 {
   /**
-   * Type of an interaction on conversion path. Such as CLICK, IMPRESSION etc.
-   *
    * @var string
    */
   public $interactionType;
   /**
-   * Node value of an interaction on conversion path. Such as source, medium
-   * etc.
-   *
    * @var string
    */
   public $nodeValue;
 
   /**
-   * Type of an interaction on conversion path. Such as CLICK, IMPRESSION etc.
-   *
-   * @param string $interactionType
+   * @param string
    */
   public function setInteractionType($interactionType)
   {
@@ -50,10 +43,7 @@ class McfDataRowsConversionPathValue extends \Google\Model
     return $this->interactionType;
   }
   /**
-   * Node value of an interaction on conversion path. Such as source, medium
-   * etc.
-   *
-   * @param string $nodeValue
+   * @param string
    */
   public function setNodeValue($nodeValue)
   {

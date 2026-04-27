@@ -39,10 +39,7 @@ class GoogleCloudDatalabelingV1beta1AnnotationValue extends \Google\Model
   protected $videoObjectTrackingAnnotationDataType = '';
 
   /**
-   * Annotation value for image bounding box, oriented bounding box and polygon
-   * cases.
-   *
-   * @param GoogleCloudDatalabelingV1beta1ImageBoundingPolyAnnotation $imageBoundingPolyAnnotation
+   * @param GoogleCloudDatalabelingV1beta1ImageBoundingPolyAnnotation
    */
   public function setImageBoundingPolyAnnotation(GoogleCloudDatalabelingV1beta1ImageBoundingPolyAnnotation $imageBoundingPolyAnnotation)
   {
@@ -56,9 +53,7 @@ class GoogleCloudDatalabelingV1beta1AnnotationValue extends \Google\Model
     return $this->imageBoundingPolyAnnotation;
   }
   /**
-   * Annotation value for image classification case.
-   *
-   * @param GoogleCloudDatalabelingV1beta1ImageClassificationAnnotation $imageClassificationAnnotation
+   * @param GoogleCloudDatalabelingV1beta1ImageClassificationAnnotation
    */
   public function setImageClassificationAnnotation(GoogleCloudDatalabelingV1beta1ImageClassificationAnnotation $imageClassificationAnnotation)
   {
@@ -72,11 +67,7 @@ class GoogleCloudDatalabelingV1beta1AnnotationValue extends \Google\Model
     return $this->imageClassificationAnnotation;
   }
   /**
-   * Annotation value for image polyline cases. Polyline here is different from
-   * BoundingPoly. It is formed by line segments connected to each other but not
-   * closed form(Bounding Poly). The line segments can cross each other.
-   *
-   * @param GoogleCloudDatalabelingV1beta1ImagePolylineAnnotation $imagePolylineAnnotation
+   * @param GoogleCloudDatalabelingV1beta1ImagePolylineAnnotation
    */
   public function setImagePolylineAnnotation(GoogleCloudDatalabelingV1beta1ImagePolylineAnnotation $imagePolylineAnnotation)
   {
@@ -90,9 +81,7 @@ class GoogleCloudDatalabelingV1beta1AnnotationValue extends \Google\Model
     return $this->imagePolylineAnnotation;
   }
   /**
-   * Annotation value for image segmentation.
-   *
-   * @param GoogleCloudDatalabelingV1beta1ImageSegmentationAnnotation $imageSegmentationAnnotation
+   * @param GoogleCloudDatalabelingV1beta1ImageSegmentationAnnotation
    */
   public function setImageSegmentationAnnotation(GoogleCloudDatalabelingV1beta1ImageSegmentationAnnotation $imageSegmentationAnnotation)
   {
@@ -106,9 +95,7 @@ class GoogleCloudDatalabelingV1beta1AnnotationValue extends \Google\Model
     return $this->imageSegmentationAnnotation;
   }
   /**
-   * Annotation value for text classification case.
-   *
-   * @param GoogleCloudDatalabelingV1beta1TextClassificationAnnotation $textClassificationAnnotation
+   * @param GoogleCloudDatalabelingV1beta1TextClassificationAnnotation
    */
   public function setTextClassificationAnnotation(GoogleCloudDatalabelingV1beta1TextClassificationAnnotation $textClassificationAnnotation)
   {
@@ -122,9 +109,7 @@ class GoogleCloudDatalabelingV1beta1AnnotationValue extends \Google\Model
     return $this->textClassificationAnnotation;
   }
   /**
-   * Annotation value for text entity extraction case.
-   *
-   * @param GoogleCloudDatalabelingV1beta1TextEntityExtractionAnnotation $textEntityExtractionAnnotation
+   * @param GoogleCloudDatalabelingV1beta1TextEntityExtractionAnnotation
    */
   public function setTextEntityExtractionAnnotation(GoogleCloudDatalabelingV1beta1TextEntityExtractionAnnotation $textEntityExtractionAnnotation)
   {
@@ -138,9 +123,7 @@ class GoogleCloudDatalabelingV1beta1AnnotationValue extends \Google\Model
     return $this->textEntityExtractionAnnotation;
   }
   /**
-   * Annotation value for video classification case.
-   *
-   * @param GoogleCloudDatalabelingV1beta1VideoClassificationAnnotation $videoClassificationAnnotation
+   * @param GoogleCloudDatalabelingV1beta1VideoClassificationAnnotation
    */
   public function setVideoClassificationAnnotation(GoogleCloudDatalabelingV1beta1VideoClassificationAnnotation $videoClassificationAnnotation)
   {
@@ -154,9 +137,7 @@ class GoogleCloudDatalabelingV1beta1AnnotationValue extends \Google\Model
     return $this->videoClassificationAnnotation;
   }
   /**
-   * Annotation value for video event case.
-   *
-   * @param GoogleCloudDatalabelingV1beta1VideoEventAnnotation $videoEventAnnotation
+   * @param GoogleCloudDatalabelingV1beta1VideoEventAnnotation
    */
   public function setVideoEventAnnotation(GoogleCloudDatalabelingV1beta1VideoEventAnnotation $videoEventAnnotation)
   {
@@ -170,9 +151,7 @@ class GoogleCloudDatalabelingV1beta1AnnotationValue extends \Google\Model
     return $this->videoEventAnnotation;
   }
   /**
-   * Annotation value for video object detection and tracking case.
-   *
-   * @param GoogleCloudDatalabelingV1beta1VideoObjectTrackingAnnotation $videoObjectTrackingAnnotation
+   * @param GoogleCloudDatalabelingV1beta1VideoObjectTrackingAnnotation
    */
   public function setVideoObjectTrackingAnnotation(GoogleCloudDatalabelingV1beta1VideoObjectTrackingAnnotation $videoObjectTrackingAnnotation)
   {

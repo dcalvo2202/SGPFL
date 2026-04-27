@@ -20,8 +20,6 @@ namespace Google\Service\TagManager;
 class PublishContainerVersionResponse extends \Google\Model
 {
   /**
-   * Compiler errors or not.
-   *
    * @var bool
    */
   public $compilerError;
@@ -29,9 +27,7 @@ class PublishContainerVersionResponse extends \Google\Model
   protected $containerVersionDataType = '';
 
   /**
-   * Compiler errors or not.
-   *
-   * @param bool $compilerError
+   * @param bool
    */
   public function setCompilerError($compilerError)
   {
@@ -45,9 +41,7 @@ class PublishContainerVersionResponse extends \Google\Model
     return $this->compilerError;
   }
   /**
-   * The container version created.
-   *
-   * @param ContainerVersion $containerVersion
+   * @param ContainerVersion
    */
   public function setContainerVersion(ContainerVersion $containerVersion)
   {

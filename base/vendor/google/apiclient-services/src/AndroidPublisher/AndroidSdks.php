@@ -21,20 +21,12 @@ class AndroidSdks extends \Google\Collection
 {
   protected $collection_key = 'sdkLevels';
   /**
-   * Android api levels of devices targeted by recovery action. See
-   * https://developer.android.com/guide/topics/manifest/uses-sdk-
-   * element#ApiLevels for different api levels in android.
-   *
    * @var string[]
    */
   public $sdkLevels;
 
   /**
-   * Android api levels of devices targeted by recovery action. See
-   * https://developer.android.com/guide/topics/manifest/uses-sdk-
-   * element#ApiLevels for different api levels in android.
-   *
-   * @param string[] $sdkLevels
+   * @param string[]
    */
   public function setSdkLevels($sdkLevels)
   {

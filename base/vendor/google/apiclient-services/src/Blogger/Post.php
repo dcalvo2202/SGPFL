@@ -19,120 +19,80 @@ namespace Google\Service\Blogger;
 
 class Post extends \Google\Collection
 {
-  public const READER_COMMENTS_ALLOW = 'ALLOW';
-  public const READER_COMMENTS_DONT_ALLOW_SHOW_EXISTING = 'DONT_ALLOW_SHOW_EXISTING';
-  public const READER_COMMENTS_DONT_ALLOW_HIDE_EXISTING = 'DONT_ALLOW_HIDE_EXISTING';
-  public const STATUS_LIVE = 'LIVE';
-  public const STATUS_DRAFT = 'DRAFT';
-  public const STATUS_SCHEDULED = 'SCHEDULED';
-  public const STATUS_SOFT_TRASHED = 'SOFT_TRASHED';
   protected $collection_key = 'labels';
   protected $authorType = PostAuthor::class;
   protected $authorDataType = '';
   protected $blogType = PostBlog::class;
   protected $blogDataType = '';
   /**
-   * The content of the Post. May contain HTML markup.
-   *
    * @var string
    */
   public $content;
   /**
-   * The JSON meta-data for the Post.
-   *
-   * @deprecated
    * @var string
    */
   public $customMetaData;
   /**
-   * Etag of the resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * The identifier of this Post.
-   *
    * @var string
    */
   public $id;
   protected $imagesType = PostImages::class;
   protected $imagesDataType = 'array';
   /**
-   * The kind of this entity. Always blogger#post.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The list of labels this Post was tagged with.
-   *
    * @var string[]
    */
   public $labels;
   protected $locationType = PostLocation::class;
   protected $locationDataType = '';
   /**
-   * RFC 3339 date-time when this Post was published.
-   *
    * @var string
    */
   public $published;
   /**
-   * Comment control and display setting for readers of this post.
-   *
    * @var string
    */
   public $readerComments;
   protected $repliesType = PostReplies::class;
   protected $repliesDataType = '';
   /**
-   * The API REST URL to fetch this resource from.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * Status of the post. Only set for admin-level requests.
-   *
    * @var string
    */
   public $status;
   /**
-   * The title of the Post.
-   *
    * @var string
    */
   public $title;
   /**
-   * The title link URL, similar to atom's related link.
-   *
    * @var string
    */
   public $titleLink;
   /**
-   * RFC 3339 date-time when this Post was last trashed.
-   *
    * @var string
    */
   public $trashed;
   /**
-   * RFC 3339 date-time when this Post was last updated.
-   *
    * @var string
    */
   public $updated;
   /**
-   * The URL where this Post is displayed.
-   *
    * @var string
    */
   public $url;
 
   /**
-   * The author of this Post.
-   *
-   * @param PostAuthor $author
+   * @param PostAuthor
    */
   public function setAuthor(PostAuthor $author)
   {
@@ -146,9 +106,7 @@ class Post extends \Google\Collection
     return $this->author;
   }
   /**
-   * Data about the blog containing this Post.
-   *
-   * @param PostBlog $blog
+   * @param PostBlog
    */
   public function setBlog(PostBlog $blog)
   {
@@ -162,9 +120,7 @@ class Post extends \Google\Collection
     return $this->blog;
   }
   /**
-   * The content of the Post. May contain HTML markup.
-   *
-   * @param string $content
+   * @param string
    */
   public function setContent($content)
   {
@@ -178,17 +134,13 @@ class Post extends \Google\Collection
     return $this->content;
   }
   /**
-   * The JSON meta-data for the Post.
-   *
-   * @deprecated
-   * @param string $customMetaData
+   * @param string
    */
   public function setCustomMetaData($customMetaData)
   {
     $this->customMetaData = $customMetaData;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getCustomMetaData()
@@ -196,9 +148,7 @@ class Post extends \Google\Collection
     return $this->customMetaData;
   }
   /**
-   * Etag of the resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -212,9 +162,7 @@ class Post extends \Google\Collection
     return $this->etag;
   }
   /**
-   * The identifier of this Post.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -228,9 +176,7 @@ class Post extends \Google\Collection
     return $this->id;
   }
   /**
-   * Display image for the Post.
-   *
-   * @param PostImages[] $images
+   * @param PostImages[]
    */
   public function setImages($images)
   {
@@ -244,9 +190,7 @@ class Post extends \Google\Collection
     return $this->images;
   }
   /**
-   * The kind of this entity. Always blogger#post.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -260,9 +204,7 @@ class Post extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The list of labels this Post was tagged with.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -276,9 +218,7 @@ class Post extends \Google\Collection
     return $this->labels;
   }
   /**
-   * The location for geotagged posts.
-   *
-   * @param PostLocation $location
+   * @param PostLocation
    */
   public function setLocation(PostLocation $location)
   {
@@ -292,9 +232,7 @@ class Post extends \Google\Collection
     return $this->location;
   }
   /**
-   * RFC 3339 date-time when this Post was published.
-   *
-   * @param string $published
+   * @param string
    */
   public function setPublished($published)
   {
@@ -308,27 +246,21 @@ class Post extends \Google\Collection
     return $this->published;
   }
   /**
-   * Comment control and display setting for readers of this post.
-   *
-   * Accepted values: ALLOW, DONT_ALLOW_SHOW_EXISTING, DONT_ALLOW_HIDE_EXISTING
-   *
-   * @param self::READER_COMMENTS_* $readerComments
+   * @param string
    */
   public function setReaderComments($readerComments)
   {
     $this->readerComments = $readerComments;
   }
   /**
-   * @return self::READER_COMMENTS_*
+   * @return string
    */
   public function getReaderComments()
   {
     return $this->readerComments;
   }
   /**
-   * The container of comments on this Post.
-   *
-   * @param PostReplies $replies
+   * @param PostReplies
    */
   public function setReplies(PostReplies $replies)
   {
@@ -342,9 +274,7 @@ class Post extends \Google\Collection
     return $this->replies;
   }
   /**
-   * The API REST URL to fetch this resource from.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -358,27 +288,21 @@ class Post extends \Google\Collection
     return $this->selfLink;
   }
   /**
-   * Status of the post. Only set for admin-level requests.
-   *
-   * Accepted values: LIVE, DRAFT, SCHEDULED, SOFT_TRASHED
-   *
-   * @param self::STATUS_* $status
+   * @param string
    */
   public function setStatus($status)
   {
     $this->status = $status;
   }
   /**
-   * @return self::STATUS_*
+   * @return string
    */
   public function getStatus()
   {
     return $this->status;
   }
   /**
-   * The title of the Post.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -392,9 +316,7 @@ class Post extends \Google\Collection
     return $this->title;
   }
   /**
-   * The title link URL, similar to atom's related link.
-   *
-   * @param string $titleLink
+   * @param string
    */
   public function setTitleLink($titleLink)
   {
@@ -408,9 +330,7 @@ class Post extends \Google\Collection
     return $this->titleLink;
   }
   /**
-   * RFC 3339 date-time when this Post was last trashed.
-   *
-   * @param string $trashed
+   * @param string
    */
   public function setTrashed($trashed)
   {
@@ -424,9 +344,7 @@ class Post extends \Google\Collection
     return $this->trashed;
   }
   /**
-   * RFC 3339 date-time when this Post was last updated.
-   *
-   * @param string $updated
+   * @param string
    */
   public function setUpdated($updated)
   {
@@ -440,9 +358,7 @@ class Post extends \Google\Collection
     return $this->updated;
   }
   /**
-   * The URL where this Post is displayed.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

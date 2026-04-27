@@ -20,34 +20,24 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1SummarizationVerbosityInstance extends \Google\Model
 {
   /**
-   * Required. Text to be summarized.
-   *
    * @var string
    */
   public $context;
   /**
-   * Optional. Summarization prompt for LLM.
-   *
    * @var string
    */
   public $instruction;
   /**
-   * Required. Output of the evaluated model.
-   *
    * @var string
    */
   public $prediction;
   /**
-   * Optional. Ground truth used to compare against the prediction.
-   *
    * @var string
    */
   public $reference;
 
   /**
-   * Required. Text to be summarized.
-   *
-   * @param string $context
+   * @param string
    */
   public function setContext($context)
   {
@@ -61,9 +51,7 @@ class GoogleCloudAiplatformV1SummarizationVerbosityInstance extends \Google\Mode
     return $this->context;
   }
   /**
-   * Optional. Summarization prompt for LLM.
-   *
-   * @param string $instruction
+   * @param string
    */
   public function setInstruction($instruction)
   {
@@ -77,9 +65,7 @@ class GoogleCloudAiplatformV1SummarizationVerbosityInstance extends \Google\Mode
     return $this->instruction;
   }
   /**
-   * Required. Output of the evaluated model.
-   *
-   * @param string $prediction
+   * @param string
    */
   public function setPrediction($prediction)
   {
@@ -93,9 +79,7 @@ class GoogleCloudAiplatformV1SummarizationVerbosityInstance extends \Google\Mode
     return $this->prediction;
   }
   /**
-   * Optional. Ground truth used to compare against the prediction.
-   *
-   * @param string $reference
+   * @param string
    */
   public function setReference($reference)
   {

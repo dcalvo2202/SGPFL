@@ -20,24 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1CopyModelResponse extends \Google\Model
 {
   /**
-   * The name of the copied Model resource. Format:
-   * `projects/{project}/locations/{location}/models/{model}`
-   *
    * @var string
    */
   public $model;
   /**
-   * Output only. The version ID of the model that is copied.
-   *
    * @var string
    */
   public $modelVersionId;
 
   /**
-   * The name of the copied Model resource. Format:
-   * `projects/{project}/locations/{location}/models/{model}`
-   *
-   * @param string $model
+   * @param string
    */
   public function setModel($model)
   {
@@ -51,9 +43,7 @@ class GoogleCloudAiplatformV1CopyModelResponse extends \Google\Model
     return $this->model;
   }
   /**
-   * Output only. The version ID of the model that is copied.
-   *
-   * @param string $modelVersionId
+   * @param string
    */
   public function setModelVersionId($modelVersionId)
   {

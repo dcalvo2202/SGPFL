@@ -22,44 +22,26 @@ class FlightHeader extends \Google\Model
   protected $carrierType = FlightCarrier::class;
   protected $carrierDataType = '';
   /**
-   * The flight number without IATA carrier code. This field should contain only
-   * digits. This is a required property of `flightHeader`. eg: "123"
-   *
    * @var string
    */
   public $flightNumber;
   /**
-   * Override value to use for flight number. The default value used for display
-   * purposes is carrier + flight_number. If a different value needs to be shown
-   * to passengers, use this field to override the default behavior. eg: "XX1234
-   * / YY576"
-   *
    * @var string
    */
   public $flightNumberDisplayOverride;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * `"walletobjects#flightHeader"`.
-   *
-   * @deprecated
    * @var string
    */
   public $kind;
   protected $operatingCarrierType = FlightCarrier::class;
   protected $operatingCarrierDataType = '';
   /**
-   * The flight number used by the operating carrier without IATA carrier code.
-   * This field should contain only digits. eg: "234"
-   *
    * @var string
    */
   public $operatingFlightNumber;
 
   /**
-   * Information about airline carrier. This is a required property of
-   * `flightHeader`.
-   *
-   * @param FlightCarrier $carrier
+   * @param FlightCarrier
    */
   public function setCarrier(FlightCarrier $carrier)
   {
@@ -73,10 +55,7 @@ class FlightHeader extends \Google\Model
     return $this->carrier;
   }
   /**
-   * The flight number without IATA carrier code. This field should contain only
-   * digits. This is a required property of `flightHeader`. eg: "123"
-   *
-   * @param string $flightNumber
+   * @param string
    */
   public function setFlightNumber($flightNumber)
   {
@@ -90,12 +69,7 @@ class FlightHeader extends \Google\Model
     return $this->flightNumber;
   }
   /**
-   * Override value to use for flight number. The default value used for display
-   * purposes is carrier + flight_number. If a different value needs to be shown
-   * to passengers, use this field to override the default behavior. eg: "XX1234
-   * / YY576"
-   *
-   * @param string $flightNumberDisplayOverride
+   * @param string
    */
   public function setFlightNumberDisplayOverride($flightNumberDisplayOverride)
   {
@@ -109,18 +83,13 @@ class FlightHeader extends \Google\Model
     return $this->flightNumberDisplayOverride;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * `"walletobjects#flightHeader"`.
-   *
-   * @deprecated
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
     $this->kind = $kind;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getKind()
@@ -128,9 +97,7 @@ class FlightHeader extends \Google\Model
     return $this->kind;
   }
   /**
-   * Information about operating airline carrier.
-   *
-   * @param FlightCarrier $operatingCarrier
+   * @param FlightCarrier
    */
   public function setOperatingCarrier(FlightCarrier $operatingCarrier)
   {
@@ -144,10 +111,7 @@ class FlightHeader extends \Google\Model
     return $this->operatingCarrier;
   }
   /**
-   * The flight number used by the operating carrier without IATA carrier code.
-   * This field should contain only digits. eg: "234"
-   *
-   * @param string $operatingFlightNumber
+   * @param string
    */
   public function setOperatingFlightNumber($operatingFlightNumber)
   {

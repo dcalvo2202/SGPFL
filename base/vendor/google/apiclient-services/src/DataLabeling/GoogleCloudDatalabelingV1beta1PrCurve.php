@@ -23,27 +23,18 @@ class GoogleCloudDatalabelingV1beta1PrCurve extends \Google\Collection
   protected $annotationSpecType = GoogleCloudDatalabelingV1beta1AnnotationSpec::class;
   protected $annotationSpecDataType = '';
   /**
-   * Area under the precision-recall curve. Not to be confused with area under a
-   * receiver operating characteristic (ROC) curve.
-   *
    * @var float
    */
   public $areaUnderCurve;
   protected $confidenceMetricsEntriesType = GoogleCloudDatalabelingV1beta1ConfidenceMetricsEntry::class;
   protected $confidenceMetricsEntriesDataType = 'array';
   /**
-   * Mean average prcision of this curve.
-   *
    * @var float
    */
   public $meanAveragePrecision;
 
   /**
-   * The annotation spec of the label for which the precision-recall curve
-   * calculated. If this field is empty, that means the precision-recall curve
-   * is an aggregate curve for all labels.
-   *
-   * @param GoogleCloudDatalabelingV1beta1AnnotationSpec $annotationSpec
+   * @param GoogleCloudDatalabelingV1beta1AnnotationSpec
    */
   public function setAnnotationSpec(GoogleCloudDatalabelingV1beta1AnnotationSpec $annotationSpec)
   {
@@ -57,10 +48,7 @@ class GoogleCloudDatalabelingV1beta1PrCurve extends \Google\Collection
     return $this->annotationSpec;
   }
   /**
-   * Area under the precision-recall curve. Not to be confused with area under a
-   * receiver operating characteristic (ROC) curve.
-   *
-   * @param float $areaUnderCurve
+   * @param float
    */
   public function setAreaUnderCurve($areaUnderCurve)
   {
@@ -74,10 +62,7 @@ class GoogleCloudDatalabelingV1beta1PrCurve extends \Google\Collection
     return $this->areaUnderCurve;
   }
   /**
-   * Entries that make up the precision-recall graph. Each entry is a "point" on
-   * the graph drawn for a different `confidence_threshold`.
-   *
-   * @param GoogleCloudDatalabelingV1beta1ConfidenceMetricsEntry[] $confidenceMetricsEntries
+   * @param GoogleCloudDatalabelingV1beta1ConfidenceMetricsEntry[]
    */
   public function setConfidenceMetricsEntries($confidenceMetricsEntries)
   {
@@ -91,9 +76,7 @@ class GoogleCloudDatalabelingV1beta1PrCurve extends \Google\Collection
     return $this->confidenceMetricsEntries;
   }
   /**
-   * Mean average prcision of this curve.
-   *
-   * @param float $meanAveragePrecision
+   * @param float
    */
   public function setMeanAveragePrecision($meanAveragePrecision)
   {

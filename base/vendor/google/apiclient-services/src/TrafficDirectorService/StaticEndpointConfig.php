@@ -20,22 +20,16 @@ namespace Google\Service\TrafficDirectorService;
 class StaticEndpointConfig extends \Google\Model
 {
   /**
-   * The endpoint config.
-   *
    * @var array[]
    */
   public $endpointConfig;
   /**
-   * [#not-implemented-hide:] The timestamp when the Endpoint was last updated.
-   *
    * @var string
    */
   public $lastUpdated;
 
   /**
-   * The endpoint config.
-   *
-   * @param array[] $endpointConfig
+   * @param array[]
    */
   public function setEndpointConfig($endpointConfig)
   {
@@ -49,9 +43,7 @@ class StaticEndpointConfig extends \Google\Model
     return $this->endpointConfig;
   }
   /**
-   * [#not-implemented-hide:] The timestamp when the Endpoint was last updated.
-   *
-   * @param string $lastUpdated
+   * @param string
    */
   public function setLastUpdated($lastUpdated)
   {

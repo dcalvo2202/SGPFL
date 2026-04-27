@@ -19,56 +19,18 @@ namespace Google\Service\Vault;
 
 class Hold extends \Google\Collection
 {
-  /**
-   * No service specified.
-   */
-  public const CORPUS_CORPUS_TYPE_UNSPECIFIED = 'CORPUS_TYPE_UNSPECIFIED';
-  /**
-   * Drive, including Meet and Sites.
-   */
-  public const CORPUS_DRIVE = 'DRIVE';
-  /**
-   * For search, Gmail and classic Hangouts. For holds, Gmail only.
-   */
-  public const CORPUS_MAIL = 'MAIL';
-  /**
-   * Groups.
-   */
-  public const CORPUS_GROUPS = 'GROUPS';
-  /**
-   * For export, Google Chat only. For holds, Google Chat and classic Hangouts.
-   */
-  public const CORPUS_HANGOUTS_CHAT = 'HANGOUTS_CHAT';
-  /**
-   * Google Voice.
-   */
-  public const CORPUS_VOICE = 'VOICE';
-  /**
-   * Calendar.
-   */
-  public const CORPUS_CALENDAR = 'CALENDAR';
-  /**
-   * Gemini.
-   */
-  public const CORPUS_GEMINI = 'GEMINI';
   protected $collection_key = 'accounts';
   protected $accountsType = HeldAccount::class;
   protected $accountsDataType = 'array';
   /**
-   * The service to be searched.
-   *
    * @var string
    */
   public $corpus;
   /**
-   * The unique immutable ID of the hold. Assigned during creation.
-   *
    * @var string
    */
   public $holdId;
   /**
-   * The name of the hold.
-   *
    * @var string
    */
   public $name;
@@ -77,17 +39,12 @@ class Hold extends \Google\Collection
   protected $queryType = CorpusQuery::class;
   protected $queryDataType = '';
   /**
-   * The last time this hold was modified.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * If set, the hold applies to the specified accounts and **orgUnit** must be
-   * empty.
-   *
-   * @param HeldAccount[] $accounts
+   * @param HeldAccount[]
    */
   public function setAccounts($accounts)
   {
@@ -101,28 +58,21 @@ class Hold extends \Google\Collection
     return $this->accounts;
   }
   /**
-   * The service to be searched.
-   *
-   * Accepted values: CORPUS_TYPE_UNSPECIFIED, DRIVE, MAIL, GROUPS,
-   * HANGOUTS_CHAT, VOICE, CALENDAR, GEMINI
-   *
-   * @param self::CORPUS_* $corpus
+   * @param string
    */
   public function setCorpus($corpus)
   {
     $this->corpus = $corpus;
   }
   /**
-   * @return self::CORPUS_*
+   * @return string
    */
   public function getCorpus()
   {
     return $this->corpus;
   }
   /**
-   * The unique immutable ID of the hold. Assigned during creation.
-   *
-   * @param string $holdId
+   * @param string
    */
   public function setHoldId($holdId)
   {
@@ -136,9 +86,7 @@ class Hold extends \Google\Collection
     return $this->holdId;
   }
   /**
-   * The name of the hold.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -152,11 +100,7 @@ class Hold extends \Google\Collection
     return $this->name;
   }
   /**
-   * If set, the hold applies to all members of the organizational unit and
-   * **accounts** must be empty. This property is mutable. For Groups holds, set
-   * **accounts**.
-   *
-   * @param HeldOrgUnit $orgUnit
+   * @param HeldOrgUnit
    */
   public function setOrgUnit(HeldOrgUnit $orgUnit)
   {
@@ -170,10 +114,7 @@ class Hold extends \Google\Collection
     return $this->orgUnit;
   }
   /**
-   * Service-specific options. If set, **CorpusQuery** must match
-   * **CorpusType**.
-   *
-   * @param CorpusQuery $query
+   * @param CorpusQuery
    */
   public function setQuery(CorpusQuery $query)
   {
@@ -187,9 +128,7 @@ class Hold extends \Google\Collection
     return $this->query;
   }
   /**
-   * The last time this hold was modified.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

@@ -25,9 +25,7 @@ class GoogleChromePolicyVersionsV1FieldConstraints extends \Google\Model
   protected $uploadedFileConstraintsDataType = '';
 
   /**
-   * The allowed range for numeric fields.
-   *
-   * @param GoogleChromePolicyVersionsV1NumericRangeConstraint $numericRangeConstraint
+   * @param GoogleChromePolicyVersionsV1NumericRangeConstraint
    */
   public function setNumericRangeConstraint(GoogleChromePolicyVersionsV1NumericRangeConstraint $numericRangeConstraint)
   {
@@ -41,11 +39,7 @@ class GoogleChromePolicyVersionsV1FieldConstraints extends \Google\Model
     return $this->numericRangeConstraint;
   }
   /**
-   * Constraints on the uploaded file of a file policy. If present, this policy
-   * requires a URL that can be fetched by uploading a file with the constraints
-   * specified in this proto.
-   *
-   * @param GoogleChromePolicyVersionsV1UploadedFileConstraints $uploadedFileConstraints
+   * @param GoogleChromePolicyVersionsV1UploadedFileConstraints
    */
   public function setUploadedFileConstraints(GoogleChromePolicyVersionsV1UploadedFileConstraints $uploadedFileConstraints)
   {

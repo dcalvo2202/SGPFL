@@ -20,34 +20,24 @@ namespace Google\Service\Contactcenterinsights;
 class GoogleCloudContactcenterinsightsV1alpha1DimensionQaQuestionAnswerDimensionMetadata extends \Google\Model
 {
   /**
-   * Optional. The full body of the question.
-   *
    * @var string
    */
   public $answerValue;
   /**
-   * Optional. The QA question ID.
-   *
    * @var string
    */
   public $qaQuestionId;
   /**
-   * Optional. The QA scorecard ID.
-   *
    * @var string
    */
   public $qaScorecardId;
   /**
-   * Optional. The full body of the question.
-   *
    * @var string
    */
   public $questionBody;
 
   /**
-   * Optional. The full body of the question.
-   *
-   * @param string $answerValue
+   * @param string
    */
   public function setAnswerValue($answerValue)
   {
@@ -61,9 +51,7 @@ class GoogleCloudContactcenterinsightsV1alpha1DimensionQaQuestionAnswerDimension
     return $this->answerValue;
   }
   /**
-   * Optional. The QA question ID.
-   *
-   * @param string $qaQuestionId
+   * @param string
    */
   public function setQaQuestionId($qaQuestionId)
   {
@@ -77,9 +65,7 @@ class GoogleCloudContactcenterinsightsV1alpha1DimensionQaQuestionAnswerDimension
     return $this->qaQuestionId;
   }
   /**
-   * Optional. The QA scorecard ID.
-   *
-   * @param string $qaScorecardId
+   * @param string
    */
   public function setQaScorecardId($qaScorecardId)
   {
@@ -93,9 +79,7 @@ class GoogleCloudContactcenterinsightsV1alpha1DimensionQaQuestionAnswerDimension
     return $this->qaScorecardId;
   }
   /**
-   * Optional. The full body of the question.
-   *
-   * @param string $questionBody
+   * @param string
    */
   public function setQuestionBody($questionBody)
   {

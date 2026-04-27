@@ -20,18 +20,12 @@ namespace Google\Service\ServiceManagement;
 class ConfigRef extends \Google\Model
 {
   /**
-   * Resource name of a service config. It must have the following format:
-   * "services/{service name}/configs/{config id}".
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Resource name of a service config. It must have the following format:
-   * "services/{service name}/configs/{config id}".
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

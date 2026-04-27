@@ -20,43 +20,28 @@ namespace Google\Service\YouTube;
 class VideoAbuseReport extends \Google\Model
 {
   /**
-   * Additional comments regarding the abuse report.
-   *
    * @var string
    */
   public $comments;
   /**
-   * The language that the content was viewed in.
-   *
    * @var string
    */
   public $language;
   /**
-   * The high-level, or primary, reason that the content is abusive. The value
-   * is an abuse report reason ID.
-   *
    * @var string
    */
   public $reasonId;
   /**
-   * The specific, or secondary, reason that this content is abusive (if
-   * available). The value is an abuse report reason ID that is a valid
-   * secondary reason for the primary reason.
-   *
    * @var string
    */
   public $secondaryReasonId;
   /**
-   * The ID that YouTube uses to uniquely identify the video.
-   *
    * @var string
    */
   public $videoId;
 
   /**
-   * Additional comments regarding the abuse report.
-   *
-   * @param string $comments
+   * @param string
    */
   public function setComments($comments)
   {
@@ -70,9 +55,7 @@ class VideoAbuseReport extends \Google\Model
     return $this->comments;
   }
   /**
-   * The language that the content was viewed in.
-   *
-   * @param string $language
+   * @param string
    */
   public function setLanguage($language)
   {
@@ -86,10 +69,7 @@ class VideoAbuseReport extends \Google\Model
     return $this->language;
   }
   /**
-   * The high-level, or primary, reason that the content is abusive. The value
-   * is an abuse report reason ID.
-   *
-   * @param string $reasonId
+   * @param string
    */
   public function setReasonId($reasonId)
   {
@@ -103,11 +83,7 @@ class VideoAbuseReport extends \Google\Model
     return $this->reasonId;
   }
   /**
-   * The specific, or secondary, reason that this content is abusive (if
-   * available). The value is an abuse report reason ID that is a valid
-   * secondary reason for the primary reason.
-   *
-   * @param string $secondaryReasonId
+   * @param string
    */
   public function setSecondaryReasonId($secondaryReasonId)
   {
@@ -121,9 +97,7 @@ class VideoAbuseReport extends \Google\Model
     return $this->secondaryReasonId;
   }
   /**
-   * The ID that YouTube uses to uniquely identify the video.
-   *
-   * @param string $videoId
+   * @param string
    */
   public function setVideoId($videoId)
   {

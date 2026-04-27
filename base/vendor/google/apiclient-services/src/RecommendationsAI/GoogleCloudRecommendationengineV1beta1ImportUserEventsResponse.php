@@ -28,9 +28,7 @@ class GoogleCloudRecommendationengineV1beta1ImportUserEventsResponse extends \Go
   protected $importSummaryDataType = '';
 
   /**
-   * A sample of errors encountered while processing the request.
-   *
-   * @param GoogleRpcStatus[] $errorSamples
+   * @param GoogleRpcStatus[]
    */
   public function setErrorSamples($errorSamples)
   {
@@ -44,10 +42,7 @@ class GoogleCloudRecommendationengineV1beta1ImportUserEventsResponse extends \Go
     return $this->errorSamples;
   }
   /**
-   * Echoes the destination for the complete errors if this field was set in the
-   * request.
-   *
-   * @param GoogleCloudRecommendationengineV1beta1ImportErrorsConfig $errorsConfig
+   * @param GoogleCloudRecommendationengineV1beta1ImportErrorsConfig
    */
   public function setErrorsConfig(GoogleCloudRecommendationengineV1beta1ImportErrorsConfig $errorsConfig)
   {
@@ -61,9 +56,7 @@ class GoogleCloudRecommendationengineV1beta1ImportUserEventsResponse extends \Go
     return $this->errorsConfig;
   }
   /**
-   * Aggregated statistics of user event import status.
-   *
-   * @param GoogleCloudRecommendationengineV1beta1UserEventImportSummary $importSummary
+   * @param GoogleCloudRecommendationengineV1beta1UserEventImportSummary
    */
   public function setImportSummary(GoogleCloudRecommendationengineV1beta1UserEventImportSummary $importSummary)
   {

@@ -20,22 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1ToolCall extends \Google\Model
 {
   /**
-   * Optional. Spec for tool input
-   *
    * @var string
    */
   public $toolInput;
   /**
-   * Required. Spec for tool name
-   *
    * @var string
    */
   public $toolName;
 
   /**
-   * Optional. Spec for tool input
-   *
-   * @param string $toolInput
+   * @param string
    */
   public function setToolInput($toolInput)
   {
@@ -49,9 +43,7 @@ class GoogleCloudAiplatformV1ToolCall extends \Google\Model
     return $this->toolInput;
   }
   /**
-   * Required. Spec for tool name
-   *
-   * @param string $toolName
+   * @param string
    */
   public function setToolName($toolName)
   {

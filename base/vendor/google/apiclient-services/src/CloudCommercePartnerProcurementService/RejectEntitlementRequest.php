@@ -20,18 +20,12 @@ namespace Google\Service\CloudCommercePartnerProcurementService;
 class RejectEntitlementRequest extends \Google\Model
 {
   /**
-   * Free form text string explaining the rejection reason. Max allowed length:
-   * 256 bytes. Longer strings will be truncated.
-   *
    * @var string
    */
   public $reason;
 
   /**
-   * Free form text string explaining the rejection reason. Max allowed length:
-   * 256 bytes. Longer strings will be truncated.
-   *
-   * @param string $reason
+   * @param string
    */
   public function setReason($reason)
   {

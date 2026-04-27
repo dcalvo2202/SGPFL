@@ -20,25 +20,16 @@ namespace Google\Service\CloudVideoIntelligence;
 class GoogleCloudVideointelligenceV1p1beta1VideoSegment extends \Google\Model
 {
   /**
-   * Time-offset, relative to the beginning of the video, corresponding to the
-   * end of the segment (inclusive).
-   *
    * @var string
    */
   public $endTimeOffset;
   /**
-   * Time-offset, relative to the beginning of the video, corresponding to the
-   * start of the segment (inclusive).
-   *
    * @var string
    */
   public $startTimeOffset;
 
   /**
-   * Time-offset, relative to the beginning of the video, corresponding to the
-   * end of the segment (inclusive).
-   *
-   * @param string $endTimeOffset
+   * @param string
    */
   public function setEndTimeOffset($endTimeOffset)
   {
@@ -52,10 +43,7 @@ class GoogleCloudVideointelligenceV1p1beta1VideoSegment extends \Google\Model
     return $this->endTimeOffset;
   }
   /**
-   * Time-offset, relative to the beginning of the video, corresponding to the
-   * start of the segment (inclusive).
-   *
-   * @param string $startTimeOffset
+   * @param string
    */
   public function setStartTimeOffset($startTimeOffset)
   {

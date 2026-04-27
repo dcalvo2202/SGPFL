@@ -21,9 +21,6 @@ class ListStudentSubmissionsResponse extends \Google\Collection
 {
   protected $collection_key = 'studentSubmissions';
   /**
-   * Token identifying the next page of results to return. If empty, no further
-   * results are available.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListStudentSubmissionsResponse extends \Google\Collection
   protected $studentSubmissionsDataType = 'array';
 
   /**
-   * Token identifying the next page of results to return. If empty, no further
-   * results are available.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class ListStudentSubmissionsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Student work that matches the request.
-   *
-   * @param StudentSubmission[] $studentSubmissions
+   * @param StudentSubmission[]
    */
   public function setStudentSubmissions($studentSubmissions)
   {

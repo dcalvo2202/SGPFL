@@ -22,17 +22,12 @@ class GoogleCloudAiplatformV1EntityIdSelector extends \Google\Model
   protected $csvSourceType = GoogleCloudAiplatformV1CsvSource::class;
   protected $csvSourceDataType = '';
   /**
-   * Source column that holds entity IDs. If not provided, entity IDs are
-   * extracted from the column named entity_id.
-   *
    * @var string
    */
   public $entityIdField;
 
   /**
-   * Source of Csv
-   *
-   * @param GoogleCloudAiplatformV1CsvSource $csvSource
+   * @param GoogleCloudAiplatformV1CsvSource
    */
   public function setCsvSource(GoogleCloudAiplatformV1CsvSource $csvSource)
   {
@@ -46,10 +41,7 @@ class GoogleCloudAiplatformV1EntityIdSelector extends \Google\Model
     return $this->csvSource;
   }
   /**
-   * Source column that holds entity IDs. If not provided, entity IDs are
-   * extracted from the column named entity_id.
-   *
-   * @param string $entityIdField
+   * @param string
    */
   public function setEntityIdField($entityIdField)
   {

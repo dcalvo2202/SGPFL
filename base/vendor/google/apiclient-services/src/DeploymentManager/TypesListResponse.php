@@ -21,8 +21,6 @@ class TypesListResponse extends \Google\Collection
 {
   protected $collection_key = 'types';
   /**
-   * A token used to continue a truncated list request.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -30,9 +28,7 @@ class TypesListResponse extends \Google\Collection
   protected $typesDataType = 'array';
 
   /**
-   * A token used to continue a truncated list request.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -46,9 +42,7 @@ class TypesListResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Output only. A list of resource types supported by Deployment Manager.
-   *
-   * @param Type[] $types
+   * @param Type[]
    */
   public function setTypes($types)
   {

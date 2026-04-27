@@ -20,8 +20,6 @@ namespace Google\Service\Document;
 class GoogleCloudDocumentaiV1beta3ImportDocumentsMetadataIndividualImportStatus extends \Google\Model
 {
   /**
-   * The source Cloud Storage URI of the document.
-   *
    * @var string
    */
   public $inputGcsSource;
@@ -31,9 +29,7 @@ class GoogleCloudDocumentaiV1beta3ImportDocumentsMetadataIndividualImportStatus 
   protected $statusDataType = '';
 
   /**
-   * The source Cloud Storage URI of the document.
-   *
-   * @param string $inputGcsSource
+   * @param string
    */
   public function setInputGcsSource($inputGcsSource)
   {
@@ -47,9 +43,7 @@ class GoogleCloudDocumentaiV1beta3ImportDocumentsMetadataIndividualImportStatus 
     return $this->inputGcsSource;
   }
   /**
-   * The document id of imported document if it was successful, otherwise empty.
-   *
-   * @param GoogleCloudDocumentaiV1beta3DocumentId $outputDocumentId
+   * @param GoogleCloudDocumentaiV1beta3DocumentId
    */
   public function setOutputDocumentId(GoogleCloudDocumentaiV1beta3DocumentId $outputDocumentId)
   {
@@ -63,9 +57,7 @@ class GoogleCloudDocumentaiV1beta3ImportDocumentsMetadataIndividualImportStatus 
     return $this->outputDocumentId;
   }
   /**
-   * The status of the importing of the document.
-   *
-   * @param GoogleRpcStatus $status
+   * @param GoogleRpcStatus
    */
   public function setStatus(GoogleRpcStatus $status)
   {

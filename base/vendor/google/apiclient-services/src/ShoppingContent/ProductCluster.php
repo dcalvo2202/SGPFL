@@ -19,119 +19,50 @@ namespace Google\Service\ShoppingContent;
 
 class ProductCluster extends \Google\Collection
 {
-  /**
-   * Inventory status is unknown.
-   */
-  public const BRAND_INVENTORY_STATUS_INVENTORY_STATUS_UNSPECIFIED = 'INVENTORY_STATUS_UNSPECIFIED';
-  /**
-   * Merchant has a product for this product cluster or brand in stock.
-   */
-  public const BRAND_INVENTORY_STATUS_IN_STOCK = 'IN_STOCK';
-  /**
-   * Merchant has a product for this product cluster or brand in inventory but
-   * it is currently out of stock.
-   */
-  public const BRAND_INVENTORY_STATUS_OUT_OF_STOCK = 'OUT_OF_STOCK';
-  /**
-   * Merchant does not have a product for this product cluster or brand in
-   * inventory.
-   */
-  public const BRAND_INVENTORY_STATUS_NOT_IN_INVENTORY = 'NOT_IN_INVENTORY';
-  /**
-   * Inventory status is unknown.
-   */
-  public const INVENTORY_STATUS_INVENTORY_STATUS_UNSPECIFIED = 'INVENTORY_STATUS_UNSPECIFIED';
-  /**
-   * Merchant has a product for this product cluster or brand in stock.
-   */
-  public const INVENTORY_STATUS_IN_STOCK = 'IN_STOCK';
-  /**
-   * Merchant has a product for this product cluster or brand in inventory but
-   * it is currently out of stock.
-   */
-  public const INVENTORY_STATUS_OUT_OF_STOCK = 'OUT_OF_STOCK';
-  /**
-   * Merchant does not have a product for this product cluster or brand in
-   * inventory.
-   */
-  public const INVENTORY_STATUS_NOT_IN_INVENTORY = 'NOT_IN_INVENTORY';
   protected $collection_key = 'variantGtins';
   /**
-   * Brand of the product cluster.
-   *
    * @var string
    */
   public $brand;
   /**
-   * Tells if there is at least one product of the brand currently `IN_STOCK` in
-   * your product feed across multiple countries, all products are
-   * `OUT_OF_STOCK` in your product feed, or `NOT_IN_INVENTORY`. The field
-   * doesn't take the Best Sellers report country filter into account.
-   *
    * @var string
    */
   public $brandInventoryStatus;
   /**
-   * Product category (1st level) of the product cluster, represented in
-   * Google's product taxonomy.
-   *
    * @var string
    */
   public $categoryL1;
   /**
-   * Product category (2nd level) of the product cluster, represented in
-   * Google's product taxonomy.
-   *
    * @var string
    */
   public $categoryL2;
   /**
-   * Product category (3rd level) of the product cluster, represented in
-   * Google's product taxonomy.
-   *
    * @var string
    */
   public $categoryL3;
   /**
-   * Product category (4th level) of the product cluster, represented in
-   * Google's product taxonomy.
-   *
    * @var string
    */
   public $categoryL4;
   /**
-   * Product category (5th level) of the product cluster, represented in
-   * Google's product taxonomy.
-   *
    * @var string
    */
   public $categoryL5;
   /**
-   * Tells whether the product cluster is `IN_STOCK` in your product feed across
-   * multiple countries, `OUT_OF_STOCK` in your product feed, or
-   * `NOT_IN_INVENTORY` at all. The field doesn't take the Best Sellers report
-   * country filter into account.
-   *
    * @var string
    */
   public $inventoryStatus;
   /**
-   * Title of the product cluster.
-   *
    * @var string
    */
   public $title;
   /**
-   * GTINs of example variants of the product cluster.
-   *
    * @var string[]
    */
   public $variantGtins;
 
   /**
-   * Brand of the product cluster.
-   *
-   * @param string $brand
+   * @param string
    */
   public function setBrand($brand)
   {
@@ -145,32 +76,21 @@ class ProductCluster extends \Google\Collection
     return $this->brand;
   }
   /**
-   * Tells if there is at least one product of the brand currently `IN_STOCK` in
-   * your product feed across multiple countries, all products are
-   * `OUT_OF_STOCK` in your product feed, or `NOT_IN_INVENTORY`. The field
-   * doesn't take the Best Sellers report country filter into account.
-   *
-   * Accepted values: INVENTORY_STATUS_UNSPECIFIED, IN_STOCK, OUT_OF_STOCK,
-   * NOT_IN_INVENTORY
-   *
-   * @param self::BRAND_INVENTORY_STATUS_* $brandInventoryStatus
+   * @param string
    */
   public function setBrandInventoryStatus($brandInventoryStatus)
   {
     $this->brandInventoryStatus = $brandInventoryStatus;
   }
   /**
-   * @return self::BRAND_INVENTORY_STATUS_*
+   * @return string
    */
   public function getBrandInventoryStatus()
   {
     return $this->brandInventoryStatus;
   }
   /**
-   * Product category (1st level) of the product cluster, represented in
-   * Google's product taxonomy.
-   *
-   * @param string $categoryL1
+   * @param string
    */
   public function setCategoryL1($categoryL1)
   {
@@ -184,10 +104,7 @@ class ProductCluster extends \Google\Collection
     return $this->categoryL1;
   }
   /**
-   * Product category (2nd level) of the product cluster, represented in
-   * Google's product taxonomy.
-   *
-   * @param string $categoryL2
+   * @param string
    */
   public function setCategoryL2($categoryL2)
   {
@@ -201,10 +118,7 @@ class ProductCluster extends \Google\Collection
     return $this->categoryL2;
   }
   /**
-   * Product category (3rd level) of the product cluster, represented in
-   * Google's product taxonomy.
-   *
-   * @param string $categoryL3
+   * @param string
    */
   public function setCategoryL3($categoryL3)
   {
@@ -218,10 +132,7 @@ class ProductCluster extends \Google\Collection
     return $this->categoryL3;
   }
   /**
-   * Product category (4th level) of the product cluster, represented in
-   * Google's product taxonomy.
-   *
-   * @param string $categoryL4
+   * @param string
    */
   public function setCategoryL4($categoryL4)
   {
@@ -235,10 +146,7 @@ class ProductCluster extends \Google\Collection
     return $this->categoryL4;
   }
   /**
-   * Product category (5th level) of the product cluster, represented in
-   * Google's product taxonomy.
-   *
-   * @param string $categoryL5
+   * @param string
    */
   public function setCategoryL5($categoryL5)
   {
@@ -252,31 +160,21 @@ class ProductCluster extends \Google\Collection
     return $this->categoryL5;
   }
   /**
-   * Tells whether the product cluster is `IN_STOCK` in your product feed across
-   * multiple countries, `OUT_OF_STOCK` in your product feed, or
-   * `NOT_IN_INVENTORY` at all. The field doesn't take the Best Sellers report
-   * country filter into account.
-   *
-   * Accepted values: INVENTORY_STATUS_UNSPECIFIED, IN_STOCK, OUT_OF_STOCK,
-   * NOT_IN_INVENTORY
-   *
-   * @param self::INVENTORY_STATUS_* $inventoryStatus
+   * @param string
    */
   public function setInventoryStatus($inventoryStatus)
   {
     $this->inventoryStatus = $inventoryStatus;
   }
   /**
-   * @return self::INVENTORY_STATUS_*
+   * @return string
    */
   public function getInventoryStatus()
   {
     return $this->inventoryStatus;
   }
   /**
-   * Title of the product cluster.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -290,9 +188,7 @@ class ProductCluster extends \Google\Collection
     return $this->title;
   }
   /**
-   * GTINs of example variants of the product cluster.
-   *
-   * @param string[] $variantGtins
+   * @param string[]
    */
   public function setVariantGtins($variantGtins)
   {

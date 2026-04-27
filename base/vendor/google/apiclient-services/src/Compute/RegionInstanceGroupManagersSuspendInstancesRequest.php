@@ -21,25 +21,16 @@ class RegionInstanceGroupManagersSuspendInstancesRequest extends \Google\Collect
 {
   protected $collection_key = 'instances';
   /**
-   * If this flag is set to true, the Instance Group Manager will proceed to
-   * suspend the instances, skipping initialization on them.
-   *
    * @var bool
    */
   public $forceSuspend;
   /**
-   * The URLs of one or more instances to suspend. This can be a full URL or a
-   * partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
-   *
    * @var string[]
    */
   public $instances;
 
   /**
-   * If this flag is set to true, the Instance Group Manager will proceed to
-   * suspend the instances, skipping initialization on them.
-   *
-   * @param bool $forceSuspend
+   * @param bool
    */
   public function setForceSuspend($forceSuspend)
   {
@@ -53,10 +44,7 @@ class RegionInstanceGroupManagersSuspendInstancesRequest extends \Google\Collect
     return $this->forceSuspend;
   }
   /**
-   * The URLs of one or more instances to suspend. This can be a full URL or a
-   * partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
-   *
-   * @param string[] $instances
+   * @param string[]
    */
   public function setInstances($instances)
   {

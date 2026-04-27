@@ -21,31 +21,14 @@ class GooglePrivacyDlpV2HybridOptions extends \Google\Collection
 {
   protected $collection_key = 'requiredFindingLabelKeys';
   /**
-   * A short description of where the data is coming from. Will be stored once
-   * in the job. 256 max length.
-   *
    * @var string
    */
   public $description;
   /**
-   * To organize findings, these labels will be added to each finding. Label
-   * keys must be between 1 and 63 characters long and must conform to the
-   * following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`. Label values
-   * must be between 0 and 63 characters long and must conform to the regular
-   * expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`. No more than 10 labels can be
-   * associated with a given finding. Examples: * `"environment" : "production"`
-   * * `"pipeline" : "etl"`
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * These are labels that each inspection request must include within their
-   * 'finding_labels' map. Request may contain others, but any missing one of
-   * these will be rejected. Label keys must be between 1 and 63 characters long
-   * and must conform to the following regular expression:
-   * `[a-z]([-a-z0-9]*[a-z0-9])?`. No more than 10 keys can be required.
-   *
    * @var string[]
    */
   public $requiredFindingLabelKeys;
@@ -53,10 +36,7 @@ class GooglePrivacyDlpV2HybridOptions extends \Google\Collection
   protected $tableOptionsDataType = '';
 
   /**
-   * A short description of where the data is coming from. Will be stored once
-   * in the job. 256 max length.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -70,15 +50,7 @@ class GooglePrivacyDlpV2HybridOptions extends \Google\Collection
     return $this->description;
   }
   /**
-   * To organize findings, these labels will be added to each finding. Label
-   * keys must be between 1 and 63 characters long and must conform to the
-   * following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`. Label values
-   * must be between 0 and 63 characters long and must conform to the regular
-   * expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`. No more than 10 labels can be
-   * associated with a given finding. Examples: * `"environment" : "production"`
-   * * `"pipeline" : "etl"`
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -92,13 +64,7 @@ class GooglePrivacyDlpV2HybridOptions extends \Google\Collection
     return $this->labels;
   }
   /**
-   * These are labels that each inspection request must include within their
-   * 'finding_labels' map. Request may contain others, but any missing one of
-   * these will be rejected. Label keys must be between 1 and 63 characters long
-   * and must conform to the following regular expression:
-   * `[a-z]([-a-z0-9]*[a-z0-9])?`. No more than 10 keys can be required.
-   *
-   * @param string[] $requiredFindingLabelKeys
+   * @param string[]
    */
   public function setRequiredFindingLabelKeys($requiredFindingLabelKeys)
   {
@@ -112,10 +78,7 @@ class GooglePrivacyDlpV2HybridOptions extends \Google\Collection
     return $this->requiredFindingLabelKeys;
   }
   /**
-   * If the container is a table, additional information to make findings
-   * meaningful such as the columns that are primary keys.
-   *
-   * @param GooglePrivacyDlpV2TableOptions $tableOptions
+   * @param GooglePrivacyDlpV2TableOptions
    */
   public function setTableOptions(GooglePrivacyDlpV2TableOptions $tableOptions)
   {

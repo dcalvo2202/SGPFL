@@ -20,18 +20,12 @@ namespace Google\Service\CertificateManager;
 class TrustAnchor extends \Google\Model
 {
   /**
-   * PEM root certificate of the PKI used for validation. Each certificate
-   * provided in PEM format may occupy up to 5kB.
-   *
    * @var string
    */
   public $pemCertificate;
 
   /**
-   * PEM root certificate of the PKI used for validation. Each certificate
-   * provided in PEM format may occupy up to 5kB.
-   *
-   * @param string $pemCertificate
+   * @param string
    */
   public function setPemCertificate($pemCertificate)
   {

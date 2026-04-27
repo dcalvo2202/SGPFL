@@ -23,17 +23,12 @@ class GoogleCloudApigeeV1ListDataCollectorsResponse extends \Google\Collection
   protected $dataCollectorsType = GoogleCloudApigeeV1DataCollector::class;
   protected $dataCollectorsDataType = 'array';
   /**
-   * Page token that you can include in a ListDataCollectors request to retrieve
-   * the next page. If omitted, no subsequent pages exist.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Data collectors in the specified organization.
-   *
-   * @param GoogleCloudApigeeV1DataCollector[] $dataCollectors
+   * @param GoogleCloudApigeeV1DataCollector[]
    */
   public function setDataCollectors($dataCollectors)
   {
@@ -47,10 +42,7 @@ class GoogleCloudApigeeV1ListDataCollectorsResponse extends \Google\Collection
     return $this->dataCollectors;
   }
   /**
-   * Page token that you can include in a ListDataCollectors request to retrieve
-   * the next page. If omitted, no subsequent pages exist.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

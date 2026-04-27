@@ -21,37 +21,26 @@ class NetworkInfo extends \Google\Collection
 {
   protected $collection_key = 'telephonyInfos';
   /**
-   * IMEI number of the GSM device. For example, A1000031212.
-   *
    * @var string
    */
   public $imei;
   /**
-   * MEID number of the CDMA device. For example, A00000292788E1.
-   *
    * @var string
    */
   public $meid;
   /**
-   * Alphabetic name of current registered operator. For example, Vodafone.
-   *
-   * @deprecated
    * @var string
    */
   public $networkOperatorName;
   protected $telephonyInfosType = TelephonyInfo::class;
   protected $telephonyInfosDataType = 'array';
   /**
-   * Wi-Fi MAC address of the device. For example, 7c:11:11:11:11:11.
-   *
    * @var string
    */
   public $wifiMacAddress;
 
   /**
-   * IMEI number of the GSM device. For example, A1000031212.
-   *
-   * @param string $imei
+   * @param string
    */
   public function setImei($imei)
   {
@@ -65,9 +54,7 @@ class NetworkInfo extends \Google\Collection
     return $this->imei;
   }
   /**
-   * MEID number of the CDMA device. For example, A00000292788E1.
-   *
-   * @param string $meid
+   * @param string
    */
   public function setMeid($meid)
   {
@@ -81,17 +68,13 @@ class NetworkInfo extends \Google\Collection
     return $this->meid;
   }
   /**
-   * Alphabetic name of current registered operator. For example, Vodafone.
-   *
-   * @deprecated
-   * @param string $networkOperatorName
+   * @param string
    */
   public function setNetworkOperatorName($networkOperatorName)
   {
     $this->networkOperatorName = $networkOperatorName;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getNetworkOperatorName()
@@ -99,10 +82,7 @@ class NetworkInfo extends \Google\Collection
     return $this->networkOperatorName;
   }
   /**
-   * Provides telephony information associated with each SIM card on the device.
-   * Only supported on fully managed devices starting from Android 6.
-   *
-   * @param TelephonyInfo[] $telephonyInfos
+   * @param TelephonyInfo[]
    */
   public function setTelephonyInfos($telephonyInfos)
   {
@@ -116,9 +96,7 @@ class NetworkInfo extends \Google\Collection
     return $this->telephonyInfos;
   }
   /**
-   * Wi-Fi MAC address of the device. For example, 7c:11:11:11:11:11.
-   *
-   * @param string $wifiMacAddress
+   * @param string
    */
   public function setWifiMacAddress($wifiMacAddress)
   {

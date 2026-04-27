@@ -20,25 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1SecretRef extends \Google\Model
 {
   /**
-   * Required. The name of the secret in Cloud Secret Manager. Format:
-   * {secret_name}.
-   *
    * @var string
    */
   public $secret;
   /**
-   * The Cloud Secret Manager secret version. Can be 'latest' for the latest
-   * version, an integer for a specific version, or a version alias.
-   *
    * @var string
    */
   public $version;
 
   /**
-   * Required. The name of the secret in Cloud Secret Manager. Format:
-   * {secret_name}.
-   *
-   * @param string $secret
+   * @param string
    */
   public function setSecret($secret)
   {
@@ -52,10 +43,7 @@ class GoogleCloudAiplatformV1SecretRef extends \Google\Model
     return $this->secret;
   }
   /**
-   * The Cloud Secret Manager secret version. Can be 'latest' for the latest
-   * version, an integer for a specific version, or a version alias.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

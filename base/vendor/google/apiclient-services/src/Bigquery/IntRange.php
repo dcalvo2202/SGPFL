@@ -20,22 +20,16 @@ namespace Google\Service\Bigquery;
 class IntRange extends \Google\Model
 {
   /**
-   * Max value of the int parameter.
-   *
    * @var string
    */
   public $max;
   /**
-   * Min value of the int parameter.
-   *
    * @var string
    */
   public $min;
 
   /**
-   * Max value of the int parameter.
-   *
-   * @param string $max
+   * @param string
    */
   public function setMax($max)
   {
@@ -49,9 +43,7 @@ class IntRange extends \Google\Model
     return $this->max;
   }
   /**
-   * Min value of the int parameter.
-   *
-   * @param string $min
+   * @param string
    */
   public function setMin($min)
   {

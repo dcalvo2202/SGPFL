@@ -25,66 +25,24 @@ class GoogleCloudAiplatformV1DedicatedResources extends \Google\Collection
   protected $machineSpecType = GoogleCloudAiplatformV1MachineSpec::class;
   protected $machineSpecDataType = '';
   /**
-   * Immutable. The maximum number of replicas that may be deployed on when the
-   * traffic against it increases. If the requested value is too large, the
-   * deployment will error, but if deployment succeeds then the ability to scale
-   * to that many replicas is guaranteed (barring service outages). If traffic
-   * increases beyond what its replicas at maximum may handle, a portion of the
-   * traffic will be dropped. If this value is not provided, will use
-   * min_replica_count as the default value. The value of this field impacts the
-   * charge against Vertex CPU and GPU quotas. Specifically, you will be charged
-   * for (max_replica_count * number of cores in the selected machine type) and
-   * (max_replica_count * number of GPUs per replica in the selected machine
-   * type).
-   *
    * @var int
    */
   public $maxReplicaCount;
   /**
-   * Required. Immutable. The minimum number of machine replicas that will be
-   * always deployed on. This value must be greater than or equal to 1. If
-   * traffic increases, it may dynamically be deployed onto more replicas, and
-   * as traffic decreases, some of these extra replicas may be freed.
-   *
    * @var int
    */
   public $minReplicaCount;
   /**
-   * Optional. Number of required available replicas for the deployment to
-   * succeed. This field is only needed when partial deployment/mutation is
-   * desired. If set, the deploy/mutate operation will succeed once
-   * available_replica_count reaches required_replica_count, and the rest of the
-   * replicas will be retried. If not set, the default required_replica_count
-   * will be min_replica_count.
-   *
    * @var int
    */
   public $requiredReplicaCount;
   /**
-   * Optional. If true, schedule the deployment workload on [spot
-   * VMs](https://cloud.google.com/kubernetes-engine/docs/concepts/spot-vms).
-   *
    * @var bool
    */
   public $spot;
 
   /**
-   * Immutable. The metric specifications that overrides a resource utilization
-   * metric (CPU utilization, accelerator's duty cycle, and so on) target value
-   * (default to 60 if not set). At most one entry is allowed per metric. If
-   * machine_spec.accelerator_count is above 0, the autoscaling will be based on
-   * both CPU utilization and accelerator's duty cycle metrics and scale up when
-   * either metrics exceeds its target value while scale down if both metrics
-   * are under their target value. The default target value is 60 for both
-   * metrics. If machine_spec.accelerator_count is 0, the autoscaling will be
-   * based on CPU utilization metric only with default target value 60 if not
-   * explicitly set. For example, in the case of Online Prediction, if you want
-   * to override target CPU utilization to 80, you should set
-   * autoscaling_metric_specs.metric_name to
-   * `aiplatform.googleapis.com/prediction/online/cpu/utilization` and
-   * autoscaling_metric_specs.target to `80`.
-   *
-   * @param GoogleCloudAiplatformV1AutoscalingMetricSpec[] $autoscalingMetricSpecs
+   * @param GoogleCloudAiplatformV1AutoscalingMetricSpec[]
    */
   public function setAutoscalingMetricSpecs($autoscalingMetricSpecs)
   {
@@ -98,9 +56,7 @@ class GoogleCloudAiplatformV1DedicatedResources extends \Google\Collection
     return $this->autoscalingMetricSpecs;
   }
   /**
-   * Required. Immutable. The specification of a single machine being used.
-   *
-   * @param GoogleCloudAiplatformV1MachineSpec $machineSpec
+   * @param GoogleCloudAiplatformV1MachineSpec
    */
   public function setMachineSpec(GoogleCloudAiplatformV1MachineSpec $machineSpec)
   {
@@ -114,19 +70,7 @@ class GoogleCloudAiplatformV1DedicatedResources extends \Google\Collection
     return $this->machineSpec;
   }
   /**
-   * Immutable. The maximum number of replicas that may be deployed on when the
-   * traffic against it increases. If the requested value is too large, the
-   * deployment will error, but if deployment succeeds then the ability to scale
-   * to that many replicas is guaranteed (barring service outages). If traffic
-   * increases beyond what its replicas at maximum may handle, a portion of the
-   * traffic will be dropped. If this value is not provided, will use
-   * min_replica_count as the default value. The value of this field impacts the
-   * charge against Vertex CPU and GPU quotas. Specifically, you will be charged
-   * for (max_replica_count * number of cores in the selected machine type) and
-   * (max_replica_count * number of GPUs per replica in the selected machine
-   * type).
-   *
-   * @param int $maxReplicaCount
+   * @param int
    */
   public function setMaxReplicaCount($maxReplicaCount)
   {
@@ -140,12 +84,7 @@ class GoogleCloudAiplatformV1DedicatedResources extends \Google\Collection
     return $this->maxReplicaCount;
   }
   /**
-   * Required. Immutable. The minimum number of machine replicas that will be
-   * always deployed on. This value must be greater than or equal to 1. If
-   * traffic increases, it may dynamically be deployed onto more replicas, and
-   * as traffic decreases, some of these extra replicas may be freed.
-   *
-   * @param int $minReplicaCount
+   * @param int
    */
   public function setMinReplicaCount($minReplicaCount)
   {
@@ -159,14 +98,7 @@ class GoogleCloudAiplatformV1DedicatedResources extends \Google\Collection
     return $this->minReplicaCount;
   }
   /**
-   * Optional. Number of required available replicas for the deployment to
-   * succeed. This field is only needed when partial deployment/mutation is
-   * desired. If set, the deploy/mutate operation will succeed once
-   * available_replica_count reaches required_replica_count, and the rest of the
-   * replicas will be retried. If not set, the default required_replica_count
-   * will be min_replica_count.
-   *
-   * @param int $requiredReplicaCount
+   * @param int
    */
   public function setRequiredReplicaCount($requiredReplicaCount)
   {
@@ -180,10 +112,7 @@ class GoogleCloudAiplatformV1DedicatedResources extends \Google\Collection
     return $this->requiredReplicaCount;
   }
   /**
-   * Optional. If true, schedule the deployment workload on [spot
-   * VMs](https://cloud.google.com/kubernetes-engine/docs/concepts/spot-vms).
-   *
-   * @param bool $spot
+   * @param bool
    */
   public function setSpot($spot)
   {

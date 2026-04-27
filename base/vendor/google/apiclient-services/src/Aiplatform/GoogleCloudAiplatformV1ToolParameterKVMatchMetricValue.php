@@ -20,16 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1ToolParameterKVMatchMetricValue extends \Google\Model
 {
   /**
-   * Output only. Tool parameter key value match score.
-   *
    * @var float
    */
   public $score;
 
   /**
-   * Output only. Tool parameter key value match score.
-   *
-   * @param float $score
+   * @param float
    */
   public function setScore($score)
   {

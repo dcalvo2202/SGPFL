@@ -20,43 +20,24 @@ namespace Google\Service\Speech;
 class SpeakerDiarizationConfig extends \Google\Model
 {
   /**
-   * If 'true', enables speaker detection for each recognized word in the top
-   * alternative of the recognition result using a speaker_label provided in the
-   * WordInfo.
-   *
    * @var bool
    */
   public $enableSpeakerDiarization;
   /**
-   * Maximum number of speakers in the conversation. This range gives you more
-   * flexibility by allowing the system to automatically determine the correct
-   * number of speakers. If not set, the default value is 6.
-   *
    * @var int
    */
   public $maxSpeakerCount;
   /**
-   * Minimum number of speakers in the conversation. This range gives you more
-   * flexibility by allowing the system to automatically determine the correct
-   * number of speakers. If not set, the default value is 2.
-   *
    * @var int
    */
   public $minSpeakerCount;
   /**
-   * Output only. Unused.
-   *
-   * @deprecated
    * @var int
    */
   public $speakerTag;
 
   /**
-   * If 'true', enables speaker detection for each recognized word in the top
-   * alternative of the recognition result using a speaker_label provided in the
-   * WordInfo.
-   *
-   * @param bool $enableSpeakerDiarization
+   * @param bool
    */
   public function setEnableSpeakerDiarization($enableSpeakerDiarization)
   {
@@ -70,11 +51,7 @@ class SpeakerDiarizationConfig extends \Google\Model
     return $this->enableSpeakerDiarization;
   }
   /**
-   * Maximum number of speakers in the conversation. This range gives you more
-   * flexibility by allowing the system to automatically determine the correct
-   * number of speakers. If not set, the default value is 6.
-   *
-   * @param int $maxSpeakerCount
+   * @param int
    */
   public function setMaxSpeakerCount($maxSpeakerCount)
   {
@@ -88,11 +65,7 @@ class SpeakerDiarizationConfig extends \Google\Model
     return $this->maxSpeakerCount;
   }
   /**
-   * Minimum number of speakers in the conversation. This range gives you more
-   * flexibility by allowing the system to automatically determine the correct
-   * number of speakers. If not set, the default value is 2.
-   *
-   * @param int $minSpeakerCount
+   * @param int
    */
   public function setMinSpeakerCount($minSpeakerCount)
   {
@@ -106,17 +79,13 @@ class SpeakerDiarizationConfig extends \Google\Model
     return $this->minSpeakerCount;
   }
   /**
-   * Output only. Unused.
-   *
-   * @deprecated
-   * @param int $speakerTag
+   * @param int
    */
   public function setSpeakerTag($speakerTag)
   {
     $this->speakerTag = $speakerTag;
   }
   /**
-   * @deprecated
    * @return int
    */
   public function getSpeakerTag()

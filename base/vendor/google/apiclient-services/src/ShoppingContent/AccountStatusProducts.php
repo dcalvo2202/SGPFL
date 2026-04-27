@@ -21,21 +21,14 @@ class AccountStatusProducts extends \Google\Collection
 {
   protected $collection_key = 'itemLevelIssues';
   /**
-   * The channel the data applies to. Acceptable values are: - "`local`" -
-   * "`online`"
-   *
    * @var string
    */
   public $channel;
   /**
-   * The country the data applies to.
-   *
    * @var string
    */
   public $country;
   /**
-   * The destination the data applies to.
-   *
    * @var string
    */
   public $destination;
@@ -45,10 +38,7 @@ class AccountStatusProducts extends \Google\Collection
   protected $statisticsDataType = '';
 
   /**
-   * The channel the data applies to. Acceptable values are: - "`local`" -
-   * "`online`"
-   *
-   * @param string $channel
+   * @param string
    */
   public function setChannel($channel)
   {
@@ -62,9 +52,7 @@ class AccountStatusProducts extends \Google\Collection
     return $this->channel;
   }
   /**
-   * The country the data applies to.
-   *
-   * @param string $country
+   * @param string
    */
   public function setCountry($country)
   {
@@ -78,9 +66,7 @@ class AccountStatusProducts extends \Google\Collection
     return $this->country;
   }
   /**
-   * The destination the data applies to.
-   *
-   * @param string $destination
+   * @param string
    */
   public function setDestination($destination)
   {
@@ -94,9 +80,7 @@ class AccountStatusProducts extends \Google\Collection
     return $this->destination;
   }
   /**
-   * List of item-level issues.
-   *
-   * @param AccountStatusItemLevelIssue[] $itemLevelIssues
+   * @param AccountStatusItemLevelIssue[]
    */
   public function setItemLevelIssues($itemLevelIssues)
   {
@@ -110,9 +94,7 @@ class AccountStatusProducts extends \Google\Collection
     return $this->itemLevelIssues;
   }
   /**
-   * Aggregated product statistics.
-   *
-   * @param AccountStatusStatistics $statistics
+   * @param AccountStatusStatistics
    */
   public function setStatistics(AccountStatusStatistics $statistics)
   {

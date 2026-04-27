@@ -24,9 +24,7 @@ class SelectionItems extends \Google\Collection
   protected $itemsDataType = 'array';
 
   /**
-   * An array of the SelectionItem objects.
-   *
-   * @param GoogleAppsCardV1SelectionItem[] $items
+   * @param GoogleAppsCardV1SelectionItem[]
    */
   public function setItems($items)
   {

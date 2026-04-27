@@ -50,10 +50,7 @@ class GoogleCloudVisionV1p3beta1AnnotateImageResponse extends \Google\Collection
   protected $webDetectionDataType = '';
 
   /**
-   * If present, contextual information is needed to understand where this image
-   * comes from.
-   *
-   * @param GoogleCloudVisionV1p3beta1ImageAnnotationContext $context
+   * @param GoogleCloudVisionV1p3beta1ImageAnnotationContext
    */
   public function setContext(GoogleCloudVisionV1p3beta1ImageAnnotationContext $context)
   {
@@ -67,9 +64,7 @@ class GoogleCloudVisionV1p3beta1AnnotateImageResponse extends \Google\Collection
     return $this->context;
   }
   /**
-   * If present, crop hints have completed successfully.
-   *
-   * @param GoogleCloudVisionV1p3beta1CropHintsAnnotation $cropHintsAnnotation
+   * @param GoogleCloudVisionV1p3beta1CropHintsAnnotation
    */
   public function setCropHintsAnnotation(GoogleCloudVisionV1p3beta1CropHintsAnnotation $cropHintsAnnotation)
   {
@@ -83,10 +78,7 @@ class GoogleCloudVisionV1p3beta1AnnotateImageResponse extends \Google\Collection
     return $this->cropHintsAnnotation;
   }
   /**
-   * If set, represents the error message for the operation. Note that filled-in
-   * image annotations are guaranteed to be correct, even when `error` is set.
-   *
-   * @param Status $error
+   * @param Status
    */
   public function setError(Status $error)
   {
@@ -100,9 +92,7 @@ class GoogleCloudVisionV1p3beta1AnnotateImageResponse extends \Google\Collection
     return $this->error;
   }
   /**
-   * If present, face detection has completed successfully.
-   *
-   * @param GoogleCloudVisionV1p3beta1FaceAnnotation[] $faceAnnotations
+   * @param GoogleCloudVisionV1p3beta1FaceAnnotation[]
    */
   public function setFaceAnnotations($faceAnnotations)
   {
@@ -116,11 +106,7 @@ class GoogleCloudVisionV1p3beta1AnnotateImageResponse extends \Google\Collection
     return $this->faceAnnotations;
   }
   /**
-   * If present, text (OCR) detection or document (OCR) text detection has
-   * completed successfully. This annotation provides the structural hierarchy
-   * for the OCR detected text.
-   *
-   * @param GoogleCloudVisionV1p3beta1TextAnnotation $fullTextAnnotation
+   * @param GoogleCloudVisionV1p3beta1TextAnnotation
    */
   public function setFullTextAnnotation(GoogleCloudVisionV1p3beta1TextAnnotation $fullTextAnnotation)
   {
@@ -134,9 +120,7 @@ class GoogleCloudVisionV1p3beta1AnnotateImageResponse extends \Google\Collection
     return $this->fullTextAnnotation;
   }
   /**
-   * If present, image properties were extracted successfully.
-   *
-   * @param GoogleCloudVisionV1p3beta1ImageProperties $imagePropertiesAnnotation
+   * @param GoogleCloudVisionV1p3beta1ImageProperties
    */
   public function setImagePropertiesAnnotation(GoogleCloudVisionV1p3beta1ImageProperties $imagePropertiesAnnotation)
   {
@@ -150,9 +134,7 @@ class GoogleCloudVisionV1p3beta1AnnotateImageResponse extends \Google\Collection
     return $this->imagePropertiesAnnotation;
   }
   /**
-   * If present, label detection has completed successfully.
-   *
-   * @param GoogleCloudVisionV1p3beta1EntityAnnotation[] $labelAnnotations
+   * @param GoogleCloudVisionV1p3beta1EntityAnnotation[]
    */
   public function setLabelAnnotations($labelAnnotations)
   {
@@ -166,9 +148,7 @@ class GoogleCloudVisionV1p3beta1AnnotateImageResponse extends \Google\Collection
     return $this->labelAnnotations;
   }
   /**
-   * If present, landmark detection has completed successfully.
-   *
-   * @param GoogleCloudVisionV1p3beta1EntityAnnotation[] $landmarkAnnotations
+   * @param GoogleCloudVisionV1p3beta1EntityAnnotation[]
    */
   public function setLandmarkAnnotations($landmarkAnnotations)
   {
@@ -182,10 +162,7 @@ class GoogleCloudVisionV1p3beta1AnnotateImageResponse extends \Google\Collection
     return $this->landmarkAnnotations;
   }
   /**
-   * If present, localized object detection has completed successfully. This
-   * will be sorted descending by confidence score.
-   *
-   * @param GoogleCloudVisionV1p3beta1LocalizedObjectAnnotation[] $localizedObjectAnnotations
+   * @param GoogleCloudVisionV1p3beta1LocalizedObjectAnnotation[]
    */
   public function setLocalizedObjectAnnotations($localizedObjectAnnotations)
   {
@@ -199,9 +176,7 @@ class GoogleCloudVisionV1p3beta1AnnotateImageResponse extends \Google\Collection
     return $this->localizedObjectAnnotations;
   }
   /**
-   * If present, logo detection has completed successfully.
-   *
-   * @param GoogleCloudVisionV1p3beta1EntityAnnotation[] $logoAnnotations
+   * @param GoogleCloudVisionV1p3beta1EntityAnnotation[]
    */
   public function setLogoAnnotations($logoAnnotations)
   {
@@ -215,9 +190,7 @@ class GoogleCloudVisionV1p3beta1AnnotateImageResponse extends \Google\Collection
     return $this->logoAnnotations;
   }
   /**
-   * If present, product search has completed successfully.
-   *
-   * @param GoogleCloudVisionV1p3beta1ProductSearchResults $productSearchResults
+   * @param GoogleCloudVisionV1p3beta1ProductSearchResults
    */
   public function setProductSearchResults(GoogleCloudVisionV1p3beta1ProductSearchResults $productSearchResults)
   {
@@ -231,9 +204,7 @@ class GoogleCloudVisionV1p3beta1AnnotateImageResponse extends \Google\Collection
     return $this->productSearchResults;
   }
   /**
-   * If present, safe-search annotation has completed successfully.
-   *
-   * @param GoogleCloudVisionV1p3beta1SafeSearchAnnotation $safeSearchAnnotation
+   * @param GoogleCloudVisionV1p3beta1SafeSearchAnnotation
    */
   public function setSafeSearchAnnotation(GoogleCloudVisionV1p3beta1SafeSearchAnnotation $safeSearchAnnotation)
   {
@@ -247,9 +218,7 @@ class GoogleCloudVisionV1p3beta1AnnotateImageResponse extends \Google\Collection
     return $this->safeSearchAnnotation;
   }
   /**
-   * If present, text (OCR) detection has completed successfully.
-   *
-   * @param GoogleCloudVisionV1p3beta1EntityAnnotation[] $textAnnotations
+   * @param GoogleCloudVisionV1p3beta1EntityAnnotation[]
    */
   public function setTextAnnotations($textAnnotations)
   {
@@ -263,9 +232,7 @@ class GoogleCloudVisionV1p3beta1AnnotateImageResponse extends \Google\Collection
     return $this->textAnnotations;
   }
   /**
-   * If present, web detection has completed successfully.
-   *
-   * @param GoogleCloudVisionV1p3beta1WebDetection $webDetection
+   * @param GoogleCloudVisionV1p3beta1WebDetection
    */
   public function setWebDetection(GoogleCloudVisionV1p3beta1WebDetection $webDetection)
   {

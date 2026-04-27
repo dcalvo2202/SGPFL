@@ -20,18 +20,12 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1Subscription extends \Google\Model
 {
   /**
-   * Full name of the Pub/Sub subcription. Use the following structure in your
-   * request: `subscription "projects/foo/subscription/bar"`
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Full name of the Pub/Sub subcription. Use the following structure in your
-   * request: `subscription "projects/foo/subscription/bar"`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

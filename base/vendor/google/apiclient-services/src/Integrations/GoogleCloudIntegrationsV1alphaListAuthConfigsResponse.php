@@ -23,16 +23,12 @@ class GoogleCloudIntegrationsV1alphaListAuthConfigsResponse extends \Google\Coll
   protected $authConfigsType = GoogleCloudIntegrationsV1alphaAuthConfig::class;
   protected $authConfigsDataType = 'array';
   /**
-   * The token used to retrieve the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of AuthConfigs retrieved.
-   *
-   * @param GoogleCloudIntegrationsV1alphaAuthConfig[] $authConfigs
+   * @param GoogleCloudIntegrationsV1alphaAuthConfig[]
    */
   public function setAuthConfigs($authConfigs)
   {
@@ -46,9 +42,7 @@ class GoogleCloudIntegrationsV1alphaListAuthConfigsResponse extends \Google\Coll
     return $this->authConfigs;
   }
   /**
-   * The token used to retrieve the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

@@ -23,16 +23,12 @@ class WebfontList extends \Google\Collection
   protected $itemsType = Webfont::class;
   protected $itemsDataType = 'array';
   /**
-   * This kind represents a list of webfont objects in the webfonts service.
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * The list of fonts currently served by the Google Fonts API.
-   *
-   * @param Webfont[] $items
+   * @param Webfont[]
    */
   public function setItems($items)
   {
@@ -46,9 +42,7 @@ class WebfontList extends \Google\Collection
     return $this->items;
   }
   /**
-   * This kind represents a list of webfont objects in the webfonts service.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

@@ -24,9 +24,7 @@ class GoogleCloudDiscoveryengineV1alphaSearchRequestEmbeddingSpec extends \Googl
   protected $embeddingVectorsDataType = 'array';
 
   /**
-   * The embedding vector used for retrieval. Limit to 1.
-   *
-   * @param GoogleCloudDiscoveryengineV1alphaSearchRequestEmbeddingSpecEmbeddingVector[] $embeddingVectors
+   * @param GoogleCloudDiscoveryengineV1alphaSearchRequestEmbeddingSpecEmbeddingVector[]
    */
   public function setEmbeddingVectors($embeddingVectors)
   {

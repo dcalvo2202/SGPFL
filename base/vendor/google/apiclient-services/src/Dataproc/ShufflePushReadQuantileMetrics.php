@@ -39,7 +39,7 @@ class ShufflePushReadQuantileMetrics extends \Google\Model
   protected $remoteMergedReqsDurationDataType = '';
 
   /**
-   * @param Quantiles $corruptMergedBlockChunks
+   * @param Quantiles
    */
   public function setCorruptMergedBlockChunks(Quantiles $corruptMergedBlockChunks)
   {
@@ -53,7 +53,7 @@ class ShufflePushReadQuantileMetrics extends \Google\Model
     return $this->corruptMergedBlockChunks;
   }
   /**
-   * @param Quantiles $localMergedBlocksFetched
+   * @param Quantiles
    */
   public function setLocalMergedBlocksFetched(Quantiles $localMergedBlocksFetched)
   {
@@ -67,7 +67,7 @@ class ShufflePushReadQuantileMetrics extends \Google\Model
     return $this->localMergedBlocksFetched;
   }
   /**
-   * @param Quantiles $localMergedBytesRead
+   * @param Quantiles
    */
   public function setLocalMergedBytesRead(Quantiles $localMergedBytesRead)
   {
@@ -81,7 +81,7 @@ class ShufflePushReadQuantileMetrics extends \Google\Model
     return $this->localMergedBytesRead;
   }
   /**
-   * @param Quantiles $localMergedChunksFetched
+   * @param Quantiles
    */
   public function setLocalMergedChunksFetched(Quantiles $localMergedChunksFetched)
   {
@@ -95,7 +95,7 @@ class ShufflePushReadQuantileMetrics extends \Google\Model
     return $this->localMergedChunksFetched;
   }
   /**
-   * @param Quantiles $mergedFetchFallbackCount
+   * @param Quantiles
    */
   public function setMergedFetchFallbackCount(Quantiles $mergedFetchFallbackCount)
   {
@@ -109,7 +109,7 @@ class ShufflePushReadQuantileMetrics extends \Google\Model
     return $this->mergedFetchFallbackCount;
   }
   /**
-   * @param Quantiles $remoteMergedBlocksFetched
+   * @param Quantiles
    */
   public function setRemoteMergedBlocksFetched(Quantiles $remoteMergedBlocksFetched)
   {
@@ -123,7 +123,7 @@ class ShufflePushReadQuantileMetrics extends \Google\Model
     return $this->remoteMergedBlocksFetched;
   }
   /**
-   * @param Quantiles $remoteMergedBytesRead
+   * @param Quantiles
    */
   public function setRemoteMergedBytesRead(Quantiles $remoteMergedBytesRead)
   {
@@ -137,7 +137,7 @@ class ShufflePushReadQuantileMetrics extends \Google\Model
     return $this->remoteMergedBytesRead;
   }
   /**
-   * @param Quantiles $remoteMergedChunksFetched
+   * @param Quantiles
    */
   public function setRemoteMergedChunksFetched(Quantiles $remoteMergedChunksFetched)
   {
@@ -151,7 +151,7 @@ class ShufflePushReadQuantileMetrics extends \Google\Model
     return $this->remoteMergedChunksFetched;
   }
   /**
-   * @param Quantiles $remoteMergedReqsDuration
+   * @param Quantiles
    */
   public function setRemoteMergedReqsDuration(Quantiles $remoteMergedReqsDuration)
   {

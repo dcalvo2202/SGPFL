@@ -31,9 +31,7 @@ class VmwareAdminLoadBalancerConfig extends \Google\Model
   protected $vipConfigDataType = '';
 
   /**
-   * Configuration for F5 Big IP typed load balancers.
-   *
-   * @param VmwareAdminF5BigIpConfig $f5Config
+   * @param VmwareAdminF5BigIpConfig
    */
   public function setF5Config(VmwareAdminF5BigIpConfig $f5Config)
   {
@@ -47,9 +45,7 @@ class VmwareAdminLoadBalancerConfig extends \Google\Model
     return $this->f5Config;
   }
   /**
-   * Manually configured load balancers.
-   *
-   * @param VmwareAdminManualLbConfig $manualLbConfig
+   * @param VmwareAdminManualLbConfig
    */
   public function setManualLbConfig(VmwareAdminManualLbConfig $manualLbConfig)
   {
@@ -63,9 +59,7 @@ class VmwareAdminLoadBalancerConfig extends \Google\Model
     return $this->manualLbConfig;
   }
   /**
-   * MetalLB load balancers.
-   *
-   * @param VmwareAdminMetalLbConfig $metalLbConfig
+   * @param VmwareAdminMetalLbConfig
    */
   public function setMetalLbConfig(VmwareAdminMetalLbConfig $metalLbConfig)
   {
@@ -79,9 +73,7 @@ class VmwareAdminLoadBalancerConfig extends \Google\Model
     return $this->metalLbConfig;
   }
   /**
-   * Output only. Configuration for Seesaw typed load balancers.
-   *
-   * @param VmwareAdminSeesawConfig $seesawConfig
+   * @param VmwareAdminSeesawConfig
    */
   public function setSeesawConfig(VmwareAdminSeesawConfig $seesawConfig)
   {
@@ -95,9 +87,7 @@ class VmwareAdminLoadBalancerConfig extends \Google\Model
     return $this->seesawConfig;
   }
   /**
-   * The VIPs used by the load balancer.
-   *
-   * @param VmwareAdminVipConfig $vipConfig
+   * @param VmwareAdminVipConfig
    */
   public function setVipConfig(VmwareAdminVipConfig $vipConfig)
   {

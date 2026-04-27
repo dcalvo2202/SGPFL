@@ -23,17 +23,12 @@ class ListAuthorizedOrgsDescsResponse extends \Google\Collection
   protected $authorizedOrgsDescsType = AuthorizedOrgsDesc::class;
   protected $authorizedOrgsDescsDataType = 'array';
   /**
-   * The pagination token to retrieve the next page of results. If the value is
-   * empty, no further results remain.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * List of all the Authorized Orgs Desc instances.
-   *
-   * @param AuthorizedOrgsDesc[] $authorizedOrgsDescs
+   * @param AuthorizedOrgsDesc[]
    */
   public function setAuthorizedOrgsDescs($authorizedOrgsDescs)
   {
@@ -47,10 +42,7 @@ class ListAuthorizedOrgsDescsResponse extends \Google\Collection
     return $this->authorizedOrgsDescs;
   }
   /**
-   * The pagination token to retrieve the next page of results. If the value is
-   * empty, no further results remain.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

@@ -20,14 +20,10 @@ namespace Google\Service\Docs;
 class Bullet extends \Google\Model
 {
   /**
-   * The ID of the list this paragraph belongs to.
-   *
    * @var string
    */
   public $listId;
   /**
-   * The nesting level of this paragraph in the list.
-   *
    * @var int
    */
   public $nestingLevel;
@@ -35,9 +31,7 @@ class Bullet extends \Google\Model
   protected $textStyleDataType = '';
 
   /**
-   * The ID of the list this paragraph belongs to.
-   *
-   * @param string $listId
+   * @param string
    */
   public function setListId($listId)
   {
@@ -51,9 +45,7 @@ class Bullet extends \Google\Model
     return $this->listId;
   }
   /**
-   * The nesting level of this paragraph in the list.
-   *
-   * @param int $nestingLevel
+   * @param int
    */
   public function setNestingLevel($nestingLevel)
   {
@@ -67,9 +59,7 @@ class Bullet extends \Google\Model
     return $this->nestingLevel;
   }
   /**
-   * The paragraph-specific text style applied to this bullet.
-   *
-   * @param TextStyle $textStyle
+   * @param TextStyle
    */
   public function setTextStyle(TextStyle $textStyle)
   {

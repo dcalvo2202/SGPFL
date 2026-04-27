@@ -23,9 +23,7 @@ class MigrationJobObjectsConfig extends \Google\Model
   protected $sourceObjectsConfigDataType = '';
 
   /**
-   * The list of the migration job objects.
-   *
-   * @param SourceObjectsConfig $sourceObjectsConfig
+   * @param SourceObjectsConfig
    */
   public function setSourceObjectsConfig(SourceObjectsConfig $sourceObjectsConfig)
   {

@@ -21,9 +21,6 @@ class GoogleCloudContactcenterinsightsV1alpha1QueryMetricsResponse extends \Goog
 {
   protected $collection_key = 'slices';
   /**
-   * Required. The location of the data.
-   * "projects/{project}/locations/{location}"
-   *
    * @var string
    */
   public $location;
@@ -32,17 +29,12 @@ class GoogleCloudContactcenterinsightsV1alpha1QueryMetricsResponse extends \Goog
   protected $slicesType = GoogleCloudContactcenterinsightsV1alpha1QueryMetricsResponseSlice::class;
   protected $slicesDataType = 'array';
   /**
-   * The metrics last update time.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Required. The location of the data.
-   * "projects/{project}/locations/{location}"
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -56,12 +48,7 @@ class GoogleCloudContactcenterinsightsV1alpha1QueryMetricsResponse extends \Goog
     return $this->location;
   }
   /**
-   * The macro average slice contains aggregated averages across all selected
-   * dimensions. i.e. if group_by agent and scorecard_id is specified, this
-   * field will contain the average across all agents and all scorecards. This
-   * field is only populated if the request specifies a Dimension.
-   *
-   * @param GoogleCloudContactcenterinsightsV1alpha1QueryMetricsResponseSlice $macroAverageSlice
+   * @param GoogleCloudContactcenterinsightsV1alpha1QueryMetricsResponseSlice
    */
   public function setMacroAverageSlice(GoogleCloudContactcenterinsightsV1alpha1QueryMetricsResponseSlice $macroAverageSlice)
   {
@@ -75,11 +62,7 @@ class GoogleCloudContactcenterinsightsV1alpha1QueryMetricsResponse extends \Goog
     return $this->macroAverageSlice;
   }
   /**
-   * A slice contains a total and (if the request specified a time granularity)
-   * a time series of metric values. Each slice contains a unique combination of
-   * the cardinality of dimensions from the request.
-   *
-   * @param GoogleCloudContactcenterinsightsV1alpha1QueryMetricsResponseSlice[] $slices
+   * @param GoogleCloudContactcenterinsightsV1alpha1QueryMetricsResponseSlice[]
    */
   public function setSlices($slices)
   {
@@ -93,9 +76,7 @@ class GoogleCloudContactcenterinsightsV1alpha1QueryMetricsResponse extends \Goog
     return $this->slices;
   }
   /**
-   * The metrics last update time.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

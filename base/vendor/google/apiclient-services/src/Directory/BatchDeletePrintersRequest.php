@@ -21,16 +21,12 @@ class BatchDeletePrintersRequest extends \Google\Collection
 {
   protected $collection_key = 'printerIds';
   /**
-   * A list of Printer.id that should be deleted. Max 100 at a time.
-   *
    * @var string[]
    */
   public $printerIds;
 
   /**
-   * A list of Printer.id that should be deleted. Max 100 at a time.
-   *
-   * @param string[] $printerIds
+   * @param string[]
    */
   public function setPrinterIds($printerIds)
   {

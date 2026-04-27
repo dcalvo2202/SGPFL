@@ -23,9 +23,7 @@ class GoogleCloudAiplatformV1SamplingStrategy extends \Google\Model
   protected $randomSampleConfigDataType = '';
 
   /**
-   * Random sample config. Will support more sampling strategies later.
-   *
-   * @param GoogleCloudAiplatformV1SamplingStrategyRandomSampleConfig $randomSampleConfig
+   * @param GoogleCloudAiplatformV1SamplingStrategyRandomSampleConfig
    */
   public function setRandomSampleConfig(GoogleCloudAiplatformV1SamplingStrategyRandomSampleConfig $randomSampleConfig)
   {

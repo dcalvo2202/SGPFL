@@ -20,8 +20,6 @@ namespace Google\Service\AndroidManagement;
 class StartLostModeParams extends \Google\Model
 {
   /**
-   * The email address displayed to the user when the device is in lost mode.
-   *
    * @var string
    */
   public $lostEmailAddress;
@@ -35,9 +33,7 @@ class StartLostModeParams extends \Google\Model
   protected $lostStreetAddressDataType = '';
 
   /**
-   * The email address displayed to the user when the device is in lost mode.
-   *
-   * @param string $lostEmailAddress
+   * @param string
    */
   public function setLostEmailAddress($lostEmailAddress)
   {
@@ -51,9 +47,7 @@ class StartLostModeParams extends \Google\Model
     return $this->lostEmailAddress;
   }
   /**
-   * The message displayed to the user when the device is in lost mode.
-   *
-   * @param UserFacingMessage $lostMessage
+   * @param UserFacingMessage
    */
   public function setLostMessage(UserFacingMessage $lostMessage)
   {
@@ -67,10 +61,7 @@ class StartLostModeParams extends \Google\Model
     return $this->lostMessage;
   }
   /**
-   * The organization name displayed to the user when the device is in lost
-   * mode.
-   *
-   * @param UserFacingMessage $lostOrganization
+   * @param UserFacingMessage
    */
   public function setLostOrganization(UserFacingMessage $lostOrganization)
   {
@@ -84,10 +75,7 @@ class StartLostModeParams extends \Google\Model
     return $this->lostOrganization;
   }
   /**
-   * The phone number that will be called when the device is in lost mode and
-   * the call owner button is tapped.
-   *
-   * @param UserFacingMessage $lostPhoneNumber
+   * @param UserFacingMessage
    */
   public function setLostPhoneNumber(UserFacingMessage $lostPhoneNumber)
   {
@@ -101,9 +89,7 @@ class StartLostModeParams extends \Google\Model
     return $this->lostPhoneNumber;
   }
   /**
-   * The street address displayed to the user when the device is in lost mode.
-   *
-   * @param UserFacingMessage $lostStreetAddress
+   * @param UserFacingMessage
    */
   public function setLostStreetAddress(UserFacingMessage $lostStreetAddress)
   {

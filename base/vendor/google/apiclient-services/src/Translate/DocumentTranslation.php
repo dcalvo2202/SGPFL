@@ -21,35 +21,20 @@ class DocumentTranslation extends \Google\Collection
 {
   protected $collection_key = 'byteStreamOutputs';
   /**
-   * The array of translated documents. It is expected to be size 1 for now. We
-   * may produce multiple translated documents in the future for other type of
-   * file formats.
-   *
    * @var string[]
    */
   public $byteStreamOutputs;
   /**
-   * The detected language for the input document. If the user did not provide
-   * the source language for the input document, this field will have the
-   * language code automatically detected. If the source language was passed,
-   * auto-detection of the language does not occur and this field is empty.
-   *
    * @var string
    */
   public $detectedLanguageCode;
   /**
-   * The translated document's mime type.
-   *
    * @var string
    */
   public $mimeType;
 
   /**
-   * The array of translated documents. It is expected to be size 1 for now. We
-   * may produce multiple translated documents in the future for other type of
-   * file formats.
-   *
-   * @param string[] $byteStreamOutputs
+   * @param string[]
    */
   public function setByteStreamOutputs($byteStreamOutputs)
   {
@@ -63,12 +48,7 @@ class DocumentTranslation extends \Google\Collection
     return $this->byteStreamOutputs;
   }
   /**
-   * The detected language for the input document. If the user did not provide
-   * the source language for the input document, this field will have the
-   * language code automatically detected. If the source language was passed,
-   * auto-detection of the language does not occur and this field is empty.
-   *
-   * @param string $detectedLanguageCode
+   * @param string
    */
   public function setDetectedLanguageCode($detectedLanguageCode)
   {
@@ -82,9 +62,7 @@ class DocumentTranslation extends \Google\Collection
     return $this->detectedLanguageCode;
   }
   /**
-   * The translated document's mime type.
-   *
-   * @param string $mimeType
+   * @param string
    */
   public function setMimeType($mimeType)
   {

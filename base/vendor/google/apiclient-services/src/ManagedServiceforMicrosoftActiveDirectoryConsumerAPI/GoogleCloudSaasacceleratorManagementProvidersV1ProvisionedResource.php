@@ -20,33 +20,16 @@ namespace Google\Service\ManagedServiceforMicrosoftActiveDirectoryConsumerAPI;
 class GoogleCloudSaasacceleratorManagementProvidersV1ProvisionedResource extends \Google\Model
 {
   /**
-   * Type of the resource. This can be either a GCP resource or a custom one
-   * (e.g. another cloud provider's VM). For GCP compute resources use singular
-   * form of the names listed in GCP compute API documentation
-   * (https://cloud.google.com/compute/docs/reference/rest/v1/), prefixed with
-   * 'compute-', for example: 'compute-instance', 'compute-disk', 'compute-
-   * autoscaler'.
-   *
    * @var string
    */
   public $resourceType;
   /**
-   * URL identifying the resource, e.g.
-   * "https://www.googleapis.com/compute/v1/projects/...)".
-   *
    * @var string
    */
   public $resourceUrl;
 
   /**
-   * Type of the resource. This can be either a GCP resource or a custom one
-   * (e.g. another cloud provider's VM). For GCP compute resources use singular
-   * form of the names listed in GCP compute API documentation
-   * (https://cloud.google.com/compute/docs/reference/rest/v1/), prefixed with
-   * 'compute-', for example: 'compute-instance', 'compute-disk', 'compute-
-   * autoscaler'.
-   *
-   * @param string $resourceType
+   * @param string
    */
   public function setResourceType($resourceType)
   {
@@ -60,10 +43,7 @@ class GoogleCloudSaasacceleratorManagementProvidersV1ProvisionedResource extends
     return $this->resourceType;
   }
   /**
-   * URL identifying the resource, e.g.
-   * "https://www.googleapis.com/compute/v1/projects/...)".
-   *
-   * @param string $resourceUrl
+   * @param string
    */
   public function setResourceUrl($resourceUrl)
   {

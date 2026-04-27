@@ -19,43 +19,25 @@ namespace Google\Service\Dfareporting;
 
 class DynamicTargetingKey extends \Google\Model
 {
-  public const OBJECT_TYPE_OBJECT_ADVERTISER = 'OBJECT_ADVERTISER';
-  public const OBJECT_TYPE_OBJECT_AD = 'OBJECT_AD';
-  public const OBJECT_TYPE_OBJECT_CREATIVE = 'OBJECT_CREATIVE';
-  public const OBJECT_TYPE_OBJECT_PLACEMENT = 'OBJECT_PLACEMENT';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#dynamicTargetingKey".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Name of this dynamic targeting key. This is a required field. Must be less
-   * than 256 characters long and cannot contain commas. All characters are
-   * converted to lowercase.
-   *
    * @var string
    */
   public $name;
   /**
-   * ID of the object of this dynamic targeting key. This is a required field.
-   *
    * @var string
    */
   public $objectId;
   /**
-   * Type of the object of this dynamic targeting key. This is a required field.
-   *
    * @var string
    */
   public $objectType;
 
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#dynamicTargetingKey".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -69,11 +51,7 @@ class DynamicTargetingKey extends \Google\Model
     return $this->kind;
   }
   /**
-   * Name of this dynamic targeting key. This is a required field. Must be less
-   * than 256 characters long and cannot contain commas. All characters are
-   * converted to lowercase.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -87,9 +65,7 @@ class DynamicTargetingKey extends \Google\Model
     return $this->name;
   }
   /**
-   * ID of the object of this dynamic targeting key. This is a required field.
-   *
-   * @param string $objectId
+   * @param string
    */
   public function setObjectId($objectId)
   {
@@ -103,19 +79,14 @@ class DynamicTargetingKey extends \Google\Model
     return $this->objectId;
   }
   /**
-   * Type of the object of this dynamic targeting key. This is a required field.
-   *
-   * Accepted values: OBJECT_ADVERTISER, OBJECT_AD, OBJECT_CREATIVE,
-   * OBJECT_PLACEMENT
-   *
-   * @param self::OBJECT_TYPE_* $objectType
+   * @param string
    */
   public function setObjectType($objectType)
   {
     $this->objectType = $objectType;
   }
   /**
-   * @return self::OBJECT_TYPE_*
+   * @return string
    */
   public function getObjectType()
   {

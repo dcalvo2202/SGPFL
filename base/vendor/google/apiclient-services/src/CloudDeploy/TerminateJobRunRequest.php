@@ -21,18 +21,12 @@ class TerminateJobRunRequest extends \Google\Collection
 {
   protected $collection_key = 'overrideDeployPolicy';
   /**
-   * Optional. Deploy policies to override. Format is
-   * `projects/{project}/locations/{location}/deployPolicies/{deployPolicy}`.
-   *
    * @var string[]
    */
   public $overrideDeployPolicy;
 
   /**
-   * Optional. Deploy policies to override. Format is
-   * `projects/{project}/locations/{location}/deployPolicies/{deployPolicy}`.
-   *
-   * @param string[] $overrideDeployPolicy
+   * @param string[]
    */
   public function setOverrideDeployPolicy($overrideDeployPolicy)
   {

@@ -26,9 +26,7 @@ class GoogleCloudAiplatformV1DirectPredictRequest extends \Google\Collection
   protected $parametersDataType = '';
 
   /**
-   * The prediction input.
-   *
-   * @param GoogleCloudAiplatformV1Tensor[] $inputs
+   * @param GoogleCloudAiplatformV1Tensor[]
    */
   public function setInputs($inputs)
   {
@@ -42,9 +40,7 @@ class GoogleCloudAiplatformV1DirectPredictRequest extends \Google\Collection
     return $this->inputs;
   }
   /**
-   * The parameters that govern the prediction.
-   *
-   * @param GoogleCloudAiplatformV1Tensor $parameters
+   * @param GoogleCloudAiplatformV1Tensor
    */
   public function setParameters(GoogleCloudAiplatformV1Tensor $parameters)
   {

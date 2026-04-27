@@ -25,7 +25,7 @@ class GroupOrSegment extends \Google\Model
   protected $segmentDataType = '';
 
   /**
-   * @param SchemaGroup $group
+   * @param SchemaGroup
    */
   public function setGroup(SchemaGroup $group)
   {
@@ -39,7 +39,7 @@ class GroupOrSegment extends \Google\Model
     return $this->group;
   }
   /**
-   * @param SchemaSegment $segment
+   * @param SchemaSegment
    */
   public function setSegment(SchemaSegment $segment)
   {

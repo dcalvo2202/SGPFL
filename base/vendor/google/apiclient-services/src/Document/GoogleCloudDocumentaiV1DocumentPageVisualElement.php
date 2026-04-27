@@ -25,16 +25,12 @@ class GoogleCloudDocumentaiV1DocumentPageVisualElement extends \Google\Collectio
   protected $layoutType = GoogleCloudDocumentaiV1DocumentPageLayout::class;
   protected $layoutDataType = '';
   /**
-   * Type of the VisualElement.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * A list of detected languages together with confidence.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentPageDetectedLanguage[] $detectedLanguages
+   * @param GoogleCloudDocumentaiV1DocumentPageDetectedLanguage[]
    */
   public function setDetectedLanguages($detectedLanguages)
   {
@@ -48,9 +44,7 @@ class GoogleCloudDocumentaiV1DocumentPageVisualElement extends \Google\Collectio
     return $this->detectedLanguages;
   }
   /**
-   * Layout for VisualElement.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentPageLayout $layout
+   * @param GoogleCloudDocumentaiV1DocumentPageLayout
    */
   public function setLayout(GoogleCloudDocumentaiV1DocumentPageLayout $layout)
   {
@@ -64,9 +58,7 @@ class GoogleCloudDocumentaiV1DocumentPageVisualElement extends \Google\Collectio
     return $this->layout;
   }
   /**
-   * Type of the VisualElement.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

@@ -21,40 +21,24 @@ class BucketCors extends \Google\Collection
 {
   protected $collection_key = 'responseHeader';
   /**
-   * The value, in seconds, to return in the  Access-Control-Max-Age header used
-   * in preflight responses.
-   *
    * @var int
    */
   public $maxAgeSeconds;
   /**
-   * The list of HTTP methods on which to include CORS response headers, (GET,
-   * OPTIONS, POST, etc) Note: "*" is permitted in the list of methods, and
-   * means "any method".
-   *
    * @var string[]
    */
   public $method;
   /**
-   * The list of Origins eligible to receive CORS response headers. Note: "*" is
-   * permitted in the list of origins, and means "any Origin".
-   *
    * @var string[]
    */
   public $origin;
   /**
-   * The list of HTTP headers other than the simple response headers to give
-   * permission for the user-agent to share across domains.
-   *
    * @var string[]
    */
   public $responseHeader;
 
   /**
-   * The value, in seconds, to return in the  Access-Control-Max-Age header used
-   * in preflight responses.
-   *
-   * @param int $maxAgeSeconds
+   * @param int
    */
   public function setMaxAgeSeconds($maxAgeSeconds)
   {
@@ -68,11 +52,7 @@ class BucketCors extends \Google\Collection
     return $this->maxAgeSeconds;
   }
   /**
-   * The list of HTTP methods on which to include CORS response headers, (GET,
-   * OPTIONS, POST, etc) Note: "*" is permitted in the list of methods, and
-   * means "any method".
-   *
-   * @param string[] $method
+   * @param string[]
    */
   public function setMethod($method)
   {
@@ -86,10 +66,7 @@ class BucketCors extends \Google\Collection
     return $this->method;
   }
   /**
-   * The list of Origins eligible to receive CORS response headers. Note: "*" is
-   * permitted in the list of origins, and means "any Origin".
-   *
-   * @param string[] $origin
+   * @param string[]
    */
   public function setOrigin($origin)
   {
@@ -103,10 +80,7 @@ class BucketCors extends \Google\Collection
     return $this->origin;
   }
   /**
-   * The list of HTTP headers other than the simple response headers to give
-   * permission for the user-agent to share across domains.
-   *
-   * @param string[] $responseHeader
+   * @param string[]
    */
   public function setResponseHeader($responseHeader)
   {

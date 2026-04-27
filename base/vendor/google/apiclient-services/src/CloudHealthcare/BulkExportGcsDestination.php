@@ -20,24 +20,12 @@ namespace Google\Service\CloudHealthcare;
 class BulkExportGcsDestination extends \Google\Model
 {
   /**
-   * Optional. URI for a Cloud Storage directory where the server writes result
-   * files, in the format `gs://{bucket-id}/{path/to/destination/dir}`. If there
-   * is no trailing slash, the service appends one when composing the object
-   * path. The user is responsible for creating the Cloud Storage bucket
-   * referenced in `uri_prefix`.
-   *
    * @var string
    */
   public $uriPrefix;
 
   /**
-   * Optional. URI for a Cloud Storage directory where the server writes result
-   * files, in the format `gs://{bucket-id}/{path/to/destination/dir}`. If there
-   * is no trailing slash, the service appends one when composing the object
-   * path. The user is responsible for creating the Cloud Storage bucket
-   * referenced in `uri_prefix`.
-   *
-   * @param string $uriPrefix
+   * @param string
    */
   public function setUriPrefix($uriPrefix)
   {

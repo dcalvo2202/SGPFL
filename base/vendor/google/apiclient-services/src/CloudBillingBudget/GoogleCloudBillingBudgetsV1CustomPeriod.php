@@ -25,11 +25,7 @@ class GoogleCloudBillingBudgetsV1CustomPeriod extends \Google\Model
   protected $startDateDataType = '';
 
   /**
-   * Optional. The end date of the time period. Budgets with elapsed end date
-   * won't be processed. If unset, specifies to track all usage incurred since
-   * the start_date.
-   *
-   * @param GoogleTypeDate $endDate
+   * @param GoogleTypeDate
    */
   public function setEndDate(GoogleTypeDate $endDate)
   {
@@ -43,9 +39,7 @@ class GoogleCloudBillingBudgetsV1CustomPeriod extends \Google\Model
     return $this->endDate;
   }
   /**
-   * Required. The start date must be after January 1, 2017.
-   *
-   * @param GoogleTypeDate $startDate
+   * @param GoogleTypeDate
    */
   public function setStartDate(GoogleTypeDate $startDate)
   {

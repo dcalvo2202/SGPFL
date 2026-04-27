@@ -23,16 +23,12 @@ class ListContainerVersionsResponse extends \Google\Collection
   protected $containerVersionHeaderType = ContainerVersionHeader::class;
   protected $containerVersionHeaderDataType = 'array';
   /**
-   * Continuation token for fetching the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * All container version headers of a GTM Container.
-   *
-   * @param ContainerVersionHeader[] $containerVersionHeader
+   * @param ContainerVersionHeader[]
    */
   public function setContainerVersionHeader($containerVersionHeader)
   {
@@ -46,9 +42,7 @@ class ListContainerVersionsResponse extends \Google\Collection
     return $this->containerVersionHeader;
   }
   /**
-   * Continuation token for fetching the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

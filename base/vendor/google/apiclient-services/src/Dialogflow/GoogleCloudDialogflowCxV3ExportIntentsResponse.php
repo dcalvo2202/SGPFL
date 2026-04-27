@@ -27,7 +27,7 @@ class GoogleCloudDialogflowCxV3ExportIntentsResponse extends \Google\Model
   public $intentsUri;
 
   /**
-   * @param GoogleCloudDialogflowCxV3InlineDestination $intentsContent
+   * @param GoogleCloudDialogflowCxV3InlineDestination
    */
   public function setIntentsContent(GoogleCloudDialogflowCxV3InlineDestination $intentsContent)
   {
@@ -41,7 +41,7 @@ class GoogleCloudDialogflowCxV3ExportIntentsResponse extends \Google\Model
     return $this->intentsContent;
   }
   /**
-   * @param string $intentsUri
+   * @param string
    */
   public function setIntentsUri($intentsUri)
   {

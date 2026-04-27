@@ -19,14 +19,8 @@ namespace Google\Service\CloudMachineLearningEngine;
 
 class GoogleCloudMlV1Capability extends \Google\Collection
 {
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  public const TYPE_TRAINING = 'TRAINING';
-  public const TYPE_BATCH_PREDICTION = 'BATCH_PREDICTION';
-  public const TYPE_ONLINE_PREDICTION = 'ONLINE_PREDICTION';
   protected $collection_key = 'availableAccelerators';
   /**
-   * Available accelerators for the capability.
-   *
    * @var string[]
    */
   public $availableAccelerators;
@@ -36,9 +30,7 @@ class GoogleCloudMlV1Capability extends \Google\Collection
   public $type;
 
   /**
-   * Available accelerators for the capability.
-   *
-   * @param string[] $availableAccelerators
+   * @param string[]
    */
   public function setAvailableAccelerators($availableAccelerators)
   {
@@ -52,14 +44,14 @@ class GoogleCloudMlV1Capability extends \Google\Collection
     return $this->availableAccelerators;
   }
   /**
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

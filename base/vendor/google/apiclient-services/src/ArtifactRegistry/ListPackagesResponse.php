@@ -21,9 +21,6 @@ class ListPackagesResponse extends \Google\Collection
 {
   protected $collection_key = 'packages';
   /**
-   * The token to retrieve the next page of packages, or empty if there are no
-   * more packages to return.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListPackagesResponse extends \Google\Collection
   protected $packagesDataType = 'array';
 
   /**
-   * The token to retrieve the next page of packages, or empty if there are no
-   * more packages to return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class ListPackagesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The packages returned.
-   *
-   * @param Package[] $packages
+   * @param Package[]
    */
   public function setPackages($packages)
   {

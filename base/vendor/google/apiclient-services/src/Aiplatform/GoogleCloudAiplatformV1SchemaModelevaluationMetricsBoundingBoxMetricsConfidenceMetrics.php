@@ -20,34 +20,24 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1SchemaModelevaluationMetricsBoundingBoxMetricsConfidenceMetrics extends \Google\Model
 {
   /**
-   * The confidence threshold value used to compute the metrics.
-   *
    * @var float
    */
   public $confidenceThreshold;
   /**
-   * The harmonic mean of recall and precision.
-   *
    * @var float
    */
   public $f1Score;
   /**
-   * Precision under the given confidence threshold.
-   *
    * @var float
    */
   public $precision;
   /**
-   * Recall under the given confidence threshold.
-   *
    * @var float
    */
   public $recall;
 
   /**
-   * The confidence threshold value used to compute the metrics.
-   *
-   * @param float $confidenceThreshold
+   * @param float
    */
   public function setConfidenceThreshold($confidenceThreshold)
   {
@@ -61,9 +51,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsBoundingBoxMetricsConfi
     return $this->confidenceThreshold;
   }
   /**
-   * The harmonic mean of recall and precision.
-   *
-   * @param float $f1Score
+   * @param float
    */
   public function setF1Score($f1Score)
   {
@@ -77,9 +65,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsBoundingBoxMetricsConfi
     return $this->f1Score;
   }
   /**
-   * Precision under the given confidence threshold.
-   *
-   * @param float $precision
+   * @param float
    */
   public function setPrecision($precision)
   {
@@ -93,9 +79,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsBoundingBoxMetricsConfi
     return $this->precision;
   }
   /**
-   * Recall under the given confidence threshold.
-   *
-   * @param float $recall
+   * @param float
    */
   public function setRecall($recall)
   {

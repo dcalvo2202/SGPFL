@@ -23,37 +23,24 @@ class SecuritycenterObject extends \Google\Collection
   protected $containersType = Container::class;
   protected $containersDataType = 'array';
   /**
-   * Kubernetes object group, such as "policy.k8s.io/v1".
-   *
    * @var string
    */
   public $group;
   /**
-   * Kubernetes object kind, such as "Namespace".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Kubernetes object name. For details see
-   * https://kubernetes.io/docs/concepts/overview/working-with-objects/names/.
-   *
    * @var string
    */
   public $name;
   /**
-   * Kubernetes object namespace. Must be a valid DNS label. Named "ns" to avoid
-   * collision with C++ namespace keyword. For details see
-   * https://kubernetes.io/docs/tasks/administer-cluster/namespaces/.
-   *
    * @var string
    */
   public $ns;
 
   /**
-   * Pod containers associated with this finding, if any.
-   *
-   * @param Container[] $containers
+   * @param Container[]
    */
   public function setContainers($containers)
   {
@@ -67,9 +54,7 @@ class SecuritycenterObject extends \Google\Collection
     return $this->containers;
   }
   /**
-   * Kubernetes object group, such as "policy.k8s.io/v1".
-   *
-   * @param string $group
+   * @param string
    */
   public function setGroup($group)
   {
@@ -83,9 +68,7 @@ class SecuritycenterObject extends \Google\Collection
     return $this->group;
   }
   /**
-   * Kubernetes object kind, such as "Namespace".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -99,10 +82,7 @@ class SecuritycenterObject extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Kubernetes object name. For details see
-   * https://kubernetes.io/docs/concepts/overview/working-with-objects/names/.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -116,11 +96,7 @@ class SecuritycenterObject extends \Google\Collection
     return $this->name;
   }
   /**
-   * Kubernetes object namespace. Must be a valid DNS label. Named "ns" to avoid
-   * collision with C++ namespace keyword. For details see
-   * https://kubernetes.io/docs/tasks/administer-cluster/namespaces/.
-   *
-   * @param string $ns
+   * @param string
    */
   public function setNs($ns)
   {

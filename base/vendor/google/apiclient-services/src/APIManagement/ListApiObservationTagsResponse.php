@@ -21,23 +21,16 @@ class ListApiObservationTagsResponse extends \Google\Collection
 {
   protected $collection_key = 'apiObservationTags';
   /**
-   * The tags from the specified project
-   *
    * @var string[]
    */
   public $apiObservationTags;
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The tags from the specified project
-   *
-   * @param string[] $apiObservationTags
+   * @param string[]
    */
   public function setApiObservationTags($apiObservationTags)
   {
@@ -51,10 +44,7 @@ class ListApiObservationTagsResponse extends \Google\Collection
     return $this->apiObservationTags;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

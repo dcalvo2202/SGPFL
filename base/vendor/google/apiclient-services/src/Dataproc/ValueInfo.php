@@ -20,28 +20,20 @@ namespace Google\Service\Dataproc;
 class ValueInfo extends \Google\Model
 {
   /**
-   * Annotation, comment or explanation why the property was set.
-   *
    * @var string
    */
   public $annotation;
   /**
-   * Optional. Value which was replaced by the corresponding component.
-   *
    * @var string
    */
   public $overriddenValue;
   /**
-   * Property value.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Annotation, comment or explanation why the property was set.
-   *
-   * @param string $annotation
+   * @param string
    */
   public function setAnnotation($annotation)
   {
@@ -55,9 +47,7 @@ class ValueInfo extends \Google\Model
     return $this->annotation;
   }
   /**
-   * Optional. Value which was replaced by the corresponding component.
-   *
-   * @param string $overriddenValue
+   * @param string
    */
   public function setOverriddenValue($overriddenValue)
   {
@@ -71,9 +61,7 @@ class ValueInfo extends \Google\Model
     return $this->overriddenValue;
   }
   /**
-   * Property value.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

@@ -21,39 +21,24 @@ class BackupConfig extends \Google\Collection
 {
   protected $collection_key = 'backupPolicies';
   /**
-   * Output only. Total size of all backups in a chain in bytes = baseline
-   * backup size + sum(incremental backup size).
-   *
    * @var string
    */
   public $backupChainBytes;
   /**
-   * Optional. When specified, schedule backups will be created based on the
-   * policy configuration.
-   *
    * @var string[]
    */
   public $backupPolicies;
   /**
-   * Optional. Name of backup vault. Format:
-   * projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}
-   *
    * @var string
    */
   public $backupVault;
   /**
-   * Optional. When set to true, scheduled backup is enabled on the volume. This
-   * field should be nil when there's no backup policy attached.
-   *
    * @var bool
    */
   public $scheduledBackupEnabled;
 
   /**
-   * Output only. Total size of all backups in a chain in bytes = baseline
-   * backup size + sum(incremental backup size).
-   *
-   * @param string $backupChainBytes
+   * @param string
    */
   public function setBackupChainBytes($backupChainBytes)
   {
@@ -67,10 +52,7 @@ class BackupConfig extends \Google\Collection
     return $this->backupChainBytes;
   }
   /**
-   * Optional. When specified, schedule backups will be created based on the
-   * policy configuration.
-   *
-   * @param string[] $backupPolicies
+   * @param string[]
    */
   public function setBackupPolicies($backupPolicies)
   {
@@ -84,10 +66,7 @@ class BackupConfig extends \Google\Collection
     return $this->backupPolicies;
   }
   /**
-   * Optional. Name of backup vault. Format:
-   * projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}
-   *
-   * @param string $backupVault
+   * @param string
    */
   public function setBackupVault($backupVault)
   {
@@ -101,10 +80,7 @@ class BackupConfig extends \Google\Collection
     return $this->backupVault;
   }
   /**
-   * Optional. When set to true, scheduled backup is enabled on the volume. This
-   * field should be nil when there's no backup policy attached.
-   *
-   * @param bool $scheduledBackupEnabled
+   * @param bool
    */
   public function setScheduledBackupEnabled($scheduledBackupEnabled)
   {

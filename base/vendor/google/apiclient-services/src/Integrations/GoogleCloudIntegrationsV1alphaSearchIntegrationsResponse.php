@@ -23,17 +23,12 @@ class GoogleCloudIntegrationsV1alphaSearchIntegrationsResponse extends \Google\C
   protected $integrationsType = GoogleCloudIntegrationsV1alphaSearchIntegrationsResponseIntegrationSearchResult::class;
   protected $integrationsDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of integrations that match the search criteria.
-   *
-   * @param GoogleCloudIntegrationsV1alphaSearchIntegrationsResponseIntegrationSearchResult[] $integrations
+   * @param GoogleCloudIntegrationsV1alphaSearchIntegrationsResponseIntegrationSearchResult[]
    */
   public function setIntegrations($integrations)
   {
@@ -47,10 +42,7 @@ class GoogleCloudIntegrationsV1alphaSearchIntegrationsResponse extends \Google\C
     return $this->integrations;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

@@ -21,9 +21,6 @@ class RegionsListResponse extends \Google\Collection
 {
   protected $collection_key = 'regions';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#regionsListResponse".
-   *
    * @var string
    */
   public $kind;
@@ -31,10 +28,7 @@ class RegionsListResponse extends \Google\Collection
   protected $regionsDataType = 'array';
 
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#regionsListResponse".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -48,9 +42,7 @@ class RegionsListResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Region collection.
-   *
-   * @param Region[] $regions
+   * @param Region[]
    */
   public function setRegions($regions)
   {

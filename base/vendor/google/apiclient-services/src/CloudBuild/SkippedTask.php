@@ -21,14 +21,10 @@ class SkippedTask extends \Google\Collection
 {
   protected $collection_key = 'whenExpressions';
   /**
-   * Name is the Pipeline Task name
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Reason is the cause of the PipelineTask being skipped.
-   *
    * @var string
    */
   public $reason;
@@ -36,9 +32,7 @@ class SkippedTask extends \Google\Collection
   protected $whenExpressionsDataType = 'array';
 
   /**
-   * Name is the Pipeline Task name
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -52,9 +46,7 @@ class SkippedTask extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. Reason is the cause of the PipelineTask being skipped.
-   *
-   * @param string $reason
+   * @param string
    */
   public function setReason($reason)
   {
@@ -68,10 +60,7 @@ class SkippedTask extends \Google\Collection
     return $this->reason;
   }
   /**
-   * WhenExpressions is the list of checks guarding the execution of the
-   * PipelineTask
-   *
-   * @param WhenExpression[] $whenExpressions
+   * @param WhenExpression[]
    */
   public function setWhenExpressions($whenExpressions)
   {

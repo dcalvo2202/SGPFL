@@ -20,42 +20,19 @@ namespace Google\Service\Datastore;
 class GoogleDatastoreAdminV1RedirectWritesStepDetails extends \Google\Model
 {
   /**
-   * Unspecified.
-   */
-  public const CONCURRENCY_MODE_CONCURRENCY_MODE_UNSPECIFIED = 'CONCURRENCY_MODE_UNSPECIFIED';
-  /**
-   * Pessimistic concurrency.
-   */
-  public const CONCURRENCY_MODE_PESSIMISTIC = 'PESSIMISTIC';
-  /**
-   * Optimistic concurrency.
-   */
-  public const CONCURRENCY_MODE_OPTIMISTIC = 'OPTIMISTIC';
-  /**
-   * Optimistic concurrency with entity groups.
-   */
-  public const CONCURRENCY_MODE_OPTIMISTIC_WITH_ENTITY_GROUPS = 'OPTIMISTIC_WITH_ENTITY_GROUPS';
-  /**
-   * The concurrency mode for this database.
-   *
    * @var string
    */
   public $concurrencyMode;
 
   /**
-   * The concurrency mode for this database.
-   *
-   * Accepted values: CONCURRENCY_MODE_UNSPECIFIED, PESSIMISTIC, OPTIMISTIC,
-   * OPTIMISTIC_WITH_ENTITY_GROUPS
-   *
-   * @param self::CONCURRENCY_MODE_* $concurrencyMode
+   * @param string
    */
   public function setConcurrencyMode($concurrencyMode)
   {
     $this->concurrencyMode = $concurrencyMode;
   }
   /**
-   * @return self::CONCURRENCY_MODE_*
+   * @return string
    */
   public function getConcurrencyMode()
   {

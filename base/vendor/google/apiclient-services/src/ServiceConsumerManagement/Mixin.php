@@ -20,22 +20,16 @@ namespace Google\Service\ServiceConsumerManagement;
 class Mixin extends \Google\Model
 {
   /**
-   * The fully qualified name of the interface which is included.
-   *
    * @var string
    */
   public $name;
   /**
-   * If non-empty specifies a path under which inherited HTTP paths are rooted.
-   *
    * @var string
    */
   public $root;
 
   /**
-   * The fully qualified name of the interface which is included.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -49,9 +43,7 @@ class Mixin extends \Google\Model
     return $this->name;
   }
   /**
-   * If non-empty specifies a path under which inherited HTTP paths are rooted.
-   *
-   * @param string $root
+   * @param string
    */
   public function setRoot($root)
   {

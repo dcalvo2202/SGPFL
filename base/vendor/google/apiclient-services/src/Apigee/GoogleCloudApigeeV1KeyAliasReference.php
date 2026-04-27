@@ -20,23 +20,16 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1KeyAliasReference extends \Google\Model
 {
   /**
-   * Alias ID. Must exist in the keystore referred to by the reference.
-   *
    * @var string
    */
   public $aliasId;
   /**
-   * Reference name in the following format:
-   * `organizations/{org}/environments/{env}/references/{reference}`
-   *
    * @var string
    */
   public $reference;
 
   /**
-   * Alias ID. Must exist in the keystore referred to by the reference.
-   *
-   * @param string $aliasId
+   * @param string
    */
   public function setAliasId($aliasId)
   {
@@ -50,10 +43,7 @@ class GoogleCloudApigeeV1KeyAliasReference extends \Google\Model
     return $this->aliasId;
   }
   /**
-   * Reference name in the following format:
-   * `organizations/{org}/environments/{env}/references/{reference}`
-   *
-   * @param string $reference
+   * @param string
    */
   public function setReference($reference)
   {

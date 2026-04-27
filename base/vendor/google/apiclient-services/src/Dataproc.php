@@ -37,12 +37,6 @@ class Dataproc extends \Google\Service
   /** See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.. */
   const CLOUD_PLATFORM =
       "https://www.googleapis.com/auth/cloud-platform";
-  /** See, edit, configure, and delete your Google Cloud Dataproc data and see the email address for your Google Account. */
-  const DATAPROC =
-      "https://www.googleapis.com/auth/dataproc";
-  /** See your Google Cloud Dataproc data and the email address of your Google Account. */
-  const DATAPROC_READ_ONLY =
-      "https://www.googleapis.com/auth/dataproc.read-only";
 
   public $projects_locations_autoscalingPolicies;
   public $projects_locations_batches;
@@ -782,10 +776,6 @@ class Dataproc extends \Google\Service
                   'location' => 'query',
                   'type' => 'string',
                 ],
-                'returnPartialSuccess' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
               ],
             ],
           ]
@@ -1373,11 +1363,6 @@ class Dataproc extends \Google\Service
                   'type' => 'string',
                   'required' => true,
                 ],
-                'jobIds' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ],
                 'parent' => [
                   'location' => 'query',
                   'type' => 'string',
@@ -1417,11 +1402,6 @@ class Dataproc extends \Google\Service
                 'parent' => [
                   'location' => 'query',
                   'type' => 'string',
-                ],
-                'stageIds' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
                 ],
               ],
             ],'write' => [
@@ -2257,10 +2237,6 @@ class Dataproc extends \Google\Service
                 'pageToken' => [
                   'location' => 'query',
                   'type' => 'string',
-                ],
-                'returnPartialSuccess' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ],
               ],
             ],'setIamPolicy' => [

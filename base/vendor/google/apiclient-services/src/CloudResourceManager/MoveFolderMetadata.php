@@ -20,28 +20,20 @@ namespace Google\Service\CloudResourceManager;
 class MoveFolderMetadata extends \Google\Model
 {
   /**
-   * The resource name of the folder or organization to move the folder to.
-   *
    * @var string
    */
   public $destinationParent;
   /**
-   * The display name of the folder.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * The resource name of the folder's parent.
-   *
    * @var string
    */
   public $sourceParent;
 
   /**
-   * The resource name of the folder or organization to move the folder to.
-   *
-   * @param string $destinationParent
+   * @param string
    */
   public function setDestinationParent($destinationParent)
   {
@@ -55,9 +47,7 @@ class MoveFolderMetadata extends \Google\Model
     return $this->destinationParent;
   }
   /**
-   * The display name of the folder.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -71,9 +61,7 @@ class MoveFolderMetadata extends \Google\Model
     return $this->displayName;
   }
   /**
-   * The resource name of the folder's parent.
-   *
-   * @param string $sourceParent
+   * @param string
    */
   public function setSourceParent($sourceParent)
   {

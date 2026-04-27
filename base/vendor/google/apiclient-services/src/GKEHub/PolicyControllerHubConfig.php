@@ -19,90 +19,44 @@ namespace Google\Service\GKEHub;
 
 class PolicyControllerHubConfig extends \Google\Collection
 {
-  /**
-   * Spec is unknown.
-   */
-  public const INSTALL_SPEC_INSTALL_SPEC_UNSPECIFIED = 'INSTALL_SPEC_UNSPECIFIED';
-  /**
-   * Request to uninstall Policy Controller.
-   */
-  public const INSTALL_SPEC_INSTALL_SPEC_NOT_INSTALLED = 'INSTALL_SPEC_NOT_INSTALLED';
-  /**
-   * Request to install and enable Policy Controller.
-   */
-  public const INSTALL_SPEC_INSTALL_SPEC_ENABLED = 'INSTALL_SPEC_ENABLED';
-  /**
-   * Request to suspend Policy Controller i.e. its webhooks. If Policy
-   * Controller is not installed, it will be installed but suspended.
-   */
-  public const INSTALL_SPEC_INSTALL_SPEC_SUSPENDED = 'INSTALL_SPEC_SUSPENDED';
-  /**
-   * Request to stop all reconciliation actions by PoCo Hub controller. This is
-   * a breakglass mechanism to stop PoCo Hub from affecting cluster resources.
-   */
-  public const INSTALL_SPEC_INSTALL_SPEC_DETACHED = 'INSTALL_SPEC_DETACHED';
   protected $collection_key = 'exemptableNamespaces';
   /**
-   * Sets the interval for Policy Controller Audit Scans (in seconds). When set
-   * to 0, this disables audit functionality altogether.
-   *
    * @var string
    */
   public $auditIntervalSeconds;
   /**
-   * The maximum number of audit violations to be stored in a constraint. If not
-   * set, the internal default (currently 20) will be used.
-   *
    * @var string
    */
   public $constraintViolationLimit;
   protected $deploymentConfigsType = PolicyControllerPolicyControllerDeploymentConfig::class;
   protected $deploymentConfigsDataType = 'map';
   /**
-   * The set of namespaces that are excluded from Policy Controller checks.
-   * Namespaces do not need to currently exist on the cluster.
-   *
    * @var string[]
    */
   public $exemptableNamespaces;
   /**
-   * The install_spec represents the intended state specified by the latest
-   * request that mutated install_spec in the feature spec, not the lifecycle
-   * state of the feature observed by the Hub feature controller that is
-   * reported in the feature state.
-   *
    * @var string
    */
   public $installSpec;
   /**
-   * Logs all denies and dry run failures.
-   *
    * @var bool
    */
   public $logDeniesEnabled;
   protected $monitoringType = PolicyControllerMonitoringConfig::class;
   protected $monitoringDataType = '';
   /**
-   * Enables the ability to mutate resources using Policy Controller.
-   *
    * @var bool
    */
   public $mutationEnabled;
   protected $policyContentType = PolicyControllerPolicyContentSpec::class;
   protected $policyContentDataType = '';
   /**
-   * Enables the ability to use Constraint Templates that reference to objects
-   * other than the object currently being evaluated.
-   *
    * @var bool
    */
   public $referentialRulesEnabled;
 
   /**
-   * Sets the interval for Policy Controller Audit Scans (in seconds). When set
-   * to 0, this disables audit functionality altogether.
-   *
-   * @param string $auditIntervalSeconds
+   * @param string
    */
   public function setAuditIntervalSeconds($auditIntervalSeconds)
   {
@@ -116,10 +70,7 @@ class PolicyControllerHubConfig extends \Google\Collection
     return $this->auditIntervalSeconds;
   }
   /**
-   * The maximum number of audit violations to be stored in a constraint. If not
-   * set, the internal default (currently 20) will be used.
-   *
-   * @param string $constraintViolationLimit
+   * @param string
    */
   public function setConstraintViolationLimit($constraintViolationLimit)
   {
@@ -133,10 +84,7 @@ class PolicyControllerHubConfig extends \Google\Collection
     return $this->constraintViolationLimit;
   }
   /**
-   * Map of deployment configs to deployments (“admission”, “audit”,
-   * “mutation”).
-   *
-   * @param PolicyControllerPolicyControllerDeploymentConfig[] $deploymentConfigs
+   * @param PolicyControllerPolicyControllerDeploymentConfig[]
    */
   public function setDeploymentConfigs($deploymentConfigs)
   {
@@ -150,10 +98,7 @@ class PolicyControllerHubConfig extends \Google\Collection
     return $this->deploymentConfigs;
   }
   /**
-   * The set of namespaces that are excluded from Policy Controller checks.
-   * Namespaces do not need to currently exist on the cluster.
-   *
-   * @param string[] $exemptableNamespaces
+   * @param string[]
    */
   public function setExemptableNamespaces($exemptableNamespaces)
   {
@@ -167,31 +112,21 @@ class PolicyControllerHubConfig extends \Google\Collection
     return $this->exemptableNamespaces;
   }
   /**
-   * The install_spec represents the intended state specified by the latest
-   * request that mutated install_spec in the feature spec, not the lifecycle
-   * state of the feature observed by the Hub feature controller that is
-   * reported in the feature state.
-   *
-   * Accepted values: INSTALL_SPEC_UNSPECIFIED, INSTALL_SPEC_NOT_INSTALLED,
-   * INSTALL_SPEC_ENABLED, INSTALL_SPEC_SUSPENDED, INSTALL_SPEC_DETACHED
-   *
-   * @param self::INSTALL_SPEC_* $installSpec
+   * @param string
    */
   public function setInstallSpec($installSpec)
   {
     $this->installSpec = $installSpec;
   }
   /**
-   * @return self::INSTALL_SPEC_*
+   * @return string
    */
   public function getInstallSpec()
   {
     return $this->installSpec;
   }
   /**
-   * Logs all denies and dry run failures.
-   *
-   * @param bool $logDeniesEnabled
+   * @param bool
    */
   public function setLogDeniesEnabled($logDeniesEnabled)
   {
@@ -205,9 +140,7 @@ class PolicyControllerHubConfig extends \Google\Collection
     return $this->logDeniesEnabled;
   }
   /**
-   * Monitoring specifies the configuration of monitoring.
-   *
-   * @param PolicyControllerMonitoringConfig $monitoring
+   * @param PolicyControllerMonitoringConfig
    */
   public function setMonitoring(PolicyControllerMonitoringConfig $monitoring)
   {
@@ -221,9 +154,7 @@ class PolicyControllerHubConfig extends \Google\Collection
     return $this->monitoring;
   }
   /**
-   * Enables the ability to mutate resources using Policy Controller.
-   *
-   * @param bool $mutationEnabled
+   * @param bool
    */
   public function setMutationEnabled($mutationEnabled)
   {
@@ -237,9 +168,7 @@ class PolicyControllerHubConfig extends \Google\Collection
     return $this->mutationEnabled;
   }
   /**
-   * Specifies the desired policy content on the cluster
-   *
-   * @param PolicyControllerPolicyContentSpec $policyContent
+   * @param PolicyControllerPolicyContentSpec
    */
   public function setPolicyContent(PolicyControllerPolicyContentSpec $policyContent)
   {
@@ -253,10 +182,7 @@ class PolicyControllerHubConfig extends \Google\Collection
     return $this->policyContent;
   }
   /**
-   * Enables the ability to use Constraint Templates that reference to objects
-   * other than the object currently being evaluated.
-   *
-   * @param bool $referentialRulesEnabled
+   * @param bool
    */
   public function setReferentialRulesEnabled($referentialRulesEnabled)
   {

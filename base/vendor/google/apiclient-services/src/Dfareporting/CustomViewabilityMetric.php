@@ -22,22 +22,16 @@ class CustomViewabilityMetric extends \Google\Model
   protected $configurationType = CustomViewabilityMetricConfiguration::class;
   protected $configurationDataType = '';
   /**
-   * ID of the custom viewability metric.
-   *
    * @var string
    */
   public $id;
   /**
-   * Name of the custom viewability metric.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Configuration of the custom viewability metric.
-   *
-   * @param CustomViewabilityMetricConfiguration $configuration
+   * @param CustomViewabilityMetricConfiguration
    */
   public function setConfiguration(CustomViewabilityMetricConfiguration $configuration)
   {
@@ -51,9 +45,7 @@ class CustomViewabilityMetric extends \Google\Model
     return $this->configuration;
   }
   /**
-   * ID of the custom viewability metric.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -67,9 +59,7 @@ class CustomViewabilityMetric extends \Google\Model
     return $this->id;
   }
   /**
-   * Name of the custom viewability metric.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

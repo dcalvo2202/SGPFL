@@ -19,28 +19,11 @@ namespace Google\Service\Integrations;
 
 class EnterpriseCrmEventbusProtoCondition extends \Google\Model
 {
-  public const OPERATOR_UNSET = 'UNSET';
-  public const OPERATOR_EQUALS = 'EQUALS';
-  public const OPERATOR_CONTAINS = 'CONTAINS';
-  public const OPERATOR_LESS_THAN = 'LESS_THAN';
-  public const OPERATOR_GREATER_THAN = 'GREATER_THAN';
-  public const OPERATOR_EXISTS = 'EXISTS';
-  public const OPERATOR_DOES_NOT_EXIST = 'DOES_NOT_EXIST';
-  public const OPERATOR_IS_EMPTY = 'IS_EMPTY';
-  public const OPERATOR_IS_NOT_EMPTY = 'IS_NOT_EMPTY';
   /**
-   * Key that's evaluated against the `value`. Please note the data type of the
-   * runtime value associated with the key should match the data type of
-   * `value`, else an IllegalArgumentException is thrown.
-   *
    * @var string
    */
   public $eventPropertyKey;
   /**
-   * Operator used to evaluate the condition. Please note that an operator with
-   * an inappropriate key/value operand will result in IllegalArgumentException,
-   * e.g. CONTAINS with boolean key/value pair.
-   *
    * @var string
    */
   public $operator;
@@ -48,11 +31,7 @@ class EnterpriseCrmEventbusProtoCondition extends \Google\Model
   protected $valueDataType = '';
 
   /**
-   * Key that's evaluated against the `value`. Please note the data type of the
-   * runtime value associated with the key should match the data type of
-   * `value`, else an IllegalArgumentException is thrown.
-   *
-   * @param string $eventPropertyKey
+   * @param string
    */
   public function setEventPropertyKey($eventPropertyKey)
   {
@@ -66,30 +45,21 @@ class EnterpriseCrmEventbusProtoCondition extends \Google\Model
     return $this->eventPropertyKey;
   }
   /**
-   * Operator used to evaluate the condition. Please note that an operator with
-   * an inappropriate key/value operand will result in IllegalArgumentException,
-   * e.g. CONTAINS with boolean key/value pair.
-   *
-   * Accepted values: UNSET, EQUALS, CONTAINS, LESS_THAN, GREATER_THAN, EXISTS,
-   * DOES_NOT_EXIST, IS_EMPTY, IS_NOT_EMPTY
-   *
-   * @param self::OPERATOR_* $operator
+   * @param string
    */
   public function setOperator($operator)
   {
     $this->operator = $operator;
   }
   /**
-   * @return self::OPERATOR_*
+   * @return string
    */
   public function getOperator()
   {
     return $this->operator;
   }
   /**
-   * Value that's checked for the key.
-   *
-   * @param EnterpriseCrmEventbusProtoValueType $value
+   * @param EnterpriseCrmEventbusProtoValueType
    */
   public function setValue(EnterpriseCrmEventbusProtoValueType $value)
   {

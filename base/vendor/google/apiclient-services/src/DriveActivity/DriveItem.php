@@ -28,31 +28,22 @@ class DriveItem extends \Google\Model
   protected $folderType = Folder::class;
   protected $folderDataType = '';
   /**
-   * The MIME type of the Drive item. See
-   * https://developers.google.com/workspace/drive/v3/web/mime-types.
-   *
    * @var string
    */
   public $mimeType;
   /**
-   * The target Drive item. The format is `items/ITEM_ID`.
-   *
    * @var string
    */
   public $name;
   protected $ownerType = Owner::class;
   protected $ownerDataType = '';
   /**
-   * The title of the Drive item.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * The Drive item is a file.
-   *
-   * @param DriveFile $driveFile
+   * @param DriveFile
    */
   public function setDriveFile(DriveFile $driveFile)
   {
@@ -66,9 +57,7 @@ class DriveItem extends \Google\Model
     return $this->driveFile;
   }
   /**
-   * The Drive item is a folder. Includes information about the type of folder.
-   *
-   * @param DriveFolder $driveFolder
+   * @param DriveFolder
    */
   public function setDriveFolder(DriveFolder $driveFolder)
   {
@@ -82,17 +71,13 @@ class DriveItem extends \Google\Model
     return $this->driveFolder;
   }
   /**
-   * This field is deprecated; please use the `driveFile` field instead.
-   *
-   * @deprecated
-   * @param DriveactivityFile $file
+   * @param DriveactivityFile
    */
   public function setFile(DriveactivityFile $file)
   {
     $this->file = $file;
   }
   /**
-   * @deprecated
    * @return DriveactivityFile
    */
   public function getFile()
@@ -100,17 +85,13 @@ class DriveItem extends \Google\Model
     return $this->file;
   }
   /**
-   * This field is deprecated; please use the `driveFolder` field instead.
-   *
-   * @deprecated
-   * @param Folder $folder
+   * @param Folder
    */
   public function setFolder(Folder $folder)
   {
     $this->folder = $folder;
   }
   /**
-   * @deprecated
    * @return Folder
    */
   public function getFolder()
@@ -118,10 +99,7 @@ class DriveItem extends \Google\Model
     return $this->folder;
   }
   /**
-   * The MIME type of the Drive item. See
-   * https://developers.google.com/workspace/drive/v3/web/mime-types.
-   *
-   * @param string $mimeType
+   * @param string
    */
   public function setMimeType($mimeType)
   {
@@ -135,9 +113,7 @@ class DriveItem extends \Google\Model
     return $this->mimeType;
   }
   /**
-   * The target Drive item. The format is `items/ITEM_ID`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -151,9 +127,7 @@ class DriveItem extends \Google\Model
     return $this->name;
   }
   /**
-   * Information about the owner of this Drive item.
-   *
-   * @param Owner $owner
+   * @param Owner
    */
   public function setOwner(Owner $owner)
   {
@@ -167,9 +141,7 @@ class DriveItem extends \Google\Model
     return $this->owner;
   }
   /**
-   * The title of the Drive item.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

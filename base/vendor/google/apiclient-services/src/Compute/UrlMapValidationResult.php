@@ -25,24 +25,18 @@ class UrlMapValidationResult extends \Google\Collection
    */
   public $loadErrors;
   /**
-   * Whether the given UrlMap can be successfully loaded. If false, 'loadErrors'
-   * indicates the reasons.
-   *
    * @var bool
    */
   public $loadSucceeded;
   protected $testFailuresType = TestFailure::class;
   protected $testFailuresDataType = 'array';
   /**
-   * If successfully loaded, this field indicates whether the test passed. If
-   * false, 'testFailures's indicate the reason of failure.
-   *
    * @var bool
    */
   public $testPassed;
 
   /**
-   * @param string[] $loadErrors
+   * @param string[]
    */
   public function setLoadErrors($loadErrors)
   {
@@ -56,10 +50,7 @@ class UrlMapValidationResult extends \Google\Collection
     return $this->loadErrors;
   }
   /**
-   * Whether the given UrlMap can be successfully loaded. If false, 'loadErrors'
-   * indicates the reasons.
-   *
-   * @param bool $loadSucceeded
+   * @param bool
    */
   public function setLoadSucceeded($loadSucceeded)
   {
@@ -73,7 +64,7 @@ class UrlMapValidationResult extends \Google\Collection
     return $this->loadSucceeded;
   }
   /**
-   * @param TestFailure[] $testFailures
+   * @param TestFailure[]
    */
   public function setTestFailures($testFailures)
   {
@@ -87,10 +78,7 @@ class UrlMapValidationResult extends \Google\Collection
     return $this->testFailures;
   }
   /**
-   * If successfully loaded, this field indicates whether the test passed. If
-   * false, 'testFailures's indicate the reason of failure.
-   *
-   * @param bool $testPassed
+   * @param bool
    */
   public function setTestPassed($testPassed)
   {

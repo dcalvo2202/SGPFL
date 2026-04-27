@@ -21,9 +21,6 @@ class ListSessionsResponse extends \Google\Collection
 {
   protected $collection_key = 'sessions';
   /**
-   * `next_page_token` can be sent in a subsequent ListSessions call to fetch
-   * more of the matching sessions.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListSessionsResponse extends \Google\Collection
   protected $sessionsDataType = 'array';
 
   /**
-   * `next_page_token` can be sent in a subsequent ListSessions call to fetch
-   * more of the matching sessions.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class ListSessionsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The list of requested sessions.
-   *
-   * @param Session[] $sessions
+   * @param Session[]
    */
   public function setSessions($sessions)
   {

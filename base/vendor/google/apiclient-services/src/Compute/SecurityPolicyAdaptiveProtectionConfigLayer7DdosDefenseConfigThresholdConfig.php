@@ -49,9 +49,6 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
    */
   public $detectionRelativeToBaselineQps;
   /**
-   * The name must be 1-63 characters long, and comply withRFC1035. The name
-   * must be unique within the security policy.
-   *
    * @var string
    */
   public $name;
@@ -59,7 +56,7 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
   protected $trafficGranularityConfigsDataType = 'array';
 
   /**
-   * @param float $autoDeployConfidenceThreshold
+   * @param float
    */
   public function setAutoDeployConfidenceThreshold($autoDeployConfidenceThreshold)
   {
@@ -73,7 +70,7 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
     return $this->autoDeployConfidenceThreshold;
   }
   /**
-   * @param int $autoDeployExpirationSec
+   * @param int
    */
   public function setAutoDeployExpirationSec($autoDeployExpirationSec)
   {
@@ -87,7 +84,7 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
     return $this->autoDeployExpirationSec;
   }
   /**
-   * @param float $autoDeployImpactedBaselineThreshold
+   * @param float
    */
   public function setAutoDeployImpactedBaselineThreshold($autoDeployImpactedBaselineThreshold)
   {
@@ -101,7 +98,7 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
     return $this->autoDeployImpactedBaselineThreshold;
   }
   /**
-   * @param float $autoDeployLoadThreshold
+   * @param float
    */
   public function setAutoDeployLoadThreshold($autoDeployLoadThreshold)
   {
@@ -115,7 +112,7 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
     return $this->autoDeployLoadThreshold;
   }
   /**
-   * @param float $detectionAbsoluteQps
+   * @param float
    */
   public function setDetectionAbsoluteQps($detectionAbsoluteQps)
   {
@@ -129,7 +126,7 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
     return $this->detectionAbsoluteQps;
   }
   /**
-   * @param float $detectionLoadThreshold
+   * @param float
    */
   public function setDetectionLoadThreshold($detectionLoadThreshold)
   {
@@ -143,7 +140,7 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
     return $this->detectionLoadThreshold;
   }
   /**
-   * @param float $detectionRelativeToBaselineQps
+   * @param float
    */
   public function setDetectionRelativeToBaselineQps($detectionRelativeToBaselineQps)
   {
@@ -157,10 +154,7 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
     return $this->detectionRelativeToBaselineQps;
   }
   /**
-   * The name must be 1-63 characters long, and comply withRFC1035. The name
-   * must be unique within the security policy.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -174,10 +168,7 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
     return $this->name;
   }
   /**
-   * Configuration options for enabling Adaptive Protection to operate on
-   * specified granular traffic units.
-   *
-   * @param SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig[] $trafficGranularityConfigs
+   * @param SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig[]
    */
   public function setTrafficGranularityConfigs($trafficGranularityConfigs)
   {

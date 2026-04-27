@@ -23,17 +23,12 @@ class GoogleCloudMlV1ListJobsResponse extends \Google\Collection
   protected $jobsType = GoogleCloudMlV1Job::class;
   protected $jobsDataType = 'array';
   /**
-   * Optional. Pass this token as the `page_token` field of the request for a
-   * subsequent call.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of jobs.
-   *
-   * @param GoogleCloudMlV1Job[] $jobs
+   * @param GoogleCloudMlV1Job[]
    */
   public function setJobs($jobs)
   {
@@ -47,10 +42,7 @@ class GoogleCloudMlV1ListJobsResponse extends \Google\Collection
     return $this->jobs;
   }
   /**
-   * Optional. Pass this token as the `page_token` field of the request for a
-   * subsequent call.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

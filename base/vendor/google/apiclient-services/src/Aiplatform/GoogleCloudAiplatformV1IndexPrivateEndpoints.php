@@ -21,25 +21,18 @@ class GoogleCloudAiplatformV1IndexPrivateEndpoints extends \Google\Collection
 {
   protected $collection_key = 'pscAutomatedEndpoints';
   /**
-   * Output only. The ip address used to send match gRPC requests.
-   *
    * @var string
    */
   public $matchGrpcAddress;
   protected $pscAutomatedEndpointsType = GoogleCloudAiplatformV1PscAutomatedEndpoints::class;
   protected $pscAutomatedEndpointsDataType = 'array';
   /**
-   * Output only. The name of the service attachment resource. Populated if
-   * private service connect is enabled.
-   *
    * @var string
    */
   public $serviceAttachment;
 
   /**
-   * Output only. The ip address used to send match gRPC requests.
-   *
-   * @param string $matchGrpcAddress
+   * @param string
    */
   public function setMatchGrpcAddress($matchGrpcAddress)
   {
@@ -53,10 +46,7 @@ class GoogleCloudAiplatformV1IndexPrivateEndpoints extends \Google\Collection
     return $this->matchGrpcAddress;
   }
   /**
-   * Output only. PscAutomatedEndpoints is populated if private service connect
-   * is enabled if PscAutomatedConfig is set.
-   *
-   * @param GoogleCloudAiplatformV1PscAutomatedEndpoints[] $pscAutomatedEndpoints
+   * @param GoogleCloudAiplatformV1PscAutomatedEndpoints[]
    */
   public function setPscAutomatedEndpoints($pscAutomatedEndpoints)
   {
@@ -70,10 +60,7 @@ class GoogleCloudAiplatformV1IndexPrivateEndpoints extends \Google\Collection
     return $this->pscAutomatedEndpoints;
   }
   /**
-   * Output only. The name of the service attachment resource. Populated if
-   * private service connect is enabled.
-   *
-   * @param string $serviceAttachment
+   * @param string
    */
   public function setServiceAttachment($serviceAttachment)
   {

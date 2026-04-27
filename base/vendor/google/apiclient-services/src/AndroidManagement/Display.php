@@ -20,72 +20,36 @@ namespace Google\Service\AndroidManagement;
 class Display extends \Google\Model
 {
   /**
-   * This value is disallowed.
-   */
-  public const STATE_DISPLAY_STATE_UNSPECIFIED = 'DISPLAY_STATE_UNSPECIFIED';
-  /**
-   * Display is off.
-   */
-  public const STATE_OFF = 'OFF';
-  /**
-   * Display is on.
-   */
-  public const STATE_ON = 'ON';
-  /**
-   * Display is dozing in a low power state
-   */
-  public const STATE_DOZE = 'DOZE';
-  /**
-   * Display is dozing in a suspended low power state.
-   */
-  public const STATE_SUSPENDED = 'SUSPENDED';
-  /**
-   * Display density expressed as dots-per-inch.
-   *
    * @var int
    */
   public $density;
   /**
-   * Unique display id.
-   *
    * @var int
    */
   public $displayId;
   /**
-   * Display height in pixels.
-   *
    * @var int
    */
   public $height;
   /**
-   * Name of the display.
-   *
    * @var string
    */
   public $name;
   /**
-   * Refresh rate of the display in frames per second.
-   *
    * @var int
    */
   public $refreshRate;
   /**
-   * State of the display.
-   *
    * @var string
    */
   public $state;
   /**
-   * Display width in pixels.
-   *
    * @var int
    */
   public $width;
 
   /**
-   * Display density expressed as dots-per-inch.
-   *
-   * @param int $density
+   * @param int
    */
   public function setDensity($density)
   {
@@ -99,9 +63,7 @@ class Display extends \Google\Model
     return $this->density;
   }
   /**
-   * Unique display id.
-   *
-   * @param int $displayId
+   * @param int
    */
   public function setDisplayId($displayId)
   {
@@ -115,9 +77,7 @@ class Display extends \Google\Model
     return $this->displayId;
   }
   /**
-   * Display height in pixels.
-   *
-   * @param int $height
+   * @param int
    */
   public function setHeight($height)
   {
@@ -131,9 +91,7 @@ class Display extends \Google\Model
     return $this->height;
   }
   /**
-   * Name of the display.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -147,9 +105,7 @@ class Display extends \Google\Model
     return $this->name;
   }
   /**
-   * Refresh rate of the display in frames per second.
-   *
-   * @param int $refreshRate
+   * @param int
    */
   public function setRefreshRate($refreshRate)
   {
@@ -163,27 +119,21 @@ class Display extends \Google\Model
     return $this->refreshRate;
   }
   /**
-   * State of the display.
-   *
-   * Accepted values: DISPLAY_STATE_UNSPECIFIED, OFF, ON, DOZE, SUSPENDED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Display width in pixels.
-   *
-   * @param int $width
+   * @param int
    */
   public function setWidth($width)
   {

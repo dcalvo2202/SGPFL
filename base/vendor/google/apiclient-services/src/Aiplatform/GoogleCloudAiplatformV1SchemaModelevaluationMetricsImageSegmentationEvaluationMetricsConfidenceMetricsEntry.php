@@ -20,45 +20,30 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1SchemaModelevaluationMetricsImageSegmentationEvaluationMetricsConfidenceMetricsEntry extends \Google\Model
 {
   /**
-   * Metrics are computed with an assumption that the model never returns
-   * predictions with score lower than this value.
-   *
    * @var float
    */
   public $confidenceThreshold;
   protected $confusionMatrixType = GoogleCloudAiplatformV1SchemaModelevaluationMetricsConfusionMatrix::class;
   protected $confusionMatrixDataType = '';
   /**
-   * DSC or the F1 score, The harmonic mean of recall and precision.
-   *
    * @var float
    */
   public $diceScoreCoefficient;
   /**
-   * The intersection-over-union score. The measure of overlap of the
-   * annotation's category mask with ground truth category mask on the DataItem.
-   *
    * @var float
    */
   public $iouScore;
   /**
-   * Precision for the given confidence threshold.
-   *
    * @var float
    */
   public $precision;
   /**
-   * Recall (True Positive Rate) for the given confidence threshold.
-   *
    * @var float
    */
   public $recall;
 
   /**
-   * Metrics are computed with an assumption that the model never returns
-   * predictions with score lower than this value.
-   *
-   * @param float $confidenceThreshold
+   * @param float
    */
   public function setConfidenceThreshold($confidenceThreshold)
   {
@@ -72,9 +57,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsImageSegmentationEvalua
     return $this->confidenceThreshold;
   }
   /**
-   * Confusion matrix for the given confidence threshold.
-   *
-   * @param GoogleCloudAiplatformV1SchemaModelevaluationMetricsConfusionMatrix $confusionMatrix
+   * @param GoogleCloudAiplatformV1SchemaModelevaluationMetricsConfusionMatrix
    */
   public function setConfusionMatrix(GoogleCloudAiplatformV1SchemaModelevaluationMetricsConfusionMatrix $confusionMatrix)
   {
@@ -88,9 +71,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsImageSegmentationEvalua
     return $this->confusionMatrix;
   }
   /**
-   * DSC or the F1 score, The harmonic mean of recall and precision.
-   *
-   * @param float $diceScoreCoefficient
+   * @param float
    */
   public function setDiceScoreCoefficient($diceScoreCoefficient)
   {
@@ -104,10 +85,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsImageSegmentationEvalua
     return $this->diceScoreCoefficient;
   }
   /**
-   * The intersection-over-union score. The measure of overlap of the
-   * annotation's category mask with ground truth category mask on the DataItem.
-   *
-   * @param float $iouScore
+   * @param float
    */
   public function setIouScore($iouScore)
   {
@@ -121,9 +99,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsImageSegmentationEvalua
     return $this->iouScore;
   }
   /**
-   * Precision for the given confidence threshold.
-   *
-   * @param float $precision
+   * @param float
    */
   public function setPrecision($precision)
   {
@@ -137,9 +113,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsImageSegmentationEvalua
     return $this->precision;
   }
   /**
-   * Recall (True Positive Rate) for the given confidence threshold.
-   *
-   * @param float $recall
+   * @param float
    */
   public function setRecall($recall)
   {

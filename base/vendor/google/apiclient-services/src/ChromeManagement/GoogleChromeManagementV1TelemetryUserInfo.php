@@ -20,22 +20,16 @@ namespace Google\Service\ChromeManagement;
 class GoogleChromeManagementV1TelemetryUserInfo extends \Google\Model
 {
   /**
-   * Output only. User's email.
-   *
    * @var string
    */
   public $email;
   /**
-   * Output only. Organization unit ID of the user.
-   *
    * @var string
    */
   public $orgUnitId;
 
   /**
-   * Output only. User's email.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {
@@ -49,9 +43,7 @@ class GoogleChromeManagementV1TelemetryUserInfo extends \Google\Model
     return $this->email;
   }
   /**
-   * Output only. Organization unit ID of the user.
-   *
-   * @param string $orgUnitId
+   * @param string
    */
   public function setOrgUnitId($orgUnitId)
   {

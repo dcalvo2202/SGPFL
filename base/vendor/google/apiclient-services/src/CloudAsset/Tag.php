@@ -20,35 +20,24 @@ namespace Google\Service\CloudAsset;
 class Tag extends \Google\Model
 {
   /**
-   * TagKey namespaced name, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
-   *
    * @var string
    */
   public $tagKey;
   /**
-   * TagKey ID, in the format of tagKeys/{TAG_KEY_ID}.
-   *
    * @var string
    */
   public $tagKeyId;
   /**
-   * TagValue namespaced name, in the format of
-   * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
-   *
    * @var string
    */
   public $tagValue;
   /**
-   * TagValue ID, in the format of tagValues/{TAG_VALUE_ID}.
-   *
    * @var string
    */
   public $tagValueId;
 
   /**
-   * TagKey namespaced name, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
-   *
-   * @param string $tagKey
+   * @param string
    */
   public function setTagKey($tagKey)
   {
@@ -62,9 +51,7 @@ class Tag extends \Google\Model
     return $this->tagKey;
   }
   /**
-   * TagKey ID, in the format of tagKeys/{TAG_KEY_ID}.
-   *
-   * @param string $tagKeyId
+   * @param string
    */
   public function setTagKeyId($tagKeyId)
   {
@@ -78,10 +65,7 @@ class Tag extends \Google\Model
     return $this->tagKeyId;
   }
   /**
-   * TagValue namespaced name, in the format of
-   * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
-   *
-   * @param string $tagValue
+   * @param string
    */
   public function setTagValue($tagValue)
   {
@@ -95,9 +79,7 @@ class Tag extends \Google\Model
     return $this->tagValue;
   }
   /**
-   * TagValue ID, in the format of tagValues/{TAG_VALUE_ID}.
-   *
-   * @param string $tagValueId
+   * @param string
    */
   public function setTagValueId($tagValueId)
   {

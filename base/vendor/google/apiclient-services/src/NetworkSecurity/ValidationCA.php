@@ -25,10 +25,7 @@ class ValidationCA extends \Google\Model
   protected $grpcEndpointDataType = '';
 
   /**
-   * The certificate provider instance specification that will be passed to the
-   * data plane, which will be used to load necessary credential information.
-   *
-   * @param CertificateProviderInstance $certificateProviderInstance
+   * @param CertificateProviderInstance
    */
   public function setCertificateProviderInstance(CertificateProviderInstance $certificateProviderInstance)
   {
@@ -42,10 +39,7 @@ class ValidationCA extends \Google\Model
     return $this->certificateProviderInstance;
   }
   /**
-   * gRPC specific configuration to access the gRPC server to obtain the CA
-   * certificate.
-   *
-   * @param GoogleCloudNetworksecurityV1GrpcEndpoint $grpcEndpoint
+   * @param GoogleCloudNetworksecurityV1GrpcEndpoint
    */
   public function setGrpcEndpoint(GoogleCloudNetworksecurityV1GrpcEndpoint $grpcEndpoint)
   {

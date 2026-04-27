@@ -20,54 +20,24 @@ namespace Google\Service\Pubsub;
 class Snapshot extends \Google\Model
 {
   /**
-   * Optional. The snapshot is guaranteed to exist up until this time. A newly-
-   * created snapshot expires no later than 7 days from the time of its
-   * creation. Its exact lifetime is determined at creation by the existing
-   * backlog in the source subscription. Specifically, the lifetime of the
-   * snapshot is `7 days - (age of oldest unacked message in the subscription)`.
-   * For example, consider a subscription whose oldest unacked message is 3 days
-   * old. If a snapshot is created from this subscription, the snapshot -- which
-   * will always capture this 3-day-old backlog as long as the snapshot exists
-   * -- will expire in 4 days. The service will refuse to create a snapshot that
-   * would expire in less than 1 hour after creation.
-   *
    * @var string
    */
   public $expireTime;
   /**
-   * Optional. See [Creating and managing labels]
-   * (https://cloud.google.com/pubsub/docs/labels).
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Optional. The name of the snapshot.
-   *
    * @var string
    */
   public $name;
   /**
-   * Optional. The name of the topic from which this snapshot is retaining
-   * messages.
-   *
    * @var string
    */
   public $topic;
 
   /**
-   * Optional. The snapshot is guaranteed to exist up until this time. A newly-
-   * created snapshot expires no later than 7 days from the time of its
-   * creation. Its exact lifetime is determined at creation by the existing
-   * backlog in the source subscription. Specifically, the lifetime of the
-   * snapshot is `7 days - (age of oldest unacked message in the subscription)`.
-   * For example, consider a subscription whose oldest unacked message is 3 days
-   * old. If a snapshot is created from this subscription, the snapshot -- which
-   * will always capture this 3-day-old backlog as long as the snapshot exists
-   * -- will expire in 4 days. The service will refuse to create a snapshot that
-   * would expire in less than 1 hour after creation.
-   *
-   * @param string $expireTime
+   * @param string
    */
   public function setExpireTime($expireTime)
   {
@@ -81,10 +51,7 @@ class Snapshot extends \Google\Model
     return $this->expireTime;
   }
   /**
-   * Optional. See [Creating and managing labels]
-   * (https://cloud.google.com/pubsub/docs/labels).
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -98,9 +65,7 @@ class Snapshot extends \Google\Model
     return $this->labels;
   }
   /**
-   * Optional. The name of the snapshot.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -114,10 +79,7 @@ class Snapshot extends \Google\Model
     return $this->name;
   }
   /**
-   * Optional. The name of the topic from which this snapshot is retaining
-   * messages.
-   *
-   * @param string $topic
+   * @param string
    */
   public function setTopic($topic)
   {

@@ -20,30 +20,20 @@ namespace Google\Service\CloudIdentity;
 class GoogleAppsCloudidentityDevicesV1CertificateTemplate extends \Google\Model
 {
   /**
-   * The template id of the template. Example: "1.3.6.1.4.1.311.21.8.15608621.11
-   * 768144.5720724.16068415.6889630.81.2472537.7784047".
-   *
    * @var string
    */
   public $id;
   /**
-   * The Major version of the template. Example: 100.
-   *
    * @var int
    */
   public $majorVersion;
   /**
-   * The minor version of the template. Example: 12.
-   *
    * @var int
    */
   public $minorVersion;
 
   /**
-   * The template id of the template. Example: "1.3.6.1.4.1.311.21.8.15608621.11
-   * 768144.5720724.16068415.6889630.81.2472537.7784047".
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -57,9 +47,7 @@ class GoogleAppsCloudidentityDevicesV1CertificateTemplate extends \Google\Model
     return $this->id;
   }
   /**
-   * The Major version of the template. Example: 100.
-   *
-   * @param int $majorVersion
+   * @param int
    */
   public function setMajorVersion($majorVersion)
   {
@@ -73,9 +61,7 @@ class GoogleAppsCloudidentityDevicesV1CertificateTemplate extends \Google\Model
     return $this->majorVersion;
   }
   /**
-   * The minor version of the template. Example: 12.
-   *
-   * @param int $minorVersion
+   * @param int
    */
   public function setMinorVersion($minorVersion)
   {

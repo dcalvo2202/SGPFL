@@ -21,29 +21,16 @@ class RemoveEnableRulesResponse extends \Google\Collection
 {
   protected $collection_key = 'removedValues';
   /**
-   * The parent consumer policy. It can be
-   * `projects/12345/consumerPolicies/default`, or
-   * `folders/12345/consumerPolicies/default`, or
-   * `organizations/12345/consumerPolicies/default`.
-   *
    * @var string
    */
   public $parent;
   /**
-   * The values removed from the parent consumer policy.
-   *
-   * @deprecated
    * @var string[]
    */
   public $removedValues;
 
   /**
-   * The parent consumer policy. It can be
-   * `projects/12345/consumerPolicies/default`, or
-   * `folders/12345/consumerPolicies/default`, or
-   * `organizations/12345/consumerPolicies/default`.
-   *
-   * @param string $parent
+   * @param string
    */
   public function setParent($parent)
   {
@@ -57,17 +44,13 @@ class RemoveEnableRulesResponse extends \Google\Collection
     return $this->parent;
   }
   /**
-   * The values removed from the parent consumer policy.
-   *
-   * @deprecated
-   * @param string[] $removedValues
+   * @param string[]
    */
   public function setRemovedValues($removedValues)
   {
     $this->removedValues = $removedValues;
   }
   /**
-   * @deprecated
    * @return string[]
    */
   public function getRemovedValues()

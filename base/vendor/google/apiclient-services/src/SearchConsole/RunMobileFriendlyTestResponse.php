@@ -19,22 +19,8 @@ namespace Google\Service\SearchConsole;
 
 class RunMobileFriendlyTestResponse extends \Google\Collection
 {
-  /**
-   * Internal error when running this test. Please try running the test again.
-   */
-  public const MOBILE_FRIENDLINESS_MOBILE_FRIENDLY_TEST_RESULT_UNSPECIFIED = 'MOBILE_FRIENDLY_TEST_RESULT_UNSPECIFIED';
-  /**
-   * The page is mobile friendly.
-   */
-  public const MOBILE_FRIENDLINESS_MOBILE_FRIENDLY = 'MOBILE_FRIENDLY';
-  /**
-   * The page is not mobile friendly.
-   */
-  public const MOBILE_FRIENDLINESS_NOT_MOBILE_FRIENDLY = 'NOT_MOBILE_FRIENDLY';
   protected $collection_key = 'resourceIssues';
   /**
-   * Test verdict, whether the page is mobile friendly or not.
-   *
    * @var string
    */
   public $mobileFriendliness;
@@ -48,28 +34,21 @@ class RunMobileFriendlyTestResponse extends \Google\Collection
   protected $testStatusDataType = '';
 
   /**
-   * Test verdict, whether the page is mobile friendly or not.
-   *
-   * Accepted values: MOBILE_FRIENDLY_TEST_RESULT_UNSPECIFIED, MOBILE_FRIENDLY,
-   * NOT_MOBILE_FRIENDLY
-   *
-   * @param self::MOBILE_FRIENDLINESS_* $mobileFriendliness
+   * @param string
    */
   public function setMobileFriendliness($mobileFriendliness)
   {
     $this->mobileFriendliness = $mobileFriendliness;
   }
   /**
-   * @return self::MOBILE_FRIENDLINESS_*
+   * @return string
    */
   public function getMobileFriendliness()
   {
     return $this->mobileFriendliness;
   }
   /**
-   * List of mobile-usability issues.
-   *
-   * @param MobileFriendlyIssue[] $mobileFriendlyIssues
+   * @param MobileFriendlyIssue[]
    */
   public function setMobileFriendlyIssues($mobileFriendlyIssues)
   {
@@ -83,9 +62,7 @@ class RunMobileFriendlyTestResponse extends \Google\Collection
     return $this->mobileFriendlyIssues;
   }
   /**
-   * Information about embedded resources issues.
-   *
-   * @param ResourceIssue[] $resourceIssues
+   * @param ResourceIssue[]
    */
   public function setResourceIssues($resourceIssues)
   {
@@ -99,9 +76,7 @@ class RunMobileFriendlyTestResponse extends \Google\Collection
     return $this->resourceIssues;
   }
   /**
-   * Screenshot of the requested URL.
-   *
-   * @param Image $screenshot
+   * @param Image
    */
   public function setScreenshot(Image $screenshot)
   {
@@ -115,9 +90,7 @@ class RunMobileFriendlyTestResponse extends \Google\Collection
     return $this->screenshot;
   }
   /**
-   * Final state of the test, can be either complete or an error.
-   *
-   * @param TestStatus $testStatus
+   * @param TestStatus
    */
   public function setTestStatus(TestStatus $testStatus)
   {

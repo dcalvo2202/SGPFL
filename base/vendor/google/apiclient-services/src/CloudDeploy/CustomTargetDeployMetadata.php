@@ -20,18 +20,12 @@ namespace Google\Service\CloudDeploy;
 class CustomTargetDeployMetadata extends \Google\Model
 {
   /**
-   * Output only. Skip message provided in the results of a custom deploy
-   * operation.
-   *
    * @var string
    */
   public $skipMessage;
 
   /**
-   * Output only. Skip message provided in the results of a custom deploy
-   * operation.
-   *
-   * @param string $skipMessage
+   * @param string
    */
   public function setSkipMessage($skipMessage)
   {

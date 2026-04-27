@@ -20,90 +20,50 @@ namespace Google\Service\ShoppingContent;
 class ProductShipping extends \Google\Model
 {
   /**
-   * The CLDR territory code of the country to which an item will ship.
-   *
    * @var string
    */
   public $country;
   /**
-   * The location where the shipping is applicable, represented by a location
-   * group name.
-   *
    * @var string
    */
   public $locationGroupName;
   /**
-   * The numeric ID of a location that the shipping rate applies to as defined
-   * in the Google Ads API.
-   *
    * @var string
    */
   public $locationId;
   /**
-   * Maximum handling time (inclusive) between when the order is received and
-   * shipped in business days. 0 means that the order is shipped on the same day
-   * as it's received if it happens before the cut-off time. Both
-   * maxHandlingTime and maxTransitTime are required if providing shipping
-   * speeds.
-   *
    * @var string
    */
   public $maxHandlingTime;
   /**
-   * Maximum transit time (inclusive) between when the order has shipped and
-   * when it's delivered in business days. 0 means that the order is delivered
-   * on the same day as it ships. Both maxHandlingTime and maxTransitTime are
-   * required if providing shipping speeds.
-   *
    * @var string
    */
   public $maxTransitTime;
   /**
-   * Minimum handling time (inclusive) between when the order is received and
-   * shipped in business days. 0 means that the order is shipped on the same day
-   * as it's received if it happens before the cut-off time. minHandlingTime can
-   * only be present together with maxHandlingTime; but it's not required if
-   * maxHandlingTime is present.
-   *
    * @var string
    */
   public $minHandlingTime;
   /**
-   * Minimum transit time (inclusive) between when the order has shipped and
-   * when it's delivered in business days. 0 means that the order is delivered
-   * on the same day as it ships. minTransitTime can only be present together
-   * with maxTransitTime; but it's not required if maxTransitTime is present.
-   *
    * @var string
    */
   public $minTransitTime;
   /**
-   * The postal code range that the shipping rate applies to, represented by a
-   * postal code, a postal code prefix followed by a * wildcard, a range between
-   * two postal codes or two postal code prefixes of equal length.
-   *
    * @var string
    */
   public $postalCode;
   protected $priceType = Price::class;
   protected $priceDataType = '';
   /**
-   * The geographic region to which a shipping rate applies.
-   *
    * @var string
    */
   public $region;
   /**
-   * A free-form description of the service class or delivery speed.
-   *
    * @var string
    */
   public $service;
 
   /**
-   * The CLDR territory code of the country to which an item will ship.
-   *
-   * @param string $country
+   * @param string
    */
   public function setCountry($country)
   {
@@ -117,10 +77,7 @@ class ProductShipping extends \Google\Model
     return $this->country;
   }
   /**
-   * The location where the shipping is applicable, represented by a location
-   * group name.
-   *
-   * @param string $locationGroupName
+   * @param string
    */
   public function setLocationGroupName($locationGroupName)
   {
@@ -134,10 +91,7 @@ class ProductShipping extends \Google\Model
     return $this->locationGroupName;
   }
   /**
-   * The numeric ID of a location that the shipping rate applies to as defined
-   * in the Google Ads API.
-   *
-   * @param string $locationId
+   * @param string
    */
   public function setLocationId($locationId)
   {
@@ -151,13 +105,7 @@ class ProductShipping extends \Google\Model
     return $this->locationId;
   }
   /**
-   * Maximum handling time (inclusive) between when the order is received and
-   * shipped in business days. 0 means that the order is shipped on the same day
-   * as it's received if it happens before the cut-off time. Both
-   * maxHandlingTime and maxTransitTime are required if providing shipping
-   * speeds.
-   *
-   * @param string $maxHandlingTime
+   * @param string
    */
   public function setMaxHandlingTime($maxHandlingTime)
   {
@@ -171,12 +119,7 @@ class ProductShipping extends \Google\Model
     return $this->maxHandlingTime;
   }
   /**
-   * Maximum transit time (inclusive) between when the order has shipped and
-   * when it's delivered in business days. 0 means that the order is delivered
-   * on the same day as it ships. Both maxHandlingTime and maxTransitTime are
-   * required if providing shipping speeds.
-   *
-   * @param string $maxTransitTime
+   * @param string
    */
   public function setMaxTransitTime($maxTransitTime)
   {
@@ -190,13 +133,7 @@ class ProductShipping extends \Google\Model
     return $this->maxTransitTime;
   }
   /**
-   * Minimum handling time (inclusive) between when the order is received and
-   * shipped in business days. 0 means that the order is shipped on the same day
-   * as it's received if it happens before the cut-off time. minHandlingTime can
-   * only be present together with maxHandlingTime; but it's not required if
-   * maxHandlingTime is present.
-   *
-   * @param string $minHandlingTime
+   * @param string
    */
   public function setMinHandlingTime($minHandlingTime)
   {
@@ -210,12 +147,7 @@ class ProductShipping extends \Google\Model
     return $this->minHandlingTime;
   }
   /**
-   * Minimum transit time (inclusive) between when the order has shipped and
-   * when it's delivered in business days. 0 means that the order is delivered
-   * on the same day as it ships. minTransitTime can only be present together
-   * with maxTransitTime; but it's not required if maxTransitTime is present.
-   *
-   * @param string $minTransitTime
+   * @param string
    */
   public function setMinTransitTime($minTransitTime)
   {
@@ -229,11 +161,7 @@ class ProductShipping extends \Google\Model
     return $this->minTransitTime;
   }
   /**
-   * The postal code range that the shipping rate applies to, represented by a
-   * postal code, a postal code prefix followed by a * wildcard, a range between
-   * two postal codes or two postal code prefixes of equal length.
-   *
-   * @param string $postalCode
+   * @param string
    */
   public function setPostalCode($postalCode)
   {
@@ -247,9 +175,7 @@ class ProductShipping extends \Google\Model
     return $this->postalCode;
   }
   /**
-   * Fixed shipping price, represented as a number.
-   *
-   * @param Price $price
+   * @param Price
    */
   public function setPrice(Price $price)
   {
@@ -263,9 +189,7 @@ class ProductShipping extends \Google\Model
     return $this->price;
   }
   /**
-   * The geographic region to which a shipping rate applies.
-   *
-   * @param string $region
+   * @param string
    */
   public function setRegion($region)
   {
@@ -279,9 +203,7 @@ class ProductShipping extends \Google\Model
     return $this->region;
   }
   /**
-   * A free-form description of the service class or delivery speed.
-   *
-   * @param string $service
+   * @param string
    */
   public function setService($service)
   {

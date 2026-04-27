@@ -26,7 +26,7 @@ class GoogleCloudDialogflowCxV3SearchConfig extends \Google\Collection
   protected $filterSpecsDataType = 'array';
 
   /**
-   * @param GoogleCloudDialogflowCxV3BoostSpecs[] $boostSpecs
+   * @param GoogleCloudDialogflowCxV3BoostSpecs[]
    */
   public function setBoostSpecs($boostSpecs)
   {
@@ -40,7 +40,7 @@ class GoogleCloudDialogflowCxV3SearchConfig extends \Google\Collection
     return $this->boostSpecs;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3FilterSpecs[] $filterSpecs
+   * @param GoogleCloudDialogflowCxV3FilterSpecs[]
    */
   public function setFilterSpecs($filterSpecs)
   {

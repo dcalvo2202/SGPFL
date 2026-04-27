@@ -21,34 +21,24 @@ class TypeFilter extends \Google\Collection
 {
   protected $collection_key = 'includedTypes';
   /**
-   * Optional. Excluded primary Place types.
-   *
    * @var string[]
    */
   public $excludedPrimaryTypes;
   /**
-   * Optional. Excluded Place types.
-   *
    * @var string[]
    */
   public $excludedTypes;
   /**
-   * Optional. Included primary Place types.
-   *
    * @var string[]
    */
   public $includedPrimaryTypes;
   /**
-   * Optional. Included Place types.
-   *
    * @var string[]
    */
   public $includedTypes;
 
   /**
-   * Optional. Excluded primary Place types.
-   *
-   * @param string[] $excludedPrimaryTypes
+   * @param string[]
    */
   public function setExcludedPrimaryTypes($excludedPrimaryTypes)
   {
@@ -62,9 +52,7 @@ class TypeFilter extends \Google\Collection
     return $this->excludedPrimaryTypes;
   }
   /**
-   * Optional. Excluded Place types.
-   *
-   * @param string[] $excludedTypes
+   * @param string[]
    */
   public function setExcludedTypes($excludedTypes)
   {
@@ -78,9 +66,7 @@ class TypeFilter extends \Google\Collection
     return $this->excludedTypes;
   }
   /**
-   * Optional. Included primary Place types.
-   *
-   * @param string[] $includedPrimaryTypes
+   * @param string[]
    */
   public function setIncludedPrimaryTypes($includedPrimaryTypes)
   {
@@ -94,9 +80,7 @@ class TypeFilter extends \Google\Collection
     return $this->includedPrimaryTypes;
   }
   /**
-   * Optional. Included Place types.
-   *
-   * @param string[] $includedTypes
+   * @param string[]
    */
   public function setIncludedTypes($includedTypes)
   {

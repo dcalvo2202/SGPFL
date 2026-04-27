@@ -26,10 +26,7 @@ class GoogleDevtoolsCloudbuildV1Secrets extends \Google\Collection
   protected $secretManagerDataType = 'array';
 
   /**
-   * Secrets encrypted with KMS key and the associated secret environment
-   * variable.
-   *
-   * @param GoogleDevtoolsCloudbuildV1InlineSecret[] $inline
+   * @param GoogleDevtoolsCloudbuildV1InlineSecret[]
    */
   public function setInline($inline)
   {
@@ -43,9 +40,7 @@ class GoogleDevtoolsCloudbuildV1Secrets extends \Google\Collection
     return $this->inline;
   }
   /**
-   * Secrets in Secret Manager and associated secret environment variable.
-   *
-   * @param GoogleDevtoolsCloudbuildV1SecretManagerSecret[] $secretManager
+   * @param GoogleDevtoolsCloudbuildV1SecretManagerSecret[]
    */
   public function setSecretManager($secretManager)
   {

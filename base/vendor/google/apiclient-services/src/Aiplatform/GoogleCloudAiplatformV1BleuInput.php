@@ -26,9 +26,7 @@ class GoogleCloudAiplatformV1BleuInput extends \Google\Collection
   protected $metricSpecDataType = '';
 
   /**
-   * Required. Repeated bleu instances.
-   *
-   * @param GoogleCloudAiplatformV1BleuInstance[] $instances
+   * @param GoogleCloudAiplatformV1BleuInstance[]
    */
   public function setInstances($instances)
   {
@@ -42,9 +40,7 @@ class GoogleCloudAiplatformV1BleuInput extends \Google\Collection
     return $this->instances;
   }
   /**
-   * Required. Spec for bleu score metric.
-   *
-   * @param GoogleCloudAiplatformV1BleuSpec $metricSpec
+   * @param GoogleCloudAiplatformV1BleuSpec
    */
   public function setMetricSpec(GoogleCloudAiplatformV1BleuSpec $metricSpec)
   {

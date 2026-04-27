@@ -24,9 +24,7 @@ class InstanceGroupsRemoveInstancesRequest extends \Google\Collection
   protected $instancesDataType = 'array';
 
   /**
-   * The list of instances to remove from the instance group.
-   *
-   * @param InstanceReference[] $instances
+   * @param InstanceReference[]
    */
   public function setInstances($instances)
   {

@@ -20,9 +20,6 @@ namespace Google\Service\Walletobjects;
 class ImageModuleData extends \Google\Model
 {
   /**
-   * The ID associated with an image module. This field is here to enable ease
-   * of management of image modules.
-   *
    * @var string
    */
   public $id;
@@ -30,10 +27,7 @@ class ImageModuleData extends \Google\Model
   protected $mainImageDataType = '';
 
   /**
-   * The ID associated with an image module. This field is here to enable ease
-   * of management of image modules.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -47,9 +41,7 @@ class ImageModuleData extends \Google\Model
     return $this->id;
   }
   /**
-   * A 100% width image.
-   *
-   * @param Image $mainImage
+   * @param Image
    */
   public function setMainImage(Image $mainImage)
   {

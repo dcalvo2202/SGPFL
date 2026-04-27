@@ -21,9 +21,6 @@ class ListNotificationConfigsResponse extends \Google\Collection
 {
   protected $collection_key = 'notificationConfigs';
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListNotificationConfigsResponse extends \Google\Collection
   protected $notificationConfigsDataType = 'array';
 
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class ListNotificationConfigsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Notification configs belonging to the requested parent.
-   *
-   * @param NotificationConfig[] $notificationConfigs
+   * @param NotificationConfig[]
    */
   public function setNotificationConfigs($notificationConfigs)
   {

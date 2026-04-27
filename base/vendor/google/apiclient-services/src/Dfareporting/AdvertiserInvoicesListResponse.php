@@ -23,23 +23,16 @@ class AdvertiserInvoicesListResponse extends \Google\Collection
   protected $invoicesType = Invoice::class;
   protected $invoicesDataType = 'array';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#advertiserInvoicesListResponse".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Pagination token to be used for the next list operation.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Invoice collection
-   *
-   * @param Invoice[] $invoices
+   * @param Invoice[]
    */
   public function setInvoices($invoices)
   {
@@ -53,10 +46,7 @@ class AdvertiserInvoicesListResponse extends \Google\Collection
     return $this->invoices;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#advertiserInvoicesListResponse".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -70,9 +60,7 @@ class AdvertiserInvoicesListResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Pagination token to be used for the next list operation.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

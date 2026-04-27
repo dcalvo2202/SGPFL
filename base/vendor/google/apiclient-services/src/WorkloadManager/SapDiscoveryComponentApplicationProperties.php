@@ -20,86 +20,46 @@ namespace Google\Service\WorkloadManager;
 class SapDiscoveryComponentApplicationProperties extends \Google\Model
 {
   /**
-   * Unspecified application type
-   */
-  public const APPLICATION_TYPE_APPLICATION_TYPE_UNSPECIFIED = 'APPLICATION_TYPE_UNSPECIFIED';
-  /**
-   * SAP Netweaver
-   */
-  public const APPLICATION_TYPE_NETWEAVER = 'NETWEAVER';
-  /**
-   * SAP Netweaver ABAP
-   */
-  public const APPLICATION_TYPE_NETWEAVER_ABAP = 'NETWEAVER_ABAP';
-  /**
-   * SAP Netweaver Java
-   */
-  public const APPLICATION_TYPE_NETWEAVER_JAVA = 'NETWEAVER_JAVA';
-  /**
-   * Optional. Deprecated: ApplicationType now tells you whether this is ABAP or
-   * Java.
-   *
-   * @deprecated
    * @var bool
    */
   public $abap;
   /**
-   * Optional. Instance number of the SAP application instance.
-   *
    * @var string
    */
   public $appInstanceNumber;
   /**
-   * Required. Type of the application. Netweaver, etc.
-   *
    * @var string
    */
   public $applicationType;
   /**
-   * Optional. Instance number of the ASCS instance.
-   *
    * @var string
    */
   public $ascsInstanceNumber;
   /**
-   * Optional. Resource URI of the recognized ASCS host of the application.
-   *
    * @var string
    */
   public $ascsUri;
   /**
-   * Optional. Instance number of the ERS instance.
-   *
    * @var string
    */
   public $ersInstanceNumber;
   /**
-   * Optional. Kernel version for Netweaver running in the system.
-   *
    * @var string
    */
   public $kernelVersion;
   /**
-   * Optional. Resource URI of the recognized shared NFS of the application. May
-   * be empty if the application server has only a single node.
-   *
    * @var string
    */
   public $nfsUri;
 
   /**
-   * Optional. Deprecated: ApplicationType now tells you whether this is ABAP or
-   * Java.
-   *
-   * @deprecated
-   * @param bool $abap
+   * @param bool
    */
   public function setAbap($abap)
   {
     $this->abap = $abap;
   }
   /**
-   * @deprecated
    * @return bool
    */
   public function getAbap()
@@ -107,9 +67,7 @@ class SapDiscoveryComponentApplicationProperties extends \Google\Model
     return $this->abap;
   }
   /**
-   * Optional. Instance number of the SAP application instance.
-   *
-   * @param string $appInstanceNumber
+   * @param string
    */
   public function setAppInstanceNumber($appInstanceNumber)
   {
@@ -123,28 +81,21 @@ class SapDiscoveryComponentApplicationProperties extends \Google\Model
     return $this->appInstanceNumber;
   }
   /**
-   * Required. Type of the application. Netweaver, etc.
-   *
-   * Accepted values: APPLICATION_TYPE_UNSPECIFIED, NETWEAVER, NETWEAVER_ABAP,
-   * NETWEAVER_JAVA
-   *
-   * @param self::APPLICATION_TYPE_* $applicationType
+   * @param string
    */
   public function setApplicationType($applicationType)
   {
     $this->applicationType = $applicationType;
   }
   /**
-   * @return self::APPLICATION_TYPE_*
+   * @return string
    */
   public function getApplicationType()
   {
     return $this->applicationType;
   }
   /**
-   * Optional. Instance number of the ASCS instance.
-   *
-   * @param string $ascsInstanceNumber
+   * @param string
    */
   public function setAscsInstanceNumber($ascsInstanceNumber)
   {
@@ -158,9 +109,7 @@ class SapDiscoveryComponentApplicationProperties extends \Google\Model
     return $this->ascsInstanceNumber;
   }
   /**
-   * Optional. Resource URI of the recognized ASCS host of the application.
-   *
-   * @param string $ascsUri
+   * @param string
    */
   public function setAscsUri($ascsUri)
   {
@@ -174,9 +123,7 @@ class SapDiscoveryComponentApplicationProperties extends \Google\Model
     return $this->ascsUri;
   }
   /**
-   * Optional. Instance number of the ERS instance.
-   *
-   * @param string $ersInstanceNumber
+   * @param string
    */
   public function setErsInstanceNumber($ersInstanceNumber)
   {
@@ -190,9 +137,7 @@ class SapDiscoveryComponentApplicationProperties extends \Google\Model
     return $this->ersInstanceNumber;
   }
   /**
-   * Optional. Kernel version for Netweaver running in the system.
-   *
-   * @param string $kernelVersion
+   * @param string
    */
   public function setKernelVersion($kernelVersion)
   {
@@ -206,10 +151,7 @@ class SapDiscoveryComponentApplicationProperties extends \Google\Model
     return $this->kernelVersion;
   }
   /**
-   * Optional. Resource URI of the recognized shared NFS of the application. May
-   * be empty if the application server has only a single node.
-   *
-   * @param string $nfsUri
+   * @param string
    */
   public function setNfsUri($nfsUri)
   {

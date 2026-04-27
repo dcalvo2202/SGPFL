@@ -21,22 +21,16 @@ class ImportAptArtifactsGcsSource extends \Google\Collection
 {
   protected $collection_key = 'uris';
   /**
-   * Cloud Storage paths URI (e.g., gs://my_bucket//my_object).
-   *
    * @var string[]
    */
   public $uris;
   /**
-   * Supports URI wildcards for matching multiple objects from a single URI.
-   *
    * @var bool
    */
   public $useWildcards;
 
   /**
-   * Cloud Storage paths URI (e.g., gs://my_bucket//my_object).
-   *
-   * @param string[] $uris
+   * @param string[]
    */
   public function setUris($uris)
   {
@@ -50,9 +44,7 @@ class ImportAptArtifactsGcsSource extends \Google\Collection
     return $this->uris;
   }
   /**
-   * Supports URI wildcards for matching multiple objects from a single URI.
-   *
-   * @param bool $useWildcards
+   * @param bool
    */
   public function setUseWildcards($useWildcards)
   {

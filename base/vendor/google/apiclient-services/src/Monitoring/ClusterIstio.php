@@ -20,40 +20,24 @@ namespace Google\Service\Monitoring;
 class ClusterIstio extends \Google\Model
 {
   /**
-   * The name of the Kubernetes cluster in which this Istio service is defined.
-   * Corresponds to the cluster_name resource label in k8s_cluster resources.
-   *
    * @var string
    */
   public $clusterName;
   /**
-   * The location of the Kubernetes cluster in which this Istio service is
-   * defined. Corresponds to the location resource label in k8s_cluster
-   * resources.
-   *
    * @var string
    */
   public $location;
   /**
-   * The name of the Istio service underlying this service. Corresponds to the
-   * destination_service_name metric label in Istio metrics.
-   *
    * @var string
    */
   public $serviceName;
   /**
-   * The namespace of the Istio service underlying this service. Corresponds to
-   * the destination_service_namespace metric label in Istio metrics.
-   *
    * @var string
    */
   public $serviceNamespace;
 
   /**
-   * The name of the Kubernetes cluster in which this Istio service is defined.
-   * Corresponds to the cluster_name resource label in k8s_cluster resources.
-   *
-   * @param string $clusterName
+   * @param string
    */
   public function setClusterName($clusterName)
   {
@@ -67,11 +51,7 @@ class ClusterIstio extends \Google\Model
     return $this->clusterName;
   }
   /**
-   * The location of the Kubernetes cluster in which this Istio service is
-   * defined. Corresponds to the location resource label in k8s_cluster
-   * resources.
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -85,10 +65,7 @@ class ClusterIstio extends \Google\Model
     return $this->location;
   }
   /**
-   * The name of the Istio service underlying this service. Corresponds to the
-   * destination_service_name metric label in Istio metrics.
-   *
-   * @param string $serviceName
+   * @param string
    */
   public function setServiceName($serviceName)
   {
@@ -102,10 +79,7 @@ class ClusterIstio extends \Google\Model
     return $this->serviceName;
   }
   /**
-   * The namespace of the Istio service underlying this service. Corresponds to
-   * the destination_service_namespace metric label in Istio metrics.
-   *
-   * @param string $serviceNamespace
+   * @param string
    */
   public function setServiceNamespace($serviceNamespace)
   {

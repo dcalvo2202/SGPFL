@@ -54,8 +54,7 @@ class Entries extends \Google\Service\Resource
   /**
    * Lists log entries. Use this method to retrieve log entries that originated
    * from a project/folder/organization/billing account. For ways to export log
-   * entries, see Routing overview
-   * (https://docs.cloud.google.com/logging/docs/routing/overview).
+   * entries, see Exporting Logs (https://cloud.google.com/logging/docs/export).
    * (entries.listEntries)
    *
    * @param ListLogEntriesRequest $postBody

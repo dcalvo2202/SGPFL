@@ -20,24 +20,18 @@ namespace Google\Service\AlertCenter;
 class MaliciousEntity extends \Google\Model
 {
   /**
-   * The header from display name.
-   *
    * @var string
    */
   public $displayName;
   protected $entityType = User::class;
   protected $entityDataType = '';
   /**
-   * The sender email address.
-   *
    * @var string
    */
   public $fromHeader;
 
   /**
-   * The header from display name.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -51,9 +45,7 @@ class MaliciousEntity extends \Google\Model
     return $this->displayName;
   }
   /**
-   * The actor who triggered a gmail phishing alert.
-   *
-   * @param User $entity
+   * @param User
    */
   public function setEntity(User $entity)
   {
@@ -67,9 +59,7 @@ class MaliciousEntity extends \Google\Model
     return $this->entity;
   }
   /**
-   * The sender email address.
-   *
-   * @param string $fromHeader
+   * @param string
    */
   public function setFromHeader($fromHeader)
   {

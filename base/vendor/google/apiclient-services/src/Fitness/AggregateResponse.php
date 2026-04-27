@@ -24,9 +24,7 @@ class AggregateResponse extends \Google\Collection
   protected $bucketDataType = 'array';
 
   /**
-   * A list of buckets containing the aggregated data.
-   *
-   * @param AggregateBucket[] $bucket
+   * @param AggregateBucket[]
    */
   public function setBucket($bucket)
   {

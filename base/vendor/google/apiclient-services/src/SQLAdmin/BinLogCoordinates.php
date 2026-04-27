@@ -20,28 +20,20 @@ namespace Google\Service\SQLAdmin;
 class BinLogCoordinates extends \Google\Model
 {
   /**
-   * Name of the binary log file for a Cloud SQL instance.
-   *
    * @var string
    */
   public $binLogFileName;
   /**
-   * Position (offset) within the binary log file.
-   *
    * @var string
    */
   public $binLogPosition;
   /**
-   * This is always `sql#binLogCoordinates`.
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * Name of the binary log file for a Cloud SQL instance.
-   *
-   * @param string $binLogFileName
+   * @param string
    */
   public function setBinLogFileName($binLogFileName)
   {
@@ -55,9 +47,7 @@ class BinLogCoordinates extends \Google\Model
     return $this->binLogFileName;
   }
   /**
-   * Position (offset) within the binary log file.
-   *
-   * @param string $binLogPosition
+   * @param string
    */
   public function setBinLogPosition($binLogPosition)
   {
@@ -71,9 +61,7 @@ class BinLogCoordinates extends \Google\Model
     return $this->binLogPosition;
   }
   /**
-   * This is always `sql#binLogCoordinates`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

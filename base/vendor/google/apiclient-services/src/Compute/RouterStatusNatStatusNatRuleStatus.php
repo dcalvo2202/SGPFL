@@ -21,46 +21,28 @@ class RouterStatusNatStatusNatRuleStatus extends \Google\Collection
 {
   protected $collection_key = 'drainNatIps';
   /**
-   * Output only. A list of active IPs for NAT. Example: ["1.1.1.1",
-   * "179.12.26.133"].
-   *
    * @var string[]
    */
   public $activeNatIps;
   /**
-   * Output only. A list of IPs for NAT that are in drain mode. Example:
-   * ["1.1.1.1", "179.12.26.133"].
-   *
    * @var string[]
    */
   public $drainNatIps;
   /**
-   * Output only. The number of extra IPs to allocate. This will be greater than
-   * 0 only if the existing IPs in this NAT Rule are NOT enough to allow all
-   * configured VMs to use NAT.
-   *
    * @var int
    */
   public $minExtraIpsNeeded;
   /**
-   * Output only. Number of VM endpoints (i.e., NICs) that have NAT Mappings
-   * from this NAT Rule.
-   *
    * @var int
    */
   public $numVmEndpointsWithNatMappings;
   /**
-   * Output only. Rule number of the rule.
-   *
    * @var int
    */
   public $ruleNumber;
 
   /**
-   * Output only. A list of active IPs for NAT. Example: ["1.1.1.1",
-   * "179.12.26.133"].
-   *
-   * @param string[] $activeNatIps
+   * @param string[]
    */
   public function setActiveNatIps($activeNatIps)
   {
@@ -74,10 +56,7 @@ class RouterStatusNatStatusNatRuleStatus extends \Google\Collection
     return $this->activeNatIps;
   }
   /**
-   * Output only. A list of IPs for NAT that are in drain mode. Example:
-   * ["1.1.1.1", "179.12.26.133"].
-   *
-   * @param string[] $drainNatIps
+   * @param string[]
    */
   public function setDrainNatIps($drainNatIps)
   {
@@ -91,11 +70,7 @@ class RouterStatusNatStatusNatRuleStatus extends \Google\Collection
     return $this->drainNatIps;
   }
   /**
-   * Output only. The number of extra IPs to allocate. This will be greater than
-   * 0 only if the existing IPs in this NAT Rule are NOT enough to allow all
-   * configured VMs to use NAT.
-   *
-   * @param int $minExtraIpsNeeded
+   * @param int
    */
   public function setMinExtraIpsNeeded($minExtraIpsNeeded)
   {
@@ -109,10 +84,7 @@ class RouterStatusNatStatusNatRuleStatus extends \Google\Collection
     return $this->minExtraIpsNeeded;
   }
   /**
-   * Output only. Number of VM endpoints (i.e., NICs) that have NAT Mappings
-   * from this NAT Rule.
-   *
-   * @param int $numVmEndpointsWithNatMappings
+   * @param int
    */
   public function setNumVmEndpointsWithNatMappings($numVmEndpointsWithNatMappings)
   {
@@ -126,9 +98,7 @@ class RouterStatusNatStatusNatRuleStatus extends \Google\Collection
     return $this->numVmEndpointsWithNatMappings;
   }
   /**
-   * Output only. Rule number of the rule.
-   *
-   * @param int $ruleNumber
+   * @param int
    */
   public function setRuleNumber($ruleNumber)
   {

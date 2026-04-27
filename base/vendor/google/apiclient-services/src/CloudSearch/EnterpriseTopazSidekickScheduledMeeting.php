@@ -20,24 +20,18 @@ namespace Google\Service\CloudSearch;
 class EnterpriseTopazSidekickScheduledMeeting extends \Google\Model
 {
   /**
-   * The meeting location.
-   *
    * @var string
    */
   public $meetingLocation;
   protected $meetingTimeType = EnterpriseTopazSidekickTimeSlot::class;
   protected $meetingTimeDataType = '';
   /**
-   * The meeting title.
-   *
    * @var string
    */
   public $meetingTitle;
 
   /**
-   * The meeting location.
-   *
-   * @param string $meetingLocation
+   * @param string
    */
   public function setMeetingLocation($meetingLocation)
   {
@@ -51,9 +45,7 @@ class EnterpriseTopazSidekickScheduledMeeting extends \Google\Model
     return $this->meetingLocation;
   }
   /**
-   * The meeting time slot.
-   *
-   * @param EnterpriseTopazSidekickTimeSlot $meetingTime
+   * @param EnterpriseTopazSidekickTimeSlot
    */
   public function setMeetingTime(EnterpriseTopazSidekickTimeSlot $meetingTime)
   {
@@ -67,9 +59,7 @@ class EnterpriseTopazSidekickScheduledMeeting extends \Google\Model
     return $this->meetingTime;
   }
   /**
-   * The meeting title.
-   *
-   * @param string $meetingTitle
+   * @param string
    */
   public function setMeetingTitle($meetingTitle)
   {

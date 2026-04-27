@@ -25,45 +25,28 @@ class NetworkReportSpec extends \Google\Collection
   protected $dimensionFiltersType = NetworkReportSpecDimensionFilter::class;
   protected $dimensionFiltersDataType = 'array';
   /**
-   * List of dimensions of the report. The value combination of these dimensions
-   * determines the row of the report. If no dimensions are specified, the
-   * report returns a single row of requested metrics for the entire account.
-   *
    * @var string[]
    */
   public $dimensions;
   protected $localizationSettingsType = LocalizationSettings::class;
   protected $localizationSettingsDataType = '';
   /**
-   * Maximum number of report data rows to return. If the value is not set, the
-   * API returns as many rows as possible, up to 100000. Acceptable values are
-   * 1-100000, inclusive. Values larger than 100000 return an error.
-   *
    * @var int
    */
   public $maxReportRows;
   /**
-   * List of metrics of the report. A report must specify at least one metric.
-   *
    * @var string[]
    */
   public $metrics;
   protected $sortConditionsType = NetworkReportSpecSortCondition::class;
   protected $sortConditionsDataType = 'array';
   /**
-   * A report time zone. Accepts an IANA TZ name values, such as
-   * "America/Los_Angeles." If no time zone is defined, the account default
-   * takes effect. Check default value by the get account action. **Warning:**
-   * The "America/Los_Angeles" is the only supported value at the moment.
-   *
    * @var string
    */
   public $timeZone;
 
   /**
-   * The date range for which the report is generated.
-   *
-   * @param DateRange $dateRange
+   * @param DateRange
    */
   public function setDateRange(DateRange $dateRange)
   {
@@ -77,9 +60,7 @@ class NetworkReportSpec extends \Google\Collection
     return $this->dateRange;
   }
   /**
-   * Describes which report rows to match based on their dimension values.
-   *
-   * @param NetworkReportSpecDimensionFilter[] $dimensionFilters
+   * @param NetworkReportSpecDimensionFilter[]
    */
   public function setDimensionFilters($dimensionFilters)
   {
@@ -93,11 +74,7 @@ class NetworkReportSpec extends \Google\Collection
     return $this->dimensionFilters;
   }
   /**
-   * List of dimensions of the report. The value combination of these dimensions
-   * determines the row of the report. If no dimensions are specified, the
-   * report returns a single row of requested metrics for the entire account.
-   *
-   * @param string[] $dimensions
+   * @param string[]
    */
   public function setDimensions($dimensions)
   {
@@ -111,9 +88,7 @@ class NetworkReportSpec extends \Google\Collection
     return $this->dimensions;
   }
   /**
-   * Localization settings of the report.
-   *
-   * @param LocalizationSettings $localizationSettings
+   * @param LocalizationSettings
    */
   public function setLocalizationSettings(LocalizationSettings $localizationSettings)
   {
@@ -127,11 +102,7 @@ class NetworkReportSpec extends \Google\Collection
     return $this->localizationSettings;
   }
   /**
-   * Maximum number of report data rows to return. If the value is not set, the
-   * API returns as many rows as possible, up to 100000. Acceptable values are
-   * 1-100000, inclusive. Values larger than 100000 return an error.
-   *
-   * @param int $maxReportRows
+   * @param int
    */
   public function setMaxReportRows($maxReportRows)
   {
@@ -145,9 +116,7 @@ class NetworkReportSpec extends \Google\Collection
     return $this->maxReportRows;
   }
   /**
-   * List of metrics of the report. A report must specify at least one metric.
-   *
-   * @param string[] $metrics
+   * @param string[]
    */
   public function setMetrics($metrics)
   {
@@ -161,12 +130,7 @@ class NetworkReportSpec extends \Google\Collection
     return $this->metrics;
   }
   /**
-   * Describes the sorting of report rows. The order of the condition in the
-   * list defines its precedence; the earlier the condition, the higher its
-   * precedence. If no sort conditions are specified, the row ordering is
-   * undefined.
-   *
-   * @param NetworkReportSpecSortCondition[] $sortConditions
+   * @param NetworkReportSpecSortCondition[]
    */
   public function setSortConditions($sortConditions)
   {
@@ -180,12 +144,7 @@ class NetworkReportSpec extends \Google\Collection
     return $this->sortConditions;
   }
   /**
-   * A report time zone. Accepts an IANA TZ name values, such as
-   * "America/Los_Angeles." If no time zone is defined, the account default
-   * takes effect. Check default value by the get account action. **Warning:**
-   * The "America/Los_Angeles" is the only supported value at the moment.
-   *
-   * @param string $timeZone
+   * @param string
    */
   public function setTimeZone($timeZone)
   {

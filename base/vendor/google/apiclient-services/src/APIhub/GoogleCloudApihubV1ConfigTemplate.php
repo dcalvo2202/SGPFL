@@ -26,10 +26,7 @@ class GoogleCloudApihubV1ConfigTemplate extends \Google\Collection
   protected $authConfigTemplateDataType = '';
 
   /**
-   * Optional. The list of additional configuration variables for the plugin's
-   * configuration.
-   *
-   * @param GoogleCloudApihubV1ConfigVariableTemplate[] $additionalConfigTemplate
+   * @param GoogleCloudApihubV1ConfigVariableTemplate[]
    */
   public function setAdditionalConfigTemplate($additionalConfigTemplate)
   {
@@ -43,9 +40,7 @@ class GoogleCloudApihubV1ConfigTemplate extends \Google\Collection
     return $this->additionalConfigTemplate;
   }
   /**
-   * Optional. The authentication template for the plugin.
-   *
-   * @param GoogleCloudApihubV1AuthConfigTemplate $authConfigTemplate
+   * @param GoogleCloudApihubV1AuthConfigTemplate
    */
   public function setAuthConfigTemplate(GoogleCloudApihubV1AuthConfigTemplate $authConfigTemplate)
   {

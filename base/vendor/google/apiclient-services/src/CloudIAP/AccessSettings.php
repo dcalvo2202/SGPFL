@@ -27,9 +27,6 @@ class AccessSettings extends \Google\Collection
   protected $gcipSettingsType = GcipSettings::class;
   protected $gcipSettingsDataType = '';
   /**
-   * Optional. Identity sources that IAP can use to authenticate the end user.
-   * Only one identity source can be configured.
-   *
    * @var string[]
    */
   public $identitySources;
@@ -43,9 +40,7 @@ class AccessSettings extends \Google\Collection
   protected $workforceIdentitySettingsDataType = '';
 
   /**
-   * Optional. Settings to configure and enable allowed domains.
-   *
-   * @param AllowedDomainsSettings $allowedDomainsSettings
+   * @param AllowedDomainsSettings
    */
   public function setAllowedDomainsSettings(AllowedDomainsSettings $allowedDomainsSettings)
   {
@@ -59,9 +54,7 @@ class AccessSettings extends \Google\Collection
     return $this->allowedDomainsSettings;
   }
   /**
-   * Optional. Configuration to allow cross-origin requests via IAP.
-   *
-   * @param CorsSettings $corsSettings
+   * @param CorsSettings
    */
   public function setCorsSettings(CorsSettings $corsSettings)
   {
@@ -75,10 +68,7 @@ class AccessSettings extends \Google\Collection
     return $this->corsSettings;
   }
   /**
-   * Optional. GCIP claims and endpoint configurations for 3p identity
-   * providers.
-   *
-   * @param GcipSettings $gcipSettings
+   * @param GcipSettings
    */
   public function setGcipSettings(GcipSettings $gcipSettings)
   {
@@ -92,10 +82,7 @@ class AccessSettings extends \Google\Collection
     return $this->gcipSettings;
   }
   /**
-   * Optional. Identity sources that IAP can use to authenticate the end user.
-   * Only one identity source can be configured.
-   *
-   * @param string[] $identitySources
+   * @param string[]
    */
   public function setIdentitySources($identitySources)
   {
@@ -109,9 +96,7 @@ class AccessSettings extends \Google\Collection
     return $this->identitySources;
   }
   /**
-   * Optional. Settings to configure IAP's OAuth behavior.
-   *
-   * @param OAuthSettings $oauthSettings
+   * @param OAuthSettings
    */
   public function setOauthSettings(OAuthSettings $oauthSettings)
   {
@@ -125,10 +110,7 @@ class AccessSettings extends \Google\Collection
     return $this->oauthSettings;
   }
   /**
-   * Optional. Settings to allow google-internal teams to use IAP for apps
-   * hosted in a tenant project.
-   *
-   * @param PolicyDelegationSettings $policyDelegationSettings
+   * @param PolicyDelegationSettings
    */
   public function setPolicyDelegationSettings(PolicyDelegationSettings $policyDelegationSettings)
   {
@@ -142,9 +124,7 @@ class AccessSettings extends \Google\Collection
     return $this->policyDelegationSettings;
   }
   /**
-   * Optional. Settings to configure reauthentication policies in IAP.
-   *
-   * @param ReauthSettings $reauthSettings
+   * @param ReauthSettings
    */
   public function setReauthSettings(ReauthSettings $reauthSettings)
   {
@@ -158,10 +138,7 @@ class AccessSettings extends \Google\Collection
     return $this->reauthSettings;
   }
   /**
-   * Optional. Settings to configure the workforce identity federation,
-   * including workforce pools and OAuth 2.0 settings.
-   *
-   * @param WorkforceIdentitySettings $workforceIdentitySettings
+   * @param WorkforceIdentitySettings
    */
   public function setWorkforceIdentitySettings(WorkforceIdentitySettings $workforceIdentitySettings)
   {

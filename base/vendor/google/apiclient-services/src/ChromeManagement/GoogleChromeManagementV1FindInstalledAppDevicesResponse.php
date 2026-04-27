@@ -23,23 +23,16 @@ class GoogleChromeManagementV1FindInstalledAppDevicesResponse extends \Google\Co
   protected $devicesType = GoogleChromeManagementV1Device::class;
   protected $devicesDataType = 'array';
   /**
-   * Token to specify the next page of the request.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Total number of devices matching request.
-   *
    * @var int
    */
   public $totalSize;
 
   /**
-   * A list of devices which have the app installed. Sorted in ascending
-   * alphabetical order on the Device.machine field.
-   *
-   * @param GoogleChromeManagementV1Device[] $devices
+   * @param GoogleChromeManagementV1Device[]
    */
   public function setDevices($devices)
   {
@@ -53,9 +46,7 @@ class GoogleChromeManagementV1FindInstalledAppDevicesResponse extends \Google\Co
     return $this->devices;
   }
   /**
-   * Token to specify the next page of the request.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -69,9 +60,7 @@ class GoogleChromeManagementV1FindInstalledAppDevicesResponse extends \Google\Co
     return $this->nextPageToken;
   }
   /**
-   * Total number of devices matching request.
-   *
-   * @param int $totalSize
+   * @param int
    */
   public function setTotalSize($totalSize)
   {

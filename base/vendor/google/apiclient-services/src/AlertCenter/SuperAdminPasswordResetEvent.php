@@ -20,16 +20,12 @@ namespace Google\Service\AlertCenter;
 class SuperAdminPasswordResetEvent extends \Google\Model
 {
   /**
-   * email of person whose password was reset
-   *
    * @var string
    */
   public $userEmail;
 
   /**
-   * email of person whose password was reset
-   *
-   * @param string $userEmail
+   * @param string
    */
   public function setUserEmail($userEmail)
   {

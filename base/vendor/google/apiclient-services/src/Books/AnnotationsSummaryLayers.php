@@ -41,7 +41,7 @@ class AnnotationsSummaryLayers extends \Google\Model
   public $updated;
 
   /**
-   * @param int $allowedCharacterCount
+   * @param int
    */
   public function setAllowedCharacterCount($allowedCharacterCount)
   {
@@ -55,7 +55,7 @@ class AnnotationsSummaryLayers extends \Google\Model
     return $this->allowedCharacterCount;
   }
   /**
-   * @param string $layerId
+   * @param string
    */
   public function setLayerId($layerId)
   {
@@ -69,7 +69,7 @@ class AnnotationsSummaryLayers extends \Google\Model
     return $this->layerId;
   }
   /**
-   * @param string $limitType
+   * @param string
    */
   public function setLimitType($limitType)
   {
@@ -83,7 +83,7 @@ class AnnotationsSummaryLayers extends \Google\Model
     return $this->limitType;
   }
   /**
-   * @param int $remainingCharacterCount
+   * @param int
    */
   public function setRemainingCharacterCount($remainingCharacterCount)
   {
@@ -97,7 +97,7 @@ class AnnotationsSummaryLayers extends \Google\Model
     return $this->remainingCharacterCount;
   }
   /**
-   * @param string $updated
+   * @param string
    */
   public function setUpdated($updated)
   {

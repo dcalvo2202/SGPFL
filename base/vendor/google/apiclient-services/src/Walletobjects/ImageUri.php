@@ -20,35 +20,24 @@ namespace Google\Service\Walletobjects;
 class ImageUri extends \Google\Model
 {
   /**
-   * Additional information about the image, which is unused and retained only
-   * for backward compatibility.
-   *
-   * @deprecated
    * @var string
    */
   public $description;
   protected $localizedDescriptionType = LocalizedString::class;
   protected $localizedDescriptionDataType = '';
   /**
-   * The location of the image. URIs must have a scheme.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * Additional information about the image, which is unused and retained only
-   * for backward compatibility.
-   *
-   * @deprecated
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
     $this->description = $description;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getDescription()
@@ -56,18 +45,13 @@ class ImageUri extends \Google\Model
     return $this->description;
   }
   /**
-   * Translated strings for the description, which are unused and retained only
-   * for backward compatibility.
-   *
-   * @deprecated
-   * @param LocalizedString $localizedDescription
+   * @param LocalizedString
    */
   public function setLocalizedDescription(LocalizedString $localizedDescription)
   {
     $this->localizedDescription = $localizedDescription;
   }
   /**
-   * @deprecated
    * @return LocalizedString
    */
   public function getLocalizedDescription()
@@ -75,9 +59,7 @@ class ImageUri extends \Google\Model
     return $this->localizedDescription;
   }
   /**
-   * The location of the image. URIs must have a scheme.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

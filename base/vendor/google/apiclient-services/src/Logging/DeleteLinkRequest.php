@@ -20,26 +20,12 @@ namespace Google\Service\Logging;
 class DeleteLinkRequest extends \Google\Model
 {
   /**
-   * Required. The full resource name of the link to delete. "projects/[PROJECT_
-   * ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]" "organizat
-   * ions/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[L
-   * INK_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buck
-   * ets/[BUCKET_ID]/links/[LINK_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_I
-   * D]/buckets/[BUCKET_ID]/links/[LINK_ID]"
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Required. The full resource name of the link to delete. "projects/[PROJECT_
-   * ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]" "organizat
-   * ions/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[L
-   * INK_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buck
-   * ets/[BUCKET_ID]/links/[LINK_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_I
-   * D]/buckets/[BUCKET_ID]/links/[LINK_ID]"
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

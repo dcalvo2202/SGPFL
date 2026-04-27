@@ -23,17 +23,12 @@ class ListAudienceExportsResponse extends \Google\Collection
   protected $audienceExportsType = AudienceExport::class;
   protected $audienceExportsDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Each audience export for a property.
-   *
-   * @param AudienceExport[] $audienceExports
+   * @param AudienceExport[]
    */
   public function setAudienceExports($audienceExports)
   {
@@ -47,10 +42,7 @@ class ListAudienceExportsResponse extends \Google\Collection
     return $this->audienceExports;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

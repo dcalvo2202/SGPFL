@@ -21,8 +21,6 @@ class ListZonesResponse extends \Google\Collection
 {
   protected $collection_key = 'zone';
   /**
-   * Continuation token for fetching the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -30,9 +28,7 @@ class ListZonesResponse extends \Google\Collection
   protected $zoneDataType = 'array';
 
   /**
-   * Continuation token for fetching the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -46,9 +42,7 @@ class ListZonesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * All GTM Zones of a GTM Container.
-   *
-   * @param Zone[] $zone
+   * @param Zone[]
    */
   public function setZone($zone)
   {

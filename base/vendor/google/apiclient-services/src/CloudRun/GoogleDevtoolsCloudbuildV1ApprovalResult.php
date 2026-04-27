@@ -20,56 +20,28 @@ namespace Google\Service\CloudRun;
 class GoogleDevtoolsCloudbuildV1ApprovalResult extends \Google\Model
 {
   /**
-   * Default enum type. This should not be used.
-   */
-  public const DECISION_DECISION_UNSPECIFIED = 'DECISION_UNSPECIFIED';
-  /**
-   * Build is approved.
-   */
-  public const DECISION_APPROVED = 'APPROVED';
-  /**
-   * Build is rejected.
-   */
-  public const DECISION_REJECTED = 'REJECTED';
-  /**
-   * Output only. The time when the approval decision was made.
-   *
    * @var string
    */
   public $approvalTime;
   /**
-   * Output only. Email of the user that called the ApproveBuild API to approve
-   * or reject a build at the time that the API was called.
-   *
    * @var string
    */
   public $approverAccount;
   /**
-   * Optional. An optional comment for this manual approval result.
-   *
    * @var string
    */
   public $comment;
   /**
-   * Required. The decision of this manual approval.
-   *
    * @var string
    */
   public $decision;
   /**
-   * Optional. An optional URL tied to this manual approval result. This field
-   * is essentially the same as comment, except that it will be rendered by the
-   * UI differently. An example use case is a link to an external job that
-   * approved this Build.
-   *
    * @var string
    */
   public $url;
 
   /**
-   * Output only. The time when the approval decision was made.
-   *
-   * @param string $approvalTime
+   * @param string
    */
   public function setApprovalTime($approvalTime)
   {
@@ -83,10 +55,7 @@ class GoogleDevtoolsCloudbuildV1ApprovalResult extends \Google\Model
     return $this->approvalTime;
   }
   /**
-   * Output only. Email of the user that called the ApproveBuild API to approve
-   * or reject a build at the time that the API was called.
-   *
-   * @param string $approverAccount
+   * @param string
    */
   public function setApproverAccount($approverAccount)
   {
@@ -100,9 +69,7 @@ class GoogleDevtoolsCloudbuildV1ApprovalResult extends \Google\Model
     return $this->approverAccount;
   }
   /**
-   * Optional. An optional comment for this manual approval result.
-   *
-   * @param string $comment
+   * @param string
    */
   public function setComment($comment)
   {
@@ -116,30 +83,21 @@ class GoogleDevtoolsCloudbuildV1ApprovalResult extends \Google\Model
     return $this->comment;
   }
   /**
-   * Required. The decision of this manual approval.
-   *
-   * Accepted values: DECISION_UNSPECIFIED, APPROVED, REJECTED
-   *
-   * @param self::DECISION_* $decision
+   * @param string
    */
   public function setDecision($decision)
   {
     $this->decision = $decision;
   }
   /**
-   * @return self::DECISION_*
+   * @return string
    */
   public function getDecision()
   {
     return $this->decision;
   }
   /**
-   * Optional. An optional URL tied to this manual approval result. This field
-   * is essentially the same as comment, except that it will be rendered by the
-   * UI differently. An example use case is a link to an external job that
-   * approved this Build.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

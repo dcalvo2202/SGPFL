@@ -23,9 +23,7 @@ class ReopenMatterResponse extends \Google\Model
   protected $matterDataType = '';
 
   /**
-   * The updated matter, with state **OPEN**.
-   *
-   * @param Matter $matter
+   * @param Matter
    */
   public function setMatter(Matter $matter)
   {

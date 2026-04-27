@@ -24,9 +24,7 @@ class ListConnectionsResponse extends \Google\Collection
   protected $connectionsDataType = 'array';
 
   /**
-   * The list of Connections.
-   *
-   * @param Connection[] $connections
+   * @param Connection[]
    */
   public function setConnections($connections)
   {

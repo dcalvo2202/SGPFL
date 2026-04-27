@@ -20,28 +20,6 @@ namespace Google\Service\DisplayVideo;
 class CampaignGoal extends \Google\Model
 {
   /**
-   * Goal value is not specified or unknown in this version.
-   */
-  public const CAMPAIGN_GOAL_TYPE_CAMPAIGN_GOAL_TYPE_UNSPECIFIED = 'CAMPAIGN_GOAL_TYPE_UNSPECIFIED';
-  /**
-   * Drive app installs or engagements.
-   */
-  public const CAMPAIGN_GOAL_TYPE_CAMPAIGN_GOAL_TYPE_APP_INSTALL = 'CAMPAIGN_GOAL_TYPE_APP_INSTALL';
-  /**
-   * Raise awareness of a brand or product.
-   */
-  public const CAMPAIGN_GOAL_TYPE_CAMPAIGN_GOAL_TYPE_BRAND_AWARENESS = 'CAMPAIGN_GOAL_TYPE_BRAND_AWARENESS';
-  /**
-   * Drive offline or in-store sales.
-   */
-  public const CAMPAIGN_GOAL_TYPE_CAMPAIGN_GOAL_TYPE_OFFLINE_ACTION = 'CAMPAIGN_GOAL_TYPE_OFFLINE_ACTION';
-  /**
-   * Drive online action or visits.
-   */
-  public const CAMPAIGN_GOAL_TYPE_CAMPAIGN_GOAL_TYPE_ONLINE_ACTION = 'CAMPAIGN_GOAL_TYPE_ONLINE_ACTION';
-  /**
-   * Required. The type of the campaign goal.
-   *
    * @var string
    */
   public $campaignGoalType;
@@ -49,33 +27,21 @@ class CampaignGoal extends \Google\Model
   protected $performanceGoalDataType = '';
 
   /**
-   * Required. The type of the campaign goal.
-   *
-   * Accepted values: CAMPAIGN_GOAL_TYPE_UNSPECIFIED,
-   * CAMPAIGN_GOAL_TYPE_APP_INSTALL, CAMPAIGN_GOAL_TYPE_BRAND_AWARENESS,
-   * CAMPAIGN_GOAL_TYPE_OFFLINE_ACTION, CAMPAIGN_GOAL_TYPE_ONLINE_ACTION
-   *
-   * @param self::CAMPAIGN_GOAL_TYPE_* $campaignGoalType
+   * @param string
    */
   public function setCampaignGoalType($campaignGoalType)
   {
     $this->campaignGoalType = $campaignGoalType;
   }
   /**
-   * @return self::CAMPAIGN_GOAL_TYPE_*
+   * @return string
    */
   public function getCampaignGoalType()
   {
     return $this->campaignGoalType;
   }
   /**
-   * Required. The performance goal of the campaign. Acceptable values for
-   * performance_goal_type are: * `PERFORMANCE_GOAL_TYPE_CPM` *
-   * `PERFORMANCE_GOAL_TYPE_CPC` * `PERFORMANCE_GOAL_TYPE_CPA` *
-   * `PERFORMANCE_GOAL_TYPE_CPIAVC` * `PERFORMANCE_GOAL_TYPE_CTR` *
-   * `PERFORMANCE_GOAL_TYPE_VIEWABILITY` * `PERFORMANCE_GOAL_TYPE_OTHER`
-   *
-   * @param PerformanceGoal $performanceGoal
+   * @param PerformanceGoal
    */
   public function setPerformanceGoal(PerformanceGoal $performanceGoal)
   {

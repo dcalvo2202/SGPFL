@@ -19,32 +19,16 @@ namespace Google\Service\Contactcenterinsights;
 
 class GoogleCloudContactcenterinsightsV1PhraseMatchRuleGroup extends \Google\Collection
 {
-  /**
-   * Unspecified.
-   */
-  public const TYPE_PHRASE_MATCH_RULE_GROUP_TYPE_UNSPECIFIED = 'PHRASE_MATCH_RULE_GROUP_TYPE_UNSPECIFIED';
-  /**
-   * Must meet all phrase match rules or there is no match.
-   */
-  public const TYPE_ALL_OF = 'ALL_OF';
-  /**
-   * If any of the phrase match rules are met, there is a match.
-   */
-  public const TYPE_ANY_OF = 'ANY_OF';
   protected $collection_key = 'phraseMatchRules';
   protected $phraseMatchRulesType = GoogleCloudContactcenterinsightsV1PhraseMatchRule::class;
   protected $phraseMatchRulesDataType = 'array';
   /**
-   * Required. The type of this phrase match rule group.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * A list of phrase match rules that are included in this group.
-   *
-   * @param GoogleCloudContactcenterinsightsV1PhraseMatchRule[] $phraseMatchRules
+   * @param GoogleCloudContactcenterinsightsV1PhraseMatchRule[]
    */
   public function setPhraseMatchRules($phraseMatchRules)
   {
@@ -58,18 +42,14 @@ class GoogleCloudContactcenterinsightsV1PhraseMatchRuleGroup extends \Google\Col
     return $this->phraseMatchRules;
   }
   /**
-   * Required. The type of this phrase match rule group.
-   *
-   * Accepted values: PHRASE_MATCH_RULE_GROUP_TYPE_UNSPECIFIED, ALL_OF, ANY_OF
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

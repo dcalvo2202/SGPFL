@@ -23,40 +23,24 @@ class ListConnectionsResponse extends \Google\Collection
   protected $connectionsType = Person::class;
   protected $connectionsDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * A token, which can be sent as `sync_token` to retrieve changes since the
-   * last request. Request must set `request_sync_token` to return the sync
-   * token. When the response is paginated, only the last page will contain
-   * `nextSyncToken`.
-   *
    * @var string
    */
   public $nextSyncToken;
   /**
-   * The total number of items in the list without pagination.
-   *
    * @var int
    */
   public $totalItems;
   /**
-   * **DEPRECATED** (Please use totalItems) The total number of people in the
-   * list without pagination.
-   *
-   * @deprecated
    * @var int
    */
   public $totalPeople;
 
   /**
-   * The list of people that the requestor is connected to.
-   *
-   * @param Person[] $connections
+   * @param Person[]
    */
   public function setConnections($connections)
   {
@@ -70,10 +54,7 @@ class ListConnectionsResponse extends \Google\Collection
     return $this->connections;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -87,12 +68,7 @@ class ListConnectionsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * A token, which can be sent as `sync_token` to retrieve changes since the
-   * last request. Request must set `request_sync_token` to return the sync
-   * token. When the response is paginated, only the last page will contain
-   * `nextSyncToken`.
-   *
-   * @param string $nextSyncToken
+   * @param string
    */
   public function setNextSyncToken($nextSyncToken)
   {
@@ -106,9 +82,7 @@ class ListConnectionsResponse extends \Google\Collection
     return $this->nextSyncToken;
   }
   /**
-   * The total number of items in the list without pagination.
-   *
-   * @param int $totalItems
+   * @param int
    */
   public function setTotalItems($totalItems)
   {
@@ -122,18 +96,13 @@ class ListConnectionsResponse extends \Google\Collection
     return $this->totalItems;
   }
   /**
-   * **DEPRECATED** (Please use totalItems) The total number of people in the
-   * list without pagination.
-   *
-   * @deprecated
-   * @param int $totalPeople
+   * @param int
    */
   public function setTotalPeople($totalPeople)
   {
     $this->totalPeople = $totalPeople;
   }
   /**
-   * @deprecated
    * @return int
    */
   public function getTotalPeople()

@@ -21,8 +21,6 @@ class ListingsListResponse extends \Google\Collection
 {
   protected $collection_key = 'listings';
   /**
-   * The kind of this response ("androidpublisher#listingsListResponse").
-   *
    * @var string
    */
   public $kind;
@@ -30,9 +28,7 @@ class ListingsListResponse extends \Google\Collection
   protected $listingsDataType = 'array';
 
   /**
-   * The kind of this response ("androidpublisher#listingsListResponse").
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -46,9 +42,7 @@ class ListingsListResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * All localized listings.
-   *
-   * @param Listing[] $listings
+   * @param Listing[]
    */
   public function setListings($listings)
   {

@@ -21,22 +21,10 @@ class AsyncBatchAnnotateFilesRequest extends \Google\Collection
 {
   protected $collection_key = 'requests';
   /**
-   * Optional. The labels with user-defined metadata for the request. Label keys
-   * and values can be no longer than 63 characters (Unicode codepoints), can
-   * only contain lowercase letters, numeric characters, underscores and dashes.
-   * International characters are allowed. Label values are optional. Label keys
-   * must start with a letter.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Optional. Target project and location to make a call. Format:
-   * `projects/{project-id}/locations/{location-id}`. If no parent is specified,
-   * a region will be chosen automatically. Supported location-ids: `us`: USA
-   * country only, `asia`: East asia areas, like Japan, Taiwan, `eu`: The
-   * European Union. Example: `projects/project-A/locations/eu`.
-   *
    * @var string
    */
   public $parent;
@@ -44,13 +32,7 @@ class AsyncBatchAnnotateFilesRequest extends \Google\Collection
   protected $requestsDataType = 'array';
 
   /**
-   * Optional. The labels with user-defined metadata for the request. Label keys
-   * and values can be no longer than 63 characters (Unicode codepoints), can
-   * only contain lowercase letters, numeric characters, underscores and dashes.
-   * International characters are allowed. Label values are optional. Label keys
-   * must start with a letter.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -64,13 +46,7 @@ class AsyncBatchAnnotateFilesRequest extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Optional. Target project and location to make a call. Format:
-   * `projects/{project-id}/locations/{location-id}`. If no parent is specified,
-   * a region will be chosen automatically. Supported location-ids: `us`: USA
-   * country only, `asia`: East asia areas, like Japan, Taiwan, `eu`: The
-   * European Union. Example: `projects/project-A/locations/eu`.
-   *
-   * @param string $parent
+   * @param string
    */
   public function setParent($parent)
   {
@@ -84,9 +60,7 @@ class AsyncBatchAnnotateFilesRequest extends \Google\Collection
     return $this->parent;
   }
   /**
-   * Required. Individual async file annotation requests for this batch.
-   *
-   * @param AsyncAnnotateFileRequest[] $requests
+   * @param AsyncAnnotateFileRequest[]
    */
   public function setRequests($requests)
   {

@@ -20,22 +20,16 @@ namespace Google\Service\GKEHub;
 class ServiceMeshStatusDetails extends \Google\Model
 {
   /**
-   * A machine-readable code that further describes a broad status.
-   *
    * @var string
    */
   public $code;
   /**
-   * Human-readable explanation of code.
-   *
    * @var string
    */
   public $details;
 
   /**
-   * A machine-readable code that further describes a broad status.
-   *
-   * @param string $code
+   * @param string
    */
   public function setCode($code)
   {
@@ -49,9 +43,7 @@ class ServiceMeshStatusDetails extends \Google\Model
     return $this->code;
   }
   /**
-   * Human-readable explanation of code.
-   *
-   * @param string $details
+   * @param string
    */
   public function setDetails($details)
   {

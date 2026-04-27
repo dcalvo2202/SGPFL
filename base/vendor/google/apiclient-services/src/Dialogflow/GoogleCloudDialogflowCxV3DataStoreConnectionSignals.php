@@ -44,7 +44,7 @@ class GoogleCloudDialogflowCxV3DataStoreConnectionSignals extends \Google\Collec
   protected $searchSnippetsDataType = 'array';
 
   /**
-   * @param string $answer
+   * @param string
    */
   public function setAnswer($answer)
   {
@@ -58,7 +58,7 @@ class GoogleCloudDialogflowCxV3DataStoreConnectionSignals extends \Google\Collec
     return $this->answer;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3DataStoreConnectionSignalsAnswerGenerationModelCallSignals $answerGenerationModelCallSignals
+   * @param GoogleCloudDialogflowCxV3DataStoreConnectionSignalsAnswerGenerationModelCallSignals
    */
   public function setAnswerGenerationModelCallSignals(GoogleCloudDialogflowCxV3DataStoreConnectionSignalsAnswerGenerationModelCallSignals $answerGenerationModelCallSignals)
   {
@@ -72,7 +72,7 @@ class GoogleCloudDialogflowCxV3DataStoreConnectionSignals extends \Google\Collec
     return $this->answerGenerationModelCallSignals;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3DataStoreConnectionSignalsAnswerPart[] $answerParts
+   * @param GoogleCloudDialogflowCxV3DataStoreConnectionSignalsAnswerPart[]
    */
   public function setAnswerParts($answerParts)
   {
@@ -86,7 +86,7 @@ class GoogleCloudDialogflowCxV3DataStoreConnectionSignals extends \Google\Collec
     return $this->answerParts;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3DataStoreConnectionSignalsCitedSnippet[] $citedSnippets
+   * @param GoogleCloudDialogflowCxV3DataStoreConnectionSignalsCitedSnippet[]
    */
   public function setCitedSnippets($citedSnippets)
   {
@@ -100,7 +100,7 @@ class GoogleCloudDialogflowCxV3DataStoreConnectionSignals extends \Google\Collec
     return $this->citedSnippets;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3DataStoreConnectionSignalsGroundingSignals $groundingSignals
+   * @param GoogleCloudDialogflowCxV3DataStoreConnectionSignalsGroundingSignals
    */
   public function setGroundingSignals(GoogleCloudDialogflowCxV3DataStoreConnectionSignalsGroundingSignals $groundingSignals)
   {
@@ -114,7 +114,7 @@ class GoogleCloudDialogflowCxV3DataStoreConnectionSignals extends \Google\Collec
     return $this->groundingSignals;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3DataStoreConnectionSignalsRewriterModelCallSignals $rewriterModelCallSignals
+   * @param GoogleCloudDialogflowCxV3DataStoreConnectionSignalsRewriterModelCallSignals
    */
   public function setRewriterModelCallSignals(GoogleCloudDialogflowCxV3DataStoreConnectionSignalsRewriterModelCallSignals $rewriterModelCallSignals)
   {
@@ -128,7 +128,7 @@ class GoogleCloudDialogflowCxV3DataStoreConnectionSignals extends \Google\Collec
     return $this->rewriterModelCallSignals;
   }
   /**
-   * @param string $rewrittenQuery
+   * @param string
    */
   public function setRewrittenQuery($rewrittenQuery)
   {
@@ -142,7 +142,7 @@ class GoogleCloudDialogflowCxV3DataStoreConnectionSignals extends \Google\Collec
     return $this->rewrittenQuery;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3DataStoreConnectionSignalsSafetySignals $safetySignals
+   * @param GoogleCloudDialogflowCxV3DataStoreConnectionSignalsSafetySignals
    */
   public function setSafetySignals(GoogleCloudDialogflowCxV3DataStoreConnectionSignalsSafetySignals $safetySignals)
   {
@@ -156,7 +156,7 @@ class GoogleCloudDialogflowCxV3DataStoreConnectionSignals extends \Google\Collec
     return $this->safetySignals;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3DataStoreConnectionSignalsSearchSnippet[] $searchSnippets
+   * @param GoogleCloudDialogflowCxV3DataStoreConnectionSignalsSearchSnippet[]
    */
   public function setSearchSnippets($searchSnippets)
   {

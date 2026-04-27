@@ -20,27 +20,16 @@ namespace Google\Service\CloudRun;
 class GoogleDevtoolsCloudbuildV1NpmPackage extends \Google\Model
 {
   /**
-   * Optional. Path to the package.json. e.g. workspace/path/to/package Only one
-   * of `archive` or `package_path` can be specified.
-   *
    * @var string
    */
   public $packagePath;
   /**
-   * Artifact Registry repository, in the form "https://$REGION-
-   * npm.pkg.dev/$PROJECT/$REPOSITORY" Npm package in the workspace specified by
-   * path will be zipped and uploaded to Artifact Registry with this location as
-   * a prefix.
-   *
    * @var string
    */
   public $repository;
 
   /**
-   * Optional. Path to the package.json. e.g. workspace/path/to/package Only one
-   * of `archive` or `package_path` can be specified.
-   *
-   * @param string $packagePath
+   * @param string
    */
   public function setPackagePath($packagePath)
   {
@@ -54,12 +43,7 @@ class GoogleDevtoolsCloudbuildV1NpmPackage extends \Google\Model
     return $this->packagePath;
   }
   /**
-   * Artifact Registry repository, in the form "https://$REGION-
-   * npm.pkg.dev/$PROJECT/$REPOSITORY" Npm package in the workspace specified by
-   * path will be zipped and uploaded to Artifact Registry with this location as
-   * a prefix.
-   *
-   * @param string $repository
+   * @param string
    */
   public function setRepository($repository)
   {

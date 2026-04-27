@@ -21,11 +21,6 @@ class Http extends \Google\Collection
 {
   protected $collection_key = 'rules';
   /**
-   * When set to true, URL path parameters will be fully URI-decoded except in
-   * cases of single segment matches in reserved expansion, where "%2F" will be
-   * left encoded. The default behavior is to not decode RFC 6570 reserved
-   * characters in multi segment matches.
-   *
    * @var bool
    */
   public $fullyDecodeReservedExpansion;
@@ -33,12 +28,7 @@ class Http extends \Google\Collection
   protected $rulesDataType = 'array';
 
   /**
-   * When set to true, URL path parameters will be fully URI-decoded except in
-   * cases of single segment matches in reserved expansion, where "%2F" will be
-   * left encoded. The default behavior is to not decode RFC 6570 reserved
-   * characters in multi segment matches.
-   *
-   * @param bool $fullyDecodeReservedExpansion
+   * @param bool
    */
   public function setFullyDecodeReservedExpansion($fullyDecodeReservedExpansion)
   {
@@ -52,10 +42,7 @@ class Http extends \Google\Collection
     return $this->fullyDecodeReservedExpansion;
   }
   /**
-   * A list of HTTP configuration rules that apply to individual API methods.
-   * **NOTE:** All service configuration rules follow "last one wins" order.
-   *
-   * @param HttpRule[] $rules
+   * @param HttpRule[]
    */
   public function setRules($rules)
   {

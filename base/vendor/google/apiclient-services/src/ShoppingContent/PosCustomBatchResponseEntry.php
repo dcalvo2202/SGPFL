@@ -20,8 +20,6 @@ namespace Google\Service\ShoppingContent;
 class PosCustomBatchResponseEntry extends \Google\Model
 {
   /**
-   * The ID of the request entry to which this entry responds.
-   *
    * @var string
    */
   public $batchId;
@@ -30,9 +28,6 @@ class PosCustomBatchResponseEntry extends \Google\Model
   protected $inventoryType = PosInventory::class;
   protected $inventoryDataType = '';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#posCustomBatchResponseEntry`"
-   *
    * @var string
    */
   public $kind;
@@ -42,9 +37,7 @@ class PosCustomBatchResponseEntry extends \Google\Model
   protected $storeDataType = '';
 
   /**
-   * The ID of the request entry to which this entry responds.
-   *
-   * @param string $batchId
+   * @param string
    */
   public function setBatchId($batchId)
   {
@@ -58,9 +51,7 @@ class PosCustomBatchResponseEntry extends \Google\Model
     return $this->batchId;
   }
   /**
-   * A list of errors defined if, and only if, the request failed.
-   *
-   * @param Errors $errors
+   * @param Errors
    */
   public function setErrors(Errors $errors)
   {
@@ -74,9 +65,7 @@ class PosCustomBatchResponseEntry extends \Google\Model
     return $this->errors;
   }
   /**
-   * The updated inventory information.
-   *
-   * @param PosInventory $inventory
+   * @param PosInventory
    */
   public function setInventory(PosInventory $inventory)
   {
@@ -90,10 +79,7 @@ class PosCustomBatchResponseEntry extends \Google\Model
     return $this->inventory;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#posCustomBatchResponseEntry`"
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -107,9 +93,7 @@ class PosCustomBatchResponseEntry extends \Google\Model
     return $this->kind;
   }
   /**
-   * The updated sale information.
-   *
-   * @param PosSale $sale
+   * @param PosSale
    */
   public function setSale(PosSale $sale)
   {
@@ -123,9 +107,7 @@ class PosCustomBatchResponseEntry extends \Google\Model
     return $this->sale;
   }
   /**
-   * The retrieved or updated store information.
-   *
-   * @param PosStore $store
+   * @param PosStore
    */
   public function setStore(PosStore $store)
   {

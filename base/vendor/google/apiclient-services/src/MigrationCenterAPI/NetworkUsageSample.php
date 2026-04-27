@@ -20,25 +20,16 @@ namespace Google\Service\MigrationCenterAPI;
 class NetworkUsageSample extends \Google\Model
 {
   /**
-   * Average network egress in B/s sampled over a short window. Must be non-
-   * negative.
-   *
    * @var float
    */
   public $averageEgressBps;
   /**
-   * Average network ingress in B/s sampled over a short window. Must be non-
-   * negative.
-   *
    * @var float
    */
   public $averageIngressBps;
 
   /**
-   * Average network egress in B/s sampled over a short window. Must be non-
-   * negative.
-   *
-   * @param float $averageEgressBps
+   * @param float
    */
   public function setAverageEgressBps($averageEgressBps)
   {
@@ -52,10 +43,7 @@ class NetworkUsageSample extends \Google\Model
     return $this->averageEgressBps;
   }
   /**
-   * Average network ingress in B/s sampled over a short window. Must be non-
-   * negative.
-   *
-   * @param float $averageIngressBps
+   * @param float
    */
   public function setAverageIngressBps($averageIngressBps)
   {

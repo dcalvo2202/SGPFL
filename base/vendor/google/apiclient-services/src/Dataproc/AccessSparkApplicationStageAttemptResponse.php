@@ -23,9 +23,7 @@ class AccessSparkApplicationStageAttemptResponse extends \Google\Model
   protected $stageDataDataType = '';
 
   /**
-   * Output only. Data corresponding to a stage.
-   *
-   * @param StageData $stageData
+   * @param StageData
    */
   public function setStageData(StageData $stageData)
   {

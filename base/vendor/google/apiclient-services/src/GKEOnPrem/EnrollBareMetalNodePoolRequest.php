@@ -20,25 +20,16 @@ namespace Google\Service\GKEOnPrem;
 class EnrollBareMetalNodePoolRequest extends \Google\Model
 {
   /**
-   * User provided OnePlatform identifier that is used as part of the resource
-   * name. (https://tools.ietf.org/html/rfc1123) format.
-   *
    * @var string
    */
   public $bareMetalNodePoolId;
   /**
-   * If set, only validate the request, but do not actually enroll the node
-   * pool.
-   *
    * @var bool
    */
   public $validateOnly;
 
   /**
-   * User provided OnePlatform identifier that is used as part of the resource
-   * name. (https://tools.ietf.org/html/rfc1123) format.
-   *
-   * @param string $bareMetalNodePoolId
+   * @param string
    */
   public function setBareMetalNodePoolId($bareMetalNodePoolId)
   {
@@ -52,10 +43,7 @@ class EnrollBareMetalNodePoolRequest extends \Google\Model
     return $this->bareMetalNodePoolId;
   }
   /**
-   * If set, only validate the request, but do not actually enroll the node
-   * pool.
-   *
-   * @param bool $validateOnly
+   * @param bool
    */
   public function setValidateOnly($validateOnly)
   {

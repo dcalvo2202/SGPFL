@@ -29,7 +29,7 @@ class GoogleCloudDialogflowV2IntentMessageCardButton extends \Google\Model
   public $text;
 
   /**
-   * @param string $postback
+   * @param string
    */
   public function setPostback($postback)
   {
@@ -43,7 +43,7 @@ class GoogleCloudDialogflowV2IntentMessageCardButton extends \Google\Model
     return $this->postback;
   }
   /**
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {

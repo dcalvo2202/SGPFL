@@ -24,10 +24,7 @@ class VmwareAdminAuthorizationConfig extends \Google\Collection
   protected $viewerUsersDataType = 'array';
 
   /**
-   * For VMware admin clusters, users will be granted the cluster-viewer role on
-   * the cluster.
-   *
-   * @param ClusterUser[] $viewerUsers
+   * @param ClusterUser[]
    */
   public function setViewerUsers($viewerUsers)
   {

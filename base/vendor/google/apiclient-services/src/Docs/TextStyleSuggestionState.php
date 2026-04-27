@@ -20,76 +20,52 @@ namespace Google\Service\Docs;
 class TextStyleSuggestionState extends \Google\Model
 {
   /**
-   * Indicates if there was a suggested change to background_color.
-   *
    * @var bool
    */
   public $backgroundColorSuggested;
   /**
-   * Indicates if there was a suggested change to baseline_offset.
-   *
    * @var bool
    */
   public $baselineOffsetSuggested;
   /**
-   * Indicates if there was a suggested change to bold.
-   *
    * @var bool
    */
   public $boldSuggested;
   /**
-   * Indicates if there was a suggested change to font_size.
-   *
    * @var bool
    */
   public $fontSizeSuggested;
   /**
-   * Indicates if there was a suggested change to foreground_color.
-   *
    * @var bool
    */
   public $foregroundColorSuggested;
   /**
-   * Indicates if there was a suggested change to italic.
-   *
    * @var bool
    */
   public $italicSuggested;
   /**
-   * Indicates if there was a suggested change to link.
-   *
    * @var bool
    */
   public $linkSuggested;
   /**
-   * Indicates if there was a suggested change to small_caps.
-   *
    * @var bool
    */
   public $smallCapsSuggested;
   /**
-   * Indicates if there was a suggested change to strikethrough.
-   *
    * @var bool
    */
   public $strikethroughSuggested;
   /**
-   * Indicates if there was a suggested change to underline.
-   *
    * @var bool
    */
   public $underlineSuggested;
   /**
-   * Indicates if there was a suggested change to weighted_font_family.
-   *
    * @var bool
    */
   public $weightedFontFamilySuggested;
 
   /**
-   * Indicates if there was a suggested change to background_color.
-   *
-   * @param bool $backgroundColorSuggested
+   * @param bool
    */
   public function setBackgroundColorSuggested($backgroundColorSuggested)
   {
@@ -103,9 +79,7 @@ class TextStyleSuggestionState extends \Google\Model
     return $this->backgroundColorSuggested;
   }
   /**
-   * Indicates if there was a suggested change to baseline_offset.
-   *
-   * @param bool $baselineOffsetSuggested
+   * @param bool
    */
   public function setBaselineOffsetSuggested($baselineOffsetSuggested)
   {
@@ -119,9 +93,7 @@ class TextStyleSuggestionState extends \Google\Model
     return $this->baselineOffsetSuggested;
   }
   /**
-   * Indicates if there was a suggested change to bold.
-   *
-   * @param bool $boldSuggested
+   * @param bool
    */
   public function setBoldSuggested($boldSuggested)
   {
@@ -135,9 +107,7 @@ class TextStyleSuggestionState extends \Google\Model
     return $this->boldSuggested;
   }
   /**
-   * Indicates if there was a suggested change to font_size.
-   *
-   * @param bool $fontSizeSuggested
+   * @param bool
    */
   public function setFontSizeSuggested($fontSizeSuggested)
   {
@@ -151,9 +121,7 @@ class TextStyleSuggestionState extends \Google\Model
     return $this->fontSizeSuggested;
   }
   /**
-   * Indicates if there was a suggested change to foreground_color.
-   *
-   * @param bool $foregroundColorSuggested
+   * @param bool
    */
   public function setForegroundColorSuggested($foregroundColorSuggested)
   {
@@ -167,9 +135,7 @@ class TextStyleSuggestionState extends \Google\Model
     return $this->foregroundColorSuggested;
   }
   /**
-   * Indicates if there was a suggested change to italic.
-   *
-   * @param bool $italicSuggested
+   * @param bool
    */
   public function setItalicSuggested($italicSuggested)
   {
@@ -183,9 +149,7 @@ class TextStyleSuggestionState extends \Google\Model
     return $this->italicSuggested;
   }
   /**
-   * Indicates if there was a suggested change to link.
-   *
-   * @param bool $linkSuggested
+   * @param bool
    */
   public function setLinkSuggested($linkSuggested)
   {
@@ -199,9 +163,7 @@ class TextStyleSuggestionState extends \Google\Model
     return $this->linkSuggested;
   }
   /**
-   * Indicates if there was a suggested change to small_caps.
-   *
-   * @param bool $smallCapsSuggested
+   * @param bool
    */
   public function setSmallCapsSuggested($smallCapsSuggested)
   {
@@ -215,9 +177,7 @@ class TextStyleSuggestionState extends \Google\Model
     return $this->smallCapsSuggested;
   }
   /**
-   * Indicates if there was a suggested change to strikethrough.
-   *
-   * @param bool $strikethroughSuggested
+   * @param bool
    */
   public function setStrikethroughSuggested($strikethroughSuggested)
   {
@@ -231,9 +191,7 @@ class TextStyleSuggestionState extends \Google\Model
     return $this->strikethroughSuggested;
   }
   /**
-   * Indicates if there was a suggested change to underline.
-   *
-   * @param bool $underlineSuggested
+   * @param bool
    */
   public function setUnderlineSuggested($underlineSuggested)
   {
@@ -247,9 +205,7 @@ class TextStyleSuggestionState extends \Google\Model
     return $this->underlineSuggested;
   }
   /**
-   * Indicates if there was a suggested change to weighted_font_family.
-   *
-   * @param bool $weightedFontFamilySuggested
+   * @param bool
    */
   public function setWeightedFontFamilySuggested($weightedFontFamilySuggested)
   {

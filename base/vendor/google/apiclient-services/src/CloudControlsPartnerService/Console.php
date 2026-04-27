@@ -21,28 +21,20 @@ class Console extends \Google\Collection
 {
   protected $collection_key = 'steps';
   /**
-   * Additional urls for more information about steps
-   *
    * @var string[]
    */
   public $additionalLinks;
   /**
-   * Link to console page where violations can be resolved
-   *
    * @var string[]
    */
   public $consoleUris;
   /**
-   * Steps to resolve violation via cloud console
-   *
    * @var string[]
    */
   public $steps;
 
   /**
-   * Additional urls for more information about steps
-   *
-   * @param string[] $additionalLinks
+   * @param string[]
    */
   public function setAdditionalLinks($additionalLinks)
   {
@@ -56,9 +48,7 @@ class Console extends \Google\Collection
     return $this->additionalLinks;
   }
   /**
-   * Link to console page where violations can be resolved
-   *
-   * @param string[] $consoleUris
+   * @param string[]
    */
   public function setConsoleUris($consoleUris)
   {
@@ -72,9 +62,7 @@ class Console extends \Google\Collection
     return $this->consoleUris;
   }
   /**
-   * Steps to resolve violation via cloud console
-   *
-   * @param string[] $steps
+   * @param string[]
    */
   public function setSteps($steps)
   {

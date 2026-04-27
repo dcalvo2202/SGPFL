@@ -20,16 +20,12 @@ namespace Google\Service\Container;
 class GcsFuseCsiDriverConfig extends \Google\Model
 {
   /**
-   * Whether the Cloud Storage Fuse CSI driver is enabled for this cluster.
-   *
    * @var bool
    */
   public $enabled;
 
   /**
-   * Whether the Cloud Storage Fuse CSI driver is enabled for this cluster.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {

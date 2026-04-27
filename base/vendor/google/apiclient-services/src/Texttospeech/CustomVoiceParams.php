@@ -20,38 +20,16 @@ namespace Google\Service\Texttospeech;
 class CustomVoiceParams extends \Google\Model
 {
   /**
-   * Request with reported usage unspecified will be rejected.
-   */
-  public const REPORTED_USAGE_REPORTED_USAGE_UNSPECIFIED = 'REPORTED_USAGE_UNSPECIFIED';
-  /**
-   * For scenarios where the synthesized audio is not downloadable and can only
-   * be used once. For example, real-time request in IVR system.
-   */
-  public const REPORTED_USAGE_REALTIME = 'REALTIME';
-  /**
-   * For scenarios where the synthesized audio is downloadable and can be
-   * reused. For example, the synthesized audio is downloaded, stored in
-   * customer service system and played repeatedly.
-   */
-  public const REPORTED_USAGE_OFFLINE = 'OFFLINE';
-  /**
-   * Required. The name of the AutoML model that synthesizes the custom voice.
-   *
    * @var string
    */
   public $model;
   /**
-   * Optional. Deprecated. The usage of the synthesized audio to be reported.
-   *
-   * @deprecated
    * @var string
    */
   public $reportedUsage;
 
   /**
-   * Required. The name of the AutoML model that synthesizes the custom voice.
-   *
-   * @param string $model
+   * @param string
    */
   public function setModel($model)
   {
@@ -65,20 +43,14 @@ class CustomVoiceParams extends \Google\Model
     return $this->model;
   }
   /**
-   * Optional. Deprecated. The usage of the synthesized audio to be reported.
-   *
-   * Accepted values: REPORTED_USAGE_UNSPECIFIED, REALTIME, OFFLINE
-   *
-   * @deprecated
-   * @param self::REPORTED_USAGE_* $reportedUsage
+   * @param string
    */
   public function setReportedUsage($reportedUsage)
   {
     $this->reportedUsage = $reportedUsage;
   }
   /**
-   * @deprecated
-   * @return self::REPORTED_USAGE_*
+   * @return string
    */
   public function getReportedUsage()
   {

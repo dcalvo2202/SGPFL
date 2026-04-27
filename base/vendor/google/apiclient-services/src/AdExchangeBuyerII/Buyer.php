@@ -20,16 +20,12 @@ namespace Google\Service\AdExchangeBuyerII;
 class Buyer extends \Google\Model
 {
   /**
-   * Authorized Buyers account ID of the buyer.
-   *
    * @var string
    */
   public $accountId;
 
   /**
-   * Authorized Buyers account ID of the buyer.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {

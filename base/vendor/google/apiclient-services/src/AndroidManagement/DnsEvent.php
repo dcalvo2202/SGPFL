@@ -21,37 +21,24 @@ class DnsEvent extends \Google\Collection
 {
   protected $collection_key = 'ipAddresses';
   /**
-   * The hostname that was looked up.
-   *
    * @var string
    */
   public $hostname;
   /**
-   * The (possibly truncated) list of the IP addresses returned for DNS lookup
-   * (max 10 IPv4 or IPv6 addresses).
-   *
    * @var string[]
    */
   public $ipAddresses;
   /**
-   * The package name of the UID that performed the DNS lookup.
-   *
    * @var string
    */
   public $packageName;
   /**
-   * The number of IP addresses returned from the DNS lookup event. May be
-   * higher than the amount of ip_addresses if there were too many addresses to
-   * log.
-   *
    * @var string
    */
   public $totalIpAddressesReturned;
 
   /**
-   * The hostname that was looked up.
-   *
-   * @param string $hostname
+   * @param string
    */
   public function setHostname($hostname)
   {
@@ -65,10 +52,7 @@ class DnsEvent extends \Google\Collection
     return $this->hostname;
   }
   /**
-   * The (possibly truncated) list of the IP addresses returned for DNS lookup
-   * (max 10 IPv4 or IPv6 addresses).
-   *
-   * @param string[] $ipAddresses
+   * @param string[]
    */
   public function setIpAddresses($ipAddresses)
   {
@@ -82,9 +66,7 @@ class DnsEvent extends \Google\Collection
     return $this->ipAddresses;
   }
   /**
-   * The package name of the UID that performed the DNS lookup.
-   *
-   * @param string $packageName
+   * @param string
    */
   public function setPackageName($packageName)
   {
@@ -98,11 +80,7 @@ class DnsEvent extends \Google\Collection
     return $this->packageName;
   }
   /**
-   * The number of IP addresses returned from the DNS lookup event. May be
-   * higher than the amount of ip_addresses if there were too many addresses to
-   * log.
-   *
-   * @param string $totalIpAddressesReturned
+   * @param string
    */
   public function setTotalIpAddressesReturned($totalIpAddressesReturned)
   {

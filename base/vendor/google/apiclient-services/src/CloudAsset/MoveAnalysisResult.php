@@ -26,10 +26,7 @@ class MoveAnalysisResult extends \Google\Collection
   protected $warningsDataType = 'array';
 
   /**
-   * Blocking information that would prevent the target resource from moving to
-   * the specified destination at runtime.
-   *
-   * @param MoveImpact[] $blockers
+   * @param MoveImpact[]
    */
   public function setBlockers($blockers)
   {
@@ -43,11 +40,7 @@ class MoveAnalysisResult extends \Google\Collection
     return $this->blockers;
   }
   /**
-   * Warning information indicating that moving the target resource to the
-   * specified destination might be unsafe. This can include important policy
-   * information and configuration changes, but will not block moves at runtime.
-   *
-   * @param MoveImpact[] $warnings
+   * @param MoveImpact[]
    */
   public function setWarnings($warnings)
   {

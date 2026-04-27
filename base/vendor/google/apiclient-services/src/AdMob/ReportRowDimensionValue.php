@@ -20,25 +20,16 @@ namespace Google\Service\AdMob;
 class ReportRowDimensionValue extends \Google\Model
 {
   /**
-   * The localized string representation of the value. If unspecified, the
-   * display label should be derived from the value.
-   *
    * @var string
    */
   public $displayLabel;
   /**
-   * Dimension value in the format specified in the report's spec Dimension
-   * enum.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * The localized string representation of the value. If unspecified, the
-   * display label should be derived from the value.
-   *
-   * @param string $displayLabel
+   * @param string
    */
   public function setDisplayLabel($displayLabel)
   {
@@ -52,10 +43,7 @@ class ReportRowDimensionValue extends \Google\Model
     return $this->displayLabel;
   }
   /**
-   * Dimension value in the format specified in the report's spec Dimension
-   * enum.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

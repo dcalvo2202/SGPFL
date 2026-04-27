@@ -25,10 +25,7 @@ class AppTargeting extends \Google\Model
   protected $mobileAppTargetingDataType = '';
 
   /**
-   * Lists of included and excluded mobile app categories as defined in https://
-   * developers.google.com/adwords/api/docs/appendix/mobileappcategories.csv.
-   *
-   * @param NumericTargetingDimension $mobileAppCategoryTargeting
+   * @param NumericTargetingDimension
    */
   public function setMobileAppCategoryTargeting(NumericTargetingDimension $mobileAppCategoryTargeting)
   {
@@ -42,11 +39,7 @@ class AppTargeting extends \Google\Model
     return $this->mobileAppCategoryTargeting;
   }
   /**
-   * Targeted app IDs. App IDs can refer to those found in an app store or ones
-   * that are not published in an app store. A maximum of 30,000 app IDs can be
-   * targeted.
-   *
-   * @param StringTargetingDimension $mobileAppTargeting
+   * @param StringTargetingDimension
    */
   public function setMobileAppTargeting(StringTargetingDimension $mobileAppTargeting)
   {

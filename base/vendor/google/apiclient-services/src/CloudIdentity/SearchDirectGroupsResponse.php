@@ -23,17 +23,12 @@ class SearchDirectGroupsResponse extends \Google\Collection
   protected $membershipsType = MembershipRelation::class;
   protected $membershipsDataType = 'array';
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results available for listing.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * List of direct groups satisfying the query.
-   *
-   * @param MembershipRelation[] $memberships
+   * @param MembershipRelation[]
    */
   public function setMemberships($memberships)
   {
@@ -47,10 +42,7 @@ class SearchDirectGroupsResponse extends \Google\Collection
     return $this->memberships;
   }
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results available for listing.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

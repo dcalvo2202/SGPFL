@@ -23,9 +23,7 @@ class GoogleCloudAiplatformV1PurgeExecutionsMetadata extends \Google\Model
   protected $genericMetadataDataType = '';
 
   /**
-   * Operation metadata for purging Executions.
-   *
-   * @param GoogleCloudAiplatformV1GenericOperationMetadata $genericMetadata
+   * @param GoogleCloudAiplatformV1GenericOperationMetadata
    */
   public function setGenericMetadata(GoogleCloudAiplatformV1GenericOperationMetadata $genericMetadata)
   {

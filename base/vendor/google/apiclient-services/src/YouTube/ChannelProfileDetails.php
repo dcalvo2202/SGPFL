@@ -20,34 +20,24 @@ namespace Google\Service\YouTube;
 class ChannelProfileDetails extends \Google\Model
 {
   /**
-   * The YouTube channel ID.
-   *
    * @var string
    */
   public $channelId;
   /**
-   * The channel's URL.
-   *
    * @var string
    */
   public $channelUrl;
   /**
-   * The channel's display name.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * The channels's avatar URL.
-   *
    * @var string
    */
   public $profileImageUrl;
 
   /**
-   * The YouTube channel ID.
-   *
-   * @param string $channelId
+   * @param string
    */
   public function setChannelId($channelId)
   {
@@ -61,9 +51,7 @@ class ChannelProfileDetails extends \Google\Model
     return $this->channelId;
   }
   /**
-   * The channel's URL.
-   *
-   * @param string $channelUrl
+   * @param string
    */
   public function setChannelUrl($channelUrl)
   {
@@ -77,9 +65,7 @@ class ChannelProfileDetails extends \Google\Model
     return $this->channelUrl;
   }
   /**
-   * The channel's display name.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -93,9 +79,7 @@ class ChannelProfileDetails extends \Google\Model
     return $this->displayName;
   }
   /**
-   * The channels's avatar URL.
-   *
-   * @param string $profileImageUrl
+   * @param string
    */
   public function setProfileImageUrl($profileImageUrl)
   {

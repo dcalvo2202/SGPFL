@@ -23,9 +23,7 @@ class SummarizeSparkApplicationStageAttemptTasksResponse extends \Google\Model
   protected $stageAttemptTasksSummaryDataType = '';
 
   /**
-   * Summary of tasks for a Spark Application Stage Attempt
-   *
-   * @param StageAttemptTasksSummary $stageAttemptTasksSummary
+   * @param StageAttemptTasksSummary
    */
   public function setStageAttemptTasksSummary(StageAttemptTasksSummary $stageAttemptTasksSummary)
   {

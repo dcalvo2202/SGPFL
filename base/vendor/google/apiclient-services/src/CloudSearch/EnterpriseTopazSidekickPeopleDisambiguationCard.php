@@ -24,9 +24,7 @@ class EnterpriseTopazSidekickPeopleDisambiguationCard extends \Google\Collection
   protected $personDataType = 'array';
 
   /**
-   * Candidate persons for the query.
-   *
-   * @param EnterpriseTopazSidekickCommonPerson[] $person
+   * @param EnterpriseTopazSidekickCommonPerson[]
    */
   public function setPerson($person)
   {

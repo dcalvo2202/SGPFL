@@ -23,9 +23,7 @@ class AccessSessionSparkApplicationSqlSparkPlanGraphResponse extends \Google\Mod
   protected $sparkPlanGraphDataType = '';
 
   /**
-   * SparkPlanGraph for a Spark Application execution.
-   *
-   * @param SparkPlanGraph $sparkPlanGraph
+   * @param SparkPlanGraph
    */
   public function setSparkPlanGraph(SparkPlanGraph $sparkPlanGraph)
   {

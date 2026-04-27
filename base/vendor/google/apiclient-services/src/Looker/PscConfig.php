@@ -21,15 +21,10 @@ class PscConfig extends \Google\Collection
 {
   protected $collection_key = 'serviceAttachments';
   /**
-   * Optional. List of VPCs that are allowed ingress into looker. Format:
-   * projects/{project}/global/networks/{network}
-   *
    * @var string[]
    */
   public $allowedVpcs;
   /**
-   * Output only. URI of the Looker service attachment.
-   *
    * @var string
    */
   public $lookerServiceAttachmentUri;
@@ -37,10 +32,7 @@ class PscConfig extends \Google\Collection
   protected $serviceAttachmentsDataType = 'array';
 
   /**
-   * Optional. List of VPCs that are allowed ingress into looker. Format:
-   * projects/{project}/global/networks/{network}
-   *
-   * @param string[] $allowedVpcs
+   * @param string[]
    */
   public function setAllowedVpcs($allowedVpcs)
   {
@@ -54,9 +46,7 @@ class PscConfig extends \Google\Collection
     return $this->allowedVpcs;
   }
   /**
-   * Output only. URI of the Looker service attachment.
-   *
-   * @param string $lookerServiceAttachmentUri
+   * @param string
    */
   public function setLookerServiceAttachmentUri($lookerServiceAttachmentUri)
   {
@@ -70,9 +60,7 @@ class PscConfig extends \Google\Collection
     return $this->lookerServiceAttachmentUri;
   }
   /**
-   * Optional. List of egress service attachment configurations.
-   *
-   * @param ServiceAttachment[] $serviceAttachments
+   * @param ServiceAttachment[]
    */
   public function setServiceAttachments($serviceAttachments)
   {

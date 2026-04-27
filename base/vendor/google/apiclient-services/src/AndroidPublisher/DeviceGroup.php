@@ -23,17 +23,12 @@ class DeviceGroup extends \Google\Collection
   protected $deviceSelectorsType = DeviceSelector::class;
   protected $deviceSelectorsDataType = 'array';
   /**
-   * The name of the group.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Device selectors for this group. A device matching any of the selectors is
-   * included in this group.
-   *
-   * @param DeviceSelector[] $deviceSelectors
+   * @param DeviceSelector[]
    */
   public function setDeviceSelectors($deviceSelectors)
   {
@@ -47,9 +42,7 @@ class DeviceGroup extends \Google\Collection
     return $this->deviceSelectors;
   }
   /**
-   * The name of the group.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

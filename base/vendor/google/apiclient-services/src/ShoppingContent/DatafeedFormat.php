@@ -20,36 +20,20 @@ namespace Google\Service\ShoppingContent;
 class DatafeedFormat extends \Google\Model
 {
   /**
-   * Delimiter for the separation of values in a delimiter-separated values
-   * feed. If not specified, the delimiter will be auto-detected. Ignored for
-   * non-DSV data feeds. Acceptable values are: - "`pipe`" - "`tab`" - "`tilde`"
-   *
    * @var string
    */
   public $columnDelimiter;
   /**
-   * Character encoding scheme of the data feed. If not specified, the encoding
-   * will be auto-detected. Acceptable values are: - "`latin-1`" - "`utf-16be`"
-   * - "`utf-16le`" - "`utf-8`" - "`windows-1252`"
-   *
    * @var string
    */
   public $fileEncoding;
   /**
-   * Specifies how double quotes are interpreted. If not specified, the mode
-   * will be auto-detected. Ignored for non-DSV data feeds. Acceptable values
-   * are: - "`normal character`" - "`value quoting`"
-   *
    * @var string
    */
   public $quotingMode;
 
   /**
-   * Delimiter for the separation of values in a delimiter-separated values
-   * feed. If not specified, the delimiter will be auto-detected. Ignored for
-   * non-DSV data feeds. Acceptable values are: - "`pipe`" - "`tab`" - "`tilde`"
-   *
-   * @param string $columnDelimiter
+   * @param string
    */
   public function setColumnDelimiter($columnDelimiter)
   {
@@ -63,11 +47,7 @@ class DatafeedFormat extends \Google\Model
     return $this->columnDelimiter;
   }
   /**
-   * Character encoding scheme of the data feed. If not specified, the encoding
-   * will be auto-detected. Acceptable values are: - "`latin-1`" - "`utf-16be`"
-   * - "`utf-16le`" - "`utf-8`" - "`windows-1252`"
-   *
-   * @param string $fileEncoding
+   * @param string
    */
   public function setFileEncoding($fileEncoding)
   {
@@ -81,11 +61,7 @@ class DatafeedFormat extends \Google\Model
     return $this->fileEncoding;
   }
   /**
-   * Specifies how double quotes are interpreted. If not specified, the mode
-   * will be auto-detected. Ignored for non-DSV data feeds. Acceptable values
-   * are: - "`normal character`" - "`value quoting`"
-   *
-   * @param string $quotingMode
+   * @param string
    */
   public function setQuotingMode($quotingMode)
   {

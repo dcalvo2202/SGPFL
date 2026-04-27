@@ -20,18 +20,12 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1alphaCustomFineTuningSpec extends \Google\Model
 {
   /**
-   * Whether or not to enable and include custom fine tuned search adaptor
-   * model.
-   *
    * @var bool
    */
   public $enableSearchAdaptor;
 
   /**
-   * Whether or not to enable and include custom fine tuned search adaptor
-   * model.
-   *
-   * @param bool $enableSearchAdaptor
+   * @param bool
    */
   public function setEnableSearchAdaptor($enableSearchAdaptor)
   {

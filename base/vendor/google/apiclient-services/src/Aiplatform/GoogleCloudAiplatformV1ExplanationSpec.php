@@ -25,9 +25,7 @@ class GoogleCloudAiplatformV1ExplanationSpec extends \Google\Model
   protected $parametersDataType = '';
 
   /**
-   * Optional. Metadata describing the Model's input and output for explanation.
-   *
-   * @param GoogleCloudAiplatformV1ExplanationMetadata $metadata
+   * @param GoogleCloudAiplatformV1ExplanationMetadata
    */
   public function setMetadata(GoogleCloudAiplatformV1ExplanationMetadata $metadata)
   {
@@ -41,9 +39,7 @@ class GoogleCloudAiplatformV1ExplanationSpec extends \Google\Model
     return $this->metadata;
   }
   /**
-   * Required. Parameters that configure explaining of the Model's predictions.
-   *
-   * @param GoogleCloudAiplatformV1ExplanationParameters $parameters
+   * @param GoogleCloudAiplatformV1ExplanationParameters
    */
   public function setParameters(GoogleCloudAiplatformV1ExplanationParameters $parameters)
   {

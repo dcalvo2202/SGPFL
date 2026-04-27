@@ -20,29 +20,18 @@ namespace Google\Service\PeopleService;
 class Photo extends \Google\Model
 {
   /**
-   * True if the photo is a default photo; false if the photo is a user-provided
-   * photo.
-   *
    * @var bool
    */
   public $default;
   protected $metadataType = FieldMetadata::class;
   protected $metadataDataType = '';
   /**
-   * The URL of the photo. You can change the desired size by appending a query
-   * parameter `sz={size}` at the end of the url, where {size} is the size in
-   * pixels. Example: https://lh3.googleusercontent.com/-
-   * T_wVWLlmg7w/AAAAAAAAAAI/AAAAAAAABa8/00gzXvDBYqw/s100/photo.jpg?sz=50
-   *
    * @var string
    */
   public $url;
 
   /**
-   * True if the photo is a default photo; false if the photo is a user-provided
-   * photo.
-   *
-   * @param bool $default
+   * @param bool
    */
   public function setDefault($default)
   {
@@ -56,9 +45,7 @@ class Photo extends \Google\Model
     return $this->default;
   }
   /**
-   * Metadata about the photo.
-   *
-   * @param FieldMetadata $metadata
+   * @param FieldMetadata
    */
   public function setMetadata(FieldMetadata $metadata)
   {
@@ -72,12 +59,7 @@ class Photo extends \Google\Model
     return $this->metadata;
   }
   /**
-   * The URL of the photo. You can change the desired size by appending a query
-   * parameter `sz={size}` at the end of the url, where {size} is the size in
-   * pixels. Example: https://lh3.googleusercontent.com/-
-   * T_wVWLlmg7w/AAAAAAAAAAI/AAAAAAAABa8/00gzXvDBYqw/s100/photo.jpg?sz=50
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

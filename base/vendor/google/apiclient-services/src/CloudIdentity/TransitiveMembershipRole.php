@@ -20,18 +20,12 @@ namespace Google\Service\CloudIdentity;
 class TransitiveMembershipRole extends \Google\Model
 {
   /**
-   * TransitiveMembershipRole in string format. Currently supported
-   * TransitiveMembershipRoles: `"MEMBER"`, `"OWNER"`, and `"MANAGER"`.
-   *
    * @var string
    */
   public $role;
 
   /**
-   * TransitiveMembershipRole in string format. Currently supported
-   * TransitiveMembershipRoles: `"MEMBER"`, `"OWNER"`, and `"MANAGER"`.
-   *
-   * @param string $role
+   * @param string
    */
   public function setRole($role)
   {

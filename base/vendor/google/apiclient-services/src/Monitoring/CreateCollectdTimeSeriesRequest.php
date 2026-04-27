@@ -23,8 +23,6 @@ class CreateCollectdTimeSeriesRequest extends \Google\Collection
   protected $collectdPayloadsType = CollectdPayload::class;
   protected $collectdPayloadsDataType = 'array';
   /**
-   * The version of collectd that collected the data. Example: "5.3.0-192.el6".
-   *
    * @var string
    */
   public $collectdVersion;
@@ -32,12 +30,7 @@ class CreateCollectdTimeSeriesRequest extends \Google\Collection
   protected $resourceDataType = '';
 
   /**
-   * The collectd payloads representing the time series data. You must not
-   * include more than a single point for each time series, so no two payloads
-   * can have the same values for all of the fields plugin, plugin_instance,
-   * type, and type_instance.
-   *
-   * @param CollectdPayload[] $collectdPayloads
+   * @param CollectdPayload[]
    */
   public function setCollectdPayloads($collectdPayloads)
   {
@@ -51,9 +44,7 @@ class CreateCollectdTimeSeriesRequest extends \Google\Collection
     return $this->collectdPayloads;
   }
   /**
-   * The version of collectd that collected the data. Example: "5.3.0-192.el6".
-   *
-   * @param string $collectdVersion
+   * @param string
    */
   public function setCollectdVersion($collectdVersion)
   {
@@ -67,9 +58,7 @@ class CreateCollectdTimeSeriesRequest extends \Google\Collection
     return $this->collectdVersion;
   }
   /**
-   * The monitored resource associated with the time series.
-   *
-   * @param MonitoredResource $resource
+   * @param MonitoredResource
    */
   public function setResource(MonitoredResource $resource)
   {

@@ -24,9 +24,7 @@ class MysqlRdbms extends \Google\Collection
   protected $mysqlDatabasesDataType = 'array';
 
   /**
-   * Mysql databases on the server
-   *
-   * @param MysqlDatabase[] $mysqlDatabases
+   * @param MysqlDatabase[]
    */
   public function setMysqlDatabases($mysqlDatabases)
   {

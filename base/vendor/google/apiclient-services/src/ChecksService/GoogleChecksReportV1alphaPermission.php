@@ -20,16 +20,12 @@ namespace Google\Service\ChecksService;
 class GoogleChecksReportV1alphaPermission extends \Google\Model
 {
   /**
-   * Permission identifier.
-   *
    * @var string
    */
   public $id;
 
   /**
-   * Permission identifier.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {

@@ -23,9 +23,7 @@ class GoogleChecksReportV1alphaCheckEndpointRestrictionViolationEvidenceEndpoint
   protected $endpointDataType = '';
 
   /**
-   * The endpoint in violation.
-   *
-   * @param GoogleChecksReportV1alphaEndpoint $endpoint
+   * @param GoogleChecksReportV1alphaEndpoint
    */
   public function setEndpoint(GoogleChecksReportV1alphaEndpoint $endpoint)
   {

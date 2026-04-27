@@ -19,76 +19,31 @@ namespace Google\Service\Dataproc;
 
 class Batch extends \Google\Collection
 {
-  /**
-   * The batch state is unknown.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The batch is created before running.
-   */
-  public const STATE_PENDING = 'PENDING';
-  /**
-   * The batch is running.
-   */
-  public const STATE_RUNNING = 'RUNNING';
-  /**
-   * The batch is cancelling.
-   */
-  public const STATE_CANCELLING = 'CANCELLING';
-  /**
-   * The batch cancellation was successful.
-   */
-  public const STATE_CANCELLED = 'CANCELLED';
-  /**
-   * The batch completed successfully.
-   */
-  public const STATE_SUCCEEDED = 'SUCCEEDED';
-  /**
-   * The batch is no longer running due to an error.
-   */
-  public const STATE_FAILED = 'FAILED';
   protected $collection_key = 'stateHistory';
   /**
-   * Output only. The time when the batch was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. The email address of the user who created the batch.
-   *
    * @var string
    */
   public $creator;
   protected $environmentConfigType = EnvironmentConfig::class;
   protected $environmentConfigDataType = '';
   /**
-   * Optional. The labels to associate with this batch. Label keys must contain
-   * 1 to 63 characters, and must conform to RFC 1035
-   * (https://www.ietf.org/rfc/rfc1035.txt). Label values may be empty, but, if
-   * present, must contain 1 to 63 characters, and must conform to RFC 1035
-   * (https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
-   * associated with a batch.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Output only. The resource name of the batch.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The resource name of the operation associated with this batch.
-   *
    * @var string
    */
   public $operation;
   protected $pysparkBatchType = PySparkBatch::class;
   protected $pysparkBatchDataType = '';
-  protected $pysparkNotebookBatchType = PySparkNotebookBatch::class;
-  protected $pysparkNotebookBatchDataType = '';
   protected $runtimeConfigType = RuntimeConfig::class;
   protected $runtimeConfigDataType = '';
   protected $runtimeInfoType = RuntimeInfo::class;
@@ -100,38 +55,26 @@ class Batch extends \Google\Collection
   protected $sparkSqlBatchType = SparkSqlBatch::class;
   protected $sparkSqlBatchDataType = '';
   /**
-   * Output only. The state of the batch.
-   *
    * @var string
    */
   public $state;
   protected $stateHistoryType = StateHistory::class;
   protected $stateHistoryDataType = 'array';
   /**
-   * Output only. Batch state details, such as a failure description if the
-   * state is FAILED.
-   *
    * @var string
    */
   public $stateMessage;
   /**
-   * Output only. The time when the batch entered a current state.
-   *
    * @var string
    */
   public $stateTime;
   /**
-   * Output only. A batch UUID (Unique Universal Identifier). The service
-   * generates this value when it creates the batch.
-   *
    * @var string
    */
   public $uuid;
 
   /**
-   * Output only. The time when the batch was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -145,9 +88,7 @@ class Batch extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Output only. The email address of the user who created the batch.
-   *
-   * @param string $creator
+   * @param string
    */
   public function setCreator($creator)
   {
@@ -161,9 +102,7 @@ class Batch extends \Google\Collection
     return $this->creator;
   }
   /**
-   * Optional. Environment configuration for the batch execution.
-   *
-   * @param EnvironmentConfig $environmentConfig
+   * @param EnvironmentConfig
    */
   public function setEnvironmentConfig(EnvironmentConfig $environmentConfig)
   {
@@ -177,14 +116,7 @@ class Batch extends \Google\Collection
     return $this->environmentConfig;
   }
   /**
-   * Optional. The labels to associate with this batch. Label keys must contain
-   * 1 to 63 characters, and must conform to RFC 1035
-   * (https://www.ietf.org/rfc/rfc1035.txt). Label values may be empty, but, if
-   * present, must contain 1 to 63 characters, and must conform to RFC 1035
-   * (https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
-   * associated with a batch.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -198,9 +130,7 @@ class Batch extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Output only. The resource name of the batch.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -214,9 +144,7 @@ class Batch extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. The resource name of the operation associated with this batch.
-   *
-   * @param string $operation
+   * @param string
    */
   public function setOperation($operation)
   {
@@ -230,9 +158,7 @@ class Batch extends \Google\Collection
     return $this->operation;
   }
   /**
-   * Optional. PySpark batch config.
-   *
-   * @param PySparkBatch $pysparkBatch
+   * @param PySparkBatch
    */
   public function setPysparkBatch(PySparkBatch $pysparkBatch)
   {
@@ -246,25 +172,7 @@ class Batch extends \Google\Collection
     return $this->pysparkBatch;
   }
   /**
-   * Optional. PySpark notebook batch config.
-   *
-   * @param PySparkNotebookBatch $pysparkNotebookBatch
-   */
-  public function setPysparkNotebookBatch(PySparkNotebookBatch $pysparkNotebookBatch)
-  {
-    $this->pysparkNotebookBatch = $pysparkNotebookBatch;
-  }
-  /**
-   * @return PySparkNotebookBatch
-   */
-  public function getPysparkNotebookBatch()
-  {
-    return $this->pysparkNotebookBatch;
-  }
-  /**
-   * Optional. Runtime configuration for the batch execution.
-   *
-   * @param RuntimeConfig $runtimeConfig
+   * @param RuntimeConfig
    */
   public function setRuntimeConfig(RuntimeConfig $runtimeConfig)
   {
@@ -278,9 +186,7 @@ class Batch extends \Google\Collection
     return $this->runtimeConfig;
   }
   /**
-   * Output only. Runtime information about batch execution.
-   *
-   * @param RuntimeInfo $runtimeInfo
+   * @param RuntimeInfo
    */
   public function setRuntimeInfo(RuntimeInfo $runtimeInfo)
   {
@@ -294,9 +200,7 @@ class Batch extends \Google\Collection
     return $this->runtimeInfo;
   }
   /**
-   * Optional. Spark batch config.
-   *
-   * @param SparkBatch $sparkBatch
+   * @param SparkBatch
    */
   public function setSparkBatch(SparkBatch $sparkBatch)
   {
@@ -310,9 +214,7 @@ class Batch extends \Google\Collection
     return $this->sparkBatch;
   }
   /**
-   * Optional. SparkR batch config.
-   *
-   * @param SparkRBatch $sparkRBatch
+   * @param SparkRBatch
    */
   public function setSparkRBatch(SparkRBatch $sparkRBatch)
   {
@@ -326,9 +228,7 @@ class Batch extends \Google\Collection
     return $this->sparkRBatch;
   }
   /**
-   * Optional. SparkSql batch config.
-   *
-   * @param SparkSqlBatch $sparkSqlBatch
+   * @param SparkSqlBatch
    */
   public function setSparkSqlBatch(SparkSqlBatch $sparkSqlBatch)
   {
@@ -342,28 +242,21 @@ class Batch extends \Google\Collection
     return $this->sparkSqlBatch;
   }
   /**
-   * Output only. The state of the batch.
-   *
-   * Accepted values: STATE_UNSPECIFIED, PENDING, RUNNING, CANCELLING,
-   * CANCELLED, SUCCEEDED, FAILED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. Historical state information for the batch.
-   *
-   * @param StateHistory[] $stateHistory
+   * @param StateHistory[]
    */
   public function setStateHistory($stateHistory)
   {
@@ -377,10 +270,7 @@ class Batch extends \Google\Collection
     return $this->stateHistory;
   }
   /**
-   * Output only. Batch state details, such as a failure description if the
-   * state is FAILED.
-   *
-   * @param string $stateMessage
+   * @param string
    */
   public function setStateMessage($stateMessage)
   {
@@ -394,9 +284,7 @@ class Batch extends \Google\Collection
     return $this->stateMessage;
   }
   /**
-   * Output only. The time when the batch entered a current state.
-   *
-   * @param string $stateTime
+   * @param string
    */
   public function setStateTime($stateTime)
   {
@@ -410,10 +298,7 @@ class Batch extends \Google\Collection
     return $this->stateTime;
   }
   /**
-   * Output only. A batch UUID (Unique Universal Identifier). The service
-   * generates this value when it creates the batch.
-   *
-   * @param string $uuid
+   * @param string
    */
   public function setUuid($uuid)
   {

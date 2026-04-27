@@ -20,34 +20,20 @@ namespace Google\Service\OnDemandScanning;
 class GrafeasV1BaseImage extends \Google\Model
 {
   /**
-   * The number of layers that the base image is composed of.
-   *
    * @var int
    */
   public $layerCount;
   /**
-   * The name of the base image.
-   *
    * @var string
    */
   public $name;
   /**
-   * The registry in which the base image is from.
-   *
-   * @var string
-   */
-  public $registry;
-  /**
-   * The repository name in which the base image is from.
-   *
    * @var string
    */
   public $repository;
 
   /**
-   * The number of layers that the base image is composed of.
-   *
-   * @param int $layerCount
+   * @param int
    */
   public function setLayerCount($layerCount)
   {
@@ -61,9 +47,7 @@ class GrafeasV1BaseImage extends \Google\Model
     return $this->layerCount;
   }
   /**
-   * The name of the base image.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -77,25 +61,7 @@ class GrafeasV1BaseImage extends \Google\Model
     return $this->name;
   }
   /**
-   * The registry in which the base image is from.
-   *
-   * @param string $registry
-   */
-  public function setRegistry($registry)
-  {
-    $this->registry = $registry;
-  }
-  /**
-   * @return string
-   */
-  public function getRegistry()
-  {
-    return $this->registry;
-  }
-  /**
-   * The repository name in which the base image is from.
-   *
-   * @param string $repository
+   * @param string
    */
   public function setRepository($repository)
   {

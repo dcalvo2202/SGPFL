@@ -22,29 +22,20 @@ class Signature extends \Google\Model
   protected $imageType = Image::class;
   protected $imageDataType = '';
   /**
-   * Optional. Metadata associated with the user's signature. For example, the
-   * user's name or the user's title.
-   *
    * @var string[]
    */
   public $metadata;
   /**
-   * Optional. Timestamp of the signature.
-   *
    * @var string
    */
   public $signatureTime;
   /**
-   * Required. User's UUID provided by the client.
-   *
    * @var string
    */
   public $userId;
 
   /**
-   * Optional. An image of the user's signature.
-   *
-   * @param Image $image
+   * @param Image
    */
   public function setImage(Image $image)
   {
@@ -58,10 +49,7 @@ class Signature extends \Google\Model
     return $this->image;
   }
   /**
-   * Optional. Metadata associated with the user's signature. For example, the
-   * user's name or the user's title.
-   *
-   * @param string[] $metadata
+   * @param string[]
    */
   public function setMetadata($metadata)
   {
@@ -75,9 +63,7 @@ class Signature extends \Google\Model
     return $this->metadata;
   }
   /**
-   * Optional. Timestamp of the signature.
-   *
-   * @param string $signatureTime
+   * @param string
    */
   public function setSignatureTime($signatureTime)
   {
@@ -91,9 +77,7 @@ class Signature extends \Google\Model
     return $this->signatureTime;
   }
   /**
-   * Required. User's UUID provided by the client.
-   *
-   * @param string $userId
+   * @param string
    */
   public function setUserId($userId)
   {

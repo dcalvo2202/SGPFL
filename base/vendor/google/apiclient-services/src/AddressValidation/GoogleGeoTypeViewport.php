@@ -25,9 +25,7 @@ class GoogleGeoTypeViewport extends \Google\Model
   protected $lowDataType = '';
 
   /**
-   * Required. The high point of the viewport.
-   *
-   * @param GoogleTypeLatLng $high
+   * @param GoogleTypeLatLng
    */
   public function setHigh(GoogleTypeLatLng $high)
   {
@@ -41,9 +39,7 @@ class GoogleGeoTypeViewport extends \Google\Model
     return $this->high;
   }
   /**
-   * Required. The low point of the viewport.
-   *
-   * @param GoogleTypeLatLng $low
+   * @param GoogleTypeLatLng
    */
   public function setLow(GoogleTypeLatLng $low)
   {

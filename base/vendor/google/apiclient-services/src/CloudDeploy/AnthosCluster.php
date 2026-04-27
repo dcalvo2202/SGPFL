@@ -20,20 +20,12 @@ namespace Google\Service\CloudDeploy;
 class AnthosCluster extends \Google\Model
 {
   /**
-   * Optional. Membership of the GKE Hub-registered cluster to which to apply
-   * the Skaffold configuration. Format is
-   * `projects/{project}/locations/{location}/memberships/{membership_name}`.
-   *
    * @var string
    */
   public $membership;
 
   /**
-   * Optional. Membership of the GKE Hub-registered cluster to which to apply
-   * the Skaffold configuration. Format is
-   * `projects/{project}/locations/{location}/memberships/{membership_name}`.
-   *
-   * @param string $membership
+   * @param string
    */
   public function setMembership($membership)
   {

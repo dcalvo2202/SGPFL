@@ -20,46 +20,19 @@ namespace Google\Service\Vault;
 class GroupsExportOptions extends \Google\Model
 {
   /**
-   * No export format specified.
-   */
-  public const EXPORT_FORMAT_EXPORT_FORMAT_UNSPECIFIED = 'EXPORT_FORMAT_UNSPECIFIED';
-  /**
-   * Export as MBOX. Only available for Gmail, Groups, Hangouts and Voice.
-   */
-  public const EXPORT_FORMAT_MBOX = 'MBOX';
-  /**
-   * Export as PST. Only available for Gmail, Groups, Hangouts, Voice and
-   * Calendar.
-   */
-  public const EXPORT_FORMAT_PST = 'PST';
-  /**
-   * Export as ICS. Only available for Calendar.
-   */
-  public const EXPORT_FORMAT_ICS = 'ICS';
-  /**
-   * Export as XML. Only available for Gemini.
-   */
-  public const EXPORT_FORMAT_XML = 'XML';
-  /**
-   * The file format for exported messages.
-   *
    * @var string
    */
   public $exportFormat;
 
   /**
-   * The file format for exported messages.
-   *
-   * Accepted values: EXPORT_FORMAT_UNSPECIFIED, MBOX, PST, ICS, XML
-   *
-   * @param self::EXPORT_FORMAT_* $exportFormat
+   * @param string
    */
   public function setExportFormat($exportFormat)
   {
     $this->exportFormat = $exportFormat;
   }
   /**
-   * @return self::EXPORT_FORMAT_*
+   * @return string
    */
   public function getExportFormat()
   {

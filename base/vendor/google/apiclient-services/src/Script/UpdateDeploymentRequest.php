@@ -23,9 +23,7 @@ class UpdateDeploymentRequest extends \Google\Model
   protected $deploymentConfigDataType = '';
 
   /**
-   * The deployment configuration.
-   *
-   * @param DeploymentConfig $deploymentConfig
+   * @param DeploymentConfig
    */
   public function setDeploymentConfig(DeploymentConfig $deploymentConfig)
   {

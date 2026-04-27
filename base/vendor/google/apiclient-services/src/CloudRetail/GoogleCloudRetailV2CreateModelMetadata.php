@@ -20,20 +20,12 @@ namespace Google\Service\CloudRetail;
 class GoogleCloudRetailV2CreateModelMetadata extends \Google\Model
 {
   /**
-   * The resource name of the model that this create applies to. Format: `projec
-   * ts/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{m
-   * odel_id}`
-   *
    * @var string
    */
   public $model;
 
   /**
-   * The resource name of the model that this create applies to. Format: `projec
-   * ts/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{m
-   * odel_id}`
-   *
-   * @param string $model
+   * @param string
    */
   public function setModel($model)
   {

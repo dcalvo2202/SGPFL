@@ -20,8 +20,6 @@ namespace Google\Service\YouTube;
 class LiveChatModeratorSnippet extends \Google\Model
 {
   /**
-   * The ID of the live chat this moderator can act on.
-   *
    * @var string
    */
   public $liveChatId;
@@ -29,9 +27,7 @@ class LiveChatModeratorSnippet extends \Google\Model
   protected $moderatorDetailsDataType = '';
 
   /**
-   * The ID of the live chat this moderator can act on.
-   *
-   * @param string $liveChatId
+   * @param string
    */
   public function setLiveChatId($liveChatId)
   {
@@ -45,9 +41,7 @@ class LiveChatModeratorSnippet extends \Google\Model
     return $this->liveChatId;
   }
   /**
-   * Details about the moderator.
-   *
-   * @param ChannelProfileDetails $moderatorDetails
+   * @param ChannelProfileDetails
    */
   public function setModeratorDetails(ChannelProfileDetails $moderatorDetails)
   {

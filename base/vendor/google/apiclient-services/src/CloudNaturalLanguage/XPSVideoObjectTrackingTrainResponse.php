@@ -24,17 +24,12 @@ class XPSVideoObjectTrackingTrainResponse extends \Google\Model
   protected $modelArtifactSpecType = XPSVideoModelArtifactSpec::class;
   protected $modelArtifactSpecDataType = '';
   /**
-   * The actual train cost of creating this model, expressed in node seconds,
-   * i.e. 3,600 value in this field means 1 node hour.
-   *
    * @var string
    */
   public $trainCostNodeSeconds;
 
   /**
-   * Populated for AutoML request only.
-   *
-   * @param XPSVideoExportModelSpec $exportModelSpec
+   * @param XPSVideoExportModelSpec
    */
   public function setExportModelSpec(XPSVideoExportModelSpec $exportModelSpec)
   {
@@ -48,9 +43,7 @@ class XPSVideoObjectTrackingTrainResponse extends \Google\Model
     return $this->exportModelSpec;
   }
   /**
-   * ## The fields below are only populated under uCAIP request scope.
-   *
-   * @param XPSVideoModelArtifactSpec $modelArtifactSpec
+   * @param XPSVideoModelArtifactSpec
    */
   public function setModelArtifactSpec(XPSVideoModelArtifactSpec $modelArtifactSpec)
   {
@@ -64,10 +57,7 @@ class XPSVideoObjectTrackingTrainResponse extends \Google\Model
     return $this->modelArtifactSpec;
   }
   /**
-   * The actual train cost of creating this model, expressed in node seconds,
-   * i.e. 3,600 value in this field means 1 node hour.
-   *
-   * @param string $trainCostNodeSeconds
+   * @param string
    */
   public function setTrainCostNodeSeconds($trainCostNodeSeconds)
   {

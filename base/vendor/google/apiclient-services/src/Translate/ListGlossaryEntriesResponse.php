@@ -23,17 +23,12 @@ class ListGlossaryEntriesResponse extends \Google\Collection
   protected $glossaryEntriesType = GlossaryEntry::class;
   protected $glossaryEntriesDataType = 'array';
   /**
-   * Optional. A token to retrieve a page of results. Pass this value in the
-   * [ListGLossaryEntriesRequest.page_token] field in the subsequent calls.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Optional. The Glossary Entries
-   *
-   * @param GlossaryEntry[] $glossaryEntries
+   * @param GlossaryEntry[]
    */
   public function setGlossaryEntries($glossaryEntries)
   {
@@ -47,10 +42,7 @@ class ListGlossaryEntriesResponse extends \Google\Collection
     return $this->glossaryEntries;
   }
   /**
-   * Optional. A token to retrieve a page of results. Pass this value in the
-   * [ListGLossaryEntriesRequest.page_token] field in the subsequent calls.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

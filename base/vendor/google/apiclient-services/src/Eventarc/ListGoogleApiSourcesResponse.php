@@ -23,23 +23,16 @@ class ListGoogleApiSourcesResponse extends \Google\Collection
   protected $googleApiSourcesType = GoogleApiSource::class;
   protected $googleApiSourcesDataType = 'array';
   /**
-   * A page token that can be sent to `ListMessageBusEnrollments` to request the
-   * next page. If this is empty, then there are no more pages.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Unreachable resources, if any.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * The requested GoogleApiSources, up to the number specified in `page_size`.
-   *
-   * @param GoogleApiSource[] $googleApiSources
+   * @param GoogleApiSource[]
    */
   public function setGoogleApiSources($googleApiSources)
   {
@@ -53,10 +46,7 @@ class ListGoogleApiSourcesResponse extends \Google\Collection
     return $this->googleApiSources;
   }
   /**
-   * A page token that can be sent to `ListMessageBusEnrollments` to request the
-   * next page. If this is empty, then there are no more pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -70,9 +60,7 @@ class ListGoogleApiSourcesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Unreachable resources, if any.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

@@ -20,22 +20,16 @@ namespace Google\Service\AndroidManagement;
 class KeyIntegrityViolationEvent extends \Google\Model
 {
   /**
-   * UID of the application which owns the key
-   *
    * @var int
    */
   public $applicationUid;
   /**
-   * Alias of the key.
-   *
    * @var string
    */
   public $keyAlias;
 
   /**
-   * UID of the application which owns the key
-   *
-   * @param int $applicationUid
+   * @param int
    */
   public function setApplicationUid($applicationUid)
   {
@@ -49,9 +43,7 @@ class KeyIntegrityViolationEvent extends \Google\Model
     return $this->applicationUid;
   }
   /**
-   * Alias of the key.
-   *
-   * @param string $keyAlias
+   * @param string
    */
   public function setKeyAlias($keyAlias)
   {

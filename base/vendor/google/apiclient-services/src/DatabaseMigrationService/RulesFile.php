@@ -20,24 +20,16 @@ namespace Google\Service\DatabaseMigrationService;
 class RulesFile extends \Google\Model
 {
   /**
-   * Required. The text content of the rules that needs to be converted.
-   *
    * @var string
    */
   public $rulesContent;
   /**
-   * Required. The filename of the rules that needs to be converted. The
-   * filename is used mainly so that future logs of the import rules job contain
-   * it, and can therefore be searched by it.
-   *
    * @var string
    */
   public $rulesSourceFilename;
 
   /**
-   * Required. The text content of the rules that needs to be converted.
-   *
-   * @param string $rulesContent
+   * @param string
    */
   public function setRulesContent($rulesContent)
   {
@@ -51,11 +43,7 @@ class RulesFile extends \Google\Model
     return $this->rulesContent;
   }
   /**
-   * Required. The filename of the rules that needs to be converted. The
-   * filename is used mainly so that future logs of the import rules job contain
-   * it, and can therefore be searched by it.
-   *
-   * @param string $rulesSourceFilename
+   * @param string
    */
   public function setRulesSourceFilename($rulesSourceFilename)
   {

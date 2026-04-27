@@ -20,22 +20,16 @@ namespace Google\Service\Integrations;
 class GoogleCloudConnectorsV1ResourceRequests extends \Google\Model
 {
   /**
-   * Output only. CPU request.
-   *
    * @var string
    */
   public $cpu;
   /**
-   * Output only. Memory request.
-   *
    * @var string
    */
   public $memory;
 
   /**
-   * Output only. CPU request.
-   *
-   * @param string $cpu
+   * @param string
    */
   public function setCpu($cpu)
   {
@@ -49,9 +43,7 @@ class GoogleCloudConnectorsV1ResourceRequests extends \Google\Model
     return $this->cpu;
   }
   /**
-   * Output only. Memory request.
-   *
-   * @param string $memory
+   * @param string
    */
   public function setMemory($memory)
   {

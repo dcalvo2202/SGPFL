@@ -20,16 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1PrebuiltVoiceConfig extends \Google\Model
 {
   /**
-   * The name of the prebuilt voice to use.
-   *
    * @var string
    */
   public $voiceName;
 
   /**
-   * The name of the prebuilt voice to use.
-   *
-   * @param string $voiceName
+   * @param string
    */
   public function setVoiceName($voiceName)
   {

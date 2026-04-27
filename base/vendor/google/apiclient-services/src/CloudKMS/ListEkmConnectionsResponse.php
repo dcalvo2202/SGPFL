@@ -23,24 +23,16 @@ class ListEkmConnectionsResponse extends \Google\Collection
   protected $ekmConnectionsType = EkmConnection::class;
   protected $ekmConnectionsDataType = 'array';
   /**
-   * A token to retrieve next page of results. Pass this value in
-   * ListEkmConnectionsRequest.page_token to retrieve the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * The total number of EkmConnections that matched the query. This field is
-   * not populated if ListEkmConnectionsRequest.filter is applied.
-   *
    * @var int
    */
   public $totalSize;
 
   /**
-   * The list of EkmConnections.
-   *
-   * @param EkmConnection[] $ekmConnections
+   * @param EkmConnection[]
    */
   public function setEkmConnections($ekmConnections)
   {
@@ -54,10 +46,7 @@ class ListEkmConnectionsResponse extends \Google\Collection
     return $this->ekmConnections;
   }
   /**
-   * A token to retrieve next page of results. Pass this value in
-   * ListEkmConnectionsRequest.page_token to retrieve the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -71,10 +60,7 @@ class ListEkmConnectionsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The total number of EkmConnections that matched the query. This field is
-   * not populated if ListEkmConnectionsRequest.filter is applied.
-   *
-   * @param int $totalSize
+   * @param int
    */
   public function setTotalSize($totalSize)
   {

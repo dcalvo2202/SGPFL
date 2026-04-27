@@ -43,7 +43,6 @@ class Safebrowsing extends \Google\Service
   public $hashList;
   public $hashLists;
   public $hashes;
-  public $urls;
   public $rootUrlTemplate;
 
   /**
@@ -152,26 +151,6 @@ class Safebrowsing extends \Google\Service
               'httpMethod' => 'GET',
               'parameters' => [
                 'hashPrefixes' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ],
-              ],
-            ],
-          ]
-        ]
-    );
-    $this->urls = new Safebrowsing\Resource\Urls(
-        $this,
-        $this->serviceName,
-        'urls',
-        [
-          'methods' => [
-            'search' => [
-              'path' => 'v5/urls:search',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'urls' => [
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,

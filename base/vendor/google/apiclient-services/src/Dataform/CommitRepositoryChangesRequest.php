@@ -24,18 +24,12 @@ class CommitRepositoryChangesRequest extends \Google\Model
   protected $fileOperationsType = FileOperation::class;
   protected $fileOperationsDataType = 'map';
   /**
-   * Optional. The commit SHA which must be the repository's current HEAD before
-   * applying this commit; otherwise this request will fail. If unset, no
-   * validation on the current HEAD commit SHA is performed.
-   *
    * @var string
    */
   public $requiredHeadCommitSha;
 
   /**
-   * Required. The changes to commit to the repository.
-   *
-   * @param CommitMetadata $commitMetadata
+   * @param CommitMetadata
    */
   public function setCommitMetadata(CommitMetadata $commitMetadata)
   {
@@ -49,10 +43,7 @@ class CommitRepositoryChangesRequest extends \Google\Model
     return $this->commitMetadata;
   }
   /**
-   * Optional. A map to the path of the file to the operation. The path is the
-   * full file path including filename, from repository root.
-   *
-   * @param FileOperation[] $fileOperations
+   * @param FileOperation[]
    */
   public function setFileOperations($fileOperations)
   {
@@ -66,11 +57,7 @@ class CommitRepositoryChangesRequest extends \Google\Model
     return $this->fileOperations;
   }
   /**
-   * Optional. The commit SHA which must be the repository's current HEAD before
-   * applying this commit; otherwise this request will fail. If unset, no
-   * validation on the current HEAD commit SHA is performed.
-   *
-   * @param string $requiredHeadCommitSha
+   * @param string
    */
   public function setRequiredHeadCommitSha($requiredHeadCommitSha)
   {

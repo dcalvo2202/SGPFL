@@ -19,90 +19,38 @@ namespace Google\Service\VMMigrationService;
 
 class UtilizationReport extends \Google\Collection
 {
-  /**
-   * The state is unknown. This value is not in use.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The report is in the making.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * Report creation completed successfully.
-   */
-  public const STATE_SUCCEEDED = 'SUCCEEDED';
-  /**
-   * Report creation failed.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * The time frame was not specified and will default to WEEK.
-   */
-  public const TIME_FRAME_TIME_FRAME_UNSPECIFIED = 'TIME_FRAME_UNSPECIFIED';
-  /**
-   * One week.
-   */
-  public const TIME_FRAME_WEEK = 'WEEK';
-  /**
-   * One month.
-   */
-  public const TIME_FRAME_MONTH = 'MONTH';
-  /**
-   * One year.
-   */
-  public const TIME_FRAME_YEAR = 'YEAR';
   protected $collection_key = 'vms';
   /**
-   * Output only. The time the report was created (this refers to the time of
-   * the request, not the time the report creation completed).
-   *
    * @var string
    */
   public $createTime;
   /**
-   * The report display name, as assigned by the user.
-   *
    * @var string
    */
   public $displayName;
   protected $errorType = Status::class;
   protected $errorDataType = '';
   /**
-   * Output only. The point in time when the time frame ends. Notice that the
-   * time frame is counted backwards. For instance if the "frame_end_time" value
-   * is 2021/01/20 and the time frame is WEEK then the report covers the week
-   * between 2021/01/20 and 2021/01/14.
-   *
    * @var string
    */
   public $frameEndTime;
   /**
-   * Output only. The report unique name.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Current state of the report.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. The time the state was last set.
-   *
    * @var string
    */
   public $stateTime;
   /**
-   * Time frame of the report.
-   *
    * @var string
    */
   public $timeFrame;
   /**
-   * Output only. Total number of VMs included in the report.
-   *
    * @var int
    */
   public $vmCount;
@@ -110,10 +58,7 @@ class UtilizationReport extends \Google\Collection
   protected $vmsDataType = 'array';
 
   /**
-   * Output only. The time the report was created (this refers to the time of
-   * the request, not the time the report creation completed).
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -127,9 +72,7 @@ class UtilizationReport extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * The report display name, as assigned by the user.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -143,10 +86,7 @@ class UtilizationReport extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Output only. Provides details on the state of the report in case of an
-   * error.
-   *
-   * @param Status $error
+   * @param Status
    */
   public function setError(Status $error)
   {
@@ -160,12 +100,7 @@ class UtilizationReport extends \Google\Collection
     return $this->error;
   }
   /**
-   * Output only. The point in time when the time frame ends. Notice that the
-   * time frame is counted backwards. For instance if the "frame_end_time" value
-   * is 2021/01/20 and the time frame is WEEK then the report covers the week
-   * between 2021/01/20 and 2021/01/14.
-   *
-   * @param string $frameEndTime
+   * @param string
    */
   public function setFrameEndTime($frameEndTime)
   {
@@ -179,9 +114,7 @@ class UtilizationReport extends \Google\Collection
     return $this->frameEndTime;
   }
   /**
-   * Output only. The report unique name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -195,27 +128,21 @@ class UtilizationReport extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. Current state of the report.
-   *
-   * Accepted values: STATE_UNSPECIFIED, CREATING, SUCCEEDED, FAILED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. The time the state was last set.
-   *
-   * @param string $stateTime
+   * @param string
    */
   public function setStateTime($stateTime)
   {
@@ -229,27 +156,21 @@ class UtilizationReport extends \Google\Collection
     return $this->stateTime;
   }
   /**
-   * Time frame of the report.
-   *
-   * Accepted values: TIME_FRAME_UNSPECIFIED, WEEK, MONTH, YEAR
-   *
-   * @param self::TIME_FRAME_* $timeFrame
+   * @param string
    */
   public function setTimeFrame($timeFrame)
   {
     $this->timeFrame = $timeFrame;
   }
   /**
-   * @return self::TIME_FRAME_*
+   * @return string
    */
   public function getTimeFrame()
   {
     return $this->timeFrame;
   }
   /**
-   * Output only. Total number of VMs included in the report.
-   *
-   * @param int $vmCount
+   * @param int
    */
   public function setVmCount($vmCount)
   {
@@ -263,11 +184,7 @@ class UtilizationReport extends \Google\Collection
     return $this->vmCount;
   }
   /**
-   * List of utilization information per VM. When sent as part of the request,
-   * the "vm_id" field is used in order to specify which VMs to include in the
-   * report. In that case all other fields are ignored.
-   *
-   * @param VmUtilizationInfo[] $vms
+   * @param VmUtilizationInfo[]
    */
   public function setVms($vms)
   {

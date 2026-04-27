@@ -19,30 +19,16 @@ namespace Google\Service\CloudBuild;
 
 class ChildStatusReference extends \Google\Collection
 {
-  /**
-   * Default enum type; should not be used.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * TaskRun.
-   */
-  public const TYPE_TASK_RUN = 'TASK_RUN';
   protected $collection_key = 'whenExpressions';
   /**
-   * Name is the name of the TaskRun or Run this is referencing.
-   *
    * @var string
    */
   public $name;
   /**
-   * PipelineTaskName is the name of the PipelineTask this is referencing.
-   *
    * @var string
    */
   public $pipelineTaskName;
   /**
-   * Output only. Type of the child reference.
-   *
    * @var string
    */
   public $type;
@@ -50,9 +36,7 @@ class ChildStatusReference extends \Google\Collection
   protected $whenExpressionsDataType = 'array';
 
   /**
-   * Name is the name of the TaskRun or Run this is referencing.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -66,9 +50,7 @@ class ChildStatusReference extends \Google\Collection
     return $this->name;
   }
   /**
-   * PipelineTaskName is the name of the PipelineTask this is referencing.
-   *
-   * @param string $pipelineTaskName
+   * @param string
    */
   public function setPipelineTaskName($pipelineTaskName)
   {
@@ -82,28 +64,21 @@ class ChildStatusReference extends \Google\Collection
     return $this->pipelineTaskName;
   }
   /**
-   * Output only. Type of the child reference.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, TASK_RUN
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * WhenExpressions is the list of checks guarding the execution of the
-   * PipelineTask
-   *
-   * @param WhenExpression[] $whenExpressions
+   * @param WhenExpression[]
    */
   public function setWhenExpressions($whenExpressions)
   {

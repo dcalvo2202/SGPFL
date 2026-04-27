@@ -20,14 +20,10 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1AnswerQueryRequestSearchSpecSearchResultListSearchResultChunkInfo extends \Google\Model
 {
   /**
-   * Chunk resource name.
-   *
    * @var string
    */
   public $chunk;
   /**
-   * Chunk textual content.
-   *
    * @var string
    */
   public $content;
@@ -35,9 +31,7 @@ class GoogleCloudDiscoveryengineV1AnswerQueryRequestSearchSpecSearchResultListSe
   protected $documentMetadataDataType = '';
 
   /**
-   * Chunk resource name.
-   *
-   * @param string $chunk
+   * @param string
    */
   public function setChunk($chunk)
   {
@@ -51,9 +45,7 @@ class GoogleCloudDiscoveryengineV1AnswerQueryRequestSearchSpecSearchResultListSe
     return $this->chunk;
   }
   /**
-   * Chunk textual content.
-   *
-   * @param string $content
+   * @param string
    */
   public function setContent($content)
   {
@@ -67,9 +59,7 @@ class GoogleCloudDiscoveryengineV1AnswerQueryRequestSearchSpecSearchResultListSe
     return $this->content;
   }
   /**
-   * Metadata of the document from the current chunk.
-   *
-   * @param GoogleCloudDiscoveryengineV1AnswerQueryRequestSearchSpecSearchResultListSearchResultChunkInfoDocumentMetadata $documentMetadata
+   * @param GoogleCloudDiscoveryengineV1AnswerQueryRequestSearchSpecSearchResultListSearchResultChunkInfoDocumentMetadata
    */
   public function setDocumentMetadata(GoogleCloudDiscoveryengineV1AnswerQueryRequestSearchSpecSearchResultListSearchResultChunkInfoDocumentMetadata $documentMetadata)
   {

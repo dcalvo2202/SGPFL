@@ -19,33 +19,13 @@ namespace Google\Service\DLP;
 
 class GooglePrivacyDlpV2InspectionRule extends \Google\Model
 {
-  protected $adjustmentRuleType = GooglePrivacyDlpV2AdjustmentRule::class;
-  protected $adjustmentRuleDataType = '';
   protected $exclusionRuleType = GooglePrivacyDlpV2ExclusionRule::class;
   protected $exclusionRuleDataType = '';
   protected $hotwordRuleType = GooglePrivacyDlpV2HotwordRule::class;
   protected $hotwordRuleDataType = '';
 
   /**
-   * Adjustment rule.
-   *
-   * @param GooglePrivacyDlpV2AdjustmentRule $adjustmentRule
-   */
-  public function setAdjustmentRule(GooglePrivacyDlpV2AdjustmentRule $adjustmentRule)
-  {
-    $this->adjustmentRule = $adjustmentRule;
-  }
-  /**
-   * @return GooglePrivacyDlpV2AdjustmentRule
-   */
-  public function getAdjustmentRule()
-  {
-    return $this->adjustmentRule;
-  }
-  /**
-   * Exclusion rule.
-   *
-   * @param GooglePrivacyDlpV2ExclusionRule $exclusionRule
+   * @param GooglePrivacyDlpV2ExclusionRule
    */
   public function setExclusionRule(GooglePrivacyDlpV2ExclusionRule $exclusionRule)
   {
@@ -59,9 +39,7 @@ class GooglePrivacyDlpV2InspectionRule extends \Google\Model
     return $this->exclusionRule;
   }
   /**
-   * Hotword-based detection rule.
-   *
-   * @param GooglePrivacyDlpV2HotwordRule $hotwordRule
+   * @param GooglePrivacyDlpV2HotwordRule
    */
   public function setHotwordRule(GooglePrivacyDlpV2HotwordRule $hotwordRule)
   {

@@ -19,10 +19,6 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowV2beta1Message extends \Google\Collection
 {
-  public const PARTICIPANT_ROLE_ROLE_UNSPECIFIED = 'ROLE_UNSPECIFIED';
-  public const PARTICIPANT_ROLE_HUMAN_AGENT = 'HUMAN_AGENT';
-  public const PARTICIPANT_ROLE_AUTOMATED_AGENT = 'AUTOMATED_AGENT';
-  public const PARTICIPANT_ROLE_END_USER = 'END_USER';
   protected $collection_key = 'responseMessages';
   /**
    * @var string
@@ -60,7 +56,7 @@ class GoogleCloudDialogflowV2beta1Message extends \Google\Collection
   protected $sentimentAnalysisDataType = '';
 
   /**
-   * @param string $content
+   * @param string
    */
   public function setContent($content)
   {
@@ -74,7 +70,7 @@ class GoogleCloudDialogflowV2beta1Message extends \Google\Collection
     return $this->content;
   }
   /**
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -88,7 +84,7 @@ class GoogleCloudDialogflowV2beta1Message extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {
@@ -102,7 +98,7 @@ class GoogleCloudDialogflowV2beta1Message extends \Google\Collection
     return $this->languageCode;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1MessageAnnotation $messageAnnotation
+   * @param GoogleCloudDialogflowV2beta1MessageAnnotation
    */
   public function setMessageAnnotation(GoogleCloudDialogflowV2beta1MessageAnnotation $messageAnnotation)
   {
@@ -116,7 +112,7 @@ class GoogleCloudDialogflowV2beta1Message extends \Google\Collection
     return $this->messageAnnotation;
   }
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -130,7 +126,7 @@ class GoogleCloudDialogflowV2beta1Message extends \Google\Collection
     return $this->name;
   }
   /**
-   * @param string $participant
+   * @param string
    */
   public function setParticipant($participant)
   {
@@ -144,21 +140,21 @@ class GoogleCloudDialogflowV2beta1Message extends \Google\Collection
     return $this->participant;
   }
   /**
-   * @param self::PARTICIPANT_ROLE_* $participantRole
+   * @param string
    */
   public function setParticipantRole($participantRole)
   {
     $this->participantRole = $participantRole;
   }
   /**
-   * @return self::PARTICIPANT_ROLE_*
+   * @return string
    */
   public function getParticipantRole()
   {
     return $this->participantRole;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1ResponseMessage[] $responseMessages
+   * @param GoogleCloudDialogflowV2beta1ResponseMessage[]
    */
   public function setResponseMessages($responseMessages)
   {
@@ -172,7 +168,7 @@ class GoogleCloudDialogflowV2beta1Message extends \Google\Collection
     return $this->responseMessages;
   }
   /**
-   * @param string $sendTime
+   * @param string
    */
   public function setSendTime($sendTime)
   {
@@ -186,7 +182,7 @@ class GoogleCloudDialogflowV2beta1Message extends \Google\Collection
     return $this->sendTime;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1SentimentAnalysisResult $sentimentAnalysis
+   * @param GoogleCloudDialogflowV2beta1SentimentAnalysisResult
    */
   public function setSentimentAnalysis(GoogleCloudDialogflowV2beta1SentimentAnalysisResult $sentimentAnalysis)
   {

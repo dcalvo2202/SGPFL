@@ -23,9 +23,7 @@ class SourceGetMetadataResponse extends \Google\Model
   protected $metadataDataType = '';
 
   /**
-   * The computed metadata.
-   *
-   * @param SourceMetadata $metadata
+   * @param SourceMetadata
    */
   public function setMetadata(SourceMetadata $metadata)
   {

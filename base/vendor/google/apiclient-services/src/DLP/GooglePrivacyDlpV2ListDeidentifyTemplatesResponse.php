@@ -23,18 +23,12 @@ class GooglePrivacyDlpV2ListDeidentifyTemplatesResponse extends \Google\Collecti
   protected $deidentifyTemplatesType = GooglePrivacyDlpV2DeidentifyTemplate::class;
   protected $deidentifyTemplatesDataType = 'array';
   /**
-   * If the next page is available then the next page token to be used in the
-   * following ListDeidentifyTemplates request.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * List of deidentify templates, up to page_size in
-   * ListDeidentifyTemplatesRequest.
-   *
-   * @param GooglePrivacyDlpV2DeidentifyTemplate[] $deidentifyTemplates
+   * @param GooglePrivacyDlpV2DeidentifyTemplate[]
    */
   public function setDeidentifyTemplates($deidentifyTemplates)
   {
@@ -48,10 +42,7 @@ class GooglePrivacyDlpV2ListDeidentifyTemplatesResponse extends \Google\Collecti
     return $this->deidentifyTemplates;
   }
   /**
-   * If the next page is available then the next page token to be used in the
-   * following ListDeidentifyTemplates request.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

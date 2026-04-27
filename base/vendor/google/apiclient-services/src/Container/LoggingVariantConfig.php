@@ -20,37 +20,19 @@ namespace Google\Service\Container;
 class LoggingVariantConfig extends \Google\Model
 {
   /**
-   * Default value. This shouldn't be used.
-   */
-  public const VARIANT_VARIANT_UNSPECIFIED = 'VARIANT_UNSPECIFIED';
-  /**
-   * default logging variant.
-   */
-  public const VARIANT_DEFAULT = 'DEFAULT';
-  /**
-   * maximum logging throughput variant.
-   */
-  public const VARIANT_MAX_THROUGHPUT = 'MAX_THROUGHPUT';
-  /**
-   * Logging variant deployed on nodes.
-   *
    * @var string
    */
   public $variant;
 
   /**
-   * Logging variant deployed on nodes.
-   *
-   * Accepted values: VARIANT_UNSPECIFIED, DEFAULT, MAX_THROUGHPUT
-   *
-   * @param self::VARIANT_* $variant
+   * @param string
    */
   public function setVariant($variant)
   {
     $this->variant = $variant;
   }
   /**
-   * @return self::VARIANT_*
+   * @return string
    */
   public function getVariant()
   {

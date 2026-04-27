@@ -20,44 +20,28 @@ namespace Google\Service\Games;
 class ScoreSubmission extends \Google\Model
 {
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#scoreSubmission`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The leaderboard this score is being submitted to.
-   *
    * @var string
    */
   public $leaderboardId;
   /**
-   * The new score being submitted.
-   *
    * @var string
    */
   public $score;
   /**
-   * Additional information about this score. Values will contain no more than
-   * 64 URI-safe characters as defined by section 2.3 of RFC 3986.
-   *
    * @var string
    */
   public $scoreTag;
   /**
-   * Signature Values will contain URI-safe characters as defined by section 2.3
-   * of RFC 3986.
-   *
    * @var string
    */
   public $signature;
 
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#scoreSubmission`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -71,9 +55,7 @@ class ScoreSubmission extends \Google\Model
     return $this->kind;
   }
   /**
-   * The leaderboard this score is being submitted to.
-   *
-   * @param string $leaderboardId
+   * @param string
    */
   public function setLeaderboardId($leaderboardId)
   {
@@ -87,9 +69,7 @@ class ScoreSubmission extends \Google\Model
     return $this->leaderboardId;
   }
   /**
-   * The new score being submitted.
-   *
-   * @param string $score
+   * @param string
    */
   public function setScore($score)
   {
@@ -103,10 +83,7 @@ class ScoreSubmission extends \Google\Model
     return $this->score;
   }
   /**
-   * Additional information about this score. Values will contain no more than
-   * 64 URI-safe characters as defined by section 2.3 of RFC 3986.
-   *
-   * @param string $scoreTag
+   * @param string
    */
   public function setScoreTag($scoreTag)
   {
@@ -120,10 +97,7 @@ class ScoreSubmission extends \Google\Model
     return $this->scoreTag;
   }
   /**
-   * Signature Values will contain URI-safe characters as defined by section 2.3
-   * of RFC 3986.
-   *
-   * @param string $signature
+   * @param string
    */
   public function setSignature($signature)
   {

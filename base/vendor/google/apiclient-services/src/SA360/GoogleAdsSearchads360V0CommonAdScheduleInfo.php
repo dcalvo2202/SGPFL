@@ -20,154 +20,42 @@ namespace Google\Service\SA360;
 class GoogleAdsSearchads360V0CommonAdScheduleInfo extends \Google\Model
 {
   /**
-   * Not specified.
-   */
-  public const DAY_OF_WEEK_UNSPECIFIED = 'UNSPECIFIED';
-  /**
-   * The value is unknown in this version.
-   */
-  public const DAY_OF_WEEK_UNKNOWN = 'UNKNOWN';
-  /**
-   * Monday.
-   */
-  public const DAY_OF_WEEK_MONDAY = 'MONDAY';
-  /**
-   * Tuesday.
-   */
-  public const DAY_OF_WEEK_TUESDAY = 'TUESDAY';
-  /**
-   * Wednesday.
-   */
-  public const DAY_OF_WEEK_WEDNESDAY = 'WEDNESDAY';
-  /**
-   * Thursday.
-   */
-  public const DAY_OF_WEEK_THURSDAY = 'THURSDAY';
-  /**
-   * Friday.
-   */
-  public const DAY_OF_WEEK_FRIDAY = 'FRIDAY';
-  /**
-   * Saturday.
-   */
-  public const DAY_OF_WEEK_SATURDAY = 'SATURDAY';
-  /**
-   * Sunday.
-   */
-  public const DAY_OF_WEEK_SUNDAY = 'SUNDAY';
-  /**
-   * Not specified.
-   */
-  public const END_MINUTE_UNSPECIFIED = 'UNSPECIFIED';
-  /**
-   * The value is unknown in this version.
-   */
-  public const END_MINUTE_UNKNOWN = 'UNKNOWN';
-  /**
-   * Zero minutes past the hour.
-   */
-  public const END_MINUTE_ZERO = 'ZERO';
-  /**
-   * Fifteen minutes past the hour.
-   */
-  public const END_MINUTE_FIFTEEN = 'FIFTEEN';
-  /**
-   * Thirty minutes past the hour.
-   */
-  public const END_MINUTE_THIRTY = 'THIRTY';
-  /**
-   * Forty-five minutes past the hour.
-   */
-  public const END_MINUTE_FORTY_FIVE = 'FORTY_FIVE';
-  /**
-   * Not specified.
-   */
-  public const START_MINUTE_UNSPECIFIED = 'UNSPECIFIED';
-  /**
-   * The value is unknown in this version.
-   */
-  public const START_MINUTE_UNKNOWN = 'UNKNOWN';
-  /**
-   * Zero minutes past the hour.
-   */
-  public const START_MINUTE_ZERO = 'ZERO';
-  /**
-   * Fifteen minutes past the hour.
-   */
-  public const START_MINUTE_FIFTEEN = 'FIFTEEN';
-  /**
-   * Thirty minutes past the hour.
-   */
-  public const START_MINUTE_THIRTY = 'THIRTY';
-  /**
-   * Forty-five minutes past the hour.
-   */
-  public const START_MINUTE_FORTY_FIVE = 'FORTY_FIVE';
-  /**
-   * Day of the week the schedule applies to. This field is required for CREATE
-   * operations and is prohibited on UPDATE operations.
-   *
    * @var string
    */
   public $dayOfWeek;
   /**
-   * Ending hour in 24 hour time; 24 signifies end of the day. This field must
-   * be between 0 and 24, inclusive. This field is required for CREATE
-   * operations and is prohibited on UPDATE operations.
-   *
    * @var int
    */
   public $endHour;
   /**
-   * Minutes after the end hour at which this schedule ends. The schedule is
-   * exclusive of the end minute. This field is required for CREATE operations
-   * and is prohibited on UPDATE operations.
-   *
    * @var string
    */
   public $endMinute;
   /**
-   * Starting hour in 24 hour time. This field must be between 0 and 23,
-   * inclusive. This field is required for CREATE operations and is prohibited
-   * on UPDATE operations.
-   *
    * @var int
    */
   public $startHour;
   /**
-   * Minutes after the start hour at which this schedule starts. This field is
-   * required for CREATE operations and is prohibited on UPDATE operations.
-   *
    * @var string
    */
   public $startMinute;
 
   /**
-   * Day of the week the schedule applies to. This field is required for CREATE
-   * operations and is prohibited on UPDATE operations.
-   *
-   * Accepted values: UNSPECIFIED, UNKNOWN, MONDAY, TUESDAY, WEDNESDAY,
-   * THURSDAY, FRIDAY, SATURDAY, SUNDAY
-   *
-   * @param self::DAY_OF_WEEK_* $dayOfWeek
+   * @param string
    */
   public function setDayOfWeek($dayOfWeek)
   {
     $this->dayOfWeek = $dayOfWeek;
   }
   /**
-   * @return self::DAY_OF_WEEK_*
+   * @return string
    */
   public function getDayOfWeek()
   {
     return $this->dayOfWeek;
   }
   /**
-   * Ending hour in 24 hour time; 24 signifies end of the day. This field must
-   * be between 0 and 24, inclusive. This field is required for CREATE
-   * operations and is prohibited on UPDATE operations.
-   *
-   * @param int $endHour
+   * @param int
    */
   public function setEndHour($endHour)
   {
@@ -181,31 +69,21 @@ class GoogleAdsSearchads360V0CommonAdScheduleInfo extends \Google\Model
     return $this->endHour;
   }
   /**
-   * Minutes after the end hour at which this schedule ends. The schedule is
-   * exclusive of the end minute. This field is required for CREATE operations
-   * and is prohibited on UPDATE operations.
-   *
-   * Accepted values: UNSPECIFIED, UNKNOWN, ZERO, FIFTEEN, THIRTY, FORTY_FIVE
-   *
-   * @param self::END_MINUTE_* $endMinute
+   * @param string
    */
   public function setEndMinute($endMinute)
   {
     $this->endMinute = $endMinute;
   }
   /**
-   * @return self::END_MINUTE_*
+   * @return string
    */
   public function getEndMinute()
   {
     return $this->endMinute;
   }
   /**
-   * Starting hour in 24 hour time. This field must be between 0 and 23,
-   * inclusive. This field is required for CREATE operations and is prohibited
-   * on UPDATE operations.
-   *
-   * @param int $startHour
+   * @param int
    */
   public function setStartHour($startHour)
   {
@@ -219,19 +97,14 @@ class GoogleAdsSearchads360V0CommonAdScheduleInfo extends \Google\Model
     return $this->startHour;
   }
   /**
-   * Minutes after the start hour at which this schedule starts. This field is
-   * required for CREATE operations and is prohibited on UPDATE operations.
-   *
-   * Accepted values: UNSPECIFIED, UNKNOWN, ZERO, FIFTEEN, THIRTY, FORTY_FIVE
-   *
-   * @param self::START_MINUTE_* $startMinute
+   * @param string
    */
   public function setStartMinute($startMinute)
   {
     $this->startMinute = $startMinute;
   }
   /**
-   * @return self::START_MINUTE_*
+   * @return string
    */
   public function getStartMinute()
   {

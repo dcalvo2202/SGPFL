@@ -22,16 +22,12 @@ class ConnectorConfigurationUsernamePassword extends \Google\Model
   protected $passwordType = ConnectorConfigurationSecret::class;
   protected $passwordDataType = '';
   /**
-   * Required. Username.
-   *
    * @var string
    */
   public $username;
 
   /**
-   * Required. Password.
-   *
-   * @param ConnectorConfigurationSecret $password
+   * @param ConnectorConfigurationSecret
    */
   public function setPassword(ConnectorConfigurationSecret $password)
   {
@@ -45,9 +41,7 @@ class ConnectorConfigurationUsernamePassword extends \Google\Model
     return $this->password;
   }
   /**
-   * Required. Username.
-   *
-   * @param string $username
+   * @param string
    */
   public function setUsername($username)
   {

@@ -21,22 +21,10 @@ class SpeechRecognitionAlternative extends \Google\Collection
 {
   protected $collection_key = 'words';
   /**
-   * The confidence estimate between 0.0 and 1.0. A higher number indicates an
-   * estimated greater likelihood that the recognized words are correct. This
-   * field is set only for the top alternative of a non-streaming result or, of
-   * a streaming result where `is_final=true`. This field is not guaranteed to
-   * be accurate and users should not rely on it to be always provided. The
-   * default of 0.0 is a sentinel value indicating `confidence` was not set.
-   *
    * @var float
    */
   public $confidence;
   /**
-   * Transcript text representing the words that the user spoke. In languages
-   * that use spaces to separate words, the transcript might have a leading
-   * space if it isn't the first result. You can concatenate each result to
-   * obtain the full transcript without using a separator.
-   *
    * @var string
    */
   public $transcript;
@@ -44,14 +32,7 @@ class SpeechRecognitionAlternative extends \Google\Collection
   protected $wordsDataType = 'array';
 
   /**
-   * The confidence estimate between 0.0 and 1.0. A higher number indicates an
-   * estimated greater likelihood that the recognized words are correct. This
-   * field is set only for the top alternative of a non-streaming result or, of
-   * a streaming result where `is_final=true`. This field is not guaranteed to
-   * be accurate and users should not rely on it to be always provided. The
-   * default of 0.0 is a sentinel value indicating `confidence` was not set.
-   *
-   * @param float $confidence
+   * @param float
    */
   public function setConfidence($confidence)
   {
@@ -65,12 +46,7 @@ class SpeechRecognitionAlternative extends \Google\Collection
     return $this->confidence;
   }
   /**
-   * Transcript text representing the words that the user spoke. In languages
-   * that use spaces to separate words, the transcript might have a leading
-   * space if it isn't the first result. You can concatenate each result to
-   * obtain the full transcript without using a separator.
-   *
-   * @param string $transcript
+   * @param string
    */
   public function setTranscript($transcript)
   {
@@ -84,11 +60,7 @@ class SpeechRecognitionAlternative extends \Google\Collection
     return $this->transcript;
   }
   /**
-   * A list of word-specific information for each recognized word. Note: When
-   * `enable_speaker_diarization` is true, you will see all the words from the
-   * beginning of the audio.
-   *
-   * @param WordInfo[] $words
+   * @param WordInfo[]
    */
   public function setWords($words)
   {

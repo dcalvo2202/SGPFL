@@ -20,62 +20,30 @@ namespace Google\Service\ServiceUsage;
 class DisableServiceRequest extends \Google\Model
 {
   /**
-   * When unset, the default behavior is used, which is SKIP.
-   */
-  public const CHECK_IF_SERVICE_HAS_USAGE_CHECK_IF_SERVICE_HAS_USAGE_UNSPECIFIED = 'CHECK_IF_SERVICE_HAS_USAGE_UNSPECIFIED';
-  /**
-   * If set, skip checking service usage when disabling a service.
-   */
-  public const CHECK_IF_SERVICE_HAS_USAGE_SKIP = 'SKIP';
-  /**
-   * If set, service usage is checked when disabling the service. If a service,
-   * or its dependents, has usage in the last 30 days, the request returns a
-   * FAILED_PRECONDITION error.
-   */
-  public const CHECK_IF_SERVICE_HAS_USAGE_CHECK = 'CHECK';
-  /**
-   * Defines the behavior for checking service usage when disabling a service.
-   *
    * @var string
    */
   public $checkIfServiceHasUsage;
   /**
-   * Indicates if services that are enabled and which depend on this service
-   * should also be disabled. If not set, an error will be generated if any
-   * enabled services depend on the service to be disabled. When set, the
-   * service, and any enabled services that depend on it, will be disabled
-   * together.
-   *
    * @var bool
    */
   public $disableDependentServices;
 
   /**
-   * Defines the behavior for checking service usage when disabling a service.
-   *
-   * Accepted values: CHECK_IF_SERVICE_HAS_USAGE_UNSPECIFIED, SKIP, CHECK
-   *
-   * @param self::CHECK_IF_SERVICE_HAS_USAGE_* $checkIfServiceHasUsage
+   * @param string
    */
   public function setCheckIfServiceHasUsage($checkIfServiceHasUsage)
   {
     $this->checkIfServiceHasUsage = $checkIfServiceHasUsage;
   }
   /**
-   * @return self::CHECK_IF_SERVICE_HAS_USAGE_*
+   * @return string
    */
   public function getCheckIfServiceHasUsage()
   {
     return $this->checkIfServiceHasUsage;
   }
   /**
-   * Indicates if services that are enabled and which depend on this service
-   * should also be disabled. If not set, an error will be generated if any
-   * enabled services depend on the service to be disabled. When set, the
-   * service, and any enabled services that depend on it, will be disabled
-   * together.
-   *
-   * @param bool $disableDependentServices
+   * @param bool
    */
   public function setDisableDependentServices($disableDependentServices)
   {

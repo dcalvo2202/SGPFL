@@ -20,22 +20,16 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1TestDatastoreResponse extends \Google\Model
 {
   /**
-   * Output only. Error message of test connection failure
-   *
    * @var string
    */
   public $error;
   /**
-   * Output only. It could be `completed` or `failed`
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Output only. Error message of test connection failure
-   *
-   * @param string $error
+   * @param string
    */
   public function setError($error)
   {
@@ -49,9 +43,7 @@ class GoogleCloudApigeeV1TestDatastoreResponse extends \Google\Model
     return $this->error;
   }
   /**
-   * Output only. It could be `completed` or `failed`
-   *
-   * @param string $state
+   * @param string
    */
   public function setState($state)
   {

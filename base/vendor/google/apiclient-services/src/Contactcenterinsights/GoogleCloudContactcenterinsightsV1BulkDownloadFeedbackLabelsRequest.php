@@ -19,84 +19,38 @@ namespace Google\Service\Contactcenterinsights;
 
 class GoogleCloudContactcenterinsightsV1BulkDownloadFeedbackLabelsRequest extends \Google\Collection
 {
-  /**
-   * Unspecified format
-   */
-  public const FEEDBACK_LABEL_TYPE_FEEDBACK_LABEL_TYPE_UNSPECIFIED = 'FEEDBACK_LABEL_TYPE_UNSPECIFIED';
-  /**
-   * Downloaded file will contain all Quality AI labels from the latest
-   * scorecard revision.
-   */
-  public const FEEDBACK_LABEL_TYPE_QUALITY_AI = 'QUALITY_AI';
-  /**
-   * Downloaded file will contain only Topic Modeling labels.
-   */
-  public const FEEDBACK_LABEL_TYPE_TOPIC_MODELING = 'TOPIC_MODELING';
-  /**
-   * Agent Assist Summarization labels.
-   */
-  public const FEEDBACK_LABEL_TYPE_AGENT_ASSIST_SUMMARY = 'AGENT_ASSIST_SUMMARY';
   protected $collection_key = 'templateQaScorecardId';
   /**
-   * Optional. Filter parent conversations to download feedback labels for. When
-   * specified, the feedback labels will be downloaded for the conversations
-   * that match the filter. If `template_qa_scorecard_id` is set, all the
-   * conversations that match the filter will be paired with the questions under
-   * the scorecard for labeling.
-   *
    * @var string
    */
   public $conversationFilter;
   /**
-   * Optional. The type of feedback labels that will be downloaded.
-   *
    * @var string
    */
   public $feedbackLabelType;
   /**
-   * Optional. A filter to reduce results to a specific subset. Supports
-   * disjunctions (OR) and conjunctions (AND). Supported fields: *
-   * `issue_model_id` * `qa_question_id` * `qa_scorecard_id` * `min_create_time`
-   * * `max_create_time` * `min_update_time` * `max_update_time` *
-   * `feedback_label_type`: QUALITY_AI, TOPIC_MODELING
-   *
    * @var string
    */
   public $filter;
   protected $gcsDestinationType = GoogleCloudContactcenterinsightsV1BulkDownloadFeedbackLabelsRequestGcsDestination::class;
   protected $gcsDestinationDataType = '';
   /**
-   * Optional. Limits the maximum number of feedback labels that will be
-   * downloaded. The first `N` feedback labels will be downloaded.
-   *
    * @var int
    */
   public $maxDownloadCount;
   /**
-   * Required. The parent resource for new feedback labels.
-   *
    * @var string
    */
   public $parent;
   protected $sheetsDestinationType = GoogleCloudContactcenterinsightsV1BulkDownloadFeedbackLabelsRequestSheetsDestination::class;
   protected $sheetsDestinationDataType = '';
   /**
-   * Optional. If set, a template for labeling conversations and scorecard
-   * questions will be created from the conversation_filter and the questions
-   * under the scorecard(s). The feedback label `filter` will be ignored.
-   *
    * @var string[]
    */
   public $templateQaScorecardId;
 
   /**
-   * Optional. Filter parent conversations to download feedback labels for. When
-   * specified, the feedback labels will be downloaded for the conversations
-   * that match the filter. If `template_qa_scorecard_id` is set, all the
-   * conversations that match the filter will be paired with the questions under
-   * the scorecard for labeling.
-   *
-   * @param string $conversationFilter
+   * @param string
    */
   public function setConversationFilter($conversationFilter)
   {
@@ -110,32 +64,21 @@ class GoogleCloudContactcenterinsightsV1BulkDownloadFeedbackLabelsRequest extend
     return $this->conversationFilter;
   }
   /**
-   * Optional. The type of feedback labels that will be downloaded.
-   *
-   * Accepted values: FEEDBACK_LABEL_TYPE_UNSPECIFIED, QUALITY_AI,
-   * TOPIC_MODELING, AGENT_ASSIST_SUMMARY
-   *
-   * @param self::FEEDBACK_LABEL_TYPE_* $feedbackLabelType
+   * @param string
    */
   public function setFeedbackLabelType($feedbackLabelType)
   {
     $this->feedbackLabelType = $feedbackLabelType;
   }
   /**
-   * @return self::FEEDBACK_LABEL_TYPE_*
+   * @return string
    */
   public function getFeedbackLabelType()
   {
     return $this->feedbackLabelType;
   }
   /**
-   * Optional. A filter to reduce results to a specific subset. Supports
-   * disjunctions (OR) and conjunctions (AND). Supported fields: *
-   * `issue_model_id` * `qa_question_id` * `qa_scorecard_id` * `min_create_time`
-   * * `max_create_time` * `min_update_time` * `max_update_time` *
-   * `feedback_label_type`: QUALITY_AI, TOPIC_MODELING
-   *
-   * @param string $filter
+   * @param string
    */
   public function setFilter($filter)
   {
@@ -149,9 +92,7 @@ class GoogleCloudContactcenterinsightsV1BulkDownloadFeedbackLabelsRequest extend
     return $this->filter;
   }
   /**
-   * A cloud storage bucket destination.
-   *
-   * @param GoogleCloudContactcenterinsightsV1BulkDownloadFeedbackLabelsRequestGcsDestination $gcsDestination
+   * @param GoogleCloudContactcenterinsightsV1BulkDownloadFeedbackLabelsRequestGcsDestination
    */
   public function setGcsDestination(GoogleCloudContactcenterinsightsV1BulkDownloadFeedbackLabelsRequestGcsDestination $gcsDestination)
   {
@@ -165,10 +106,7 @@ class GoogleCloudContactcenterinsightsV1BulkDownloadFeedbackLabelsRequest extend
     return $this->gcsDestination;
   }
   /**
-   * Optional. Limits the maximum number of feedback labels that will be
-   * downloaded. The first `N` feedback labels will be downloaded.
-   *
-   * @param int $maxDownloadCount
+   * @param int
    */
   public function setMaxDownloadCount($maxDownloadCount)
   {
@@ -182,9 +120,7 @@ class GoogleCloudContactcenterinsightsV1BulkDownloadFeedbackLabelsRequest extend
     return $this->maxDownloadCount;
   }
   /**
-   * Required. The parent resource for new feedback labels.
-   *
-   * @param string $parent
+   * @param string
    */
   public function setParent($parent)
   {
@@ -198,9 +134,7 @@ class GoogleCloudContactcenterinsightsV1BulkDownloadFeedbackLabelsRequest extend
     return $this->parent;
   }
   /**
-   * A sheets document destination.
-   *
-   * @param GoogleCloudContactcenterinsightsV1BulkDownloadFeedbackLabelsRequestSheetsDestination $sheetsDestination
+   * @param GoogleCloudContactcenterinsightsV1BulkDownloadFeedbackLabelsRequestSheetsDestination
    */
   public function setSheetsDestination(GoogleCloudContactcenterinsightsV1BulkDownloadFeedbackLabelsRequestSheetsDestination $sheetsDestination)
   {
@@ -214,11 +148,7 @@ class GoogleCloudContactcenterinsightsV1BulkDownloadFeedbackLabelsRequest extend
     return $this->sheetsDestination;
   }
   /**
-   * Optional. If set, a template for labeling conversations and scorecard
-   * questions will be created from the conversation_filter and the questions
-   * under the scorecard(s). The feedback label `filter` will be ignored.
-   *
-   * @param string[] $templateQaScorecardId
+   * @param string[]
    */
   public function setTemplateQaScorecardId($templateQaScorecardId)
   {

@@ -20,26 +20,16 @@ namespace Google\Service\CloudIdentity;
 class SamlSpConfig extends \Google\Model
 {
   /**
-   * Output only. The SAML **Assertion Consumer Service (ACS) URL** to be used
-   * for the IDP-initiated login. Assumed to accept response messages via the
-   * `HTTP-POST` binding.
-   *
    * @var string
    */
   public $assertionConsumerServiceUri;
   /**
-   * Output only. The SAML **Entity ID** for this service provider.
-   *
    * @var string
    */
   public $entityId;
 
   /**
-   * Output only. The SAML **Assertion Consumer Service (ACS) URL** to be used
-   * for the IDP-initiated login. Assumed to accept response messages via the
-   * `HTTP-POST` binding.
-   *
-   * @param string $assertionConsumerServiceUri
+   * @param string
    */
   public function setAssertionConsumerServiceUri($assertionConsumerServiceUri)
   {
@@ -53,9 +43,7 @@ class SamlSpConfig extends \Google\Model
     return $this->assertionConsumerServiceUri;
   }
   /**
-   * Output only. The SAML **Entity ID** for this service provider.
-   *
-   * @param string $entityId
+   * @param string
    */
   public function setEntityId($entityId)
   {

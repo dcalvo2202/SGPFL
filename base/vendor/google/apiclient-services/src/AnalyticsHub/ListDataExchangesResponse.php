@@ -23,16 +23,12 @@ class ListDataExchangesResponse extends \Google\Collection
   protected $dataExchangesType = DataExchange::class;
   protected $dataExchangesDataType = 'array';
   /**
-   * A token to request the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of data exchanges.
-   *
-   * @param DataExchange[] $dataExchanges
+   * @param DataExchange[]
    */
   public function setDataExchanges($dataExchanges)
   {
@@ -46,9 +42,7 @@ class ListDataExchangesResponse extends \Google\Collection
     return $this->dataExchanges;
   }
   /**
-   * A token to request the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

@@ -21,9 +21,6 @@ class GoogleCloudRecommendationengineV1beta1ListUserEventsResponse extends \Goog
 {
   protected $collection_key = 'userEvents';
   /**
-   * If empty, the list is complete. If nonempty, the token to pass to the next
-   * request's ListUserEvents.page_token.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GoogleCloudRecommendationengineV1beta1ListUserEventsResponse extends \Goog
   protected $userEventsDataType = 'array';
 
   /**
-   * If empty, the list is complete. If nonempty, the token to pass to the next
-   * request's ListUserEvents.page_token.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class GoogleCloudRecommendationengineV1beta1ListUserEventsResponse extends \Goog
     return $this->nextPageToken;
   }
   /**
-   * The user events.
-   *
-   * @param GoogleCloudRecommendationengineV1beta1UserEvent[] $userEvents
+   * @param GoogleCloudRecommendationengineV1beta1UserEvent[]
    */
   public function setUserEvents($userEvents)
   {

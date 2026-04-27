@@ -20,39 +20,24 @@ namespace Google\Service\Testing;
 class AndroidDevice extends \Google\Model
 {
   /**
-   * Required. The id of the Android device to be used. Use the
-   * TestEnvironmentDiscoveryService to get supported options.
-   *
    * @var string
    */
   public $androidModelId;
   /**
-   * Required. The id of the Android OS version to be used. Use the
-   * TestEnvironmentDiscoveryService to get supported options.
-   *
    * @var string
    */
   public $androidVersionId;
   /**
-   * Required. The locale the test device used for testing. Use the
-   * TestEnvironmentDiscoveryService to get supported options.
-   *
    * @var string
    */
   public $locale;
   /**
-   * Required. How the device is oriented during the test. Use the
-   * TestEnvironmentDiscoveryService to get supported options.
-   *
    * @var string
    */
   public $orientation;
 
   /**
-   * Required. The id of the Android device to be used. Use the
-   * TestEnvironmentDiscoveryService to get supported options.
-   *
-   * @param string $androidModelId
+   * @param string
    */
   public function setAndroidModelId($androidModelId)
   {
@@ -66,10 +51,7 @@ class AndroidDevice extends \Google\Model
     return $this->androidModelId;
   }
   /**
-   * Required. The id of the Android OS version to be used. Use the
-   * TestEnvironmentDiscoveryService to get supported options.
-   *
-   * @param string $androidVersionId
+   * @param string
    */
   public function setAndroidVersionId($androidVersionId)
   {
@@ -83,10 +65,7 @@ class AndroidDevice extends \Google\Model
     return $this->androidVersionId;
   }
   /**
-   * Required. The locale the test device used for testing. Use the
-   * TestEnvironmentDiscoveryService to get supported options.
-   *
-   * @param string $locale
+   * @param string
    */
   public function setLocale($locale)
   {
@@ -100,10 +79,7 @@ class AndroidDevice extends \Google\Model
     return $this->locale;
   }
   /**
-   * Required. How the device is oriented during the test. Use the
-   * TestEnvironmentDiscoveryService to get supported options.
-   *
-   * @param string $orientation
+   * @param string
    */
   public function setOrientation($orientation)
   {

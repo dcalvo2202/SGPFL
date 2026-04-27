@@ -21,66 +21,44 @@ class ItemLevelIssue extends \Google\Collection
 {
   protected $collection_key = 'applicableCountries';
   /**
-   * List of country codes (ISO 3166-1 alpha-2) where issue applies to the CSS
-   * Product.
-   *
    * @var string[]
    */
   public $applicableCountries;
   /**
-   * The attribute's name, if the issue is caused by a single attribute.
-   *
    * @var string
    */
   public $attribute;
   /**
-   * The error code of the issue.
-   *
    * @var string
    */
   public $code;
   /**
-   * A short issue description in English.
-   *
    * @var string
    */
   public $description;
   /**
-   * The destination the issue applies to.
-   *
    * @var string
    */
   public $destination;
   /**
-   * A detailed issue description in English.
-   *
    * @var string
    */
   public $detail;
   /**
-   * The URL of a web page to help with resolving this issue.
-   *
    * @var string
    */
   public $documentation;
   /**
-   * Whether the issue can be resolved by the merchant.
-   *
    * @var string
    */
   public $resolution;
   /**
-   * How this issue affects serving of the CSS Product.
-   *
    * @var string
    */
   public $servability;
 
   /**
-   * List of country codes (ISO 3166-1 alpha-2) where issue applies to the CSS
-   * Product.
-   *
-   * @param string[] $applicableCountries
+   * @param string[]
    */
   public function setApplicableCountries($applicableCountries)
   {
@@ -94,9 +72,7 @@ class ItemLevelIssue extends \Google\Collection
     return $this->applicableCountries;
   }
   /**
-   * The attribute's name, if the issue is caused by a single attribute.
-   *
-   * @param string $attribute
+   * @param string
    */
   public function setAttribute($attribute)
   {
@@ -110,9 +86,7 @@ class ItemLevelIssue extends \Google\Collection
     return $this->attribute;
   }
   /**
-   * The error code of the issue.
-   *
-   * @param string $code
+   * @param string
    */
   public function setCode($code)
   {
@@ -126,9 +100,7 @@ class ItemLevelIssue extends \Google\Collection
     return $this->code;
   }
   /**
-   * A short issue description in English.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -142,9 +114,7 @@ class ItemLevelIssue extends \Google\Collection
     return $this->description;
   }
   /**
-   * The destination the issue applies to.
-   *
-   * @param string $destination
+   * @param string
    */
   public function setDestination($destination)
   {
@@ -158,9 +128,7 @@ class ItemLevelIssue extends \Google\Collection
     return $this->destination;
   }
   /**
-   * A detailed issue description in English.
-   *
-   * @param string $detail
+   * @param string
    */
   public function setDetail($detail)
   {
@@ -174,9 +142,7 @@ class ItemLevelIssue extends \Google\Collection
     return $this->detail;
   }
   /**
-   * The URL of a web page to help with resolving this issue.
-   *
-   * @param string $documentation
+   * @param string
    */
   public function setDocumentation($documentation)
   {
@@ -190,9 +156,7 @@ class ItemLevelIssue extends \Google\Collection
     return $this->documentation;
   }
   /**
-   * Whether the issue can be resolved by the merchant.
-   *
-   * @param string $resolution
+   * @param string
    */
   public function setResolution($resolution)
   {
@@ -206,9 +170,7 @@ class ItemLevelIssue extends \Google\Collection
     return $this->resolution;
   }
   /**
-   * How this issue affects serving of the CSS Product.
-   *
-   * @param string $servability
+   * @param string
    */
   public function setServability($servability)
   {

@@ -20,34 +20,16 @@ namespace Google\Service\GKEHub;
 class ConfigManagementPolicyControllerMigration extends \Google\Model
 {
   /**
-   * Unknown state of migration.
-   */
-  public const STAGE_STAGE_UNSPECIFIED = 'STAGE_UNSPECIFIED';
-  /**
-   * ACM Hub/Operator manages policycontroller. No migration yet completed.
-   */
-  public const STAGE_ACM_MANAGED = 'ACM_MANAGED';
-  /**
-   * All migrations steps complete; Poco Hub now manages policycontroller.
-   */
-  public const STAGE_POCO_MANAGED = 'POCO_MANAGED';
-  /**
-   * Last time this membership spec was copied to PoCo feature.
-   *
    * @var string
    */
   public $copyTime;
   /**
-   * Stage of the migration.
-   *
    * @var string
    */
   public $stage;
 
   /**
-   * Last time this membership spec was copied to PoCo feature.
-   *
-   * @param string $copyTime
+   * @param string
    */
   public function setCopyTime($copyTime)
   {
@@ -61,18 +43,14 @@ class ConfigManagementPolicyControllerMigration extends \Google\Model
     return $this->copyTime;
   }
   /**
-   * Stage of the migration.
-   *
-   * Accepted values: STAGE_UNSPECIFIED, ACM_MANAGED, POCO_MANAGED
-   *
-   * @param self::STAGE_* $stage
+   * @param string
    */
   public function setStage($stage)
   {
     $this->stage = $stage;
   }
   /**
-   * @return self::STAGE_*
+   * @return string
    */
   public function getStage()
   {

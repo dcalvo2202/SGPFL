@@ -23,23 +23,16 @@ class ListDomainsResponse extends \Google\Collection
   protected $domainsType = Domain::class;
   protected $domainsDataType = 'array';
   /**
-   * Output only. A token identifying the next page of results the server should
-   * return.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Output only. Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * Output only. The list of domains.
-   *
-   * @param Domain[] $domains
+   * @param Domain[]
    */
   public function setDomains($domains)
   {
@@ -53,10 +46,7 @@ class ListDomainsResponse extends \Google\Collection
     return $this->domains;
   }
   /**
-   * Output only. A token identifying the next page of results the server should
-   * return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -70,9 +60,7 @@ class ListDomainsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Output only. Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

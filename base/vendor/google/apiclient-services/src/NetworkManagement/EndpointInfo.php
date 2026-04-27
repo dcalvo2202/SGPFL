@@ -20,58 +20,40 @@ namespace Google\Service\NetworkManagement;
 class EndpointInfo extends \Google\Model
 {
   /**
-   * Destination IP address.
-   *
    * @var string
    */
   public $destinationIp;
   /**
-   * URI of the network where this packet is sent to.
-   *
    * @var string
    */
   public $destinationNetworkUri;
   /**
-   * Destination port. Only valid when protocol is TCP or UDP.
-   *
    * @var int
    */
   public $destinationPort;
   /**
-   * IP protocol in string format, for example: "TCP", "UDP", "ICMP".
-   *
    * @var string
    */
   public $protocol;
   /**
-   * URI of the source telemetry agent this packet originates from.
-   *
    * @var string
    */
   public $sourceAgentUri;
   /**
-   * Source IP address.
-   *
    * @var string
    */
   public $sourceIp;
   /**
-   * URI of the network where this packet originates from.
-   *
    * @var string
    */
   public $sourceNetworkUri;
   /**
-   * Source port. Only valid when protocol is TCP or UDP.
-   *
    * @var int
    */
   public $sourcePort;
 
   /**
-   * Destination IP address.
-   *
-   * @param string $destinationIp
+   * @param string
    */
   public function setDestinationIp($destinationIp)
   {
@@ -85,9 +67,7 @@ class EndpointInfo extends \Google\Model
     return $this->destinationIp;
   }
   /**
-   * URI of the network where this packet is sent to.
-   *
-   * @param string $destinationNetworkUri
+   * @param string
    */
   public function setDestinationNetworkUri($destinationNetworkUri)
   {
@@ -101,9 +81,7 @@ class EndpointInfo extends \Google\Model
     return $this->destinationNetworkUri;
   }
   /**
-   * Destination port. Only valid when protocol is TCP or UDP.
-   *
-   * @param int $destinationPort
+   * @param int
    */
   public function setDestinationPort($destinationPort)
   {
@@ -117,9 +95,7 @@ class EndpointInfo extends \Google\Model
     return $this->destinationPort;
   }
   /**
-   * IP protocol in string format, for example: "TCP", "UDP", "ICMP".
-   *
-   * @param string $protocol
+   * @param string
    */
   public function setProtocol($protocol)
   {
@@ -133,9 +109,7 @@ class EndpointInfo extends \Google\Model
     return $this->protocol;
   }
   /**
-   * URI of the source telemetry agent this packet originates from.
-   *
-   * @param string $sourceAgentUri
+   * @param string
    */
   public function setSourceAgentUri($sourceAgentUri)
   {
@@ -149,9 +123,7 @@ class EndpointInfo extends \Google\Model
     return $this->sourceAgentUri;
   }
   /**
-   * Source IP address.
-   *
-   * @param string $sourceIp
+   * @param string
    */
   public function setSourceIp($sourceIp)
   {
@@ -165,9 +137,7 @@ class EndpointInfo extends \Google\Model
     return $this->sourceIp;
   }
   /**
-   * URI of the network where this packet originates from.
-   *
-   * @param string $sourceNetworkUri
+   * @param string
    */
   public function setSourceNetworkUri($sourceNetworkUri)
   {
@@ -181,9 +151,7 @@ class EndpointInfo extends \Google\Model
     return $this->sourceNetworkUri;
   }
   /**
-   * Source port. Only valid when protocol is TCP or UDP.
-   *
-   * @param int $sourcePort
+   * @param int
    */
   public function setSourcePort($sourcePort)
   {

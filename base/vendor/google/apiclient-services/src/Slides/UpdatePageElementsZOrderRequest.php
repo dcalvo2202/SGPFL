@@ -19,71 +19,32 @@ namespace Google\Service\Slides;
 
 class UpdatePageElementsZOrderRequest extends \Google\Collection
 {
-  /**
-   * Unspecified operation.
-   */
-  public const OPERATION_Z_ORDER_OPERATION_UNSPECIFIED = 'Z_ORDER_OPERATION_UNSPECIFIED';
-  /**
-   * Brings the page elements to the front of the page.
-   */
-  public const OPERATION_BRING_TO_FRONT = 'BRING_TO_FRONT';
-  /**
-   * Brings the page elements forward on the page by one element relative to the
-   * forwardmost one in the specified page elements.
-   */
-  public const OPERATION_BRING_FORWARD = 'BRING_FORWARD';
-  /**
-   * Sends the page elements backward on the page by one element relative to the
-   * furthest behind one in the specified page elements.
-   */
-  public const OPERATION_SEND_BACKWARD = 'SEND_BACKWARD';
-  /**
-   * Sends the page elements to the back of the page.
-   */
-  public const OPERATION_SEND_TO_BACK = 'SEND_TO_BACK';
   protected $collection_key = 'pageElementObjectIds';
   /**
-   * The Z-order operation to apply on the page elements. When applying the
-   * operation on multiple page elements, the relative Z-orders within these
-   * page elements before the operation is maintained.
-   *
    * @var string
    */
   public $operation;
   /**
-   * The object IDs of the page elements to update. All the page elements must
-   * be on the same page and must not be grouped.
-   *
    * @var string[]
    */
   public $pageElementObjectIds;
 
   /**
-   * The Z-order operation to apply on the page elements. When applying the
-   * operation on multiple page elements, the relative Z-orders within these
-   * page elements before the operation is maintained.
-   *
-   * Accepted values: Z_ORDER_OPERATION_UNSPECIFIED, BRING_TO_FRONT,
-   * BRING_FORWARD, SEND_BACKWARD, SEND_TO_BACK
-   *
-   * @param self::OPERATION_* $operation
+   * @param string
    */
   public function setOperation($operation)
   {
     $this->operation = $operation;
   }
   /**
-   * @return self::OPERATION_*
+   * @return string
    */
   public function getOperation()
   {
     return $this->operation;
   }
   /**
-   * The object IDs of the page elements to update. All the page elements must
-   * be on the same page and must not be grouped.
-   *
-   * @param string[] $pageElementObjectIds
+   * @param string[]
    */
   public function setPageElementObjectIds($pageElementObjectIds)
   {

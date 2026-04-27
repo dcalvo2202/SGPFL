@@ -20,9 +20,6 @@ namespace Google\Service\DisplayVideo;
 class AlgorithmRules extends \Google\Model
 {
   /**
-   * Attribution model for the algorithm. This field is only supported for
-   * allowlisted partners.
-   *
    * @var string
    */
   public $attributionModelId;
@@ -32,10 +29,7 @@ class AlgorithmRules extends \Google\Model
   protected $postImpressionSignalRulesetDataType = '';
 
   /**
-   * Attribution model for the algorithm. This field is only supported for
-   * allowlisted partners.
-   *
-   * @param string $attributionModelId
+   * @param string
    */
   public function setAttributionModelId($attributionModelId)
   {
@@ -49,9 +43,7 @@ class AlgorithmRules extends \Google\Model
     return $this->attributionModelId;
   }
   /**
-   * Rules for the impression signals.
-   *
-   * @param AlgorithmRulesRuleset $impressionSignalRuleset
+   * @param AlgorithmRulesRuleset
    */
   public function setImpressionSignalRuleset(AlgorithmRulesRuleset $impressionSignalRuleset)
   {
@@ -65,10 +57,7 @@ class AlgorithmRules extends \Google\Model
     return $this->impressionSignalRuleset;
   }
   /**
-   * Rules for the post-impression signals. This field is only supported for
-   * allowlisted partners.
-   *
-   * @param AlgorithmRulesRuleset $postImpressionSignalRuleset
+   * @param AlgorithmRulesRuleset
    */
   public function setPostImpressionSignalRuleset(AlgorithmRulesRuleset $postImpressionSignalRuleset)
   {

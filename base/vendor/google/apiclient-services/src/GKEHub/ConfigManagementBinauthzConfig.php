@@ -20,16 +20,12 @@ namespace Google\Service\GKEHub;
 class ConfigManagementBinauthzConfig extends \Google\Model
 {
   /**
-   * Whether binauthz is enabled in this cluster.
-   *
    * @var bool
    */
   public $enabled;
 
   /**
-   * Whether binauthz is enabled in this cluster.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {

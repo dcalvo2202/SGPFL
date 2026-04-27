@@ -20,16 +20,12 @@ namespace Google\Service\DatabaseMigrationService;
 class RoundToScale extends \Google\Model
 {
   /**
-   * Required. Scale value to be used
-   *
    * @var int
    */
   public $scale;
 
   /**
-   * Required. Scale value to be used
-   *
-   * @param int $scale
+   * @param int
    */
   public function setScale($scale)
   {

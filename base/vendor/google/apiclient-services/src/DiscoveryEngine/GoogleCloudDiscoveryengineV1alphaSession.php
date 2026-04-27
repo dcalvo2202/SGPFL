@@ -19,77 +19,40 @@ namespace Google\Service\DiscoveryEngine;
 
 class GoogleCloudDiscoveryengineV1alphaSession extends \Google\Collection
 {
-  /**
-   * State is unspecified.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The session is currently open.
-   */
-  public const STATE_IN_PROGRESS = 'IN_PROGRESS';
   protected $collection_key = 'turns';
   /**
-   * Optional. The display name of the session. This field is used to identify
-   * the session in the UI. By default, the display name is the first turn query
-   * text in the session.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. The time the session finished.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * Optional. Whether the session is pinned, pinned session will be displayed
-   * on the top of the session list.
-   *
    * @var bool
    */
   public $isPinned;
   /**
-   * Optional. The labels for the session. Can be set as filter in
-   * ListSessionsRequest.
-   *
-   * @var string[]
-   */
-  public $labels;
-  /**
-   * Immutable. Fully qualified name `projects/{project}/locations/global/collec
-   * tions/{collection}/engines/{engine}/sessions`
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The time the session started.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * The state of the session.
-   *
    * @var string
    */
   public $state;
   protected $turnsType = GoogleCloudDiscoveryengineV1alphaSessionTurn::class;
   protected $turnsDataType = 'array';
   /**
-   * A unique identifier for tracking users.
-   *
    * @var string
    */
   public $userPseudoId;
 
   /**
-   * Optional. The display name of the session. This field is used to identify
-   * the session in the UI. By default, the display name is the first turn query
-   * text in the session.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -103,9 +66,7 @@ class GoogleCloudDiscoveryengineV1alphaSession extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Output only. The time the session finished.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -119,10 +80,7 @@ class GoogleCloudDiscoveryengineV1alphaSession extends \Google\Collection
     return $this->endTime;
   }
   /**
-   * Optional. Whether the session is pinned, pinned session will be displayed
-   * on the top of the session list.
-   *
-   * @param bool $isPinned
+   * @param bool
    */
   public function setIsPinned($isPinned)
   {
@@ -136,27 +94,7 @@ class GoogleCloudDiscoveryengineV1alphaSession extends \Google\Collection
     return $this->isPinned;
   }
   /**
-   * Optional. The labels for the session. Can be set as filter in
-   * ListSessionsRequest.
-   *
-   * @param string[] $labels
-   */
-  public function setLabels($labels)
-  {
-    $this->labels = $labels;
-  }
-  /**
-   * @return string[]
-   */
-  public function getLabels()
-  {
-    return $this->labels;
-  }
-  /**
-   * Immutable. Fully qualified name `projects/{project}/locations/global/collec
-   * tions/{collection}/engines/{engine}/sessions`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -170,9 +108,7 @@ class GoogleCloudDiscoveryengineV1alphaSession extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. The time the session started.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -186,27 +122,21 @@ class GoogleCloudDiscoveryengineV1alphaSession extends \Google\Collection
     return $this->startTime;
   }
   /**
-   * The state of the session.
-   *
-   * Accepted values: STATE_UNSPECIFIED, IN_PROGRESS
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Turns.
-   *
-   * @param GoogleCloudDiscoveryengineV1alphaSessionTurn[] $turns
+   * @param GoogleCloudDiscoveryengineV1alphaSessionTurn[]
    */
   public function setTurns($turns)
   {
@@ -220,9 +150,7 @@ class GoogleCloudDiscoveryengineV1alphaSession extends \Google\Collection
     return $this->turns;
   }
   /**
-   * A unique identifier for tracking users.
-   *
-   * @param string $userPseudoId
+   * @param string
    */
   public function setUserPseudoId($userPseudoId)
   {

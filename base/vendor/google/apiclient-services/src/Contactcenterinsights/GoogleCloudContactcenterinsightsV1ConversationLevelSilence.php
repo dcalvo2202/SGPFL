@@ -20,22 +20,16 @@ namespace Google\Service\Contactcenterinsights;
 class GoogleCloudContactcenterinsightsV1ConversationLevelSilence extends \Google\Model
 {
   /**
-   * Amount of time calculated to be in silence.
-   *
    * @var string
    */
   public $silenceDuration;
   /**
-   * Percentage of the total conversation spent in silence.
-   *
    * @var float
    */
   public $silencePercentage;
 
   /**
-   * Amount of time calculated to be in silence.
-   *
-   * @param string $silenceDuration
+   * @param string
    */
   public function setSilenceDuration($silenceDuration)
   {
@@ -49,9 +43,7 @@ class GoogleCloudContactcenterinsightsV1ConversationLevelSilence extends \Google
     return $this->silenceDuration;
   }
   /**
-   * Percentage of the total conversation spent in silence.
-   *
-   * @param float $silencePercentage
+   * @param float
    */
   public function setSilencePercentage($silencePercentage)
   {

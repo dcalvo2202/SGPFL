@@ -59,7 +59,7 @@ class StageShuffleReadMetrics extends \Google\Model
   protected $stageShufflePushReadMetricsDataType = '';
 
   /**
-   * @param string $bytesRead
+   * @param string
    */
   public function setBytesRead($bytesRead)
   {
@@ -73,7 +73,7 @@ class StageShuffleReadMetrics extends \Google\Model
     return $this->bytesRead;
   }
   /**
-   * @param string $fetchWaitTimeMillis
+   * @param string
    */
   public function setFetchWaitTimeMillis($fetchWaitTimeMillis)
   {
@@ -87,7 +87,7 @@ class StageShuffleReadMetrics extends \Google\Model
     return $this->fetchWaitTimeMillis;
   }
   /**
-   * @param string $localBlocksFetched
+   * @param string
    */
   public function setLocalBlocksFetched($localBlocksFetched)
   {
@@ -101,7 +101,7 @@ class StageShuffleReadMetrics extends \Google\Model
     return $this->localBlocksFetched;
   }
   /**
-   * @param string $localBytesRead
+   * @param string
    */
   public function setLocalBytesRead($localBytesRead)
   {
@@ -115,7 +115,7 @@ class StageShuffleReadMetrics extends \Google\Model
     return $this->localBytesRead;
   }
   /**
-   * @param string $recordsRead
+   * @param string
    */
   public function setRecordsRead($recordsRead)
   {
@@ -129,7 +129,7 @@ class StageShuffleReadMetrics extends \Google\Model
     return $this->recordsRead;
   }
   /**
-   * @param string $remoteBlocksFetched
+   * @param string
    */
   public function setRemoteBlocksFetched($remoteBlocksFetched)
   {
@@ -143,7 +143,7 @@ class StageShuffleReadMetrics extends \Google\Model
     return $this->remoteBlocksFetched;
   }
   /**
-   * @param string $remoteBytesRead
+   * @param string
    */
   public function setRemoteBytesRead($remoteBytesRead)
   {
@@ -157,7 +157,7 @@ class StageShuffleReadMetrics extends \Google\Model
     return $this->remoteBytesRead;
   }
   /**
-   * @param string $remoteBytesReadToDisk
+   * @param string
    */
   public function setRemoteBytesReadToDisk($remoteBytesReadToDisk)
   {
@@ -171,7 +171,7 @@ class StageShuffleReadMetrics extends \Google\Model
     return $this->remoteBytesReadToDisk;
   }
   /**
-   * @param string $remoteReqsDuration
+   * @param string
    */
   public function setRemoteReqsDuration($remoteReqsDuration)
   {
@@ -185,7 +185,7 @@ class StageShuffleReadMetrics extends \Google\Model
     return $this->remoteReqsDuration;
   }
   /**
-   * @param StageShufflePushReadMetrics $stageShufflePushReadMetrics
+   * @param StageShufflePushReadMetrics
    */
   public function setStageShufflePushReadMetrics(StageShufflePushReadMetrics $stageShufflePushReadMetrics)
   {

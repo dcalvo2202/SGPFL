@@ -21,10 +21,6 @@ class MoreHours extends \Google\Collection
 {
   protected $collection_key = 'periods';
   /**
-   * Required. Type of hours. Clients should call {#link
-   * businessCategories:BatchGet} to get supported hours types for categories of
-   * their locations.
-   *
    * @var string
    */
   public $hoursTypeId;
@@ -32,11 +28,7 @@ class MoreHours extends \Google\Collection
   protected $periodsDataType = 'array';
 
   /**
-   * Required. Type of hours. Clients should call {#link
-   * businessCategories:BatchGet} to get supported hours types for categories of
-   * their locations.
-   *
-   * @param string $hoursTypeId
+   * @param string
    */
   public function setHoursTypeId($hoursTypeId)
   {
@@ -50,10 +42,7 @@ class MoreHours extends \Google\Collection
     return $this->hoursTypeId;
   }
   /**
-   * Required. A collection of times that this location is open. Each period
-   * represents a range of hours when the location is open during the week.
-   *
-   * @param TimePeriod[] $periods
+   * @param TimePeriod[]
    */
   public function setPeriods($periods)
   {

@@ -21,16 +21,12 @@ class PackageNameList extends \Google\Collection
 {
   protected $collection_key = 'packageNames';
   /**
-   * A list of package names.
-   *
    * @var string[]
    */
   public $packageNames;
 
   /**
-   * A list of package names.
-   *
-   * @param string[] $packageNames
+   * @param string[]
    */
   public function setPackageNames($packageNames)
   {

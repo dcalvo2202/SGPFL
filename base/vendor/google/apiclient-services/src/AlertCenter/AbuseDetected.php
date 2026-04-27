@@ -19,49 +19,23 @@ namespace Google\Service\AlertCenter;
 
 class AbuseDetected extends \Google\Model
 {
-  /**
-   * AbuseDetected alert variation type unspecified. No alert should be
-   * unspecified.
-   */
-  public const VARIATION_TYPE_ABUSE_DETECTED_VARIATION_TYPE_UNSPECIFIED = 'ABUSE_DETECTED_VARIATION_TYPE_UNSPECIFIED';
-  /**
-   * Variation displayed for Drive abusive content alerts.
-   */
-  public const VARIATION_TYPE_DRIVE_ABUSIVE_CONTENT = 'DRIVE_ABUSIVE_CONTENT';
-  /**
-   * Variation displayed for Limited Disable alerts, when a Google service is
-   * disabled for a user, totally or partially, due to the user's abusive
-   * behavior.
-   */
-  public const VARIATION_TYPE_LIMITED_DISABLE = 'LIMITED_DISABLE';
   protected $additionalDetailsType = EntityList::class;
   protected $additionalDetailsDataType = '';
   /**
-   * Product that the abuse is originating from.
-   *
    * @var string
    */
   public $product;
   /**
-   * Unique identifier of each sub alert that is onboarded.
-   *
    * @var string
    */
   public $subAlertId;
   /**
-   * Variation of AbuseDetected alerts. The variation_type determines the texts
-   * displayed the alert details. This differs from sub_alert_id because each
-   * sub alert can have multiple variation_types, representing different stages
-   * of the alert.
-   *
    * @var string
    */
   public $variationType;
 
   /**
-   * List of abusive users/entities to be displayed in a table in the alert.
-   *
-   * @param EntityList $additionalDetails
+   * @param EntityList
    */
   public function setAdditionalDetails(EntityList $additionalDetails)
   {
@@ -75,9 +49,7 @@ class AbuseDetected extends \Google\Model
     return $this->additionalDetails;
   }
   /**
-   * Product that the abuse is originating from.
-   *
-   * @param string $product
+   * @param string
    */
   public function setProduct($product)
   {
@@ -91,9 +63,7 @@ class AbuseDetected extends \Google\Model
     return $this->product;
   }
   /**
-   * Unique identifier of each sub alert that is onboarded.
-   *
-   * @param string $subAlertId
+   * @param string
    */
   public function setSubAlertId($subAlertId)
   {
@@ -107,22 +77,14 @@ class AbuseDetected extends \Google\Model
     return $this->subAlertId;
   }
   /**
-   * Variation of AbuseDetected alerts. The variation_type determines the texts
-   * displayed the alert details. This differs from sub_alert_id because each
-   * sub alert can have multiple variation_types, representing different stages
-   * of the alert.
-   *
-   * Accepted values: ABUSE_DETECTED_VARIATION_TYPE_UNSPECIFIED,
-   * DRIVE_ABUSIVE_CONTENT, LIMITED_DISABLE
-   *
-   * @param self::VARIATION_TYPE_* $variationType
+   * @param string
    */
   public function setVariationType($variationType)
   {
     $this->variationType = $variationType;
   }
   /**
-   * @return self::VARIATION_TYPE_*
+   * @return string
    */
   public function getVariationType()
   {

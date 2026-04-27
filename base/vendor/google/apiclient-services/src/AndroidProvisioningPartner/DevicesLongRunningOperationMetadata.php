@@ -20,51 +20,20 @@ namespace Google\Service\AndroidProvisioningPartner;
 class DevicesLongRunningOperationMetadata extends \Google\Model
 {
   /**
-   * Invalid code. Shouldn't be used.
-   */
-  public const PROCESSING_STATUS_BATCH_PROCESS_STATUS_UNSPECIFIED = 'BATCH_PROCESS_STATUS_UNSPECIFIED';
-  /**
-   * Pending.
-   */
-  public const PROCESSING_STATUS_BATCH_PROCESS_PENDING = 'BATCH_PROCESS_PENDING';
-  /**
-   * In progress.
-   */
-  public const PROCESSING_STATUS_BATCH_PROCESS_IN_PROGRESS = 'BATCH_PROCESS_IN_PROGRESS';
-  /**
-   * Processed. This doesn't mean all items were processed successfully, you
-   * should check the `response` field for the result of every item.
-   */
-  public const PROCESSING_STATUS_BATCH_PROCESS_PROCESSED = 'BATCH_PROCESS_PROCESSED';
-  /**
-   * The number of metadata updates in the operation. This might be different
-   * from the number of updates in the request if the API can't parse some of
-   * the updates.
-   *
    * @var int
    */
   public $devicesCount;
   /**
-   * The processing status of the operation.
-   *
    * @var string
    */
   public $processingStatus;
   /**
-   * The processing progress of the operation. Measured as a number from 0 to
-   * 100. A value of 10O doesn't always mean the operation completed—check for
-   * the inclusion of a `done` field.
-   *
    * @var int
    */
   public $progress;
 
   /**
-   * The number of metadata updates in the operation. This might be different
-   * from the number of updates in the request if the API can't parse some of
-   * the updates.
-   *
-   * @param int $devicesCount
+   * @param int
    */
   public function setDevicesCount($devicesCount)
   {
@@ -78,30 +47,21 @@ class DevicesLongRunningOperationMetadata extends \Google\Model
     return $this->devicesCount;
   }
   /**
-   * The processing status of the operation.
-   *
-   * Accepted values: BATCH_PROCESS_STATUS_UNSPECIFIED, BATCH_PROCESS_PENDING,
-   * BATCH_PROCESS_IN_PROGRESS, BATCH_PROCESS_PROCESSED
-   *
-   * @param self::PROCESSING_STATUS_* $processingStatus
+   * @param string
    */
   public function setProcessingStatus($processingStatus)
   {
     $this->processingStatus = $processingStatus;
   }
   /**
-   * @return self::PROCESSING_STATUS_*
+   * @return string
    */
   public function getProcessingStatus()
   {
     return $this->processingStatus;
   }
   /**
-   * The processing progress of the operation. Measured as a number from 0 to
-   * 100. A value of 10O doesn't always mean the operation completed—check for
-   * the inclusion of a `done` field.
-   *
-   * @param int $progress
+   * @param int
    */
   public function setProgress($progress)
   {

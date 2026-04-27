@@ -19,42 +19,8 @@ namespace Google\Service\Integrations;
 
 class EnterpriseCrmFrontendsEventbusProtoEventExecutionDetails extends \Google\Collection
 {
-  public const EVENT_EXECUTION_STATE_UNSPECIFIED = 'UNSPECIFIED';
-  /**
-   * Event is received and waiting for the execution. This happens when firing
-   * the event via "postToQueue" or "schedule".
-   */
-  public const EVENT_EXECUTION_STATE_ON_HOLD = 'ON_HOLD';
-  /**
-   * Event is under processing.
-   */
-  public const EVENT_EXECUTION_STATE_IN_PROCESS = 'IN_PROCESS';
-  /**
-   * Event execution successfully finished. There's no more change after this
-   * state.
-   */
-  public const EVENT_EXECUTION_STATE_SUCCEEDED = 'SUCCEEDED';
-  /**
-   * Event execution failed. There's no more change after this state.
-   */
-  public const EVENT_EXECUTION_STATE_FAILED = 'FAILED';
-  /**
-   * Event execution canceled by user. There's no more change after this state.
-   */
-  public const EVENT_EXECUTION_STATE_CANCELED = 'CANCELED';
-  /**
-   * Event execution failed and waiting for retry.
-   */
-  public const EVENT_EXECUTION_STATE_RETRY_ON_HOLD = 'RETRY_ON_HOLD';
-  /**
-   * Event execution suspended and waiting for manual intervention.
-   */
-  public const EVENT_EXECUTION_STATE_SUSPENDED = 'SUSPENDED';
   protected $collection_key = 'eventExecutionSnapshot';
   /**
-   * If the execution is manually canceled, this field will contain the reason
-   * for cancellation.
-   *
    * @var string
    */
   public $cancelReason;
@@ -63,58 +29,36 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionDetails extends \Google\C
   protected $eventExecutionSnapshotType = EnterpriseCrmFrontendsEventbusProtoEventExecutionSnapshot::class;
   protected $eventExecutionSnapshotDataType = 'array';
   /**
-   * Total size of all event_execution_snapshots for an execution
-   *
    * @var string
    */
   public $eventExecutionSnapshotsSize;
   /**
-   * The execution state of this event.
-   *
    * @var string
    */
   public $eventExecutionState;
   /**
-   * Indicates the number of times the execution has restarted from the
-   * beginning.
-   *
    * @var int
    */
   public $eventRetriesFromBeginningCount;
   /**
-   * The log file path (aka. cns address) for this event.
-   *
    * @var string
    */
   public $logFilePath;
   /**
-   * The network address (aka. bns address) that indicates where the event
-   * executor is running.
-   *
    * @var string
    */
   public $networkAddress;
   /**
-   * Next scheduled execution time in case the execution status was
-   * RETRY_ON_HOLD.
-   *
    * @var string
    */
   public $nextExecutionTime;
   /**
-   * Used internally and shouldn't be exposed to users. A counter for the cron
-   * job to record how many times this event is in in_process state but don't
-   * have a lock consecutively/
-   *
    * @var int
    */
   public $ryeLockUnheldCount;
 
   /**
-   * If the execution is manually canceled, this field will contain the reason
-   * for cancellation.
-   *
-   * @param string $cancelReason
+   * @param string
    */
   public function setCancelReason($cancelReason)
   {
@@ -128,7 +72,7 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionDetails extends \Google\C
     return $this->cancelReason;
   }
   /**
-   * @param EnterpriseCrmEventbusProtoEventExecutionDetailsEventAttemptStats[] $eventAttemptStats
+   * @param EnterpriseCrmEventbusProtoEventExecutionDetailsEventAttemptStats[]
    */
   public function setEventAttemptStats($eventAttemptStats)
   {
@@ -142,10 +86,7 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionDetails extends \Google\C
     return $this->eventAttemptStats;
   }
   /**
-   * After snapshot migration, this field will no longer be populated, but old
-   * execution snapshots will still be accessible.
-   *
-   * @param EnterpriseCrmFrontendsEventbusProtoEventExecutionSnapshot[] $eventExecutionSnapshot
+   * @param EnterpriseCrmFrontendsEventbusProtoEventExecutionSnapshot[]
    */
   public function setEventExecutionSnapshot($eventExecutionSnapshot)
   {
@@ -159,9 +100,7 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionDetails extends \Google\C
     return $this->eventExecutionSnapshot;
   }
   /**
-   * Total size of all event_execution_snapshots for an execution
-   *
-   * @param string $eventExecutionSnapshotsSize
+   * @param string
    */
   public function setEventExecutionSnapshotsSize($eventExecutionSnapshotsSize)
   {
@@ -175,29 +114,21 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionDetails extends \Google\C
     return $this->eventExecutionSnapshotsSize;
   }
   /**
-   * The execution state of this event.
-   *
-   * Accepted values: UNSPECIFIED, ON_HOLD, IN_PROCESS, SUCCEEDED, FAILED,
-   * CANCELED, RETRY_ON_HOLD, SUSPENDED
-   *
-   * @param self::EVENT_EXECUTION_STATE_* $eventExecutionState
+   * @param string
    */
   public function setEventExecutionState($eventExecutionState)
   {
     $this->eventExecutionState = $eventExecutionState;
   }
   /**
-   * @return self::EVENT_EXECUTION_STATE_*
+   * @return string
    */
   public function getEventExecutionState()
   {
     return $this->eventExecutionState;
   }
   /**
-   * Indicates the number of times the execution has restarted from the
-   * beginning.
-   *
-   * @param int $eventRetriesFromBeginningCount
+   * @param int
    */
   public function setEventRetriesFromBeginningCount($eventRetriesFromBeginningCount)
   {
@@ -211,9 +142,7 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionDetails extends \Google\C
     return $this->eventRetriesFromBeginningCount;
   }
   /**
-   * The log file path (aka. cns address) for this event.
-   *
-   * @param string $logFilePath
+   * @param string
    */
   public function setLogFilePath($logFilePath)
   {
@@ -227,10 +156,7 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionDetails extends \Google\C
     return $this->logFilePath;
   }
   /**
-   * The network address (aka. bns address) that indicates where the event
-   * executor is running.
-   *
-   * @param string $networkAddress
+   * @param string
    */
   public function setNetworkAddress($networkAddress)
   {
@@ -244,10 +170,7 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionDetails extends \Google\C
     return $this->networkAddress;
   }
   /**
-   * Next scheduled execution time in case the execution status was
-   * RETRY_ON_HOLD.
-   *
-   * @param string $nextExecutionTime
+   * @param string
    */
   public function setNextExecutionTime($nextExecutionTime)
   {
@@ -261,11 +184,7 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionDetails extends \Google\C
     return $this->nextExecutionTime;
   }
   /**
-   * Used internally and shouldn't be exposed to users. A counter for the cron
-   * job to record how many times this event is in in_process state but don't
-   * have a lock consecutively/
-   *
-   * @param int $ryeLockUnheldCount
+   * @param int
    */
   public function setRyeLockUnheldCount($ryeLockUnheldCount)
   {

@@ -20,100 +20,66 @@ namespace Google\Service\PeopleService;
 class Name extends \Google\Model
 {
   /**
-   * Output only. The display name formatted according to the locale specified
-   * by the viewer's account or the `Accept-Language` HTTP header.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. The display name with the last name first formatted according
-   * to the locale specified by the viewer's account or the `Accept-Language`
-   * HTTP header.
-   *
    * @var string
    */
   public $displayNameLastFirst;
   /**
-   * The family name.
-   *
    * @var string
    */
   public $familyName;
   /**
-   * The given name.
-   *
    * @var string
    */
   public $givenName;
   /**
-   * The honorific prefixes, such as `Mrs.` or `Dr.`
-   *
    * @var string
    */
   public $honorificPrefix;
   /**
-   * The honorific suffixes, such as `Jr.`
-   *
    * @var string
    */
   public $honorificSuffix;
   protected $metadataType = FieldMetadata::class;
   protected $metadataDataType = '';
   /**
-   * The middle name(s).
-   *
    * @var string
    */
   public $middleName;
   /**
-   * The family name spelled as it sounds.
-   *
    * @var string
    */
   public $phoneticFamilyName;
   /**
-   * The full name spelled as it sounds.
-   *
    * @var string
    */
   public $phoneticFullName;
   /**
-   * The given name spelled as it sounds.
-   *
    * @var string
    */
   public $phoneticGivenName;
   /**
-   * The honorific prefixes spelled as they sound.
-   *
    * @var string
    */
   public $phoneticHonorificPrefix;
   /**
-   * The honorific suffixes spelled as they sound.
-   *
    * @var string
    */
   public $phoneticHonorificSuffix;
   /**
-   * The middle name(s) spelled as they sound.
-   *
    * @var string
    */
   public $phoneticMiddleName;
   /**
-   * The free form name value.
-   *
    * @var string
    */
   public $unstructuredName;
 
   /**
-   * Output only. The display name formatted according to the locale specified
-   * by the viewer's account or the `Accept-Language` HTTP header.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -127,11 +93,7 @@ class Name extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Output only. The display name with the last name first formatted according
-   * to the locale specified by the viewer's account or the `Accept-Language`
-   * HTTP header.
-   *
-   * @param string $displayNameLastFirst
+   * @param string
    */
   public function setDisplayNameLastFirst($displayNameLastFirst)
   {
@@ -145,9 +107,7 @@ class Name extends \Google\Model
     return $this->displayNameLastFirst;
   }
   /**
-   * The family name.
-   *
-   * @param string $familyName
+   * @param string
    */
   public function setFamilyName($familyName)
   {
@@ -161,9 +121,7 @@ class Name extends \Google\Model
     return $this->familyName;
   }
   /**
-   * The given name.
-   *
-   * @param string $givenName
+   * @param string
    */
   public function setGivenName($givenName)
   {
@@ -177,9 +135,7 @@ class Name extends \Google\Model
     return $this->givenName;
   }
   /**
-   * The honorific prefixes, such as `Mrs.` or `Dr.`
-   *
-   * @param string $honorificPrefix
+   * @param string
    */
   public function setHonorificPrefix($honorificPrefix)
   {
@@ -193,9 +149,7 @@ class Name extends \Google\Model
     return $this->honorificPrefix;
   }
   /**
-   * The honorific suffixes, such as `Jr.`
-   *
-   * @param string $honorificSuffix
+   * @param string
    */
   public function setHonorificSuffix($honorificSuffix)
   {
@@ -209,9 +163,7 @@ class Name extends \Google\Model
     return $this->honorificSuffix;
   }
   /**
-   * Metadata about the name.
-   *
-   * @param FieldMetadata $metadata
+   * @param FieldMetadata
    */
   public function setMetadata(FieldMetadata $metadata)
   {
@@ -225,9 +177,7 @@ class Name extends \Google\Model
     return $this->metadata;
   }
   /**
-   * The middle name(s).
-   *
-   * @param string $middleName
+   * @param string
    */
   public function setMiddleName($middleName)
   {
@@ -241,9 +191,7 @@ class Name extends \Google\Model
     return $this->middleName;
   }
   /**
-   * The family name spelled as it sounds.
-   *
-   * @param string $phoneticFamilyName
+   * @param string
    */
   public function setPhoneticFamilyName($phoneticFamilyName)
   {
@@ -257,9 +205,7 @@ class Name extends \Google\Model
     return $this->phoneticFamilyName;
   }
   /**
-   * The full name spelled as it sounds.
-   *
-   * @param string $phoneticFullName
+   * @param string
    */
   public function setPhoneticFullName($phoneticFullName)
   {
@@ -273,9 +219,7 @@ class Name extends \Google\Model
     return $this->phoneticFullName;
   }
   /**
-   * The given name spelled as it sounds.
-   *
-   * @param string $phoneticGivenName
+   * @param string
    */
   public function setPhoneticGivenName($phoneticGivenName)
   {
@@ -289,9 +233,7 @@ class Name extends \Google\Model
     return $this->phoneticGivenName;
   }
   /**
-   * The honorific prefixes spelled as they sound.
-   *
-   * @param string $phoneticHonorificPrefix
+   * @param string
    */
   public function setPhoneticHonorificPrefix($phoneticHonorificPrefix)
   {
@@ -305,9 +247,7 @@ class Name extends \Google\Model
     return $this->phoneticHonorificPrefix;
   }
   /**
-   * The honorific suffixes spelled as they sound.
-   *
-   * @param string $phoneticHonorificSuffix
+   * @param string
    */
   public function setPhoneticHonorificSuffix($phoneticHonorificSuffix)
   {
@@ -321,9 +261,7 @@ class Name extends \Google\Model
     return $this->phoneticHonorificSuffix;
   }
   /**
-   * The middle name(s) spelled as they sound.
-   *
-   * @param string $phoneticMiddleName
+   * @param string
    */
   public function setPhoneticMiddleName($phoneticMiddleName)
   {
@@ -337,9 +275,7 @@ class Name extends \Google\Model
     return $this->phoneticMiddleName;
   }
   /**
-   * The free form name value.
-   *
-   * @param string $unstructuredName
+   * @param string
    */
   public function setUnstructuredName($unstructuredName)
   {

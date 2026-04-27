@@ -23,9 +23,7 @@ class SubmitProvisioningConfigResponse extends \Google\Model
   protected $provisioningConfigDataType = '';
 
   /**
-   * The submitted provisioning config.
-   *
-   * @param ProvisioningConfig $provisioningConfig
+   * @param ProvisioningConfig
    */
   public function setProvisioningConfig(ProvisioningConfig $provisioningConfig)
   {

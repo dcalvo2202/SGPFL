@@ -42,16 +42,10 @@ class TransferSpec extends \Google\Model
   protected $posixDataSourceType = PosixFilesystem::class;
   protected $posixDataSourceDataType = '';
   /**
-   * Specifies the agent pool name associated with the posix data sink. When
-   * unspecified, the default name is used.
-   *
    * @var string
    */
   public $sinkAgentPoolName;
   /**
-   * Specifies the agent pool name associated with the posix data source. When
-   * unspecified, the default name is used.
-   *
    * @var string
    */
   public $sourceAgentPoolName;
@@ -61,9 +55,7 @@ class TransferSpec extends \Google\Model
   protected $transferOptionsDataType = '';
 
   /**
-   * Optional. An AWS S3 compatible data source.
-   *
-   * @param AwsS3CompatibleData $awsS3CompatibleDataSource
+   * @param AwsS3CompatibleData
    */
   public function setAwsS3CompatibleDataSource(AwsS3CompatibleData $awsS3CompatibleDataSource)
   {
@@ -77,9 +69,7 @@ class TransferSpec extends \Google\Model
     return $this->awsS3CompatibleDataSource;
   }
   /**
-   * Optional. An AWS S3 data source.
-   *
-   * @param AwsS3Data $awsS3DataSource
+   * @param AwsS3Data
    */
   public function setAwsS3DataSource(AwsS3Data $awsS3DataSource)
   {
@@ -93,9 +83,7 @@ class TransferSpec extends \Google\Model
     return $this->awsS3DataSource;
   }
   /**
-   * Optional. An Azure Blob Storage data source.
-   *
-   * @param AzureBlobStorageData $azureBlobStorageDataSource
+   * @param AzureBlobStorageData
    */
   public function setAzureBlobStorageDataSource(AzureBlobStorageData $azureBlobStorageDataSource)
   {
@@ -109,9 +97,7 @@ class TransferSpec extends \Google\Model
     return $this->azureBlobStorageDataSource;
   }
   /**
-   * Optional. A Cloud Storage data sink.
-   *
-   * @param GcsData $gcsDataSink
+   * @param GcsData
    */
   public function setGcsDataSink(GcsData $gcsDataSink)
   {
@@ -125,9 +111,7 @@ class TransferSpec extends \Google\Model
     return $this->gcsDataSink;
   }
   /**
-   * Optional. A Cloud Storage data source.
-   *
-   * @param GcsData $gcsDataSource
+   * @param GcsData
    */
   public function setGcsDataSource(GcsData $gcsDataSource)
   {
@@ -141,12 +125,7 @@ class TransferSpec extends \Google\Model
     return $this->gcsDataSource;
   }
   /**
-   * For transfers between file systems, specifies a Cloud Storage bucket to be
-   * used as an intermediate location through which to transfer data. See
-   * [Transfer data between file systems](https://cloud.google.com/storage-
-   * transfer/docs/file-to-file) for more information.
-   *
-   * @param GcsData $gcsIntermediateDataLocation
+   * @param GcsData
    */
   public function setGcsIntermediateDataLocation(GcsData $gcsIntermediateDataLocation)
   {
@@ -160,9 +139,7 @@ class TransferSpec extends \Google\Model
     return $this->gcsIntermediateDataLocation;
   }
   /**
-   * Optional. An HDFS cluster data source.
-   *
-   * @param HdfsData $hdfsDataSource
+   * @param HdfsData
    */
   public function setHdfsDataSource(HdfsData $hdfsDataSource)
   {
@@ -176,9 +153,7 @@ class TransferSpec extends \Google\Model
     return $this->hdfsDataSource;
   }
   /**
-   * Optional. An HTTP URL data source.
-   *
-   * @param HttpData $httpDataSource
+   * @param HttpData
    */
   public function setHttpDataSource(HttpData $httpDataSource)
   {
@@ -192,11 +167,7 @@ class TransferSpec extends \Google\Model
     return $this->httpDataSource;
   }
   /**
-   * Only objects that satisfy these object conditions are included in the set
-   * of data source and data sink objects. Object conditions based on objects'
-   * "last modification time" do not exclude objects in a data sink.
-   *
-   * @param ObjectConditions $objectConditions
+   * @param ObjectConditions
    */
   public function setObjectConditions(ObjectConditions $objectConditions)
   {
@@ -210,9 +181,7 @@ class TransferSpec extends \Google\Model
     return $this->objectConditions;
   }
   /**
-   * Optional. A POSIX Filesystem data sink.
-   *
-   * @param PosixFilesystem $posixDataSink
+   * @param PosixFilesystem
    */
   public function setPosixDataSink(PosixFilesystem $posixDataSink)
   {
@@ -226,9 +195,7 @@ class TransferSpec extends \Google\Model
     return $this->posixDataSink;
   }
   /**
-   * Optional. A POSIX Filesystem data source.
-   *
-   * @param PosixFilesystem $posixDataSource
+   * @param PosixFilesystem
    */
   public function setPosixDataSource(PosixFilesystem $posixDataSource)
   {
@@ -242,10 +209,7 @@ class TransferSpec extends \Google\Model
     return $this->posixDataSource;
   }
   /**
-   * Specifies the agent pool name associated with the posix data sink. When
-   * unspecified, the default name is used.
-   *
-   * @param string $sinkAgentPoolName
+   * @param string
    */
   public function setSinkAgentPoolName($sinkAgentPoolName)
   {
@@ -259,10 +223,7 @@ class TransferSpec extends \Google\Model
     return $this->sinkAgentPoolName;
   }
   /**
-   * Specifies the agent pool name associated with the posix data source. When
-   * unspecified, the default name is used.
-   *
-   * @param string $sourceAgentPoolName
+   * @param string
    */
   public function setSourceAgentPoolName($sourceAgentPoolName)
   {
@@ -276,11 +237,7 @@ class TransferSpec extends \Google\Model
     return $this->sourceAgentPoolName;
   }
   /**
-   * A manifest file provides a list of objects to be transferred from the data
-   * source. This field points to the location of the manifest file. Otherwise,
-   * the entire source bucket is used. ObjectConditions still apply.
-   *
-   * @param TransferManifest $transferManifest
+   * @param TransferManifest
    */
   public function setTransferManifest(TransferManifest $transferManifest)
   {
@@ -294,11 +251,7 @@ class TransferSpec extends \Google\Model
     return $this->transferManifest;
   }
   /**
-   * If the option delete_objects_unique_in_sink is `true` and time-based object
-   * conditions such as 'last modification time' are specified, the request
-   * fails with an INVALID_ARGUMENT error.
-   *
-   * @param TransferOptions $transferOptions
+   * @param TransferOptions
    */
   public function setTransferOptions(TransferOptions $transferOptions)
   {

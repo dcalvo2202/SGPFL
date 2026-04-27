@@ -33,7 +33,7 @@ class GoogleCloudDialogflowV2IntentMessageListSelectItem extends \Google\Model
   public $title;
 
   /**
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -47,7 +47,7 @@ class GoogleCloudDialogflowV2IntentMessageListSelectItem extends \Google\Model
     return $this->description;
   }
   /**
-   * @param GoogleCloudDialogflowV2IntentMessageImage $image
+   * @param GoogleCloudDialogflowV2IntentMessageImage
    */
   public function setImage(GoogleCloudDialogflowV2IntentMessageImage $image)
   {
@@ -61,7 +61,7 @@ class GoogleCloudDialogflowV2IntentMessageListSelectItem extends \Google\Model
     return $this->image;
   }
   /**
-   * @param GoogleCloudDialogflowV2IntentMessageSelectItemInfo $info
+   * @param GoogleCloudDialogflowV2IntentMessageSelectItemInfo
    */
   public function setInfo(GoogleCloudDialogflowV2IntentMessageSelectItemInfo $info)
   {
@@ -75,7 +75,7 @@ class GoogleCloudDialogflowV2IntentMessageListSelectItem extends \Google\Model
     return $this->info;
   }
   /**
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

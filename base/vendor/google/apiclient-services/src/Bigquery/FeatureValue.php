@@ -22,22 +22,13 @@ class FeatureValue extends \Google\Model
   protected $categoricalValueType = CategoricalValue::class;
   protected $categoricalValueDataType = '';
   /**
-   * The feature column name.
-   *
    * @var string
    */
   public $featureColumn;
-  /**
-   * The numerical feature value. This is the centroid value for this feature.
-   *
-   * @var 
-   */
   public $numericalValue;
 
   /**
-   * The categorical feature value.
-   *
-   * @param CategoricalValue $categoricalValue
+   * @param CategoricalValue
    */
   public function setCategoricalValue(CategoricalValue $categoricalValue)
   {
@@ -51,9 +42,7 @@ class FeatureValue extends \Google\Model
     return $this->categoricalValue;
   }
   /**
-   * The feature column name.
-   *
-   * @param string $featureColumn
+   * @param string
    */
   public function setFeatureColumn($featureColumn)
   {

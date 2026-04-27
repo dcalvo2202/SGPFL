@@ -21,22 +21,16 @@ class GoogleAdsSearchads360V0CommonUnifiedPageFeedAsset extends \Google\Collecti
 {
   protected $collection_key = 'labels';
   /**
-   * Labels used to group the page urls.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * The webpage that advertisers want to target.
-   *
    * @var string
    */
   public $pageUrl;
 
   /**
-   * Labels used to group the page urls.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -50,9 +44,7 @@ class GoogleAdsSearchads360V0CommonUnifiedPageFeedAsset extends \Google\Collecti
     return $this->labels;
   }
   /**
-   * The webpage that advertisers want to target.
-   *
-   * @param string $pageUrl
+   * @param string
    */
   public function setPageUrl($pageUrl)
   {

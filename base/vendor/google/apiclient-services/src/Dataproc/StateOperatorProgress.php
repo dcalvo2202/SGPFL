@@ -69,7 +69,7 @@ class StateOperatorProgress extends \Google\Model
   public $operatorName;
 
   /**
-   * @param string $allRemovalsTimeMs
+   * @param string
    */
   public function setAllRemovalsTimeMs($allRemovalsTimeMs)
   {
@@ -83,7 +83,7 @@ class StateOperatorProgress extends \Google\Model
     return $this->allRemovalsTimeMs;
   }
   /**
-   * @param string $allUpdatesTimeMs
+   * @param string
    */
   public function setAllUpdatesTimeMs($allUpdatesTimeMs)
   {
@@ -97,7 +97,7 @@ class StateOperatorProgress extends \Google\Model
     return $this->allUpdatesTimeMs;
   }
   /**
-   * @param string $commitTimeMs
+   * @param string
    */
   public function setCommitTimeMs($commitTimeMs)
   {
@@ -111,7 +111,7 @@ class StateOperatorProgress extends \Google\Model
     return $this->commitTimeMs;
   }
   /**
-   * @param string[] $customMetrics
+   * @param string[]
    */
   public function setCustomMetrics($customMetrics)
   {
@@ -125,7 +125,7 @@ class StateOperatorProgress extends \Google\Model
     return $this->customMetrics;
   }
   /**
-   * @param string $memoryUsedBytes
+   * @param string
    */
   public function setMemoryUsedBytes($memoryUsedBytes)
   {
@@ -139,7 +139,7 @@ class StateOperatorProgress extends \Google\Model
     return $this->memoryUsedBytes;
   }
   /**
-   * @param string $numRowsDroppedByWatermark
+   * @param string
    */
   public function setNumRowsDroppedByWatermark($numRowsDroppedByWatermark)
   {
@@ -153,7 +153,7 @@ class StateOperatorProgress extends \Google\Model
     return $this->numRowsDroppedByWatermark;
   }
   /**
-   * @param string $numRowsRemoved
+   * @param string
    */
   public function setNumRowsRemoved($numRowsRemoved)
   {
@@ -167,7 +167,7 @@ class StateOperatorProgress extends \Google\Model
     return $this->numRowsRemoved;
   }
   /**
-   * @param string $numRowsTotal
+   * @param string
    */
   public function setNumRowsTotal($numRowsTotal)
   {
@@ -181,7 +181,7 @@ class StateOperatorProgress extends \Google\Model
     return $this->numRowsTotal;
   }
   /**
-   * @param string $numRowsUpdated
+   * @param string
    */
   public function setNumRowsUpdated($numRowsUpdated)
   {
@@ -195,7 +195,7 @@ class StateOperatorProgress extends \Google\Model
     return $this->numRowsUpdated;
   }
   /**
-   * @param string $numShufflePartitions
+   * @param string
    */
   public function setNumShufflePartitions($numShufflePartitions)
   {
@@ -209,7 +209,7 @@ class StateOperatorProgress extends \Google\Model
     return $this->numShufflePartitions;
   }
   /**
-   * @param string $numStateStoreInstances
+   * @param string
    */
   public function setNumStateStoreInstances($numStateStoreInstances)
   {
@@ -223,7 +223,7 @@ class StateOperatorProgress extends \Google\Model
     return $this->numStateStoreInstances;
   }
   /**
-   * @param string $operatorName
+   * @param string
    */
   public function setOperatorName($operatorName)
   {

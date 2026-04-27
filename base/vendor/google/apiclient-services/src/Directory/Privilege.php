@@ -23,50 +23,32 @@ class Privilege extends \Google\Collection
   protected $childPrivilegesType = Privilege::class;
   protected $childPrivilegesDataType = 'array';
   /**
-   * ETag of the resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * If the privilege can be restricted to an organization unit.
-   *
    * @var bool
    */
   public $isOuScopable;
   /**
-   * The type of the API resource. This is always `admin#directory#privilege`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The name of the privilege.
-   *
    * @var string
    */
   public $privilegeName;
   /**
-   * The obfuscated ID of the service this privilege is for. This value is
-   * returned with [`Privileges.list()`](https://developers.google.com/workspace
-   * /admin/directory/v1/reference/privileges/list).
-   *
    * @var string
    */
   public $serviceId;
   /**
-   * The name of the service this privilege is for.
-   *
    * @var string
    */
   public $serviceName;
 
   /**
-   * A list of child privileges. Privileges for a service form a tree. Each
-   * privilege can have a list of child privileges; this list is empty for a
-   * leaf privilege.
-   *
-   * @param Privilege[] $childPrivileges
+   * @param Privilege[]
    */
   public function setChildPrivileges($childPrivileges)
   {
@@ -80,9 +62,7 @@ class Privilege extends \Google\Collection
     return $this->childPrivileges;
   }
   /**
-   * ETag of the resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -96,9 +76,7 @@ class Privilege extends \Google\Collection
     return $this->etag;
   }
   /**
-   * If the privilege can be restricted to an organization unit.
-   *
-   * @param bool $isOuScopable
+   * @param bool
    */
   public function setIsOuScopable($isOuScopable)
   {
@@ -112,9 +90,7 @@ class Privilege extends \Google\Collection
     return $this->isOuScopable;
   }
   /**
-   * The type of the API resource. This is always `admin#directory#privilege`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -128,9 +104,7 @@ class Privilege extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The name of the privilege.
-   *
-   * @param string $privilegeName
+   * @param string
    */
   public function setPrivilegeName($privilegeName)
   {
@@ -144,11 +118,7 @@ class Privilege extends \Google\Collection
     return $this->privilegeName;
   }
   /**
-   * The obfuscated ID of the service this privilege is for. This value is
-   * returned with [`Privileges.list()`](https://developers.google.com/workspace
-   * /admin/directory/v1/reference/privileges/list).
-   *
-   * @param string $serviceId
+   * @param string
    */
   public function setServiceId($serviceId)
   {
@@ -162,9 +132,7 @@ class Privilege extends \Google\Collection
     return $this->serviceId;
   }
   /**
-   * The name of the service this privilege is for.
-   *
-   * @param string $serviceName
+   * @param string
    */
   public function setServiceName($serviceName)
   {

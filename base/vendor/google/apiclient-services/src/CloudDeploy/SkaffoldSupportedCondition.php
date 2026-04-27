@@ -20,53 +20,24 @@ namespace Google\Service\CloudDeploy;
 class SkaffoldSupportedCondition extends \Google\Model
 {
   /**
-   * Default value. This value is unused.
-   */
-  public const SKAFFOLD_SUPPORT_STATE_SKAFFOLD_SUPPORT_STATE_UNSPECIFIED = 'SKAFFOLD_SUPPORT_STATE_UNSPECIFIED';
-  /**
-   * This Skaffold version is currently supported.
-   */
-  public const SKAFFOLD_SUPPORT_STATE_SKAFFOLD_SUPPORT_STATE_SUPPORTED = 'SKAFFOLD_SUPPORT_STATE_SUPPORTED';
-  /**
-   * This Skaffold version is in maintenance mode.
-   */
-  public const SKAFFOLD_SUPPORT_STATE_SKAFFOLD_SUPPORT_STATE_MAINTENANCE_MODE = 'SKAFFOLD_SUPPORT_STATE_MAINTENANCE_MODE';
-  /**
-   * This Skaffold version is no longer supported.
-   */
-  public const SKAFFOLD_SUPPORT_STATE_SKAFFOLD_SUPPORT_STATE_UNSUPPORTED = 'SKAFFOLD_SUPPORT_STATE_UNSUPPORTED';
-  /**
-   * The time at which this release's version of Skaffold will enter maintenance
-   * mode.
-   *
    * @var string
    */
   public $maintenanceModeTime;
   /**
-   * The Skaffold support state for this release's version of Skaffold.
-   *
    * @var string
    */
   public $skaffoldSupportState;
   /**
-   * True if the version of Skaffold used by this release is supported.
-   *
    * @var bool
    */
   public $status;
   /**
-   * The time at which this release's version of Skaffold will no longer be
-   * supported.
-   *
    * @var string
    */
   public $supportExpirationTime;
 
   /**
-   * The time at which this release's version of Skaffold will enter maintenance
-   * mode.
-   *
-   * @param string $maintenanceModeTime
+   * @param string
    */
   public function setMaintenanceModeTime($maintenanceModeTime)
   {
@@ -80,29 +51,21 @@ class SkaffoldSupportedCondition extends \Google\Model
     return $this->maintenanceModeTime;
   }
   /**
-   * The Skaffold support state for this release's version of Skaffold.
-   *
-   * Accepted values: SKAFFOLD_SUPPORT_STATE_UNSPECIFIED,
-   * SKAFFOLD_SUPPORT_STATE_SUPPORTED, SKAFFOLD_SUPPORT_STATE_MAINTENANCE_MODE,
-   * SKAFFOLD_SUPPORT_STATE_UNSUPPORTED
-   *
-   * @param self::SKAFFOLD_SUPPORT_STATE_* $skaffoldSupportState
+   * @param string
    */
   public function setSkaffoldSupportState($skaffoldSupportState)
   {
     $this->skaffoldSupportState = $skaffoldSupportState;
   }
   /**
-   * @return self::SKAFFOLD_SUPPORT_STATE_*
+   * @return string
    */
   public function getSkaffoldSupportState()
   {
     return $this->skaffoldSupportState;
   }
   /**
-   * True if the version of Skaffold used by this release is supported.
-   *
-   * @param bool $status
+   * @param bool
    */
   public function setStatus($status)
   {
@@ -116,10 +79,7 @@ class SkaffoldSupportedCondition extends \Google\Model
     return $this->status;
   }
   /**
-   * The time at which this release's version of Skaffold will no longer be
-   * supported.
-   *
-   * @param string $supportExpirationTime
+   * @param string
    */
   public function setSupportExpirationTime($supportExpirationTime)
   {

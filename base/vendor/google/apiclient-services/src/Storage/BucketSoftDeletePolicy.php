@@ -20,27 +20,16 @@ namespace Google\Service\Storage;
 class BucketSoftDeletePolicy extends \Google\Model
 {
   /**
-   * Server-determined value that indicates the time from which the policy, or
-   * one with a greater retention, was effective. This value is in RFC 3339
-   * format.
-   *
    * @var string
    */
   public $effectiveTime;
   /**
-   * The duration in seconds that soft-deleted objects in the bucket will be
-   * retained and cannot be permanently deleted.
-   *
    * @var string
    */
   public $retentionDurationSeconds;
 
   /**
-   * Server-determined value that indicates the time from which the policy, or
-   * one with a greater retention, was effective. This value is in RFC 3339
-   * format.
-   *
-   * @param string $effectiveTime
+   * @param string
    */
   public function setEffectiveTime($effectiveTime)
   {
@@ -54,10 +43,7 @@ class BucketSoftDeletePolicy extends \Google\Model
     return $this->effectiveTime;
   }
   /**
-   * The duration in seconds that soft-deleted objects in the bucket will be
-   * retained and cannot be permanently deleted.
-   *
-   * @param string $retentionDurationSeconds
+   * @param string
    */
   public function setRetentionDurationSeconds($retentionDurationSeconds)
   {

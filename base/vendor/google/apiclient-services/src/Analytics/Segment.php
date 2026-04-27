@@ -20,64 +20,44 @@ namespace Google\Service\Analytics;
 class Segment extends \Google\Model
 {
   /**
-   * Time the segment was created.
-   *
    * @var string
    */
   public $created;
   /**
-   * Segment definition.
-   *
    * @var string
    */
   public $definition;
   /**
-   * Segment ID.
-   *
    * @var string
    */
   public $id;
   /**
-   * Resource type for Analytics segment.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Segment name.
-   *
    * @var string
    */
   public $name;
   /**
-   * Segment ID. Can be used with the 'segment' parameter in Core Reporting API.
-   *
    * @var string
    */
   public $segmentId;
   /**
-   * Link for this segment.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * Type for a segment. Possible values are "BUILT_IN" or "CUSTOM".
-   *
    * @var string
    */
   public $type;
   /**
-   * Time the segment was last modified.
-   *
    * @var string
    */
   public $updated;
 
   /**
-   * Time the segment was created.
-   *
-   * @param string $created
+   * @param string
    */
   public function setCreated($created)
   {
@@ -91,9 +71,7 @@ class Segment extends \Google\Model
     return $this->created;
   }
   /**
-   * Segment definition.
-   *
-   * @param string $definition
+   * @param string
    */
   public function setDefinition($definition)
   {
@@ -107,9 +85,7 @@ class Segment extends \Google\Model
     return $this->definition;
   }
   /**
-   * Segment ID.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -123,9 +99,7 @@ class Segment extends \Google\Model
     return $this->id;
   }
   /**
-   * Resource type for Analytics segment.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -139,9 +113,7 @@ class Segment extends \Google\Model
     return $this->kind;
   }
   /**
-   * Segment name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -155,9 +127,7 @@ class Segment extends \Google\Model
     return $this->name;
   }
   /**
-   * Segment ID. Can be used with the 'segment' parameter in Core Reporting API.
-   *
-   * @param string $segmentId
+   * @param string
    */
   public function setSegmentId($segmentId)
   {
@@ -171,9 +141,7 @@ class Segment extends \Google\Model
     return $this->segmentId;
   }
   /**
-   * Link for this segment.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -187,9 +155,7 @@ class Segment extends \Google\Model
     return $this->selfLink;
   }
   /**
-   * Type for a segment. Possible values are "BUILT_IN" or "CUSTOM".
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {
@@ -203,9 +169,7 @@ class Segment extends \Google\Model
     return $this->type;
   }
   /**
-   * Time the segment was last modified.
-   *
-   * @param string $updated
+   * @param string
    */
   public function setUpdated($updated)
   {

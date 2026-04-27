@@ -23,17 +23,12 @@ class GoogleCloudDiscoveryengineV1ListDataStoresResponse extends \Google\Collect
   protected $dataStoresType = GoogleCloudDiscoveryengineV1DataStore::class;
   protected $dataStoresDataType = 'array';
   /**
-   * A token that can be sent as ListDataStoresRequest.page_token to retrieve
-   * the next page. If this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * All the customer's DataStores.
-   *
-   * @param GoogleCloudDiscoveryengineV1DataStore[] $dataStores
+   * @param GoogleCloudDiscoveryengineV1DataStore[]
    */
   public function setDataStores($dataStores)
   {
@@ -47,10 +42,7 @@ class GoogleCloudDiscoveryengineV1ListDataStoresResponse extends \Google\Collect
     return $this->dataStores;
   }
   /**
-   * A token that can be sent as ListDataStoresRequest.page_token to retrieve
-   * the next page. If this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

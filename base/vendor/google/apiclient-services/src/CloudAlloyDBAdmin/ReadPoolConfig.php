@@ -20,16 +20,12 @@ namespace Google\Service\CloudAlloyDBAdmin;
 class ReadPoolConfig extends \Google\Model
 {
   /**
-   * Read capacity, i.e. number of nodes in a read pool instance.
-   *
    * @var int
    */
   public $nodeCount;
 
   /**
-   * Read capacity, i.e. number of nodes in a read pool instance.
-   *
-   * @param int $nodeCount
+   * @param int
    */
   public function setNodeCount($nodeCount)
   {

@@ -19,106 +19,61 @@ namespace Google\Service\Dfareporting;
 
 class BillingProfile extends \Google\Model
 {
-  public const INVOICE_LEVEL_ACCOUNT_LEVEL = 'ACCOUNT_LEVEL';
-  public const INVOICE_LEVEL_ADVERTISER_LEVEL = 'ADVERTISER_LEVEL';
-  public const INVOICE_LEVEL_CAMPAIGN_LEVEL = 'CAMPAIGN_LEVEL';
-  public const STATUS_UNDER_REVIEW = 'UNDER_REVIEW';
-  public const STATUS_ACTIVE = 'ACTIVE';
-  public const STATUS_ARCHIVED = 'ARCHIVED';
   /**
-   * Consolidated invoice option for this billing profile. Used to get a single,
-   * consolidated invoice across the chosen invoice level.
-   *
    * @var bool
    */
   public $consolidatedInvoice;
   /**
-   * Country code of this billing profile.This is a read-only field.
-   *
    * @var string
    */
   public $countryCode;
   /**
-   * Billing currency code in ISO 4217 format.This is a read-only field.
-   *
    * @var string
    */
   public $currencyCode;
   /**
-   * ID of this billing profile. This is a read-only, auto-generated field.
-   *
    * @var string
    */
   public $id;
   /**
-   * Invoice level for this billing profile. Used to group fees into separate
-   * invoices by account, advertiser, or campaign.
-   *
    * @var string
    */
   public $invoiceLevel;
   /**
-   * True if the billing profile is the account default profile. This is a read-
-   * only field.
-   *
    * @var bool
    */
   public $isDefault;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#billingProfile".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Name of this billing profile. This is a required field and must be less
-   * than 256 characters long and must be unique among billing profile in the
-   * same account.
-   *
    * @var string
    */
   public $name;
   /**
-   * The ID of the payment account the billing profile belongs to. This is a
-   * read-only field.
-   *
    * @var string
    */
   public $paymentsAccountId;
   /**
-   * The ID of the payment customer the billing profile belongs to. This is a
-   * read-only field.
-   *
    * @var string
    */
   public $paymentsCustomerId;
   /**
-   * Purchase order (PO) for this billing profile. This PO number is used in the
-   * invoices for all of the advertisers in this billing profile.
-   *
    * @var string
    */
   public $purchaseOrder;
   /**
-   * The ID of the secondary payment customer the billing profile belongs to.
-   * This is a read-only field.
-   *
    * @var string
    */
   public $secondaryPaymentsCustomerId;
   /**
-   * Status of this billing profile.This is a read-only field.
-   *
    * @var string
    */
   public $status;
 
   /**
-   * Consolidated invoice option for this billing profile. Used to get a single,
-   * consolidated invoice across the chosen invoice level.
-   *
-   * @param bool $consolidatedInvoice
+   * @param bool
    */
   public function setConsolidatedInvoice($consolidatedInvoice)
   {
@@ -132,9 +87,7 @@ class BillingProfile extends \Google\Model
     return $this->consolidatedInvoice;
   }
   /**
-   * Country code of this billing profile.This is a read-only field.
-   *
-   * @param string $countryCode
+   * @param string
    */
   public function setCountryCode($countryCode)
   {
@@ -148,9 +101,7 @@ class BillingProfile extends \Google\Model
     return $this->countryCode;
   }
   /**
-   * Billing currency code in ISO 4217 format.This is a read-only field.
-   *
-   * @param string $currencyCode
+   * @param string
    */
   public function setCurrencyCode($currencyCode)
   {
@@ -164,9 +115,7 @@ class BillingProfile extends \Google\Model
     return $this->currencyCode;
   }
   /**
-   * ID of this billing profile. This is a read-only, auto-generated field.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -180,29 +129,21 @@ class BillingProfile extends \Google\Model
     return $this->id;
   }
   /**
-   * Invoice level for this billing profile. Used to group fees into separate
-   * invoices by account, advertiser, or campaign.
-   *
-   * Accepted values: ACCOUNT_LEVEL, ADVERTISER_LEVEL, CAMPAIGN_LEVEL
-   *
-   * @param self::INVOICE_LEVEL_* $invoiceLevel
+   * @param string
    */
   public function setInvoiceLevel($invoiceLevel)
   {
     $this->invoiceLevel = $invoiceLevel;
   }
   /**
-   * @return self::INVOICE_LEVEL_*
+   * @return string
    */
   public function getInvoiceLevel()
   {
     return $this->invoiceLevel;
   }
   /**
-   * True if the billing profile is the account default profile. This is a read-
-   * only field.
-   *
-   * @param bool $isDefault
+   * @param bool
    */
   public function setIsDefault($isDefault)
   {
@@ -216,10 +157,7 @@ class BillingProfile extends \Google\Model
     return $this->isDefault;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#billingProfile".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -233,11 +171,7 @@ class BillingProfile extends \Google\Model
     return $this->kind;
   }
   /**
-   * Name of this billing profile. This is a required field and must be less
-   * than 256 characters long and must be unique among billing profile in the
-   * same account.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -251,10 +185,7 @@ class BillingProfile extends \Google\Model
     return $this->name;
   }
   /**
-   * The ID of the payment account the billing profile belongs to. This is a
-   * read-only field.
-   *
-   * @param string $paymentsAccountId
+   * @param string
    */
   public function setPaymentsAccountId($paymentsAccountId)
   {
@@ -268,10 +199,7 @@ class BillingProfile extends \Google\Model
     return $this->paymentsAccountId;
   }
   /**
-   * The ID of the payment customer the billing profile belongs to. This is a
-   * read-only field.
-   *
-   * @param string $paymentsCustomerId
+   * @param string
    */
   public function setPaymentsCustomerId($paymentsCustomerId)
   {
@@ -285,10 +213,7 @@ class BillingProfile extends \Google\Model
     return $this->paymentsCustomerId;
   }
   /**
-   * Purchase order (PO) for this billing profile. This PO number is used in the
-   * invoices for all of the advertisers in this billing profile.
-   *
-   * @param string $purchaseOrder
+   * @param string
    */
   public function setPurchaseOrder($purchaseOrder)
   {
@@ -302,10 +227,7 @@ class BillingProfile extends \Google\Model
     return $this->purchaseOrder;
   }
   /**
-   * The ID of the secondary payment customer the billing profile belongs to.
-   * This is a read-only field.
-   *
-   * @param string $secondaryPaymentsCustomerId
+   * @param string
    */
   public function setSecondaryPaymentsCustomerId($secondaryPaymentsCustomerId)
   {
@@ -319,18 +241,14 @@ class BillingProfile extends \Google\Model
     return $this->secondaryPaymentsCustomerId;
   }
   /**
-   * Status of this billing profile.This is a read-only field.
-   *
-   * Accepted values: UNDER_REVIEW, ACTIVE, ARCHIVED
-   *
-   * @param self::STATUS_* $status
+   * @param string
    */
   public function setStatus($status)
   {
     $this->status = $status;
   }
   /**
-   * @return self::STATUS_*
+   * @return string
    */
   public function getStatus()
   {

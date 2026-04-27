@@ -34,7 +34,7 @@ class RddOperationGraph extends \Google\Collection
   public $stageId;
 
   /**
-   * @param RddOperationEdge[] $edges
+   * @param RddOperationEdge[]
    */
   public function setEdges($edges)
   {
@@ -48,7 +48,7 @@ class RddOperationGraph extends \Google\Collection
     return $this->edges;
   }
   /**
-   * @param RddOperationEdge[] $incomingEdges
+   * @param RddOperationEdge[]
    */
   public function setIncomingEdges($incomingEdges)
   {
@@ -62,7 +62,7 @@ class RddOperationGraph extends \Google\Collection
     return $this->incomingEdges;
   }
   /**
-   * @param RddOperationEdge[] $outgoingEdges
+   * @param RddOperationEdge[]
    */
   public function setOutgoingEdges($outgoingEdges)
   {
@@ -76,7 +76,7 @@ class RddOperationGraph extends \Google\Collection
     return $this->outgoingEdges;
   }
   /**
-   * @param RddOperationCluster $rootCluster
+   * @param RddOperationCluster
    */
   public function setRootCluster(RddOperationCluster $rootCluster)
   {
@@ -90,7 +90,7 @@ class RddOperationGraph extends \Google\Collection
     return $this->rootCluster;
   }
   /**
-   * @param string $stageId
+   * @param string
    */
   public function setStageId($stageId)
   {

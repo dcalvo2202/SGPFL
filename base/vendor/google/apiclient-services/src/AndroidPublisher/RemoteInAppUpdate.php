@@ -20,16 +20,12 @@ namespace Google\Service\AndroidPublisher;
 class RemoteInAppUpdate extends \Google\Model
 {
   /**
-   * Required. Set to true if Remote In-App Update action type is needed.
-   *
    * @var bool
    */
   public $isRemoteInAppUpdateRequested;
 
   /**
-   * Required. Set to true if Remote In-App Update action type is needed.
-   *
-   * @param bool $isRemoteInAppUpdateRequested
+   * @param bool
    */
   public function setIsRemoteInAppUpdateRequested($isRemoteInAppUpdateRequested)
   {

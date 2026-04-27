@@ -20,20 +20,12 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1alphaDeleteSessionRequest extends \Google\Model
 {
   /**
-   * Required. The resource name of the Session to delete. Format: `projects/{pr
-   * oject}/locations/{location}/collections/{collection}/dataStores/{data_store
-   * _id}/sessions/{session_id}`
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Required. The resource name of the Session to delete. Format: `projects/{pr
-   * oject}/locations/{location}/collections/{collection}/dataStores/{data_store
-   * _id}/sessions/{session_id}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

@@ -87,7 +87,7 @@ class ConsolidatedExecutorSummary extends \Google\Model
   public $totalTasks;
 
   /**
-   * @param int $activeTasks
+   * @param int
    */
   public function setActiveTasks($activeTasks)
   {
@@ -101,7 +101,7 @@ class ConsolidatedExecutorSummary extends \Google\Model
     return $this->activeTasks;
   }
   /**
-   * @param int $completedTasks
+   * @param int
    */
   public function setCompletedTasks($completedTasks)
   {
@@ -115,7 +115,7 @@ class ConsolidatedExecutorSummary extends \Google\Model
     return $this->completedTasks;
   }
   /**
-   * @param int $count
+   * @param int
    */
   public function setCount($count)
   {
@@ -129,7 +129,7 @@ class ConsolidatedExecutorSummary extends \Google\Model
     return $this->count;
   }
   /**
-   * @param string $diskUsed
+   * @param string
    */
   public function setDiskUsed($diskUsed)
   {
@@ -143,7 +143,7 @@ class ConsolidatedExecutorSummary extends \Google\Model
     return $this->diskUsed;
   }
   /**
-   * @param int $failedTasks
+   * @param int
    */
   public function setFailedTasks($failedTasks)
   {
@@ -157,7 +157,7 @@ class ConsolidatedExecutorSummary extends \Google\Model
     return $this->failedTasks;
   }
   /**
-   * @param int $isExcluded
+   * @param int
    */
   public function setIsExcluded($isExcluded)
   {
@@ -171,7 +171,7 @@ class ConsolidatedExecutorSummary extends \Google\Model
     return $this->isExcluded;
   }
   /**
-   * @param string $maxMemory
+   * @param string
    */
   public function setMaxMemory($maxMemory)
   {
@@ -185,7 +185,7 @@ class ConsolidatedExecutorSummary extends \Google\Model
     return $this->maxMemory;
   }
   /**
-   * @param MemoryMetrics $memoryMetrics
+   * @param MemoryMetrics
    */
   public function setMemoryMetrics(MemoryMetrics $memoryMetrics)
   {
@@ -199,7 +199,7 @@ class ConsolidatedExecutorSummary extends \Google\Model
     return $this->memoryMetrics;
   }
   /**
-   * @param string $memoryUsed
+   * @param string
    */
   public function setMemoryUsed($memoryUsed)
   {
@@ -213,7 +213,7 @@ class ConsolidatedExecutorSummary extends \Google\Model
     return $this->memoryUsed;
   }
   /**
-   * @param int $rddBlocks
+   * @param int
    */
   public function setRddBlocks($rddBlocks)
   {
@@ -227,7 +227,7 @@ class ConsolidatedExecutorSummary extends \Google\Model
     return $this->rddBlocks;
   }
   /**
-   * @param int $totalCores
+   * @param int
    */
   public function setTotalCores($totalCores)
   {
@@ -241,7 +241,7 @@ class ConsolidatedExecutorSummary extends \Google\Model
     return $this->totalCores;
   }
   /**
-   * @param string $totalDurationMillis
+   * @param string
    */
   public function setTotalDurationMillis($totalDurationMillis)
   {
@@ -255,7 +255,7 @@ class ConsolidatedExecutorSummary extends \Google\Model
     return $this->totalDurationMillis;
   }
   /**
-   * @param string $totalGcTimeMillis
+   * @param string
    */
   public function setTotalGcTimeMillis($totalGcTimeMillis)
   {
@@ -269,7 +269,7 @@ class ConsolidatedExecutorSummary extends \Google\Model
     return $this->totalGcTimeMillis;
   }
   /**
-   * @param string $totalInputBytes
+   * @param string
    */
   public function setTotalInputBytes($totalInputBytes)
   {
@@ -283,7 +283,7 @@ class ConsolidatedExecutorSummary extends \Google\Model
     return $this->totalInputBytes;
   }
   /**
-   * @param string $totalShuffleRead
+   * @param string
    */
   public function setTotalShuffleRead($totalShuffleRead)
   {
@@ -297,7 +297,7 @@ class ConsolidatedExecutorSummary extends \Google\Model
     return $this->totalShuffleRead;
   }
   /**
-   * @param string $totalShuffleWrite
+   * @param string
    */
   public function setTotalShuffleWrite($totalShuffleWrite)
   {
@@ -311,7 +311,7 @@ class ConsolidatedExecutorSummary extends \Google\Model
     return $this->totalShuffleWrite;
   }
   /**
-   * @param int $totalTasks
+   * @param int
    */
   public function setTotalTasks($totalTasks)
   {

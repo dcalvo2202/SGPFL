@@ -20,55 +20,36 @@ namespace Google\Service\DisplayVideo;
 class Channel extends \Google\Model
 {
   /**
-   * The ID of the advertiser that owns the channel.
-   *
    * @var string
    */
   public $advertiserId;
   /**
-   * Output only. The unique ID of the channel. Assigned by the system.
-   *
    * @var string
    */
   public $channelId;
   /**
-   * Required. The display name of the channel. Must be UTF-8 encoded with a
-   * maximum length of 240 bytes.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. The resource name of the channel.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Number of line items that are directly targeting this channel
-   * negatively.
-   *
    * @var string
    */
   public $negativelyTargetedLineItemCount;
   /**
-   * The ID of the partner that owns the channel.
-   *
    * @var string
    */
   public $partnerId;
   /**
-   * Output only. Number of line items that are directly targeting this channel
-   * positively.
-   *
    * @var string
    */
   public $positivelyTargetedLineItemCount;
 
   /**
-   * The ID of the advertiser that owns the channel.
-   *
-   * @param string $advertiserId
+   * @param string
    */
   public function setAdvertiserId($advertiserId)
   {
@@ -82,9 +63,7 @@ class Channel extends \Google\Model
     return $this->advertiserId;
   }
   /**
-   * Output only. The unique ID of the channel. Assigned by the system.
-   *
-   * @param string $channelId
+   * @param string
    */
   public function setChannelId($channelId)
   {
@@ -98,10 +77,7 @@ class Channel extends \Google\Model
     return $this->channelId;
   }
   /**
-   * Required. The display name of the channel. Must be UTF-8 encoded with a
-   * maximum length of 240 bytes.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -115,9 +91,7 @@ class Channel extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Output only. The resource name of the channel.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -131,10 +105,7 @@ class Channel extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Number of line items that are directly targeting this channel
-   * negatively.
-   *
-   * @param string $negativelyTargetedLineItemCount
+   * @param string
    */
   public function setNegativelyTargetedLineItemCount($negativelyTargetedLineItemCount)
   {
@@ -148,9 +119,7 @@ class Channel extends \Google\Model
     return $this->negativelyTargetedLineItemCount;
   }
   /**
-   * The ID of the partner that owns the channel.
-   *
-   * @param string $partnerId
+   * @param string
    */
   public function setPartnerId($partnerId)
   {
@@ -164,10 +133,7 @@ class Channel extends \Google\Model
     return $this->partnerId;
   }
   /**
-   * Output only. Number of line items that are directly targeting this channel
-   * positively.
-   *
-   * @param string $positivelyTargetedLineItemCount
+   * @param string
    */
   public function setPositivelyTargetedLineItemCount($positivelyTargetedLineItemCount)
   {

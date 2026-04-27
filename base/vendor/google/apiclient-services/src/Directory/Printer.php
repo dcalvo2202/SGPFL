@@ -23,70 +23,44 @@ class Printer extends \Google\Collection
   protected $auxiliaryMessagesType = AuxiliaryMessage::class;
   protected $auxiliaryMessagesDataType = 'array';
   /**
-   * Output only. Time when printer was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Editable. Description of printer.
-   *
    * @var string
    */
   public $description;
   /**
-   * Editable. Name of printer.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Id of the printer. (During printer creation leave empty)
-   *
    * @var string
    */
   public $id;
   /**
-   * Editable. Make and model of printer. e.g. Lexmark MS610de Value must be in
-   * format as seen in ListPrinterModels response.
-   *
    * @var string
    */
   public $makeAndModel;
   /**
-   * Identifier. The resource name of the Printer object, in the format
-   * customers/{customer-id}/printers/{printer-id} (During printer creation
-   * leave empty)
-   *
    * @var string
    */
   public $name;
   /**
-   * Organization Unit that owns this printer (Only can be set during Printer
-   * creation)
-   *
    * @var string
    */
   public $orgUnitId;
   /**
-   * Editable. Printer URI.
-   *
    * @var string
    */
   public $uri;
   /**
-   * Editable. flag to use driverless configuration or not. If it's set to be
-   * true, make_and_model can be ignored
-   *
    * @var bool
    */
   public $useDriverlessConfig;
 
   /**
-   * Output only. Auxiliary messages about issues with the printer configuration
-   * if any.
-   *
-   * @param AuxiliaryMessage[] $auxiliaryMessages
+   * @param AuxiliaryMessage[]
    */
   public function setAuxiliaryMessages($auxiliaryMessages)
   {
@@ -100,9 +74,7 @@ class Printer extends \Google\Collection
     return $this->auxiliaryMessages;
   }
   /**
-   * Output only. Time when printer was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -116,9 +88,7 @@ class Printer extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Editable. Description of printer.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -132,9 +102,7 @@ class Printer extends \Google\Collection
     return $this->description;
   }
   /**
-   * Editable. Name of printer.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -148,9 +116,7 @@ class Printer extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Id of the printer. (During printer creation leave empty)
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -164,10 +130,7 @@ class Printer extends \Google\Collection
     return $this->id;
   }
   /**
-   * Editable. Make and model of printer. e.g. Lexmark MS610de Value must be in
-   * format as seen in ListPrinterModels response.
-   *
-   * @param string $makeAndModel
+   * @param string
    */
   public function setMakeAndModel($makeAndModel)
   {
@@ -181,11 +144,7 @@ class Printer extends \Google\Collection
     return $this->makeAndModel;
   }
   /**
-   * Identifier. The resource name of the Printer object, in the format
-   * customers/{customer-id}/printers/{printer-id} (During printer creation
-   * leave empty)
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -199,10 +158,7 @@ class Printer extends \Google\Collection
     return $this->name;
   }
   /**
-   * Organization Unit that owns this printer (Only can be set during Printer
-   * creation)
-   *
-   * @param string $orgUnitId
+   * @param string
    */
   public function setOrgUnitId($orgUnitId)
   {
@@ -216,9 +172,7 @@ class Printer extends \Google\Collection
     return $this->orgUnitId;
   }
   /**
-   * Editable. Printer URI.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {
@@ -232,10 +186,7 @@ class Printer extends \Google\Collection
     return $this->uri;
   }
   /**
-   * Editable. flag to use driverless configuration or not. If it's set to be
-   * true, make_and_model can be ignored
-   *
-   * @param bool $useDriverlessConfig
+   * @param bool
    */
   public function setUseDriverlessConfig($useDriverlessConfig)
   {

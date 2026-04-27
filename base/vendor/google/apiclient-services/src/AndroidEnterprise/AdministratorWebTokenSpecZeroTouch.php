@@ -20,18 +20,12 @@ namespace Google\Service\AndroidEnterprise;
 class AdministratorWebTokenSpecZeroTouch extends \Google\Model
 {
   /**
-   * Whether zero-touch embedded UI is usable with this token. If enabled, the
-   * admin can link zero-touch customers to this enterprise.
-   *
    * @var bool
    */
   public $enabled;
 
   /**
-   * Whether zero-touch embedded UI is usable with this token. If enabled, the
-   * admin can link zero-touch customers to this enterprise.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {

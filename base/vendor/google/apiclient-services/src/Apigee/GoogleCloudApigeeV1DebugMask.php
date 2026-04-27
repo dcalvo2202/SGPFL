@@ -21,71 +21,44 @@ class GoogleCloudApigeeV1DebugMask extends \Google\Collection
 {
   protected $collection_key = 'variables';
   /**
-   * List of JSON paths that specify the JSON elements to be filtered from JSON
-   * payloads in error flows.
-   *
    * @var string[]
    */
   public $faultJSONPaths;
   /**
-   * List of XPaths that specify the XML elements to be filtered from XML
-   * payloads in error flows.
-   *
    * @var string[]
    */
   public $faultXPaths;
   /**
-   * Name of the debug mask.
-   *
    * @var string
    */
   public $name;
   /**
-   * Map of namespaces to URIs.
-   *
    * @var string[]
    */
   public $namespaces;
   /**
-   * List of JSON paths that specify the JSON elements to be filtered from JSON
-   * request message payloads.
-   *
    * @var string[]
    */
   public $requestJSONPaths;
   /**
-   * List of XPaths that specify the XML elements to be filtered from XML
-   * request message payloads.
-   *
    * @var string[]
    */
   public $requestXPaths;
   /**
-   * List of JSON paths that specify the JSON elements to be filtered from JSON
-   * response message payloads.
-   *
    * @var string[]
    */
   public $responseJSONPaths;
   /**
-   * List of XPaths that specify the XML elements to be filtered from XML
-   * response message payloads.
-   *
    * @var string[]
    */
   public $responseXPaths;
   /**
-   * List of variables that should be masked from the debug output.
-   *
    * @var string[]
    */
   public $variables;
 
   /**
-   * List of JSON paths that specify the JSON elements to be filtered from JSON
-   * payloads in error flows.
-   *
-   * @param string[] $faultJSONPaths
+   * @param string[]
    */
   public function setFaultJSONPaths($faultJSONPaths)
   {
@@ -99,10 +72,7 @@ class GoogleCloudApigeeV1DebugMask extends \Google\Collection
     return $this->faultJSONPaths;
   }
   /**
-   * List of XPaths that specify the XML elements to be filtered from XML
-   * payloads in error flows.
-   *
-   * @param string[] $faultXPaths
+   * @param string[]
    */
   public function setFaultXPaths($faultXPaths)
   {
@@ -116,9 +86,7 @@ class GoogleCloudApigeeV1DebugMask extends \Google\Collection
     return $this->faultXPaths;
   }
   /**
-   * Name of the debug mask.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -132,9 +100,7 @@ class GoogleCloudApigeeV1DebugMask extends \Google\Collection
     return $this->name;
   }
   /**
-   * Map of namespaces to URIs.
-   *
-   * @param string[] $namespaces
+   * @param string[]
    */
   public function setNamespaces($namespaces)
   {
@@ -148,10 +114,7 @@ class GoogleCloudApigeeV1DebugMask extends \Google\Collection
     return $this->namespaces;
   }
   /**
-   * List of JSON paths that specify the JSON elements to be filtered from JSON
-   * request message payloads.
-   *
-   * @param string[] $requestJSONPaths
+   * @param string[]
    */
   public function setRequestJSONPaths($requestJSONPaths)
   {
@@ -165,10 +128,7 @@ class GoogleCloudApigeeV1DebugMask extends \Google\Collection
     return $this->requestJSONPaths;
   }
   /**
-   * List of XPaths that specify the XML elements to be filtered from XML
-   * request message payloads.
-   *
-   * @param string[] $requestXPaths
+   * @param string[]
    */
   public function setRequestXPaths($requestXPaths)
   {
@@ -182,10 +142,7 @@ class GoogleCloudApigeeV1DebugMask extends \Google\Collection
     return $this->requestXPaths;
   }
   /**
-   * List of JSON paths that specify the JSON elements to be filtered from JSON
-   * response message payloads.
-   *
-   * @param string[] $responseJSONPaths
+   * @param string[]
    */
   public function setResponseJSONPaths($responseJSONPaths)
   {
@@ -199,10 +156,7 @@ class GoogleCloudApigeeV1DebugMask extends \Google\Collection
     return $this->responseJSONPaths;
   }
   /**
-   * List of XPaths that specify the XML elements to be filtered from XML
-   * response message payloads.
-   *
-   * @param string[] $responseXPaths
+   * @param string[]
    */
   public function setResponseXPaths($responseXPaths)
   {
@@ -216,9 +170,7 @@ class GoogleCloudApigeeV1DebugMask extends \Google\Collection
     return $this->responseXPaths;
   }
   /**
-   * List of variables that should be masked from the debug output.
-   *
-   * @param string[] $variables
+   * @param string[]
    */
   public function setVariables($variables)
   {

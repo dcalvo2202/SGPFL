@@ -23,18 +23,12 @@ class ListDataSourcesResponse extends \Google\Collection
   protected $dataSourcesType = DataSource::class;
   protected $dataSourcesDataType = 'array';
   /**
-   * Output only. The next-pagination token. For multiple-page list results,
-   * this token can be used as the `ListDataSourcesRequest.page_token` to
-   * request the next page of list results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * List of supported data sources and their transfer settings.
-   *
-   * @param DataSource[] $dataSources
+   * @param DataSource[]
    */
   public function setDataSources($dataSources)
   {
@@ -48,11 +42,7 @@ class ListDataSourcesResponse extends \Google\Collection
     return $this->dataSources;
   }
   /**
-   * Output only. The next-pagination token. For multiple-page list results,
-   * this token can be used as the `ListDataSourcesRequest.page_token` to
-   * request the next page of list results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

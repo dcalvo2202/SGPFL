@@ -21,54 +21,34 @@ class Version extends \Google\Collection
 {
   protected $collection_key = 'relatedTags';
   /**
-   * Optional. Client specified annotations.
-   *
    * @var string[]
    */
   public $annotations;
   /**
-   * The time when the version was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. Description of the version, as specified in its metadata.
-   *
    * @var string
    */
   public $description;
-  protected $fingerprintsType = Hash::class;
-  protected $fingerprintsDataType = 'array';
   /**
-   * Output only. Repository-specific Metadata stored against this version. The
-   * fields returned are defined by the underlying repository-specific resource.
-   * Currently, the resources could be: DockerImage MavenArtifact
-   *
    * @var array[]
    */
   public $metadata;
   /**
-   * The name of the version, for example: `projects/p1/locations/us-
-   * central1/repositories/repo1/packages/pkg1/versions/art1`. If the package or
-   * version ID parts contain slashes, the slashes are escaped.
-   *
    * @var string
    */
   public $name;
   protected $relatedTagsType = Tag::class;
   protected $relatedTagsDataType = 'array';
   /**
-   * The time when the version was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Optional. Client specified annotations.
-   *
-   * @param string[] $annotations
+   * @param string[]
    */
   public function setAnnotations($annotations)
   {
@@ -82,9 +62,7 @@ class Version extends \Google\Collection
     return $this->annotations;
   }
   /**
-   * The time when the version was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -98,9 +76,7 @@ class Version extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Optional. Description of the version, as specified in its metadata.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -114,29 +90,7 @@ class Version extends \Google\Collection
     return $this->description;
   }
   /**
-   * Output only. Immutable reference for the version, calculated based on the
-   * version's content. Currently we only support dirsum_sha256 hash algorithm.
-   * Additional hash algorithms may be added in the future.
-   *
-   * @param Hash[] $fingerprints
-   */
-  public function setFingerprints($fingerprints)
-  {
-    $this->fingerprints = $fingerprints;
-  }
-  /**
-   * @return Hash[]
-   */
-  public function getFingerprints()
-  {
-    return $this->fingerprints;
-  }
-  /**
-   * Output only. Repository-specific Metadata stored against this version. The
-   * fields returned are defined by the underlying repository-specific resource.
-   * Currently, the resources could be: DockerImage MavenArtifact
-   *
-   * @param array[] $metadata
+   * @param array[]
    */
   public function setMetadata($metadata)
   {
@@ -150,11 +104,7 @@ class Version extends \Google\Collection
     return $this->metadata;
   }
   /**
-   * The name of the version, for example: `projects/p1/locations/us-
-   * central1/repositories/repo1/packages/pkg1/versions/art1`. If the package or
-   * version ID parts contain slashes, the slashes are escaped.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -168,10 +118,7 @@ class Version extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. A list of related tags. Will contain up to 100 tags that
-   * reference this version.
-   *
-   * @param Tag[] $relatedTags
+   * @param Tag[]
    */
   public function setRelatedTags($relatedTags)
   {
@@ -185,9 +132,7 @@ class Version extends \Google\Collection
     return $this->relatedTags;
   }
   /**
-   * The time when the version was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

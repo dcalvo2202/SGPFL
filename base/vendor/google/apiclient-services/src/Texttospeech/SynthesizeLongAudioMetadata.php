@@ -20,37 +20,23 @@ namespace Google\Service\Texttospeech;
 class SynthesizeLongAudioMetadata extends \Google\Model
 {
   /**
-   * Deprecated. Do not use.
-   *
-   * @deprecated
    * @var string
    */
   public $lastUpdateTime;
-  /**
-   * The progress of the most recent processing update in percentage, ie. 70.0%.
-   *
-   * @var 
-   */
   public $progressPercentage;
   /**
-   * Time when the request was received.
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * Deprecated. Do not use.
-   *
-   * @deprecated
-   * @param string $lastUpdateTime
+   * @param string
    */
   public function setLastUpdateTime($lastUpdateTime)
   {
     $this->lastUpdateTime = $lastUpdateTime;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getLastUpdateTime()
@@ -66,9 +52,7 @@ class SynthesizeLongAudioMetadata extends \Google\Model
     return $this->progressPercentage;
   }
   /**
-   * Time when the request was received.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

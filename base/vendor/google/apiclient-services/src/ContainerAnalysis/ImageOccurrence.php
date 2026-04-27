@@ -21,16 +21,10 @@ class ImageOccurrence extends \Google\Collection
 {
   protected $collection_key = 'layerInfo';
   /**
-   * Output only. This contains the base image URL for the derived image
-   * occurrence.
-   *
    * @var string
    */
   public $baseResourceUrl;
   /**
-   * Output only. The number of layers by which this image differs from the
-   * associated image basis.
-   *
    * @var int
    */
   public $distance;
@@ -40,10 +34,7 @@ class ImageOccurrence extends \Google\Collection
   protected $layerInfoDataType = 'array';
 
   /**
-   * Output only. This contains the base image URL for the derived image
-   * occurrence.
-   *
-   * @param string $baseResourceUrl
+   * @param string
    */
   public function setBaseResourceUrl($baseResourceUrl)
   {
@@ -57,10 +48,7 @@ class ImageOccurrence extends \Google\Collection
     return $this->baseResourceUrl;
   }
   /**
-   * Output only. The number of layers by which this image differs from the
-   * associated image basis.
-   *
-   * @param int $distance
+   * @param int
    */
   public function setDistance($distance)
   {
@@ -74,9 +62,7 @@ class ImageOccurrence extends \Google\Collection
     return $this->distance;
   }
   /**
-   * Required. The fingerprint of the derived image.
-   *
-   * @param Fingerprint $fingerprint
+   * @param Fingerprint
    */
   public function setFingerprint(Fingerprint $fingerprint)
   {
@@ -90,11 +76,7 @@ class ImageOccurrence extends \Google\Collection
     return $this->fingerprint;
   }
   /**
-   * This contains layer-specific metadata, if populated it has length
-   * "distance" and is ordered with [distance] being the layer immediately
-   * following the base image and [1] being the final layer.
-   *
-   * @param Layer[] $layerInfo
+   * @param Layer[]
    */
   public function setLayerInfo($layerInfo)
   {

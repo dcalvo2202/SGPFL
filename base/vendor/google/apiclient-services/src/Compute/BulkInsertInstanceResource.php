@@ -20,66 +20,30 @@ namespace Google\Service\Compute;
 class BulkInsertInstanceResource extends \Google\Model
 {
   /**
-   * The maximum number of instances to create.
-   *
    * @var string
    */
   public $count;
-  protected $instanceFlexibilityPolicyType = InstanceFlexibilityPolicy::class;
-  protected $instanceFlexibilityPolicyDataType = '';
   protected $instancePropertiesType = InstanceProperties::class;
   protected $instancePropertiesDataType = '';
   protected $locationPolicyType = LocationPolicy::class;
   protected $locationPolicyDataType = '';
   /**
-   * The minimum number of instances to create. If no min_count is specified
-   * then count is used as the default value. Ifmin_count instances cannot be
-   * created, then no instances will be created and instances already created
-   * will be deleted.
-   *
    * @var string
    */
   public $minCount;
   /**
-   * The string pattern used for the names of the VMs. Either name_pattern or
-   * per_instance_properties must be set. The pattern must contain one
-   * continuous sequence of placeholder hash characters (#) with each character
-   * corresponding to one digit of the generated instance name. Example: a
-   * name_pattern of inst-#### generates instance names such asinst-0001 and
-   * inst-0002. If existing instances in the same project and zone have names
-   * that match the name pattern then the generated instance numbers start after
-   * the biggest existing number. For example, if there exists an instance with
-   * nameinst-0050, then instance names generated using the patterninst-####
-   * begin with inst-0051. The name pattern placeholder #...# can contain up to
-   * 18 characters.
-   *
    * @var string
    */
   public $namePattern;
   protected $perInstancePropertiesType = BulkInsertInstanceResourcePerInstanceProperties::class;
   protected $perInstancePropertiesDataType = 'map';
   /**
-   * Specifies the instance template from which to create instances. You may
-   * combine sourceInstanceTemplate withinstanceProperties to override specific
-   * values from an existing instance template. Bulk API follows the semantics
-   * of JSON Merge Patch described by RFC 7396.
-   *
-   * It can be a full or partial URL. For example, the following are all valid
-   * URLs to an instance template:                - https://www.googleapis.com/c
-   * ompute/v1/projects/project/global/instanceTemplates/instanceTemplate
-   * - projects/project/global/instanceTemplates/instanceTemplate       -
-   * global/instanceTemplates/instanceTemplate
-   *
-   * This field is optional.
-   *
    * @var string
    */
   public $sourceInstanceTemplate;
 
   /**
-   * The maximum number of instances to create.
-   *
-   * @param string $count
+   * @param string
    */
   public function setCount($count)
   {
@@ -93,26 +57,7 @@ class BulkInsertInstanceResource extends \Google\Model
     return $this->count;
   }
   /**
-   * A flexible specification of machine type of instances to create.
-   *
-   * @param InstanceFlexibilityPolicy $instanceFlexibilityPolicy
-   */
-  public function setInstanceFlexibilityPolicy(InstanceFlexibilityPolicy $instanceFlexibilityPolicy)
-  {
-    $this->instanceFlexibilityPolicy = $instanceFlexibilityPolicy;
-  }
-  /**
-   * @return InstanceFlexibilityPolicy
-   */
-  public function getInstanceFlexibilityPolicy()
-  {
-    return $this->instanceFlexibilityPolicy;
-  }
-  /**
-   * The instance properties defining the VM instances to be created. Required
-   * if sourceInstanceTemplate is not provided.
-   *
-   * @param InstanceProperties $instanceProperties
+   * @param InstanceProperties
    */
   public function setInstanceProperties(InstanceProperties $instanceProperties)
   {
@@ -126,10 +71,7 @@ class BulkInsertInstanceResource extends \Google\Model
     return $this->instanceProperties;
   }
   /**
-   * Policy for choosing target zone. For more information, seeCreate VMs in
-   * bulk.
-   *
-   * @param LocationPolicy $locationPolicy
+   * @param LocationPolicy
    */
   public function setLocationPolicy(LocationPolicy $locationPolicy)
   {
@@ -143,12 +85,7 @@ class BulkInsertInstanceResource extends \Google\Model
     return $this->locationPolicy;
   }
   /**
-   * The minimum number of instances to create. If no min_count is specified
-   * then count is used as the default value. Ifmin_count instances cannot be
-   * created, then no instances will be created and instances already created
-   * will be deleted.
-   *
-   * @param string $minCount
+   * @param string
    */
   public function setMinCount($minCount)
   {
@@ -162,19 +99,7 @@ class BulkInsertInstanceResource extends \Google\Model
     return $this->minCount;
   }
   /**
-   * The string pattern used for the names of the VMs. Either name_pattern or
-   * per_instance_properties must be set. The pattern must contain one
-   * continuous sequence of placeholder hash characters (#) with each character
-   * corresponding to one digit of the generated instance name. Example: a
-   * name_pattern of inst-#### generates instance names such asinst-0001 and
-   * inst-0002. If existing instances in the same project and zone have names
-   * that match the name pattern then the generated instance numbers start after
-   * the biggest existing number. For example, if there exists an instance with
-   * nameinst-0050, then instance names generated using the patterninst-####
-   * begin with inst-0051. The name pattern placeholder #...# can contain up to
-   * 18 characters.
-   *
-   * @param string $namePattern
+   * @param string
    */
   public function setNamePattern($namePattern)
   {
@@ -188,10 +113,7 @@ class BulkInsertInstanceResource extends \Google\Model
     return $this->namePattern;
   }
   /**
-   * Per-instance properties to be set on individual instances. Keys of this map
-   * specify requested instance names. Can be empty if name_pattern is used.
-   *
-   * @param BulkInsertInstanceResourcePerInstanceProperties[] $perInstanceProperties
+   * @param BulkInsertInstanceResourcePerInstanceProperties[]
    */
   public function setPerInstanceProperties($perInstanceProperties)
   {
@@ -205,20 +127,7 @@ class BulkInsertInstanceResource extends \Google\Model
     return $this->perInstanceProperties;
   }
   /**
-   * Specifies the instance template from which to create instances. You may
-   * combine sourceInstanceTemplate withinstanceProperties to override specific
-   * values from an existing instance template. Bulk API follows the semantics
-   * of JSON Merge Patch described by RFC 7396.
-   *
-   * It can be a full or partial URL. For example, the following are all valid
-   * URLs to an instance template:                - https://www.googleapis.com/c
-   * ompute/v1/projects/project/global/instanceTemplates/instanceTemplate
-   * - projects/project/global/instanceTemplates/instanceTemplate       -
-   * global/instanceTemplates/instanceTemplate
-   *
-   * This field is optional.
-   *
-   * @param string $sourceInstanceTemplate
+   * @param string
    */
   public function setSourceInstanceTemplate($sourceInstanceTemplate)
   {

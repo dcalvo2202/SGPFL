@@ -20,55 +20,34 @@ namespace Google\Service\Dfareporting;
 class CreativeField extends \Google\Model
 {
   /**
-   * Account ID of this creative field. This is a read-only field that can be
-   * left blank.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * Advertiser ID of this creative field. This is a required field on
-   * insertion.
-   *
    * @var string
    */
   public $advertiserId;
   protected $advertiserIdDimensionValueType = DimensionValue::class;
   protected $advertiserIdDimensionValueDataType = '';
   /**
-   * ID of this creative field. This is a read-only, auto-generated field.
-   *
    * @var string
    */
   public $id;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#creativeField".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Name of this creative field. This is a required field and must be less than
-   * 256 characters long and unique among creative fields of the same
-   * advertiser.
-   *
    * @var string
    */
   public $name;
   /**
-   * Subaccount ID of this creative field. This is a read-only field that can be
-   * left blank.
-   *
    * @var string
    */
   public $subaccountId;
 
   /**
-   * Account ID of this creative field. This is a read-only field that can be
-   * left blank.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -82,10 +61,7 @@ class CreativeField extends \Google\Model
     return $this->accountId;
   }
   /**
-   * Advertiser ID of this creative field. This is a required field on
-   * insertion.
-   *
-   * @param string $advertiserId
+   * @param string
    */
   public function setAdvertiserId($advertiserId)
   {
@@ -99,10 +75,7 @@ class CreativeField extends \Google\Model
     return $this->advertiserId;
   }
   /**
-   * Dimension value for the ID of the advertiser. This is a read-only, auto-
-   * generated field.
-   *
-   * @param DimensionValue $advertiserIdDimensionValue
+   * @param DimensionValue
    */
   public function setAdvertiserIdDimensionValue(DimensionValue $advertiserIdDimensionValue)
   {
@@ -116,9 +89,7 @@ class CreativeField extends \Google\Model
     return $this->advertiserIdDimensionValue;
   }
   /**
-   * ID of this creative field. This is a read-only, auto-generated field.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -132,10 +103,7 @@ class CreativeField extends \Google\Model
     return $this->id;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#creativeField".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -149,11 +117,7 @@ class CreativeField extends \Google\Model
     return $this->kind;
   }
   /**
-   * Name of this creative field. This is a required field and must be less than
-   * 256 characters long and unique among creative fields of the same
-   * advertiser.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -167,10 +131,7 @@ class CreativeField extends \Google\Model
     return $this->name;
   }
   /**
-   * Subaccount ID of this creative field. This is a read-only field that can be
-   * left blank.
-   *
-   * @param string $subaccountId
+   * @param string
    */
   public function setSubaccountId($subaccountId)
   {

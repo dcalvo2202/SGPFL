@@ -20,35 +20,19 @@ namespace Google\Service\AndroidProvisioningPartner;
 class GetDeviceSimLockStateResponse extends \Google\Model
 {
   /**
-   * Invalid code. Shouldn't be used.
-   */
-  public const SIM_LOCK_STATE_SIM_LOCK_STATE_UNSPECIFIED = 'SIM_LOCK_STATE_UNSPECIFIED';
-  /**
-   * Device is not SIM locked.
-   */
-  public const SIM_LOCK_STATE_UNLOCKED = 'UNLOCKED';
-  /**
-   * Device is SIM locked to the partner querying SIM lock state.
-   */
-  public const SIM_LOCK_STATE_LOCKED_TO_PARTNER = 'LOCKED_TO_PARTNER';
-  /**
-   * Device is SIM locked to a different partner.
-   */
-  public const SIM_LOCK_STATE_LOCKED_TO_OTHER_PARTNER = 'LOCKED_TO_OTHER_PARTNER';
-  /**
    * @var string
    */
   public $simLockState;
 
   /**
-   * @param self::SIM_LOCK_STATE_* $simLockState
+   * @param string
    */
   public function setSimLockState($simLockState)
   {
     $this->simLockState = $simLockState;
   }
   /**
-   * @return self::SIM_LOCK_STATE_*
+   * @return string
    */
   public function getSimLockState()
   {

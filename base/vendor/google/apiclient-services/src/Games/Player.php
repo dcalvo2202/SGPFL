@@ -20,89 +20,54 @@ namespace Google\Service\Games;
 class Player extends \Google\Model
 {
   /**
-   * There is no relationship between the players.
-   */
-  public const FRIEND_STATUS_NO_RELATIONSHIP = 'NO_RELATIONSHIP';
-  /**
-   * The player and requester are friends.
-   */
-  public const FRIEND_STATUS_FRIEND = 'FRIEND';
-  /**
-   * The base URL for the image that represents the player.
-   *
    * @var string
    */
   public $avatarImageUrl;
   /**
-   * The url to the landscape mode player banner image.
-   *
    * @var string
    */
   public $bannerUrlLandscape;
   /**
-   * The url to the portrait mode player banner image.
-   *
    * @var string
    */
   public $bannerUrlPortrait;
   /**
-   * The name to display for the player.
-   *
    * @var string
    */
   public $displayName;
   protected $experienceInfoType = PlayerExperienceInfo::class;
   protected $experienceInfoDataType = '';
   /**
-   * The friend status of the given player, relative to the requester. This is
-   * unset if the player is not sharing their friends list with the game.
-   *
    * @var string
    */
   public $friendStatus;
   /**
-   * Per-application unique player identifier.
-   *
    * @var string
    */
   public $gamePlayerId;
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#player`
-   *
    * @var string
    */
   public $kind;
   protected $nameType = PlayerName::class;
   protected $nameDataType = '';
   /**
-   * The player ID that was used for this player the first time they signed into
-   * the game in question. This is only populated for calls to player.get for
-   * the requesting player, only if the player ID has subsequently changed, and
-   * only to clients that support remapping player IDs.
-   *
    * @var string
    */
   public $originalPlayerId;
   /**
-   * The ID of the player.
-   *
    * @var string
    */
   public $playerId;
   protected $profileSettingsType = ProfileSettings::class;
   protected $profileSettingsDataType = '';
   /**
-   * The player's title rewarded for their game activities.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * The base URL for the image that represents the player.
-   *
-   * @param string $avatarImageUrl
+   * @param string
    */
   public function setAvatarImageUrl($avatarImageUrl)
   {
@@ -116,9 +81,7 @@ class Player extends \Google\Model
     return $this->avatarImageUrl;
   }
   /**
-   * The url to the landscape mode player banner image.
-   *
-   * @param string $bannerUrlLandscape
+   * @param string
    */
   public function setBannerUrlLandscape($bannerUrlLandscape)
   {
@@ -132,9 +95,7 @@ class Player extends \Google\Model
     return $this->bannerUrlLandscape;
   }
   /**
-   * The url to the portrait mode player banner image.
-   *
-   * @param string $bannerUrlPortrait
+   * @param string
    */
   public function setBannerUrlPortrait($bannerUrlPortrait)
   {
@@ -148,9 +109,7 @@ class Player extends \Google\Model
     return $this->bannerUrlPortrait;
   }
   /**
-   * The name to display for the player.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -164,9 +123,7 @@ class Player extends \Google\Model
     return $this->displayName;
   }
   /**
-   * An object to represent Play Game experience information for the player.
-   *
-   * @param PlayerExperienceInfo $experienceInfo
+   * @param PlayerExperienceInfo
    */
   public function setExperienceInfo(PlayerExperienceInfo $experienceInfo)
   {
@@ -180,28 +137,21 @@ class Player extends \Google\Model
     return $this->experienceInfo;
   }
   /**
-   * The friend status of the given player, relative to the requester. This is
-   * unset if the player is not sharing their friends list with the game.
-   *
-   * Accepted values: NO_RELATIONSHIP, FRIEND
-   *
-   * @param self::FRIEND_STATUS_* $friendStatus
+   * @param string
    */
   public function setFriendStatus($friendStatus)
   {
     $this->friendStatus = $friendStatus;
   }
   /**
-   * @return self::FRIEND_STATUS_*
+   * @return string
    */
   public function getFriendStatus()
   {
     return $this->friendStatus;
   }
   /**
-   * Per-application unique player identifier.
-   *
-   * @param string $gamePlayerId
+   * @param string
    */
   public function setGamePlayerId($gamePlayerId)
   {
@@ -215,10 +165,7 @@ class Player extends \Google\Model
     return $this->gamePlayerId;
   }
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#player`
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -232,9 +179,7 @@ class Player extends \Google\Model
     return $this->kind;
   }
   /**
-   * A representation of the individual components of the name.
-   *
-   * @param PlayerName $name
+   * @param PlayerName
    */
   public function setName(PlayerName $name)
   {
@@ -248,12 +193,7 @@ class Player extends \Google\Model
     return $this->name;
   }
   /**
-   * The player ID that was used for this player the first time they signed into
-   * the game in question. This is only populated for calls to player.get for
-   * the requesting player, only if the player ID has subsequently changed, and
-   * only to clients that support remapping player IDs.
-   *
-   * @param string $originalPlayerId
+   * @param string
    */
   public function setOriginalPlayerId($originalPlayerId)
   {
@@ -267,9 +207,7 @@ class Player extends \Google\Model
     return $this->originalPlayerId;
   }
   /**
-   * The ID of the player.
-   *
-   * @param string $playerId
+   * @param string
    */
   public function setPlayerId($playerId)
   {
@@ -283,10 +221,7 @@ class Player extends \Google\Model
     return $this->playerId;
   }
   /**
-   * The player's profile settings. Controls whether or not the player's profile
-   * is visible to other players.
-   *
-   * @param ProfileSettings $profileSettings
+   * @param ProfileSettings
    */
   public function setProfileSettings(ProfileSettings $profileSettings)
   {
@@ -300,9 +235,7 @@ class Player extends \Google\Model
     return $this->profileSettings;
   }
   /**
-   * The player's title rewarded for their game activities.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

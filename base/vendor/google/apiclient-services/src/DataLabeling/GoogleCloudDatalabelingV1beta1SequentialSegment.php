@@ -20,22 +20,16 @@ namespace Google\Service\DataLabeling;
 class GoogleCloudDatalabelingV1beta1SequentialSegment extends \Google\Model
 {
   /**
-   * End position (exclusive).
-   *
    * @var int
    */
   public $end;
   /**
-   * Start position (inclusive).
-   *
    * @var int
    */
   public $start;
 
   /**
-   * End position (exclusive).
-   *
-   * @param int $end
+   * @param int
    */
   public function setEnd($end)
   {
@@ -49,9 +43,7 @@ class GoogleCloudDatalabelingV1beta1SequentialSegment extends \Google\Model
     return $this->end;
   }
   /**
-   * Start position (inclusive).
-   *
-   * @param int $start
+   * @param int
    */
   public function setStart($start)
   {

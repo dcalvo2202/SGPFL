@@ -21,49 +21,32 @@ class Partner extends \Google\Collection
 {
   protected $collection_key = 'skus';
   /**
-   * Output only. Time the resource was created
-   *
    * @var string
    */
   public $createTime;
   protected $ekmSolutionsType = EkmMetadata::class;
   protected $ekmSolutionsDataType = 'array';
   /**
-   * Identifier. The resource name of the partner. Format:
-   * `organizations/{organization}/locations/{location}/partner` Example:
-   * "organizations/123456/locations/us-central1/partner"
-   *
    * @var string
    */
   public $name;
   /**
-   * List of Google Cloud regions that the partner sells services to customers.
-   * Valid Google Cloud regions found here:
-   * https://cloud.google.com/compute/docs/regions-zones
-   *
    * @var string[]
    */
   public $operatedCloudRegions;
   /**
-   * Google Cloud project ID in the partner's Google Cloud organization for
-   * receiving enhanced Logs for Partners.
-   *
    * @var string
    */
   public $partnerProjectId;
   protected $skusType = Sku::class;
   protected $skusDataType = 'array';
   /**
-   * Output only. The last time the resource was updated
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. Time the resource was created
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -77,9 +60,7 @@ class Partner extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * List of Google Cloud supported EKM partners supported by the partner
-   *
-   * @param EkmMetadata[] $ekmSolutions
+   * @param EkmMetadata[]
    */
   public function setEkmSolutions($ekmSolutions)
   {
@@ -93,11 +74,7 @@ class Partner extends \Google\Collection
     return $this->ekmSolutions;
   }
   /**
-   * Identifier. The resource name of the partner. Format:
-   * `organizations/{organization}/locations/{location}/partner` Example:
-   * "organizations/123456/locations/us-central1/partner"
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -111,11 +88,7 @@ class Partner extends \Google\Collection
     return $this->name;
   }
   /**
-   * List of Google Cloud regions that the partner sells services to customers.
-   * Valid Google Cloud regions found here:
-   * https://cloud.google.com/compute/docs/regions-zones
-   *
-   * @param string[] $operatedCloudRegions
+   * @param string[]
    */
   public function setOperatedCloudRegions($operatedCloudRegions)
   {
@@ -129,10 +102,7 @@ class Partner extends \Google\Collection
     return $this->operatedCloudRegions;
   }
   /**
-   * Google Cloud project ID in the partner's Google Cloud organization for
-   * receiving enhanced Logs for Partners.
-   *
-   * @param string $partnerProjectId
+   * @param string
    */
   public function setPartnerProjectId($partnerProjectId)
   {
@@ -146,9 +116,7 @@ class Partner extends \Google\Collection
     return $this->partnerProjectId;
   }
   /**
-   * List of SKUs the partner is offering
-   *
-   * @param Sku[] $skus
+   * @param Sku[]
    */
   public function setSkus($skus)
   {
@@ -162,9 +130,7 @@ class Partner extends \Google\Collection
     return $this->skus;
   }
   /**
-   * Output only. The last time the resource was updated
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

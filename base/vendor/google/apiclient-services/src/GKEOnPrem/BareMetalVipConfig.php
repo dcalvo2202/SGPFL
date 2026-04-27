@@ -20,25 +20,16 @@ namespace Google\Service\GKEOnPrem;
 class BareMetalVipConfig extends \Google\Model
 {
   /**
-   * The VIP which you previously set aside for the Kubernetes API of this bare
-   * metal user cluster.
-   *
    * @var string
    */
   public $controlPlaneVip;
   /**
-   * The VIP which you previously set aside for ingress traffic into this bare
-   * metal user cluster.
-   *
    * @var string
    */
   public $ingressVip;
 
   /**
-   * The VIP which you previously set aside for the Kubernetes API of this bare
-   * metal user cluster.
-   *
-   * @param string $controlPlaneVip
+   * @param string
    */
   public function setControlPlaneVip($controlPlaneVip)
   {
@@ -52,10 +43,7 @@ class BareMetalVipConfig extends \Google\Model
     return $this->controlPlaneVip;
   }
   /**
-   * The VIP which you previously set aside for ingress traffic into this bare
-   * metal user cluster.
-   *
-   * @param string $ingressVip
+   * @param string
    */
   public function setIngressVip($ingressVip)
   {

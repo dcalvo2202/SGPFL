@@ -20,18 +20,12 @@ namespace Google\Service\Vault;
 class OrgUnitInfo extends \Google\Model
 {
   /**
-   * The name of the organizational unit to search, as provided by the [Admin
-   * SDK Directory API](https://developers.google.com/admin-sdk/directory/).
-   *
    * @var string
    */
   public $orgUnitId;
 
   /**
-   * The name of the organizational unit to search, as provided by the [Admin
-   * SDK Directory API](https://developers.google.com/admin-sdk/directory/).
-   *
-   * @param string $orgUnitId
+   * @param string
    */
   public function setOrgUnitId($orgUnitId)
   {

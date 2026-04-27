@@ -26,26 +26,14 @@ class FlightCarrier extends \Google\Model
   protected $airlineNameType = LocalizedString::class;
   protected $airlineNameDataType = '';
   /**
-   * Two character IATA airline code of the marketing carrier (as opposed to
-   * operating carrier). Exactly one of this or `carrierIcaoCode` needs to be
-   * provided for `carrier` and `operatingCarrier`. eg: "LX" for Swiss Air
-   *
    * @var string
    */
   public $carrierIataCode;
   /**
-   * Three character ICAO airline code of the marketing carrier (as opposed to
-   * operating carrier). Exactly one of this or `carrierIataCode` needs to be
-   * provided for `carrier` and `operatingCarrier`. eg: "EZY" for Easy Jet
-   *
    * @var string
    */
   public $carrierIcaoCode;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * `"walletobjects#flightCarrier"`.
-   *
-   * @deprecated
    * @var string
    */
   public $kind;
@@ -53,10 +41,7 @@ class FlightCarrier extends \Google\Model
   protected $wideAirlineLogoDataType = '';
 
   /**
-   * A logo for the airline alliance, displayed below the QR code that the
-   * passenger scans to board.
-   *
-   * @param Image $airlineAllianceLogo
+   * @param Image
    */
   public function setAirlineAllianceLogo(Image $airlineAllianceLogo)
   {
@@ -70,11 +55,7 @@ class FlightCarrier extends \Google\Model
     return $this->airlineAllianceLogo;
   }
   /**
-   * A logo for the airline described by carrierIataCode and
-   * localizedAirlineName. This logo will be rendered at the top of the detailed
-   * card view.
-   *
-   * @param Image $airlineLogo
+   * @param Image
    */
   public function setAirlineLogo(Image $airlineLogo)
   {
@@ -88,11 +69,7 @@ class FlightCarrier extends \Google\Model
     return $this->airlineLogo;
   }
   /**
-   * A localized name of the airline specified by carrierIataCode. If unset,
-   * `issuer_name` or `localized_issuer_name` from `FlightClass` will be used
-   * for display purposes. eg: "Swiss Air" for "LX"
-   *
-   * @param LocalizedString $airlineName
+   * @param LocalizedString
    */
   public function setAirlineName(LocalizedString $airlineName)
   {
@@ -106,11 +83,7 @@ class FlightCarrier extends \Google\Model
     return $this->airlineName;
   }
   /**
-   * Two character IATA airline code of the marketing carrier (as opposed to
-   * operating carrier). Exactly one of this or `carrierIcaoCode` needs to be
-   * provided for `carrier` and `operatingCarrier`. eg: "LX" for Swiss Air
-   *
-   * @param string $carrierIataCode
+   * @param string
    */
   public function setCarrierIataCode($carrierIataCode)
   {
@@ -124,11 +97,7 @@ class FlightCarrier extends \Google\Model
     return $this->carrierIataCode;
   }
   /**
-   * Three character ICAO airline code of the marketing carrier (as opposed to
-   * operating carrier). Exactly one of this or `carrierIataCode` needs to be
-   * provided for `carrier` and `operatingCarrier`. eg: "EZY" for Easy Jet
-   *
-   * @param string $carrierIcaoCode
+   * @param string
    */
   public function setCarrierIcaoCode($carrierIcaoCode)
   {
@@ -142,18 +111,13 @@ class FlightCarrier extends \Google\Model
     return $this->carrierIcaoCode;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * `"walletobjects#flightCarrier"`.
-   *
-   * @deprecated
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
     $this->kind = $kind;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getKind()
@@ -161,10 +125,7 @@ class FlightCarrier extends \Google\Model
     return $this->kind;
   }
   /**
-   * The wide logo of the airline. When provided, this will be used in place of
-   * the airline logo in the top left of the card view.
-   *
-   * @param Image $wideAirlineLogo
+   * @param Image
    */
   public function setWideAirlineLogo(Image $wideAirlineLogo)
   {

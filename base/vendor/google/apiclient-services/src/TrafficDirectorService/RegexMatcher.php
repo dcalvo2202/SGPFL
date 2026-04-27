@@ -22,26 +22,18 @@ class RegexMatcher extends \Google\Model
   protected $googleRe2Type = GoogleRE2::class;
   protected $googleRe2DataType = '';
   /**
-   * The regex match string. The string must be supported by the configured
-   * engine. The regex is matched against the full string, not as a partial
-   * match.
-   *
    * @var string
    */
   public $regex;
 
   /**
-   * Google's RE2 regex engine.
-   *
-   * @deprecated
-   * @param GoogleRE2 $googleRe2
+   * @param GoogleRE2
    */
   public function setGoogleRe2(GoogleRE2 $googleRe2)
   {
     $this->googleRe2 = $googleRe2;
   }
   /**
-   * @deprecated
    * @return GoogleRE2
    */
   public function getGoogleRe2()
@@ -49,11 +41,7 @@ class RegexMatcher extends \Google\Model
     return $this->googleRe2;
   }
   /**
-   * The regex match string. The string must be supported by the configured
-   * engine. The regex is matched against the full string, not as a partial
-   * match.
-   *
-   * @param string $regex
+   * @param string
    */
   public function setRegex($regex)
   {

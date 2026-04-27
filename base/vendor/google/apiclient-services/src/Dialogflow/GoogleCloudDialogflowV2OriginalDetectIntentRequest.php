@@ -33,7 +33,7 @@ class GoogleCloudDialogflowV2OriginalDetectIntentRequest extends \Google\Model
   public $version;
 
   /**
-   * @param array[] $payload
+   * @param array[]
    */
   public function setPayload($payload)
   {
@@ -47,7 +47,7 @@ class GoogleCloudDialogflowV2OriginalDetectIntentRequest extends \Google\Model
     return $this->payload;
   }
   /**
-   * @param string $source
+   * @param string
    */
   public function setSource($source)
   {
@@ -61,7 +61,7 @@ class GoogleCloudDialogflowV2OriginalDetectIntentRequest extends \Google\Model
     return $this->source;
   }
   /**
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

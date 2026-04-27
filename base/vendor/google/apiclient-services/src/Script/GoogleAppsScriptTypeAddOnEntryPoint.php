@@ -20,76 +20,46 @@ namespace Google\Service\Script;
 class GoogleAppsScriptTypeAddOnEntryPoint extends \Google\Model
 {
   /**
-   * Default value, unknown add-on type.
-   */
-  public const ADD_ON_TYPE_UNKNOWN_ADDON_TYPE = 'UNKNOWN_ADDON_TYPE';
-  /**
-   * Add-on type for Gmail.
-   */
-  public const ADD_ON_TYPE_GMAIL = 'GMAIL';
-  /**
-   * Add-on type for Data Studio.
-   */
-  public const ADD_ON_TYPE_DATA_STUDIO = 'DATA_STUDIO';
-  /**
-   * The add-on's required list of supported container types.
-   *
    * @var string
    */
   public $addOnType;
   /**
-   * The add-on's optional description.
-   *
    * @var string
    */
   public $description;
   /**
-   * The add-on's optional help URL.
-   *
    * @var string
    */
   public $helpUrl;
   /**
-   * The add-on's required post install tip URL.
-   *
    * @var string
    */
   public $postInstallTipUrl;
   /**
-   * The add-on's optional report issue URL.
-   *
    * @var string
    */
   public $reportIssueUrl;
   /**
-   * The add-on's required title.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * The add-on's required list of supported container types.
-   *
-   * Accepted values: UNKNOWN_ADDON_TYPE, GMAIL, DATA_STUDIO
-   *
-   * @param self::ADD_ON_TYPE_* $addOnType
+   * @param string
    */
   public function setAddOnType($addOnType)
   {
     $this->addOnType = $addOnType;
   }
   /**
-   * @return self::ADD_ON_TYPE_*
+   * @return string
    */
   public function getAddOnType()
   {
     return $this->addOnType;
   }
   /**
-   * The add-on's optional description.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -103,9 +73,7 @@ class GoogleAppsScriptTypeAddOnEntryPoint extends \Google\Model
     return $this->description;
   }
   /**
-   * The add-on's optional help URL.
-   *
-   * @param string $helpUrl
+   * @param string
    */
   public function setHelpUrl($helpUrl)
   {
@@ -119,9 +87,7 @@ class GoogleAppsScriptTypeAddOnEntryPoint extends \Google\Model
     return $this->helpUrl;
   }
   /**
-   * The add-on's required post install tip URL.
-   *
-   * @param string $postInstallTipUrl
+   * @param string
    */
   public function setPostInstallTipUrl($postInstallTipUrl)
   {
@@ -135,9 +101,7 @@ class GoogleAppsScriptTypeAddOnEntryPoint extends \Google\Model
     return $this->postInstallTipUrl;
   }
   /**
-   * The add-on's optional report issue URL.
-   *
-   * @param string $reportIssueUrl
+   * @param string
    */
   public function setReportIssueUrl($reportIssueUrl)
   {
@@ -151,9 +115,7 @@ class GoogleAppsScriptTypeAddOnEntryPoint extends \Google\Model
     return $this->reportIssueUrl;
   }
   /**
-   * The add-on's required title.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

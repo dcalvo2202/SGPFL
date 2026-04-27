@@ -20,36 +20,22 @@ namespace Google\Service\PeopleService;
 class ContactGroupMembership extends \Google\Model
 {
   /**
-   * Output only. The contact group ID for the contact group membership.
-   *
-   * @deprecated
    * @var string
    */
   public $contactGroupId;
   /**
-   * The resource name for the contact group, assigned by the server. An ASCII
-   * string, in the form of `contactGroups/{contact_group_id}`. Only
-   * contact_group_resource_name can be used for modifying memberships. Any
-   * contact group membership can be removed, but only user group or
-   * "myContacts" or "starred" system groups memberships can be added. A contact
-   * must always have at least one contact group membership.
-   *
    * @var string
    */
   public $contactGroupResourceName;
 
   /**
-   * Output only. The contact group ID for the contact group membership.
-   *
-   * @deprecated
-   * @param string $contactGroupId
+   * @param string
    */
   public function setContactGroupId($contactGroupId)
   {
     $this->contactGroupId = $contactGroupId;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getContactGroupId()
@@ -57,14 +43,7 @@ class ContactGroupMembership extends \Google\Model
     return $this->contactGroupId;
   }
   /**
-   * The resource name for the contact group, assigned by the server. An ASCII
-   * string, in the form of `contactGroups/{contact_group_id}`. Only
-   * contact_group_resource_name can be used for modifying memberships. Any
-   * contact group membership can be removed, but only user group or
-   * "myContacts" or "starred" system groups memberships can be added. A contact
-   * must always have at least one contact group membership.
-   *
-   * @param string $contactGroupResourceName
+   * @param string
    */
   public function setContactGroupResourceName($contactGroupResourceName)
   {

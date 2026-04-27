@@ -22,22 +22,16 @@ class MachineDiskDetails extends \Google\Model
   protected $disksType = DiskEntryList::class;
   protected $disksDataType = '';
   /**
-   * Disk total Capacity.
-   *
    * @var string
    */
   public $totalCapacityBytes;
   /**
-   * Total disk free space.
-   *
    * @var string
    */
   public $totalFreeBytes;
 
   /**
-   * List of disks.
-   *
-   * @param DiskEntryList $disks
+   * @param DiskEntryList
    */
   public function setDisks(DiskEntryList $disks)
   {
@@ -51,9 +45,7 @@ class MachineDiskDetails extends \Google\Model
     return $this->disks;
   }
   /**
-   * Disk total Capacity.
-   *
-   * @param string $totalCapacityBytes
+   * @param string
    */
   public function setTotalCapacityBytes($totalCapacityBytes)
   {
@@ -67,9 +59,7 @@ class MachineDiskDetails extends \Google\Model
     return $this->totalCapacityBytes;
   }
   /**
-   * Total disk free space.
-   *
-   * @param string $totalFreeBytes
+   * @param string
    */
   public function setTotalFreeBytes($totalFreeBytes)
   {

@@ -23,17 +23,12 @@ class GoogleCloudVideointelligenceV1p3beta1CelebrityRecognitionAnnotation extend
   protected $celebrityTracksType = GoogleCloudVideointelligenceV1p3beta1CelebrityTrack::class;
   protected $celebrityTracksDataType = 'array';
   /**
-   * Feature version.
-   *
    * @var string
    */
   public $version;
 
   /**
-   * The tracks detected from the input video, including recognized celebrities
-   * and other detected faces in the video.
-   *
-   * @param GoogleCloudVideointelligenceV1p3beta1CelebrityTrack[] $celebrityTracks
+   * @param GoogleCloudVideointelligenceV1p3beta1CelebrityTrack[]
    */
   public function setCelebrityTracks($celebrityTracks)
   {
@@ -47,9 +42,7 @@ class GoogleCloudVideointelligenceV1p3beta1CelebrityRecognitionAnnotation extend
     return $this->celebrityTracks;
   }
   /**
-   * Feature version.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

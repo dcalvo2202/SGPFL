@@ -20,8 +20,6 @@ namespace Google\Service\ChromePolicy;
 class GoogleChromePolicyVersionsV1DeleteGroupPolicyRequest extends \Google\Model
 {
   /**
-   * The fully qualified name of the policy schema that is being inherited.
-   *
    * @var string
    */
   public $policySchema;
@@ -29,9 +27,7 @@ class GoogleChromePolicyVersionsV1DeleteGroupPolicyRequest extends \Google\Model
   protected $policyTargetKeyDataType = '';
 
   /**
-   * The fully qualified name of the policy schema that is being inherited.
-   *
-   * @param string $policySchema
+   * @param string
    */
   public function setPolicySchema($policySchema)
   {
@@ -45,10 +41,7 @@ class GoogleChromePolicyVersionsV1DeleteGroupPolicyRequest extends \Google\Model
     return $this->policySchema;
   }
   /**
-   * Required. The key of the target for which we want to modify a policy. The
-   * target resource must point to a Group.
-   *
-   * @param GoogleChromePolicyVersionsV1PolicyTargetKey $policyTargetKey
+   * @param GoogleChromePolicyVersionsV1PolicyTargetKey
    */
   public function setPolicyTargetKey(GoogleChromePolicyVersionsV1PolicyTargetKey $policyTargetKey)
   {

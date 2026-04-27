@@ -21,16 +21,12 @@ class GoogleCloudRecommendationengineV1beta1FeatureMapStringList extends \Google
 {
   protected $collection_key = 'value';
   /**
-   * String feature value with a length limit of 128 bytes.
-   *
    * @var string[]
    */
   public $value;
 
   /**
-   * String feature value with a length limit of 128 bytes.
-   *
-   * @param string[] $value
+   * @param string[]
    */
   public function setValue($value)
   {

@@ -20,26 +20,16 @@ namespace Google\Service\Bigquery;
 class TableDataInsertAllRequestRows extends \Google\Model
 {
   /**
-   * Insertion ID for best-effort deduplication. This feature is not
-   * recommended, and users seeking stronger insertion semantics are encouraged
-   * to use other mechanisms such as the BigQuery Write API.
-   *
    * @var string
    */
   public $insertId;
   /**
-   * Data for a single row.
-   *
    * @var array[]
    */
   public $json;
 
   /**
-   * Insertion ID for best-effort deduplication. This feature is not
-   * recommended, and users seeking stronger insertion semantics are encouraged
-   * to use other mechanisms such as the BigQuery Write API.
-   *
-   * @param string $insertId
+   * @param string
    */
   public function setInsertId($insertId)
   {
@@ -53,9 +43,7 @@ class TableDataInsertAllRequestRows extends \Google\Model
     return $this->insertId;
   }
   /**
-   * Data for a single row.
-   *
-   * @param array[] $json
+   * @param array[]
    */
   public function setJson($json)
   {

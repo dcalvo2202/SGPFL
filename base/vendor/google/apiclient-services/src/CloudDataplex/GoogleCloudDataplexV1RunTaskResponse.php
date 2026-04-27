@@ -23,9 +23,7 @@ class GoogleCloudDataplexV1RunTaskResponse extends \Google\Model
   protected $jobDataType = '';
 
   /**
-   * Jobs created by RunTask API.
-   *
-   * @param GoogleCloudDataplexV1Job $job
+   * @param GoogleCloudDataplexV1Job
    */
   public function setJob(GoogleCloudDataplexV1Job $job)
   {

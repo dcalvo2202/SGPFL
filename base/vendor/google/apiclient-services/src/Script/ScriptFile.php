@@ -20,26 +20,6 @@ namespace Google\Service\Script;
 class ScriptFile extends \Google\Model
 {
   /**
-   * Undetermined file type; never actually used.
-   */
-  public const TYPE_ENUM_TYPE_UNSPECIFIED = 'ENUM_TYPE_UNSPECIFIED';
-  /**
-   * An Apps Script server-side code file.
-   */
-  public const TYPE_SERVER_JS = 'SERVER_JS';
-  /**
-   * A file containing client-side HTML.
-   */
-  public const TYPE_HTML = 'HTML';
-  /**
-   * A file in JSON format. This type is only used for the script project's
-   * manifest. The manifest file content must match the structure of a valid
-   * [ScriptManifest](/apps-script/concepts/manifests)
-   */
-  public const TYPE_JSON = 'JSON';
-  /**
-   * Creation date timestamp.
-   *
    * @var string
    */
   public $createTime;
@@ -48,35 +28,24 @@ class ScriptFile extends \Google\Model
   protected $lastModifyUserType = GoogleAppsScriptTypeUser::class;
   protected $lastModifyUserDataType = '';
   /**
-   * The name of the file. The file extension is not part of the file name,
-   * which can be identified from the type field.
-   *
    * @var string
    */
   public $name;
   /**
-   * The file content.
-   *
    * @var string
    */
   public $source;
   /**
-   * The type of the file.
-   *
    * @var string
    */
   public $type;
   /**
-   * Last modified date timestamp.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Creation date timestamp.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -90,9 +59,7 @@ class ScriptFile extends \Google\Model
     return $this->createTime;
   }
   /**
-   * The defined set of functions in the script file, if any.
-   *
-   * @param GoogleAppsScriptTypeFunctionSet $functionSet
+   * @param GoogleAppsScriptTypeFunctionSet
    */
   public function setFunctionSet(GoogleAppsScriptTypeFunctionSet $functionSet)
   {
@@ -106,11 +73,7 @@ class ScriptFile extends \Google\Model
     return $this->functionSet;
   }
   /**
-   * The user who modified the file most recently. The details visible in this
-   * object are controlled by the profile visibility settings of the last
-   * modifying user.
-   *
-   * @param GoogleAppsScriptTypeUser $lastModifyUser
+   * @param GoogleAppsScriptTypeUser
    */
   public function setLastModifyUser(GoogleAppsScriptTypeUser $lastModifyUser)
   {
@@ -124,10 +87,7 @@ class ScriptFile extends \Google\Model
     return $this->lastModifyUser;
   }
   /**
-   * The name of the file. The file extension is not part of the file name,
-   * which can be identified from the type field.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -141,9 +101,7 @@ class ScriptFile extends \Google\Model
     return $this->name;
   }
   /**
-   * The file content.
-   *
-   * @param string $source
+   * @param string
    */
   public function setSource($source)
   {
@@ -157,27 +115,21 @@ class ScriptFile extends \Google\Model
     return $this->source;
   }
   /**
-   * The type of the file.
-   *
-   * Accepted values: ENUM_TYPE_UNSPECIFIED, SERVER_JS, HTML, JSON
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * Last modified date timestamp.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

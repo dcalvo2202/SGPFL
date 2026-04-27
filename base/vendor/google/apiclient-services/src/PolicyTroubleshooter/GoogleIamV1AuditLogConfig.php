@@ -19,42 +19,18 @@ namespace Google\Service\PolicyTroubleshooter;
 
 class GoogleIamV1AuditLogConfig extends \Google\Collection
 {
-  /**
-   * Default case. Should never be this.
-   */
-  public const LOG_TYPE_LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED';
-  /**
-   * Admin reads. Example: CloudIAM getIamPolicy
-   */
-  public const LOG_TYPE_ADMIN_READ = 'ADMIN_READ';
-  /**
-   * Data writes. Example: CloudSQL Users create
-   */
-  public const LOG_TYPE_DATA_WRITE = 'DATA_WRITE';
-  /**
-   * Data reads. Example: CloudSQL Users list
-   */
-  public const LOG_TYPE_DATA_READ = 'DATA_READ';
   protected $collection_key = 'exemptedMembers';
   /**
-   * Specifies the identities that do not cause logging for this type of
-   * permission. Follows the same format of Binding.members.
-   *
    * @var string[]
    */
   public $exemptedMembers;
   /**
-   * The log type that this config enables.
-   *
    * @var string
    */
   public $logType;
 
   /**
-   * Specifies the identities that do not cause logging for this type of
-   * permission. Follows the same format of Binding.members.
-   *
-   * @param string[] $exemptedMembers
+   * @param string[]
    */
   public function setExemptedMembers($exemptedMembers)
   {
@@ -68,18 +44,14 @@ class GoogleIamV1AuditLogConfig extends \Google\Collection
     return $this->exemptedMembers;
   }
   /**
-   * The log type that this config enables.
-   *
-   * Accepted values: LOG_TYPE_UNSPECIFIED, ADMIN_READ, DATA_WRITE, DATA_READ
-   *
-   * @param self::LOG_TYPE_* $logType
+   * @param string
    */
   public function setLogType($logType)
   {
     $this->logType = $logType;
   }
   /**
-   * @return self::LOG_TYPE_*
+   * @return string
    */
   public function getLogType()
   {

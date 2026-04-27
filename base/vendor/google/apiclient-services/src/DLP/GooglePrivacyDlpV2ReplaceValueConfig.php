@@ -23,9 +23,7 @@ class GooglePrivacyDlpV2ReplaceValueConfig extends \Google\Model
   protected $newValueDataType = '';
 
   /**
-   * Value to replace it with.
-   *
-   * @param GooglePrivacyDlpV2Value $newValue
+   * @param GooglePrivacyDlpV2Value
    */
   public function setNewValue(GooglePrivacyDlpV2Value $newValue)
   {

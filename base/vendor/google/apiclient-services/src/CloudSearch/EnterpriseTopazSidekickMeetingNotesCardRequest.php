@@ -21,8 +21,6 @@ class EnterpriseTopazSidekickMeetingNotesCardRequest extends \Google\Collection
 {
   protected $collection_key = 'canCreateFor';
   /**
-   * Who are the meeting notes created for.
-   *
    * @var string[]
    */
   public $canCreateFor;
@@ -32,9 +30,7 @@ class EnterpriseTopazSidekickMeetingNotesCardRequest extends \Google\Collection
   protected $eventDataType = '';
 
   /**
-   * Who are the meeting notes created for.
-   *
-   * @param string[] $canCreateFor
+   * @param string[]
    */
   public function setCanCreateFor($canCreateFor)
   {
@@ -48,9 +44,7 @@ class EnterpriseTopazSidekickMeetingNotesCardRequest extends \Google\Collection
     return $this->canCreateFor;
   }
   /**
-   * The error and reason if known error occured.
-   *
-   * @param EnterpriseTopazSidekickMeetingNotesCardError $error
+   * @param EnterpriseTopazSidekickMeetingNotesCardError
    */
   public function setError(EnterpriseTopazSidekickMeetingNotesCardError $error)
   {
@@ -64,9 +58,7 @@ class EnterpriseTopazSidekickMeetingNotesCardRequest extends \Google\Collection
     return $this->error;
   }
   /**
-   * The event to request meeting notes creation
-   *
-   * @param EnterpriseTopazSidekickAgendaEntry $event
+   * @param EnterpriseTopazSidekickAgendaEntry
    */
   public function setEvent(EnterpriseTopazSidekickAgendaEntry $event)
   {

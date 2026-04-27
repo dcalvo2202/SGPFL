@@ -23,9 +23,7 @@ class RestoreBackupResponse extends \Google\Model
   protected $targetResourceDataType = '';
 
   /**
-   * Details of the target resource created/modified as part of restore.
-   *
-   * @param TargetResource $targetResource
+   * @param TargetResource
    */
   public function setTargetResource(TargetResource $targetResource)
   {

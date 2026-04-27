@@ -20,102 +20,36 @@ namespace Google\Service\Networkconnectivity;
 class RouteTable extends \Google\Model
 {
   /**
-   * No state information available
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The resource's create operation is in progress.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * The resource is active
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * The resource's delete operation is in progress.
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * The resource's accept operation is in progress.
-   */
-  public const STATE_ACCEPTING = 'ACCEPTING';
-  /**
-   * The resource's reject operation is in progress.
-   */
-  public const STATE_REJECTING = 'REJECTING';
-  /**
-   * The resource's update operation is in progress.
-   */
-  public const STATE_UPDATING = 'UPDATING';
-  /**
-   * The resource is inactive.
-   */
-  public const STATE_INACTIVE = 'INACTIVE';
-  /**
-   * The hub associated with this spoke resource has been deleted. This state
-   * applies to spoke resources only.
-   */
-  public const STATE_OBSOLETE = 'OBSOLETE';
-  /**
-   * The resource is in an undefined state due to resource creation or deletion
-   * failure. You can try to delete the resource later or contact support for
-   * help.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * Output only. The time the route table was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * An optional description of the route table.
-   *
    * @var string
    */
   public $description;
   /**
-   * Optional labels in key-value pair format. For more information about
-   * labels, see [Requirements for labels](https://cloud.google.com/resource-
-   * manager/docs/creating-managing-labels#requirements).
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Immutable. The name of the route table. Route table names must be unique.
-   * They use the following form: `projects/{project_number}/locations/global/hu
-   * bs/{hub}/routeTables/{route_table_id}`
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The current lifecycle state of this route table.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. The Google-generated UUID for the route table. This value is
-   * unique across all route table resources. If a route table is deleted and
-   * another with the same name is created, the new route table is assigned a
-   * different `uid`.
-   *
    * @var string
    */
   public $uid;
   /**
-   * Output only. The time the route table was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. The time the route table was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -129,9 +63,7 @@ class RouteTable extends \Google\Model
     return $this->createTime;
   }
   /**
-   * An optional description of the route table.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -145,11 +77,7 @@ class RouteTable extends \Google\Model
     return $this->description;
   }
   /**
-   * Optional labels in key-value pair format. For more information about
-   * labels, see [Requirements for labels](https://cloud.google.com/resource-
-   * manager/docs/creating-managing-labels#requirements).
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -163,11 +91,7 @@ class RouteTable extends \Google\Model
     return $this->labels;
   }
   /**
-   * Immutable. The name of the route table. Route table names must be unique.
-   * They use the following form: `projects/{project_number}/locations/global/hu
-   * bs/{hub}/routeTables/{route_table_id}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -181,31 +105,21 @@ class RouteTable extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The current lifecycle state of this route table.
-   *
-   * Accepted values: STATE_UNSPECIFIED, CREATING, ACTIVE, DELETING, ACCEPTING,
-   * REJECTING, UPDATING, INACTIVE, OBSOLETE, FAILED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. The Google-generated UUID for the route table. This value is
-   * unique across all route table resources. If a route table is deleted and
-   * another with the same name is created, the new route table is assigned a
-   * different `uid`.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {
@@ -219,9 +133,7 @@ class RouteTable extends \Google\Model
     return $this->uid;
   }
   /**
-   * Output only. The time the route table was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

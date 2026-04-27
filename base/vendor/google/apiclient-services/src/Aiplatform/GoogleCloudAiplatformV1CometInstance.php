@@ -20,28 +20,20 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1CometInstance extends \Google\Model
 {
   /**
-   * Required. Output of the evaluated model.
-   *
    * @var string
    */
   public $prediction;
   /**
-   * Optional. Ground truth used to compare against the prediction.
-   *
    * @var string
    */
   public $reference;
   /**
-   * Optional. Source text in original language.
-   *
    * @var string
    */
   public $source;
 
   /**
-   * Required. Output of the evaluated model.
-   *
-   * @param string $prediction
+   * @param string
    */
   public function setPrediction($prediction)
   {
@@ -55,9 +47,7 @@ class GoogleCloudAiplatformV1CometInstance extends \Google\Model
     return $this->prediction;
   }
   /**
-   * Optional. Ground truth used to compare against the prediction.
-   *
-   * @param string $reference
+   * @param string
    */
   public function setReference($reference)
   {
@@ -71,9 +61,7 @@ class GoogleCloudAiplatformV1CometInstance extends \Google\Model
     return $this->reference;
   }
   /**
-   * Optional. Source text in original language.
-   *
-   * @param string $source
+   * @param string
    */
   public function setSource($source)
   {

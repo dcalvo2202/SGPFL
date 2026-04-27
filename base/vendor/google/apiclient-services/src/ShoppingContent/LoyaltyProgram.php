@@ -22,53 +22,30 @@ class LoyaltyProgram extends \Google\Model
   protected $cashbackForFutureUseType = Price::class;
   protected $cashbackForFutureUseDataType = '';
   /**
-   * Optional. The amount of loyalty points earned on a purchase.
-   *
    * @var string
    */
   public $loyaltyPoints;
   /**
-   * Optional. A date range during which the item is eligible for member price.
-   * If not specified, the member price is always applicable. The date range is
-   * represented by a pair of ISO 8601 dates separated by a space, comma, or
-   * slash.
-   *
    * @var string
    */
   public $memberPriceEffectiveDate;
   protected $priceType = Price::class;
   protected $priceDataType = '';
   /**
-   * Required. The label of the loyalty program. This is an internal label that
-   * uniquely identifies the relationship between a merchant entity and a
-   * loyalty program entity. It must be provided so that system can associate
-   * the assets below (for example, price and points) with a merchant. The
-   * corresponding program must be linked to the merchant account.
-   *
    * @var string
    */
   public $programLabel;
   /**
-   * Optional. The shipping label for the loyalty program. You can use this
-   * label to indicate whether this offer has the loyalty shipping benefit. If
-   * not specified, the item is not eligible for loyalty shipping for the given
-   * loyalty tier.
-   *
    * @var string
    */
   public $shippingLabel;
   /**
-   * Required. The label of the tier within the loyalty program. Must match one
-   * of the labels within the program.
-   *
    * @var string
    */
   public $tierLabel;
 
   /**
-   * Optional. The cashback that can be used for future purchases.
-   *
-   * @param Price $cashbackForFutureUse
+   * @param Price
    */
   public function setCashbackForFutureUse(Price $cashbackForFutureUse)
   {
@@ -82,9 +59,7 @@ class LoyaltyProgram extends \Google\Model
     return $this->cashbackForFutureUse;
   }
   /**
-   * Optional. The amount of loyalty points earned on a purchase.
-   *
-   * @param string $loyaltyPoints
+   * @param string
    */
   public function setLoyaltyPoints($loyaltyPoints)
   {
@@ -98,12 +73,7 @@ class LoyaltyProgram extends \Google\Model
     return $this->loyaltyPoints;
   }
   /**
-   * Optional. A date range during which the item is eligible for member price.
-   * If not specified, the member price is always applicable. The date range is
-   * represented by a pair of ISO 8601 dates separated by a space, comma, or
-   * slash.
-   *
-   * @param string $memberPriceEffectiveDate
+   * @param string
    */
   public function setMemberPriceEffectiveDate($memberPriceEffectiveDate)
   {
@@ -117,10 +87,7 @@ class LoyaltyProgram extends \Google\Model
     return $this->memberPriceEffectiveDate;
   }
   /**
-   * Optional. The price for members of the given tier (instant discount price).
-   * Must be smaller or equal to the regular price.
-   *
-   * @param Price $price
+   * @param Price
    */
   public function setPrice(Price $price)
   {
@@ -134,13 +101,7 @@ class LoyaltyProgram extends \Google\Model
     return $this->price;
   }
   /**
-   * Required. The label of the loyalty program. This is an internal label that
-   * uniquely identifies the relationship between a merchant entity and a
-   * loyalty program entity. It must be provided so that system can associate
-   * the assets below (for example, price and points) with a merchant. The
-   * corresponding program must be linked to the merchant account.
-   *
-   * @param string $programLabel
+   * @param string
    */
   public function setProgramLabel($programLabel)
   {
@@ -154,12 +115,7 @@ class LoyaltyProgram extends \Google\Model
     return $this->programLabel;
   }
   /**
-   * Optional. The shipping label for the loyalty program. You can use this
-   * label to indicate whether this offer has the loyalty shipping benefit. If
-   * not specified, the item is not eligible for loyalty shipping for the given
-   * loyalty tier.
-   *
-   * @param string $shippingLabel
+   * @param string
    */
   public function setShippingLabel($shippingLabel)
   {
@@ -173,10 +129,7 @@ class LoyaltyProgram extends \Google\Model
     return $this->shippingLabel;
   }
   /**
-   * Required. The label of the tier within the loyalty program. Must match one
-   * of the labels within the program.
-   *
-   * @param string $tierLabel
+   * @param string
    */
   public function setTierLabel($tierLabel)
   {

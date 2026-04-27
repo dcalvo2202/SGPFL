@@ -23,17 +23,12 @@ class Footnote extends \Google\Collection
   protected $contentType = StructuralElement::class;
   protected $contentDataType = 'array';
   /**
-   * The ID of the footnote.
-   *
    * @var string
    */
   public $footnoteId;
 
   /**
-   * The contents of the footnote. The indexes for a footnote's content begin at
-   * zero.
-   *
-   * @param StructuralElement[] $content
+   * @param StructuralElement[]
    */
   public function setContent($content)
   {
@@ -47,9 +42,7 @@ class Footnote extends \Google\Collection
     return $this->content;
   }
   /**
-   * The ID of the footnote.
-   *
-   * @param string $footnoteId
+   * @param string
    */
   public function setFootnoteId($footnoteId)
   {

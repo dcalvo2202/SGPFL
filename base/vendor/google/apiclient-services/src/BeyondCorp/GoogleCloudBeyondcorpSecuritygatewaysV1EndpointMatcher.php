@@ -21,22 +21,16 @@ class GoogleCloudBeyondcorpSecuritygatewaysV1EndpointMatcher extends \Google\Col
 {
   protected $collection_key = 'ports';
   /**
-   * Required. Hostname of the application.
-   *
    * @var string
    */
   public $hostname;
   /**
-   * Required. The ports of the application.
-   *
    * @var int[]
    */
   public $ports;
 
   /**
-   * Required. Hostname of the application.
-   *
-   * @param string $hostname
+   * @param string
    */
   public function setHostname($hostname)
   {
@@ -50,9 +44,7 @@ class GoogleCloudBeyondcorpSecuritygatewaysV1EndpointMatcher extends \Google\Col
     return $this->hostname;
   }
   /**
-   * Required. The ports of the application.
-   *
-   * @param int[] $ports
+   * @param int[]
    */
   public function setPorts($ports)
   {

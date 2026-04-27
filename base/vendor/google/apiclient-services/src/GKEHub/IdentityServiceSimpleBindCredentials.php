@@ -20,28 +20,20 @@ namespace Google\Service\GKEHub;
 class IdentityServiceSimpleBindCredentials extends \Google\Model
 {
   /**
-   * Required. The distinguished name(DN) of the service account object/user.
-   *
    * @var string
    */
   public $dn;
   /**
-   * Output only. The encrypted password of the service account object/user.
-   *
    * @var string
    */
   public $encryptedPassword;
   /**
-   * Required. Input only. The password of the service account object/user.
-   *
    * @var string
    */
   public $password;
 
   /**
-   * Required. The distinguished name(DN) of the service account object/user.
-   *
-   * @param string $dn
+   * @param string
    */
   public function setDn($dn)
   {
@@ -55,9 +47,7 @@ class IdentityServiceSimpleBindCredentials extends \Google\Model
     return $this->dn;
   }
   /**
-   * Output only. The encrypted password of the service account object/user.
-   *
-   * @param string $encryptedPassword
+   * @param string
    */
   public function setEncryptedPassword($encryptedPassword)
   {
@@ -71,9 +61,7 @@ class IdentityServiceSimpleBindCredentials extends \Google\Model
     return $this->encryptedPassword;
   }
   /**
-   * Required. Input only. The password of the service account object/user.
-   *
-   * @param string $password
+   * @param string
    */
   public function setPassword($password)
   {

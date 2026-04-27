@@ -19,143 +19,52 @@ namespace Google\Service\Aiplatform;
 
 class GoogleCloudAiplatformV1Feature extends \Google\Collection
 {
-  /**
-   * The value type is unspecified.
-   */
-  public const VALUE_TYPE_VALUE_TYPE_UNSPECIFIED = 'VALUE_TYPE_UNSPECIFIED';
-  /**
-   * Used for Feature that is a boolean.
-   */
-  public const VALUE_TYPE_BOOL = 'BOOL';
-  /**
-   * Used for Feature that is a list of boolean.
-   */
-  public const VALUE_TYPE_BOOL_ARRAY = 'BOOL_ARRAY';
-  /**
-   * Used for Feature that is double.
-   */
-  public const VALUE_TYPE_DOUBLE = 'DOUBLE';
-  /**
-   * Used for Feature that is a list of double.
-   */
-  public const VALUE_TYPE_DOUBLE_ARRAY = 'DOUBLE_ARRAY';
-  /**
-   * Used for Feature that is INT64.
-   */
-  public const VALUE_TYPE_INT64 = 'INT64';
-  /**
-   * Used for Feature that is a list of INT64.
-   */
-  public const VALUE_TYPE_INT64_ARRAY = 'INT64_ARRAY';
-  /**
-   * Used for Feature that is string.
-   */
-  public const VALUE_TYPE_STRING = 'STRING';
-  /**
-   * Used for Feature that is a list of String.
-   */
-  public const VALUE_TYPE_STRING_ARRAY = 'STRING_ARRAY';
-  /**
-   * Used for Feature that is bytes.
-   */
-  public const VALUE_TYPE_BYTES = 'BYTES';
-  /**
-   * Used for Feature that is struct.
-   */
-  public const VALUE_TYPE_STRUCT = 'STRUCT';
   protected $collection_key = 'monitoringStatsAnomalies';
   /**
-   * Output only. Only applicable for Vertex AI Feature Store (Legacy).
-   * Timestamp when this EntityType was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Description of the Feature.
-   *
    * @var string
    */
   public $description;
   /**
-   * Optional. Only applicable for Vertex AI Feature Store (Legacy). If not set,
-   * use the monitoring_config defined for the EntityType this Feature belongs
-   * to. Only Features with type (Feature.ValueType) BOOL, STRING, DOUBLE or
-   * INT64 can enable monitoring. If set to true, all types of data monitoring
-   * are disabled despite the config on EntityType.
-   *
    * @var bool
    */
   public $disableMonitoring;
   /**
-   * Used to perform a consistent read-modify-write updates. If not set, a blind
-   * "overwrite" update happens.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Optional. The labels with user-defined metadata to organize your Features.
-   * Label keys and values can be no longer than 64 characters (Unicode
-   * codepoints), can only contain lowercase letters, numeric characters,
-   * underscores and dashes. International characters are allowed. See
-   * https://goo.gl/xmQnxf for more information on and examples of labels. No
-   * more than 64 user labels can be associated with one Feature (System labels
-   * are excluded)." System reserved label keys are prefixed with
-   * "aiplatform.googleapis.com/" and are immutable.
-   *
    * @var string[]
    */
   public $labels;
   protected $monitoringStatsAnomaliesType = GoogleCloudAiplatformV1FeatureMonitoringStatsAnomaly::class;
   protected $monitoringStatsAnomaliesDataType = 'array';
   /**
-   * Immutable. Name of the Feature. Format: `projects/{project}/locations/{loca
-   * tion}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feat
-   * ure}` `projects/{project}/locations/{location}/featureGroups/{feature_group
-   * }/features/{feature}` The last part feature is assigned by the client. The
-   * feature can be up to 64 characters long and can consist only of ASCII Latin
-   * letters A-Z and a-z, underscore(_), and ASCII digits 0-9 starting with a
-   * letter. The value will be unique given an entity type.
-   *
    * @var string
    */
   public $name;
   /**
-   * Entity responsible for maintaining this feature. Can be comma separated
-   * list of email addresses or URIs.
-   *
    * @var string
    */
   public $pointOfContact;
   /**
-   * Output only. Only applicable for Vertex AI Feature Store (Legacy).
-   * Timestamp when this EntityType was most recently updated.
-   *
    * @var string
    */
   public $updateTime;
   /**
-   * Immutable. Only applicable for Vertex AI Feature Store (Legacy). Type of
-   * Feature value.
-   *
    * @var string
    */
   public $valueType;
   /**
-   * Only applicable for Vertex AI Feature Store. The name of the BigQuery
-   * Table/View column hosting data for this version. If no value is provided,
-   * will use feature_id.
-   *
    * @var string
    */
   public $versionColumnName;
 
   /**
-   * Output only. Only applicable for Vertex AI Feature Store (Legacy).
-   * Timestamp when this EntityType was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -169,9 +78,7 @@ class GoogleCloudAiplatformV1Feature extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Description of the Feature.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -185,13 +92,7 @@ class GoogleCloudAiplatformV1Feature extends \Google\Collection
     return $this->description;
   }
   /**
-   * Optional. Only applicable for Vertex AI Feature Store (Legacy). If not set,
-   * use the monitoring_config defined for the EntityType this Feature belongs
-   * to. Only Features with type (Feature.ValueType) BOOL, STRING, DOUBLE or
-   * INT64 can enable monitoring. If set to true, all types of data monitoring
-   * are disabled despite the config on EntityType.
-   *
-   * @param bool $disableMonitoring
+   * @param bool
    */
   public function setDisableMonitoring($disableMonitoring)
   {
@@ -205,10 +106,7 @@ class GoogleCloudAiplatformV1Feature extends \Google\Collection
     return $this->disableMonitoring;
   }
   /**
-   * Used to perform a consistent read-modify-write updates. If not set, a blind
-   * "overwrite" update happens.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -222,16 +120,7 @@ class GoogleCloudAiplatformV1Feature extends \Google\Collection
     return $this->etag;
   }
   /**
-   * Optional. The labels with user-defined metadata to organize your Features.
-   * Label keys and values can be no longer than 64 characters (Unicode
-   * codepoints), can only contain lowercase letters, numeric characters,
-   * underscores and dashes. International characters are allowed. See
-   * https://goo.gl/xmQnxf for more information on and examples of labels. No
-   * more than 64 user labels can be associated with one Feature (System labels
-   * are excluded)." System reserved label keys are prefixed with
-   * "aiplatform.googleapis.com/" and are immutable.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -245,10 +134,7 @@ class GoogleCloudAiplatformV1Feature extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Output only. Only applicable for Vertex AI Feature Store (Legacy). The list
-   * of historical stats and anomalies with specified objectives.
-   *
-   * @param GoogleCloudAiplatformV1FeatureMonitoringStatsAnomaly[] $monitoringStatsAnomalies
+   * @param GoogleCloudAiplatformV1FeatureMonitoringStatsAnomaly[]
    */
   public function setMonitoringStatsAnomalies($monitoringStatsAnomalies)
   {
@@ -262,15 +148,7 @@ class GoogleCloudAiplatformV1Feature extends \Google\Collection
     return $this->monitoringStatsAnomalies;
   }
   /**
-   * Immutable. Name of the Feature. Format: `projects/{project}/locations/{loca
-   * tion}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feat
-   * ure}` `projects/{project}/locations/{location}/featureGroups/{feature_group
-   * }/features/{feature}` The last part feature is assigned by the client. The
-   * feature can be up to 64 characters long and can consist only of ASCII Latin
-   * letters A-Z and a-z, underscore(_), and ASCII digits 0-9 starting with a
-   * letter. The value will be unique given an entity type.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -284,10 +162,7 @@ class GoogleCloudAiplatformV1Feature extends \Google\Collection
     return $this->name;
   }
   /**
-   * Entity responsible for maintaining this feature. Can be comma separated
-   * list of email addresses or URIs.
-   *
-   * @param string $pointOfContact
+   * @param string
    */
   public function setPointOfContact($pointOfContact)
   {
@@ -301,10 +176,7 @@ class GoogleCloudAiplatformV1Feature extends \Google\Collection
     return $this->pointOfContact;
   }
   /**
-   * Output only. Only applicable for Vertex AI Feature Store (Legacy).
-   * Timestamp when this EntityType was most recently updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -318,31 +190,21 @@ class GoogleCloudAiplatformV1Feature extends \Google\Collection
     return $this->updateTime;
   }
   /**
-   * Immutable. Only applicable for Vertex AI Feature Store (Legacy). Type of
-   * Feature value.
-   *
-   * Accepted values: VALUE_TYPE_UNSPECIFIED, BOOL, BOOL_ARRAY, DOUBLE,
-   * DOUBLE_ARRAY, INT64, INT64_ARRAY, STRING, STRING_ARRAY, BYTES, STRUCT
-   *
-   * @param self::VALUE_TYPE_* $valueType
+   * @param string
    */
   public function setValueType($valueType)
   {
     $this->valueType = $valueType;
   }
   /**
-   * @return self::VALUE_TYPE_*
+   * @return string
    */
   public function getValueType()
   {
     return $this->valueType;
   }
   /**
-   * Only applicable for Vertex AI Feature Store. The name of the BigQuery
-   * Table/View column hosting data for this version. If no value is provided,
-   * will use feature_id.
-   *
-   * @param string $versionColumnName
+   * @param string
    */
   public function setVersionColumnName($versionColumnName)
   {

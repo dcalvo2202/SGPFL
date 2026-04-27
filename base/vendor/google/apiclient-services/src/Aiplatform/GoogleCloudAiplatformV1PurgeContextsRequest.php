@@ -20,26 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1PurgeContextsRequest extends \Google\Model
 {
   /**
-   * Required. A required filter matching the Contexts to be purged. E.g.,
-   * `update_time <= 2020-11-19T11:30:00-04:00`.
-   *
    * @var string
    */
   public $filter;
   /**
-   * Optional. Flag to indicate to actually perform the purge. If `force` is set
-   * to false, the method will return a sample of Context names that would be
-   * deleted.
-   *
    * @var bool
    */
   public $force;
 
   /**
-   * Required. A required filter matching the Contexts to be purged. E.g.,
-   * `update_time <= 2020-11-19T11:30:00-04:00`.
-   *
-   * @param string $filter
+   * @param string
    */
   public function setFilter($filter)
   {
@@ -53,11 +43,7 @@ class GoogleCloudAiplatformV1PurgeContextsRequest extends \Google\Model
     return $this->filter;
   }
   /**
-   * Optional. Flag to indicate to actually perform the purge. If `force` is set
-   * to false, the method will return a sample of Context names that would be
-   * deleted.
-   *
-   * @param bool $force
+   * @param bool
    */
   public function setForce($force)
   {

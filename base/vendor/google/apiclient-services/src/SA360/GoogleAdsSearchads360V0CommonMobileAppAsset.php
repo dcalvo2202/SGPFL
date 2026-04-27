@@ -20,42 +20,16 @@ namespace Google\Service\SA360;
 class GoogleAdsSearchads360V0CommonMobileAppAsset extends \Google\Model
 {
   /**
-   * Not specified.
-   */
-  public const APP_STORE_UNSPECIFIED = 'UNSPECIFIED';
-  /**
-   * Used for return value only. Represents value unknown in this version.
-   */
-  public const APP_STORE_UNKNOWN = 'UNKNOWN';
-  /**
-   * Mobile app vendor for Apple app store.
-   */
-  public const APP_STORE_APPLE_APP_STORE = 'APPLE_APP_STORE';
-  /**
-   * Mobile app vendor for Google app store.
-   */
-  public const APP_STORE_GOOGLE_APP_STORE = 'GOOGLE_APP_STORE';
-  /**
-   * Required. A string that uniquely identifies a mobile application. It should
-   * just contain the platform native id, like "com.android.ebay" for Android or
-   * "12345689" for iOS.
-   *
    * @var string
    */
   public $appId;
   /**
-   * Required. The application store that distributes this specific app.
-   *
    * @var string
    */
   public $appStore;
 
   /**
-   * Required. A string that uniquely identifies a mobile application. It should
-   * just contain the platform native id, like "com.android.ebay" for Android or
-   * "12345689" for iOS.
-   *
-   * @param string $appId
+   * @param string
    */
   public function setAppId($appId)
   {
@@ -69,18 +43,14 @@ class GoogleAdsSearchads360V0CommonMobileAppAsset extends \Google\Model
     return $this->appId;
   }
   /**
-   * Required. The application store that distributes this specific app.
-   *
-   * Accepted values: UNSPECIFIED, UNKNOWN, APPLE_APP_STORE, GOOGLE_APP_STORE
-   *
-   * @param self::APP_STORE_* $appStore
+   * @param string
    */
   public function setAppStore($appStore)
   {
     $this->appStore = $appStore;
   }
   /**
-   * @return self::APP_STORE_*
+   * @return string
    */
   public function getAppStore()
   {

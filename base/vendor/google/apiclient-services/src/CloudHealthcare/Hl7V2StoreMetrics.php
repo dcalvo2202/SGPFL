@@ -23,17 +23,12 @@ class Hl7V2StoreMetrics extends \Google\Collection
   protected $metricsType = Hl7V2StoreMetric::class;
   protected $metricsDataType = 'array';
   /**
-   * The resource name of the HL7v2 store to get metrics for, in the format
-   * `projects/{project_id}/datasets/{dataset_id}/hl7V2Stores/{hl7v2_store_id}`.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * List of HL7v2 store metrics by message type.
-   *
-   * @param Hl7V2StoreMetric[] $metrics
+   * @param Hl7V2StoreMetric[]
    */
   public function setMetrics($metrics)
   {
@@ -47,10 +42,7 @@ class Hl7V2StoreMetrics extends \Google\Collection
     return $this->metrics;
   }
   /**
-   * The resource name of the HL7v2 store to get metrics for, in the format
-   * `projects/{project_id}/datasets/{dataset_id}/hl7V2Stores/{hl7v2_store_id}`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

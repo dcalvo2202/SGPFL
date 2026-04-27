@@ -20,18 +20,12 @@ namespace Google\Service\Appengine;
 class CreateVersionMetadataV1Alpha extends \Google\Model
 {
   /**
-   * The Cloud Build ID if one was created as part of the version create.
-   * @OutputOnly
-   *
    * @var string
    */
   public $cloudBuildId;
 
   /**
-   * The Cloud Build ID if one was created as part of the version create.
-   * @OutputOnly
-   *
-   * @param string $cloudBuildId
+   * @param string
    */
   public function setCloudBuildId($cloudBuildId)
   {

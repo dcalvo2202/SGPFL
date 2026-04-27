@@ -25,12 +25,7 @@ class GoogleCloudDiscoveryengineV1alphaOrganicCrawlRateTimeSeries extends \Googl
   protected $vertexAiOrganicCrawlRateDataType = '';
 
   /**
-   * Google's organic crawl rate time series, which is the sum of all
-   * googlebots' crawl rate. Please refer to
-   * https://developers.google.com/search/docs/crawling-indexing/overview-
-   * google-crawlers for more details about googlebots.
-   *
-   * @param GoogleCloudDiscoveryengineV1alphaCrawlRateTimeSeries $googleOrganicCrawlRate
+   * @param GoogleCloudDiscoveryengineV1alphaCrawlRateTimeSeries
    */
   public function setGoogleOrganicCrawlRate(GoogleCloudDiscoveryengineV1alphaCrawlRateTimeSeries $googleOrganicCrawlRate)
   {
@@ -44,13 +39,7 @@ class GoogleCloudDiscoveryengineV1alphaOrganicCrawlRateTimeSeries extends \Googl
     return $this->googleOrganicCrawlRate;
   }
   /**
-   * Vertex AI's organic crawl rate time series, which is the crawl rate of
-   * Google-CloudVertexBot when dedicate crawl is not set. Please refer to
-   * https://developers.google.com/search/docs/crawling-indexing/google-common-
-   * crawlers#google-cloudvertexbot for more details about Google-
-   * CloudVertexBot.
-   *
-   * @param GoogleCloudDiscoveryengineV1alphaCrawlRateTimeSeries $vertexAiOrganicCrawlRate
+   * @param GoogleCloudDiscoveryengineV1alphaCrawlRateTimeSeries
    */
   public function setVertexAiOrganicCrawlRate(GoogleCloudDiscoveryengineV1alphaCrawlRateTimeSeries $vertexAiOrganicCrawlRate)
   {

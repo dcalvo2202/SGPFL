@@ -20,16 +20,12 @@ namespace Google\Service\HomeGraphService;
 class AgentDeviceId extends \Google\Model
 {
   /**
-   * Third-party device ID.
-   *
    * @var string
    */
   public $id;
 
   /**
-   * Third-party device ID.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {

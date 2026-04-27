@@ -21,16 +21,12 @@ class ResourceOwners extends \Google\Collection
 {
   protected $collection_key = 'resourceOwners';
   /**
-   * List of resource owners.
-   *
    * @var string[]
    */
   public $resourceOwners;
 
   /**
-   * List of resource owners.
-   *
-   * @param string[] $resourceOwners
+   * @param string[]
    */
   public function setResourceOwners($resourceOwners)
   {

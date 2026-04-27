@@ -25,9 +25,7 @@ class GoogleAnalyticsAdminV1betaAccessBetweenFilter extends \Google\Model
   protected $toValueDataType = '';
 
   /**
-   * Begins with this number.
-   *
-   * @param GoogleAnalyticsAdminV1betaNumericValue $fromValue
+   * @param GoogleAnalyticsAdminV1betaNumericValue
    */
   public function setFromValue(GoogleAnalyticsAdminV1betaNumericValue $fromValue)
   {
@@ -41,9 +39,7 @@ class GoogleAnalyticsAdminV1betaAccessBetweenFilter extends \Google\Model
     return $this->fromValue;
   }
   /**
-   * Ends with this number.
-   *
-   * @param GoogleAnalyticsAdminV1betaNumericValue $toValue
+   * @param GoogleAnalyticsAdminV1betaNumericValue
    */
   public function setToValue(GoogleAnalyticsAdminV1betaNumericValue $toValue)
   {

@@ -24,9 +24,7 @@ class AwsVmsDetails extends \Google\Collection
   protected $detailsDataType = 'array';
 
   /**
-   * The details of the AWS VMs.
-   *
-   * @param AwsVmDetails[] $details
+   * @param AwsVmDetails[]
    */
   public function setDetails($details)
   {

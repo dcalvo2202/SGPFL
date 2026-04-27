@@ -25,17 +25,12 @@ class ConversionsBatchUpdateRequest extends \Google\Collection
   protected $encryptionInfoType = EncryptionInfo::class;
   protected $encryptionInfoDataType = '';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#conversionsBatchUpdateRequest".
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * The set of conversions to update.
-   *
-   * @param Conversion[] $conversions
+   * @param Conversion[]
    */
   public function setConversions($conversions)
   {
@@ -49,10 +44,7 @@ class ConversionsBatchUpdateRequest extends \Google\Collection
     return $this->conversions;
   }
   /**
-   * Describes how encryptedUserId is encrypted. This is a required field if
-   * encryptedUserId is used.
-   *
-   * @param EncryptionInfo $encryptionInfo
+   * @param EncryptionInfo
    */
   public function setEncryptionInfo(EncryptionInfo $encryptionInfo)
   {
@@ -66,10 +58,7 @@ class ConversionsBatchUpdateRequest extends \Google\Collection
     return $this->encryptionInfo;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#conversionsBatchUpdateRequest".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

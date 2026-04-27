@@ -30,7 +30,7 @@ class GoogleCloudDialogflowCxV3AnswerFeedbackRatingReason extends \Google\Collec
   public $reasonLabels;
 
   /**
-   * @param string $feedback
+   * @param string
    */
   public function setFeedback($feedback)
   {
@@ -44,7 +44,7 @@ class GoogleCloudDialogflowCxV3AnswerFeedbackRatingReason extends \Google\Collec
     return $this->feedback;
   }
   /**
-   * @param string[] $reasonLabels
+   * @param string[]
    */
   public function setReasonLabels($reasonLabels)
   {

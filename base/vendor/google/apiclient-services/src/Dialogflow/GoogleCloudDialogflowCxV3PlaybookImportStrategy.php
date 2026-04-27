@@ -19,24 +19,6 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowCxV3PlaybookImportStrategy extends \Google\Model
 {
-  public const MAIN_PLAYBOOK_IMPORT_STRATEGY_IMPORT_STRATEGY_UNSPECIFIED = 'IMPORT_STRATEGY_UNSPECIFIED';
-  public const MAIN_PLAYBOOK_IMPORT_STRATEGY_IMPORT_STRATEGY_CREATE_NEW = 'IMPORT_STRATEGY_CREATE_NEW';
-  public const MAIN_PLAYBOOK_IMPORT_STRATEGY_IMPORT_STRATEGY_REPLACE = 'IMPORT_STRATEGY_REPLACE';
-  public const MAIN_PLAYBOOK_IMPORT_STRATEGY_IMPORT_STRATEGY_KEEP = 'IMPORT_STRATEGY_KEEP';
-  public const MAIN_PLAYBOOK_IMPORT_STRATEGY_IMPORT_STRATEGY_MERGE = 'IMPORT_STRATEGY_MERGE';
-  public const MAIN_PLAYBOOK_IMPORT_STRATEGY_IMPORT_STRATEGY_THROW_ERROR = 'IMPORT_STRATEGY_THROW_ERROR';
-  public const NESTED_RESOURCE_IMPORT_STRATEGY_IMPORT_STRATEGY_UNSPECIFIED = 'IMPORT_STRATEGY_UNSPECIFIED';
-  public const NESTED_RESOURCE_IMPORT_STRATEGY_IMPORT_STRATEGY_CREATE_NEW = 'IMPORT_STRATEGY_CREATE_NEW';
-  public const NESTED_RESOURCE_IMPORT_STRATEGY_IMPORT_STRATEGY_REPLACE = 'IMPORT_STRATEGY_REPLACE';
-  public const NESTED_RESOURCE_IMPORT_STRATEGY_IMPORT_STRATEGY_KEEP = 'IMPORT_STRATEGY_KEEP';
-  public const NESTED_RESOURCE_IMPORT_STRATEGY_IMPORT_STRATEGY_MERGE = 'IMPORT_STRATEGY_MERGE';
-  public const NESTED_RESOURCE_IMPORT_STRATEGY_IMPORT_STRATEGY_THROW_ERROR = 'IMPORT_STRATEGY_THROW_ERROR';
-  public const TOOL_IMPORT_STRATEGY_IMPORT_STRATEGY_UNSPECIFIED = 'IMPORT_STRATEGY_UNSPECIFIED';
-  public const TOOL_IMPORT_STRATEGY_IMPORT_STRATEGY_CREATE_NEW = 'IMPORT_STRATEGY_CREATE_NEW';
-  public const TOOL_IMPORT_STRATEGY_IMPORT_STRATEGY_REPLACE = 'IMPORT_STRATEGY_REPLACE';
-  public const TOOL_IMPORT_STRATEGY_IMPORT_STRATEGY_KEEP = 'IMPORT_STRATEGY_KEEP';
-  public const TOOL_IMPORT_STRATEGY_IMPORT_STRATEGY_MERGE = 'IMPORT_STRATEGY_MERGE';
-  public const TOOL_IMPORT_STRATEGY_IMPORT_STRATEGY_THROW_ERROR = 'IMPORT_STRATEGY_THROW_ERROR';
   /**
    * @var string
    */
@@ -51,42 +33,42 @@ class GoogleCloudDialogflowCxV3PlaybookImportStrategy extends \Google\Model
   public $toolImportStrategy;
 
   /**
-   * @param self::MAIN_PLAYBOOK_IMPORT_STRATEGY_* $mainPlaybookImportStrategy
+   * @param string
    */
   public function setMainPlaybookImportStrategy($mainPlaybookImportStrategy)
   {
     $this->mainPlaybookImportStrategy = $mainPlaybookImportStrategy;
   }
   /**
-   * @return self::MAIN_PLAYBOOK_IMPORT_STRATEGY_*
+   * @return string
    */
   public function getMainPlaybookImportStrategy()
   {
     return $this->mainPlaybookImportStrategy;
   }
   /**
-   * @param self::NESTED_RESOURCE_IMPORT_STRATEGY_* $nestedResourceImportStrategy
+   * @param string
    */
   public function setNestedResourceImportStrategy($nestedResourceImportStrategy)
   {
     $this->nestedResourceImportStrategy = $nestedResourceImportStrategy;
   }
   /**
-   * @return self::NESTED_RESOURCE_IMPORT_STRATEGY_*
+   * @return string
    */
   public function getNestedResourceImportStrategy()
   {
     return $this->nestedResourceImportStrategy;
   }
   /**
-   * @param self::TOOL_IMPORT_STRATEGY_* $toolImportStrategy
+   * @param string
    */
   public function setToolImportStrategy($toolImportStrategy)
   {
     $this->toolImportStrategy = $toolImportStrategy;
   }
   /**
-   * @return self::TOOL_IMPORT_STRATEGY_*
+   * @return string
    */
   public function getToolImportStrategy()
   {

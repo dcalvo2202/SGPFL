@@ -20,18 +20,12 @@ namespace Google\Service\DataPortability;
 class RetryPortabilityArchiveResponse extends \Google\Model
 {
   /**
-   * The archive job ID that is initiated by the retry endpoint. This can be
-   * used to get the state of the new job.
-   *
    * @var string
    */
   public $archiveJobId;
 
   /**
-   * The archive job ID that is initiated by the retry endpoint. This can be
-   * used to get the state of the new job.
-   *
-   * @param string $archiveJobId
+   * @param string
    */
   public function setArchiveJobId($archiveJobId)
   {

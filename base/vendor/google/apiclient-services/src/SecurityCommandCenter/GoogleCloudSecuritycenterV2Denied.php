@@ -24,9 +24,7 @@ class GoogleCloudSecuritycenterV2Denied extends \Google\Collection
   protected $ipRulesDataType = 'array';
 
   /**
-   * Optional. Optional list of denied IP rules.
-   *
-   * @param GoogleCloudSecuritycenterV2IpRule[] $ipRules
+   * @param GoogleCloudSecuritycenterV2IpRule[]
    */
   public function setIpRules($ipRules)
   {

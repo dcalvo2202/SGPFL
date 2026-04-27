@@ -20,18 +20,12 @@ namespace Google\Service\Batch;
 class Barrier extends \Google\Model
 {
   /**
-   * Barriers are identified by their index in runnable list. Names are not
-   * required, but if present should be an identifier.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Barriers are identified by their index in runnable list. Names are not
-   * required, but if present should be an identifier.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

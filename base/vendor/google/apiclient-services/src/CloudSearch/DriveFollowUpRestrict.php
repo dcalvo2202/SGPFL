@@ -19,23 +19,20 @@ namespace Google\Service\CloudSearch;
 
 class DriveFollowUpRestrict extends \Google\Model
 {
-  public const TYPE_UNSPECIFIED = 'UNSPECIFIED';
-  public const TYPE_FOLLOWUP_SUGGESTIONS = 'FOLLOWUP_SUGGESTIONS';
-  public const TYPE_FOLLOWUP_ACTION_ITEMS = 'FOLLOWUP_ACTION_ITEMS';
   /**
    * @var string
    */
   public $type;
 
   /**
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

@@ -22,16 +22,12 @@ class SapDiscoveryComponentReplicationSite extends \Google\Model
   protected $componentType = SapDiscoveryComponent::class;
   protected $componentDataType = '';
   /**
-   * Optional. The name of the source site from which this one replicates.
-   *
    * @var string
    */
   public $sourceSite;
 
   /**
-   * Optional. The system component for the site.
-   *
-   * @param SapDiscoveryComponent $component
+   * @param SapDiscoveryComponent
    */
   public function setComponent(SapDiscoveryComponent $component)
   {
@@ -45,9 +41,7 @@ class SapDiscoveryComponentReplicationSite extends \Google\Model
     return $this->component;
   }
   /**
-   * Optional. The name of the source site from which this one replicates.
-   *
-   * @param string $sourceSite
+   * @param string
    */
   public function setSourceSite($sourceSite)
   {

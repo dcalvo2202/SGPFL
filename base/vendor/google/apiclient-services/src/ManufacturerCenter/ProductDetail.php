@@ -20,28 +20,20 @@ namespace Google\Service\ManufacturerCenter;
 class ProductDetail extends \Google\Model
 {
   /**
-   * The name of the attribute.
-   *
    * @var string
    */
   public $attributeName;
   /**
-   * The value of the attribute.
-   *
    * @var string
    */
   public $attributeValue;
   /**
-   * A short section name that can be reused between multiple product details.
-   *
    * @var string
    */
   public $sectionName;
 
   /**
-   * The name of the attribute.
-   *
-   * @param string $attributeName
+   * @param string
    */
   public function setAttributeName($attributeName)
   {
@@ -55,9 +47,7 @@ class ProductDetail extends \Google\Model
     return $this->attributeName;
   }
   /**
-   * The value of the attribute.
-   *
-   * @param string $attributeValue
+   * @param string
    */
   public function setAttributeValue($attributeValue)
   {
@@ -71,9 +61,7 @@ class ProductDetail extends \Google\Model
     return $this->attributeValue;
   }
   /**
-   * A short section name that can be reused between multiple product details.
-   *
-   * @param string $sectionName
+   * @param string
    */
   public function setSectionName($sectionName)
   {

@@ -21,16 +21,12 @@ class GoogleCloudBeyondcorpSecuritygatewaysV1InternetGateway extends \Google\Col
 {
   protected $collection_key = 'assignedIps';
   /**
-   * Output only. List of IP addresses assigned to the Cloud NAT.
-   *
    * @var string[]
    */
   public $assignedIps;
 
   /**
-   * Output only. List of IP addresses assigned to the Cloud NAT.
-   *
-   * @param string[] $assignedIps
+   * @param string[]
    */
   public function setAssignedIps($assignedIps)
   {

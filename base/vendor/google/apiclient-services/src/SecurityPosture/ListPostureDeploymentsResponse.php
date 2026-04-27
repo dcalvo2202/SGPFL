@@ -21,26 +21,18 @@ class ListPostureDeploymentsResponse extends \Google\Collection
 {
   protected $collection_key = 'unreachable';
   /**
-   * A pagination token. To retrieve the next page of results, call the method
-   * again with this token.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $postureDeploymentsType = PostureDeployment::class;
   protected $postureDeploymentsDataType = 'array';
   /**
-   * Locations that were temporarily unavailable and could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * A pagination token. To retrieve the next page of results, call the method
-   * again with this token.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -54,9 +46,7 @@ class ListPostureDeploymentsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The list of PostureDeployment resources.
-   *
-   * @param PostureDeployment[] $postureDeployments
+   * @param PostureDeployment[]
    */
   public function setPostureDeployments($postureDeployments)
   {
@@ -70,9 +60,7 @@ class ListPostureDeploymentsResponse extends \Google\Collection
     return $this->postureDeployments;
   }
   /**
-   * Locations that were temporarily unavailable and could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

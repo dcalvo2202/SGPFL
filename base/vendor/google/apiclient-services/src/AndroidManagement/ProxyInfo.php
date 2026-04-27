@@ -21,36 +21,24 @@ class ProxyInfo extends \Google\Collection
 {
   protected $collection_key = 'excludedHosts';
   /**
-   * For a direct proxy, the hosts for which the proxy is bypassed. The host
-   * names may contain wildcards such as *.example.com.
-   *
    * @var string[]
    */
   public $excludedHosts;
   /**
-   * The host of the direct proxy.
-   *
    * @var string
    */
   public $host;
   /**
-   * The URI of the PAC script used to configure the proxy.
-   *
    * @var string
    */
   public $pacUri;
   /**
-   * The port of the direct proxy.
-   *
    * @var int
    */
   public $port;
 
   /**
-   * For a direct proxy, the hosts for which the proxy is bypassed. The host
-   * names may contain wildcards such as *.example.com.
-   *
-   * @param string[] $excludedHosts
+   * @param string[]
    */
   public function setExcludedHosts($excludedHosts)
   {
@@ -64,9 +52,7 @@ class ProxyInfo extends \Google\Collection
     return $this->excludedHosts;
   }
   /**
-   * The host of the direct proxy.
-   *
-   * @param string $host
+   * @param string
    */
   public function setHost($host)
   {
@@ -80,9 +66,7 @@ class ProxyInfo extends \Google\Collection
     return $this->host;
   }
   /**
-   * The URI of the PAC script used to configure the proxy.
-   *
-   * @param string $pacUri
+   * @param string
    */
   public function setPacUri($pacUri)
   {
@@ -96,9 +80,7 @@ class ProxyInfo extends \Google\Collection
     return $this->pacUri;
   }
   /**
-   * The port of the direct proxy.
-   *
-   * @param int $port
+   * @param int
    */
   public function setPort($port)
   {

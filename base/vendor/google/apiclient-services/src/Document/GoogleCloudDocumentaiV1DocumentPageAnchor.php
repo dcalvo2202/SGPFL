@@ -24,9 +24,7 @@ class GoogleCloudDocumentaiV1DocumentPageAnchor extends \Google\Collection
   protected $pageRefsDataType = 'array';
 
   /**
-   * One or more references to visual page elements
-   *
-   * @param GoogleCloudDocumentaiV1DocumentPageAnchorPageRef[] $pageRefs
+   * @param GoogleCloudDocumentaiV1DocumentPageAnchorPageRef[]
    */
   public function setPageRefs($pageRefs)
   {

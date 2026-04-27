@@ -21,18 +21,12 @@ class InstanceGroupManagersDeletePerInstanceConfigsReq extends \Google\Collectio
 {
   protected $collection_key = 'names';
   /**
-   * The list of instance names for which we want to delete per-instance configs
-   * on this managed instance group.
-   *
    * @var string[]
    */
   public $names;
 
   /**
-   * The list of instance names for which we want to delete per-instance configs
-   * on this managed instance group.
-   *
-   * @param string[] $names
+   * @param string[]
    */
   public function setNames($names)
   {

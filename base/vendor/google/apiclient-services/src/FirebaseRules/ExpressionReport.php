@@ -28,9 +28,7 @@ class ExpressionReport extends \Google\Collection
   protected $valuesDataType = 'array';
 
   /**
-   * Subexpressions
-   *
-   * @param ExpressionReport[] $children
+   * @param ExpressionReport[]
    */
   public function setChildren($children)
   {
@@ -44,9 +42,7 @@ class ExpressionReport extends \Google\Collection
     return $this->children;
   }
   /**
-   * Position of expression in original rules source.
-   *
-   * @param SourcePosition $sourcePosition
+   * @param SourcePosition
    */
   public function setSourcePosition(SourcePosition $sourcePosition)
   {
@@ -60,9 +56,7 @@ class ExpressionReport extends \Google\Collection
     return $this->sourcePosition;
   }
   /**
-   * Values that this expression evaluated to when encountered.
-   *
-   * @param ValueCount[] $values
+   * @param ValueCount[]
    */
   public function setValues($values)
   {

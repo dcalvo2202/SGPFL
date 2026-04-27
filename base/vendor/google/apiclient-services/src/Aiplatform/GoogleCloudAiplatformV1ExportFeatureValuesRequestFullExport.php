@@ -20,28 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1ExportFeatureValuesRequestFullExport extends \Google\Model
 {
   /**
-   * Exports Feature values as of this timestamp. If not set, retrieve values as
-   * of now. Timestamp, if present, must not have higher than millisecond
-   * precision.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * Excludes Feature values with feature generation timestamp before this
-   * timestamp. If not set, retrieve oldest values kept in Feature Store.
-   * Timestamp, if present, must not have higher than millisecond precision.
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * Exports Feature values as of this timestamp. If not set, retrieve values as
-   * of now. Timestamp, if present, must not have higher than millisecond
-   * precision.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -55,11 +43,7 @@ class GoogleCloudAiplatformV1ExportFeatureValuesRequestFullExport extends \Googl
     return $this->endTime;
   }
   /**
-   * Excludes Feature values with feature generation timestamp before this
-   * timestamp. If not set, retrieve oldest values kept in Feature Store.
-   * Timestamp, if present, must not have higher than millisecond precision.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

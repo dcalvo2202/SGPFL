@@ -23,31 +23,20 @@ class AppliedLabelChangeDetail extends \Google\Collection
   protected $fieldChangesType = FieldValueChange::class;
   protected $fieldChangesDataType = 'array';
   /**
-   * The Label name representing the Label that changed. This name always
-   * contains the revision of the Label that was used when this Action occurred.
-   * The format is `labels/id@revision`.
-   *
    * @var string
    */
   public $label;
   /**
-   * The human-readable title of the label that changed.
-   *
    * @var string
    */
   public $title;
   /**
-   * The types of changes made to the Label on the Target.
-   *
    * @var string[]
    */
   public $types;
 
   /**
-   * Field Changes. Only present if `types` contains
-   * `LABEL_FIELD_VALUE_CHANGED`.
-   *
-   * @param FieldValueChange[] $fieldChanges
+   * @param FieldValueChange[]
    */
   public function setFieldChanges($fieldChanges)
   {
@@ -61,11 +50,7 @@ class AppliedLabelChangeDetail extends \Google\Collection
     return $this->fieldChanges;
   }
   /**
-   * The Label name representing the Label that changed. This name always
-   * contains the revision of the Label that was used when this Action occurred.
-   * The format is `labels/id@revision`.
-   *
-   * @param string $label
+   * @param string
    */
   public function setLabel($label)
   {
@@ -79,9 +64,7 @@ class AppliedLabelChangeDetail extends \Google\Collection
     return $this->label;
   }
   /**
-   * The human-readable title of the label that changed.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -95,9 +78,7 @@ class AppliedLabelChangeDetail extends \Google\Collection
     return $this->title;
   }
   /**
-   * The types of changes made to the Label on the Target.
-   *
-   * @param string[] $types
+   * @param string[]
    */
   public function setTypes($types)
   {

@@ -22,43 +22,26 @@ class GoogleAppsDriveLabelsV2FieldSelectionOptionsChoiceDisplayHints extends \Go
   protected $badgeColorsType = GoogleAppsDriveLabelsV2BadgeColors::class;
   protected $badgeColorsDataType = '';
   /**
-   * The priority of this badge. Used to compare and sort between multiple
-   * badges. A lower number means the badge should be shown first. When a
-   * badging configuration is not present, this will be 0. Otherwise, this will
-   * be set to `BadgeConfig.priority_override` or the default heuristic which
-   * prefers creation date of the label, and field and option priority.
-   *
    * @var string
    */
   public $badgePriority;
   protected $darkBadgeColorsType = GoogleAppsDriveLabelsV2BadgeColors::class;
   protected $darkBadgeColorsDataType = '';
   /**
-   * Whether the option should be shown in the UI as disabled.
-   *
    * @var bool
    */
   public $disabled;
   /**
-   * This option should be hidden in the search menu when searching for Drive
-   * items.
-   *
    * @var bool
    */
   public $hiddenInSearch;
   /**
-   * This option should be shown in the apply menu when applying values to a
-   * Drive item.
-   *
    * @var bool
    */
   public $shownInApply;
 
   /**
-   * The colors to use for the badge. Changed to Google Material colors based on
-   * the chosen `properties.badge_config.color`.
-   *
-   * @param GoogleAppsDriveLabelsV2BadgeColors $badgeColors
+   * @param GoogleAppsDriveLabelsV2BadgeColors
    */
   public function setBadgeColors(GoogleAppsDriveLabelsV2BadgeColors $badgeColors)
   {
@@ -72,13 +55,7 @@ class GoogleAppsDriveLabelsV2FieldSelectionOptionsChoiceDisplayHints extends \Go
     return $this->badgeColors;
   }
   /**
-   * The priority of this badge. Used to compare and sort between multiple
-   * badges. A lower number means the badge should be shown first. When a
-   * badging configuration is not present, this will be 0. Otherwise, this will
-   * be set to `BadgeConfig.priority_override` or the default heuristic which
-   * prefers creation date of the label, and field and option priority.
-   *
-   * @param string $badgePriority
+   * @param string
    */
   public function setBadgePriority($badgePriority)
   {
@@ -92,10 +69,7 @@ class GoogleAppsDriveLabelsV2FieldSelectionOptionsChoiceDisplayHints extends \Go
     return $this->badgePriority;
   }
   /**
-   * The dark-mode color to use for the badge. Changed to Google Material colors
-   * based on the chosen `properties.badge_config.color`.
-   *
-   * @param GoogleAppsDriveLabelsV2BadgeColors $darkBadgeColors
+   * @param GoogleAppsDriveLabelsV2BadgeColors
    */
   public function setDarkBadgeColors(GoogleAppsDriveLabelsV2BadgeColors $darkBadgeColors)
   {
@@ -109,9 +83,7 @@ class GoogleAppsDriveLabelsV2FieldSelectionOptionsChoiceDisplayHints extends \Go
     return $this->darkBadgeColors;
   }
   /**
-   * Whether the option should be shown in the UI as disabled.
-   *
-   * @param bool $disabled
+   * @param bool
    */
   public function setDisabled($disabled)
   {
@@ -125,10 +97,7 @@ class GoogleAppsDriveLabelsV2FieldSelectionOptionsChoiceDisplayHints extends \Go
     return $this->disabled;
   }
   /**
-   * This option should be hidden in the search menu when searching for Drive
-   * items.
-   *
-   * @param bool $hiddenInSearch
+   * @param bool
    */
   public function setHiddenInSearch($hiddenInSearch)
   {
@@ -142,10 +111,7 @@ class GoogleAppsDriveLabelsV2FieldSelectionOptionsChoiceDisplayHints extends \Go
     return $this->hiddenInSearch;
   }
   /**
-   * This option should be shown in the apply menu when applying values to a
-   * Drive item.
-   *
-   * @param bool $shownInApply
+   * @param bool
    */
   public function setShownInApply($shownInApply)
   {

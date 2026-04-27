@@ -20,18 +20,12 @@ namespace Google\Service\AndroidPublisher;
 class OtherRegionsSubscriptionOfferConfig extends \Google\Model
 {
   /**
-   * Whether the subscription offer in any new locations Play may launch in the
-   * future. If not specified, this will default to false.
-   *
    * @var bool
    */
   public $otherRegionsNewSubscriberAvailability;
 
   /**
-   * Whether the subscription offer in any new locations Play may launch in the
-   * future. If not specified, this will default to false.
-   *
-   * @param bool $otherRegionsNewSubscriberAvailability
+   * @param bool
    */
   public function setOtherRegionsNewSubscriberAvailability($otherRegionsNewSubscriberAvailability)
   {

@@ -24,9 +24,7 @@ class GoogleCloudVideointelligenceV1NormalizedBoundingPoly extends \Google\Colle
   protected $verticesDataType = 'array';
 
   /**
-   * Normalized vertices of the bounding polygon.
-   *
-   * @param GoogleCloudVideointelligenceV1NormalizedVertex[] $vertices
+   * @param GoogleCloudVideointelligenceV1NormalizedVertex[]
    */
   public function setVertices($vertices)
   {

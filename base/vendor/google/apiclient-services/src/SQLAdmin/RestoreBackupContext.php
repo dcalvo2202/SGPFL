@@ -20,34 +20,24 @@ namespace Google\Service\SQLAdmin;
 class RestoreBackupContext extends \Google\Model
 {
   /**
-   * The ID of the backup run to restore from.
-   *
    * @var string
    */
   public $backupRunId;
   /**
-   * The ID of the instance that the backup was taken from.
-   *
    * @var string
    */
   public $instanceId;
   /**
-   * This is always `sql#restoreBackupContext`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The full project ID of the source instance.
-   *
    * @var string
    */
   public $project;
 
   /**
-   * The ID of the backup run to restore from.
-   *
-   * @param string $backupRunId
+   * @param string
    */
   public function setBackupRunId($backupRunId)
   {
@@ -61,9 +51,7 @@ class RestoreBackupContext extends \Google\Model
     return $this->backupRunId;
   }
   /**
-   * The ID of the instance that the backup was taken from.
-   *
-   * @param string $instanceId
+   * @param string
    */
   public function setInstanceId($instanceId)
   {
@@ -77,9 +65,7 @@ class RestoreBackupContext extends \Google\Model
     return $this->instanceId;
   }
   /**
-   * This is always `sql#restoreBackupContext`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -93,9 +79,7 @@ class RestoreBackupContext extends \Google\Model
     return $this->kind;
   }
   /**
-   * The full project ID of the source instance.
-   *
-   * @param string $project
+   * @param string
    */
   public function setProject($project)
   {

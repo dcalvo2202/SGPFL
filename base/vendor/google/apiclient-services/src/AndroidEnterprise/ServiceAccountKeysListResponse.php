@@ -24,9 +24,7 @@ class ServiceAccountKeysListResponse extends \Google\Collection
   protected $serviceAccountKeyDataType = 'array';
 
   /**
-   * The service account credentials.
-   *
-   * @param ServiceAccountKey[] $serviceAccountKey
+   * @param ServiceAccountKey[]
    */
   public function setServiceAccountKey($serviceAccountKey)
   {

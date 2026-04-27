@@ -20,41 +20,28 @@ namespace Google\Service\Integrations;
 class GoogleCloudIntegrationsV1alphaNextTask extends \Google\Model
 {
   /**
-   * Standard filter expression for this task to become an eligible next task.
-   *
    * @var string
    */
   public $condition;
   /**
-   * User-provided description intended to give additional business context
-   * about the task.
-   *
    * @var string
    */
   public $description;
   /**
-   * User-provided label that is attached to this edge in the UI.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * ID of the next task.
-   *
    * @var string
    */
   public $taskConfigId;
   /**
-   * Task number of the next task.
-   *
    * @var string
    */
   public $taskId;
 
   /**
-   * Standard filter expression for this task to become an eligible next task.
-   *
-   * @param string $condition
+   * @param string
    */
   public function setCondition($condition)
   {
@@ -68,10 +55,7 @@ class GoogleCloudIntegrationsV1alphaNextTask extends \Google\Model
     return $this->condition;
   }
   /**
-   * User-provided description intended to give additional business context
-   * about the task.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -85,9 +69,7 @@ class GoogleCloudIntegrationsV1alphaNextTask extends \Google\Model
     return $this->description;
   }
   /**
-   * User-provided label that is attached to this edge in the UI.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -101,9 +83,7 @@ class GoogleCloudIntegrationsV1alphaNextTask extends \Google\Model
     return $this->displayName;
   }
   /**
-   * ID of the next task.
-   *
-   * @param string $taskConfigId
+   * @param string
    */
   public function setTaskConfigId($taskConfigId)
   {
@@ -117,9 +97,7 @@ class GoogleCloudIntegrationsV1alphaNextTask extends \Google\Model
     return $this->taskConfigId;
   }
   /**
-   * Task number of the next task.
-   *
-   * @param string $taskId
+   * @param string
    */
   public function setTaskId($taskId)
   {

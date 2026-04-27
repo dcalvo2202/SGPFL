@@ -25,9 +25,7 @@ class BucketOptions extends \Google\Model
   protected $linearDataType = '';
 
   /**
-   * Bucket boundaries grow exponentially.
-   *
-   * @param Base2Exponent $exponential
+   * @param Base2Exponent
    */
   public function setExponential(Base2Exponent $exponential)
   {
@@ -41,9 +39,7 @@ class BucketOptions extends \Google\Model
     return $this->exponential;
   }
   /**
-   * Bucket boundaries grow linearly.
-   *
-   * @param Linear $linear
+   * @param Linear
    */
   public function setLinear(Linear $linear)
   {

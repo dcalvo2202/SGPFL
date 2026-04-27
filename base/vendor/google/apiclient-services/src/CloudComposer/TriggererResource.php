@@ -20,29 +20,20 @@ namespace Google\Service\CloudComposer;
 class TriggererResource extends \Google\Model
 {
   /**
-   * Optional. The number of triggerers.
-   *
    * @var int
    */
   public $count;
   /**
-   * Optional. CPU request and limit for a single Airflow triggerer replica.
-   *
    * @var float
    */
   public $cpu;
   /**
-   * Optional. Memory (GB) request and limit for a single Airflow triggerer
-   * replica.
-   *
    * @var float
    */
   public $memoryGb;
 
   /**
-   * Optional. The number of triggerers.
-   *
-   * @param int $count
+   * @param int
    */
   public function setCount($count)
   {
@@ -56,9 +47,7 @@ class TriggererResource extends \Google\Model
     return $this->count;
   }
   /**
-   * Optional. CPU request and limit for a single Airflow triggerer replica.
-   *
-   * @param float $cpu
+   * @param float
    */
   public function setCpu($cpu)
   {
@@ -72,10 +61,7 @@ class TriggererResource extends \Google\Model
     return $this->cpu;
   }
   /**
-   * Optional. Memory (GB) request and limit for a single Airflow triggerer
-   * replica.
-   *
-   * @param float $memoryGb
+   * @param float
    */
   public function setMemoryGb($memoryGb)
   {

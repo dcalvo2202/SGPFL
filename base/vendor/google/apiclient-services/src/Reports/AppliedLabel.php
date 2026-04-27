@@ -23,27 +23,18 @@ class AppliedLabel extends \Google\Collection
   protected $fieldValuesType = FieldValue::class;
   protected $fieldValuesDataType = 'array';
   /**
-   * Identifier of the label - Only the label id, not the full OnePlatform
-   * resource name.
-   *
    * @var string
    */
   public $id;
   protected $reasonType = Reason::class;
   protected $reasonDataType = '';
   /**
-   * Title of the label
-   *
    * @var string
    */
   public $title;
 
   /**
-   * List of fields which are part of the label and have been set by the user.
-   * If label has a field which was not set by the user, it would not be present
-   * in this list.
-   *
-   * @param FieldValue[] $fieldValues
+   * @param FieldValue[]
    */
   public function setFieldValues($fieldValues)
   {
@@ -57,10 +48,7 @@ class AppliedLabel extends \Google\Collection
     return $this->fieldValues;
   }
   /**
-   * Identifier of the label - Only the label id, not the full OnePlatform
-   * resource name.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -74,9 +62,7 @@ class AppliedLabel extends \Google\Collection
     return $this->id;
   }
   /**
-   * The reason why the label was applied on the resource.
-   *
-   * @param Reason $reason
+   * @param Reason
    */
   public function setReason(Reason $reason)
   {
@@ -90,9 +76,7 @@ class AppliedLabel extends \Google\Collection
     return $this->reason;
   }
   /**
-   * Title of the label
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

@@ -20,22 +20,16 @@ namespace Google\Service\TPU;
 class RuntimeVersion extends \Google\Model
 {
   /**
-   * The resource name.
-   *
    * @var string
    */
   public $name;
   /**
-   * The runtime version.
-   *
    * @var string
    */
   public $version;
 
   /**
-   * The resource name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -49,9 +43,7 @@ class RuntimeVersion extends \Google\Model
     return $this->name;
   }
   /**
-   * The runtime version.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

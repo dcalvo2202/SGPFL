@@ -21,46 +21,30 @@ class ReportWorkItemStatusRequest extends \Google\Collection
 {
   protected $collection_key = 'workItemStatuses';
   /**
-   * The current timestamp at the worker.
-   *
    * @var string
    */
   public $currentWorkerTime;
   /**
-   * The [regional endpoint]
-   * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
-   * contains the WorkItem's job.
-   *
    * @var string
    */
   public $location;
   /**
-   * Optional. The project number of the project which owns the WorkItem's job.
-   *
    * @var string
    */
   public $projectNumber;
   /**
-   * Untranslated bag-of-bytes WorkProgressUpdateRequest from UnifiedWorker.
-   *
    * @var array[]
    */
   public $unifiedWorkerRequest;
   protected $workItemStatusesType = WorkItemStatus::class;
   protected $workItemStatusesDataType = 'array';
   /**
-   * The ID of the worker reporting the WorkItem status. If this does not match
-   * the ID of the worker which the Dataflow service believes currently has the
-   * lease on the WorkItem, the report will be dropped (with an error response).
-   *
    * @var string
    */
   public $workerId;
 
   /**
-   * The current timestamp at the worker.
-   *
-   * @param string $currentWorkerTime
+   * @param string
    */
   public function setCurrentWorkerTime($currentWorkerTime)
   {
@@ -74,11 +58,7 @@ class ReportWorkItemStatusRequest extends \Google\Collection
     return $this->currentWorkerTime;
   }
   /**
-   * The [regional endpoint]
-   * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
-   * contains the WorkItem's job.
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -92,9 +72,7 @@ class ReportWorkItemStatusRequest extends \Google\Collection
     return $this->location;
   }
   /**
-   * Optional. The project number of the project which owns the WorkItem's job.
-   *
-   * @param string $projectNumber
+   * @param string
    */
   public function setProjectNumber($projectNumber)
   {
@@ -108,9 +86,7 @@ class ReportWorkItemStatusRequest extends \Google\Collection
     return $this->projectNumber;
   }
   /**
-   * Untranslated bag-of-bytes WorkProgressUpdateRequest from UnifiedWorker.
-   *
-   * @param array[] $unifiedWorkerRequest
+   * @param array[]
    */
   public function setUnifiedWorkerRequest($unifiedWorkerRequest)
   {
@@ -124,11 +100,7 @@ class ReportWorkItemStatusRequest extends \Google\Collection
     return $this->unifiedWorkerRequest;
   }
   /**
-   * The order is unimportant, except that the order of the WorkItemServiceState
-   * messages in the ReportWorkItemStatusResponse corresponds to the order of
-   * WorkItemStatus messages here.
-   *
-   * @param WorkItemStatus[] $workItemStatuses
+   * @param WorkItemStatus[]
    */
   public function setWorkItemStatuses($workItemStatuses)
   {
@@ -142,11 +114,7 @@ class ReportWorkItemStatusRequest extends \Google\Collection
     return $this->workItemStatuses;
   }
   /**
-   * The ID of the worker reporting the WorkItem status. If this does not match
-   * the ID of the worker which the Dataflow service believes currently has the
-   * lease on the WorkItem, the report will be dropped (with an error response).
-   *
-   * @param string $workerId
+   * @param string
    */
   public function setWorkerId($workerId)
   {

@@ -23,33 +23,16 @@ class BatchCreateContactsRequest extends \Google\Collection
   protected $contactsType = ContactToCreate::class;
   protected $contactsDataType = 'array';
   /**
-   * Required. A field mask to restrict which fields on each person are returned
-   * in the response. Multiple fields can be specified by separating them with
-   * commas. If read mask is left empty, the post-mutate-get is skipped and no
-   * data will be returned in the response. Valid values are: * addresses *
-   * ageRanges * biographies * birthdays * calendarUrls * clientData *
-   * coverPhotos * emailAddresses * events * externalIds * genders * imClients *
-   * interests * locales * locations * memberships * metadata * miscKeywords *
-   * names * nicknames * occupations * organizations * phoneNumbers * photos *
-   * relations * sipAddresses * skills * urls * userDefined
-   *
    * @var string
    */
   public $readMask;
   /**
-   * Optional. A mask of what source types to return in the post mutate read.
-   * Defaults to READ_SOURCE_TYPE_CONTACT and READ_SOURCE_TYPE_PROFILE if not
-   * set.
-   *
    * @var string[]
    */
   public $sources;
 
   /**
-   * Required. The contact to create. Allows up to 200 contacts in a single
-   * request.
-   *
-   * @param ContactToCreate[] $contacts
+   * @param ContactToCreate[]
    */
   public function setContacts($contacts)
   {
@@ -63,17 +46,7 @@ class BatchCreateContactsRequest extends \Google\Collection
     return $this->contacts;
   }
   /**
-   * Required. A field mask to restrict which fields on each person are returned
-   * in the response. Multiple fields can be specified by separating them with
-   * commas. If read mask is left empty, the post-mutate-get is skipped and no
-   * data will be returned in the response. Valid values are: * addresses *
-   * ageRanges * biographies * birthdays * calendarUrls * clientData *
-   * coverPhotos * emailAddresses * events * externalIds * genders * imClients *
-   * interests * locales * locations * memberships * metadata * miscKeywords *
-   * names * nicknames * occupations * organizations * phoneNumbers * photos *
-   * relations * sipAddresses * skills * urls * userDefined
-   *
-   * @param string $readMask
+   * @param string
    */
   public function setReadMask($readMask)
   {
@@ -87,11 +60,7 @@ class BatchCreateContactsRequest extends \Google\Collection
     return $this->readMask;
   }
   /**
-   * Optional. A mask of what source types to return in the post mutate read.
-   * Defaults to READ_SOURCE_TYPE_CONTACT and READ_SOURCE_TYPE_PROFILE if not
-   * set.
-   *
-   * @param string[] $sources
+   * @param string[]
    */
   public function setSources($sources)
   {

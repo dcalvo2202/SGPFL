@@ -22,18 +22,10 @@ class CreateShortDynamicLinkRequest extends \Google\Model
   protected $dynamicLinkInfoType = DynamicLinkInfo::class;
   protected $dynamicLinkInfoDataType = '';
   /**
-   * Full long Dynamic Link URL with desired query parameters specified. For
-   * example,
-   * "https://sample.app.goo.gl/?link=http://www.google.com&apn=com.sample",
-   * [Learn more](https://firebase.google.com/docs/reference/dynamic-links/link-
-   * shortener).
-   *
    * @var string
    */
   public $longDynamicLink;
   /**
-   * Google SDK version. Version takes the form "$major.$minor.$patch"
-   *
    * @var string
    */
   public $sdkVersion;
@@ -41,11 +33,7 @@ class CreateShortDynamicLinkRequest extends \Google\Model
   protected $suffixDataType = '';
 
   /**
-   * Information about the Dynamic Link to be shortened. [Learn
-   * more](https://firebase.google.com/docs/reference/dynamic-links/link-
-   * shortener).
-   *
-   * @param DynamicLinkInfo $dynamicLinkInfo
+   * @param DynamicLinkInfo
    */
   public function setDynamicLinkInfo(DynamicLinkInfo $dynamicLinkInfo)
   {
@@ -59,13 +47,7 @@ class CreateShortDynamicLinkRequest extends \Google\Model
     return $this->dynamicLinkInfo;
   }
   /**
-   * Full long Dynamic Link URL with desired query parameters specified. For
-   * example,
-   * "https://sample.app.goo.gl/?link=http://www.google.com&apn=com.sample",
-   * [Learn more](https://firebase.google.com/docs/reference/dynamic-links/link-
-   * shortener).
-   *
-   * @param string $longDynamicLink
+   * @param string
    */
   public function setLongDynamicLink($longDynamicLink)
   {
@@ -79,9 +61,7 @@ class CreateShortDynamicLinkRequest extends \Google\Model
     return $this->longDynamicLink;
   }
   /**
-   * Google SDK version. Version takes the form "$major.$minor.$patch"
-   *
-   * @param string $sdkVersion
+   * @param string
    */
   public function setSdkVersion($sdkVersion)
   {
@@ -95,9 +75,7 @@ class CreateShortDynamicLinkRequest extends \Google\Model
     return $this->sdkVersion;
   }
   /**
-   * Short Dynamic Link suffix. Optional.
-   *
-   * @param Suffix $suffix
+   * @param Suffix
    */
   public function setSuffix(Suffix $suffix)
   {

@@ -20,48 +20,26 @@ namespace Google\Service\Storagetransfer;
 class Operation extends \Google\Model
 {
   /**
-   * If the value is `false`, it means the operation is still in progress. If
-   * `true`, the operation is completed, and either `error` or `response` is
-   * available.
-   *
    * @var bool
    */
   public $done;
   protected $errorType = Status::class;
   protected $errorDataType = '';
   /**
-   * Represents the transfer operation object. To request a TransferOperation
-   * object, use transferOperations.get.
-   *
    * @var array[]
    */
   public $metadata;
   /**
-   * The server-assigned unique name. The format of `name` is
-   * `transferOperations/some/unique/name`.
-   *
    * @var string
    */
   public $name;
   /**
-   * The normal, successful response of the operation. If the original method
-   * returns no data on success, such as `Delete`, the response is
-   * `google.protobuf.Empty`. If the original method is standard
-   * `Get`/`Create`/`Update`, the response should be the resource. For other
-   * methods, the response should have the type `XxxResponse`, where `Xxx` is
-   * the original method name. For example, if the original method name is
-   * `TakeSnapshot()`, the inferred response type is `TakeSnapshotResponse`.
-   *
    * @var array[]
    */
   public $response;
 
   /**
-   * If the value is `false`, it means the operation is still in progress. If
-   * `true`, the operation is completed, and either `error` or `response` is
-   * available.
-   *
-   * @param bool $done
+   * @param bool
    */
   public function setDone($done)
   {
@@ -75,9 +53,7 @@ class Operation extends \Google\Model
     return $this->done;
   }
   /**
-   * The error result of the operation in case of failure or cancellation.
-   *
-   * @param Status $error
+   * @param Status
    */
   public function setError(Status $error)
   {
@@ -91,10 +67,7 @@ class Operation extends \Google\Model
     return $this->error;
   }
   /**
-   * Represents the transfer operation object. To request a TransferOperation
-   * object, use transferOperations.get.
-   *
-   * @param array[] $metadata
+   * @param array[]
    */
   public function setMetadata($metadata)
   {
@@ -108,10 +81,7 @@ class Operation extends \Google\Model
     return $this->metadata;
   }
   /**
-   * The server-assigned unique name. The format of `name` is
-   * `transferOperations/some/unique/name`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -125,15 +95,7 @@ class Operation extends \Google\Model
     return $this->name;
   }
   /**
-   * The normal, successful response of the operation. If the original method
-   * returns no data on success, such as `Delete`, the response is
-   * `google.protobuf.Empty`. If the original method is standard
-   * `Get`/`Create`/`Update`, the response should be the resource. For other
-   * methods, the response should have the type `XxxResponse`, where `Xxx` is
-   * the original method name. For example, if the original method name is
-   * `TakeSnapshot()`, the inferred response type is `TakeSnapshotResponse`.
-   *
-   * @param array[] $response
+   * @param array[]
    */
   public function setResponse($response)
   {

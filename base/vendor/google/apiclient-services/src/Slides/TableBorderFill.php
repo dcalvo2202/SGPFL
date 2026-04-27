@@ -23,9 +23,7 @@ class TableBorderFill extends \Google\Model
   protected $solidFillDataType = '';
 
   /**
-   * Solid fill.
-   *
-   * @param SolidFill $solidFill
+   * @param SolidFill
    */
   public function setSolidFill(SolidFill $solidFill)
   {

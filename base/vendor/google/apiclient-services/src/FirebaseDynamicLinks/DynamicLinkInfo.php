@@ -26,33 +26,16 @@ class DynamicLinkInfo extends \Google\Model
   protected $desktopInfoType = DesktopInfo::class;
   protected $desktopInfoDataType = '';
   /**
-   * E.g. https://maps.app.goo.gl, https://maps.page.link, https://g.co/maps
-   * More examples can be found in description of getNormalizedUriPrefix in
-   * j/c/g/firebase/dynamiclinks/uri/DdlDomain.java Will fallback to
-   * dynamic_link_domain is this field is missing
-   *
    * @var string
    */
   public $domainUriPrefix;
   /**
-   * Dynamic Links domain that the project owns, e.g. abcd.app.goo.gl [Learn
-   * more](https://firebase.google.com/docs/dynamic-links/android/receive) on
-   * how to set up Dynamic Link domain associated with your Firebase project.
-   * Required if missing domain_uri_prefix.
-   *
-   * @deprecated
    * @var string
    */
   public $dynamicLinkDomain;
   protected $iosInfoType = IosInfo::class;
   protected $iosInfoDataType = '';
   /**
-   * The link your app will open, You can specify any URL your app can handle.
-   * This link must be a well-formatted URL, be properly URL-encoded, and use
-   * the HTTP or HTTPS scheme. See 'link' parameters in the
-   * [documentation](https://firebase.google.com/docs/dynamic-links/create-
-   * manually). Required.
-   *
    * @var string
    */
   public $link;
@@ -62,11 +45,7 @@ class DynamicLinkInfo extends \Google\Model
   protected $socialMetaTagInfoDataType = '';
 
   /**
-   * Parameters used for tracking. See all tracking parameters in the
-   * [documentation](https://firebase.google.com/docs/dynamic-links/create-
-   * manually).
-   *
-   * @param AnalyticsInfo $analyticsInfo
+   * @param AnalyticsInfo
    */
   public function setAnalyticsInfo(AnalyticsInfo $analyticsInfo)
   {
@@ -80,11 +59,7 @@ class DynamicLinkInfo extends \Google\Model
     return $this->analyticsInfo;
   }
   /**
-   * Android related information. See Android related parameters in the
-   * [documentation](https://firebase.google.com/docs/dynamic-links/create-
-   * manually).
-   *
-   * @param AndroidInfo $androidInfo
+   * @param AndroidInfo
    */
   public function setAndroidInfo(AndroidInfo $androidInfo)
   {
@@ -98,11 +73,7 @@ class DynamicLinkInfo extends \Google\Model
     return $this->androidInfo;
   }
   /**
-   * Desktop related information. See desktop related parameters in the
-   * [documentation](https://firebase.google.com/docs/dynamic-links/create-
-   * manually).
-   *
-   * @param DesktopInfo $desktopInfo
+   * @param DesktopInfo
    */
   public function setDesktopInfo(DesktopInfo $desktopInfo)
   {
@@ -116,12 +87,7 @@ class DynamicLinkInfo extends \Google\Model
     return $this->desktopInfo;
   }
   /**
-   * E.g. https://maps.app.goo.gl, https://maps.page.link, https://g.co/maps
-   * More examples can be found in description of getNormalizedUriPrefix in
-   * j/c/g/firebase/dynamiclinks/uri/DdlDomain.java Will fallback to
-   * dynamic_link_domain is this field is missing
-   *
-   * @param string $domainUriPrefix
+   * @param string
    */
   public function setDomainUriPrefix($domainUriPrefix)
   {
@@ -135,20 +101,13 @@ class DynamicLinkInfo extends \Google\Model
     return $this->domainUriPrefix;
   }
   /**
-   * Dynamic Links domain that the project owns, e.g. abcd.app.goo.gl [Learn
-   * more](https://firebase.google.com/docs/dynamic-links/android/receive) on
-   * how to set up Dynamic Link domain associated with your Firebase project.
-   * Required if missing domain_uri_prefix.
-   *
-   * @deprecated
-   * @param string $dynamicLinkDomain
+   * @param string
    */
   public function setDynamicLinkDomain($dynamicLinkDomain)
   {
     $this->dynamicLinkDomain = $dynamicLinkDomain;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getDynamicLinkDomain()
@@ -156,11 +115,7 @@ class DynamicLinkInfo extends \Google\Model
     return $this->dynamicLinkDomain;
   }
   /**
-   * iOS related information. See iOS related parameters in the
-   * [documentation](https://firebase.google.com/docs/dynamic-links/create-
-   * manually).
-   *
-   * @param IosInfo $iosInfo
+   * @param IosInfo
    */
   public function setIosInfo(IosInfo $iosInfo)
   {
@@ -174,13 +129,7 @@ class DynamicLinkInfo extends \Google\Model
     return $this->iosInfo;
   }
   /**
-   * The link your app will open, You can specify any URL your app can handle.
-   * This link must be a well-formatted URL, be properly URL-encoded, and use
-   * the HTTP or HTTPS scheme. See 'link' parameters in the
-   * [documentation](https://firebase.google.com/docs/dynamic-links/create-
-   * manually). Required.
-   *
-   * @param string $link
+   * @param string
    */
   public function setLink($link)
   {
@@ -194,9 +143,7 @@ class DynamicLinkInfo extends \Google\Model
     return $this->link;
   }
   /**
-   * Information of navigation behavior of a Firebase Dynamic Links.
-   *
-   * @param NavigationInfo $navigationInfo
+   * @param NavigationInfo
    */
   public function setNavigationInfo(NavigationInfo $navigationInfo)
   {
@@ -210,10 +157,7 @@ class DynamicLinkInfo extends \Google\Model
     return $this->navigationInfo;
   }
   /**
-   * Parameters for social meta tag params. Used to set meta tag data for link
-   * previews on social sites.
-   *
-   * @param SocialMetaTagInfo $socialMetaTagInfo
+   * @param SocialMetaTagInfo
    */
   public function setSocialMetaTagInfo(SocialMetaTagInfo $socialMetaTagInfo)
   {

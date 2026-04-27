@@ -26,16 +26,12 @@ class GoogleCloudChannelV1ReportResultsMetadata extends \Google\Model
   protected $reportType = GoogleCloudChannelV1Report::class;
   protected $reportDataType = '';
   /**
-   * The total number of rows of data in the final report.
-   *
    * @var string
    */
   public $rowCount;
 
   /**
-   * The date range of reported usage.
-   *
-   * @param GoogleCloudChannelV1DateRange $dateRange
+   * @param GoogleCloudChannelV1DateRange
    */
   public function setDateRange(GoogleCloudChannelV1DateRange $dateRange)
   {
@@ -49,12 +45,7 @@ class GoogleCloudChannelV1ReportResultsMetadata extends \Google\Model
     return $this->dateRange;
   }
   /**
-   * The usage dates immediately preceding `date_range` with the same duration.
-   * Use this to calculate trending usage and costs. This is only populated if
-   * you request trending data. For example, if `date_range` is July 1-15,
-   * `preceding_date_range` will be June 16-30.
-   *
-   * @param GoogleCloudChannelV1DateRange $precedingDateRange
+   * @param GoogleCloudChannelV1DateRange
    */
   public function setPrecedingDateRange(GoogleCloudChannelV1DateRange $precedingDateRange)
   {
@@ -68,9 +59,7 @@ class GoogleCloudChannelV1ReportResultsMetadata extends \Google\Model
     return $this->precedingDateRange;
   }
   /**
-   * Details of the completed report.
-   *
-   * @param GoogleCloudChannelV1Report $report
+   * @param GoogleCloudChannelV1Report
    */
   public function setReport(GoogleCloudChannelV1Report $report)
   {
@@ -84,9 +73,7 @@ class GoogleCloudChannelV1ReportResultsMetadata extends \Google\Model
     return $this->report;
   }
   /**
-   * The total number of rows of data in the final report.
-   *
-   * @param string $rowCount
+   * @param string
    */
   public function setRowCount($rowCount)
   {

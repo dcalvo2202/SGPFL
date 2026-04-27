@@ -20,16 +20,12 @@ namespace Google\Service\CloudRedis;
 class InstanceAuthString extends \Google\Model
 {
   /**
-   * AUTH string set on the instance.
-   *
    * @var string
    */
   public $authString;
 
   /**
-   * AUTH string set on the instance.
-   *
-   * @param string $authString
+   * @param string
    */
   public function setAuthString($authString)
   {

@@ -21,34 +21,19 @@ class GoogleDevtoolsCloudbuildV1Results extends \Google\Collection
 {
   protected $collection_key = 'pythonPackages';
   /**
-   * Path to the artifact manifest for non-container artifacts uploaded to Cloud
-   * Storage. Only populated when artifacts are uploaded to Cloud Storage.
-   *
    * @var string
    */
   public $artifactManifest;
   protected $artifactTimingType = GoogleDevtoolsCloudbuildV1TimeSpan::class;
   protected $artifactTimingDataType = '';
   /**
-   * List of build step digests, in the order corresponding to build step
-   * indices.
-   *
    * @var string[]
    */
   public $buildStepImages;
   /**
-   * List of build step outputs, produced by builder images, in the order
-   * corresponding to build step indices. [Cloud
-   * Builders](https://cloud.google.com/cloud-build/docs/cloud-builders) can
-   * produce this output by writing to `$BUILDER_OUTPUT/output`. Only the first
-   * 50KB of data is stored. Note that the `$BUILDER_OUTPUT` variable is read-
-   * only and can't be substituted.
-   *
    * @var string[]
    */
   public $buildStepOutputs;
-  protected $genericArtifactsType = GoogleDevtoolsCloudbuildV1UploadedGenericArtifact::class;
-  protected $genericArtifactsDataType = 'array';
   protected $goModulesType = GoogleDevtoolsCloudbuildV1UploadedGoModule::class;
   protected $goModulesDataType = 'array';
   protected $imagesType = GoogleDevtoolsCloudbuildV1BuiltImage::class;
@@ -58,9 +43,6 @@ class GoogleDevtoolsCloudbuildV1Results extends \Google\Collection
   protected $npmPackagesType = GoogleDevtoolsCloudbuildV1UploadedNpmPackage::class;
   protected $npmPackagesDataType = 'array';
   /**
-   * Number of non-container artifacts uploaded to Cloud Storage. Only populated
-   * when artifacts are uploaded to Cloud Storage.
-   *
    * @var string
    */
   public $numArtifacts;
@@ -68,10 +50,7 @@ class GoogleDevtoolsCloudbuildV1Results extends \Google\Collection
   protected $pythonPackagesDataType = 'array';
 
   /**
-   * Path to the artifact manifest for non-container artifacts uploaded to Cloud
-   * Storage. Only populated when artifacts are uploaded to Cloud Storage.
-   *
-   * @param string $artifactManifest
+   * @param string
    */
   public function setArtifactManifest($artifactManifest)
   {
@@ -85,9 +64,7 @@ class GoogleDevtoolsCloudbuildV1Results extends \Google\Collection
     return $this->artifactManifest;
   }
   /**
-   * Time to push all non-container artifacts to Cloud Storage.
-   *
-   * @param GoogleDevtoolsCloudbuildV1TimeSpan $artifactTiming
+   * @param GoogleDevtoolsCloudbuildV1TimeSpan
    */
   public function setArtifactTiming(GoogleDevtoolsCloudbuildV1TimeSpan $artifactTiming)
   {
@@ -101,10 +78,7 @@ class GoogleDevtoolsCloudbuildV1Results extends \Google\Collection
     return $this->artifactTiming;
   }
   /**
-   * List of build step digests, in the order corresponding to build step
-   * indices.
-   *
-   * @param string[] $buildStepImages
+   * @param string[]
    */
   public function setBuildStepImages($buildStepImages)
   {
@@ -118,14 +92,7 @@ class GoogleDevtoolsCloudbuildV1Results extends \Google\Collection
     return $this->buildStepImages;
   }
   /**
-   * List of build step outputs, produced by builder images, in the order
-   * corresponding to build step indices. [Cloud
-   * Builders](https://cloud.google.com/cloud-build/docs/cloud-builders) can
-   * produce this output by writing to `$BUILDER_OUTPUT/output`. Only the first
-   * 50KB of data is stored. Note that the `$BUILDER_OUTPUT` variable is read-
-   * only and can't be substituted.
-   *
-   * @param string[] $buildStepOutputs
+   * @param string[]
    */
   public function setBuildStepOutputs($buildStepOutputs)
   {
@@ -139,27 +106,7 @@ class GoogleDevtoolsCloudbuildV1Results extends \Google\Collection
     return $this->buildStepOutputs;
   }
   /**
-   * Output only. Generic artifacts uploaded to Artifact Registry at the end of
-   * the build.
-   *
-   * @param GoogleDevtoolsCloudbuildV1UploadedGenericArtifact[] $genericArtifacts
-   */
-  public function setGenericArtifacts($genericArtifacts)
-  {
-    $this->genericArtifacts = $genericArtifacts;
-  }
-  /**
-   * @return GoogleDevtoolsCloudbuildV1UploadedGenericArtifact[]
-   */
-  public function getGenericArtifacts()
-  {
-    return $this->genericArtifacts;
-  }
-  /**
-   * Optional. Go module artifacts uploaded to Artifact Registry at the end of
-   * the build.
-   *
-   * @param GoogleDevtoolsCloudbuildV1UploadedGoModule[] $goModules
+   * @param GoogleDevtoolsCloudbuildV1UploadedGoModule[]
    */
   public function setGoModules($goModules)
   {
@@ -173,9 +120,7 @@ class GoogleDevtoolsCloudbuildV1Results extends \Google\Collection
     return $this->goModules;
   }
   /**
-   * Container images that were built as a part of the build.
-   *
-   * @param GoogleDevtoolsCloudbuildV1BuiltImage[] $images
+   * @param GoogleDevtoolsCloudbuildV1BuiltImage[]
    */
   public function setImages($images)
   {
@@ -189,9 +134,7 @@ class GoogleDevtoolsCloudbuildV1Results extends \Google\Collection
     return $this->images;
   }
   /**
-   * Maven artifacts uploaded to Artifact Registry at the end of the build.
-   *
-   * @param GoogleDevtoolsCloudbuildV1UploadedMavenArtifact[] $mavenArtifacts
+   * @param GoogleDevtoolsCloudbuildV1UploadedMavenArtifact[]
    */
   public function setMavenArtifacts($mavenArtifacts)
   {
@@ -205,9 +148,7 @@ class GoogleDevtoolsCloudbuildV1Results extends \Google\Collection
     return $this->mavenArtifacts;
   }
   /**
-   * Npm packages uploaded to Artifact Registry at the end of the build.
-   *
-   * @param GoogleDevtoolsCloudbuildV1UploadedNpmPackage[] $npmPackages
+   * @param GoogleDevtoolsCloudbuildV1UploadedNpmPackage[]
    */
   public function setNpmPackages($npmPackages)
   {
@@ -221,10 +162,7 @@ class GoogleDevtoolsCloudbuildV1Results extends \Google\Collection
     return $this->npmPackages;
   }
   /**
-   * Number of non-container artifacts uploaded to Cloud Storage. Only populated
-   * when artifacts are uploaded to Cloud Storage.
-   *
-   * @param string $numArtifacts
+   * @param string
    */
   public function setNumArtifacts($numArtifacts)
   {
@@ -238,9 +176,7 @@ class GoogleDevtoolsCloudbuildV1Results extends \Google\Collection
     return $this->numArtifacts;
   }
   /**
-   * Python artifacts uploaded to Artifact Registry at the end of the build.
-   *
-   * @param GoogleDevtoolsCloudbuildV1UploadedPythonPackage[] $pythonPackages
+   * @param GoogleDevtoolsCloudbuildV1UploadedPythonPackage[]
    */
   public function setPythonPackages($pythonPackages)
   {

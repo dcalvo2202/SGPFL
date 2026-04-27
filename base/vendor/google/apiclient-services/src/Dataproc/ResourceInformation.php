@@ -30,7 +30,7 @@ class ResourceInformation extends \Google\Collection
   public $name;
 
   /**
-   * @param string[] $addresses
+   * @param string[]
    */
   public function setAddresses($addresses)
   {
@@ -44,7 +44,7 @@ class ResourceInformation extends \Google\Collection
     return $this->addresses;
   }
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

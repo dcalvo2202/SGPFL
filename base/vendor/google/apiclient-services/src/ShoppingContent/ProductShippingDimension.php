@@ -20,23 +20,13 @@ namespace Google\Service\ShoppingContent;
 class ProductShippingDimension extends \Google\Model
 {
   /**
-   * The unit of value.
-   *
    * @var string
    */
   public $unit;
-  /**
-   * The dimension of the product used to calculate the shipping cost of the
-   * item.
-   *
-   * @var 
-   */
   public $value;
 
   /**
-   * The unit of value.
-   *
-   * @param string $unit
+   * @param string
    */
   public function setUnit($unit)
   {

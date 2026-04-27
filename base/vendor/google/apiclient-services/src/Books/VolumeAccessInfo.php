@@ -20,99 +20,58 @@ namespace Google\Service\Books;
 class VolumeAccessInfo extends \Google\Model
 {
   /**
-   * Combines the access and viewability of this volume into a single status
-   * field for this user. Values can be FULL_PURCHASED, FULL_PUBLIC_DOMAIN,
-   * SAMPLE or NONE. (In LITE projection.)
-   *
    * @var string
    */
   public $accessViewStatus;
   /**
-   * The two-letter ISO_3166-1 country code for which this access information is
-   * valid. (In LITE projection.)
-   *
    * @var string
    */
   public $country;
   protected $downloadAccessType = DownloadAccessRestriction::class;
   protected $downloadAccessDataType = '';
   /**
-   * URL to the Google Drive viewer if this volume is uploaded by the user by
-   * selecting the file from Google Drive.
-   *
    * @var string
    */
   public $driveImportedContentLink;
   /**
-   * Whether this volume can be embedded in a viewport using the Embedded Viewer
-   * API.
-   *
    * @var bool
    */
   public $embeddable;
   protected $epubType = VolumeAccessInfoEpub::class;
   protected $epubDataType = '';
   /**
-   * Whether this volume requires that the client explicitly request offline
-   * download license rather than have it done automatically when loading the
-   * content, if the client supports it.
-   *
    * @var bool
    */
   public $explicitOfflineLicenseManagement;
   protected $pdfType = VolumeAccessInfoPdf::class;
   protected $pdfDataType = '';
   /**
-   * Whether or not this book is public domain in the country listed above.
-   *
    * @var bool
    */
   public $publicDomain;
   /**
-   * Whether quote sharing is allowed for this volume.
-   *
    * @var bool
    */
   public $quoteSharingAllowed;
   /**
-   * Whether text-to-speech is permitted for this volume. Values can be ALLOWED,
-   * ALLOWED_FOR_ACCESSIBILITY, or NOT_ALLOWED.
-   *
    * @var string
    */
   public $textToSpeechPermission;
   /**
-   * For ordered but not yet processed orders, we give a URL that can be used to
-   * go to the appropriate Google Wallet page.
-   *
    * @var string
    */
   public $viewOrderUrl;
   /**
-   * The read access of a volume. Possible values are PARTIAL, ALL_PAGES,
-   * NO_PAGES or UNKNOWN. This value depends on the country listed above. A
-   * value of PARTIAL means that the publisher has allowed some portion of the
-   * volume to be viewed publicly, without purchase. This can apply to eBooks as
-   * well as non-eBooks. Public domain books will always have a value of
-   * ALL_PAGES.
-   *
    * @var string
    */
   public $viewability;
   /**
-   * URL to read this volume on the Google Books site. Link will not allow users
-   * to read non-viewable volumes.
-   *
    * @var string
    */
   public $webReaderLink;
 
   /**
-   * Combines the access and viewability of this volume into a single status
-   * field for this user. Values can be FULL_PURCHASED, FULL_PUBLIC_DOMAIN,
-   * SAMPLE or NONE. (In LITE projection.)
-   *
-   * @param string $accessViewStatus
+   * @param string
    */
   public function setAccessViewStatus($accessViewStatus)
   {
@@ -126,10 +85,7 @@ class VolumeAccessInfo extends \Google\Model
     return $this->accessViewStatus;
   }
   /**
-   * The two-letter ISO_3166-1 country code for which this access information is
-   * valid. (In LITE projection.)
-   *
-   * @param string $country
+   * @param string
    */
   public function setCountry($country)
   {
@@ -143,9 +99,7 @@ class VolumeAccessInfo extends \Google\Model
     return $this->country;
   }
   /**
-   * Information about a volume's download license access restrictions.
-   *
-   * @param DownloadAccessRestriction $downloadAccess
+   * @param DownloadAccessRestriction
    */
   public function setDownloadAccess(DownloadAccessRestriction $downloadAccess)
   {
@@ -159,10 +113,7 @@ class VolumeAccessInfo extends \Google\Model
     return $this->downloadAccess;
   }
   /**
-   * URL to the Google Drive viewer if this volume is uploaded by the user by
-   * selecting the file from Google Drive.
-   *
-   * @param string $driveImportedContentLink
+   * @param string
    */
   public function setDriveImportedContentLink($driveImportedContentLink)
   {
@@ -176,10 +127,7 @@ class VolumeAccessInfo extends \Google\Model
     return $this->driveImportedContentLink;
   }
   /**
-   * Whether this volume can be embedded in a viewport using the Embedded Viewer
-   * API.
-   *
-   * @param bool $embeddable
+   * @param bool
    */
   public function setEmbeddable($embeddable)
   {
@@ -193,9 +141,7 @@ class VolumeAccessInfo extends \Google\Model
     return $this->embeddable;
   }
   /**
-   * Information about epub content. (In LITE projection.)
-   *
-   * @param VolumeAccessInfoEpub $epub
+   * @param VolumeAccessInfoEpub
    */
   public function setEpub(VolumeAccessInfoEpub $epub)
   {
@@ -209,11 +155,7 @@ class VolumeAccessInfo extends \Google\Model
     return $this->epub;
   }
   /**
-   * Whether this volume requires that the client explicitly request offline
-   * download license rather than have it done automatically when loading the
-   * content, if the client supports it.
-   *
-   * @param bool $explicitOfflineLicenseManagement
+   * @param bool
    */
   public function setExplicitOfflineLicenseManagement($explicitOfflineLicenseManagement)
   {
@@ -227,9 +169,7 @@ class VolumeAccessInfo extends \Google\Model
     return $this->explicitOfflineLicenseManagement;
   }
   /**
-   * Information about pdf content. (In LITE projection.)
-   *
-   * @param VolumeAccessInfoPdf $pdf
+   * @param VolumeAccessInfoPdf
    */
   public function setPdf(VolumeAccessInfoPdf $pdf)
   {
@@ -243,9 +183,7 @@ class VolumeAccessInfo extends \Google\Model
     return $this->pdf;
   }
   /**
-   * Whether or not this book is public domain in the country listed above.
-   *
-   * @param bool $publicDomain
+   * @param bool
    */
   public function setPublicDomain($publicDomain)
   {
@@ -259,9 +197,7 @@ class VolumeAccessInfo extends \Google\Model
     return $this->publicDomain;
   }
   /**
-   * Whether quote sharing is allowed for this volume.
-   *
-   * @param bool $quoteSharingAllowed
+   * @param bool
    */
   public function setQuoteSharingAllowed($quoteSharingAllowed)
   {
@@ -275,10 +211,7 @@ class VolumeAccessInfo extends \Google\Model
     return $this->quoteSharingAllowed;
   }
   /**
-   * Whether text-to-speech is permitted for this volume. Values can be ALLOWED,
-   * ALLOWED_FOR_ACCESSIBILITY, or NOT_ALLOWED.
-   *
-   * @param string $textToSpeechPermission
+   * @param string
    */
   public function setTextToSpeechPermission($textToSpeechPermission)
   {
@@ -292,10 +225,7 @@ class VolumeAccessInfo extends \Google\Model
     return $this->textToSpeechPermission;
   }
   /**
-   * For ordered but not yet processed orders, we give a URL that can be used to
-   * go to the appropriate Google Wallet page.
-   *
-   * @param string $viewOrderUrl
+   * @param string
    */
   public function setViewOrderUrl($viewOrderUrl)
   {
@@ -309,14 +239,7 @@ class VolumeAccessInfo extends \Google\Model
     return $this->viewOrderUrl;
   }
   /**
-   * The read access of a volume. Possible values are PARTIAL, ALL_PAGES,
-   * NO_PAGES or UNKNOWN. This value depends on the country listed above. A
-   * value of PARTIAL means that the publisher has allowed some portion of the
-   * volume to be viewed publicly, without purchase. This can apply to eBooks as
-   * well as non-eBooks. Public domain books will always have a value of
-   * ALL_PAGES.
-   *
-   * @param string $viewability
+   * @param string
    */
   public function setViewability($viewability)
   {
@@ -330,10 +253,7 @@ class VolumeAccessInfo extends \Google\Model
     return $this->viewability;
   }
   /**
-   * URL to read this volume on the Google Books site. Link will not allow users
-   * to read non-viewable volumes.
-   *
-   * @param string $webReaderLink
+   * @param string
    */
   public function setWebReaderLink($webReaderLink)
   {

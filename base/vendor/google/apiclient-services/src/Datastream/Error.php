@@ -20,41 +20,28 @@ namespace Google\Service\Datastream;
 class Error extends \Google\Model
 {
   /**
-   * Additional information about the error.
-   *
    * @var string[]
    */
   public $details;
   /**
-   * The time when the error occurred.
-   *
    * @var string
    */
   public $errorTime;
   /**
-   * A unique identifier for this specific error, allowing it to be traced
-   * throughout the system in logs and API responses.
-   *
    * @var string
    */
   public $errorUuid;
   /**
-   * A message containing more information about the error that occurred.
-   *
    * @var string
    */
   public $message;
   /**
-   * A title that explains the reason for the error.
-   *
    * @var string
    */
   public $reason;
 
   /**
-   * Additional information about the error.
-   *
-   * @param string[] $details
+   * @param string[]
    */
   public function setDetails($details)
   {
@@ -68,9 +55,7 @@ class Error extends \Google\Model
     return $this->details;
   }
   /**
-   * The time when the error occurred.
-   *
-   * @param string $errorTime
+   * @param string
    */
   public function setErrorTime($errorTime)
   {
@@ -84,10 +69,7 @@ class Error extends \Google\Model
     return $this->errorTime;
   }
   /**
-   * A unique identifier for this specific error, allowing it to be traced
-   * throughout the system in logs and API responses.
-   *
-   * @param string $errorUuid
+   * @param string
    */
   public function setErrorUuid($errorUuid)
   {
@@ -101,9 +83,7 @@ class Error extends \Google\Model
     return $this->errorUuid;
   }
   /**
-   * A message containing more information about the error that occurred.
-   *
-   * @param string $message
+   * @param string
    */
   public function setMessage($message)
   {
@@ -117,9 +97,7 @@ class Error extends \Google\Model
     return $this->message;
   }
   /**
-   * A title that explains the reason for the error.
-   *
-   * @param string $reason
+   * @param string
    */
   public function setReason($reason)
   {

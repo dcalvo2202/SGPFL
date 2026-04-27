@@ -20,16 +20,12 @@ namespace Google\Service\DisplayVideo;
 class LookupInvoiceCurrencyResponse extends \Google\Model
 {
   /**
-   * Currency used by the advertiser in ISO 4217 format.
-   *
    * @var string
    */
   public $currencyCode;
 
   /**
-   * Currency used by the advertiser in ISO 4217 format.
-   *
-   * @param string $currencyCode
+   * @param string
    */
   public function setCurrencyCode($currencyCode)
   {

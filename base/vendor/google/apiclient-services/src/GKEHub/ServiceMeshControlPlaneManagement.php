@@ -19,82 +19,20 @@ namespace Google\Service\GKEHub;
 
 class ServiceMeshControlPlaneManagement extends \Google\Collection
 {
-  /**
-   * Unspecified
-   */
-  public const IMPLEMENTATION_IMPLEMENTATION_UNSPECIFIED = 'IMPLEMENTATION_UNSPECIFIED';
-  /**
-   * A Google build of istiod is used for the managed control plane.
-   */
-  public const IMPLEMENTATION_ISTIOD = 'ISTIOD';
-  /**
-   * Traffic director is used for the managed control plane.
-   */
-  public const IMPLEMENTATION_TRAFFIC_DIRECTOR = 'TRAFFIC_DIRECTOR';
-  /**
-   * The control plane implementation is being updated.
-   */
-  public const IMPLEMENTATION_UPDATING = 'UPDATING';
-  /**
-   * Unspecified
-   */
-  public const STATE_LIFECYCLE_STATE_UNSPECIFIED = 'LIFECYCLE_STATE_UNSPECIFIED';
-  /**
-   * DISABLED means that the component is not enabled.
-   */
-  public const STATE_DISABLED = 'DISABLED';
-  /**
-   * FAILED_PRECONDITION means that provisioning cannot proceed because of some
-   * characteristic of the member cluster.
-   */
-  public const STATE_FAILED_PRECONDITION = 'FAILED_PRECONDITION';
-  /**
-   * PROVISIONING means that provisioning is in progress.
-   */
-  public const STATE_PROVISIONING = 'PROVISIONING';
-  /**
-   * ACTIVE means that the component is ready for use.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * STALLED means that provisioning could not be done.
-   */
-  public const STATE_STALLED = 'STALLED';
-  /**
-   * NEEDS_ATTENTION means that the component is ready, but some user
-   * intervention is required. (For example that the user should migrate
-   * workloads to a new control plane revision.)
-   */
-  public const STATE_NEEDS_ATTENTION = 'NEEDS_ATTENTION';
-  /**
-   * DEGRADED means that the component is ready, but operating in a degraded
-   * state.
-   */
-  public const STATE_DEGRADED = 'DEGRADED';
-  /**
-   * DEPROVISIONING means that deprovisioning is in progress.
-   */
-  public const STATE_DEPROVISIONING = 'DEPROVISIONING';
   protected $collection_key = 'details';
   protected $detailsType = ServiceMeshStatusDetails::class;
   protected $detailsDataType = 'array';
   /**
-   * Output only. Implementation of managed control plane.
-   *
    * @var string
    */
   public $implementation;
   /**
-   * LifecycleState of control plane management.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Explanation of state.
-   *
-   * @param ServiceMeshStatusDetails[] $details
+   * @param ServiceMeshStatusDetails[]
    */
   public function setDetails($details)
   {
@@ -108,39 +46,28 @@ class ServiceMeshControlPlaneManagement extends \Google\Collection
     return $this->details;
   }
   /**
-   * Output only. Implementation of managed control plane.
-   *
-   * Accepted values: IMPLEMENTATION_UNSPECIFIED, ISTIOD, TRAFFIC_DIRECTOR,
-   * UPDATING
-   *
-   * @param self::IMPLEMENTATION_* $implementation
+   * @param string
    */
   public function setImplementation($implementation)
   {
     $this->implementation = $implementation;
   }
   /**
-   * @return self::IMPLEMENTATION_*
+   * @return string
    */
   public function getImplementation()
   {
     return $this->implementation;
   }
   /**
-   * LifecycleState of control plane management.
-   *
-   * Accepted values: LIFECYCLE_STATE_UNSPECIFIED, DISABLED,
-   * FAILED_PRECONDITION, PROVISIONING, ACTIVE, STALLED, NEEDS_ATTENTION,
-   * DEGRADED, DEPROVISIONING
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

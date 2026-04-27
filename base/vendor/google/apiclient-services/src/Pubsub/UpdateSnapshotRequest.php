@@ -22,17 +22,12 @@ class UpdateSnapshotRequest extends \Google\Model
   protected $snapshotType = Snapshot::class;
   protected $snapshotDataType = '';
   /**
-   * Required. Indicates which fields in the provided snapshot to update. Must
-   * be specified and non-empty.
-   *
    * @var string
    */
   public $updateMask;
 
   /**
-   * Required. The updated snapshot object.
-   *
-   * @param Snapshot $snapshot
+   * @param Snapshot
    */
   public function setSnapshot(Snapshot $snapshot)
   {
@@ -46,10 +41,7 @@ class UpdateSnapshotRequest extends \Google\Model
     return $this->snapshot;
   }
   /**
-   * Required. Indicates which fields in the provided snapshot to update. Must
-   * be specified and non-empty.
-   *
-   * @param string $updateMask
+   * @param string
    */
   public function setUpdateMask($updateMask)
   {

@@ -20,14 +20,10 @@ namespace Google\Service\YouTube;
 class ActivityContentDetailsPlaylistItem extends \Google\Model
 {
   /**
-   * The value that YouTube uses to uniquely identify the playlist.
-   *
    * @var string
    */
   public $playlistId;
   /**
-   * ID of the item within the playlist.
-   *
    * @var string
    */
   public $playlistItemId;
@@ -35,9 +31,7 @@ class ActivityContentDetailsPlaylistItem extends \Google\Model
   protected $resourceIdDataType = '';
 
   /**
-   * The value that YouTube uses to uniquely identify the playlist.
-   *
-   * @param string $playlistId
+   * @param string
    */
   public function setPlaylistId($playlistId)
   {
@@ -51,9 +45,7 @@ class ActivityContentDetailsPlaylistItem extends \Google\Model
     return $this->playlistId;
   }
   /**
-   * ID of the item within the playlist.
-   *
-   * @param string $playlistItemId
+   * @param string
    */
   public function setPlaylistItemId($playlistItemId)
   {
@@ -67,10 +59,7 @@ class ActivityContentDetailsPlaylistItem extends \Google\Model
     return $this->playlistItemId;
   }
   /**
-   * The resourceId object contains information about the resource that was
-   * added to the playlist.
-   *
-   * @param ResourceId $resourceId
+   * @param ResourceId
    */
   public function setResourceId(ResourceId $resourceId)
   {

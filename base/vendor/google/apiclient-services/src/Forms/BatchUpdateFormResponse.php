@@ -28,11 +28,7 @@ class BatchUpdateFormResponse extends \Google\Collection
   protected $writeControlDataType = '';
 
   /**
-   * Based on the bool request field `include_form_in_response`, a form with all
-   * applied mutations/updates is returned or not. This may be later than the
-   * revision ID created by these changes.
-   *
-   * @param Form $form
+   * @param Form
    */
   public function setForm(Form $form)
   {
@@ -46,10 +42,7 @@ class BatchUpdateFormResponse extends \Google\Collection
     return $this->form;
   }
   /**
-   * The reply of the updates. This maps 1:1 with the update requests, although
-   * replies to some requests may be empty.
-   *
-   * @param Response[] $replies
+   * @param Response[]
    */
   public function setReplies($replies)
   {
@@ -63,9 +56,7 @@ class BatchUpdateFormResponse extends \Google\Collection
     return $this->replies;
   }
   /**
-   * The updated write control after applying the request.
-   *
-   * @param WriteControl $writeControl
+   * @param WriteControl
    */
   public function setWriteControl(WriteControl $writeControl)
   {

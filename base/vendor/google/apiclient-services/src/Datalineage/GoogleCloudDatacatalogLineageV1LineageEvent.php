@@ -21,40 +21,22 @@ class GoogleCloudDatacatalogLineageV1LineageEvent extends \Google\Collection
 {
   protected $collection_key = 'links';
   /**
-   * Optional. The end of the transformation which resulted in this lineage
-   * event. For streaming scenarios, it should be the end of the period from
-   * which the lineage is being reported.
-   *
    * @var string
    */
   public $endTime;
   protected $linksType = GoogleCloudDatacatalogLineageV1EventLink::class;
   protected $linksDataType = 'array';
   /**
-   * Immutable. The resource name of the lineage event. Format: `projects/{proje
-   * ct}/locations/{location}/processes/{process}/runs/{run}/lineageEvents/{line
-   * age_event}`. Can be specified or auto-assigned. {lineage_event} must be not
-   * longer than 200 characters and only contain characters in a set:
-   * `a-zA-Z0-9_-:.`
-   *
    * @var string
    */
   public $name;
   /**
-   * Required. The beginning of the transformation which resulted in this
-   * lineage event. For streaming scenarios, it should be the beginning of the
-   * period from which the lineage is being reported.
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * Optional. The end of the transformation which resulted in this lineage
-   * event. For streaming scenarios, it should be the end of the period from
-   * which the lineage is being reported.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -68,9 +50,7 @@ class GoogleCloudDatacatalogLineageV1LineageEvent extends \Google\Collection
     return $this->endTime;
   }
   /**
-   * Optional. List of source-target pairs. Can't contain more than 100 tuples.
-   *
-   * @param GoogleCloudDatacatalogLineageV1EventLink[] $links
+   * @param GoogleCloudDatacatalogLineageV1EventLink[]
    */
   public function setLinks($links)
   {
@@ -84,13 +64,7 @@ class GoogleCloudDatacatalogLineageV1LineageEvent extends \Google\Collection
     return $this->links;
   }
   /**
-   * Immutable. The resource name of the lineage event. Format: `projects/{proje
-   * ct}/locations/{location}/processes/{process}/runs/{run}/lineageEvents/{line
-   * age_event}`. Can be specified or auto-assigned. {lineage_event} must be not
-   * longer than 200 characters and only contain characters in a set:
-   * `a-zA-Z0-9_-:.`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -104,11 +78,7 @@ class GoogleCloudDatacatalogLineageV1LineageEvent extends \Google\Collection
     return $this->name;
   }
   /**
-   * Required. The beginning of the transformation which resulted in this
-   * lineage event. For streaming scenarios, it should be the beginning of the
-   * period from which the lineage is being reported.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

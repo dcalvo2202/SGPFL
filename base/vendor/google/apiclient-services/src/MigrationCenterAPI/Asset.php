@@ -21,20 +21,14 @@ class Asset extends \Google\Collection
 {
   protected $collection_key = 'sources';
   /**
-   * Output only. The list of groups that the asset is assigned to.
-   *
    * @var string[]
    */
   public $assignedGroups;
   /**
-   * Generic asset attributes.
-   *
    * @var string[]
    */
   public $attributes;
   /**
-   * Output only. The timestamp when the asset was created.
-   *
    * @var string
    */
   public $createTime;
@@ -43,64 +37,46 @@ class Asset extends \Google\Collection
   protected $databaseDetailsType = DatabaseDetails::class;
   protected $databaseDetailsDataType = '';
   /**
-   * Optional. Indicates if the asset is hidden.
-   *
    * @var bool
    */
   public $hidden;
   /**
-   * Optional. An optional reason for marking this asset as hidden.
-   *
    * @var string
    */
   public $hideReason;
   /**
-   * Output only. The timestamp when the asset was marked as hidden.
-   *
    * @var string
    */
   public $hideTime;
   protected $insightListType = InsightList::class;
   protected $insightListDataType = '';
   /**
-   * Labels as key value pairs.
-   *
    * @var string[]
    */
   public $labels;
   protected $machineDetailsType = MachineDetails::class;
   protected $machineDetailsDataType = '';
   /**
-   * Output only. The full name of the asset.
-   *
    * @var string
    */
   public $name;
   protected $performanceDataType = AssetPerformanceData::class;
   protected $performanceDataDataType = '';
   /**
-   * Output only. The list of sources contributing to the asset.
-   *
    * @var string[]
    */
   public $sources;
   /**
-   * Output only. Server generated human readable name of the asset.
-   *
    * @var string
    */
   public $title;
   /**
-   * Output only. The timestamp when the asset was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. The list of groups that the asset is assigned to.
-   *
-   * @param string[] $assignedGroups
+   * @param string[]
    */
   public function setAssignedGroups($assignedGroups)
   {
@@ -114,9 +90,7 @@ class Asset extends \Google\Collection
     return $this->assignedGroups;
   }
   /**
-   * Generic asset attributes.
-   *
-   * @param string[] $attributes
+   * @param string[]
    */
   public function setAttributes($attributes)
   {
@@ -130,9 +104,7 @@ class Asset extends \Google\Collection
     return $this->attributes;
   }
   /**
-   * Output only. The timestamp when the asset was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -146,9 +118,7 @@ class Asset extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Output only. Asset information specific for database deployments.
-   *
-   * @param DatabaseDeploymentDetails $databaseDeploymentDetails
+   * @param DatabaseDeploymentDetails
    */
   public function setDatabaseDeploymentDetails(DatabaseDeploymentDetails $databaseDeploymentDetails)
   {
@@ -162,9 +132,7 @@ class Asset extends \Google\Collection
     return $this->databaseDeploymentDetails;
   }
   /**
-   * Output only. Asset information specific for logical databases.
-   *
-   * @param DatabaseDetails $databaseDetails
+   * @param DatabaseDetails
    */
   public function setDatabaseDetails(DatabaseDetails $databaseDetails)
   {
@@ -178,9 +146,7 @@ class Asset extends \Google\Collection
     return $this->databaseDetails;
   }
   /**
-   * Optional. Indicates if the asset is hidden.
-   *
-   * @param bool $hidden
+   * @param bool
    */
   public function setHidden($hidden)
   {
@@ -194,9 +160,7 @@ class Asset extends \Google\Collection
     return $this->hidden;
   }
   /**
-   * Optional. An optional reason for marking this asset as hidden.
-   *
-   * @param string $hideReason
+   * @param string
    */
   public function setHideReason($hideReason)
   {
@@ -210,9 +174,7 @@ class Asset extends \Google\Collection
     return $this->hideReason;
   }
   /**
-   * Output only. The timestamp when the asset was marked as hidden.
-   *
-   * @param string $hideTime
+   * @param string
    */
   public function setHideTime($hideTime)
   {
@@ -226,9 +188,7 @@ class Asset extends \Google\Collection
     return $this->hideTime;
   }
   /**
-   * Output only. The list of insights associated with the asset.
-   *
-   * @param InsightList $insightList
+   * @param InsightList
    */
   public function setInsightList(InsightList $insightList)
   {
@@ -242,9 +202,7 @@ class Asset extends \Google\Collection
     return $this->insightList;
   }
   /**
-   * Labels as key value pairs.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -258,9 +216,7 @@ class Asset extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Output only. Asset information specific for virtual and physical machines.
-   *
-   * @param MachineDetails $machineDetails
+   * @param MachineDetails
    */
   public function setMachineDetails(MachineDetails $machineDetails)
   {
@@ -274,9 +230,7 @@ class Asset extends \Google\Collection
     return $this->machineDetails;
   }
   /**
-   * Output only. The full name of the asset.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -290,9 +244,7 @@ class Asset extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. Performance data for the asset.
-   *
-   * @param AssetPerformanceData $performanceData
+   * @param AssetPerformanceData
    */
   public function setPerformanceData(AssetPerformanceData $performanceData)
   {
@@ -306,9 +258,7 @@ class Asset extends \Google\Collection
     return $this->performanceData;
   }
   /**
-   * Output only. The list of sources contributing to the asset.
-   *
-   * @param string[] $sources
+   * @param string[]
    */
   public function setSources($sources)
   {
@@ -322,9 +272,7 @@ class Asset extends \Google\Collection
     return $this->sources;
   }
   /**
-   * Output only. Server generated human readable name of the asset.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -338,9 +286,7 @@ class Asset extends \Google\Collection
     return $this->title;
   }
   /**
-   * Output only. The timestamp when the asset was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

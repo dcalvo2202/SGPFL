@@ -21,8 +21,6 @@ class ListTriggersResponse extends \Google\Collection
 {
   protected $collection_key = 'trigger';
   /**
-   * Continuation token for fetching the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -30,9 +28,7 @@ class ListTriggersResponse extends \Google\Collection
   protected $triggerDataType = 'array';
 
   /**
-   * Continuation token for fetching the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -46,9 +42,7 @@ class ListTriggersResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * All GTM Triggers of a GTM Container.
-   *
-   * @param Trigger[] $trigger
+   * @param Trigger[]
    */
   public function setTrigger($trigger)
   {

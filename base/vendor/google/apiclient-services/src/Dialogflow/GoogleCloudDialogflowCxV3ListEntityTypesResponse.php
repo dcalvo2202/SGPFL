@@ -28,7 +28,7 @@ class GoogleCloudDialogflowCxV3ListEntityTypesResponse extends \Google\Collectio
   public $nextPageToken;
 
   /**
-   * @param GoogleCloudDialogflowCxV3EntityType[] $entityTypes
+   * @param GoogleCloudDialogflowCxV3EntityType[]
    */
   public function setEntityTypes($entityTypes)
   {
@@ -42,7 +42,7 @@ class GoogleCloudDialogflowCxV3ListEntityTypesResponse extends \Google\Collectio
     return $this->entityTypes;
   }
   /**
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

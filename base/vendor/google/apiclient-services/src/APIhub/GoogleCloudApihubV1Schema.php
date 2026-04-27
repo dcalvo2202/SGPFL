@@ -20,25 +20,16 @@ namespace Google\Service\APIhub;
 class GoogleCloudApihubV1Schema extends \Google\Model
 {
   /**
-   * Output only. The display name of the schema. This will map to the name of
-   * the schema in the spec.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. The raw value of the schema definition corresponding to the
-   * schema name in the spec.
-   *
    * @var string
    */
   public $rawValue;
 
   /**
-   * Output only. The display name of the schema. This will map to the name of
-   * the schema in the spec.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -52,10 +43,7 @@ class GoogleCloudApihubV1Schema extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Output only. The raw value of the schema definition corresponding to the
-   * schema name in the spec.
-   *
-   * @param string $rawValue
+   * @param string
    */
   public function setRawValue($rawValue)
   {

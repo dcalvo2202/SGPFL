@@ -20,31 +20,16 @@ namespace Google\Service\GKEOnPrem;
 class BareMetalNodeConfig extends \Google\Model
 {
   /**
-   * The labels assigned to this node. An object containing a list of key/value
-   * pairs. The labels here, unioned with the labels set on
-   * BareMetalNodePoolConfig are the set of labels that will be applied to the
-   * node. If there are any conflicts, the BareMetalNodeConfig labels take
-   * precedence. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * The default IPv4 address for SSH access and Kubernetes node. Example:
-   * 192.168.0.1
-   *
    * @var string
    */
   public $nodeIp;
 
   /**
-   * The labels assigned to this node. An object containing a list of key/value
-   * pairs. The labels here, unioned with the labels set on
-   * BareMetalNodePoolConfig are the set of labels that will be applied to the
-   * node. If there are any conflicts, the BareMetalNodeConfig labels take
-   * precedence. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -58,10 +43,7 @@ class BareMetalNodeConfig extends \Google\Model
     return $this->labels;
   }
   /**
-   * The default IPv4 address for SSH access and Kubernetes node. Example:
-   * 192.168.0.1
-   *
-   * @param string $nodeIp
+   * @param string
    */
   public function setNodeIp($nodeIp)
   {

@@ -24,9 +24,7 @@ class ListFeedsResponse extends \Google\Collection
   protected $feedsDataType = 'array';
 
   /**
-   * A list of feeds.
-   *
-   * @param Feed[] $feeds
+   * @param Feed[]
    */
   public function setFeeds($feeds)
   {

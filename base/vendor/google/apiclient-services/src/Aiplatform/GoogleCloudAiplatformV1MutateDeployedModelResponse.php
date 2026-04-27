@@ -23,9 +23,7 @@ class GoogleCloudAiplatformV1MutateDeployedModelResponse extends \Google\Model
   protected $deployedModelDataType = '';
 
   /**
-   * The DeployedModel that's being mutated.
-   *
-   * @param GoogleCloudAiplatformV1DeployedModel $deployedModel
+   * @param GoogleCloudAiplatformV1DeployedModel
    */
   public function setDeployedModel(GoogleCloudAiplatformV1DeployedModel $deployedModel)
   {

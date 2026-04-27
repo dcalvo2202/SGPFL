@@ -24,20 +24,14 @@ class DatabaseDeploymentDetails extends \Google\Model
   protected $awsRdsType = AwsRds::class;
   protected $awsRdsDataType = '';
   /**
-   * Optional. The database deployment edition.
-   *
    * @var string
    */
   public $edition;
   /**
-   * Optional. The database deployment generated ID.
-   *
    * @var string
    */
   public $generatedId;
   /**
-   * Optional. A manual unique ID set by the user.
-   *
    * @var string
    */
   public $manualUniqueId;
@@ -50,16 +44,12 @@ class DatabaseDeploymentDetails extends \Google\Model
   protected $topologyType = DatabaseDeploymentTopology::class;
   protected $topologyDataType = '';
   /**
-   * Optional. The database deployment version.
-   *
    * @var string
    */
   public $version;
 
   /**
-   * Output only. Aggregated stats for the database deployment.
-   *
-   * @param DatabaseDeploymentDetailsAggregatedStats $aggregatedStats
+   * @param DatabaseDeploymentDetailsAggregatedStats
    */
   public function setAggregatedStats(DatabaseDeploymentDetailsAggregatedStats $aggregatedStats)
   {
@@ -73,9 +63,7 @@ class DatabaseDeploymentDetails extends \Google\Model
     return $this->aggregatedStats;
   }
   /**
-   * Optional. Details of an AWS RDS instance.
-   *
-   * @param AwsRds $awsRds
+   * @param AwsRds
    */
   public function setAwsRds(AwsRds $awsRds)
   {
@@ -89,9 +77,7 @@ class DatabaseDeploymentDetails extends \Google\Model
     return $this->awsRds;
   }
   /**
-   * Optional. The database deployment edition.
-   *
-   * @param string $edition
+   * @param string
    */
   public function setEdition($edition)
   {
@@ -105,9 +91,7 @@ class DatabaseDeploymentDetails extends \Google\Model
     return $this->edition;
   }
   /**
-   * Optional. The database deployment generated ID.
-   *
-   * @param string $generatedId
+   * @param string
    */
   public function setGeneratedId($generatedId)
   {
@@ -121,9 +105,7 @@ class DatabaseDeploymentDetails extends \Google\Model
     return $this->generatedId;
   }
   /**
-   * Optional. A manual unique ID set by the user.
-   *
-   * @param string $manualUniqueId
+   * @param string
    */
   public function setManualUniqueId($manualUniqueId)
   {
@@ -137,9 +119,7 @@ class DatabaseDeploymentDetails extends \Google\Model
     return $this->manualUniqueId;
   }
   /**
-   * Optional. Details of a MYSQL database deployment.
-   *
-   * @param MysqlDatabaseDeployment $mysql
+   * @param MysqlDatabaseDeployment
    */
   public function setMysql(MysqlDatabaseDeployment $mysql)
   {
@@ -153,9 +133,7 @@ class DatabaseDeploymentDetails extends \Google\Model
     return $this->mysql;
   }
   /**
-   * Optional. Details of a PostgreSQL database deployment.
-   *
-   * @param PostgreSqlDatabaseDeployment $postgresql
+   * @param PostgreSqlDatabaseDeployment
    */
   public function setPostgresql(PostgreSqlDatabaseDeployment $postgresql)
   {
@@ -169,9 +147,7 @@ class DatabaseDeploymentDetails extends \Google\Model
     return $this->postgresql;
   }
   /**
-   * Optional. Details of a Microsoft SQL Server database deployment.
-   *
-   * @param SqlServerDatabaseDeployment $sqlServer
+   * @param SqlServerDatabaseDeployment
    */
   public function setSqlServer(SqlServerDatabaseDeployment $sqlServer)
   {
@@ -185,9 +161,7 @@ class DatabaseDeploymentDetails extends \Google\Model
     return $this->sqlServer;
   }
   /**
-   * Optional. Details of the database deployment topology.
-   *
-   * @param DatabaseDeploymentTopology $topology
+   * @param DatabaseDeploymentTopology
    */
   public function setTopology(DatabaseDeploymentTopology $topology)
   {
@@ -201,9 +175,7 @@ class DatabaseDeploymentDetails extends \Google\Model
     return $this->topology;
   }
   /**
-   * Optional. The database deployment version.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

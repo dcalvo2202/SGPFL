@@ -25,9 +25,7 @@ class GoogleCloudAiplatformV1RubricBasedInstructionFollowingInput extends \Googl
   protected $metricSpecDataType = '';
 
   /**
-   * Required. Instance for RubricBasedInstructionFollowing metric.
-   *
-   * @param GoogleCloudAiplatformV1RubricBasedInstructionFollowingInstance $instance
+   * @param GoogleCloudAiplatformV1RubricBasedInstructionFollowingInstance
    */
   public function setInstance(GoogleCloudAiplatformV1RubricBasedInstructionFollowingInstance $instance)
   {
@@ -41,9 +39,7 @@ class GoogleCloudAiplatformV1RubricBasedInstructionFollowingInput extends \Googl
     return $this->instance;
   }
   /**
-   * Required. Spec for RubricBasedInstructionFollowing metric.
-   *
-   * @param GoogleCloudAiplatformV1RubricBasedInstructionFollowingSpec $metricSpec
+   * @param GoogleCloudAiplatformV1RubricBasedInstructionFollowingSpec
    */
   public function setMetricSpec(GoogleCloudAiplatformV1RubricBasedInstructionFollowingSpec $metricSpec)
   {

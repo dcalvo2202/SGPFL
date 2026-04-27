@@ -21,27 +21,16 @@ class SecurityPolicyList extends \Google\Collection
 {
   protected $collection_key = 'items';
   /**
-   * [Output Only] Unique identifier for the resource; defined by the server.
-   *
    * @var string
    */
   public $id;
   protected $itemsType = SecurityPolicy::class;
   protected $itemsDataType = 'array';
   /**
-   * Output only. [Output Only] Type of resource.
-   * Alwayscompute#securityPolicyList for listsof securityPolicies
-   *
    * @var string
    */
   public $kind;
   /**
-   * [Output Only] This token allows you to get the next page of results for
-   * list requests. If the number of results is larger thanmaxResults, use the
-   * nextPageToken as a value for the query parameter pageToken in the next list
-   * request. Subsequent list requests will have their own nextPageToken to
-   * continue paging through the results.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -49,9 +38,7 @@ class SecurityPolicyList extends \Google\Collection
   protected $warningDataType = '';
 
   /**
-   * [Output Only] Unique identifier for the resource; defined by the server.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -65,9 +52,7 @@ class SecurityPolicyList extends \Google\Collection
     return $this->id;
   }
   /**
-   * A list of SecurityPolicy resources.
-   *
-   * @param SecurityPolicy[] $items
+   * @param SecurityPolicy[]
    */
   public function setItems($items)
   {
@@ -81,10 +66,7 @@ class SecurityPolicyList extends \Google\Collection
     return $this->items;
   }
   /**
-   * Output only. [Output Only] Type of resource.
-   * Alwayscompute#securityPolicyList for listsof securityPolicies
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -98,13 +80,7 @@ class SecurityPolicyList extends \Google\Collection
     return $this->kind;
   }
   /**
-   * [Output Only] This token allows you to get the next page of results for
-   * list requests. If the number of results is larger thanmaxResults, use the
-   * nextPageToken as a value for the query parameter pageToken in the next list
-   * request. Subsequent list requests will have their own nextPageToken to
-   * continue paging through the results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -118,9 +94,7 @@ class SecurityPolicyList extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * [Output Only] Informational warning message.
-   *
-   * @param SecurityPolicyListWarning $warning
+   * @param SecurityPolicyListWarning
    */
   public function setWarning(SecurityPolicyListWarning $warning)
   {

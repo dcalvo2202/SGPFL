@@ -23,17 +23,12 @@ class GoogleCloudApigeeV1KeystoreConfig extends \Google\Collection
   protected $aliasesType = GoogleCloudApigeeV1AliasRevisionConfig::class;
   protected $aliasesDataType = 'array';
   /**
-   * Resource name in the following format:
-   * `organizations/{org}/environments/{env}/keystores/{keystore}`
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Aliases in the keystore.
-   *
-   * @param GoogleCloudApigeeV1AliasRevisionConfig[] $aliases
+   * @param GoogleCloudApigeeV1AliasRevisionConfig[]
    */
   public function setAliases($aliases)
   {
@@ -47,10 +42,7 @@ class GoogleCloudApigeeV1KeystoreConfig extends \Google\Collection
     return $this->aliases;
   }
   /**
-   * Resource name in the following format:
-   * `organizations/{org}/environments/{env}/keystores/{keystore}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

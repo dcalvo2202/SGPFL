@@ -22,21 +22,12 @@ class AccountImageImprovements extends \Google\Model
   protected $accountImageImprovementsSettingsType = AccountImageImprovementsSettings::class;
   protected $accountImageImprovementsSettingsDataType = '';
   /**
-   * Output only. The effective value of allow_automatic_image_improvements. If
-   * account_image_improvements_settings is present, then this value is the
-   * same. Otherwise, it represents the inherited value of the parent account.
-   * Read-only.
-   *
    * @var bool
    */
   public $effectiveAllowAutomaticImageImprovements;
 
   /**
-   * Determines how the images should be automatically updated. If this field is
-   * not present, then the settings will be deleted. If there are no settings
-   * for subaccount, they are inherited from aggregator.
-   *
-   * @param AccountImageImprovementsSettings $accountImageImprovementsSettings
+   * @param AccountImageImprovementsSettings
    */
   public function setAccountImageImprovementsSettings(AccountImageImprovementsSettings $accountImageImprovementsSettings)
   {
@@ -50,12 +41,7 @@ class AccountImageImprovements extends \Google\Model
     return $this->accountImageImprovementsSettings;
   }
   /**
-   * Output only. The effective value of allow_automatic_image_improvements. If
-   * account_image_improvements_settings is present, then this value is the
-   * same. Otherwise, it represents the inherited value of the parent account.
-   * Read-only.
-   *
-   * @param bool $effectiveAllowAutomaticImageImprovements
+   * @param bool
    */
   public function setEffectiveAllowAutomaticImageImprovements($effectiveAllowAutomaticImageImprovements)
   {

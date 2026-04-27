@@ -25,10 +25,7 @@ class ProductDeliveryTimeAreaDeliveryTime extends \Google\Model
   protected $deliveryTimeDataType = '';
 
   /**
-   * Required. The delivery area associated with `deliveryTime` for this
-   * product.
-   *
-   * @param DeliveryArea $deliveryArea
+   * @param DeliveryArea
    */
   public function setDeliveryArea(DeliveryArea $deliveryArea)
   {
@@ -42,10 +39,7 @@ class ProductDeliveryTimeAreaDeliveryTime extends \Google\Model
     return $this->deliveryArea;
   }
   /**
-   * Required. The delivery time associated with `deliveryArea` for this
-   * product.
-   *
-   * @param ProductDeliveryTimeAreaDeliveryTimeDeliveryTime $deliveryTime
+   * @param ProductDeliveryTimeAreaDeliveryTimeDeliveryTime
    */
   public function setDeliveryTime(ProductDeliveryTimeAreaDeliveryTimeDeliveryTime $deliveryTime)
   {

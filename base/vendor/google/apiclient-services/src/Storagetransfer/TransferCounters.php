@@ -20,165 +20,92 @@ namespace Google\Service\Storagetransfer;
 class TransferCounters extends \Google\Model
 {
   /**
-   * Bytes that are copied to the data sink.
-   *
    * @var string
    */
   public $bytesCopiedToSink;
   /**
-   * Bytes that are deleted from the data sink.
-   *
    * @var string
    */
   public $bytesDeletedFromSink;
   /**
-   * Bytes that are deleted from the data source.
-   *
    * @var string
    */
   public $bytesDeletedFromSource;
   /**
-   * Bytes that failed to be deleted from the data sink.
-   *
    * @var string
    */
   public $bytesFailedToDeleteFromSink;
   /**
-   * Bytes found in the data source that are scheduled to be transferred,
-   * excluding any that are filtered based on object conditions or skipped due
-   * to sync.
-   *
    * @var string
    */
   public $bytesFoundFromSource;
   /**
-   * Bytes found only in the data sink that are scheduled to be deleted.
-   *
    * @var string
    */
   public $bytesFoundOnlyFromSink;
   /**
-   * Bytes in the data source that failed to be transferred or that failed to be
-   * deleted after being transferred.
-   *
    * @var string
    */
   public $bytesFromSourceFailed;
   /**
-   * Bytes in the data source that are not transferred because they already
-   * exist in the data sink.
-   *
    * @var string
    */
   public $bytesFromSourceSkippedBySync;
   /**
-   * For transfers involving PosixFilesystem only. Number of listing failures
-   * for each directory found at the source. Potential failures when listing a
-   * directory include permission failure or block failure. If listing a
-   * directory fails, no files in the directory are transferred.
-   *
    * @var string
    */
   public $directoriesFailedToListFromSource;
   /**
-   * For transfers involving PosixFilesystem only. Number of directories found
-   * while listing. For example, if the root directory of the transfer is
-   * `base/` and there are two other directories, `a/` and `b/` under this
-   * directory, the count after listing `base/`, `base/a/` and `base/b/` is 3.
-   *
    * @var string
    */
   public $directoriesFoundFromSource;
   /**
-   * For transfers involving PosixFilesystem only. Number of successful listings
-   * for each directory found at the source.
-   *
    * @var string
    */
   public $directoriesSuccessfullyListedFromSource;
   /**
-   * Number of successfully cleaned up intermediate objects.
-   *
    * @var string
    */
   public $intermediateObjectsCleanedUp;
   /**
-   * Number of intermediate objects failed cleaned up.
-   *
    * @var string
    */
   public $intermediateObjectsFailedCleanedUp;
   /**
-   * Objects that are copied to the data sink.
-   *
    * @var string
    */
   public $objectsCopiedToSink;
   /**
-   * Objects that are deleted from the data sink.
-   *
    * @var string
    */
   public $objectsDeletedFromSink;
   /**
-   * Objects that are deleted from the data source.
-   *
    * @var string
    */
   public $objectsDeletedFromSource;
   /**
-   * Objects that failed to be deleted from the data sink.
-   *
    * @var string
    */
   public $objectsFailedToDeleteFromSink;
   /**
-   * Objects found in the data source that are scheduled to be transferred,
-   * excluding any that are filtered based on object conditions or skipped due
-   * to sync.
-   *
    * @var string
    */
   public $objectsFoundFromSource;
   /**
-   * Objects found only in the data sink that are scheduled to be deleted.
-   *
    * @var string
    */
   public $objectsFoundOnlyFromSink;
   /**
-   * Objects in the data source that failed to be transferred or that failed to
-   * be deleted after being transferred.
-   *
    * @var string
    */
   public $objectsFromSourceFailed;
   /**
-   * Objects in the data source that are not transferred because they already
-   * exist in the data sink.
-   *
    * @var string
    */
   public $objectsFromSourceSkippedBySync;
-  /**
-   * Number of unrestored deep archive objects skipped.
-   *
-   * @var string
-   */
-  public $unrestoredDeepArchiveObjectsSkippedCount;
-  /**
-   * Number of glacier objects skipped, glacier objects are unsupported by
-   * default regardless of the restore status. Allowlist the project to copy
-   * glacier objects if needed.
-   *
-   * @var string
-   */
-  public $unsupportedS3GlacierObjectsSkippedCount;
 
   /**
-   * Bytes that are copied to the data sink.
-   *
-   * @param string $bytesCopiedToSink
+   * @param string
    */
   public function setBytesCopiedToSink($bytesCopiedToSink)
   {
@@ -192,9 +119,7 @@ class TransferCounters extends \Google\Model
     return $this->bytesCopiedToSink;
   }
   /**
-   * Bytes that are deleted from the data sink.
-   *
-   * @param string $bytesDeletedFromSink
+   * @param string
    */
   public function setBytesDeletedFromSink($bytesDeletedFromSink)
   {
@@ -208,9 +133,7 @@ class TransferCounters extends \Google\Model
     return $this->bytesDeletedFromSink;
   }
   /**
-   * Bytes that are deleted from the data source.
-   *
-   * @param string $bytesDeletedFromSource
+   * @param string
    */
   public function setBytesDeletedFromSource($bytesDeletedFromSource)
   {
@@ -224,9 +147,7 @@ class TransferCounters extends \Google\Model
     return $this->bytesDeletedFromSource;
   }
   /**
-   * Bytes that failed to be deleted from the data sink.
-   *
-   * @param string $bytesFailedToDeleteFromSink
+   * @param string
    */
   public function setBytesFailedToDeleteFromSink($bytesFailedToDeleteFromSink)
   {
@@ -240,11 +161,7 @@ class TransferCounters extends \Google\Model
     return $this->bytesFailedToDeleteFromSink;
   }
   /**
-   * Bytes found in the data source that are scheduled to be transferred,
-   * excluding any that are filtered based on object conditions or skipped due
-   * to sync.
-   *
-   * @param string $bytesFoundFromSource
+   * @param string
    */
   public function setBytesFoundFromSource($bytesFoundFromSource)
   {
@@ -258,9 +175,7 @@ class TransferCounters extends \Google\Model
     return $this->bytesFoundFromSource;
   }
   /**
-   * Bytes found only in the data sink that are scheduled to be deleted.
-   *
-   * @param string $bytesFoundOnlyFromSink
+   * @param string
    */
   public function setBytesFoundOnlyFromSink($bytesFoundOnlyFromSink)
   {
@@ -274,10 +189,7 @@ class TransferCounters extends \Google\Model
     return $this->bytesFoundOnlyFromSink;
   }
   /**
-   * Bytes in the data source that failed to be transferred or that failed to be
-   * deleted after being transferred.
-   *
-   * @param string $bytesFromSourceFailed
+   * @param string
    */
   public function setBytesFromSourceFailed($bytesFromSourceFailed)
   {
@@ -291,10 +203,7 @@ class TransferCounters extends \Google\Model
     return $this->bytesFromSourceFailed;
   }
   /**
-   * Bytes in the data source that are not transferred because they already
-   * exist in the data sink.
-   *
-   * @param string $bytesFromSourceSkippedBySync
+   * @param string
    */
   public function setBytesFromSourceSkippedBySync($bytesFromSourceSkippedBySync)
   {
@@ -308,12 +217,7 @@ class TransferCounters extends \Google\Model
     return $this->bytesFromSourceSkippedBySync;
   }
   /**
-   * For transfers involving PosixFilesystem only. Number of listing failures
-   * for each directory found at the source. Potential failures when listing a
-   * directory include permission failure or block failure. If listing a
-   * directory fails, no files in the directory are transferred.
-   *
-   * @param string $directoriesFailedToListFromSource
+   * @param string
    */
   public function setDirectoriesFailedToListFromSource($directoriesFailedToListFromSource)
   {
@@ -327,12 +231,7 @@ class TransferCounters extends \Google\Model
     return $this->directoriesFailedToListFromSource;
   }
   /**
-   * For transfers involving PosixFilesystem only. Number of directories found
-   * while listing. For example, if the root directory of the transfer is
-   * `base/` and there are two other directories, `a/` and `b/` under this
-   * directory, the count after listing `base/`, `base/a/` and `base/b/` is 3.
-   *
-   * @param string $directoriesFoundFromSource
+   * @param string
    */
   public function setDirectoriesFoundFromSource($directoriesFoundFromSource)
   {
@@ -346,10 +245,7 @@ class TransferCounters extends \Google\Model
     return $this->directoriesFoundFromSource;
   }
   /**
-   * For transfers involving PosixFilesystem only. Number of successful listings
-   * for each directory found at the source.
-   *
-   * @param string $directoriesSuccessfullyListedFromSource
+   * @param string
    */
   public function setDirectoriesSuccessfullyListedFromSource($directoriesSuccessfullyListedFromSource)
   {
@@ -363,9 +259,7 @@ class TransferCounters extends \Google\Model
     return $this->directoriesSuccessfullyListedFromSource;
   }
   /**
-   * Number of successfully cleaned up intermediate objects.
-   *
-   * @param string $intermediateObjectsCleanedUp
+   * @param string
    */
   public function setIntermediateObjectsCleanedUp($intermediateObjectsCleanedUp)
   {
@@ -379,9 +273,7 @@ class TransferCounters extends \Google\Model
     return $this->intermediateObjectsCleanedUp;
   }
   /**
-   * Number of intermediate objects failed cleaned up.
-   *
-   * @param string $intermediateObjectsFailedCleanedUp
+   * @param string
    */
   public function setIntermediateObjectsFailedCleanedUp($intermediateObjectsFailedCleanedUp)
   {
@@ -395,9 +287,7 @@ class TransferCounters extends \Google\Model
     return $this->intermediateObjectsFailedCleanedUp;
   }
   /**
-   * Objects that are copied to the data sink.
-   *
-   * @param string $objectsCopiedToSink
+   * @param string
    */
   public function setObjectsCopiedToSink($objectsCopiedToSink)
   {
@@ -411,9 +301,7 @@ class TransferCounters extends \Google\Model
     return $this->objectsCopiedToSink;
   }
   /**
-   * Objects that are deleted from the data sink.
-   *
-   * @param string $objectsDeletedFromSink
+   * @param string
    */
   public function setObjectsDeletedFromSink($objectsDeletedFromSink)
   {
@@ -427,9 +315,7 @@ class TransferCounters extends \Google\Model
     return $this->objectsDeletedFromSink;
   }
   /**
-   * Objects that are deleted from the data source.
-   *
-   * @param string $objectsDeletedFromSource
+   * @param string
    */
   public function setObjectsDeletedFromSource($objectsDeletedFromSource)
   {
@@ -443,9 +329,7 @@ class TransferCounters extends \Google\Model
     return $this->objectsDeletedFromSource;
   }
   /**
-   * Objects that failed to be deleted from the data sink.
-   *
-   * @param string $objectsFailedToDeleteFromSink
+   * @param string
    */
   public function setObjectsFailedToDeleteFromSink($objectsFailedToDeleteFromSink)
   {
@@ -459,11 +343,7 @@ class TransferCounters extends \Google\Model
     return $this->objectsFailedToDeleteFromSink;
   }
   /**
-   * Objects found in the data source that are scheduled to be transferred,
-   * excluding any that are filtered based on object conditions or skipped due
-   * to sync.
-   *
-   * @param string $objectsFoundFromSource
+   * @param string
    */
   public function setObjectsFoundFromSource($objectsFoundFromSource)
   {
@@ -477,9 +357,7 @@ class TransferCounters extends \Google\Model
     return $this->objectsFoundFromSource;
   }
   /**
-   * Objects found only in the data sink that are scheduled to be deleted.
-   *
-   * @param string $objectsFoundOnlyFromSink
+   * @param string
    */
   public function setObjectsFoundOnlyFromSink($objectsFoundOnlyFromSink)
   {
@@ -493,10 +371,7 @@ class TransferCounters extends \Google\Model
     return $this->objectsFoundOnlyFromSink;
   }
   /**
-   * Objects in the data source that failed to be transferred or that failed to
-   * be deleted after being transferred.
-   *
-   * @param string $objectsFromSourceFailed
+   * @param string
    */
   public function setObjectsFromSourceFailed($objectsFromSourceFailed)
   {
@@ -510,10 +385,7 @@ class TransferCounters extends \Google\Model
     return $this->objectsFromSourceFailed;
   }
   /**
-   * Objects in the data source that are not transferred because they already
-   * exist in the data sink.
-   *
-   * @param string $objectsFromSourceSkippedBySync
+   * @param string
    */
   public function setObjectsFromSourceSkippedBySync($objectsFromSourceSkippedBySync)
   {
@@ -525,40 +397,6 @@ class TransferCounters extends \Google\Model
   public function getObjectsFromSourceSkippedBySync()
   {
     return $this->objectsFromSourceSkippedBySync;
-  }
-  /**
-   * Number of unrestored deep archive objects skipped.
-   *
-   * @param string $unrestoredDeepArchiveObjectsSkippedCount
-   */
-  public function setUnrestoredDeepArchiveObjectsSkippedCount($unrestoredDeepArchiveObjectsSkippedCount)
-  {
-    $this->unrestoredDeepArchiveObjectsSkippedCount = $unrestoredDeepArchiveObjectsSkippedCount;
-  }
-  /**
-   * @return string
-   */
-  public function getUnrestoredDeepArchiveObjectsSkippedCount()
-  {
-    return $this->unrestoredDeepArchiveObjectsSkippedCount;
-  }
-  /**
-   * Number of glacier objects skipped, glacier objects are unsupported by
-   * default regardless of the restore status. Allowlist the project to copy
-   * glacier objects if needed.
-   *
-   * @param string $unsupportedS3GlacierObjectsSkippedCount
-   */
-  public function setUnsupportedS3GlacierObjectsSkippedCount($unsupportedS3GlacierObjectsSkippedCount)
-  {
-    $this->unsupportedS3GlacierObjectsSkippedCount = $unsupportedS3GlacierObjectsSkippedCount;
-  }
-  /**
-   * @return string
-   */
-  public function getUnsupportedS3GlacierObjectsSkippedCount()
-  {
-    return $this->unsupportedS3GlacierObjectsSkippedCount;
   }
 }
 

@@ -23,9 +23,7 @@ class GoogleCloudDatacatalogV1ReplaceTaxonomyRequest extends \Google\Model
   protected $serializedTaxonomyDataType = '';
 
   /**
-   * Required. Taxonomy to update along with its child policy tags.
-   *
-   * @param GoogleCloudDatacatalogV1SerializedTaxonomy $serializedTaxonomy
+   * @param GoogleCloudDatacatalogV1SerializedTaxonomy
    */
   public function setSerializedTaxonomy(GoogleCloudDatacatalogV1SerializedTaxonomy $serializedTaxonomy)
   {

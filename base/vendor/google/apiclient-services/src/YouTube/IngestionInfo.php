@@ -20,50 +20,28 @@ namespace Google\Service\YouTube;
 class IngestionInfo extends \Google\Model
 {
   /**
-   * The backup ingestion URL that you should use to stream video to YouTube.
-   * You have the option of simultaneously streaming the content that you are
-   * sending to the ingestionAddress to this URL.
-   *
    * @var string
    */
   public $backupIngestionAddress;
   /**
-   * The primary ingestion URL that you should use to stream video to YouTube.
-   * You must stream video to this URL. Depending on which application or tool
-   * you use to encode your video stream, you may need to enter the stream URL
-   * and stream name separately or you may need to concatenate them in the
-   * following format: *STREAM_URL/STREAM_NAME*
-   *
    * @var string
    */
   public $ingestionAddress;
   /**
-   * This ingestion url may be used instead of backupIngestionAddress in order
-   * to stream via RTMPS. Not applicable to non-RTMP streams.
-   *
    * @var string
    */
   public $rtmpsBackupIngestionAddress;
   /**
-   * This ingestion url may be used instead of ingestionAddress in order to
-   * stream via RTMPS. Not applicable to non-RTMP streams.
-   *
    * @var string
    */
   public $rtmpsIngestionAddress;
   /**
-   * The stream name that YouTube assigns to the video stream.
-   *
    * @var string
    */
   public $streamName;
 
   /**
-   * The backup ingestion URL that you should use to stream video to YouTube.
-   * You have the option of simultaneously streaming the content that you are
-   * sending to the ingestionAddress to this URL.
-   *
-   * @param string $backupIngestionAddress
+   * @param string
    */
   public function setBackupIngestionAddress($backupIngestionAddress)
   {
@@ -77,13 +55,7 @@ class IngestionInfo extends \Google\Model
     return $this->backupIngestionAddress;
   }
   /**
-   * The primary ingestion URL that you should use to stream video to YouTube.
-   * You must stream video to this URL. Depending on which application or tool
-   * you use to encode your video stream, you may need to enter the stream URL
-   * and stream name separately or you may need to concatenate them in the
-   * following format: *STREAM_URL/STREAM_NAME*
-   *
-   * @param string $ingestionAddress
+   * @param string
    */
   public function setIngestionAddress($ingestionAddress)
   {
@@ -97,10 +69,7 @@ class IngestionInfo extends \Google\Model
     return $this->ingestionAddress;
   }
   /**
-   * This ingestion url may be used instead of backupIngestionAddress in order
-   * to stream via RTMPS. Not applicable to non-RTMP streams.
-   *
-   * @param string $rtmpsBackupIngestionAddress
+   * @param string
    */
   public function setRtmpsBackupIngestionAddress($rtmpsBackupIngestionAddress)
   {
@@ -114,10 +83,7 @@ class IngestionInfo extends \Google\Model
     return $this->rtmpsBackupIngestionAddress;
   }
   /**
-   * This ingestion url may be used instead of ingestionAddress in order to
-   * stream via RTMPS. Not applicable to non-RTMP streams.
-   *
-   * @param string $rtmpsIngestionAddress
+   * @param string
    */
   public function setRtmpsIngestionAddress($rtmpsIngestionAddress)
   {
@@ -131,9 +97,7 @@ class IngestionInfo extends \Google\Model
     return $this->rtmpsIngestionAddress;
   }
   /**
-   * The stream name that YouTube assigns to the video stream.
-   *
-   * @param string $streamName
+   * @param string
    */
   public function setStreamName($streamName)
   {

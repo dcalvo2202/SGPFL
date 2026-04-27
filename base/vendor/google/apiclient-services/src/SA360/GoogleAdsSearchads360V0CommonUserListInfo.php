@@ -20,16 +20,12 @@ namespace Google\Service\SA360;
 class GoogleAdsSearchads360V0CommonUserListInfo extends \Google\Model
 {
   /**
-   * The User List resource name.
-   *
    * @var string
    */
   public $userList;
 
   /**
-   * The User List resource name.
-   *
-   * @param string $userList
+   * @param string
    */
   public function setUserList($userList)
   {

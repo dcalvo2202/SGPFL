@@ -21,29 +21,16 @@ class VpcAccessibleServices extends \Google\Collection
 {
   protected $collection_key = 'allowedServices';
   /**
-   * The list of APIs usable within the Service Perimeter. Must be empty unless
-   * 'enable_restriction' is True. You can specify a list of individual
-   * services, as well as include the 'RESTRICTED-SERVICES' value, which
-   * automatically includes all of the services protected by the perimeter.
-   *
    * @var string[]
    */
   public $allowedServices;
   /**
-   * Whether to restrict API calls within the Service Perimeter to the list of
-   * APIs specified in 'allowed_services'.
-   *
    * @var bool
    */
   public $enableRestriction;
 
   /**
-   * The list of APIs usable within the Service Perimeter. Must be empty unless
-   * 'enable_restriction' is True. You can specify a list of individual
-   * services, as well as include the 'RESTRICTED-SERVICES' value, which
-   * automatically includes all of the services protected by the perimeter.
-   *
-   * @param string[] $allowedServices
+   * @param string[]
    */
   public function setAllowedServices($allowedServices)
   {
@@ -57,10 +44,7 @@ class VpcAccessibleServices extends \Google\Collection
     return $this->allowedServices;
   }
   /**
-   * Whether to restrict API calls within the Service Perimeter to the list of
-   * APIs specified in 'allowed_services'.
-   *
-   * @param bool $enableRestriction
+   * @param bool
    */
   public function setEnableRestriction($enableRestriction)
   {

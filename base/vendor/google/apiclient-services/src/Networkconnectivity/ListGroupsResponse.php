@@ -23,24 +23,16 @@ class ListGroupsResponse extends \Google\Collection
   protected $groupsType = Group::class;
   protected $groupsDataType = 'array';
   /**
-   * The token for the next page of the response. To see more results, use this
-   * value as the page_token for your next request. If this value is empty,
-   * there are no more results.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Hubs that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * The requested groups.
-   *
-   * @param Group[] $groups
+   * @param Group[]
    */
   public function setGroups($groups)
   {
@@ -54,11 +46,7 @@ class ListGroupsResponse extends \Google\Collection
     return $this->groups;
   }
   /**
-   * The token for the next page of the response. To see more results, use this
-   * value as the page_token for your next request. If this value is empty,
-   * there are no more results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -72,9 +60,7 @@ class ListGroupsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Hubs that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

@@ -20,30 +20,20 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1AspectSource extends \Google\Model
 {
   /**
-   * The time the aspect was created in the source system.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * The version of the data format used to produce this data. This field is
-   * used to indicated when the underlying data format changes (e.g., schema
-   * modifications, changes to the source URL format definition, etc).
-   *
    * @var string
    */
   public $dataVersion;
   /**
-   * The time the aspect was last updated in the source system.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * The time the aspect was created in the source system.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -57,11 +47,7 @@ class GoogleCloudDataplexV1AspectSource extends \Google\Model
     return $this->createTime;
   }
   /**
-   * The version of the data format used to produce this data. This field is
-   * used to indicated when the underlying data format changes (e.g., schema
-   * modifications, changes to the source URL format definition, etc).
-   *
-   * @param string $dataVersion
+   * @param string
    */
   public function setDataVersion($dataVersion)
   {
@@ -75,9 +61,7 @@ class GoogleCloudDataplexV1AspectSource extends \Google\Model
     return $this->dataVersion;
   }
   /**
-   * The time the aspect was last updated in the source system.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\Docs;
 class TableRowStyleSuggestionState extends \Google\Model
 {
   /**
-   * Indicates if there was a suggested change to min_row_height.
-   *
    * @var bool
    */
   public $minRowHeightSuggested;
 
   /**
-   * Indicates if there was a suggested change to min_row_height.
-   *
-   * @param bool $minRowHeightSuggested
+   * @param bool
    */
   public function setMinRowHeightSuggested($minRowHeightSuggested)
   {

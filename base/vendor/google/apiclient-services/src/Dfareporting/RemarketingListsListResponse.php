@@ -21,15 +21,10 @@ class RemarketingListsListResponse extends \Google\Collection
 {
   protected $collection_key = 'remarketingLists';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#remarketingListsListResponse".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Pagination token to be used for the next list operation.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -37,10 +32,7 @@ class RemarketingListsListResponse extends \Google\Collection
   protected $remarketingListsDataType = 'array';
 
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#remarketingListsListResponse".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -54,9 +46,7 @@ class RemarketingListsListResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Pagination token to be used for the next list operation.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -70,9 +60,7 @@ class RemarketingListsListResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Remarketing list collection.
-   *
-   * @param RemarketingList[] $remarketingLists
+   * @param RemarketingList[]
    */
   public function setRemarketingLists($remarketingLists)
   {

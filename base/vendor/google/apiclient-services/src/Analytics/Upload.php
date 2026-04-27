@@ -21,53 +21,36 @@ class Upload extends \Google\Collection
 {
   protected $collection_key = 'errors';
   /**
-   * Account Id to which this upload belongs.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * Custom data source Id to which this data import belongs.
-   *
    * @var string
    */
   public $customDataSourceId;
   /**
-   * Data import errors collection.
-   *
    * @var string[]
    */
   public $errors;
   /**
-   * A unique ID for this upload.
-   *
    * @var string
    */
   public $id;
   /**
-   * Resource type for Analytics upload.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Upload status. Possible values: PENDING, COMPLETED, FAILED, DELETING,
-   * DELETED.
-   *
    * @var string
    */
   public $status;
   /**
-   * Time this file is uploaded.
-   *
    * @var string
    */
   public $uploadTime;
 
   /**
-   * Account Id to which this upload belongs.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -81,9 +64,7 @@ class Upload extends \Google\Collection
     return $this->accountId;
   }
   /**
-   * Custom data source Id to which this data import belongs.
-   *
-   * @param string $customDataSourceId
+   * @param string
    */
   public function setCustomDataSourceId($customDataSourceId)
   {
@@ -97,9 +78,7 @@ class Upload extends \Google\Collection
     return $this->customDataSourceId;
   }
   /**
-   * Data import errors collection.
-   *
-   * @param string[] $errors
+   * @param string[]
    */
   public function setErrors($errors)
   {
@@ -113,9 +92,7 @@ class Upload extends \Google\Collection
     return $this->errors;
   }
   /**
-   * A unique ID for this upload.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -129,9 +106,7 @@ class Upload extends \Google\Collection
     return $this->id;
   }
   /**
-   * Resource type for Analytics upload.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -145,10 +120,7 @@ class Upload extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Upload status. Possible values: PENDING, COMPLETED, FAILED, DELETING,
-   * DELETED.
-   *
-   * @param string $status
+   * @param string
    */
   public function setStatus($status)
   {
@@ -162,9 +134,7 @@ class Upload extends \Google\Collection
     return $this->status;
   }
   /**
-   * Time this file is uploaded.
-   *
-   * @param string $uploadTime
+   * @param string
    */
   public function setUploadTime($uploadTime)
   {

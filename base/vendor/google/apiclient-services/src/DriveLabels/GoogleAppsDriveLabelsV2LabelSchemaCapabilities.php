@@ -20,38 +20,24 @@ namespace Google\Service\DriveLabels;
 class GoogleAppsDriveLabelsV2LabelSchemaCapabilities extends \Google\Model
 {
   /**
-   * Whether the user can delete this label. The user must have permission and
-   * the label must be disabled.
-   *
    * @var bool
    */
   public $canDelete;
   /**
-   * Whether the user can disable this label. The user must have permission and
-   * this label must not already be disabled.
-   *
    * @var bool
    */
   public $canDisable;
   /**
-   * Whether the user can enable this label. The user must have permission and
-   * this label must be disabled.
-   *
    * @var bool
    */
   public $canEnable;
   /**
-   * Whether the user can change this label.
-   *
    * @var bool
    */
   public $canUpdate;
 
   /**
-   * Whether the user can delete this label. The user must have permission and
-   * the label must be disabled.
-   *
-   * @param bool $canDelete
+   * @param bool
    */
   public function setCanDelete($canDelete)
   {
@@ -65,10 +51,7 @@ class GoogleAppsDriveLabelsV2LabelSchemaCapabilities extends \Google\Model
     return $this->canDelete;
   }
   /**
-   * Whether the user can disable this label. The user must have permission and
-   * this label must not already be disabled.
-   *
-   * @param bool $canDisable
+   * @param bool
    */
   public function setCanDisable($canDisable)
   {
@@ -82,10 +65,7 @@ class GoogleAppsDriveLabelsV2LabelSchemaCapabilities extends \Google\Model
     return $this->canDisable;
   }
   /**
-   * Whether the user can enable this label. The user must have permission and
-   * this label must be disabled.
-   *
-   * @param bool $canEnable
+   * @param bool
    */
   public function setCanEnable($canEnable)
   {
@@ -99,9 +79,7 @@ class GoogleAppsDriveLabelsV2LabelSchemaCapabilities extends \Google\Model
     return $this->canEnable;
   }
   /**
-   * Whether the user can change this label.
-   *
-   * @param bool $canUpdate
+   * @param bool
    */
   public function setCanUpdate($canUpdate)
   {

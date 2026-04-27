@@ -21,24 +21,18 @@ class Review extends \Google\Collection
 {
   protected $collection_key = 'comments';
   /**
-   * The name of the user who wrote the review.
-   *
    * @var string
    */
   public $authorName;
   protected $commentsType = Comment::class;
   protected $commentsDataType = 'array';
   /**
-   * Unique identifier for this review.
-   *
    * @var string
    */
   public $reviewId;
 
   /**
-   * The name of the user who wrote the review.
-   *
-   * @param string $authorName
+   * @param string
    */
   public function setAuthorName($authorName)
   {
@@ -52,9 +46,7 @@ class Review extends \Google\Collection
     return $this->authorName;
   }
   /**
-   * A repeated field containing comments for the review.
-   *
-   * @param Comment[] $comments
+   * @param Comment[]
    */
   public function setComments($comments)
   {
@@ -68,9 +60,7 @@ class Review extends \Google\Collection
     return $this->comments;
   }
   /**
-   * Unique identifier for this review.
-   *
-   * @param string $reviewId
+   * @param string
    */
   public function setReviewId($reviewId)
   {

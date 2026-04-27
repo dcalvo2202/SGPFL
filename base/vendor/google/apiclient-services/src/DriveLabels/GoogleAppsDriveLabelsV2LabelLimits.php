@@ -22,47 +22,32 @@ class GoogleAppsDriveLabelsV2LabelLimits extends \Google\Model
   protected $fieldLimitsType = GoogleAppsDriveLabelsV2FieldLimits::class;
   protected $fieldLimitsDataType = '';
   /**
-   * The maximum number of published fields that can be deleted.
-   *
    * @var int
    */
   public $maxDeletedFields;
   /**
-   * The maximum number of characters allowed for the description.
-   *
    * @var int
    */
   public $maxDescriptionLength;
   /**
-   * The maximum number of draft revisions that will be kept before deleting old
-   * drafts.
-   *
    * @var int
    */
   public $maxDraftRevisions;
   /**
-   * The maximum number of fields allowed within the label.
-   *
    * @var int
    */
   public $maxFields;
   /**
-   * The maximum number of characters allowed for the title.
-   *
    * @var int
    */
   public $maxTitleLength;
   /**
-   * Resource name.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The limits for fields.
-   *
-   * @param GoogleAppsDriveLabelsV2FieldLimits $fieldLimits
+   * @param GoogleAppsDriveLabelsV2FieldLimits
    */
   public function setFieldLimits(GoogleAppsDriveLabelsV2FieldLimits $fieldLimits)
   {
@@ -76,9 +61,7 @@ class GoogleAppsDriveLabelsV2LabelLimits extends \Google\Model
     return $this->fieldLimits;
   }
   /**
-   * The maximum number of published fields that can be deleted.
-   *
-   * @param int $maxDeletedFields
+   * @param int
    */
   public function setMaxDeletedFields($maxDeletedFields)
   {
@@ -92,9 +75,7 @@ class GoogleAppsDriveLabelsV2LabelLimits extends \Google\Model
     return $this->maxDeletedFields;
   }
   /**
-   * The maximum number of characters allowed for the description.
-   *
-   * @param int $maxDescriptionLength
+   * @param int
    */
   public function setMaxDescriptionLength($maxDescriptionLength)
   {
@@ -108,10 +89,7 @@ class GoogleAppsDriveLabelsV2LabelLimits extends \Google\Model
     return $this->maxDescriptionLength;
   }
   /**
-   * The maximum number of draft revisions that will be kept before deleting old
-   * drafts.
-   *
-   * @param int $maxDraftRevisions
+   * @param int
    */
   public function setMaxDraftRevisions($maxDraftRevisions)
   {
@@ -125,9 +103,7 @@ class GoogleAppsDriveLabelsV2LabelLimits extends \Google\Model
     return $this->maxDraftRevisions;
   }
   /**
-   * The maximum number of fields allowed within the label.
-   *
-   * @param int $maxFields
+   * @param int
    */
   public function setMaxFields($maxFields)
   {
@@ -141,9 +117,7 @@ class GoogleAppsDriveLabelsV2LabelLimits extends \Google\Model
     return $this->maxFields;
   }
   /**
-   * The maximum number of characters allowed for the title.
-   *
-   * @param int $maxTitleLength
+   * @param int
    */
   public function setMaxTitleLength($maxTitleLength)
   {
@@ -157,9 +131,7 @@ class GoogleAppsDriveLabelsV2LabelLimits extends \Google\Model
     return $this->maxTitleLength;
   }
   /**
-   * Resource name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

@@ -20,61 +20,28 @@ namespace Google\Service\WorkloadManager;
 class TorsoValidation extends \Google\Model
 {
   /**
-   * Unspecified workload type.
-   */
-  public const WORKLOAD_TYPE_WORKLOAD_TYPE_UNSPECIFIED = 'WORKLOAD_TYPE_UNSPECIFIED';
-  /**
-   * MySQL workload.
-   */
-  public const WORKLOAD_TYPE_MYSQL = 'MYSQL';
-  /**
-   * Oracle workload.
-   */
-  public const WORKLOAD_TYPE_ORACLE = 'ORACLE';
-  /**
-   * Redis workload.
-   */
-  public const WORKLOAD_TYPE_REDIS = 'REDIS';
-  /**
-   * Required. agent_version lists the version of the agent that collected this
-   * data.
-   *
    * @var string
    */
   public $agentVersion;
   /**
-   * Optional. instance_name lists the human readable name of the instance that
-   * the data comes from.
-   *
    * @var string
    */
   public $instanceName;
   /**
-   * Required. project_id lists the human readable cloud project that the data
-   * comes from.
-   *
    * @var string
    */
   public $projectId;
   /**
-   * Required. validation_details contains the pairs of validation data: field
-   * name & field value.
-   *
    * @var string[]
    */
   public $validationDetails;
   /**
-   * Required. workload_type specifies the type of torso workload.
-   *
    * @var string
    */
   public $workloadType;
 
   /**
-   * Required. agent_version lists the version of the agent that collected this
-   * data.
-   *
-   * @param string $agentVersion
+   * @param string
    */
   public function setAgentVersion($agentVersion)
   {
@@ -88,10 +55,7 @@ class TorsoValidation extends \Google\Model
     return $this->agentVersion;
   }
   /**
-   * Optional. instance_name lists the human readable name of the instance that
-   * the data comes from.
-   *
-   * @param string $instanceName
+   * @param string
    */
   public function setInstanceName($instanceName)
   {
@@ -105,10 +69,7 @@ class TorsoValidation extends \Google\Model
     return $this->instanceName;
   }
   /**
-   * Required. project_id lists the human readable cloud project that the data
-   * comes from.
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {
@@ -122,10 +83,7 @@ class TorsoValidation extends \Google\Model
     return $this->projectId;
   }
   /**
-   * Required. validation_details contains the pairs of validation data: field
-   * name & field value.
-   *
-   * @param string[] $validationDetails
+   * @param string[]
    */
   public function setValidationDetails($validationDetails)
   {
@@ -139,18 +97,14 @@ class TorsoValidation extends \Google\Model
     return $this->validationDetails;
   }
   /**
-   * Required. workload_type specifies the type of torso workload.
-   *
-   * Accepted values: WORKLOAD_TYPE_UNSPECIFIED, MYSQL, ORACLE, REDIS
-   *
-   * @param self::WORKLOAD_TYPE_* $workloadType
+   * @param string
    */
   public function setWorkloadType($workloadType)
   {
     $this->workloadType = $workloadType;
   }
   /**
-   * @return self::WORKLOAD_TYPE_*
+   * @return string
    */
   public function getWorkloadType()
   {

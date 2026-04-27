@@ -20,25 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1NotebookExecutionJobDataformRepositorySource extends \Google\Model
 {
   /**
-   * The commit SHA to read repository with. If unset, the file will be read at
-   * HEAD.
-   *
    * @var string
    */
   public $commitSha;
   /**
-   * The resource name of the Dataform Repository. Format:
-   * `projects/{project_id}/locations/{location}/repositories/{repository_id}`
-   *
    * @var string
    */
   public $dataformRepositoryResourceName;
 
   /**
-   * The commit SHA to read repository with. If unset, the file will be read at
-   * HEAD.
-   *
-   * @param string $commitSha
+   * @param string
    */
   public function setCommitSha($commitSha)
   {
@@ -52,10 +43,7 @@ class GoogleCloudAiplatformV1NotebookExecutionJobDataformRepositorySource extend
     return $this->commitSha;
   }
   /**
-   * The resource name of the Dataform Repository. Format:
-   * `projects/{project_id}/locations/{location}/repositories/{repository_id}`
-   *
-   * @param string $dataformRepositoryResourceName
+   * @param string
    */
   public function setDataformRepositoryResourceName($dataformRepositoryResourceName)
   {

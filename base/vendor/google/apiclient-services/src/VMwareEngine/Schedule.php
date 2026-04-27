@@ -19,33 +19,16 @@ namespace Google\Service\VMwareEngine;
 
 class Schedule extends \Google\Collection
 {
-  /**
-   * The default value. This value should never be used.
-   */
-  public const LAST_EDITOR_EDITOR_UNSPECIFIED = 'EDITOR_UNSPECIFIED';
-  /**
-   * The upgrade is scheduled by the System or internal service.
-   */
-  public const LAST_EDITOR_SYSTEM = 'SYSTEM';
-  /**
-   * The upgrade is scheduled by the end user.
-   */
-  public const LAST_EDITOR_USER = 'USER';
   protected $collection_key = 'weeklyWindows';
   protected $constraintsType = Constraints::class;
   protected $constraintsDataType = '';
   protected $editWindowType = Interval::class;
   protected $editWindowDataType = '';
   /**
-   * Output only. Output Only. Indicates who most recently edited the upgrade
-   * schedule. The value is updated whenever the upgrade is rescheduled.
-   *
    * @var string
    */
   public $lastEditor;
   /**
-   * Required. The scheduled start time for the upgrade.
-   *
    * @var string
    */
   public $startTime;
@@ -53,10 +36,7 @@ class Schedule extends \Google\Collection
   protected $weeklyWindowsDataType = 'array';
 
   /**
-   * Output only. Output Only. Constraints applied to the schedule. These
-   * constraints should be applicable at the time of any rescheduling.
-   *
-   * @param Constraints $constraints
+   * @param Constraints
    */
   public function setConstraints(Constraints $constraints)
   {
@@ -70,10 +50,7 @@ class Schedule extends \Google\Collection
     return $this->constraints;
   }
   /**
-   * Output only. Output Only. The schedule is open for edits during this time
-   * interval or window.
-   *
-   * @param Interval $editWindow
+   * @param Interval
    */
   public function setEditWindow(Interval $editWindow)
   {
@@ -87,28 +64,21 @@ class Schedule extends \Google\Collection
     return $this->editWindow;
   }
   /**
-   * Output only. Output Only. Indicates who most recently edited the upgrade
-   * schedule. The value is updated whenever the upgrade is rescheduled.
-   *
-   * Accepted values: EDITOR_UNSPECIFIED, SYSTEM, USER
-   *
-   * @param self::LAST_EDITOR_* $lastEditor
+   * @param string
    */
   public function setLastEditor($lastEditor)
   {
     $this->lastEditor = $lastEditor;
   }
   /**
-   * @return self::LAST_EDITOR_*
+   * @return string
    */
   public function getLastEditor()
   {
     return $this->lastEditor;
   }
   /**
-   * Required. The scheduled start time for the upgrade.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -122,10 +92,7 @@ class Schedule extends \Google\Collection
     return $this->startTime;
   }
   /**
-   * Required. Weekly time windows for upgrade activities. The server performs
-   * upgrade activities during these time windows to minimize disruptions.
-   *
-   * @param TimeWindow[] $weeklyWindows
+   * @param TimeWindow[]
    */
   public function setWeeklyWindows($weeklyWindows)
   {

@@ -24,7 +24,7 @@ class EnterpriseTopazSidekickGetAndKeepAheadCardProtoDeclinedEvents extends \Goo
   protected $eventsDataType = 'array';
 
   /**
-   * @param EnterpriseTopazSidekickAgendaEntry[] $events
+   * @param EnterpriseTopazSidekickAgendaEntry[]
    */
   public function setEvents($events)
   {

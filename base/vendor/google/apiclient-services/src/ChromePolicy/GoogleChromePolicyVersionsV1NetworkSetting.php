@@ -20,22 +20,16 @@ namespace Google\Service\ChromePolicy;
 class GoogleChromePolicyVersionsV1NetworkSetting extends \Google\Model
 {
   /**
-   * The fully qualified name of the network setting.
-   *
    * @var string
    */
   public $policySchema;
   /**
-   * The value of the network setting.
-   *
    * @var array[]
    */
   public $value;
 
   /**
-   * The fully qualified name of the network setting.
-   *
-   * @param string $policySchema
+   * @param string
    */
   public function setPolicySchema($policySchema)
   {
@@ -49,9 +43,7 @@ class GoogleChromePolicyVersionsV1NetworkSetting extends \Google\Model
     return $this->policySchema;
   }
   /**
-   * The value of the network setting.
-   *
-   * @param array[] $value
+   * @param array[]
    */
   public function setValue($value)
   {

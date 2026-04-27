@@ -20,26 +20,16 @@ namespace Google\Service\GKEOnPrem;
 class VmwareAdminPrivateRegistryConfig extends \Google\Model
 {
   /**
-   * The registry address.
-   *
    * @var string
    */
   public $address;
   /**
-   * When the container runtime pulls an image from private registry, the
-   * registry must prove its identity by presenting a certificate. The
-   * registry's certificate is signed by a certificate authority (CA). The
-   * container runtime uses the CA's certificate to validate the registry's
-   * certificate.
-   *
    * @var string
    */
   public $caCert;
 
   /**
-   * The registry address.
-   *
-   * @param string $address
+   * @param string
    */
   public function setAddress($address)
   {
@@ -53,13 +43,7 @@ class VmwareAdminPrivateRegistryConfig extends \Google\Model
     return $this->address;
   }
   /**
-   * When the container runtime pulls an image from private registry, the
-   * registry must prove its identity by presenting a certificate. The
-   * registry's certificate is signed by a certificate authority (CA). The
-   * container runtime uses the CA's certificate to validate the registry's
-   * certificate.
-   *
-   * @param string $caCert
+   * @param string
    */
   public function setCaCert($caCert)
   {

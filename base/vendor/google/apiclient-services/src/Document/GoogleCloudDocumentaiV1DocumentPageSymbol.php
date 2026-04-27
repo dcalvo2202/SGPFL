@@ -26,9 +26,7 @@ class GoogleCloudDocumentaiV1DocumentPageSymbol extends \Google\Collection
   protected $layoutDataType = '';
 
   /**
-   * A list of detected languages together with confidence.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentPageDetectedLanguage[] $detectedLanguages
+   * @param GoogleCloudDocumentaiV1DocumentPageDetectedLanguage[]
    */
   public function setDetectedLanguages($detectedLanguages)
   {
@@ -42,9 +40,7 @@ class GoogleCloudDocumentaiV1DocumentPageSymbol extends \Google\Collection
     return $this->detectedLanguages;
   }
   /**
-   * Layout for Symbol.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentPageLayout $layout
+   * @param GoogleCloudDocumentaiV1DocumentPageLayout
    */
   public function setLayout(GoogleCloudDocumentaiV1DocumentPageLayout $layout)
   {

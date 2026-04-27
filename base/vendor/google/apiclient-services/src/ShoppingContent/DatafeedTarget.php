@@ -21,62 +21,32 @@ class DatafeedTarget extends \Google\Collection
 {
   protected $collection_key = 'targetCountries';
   /**
-   * Deprecated. Use `feedLabel` instead. The country where the items in the
-   * feed will be included in the search index, represented as a CLDR territory
-   * code.
-   *
    * @var string
    */
   public $country;
   /**
-   * The list of [destinations to
-   * exclude](//support.google.com/merchants/answer/6324486) for this target
-   * (corresponds to cleared check boxes in Merchant Center). Products that are
-   * excluded from all destinations for more than 7 days are automatically
-   * deleted.
-   *
    * @var string[]
    */
   public $excludedDestinations;
   /**
-   * Feed label for the DatafeedTarget. Either `country` or `feedLabel` is
-   * required. If both `feedLabel` and `country` is specified, the values must
-   * match. Must be less than or equal to 20 uppercase letters (A-Z), numbers
-   * (0-9), and dashes (-).
-   *
    * @var string
    */
   public $feedLabel;
   /**
-   * The list of [destinations to
-   * include](//support.google.com/merchants/answer/7501026) for this target
-   * (corresponds to checked check boxes in Merchant Center). Default
-   * destinations are always included unless provided in `excludedDestinations`.
-   *
    * @var string[]
    */
   public $includedDestinations;
   /**
-   * The two-letter ISO 639-1 language of the items in the feed. Must be a valid
-   * language for `targets[].country`.
-   *
    * @var string
    */
   public $language;
   /**
-   * The countries where the items may be displayed. Represented as a CLDR
-   * territory code. Will be ignored for "product inventory" feeds.
-   *
    * @var string[]
    */
   public $targetCountries;
 
   /**
-   * Deprecated. Use `feedLabel` instead. The country where the items in the
-   * feed will be included in the search index, represented as a CLDR territory
-   * code.
-   *
-   * @param string $country
+   * @param string
    */
   public function setCountry($country)
   {
@@ -90,13 +60,7 @@ class DatafeedTarget extends \Google\Collection
     return $this->country;
   }
   /**
-   * The list of [destinations to
-   * exclude](//support.google.com/merchants/answer/6324486) for this target
-   * (corresponds to cleared check boxes in Merchant Center). Products that are
-   * excluded from all destinations for more than 7 days are automatically
-   * deleted.
-   *
-   * @param string[] $excludedDestinations
+   * @param string[]
    */
   public function setExcludedDestinations($excludedDestinations)
   {
@@ -110,12 +74,7 @@ class DatafeedTarget extends \Google\Collection
     return $this->excludedDestinations;
   }
   /**
-   * Feed label for the DatafeedTarget. Either `country` or `feedLabel` is
-   * required. If both `feedLabel` and `country` is specified, the values must
-   * match. Must be less than or equal to 20 uppercase letters (A-Z), numbers
-   * (0-9), and dashes (-).
-   *
-   * @param string $feedLabel
+   * @param string
    */
   public function setFeedLabel($feedLabel)
   {
@@ -129,12 +88,7 @@ class DatafeedTarget extends \Google\Collection
     return $this->feedLabel;
   }
   /**
-   * The list of [destinations to
-   * include](//support.google.com/merchants/answer/7501026) for this target
-   * (corresponds to checked check boxes in Merchant Center). Default
-   * destinations are always included unless provided in `excludedDestinations`.
-   *
-   * @param string[] $includedDestinations
+   * @param string[]
    */
   public function setIncludedDestinations($includedDestinations)
   {
@@ -148,10 +102,7 @@ class DatafeedTarget extends \Google\Collection
     return $this->includedDestinations;
   }
   /**
-   * The two-letter ISO 639-1 language of the items in the feed. Must be a valid
-   * language for `targets[].country`.
-   *
-   * @param string $language
+   * @param string
    */
   public function setLanguage($language)
   {
@@ -165,10 +116,7 @@ class DatafeedTarget extends \Google\Collection
     return $this->language;
   }
   /**
-   * The countries where the items may be displayed. Represented as a CLDR
-   * territory code. Will be ignored for "product inventory" feeds.
-   *
-   * @param string[] $targetCountries
+   * @param string[]
    */
   public function setTargetCountries($targetCountries)
   {

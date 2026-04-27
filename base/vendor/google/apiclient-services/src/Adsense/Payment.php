@@ -20,31 +20,18 @@ namespace Google\Service\Adsense;
 class Payment extends \Google\Model
 {
   /**
-   * Output only. The amount of unpaid or paid earnings, as a formatted string,
-   * including the currency. E.g. "¥1,235 JPY", "$1,234.57", "£87.65".
-   *
    * @var string
    */
   public $amount;
   protected $dateType = Date::class;
   protected $dateDataType = '';
   /**
-   * Output only. Resource name of the payment. Format: -
-   * accounts/{account}/payments/unpaid for unpaid (current) AdSense earnings. -
-   * accounts/{account}/payments/youtube-unpaid for unpaid (current) YouTube
-   * earnings. - accounts/{account}/payments/yyyy-MM-dd for paid AdSense
-   * earnings. - accounts/{account}/payments/youtube-yyyy-MM-dd for paid YouTube
-   * earnings.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Output only. The amount of unpaid or paid earnings, as a formatted string,
-   * including the currency. E.g. "¥1,235 JPY", "$1,234.57", "£87.65".
-   *
-   * @param string $amount
+   * @param string
    */
   public function setAmount($amount)
   {
@@ -58,11 +45,7 @@ class Payment extends \Google\Model
     return $this->amount;
   }
   /**
-   * Output only. For paid earnings, the date that the payment was credited. For
-   * unpaid earnings, this field is empty. Payment dates are always returned in
-   * the billing timezone (America/Los_Angeles).
-   *
-   * @param Date $date
+   * @param Date
    */
   public function setDate(Date $date)
   {
@@ -76,14 +59,7 @@ class Payment extends \Google\Model
     return $this->date;
   }
   /**
-   * Output only. Resource name of the payment. Format: -
-   * accounts/{account}/payments/unpaid for unpaid (current) AdSense earnings. -
-   * accounts/{account}/payments/youtube-unpaid for unpaid (current) YouTube
-   * earnings. - accounts/{account}/payments/yyyy-MM-dd for paid AdSense
-   * earnings. - accounts/{account}/payments/youtube-yyyy-MM-dd for paid YouTube
-   * earnings.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

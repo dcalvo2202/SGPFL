@@ -20,8 +20,6 @@ namespace Google\Service\PlayIntegrity;
 class WriteDeviceRecallRequest extends \Google\Model
 {
   /**
-   * Required. Integrity token obtained from calling Play Integrity API.
-   *
    * @var string
    */
   public $integrityToken;
@@ -29,9 +27,7 @@ class WriteDeviceRecallRequest extends \Google\Model
   protected $newValuesDataType = '';
 
   /**
-   * Required. Integrity token obtained from calling Play Integrity API.
-   *
-   * @param string $integrityToken
+   * @param string
    */
   public function setIntegrityToken($integrityToken)
   {
@@ -45,9 +41,7 @@ class WriteDeviceRecallRequest extends \Google\Model
     return $this->integrityToken;
   }
   /**
-   * Required. The new values for the device recall bits to be written.
-   *
-   * @param Values $newValues
+   * @param Values
    */
   public function setNewValues(Values $newValues)
   {

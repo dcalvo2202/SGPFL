@@ -20,50 +20,19 @@ namespace Google\Service\CloudSearch;
 class RetrievalImportance extends \Google\Model
 {
   /**
-   * Treat the match like a body text match.
-   */
-  public const IMPORTANCE_DEFAULT = 'DEFAULT';
-  /**
-   * Treat the match like a match against title of the item.
-   */
-  public const IMPORTANCE_HIGHEST = 'HIGHEST';
-  /**
-   * Treat the match with higher importance than body text.
-   */
-  public const IMPORTANCE_HIGH = 'HIGH';
-  /**
-   * Treat the match with lower importance than body text.
-   */
-  public const IMPORTANCE_LOW = 'LOW';
-  /**
-   * Do not match against this field during retrieval. The property can still be
-   * used for operator matching, faceting, and suggest if desired.
-   */
-  public const IMPORTANCE_NONE = 'NONE';
-  /**
-   * Indicates the ranking importance given to property when it is matched
-   * during retrieval. Once set, the token importance of a property cannot be
-   * changed.
-   *
    * @var string
    */
   public $importance;
 
   /**
-   * Indicates the ranking importance given to property when it is matched
-   * during retrieval. Once set, the token importance of a property cannot be
-   * changed.
-   *
-   * Accepted values: DEFAULT, HIGHEST, HIGH, LOW, NONE
-   *
-   * @param self::IMPORTANCE_* $importance
+   * @param string
    */
   public function setImportance($importance)
   {
     $this->importance = $importance;
   }
   /**
-   * @return self::IMPORTANCE_*
+   * @return string
    */
   public function getImportance()
   {

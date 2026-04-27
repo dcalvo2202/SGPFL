@@ -22,16 +22,12 @@ class GoogleCloudApigeeV1ScoreComponentRecommendationAction extends \Google\Mode
   protected $actionContextType = GoogleCloudApigeeV1ScoreComponentRecommendationActionActionContext::class;
   protected $actionContextDataType = '';
   /**
-   * Description of the action.
-   *
    * @var string
    */
   public $description;
 
   /**
-   * Action context for the action.
-   *
-   * @param GoogleCloudApigeeV1ScoreComponentRecommendationActionActionContext $actionContext
+   * @param GoogleCloudApigeeV1ScoreComponentRecommendationActionActionContext
    */
   public function setActionContext(GoogleCloudApigeeV1ScoreComponentRecommendationActionActionContext $actionContext)
   {
@@ -45,9 +41,7 @@ class GoogleCloudApigeeV1ScoreComponentRecommendationAction extends \Google\Mode
     return $this->actionContext;
   }
   /**
-   * Description of the action.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {

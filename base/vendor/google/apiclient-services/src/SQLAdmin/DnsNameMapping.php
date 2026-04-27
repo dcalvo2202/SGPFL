@@ -20,114 +20,48 @@ namespace Google\Service\SQLAdmin;
 class DnsNameMapping extends \Google\Model
 {
   /**
-   * Unknown connection type.
-   */
-  public const CONNECTION_TYPE_CONNECTION_TYPE_UNSPECIFIED = 'CONNECTION_TYPE_UNSPECIFIED';
-  /**
-   * Public IP.
-   */
-  public const CONNECTION_TYPE_PUBLIC = 'PUBLIC';
-  /**
-   * Private services access (private IP).
-   */
-  public const CONNECTION_TYPE_PRIVATE_SERVICES_ACCESS = 'PRIVATE_SERVICES_ACCESS';
-  /**
-   * Private Service Connect.
-   */
-  public const CONNECTION_TYPE_PRIVATE_SERVICE_CONNECT = 'PRIVATE_SERVICE_CONNECT';
-  /**
-   * DNS scope not set. This value should not be used.
-   */
-  public const DNS_SCOPE_DNS_SCOPE_UNSPECIFIED = 'DNS_SCOPE_UNSPECIFIED';
-  /**
-   * Indicates an instance-level DNS name.
-   */
-  public const DNS_SCOPE_INSTANCE = 'INSTANCE';
-  /**
-   * Indicates a cluster-level DNS name.
-   */
-  public const DNS_SCOPE_CLUSTER = 'CLUSTER';
-  /**
-   * Record manager not set. This value should not be used.
-   */
-  public const RECORD_MANAGER_RECORD_MANAGER_UNSPECIFIED = 'RECORD_MANAGER_UNSPECIFIED';
-  /**
-   * The record may be managed by the customer. It is not automatically managed
-   * by Cloud SQL automation.
-   */
-  public const RECORD_MANAGER_CUSTOMER = 'CUSTOMER';
-  /**
-   * The record is managed by Cloud SQL, which will create, update, and delete
-   * the DNS records for the zone automatically when the Cloud SQL database
-   * instance is created or updated.
-   */
-  public const RECORD_MANAGER_CLOUD_SQL_AUTOMATION = 'CLOUD_SQL_AUTOMATION';
-  /**
-   * Output only. The connection type of the DNS name.
-   *
    * @var string
    */
   public $connectionType;
   /**
-   * Output only. The scope that the DNS name applies to.
-   *
    * @var string
    */
   public $dnsScope;
   /**
-   * Output only. The DNS name.
-   *
    * @var string
    */
   public $name;
-  /**
-   * Output only. The manager for this DNS record.
-   *
-   * @var string
-   */
-  public $recordManager;
 
   /**
-   * Output only. The connection type of the DNS name.
-   *
-   * Accepted values: CONNECTION_TYPE_UNSPECIFIED, PUBLIC,
-   * PRIVATE_SERVICES_ACCESS, PRIVATE_SERVICE_CONNECT
-   *
-   * @param self::CONNECTION_TYPE_* $connectionType
+   * @param string
    */
   public function setConnectionType($connectionType)
   {
     $this->connectionType = $connectionType;
   }
   /**
-   * @return self::CONNECTION_TYPE_*
+   * @return string
    */
   public function getConnectionType()
   {
     return $this->connectionType;
   }
   /**
-   * Output only. The scope that the DNS name applies to.
-   *
-   * Accepted values: DNS_SCOPE_UNSPECIFIED, INSTANCE, CLUSTER
-   *
-   * @param self::DNS_SCOPE_* $dnsScope
+   * @param string
    */
   public function setDnsScope($dnsScope)
   {
     $this->dnsScope = $dnsScope;
   }
   /**
-   * @return self::DNS_SCOPE_*
+   * @return string
    */
   public function getDnsScope()
   {
     return $this->dnsScope;
   }
   /**
-   * Output only. The DNS name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -139,24 +73,6 @@ class DnsNameMapping extends \Google\Model
   public function getName()
   {
     return $this->name;
-  }
-  /**
-   * Output only. The manager for this DNS record.
-   *
-   * Accepted values: RECORD_MANAGER_UNSPECIFIED, CUSTOMER, CLOUD_SQL_AUTOMATION
-   *
-   * @param self::RECORD_MANAGER_* $recordManager
-   */
-  public function setRecordManager($recordManager)
-  {
-    $this->recordManager = $recordManager;
-  }
-  /**
-   * @return self::RECORD_MANAGER_*
-   */
-  public function getRecordManager()
-  {
-    return $this->recordManager;
   }
 }
 

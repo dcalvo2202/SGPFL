@@ -19,61 +19,24 @@ namespace Google\Service\SQLAdmin;
 
 class ExportContext extends \Google\Collection
 {
-  /**
-   * Unknown file type.
-   */
-  public const FILE_TYPE_SQL_FILE_TYPE_UNSPECIFIED = 'SQL_FILE_TYPE_UNSPECIFIED';
-  /**
-   * File containing SQL statements.
-   */
-  public const FILE_TYPE_SQL = 'SQL';
-  /**
-   * File in CSV format.
-   */
-  public const FILE_TYPE_CSV = 'CSV';
-  public const FILE_TYPE_BAK = 'BAK';
-  /**
-   * TDE certificate.
-   */
-  public const FILE_TYPE_TDE = 'TDE';
   protected $collection_key = 'databases';
   protected $bakExportOptionsType = ExportContextBakExportOptions::class;
   protected $bakExportOptionsDataType = '';
   protected $csvExportOptionsType = ExportContextCsvExportOptions::class;
   protected $csvExportOptionsDataType = '';
   /**
-   * Databases to be exported. `MySQL instances:` If `fileType` is `SQL` and no
-   * database is specified, all databases are exported, except for the `mysql`
-   * system database. If `fileType` is `CSV`, you can specify one database,
-   * either by using this property or by using the
-   * `csvExportOptions.selectQuery` property, which takes precedence over this
-   * property. `PostgreSQL instances:` If you don't specify a database by name,
-   * all user databases in the instance are exported. This excludes system
-   * databases and Cloud SQL databases used to manage internal operations.
-   * Exporting all user databases is only available for directory-formatted
-   * parallel export. If `fileType` is `CSV`, this database must match the one
-   * specified in the `csvExportOptions.selectQuery` property. `SQL Server
-   * instances:` You must specify one database to be exported, and the
-   * `fileType` must be `BAK`.
-   *
    * @var string[]
    */
   public $databases;
   /**
-   * The file type for the specified uri.
-   *
    * @var string
    */
   public $fileType;
   /**
-   * This is always `sql#exportContext`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Whether to perform a serverless export.
-   *
    * @var bool
    */
   public $offload;
@@ -82,20 +45,12 @@ class ExportContext extends \Google\Collection
   protected $tdeExportOptionsType = ExportContextTdeExportOptions::class;
   protected $tdeExportOptionsDataType = '';
   /**
-   * The path to the file in Google Cloud Storage where the export will be
-   * stored. The URI is in the form `gs://bucketName/fileName`. If the file
-   * already exists, the request succeeds, but the operation fails. If
-   * `fileType` is `SQL` and the filename ends with .gz, the contents are
-   * compressed.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * Options for exporting BAK files (SQL Server-only)
-   *
-   * @param ExportContextBakExportOptions $bakExportOptions
+   * @param ExportContextBakExportOptions
    */
   public function setBakExportOptions(ExportContextBakExportOptions $bakExportOptions)
   {
@@ -109,9 +64,7 @@ class ExportContext extends \Google\Collection
     return $this->bakExportOptions;
   }
   /**
-   * Options for exporting data as CSV. `MySQL` and `PostgreSQL` instances only.
-   *
-   * @param ExportContextCsvExportOptions $csvExportOptions
+   * @param ExportContextCsvExportOptions
    */
   public function setCsvExportOptions(ExportContextCsvExportOptions $csvExportOptions)
   {
@@ -125,21 +78,7 @@ class ExportContext extends \Google\Collection
     return $this->csvExportOptions;
   }
   /**
-   * Databases to be exported. `MySQL instances:` If `fileType` is `SQL` and no
-   * database is specified, all databases are exported, except for the `mysql`
-   * system database. If `fileType` is `CSV`, you can specify one database,
-   * either by using this property or by using the
-   * `csvExportOptions.selectQuery` property, which takes precedence over this
-   * property. `PostgreSQL instances:` If you don't specify a database by name,
-   * all user databases in the instance are exported. This excludes system
-   * databases and Cloud SQL databases used to manage internal operations.
-   * Exporting all user databases is only available for directory-formatted
-   * parallel export. If `fileType` is `CSV`, this database must match the one
-   * specified in the `csvExportOptions.selectQuery` property. `SQL Server
-   * instances:` You must specify one database to be exported, and the
-   * `fileType` must be `BAK`.
-   *
-   * @param string[] $databases
+   * @param string[]
    */
   public function setDatabases($databases)
   {
@@ -153,27 +92,21 @@ class ExportContext extends \Google\Collection
     return $this->databases;
   }
   /**
-   * The file type for the specified uri.
-   *
-   * Accepted values: SQL_FILE_TYPE_UNSPECIFIED, SQL, CSV, BAK, TDE
-   *
-   * @param self::FILE_TYPE_* $fileType
+   * @param string
    */
   public function setFileType($fileType)
   {
     $this->fileType = $fileType;
   }
   /**
-   * @return self::FILE_TYPE_*
+   * @return string
    */
   public function getFileType()
   {
     return $this->fileType;
   }
   /**
-   * This is always `sql#exportContext`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -187,9 +120,7 @@ class ExportContext extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Whether to perform a serverless export.
-   *
-   * @param bool $offload
+   * @param bool
    */
   public function setOffload($offload)
   {
@@ -203,9 +134,7 @@ class ExportContext extends \Google\Collection
     return $this->offload;
   }
   /**
-   * Options for exporting data as SQL statements.
-   *
-   * @param ExportContextSqlExportOptions $sqlExportOptions
+   * @param ExportContextSqlExportOptions
    */
   public function setSqlExportOptions(ExportContextSqlExportOptions $sqlExportOptions)
   {
@@ -219,9 +148,7 @@ class ExportContext extends \Google\Collection
     return $this->sqlExportOptions;
   }
   /**
-   * Optional. Export parameters specific to SQL Server TDE certificates
-   *
-   * @param ExportContextTdeExportOptions $tdeExportOptions
+   * @param ExportContextTdeExportOptions
    */
   public function setTdeExportOptions(ExportContextTdeExportOptions $tdeExportOptions)
   {
@@ -235,13 +162,7 @@ class ExportContext extends \Google\Collection
     return $this->tdeExportOptions;
   }
   /**
-   * The path to the file in Google Cloud Storage where the export will be
-   * stored. The URI is in the form `gs://bucketName/fileName`. If the file
-   * already exists, the request succeeds, but the operation fails. If
-   * `fileType` is `SQL` and the filename ends with .gz, the contents are
-   * compressed.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

@@ -20,23 +20,16 @@ namespace Google\Service\Compute;
 class Screenshot extends \Google\Model
 {
   /**
-   * [Output Only] The Base64-encoded screenshot data.
-   *
    * @var string
    */
   public $contents;
   /**
-   * Output only. [Output Only] Type of the resource. Always compute#screenshot
-   * for the screenshots.
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * [Output Only] The Base64-encoded screenshot data.
-   *
-   * @param string $contents
+   * @param string
    */
   public function setContents($contents)
   {
@@ -50,10 +43,7 @@ class Screenshot extends \Google\Model
     return $this->contents;
   }
   /**
-   * Output only. [Output Only] Type of the resource. Always compute#screenshot
-   * for the screenshots.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

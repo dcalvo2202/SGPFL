@@ -26,9 +26,7 @@ class DynamicLinkStats extends \Google\Collection
   protected $warningsDataType = 'array';
 
   /**
-   * Dynamic Link event stats.
-   *
-   * @param DynamicLinkEventStat[] $linkEventStats
+   * @param DynamicLinkEventStat[]
    */
   public function setLinkEventStats($linkEventStats)
   {
@@ -42,9 +40,7 @@ class DynamicLinkStats extends \Google\Collection
     return $this->linkEventStats;
   }
   /**
-   * Optional warnings associated this API request.
-   *
-   * @param DynamicLinkWarning[] $warnings
+   * @param DynamicLinkWarning[]
    */
   public function setWarnings($warnings)
   {

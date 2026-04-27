@@ -24,9 +24,7 @@ class GoogleCloudApigeeV1BatchComputeSecurityAssessmentResultsRequestResourceArr
   protected $resourcesDataType = 'array';
 
   /**
-   * Required. The array of resources. For Apigee, the proxies are resources.
-   *
-   * @param GoogleCloudApigeeV1BatchComputeSecurityAssessmentResultsRequestResourceArrayResource[] $resources
+   * @param GoogleCloudApigeeV1BatchComputeSecurityAssessmentResultsRequestResourceArrayResource[]
    */
   public function setResources($resources)
   {

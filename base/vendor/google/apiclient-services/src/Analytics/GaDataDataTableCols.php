@@ -33,7 +33,7 @@ class GaDataDataTableCols extends \Google\Model
   public $type;
 
   /**
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -47,7 +47,7 @@ class GaDataDataTableCols extends \Google\Model
     return $this->id;
   }
   /**
-   * @param string $label
+   * @param string
    */
   public function setLabel($label)
   {
@@ -61,7 +61,7 @@ class GaDataDataTableCols extends \Google\Model
     return $this->label;
   }
   /**
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

@@ -29,7 +29,7 @@ class OutputMetrics extends \Google\Model
   public $recordsWritten;
 
   /**
-   * @param string $bytesWritten
+   * @param string
    */
   public function setBytesWritten($bytesWritten)
   {
@@ -43,7 +43,7 @@ class OutputMetrics extends \Google\Model
     return $this->bytesWritten;
   }
   /**
-   * @param string $recordsWritten
+   * @param string
    */
   public function setRecordsWritten($recordsWritten)
   {

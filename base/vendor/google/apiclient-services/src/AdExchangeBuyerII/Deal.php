@@ -19,123 +19,40 @@ namespace Google\Service\AdExchangeBuyerII;
 
 class Deal extends \Google\Collection
 {
-  /**
-   * A placeholder for an undefined creative pre-approval policy.
-   */
-  public const CREATIVE_PRE_APPROVAL_POLICY_CREATIVE_PRE_APPROVAL_POLICY_UNSPECIFIED = 'CREATIVE_PRE_APPROVAL_POLICY_UNSPECIFIED';
-  /**
-   * The seller needs to approve each creative before it can serve.
-   */
-  public const CREATIVE_PRE_APPROVAL_POLICY_SELLER_PRE_APPROVAL_REQUIRED = 'SELLER_PRE_APPROVAL_REQUIRED';
-  /**
-   * The seller does not need to approve each creative before it can serve.
-   */
-  public const CREATIVE_PRE_APPROVAL_POLICY_SELLER_PRE_APPROVAL_NOT_REQUIRED = 'SELLER_PRE_APPROVAL_NOT_REQUIRED';
-  /**
-   * A placeholder for an undefined creative safe-frame compatibility.
-   */
-  public const CREATIVE_SAFE_FRAME_COMPATIBILITY_CREATIVE_SAFE_FRAME_COMPATIBILITY_UNSPECIFIED = 'CREATIVE_SAFE_FRAME_COMPATIBILITY_UNSPECIFIED';
-  /**
-   * The creatives need to be compatible with the safe frame option.
-   */
-  public const CREATIVE_SAFE_FRAME_COMPATIBILITY_COMPATIBLE = 'COMPATIBLE';
-  /**
-   * The creatives can be incompatible with the safe frame option.
-   */
-  public const CREATIVE_SAFE_FRAME_COMPATIBILITY_INCOMPATIBLE = 'INCOMPATIBLE';
-  /**
-   * A placeholder for an undefined programmatic creative source.
-   */
-  public const PROGRAMMATIC_CREATIVE_SOURCE_PROGRAMMATIC_CREATIVE_SOURCE_UNSPECIFIED = 'PROGRAMMATIC_CREATIVE_SOURCE_UNSPECIFIED';
-  /**
-   * The advertiser provides the creatives.
-   */
-  public const PROGRAMMATIC_CREATIVE_SOURCE_ADVERTISER = 'ADVERTISER';
-  /**
-   * The publisher provides the creatives to be served.
-   */
-  public const PROGRAMMATIC_CREATIVE_SOURCE_PUBLISHER = 'PUBLISHER';
-  /**
-   * A placeholder for an undefined syndication product.
-   */
-  public const SYNDICATION_PRODUCT_SYNDICATION_PRODUCT_UNSPECIFIED = 'SYNDICATION_PRODUCT_UNSPECIFIED';
-  /**
-   * This typically represents a web page.
-   */
-  public const SYNDICATION_PRODUCT_CONTENT = 'CONTENT';
-  /**
-   * This represents a mobile property.
-   */
-  public const SYNDICATION_PRODUCT_MOBILE = 'MOBILE';
-  /**
-   * This represents video ad formats.
-   */
-  public const SYNDICATION_PRODUCT_VIDEO = 'VIDEO';
-  /**
-   * This represents ads shown within games.
-   */
-  public const SYNDICATION_PRODUCT_GAMES = 'GAMES';
   protected $collection_key = 'targetingCriterion';
   /**
-   * Proposed flight end time of the deal. This will generally be stored in a
-   * granularity of a second. A value is not required for Private Auction deals
-   * or Preferred Deals.
-   *
    * @var string
    */
   public $availableEndTime;
   /**
-   * Optional. Proposed flight start time of the deal. This will generally be
-   * stored in the granularity of one second since deal serving starts at
-   * seconds boundary. Any time specified with more granularity (for example, in
-   * milliseconds) will be truncated towards the start of time in seconds.
-   *
    * @var string
    */
   public $availableStartTime;
   protected $buyerPrivateDataType = PrivateData::class;
   protected $buyerPrivateDataDataType = '';
   /**
-   * The product ID from which this deal was created. Note: This field may be
-   * set only when creating the resource. Modifying this field while updating
-   * the resource will result in an error.
-   *
    * @var string
    */
   public $createProductId;
   /**
-   * Optional. Revision number of the product that the deal was created from. If
-   * present on create, and the server `product_revision` has advanced since the
-   * passed-in `create_product_revision`, an `ABORTED` error will be returned.
-   * Note: This field may be set only when creating the resource. Modifying this
-   * field while updating the resource will result in an error.
-   *
    * @var string
    */
   public $createProductRevision;
   /**
-   * Output only. The time of the deal creation.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. Specifies the creative pre-approval policy.
-   *
    * @var string
    */
   public $creativePreApprovalPolicy;
   protected $creativeRestrictionsType = CreativeRestrictions::class;
   protected $creativeRestrictionsDataType = '';
   /**
-   * Output only. Specifies whether the creative is safeFrame compatible.
-   *
    * @var string
    */
   public $creativeSafeFrameCompatibility;
   /**
-   * Output only. A unique deal ID for the deal (server-assigned).
-   *
    * @var string
    */
   public $dealId;
@@ -146,52 +63,32 @@ class Deal extends \Google\Collection
   protected $deliveryControlType = DeliveryControl::class;
   protected $deliveryControlDataType = '';
   /**
-   * Description for the deal terms.
-   *
    * @var string
    */
   public $description;
   /**
-   * The name of the deal.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. The external deal ID assigned to this deal once the deal is
-   * finalized. This is the deal ID that shows up in serving/reporting etc.
-   *
    * @var string
    */
   public $externalDealId;
   /**
-   * Output only. True, if the buyside inventory setup is complete for this
-   * deal.
-   *
    * @var bool
    */
   public $isSetupComplete;
   /**
-   * Output only. Specifies the creative source for programmatic deals.
-   * PUBLISHER means creative is provided by seller and ADVERTISER means
-   * creative is provided by buyer.
-   *
    * @var string
    */
   public $programmaticCreativeSource;
   /**
-   * Output only. ID of the proposal that this deal is part of.
-   *
    * @var string
    */
   public $proposalId;
   protected $sellerContactsType = ContactInformation::class;
   protected $sellerContactsDataType = 'array';
   /**
-   * The syndication product associated with the deal. Note: This field may be
-   * set only when creating the resource. Modifying this field while updating
-   * the resource will result in an error.
-   *
    * @var string
    */
   public $syndicationProduct;
@@ -200,24 +97,16 @@ class Deal extends \Google\Collection
   protected $targetingCriterionType = TargetingCriteria::class;
   protected $targetingCriterionDataType = 'array';
   /**
-   * Output only. The time when the deal was last updated.
-   *
    * @var string
    */
   public $updateTime;
   /**
-   * The web property code for the seller copied over from the product.
-   *
    * @var string
    */
   public $webPropertyCode;
 
   /**
-   * Proposed flight end time of the deal. This will generally be stored in a
-   * granularity of a second. A value is not required for Private Auction deals
-   * or Preferred Deals.
-   *
-   * @param string $availableEndTime
+   * @param string
    */
   public function setAvailableEndTime($availableEndTime)
   {
@@ -231,12 +120,7 @@ class Deal extends \Google\Collection
     return $this->availableEndTime;
   }
   /**
-   * Optional. Proposed flight start time of the deal. This will generally be
-   * stored in the granularity of one second since deal serving starts at
-   * seconds boundary. Any time specified with more granularity (for example, in
-   * milliseconds) will be truncated towards the start of time in seconds.
-   *
-   * @param string $availableStartTime
+   * @param string
    */
   public function setAvailableStartTime($availableStartTime)
   {
@@ -250,9 +134,7 @@ class Deal extends \Google\Collection
     return $this->availableStartTime;
   }
   /**
-   * Buyer private data (hidden from seller).
-   *
-   * @param PrivateData $buyerPrivateData
+   * @param PrivateData
    */
   public function setBuyerPrivateData(PrivateData $buyerPrivateData)
   {
@@ -266,11 +148,7 @@ class Deal extends \Google\Collection
     return $this->buyerPrivateData;
   }
   /**
-   * The product ID from which this deal was created. Note: This field may be
-   * set only when creating the resource. Modifying this field while updating
-   * the resource will result in an error.
-   *
-   * @param string $createProductId
+   * @param string
    */
   public function setCreateProductId($createProductId)
   {
@@ -284,13 +162,7 @@ class Deal extends \Google\Collection
     return $this->createProductId;
   }
   /**
-   * Optional. Revision number of the product that the deal was created from. If
-   * present on create, and the server `product_revision` has advanced since the
-   * passed-in `create_product_revision`, an `ABORTED` error will be returned.
-   * Note: This field may be set only when creating the resource. Modifying this
-   * field while updating the resource will result in an error.
-   *
-   * @param string $createProductRevision
+   * @param string
    */
   public function setCreateProductRevision($createProductRevision)
   {
@@ -304,9 +176,7 @@ class Deal extends \Google\Collection
     return $this->createProductRevision;
   }
   /**
-   * Output only. The time of the deal creation.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -320,30 +190,21 @@ class Deal extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Output only. Specifies the creative pre-approval policy.
-   *
-   * Accepted values: CREATIVE_PRE_APPROVAL_POLICY_UNSPECIFIED,
-   * SELLER_PRE_APPROVAL_REQUIRED, SELLER_PRE_APPROVAL_NOT_REQUIRED
-   *
-   * @param self::CREATIVE_PRE_APPROVAL_POLICY_* $creativePreApprovalPolicy
+   * @param string
    */
   public function setCreativePreApprovalPolicy($creativePreApprovalPolicy)
   {
     $this->creativePreApprovalPolicy = $creativePreApprovalPolicy;
   }
   /**
-   * @return self::CREATIVE_PRE_APPROVAL_POLICY_*
+   * @return string
    */
   public function getCreativePreApprovalPolicy()
   {
     return $this->creativePreApprovalPolicy;
   }
   /**
-   * Output only. Restricitions about the creatives associated with the deal
-   * (for example, size) This is available for Programmatic Guaranteed/Preferred
-   * Deals in Ad Manager.
-   *
-   * @param CreativeRestrictions $creativeRestrictions
+   * @param CreativeRestrictions
    */
   public function setCreativeRestrictions(CreativeRestrictions $creativeRestrictions)
   {
@@ -357,28 +218,21 @@ class Deal extends \Google\Collection
     return $this->creativeRestrictions;
   }
   /**
-   * Output only. Specifies whether the creative is safeFrame compatible.
-   *
-   * Accepted values: CREATIVE_SAFE_FRAME_COMPATIBILITY_UNSPECIFIED, COMPATIBLE,
-   * INCOMPATIBLE
-   *
-   * @param self::CREATIVE_SAFE_FRAME_COMPATIBILITY_* $creativeSafeFrameCompatibility
+   * @param string
    */
   public function setCreativeSafeFrameCompatibility($creativeSafeFrameCompatibility)
   {
     $this->creativeSafeFrameCompatibility = $creativeSafeFrameCompatibility;
   }
   /**
-   * @return self::CREATIVE_SAFE_FRAME_COMPATIBILITY_*
+   * @return string
    */
   public function getCreativeSafeFrameCompatibility()
   {
     return $this->creativeSafeFrameCompatibility;
   }
   /**
-   * Output only. A unique deal ID for the deal (server-assigned).
-   *
-   * @param string $dealId
+   * @param string
    */
   public function setDealId($dealId)
   {
@@ -392,9 +246,7 @@ class Deal extends \Google\Collection
     return $this->dealId;
   }
   /**
-   * Output only. Metadata about the serving status of this deal.
-   *
-   * @param DealServingMetadata $dealServingMetadata
+   * @param DealServingMetadata
    */
   public function setDealServingMetadata(DealServingMetadata $dealServingMetadata)
   {
@@ -408,9 +260,7 @@ class Deal extends \Google\Collection
     return $this->dealServingMetadata;
   }
   /**
-   * The negotiable terms of the deal.
-   *
-   * @param DealTerms $dealTerms
+   * @param DealTerms
    */
   public function setDealTerms(DealTerms $dealTerms)
   {
@@ -424,10 +274,7 @@ class Deal extends \Google\Collection
     return $this->dealTerms;
   }
   /**
-   * The set of fields around delivery control that are interesting for a buyer
-   * to see but are non-negotiable. These are set by the publisher.
-   *
-   * @param DeliveryControl $deliveryControl
+   * @param DeliveryControl
    */
   public function setDeliveryControl(DeliveryControl $deliveryControl)
   {
@@ -441,9 +288,7 @@ class Deal extends \Google\Collection
     return $this->deliveryControl;
   }
   /**
-   * Description for the deal terms.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -457,9 +302,7 @@ class Deal extends \Google\Collection
     return $this->description;
   }
   /**
-   * The name of the deal.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -473,10 +316,7 @@ class Deal extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Output only. The external deal ID assigned to this deal once the deal is
-   * finalized. This is the deal ID that shows up in serving/reporting etc.
-   *
-   * @param string $externalDealId
+   * @param string
    */
   public function setExternalDealId($externalDealId)
   {
@@ -490,10 +330,7 @@ class Deal extends \Google\Collection
     return $this->externalDealId;
   }
   /**
-   * Output only. True, if the buyside inventory setup is complete for this
-   * deal.
-   *
-   * @param bool $isSetupComplete
+   * @param bool
    */
   public function setIsSetupComplete($isSetupComplete)
   {
@@ -507,30 +344,21 @@ class Deal extends \Google\Collection
     return $this->isSetupComplete;
   }
   /**
-   * Output only. Specifies the creative source for programmatic deals.
-   * PUBLISHER means creative is provided by seller and ADVERTISER means
-   * creative is provided by buyer.
-   *
-   * Accepted values: PROGRAMMATIC_CREATIVE_SOURCE_UNSPECIFIED, ADVERTISER,
-   * PUBLISHER
-   *
-   * @param self::PROGRAMMATIC_CREATIVE_SOURCE_* $programmaticCreativeSource
+   * @param string
    */
   public function setProgrammaticCreativeSource($programmaticCreativeSource)
   {
     $this->programmaticCreativeSource = $programmaticCreativeSource;
   }
   /**
-   * @return self::PROGRAMMATIC_CREATIVE_SOURCE_*
+   * @return string
    */
   public function getProgrammaticCreativeSource()
   {
     return $this->programmaticCreativeSource;
   }
   /**
-   * Output only. ID of the proposal that this deal is part of.
-   *
-   * @param string $proposalId
+   * @param string
    */
   public function setProposalId($proposalId)
   {
@@ -544,9 +372,7 @@ class Deal extends \Google\Collection
     return $this->proposalId;
   }
   /**
-   * Output only. Seller contact information for the deal.
-   *
-   * @param ContactInformation[] $sellerContacts
+   * @param ContactInformation[]
    */
   public function setSellerContacts($sellerContacts)
   {
@@ -560,30 +386,21 @@ class Deal extends \Google\Collection
     return $this->sellerContacts;
   }
   /**
-   * The syndication product associated with the deal. Note: This field may be
-   * set only when creating the resource. Modifying this field while updating
-   * the resource will result in an error.
-   *
-   * Accepted values: SYNDICATION_PRODUCT_UNSPECIFIED, CONTENT, MOBILE, VIDEO,
-   * GAMES
-   *
-   * @param self::SYNDICATION_PRODUCT_* $syndicationProduct
+   * @param string
    */
   public function setSyndicationProduct($syndicationProduct)
   {
     $this->syndicationProduct = $syndicationProduct;
   }
   /**
-   * @return self::SYNDICATION_PRODUCT_*
+   * @return string
    */
   public function getSyndicationProduct()
   {
     return $this->syndicationProduct;
   }
   /**
-   * Output only. Specifies the subset of inventory targeted by the deal.
-   *
-   * @param MarketplaceTargeting $targeting
+   * @param MarketplaceTargeting
    */
   public function setTargeting(MarketplaceTargeting $targeting)
   {
@@ -597,10 +414,7 @@ class Deal extends \Google\Collection
     return $this->targeting;
   }
   /**
-   * The shared targeting visible to buyers and sellers. Each shared targeting
-   * entity is AND'd together.
-   *
-   * @param TargetingCriteria[] $targetingCriterion
+   * @param TargetingCriteria[]
    */
   public function setTargetingCriterion($targetingCriterion)
   {
@@ -614,9 +428,7 @@ class Deal extends \Google\Collection
     return $this->targetingCriterion;
   }
   /**
-   * Output only. The time when the deal was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -630,9 +442,7 @@ class Deal extends \Google\Collection
     return $this->updateTime;
   }
   /**
-   * The web property code for the seller copied over from the product.
-   *
-   * @param string $webPropertyCode
+   * @param string
    */
   public function setWebPropertyCode($webPropertyCode)
   {

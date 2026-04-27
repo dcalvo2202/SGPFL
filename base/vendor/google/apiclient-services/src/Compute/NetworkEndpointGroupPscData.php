@@ -20,65 +20,24 @@ namespace Google\Service\Compute;
 class NetworkEndpointGroupPscData extends \Google\Model
 {
   /**
-   * The connection has been accepted by the producer.
-   */
-  public const PSC_CONNECTION_STATUS_ACCEPTED = 'ACCEPTED';
-  /**
-   * The connection has been closed by the producer and will not serve traffic
-   * going forward.
-   */
-  public const PSC_CONNECTION_STATUS_CLOSED = 'CLOSED';
-  /**
-   * The connection has been accepted by the producer, but the producer needs to
-   * take further action before the forwarding rule can serve traffic.
-   */
-  public const PSC_CONNECTION_STATUS_NEEDS_ATTENTION = 'NEEDS_ATTENTION';
-  /**
-   * The connection is pending acceptance by the producer.
-   */
-  public const PSC_CONNECTION_STATUS_PENDING = 'PENDING';
-  /**
-   * The connection has been rejected by the producer.
-   */
-  public const PSC_CONNECTION_STATUS_REJECTED = 'REJECTED';
-  public const PSC_CONNECTION_STATUS_STATUS_UNSPECIFIED = 'STATUS_UNSPECIFIED';
-  /**
-   * Output only. [Output Only] Address allocated from given subnetwork for PSC.
-   * This IP address acts as a VIP for a PSC NEG, allowing it to act as an
-   * endpoint in L7 PSC-XLB.
-   *
    * @var string
    */
   public $consumerPscAddress;
   /**
-   * The psc producer port is used to connect PSC NEG with specific port on the
-   * PSC Producer side; should only be used for the PRIVATE_SERVICE_CONNECT NEG
-   * type
-   *
    * @var int
    */
   public $producerPort;
   /**
-   * Output only. [Output Only] The PSC connection id of the PSC Network
-   * Endpoint Group Consumer.
-   *
    * @var string
    */
   public $pscConnectionId;
   /**
-   * Output only. [Output Only] The connection status of the PSC Forwarding
-   * Rule.
-   *
    * @var string
    */
   public $pscConnectionStatus;
 
   /**
-   * Output only. [Output Only] Address allocated from given subnetwork for PSC.
-   * This IP address acts as a VIP for a PSC NEG, allowing it to act as an
-   * endpoint in L7 PSC-XLB.
-   *
-   * @param string $consumerPscAddress
+   * @param string
    */
   public function setConsumerPscAddress($consumerPscAddress)
   {
@@ -92,11 +51,7 @@ class NetworkEndpointGroupPscData extends \Google\Model
     return $this->consumerPscAddress;
   }
   /**
-   * The psc producer port is used to connect PSC NEG with specific port on the
-   * PSC Producer side; should only be used for the PRIVATE_SERVICE_CONNECT NEG
-   * type
-   *
-   * @param int $producerPort
+   * @param int
    */
   public function setProducerPort($producerPort)
   {
@@ -110,10 +65,7 @@ class NetworkEndpointGroupPscData extends \Google\Model
     return $this->producerPort;
   }
   /**
-   * Output only. [Output Only] The PSC connection id of the PSC Network
-   * Endpoint Group Consumer.
-   *
-   * @param string $pscConnectionId
+   * @param string
    */
   public function setPscConnectionId($pscConnectionId)
   {
@@ -127,20 +79,14 @@ class NetworkEndpointGroupPscData extends \Google\Model
     return $this->pscConnectionId;
   }
   /**
-   * Output only. [Output Only] The connection status of the PSC Forwarding
-   * Rule.
-   *
-   * Accepted values: ACCEPTED, CLOSED, NEEDS_ATTENTION, PENDING, REJECTED,
-   * STATUS_UNSPECIFIED
-   *
-   * @param self::PSC_CONNECTION_STATUS_* $pscConnectionStatus
+   * @param string
    */
   public function setPscConnectionStatus($pscConnectionStatus)
   {
     $this->pscConnectionStatus = $pscConnectionStatus;
   }
   /**
-   * @return self::PSC_CONNECTION_STATUS_*
+   * @return string
    */
   public function getPscConnectionStatus()
   {

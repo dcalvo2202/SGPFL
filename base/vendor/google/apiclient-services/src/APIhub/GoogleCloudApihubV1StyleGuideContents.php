@@ -20,22 +20,16 @@ namespace Google\Service\APIhub;
 class GoogleCloudApihubV1StyleGuideContents extends \Google\Model
 {
   /**
-   * Required. The contents of the style guide.
-   *
    * @var string
    */
   public $contents;
   /**
-   * Required. The mime type of the content.
-   *
    * @var string
    */
   public $mimeType;
 
   /**
-   * Required. The contents of the style guide.
-   *
-   * @param string $contents
+   * @param string
    */
   public function setContents($contents)
   {
@@ -49,9 +43,7 @@ class GoogleCloudApihubV1StyleGuideContents extends \Google\Model
     return $this->contents;
   }
   /**
-   * Required. The mime type of the content.
-   *
-   * @param string $mimeType
+   * @param string
    */
   public function setMimeType($mimeType)
   {

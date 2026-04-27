@@ -21,9 +21,6 @@ class GoogleCloudDatacatalogV1ListPolicyTagsResponse extends \Google\Collection
 {
   protected $collection_key = 'policyTags';
   /**
-   * Pagination token of the next results page. Empty if there are no more
-   * results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GoogleCloudDatacatalogV1ListPolicyTagsResponse extends \Google\Collection
   protected $policyTagsDataType = 'array';
 
   /**
-   * Pagination token of the next results page. Empty if there are no more
-   * results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class GoogleCloudDatacatalogV1ListPolicyTagsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The policy tags that belong to the taxonomy.
-   *
-   * @param GoogleCloudDatacatalogV1PolicyTag[] $policyTags
+   * @param GoogleCloudDatacatalogV1PolicyTag[]
    */
   public function setPolicyTags($policyTags)
   {

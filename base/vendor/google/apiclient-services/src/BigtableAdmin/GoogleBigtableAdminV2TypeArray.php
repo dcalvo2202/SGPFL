@@ -23,9 +23,7 @@ class GoogleBigtableAdminV2TypeArray extends \Google\Model
   protected $elementTypeDataType = '';
 
   /**
-   * The type of the elements in the array. This must not be `Array`.
-   *
-   * @param Type $elementType
+   * @param Type
    */
   public function setElementType(Type $elementType)
   {

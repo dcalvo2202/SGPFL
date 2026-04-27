@@ -20,42 +20,22 @@ namespace Google\Service\AndroidPublisher;
 class PartialRefundEvent extends \Google\Model
 {
   /**
-   * State unspecified. This value is not used.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The partial refund has been created, but not yet processed.
-   */
-  public const STATE_PENDING = 'PENDING';
-  /**
-   * The partial refund was processed successfully.
-   */
-  public const STATE_PROCESSED_SUCCESSFULLY = 'PROCESSED_SUCCESSFULLY';
-  /**
-   * The time when the partial refund was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * The time when the partial refund was processed.
-   *
    * @var string
    */
   public $processTime;
   protected $refundDetailsType = RefundDetails::class;
   protected $refundDetailsDataType = '';
   /**
-   * The state of the partial refund.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * The time when the partial refund was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -69,9 +49,7 @@ class PartialRefundEvent extends \Google\Model
     return $this->createTime;
   }
   /**
-   * The time when the partial refund was processed.
-   *
-   * @param string $processTime
+   * @param string
    */
   public function setProcessTime($processTime)
   {
@@ -85,9 +63,7 @@ class PartialRefundEvent extends \Google\Model
     return $this->processTime;
   }
   /**
-   * Details for the partial refund.
-   *
-   * @param RefundDetails $refundDetails
+   * @param RefundDetails
    */
   public function setRefundDetails(RefundDetails $refundDetails)
   {
@@ -101,18 +77,14 @@ class PartialRefundEvent extends \Google\Model
     return $this->refundDetails;
   }
   /**
-   * The state of the partial refund.
-   *
-   * Accepted values: STATE_UNSPECIFIED, PENDING, PROCESSED_SUCCESSFULLY
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

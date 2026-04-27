@@ -20,31 +20,20 @@ namespace Google\Service\CloudFunctions;
 class EventFilter extends \Google\Model
 {
   /**
-   * Required. The name of a CloudEvents attribute.
-   *
    * @var string
    */
   public $attribute;
   /**
-   * Optional. The operator used for matching the events with the value of the
-   * filter. If not specified, only events that have an exact key-value pair
-   * specified in the filter are matched. The only allowed value is `match-path-
-   * pattern`.
-   *
    * @var string
    */
   public $operator;
   /**
-   * Required. The value for the attribute.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Required. The name of a CloudEvents attribute.
-   *
-   * @param string $attribute
+   * @param string
    */
   public function setAttribute($attribute)
   {
@@ -58,12 +47,7 @@ class EventFilter extends \Google\Model
     return $this->attribute;
   }
   /**
-   * Optional. The operator used for matching the events with the value of the
-   * filter. If not specified, only events that have an exact key-value pair
-   * specified in the filter are matched. The only allowed value is `match-path-
-   * pattern`.
-   *
-   * @param string $operator
+   * @param string
    */
   public function setOperator($operator)
   {
@@ -77,9 +61,7 @@ class EventFilter extends \Google\Model
     return $this->operator;
   }
   /**
-   * Required. The value for the attribute.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

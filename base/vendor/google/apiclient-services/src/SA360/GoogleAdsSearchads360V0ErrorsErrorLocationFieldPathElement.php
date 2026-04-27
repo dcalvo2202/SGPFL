@@ -20,22 +20,16 @@ namespace Google\Service\SA360;
 class GoogleAdsSearchads360V0ErrorsErrorLocationFieldPathElement extends \Google\Model
 {
   /**
-   * The name of a field or a oneof
-   *
    * @var string
    */
   public $fieldName;
   /**
-   * If field_name is a repeated field, this is the element that failed
-   *
    * @var int
    */
   public $index;
 
   /**
-   * The name of a field or a oneof
-   *
-   * @param string $fieldName
+   * @param string
    */
   public function setFieldName($fieldName)
   {
@@ -49,9 +43,7 @@ class GoogleAdsSearchads360V0ErrorsErrorLocationFieldPathElement extends \Google
     return $this->fieldName;
   }
   /**
-   * If field_name is a repeated field, this is the element that failed
-   *
-   * @param int $index
+   * @param int
    */
   public function setIndex($index)
   {

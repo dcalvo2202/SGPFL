@@ -25,18 +25,12 @@ class ListenersConfigDump extends \Google\Collection
   protected $staticListenersType = StaticListener::class;
   protected $staticListenersDataType = 'array';
   /**
-   * This is the :ref:`version_info ` in the last processed LDS discovery
-   * response. If there are only static bootstrap listeners, this field will be
-   * "".
-   *
    * @var string
    */
   public $versionInfo;
 
   /**
-   * State for any warming, active, or draining listeners.
-   *
-   * @param DynamicListener[] $dynamicListeners
+   * @param DynamicListener[]
    */
   public function setDynamicListeners($dynamicListeners)
   {
@@ -50,9 +44,7 @@ class ListenersConfigDump extends \Google\Collection
     return $this->dynamicListeners;
   }
   /**
-   * The statically loaded listener configs.
-   *
-   * @param StaticListener[] $staticListeners
+   * @param StaticListener[]
    */
   public function setStaticListeners($staticListeners)
   {
@@ -66,11 +58,7 @@ class ListenersConfigDump extends \Google\Collection
     return $this->staticListeners;
   }
   /**
-   * This is the :ref:`version_info ` in the last processed LDS discovery
-   * response. If there are only static bootstrap listeners, this field will be
-   * "".
-   *
-   * @param string $versionInfo
+   * @param string
    */
   public function setVersionInfo($versionInfo)
   {

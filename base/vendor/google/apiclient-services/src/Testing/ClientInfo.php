@@ -23,16 +23,12 @@ class ClientInfo extends \Google\Collection
   protected $clientInfoDetailsType = ClientInfoDetail::class;
   protected $clientInfoDetailsDataType = 'array';
   /**
-   * Required. Client name, such as gcloud.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The list of detailed information about client.
-   *
-   * @param ClientInfoDetail[] $clientInfoDetails
+   * @param ClientInfoDetail[]
    */
   public function setClientInfoDetails($clientInfoDetails)
   {
@@ -46,9 +42,7 @@ class ClientInfo extends \Google\Collection
     return $this->clientInfoDetails;
   }
   /**
-   * Required. Client name, such as gcloud.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

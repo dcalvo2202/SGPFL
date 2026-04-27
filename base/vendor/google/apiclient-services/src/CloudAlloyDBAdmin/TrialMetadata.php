@@ -20,34 +20,24 @@ namespace Google\Service\CloudAlloyDBAdmin;
 class TrialMetadata extends \Google\Model
 {
   /**
-   * End time of the trial cluster.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * grace end time of the cluster.
-   *
    * @var string
    */
   public $graceEndTime;
   /**
-   * start time of the trial cluster.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * Upgrade time of trial cluster to Standard cluster.
-   *
    * @var string
    */
   public $upgradeTime;
 
   /**
-   * End time of the trial cluster.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -61,9 +51,7 @@ class TrialMetadata extends \Google\Model
     return $this->endTime;
   }
   /**
-   * grace end time of the cluster.
-   *
-   * @param string $graceEndTime
+   * @param string
    */
   public function setGraceEndTime($graceEndTime)
   {
@@ -77,9 +65,7 @@ class TrialMetadata extends \Google\Model
     return $this->graceEndTime;
   }
   /**
-   * start time of the trial cluster.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -93,9 +79,7 @@ class TrialMetadata extends \Google\Model
     return $this->startTime;
   }
   /**
-   * Upgrade time of trial cluster to Standard cluster.
-   *
-   * @param string $upgradeTime
+   * @param string
    */
   public function setUpgradeTime($upgradeTime)
   {

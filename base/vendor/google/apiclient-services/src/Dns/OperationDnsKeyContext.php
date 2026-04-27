@@ -25,9 +25,7 @@ class OperationDnsKeyContext extends \Google\Model
   protected $oldValueDataType = '';
 
   /**
-   * The post-operation DnsKey resource.
-   *
-   * @param DnsKey $newValue
+   * @param DnsKey
    */
   public function setNewValue(DnsKey $newValue)
   {
@@ -41,9 +39,7 @@ class OperationDnsKeyContext extends \Google\Model
     return $this->newValue;
   }
   /**
-   * The pre-operation DnsKey resource.
-   *
-   * @param DnsKey $oldValue
+   * @param DnsKey
    */
   public function setOldValue(DnsKey $oldValue)
   {

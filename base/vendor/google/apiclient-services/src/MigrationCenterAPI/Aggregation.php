@@ -22,8 +22,6 @@ class Aggregation extends \Google\Model
   protected $countType = AggregationCount::class;
   protected $countDataType = '';
   /**
-   * The name of the field on which to aggregate.
-   *
    * @var string
    */
   public $field;
@@ -35,9 +33,7 @@ class Aggregation extends \Google\Model
   protected $sumDataType = '';
 
   /**
-   * Count the number of matching objects.
-   *
-   * @param AggregationCount $count
+   * @param AggregationCount
    */
   public function setCount(AggregationCount $count)
   {
@@ -51,9 +47,7 @@ class Aggregation extends \Google\Model
     return $this->count;
   }
   /**
-   * The name of the field on which to aggregate.
-   *
-   * @param string $field
+   * @param string
    */
   public function setField($field)
   {
@@ -67,9 +61,7 @@ class Aggregation extends \Google\Model
     return $this->field;
   }
   /**
-   * Creates a frequency distribution of all field values.
-   *
-   * @param AggregationFrequency $frequency
+   * @param AggregationFrequency
    */
   public function setFrequency(AggregationFrequency $frequency)
   {
@@ -83,9 +75,7 @@ class Aggregation extends \Google\Model
     return $this->frequency;
   }
   /**
-   * Creates a bucketed histogram of field values.
-   *
-   * @param AggregationHistogram $histogram
+   * @param AggregationHistogram
    */
   public function setHistogram(AggregationHistogram $histogram)
   {
@@ -99,9 +89,7 @@ class Aggregation extends \Google\Model
     return $this->histogram;
   }
   /**
-   * Sum over a numeric field.
-   *
-   * @param AggregationSum $sum
+   * @param AggregationSum
    */
   public function setSum(AggregationSum $sum)
   {

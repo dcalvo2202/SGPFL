@@ -24,9 +24,7 @@ class CropHintsAnnotation extends \Google\Collection
   protected $cropHintsDataType = 'array';
 
   /**
-   * Crop hint results.
-   *
-   * @param CropHint[] $cropHints
+   * @param CropHint[]
    */
   public function setCropHints($cropHints)
   {

@@ -21,46 +21,24 @@ class GcpBackupConfig extends \Google\Collection
 {
   protected $collection_key = 'backupPlanRules';
   /**
-   * The name of the backup plan.
-   *
    * @var string
    */
   public $backupPlan;
   /**
-   * The name of the backup plan association.
-   *
    * @var string
    */
   public $backupPlanAssociation;
   /**
-   * The description of the backup plan.
-   *
    * @var string
    */
   public $backupPlanDescription;
   /**
-   * The user friendly id of the backup plan revision. E.g. v0, v1 etc.
-   *
-   * @var string
-   */
-  public $backupPlanRevisionId;
-  /**
-   * The name of the backup plan revision.
-   *
-   * @var string
-   */
-  public $backupPlanRevisionName;
-  /**
-   * The names of the backup plan rules which point to this backupvault
-   *
    * @var string[]
    */
   public $backupPlanRules;
 
   /**
-   * The name of the backup plan.
-   *
-   * @param string $backupPlan
+   * @param string
    */
   public function setBackupPlan($backupPlan)
   {
@@ -74,9 +52,7 @@ class GcpBackupConfig extends \Google\Collection
     return $this->backupPlan;
   }
   /**
-   * The name of the backup plan association.
-   *
-   * @param string $backupPlanAssociation
+   * @param string
    */
   public function setBackupPlanAssociation($backupPlanAssociation)
   {
@@ -90,9 +66,7 @@ class GcpBackupConfig extends \Google\Collection
     return $this->backupPlanAssociation;
   }
   /**
-   * The description of the backup plan.
-   *
-   * @param string $backupPlanDescription
+   * @param string
    */
   public function setBackupPlanDescription($backupPlanDescription)
   {
@@ -106,41 +80,7 @@ class GcpBackupConfig extends \Google\Collection
     return $this->backupPlanDescription;
   }
   /**
-   * The user friendly id of the backup plan revision. E.g. v0, v1 etc.
-   *
-   * @param string $backupPlanRevisionId
-   */
-  public function setBackupPlanRevisionId($backupPlanRevisionId)
-  {
-    $this->backupPlanRevisionId = $backupPlanRevisionId;
-  }
-  /**
-   * @return string
-   */
-  public function getBackupPlanRevisionId()
-  {
-    return $this->backupPlanRevisionId;
-  }
-  /**
-   * The name of the backup plan revision.
-   *
-   * @param string $backupPlanRevisionName
-   */
-  public function setBackupPlanRevisionName($backupPlanRevisionName)
-  {
-    $this->backupPlanRevisionName = $backupPlanRevisionName;
-  }
-  /**
-   * @return string
-   */
-  public function getBackupPlanRevisionName()
-  {
-    return $this->backupPlanRevisionName;
-  }
-  /**
-   * The names of the backup plan rules which point to this backupvault
-   *
-   * @param string[] $backupPlanRules
+   * @param string[]
    */
   public function setBackupPlanRules($backupPlanRules)
   {

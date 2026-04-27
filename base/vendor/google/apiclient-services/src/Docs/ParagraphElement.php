@@ -23,12 +23,7 @@ class ParagraphElement extends \Google\Model
   protected $autoTextDataType = '';
   protected $columnBreakType = ColumnBreak::class;
   protected $columnBreakDataType = '';
-  protected $dateElementType = DateElement::class;
-  protected $dateElementDataType = '';
   /**
-   * The zero-base end index of this paragraph element, exclusive, in UTF-16
-   * code units.
-   *
    * @var int
    */
   public $endIndex;
@@ -47,8 +42,6 @@ class ParagraphElement extends \Google\Model
   protected $richLinkType = RichLink::class;
   protected $richLinkDataType = '';
   /**
-   * The zero-based start index of this paragraph element, in UTF-16 code units.
-   *
    * @var int
    */
   public $startIndex;
@@ -56,9 +49,7 @@ class ParagraphElement extends \Google\Model
   protected $textRunDataType = '';
 
   /**
-   * An auto text paragraph element.
-   *
-   * @param AutoText $autoText
+   * @param AutoText
    */
   public function setAutoText(AutoText $autoText)
   {
@@ -72,9 +63,7 @@ class ParagraphElement extends \Google\Model
     return $this->autoText;
   }
   /**
-   * A column break paragraph element.
-   *
-   * @param ColumnBreak $columnBreak
+   * @param ColumnBreak
    */
   public function setColumnBreak(ColumnBreak $columnBreak)
   {
@@ -88,26 +77,7 @@ class ParagraphElement extends \Google\Model
     return $this->columnBreak;
   }
   /**
-   * A paragraph element that represents a date.
-   *
-   * @param DateElement $dateElement
-   */
-  public function setDateElement(DateElement $dateElement)
-  {
-    $this->dateElement = $dateElement;
-  }
-  /**
-   * @return DateElement
-   */
-  public function getDateElement()
-  {
-    return $this->dateElement;
-  }
-  /**
-   * The zero-base end index of this paragraph element, exclusive, in UTF-16
-   * code units.
-   *
-   * @param int $endIndex
+   * @param int
    */
   public function setEndIndex($endIndex)
   {
@@ -121,9 +91,7 @@ class ParagraphElement extends \Google\Model
     return $this->endIndex;
   }
   /**
-   * An equation paragraph element.
-   *
-   * @param Equation $equation
+   * @param Equation
    */
   public function setEquation(Equation $equation)
   {
@@ -137,9 +105,7 @@ class ParagraphElement extends \Google\Model
     return $this->equation;
   }
   /**
-   * A footnote reference paragraph element.
-   *
-   * @param FootnoteReference $footnoteReference
+   * @param FootnoteReference
    */
   public function setFootnoteReference(FootnoteReference $footnoteReference)
   {
@@ -153,9 +119,7 @@ class ParagraphElement extends \Google\Model
     return $this->footnoteReference;
   }
   /**
-   * A horizontal rule paragraph element.
-   *
-   * @param HorizontalRule $horizontalRule
+   * @param HorizontalRule
    */
   public function setHorizontalRule(HorizontalRule $horizontalRule)
   {
@@ -169,9 +133,7 @@ class ParagraphElement extends \Google\Model
     return $this->horizontalRule;
   }
   /**
-   * An inline object paragraph element.
-   *
-   * @param InlineObjectElement $inlineObjectElement
+   * @param InlineObjectElement
    */
   public function setInlineObjectElement(InlineObjectElement $inlineObjectElement)
   {
@@ -185,9 +147,7 @@ class ParagraphElement extends \Google\Model
     return $this->inlineObjectElement;
   }
   /**
-   * A page break paragraph element.
-   *
-   * @param PageBreak $pageBreak
+   * @param PageBreak
    */
   public function setPageBreak(PageBreak $pageBreak)
   {
@@ -201,9 +161,7 @@ class ParagraphElement extends \Google\Model
     return $this->pageBreak;
   }
   /**
-   * A paragraph element that links to a person or email address.
-   *
-   * @param Person $person
+   * @param Person
    */
   public function setPerson(Person $person)
   {
@@ -217,10 +175,7 @@ class ParagraphElement extends \Google\Model
     return $this->person;
   }
   /**
-   * A paragraph element that links to a Google resource (such as a file in
-   * Google Drive, a YouTube video, or a Calendar event.)
-   *
-   * @param RichLink $richLink
+   * @param RichLink
    */
   public function setRichLink(RichLink $richLink)
   {
@@ -234,9 +189,7 @@ class ParagraphElement extends \Google\Model
     return $this->richLink;
   }
   /**
-   * The zero-based start index of this paragraph element, in UTF-16 code units.
-   *
-   * @param int $startIndex
+   * @param int
    */
   public function setStartIndex($startIndex)
   {
@@ -250,9 +203,7 @@ class ParagraphElement extends \Google\Model
     return $this->startIndex;
   }
   /**
-   * A text run paragraph element.
-   *
-   * @param TextRun $textRun
+   * @param TextRun
    */
   public function setTextRun(TextRun $textRun)
   {

@@ -20,42 +20,16 @@ namespace Google\Service\DatabaseMigrationService;
 class IntComparisonFilter extends \Google\Model
 {
   /**
-   * Value comparison unspecified.
-   */
-  public const VALUE_COMPARISON_VALUE_COMPARISON_UNSPECIFIED = 'VALUE_COMPARISON_UNSPECIFIED';
-  /**
-   * Value is smaller than the Compare value.
-   */
-  public const VALUE_COMPARISON_VALUE_COMPARISON_IF_VALUE_SMALLER_THAN = 'VALUE_COMPARISON_IF_VALUE_SMALLER_THAN';
-  /**
-   * Value is smaller or equal than the Compare value.
-   */
-  public const VALUE_COMPARISON_VALUE_COMPARISON_IF_VALUE_SMALLER_EQUAL_THAN = 'VALUE_COMPARISON_IF_VALUE_SMALLER_EQUAL_THAN';
-  /**
-   * Value is larger than the Compare value.
-   */
-  public const VALUE_COMPARISON_VALUE_COMPARISON_IF_VALUE_LARGER_THAN = 'VALUE_COMPARISON_IF_VALUE_LARGER_THAN';
-  /**
-   * Value is larger or equal than the Compare value.
-   */
-  public const VALUE_COMPARISON_VALUE_COMPARISON_IF_VALUE_LARGER_EQUAL_THAN = 'VALUE_COMPARISON_IF_VALUE_LARGER_EQUAL_THAN';
-  /**
-   * Required. Integer compare value to be used
-   *
    * @var string
    */
   public $value;
   /**
-   * Required. Relation between source value and compare value
-   *
    * @var string
    */
   public $valueComparison;
 
   /**
-   * Required. Integer compare value to be used
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {
@@ -69,22 +43,14 @@ class IntComparisonFilter extends \Google\Model
     return $this->value;
   }
   /**
-   * Required. Relation between source value and compare value
-   *
-   * Accepted values: VALUE_COMPARISON_UNSPECIFIED,
-   * VALUE_COMPARISON_IF_VALUE_SMALLER_THAN,
-   * VALUE_COMPARISON_IF_VALUE_SMALLER_EQUAL_THAN,
-   * VALUE_COMPARISON_IF_VALUE_LARGER_THAN,
-   * VALUE_COMPARISON_IF_VALUE_LARGER_EQUAL_THAN
-   *
-   * @param self::VALUE_COMPARISON_* $valueComparison
+   * @param string
    */
   public function setValueComparison($valueComparison)
   {
     $this->valueComparison = $valueComparison;
   }
   /**
-   * @return self::VALUE_COMPARISON_*
+   * @return string
    */
   public function getValueComparison()
   {

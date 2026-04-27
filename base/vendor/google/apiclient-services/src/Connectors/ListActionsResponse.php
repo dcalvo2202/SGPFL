@@ -23,29 +23,16 @@ class ListActionsResponse extends \Google\Collection
   protected $actionsType = Action::class;
   protected $actionsDataType = 'array';
   /**
-   * Metadata like service latency, etc.
-   *
-   * @var array[]
-   */
-  public $metadata;
-  /**
-   * Next page token if more actions available.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * List of actions which contain unsupported Datatypes. Check datatype.proto
-   * for more information.
-   *
    * @var string[]
    */
   public $unsupportedActionNames;
 
   /**
-   * List of action metadata.
-   *
-   * @param Action[] $actions
+   * @param Action[]
    */
   public function setActions($actions)
   {
@@ -59,25 +46,7 @@ class ListActionsResponse extends \Google\Collection
     return $this->actions;
   }
   /**
-   * Metadata like service latency, etc.
-   *
-   * @param array[] $metadata
-   */
-  public function setMetadata($metadata)
-  {
-    $this->metadata = $metadata;
-  }
-  /**
-   * @return array[]
-   */
-  public function getMetadata()
-  {
-    return $this->metadata;
-  }
-  /**
-   * Next page token if more actions available.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -91,10 +60,7 @@ class ListActionsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * List of actions which contain unsupported Datatypes. Check datatype.proto
-   * for more information.
-   *
-   * @param string[] $unsupportedActionNames
+   * @param string[]
    */
   public function setUnsupportedActionNames($unsupportedActionNames)
   {

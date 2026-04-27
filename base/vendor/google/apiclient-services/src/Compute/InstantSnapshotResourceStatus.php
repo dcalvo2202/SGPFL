@@ -20,16 +20,12 @@ namespace Google\Service\Compute;
 class InstantSnapshotResourceStatus extends \Google\Model
 {
   /**
-   * [Output Only] The storage size of this instant snapshot.
-   *
    * @var string
    */
   public $storageSizeBytes;
 
   /**
-   * [Output Only] The storage size of this instant snapshot.
-   *
-   * @param string $storageSizeBytes
+   * @param string
    */
   public function setStorageSizeBytes($storageSizeBytes)
   {

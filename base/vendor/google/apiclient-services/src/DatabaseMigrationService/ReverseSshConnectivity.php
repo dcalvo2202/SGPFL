@@ -20,38 +20,24 @@ namespace Google\Service\DatabaseMigrationService;
 class ReverseSshConnectivity extends \Google\Model
 {
   /**
-   * The name of the virtual machine (Compute Engine) used as the bastion server
-   * for the SSH tunnel.
-   *
    * @var string
    */
   public $vm;
   /**
-   * Required. The IP of the virtual machine (Compute Engine) used as the
-   * bastion server for the SSH tunnel.
-   *
    * @var string
    */
   public $vmIp;
   /**
-   * Required. The forwarding port of the virtual machine (Compute Engine) used
-   * as the bastion server for the SSH tunnel.
-   *
    * @var int
    */
   public $vmPort;
   /**
-   * The name of the VPC to peer with the Cloud SQL private network.
-   *
    * @var string
    */
   public $vpc;
 
   /**
-   * The name of the virtual machine (Compute Engine) used as the bastion server
-   * for the SSH tunnel.
-   *
-   * @param string $vm
+   * @param string
    */
   public function setVm($vm)
   {
@@ -65,10 +51,7 @@ class ReverseSshConnectivity extends \Google\Model
     return $this->vm;
   }
   /**
-   * Required. The IP of the virtual machine (Compute Engine) used as the
-   * bastion server for the SSH tunnel.
-   *
-   * @param string $vmIp
+   * @param string
    */
   public function setVmIp($vmIp)
   {
@@ -82,10 +65,7 @@ class ReverseSshConnectivity extends \Google\Model
     return $this->vmIp;
   }
   /**
-   * Required. The forwarding port of the virtual machine (Compute Engine) used
-   * as the bastion server for the SSH tunnel.
-   *
-   * @param int $vmPort
+   * @param int
    */
   public function setVmPort($vmPort)
   {
@@ -99,9 +79,7 @@ class ReverseSshConnectivity extends \Google\Model
     return $this->vmPort;
   }
   /**
-   * The name of the VPC to peer with the Cloud SQL private network.
-   *
-   * @param string $vpc
+   * @param string
    */
   public function setVpc($vpc)
   {

@@ -25,9 +25,7 @@ class GooglePrivacyDlpV2Trigger extends \Google\Model
   protected $scheduleDataType = '';
 
   /**
-   * For use with hybrid jobs. Jobs must be manually created and finished.
-   *
-   * @param GooglePrivacyDlpV2Manual $manual
+   * @param GooglePrivacyDlpV2Manual
    */
   public function setManual(GooglePrivacyDlpV2Manual $manual)
   {
@@ -41,9 +39,7 @@ class GooglePrivacyDlpV2Trigger extends \Google\Model
     return $this->manual;
   }
   /**
-   * Create a job on a repeating basis based on the elapse of time.
-   *
-   * @param GooglePrivacyDlpV2Schedule $schedule
+   * @param GooglePrivacyDlpV2Schedule
    */
   public function setSchedule(GooglePrivacyDlpV2Schedule $schedule)
   {

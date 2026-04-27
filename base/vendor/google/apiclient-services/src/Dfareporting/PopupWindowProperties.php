@@ -19,66 +19,41 @@ namespace Google\Service\Dfareporting;
 
 class PopupWindowProperties extends \Google\Model
 {
-  /**
-   * window positioning at center.
-   */
-  public const POSITION_TYPE_CENTER = 'CENTER';
-  /**
-   * window positioning by upper left corner coordinates.
-   */
-  public const POSITION_TYPE_COORDINATES = 'COORDINATES';
   protected $dimensionType = Size::class;
   protected $dimensionDataType = '';
   protected $offsetType = OffsetPosition::class;
   protected $offsetDataType = '';
   /**
-   * Popup window position either centered or at specific coordinate.
-   *
    * @var string
    */
   public $positionType;
   /**
-   * Whether to display the browser address bar.
-   *
    * @var bool
    */
   public $showAddressBar;
   /**
-   * Whether to display the browser menu bar.
-   *
    * @var bool
    */
   public $showMenuBar;
   /**
-   * Whether to display the browser scroll bar.
-   *
    * @var bool
    */
   public $showScrollBar;
   /**
-   * Whether to display the browser status bar.
-   *
    * @var bool
    */
   public $showStatusBar;
   /**
-   * Whether to display the browser tool bar.
-   *
    * @var bool
    */
   public $showToolBar;
   /**
-   * Title of popup window.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * Popup dimension for a creative. This is a read-only field. Applicable to
-   * the following creative types: all RICH_MEDIA and all VPAID
-   *
-   * @param Size $dimension
+   * @param Size
    */
   public function setDimension(Size $dimension)
   {
@@ -92,10 +67,7 @@ class PopupWindowProperties extends \Google\Model
     return $this->dimension;
   }
   /**
-   * Upper-left corner coordinates of the popup window. Applicable if
-   * positionType is COORDINATES.
-   *
-   * @param OffsetPosition $offset
+   * @param OffsetPosition
    */
   public function setOffset(OffsetPosition $offset)
   {
@@ -109,27 +81,21 @@ class PopupWindowProperties extends \Google\Model
     return $this->offset;
   }
   /**
-   * Popup window position either centered or at specific coordinate.
-   *
-   * Accepted values: CENTER, COORDINATES
-   *
-   * @param self::POSITION_TYPE_* $positionType
+   * @param string
    */
   public function setPositionType($positionType)
   {
     $this->positionType = $positionType;
   }
   /**
-   * @return self::POSITION_TYPE_*
+   * @return string
    */
   public function getPositionType()
   {
     return $this->positionType;
   }
   /**
-   * Whether to display the browser address bar.
-   *
-   * @param bool $showAddressBar
+   * @param bool
    */
   public function setShowAddressBar($showAddressBar)
   {
@@ -143,9 +109,7 @@ class PopupWindowProperties extends \Google\Model
     return $this->showAddressBar;
   }
   /**
-   * Whether to display the browser menu bar.
-   *
-   * @param bool $showMenuBar
+   * @param bool
    */
   public function setShowMenuBar($showMenuBar)
   {
@@ -159,9 +123,7 @@ class PopupWindowProperties extends \Google\Model
     return $this->showMenuBar;
   }
   /**
-   * Whether to display the browser scroll bar.
-   *
-   * @param bool $showScrollBar
+   * @param bool
    */
   public function setShowScrollBar($showScrollBar)
   {
@@ -175,9 +137,7 @@ class PopupWindowProperties extends \Google\Model
     return $this->showScrollBar;
   }
   /**
-   * Whether to display the browser status bar.
-   *
-   * @param bool $showStatusBar
+   * @param bool
    */
   public function setShowStatusBar($showStatusBar)
   {
@@ -191,9 +151,7 @@ class PopupWindowProperties extends \Google\Model
     return $this->showStatusBar;
   }
   /**
-   * Whether to display the browser tool bar.
-   *
-   * @param bool $showToolBar
+   * @param bool
    */
   public function setShowToolBar($showToolBar)
   {
@@ -207,9 +165,7 @@ class PopupWindowProperties extends \Google\Model
     return $this->showToolBar;
   }
   /**
-   * Title of popup window.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

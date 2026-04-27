@@ -23,34 +23,24 @@ class GoogleCloudApigeeV1ListApiCategoriesResponse extends \Google\Collection
   protected $dataType = GoogleCloudApigeeV1ApiCategory::class;
   protected $dataDataType = 'array';
   /**
-   * Unique error code for the request, if any.
-   *
    * @var string
    */
   public $errorCode;
   /**
-   * Description of the operation.
-   *
    * @var string
    */
   public $message;
   /**
-   * Unique ID of the request.
-   *
    * @var string
    */
   public $requestId;
   /**
-   * Status of the operation.
-   *
    * @var string
    */
   public $status;
 
   /**
-   * The API category resources.
-   *
-   * @param GoogleCloudApigeeV1ApiCategory[] $data
+   * @param GoogleCloudApigeeV1ApiCategory[]
    */
   public function setData($data)
   {
@@ -64,9 +54,7 @@ class GoogleCloudApigeeV1ListApiCategoriesResponse extends \Google\Collection
     return $this->data;
   }
   /**
-   * Unique error code for the request, if any.
-   *
-   * @param string $errorCode
+   * @param string
    */
   public function setErrorCode($errorCode)
   {
@@ -80,9 +68,7 @@ class GoogleCloudApigeeV1ListApiCategoriesResponse extends \Google\Collection
     return $this->errorCode;
   }
   /**
-   * Description of the operation.
-   *
-   * @param string $message
+   * @param string
    */
   public function setMessage($message)
   {
@@ -96,9 +82,7 @@ class GoogleCloudApigeeV1ListApiCategoriesResponse extends \Google\Collection
     return $this->message;
   }
   /**
-   * Unique ID of the request.
-   *
-   * @param string $requestId
+   * @param string
    */
   public function setRequestId($requestId)
   {
@@ -112,9 +96,7 @@ class GoogleCloudApigeeV1ListApiCategoriesResponse extends \Google\Collection
     return $this->requestId;
   }
   /**
-   * Status of the operation.
-   *
-   * @param string $status
+   * @param string
    */
   public function setStatus($status)
   {

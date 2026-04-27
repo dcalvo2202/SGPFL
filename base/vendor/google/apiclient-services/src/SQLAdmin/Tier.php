@@ -25,41 +25,28 @@ class Tier extends \Google\Collection
         "rAM" => "RAM",
   ];
   /**
-   * The maximum disk size of this tier in bytes.
-   *
    * @var string
    */
   public $diskQuota;
   /**
-   * The maximum RAM usage of this tier in bytes.
-   *
    * @var string
    */
   public $rAM;
   /**
-   * This is always `sql#tier`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The applicable regions for this tier.
-   *
    * @var string[]
    */
   public $region;
   /**
-   * An identifier for the machine type, for example, `db-custom-1-3840`. For
-   * related information, see [Pricing](/sql/pricing).
-   *
    * @var string
    */
   public $tier;
 
   /**
-   * The maximum disk size of this tier in bytes.
-   *
-   * @param string $diskQuota
+   * @param string
    */
   public function setDiskQuota($diskQuota)
   {
@@ -73,9 +60,7 @@ class Tier extends \Google\Collection
     return $this->diskQuota;
   }
   /**
-   * The maximum RAM usage of this tier in bytes.
-   *
-   * @param string $rAM
+   * @param string
    */
   public function setRAM($rAM)
   {
@@ -89,9 +74,7 @@ class Tier extends \Google\Collection
     return $this->rAM;
   }
   /**
-   * This is always `sql#tier`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -105,9 +88,7 @@ class Tier extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The applicable regions for this tier.
-   *
-   * @param string[] $region
+   * @param string[]
    */
   public function setRegion($region)
   {
@@ -121,10 +102,7 @@ class Tier extends \Google\Collection
     return $this->region;
   }
   /**
-   * An identifier for the machine type, for example, `db-custom-1-3840`. For
-   * related information, see [Pricing](/sql/pricing).
-   *
-   * @param string $tier
+   * @param string
    */
   public function setTier($tier)
   {

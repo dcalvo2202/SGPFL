@@ -24,9 +24,7 @@ class Polygon extends \Google\Collection
   protected $coordinatesDataType = 'array';
 
   /**
-   * Optional. The coordinates that define the polygon.
-   *
-   * @param LatLng[] $coordinates
+   * @param LatLng[]
    */
   public function setCoordinates($coordinates)
   {

@@ -22,18 +22,12 @@ class GoogleAdsSearchads360V0ErrorsErrorDetails extends \Google\Model
   protected $quotaErrorDetailsType = GoogleAdsSearchads360V0ErrorsQuotaErrorDetails::class;
   protected $quotaErrorDetailsDataType = '';
   /**
-   * The error code that should have been returned, but wasn't. This is used
-   * when the error code is not published in the client specified version.
-   *
    * @var string
    */
   public $unpublishedErrorCode;
 
   /**
-   * Details on the quota error, including the scope (account or developer), the
-   * rate bucket name and the retry delay.
-   *
-   * @param GoogleAdsSearchads360V0ErrorsQuotaErrorDetails $quotaErrorDetails
+   * @param GoogleAdsSearchads360V0ErrorsQuotaErrorDetails
    */
   public function setQuotaErrorDetails(GoogleAdsSearchads360V0ErrorsQuotaErrorDetails $quotaErrorDetails)
   {
@@ -47,10 +41,7 @@ class GoogleAdsSearchads360V0ErrorsErrorDetails extends \Google\Model
     return $this->quotaErrorDetails;
   }
   /**
-   * The error code that should have been returned, but wasn't. This is used
-   * when the error code is not published in the client specified version.
-   *
-   * @param string $unpublishedErrorCode
+   * @param string
    */
   public function setUnpublishedErrorCode($unpublishedErrorCode)
   {

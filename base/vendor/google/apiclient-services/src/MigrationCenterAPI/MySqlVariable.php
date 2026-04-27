@@ -20,28 +20,20 @@ namespace Google\Service\MigrationCenterAPI;
 class MySqlVariable extends \Google\Model
 {
   /**
-   * Required. The variable category.
-   *
    * @var string
    */
   public $category;
   /**
-   * Required. The variable value.
-   *
    * @var string
    */
   public $value;
   /**
-   * Required. The variable name.
-   *
    * @var string
    */
   public $variable;
 
   /**
-   * Required. The variable category.
-   *
-   * @param string $category
+   * @param string
    */
   public function setCategory($category)
   {
@@ -55,9 +47,7 @@ class MySqlVariable extends \Google\Model
     return $this->category;
   }
   /**
-   * Required. The variable value.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {
@@ -71,9 +61,7 @@ class MySqlVariable extends \Google\Model
     return $this->value;
   }
   /**
-   * Required. The variable name.
-   *
-   * @param string $variable
+   * @param string
    */
   public function setVariable($variable)
   {

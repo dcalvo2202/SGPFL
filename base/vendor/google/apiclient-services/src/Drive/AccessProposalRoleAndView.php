@@ -20,25 +20,16 @@ namespace Google\Service\Drive;
 class AccessProposalRoleAndView extends \Google\Model
 {
   /**
-   * The role that was proposed by the requester. The supported values are: *
-   * `writer` * `commenter` * `reader`
-   *
    * @var string
    */
   public $role;
   /**
-   * Indicates the view for this access proposal. Only populated for proposals
-   * that belong to a view. Only `published` is supported.
-   *
    * @var string
    */
   public $view;
 
   /**
-   * The role that was proposed by the requester. The supported values are: *
-   * `writer` * `commenter` * `reader`
-   *
-   * @param string $role
+   * @param string
    */
   public function setRole($role)
   {
@@ -52,10 +43,7 @@ class AccessProposalRoleAndView extends \Google\Model
     return $this->role;
   }
   /**
-   * Indicates the view for this access proposal. Only populated for proposals
-   * that belong to a view. Only `published` is supported.
-   *
-   * @param string $view
+   * @param string
    */
   public function setView($view)
   {

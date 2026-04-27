@@ -23,17 +23,12 @@ class GoogleAnalyticsAdminV1betaListConversionEventsResponse extends \Google\Col
   protected $conversionEventsType = GoogleAnalyticsAdminV1betaConversionEvent::class;
   protected $conversionEventsDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The requested conversion events
-   *
-   * @param GoogleAnalyticsAdminV1betaConversionEvent[] $conversionEvents
+   * @param GoogleAnalyticsAdminV1betaConversionEvent[]
    */
   public function setConversionEvents($conversionEvents)
   {
@@ -47,10 +42,7 @@ class GoogleAnalyticsAdminV1betaListConversionEventsResponse extends \Google\Col
     return $this->conversionEvents;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

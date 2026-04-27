@@ -20,56 +20,38 @@ namespace Google\Service\Datastream;
 class OracleAsmConfig extends \Google\Model
 {
   /**
-   * Required. ASM service name for the Oracle ASM connection.
-   *
    * @var string
    */
   public $asmService;
   /**
-   * Optional. Connection string attributes
-   *
    * @var string[]
    */
   public $connectionAttributes;
   /**
-   * Required. Hostname for the Oracle ASM connection.
-   *
    * @var string
    */
   public $hostname;
   protected $oracleSslConfigType = OracleSslConfig::class;
   protected $oracleSslConfigDataType = '';
   /**
-   * Optional. Password for the Oracle ASM connection. Mutually exclusive with
-   * the `secret_manager_stored_password` field.
-   *
    * @var string
    */
   public $password;
   /**
-   * Required. Port for the Oracle ASM connection.
-   *
    * @var int
    */
   public $port;
   /**
-   * Optional. A reference to a Secret Manager resource name storing the Oracle
-   * ASM connection password. Mutually exclusive with the `password` field.
-   *
    * @var string
    */
   public $secretManagerStoredPassword;
   /**
-   * Required. Username for the Oracle ASM connection.
-   *
    * @var string
    */
   public $username;
 
   /**
-   * Required. ASM service name for the Oracle ASM connection.
-   *
-   * @param string $asmService
+   * @param string
    */
   public function setAsmService($asmService)
   {
@@ -83,9 +65,7 @@ class OracleAsmConfig extends \Google\Model
     return $this->asmService;
   }
   /**
-   * Optional. Connection string attributes
-   *
-   * @param string[] $connectionAttributes
+   * @param string[]
    */
   public function setConnectionAttributes($connectionAttributes)
   {
@@ -99,9 +79,7 @@ class OracleAsmConfig extends \Google\Model
     return $this->connectionAttributes;
   }
   /**
-   * Required. Hostname for the Oracle ASM connection.
-   *
-   * @param string $hostname
+   * @param string
    */
   public function setHostname($hostname)
   {
@@ -115,9 +93,7 @@ class OracleAsmConfig extends \Google\Model
     return $this->hostname;
   }
   /**
-   * Optional. SSL configuration for the Oracle connection.
-   *
-   * @param OracleSslConfig $oracleSslConfig
+   * @param OracleSslConfig
    */
   public function setOracleSslConfig(OracleSslConfig $oracleSslConfig)
   {
@@ -131,10 +107,7 @@ class OracleAsmConfig extends \Google\Model
     return $this->oracleSslConfig;
   }
   /**
-   * Optional. Password for the Oracle ASM connection. Mutually exclusive with
-   * the `secret_manager_stored_password` field.
-   *
-   * @param string $password
+   * @param string
    */
   public function setPassword($password)
   {
@@ -148,9 +121,7 @@ class OracleAsmConfig extends \Google\Model
     return $this->password;
   }
   /**
-   * Required. Port for the Oracle ASM connection.
-   *
-   * @param int $port
+   * @param int
    */
   public function setPort($port)
   {
@@ -164,10 +135,7 @@ class OracleAsmConfig extends \Google\Model
     return $this->port;
   }
   /**
-   * Optional. A reference to a Secret Manager resource name storing the Oracle
-   * ASM connection password. Mutually exclusive with the `password` field.
-   *
-   * @param string $secretManagerStoredPassword
+   * @param string
    */
   public function setSecretManagerStoredPassword($secretManagerStoredPassword)
   {
@@ -181,9 +149,7 @@ class OracleAsmConfig extends \Google\Model
     return $this->secretManagerStoredPassword;
   }
   /**
-   * Required. Username for the Oracle ASM connection.
-   *
-   * @param string $username
+   * @param string
    */
   public function setUsername($username)
   {

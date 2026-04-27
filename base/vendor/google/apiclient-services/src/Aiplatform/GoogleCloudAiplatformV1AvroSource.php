@@ -23,9 +23,7 @@ class GoogleCloudAiplatformV1AvroSource extends \Google\Model
   protected $gcsSourceDataType = '';
 
   /**
-   * Required. Google Cloud Storage location.
-   *
-   * @param GoogleCloudAiplatformV1GcsSource $gcsSource
+   * @param GoogleCloudAiplatformV1GcsSource
    */
   public function setGcsSource(GoogleCloudAiplatformV1GcsSource $gcsSource)
   {

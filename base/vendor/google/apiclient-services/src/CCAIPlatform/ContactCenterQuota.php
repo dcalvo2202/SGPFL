@@ -21,18 +21,10 @@ class ContactCenterQuota extends \Google\Collection
 {
   protected $collection_key = 'quotas';
   /**
-   * Deprecated: Use the Quota fields instead. Reflects the count limit of
-   * contact centers on a billing account.
-   *
-   * @deprecated
    * @var int
    */
   public $contactCenterCountLimit;
   /**
-   * Deprecated: Use the Quota fields instead. Reflects the count sum of contact
-   * centers on a billing account.
-   *
-   * @deprecated
    * @var int
    */
   public $contactCenterCountSum;
@@ -40,18 +32,13 @@ class ContactCenterQuota extends \Google\Collection
   protected $quotasDataType = 'array';
 
   /**
-   * Deprecated: Use the Quota fields instead. Reflects the count limit of
-   * contact centers on a billing account.
-   *
-   * @deprecated
-   * @param int $contactCenterCountLimit
+   * @param int
    */
   public function setContactCenterCountLimit($contactCenterCountLimit)
   {
     $this->contactCenterCountLimit = $contactCenterCountLimit;
   }
   /**
-   * @deprecated
    * @return int
    */
   public function getContactCenterCountLimit()
@@ -59,18 +46,13 @@ class ContactCenterQuota extends \Google\Collection
     return $this->contactCenterCountLimit;
   }
   /**
-   * Deprecated: Use the Quota fields instead. Reflects the count sum of contact
-   * centers on a billing account.
-   *
-   * @deprecated
-   * @param int $contactCenterCountSum
+   * @param int
    */
   public function setContactCenterCountSum($contactCenterCountSum)
   {
     $this->contactCenterCountSum = $contactCenterCountSum;
   }
   /**
-   * @deprecated
    * @return int
    */
   public function getContactCenterCountSum()
@@ -78,9 +60,7 @@ class ContactCenterQuota extends \Google\Collection
     return $this->contactCenterCountSum;
   }
   /**
-   * Quota details per contact center instance type.
-   *
-   * @param Quota[] $quotas
+   * @param Quota[]
    */
   public function setQuotas($quotas)
   {

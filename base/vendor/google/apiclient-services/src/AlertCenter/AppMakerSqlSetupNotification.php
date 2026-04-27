@@ -24,9 +24,7 @@ class AppMakerSqlSetupNotification extends \Google\Collection
   protected $requestInfoDataType = 'array';
 
   /**
-   * List of applications with requests for default SQL set up.
-   *
-   * @param RequestInfo[] $requestInfo
+   * @param RequestInfo[]
    */
   public function setRequestInfo($requestInfo)
   {

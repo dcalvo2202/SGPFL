@@ -21,25 +21,16 @@ class AddEnableRulesResponse extends \Google\Collection
 {
   protected $collection_key = 'addedValues';
   /**
-   * The values added to the parent consumer policy.
-   *
    * @var string[]
    */
   public $addedValues;
   /**
-   * The parent consumer policy. It can be
-   * `projects/12345/consumerPolicies/default`, or
-   * `folders/12345/consumerPolicies/default`, or
-   * `organizations/12345/consumerPolicies/default`.
-   *
    * @var string
    */
   public $parent;
 
   /**
-   * The values added to the parent consumer policy.
-   *
-   * @param string[] $addedValues
+   * @param string[]
    */
   public function setAddedValues($addedValues)
   {
@@ -53,12 +44,7 @@ class AddEnableRulesResponse extends \Google\Collection
     return $this->addedValues;
   }
   /**
-   * The parent consumer policy. It can be
-   * `projects/12345/consumerPolicies/default`, or
-   * `folders/12345/consumerPolicies/default`, or
-   * `organizations/12345/consumerPolicies/default`.
-   *
-   * @param string $parent
+   * @param string
    */
   public function setParent($parent)
   {

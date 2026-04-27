@@ -20,37 +20,19 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1betaSearchRequestPersonalizationSpec extends \Google\Model
 {
   /**
-   * Default value. In this case, server behavior defaults to Mode.AUTO.
-   */
-  public const MODE_MODE_UNSPECIFIED = 'MODE_UNSPECIFIED';
-  /**
-   * Personalization is enabled if data quality requirements are met.
-   */
-  public const MODE_AUTO = 'AUTO';
-  /**
-   * Disable personalization.
-   */
-  public const MODE_DISABLED = 'DISABLED';
-  /**
-   * The personalization mode of the search request. Defaults to Mode.AUTO.
-   *
    * @var string
    */
   public $mode;
 
   /**
-   * The personalization mode of the search request. Defaults to Mode.AUTO.
-   *
-   * Accepted values: MODE_UNSPECIFIED, AUTO, DISABLED
-   *
-   * @param self::MODE_* $mode
+   * @param string
    */
   public function setMode($mode)
   {
     $this->mode = $mode;
   }
   /**
-   * @return self::MODE_*
+   * @return string
    */
   public function getMode()
   {

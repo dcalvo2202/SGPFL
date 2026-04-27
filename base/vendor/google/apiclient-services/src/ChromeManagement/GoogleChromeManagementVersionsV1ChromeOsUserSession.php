@@ -22,25 +22,16 @@ class GoogleChromeManagementVersionsV1ChromeOsUserSession extends \Google\Model
   protected $chromeOsDeviceType = GoogleChromeManagementVersionsV1ChromeOsDevice::class;
   protected $chromeOsDeviceDataType = '';
   /**
-   * Output only. The unique Directory API ID of the user.
-   *
    * @var string
    */
   public $userDirectoryApiId;
   /**
-   * Output only. The primary e-mail address of the user.
-   *
    * @var string
    */
   public $userPrimaryEmail;
 
   /**
-   * Output only. This field contains information about the ChromeOS device that
-   * the user session is running on. It is only set if the user is affiliated,
-   * i.e., if the user is managed by the same organization that manages the
-   * ChromeOS device.
-   *
-   * @param GoogleChromeManagementVersionsV1ChromeOsDevice $chromeOsDevice
+   * @param GoogleChromeManagementVersionsV1ChromeOsDevice
    */
   public function setChromeOsDevice(GoogleChromeManagementVersionsV1ChromeOsDevice $chromeOsDevice)
   {
@@ -54,9 +45,7 @@ class GoogleChromeManagementVersionsV1ChromeOsUserSession extends \Google\Model
     return $this->chromeOsDevice;
   }
   /**
-   * Output only. The unique Directory API ID of the user.
-   *
-   * @param string $userDirectoryApiId
+   * @param string
    */
   public function setUserDirectoryApiId($userDirectoryApiId)
   {
@@ -70,9 +59,7 @@ class GoogleChromeManagementVersionsV1ChromeOsUserSession extends \Google\Model
     return $this->userDirectoryApiId;
   }
   /**
-   * Output only. The primary e-mail address of the user.
-   *
-   * @param string $userPrimaryEmail
+   * @param string
    */
   public function setUserPrimaryEmail($userPrimaryEmail)
   {

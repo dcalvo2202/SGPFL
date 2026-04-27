@@ -20,27 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1UndeployModelRequest extends \Google\Model
 {
   /**
-   * Required. The ID of the DeployedModel to be undeployed from the Endpoint.
-   *
    * @var string
    */
   public $deployedModelId;
   /**
-   * If this field is provided, then the Endpoint's traffic_split will be
-   * overwritten with it. If last DeployedModel is being undeployed from the
-   * Endpoint, the [Endpoint.traffic_split] will always end up empty when this
-   * call returns. A DeployedModel will be successfully undeployed only if it
-   * doesn't have any traffic assigned to it when this method executes, or if
-   * this field unassigns any traffic to it.
-   *
    * @var int[]
    */
   public $trafficSplit;
 
   /**
-   * Required. The ID of the DeployedModel to be undeployed from the Endpoint.
-   *
-   * @param string $deployedModelId
+   * @param string
    */
   public function setDeployedModelId($deployedModelId)
   {
@@ -54,14 +43,7 @@ class GoogleCloudAiplatformV1UndeployModelRequest extends \Google\Model
     return $this->deployedModelId;
   }
   /**
-   * If this field is provided, then the Endpoint's traffic_split will be
-   * overwritten with it. If last DeployedModel is being undeployed from the
-   * Endpoint, the [Endpoint.traffic_split] will always end up empty when this
-   * call returns. A DeployedModel will be successfully undeployed only if it
-   * doesn't have any traffic assigned to it when this method executes, or if
-   * this field unassigns any traffic to it.
-   *
-   * @param int[] $trafficSplit
+   * @param int[]
    */
   public function setTrafficSplit($trafficSplit)
   {

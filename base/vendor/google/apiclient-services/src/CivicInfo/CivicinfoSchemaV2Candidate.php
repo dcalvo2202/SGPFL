@@ -21,56 +21,38 @@ class CivicinfoSchemaV2Candidate extends \Google\Collection
 {
   protected $collection_key = 'channels';
   /**
-   * The URL for the candidate's campaign web site.
-   *
    * @var string
    */
   public $candidateUrl;
   protected $channelsType = CivicinfoSchemaV2Channel::class;
   protected $channelsDataType = 'array';
   /**
-   * The email address for the candidate's campaign.
-   *
    * @var string
    */
   public $email;
   /**
-   * The candidate's name. If this is a joint ticket it will indicate the name
-   * of the candidate at the top of a ticket followed by a / and that name of
-   * candidate at the bottom of the ticket. e.g. "Mitt Romney / Paul Ryan"
-   *
    * @var string
    */
   public $name;
   /**
-   * The order the candidate appears on the ballot for this contest.
-   *
    * @var string
    */
   public $orderOnBallot;
   /**
-   * The full name of the party the candidate is a member of.
-   *
    * @var string
    */
   public $party;
   /**
-   * The voice phone number for the candidate's campaign office.
-   *
    * @var string
    */
   public $phone;
   /**
-   * A URL for a photo of the candidate.
-   *
    * @var string
    */
   public $photoUrl;
 
   /**
-   * The URL for the candidate's campaign web site.
-   *
-   * @param string $candidateUrl
+   * @param string
    */
   public function setCandidateUrl($candidateUrl)
   {
@@ -84,9 +66,7 @@ class CivicinfoSchemaV2Candidate extends \Google\Collection
     return $this->candidateUrl;
   }
   /**
-   * A list of known (social) media channels for this candidate.
-   *
-   * @param CivicinfoSchemaV2Channel[] $channels
+   * @param CivicinfoSchemaV2Channel[]
    */
   public function setChannels($channels)
   {
@@ -100,9 +80,7 @@ class CivicinfoSchemaV2Candidate extends \Google\Collection
     return $this->channels;
   }
   /**
-   * The email address for the candidate's campaign.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {
@@ -116,11 +94,7 @@ class CivicinfoSchemaV2Candidate extends \Google\Collection
     return $this->email;
   }
   /**
-   * The candidate's name. If this is a joint ticket it will indicate the name
-   * of the candidate at the top of a ticket followed by a / and that name of
-   * candidate at the bottom of the ticket. e.g. "Mitt Romney / Paul Ryan"
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -134,9 +108,7 @@ class CivicinfoSchemaV2Candidate extends \Google\Collection
     return $this->name;
   }
   /**
-   * The order the candidate appears on the ballot for this contest.
-   *
-   * @param string $orderOnBallot
+   * @param string
    */
   public function setOrderOnBallot($orderOnBallot)
   {
@@ -150,9 +122,7 @@ class CivicinfoSchemaV2Candidate extends \Google\Collection
     return $this->orderOnBallot;
   }
   /**
-   * The full name of the party the candidate is a member of.
-   *
-   * @param string $party
+   * @param string
    */
   public function setParty($party)
   {
@@ -166,9 +136,7 @@ class CivicinfoSchemaV2Candidate extends \Google\Collection
     return $this->party;
   }
   /**
-   * The voice phone number for the candidate's campaign office.
-   *
-   * @param string $phone
+   * @param string
    */
   public function setPhone($phone)
   {
@@ -182,9 +150,7 @@ class CivicinfoSchemaV2Candidate extends \Google\Collection
     return $this->phone;
   }
   /**
-   * A URL for a photo of the candidate.
-   *
-   * @param string $photoUrl
+   * @param string
    */
   public function setPhotoUrl($photoUrl)
   {

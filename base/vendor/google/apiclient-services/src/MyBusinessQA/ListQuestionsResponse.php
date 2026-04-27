@@ -21,30 +21,18 @@ class ListQuestionsResponse extends \Google\Collection
 {
   protected $collection_key = 'questions';
   /**
-   * If the number of questions exceeds the requested max page size, this field
-   * is populated with a token to fetch the next page of questions on a
-   * subsequent call. If there are no more questions, this field is not present
-   * in the response.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $questionsType = Question::class;
   protected $questionsDataType = 'array';
   /**
-   * The total number of questions posted for this location across all pages.
-   *
    * @var int
    */
   public $totalSize;
 
   /**
-   * If the number of questions exceeds the requested max page size, this field
-   * is populated with a token to fetch the next page of questions on a
-   * subsequent call. If there are no more questions, this field is not present
-   * in the response.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -58,9 +46,7 @@ class ListQuestionsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The requested questions,
-   *
-   * @param Question[] $questions
+   * @param Question[]
    */
   public function setQuestions($questions)
   {
@@ -74,9 +60,7 @@ class ListQuestionsResponse extends \Google\Collection
     return $this->questions;
   }
   /**
-   * The total number of questions posted for this location across all pages.
-   *
-   * @param int $totalSize
+   * @param int
    */
   public function setTotalSize($totalSize)
   {

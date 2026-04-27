@@ -21,98 +21,66 @@ class ExternallyHostedApk extends \Google\Collection
 {
   protected $collection_key = 'usesPermissions';
   /**
-   * The application label.
-   *
    * @var string
    */
   public $applicationLabel;
   /**
-   * A certificate (or array of certificates if a certificate-chain is used)
-   * used to sign this APK, represented as a base64 encoded byte array.
-   *
    * @var string[]
    */
   public $certificateBase64s;
   /**
-   * The URL at which the APK is hosted. This must be an https URL.
-   *
    * @var string
    */
   public $externallyHostedUrl;
   /**
-   * The sha1 checksum of this APK, represented as a base64 encoded byte array.
-   *
    * @var string
    */
   public $fileSha1Base64;
   /**
-   * The sha256 checksum of this APK, represented as a base64 encoded byte
-   * array.
-   *
    * @var string
    */
   public $fileSha256Base64;
   /**
-   * The file size in bytes of this APK.
-   *
    * @var string
    */
   public $fileSize;
   /**
-   * The icon image from the APK, as a base64 encoded byte array.
-   *
    * @var string
    */
   public $iconBase64;
   /**
-   * The maximum SDK supported by this APK (optional).
-   *
    * @var int
    */
   public $maximumSdk;
   /**
-   * The minimum SDK targeted by this APK.
-   *
    * @var int
    */
   public $minimumSdk;
   /**
-   * The native code environments supported by this APK (optional).
-   *
    * @var string[]
    */
   public $nativeCodes;
   /**
-   * The package name.
-   *
    * @var string
    */
   public $packageName;
   /**
-   * The features required by this APK (optional).
-   *
    * @var string[]
    */
   public $usesFeatures;
   protected $usesPermissionsType = UsesPermission::class;
   protected $usesPermissionsDataType = 'array';
   /**
-   * The version code of this APK.
-   *
    * @var int
    */
   public $versionCode;
   /**
-   * The version name of this APK.
-   *
    * @var string
    */
   public $versionName;
 
   /**
-   * The application label.
-   *
-   * @param string $applicationLabel
+   * @param string
    */
   public function setApplicationLabel($applicationLabel)
   {
@@ -126,10 +94,7 @@ class ExternallyHostedApk extends \Google\Collection
     return $this->applicationLabel;
   }
   /**
-   * A certificate (or array of certificates if a certificate-chain is used)
-   * used to sign this APK, represented as a base64 encoded byte array.
-   *
-   * @param string[] $certificateBase64s
+   * @param string[]
    */
   public function setCertificateBase64s($certificateBase64s)
   {
@@ -143,9 +108,7 @@ class ExternallyHostedApk extends \Google\Collection
     return $this->certificateBase64s;
   }
   /**
-   * The URL at which the APK is hosted. This must be an https URL.
-   *
-   * @param string $externallyHostedUrl
+   * @param string
    */
   public function setExternallyHostedUrl($externallyHostedUrl)
   {
@@ -159,9 +122,7 @@ class ExternallyHostedApk extends \Google\Collection
     return $this->externallyHostedUrl;
   }
   /**
-   * The sha1 checksum of this APK, represented as a base64 encoded byte array.
-   *
-   * @param string $fileSha1Base64
+   * @param string
    */
   public function setFileSha1Base64($fileSha1Base64)
   {
@@ -175,10 +136,7 @@ class ExternallyHostedApk extends \Google\Collection
     return $this->fileSha1Base64;
   }
   /**
-   * The sha256 checksum of this APK, represented as a base64 encoded byte
-   * array.
-   *
-   * @param string $fileSha256Base64
+   * @param string
    */
   public function setFileSha256Base64($fileSha256Base64)
   {
@@ -192,9 +150,7 @@ class ExternallyHostedApk extends \Google\Collection
     return $this->fileSha256Base64;
   }
   /**
-   * The file size in bytes of this APK.
-   *
-   * @param string $fileSize
+   * @param string
    */
   public function setFileSize($fileSize)
   {
@@ -208,9 +164,7 @@ class ExternallyHostedApk extends \Google\Collection
     return $this->fileSize;
   }
   /**
-   * The icon image from the APK, as a base64 encoded byte array.
-   *
-   * @param string $iconBase64
+   * @param string
    */
   public function setIconBase64($iconBase64)
   {
@@ -224,9 +178,7 @@ class ExternallyHostedApk extends \Google\Collection
     return $this->iconBase64;
   }
   /**
-   * The maximum SDK supported by this APK (optional).
-   *
-   * @param int $maximumSdk
+   * @param int
    */
   public function setMaximumSdk($maximumSdk)
   {
@@ -240,9 +192,7 @@ class ExternallyHostedApk extends \Google\Collection
     return $this->maximumSdk;
   }
   /**
-   * The minimum SDK targeted by this APK.
-   *
-   * @param int $minimumSdk
+   * @param int
    */
   public function setMinimumSdk($minimumSdk)
   {
@@ -256,9 +206,7 @@ class ExternallyHostedApk extends \Google\Collection
     return $this->minimumSdk;
   }
   /**
-   * The native code environments supported by this APK (optional).
-   *
-   * @param string[] $nativeCodes
+   * @param string[]
    */
   public function setNativeCodes($nativeCodes)
   {
@@ -272,9 +220,7 @@ class ExternallyHostedApk extends \Google\Collection
     return $this->nativeCodes;
   }
   /**
-   * The package name.
-   *
-   * @param string $packageName
+   * @param string
    */
   public function setPackageName($packageName)
   {
@@ -288,9 +234,7 @@ class ExternallyHostedApk extends \Google\Collection
     return $this->packageName;
   }
   /**
-   * The features required by this APK (optional).
-   *
-   * @param string[] $usesFeatures
+   * @param string[]
    */
   public function setUsesFeatures($usesFeatures)
   {
@@ -304,9 +248,7 @@ class ExternallyHostedApk extends \Google\Collection
     return $this->usesFeatures;
   }
   /**
-   * The permissions requested by this APK.
-   *
-   * @param UsesPermission[] $usesPermissions
+   * @param UsesPermission[]
    */
   public function setUsesPermissions($usesPermissions)
   {
@@ -320,9 +262,7 @@ class ExternallyHostedApk extends \Google\Collection
     return $this->usesPermissions;
   }
   /**
-   * The version code of this APK.
-   *
-   * @param int $versionCode
+   * @param int
    */
   public function setVersionCode($versionCode)
   {
@@ -336,9 +276,7 @@ class ExternallyHostedApk extends \Google\Collection
     return $this->versionCode;
   }
   /**
-   * The version name of this APK.
-   *
-   * @param string $versionName
+   * @param string
    */
   public function setVersionName($versionName)
   {

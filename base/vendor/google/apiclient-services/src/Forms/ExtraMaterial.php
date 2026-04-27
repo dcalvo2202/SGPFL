@@ -25,9 +25,7 @@ class ExtraMaterial extends \Google\Model
   protected $videoDataType = '';
 
   /**
-   * Text feedback.
-   *
-   * @param TextLink $link
+   * @param TextLink
    */
   public function setLink(TextLink $link)
   {
@@ -41,9 +39,7 @@ class ExtraMaterial extends \Google\Model
     return $this->link;
   }
   /**
-   * Video feedback.
-   *
-   * @param VideoLink $video
+   * @param VideoLink
    */
   public function setVideo(VideoLink $video)
   {

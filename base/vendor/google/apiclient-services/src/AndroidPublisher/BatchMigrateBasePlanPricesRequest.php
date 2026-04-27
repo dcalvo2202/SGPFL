@@ -24,10 +24,7 @@ class BatchMigrateBasePlanPricesRequest extends \Google\Collection
   protected $requestsDataType = 'array';
 
   /**
-   * Required. Up to 100 price migration requests. All requests must update
-   * different base plans.
-   *
-   * @param MigrateBasePlanPricesRequest[] $requests
+   * @param MigrateBasePlanPricesRequest[]
    */
   public function setRequests($requests)
   {

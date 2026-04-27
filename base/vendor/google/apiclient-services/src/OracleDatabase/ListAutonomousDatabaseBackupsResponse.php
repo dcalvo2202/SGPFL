@@ -23,16 +23,12 @@ class ListAutonomousDatabaseBackupsResponse extends \Google\Collection
   protected $autonomousDatabaseBackupsType = AutonomousDatabaseBackup::class;
   protected $autonomousDatabaseBackupsDataType = 'array';
   /**
-   * A token identifying a page of results the server should return.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of Autonomous Database Backups.
-   *
-   * @param AutonomousDatabaseBackup[] $autonomousDatabaseBackups
+   * @param AutonomousDatabaseBackup[]
    */
   public function setAutonomousDatabaseBackups($autonomousDatabaseBackups)
   {
@@ -46,9 +42,7 @@ class ListAutonomousDatabaseBackupsResponse extends \Google\Collection
     return $this->autonomousDatabaseBackups;
   }
   /**
-   * A token identifying a page of results the server should return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

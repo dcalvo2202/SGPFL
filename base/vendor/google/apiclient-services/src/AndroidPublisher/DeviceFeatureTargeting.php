@@ -23,9 +23,7 @@ class DeviceFeatureTargeting extends \Google\Model
   protected $requiredFeatureDataType = '';
 
   /**
-   * Feature of the device.
-   *
-   * @param DeviceFeature $requiredFeature
+   * @param DeviceFeature
    */
   public function setRequiredFeature(DeviceFeature $requiredFeature)
   {

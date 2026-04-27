@@ -19,135 +19,60 @@ namespace Google\Service\ManagedServiceforMicrosoftActiveDirectoryConsumerAPI;
 
 class Domain extends \Google\Collection
 {
-  /**
-   * Not set.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The domain is being created.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * The domain has been created and is fully usable.
-   */
-  public const STATE_READY = 'READY';
-  /**
-   * The domain's configuration is being updated.
-   */
-  public const STATE_UPDATING = 'UPDATING';
-  /**
-   * The domain is being deleted.
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * The domain is being repaired and may be unusable. Details can be found in
-   * the `status_message` field.
-   */
-  public const STATE_REPAIRING = 'REPAIRING';
-  /**
-   * The domain is undergoing maintenance.
-   */
-  public const STATE_PERFORMING_MAINTENANCE = 'PERFORMING_MAINTENANCE';
-  /**
-   * The domain is not serving requests.
-   */
-  public const STATE_UNAVAILABLE = 'UNAVAILABLE';
   protected $collection_key = 'trusts';
   /**
-   * Optional. The name of delegated administrator account used to perform
-   * Active Directory operations. If not specified, `setupadmin` will be used.
-   *
    * @var string
    */
   public $admin;
   /**
-   * Optional. Configuration for audit logs. True if audit logs are enabled,
-   * else false. Default is audit logs disabled.
-   *
    * @var bool
    */
   public $auditLogsEnabled;
   /**
-   * Optional. The full names of the Google Compute Engine
-   * [networks](/compute/docs/networks-and-firewalls#networks) the domain
-   * instance is connected to. Networks can be added using UpdateDomain. The
-   * domain is only available on networks listed in `authorized_networks`. If
-   * CIDR subnets overlap between networks, domain creation will fail.
-   *
    * @var string[]
    */
   public $authorizedNetworks;
   /**
-   * Output only. The time the instance was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. The fully-qualified domain name of the exposed domain used by
-   * clients to connect to the service. Similar to what would be chosen for an
-   * Active Directory set up on an internal network.
-   *
    * @var string
    */
   public $fqdn;
   /**
-   * Optional. Resource labels that can contain user-provided metadata.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Required. Locations where domain needs to be provisioned. The locations can
-   * be specified according to https://cloud.google.com/compute/docs/regions-
-   * zones, such as `us-west1` or `us-east4`. Each domain supports up to 4
-   * locations, separated by commas. Each location will use a /26 block.
-   *
    * @var string[]
    */
   public $locations;
   /**
-   * Required. The unique name of the domain using the form:
-   * `projects/{project_id}/locations/global/domains/{domain_name}`.
-   *
    * @var string
    */
   public $name;
   /**
-   * Required. The CIDR range of internal addresses that are reserved for this
-   * domain. Reserved networks must be /24 or larger. Ranges must be unique and
-   * non-overlapping with existing subnets in [Domain].[authorized_networks].
-   *
    * @var string
    */
   public $reservedIpRange;
   /**
-   * Output only. The current state of this domain.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. Additional information about the current status of this
-   * domain, if available.
-   *
    * @var string
    */
   public $statusMessage;
   protected $trustsType = Trust::class;
   protected $trustsDataType = 'array';
   /**
-   * Output only. The last update time.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Optional. The name of delegated administrator account used to perform
-   * Active Directory operations. If not specified, `setupadmin` will be used.
-   *
-   * @param string $admin
+   * @param string
    */
   public function setAdmin($admin)
   {
@@ -161,10 +86,7 @@ class Domain extends \Google\Collection
     return $this->admin;
   }
   /**
-   * Optional. Configuration for audit logs. True if audit logs are enabled,
-   * else false. Default is audit logs disabled.
-   *
-   * @param bool $auditLogsEnabled
+   * @param bool
    */
   public function setAuditLogsEnabled($auditLogsEnabled)
   {
@@ -178,13 +100,7 @@ class Domain extends \Google\Collection
     return $this->auditLogsEnabled;
   }
   /**
-   * Optional. The full names of the Google Compute Engine
-   * [networks](/compute/docs/networks-and-firewalls#networks) the domain
-   * instance is connected to. Networks can be added using UpdateDomain. The
-   * domain is only available on networks listed in `authorized_networks`. If
-   * CIDR subnets overlap between networks, domain creation will fail.
-   *
-   * @param string[] $authorizedNetworks
+   * @param string[]
    */
   public function setAuthorizedNetworks($authorizedNetworks)
   {
@@ -198,9 +114,7 @@ class Domain extends \Google\Collection
     return $this->authorizedNetworks;
   }
   /**
-   * Output only. The time the instance was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -214,11 +128,7 @@ class Domain extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Output only. The fully-qualified domain name of the exposed domain used by
-   * clients to connect to the service. Similar to what would be chosen for an
-   * Active Directory set up on an internal network.
-   *
-   * @param string $fqdn
+   * @param string
    */
   public function setFqdn($fqdn)
   {
@@ -232,9 +142,7 @@ class Domain extends \Google\Collection
     return $this->fqdn;
   }
   /**
-   * Optional. Resource labels that can contain user-provided metadata.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -248,12 +156,7 @@ class Domain extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Required. Locations where domain needs to be provisioned. The locations can
-   * be specified according to https://cloud.google.com/compute/docs/regions-
-   * zones, such as `us-west1` or `us-east4`. Each domain supports up to 4
-   * locations, separated by commas. Each location will use a /26 block.
-   *
-   * @param string[] $locations
+   * @param string[]
    */
   public function setLocations($locations)
   {
@@ -267,10 +170,7 @@ class Domain extends \Google\Collection
     return $this->locations;
   }
   /**
-   * Required. The unique name of the domain using the form:
-   * `projects/{project_id}/locations/global/domains/{domain_name}`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -284,11 +184,7 @@ class Domain extends \Google\Collection
     return $this->name;
   }
   /**
-   * Required. The CIDR range of internal addresses that are reserved for this
-   * domain. Reserved networks must be /24 or larger. Ranges must be unique and
-   * non-overlapping with existing subnets in [Domain].[authorized_networks].
-   *
-   * @param string $reservedIpRange
+   * @param string
    */
   public function setReservedIpRange($reservedIpRange)
   {
@@ -302,29 +198,21 @@ class Domain extends \Google\Collection
     return $this->reservedIpRange;
   }
   /**
-   * Output only. The current state of this domain.
-   *
-   * Accepted values: STATE_UNSPECIFIED, CREATING, READY, UPDATING, DELETING,
-   * REPAIRING, PERFORMING_MAINTENANCE, UNAVAILABLE
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. Additional information about the current status of this
-   * domain, if available.
-   *
-   * @param string $statusMessage
+   * @param string
    */
   public function setStatusMessage($statusMessage)
   {
@@ -338,9 +226,7 @@ class Domain extends \Google\Collection
     return $this->statusMessage;
   }
   /**
-   * Output only. The current trusts associated with the domain.
-   *
-   * @param Trust[] $trusts
+   * @param Trust[]
    */
   public function setTrusts($trusts)
   {
@@ -354,9 +240,7 @@ class Domain extends \Google\Collection
     return $this->trusts;
   }
   /**
-   * Output only. The last update time.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

@@ -23,9 +23,7 @@ class CloseMatterResponse extends \Google\Model
   protected $matterDataType = '';
 
   /**
-   * The updated matter, with state **CLOSED**.
-   *
-   * @param Matter $matter
+   * @param Matter
    */
   public function setMatter(Matter $matter)
   {

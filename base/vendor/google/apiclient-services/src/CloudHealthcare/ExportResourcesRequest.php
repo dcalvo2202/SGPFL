@@ -24,18 +24,10 @@ class ExportResourcesRequest extends \Google\Model
         "type" => "_type",
   ];
   /**
-   * If provided, only resources updated after this time are exported. The time
-   * uses the format YYYY-MM-DDThh:mm:ss.sss+zz:zz. For example,
-   * `2015-02-07T13:28:17.239+02:00` or `2017-01-01T00:00:00Z`. The time must be
-   * specified to the second and include a time zone.
-   *
    * @var string
    */
   public $since;
   /**
-   * String of comma-delimited FHIR resource types. If provided, only resources
-   * of the specified resource type(s) are exported.
-   *
    * @var string
    */
   public $type;
@@ -45,12 +37,7 @@ class ExportResourcesRequest extends \Google\Model
   protected $gcsDestinationDataType = '';
 
   /**
-   * If provided, only resources updated after this time are exported. The time
-   * uses the format YYYY-MM-DDThh:mm:ss.sss+zz:zz. For example,
-   * `2015-02-07T13:28:17.239+02:00` or `2017-01-01T00:00:00Z`. The time must be
-   * specified to the second and include a time zone.
-   *
-   * @param string $since
+   * @param string
    */
   public function setSince($since)
   {
@@ -64,10 +51,7 @@ class ExportResourcesRequest extends \Google\Model
     return $this->since;
   }
   /**
-   * String of comma-delimited FHIR resource types. If provided, only resources
-   * of the specified resource type(s) are exported.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {
@@ -81,13 +65,7 @@ class ExportResourcesRequest extends \Google\Model
     return $this->type;
   }
   /**
-   * The BigQuery output destination. The Cloud Healthcare Service Agent
-   * requires two IAM roles on the BigQuery location:
-   * `roles/bigquery.dataEditor` and `roles/bigquery.jobUser`. The output is one
-   * BigQuery table per resource type. Unlike when setting `BigQueryDestination`
-   * for `StreamConfig`, `ExportResources` does not create BigQuery views.
-   *
-   * @param GoogleCloudHealthcareV1FhirBigQueryDestination $bigqueryDestination
+   * @param GoogleCloudHealthcareV1FhirBigQueryDestination
    */
   public function setBigqueryDestination(GoogleCloudHealthcareV1FhirBigQueryDestination $bigqueryDestination)
   {
@@ -101,13 +79,7 @@ class ExportResourcesRequest extends \Google\Model
     return $this->bigqueryDestination;
   }
   /**
-   * The Cloud Storage output destination. The Healthcare Service Agent account
-   * requires the `roles/storage.objectAdmin` role on the Cloud Storage
-   * location. The exported outputs are organized by FHIR resource types. The
-   * server creates one object per resource type. Each object contains newline
-   * delimited JSON, and each line is a FHIR resource.
-   *
-   * @param GoogleCloudHealthcareV1FhirGcsDestination $gcsDestination
+   * @param GoogleCloudHealthcareV1FhirGcsDestination
    */
   public function setGcsDestination(GoogleCloudHealthcareV1FhirGcsDestination $gcsDestination)
   {

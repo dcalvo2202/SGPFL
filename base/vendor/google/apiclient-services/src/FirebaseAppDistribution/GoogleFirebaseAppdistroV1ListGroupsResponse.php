@@ -23,17 +23,12 @@ class GoogleFirebaseAppdistroV1ListGroupsResponse extends \Google\Collection
   protected $groupsType = GoogleFirebaseAppdistroV1Group::class;
   protected $groupsDataType = 'array';
   /**
-   * A short-lived token, which can be sent as `pageToken` to retrieve the next
-   * page. If this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The groups listed.
-   *
-   * @param GoogleFirebaseAppdistroV1Group[] $groups
+   * @param GoogleFirebaseAppdistroV1Group[]
    */
   public function setGroups($groups)
   {
@@ -47,10 +42,7 @@ class GoogleFirebaseAppdistroV1ListGroupsResponse extends \Google\Collection
     return $this->groups;
   }
   /**
-   * A short-lived token, which can be sent as `pageToken` to retrieve the next
-   * page. If this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

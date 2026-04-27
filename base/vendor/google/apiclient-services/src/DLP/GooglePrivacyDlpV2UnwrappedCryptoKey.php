@@ -20,16 +20,12 @@ namespace Google\Service\DLP;
 class GooglePrivacyDlpV2UnwrappedCryptoKey extends \Google\Model
 {
   /**
-   * Required. A 128/192/256 bit key.
-   *
    * @var string
    */
   public $key;
 
   /**
-   * Required. A 128/192/256 bit key.
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {

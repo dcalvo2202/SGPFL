@@ -21,39 +21,24 @@ class PrestoJob extends \Google\Collection
 {
   protected $collection_key = 'clientTags';
   /**
-   * Optional. Presto client tags to attach to this query
-   *
    * @var string[]
    */
   public $clientTags;
   /**
-   * Optional. Whether to continue executing queries if a query fails. The
-   * default value is false. Setting to true can be useful when executing
-   * independent parallel queries.
-   *
    * @var bool
    */
   public $continueOnFailure;
   protected $loggingConfigType = LoggingConfig::class;
   protected $loggingConfigDataType = '';
   /**
-   * Optional. The format in which query output will be displayed. See the
-   * Presto documentation for supported output formats
-   *
    * @var string
    */
   public $outputFormat;
   /**
-   * Optional. A mapping of property names to values. Used to set Presto session
-   * properties (https://prestodb.io/docs/current/sql/set-session.html)
-   * Equivalent to using the --session flag in the Presto CLI
-   *
    * @var string[]
    */
   public $properties;
   /**
-   * The HCFS URI of the script that contains SQL queries.
-   *
    * @var string
    */
   public $queryFileUri;
@@ -61,9 +46,7 @@ class PrestoJob extends \Google\Collection
   protected $queryListDataType = '';
 
   /**
-   * Optional. Presto client tags to attach to this query
-   *
-   * @param string[] $clientTags
+   * @param string[]
    */
   public function setClientTags($clientTags)
   {
@@ -77,11 +60,7 @@ class PrestoJob extends \Google\Collection
     return $this->clientTags;
   }
   /**
-   * Optional. Whether to continue executing queries if a query fails. The
-   * default value is false. Setting to true can be useful when executing
-   * independent parallel queries.
-   *
-   * @param bool $continueOnFailure
+   * @param bool
    */
   public function setContinueOnFailure($continueOnFailure)
   {
@@ -95,9 +74,7 @@ class PrestoJob extends \Google\Collection
     return $this->continueOnFailure;
   }
   /**
-   * Optional. The runtime log config for job execution.
-   *
-   * @param LoggingConfig $loggingConfig
+   * @param LoggingConfig
    */
   public function setLoggingConfig(LoggingConfig $loggingConfig)
   {
@@ -111,10 +88,7 @@ class PrestoJob extends \Google\Collection
     return $this->loggingConfig;
   }
   /**
-   * Optional. The format in which query output will be displayed. See the
-   * Presto documentation for supported output formats
-   *
-   * @param string $outputFormat
+   * @param string
    */
   public function setOutputFormat($outputFormat)
   {
@@ -128,11 +102,7 @@ class PrestoJob extends \Google\Collection
     return $this->outputFormat;
   }
   /**
-   * Optional. A mapping of property names to values. Used to set Presto session
-   * properties (https://prestodb.io/docs/current/sql/set-session.html)
-   * Equivalent to using the --session flag in the Presto CLI
-   *
-   * @param string[] $properties
+   * @param string[]
    */
   public function setProperties($properties)
   {
@@ -146,9 +116,7 @@ class PrestoJob extends \Google\Collection
     return $this->properties;
   }
   /**
-   * The HCFS URI of the script that contains SQL queries.
-   *
-   * @param string $queryFileUri
+   * @param string
    */
   public function setQueryFileUri($queryFileUri)
   {
@@ -162,9 +130,7 @@ class PrestoJob extends \Google\Collection
     return $this->queryFileUri;
   }
   /**
-   * A list of queries.
-   *
-   * @param QueryList $queryList
+   * @param QueryList
    */
   public function setQueryList(QueryList $queryList)
   {

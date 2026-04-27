@@ -23,16 +23,12 @@ class ListMigrationJobObjectsResponse extends \Google\Collection
   protected $migrationJobObjectsType = MigrationJobObject::class;
   protected $migrationJobObjectsDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * List of migration job objects.
-   *
-   * @param MigrationJobObject[] $migrationJobObjects
+   * @param MigrationJobObject[]
    */
   public function setMigrationJobObjects($migrationJobObjects)
   {
@@ -46,9 +42,7 @@ class ListMigrationJobObjectsResponse extends \Google\Collection
     return $this->migrationJobObjects;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

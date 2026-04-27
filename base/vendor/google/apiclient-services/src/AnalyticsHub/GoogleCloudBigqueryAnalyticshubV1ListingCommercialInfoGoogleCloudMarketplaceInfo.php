@@ -20,54 +20,30 @@ namespace Google\Service\AnalyticsHub;
 class GoogleCloudBigqueryAnalyticshubV1ListingCommercialInfoGoogleCloudMarketplaceInfo extends \Google\Model
 {
   /**
-   * Commercialization is incomplete and cannot be used.
-   */
-  public const COMMERCIAL_STATE_COMMERCIAL_STATE_UNSPECIFIED = 'COMMERCIAL_STATE_UNSPECIFIED';
-  /**
-   * Commercialization has been initialized.
-   */
-  public const COMMERCIAL_STATE_ONBOARDING = 'ONBOARDING';
-  /**
-   * Commercialization is complete and available for use.
-   */
-  public const COMMERCIAL_STATE_ACTIVE = 'ACTIVE';
-  /**
-   * Output only. Commercial state of the Marketplace Data Product.
-   *
    * @var string
    */
   public $commercialState;
   /**
-   * Output only. Resource name of the commercial service associated with the
-   * Marketplace Data Product. e.g. example.com
-   *
    * @var string
    */
   public $service;
 
   /**
-   * Output only. Commercial state of the Marketplace Data Product.
-   *
-   * Accepted values: COMMERCIAL_STATE_UNSPECIFIED, ONBOARDING, ACTIVE
-   *
-   * @param self::COMMERCIAL_STATE_* $commercialState
+   * @param string
    */
   public function setCommercialState($commercialState)
   {
     $this->commercialState = $commercialState;
   }
   /**
-   * @return self::COMMERCIAL_STATE_*
+   * @return string
    */
   public function getCommercialState()
   {
     return $this->commercialState;
   }
   /**
-   * Output only. Resource name of the commercial service associated with the
-   * Marketplace Data Product. e.g. example.com
-   *
-   * @param string $service
+   * @param string
    */
   public function setService($service)
   {

@@ -20,36 +20,20 @@ namespace Google\Service\CloudResourceManager;
 class EffectiveTagBindingCollection extends \Google\Model
 {
   /**
-   * Tag keys/values effectively bound to this resource, specified in namespaced
-   * format. For example: "123/environment": "production"
-   *
    * @var string[]
    */
   public $effectiveTags;
   /**
-   * The full resource name of the resource the TagBindings are bound to. E.g.
-   * `//cloudresourcemanager.googleapis.com/projects/123`
-   *
    * @var string
    */
   public $fullResourceName;
   /**
-   * Identifier. The name of the EffectiveTagBindingCollection, following the
-   * convention: `locations/{location}/effectiveTagBindingCollections/{encoded-
-   * full-resource-name}` where the encoded-full-resource-name is the UTF-8
-   * encoded name of the GCP resource the TagBindings are bound to. E.g. "locati
-   * ons/global/effectiveTagBindingCollections/%2f%2fcloudresourcemanager.google
-   * apis.com%2fprojects%2f123"
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Tag keys/values effectively bound to this resource, specified in namespaced
-   * format. For example: "123/environment": "production"
-   *
-   * @param string[] $effectiveTags
+   * @param string[]
    */
   public function setEffectiveTags($effectiveTags)
   {
@@ -63,10 +47,7 @@ class EffectiveTagBindingCollection extends \Google\Model
     return $this->effectiveTags;
   }
   /**
-   * The full resource name of the resource the TagBindings are bound to. E.g.
-   * `//cloudresourcemanager.googleapis.com/projects/123`
-   *
-   * @param string $fullResourceName
+   * @param string
    */
   public function setFullResourceName($fullResourceName)
   {
@@ -80,14 +61,7 @@ class EffectiveTagBindingCollection extends \Google\Model
     return $this->fullResourceName;
   }
   /**
-   * Identifier. The name of the EffectiveTagBindingCollection, following the
-   * convention: `locations/{location}/effectiveTagBindingCollections/{encoded-
-   * full-resource-name}` where the encoded-full-resource-name is the UTF-8
-   * encoded name of the GCP resource the TagBindings are bound to. E.g. "locati
-   * ons/global/effectiveTagBindingCollections/%2f%2fcloudresourcemanager.google
-   * apis.com%2fprojects%2f123"
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

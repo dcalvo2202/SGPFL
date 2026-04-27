@@ -20,46 +20,28 @@ namespace Google\Service\GKEHub;
 class ConfigManagementOciConfig extends \Google\Model
 {
   /**
-   * Optional. The Google Cloud Service Account Email used for auth when
-   * secret_type is `gcpserviceaccount`.
-   *
    * @var string
    */
   public $gcpServiceAccountEmail;
   /**
-   * Optional. The absolute path of the directory that contains the local
-   * resources. Default: the root directory of the image.
-   *
    * @var string
    */
   public $policyDir;
   /**
-   * Required. Type of secret configured for access to the OCI repo. Must be one
-   * of `gcenode`, `gcpserviceaccount`, `k8sserviceaccount` or `none`. The
-   * validation of this is case-sensitive.
-   *
    * @var string
    */
   public $secretType;
   /**
-   * Required. The OCI image repository URL for the package to sync from. e.g.
-   * `LOCATION-docker.pkg.dev/PROJECT_ID/REPOSITORY_NAME/PACKAGE_NAME`.
-   *
    * @var string
    */
   public $syncRepo;
   /**
-   * Optional. Period in seconds between consecutive syncs. Default: 15.
-   *
    * @var string
    */
   public $syncWaitSecs;
 
   /**
-   * Optional. The Google Cloud Service Account Email used for auth when
-   * secret_type is `gcpserviceaccount`.
-   *
-   * @param string $gcpServiceAccountEmail
+   * @param string
    */
   public function setGcpServiceAccountEmail($gcpServiceAccountEmail)
   {
@@ -73,10 +55,7 @@ class ConfigManagementOciConfig extends \Google\Model
     return $this->gcpServiceAccountEmail;
   }
   /**
-   * Optional. The absolute path of the directory that contains the local
-   * resources. Default: the root directory of the image.
-   *
-   * @param string $policyDir
+   * @param string
    */
   public function setPolicyDir($policyDir)
   {
@@ -90,11 +69,7 @@ class ConfigManagementOciConfig extends \Google\Model
     return $this->policyDir;
   }
   /**
-   * Required. Type of secret configured for access to the OCI repo. Must be one
-   * of `gcenode`, `gcpserviceaccount`, `k8sserviceaccount` or `none`. The
-   * validation of this is case-sensitive.
-   *
-   * @param string $secretType
+   * @param string
    */
   public function setSecretType($secretType)
   {
@@ -108,10 +83,7 @@ class ConfigManagementOciConfig extends \Google\Model
     return $this->secretType;
   }
   /**
-   * Required. The OCI image repository URL for the package to sync from. e.g.
-   * `LOCATION-docker.pkg.dev/PROJECT_ID/REPOSITORY_NAME/PACKAGE_NAME`.
-   *
-   * @param string $syncRepo
+   * @param string
    */
   public function setSyncRepo($syncRepo)
   {
@@ -125,9 +97,7 @@ class ConfigManagementOciConfig extends \Google\Model
     return $this->syncRepo;
   }
   /**
-   * Optional. Period in seconds between consecutive syncs. Default: 15.
-   *
-   * @param string $syncWaitSecs
+   * @param string
    */
   public function setSyncWaitSecs($syncWaitSecs)
   {

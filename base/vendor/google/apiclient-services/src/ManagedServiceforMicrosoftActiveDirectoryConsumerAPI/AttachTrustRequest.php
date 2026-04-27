@@ -23,9 +23,7 @@ class AttachTrustRequest extends \Google\Model
   protected $trustDataType = '';
 
   /**
-   * Required. The domain trust resource.
-   *
-   * @param Trust $trust
+   * @param Trust
    */
   public function setTrust(Trust $trust)
   {

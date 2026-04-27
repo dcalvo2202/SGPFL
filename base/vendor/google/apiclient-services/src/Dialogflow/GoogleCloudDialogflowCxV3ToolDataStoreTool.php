@@ -26,7 +26,7 @@ class GoogleCloudDialogflowCxV3ToolDataStoreTool extends \Google\Collection
   protected $fallbackPromptDataType = '';
 
   /**
-   * @param GoogleCloudDialogflowCxV3DataStoreConnection[] $dataStoreConnections
+   * @param GoogleCloudDialogflowCxV3DataStoreConnection[]
    */
   public function setDataStoreConnections($dataStoreConnections)
   {
@@ -40,7 +40,7 @@ class GoogleCloudDialogflowCxV3ToolDataStoreTool extends \Google\Collection
     return $this->dataStoreConnections;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3ToolDataStoreToolFallbackPrompt $fallbackPrompt
+   * @param GoogleCloudDialogflowCxV3ToolDataStoreToolFallbackPrompt
    */
   public function setFallbackPrompt(GoogleCloudDialogflowCxV3ToolDataStoreToolFallbackPrompt $fallbackPrompt)
   {

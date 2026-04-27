@@ -20,18 +20,12 @@ namespace Google\Service\AndroidEnterprise;
 class ApprovalUrlInfo extends \Google\Model
 {
   /**
-   * A URL that displays a product's permissions and that can also be used to
-   * approve the product with the Products.approve call.
-   *
    * @var string
    */
   public $approvalUrl;
 
   /**
-   * A URL that displays a product's permissions and that can also be used to
-   * approve the product with the Products.approve call.
-   *
-   * @param string $approvalUrl
+   * @param string
    */
   public function setApprovalUrl($approvalUrl)
   {

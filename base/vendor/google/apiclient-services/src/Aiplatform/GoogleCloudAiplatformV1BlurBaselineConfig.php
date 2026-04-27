@@ -20,22 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1BlurBaselineConfig extends \Google\Model
 {
   /**
-   * The standard deviation of the blur kernel for the blurred baseline. The
-   * same blurring parameter is used for both the height and the width
-   * dimension. If not set, the method defaults to the zero (i.e. black for
-   * images) baseline.
-   *
    * @var float
    */
   public $maxBlurSigma;
 
   /**
-   * The standard deviation of the blur kernel for the blurred baseline. The
-   * same blurring parameter is used for both the height and the width
-   * dimension. If not set, the method defaults to the zero (i.e. black for
-   * images) baseline.
-   *
-   * @param float $maxBlurSigma
+   * @param float
    */
   public function setMaxBlurSigma($maxBlurSigma)
   {

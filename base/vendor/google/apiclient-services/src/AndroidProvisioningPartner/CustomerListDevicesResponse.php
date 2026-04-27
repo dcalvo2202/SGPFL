@@ -23,17 +23,12 @@ class CustomerListDevicesResponse extends \Google\Collection
   protected $devicesType = Device::class;
   protected $devicesDataType = 'array';
   /**
-   * A token used to access the next page of results. Omitted if no further
-   * results are available.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The customer's devices.
-   *
-   * @param Device[] $devices
+   * @param Device[]
    */
   public function setDevices($devices)
   {
@@ -47,10 +42,7 @@ class CustomerListDevicesResponse extends \Google\Collection
     return $this->devices;
   }
   /**
-   * A token used to access the next page of results. Omitted if no further
-   * results are available.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

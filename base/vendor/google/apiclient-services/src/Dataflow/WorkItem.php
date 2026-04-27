@@ -21,32 +21,22 @@ class WorkItem extends \Google\Collection
 {
   protected $collection_key = 'packages';
   /**
-   * Work item-specific configuration as an opaque blob.
-   *
    * @var string
    */
   public $configuration;
   /**
-   * Identifies this WorkItem.
-   *
    * @var string
    */
   public $id;
   /**
-   * The initial index to use when reporting the status of the WorkItem.
-   *
    * @var string
    */
   public $initialReportIndex;
   /**
-   * Identifies the workflow job this WorkItem belongs to.
-   *
    * @var string
    */
   public $jobId;
   /**
-   * Time when the lease on this Work will expire.
-   *
    * @var string
    */
   public $leaseExpireTime;
@@ -55,14 +45,10 @@ class WorkItem extends \Google\Collection
   protected $packagesType = Package::class;
   protected $packagesDataType = 'array';
   /**
-   * Identifies the cloud project this WorkItem belongs to.
-   *
    * @var string
    */
   public $projectId;
   /**
-   * Recommended reporting interval.
-   *
    * @var string
    */
   public $reportStatusInterval;
@@ -80,9 +66,7 @@ class WorkItem extends \Google\Collection
   protected $streamingSetupTaskDataType = '';
 
   /**
-   * Work item-specific configuration as an opaque blob.
-   *
-   * @param string $configuration
+   * @param string
    */
   public function setConfiguration($configuration)
   {
@@ -96,9 +80,7 @@ class WorkItem extends \Google\Collection
     return $this->configuration;
   }
   /**
-   * Identifies this WorkItem.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -112,9 +94,7 @@ class WorkItem extends \Google\Collection
     return $this->id;
   }
   /**
-   * The initial index to use when reporting the status of the WorkItem.
-   *
-   * @param string $initialReportIndex
+   * @param string
    */
   public function setInitialReportIndex($initialReportIndex)
   {
@@ -128,9 +108,7 @@ class WorkItem extends \Google\Collection
     return $this->initialReportIndex;
   }
   /**
-   * Identifies the workflow job this WorkItem belongs to.
-   *
-   * @param string $jobId
+   * @param string
    */
   public function setJobId($jobId)
   {
@@ -144,9 +122,7 @@ class WorkItem extends \Google\Collection
     return $this->jobId;
   }
   /**
-   * Time when the lease on this Work will expire.
-   *
-   * @param string $leaseExpireTime
+   * @param string
    */
   public function setLeaseExpireTime($leaseExpireTime)
   {
@@ -160,9 +136,7 @@ class WorkItem extends \Google\Collection
     return $this->leaseExpireTime;
   }
   /**
-   * Additional information for MapTask WorkItems.
-   *
-   * @param MapTask $mapTask
+   * @param MapTask
    */
   public function setMapTask(MapTask $mapTask)
   {
@@ -176,10 +150,7 @@ class WorkItem extends \Google\Collection
     return $this->mapTask;
   }
   /**
-   * Any required packages that need to be fetched in order to execute this
-   * WorkItem.
-   *
-   * @param Package[] $packages
+   * @param Package[]
    */
   public function setPackages($packages)
   {
@@ -193,9 +164,7 @@ class WorkItem extends \Google\Collection
     return $this->packages;
   }
   /**
-   * Identifies the cloud project this WorkItem belongs to.
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {
@@ -209,9 +178,7 @@ class WorkItem extends \Google\Collection
     return $this->projectId;
   }
   /**
-   * Recommended reporting interval.
-   *
-   * @param string $reportStatusInterval
+   * @param string
    */
   public function setReportStatusInterval($reportStatusInterval)
   {
@@ -225,9 +192,7 @@ class WorkItem extends \Google\Collection
     return $this->reportStatusInterval;
   }
   /**
-   * Additional information for SeqMapTask WorkItems.
-   *
-   * @param SeqMapTask $seqMapTask
+   * @param SeqMapTask
    */
   public function setSeqMapTask(SeqMapTask $seqMapTask)
   {
@@ -241,9 +206,7 @@ class WorkItem extends \Google\Collection
     return $this->seqMapTask;
   }
   /**
-   * Additional information for ShellTask WorkItems.
-   *
-   * @param ShellTask $shellTask
+   * @param ShellTask
    */
   public function setShellTask(ShellTask $shellTask)
   {
@@ -257,9 +220,7 @@ class WorkItem extends \Google\Collection
     return $this->shellTask;
   }
   /**
-   * Additional information for source operation WorkItems.
-   *
-   * @param SourceOperationRequest $sourceOperationTask
+   * @param SourceOperationRequest
    */
   public function setSourceOperationTask(SourceOperationRequest $sourceOperationTask)
   {
@@ -273,9 +234,7 @@ class WorkItem extends \Google\Collection
     return $this->sourceOperationTask;
   }
   /**
-   * Additional information for StreamingComputationTask WorkItems.
-   *
-   * @param StreamingComputationTask $streamingComputationTask
+   * @param StreamingComputationTask
    */
   public function setStreamingComputationTask(StreamingComputationTask $streamingComputationTask)
   {
@@ -289,9 +248,7 @@ class WorkItem extends \Google\Collection
     return $this->streamingComputationTask;
   }
   /**
-   * Additional information for StreamingConfigTask WorkItems.
-   *
-   * @param StreamingConfigTask $streamingConfigTask
+   * @param StreamingConfigTask
    */
   public function setStreamingConfigTask(StreamingConfigTask $streamingConfigTask)
   {
@@ -305,9 +262,7 @@ class WorkItem extends \Google\Collection
     return $this->streamingConfigTask;
   }
   /**
-   * Additional information for StreamingSetupTask WorkItems.
-   *
-   * @param StreamingSetupTask $streamingSetupTask
+   * @param StreamingSetupTask
    */
   public function setStreamingSetupTask(StreamingSetupTask $streamingSetupTask)
   {

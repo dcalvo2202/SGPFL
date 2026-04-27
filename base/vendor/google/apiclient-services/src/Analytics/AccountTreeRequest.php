@@ -24,8 +24,6 @@ class AccountTreeRequest extends \Google\Model
    */
   public $accountName;
   /**
-   * Resource type for account ticket.
-   *
    * @var string
    */
   public $kind;
@@ -47,7 +45,7 @@ class AccountTreeRequest extends \Google\Model
   public $websiteUrl;
 
   /**
-   * @param string $accountName
+   * @param string
    */
   public function setAccountName($accountName)
   {
@@ -61,9 +59,7 @@ class AccountTreeRequest extends \Google\Model
     return $this->accountName;
   }
   /**
-   * Resource type for account ticket.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -77,7 +73,7 @@ class AccountTreeRequest extends \Google\Model
     return $this->kind;
   }
   /**
-   * @param string $profileName
+   * @param string
    */
   public function setProfileName($profileName)
   {
@@ -91,7 +87,7 @@ class AccountTreeRequest extends \Google\Model
     return $this->profileName;
   }
   /**
-   * @param string $timezone
+   * @param string
    */
   public function setTimezone($timezone)
   {
@@ -105,7 +101,7 @@ class AccountTreeRequest extends \Google\Model
     return $this->timezone;
   }
   /**
-   * @param string $webpropertyName
+   * @param string
    */
   public function setWebpropertyName($webpropertyName)
   {
@@ -119,7 +115,7 @@ class AccountTreeRequest extends \Google\Model
     return $this->webpropertyName;
   }
   /**
-   * @param string $websiteUrl
+   * @param string
    */
   public function setWebsiteUrl($websiteUrl)
   {

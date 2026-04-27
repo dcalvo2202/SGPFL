@@ -26,11 +26,7 @@ class ShardSummary extends \Google\Collection
   protected $shardResultDataType = '';
 
   /**
-   * Summaries of the steps belonging to the shard. With flaky_test_attempts
-   * enabled from TestExecutionService, more than one run (Step) can present.
-   * And the runs will be sorted by multistep_number.
-   *
-   * @param StepSummary[] $runs
+   * @param StepSummary[]
    */
   public function setRuns($runs)
   {
@@ -44,9 +40,7 @@ class ShardSummary extends \Google\Collection
     return $this->runs;
   }
   /**
-   * Merged result of the shard.
-   *
-   * @param MergedResult $shardResult
+   * @param MergedResult
    */
   public function setShardResult(MergedResult $shardResult)
   {

@@ -21,23 +21,16 @@ class GoogleCloudContentwarehouseV1PublishAction extends \Google\Collection
 {
   protected $collection_key = 'messages';
   /**
-   * Messages to be published.
-   *
    * @var string[]
    */
   public $messages;
   /**
-   * The topic id in the Pub/Sub service for which messages will be published
-   * to.
-   *
    * @var string
    */
   public $topicId;
 
   /**
-   * Messages to be published.
-   *
-   * @param string[] $messages
+   * @param string[]
    */
   public function setMessages($messages)
   {
@@ -51,10 +44,7 @@ class GoogleCloudContentwarehouseV1PublishAction extends \Google\Collection
     return $this->messages;
   }
   /**
-   * The topic id in the Pub/Sub service for which messages will be published
-   * to.
-   *
-   * @param string $topicId
+   * @param string
    */
   public function setTopicId($topicId)
   {

@@ -25,7 +25,7 @@ class GoogleCloudDialogflowCxV3LoadVersionRequest extends \Google\Model
   public $allowOverrideAgentResources;
 
   /**
-   * @param bool $allowOverrideAgentResources
+   * @param bool
    */
   public function setAllowOverrideAgentResources($allowOverrideAgentResources)
   {

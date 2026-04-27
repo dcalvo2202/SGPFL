@@ -31,22 +31,20 @@ class ReportReachCriteria extends \Google\Collection
   protected $dimensionsType = SortedDimension::class;
   protected $dimensionsDataType = 'array';
   /**
-   * The list of names of metrics the report should include.
-   *
+   * @var bool
+   */
+  public $enableAllDimensionCombinations;
+  /**
    * @var string[]
    */
   public $metricNames;
   /**
-   * The list of names of Reach By Frequency metrics the report should include.
-   *
    * @var string[]
    */
   public $reachByFrequencyMetricNames;
 
   /**
-   * Activity group.
-   *
-   * @param Activities $activities
+   * @param Activities
    */
   public function setActivities(Activities $activities)
   {
@@ -60,9 +58,7 @@ class ReportReachCriteria extends \Google\Collection
     return $this->activities;
   }
   /**
-   * Custom Rich Media Events group.
-   *
-   * @param CustomRichMediaEvents $customRichMediaEvents
+   * @param CustomRichMediaEvents
    */
   public function setCustomRichMediaEvents(CustomRichMediaEvents $customRichMediaEvents)
   {
@@ -76,9 +72,7 @@ class ReportReachCriteria extends \Google\Collection
     return $this->customRichMediaEvents;
   }
   /**
-   * The date range this report should be run for.
-   *
-   * @param DateRange $dateRange
+   * @param DateRange
    */
   public function setDateRange(DateRange $dateRange)
   {
@@ -92,11 +86,7 @@ class ReportReachCriteria extends \Google\Collection
     return $this->dateRange;
   }
   /**
-   * The list of filters on which dimensions are filtered. Filters for different
-   * dimensions are ANDed, filters for the same dimension are grouped together
-   * and ORed.
-   *
-   * @param DimensionValue[] $dimensionFilters
+   * @param DimensionValue[]
    */
   public function setDimensionFilters($dimensionFilters)
   {
@@ -110,9 +100,7 @@ class ReportReachCriteria extends \Google\Collection
     return $this->dimensionFilters;
   }
   /**
-   * The list of dimensions the report should include.
-   *
-   * @param SortedDimension[] $dimensions
+   * @param SortedDimension[]
    */
   public function setDimensions($dimensions)
   {
@@ -126,9 +114,21 @@ class ReportReachCriteria extends \Google\Collection
     return $this->dimensions;
   }
   /**
-   * The list of names of metrics the report should include.
-   *
-   * @param string[] $metricNames
+   * @param bool
+   */
+  public function setEnableAllDimensionCombinations($enableAllDimensionCombinations)
+  {
+    $this->enableAllDimensionCombinations = $enableAllDimensionCombinations;
+  }
+  /**
+   * @return bool
+   */
+  public function getEnableAllDimensionCombinations()
+  {
+    return $this->enableAllDimensionCombinations;
+  }
+  /**
+   * @param string[]
    */
   public function setMetricNames($metricNames)
   {
@@ -142,9 +142,7 @@ class ReportReachCriteria extends \Google\Collection
     return $this->metricNames;
   }
   /**
-   * The list of names of Reach By Frequency metrics the report should include.
-   *
-   * @param string[] $reachByFrequencyMetricNames
+   * @param string[]
    */
   public function setReachByFrequencyMetricNames($reachByFrequencyMetricNames)
   {

@@ -22,17 +22,12 @@ class ImageNote extends \Google\Model
   protected $fingerprintType = Fingerprint::class;
   protected $fingerprintDataType = '';
   /**
-   * Required. Immutable. The resource_url for the resource representing the
-   * basis of associated occurrence images.
-   *
    * @var string
    */
   public $resourceUrl;
 
   /**
-   * Required. Immutable. The fingerprint of the base image.
-   *
-   * @param Fingerprint $fingerprint
+   * @param Fingerprint
    */
   public function setFingerprint(Fingerprint $fingerprint)
   {
@@ -46,10 +41,7 @@ class ImageNote extends \Google\Model
     return $this->fingerprint;
   }
   /**
-   * Required. Immutable. The resource_url for the resource representing the
-   * basis of associated occurrence images.
-   *
-   * @param string $resourceUrl
+   * @param string
    */
   public function setResourceUrl($resourceUrl)
   {

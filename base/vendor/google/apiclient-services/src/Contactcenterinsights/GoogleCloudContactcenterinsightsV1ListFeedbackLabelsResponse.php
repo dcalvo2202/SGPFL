@@ -23,16 +23,12 @@ class GoogleCloudContactcenterinsightsV1ListFeedbackLabelsResponse extends \Goog
   protected $feedbackLabelsType = GoogleCloudContactcenterinsightsV1FeedbackLabel::class;
   protected $feedbackLabelsDataType = 'array';
   /**
-   * The next page token.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The feedback labels that match the request.
-   *
-   * @param GoogleCloudContactcenterinsightsV1FeedbackLabel[] $feedbackLabels
+   * @param GoogleCloudContactcenterinsightsV1FeedbackLabel[]
    */
   public function setFeedbackLabels($feedbackLabels)
   {
@@ -46,9 +42,7 @@ class GoogleCloudContactcenterinsightsV1ListFeedbackLabelsResponse extends \Goog
     return $this->feedbackLabels;
   }
   /**
-   * The next page token.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

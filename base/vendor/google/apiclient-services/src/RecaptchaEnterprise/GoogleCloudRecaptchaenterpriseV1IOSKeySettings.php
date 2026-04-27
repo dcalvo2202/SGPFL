@@ -21,19 +21,10 @@ class GoogleCloudRecaptchaenterpriseV1IOSKeySettings extends \Google\Collection
 {
   protected $collection_key = 'allowedBundleIds';
   /**
-   * Optional. If set to true, allowed_bundle_ids are not enforced.
-   *
    * @var bool
    */
   public $allowAllBundleIds;
   /**
-   * Optional. iOS bundle IDs of apps allowed to use the key. Example:
-   * 'com.companyname.productname.appname' Each key supports a maximum of 250
-   * bundle IDs. To use a key on more apps, set `allow_all_bundle_ids` to true.
-   * When this is set, you are responsible for validating the bundle id by
-   * checking the `token_properties.ios_bundle_id` field in each assessment
-   * response against your list of allowed bundle IDs.
-   *
    * @var string[]
    */
   public $allowedBundleIds;
@@ -41,9 +32,7 @@ class GoogleCloudRecaptchaenterpriseV1IOSKeySettings extends \Google\Collection
   protected $appleDeveloperIdDataType = '';
 
   /**
-   * Optional. If set to true, allowed_bundle_ids are not enforced.
-   *
-   * @param bool $allowAllBundleIds
+   * @param bool
    */
   public function setAllowAllBundleIds($allowAllBundleIds)
   {
@@ -57,14 +46,7 @@ class GoogleCloudRecaptchaenterpriseV1IOSKeySettings extends \Google\Collection
     return $this->allowAllBundleIds;
   }
   /**
-   * Optional. iOS bundle IDs of apps allowed to use the key. Example:
-   * 'com.companyname.productname.appname' Each key supports a maximum of 250
-   * bundle IDs. To use a key on more apps, set `allow_all_bundle_ids` to true.
-   * When this is set, you are responsible for validating the bundle id by
-   * checking the `token_properties.ios_bundle_id` field in each assessment
-   * response against your list of allowed bundle IDs.
-   *
-   * @param string[] $allowedBundleIds
+   * @param string[]
    */
   public function setAllowedBundleIds($allowedBundleIds)
   {
@@ -78,13 +60,7 @@ class GoogleCloudRecaptchaenterpriseV1IOSKeySettings extends \Google\Collection
     return $this->allowedBundleIds;
   }
   /**
-   * Optional. Apple Developer account details for the app that is protected by
-   * the reCAPTCHA Key. reCAPTCHA leverages platform-specific checks like Apple
-   * App Attest and Apple DeviceCheck to protect your app from abuse. Providing
-   * these fields allows reCAPTCHA to get a better assessment of the integrity
-   * of your app.
-   *
-   * @param GoogleCloudRecaptchaenterpriseV1AppleDeveloperId $appleDeveloperId
+   * @param GoogleCloudRecaptchaenterpriseV1AppleDeveloperId
    */
   public function setAppleDeveloperId(GoogleCloudRecaptchaenterpriseV1AppleDeveloperId $appleDeveloperId)
   {

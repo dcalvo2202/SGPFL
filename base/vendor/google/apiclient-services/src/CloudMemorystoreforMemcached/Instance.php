@@ -19,96 +19,26 @@ namespace Google\Service\CloudMemorystoreforMemcached;
 
 class Instance extends \Google\Collection
 {
-  /**
-   * Memcache version is not specified by customer
-   */
-  public const MEMCACHE_VERSION_MEMCACHE_VERSION_UNSPECIFIED = 'MEMCACHE_VERSION_UNSPECIFIED';
-  /**
-   * Memcached 1.5 version.
-   */
-  public const MEMCACHE_VERSION_MEMCACHE_1_5 = 'MEMCACHE_1_5';
-  /**
-   * Memcached 1.6.15 version.
-   */
-  public const MEMCACHE_VERSION_MEMCACHE_1_6_15 = 'MEMCACHE_1_6_15';
-  /**
-   * State not set.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Memcached instance is being created.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * Memcached instance has been created and ready to be used.
-   */
-  public const STATE_READY = 'READY';
-  /**
-   * Memcached instance is updating configuration such as maintenance policy and
-   * schedule.
-   */
-  public const STATE_UPDATING = 'UPDATING';
-  /**
-   * Memcached instance is being deleted.
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * Memcached instance is going through maintenance, e.g. data plane rollout.
-   */
-  public const STATE_PERFORMING_MAINTENANCE = 'PERFORMING_MAINTENANCE';
-  /**
-   * Memcached instance is undergoing memcached engine version upgrade.
-   */
-  public const STATE_MEMCACHE_VERSION_UPGRADING = 'MEMCACHE_VERSION_UPGRADING';
   protected $collection_key = 'zones';
   /**
-   * The full name of the Google Compute Engine
-   * [network](/compute/docs/networks-and-firewalls#networks) to which the
-   * instance is connected. If left unspecified, the `default` network will be
-   * used.
-   *
    * @var string
    */
   public $authorizedNetwork;
   /**
-   * Output only. The available maintenance versions that can be applied to the
-   * instance.
-   *
-   * @var string[]
-   */
-  public $availableMaintenanceVersions;
-  /**
-   * Output only. The time the instance was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. Endpoint for the Discovery API.
-   *
    * @var string
    */
   public $discoveryEndpoint;
   /**
-   * User provided name for the instance, which is only used for display
-   * purposes. Cannot be more than 80 characters.
-   *
    * @var string
    */
   public $displayName;
-  /**
-   * Output only. The effective maintenance version of the instance.
-   *
-   * @var string
-   */
-  public $effectiveMaintenanceVersion;
   protected $instanceMessagesType = InstanceMessage::class;
   protected $instanceMessagesDataType = 'array';
   /**
-   * Resource labels to represent user-provided metadata. Refer to cloud
-   * documentation on labels for more details.
-   * https://cloud.google.com/compute/docs/labeling-resources
-   *
    * @var string[]
    */
   public $labels;
@@ -117,103 +47,54 @@ class Instance extends \Google\Collection
   protected $maintenanceScheduleType = MaintenanceSchedule::class;
   protected $maintenanceScheduleDataType = '';
   /**
-   * Optional. Last self service update maintenance version triggered by the
-   * customer. If it is empty, it means that the maintenance version is not set
-   * by the user.
-   *
-   * @var string
-   */
-  public $maintenanceVersion;
-  /**
-   * Output only. The full version of memcached server running on this instance.
-   * System automatically determines the full memcached version for an instance
-   * based on the input MemcacheVersion. The full version format will be
-   * "memcached-1.5.16".
-   *
    * @var string
    */
   public $memcacheFullVersion;
   protected $memcacheNodesType = Node::class;
   protected $memcacheNodesDataType = 'array';
   /**
-   * The major version of Memcached software. If not provided, latest supported
-   * version will be used. Currently the latest supported major version is
-   * `MEMCACHE_1_5`. The minor version will be automatically determined by our
-   * system based on the latest supported minor version.
-   *
    * @var string
    */
   public $memcacheVersion;
   /**
-   * Required. Unique name of the resource in this scope including project and
-   * location using the form:
-   * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * Note: Memcached instances are managed and addressed at the regional level
-   * so `location_id` here refers to a Google Cloud region; however, users may
-   * choose which zones Memcached nodes should be provisioned in within an
-   * instance. Refer to zones field for more details.
-   *
    * @var string
    */
   public $name;
   protected $nodeConfigType = NodeConfig::class;
   protected $nodeConfigDataType = '';
   /**
-   * Required. Number of nodes in the Memcached instance.
-   *
    * @var int
    */
   public $nodeCount;
   protected $parametersType = MemcacheParameters::class;
   protected $parametersDataType = '';
   /**
-   * Optional. Contains the id of allocated IP address ranges associated with
-   * the private service access connection for example, "test-default"
-   * associated with IP range 10.0.0.0/29.
-   *
    * @var string[]
    */
   public $reservedIpRangeId;
   /**
-   * Optional. Output only. Reserved for future use.
-   *
    * @var bool
    */
   public $satisfiesPzi;
   /**
-   * Optional. Output only. Reserved for future use.
-   *
    * @var bool
    */
   public $satisfiesPzs;
   /**
-   * Output only. The state of this Memcached instance.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. The time the instance was updated.
-   *
    * @var string
    */
   public $updateTime;
   /**
-   * Zones in which Memcached nodes should be provisioned. Memcached nodes will
-   * be equally distributed across these zones. If not provided, the service
-   * will by default create nodes in all zones in the region for the instance.
-   *
    * @var string[]
    */
   public $zones;
 
   /**
-   * The full name of the Google Compute Engine
-   * [network](/compute/docs/networks-and-firewalls#networks) to which the
-   * instance is connected. If left unspecified, the `default` network will be
-   * used.
-   *
-   * @param string $authorizedNetwork
+   * @param string
    */
   public function setAuthorizedNetwork($authorizedNetwork)
   {
@@ -227,26 +108,7 @@ class Instance extends \Google\Collection
     return $this->authorizedNetwork;
   }
   /**
-   * Output only. The available maintenance versions that can be applied to the
-   * instance.
-   *
-   * @param string[] $availableMaintenanceVersions
-   */
-  public function setAvailableMaintenanceVersions($availableMaintenanceVersions)
-  {
-    $this->availableMaintenanceVersions = $availableMaintenanceVersions;
-  }
-  /**
-   * @return string[]
-   */
-  public function getAvailableMaintenanceVersions()
-  {
-    return $this->availableMaintenanceVersions;
-  }
-  /**
-   * Output only. The time the instance was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -260,9 +122,7 @@ class Instance extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Output only. Endpoint for the Discovery API.
-   *
-   * @param string $discoveryEndpoint
+   * @param string
    */
   public function setDiscoveryEndpoint($discoveryEndpoint)
   {
@@ -276,10 +136,7 @@ class Instance extends \Google\Collection
     return $this->discoveryEndpoint;
   }
   /**
-   * User provided name for the instance, which is only used for display
-   * purposes. Cannot be more than 80 characters.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -293,25 +150,7 @@ class Instance extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Output only. The effective maintenance version of the instance.
-   *
-   * @param string $effectiveMaintenanceVersion
-   */
-  public function setEffectiveMaintenanceVersion($effectiveMaintenanceVersion)
-  {
-    $this->effectiveMaintenanceVersion = $effectiveMaintenanceVersion;
-  }
-  /**
-   * @return string
-   */
-  public function getEffectiveMaintenanceVersion()
-  {
-    return $this->effectiveMaintenanceVersion;
-  }
-  /**
-   * List of messages that describe the current state of the Memcached instance.
-   *
-   * @param InstanceMessage[] $instanceMessages
+   * @param InstanceMessage[]
    */
   public function setInstanceMessages($instanceMessages)
   {
@@ -325,11 +164,7 @@ class Instance extends \Google\Collection
     return $this->instanceMessages;
   }
   /**
-   * Resource labels to represent user-provided metadata. Refer to cloud
-   * documentation on labels for more details.
-   * https://cloud.google.com/compute/docs/labeling-resources
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -343,10 +178,7 @@ class Instance extends \Google\Collection
     return $this->labels;
   }
   /**
-   * The maintenance policy for the instance. If not provided, the maintenance
-   * event will be performed based on Memorystore internal rollout schedule.
-   *
-   * @param GoogleCloudMemcacheV1MaintenancePolicy $maintenancePolicy
+   * @param GoogleCloudMemcacheV1MaintenancePolicy
    */
   public function setMaintenancePolicy(GoogleCloudMemcacheV1MaintenancePolicy $maintenancePolicy)
   {
@@ -360,9 +192,7 @@ class Instance extends \Google\Collection
     return $this->maintenancePolicy;
   }
   /**
-   * Output only. Published maintenance schedule.
-   *
-   * @param MaintenanceSchedule $maintenanceSchedule
+   * @param MaintenanceSchedule
    */
   public function setMaintenanceSchedule(MaintenanceSchedule $maintenanceSchedule)
   {
@@ -376,30 +206,7 @@ class Instance extends \Google\Collection
     return $this->maintenanceSchedule;
   }
   /**
-   * Optional. Last self service update maintenance version triggered by the
-   * customer. If it is empty, it means that the maintenance version is not set
-   * by the user.
-   *
-   * @param string $maintenanceVersion
-   */
-  public function setMaintenanceVersion($maintenanceVersion)
-  {
-    $this->maintenanceVersion = $maintenanceVersion;
-  }
-  /**
-   * @return string
-   */
-  public function getMaintenanceVersion()
-  {
-    return $this->maintenanceVersion;
-  }
-  /**
-   * Output only. The full version of memcached server running on this instance.
-   * System automatically determines the full memcached version for an instance
-   * based on the input MemcacheVersion. The full version format will be
-   * "memcached-1.5.16".
-   *
-   * @param string $memcacheFullVersion
+   * @param string
    */
   public function setMemcacheFullVersion($memcacheFullVersion)
   {
@@ -413,10 +220,7 @@ class Instance extends \Google\Collection
     return $this->memcacheFullVersion;
   }
   /**
-   * Output only. List of Memcached nodes. Refer to Node message for more
-   * details.
-   *
-   * @param Node[] $memcacheNodes
+   * @param Node[]
    */
   public function setMemcacheNodes($memcacheNodes)
   {
@@ -430,37 +234,21 @@ class Instance extends \Google\Collection
     return $this->memcacheNodes;
   }
   /**
-   * The major version of Memcached software. If not provided, latest supported
-   * version will be used. Currently the latest supported major version is
-   * `MEMCACHE_1_5`. The minor version will be automatically determined by our
-   * system based on the latest supported minor version.
-   *
-   * Accepted values: MEMCACHE_VERSION_UNSPECIFIED, MEMCACHE_1_5,
-   * MEMCACHE_1_6_15
-   *
-   * @param self::MEMCACHE_VERSION_* $memcacheVersion
+   * @param string
    */
   public function setMemcacheVersion($memcacheVersion)
   {
     $this->memcacheVersion = $memcacheVersion;
   }
   /**
-   * @return self::MEMCACHE_VERSION_*
+   * @return string
    */
   public function getMemcacheVersion()
   {
     return $this->memcacheVersion;
   }
   /**
-   * Required. Unique name of the resource in this scope including project and
-   * location using the form:
-   * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * Note: Memcached instances are managed and addressed at the regional level
-   * so `location_id` here refers to a Google Cloud region; however, users may
-   * choose which zones Memcached nodes should be provisioned in within an
-   * instance. Refer to zones field for more details.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -474,9 +262,7 @@ class Instance extends \Google\Collection
     return $this->name;
   }
   /**
-   * Required. Configuration for Memcached nodes.
-   *
-   * @param NodeConfig $nodeConfig
+   * @param NodeConfig
    */
   public function setNodeConfig(NodeConfig $nodeConfig)
   {
@@ -490,9 +276,7 @@ class Instance extends \Google\Collection
     return $this->nodeConfig;
   }
   /**
-   * Required. Number of nodes in the Memcached instance.
-   *
-   * @param int $nodeCount
+   * @param int
    */
   public function setNodeCount($nodeCount)
   {
@@ -506,9 +290,7 @@ class Instance extends \Google\Collection
     return $this->nodeCount;
   }
   /**
-   * User defined parameters to apply to the memcached process on each node.
-   *
-   * @param MemcacheParameters $parameters
+   * @param MemcacheParameters
    */
   public function setParameters(MemcacheParameters $parameters)
   {
@@ -522,11 +304,7 @@ class Instance extends \Google\Collection
     return $this->parameters;
   }
   /**
-   * Optional. Contains the id of allocated IP address ranges associated with
-   * the private service access connection for example, "test-default"
-   * associated with IP range 10.0.0.0/29.
-   *
-   * @param string[] $reservedIpRangeId
+   * @param string[]
    */
   public function setReservedIpRangeId($reservedIpRangeId)
   {
@@ -540,9 +318,7 @@ class Instance extends \Google\Collection
     return $this->reservedIpRangeId;
   }
   /**
-   * Optional. Output only. Reserved for future use.
-   *
-   * @param bool $satisfiesPzi
+   * @param bool
    */
   public function setSatisfiesPzi($satisfiesPzi)
   {
@@ -556,9 +332,7 @@ class Instance extends \Google\Collection
     return $this->satisfiesPzi;
   }
   /**
-   * Optional. Output only. Reserved for future use.
-   *
-   * @param bool $satisfiesPzs
+   * @param bool
    */
   public function setSatisfiesPzs($satisfiesPzs)
   {
@@ -572,28 +346,21 @@ class Instance extends \Google\Collection
     return $this->satisfiesPzs;
   }
   /**
-   * Output only. The state of this Memcached instance.
-   *
-   * Accepted values: STATE_UNSPECIFIED, CREATING, READY, UPDATING, DELETING,
-   * PERFORMING_MAINTENANCE, MEMCACHE_VERSION_UPGRADING
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. The time the instance was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -607,11 +374,7 @@ class Instance extends \Google\Collection
     return $this->updateTime;
   }
   /**
-   * Zones in which Memcached nodes should be provisioned. Memcached nodes will
-   * be equally distributed across these zones. If not provided, the service
-   * will by default create nodes in all zones in the region for the instance.
-   *
-   * @param string[] $zones
+   * @param string[]
    */
   public function setZones($zones)
   {

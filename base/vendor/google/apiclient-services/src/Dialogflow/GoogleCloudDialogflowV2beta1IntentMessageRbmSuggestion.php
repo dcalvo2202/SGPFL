@@ -25,7 +25,7 @@ class GoogleCloudDialogflowV2beta1IntentMessageRbmSuggestion extends \Google\Mod
   protected $replyDataType = '';
 
   /**
-   * @param GoogleCloudDialogflowV2beta1IntentMessageRbmSuggestedAction $action
+   * @param GoogleCloudDialogflowV2beta1IntentMessageRbmSuggestedAction
    */
   public function setAction(GoogleCloudDialogflowV2beta1IntentMessageRbmSuggestedAction $action)
   {
@@ -39,7 +39,7 @@ class GoogleCloudDialogflowV2beta1IntentMessageRbmSuggestion extends \Google\Mod
     return $this->action;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1IntentMessageRbmSuggestedReply $reply
+   * @param GoogleCloudDialogflowV2beta1IntentMessageRbmSuggestedReply
    */
   public function setReply(GoogleCloudDialogflowV2beta1IntentMessageRbmSuggestedReply $reply)
   {

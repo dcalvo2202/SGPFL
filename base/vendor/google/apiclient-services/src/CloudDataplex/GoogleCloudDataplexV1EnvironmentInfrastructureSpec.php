@@ -25,9 +25,7 @@ class GoogleCloudDataplexV1EnvironmentInfrastructureSpec extends \Google\Model
   protected $osImageDataType = '';
 
   /**
-   * Optional. Compute resources needed for analyze interactive workloads.
-   *
-   * @param GoogleCloudDataplexV1EnvironmentInfrastructureSpecComputeResources $compute
+   * @param GoogleCloudDataplexV1EnvironmentInfrastructureSpecComputeResources
    */
   public function setCompute(GoogleCloudDataplexV1EnvironmentInfrastructureSpecComputeResources $compute)
   {
@@ -41,9 +39,7 @@ class GoogleCloudDataplexV1EnvironmentInfrastructureSpec extends \Google\Model
     return $this->compute;
   }
   /**
-   * Required. Software Runtime Configuration for analyze interactive workloads.
-   *
-   * @param GoogleCloudDataplexV1EnvironmentInfrastructureSpecOsImageRuntime $osImage
+   * @param GoogleCloudDataplexV1EnvironmentInfrastructureSpecOsImageRuntime
    */
   public function setOsImage(GoogleCloudDataplexV1EnvironmentInfrastructureSpecOsImageRuntime $osImage)
   {

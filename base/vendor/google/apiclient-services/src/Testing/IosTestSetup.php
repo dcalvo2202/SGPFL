@@ -23,10 +23,6 @@ class IosTestSetup extends \Google\Collection
   protected $additionalIpasType = FileReference::class;
   protected $additionalIpasDataType = 'array';
   /**
-   * The network traffic profile used for running the test. Available network
-   * profiles can be queried by using the NETWORK_CONFIGURATION environment type
-   * when calling TestEnvironmentDiscoveryService.GetTestEnvironmentCatalog.
-   *
    * @var string
    */
   public $networkProfile;
@@ -36,9 +32,7 @@ class IosTestSetup extends \Google\Collection
   protected $pushFilesDataType = 'array';
 
   /**
-   * iOS apps to install in addition to those being directly tested.
-   *
-   * @param FileReference[] $additionalIpas
+   * @param FileReference[]
    */
   public function setAdditionalIpas($additionalIpas)
   {
@@ -52,11 +46,7 @@ class IosTestSetup extends \Google\Collection
     return $this->additionalIpas;
   }
   /**
-   * The network traffic profile used for running the test. Available network
-   * profiles can be queried by using the NETWORK_CONFIGURATION environment type
-   * when calling TestEnvironmentDiscoveryService.GetTestEnvironmentCatalog.
-   *
-   * @param string $networkProfile
+   * @param string
    */
   public function setNetworkProfile($networkProfile)
   {
@@ -70,12 +60,7 @@ class IosTestSetup extends \Google\Collection
     return $this->networkProfile;
   }
   /**
-   * List of directories on the device to upload to Cloud Storage at the end of
-   * the test. Directories should either be in a shared directory (such as
-   * /private/var/mobile/Media) or within an accessible directory inside the
-   * app's filesystem (such as /Documents) by specifying the bundle ID.
-   *
-   * @param IosDeviceFile[] $pullDirectories
+   * @param IosDeviceFile[]
    */
   public function setPullDirectories($pullDirectories)
   {
@@ -89,9 +74,7 @@ class IosTestSetup extends \Google\Collection
     return $this->pullDirectories;
   }
   /**
-   * List of files to push to the device before starting the test.
-   *
-   * @param IosDeviceFile[] $pushFiles
+   * @param IosDeviceFile[]
    */
   public function setPushFiles($pushFiles)
   {

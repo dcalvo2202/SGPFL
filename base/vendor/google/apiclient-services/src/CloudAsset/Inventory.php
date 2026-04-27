@@ -22,28 +22,18 @@ class Inventory extends \Google\Model
   protected $itemsType = Item::class;
   protected $itemsDataType = 'map';
   /**
-   * Output only. The `Inventory` API resource name. Format: `projects/{project_
-   * number}/locations/{location}/instances/{instance_id}/inventory`
-   *
    * @var string
    */
   public $name;
   protected $osInfoType = OsInfo::class;
   protected $osInfoDataType = '';
   /**
-   * Output only. Timestamp of the last reported inventory for the VM.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Inventory items related to the VM keyed by an opaque unique identifier for
-   * each inventory item. The identifier is unique to each distinct and
-   * addressable inventory item and will change, when there is a new package
-   * version.
-   *
-   * @param Item[] $items
+   * @param Item[]
    */
   public function setItems($items)
   {
@@ -57,10 +47,7 @@ class Inventory extends \Google\Model
     return $this->items;
   }
   /**
-   * Output only. The `Inventory` API resource name. Format: `projects/{project_
-   * number}/locations/{location}/instances/{instance_id}/inventory`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -74,9 +61,7 @@ class Inventory extends \Google\Model
     return $this->name;
   }
   /**
-   * Base level operating system information for the VM.
-   *
-   * @param OsInfo $osInfo
+   * @param OsInfo
    */
   public function setOsInfo(OsInfo $osInfo)
   {
@@ -90,9 +75,7 @@ class Inventory extends \Google\Model
     return $this->osInfo;
   }
   /**
-   * Output only. Timestamp of the last reported inventory for the VM.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

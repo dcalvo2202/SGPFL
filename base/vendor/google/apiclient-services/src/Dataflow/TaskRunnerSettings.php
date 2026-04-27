@@ -21,135 +21,82 @@ class TaskRunnerSettings extends \Google\Collection
 {
   protected $collection_key = 'oauthScopes';
   /**
-   * Whether to also send taskrunner log info to stderr.
-   *
    * @var bool
    */
   public $alsologtostderr;
   /**
-   * The location on the worker for task-specific subdirectories.
-   *
    * @var string
    */
   public $baseTaskDir;
   /**
-   * The base URL for the taskrunner to use when accessing Google Cloud APIs.
-   * When workers access Google Cloud APIs, they logically do so via relative
-   * URLs. If this field is specified, it supplies the base URL to use for
-   * resolving these relative URLs. The normative algorithm used is defined by
-   * RFC 1808, "Relative Uniform Resource Locators". If not specified, the
-   * default value is "http://www.googleapis.com/"
-   *
    * @var string
    */
   public $baseUrl;
   /**
-   * The file to store preprocessing commands in.
-   *
    * @var string
    */
   public $commandlinesFileName;
   /**
-   * Whether to continue taskrunner if an exception is hit.
-   *
    * @var bool
    */
   public $continueOnException;
   /**
-   * The API version of endpoint, e.g. "v1b3"
-   *
    * @var string
    */
   public $dataflowApiVersion;
   /**
-   * The command to launch the worker harness.
-   *
    * @var string
    */
   public $harnessCommand;
   /**
-   * The suggested backend language.
-   *
    * @var string
    */
   public $languageHint;
   /**
-   * The directory on the VM to store logs.
-   *
    * @var string
    */
   public $logDir;
   /**
-   * Whether to send taskrunner log info to Google Compute Engine VM serial
-   * console.
-   *
    * @var bool
    */
   public $logToSerialconsole;
   /**
-   * Indicates where to put logs. If this is not specified, the logs will not be
-   * uploaded. The supported resource type is: Google Cloud Storage:
-   * storage.googleapis.com/{bucket}/{object}
-   * bucket.storage.googleapis.com/{object}
-   *
    * @var string
    */
   public $logUploadLocation;
   /**
-   * The OAuth2 scopes to be requested by the taskrunner in order to access the
-   * Cloud Dataflow API.
-   *
    * @var string[]
    */
   public $oauthScopes;
   protected $parallelWorkerSettingsType = WorkerSettings::class;
   protected $parallelWorkerSettingsDataType = '';
   /**
-   * The streaming worker main class name.
-   *
    * @var string
    */
   public $streamingWorkerMainClass;
   /**
-   * The UNIX group ID on the worker VM to use for tasks launched by taskrunner;
-   * e.g. "wheel".
-   *
    * @var string
    */
   public $taskGroup;
   /**
-   * The UNIX user ID on the worker VM to use for tasks launched by taskrunner;
-   * e.g. "root".
-   *
    * @var string
    */
   public $taskUser;
   /**
-   * The prefix of the resources the taskrunner should use for temporary
-   * storage. The supported resource type is: Google Cloud Storage:
-   * storage.googleapis.com/{bucket}/{object}
-   * bucket.storage.googleapis.com/{object}
-   *
    * @var string
    */
   public $tempStoragePrefix;
   /**
-   * The ID string of the VM.
-   *
    * @var string
    */
   public $vmId;
   /**
-   * The file to store the workflow in.
-   *
    * @var string
    */
   public $workflowFileName;
 
   /**
-   * Whether to also send taskrunner log info to stderr.
-   *
-   * @param bool $alsologtostderr
+   * @param bool
    */
   public function setAlsologtostderr($alsologtostderr)
   {
@@ -163,9 +110,7 @@ class TaskRunnerSettings extends \Google\Collection
     return $this->alsologtostderr;
   }
   /**
-   * The location on the worker for task-specific subdirectories.
-   *
-   * @param string $baseTaskDir
+   * @param string
    */
   public function setBaseTaskDir($baseTaskDir)
   {
@@ -179,14 +124,7 @@ class TaskRunnerSettings extends \Google\Collection
     return $this->baseTaskDir;
   }
   /**
-   * The base URL for the taskrunner to use when accessing Google Cloud APIs.
-   * When workers access Google Cloud APIs, they logically do so via relative
-   * URLs. If this field is specified, it supplies the base URL to use for
-   * resolving these relative URLs. The normative algorithm used is defined by
-   * RFC 1808, "Relative Uniform Resource Locators". If not specified, the
-   * default value is "http://www.googleapis.com/"
-   *
-   * @param string $baseUrl
+   * @param string
    */
   public function setBaseUrl($baseUrl)
   {
@@ -200,9 +138,7 @@ class TaskRunnerSettings extends \Google\Collection
     return $this->baseUrl;
   }
   /**
-   * The file to store preprocessing commands in.
-   *
-   * @param string $commandlinesFileName
+   * @param string
    */
   public function setCommandlinesFileName($commandlinesFileName)
   {
@@ -216,9 +152,7 @@ class TaskRunnerSettings extends \Google\Collection
     return $this->commandlinesFileName;
   }
   /**
-   * Whether to continue taskrunner if an exception is hit.
-   *
-   * @param bool $continueOnException
+   * @param bool
    */
   public function setContinueOnException($continueOnException)
   {
@@ -232,9 +166,7 @@ class TaskRunnerSettings extends \Google\Collection
     return $this->continueOnException;
   }
   /**
-   * The API version of endpoint, e.g. "v1b3"
-   *
-   * @param string $dataflowApiVersion
+   * @param string
    */
   public function setDataflowApiVersion($dataflowApiVersion)
   {
@@ -248,9 +180,7 @@ class TaskRunnerSettings extends \Google\Collection
     return $this->dataflowApiVersion;
   }
   /**
-   * The command to launch the worker harness.
-   *
-   * @param string $harnessCommand
+   * @param string
    */
   public function setHarnessCommand($harnessCommand)
   {
@@ -264,9 +194,7 @@ class TaskRunnerSettings extends \Google\Collection
     return $this->harnessCommand;
   }
   /**
-   * The suggested backend language.
-   *
-   * @param string $languageHint
+   * @param string
    */
   public function setLanguageHint($languageHint)
   {
@@ -280,9 +208,7 @@ class TaskRunnerSettings extends \Google\Collection
     return $this->languageHint;
   }
   /**
-   * The directory on the VM to store logs.
-   *
-   * @param string $logDir
+   * @param string
    */
   public function setLogDir($logDir)
   {
@@ -296,10 +222,7 @@ class TaskRunnerSettings extends \Google\Collection
     return $this->logDir;
   }
   /**
-   * Whether to send taskrunner log info to Google Compute Engine VM serial
-   * console.
-   *
-   * @param bool $logToSerialconsole
+   * @param bool
    */
   public function setLogToSerialconsole($logToSerialconsole)
   {
@@ -313,12 +236,7 @@ class TaskRunnerSettings extends \Google\Collection
     return $this->logToSerialconsole;
   }
   /**
-   * Indicates where to put logs. If this is not specified, the logs will not be
-   * uploaded. The supported resource type is: Google Cloud Storage:
-   * storage.googleapis.com/{bucket}/{object}
-   * bucket.storage.googleapis.com/{object}
-   *
-   * @param string $logUploadLocation
+   * @param string
    */
   public function setLogUploadLocation($logUploadLocation)
   {
@@ -332,10 +250,7 @@ class TaskRunnerSettings extends \Google\Collection
     return $this->logUploadLocation;
   }
   /**
-   * The OAuth2 scopes to be requested by the taskrunner in order to access the
-   * Cloud Dataflow API.
-   *
-   * @param string[] $oauthScopes
+   * @param string[]
    */
   public function setOauthScopes($oauthScopes)
   {
@@ -349,9 +264,7 @@ class TaskRunnerSettings extends \Google\Collection
     return $this->oauthScopes;
   }
   /**
-   * The settings to pass to the parallel worker harness.
-   *
-   * @param WorkerSettings $parallelWorkerSettings
+   * @param WorkerSettings
    */
   public function setParallelWorkerSettings(WorkerSettings $parallelWorkerSettings)
   {
@@ -365,9 +278,7 @@ class TaskRunnerSettings extends \Google\Collection
     return $this->parallelWorkerSettings;
   }
   /**
-   * The streaming worker main class name.
-   *
-   * @param string $streamingWorkerMainClass
+   * @param string
    */
   public function setStreamingWorkerMainClass($streamingWorkerMainClass)
   {
@@ -381,10 +292,7 @@ class TaskRunnerSettings extends \Google\Collection
     return $this->streamingWorkerMainClass;
   }
   /**
-   * The UNIX group ID on the worker VM to use for tasks launched by taskrunner;
-   * e.g. "wheel".
-   *
-   * @param string $taskGroup
+   * @param string
    */
   public function setTaskGroup($taskGroup)
   {
@@ -398,10 +306,7 @@ class TaskRunnerSettings extends \Google\Collection
     return $this->taskGroup;
   }
   /**
-   * The UNIX user ID on the worker VM to use for tasks launched by taskrunner;
-   * e.g. "root".
-   *
-   * @param string $taskUser
+   * @param string
    */
   public function setTaskUser($taskUser)
   {
@@ -415,12 +320,7 @@ class TaskRunnerSettings extends \Google\Collection
     return $this->taskUser;
   }
   /**
-   * The prefix of the resources the taskrunner should use for temporary
-   * storage. The supported resource type is: Google Cloud Storage:
-   * storage.googleapis.com/{bucket}/{object}
-   * bucket.storage.googleapis.com/{object}
-   *
-   * @param string $tempStoragePrefix
+   * @param string
    */
   public function setTempStoragePrefix($tempStoragePrefix)
   {
@@ -434,9 +334,7 @@ class TaskRunnerSettings extends \Google\Collection
     return $this->tempStoragePrefix;
   }
   /**
-   * The ID string of the VM.
-   *
-   * @param string $vmId
+   * @param string
    */
   public function setVmId($vmId)
   {
@@ -450,9 +348,7 @@ class TaskRunnerSettings extends \Google\Collection
     return $this->vmId;
   }
   /**
-   * The file to store the workflow in.
-   *
-   * @param string $workflowFileName
+   * @param string
    */
   public function setWorkflowFileName($workflowFileName)
   {

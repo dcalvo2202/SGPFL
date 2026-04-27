@@ -20,16 +20,12 @@ namespace Google\Service\ServiceConsumerManagement;
 class DeleteTenantProjectRequest extends \Google\Model
 {
   /**
-   * Required. Tag of the resource within the tenancy unit.
-   *
    * @var string
    */
   public $tag;
 
   /**
-   * Required. Tag of the resource within the tenancy unit.
-   *
-   * @param string $tag
+   * @param string
    */
   public function setTag($tag)
   {

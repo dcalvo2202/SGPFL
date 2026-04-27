@@ -24,9 +24,7 @@ class GeneratedApksListResponse extends \Google\Collection
   protected $generatedApksDataType = 'array';
 
   /**
-   * All generated APKs, grouped by the APK signing key.
-   *
-   * @param GeneratedApksPerSigningKey[] $generatedApks
+   * @param GeneratedApksPerSigningKey[]
    */
   public function setGeneratedApks($generatedApks)
   {

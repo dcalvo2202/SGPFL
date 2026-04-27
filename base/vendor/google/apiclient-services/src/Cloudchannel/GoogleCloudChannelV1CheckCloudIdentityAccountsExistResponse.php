@@ -24,9 +24,7 @@ class GoogleCloudChannelV1CheckCloudIdentityAccountsExistResponse extends \Googl
   protected $cloudIdentityAccountsDataType = 'array';
 
   /**
-   * The Cloud Identity accounts associated with the domain.
-   *
-   * @param GoogleCloudChannelV1CloudIdentityCustomerAccount[] $cloudIdentityAccounts
+   * @param GoogleCloudChannelV1CloudIdentityCustomerAccount[]
    */
   public function setCloudIdentityAccounts($cloudIdentityAccounts)
   {

@@ -20,33 +20,20 @@ namespace Google\Service\Compute;
 class HttpHeaderOption extends \Google\Model
 {
   /**
-   * The name of the header.
-   *
    * @var string
    */
   public $headerName;
   /**
-   * The value of the header to add.
-   *
    * @var string
    */
   public $headerValue;
   /**
-   * If false, headerValue is appended to any values that already exist for the
-   * header. If true, headerValue is set for the header, discarding any values
-   * that were set for that header.
-   *
-   * The default value is true, unless a variable is present in headerValue, in
-   * which case the default value is false. .
-   *
    * @var bool
    */
   public $replace;
 
   /**
-   * The name of the header.
-   *
-   * @param string $headerName
+   * @param string
    */
   public function setHeaderName($headerName)
   {
@@ -60,9 +47,7 @@ class HttpHeaderOption extends \Google\Model
     return $this->headerName;
   }
   /**
-   * The value of the header to add.
-   *
-   * @param string $headerValue
+   * @param string
    */
   public function setHeaderValue($headerValue)
   {
@@ -76,14 +61,7 @@ class HttpHeaderOption extends \Google\Model
     return $this->headerValue;
   }
   /**
-   * If false, headerValue is appended to any values that already exist for the
-   * header. If true, headerValue is set for the header, discarding any values
-   * that were set for that header.
-   *
-   * The default value is true, unless a variable is present in headerValue, in
-   * which case the default value is false. .
-   *
-   * @param bool $replace
+   * @param bool
    */
   public function setReplace($replace)
   {

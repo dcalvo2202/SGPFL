@@ -23,24 +23,16 @@ class ListInterceptDeploymentsResponse extends \Google\Collection
   protected $interceptDeploymentsType = InterceptDeployment::class;
   protected $interceptDeploymentsDataType = 'array';
   /**
-   * A token that can be sent as `page_token` to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages. See
-   * https://google.aip.dev/158 for more details.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * The deployments from the specified parent.
-   *
-   * @param InterceptDeployment[] $interceptDeployments
+   * @param InterceptDeployment[]
    */
   public function setInterceptDeployments($interceptDeployments)
   {
@@ -54,11 +46,7 @@ class ListInterceptDeploymentsResponse extends \Google\Collection
     return $this->interceptDeployments;
   }
   /**
-   * A token that can be sent as `page_token` to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages. See
-   * https://google.aip.dev/158 for more details.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -72,9 +60,7 @@ class ListInterceptDeploymentsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

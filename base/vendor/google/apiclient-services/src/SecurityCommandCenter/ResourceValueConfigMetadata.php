@@ -20,16 +20,12 @@ namespace Google\Service\SecurityCommandCenter;
 class ResourceValueConfigMetadata extends \Google\Model
 {
   /**
-   * Resource value config name
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Resource value config name
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

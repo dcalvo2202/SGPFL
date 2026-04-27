@@ -19,12 +19,6 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowCxV3TestRunDifference extends \Google\Model
 {
-  public const TYPE_DIFF_TYPE_UNSPECIFIED = 'DIFF_TYPE_UNSPECIFIED';
-  public const TYPE_INTENT = 'INTENT';
-  public const TYPE_PAGE = 'PAGE';
-  public const TYPE_PARAMETERS = 'PARAMETERS';
-  public const TYPE_UTTERANCE = 'UTTERANCE';
-  public const TYPE_FLOW = 'FLOW';
   /**
    * @var string
    */
@@ -35,7 +29,7 @@ class GoogleCloudDialogflowCxV3TestRunDifference extends \Google\Model
   public $type;
 
   /**
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -49,14 +43,14 @@ class GoogleCloudDialogflowCxV3TestRunDifference extends \Google\Model
     return $this->description;
   }
   /**
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

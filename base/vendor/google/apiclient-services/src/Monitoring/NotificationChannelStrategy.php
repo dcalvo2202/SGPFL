@@ -21,31 +21,16 @@ class NotificationChannelStrategy extends \Google\Collection
 {
   protected $collection_key = 'notificationChannelNames';
   /**
-   * The full REST resource name for the notification channels that these
-   * settings apply to. Each of these correspond to the name field in one of the
-   * NotificationChannel objects referenced in the notification_channels field
-   * of this AlertPolicy. The format is:
-   * projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
-   *
    * @var string[]
    */
   public $notificationChannelNames;
   /**
-   * The frequency at which to send reminder notifications for open incidents.
-   * The value must be between 30 minutes and 24 hours.
-   *
    * @var string
    */
   public $renotifyInterval;
 
   /**
-   * The full REST resource name for the notification channels that these
-   * settings apply to. Each of these correspond to the name field in one of the
-   * NotificationChannel objects referenced in the notification_channels field
-   * of this AlertPolicy. The format is:
-   * projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
-   *
-   * @param string[] $notificationChannelNames
+   * @param string[]
    */
   public function setNotificationChannelNames($notificationChannelNames)
   {
@@ -59,10 +44,7 @@ class NotificationChannelStrategy extends \Google\Collection
     return $this->notificationChannelNames;
   }
   /**
-   * The frequency at which to send reminder notifications for open incidents.
-   * The value must be between 30 minutes and 24 hours.
-   *
-   * @param string $renotifyInterval
+   * @param string
    */
   public function setRenotifyInterval($renotifyInterval)
   {

@@ -20,116 +20,52 @@ namespace Google\Service\Compute;
 class InstanceGroupManagerResizeRequest extends \Google\Model
 {
   /**
-   * The request was created successfully and was accepted for provisioning when
-   * the capacity becomes available.
-   */
-  public const STATE_ACCEPTED = 'ACCEPTED';
-  /**
-   * The request is cancelled.
-   */
-  public const STATE_CANCELLED = 'CANCELLED';
-  /**
-   * Resize request is being created and may still fail creation.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * The request failed before or during provisioning. If the request fails
-   * during provisioning, any VMs that were created during provisioning are
-   * rolled back and removed from the MIG.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * Default value. This value should never be returned.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The request succeeded.
-   */
-  public const STATE_SUCCEEDED = 'SUCCEEDED';
-  /**
-   * Output only. The creation timestamp for this resize request inRFC3339 text
-   * format.
-   *
    * @var string
    */
   public $creationTimestamp;
   /**
-   * An optional description of this resource.
-   *
    * @var string
    */
   public $description;
   /**
-   * Output only. A unique identifier for this resource type. The server
-   * generates this identifier.
-   *
    * @var string
    */
   public $id;
   /**
-   * Output only. The resource type, which is
-   * alwayscompute#instanceGroupManagerResizeRequest for resize requests.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The name of this resize request. The name must be 1-63 characters long, and
-   * comply withRFC1035.
-   *
    * @var string
    */
   public $name;
-  /**
-   * Output only. The URL of a region where the resize request is located.
-   * Populated only for regional resize requests.
-   *
-   * @var string
-   */
-  public $region;
   protected $requestedRunDurationType = Duration::class;
   protected $requestedRunDurationDataType = '';
   /**
-   * The number of instances to be created by this resize request. The group's
-   * target size will be increased by this number. This field cannot be used
-   * together with 'instances'.
-   *
    * @var int
    */
   public $resizeBy;
   /**
-   * Output only. The URL for this resize request. The server defines this URL.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * Output only. Server-defined URL for this resource with the resource id.
-   *
    * @var string
    */
   public $selfLinkWithId;
   /**
-   * Output only. Current state of the request.
-   *
    * @var string
    */
   public $state;
   protected $statusType = InstanceGroupManagerResizeRequestStatus::class;
   protected $statusDataType = '';
   /**
-   * Output only. The URL of a zone where the resize request is located.
-   * Populated only for zonal resize requests.
-   *
    * @var string
    */
   public $zone;
 
   /**
-   * Output only. The creation timestamp for this resize request inRFC3339 text
-   * format.
-   *
-   * @param string $creationTimestamp
+   * @param string
    */
   public function setCreationTimestamp($creationTimestamp)
   {
@@ -143,9 +79,7 @@ class InstanceGroupManagerResizeRequest extends \Google\Model
     return $this->creationTimestamp;
   }
   /**
-   * An optional description of this resource.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -159,10 +93,7 @@ class InstanceGroupManagerResizeRequest extends \Google\Model
     return $this->description;
   }
   /**
-   * Output only. A unique identifier for this resource type. The server
-   * generates this identifier.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -176,10 +107,7 @@ class InstanceGroupManagerResizeRequest extends \Google\Model
     return $this->id;
   }
   /**
-   * Output only. The resource type, which is
-   * alwayscompute#instanceGroupManagerResizeRequest for resize requests.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -193,10 +121,7 @@ class InstanceGroupManagerResizeRequest extends \Google\Model
     return $this->kind;
   }
   /**
-   * The name of this resize request. The name must be 1-63 characters long, and
-   * comply withRFC1035.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -210,27 +135,7 @@ class InstanceGroupManagerResizeRequest extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The URL of a region where the resize request is located.
-   * Populated only for regional resize requests.
-   *
-   * @param string $region
-   */
-  public function setRegion($region)
-  {
-    $this->region = $region;
-  }
-  /**
-   * @return string
-   */
-  public function getRegion()
-  {
-    return $this->region;
-  }
-  /**
-   * Requested run duration for instances that will be created by this request.
-   * At the end of the run duration instance will be deleted.
-   *
-   * @param Duration $requestedRunDuration
+   * @param Duration
    */
   public function setRequestedRunDuration(Duration $requestedRunDuration)
   {
@@ -244,11 +149,7 @@ class InstanceGroupManagerResizeRequest extends \Google\Model
     return $this->requestedRunDuration;
   }
   /**
-   * The number of instances to be created by this resize request. The group's
-   * target size will be increased by this number. This field cannot be used
-   * together with 'instances'.
-   *
-   * @param int $resizeBy
+   * @param int
    */
   public function setResizeBy($resizeBy)
   {
@@ -262,9 +163,7 @@ class InstanceGroupManagerResizeRequest extends \Google\Model
     return $this->resizeBy;
   }
   /**
-   * Output only. The URL for this resize request. The server defines this URL.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -278,9 +177,7 @@ class InstanceGroupManagerResizeRequest extends \Google\Model
     return $this->selfLink;
   }
   /**
-   * Output only. Server-defined URL for this resource with the resource id.
-   *
-   * @param string $selfLinkWithId
+   * @param string
    */
   public function setSelfLinkWithId($selfLinkWithId)
   {
@@ -294,28 +191,21 @@ class InstanceGroupManagerResizeRequest extends \Google\Model
     return $this->selfLinkWithId;
   }
   /**
-   * Output only. Current state of the request.
-   *
-   * Accepted values: ACCEPTED, CANCELLED, CREATING, FAILED, STATE_UNSPECIFIED,
-   * SUCCEEDED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. Status of the request.
-   *
-   * @param InstanceGroupManagerResizeRequestStatus $status
+   * @param InstanceGroupManagerResizeRequestStatus
    */
   public function setStatus(InstanceGroupManagerResizeRequestStatus $status)
   {
@@ -329,10 +219,7 @@ class InstanceGroupManagerResizeRequest extends \Google\Model
     return $this->status;
   }
   /**
-   * Output only. The URL of a zone where the resize request is located.
-   * Populated only for zonal resize requests.
-   *
-   * @param string $zone
+   * @param string
    */
   public function setZone($zone)
   {

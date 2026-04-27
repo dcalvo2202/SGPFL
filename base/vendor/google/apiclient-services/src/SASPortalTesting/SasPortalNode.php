@@ -21,28 +21,20 @@ class SasPortalNode extends \Google\Collection
 {
   protected $collection_key = 'sasUserIds';
   /**
-   * The node's display name.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. Resource name.
-   *
    * @var string
    */
   public $name;
   /**
-   * User ids used by the devices belonging to this node.
-   *
    * @var string[]
    */
   public $sasUserIds;
 
   /**
-   * The node's display name.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -56,9 +48,7 @@ class SasPortalNode extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Output only. Resource name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -72,9 +62,7 @@ class SasPortalNode extends \Google\Collection
     return $this->name;
   }
   /**
-   * User ids used by the devices belonging to this node.
-   *
-   * @param string[] $sasUserIds
+   * @param string[]
    */
   public function setSasUserIds($sasUserIds)
   {

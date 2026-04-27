@@ -23,18 +23,12 @@ class GoogleCloudAiplatformV1ListFeaturestoresResponse extends \Google\Collectio
   protected $featurestoresType = GoogleCloudAiplatformV1Featurestore::class;
   protected $featurestoresDataType = 'array';
   /**
-   * A token, which can be sent as ListFeaturestoresRequest.page_token to
-   * retrieve the next page. If this field is omitted, there are no subsequent
-   * pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The Featurestores matching the request.
-   *
-   * @param GoogleCloudAiplatformV1Featurestore[] $featurestores
+   * @param GoogleCloudAiplatformV1Featurestore[]
    */
   public function setFeaturestores($featurestores)
   {
@@ -48,11 +42,7 @@ class GoogleCloudAiplatformV1ListFeaturestoresResponse extends \Google\Collectio
     return $this->featurestores;
   }
   /**
-   * A token, which can be sent as ListFeaturestoresRequest.page_token to
-   * retrieve the next page. If this field is omitted, there are no subsequent
-   * pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

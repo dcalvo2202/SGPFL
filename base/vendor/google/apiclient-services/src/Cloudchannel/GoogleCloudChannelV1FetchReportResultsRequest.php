@@ -21,37 +21,20 @@ class GoogleCloudChannelV1FetchReportResultsRequest extends \Google\Collection
 {
   protected $collection_key = 'partitionKeys';
   /**
-   * Optional. Requested page size of the report. The server may return fewer
-   * results than requested. If you don't specify a page size, the server uses a
-   * sensible default (may change over time). The maximum value is 30,000; the
-   * server will change larger values to 30,000.
-   *
    * @var int
    */
   public $pageSize;
   /**
-   * Optional. A token that specifies a page of results beyond the first page.
-   * Obtained through FetchReportResultsResponse.next_page_token of the previous
-   * CloudChannelReportsService.FetchReportResults call.
-   *
    * @var string
    */
   public $pageToken;
   /**
-   * Optional. List of keys specifying which report partitions to return. If
-   * empty, returns all partitions.
-   *
    * @var string[]
    */
   public $partitionKeys;
 
   /**
-   * Optional. Requested page size of the report. The server may return fewer
-   * results than requested. If you don't specify a page size, the server uses a
-   * sensible default (may change over time). The maximum value is 30,000; the
-   * server will change larger values to 30,000.
-   *
-   * @param int $pageSize
+   * @param int
    */
   public function setPageSize($pageSize)
   {
@@ -65,11 +48,7 @@ class GoogleCloudChannelV1FetchReportResultsRequest extends \Google\Collection
     return $this->pageSize;
   }
   /**
-   * Optional. A token that specifies a page of results beyond the first page.
-   * Obtained through FetchReportResultsResponse.next_page_token of the previous
-   * CloudChannelReportsService.FetchReportResults call.
-   *
-   * @param string $pageToken
+   * @param string
    */
   public function setPageToken($pageToken)
   {
@@ -83,10 +62,7 @@ class GoogleCloudChannelV1FetchReportResultsRequest extends \Google\Collection
     return $this->pageToken;
   }
   /**
-   * Optional. List of keys specifying which report partitions to return. If
-   * empty, returns all partitions.
-   *
-   * @param string[] $partitionKeys
+   * @param string[]
    */
   public function setPartitionKeys($partitionKeys)
   {

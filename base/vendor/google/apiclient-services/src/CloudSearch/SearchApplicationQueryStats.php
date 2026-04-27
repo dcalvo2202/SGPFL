@@ -26,10 +26,7 @@ class SearchApplicationQueryStats extends \Google\Collection
   protected $queryCountByStatusDataType = 'array';
 
   /**
-   * The date for which query stats were calculated. Stats calculated on the
-   * next day close to midnight are returned.
-   *
-   * @param Date $date
+   * @param Date
    */
   public function setDate(Date $date)
   {
@@ -43,7 +40,7 @@ class SearchApplicationQueryStats extends \Google\Collection
     return $this->date;
   }
   /**
-   * @param QueryCountByStatus[] $queryCountByStatus
+   * @param QueryCountByStatus[]
    */
   public function setQueryCountByStatus($queryCountByStatus)
   {

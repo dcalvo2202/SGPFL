@@ -20,28 +20,14 @@ namespace Google\Service\Dataflow;
 class Linear extends \Google\Model
 {
   /**
-   * Must be greater than 0.
-   *
    * @var int
    */
   public $numberOfBuckets;
-  /**
-   * Lower bound of the first bucket.
-   *
-   * @var 
-   */
   public $start;
-  /**
-   * Distance between bucket boundaries. Must be greater than 0.
-   *
-   * @var 
-   */
   public $width;
 
   /**
-   * Must be greater than 0.
-   *
-   * @param int $numberOfBuckets
+   * @param int
    */
   public function setNumberOfBuckets($numberOfBuckets)
   {

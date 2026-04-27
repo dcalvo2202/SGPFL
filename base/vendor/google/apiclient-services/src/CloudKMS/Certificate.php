@@ -21,72 +21,44 @@ class Certificate extends \Google\Collection
 {
   protected $collection_key = 'subjectAlternativeDnsNames';
   /**
-   * Output only. The issuer distinguished name in RFC 2253 format. Only present
-   * if parsed is true.
-   *
    * @var string
    */
   public $issuer;
   /**
-   * Output only. The certificate is not valid after this time. Only present if
-   * parsed is true.
-   *
    * @var string
    */
   public $notAfterTime;
   /**
-   * Output only. The certificate is not valid before this time. Only present if
-   * parsed is true.
-   *
    * @var string
    */
   public $notBeforeTime;
   /**
-   * Output only. True if the certificate was parsed successfully.
-   *
    * @var bool
    */
   public $parsed;
   /**
-   * Required. The raw certificate bytes in DER format.
-   *
    * @var string
    */
   public $rawDer;
   /**
-   * Output only. The certificate serial number as a hex string. Only present if
-   * parsed is true.
-   *
    * @var string
    */
   public $serialNumber;
   /**
-   * Output only. The SHA-256 certificate fingerprint as a hex string. Only
-   * present if parsed is true.
-   *
    * @var string
    */
   public $sha256Fingerprint;
   /**
-   * Output only. The subject distinguished name in RFC 2253 format. Only
-   * present if parsed is true.
-   *
    * @var string
    */
   public $subject;
   /**
-   * Output only. The subject Alternative DNS names. Only present if parsed is
-   * true.
-   *
    * @var string[]
    */
   public $subjectAlternativeDnsNames;
 
   /**
-   * Output only. The issuer distinguished name in RFC 2253 format. Only present
-   * if parsed is true.
-   *
-   * @param string $issuer
+   * @param string
    */
   public function setIssuer($issuer)
   {
@@ -100,10 +72,7 @@ class Certificate extends \Google\Collection
     return $this->issuer;
   }
   /**
-   * Output only. The certificate is not valid after this time. Only present if
-   * parsed is true.
-   *
-   * @param string $notAfterTime
+   * @param string
    */
   public function setNotAfterTime($notAfterTime)
   {
@@ -117,10 +86,7 @@ class Certificate extends \Google\Collection
     return $this->notAfterTime;
   }
   /**
-   * Output only. The certificate is not valid before this time. Only present if
-   * parsed is true.
-   *
-   * @param string $notBeforeTime
+   * @param string
    */
   public function setNotBeforeTime($notBeforeTime)
   {
@@ -134,9 +100,7 @@ class Certificate extends \Google\Collection
     return $this->notBeforeTime;
   }
   /**
-   * Output only. True if the certificate was parsed successfully.
-   *
-   * @param bool $parsed
+   * @param bool
    */
   public function setParsed($parsed)
   {
@@ -150,9 +114,7 @@ class Certificate extends \Google\Collection
     return $this->parsed;
   }
   /**
-   * Required. The raw certificate bytes in DER format.
-   *
-   * @param string $rawDer
+   * @param string
    */
   public function setRawDer($rawDer)
   {
@@ -166,10 +128,7 @@ class Certificate extends \Google\Collection
     return $this->rawDer;
   }
   /**
-   * Output only. The certificate serial number as a hex string. Only present if
-   * parsed is true.
-   *
-   * @param string $serialNumber
+   * @param string
    */
   public function setSerialNumber($serialNumber)
   {
@@ -183,10 +142,7 @@ class Certificate extends \Google\Collection
     return $this->serialNumber;
   }
   /**
-   * Output only. The SHA-256 certificate fingerprint as a hex string. Only
-   * present if parsed is true.
-   *
-   * @param string $sha256Fingerprint
+   * @param string
    */
   public function setSha256Fingerprint($sha256Fingerprint)
   {
@@ -200,10 +156,7 @@ class Certificate extends \Google\Collection
     return $this->sha256Fingerprint;
   }
   /**
-   * Output only. The subject distinguished name in RFC 2253 format. Only
-   * present if parsed is true.
-   *
-   * @param string $subject
+   * @param string
    */
   public function setSubject($subject)
   {
@@ -217,10 +170,7 @@ class Certificate extends \Google\Collection
     return $this->subject;
   }
   /**
-   * Output only. The subject Alternative DNS names. Only present if parsed is
-   * true.
-   *
-   * @param string[] $subjectAlternativeDnsNames
+   * @param string[]
    */
   public function setSubjectAlternativeDnsNames($subjectAlternativeDnsNames)
   {

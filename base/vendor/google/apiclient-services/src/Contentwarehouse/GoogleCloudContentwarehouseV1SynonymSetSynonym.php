@@ -21,16 +21,12 @@ class GoogleCloudContentwarehouseV1SynonymSetSynonym extends \Google\Collection
 {
   protected $collection_key = 'words';
   /**
-   * For example: sale, invoice, bill, order
-   *
    * @var string[]
    */
   public $words;
 
   /**
-   * For example: sale, invoice, bill, order
-   *
-   * @param string[] $words
+   * @param string[]
    */
   public function setWords($words)
   {

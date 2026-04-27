@@ -24,9 +24,7 @@ class ViolatingSitesResponse extends \Google\Collection
   protected $violatingSitesDataType = 'array';
 
   /**
-   * The list of violating sites.
-   *
-   * @param SiteSummaryResponse[] $violatingSites
+   * @param SiteSummaryResponse[]
    */
   public function setViolatingSites($violatingSites)
   {

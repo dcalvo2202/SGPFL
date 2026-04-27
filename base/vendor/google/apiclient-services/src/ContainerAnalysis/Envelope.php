@@ -32,7 +32,7 @@ class Envelope extends \Google\Collection
   protected $signaturesDataType = 'array';
 
   /**
-   * @param string $payload
+   * @param string
    */
   public function setPayload($payload)
   {
@@ -46,7 +46,7 @@ class Envelope extends \Google\Collection
     return $this->payload;
   }
   /**
-   * @param string $payloadType
+   * @param string
    */
   public function setPayloadType($payloadType)
   {
@@ -60,7 +60,7 @@ class Envelope extends \Google\Collection
     return $this->payloadType;
   }
   /**
-   * @param EnvelopeSignature[] $signatures
+   * @param EnvelopeSignature[]
    */
   public function setSignatures($signatures)
   {

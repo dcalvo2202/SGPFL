@@ -20,41 +20,24 @@ namespace Google\Service\Compute;
 class BackendServiceIAP extends \Google\Model
 {
   /**
-   * Whether the serving infrastructure will authenticate and authorize all
-   * incoming requests.
-   *
    * @var bool
    */
   public $enabled;
   /**
-   * OAuth2 client ID to use for the authentication flow.
-   *
    * @var string
    */
   public $oauth2ClientId;
   /**
-   * OAuth2 client secret to use for the authentication flow. For security
-   * reasons, this value cannot be retrieved via the API. Instead, the SHA-256
-   * hash of the value is returned in the oauth2ClientSecretSha256 field.
-   *
-   * @InputOnly
-   *
    * @var string
    */
   public $oauth2ClientSecret;
   /**
-   * Output only. [Output Only] SHA256 hash value for the field
-   * oauth2_client_secret above.
-   *
    * @var string
    */
   public $oauth2ClientSecretSha256;
 
   /**
-   * Whether the serving infrastructure will authenticate and authorize all
-   * incoming requests.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {
@@ -68,9 +51,7 @@ class BackendServiceIAP extends \Google\Model
     return $this->enabled;
   }
   /**
-   * OAuth2 client ID to use for the authentication flow.
-   *
-   * @param string $oauth2ClientId
+   * @param string
    */
   public function setOauth2ClientId($oauth2ClientId)
   {
@@ -84,13 +65,7 @@ class BackendServiceIAP extends \Google\Model
     return $this->oauth2ClientId;
   }
   /**
-   * OAuth2 client secret to use for the authentication flow. For security
-   * reasons, this value cannot be retrieved via the API. Instead, the SHA-256
-   * hash of the value is returned in the oauth2ClientSecretSha256 field.
-   *
-   * @InputOnly
-   *
-   * @param string $oauth2ClientSecret
+   * @param string
    */
   public function setOauth2ClientSecret($oauth2ClientSecret)
   {
@@ -104,10 +79,7 @@ class BackendServiceIAP extends \Google\Model
     return $this->oauth2ClientSecret;
   }
   /**
-   * Output only. [Output Only] SHA256 hash value for the field
-   * oauth2_client_secret above.
-   *
-   * @param string $oauth2ClientSecretSha256
+   * @param string
    */
   public function setOauth2ClientSecretSha256($oauth2ClientSecretSha256)
   {

@@ -20,22 +20,16 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1ApiProductRef extends \Google\Model
 {
   /**
-   * Name of the API product.
-   *
    * @var string
    */
   public $apiproduct;
   /**
-   * Status of the API product. Valid values are `approved` or `revoked`.
-   *
    * @var string
    */
   public $status;
 
   /**
-   * Name of the API product.
-   *
-   * @param string $apiproduct
+   * @param string
    */
   public function setApiproduct($apiproduct)
   {
@@ -49,9 +43,7 @@ class GoogleCloudApigeeV1ApiProductRef extends \Google\Model
     return $this->apiproduct;
   }
   /**
-   * Status of the API product. Valid values are `approved` or `revoked`.
-   *
-   * @param string $status
+   * @param string
    */
   public function setStatus($status)
   {

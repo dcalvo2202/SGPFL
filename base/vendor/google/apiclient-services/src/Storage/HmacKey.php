@@ -20,24 +20,18 @@ namespace Google\Service\Storage;
 class HmacKey extends \Google\Model
 {
   /**
-   * The kind of item this is. For HMAC keys, this is always storage#hmacKey.
-   *
    * @var string
    */
   public $kind;
   protected $metadataType = HmacKeyMetadata::class;
   protected $metadataDataType = '';
   /**
-   * HMAC secret key material.
-   *
    * @var string
    */
   public $secret;
 
   /**
-   * The kind of item this is. For HMAC keys, this is always storage#hmacKey.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -51,9 +45,7 @@ class HmacKey extends \Google\Model
     return $this->kind;
   }
   /**
-   * Key metadata.
-   *
-   * @param HmacKeyMetadata $metadata
+   * @param HmacKeyMetadata
    */
   public function setMetadata(HmacKeyMetadata $metadata)
   {
@@ -67,9 +59,7 @@ class HmacKey extends \Google\Model
     return $this->metadata;
   }
   /**
-   * HMAC secret key material.
-   *
-   * @param string $secret
+   * @param string
    */
   public function setSecret($secret)
   {

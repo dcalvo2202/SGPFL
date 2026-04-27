@@ -20,16 +20,12 @@ namespace Google\Service\AndroidPublisher;
 class SdkVersion extends \Google\Model
 {
   /**
-   * Inclusive minimum value of an sdk version.
-   *
    * @var int
    */
   public $min;
 
   /**
-   * Inclusive minimum value of an sdk version.
-   *
-   * @param int $min
+   * @param int
    */
   public function setMin($min)
   {

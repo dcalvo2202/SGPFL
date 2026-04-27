@@ -24,10 +24,7 @@ class FieldSelector extends \Google\Collection
   protected $fieldsDataType = 'array';
 
   /**
-   * If more than one reference is supplied, then the first one that references
-   * a non-empty field will be displayed.
-   *
-   * @param FieldReference[] $fields
+   * @param FieldReference[]
    */
   public function setFields($fields)
   {

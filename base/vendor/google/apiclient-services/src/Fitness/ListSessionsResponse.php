@@ -23,17 +23,10 @@ class ListSessionsResponse extends \Google\Collection
   protected $deletedSessionType = Session::class;
   protected $deletedSessionDataType = 'array';
   /**
-   * Flag to indicate server has more data to transfer. DO NOT USE THIS FIELD.
-   * It is never populated in responses from the server.
-   *
-   * @deprecated
    * @var bool
    */
   public $hasMoreData;
   /**
-   * The sync token which is used to sync further changes. This will only be
-   * provided if both startTime and endTime are omitted from the request.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -41,11 +34,7 @@ class ListSessionsResponse extends \Google\Collection
   protected $sessionDataType = 'array';
 
   /**
-   * If includeDeleted is set to true in the request, and startTime and endTime
-   * are omitted, this will include sessions which were deleted since the last
-   * sync.
-   *
-   * @param Session[] $deletedSession
+   * @param Session[]
    */
   public function setDeletedSession($deletedSession)
   {
@@ -59,18 +48,13 @@ class ListSessionsResponse extends \Google\Collection
     return $this->deletedSession;
   }
   /**
-   * Flag to indicate server has more data to transfer. DO NOT USE THIS FIELD.
-   * It is never populated in responses from the server.
-   *
-   * @deprecated
-   * @param bool $hasMoreData
+   * @param bool
    */
   public function setHasMoreData($hasMoreData)
   {
     $this->hasMoreData = $hasMoreData;
   }
   /**
-   * @deprecated
    * @return bool
    */
   public function getHasMoreData()
@@ -78,10 +62,7 @@ class ListSessionsResponse extends \Google\Collection
     return $this->hasMoreData;
   }
   /**
-   * The sync token which is used to sync further changes. This will only be
-   * provided if both startTime and endTime are omitted from the request.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -95,10 +76,7 @@ class ListSessionsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Sessions starting before endTime of the request and ending after startTime
-   * of the request up to (endTime of the request + 1 day).
-   *
-   * @param Session[] $session
+   * @param Session[]
    */
   public function setSession($session)
   {

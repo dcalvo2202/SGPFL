@@ -20,35 +20,20 @@ namespace Google\Service\Compute;
 class InterconnectAttachmentPartnerMetadata extends \Google\Model
 {
   /**
-   * Plain text name of the Interconnect this attachment is connected to, as
-   * displayed in the Partner's portal. For instance "Chicago 1". This value may
-   * be validated to match approved Partner values.
-   *
    * @var string
    */
   public $interconnectName;
   /**
-   * Plain text name of the Partner providing this attachment. This value may be
-   * validated to match approved Partner values.
-   *
    * @var string
    */
   public $partnerName;
   /**
-   * URL of the Partner's portal for this Attachment. Partners may customise
-   * this to be a deep link to the specific resource on the Partner portal. This
-   * value may be validated to match approved Partner values.
-   *
    * @var string
    */
   public $portalUrl;
 
   /**
-   * Plain text name of the Interconnect this attachment is connected to, as
-   * displayed in the Partner's portal. For instance "Chicago 1". This value may
-   * be validated to match approved Partner values.
-   *
-   * @param string $interconnectName
+   * @param string
    */
   public function setInterconnectName($interconnectName)
   {
@@ -62,10 +47,7 @@ class InterconnectAttachmentPartnerMetadata extends \Google\Model
     return $this->interconnectName;
   }
   /**
-   * Plain text name of the Partner providing this attachment. This value may be
-   * validated to match approved Partner values.
-   *
-   * @param string $partnerName
+   * @param string
    */
   public function setPartnerName($partnerName)
   {
@@ -79,11 +61,7 @@ class InterconnectAttachmentPartnerMetadata extends \Google\Model
     return $this->partnerName;
   }
   /**
-   * URL of the Partner's portal for this Attachment. Partners may customise
-   * this to be a deep link to the specific resource on the Partner portal. This
-   * value may be validated to match approved Partner values.
-   *
-   * @param string $portalUrl
+   * @param string
    */
   public function setPortalUrl($portalUrl)
   {

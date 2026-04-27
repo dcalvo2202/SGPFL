@@ -20,32 +20,20 @@ namespace Google\Service\SA360;
 class GoogleAdsSearchads360V0ResourcesConversionActionFloodlightSettings extends \Google\Model
 {
   /**
-   * Output only. String used to identify a Floodlight activity group when
-   * reporting conversions.
-   *
    * @var string
    */
   public $activityGroupTag;
   /**
-   * Output only. ID of the Floodlight activity in DoubleClick Campaign Manager
-   * (DCM).
-   *
    * @var string
    */
   public $activityId;
   /**
-   * Output only. String used to identify a Floodlight activity when reporting
-   * conversions.
-   *
    * @var string
    */
   public $activityTag;
 
   /**
-   * Output only. String used to identify a Floodlight activity group when
-   * reporting conversions.
-   *
-   * @param string $activityGroupTag
+   * @param string
    */
   public function setActivityGroupTag($activityGroupTag)
   {
@@ -59,10 +47,7 @@ class GoogleAdsSearchads360V0ResourcesConversionActionFloodlightSettings extends
     return $this->activityGroupTag;
   }
   /**
-   * Output only. ID of the Floodlight activity in DoubleClick Campaign Manager
-   * (DCM).
-   *
-   * @param string $activityId
+   * @param string
    */
   public function setActivityId($activityId)
   {
@@ -76,10 +61,7 @@ class GoogleAdsSearchads360V0ResourcesConversionActionFloodlightSettings extends
     return $this->activityId;
   }
   /**
-   * Output only. String used to identify a Floodlight activity when reporting
-   * conversions.
-   *
-   * @param string $activityTag
+   * @param string
    */
   public function setActivityTag($activityTag)
   {

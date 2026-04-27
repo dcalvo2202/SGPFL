@@ -25,11 +25,7 @@ class GoogleCloudAiplatformV1ReadFeatureValuesResponse extends \Google\Model
   protected $headerDataType = '';
 
   /**
-   * Entity view with Feature values. This may be the entity in the Featurestore
-   * if values for all Features were requested, or a projection of the entity in
-   * the Featurestore if values for only some Features were requested.
-   *
-   * @param GoogleCloudAiplatformV1ReadFeatureValuesResponseEntityView $entityView
+   * @param GoogleCloudAiplatformV1ReadFeatureValuesResponseEntityView
    */
   public function setEntityView(GoogleCloudAiplatformV1ReadFeatureValuesResponseEntityView $entityView)
   {
@@ -43,9 +39,7 @@ class GoogleCloudAiplatformV1ReadFeatureValuesResponse extends \Google\Model
     return $this->entityView;
   }
   /**
-   * Response header.
-   *
-   * @param GoogleCloudAiplatformV1ReadFeatureValuesResponseHeader $header
+   * @param GoogleCloudAiplatformV1ReadFeatureValuesResponseHeader
    */
   public function setHeader(GoogleCloudAiplatformV1ReadFeatureValuesResponseHeader $header)
   {

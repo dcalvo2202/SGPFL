@@ -21,18 +21,12 @@ class GoogleCloudAiplatformV1StudySpecParameterSpecConditionalParameterSpecCateg
 {
   protected $collection_key = 'values';
   /**
-   * Required. Matches values of the parent parameter of 'CATEGORICAL' type. All
-   * values must exist in `categorical_value_spec` of parent parameter.
-   *
    * @var string[]
    */
   public $values;
 
   /**
-   * Required. Matches values of the parent parameter of 'CATEGORICAL' type. All
-   * values must exist in `categorical_value_spec` of parent parameter.
-   *
-   * @param string[] $values
+   * @param string[]
    */
   public function setValues($values)
   {

@@ -21,9 +21,6 @@ class GoogleCloudWebriskV1SearchHashesResponse extends \Google\Collection
 {
   protected $collection_key = 'threats';
   /**
-   * For requested entities that did not match the threat list, how long to
-   * cache the response until.
-   *
    * @var string
    */
   public $negativeExpireTime;
@@ -31,10 +28,7 @@ class GoogleCloudWebriskV1SearchHashesResponse extends \Google\Collection
   protected $threatsDataType = 'array';
 
   /**
-   * For requested entities that did not match the threat list, how long to
-   * cache the response until.
-   *
-   * @param string $negativeExpireTime
+   * @param string
    */
   public function setNegativeExpireTime($negativeExpireTime)
   {
@@ -48,10 +42,7 @@ class GoogleCloudWebriskV1SearchHashesResponse extends \Google\Collection
     return $this->negativeExpireTime;
   }
   /**
-   * The full hashes that matched the requested prefixes. The hash will be
-   * populated in the key.
-   *
-   * @param GoogleCloudWebriskV1SearchHashesResponseThreatHash[] $threats
+   * @param GoogleCloudWebriskV1SearchHashesResponseThreatHash[]
    */
   public function setThreats($threats)
   {

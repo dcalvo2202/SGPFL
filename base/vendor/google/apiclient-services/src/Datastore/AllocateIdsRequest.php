@@ -21,9 +21,6 @@ class AllocateIdsRequest extends \Google\Collection
 {
   protected $collection_key = 'keys';
   /**
-   * The ID of the database against which to make the request. '(default)' is
-   * not allowed; please use empty string '' to refer the default database.
-   *
    * @var string
    */
   public $databaseId;
@@ -31,10 +28,7 @@ class AllocateIdsRequest extends \Google\Collection
   protected $keysDataType = 'array';
 
   /**
-   * The ID of the database against which to make the request. '(default)' is
-   * not allowed; please use empty string '' to refer the default database.
-   *
-   * @param string $databaseId
+   * @param string
    */
   public function setDatabaseId($databaseId)
   {
@@ -48,10 +42,7 @@ class AllocateIdsRequest extends \Google\Collection
     return $this->databaseId;
   }
   /**
-   * Required. A list of keys with incomplete key paths for which to allocate
-   * IDs. No key may be reserved/read-only.
-   *
-   * @param Key[] $keys
+   * @param Key[]
    */
   public function setKeys($keys)
   {

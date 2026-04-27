@@ -37,7 +37,7 @@ class Maintainer extends \Google\Model
   public $url;
 
   /**
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {
@@ -51,7 +51,7 @@ class Maintainer extends \Google\Model
     return $this->email;
   }
   /**
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -65,7 +65,7 @@ class Maintainer extends \Google\Model
     return $this->kind;
   }
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -79,7 +79,7 @@ class Maintainer extends \Google\Model
     return $this->name;
   }
   /**
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

@@ -23,8 +23,6 @@ class Table extends \Google\Collection
   protected $columnPropertiesType = TableColumnProperties::class;
   protected $columnPropertiesDataType = 'array';
   /**
-   * The table name. This is unique to all tables in the same spreadsheet.
-   *
    * @var string
    */
   public $name;
@@ -33,16 +31,12 @@ class Table extends \Google\Collection
   protected $rowsPropertiesType = TableRowsProperties::class;
   protected $rowsPropertiesDataType = '';
   /**
-   * The id of the table.
-   *
    * @var string
    */
   public $tableId;
 
   /**
-   * The table column properties.
-   *
-   * @param TableColumnProperties[] $columnProperties
+   * @param TableColumnProperties[]
    */
   public function setColumnProperties($columnProperties)
   {
@@ -56,9 +50,7 @@ class Table extends \Google\Collection
     return $this->columnProperties;
   }
   /**
-   * The table name. This is unique to all tables in the same spreadsheet.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -72,9 +64,7 @@ class Table extends \Google\Collection
     return $this->name;
   }
   /**
-   * The table range.
-   *
-   * @param GridRange $range
+   * @param GridRange
    */
   public function setRange(GridRange $range)
   {
@@ -88,9 +78,7 @@ class Table extends \Google\Collection
     return $this->range;
   }
   /**
-   * The table rows properties.
-   *
-   * @param TableRowsProperties $rowsProperties
+   * @param TableRowsProperties
    */
   public function setRowsProperties(TableRowsProperties $rowsProperties)
   {
@@ -104,9 +92,7 @@ class Table extends \Google\Collection
     return $this->rowsProperties;
   }
   /**
-   * The id of the table.
-   *
-   * @param string $tableId
+   * @param string
    */
   public function setTableId($tableId)
   {

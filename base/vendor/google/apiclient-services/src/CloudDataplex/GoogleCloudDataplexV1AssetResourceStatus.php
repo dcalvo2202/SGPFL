@@ -20,46 +20,24 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1AssetResourceStatus extends \Google\Model
 {
   /**
-   * State unspecified.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Resource does not have any errors.
-   */
-  public const STATE_READY = 'READY';
-  /**
-   * Resource has errors.
-   */
-  public const STATE_ERROR = 'ERROR';
-  /**
-   * Output only. Service account associated with the BigQuery Connection.
-   *
    * @var string
    */
   public $managedAccessIdentity;
   /**
-   * Additional information about the current state.
-   *
    * @var string
    */
   public $message;
   /**
-   * The current state of the managed resource.
-   *
    * @var string
    */
   public $state;
   /**
-   * Last update time of the status.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. Service account associated with the BigQuery Connection.
-   *
-   * @param string $managedAccessIdentity
+   * @param string
    */
   public function setManagedAccessIdentity($managedAccessIdentity)
   {
@@ -73,9 +51,7 @@ class GoogleCloudDataplexV1AssetResourceStatus extends \Google\Model
     return $this->managedAccessIdentity;
   }
   /**
-   * Additional information about the current state.
-   *
-   * @param string $message
+   * @param string
    */
   public function setMessage($message)
   {
@@ -89,27 +65,21 @@ class GoogleCloudDataplexV1AssetResourceStatus extends \Google\Model
     return $this->message;
   }
   /**
-   * The current state of the managed resource.
-   *
-   * Accepted values: STATE_UNSPECIFIED, READY, ERROR
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Last update time of the status.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

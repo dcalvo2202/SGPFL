@@ -21,9 +21,6 @@ class GoogleFirebaseAppdistroV1ListTestersResponse extends \Google\Collection
 {
   protected $collection_key = 'testers';
   /**
-   * A short-lived token, which can be sent as `pageToken` to retrieve the next
-   * page. If this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GoogleFirebaseAppdistroV1ListTestersResponse extends \Google\Collection
   protected $testersDataType = 'array';
 
   /**
-   * A short-lived token, which can be sent as `pageToken` to retrieve the next
-   * page. If this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class GoogleFirebaseAppdistroV1ListTestersResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The testers listed.
-   *
-   * @param GoogleFirebaseAppdistroV1Tester[] $testers
+   * @param GoogleFirebaseAppdistroV1Tester[]
    */
   public function setTesters($testers)
   {

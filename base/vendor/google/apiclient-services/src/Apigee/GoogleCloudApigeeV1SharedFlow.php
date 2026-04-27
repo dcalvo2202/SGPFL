@@ -21,40 +21,26 @@ class GoogleCloudApigeeV1SharedFlow extends \Google\Collection
 {
   protected $collection_key = 'revision';
   /**
-   * The id of the most recently created revision for this shared flow.
-   *
    * @var string
    */
   public $latestRevisionId;
   protected $metaDataType = GoogleCloudApigeeV1EntityMetadata::class;
   protected $metaDataDataType = '';
   /**
-   * The ID of the shared flow.
-   *
    * @var string
    */
   public $name;
   /**
-   * A list of revisions of this shared flow.
-   *
    * @var string[]
    */
   public $revision;
   /**
-   * Optional. The ID of the space associated with this shared flow. Any IAM
-   * policies applied to the space will control access to this shared flow. To
-   * learn how Spaces can be used to manage resources, read the [Apigee Spaces
-   * Overview](https://cloud.google.com/apigee/docs/api-platform/system-
-   * administration/spaces/apigee-spaces-overview).
-   *
    * @var string
    */
   public $space;
 
   /**
-   * The id of the most recently created revision for this shared flow.
-   *
-   * @param string $latestRevisionId
+   * @param string
    */
   public function setLatestRevisionId($latestRevisionId)
   {
@@ -68,9 +54,7 @@ class GoogleCloudApigeeV1SharedFlow extends \Google\Collection
     return $this->latestRevisionId;
   }
   /**
-   * Metadata describing the shared flow.
-   *
-   * @param GoogleCloudApigeeV1EntityMetadata $metaData
+   * @param GoogleCloudApigeeV1EntityMetadata
    */
   public function setMetaData(GoogleCloudApigeeV1EntityMetadata $metaData)
   {
@@ -84,9 +68,7 @@ class GoogleCloudApigeeV1SharedFlow extends \Google\Collection
     return $this->metaData;
   }
   /**
-   * The ID of the shared flow.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -100,9 +82,7 @@ class GoogleCloudApigeeV1SharedFlow extends \Google\Collection
     return $this->name;
   }
   /**
-   * A list of revisions of this shared flow.
-   *
-   * @param string[] $revision
+   * @param string[]
    */
   public function setRevision($revision)
   {
@@ -116,13 +96,7 @@ class GoogleCloudApigeeV1SharedFlow extends \Google\Collection
     return $this->revision;
   }
   /**
-   * Optional. The ID of the space associated with this shared flow. Any IAM
-   * policies applied to the space will control access to this shared flow. To
-   * learn how Spaces can be used to manage resources, read the [Apigee Spaces
-   * Overview](https://cloud.google.com/apigee/docs/api-platform/system-
-   * administration/spaces/apigee-spaces-overview).
-   *
-   * @param string $space
+   * @param string
    */
   public function setSpace($space)
   {

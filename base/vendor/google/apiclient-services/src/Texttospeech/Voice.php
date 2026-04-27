@@ -19,59 +19,26 @@ namespace Google\Service\Texttospeech;
 
 class Voice extends \Google\Collection
 {
-  /**
-   * An unspecified gender. In VoiceSelectionParams, this means that the client
-   * doesn't care which gender the selected voice will have. In the Voice field
-   * of ListVoicesResponse, this may mean that the voice doesn't fit any of the
-   * other categories in this enum, or that the gender of the voice isn't known.
-   */
-  public const SSML_GENDER_SSML_VOICE_GENDER_UNSPECIFIED = 'SSML_VOICE_GENDER_UNSPECIFIED';
-  /**
-   * A male voice.
-   */
-  public const SSML_GENDER_MALE = 'MALE';
-  /**
-   * A female voice.
-   */
-  public const SSML_GENDER_FEMALE = 'FEMALE';
-  /**
-   * A gender-neutral voice. This voice is not yet supported.
-   */
-  public const SSML_GENDER_NEUTRAL = 'NEUTRAL';
   protected $collection_key = 'languageCodes';
   /**
-   * The languages that this voice supports, expressed as
-   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags (e.g.
-   * "en-US", "es-419", "cmn-tw").
-   *
    * @var string[]
    */
   public $languageCodes;
   /**
-   * The name of this voice. Each distinct voice has a unique name.
-   *
    * @var string
    */
   public $name;
   /**
-   * The natural sample rate (in hertz) for this voice.
-   *
    * @var int
    */
   public $naturalSampleRateHertz;
   /**
-   * The gender of this voice.
-   *
    * @var string
    */
   public $ssmlGender;
 
   /**
-   * The languages that this voice supports, expressed as
-   * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags (e.g.
-   * "en-US", "es-419", "cmn-tw").
-   *
-   * @param string[] $languageCodes
+   * @param string[]
    */
   public function setLanguageCodes($languageCodes)
   {
@@ -85,9 +52,7 @@ class Voice extends \Google\Collection
     return $this->languageCodes;
   }
   /**
-   * The name of this voice. Each distinct voice has a unique name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -101,9 +66,7 @@ class Voice extends \Google\Collection
     return $this->name;
   }
   /**
-   * The natural sample rate (in hertz) for this voice.
-   *
-   * @param int $naturalSampleRateHertz
+   * @param int
    */
   public function setNaturalSampleRateHertz($naturalSampleRateHertz)
   {
@@ -117,18 +80,14 @@ class Voice extends \Google\Collection
     return $this->naturalSampleRateHertz;
   }
   /**
-   * The gender of this voice.
-   *
-   * Accepted values: SSML_VOICE_GENDER_UNSPECIFIED, MALE, FEMALE, NEUTRAL
-   *
-   * @param self::SSML_GENDER_* $ssmlGender
+   * @param string
    */
   public function setSsmlGender($ssmlGender)
   {
     $this->ssmlGender = $ssmlGender;
   }
   /**
-   * @return self::SSML_GENDER_*
+   * @return string
    */
   public function getSsmlGender()
   {

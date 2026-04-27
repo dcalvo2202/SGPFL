@@ -19,130 +19,28 @@ namespace Google\Service\WorkspaceEvents;
 
 class Subscription extends \Google\Collection
 {
-  /**
-   * Default value. This value is unused.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The subscription is active and can receive and deliver events to its
-   * notification endpoint.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * The subscription is unable to receive events due to an error. To identify
-   * the error, see the `suspension_reason` field.
-   */
-  public const STATE_SUSPENDED = 'SUSPENDED';
-  /**
-   * The subscription is deleted.
-   */
-  public const STATE_DELETED = 'DELETED';
-  /**
-   * Default value. This value is unused.
-   */
-  public const SUSPENSION_REASON_ERROR_TYPE_UNSPECIFIED = 'ERROR_TYPE_UNSPECIFIED';
-  /**
-   * The authorizing user has revoked the grant of one or more OAuth scopes. To
-   * learn more about authorization for Google Workspace, see [Configure the
-   * OAuth consent
-   * screen](https://developers.google.com/workspace/guides/configure-oauth-
-   * consent#choose-scopes).
-   */
-  public const SUSPENSION_REASON_USER_SCOPE_REVOKED = 'USER_SCOPE_REVOKED';
-  /**
-   * The domain administrator has revoked the grant of one or more OAuth scopes
-   * for the app.
-   */
-  public const SUSPENSION_REASON_APP_SCOPE_REVOKED = 'APP_SCOPE_REVOKED';
-  /**
-   * The target resource for the subscription no longer exists.
-   */
-  public const SUSPENSION_REASON_RESOURCE_DELETED = 'RESOURCE_DELETED';
-  /**
-   * The user that authorized the creation of the subscription no longer has
-   * access to the subscription's target resource.
-   */
-  public const SUSPENSION_REASON_USER_AUTHORIZATION_FAILURE = 'USER_AUTHORIZATION_FAILURE';
-  /**
-   * The app that authorized the creation of the subscription no longer has
-   * access to the subscription's target resource.
-   */
-  public const SUSPENSION_REASON_APP_AUTHORIZATION_FAILURE = 'APP_AUTHORIZATION_FAILURE';
-  /**
-   * The Google Workspace application doesn't have access to deliver events to
-   * your subscription's notification endpoint.
-   */
-  public const SUSPENSION_REASON_ENDPOINT_PERMISSION_DENIED = 'ENDPOINT_PERMISSION_DENIED';
-  /**
-   * The subscription's notification endpoint doesn't exist, or the endpoint
-   * can't be found in the Google Cloud project where you created the
-   * subscription.
-   */
-  public const SUSPENSION_REASON_ENDPOINT_NOT_FOUND = 'ENDPOINT_NOT_FOUND';
-  /**
-   * The subscription's notification endpoint failed to receive events due to
-   * insufficient quota or reaching rate limiting.
-   */
-  public const SUSPENSION_REASON_ENDPOINT_RESOURCE_EXHAUSTED = 'ENDPOINT_RESOURCE_EXHAUSTED';
-  /**
-   * An unidentified error has occurred.
-   */
-  public const SUSPENSION_REASON_OTHER = 'OTHER';
   protected $collection_key = 'eventTypes';
   /**
-   * Output only. The user who authorized the creation of the subscription. When
-   * a user authorizes the subscription, this field and the `user_authority`
-   * field have the same value and the format is: Format: `users/{user}` For
-   * Google Workspace users, the `{user}` value is the
-   * [`user.id`](https://developers.google.com/admin-
-   * sdk/directory/reference/rest/v1/users#User.FIELDS.ids) field from the
-   * Directory API. When a Chat app authorizes the subscription, only
-   * `service_account_authority` field populates and this field is empty.
-   *
    * @var string
    */
   public $authority;
   /**
-   * Output only. The time when the subscription is created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. This checksum is computed by the server based on the value of
-   * other fields, and might be sent on update requests to ensure the client has
-   * an up-to-date value before proceeding.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Required. Unordered list. Input for creating a subscription. Otherwise,
-   * output only. One or more types of events to receive about the target
-   * resource. Formatted according to the CloudEvents specification. The
-   * supported event types depend on the target resource of your subscription.
-   * For details, see [Supported Google Workspace
-   * events](https://developers.google.com/workspace/events/guides#supported-
-   * events). By default, you also receive events about the [lifecycle of your
-   * subscription](https://developers.google.com/workspace/events/guides/events-
-   * lifecycle). You don't need to specify lifecycle events for this field. If
-   * you specify an event type that doesn't exist for the target resource, the
-   * request returns an HTTP `400 Bad Request` status code.
-   *
    * @var string[]
    */
   public $eventTypes;
   /**
-   * Non-empty default. The timestamp in UTC when the subscription expires.
-   * Always displayed on output, regardless of what was used on input.
-   *
    * @var string
    */
   public $expireTime;
   /**
-   * Identifier. Resource name of the subscription. Format:
-   * `subscriptions/{subscription}`
-   *
    * @var string
    */
   public $name;
@@ -151,92 +49,36 @@ class Subscription extends \Google\Collection
   protected $payloadOptionsType = PayloadOptions::class;
   protected $payloadOptionsDataType = '';
   /**
-   * Output only. If `true`, the subscription is in the process of being
-   * updated.
-   *
    * @var bool
    */
   public $reconciling;
   /**
-   * Output only. The service account that was used to authorize the creation of
-   * the subscription. This service account must be owned by the same Google
-   * Cloud project where you created this subscription. Format:
-   * `projects/{project_id}/serviceAccounts/{service_account_id}`
-   *
-   * @var string
-   */
-  public $serviceAccountAuthority;
-  /**
-   * Output only. The state of the subscription. Determines whether the
-   * subscription can receive events and deliver them to the notification
-   * endpoint.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. The error that suspended the subscription. To reactivate the
-   * subscription, resolve the error and call the `ReactivateSubscription`
-   * method.
-   *
    * @var string
    */
   public $suspensionReason;
   /**
-   * Required. Immutable. The Google Workspace resource that's monitored for
-   * events, formatted as the [full resource
-   * name](https://google.aip.dev/122#full-resource-names). To learn about
-   * target resources and the events that they support, see [Supported Google
-   * Workspace events](https://developers.google.com/workspace/events#supported-
-   * events). A user can only authorize your app to create one subscription for
-   * a given target resource. If your app tries to create another subscription
-   * with the same user credentials, the request returns an `ALREADY_EXISTS`
-   * error.
-   *
    * @var string
    */
   public $targetResource;
   /**
-   * Input only. The time-to-live (TTL) or duration for the subscription. If
-   * unspecified or set to `0`, uses the maximum possible duration.
-   *
    * @var string
    */
   public $ttl;
   /**
-   * Output only. System-assigned unique identifier for the subscription.
-   *
    * @var string
    */
   public $uid;
   /**
-   * Output only. The last time that the subscription is updated.
-   *
    * @var string
    */
   public $updateTime;
-  /**
-   * Output only. The user who authorized the creation of the subscription. The
-   * user must be able to view the `target_resource`. For Google Workspace
-   * users, the `{user}` value is the [`user.id`](https://developers.google.com/
-   * workspace/admin/directory/reference/rest/v1/users#User.FIELDS.id) field
-   * from the Directory API. Format: `users/{user}`
-   *
-   * @var string
-   */
-  public $userAuthority;
 
   /**
-   * Output only. The user who authorized the creation of the subscription. When
-   * a user authorizes the subscription, this field and the `user_authority`
-   * field have the same value and the format is: Format: `users/{user}` For
-   * Google Workspace users, the `{user}` value is the
-   * [`user.id`](https://developers.google.com/admin-
-   * sdk/directory/reference/rest/v1/users#User.FIELDS.ids) field from the
-   * Directory API. When a Chat app authorizes the subscription, only
-   * `service_account_authority` field populates and this field is empty.
-   *
-   * @param string $authority
+   * @param string
    */
   public function setAuthority($authority)
   {
@@ -250,9 +92,7 @@ class Subscription extends \Google\Collection
     return $this->authority;
   }
   /**
-   * Output only. The time when the subscription is created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -266,11 +106,7 @@ class Subscription extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Optional. This checksum is computed by the server based on the value of
-   * other fields, and might be sent on update requests to ensure the client has
-   * an up-to-date value before proceeding.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -284,19 +120,7 @@ class Subscription extends \Google\Collection
     return $this->etag;
   }
   /**
-   * Required. Unordered list. Input for creating a subscription. Otherwise,
-   * output only. One or more types of events to receive about the target
-   * resource. Formatted according to the CloudEvents specification. The
-   * supported event types depend on the target resource of your subscription.
-   * For details, see [Supported Google Workspace
-   * events](https://developers.google.com/workspace/events/guides#supported-
-   * events). By default, you also receive events about the [lifecycle of your
-   * subscription](https://developers.google.com/workspace/events/guides/events-
-   * lifecycle). You don't need to specify lifecycle events for this field. If
-   * you specify an event type that doesn't exist for the target resource, the
-   * request returns an HTTP `400 Bad Request` status code.
-   *
-   * @param string[] $eventTypes
+   * @param string[]
    */
   public function setEventTypes($eventTypes)
   {
@@ -310,10 +134,7 @@ class Subscription extends \Google\Collection
     return $this->eventTypes;
   }
   /**
-   * Non-empty default. The timestamp in UTC when the subscription expires.
-   * Always displayed on output, regardless of what was used on input.
-   *
-   * @param string $expireTime
+   * @param string
    */
   public function setExpireTime($expireTime)
   {
@@ -327,10 +148,7 @@ class Subscription extends \Google\Collection
     return $this->expireTime;
   }
   /**
-   * Identifier. Resource name of the subscription. Format:
-   * `subscriptions/{subscription}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -344,10 +162,7 @@ class Subscription extends \Google\Collection
     return $this->name;
   }
   /**
-   * Required. Immutable. The endpoint where the subscription delivers events,
-   * such as a Pub/Sub topic.
-   *
-   * @param NotificationEndpoint $notificationEndpoint
+   * @param NotificationEndpoint
    */
   public function setNotificationEndpoint(NotificationEndpoint $notificationEndpoint)
   {
@@ -361,10 +176,7 @@ class Subscription extends \Google\Collection
     return $this->notificationEndpoint;
   }
   /**
-   * Optional. Options about what data to include in the event payload. Only
-   * supported for Google Chat and Google Drive events.
-   *
-   * @param PayloadOptions $payloadOptions
+   * @param PayloadOptions
    */
   public function setPayloadOptions(PayloadOptions $payloadOptions)
   {
@@ -378,10 +190,7 @@ class Subscription extends \Google\Collection
     return $this->payloadOptions;
   }
   /**
-   * Output only. If `true`, the subscription is in the process of being
-   * updated.
-   *
-   * @param bool $reconciling
+   * @param bool
    */
   public function setReconciling($reconciling)
   {
@@ -395,79 +204,35 @@ class Subscription extends \Google\Collection
     return $this->reconciling;
   }
   /**
-   * Output only. The service account that was used to authorize the creation of
-   * the subscription. This service account must be owned by the same Google
-   * Cloud project where you created this subscription. Format:
-   * `projects/{project_id}/serviceAccounts/{service_account_id}`
-   *
-   * @param string $serviceAccountAuthority
-   */
-  public function setServiceAccountAuthority($serviceAccountAuthority)
-  {
-    $this->serviceAccountAuthority = $serviceAccountAuthority;
-  }
-  /**
-   * @return string
-   */
-  public function getServiceAccountAuthority()
-  {
-    return $this->serviceAccountAuthority;
-  }
-  /**
-   * Output only. The state of the subscription. Determines whether the
-   * subscription can receive events and deliver them to the notification
-   * endpoint.
-   *
-   * Accepted values: STATE_UNSPECIFIED, ACTIVE, SUSPENDED, DELETED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. The error that suspended the subscription. To reactivate the
-   * subscription, resolve the error and call the `ReactivateSubscription`
-   * method.
-   *
-   * Accepted values: ERROR_TYPE_UNSPECIFIED, USER_SCOPE_REVOKED,
-   * APP_SCOPE_REVOKED, RESOURCE_DELETED, USER_AUTHORIZATION_FAILURE,
-   * APP_AUTHORIZATION_FAILURE, ENDPOINT_PERMISSION_DENIED, ENDPOINT_NOT_FOUND,
-   * ENDPOINT_RESOURCE_EXHAUSTED, OTHER
-   *
-   * @param self::SUSPENSION_REASON_* $suspensionReason
+   * @param string
    */
   public function setSuspensionReason($suspensionReason)
   {
     $this->suspensionReason = $suspensionReason;
   }
   /**
-   * @return self::SUSPENSION_REASON_*
+   * @return string
    */
   public function getSuspensionReason()
   {
     return $this->suspensionReason;
   }
   /**
-   * Required. Immutable. The Google Workspace resource that's monitored for
-   * events, formatted as the [full resource
-   * name](https://google.aip.dev/122#full-resource-names). To learn about
-   * target resources and the events that they support, see [Supported Google
-   * Workspace events](https://developers.google.com/workspace/events#supported-
-   * events). A user can only authorize your app to create one subscription for
-   * a given target resource. If your app tries to create another subscription
-   * with the same user credentials, the request returns an `ALREADY_EXISTS`
-   * error.
-   *
-   * @param string $targetResource
+   * @param string
    */
   public function setTargetResource($targetResource)
   {
@@ -481,10 +246,7 @@ class Subscription extends \Google\Collection
     return $this->targetResource;
   }
   /**
-   * Input only. The time-to-live (TTL) or duration for the subscription. If
-   * unspecified or set to `0`, uses the maximum possible duration.
-   *
-   * @param string $ttl
+   * @param string
    */
   public function setTtl($ttl)
   {
@@ -498,9 +260,7 @@ class Subscription extends \Google\Collection
     return $this->ttl;
   }
   /**
-   * Output only. System-assigned unique identifier for the subscription.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {
@@ -514,9 +274,7 @@ class Subscription extends \Google\Collection
     return $this->uid;
   }
   /**
-   * Output only. The last time that the subscription is updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -528,26 +286,6 @@ class Subscription extends \Google\Collection
   public function getUpdateTime()
   {
     return $this->updateTime;
-  }
-  /**
-   * Output only. The user who authorized the creation of the subscription. The
-   * user must be able to view the `target_resource`. For Google Workspace
-   * users, the `{user}` value is the [`user.id`](https://developers.google.com/
-   * workspace/admin/directory/reference/rest/v1/users#User.FIELDS.id) field
-   * from the Directory API. Format: `users/{user}`
-   *
-   * @param string $userAuthority
-   */
-  public function setUserAuthority($userAuthority)
-  {
-    $this->userAuthority = $userAuthority;
-  }
-  /**
-   * @return string
-   */
-  public function getUserAuthority()
-  {
-    return $this->userAuthority;
   }
 }
 

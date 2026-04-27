@@ -20,16 +20,12 @@ namespace Google\Service\DisplayVideo;
 class ContentGenreTargetingOptionDetails extends \Google\Model
 {
   /**
-   * Output only. The display name of the content genre
-   *
    * @var string
    */
   public $displayName;
 
   /**
-   * Output only. The display name of the content genre
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\Baremetalsolution;
 class ResizeVolumeRequest extends \Google\Model
 {
   /**
-   * New Volume size, in GiB.
-   *
    * @var string
    */
   public $sizeGib;
 
   /**
-   * New Volume size, in GiB.
-   *
-   * @param string $sizeGib
+   * @param string
    */
   public function setSizeGib($sizeGib)
   {

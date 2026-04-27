@@ -20,36 +20,24 @@ namespace Google\Service\ChromeManagement;
 class GoogleChromeManagementV1MemoryStatusReport extends \Google\Model
 {
   /**
-   * Output only. Number of page faults during this collection
-   *
    * @var int
    */
   public $pageFaults;
   /**
-   * Output only. The timestamp in milliseconds representing time at which this
-   * report was sampled.
-   *
    * @var string
    */
   public $reportTime;
   /**
-   * Output only. Frequency the report is sampled.
-   *
    * @var string
    */
   public $sampleFrequency;
   /**
-   * Output only. Amount of free RAM in bytes (unreliable due to Garbage
-   * Collection).
-   *
    * @var string
    */
   public $systemRamFreeBytes;
 
   /**
-   * Output only. Number of page faults during this collection
-   *
-   * @param int $pageFaults
+   * @param int
    */
   public function setPageFaults($pageFaults)
   {
@@ -63,10 +51,7 @@ class GoogleChromeManagementV1MemoryStatusReport extends \Google\Model
     return $this->pageFaults;
   }
   /**
-   * Output only. The timestamp in milliseconds representing time at which this
-   * report was sampled.
-   *
-   * @param string $reportTime
+   * @param string
    */
   public function setReportTime($reportTime)
   {
@@ -80,9 +65,7 @@ class GoogleChromeManagementV1MemoryStatusReport extends \Google\Model
     return $this->reportTime;
   }
   /**
-   * Output only. Frequency the report is sampled.
-   *
-   * @param string $sampleFrequency
+   * @param string
    */
   public function setSampleFrequency($sampleFrequency)
   {
@@ -96,10 +79,7 @@ class GoogleChromeManagementV1MemoryStatusReport extends \Google\Model
     return $this->sampleFrequency;
   }
   /**
-   * Output only. Amount of free RAM in bytes (unreliable due to Garbage
-   * Collection).
-   *
-   * @param string $systemRamFreeBytes
+   * @param string
    */
   public function setSystemRamFreeBytes($systemRamFreeBytes)
   {

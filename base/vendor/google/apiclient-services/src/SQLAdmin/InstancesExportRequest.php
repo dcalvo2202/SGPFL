@@ -23,9 +23,7 @@ class InstancesExportRequest extends \Google\Model
   protected $exportContextDataType = '';
 
   /**
-   * Contains details about the export operation.
-   *
-   * @param ExportContext $exportContext
+   * @param ExportContext
    */
   public function setExportContext(ExportContext $exportContext)
   {

@@ -20,46 +20,16 @@ namespace Google\Service\Spanner;
 class AutoscalingTargets extends \Google\Model
 {
   /**
-   * Optional. The target high priority cpu utilization percentage that the
-   * autoscaler should be trying to achieve for the instance. This number is on
-   * a scale from 0 (no utilization) to 100 (full utilization). The valid range
-   * is [10, 90] inclusive. If not specified or set to 0, the autoscaler skips
-   * scaling based on high priority CPU utilization.
-   *
    * @var int
    */
   public $highPriorityCpuUtilizationPercent;
   /**
-   * Required. The target storage utilization percentage that the autoscaler
-   * should be trying to achieve for the instance. This number is on a scale
-   * from 0 (no utilization) to 100 (full utilization). The valid range is [10,
-   * 99] inclusive.
-   *
    * @var int
    */
   public $storageUtilizationPercent;
-  /**
-   * Optional. The target total CPU utilization percentage that the autoscaler
-   * should be trying to achieve for the instance. This number is on a scale
-   * from 0 (no utilization) to 100 (full utilization). The valid range is [10,
-   * 90] inclusive. If not specified or set to 0, the autoscaler skips scaling
-   * based on total CPU utilization. If both
-   * `high_priority_cpu_utilization_percent` and `total_cpu_utilization_percent`
-   * are specified, the autoscaler provisions the larger of the two required
-   * compute capacities to satisfy both targets.
-   *
-   * @var int
-   */
-  public $totalCpuUtilizationPercent;
 
   /**
-   * Optional. The target high priority cpu utilization percentage that the
-   * autoscaler should be trying to achieve for the instance. This number is on
-   * a scale from 0 (no utilization) to 100 (full utilization). The valid range
-   * is [10, 90] inclusive. If not specified or set to 0, the autoscaler skips
-   * scaling based on high priority CPU utilization.
-   *
-   * @param int $highPriorityCpuUtilizationPercent
+   * @param int
    */
   public function setHighPriorityCpuUtilizationPercent($highPriorityCpuUtilizationPercent)
   {
@@ -73,12 +43,7 @@ class AutoscalingTargets extends \Google\Model
     return $this->highPriorityCpuUtilizationPercent;
   }
   /**
-   * Required. The target storage utilization percentage that the autoscaler
-   * should be trying to achieve for the instance. This number is on a scale
-   * from 0 (no utilization) to 100 (full utilization). The valid range is [10,
-   * 99] inclusive.
-   *
-   * @param int $storageUtilizationPercent
+   * @param int
    */
   public function setStorageUtilizationPercent($storageUtilizationPercent)
   {
@@ -90,29 +55,6 @@ class AutoscalingTargets extends \Google\Model
   public function getStorageUtilizationPercent()
   {
     return $this->storageUtilizationPercent;
-  }
-  /**
-   * Optional. The target total CPU utilization percentage that the autoscaler
-   * should be trying to achieve for the instance. This number is on a scale
-   * from 0 (no utilization) to 100 (full utilization). The valid range is [10,
-   * 90] inclusive. If not specified or set to 0, the autoscaler skips scaling
-   * based on total CPU utilization. If both
-   * `high_priority_cpu_utilization_percent` and `total_cpu_utilization_percent`
-   * are specified, the autoscaler provisions the larger of the two required
-   * compute capacities to satisfy both targets.
-   *
-   * @param int $totalCpuUtilizationPercent
-   */
-  public function setTotalCpuUtilizationPercent($totalCpuUtilizationPercent)
-  {
-    $this->totalCpuUtilizationPercent = $totalCpuUtilizationPercent;
-  }
-  /**
-   * @return int
-   */
-  public function getTotalCpuUtilizationPercent()
-  {
-    return $this->totalCpuUtilizationPercent;
   }
 }
 

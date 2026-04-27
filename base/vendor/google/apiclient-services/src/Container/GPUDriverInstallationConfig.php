@@ -20,42 +20,19 @@ namespace Google\Service\Container;
 class GPUDriverInstallationConfig extends \Google\Model
 {
   /**
-   * Default value is to not install any GPU driver.
-   */
-  public const GPU_DRIVER_VERSION_GPU_DRIVER_VERSION_UNSPECIFIED = 'GPU_DRIVER_VERSION_UNSPECIFIED';
-  /**
-   * Disable GPU driver auto installation and needs manual installation
-   */
-  public const GPU_DRIVER_VERSION_INSTALLATION_DISABLED = 'INSTALLATION_DISABLED';
-  /**
-   * "Default" GPU driver in COS and Ubuntu.
-   */
-  public const GPU_DRIVER_VERSION_DEFAULT = 'DEFAULT';
-  /**
-   * "Latest" GPU driver in COS.
-   */
-  public const GPU_DRIVER_VERSION_LATEST = 'LATEST';
-  /**
-   * Mode for how the GPU driver is installed.
-   *
    * @var string
    */
   public $gpuDriverVersion;
 
   /**
-   * Mode for how the GPU driver is installed.
-   *
-   * Accepted values: GPU_DRIVER_VERSION_UNSPECIFIED, INSTALLATION_DISABLED,
-   * DEFAULT, LATEST
-   *
-   * @param self::GPU_DRIVER_VERSION_* $gpuDriverVersion
+   * @param string
    */
   public function setGpuDriverVersion($gpuDriverVersion)
   {
     $this->gpuDriverVersion = $gpuDriverVersion;
   }
   /**
-   * @return self::GPU_DRIVER_VERSION_*
+   * @return string
    */
   public function getGpuDriverVersion()
   {

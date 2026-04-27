@@ -19,116 +19,69 @@ namespace Google\Service\CloudSearch;
 
 class EnterpriseTopazSidekickPerson extends \Google\Model
 {
-  public const AFFINITY_LEVEL_UNKNOWN = 'UNKNOWN';
-  public const AFFINITY_LEVEL_LOW = 'LOW';
-  public const AFFINITY_LEVEL_MEDIUM = 'MEDIUM';
-  public const AFFINITY_LEVEL_HIGH = 'HIGH';
   /**
-   * Awaiting for the user to set the status.
-   */
-  public const ATTENDING_STATUS_AWAITING = 'AWAITING';
-  /**
-   * Attending.
-   */
-  public const ATTENDING_STATUS_YES = 'YES';
-  /**
-   * Not attending.
-   */
-  public const ATTENDING_STATUS_NO = 'NO';
-  /**
-   * Tentatively attending.
-   */
-  public const ATTENDING_STATUS_MAYBE = 'MAYBE';
-  /**
-   * The level of affinity this person has with the requesting user.
-   *
    * @var string
    */
   public $affinityLevel;
   /**
-   * Attendance status of the person when included in a meeting event.
-   *
    * @var string
    */
   public $attendingStatus;
   /**
-   * Email.
-   *
    * @var string
    */
   public $email;
   /**
-   * Gaia id.
-   *
-   * @deprecated
    * @var string
    */
   public $gaiaId;
   /**
-   * Whether the invitee is a group.
-   *
    * @var bool
    */
   public $isGroup;
   /**
-   * Name.
-   *
    * @var string
    */
   public $name;
   /**
-   * Obfuscated Gaia id.
-   *
    * @var string
    */
   public $obfuscatedGaiaId;
   /**
-   * Absolute URL to the profile photo of the person.
-   *
    * @var string
    */
   public $photoUrl;
 
   /**
-   * The level of affinity this person has with the requesting user.
-   *
-   * Accepted values: UNKNOWN, LOW, MEDIUM, HIGH
-   *
-   * @param self::AFFINITY_LEVEL_* $affinityLevel
+   * @param string
    */
   public function setAffinityLevel($affinityLevel)
   {
     $this->affinityLevel = $affinityLevel;
   }
   /**
-   * @return self::AFFINITY_LEVEL_*
+   * @return string
    */
   public function getAffinityLevel()
   {
     return $this->affinityLevel;
   }
   /**
-   * Attendance status of the person when included in a meeting event.
-   *
-   * Accepted values: AWAITING, YES, NO, MAYBE
-   *
-   * @param self::ATTENDING_STATUS_* $attendingStatus
+   * @param string
    */
   public function setAttendingStatus($attendingStatus)
   {
     $this->attendingStatus = $attendingStatus;
   }
   /**
-   * @return self::ATTENDING_STATUS_*
+   * @return string
    */
   public function getAttendingStatus()
   {
     return $this->attendingStatus;
   }
   /**
-   * Email.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {
@@ -142,17 +95,13 @@ class EnterpriseTopazSidekickPerson extends \Google\Model
     return $this->email;
   }
   /**
-   * Gaia id.
-   *
-   * @deprecated
-   * @param string $gaiaId
+   * @param string
    */
   public function setGaiaId($gaiaId)
   {
     $this->gaiaId = $gaiaId;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getGaiaId()
@@ -160,9 +109,7 @@ class EnterpriseTopazSidekickPerson extends \Google\Model
     return $this->gaiaId;
   }
   /**
-   * Whether the invitee is a group.
-   *
-   * @param bool $isGroup
+   * @param bool
    */
   public function setIsGroup($isGroup)
   {
@@ -176,9 +123,7 @@ class EnterpriseTopazSidekickPerson extends \Google\Model
     return $this->isGroup;
   }
   /**
-   * Name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -192,9 +137,7 @@ class EnterpriseTopazSidekickPerson extends \Google\Model
     return $this->name;
   }
   /**
-   * Obfuscated Gaia id.
-   *
-   * @param string $obfuscatedGaiaId
+   * @param string
    */
   public function setObfuscatedGaiaId($obfuscatedGaiaId)
   {
@@ -208,9 +151,7 @@ class EnterpriseTopazSidekickPerson extends \Google\Model
     return $this->obfuscatedGaiaId;
   }
   /**
-   * Absolute URL to the profile photo of the person.
-   *
-   * @param string $photoUrl
+   * @param string
    */
   public function setPhotoUrl($photoUrl)
   {

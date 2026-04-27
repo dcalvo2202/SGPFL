@@ -23,23 +23,16 @@ class ChangeLogsListResponse extends \Google\Collection
   protected $changeLogsType = ChangeLog::class;
   protected $changeLogsDataType = 'array';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#changeLogsListResponse".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Pagination token to be used for the next list operation.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Change log collection.
-   *
-   * @param ChangeLog[] $changeLogs
+   * @param ChangeLog[]
    */
   public function setChangeLogs($changeLogs)
   {
@@ -53,10 +46,7 @@ class ChangeLogsListResponse extends \Google\Collection
     return $this->changeLogs;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#changeLogsListResponse".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -70,9 +60,7 @@ class ChangeLogsListResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Pagination token to be used for the next list operation.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

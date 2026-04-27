@@ -21,20 +21,12 @@ class RegexValidation extends \Google\Collection
 {
   protected $collection_key = 'regexes';
   /**
-   * Required. RE2 regular expressions used to validate the parameter's value.
-   * The value must match the regex in its entirety (substring matches are not
-   * sufficient).
-   *
    * @var string[]
    */
   public $regexes;
 
   /**
-   * Required. RE2 regular expressions used to validate the parameter's value.
-   * The value must match the regex in its entirety (substring matches are not
-   * sufficient).
-   *
-   * @param string[] $regexes
+   * @param string[]
    */
   public function setRegexes($regexes)
   {

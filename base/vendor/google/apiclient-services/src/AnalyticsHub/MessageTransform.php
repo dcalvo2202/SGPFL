@@ -19,20 +19,11 @@ namespace Google\Service\AnalyticsHub;
 
 class MessageTransform extends \Google\Model
 {
-  protected $aiInferenceType = AIInference::class;
-  protected $aiInferenceDataType = '';
   /**
-   * Optional. If true, the transform is disabled and will not be applied to
-   * messages. Defaults to `false`.
-   *
    * @var bool
    */
   public $disabled;
   /**
-   * Optional. This field is deprecated, use the `disabled` field to disable
-   * transforms.
-   *
-   * @deprecated
    * @var bool
    */
   public $enabled;
@@ -40,28 +31,7 @@ class MessageTransform extends \Google\Model
   protected $javascriptUdfDataType = '';
 
   /**
-   * Optional. AI Inference. Specifies the Vertex AI endpoint that inference
-   * requests built from the Pub/Sub message data and provided parameters will
-   * be sent to.
-   *
-   * @param AIInference $aiInference
-   */
-  public function setAiInference(AIInference $aiInference)
-  {
-    $this->aiInference = $aiInference;
-  }
-  /**
-   * @return AIInference
-   */
-  public function getAiInference()
-  {
-    return $this->aiInference;
-  }
-  /**
-   * Optional. If true, the transform is disabled and will not be applied to
-   * messages. Defaults to `false`.
-   *
-   * @param bool $disabled
+   * @param bool
    */
   public function setDisabled($disabled)
   {
@@ -75,18 +45,13 @@ class MessageTransform extends \Google\Model
     return $this->disabled;
   }
   /**
-   * Optional. This field is deprecated, use the `disabled` field to disable
-   * transforms.
-   *
-   * @deprecated
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {
     $this->enabled = $enabled;
   }
   /**
-   * @deprecated
    * @return bool
    */
   public function getEnabled()
@@ -94,10 +59,7 @@ class MessageTransform extends \Google\Model
     return $this->enabled;
   }
   /**
-   * Optional. JavaScript User Defined Function. If multiple JavaScriptUDF's are
-   * specified on a resource, each must have a unique `function_name`.
-   *
-   * @param JavaScriptUDF $javascriptUdf
+   * @param JavaScriptUDF
    */
   public function setJavascriptUdf(JavaScriptUDF $javascriptUdf)
   {

@@ -21,13 +21,9 @@ class GoogleCloudAiplatformV1VoiceConfig extends \Google\Model
 {
   protected $prebuiltVoiceConfigType = GoogleCloudAiplatformV1PrebuiltVoiceConfig::class;
   protected $prebuiltVoiceConfigDataType = '';
-  protected $replicatedVoiceConfigType = GoogleCloudAiplatformV1ReplicatedVoiceConfig::class;
-  protected $replicatedVoiceConfigDataType = '';
 
   /**
-   * The configuration for a prebuilt voice.
-   *
-   * @param GoogleCloudAiplatformV1PrebuiltVoiceConfig $prebuiltVoiceConfig
+   * @param GoogleCloudAiplatformV1PrebuiltVoiceConfig
    */
   public function setPrebuiltVoiceConfig(GoogleCloudAiplatformV1PrebuiltVoiceConfig $prebuiltVoiceConfig)
   {
@@ -39,23 +35,6 @@ class GoogleCloudAiplatformV1VoiceConfig extends \Google\Model
   public function getPrebuiltVoiceConfig()
   {
     return $this->prebuiltVoiceConfig;
-  }
-  /**
-   * Optional. The configuration for a replicated voice. This enables users to
-   * replicate a voice from an audio sample.
-   *
-   * @param GoogleCloudAiplatformV1ReplicatedVoiceConfig $replicatedVoiceConfig
-   */
-  public function setReplicatedVoiceConfig(GoogleCloudAiplatformV1ReplicatedVoiceConfig $replicatedVoiceConfig)
-  {
-    $this->replicatedVoiceConfig = $replicatedVoiceConfig;
-  }
-  /**
-   * @return GoogleCloudAiplatformV1ReplicatedVoiceConfig
-   */
-  public function getReplicatedVoiceConfig()
-  {
-    return $this->replicatedVoiceConfig;
   }
 }
 

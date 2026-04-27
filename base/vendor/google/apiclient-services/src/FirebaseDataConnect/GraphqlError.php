@@ -25,26 +25,16 @@ class GraphqlError extends \Google\Collection
   protected $locationsType = SourceLocation::class;
   protected $locationsDataType = 'array';
   /**
-   * The detailed error message. The message should help developer understand
-   * the underlying problem without leaking internal data.
-   *
    * @var string
    */
   public $message;
   /**
-   * The result field which could not be populated due to error. Clients can use
-   * path to identify whether a null result is intentional or caused by a
-   * runtime error. It should be a list of string or index from the root of
-   * GraphQL query document.
-   *
    * @var array[]
    */
   public $path;
 
   /**
-   * Additional error information.
-   *
-   * @param GraphqlErrorExtensions $extensions
+   * @param GraphqlErrorExtensions
    */
   public function setExtensions(GraphqlErrorExtensions $extensions)
   {
@@ -58,15 +48,7 @@ class GraphqlError extends \Google\Collection
     return $this->extensions;
   }
   /**
-   * The source locations where the error occurred. Locations should help
-   * developers and toolings identify the source of error quickly. Included in
-   * admin endpoints (`ExecuteGraphql`, `ExecuteGraphqlRead`,
-   * `IntrospectGraphql`, `ImpersonateQuery`, `ImpersonateMutation`,
-   * `UpdateSchema` and `UpdateConnector`) to reference the provided GraphQL GQL
-   * document. Omitted in `ExecuteMutation` and `ExecuteQuery` since the caller
-   * shouldn't have access access the underlying GQL source.
-   *
-   * @param SourceLocation[] $locations
+   * @param SourceLocation[]
    */
   public function setLocations($locations)
   {
@@ -80,10 +62,7 @@ class GraphqlError extends \Google\Collection
     return $this->locations;
   }
   /**
-   * The detailed error message. The message should help developer understand
-   * the underlying problem without leaking internal data.
-   *
-   * @param string $message
+   * @param string
    */
   public function setMessage($message)
   {
@@ -97,12 +76,7 @@ class GraphqlError extends \Google\Collection
     return $this->message;
   }
   /**
-   * The result field which could not be populated due to error. Clients can use
-   * path to identify whether a null result is intentional or caused by a
-   * runtime error. It should be a list of string or index from the root of
-   * GraphQL query document.
-   *
-   * @param array[] $path
+   * @param array[]
    */
   public function setPath($path)
   {

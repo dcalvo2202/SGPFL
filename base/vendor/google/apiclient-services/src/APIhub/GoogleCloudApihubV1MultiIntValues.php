@@ -21,16 +21,12 @@ class GoogleCloudApihubV1MultiIntValues extends \Google\Collection
 {
   protected $collection_key = 'values';
   /**
-   * Optional. The config variable value of data type multi int.
-   *
    * @var int[]
    */
   public $values;
 
   /**
-   * Optional. The config variable value of data type multi int.
-   *
-   * @param int[] $values
+   * @param int[]
    */
   public function setValues($values)
   {

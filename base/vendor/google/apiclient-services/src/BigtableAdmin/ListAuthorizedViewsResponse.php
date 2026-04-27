@@ -23,17 +23,12 @@ class ListAuthorizedViewsResponse extends \Google\Collection
   protected $authorizedViewsType = AuthorizedView::class;
   protected $authorizedViewsDataType = 'array';
   /**
-   * Set if not all tables could be returned in a single response. Pass this
-   * value to `page_token` in another request to get the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The AuthorizedViews present in the requested table.
-   *
-   * @param AuthorizedView[] $authorizedViews
+   * @param AuthorizedView[]
    */
   public function setAuthorizedViews($authorizedViews)
   {
@@ -47,10 +42,7 @@ class ListAuthorizedViewsResponse extends \Google\Collection
     return $this->authorizedViews;
   }
   /**
-   * Set if not all tables could be returned in a single response. Pass this
-   * value to `page_token` in another request to get the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

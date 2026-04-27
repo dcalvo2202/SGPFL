@@ -20,22 +20,16 @@ namespace Google\Service\DatabaseMigrationService;
 class FunctionEntity extends \Google\Model
 {
   /**
-   * Custom engine specific features.
-   *
    * @var array[]
    */
   public $customFeatures;
   /**
-   * The SQL code which creates the function.
-   *
    * @var string
    */
   public $sqlCode;
 
   /**
-   * Custom engine specific features.
-   *
-   * @param array[] $customFeatures
+   * @param array[]
    */
   public function setCustomFeatures($customFeatures)
   {
@@ -49,9 +43,7 @@ class FunctionEntity extends \Google\Model
     return $this->customFeatures;
   }
   /**
-   * The SQL code which creates the function.
-   *
-   * @param string $sqlCode
+   * @param string
    */
   public function setSqlCode($sqlCode)
   {

@@ -19,92 +19,26 @@ namespace Google\Service\Integrations;
 
 class GoogleCloudIntegrationsV1alphaTriggerConfig extends \Google\Collection
 {
-  /**
-   * Default.
-   */
-  public const NEXT_TASKS_EXECUTION_POLICY_NEXT_TASKS_EXECUTION_POLICY_UNSPECIFIED = 'NEXT_TASKS_EXECUTION_POLICY_UNSPECIFIED';
-  /**
-   * Execute all the tasks that satisfy their associated condition.
-   */
-  public const NEXT_TASKS_EXECUTION_POLICY_RUN_ALL_MATCH = 'RUN_ALL_MATCH';
-  /**
-   * Execute the first task that satisfies the associated condition.
-   */
-  public const NEXT_TASKS_EXECUTION_POLICY_RUN_FIRST_MATCH = 'RUN_FIRST_MATCH';
-  /**
-   * Unknown.
-   */
-  public const TRIGGER_TYPE_TRIGGER_TYPE_UNSPECIFIED = 'TRIGGER_TYPE_UNSPECIFIED';
-  /**
-   * Trigger by scheduled time.
-   */
-  public const TRIGGER_TYPE_CRON = 'CRON';
-  /**
-   * Trigger by API call.
-   */
-  public const TRIGGER_TYPE_API = 'API';
-  /**
-   * Trigger by Salesforce Channel.
-   */
-  public const TRIGGER_TYPE_SFDC_CHANNEL = 'SFDC_CHANNEL';
-  /**
-   * Trigger by Pub/Sub external.
-   */
-  public const TRIGGER_TYPE_CLOUD_PUBSUB_EXTERNAL = 'CLOUD_PUBSUB_EXTERNAL';
-  /**
-   * SFDC Channel Trigger for CDC.
-   */
-  public const TRIGGER_TYPE_SFDC_CDC_CHANNEL = 'SFDC_CDC_CHANNEL';
-  /**
-   * Trigger by Cloud Scheduler job.
-   */
-  public const TRIGGER_TYPE_CLOUD_SCHEDULER = 'CLOUD_SCHEDULER';
-  /**
-   * Trigger by Connector Event
-   */
-  public const TRIGGER_TYPE_INTEGRATION_CONNECTOR_TRIGGER = 'INTEGRATION_CONNECTOR_TRIGGER';
-  /**
-   * Trigger for private workflow
-   */
-  public const TRIGGER_TYPE_PRIVATE_TRIGGER = 'PRIVATE_TRIGGER';
-  /**
-   * Trigger by cloud pub/sub for internal ip
-   */
-  public const TRIGGER_TYPE_CLOUD_PUBSUB = 'CLOUD_PUBSUB';
-  /**
-   * Trigger by Eventarc
-   */
-  public const TRIGGER_TYPE_EVENTARC_TRIGGER = 'EVENTARC_TRIGGER';
   protected $collection_key = 'startTasks';
   protected $alertConfigType = GoogleCloudIntegrationsV1alphaIntegrationAlertConfig::class;
   protected $alertConfigDataType = 'array';
   protected $cloudSchedulerConfigType = GoogleCloudIntegrationsV1alphaCloudSchedulerConfig::class;
   protected $cloudSchedulerConfigDataType = '';
   /**
-   * Optional. User-provided description intended to give additional business
-   * context about the task.
-   *
    * @var string
    */
   public $description;
   /**
-   * Optional. Optional Error catcher id of the error catch flow which will be
-   * executed when execution error happens in the task
-   *
    * @var string
    */
   public $errorCatcherId;
   protected $inputVariablesType = GoogleCloudIntegrationsV1alphaTriggerConfigVariables::class;
   protected $inputVariablesDataType = '';
   /**
-   * Optional. The user created label for a particular trigger.
-   *
    * @var string
    */
   public $label;
   /**
-   * Optional. Dictates how next tasks will be executed.
-   *
    * @var string
    */
   public $nextTasksExecutionPolicy;
@@ -113,54 +47,30 @@ class GoogleCloudIntegrationsV1alphaTriggerConfig extends \Google\Collection
   protected $positionType = GoogleCloudIntegrationsV1alphaCoordinate::class;
   protected $positionDataType = '';
   /**
-   * Optional. Configurable properties of the trigger, not to be confused with
-   * integration parameters. E.g. "name" is a property for API triggers and
-   * "subscription" is a property for Pub/sub triggers.
-   *
    * @var string[]
    */
   public $properties;
   protected $startTasksType = GoogleCloudIntegrationsV1alphaNextTask::class;
   protected $startTasksDataType = 'array';
   /**
-   * Optional. Name of the trigger. Example: "API Trigger", "Cloud Pub Sub
-   * Trigger" When set will be sent out to monitoring dashabord for tracking
-   * purpose.
-   *
    * @var string
    */
   public $trigger;
   /**
-   * Optional. Auto-generated trigger ID. The ID is based on the properties that
-   * you define in the trigger config. For example, for an API trigger, the
-   * trigger ID follows the format: api_trigger/TRIGGER_NAME Where trigger
-   * config has properties with value {"Trigger name": TRIGGER_NAME}
-   *
    * @var string
    */
   public $triggerId;
   /**
-   * Required. A number to uniquely identify each trigger config within the
-   * integration on UI.
-   *
    * @var string
    */
   public $triggerNumber;
   /**
-   * Optional. Type of trigger
-   *
    * @var string
    */
   public $triggerType;
 
   /**
-   * Optional. An alert threshold configuration for the [trigger + client +
-   * integration] tuple. If these values are not specified in the trigger
-   * config, default values will be populated by the system. Note that there
-   * must be exactly one alert threshold configured per [client + trigger +
-   * integration] when published.
-   *
-   * @param GoogleCloudIntegrationsV1alphaIntegrationAlertConfig[] $alertConfig
+   * @param GoogleCloudIntegrationsV1alphaIntegrationAlertConfig[]
    */
   public function setAlertConfig($alertConfig)
   {
@@ -174,9 +84,7 @@ class GoogleCloudIntegrationsV1alphaTriggerConfig extends \Google\Collection
     return $this->alertConfig;
   }
   /**
-   * Optional. Cloud Scheduler Trigger related metadata
-   *
-   * @param GoogleCloudIntegrationsV1alphaCloudSchedulerConfig $cloudSchedulerConfig
+   * @param GoogleCloudIntegrationsV1alphaCloudSchedulerConfig
    */
   public function setCloudSchedulerConfig(GoogleCloudIntegrationsV1alphaCloudSchedulerConfig $cloudSchedulerConfig)
   {
@@ -190,10 +98,7 @@ class GoogleCloudIntegrationsV1alphaTriggerConfig extends \Google\Collection
     return $this->cloudSchedulerConfig;
   }
   /**
-   * Optional. User-provided description intended to give additional business
-   * context about the task.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -207,10 +112,7 @@ class GoogleCloudIntegrationsV1alphaTriggerConfig extends \Google\Collection
     return $this->description;
   }
   /**
-   * Optional. Optional Error catcher id of the error catch flow which will be
-   * executed when execution error happens in the task
-   *
-   * @param string $errorCatcherId
+   * @param string
    */
   public function setErrorCatcherId($errorCatcherId)
   {
@@ -224,9 +126,7 @@ class GoogleCloudIntegrationsV1alphaTriggerConfig extends \Google\Collection
     return $this->errorCatcherId;
   }
   /**
-   * Optional. List of input variables for the api trigger.
-   *
-   * @param GoogleCloudIntegrationsV1alphaTriggerConfigVariables $inputVariables
+   * @param GoogleCloudIntegrationsV1alphaTriggerConfigVariables
    */
   public function setInputVariables(GoogleCloudIntegrationsV1alphaTriggerConfigVariables $inputVariables)
   {
@@ -240,9 +140,7 @@ class GoogleCloudIntegrationsV1alphaTriggerConfig extends \Google\Collection
     return $this->inputVariables;
   }
   /**
-   * Optional. The user created label for a particular trigger.
-   *
-   * @param string $label
+   * @param string
    */
   public function setLabel($label)
   {
@@ -256,28 +154,21 @@ class GoogleCloudIntegrationsV1alphaTriggerConfig extends \Google\Collection
     return $this->label;
   }
   /**
-   * Optional. Dictates how next tasks will be executed.
-   *
-   * Accepted values: NEXT_TASKS_EXECUTION_POLICY_UNSPECIFIED, RUN_ALL_MATCH,
-   * RUN_FIRST_MATCH
-   *
-   * @param self::NEXT_TASKS_EXECUTION_POLICY_* $nextTasksExecutionPolicy
+   * @param string
    */
   public function setNextTasksExecutionPolicy($nextTasksExecutionPolicy)
   {
     $this->nextTasksExecutionPolicy = $nextTasksExecutionPolicy;
   }
   /**
-   * @return self::NEXT_TASKS_EXECUTION_POLICY_*
+   * @return string
    */
   public function getNextTasksExecutionPolicy()
   {
     return $this->nextTasksExecutionPolicy;
   }
   /**
-   * Optional. List of output variables for the api trigger.
-   *
-   * @param GoogleCloudIntegrationsV1alphaTriggerConfigVariables $outputVariables
+   * @param GoogleCloudIntegrationsV1alphaTriggerConfigVariables
    */
   public function setOutputVariables(GoogleCloudIntegrationsV1alphaTriggerConfigVariables $outputVariables)
   {
@@ -291,10 +182,7 @@ class GoogleCloudIntegrationsV1alphaTriggerConfig extends \Google\Collection
     return $this->outputVariables;
   }
   /**
-   * Optional. Informs the front-end application where to draw this error
-   * catcher config on the UI.
-   *
-   * @param GoogleCloudIntegrationsV1alphaCoordinate $position
+   * @param GoogleCloudIntegrationsV1alphaCoordinate
    */
   public function setPosition(GoogleCloudIntegrationsV1alphaCoordinate $position)
   {
@@ -308,11 +196,7 @@ class GoogleCloudIntegrationsV1alphaTriggerConfig extends \Google\Collection
     return $this->position;
   }
   /**
-   * Optional. Configurable properties of the trigger, not to be confused with
-   * integration parameters. E.g. "name" is a property for API triggers and
-   * "subscription" is a property for Pub/sub triggers.
-   *
-   * @param string[] $properties
+   * @param string[]
    */
   public function setProperties($properties)
   {
@@ -326,13 +210,7 @@ class GoogleCloudIntegrationsV1alphaTriggerConfig extends \Google\Collection
     return $this->properties;
   }
   /**
-   * Optional. Set of tasks numbers from where the integration execution is
-   * started by this trigger. If this is empty, then integration is executed
-   * with default start tasks. In the list of start tasks, none of two tasks can
-   * have direct ancestor-descendant relationships (i.e. in a same integration
-   * execution graph).
-   *
-   * @param GoogleCloudIntegrationsV1alphaNextTask[] $startTasks
+   * @param GoogleCloudIntegrationsV1alphaNextTask[]
    */
   public function setStartTasks($startTasks)
   {
@@ -346,11 +224,7 @@ class GoogleCloudIntegrationsV1alphaTriggerConfig extends \Google\Collection
     return $this->startTasks;
   }
   /**
-   * Optional. Name of the trigger. Example: "API Trigger", "Cloud Pub Sub
-   * Trigger" When set will be sent out to monitoring dashabord for tracking
-   * purpose.
-   *
-   * @param string $trigger
+   * @param string
    */
   public function setTrigger($trigger)
   {
@@ -364,12 +238,7 @@ class GoogleCloudIntegrationsV1alphaTriggerConfig extends \Google\Collection
     return $this->trigger;
   }
   /**
-   * Optional. Auto-generated trigger ID. The ID is based on the properties that
-   * you define in the trigger config. For example, for an API trigger, the
-   * trigger ID follows the format: api_trigger/TRIGGER_NAME Where trigger
-   * config has properties with value {"Trigger name": TRIGGER_NAME}
-   *
-   * @param string $triggerId
+   * @param string
    */
   public function setTriggerId($triggerId)
   {
@@ -383,10 +252,7 @@ class GoogleCloudIntegrationsV1alphaTriggerConfig extends \Google\Collection
     return $this->triggerId;
   }
   /**
-   * Required. A number to uniquely identify each trigger config within the
-   * integration on UI.
-   *
-   * @param string $triggerNumber
+   * @param string
    */
   public function setTriggerNumber($triggerNumber)
   {
@@ -400,21 +266,14 @@ class GoogleCloudIntegrationsV1alphaTriggerConfig extends \Google\Collection
     return $this->triggerNumber;
   }
   /**
-   * Optional. Type of trigger
-   *
-   * Accepted values: TRIGGER_TYPE_UNSPECIFIED, CRON, API, SFDC_CHANNEL,
-   * CLOUD_PUBSUB_EXTERNAL, SFDC_CDC_CHANNEL, CLOUD_SCHEDULER,
-   * INTEGRATION_CONNECTOR_TRIGGER, PRIVATE_TRIGGER, CLOUD_PUBSUB,
-   * EVENTARC_TRIGGER
-   *
-   * @param self::TRIGGER_TYPE_* $triggerType
+   * @param string
    */
   public function setTriggerType($triggerType)
   {
     $this->triggerType = $triggerType;
   }
   /**
-   * @return self::TRIGGER_TYPE_*
+   * @return string
    */
   public function getTriggerType()
   {

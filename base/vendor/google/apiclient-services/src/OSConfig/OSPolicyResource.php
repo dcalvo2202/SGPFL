@@ -24,11 +24,6 @@ class OSPolicyResource extends \Google\Model
   protected $fileType = OSPolicyResourceFileResource::class;
   protected $fileDataType = '';
   /**
-   * Required. The id of the resource with the following restrictions: * Must
-   * contain only lowercase letters, numbers, and hyphens. * Must start with a
-   * letter. * Must be between 1-63 characters. * Must end with a number or a
-   * letter. * Must be unique within the OS policy.
-   *
    * @var string
    */
   public $id;
@@ -38,9 +33,7 @@ class OSPolicyResource extends \Google\Model
   protected $repositoryDataType = '';
 
   /**
-   * Exec resource
-   *
-   * @param OSPolicyResourceExecResource $exec
+   * @param OSPolicyResourceExecResource
    */
   public function setExec(OSPolicyResourceExecResource $exec)
   {
@@ -54,9 +47,7 @@ class OSPolicyResource extends \Google\Model
     return $this->exec;
   }
   /**
-   * File resource
-   *
-   * @param OSPolicyResourceFileResource $file
+   * @param OSPolicyResourceFileResource
    */
   public function setFile(OSPolicyResourceFileResource $file)
   {
@@ -70,12 +61,7 @@ class OSPolicyResource extends \Google\Model
     return $this->file;
   }
   /**
-   * Required. The id of the resource with the following restrictions: * Must
-   * contain only lowercase letters, numbers, and hyphens. * Must start with a
-   * letter. * Must be between 1-63 characters. * Must end with a number or a
-   * letter. * Must be unique within the OS policy.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -89,9 +75,7 @@ class OSPolicyResource extends \Google\Model
     return $this->id;
   }
   /**
-   * Package resource
-   *
-   * @param OSPolicyResourcePackageResource $pkg
+   * @param OSPolicyResourcePackageResource
    */
   public function setPkg(OSPolicyResourcePackageResource $pkg)
   {
@@ -105,9 +89,7 @@ class OSPolicyResource extends \Google\Model
     return $this->pkg;
   }
   /**
-   * Package repository resource
-   *
-   * @param OSPolicyResourceRepositoryResource $repository
+   * @param OSPolicyResourceRepositoryResource
    */
   public function setRepository(OSPolicyResourceRepositoryResource $repository)
   {

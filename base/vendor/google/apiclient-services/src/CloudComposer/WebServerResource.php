@@ -20,28 +20,20 @@ namespace Google\Service\CloudComposer;
 class WebServerResource extends \Google\Model
 {
   /**
-   * Optional. CPU request and limit for Airflow web server.
-   *
    * @var float
    */
   public $cpu;
   /**
-   * Optional. Memory (GB) request and limit for Airflow web server.
-   *
    * @var float
    */
   public $memoryGb;
   /**
-   * Optional. Storage (GB) request and limit for Airflow web server.
-   *
    * @var float
    */
   public $storageGb;
 
   /**
-   * Optional. CPU request and limit for Airflow web server.
-   *
-   * @param float $cpu
+   * @param float
    */
   public function setCpu($cpu)
   {
@@ -55,9 +47,7 @@ class WebServerResource extends \Google\Model
     return $this->cpu;
   }
   /**
-   * Optional. Memory (GB) request and limit for Airflow web server.
-   *
-   * @param float $memoryGb
+   * @param float
    */
   public function setMemoryGb($memoryGb)
   {
@@ -71,9 +61,7 @@ class WebServerResource extends \Google\Model
     return $this->memoryGb;
   }
   /**
-   * Optional. Storage (GB) request and limit for Airflow web server.
-   *
-   * @param float $storageGb
+   * @param float
    */
   public function setStorageGb($storageGb)
   {

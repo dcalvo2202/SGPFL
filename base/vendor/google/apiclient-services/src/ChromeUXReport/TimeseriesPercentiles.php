@@ -21,22 +21,12 @@ class TimeseriesPercentiles extends \Google\Collection
 {
   protected $collection_key = 'p75s';
   /**
-   * 75% of users experienced the given metric at or below this value. The
-   * length of this list of densities is equal to the length of the
-   * CollectionPeriods field in the HistoryRecord message, which describes when
-   * the density was observed in the field.
-   *
    * @var array[]
    */
   public $p75s;
 
   /**
-   * 75% of users experienced the given metric at or below this value. The
-   * length of this list of densities is equal to the length of the
-   * CollectionPeriods field in the HistoryRecord message, which describes when
-   * the density was observed in the field.
-   *
-   * @param array[] $p75s
+   * @param array[]
    */
   public function setP75s($p75s)
   {

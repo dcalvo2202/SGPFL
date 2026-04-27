@@ -23,23 +23,14 @@ class GoogleCloudIntegrationsV1alphaExecuteIntegrationsResponse extends \Google\
   protected $eventParametersType = EnterpriseCrmFrontendsEventbusProtoEventParameters::class;
   protected $eventParametersDataType = '';
   /**
-   * Is true if any execution in the integration failed. False otherwise.
-   *
-   * @deprecated
    * @var bool
    */
   public $executionFailed;
   /**
-   * The id of the execution corresponding to this run of integration.
-   *
    * @var string
    */
   public $executionId;
   /**
-   * OUTPUT parameters in format of Map. Where Key is the name of the parameter.
-   * Note: Name of the system generated parameters are wrapped by backtick(`) to
-   * distinguish them from the user defined parameters.
-   *
    * @var array[]
    */
   public $outputParameters;
@@ -49,17 +40,13 @@ class GoogleCloudIntegrationsV1alphaExecuteIntegrationsResponse extends \Google\
   protected $parametersDataType = 'map';
 
   /**
-   * Details for the integration that were executed.
-   *
-   * @deprecated
-   * @param EnterpriseCrmFrontendsEventbusProtoEventParameters $eventParameters
+   * @param EnterpriseCrmFrontendsEventbusProtoEventParameters
    */
   public function setEventParameters(EnterpriseCrmFrontendsEventbusProtoEventParameters $eventParameters)
   {
     $this->eventParameters = $eventParameters;
   }
   /**
-   * @deprecated
    * @return EnterpriseCrmFrontendsEventbusProtoEventParameters
    */
   public function getEventParameters()
@@ -67,17 +54,13 @@ class GoogleCloudIntegrationsV1alphaExecuteIntegrationsResponse extends \Google\
     return $this->eventParameters;
   }
   /**
-   * Is true if any execution in the integration failed. False otherwise.
-   *
-   * @deprecated
-   * @param bool $executionFailed
+   * @param bool
    */
   public function setExecutionFailed($executionFailed)
   {
     $this->executionFailed = $executionFailed;
   }
   /**
-   * @deprecated
    * @return bool
    */
   public function getExecutionFailed()
@@ -85,9 +68,7 @@ class GoogleCloudIntegrationsV1alphaExecuteIntegrationsResponse extends \Google\
     return $this->executionFailed;
   }
   /**
-   * The id of the execution corresponding to this run of integration.
-   *
-   * @param string $executionId
+   * @param string
    */
   public function setExecutionId($executionId)
   {
@@ -101,11 +82,7 @@ class GoogleCloudIntegrationsV1alphaExecuteIntegrationsResponse extends \Google\
     return $this->executionId;
   }
   /**
-   * OUTPUT parameters in format of Map. Where Key is the name of the parameter.
-   * Note: Name of the system generated parameters are wrapped by backtick(`) to
-   * distinguish them from the user defined parameters.
-   *
-   * @param array[] $outputParameters
+   * @param array[]
    */
   public function setOutputParameters($outputParameters)
   {
@@ -119,18 +96,13 @@ class GoogleCloudIntegrationsV1alphaExecuteIntegrationsResponse extends \Google\
     return $this->outputParameters;
   }
   /**
-   * Parameters are a part of Event and can be used to communicate between
-   * different tasks that are part of the same integration execution.
-   *
-   * @deprecated
-   * @param EnterpriseCrmFrontendsEventbusProtoParameterEntry[] $parameterEntries
+   * @param EnterpriseCrmFrontendsEventbusProtoParameterEntry[]
    */
   public function setParameterEntries($parameterEntries)
   {
     $this->parameterEntries = $parameterEntries;
   }
   /**
-   * @deprecated
    * @return EnterpriseCrmFrontendsEventbusProtoParameterEntry[]
    */
   public function getParameterEntries()
@@ -138,9 +110,7 @@ class GoogleCloudIntegrationsV1alphaExecuteIntegrationsResponse extends \Google\
     return $this->parameterEntries;
   }
   /**
-   * Optional. OUTPUT parameters from integration execution.
-   *
-   * @param GoogleCloudIntegrationsV1alphaValueType[] $parameters
+   * @param GoogleCloudIntegrationsV1alphaValueType[]
    */
   public function setParameters($parameters)
   {

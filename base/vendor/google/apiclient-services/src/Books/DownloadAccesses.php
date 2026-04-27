@@ -23,16 +23,12 @@ class DownloadAccesses extends \Google\Collection
   protected $downloadAccessListType = DownloadAccessRestriction::class;
   protected $downloadAccessListDataType = 'array';
   /**
-   * Resource type.
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * A list of download access responses.
-   *
-   * @param DownloadAccessRestriction[] $downloadAccessList
+   * @param DownloadAccessRestriction[]
    */
   public function setDownloadAccessList($downloadAccessList)
   {
@@ -46,9 +42,7 @@ class DownloadAccesses extends \Google\Collection
     return $this->downloadAccessList;
   }
   /**
-   * Resource type.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

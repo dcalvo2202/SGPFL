@@ -20,34 +20,20 @@ namespace Google\Service\CloudVideoIntelligence;
 class GoogleCloudVideointelligenceV1PersonDetectionConfig extends \Google\Model
 {
   /**
-   * Whether to enable person attributes detection, such as cloth color (black,
-   * blue, etc), type (coat, dress, etc), pattern (plain, floral, etc), hair,
-   * etc. Ignored if 'include_bounding_boxes' is set to false.
-   *
    * @var bool
    */
   public $includeAttributes;
   /**
-   * Whether bounding boxes are included in the person detection annotation
-   * output.
-   *
    * @var bool
    */
   public $includeBoundingBoxes;
   /**
-   * Whether to enable pose landmarks detection. Ignored if
-   * 'include_bounding_boxes' is set to false.
-   *
    * @var bool
    */
   public $includePoseLandmarks;
 
   /**
-   * Whether to enable person attributes detection, such as cloth color (black,
-   * blue, etc), type (coat, dress, etc), pattern (plain, floral, etc), hair,
-   * etc. Ignored if 'include_bounding_boxes' is set to false.
-   *
-   * @param bool $includeAttributes
+   * @param bool
    */
   public function setIncludeAttributes($includeAttributes)
   {
@@ -61,10 +47,7 @@ class GoogleCloudVideointelligenceV1PersonDetectionConfig extends \Google\Model
     return $this->includeAttributes;
   }
   /**
-   * Whether bounding boxes are included in the person detection annotation
-   * output.
-   *
-   * @param bool $includeBoundingBoxes
+   * @param bool
    */
   public function setIncludeBoundingBoxes($includeBoundingBoxes)
   {
@@ -78,10 +61,7 @@ class GoogleCloudVideointelligenceV1PersonDetectionConfig extends \Google\Model
     return $this->includeBoundingBoxes;
   }
   /**
-   * Whether to enable pose landmarks detection. Ignored if
-   * 'include_bounding_boxes' is set to false.
-   *
-   * @param bool $includePoseLandmarks
+   * @param bool
    */
   public function setIncludePoseLandmarks($includePoseLandmarks)
   {

@@ -24,9 +24,7 @@ class InstancesSetMachineResourcesRequest extends \Google\Collection
   protected $guestAcceleratorsDataType = 'array';
 
   /**
-   * A list of the type and count of accelerator cards attached to the instance.
-   *
-   * @param AcceleratorConfig[] $guestAccelerators
+   * @param AcceleratorConfig[]
    */
   public function setGuestAccelerators($guestAccelerators)
   {

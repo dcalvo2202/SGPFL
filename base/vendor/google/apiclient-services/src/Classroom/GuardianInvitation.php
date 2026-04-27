@@ -20,54 +20,28 @@ namespace Google\Service\Classroom;
 class GuardianInvitation extends \Google\Model
 {
   /**
-   * Should never be returned.
-   */
-  public const STATE_GUARDIAN_INVITATION_STATE_UNSPECIFIED = 'GUARDIAN_INVITATION_STATE_UNSPECIFIED';
-  /**
-   * The invitation is active and awaiting a response.
-   */
-  public const STATE_PENDING = 'PENDING';
-  /**
-   * The invitation is no longer active. It may have been accepted, declined,
-   * withdrawn or it may have expired.
-   */
-  public const STATE_COMPLETE = 'COMPLETE';
-  /**
-   * The time that this invitation was created. Read-only.
-   *
    * @var string
    */
   public $creationTime;
   /**
-   * Unique identifier for this invitation. Read-only.
-   *
    * @var string
    */
   public $invitationId;
   /**
-   * Email address that the invitation was sent to. This field is only visible
-   * to domain administrators.
-   *
    * @var string
    */
   public $invitedEmailAddress;
   /**
-   * The state that this invitation is in.
-   *
    * @var string
    */
   public $state;
   /**
-   * ID of the student (in standard format)
-   *
    * @var string
    */
   public $studentId;
 
   /**
-   * The time that this invitation was created. Read-only.
-   *
-   * @param string $creationTime
+   * @param string
    */
   public function setCreationTime($creationTime)
   {
@@ -81,9 +55,7 @@ class GuardianInvitation extends \Google\Model
     return $this->creationTime;
   }
   /**
-   * Unique identifier for this invitation. Read-only.
-   *
-   * @param string $invitationId
+   * @param string
    */
   public function setInvitationId($invitationId)
   {
@@ -97,10 +69,7 @@ class GuardianInvitation extends \Google\Model
     return $this->invitationId;
   }
   /**
-   * Email address that the invitation was sent to. This field is only visible
-   * to domain administrators.
-   *
-   * @param string $invitedEmailAddress
+   * @param string
    */
   public function setInvitedEmailAddress($invitedEmailAddress)
   {
@@ -114,27 +83,21 @@ class GuardianInvitation extends \Google\Model
     return $this->invitedEmailAddress;
   }
   /**
-   * The state that this invitation is in.
-   *
-   * Accepted values: GUARDIAN_INVITATION_STATE_UNSPECIFIED, PENDING, COMPLETE
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * ID of the student (in standard format)
-   *
-   * @param string $studentId
+   * @param string
    */
   public function setStudentId($studentId)
   {

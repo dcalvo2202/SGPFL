@@ -20,502 +20,136 @@ namespace Google\Service\MyBusinessLodging;
 class LivingAreaEating extends \Google\Model
 {
   /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const COFFEE_MAKER_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const COFFEE_MAKER_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const COFFEE_MAKER_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const COFFEE_MAKER_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const COOKWARE_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const COOKWARE_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const COOKWARE_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const COOKWARE_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const DISHWASHER_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const DISHWASHER_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const DISHWASHER_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const DISHWASHER_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const INDOOR_GRILL_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const INDOOR_GRILL_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const INDOOR_GRILL_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const INDOOR_GRILL_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const KETTLE_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const KETTLE_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const KETTLE_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const KETTLE_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const KITCHEN_AVAILABLE_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const KITCHEN_AVAILABLE_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const KITCHEN_AVAILABLE_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const KITCHEN_AVAILABLE_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const MICROWAVE_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const MICROWAVE_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const MICROWAVE_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const MICROWAVE_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const MINIBAR_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const MINIBAR_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const MINIBAR_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const MINIBAR_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const OUTDOOR_GRILL_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const OUTDOOR_GRILL_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const OUTDOOR_GRILL_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const OUTDOOR_GRILL_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const OVEN_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const OVEN_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const OVEN_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const OVEN_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const REFRIGERATOR_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const REFRIGERATOR_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const REFRIGERATOR_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const REFRIGERATOR_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const SINK_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const SINK_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const SINK_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const SINK_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const SNACKBAR_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const SNACKBAR_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const SNACKBAR_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const SNACKBAR_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const STOVE_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const STOVE_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const STOVE_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const STOVE_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const TEA_STATION_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const TEA_STATION_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const TEA_STATION_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const TEA_STATION_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const TOASTER_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const TOASTER_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const TOASTER_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const TOASTER_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Coffee maker. An electric appliance that brews coffee by heating and
-   * forcing water through ground coffee.
-   *
    * @var bool
    */
   public $coffeeMaker;
   /**
-   * Coffee maker exception.
-   *
    * @var string
    */
   public $coffeeMakerException;
   /**
-   * Cookware. Kitchen pots, pans and utensils used in connection with the
-   * preparation of food.
-   *
    * @var bool
    */
   public $cookware;
   /**
-   * Cookware exception.
-   *
    * @var string
    */
   public $cookwareException;
   /**
-   * Dishwasher. A counter-height electrical cabinet containing racks for dirty
-   * dishware, cookware and cutlery, and a dispenser for soap built into the
-   * pull-down door. The cabinet is attached to the plumbing system to
-   * facilitate the automatic cleaning of its contents.
-   *
    * @var bool
    */
   public $dishwasher;
   /**
-   * Dishwasher exception.
-   *
    * @var string
    */
   public $dishwasherException;
   /**
-   * Indoor grill. Metal grates built into an indoor cooktop on which food is
-   * cooked over an open flame or electric heat source.
-   *
    * @var bool
    */
   public $indoorGrill;
   /**
-   * Indoor grill exception.
-   *
    * @var string
    */
   public $indoorGrillException;
   /**
-   * Kettle. A covered container with a handle and a spout used for boiling
-   * water.
-   *
    * @var bool
    */
   public $kettle;
   /**
-   * Kettle exception.
-   *
    * @var string
    */
   public $kettleException;
   /**
-   * Kitchen available. An area of the guestroom designated for the preparation
-   * and storage of food via the presence of a refrigerator, cook top, oven and
-   * sink, as well as cutlery, dishes and cookware. Usually includes small
-   * appliances such a coffee maker and a microwave. May or may not include an
-   * automatic dishwasher.
-   *
    * @var bool
    */
   public $kitchenAvailable;
   /**
-   * Kitchen available exception.
-   *
    * @var string
    */
   public $kitchenAvailableException;
   /**
-   * Microwave. An electric oven that quickly cooks and heats food by microwave
-   * energy. Smaller than a standing or wall mounted oven. Usually placed on a
-   * kitchen counter, a shelf or tabletop or mounted above a cooktop.
-   *
    * @var bool
    */
   public $microwave;
   /**
-   * Microwave exception.
-   *
    * @var string
    */
   public $microwaveException;
   /**
-   * Minibar. A small refrigerated cabinet in the guestroom containing
-   * bottles/cans of soft drinks, mini bottles of alcohol, and snacks. The items
-   * are most commonly available for a fee.
-   *
    * @var bool
    */
   public $minibar;
   /**
-   * Minibar exception.
-   *
    * @var string
    */
   public $minibarException;
   /**
-   * Outdoor grill. Metal grates on which food is cooked over an open flame or
-   * electric heat source. Part of an outdoor apparatus that supports the
-   * grates. Also known as barbecue grill or barbecue.
-   *
    * @var bool
    */
   public $outdoorGrill;
   /**
-   * Outdoor grill exception.
-   *
    * @var string
    */
   public $outdoorGrillException;
   /**
-   * Oven. A temperature controlled, heated metal cabinet powered by gas or
-   * electricity in which food is placed for the purpose of cooking or
-   * reheating.
-   *
    * @var bool
    */
   public $oven;
   /**
-   * Oven exception.
-   *
    * @var string
    */
   public $ovenException;
   /**
-   * Refrigerator. A large, climate-controlled electrical cabinet with vertical
-   * doors. Built for the purpose of chilling and storing perishable foods.
-   *
    * @var bool
    */
   public $refrigerator;
   /**
-   * Refrigerator exception.
-   *
    * @var string
    */
   public $refrigeratorException;
   /**
-   * Sink. A basin with a faucet attached to a water source and used for the
-   * purpose of washing and rinsing.
-   *
    * @var bool
    */
   public $sink;
   /**
-   * Sink exception.
-   *
    * @var string
    */
   public $sinkException;
   /**
-   * Snackbar. A small cabinet in the guestroom containing snacks. The items are
-   * most commonly available for a fee.
-   *
    * @var bool
    */
   public $snackbar;
   /**
-   * Snackbar exception.
-   *
    * @var string
    */
   public $snackbarException;
   /**
-   * Stove. A kitchen appliance powered by gas or electricity for the purpose of
-   * creating a flame or hot surface on which pots of food can be cooked. Also
-   * known as cooktop or hob.
-   *
    * @var bool
    */
   public $stove;
   /**
-   * Stove exception.
-   *
    * @var string
    */
   public $stoveException;
   /**
-   * Tea station. A small area with the supplies needed to heat water and make
-   * tea.
-   *
    * @var bool
    */
   public $teaStation;
   /**
-   * Tea station exception.
-   *
    * @var string
    */
   public $teaStationException;
   /**
-   * Toaster. A small, temperature controlled electric appliance with
-   * rectangular slots at the top that are lined with heated coils for the
-   * purpose of browning slices of bread products.
-   *
    * @var bool
    */
   public $toaster;
   /**
-   * Toaster exception.
-   *
    * @var string
    */
   public $toasterException;
 
   /**
-   * Coffee maker. An electric appliance that brews coffee by heating and
-   * forcing water through ground coffee.
-   *
-   * @param bool $coffeeMaker
+   * @param bool
    */
   public function setCoffeeMaker($coffeeMaker)
   {
@@ -529,29 +163,21 @@ class LivingAreaEating extends \Google\Model
     return $this->coffeeMaker;
   }
   /**
-   * Coffee maker exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::COFFEE_MAKER_EXCEPTION_* $coffeeMakerException
+   * @param string
    */
   public function setCoffeeMakerException($coffeeMakerException)
   {
     $this->coffeeMakerException = $coffeeMakerException;
   }
   /**
-   * @return self::COFFEE_MAKER_EXCEPTION_*
+   * @return string
    */
   public function getCoffeeMakerException()
   {
     return $this->coffeeMakerException;
   }
   /**
-   * Cookware. Kitchen pots, pans and utensils used in connection with the
-   * preparation of food.
-   *
-   * @param bool $cookware
+   * @param bool
    */
   public function setCookware($cookware)
   {
@@ -565,31 +191,21 @@ class LivingAreaEating extends \Google\Model
     return $this->cookware;
   }
   /**
-   * Cookware exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::COOKWARE_EXCEPTION_* $cookwareException
+   * @param string
    */
   public function setCookwareException($cookwareException)
   {
     $this->cookwareException = $cookwareException;
   }
   /**
-   * @return self::COOKWARE_EXCEPTION_*
+   * @return string
    */
   public function getCookwareException()
   {
     return $this->cookwareException;
   }
   /**
-   * Dishwasher. A counter-height electrical cabinet containing racks for dirty
-   * dishware, cookware and cutlery, and a dispenser for soap built into the
-   * pull-down door. The cabinet is attached to the plumbing system to
-   * facilitate the automatic cleaning of its contents.
-   *
-   * @param bool $dishwasher
+   * @param bool
    */
   public function setDishwasher($dishwasher)
   {
@@ -603,29 +219,21 @@ class LivingAreaEating extends \Google\Model
     return $this->dishwasher;
   }
   /**
-   * Dishwasher exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::DISHWASHER_EXCEPTION_* $dishwasherException
+   * @param string
    */
   public function setDishwasherException($dishwasherException)
   {
     $this->dishwasherException = $dishwasherException;
   }
   /**
-   * @return self::DISHWASHER_EXCEPTION_*
+   * @return string
    */
   public function getDishwasherException()
   {
     return $this->dishwasherException;
   }
   /**
-   * Indoor grill. Metal grates built into an indoor cooktop on which food is
-   * cooked over an open flame or electric heat source.
-   *
-   * @param bool $indoorGrill
+   * @param bool
    */
   public function setIndoorGrill($indoorGrill)
   {
@@ -639,29 +247,21 @@ class LivingAreaEating extends \Google\Model
     return $this->indoorGrill;
   }
   /**
-   * Indoor grill exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::INDOOR_GRILL_EXCEPTION_* $indoorGrillException
+   * @param string
    */
   public function setIndoorGrillException($indoorGrillException)
   {
     $this->indoorGrillException = $indoorGrillException;
   }
   /**
-   * @return self::INDOOR_GRILL_EXCEPTION_*
+   * @return string
    */
   public function getIndoorGrillException()
   {
     return $this->indoorGrillException;
   }
   /**
-   * Kettle. A covered container with a handle and a spout used for boiling
-   * water.
-   *
-   * @param bool $kettle
+   * @param bool
    */
   public function setKettle($kettle)
   {
@@ -675,32 +275,21 @@ class LivingAreaEating extends \Google\Model
     return $this->kettle;
   }
   /**
-   * Kettle exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::KETTLE_EXCEPTION_* $kettleException
+   * @param string
    */
   public function setKettleException($kettleException)
   {
     $this->kettleException = $kettleException;
   }
   /**
-   * @return self::KETTLE_EXCEPTION_*
+   * @return string
    */
   public function getKettleException()
   {
     return $this->kettleException;
   }
   /**
-   * Kitchen available. An area of the guestroom designated for the preparation
-   * and storage of food via the presence of a refrigerator, cook top, oven and
-   * sink, as well as cutlery, dishes and cookware. Usually includes small
-   * appliances such a coffee maker and a microwave. May or may not include an
-   * automatic dishwasher.
-   *
-   * @param bool $kitchenAvailable
+   * @param bool
    */
   public function setKitchenAvailable($kitchenAvailable)
   {
@@ -714,30 +303,21 @@ class LivingAreaEating extends \Google\Model
     return $this->kitchenAvailable;
   }
   /**
-   * Kitchen available exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::KITCHEN_AVAILABLE_EXCEPTION_* $kitchenAvailableException
+   * @param string
    */
   public function setKitchenAvailableException($kitchenAvailableException)
   {
     $this->kitchenAvailableException = $kitchenAvailableException;
   }
   /**
-   * @return self::KITCHEN_AVAILABLE_EXCEPTION_*
+   * @return string
    */
   public function getKitchenAvailableException()
   {
     return $this->kitchenAvailableException;
   }
   /**
-   * Microwave. An electric oven that quickly cooks and heats food by microwave
-   * energy. Smaller than a standing or wall mounted oven. Usually placed on a
-   * kitchen counter, a shelf or tabletop or mounted above a cooktop.
-   *
-   * @param bool $microwave
+   * @param bool
    */
   public function setMicrowave($microwave)
   {
@@ -751,30 +331,21 @@ class LivingAreaEating extends \Google\Model
     return $this->microwave;
   }
   /**
-   * Microwave exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::MICROWAVE_EXCEPTION_* $microwaveException
+   * @param string
    */
   public function setMicrowaveException($microwaveException)
   {
     $this->microwaveException = $microwaveException;
   }
   /**
-   * @return self::MICROWAVE_EXCEPTION_*
+   * @return string
    */
   public function getMicrowaveException()
   {
     return $this->microwaveException;
   }
   /**
-   * Minibar. A small refrigerated cabinet in the guestroom containing
-   * bottles/cans of soft drinks, mini bottles of alcohol, and snacks. The items
-   * are most commonly available for a fee.
-   *
-   * @param bool $minibar
+   * @param bool
    */
   public function setMinibar($minibar)
   {
@@ -788,30 +359,21 @@ class LivingAreaEating extends \Google\Model
     return $this->minibar;
   }
   /**
-   * Minibar exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::MINIBAR_EXCEPTION_* $minibarException
+   * @param string
    */
   public function setMinibarException($minibarException)
   {
     $this->minibarException = $minibarException;
   }
   /**
-   * @return self::MINIBAR_EXCEPTION_*
+   * @return string
    */
   public function getMinibarException()
   {
     return $this->minibarException;
   }
   /**
-   * Outdoor grill. Metal grates on which food is cooked over an open flame or
-   * electric heat source. Part of an outdoor apparatus that supports the
-   * grates. Also known as barbecue grill or barbecue.
-   *
-   * @param bool $outdoorGrill
+   * @param bool
    */
   public function setOutdoorGrill($outdoorGrill)
   {
@@ -825,30 +387,21 @@ class LivingAreaEating extends \Google\Model
     return $this->outdoorGrill;
   }
   /**
-   * Outdoor grill exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::OUTDOOR_GRILL_EXCEPTION_* $outdoorGrillException
+   * @param string
    */
   public function setOutdoorGrillException($outdoorGrillException)
   {
     $this->outdoorGrillException = $outdoorGrillException;
   }
   /**
-   * @return self::OUTDOOR_GRILL_EXCEPTION_*
+   * @return string
    */
   public function getOutdoorGrillException()
   {
     return $this->outdoorGrillException;
   }
   /**
-   * Oven. A temperature controlled, heated metal cabinet powered by gas or
-   * electricity in which food is placed for the purpose of cooking or
-   * reheating.
-   *
-   * @param bool $oven
+   * @param bool
    */
   public function setOven($oven)
   {
@@ -862,29 +415,21 @@ class LivingAreaEating extends \Google\Model
     return $this->oven;
   }
   /**
-   * Oven exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::OVEN_EXCEPTION_* $ovenException
+   * @param string
    */
   public function setOvenException($ovenException)
   {
     $this->ovenException = $ovenException;
   }
   /**
-   * @return self::OVEN_EXCEPTION_*
+   * @return string
    */
   public function getOvenException()
   {
     return $this->ovenException;
   }
   /**
-   * Refrigerator. A large, climate-controlled electrical cabinet with vertical
-   * doors. Built for the purpose of chilling and storing perishable foods.
-   *
-   * @param bool $refrigerator
+   * @param bool
    */
   public function setRefrigerator($refrigerator)
   {
@@ -898,29 +443,21 @@ class LivingAreaEating extends \Google\Model
     return $this->refrigerator;
   }
   /**
-   * Refrigerator exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::REFRIGERATOR_EXCEPTION_* $refrigeratorException
+   * @param string
    */
   public function setRefrigeratorException($refrigeratorException)
   {
     $this->refrigeratorException = $refrigeratorException;
   }
   /**
-   * @return self::REFRIGERATOR_EXCEPTION_*
+   * @return string
    */
   public function getRefrigeratorException()
   {
     return $this->refrigeratorException;
   }
   /**
-   * Sink. A basin with a faucet attached to a water source and used for the
-   * purpose of washing and rinsing.
-   *
-   * @param bool $sink
+   * @param bool
    */
   public function setSink($sink)
   {
@@ -934,29 +471,21 @@ class LivingAreaEating extends \Google\Model
     return $this->sink;
   }
   /**
-   * Sink exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::SINK_EXCEPTION_* $sinkException
+   * @param string
    */
   public function setSinkException($sinkException)
   {
     $this->sinkException = $sinkException;
   }
   /**
-   * @return self::SINK_EXCEPTION_*
+   * @return string
    */
   public function getSinkException()
   {
     return $this->sinkException;
   }
   /**
-   * Snackbar. A small cabinet in the guestroom containing snacks. The items are
-   * most commonly available for a fee.
-   *
-   * @param bool $snackbar
+   * @param bool
    */
   public function setSnackbar($snackbar)
   {
@@ -970,30 +499,21 @@ class LivingAreaEating extends \Google\Model
     return $this->snackbar;
   }
   /**
-   * Snackbar exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::SNACKBAR_EXCEPTION_* $snackbarException
+   * @param string
    */
   public function setSnackbarException($snackbarException)
   {
     $this->snackbarException = $snackbarException;
   }
   /**
-   * @return self::SNACKBAR_EXCEPTION_*
+   * @return string
    */
   public function getSnackbarException()
   {
     return $this->snackbarException;
   }
   /**
-   * Stove. A kitchen appliance powered by gas or electricity for the purpose of
-   * creating a flame or hot surface on which pots of food can be cooked. Also
-   * known as cooktop or hob.
-   *
-   * @param bool $stove
+   * @param bool
    */
   public function setStove($stove)
   {
@@ -1007,29 +527,21 @@ class LivingAreaEating extends \Google\Model
     return $this->stove;
   }
   /**
-   * Stove exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::STOVE_EXCEPTION_* $stoveException
+   * @param string
    */
   public function setStoveException($stoveException)
   {
     $this->stoveException = $stoveException;
   }
   /**
-   * @return self::STOVE_EXCEPTION_*
+   * @return string
    */
   public function getStoveException()
   {
     return $this->stoveException;
   }
   /**
-   * Tea station. A small area with the supplies needed to heat water and make
-   * tea.
-   *
-   * @param bool $teaStation
+   * @param bool
    */
   public function setTeaStation($teaStation)
   {
@@ -1043,30 +555,21 @@ class LivingAreaEating extends \Google\Model
     return $this->teaStation;
   }
   /**
-   * Tea station exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::TEA_STATION_EXCEPTION_* $teaStationException
+   * @param string
    */
   public function setTeaStationException($teaStationException)
   {
     $this->teaStationException = $teaStationException;
   }
   /**
-   * @return self::TEA_STATION_EXCEPTION_*
+   * @return string
    */
   public function getTeaStationException()
   {
     return $this->teaStationException;
   }
   /**
-   * Toaster. A small, temperature controlled electric appliance with
-   * rectangular slots at the top that are lined with heated coils for the
-   * purpose of browning slices of bread products.
-   *
-   * @param bool $toaster
+   * @param bool
    */
   public function setToaster($toaster)
   {
@@ -1080,19 +583,14 @@ class LivingAreaEating extends \Google\Model
     return $this->toaster;
   }
   /**
-   * Toaster exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::TOASTER_EXCEPTION_* $toasterException
+   * @param string
    */
   public function setToasterException($toasterException)
   {
     $this->toasterException = $toasterException;
   }
   /**
-   * @return self::TOASTER_EXCEPTION_*
+   * @return string
    */
   public function getToasterException()
   {

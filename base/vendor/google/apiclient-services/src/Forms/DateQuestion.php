@@ -20,22 +20,16 @@ namespace Google\Service\Forms;
 class DateQuestion extends \Google\Model
 {
   /**
-   * Whether to include the time as part of the question.
-   *
    * @var bool
    */
   public $includeTime;
   /**
-   * Whether to include the year as part of the question.
-   *
    * @var bool
    */
   public $includeYear;
 
   /**
-   * Whether to include the time as part of the question.
-   *
-   * @param bool $includeTime
+   * @param bool
    */
   public function setIncludeTime($includeTime)
   {
@@ -49,9 +43,7 @@ class DateQuestion extends \Google\Model
     return $this->includeTime;
   }
   /**
-   * Whether to include the year as part of the question.
-   *
-   * @param bool $includeYear
+   * @param bool
    */
   public function setIncludeYear($includeYear)
   {

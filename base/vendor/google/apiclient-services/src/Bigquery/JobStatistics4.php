@@ -21,19 +21,10 @@ class JobStatistics4 extends \Google\Collection
 {
   protected $collection_key = 'timeline';
   /**
-   * Output only. Number of files per destination URI or URI pattern specified
-   * in the extract configuration. These values will be in the same order as the
-   * URIs specified in the 'destinationUris' field.
-   *
    * @var string[]
    */
   public $destinationUriFileCounts;
   /**
-   * Output only. Number of user bytes extracted into the result. This is the
-   * byte count as computed by BigQuery for billing purposes and doesn't have
-   * any relationship with the number of actual result bytes extracted in the
-   * desired format.
-   *
    * @var string
    */
   public $inputBytes;
@@ -41,11 +32,7 @@ class JobStatistics4 extends \Google\Collection
   protected $timelineDataType = 'array';
 
   /**
-   * Output only. Number of files per destination URI or URI pattern specified
-   * in the extract configuration. These values will be in the same order as the
-   * URIs specified in the 'destinationUris' field.
-   *
-   * @param string[] $destinationUriFileCounts
+   * @param string[]
    */
   public function setDestinationUriFileCounts($destinationUriFileCounts)
   {
@@ -59,12 +46,7 @@ class JobStatistics4 extends \Google\Collection
     return $this->destinationUriFileCounts;
   }
   /**
-   * Output only. Number of user bytes extracted into the result. This is the
-   * byte count as computed by BigQuery for billing purposes and doesn't have
-   * any relationship with the number of actual result bytes extracted in the
-   * desired format.
-   *
-   * @param string $inputBytes
+   * @param string
    */
   public function setInputBytes($inputBytes)
   {
@@ -78,9 +60,7 @@ class JobStatistics4 extends \Google\Collection
     return $this->inputBytes;
   }
   /**
-   * Output only. Describes a timeline of job execution.
-   *
-   * @param QueryTimelineSample[] $timeline
+   * @param QueryTimelineSample[]
    */
   public function setTimeline($timeline)
   {

@@ -21,22 +21,16 @@ class FunctionCall extends \Google\Collection
 {
   protected $collection_key = 'args';
   /**
-   * The arguments that were provided to the function.
-   *
    * @var array[]
    */
   public $args;
   /**
-   * Name of the function invoked.
-   *
    * @var string
    */
   public $function;
 
   /**
-   * The arguments that were provided to the function.
-   *
-   * @param array[] $args
+   * @param array[]
    */
   public function setArgs($args)
   {
@@ -50,9 +44,7 @@ class FunctionCall extends \Google\Collection
     return $this->args;
   }
   /**
-   * Name of the function invoked.
-   *
-   * @param string $function
+   * @param string
    */
   public function setFunction($function)
   {

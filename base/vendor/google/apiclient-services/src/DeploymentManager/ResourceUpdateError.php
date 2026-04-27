@@ -24,10 +24,7 @@ class ResourceUpdateError extends \Google\Collection
   protected $errorsDataType = 'array';
 
   /**
-   * [Output Only] The array of errors encountered while processing this
-   * operation.
-   *
-   * @param ResourceUpdateErrorErrors[] $errors
+   * @param ResourceUpdateErrorErrors[]
    */
   public function setErrors($errors)
   {

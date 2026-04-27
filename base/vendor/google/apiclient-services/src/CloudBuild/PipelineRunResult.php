@@ -20,8 +20,6 @@ namespace Google\Service\CloudBuild;
 class PipelineRunResult extends \Google\Model
 {
   /**
-   * Output only. Name of the TaskRun
-   *
    * @var string
    */
   public $name;
@@ -29,9 +27,7 @@ class PipelineRunResult extends \Google\Model
   protected $valueDataType = '';
 
   /**
-   * Output only. Name of the TaskRun
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -45,9 +41,7 @@ class PipelineRunResult extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Value of the result.
-   *
-   * @param ResultValue $value
+   * @param ResultValue
    */
   public function setValue(ResultValue $value)
   {

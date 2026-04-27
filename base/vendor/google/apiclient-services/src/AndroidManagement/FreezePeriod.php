@@ -25,13 +25,7 @@ class FreezePeriod extends \Google\Model
   protected $startDateDataType = '';
 
   /**
-   * The end date (inclusive) of the freeze period. Must be no later than 90
-   * days from the start date. If the end date is earlier than the start date,
-   * the freeze period is considered wrapping year-end. Note: day and month must
-   * be set. year should not be set as it is not used. For example, {"month":
-   * 1,"date": 30}.
-   *
-   * @param Date $endDate
+   * @param Date
    */
   public function setEndDate(Date $endDate)
   {
@@ -45,11 +39,7 @@ class FreezePeriod extends \Google\Model
     return $this->endDate;
   }
   /**
-   * The start date (inclusive) of the freeze period. Note: day and month must
-   * be set. year should not be set as it is not used. For example, {"month":
-   * 1,"date": 30}.
-   *
-   * @param Date $startDate
+   * @param Date
    */
   public function setStartDate(Date $startDate)
   {

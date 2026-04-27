@@ -20,22 +20,16 @@ namespace Google\Service\CloudComposer;
 class ExitInfo extends \Google\Model
 {
   /**
-   * Error message. Empty if there was no error.
-   *
    * @var string
    */
   public $error;
   /**
-   * The exit code from the command execution.
-   *
    * @var int
    */
   public $exitCode;
 
   /**
-   * Error message. Empty if there was no error.
-   *
-   * @param string $error
+   * @param string
    */
   public function setError($error)
   {
@@ -49,9 +43,7 @@ class ExitInfo extends \Google\Model
     return $this->error;
   }
   /**
-   * The exit code from the command execution.
-   *
-   * @param int $exitCode
+   * @param int
    */
   public function setExitCode($exitCode)
   {

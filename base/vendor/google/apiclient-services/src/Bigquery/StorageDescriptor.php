@@ -20,26 +20,14 @@ namespace Google\Service\Bigquery;
 class StorageDescriptor extends \Google\Model
 {
   /**
-   * Optional. Specifies the fully qualified class name of the InputFormat (e.g.
-   * "org.apache.hadoop.hive.ql.io.orc.OrcInputFormat"). The maximum length is
-   * 128 characters.
-   *
    * @var string
    */
   public $inputFormat;
   /**
-   * Optional. The physical location of the table (e.g. `gs://spark-dataproc-
-   * data/pangea-data/case_sensitive/` or `gs://spark-dataproc-data/pangea-
-   * data`). The maximum length is 2056 bytes.
-   *
    * @var string
    */
   public $locationUri;
   /**
-   * Optional. Specifies the fully qualified class name of the OutputFormat
-   * (e.g. "org.apache.hadoop.hive.ql.io.orc.OrcOutputFormat"). The maximum
-   * length is 128 characters.
-   *
    * @var string
    */
   public $outputFormat;
@@ -47,11 +35,7 @@ class StorageDescriptor extends \Google\Model
   protected $serdeInfoDataType = '';
 
   /**
-   * Optional. Specifies the fully qualified class name of the InputFormat (e.g.
-   * "org.apache.hadoop.hive.ql.io.orc.OrcInputFormat"). The maximum length is
-   * 128 characters.
-   *
-   * @param string $inputFormat
+   * @param string
    */
   public function setInputFormat($inputFormat)
   {
@@ -65,11 +49,7 @@ class StorageDescriptor extends \Google\Model
     return $this->inputFormat;
   }
   /**
-   * Optional. The physical location of the table (e.g. `gs://spark-dataproc-
-   * data/pangea-data/case_sensitive/` or `gs://spark-dataproc-data/pangea-
-   * data`). The maximum length is 2056 bytes.
-   *
-   * @param string $locationUri
+   * @param string
    */
   public function setLocationUri($locationUri)
   {
@@ -83,11 +63,7 @@ class StorageDescriptor extends \Google\Model
     return $this->locationUri;
   }
   /**
-   * Optional. Specifies the fully qualified class name of the OutputFormat
-   * (e.g. "org.apache.hadoop.hive.ql.io.orc.OrcOutputFormat"). The maximum
-   * length is 128 characters.
-   *
-   * @param string $outputFormat
+   * @param string
    */
   public function setOutputFormat($outputFormat)
   {
@@ -101,9 +77,7 @@ class StorageDescriptor extends \Google\Model
     return $this->outputFormat;
   }
   /**
-   * Optional. Serializer and deserializer information.
-   *
-   * @param SerDeInfo $serdeInfo
+   * @param SerDeInfo
    */
   public function setSerdeInfo(SerDeInfo $serdeInfo)
   {

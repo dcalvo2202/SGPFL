@@ -20,40 +20,28 @@ namespace Google\Service\Backupdr;
 class ComputeInstanceDataSourceProperties extends \Google\Model
 {
   /**
-   * The description of the Compute Engine instance.
-   *
    * @var string
    */
   public $description;
   /**
-   * The machine type of the instance.
-   *
    * @var string
    */
   public $machineType;
   /**
-   * Name of the compute instance backed up by the datasource.
-   *
    * @var string
    */
   public $name;
   /**
-   * The total number of disks attached to the Instance.
-   *
    * @var string
    */
   public $totalDiskCount;
   /**
-   * The sum of all the disk sizes.
-   *
    * @var string
    */
   public $totalDiskSizeGb;
 
   /**
-   * The description of the Compute Engine instance.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -67,9 +55,7 @@ class ComputeInstanceDataSourceProperties extends \Google\Model
     return $this->description;
   }
   /**
-   * The machine type of the instance.
-   *
-   * @param string $machineType
+   * @param string
    */
   public function setMachineType($machineType)
   {
@@ -83,9 +69,7 @@ class ComputeInstanceDataSourceProperties extends \Google\Model
     return $this->machineType;
   }
   /**
-   * Name of the compute instance backed up by the datasource.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -99,9 +83,7 @@ class ComputeInstanceDataSourceProperties extends \Google\Model
     return $this->name;
   }
   /**
-   * The total number of disks attached to the Instance.
-   *
-   * @param string $totalDiskCount
+   * @param string
    */
   public function setTotalDiskCount($totalDiskCount)
   {
@@ -115,9 +97,7 @@ class ComputeInstanceDataSourceProperties extends \Google\Model
     return $this->totalDiskCount;
   }
   /**
-   * The sum of all the disk sizes.
-   *
-   * @param string $totalDiskSizeGb
+   * @param string
    */
   public function setTotalDiskSizeGb($totalDiskSizeGb)
   {

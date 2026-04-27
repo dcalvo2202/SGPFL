@@ -19,21 +19,6 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowCxV3beta1WebhookGenericWebService extends \Google\Collection
 {
-  public const HTTP_METHOD_HTTP_METHOD_UNSPECIFIED = 'HTTP_METHOD_UNSPECIFIED';
-  public const HTTP_METHOD_POST = 'POST';
-  public const HTTP_METHOD_GET = 'GET';
-  public const HTTP_METHOD_HEAD = 'HEAD';
-  public const HTTP_METHOD_PUT = 'PUT';
-  public const HTTP_METHOD_DELETE = 'DELETE';
-  public const HTTP_METHOD_PATCH = 'PATCH';
-  public const HTTP_METHOD_OPTIONS = 'OPTIONS';
-  public const SERVICE_AGENT_AUTH_SERVICE_AGENT_AUTH_UNSPECIFIED = 'SERVICE_AGENT_AUTH_UNSPECIFIED';
-  public const SERVICE_AGENT_AUTH_NONE = 'NONE';
-  public const SERVICE_AGENT_AUTH_ID_TOKEN = 'ID_TOKEN';
-  public const SERVICE_AGENT_AUTH_ACCESS_TOKEN = 'ACCESS_TOKEN';
-  public const WEBHOOK_TYPE_WEBHOOK_TYPE_UNSPECIFIED = 'WEBHOOK_TYPE_UNSPECIFIED';
-  public const WEBHOOK_TYPE_STANDARD = 'STANDARD';
-  public const WEBHOOK_TYPE_FLEXIBLE = 'FLEXIBLE';
   protected $collection_key = 'allowedCaCerts';
   /**
    * @var string[]
@@ -50,7 +35,6 @@ class GoogleCloudDialogflowCxV3beta1WebhookGenericWebService extends \Google\Col
    */
   public $parameterMapping;
   /**
-   * @deprecated
    * @var string
    */
   public $password;
@@ -68,8 +52,6 @@ class GoogleCloudDialogflowCxV3beta1WebhookGenericWebService extends \Google\Col
   public $secretVersionForUsernamePassword;
   protected $secretVersionsForRequestHeadersType = GoogleCloudDialogflowCxV3beta1WebhookGenericWebServiceSecretVersionHeaderValue::class;
   protected $secretVersionsForRequestHeadersDataType = 'map';
-  protected $serviceAccountAuthConfigType = GoogleCloudDialogflowCxV3beta1WebhookGenericWebServiceServiceAccountAuthConfig::class;
-  protected $serviceAccountAuthConfigDataType = '';
   /**
    * @var string
    */
@@ -79,7 +61,6 @@ class GoogleCloudDialogflowCxV3beta1WebhookGenericWebService extends \Google\Col
    */
   public $uri;
   /**
-   * @deprecated
    * @var string
    */
   public $username;
@@ -89,7 +70,7 @@ class GoogleCloudDialogflowCxV3beta1WebhookGenericWebService extends \Google\Col
   public $webhookType;
 
   /**
-   * @param string[] $allowedCaCerts
+   * @param string[]
    */
   public function setAllowedCaCerts($allowedCaCerts)
   {
@@ -103,21 +84,21 @@ class GoogleCloudDialogflowCxV3beta1WebhookGenericWebService extends \Google\Col
     return $this->allowedCaCerts;
   }
   /**
-   * @param self::HTTP_METHOD_* $httpMethod
+   * @param string
    */
   public function setHttpMethod($httpMethod)
   {
     $this->httpMethod = $httpMethod;
   }
   /**
-   * @return self::HTTP_METHOD_*
+   * @return string
    */
   public function getHttpMethod()
   {
     return $this->httpMethod;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3beta1WebhookGenericWebServiceOAuthConfig $oauthConfig
+   * @param GoogleCloudDialogflowCxV3beta1WebhookGenericWebServiceOAuthConfig
    */
   public function setOauthConfig(GoogleCloudDialogflowCxV3beta1WebhookGenericWebServiceOAuthConfig $oauthConfig)
   {
@@ -131,7 +112,7 @@ class GoogleCloudDialogflowCxV3beta1WebhookGenericWebService extends \Google\Col
     return $this->oauthConfig;
   }
   /**
-   * @param string[] $parameterMapping
+   * @param string[]
    */
   public function setParameterMapping($parameterMapping)
   {
@@ -145,15 +126,13 @@ class GoogleCloudDialogflowCxV3beta1WebhookGenericWebService extends \Google\Col
     return $this->parameterMapping;
   }
   /**
-   * @deprecated
-   * @param string $password
+   * @param string
    */
   public function setPassword($password)
   {
     $this->password = $password;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getPassword()
@@ -161,7 +140,7 @@ class GoogleCloudDialogflowCxV3beta1WebhookGenericWebService extends \Google\Col
     return $this->password;
   }
   /**
-   * @param string $requestBody
+   * @param string
    */
   public function setRequestBody($requestBody)
   {
@@ -175,7 +154,7 @@ class GoogleCloudDialogflowCxV3beta1WebhookGenericWebService extends \Google\Col
     return $this->requestBody;
   }
   /**
-   * @param string[] $requestHeaders
+   * @param string[]
    */
   public function setRequestHeaders($requestHeaders)
   {
@@ -189,7 +168,7 @@ class GoogleCloudDialogflowCxV3beta1WebhookGenericWebService extends \Google\Col
     return $this->requestHeaders;
   }
   /**
-   * @param string $secretVersionForUsernamePassword
+   * @param string
    */
   public function setSecretVersionForUsernamePassword($secretVersionForUsernamePassword)
   {
@@ -203,7 +182,7 @@ class GoogleCloudDialogflowCxV3beta1WebhookGenericWebService extends \Google\Col
     return $this->secretVersionForUsernamePassword;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3beta1WebhookGenericWebServiceSecretVersionHeaderValue[] $secretVersionsForRequestHeaders
+   * @param GoogleCloudDialogflowCxV3beta1WebhookGenericWebServiceSecretVersionHeaderValue[]
    */
   public function setSecretVersionsForRequestHeaders($secretVersionsForRequestHeaders)
   {
@@ -217,35 +196,21 @@ class GoogleCloudDialogflowCxV3beta1WebhookGenericWebService extends \Google\Col
     return $this->secretVersionsForRequestHeaders;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3beta1WebhookGenericWebServiceServiceAccountAuthConfig $serviceAccountAuthConfig
-   */
-  public function setServiceAccountAuthConfig(GoogleCloudDialogflowCxV3beta1WebhookGenericWebServiceServiceAccountAuthConfig $serviceAccountAuthConfig)
-  {
-    $this->serviceAccountAuthConfig = $serviceAccountAuthConfig;
-  }
-  /**
-   * @return GoogleCloudDialogflowCxV3beta1WebhookGenericWebServiceServiceAccountAuthConfig
-   */
-  public function getServiceAccountAuthConfig()
-  {
-    return $this->serviceAccountAuthConfig;
-  }
-  /**
-   * @param self::SERVICE_AGENT_AUTH_* $serviceAgentAuth
+   * @param string
    */
   public function setServiceAgentAuth($serviceAgentAuth)
   {
     $this->serviceAgentAuth = $serviceAgentAuth;
   }
   /**
-   * @return self::SERVICE_AGENT_AUTH_*
+   * @return string
    */
   public function getServiceAgentAuth()
   {
     return $this->serviceAgentAuth;
   }
   /**
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {
@@ -259,15 +224,13 @@ class GoogleCloudDialogflowCxV3beta1WebhookGenericWebService extends \Google\Col
     return $this->uri;
   }
   /**
-   * @deprecated
-   * @param string $username
+   * @param string
    */
   public function setUsername($username)
   {
     $this->username = $username;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getUsername()
@@ -275,14 +238,14 @@ class GoogleCloudDialogflowCxV3beta1WebhookGenericWebService extends \Google\Col
     return $this->username;
   }
   /**
-   * @param self::WEBHOOK_TYPE_* $webhookType
+   * @param string
    */
   public function setWebhookType($webhookType)
   {
     $this->webhookType = $webhookType;
   }
   /**
-   * @return self::WEBHOOK_TYPE_*
+   * @return string
    */
   public function getWebhookType()
   {

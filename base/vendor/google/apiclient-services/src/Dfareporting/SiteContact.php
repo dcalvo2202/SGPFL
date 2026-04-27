@@ -19,61 +19,41 @@ namespace Google\Service\Dfareporting;
 
 class SiteContact extends \Google\Model
 {
-  public const CONTACT_TYPE_SALES_PERSON = 'SALES_PERSON';
-  public const CONTACT_TYPE_TRAFFICKER = 'TRAFFICKER';
   /**
-   * Address of this site contact.
-   *
    * @var string
    */
   public $address;
   /**
-   * Site contact type.
-   *
    * @var string
    */
   public $contactType;
   /**
-   * Email address of this site contact. This is a required field.
-   *
    * @var string
    */
   public $email;
   /**
-   * First name of this site contact.
-   *
    * @var string
    */
   public $firstName;
   /**
-   * ID of this site contact. This is a read-only, auto-generated field.
-   *
    * @var string
    */
   public $id;
   /**
-   * Last name of this site contact.
-   *
    * @var string
    */
   public $lastName;
   /**
-   * Primary phone number of this site contact.
-   *
    * @var string
    */
   public $phone;
   /**
-   * Title or designation of this site contact.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * Address of this site contact.
-   *
-   * @param string $address
+   * @param string
    */
   public function setAddress($address)
   {
@@ -87,27 +67,21 @@ class SiteContact extends \Google\Model
     return $this->address;
   }
   /**
-   * Site contact type.
-   *
-   * Accepted values: SALES_PERSON, TRAFFICKER
-   *
-   * @param self::CONTACT_TYPE_* $contactType
+   * @param string
    */
   public function setContactType($contactType)
   {
     $this->contactType = $contactType;
   }
   /**
-   * @return self::CONTACT_TYPE_*
+   * @return string
    */
   public function getContactType()
   {
     return $this->contactType;
   }
   /**
-   * Email address of this site contact. This is a required field.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {
@@ -121,9 +95,7 @@ class SiteContact extends \Google\Model
     return $this->email;
   }
   /**
-   * First name of this site contact.
-   *
-   * @param string $firstName
+   * @param string
    */
   public function setFirstName($firstName)
   {
@@ -137,9 +109,7 @@ class SiteContact extends \Google\Model
     return $this->firstName;
   }
   /**
-   * ID of this site contact. This is a read-only, auto-generated field.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -153,9 +123,7 @@ class SiteContact extends \Google\Model
     return $this->id;
   }
   /**
-   * Last name of this site contact.
-   *
-   * @param string $lastName
+   * @param string
    */
   public function setLastName($lastName)
   {
@@ -169,9 +137,7 @@ class SiteContact extends \Google\Model
     return $this->lastName;
   }
   /**
-   * Primary phone number of this site contact.
-   *
-   * @param string $phone
+   * @param string
    */
   public function setPhone($phone)
   {
@@ -185,9 +151,7 @@ class SiteContact extends \Google\Model
     return $this->phone;
   }
   /**
-   * Title or designation of this site contact.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

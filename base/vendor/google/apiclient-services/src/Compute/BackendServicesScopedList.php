@@ -26,9 +26,7 @@ class BackendServicesScopedList extends \Google\Collection
   protected $warningDataType = '';
 
   /**
-   * A list of BackendServices contained in this scope.
-   *
-   * @param BackendService[] $backendServices
+   * @param BackendService[]
    */
   public function setBackendServices($backendServices)
   {
@@ -42,10 +40,7 @@ class BackendServicesScopedList extends \Google\Collection
     return $this->backendServices;
   }
   /**
-   * Informational warning which replaces the list of backend services when the
-   * list is empty.
-   *
-   * @param BackendServicesScopedListWarning $warning
+   * @param BackendServicesScopedListWarning
    */
   public function setWarning(BackendServicesScopedListWarning $warning)
   {

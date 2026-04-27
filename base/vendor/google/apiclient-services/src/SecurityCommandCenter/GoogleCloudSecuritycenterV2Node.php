@@ -20,18 +20,12 @@ namespace Google\Service\SecurityCommandCenter;
 class GoogleCloudSecuritycenterV2Node extends \Google\Model
 {
   /**
-   * [Full resource name](https://google.aip.dev/122#full-resource-names) of the
-   * Compute Engine VM running the cluster node.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * [Full resource name](https://google.aip.dev/122#full-resource-names) of the
-   * Compute Engine VM running the cluster node.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

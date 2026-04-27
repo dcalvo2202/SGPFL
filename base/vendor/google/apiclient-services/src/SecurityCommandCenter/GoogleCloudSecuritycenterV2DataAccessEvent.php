@@ -20,51 +20,24 @@ namespace Google\Service\SecurityCommandCenter;
 class GoogleCloudSecuritycenterV2DataAccessEvent extends \Google\Model
 {
   /**
-   * The operation is unspecified.
-   */
-  public const OPERATION_OPERATION_UNSPECIFIED = 'OPERATION_UNSPECIFIED';
-  /**
-   * Represents a read operation.
-   */
-  public const OPERATION_READ = 'READ';
-  /**
-   * Represents a move operation.
-   */
-  public const OPERATION_MOVE = 'MOVE';
-  /**
-   * Represents a copy operation.
-   */
-  public const OPERATION_COPY = 'COPY';
-  /**
-   * Unique identifier for data access event.
-   *
    * @var string
    */
   public $eventId;
   /**
-   * Timestamp of data access event.
-   *
    * @var string
    */
   public $eventTime;
   /**
-   * The operation performed by the principal to access the data.
-   *
    * @var string
    */
   public $operation;
   /**
-   * The email address of the principal that accessed the data. The principal
-   * could be a user account, service account, Google group, or other.
-   *
    * @var string
    */
   public $principalEmail;
 
   /**
-   * Unique identifier for data access event.
-   *
-   * @param string $eventId
+   * @param string
    */
   public function setEventId($eventId)
   {
@@ -78,9 +51,7 @@ class GoogleCloudSecuritycenterV2DataAccessEvent extends \Google\Model
     return $this->eventId;
   }
   /**
-   * Timestamp of data access event.
-   *
-   * @param string $eventTime
+   * @param string
    */
   public function setEventTime($eventTime)
   {
@@ -94,28 +65,21 @@ class GoogleCloudSecuritycenterV2DataAccessEvent extends \Google\Model
     return $this->eventTime;
   }
   /**
-   * The operation performed by the principal to access the data.
-   *
-   * Accepted values: OPERATION_UNSPECIFIED, READ, MOVE, COPY
-   *
-   * @param self::OPERATION_* $operation
+   * @param string
    */
   public function setOperation($operation)
   {
     $this->operation = $operation;
   }
   /**
-   * @return self::OPERATION_*
+   * @return string
    */
   public function getOperation()
   {
     return $this->operation;
   }
   /**
-   * The email address of the principal that accessed the data. The principal
-   * could be a user account, service account, Google group, or other.
-   *
-   * @param string $principalEmail
+   * @param string
    */
   public function setPrincipalEmail($principalEmail)
   {

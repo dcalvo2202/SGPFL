@@ -20,36 +20,20 @@ namespace Google\Service\Contactcenterinsights;
 class GoogleCloudContactcenterinsightsV1ExportInsightsDataRequestBigQueryDestination extends \Google\Model
 {
   /**
-   * Required. The name of the BigQuery dataset that the snapshot result should
-   * be exported to. If this dataset does not exist, the export call returns an
-   * INVALID_ARGUMENT error.
-   *
    * @var string
    */
   public $dataset;
   /**
-   * A project ID or number. If specified, then export will attempt to write
-   * data to this project instead of the resource project. Otherwise, the
-   * resource project will be used.
-   *
    * @var string
    */
   public $projectId;
   /**
-   * The BigQuery table name to which the insights data should be written. If
-   * this table does not exist, the export call returns an INVALID_ARGUMENT
-   * error.
-   *
    * @var string
    */
   public $table;
 
   /**
-   * Required. The name of the BigQuery dataset that the snapshot result should
-   * be exported to. If this dataset does not exist, the export call returns an
-   * INVALID_ARGUMENT error.
-   *
-   * @param string $dataset
+   * @param string
    */
   public function setDataset($dataset)
   {
@@ -63,11 +47,7 @@ class GoogleCloudContactcenterinsightsV1ExportInsightsDataRequestBigQueryDestina
     return $this->dataset;
   }
   /**
-   * A project ID or number. If specified, then export will attempt to write
-   * data to this project instead of the resource project. Otherwise, the
-   * resource project will be used.
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {
@@ -81,11 +61,7 @@ class GoogleCloudContactcenterinsightsV1ExportInsightsDataRequestBigQueryDestina
     return $this->projectId;
   }
   /**
-   * The BigQuery table name to which the insights data should be written. If
-   * this table does not exist, the export call returns an INVALID_ARGUMENT
-   * error.
-   *
-   * @param string $table
+   * @param string
    */
   public function setTable($table)
   {

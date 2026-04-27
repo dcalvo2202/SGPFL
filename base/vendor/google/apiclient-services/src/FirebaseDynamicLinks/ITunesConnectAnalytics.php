@@ -20,36 +20,24 @@ namespace Google\Service\FirebaseDynamicLinks;
 class ITunesConnectAnalytics extends \Google\Model
 {
   /**
-   * Affiliate token used to create affiliate-coded links.
-   *
    * @var string
    */
   public $at;
   /**
-   * Campaign text that developers can optionally add to any link in order to
-   * track sales from a specific marketing campaign.
-   *
    * @var string
    */
   public $ct;
   /**
-   * iTune media types, including music, podcasts, audiobooks and so on.
-   *
    * @var string
    */
   public $mt;
   /**
-   * Provider token that enables analytics for Dynamic Links from within iTunes
-   * Connect.
-   *
    * @var string
    */
   public $pt;
 
   /**
-   * Affiliate token used to create affiliate-coded links.
-   *
-   * @param string $at
+   * @param string
    */
   public function setAt($at)
   {
@@ -63,10 +51,7 @@ class ITunesConnectAnalytics extends \Google\Model
     return $this->at;
   }
   /**
-   * Campaign text that developers can optionally add to any link in order to
-   * track sales from a specific marketing campaign.
-   *
-   * @param string $ct
+   * @param string
    */
   public function setCt($ct)
   {
@@ -80,9 +65,7 @@ class ITunesConnectAnalytics extends \Google\Model
     return $this->ct;
   }
   /**
-   * iTune media types, including music, podcasts, audiobooks and so on.
-   *
-   * @param string $mt
+   * @param string
    */
   public function setMt($mt)
   {
@@ -96,10 +79,7 @@ class ITunesConnectAnalytics extends \Google\Model
     return $this->mt;
   }
   /**
-   * Provider token that enables analytics for Dynamic Links from within iTunes
-   * Connect.
-   *
-   * @param string $pt
+   * @param string
    */
   public function setPt($pt)
   {

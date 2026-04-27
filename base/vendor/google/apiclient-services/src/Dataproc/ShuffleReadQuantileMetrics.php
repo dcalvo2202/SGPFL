@@ -41,7 +41,7 @@ class ShuffleReadQuantileMetrics extends \Google\Model
   protected $totalBlocksFetchedDataType = '';
 
   /**
-   * @param Quantiles $fetchWaitTimeMillis
+   * @param Quantiles
    */
   public function setFetchWaitTimeMillis(Quantiles $fetchWaitTimeMillis)
   {
@@ -55,7 +55,7 @@ class ShuffleReadQuantileMetrics extends \Google\Model
     return $this->fetchWaitTimeMillis;
   }
   /**
-   * @param Quantiles $localBlocksFetched
+   * @param Quantiles
    */
   public function setLocalBlocksFetched(Quantiles $localBlocksFetched)
   {
@@ -69,7 +69,7 @@ class ShuffleReadQuantileMetrics extends \Google\Model
     return $this->localBlocksFetched;
   }
   /**
-   * @param Quantiles $readBytes
+   * @param Quantiles
    */
   public function setReadBytes(Quantiles $readBytes)
   {
@@ -83,7 +83,7 @@ class ShuffleReadQuantileMetrics extends \Google\Model
     return $this->readBytes;
   }
   /**
-   * @param Quantiles $readRecords
+   * @param Quantiles
    */
   public function setReadRecords(Quantiles $readRecords)
   {
@@ -97,7 +97,7 @@ class ShuffleReadQuantileMetrics extends \Google\Model
     return $this->readRecords;
   }
   /**
-   * @param Quantiles $remoteBlocksFetched
+   * @param Quantiles
    */
   public function setRemoteBlocksFetched(Quantiles $remoteBlocksFetched)
   {
@@ -111,7 +111,7 @@ class ShuffleReadQuantileMetrics extends \Google\Model
     return $this->remoteBlocksFetched;
   }
   /**
-   * @param Quantiles $remoteBytesRead
+   * @param Quantiles
    */
   public function setRemoteBytesRead(Quantiles $remoteBytesRead)
   {
@@ -125,7 +125,7 @@ class ShuffleReadQuantileMetrics extends \Google\Model
     return $this->remoteBytesRead;
   }
   /**
-   * @param Quantiles $remoteBytesReadToDisk
+   * @param Quantiles
    */
   public function setRemoteBytesReadToDisk(Quantiles $remoteBytesReadToDisk)
   {
@@ -139,7 +139,7 @@ class ShuffleReadQuantileMetrics extends \Google\Model
     return $this->remoteBytesReadToDisk;
   }
   /**
-   * @param Quantiles $remoteReqsDuration
+   * @param Quantiles
    */
   public function setRemoteReqsDuration(Quantiles $remoteReqsDuration)
   {
@@ -153,7 +153,7 @@ class ShuffleReadQuantileMetrics extends \Google\Model
     return $this->remoteReqsDuration;
   }
   /**
-   * @param ShufflePushReadQuantileMetrics $shufflePushReadMetrics
+   * @param ShufflePushReadQuantileMetrics
    */
   public function setShufflePushReadMetrics(ShufflePushReadQuantileMetrics $shufflePushReadMetrics)
   {
@@ -167,7 +167,7 @@ class ShuffleReadQuantileMetrics extends \Google\Model
     return $this->shufflePushReadMetrics;
   }
   /**
-   * @param Quantiles $totalBlocksFetched
+   * @param Quantiles
    */
   public function setTotalBlocksFetched(Quantiles $totalBlocksFetched)
   {

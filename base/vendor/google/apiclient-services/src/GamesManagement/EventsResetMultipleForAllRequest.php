@@ -24,23 +24,16 @@ class EventsResetMultipleForAllRequest extends \Google\Collection
         "eventIds" => "event_ids",
   ];
   /**
-   * The IDs of events to reset.
-   *
    * @var string[]
    */
   public $eventIds;
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `gamesManagement#eventsResetMultipleForAllRequest`.
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * The IDs of events to reset.
-   *
-   * @param string[] $eventIds
+   * @param string[]
    */
   public function setEventIds($eventIds)
   {
@@ -54,10 +47,7 @@ class EventsResetMultipleForAllRequest extends \Google\Collection
     return $this->eventIds;
   }
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `gamesManagement#eventsResetMultipleForAllRequest`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

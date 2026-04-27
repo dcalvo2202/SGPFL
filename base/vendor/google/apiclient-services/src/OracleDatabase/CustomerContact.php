@@ -20,18 +20,12 @@ namespace Google\Service\OracleDatabase;
 class CustomerContact extends \Google\Model
 {
   /**
-   * Required. The email address used by Oracle to send notifications regarding
-   * databases and infrastructure.
-   *
    * @var string
    */
   public $email;
 
   /**
-   * Required. The email address used by Oracle to send notifications regarding
-   * databases and infrastructure.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {

@@ -22,8 +22,6 @@ class VmUtilizationInfo extends \Google\Model
   protected $utilizationType = VmUtilizationMetrics::class;
   protected $utilizationDataType = '';
   /**
-   * The VM's ID in the source.
-   *
    * @var string
    */
   public $vmId;
@@ -31,9 +29,7 @@ class VmUtilizationInfo extends \Google\Model
   protected $vmwareVmDetailsDataType = '';
 
   /**
-   * Utilization metrics for this VM.
-   *
-   * @param VmUtilizationMetrics $utilization
+   * @param VmUtilizationMetrics
    */
   public function setUtilization(VmUtilizationMetrics $utilization)
   {
@@ -47,9 +43,7 @@ class VmUtilizationInfo extends \Google\Model
     return $this->utilization;
   }
   /**
-   * The VM's ID in the source.
-   *
-   * @param string $vmId
+   * @param string
    */
   public function setVmId($vmId)
   {
@@ -63,9 +57,7 @@ class VmUtilizationInfo extends \Google\Model
     return $this->vmId;
   }
   /**
-   * The description of the VM in a Source of type Vmware.
-   *
-   * @param VmwareVmDetails $vmwareVmDetails
+   * @param VmwareVmDetails
    */
   public function setVmwareVmDetails(VmwareVmDetails $vmwareVmDetails)
   {

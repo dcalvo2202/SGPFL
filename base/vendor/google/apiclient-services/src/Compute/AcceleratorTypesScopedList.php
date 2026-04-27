@@ -26,9 +26,7 @@ class AcceleratorTypesScopedList extends \Google\Collection
   protected $warningDataType = '';
 
   /**
-   * [Output Only] A list of accelerator types contained in this scope.
-   *
-   * @param AcceleratorType[] $acceleratorTypes
+   * @param AcceleratorType[]
    */
   public function setAcceleratorTypes($acceleratorTypes)
   {
@@ -42,10 +40,7 @@ class AcceleratorTypesScopedList extends \Google\Collection
     return $this->acceleratorTypes;
   }
   /**
-   * [Output Only] An informational warning that appears when the accelerator
-   * types list is empty.
-   *
-   * @param AcceleratorTypesScopedListWarning $warning
+   * @param AcceleratorTypesScopedListWarning
    */
   public function setWarning(AcceleratorTypesScopedListWarning $warning)
   {

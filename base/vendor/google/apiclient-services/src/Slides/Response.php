@@ -45,9 +45,7 @@ class Response extends \Google\Model
   protected $replaceAllTextDataType = '';
 
   /**
-   * The result of creating an image.
-   *
-   * @param CreateImageResponse $createImage
+   * @param CreateImageResponse
    */
   public function setCreateImage(CreateImageResponse $createImage)
   {
@@ -61,9 +59,7 @@ class Response extends \Google\Model
     return $this->createImage;
   }
   /**
-   * The result of creating a line.
-   *
-   * @param CreateLineResponse $createLine
+   * @param CreateLineResponse
    */
   public function setCreateLine(CreateLineResponse $createLine)
   {
@@ -77,9 +73,7 @@ class Response extends \Google\Model
     return $this->createLine;
   }
   /**
-   * The result of creating a shape.
-   *
-   * @param CreateShapeResponse $createShape
+   * @param CreateShapeResponse
    */
   public function setCreateShape(CreateShapeResponse $createShape)
   {
@@ -93,9 +87,7 @@ class Response extends \Google\Model
     return $this->createShape;
   }
   /**
-   * The result of creating a Google Sheets chart.
-   *
-   * @param CreateSheetsChartResponse $createSheetsChart
+   * @param CreateSheetsChartResponse
    */
   public function setCreateSheetsChart(CreateSheetsChartResponse $createSheetsChart)
   {
@@ -109,9 +101,7 @@ class Response extends \Google\Model
     return $this->createSheetsChart;
   }
   /**
-   * The result of creating a slide.
-   *
-   * @param CreateSlideResponse $createSlide
+   * @param CreateSlideResponse
    */
   public function setCreateSlide(CreateSlideResponse $createSlide)
   {
@@ -125,9 +115,7 @@ class Response extends \Google\Model
     return $this->createSlide;
   }
   /**
-   * The result of creating a table.
-   *
-   * @param CreateTableResponse $createTable
+   * @param CreateTableResponse
    */
   public function setCreateTable(CreateTableResponse $createTable)
   {
@@ -141,9 +129,7 @@ class Response extends \Google\Model
     return $this->createTable;
   }
   /**
-   * The result of creating a video.
-   *
-   * @param CreateVideoResponse $createVideo
+   * @param CreateVideoResponse
    */
   public function setCreateVideo(CreateVideoResponse $createVideo)
   {
@@ -157,9 +143,7 @@ class Response extends \Google\Model
     return $this->createVideo;
   }
   /**
-   * The result of duplicating an object.
-   *
-   * @param DuplicateObjectResponse $duplicateObject
+   * @param DuplicateObjectResponse
    */
   public function setDuplicateObject(DuplicateObjectResponse $duplicateObject)
   {
@@ -173,9 +157,7 @@ class Response extends \Google\Model
     return $this->duplicateObject;
   }
   /**
-   * The result of grouping objects.
-   *
-   * @param GroupObjectsResponse $groupObjects
+   * @param GroupObjectsResponse
    */
   public function setGroupObjects(GroupObjectsResponse $groupObjects)
   {
@@ -189,9 +171,7 @@ class Response extends \Google\Model
     return $this->groupObjects;
   }
   /**
-   * The result of replacing all shapes matching some criteria with an image.
-   *
-   * @param ReplaceAllShapesWithImageResponse $replaceAllShapesWithImage
+   * @param ReplaceAllShapesWithImageResponse
    */
   public function setReplaceAllShapesWithImage(ReplaceAllShapesWithImageResponse $replaceAllShapesWithImage)
   {
@@ -205,10 +185,7 @@ class Response extends \Google\Model
     return $this->replaceAllShapesWithImage;
   }
   /**
-   * The result of replacing all shapes matching some criteria with a Google
-   * Sheets chart.
-   *
-   * @param ReplaceAllShapesWithSheetsChartResponse $replaceAllShapesWithSheetsChart
+   * @param ReplaceAllShapesWithSheetsChartResponse
    */
   public function setReplaceAllShapesWithSheetsChart(ReplaceAllShapesWithSheetsChartResponse $replaceAllShapesWithSheetsChart)
   {
@@ -222,9 +199,7 @@ class Response extends \Google\Model
     return $this->replaceAllShapesWithSheetsChart;
   }
   /**
-   * The result of replacing text.
-   *
-   * @param ReplaceAllTextResponse $replaceAllText
+   * @param ReplaceAllTextResponse
    */
   public function setReplaceAllText(ReplaceAllTextResponse $replaceAllText)
   {

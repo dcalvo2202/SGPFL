@@ -23,16 +23,12 @@ class GooglePlayDeveloperReportingV1beta1SearchErrorIssuesResponse extends \Goog
   protected $errorIssuesType = GooglePlayDeveloperReportingV1beta1ErrorIssue::class;
   protected $errorIssuesDataType = 'array';
   /**
-   * Continuation token to fetch the next page of data.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * ErrorIssues that were found.
-   *
-   * @param GooglePlayDeveloperReportingV1beta1ErrorIssue[] $errorIssues
+   * @param GooglePlayDeveloperReportingV1beta1ErrorIssue[]
    */
   public function setErrorIssues($errorIssues)
   {
@@ -46,9 +42,7 @@ class GooglePlayDeveloperReportingV1beta1SearchErrorIssuesResponse extends \Goog
     return $this->errorIssues;
   }
   /**
-   * Continuation token to fetch the next page of data.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

@@ -20,25 +20,16 @@ namespace Google\Service\SiteVerification;
 class SiteVerificationWebResourceGettokenRequestSite extends \Google\Model
 {
   /**
-   * The site identifier. If the type is set to SITE, the identifier is a URL.
-   * If the type is set to INET_DOMAIN, the site identifier is a domain name.
-   *
    * @var string
    */
   public $identifier;
   /**
-   * The type of resource to be verified. Can be SITE or INET_DOMAIN (domain
-   * name).
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The site identifier. If the type is set to SITE, the identifier is a URL.
-   * If the type is set to INET_DOMAIN, the site identifier is a domain name.
-   *
-   * @param string $identifier
+   * @param string
    */
   public function setIdentifier($identifier)
   {
@@ -52,10 +43,7 @@ class SiteVerificationWebResourceGettokenRequestSite extends \Google\Model
     return $this->identifier;
   }
   /**
-   * The type of resource to be verified. Can be SITE or INET_DOMAIN (domain
-   * name).
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

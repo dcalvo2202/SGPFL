@@ -20,20 +20,12 @@ namespace Google\Service\DatabaseMigrationService;
 class PrivateServiceConnectConnectivity extends \Google\Model
 {
   /**
-   * Required. A service attachment that exposes a database, and has the
-   * following format: projects/{project}/regions/{region}/serviceAttachments/{s
-   * ervice_attachment_name}
-   *
    * @var string
    */
   public $serviceAttachment;
 
   /**
-   * Required. A service attachment that exposes a database, and has the
-   * following format: projects/{project}/regions/{region}/serviceAttachments/{s
-   * ervice_attachment_name}
-   *
-   * @param string $serviceAttachment
+   * @param string
    */
   public function setServiceAttachment($serviceAttachment)
   {

@@ -20,23 +20,16 @@ namespace Google\Service\SQLAdmin;
 class RotateServerCaContext extends \Google\Model
 {
   /**
-   * This is always `sql#rotateServerCaContext`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The fingerprint of the next version to be rotated to. If left unspecified,
-   * will be rotated to the most recently added server CA version.
-   *
    * @var string
    */
   public $nextVersion;
 
   /**
-   * This is always `sql#rotateServerCaContext`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -50,10 +43,7 @@ class RotateServerCaContext extends \Google\Model
     return $this->kind;
   }
   /**
-   * The fingerprint of the next version to be rotated to. If left unspecified,
-   * will be rotated to the most recently added server CA version.
-   *
-   * @param string $nextVersion
+   * @param string
    */
   public function setNextVersion($nextVersion)
   {

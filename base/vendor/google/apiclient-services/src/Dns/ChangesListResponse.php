@@ -23,29 +23,16 @@ class ChangesListResponse extends \Google\Collection
   protected $changesType = Change::class;
   protected $changesDataType = 'array';
   /**
-   * Type of resource.
-   *
    * @var string
    */
   public $kind;
   /**
-   * This field indicates that more results are available beyond the last page
-   * displayed. To fetch the results, make another list request and use this
-   * value as your page token. This lets you retrieve the complete contents of a
-   * very large collection one page at a time. However, if the contents of the
-   * collection change between the first and last paginated list request, the
-   * set of all elements returned are an inconsistent view of the collection.
-   * You can't retrieve a consistent snapshot of a collection larger than the
-   * maximum page size.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The requested changes.
-   *
-   * @param Change[] $changes
+   * @param Change[]
    */
   public function setChanges($changes)
   {
@@ -59,9 +46,7 @@ class ChangesListResponse extends \Google\Collection
     return $this->changes;
   }
   /**
-   * Type of resource.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -75,16 +60,7 @@ class ChangesListResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * This field indicates that more results are available beyond the last page
-   * displayed. To fetch the results, make another list request and use this
-   * value as your page token. This lets you retrieve the complete contents of a
-   * very large collection one page at a time. However, if the contents of the
-   * collection change between the first and last paginated list request, the
-   * set of all elements returned are an inconsistent view of the collection.
-   * You can't retrieve a consistent snapshot of a collection larger than the
-   * maximum page size.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

@@ -21,60 +21,24 @@ class GoogleCloudAiplatformV1SupervisedTuningDatasetDistribution extends \Google
 {
   protected $collection_key = 'buckets';
   /**
-   * Output only. Sum of a given population of values that are billable.
-   *
    * @var string
    */
   public $billableSum;
   protected $bucketsType = GoogleCloudAiplatformV1SupervisedTuningDatasetDistributionDatasetBucket::class;
   protected $bucketsDataType = 'array';
-  /**
-   * Output only. The maximum of the population values.
-   *
-   * @var 
-   */
   public $max;
-  /**
-   * Output only. The arithmetic mean of the values in the population.
-   *
-   * @var 
-   */
   public $mean;
-  /**
-   * Output only. The median of the values in the population.
-   *
-   * @var 
-   */
   public $median;
-  /**
-   * Output only. The minimum of the population values.
-   *
-   * @var 
-   */
   public $min;
-  /**
-   * Output only. The 5th percentile of the values in the population.
-   *
-   * @var 
-   */
   public $p5;
-  /**
-   * Output only. The 95th percentile of the values in the population.
-   *
-   * @var 
-   */
   public $p95;
   /**
-   * Output only. Sum of a given population of values.
-   *
    * @var string
    */
   public $sum;
 
   /**
-   * Output only. Sum of a given population of values that are billable.
-   *
-   * @param string $billableSum
+   * @param string
    */
   public function setBillableSum($billableSum)
   {
@@ -88,9 +52,7 @@ class GoogleCloudAiplatformV1SupervisedTuningDatasetDistribution extends \Google
     return $this->billableSum;
   }
   /**
-   * Output only. Defines the histogram bucket.
-   *
-   * @param GoogleCloudAiplatformV1SupervisedTuningDatasetDistributionDatasetBucket[] $buckets
+   * @param GoogleCloudAiplatformV1SupervisedTuningDatasetDistributionDatasetBucket[]
    */
   public function setBuckets($buckets)
   {
@@ -152,9 +114,7 @@ class GoogleCloudAiplatformV1SupervisedTuningDatasetDistribution extends \Google
     return $this->p95;
   }
   /**
-   * Output only. Sum of a given population of values.
-   *
-   * @param string $sum
+   * @param string
    */
   public function setSum($sum)
   {

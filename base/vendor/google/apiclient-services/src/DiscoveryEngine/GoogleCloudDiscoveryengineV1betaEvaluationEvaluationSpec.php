@@ -25,9 +25,7 @@ class GoogleCloudDiscoveryengineV1betaEvaluationEvaluationSpec extends \Google\M
   protected $searchRequestDataType = '';
 
   /**
-   * Optional. The specification of the query set.
-   *
-   * @param GoogleCloudDiscoveryengineV1betaEvaluationEvaluationSpecQuerySetSpec $querySetSpec
+   * @param GoogleCloudDiscoveryengineV1betaEvaluationEvaluationSpecQuerySetSpec
    */
   public function setQuerySetSpec(GoogleCloudDiscoveryengineV1betaEvaluationEvaluationSpecQuerySetSpec $querySetSpec)
   {
@@ -41,15 +39,7 @@ class GoogleCloudDiscoveryengineV1betaEvaluationEvaluationSpec extends \Google\M
     return $this->querySetSpec;
   }
   /**
-   * Required. The search request that is used to perform the evaluation. Only
-   * the following fields within SearchRequest are supported; if any other
-   * fields are provided, an UNSUPPORTED error will be returned: *
-   * SearchRequest.serving_config * SearchRequest.branch *
-   * SearchRequest.canonical_filter * SearchRequest.query_expansion_spec *
-   * SearchRequest.spell_correction_spec * SearchRequest.content_search_spec *
-   * SearchRequest.user_pseudo_id
-   *
-   * @param GoogleCloudDiscoveryengineV1betaSearchRequest $searchRequest
+   * @param GoogleCloudDiscoveryengineV1betaSearchRequest
    */
   public function setSearchRequest(GoogleCloudDiscoveryengineV1betaSearchRequest $searchRequest)
   {

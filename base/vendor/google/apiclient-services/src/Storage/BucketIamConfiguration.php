@@ -22,9 +22,6 @@ class BucketIamConfiguration extends \Google\Model
   protected $bucketPolicyOnlyType = BucketIamConfigurationBucketPolicyOnly::class;
   protected $bucketPolicyOnlyDataType = '';
   /**
-   * The bucket's Public Access Prevention configuration. Currently, 'inherited'
-   * and 'enforced' are supported.
-   *
    * @var string
    */
   public $publicAccessPrevention;
@@ -32,13 +29,7 @@ class BucketIamConfiguration extends \Google\Model
   protected $uniformBucketLevelAccessDataType = '';
 
   /**
-   * The bucket's uniform bucket-level access configuration. The feature was
-   * formerly known as Bucket Policy Only. For backward compatibility, this
-   * field will be populated with identical information as the
-   * uniformBucketLevelAccess field. We recommend using the
-   * uniformBucketLevelAccess field to enable and disable the feature.
-   *
-   * @param BucketIamConfigurationBucketPolicyOnly $bucketPolicyOnly
+   * @param BucketIamConfigurationBucketPolicyOnly
    */
   public function setBucketPolicyOnly(BucketIamConfigurationBucketPolicyOnly $bucketPolicyOnly)
   {
@@ -52,10 +43,7 @@ class BucketIamConfiguration extends \Google\Model
     return $this->bucketPolicyOnly;
   }
   /**
-   * The bucket's Public Access Prevention configuration. Currently, 'inherited'
-   * and 'enforced' are supported.
-   *
-   * @param string $publicAccessPrevention
+   * @param string
    */
   public function setPublicAccessPrevention($publicAccessPrevention)
   {
@@ -69,9 +57,7 @@ class BucketIamConfiguration extends \Google\Model
     return $this->publicAccessPrevention;
   }
   /**
-   * The bucket's uniform bucket-level access configuration.
-   *
-   * @param BucketIamConfigurationUniformBucketLevelAccess $uniformBucketLevelAccess
+   * @param BucketIamConfigurationUniformBucketLevelAccess
    */
   public function setUniformBucketLevelAccess(BucketIamConfigurationUniformBucketLevelAccess $uniformBucketLevelAccess)
   {

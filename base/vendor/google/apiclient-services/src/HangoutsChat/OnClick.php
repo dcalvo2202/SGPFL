@@ -25,9 +25,7 @@ class OnClick extends \Google\Model
   protected $openLinkDataType = '';
 
   /**
-   * A form action is triggered by this `onclick` action if specified.
-   *
-   * @param FormAction $action
+   * @param FormAction
    */
   public function setAction(FormAction $action)
   {
@@ -41,9 +39,7 @@ class OnClick extends \Google\Model
     return $this->action;
   }
   /**
-   * This `onclick` action triggers an open link action if specified.
-   *
-   * @param OpenLink $openLink
+   * @param OpenLink
    */
   public function setOpenLink(OpenLink $openLink)
   {

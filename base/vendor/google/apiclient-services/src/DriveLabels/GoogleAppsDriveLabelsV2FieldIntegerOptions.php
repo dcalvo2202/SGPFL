@@ -20,22 +20,16 @@ namespace Google\Service\DriveLabels;
 class GoogleAppsDriveLabelsV2FieldIntegerOptions extends \Google\Model
 {
   /**
-   * Output only. The maximum valid value for the integer field.
-   *
    * @var string
    */
   public $maxValue;
   /**
-   * Output only. The minimum valid value for the integer field.
-   *
    * @var string
    */
   public $minValue;
 
   /**
-   * Output only. The maximum valid value for the integer field.
-   *
-   * @param string $maxValue
+   * @param string
    */
   public function setMaxValue($maxValue)
   {
@@ -49,9 +43,7 @@ class GoogleAppsDriveLabelsV2FieldIntegerOptions extends \Google\Model
     return $this->maxValue;
   }
   /**
-   * Output only. The minimum valid value for the integer field.
-   *
-   * @param string $minValue
+   * @param string
    */
   public function setMinValue($minValue)
   {

@@ -20,23 +20,16 @@ namespace Google\Service\Vault;
 class HeldOrgUnit extends \Google\Model
 {
   /**
-   * When the organizational unit was put on hold. This property is immutable.
-   *
    * @var string
    */
   public $holdTime;
   /**
-   * The organizational unit's immutable ID as provided by the [Admin
-   * SDK](https://developers.google.com/admin-sdk/).
-   *
    * @var string
    */
   public $orgUnitId;
 
   /**
-   * When the organizational unit was put on hold. This property is immutable.
-   *
-   * @param string $holdTime
+   * @param string
    */
   public function setHoldTime($holdTime)
   {
@@ -50,10 +43,7 @@ class HeldOrgUnit extends \Google\Model
     return $this->holdTime;
   }
   /**
-   * The organizational unit's immutable ID as provided by the [Admin
-   * SDK](https://developers.google.com/admin-sdk/).
-   *
-   * @param string $orgUnitId
+   * @param string
    */
   public function setOrgUnitId($orgUnitId)
   {

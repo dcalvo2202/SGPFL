@@ -24,9 +24,7 @@ class GoogleCloudDiscoveryengineV1FetchSitemapsResponse extends \Google\Collecti
   protected $sitemapsMetadataDataType = 'array';
 
   /**
-   * List of Sitemaps fetched.
-   *
-   * @param GoogleCloudDiscoveryengineV1FetchSitemapsResponseSitemapMetadata[] $sitemapsMetadata
+   * @param GoogleCloudDiscoveryengineV1FetchSitemapsResponseSitemapMetadata[]
    */
   public function setSitemapsMetadata($sitemapsMetadata)
   {

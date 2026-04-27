@@ -20,69 +20,25 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1IndexDatapointNumericRestriction extends \Google\Model
 {
   /**
-   * Default value of the enum.
-   */
-  public const OP_OPERATOR_UNSPECIFIED = 'OPERATOR_UNSPECIFIED';
-  /**
-   * Datapoints are eligible iff their value is < the query's.
-   */
-  public const OP_LESS = 'LESS';
-  /**
-   * Datapoints are eligible iff their value is <= the query's.
-   */
-  public const OP_LESS_EQUAL = 'LESS_EQUAL';
-  /**
-   * Datapoints are eligible iff their value is == the query's.
-   */
-  public const OP_EQUAL = 'EQUAL';
-  /**
-   * Datapoints are eligible iff their value is >= the query's.
-   */
-  public const OP_GREATER_EQUAL = 'GREATER_EQUAL';
-  /**
-   * Datapoints are eligible iff their value is > the query's.
-   */
-  public const OP_GREATER = 'GREATER';
-  /**
-   * Datapoints are eligible iff their value is != the query's.
-   */
-  public const OP_NOT_EQUAL = 'NOT_EQUAL';
-  /**
-   * The namespace of this restriction. e.g.: cost.
-   *
    * @var string
    */
   public $namespace;
   /**
-   * This MUST be specified for queries and must NOT be specified for
-   * datapoints.
-   *
    * @var string
    */
   public $op;
-  /**
-   * Represents 64 bit float.
-   *
-   * @var 
-   */
   public $valueDouble;
   /**
-   * Represents 32 bit float.
-   *
    * @var float
    */
   public $valueFloat;
   /**
-   * Represents 64 bit integer.
-   *
    * @var string
    */
   public $valueInt;
 
   /**
-   * The namespace of this restriction. e.g.: cost.
-   *
-   * @param string $namespace
+   * @param string
    */
   public function setNamespace($namespace)
   {
@@ -96,20 +52,14 @@ class GoogleCloudAiplatformV1IndexDatapointNumericRestriction extends \Google\Mo
     return $this->namespace;
   }
   /**
-   * This MUST be specified for queries and must NOT be specified for
-   * datapoints.
-   *
-   * Accepted values: OPERATOR_UNSPECIFIED, LESS, LESS_EQUAL, EQUAL,
-   * GREATER_EQUAL, GREATER, NOT_EQUAL
-   *
-   * @param self::OP_* $op
+   * @param string
    */
   public function setOp($op)
   {
     $this->op = $op;
   }
   /**
-   * @return self::OP_*
+   * @return string
    */
   public function getOp()
   {
@@ -124,9 +74,7 @@ class GoogleCloudAiplatformV1IndexDatapointNumericRestriction extends \Google\Mo
     return $this->valueDouble;
   }
   /**
-   * Represents 32 bit float.
-   *
-   * @param float $valueFloat
+   * @param float
    */
   public function setValueFloat($valueFloat)
   {
@@ -140,9 +88,7 @@ class GoogleCloudAiplatformV1IndexDatapointNumericRestriction extends \Google\Mo
     return $this->valueFloat;
   }
   /**
-   * Represents 64 bit integer.
-   *
-   * @param string $valueInt
+   * @param string
    */
   public function setValueInt($valueInt)
   {

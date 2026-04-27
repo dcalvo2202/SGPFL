@@ -21,18 +21,12 @@ class GoogleCloudRetailV2RuleTwowaySynonymsAction extends \Google\Collection
 {
   protected $collection_key = 'synonyms';
   /**
-   * Defines a set of synonyms. Can specify up to 100 synonyms. Must specify at
-   * least 2 synonyms.
-   *
    * @var string[]
    */
   public $synonyms;
 
   /**
-   * Defines a set of synonyms. Can specify up to 100 synonyms. Must specify at
-   * least 2 synonyms.
-   *
-   * @param string[] $synonyms
+   * @param string[]
    */
   public function setSynonyms($synonyms)
   {

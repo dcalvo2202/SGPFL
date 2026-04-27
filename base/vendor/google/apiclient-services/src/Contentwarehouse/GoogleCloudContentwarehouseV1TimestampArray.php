@@ -24,9 +24,7 @@ class GoogleCloudContentwarehouseV1TimestampArray extends \Google\Collection
   protected $valuesDataType = 'array';
 
   /**
-   * List of timestamp values.
-   *
-   * @param GoogleCloudContentwarehouseV1TimestampValue[] $values
+   * @param GoogleCloudContentwarehouseV1TimestampValue[]
    */
   public function setValues($values)
   {

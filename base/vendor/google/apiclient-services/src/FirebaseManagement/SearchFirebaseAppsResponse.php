@@ -23,19 +23,12 @@ class SearchFirebaseAppsResponse extends \Google\Collection
   protected $appsType = FirebaseAppInfo::class;
   protected $appsDataType = 'array';
   /**
-   * If the result list is too large to fit in a single response, then a token
-   * is returned. This token can be used in a subsequent calls to
-   * `SearchFirebaseApps` to find the next group of Apps. Page tokens are short-
-   * lived and should not be persisted.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * One page of results from a call to `SearchFirebaseApps`.
-   *
-   * @param FirebaseAppInfo[] $apps
+   * @param FirebaseAppInfo[]
    */
   public function setApps($apps)
   {
@@ -49,12 +42,7 @@ class SearchFirebaseAppsResponse extends \Google\Collection
     return $this->apps;
   }
   /**
-   * If the result list is too large to fit in a single response, then a token
-   * is returned. This token can be used in a subsequent calls to
-   * `SearchFirebaseApps` to find the next group of Apps. Page tokens are short-
-   * lived and should not be persisted.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

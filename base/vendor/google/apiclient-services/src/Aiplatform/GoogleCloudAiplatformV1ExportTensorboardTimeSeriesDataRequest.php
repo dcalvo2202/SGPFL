@@ -20,40 +20,24 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1ExportTensorboardTimeSeriesDataRequest extends \Google\Model
 {
   /**
-   * Exports the TensorboardTimeSeries' data that match the filter expression.
-   *
    * @var string
    */
   public $filter;
   /**
-   * Field to use to sort the TensorboardTimeSeries' data. By default,
-   * TensorboardTimeSeries' data is returned in a pseudo random order.
-   *
    * @var string
    */
   public $orderBy;
   /**
-   * The maximum number of data points to return per page. The default page_size
-   * is 1000. Values must be between 1 and 10000. Values above 10000 are coerced
-   * to 10000.
-   *
    * @var int
    */
   public $pageSize;
   /**
-   * A page token, received from a previous ExportTensorboardTimeSeriesData
-   * call. Provide this to retrieve the subsequent page. When paginating, all
-   * other parameters provided to ExportTensorboardTimeSeriesData must match the
-   * call that provided the page token.
-   *
    * @var string
    */
   public $pageToken;
 
   /**
-   * Exports the TensorboardTimeSeries' data that match the filter expression.
-   *
-   * @param string $filter
+   * @param string
    */
   public function setFilter($filter)
   {
@@ -67,10 +51,7 @@ class GoogleCloudAiplatformV1ExportTensorboardTimeSeriesDataRequest extends \Goo
     return $this->filter;
   }
   /**
-   * Field to use to sort the TensorboardTimeSeries' data. By default,
-   * TensorboardTimeSeries' data is returned in a pseudo random order.
-   *
-   * @param string $orderBy
+   * @param string
    */
   public function setOrderBy($orderBy)
   {
@@ -84,11 +65,7 @@ class GoogleCloudAiplatformV1ExportTensorboardTimeSeriesDataRequest extends \Goo
     return $this->orderBy;
   }
   /**
-   * The maximum number of data points to return per page. The default page_size
-   * is 1000. Values must be between 1 and 10000. Values above 10000 are coerced
-   * to 10000.
-   *
-   * @param int $pageSize
+   * @param int
    */
   public function setPageSize($pageSize)
   {
@@ -102,12 +79,7 @@ class GoogleCloudAiplatformV1ExportTensorboardTimeSeriesDataRequest extends \Goo
     return $this->pageSize;
   }
   /**
-   * A page token, received from a previous ExportTensorboardTimeSeriesData
-   * call. Provide this to retrieve the subsequent page. When paginating, all
-   * other parameters provided to ExportTensorboardTimeSeriesData must match the
-   * call that provided the page token.
-   *
-   * @param string $pageToken
+   * @param string
    */
   public function setPageToken($pageToken)
   {

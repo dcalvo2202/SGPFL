@@ -20,25 +20,16 @@ namespace Google\Service\Games;
 class AchievementUnlockResponse extends \Google\Model
 {
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#achievementUnlockResponse`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Whether this achievement was newly unlocked (that is, whether the unlock
-   * request for the achievement was the first for the player).
-   *
    * @var bool
    */
   public $newlyUnlocked;
 
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#achievementUnlockResponse`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -52,10 +43,7 @@ class AchievementUnlockResponse extends \Google\Model
     return $this->kind;
   }
   /**
-   * Whether this achievement was newly unlocked (that is, whether the unlock
-   * request for the achievement was the first for the player).
-   *
-   * @param bool $newlyUnlocked
+   * @param bool
    */
   public function setNewlyUnlocked($newlyUnlocked)
   {

@@ -122,7 +122,8 @@ class ProjectsLocationsServicesSchemas extends \Google\Service\Resource
     return $this->call('get', [$params], Schema::class);
   }
   /**
-   * Lists Schemas in a given project and location.
+   * Lists Schemas in a given project and location. Note that only `schemas/main`
+   * is supported, so this will always return at most one Schema.
    * (schemas.listProjectsLocationsServicesSchemas)
    *
    * @param string $parent Required. Value of parent.

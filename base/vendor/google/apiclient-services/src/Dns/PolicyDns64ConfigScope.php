@@ -20,9 +20,6 @@ namespace Google\Service\Dns;
 class PolicyDns64ConfigScope extends \Google\Model
 {
   /**
-   * Controls whether DNS64 is enabled globally for all networks bound to the
-   * policy.
-   *
    * @var bool
    */
   public $allQueries;
@@ -32,10 +29,7 @@ class PolicyDns64ConfigScope extends \Google\Model
   public $kind;
 
   /**
-   * Controls whether DNS64 is enabled globally for all networks bound to the
-   * policy.
-   *
-   * @param bool $allQueries
+   * @param bool
    */
   public function setAllQueries($allQueries)
   {
@@ -49,7 +43,7 @@ class PolicyDns64ConfigScope extends \Google\Model
     return $this->allQueries;
   }
   /**
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

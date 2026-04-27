@@ -20,50 +20,28 @@ namespace Google\Service\Firebaseappcheck;
 class GoogleFirebaseAppcheckV1DeviceCheckConfig extends \Google\Model
 {
   /**
-   * Required. The key identifier of a private key enabled with DeviceCheck,
-   * created in your Apple Developer account.
-   *
    * @var string
    */
   public $keyId;
   /**
-   * Required. The relative resource name of the DeviceCheck configuration
-   * object, in the format: ```
-   * projects/{project_number}/apps/{app_id}/deviceCheckConfig ```
-   *
    * @var string
    */
   public $name;
   /**
-   * Required. Input only. The contents of the private key (`.p8`) file
-   * associated with the key specified by `key_id`. For security reasons, this
-   * field will never be populated in any response.
-   *
    * @var string
    */
   public $privateKey;
   /**
-   * Output only. Whether the `private_key` field was previously set. Since we
-   * will never return the `private_key` field, this field is the only way to
-   * find out whether it was previously set.
-   *
    * @var bool
    */
   public $privateKeySet;
   /**
-   * Specifies the duration for which App Check tokens exchanged from
-   * DeviceCheck tokens will be valid. If unset, a default value of 1 hour is
-   * assumed. Must be between 30 minutes and 7 days, inclusive.
-   *
    * @var string
    */
   public $tokenTtl;
 
   /**
-   * Required. The key identifier of a private key enabled with DeviceCheck,
-   * created in your Apple Developer account.
-   *
-   * @param string $keyId
+   * @param string
    */
   public function setKeyId($keyId)
   {
@@ -77,11 +55,7 @@ class GoogleFirebaseAppcheckV1DeviceCheckConfig extends \Google\Model
     return $this->keyId;
   }
   /**
-   * Required. The relative resource name of the DeviceCheck configuration
-   * object, in the format: ```
-   * projects/{project_number}/apps/{app_id}/deviceCheckConfig ```
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -95,11 +69,7 @@ class GoogleFirebaseAppcheckV1DeviceCheckConfig extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. Input only. The contents of the private key (`.p8`) file
-   * associated with the key specified by `key_id`. For security reasons, this
-   * field will never be populated in any response.
-   *
-   * @param string $privateKey
+   * @param string
    */
   public function setPrivateKey($privateKey)
   {
@@ -113,11 +83,7 @@ class GoogleFirebaseAppcheckV1DeviceCheckConfig extends \Google\Model
     return $this->privateKey;
   }
   /**
-   * Output only. Whether the `private_key` field was previously set. Since we
-   * will never return the `private_key` field, this field is the only way to
-   * find out whether it was previously set.
-   *
-   * @param bool $privateKeySet
+   * @param bool
    */
   public function setPrivateKeySet($privateKeySet)
   {
@@ -131,11 +97,7 @@ class GoogleFirebaseAppcheckV1DeviceCheckConfig extends \Google\Model
     return $this->privateKeySet;
   }
   /**
-   * Specifies the duration for which App Check tokens exchanged from
-   * DeviceCheck tokens will be valid. If unset, a default value of 1 hour is
-   * assumed. Must be between 30 minutes and 7 days, inclusive.
-   *
-   * @param string $tokenTtl
+   * @param string
    */
   public function setTokenTtl($tokenTtl)
   {

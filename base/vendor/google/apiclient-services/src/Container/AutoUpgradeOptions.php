@@ -20,27 +20,16 @@ namespace Google\Service\Container;
 class AutoUpgradeOptions extends \Google\Model
 {
   /**
-   * Output only. This field is set when upgrades are about to commence with the
-   * approximate start time for the upgrades, in
-   * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
-   *
    * @var string
    */
   public $autoUpgradeStartTime;
   /**
-   * Output only. This field is set when upgrades are about to commence with the
-   * description of the upgrade.
-   *
    * @var string
    */
   public $description;
 
   /**
-   * Output only. This field is set when upgrades are about to commence with the
-   * approximate start time for the upgrades, in
-   * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
-   *
-   * @param string $autoUpgradeStartTime
+   * @param string
    */
   public function setAutoUpgradeStartTime($autoUpgradeStartTime)
   {
@@ -54,10 +43,7 @@ class AutoUpgradeOptions extends \Google\Model
     return $this->autoUpgradeStartTime;
   }
   /**
-   * Output only. This field is set when upgrades are about to commence with the
-   * description of the upgrade.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {

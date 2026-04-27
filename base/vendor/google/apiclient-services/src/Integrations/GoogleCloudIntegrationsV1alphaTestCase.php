@@ -19,69 +19,36 @@ namespace Google\Service\Integrations;
 
 class GoogleCloudIntegrationsV1alphaTestCase extends \Google\Collection
 {
-  /**
-   * Enables persistence for all execution data.
-   */
-  public const DATABASE_PERSISTENCE_POLICY_DATABASE_PERSISTENCE_POLICY_UNSPECIFIED = 'DATABASE_PERSISTENCE_POLICY_UNSPECIFIED';
-  /**
-   * Disables persistence for all execution data.
-   */
-  public const DATABASE_PERSISTENCE_POLICY_DATABASE_PERSISTENCE_DISABLED = 'DATABASE_PERSISTENCE_DISABLED';
-  /**
-   * Asynchronously persist all execution data.
-   */
-  public const DATABASE_PERSISTENCE_POLICY_DATABASE_PERSISTENCE_ASYNC = 'DATABASE_PERSISTENCE_ASYNC';
   protected $collection_key = 'testTaskConfigs';
   /**
-   * Auto-generated.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. The creator's email address. Generated based on the End User
-   * Credentials/LOAS role of the user making the call.
-   *
    * @var string
    */
   public $creatorEmail;
   /**
-   * Optional. Various policies for how to persist the test execution info
-   * including execution info, execution export info, execution metadata index
-   * and execution param index..
-   *
    * @var string
    */
   public $databasePersistencePolicy;
   /**
-   * Optional. Description of the test case.
-   *
    * @var string
    */
   public $description;
   /**
-   * Required. The display name of test case.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * The last modifier's email address. Generated based on the End User
-   * Credentials/LOAS role of the user making the call.
-   *
    * @var string
    */
   public $lastModifierEmail;
   /**
-   * Optional. The edit lock holder's email address. Generated based on the End
-   * User Credentials/LOAS role of the user making the call.
-   *
    * @var string
    */
   public $lockHolderEmail;
   /**
-   * Output only. Auto-generated primary key.
-   *
    * @var string
    */
   public $name;
@@ -92,23 +59,16 @@ class GoogleCloudIntegrationsV1alphaTestCase extends \Google\Collection
   protected $triggerConfigType = GoogleCloudIntegrationsV1alphaTriggerConfig::class;
   protected $triggerConfigDataType = '';
   /**
-   * Required. This defines the trigger ID in workflow which is considered to be
-   * executed as starting point of the test case
-   *
    * @var string
    */
   public $triggerId;
   /**
-   * Auto-generated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Auto-generated.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -122,10 +82,7 @@ class GoogleCloudIntegrationsV1alphaTestCase extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Optional. The creator's email address. Generated based on the End User
-   * Credentials/LOAS role of the user making the call.
-   *
-   * @param string $creatorEmail
+   * @param string
    */
   public function setCreatorEmail($creatorEmail)
   {
@@ -139,30 +96,21 @@ class GoogleCloudIntegrationsV1alphaTestCase extends \Google\Collection
     return $this->creatorEmail;
   }
   /**
-   * Optional. Various policies for how to persist the test execution info
-   * including execution info, execution export info, execution metadata index
-   * and execution param index..
-   *
-   * Accepted values: DATABASE_PERSISTENCE_POLICY_UNSPECIFIED,
-   * DATABASE_PERSISTENCE_DISABLED, DATABASE_PERSISTENCE_ASYNC
-   *
-   * @param self::DATABASE_PERSISTENCE_POLICY_* $databasePersistencePolicy
+   * @param string
    */
   public function setDatabasePersistencePolicy($databasePersistencePolicy)
   {
     $this->databasePersistencePolicy = $databasePersistencePolicy;
   }
   /**
-   * @return self::DATABASE_PERSISTENCE_POLICY_*
+   * @return string
    */
   public function getDatabasePersistencePolicy()
   {
     return $this->databasePersistencePolicy;
   }
   /**
-   * Optional. Description of the test case.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -176,9 +124,7 @@ class GoogleCloudIntegrationsV1alphaTestCase extends \Google\Collection
     return $this->description;
   }
   /**
-   * Required. The display name of test case.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -192,10 +138,7 @@ class GoogleCloudIntegrationsV1alphaTestCase extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * The last modifier's email address. Generated based on the End User
-   * Credentials/LOAS role of the user making the call.
-   *
-   * @param string $lastModifierEmail
+   * @param string
    */
   public function setLastModifierEmail($lastModifierEmail)
   {
@@ -209,10 +152,7 @@ class GoogleCloudIntegrationsV1alphaTestCase extends \Google\Collection
     return $this->lastModifierEmail;
   }
   /**
-   * Optional. The edit lock holder's email address. Generated based on the End
-   * User Credentials/LOAS role of the user making the call.
-   *
-   * @param string $lockHolderEmail
+   * @param string
    */
   public function setLockHolderEmail($lockHolderEmail)
   {
@@ -226,9 +166,7 @@ class GoogleCloudIntegrationsV1alphaTestCase extends \Google\Collection
     return $this->lockHolderEmail;
   }
   /**
-   * Output only. Auto-generated primary key.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -242,12 +180,7 @@ class GoogleCloudIntegrationsV1alphaTestCase extends \Google\Collection
     return $this->name;
   }
   /**
-   * Optional. Parameters that are expected to be passed to the test case when
-   * the test case is triggered. This gives the user the ability to provide
-   * default values. This should include all the output variables of the trigger
-   * as input variables.
-   *
-   * @param GoogleCloudIntegrationsV1alphaIntegrationParameter[] $testInputParameters
+   * @param GoogleCloudIntegrationsV1alphaIntegrationParameter[]
    */
   public function setTestInputParameters($testInputParameters)
   {
@@ -261,10 +194,7 @@ class GoogleCloudIntegrationsV1alphaTestCase extends \Google\Collection
     return $this->testInputParameters;
   }
   /**
-   * Optional. However, the test case doesn't mock or assert anything without
-   * test_task_configs.
-   *
-   * @param GoogleCloudIntegrationsV1alphaTestTaskConfig[] $testTaskConfigs
+   * @param GoogleCloudIntegrationsV1alphaTestTaskConfig[]
    */
   public function setTestTaskConfigs($testTaskConfigs)
   {
@@ -278,9 +208,7 @@ class GoogleCloudIntegrationsV1alphaTestCase extends \Google\Collection
     return $this->testTaskConfigs;
   }
   /**
-   * Optional. Auto-generated.
-   *
-   * @param GoogleCloudIntegrationsV1alphaTriggerConfig $triggerConfig
+   * @param GoogleCloudIntegrationsV1alphaTriggerConfig
    */
   public function setTriggerConfig(GoogleCloudIntegrationsV1alphaTriggerConfig $triggerConfig)
   {
@@ -294,10 +222,7 @@ class GoogleCloudIntegrationsV1alphaTestCase extends \Google\Collection
     return $this->triggerConfig;
   }
   /**
-   * Required. This defines the trigger ID in workflow which is considered to be
-   * executed as starting point of the test case
-   *
-   * @param string $triggerId
+   * @param string
    */
   public function setTriggerId($triggerId)
   {
@@ -311,9 +236,7 @@ class GoogleCloudIntegrationsV1alphaTestCase extends \Google\Collection
     return $this->triggerId;
   }
   /**
-   * Auto-generated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

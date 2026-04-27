@@ -25,9 +25,7 @@ class GoogleCloudAiplatformV1MetricxInput extends \Google\Model
   protected $metricSpecDataType = '';
 
   /**
-   * Required. Metricx instance.
-   *
-   * @param GoogleCloudAiplatformV1MetricxInstance $instance
+   * @param GoogleCloudAiplatformV1MetricxInstance
    */
   public function setInstance(GoogleCloudAiplatformV1MetricxInstance $instance)
   {
@@ -41,9 +39,7 @@ class GoogleCloudAiplatformV1MetricxInput extends \Google\Model
     return $this->instance;
   }
   /**
-   * Required. Spec for Metricx metric.
-   *
-   * @param GoogleCloudAiplatformV1MetricxSpec $metricSpec
+   * @param GoogleCloudAiplatformV1MetricxSpec
    */
   public function setMetricSpec(GoogleCloudAiplatformV1MetricxSpec $metricSpec)
   {

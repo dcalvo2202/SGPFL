@@ -26,11 +26,7 @@ class BareMetalMetalLbConfig extends \Google\Collection
   protected $loadBalancerNodePoolConfigDataType = '';
 
   /**
-   * Required. AddressPools is a list of non-overlapping IP pools used by load
-   * balancer typed services. All addresses must be routable to load balancer
-   * nodes. IngressVIP must be included in the pools.
-   *
-   * @param BareMetalLoadBalancerAddressPool[] $addressPools
+   * @param BareMetalLoadBalancerAddressPool[]
    */
   public function setAddressPools($addressPools)
   {
@@ -44,11 +40,7 @@ class BareMetalMetalLbConfig extends \Google\Collection
     return $this->addressPools;
   }
   /**
-   * Specifies the node pool running the load balancer. L2 connectivity is
-   * required among nodes in this pool. If missing, the control plane node pool
-   * is used as the load balancer pool.
-   *
-   * @param BareMetalLoadBalancerNodePoolConfig $loadBalancerNodePoolConfig
+   * @param BareMetalLoadBalancerNodePoolConfig
    */
   public function setLoadBalancerNodePoolConfig(BareMetalLoadBalancerNodePoolConfig $loadBalancerNodePoolConfig)
   {

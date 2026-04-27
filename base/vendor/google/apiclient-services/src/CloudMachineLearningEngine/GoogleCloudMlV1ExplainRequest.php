@@ -23,9 +23,7 @@ class GoogleCloudMlV1ExplainRequest extends \Google\Model
   protected $httpBodyDataType = '';
 
   /**
-   * Required. The explanation request body.
-   *
-   * @param GoogleApiHttpBody $httpBody
+   * @param GoogleApiHttpBody
    */
   public function setHttpBody(GoogleApiHttpBody $httpBody)
   {

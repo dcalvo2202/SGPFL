@@ -19,43 +19,17 @@ namespace Google\Service\ContainerAnalysis;
 
 class ContaineranalysisGoogleDevtoolsCloudbuildV1UploadedGoModule extends \Google\Model
 {
-  /**
-   * Output only. Path to the artifact in Artifact Registry.
-   *
-   * @var string
-   */
-  public $artifactRegistryPackage;
   protected $fileHashesType = ContaineranalysisGoogleDevtoolsCloudbuildV1FileHashes::class;
   protected $fileHashesDataType = '';
   protected $pushTimingType = ContaineranalysisGoogleDevtoolsCloudbuildV1TimeSpan::class;
   protected $pushTimingDataType = '';
   /**
-   * URI of the uploaded artifact.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * Output only. Path to the artifact in Artifact Registry.
-   *
-   * @param string $artifactRegistryPackage
-   */
-  public function setArtifactRegistryPackage($artifactRegistryPackage)
-  {
-    $this->artifactRegistryPackage = $artifactRegistryPackage;
-  }
-  /**
-   * @return string
-   */
-  public function getArtifactRegistryPackage()
-  {
-    return $this->artifactRegistryPackage;
-  }
-  /**
-   * Hash types and values of the Go Module Artifact.
-   *
-   * @param ContaineranalysisGoogleDevtoolsCloudbuildV1FileHashes $fileHashes
+   * @param ContaineranalysisGoogleDevtoolsCloudbuildV1FileHashes
    */
   public function setFileHashes(ContaineranalysisGoogleDevtoolsCloudbuildV1FileHashes $fileHashes)
   {
@@ -69,9 +43,7 @@ class ContaineranalysisGoogleDevtoolsCloudbuildV1UploadedGoModule extends \Googl
     return $this->fileHashes;
   }
   /**
-   * Output only. Stores timing information for pushing the specified artifact.
-   *
-   * @param ContaineranalysisGoogleDevtoolsCloudbuildV1TimeSpan $pushTiming
+   * @param ContaineranalysisGoogleDevtoolsCloudbuildV1TimeSpan
    */
   public function setPushTiming(ContaineranalysisGoogleDevtoolsCloudbuildV1TimeSpan $pushTiming)
   {
@@ -85,9 +57,7 @@ class ContaineranalysisGoogleDevtoolsCloudbuildV1UploadedGoModule extends \Googl
     return $this->pushTiming;
   }
   /**
-   * URI of the uploaded artifact.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

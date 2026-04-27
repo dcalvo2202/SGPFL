@@ -19,25 +19,6 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowCxV3ValidationMessage extends \Google\Collection
 {
-  public const RESOURCE_TYPE_RESOURCE_TYPE_UNSPECIFIED = 'RESOURCE_TYPE_UNSPECIFIED';
-  public const RESOURCE_TYPE_AGENT = 'AGENT';
-  public const RESOURCE_TYPE_INTENT = 'INTENT';
-  public const RESOURCE_TYPE_INTENT_TRAINING_PHRASE = 'INTENT_TRAINING_PHRASE';
-  public const RESOURCE_TYPE_INTENT_PARAMETER = 'INTENT_PARAMETER';
-  public const RESOURCE_TYPE_INTENTS = 'INTENTS';
-  public const RESOURCE_TYPE_INTENT_TRAINING_PHRASES = 'INTENT_TRAINING_PHRASES';
-  public const RESOURCE_TYPE_ENTITY_TYPE = 'ENTITY_TYPE';
-  public const RESOURCE_TYPE_ENTITY_TYPES = 'ENTITY_TYPES';
-  public const RESOURCE_TYPE_WEBHOOK = 'WEBHOOK';
-  public const RESOURCE_TYPE_FLOW = 'FLOW';
-  public const RESOURCE_TYPE_PAGE = 'PAGE';
-  public const RESOURCE_TYPE_PAGES = 'PAGES';
-  public const RESOURCE_TYPE_TRANSITION_ROUTE_GROUP = 'TRANSITION_ROUTE_GROUP';
-  public const RESOURCE_TYPE_AGENT_TRANSITION_ROUTE_GROUP = 'AGENT_TRANSITION_ROUTE_GROUP';
-  public const SEVERITY_SEVERITY_UNSPECIFIED = 'SEVERITY_UNSPECIFIED';
-  public const SEVERITY_INFO = 'INFO';
-  public const SEVERITY_WARNING = 'WARNING';
-  public const SEVERITY_ERROR = 'ERROR';
   protected $collection_key = 'resources';
   /**
    * @var string
@@ -50,7 +31,6 @@ class GoogleCloudDialogflowCxV3ValidationMessage extends \Google\Collection
    */
   public $resourceType;
   /**
-   * @deprecated
    * @var string[]
    */
   public $resources;
@@ -60,7 +40,7 @@ class GoogleCloudDialogflowCxV3ValidationMessage extends \Google\Collection
   public $severity;
 
   /**
-   * @param string $detail
+   * @param string
    */
   public function setDetail($detail)
   {
@@ -74,7 +54,7 @@ class GoogleCloudDialogflowCxV3ValidationMessage extends \Google\Collection
     return $this->detail;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3ResourceName[] $resourceNames
+   * @param GoogleCloudDialogflowCxV3ResourceName[]
    */
   public function setResourceNames($resourceNames)
   {
@@ -88,29 +68,27 @@ class GoogleCloudDialogflowCxV3ValidationMessage extends \Google\Collection
     return $this->resourceNames;
   }
   /**
-   * @param self::RESOURCE_TYPE_* $resourceType
+   * @param string
    */
   public function setResourceType($resourceType)
   {
     $this->resourceType = $resourceType;
   }
   /**
-   * @return self::RESOURCE_TYPE_*
+   * @return string
    */
   public function getResourceType()
   {
     return $this->resourceType;
   }
   /**
-   * @deprecated
-   * @param string[] $resources
+   * @param string[]
    */
   public function setResources($resources)
   {
     $this->resources = $resources;
   }
   /**
-   * @deprecated
    * @return string[]
    */
   public function getResources()
@@ -118,14 +96,14 @@ class GoogleCloudDialogflowCxV3ValidationMessage extends \Google\Collection
     return $this->resources;
   }
   /**
-   * @param self::SEVERITY_* $severity
+   * @param string
    */
   public function setSeverity($severity)
   {
     $this->severity = $severity;
   }
   /**
-   * @return self::SEVERITY_*
+   * @return string
    */
   public function getSeverity()
   {

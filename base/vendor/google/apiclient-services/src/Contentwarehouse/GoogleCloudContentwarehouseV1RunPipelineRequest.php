@@ -31,9 +31,7 @@ class GoogleCloudContentwarehouseV1RunPipelineRequest extends \Google\Model
   protected $requestMetadataDataType = '';
 
   /**
-   * Export docuemnts from Document Warehouse to CDW for training purpose.
-   *
-   * @param GoogleCloudContentwarehouseV1ExportToCdwPipeline $exportCdwPipeline
+   * @param GoogleCloudContentwarehouseV1ExportToCdwPipeline
    */
   public function setExportCdwPipeline(GoogleCloudContentwarehouseV1ExportToCdwPipeline $exportCdwPipeline)
   {
@@ -47,9 +45,7 @@ class GoogleCloudContentwarehouseV1RunPipelineRequest extends \Google\Model
     return $this->exportCdwPipeline;
   }
   /**
-   * Cloud Storage ingestion pipeline.
-   *
-   * @param GoogleCloudContentwarehouseV1GcsIngestPipeline $gcsIngestPipeline
+   * @param GoogleCloudContentwarehouseV1GcsIngestPipeline
    */
   public function setGcsIngestPipeline(GoogleCloudContentwarehouseV1GcsIngestPipeline $gcsIngestPipeline)
   {
@@ -63,10 +59,7 @@ class GoogleCloudContentwarehouseV1RunPipelineRequest extends \Google\Model
     return $this->gcsIngestPipeline;
   }
   /**
-   * Use DocAI processors to process documents in Cloud Storage and ingest them
-   * to Document Warehouse.
-   *
-   * @param GoogleCloudContentwarehouseV1GcsIngestWithDocAiProcessorsPipeline $gcsIngestWithDocAiProcessorsPipeline
+   * @param GoogleCloudContentwarehouseV1GcsIngestWithDocAiProcessorsPipeline
    */
   public function setGcsIngestWithDocAiProcessorsPipeline(GoogleCloudContentwarehouseV1GcsIngestWithDocAiProcessorsPipeline $gcsIngestWithDocAiProcessorsPipeline)
   {
@@ -80,10 +73,7 @@ class GoogleCloudContentwarehouseV1RunPipelineRequest extends \Google\Model
     return $this->gcsIngestWithDocAiProcessorsPipeline;
   }
   /**
-   * Use a DocAI processor to process documents in Document Warehouse, and re-
-   * ingest the updated results into Document Warehouse.
-   *
-   * @param GoogleCloudContentwarehouseV1ProcessWithDocAiPipeline $processWithDocAiPipeline
+   * @param GoogleCloudContentwarehouseV1ProcessWithDocAiPipeline
    */
   public function setProcessWithDocAiPipeline(GoogleCloudContentwarehouseV1ProcessWithDocAiPipeline $processWithDocAiPipeline)
   {
@@ -97,10 +87,7 @@ class GoogleCloudContentwarehouseV1RunPipelineRequest extends \Google\Model
     return $this->processWithDocAiPipeline;
   }
   /**
-   * The meta information collected about the end user, used to enforce access
-   * control for the service.
-   *
-   * @param GoogleCloudContentwarehouseV1RequestMetadata $requestMetadata
+   * @param GoogleCloudContentwarehouseV1RequestMetadata
    */
   public function setRequestMetadata(GoogleCloudContentwarehouseV1RequestMetadata $requestMetadata)
   {

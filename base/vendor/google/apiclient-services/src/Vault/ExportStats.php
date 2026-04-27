@@ -20,28 +20,20 @@ namespace Google\Service\Vault;
 class ExportStats extends \Google\Model
 {
   /**
-   * The number of messages or files already processed for export.
-   *
    * @var string
    */
   public $exportedArtifactCount;
   /**
-   * The size of export in bytes.
-   *
    * @var string
    */
   public $sizeInBytes;
   /**
-   * The number of messages or files to be exported.
-   *
    * @var string
    */
   public $totalArtifactCount;
 
   /**
-   * The number of messages or files already processed for export.
-   *
-   * @param string $exportedArtifactCount
+   * @param string
    */
   public function setExportedArtifactCount($exportedArtifactCount)
   {
@@ -55,9 +47,7 @@ class ExportStats extends \Google\Model
     return $this->exportedArtifactCount;
   }
   /**
-   * The size of export in bytes.
-   *
-   * @param string $sizeInBytes
+   * @param string
    */
   public function setSizeInBytes($sizeInBytes)
   {
@@ -71,9 +61,7 @@ class ExportStats extends \Google\Model
     return $this->sizeInBytes;
   }
   /**
-   * The number of messages or files to be exported.
-   *
-   * @param string $totalArtifactCount
+   * @param string
    */
   public function setTotalArtifactCount($totalArtifactCount)
   {

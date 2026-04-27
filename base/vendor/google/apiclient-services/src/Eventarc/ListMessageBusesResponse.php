@@ -23,23 +23,16 @@ class ListMessageBusesResponse extends \Google\Collection
   protected $messageBusesType = MessageBus::class;
   protected $messageBusesDataType = 'array';
   /**
-   * A page token that can be sent to `ListMessageBuses` to request the next
-   * page. If this is empty, then there are no more pages.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Unreachable resources, if any.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * The requested message buses, up to the number specified in `page_size`.
-   *
-   * @param MessageBus[] $messageBuses
+   * @param MessageBus[]
    */
   public function setMessageBuses($messageBuses)
   {
@@ -53,10 +46,7 @@ class ListMessageBusesResponse extends \Google\Collection
     return $this->messageBuses;
   }
   /**
-   * A page token that can be sent to `ListMessageBuses` to request the next
-   * page. If this is empty, then there are no more pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -70,9 +60,7 @@ class ListMessageBusesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Unreachable resources, if any.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

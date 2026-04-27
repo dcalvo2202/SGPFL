@@ -20,33 +20,20 @@ namespace Google\Service\Dfareporting;
 class FloodlightActivitiesGenerateTagResponse extends \Google\Model
 {
   /**
-   * Generated tag for this Floodlight activity. For Google tags, this is the
-   * event snippet.
-   *
    * @var string
    */
   public $floodlightActivityTag;
   /**
-   * The global snippet section of a Google tag. The Google tag sets new cookies
-   * on your domain, which will store a unique identifier for a user or the ad
-   * click that brought the user to your site. Learn more.
-   *
    * @var string
    */
   public $globalSiteTagGlobalSnippet;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#floodlightActivitiesGenerateTagResponse".
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * Generated tag for this Floodlight activity. For Google tags, this is the
-   * event snippet.
-   *
-   * @param string $floodlightActivityTag
+   * @param string
    */
   public function setFloodlightActivityTag($floodlightActivityTag)
   {
@@ -60,11 +47,7 @@ class FloodlightActivitiesGenerateTagResponse extends \Google\Model
     return $this->floodlightActivityTag;
   }
   /**
-   * The global snippet section of a Google tag. The Google tag sets new cookies
-   * on your domain, which will store a unique identifier for a user or the ad
-   * click that brought the user to your site. Learn more.
-   *
-   * @param string $globalSiteTagGlobalSnippet
+   * @param string
    */
   public function setGlobalSiteTagGlobalSnippet($globalSiteTagGlobalSnippet)
   {
@@ -78,10 +61,7 @@ class FloodlightActivitiesGenerateTagResponse extends \Google\Model
     return $this->globalSiteTagGlobalSnippet;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#floodlightActivitiesGenerateTagResponse".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

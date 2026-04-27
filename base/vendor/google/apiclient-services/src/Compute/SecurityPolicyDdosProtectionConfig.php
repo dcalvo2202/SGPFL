@@ -19,23 +19,20 @@ namespace Google\Service\Compute;
 
 class SecurityPolicyDdosProtectionConfig extends \Google\Model
 {
-  public const DDOS_PROTECTION_ADVANCED = 'ADVANCED';
-  public const DDOS_PROTECTION_ADVANCED_PREVIEW = 'ADVANCED_PREVIEW';
-  public const DDOS_PROTECTION_STANDARD = 'STANDARD';
   /**
    * @var string
    */
   public $ddosProtection;
 
   /**
-   * @param self::DDOS_PROTECTION_* $ddosProtection
+   * @param string
    */
   public function setDdosProtection($ddosProtection)
   {
     $this->ddosProtection = $ddosProtection;
   }
   /**
-   * @return self::DDOS_PROTECTION_*
+   * @return string
    */
   public function getDdosProtection()
   {

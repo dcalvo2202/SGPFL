@@ -19,34 +19,22 @@ namespace Google\Service\Aiplatform;
 
 class GoogleCloudAiplatformV1PrivateServiceConnectConfig extends \Google\Collection
 {
-  protected $collection_key = 'pscAutomationConfigs';
+  protected $collection_key = 'projectAllowlist';
   /**
-   * Required. If true, expose the IndexEndpoint via private service connect.
-   *
    * @var bool
    */
   public $enablePrivateServiceConnect;
   /**
-   * A list of Projects from which the forwarding rule will target the service
-   * attachment.
-   *
    * @var string[]
    */
   public $projectAllowlist;
-  protected $pscAutomationConfigsType = GoogleCloudAiplatformV1PSCAutomationConfig::class;
-  protected $pscAutomationConfigsDataType = 'array';
   /**
-   * Output only. The name of the generated service attachment resource. This is
-   * only populated if the endpoint is deployed with PrivateServiceConnect.
-   *
    * @var string
    */
   public $serviceAttachment;
 
   /**
-   * Required. If true, expose the IndexEndpoint via private service connect.
-   *
-   * @param bool $enablePrivateServiceConnect
+   * @param bool
    */
   public function setEnablePrivateServiceConnect($enablePrivateServiceConnect)
   {
@@ -60,10 +48,7 @@ class GoogleCloudAiplatformV1PrivateServiceConnectConfig extends \Google\Collect
     return $this->enablePrivateServiceConnect;
   }
   /**
-   * A list of Projects from which the forwarding rule will target the service
-   * attachment.
-   *
-   * @param string[] $projectAllowlist
+   * @param string[]
    */
   public function setProjectAllowlist($projectAllowlist)
   {
@@ -77,27 +62,7 @@ class GoogleCloudAiplatformV1PrivateServiceConnectConfig extends \Google\Collect
     return $this->projectAllowlist;
   }
   /**
-   * Optional. List of projects and networks where the PSC endpoints will be
-   * created. This field is used by Online Inference(Prediction) only.
-   *
-   * @param GoogleCloudAiplatformV1PSCAutomationConfig[] $pscAutomationConfigs
-   */
-  public function setPscAutomationConfigs($pscAutomationConfigs)
-  {
-    $this->pscAutomationConfigs = $pscAutomationConfigs;
-  }
-  /**
-   * @return GoogleCloudAiplatformV1PSCAutomationConfig[]
-   */
-  public function getPscAutomationConfigs()
-  {
-    return $this->pscAutomationConfigs;
-  }
-  /**
-   * Output only. The name of the generated service attachment resource. This is
-   * only populated if the endpoint is deployed with PrivateServiceConnect.
-   *
-   * @param string $serviceAttachment
+   * @param string
    */
   public function setServiceAttachment($serviceAttachment)
   {

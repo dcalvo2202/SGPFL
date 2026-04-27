@@ -25,22 +25,12 @@ class GoogleCloudAiplatformV1DataItemView extends \Google\Collection
   protected $dataItemType = GoogleCloudAiplatformV1DataItem::class;
   protected $dataItemDataType = '';
   /**
-   * True if and only if the Annotations field has been truncated. It happens if
-   * more Annotations for this DataItem met the request's annotation_filter than
-   * are allowed to be returned by annotations_limit. Note that if Annotations
-   * field is not being returned due to field mask, then this field will not be
-   * set to true no matter how many Annotations are there.
-   *
    * @var bool
    */
   public $hasTruncatedAnnotations;
 
   /**
-   * The Annotations on the DataItem. If too many Annotations should be returned
-   * for the DataItem, this field will be truncated per annotations_limit in
-   * request. If it was, then the has_truncated_annotations will be set to true.
-   *
-   * @param GoogleCloudAiplatformV1Annotation[] $annotations
+   * @param GoogleCloudAiplatformV1Annotation[]
    */
   public function setAnnotations($annotations)
   {
@@ -54,9 +44,7 @@ class GoogleCloudAiplatformV1DataItemView extends \Google\Collection
     return $this->annotations;
   }
   /**
-   * The DataItem.
-   *
-   * @param GoogleCloudAiplatformV1DataItem $dataItem
+   * @param GoogleCloudAiplatformV1DataItem
    */
   public function setDataItem(GoogleCloudAiplatformV1DataItem $dataItem)
   {
@@ -70,13 +58,7 @@ class GoogleCloudAiplatformV1DataItemView extends \Google\Collection
     return $this->dataItem;
   }
   /**
-   * True if and only if the Annotations field has been truncated. It happens if
-   * more Annotations for this DataItem met the request's annotation_filter than
-   * are allowed to be returned by annotations_limit. Note that if Annotations
-   * field is not being returned due to field mask, then this field will not be
-   * set to true no matter how many Annotations are there.
-   *
-   * @param bool $hasTruncatedAnnotations
+   * @param bool
    */
   public function setHasTruncatedAnnotations($hasTruncatedAnnotations)
   {

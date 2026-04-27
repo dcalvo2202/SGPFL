@@ -29,9 +29,7 @@ class Owner extends \Google\Model
   protected $userDataType = '';
 
   /**
-   * The domain of the Drive item owner.
-   *
-   * @param Domain $domain
+   * @param Domain
    */
   public function setDomain(Domain $domain)
   {
@@ -45,9 +43,7 @@ class Owner extends \Google\Model
     return $this->domain;
   }
   /**
-   * The drive that owns the item.
-   *
-   * @param DriveReference $drive
+   * @param DriveReference
    */
   public function setDrive(DriveReference $drive)
   {
@@ -61,17 +57,13 @@ class Owner extends \Google\Model
     return $this->drive;
   }
   /**
-   * This field is deprecated; please use the `drive` field instead.
-   *
-   * @deprecated
-   * @param TeamDriveReference $teamDrive
+   * @param TeamDriveReference
    */
   public function setTeamDrive(TeamDriveReference $teamDrive)
   {
     $this->teamDrive = $teamDrive;
   }
   /**
-   * @deprecated
    * @return TeamDriveReference
    */
   public function getTeamDrive()
@@ -79,9 +71,7 @@ class Owner extends \Google\Model
     return $this->teamDrive;
   }
   /**
-   * The user that owns the Drive item.
-   *
-   * @param User $user
+   * @param User
    */
   public function setUser(User $user)
   {

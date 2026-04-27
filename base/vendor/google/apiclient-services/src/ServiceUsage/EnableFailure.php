@@ -20,22 +20,16 @@ namespace Google\Service\ServiceUsage;
 class EnableFailure extends \Google\Model
 {
   /**
-   * An error message describing why the service could not be enabled.
-   *
    * @var string
    */
   public $errorMessage;
   /**
-   * The service id of a service that could not be enabled.
-   *
    * @var string
    */
   public $serviceId;
 
   /**
-   * An error message describing why the service could not be enabled.
-   *
-   * @param string $errorMessage
+   * @param string
    */
   public function setErrorMessage($errorMessage)
   {
@@ -49,9 +43,7 @@ class EnableFailure extends \Google\Model
     return $this->errorMessage;
   }
   /**
-   * The service id of a service that could not be enabled.
-   *
-   * @param string $serviceId
+   * @param string
    */
   public function setServiceId($serviceId)
   {

@@ -20,57 +20,30 @@ namespace Google\Service\Document;
 class GoogleCloudDocumentaiUiv1beta3ExportDocumentsMetadataSplitExportStat extends \Google\Model
 {
   /**
-   * Default value if the enum is not set.
-   */
-  public const SPLIT_TYPE_DATASET_SPLIT_TYPE_UNSPECIFIED = 'DATASET_SPLIT_TYPE_UNSPECIFIED';
-  /**
-   * Identifies the train documents.
-   */
-  public const SPLIT_TYPE_DATASET_SPLIT_TRAIN = 'DATASET_SPLIT_TRAIN';
-  /**
-   * Identifies the test documents.
-   */
-  public const SPLIT_TYPE_DATASET_SPLIT_TEST = 'DATASET_SPLIT_TEST';
-  /**
-   * Identifies the unassigned documents.
-   */
-  public const SPLIT_TYPE_DATASET_SPLIT_UNASSIGNED = 'DATASET_SPLIT_UNASSIGNED';
-  /**
-   * The dataset split type.
-   *
    * @var string
    */
   public $splitType;
   /**
-   * Total number of documents with the given dataset split type to be exported.
-   *
    * @var int
    */
   public $totalDocumentCount;
 
   /**
-   * The dataset split type.
-   *
-   * Accepted values: DATASET_SPLIT_TYPE_UNSPECIFIED, DATASET_SPLIT_TRAIN,
-   * DATASET_SPLIT_TEST, DATASET_SPLIT_UNASSIGNED
-   *
-   * @param self::SPLIT_TYPE_* $splitType
+   * @param string
    */
   public function setSplitType($splitType)
   {
     $this->splitType = $splitType;
   }
   /**
-   * @return self::SPLIT_TYPE_*
+   * @return string
    */
   public function getSplitType()
   {
     return $this->splitType;
   }
   /**
-   * Total number of documents with the given dataset split type to be exported.
-   *
-   * @param int $totalDocumentCount
+   * @param int
    */
   public function setTotalDocumentCount($totalDocumentCount)
   {

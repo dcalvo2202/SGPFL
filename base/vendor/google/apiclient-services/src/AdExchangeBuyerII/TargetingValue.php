@@ -24,23 +24,16 @@ class TargetingValue extends \Google\Model
   protected $dayPartTargetingValueType = DayPartTargeting::class;
   protected $dayPartTargetingValueDataType = '';
   /**
-   * The long value to include/exclude.
-   *
    * @var string
    */
   public $longValue;
   /**
-   * The string value to include/exclude.
-   *
    * @var string
    */
   public $stringValue;
 
   /**
-   * The creative size value to include/exclude. Filled in when key =
-   * GOOG_CREATIVE_SIZE
-   *
-   * @param CreativeSize $creativeSizeValue
+   * @param CreativeSize
    */
   public function setCreativeSizeValue(CreativeSize $creativeSizeValue)
   {
@@ -54,11 +47,7 @@ class TargetingValue extends \Google\Model
     return $this->creativeSizeValue;
   }
   /**
-   * The daypart targeting to include / exclude. Filled in when the key is
-   * GOOG_DAYPART_TARGETING. The definition of this targeting is derived from
-   * the structure used by Ad Manager.
-   *
-   * @param DayPartTargeting $dayPartTargetingValue
+   * @param DayPartTargeting
    */
   public function setDayPartTargetingValue(DayPartTargeting $dayPartTargetingValue)
   {
@@ -72,9 +61,7 @@ class TargetingValue extends \Google\Model
     return $this->dayPartTargetingValue;
   }
   /**
-   * The long value to include/exclude.
-   *
-   * @param string $longValue
+   * @param string
    */
   public function setLongValue($longValue)
   {
@@ -88,9 +75,7 @@ class TargetingValue extends \Google\Model
     return $this->longValue;
   }
   /**
-   * The string value to include/exclude.
-   *
-   * @param string $stringValue
+   * @param string
    */
   public function setStringValue($stringValue)
   {

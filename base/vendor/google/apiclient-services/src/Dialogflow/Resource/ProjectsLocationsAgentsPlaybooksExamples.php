@@ -32,9 +32,10 @@ use Google\Service\Dialogflow\GoogleProtobufEmpty;
 class ProjectsLocationsAgentsPlaybooksExamples extends \Google\Service\Resource
 {
   /**
-   * (examples.create)
+   * Creates an example in the specified playbook. (examples.create)
    *
-   * @param string $parent
+   * @param string $parent Required. The playbook to create an example for.
+   * Format: `projects//locations//agents//playbooks/`.
    * @param GoogleCloudDialogflowCxV3Example $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudDialogflowCxV3Example
@@ -47,9 +48,10 @@ class ProjectsLocationsAgentsPlaybooksExamples extends \Google\Service\Resource
     return $this->call('create', [$params], GoogleCloudDialogflowCxV3Example::class);
   }
   /**
-   * (examples.delete)
+   * Deletes the specified example. (examples.delete)
    *
-   * @param string $name
+   * @param string $name Required. The name of the example to delete. Format:
+   * `projects//locations//agents//playbooks//examples/`.
    * @param array $optParams Optional parameters.
    * @return GoogleProtobufEmpty
    * @throws \Google\Service\Exception
@@ -61,9 +63,10 @@ class ProjectsLocationsAgentsPlaybooksExamples extends \Google\Service\Resource
     return $this->call('delete', [$params], GoogleProtobufEmpty::class);
   }
   /**
-   * (examples.get)
+   * Retrieves the specified example. (examples.get)
    *
-   * @param string $name
+   * @param string $name Required. The name of the example. Format:
+   * `projects//locations//agents//playbooks//examples/`.
    * @param array $optParams Optional parameters.
    * @return GoogleCloudDialogflowCxV3Example
    * @throws \Google\Service\Exception
@@ -75,14 +78,20 @@ class ProjectsLocationsAgentsPlaybooksExamples extends \Google\Service\Resource
     return $this->call('get', [$params], GoogleCloudDialogflowCxV3Example::class);
   }
   /**
+   * Returns a list of examples in the specified playbook.
    * (examples.listProjectsLocationsAgentsPlaybooksExamples)
    *
-   * @param string $parent
+   * @param string $parent Required. The playbook to list the examples from.
+   * Format: `projects//locations//agents//playbooks/`.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string languageCode
-   * @opt_param int pageSize
-   * @opt_param string pageToken
+   * @opt_param string languageCode Optional. The language to list examples for.
+   * If not specified, list all examples under the playbook. Note: languages must
+   * be enabled in the agent before they can be used.
+   * @opt_param int pageSize Optional. The maximum number of items to return in a
+   * single page. By default 100 and at most 1000.
+   * @opt_param string pageToken Optional. The next_page_token value returned from
+   * a previous list request.
    * @return GoogleCloudDialogflowCxV3ListExamplesResponse
    * @throws \Google\Service\Exception
    */
@@ -93,13 +102,15 @@ class ProjectsLocationsAgentsPlaybooksExamples extends \Google\Service\Resource
     return $this->call('list', [$params], GoogleCloudDialogflowCxV3ListExamplesResponse::class);
   }
   /**
-   * (examples.patch)
+   * Update the specified example. (examples.patch)
    *
-   * @param string $name
+   * @param string $name The unique identifier of the playbook example. Format:
+   * `projects//locations//agents//playbooks//examples/`.
    * @param GoogleCloudDialogflowCxV3Example $postBody
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string updateMask
+   * @opt_param string updateMask Optional. The mask to control which fields get
+   * updated. If the mask is not present, all fields will be updated.
    * @return GoogleCloudDialogflowCxV3Example
    * @throws \Google\Service\Exception
    */

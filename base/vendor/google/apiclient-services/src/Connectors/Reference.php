@@ -20,22 +20,16 @@ namespace Google\Service\Connectors;
 class Reference extends \Google\Model
 {
   /**
-   * Name of the reference field.
-   *
    * @var string
    */
   public $name;
   /**
-   * Name of reference entity type.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Name of the reference field.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -49,9 +43,7 @@ class Reference extends \Google\Model
     return $this->name;
   }
   /**
-   * Name of reference entity type.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

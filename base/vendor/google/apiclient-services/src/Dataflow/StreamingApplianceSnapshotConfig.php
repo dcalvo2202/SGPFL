@@ -20,22 +20,16 @@ namespace Google\Service\Dataflow;
 class StreamingApplianceSnapshotConfig extends \Google\Model
 {
   /**
-   * Indicates which endpoint is used to import appliance state.
-   *
    * @var string
    */
   public $importStateEndpoint;
   /**
-   * If set, indicates the snapshot id for the snapshot being performed.
-   *
    * @var string
    */
   public $snapshotId;
 
   /**
-   * Indicates which endpoint is used to import appliance state.
-   *
-   * @param string $importStateEndpoint
+   * @param string
    */
   public function setImportStateEndpoint($importStateEndpoint)
   {
@@ -49,9 +43,7 @@ class StreamingApplianceSnapshotConfig extends \Google\Model
     return $this->importStateEndpoint;
   }
   /**
-   * If set, indicates the snapshot id for the snapshot being performed.
-   *
-   * @param string $snapshotId
+   * @param string
    */
   public function setSnapshotId($snapshotId)
   {

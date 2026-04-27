@@ -21,112 +21,70 @@ class HardwareInfo extends \Google\Collection
 {
   protected $collection_key = 'skinThrottlingTemperatures';
   /**
-   * Battery shutdown temperature thresholds in Celsius for each battery on the
-   * device.
-   *
    * @var float[]
    */
   public $batteryShutdownTemperatures;
   /**
-   * Battery throttling temperature thresholds in Celsius for each battery on
-   * the device.
-   *
    * @var float[]
    */
   public $batteryThrottlingTemperatures;
   /**
-   * Brand of the device. For example, Google.
-   *
    * @var string
    */
   public $brand;
   /**
-   * CPU shutdown temperature thresholds in Celsius for each CPU on the device.
-   *
    * @var float[]
    */
   public $cpuShutdownTemperatures;
   /**
-   * CPU throttling temperature thresholds in Celsius for each CPU on the
-   * device.
-   *
    * @var float[]
    */
   public $cpuThrottlingTemperatures;
   /**
-   * Baseband version. For example, MDM9625_104662.22.05.34p.
-   *
    * @var string
    */
   public $deviceBasebandVersion;
   /**
-   * Output only. ID that uniquely identifies a personally-owned device in a
-   * particular organization. On the same physical device when enrolled with the
-   * same organization, this ID persists across setups and even factory resets.
-   * This ID is available on personally-owned devices with a work profile on
-   * devices running Android 12 and above.
-   *
    * @var string
    */
   public $enterpriseSpecificId;
   protected $euiccChipInfoType = EuiccChipInfo::class;
   protected $euiccChipInfoDataType = 'array';
   /**
-   * GPU shutdown temperature thresholds in Celsius for each GPU on the device.
-   *
    * @var float[]
    */
   public $gpuShutdownTemperatures;
   /**
-   * GPU throttling temperature thresholds in Celsius for each GPU on the
-   * device.
-   *
    * @var float[]
    */
   public $gpuThrottlingTemperatures;
   /**
-   * Name of the hardware. For example, Angler.
-   *
    * @var string
    */
   public $hardware;
   /**
-   * Manufacturer. For example, Motorola.
-   *
    * @var string
    */
   public $manufacturer;
   /**
-   * The model of the device. For example, Asus Nexus 7.
-   *
    * @var string
    */
   public $model;
   /**
-   * The device serial number. However, for personally-owned devices running
-   * Android 12 and above, this is the same as the enterpriseSpecificId.
-   *
    * @var string
    */
   public $serialNumber;
   /**
-   * Device skin shutdown temperature thresholds in Celsius.
-   *
    * @var float[]
    */
   public $skinShutdownTemperatures;
   /**
-   * Device skin throttling temperature thresholds in Celsius.
-   *
    * @var float[]
    */
   public $skinThrottlingTemperatures;
 
   /**
-   * Battery shutdown temperature thresholds in Celsius for each battery on the
-   * device.
-   *
-   * @param float[] $batteryShutdownTemperatures
+   * @param float[]
    */
   public function setBatteryShutdownTemperatures($batteryShutdownTemperatures)
   {
@@ -140,10 +98,7 @@ class HardwareInfo extends \Google\Collection
     return $this->batteryShutdownTemperatures;
   }
   /**
-   * Battery throttling temperature thresholds in Celsius for each battery on
-   * the device.
-   *
-   * @param float[] $batteryThrottlingTemperatures
+   * @param float[]
    */
   public function setBatteryThrottlingTemperatures($batteryThrottlingTemperatures)
   {
@@ -157,9 +112,7 @@ class HardwareInfo extends \Google\Collection
     return $this->batteryThrottlingTemperatures;
   }
   /**
-   * Brand of the device. For example, Google.
-   *
-   * @param string $brand
+   * @param string
    */
   public function setBrand($brand)
   {
@@ -173,9 +126,7 @@ class HardwareInfo extends \Google\Collection
     return $this->brand;
   }
   /**
-   * CPU shutdown temperature thresholds in Celsius for each CPU on the device.
-   *
-   * @param float[] $cpuShutdownTemperatures
+   * @param float[]
    */
   public function setCpuShutdownTemperatures($cpuShutdownTemperatures)
   {
@@ -189,10 +140,7 @@ class HardwareInfo extends \Google\Collection
     return $this->cpuShutdownTemperatures;
   }
   /**
-   * CPU throttling temperature thresholds in Celsius for each CPU on the
-   * device.
-   *
-   * @param float[] $cpuThrottlingTemperatures
+   * @param float[]
    */
   public function setCpuThrottlingTemperatures($cpuThrottlingTemperatures)
   {
@@ -206,9 +154,7 @@ class HardwareInfo extends \Google\Collection
     return $this->cpuThrottlingTemperatures;
   }
   /**
-   * Baseband version. For example, MDM9625_104662.22.05.34p.
-   *
-   * @param string $deviceBasebandVersion
+   * @param string
    */
   public function setDeviceBasebandVersion($deviceBasebandVersion)
   {
@@ -222,13 +168,7 @@ class HardwareInfo extends \Google\Collection
     return $this->deviceBasebandVersion;
   }
   /**
-   * Output only. ID that uniquely identifies a personally-owned device in a
-   * particular organization. On the same physical device when enrolled with the
-   * same organization, this ID persists across setups and even factory resets.
-   * This ID is available on personally-owned devices with a work profile on
-   * devices running Android 12 and above.
-   *
-   * @param string $enterpriseSpecificId
+   * @param string
    */
   public function setEnterpriseSpecificId($enterpriseSpecificId)
   {
@@ -242,9 +182,7 @@ class HardwareInfo extends \Google\Collection
     return $this->enterpriseSpecificId;
   }
   /**
-   * Output only. Information related to the eUICC chip.
-   *
-   * @param EuiccChipInfo[] $euiccChipInfo
+   * @param EuiccChipInfo[]
    */
   public function setEuiccChipInfo($euiccChipInfo)
   {
@@ -258,9 +196,7 @@ class HardwareInfo extends \Google\Collection
     return $this->euiccChipInfo;
   }
   /**
-   * GPU shutdown temperature thresholds in Celsius for each GPU on the device.
-   *
-   * @param float[] $gpuShutdownTemperatures
+   * @param float[]
    */
   public function setGpuShutdownTemperatures($gpuShutdownTemperatures)
   {
@@ -274,10 +210,7 @@ class HardwareInfo extends \Google\Collection
     return $this->gpuShutdownTemperatures;
   }
   /**
-   * GPU throttling temperature thresholds in Celsius for each GPU on the
-   * device.
-   *
-   * @param float[] $gpuThrottlingTemperatures
+   * @param float[]
    */
   public function setGpuThrottlingTemperatures($gpuThrottlingTemperatures)
   {
@@ -291,9 +224,7 @@ class HardwareInfo extends \Google\Collection
     return $this->gpuThrottlingTemperatures;
   }
   /**
-   * Name of the hardware. For example, Angler.
-   *
-   * @param string $hardware
+   * @param string
    */
   public function setHardware($hardware)
   {
@@ -307,9 +238,7 @@ class HardwareInfo extends \Google\Collection
     return $this->hardware;
   }
   /**
-   * Manufacturer. For example, Motorola.
-   *
-   * @param string $manufacturer
+   * @param string
    */
   public function setManufacturer($manufacturer)
   {
@@ -323,9 +252,7 @@ class HardwareInfo extends \Google\Collection
     return $this->manufacturer;
   }
   /**
-   * The model of the device. For example, Asus Nexus 7.
-   *
-   * @param string $model
+   * @param string
    */
   public function setModel($model)
   {
@@ -339,10 +266,7 @@ class HardwareInfo extends \Google\Collection
     return $this->model;
   }
   /**
-   * The device serial number. However, for personally-owned devices running
-   * Android 12 and above, this is the same as the enterpriseSpecificId.
-   *
-   * @param string $serialNumber
+   * @param string
    */
   public function setSerialNumber($serialNumber)
   {
@@ -356,9 +280,7 @@ class HardwareInfo extends \Google\Collection
     return $this->serialNumber;
   }
   /**
-   * Device skin shutdown temperature thresholds in Celsius.
-   *
-   * @param float[] $skinShutdownTemperatures
+   * @param float[]
    */
   public function setSkinShutdownTemperatures($skinShutdownTemperatures)
   {
@@ -372,9 +294,7 @@ class HardwareInfo extends \Google\Collection
     return $this->skinShutdownTemperatures;
   }
   /**
-   * Device skin throttling temperature thresholds in Celsius.
-   *
-   * @param float[] $skinThrottlingTemperatures
+   * @param float[]
    */
   public function setSkinThrottlingTemperatures($skinThrottlingTemperatures)
   {

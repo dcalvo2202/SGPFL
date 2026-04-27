@@ -22,8 +22,6 @@ class InputFieldChoiceInputChoiceInputOption extends \Google\Model
   protected $additionalInputType = InputField::class;
   protected $additionalInputDataType = '';
   /**
-   * Not for display but need to be sent back for the selected choice option.
-   *
    * @var string
    */
   public $id;
@@ -31,10 +29,7 @@ class InputFieldChoiceInputChoiceInputOption extends \Google\Model
   protected $labelDataType = '';
 
   /**
-   * Input that should be displayed when this option is selected. The additional
-   * input will not contain a `ChoiceInput`.
-   *
-   * @param InputField $additionalInput
+   * @param InputField
    */
   public function setAdditionalInput(InputField $additionalInput)
   {
@@ -48,9 +43,7 @@ class InputFieldChoiceInputChoiceInputOption extends \Google\Model
     return $this->additionalInput;
   }
   /**
-   * Not for display but need to be sent back for the selected choice option.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -64,10 +57,7 @@ class InputFieldChoiceInputChoiceInputOption extends \Google\Model
     return $this->id;
   }
   /**
-   * Short description of the choice option. There may be more information to be
-   * shown as a tooltip.
-   *
-   * @param TextWithTooltip $label
+   * @param TextWithTooltip
    */
   public function setLabel(TextWithTooltip $label)
   {

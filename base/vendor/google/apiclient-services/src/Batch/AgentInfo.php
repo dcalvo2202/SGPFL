@@ -19,45 +19,20 @@ namespace Google\Service\Batch;
 
 class AgentInfo extends \Google\Collection
 {
-  /**
-   * Unspecified state.
-   */
-  public const STATE_AGENT_STATE_UNSPECIFIED = 'AGENT_STATE_UNSPECIFIED';
-  /**
-   * The agent is starting on the VM instance.
-   */
-  public const STATE_AGENT_STARTING = 'AGENT_STARTING';
-  /**
-   * The agent is running. The agent in the RUNNING state can never go back to
-   * the STARTING state.
-   */
-  public const STATE_AGENT_RUNNING = 'AGENT_RUNNING';
-  /**
-   * The agent has stopped, either on request or due to a failure.
-   */
-  public const STATE_AGENT_STOPPED = 'AGENT_STOPPED';
   protected $collection_key = 'tasks';
   /**
-   * Optional. The assigned Job ID
-   *
    * @var string
    */
   public $jobId;
   /**
-   * When the AgentInfo is generated.
-   *
    * @var string
    */
   public $reportTime;
   /**
-   * Agent state.
-   *
    * @var string
    */
   public $state;
   /**
-   * The assigned task group ID.
-   *
    * @var string
    */
   public $taskGroupId;
@@ -65,9 +40,7 @@ class AgentInfo extends \Google\Collection
   protected $tasksDataType = 'array';
 
   /**
-   * Optional. The assigned Job ID
-   *
-   * @param string $jobId
+   * @param string
    */
   public function setJobId($jobId)
   {
@@ -81,9 +54,7 @@ class AgentInfo extends \Google\Collection
     return $this->jobId;
   }
   /**
-   * When the AgentInfo is generated.
-   *
-   * @param string $reportTime
+   * @param string
    */
   public function setReportTime($reportTime)
   {
@@ -97,28 +68,21 @@ class AgentInfo extends \Google\Collection
     return $this->reportTime;
   }
   /**
-   * Agent state.
-   *
-   * Accepted values: AGENT_STATE_UNSPECIFIED, AGENT_STARTING, AGENT_RUNNING,
-   * AGENT_STOPPED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * The assigned task group ID.
-   *
-   * @param string $taskGroupId
+   * @param string
    */
   public function setTaskGroupId($taskGroupId)
   {
@@ -132,9 +96,7 @@ class AgentInfo extends \Google\Collection
     return $this->taskGroupId;
   }
   /**
-   * Task Info.
-   *
-   * @param AgentTaskInfo[] $tasks
+   * @param AgentTaskInfo[]
    */
   public function setTasks($tasks)
   {

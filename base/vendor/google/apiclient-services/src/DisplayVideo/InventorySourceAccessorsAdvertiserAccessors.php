@@ -21,16 +21,12 @@ class InventorySourceAccessorsAdvertiserAccessors extends \Google\Collection
 {
   protected $collection_key = 'advertiserIds';
   /**
-   * The IDs of the advertisers.
-   *
    * @var string[]
    */
   public $advertiserIds;
 
   /**
-   * The IDs of the advertisers.
-   *
-   * @param string[] $advertiserIds
+   * @param string[]
    */
   public function setAdvertiserIds($advertiserIds)
   {

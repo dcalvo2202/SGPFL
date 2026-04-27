@@ -22,32 +22,20 @@ class InsertTableColumnsRequest extends \Google\Model
   protected $cellLocationType = TableCellLocation::class;
   protected $cellLocationDataType = '';
   /**
-   * Whether to insert new columns to the right of the reference cell location.
-   * - `True`: insert to the right. - `False`: insert to the left.
-   *
    * @var bool
    */
   public $insertRight;
   /**
-   * The number of columns to be inserted. Maximum 20 per request.
-   *
    * @var int
    */
   public $number;
   /**
-   * The table to insert columns into.
-   *
    * @var string
    */
   public $tableObjectId;
 
   /**
-   * The reference table cell location from which columns will be inserted. A
-   * new column will be inserted to the left (or right) of the column where the
-   * reference cell is. If the reference cell is a merged cell, a new column
-   * will be inserted to the left (or right) of the merged cell.
-   *
-   * @param TableCellLocation $cellLocation
+   * @param TableCellLocation
    */
   public function setCellLocation(TableCellLocation $cellLocation)
   {
@@ -61,10 +49,7 @@ class InsertTableColumnsRequest extends \Google\Model
     return $this->cellLocation;
   }
   /**
-   * Whether to insert new columns to the right of the reference cell location.
-   * - `True`: insert to the right. - `False`: insert to the left.
-   *
-   * @param bool $insertRight
+   * @param bool
    */
   public function setInsertRight($insertRight)
   {
@@ -78,9 +63,7 @@ class InsertTableColumnsRequest extends \Google\Model
     return $this->insertRight;
   }
   /**
-   * The number of columns to be inserted. Maximum 20 per request.
-   *
-   * @param int $number
+   * @param int
    */
   public function setNumber($number)
   {
@@ -94,9 +77,7 @@ class InsertTableColumnsRequest extends \Google\Model
     return $this->number;
   }
   /**
-   * The table to insert columns into.
-   *
-   * @param string $tableObjectId
+   * @param string
    */
   public function setTableObjectId($tableObjectId)
   {

@@ -20,29 +20,20 @@ namespace Google\Service\Classroom;
 class Link extends \Google\Model
 {
   /**
-   * URL of a thumbnail image of the target URL. Read-only.
-   *
    * @var string
    */
   public $thumbnailUrl;
   /**
-   * Title of the target of the URL. Read-only.
-   *
    * @var string
    */
   public $title;
   /**
-   * URL to link to. This must be a valid UTF-8 string containing between 1 and
-   * 2024 characters.
-   *
    * @var string
    */
   public $url;
 
   /**
-   * URL of a thumbnail image of the target URL. Read-only.
-   *
-   * @param string $thumbnailUrl
+   * @param string
    */
   public function setThumbnailUrl($thumbnailUrl)
   {
@@ -56,9 +47,7 @@ class Link extends \Google\Model
     return $this->thumbnailUrl;
   }
   /**
-   * Title of the target of the URL. Read-only.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -72,10 +61,7 @@ class Link extends \Google\Model
     return $this->title;
   }
   /**
-   * URL to link to. This must be a valid UTF-8 string containing between 1 and
-   * 2024 characters.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

@@ -20,34 +20,19 @@ namespace Google\Service\BigtableAdmin;
 class DataBoostIsolationReadOnly extends \Google\Model
 {
   /**
-   * Unspecified value.
-   */
-  public const COMPUTE_BILLING_OWNER_COMPUTE_BILLING_OWNER_UNSPECIFIED = 'COMPUTE_BILLING_OWNER_UNSPECIFIED';
-  /**
-   * The host Cloud Project containing the targeted Bigtable Instance / Table
-   * pays for compute.
-   */
-  public const COMPUTE_BILLING_OWNER_HOST_PAYS = 'HOST_PAYS';
-  /**
-   * The Compute Billing Owner for this Data Boost App Profile.
-   *
    * @var string
    */
   public $computeBillingOwner;
 
   /**
-   * The Compute Billing Owner for this Data Boost App Profile.
-   *
-   * Accepted values: COMPUTE_BILLING_OWNER_UNSPECIFIED, HOST_PAYS
-   *
-   * @param self::COMPUTE_BILLING_OWNER_* $computeBillingOwner
+   * @param string
    */
   public function setComputeBillingOwner($computeBillingOwner)
   {
     $this->computeBillingOwner = $computeBillingOwner;
   }
   /**
-   * @return self::COMPUTE_BILLING_OWNER_*
+   * @return string
    */
   public function getComputeBillingOwner()
   {

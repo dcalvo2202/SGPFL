@@ -19,104 +19,34 @@ namespace Google\Service\VMMigrationService;
 
 class AzureVmDetails extends \Google\Collection
 {
-  /**
-   * The architecture is unknown.
-   */
-  public const ARCHITECTURE_VM_ARCHITECTURE_UNSPECIFIED = 'VM_ARCHITECTURE_UNSPECIFIED';
-  /**
-   * The architecture is one of the x86 architectures.
-   */
-  public const ARCHITECTURE_VM_ARCHITECTURE_X86_FAMILY = 'VM_ARCHITECTURE_X86_FAMILY';
-  /**
-   * The architecture is ARM64.
-   */
-  public const ARCHITECTURE_VM_ARCHITECTURE_ARM64 = 'VM_ARCHITECTURE_ARM64';
-  /**
-   * The boot option is unknown.
-   */
-  public const BOOT_OPTION_BOOT_OPTION_UNSPECIFIED = 'BOOT_OPTION_UNSPECIFIED';
-  /**
-   * The boot option is UEFI.
-   */
-  public const BOOT_OPTION_EFI = 'EFI';
-  /**
-   * The boot option is BIOS.
-   */
-  public const BOOT_OPTION_BIOS = 'BIOS';
-  /**
-   * Power state is not specified.
-   */
-  public const POWER_STATE_POWER_STATE_UNSPECIFIED = 'POWER_STATE_UNSPECIFIED';
-  /**
-   * The VM is starting.
-   */
-  public const POWER_STATE_STARTING = 'STARTING';
-  /**
-   * The VM is running.
-   */
-  public const POWER_STATE_RUNNING = 'RUNNING';
-  /**
-   * The VM is stopping.
-   */
-  public const POWER_STATE_STOPPING = 'STOPPING';
-  /**
-   * The VM is stopped.
-   */
-  public const POWER_STATE_STOPPED = 'STOPPED';
-  /**
-   * The VM is deallocating.
-   */
-  public const POWER_STATE_DEALLOCATING = 'DEALLOCATING';
-  /**
-   * The VM is deallocated.
-   */
-  public const POWER_STATE_DEALLOCATED = 'DEALLOCATED';
-  /**
-   * The VM's power state is unknown.
-   */
-  public const POWER_STATE_UNKNOWN = 'UNKNOWN';
   protected $collection_key = 'disks';
   /**
-   * The CPU architecture.
-   *
    * @var string
    */
   public $architecture;
   /**
-   * The VM Boot Option.
-   *
    * @var string
    */
   public $bootOption;
   /**
-   * The total size of the storage allocated to the VM in MB.
-   *
    * @var string
    */
   public $committedStorageMb;
   /**
-   * The VM's ComputerName.
-   *
    * @var string
    */
   public $computerName;
   /**
-   * The number of cpus the VM has.
-   *
    * @var int
    */
   public $cpuCount;
   /**
-   * The number of disks the VM has, including OS disk.
-   *
    * @var int
    */
   public $diskCount;
   protected $disksType = Disk::class;
   protected $disksDataType = 'array';
   /**
-   * The memory size of the VM in MB.
-   *
    * @var int
    */
   public $memoryMb;
@@ -125,71 +55,52 @@ class AzureVmDetails extends \Google\Collection
   protected $osDiskType = OSDisk::class;
   protected $osDiskDataType = '';
   /**
-   * The power state of the VM at the moment list was taken.
-   *
    * @var string
    */
   public $powerState;
   /**
-   * The tags of the VM.
-   *
    * @var string[]
    */
   public $tags;
   /**
-   * The VM full path in Azure.
-   *
    * @var string
    */
   public $vmId;
   /**
-   * VM size as configured in Azure. Determines the VM's hardware spec.
-   *
    * @var string
    */
   public $vmSize;
 
   /**
-   * The CPU architecture.
-   *
-   * Accepted values: VM_ARCHITECTURE_UNSPECIFIED, VM_ARCHITECTURE_X86_FAMILY,
-   * VM_ARCHITECTURE_ARM64
-   *
-   * @param self::ARCHITECTURE_* $architecture
+   * @param string
    */
   public function setArchitecture($architecture)
   {
     $this->architecture = $architecture;
   }
   /**
-   * @return self::ARCHITECTURE_*
+   * @return string
    */
   public function getArchitecture()
   {
     return $this->architecture;
   }
   /**
-   * The VM Boot Option.
-   *
-   * Accepted values: BOOT_OPTION_UNSPECIFIED, EFI, BIOS
-   *
-   * @param self::BOOT_OPTION_* $bootOption
+   * @param string
    */
   public function setBootOption($bootOption)
   {
     $this->bootOption = $bootOption;
   }
   /**
-   * @return self::BOOT_OPTION_*
+   * @return string
    */
   public function getBootOption()
   {
     return $this->bootOption;
   }
   /**
-   * The total size of the storage allocated to the VM in MB.
-   *
-   * @param string $committedStorageMb
+   * @param string
    */
   public function setCommittedStorageMb($committedStorageMb)
   {
@@ -203,9 +114,7 @@ class AzureVmDetails extends \Google\Collection
     return $this->committedStorageMb;
   }
   /**
-   * The VM's ComputerName.
-   *
-   * @param string $computerName
+   * @param string
    */
   public function setComputerName($computerName)
   {
@@ -219,9 +128,7 @@ class AzureVmDetails extends \Google\Collection
     return $this->computerName;
   }
   /**
-   * The number of cpus the VM has.
-   *
-   * @param int $cpuCount
+   * @param int
    */
   public function setCpuCount($cpuCount)
   {
@@ -235,9 +142,7 @@ class AzureVmDetails extends \Google\Collection
     return $this->cpuCount;
   }
   /**
-   * The number of disks the VM has, including OS disk.
-   *
-   * @param int $diskCount
+   * @param int
    */
   public function setDiskCount($diskCount)
   {
@@ -251,9 +156,7 @@ class AzureVmDetails extends \Google\Collection
     return $this->diskCount;
   }
   /**
-   * Description of the data disks.
-   *
-   * @param Disk[] $disks
+   * @param Disk[]
    */
   public function setDisks($disks)
   {
@@ -267,9 +170,7 @@ class AzureVmDetails extends \Google\Collection
     return $this->disks;
   }
   /**
-   * The memory size of the VM in MB.
-   *
-   * @param int $memoryMb
+   * @param int
    */
   public function setMemoryMb($memoryMb)
   {
@@ -283,9 +184,7 @@ class AzureVmDetails extends \Google\Collection
     return $this->memoryMb;
   }
   /**
-   * Description of the OS.
-   *
-   * @param OSDescription $osDescription
+   * @param OSDescription
    */
   public function setOsDescription(OSDescription $osDescription)
   {
@@ -299,9 +198,7 @@ class AzureVmDetails extends \Google\Collection
     return $this->osDescription;
   }
   /**
-   * Description of the OS disk.
-   *
-   * @param OSDisk $osDisk
+   * @param OSDisk
    */
   public function setOsDisk(OSDisk $osDisk)
   {
@@ -315,28 +212,21 @@ class AzureVmDetails extends \Google\Collection
     return $this->osDisk;
   }
   /**
-   * The power state of the VM at the moment list was taken.
-   *
-   * Accepted values: POWER_STATE_UNSPECIFIED, STARTING, RUNNING, STOPPING,
-   * STOPPED, DEALLOCATING, DEALLOCATED, UNKNOWN
-   *
-   * @param self::POWER_STATE_* $powerState
+   * @param string
    */
   public function setPowerState($powerState)
   {
     $this->powerState = $powerState;
   }
   /**
-   * @return self::POWER_STATE_*
+   * @return string
    */
   public function getPowerState()
   {
     return $this->powerState;
   }
   /**
-   * The tags of the VM.
-   *
-   * @param string[] $tags
+   * @param string[]
    */
   public function setTags($tags)
   {
@@ -350,9 +240,7 @@ class AzureVmDetails extends \Google\Collection
     return $this->tags;
   }
   /**
-   * The VM full path in Azure.
-   *
-   * @param string $vmId
+   * @param string
    */
   public function setVmId($vmId)
   {
@@ -366,9 +254,7 @@ class AzureVmDetails extends \Google\Collection
     return $this->vmId;
   }
   /**
-   * VM size as configured in Azure. Determines the VM's hardware spec.
-   *
-   * @param string $vmSize
+   * @param string
    */
   public function setVmSize($vmSize)
   {

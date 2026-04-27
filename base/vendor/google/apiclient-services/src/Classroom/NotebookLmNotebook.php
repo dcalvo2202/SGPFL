@@ -20,28 +20,20 @@ namespace Google\Service\Classroom;
 class NotebookLmNotebook extends \Google\Model
 {
   /**
-   * Notebook resource id.
-   *
    * @var string
    */
   public $id;
   /**
-   * Title of the Notebook.
-   *
    * @var string
    */
   public $title;
   /**
-   * URL that can be used to access the Notebook.
-   *
    * @var string
    */
   public $url;
 
   /**
-   * Notebook resource id.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -55,9 +47,7 @@ class NotebookLmNotebook extends \Google\Model
     return $this->id;
   }
   /**
-   * Title of the Notebook.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -71,9 +61,7 @@ class NotebookLmNotebook extends \Google\Model
     return $this->title;
   }
   /**
-   * URL that can be used to access the Notebook.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

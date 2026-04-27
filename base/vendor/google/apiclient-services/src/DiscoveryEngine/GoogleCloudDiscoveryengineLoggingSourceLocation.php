@@ -20,18 +20,12 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineLoggingSourceLocation extends \Google\Model
 {
   /**
-   * Human-readable name of a function or method—for example,
-   * `google.cloud.discoveryengine.v1alpha.RecommendationService.Recommend`.
-   *
    * @var string
    */
   public $functionName;
 
   /**
-   * Human-readable name of a function or method—for example,
-   * `google.cloud.discoveryengine.v1alpha.RecommendationService.Recommend`.
-   *
-   * @param string $functionName
+   * @param string
    */
   public function setFunctionName($functionName)
   {

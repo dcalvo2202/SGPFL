@@ -19,32 +19,16 @@ namespace Google\Service\Integrations;
 
 class GoogleCloudIntegrationsV1alphaGenerateOpenApiSpecRequest extends \Google\Collection
 {
-  /**
-   * Unspecified file format
-   */
-  public const FILE_FORMAT_FILE_FORMAT_UNSPECIFIED = 'FILE_FORMAT_UNSPECIFIED';
-  /**
-   * JSON File Format
-   */
-  public const FILE_FORMAT_JSON = 'JSON';
-  /**
-   * YAML File Format
-   */
-  public const FILE_FORMAT_YAML = 'YAML';
   protected $collection_key = 'apiTriggerResources';
   protected $apiTriggerResourcesType = GoogleCloudIntegrationsV1alphaApiTriggerResource::class;
   protected $apiTriggerResourcesDataType = 'array';
   /**
-   * Required. File format for generated spec.
-   *
    * @var string
    */
   public $fileFormat;
 
   /**
-   * Required. List of api triggers
-   *
-   * @param GoogleCloudIntegrationsV1alphaApiTriggerResource[] $apiTriggerResources
+   * @param GoogleCloudIntegrationsV1alphaApiTriggerResource[]
    */
   public function setApiTriggerResources($apiTriggerResources)
   {
@@ -58,18 +42,14 @@ class GoogleCloudIntegrationsV1alphaGenerateOpenApiSpecRequest extends \Google\C
     return $this->apiTriggerResources;
   }
   /**
-   * Required. File format for generated spec.
-   *
-   * Accepted values: FILE_FORMAT_UNSPECIFIED, JSON, YAML
-   *
-   * @param self::FILE_FORMAT_* $fileFormat
+   * @param string
    */
   public function setFileFormat($fileFormat)
   {
     $this->fileFormat = $fileFormat;
   }
   /**
-   * @return self::FILE_FORMAT_*
+   * @return string
    */
   public function getFileFormat()
   {

@@ -17,74 +17,39 @@
 
 namespace Google\Service\CivicInfo;
 
-class CivicinfoSchemaV2SimpleAddressType extends \Google\Collection
+class CivicinfoSchemaV2SimpleAddressType extends \Google\Model
 {
-  protected $collection_key = 'addressLine';
   /**
-   * @var string[]
-   */
-  public $addressLine;
-  /**
-   * The city or town for the address.
-   *
    * @var string
    */
   public $city;
   /**
-   * The street name and number of this address.
-   *
    * @var string
    */
   public $line1;
   /**
-   * The second line the address, if needed.
-   *
    * @var string
    */
   public $line2;
   /**
-   * The third line of the address, if needed.
-   *
    * @var string
    */
   public $line3;
   /**
-   * The name of the location.
-   *
    * @var string
    */
   public $locationName;
   /**
-   * The US two letter state abbreviation of the address.
-   *
    * @var string
    */
   public $state;
   /**
-   * The US Postal Zip Code of the address.
-   *
    * @var string
    */
   public $zip;
 
   /**
-   * @param string[] $addressLine
-   */
-  public function setAddressLine($addressLine)
-  {
-    $this->addressLine = $addressLine;
-  }
-  /**
-   * @return string[]
-   */
-  public function getAddressLine()
-  {
-    return $this->addressLine;
-  }
-  /**
-   * The city or town for the address.
-   *
-   * @param string $city
+   * @param string
    */
   public function setCity($city)
   {
@@ -98,9 +63,7 @@ class CivicinfoSchemaV2SimpleAddressType extends \Google\Collection
     return $this->city;
   }
   /**
-   * The street name and number of this address.
-   *
-   * @param string $line1
+   * @param string
    */
   public function setLine1($line1)
   {
@@ -114,9 +77,7 @@ class CivicinfoSchemaV2SimpleAddressType extends \Google\Collection
     return $this->line1;
   }
   /**
-   * The second line the address, if needed.
-   *
-   * @param string $line2
+   * @param string
    */
   public function setLine2($line2)
   {
@@ -130,9 +91,7 @@ class CivicinfoSchemaV2SimpleAddressType extends \Google\Collection
     return $this->line2;
   }
   /**
-   * The third line of the address, if needed.
-   *
-   * @param string $line3
+   * @param string
    */
   public function setLine3($line3)
   {
@@ -146,9 +105,7 @@ class CivicinfoSchemaV2SimpleAddressType extends \Google\Collection
     return $this->line3;
   }
   /**
-   * The name of the location.
-   *
-   * @param string $locationName
+   * @param string
    */
   public function setLocationName($locationName)
   {
@@ -162,9 +119,7 @@ class CivicinfoSchemaV2SimpleAddressType extends \Google\Collection
     return $this->locationName;
   }
   /**
-   * The US two letter state abbreviation of the address.
-   *
-   * @param string $state
+   * @param string
    */
   public function setState($state)
   {
@@ -178,9 +133,7 @@ class CivicinfoSchemaV2SimpleAddressType extends \Google\Collection
     return $this->state;
   }
   /**
-   * The US Postal Zip Code of the address.
-   *
-   * @param string $zip
+   * @param string
    */
   public function setZip($zip)
   {

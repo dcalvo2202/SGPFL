@@ -21,24 +21,18 @@ class ListRuntimeVersionsResponse extends \Google\Collection
 {
   protected $collection_key = 'unreachable';
   /**
-   * The next page token or empty if none.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $runtimeVersionsType = RuntimeVersion::class;
   protected $runtimeVersionsDataType = 'array';
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * The next page token or empty if none.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -52,9 +46,7 @@ class ListRuntimeVersionsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The listed nodes.
-   *
-   * @param RuntimeVersion[] $runtimeVersions
+   * @param RuntimeVersion[]
    */
   public function setRuntimeVersions($runtimeVersions)
   {
@@ -68,9 +60,7 @@ class ListRuntimeVersionsResponse extends \Google\Collection
     return $this->runtimeVersions;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

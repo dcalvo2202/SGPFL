@@ -20,29 +20,16 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1SecurityReportResultMetadata extends \Google\Model
 {
   /**
-   * Output only. Expire_time is set to 7 days after report creation. Query
-   * result will be unaccessable after this time. Example:
-   * "2021-05-04T13:38:52-07:00"
-   *
    * @var string
    */
   public $expires;
   /**
-   * Self link of the query results. Example: `/organizations/myorg/environments
-   * /myenv/securityReports/9cfc0d85-0f30-46d6-ae6f-318d0cb961bd/result` or
-   * following format if query is running at host level: `/organizations/myorg/h
-   * ostSecurityReports/9cfc0d85-0f30-46d6-ae6f-318d0cb961bd/result`
-   *
    * @var string
    */
   public $self;
 
   /**
-   * Output only. Expire_time is set to 7 days after report creation. Query
-   * result will be unaccessable after this time. Example:
-   * "2021-05-04T13:38:52-07:00"
-   *
-   * @param string $expires
+   * @param string
    */
   public function setExpires($expires)
   {
@@ -56,12 +43,7 @@ class GoogleCloudApigeeV1SecurityReportResultMetadata extends \Google\Model
     return $this->expires;
   }
   /**
-   * Self link of the query results. Example: `/organizations/myorg/environments
-   * /myenv/securityReports/9cfc0d85-0f30-46d6-ae6f-318d0cb961bd/result` or
-   * following format if query is running at host level: `/organizations/myorg/h
-   * ostSecurityReports/9cfc0d85-0f30-46d6-ae6f-318d0cb961bd/result`
-   *
-   * @param string $self
+   * @param string
    */
   public function setSelf($self)
   {

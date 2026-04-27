@@ -20,16 +20,12 @@ namespace Google\Service\CloudSearch;
 class EnterpriseTopazSidekickPeopleAnswerPeopleAnswerCardHeader extends \Google\Model
 {
   /**
-   * The suggested title to display. This defaults to the user's query.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * The suggested title to display. This defaults to the user's query.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

@@ -27,18 +27,10 @@ class SearchRequest extends \Google\Collection
   protected $facetOptionsType = FacetOptions::class;
   protected $facetOptionsDataType = 'array';
   /**
-   * Maximum number of search results to return in one page. Valid values are
-   * between 1 and 100, inclusive. Default value is 10. Minimum value is 50 when
-   * results beyond 2000 are requested.
-   *
    * @var int
    */
   public $pageSize;
   /**
-   * The raw query string. See supported search operators in the [Narrow your
-   * search with
-   * operators](https://support.google.com/cloudsearch/answer/6172299)
-   *
    * @var string
    */
   public $query;
@@ -49,17 +41,12 @@ class SearchRequest extends \Google\Collection
   protected $sortOptionsType = SortOptions::class;
   protected $sortOptionsDataType = '';
   /**
-   * Starting index of the results.
-   *
    * @var int
    */
   public $start;
 
   /**
-   * Context attributes for the request which will be used to adjust ranking of
-   * search results. The maximum number of elements is 10.
-   *
-   * @param ContextAttribute[] $contextAttributes
+   * @param ContextAttribute[]
    */
   public function setContextAttributes($contextAttributes)
   {
@@ -73,10 +60,7 @@ class SearchRequest extends \Google\Collection
     return $this->contextAttributes;
   }
   /**
-   * The sources to use for querying. If not specified, all data sources from
-   * the current search application are used.
-   *
-   * @param DataSourceRestriction[] $dataSourceRestrictions
+   * @param DataSourceRestriction[]
    */
   public function setDataSourceRestrictions($dataSourceRestrictions)
   {
@@ -90,7 +74,7 @@ class SearchRequest extends \Google\Collection
     return $this->dataSourceRestrictions;
   }
   /**
-   * @param FacetOptions[] $facetOptions
+   * @param FacetOptions[]
    */
   public function setFacetOptions($facetOptions)
   {
@@ -104,11 +88,7 @@ class SearchRequest extends \Google\Collection
     return $this->facetOptions;
   }
   /**
-   * Maximum number of search results to return in one page. Valid values are
-   * between 1 and 100, inclusive. Default value is 10. Minimum value is 50 when
-   * results beyond 2000 are requested.
-   *
-   * @param int $pageSize
+   * @param int
    */
   public function setPageSize($pageSize)
   {
@@ -122,11 +102,7 @@ class SearchRequest extends \Google\Collection
     return $this->pageSize;
   }
   /**
-   * The raw query string. See supported search operators in the [Narrow your
-   * search with
-   * operators](https://support.google.com/cloudsearch/answer/6172299)
-   *
-   * @param string $query
+   * @param string
    */
   public function setQuery($query)
   {
@@ -140,9 +116,7 @@ class SearchRequest extends \Google\Collection
     return $this->query;
   }
   /**
-   * Options to interpret the user query.
-   *
-   * @param QueryInterpretationOptions $queryInterpretationOptions
+   * @param QueryInterpretationOptions
    */
   public function setQueryInterpretationOptions(QueryInterpretationOptions $queryInterpretationOptions)
   {
@@ -156,9 +130,7 @@ class SearchRequest extends \Google\Collection
     return $this->queryInterpretationOptions;
   }
   /**
-   * Request options, such as the search application and user timezone.
-   *
-   * @param RequestOptions $requestOptions
+   * @param RequestOptions
    */
   public function setRequestOptions(RequestOptions $requestOptions)
   {
@@ -172,9 +144,7 @@ class SearchRequest extends \Google\Collection
     return $this->requestOptions;
   }
   /**
-   * The options for sorting the search results
-   *
-   * @param SortOptions $sortOptions
+   * @param SortOptions
    */
   public function setSortOptions(SortOptions $sortOptions)
   {
@@ -188,9 +158,7 @@ class SearchRequest extends \Google\Collection
     return $this->sortOptions;
   }
   /**
-   * Starting index of the results.
-   *
-   * @param int $start
+   * @param int
    */
   public function setStart($start)
   {

@@ -20,68 +20,40 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1DataItem extends \Google\Model
 {
   /**
-   * Output only. Timestamp when this DataItem was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. Used to perform consistent read-modify-write updates. If not set,
-   * a blind "overwrite" update happens.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Optional. The labels with user-defined metadata to organize your DataItems.
-   * Label keys and values can be no longer than 64 characters (Unicode
-   * codepoints), can only contain lowercase letters, numeric characters,
-   * underscores and dashes. International characters are allowed. No more than
-   * 64 user labels can be associated with one DataItem(System labels are
-   * excluded). See https://goo.gl/xmQnxf for more information and examples of
-   * labels. System reserved label keys are prefixed with
-   * "aiplatform.googleapis.com/" and are immutable.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Output only. The resource name of the DataItem.
-   *
    * @var string
    */
   public $name;
   /**
-   * Required. The data that the DataItem represents (for example, an image or a
-   * text snippet). The schema of the payload is stored in the parent Dataset's
-   * metadata schema's dataItemSchemaUri field.
-   *
    * @var array
    */
   public $payload;
   /**
-   * Output only. Reserved for future use.
-   *
    * @var bool
    */
   public $satisfiesPzi;
   /**
-   * Output only. Reserved for future use.
-   *
    * @var bool
    */
   public $satisfiesPzs;
   /**
-   * Output only. Timestamp when this DataItem was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. Timestamp when this DataItem was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -95,10 +67,7 @@ class GoogleCloudAiplatformV1DataItem extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Optional. Used to perform consistent read-modify-write updates. If not set,
-   * a blind "overwrite" update happens.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -112,16 +81,7 @@ class GoogleCloudAiplatformV1DataItem extends \Google\Model
     return $this->etag;
   }
   /**
-   * Optional. The labels with user-defined metadata to organize your DataItems.
-   * Label keys and values can be no longer than 64 characters (Unicode
-   * codepoints), can only contain lowercase letters, numeric characters,
-   * underscores and dashes. International characters are allowed. No more than
-   * 64 user labels can be associated with one DataItem(System labels are
-   * excluded). See https://goo.gl/xmQnxf for more information and examples of
-   * labels. System reserved label keys are prefixed with
-   * "aiplatform.googleapis.com/" and are immutable.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -135,9 +95,7 @@ class GoogleCloudAiplatformV1DataItem extends \Google\Model
     return $this->labels;
   }
   /**
-   * Output only. The resource name of the DataItem.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -151,11 +109,7 @@ class GoogleCloudAiplatformV1DataItem extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. The data that the DataItem represents (for example, an image or a
-   * text snippet). The schema of the payload is stored in the parent Dataset's
-   * metadata schema's dataItemSchemaUri field.
-   *
-   * @param array $payload
+   * @param array
    */
   public function setPayload($payload)
   {
@@ -169,9 +123,7 @@ class GoogleCloudAiplatformV1DataItem extends \Google\Model
     return $this->payload;
   }
   /**
-   * Output only. Reserved for future use.
-   *
-   * @param bool $satisfiesPzi
+   * @param bool
    */
   public function setSatisfiesPzi($satisfiesPzi)
   {
@@ -185,9 +137,7 @@ class GoogleCloudAiplatformV1DataItem extends \Google\Model
     return $this->satisfiesPzi;
   }
   /**
-   * Output only. Reserved for future use.
-   *
-   * @param bool $satisfiesPzs
+   * @param bool
    */
   public function setSatisfiesPzs($satisfiesPzs)
   {
@@ -201,9 +151,7 @@ class GoogleCloudAiplatformV1DataItem extends \Google\Model
     return $this->satisfiesPzs;
   }
   /**
-   * Output only. Timestamp when this DataItem was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

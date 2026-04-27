@@ -20,30 +20,16 @@ namespace Google\Service\Compute;
 class RegionAddressesMoveRequest extends \Google\Model
 {
   /**
-   * An optional destination address description if intended to be different
-   * from the source.
-   *
    * @var string
    */
   public $description;
   /**
-   * The URL of the destination address to move to. This can be a full or
-   * partial URL. For example, the following are all valid URLs to a address:
-   * - https://www.googleapis.com/compute/v1/projects/project/regions/region/add
-   * resses/address     - projects/project/regions/region/addresses/address
-   *
-   * Note that destination project must be different from the source project.
-   * So/regions/region/addresses/address is not valid partial url.
-   *
    * @var string
    */
   public $destinationAddress;
 
   /**
-   * An optional destination address description if intended to be different
-   * from the source.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -57,15 +43,7 @@ class RegionAddressesMoveRequest extends \Google\Model
     return $this->description;
   }
   /**
-   * The URL of the destination address to move to. This can be a full or
-   * partial URL. For example, the following are all valid URLs to a address:
-   * - https://www.googleapis.com/compute/v1/projects/project/regions/region/add
-   * resses/address     - projects/project/regions/region/addresses/address
-   *
-   * Note that destination project must be different from the source project.
-   * So/regions/region/addresses/address is not valid partial url.
-   *
-   * @param string $destinationAddress
+   * @param string
    */
   public function setDestinationAddress($destinationAddress)
   {

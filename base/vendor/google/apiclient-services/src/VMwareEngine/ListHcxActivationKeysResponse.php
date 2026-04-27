@@ -23,24 +23,16 @@ class ListHcxActivationKeysResponse extends \Google\Collection
   protected $hcxActivationKeysType = HcxActivationKey::class;
   protected $hcxActivationKeysDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Locations that could not be reached when making an aggregated query using
-   * wildcards.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * List of HCX activation keys.
-   *
-   * @param HcxActivationKey[] $hcxActivationKeys
+   * @param HcxActivationKey[]
    */
   public function setHcxActivationKeys($hcxActivationKeys)
   {
@@ -54,10 +46,7 @@ class ListHcxActivationKeysResponse extends \Google\Collection
     return $this->hcxActivationKeys;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -71,10 +60,7 @@ class ListHcxActivationKeysResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Locations that could not be reached when making an aggregated query using
-   * wildcards.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

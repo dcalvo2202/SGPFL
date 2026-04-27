@@ -20,22 +20,16 @@ namespace Google\Service\Compute;
 class RouterAdvertisedIpRange extends \Google\Model
 {
   /**
-   * User-specified description for the IP range.
-   *
    * @var string
    */
   public $description;
   /**
-   * The IP range to advertise. The value must be a CIDR-formatted string.
-   *
    * @var string
    */
   public $range;
 
   /**
-   * User-specified description for the IP range.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -49,9 +43,7 @@ class RouterAdvertisedIpRange extends \Google\Model
     return $this->description;
   }
   /**
-   * The IP range to advertise. The value must be a CIDR-formatted string.
-   *
-   * @param string $range
+   * @param string
    */
   public function setRange($range)
   {

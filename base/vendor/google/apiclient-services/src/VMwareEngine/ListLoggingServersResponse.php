@@ -23,24 +23,16 @@ class ListLoggingServersResponse extends \Google\Collection
   protected $loggingServersType = LoggingServer::class;
   protected $loggingServersDataType = 'array';
   /**
-   * A token, which can be send as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Locations that could not be reached when making an aggregated query using
-   * wildcards.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * A list of Logging Servers.
-   *
-   * @param LoggingServer[] $loggingServers
+   * @param LoggingServer[]
    */
   public function setLoggingServers($loggingServers)
   {
@@ -54,10 +46,7 @@ class ListLoggingServersResponse extends \Google\Collection
     return $this->loggingServers;
   }
   /**
-   * A token, which can be send as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -71,10 +60,7 @@ class ListLoggingServersResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Locations that could not be reached when making an aggregated query using
-   * wildcards.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

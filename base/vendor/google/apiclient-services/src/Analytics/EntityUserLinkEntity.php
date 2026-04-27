@@ -27,9 +27,7 @@ class EntityUserLinkEntity extends \Google\Model
   protected $webPropertyRefDataType = '';
 
   /**
-   * Account for this link.
-   *
-   * @param AccountRef $accountRef
+   * @param AccountRef
    */
   public function setAccountRef(AccountRef $accountRef)
   {
@@ -43,9 +41,7 @@ class EntityUserLinkEntity extends \Google\Model
     return $this->accountRef;
   }
   /**
-   * View (Profile) for this link.
-   *
-   * @param ProfileRef $profileRef
+   * @param ProfileRef
    */
   public function setProfileRef(ProfileRef $profileRef)
   {
@@ -59,9 +55,7 @@ class EntityUserLinkEntity extends \Google\Model
     return $this->profileRef;
   }
   /**
-   * Web property for this link.
-   *
-   * @param WebPropertyRef $webPropertyRef
+   * @param WebPropertyRef
    */
   public function setWebPropertyRef(WebPropertyRef $webPropertyRef)
   {

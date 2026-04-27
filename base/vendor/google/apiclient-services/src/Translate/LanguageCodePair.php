@@ -20,25 +20,16 @@ namespace Google\Service\Translate;
 class LanguageCodePair extends \Google\Model
 {
   /**
-   * Required. The ISO-639 language code of the input text, for example, "en-
-   * US". Expected to be an exact match for GlossaryTerm.language_code.
-   *
    * @var string
    */
   public $sourceLanguageCode;
   /**
-   * Required. The ISO-639 language code for translation output, for example,
-   * "zh-CN". Expected to be an exact match for GlossaryTerm.language_code.
-   *
    * @var string
    */
   public $targetLanguageCode;
 
   /**
-   * Required. The ISO-639 language code of the input text, for example, "en-
-   * US". Expected to be an exact match for GlossaryTerm.language_code.
-   *
-   * @param string $sourceLanguageCode
+   * @param string
    */
   public function setSourceLanguageCode($sourceLanguageCode)
   {
@@ -52,10 +43,7 @@ class LanguageCodePair extends \Google\Model
     return $this->sourceLanguageCode;
   }
   /**
-   * Required. The ISO-639 language code for translation output, for example,
-   * "zh-CN". Expected to be an exact match for GlossaryTerm.language_code.
-   *
-   * @param string $targetLanguageCode
+   * @param string
    */
   public function setTargetLanguageCode($targetLanguageCode)
   {

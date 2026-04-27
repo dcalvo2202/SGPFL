@@ -24,9 +24,7 @@ class GoogleCloudAiplatformV1SchemaPromptSpecReferenceSentencePairList extends \
   protected $referenceSentencePairsDataType = 'array';
 
   /**
-   * Reference sentence pairs.
-   *
-   * @param GoogleCloudAiplatformV1SchemaPromptSpecReferenceSentencePair[] $referenceSentencePairs
+   * @param GoogleCloudAiplatformV1SchemaPromptSpecReferenceSentencePair[]
    */
   public function setReferenceSentencePairs($referenceSentencePairs)
   {

@@ -20,9 +20,6 @@ namespace Google\Service\CloudSearch;
 class StartUploadItemRequest extends \Google\Model
 {
   /**
-   * The name of connector making this call. Format:
-   * datasources/{source_id}/connectors/{ID}
-   *
    * @var string
    */
   public $connectorName;
@@ -30,10 +27,7 @@ class StartUploadItemRequest extends \Google\Model
   protected $debugOptionsDataType = '';
 
   /**
-   * The name of connector making this call. Format:
-   * datasources/{source_id}/connectors/{ID}
-   *
-   * @param string $connectorName
+   * @param string
    */
   public function setConnectorName($connectorName)
   {
@@ -47,9 +41,7 @@ class StartUploadItemRequest extends \Google\Model
     return $this->connectorName;
   }
   /**
-   * Common debug options.
-   *
-   * @param DebugOptions $debugOptions
+   * @param DebugOptions
    */
   public function setDebugOptions(DebugOptions $debugOptions)
   {

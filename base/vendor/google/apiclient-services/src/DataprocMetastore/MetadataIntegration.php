@@ -23,9 +23,7 @@ class MetadataIntegration extends \Google\Model
   protected $dataCatalogConfigDataType = '';
 
   /**
-   * Optional. The integration config for the Data Catalog service.
-   *
-   * @param DataCatalogConfig $dataCatalogConfig
+   * @param DataCatalogConfig
    */
   public function setDataCatalogConfig(DataCatalogConfig $dataCatalogConfig)
   {

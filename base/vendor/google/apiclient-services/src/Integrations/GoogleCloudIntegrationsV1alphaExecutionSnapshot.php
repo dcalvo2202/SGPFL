@@ -21,8 +21,6 @@ class GoogleCloudIntegrationsV1alphaExecutionSnapshot extends \Google\Collection
 {
   protected $collection_key = 'taskExecutionDetails';
   /**
-   * Indicates "after which checkpoint task's execution" this snapshot is taken.
-   *
    * @var string
    */
   public $checkpointTaskNumber;
@@ -34,9 +32,7 @@ class GoogleCloudIntegrationsV1alphaExecutionSnapshot extends \Google\Collection
   protected $taskExecutionDetailsDataType = 'array';
 
   /**
-   * Indicates "after which checkpoint task's execution" this snapshot is taken.
-   *
-   * @param string $checkpointTaskNumber
+   * @param string
    */
   public function setCheckpointTaskNumber($checkpointTaskNumber)
   {
@@ -50,9 +46,7 @@ class GoogleCloudIntegrationsV1alphaExecutionSnapshot extends \Google\Collection
     return $this->checkpointTaskNumber;
   }
   /**
-   * Metadata of the execution snapshot.
-   *
-   * @param GoogleCloudIntegrationsV1alphaExecutionSnapshotExecutionSnapshotMetadata $executionSnapshotMetadata
+   * @param GoogleCloudIntegrationsV1alphaExecutionSnapshotExecutionSnapshotMetadata
    */
   public function setExecutionSnapshotMetadata(GoogleCloudIntegrationsV1alphaExecutionSnapshotExecutionSnapshotMetadata $executionSnapshotMetadata)
   {
@@ -66,9 +60,7 @@ class GoogleCloudIntegrationsV1alphaExecutionSnapshot extends \Google\Collection
     return $this->executionSnapshotMetadata;
   }
   /**
-   * Parameters used during the execution.
-   *
-   * @param GoogleCloudIntegrationsV1alphaValueType[] $params
+   * @param GoogleCloudIntegrationsV1alphaValueType[]
    */
   public function setParams($params)
   {
@@ -82,9 +74,7 @@ class GoogleCloudIntegrationsV1alphaExecutionSnapshot extends \Google\Collection
     return $this->params;
   }
   /**
-   * All of the task execution details at the given point of time.
-   *
-   * @param GoogleCloudIntegrationsV1alphaTaskExecutionDetails[] $taskExecutionDetails
+   * @param GoogleCloudIntegrationsV1alphaTaskExecutionDetails[]
    */
   public function setTaskExecutionDetails($taskExecutionDetails)
   {

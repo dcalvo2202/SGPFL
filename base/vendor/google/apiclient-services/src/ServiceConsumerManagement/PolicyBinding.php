@@ -21,27 +21,16 @@ class PolicyBinding extends \Google\Collection
 {
   protected $collection_key = 'members';
   /**
-   * Uses the same format as in IAM policy. `member` must include both a prefix
-   * and ID. For example, `user:{emailId}`, `serviceAccount:{emailId}`,
-   * `group:{emailId}`.
-   *
    * @var string[]
    */
   public $members;
   /**
-   * Role. (https://cloud.google.com/iam/docs/understanding-roles) For example,
-   * `roles/viewer`, `roles/editor`, or `roles/owner`.
-   *
    * @var string
    */
   public $role;
 
   /**
-   * Uses the same format as in IAM policy. `member` must include both a prefix
-   * and ID. For example, `user:{emailId}`, `serviceAccount:{emailId}`,
-   * `group:{emailId}`.
-   *
-   * @param string[] $members
+   * @param string[]
    */
   public function setMembers($members)
   {
@@ -55,10 +44,7 @@ class PolicyBinding extends \Google\Collection
     return $this->members;
   }
   /**
-   * Role. (https://cloud.google.com/iam/docs/understanding-roles) For example,
-   * `roles/viewer`, `roles/editor`, or `roles/owner`.
-   *
-   * @param string $role
+   * @param string
    */
   public function setRole($role)
   {

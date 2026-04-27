@@ -20,36 +20,20 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1NodeConfig extends \Google\Model
 {
   /**
-   * Output only. The current total number of gateway nodes that each
-   * environment currently has across all instances.
-   *
    * @var string
    */
   public $currentAggregateNodeCount;
   /**
-   * Optional. The maximum total number of gateway nodes that the is reserved
-   * for all instances that has the specified environment. If not specified, the
-   * default is determined by the recommended maximum number of nodes for that
-   * gateway.
-   *
    * @var string
    */
   public $maxNodeCount;
   /**
-   * Optional. The minimum total number of gateway nodes that the is reserved
-   * for all instances that has the specified environment. If not specified, the
-   * default is determined by the recommended minimum number of nodes for that
-   * gateway.
-   *
    * @var string
    */
   public $minNodeCount;
 
   /**
-   * Output only. The current total number of gateway nodes that each
-   * environment currently has across all instances.
-   *
-   * @param string $currentAggregateNodeCount
+   * @param string
    */
   public function setCurrentAggregateNodeCount($currentAggregateNodeCount)
   {
@@ -63,12 +47,7 @@ class GoogleCloudApigeeV1NodeConfig extends \Google\Model
     return $this->currentAggregateNodeCount;
   }
   /**
-   * Optional. The maximum total number of gateway nodes that the is reserved
-   * for all instances that has the specified environment. If not specified, the
-   * default is determined by the recommended maximum number of nodes for that
-   * gateway.
-   *
-   * @param string $maxNodeCount
+   * @param string
    */
   public function setMaxNodeCount($maxNodeCount)
   {
@@ -82,12 +61,7 @@ class GoogleCloudApigeeV1NodeConfig extends \Google\Model
     return $this->maxNodeCount;
   }
   /**
-   * Optional. The minimum total number of gateway nodes that the is reserved
-   * for all instances that has the specified environment. If not specified, the
-   * default is determined by the recommended minimum number of nodes for that
-   * gateway.
-   *
-   * @param string $minNodeCount
+   * @param string
    */
   public function setMinNodeCount($minNodeCount)
   {

@@ -21,22 +21,16 @@ class GoogleChromePolicyVersionsV1UploadedFileConstraints extends \Google\Collec
 {
   protected $collection_key = 'supportedContentTypes';
   /**
-   * The size limit of uploaded files for a setting, in bytes.
-   *
    * @var string
    */
   public $sizeLimitBytes;
   /**
-   * File types that can be uploaded for a setting.
-   *
    * @var string[]
    */
   public $supportedContentTypes;
 
   /**
-   * The size limit of uploaded files for a setting, in bytes.
-   *
-   * @param string $sizeLimitBytes
+   * @param string
    */
   public function setSizeLimitBytes($sizeLimitBytes)
   {
@@ -50,9 +44,7 @@ class GoogleChromePolicyVersionsV1UploadedFileConstraints extends \Google\Collec
     return $this->sizeLimitBytes;
   }
   /**
-   * File types that can be uploaded for a setting.
-   *
-   * @param string[] $supportedContentTypes
+   * @param string[]
    */
   public function setSupportedContentTypes($supportedContentTypes)
   {

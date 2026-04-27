@@ -20,24 +20,16 @@ namespace Google\Service\AdExchangeBuyerII;
 class Seller extends \Google\Model
 {
   /**
-   * The unique ID for the seller. The seller fills in this field. The seller
-   * account ID is then available to buyer in the product.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * Output only. Ad manager network code for the seller.
-   *
    * @var string
    */
   public $subAccountId;
 
   /**
-   * The unique ID for the seller. The seller fills in this field. The seller
-   * account ID is then available to buyer in the product.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -51,9 +43,7 @@ class Seller extends \Google\Model
     return $this->accountId;
   }
   /**
-   * Output only. Ad manager network code for the seller.
-   *
-   * @param string $subAccountId
+   * @param string
    */
   public function setSubAccountId($subAccountId)
   {

@@ -21,14 +21,10 @@ class GoogleCloudDatalabelingV1p1alpha1ImportDataOperationMetadata extends \Goog
 {
   protected $collection_key = 'partialFailures';
   /**
-   * Output only. Timestamp when import dataset request was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. The name of imported dataset. "projects/datasets"
-   *
    * @var string
    */
   public $dataset;
@@ -36,9 +32,7 @@ class GoogleCloudDatalabelingV1p1alpha1ImportDataOperationMetadata extends \Goog
   protected $partialFailuresDataType = 'array';
 
   /**
-   * Output only. Timestamp when import dataset request was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -52,9 +46,7 @@ class GoogleCloudDatalabelingV1p1alpha1ImportDataOperationMetadata extends \Goog
     return $this->createTime;
   }
   /**
-   * Output only. The name of imported dataset. "projects/datasets"
-   *
-   * @param string $dataset
+   * @param string
    */
   public function setDataset($dataset)
   {
@@ -68,10 +60,7 @@ class GoogleCloudDatalabelingV1p1alpha1ImportDataOperationMetadata extends \Goog
     return $this->dataset;
   }
   /**
-   * Output only. Partial failures encountered. E.g. single files that couldn't
-   * be read. Status details field will contain standard GCP error details.
-   *
-   * @param GoogleRpcStatus[] $partialFailures
+   * @param GoogleRpcStatus[]
    */
   public function setPartialFailures($partialFailures)
   {

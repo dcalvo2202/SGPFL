@@ -23,16 +23,12 @@ class SendDiscoveryClientHeartbeatRequest extends \Google\Collection
   protected $errorsType = Status::class;
   protected $errorsDataType = 'array';
   /**
-   * Optional. Client application version.
-   *
    * @var string
    */
   public $version;
 
   /**
-   * Optional. Errors affecting client functionality.
-   *
-   * @param Status[] $errors
+   * @param Status[]
    */
   public function setErrors($errors)
   {
@@ -46,9 +42,7 @@ class SendDiscoveryClientHeartbeatRequest extends \Google\Collection
     return $this->errors;
   }
   /**
-   * Optional. Client application version.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

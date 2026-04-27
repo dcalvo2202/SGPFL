@@ -20,45 +20,28 @@ namespace Google\Service\DisplayVideo;
 class NegativeKeywordList extends \Google\Model
 {
   /**
-   * Output only. The unique ID of the advertiser the negative keyword list
-   * belongs to.
-   *
    * @var string
    */
   public $advertiserId;
   /**
-   * Required. The display name of the negative keyword list. Must be UTF-8
-   * encoded with a maximum size of 255 bytes.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. The resource name of the negative keyword list.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The unique ID of the negative keyword list. Assigned by the
-   * system.
-   *
    * @var string
    */
   public $negativeKeywordListId;
   /**
-   * Output only. Number of line items that are directly targeting this negative
-   * keyword list.
-   *
    * @var string
    */
   public $targetedLineItemCount;
 
   /**
-   * Output only. The unique ID of the advertiser the negative keyword list
-   * belongs to.
-   *
-   * @param string $advertiserId
+   * @param string
    */
   public function setAdvertiserId($advertiserId)
   {
@@ -72,10 +55,7 @@ class NegativeKeywordList extends \Google\Model
     return $this->advertiserId;
   }
   /**
-   * Required. The display name of the negative keyword list. Must be UTF-8
-   * encoded with a maximum size of 255 bytes.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -89,9 +69,7 @@ class NegativeKeywordList extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Output only. The resource name of the negative keyword list.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -105,10 +83,7 @@ class NegativeKeywordList extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The unique ID of the negative keyword list. Assigned by the
-   * system.
-   *
-   * @param string $negativeKeywordListId
+   * @param string
    */
   public function setNegativeKeywordListId($negativeKeywordListId)
   {
@@ -122,10 +97,7 @@ class NegativeKeywordList extends \Google\Model
     return $this->negativeKeywordListId;
   }
   /**
-   * Output only. Number of line items that are directly targeting this negative
-   * keyword list.
-   *
-   * @param string $targetedLineItemCount
+   * @param string
    */
   public function setTargetedLineItemCount($targetedLineItemCount)
   {

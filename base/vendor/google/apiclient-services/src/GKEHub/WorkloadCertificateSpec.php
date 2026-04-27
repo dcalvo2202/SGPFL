@@ -20,37 +20,19 @@ namespace Google\Service\GKEHub;
 class WorkloadCertificateSpec extends \Google\Model
 {
   /**
-   * Disable workload certificate feature.
-   */
-  public const CERTIFICATE_MANAGEMENT_CERTIFICATE_MANAGEMENT_UNSPECIFIED = 'CERTIFICATE_MANAGEMENT_UNSPECIFIED';
-  /**
-   * Disable workload certificate feature.
-   */
-  public const CERTIFICATE_MANAGEMENT_DISABLED = 'DISABLED';
-  /**
-   * Enable workload certificate feature.
-   */
-  public const CERTIFICATE_MANAGEMENT_ENABLED = 'ENABLED';
-  /**
-   * CertificateManagement specifies workload certificate management.
-   *
    * @var string
    */
   public $certificateManagement;
 
   /**
-   * CertificateManagement specifies workload certificate management.
-   *
-   * Accepted values: CERTIFICATE_MANAGEMENT_UNSPECIFIED, DISABLED, ENABLED
-   *
-   * @param self::CERTIFICATE_MANAGEMENT_* $certificateManagement
+   * @param string
    */
   public function setCertificateManagement($certificateManagement)
   {
     $this->certificateManagement = $certificateManagement;
   }
   /**
-   * @return self::CERTIFICATE_MANAGEMENT_*
+   * @return string
    */
   public function getCertificateManagement()
   {

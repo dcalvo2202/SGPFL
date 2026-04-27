@@ -26,19 +26,10 @@ class ValueAddedModuleData extends \Google\Model
   protected $imageType = Image::class;
   protected $imageDataType = '';
   /**
-   * The index for sorting the modules. Modules with a lower sort index are
-   * shown before modules with a higher sort index. If unspecified, the sort
-   * index is assumed to be INT_MAX. For two modules with the same index, the
-   * sorting behavior is undefined.
-   *
    * @var int
    */
   public $sortIndex;
   /**
-   * URI that the module leads to on click. This can be a web link or a deep
-   * link as mentioned in https://developer.android.com/training/app-links/deep-
-   * linking.
-   *
    * @var string
    */
   public $uri;
@@ -46,10 +37,7 @@ class ValueAddedModuleData extends \Google\Model
   protected $viewConstraintsDataType = '';
 
   /**
-   * Body to be displayed on the module. Character limit is 50 and longer
-   * strings will be truncated.
-   *
-   * @param LocalizedString $body
+   * @param LocalizedString
    */
   public function setBody(LocalizedString $body)
   {
@@ -63,10 +51,7 @@ class ValueAddedModuleData extends \Google\Model
     return $this->body;
   }
   /**
-   * Header to be displayed on the module. Character limit is 60 and longer
-   * strings will be truncated.
-   *
-   * @param LocalizedString $header
+   * @param LocalizedString
    */
   public function setHeader(LocalizedString $header)
   {
@@ -80,10 +65,7 @@ class ValueAddedModuleData extends \Google\Model
     return $this->header;
   }
   /**
-   * Image to be displayed on the module. Recommended image ratio is 1:1. Images
-   * will be resized to fit this ratio.
-   *
-   * @param Image $image
+   * @param Image
    */
   public function setImage(Image $image)
   {
@@ -97,12 +79,7 @@ class ValueAddedModuleData extends \Google\Model
     return $this->image;
   }
   /**
-   * The index for sorting the modules. Modules with a lower sort index are
-   * shown before modules with a higher sort index. If unspecified, the sort
-   * index is assumed to be INT_MAX. For two modules with the same index, the
-   * sorting behavior is undefined.
-   *
-   * @param int $sortIndex
+   * @param int
    */
   public function setSortIndex($sortIndex)
   {
@@ -116,11 +93,7 @@ class ValueAddedModuleData extends \Google\Model
     return $this->sortIndex;
   }
   /**
-   * URI that the module leads to on click. This can be a web link or a deep
-   * link as mentioned in https://developer.android.com/training/app-links/deep-
-   * linking.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {
@@ -134,9 +107,7 @@ class ValueAddedModuleData extends \Google\Model
     return $this->uri;
   }
   /**
-   * Constraints that all must be met for the module to be shown.
-   *
-   * @param ModuleViewConstraints $viewConstraints
+   * @param ModuleViewConstraints
    */
   public function setViewConstraints(ModuleViewConstraints $viewConstraints)
   {

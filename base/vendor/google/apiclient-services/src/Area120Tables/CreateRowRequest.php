@@ -20,35 +20,18 @@ namespace Google\Service\Area120Tables;
 class CreateRowRequest extends \Google\Model
 {
   /**
-   * Defaults to user entered text.
-   */
-  public const VIEW_VIEW_UNSPECIFIED = 'VIEW_UNSPECIFIED';
-  /**
-   * Uses internally generated column id to identify values.
-   */
-  public const VIEW_COLUMN_ID_VIEW = 'COLUMN_ID_VIEW';
-  /**
-   * Required. The parent table where this row will be created. Format:
-   * tables/{table}
-   *
    * @var string
    */
   public $parent;
   protected $rowType = Row::class;
   protected $rowDataType = '';
   /**
-   * Optional. Column key to use for values in the row. Defaults to user entered
-   * name.
-   *
    * @var string
    */
   public $view;
 
   /**
-   * Required. The parent table where this row will be created. Format:
-   * tables/{table}
-   *
-   * @param string $parent
+   * @param string
    */
   public function setParent($parent)
   {
@@ -62,9 +45,7 @@ class CreateRowRequest extends \Google\Model
     return $this->parent;
   }
   /**
-   * Required. The row to create.
-   *
-   * @param Row $row
+   * @param Row
    */
   public function setRow(Row $row)
   {
@@ -78,19 +59,14 @@ class CreateRowRequest extends \Google\Model
     return $this->row;
   }
   /**
-   * Optional. Column key to use for values in the row. Defaults to user entered
-   * name.
-   *
-   * Accepted values: VIEW_UNSPECIFIED, COLUMN_ID_VIEW
-   *
-   * @param self::VIEW_* $view
+   * @param string
    */
   public function setView($view)
   {
     $this->view = $view;
   }
   /**
-   * @return self::VIEW_*
+   * @return string
    */
   public function getView()
   {

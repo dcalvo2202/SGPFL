@@ -25,10 +25,7 @@ class InventorySourceAccessors extends \Google\Model
   protected $partnerDataType = '';
 
   /**
-   * The advertisers with access to the inventory source. All advertisers must
-   * belong to the same partner.
-   *
-   * @param InventorySourceAccessorsAdvertiserAccessors $advertisers
+   * @param InventorySourceAccessorsAdvertiserAccessors
    */
   public function setAdvertisers(InventorySourceAccessorsAdvertiserAccessors $advertisers)
   {
@@ -42,9 +39,7 @@ class InventorySourceAccessors extends \Google\Model
     return $this->advertisers;
   }
   /**
-   * The partner with access to the inventory source.
-   *
-   * @param InventorySourceAccessorsPartnerAccessor $partner
+   * @param InventorySourceAccessorsPartnerAccessor
    */
   public function setPartner(InventorySourceAccessorsPartnerAccessor $partner)
   {

@@ -26,9 +26,7 @@ class InstancesScopedList extends \Google\Collection
   protected $warningDataType = '';
 
   /**
-   * [Output Only] A list of instances contained in this scope.
-   *
-   * @param Instance[] $instances
+   * @param Instance[]
    */
   public function setInstances($instances)
   {
@@ -42,10 +40,7 @@ class InstancesScopedList extends \Google\Collection
     return $this->instances;
   }
   /**
-   * [Output Only] Informational warning which replaces the list of instances
-   * when the list is empty.
-   *
-   * @param InstancesScopedListWarning $warning
+   * @param InstancesScopedListWarning
    */
   public function setWarning(InstancesScopedListWarning $warning)
   {

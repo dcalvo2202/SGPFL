@@ -23,17 +23,12 @@ class MysqlTable extends \Google\Collection
   protected $mysqlColumnsType = MysqlColumn::class;
   protected $mysqlColumnsDataType = 'array';
   /**
-   * The table name.
-   *
    * @var string
    */
   public $table;
 
   /**
-   * MySQL columns in the database. When unspecified as part of include/exclude
-   * objects, includes/excludes everything.
-   *
-   * @param MysqlColumn[] $mysqlColumns
+   * @param MysqlColumn[]
    */
   public function setMysqlColumns($mysqlColumns)
   {
@@ -47,9 +42,7 @@ class MysqlTable extends \Google\Collection
     return $this->mysqlColumns;
   }
   /**
-   * The table name.
-   *
-   * @param string $table
+   * @param string
    */
   public function setTable($table)
   {

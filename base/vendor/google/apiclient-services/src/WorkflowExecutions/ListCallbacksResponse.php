@@ -23,17 +23,12 @@ class ListCallbacksResponse extends \Google\Collection
   protected $callbacksType = Callback::class;
   protected $callbacksDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The callbacks which match the request.
-   *
-   * @param Callback[] $callbacks
+   * @param Callback[]
    */
   public function setCallbacks($callbacks)
   {
@@ -47,10 +42,7 @@ class ListCallbacksResponse extends \Google\Collection
     return $this->callbacks;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

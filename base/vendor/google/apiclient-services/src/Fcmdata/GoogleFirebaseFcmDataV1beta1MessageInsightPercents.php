@@ -20,22 +20,12 @@ namespace Google\Service\Fcmdata;
 class GoogleFirebaseFcmDataV1beta1MessageInsightPercents extends \Google\Model
 {
   /**
-   * The percentage of accepted messages that had their priority lowered from
-   * high to normal. See [documentation for setting message
-   * priority](https://firebase.google.com/docs/cloud-messaging/android/message-
-   * priority).
-   *
    * @var float
    */
   public $priorityLowered;
 
   /**
-   * The percentage of accepted messages that had their priority lowered from
-   * high to normal. See [documentation for setting message
-   * priority](https://firebase.google.com/docs/cloud-messaging/android/message-
-   * priority).
-   *
-   * @param float $priorityLowered
+   * @param float
    */
   public function setPriorityLowered($priorityLowered)
   {

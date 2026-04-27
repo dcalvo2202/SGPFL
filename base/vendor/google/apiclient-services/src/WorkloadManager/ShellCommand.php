@@ -20,28 +20,20 @@ namespace Google\Service\WorkloadManager;
 class ShellCommand extends \Google\Model
 {
   /**
-   * Arguments to be passed to the command.
-   *
    * @var string
    */
   public $args;
   /**
-   * The name of the command to be executed.
-   *
    * @var string
    */
   public $command;
   /**
-   * Optional. If not specified, the default timeout is 60 seconds.
-   *
    * @var int
    */
   public $timeoutSeconds;
 
   /**
-   * Arguments to be passed to the command.
-   *
-   * @param string $args
+   * @param string
    */
   public function setArgs($args)
   {
@@ -55,9 +47,7 @@ class ShellCommand extends \Google\Model
     return $this->args;
   }
   /**
-   * The name of the command to be executed.
-   *
-   * @param string $command
+   * @param string
    */
   public function setCommand($command)
   {
@@ -71,9 +61,7 @@ class ShellCommand extends \Google\Model
     return $this->command;
   }
   /**
-   * Optional. If not specified, the default timeout is 60 seconds.
-   *
-   * @param int $timeoutSeconds
+   * @param int
    */
   public function setTimeoutSeconds($timeoutSeconds)
   {

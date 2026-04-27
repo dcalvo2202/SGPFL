@@ -20,22 +20,16 @@ namespace Google\Service\Integrations;
 class GoogleCloudConnectorsV1EventingConfigDeadLetterConfig extends \Google\Model
 {
   /**
-   * Optional. Project which has the topic given.
-   *
    * @var string
    */
   public $projectId;
   /**
-   * Optional. Topic to push events which couldn't be processed.
-   *
    * @var string
    */
   public $topic;
 
   /**
-   * Optional. Project which has the topic given.
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {
@@ -49,9 +43,7 @@ class GoogleCloudConnectorsV1EventingConfigDeadLetterConfig extends \Google\Mode
     return $this->projectId;
   }
   /**
-   * Optional. Topic to push events which couldn't be processed.
-   *
-   * @param string $topic
+   * @param string
    */
   public function setTopic($topic)
   {

@@ -20,24 +20,16 @@ namespace Google\Service\Directory;
 class RoleRolePrivileges extends \Google\Model
 {
   /**
-   * The name of the privilege.
-   *
    * @var string
    */
   public $privilegeName;
   /**
-   * The obfuscated ID of the service this privilege is for. This value is
-   * returned with [`Privileges.list()`](https://developers.google.com/workspace
-   * /admin/directory/v1/reference/privileges/list).
-   *
    * @var string
    */
   public $serviceId;
 
   /**
-   * The name of the privilege.
-   *
-   * @param string $privilegeName
+   * @param string
    */
   public function setPrivilegeName($privilegeName)
   {
@@ -51,11 +43,7 @@ class RoleRolePrivileges extends \Google\Model
     return $this->privilegeName;
   }
   /**
-   * The obfuscated ID of the service this privilege is for. This value is
-   * returned with [`Privileges.list()`](https://developers.google.com/workspace
-   * /admin/directory/v1/reference/privileges/list).
-   *
-   * @param string $serviceId
+   * @param string
    */
   public function setServiceId($serviceId)
   {

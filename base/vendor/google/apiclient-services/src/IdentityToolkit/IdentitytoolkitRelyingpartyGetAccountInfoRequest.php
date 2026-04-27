@@ -21,42 +21,28 @@ class IdentitytoolkitRelyingpartyGetAccountInfoRequest extends \Google\Collectio
 {
   protected $collection_key = 'phoneNumber';
   /**
-   * GCP project number of the requesting delegated app. Currently only intended
-   * for Firebase V1 migration.
-   *
    * @var string
    */
   public $delegatedProjectNumber;
   /**
-   * The list of emails of the users to inquiry.
-   *
    * @var string[]
    */
   public $email;
   /**
-   * The GITKit token of the authenticated user.
-   *
    * @var string
    */
   public $idToken;
   /**
-   * The list of local ID's of the users to inquiry.
-   *
    * @var string[]
    */
   public $localId;
   /**
-   * Privileged caller can query users by specified phone number.
-   *
    * @var string[]
    */
   public $phoneNumber;
 
   /**
-   * GCP project number of the requesting delegated app. Currently only intended
-   * for Firebase V1 migration.
-   *
-   * @param string $delegatedProjectNumber
+   * @param string
    */
   public function setDelegatedProjectNumber($delegatedProjectNumber)
   {
@@ -70,9 +56,7 @@ class IdentitytoolkitRelyingpartyGetAccountInfoRequest extends \Google\Collectio
     return $this->delegatedProjectNumber;
   }
   /**
-   * The list of emails of the users to inquiry.
-   *
-   * @param string[] $email
+   * @param string[]
    */
   public function setEmail($email)
   {
@@ -86,9 +70,7 @@ class IdentitytoolkitRelyingpartyGetAccountInfoRequest extends \Google\Collectio
     return $this->email;
   }
   /**
-   * The GITKit token of the authenticated user.
-   *
-   * @param string $idToken
+   * @param string
    */
   public function setIdToken($idToken)
   {
@@ -102,9 +84,7 @@ class IdentitytoolkitRelyingpartyGetAccountInfoRequest extends \Google\Collectio
     return $this->idToken;
   }
   /**
-   * The list of local ID's of the users to inquiry.
-   *
-   * @param string[] $localId
+   * @param string[]
    */
   public function setLocalId($localId)
   {
@@ -118,9 +98,7 @@ class IdentitytoolkitRelyingpartyGetAccountInfoRequest extends \Google\Collectio
     return $this->localId;
   }
   /**
-   * Privileged caller can query users by specified phone number.
-   *
-   * @param string[] $phoneNumber
+   * @param string[]
    */
   public function setPhoneNumber($phoneNumber)
   {

@@ -20,8 +20,6 @@ namespace Google\Service\Datastream;
 class SalesforceProfile extends \Google\Model
 {
   /**
-   * Required. Domain endpoint for the Salesforce connection.
-   *
    * @var string
    */
   public $domain;
@@ -31,9 +29,7 @@ class SalesforceProfile extends \Google\Model
   protected $userCredentialsDataType = '';
 
   /**
-   * Required. Domain endpoint for the Salesforce connection.
-   *
-   * @param string $domain
+   * @param string
    */
   public function setDomain($domain)
   {
@@ -47,9 +43,7 @@ class SalesforceProfile extends \Google\Model
     return $this->domain;
   }
   /**
-   * Connected app authentication.
-   *
-   * @param Oauth2ClientCredentials $oauth2ClientCredentials
+   * @param Oauth2ClientCredentials
    */
   public function setOauth2ClientCredentials(Oauth2ClientCredentials $oauth2ClientCredentials)
   {
@@ -63,9 +57,7 @@ class SalesforceProfile extends \Google\Model
     return $this->oauth2ClientCredentials;
   }
   /**
-   * User-password authentication.
-   *
-   * @param UserCredentials $userCredentials
+   * @param UserCredentials
    */
   public function setUserCredentials(UserCredentials $userCredentials)
   {

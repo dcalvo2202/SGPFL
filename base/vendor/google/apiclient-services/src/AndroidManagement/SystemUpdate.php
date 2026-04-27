@@ -19,68 +19,24 @@ namespace Google\Service\AndroidManagement;
 
 class SystemUpdate extends \Google\Collection
 {
-  /**
-   * Follow the default update behavior for the device, which typically requires
-   * the user to accept system updates.
-   */
-  public const TYPE_SYSTEM_UPDATE_TYPE_UNSPECIFIED = 'SYSTEM_UPDATE_TYPE_UNSPECIFIED';
-  /**
-   * Install automatically as soon as an update is available.
-   */
-  public const TYPE_AUTOMATIC = 'AUTOMATIC';
-  /**
-   * Install automatically within a daily maintenance window. This also
-   * configures Play apps to be updated within the window. This is strongly
-   * recommended for kiosk devices because this is the only way apps
-   * persistently pinned to the foreground can be updated by Play.If
-   * autoUpdateMode is set to AUTO_UPDATE_HIGH_PRIORITY for an app, then the
-   * maintenance window is ignored for that app and it is updated as soon as
-   * possible even outside of the maintenance window.
-   */
-  public const TYPE_WINDOWED = 'WINDOWED';
-  /**
-   * Postpone automatic install up to a maximum of 30 days. This policy does not
-   * affect security updates (e.g. monthly security patches).
-   */
-  public const TYPE_POSTPONE = 'POSTPONE';
   protected $collection_key = 'freezePeriods';
   /**
-   * If the type is WINDOWED, the end of the maintenance window, measured as the
-   * number of minutes after midnight in device's local time. This value must be
-   * between 0 and 1439, inclusive. If this value is less than start_minutes,
-   * then the maintenance window spans midnight. If the maintenance window
-   * specified is smaller than 30 minutes, the actual window is extended to 30
-   * minutes beyond the start time.
-   *
    * @var int
    */
   public $endMinutes;
   protected $freezePeriodsType = FreezePeriod::class;
   protected $freezePeriodsDataType = 'array';
   /**
-   * If the type is WINDOWED, the start of the maintenance window, measured as
-   * the number of minutes after midnight in the device's local time. This value
-   * must be between 0 and 1439, inclusive.
-   *
    * @var int
    */
   public $startMinutes;
   /**
-   * The type of system update to configure.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * If the type is WINDOWED, the end of the maintenance window, measured as the
-   * number of minutes after midnight in device's local time. This value must be
-   * between 0 and 1439, inclusive. If this value is less than start_minutes,
-   * then the maintenance window spans midnight. If the maintenance window
-   * specified is smaller than 30 minutes, the actual window is extended to 30
-   * minutes beyond the start time.
-   *
-   * @param int $endMinutes
+   * @param int
    */
   public function setEndMinutes($endMinutes)
   {
@@ -94,12 +50,7 @@ class SystemUpdate extends \Google\Collection
     return $this->endMinutes;
   }
   /**
-   * An annually repeating time period in which over-the-air (OTA) system
-   * updates are postponed to freeze the OS version running on a device. To
-   * prevent freezing the device indefinitely, each freeze period must be
-   * separated by at least 60 days.
-   *
-   * @param FreezePeriod[] $freezePeriods
+   * @param FreezePeriod[]
    */
   public function setFreezePeriods($freezePeriods)
   {
@@ -113,11 +64,7 @@ class SystemUpdate extends \Google\Collection
     return $this->freezePeriods;
   }
   /**
-   * If the type is WINDOWED, the start of the maintenance window, measured as
-   * the number of minutes after midnight in the device's local time. This value
-   * must be between 0 and 1439, inclusive.
-   *
-   * @param int $startMinutes
+   * @param int
    */
   public function setStartMinutes($startMinutes)
   {
@@ -131,19 +78,14 @@ class SystemUpdate extends \Google\Collection
     return $this->startMinutes;
   }
   /**
-   * The type of system update to configure.
-   *
-   * Accepted values: SYSTEM_UPDATE_TYPE_UNSPECIFIED, AUTOMATIC, WINDOWED,
-   * POSTPONE
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

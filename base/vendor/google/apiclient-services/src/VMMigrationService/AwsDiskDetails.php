@@ -20,28 +20,20 @@ namespace Google\Service\VMMigrationService;
 class AwsDiskDetails extends \Google\Model
 {
   /**
-   * Output only. The ordinal number of the disk.
-   *
    * @var int
    */
   public $diskNumber;
   /**
-   * Output only. Size in GB.
-   *
    * @var string
    */
   public $sizeGb;
   /**
-   * Output only. AWS volume ID.
-   *
    * @var string
    */
   public $volumeId;
 
   /**
-   * Output only. The ordinal number of the disk.
-   *
-   * @param int $diskNumber
+   * @param int
    */
   public function setDiskNumber($diskNumber)
   {
@@ -55,9 +47,7 @@ class AwsDiskDetails extends \Google\Model
     return $this->diskNumber;
   }
   /**
-   * Output only. Size in GB.
-   *
-   * @param string $sizeGb
+   * @param string
    */
   public function setSizeGb($sizeGb)
   {
@@ -71,9 +61,7 @@ class AwsDiskDetails extends \Google\Model
     return $this->sizeGb;
   }
   /**
-   * Output only. AWS volume ID.
-   *
-   * @param string $volumeId
+   * @param string
    */
   public function setVolumeId($volumeId)
   {

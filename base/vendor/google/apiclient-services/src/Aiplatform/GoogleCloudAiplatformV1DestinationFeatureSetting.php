@@ -20,24 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1DestinationFeatureSetting extends \Google\Model
 {
   /**
-   * Specify the field name in the export destination. If not specified, Feature
-   * ID is used.
-   *
    * @var string
    */
   public $destinationField;
   /**
-   * Required. The ID of the Feature to apply the setting to.
-   *
    * @var string
    */
   public $featureId;
 
   /**
-   * Specify the field name in the export destination. If not specified, Feature
-   * ID is used.
-   *
-   * @param string $destinationField
+   * @param string
    */
   public function setDestinationField($destinationField)
   {
@@ -51,9 +43,7 @@ class GoogleCloudAiplatformV1DestinationFeatureSetting extends \Google\Model
     return $this->destinationField;
   }
   /**
-   * Required. The ID of the Feature to apply the setting to.
-   *
-   * @param string $featureId
+   * @param string
    */
   public function setFeatureId($featureId)
   {

@@ -23,9 +23,7 @@ class UploadAptArtifactMediaResponse extends \Google\Model
   protected $operationDataType = '';
 
   /**
-   * Operation to be returned to the user.
-   *
-   * @param Operation $operation
+   * @param Operation
    */
   public function setOperation(Operation $operation)
   {

@@ -24,10 +24,7 @@ class GoogleAdsSearchads360V0ResourcesListingGroupFilterDimensionPath extends \G
   protected $dimensionsDataType = 'array';
 
   /**
-   * Output only. The complete path of dimensions through the listing group
-   * filter hierarchy (excluding the root node) to this listing group filter.
-   *
-   * @param GoogleAdsSearchads360V0ResourcesListingGroupFilterDimension[] $dimensions
+   * @param GoogleAdsSearchads360V0ResourcesListingGroupFilterDimension[]
    */
   public function setDimensions($dimensions)
   {

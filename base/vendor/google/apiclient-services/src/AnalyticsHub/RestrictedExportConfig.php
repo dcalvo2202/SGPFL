@@ -20,30 +20,20 @@ namespace Google\Service\AnalyticsHub;
 class RestrictedExportConfig extends \Google\Model
 {
   /**
-   * Optional. If true, enable restricted export.
-   *
    * @var bool
    */
   public $enabled;
   /**
-   * Output only. If true, restrict direct table access(read api/tabledata.list)
-   * on linked table.
-   *
    * @var bool
    */
   public $restrictDirectTableAccess;
   /**
-   * Optional. If true, restrict export of query result derived from restricted
-   * linked dataset table.
-   *
    * @var bool
    */
   public $restrictQueryResult;
 
   /**
-   * Optional. If true, enable restricted export.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {
@@ -57,10 +47,7 @@ class RestrictedExportConfig extends \Google\Model
     return $this->enabled;
   }
   /**
-   * Output only. If true, restrict direct table access(read api/tabledata.list)
-   * on linked table.
-   *
-   * @param bool $restrictDirectTableAccess
+   * @param bool
    */
   public function setRestrictDirectTableAccess($restrictDirectTableAccess)
   {
@@ -74,10 +61,7 @@ class RestrictedExportConfig extends \Google\Model
     return $this->restrictDirectTableAccess;
   }
   /**
-   * Optional. If true, restrict export of query result derived from restricted
-   * linked dataset table.
-   *
-   * @param bool $restrictQueryResult
+   * @param bool
    */
   public function setRestrictQueryResult($restrictQueryResult)
   {

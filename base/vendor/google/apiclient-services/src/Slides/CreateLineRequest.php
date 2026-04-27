@@ -20,97 +20,36 @@ namespace Google\Service\Slides;
 class CreateLineRequest extends \Google\Model
 {
   /**
-   * Unspecified line category.
-   */
-  public const CATEGORY_LINE_CATEGORY_UNSPECIFIED = 'LINE_CATEGORY_UNSPECIFIED';
-  /**
-   * Straight connectors, including straight connector 1.
-   */
-  public const CATEGORY_STRAIGHT = 'STRAIGHT';
-  /**
-   * Bent connectors, including bent connector 2 to 5.
-   */
-  public const CATEGORY_BENT = 'BENT';
-  /**
-   * Curved connectors, including curved connector 2 to 5.
-   */
-  public const CATEGORY_CURVED = 'CURVED';
-  /**
-   * Straight connectors, including straight connector 1. The is the default
-   * category when one is not specified.
-   */
-  public const LINE_CATEGORY_STRAIGHT = 'STRAIGHT';
-  /**
-   * Bent connectors, including bent connector 2 to 5.
-   */
-  public const LINE_CATEGORY_BENT = 'BENT';
-  /**
-   * Curved connectors, including curved connector 2 to 5.
-   */
-  public const LINE_CATEGORY_CURVED = 'CURVED';
-  /**
-   * The category of the line to be created. The exact line type created is
-   * determined based on the category and how it's routed to connect to other
-   * page elements. If you specify both a `category` and a `line_category`, the
-   * `category` takes precedence. If you do not specify a value for `category`,
-   * but specify a value for `line_category`, then the specified `line_category`
-   * value is used. If you do not specify either, then STRAIGHT is used.
-   *
    * @var string
    */
   public $category;
   protected $elementPropertiesType = PageElementProperties::class;
   protected $elementPropertiesDataType = '';
   /**
-   * The category of the line to be created. *Deprecated*: use `category`
-   * instead. The exact line type created is determined based on the category
-   * and how it's routed to connect to other page elements. If you specify both
-   * a `category` and a `line_category`, the `category` takes precedence.
-   *
-   * @deprecated
    * @var string
    */
   public $lineCategory;
   /**
-   * A user-supplied object ID. If you specify an ID, it must be unique among
-   * all pages and page elements in the presentation. The ID must start with an
-   * alphanumeric character or an underscore (matches regex `[a-zA-Z0-9_]`);
-   * remaining characters may include those as well as a hyphen or colon
-   * (matches regex `[a-zA-Z0-9_-:]`). The length of the ID must not be less
-   * than 5 or greater than 50. If you don't specify an ID, a unique one is
-   * generated.
-   *
    * @var string
    */
   public $objectId;
 
   /**
-   * The category of the line to be created. The exact line type created is
-   * determined based on the category and how it's routed to connect to other
-   * page elements. If you specify both a `category` and a `line_category`, the
-   * `category` takes precedence. If you do not specify a value for `category`,
-   * but specify a value for `line_category`, then the specified `line_category`
-   * value is used. If you do not specify either, then STRAIGHT is used.
-   *
-   * Accepted values: LINE_CATEGORY_UNSPECIFIED, STRAIGHT, BENT, CURVED
-   *
-   * @param self::CATEGORY_* $category
+   * @param string
    */
   public function setCategory($category)
   {
     $this->category = $category;
   }
   /**
-   * @return self::CATEGORY_*
+   * @return string
    */
   public function getCategory()
   {
     return $this->category;
   }
   /**
-   * The element properties for the line.
-   *
-   * @param PageElementProperties $elementProperties
+   * @param PageElementProperties
    */
   public function setElementProperties(PageElementProperties $elementProperties)
   {
@@ -124,38 +63,21 @@ class CreateLineRequest extends \Google\Model
     return $this->elementProperties;
   }
   /**
-   * The category of the line to be created. *Deprecated*: use `category`
-   * instead. The exact line type created is determined based on the category
-   * and how it's routed to connect to other page elements. If you specify both
-   * a `category` and a `line_category`, the `category` takes precedence.
-   *
-   * Accepted values: STRAIGHT, BENT, CURVED
-   *
-   * @deprecated
-   * @param self::LINE_CATEGORY_* $lineCategory
+   * @param string
    */
   public function setLineCategory($lineCategory)
   {
     $this->lineCategory = $lineCategory;
   }
   /**
-   * @deprecated
-   * @return self::LINE_CATEGORY_*
+   * @return string
    */
   public function getLineCategory()
   {
     return $this->lineCategory;
   }
   /**
-   * A user-supplied object ID. If you specify an ID, it must be unique among
-   * all pages and page elements in the presentation. The ID must start with an
-   * alphanumeric character or an underscore (matches regex `[a-zA-Z0-9_]`);
-   * remaining characters may include those as well as a hyphen or colon
-   * (matches regex `[a-zA-Z0-9_-:]`). The length of the ID must not be less
-   * than 5 or greater than 50. If you don't specify an ID, a unique one is
-   * generated.
-   *
-   * @param string $objectId
+   * @param string
    */
   public function setObjectId($objectId)
   {

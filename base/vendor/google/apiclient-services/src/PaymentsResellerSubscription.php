@@ -41,7 +41,6 @@ class PaymentsResellerSubscription extends \Google\Service
   public $partners_products;
   public $partners_promotions;
   public $partners_subscriptions;
-  public $partners_subscriptions_lineItems;
   public $partners_userSessions;
   public $rootUrlTemplate;
 
@@ -206,14 +205,6 @@ class PaymentsResellerSubscription extends \Google\Service
                   'type' => 'string',
                   'required' => true,
                 ],
-                'cycleOptions.initialCycleDuration.count' => [
-                  'location' => 'query',
-                  'type' => 'integer',
-                ],
-                'cycleOptions.initialCycleDuration.unit' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
                 'subscriptionId' => [
                   'location' => 'query',
                   'type' => 'string',
@@ -247,30 +238,6 @@ class PaymentsResellerSubscription extends \Google\Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ],
-              ],
-            ],
-          ]
-        ]
-    );
-    $this->partners_subscriptions_lineItems = new PaymentsResellerSubscription\Resource\PartnersSubscriptionsLineItems(
-        $this,
-        $this->serviceName,
-        'lineItems',
-        [
-          'methods' => [
-            'patch' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'PATCH',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'updateMask' => [
-                  'location' => 'query',
-                  'type' => 'string',
                 ],
               ],
             ],

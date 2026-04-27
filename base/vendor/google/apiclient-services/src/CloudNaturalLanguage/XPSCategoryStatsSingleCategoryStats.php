@@ -20,22 +20,16 @@ namespace Google\Service\CloudNaturalLanguage;
 class XPSCategoryStatsSingleCategoryStats extends \Google\Model
 {
   /**
-   * The number of occurrences of this value in the series.
-   *
    * @var string
    */
   public $count;
   /**
-   * The CATEGORY value.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * The number of occurrences of this value in the series.
-   *
-   * @param string $count
+   * @param string
    */
   public function setCount($count)
   {
@@ -49,9 +43,7 @@ class XPSCategoryStatsSingleCategoryStats extends \Google\Model
     return $this->count;
   }
   /**
-   * The CATEGORY value.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

@@ -20,57 +20,16 @@ namespace Google\Service\Networkconnectivity;
 class SpokeStateReasonCount extends \Google\Model
 {
   /**
-   * No information available.
-   */
-  public const STATE_REASON_CODE_CODE_UNSPECIFIED = 'CODE_UNSPECIFIED';
-  /**
-   * The proposed spoke is pending review.
-   */
-  public const STATE_REASON_CODE_PENDING_REVIEW = 'PENDING_REVIEW';
-  /**
-   * The proposed spoke has been rejected by the hub administrator.
-   */
-  public const STATE_REASON_CODE_REJECTED = 'REJECTED';
-  /**
-   * The spoke has been deactivated internally.
-   */
-  public const STATE_REASON_CODE_PAUSED = 'PAUSED';
-  /**
-   * Network Connectivity Center encountered errors while accepting the spoke.
-   */
-  public const STATE_REASON_CODE_FAILED = 'FAILED';
-  /**
-   * The proposed spoke update is pending review.
-   */
-  public const STATE_REASON_CODE_UPDATE_PENDING_REVIEW = 'UPDATE_PENDING_REVIEW';
-  /**
-   * The proposed spoke update has been rejected by the hub administrator.
-   */
-  public const STATE_REASON_CODE_UPDATE_REJECTED = 'UPDATE_REJECTED';
-  /**
-   * Network Connectivity Center encountered errors while accepting the spoke
-   * update.
-   */
-  public const STATE_REASON_CODE_UPDATE_FAILED = 'UPDATE_FAILED';
-  /**
-   * Output only. The total number of spokes that are inactive for a particular
-   * reason and associated with a given hub.
-   *
    * @var string
    */
   public $count;
   /**
-   * Output only. The reason that a spoke is inactive.
-   *
    * @var string
    */
   public $stateReasonCode;
 
   /**
-   * Output only. The total number of spokes that are inactive for a particular
-   * reason and associated with a given hub.
-   *
-   * @param string $count
+   * @param string
    */
   public function setCount($count)
   {
@@ -84,19 +43,14 @@ class SpokeStateReasonCount extends \Google\Model
     return $this->count;
   }
   /**
-   * Output only. The reason that a spoke is inactive.
-   *
-   * Accepted values: CODE_UNSPECIFIED, PENDING_REVIEW, REJECTED, PAUSED,
-   * FAILED, UPDATE_PENDING_REVIEW, UPDATE_REJECTED, UPDATE_FAILED
-   *
-   * @param self::STATE_REASON_CODE_* $stateReasonCode
+   * @param string
    */
   public function setStateReasonCode($stateReasonCode)
   {
     $this->stateReasonCode = $stateReasonCode;
   }
   /**
-   * @return self::STATE_REASON_CODE_*
+   * @return string
    */
   public function getStateReasonCode()
   {

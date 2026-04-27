@@ -24,9 +24,7 @@ class GooglePrivacyDlpV2LDiversityResult extends \Google\Collection
   protected $sensitiveValueFrequencyHistogramBucketsDataType = 'array';
 
   /**
-   * Histogram of l-diversity equivalence class sensitive value frequencies.
-   *
-   * @param GooglePrivacyDlpV2LDiversityHistogramBucket[] $sensitiveValueFrequencyHistogramBuckets
+   * @param GooglePrivacyDlpV2LDiversityHistogramBucket[]
    */
   public function setSensitiveValueFrequencyHistogramBuckets($sensitiveValueFrequencyHistogramBuckets)
   {

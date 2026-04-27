@@ -23,28 +23,20 @@ class DataTransfersListResponse extends \Google\Collection
   protected $dataTransfersType = DataTransfer::class;
   protected $dataTransfersDataType = 'array';
   /**
-   * ETag of the resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Identifies the resource as a collection of data transfer requests.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Token to specify the next page in the list.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * List of data transfer requests.
-   *
-   * @param DataTransfer[] $dataTransfers
+   * @param DataTransfer[]
    */
   public function setDataTransfers($dataTransfers)
   {
@@ -58,9 +50,7 @@ class DataTransfersListResponse extends \Google\Collection
     return $this->dataTransfers;
   }
   /**
-   * ETag of the resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -74,9 +64,7 @@ class DataTransfersListResponse extends \Google\Collection
     return $this->etag;
   }
   /**
-   * Identifies the resource as a collection of data transfer requests.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -90,9 +78,7 @@ class DataTransfersListResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Token to specify the next page in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

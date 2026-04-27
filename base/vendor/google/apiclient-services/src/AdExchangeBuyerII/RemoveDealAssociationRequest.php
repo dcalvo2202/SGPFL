@@ -23,9 +23,7 @@ class RemoveDealAssociationRequest extends \Google\Model
   protected $associationDataType = '';
 
   /**
-   * The association between a creative and a deal that should be removed.
-   *
-   * @param CreativeDealAssociation $association
+   * @param CreativeDealAssociation
    */
   public function setAssociation(CreativeDealAssociation $association)
   {

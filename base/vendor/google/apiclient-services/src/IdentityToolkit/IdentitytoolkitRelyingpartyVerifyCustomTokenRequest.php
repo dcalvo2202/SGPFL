@@ -20,36 +20,24 @@ namespace Google\Service\IdentityToolkit;
 class IdentitytoolkitRelyingpartyVerifyCustomTokenRequest extends \Google\Model
 {
   /**
-   * GCP project number of the requesting delegated app. Currently only intended
-   * for Firebase V1 migration.
-   *
    * @var string
    */
   public $delegatedProjectNumber;
   /**
-   * Instance id token of the app.
-   *
    * @var string
    */
   public $instanceId;
   /**
-   * Whether return sts id token and refresh token instead of gitkit token.
-   *
    * @var bool
    */
   public $returnSecureToken;
   /**
-   * The custom token to verify
-   *
    * @var string
    */
   public $token;
 
   /**
-   * GCP project number of the requesting delegated app. Currently only intended
-   * for Firebase V1 migration.
-   *
-   * @param string $delegatedProjectNumber
+   * @param string
    */
   public function setDelegatedProjectNumber($delegatedProjectNumber)
   {
@@ -63,9 +51,7 @@ class IdentitytoolkitRelyingpartyVerifyCustomTokenRequest extends \Google\Model
     return $this->delegatedProjectNumber;
   }
   /**
-   * Instance id token of the app.
-   *
-   * @param string $instanceId
+   * @param string
    */
   public function setInstanceId($instanceId)
   {
@@ -79,9 +65,7 @@ class IdentitytoolkitRelyingpartyVerifyCustomTokenRequest extends \Google\Model
     return $this->instanceId;
   }
   /**
-   * Whether return sts id token and refresh token instead of gitkit token.
-   *
-   * @param bool $returnSecureToken
+   * @param bool
    */
   public function setReturnSecureToken($returnSecureToken)
   {
@@ -95,9 +79,7 @@ class IdentitytoolkitRelyingpartyVerifyCustomTokenRequest extends \Google\Model
     return $this->returnSecureToken;
   }
   /**
-   * The custom token to verify
-   *
-   * @param string $token
+   * @param string
    */
   public function setToken($token)
   {

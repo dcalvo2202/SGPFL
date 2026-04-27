@@ -23,9 +23,7 @@ class GoogleCloudAiplatformV1UpdateExplanationDatasetRequest extends \Google\Mod
   protected $examplesDataType = '';
 
   /**
-   * The example config containing the location of the dataset.
-   *
-   * @param GoogleCloudAiplatformV1Examples $examples
+   * @param GoogleCloudAiplatformV1Examples
    */
   public function setExamples(GoogleCloudAiplatformV1Examples $examples)
   {

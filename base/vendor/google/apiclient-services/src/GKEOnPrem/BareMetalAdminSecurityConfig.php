@@ -23,9 +23,7 @@ class BareMetalAdminSecurityConfig extends \Google\Model
   protected $authorizationDataType = '';
 
   /**
-   * Configures user access to the admin cluster.
-   *
-   * @param Authorization $authorization
+   * @param Authorization
    */
   public function setAuthorization(Authorization $authorization)
   {

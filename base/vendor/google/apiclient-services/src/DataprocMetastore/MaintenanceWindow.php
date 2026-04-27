@@ -20,73 +20,30 @@ namespace Google\Service\DataprocMetastore;
 class MaintenanceWindow extends \Google\Model
 {
   /**
-   * The day of the week is unspecified.
-   */
-  public const DAY_OF_WEEK_DAY_OF_WEEK_UNSPECIFIED = 'DAY_OF_WEEK_UNSPECIFIED';
-  /**
-   * Monday
-   */
-  public const DAY_OF_WEEK_MONDAY = 'MONDAY';
-  /**
-   * Tuesday
-   */
-  public const DAY_OF_WEEK_TUESDAY = 'TUESDAY';
-  /**
-   * Wednesday
-   */
-  public const DAY_OF_WEEK_WEDNESDAY = 'WEDNESDAY';
-  /**
-   * Thursday
-   */
-  public const DAY_OF_WEEK_THURSDAY = 'THURSDAY';
-  /**
-   * Friday
-   */
-  public const DAY_OF_WEEK_FRIDAY = 'FRIDAY';
-  /**
-   * Saturday
-   */
-  public const DAY_OF_WEEK_SATURDAY = 'SATURDAY';
-  /**
-   * Sunday
-   */
-  public const DAY_OF_WEEK_SUNDAY = 'SUNDAY';
-  /**
-   * Optional. The day of week, when the window starts.
-   *
    * @var string
    */
   public $dayOfWeek;
   /**
-   * Optional. The hour of day (0-23) when the window starts.
-   *
    * @var int
    */
   public $hourOfDay;
 
   /**
-   * Optional. The day of week, when the window starts.
-   *
-   * Accepted values: DAY_OF_WEEK_UNSPECIFIED, MONDAY, TUESDAY, WEDNESDAY,
-   * THURSDAY, FRIDAY, SATURDAY, SUNDAY
-   *
-   * @param self::DAY_OF_WEEK_* $dayOfWeek
+   * @param string
    */
   public function setDayOfWeek($dayOfWeek)
   {
     $this->dayOfWeek = $dayOfWeek;
   }
   /**
-   * @return self::DAY_OF_WEEK_*
+   * @return string
    */
   public function getDayOfWeek()
   {
     return $this->dayOfWeek;
   }
   /**
-   * Optional. The hour of day (0-23) when the window starts.
-   *
-   * @param int $hourOfDay
+   * @param int
    */
   public function setHourOfDay($hourOfDay)
   {

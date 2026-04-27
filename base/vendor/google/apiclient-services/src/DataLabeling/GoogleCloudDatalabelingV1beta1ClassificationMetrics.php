@@ -25,9 +25,7 @@ class GoogleCloudDatalabelingV1beta1ClassificationMetrics extends \Google\Model
   protected $prCurveDataType = '';
 
   /**
-   * Confusion matrix of predicted labels vs. ground truth labels.
-   *
-   * @param GoogleCloudDatalabelingV1beta1ConfusionMatrix $confusionMatrix
+   * @param GoogleCloudDatalabelingV1beta1ConfusionMatrix
    */
   public function setConfusionMatrix(GoogleCloudDatalabelingV1beta1ConfusionMatrix $confusionMatrix)
   {
@@ -41,10 +39,7 @@ class GoogleCloudDatalabelingV1beta1ClassificationMetrics extends \Google\Model
     return $this->confusionMatrix;
   }
   /**
-   * Precision-recall curve based on ground truth labels, predicted labels, and
-   * scores for the predicted labels.
-   *
-   * @param GoogleCloudDatalabelingV1beta1PrCurve $prCurve
+   * @param GoogleCloudDatalabelingV1beta1PrCurve
    */
   public function setPrCurve(GoogleCloudDatalabelingV1beta1PrCurve $prCurve)
   {

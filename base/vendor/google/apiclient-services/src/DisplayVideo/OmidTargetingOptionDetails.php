@@ -20,33 +20,19 @@ namespace Google\Service\DisplayVideo;
 class OmidTargetingOptionDetails extends \Google\Model
 {
   /**
-   * Default value when omid targeting is not specified in this version.
-   */
-  public const OMID_OMID_UNSPECIFIED = 'OMID_UNSPECIFIED';
-  /**
-   * Open Measurement enabled mobile display inventory.
-   */
-  public const OMID_OMID_FOR_MOBILE_DISPLAY_ADS = 'OMID_FOR_MOBILE_DISPLAY_ADS';
-  /**
-   * Output only. The type of Open Measurement enabled inventory.
-   *
    * @var string
    */
   public $omid;
 
   /**
-   * Output only. The type of Open Measurement enabled inventory.
-   *
-   * Accepted values: OMID_UNSPECIFIED, OMID_FOR_MOBILE_DISPLAY_ADS
-   *
-   * @param self::OMID_* $omid
+   * @param string
    */
   public function setOmid($omid)
   {
     $this->omid = $omid;
   }
   /**
-   * @return self::OMID_*
+   * @return string
    */
   public function getOmid()
   {

@@ -24,9 +24,7 @@ class SigstorePublicKeySet extends \Google\Collection
   protected $publicKeysDataType = 'array';
 
   /**
-   * Required. `public_keys` must have at least one entry.
-   *
-   * @param SigstorePublicKey[] $publicKeys
+   * @param SigstorePublicKey[]
    */
   public function setPublicKeys($publicKeys)
   {

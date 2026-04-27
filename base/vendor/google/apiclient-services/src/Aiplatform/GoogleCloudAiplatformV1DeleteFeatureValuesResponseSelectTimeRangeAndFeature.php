@@ -20,35 +20,20 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1DeleteFeatureValuesResponseSelectTimeRangeAndFeature extends \Google\Model
 {
   /**
-   * The count of the features or columns impacted. This is the same as the
-   * feature count in the request.
-   *
    * @var string
    */
   public $impactedFeatureCount;
   /**
-   * The count of modified entity rows in the offline storage. Each row
-   * corresponds to the combination of an entity ID and a timestamp. One entity
-   * ID can have multiple rows in the offline storage. Within each row, only the
-   * features specified in the request are deleted.
-   *
    * @var string
    */
   public $offlineStorageModifiedEntityRowCount;
   /**
-   * The count of modified entities in the online storage. Each entity ID
-   * corresponds to one entity. Within each entity, only the features specified
-   * in the request are deleted.
-   *
    * @var string
    */
   public $onlineStorageModifiedEntityCount;
 
   /**
-   * The count of the features or columns impacted. This is the same as the
-   * feature count in the request.
-   *
-   * @param string $impactedFeatureCount
+   * @param string
    */
   public function setImpactedFeatureCount($impactedFeatureCount)
   {
@@ -62,12 +47,7 @@ class GoogleCloudAiplatformV1DeleteFeatureValuesResponseSelectTimeRangeAndFeatur
     return $this->impactedFeatureCount;
   }
   /**
-   * The count of modified entity rows in the offline storage. Each row
-   * corresponds to the combination of an entity ID and a timestamp. One entity
-   * ID can have multiple rows in the offline storage. Within each row, only the
-   * features specified in the request are deleted.
-   *
-   * @param string $offlineStorageModifiedEntityRowCount
+   * @param string
    */
   public function setOfflineStorageModifiedEntityRowCount($offlineStorageModifiedEntityRowCount)
   {
@@ -81,11 +61,7 @@ class GoogleCloudAiplatformV1DeleteFeatureValuesResponseSelectTimeRangeAndFeatur
     return $this->offlineStorageModifiedEntityRowCount;
   }
   /**
-   * The count of modified entities in the online storage. Each entity ID
-   * corresponds to one entity. Within each entity, only the features specified
-   * in the request are deleted.
-   *
-   * @param string $onlineStorageModifiedEntityCount
+   * @param string
    */
   public function setOnlineStorageModifiedEntityCount($onlineStorageModifiedEntityCount)
   {

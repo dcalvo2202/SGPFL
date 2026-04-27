@@ -21,16 +21,10 @@ class UserProfile extends \Google\Collection
 {
   protected $collection_key = 'permissions';
   /**
-   * Email address of the user. Must request
-   * `https://www.googleapis.com/auth/classroom.profile.emails` scope for this
-   * field to be populated in a response body. Read-only.
-   *
    * @var string
    */
   public $emailAddress;
   /**
-   * Identifier of the user. Read-only.
-   *
    * @var string
    */
   public $id;
@@ -39,29 +33,16 @@ class UserProfile extends \Google\Collection
   protected $permissionsType = GlobalPermission::class;
   protected $permissionsDataType = 'array';
   /**
-   * URL of user's profile photo. Must request
-   * `https://www.googleapis.com/auth/classroom.profile.photos` scope for this
-   * field to be populated in a response body. Read-only.
-   *
    * @var string
    */
   public $photoUrl;
   /**
-   * Represents whether a Google Workspace for Education user's domain
-   * administrator has explicitly verified them as being a teacher. This field
-   * is always false if the user is not a member of a Google Workspace for
-   * Education domain. Read-only
-   *
    * @var bool
    */
   public $verifiedTeacher;
 
   /**
-   * Email address of the user. Must request
-   * `https://www.googleapis.com/auth/classroom.profile.emails` scope for this
-   * field to be populated in a response body. Read-only.
-   *
-   * @param string $emailAddress
+   * @param string
    */
   public function setEmailAddress($emailAddress)
   {
@@ -75,9 +56,7 @@ class UserProfile extends \Google\Collection
     return $this->emailAddress;
   }
   /**
-   * Identifier of the user. Read-only.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -91,9 +70,7 @@ class UserProfile extends \Google\Collection
     return $this->id;
   }
   /**
-   * Name of the user. Read-only.
-   *
-   * @param Name $name
+   * @param Name
    */
   public function setName(Name $name)
   {
@@ -107,9 +84,7 @@ class UserProfile extends \Google\Collection
     return $this->name;
   }
   /**
-   * Global permissions of the user. Read-only.
-   *
-   * @param GlobalPermission[] $permissions
+   * @param GlobalPermission[]
    */
   public function setPermissions($permissions)
   {
@@ -123,11 +98,7 @@ class UserProfile extends \Google\Collection
     return $this->permissions;
   }
   /**
-   * URL of user's profile photo. Must request
-   * `https://www.googleapis.com/auth/classroom.profile.photos` scope for this
-   * field to be populated in a response body. Read-only.
-   *
-   * @param string $photoUrl
+   * @param string
    */
   public function setPhotoUrl($photoUrl)
   {
@@ -141,12 +112,7 @@ class UserProfile extends \Google\Collection
     return $this->photoUrl;
   }
   /**
-   * Represents whether a Google Workspace for Education user's domain
-   * administrator has explicitly verified them as being a teacher. This field
-   * is always false if the user is not a member of a Google Workspace for
-   * Education domain. Read-only
-   *
-   * @param bool $verifiedTeacher
+   * @param bool
    */
   public function setVerifiedTeacher($verifiedTeacher)
   {

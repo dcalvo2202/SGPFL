@@ -20,25 +20,16 @@ namespace Google\Service\CloudRedis;
 class ClusterMaintenanceSchedule extends \Google\Model
 {
   /**
-   * Output only. The end time of any upcoming scheduled maintenance for this
-   * instance.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * Output only. The start time of any upcoming scheduled maintenance for this
-   * instance.
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * Output only. The end time of any upcoming scheduled maintenance for this
-   * instance.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -52,10 +43,7 @@ class ClusterMaintenanceSchedule extends \Google\Model
     return $this->endTime;
   }
   /**
-   * Output only. The start time of any upcoming scheduled maintenance for this
-   * instance.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

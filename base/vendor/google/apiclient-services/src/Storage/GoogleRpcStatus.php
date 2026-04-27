@@ -21,29 +21,20 @@ class GoogleRpcStatus extends \Google\Collection
 {
   protected $collection_key = 'details';
   /**
-   * The status code, which should be an enum value of google.rpc.Code.
-   *
    * @var int
    */
   public $code;
   /**
-   * A list of messages that carry the error details. There is a common set of
-   * message types for APIs to use.
-   *
    * @var array[]
    */
   public $details;
   /**
-   * A developer-facing error message, which should be in English.
-   *
    * @var string
    */
   public $message;
 
   /**
-   * The status code, which should be an enum value of google.rpc.Code.
-   *
-   * @param int $code
+   * @param int
    */
   public function setCode($code)
   {
@@ -57,10 +48,7 @@ class GoogleRpcStatus extends \Google\Collection
     return $this->code;
   }
   /**
-   * A list of messages that carry the error details. There is a common set of
-   * message types for APIs to use.
-   *
-   * @param array[] $details
+   * @param array[]
    */
   public function setDetails($details)
   {
@@ -74,9 +62,7 @@ class GoogleRpcStatus extends \Google\Collection
     return $this->details;
   }
   /**
-   * A developer-facing error message, which should be in English.
-   *
-   * @param string $message
+   * @param string
    */
   public function setMessage($message)
   {

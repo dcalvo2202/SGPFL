@@ -20,71 +20,40 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1TensorboardExperiment extends \Google\Model
 {
   /**
-   * Output only. Timestamp when this TensorboardExperiment was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Description of this TensorboardExperiment.
-   *
    * @var string
    */
   public $description;
   /**
-   * User provided name of this TensorboardExperiment.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Used to perform consistent read-modify-write updates. If not set, a blind
-   * "overwrite" update happens.
-   *
    * @var string
    */
   public $etag;
   /**
-   * The labels with user-defined metadata to organize your
-   * TensorboardExperiment. Label keys and values cannot be longer than 64
-   * characters (Unicode codepoints), can only contain lowercase letters,
-   * numeric characters, underscores and dashes. International characters are
-   * allowed. No more than 64 user labels can be associated with one Dataset
-   * (System labels are excluded). See https://goo.gl/xmQnxf for more
-   * information and examples of labels. System reserved label keys are prefixed
-   * with `aiplatform.googleapis.com/` and are immutable. The following system
-   * labels exist for each Dataset: *
-   * `aiplatform.googleapis.com/dataset_metadata_schema`: output only. Its value
-   * is the metadata_schema's title.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Output only. Name of the TensorboardExperiment. Format: `projects/{project}
-   * /locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
-   *
    * @var string
    */
   public $name;
   /**
-   * Immutable. Source of the TensorboardExperiment. Example: a custom training
-   * job.
-   *
    * @var string
    */
   public $source;
   /**
-   * Output only. Timestamp when this TensorboardExperiment was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. Timestamp when this TensorboardExperiment was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -98,9 +67,7 @@ class GoogleCloudAiplatformV1TensorboardExperiment extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Description of this TensorboardExperiment.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -114,9 +81,7 @@ class GoogleCloudAiplatformV1TensorboardExperiment extends \Google\Model
     return $this->description;
   }
   /**
-   * User provided name of this TensorboardExperiment.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -130,10 +95,7 @@ class GoogleCloudAiplatformV1TensorboardExperiment extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Used to perform consistent read-modify-write updates. If not set, a blind
-   * "overwrite" update happens.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -147,19 +109,7 @@ class GoogleCloudAiplatformV1TensorboardExperiment extends \Google\Model
     return $this->etag;
   }
   /**
-   * The labels with user-defined metadata to organize your
-   * TensorboardExperiment. Label keys and values cannot be longer than 64
-   * characters (Unicode codepoints), can only contain lowercase letters,
-   * numeric characters, underscores and dashes. International characters are
-   * allowed. No more than 64 user labels can be associated with one Dataset
-   * (System labels are excluded). See https://goo.gl/xmQnxf for more
-   * information and examples of labels. System reserved label keys are prefixed
-   * with `aiplatform.googleapis.com/` and are immutable. The following system
-   * labels exist for each Dataset: *
-   * `aiplatform.googleapis.com/dataset_metadata_schema`: output only. Its value
-   * is the metadata_schema's title.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -173,10 +123,7 @@ class GoogleCloudAiplatformV1TensorboardExperiment extends \Google\Model
     return $this->labels;
   }
   /**
-   * Output only. Name of the TensorboardExperiment. Format: `projects/{project}
-   * /locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -190,10 +137,7 @@ class GoogleCloudAiplatformV1TensorboardExperiment extends \Google\Model
     return $this->name;
   }
   /**
-   * Immutable. Source of the TensorboardExperiment. Example: a custom training
-   * job.
-   *
-   * @param string $source
+   * @param string
    */
   public function setSource($source)
   {
@@ -207,9 +151,7 @@ class GoogleCloudAiplatformV1TensorboardExperiment extends \Google\Model
     return $this->source;
   }
   /**
-   * Output only. Timestamp when this TensorboardExperiment was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

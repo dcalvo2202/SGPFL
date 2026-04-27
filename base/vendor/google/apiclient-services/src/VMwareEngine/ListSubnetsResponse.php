@@ -21,27 +21,18 @@ class ListSubnetsResponse extends \Google\Collection
 {
   protected $collection_key = 'unreachable';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $subnetsType = Subnet::class;
   protected $subnetsDataType = 'array';
   /**
-   * Locations that could not be reached when making an aggregated query using
-   * wildcards.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -55,9 +46,7 @@ class ListSubnetsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * A list of subnets.
-   *
-   * @param Subnet[] $subnets
+   * @param Subnet[]
    */
   public function setSubnets($subnets)
   {
@@ -71,10 +60,7 @@ class ListSubnetsResponse extends \Google\Collection
     return $this->subnets;
   }
   /**
-   * Locations that could not be reached when making an aggregated query using
-   * wildcards.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

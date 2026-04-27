@@ -19,71 +19,36 @@ namespace Google\Service\AdExchangeBuyerII;
 
 class GuaranteedFixedPriceTerms extends \Google\Collection
 {
-  /**
-   * An unspecified reservation type.
-   */
-  public const RESERVATION_TYPE_RESERVATION_TYPE_UNSPECIFIED = 'RESERVATION_TYPE_UNSPECIFIED';
-  /**
-   * Non-sponsorship deal.
-   */
-  public const RESERVATION_TYPE_STANDARD = 'STANDARD';
-  /**
-   * Sponsorship deals don't have impression goal (guaranteed_looks) and they
-   * are served based on the flight dates. For CPM Sponsorship deals,
-   * impression_cap is the lifetime impression limit.
-   */
-  public const RESERVATION_TYPE_SPONSORSHIP = 'SPONSORSHIP';
   protected $collection_key = 'fixedPrices';
   protected $fixedPricesType = PricePerBuyer::class;
   protected $fixedPricesDataType = 'array';
   /**
-   * Guaranteed impressions as a percentage. This is the percentage of
-   * guaranteed looks that the buyer is guaranteeing to buy.
-   *
    * @var string
    */
   public $guaranteedImpressions;
   /**
-   * Count of guaranteed looks. Required for deal, optional for product. For CPD
-   * deals, buyer changes to guaranteed_looks will be ignored.
-   *
    * @var string
    */
   public $guaranteedLooks;
   /**
-   * The lifetime impression cap for CPM sponsorship deals. The deal will stop
-   * serving when the cap is reached.
-   *
    * @var string
    */
   public $impressionCap;
   /**
-   * Daily minimum looks for CPD deal types. For CPD deals, buyer should
-   * negotiate on this field instead of guaranteed_looks.
-   *
    * @var string
    */
   public $minimumDailyLooks;
   /**
-   * For sponsorship deals, this is the percentage of the seller's eligible
-   * impressions that the deal will serve until the cap is reached.
-   *
    * @var string
    */
   public $percentShareOfVoice;
   /**
-   * The reservation type for a Programmatic Guaranteed deal. This indicates
-   * whether the number of impressions is fixed, or a percent of available
-   * impressions. If not specified, the default reservation type is STANDARD.
-   *
    * @var string
    */
   public $reservationType;
 
   /**
-   * Fixed price for the specified buyer.
-   *
-   * @param PricePerBuyer[] $fixedPrices
+   * @param PricePerBuyer[]
    */
   public function setFixedPrices($fixedPrices)
   {
@@ -97,10 +62,7 @@ class GuaranteedFixedPriceTerms extends \Google\Collection
     return $this->fixedPrices;
   }
   /**
-   * Guaranteed impressions as a percentage. This is the percentage of
-   * guaranteed looks that the buyer is guaranteeing to buy.
-   *
-   * @param string $guaranteedImpressions
+   * @param string
    */
   public function setGuaranteedImpressions($guaranteedImpressions)
   {
@@ -114,10 +76,7 @@ class GuaranteedFixedPriceTerms extends \Google\Collection
     return $this->guaranteedImpressions;
   }
   /**
-   * Count of guaranteed looks. Required for deal, optional for product. For CPD
-   * deals, buyer changes to guaranteed_looks will be ignored.
-   *
-   * @param string $guaranteedLooks
+   * @param string
    */
   public function setGuaranteedLooks($guaranteedLooks)
   {
@@ -131,10 +90,7 @@ class GuaranteedFixedPriceTerms extends \Google\Collection
     return $this->guaranteedLooks;
   }
   /**
-   * The lifetime impression cap for CPM sponsorship deals. The deal will stop
-   * serving when the cap is reached.
-   *
-   * @param string $impressionCap
+   * @param string
    */
   public function setImpressionCap($impressionCap)
   {
@@ -148,10 +104,7 @@ class GuaranteedFixedPriceTerms extends \Google\Collection
     return $this->impressionCap;
   }
   /**
-   * Daily minimum looks for CPD deal types. For CPD deals, buyer should
-   * negotiate on this field instead of guaranteed_looks.
-   *
-   * @param string $minimumDailyLooks
+   * @param string
    */
   public function setMinimumDailyLooks($minimumDailyLooks)
   {
@@ -165,10 +118,7 @@ class GuaranteedFixedPriceTerms extends \Google\Collection
     return $this->minimumDailyLooks;
   }
   /**
-   * For sponsorship deals, this is the percentage of the seller's eligible
-   * impressions that the deal will serve until the cap is reached.
-   *
-   * @param string $percentShareOfVoice
+   * @param string
    */
   public function setPercentShareOfVoice($percentShareOfVoice)
   {
@@ -182,20 +132,14 @@ class GuaranteedFixedPriceTerms extends \Google\Collection
     return $this->percentShareOfVoice;
   }
   /**
-   * The reservation type for a Programmatic Guaranteed deal. This indicates
-   * whether the number of impressions is fixed, or a percent of available
-   * impressions. If not specified, the default reservation type is STANDARD.
-   *
-   * Accepted values: RESERVATION_TYPE_UNSPECIFIED, STANDARD, SPONSORSHIP
-   *
-   * @param self::RESERVATION_TYPE_* $reservationType
+   * @param string
    */
   public function setReservationType($reservationType)
   {
     $this->reservationType = $reservationType;
   }
   /**
-   * @return self::RESERVATION_TYPE_*
+   * @return string
    */
   public function getReservationType()
   {

@@ -20,26 +20,16 @@ namespace Google\Service\VersionHistory;
 class Version extends \Google\Model
 {
   /**
-   * Version name. Format is
-   * "{product}/platforms/{platform}/channels/{channel}/versions/{version}" e.g.
-   * "chrome/platforms/win/channels/beta/versions/84.0.4147.38"
-   *
    * @var string
    */
   public $name;
   /**
-   * String containing just the version number. e.g. "84.0.4147.38"
-   *
    * @var string
    */
   public $version;
 
   /**
-   * Version name. Format is
-   * "{product}/platforms/{platform}/channels/{channel}/versions/{version}" e.g.
-   * "chrome/platforms/win/channels/beta/versions/84.0.4147.38"
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -53,9 +43,7 @@ class Version extends \Google\Model
     return $this->name;
   }
   /**
-   * String containing just the version number. e.g. "84.0.4147.38"
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

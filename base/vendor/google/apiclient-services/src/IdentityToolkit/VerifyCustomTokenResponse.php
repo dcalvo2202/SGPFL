@@ -20,42 +20,28 @@ namespace Google\Service\IdentityToolkit;
 class VerifyCustomTokenResponse extends \Google\Model
 {
   /**
-   * If idToken is STS id token, then this field will be expiration time of STS
-   * id token in seconds.
-   *
    * @var string
    */
   public $expiresIn;
   /**
-   * The GITKit token for authenticated user.
-   *
    * @var string
    */
   public $idToken;
   /**
-   * True if it's a new user sign-in, false if it's a returning user.
-   *
    * @var bool
    */
   public $isNewUser;
   /**
-   * The fixed string "identitytoolkit#VerifyCustomTokenResponse".
-   *
    * @var string
    */
   public $kind;
   /**
-   * If idToken is STS id token, then this field will be refresh token.
-   *
    * @var string
    */
   public $refreshToken;
 
   /**
-   * If idToken is STS id token, then this field will be expiration time of STS
-   * id token in seconds.
-   *
-   * @param string $expiresIn
+   * @param string
    */
   public function setExpiresIn($expiresIn)
   {
@@ -69,9 +55,7 @@ class VerifyCustomTokenResponse extends \Google\Model
     return $this->expiresIn;
   }
   /**
-   * The GITKit token for authenticated user.
-   *
-   * @param string $idToken
+   * @param string
    */
   public function setIdToken($idToken)
   {
@@ -85,9 +69,7 @@ class VerifyCustomTokenResponse extends \Google\Model
     return $this->idToken;
   }
   /**
-   * True if it's a new user sign-in, false if it's a returning user.
-   *
-   * @param bool $isNewUser
+   * @param bool
    */
   public function setIsNewUser($isNewUser)
   {
@@ -101,9 +83,7 @@ class VerifyCustomTokenResponse extends \Google\Model
     return $this->isNewUser;
   }
   /**
-   * The fixed string "identitytoolkit#VerifyCustomTokenResponse".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -117,9 +97,7 @@ class VerifyCustomTokenResponse extends \Google\Model
     return $this->kind;
   }
   /**
-   * If idToken is STS id token, then this field will be refresh token.
-   *
-   * @param string $refreshToken
+   * @param string
    */
   public function setRefreshToken($refreshToken)
   {

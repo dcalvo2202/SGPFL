@@ -24,9 +24,7 @@ class GoogleCloudDatacatalogV1ImportTaxonomiesResponse extends \Google\Collectio
   protected $taxonomiesDataType = 'array';
 
   /**
-   * Imported taxonomies.
-   *
-   * @param GoogleCloudDatacatalogV1Taxonomy[] $taxonomies
+   * @param GoogleCloudDatacatalogV1Taxonomy[]
    */
   public function setTaxonomies($taxonomies)
   {

@@ -21,16 +21,12 @@ class SecurityContext extends \Google\Collection
 {
   protected $collection_key = 'securities';
   /**
-   * The security types in this context.
-   *
    * @var string[]
    */
   public $securities;
 
   /**
-   * The security types in this context.
-   *
-   * @param string[] $securities
+   * @param string[]
    */
   public function setSecurities($securities)
   {

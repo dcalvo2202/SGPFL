@@ -20,22 +20,16 @@ namespace Google\Service\ManufacturerCenter;
 class Price extends \Google\Model
 {
   /**
-   * The numeric value of the price.
-   *
    * @var string
    */
   public $amount;
   /**
-   * The currency in which the price is denoted.
-   *
    * @var string
    */
   public $currency;
 
   /**
-   * The numeric value of the price.
-   *
-   * @param string $amount
+   * @param string
    */
   public function setAmount($amount)
   {
@@ -49,9 +43,7 @@ class Price extends \Google\Model
     return $this->amount;
   }
   /**
-   * The currency in which the price is denoted.
-   *
-   * @param string $currency
+   * @param string
    */
   public function setCurrency($currency)
   {

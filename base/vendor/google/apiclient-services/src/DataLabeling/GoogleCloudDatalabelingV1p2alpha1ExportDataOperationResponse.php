@@ -20,21 +20,14 @@ namespace Google\Service\DataLabeling;
 class GoogleCloudDatalabelingV1p2alpha1ExportDataOperationResponse extends \Google\Model
 {
   /**
-   * Output only. The name of annotated dataset in format
-   * "projects/datasets/annotatedDatasets".
-   *
    * @var string
    */
   public $annotatedDataset;
   /**
-   * Ouptut only. The name of dataset. "projects/datasets"
-   *
    * @var string
    */
   public $dataset;
   /**
-   * Output only. Number of examples exported successfully.
-   *
    * @var int
    */
   public $exportCount;
@@ -43,17 +36,12 @@ class GoogleCloudDatalabelingV1p2alpha1ExportDataOperationResponse extends \Goog
   protected $outputConfigType = GoogleCloudDatalabelingV1p2alpha1OutputConfig::class;
   protected $outputConfigDataType = '';
   /**
-   * Output only. Total number of examples requested to export
-   *
    * @var int
    */
   public $totalCount;
 
   /**
-   * Output only. The name of annotated dataset in format
-   * "projects/datasets/annotatedDatasets".
-   *
-   * @param string $annotatedDataset
+   * @param string
    */
   public function setAnnotatedDataset($annotatedDataset)
   {
@@ -67,9 +55,7 @@ class GoogleCloudDatalabelingV1p2alpha1ExportDataOperationResponse extends \Goog
     return $this->annotatedDataset;
   }
   /**
-   * Ouptut only. The name of dataset. "projects/datasets"
-   *
-   * @param string $dataset
+   * @param string
    */
   public function setDataset($dataset)
   {
@@ -83,9 +69,7 @@ class GoogleCloudDatalabelingV1p2alpha1ExportDataOperationResponse extends \Goog
     return $this->dataset;
   }
   /**
-   * Output only. Number of examples exported successfully.
-   *
-   * @param int $exportCount
+   * @param int
    */
   public function setExportCount($exportCount)
   {
@@ -99,9 +83,7 @@ class GoogleCloudDatalabelingV1p2alpha1ExportDataOperationResponse extends \Goog
     return $this->exportCount;
   }
   /**
-   * Output only. Statistic infos of labels in the exported dataset.
-   *
-   * @param GoogleCloudDatalabelingV1p2alpha1LabelStats $labelStats
+   * @param GoogleCloudDatalabelingV1p2alpha1LabelStats
    */
   public function setLabelStats(GoogleCloudDatalabelingV1p2alpha1LabelStats $labelStats)
   {
@@ -115,9 +97,7 @@ class GoogleCloudDatalabelingV1p2alpha1ExportDataOperationResponse extends \Goog
     return $this->labelStats;
   }
   /**
-   * Output only. output_config in the ExportData request.
-   *
-   * @param GoogleCloudDatalabelingV1p2alpha1OutputConfig $outputConfig
+   * @param GoogleCloudDatalabelingV1p2alpha1OutputConfig
    */
   public function setOutputConfig(GoogleCloudDatalabelingV1p2alpha1OutputConfig $outputConfig)
   {
@@ -131,9 +111,7 @@ class GoogleCloudDatalabelingV1p2alpha1ExportDataOperationResponse extends \Goog
     return $this->outputConfig;
   }
   /**
-   * Output only. Total number of examples requested to export
-   *
-   * @param int $totalCount
+   * @param int
    */
   public function setTotalCount($totalCount)
   {

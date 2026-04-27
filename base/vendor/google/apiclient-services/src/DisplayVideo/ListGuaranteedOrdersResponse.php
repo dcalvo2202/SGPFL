@@ -23,18 +23,12 @@ class ListGuaranteedOrdersResponse extends \Google\Collection
   protected $guaranteedOrdersType = GuaranteedOrder::class;
   protected $guaranteedOrdersDataType = 'array';
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * page_token field in the subsequent call to `ListGuaranteedOrders` method to
-   * retrieve the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of guaranteed orders. This list will be absent if empty.
-   *
-   * @param GuaranteedOrder[] $guaranteedOrders
+   * @param GuaranteedOrder[]
    */
   public function setGuaranteedOrders($guaranteedOrders)
   {
@@ -48,11 +42,7 @@ class ListGuaranteedOrdersResponse extends \Google\Collection
     return $this->guaranteedOrders;
   }
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * page_token field in the subsequent call to `ListGuaranteedOrders` method to
-   * retrieve the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

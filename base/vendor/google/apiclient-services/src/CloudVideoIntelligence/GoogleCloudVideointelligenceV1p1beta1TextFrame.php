@@ -22,16 +22,12 @@ class GoogleCloudVideointelligenceV1p1beta1TextFrame extends \Google\Model
   protected $rotatedBoundingBoxType = GoogleCloudVideointelligenceV1p1beta1NormalizedBoundingPoly::class;
   protected $rotatedBoundingBoxDataType = '';
   /**
-   * Timestamp of this frame.
-   *
    * @var string
    */
   public $timeOffset;
 
   /**
-   * Bounding polygon of the detected text for this frame.
-   *
-   * @param GoogleCloudVideointelligenceV1p1beta1NormalizedBoundingPoly $rotatedBoundingBox
+   * @param GoogleCloudVideointelligenceV1p1beta1NormalizedBoundingPoly
    */
   public function setRotatedBoundingBox(GoogleCloudVideointelligenceV1p1beta1NormalizedBoundingPoly $rotatedBoundingBox)
   {
@@ -45,9 +41,7 @@ class GoogleCloudVideointelligenceV1p1beta1TextFrame extends \Google\Model
     return $this->rotatedBoundingBox;
   }
   /**
-   * Timestamp of this frame.
-   *
-   * @param string $timeOffset
+   * @param string
    */
   public function setTimeOffset($timeOffset)
   {

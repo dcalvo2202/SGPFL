@@ -19,98 +19,33 @@ namespace Google\Service\MyBusinessVerifications;
 
 class VerifyLocationRequest extends \Google\Model
 {
-  /**
-   * Default value, will result in errors.
-   */
-  public const METHOD_VERIFICATION_METHOD_UNSPECIFIED = 'VERIFICATION_METHOD_UNSPECIFIED';
-  /**
-   * Send a postcard with a verification PIN to a specific mailing address. The
-   * PIN is used to complete verification with Google.
-   */
-  public const METHOD_ADDRESS = 'ADDRESS';
-  /**
-   * Send an email with a verification PIN to a specific email address. The PIN
-   * is used to complete verification with Google.
-   */
-  public const METHOD_EMAIL = 'EMAIL';
-  /**
-   * Make a phone call with a verification PIN to a specific phone number. The
-   * PIN is used to complete verification with Google.
-   */
-  public const METHOD_PHONE_CALL = 'PHONE_CALL';
-  /**
-   * Send an SMS with a verification PIN to a specific phone number. The PIN is
-   * used to complete verification with Google.
-   */
-  public const METHOD_SMS = 'SMS';
-  /**
-   * Verify the location without additional user action. This option may not be
-   * available for all locations.
-   */
-  public const METHOD_AUTO = 'AUTO';
-  /**
-   * Verify the location via a trusted partner.
-   */
-  public const METHOD_TRUSTED_PARTNER = 'TRUSTED_PARTNER';
   protected $contextType = ServiceBusinessContext::class;
   protected $contextDataType = '';
   /**
-   * Optional. The input for EMAIL method. Email address where the PIN should be
-   * sent to. An email address is accepted only if it is one of the addresses
-   * provided by FetchVerificationOptions. If the EmailVerificationData has
-   * is_user_name_editable set to true, the client may specify a different user
-   * name (local-part) but must match the domain name.
-   *
    * @var string
    */
   public $emailAddress;
   /**
-   * Optional. The BCP 47 language code representing the language that is to be
-   * used for the verification process.
-   *
    * @var string
    */
   public $languageCode;
   /**
-   * Optional. The input for ADDRESS method. Contact name the mail should be
-   * sent to.
-   *
    * @var string
    */
   public $mailerContact;
   /**
-   * Required. Verification method.
-   *
    * @var string
    */
   public $method;
   /**
-   * Optional. The input for PHONE_CALL/SMS method The phone number that should
-   * be called or be sent SMS to. It must be one of the phone numbers in the
-   * eligible options.
-   *
    * @var string
    */
   public $phoneNumber;
   protected $tokenType = VerificationToken::class;
   protected $tokenDataType = '';
-  /**
-   * The input for TRUSTED_PARTNER method The verification token that is
-   * associated to the location.
-   *
-   * @var string
-   */
-  public $trustedPartnerToken;
 
   /**
-   * Optional. Extra context information for the verification of service
-   * businesses. It is only required for the locations whose business type is
-   * CUSTOMER_LOCATION_ONLY. For ADDRESS verification, the address will be used
-   * to send out postcard. For other methods, it should be the same as the one
-   * that is passed to GetVerificationOptions. INVALID_ARGUMENT will be thrown
-   * if it is set for other types of business locations.
-   *
-   * @param ServiceBusinessContext $context
+   * @param ServiceBusinessContext
    */
   public function setContext(ServiceBusinessContext $context)
   {
@@ -124,13 +59,7 @@ class VerifyLocationRequest extends \Google\Model
     return $this->context;
   }
   /**
-   * Optional. The input for EMAIL method. Email address where the PIN should be
-   * sent to. An email address is accepted only if it is one of the addresses
-   * provided by FetchVerificationOptions. If the EmailVerificationData has
-   * is_user_name_editable set to true, the client may specify a different user
-   * name (local-part) but must match the domain name.
-   *
-   * @param string $emailAddress
+   * @param string
    */
   public function setEmailAddress($emailAddress)
   {
@@ -144,10 +73,7 @@ class VerifyLocationRequest extends \Google\Model
     return $this->emailAddress;
   }
   /**
-   * Optional. The BCP 47 language code representing the language that is to be
-   * used for the verification process.
-   *
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {
@@ -161,10 +87,7 @@ class VerifyLocationRequest extends \Google\Model
     return $this->languageCode;
   }
   /**
-   * Optional. The input for ADDRESS method. Contact name the mail should be
-   * sent to.
-   *
-   * @param string $mailerContact
+   * @param string
    */
   public function setMailerContact($mailerContact)
   {
@@ -178,30 +101,21 @@ class VerifyLocationRequest extends \Google\Model
     return $this->mailerContact;
   }
   /**
-   * Required. Verification method.
-   *
-   * Accepted values: VERIFICATION_METHOD_UNSPECIFIED, ADDRESS, EMAIL,
-   * PHONE_CALL, SMS, AUTO, TRUSTED_PARTNER
-   *
-   * @param self::METHOD_* $method
+   * @param string
    */
   public function setMethod($method)
   {
     $this->method = $method;
   }
   /**
-   * @return self::METHOD_*
+   * @return string
    */
   public function getMethod()
   {
     return $this->method;
   }
   /**
-   * Optional. The input for PHONE_CALL/SMS method The phone number that should
-   * be called or be sent SMS to. It must be one of the phone numbers in the
-   * eligible options.
-   *
-   * @param string $phoneNumber
+   * @param string
    */
   public function setPhoneNumber($phoneNumber)
   {
@@ -215,12 +129,7 @@ class VerifyLocationRequest extends \Google\Model
     return $this->phoneNumber;
   }
   /**
-   * Optional. The input for VETTED_PARTNER method available to select
-   * [partners.](https://support.google.com/business/answer/7674102) The input
-   * is not needed for a vetted account. Token that is associated to the
-   * location. Token that is associated to the location.
-   *
-   * @param VerificationToken $token
+   * @param VerificationToken
    */
   public function setToken(VerificationToken $token)
   {
@@ -232,23 +141,6 @@ class VerifyLocationRequest extends \Google\Model
   public function getToken()
   {
     return $this->token;
-  }
-  /**
-   * The input for TRUSTED_PARTNER method The verification token that is
-   * associated to the location.
-   *
-   * @param string $trustedPartnerToken
-   */
-  public function setTrustedPartnerToken($trustedPartnerToken)
-  {
-    $this->trustedPartnerToken = $trustedPartnerToken;
-  }
-  /**
-   * @return string
-   */
-  public function getTrustedPartnerToken()
-  {
-    return $this->trustedPartnerToken;
   }
 }
 

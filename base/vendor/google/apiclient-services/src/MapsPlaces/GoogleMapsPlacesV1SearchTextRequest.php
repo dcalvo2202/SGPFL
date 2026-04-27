@@ -19,57 +19,18 @@ namespace Google\Service\MapsPlaces;
 
 class GoogleMapsPlacesV1SearchTextRequest extends \Google\Collection
 {
-  /**
-   * For a categorical query such as "Restaurants in New York City", RELEVANCE
-   * is the default. For non-categorical queries such as "Mountain View, CA" we
-   * recommend that you leave rankPreference unset.
-   */
-  public const RANK_PREFERENCE_RANK_PREFERENCE_UNSPECIFIED = 'RANK_PREFERENCE_UNSPECIFIED';
-  /**
-   * Ranks results by distance.
-   */
-  public const RANK_PREFERENCE_DISTANCE = 'DISTANCE';
-  /**
-   * Ranks results by relevance. Sort order determined by normal ranking stack.
-   */
-  public const RANK_PREFERENCE_RELEVANCE = 'RELEVANCE';
   protected $collection_key = 'priceLevels';
   protected $evOptionsType = GoogleMapsPlacesV1SearchTextRequestEVOptions::class;
   protected $evOptionsDataType = '';
   /**
-   * Optional. If true, include businesses that are not yet open but will open
-   * in the future.
-   *
-   * @var bool
-   */
-  public $includeFutureOpeningBusinesses;
-  /**
-   * Optional. Include pure service area businesses if the field is set to true.
-   * Pure service area business is a business that visits or delivers to
-   * customers directly but does not serve customers at their business address.
-   * For example, businesses like cleaning services or plumbers. Those
-   * businesses do not have a physical address or location on Google Maps.
-   * Places will not return fields including `location`, `plus_code`, and other
-   * location related fields for these businesses.
-   *
    * @var bool
    */
   public $includePureServiceAreaBusinesses;
   /**
-   * The requested place type. Full list of types supported:
-   * https://developers.google.com/maps/documentation/places/web-service/place-
-   * types. Only support one included type.
-   *
    * @var string
    */
   public $includedType;
   /**
-   * Place details will be displayed with the preferred language if available.
-   * If the language code is unspecified or unrecognized, place details of any
-   * language may be returned, with a preference for English if such details
-   * exist. Current list of supported languages:
-   * https://developers.google.com/maps/faq#languagesupport.
-   *
    * @var string
    */
   public $languageCode;
@@ -78,81 +39,31 @@ class GoogleMapsPlacesV1SearchTextRequest extends \Google\Collection
   protected $locationRestrictionType = GoogleMapsPlacesV1SearchTextRequestLocationRestriction::class;
   protected $locationRestrictionDataType = '';
   /**
-   * Deprecated: Use `page_size` instead. The maximum number of results per page
-   * that can be returned. If the number of available results is larger than
-   * `max_result_count`, a `next_page_token` is returned which can be passed to
-   * `page_token` to get the next page of results in subsequent requests. If 0
-   * or no value is provided, a default of 20 is used. The maximum value is 20;
-   * values above 20 will be coerced to 20. Negative values will return an
-   * INVALID_ARGUMENT error. If both `max_result_count` and `page_size` are
-   * specified, `max_result_count` will be ignored.
-   *
-   * @deprecated
    * @var int
    */
   public $maxResultCount;
-  /**
-   * Filter out results whose average user rating is strictly less than this
-   * limit. A valid value must be a float between 0 and 5 (inclusively) at a 0.5
-   * cadence i.e. [0, 0.5, 1.0, ... , 5.0] inclusively. The input rating will
-   * round up to the nearest 0.5(ceiling). For instance, a rating of 0.6 will
-   * eliminate all results with a less than 1.0 rating.
-   *
-   * @var 
-   */
   public $minRating;
   /**
-   * Used to restrict the search to places that are currently open. The default
-   * is false.
-   *
    * @var bool
    */
   public $openNow;
   /**
-   * Optional. The maximum number of results per page that can be returned. If
-   * the number of available results is larger than `page_size`, a
-   * `next_page_token` is returned which can be passed to `page_token` to get
-   * the next page of results in subsequent requests. If 0 or no value is
-   * provided, a default of 20 is used. The maximum value is 20; values above 20
-   * will be set to 20. Negative values will return an INVALID_ARGUMENT error.
-   * If both `max_result_count` and `page_size` are specified,
-   * `max_result_count` will be ignored.
-   *
    * @var int
    */
   public $pageSize;
   /**
-   * Optional. A page token, received from a previous TextSearch call. Provide
-   * this to retrieve the subsequent page. When paginating, all parameters other
-   * than `page_token`, `page_size`, and `max_result_count` provided to
-   * TextSearch must match the initial call that provided the page token.
-   * Otherwise an INVALID_ARGUMENT error is returned.
-   *
    * @var string
    */
   public $pageToken;
   /**
-   * Used to restrict the search to places that are marked as certain price
-   * levels. Users can choose any combinations of price levels. Default to
-   * select all price levels.
-   *
    * @var string[]
    */
   public $priceLevels;
   /**
-   * How results will be ranked in the response.
-   *
    * @var string
    */
   public $rankPreference;
   /**
-   * The Unicode country/region code (CLDR) of the location where the request is
-   * coming from. This parameter is used to display the place details, like
-   * region-specific place name, if available. The parameter can affect results
-   * based on applicable law. For more information, see https://www.unicode.org/
-   * cldr/charts/latest/supplemental/territory_language_information.html. Note
-   * that 3-digit region codes are not currently supported.
-   *
    * @var string
    */
   public $regionCode;
@@ -161,23 +72,16 @@ class GoogleMapsPlacesV1SearchTextRequest extends \Google\Collection
   protected $searchAlongRouteParametersType = GoogleMapsPlacesV1SearchTextRequestSearchAlongRouteParameters::class;
   protected $searchAlongRouteParametersDataType = '';
   /**
-   * Used to set strict type filtering for included_type. If set to true, only
-   * results of the same type will be returned. Default to false.
-   *
    * @var bool
    */
   public $strictTypeFiltering;
   /**
-   * Required. The text query for textual search.
-   *
    * @var string
    */
   public $textQuery;
 
   /**
-   * Optional. Set the searchable EV options of a place search request.
-   *
-   * @param GoogleMapsPlacesV1SearchTextRequestEVOptions $evOptions
+   * @param GoogleMapsPlacesV1SearchTextRequestEVOptions
    */
   public function setEvOptions(GoogleMapsPlacesV1SearchTextRequestEVOptions $evOptions)
   {
@@ -191,32 +95,7 @@ class GoogleMapsPlacesV1SearchTextRequest extends \Google\Collection
     return $this->evOptions;
   }
   /**
-   * Optional. If true, include businesses that are not yet open but will open
-   * in the future.
-   *
-   * @param bool $includeFutureOpeningBusinesses
-   */
-  public function setIncludeFutureOpeningBusinesses($includeFutureOpeningBusinesses)
-  {
-    $this->includeFutureOpeningBusinesses = $includeFutureOpeningBusinesses;
-  }
-  /**
-   * @return bool
-   */
-  public function getIncludeFutureOpeningBusinesses()
-  {
-    return $this->includeFutureOpeningBusinesses;
-  }
-  /**
-   * Optional. Include pure service area businesses if the field is set to true.
-   * Pure service area business is a business that visits or delivers to
-   * customers directly but does not serve customers at their business address.
-   * For example, businesses like cleaning services or plumbers. Those
-   * businesses do not have a physical address or location on Google Maps.
-   * Places will not return fields including `location`, `plus_code`, and other
-   * location related fields for these businesses.
-   *
-   * @param bool $includePureServiceAreaBusinesses
+   * @param bool
    */
   public function setIncludePureServiceAreaBusinesses($includePureServiceAreaBusinesses)
   {
@@ -230,11 +109,7 @@ class GoogleMapsPlacesV1SearchTextRequest extends \Google\Collection
     return $this->includePureServiceAreaBusinesses;
   }
   /**
-   * The requested place type. Full list of types supported:
-   * https://developers.google.com/maps/documentation/places/web-service/place-
-   * types. Only support one included type.
-   *
-   * @param string $includedType
+   * @param string
    */
   public function setIncludedType($includedType)
   {
@@ -248,13 +123,7 @@ class GoogleMapsPlacesV1SearchTextRequest extends \Google\Collection
     return $this->includedType;
   }
   /**
-   * Place details will be displayed with the preferred language if available.
-   * If the language code is unspecified or unrecognized, place details of any
-   * language may be returned, with a preference for English if such details
-   * exist. Current list of supported languages:
-   * https://developers.google.com/maps/faq#languagesupport.
-   *
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {
@@ -268,11 +137,7 @@ class GoogleMapsPlacesV1SearchTextRequest extends \Google\Collection
     return $this->languageCode;
   }
   /**
-   * The region to search. This location serves as a bias which means results
-   * around given location might be returned. Cannot be set along with
-   * location_restriction.
-   *
-   * @param GoogleMapsPlacesV1SearchTextRequestLocationBias $locationBias
+   * @param GoogleMapsPlacesV1SearchTextRequestLocationBias
    */
   public function setLocationBias(GoogleMapsPlacesV1SearchTextRequestLocationBias $locationBias)
   {
@@ -286,11 +151,7 @@ class GoogleMapsPlacesV1SearchTextRequest extends \Google\Collection
     return $this->locationBias;
   }
   /**
-   * The region to search. This location serves as a restriction which means
-   * results outside given location will not be returned. Cannot be set along
-   * with location_bias.
-   *
-   * @param GoogleMapsPlacesV1SearchTextRequestLocationRestriction $locationRestriction
+   * @param GoogleMapsPlacesV1SearchTextRequestLocationRestriction
    */
   public function setLocationRestriction(GoogleMapsPlacesV1SearchTextRequestLocationRestriction $locationRestriction)
   {
@@ -304,24 +165,13 @@ class GoogleMapsPlacesV1SearchTextRequest extends \Google\Collection
     return $this->locationRestriction;
   }
   /**
-   * Deprecated: Use `page_size` instead. The maximum number of results per page
-   * that can be returned. If the number of available results is larger than
-   * `max_result_count`, a `next_page_token` is returned which can be passed to
-   * `page_token` to get the next page of results in subsequent requests. If 0
-   * or no value is provided, a default of 20 is used. The maximum value is 20;
-   * values above 20 will be coerced to 20. Negative values will return an
-   * INVALID_ARGUMENT error. If both `max_result_count` and `page_size` are
-   * specified, `max_result_count` will be ignored.
-   *
-   * @deprecated
-   * @param int $maxResultCount
+   * @param int
    */
   public function setMaxResultCount($maxResultCount)
   {
     $this->maxResultCount = $maxResultCount;
   }
   /**
-   * @deprecated
    * @return int
    */
   public function getMaxResultCount()
@@ -337,10 +187,7 @@ class GoogleMapsPlacesV1SearchTextRequest extends \Google\Collection
     return $this->minRating;
   }
   /**
-   * Used to restrict the search to places that are currently open. The default
-   * is false.
-   *
-   * @param bool $openNow
+   * @param bool
    */
   public function setOpenNow($openNow)
   {
@@ -354,16 +201,7 @@ class GoogleMapsPlacesV1SearchTextRequest extends \Google\Collection
     return $this->openNow;
   }
   /**
-   * Optional. The maximum number of results per page that can be returned. If
-   * the number of available results is larger than `page_size`, a
-   * `next_page_token` is returned which can be passed to `page_token` to get
-   * the next page of results in subsequent requests. If 0 or no value is
-   * provided, a default of 20 is used. The maximum value is 20; values above 20
-   * will be set to 20. Negative values will return an INVALID_ARGUMENT error.
-   * If both `max_result_count` and `page_size` are specified,
-   * `max_result_count` will be ignored.
-   *
-   * @param int $pageSize
+   * @param int
    */
   public function setPageSize($pageSize)
   {
@@ -377,13 +215,7 @@ class GoogleMapsPlacesV1SearchTextRequest extends \Google\Collection
     return $this->pageSize;
   }
   /**
-   * Optional. A page token, received from a previous TextSearch call. Provide
-   * this to retrieve the subsequent page. When paginating, all parameters other
-   * than `page_token`, `page_size`, and `max_result_count` provided to
-   * TextSearch must match the initial call that provided the page token.
-   * Otherwise an INVALID_ARGUMENT error is returned.
-   *
-   * @param string $pageToken
+   * @param string
    */
   public function setPageToken($pageToken)
   {
@@ -397,11 +229,7 @@ class GoogleMapsPlacesV1SearchTextRequest extends \Google\Collection
     return $this->pageToken;
   }
   /**
-   * Used to restrict the search to places that are marked as certain price
-   * levels. Users can choose any combinations of price levels. Default to
-   * select all price levels.
-   *
-   * @param string[] $priceLevels
+   * @param string[]
    */
   public function setPriceLevels($priceLevels)
   {
@@ -415,32 +243,21 @@ class GoogleMapsPlacesV1SearchTextRequest extends \Google\Collection
     return $this->priceLevels;
   }
   /**
-   * How results will be ranked in the response.
-   *
-   * Accepted values: RANK_PREFERENCE_UNSPECIFIED, DISTANCE, RELEVANCE
-   *
-   * @param self::RANK_PREFERENCE_* $rankPreference
+   * @param string
    */
   public function setRankPreference($rankPreference)
   {
     $this->rankPreference = $rankPreference;
   }
   /**
-   * @return self::RANK_PREFERENCE_*
+   * @return string
    */
   public function getRankPreference()
   {
     return $this->rankPreference;
   }
   /**
-   * The Unicode country/region code (CLDR) of the location where the request is
-   * coming from. This parameter is used to display the place details, like
-   * region-specific place name, if available. The parameter can affect results
-   * based on applicable law. For more information, see https://www.unicode.org/
-   * cldr/charts/latest/supplemental/territory_language_information.html. Note
-   * that 3-digit region codes are not currently supported.
-   *
-   * @param string $regionCode
+   * @param string
    */
   public function setRegionCode($regionCode)
   {
@@ -454,9 +271,7 @@ class GoogleMapsPlacesV1SearchTextRequest extends \Google\Collection
     return $this->regionCode;
   }
   /**
-   * Optional. Additional parameters for routing to results.
-   *
-   * @param GoogleMapsPlacesV1RoutingParameters $routingParameters
+   * @param GoogleMapsPlacesV1RoutingParameters
    */
   public function setRoutingParameters(GoogleMapsPlacesV1RoutingParameters $routingParameters)
   {
@@ -470,9 +285,7 @@ class GoogleMapsPlacesV1SearchTextRequest extends \Google\Collection
     return $this->routingParameters;
   }
   /**
-   * Optional. Additional parameters proto for searching along a route.
-   *
-   * @param GoogleMapsPlacesV1SearchTextRequestSearchAlongRouteParameters $searchAlongRouteParameters
+   * @param GoogleMapsPlacesV1SearchTextRequestSearchAlongRouteParameters
    */
   public function setSearchAlongRouteParameters(GoogleMapsPlacesV1SearchTextRequestSearchAlongRouteParameters $searchAlongRouteParameters)
   {
@@ -486,10 +299,7 @@ class GoogleMapsPlacesV1SearchTextRequest extends \Google\Collection
     return $this->searchAlongRouteParameters;
   }
   /**
-   * Used to set strict type filtering for included_type. If set to true, only
-   * results of the same type will be returned. Default to false.
-   *
-   * @param bool $strictTypeFiltering
+   * @param bool
    */
   public function setStrictTypeFiltering($strictTypeFiltering)
   {
@@ -503,9 +313,7 @@ class GoogleMapsPlacesV1SearchTextRequest extends \Google\Collection
     return $this->strictTypeFiltering;
   }
   /**
-   * Required. The text query for textual search.
-   *
-   * @param string $textQuery
+   * @param string
    */
   public function setTextQuery($textQuery)
   {

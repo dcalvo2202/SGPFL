@@ -25,16 +25,12 @@ class GoogleCloudDocumentaiUiv1beta3AutoLabelDocumentsMetadata extends \Google\C
   protected $individualAutoLabelStatusesType = GoogleCloudDocumentaiUiv1beta3AutoLabelDocumentsMetadataIndividualAutoLabelStatus::class;
   protected $individualAutoLabelStatusesDataType = 'array';
   /**
-   * Total number of the auto-labeling documents.
-   *
    * @var int
    */
   public $totalDocumentCount;
 
   /**
-   * The basic metadata of the long-running operation.
-   *
-   * @param GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata $commonMetadata
+   * @param GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata
    */
   public function setCommonMetadata(GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata $commonMetadata)
   {
@@ -48,9 +44,7 @@ class GoogleCloudDocumentaiUiv1beta3AutoLabelDocumentsMetadata extends \Google\C
     return $this->commonMetadata;
   }
   /**
-   * The list of individual auto-labeling statuses of the dataset documents.
-   *
-   * @param GoogleCloudDocumentaiUiv1beta3AutoLabelDocumentsMetadataIndividualAutoLabelStatus[] $individualAutoLabelStatuses
+   * @param GoogleCloudDocumentaiUiv1beta3AutoLabelDocumentsMetadataIndividualAutoLabelStatus[]
    */
   public function setIndividualAutoLabelStatuses($individualAutoLabelStatuses)
   {
@@ -64,9 +58,7 @@ class GoogleCloudDocumentaiUiv1beta3AutoLabelDocumentsMetadata extends \Google\C
     return $this->individualAutoLabelStatuses;
   }
   /**
-   * Total number of the auto-labeling documents.
-   *
-   * @param int $totalDocumentCount
+   * @param int
    */
   public function setTotalDocumentCount($totalDocumentCount)
   {

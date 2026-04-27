@@ -20,70 +20,48 @@ namespace Google\Service\Directory;
 class UserPosixAccount extends \Google\Model
 {
   /**
-   * A POSIX account field identifier.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * The GECOS (user information) for this account.
-   *
    * @var string
    */
   public $gecos;
   /**
-   * The default group ID.
-   *
    * @var string
    */
   public $gid;
   /**
-   * The path to the home directory for this account.
-   *
    * @var string
    */
   public $homeDirectory;
   /**
-   * The operating system type for this account.
-   *
    * @var string
    */
   public $operatingSystemType;
   /**
-   * If this is user's primary account within the SystemId.
-   *
    * @var bool
    */
   public $primary;
   /**
-   * The path to the login shell for this account.
-   *
    * @var string
    */
   public $shell;
   /**
-   * System identifier for which account Username or Uid apply to.
-   *
    * @var string
    */
   public $systemId;
   /**
-   * The POSIX compliant user ID.
-   *
    * @var string
    */
   public $uid;
   /**
-   * The username of the account.
-   *
    * @var string
    */
   public $username;
 
   /**
-   * A POSIX account field identifier.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -97,9 +75,7 @@ class UserPosixAccount extends \Google\Model
     return $this->accountId;
   }
   /**
-   * The GECOS (user information) for this account.
-   *
-   * @param string $gecos
+   * @param string
    */
   public function setGecos($gecos)
   {
@@ -113,9 +89,7 @@ class UserPosixAccount extends \Google\Model
     return $this->gecos;
   }
   /**
-   * The default group ID.
-   *
-   * @param string $gid
+   * @param string
    */
   public function setGid($gid)
   {
@@ -129,9 +103,7 @@ class UserPosixAccount extends \Google\Model
     return $this->gid;
   }
   /**
-   * The path to the home directory for this account.
-   *
-   * @param string $homeDirectory
+   * @param string
    */
   public function setHomeDirectory($homeDirectory)
   {
@@ -145,9 +117,7 @@ class UserPosixAccount extends \Google\Model
     return $this->homeDirectory;
   }
   /**
-   * The operating system type for this account.
-   *
-   * @param string $operatingSystemType
+   * @param string
    */
   public function setOperatingSystemType($operatingSystemType)
   {
@@ -161,9 +131,7 @@ class UserPosixAccount extends \Google\Model
     return $this->operatingSystemType;
   }
   /**
-   * If this is user's primary account within the SystemId.
-   *
-   * @param bool $primary
+   * @param bool
    */
   public function setPrimary($primary)
   {
@@ -177,9 +145,7 @@ class UserPosixAccount extends \Google\Model
     return $this->primary;
   }
   /**
-   * The path to the login shell for this account.
-   *
-   * @param string $shell
+   * @param string
    */
   public function setShell($shell)
   {
@@ -193,9 +159,7 @@ class UserPosixAccount extends \Google\Model
     return $this->shell;
   }
   /**
-   * System identifier for which account Username or Uid apply to.
-   *
-   * @param string $systemId
+   * @param string
    */
   public function setSystemId($systemId)
   {
@@ -209,9 +173,7 @@ class UserPosixAccount extends \Google\Model
     return $this->systemId;
   }
   /**
-   * The POSIX compliant user ID.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {
@@ -225,9 +187,7 @@ class UserPosixAccount extends \Google\Model
     return $this->uid;
   }
   /**
-   * The username of the account.
-   *
-   * @param string $username
+   * @param string
    */
   public function setUsername($username)
   {

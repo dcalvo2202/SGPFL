@@ -20,10 +20,6 @@ namespace Google\Service\BinaryAuthorization;
 class SigstoreAuthority extends \Google\Model
 {
   /**
-   * Optional. A user-provided name for this `SigstoreAuthority`. This field has
-   * no effect on the policy evaluation behavior except to improve readability
-   * of messages in evaluation results.
-   *
    * @var string
    */
   public $displayName;
@@ -31,11 +27,7 @@ class SigstoreAuthority extends \Google\Model
   protected $publicKeySetDataType = '';
 
   /**
-   * Optional. A user-provided name for this `SigstoreAuthority`. This field has
-   * no effect on the policy evaluation behavior except to improve readability
-   * of messages in evaluation results.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -49,10 +41,7 @@ class SigstoreAuthority extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Required. A simple set of public keys. A signature is considered valid if
-   * any keys in the set validate the signature.
-   *
-   * @param SigstorePublicKeySet $publicKeySet
+   * @param SigstorePublicKeySet
    */
   public function setPublicKeySet(SigstorePublicKeySet $publicKeySet)
   {

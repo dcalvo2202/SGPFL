@@ -20,8 +20,6 @@ namespace Google\Service\Compute;
 class SetCommonInstanceMetadataOperationMetadata extends \Google\Model
 {
   /**
-   * [Output Only] The client operation id.
-   *
    * @var string
    */
   public $clientOperationId;
@@ -29,9 +27,7 @@ class SetCommonInstanceMetadataOperationMetadata extends \Google\Model
   protected $perLocationOperationsDataType = 'map';
 
   /**
-   * [Output Only] The client operation id.
-   *
-   * @param string $clientOperationId
+   * @param string
    */
   public function setClientOperationId($clientOperationId)
   {
@@ -45,10 +41,7 @@ class SetCommonInstanceMetadataOperationMetadata extends \Google\Model
     return $this->clientOperationId;
   }
   /**
-   * [Output Only] Status information per location (location name is key).
-   * Example key: zones/us-central1-a
-   *
-   * @param SetCommonInstanceMetadataOperationMetadataPerLocationOperationInfo[] $perLocationOperations
+   * @param SetCommonInstanceMetadataOperationMetadataPerLocationOperationInfo[]
    */
   public function setPerLocationOperations($perLocationOperations)
   {

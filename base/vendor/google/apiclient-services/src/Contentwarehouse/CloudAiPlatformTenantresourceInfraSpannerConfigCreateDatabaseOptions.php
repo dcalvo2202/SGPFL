@@ -20,32 +20,20 @@ namespace Google\Service\Contentwarehouse;
 class CloudAiPlatformTenantresourceInfraSpannerConfigCreateDatabaseOptions extends \Google\Model
 {
   /**
-   * The cloud resource name for the CMEK encryption. For example,
-   * projects//locations/
-   *
    * @var string
    */
   public $cmekCloudResourceName;
   /**
-   * The cloud resource type for the CMEK encryption. For example,
-   * contentwarehouse.googleapis.com/Location
-   *
    * @var string
    */
   public $cmekCloudResourceType;
   /**
-   * The service name for the CMEK encryption. For example,
-   * contentwarehouse.googleapis.com
-   *
    * @var string
    */
   public $cmekServiceName;
 
   /**
-   * The cloud resource name for the CMEK encryption. For example,
-   * projects//locations/
-   *
-   * @param string $cmekCloudResourceName
+   * @param string
    */
   public function setCmekCloudResourceName($cmekCloudResourceName)
   {
@@ -59,10 +47,7 @@ class CloudAiPlatformTenantresourceInfraSpannerConfigCreateDatabaseOptions exten
     return $this->cmekCloudResourceName;
   }
   /**
-   * The cloud resource type for the CMEK encryption. For example,
-   * contentwarehouse.googleapis.com/Location
-   *
-   * @param string $cmekCloudResourceType
+   * @param string
    */
   public function setCmekCloudResourceType($cmekCloudResourceType)
   {
@@ -76,10 +61,7 @@ class CloudAiPlatformTenantresourceInfraSpannerConfigCreateDatabaseOptions exten
     return $this->cmekCloudResourceType;
   }
   /**
-   * The service name for the CMEK encryption. For example,
-   * contentwarehouse.googleapis.com
-   *
-   * @param string $cmekServiceName
+   * @param string
    */
   public function setCmekServiceName($cmekServiceName)
   {

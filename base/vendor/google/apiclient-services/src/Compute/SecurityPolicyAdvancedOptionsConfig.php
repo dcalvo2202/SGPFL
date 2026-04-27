@@ -19,11 +19,6 @@ namespace Google\Service\Compute;
 
 class SecurityPolicyAdvancedOptionsConfig extends \Google\Collection
 {
-  public const JSON_PARSING_DISABLED = 'DISABLED';
-  public const JSON_PARSING_STANDARD = 'STANDARD';
-  public const JSON_PARSING_STANDARD_WITH_GRAPHQL = 'STANDARD_WITH_GRAPHQL';
-  public const LOG_LEVEL_NORMAL = 'NORMAL';
-  public const LOG_LEVEL_VERBOSE = 'VERBOSE';
   protected $collection_key = 'userIpRequestHeaders';
   protected $jsonCustomConfigType = SecurityPolicyAdvancedOptionsConfigJsonCustomConfig::class;
   protected $jsonCustomConfigDataType = '';
@@ -36,26 +31,12 @@ class SecurityPolicyAdvancedOptionsConfig extends \Google\Collection
    */
   public $logLevel;
   /**
-   * The maximum request size chosen by the customer with Waf enabled. Values
-   * supported are "8KB", "16KB, "32KB", "48KB" and "64KB". Values are case
-   * insensitive.
-   *
-   * @var string
-   */
-  public $requestBodyInspectionSize;
-  /**
-   * An optional list of case-insensitive request header names to use for
-   * resolving the callers client IP address.
-   *
    * @var string[]
    */
   public $userIpRequestHeaders;
 
   /**
-   * Custom configuration to apply the JSON parsing. Only applicable when
-   * json_parsing is set to STANDARD.
-   *
-   * @param SecurityPolicyAdvancedOptionsConfigJsonCustomConfig $jsonCustomConfig
+   * @param SecurityPolicyAdvancedOptionsConfigJsonCustomConfig
    */
   public function setJsonCustomConfig(SecurityPolicyAdvancedOptionsConfigJsonCustomConfig $jsonCustomConfig)
   {
@@ -69,56 +50,35 @@ class SecurityPolicyAdvancedOptionsConfig extends \Google\Collection
     return $this->jsonCustomConfig;
   }
   /**
-   * @param self::JSON_PARSING_* $jsonParsing
+   * @param string
    */
   public function setJsonParsing($jsonParsing)
   {
     $this->jsonParsing = $jsonParsing;
   }
   /**
-   * @return self::JSON_PARSING_*
+   * @return string
    */
   public function getJsonParsing()
   {
     return $this->jsonParsing;
   }
   /**
-   * @param self::LOG_LEVEL_* $logLevel
+   * @param string
    */
   public function setLogLevel($logLevel)
   {
     $this->logLevel = $logLevel;
   }
   /**
-   * @return self::LOG_LEVEL_*
+   * @return string
    */
   public function getLogLevel()
   {
     return $this->logLevel;
   }
   /**
-   * The maximum request size chosen by the customer with Waf enabled. Values
-   * supported are "8KB", "16KB, "32KB", "48KB" and "64KB". Values are case
-   * insensitive.
-   *
-   * @param string $requestBodyInspectionSize
-   */
-  public function setRequestBodyInspectionSize($requestBodyInspectionSize)
-  {
-    $this->requestBodyInspectionSize = $requestBodyInspectionSize;
-  }
-  /**
-   * @return string
-   */
-  public function getRequestBodyInspectionSize()
-  {
-    return $this->requestBodyInspectionSize;
-  }
-  /**
-   * An optional list of case-insensitive request header names to use for
-   * resolving the callers client IP address.
-   *
-   * @param string[] $userIpRequestHeaders
+   * @param string[]
    */
   public function setUserIpRequestHeaders($userIpRequestHeaders)
   {

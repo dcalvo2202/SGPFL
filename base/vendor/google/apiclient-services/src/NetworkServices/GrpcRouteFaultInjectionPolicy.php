@@ -25,9 +25,7 @@ class GrpcRouteFaultInjectionPolicy extends \Google\Model
   protected $delayDataType = '';
 
   /**
-   * The specification for aborting to client requests.
-   *
-   * @param GrpcRouteFaultInjectionPolicyAbort $abort
+   * @param GrpcRouteFaultInjectionPolicyAbort
    */
   public function setAbort(GrpcRouteFaultInjectionPolicyAbort $abort)
   {
@@ -41,9 +39,7 @@ class GrpcRouteFaultInjectionPolicy extends \Google\Model
     return $this->abort;
   }
   /**
-   * The specification for injecting delay to client requests.
-   *
-   * @param GrpcRouteFaultInjectionPolicyDelay $delay
+   * @param GrpcRouteFaultInjectionPolicyDelay
    */
   public function setDelay(GrpcRouteFaultInjectionPolicyDelay $delay)
   {

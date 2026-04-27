@@ -20,51 +20,22 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1Study extends \Google\Model
 {
   /**
-   * The study state is unspecified.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The study is active.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * The study is stopped due to an internal error.
-   */
-  public const STATE_INACTIVE = 'INACTIVE';
-  /**
-   * The study is done when the service exhausts the parameter search space or
-   * max_trial_count is reached.
-   */
-  public const STATE_COMPLETED = 'COMPLETED';
-  /**
-   * Output only. Time at which the study was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Required. Describes the Study, default value is empty string.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. A human readable reason why the Study is inactive. This should
-   * be empty if a study is ACTIVE or COMPLETED.
-   *
    * @var string
    */
   public $inactiveReason;
   /**
-   * Output only. The name of a study. The study's globally unique identifier.
-   * Format: `projects/{project}/locations/{location}/studies/{study}`
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The detailed state of a Study.
-   *
    * @var string
    */
   public $state;
@@ -72,9 +43,7 @@ class GoogleCloudAiplatformV1Study extends \Google\Model
   protected $studySpecDataType = '';
 
   /**
-   * Output only. Time at which the study was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -88,9 +57,7 @@ class GoogleCloudAiplatformV1Study extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Required. Describes the Study, default value is empty string.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -104,10 +71,7 @@ class GoogleCloudAiplatformV1Study extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Output only. A human readable reason why the Study is inactive. This should
-   * be empty if a study is ACTIVE or COMPLETED.
-   *
-   * @param string $inactiveReason
+   * @param string
    */
   public function setInactiveReason($inactiveReason)
   {
@@ -121,10 +85,7 @@ class GoogleCloudAiplatformV1Study extends \Google\Model
     return $this->inactiveReason;
   }
   /**
-   * Output only. The name of a study. The study's globally unique identifier.
-   * Format: `projects/{project}/locations/{location}/studies/{study}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -138,27 +99,21 @@ class GoogleCloudAiplatformV1Study extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The detailed state of a Study.
-   *
-   * Accepted values: STATE_UNSPECIFIED, ACTIVE, INACTIVE, COMPLETED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Required. Configuration of the Study.
-   *
-   * @param GoogleCloudAiplatformV1StudySpec $studySpec
+   * @param GoogleCloudAiplatformV1StudySpec
    */
   public function setStudySpec(GoogleCloudAiplatformV1StudySpec $studySpec)
   {

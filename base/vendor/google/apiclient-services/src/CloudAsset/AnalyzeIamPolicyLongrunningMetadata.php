@@ -20,16 +20,12 @@ namespace Google\Service\CloudAsset;
 class AnalyzeIamPolicyLongrunningMetadata extends \Google\Model
 {
   /**
-   * Output only. The time the operation was created.
-   *
    * @var string
    */
   public $createTime;
 
   /**
-   * Output only. The time the operation was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {

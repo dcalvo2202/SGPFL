@@ -17,7 +17,7 @@
 
 namespace Google\Service\PaymentsResellerSubscription\Resource;
 
-use Google\Service\PaymentsResellerSubscription\ListProductsResponse;
+use Google\Service\PaymentsResellerSubscription\GoogleCloudPaymentsResellerSubscriptionV1ListProductsResponse;
 
 /**
  * The "products" collection of methods.
@@ -31,7 +31,7 @@ class PartnersProducts extends \Google\Service\Resource
 {
   /**
    * Currently, it doesn't support **YouTube** products. Retrieves the products
-   * that can be resold by the partner. It should be authenticated with a service
+   * that can be resold by the partner. It should be autenticated with a service
    * account. (products.listPartnersProducts)
    *
    * @param string $parent Required. The parent, the partner that can resell.
@@ -56,14 +56,14 @@ class PartnersProducts extends \Google\Service\Resource
    * `ListProducts` call. Provide this to retrieve the subsequent page. When
    * paginating, all other parameters provided to `ListProducts` must match the
    * call that provided the page token.
-   * @return ListProductsResponse
+   * @return GoogleCloudPaymentsResellerSubscriptionV1ListProductsResponse
    * @throws \Google\Service\Exception
    */
   public function listPartnersProducts($parent, $optParams = [])
   {
     $params = ['parent' => $parent];
     $params = array_merge($params, $optParams);
-    return $this->call('list', [$params], ListProductsResponse::class);
+    return $this->call('list', [$params], GoogleCloudPaymentsResellerSubscriptionV1ListProductsResponse::class);
   }
 }
 

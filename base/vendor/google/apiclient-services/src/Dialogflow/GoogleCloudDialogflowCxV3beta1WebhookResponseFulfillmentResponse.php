@@ -19,9 +19,6 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowCxV3beta1WebhookResponseFulfillmentResponse extends \Google\Collection
 {
-  public const MERGE_BEHAVIOR_MERGE_BEHAVIOR_UNSPECIFIED = 'MERGE_BEHAVIOR_UNSPECIFIED';
-  public const MERGE_BEHAVIOR_APPEND = 'APPEND';
-  public const MERGE_BEHAVIOR_REPLACE = 'REPLACE';
   protected $collection_key = 'messages';
   /**
    * @var string
@@ -31,21 +28,21 @@ class GoogleCloudDialogflowCxV3beta1WebhookResponseFulfillmentResponse extends \
   protected $messagesDataType = 'array';
 
   /**
-   * @param self::MERGE_BEHAVIOR_* $mergeBehavior
+   * @param string
    */
   public function setMergeBehavior($mergeBehavior)
   {
     $this->mergeBehavior = $mergeBehavior;
   }
   /**
-   * @return self::MERGE_BEHAVIOR_*
+   * @return string
    */
   public function getMergeBehavior()
   {
     return $this->mergeBehavior;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3beta1ResponseMessage[] $messages
+   * @param GoogleCloudDialogflowCxV3beta1ResponseMessage[]
    */
   public function setMessages($messages)
   {

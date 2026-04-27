@@ -20,16 +20,12 @@ namespace Google\Service\AnalyticsData;
 class MetricValue extends \Google\Model
 {
   /**
-   * Measurement value. See MetricHeader for type.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Measurement value. See MetricHeader for type.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

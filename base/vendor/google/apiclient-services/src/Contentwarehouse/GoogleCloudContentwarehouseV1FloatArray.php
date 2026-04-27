@@ -21,16 +21,12 @@ class GoogleCloudContentwarehouseV1FloatArray extends \Google\Collection
 {
   protected $collection_key = 'values';
   /**
-   * List of float values.
-   *
    * @var float[]
    */
   public $values;
 
   /**
-   * List of float values.
-   *
-   * @param float[] $values
+   * @param float[]
    */
   public function setValues($values)
   {

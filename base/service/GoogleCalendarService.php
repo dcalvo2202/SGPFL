@@ -33,7 +33,6 @@ class GoogleCalendarService
     private function initializeClient()
     {
         require_once __DIR__ . '/../config.inc';
-        global $google_calendar_config;
 
         if (!isset($google_calendar_config) || !is_array($google_calendar_config)) {
             throw new Exception('No se encontró la configuración de Google Calendar en config.inc');

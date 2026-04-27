@@ -19,44 +19,15 @@ namespace Google\Service\Spanner;
 
 class DiagnosticMessage extends \Google\Model
 {
-  /**
-   * Required default value.
-   */
-  public const SEVERITY_SEVERITY_UNSPECIFIED = 'SEVERITY_UNSPECIFIED';
-  /**
-   * Lowest severity level "Info".
-   */
-  public const SEVERITY_INFO = 'INFO';
-  /**
-   * Middle severity level "Warning".
-   */
-  public const SEVERITY_WARNING = 'WARNING';
-  /**
-   * Severity level signaling an error "Error"
-   */
-  public const SEVERITY_ERROR = 'ERROR';
-  /**
-   * Severity level signaling a non recoverable error "Fatal"
-   */
-  public const SEVERITY_FATAL = 'FATAL';
   protected $infoType = LocalizedString::class;
   protected $infoDataType = '';
   protected $metricType = LocalizedString::class;
   protected $metricDataType = '';
   /**
-   * Whether this message is specific only for the current metric. By default
-   * Diagnostics are shown for all metrics, regardless which metric is the
-   * currently selected metric in the UI. However occasionally a metric will
-   * generate so many messages that the resulting visual clutter becomes
-   * overwhelming. In this case setting this to true, will show the diagnostic
-   * messages for that metric only if it is the currently selected metric.
-   *
    * @var bool
    */
   public $metricSpecific;
   /**
-   * The severity of the diagnostic message.
-   *
    * @var string
    */
   public $severity;
@@ -64,9 +35,7 @@ class DiagnosticMessage extends \Google\Model
   protected $shortMessageDataType = '';
 
   /**
-   * Information about this diagnostic information.
-   *
-   * @param LocalizedString $info
+   * @param LocalizedString
    */
   public function setInfo(LocalizedString $info)
   {
@@ -80,9 +49,7 @@ class DiagnosticMessage extends \Google\Model
     return $this->info;
   }
   /**
-   * The metric.
-   *
-   * @param LocalizedString $metric
+   * @param LocalizedString
    */
   public function setMetric(LocalizedString $metric)
   {
@@ -96,14 +63,7 @@ class DiagnosticMessage extends \Google\Model
     return $this->metric;
   }
   /**
-   * Whether this message is specific only for the current metric. By default
-   * Diagnostics are shown for all metrics, regardless which metric is the
-   * currently selected metric in the UI. However occasionally a metric will
-   * generate so many messages that the resulting visual clutter becomes
-   * overwhelming. In this case setting this to true, will show the diagnostic
-   * messages for that metric only if it is the currently selected metric.
-   *
-   * @param bool $metricSpecific
+   * @param bool
    */
   public function setMetricSpecific($metricSpecific)
   {
@@ -117,27 +77,21 @@ class DiagnosticMessage extends \Google\Model
     return $this->metricSpecific;
   }
   /**
-   * The severity of the diagnostic message.
-   *
-   * Accepted values: SEVERITY_UNSPECIFIED, INFO, WARNING, ERROR, FATAL
-   *
-   * @param self::SEVERITY_* $severity
+   * @param string
    */
   public function setSeverity($severity)
   {
     $this->severity = $severity;
   }
   /**
-   * @return self::SEVERITY_*
+   * @return string
    */
   public function getSeverity()
   {
     return $this->severity;
   }
   /**
-   * The short message.
-   *
-   * @param LocalizedString $shortMessage
+   * @param LocalizedString
    */
   public function setShortMessage(LocalizedString $shortMessage)
   {

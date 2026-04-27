@@ -22,17 +22,12 @@ class GooglePrivacyDlpV2AmazonS3BucketRegex extends \Google\Model
   protected $awsAccountRegexType = GooglePrivacyDlpV2AwsAccountRegex::class;
   protected $awsAccountRegexDataType = '';
   /**
-   * Optional. Regex to test the bucket name against. If empty, all buckets
-   * match.
-   *
    * @var string
    */
   public $bucketNameRegex;
 
   /**
-   * The AWS account regex.
-   *
-   * @param GooglePrivacyDlpV2AwsAccountRegex $awsAccountRegex
+   * @param GooglePrivacyDlpV2AwsAccountRegex
    */
   public function setAwsAccountRegex(GooglePrivacyDlpV2AwsAccountRegex $awsAccountRegex)
   {
@@ -46,10 +41,7 @@ class GooglePrivacyDlpV2AmazonS3BucketRegex extends \Google\Model
     return $this->awsAccountRegex;
   }
   /**
-   * Optional. Regex to test the bucket name against. If empty, all buckets
-   * match.
-   *
-   * @param string $bucketNameRegex
+   * @param string
    */
   public function setBucketNameRegex($bucketNameRegex)
   {

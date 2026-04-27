@@ -26,9 +26,7 @@ class TargetVpnGatewaysScopedList extends \Google\Collection
   protected $warningDataType = '';
 
   /**
-   * [Output Only] A list of target VPN gateways contained in this scope.
-   *
-   * @param TargetVpnGateway[] $targetVpnGateways
+   * @param TargetVpnGateway[]
    */
   public function setTargetVpnGateways($targetVpnGateways)
   {
@@ -42,10 +40,7 @@ class TargetVpnGatewaysScopedList extends \Google\Collection
     return $this->targetVpnGateways;
   }
   /**
-   * [Output Only] Informational warning which replaces the list of addresses
-   * when the list is empty.
-   *
-   * @param TargetVpnGatewaysScopedListWarning $warning
+   * @param TargetVpnGatewaysScopedListWarning
    */
   public function setWarning(TargetVpnGatewaysScopedListWarning $warning)
   {

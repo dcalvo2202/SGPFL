@@ -20,31 +20,20 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1Schema extends \Google\Model
 {
   /**
-   * The JSON representation of the schema.
-   *
    * @var string
    */
   public $jsonSchema;
   /**
-   * Immutable. The full resource name of the schema, in the format of `projects
-   * /{project}/locations/{location}/collections/{collection}/dataStores/{data_s
-   * tore}/schemas/{schema}`. This field must be a UTF-8 encoded string with a
-   * length limit of 1024 characters.
-   *
    * @var string
    */
   public $name;
   /**
-   * The structured representation of the schema.
-   *
    * @var array[]
    */
   public $structSchema;
 
   /**
-   * The JSON representation of the schema.
-   *
-   * @param string $jsonSchema
+   * @param string
    */
   public function setJsonSchema($jsonSchema)
   {
@@ -58,12 +47,7 @@ class GoogleCloudDiscoveryengineV1Schema extends \Google\Model
     return $this->jsonSchema;
   }
   /**
-   * Immutable. The full resource name of the schema, in the format of `projects
-   * /{project}/locations/{location}/collections/{collection}/dataStores/{data_s
-   * tore}/schemas/{schema}`. This field must be a UTF-8 encoded string with a
-   * length limit of 1024 characters.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -77,9 +61,7 @@ class GoogleCloudDiscoveryengineV1Schema extends \Google\Model
     return $this->name;
   }
   /**
-   * The structured representation of the schema.
-   *
-   * @param array[] $structSchema
+   * @param array[]
    */
   public function setStructSchema($structSchema)
   {

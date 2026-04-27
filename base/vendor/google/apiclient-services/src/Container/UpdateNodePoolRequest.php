@@ -22,57 +22,29 @@ class UpdateNodePoolRequest extends \Google\Collection
   protected $collection_key = 'storagePools';
   protected $acceleratorsType = AcceleratorConfig::class;
   protected $acceleratorsDataType = 'array';
-  protected $bootDiskType = BootDisk::class;
-  protected $bootDiskDataType = '';
   /**
-   * Deprecated. The name of the cluster to upgrade. This field has been
-   * deprecated and replaced by the name field.
-   *
-   * @deprecated
    * @var string
    */
   public $clusterId;
   protected $confidentialNodesType = ConfidentialNodes::class;
   protected $confidentialNodesDataType = '';
-  /**
-   * Consolidation delay defines duration after which the Cluster Autoscaler can
-   * scale down underutilized nodes. If not set, nodes are scaled down by
-   * default behavior, i.e. according to the chosen autoscaling profile.
-   *
-   * @var string
-   */
-  public $consolidationDelay;
   protected $containerdConfigType = ContainerdConfig::class;
   protected $containerdConfigDataType = '';
   /**
-   * Optional. The desired disk size for nodes in the node pool specified in GB.
-   * The smallest allowed disk size is 10GB. Initiates an upgrade operation that
-   * migrates the nodes in the node pool to the specified disk size.
-   *
    * @var string
    */
   public $diskSizeGb;
   /**
-   * Optional. The desired disk type (e.g. 'pd-standard', 'pd-ssd' or 'pd-
-   * balanced') for nodes in the node pool. Initiates an upgrade operation that
-   * migrates the nodes in the node pool to the specified disk type.
-   *
    * @var string
    */
   public $diskType;
   /**
-   * The current etag of the node pool. If an etag is provided and does not
-   * match the current etag of the node pool, update will be blocked and an
-   * ABORTED error will be returned.
-   *
    * @var string
    */
   public $etag;
   protected $fastSocketType = FastSocket::class;
   protected $fastSocketDataType = '';
   /**
-   * Flex Start flag for enabling Flex Start VM.
-   *
    * @var bool
    */
   public $flexStart;
@@ -81,10 +53,6 @@ class UpdateNodePoolRequest extends \Google\Collection
   protected $gvnicType = VirtualNIC::class;
   protected $gvnicDataType = '';
   /**
-   * Required. The desired image type for the node pool. Please see
-   * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images for
-   * available image types.
-   *
    * @var string
    */
   public $imageType;
@@ -95,77 +63,34 @@ class UpdateNodePoolRequest extends \Google\Collection
   protected $linuxNodeConfigType = LinuxNodeConfig::class;
   protected $linuxNodeConfigDataType = '';
   /**
-   * The desired list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * node pool's nodes should be located. Changing the locations for a node pool
-   * will result in nodes being either created or removed from the node pool,
-   * depending on whether locations are being added or removed. Warning: It is
-   * recommended to update node pool locations in a standalone API call. Do not
-   * combine a location update with changes to other fields (such as `tags`,
-   * `labels`, `taints`, etc.) in the same request. Otherwise, the API performs
-   * a structural modification where changes to other fields will only apply to
-   * newly created nodes and will not be applied to existing nodes in the node
-   * pool. To ensure all nodes are updated consistently, use a separate API call
-   * for location changes.
-   *
    * @var string[]
    */
   public $locations;
   protected $loggingConfigType = NodePoolLoggingConfig::class;
   protected $loggingConfigDataType = '';
   /**
-   * Optional. The desired [Google Compute Engine machine
-   * type](https://cloud.google.com/compute/docs/machine-types) for nodes in the
-   * node pool. Initiates an upgrade operation that migrates the nodes in the
-   * node pool to the specified machine type.
-   *
    * @var string
    */
   public $machineType;
   /**
-   * The maximum duration for the nodes to exist. If unspecified, the nodes can
-   * exist indefinitely.
-   *
    * @var string
    */
   public $maxRunDuration;
   /**
-   * The name (project, location, cluster, node pool) of the node pool to
-   * update. Specified in the format `projects/locations/clusters/nodePools`.
-   *
    * @var string
    */
   public $name;
-  protected $nodeDrainConfigType = NodeDrainConfig::class;
-  protected $nodeDrainConfigDataType = '';
   protected $nodeNetworkConfigType = NodeNetworkConfig::class;
   protected $nodeNetworkConfigDataType = '';
   /**
-   * Deprecated. The name of the node pool to upgrade. This field has been
-   * deprecated and replaced by the name field.
-   *
-   * @deprecated
    * @var string
    */
   public $nodePoolId;
   /**
-   * Required. The Kubernetes version to change the nodes to (typically an
-   * upgrade). Users may specify either explicit versions offered by Kubernetes
-   * Engine or version aliases, which have the following behavior: - "latest":
-   * picks the highest valid Kubernetes version - "1.X": picks the highest valid
-   * patch+gke.N patch in the 1.X version - "1.X.Y": picks the highest valid
-   * gke.N patch in the 1.X.Y version - "1.X.Y-gke.N": picks an explicit
-   * Kubernetes version - "-": picks the Kubernetes master version
-   *
    * @var string
    */
   public $nodeVersion;
   /**
-   * Deprecated. The Google Developers Console [project ID or project
-   * number](https://cloud.google.com/resource-manager/docs/creating-managing-
-   * projects). This field has been deprecated and replaced by the name field.
-   *
-   * @deprecated
    * @var string
    */
   public $projectId;
@@ -176,9 +101,6 @@ class UpdateNodePoolRequest extends \Google\Collection
   protected $resourceManagerTagsType = ResourceManagerTags::class;
   protected $resourceManagerTagsDataType = '';
   /**
-   * List of Storage Pools where boot disks are provisioned. Existing Storage
-   * Pools will be replaced with storage-pools.
-   *
    * @var string[]
    */
   public $storagePools;
@@ -193,22 +115,12 @@ class UpdateNodePoolRequest extends \Google\Collection
   protected $workloadMetadataConfigType = WorkloadMetadataConfig::class;
   protected $workloadMetadataConfigDataType = '';
   /**
-   * Deprecated. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-   * cluster resides. This field has been deprecated and replaced by the name
-   * field.
-   *
-   * @deprecated
    * @var string
    */
   public $zone;
 
   /**
-   * A list of hardware accelerators to be attached to each node. See
-   * https://cloud.google.com/compute/docs/gpus for more information about
-   * support for GPUs.
-   *
-   * @param AcceleratorConfig[] $accelerators
+   * @param AcceleratorConfig[]
    */
   public function setAccelerators($accelerators)
   {
@@ -222,36 +134,13 @@ class UpdateNodePoolRequest extends \Google\Collection
     return $this->accelerators;
   }
   /**
-   * The desired boot disk config for nodes in the node pool. Initiates an
-   * upgrade operation that migrates the nodes in the node pool to the specified
-   * boot disk config.
-   *
-   * @param BootDisk $bootDisk
-   */
-  public function setBootDisk(BootDisk $bootDisk)
-  {
-    $this->bootDisk = $bootDisk;
-  }
-  /**
-   * @return BootDisk
-   */
-  public function getBootDisk()
-  {
-    return $this->bootDisk;
-  }
-  /**
-   * Deprecated. The name of the cluster to upgrade. This field has been
-   * deprecated and replaced by the name field.
-   *
-   * @deprecated
-   * @param string $clusterId
+   * @param string
    */
   public function setClusterId($clusterId)
   {
     $this->clusterId = $clusterId;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getClusterId()
@@ -259,10 +148,7 @@ class UpdateNodePoolRequest extends \Google\Collection
     return $this->clusterId;
   }
   /**
-   * Confidential nodes config. All the nodes in the node pool will be
-   * Confidential VM once enabled.
-   *
-   * @param ConfidentialNodes $confidentialNodes
+   * @param ConfidentialNodes
    */
   public function setConfidentialNodes(ConfidentialNodes $confidentialNodes)
   {
@@ -276,28 +162,7 @@ class UpdateNodePoolRequest extends \Google\Collection
     return $this->confidentialNodes;
   }
   /**
-   * Consolidation delay defines duration after which the Cluster Autoscaler can
-   * scale down underutilized nodes. If not set, nodes are scaled down by
-   * default behavior, i.e. according to the chosen autoscaling profile.
-   *
-   * @param string $consolidationDelay
-   */
-  public function setConsolidationDelay($consolidationDelay)
-  {
-    $this->consolidationDelay = $consolidationDelay;
-  }
-  /**
-   * @return string
-   */
-  public function getConsolidationDelay()
-  {
-    return $this->consolidationDelay;
-  }
-  /**
-   * The desired containerd config for nodes in the node pool. Initiates an
-   * upgrade operation that recreates the nodes with the new config.
-   *
-   * @param ContainerdConfig $containerdConfig
+   * @param ContainerdConfig
    */
   public function setContainerdConfig(ContainerdConfig $containerdConfig)
   {
@@ -311,11 +176,7 @@ class UpdateNodePoolRequest extends \Google\Collection
     return $this->containerdConfig;
   }
   /**
-   * Optional. The desired disk size for nodes in the node pool specified in GB.
-   * The smallest allowed disk size is 10GB. Initiates an upgrade operation that
-   * migrates the nodes in the node pool to the specified disk size.
-   *
-   * @param string $diskSizeGb
+   * @param string
    */
   public function setDiskSizeGb($diskSizeGb)
   {
@@ -329,11 +190,7 @@ class UpdateNodePoolRequest extends \Google\Collection
     return $this->diskSizeGb;
   }
   /**
-   * Optional. The desired disk type (e.g. 'pd-standard', 'pd-ssd' or 'pd-
-   * balanced') for nodes in the node pool. Initiates an upgrade operation that
-   * migrates the nodes in the node pool to the specified disk type.
-   *
-   * @param string $diskType
+   * @param string
    */
   public function setDiskType($diskType)
   {
@@ -347,11 +204,7 @@ class UpdateNodePoolRequest extends \Google\Collection
     return $this->diskType;
   }
   /**
-   * The current etag of the node pool. If an etag is provided and does not
-   * match the current etag of the node pool, update will be blocked and an
-   * ABORTED error will be returned.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -365,9 +218,7 @@ class UpdateNodePoolRequest extends \Google\Collection
     return $this->etag;
   }
   /**
-   * Enable or disable NCCL fast socket for the node pool.
-   *
-   * @param FastSocket $fastSocket
+   * @param FastSocket
    */
   public function setFastSocket(FastSocket $fastSocket)
   {
@@ -381,9 +232,7 @@ class UpdateNodePoolRequest extends \Google\Collection
     return $this->fastSocket;
   }
   /**
-   * Flex Start flag for enabling Flex Start VM.
-   *
-   * @param bool $flexStart
+   * @param bool
    */
   public function setFlexStart($flexStart)
   {
@@ -397,9 +246,7 @@ class UpdateNodePoolRequest extends \Google\Collection
     return $this->flexStart;
   }
   /**
-   * GCFS config.
-   *
-   * @param GcfsConfig $gcfsConfig
+   * @param GcfsConfig
    */
   public function setGcfsConfig(GcfsConfig $gcfsConfig)
   {
@@ -413,9 +260,7 @@ class UpdateNodePoolRequest extends \Google\Collection
     return $this->gcfsConfig;
   }
   /**
-   * Enable or disable gvnic on the node pool.
-   *
-   * @param VirtualNIC $gvnic
+   * @param VirtualNIC
    */
   public function setGvnic(VirtualNIC $gvnic)
   {
@@ -429,11 +274,7 @@ class UpdateNodePoolRequest extends \Google\Collection
     return $this->gvnic;
   }
   /**
-   * Required. The desired image type for the node pool. Please see
-   * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images for
-   * available image types.
-   *
-   * @param string $imageType
+   * @param string
    */
   public function setImageType($imageType)
   {
@@ -447,9 +288,7 @@ class UpdateNodePoolRequest extends \Google\Collection
     return $this->imageType;
   }
   /**
-   * Node kubelet configs.
-   *
-   * @param NodeKubeletConfig $kubeletConfig
+   * @param NodeKubeletConfig
    */
   public function setKubeletConfig(NodeKubeletConfig $kubeletConfig)
   {
@@ -463,11 +302,7 @@ class UpdateNodePoolRequest extends \Google\Collection
     return $this->kubeletConfig;
   }
   /**
-   * The desired node labels to be applied to all nodes in the node pool. If
-   * this field is not present, the labels will not be changed. Otherwise, the
-   * existing node labels will be *replaced* with the provided labels.
-   *
-   * @param NodeLabels $labels
+   * @param NodeLabels
    */
   public function setLabels(NodeLabels $labels)
   {
@@ -481,9 +316,7 @@ class UpdateNodePoolRequest extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Parameters that can be configured on Linux nodes.
-   *
-   * @param LinuxNodeConfig $linuxNodeConfig
+   * @param LinuxNodeConfig
    */
   public function setLinuxNodeConfig(LinuxNodeConfig $linuxNodeConfig)
   {
@@ -497,20 +330,7 @@ class UpdateNodePoolRequest extends \Google\Collection
     return $this->linuxNodeConfig;
   }
   /**
-   * The desired list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * node pool's nodes should be located. Changing the locations for a node pool
-   * will result in nodes being either created or removed from the node pool,
-   * depending on whether locations are being added or removed. Warning: It is
-   * recommended to update node pool locations in a standalone API call. Do not
-   * combine a location update with changes to other fields (such as `tags`,
-   * `labels`, `taints`, etc.) in the same request. Otherwise, the API performs
-   * a structural modification where changes to other fields will only apply to
-   * newly created nodes and will not be applied to existing nodes in the node
-   * pool. To ensure all nodes are updated consistently, use a separate API call
-   * for location changes.
-   *
-   * @param string[] $locations
+   * @param string[]
    */
   public function setLocations($locations)
   {
@@ -524,9 +344,7 @@ class UpdateNodePoolRequest extends \Google\Collection
     return $this->locations;
   }
   /**
-   * Logging configuration.
-   *
-   * @param NodePoolLoggingConfig $loggingConfig
+   * @param NodePoolLoggingConfig
    */
   public function setLoggingConfig(NodePoolLoggingConfig $loggingConfig)
   {
@@ -540,12 +358,7 @@ class UpdateNodePoolRequest extends \Google\Collection
     return $this->loggingConfig;
   }
   /**
-   * Optional. The desired [Google Compute Engine machine
-   * type](https://cloud.google.com/compute/docs/machine-types) for nodes in the
-   * node pool. Initiates an upgrade operation that migrates the nodes in the
-   * node pool to the specified machine type.
-   *
-   * @param string $machineType
+   * @param string
    */
   public function setMachineType($machineType)
   {
@@ -559,10 +372,7 @@ class UpdateNodePoolRequest extends \Google\Collection
     return $this->machineType;
   }
   /**
-   * The maximum duration for the nodes to exist. If unspecified, the nodes can
-   * exist indefinitely.
-   *
-   * @param string $maxRunDuration
+   * @param string
    */
   public function setMaxRunDuration($maxRunDuration)
   {
@@ -576,10 +386,7 @@ class UpdateNodePoolRequest extends \Google\Collection
     return $this->maxRunDuration;
   }
   /**
-   * The name (project, location, cluster, node pool) of the node pool to
-   * update. Specified in the format `projects/locations/clusters/nodePools`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -593,25 +400,7 @@ class UpdateNodePoolRequest extends \Google\Collection
     return $this->name;
   }
   /**
-   * The desired node drain configuration for nodes in the node pool.
-   *
-   * @param NodeDrainConfig $nodeDrainConfig
-   */
-  public function setNodeDrainConfig(NodeDrainConfig $nodeDrainConfig)
-  {
-    $this->nodeDrainConfig = $nodeDrainConfig;
-  }
-  /**
-   * @return NodeDrainConfig
-   */
-  public function getNodeDrainConfig()
-  {
-    return $this->nodeDrainConfig;
-  }
-  /**
-   * Node network config.
-   *
-   * @param NodeNetworkConfig $nodeNetworkConfig
+   * @param NodeNetworkConfig
    */
   public function setNodeNetworkConfig(NodeNetworkConfig $nodeNetworkConfig)
   {
@@ -625,18 +414,13 @@ class UpdateNodePoolRequest extends \Google\Collection
     return $this->nodeNetworkConfig;
   }
   /**
-   * Deprecated. The name of the node pool to upgrade. This field has been
-   * deprecated and replaced by the name field.
-   *
-   * @deprecated
-   * @param string $nodePoolId
+   * @param string
    */
   public function setNodePoolId($nodePoolId)
   {
     $this->nodePoolId = $nodePoolId;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getNodePoolId()
@@ -644,15 +428,7 @@ class UpdateNodePoolRequest extends \Google\Collection
     return $this->nodePoolId;
   }
   /**
-   * Required. The Kubernetes version to change the nodes to (typically an
-   * upgrade). Users may specify either explicit versions offered by Kubernetes
-   * Engine or version aliases, which have the following behavior: - "latest":
-   * picks the highest valid Kubernetes version - "1.X": picks the highest valid
-   * patch+gke.N patch in the 1.X version - "1.X.Y": picks the highest valid
-   * gke.N patch in the 1.X.Y version - "1.X.Y-gke.N": picks an explicit
-   * Kubernetes version - "-": picks the Kubernetes master version
-   *
-   * @param string $nodeVersion
+   * @param string
    */
   public function setNodeVersion($nodeVersion)
   {
@@ -666,19 +442,13 @@ class UpdateNodePoolRequest extends \Google\Collection
     return $this->nodeVersion;
   }
   /**
-   * Deprecated. The Google Developers Console [project ID or project
-   * number](https://cloud.google.com/resource-manager/docs/creating-managing-
-   * projects). This field has been deprecated and replaced by the name field.
-   *
-   * @deprecated
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {
     $this->projectId = $projectId;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getProjectId()
@@ -686,9 +456,7 @@ class UpdateNodePoolRequest extends \Google\Collection
     return $this->projectId;
   }
   /**
-   * Specifies the configuration of queued provisioning.
-   *
-   * @param QueuedProvisioning $queuedProvisioning
+   * @param QueuedProvisioning
    */
   public function setQueuedProvisioning(QueuedProvisioning $queuedProvisioning)
   {
@@ -702,10 +470,7 @@ class UpdateNodePoolRequest extends \Google\Collection
     return $this->queuedProvisioning;
   }
   /**
-   * The resource labels for the node pool to use to annotate any related Google
-   * Compute Engine resources.
-   *
-   * @param ResourceLabels $resourceLabels
+   * @param ResourceLabels
    */
   public function setResourceLabels(ResourceLabels $resourceLabels)
   {
@@ -719,11 +484,7 @@ class UpdateNodePoolRequest extends \Google\Collection
     return $this->resourceLabels;
   }
   /**
-   * Desired resource manager tag keys and values to be attached to the nodes
-   * for managing Compute Engine firewalls using Network Firewall Policies.
-   * Existing tags will be replaced with new values.
-   *
-   * @param ResourceManagerTags $resourceManagerTags
+   * @param ResourceManagerTags
    */
   public function setResourceManagerTags(ResourceManagerTags $resourceManagerTags)
   {
@@ -737,10 +498,7 @@ class UpdateNodePoolRequest extends \Google\Collection
     return $this->resourceManagerTags;
   }
   /**
-   * List of Storage Pools where boot disks are provisioned. Existing Storage
-   * Pools will be replaced with storage-pools.
-   *
-   * @param string[] $storagePools
+   * @param string[]
    */
   public function setStoragePools($storagePools)
   {
@@ -754,11 +512,7 @@ class UpdateNodePoolRequest extends \Google\Collection
     return $this->storagePools;
   }
   /**
-   * The desired network tags to be applied to all nodes in the node pool. If
-   * this field is not present, the tags will not be changed. Otherwise, the
-   * existing network tags will be *replaced* with the provided tags.
-   *
-   * @param NetworkTags $tags
+   * @param NetworkTags
    */
   public function setTags(NetworkTags $tags)
   {
@@ -772,11 +526,7 @@ class UpdateNodePoolRequest extends \Google\Collection
     return $this->tags;
   }
   /**
-   * The desired node taints to be applied to all nodes in the node pool. If
-   * this field is not present, the taints will not be changed. Otherwise, the
-   * existing node taints will be *replaced* with the provided taints.
-   *
-   * @param NodeTaints $taints
+   * @param NodeTaints
    */
   public function setTaints(NodeTaints $taints)
   {
@@ -790,9 +540,7 @@ class UpdateNodePoolRequest extends \Google\Collection
     return $this->taints;
   }
   /**
-   * Upgrade settings control disruption and speed of the upgrade.
-   *
-   * @param UpgradeSettings $upgradeSettings
+   * @param UpgradeSettings
    */
   public function setUpgradeSettings(UpgradeSettings $upgradeSettings)
   {
@@ -806,9 +554,7 @@ class UpdateNodePoolRequest extends \Google\Collection
     return $this->upgradeSettings;
   }
   /**
-   * Parameters that can be configured on Windows nodes.
-   *
-   * @param WindowsNodeConfig $windowsNodeConfig
+   * @param WindowsNodeConfig
    */
   public function setWindowsNodeConfig(WindowsNodeConfig $windowsNodeConfig)
   {
@@ -822,9 +568,7 @@ class UpdateNodePoolRequest extends \Google\Collection
     return $this->windowsNodeConfig;
   }
   /**
-   * The desired workload metadata config for the node pool.
-   *
-   * @param WorkloadMetadataConfig $workloadMetadataConfig
+   * @param WorkloadMetadataConfig
    */
   public function setWorkloadMetadataConfig(WorkloadMetadataConfig $workloadMetadataConfig)
   {
@@ -838,20 +582,13 @@ class UpdateNodePoolRequest extends \Google\Collection
     return $this->workloadMetadataConfig;
   }
   /**
-   * Deprecated. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-   * cluster resides. This field has been deprecated and replaced by the name
-   * field.
-   *
-   * @deprecated
-   * @param string $zone
+   * @param string
    */
   public function setZone($zone)
   {
     $this->zone = $zone;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getZone()

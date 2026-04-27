@@ -20,16 +20,12 @@ namespace Google\Service\DriveActivity;
 class Text extends \Google\Model
 {
   /**
-   * Value of Text Field.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Value of Text Field.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

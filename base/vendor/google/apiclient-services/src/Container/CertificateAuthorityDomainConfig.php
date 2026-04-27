@@ -21,10 +21,6 @@ class CertificateAuthorityDomainConfig extends \Google\Collection
 {
   protected $collection_key = 'fqdns';
   /**
-   * List of fully qualified domain names (FQDN). Specifying port is supported.
-   * Wildcards are NOT supported. Examples: - `my.customdomain.com` -
-   * `10.0.1.2:5000`
-   *
    * @var string[]
    */
   public $fqdns;
@@ -32,11 +28,7 @@ class CertificateAuthorityDomainConfig extends \Google\Collection
   protected $gcpSecretManagerCertificateConfigDataType = '';
 
   /**
-   * List of fully qualified domain names (FQDN). Specifying port is supported.
-   * Wildcards are NOT supported. Examples: - `my.customdomain.com` -
-   * `10.0.1.2:5000`
-   *
-   * @param string[] $fqdns
+   * @param string[]
    */
   public function setFqdns($fqdns)
   {
@@ -50,9 +42,7 @@ class CertificateAuthorityDomainConfig extends \Google\Collection
     return $this->fqdns;
   }
   /**
-   * Secret Manager certificate configuration.
-   *
-   * @param GCPSecretManagerCertificateConfig $gcpSecretManagerCertificateConfig
+   * @param GCPSecretManagerCertificateConfig
    */
   public function setGcpSecretManagerCertificateConfig(GCPSecretManagerCertificateConfig $gcpSecretManagerCertificateConfig)
   {

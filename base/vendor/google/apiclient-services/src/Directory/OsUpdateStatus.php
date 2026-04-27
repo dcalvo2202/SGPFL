@@ -20,66 +20,32 @@ namespace Google\Service\Directory;
 class OsUpdateStatus extends \Google\Model
 {
   /**
-   * The update state is unspecified.
-   */
-  public const STATE_updateStateUnspecified = 'updateStateUnspecified';
-  /**
-   * There is an update pending but it hasn't started.
-   */
-  public const STATE_updateStateNotStarted = 'updateStateNotStarted';
-  /**
-   * The pending update is being downloaded.
-   */
-  public const STATE_updateStateDownloadInProgress = 'updateStateDownloadInProgress';
-  /**
-   * The device is ready to install the update, but must reboot.
-   */
-  public const STATE_updateStateNeedReboot = 'updateStateNeedReboot';
-  /**
-   * Date and time of the last reboot.
-   *
    * @var string
    */
   public $rebootTime;
   /**
-   * The update state of an OS update.
-   *
    * @var string
    */
   public $state;
   /**
-   * New required platform version from the pending updated kiosk app.
-   *
    * @var string
    */
   public $targetKioskAppVersion;
   /**
-   * New platform version of the OS image being downloaded and applied. It is
-   * only set when update status is UPDATE_STATUS_DOWNLOAD_IN_PROGRESS or
-   * UPDATE_STATUS_NEED_REBOOT. Note this could be a dummy "0.0.0.0" for
-   * UPDATE_STATUS_NEED_REBOOT for some edge cases, e.g. update engine is
-   * restarted without a reboot.
-   *
    * @var string
    */
   public $targetOsVersion;
   /**
-   * Date and time of the last update check.
-   *
    * @var string
    */
   public $updateCheckTime;
   /**
-   * Date and time of the last successful OS update.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Date and time of the last reboot.
-   *
-   * @param string $rebootTime
+   * @param string
    */
   public function setRebootTime($rebootTime)
   {
@@ -93,28 +59,21 @@ class OsUpdateStatus extends \Google\Model
     return $this->rebootTime;
   }
   /**
-   * The update state of an OS update.
-   *
-   * Accepted values: updateStateUnspecified, updateStateNotStarted,
-   * updateStateDownloadInProgress, updateStateNeedReboot
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * New required platform version from the pending updated kiosk app.
-   *
-   * @param string $targetKioskAppVersion
+   * @param string
    */
   public function setTargetKioskAppVersion($targetKioskAppVersion)
   {
@@ -128,13 +87,7 @@ class OsUpdateStatus extends \Google\Model
     return $this->targetKioskAppVersion;
   }
   /**
-   * New platform version of the OS image being downloaded and applied. It is
-   * only set when update status is UPDATE_STATUS_DOWNLOAD_IN_PROGRESS or
-   * UPDATE_STATUS_NEED_REBOOT. Note this could be a dummy "0.0.0.0" for
-   * UPDATE_STATUS_NEED_REBOOT for some edge cases, e.g. update engine is
-   * restarted without a reboot.
-   *
-   * @param string $targetOsVersion
+   * @param string
    */
   public function setTargetOsVersion($targetOsVersion)
   {
@@ -148,9 +101,7 @@ class OsUpdateStatus extends \Google\Model
     return $this->targetOsVersion;
   }
   /**
-   * Date and time of the last update check.
-   *
-   * @param string $updateCheckTime
+   * @param string
    */
   public function setUpdateCheckTime($updateCheckTime)
   {
@@ -164,9 +115,7 @@ class OsUpdateStatus extends \Google\Model
     return $this->updateCheckTime;
   }
   /**
-   * Date and time of the last successful OS update.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

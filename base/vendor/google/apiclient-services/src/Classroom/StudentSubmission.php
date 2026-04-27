@@ -19,121 +19,44 @@ namespace Google\Service\Classroom;
 
 class StudentSubmission extends \Google\Collection
 {
-  /**
-   * No work type specified. This is never returned.
-   */
-  public const COURSE_WORK_TYPE_COURSE_WORK_TYPE_UNSPECIFIED = 'COURSE_WORK_TYPE_UNSPECIFIED';
-  /**
-   * An assignment.
-   */
-  public const COURSE_WORK_TYPE_ASSIGNMENT = 'ASSIGNMENT';
-  /**
-   * A short answer question.
-   */
-  public const COURSE_WORK_TYPE_SHORT_ANSWER_QUESTION = 'SHORT_ANSWER_QUESTION';
-  /**
-   * A multiple-choice question.
-   */
-  public const COURSE_WORK_TYPE_MULTIPLE_CHOICE_QUESTION = 'MULTIPLE_CHOICE_QUESTION';
-  /**
-   * No state specified. This should never be returned.
-   */
-  public const STATE_SUBMISSION_STATE_UNSPECIFIED = 'SUBMISSION_STATE_UNSPECIFIED';
-  /**
-   * The student has never accessed this submission. Attachments are not
-   * returned and timestamps is not set.
-   */
-  public const STATE_NEW = 'NEW';
-  /**
-   * Has been created.
-   */
-  public const STATE_CREATED = 'CREATED';
-  /**
-   * Has been turned in to the teacher.
-   */
-  public const STATE_TURNED_IN = 'TURNED_IN';
-  /**
-   * Has been returned to the student.
-   */
-  public const STATE_RETURNED = 'RETURNED';
-  /**
-   * Student chose to "unsubmit" the assignment.
-   */
-  public const STATE_RECLAIMED_BY_STUDENT = 'RECLAIMED_BY_STUDENT';
   protected $collection_key = 'submissionHistory';
   /**
-   * Absolute link to the submission in the Classroom web UI. Read-only.
-   *
    * @var string
    */
   public $alternateLink;
-  /**
-   * Optional grade. If unset, no grade was set. This value must be non-
-   * negative. Decimal (that is, non-integer) values are allowed, but are
-   * rounded to two decimal places. This may be modified only by course
-   * teachers.
-   *
-   * @var 
-   */
   public $assignedGrade;
   protected $assignedRubricGradesType = RubricGrade::class;
   protected $assignedRubricGradesDataType = 'map';
   protected $assignmentSubmissionType = AssignmentSubmission::class;
   protected $assignmentSubmissionDataType = '';
   /**
-   * Whether this student submission is associated with the Developer Console
-   * project making the request. See CreateCourseWork for more details. Read-
-   * only.
-   *
    * @var bool
    */
   public $associatedWithDeveloper;
   /**
-   * Identifier of the course. Read-only.
-   *
    * @var string
    */
   public $courseId;
   /**
-   * Identifier for the course work this corresponds to. Read-only.
-   *
    * @var string
    */
   public $courseWorkId;
   /**
-   * Type of course work this submission is for. Read-only.
-   *
    * @var string
    */
   public $courseWorkType;
   /**
-   * Creation time of this submission. This may be unset if the student has not
-   * accessed this item. Read-only.
-   *
    * @var string
    */
   public $creationTime;
-  /**
-   * Optional pending grade. If unset, no grade was set. This value must be non-
-   * negative. Decimal (that is, non-integer) values are allowed, but are
-   * rounded to two decimal places. This is only visible to and modifiable by
-   * course teachers.
-   *
-   * @var 
-   */
   public $draftGrade;
   protected $draftRubricGradesType = RubricGrade::class;
   protected $draftRubricGradesDataType = 'map';
   /**
-   * Classroom-assigned Identifier for the student submission. This is unique
-   * among submissions for the relevant course work. Read-only.
-   *
    * @var string
    */
   public $id;
   /**
-   * Whether this submission is late. Read-only.
-   *
    * @var bool
    */
   public $late;
@@ -142,31 +65,22 @@ class StudentSubmission extends \Google\Collection
   protected $shortAnswerSubmissionType = ShortAnswerSubmission::class;
   protected $shortAnswerSubmissionDataType = '';
   /**
-   * State of this submission. Read-only.
-   *
    * @var string
    */
   public $state;
   protected $submissionHistoryType = SubmissionHistory::class;
   protected $submissionHistoryDataType = 'array';
   /**
-   * Last update time of this submission. This may be unset if the student has
-   * not accessed this item. Read-only.
-   *
    * @var string
    */
   public $updateTime;
   /**
-   * Identifier for the student that owns this submission. Read-only.
-   *
    * @var string
    */
   public $userId;
 
   /**
-   * Absolute link to the submission in the Classroom web UI. Read-only.
-   *
-   * @param string $alternateLink
+   * @param string
    */
   public function setAlternateLink($alternateLink)
   {
@@ -188,12 +102,7 @@ class StudentSubmission extends \Google\Collection
     return $this->assignedGrade;
   }
   /**
-   * Assigned rubric grades based on the rubric's Criteria. This map is empty if
-   * there is no rubric attached to this course work or if a rubric is attached,
-   * but no grades have been set on any Criteria. Entries are only populated for
-   * grades that have been set. Key: The rubric's criterion ID. Read-only.
-   *
-   * @param RubricGrade[] $assignedRubricGrades
+   * @param RubricGrade[]
    */
   public function setAssignedRubricGrades($assignedRubricGrades)
   {
@@ -207,10 +116,7 @@ class StudentSubmission extends \Google\Collection
     return $this->assignedRubricGrades;
   }
   /**
-   * Submission content when course_work_type is ASSIGNMENT. Students can modify
-   * this content using ModifyAttachments.
-   *
-   * @param AssignmentSubmission $assignmentSubmission
+   * @param AssignmentSubmission
    */
   public function setAssignmentSubmission(AssignmentSubmission $assignmentSubmission)
   {
@@ -224,11 +130,7 @@ class StudentSubmission extends \Google\Collection
     return $this->assignmentSubmission;
   }
   /**
-   * Whether this student submission is associated with the Developer Console
-   * project making the request. See CreateCourseWork for more details. Read-
-   * only.
-   *
-   * @param bool $associatedWithDeveloper
+   * @param bool
    */
   public function setAssociatedWithDeveloper($associatedWithDeveloper)
   {
@@ -242,9 +144,7 @@ class StudentSubmission extends \Google\Collection
     return $this->associatedWithDeveloper;
   }
   /**
-   * Identifier of the course. Read-only.
-   *
-   * @param string $courseId
+   * @param string
    */
   public function setCourseId($courseId)
   {
@@ -258,9 +158,7 @@ class StudentSubmission extends \Google\Collection
     return $this->courseId;
   }
   /**
-   * Identifier for the course work this corresponds to. Read-only.
-   *
-   * @param string $courseWorkId
+   * @param string
    */
   public function setCourseWorkId($courseWorkId)
   {
@@ -274,29 +172,21 @@ class StudentSubmission extends \Google\Collection
     return $this->courseWorkId;
   }
   /**
-   * Type of course work this submission is for. Read-only.
-   *
-   * Accepted values: COURSE_WORK_TYPE_UNSPECIFIED, ASSIGNMENT,
-   * SHORT_ANSWER_QUESTION, MULTIPLE_CHOICE_QUESTION
-   *
-   * @param self::COURSE_WORK_TYPE_* $courseWorkType
+   * @param string
    */
   public function setCourseWorkType($courseWorkType)
   {
     $this->courseWorkType = $courseWorkType;
   }
   /**
-   * @return self::COURSE_WORK_TYPE_*
+   * @return string
    */
   public function getCourseWorkType()
   {
     return $this->courseWorkType;
   }
   /**
-   * Creation time of this submission. This may be unset if the student has not
-   * accessed this item. Read-only.
-   *
-   * @param string $creationTime
+   * @param string
    */
   public function setCreationTime($creationTime)
   {
@@ -318,12 +208,7 @@ class StudentSubmission extends \Google\Collection
     return $this->draftGrade;
   }
   /**
-   * Pending rubric grades based on the rubric's criteria. This map is empty if
-   * there is no rubric attached to this course work or if a rubric is attached,
-   * but no grades have been set on any criteria. Entries are only populated for
-   * grades that have been set. Key: The rubric's criterion ID. Read-only.
-   *
-   * @param RubricGrade[] $draftRubricGrades
+   * @param RubricGrade[]
    */
   public function setDraftRubricGrades($draftRubricGrades)
   {
@@ -337,10 +222,7 @@ class StudentSubmission extends \Google\Collection
     return $this->draftRubricGrades;
   }
   /**
-   * Classroom-assigned Identifier for the student submission. This is unique
-   * among submissions for the relevant course work. Read-only.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -354,9 +236,7 @@ class StudentSubmission extends \Google\Collection
     return $this->id;
   }
   /**
-   * Whether this submission is late. Read-only.
-   *
-   * @param bool $late
+   * @param bool
    */
   public function setLate($late)
   {
@@ -370,9 +250,7 @@ class StudentSubmission extends \Google\Collection
     return $this->late;
   }
   /**
-   * Submission content when course_work_type is MULTIPLE_CHOICE_QUESTION.
-   *
-   * @param MultipleChoiceSubmission $multipleChoiceSubmission
+   * @param MultipleChoiceSubmission
    */
   public function setMultipleChoiceSubmission(MultipleChoiceSubmission $multipleChoiceSubmission)
   {
@@ -386,9 +264,7 @@ class StudentSubmission extends \Google\Collection
     return $this->multipleChoiceSubmission;
   }
   /**
-   * Submission content when course_work_type is SHORT_ANSWER_QUESTION.
-   *
-   * @param ShortAnswerSubmission $shortAnswerSubmission
+   * @param ShortAnswerSubmission
    */
   public function setShortAnswerSubmission(ShortAnswerSubmission $shortAnswerSubmission)
   {
@@ -402,29 +278,21 @@ class StudentSubmission extends \Google\Collection
     return $this->shortAnswerSubmission;
   }
   /**
-   * State of this submission. Read-only.
-   *
-   * Accepted values: SUBMISSION_STATE_UNSPECIFIED, NEW, CREATED, TURNED_IN,
-   * RETURNED, RECLAIMED_BY_STUDENT
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * The history of the submission (includes state and grade histories). Read-
-   * only.
-   *
-   * @param SubmissionHistory[] $submissionHistory
+   * @param SubmissionHistory[]
    */
   public function setSubmissionHistory($submissionHistory)
   {
@@ -438,10 +306,7 @@ class StudentSubmission extends \Google\Collection
     return $this->submissionHistory;
   }
   /**
-   * Last update time of this submission. This may be unset if the student has
-   * not accessed this item. Read-only.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -455,9 +320,7 @@ class StudentSubmission extends \Google\Collection
     return $this->updateTime;
   }
   /**
-   * Identifier for the student that owns this submission. Read-only.
-   *
-   * @param string $userId
+   * @param string
    */
   public function setUserId($userId)
   {

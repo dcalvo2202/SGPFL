@@ -24,9 +24,7 @@ class GoogleCloudAiplatformV1SchemaPromptSpecPartList extends \Google\Collection
   protected $partsDataType = 'array';
 
   /**
-   * A list of elements that can be part of a prompt.
-   *
-   * @param GoogleCloudAiplatformV1Part[] $parts
+   * @param GoogleCloudAiplatformV1Part[]
    */
   public function setParts($parts)
   {

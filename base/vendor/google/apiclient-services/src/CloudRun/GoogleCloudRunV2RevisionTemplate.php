@@ -19,151 +19,64 @@ namespace Google\Service\CloudRun;
 
 class GoogleCloudRunV2RevisionTemplate extends \Google\Collection
 {
-  /**
-   * Unspecified
-   */
-  public const ENCRYPTION_KEY_REVOCATION_ACTION_ENCRYPTION_KEY_REVOCATION_ACTION_UNSPECIFIED = 'ENCRYPTION_KEY_REVOCATION_ACTION_UNSPECIFIED';
-  /**
-   * Prevents the creation of new instances.
-   */
-  public const ENCRYPTION_KEY_REVOCATION_ACTION_PREVENT_NEW = 'PREVENT_NEW';
-  /**
-   * Shuts down existing instances, and prevents creation of new ones.
-   */
-  public const ENCRYPTION_KEY_REVOCATION_ACTION_SHUTDOWN = 'SHUTDOWN';
-  /**
-   * Unspecified
-   */
-  public const EXECUTION_ENVIRONMENT_EXECUTION_ENVIRONMENT_UNSPECIFIED = 'EXECUTION_ENVIRONMENT_UNSPECIFIED';
-  /**
-   * Uses the First Generation environment.
-   */
-  public const EXECUTION_ENVIRONMENT_EXECUTION_ENVIRONMENT_GEN1 = 'EXECUTION_ENVIRONMENT_GEN1';
-  /**
-   * Uses Second Generation environment.
-   */
-  public const EXECUTION_ENVIRONMENT_EXECUTION_ENVIRONMENT_GEN2 = 'EXECUTION_ENVIRONMENT_GEN2';
   protected $collection_key = 'volumes';
   /**
-   * Optional. Unstructured key value map that may be set by external tools to
-   * store and arbitrary metadata. They are not queryable and should be
-   * preserved when modifying objects. Cloud Run API v2 does not support
-   * annotations with `run.googleapis.com`, `cloud.googleapis.com`,
-   * `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they
-   * will be rejected. All system annotations in v1 now have a corresponding
-   * field in v2 RevisionTemplate. This field follows Kubernetes annotations'
-   * namespacing, limits, and rules.
-   *
    * @var string[]
    */
   public $annotations;
-  /**
-   * Optional. Arbitrary identifier for the API client.
-   *
-   * @var string
-   */
-  public $client;
-  /**
-   * Optional. Arbitrary version identifier for the API client.
-   *
-   * @var string
-   */
-  public $clientVersion;
   protected $containersType = GoogleCloudRunV2Container::class;
   protected $containersDataType = 'array';
   /**
-   * A reference to a customer managed encryption key (CMEK) to use to encrypt
-   * this container image. For more information, go to
-   * https://cloud.google.com/run/docs/securing/using-cmek
-   *
    * @var string
    */
   public $encryptionKey;
   /**
-   * Optional. The action to take if the encryption key is revoked.
-   *
    * @var string
    */
   public $encryptionKeyRevocationAction;
   /**
-   * Optional. If encryption_key_revocation_action is SHUTDOWN, the duration
-   * before shutting down all instances. The minimum increment is 1 hour.
-   *
    * @var string
    */
   public $encryptionKeyShutdownDuration;
   /**
-   * Optional. The sandbox environment to host this Revision.
-   *
    * @var string
    */
   public $executionEnvironment;
   /**
-   * Optional. True if GPU zonal redundancy is disabled on this revision.
-   *
    * @var bool
    */
   public $gpuZonalRedundancyDisabled;
   /**
-   * Optional. Disables health checking containers during deployment.
-   *
    * @var bool
    */
   public $healthCheckDisabled;
   /**
-   * Optional. Unstructured key value map that can be used to organize and
-   * categorize objects. User-provided labels are shared with Google's billing
-   * system, so they can be used to filter, or break down billing charges by
-   * team, component, environment, state, etc. For more information, visit
-   * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
-   * https://cloud.google.com/run/docs/configuring/labels. Cloud Run API v2 does
-   * not support labels with `run.googleapis.com`, `cloud.googleapis.com`,
-   * `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they
-   * will be rejected. All system labels in v1 now have a corresponding field in
-   * v2 RevisionTemplate.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Optional. Sets the maximum number of requests that each serving instance
-   * can receive. If not specified or 0, concurrency defaults to 80 when
-   * requested `CPU >= 1` and defaults to 1 when requested `CPU < 1`.
-   *
    * @var int
    */
   public $maxInstanceRequestConcurrency;
   protected $nodeSelectorType = GoogleCloudRunV2NodeSelector::class;
   protected $nodeSelectorDataType = '';
   /**
-   * Optional. The unique name for the revision. If this field is omitted, it
-   * will be automatically generated based on the Service name.
-   *
    * @var string
    */
   public $revision;
   protected $scalingType = GoogleCloudRunV2RevisionScaling::class;
   protected $scalingDataType = '';
   /**
-   * Optional. Email address of the IAM service account associated with the
-   * revision of the service. The service account represents the identity of the
-   * running revision, and determines what permissions the revision has. If not
-   * provided, the revision will use the project's default service account.
-   *
    * @var string
    */
   public $serviceAccount;
   protected $serviceMeshType = GoogleCloudRunV2ServiceMesh::class;
   protected $serviceMeshDataType = '';
   /**
-   * Optional. Enable session affinity.
-   *
    * @var bool
    */
   public $sessionAffinity;
   /**
-   * Optional. Max allowed time for an instance to respond to a request.
-   *
    * @var string
    */
   public $timeout;
@@ -173,16 +86,7 @@ class GoogleCloudRunV2RevisionTemplate extends \Google\Collection
   protected $vpcAccessDataType = '';
 
   /**
-   * Optional. Unstructured key value map that may be set by external tools to
-   * store and arbitrary metadata. They are not queryable and should be
-   * preserved when modifying objects. Cloud Run API v2 does not support
-   * annotations with `run.googleapis.com`, `cloud.googleapis.com`,
-   * `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they
-   * will be rejected. All system annotations in v1 now have a corresponding
-   * field in v2 RevisionTemplate. This field follows Kubernetes annotations'
-   * namespacing, limits, and rules.
-   *
-   * @param string[] $annotations
+   * @param string[]
    */
   public function setAnnotations($annotations)
   {
@@ -196,41 +100,7 @@ class GoogleCloudRunV2RevisionTemplate extends \Google\Collection
     return $this->annotations;
   }
   /**
-   * Optional. Arbitrary identifier for the API client.
-   *
-   * @param string $client
-   */
-  public function setClient($client)
-  {
-    $this->client = $client;
-  }
-  /**
-   * @return string
-   */
-  public function getClient()
-  {
-    return $this->client;
-  }
-  /**
-   * Optional. Arbitrary version identifier for the API client.
-   *
-   * @param string $clientVersion
-   */
-  public function setClientVersion($clientVersion)
-  {
-    $this->clientVersion = $clientVersion;
-  }
-  /**
-   * @return string
-   */
-  public function getClientVersion()
-  {
-    return $this->clientVersion;
-  }
-  /**
-   * Holds the list which define the units of execution for this Revision.
-   *
-   * @param GoogleCloudRunV2Container[] $containers
+   * @param GoogleCloudRunV2Container[]
    */
   public function setContainers($containers)
   {
@@ -244,11 +114,7 @@ class GoogleCloudRunV2RevisionTemplate extends \Google\Collection
     return $this->containers;
   }
   /**
-   * A reference to a customer managed encryption key (CMEK) to use to encrypt
-   * this container image. For more information, go to
-   * https://cloud.google.com/run/docs/securing/using-cmek
-   *
-   * @param string $encryptionKey
+   * @param string
    */
   public function setEncryptionKey($encryptionKey)
   {
@@ -262,29 +128,21 @@ class GoogleCloudRunV2RevisionTemplate extends \Google\Collection
     return $this->encryptionKey;
   }
   /**
-   * Optional. The action to take if the encryption key is revoked.
-   *
-   * Accepted values: ENCRYPTION_KEY_REVOCATION_ACTION_UNSPECIFIED, PREVENT_NEW,
-   * SHUTDOWN
-   *
-   * @param self::ENCRYPTION_KEY_REVOCATION_ACTION_* $encryptionKeyRevocationAction
+   * @param string
    */
   public function setEncryptionKeyRevocationAction($encryptionKeyRevocationAction)
   {
     $this->encryptionKeyRevocationAction = $encryptionKeyRevocationAction;
   }
   /**
-   * @return self::ENCRYPTION_KEY_REVOCATION_ACTION_*
+   * @return string
    */
   public function getEncryptionKeyRevocationAction()
   {
     return $this->encryptionKeyRevocationAction;
   }
   /**
-   * Optional. If encryption_key_revocation_action is SHUTDOWN, the duration
-   * before shutting down all instances. The minimum increment is 1 hour.
-   *
-   * @param string $encryptionKeyShutdownDuration
+   * @param string
    */
   public function setEncryptionKeyShutdownDuration($encryptionKeyShutdownDuration)
   {
@@ -298,28 +156,21 @@ class GoogleCloudRunV2RevisionTemplate extends \Google\Collection
     return $this->encryptionKeyShutdownDuration;
   }
   /**
-   * Optional. The sandbox environment to host this Revision.
-   *
-   * Accepted values: EXECUTION_ENVIRONMENT_UNSPECIFIED,
-   * EXECUTION_ENVIRONMENT_GEN1, EXECUTION_ENVIRONMENT_GEN2
-   *
-   * @param self::EXECUTION_ENVIRONMENT_* $executionEnvironment
+   * @param string
    */
   public function setExecutionEnvironment($executionEnvironment)
   {
     $this->executionEnvironment = $executionEnvironment;
   }
   /**
-   * @return self::EXECUTION_ENVIRONMENT_*
+   * @return string
    */
   public function getExecutionEnvironment()
   {
     return $this->executionEnvironment;
   }
   /**
-   * Optional. True if GPU zonal redundancy is disabled on this revision.
-   *
-   * @param bool $gpuZonalRedundancyDisabled
+   * @param bool
    */
   public function setGpuZonalRedundancyDisabled($gpuZonalRedundancyDisabled)
   {
@@ -333,9 +184,7 @@ class GoogleCloudRunV2RevisionTemplate extends \Google\Collection
     return $this->gpuZonalRedundancyDisabled;
   }
   /**
-   * Optional. Disables health checking containers during deployment.
-   *
-   * @param bool $healthCheckDisabled
+   * @param bool
    */
   public function setHealthCheckDisabled($healthCheckDisabled)
   {
@@ -349,18 +198,7 @@ class GoogleCloudRunV2RevisionTemplate extends \Google\Collection
     return $this->healthCheckDisabled;
   }
   /**
-   * Optional. Unstructured key value map that can be used to organize and
-   * categorize objects. User-provided labels are shared with Google's billing
-   * system, so they can be used to filter, or break down billing charges by
-   * team, component, environment, state, etc. For more information, visit
-   * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
-   * https://cloud.google.com/run/docs/configuring/labels. Cloud Run API v2 does
-   * not support labels with `run.googleapis.com`, `cloud.googleapis.com`,
-   * `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they
-   * will be rejected. All system labels in v1 now have a corresponding field in
-   * v2 RevisionTemplate.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -374,11 +212,7 @@ class GoogleCloudRunV2RevisionTemplate extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Optional. Sets the maximum number of requests that each serving instance
-   * can receive. If not specified or 0, concurrency defaults to 80 when
-   * requested `CPU >= 1` and defaults to 1 when requested `CPU < 1`.
-   *
-   * @param int $maxInstanceRequestConcurrency
+   * @param int
    */
   public function setMaxInstanceRequestConcurrency($maxInstanceRequestConcurrency)
   {
@@ -392,9 +226,7 @@ class GoogleCloudRunV2RevisionTemplate extends \Google\Collection
     return $this->maxInstanceRequestConcurrency;
   }
   /**
-   * Optional. The node selector for the revision template.
-   *
-   * @param GoogleCloudRunV2NodeSelector $nodeSelector
+   * @param GoogleCloudRunV2NodeSelector
    */
   public function setNodeSelector(GoogleCloudRunV2NodeSelector $nodeSelector)
   {
@@ -408,10 +240,7 @@ class GoogleCloudRunV2RevisionTemplate extends \Google\Collection
     return $this->nodeSelector;
   }
   /**
-   * Optional. The unique name for the revision. If this field is omitted, it
-   * will be automatically generated based on the Service name.
-   *
-   * @param string $revision
+   * @param string
    */
   public function setRevision($revision)
   {
@@ -425,9 +254,7 @@ class GoogleCloudRunV2RevisionTemplate extends \Google\Collection
     return $this->revision;
   }
   /**
-   * Optional. Scaling settings for this Revision.
-   *
-   * @param GoogleCloudRunV2RevisionScaling $scaling
+   * @param GoogleCloudRunV2RevisionScaling
    */
   public function setScaling(GoogleCloudRunV2RevisionScaling $scaling)
   {
@@ -441,12 +268,7 @@ class GoogleCloudRunV2RevisionTemplate extends \Google\Collection
     return $this->scaling;
   }
   /**
-   * Optional. Email address of the IAM service account associated with the
-   * revision of the service. The service account represents the identity of the
-   * running revision, and determines what permissions the revision has. If not
-   * provided, the revision will use the project's default service account.
-   *
-   * @param string $serviceAccount
+   * @param string
    */
   public function setServiceAccount($serviceAccount)
   {
@@ -460,9 +282,7 @@ class GoogleCloudRunV2RevisionTemplate extends \Google\Collection
     return $this->serviceAccount;
   }
   /**
-   * Optional. Enables service mesh connectivity.
-   *
-   * @param GoogleCloudRunV2ServiceMesh $serviceMesh
+   * @param GoogleCloudRunV2ServiceMesh
    */
   public function setServiceMesh(GoogleCloudRunV2ServiceMesh $serviceMesh)
   {
@@ -476,9 +296,7 @@ class GoogleCloudRunV2RevisionTemplate extends \Google\Collection
     return $this->serviceMesh;
   }
   /**
-   * Optional. Enable session affinity.
-   *
-   * @param bool $sessionAffinity
+   * @param bool
    */
   public function setSessionAffinity($sessionAffinity)
   {
@@ -492,9 +310,7 @@ class GoogleCloudRunV2RevisionTemplate extends \Google\Collection
     return $this->sessionAffinity;
   }
   /**
-   * Optional. Max allowed time for an instance to respond to a request.
-   *
-   * @param string $timeout
+   * @param string
    */
   public function setTimeout($timeout)
   {
@@ -508,9 +324,7 @@ class GoogleCloudRunV2RevisionTemplate extends \Google\Collection
     return $this->timeout;
   }
   /**
-   * Optional. A list of Volumes to make available to containers.
-   *
-   * @param GoogleCloudRunV2Volume[] $volumes
+   * @param GoogleCloudRunV2Volume[]
    */
   public function setVolumes($volumes)
   {
@@ -524,11 +338,7 @@ class GoogleCloudRunV2RevisionTemplate extends \Google\Collection
     return $this->volumes;
   }
   /**
-   * Optional. VPC Access configuration to use for this Revision. For more
-   * information, visit
-   * https://cloud.google.com/run/docs/configuring/connecting-vpc.
-   *
-   * @param GoogleCloudRunV2VpcAccess $vpcAccess
+   * @param GoogleCloudRunV2VpcAccess
    */
   public function setVpcAccess(GoogleCloudRunV2VpcAccess $vpcAccess)
   {

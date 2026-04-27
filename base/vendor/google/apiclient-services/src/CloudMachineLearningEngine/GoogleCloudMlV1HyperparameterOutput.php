@@ -19,102 +19,44 @@ namespace Google\Service\CloudMachineLearningEngine;
 
 class GoogleCloudMlV1HyperparameterOutput extends \Google\Collection
 {
-  /**
-   * The job state is unspecified.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The job has been just created and processing has not yet begun.
-   */
-  public const STATE_QUEUED = 'QUEUED';
-  /**
-   * The service is preparing to run the job.
-   */
-  public const STATE_PREPARING = 'PREPARING';
-  /**
-   * The job is in progress.
-   */
-  public const STATE_RUNNING = 'RUNNING';
-  /**
-   * The job completed successfully.
-   */
-  public const STATE_SUCCEEDED = 'SUCCEEDED';
-  /**
-   * The job failed. `error_message` should contain the details of the failure.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * The job is being cancelled. `error_message` should describe the reason for
-   * the cancellation.
-   */
-  public const STATE_CANCELLING = 'CANCELLING';
-  /**
-   * The job has been cancelled. `error_message` should describe the reason for
-   * the cancellation.
-   */
-  public const STATE_CANCELLED = 'CANCELLED';
   protected $collection_key = 'allMetrics';
   protected $allMetricsType = GoogleCloudMlV1HyperparameterOutputHyperparameterMetric::class;
   protected $allMetricsDataType = 'array';
   protected $builtInAlgorithmOutputType = GoogleCloudMlV1BuiltInAlgorithmOutput::class;
   protected $builtInAlgorithmOutputDataType = '';
   /**
-   * Output only. End time for the trial.
-   *
    * @var string
    */
   public $endTime;
   protected $finalMetricType = GoogleCloudMlV1HyperparameterOutputHyperparameterMetric::class;
   protected $finalMetricDataType = '';
   /**
-   * The hyperparameters given to this trial.
-   *
    * @var string[]
    */
   public $hyperparameters;
   /**
-   * True if the trial is stopped early.
-   *
    * @var bool
    */
   public $isTrialStoppedEarly;
   /**
-   * Output only. Start time for the trial.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * Output only. The detailed state of the trial.
-   *
    * @var string
    */
   public $state;
   /**
-   * The trial id for these results.
-   *
    * @var string
    */
   public $trialId;
   /**
-   * URIs for accessing [interactive shells](https://cloud.google.com/ai-
-   * platform/training/docs/monitor-debug-interactive-shell) (one URI for each
-   * training node). Only available if this trial is part of a hyperparameter
-   * tuning job and the job's training_input.enable_web_access is `true`. The
-   * keys are names of each node in the training job; for example, `master-
-   * replica-0` for the master node, `worker-replica-0` for the first worker,
-   * and `ps-replica-0` for the first parameter server. The values are the URIs
-   * for each node's interactive shell.
-   *
    * @var string[]
    */
   public $webAccessUris;
 
   /**
-   * All recorded object metrics for this trial. This field is not currently
-   * populated.
-   *
-   * @param GoogleCloudMlV1HyperparameterOutputHyperparameterMetric[] $allMetrics
+   * @param GoogleCloudMlV1HyperparameterOutputHyperparameterMetric[]
    */
   public function setAllMetrics($allMetrics)
   {
@@ -128,10 +70,7 @@ class GoogleCloudMlV1HyperparameterOutput extends \Google\Collection
     return $this->allMetrics;
   }
   /**
-   * Details related to built-in algorithms jobs. Only set for trials of built-
-   * in algorithms jobs that have succeeded.
-   *
-   * @param GoogleCloudMlV1BuiltInAlgorithmOutput $builtInAlgorithmOutput
+   * @param GoogleCloudMlV1BuiltInAlgorithmOutput
    */
   public function setBuiltInAlgorithmOutput(GoogleCloudMlV1BuiltInAlgorithmOutput $builtInAlgorithmOutput)
   {
@@ -145,9 +84,7 @@ class GoogleCloudMlV1HyperparameterOutput extends \Google\Collection
     return $this->builtInAlgorithmOutput;
   }
   /**
-   * Output only. End time for the trial.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -161,9 +98,7 @@ class GoogleCloudMlV1HyperparameterOutput extends \Google\Collection
     return $this->endTime;
   }
   /**
-   * The final objective metric seen for this trial.
-   *
-   * @param GoogleCloudMlV1HyperparameterOutputHyperparameterMetric $finalMetric
+   * @param GoogleCloudMlV1HyperparameterOutputHyperparameterMetric
    */
   public function setFinalMetric(GoogleCloudMlV1HyperparameterOutputHyperparameterMetric $finalMetric)
   {
@@ -177,9 +112,7 @@ class GoogleCloudMlV1HyperparameterOutput extends \Google\Collection
     return $this->finalMetric;
   }
   /**
-   * The hyperparameters given to this trial.
-   *
-   * @param string[] $hyperparameters
+   * @param string[]
    */
   public function setHyperparameters($hyperparameters)
   {
@@ -193,9 +126,7 @@ class GoogleCloudMlV1HyperparameterOutput extends \Google\Collection
     return $this->hyperparameters;
   }
   /**
-   * True if the trial is stopped early.
-   *
-   * @param bool $isTrialStoppedEarly
+   * @param bool
    */
   public function setIsTrialStoppedEarly($isTrialStoppedEarly)
   {
@@ -209,9 +140,7 @@ class GoogleCloudMlV1HyperparameterOutput extends \Google\Collection
     return $this->isTrialStoppedEarly;
   }
   /**
-   * Output only. Start time for the trial.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -225,28 +154,21 @@ class GoogleCloudMlV1HyperparameterOutput extends \Google\Collection
     return $this->startTime;
   }
   /**
-   * Output only. The detailed state of the trial.
-   *
-   * Accepted values: STATE_UNSPECIFIED, QUEUED, PREPARING, RUNNING, SUCCEEDED,
-   * FAILED, CANCELLING, CANCELLED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * The trial id for these results.
-   *
-   * @param string $trialId
+   * @param string
    */
   public function setTrialId($trialId)
   {
@@ -260,16 +182,7 @@ class GoogleCloudMlV1HyperparameterOutput extends \Google\Collection
     return $this->trialId;
   }
   /**
-   * URIs for accessing [interactive shells](https://cloud.google.com/ai-
-   * platform/training/docs/monitor-debug-interactive-shell) (one URI for each
-   * training node). Only available if this trial is part of a hyperparameter
-   * tuning job and the job's training_input.enable_web_access is `true`. The
-   * keys are names of each node in the training job; for example, `master-
-   * replica-0` for the master node, `worker-replica-0` for the first worker,
-   * and `ps-replica-0` for the first parameter server. The values are the URIs
-   * for each node's interactive shell.
-   *
-   * @param string[] $webAccessUris
+   * @param string[]
    */
   public function setWebAccessUris($webAccessUris)
   {

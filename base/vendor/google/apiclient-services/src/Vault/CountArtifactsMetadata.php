@@ -20,30 +20,22 @@ namespace Google\Service\Vault;
 class CountArtifactsMetadata extends \Google\Model
 {
   /**
-   * End time of count operation. Available when operation is done.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * The matter ID of the associated matter.
-   *
    * @var string
    */
   public $matterId;
   protected $queryType = Query::class;
   protected $queryDataType = '';
   /**
-   * Creation time of count operation.
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * End time of count operation. Available when operation is done.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -57,9 +49,7 @@ class CountArtifactsMetadata extends \Google\Model
     return $this->endTime;
   }
   /**
-   * The matter ID of the associated matter.
-   *
-   * @param string $matterId
+   * @param string
    */
   public function setMatterId($matterId)
   {
@@ -73,9 +63,7 @@ class CountArtifactsMetadata extends \Google\Model
     return $this->matterId;
   }
   /**
-   * The search query from the request.
-   *
-   * @param Query $query
+   * @param Query
    */
   public function setQuery(Query $query)
   {
@@ -89,9 +77,7 @@ class CountArtifactsMetadata extends \Google\Model
     return $this->query;
   }
   /**
-   * Creation time of count operation.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

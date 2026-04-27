@@ -34,9 +34,7 @@ class Categories extends \Google\Model
   protected $seoDataType = '';
 
   /**
-   * The accessibility category, containing all accessibility related audits.
-   *
-   * @param LighthouseCategoryV5 $accessibility
+   * @param LighthouseCategoryV5
    */
   public function setAccessibility(LighthouseCategoryV5 $accessibility)
   {
@@ -50,9 +48,7 @@ class Categories extends \Google\Model
     return $this->accessibility;
   }
   /**
-   * The best practices category, containing all best practices related audits.
-   *
-   * @param LighthouseCategoryV5 $bestPractices
+   * @param LighthouseCategoryV5
    */
   public function setBestPractices(LighthouseCategoryV5 $bestPractices)
   {
@@ -66,9 +62,7 @@ class Categories extends \Google\Model
     return $this->bestPractices;
   }
   /**
-   * The performance category, containing all performance related audits.
-   *
-   * @param LighthouseCategoryV5 $performance
+   * @param LighthouseCategoryV5
    */
   public function setPerformance(LighthouseCategoryV5 $performance)
   {
@@ -82,18 +76,13 @@ class Categories extends \Google\Model
     return $this->performance;
   }
   /**
-   * The Progressive-Web-App (PWA) category, containing all pwa related audits.
-   * This is deprecated in Lighthouse's 12.0 release.
-   *
-   * @deprecated
-   * @param LighthouseCategoryV5 $pwa
+   * @param LighthouseCategoryV5
    */
   public function setPwa(LighthouseCategoryV5 $pwa)
   {
     $this->pwa = $pwa;
   }
   /**
-   * @deprecated
    * @return LighthouseCategoryV5
    */
   public function getPwa()
@@ -101,10 +90,7 @@ class Categories extends \Google\Model
     return $this->pwa;
   }
   /**
-   * The Search-Engine-Optimization (SEO) category, containing all seo related
-   * audits.
-   *
-   * @param LighthouseCategoryV5 $seo
+   * @param LighthouseCategoryV5
    */
   public function setSeo(LighthouseCategoryV5 $seo)
   {

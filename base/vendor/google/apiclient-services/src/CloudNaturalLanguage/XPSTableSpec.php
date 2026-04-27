@@ -22,34 +22,24 @@ class XPSTableSpec extends \Google\Model
   protected $columnSpecsType = XPSColumnSpec::class;
   protected $columnSpecsDataType = 'map';
   /**
-   * The total size of imported data of the table.
-   *
    * @var string
    */
   public $importedDataSizeInBytes;
   /**
-   * The number of rows in the table.
-   *
    * @var string
    */
   public $rowCount;
   /**
-   * The id of the time column.
-   *
    * @var int
    */
   public $timeColumnId;
   /**
-   * The number of valid rows.
-   *
    * @var string
    */
   public $validRowCount;
 
   /**
-   * Mapping from column id to column spec.
-   *
-   * @param XPSColumnSpec[] $columnSpecs
+   * @param XPSColumnSpec[]
    */
   public function setColumnSpecs($columnSpecs)
   {
@@ -63,9 +53,7 @@ class XPSTableSpec extends \Google\Model
     return $this->columnSpecs;
   }
   /**
-   * The total size of imported data of the table.
-   *
-   * @param string $importedDataSizeInBytes
+   * @param string
    */
   public function setImportedDataSizeInBytes($importedDataSizeInBytes)
   {
@@ -79,9 +67,7 @@ class XPSTableSpec extends \Google\Model
     return $this->importedDataSizeInBytes;
   }
   /**
-   * The number of rows in the table.
-   *
-   * @param string $rowCount
+   * @param string
    */
   public function setRowCount($rowCount)
   {
@@ -95,9 +81,7 @@ class XPSTableSpec extends \Google\Model
     return $this->rowCount;
   }
   /**
-   * The id of the time column.
-   *
-   * @param int $timeColumnId
+   * @param int
    */
   public function setTimeColumnId($timeColumnId)
   {
@@ -111,9 +95,7 @@ class XPSTableSpec extends \Google\Model
     return $this->timeColumnId;
   }
   /**
-   * The number of valid rows.
-   *
-   * @param string $validRowCount
+   * @param string
    */
   public function setValidRowCount($validRowCount)
   {

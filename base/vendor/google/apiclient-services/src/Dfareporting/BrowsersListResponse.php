@@ -23,17 +23,12 @@ class BrowsersListResponse extends \Google\Collection
   protected $browsersType = Browser::class;
   protected $browsersDataType = 'array';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#browsersListResponse".
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * Browser collection.
-   *
-   * @param Browser[] $browsers
+   * @param Browser[]
    */
   public function setBrowsers($browsers)
   {
@@ -47,10 +42,7 @@ class BrowsersListResponse extends \Google\Collection
     return $this->browsers;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#browsersListResponse".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

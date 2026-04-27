@@ -23,24 +23,16 @@ class LiveChatMessageListResponse extends \Google\Collection
   protected $activePollItemType = LiveChatMessage::class;
   protected $activePollItemDataType = '';
   /**
-   * Etag of this resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Serialized EventId of the request which produced this response.
-   *
-   * @deprecated
    * @var string
    */
   public $eventId;
   protected $itemsType = LiveChatMessage::class;
   protected $itemsDataType = 'array';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "youtube#liveChatMessageListResponse".
-   *
    * @var string
    */
   public $kind;
@@ -49,33 +41,24 @@ class LiveChatMessageListResponse extends \Google\Collection
    */
   public $nextPageToken;
   /**
-   * The date and time when the underlying stream went offline.
-   *
    * @var string
    */
   public $offlineAt;
   protected $pageInfoType = PageInfo::class;
   protected $pageInfoDataType = '';
   /**
-   * The amount of time the client should wait before polling again.
-   *
    * @var string
    */
   public $pollingIntervalMillis;
   protected $tokenPaginationType = TokenPagination::class;
   protected $tokenPaginationDataType = '';
   /**
-   * The visitorId identifies the visitor.
-   *
-   * @deprecated
    * @var string
    */
   public $visitorId;
 
   /**
-   * Set when there is an active poll.
-   *
-   * @param LiveChatMessage $activePollItem
+   * @param LiveChatMessage
    */
   public function setActivePollItem(LiveChatMessage $activePollItem)
   {
@@ -89,9 +72,7 @@ class LiveChatMessageListResponse extends \Google\Collection
     return $this->activePollItem;
   }
   /**
-   * Etag of this resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -105,17 +86,13 @@ class LiveChatMessageListResponse extends \Google\Collection
     return $this->etag;
   }
   /**
-   * Serialized EventId of the request which produced this response.
-   *
-   * @deprecated
-   * @param string $eventId
+   * @param string
    */
   public function setEventId($eventId)
   {
     $this->eventId = $eventId;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getEventId()
@@ -123,7 +100,7 @@ class LiveChatMessageListResponse extends \Google\Collection
     return $this->eventId;
   }
   /**
-   * @param LiveChatMessage[] $items
+   * @param LiveChatMessage[]
    */
   public function setItems($items)
   {
@@ -137,10 +114,7 @@ class LiveChatMessageListResponse extends \Google\Collection
     return $this->items;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "youtube#liveChatMessageListResponse".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -154,7 +128,7 @@ class LiveChatMessageListResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -168,9 +142,7 @@ class LiveChatMessageListResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The date and time when the underlying stream went offline.
-   *
-   * @param string $offlineAt
+   * @param string
    */
   public function setOfflineAt($offlineAt)
   {
@@ -184,9 +156,7 @@ class LiveChatMessageListResponse extends \Google\Collection
     return $this->offlineAt;
   }
   /**
-   * General pagination information.
-   *
-   * @param PageInfo $pageInfo
+   * @param PageInfo
    */
   public function setPageInfo(PageInfo $pageInfo)
   {
@@ -200,9 +170,7 @@ class LiveChatMessageListResponse extends \Google\Collection
     return $this->pageInfo;
   }
   /**
-   * The amount of time the client should wait before polling again.
-   *
-   * @param string $pollingIntervalMillis
+   * @param string
    */
   public function setPollingIntervalMillis($pollingIntervalMillis)
   {
@@ -216,15 +184,13 @@ class LiveChatMessageListResponse extends \Google\Collection
     return $this->pollingIntervalMillis;
   }
   /**
-   * @deprecated
-   * @param TokenPagination $tokenPagination
+   * @param TokenPagination
    */
   public function setTokenPagination(TokenPagination $tokenPagination)
   {
     $this->tokenPagination = $tokenPagination;
   }
   /**
-   * @deprecated
    * @return TokenPagination
    */
   public function getTokenPagination()
@@ -232,17 +198,13 @@ class LiveChatMessageListResponse extends \Google\Collection
     return $this->tokenPagination;
   }
   /**
-   * The visitorId identifies the visitor.
-   *
-   * @deprecated
-   * @param string $visitorId
+   * @param string
    */
   public function setVisitorId($visitorId)
   {
     $this->visitorId = $visitorId;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getVisitorId()

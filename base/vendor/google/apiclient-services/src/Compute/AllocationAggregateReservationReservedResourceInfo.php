@@ -23,9 +23,7 @@ class AllocationAggregateReservationReservedResourceInfo extends \Google\Model
   protected $acceleratorDataType = '';
 
   /**
-   * Properties of accelerator resources in this reservation.
-   *
-   * @param AllocationAggregateReservationReservedResourceInfoAccelerator $accelerator
+   * @param AllocationAggregateReservationReservedResourceInfoAccelerator
    */
   public function setAccelerator(AllocationAggregateReservationReservedResourceInfoAccelerator $accelerator)
   {

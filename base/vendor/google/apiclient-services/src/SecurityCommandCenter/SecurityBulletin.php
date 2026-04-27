@@ -20,29 +20,20 @@ namespace Google\Service\SecurityCommandCenter;
 class SecurityBulletin extends \Google\Model
 {
   /**
-   * ID of the bulletin corresponding to the vulnerability.
-   *
    * @var string
    */
   public $bulletinId;
   /**
-   * Submission time of this Security Bulletin.
-   *
    * @var string
    */
   public $submissionTime;
   /**
-   * This represents a version that the cluster receiving this notification
-   * should be upgraded to, based on its current version. For example, 1.15.0
-   *
    * @var string
    */
   public $suggestedUpgradeVersion;
 
   /**
-   * ID of the bulletin corresponding to the vulnerability.
-   *
-   * @param string $bulletinId
+   * @param string
    */
   public function setBulletinId($bulletinId)
   {
@@ -56,9 +47,7 @@ class SecurityBulletin extends \Google\Model
     return $this->bulletinId;
   }
   /**
-   * Submission time of this Security Bulletin.
-   *
-   * @param string $submissionTime
+   * @param string
    */
   public function setSubmissionTime($submissionTime)
   {
@@ -72,10 +61,7 @@ class SecurityBulletin extends \Google\Model
     return $this->submissionTime;
   }
   /**
-   * This represents a version that the cluster receiving this notification
-   * should be upgraded to, based on its current version. For example, 1.15.0
-   *
-   * @param string $suggestedUpgradeVersion
+   * @param string
    */
   public function setSuggestedUpgradeVersion($suggestedUpgradeVersion)
   {

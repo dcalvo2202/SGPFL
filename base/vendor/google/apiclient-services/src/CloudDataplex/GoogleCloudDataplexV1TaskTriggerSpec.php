@@ -20,63 +20,28 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1TaskTriggerSpec extends \Google\Model
 {
   /**
-   * Unspecified trigger type.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * The task runs one-time shortly after Task Creation.
-   */
-  public const TYPE_ON_DEMAND = 'ON_DEMAND';
-  /**
-   * The task is scheduled to run periodically.
-   */
-  public const TYPE_RECURRING = 'RECURRING';
-  /**
-   * Optional. Prevent the task from executing. This does not cancel already
-   * running tasks. It is intended to temporarily disable RECURRING tasks.
-   *
    * @var bool
    */
   public $disabled;
   /**
-   * Optional. Number of retry attempts before aborting. Set to zero to never
-   * attempt to retry a failed task.
-   *
    * @var int
    */
   public $maxRetries;
   /**
-   * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for running
-   * tasks periodically. To explicitly set a timezone to the cron tab, apply a
-   * prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
-   * "TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
-   * from IANA time zone database. For example, CRON_TZ=America/New_York 1 * * *
-   * *, or TZ=America/New_York 1 * * * *. This field is required for RECURRING
-   * tasks.
-   *
    * @var string
    */
   public $schedule;
   /**
-   * Optional. The first run of the task will be after this time. If not
-   * specified, the task will run shortly after being submitted if ON_DEMAND and
-   * based on the schedule if RECURRING.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * Required. Immutable. Trigger type of the user-specified Task.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Optional. Prevent the task from executing. This does not cancel already
-   * running tasks. It is intended to temporarily disable RECURRING tasks.
-   *
-   * @param bool $disabled
+   * @param bool
    */
   public function setDisabled($disabled)
   {
@@ -90,10 +55,7 @@ class GoogleCloudDataplexV1TaskTriggerSpec extends \Google\Model
     return $this->disabled;
   }
   /**
-   * Optional. Number of retry attempts before aborting. Set to zero to never
-   * attempt to retry a failed task.
-   *
-   * @param int $maxRetries
+   * @param int
    */
   public function setMaxRetries($maxRetries)
   {
@@ -107,15 +69,7 @@ class GoogleCloudDataplexV1TaskTriggerSpec extends \Google\Model
     return $this->maxRetries;
   }
   /**
-   * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for running
-   * tasks periodically. To explicitly set a timezone to the cron tab, apply a
-   * prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
-   * "TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
-   * from IANA time zone database. For example, CRON_TZ=America/New_York 1 * * *
-   * *, or TZ=America/New_York 1 * * * *. This field is required for RECURRING
-   * tasks.
-   *
-   * @param string $schedule
+   * @param string
    */
   public function setSchedule($schedule)
   {
@@ -129,11 +83,7 @@ class GoogleCloudDataplexV1TaskTriggerSpec extends \Google\Model
     return $this->schedule;
   }
   /**
-   * Optional. The first run of the task will be after this time. If not
-   * specified, the task will run shortly after being submitted if ON_DEMAND and
-   * based on the schedule if RECURRING.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -147,18 +97,14 @@ class GoogleCloudDataplexV1TaskTriggerSpec extends \Google\Model
     return $this->startTime;
   }
   /**
-   * Required. Immutable. Trigger type of the user-specified Task.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, ON_DEMAND, RECURRING
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

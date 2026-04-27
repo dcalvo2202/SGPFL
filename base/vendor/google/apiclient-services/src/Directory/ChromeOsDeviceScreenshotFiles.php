@@ -20,34 +20,24 @@ namespace Google\Service\Directory;
 class ChromeOsDeviceScreenshotFiles extends \Google\Model
 {
   /**
-   * Date and time the file was created
-   *
    * @var string
    */
   public $createTime;
   /**
-   * File download URL
-   *
    * @var string
    */
   public $downloadUrl;
   /**
-   * File name
-   *
    * @var string
    */
   public $name;
   /**
-   * File type
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Date and time the file was created
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -61,9 +51,7 @@ class ChromeOsDeviceScreenshotFiles extends \Google\Model
     return $this->createTime;
   }
   /**
-   * File download URL
-   *
-   * @param string $downloadUrl
+   * @param string
    */
   public function setDownloadUrl($downloadUrl)
   {
@@ -77,9 +65,7 @@ class ChromeOsDeviceScreenshotFiles extends \Google\Model
     return $this->downloadUrl;
   }
   /**
-   * File name
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -93,9 +79,7 @@ class ChromeOsDeviceScreenshotFiles extends \Google\Model
     return $this->name;
   }
   /**
-   * File type
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

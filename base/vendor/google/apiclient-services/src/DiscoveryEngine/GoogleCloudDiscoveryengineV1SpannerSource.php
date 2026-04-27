@@ -20,45 +20,28 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1SpannerSource extends \Google\Model
 {
   /**
-   * Required. The database ID of the source Spanner table.
-   *
    * @var string
    */
   public $databaseId;
   /**
-   * Whether to apply data boost on Spanner export. Enabling this option will
-   * incur additional cost. More info can be found
-   * [here](https://cloud.google.com/spanner/docs/databoost/databoost-
-   * overview#billing_and_quotas).
-   *
    * @var bool
    */
   public $enableDataBoost;
   /**
-   * Required. The instance ID of the source Spanner table.
-   *
    * @var string
    */
   public $instanceId;
   /**
-   * The project ID that contains the Spanner source. Has a length limit of 128
-   * characters. If not specified, inherits the project ID from the parent
-   * request.
-   *
    * @var string
    */
   public $projectId;
   /**
-   * Required. The table name of the Spanner database that needs to be imported.
-   *
    * @var string
    */
   public $tableId;
 
   /**
-   * Required. The database ID of the source Spanner table.
-   *
-   * @param string $databaseId
+   * @param string
    */
   public function setDatabaseId($databaseId)
   {
@@ -72,12 +55,7 @@ class GoogleCloudDiscoveryengineV1SpannerSource extends \Google\Model
     return $this->databaseId;
   }
   /**
-   * Whether to apply data boost on Spanner export. Enabling this option will
-   * incur additional cost. More info can be found
-   * [here](https://cloud.google.com/spanner/docs/databoost/databoost-
-   * overview#billing_and_quotas).
-   *
-   * @param bool $enableDataBoost
+   * @param bool
    */
   public function setEnableDataBoost($enableDataBoost)
   {
@@ -91,9 +69,7 @@ class GoogleCloudDiscoveryengineV1SpannerSource extends \Google\Model
     return $this->enableDataBoost;
   }
   /**
-   * Required. The instance ID of the source Spanner table.
-   *
-   * @param string $instanceId
+   * @param string
    */
   public function setInstanceId($instanceId)
   {
@@ -107,11 +83,7 @@ class GoogleCloudDiscoveryengineV1SpannerSource extends \Google\Model
     return $this->instanceId;
   }
   /**
-   * The project ID that contains the Spanner source. Has a length limit of 128
-   * characters. If not specified, inherits the project ID from the parent
-   * request.
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {
@@ -125,9 +97,7 @@ class GoogleCloudDiscoveryengineV1SpannerSource extends \Google\Model
     return $this->projectId;
   }
   /**
-   * Required. The table name of the Spanner database that needs to be imported.
-   *
-   * @param string $tableId
+   * @param string
    */
   public function setTableId($tableId)
   {

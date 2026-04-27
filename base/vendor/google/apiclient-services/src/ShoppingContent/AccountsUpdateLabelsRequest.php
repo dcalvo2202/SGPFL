@@ -21,16 +21,12 @@ class AccountsUpdateLabelsRequest extends \Google\Collection
 {
   protected $collection_key = 'labelIds';
   /**
-   * The IDs of labels that should be assigned to the account.
-   *
    * @var string[]
    */
   public $labelIds;
 
   /**
-   * The IDs of labels that should be assigned to the account.
-   *
-   * @param string[] $labelIds
+   * @param string[]
    */
   public function setLabelIds($labelIds)
   {

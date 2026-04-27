@@ -21,23 +21,16 @@ class GoogleCloudApigeeV1Keystore extends \Google\Collection
 {
   protected $collection_key = 'aliases';
   /**
-   * Output only. Aliases in this keystore.
-   *
    * @var string[]
    */
   public $aliases;
   /**
-   * Required. Resource ID for this keystore. Values must match the regular
-   * expression `[\w[:space:].-]{1,255}`.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Output only. Aliases in this keystore.
-   *
-   * @param string[] $aliases
+   * @param string[]
    */
   public function setAliases($aliases)
   {
@@ -51,10 +44,7 @@ class GoogleCloudApigeeV1Keystore extends \Google\Collection
     return $this->aliases;
   }
   /**
-   * Required. Resource ID for this keystore. Values must match the regular
-   * expression `[\w[:space:].-]{1,255}`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

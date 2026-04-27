@@ -20,24 +20,16 @@ namespace Google\Service\ApiKeysService;
 class V2LookupKeyResponse extends \Google\Model
 {
   /**
-   * The resource name of the API key. If the API key has been purged, resource
-   * name is empty.
-   *
    * @var string
    */
   public $name;
   /**
-   * The project that owns the key with the value specified in the request.
-   *
    * @var string
    */
   public $parent;
 
   /**
-   * The resource name of the API key. If the API key has been purged, resource
-   * name is empty.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -51,9 +43,7 @@ class V2LookupKeyResponse extends \Google\Model
     return $this->name;
   }
   /**
-   * The project that owns the key with the value specified in the request.
-   *
-   * @param string $parent
+   * @param string
    */
   public function setParent($parent)
   {

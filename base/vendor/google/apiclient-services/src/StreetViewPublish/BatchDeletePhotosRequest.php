@@ -26,7 +26,7 @@ class BatchDeletePhotosRequest extends \Google\Collection
   public $photoIds;
 
   /**
-   * @param string[] $photoIds
+   * @param string[]
    */
   public function setPhotoIds($photoIds)
   {

@@ -20,67 +20,44 @@ namespace Google\Service\Integrations;
 class GoogleCloudIntegrationsV1alphaSfdcChannel extends \Google\Model
 {
   /**
-   * Required. The Channel topic defined by salesforce once an channel is opened
-   *
    * @var string
    */
   public $channelTopic;
   /**
-   * Output only. Time when the channel is created
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. Time when the channel was deleted. Empty if not deleted.
-   *
    * @var string
    */
   public $deleteTime;
   /**
-   * Optional. The description for this channel
-   *
    * @var string
    */
   public $description;
   /**
-   * Optional. Client level unique name/alias to easily reference a channel.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. Indicated if a channel has any active integrations referencing
-   * it. Set to false when the channel is created, and set to true if there is
-   * any integration published with the channel configured in it.
-   *
    * @var bool
    */
   public $isActive;
   /**
-   * Output only. Last sfdc messsage replay id for channel
-   *
    * @var string
    */
   public $lastReplayId;
   /**
-   * Resource name of the SFDC channel projects/{project}/locations/{location}/s
-   * fdcInstances/{sfdc_instance}/sfdcChannels/{sfdc_channel}.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Time when the channel was last updated
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Required. The Channel topic defined by salesforce once an channel is opened
-   *
-   * @param string $channelTopic
+   * @param string
    */
   public function setChannelTopic($channelTopic)
   {
@@ -94,9 +71,7 @@ class GoogleCloudIntegrationsV1alphaSfdcChannel extends \Google\Model
     return $this->channelTopic;
   }
   /**
-   * Output only. Time when the channel is created
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -110,9 +85,7 @@ class GoogleCloudIntegrationsV1alphaSfdcChannel extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. Time when the channel was deleted. Empty if not deleted.
-   *
-   * @param string $deleteTime
+   * @param string
    */
   public function setDeleteTime($deleteTime)
   {
@@ -126,9 +99,7 @@ class GoogleCloudIntegrationsV1alphaSfdcChannel extends \Google\Model
     return $this->deleteTime;
   }
   /**
-   * Optional. The description for this channel
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -142,9 +113,7 @@ class GoogleCloudIntegrationsV1alphaSfdcChannel extends \Google\Model
     return $this->description;
   }
   /**
-   * Optional. Client level unique name/alias to easily reference a channel.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -158,11 +127,7 @@ class GoogleCloudIntegrationsV1alphaSfdcChannel extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Output only. Indicated if a channel has any active integrations referencing
-   * it. Set to false when the channel is created, and set to true if there is
-   * any integration published with the channel configured in it.
-   *
-   * @param bool $isActive
+   * @param bool
    */
   public function setIsActive($isActive)
   {
@@ -176,9 +141,7 @@ class GoogleCloudIntegrationsV1alphaSfdcChannel extends \Google\Model
     return $this->isActive;
   }
   /**
-   * Output only. Last sfdc messsage replay id for channel
-   *
-   * @param string $lastReplayId
+   * @param string
    */
   public function setLastReplayId($lastReplayId)
   {
@@ -192,10 +155,7 @@ class GoogleCloudIntegrationsV1alphaSfdcChannel extends \Google\Model
     return $this->lastReplayId;
   }
   /**
-   * Resource name of the SFDC channel projects/{project}/locations/{location}/s
-   * fdcInstances/{sfdc_instance}/sfdcChannels/{sfdc_channel}.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -209,9 +169,7 @@ class GoogleCloudIntegrationsV1alphaSfdcChannel extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Time when the channel was last updated
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

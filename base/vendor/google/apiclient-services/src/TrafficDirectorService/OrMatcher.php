@@ -24,7 +24,7 @@ class OrMatcher extends \Google\Collection
   protected $valueMatchersDataType = 'array';
 
   /**
-   * @param ValueMatcher[] $valueMatchers
+   * @param ValueMatcher[]
    */
   public function setValueMatchers($valueMatchers)
   {

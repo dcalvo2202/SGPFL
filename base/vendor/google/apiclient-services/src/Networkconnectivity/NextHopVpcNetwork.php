@@ -20,16 +20,12 @@ namespace Google\Service\Networkconnectivity;
 class NextHopVpcNetwork extends \Google\Model
 {
   /**
-   * The URI of the VPC network resource
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * The URI of the VPC network resource
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

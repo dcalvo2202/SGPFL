@@ -20,28 +20,16 @@ namespace Google\Service\PubsubLite;
 class Reservation extends \Google\Model
 {
   /**
-   * The name of the reservation. Structured like: projects/{project_number}/loc
-   * ations/{location}/reservations/{reservation_id}
-   *
    * @var string
    */
   public $name;
   /**
-   * The reserved throughput capacity. Every unit of throughput capacity is
-   * equivalent to 1 MiB/s of published messages or 2 MiB/s of subscribed
-   * messages. Any topics which are declared as using capacity from a
-   * Reservation will consume resources from this reservation instead of being
-   * charged individually.
-   *
    * @var string
    */
   public $throughputCapacity;
 
   /**
-   * The name of the reservation. Structured like: projects/{project_number}/loc
-   * ations/{location}/reservations/{reservation_id}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -55,13 +43,7 @@ class Reservation extends \Google\Model
     return $this->name;
   }
   /**
-   * The reserved throughput capacity. Every unit of throughput capacity is
-   * equivalent to 1 MiB/s of published messages or 2 MiB/s of subscribed
-   * messages. Any topics which are declared as using capacity from a
-   * Reservation will consume resources from this reservation instead of being
-   * charged individually.
-   *
-   * @param string $throughputCapacity
+   * @param string
    */
   public function setThroughputCapacity($throughputCapacity)
   {

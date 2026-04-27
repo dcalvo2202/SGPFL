@@ -25,23 +25,12 @@ class ExtensionChain extends \Google\Collection
   protected $matchConditionType = ExtensionChainMatchCondition::class;
   protected $matchConditionDataType = '';
   /**
-   * Required. The name for this extension chain. The name is logged as part of
-   * the HTTP request logs. The name must conform with RFC-1034, is restricted
-   * to lower-cased letters, numbers and hyphens, and can have a maximum length
-   * of 63 characters. Additionally, the first character must be a letter and
-   * the last a letter or a number.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Required. A set of extensions to execute for the matching request. At least
-   * one extension is required. Up to 3 extensions can be defined for each
-   * extension chain for `LbTrafficExtension` resource. `LbRouteExtension` and
-   * `LbEdgeExtension` chains are limited to 1 extension per extension chain.
-   *
-   * @param ExtensionChainExtension[] $extensions
+   * @param ExtensionChainExtension[]
    */
   public function setExtensions($extensions)
   {
@@ -55,9 +44,7 @@ class ExtensionChain extends \Google\Collection
     return $this->extensions;
   }
   /**
-   * Required. Conditions under which this chain is invoked for a request.
-   *
-   * @param ExtensionChainMatchCondition $matchCondition
+   * @param ExtensionChainMatchCondition
    */
   public function setMatchCondition(ExtensionChainMatchCondition $matchCondition)
   {
@@ -71,13 +58,7 @@ class ExtensionChain extends \Google\Collection
     return $this->matchCondition;
   }
   /**
-   * Required. The name for this extension chain. The name is logged as part of
-   * the HTTP request logs. The name must conform with RFC-1034, is restricted
-   * to lower-cased letters, numbers and hyphens, and can have a maximum length
-   * of 63 characters. Additionally, the first character must be a letter and
-   * the last a letter or a number.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

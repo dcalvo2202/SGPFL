@@ -337,10 +337,6 @@ class Firebaseappcheck extends \Google\Service
                   'type' => 'string',
                   'required' => true,
                 ],
-                'etag' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
               ],
             ],'get' => [
               'path' => 'v1/{+name}',

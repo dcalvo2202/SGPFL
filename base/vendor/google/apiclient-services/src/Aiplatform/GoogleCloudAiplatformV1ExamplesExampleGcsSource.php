@@ -20,17 +20,6 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1ExamplesExampleGcsSource extends \Google\Model
 {
   /**
-   * Format unspecified, used when unset.
-   */
-  public const DATA_FORMAT_DATA_FORMAT_UNSPECIFIED = 'DATA_FORMAT_UNSPECIFIED';
-  /**
-   * Examples are stored in JSONL files.
-   */
-  public const DATA_FORMAT_JSONL = 'JSONL';
-  /**
-   * The format in which instances are given, if not specified, assume it's
-   * JSONL format. Currently only JSONL format is supported.
-   *
    * @var string
    */
   public $dataFormat;
@@ -38,28 +27,21 @@ class GoogleCloudAiplatformV1ExamplesExampleGcsSource extends \Google\Model
   protected $gcsSourceDataType = '';
 
   /**
-   * The format in which instances are given, if not specified, assume it's
-   * JSONL format. Currently only JSONL format is supported.
-   *
-   * Accepted values: DATA_FORMAT_UNSPECIFIED, JSONL
-   *
-   * @param self::DATA_FORMAT_* $dataFormat
+   * @param string
    */
   public function setDataFormat($dataFormat)
   {
     $this->dataFormat = $dataFormat;
   }
   /**
-   * @return self::DATA_FORMAT_*
+   * @return string
    */
   public function getDataFormat()
   {
     return $this->dataFormat;
   }
   /**
-   * The Cloud Storage location for the input instances.
-   *
-   * @param GoogleCloudAiplatformV1GcsSource $gcsSource
+   * @param GoogleCloudAiplatformV1GcsSource
    */
   public function setGcsSource(GoogleCloudAiplatformV1GcsSource $gcsSource)
   {

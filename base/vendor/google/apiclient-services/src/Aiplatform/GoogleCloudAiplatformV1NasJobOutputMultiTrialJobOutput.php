@@ -26,9 +26,7 @@ class GoogleCloudAiplatformV1NasJobOutputMultiTrialJobOutput extends \Google\Col
   protected $trainTrialsDataType = 'array';
 
   /**
-   * Output only. List of NasTrials that were started as part of search stage.
-   *
-   * @param GoogleCloudAiplatformV1NasTrial[] $searchTrials
+   * @param GoogleCloudAiplatformV1NasTrial[]
    */
   public function setSearchTrials($searchTrials)
   {
@@ -42,9 +40,7 @@ class GoogleCloudAiplatformV1NasJobOutputMultiTrialJobOutput extends \Google\Col
     return $this->searchTrials;
   }
   /**
-   * Output only. List of NasTrials that were started as part of train stage.
-   *
-   * @param GoogleCloudAiplatformV1NasTrial[] $trainTrials
+   * @param GoogleCloudAiplatformV1NasTrial[]
    */
   public function setTrainTrials($trainTrials)
   {

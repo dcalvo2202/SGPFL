@@ -20,58 +20,32 @@ namespace Google\Service\ArtifactRegistry;
 class AptArtifact extends \Google\Model
 {
   /**
-   * Package type is not specified.
-   */
-  public const PACKAGE_TYPE_PACKAGE_TYPE_UNSPECIFIED = 'PACKAGE_TYPE_UNSPECIFIED';
-  /**
-   * Binary package.
-   */
-  public const PACKAGE_TYPE_BINARY = 'BINARY';
-  /**
-   * Source package.
-   */
-  public const PACKAGE_TYPE_SOURCE = 'SOURCE';
-  /**
-   * Output only. Operating system architecture of the artifact.
-   *
    * @var string
    */
   public $architecture;
   /**
-   * Output only. Repository component of the artifact.
-   *
    * @var string
    */
   public $component;
   /**
-   * Output only. Contents of the artifact's control metadata file.
-   *
    * @var string
    */
   public $controlFile;
   /**
-   * Output only. The Artifact Registry resource name of the artifact.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The Apt package name of the artifact.
-   *
    * @var string
    */
   public $packageName;
   /**
-   * Output only. An artifact is a binary or source package.
-   *
    * @var string
    */
   public $packageType;
 
   /**
-   * Output only. Operating system architecture of the artifact.
-   *
-   * @param string $architecture
+   * @param string
    */
   public function setArchitecture($architecture)
   {
@@ -85,9 +59,7 @@ class AptArtifact extends \Google\Model
     return $this->architecture;
   }
   /**
-   * Output only. Repository component of the artifact.
-   *
-   * @param string $component
+   * @param string
    */
   public function setComponent($component)
   {
@@ -101,9 +73,7 @@ class AptArtifact extends \Google\Model
     return $this->component;
   }
   /**
-   * Output only. Contents of the artifact's control metadata file.
-   *
-   * @param string $controlFile
+   * @param string
    */
   public function setControlFile($controlFile)
   {
@@ -117,9 +87,7 @@ class AptArtifact extends \Google\Model
     return $this->controlFile;
   }
   /**
-   * Output only. The Artifact Registry resource name of the artifact.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -133,9 +101,7 @@ class AptArtifact extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The Apt package name of the artifact.
-   *
-   * @param string $packageName
+   * @param string
    */
   public function setPackageName($packageName)
   {
@@ -149,18 +115,14 @@ class AptArtifact extends \Google\Model
     return $this->packageName;
   }
   /**
-   * Output only. An artifact is a binary or source package.
-   *
-   * Accepted values: PACKAGE_TYPE_UNSPECIFIED, BINARY, SOURCE
-   *
-   * @param self::PACKAGE_TYPE_* $packageType
+   * @param string
    */
   public function setPackageType($packageType)
   {
     $this->packageType = $packageType;
   }
   /**
-   * @return self::PACKAGE_TYPE_*
+   * @return string
    */
   public function getPackageType()
   {

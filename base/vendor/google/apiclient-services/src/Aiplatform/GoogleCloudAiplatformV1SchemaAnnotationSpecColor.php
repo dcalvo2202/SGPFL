@@ -22,24 +22,16 @@ class GoogleCloudAiplatformV1SchemaAnnotationSpecColor extends \Google\Model
   protected $colorType = GoogleTypeColor::class;
   protected $colorDataType = '';
   /**
-   * The display name of the AnnotationSpec represented by the color in the
-   * segmentation mask.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * The ID of the AnnotationSpec represented by the color in the segmentation
-   * mask.
-   *
    * @var string
    */
   public $id;
 
   /**
-   * The color of the AnnotationSpec in a segmentation mask.
-   *
-   * @param GoogleTypeColor $color
+   * @param GoogleTypeColor
    */
   public function setColor(GoogleTypeColor $color)
   {
@@ -53,10 +45,7 @@ class GoogleCloudAiplatformV1SchemaAnnotationSpecColor extends \Google\Model
     return $this->color;
   }
   /**
-   * The display name of the AnnotationSpec represented by the color in the
-   * segmentation mask.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -70,10 +59,7 @@ class GoogleCloudAiplatformV1SchemaAnnotationSpecColor extends \Google\Model
     return $this->displayName;
   }
   /**
-   * The ID of the AnnotationSpec represented by the color in the segmentation
-   * mask.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {

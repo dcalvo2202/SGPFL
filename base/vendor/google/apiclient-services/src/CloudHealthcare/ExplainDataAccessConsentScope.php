@@ -19,25 +19,10 @@ namespace Google\Service\CloudHealthcare;
 
 class ExplainDataAccessConsentScope extends \Google\Collection
 {
-  /**
-   * Unspecified consent decision type.
-   */
-  public const DECISION_CONSENT_DECISION_TYPE_UNSPECIFIED = 'CONSENT_DECISION_TYPE_UNSPECIFIED';
-  /**
-   * Consent permitted access.
-   */
-  public const DECISION_CONSENT_DECISION_TYPE_PERMIT = 'CONSENT_DECISION_TYPE_PERMIT';
-  /**
-   * Consent denied access.
-   */
-  public const DECISION_CONSENT_DECISION_TYPE_DENY = 'CONSENT_DECISION_TYPE_DENY';
   protected $collection_key = 'exceptions';
   protected $accessorScopeType = ConsentAccessorScope::class;
   protected $accessorScopeDataType = '';
   /**
-   * Whether the current consent scope is permitted or denied access on the
-   * requested resource.
-   *
    * @var string
    */
   public $decision;
@@ -47,10 +32,7 @@ class ExplainDataAccessConsentScope extends \Google\Collection
   protected $exceptionsDataType = 'array';
 
   /**
-   * The accessor scope that describes who can access, for what purpose, and in
-   * which environment.
-   *
-   * @param ConsentAccessorScope $accessorScope
+   * @param ConsentAccessorScope
    */
   public function setAccessorScope(ConsentAccessorScope $accessorScope)
   {
@@ -64,29 +46,21 @@ class ExplainDataAccessConsentScope extends \Google\Collection
     return $this->accessorScope;
   }
   /**
-   * Whether the current consent scope is permitted or denied access on the
-   * requested resource.
-   *
-   * Accepted values: CONSENT_DECISION_TYPE_UNSPECIFIED,
-   * CONSENT_DECISION_TYPE_PERMIT, CONSENT_DECISION_TYPE_DENY
-   *
-   * @param self::DECISION_* $decision
+   * @param string
    */
   public function setDecision($decision)
   {
     $this->decision = $decision;
   }
   /**
-   * @return self::DECISION_*
+   * @return string
    */
   public function getDecision()
   {
     return $this->decision;
   }
   /**
-   * Metadata of the consent resources that enforce the consent scope's access.
-   *
-   * @param ExplainDataAccessConsentInfo[] $enforcingConsents
+   * @param ExplainDataAccessConsentInfo[]
    */
   public function setEnforcingConsents($enforcingConsents)
   {
@@ -100,9 +74,7 @@ class ExplainDataAccessConsentScope extends \Google\Collection
     return $this->enforcingConsents;
   }
   /**
-   * Other consent scopes that created exceptions within this scope.
-   *
-   * @param ExplainDataAccessConsentScope[] $exceptions
+   * @param ExplainDataAccessConsentScope[]
    */
   public function setExceptions($exceptions)
   {

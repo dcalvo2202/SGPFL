@@ -20,27 +20,16 @@ namespace Google\Service\Monitoring;
 class Hourly extends \Google\Model
 {
   /**
-   * Optional. The number of minutes after the hour (in UTC) to run the query.
-   * Must be greater than or equal to 0 minutes and less than or equal to 59
-   * minutes. If left unspecified, then an arbitrary offset is used.
-   *
    * @var int
    */
   public $minuteOffset;
   /**
-   * Required. The number of hours between runs. Must be greater than or equal
-   * to 1 hour and less than or equal to 48 hours.
-   *
    * @var int
    */
   public $periodicity;
 
   /**
-   * Optional. The number of minutes after the hour (in UTC) to run the query.
-   * Must be greater than or equal to 0 minutes and less than or equal to 59
-   * minutes. If left unspecified, then an arbitrary offset is used.
-   *
-   * @param int $minuteOffset
+   * @param int
    */
   public function setMinuteOffset($minuteOffset)
   {
@@ -54,10 +43,7 @@ class Hourly extends \Google\Model
     return $this->minuteOffset;
   }
   /**
-   * Required. The number of hours between runs. Must be greater than or equal
-   * to 1 hour and less than or equal to 48 hours.
-   *
-   * @param int $periodicity
+   * @param int
    */
   public function setPeriodicity($periodicity)
   {

@@ -20,24 +20,12 @@ namespace Google\Service\NetworkServices;
 class ServiceLbPolicyAutoCapacityDrain extends \Google\Model
 {
   /**
-   * Optional. If set to 'True', an unhealthy IG/NEG will be set as drained. -
-   * An IG/NEG is considered unhealthy if less than 25% of the
-   * instances/endpoints in the IG/NEG are healthy. - This option will never
-   * result in draining more than 50% of the configured IGs/NEGs for the Backend
-   * Service.
-   *
    * @var bool
    */
   public $enable;
 
   /**
-   * Optional. If set to 'True', an unhealthy IG/NEG will be set as drained. -
-   * An IG/NEG is considered unhealthy if less than 25% of the
-   * instances/endpoints in the IG/NEG are healthy. - This option will never
-   * result in draining more than 50% of the configured IGs/NEGs for the Backend
-   * Service.
-   *
-   * @param bool $enable
+   * @param bool
    */
   public function setEnable($enable)
   {

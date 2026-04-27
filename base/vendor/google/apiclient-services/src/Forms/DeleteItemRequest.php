@@ -23,9 +23,7 @@ class DeleteItemRequest extends \Google\Model
   protected $locationDataType = '';
 
   /**
-   * Required. The location of the item to delete.
-   *
-   * @param Location $location
+   * @param Location
    */
   public function setLocation(Location $location)
   {

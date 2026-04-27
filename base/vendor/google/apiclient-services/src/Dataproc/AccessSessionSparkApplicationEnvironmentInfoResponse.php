@@ -23,9 +23,7 @@ class AccessSessionSparkApplicationEnvironmentInfoResponse extends \Google\Model
   protected $applicationEnvironmentInfoDataType = '';
 
   /**
-   * Details about the Environment that the application is running in.
-   *
-   * @param ApplicationEnvironmentInfo $applicationEnvironmentInfo
+   * @param ApplicationEnvironmentInfo
    */
   public function setApplicationEnvironmentInfo(ApplicationEnvironmentInfo $applicationEnvironmentInfo)
   {

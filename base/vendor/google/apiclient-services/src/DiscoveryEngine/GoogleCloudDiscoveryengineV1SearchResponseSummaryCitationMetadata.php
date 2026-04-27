@@ -24,9 +24,7 @@ class GoogleCloudDiscoveryengineV1SearchResponseSummaryCitationMetadata extends 
   protected $citationsDataType = 'array';
 
   /**
-   * Citations for segments.
-   *
-   * @param GoogleCloudDiscoveryengineV1SearchResponseSummaryCitation[] $citations
+   * @param GoogleCloudDiscoveryengineV1SearchResponseSummaryCitation[]
    */
   public function setCitations($citations)
   {

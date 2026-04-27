@@ -20,24 +20,16 @@ namespace Google\Service\APIhub;
 class GoogleCloudApihubV1ConfigVariable extends \Google\Model
 {
   /**
-   * Optional. The config variable value in case of config variable of type
-   * boolean.
-   *
    * @var bool
    */
   public $boolValue;
   protected $enumValueType = GoogleCloudApihubV1ConfigValueOption::class;
   protected $enumValueDataType = '';
   /**
-   * Optional. The config variable value in case of config variable of type
-   * integer.
-   *
    * @var string
    */
   public $intValue;
   /**
-   * Output only. Key will be the id to uniquely identify the config variable.
-   *
    * @var string
    */
   public $key;
@@ -50,18 +42,12 @@ class GoogleCloudApihubV1ConfigVariable extends \Google\Model
   protected $secretValueType = GoogleCloudApihubV1Secret::class;
   protected $secretValueDataType = '';
   /**
-   * Optional. The config variable value in case of config variable of type
-   * string.
-   *
    * @var string
    */
   public $stringValue;
 
   /**
-   * Optional. The config variable value in case of config variable of type
-   * boolean.
-   *
-   * @param bool $boolValue
+   * @param bool
    */
   public function setBoolValue($boolValue)
   {
@@ -75,10 +61,7 @@ class GoogleCloudApihubV1ConfigVariable extends \Google\Model
     return $this->boolValue;
   }
   /**
-   * Optional. The config variable value in case of config variable of type
-   * enum.
-   *
-   * @param GoogleCloudApihubV1ConfigValueOption $enumValue
+   * @param GoogleCloudApihubV1ConfigValueOption
    */
   public function setEnumValue(GoogleCloudApihubV1ConfigValueOption $enumValue)
   {
@@ -92,10 +75,7 @@ class GoogleCloudApihubV1ConfigVariable extends \Google\Model
     return $this->enumValue;
   }
   /**
-   * Optional. The config variable value in case of config variable of type
-   * integer.
-   *
-   * @param string $intValue
+   * @param string
    */
   public function setIntValue($intValue)
   {
@@ -109,9 +89,7 @@ class GoogleCloudApihubV1ConfigVariable extends \Google\Model
     return $this->intValue;
   }
   /**
-   * Output only. Key will be the id to uniquely identify the config variable.
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {
@@ -125,10 +103,7 @@ class GoogleCloudApihubV1ConfigVariable extends \Google\Model
     return $this->key;
   }
   /**
-   * Optional. The config variable value in case of config variable of type
-   * multi integer.
-   *
-   * @param GoogleCloudApihubV1MultiIntValues $multiIntValues
+   * @param GoogleCloudApihubV1MultiIntValues
    */
   public function setMultiIntValues(GoogleCloudApihubV1MultiIntValues $multiIntValues)
   {
@@ -142,10 +117,7 @@ class GoogleCloudApihubV1ConfigVariable extends \Google\Model
     return $this->multiIntValues;
   }
   /**
-   * Optional. The config variable value in case of config variable of type
-   * multi select.
-   *
-   * @param GoogleCloudApihubV1MultiSelectValues $multiSelectValues
+   * @param GoogleCloudApihubV1MultiSelectValues
    */
   public function setMultiSelectValues(GoogleCloudApihubV1MultiSelectValues $multiSelectValues)
   {
@@ -159,10 +131,7 @@ class GoogleCloudApihubV1ConfigVariable extends \Google\Model
     return $this->multiSelectValues;
   }
   /**
-   * Optional. The config variable value in case of config variable of type
-   * multi string.
-   *
-   * @param GoogleCloudApihubV1MultiStringValues $multiStringValues
+   * @param GoogleCloudApihubV1MultiStringValues
    */
   public function setMultiStringValues(GoogleCloudApihubV1MultiStringValues $multiStringValues)
   {
@@ -176,10 +145,7 @@ class GoogleCloudApihubV1ConfigVariable extends \Google\Model
     return $this->multiStringValues;
   }
   /**
-   * Optional. The config variable value in case of config variable of type
-   * secret.
-   *
-   * @param GoogleCloudApihubV1Secret $secretValue
+   * @param GoogleCloudApihubV1Secret
    */
   public function setSecretValue(GoogleCloudApihubV1Secret $secretValue)
   {
@@ -193,10 +159,7 @@ class GoogleCloudApihubV1ConfigVariable extends \Google\Model
     return $this->secretValue;
   }
   /**
-   * Optional. The config variable value in case of config variable of type
-   * string.
-   *
-   * @param string $stringValue
+   * @param string
    */
   public function setStringValue($stringValue)
   {

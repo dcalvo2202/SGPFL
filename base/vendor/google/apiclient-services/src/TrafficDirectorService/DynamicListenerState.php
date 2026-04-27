@@ -20,31 +20,20 @@ namespace Google\Service\TrafficDirectorService;
 class DynamicListenerState extends \Google\Model
 {
   /**
-   * The timestamp when the Listener was last successfully updated.
-   *
    * @var string
    */
   public $lastUpdated;
   /**
-   * The listener config.
-   *
    * @var array[]
    */
   public $listener;
   /**
-   * This is the per-resource version information. This version is currently
-   * taken from the :ref:`version_info ` field at the time that the listener was
-   * loaded. In the future, discrete per-listener versions may be supported by
-   * the API.
-   *
    * @var string
    */
   public $versionInfo;
 
   /**
-   * The timestamp when the Listener was last successfully updated.
-   *
-   * @param string $lastUpdated
+   * @param string
    */
   public function setLastUpdated($lastUpdated)
   {
@@ -58,9 +47,7 @@ class DynamicListenerState extends \Google\Model
     return $this->lastUpdated;
   }
   /**
-   * The listener config.
-   *
-   * @param array[] $listener
+   * @param array[]
    */
   public function setListener($listener)
   {
@@ -74,12 +61,7 @@ class DynamicListenerState extends \Google\Model
     return $this->listener;
   }
   /**
-   * This is the per-resource version information. This version is currently
-   * taken from the :ref:`version_info ` field at the time that the listener was
-   * loaded. In the future, discrete per-listener versions may be supported by
-   * the API.
-   *
-   * @param string $versionInfo
+   * @param string
    */
   public function setVersionInfo($versionInfo)
   {

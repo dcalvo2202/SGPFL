@@ -33,7 +33,7 @@ class SeriesSeriesSeriesSubscriptionReleaseInfo extends \Google\Model
   public $seriesSubscriptionType;
 
   /**
-   * @param string $cancelTime
+   * @param string
    */
   public function setCancelTime($cancelTime)
   {
@@ -47,7 +47,7 @@ class SeriesSeriesSeriesSubscriptionReleaseInfo extends \Google\Model
     return $this->cancelTime;
   }
   /**
-   * @param SeriesSeriesSeriesSubscriptionReleaseInfoCurrentReleaseInfo $currentReleaseInfo
+   * @param SeriesSeriesSeriesSubscriptionReleaseInfoCurrentReleaseInfo
    */
   public function setCurrentReleaseInfo(SeriesSeriesSeriesSubscriptionReleaseInfoCurrentReleaseInfo $currentReleaseInfo)
   {
@@ -61,7 +61,7 @@ class SeriesSeriesSeriesSubscriptionReleaseInfo extends \Google\Model
     return $this->currentReleaseInfo;
   }
   /**
-   * @param SeriesSeriesSeriesSubscriptionReleaseInfoNextReleaseInfo $nextReleaseInfo
+   * @param SeriesSeriesSeriesSubscriptionReleaseInfoNextReleaseInfo
    */
   public function setNextReleaseInfo(SeriesSeriesSeriesSubscriptionReleaseInfoNextReleaseInfo $nextReleaseInfo)
   {
@@ -75,7 +75,7 @@ class SeriesSeriesSeriesSubscriptionReleaseInfo extends \Google\Model
     return $this->nextReleaseInfo;
   }
   /**
-   * @param string $seriesSubscriptionType
+   * @param string
    */
   public function setSeriesSubscriptionType($seriesSubscriptionType)
   {

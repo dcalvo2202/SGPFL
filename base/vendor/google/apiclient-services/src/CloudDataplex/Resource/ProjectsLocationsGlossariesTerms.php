@@ -40,8 +40,7 @@ class ProjectsLocationsGlossariesTerms extends \Google\Service\Resource
    *
    * @param string $parent Required. The parent resource where the GlossaryTerm
    * will be created. Format: projects/{project_id_or_number}/locations/{location_
-   * id}/glossaries/{glossary_id} where location_id refers to a Google Cloud
-   * region.
+   * id}/glossaries/{glossary_id} where location_id refers to a GCP region.
    * @param GoogleCloudDataplexV1GlossaryTerm $postBody
    * @param array $optParams Optional parameters.
    *
@@ -123,7 +122,7 @@ class ProjectsLocationsGlossariesTerms extends \Google\Service\Resource
    *
    * @param string $parent Required. The parent, which has this collection of
    * GlossaryTerms. Format: projects/{project_id_or_number}/locations/{location_id
-   * }/glossaries/{glossary_id} where location_id refers to a Google Cloud region.
+   * }/glossaries/{glossary_id} where location_id refers to a GCP region.
    * @param array $optParams Optional parameters.
    *
    * @opt_param string filter Optional. Filter expression that filters

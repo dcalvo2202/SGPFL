@@ -25,7 +25,7 @@ class GrafeasV1SlsaProvenanceZeroTwoSlsaBuilder extends \Google\Model
   public $id;
 
   /**
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {

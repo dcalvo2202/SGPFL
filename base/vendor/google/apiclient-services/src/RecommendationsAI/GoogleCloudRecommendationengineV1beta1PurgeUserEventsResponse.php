@@ -21,8 +21,6 @@ class GoogleCloudRecommendationengineV1beta1PurgeUserEventsResponse extends \Goo
 {
   protected $collection_key = 'userEventsSample';
   /**
-   * The total count of events purged as a result of the operation.
-   *
    * @var string
    */
   public $purgedEventsCount;
@@ -30,9 +28,7 @@ class GoogleCloudRecommendationengineV1beta1PurgeUserEventsResponse extends \Goo
   protected $userEventsSampleDataType = 'array';
 
   /**
-   * The total count of events purged as a result of the operation.
-   *
-   * @param string $purgedEventsCount
+   * @param string
    */
   public function setPurgedEventsCount($purgedEventsCount)
   {
@@ -46,10 +42,7 @@ class GoogleCloudRecommendationengineV1beta1PurgeUserEventsResponse extends \Goo
     return $this->purgedEventsCount;
   }
   /**
-   * A sampling of events deleted (or will be deleted) depending on the `force`
-   * property in the request. Max of 500 items will be returned.
-   *
-   * @param GoogleCloudRecommendationengineV1beta1UserEvent[] $userEventsSample
+   * @param GoogleCloudRecommendationengineV1beta1UserEvent[]
    */
   public function setUserEventsSample($userEventsSample)
   {

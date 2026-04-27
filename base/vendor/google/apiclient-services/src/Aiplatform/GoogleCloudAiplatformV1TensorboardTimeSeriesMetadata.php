@@ -20,32 +20,20 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1TensorboardTimeSeriesMetadata extends \Google\Model
 {
   /**
-   * Output only. The largest blob sequence length (number of blobs) of all data
-   * points in this time series, if its ValueType is BLOB_SEQUENCE.
-   *
    * @var string
    */
   public $maxBlobSequenceLength;
   /**
-   * Output only. Max step index of all data points within a
-   * TensorboardTimeSeries.
-   *
    * @var string
    */
   public $maxStep;
   /**
-   * Output only. Max wall clock timestamp of all data points within a
-   * TensorboardTimeSeries.
-   *
    * @var string
    */
   public $maxWallTime;
 
   /**
-   * Output only. The largest blob sequence length (number of blobs) of all data
-   * points in this time series, if its ValueType is BLOB_SEQUENCE.
-   *
-   * @param string $maxBlobSequenceLength
+   * @param string
    */
   public function setMaxBlobSequenceLength($maxBlobSequenceLength)
   {
@@ -59,10 +47,7 @@ class GoogleCloudAiplatformV1TensorboardTimeSeriesMetadata extends \Google\Model
     return $this->maxBlobSequenceLength;
   }
   /**
-   * Output only. Max step index of all data points within a
-   * TensorboardTimeSeries.
-   *
-   * @param string $maxStep
+   * @param string
    */
   public function setMaxStep($maxStep)
   {
@@ -76,10 +61,7 @@ class GoogleCloudAiplatformV1TensorboardTimeSeriesMetadata extends \Google\Model
     return $this->maxStep;
   }
   /**
-   * Output only. Max wall clock timestamp of all data points within a
-   * TensorboardTimeSeries.
-   *
-   * @param string $maxWallTime
+   * @param string
    */
   public function setMaxWallTime($maxWallTime)
   {

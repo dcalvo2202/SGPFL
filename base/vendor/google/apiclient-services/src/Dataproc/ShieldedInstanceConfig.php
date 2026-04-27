@@ -20,28 +20,20 @@ namespace Google\Service\Dataproc;
 class ShieldedInstanceConfig extends \Google\Model
 {
   /**
-   * Optional. Defines whether instances have integrity monitoring enabled.
-   *
    * @var bool
    */
   public $enableIntegrityMonitoring;
   /**
-   * Optional. Defines whether instances have Secure Boot enabled.
-   *
    * @var bool
    */
   public $enableSecureBoot;
   /**
-   * Optional. Defines whether instances have the vTPM enabled.
-   *
    * @var bool
    */
   public $enableVtpm;
 
   /**
-   * Optional. Defines whether instances have integrity monitoring enabled.
-   *
-   * @param bool $enableIntegrityMonitoring
+   * @param bool
    */
   public function setEnableIntegrityMonitoring($enableIntegrityMonitoring)
   {
@@ -55,9 +47,7 @@ class ShieldedInstanceConfig extends \Google\Model
     return $this->enableIntegrityMonitoring;
   }
   /**
-   * Optional. Defines whether instances have Secure Boot enabled.
-   *
-   * @param bool $enableSecureBoot
+   * @param bool
    */
   public function setEnableSecureBoot($enableSecureBoot)
   {
@@ -71,9 +61,7 @@ class ShieldedInstanceConfig extends \Google\Model
     return $this->enableSecureBoot;
   }
   /**
-   * Optional. Defines whether instances have the vTPM enabled.
-   *
-   * @param bool $enableVtpm
+   * @param bool
    */
   public function setEnableVtpm($enableVtpm)
   {

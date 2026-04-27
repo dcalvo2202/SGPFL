@@ -29,7 +29,7 @@ class OperationErrorErrorsErrorDetails extends \Google\Model
   protected $quotaInfoDataType = '';
 
   /**
-   * @param ErrorInfo $errorInfo
+   * @param ErrorInfo
    */
   public function setErrorInfo(ErrorInfo $errorInfo)
   {
@@ -43,7 +43,7 @@ class OperationErrorErrorsErrorDetails extends \Google\Model
     return $this->errorInfo;
   }
   /**
-   * @param Help $help
+   * @param Help
    */
   public function setHelp(Help $help)
   {
@@ -57,7 +57,7 @@ class OperationErrorErrorsErrorDetails extends \Google\Model
     return $this->help;
   }
   /**
-   * @param LocalizedMessage $localizedMessage
+   * @param LocalizedMessage
    */
   public function setLocalizedMessage(LocalizedMessage $localizedMessage)
   {
@@ -71,7 +71,7 @@ class OperationErrorErrorsErrorDetails extends \Google\Model
     return $this->localizedMessage;
   }
   /**
-   * @param QuotaExceededInfo $quotaInfo
+   * @param QuotaExceededInfo
    */
   public function setQuotaInfo(QuotaExceededInfo $quotaInfo)
   {

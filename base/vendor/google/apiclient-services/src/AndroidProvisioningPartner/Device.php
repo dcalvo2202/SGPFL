@@ -23,14 +23,10 @@ class Device extends \Google\Collection
   protected $claimsType = DeviceClaim::class;
   protected $claimsDataType = 'array';
   /**
-   * Not available to resellers.
-   *
    * @var string
    */
   public $configuration;
   /**
-   * Output only. The ID of the device. Assigned by the server.
-   *
    * @var string
    */
   public $deviceId;
@@ -39,20 +35,12 @@ class Device extends \Google\Collection
   protected $deviceMetadataType = DeviceMetadata::class;
   protected $deviceMetadataDataType = '';
   /**
-   * Output only. The API resource name in the format
-   * `partners/[PARTNER_ID]/devices/[DEVICE_ID]`. Assigned by the server.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Output only. The provisioning claims for a device. Devices claimed for
-   * zero-touch enrollment have a claim with the type `SECTION_TYPE_ZERO_TOUCH`.
-   * Call `partners.devices.unclaim` or `partners.devices.unclaimAsync` to
-   * remove the device from zero-touch enrollment.
-   *
-   * @param DeviceClaim[] $claims
+   * @param DeviceClaim[]
    */
   public function setClaims($claims)
   {
@@ -66,9 +54,7 @@ class Device extends \Google\Collection
     return $this->claims;
   }
   /**
-   * Not available to resellers.
-   *
-   * @param string $configuration
+   * @param string
    */
   public function setConfiguration($configuration)
   {
@@ -82,9 +68,7 @@ class Device extends \Google\Collection
     return $this->configuration;
   }
   /**
-   * Output only. The ID of the device. Assigned by the server.
-   *
-   * @param string $deviceId
+   * @param string
    */
   public function setDeviceId($deviceId)
   {
@@ -98,10 +82,7 @@ class Device extends \Google\Collection
     return $this->deviceId;
   }
   /**
-   * The hardware IDs that identify a manufactured device. To learn more, read
-   * [Identifiers](https://developers.google.com/zero-touch/guides/identifiers).
-   *
-   * @param DeviceIdentifier $deviceIdentifier
+   * @param DeviceIdentifier
    */
   public function setDeviceIdentifier(DeviceIdentifier $deviceIdentifier)
   {
@@ -115,11 +96,7 @@ class Device extends \Google\Collection
     return $this->deviceIdentifier;
   }
   /**
-   * The metadata attached to the device. Structured as key-value pairs. To
-   * learn more, read [Device metadata](https://developers.google.com/zero-
-   * touch/guides/metadata).
-   *
-   * @param DeviceMetadata $deviceMetadata
+   * @param DeviceMetadata
    */
   public function setDeviceMetadata(DeviceMetadata $deviceMetadata)
   {
@@ -133,10 +110,7 @@ class Device extends \Google\Collection
     return $this->deviceMetadata;
   }
   /**
-   * Output only. The API resource name in the format
-   * `partners/[PARTNER_ID]/devices/[DEVICE_ID]`. Assigned by the server.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

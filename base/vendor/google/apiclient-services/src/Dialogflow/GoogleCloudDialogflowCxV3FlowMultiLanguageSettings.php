@@ -30,7 +30,7 @@ class GoogleCloudDialogflowCxV3FlowMultiLanguageSettings extends \Google\Collect
   public $supportedResponseLanguageCodes;
 
   /**
-   * @param bool $enableMultiLanguageDetection
+   * @param bool
    */
   public function setEnableMultiLanguageDetection($enableMultiLanguageDetection)
   {
@@ -44,7 +44,7 @@ class GoogleCloudDialogflowCxV3FlowMultiLanguageSettings extends \Google\Collect
     return $this->enableMultiLanguageDetection;
   }
   /**
-   * @param string[] $supportedResponseLanguageCodes
+   * @param string[]
    */
   public function setSupportedResponseLanguageCodes($supportedResponseLanguageCodes)
   {

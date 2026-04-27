@@ -21,14 +21,10 @@ class ListThreadsResponse extends \Google\Collection
 {
   protected $collection_key = 'threads';
   /**
-   * Page token to retrieve the next page of results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Estimated total number of results.
-   *
    * @var string
    */
   public $resultSizeEstimate;
@@ -36,9 +32,7 @@ class ListThreadsResponse extends \Google\Collection
   protected $threadsDataType = 'array';
 
   /**
-   * Page token to retrieve the next page of results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -52,9 +46,7 @@ class ListThreadsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Estimated total number of results.
-   *
-   * @param string $resultSizeEstimate
+   * @param string
    */
   public function setResultSizeEstimate($resultSizeEstimate)
   {
@@ -68,12 +60,7 @@ class ListThreadsResponse extends \Google\Collection
     return $this->resultSizeEstimate;
   }
   /**
-   * List of threads. Note that each thread resource does not contain a list of
-   * `messages`. The list of `messages` for a given thread can be fetched using
-   * the [`threads.get`](https://developers.google.com/workspace/gmail/api/v1/re
-   * ference/users/threads/get) method.
-   *
-   * @param Thread[] $threads
+   * @param Thread[]
    */
   public function setThreads($threads)
   {

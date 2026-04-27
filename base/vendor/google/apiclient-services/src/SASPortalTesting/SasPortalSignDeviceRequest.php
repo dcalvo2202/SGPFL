@@ -23,10 +23,7 @@ class SasPortalSignDeviceRequest extends \Google\Model
   protected $deviceDataType = '';
 
   /**
-   * Required. The device to sign. The device fields name, fcc_id and
-   * serial_number must be set. The user_id field must be set.
-   *
-   * @param SasPortalDevice $device
+   * @param SasPortalDevice
    */
   public function setDevice(SasPortalDevice $device)
   {

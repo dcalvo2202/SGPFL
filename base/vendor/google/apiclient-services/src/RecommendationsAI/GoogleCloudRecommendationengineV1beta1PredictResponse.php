@@ -21,35 +21,22 @@ class GoogleCloudRecommendationengineV1beta1PredictResponse extends \Google\Coll
 {
   protected $collection_key = 'results';
   /**
-   * True if the dryRun property was set in the request.
-   *
    * @var bool
    */
   public $dryRun;
   /**
-   * IDs of items in the request that were missing from the catalog.
-   *
    * @var string[]
    */
   public $itemsMissingInCatalog;
   /**
-   * Additional domain specific prediction response metadata.
-   *
    * @var array[]
    */
   public $metadata;
   /**
-   * If empty, the list is complete. If nonempty, the token to pass to the next
-   * request's PredictRequest.page_token.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * A unique recommendation token. This should be included in the user event
-   * logs resulting from this recommendation, which enables accurate attribution
-   * of recommendation model performance.
-   *
    * @var string
    */
   public $recommendationToken;
@@ -57,9 +44,7 @@ class GoogleCloudRecommendationengineV1beta1PredictResponse extends \Google\Coll
   protected $resultsDataType = 'array';
 
   /**
-   * True if the dryRun property was set in the request.
-   *
-   * @param bool $dryRun
+   * @param bool
    */
   public function setDryRun($dryRun)
   {
@@ -73,9 +58,7 @@ class GoogleCloudRecommendationengineV1beta1PredictResponse extends \Google\Coll
     return $this->dryRun;
   }
   /**
-   * IDs of items in the request that were missing from the catalog.
-   *
-   * @param string[] $itemsMissingInCatalog
+   * @param string[]
    */
   public function setItemsMissingInCatalog($itemsMissingInCatalog)
   {
@@ -89,9 +72,7 @@ class GoogleCloudRecommendationengineV1beta1PredictResponse extends \Google\Coll
     return $this->itemsMissingInCatalog;
   }
   /**
-   * Additional domain specific prediction response metadata.
-   *
-   * @param array[] $metadata
+   * @param array[]
    */
   public function setMetadata($metadata)
   {
@@ -105,10 +86,7 @@ class GoogleCloudRecommendationengineV1beta1PredictResponse extends \Google\Coll
     return $this->metadata;
   }
   /**
-   * If empty, the list is complete. If nonempty, the token to pass to the next
-   * request's PredictRequest.page_token.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -122,11 +100,7 @@ class GoogleCloudRecommendationengineV1beta1PredictResponse extends \Google\Coll
     return $this->nextPageToken;
   }
   /**
-   * A unique recommendation token. This should be included in the user event
-   * logs resulting from this recommendation, which enables accurate attribution
-   * of recommendation model performance.
-   *
-   * @param string $recommendationToken
+   * @param string
    */
   public function setRecommendationToken($recommendationToken)
   {
@@ -140,10 +114,7 @@ class GoogleCloudRecommendationengineV1beta1PredictResponse extends \Google\Coll
     return $this->recommendationToken;
   }
   /**
-   * A list of recommended items. The order represents the ranking (from the
-   * most relevant item to the least).
-   *
-   * @param GoogleCloudRecommendationengineV1beta1PredictResponsePredictionResult[] $results
+   * @param GoogleCloudRecommendationengineV1beta1PredictResponsePredictionResult[]
    */
   public function setResults($results)
   {

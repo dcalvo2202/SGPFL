@@ -20,25 +20,16 @@ namespace Google\Service\NetworkSecurity;
 class FirewallEndpointAssociationReference extends \Google\Model
 {
   /**
-   * Output only. The resource name of the FirewallEndpointAssociation. Format:
-   * projects/{project}/locations/{location}/firewallEndpointAssociations/{id}
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The VPC network associated. Format:
-   * projects/{project}/global/networks/{name}.
-   *
    * @var string
    */
   public $network;
 
   /**
-   * Output only. The resource name of the FirewallEndpointAssociation. Format:
-   * projects/{project}/locations/{location}/firewallEndpointAssociations/{id}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -52,10 +43,7 @@ class FirewallEndpointAssociationReference extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The VPC network associated. Format:
-   * projects/{project}/global/networks/{name}.
-   *
-   * @param string $network
+   * @param string
    */
   public function setNetwork($network)
   {

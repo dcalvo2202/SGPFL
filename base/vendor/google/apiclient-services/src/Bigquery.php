@@ -313,10 +313,6 @@ class Bigquery extends \Google\Service
                   'type' => 'string',
                   'required' => true,
                 ],
-                'formatOptions.timestampOutputFormat' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
                 'formatOptions.useInt64Timestamp' => [
                   'location' => 'query',
                   'type' => 'boolean',
@@ -651,16 +647,6 @@ class Bigquery extends \Google\Service
                   'required' => true,
                 ],
               ],
-            ],'testIamPermissions' => [
-              'path' => '{+resource}:testIamPermissions',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'resource' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
             ],'update' => [
               'path' => 'projects/{+projectId}/datasets/{+datasetId}/routines/{+routineId}',
               'httpMethod' => 'PUT',
@@ -906,10 +892,6 @@ class Bigquery extends \Google\Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ],
-                'formatOptions.timestampOutputFormat' => [
-                  'location' => 'query',
-                  'type' => 'string',
                 ],
                 'formatOptions.useInt64Timestamp' => [
                   'location' => 'query',

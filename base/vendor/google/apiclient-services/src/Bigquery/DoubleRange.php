@@ -19,17 +19,7 @@ namespace Google\Service\Bigquery;
 
 class DoubleRange extends \Google\Model
 {
-  /**
-   * Max value of the double parameter.
-   *
-   * @var 
-   */
   public $max;
-  /**
-   * Min value of the double parameter.
-   *
-   * @var 
-   */
   public $min;
 
   public function setMax($max)

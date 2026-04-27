@@ -20,9 +20,6 @@ namespace Google\Service\TPU;
 class GuestAttributes extends \Google\Model
 {
   /**
-   * The path to be queried. This can be the default namespace ('/') or a nested
-   * namespace ('/\/') or a specified key ('/\/\')
-   *
    * @var string
    */
   public $queryPath;
@@ -30,10 +27,7 @@ class GuestAttributes extends \Google\Model
   protected $queryValueDataType = '';
 
   /**
-   * The path to be queried. This can be the default namespace ('/') or a nested
-   * namespace ('/\/') or a specified key ('/\/\')
-   *
-   * @param string $queryPath
+   * @param string
    */
   public function setQueryPath($queryPath)
   {
@@ -47,9 +41,7 @@ class GuestAttributes extends \Google\Model
     return $this->queryPath;
   }
   /**
-   * The value of the requested queried path.
-   *
-   * @param GuestAttributesValue $queryValue
+   * @param GuestAttributesValue
    */
   public function setQueryValue(GuestAttributesValue $queryValue)
   {

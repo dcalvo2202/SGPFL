@@ -19,15 +19,11 @@ namespace Google\Service\CloudDataplex;
 
 class GoogleCloudDataplexV1DataProfileResult extends \Google\Model
 {
-  protected $catalogPublishingStatusType = GoogleCloudDataplexV1DataScanCatalogPublishingStatus::class;
-  protected $catalogPublishingStatusDataType = '';
   protected $postScanActionsResultType = GoogleCloudDataplexV1DataProfileResultPostScanActionsResult::class;
   protected $postScanActionsResultDataType = '';
   protected $profileType = GoogleCloudDataplexV1DataProfileResultProfile::class;
   protected $profileDataType = '';
   /**
-   * Output only. The count of rows scanned.
-   *
    * @var string
    */
   public $rowCount;
@@ -35,26 +31,7 @@ class GoogleCloudDataplexV1DataProfileResult extends \Google\Model
   protected $scannedDataDataType = '';
 
   /**
-   * Output only. The status of publishing the data scan as Dataplex Universal
-   * Catalog metadata.
-   *
-   * @param GoogleCloudDataplexV1DataScanCatalogPublishingStatus $catalogPublishingStatus
-   */
-  public function setCatalogPublishingStatus(GoogleCloudDataplexV1DataScanCatalogPublishingStatus $catalogPublishingStatus)
-  {
-    $this->catalogPublishingStatus = $catalogPublishingStatus;
-  }
-  /**
-   * @return GoogleCloudDataplexV1DataScanCatalogPublishingStatus
-   */
-  public function getCatalogPublishingStatus()
-  {
-    return $this->catalogPublishingStatus;
-  }
-  /**
-   * Output only. The result of post scan actions.
-   *
-   * @param GoogleCloudDataplexV1DataProfileResultPostScanActionsResult $postScanActionsResult
+   * @param GoogleCloudDataplexV1DataProfileResultPostScanActionsResult
    */
   public function setPostScanActionsResult(GoogleCloudDataplexV1DataProfileResultPostScanActionsResult $postScanActionsResult)
   {
@@ -68,9 +45,7 @@ class GoogleCloudDataplexV1DataProfileResult extends \Google\Model
     return $this->postScanActionsResult;
   }
   /**
-   * Output only. The profile information per field.
-   *
-   * @param GoogleCloudDataplexV1DataProfileResultProfile $profile
+   * @param GoogleCloudDataplexV1DataProfileResultProfile
    */
   public function setProfile(GoogleCloudDataplexV1DataProfileResultProfile $profile)
   {
@@ -84,9 +59,7 @@ class GoogleCloudDataplexV1DataProfileResult extends \Google\Model
     return $this->profile;
   }
   /**
-   * Output only. The count of rows scanned.
-   *
-   * @param string $rowCount
+   * @param string
    */
   public function setRowCount($rowCount)
   {
@@ -100,9 +73,7 @@ class GoogleCloudDataplexV1DataProfileResult extends \Google\Model
     return $this->rowCount;
   }
   /**
-   * Output only. The data scanned for this result.
-   *
-   * @param GoogleCloudDataplexV1ScannedData $scannedData
+   * @param GoogleCloudDataplexV1ScannedData
    */
   public function setScannedData(GoogleCloudDataplexV1ScannedData $scannedData)
   {

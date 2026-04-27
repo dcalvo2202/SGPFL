@@ -25,7 +25,7 @@ class GoogleCloudDialogflowCxV3EnvironmentVersionConfig extends \Google\Model
   public $version;
 
   /**
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

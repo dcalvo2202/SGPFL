@@ -20,243 +20,120 @@ namespace Google\Service\BackupforGKE;
 class Backup extends \Google\Model
 {
   /**
-   * The Backup resource is in the process of being created.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The Backup resource has been created and the associated BackupJob
-   * Kubernetes resource has been injected into the source cluster.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * The gkebackup agent in the cluster has begun executing the backup
-   * operation.
-   */
-  public const STATE_IN_PROGRESS = 'IN_PROGRESS';
-  /**
-   * The backup operation has completed successfully.
-   */
-  public const STATE_SUCCEEDED = 'SUCCEEDED';
-  /**
-   * The backup operation has failed.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * This Backup resource (and its associated artifacts) is in the process of
-   * being deleted.
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * Output only. If True, all namespaces were included in the Backup.
-   *
    * @var bool
    */
   public $allNamespaces;
   protected $clusterMetadataType = ClusterMetadata::class;
   protected $clusterMetadataDataType = '';
   /**
-   * Output only. Completion time of the Backup
-   *
    * @var string
    */
   public $completeTime;
   /**
-   * Output only. The size of the config backup in bytes.
-   *
    * @var string
    */
   public $configBackupSizeBytes;
   /**
-   * Output only. Whether or not the Backup contains Kubernetes Secrets.
-   * Controlled by the parent BackupPlan's include_secrets value.
-   *
    * @var bool
    */
   public $containsSecrets;
   /**
-   * Output only. Whether or not the Backup contains volume data. Controlled by
-   * the parent BackupPlan's include_volume_data value.
-   *
    * @var bool
    */
   public $containsVolumeData;
   /**
-   * Output only. The timestamp when this Backup resource was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. Minimum age for this Backup (in days). If this field is set to a
-   * non-zero value, the Backup will be "locked" against deletion (either manual
-   * or automatic deletion) for the number of days provided (measured from the
-   * creation time of the Backup). MUST be an integer value between 0-90
-   * (inclusive). Defaults to parent BackupPlan's backup_delete_lock_days
-   * setting and may only be increased (either at creation time or in a
-   * subsequent update).
-   *
    * @var int
    */
   public $deleteLockDays;
   /**
-   * Output only. The time at which an existing delete lock will expire for this
-   * backup (calculated from create_time + delete_lock_days).
-   *
    * @var string
    */
   public $deleteLockExpireTime;
   /**
-   * Optional. User specified descriptive string for this Backup.
-   *
    * @var string
    */
   public $description;
   protected $encryptionKeyType = EncryptionKey::class;
   protected $encryptionKeyDataType = '';
   /**
-   * Output only. `etag` is used for optimistic concurrency control as a way to
-   * help prevent simultaneous updates of a backup from overwriting each other.
-   * It is strongly suggested that systems make use of the `etag` in the read-
-   * modify-write cycle to perform backup updates in order to avoid race
-   * conditions: An `etag` is returned in the response to `GetBackup`, and
-   * systems are expected to put that etag in the request to `UpdateBackup` or
-   * `DeleteBackup` to ensure that their change will be applied to the same
-   * version of the resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Optional. A set of custom labels supplied by user.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Output only. This flag indicates whether this Backup resource was created
-   * manually by a user or via a schedule in the BackupPlan. A value of True
-   * means that the Backup was created manually.
-   *
    * @var bool
    */
   public $manual;
   /**
-   * Output only. Identifier. The fully qualified name of the Backup.
-   * `projects/locations/backupPlans/backups`
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The total number of user managed namespaces contained in the
-   * Backup.
-   *
-   * @var int
-   */
-  public $namespaceCount;
-  /**
-   * Output only. If false, Backup will fail when Backup for GKE detects
-   * Kubernetes configuration that is non-standard or requires additional setup
-   * to restore. Inherited from the parent BackupPlan's permissive_mode value.
-   *
    * @var bool
    */
   public $permissiveMode;
   /**
-   * Output only. The total number of Kubernetes Pods contained in the Backup.
-   *
    * @var int
    */
   public $podCount;
   /**
-   * Output only. The total number of Kubernetes resources included in the
-   * Backup.
-   *
    * @var int
    */
   public $resourceCount;
   /**
-   * Optional. The age (in days) after which this Backup will be automatically
-   * deleted. Must be an integer value >= 0: - If 0, no automatic deletion will
-   * occur for this Backup. - If not 0, this must be >= delete_lock_days and <=
-   * 365. Once a Backup is created, this value may only be increased. Defaults
-   * to the parent BackupPlan's backup_retain_days value.
-   *
    * @var int
    */
   public $retainDays;
   /**
-   * Output only. The time at which this Backup will be automatically deleted
-   * (calculated from create_time + retain_days).
-   *
    * @var string
    */
   public $retainExpireTime;
   /**
-   * Output only. [Output Only] Reserved for future use.
-   *
    * @var bool
    */
   public $satisfiesPzi;
   /**
-   * Output only. [Output Only] Reserved for future use.
-   *
    * @var bool
    */
   public $satisfiesPzs;
   protected $selectedApplicationsType = NamespacedNames::class;
   protected $selectedApplicationsDataType = '';
-  protected $selectedNamespaceLabelsType = ResourceLabels::class;
-  protected $selectedNamespaceLabelsDataType = '';
   protected $selectedNamespacesType = Namespaces::class;
   protected $selectedNamespacesDataType = '';
   /**
-   * Output only. The total size of the Backup in bytes = config backup size +
-   * sum(volume backup sizes)
-   *
    * @var string
    */
   public $sizeBytes;
   /**
-   * Output only. Current state of the Backup
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. Human-readable description of why the backup is in the current
-   * `state`. This field is only meant for human readability and should not be
-   * used programmatically as this field is not guaranteed to be consistent.
-   *
    * @var string
    */
   public $stateReason;
-  protected $troubleshootingInfoType = TroubleshootingInfo::class;
-  protected $troubleshootingInfoDataType = '';
   /**
-   * Output only. Server generated global unique identifier of
-   * [UUID4](https://en.wikipedia.org/wiki/Universally_unique_identifier)
-   *
    * @var string
    */
   public $uid;
   /**
-   * Output only. The timestamp when this Backup resource was last updated.
-   *
    * @var string
    */
   public $updateTime;
   /**
-   * Output only. The total number of volume backups contained in the Backup.
-   *
    * @var int
    */
   public $volumeCount;
 
   /**
-   * Output only. If True, all namespaces were included in the Backup.
-   *
-   * @param bool $allNamespaces
+   * @param bool
    */
   public function setAllNamespaces($allNamespaces)
   {
@@ -270,10 +147,7 @@ class Backup extends \Google\Model
     return $this->allNamespaces;
   }
   /**
-   * Output only. Information about the GKE cluster from which this Backup was
-   * created.
-   *
-   * @param ClusterMetadata $clusterMetadata
+   * @param ClusterMetadata
    */
   public function setClusterMetadata(ClusterMetadata $clusterMetadata)
   {
@@ -287,9 +161,7 @@ class Backup extends \Google\Model
     return $this->clusterMetadata;
   }
   /**
-   * Output only. Completion time of the Backup
-   *
-   * @param string $completeTime
+   * @param string
    */
   public function setCompleteTime($completeTime)
   {
@@ -303,9 +175,7 @@ class Backup extends \Google\Model
     return $this->completeTime;
   }
   /**
-   * Output only. The size of the config backup in bytes.
-   *
-   * @param string $configBackupSizeBytes
+   * @param string
    */
   public function setConfigBackupSizeBytes($configBackupSizeBytes)
   {
@@ -319,10 +189,7 @@ class Backup extends \Google\Model
     return $this->configBackupSizeBytes;
   }
   /**
-   * Output only. Whether or not the Backup contains Kubernetes Secrets.
-   * Controlled by the parent BackupPlan's include_secrets value.
-   *
-   * @param bool $containsSecrets
+   * @param bool
    */
   public function setContainsSecrets($containsSecrets)
   {
@@ -336,10 +203,7 @@ class Backup extends \Google\Model
     return $this->containsSecrets;
   }
   /**
-   * Output only. Whether or not the Backup contains volume data. Controlled by
-   * the parent BackupPlan's include_volume_data value.
-   *
-   * @param bool $containsVolumeData
+   * @param bool
    */
   public function setContainsVolumeData($containsVolumeData)
   {
@@ -353,9 +217,7 @@ class Backup extends \Google\Model
     return $this->containsVolumeData;
   }
   /**
-   * Output only. The timestamp when this Backup resource was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -369,15 +231,7 @@ class Backup extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Optional. Minimum age for this Backup (in days). If this field is set to a
-   * non-zero value, the Backup will be "locked" against deletion (either manual
-   * or automatic deletion) for the number of days provided (measured from the
-   * creation time of the Backup). MUST be an integer value between 0-90
-   * (inclusive). Defaults to parent BackupPlan's backup_delete_lock_days
-   * setting and may only be increased (either at creation time or in a
-   * subsequent update).
-   *
-   * @param int $deleteLockDays
+   * @param int
    */
   public function setDeleteLockDays($deleteLockDays)
   {
@@ -391,10 +245,7 @@ class Backup extends \Google\Model
     return $this->deleteLockDays;
   }
   /**
-   * Output only. The time at which an existing delete lock will expire for this
-   * backup (calculated from create_time + delete_lock_days).
-   *
-   * @param string $deleteLockExpireTime
+   * @param string
    */
   public function setDeleteLockExpireTime($deleteLockExpireTime)
   {
@@ -408,9 +259,7 @@ class Backup extends \Google\Model
     return $this->deleteLockExpireTime;
   }
   /**
-   * Optional. User specified descriptive string for this Backup.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -424,11 +273,7 @@ class Backup extends \Google\Model
     return $this->description;
   }
   /**
-   * Output only. The customer managed encryption key that was used to encrypt
-   * the Backup's artifacts. Inherited from the parent BackupPlan's
-   * encryption_key value.
-   *
-   * @param EncryptionKey $encryptionKey
+   * @param EncryptionKey
    */
   public function setEncryptionKey(EncryptionKey $encryptionKey)
   {
@@ -442,16 +287,7 @@ class Backup extends \Google\Model
     return $this->encryptionKey;
   }
   /**
-   * Output only. `etag` is used for optimistic concurrency control as a way to
-   * help prevent simultaneous updates of a backup from overwriting each other.
-   * It is strongly suggested that systems make use of the `etag` in the read-
-   * modify-write cycle to perform backup updates in order to avoid race
-   * conditions: An `etag` is returned in the response to `GetBackup`, and
-   * systems are expected to put that etag in the request to `UpdateBackup` or
-   * `DeleteBackup` to ensure that their change will be applied to the same
-   * version of the resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -465,9 +301,7 @@ class Backup extends \Google\Model
     return $this->etag;
   }
   /**
-   * Optional. A set of custom labels supplied by user.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -481,11 +315,7 @@ class Backup extends \Google\Model
     return $this->labels;
   }
   /**
-   * Output only. This flag indicates whether this Backup resource was created
-   * manually by a user or via a schedule in the BackupPlan. A value of True
-   * means that the Backup was created manually.
-   *
-   * @param bool $manual
+   * @param bool
    */
   public function setManual($manual)
   {
@@ -499,10 +329,7 @@ class Backup extends \Google\Model
     return $this->manual;
   }
   /**
-   * Output only. Identifier. The fully qualified name of the Backup.
-   * `projects/locations/backupPlans/backups`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -516,28 +343,7 @@ class Backup extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The total number of user managed namespaces contained in the
-   * Backup.
-   *
-   * @param int $namespaceCount
-   */
-  public function setNamespaceCount($namespaceCount)
-  {
-    $this->namespaceCount = $namespaceCount;
-  }
-  /**
-   * @return int
-   */
-  public function getNamespaceCount()
-  {
-    return $this->namespaceCount;
-  }
-  /**
-   * Output only. If false, Backup will fail when Backup for GKE detects
-   * Kubernetes configuration that is non-standard or requires additional setup
-   * to restore. Inherited from the parent BackupPlan's permissive_mode value.
-   *
-   * @param bool $permissiveMode
+   * @param bool
    */
   public function setPermissiveMode($permissiveMode)
   {
@@ -551,9 +357,7 @@ class Backup extends \Google\Model
     return $this->permissiveMode;
   }
   /**
-   * Output only. The total number of Kubernetes Pods contained in the Backup.
-   *
-   * @param int $podCount
+   * @param int
    */
   public function setPodCount($podCount)
   {
@@ -567,10 +371,7 @@ class Backup extends \Google\Model
     return $this->podCount;
   }
   /**
-   * Output only. The total number of Kubernetes resources included in the
-   * Backup.
-   *
-   * @param int $resourceCount
+   * @param int
    */
   public function setResourceCount($resourceCount)
   {
@@ -584,13 +385,7 @@ class Backup extends \Google\Model
     return $this->resourceCount;
   }
   /**
-   * Optional. The age (in days) after which this Backup will be automatically
-   * deleted. Must be an integer value >= 0: - If 0, no automatic deletion will
-   * occur for this Backup. - If not 0, this must be >= delete_lock_days and <=
-   * 365. Once a Backup is created, this value may only be increased. Defaults
-   * to the parent BackupPlan's backup_retain_days value.
-   *
-   * @param int $retainDays
+   * @param int
    */
   public function setRetainDays($retainDays)
   {
@@ -604,10 +399,7 @@ class Backup extends \Google\Model
     return $this->retainDays;
   }
   /**
-   * Output only. The time at which this Backup will be automatically deleted
-   * (calculated from create_time + retain_days).
-   *
-   * @param string $retainExpireTime
+   * @param string
    */
   public function setRetainExpireTime($retainExpireTime)
   {
@@ -621,9 +413,7 @@ class Backup extends \Google\Model
     return $this->retainExpireTime;
   }
   /**
-   * Output only. [Output Only] Reserved for future use.
-   *
-   * @param bool $satisfiesPzi
+   * @param bool
    */
   public function setSatisfiesPzi($satisfiesPzi)
   {
@@ -637,9 +427,7 @@ class Backup extends \Google\Model
     return $this->satisfiesPzi;
   }
   /**
-   * Output only. [Output Only] Reserved for future use.
-   *
-   * @param bool $satisfiesPzs
+   * @param bool
    */
   public function setSatisfiesPzs($satisfiesPzs)
   {
@@ -653,10 +441,7 @@ class Backup extends \Google\Model
     return $this->satisfiesPzs;
   }
   /**
-   * Output only. If set, the list of ProtectedApplications whose resources were
-   * included in the Backup.
-   *
-   * @param NamespacedNames $selectedApplications
+   * @param NamespacedNames
    */
   public function setSelectedApplications(NamespacedNames $selectedApplications)
   {
@@ -670,27 +455,7 @@ class Backup extends \Google\Model
     return $this->selectedApplications;
   }
   /**
-   * Output only. If set, the list of labels whose constituent namespaces were
-   * included in the Backup.
-   *
-   * @param ResourceLabels $selectedNamespaceLabels
-   */
-  public function setSelectedNamespaceLabels(ResourceLabels $selectedNamespaceLabels)
-  {
-    $this->selectedNamespaceLabels = $selectedNamespaceLabels;
-  }
-  /**
-   * @return ResourceLabels
-   */
-  public function getSelectedNamespaceLabels()
-  {
-    return $this->selectedNamespaceLabels;
-  }
-  /**
-   * Output only. If set, the list of namespaces that were included in the
-   * Backup.
-   *
-   * @param Namespaces $selectedNamespaces
+   * @param Namespaces
    */
   public function setSelectedNamespaces(Namespaces $selectedNamespaces)
   {
@@ -704,10 +469,7 @@ class Backup extends \Google\Model
     return $this->selectedNamespaces;
   }
   /**
-   * Output only. The total size of the Backup in bytes = config backup size +
-   * sum(volume backup sizes)
-   *
-   * @param string $sizeBytes
+   * @param string
    */
   public function setSizeBytes($sizeBytes)
   {
@@ -721,30 +483,21 @@ class Backup extends \Google\Model
     return $this->sizeBytes;
   }
   /**
-   * Output only. Current state of the Backup
-   *
-   * Accepted values: STATE_UNSPECIFIED, CREATING, IN_PROGRESS, SUCCEEDED,
-   * FAILED, DELETING
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. Human-readable description of why the backup is in the current
-   * `state`. This field is only meant for human readability and should not be
-   * used programmatically as this field is not guaranteed to be consistent.
-   *
-   * @param string $stateReason
+   * @param string
    */
   public function setStateReason($stateReason)
   {
@@ -758,27 +511,7 @@ class Backup extends \Google\Model
     return $this->stateReason;
   }
   /**
-   * Output only. Information about the troubleshooting steps which will provide
-   * debugging information to the end users.
-   *
-   * @param TroubleshootingInfo $troubleshootingInfo
-   */
-  public function setTroubleshootingInfo(TroubleshootingInfo $troubleshootingInfo)
-  {
-    $this->troubleshootingInfo = $troubleshootingInfo;
-  }
-  /**
-   * @return TroubleshootingInfo
-   */
-  public function getTroubleshootingInfo()
-  {
-    return $this->troubleshootingInfo;
-  }
-  /**
-   * Output only. Server generated global unique identifier of
-   * [UUID4](https://en.wikipedia.org/wiki/Universally_unique_identifier)
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {
@@ -792,9 +525,7 @@ class Backup extends \Google\Model
     return $this->uid;
   }
   /**
-   * Output only. The timestamp when this Backup resource was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -808,9 +539,7 @@ class Backup extends \Google\Model
     return $this->updateTime;
   }
   /**
-   * Output only. The total number of volume backups contained in the Backup.
-   *
-   * @param int $volumeCount
+   * @param int
    */
   public function setVolumeCount($volumeCount)
   {

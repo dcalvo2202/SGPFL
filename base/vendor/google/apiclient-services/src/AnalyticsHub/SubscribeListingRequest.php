@@ -25,9 +25,7 @@ class SubscribeListingRequest extends \Google\Model
   protected $destinationPubsubSubscriptionDataType = '';
 
   /**
-   * Input only. BigQuery destination dataset to create for the subscriber.
-   *
-   * @param DestinationDataset $destinationDataset
+   * @param DestinationDataset
    */
   public function setDestinationDataset(DestinationDataset $destinationDataset)
   {
@@ -41,9 +39,7 @@ class SubscribeListingRequest extends \Google\Model
     return $this->destinationDataset;
   }
   /**
-   * Input only. Destination Pub/Sub subscription to create for the subscriber.
-   *
-   * @param DestinationPubSubSubscription $destinationPubsubSubscription
+   * @param DestinationPubSubSubscription
    */
   public function setDestinationPubsubSubscription(DestinationPubSubSubscription $destinationPubsubSubscription)
   {

@@ -20,22 +20,12 @@ namespace Google\Service\CloudFilestore;
 class PromoteReplicaRequest extends \Google\Model
 {
   /**
-   * Optional. The resource name of the peer instance to promote, in the format
-   * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
-   * The peer instance is required if the operation is called on an active
-   * instance.
-   *
    * @var string
    */
   public $peerInstance;
 
   /**
-   * Optional. The resource name of the peer instance to promote, in the format
-   * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
-   * The peer instance is required if the operation is called on an active
-   * instance.
-   *
-   * @param string $peerInstance
+   * @param string
    */
   public function setPeerInstance($peerInstance)
   {

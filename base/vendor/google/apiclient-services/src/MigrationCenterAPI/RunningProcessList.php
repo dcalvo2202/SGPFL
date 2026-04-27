@@ -24,9 +24,7 @@ class RunningProcessList extends \Google\Collection
   protected $entriesDataType = 'array';
 
   /**
-   * Running process entries.
-   *
-   * @param RunningProcess[] $entries
+   * @param RunningProcess[]
    */
   public function setEntries($entries)
   {

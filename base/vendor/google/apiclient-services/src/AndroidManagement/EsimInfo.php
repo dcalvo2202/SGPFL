@@ -20,16 +20,12 @@ namespace Google\Service\AndroidManagement;
 class EsimInfo extends \Google\Model
 {
   /**
-   * Output only. ICC ID of the eSIM.
-   *
    * @var string
    */
   public $iccId;
 
   /**
-   * Output only. ICC ID of the eSIM.
-   *
-   * @param string $iccId
+   * @param string
    */
   public function setIccId($iccId)
   {

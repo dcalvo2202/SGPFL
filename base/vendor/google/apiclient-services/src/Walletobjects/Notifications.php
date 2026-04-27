@@ -25,10 +25,7 @@ class Notifications extends \Google\Model
   protected $upcomingNotificationDataType = '';
 
   /**
-   * A notification would be triggered at a specific time before the card
-   * expires.
-   *
-   * @param ExpiryNotification $expiryNotification
+   * @param ExpiryNotification
    */
   public function setExpiryNotification(ExpiryNotification $expiryNotification)
   {
@@ -42,10 +39,7 @@ class Notifications extends \Google\Model
     return $this->expiryNotification;
   }
   /**
-   * A notification would be triggered at a specific time before the card
-   * becomes usable.
-   *
-   * @param UpcomingNotification $upcomingNotification
+   * @param UpcomingNotification
    */
   public function setUpcomingNotification(UpcomingNotification $upcomingNotification)
   {

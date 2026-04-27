@@ -21,37 +21,24 @@ class BareMetalLoadBalancerAddressPool extends \Google\Collection
 {
   protected $collection_key = 'addresses';
   /**
-   * Required. The addresses that are part of this pool. Each address must be
-   * either in the CIDR form (1.2.3.0/24) or range form (1.2.3.1-1.2.3.5).
-   *
    * @var string[]
    */
   public $addresses;
   /**
-   * If true, avoid using IPs ending in .0 or .255. This avoids buggy consumer
-   * devices mistakenly dropping IPv4 traffic for those special IP addresses.
-   *
    * @var bool
    */
   public $avoidBuggyIps;
   /**
-   * If true, prevent IP addresses from being automatically assigned.
-   *
    * @var bool
    */
   public $manualAssign;
   /**
-   * Required. The name of the address pool.
-   *
    * @var string
    */
   public $pool;
 
   /**
-   * Required. The addresses that are part of this pool. Each address must be
-   * either in the CIDR form (1.2.3.0/24) or range form (1.2.3.1-1.2.3.5).
-   *
-   * @param string[] $addresses
+   * @param string[]
    */
   public function setAddresses($addresses)
   {
@@ -65,10 +52,7 @@ class BareMetalLoadBalancerAddressPool extends \Google\Collection
     return $this->addresses;
   }
   /**
-   * If true, avoid using IPs ending in .0 or .255. This avoids buggy consumer
-   * devices mistakenly dropping IPv4 traffic for those special IP addresses.
-   *
-   * @param bool $avoidBuggyIps
+   * @param bool
    */
   public function setAvoidBuggyIps($avoidBuggyIps)
   {
@@ -82,9 +66,7 @@ class BareMetalLoadBalancerAddressPool extends \Google\Collection
     return $this->avoidBuggyIps;
   }
   /**
-   * If true, prevent IP addresses from being automatically assigned.
-   *
-   * @param bool $manualAssign
+   * @param bool
    */
   public function setManualAssign($manualAssign)
   {
@@ -98,9 +80,7 @@ class BareMetalLoadBalancerAddressPool extends \Google\Collection
     return $this->manualAssign;
   }
   /**
-   * Required. The name of the address pool.
-   *
-   * @param string $pool
+   * @param string
    */
   public function setPool($pool)
   {

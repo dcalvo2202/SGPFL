@@ -24,9 +24,7 @@ class AccounttaxCustomBatchRequest extends \Google\Collection
   protected $entriesDataType = 'array';
 
   /**
-   * The request entries to be processed in the batch.
-   *
-   * @param AccounttaxCustomBatchRequestEntry[] $entries
+   * @param AccounttaxCustomBatchRequestEntry[]
    */
   public function setEntries($entries)
   {

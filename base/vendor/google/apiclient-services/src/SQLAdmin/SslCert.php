@@ -20,68 +20,44 @@ namespace Google\Service\SQLAdmin;
 class SslCert extends \Google\Model
 {
   /**
-   * PEM representation.
-   *
    * @var string
    */
   public $cert;
   /**
-   * Serial number, as extracted from the certificate.
-   *
    * @var string
    */
   public $certSerialNumber;
   /**
-   * User supplied name. Constrained to [a-zA-Z.-_ ]+.
-   *
    * @var string
    */
   public $commonName;
   /**
-   * The time when the certificate was created in [RFC
-   * 3339](https://tools.ietf.org/html/rfc3339) format, for example
-   * `2012-11-15T16:19:00.094Z`
-   *
    * @var string
    */
   public $createTime;
   /**
-   * The time when the certificate expires in [RFC
-   * 3339](https://tools.ietf.org/html/rfc3339) format, for example
-   * `2012-11-15T16:19:00.094Z`.
-   *
    * @var string
    */
   public $expirationTime;
   /**
-   * Name of the database instance.
-   *
    * @var string
    */
   public $instance;
   /**
-   * This is always `sql#sslCert`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The URI of this resource.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * Sha1 Fingerprint.
-   *
    * @var string
    */
   public $sha1Fingerprint;
 
   /**
-   * PEM representation.
-   *
-   * @param string $cert
+   * @param string
    */
   public function setCert($cert)
   {
@@ -95,9 +71,7 @@ class SslCert extends \Google\Model
     return $this->cert;
   }
   /**
-   * Serial number, as extracted from the certificate.
-   *
-   * @param string $certSerialNumber
+   * @param string
    */
   public function setCertSerialNumber($certSerialNumber)
   {
@@ -111,9 +85,7 @@ class SslCert extends \Google\Model
     return $this->certSerialNumber;
   }
   /**
-   * User supplied name. Constrained to [a-zA-Z.-_ ]+.
-   *
-   * @param string $commonName
+   * @param string
    */
   public function setCommonName($commonName)
   {
@@ -127,11 +99,7 @@ class SslCert extends \Google\Model
     return $this->commonName;
   }
   /**
-   * The time when the certificate was created in [RFC
-   * 3339](https://tools.ietf.org/html/rfc3339) format, for example
-   * `2012-11-15T16:19:00.094Z`
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -145,11 +113,7 @@ class SslCert extends \Google\Model
     return $this->createTime;
   }
   /**
-   * The time when the certificate expires in [RFC
-   * 3339](https://tools.ietf.org/html/rfc3339) format, for example
-   * `2012-11-15T16:19:00.094Z`.
-   *
-   * @param string $expirationTime
+   * @param string
    */
   public function setExpirationTime($expirationTime)
   {
@@ -163,9 +127,7 @@ class SslCert extends \Google\Model
     return $this->expirationTime;
   }
   /**
-   * Name of the database instance.
-   *
-   * @param string $instance
+   * @param string
    */
   public function setInstance($instance)
   {
@@ -179,9 +141,7 @@ class SslCert extends \Google\Model
     return $this->instance;
   }
   /**
-   * This is always `sql#sslCert`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -195,9 +155,7 @@ class SslCert extends \Google\Model
     return $this->kind;
   }
   /**
-   * The URI of this resource.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -211,9 +169,7 @@ class SslCert extends \Google\Model
     return $this->selfLink;
   }
   /**
-   * Sha1 Fingerprint.
-   *
-   * @param string $sha1Fingerprint
+   * @param string
    */
   public function setSha1Fingerprint($sha1Fingerprint)
   {

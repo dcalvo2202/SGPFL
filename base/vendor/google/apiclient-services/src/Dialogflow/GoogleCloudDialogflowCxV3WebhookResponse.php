@@ -39,7 +39,7 @@ class GoogleCloudDialogflowCxV3WebhookResponse extends \Google\Model
   public $targetPage;
 
   /**
-   * @param GoogleCloudDialogflowCxV3WebhookResponseFulfillmentResponse $fulfillmentResponse
+   * @param GoogleCloudDialogflowCxV3WebhookResponseFulfillmentResponse
    */
   public function setFulfillmentResponse(GoogleCloudDialogflowCxV3WebhookResponseFulfillmentResponse $fulfillmentResponse)
   {
@@ -53,7 +53,7 @@ class GoogleCloudDialogflowCxV3WebhookResponse extends \Google\Model
     return $this->fulfillmentResponse;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3PageInfo $pageInfo
+   * @param GoogleCloudDialogflowCxV3PageInfo
    */
   public function setPageInfo(GoogleCloudDialogflowCxV3PageInfo $pageInfo)
   {
@@ -67,7 +67,7 @@ class GoogleCloudDialogflowCxV3WebhookResponse extends \Google\Model
     return $this->pageInfo;
   }
   /**
-   * @param array[] $payload
+   * @param array[]
    */
   public function setPayload($payload)
   {
@@ -81,7 +81,7 @@ class GoogleCloudDialogflowCxV3WebhookResponse extends \Google\Model
     return $this->payload;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3SessionInfo $sessionInfo
+   * @param GoogleCloudDialogflowCxV3SessionInfo
    */
   public function setSessionInfo(GoogleCloudDialogflowCxV3SessionInfo $sessionInfo)
   {
@@ -95,7 +95,7 @@ class GoogleCloudDialogflowCxV3WebhookResponse extends \Google\Model
     return $this->sessionInfo;
   }
   /**
-   * @param string $targetFlow
+   * @param string
    */
   public function setTargetFlow($targetFlow)
   {
@@ -109,7 +109,7 @@ class GoogleCloudDialogflowCxV3WebhookResponse extends \Google\Model
     return $this->targetFlow;
   }
   /**
-   * @param string $targetPage
+   * @param string
    */
   public function setTargetPage($targetPage)
   {

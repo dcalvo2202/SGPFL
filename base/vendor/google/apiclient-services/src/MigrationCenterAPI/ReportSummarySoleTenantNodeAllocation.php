@@ -20,24 +20,18 @@ namespace Google\Service\MigrationCenterAPI;
 class ReportSummarySoleTenantNodeAllocation extends \Google\Model
 {
   /**
-   * Count of assets allocated to these nodes
-   *
    * @var string
    */
   public $allocatedAssetCount;
   protected $nodeType = SoleTenantNodeType::class;
   protected $nodeDataType = '';
   /**
-   * Count of this node type to be provisioned
-   *
    * @var string
    */
   public $nodeCount;
 
   /**
-   * Count of assets allocated to these nodes
-   *
-   * @param string $allocatedAssetCount
+   * @param string
    */
   public function setAllocatedAssetCount($allocatedAssetCount)
   {
@@ -51,9 +45,7 @@ class ReportSummarySoleTenantNodeAllocation extends \Google\Model
     return $this->allocatedAssetCount;
   }
   /**
-   * Sole Tenant node type, e.g. "m3-node-128-3904"
-   *
-   * @param SoleTenantNodeType $node
+   * @param SoleTenantNodeType
    */
   public function setNode(SoleTenantNodeType $node)
   {
@@ -67,9 +59,7 @@ class ReportSummarySoleTenantNodeAllocation extends \Google\Model
     return $this->node;
   }
   /**
-   * Count of this node type to be provisioned
-   *
-   * @param string $nodeCount
+   * @param string
    */
   public function setNodeCount($nodeCount)
   {

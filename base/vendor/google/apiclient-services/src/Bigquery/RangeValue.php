@@ -25,10 +25,7 @@ class RangeValue extends \Google\Model
   protected $startDataType = '';
 
   /**
-   * Optional. The end value of the range. A missing value represents an
-   * unbounded end.
-   *
-   * @param QueryParameterValue $end
+   * @param QueryParameterValue
    */
   public function setEnd(QueryParameterValue $end)
   {
@@ -42,10 +39,7 @@ class RangeValue extends \Google\Model
     return $this->end;
   }
   /**
-   * Optional. The start value of the range. A missing value represents an
-   * unbounded start.
-   *
-   * @param QueryParameterValue $start
+   * @param QueryParameterValue
    */
   public function setStart(QueryParameterValue $start)
   {

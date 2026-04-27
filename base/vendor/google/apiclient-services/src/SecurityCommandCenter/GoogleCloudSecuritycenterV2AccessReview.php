@@ -20,55 +20,36 @@ namespace Google\Service\SecurityCommandCenter;
 class GoogleCloudSecuritycenterV2AccessReview extends \Google\Model
 {
   /**
-   * The API group of the resource. "*" means all.
-   *
    * @var string
    */
   public $group;
   /**
-   * The name of the resource being requested. Empty means all.
-   *
    * @var string
    */
   public $name;
   /**
-   * Namespace of the action being requested. Currently, there is no distinction
-   * between no namespace and all namespaces. Both are represented by ""
-   * (empty).
-   *
    * @var string
    */
   public $ns;
   /**
-   * The optional resource type requested. "*" means all.
-   *
    * @var string
    */
   public $resource;
   /**
-   * The optional subresource type.
-   *
    * @var string
    */
   public $subresource;
   /**
-   * A Kubernetes resource API verb, like get, list, watch, create, update,
-   * delete, proxy. "*" means all.
-   *
    * @var string
    */
   public $verb;
   /**
-   * The API version of the resource. "*" means all.
-   *
    * @var string
    */
   public $version;
 
   /**
-   * The API group of the resource. "*" means all.
-   *
-   * @param string $group
+   * @param string
    */
   public function setGroup($group)
   {
@@ -82,9 +63,7 @@ class GoogleCloudSecuritycenterV2AccessReview extends \Google\Model
     return $this->group;
   }
   /**
-   * The name of the resource being requested. Empty means all.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -98,11 +77,7 @@ class GoogleCloudSecuritycenterV2AccessReview extends \Google\Model
     return $this->name;
   }
   /**
-   * Namespace of the action being requested. Currently, there is no distinction
-   * between no namespace and all namespaces. Both are represented by ""
-   * (empty).
-   *
-   * @param string $ns
+   * @param string
    */
   public function setNs($ns)
   {
@@ -116,9 +91,7 @@ class GoogleCloudSecuritycenterV2AccessReview extends \Google\Model
     return $this->ns;
   }
   /**
-   * The optional resource type requested. "*" means all.
-   *
-   * @param string $resource
+   * @param string
    */
   public function setResource($resource)
   {
@@ -132,9 +105,7 @@ class GoogleCloudSecuritycenterV2AccessReview extends \Google\Model
     return $this->resource;
   }
   /**
-   * The optional subresource type.
-   *
-   * @param string $subresource
+   * @param string
    */
   public function setSubresource($subresource)
   {
@@ -148,10 +119,7 @@ class GoogleCloudSecuritycenterV2AccessReview extends \Google\Model
     return $this->subresource;
   }
   /**
-   * A Kubernetes resource API verb, like get, list, watch, create, update,
-   * delete, proxy. "*" means all.
-   *
-   * @param string $verb
+   * @param string
    */
   public function setVerb($verb)
   {
@@ -165,9 +133,7 @@ class GoogleCloudSecuritycenterV2AccessReview extends \Google\Model
     return $this->verb;
   }
   /**
-   * The API version of the resource. "*" means all.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

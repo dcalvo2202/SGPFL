@@ -20,22 +20,16 @@ namespace Google\Service\YouTube;
 class VideoLocalization extends \Google\Model
 {
   /**
-   * Localized version of the video's description.
-   *
    * @var string
    */
   public $description;
   /**
-   * Localized version of the video's title.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * Localized version of the video's description.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -49,9 +43,7 @@ class VideoLocalization extends \Google\Model
     return $this->description;
   }
   /**
-   * Localized version of the video's title.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

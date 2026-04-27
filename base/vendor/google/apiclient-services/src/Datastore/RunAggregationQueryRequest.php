@@ -22,9 +22,6 @@ class RunAggregationQueryRequest extends \Google\Model
   protected $aggregationQueryType = AggregationQuery::class;
   protected $aggregationQueryDataType = '';
   /**
-   * The ID of the database against which to make the request. '(default)' is
-   * not allowed; please use empty string '' to refer the default database.
-   *
    * @var string
    */
   public $databaseId;
@@ -38,9 +35,7 @@ class RunAggregationQueryRequest extends \Google\Model
   protected $readOptionsDataType = '';
 
   /**
-   * The query to run.
-   *
-   * @param AggregationQuery $aggregationQuery
+   * @param AggregationQuery
    */
   public function setAggregationQuery(AggregationQuery $aggregationQuery)
   {
@@ -54,10 +49,7 @@ class RunAggregationQueryRequest extends \Google\Model
     return $this->aggregationQuery;
   }
   /**
-   * The ID of the database against which to make the request. '(default)' is
-   * not allowed; please use empty string '' to refer the default database.
-   *
-   * @param string $databaseId
+   * @param string
    */
   public function setDatabaseId($databaseId)
   {
@@ -71,10 +63,7 @@ class RunAggregationQueryRequest extends \Google\Model
     return $this->databaseId;
   }
   /**
-   * Optional. Explain options for the query. If set, additional query
-   * statistics will be returned. If not, only query results will be returned.
-   *
-   * @param ExplainOptions $explainOptions
+   * @param ExplainOptions
    */
   public function setExplainOptions(ExplainOptions $explainOptions)
   {
@@ -88,9 +77,7 @@ class RunAggregationQueryRequest extends \Google\Model
     return $this->explainOptions;
   }
   /**
-   * The GQL query to run. This query must be an aggregation query.
-   *
-   * @param GqlQuery $gqlQuery
+   * @param GqlQuery
    */
   public function setGqlQuery(GqlQuery $gqlQuery)
   {
@@ -104,11 +91,7 @@ class RunAggregationQueryRequest extends \Google\Model
     return $this->gqlQuery;
   }
   /**
-   * Entities are partitioned into subsets, identified by a partition ID.
-   * Queries are scoped to a single partition. This partition ID is normalized
-   * with the standard default context partition ID.
-   *
-   * @param PartitionId $partitionId
+   * @param PartitionId
    */
   public function setPartitionId(PartitionId $partitionId)
   {
@@ -122,9 +105,7 @@ class RunAggregationQueryRequest extends \Google\Model
     return $this->partitionId;
   }
   /**
-   * The options for this query.
-   *
-   * @param ReadOptions $readOptions
+   * @param ReadOptions
    */
   public function setReadOptions(ReadOptions $readOptions)
   {

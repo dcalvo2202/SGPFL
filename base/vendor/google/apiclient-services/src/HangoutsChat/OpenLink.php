@@ -20,16 +20,12 @@ namespace Google\Service\HangoutsChat;
 class OpenLink extends \Google\Model
 {
   /**
-   * The URL to open.
-   *
    * @var string
    */
   public $url;
 
   /**
-   * The URL to open.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

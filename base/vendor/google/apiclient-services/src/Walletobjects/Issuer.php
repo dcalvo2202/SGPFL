@@ -24,21 +24,14 @@ class Issuer extends \Google\Model
   protected $contactInfoType = IssuerContactInfo::class;
   protected $contactInfoDataType = '';
   /**
-   * URL for the issuer's home page.
-   *
    * @var string
    */
   public $homepageUrl;
   /**
-   * The unique identifier for an issuer account. This is automatically
-   * generated when the issuer is inserted.
-   *
    * @var string
    */
   public $issuerId;
   /**
-   * The account name of the issuer.
-   *
    * @var string
    */
   public $name;
@@ -46,9 +39,7 @@ class Issuer extends \Google\Model
   protected $smartTapMerchantDataDataType = '';
 
   /**
-   * Allows the issuer to provide their callback settings.
-   *
-   * @param CallbackOptions $callbackOptions
+   * @param CallbackOptions
    */
   public function setCallbackOptions(CallbackOptions $callbackOptions)
   {
@@ -62,9 +53,7 @@ class Issuer extends \Google\Model
     return $this->callbackOptions;
   }
   /**
-   * Issuer contact information.
-   *
-   * @param IssuerContactInfo $contactInfo
+   * @param IssuerContactInfo
    */
   public function setContactInfo(IssuerContactInfo $contactInfo)
   {
@@ -78,9 +67,7 @@ class Issuer extends \Google\Model
     return $this->contactInfo;
   }
   /**
-   * URL for the issuer's home page.
-   *
-   * @param string $homepageUrl
+   * @param string
    */
   public function setHomepageUrl($homepageUrl)
   {
@@ -94,10 +81,7 @@ class Issuer extends \Google\Model
     return $this->homepageUrl;
   }
   /**
-   * The unique identifier for an issuer account. This is automatically
-   * generated when the issuer is inserted.
-   *
-   * @param string $issuerId
+   * @param string
    */
   public function setIssuerId($issuerId)
   {
@@ -111,9 +95,7 @@ class Issuer extends \Google\Model
     return $this->issuerId;
   }
   /**
-   * The account name of the issuer.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -127,10 +109,7 @@ class Issuer extends \Google\Model
     return $this->name;
   }
   /**
-   * Available only to Smart Tap enabled partners. Contact support for
-   * additional guidance.
-   *
-   * @param SmartTapMerchantData $smartTapMerchantData
+   * @param SmartTapMerchantData
    */
   public function setSmartTapMerchantData(SmartTapMerchantData $smartTapMerchantData)
   {

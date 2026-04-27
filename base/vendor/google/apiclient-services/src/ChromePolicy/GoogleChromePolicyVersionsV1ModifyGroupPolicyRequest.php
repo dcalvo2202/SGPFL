@@ -24,19 +24,12 @@ class GoogleChromePolicyVersionsV1ModifyGroupPolicyRequest extends \Google\Model
   protected $policyValueType = GoogleChromePolicyVersionsV1PolicyValue::class;
   protected $policyValueDataType = '';
   /**
-   * Required. Policy fields to update. Only fields in this mask will be
-   * updated; other fields in `policy_value` will be ignored (even if they have
-   * values). If a field is in this list it must have a value in 'policy_value'.
-   *
    * @var string
    */
   public $updateMask;
 
   /**
-   * Required. The key of the target for which we want to modify a policy. The
-   * target resource must point to a Group.
-   *
-   * @param GoogleChromePolicyVersionsV1PolicyTargetKey $policyTargetKey
+   * @param GoogleChromePolicyVersionsV1PolicyTargetKey
    */
   public function setPolicyTargetKey(GoogleChromePolicyVersionsV1PolicyTargetKey $policyTargetKey)
   {
@@ -50,9 +43,7 @@ class GoogleChromePolicyVersionsV1ModifyGroupPolicyRequest extends \Google\Model
     return $this->policyTargetKey;
   }
   /**
-   * The new value for the policy.
-   *
-   * @param GoogleChromePolicyVersionsV1PolicyValue $policyValue
+   * @param GoogleChromePolicyVersionsV1PolicyValue
    */
   public function setPolicyValue(GoogleChromePolicyVersionsV1PolicyValue $policyValue)
   {
@@ -66,11 +57,7 @@ class GoogleChromePolicyVersionsV1ModifyGroupPolicyRequest extends \Google\Model
     return $this->policyValue;
   }
   /**
-   * Required. Policy fields to update. Only fields in this mask will be
-   * updated; other fields in `policy_value` will be ignored (even if they have
-   * values). If a field is in this list it must have a value in 'policy_value'.
-   *
-   * @param string $updateMask
+   * @param string
    */
   public function setUpdateMask($updateMask)
   {

@@ -20,22 +20,16 @@ namespace Google\Service\Baremetalsolution;
 class UserAccount extends \Google\Model
 {
   /**
-   * Encrypted initial password value.
-   *
    * @var string
    */
   public $encryptedPassword;
   /**
-   * KMS CryptoKey Version used to encrypt the password.
-   *
    * @var string
    */
   public $kmsKeyVersion;
 
   /**
-   * Encrypted initial password value.
-   *
-   * @param string $encryptedPassword
+   * @param string
    */
   public function setEncryptedPassword($encryptedPassword)
   {
@@ -49,9 +43,7 @@ class UserAccount extends \Google\Model
     return $this->encryptedPassword;
   }
   /**
-   * KMS CryptoKey Version used to encrypt the password.
-   *
-   * @param string $kmsKeyVersion
+   * @param string
    */
   public function setKmsKeyVersion($kmsKeyVersion)
   {

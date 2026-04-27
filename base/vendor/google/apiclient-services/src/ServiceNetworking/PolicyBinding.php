@@ -20,38 +20,16 @@ namespace Google\Service\ServiceNetworking;
 class PolicyBinding extends \Google\Model
 {
   /**
-   * Required. Member to bind the role with. See
-   * /iam/docs/reference/rest/v1/Policy#Binding for how to format each member.
-   * Eg. - user:myuser@mydomain.com - serviceAccount:my-service-
-   * account@app.gserviceaccount.com
-   *
    * @var string
    */
   public $member;
   /**
-   * Required. Role to apply. Only allowlisted roles can be used at the
-   * specified granularity. The role must be one of the following: -
-   * 'roles/container.hostServiceAgentUser' applied on the shared VPC host
-   * project - 'roles/compute.securityAdmin' applied on the shared VPC host
-   * project - 'roles/compute.networkAdmin' applied on the shared VPC host
-   * project - 'roles/tpu.xpnAgent' applied on the shared VPC host project -
-   * 'roles/dns.admin' applied on the shared VPC host project -
-   * 'roles/logging.admin' applied on the shared VPC host project -
-   * 'roles/monitoring.viewer' applied on the shared VPC host project -
-   * 'roles/servicemanagement.quotaViewer' applied on the shared VPC host
-   * project
-   *
    * @var string
    */
   public $role;
 
   /**
-   * Required. Member to bind the role with. See
-   * /iam/docs/reference/rest/v1/Policy#Binding for how to format each member.
-   * Eg. - user:myuser@mydomain.com - serviceAccount:my-service-
-   * account@app.gserviceaccount.com
-   *
-   * @param string $member
+   * @param string
    */
   public function setMember($member)
   {
@@ -65,19 +43,7 @@ class PolicyBinding extends \Google\Model
     return $this->member;
   }
   /**
-   * Required. Role to apply. Only allowlisted roles can be used at the
-   * specified granularity. The role must be one of the following: -
-   * 'roles/container.hostServiceAgentUser' applied on the shared VPC host
-   * project - 'roles/compute.securityAdmin' applied on the shared VPC host
-   * project - 'roles/compute.networkAdmin' applied on the shared VPC host
-   * project - 'roles/tpu.xpnAgent' applied on the shared VPC host project -
-   * 'roles/dns.admin' applied on the shared VPC host project -
-   * 'roles/logging.admin' applied on the shared VPC host project -
-   * 'roles/monitoring.viewer' applied on the shared VPC host project -
-   * 'roles/servicemanagement.quotaViewer' applied on the shared VPC host
-   * project
-   *
-   * @param string $role
+   * @param string
    */
   public function setRole($role)
   {

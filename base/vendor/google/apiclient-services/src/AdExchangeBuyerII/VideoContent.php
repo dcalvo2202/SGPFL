@@ -20,23 +20,16 @@ namespace Google\Service\AdExchangeBuyerII;
 class VideoContent extends \Google\Model
 {
   /**
-   * The URL to fetch a video ad.
-   *
    * @var string
    */
   public $videoUrl;
   /**
-   * The contents of a VAST document for a video ad. This document should
-   * conform to the VAST 2.0 or 3.0 standard.
-   *
    * @var string
    */
   public $videoVastXml;
 
   /**
-   * The URL to fetch a video ad.
-   *
-   * @param string $videoUrl
+   * @param string
    */
   public function setVideoUrl($videoUrl)
   {
@@ -50,10 +43,7 @@ class VideoContent extends \Google\Model
     return $this->videoUrl;
   }
   /**
-   * The contents of a VAST document for a video ad. This document should
-   * conform to the VAST 2.0 or 3.0 standard.
-   *
-   * @param string $videoVastXml
+   * @param string
    */
   public function setVideoVastXml($videoVastXml)
   {

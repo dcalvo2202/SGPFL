@@ -24,12 +24,7 @@ class ListPropertiesSuggestionState extends \Google\Collection
   protected $nestingLevelsSuggestionStatesDataType = 'array';
 
   /**
-   * A mask that indicates which of the fields on the corresponding NestingLevel
-   * in nesting_levels have been changed in this suggestion. The nesting level
-   * suggestion states are returned in ascending order of the nesting level with
-   * the least nested returned first.
-   *
-   * @param NestingLevelSuggestionState[] $nestingLevelsSuggestionStates
+   * @param NestingLevelSuggestionState[]
    */
   public function setNestingLevelsSuggestionStates($nestingLevelsSuggestionStates)
   {

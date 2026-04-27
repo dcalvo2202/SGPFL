@@ -20,8 +20,6 @@ namespace Google\Service\Dns;
 class Project extends \Google\Model
 {
   /**
-   * User assigned unique identifier for the resource (output only).
-   *
    * @var string
    */
   public $id;
@@ -30,9 +28,6 @@ class Project extends \Google\Model
    */
   public $kind;
   /**
-   * Unique numeric identifier for the resource; defined by the server (output
-   * only).
-   *
    * @var string
    */
   public $number;
@@ -40,9 +35,7 @@ class Project extends \Google\Model
   protected $quotaDataType = '';
 
   /**
-   * User assigned unique identifier for the resource (output only).
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -56,7 +49,7 @@ class Project extends \Google\Model
     return $this->id;
   }
   /**
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -70,10 +63,7 @@ class Project extends \Google\Model
     return $this->kind;
   }
   /**
-   * Unique numeric identifier for the resource; defined by the server (output
-   * only).
-   *
-   * @param string $number
+   * @param string
    */
   public function setNumber($number)
   {
@@ -87,9 +77,7 @@ class Project extends \Google\Model
     return $this->number;
   }
   /**
-   * Quotas assigned to this project (output only).
-   *
-   * @param Quota $quota
+   * @param Quota
    */
   public function setQuota(Quota $quota)
   {

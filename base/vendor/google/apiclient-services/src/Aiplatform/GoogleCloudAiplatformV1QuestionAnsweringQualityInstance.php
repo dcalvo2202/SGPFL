@@ -20,34 +20,24 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1QuestionAnsweringQualityInstance extends \Google\Model
 {
   /**
-   * Required. Text to answer the question.
-   *
    * @var string
    */
   public $context;
   /**
-   * Required. Question Answering prompt for LLM.
-   *
    * @var string
    */
   public $instruction;
   /**
-   * Required. Output of the evaluated model.
-   *
    * @var string
    */
   public $prediction;
   /**
-   * Optional. Ground truth used to compare against the prediction.
-   *
    * @var string
    */
   public $reference;
 
   /**
-   * Required. Text to answer the question.
-   *
-   * @param string $context
+   * @param string
    */
   public function setContext($context)
   {
@@ -61,9 +51,7 @@ class GoogleCloudAiplatformV1QuestionAnsweringQualityInstance extends \Google\Mo
     return $this->context;
   }
   /**
-   * Required. Question Answering prompt for LLM.
-   *
-   * @param string $instruction
+   * @param string
    */
   public function setInstruction($instruction)
   {
@@ -77,9 +65,7 @@ class GoogleCloudAiplatformV1QuestionAnsweringQualityInstance extends \Google\Mo
     return $this->instruction;
   }
   /**
-   * Required. Output of the evaluated model.
-   *
-   * @param string $prediction
+   * @param string
    */
   public function setPrediction($prediction)
   {
@@ -93,9 +79,7 @@ class GoogleCloudAiplatformV1QuestionAnsweringQualityInstance extends \Google\Mo
     return $this->prediction;
   }
   /**
-   * Optional. Ground truth used to compare against the prediction.
-   *
-   * @param string $reference
+   * @param string
    */
   public function setReference($reference)
   {

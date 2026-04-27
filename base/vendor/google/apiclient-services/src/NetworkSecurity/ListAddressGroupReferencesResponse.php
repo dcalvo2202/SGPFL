@@ -23,18 +23,12 @@ class ListAddressGroupReferencesResponse extends \Google\Collection
   protected $addressGroupReferencesType = ListAddressGroupReferencesResponseAddressGroupReference::class;
   protected $addressGroupReferencesDataType = 'array';
   /**
-   * If there might be more results than those appearing in this response, then
-   * `next_page_token` is included. To get the next set of results, call this
-   * method again using the value of `next_page_token` as `page_token`.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * A list of references that matches the specified filter in the request.
-   *
-   * @param ListAddressGroupReferencesResponseAddressGroupReference[] $addressGroupReferences
+   * @param ListAddressGroupReferencesResponseAddressGroupReference[]
    */
   public function setAddressGroupReferences($addressGroupReferences)
   {
@@ -48,11 +42,7 @@ class ListAddressGroupReferencesResponse extends \Google\Collection
     return $this->addressGroupReferences;
   }
   /**
-   * If there might be more results than those appearing in this response, then
-   * `next_page_token` is included. To get the next set of results, call this
-   * method again using the value of `next_page_token` as `page_token`.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

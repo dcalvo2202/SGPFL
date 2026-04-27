@@ -21,30 +21,16 @@ class EntityUserLinkPermissions extends \Google\Collection
 {
   protected $collection_key = 'local';
   /**
-   * Effective permissions represent all the permissions that a user has for
-   * this entity. These include any implied permissions (e.g., EDIT implies
-   * VIEW) or inherited permissions from the parent entity. Effective
-   * permissions are read-only.
-   *
    * @var string[]
    */
   public $effective;
   /**
-   * Permissions that a user has been assigned at this very level. Does not
-   * include any implied or inherited permissions. Local permissions are
-   * modifiable.
-   *
    * @var string[]
    */
   public $local;
 
   /**
-   * Effective permissions represent all the permissions that a user has for
-   * this entity. These include any implied permissions (e.g., EDIT implies
-   * VIEW) or inherited permissions from the parent entity. Effective
-   * permissions are read-only.
-   *
-   * @param string[] $effective
+   * @param string[]
    */
   public function setEffective($effective)
   {
@@ -58,11 +44,7 @@ class EntityUserLinkPermissions extends \Google\Collection
     return $this->effective;
   }
   /**
-   * Permissions that a user has been assigned at this very level. Does not
-   * include any implied or inherited permissions. Local permissions are
-   * modifiable.
-   *
-   * @param string[] $local
+   * @param string[]
    */
   public function setLocal($local)
   {

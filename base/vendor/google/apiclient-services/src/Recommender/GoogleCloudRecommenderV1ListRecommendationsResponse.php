@@ -21,9 +21,6 @@ class GoogleCloudRecommenderV1ListRecommendationsResponse extends \Google\Collec
 {
   protected $collection_key = 'recommendations';
   /**
-   * A token that can be used to request the next page of results. This field is
-   * empty if there are no additional results.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GoogleCloudRecommenderV1ListRecommendationsResponse extends \Google\Collec
   protected $recommendationsDataType = 'array';
 
   /**
-   * A token that can be used to request the next page of results. This field is
-   * empty if there are no additional results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class GoogleCloudRecommenderV1ListRecommendationsResponse extends \Google\Collec
     return $this->nextPageToken;
   }
   /**
-   * The set of recommendations for the `parent` resource.
-   *
-   * @param GoogleCloudRecommenderV1Recommendation[] $recommendations
+   * @param GoogleCloudRecommenderV1Recommendation[]
    */
   public function setRecommendations($recommendations)
   {

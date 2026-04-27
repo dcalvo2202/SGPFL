@@ -24,9 +24,7 @@ class GroupLicensesListResponse extends \Google\Collection
   protected $groupLicenseDataType = 'array';
 
   /**
-   * A group license for a product approved for use in the enterprise.
-   *
-   * @param GroupLicense[] $groupLicense
+   * @param GroupLicense[]
    */
   public function setGroupLicense($groupLicense)
   {

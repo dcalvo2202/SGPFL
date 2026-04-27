@@ -22,17 +22,12 @@ class PrivateAuctionTerms extends \Google\Model
   protected $floorPriceType = Price::class;
   protected $floorPriceDataType = '';
   /**
-   * Output only. True if open auction buyers are allowed to compete with
-   * invited buyers in this private auction.
-   *
    * @var bool
    */
   public $openAuctionAllowed;
 
   /**
-   * The minimum price buyer has to bid to compete in the private auction.
-   *
-   * @param Price $floorPrice
+   * @param Price
    */
   public function setFloorPrice(Price $floorPrice)
   {
@@ -46,10 +41,7 @@ class PrivateAuctionTerms extends \Google\Model
     return $this->floorPrice;
   }
   /**
-   * Output only. True if open auction buyers are allowed to compete with
-   * invited buyers in this private auction.
-   *
-   * @param bool $openAuctionAllowed
+   * @param bool
    */
   public function setOpenAuctionAllowed($openAuctionAllowed)
   {

@@ -20,20 +20,12 @@ namespace Google\Service\Datastream;
 class PscInterfaceConfig extends \Google\Model
 {
   /**
-   * Required. Fully qualified name of the Network Attachment that Datastream
-   * will connect to. Format:
-   * `projects/{project}/regions/{region}/networkAttachments/{name}`
-   *
    * @var string
    */
   public $networkAttachment;
 
   /**
-   * Required. Fully qualified name of the Network Attachment that Datastream
-   * will connect to. Format:
-   * `projects/{project}/regions/{region}/networkAttachments/{name}`
-   *
-   * @param string $networkAttachment
+   * @param string
    */
   public function setNetworkAttachment($networkAttachment)
   {

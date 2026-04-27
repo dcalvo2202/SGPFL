@@ -23,17 +23,12 @@ class Footer extends \Google\Collection
   protected $contentType = StructuralElement::class;
   protected $contentDataType = 'array';
   /**
-   * The ID of the footer.
-   *
    * @var string
    */
   public $footerId;
 
   /**
-   * The contents of the footer. The indexes for a footer's content begin at
-   * zero.
-   *
-   * @param StructuralElement[] $content
+   * @param StructuralElement[]
    */
   public function setContent($content)
   {
@@ -47,9 +42,7 @@ class Footer extends \Google\Collection
     return $this->content;
   }
   /**
-   * The ID of the footer.
-   *
-   * @param string $footerId
+   * @param string
    */
   public function setFooterId($footerId)
   {

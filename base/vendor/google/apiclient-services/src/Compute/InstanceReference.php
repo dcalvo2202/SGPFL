@@ -20,18 +20,12 @@ namespace Google\Service\Compute;
 class InstanceReference extends \Google\Model
 {
   /**
-   * The URL for a specific instance. @required
-   * compute.instancegroups.addInstances/removeInstances
-   *
    * @var string
    */
   public $instance;
 
   /**
-   * The URL for a specific instance. @required
-   * compute.instancegroups.addInstances/removeInstances
-   *
-   * @param string $instance
+   * @param string
    */
   public function setInstance($instance)
   {

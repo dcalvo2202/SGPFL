@@ -20,28 +20,20 @@ namespace Google\Service\ChromeManagement;
 class GoogleChromeManagementV1KioskAppStatusReport extends \Google\Model
 {
   /**
-   * App id of kiosk app for example "mdmkkicfmmkgmpkmkdikhlbggogpicma"
-   *
    * @var string
    */
   public $appId;
   /**
-   * App version number of kiosk app for example "1.10.118"
-   *
    * @var string
    */
   public $appVersion;
   /**
-   * Timestamp of when report was collected
-   *
    * @var string
    */
   public $reportTime;
 
   /**
-   * App id of kiosk app for example "mdmkkicfmmkgmpkmkdikhlbggogpicma"
-   *
-   * @param string $appId
+   * @param string
    */
   public function setAppId($appId)
   {
@@ -55,9 +47,7 @@ class GoogleChromeManagementV1KioskAppStatusReport extends \Google\Model
     return $this->appId;
   }
   /**
-   * App version number of kiosk app for example "1.10.118"
-   *
-   * @param string $appVersion
+   * @param string
    */
   public function setAppVersion($appVersion)
   {
@@ -71,9 +61,7 @@ class GoogleChromeManagementV1KioskAppStatusReport extends \Google\Model
     return $this->appVersion;
   }
   /**
-   * Timestamp of when report was collected
-   *
-   * @param string $reportTime
+   * @param string
    */
   public function setReportTime($reportTime)
   {

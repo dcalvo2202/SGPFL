@@ -21,29 +21,20 @@ class ListMessageBusEnrollmentsResponse extends \Google\Collection
 {
   protected $collection_key = 'unreachable';
   /**
-   * The requested enrollments, up to the number specified in `page_size`.
-   *
    * @var string[]
    */
   public $enrollments;
   /**
-   * A page token that can be sent to `ListMessageBusEnrollments` to request the
-   * next page. If this is empty, then there are no more pages.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Unreachable resources, if any.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * The requested enrollments, up to the number specified in `page_size`.
-   *
-   * @param string[] $enrollments
+   * @param string[]
    */
   public function setEnrollments($enrollments)
   {
@@ -57,10 +48,7 @@ class ListMessageBusEnrollmentsResponse extends \Google\Collection
     return $this->enrollments;
   }
   /**
-   * A page token that can be sent to `ListMessageBusEnrollments` to request the
-   * next page. If this is empty, then there are no more pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -74,9 +62,7 @@ class ListMessageBusEnrollmentsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Unreachable resources, if any.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

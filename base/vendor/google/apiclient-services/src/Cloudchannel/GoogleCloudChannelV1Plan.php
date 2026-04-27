@@ -20,59 +20,16 @@ namespace Google\Service\Cloudchannel;
 class GoogleCloudChannelV1Plan extends \Google\Model
 {
   /**
-   * Not used.
-   */
-  public const PAYMENT_PLAN_PAYMENT_PLAN_UNSPECIFIED = 'PAYMENT_PLAN_UNSPECIFIED';
-  /**
-   * Commitment.
-   */
-  public const PAYMENT_PLAN_COMMITMENT = 'COMMITMENT';
-  /**
-   * No commitment.
-   */
-  public const PAYMENT_PLAN_FLEXIBLE = 'FLEXIBLE';
-  /**
-   * Free.
-   */
-  public const PAYMENT_PLAN_FREE = 'FREE';
-  /**
-   * Trial.
-   */
-  public const PAYMENT_PLAN_TRIAL = 'TRIAL';
-  /**
-   * Price and ordering not available through API.
-   */
-  public const PAYMENT_PLAN_OFFLINE = 'OFFLINE';
-  /**
-   * Not used.
-   */
-  public const PAYMENT_TYPE_PAYMENT_TYPE_UNSPECIFIED = 'PAYMENT_TYPE_UNSPECIFIED';
-  /**
-   * Prepay. Amount has to be paid before service is rendered.
-   */
-  public const PAYMENT_TYPE_PREPAY = 'PREPAY';
-  /**
-   * Postpay. Reseller is charged at the end of the Payment cycle.
-   */
-  public const PAYMENT_TYPE_POSTPAY = 'POSTPAY';
-  /**
-   * Reseller Billing account to charge after an offer transaction. Only present
-   * for Google Cloud offers.
-   *
    * @var string
    */
   public $billingAccount;
   protected $paymentCycleType = GoogleCloudChannelV1Period::class;
   protected $paymentCycleDataType = '';
   /**
-   * Describes how a reseller will be billed.
-   *
    * @var string
    */
   public $paymentPlan;
   /**
-   * Specifies when the payment needs to happen.
-   *
    * @var string
    */
   public $paymentType;
@@ -80,10 +37,7 @@ class GoogleCloudChannelV1Plan extends \Google\Model
   protected $trialPeriodDataType = '';
 
   /**
-   * Reseller Billing account to charge after an offer transaction. Only present
-   * for Google Cloud offers.
-   *
-   * @param string $billingAccount
+   * @param string
    */
   public function setBillingAccount($billingAccount)
   {
@@ -97,10 +51,7 @@ class GoogleCloudChannelV1Plan extends \Google\Model
     return $this->billingAccount;
   }
   /**
-   * Describes how frequently the reseller will be billed, such as once per
-   * month.
-   *
-   * @param GoogleCloudChannelV1Period $paymentCycle
+   * @param GoogleCloudChannelV1Period
    */
   public function setPaymentCycle(GoogleCloudChannelV1Period $paymentCycle)
   {
@@ -114,50 +65,35 @@ class GoogleCloudChannelV1Plan extends \Google\Model
     return $this->paymentCycle;
   }
   /**
-   * Describes how a reseller will be billed.
-   *
-   * Accepted values: PAYMENT_PLAN_UNSPECIFIED, COMMITMENT, FLEXIBLE, FREE,
-   * TRIAL, OFFLINE
-   *
-   * @param self::PAYMENT_PLAN_* $paymentPlan
+   * @param string
    */
   public function setPaymentPlan($paymentPlan)
   {
     $this->paymentPlan = $paymentPlan;
   }
   /**
-   * @return self::PAYMENT_PLAN_*
+   * @return string
    */
   public function getPaymentPlan()
   {
     return $this->paymentPlan;
   }
   /**
-   * Specifies when the payment needs to happen.
-   *
-   * Accepted values: PAYMENT_TYPE_UNSPECIFIED, PREPAY, POSTPAY
-   *
-   * @param self::PAYMENT_TYPE_* $paymentType
+   * @param string
    */
   public function setPaymentType($paymentType)
   {
     $this->paymentType = $paymentType;
   }
   /**
-   * @return self::PAYMENT_TYPE_*
+   * @return string
    */
   public function getPaymentType()
   {
     return $this->paymentType;
   }
   /**
-   * Present for Offers with a trial period. For trial-only Offers, a paid
-   * service needs to start before the trial period ends for continued service.
-   * For Regular Offers with a trial period, the regular pricing goes into
-   * effect when trial period ends, or if paid service is started before the end
-   * of the trial period.
-   *
-   * @param GoogleCloudChannelV1Period $trialPeriod
+   * @param GoogleCloudChannelV1Period
    */
   public function setTrialPeriod(GoogleCloudChannelV1Period $trialPeriod)
   {

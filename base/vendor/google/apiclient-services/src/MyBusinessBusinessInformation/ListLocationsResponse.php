@@ -23,26 +23,16 @@ class ListLocationsResponse extends \Google\Collection
   protected $locationsType = Location::class;
   protected $locationsDataType = 'array';
   /**
-   * If the number of locations exceeded the requested page size, this field is
-   * populated with a token to fetch the next page of locations on a subsequent
-   * call to `ListLocations`. If there are no more locations, this field is not
-   * present in the response.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * The approximate number of Locations in the list irrespective of pagination.
-   * This field will only be returned if `filter` is used as a query parameter.
-   *
    * @var int
    */
   public $totalSize;
 
   /**
-   * The locations.
-   *
-   * @param Location[] $locations
+   * @param Location[]
    */
   public function setLocations($locations)
   {
@@ -56,12 +46,7 @@ class ListLocationsResponse extends \Google\Collection
     return $this->locations;
   }
   /**
-   * If the number of locations exceeded the requested page size, this field is
-   * populated with a token to fetch the next page of locations on a subsequent
-   * call to `ListLocations`. If there are no more locations, this field is not
-   * present in the response.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -75,10 +60,7 @@ class ListLocationsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The approximate number of Locations in the list irrespective of pagination.
-   * This field will only be returned if `filter` is used as a query parameter.
-   *
-   * @param int $totalSize
+   * @param int
    */
   public function setTotalSize($totalSize)
   {

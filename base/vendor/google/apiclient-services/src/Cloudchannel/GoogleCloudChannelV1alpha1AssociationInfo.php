@@ -20,16 +20,12 @@ namespace Google\Service\Cloudchannel;
 class GoogleCloudChannelV1alpha1AssociationInfo extends \Google\Model
 {
   /**
-   * The name of the base entitlement, for which this entitlement is an add-on.
-   *
    * @var string
    */
   public $baseEntitlement;
 
   /**
-   * The name of the base entitlement, for which this entitlement is an add-on.
-   *
-   * @param string $baseEntitlement
+   * @param string
    */
   public function setBaseEntitlement($baseEntitlement)
   {

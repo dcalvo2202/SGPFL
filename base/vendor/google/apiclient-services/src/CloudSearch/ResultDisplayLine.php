@@ -24,7 +24,7 @@ class ResultDisplayLine extends \Google\Collection
   protected $fieldsDataType = 'array';
 
   /**
-   * @param ResultDisplayField[] $fields
+   * @param ResultDisplayField[]
    */
   public function setFields($fields)
   {

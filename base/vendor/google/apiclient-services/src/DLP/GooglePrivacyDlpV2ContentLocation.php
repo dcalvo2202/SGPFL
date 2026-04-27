@@ -20,29 +20,14 @@ namespace Google\Service\DLP;
 class GooglePrivacyDlpV2ContentLocation extends \Google\Model
 {
   /**
-   * Name of the container where the finding is located. The top level name is
-   * the source file name or table name. Names of some common storage containers
-   * are formatted as follows: * BigQuery tables:
-   * `{project_id}:{dataset_id}.{table_id}` * Cloud Storage files:
-   * `gs://{bucket}/{path}` * Datastore namespace: {namespace} Nested names
-   * could be absent if the embedded object has no string identifier (for
-   * example, an image contained within a document).
-   *
    * @var string
    */
   public $containerName;
   /**
-   * Finding container modification timestamp, if applicable. For Cloud Storage,
-   * this field contains the last file modification timestamp. For a BigQuery
-   * table, this field contains the last_modified_time property. For Datastore,
-   * this field isn't populated.
-   *
    * @var string
    */
   public $containerTimestamp;
   /**
-   * Finding container version, if available ("generation" for Cloud Storage).
-   *
    * @var string
    */
   public $containerVersion;
@@ -56,15 +41,7 @@ class GooglePrivacyDlpV2ContentLocation extends \Google\Model
   protected $recordLocationDataType = '';
 
   /**
-   * Name of the container where the finding is located. The top level name is
-   * the source file name or table name. Names of some common storage containers
-   * are formatted as follows: * BigQuery tables:
-   * `{project_id}:{dataset_id}.{table_id}` * Cloud Storage files:
-   * `gs://{bucket}/{path}` * Datastore namespace: {namespace} Nested names
-   * could be absent if the embedded object has no string identifier (for
-   * example, an image contained within a document).
-   *
-   * @param string $containerName
+   * @param string
    */
   public function setContainerName($containerName)
   {
@@ -78,12 +55,7 @@ class GooglePrivacyDlpV2ContentLocation extends \Google\Model
     return $this->containerName;
   }
   /**
-   * Finding container modification timestamp, if applicable. For Cloud Storage,
-   * this field contains the last file modification timestamp. For a BigQuery
-   * table, this field contains the last_modified_time property. For Datastore,
-   * this field isn't populated.
-   *
-   * @param string $containerTimestamp
+   * @param string
    */
   public function setContainerTimestamp($containerTimestamp)
   {
@@ -97,9 +69,7 @@ class GooglePrivacyDlpV2ContentLocation extends \Google\Model
     return $this->containerTimestamp;
   }
   /**
-   * Finding container version, if available ("generation" for Cloud Storage).
-   *
-   * @param string $containerVersion
+   * @param string
    */
   public function setContainerVersion($containerVersion)
   {
@@ -113,9 +83,7 @@ class GooglePrivacyDlpV2ContentLocation extends \Google\Model
     return $this->containerVersion;
   }
   /**
-   * Location data for document files.
-   *
-   * @param GooglePrivacyDlpV2DocumentLocation $documentLocation
+   * @param GooglePrivacyDlpV2DocumentLocation
    */
   public function setDocumentLocation(GooglePrivacyDlpV2DocumentLocation $documentLocation)
   {
@@ -129,9 +97,7 @@ class GooglePrivacyDlpV2ContentLocation extends \Google\Model
     return $this->documentLocation;
   }
   /**
-   * Location within an image's pixels.
-   *
-   * @param GooglePrivacyDlpV2ImageLocation $imageLocation
+   * @param GooglePrivacyDlpV2ImageLocation
    */
   public function setImageLocation(GooglePrivacyDlpV2ImageLocation $imageLocation)
   {
@@ -145,9 +111,7 @@ class GooglePrivacyDlpV2ContentLocation extends \Google\Model
     return $this->imageLocation;
   }
   /**
-   * Location within the metadata for inspected content.
-   *
-   * @param GooglePrivacyDlpV2MetadataLocation $metadataLocation
+   * @param GooglePrivacyDlpV2MetadataLocation
    */
   public function setMetadataLocation(GooglePrivacyDlpV2MetadataLocation $metadataLocation)
   {
@@ -161,9 +125,7 @@ class GooglePrivacyDlpV2ContentLocation extends \Google\Model
     return $this->metadataLocation;
   }
   /**
-   * Location within a row or record of a database table.
-   *
-   * @param GooglePrivacyDlpV2RecordLocation $recordLocation
+   * @param GooglePrivacyDlpV2RecordLocation
    */
   public function setRecordLocation(GooglePrivacyDlpV2RecordLocation $recordLocation)
   {

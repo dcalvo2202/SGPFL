@@ -26,7 +26,7 @@ class GoogleCloudDialogflowV2beta1ResponseMessageText extends \Google\Collection
   public $text;
 
   /**
-   * @param string[] $text
+   * @param string[]
    */
   public function setText($text)
   {

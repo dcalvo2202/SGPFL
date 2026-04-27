@@ -21,8 +21,6 @@ class Permissions extends \Google\Collection
 {
   protected $collection_key = 'permissions';
   /**
-   * ID of the issuer the list of permissions refer to.
-   *
    * @var string
    */
   public $issuerId;
@@ -30,9 +28,7 @@ class Permissions extends \Google\Collection
   protected $permissionsDataType = 'array';
 
   /**
-   * ID of the issuer the list of permissions refer to.
-   *
-   * @param string $issuerId
+   * @param string
    */
   public function setIssuerId($issuerId)
   {
@@ -46,9 +42,7 @@ class Permissions extends \Google\Collection
     return $this->issuerId;
   }
   /**
-   * The complete list of permissions for the issuer account.
-   *
-   * @param Permission[] $permissions
+   * @param Permission[]
    */
   public function setPermissions($permissions)
   {

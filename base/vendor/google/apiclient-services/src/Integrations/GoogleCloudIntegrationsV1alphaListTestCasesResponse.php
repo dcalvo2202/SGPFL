@@ -21,9 +21,6 @@ class GoogleCloudIntegrationsV1alphaListTestCasesResponse extends \Google\Collec
 {
   protected $collection_key = 'testCases';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GoogleCloudIntegrationsV1alphaListTestCasesResponse extends \Google\Collec
   protected $testCasesDataType = 'array';
 
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class GoogleCloudIntegrationsV1alphaListTestCasesResponse extends \Google\Collec
     return $this->nextPageToken;
   }
   /**
-   * The test cases corresponding to the specified filter
-   *
-   * @param GoogleCloudIntegrationsV1alphaTestCase[] $testCases
+   * @param GoogleCloudIntegrationsV1alphaTestCase[]
    */
   public function setTestCases($testCases)
   {

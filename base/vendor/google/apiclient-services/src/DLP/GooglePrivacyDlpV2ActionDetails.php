@@ -23,9 +23,7 @@ class GooglePrivacyDlpV2ActionDetails extends \Google\Model
   protected $deidentifyDetailsDataType = '';
 
   /**
-   * Outcome of a de-identification action.
-   *
-   * @param GooglePrivacyDlpV2DeidentifyDataSourceDetails $deidentifyDetails
+   * @param GooglePrivacyDlpV2DeidentifyDataSourceDetails
    */
   public function setDeidentifyDetails(GooglePrivacyDlpV2DeidentifyDataSourceDetails $deidentifyDetails)
   {

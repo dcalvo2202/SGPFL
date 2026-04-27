@@ -26,7 +26,7 @@ class GoogleCloudDialogflowCxV3FormParameterFillBehavior extends \Google\Collect
   protected $repromptEventHandlersDataType = 'array';
 
   /**
-   * @param GoogleCloudDialogflowCxV3Fulfillment $initialPromptFulfillment
+   * @param GoogleCloudDialogflowCxV3Fulfillment
    */
   public function setInitialPromptFulfillment(GoogleCloudDialogflowCxV3Fulfillment $initialPromptFulfillment)
   {
@@ -40,7 +40,7 @@ class GoogleCloudDialogflowCxV3FormParameterFillBehavior extends \Google\Collect
     return $this->initialPromptFulfillment;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3EventHandler[] $repromptEventHandlers
+   * @param GoogleCloudDialogflowCxV3EventHandler[]
    */
   public function setRepromptEventHandlers($repromptEventHandlers)
   {

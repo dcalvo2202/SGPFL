@@ -20,37 +20,24 @@ namespace Google\Service\ServiceControl;
 class V2LogEntryOperation extends \Google\Model
 {
   /**
-   * Optional. Set this to True if this is the first log entry in the operation.
-   *
    * @var bool
    */
   public $first;
   /**
-   * Optional. An arbitrary operation identifier. Log entries with the same
-   * identifier are assumed to be part of the same operation.
-   *
    * @var string
    */
   public $id;
   /**
-   * Optional. Set this to True if this is the last log entry in the operation.
-   *
    * @var bool
    */
   public $last;
   /**
-   * Optional. An arbitrary producer identifier. The combination of `id` and
-   * `producer` must be globally unique. Examples for `producer`:
-   * `"MyDivision.MyBigCompany.com"`, `"github.com/MyProject/MyApplication"`.
-   *
    * @var string
    */
   public $producer;
 
   /**
-   * Optional. Set this to True if this is the first log entry in the operation.
-   *
-   * @param bool $first
+   * @param bool
    */
   public function setFirst($first)
   {
@@ -64,10 +51,7 @@ class V2LogEntryOperation extends \Google\Model
     return $this->first;
   }
   /**
-   * Optional. An arbitrary operation identifier. Log entries with the same
-   * identifier are assumed to be part of the same operation.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -81,9 +65,7 @@ class V2LogEntryOperation extends \Google\Model
     return $this->id;
   }
   /**
-   * Optional. Set this to True if this is the last log entry in the operation.
-   *
-   * @param bool $last
+   * @param bool
    */
   public function setLast($last)
   {
@@ -97,11 +79,7 @@ class V2LogEntryOperation extends \Google\Model
     return $this->last;
   }
   /**
-   * Optional. An arbitrary producer identifier. The combination of `id` and
-   * `producer` must be globally unique. Examples for `producer`:
-   * `"MyDivision.MyBigCompany.com"`, `"github.com/MyProject/MyApplication"`.
-   *
-   * @param string $producer
+   * @param string
    */
   public function setProducer($producer)
   {

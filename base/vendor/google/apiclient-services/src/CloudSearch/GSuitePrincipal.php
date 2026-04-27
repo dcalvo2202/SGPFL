@@ -20,30 +20,20 @@ namespace Google\Service\CloudSearch;
 class GSuitePrincipal extends \Google\Model
 {
   /**
-   * This principal represents all users of the Google Workspace domain of the
-   * customer.
-   *
    * @var bool
    */
   public $gsuiteDomain;
   /**
-   * This principal references a Google Workspace group name.
-   *
    * @var string
    */
   public $gsuiteGroupEmail;
   /**
-   * This principal references a Google Workspace user account.
-   *
    * @var string
    */
   public $gsuiteUserEmail;
 
   /**
-   * This principal represents all users of the Google Workspace domain of the
-   * customer.
-   *
-   * @param bool $gsuiteDomain
+   * @param bool
    */
   public function setGsuiteDomain($gsuiteDomain)
   {
@@ -57,9 +47,7 @@ class GSuitePrincipal extends \Google\Model
     return $this->gsuiteDomain;
   }
   /**
-   * This principal references a Google Workspace group name.
-   *
-   * @param string $gsuiteGroupEmail
+   * @param string
    */
   public function setGsuiteGroupEmail($gsuiteGroupEmail)
   {
@@ -73,9 +61,7 @@ class GSuitePrincipal extends \Google\Model
     return $this->gsuiteGroupEmail;
   }
   /**
-   * This principal references a Google Workspace user account.
-   *
-   * @param string $gsuiteUserEmail
+   * @param string
    */
   public function setGsuiteUserEmail($gsuiteUserEmail)
   {

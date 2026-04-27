@@ -22,43 +22,28 @@ class Answer extends \Google\Model
   protected $authorType = Author::class;
   protected $authorDataType = '';
   /**
-   * Output only. The timestamp for when the answer was written. Only retrieved
-   * during ListResponse fetching.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. The unique name for the answer locations/questions/answers
-   *
    * @var string
    */
   public $name;
   /**
-   * Required. The text of the answer. It should contain at least one non-
-   * whitespace character. The maximum length is 4096 characters.
-   *
    * @var string
    */
   public $text;
   /**
-   * Output only. The timestamp for when the answer was last modified.
-   *
    * @var string
    */
   public $updateTime;
   /**
-   * Output only. The number of upvotes for the answer.
-   *
    * @var int
    */
   public $upvoteCount;
 
   /**
-   * Output only. The author of the answer. Will only be set during list
-   * operations.
-   *
-   * @param Author $author
+   * @param Author
    */
   public function setAuthor(Author $author)
   {
@@ -72,10 +57,7 @@ class Answer extends \Google\Model
     return $this->author;
   }
   /**
-   * Output only. The timestamp for when the answer was written. Only retrieved
-   * during ListResponse fetching.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -89,9 +71,7 @@ class Answer extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. The unique name for the answer locations/questions/answers
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -105,10 +85,7 @@ class Answer extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. The text of the answer. It should contain at least one non-
-   * whitespace character. The maximum length is 4096 characters.
-   *
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {
@@ -122,9 +99,7 @@ class Answer extends \Google\Model
     return $this->text;
   }
   /**
-   * Output only. The timestamp for when the answer was last modified.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -138,9 +113,7 @@ class Answer extends \Google\Model
     return $this->updateTime;
   }
   /**
-   * Output only. The number of upvotes for the answer.
-   *
-   * @param int $upvoteCount
+   * @param int
    */
   public function setUpvoteCount($upvoteCount)
   {

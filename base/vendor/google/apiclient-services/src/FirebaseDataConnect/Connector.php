@@ -20,74 +20,46 @@ namespace Google\Service\FirebaseDataConnect;
 class Connector extends \Google\Model
 {
   /**
-   * Optional. Stores small amounts of arbitrary data.
-   *
    * @var string[]
    */
   public $annotations;
-  protected $clientCacheType = ClientCache::class;
-  protected $clientCacheDataType = '';
   /**
-   * Output only. [Output only] Create time stamp.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. Mutable human-readable name. 63 character limit.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. This checksum is computed by the server based on the value of
-   * other fields, and may be sent on update and delete requests to ensure the
-   * client has an up-to-date value before proceeding.
-   * [AIP-154](https://google.aip.dev/154)
-   *
    * @var string
    */
   public $etag;
   /**
-   * Optional. Labels as key value pairs.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Identifier. The relative resource name of the connector, in the format: ```
-   * projects/{project}/locations/{location}/services/{service}/connectors/{conn
-   * ector} ```
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. A field that if true, indicates that the system is working to
-   * compile and deploy the connector.
-   *
    * @var bool
    */
   public $reconciling;
   protected $sourceType = Source::class;
   protected $sourceDataType = '';
   /**
-   * Output only. System-assigned, unique identifier.
-   *
    * @var string
    */
   public $uid;
   /**
-   * Output only. [Output only] Update time stamp.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Optional. Stores small amounts of arbitrary data.
-   *
-   * @param string[] $annotations
+   * @param string[]
    */
   public function setAnnotations($annotations)
   {
@@ -101,25 +73,7 @@ class Connector extends \Google\Model
     return $this->annotations;
   }
   /**
-   * Optional. The client cache settings of the connector.
-   *
-   * @param ClientCache $clientCache
-   */
-  public function setClientCache(ClientCache $clientCache)
-  {
-    $this->clientCache = $clientCache;
-  }
-  /**
-   * @return ClientCache
-   */
-  public function getClientCache()
-  {
-    return $this->clientCache;
-  }
-  /**
-   * Output only. [Output only] Create time stamp.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -133,9 +87,7 @@ class Connector extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Optional. Mutable human-readable name. 63 character limit.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -149,12 +101,7 @@ class Connector extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Output only. This checksum is computed by the server based on the value of
-   * other fields, and may be sent on update and delete requests to ensure the
-   * client has an up-to-date value before proceeding.
-   * [AIP-154](https://google.aip.dev/154)
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -168,9 +115,7 @@ class Connector extends \Google\Model
     return $this->etag;
   }
   /**
-   * Optional. Labels as key value pairs.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -184,11 +129,7 @@ class Connector extends \Google\Model
     return $this->labels;
   }
   /**
-   * Identifier. The relative resource name of the connector, in the format: ```
-   * projects/{project}/locations/{location}/services/{service}/connectors/{conn
-   * ector} ```
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -202,10 +143,7 @@ class Connector extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. A field that if true, indicates that the system is working to
-   * compile and deploy the connector.
-   *
-   * @param bool $reconciling
+   * @param bool
    */
   public function setReconciling($reconciling)
   {
@@ -219,9 +157,7 @@ class Connector extends \Google\Model
     return $this->reconciling;
   }
   /**
-   * Required. The source files that comprise the connector.
-   *
-   * @param Source $source
+   * @param Source
    */
   public function setSource(Source $source)
   {
@@ -235,9 +171,7 @@ class Connector extends \Google\Model
     return $this->source;
   }
   /**
-   * Output only. System-assigned, unique identifier.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {
@@ -251,9 +185,7 @@ class Connector extends \Google\Model
     return $this->uid;
   }
   /**
-   * Output only. [Output only] Update time stamp.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

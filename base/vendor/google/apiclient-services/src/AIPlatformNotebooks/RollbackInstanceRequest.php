@@ -20,23 +20,16 @@ namespace Google\Service\AIPlatformNotebooks;
 class RollbackInstanceRequest extends \Google\Model
 {
   /**
-   * Required. Output only. Revision Id
-   *
    * @var string
    */
   public $revisionId;
   /**
-   * Required. The snapshot for rollback. Example: "projects/test-
-   * project/global/snapshots/krwlzipynril".
-   *
    * @var string
    */
   public $targetSnapshot;
 
   /**
-   * Required. Output only. Revision Id
-   *
-   * @param string $revisionId
+   * @param string
    */
   public function setRevisionId($revisionId)
   {
@@ -50,10 +43,7 @@ class RollbackInstanceRequest extends \Google\Model
     return $this->revisionId;
   }
   /**
-   * Required. The snapshot for rollback. Example: "projects/test-
-   * project/global/snapshots/krwlzipynril".
-   *
-   * @param string $targetSnapshot
+   * @param string
    */
   public function setTargetSnapshot($targetSnapshot)
   {

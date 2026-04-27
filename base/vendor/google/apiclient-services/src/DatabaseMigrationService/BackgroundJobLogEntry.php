@@ -19,99 +19,45 @@ namespace Google\Service\DatabaseMigrationService;
 
 class BackgroundJobLogEntry extends \Google\Model
 {
-  /**
-   * The status is not specified. This state is used when job is not yet
-   * finished.
-   */
-  public const COMPLETION_STATE_JOB_COMPLETION_STATE_UNSPECIFIED = 'JOB_COMPLETION_STATE_UNSPECIFIED';
-  /**
-   * Success.
-   */
-  public const COMPLETION_STATE_SUCCEEDED = 'SUCCEEDED';
-  /**
-   * Error.
-   */
-  public const COMPLETION_STATE_FAILED = 'FAILED';
-  /**
-   * Unspecified background job type.
-   */
-  public const JOB_TYPE_BACKGROUND_JOB_TYPE_UNSPECIFIED = 'BACKGROUND_JOB_TYPE_UNSPECIFIED';
-  /**
-   * Job to seed from the source database.
-   */
-  public const JOB_TYPE_BACKGROUND_JOB_TYPE_SOURCE_SEED = 'BACKGROUND_JOB_TYPE_SOURCE_SEED';
-  /**
-   * Job to convert the source database into a draft of the destination
-   * database.
-   */
-  public const JOB_TYPE_BACKGROUND_JOB_TYPE_CONVERT = 'BACKGROUND_JOB_TYPE_CONVERT';
-  /**
-   * Job to apply the draft tree onto the destination.
-   */
-  public const JOB_TYPE_BACKGROUND_JOB_TYPE_APPLY_DESTINATION = 'BACKGROUND_JOB_TYPE_APPLY_DESTINATION';
-  /**
-   * Job to import and convert mapping rules from an external source such as an
-   * ora2pg config file.
-   */
-  public const JOB_TYPE_BACKGROUND_JOB_TYPE_IMPORT_RULES_FILE = 'BACKGROUND_JOB_TYPE_IMPORT_RULES_FILE';
   protected $applyJobDetailsType = ApplyJobDetails::class;
   protected $applyJobDetailsDataType = '';
   /**
-   * Output only. Job completion comment, such as how many entities were seeded,
-   * how many warnings were found during conversion, and similar information.
-   *
    * @var string
    */
   public $completionComment;
   /**
-   * Output only. Job completion state, i.e. the final state after the job
-   * completed.
-   *
    * @var string
    */
   public $completionState;
   protected $convertJobDetailsType = ConvertJobDetails::class;
   protected $convertJobDetailsDataType = '';
   /**
-   * The timestamp when the background job was finished.
-   *
    * @var string
    */
   public $finishTime;
   /**
-   * The background job log entry ID.
-   *
    * @var string
    */
   public $id;
   protected $importRulesJobDetailsType = ImportRulesJobDetails::class;
   protected $importRulesJobDetailsDataType = '';
   /**
-   * The type of job that was executed.
-   *
    * @var string
    */
   public $jobType;
   /**
-   * Output only. Whether the client requested the conversion workspace to be
-   * committed after a successful completion of the job.
-   *
    * @var bool
    */
   public $requestAutocommit;
   protected $seedJobDetailsType = SeedJobDetails::class;
   protected $seedJobDetailsDataType = '';
   /**
-   * The timestamp when the background job was started.
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * Output only. Apply job details.
-   *
-   * @param ApplyJobDetails $applyJobDetails
+   * @param ApplyJobDetails
    */
   public function setApplyJobDetails(ApplyJobDetails $applyJobDetails)
   {
@@ -125,10 +71,7 @@ class BackgroundJobLogEntry extends \Google\Model
     return $this->applyJobDetails;
   }
   /**
-   * Output only. Job completion comment, such as how many entities were seeded,
-   * how many warnings were found during conversion, and similar information.
-   *
-   * @param string $completionComment
+   * @param string
    */
   public function setCompletionComment($completionComment)
   {
@@ -142,28 +85,21 @@ class BackgroundJobLogEntry extends \Google\Model
     return $this->completionComment;
   }
   /**
-   * Output only. Job completion state, i.e. the final state after the job
-   * completed.
-   *
-   * Accepted values: JOB_COMPLETION_STATE_UNSPECIFIED, SUCCEEDED, FAILED
-   *
-   * @param self::COMPLETION_STATE_* $completionState
+   * @param string
    */
   public function setCompletionState($completionState)
   {
     $this->completionState = $completionState;
   }
   /**
-   * @return self::COMPLETION_STATE_*
+   * @return string
    */
   public function getCompletionState()
   {
     return $this->completionState;
   }
   /**
-   * Output only. Convert job details.
-   *
-   * @param ConvertJobDetails $convertJobDetails
+   * @param ConvertJobDetails
    */
   public function setConvertJobDetails(ConvertJobDetails $convertJobDetails)
   {
@@ -177,9 +113,7 @@ class BackgroundJobLogEntry extends \Google\Model
     return $this->convertJobDetails;
   }
   /**
-   * The timestamp when the background job was finished.
-   *
-   * @param string $finishTime
+   * @param string
    */
   public function setFinishTime($finishTime)
   {
@@ -193,9 +127,7 @@ class BackgroundJobLogEntry extends \Google\Model
     return $this->finishTime;
   }
   /**
-   * The background job log entry ID.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -209,9 +141,7 @@ class BackgroundJobLogEntry extends \Google\Model
     return $this->id;
   }
   /**
-   * Output only. Import rules job details.
-   *
-   * @param ImportRulesJobDetails $importRulesJobDetails
+   * @param ImportRulesJobDetails
    */
   public function setImportRulesJobDetails(ImportRulesJobDetails $importRulesJobDetails)
   {
@@ -225,31 +155,21 @@ class BackgroundJobLogEntry extends \Google\Model
     return $this->importRulesJobDetails;
   }
   /**
-   * The type of job that was executed.
-   *
-   * Accepted values: BACKGROUND_JOB_TYPE_UNSPECIFIED,
-   * BACKGROUND_JOB_TYPE_SOURCE_SEED, BACKGROUND_JOB_TYPE_CONVERT,
-   * BACKGROUND_JOB_TYPE_APPLY_DESTINATION,
-   * BACKGROUND_JOB_TYPE_IMPORT_RULES_FILE
-   *
-   * @param self::JOB_TYPE_* $jobType
+   * @param string
    */
   public function setJobType($jobType)
   {
     $this->jobType = $jobType;
   }
   /**
-   * @return self::JOB_TYPE_*
+   * @return string
    */
   public function getJobType()
   {
     return $this->jobType;
   }
   /**
-   * Output only. Whether the client requested the conversion workspace to be
-   * committed after a successful completion of the job.
-   *
-   * @param bool $requestAutocommit
+   * @param bool
    */
   public function setRequestAutocommit($requestAutocommit)
   {
@@ -263,9 +183,7 @@ class BackgroundJobLogEntry extends \Google\Model
     return $this->requestAutocommit;
   }
   /**
-   * Output only. Seed job details.
-   *
-   * @param SeedJobDetails $seedJobDetails
+   * @param SeedJobDetails
    */
   public function setSeedJobDetails(SeedJobDetails $seedJobDetails)
   {
@@ -279,9 +197,7 @@ class BackgroundJobLogEntry extends \Google\Model
     return $this->seedJobDetails;
   }
   /**
-   * The timestamp when the background job was started.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

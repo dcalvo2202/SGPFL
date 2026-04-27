@@ -24,9 +24,7 @@ class XPSTablesClassificationMetrics extends \Google\Collection
   protected $curveMetricsDataType = 'array';
 
   /**
-   * Metrics building a curve.
-   *
-   * @param XPSTablesClassificationMetricsCurveMetrics[] $curveMetrics
+   * @param XPSTablesClassificationMetricsCurveMetrics[]
    */
   public function setCurveMetrics($curveMetrics)
   {

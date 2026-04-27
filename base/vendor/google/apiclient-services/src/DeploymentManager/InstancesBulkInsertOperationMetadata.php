@@ -20,9 +20,6 @@ namespace Google\Service\DeploymentManager;
 class InstancesBulkInsertOperationMetadata extends \Google\Model
 {
   /**
-   * [Output Only] The machine type of the VMs that were created used internally
-   * only by KCP flex bulk insert.
-   *
    * @var string
    */
   public $machineType;
@@ -30,10 +27,7 @@ class InstancesBulkInsertOperationMetadata extends \Google\Model
   protected $perLocationStatusDataType = 'map';
 
   /**
-   * [Output Only] The machine type of the VMs that were created used internally
-   * only by KCP flex bulk insert.
-   *
-   * @param string $machineType
+   * @param string
    */
   public function setMachineType($machineType)
   {
@@ -47,10 +41,7 @@ class InstancesBulkInsertOperationMetadata extends \Google\Model
     return $this->machineType;
   }
   /**
-   * Status information per location (location name is key). Example key:
-   * zones/us-central1-a
-   *
-   * @param BulkInsertOperationStatus[] $perLocationStatus
+   * @param BulkInsertOperationStatus[]
    */
   public function setPerLocationStatus($perLocationStatus)
   {

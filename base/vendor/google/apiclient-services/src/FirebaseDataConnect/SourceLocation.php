@@ -20,22 +20,16 @@ namespace Google\Service\FirebaseDataConnect;
 class SourceLocation extends \Google\Model
 {
   /**
-   * Column number starting at 1.
-   *
    * @var int
    */
   public $column;
   /**
-   * Line number starting at 1.
-   *
    * @var int
    */
   public $line;
 
   /**
-   * Column number starting at 1.
-   *
-   * @param int $column
+   * @param int
    */
   public function setColumn($column)
   {
@@ -49,9 +43,7 @@ class SourceLocation extends \Google\Model
     return $this->column;
   }
   /**
-   * Line number starting at 1.
-   *
-   * @param int $line
+   * @param int
    */
   public function setLine($line)
   {

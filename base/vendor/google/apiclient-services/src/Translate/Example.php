@@ -20,38 +20,24 @@ namespace Google\Service\Translate;
 class Example extends \Google\Model
 {
   /**
-   * Output only. The resource name of the example, in form of
-   * `projects/{project-number-or-
-   * id}/locations/{location_id}/datasets/{dataset_id}/examples/{example_id}`
-   *
    * @var string
    */
   public $name;
   /**
-   * Sentence in source language.
-   *
    * @var string
    */
   public $sourceText;
   /**
-   * Sentence in target language.
-   *
    * @var string
    */
   public $targetText;
   /**
-   * Output only. Usage of the sentence pair. Options are TRAIN|VALIDATION|TEST.
-   *
    * @var string
    */
   public $usage;
 
   /**
-   * Output only. The resource name of the example, in form of
-   * `projects/{project-number-or-
-   * id}/locations/{location_id}/datasets/{dataset_id}/examples/{example_id}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -65,9 +51,7 @@ class Example extends \Google\Model
     return $this->name;
   }
   /**
-   * Sentence in source language.
-   *
-   * @param string $sourceText
+   * @param string
    */
   public function setSourceText($sourceText)
   {
@@ -81,9 +65,7 @@ class Example extends \Google\Model
     return $this->sourceText;
   }
   /**
-   * Sentence in target language.
-   *
-   * @param string $targetText
+   * @param string
    */
   public function setTargetText($targetText)
   {
@@ -97,9 +79,7 @@ class Example extends \Google\Model
     return $this->targetText;
   }
   /**
-   * Output only. Usage of the sentence pair. Options are TRAIN|VALIDATION|TEST.
-   *
-   * @param string $usage
+   * @param string
    */
   public function setUsage($usage)
   {

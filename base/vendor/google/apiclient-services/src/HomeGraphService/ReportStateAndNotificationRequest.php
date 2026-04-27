@@ -20,37 +20,26 @@ namespace Google\Service\HomeGraphService;
 class ReportStateAndNotificationRequest extends \Google\Model
 {
   /**
-   * Required. Third-party user ID.
-   *
    * @var string
    */
   public $agentUserId;
   /**
-   * Unique identifier per event (for example, a doorbell press).
-   *
    * @var string
    */
   public $eventId;
   /**
-   * Deprecated.
-   *
-   * @deprecated
    * @var string
    */
   public $followUpToken;
   protected $payloadType = StateAndNotificationPayload::class;
   protected $payloadDataType = '';
   /**
-   * Request ID used for debugging.
-   *
    * @var string
    */
   public $requestId;
 
   /**
-   * Required. Third-party user ID.
-   *
-   * @param string $agentUserId
+   * @param string
    */
   public function setAgentUserId($agentUserId)
   {
@@ -64,9 +53,7 @@ class ReportStateAndNotificationRequest extends \Google\Model
     return $this->agentUserId;
   }
   /**
-   * Unique identifier per event (for example, a doorbell press).
-   *
-   * @param string $eventId
+   * @param string
    */
   public function setEventId($eventId)
   {
@@ -80,17 +67,13 @@ class ReportStateAndNotificationRequest extends \Google\Model
     return $this->eventId;
   }
   /**
-   * Deprecated.
-   *
-   * @deprecated
-   * @param string $followUpToken
+   * @param string
    */
   public function setFollowUpToken($followUpToken)
   {
     $this->followUpToken = $followUpToken;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getFollowUpToken()
@@ -98,9 +81,7 @@ class ReportStateAndNotificationRequest extends \Google\Model
     return $this->followUpToken;
   }
   /**
-   * Required. State of devices to update and notification metadata for devices.
-   *
-   * @param StateAndNotificationPayload $payload
+   * @param StateAndNotificationPayload
    */
   public function setPayload(StateAndNotificationPayload $payload)
   {
@@ -114,9 +95,7 @@ class ReportStateAndNotificationRequest extends \Google\Model
     return $this->payload;
   }
   /**
-   * Request ID used for debugging.
-   *
-   * @param string $requestId
+   * @param string
    */
   public function setRequestId($requestId)
   {

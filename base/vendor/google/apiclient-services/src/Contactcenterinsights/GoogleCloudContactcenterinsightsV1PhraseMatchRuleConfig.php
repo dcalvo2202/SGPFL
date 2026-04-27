@@ -21,13 +21,9 @@ class GoogleCloudContactcenterinsightsV1PhraseMatchRuleConfig extends \Google\Mo
 {
   protected $exactMatchConfigType = GoogleCloudContactcenterinsightsV1ExactMatchConfig::class;
   protected $exactMatchConfigDataType = '';
-  protected $regexMatchConfigType = GoogleCloudContactcenterinsightsV1RegexMatchConfig::class;
-  protected $regexMatchConfigDataType = '';
 
   /**
-   * The configuration for the exact match rule.
-   *
-   * @param GoogleCloudContactcenterinsightsV1ExactMatchConfig $exactMatchConfig
+   * @param GoogleCloudContactcenterinsightsV1ExactMatchConfig
    */
   public function setExactMatchConfig(GoogleCloudContactcenterinsightsV1ExactMatchConfig $exactMatchConfig)
   {
@@ -39,22 +35,6 @@ class GoogleCloudContactcenterinsightsV1PhraseMatchRuleConfig extends \Google\Mo
   public function getExactMatchConfig()
   {
     return $this->exactMatchConfig;
-  }
-  /**
-   * The configuration for the regex match rule.
-   *
-   * @param GoogleCloudContactcenterinsightsV1RegexMatchConfig $regexMatchConfig
-   */
-  public function setRegexMatchConfig(GoogleCloudContactcenterinsightsV1RegexMatchConfig $regexMatchConfig)
-  {
-    $this->regexMatchConfig = $regexMatchConfig;
-  }
-  /**
-   * @return GoogleCloudContactcenterinsightsV1RegexMatchConfig
-   */
-  public function getRegexMatchConfig()
-  {
-    return $this->regexMatchConfig;
   }
 }
 

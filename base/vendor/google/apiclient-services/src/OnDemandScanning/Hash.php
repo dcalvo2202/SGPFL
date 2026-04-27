@@ -20,22 +20,16 @@ namespace Google\Service\OnDemandScanning;
 class Hash extends \Google\Model
 {
   /**
-   * Required. The type of hash that was performed, e.g. "SHA-256".
-   *
    * @var string
    */
   public $type;
   /**
-   * Required. The hash value.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Required. The type of hash that was performed, e.g. "SHA-256".
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {
@@ -49,9 +43,7 @@ class Hash extends \Google\Model
     return $this->type;
   }
   /**
-   * Required. The hash value.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

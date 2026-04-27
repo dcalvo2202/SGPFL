@@ -20,37 +20,19 @@ namespace Google\Service\DriveActivity;
 class Delete extends \Google\Model
 {
   /**
-   * Deletion type is not available.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * An object was put into the trash.
-   */
-  public const TYPE_TRASH = 'TRASH';
-  /**
-   * An object was deleted permanently.
-   */
-  public const TYPE_PERMANENT_DELETE = 'PERMANENT_DELETE';
-  /**
-   * The type of delete action taken.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The type of delete action taken.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, TRASH, PERMANENT_DELETE
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

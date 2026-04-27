@@ -23,17 +23,12 @@ class GoogleCloudAiplatformV1ListDeploymentResourcePoolsResponse extends \Google
   protected $deploymentResourcePoolsType = GoogleCloudAiplatformV1DeploymentResourcePool::class;
   protected $deploymentResourcePoolsDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The DeploymentResourcePools from the specified location.
-   *
-   * @param GoogleCloudAiplatformV1DeploymentResourcePool[] $deploymentResourcePools
+   * @param GoogleCloudAiplatformV1DeploymentResourcePool[]
    */
   public function setDeploymentResourcePools($deploymentResourcePools)
   {
@@ -47,10 +42,7 @@ class GoogleCloudAiplatformV1ListDeploymentResourcePoolsResponse extends \Google
     return $this->deploymentResourcePools;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

@@ -21,9 +21,6 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionSnapshot extends \Google\
 {
   protected $collection_key = 'taskExecutionDetails';
   /**
-   * Indicates "right after which checkpoint task's execution" this snapshot is
-   * taken.
-   *
    * @var string
    */
   public $checkpointTaskNumber;
@@ -32,14 +29,10 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionSnapshot extends \Google\
   protected $diffParamsType = EnterpriseCrmFrontendsEventbusProtoEventParameters::class;
   protected $diffParamsDataType = '';
   /**
-   * Points to the event execution info this snapshot belongs to.
-   *
    * @var string
    */
   public $eventExecutionInfoId;
   /**
-   * Auto-generated. Used as primary key for EventExecutionSnapshots table.
-   *
    * @var string
    */
   public $eventExecutionSnapshotId;
@@ -48,26 +41,18 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionSnapshot extends \Google\
   protected $eventParamsType = EnterpriseCrmFrontendsEventbusProtoEventParameters::class;
   protected $eventParamsDataType = '';
   /**
-   * Indicates when this snapshot is taken.
-   *
    * @var string
    */
   public $snapshotTime;
   protected $taskExecutionDetailsType = EnterpriseCrmEventbusProtoTaskExecutionDetails::class;
   protected $taskExecutionDetailsDataType = 'array';
   /**
-   * The task name associated with this snapshot. Could be empty.
-   *
-   * @deprecated
    * @var string
    */
   public $taskName;
 
   /**
-   * Indicates "right after which checkpoint task's execution" this snapshot is
-   * taken.
-   *
-   * @param string $checkpointTaskNumber
+   * @param string
    */
   public function setCheckpointTaskNumber($checkpointTaskNumber)
   {
@@ -81,9 +66,7 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionSnapshot extends \Google\
     return $this->checkpointTaskNumber;
   }
   /**
-   * All of the computed conditions that been calculated.
-   *
-   * @param EnterpriseCrmEventbusProtoConditionResult[] $conditionResults
+   * @param EnterpriseCrmEventbusProtoConditionResult[]
    */
   public function setConditionResults($conditionResults)
   {
@@ -97,9 +80,7 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionSnapshot extends \Google\
     return $this->conditionResults;
   }
   /**
-   * The parameters in Event object that differs from last snapshot.
-   *
-   * @param EnterpriseCrmFrontendsEventbusProtoEventParameters $diffParams
+   * @param EnterpriseCrmFrontendsEventbusProtoEventParameters
    */
   public function setDiffParams(EnterpriseCrmFrontendsEventbusProtoEventParameters $diffParams)
   {
@@ -113,9 +94,7 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionSnapshot extends \Google\
     return $this->diffParams;
   }
   /**
-   * Points to the event execution info this snapshot belongs to.
-   *
-   * @param string $eventExecutionInfoId
+   * @param string
    */
   public function setEventExecutionInfoId($eventExecutionInfoId)
   {
@@ -129,9 +108,7 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionSnapshot extends \Google\
     return $this->eventExecutionInfoId;
   }
   /**
-   * Auto-generated. Used as primary key for EventExecutionSnapshots table.
-   *
-   * @param string $eventExecutionSnapshotId
+   * @param string
    */
   public function setEventExecutionSnapshotId($eventExecutionSnapshotId)
   {
@@ -145,7 +122,7 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionSnapshot extends \Google\
     return $this->eventExecutionSnapshotId;
   }
   /**
-   * @param EnterpriseCrmEventbusProtoEventExecutionSnapshotEventExecutionSnapshotMetadata $eventExecutionSnapshotMetadata
+   * @param EnterpriseCrmEventbusProtoEventExecutionSnapshotEventExecutionSnapshotMetadata
    */
   public function setEventExecutionSnapshotMetadata(EnterpriseCrmEventbusProtoEventExecutionSnapshotEventExecutionSnapshotMetadata $eventExecutionSnapshotMetadata)
   {
@@ -159,9 +136,7 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionSnapshot extends \Google\
     return $this->eventExecutionSnapshotMetadata;
   }
   /**
-   * The parameters in Event object.
-   *
-   * @param EnterpriseCrmFrontendsEventbusProtoEventParameters $eventParams
+   * @param EnterpriseCrmFrontendsEventbusProtoEventParameters
    */
   public function setEventParams(EnterpriseCrmFrontendsEventbusProtoEventParameters $eventParams)
   {
@@ -175,9 +150,7 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionSnapshot extends \Google\
     return $this->eventParams;
   }
   /**
-   * Indicates when this snapshot is taken.
-   *
-   * @param string $snapshotTime
+   * @param string
    */
   public function setSnapshotTime($snapshotTime)
   {
@@ -191,9 +164,7 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionSnapshot extends \Google\
     return $this->snapshotTime;
   }
   /**
-   * All of the task execution details at the given point of time.
-   *
-   * @param EnterpriseCrmEventbusProtoTaskExecutionDetails[] $taskExecutionDetails
+   * @param EnterpriseCrmEventbusProtoTaskExecutionDetails[]
    */
   public function setTaskExecutionDetails($taskExecutionDetails)
   {
@@ -207,17 +178,13 @@ class EnterpriseCrmFrontendsEventbusProtoEventExecutionSnapshot extends \Google\
     return $this->taskExecutionDetails;
   }
   /**
-   * The task name associated with this snapshot. Could be empty.
-   *
-   * @deprecated
-   * @param string $taskName
+   * @param string
    */
   public function setTaskName($taskName)
   {
     $this->taskName = $taskName;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getTaskName()

@@ -20,36 +20,20 @@ namespace Google\Service\GKEHub;
 class IdentityServiceServerConfig extends \Google\Model
 {
   /**
-   * Optional. Contains a Base64 encoded, PEM formatted certificate authority
-   * certificate for the LDAP server. This must be provided for the "ldaps" and
-   * "startTLS" connections.
-   *
    * @var string
    */
   public $certificateAuthorityData;
   /**
-   * Optional. Defines the connection type to communicate with the LDAP server.
-   * If `starttls` or `ldaps` is specified, the certificate_authority_data
-   * should not be empty.
-   *
    * @var string
    */
   public $connectionType;
   /**
-   * Required. Defines the hostname or IP of the LDAP server. Port is optional
-   * and will default to 389, if unspecified. For example, "ldap.server.example"
-   * or "10.10.10.10:389".
-   *
    * @var string
    */
   public $host;
 
   /**
-   * Optional. Contains a Base64 encoded, PEM formatted certificate authority
-   * certificate for the LDAP server. This must be provided for the "ldaps" and
-   * "startTLS" connections.
-   *
-   * @param string $certificateAuthorityData
+   * @param string
    */
   public function setCertificateAuthorityData($certificateAuthorityData)
   {
@@ -63,11 +47,7 @@ class IdentityServiceServerConfig extends \Google\Model
     return $this->certificateAuthorityData;
   }
   /**
-   * Optional. Defines the connection type to communicate with the LDAP server.
-   * If `starttls` or `ldaps` is specified, the certificate_authority_data
-   * should not be empty.
-   *
-   * @param string $connectionType
+   * @param string
    */
   public function setConnectionType($connectionType)
   {
@@ -81,11 +61,7 @@ class IdentityServiceServerConfig extends \Google\Model
     return $this->connectionType;
   }
   /**
-   * Required. Defines the hostname or IP of the LDAP server. Port is optional
-   * and will default to 389, if unspecified. For example, "ldap.server.example"
-   * or "10.10.10.10:389".
-   *
-   * @param string $host
+   * @param string
    */
   public function setHost($host)
   {

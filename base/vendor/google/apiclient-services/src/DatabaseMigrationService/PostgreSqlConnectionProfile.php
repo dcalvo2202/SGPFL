@@ -19,80 +19,38 @@ namespace Google\Service\DatabaseMigrationService;
 
 class PostgreSqlConnectionProfile extends \Google\Model
 {
-  public const NETWORK_ARCHITECTURE_NETWORK_ARCHITECTURE_UNSPECIFIED = 'NETWORK_ARCHITECTURE_UNSPECIFIED';
   /**
-   * Instance is in Cloud SQL's old producer network architecture.
-   */
-  public const NETWORK_ARCHITECTURE_NETWORK_ARCHITECTURE_OLD_CSQL_PRODUCER = 'NETWORK_ARCHITECTURE_OLD_CSQL_PRODUCER';
-  /**
-   * Instance is in Cloud SQL's new producer network architecture.
-   */
-  public const NETWORK_ARCHITECTURE_NETWORK_ARCHITECTURE_NEW_CSQL_PRODUCER = 'NETWORK_ARCHITECTURE_NEW_CSQL_PRODUCER';
-  /**
-   * Optional. If the destination is an AlloyDB database, use this field to
-   * provide the AlloyDB cluster ID.
-   *
    * @var string
    */
   public $alloydbClusterId;
   /**
-   * If the source is a Cloud SQL database, use this field to provide the Cloud
-   * SQL instance ID of the source.
-   *
    * @var string
    */
   public $cloudSqlId;
   /**
-   * Optional. The name of the specific database within the host.
-   *
    * @var string
    */
   public $database;
   /**
-   * Optional. If true, Database Migration Service will use IAM database
-   * authentication to connect to the database.
-   *
-   * @var bool
-   */
-  public $enableIamAuthentication;
-  protected $forwardSshConnectivityType = ForwardSshTunnelConnectivity::class;
-  protected $forwardSshConnectivityDataType = '';
-  /**
-   * Required. The IP or hostname of the source PostgreSQL database.
-   *
    * @var string
    */
   public $host;
   /**
-   * Output only. If the source is a Cloud SQL database, this field indicates
-   * the network architecture it's associated with.
-   *
    * @var string
    */
   public $networkArchitecture;
   /**
-   * Required. Input only. The password for the user that Database Migration
-   * Service will be using to connect to the database. This field is not
-   * returned on request, and the value is encrypted when stored in Database
-   * Migration Service.
-   *
    * @var string
    */
   public $password;
   /**
-   * Output only. Indicates If this connection profile password is stored.
-   *
    * @var bool
    */
   public $passwordSet;
   /**
-   * Required. The network port of the source PostgreSQL database.
-   *
    * @var int
    */
   public $port;
-  protected $privateConnectivityType = PrivateConnectivity::class;
-  protected $privateConnectivityDataType = '';
   protected $privateServiceConnectConnectivityType = PrivateServiceConnectConnectivity::class;
   protected $privateServiceConnectConnectivityDataType = '';
   protected $sslType = SslConfig::class;
@@ -100,19 +58,12 @@ class PostgreSqlConnectionProfile extends \Google\Model
   protected $staticIpConnectivityType = StaticIpConnectivity::class;
   protected $staticIpConnectivityDataType = '';
   /**
-   * Required. The username that Database Migration Service will use to connect
-   * to the database. The value is encrypted when stored in Database Migration
-   * Service.
-   *
    * @var string
    */
   public $username;
 
   /**
-   * Optional. If the destination is an AlloyDB database, use this field to
-   * provide the AlloyDB cluster ID.
-   *
-   * @param string $alloydbClusterId
+   * @param string
    */
   public function setAlloydbClusterId($alloydbClusterId)
   {
@@ -126,10 +77,7 @@ class PostgreSqlConnectionProfile extends \Google\Model
     return $this->alloydbClusterId;
   }
   /**
-   * If the source is a Cloud SQL database, use this field to provide the Cloud
-   * SQL instance ID of the source.
-   *
-   * @param string $cloudSqlId
+   * @param string
    */
   public function setCloudSqlId($cloudSqlId)
   {
@@ -143,9 +91,7 @@ class PostgreSqlConnectionProfile extends \Google\Model
     return $this->cloudSqlId;
   }
   /**
-   * Optional. The name of the specific database within the host.
-   *
-   * @param string $database
+   * @param string
    */
   public function setDatabase($database)
   {
@@ -159,42 +105,7 @@ class PostgreSqlConnectionProfile extends \Google\Model
     return $this->database;
   }
   /**
-   * Optional. If true, Database Migration Service will use IAM database
-   * authentication to connect to the database.
-   *
-   * @param bool $enableIamAuthentication
-   */
-  public function setEnableIamAuthentication($enableIamAuthentication)
-  {
-    $this->enableIamAuthentication = $enableIamAuthentication;
-  }
-  /**
-   * @return bool
-   */
-  public function getEnableIamAuthentication()
-  {
-    return $this->enableIamAuthentication;
-  }
-  /**
-   * Forward SSH tunnel connectivity.
-   *
-   * @param ForwardSshTunnelConnectivity $forwardSshConnectivity
-   */
-  public function setForwardSshConnectivity(ForwardSshTunnelConnectivity $forwardSshConnectivity)
-  {
-    $this->forwardSshConnectivity = $forwardSshConnectivity;
-  }
-  /**
-   * @return ForwardSshTunnelConnectivity
-   */
-  public function getForwardSshConnectivity()
-  {
-    return $this->forwardSshConnectivity;
-  }
-  /**
-   * Required. The IP or hostname of the source PostgreSQL database.
-   *
-   * @param string $host
+   * @param string
    */
   public function setHost($host)
   {
@@ -208,33 +119,21 @@ class PostgreSqlConnectionProfile extends \Google\Model
     return $this->host;
   }
   /**
-   * Output only. If the source is a Cloud SQL database, this field indicates
-   * the network architecture it's associated with.
-   *
-   * Accepted values: NETWORK_ARCHITECTURE_UNSPECIFIED,
-   * NETWORK_ARCHITECTURE_OLD_CSQL_PRODUCER,
-   * NETWORK_ARCHITECTURE_NEW_CSQL_PRODUCER
-   *
-   * @param self::NETWORK_ARCHITECTURE_* $networkArchitecture
+   * @param string
    */
   public function setNetworkArchitecture($networkArchitecture)
   {
     $this->networkArchitecture = $networkArchitecture;
   }
   /**
-   * @return self::NETWORK_ARCHITECTURE_*
+   * @return string
    */
   public function getNetworkArchitecture()
   {
     return $this->networkArchitecture;
   }
   /**
-   * Required. Input only. The password for the user that Database Migration
-   * Service will be using to connect to the database. This field is not
-   * returned on request, and the value is encrypted when stored in Database
-   * Migration Service.
-   *
-   * @param string $password
+   * @param string
    */
   public function setPassword($password)
   {
@@ -248,9 +147,7 @@ class PostgreSqlConnectionProfile extends \Google\Model
     return $this->password;
   }
   /**
-   * Output only. Indicates If this connection profile password is stored.
-   *
-   * @param bool $passwordSet
+   * @param bool
    */
   public function setPasswordSet($passwordSet)
   {
@@ -264,9 +161,7 @@ class PostgreSqlConnectionProfile extends \Google\Model
     return $this->passwordSet;
   }
   /**
-   * Required. The network port of the source PostgreSQL database.
-   *
-   * @param int $port
+   * @param int
    */
   public function setPort($port)
   {
@@ -280,25 +175,7 @@ class PostgreSqlConnectionProfile extends \Google\Model
     return $this->port;
   }
   /**
-   * Private connectivity.
-   *
-   * @param PrivateConnectivity $privateConnectivity
-   */
-  public function setPrivateConnectivity(PrivateConnectivity $privateConnectivity)
-  {
-    $this->privateConnectivity = $privateConnectivity;
-  }
-  /**
-   * @return PrivateConnectivity
-   */
-  public function getPrivateConnectivity()
-  {
-    return $this->privateConnectivity;
-  }
-  /**
-   * Private service connect connectivity.
-   *
-   * @param PrivateServiceConnectConnectivity $privateServiceConnectConnectivity
+   * @param PrivateServiceConnectConnectivity
    */
   public function setPrivateServiceConnectConnectivity(PrivateServiceConnectConnectivity $privateServiceConnectConnectivity)
   {
@@ -312,9 +189,7 @@ class PostgreSqlConnectionProfile extends \Google\Model
     return $this->privateServiceConnectConnectivity;
   }
   /**
-   * SSL configuration for the destination to connect to the source database.
-   *
-   * @param SslConfig $ssl
+   * @param SslConfig
    */
   public function setSsl(SslConfig $ssl)
   {
@@ -328,9 +203,7 @@ class PostgreSqlConnectionProfile extends \Google\Model
     return $this->ssl;
   }
   /**
-   * Static ip connectivity data (default, no additional details needed).
-   *
-   * @param StaticIpConnectivity $staticIpConnectivity
+   * @param StaticIpConnectivity
    */
   public function setStaticIpConnectivity(StaticIpConnectivity $staticIpConnectivity)
   {
@@ -344,11 +217,7 @@ class PostgreSqlConnectionProfile extends \Google\Model
     return $this->staticIpConnectivity;
   }
   /**
-   * Required. The username that Database Migration Service will use to connect
-   * to the database. The value is encrypted when stored in Database Migration
-   * Service.
-   *
-   * @param string $username
+   * @param string
    */
   public function setUsername($username)
   {

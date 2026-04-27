@@ -23,9 +23,7 @@ class DiscoverableProgramMerchantSigninInfo extends \Google\Model
   protected $signinWebsiteDataType = '';
 
   /**
-   * The URL to direct the user to for the merchant's signin site.
-   *
-   * @param Uri $signinWebsite
+   * @param Uri
    */
   public function setSigninWebsite(Uri $signinWebsite)
   {

@@ -151,37 +151,27 @@ class ProjectsLocationsApis extends \Google\Service\Resource
    * attributes/user-defined-attribute-id.json_values.values` - The allowed value
    * of the user defined JSON attribute associated with the Resource. Allowed
    * comparison operator is `:`. Here user-defined-attribute-json is a placeholder
-   * that can be replaced with any user defined JSON attribute name. A filter
-   * function is also supported in the filter string. The filter function is
-   * `id(name)`. The `id(name)` function returns the id of the resource name. For
-   * example, `id(name) = \"api-1\"` is equivalent to `name = \"projects/test-
-   * project-id/locations/test-location-id/apis/api-1\"` provided the parent is
-   * `projects/test-project-id/locations/test-location-id`. Another supported
-   * filter function is `plugins(source_metadata)`. This function filters for
-   * resources that are associated with a specific plugin. For example,
-   * `plugins(source_metadata) : "projects/test-project-id/locations/test-
-   * location-id/plugins/test-plugin-id"` will return resources sourced from the
-   * given plugin. Expressions are combined with either `AND` logic operator or
-   * `OR` logical operator but not both of them together i.e. only one of the
-   * `AND` or `OR` operator can be used throughout the filter string and both the
-   * operators cannot be used together. No other logical operators are supported.
-   * At most three filter fields are allowed in the filter string and if provided
-   * more than that then `INVALID_ARGUMENT` error is returned by the API. Here are
-   * a few examples: * `owner.email = \"apihub@google.com\"` - - The owner team
-   * email is _apihub@google.com_. * `owner.email = \"apihub@google.com\" AND
-   * create_time < \"2021-08-15T14:50:00Z\" AND create_time >
-   * \"2021-08-10T12:00:00Z\"` - The owner team email is _apihub@google.com_ and
-   * the api was created before _2021-08-15 14:50:00 UTC_ and after _2021-08-10
-   * 12:00:00 UTC_. * `owner.email = \"apihub@google.com\" OR
-   * team.enum_values.values.id: apihub-team-id` - The filter string specifies the
-   * APIs where the owner team email is _apihub@google.com_ or the id of the
-   * allowed value associated with the team attribute is _apihub-team-id_. *
-   * `owner.email = \"apihub@google.com\" OR team.enum_values.values.display_name:
-   * ApiHub Team` - The filter string specifies the APIs where the owner team
-   * email is _apihub@google.com_ or the display name of the allowed value
-   * associated with the team attribute is `ApiHub Team`. * `owner.email =
-   * \"apihub@google.com\" AND attributes.projects/test-project-id/locations/test-
-   * location-id/
+   * that can be replaced with any user defined JSON attribute name. Expressions
+   * are combined with either `AND` logic operator or `OR` logical operator but
+   * not both of them together i.e. only one of the `AND` or `OR` operator can be
+   * used throughout the filter string and both the operators cannot be used
+   * together. No other logical operators are supported. At most three filter
+   * fields are allowed in the filter string and if provided more than that then
+   * `INVALID_ARGUMENT` error is returned by the API. Here are a few examples: *
+   * `owner.email = \"apihub@google.com\"` - - The owner team email is
+   * _apihub@google.com_. * `owner.email = \"apihub@google.com\" AND create_time <
+   * \"2021-08-15T14:50:00Z\" AND create_time > \"2021-08-10T12:00:00Z\"` - The
+   * owner team email is _apihub@google.com_ and the api was created before
+   * _2021-08-15 14:50:00 UTC_ and after _2021-08-10 12:00:00 UTC_. * `owner.email
+   * = \"apihub@google.com\" OR team.enum_values.values.id: apihub-team-id` - The
+   * filter string specifies the APIs where the owner team email is
+   * _apihub@google.com_ or the id of the allowed value associated with the team
+   * attribute is _apihub-team-id_. * `owner.email = \"apihub@google.com\" OR
+   * team.enum_values.values.display_name: ApiHub Team` - The filter string
+   * specifies the APIs where the owner team email is _apihub@google.com_ or the
+   * display name of the allowed value associated with the team attribute is
+   * `ApiHub Team`. * `owner.email = \"apihub@google.com\" AND
+   * attributes.projects/test-project-id/locations/test-location-id/
    * attributes/17650f90-4a29-4971-b3c0-d5532da3764b.enum_values.values.id:
    * test_enum_id AND attributes.projects/test-project-id/locations/test-location-
    * id/ attributes/1765\0f90-4a29-5431-b3d0-d5532da3764c.string_values.values:
@@ -209,10 +199,10 @@ class ProjectsLocationsApis extends \Google\Service\Resource
   /**
    * Update an API resource in the API hub. The following fields in the API can be
    * updated: * display_name * description * owner * documentation * target_user *
-   * team * business_unit * maturity_level * api_style * attributes * fingerprint
-   * The update_mask should be used to specify the fields being updated. Updating
-   * the owner field requires complete owner message and updates both owner and
-   * email fields. (apis.patch)
+   * team * business_unit * maturity_level * api_style * attributes The
+   * update_mask should be used to specify the fields being updated. Updating the
+   * owner field requires complete owner message and updates both owner and email
+   * fields. (apis.patch)
    *
    * @param string $name Identifier. The name of the API resource in the API Hub.
    * Format: `projects/{project}/locations/{location}/apis/{api}`

@@ -21,16 +21,12 @@ class GoogleCloudAiplatformV1Int64Array extends \Google\Collection
 {
   protected $collection_key = 'values';
   /**
-   * A list of int64 values.
-   *
    * @var string[]
    */
   public $values;
 
   /**
-   * A list of int64 values.
-   *
-   * @param string[] $values
+   * @param string[]
    */
   public function setValues($values)
   {

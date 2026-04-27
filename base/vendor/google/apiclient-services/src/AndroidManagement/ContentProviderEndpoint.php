@@ -21,28 +21,20 @@ class ContentProviderEndpoint extends \Google\Collection
 {
   protected $collection_key = 'signingCertsSha256';
   /**
-   * This feature is not generally available.
-   *
    * @var string
    */
   public $packageName;
   /**
-   * Required. This feature is not generally available.
-   *
    * @var string[]
    */
   public $signingCertsSha256;
   /**
-   * This feature is not generally available.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * This feature is not generally available.
-   *
-   * @param string $packageName
+   * @param string
    */
   public function setPackageName($packageName)
   {
@@ -56,9 +48,7 @@ class ContentProviderEndpoint extends \Google\Collection
     return $this->packageName;
   }
   /**
-   * Required. This feature is not generally available.
-   *
-   * @param string[] $signingCertsSha256
+   * @param string[]
    */
   public function setSigningCertsSha256($signingCertsSha256)
   {
@@ -72,9 +62,7 @@ class ContentProviderEndpoint extends \Google\Collection
     return $this->signingCertsSha256;
   }
   /**
-   * This feature is not generally available.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

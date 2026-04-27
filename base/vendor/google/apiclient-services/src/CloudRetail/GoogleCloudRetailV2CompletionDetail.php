@@ -20,29 +20,20 @@ namespace Google\Service\CloudRetail;
 class GoogleCloudRetailV2CompletionDetail extends \Google\Model
 {
   /**
-   * Completion attribution token in CompleteQueryResponse.attribution_token.
-   *
    * @var string
    */
   public $completionAttributionToken;
   /**
-   * End user selected CompleteQueryResponse.CompletionResult.suggestion
-   * position, starting from 0.
-   *
    * @var int
    */
   public $selectedPosition;
   /**
-   * End user selected CompleteQueryResponse.CompletionResult.suggestion.
-   *
    * @var string
    */
   public $selectedSuggestion;
 
   /**
-   * Completion attribution token in CompleteQueryResponse.attribution_token.
-   *
-   * @param string $completionAttributionToken
+   * @param string
    */
   public function setCompletionAttributionToken($completionAttributionToken)
   {
@@ -56,10 +47,7 @@ class GoogleCloudRetailV2CompletionDetail extends \Google\Model
     return $this->completionAttributionToken;
   }
   /**
-   * End user selected CompleteQueryResponse.CompletionResult.suggestion
-   * position, starting from 0.
-   *
-   * @param int $selectedPosition
+   * @param int
    */
   public function setSelectedPosition($selectedPosition)
   {
@@ -73,9 +61,7 @@ class GoogleCloudRetailV2CompletionDetail extends \Google\Model
     return $this->selectedPosition;
   }
   /**
-   * End user selected CompleteQueryResponse.CompletionResult.suggestion.
-   *
-   * @param string $selectedSuggestion
+   * @param string
    */
   public function setSelectedSuggestion($selectedSuggestion)
   {

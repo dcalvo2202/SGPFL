@@ -21,23 +21,16 @@ class VmCapabilities extends \Google\Collection
 {
   protected $collection_key = 'osCapabilities';
   /**
-   * Output only. The last time OS capabilities list was updated.
-   *
    * @var string
    */
   public $lastOsCapabilitiesUpdateTime;
   /**
-   * Output only. Unordered list. List of certain VM OS capabilities needed for
-   * some Compute Engine features.
-   *
    * @var string[]
    */
   public $osCapabilities;
 
   /**
-   * Output only. The last time OS capabilities list was updated.
-   *
-   * @param string $lastOsCapabilitiesUpdateTime
+   * @param string
    */
   public function setLastOsCapabilitiesUpdateTime($lastOsCapabilitiesUpdateTime)
   {
@@ -51,10 +44,7 @@ class VmCapabilities extends \Google\Collection
     return $this->lastOsCapabilitiesUpdateTime;
   }
   /**
-   * Output only. Unordered list. List of certain VM OS capabilities needed for
-   * some Compute Engine features.
-   *
-   * @param string[] $osCapabilities
+   * @param string[]
    */
   public function setOsCapabilities($osCapabilities)
   {

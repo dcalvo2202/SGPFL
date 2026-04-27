@@ -20,18 +20,12 @@ namespace Google\Service\SecurityCommandCenter;
 class OrgPolicy extends \Google\Model
 {
   /**
-   * The resource name of the org policy. Example:
-   * "organizations/{organization_id}/policies/{constraint_name}"
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The resource name of the org policy. Example:
-   * "organizations/{organization_id}/policies/{constraint_name}"
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

@@ -20,25 +20,16 @@ namespace Google\Service\Reseller;
 class SubscriptionTrialSettings extends \Google\Model
 {
   /**
-   * Determines if a subscription's plan is in a 30-day free trial or not: -
-   * `true` — The plan is in trial. - `false` — The plan is not in trial.
-   *
    * @var bool
    */
   public $isInTrial;
   /**
-   * Date when the trial ends. The value is in milliseconds using the UNIX Epoch
-   * format. See an example Epoch converter.
-   *
    * @var string
    */
   public $trialEndTime;
 
   /**
-   * Determines if a subscription's plan is in a 30-day free trial or not: -
-   * `true` — The plan is in trial. - `false` — The plan is not in trial.
-   *
-   * @param bool $isInTrial
+   * @param bool
    */
   public function setIsInTrial($isInTrial)
   {
@@ -52,10 +43,7 @@ class SubscriptionTrialSettings extends \Google\Model
     return $this->isInTrial;
   }
   /**
-   * Date when the trial ends. The value is in milliseconds using the UNIX Epoch
-   * format. See an example Epoch converter.
-   *
-   * @param string $trialEndTime
+   * @param string
    */
   public function setTrialEndTime($trialEndTime)
   {

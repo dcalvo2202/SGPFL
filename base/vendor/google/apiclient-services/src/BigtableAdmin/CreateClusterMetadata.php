@@ -20,16 +20,12 @@ namespace Google\Service\BigtableAdmin;
 class CreateClusterMetadata extends \Google\Model
 {
   /**
-   * The time at which the operation failed or was completed successfully.
-   *
    * @var string
    */
   public $finishTime;
   protected $originalRequestType = CreateClusterRequest::class;
   protected $originalRequestDataType = '';
   /**
-   * The time at which the original request was received.
-   *
    * @var string
    */
   public $requestTime;
@@ -37,9 +33,7 @@ class CreateClusterMetadata extends \Google\Model
   protected $tablesDataType = 'map';
 
   /**
-   * The time at which the operation failed or was completed successfully.
-   *
-   * @param string $finishTime
+   * @param string
    */
   public function setFinishTime($finishTime)
   {
@@ -53,9 +47,7 @@ class CreateClusterMetadata extends \Google\Model
     return $this->finishTime;
   }
   /**
-   * The request that prompted the initiation of this CreateCluster operation.
-   *
-   * @param CreateClusterRequest $originalRequest
+   * @param CreateClusterRequest
    */
   public function setOriginalRequest(CreateClusterRequest $originalRequest)
   {
@@ -69,9 +61,7 @@ class CreateClusterMetadata extends \Google\Model
     return $this->originalRequest;
   }
   /**
-   * The time at which the original request was received.
-   *
-   * @param string $requestTime
+   * @param string
    */
   public function setRequestTime($requestTime)
   {
@@ -85,13 +75,7 @@ class CreateClusterMetadata extends \Google\Model
     return $this->requestTime;
   }
   /**
-   * Keys: the full `name` of each table that existed in the instance when
-   * CreateCluster was first called, i.e. `projects//instances//tables/`. Any
-   * table added to the instance by a later API call will be created in the new
-   * cluster by that API call, not this one. Values: information on how much of
-   * a table's data has been copied to the newly-created cluster so far.
-   *
-   * @param TableProgress[] $tables
+   * @param TableProgress[]
    */
   public function setTables($tables)
   {

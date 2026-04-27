@@ -19,33 +19,15 @@ namespace Google\Service\Contactcenterinsights;
 
 class GoogleCloudContactcenterinsightsV1alpha1QaAnswerAnswerSource extends \Google\Model
 {
-  /**
-   * Source type is unspecified.
-   */
-  public const SOURCE_TYPE_SOURCE_TYPE_UNSPECIFIED = 'SOURCE_TYPE_UNSPECIFIED';
-  /**
-   * Answer was system-generated; created during an Insights analysis.
-   */
-  public const SOURCE_TYPE_SYSTEM_GENERATED = 'SYSTEM_GENERATED';
-  /**
-   * Answer was created by a human via manual edit.
-   */
-  public const SOURCE_TYPE_MANUAL_EDIT = 'MANUAL_EDIT';
   protected $answerValueType = GoogleCloudContactcenterinsightsV1alpha1QaAnswerAnswerValue::class;
   protected $answerValueDataType = '';
   /**
-   * What created the answer.
-   *
    * @var string
    */
   public $sourceType;
 
   /**
-   * The answer value from this source. This field is populated by default,
-   * unless the question has a selection strategy configured to return multiple
-   * answer values, in which case `answer_values` will be populated instead.
-   *
-   * @param GoogleCloudContactcenterinsightsV1alpha1QaAnswerAnswerValue $answerValue
+   * @param GoogleCloudContactcenterinsightsV1alpha1QaAnswerAnswerValue
    */
   public function setAnswerValue(GoogleCloudContactcenterinsightsV1alpha1QaAnswerAnswerValue $answerValue)
   {
@@ -59,18 +41,14 @@ class GoogleCloudContactcenterinsightsV1alpha1QaAnswerAnswerSource extends \Goog
     return $this->answerValue;
   }
   /**
-   * What created the answer.
-   *
-   * Accepted values: SOURCE_TYPE_UNSPECIFIED, SYSTEM_GENERATED, MANUAL_EDIT
-   *
-   * @param self::SOURCE_TYPE_* $sourceType
+   * @param string
    */
   public function setSourceType($sourceType)
   {
     $this->sourceType = $sourceType;
   }
   /**
-   * @return self::SOURCE_TYPE_*
+   * @return string
    */
   public function getSourceType()
   {

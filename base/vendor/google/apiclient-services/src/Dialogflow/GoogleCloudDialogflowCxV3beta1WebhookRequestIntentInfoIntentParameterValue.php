@@ -29,7 +29,7 @@ class GoogleCloudDialogflowCxV3beta1WebhookRequestIntentInfoIntentParameterValue
   public $resolvedValue;
 
   /**
-   * @param string $originalValue
+   * @param string
    */
   public function setOriginalValue($originalValue)
   {
@@ -43,7 +43,7 @@ class GoogleCloudDialogflowCxV3beta1WebhookRequestIntentInfoIntentParameterValue
     return $this->originalValue;
   }
   /**
-   * @param array $resolvedValue
+   * @param array
    */
   public function setResolvedValue($resolvedValue)
   {

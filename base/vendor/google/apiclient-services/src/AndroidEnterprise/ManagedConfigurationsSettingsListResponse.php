@@ -24,10 +24,7 @@ class ManagedConfigurationsSettingsListResponse extends \Google\Collection
   protected $managedConfigurationsSettingsDataType = 'array';
 
   /**
-   * A managed configurations settings for an app that may be assigned to a
-   * group of users in an enterprise.
-   *
-   * @param ManagedConfigurationsSettings[] $managedConfigurationsSettings
+   * @param ManagedConfigurationsSettings[]
    */
   public function setManagedConfigurationsSettings($managedConfigurationsSettings)
   {

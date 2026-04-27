@@ -28,9 +28,7 @@ class GoogleCloudDiscoveryengineV1ConverseConversationResponse extends \Google\C
   protected $searchResultsDataType = 'array';
 
   /**
-   * Updated conversation including the answer.
-   *
-   * @param GoogleCloudDiscoveryengineV1Conversation $conversation
+   * @param GoogleCloudDiscoveryengineV1Conversation
    */
   public function setConversation(GoogleCloudDiscoveryengineV1Conversation $conversation)
   {
@@ -44,9 +42,7 @@ class GoogleCloudDiscoveryengineV1ConverseConversationResponse extends \Google\C
     return $this->conversation;
   }
   /**
-   * Answer to the current query.
-   *
-   * @param GoogleCloudDiscoveryengineV1Reply $reply
+   * @param GoogleCloudDiscoveryengineV1Reply
    */
   public function setReply(GoogleCloudDiscoveryengineV1Reply $reply)
   {
@@ -60,9 +56,7 @@ class GoogleCloudDiscoveryengineV1ConverseConversationResponse extends \Google\C
     return $this->reply;
   }
   /**
-   * Search Results.
-   *
-   * @param GoogleCloudDiscoveryengineV1SearchResponseSearchResult[] $searchResults
+   * @param GoogleCloudDiscoveryengineV1SearchResponseSearchResult[]
    */
   public function setSearchResults($searchResults)
   {

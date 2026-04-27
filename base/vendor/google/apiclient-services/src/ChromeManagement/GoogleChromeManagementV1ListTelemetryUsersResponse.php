@@ -21,8 +21,6 @@ class GoogleChromeManagementV1ListTelemetryUsersResponse extends \Google\Collect
 {
   protected $collection_key = 'telemetryUsers';
   /**
-   * Token to specify next page in the list.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -30,9 +28,7 @@ class GoogleChromeManagementV1ListTelemetryUsersResponse extends \Google\Collect
   protected $telemetryUsersDataType = 'array';
 
   /**
-   * Token to specify next page in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -46,9 +42,7 @@ class GoogleChromeManagementV1ListTelemetryUsersResponse extends \Google\Collect
     return $this->nextPageToken;
   }
   /**
-   * Telemetry users returned in the response.
-   *
-   * @param GoogleChromeManagementV1TelemetryUser[] $telemetryUsers
+   * @param GoogleChromeManagementV1TelemetryUser[]
    */
   public function setTelemetryUsers($telemetryUsers)
   {

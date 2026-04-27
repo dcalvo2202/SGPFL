@@ -20,16 +20,12 @@ namespace Google\Service\Calendar;
 class EventWorkingLocationPropertiesCustomLocation extends \Google\Model
 {
   /**
-   * An optional extra label for additional information.
-   *
    * @var string
    */
   public $label;
 
   /**
-   * An optional extra label for additional information.
-   *
-   * @param string $label
+   * @param string
    */
   public function setLabel($label)
   {

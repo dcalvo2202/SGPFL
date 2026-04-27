@@ -24,9 +24,7 @@ class GoogleCloudDocumentaiV1RawDocuments extends \Google\Collection
   protected $documentsDataType = 'array';
 
   /**
-   * Specifies raw document content and mime type.
-   *
-   * @param GoogleCloudDocumentaiV1RawDocument[] $documents
+   * @param GoogleCloudDocumentaiV1RawDocument[]
    */
   public function setDocuments($documents)
   {

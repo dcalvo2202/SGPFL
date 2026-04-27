@@ -20,18 +20,12 @@ namespace Google\Service\APIhub;
 class GoogleCloudApihubV1Secret extends \Google\Model
 {
   /**
-   * Required. The resource name of the secret version in the format, format as:
-   * `projects/secrets/versions`.
-   *
    * @var string
    */
   public $secretVersion;
 
   /**
-   * Required. The resource name of the secret version in the format, format as:
-   * `projects/secrets/versions`.
-   *
-   * @param string $secretVersion
+   * @param string
    */
   public function setSecretVersion($secretVersion)
   {

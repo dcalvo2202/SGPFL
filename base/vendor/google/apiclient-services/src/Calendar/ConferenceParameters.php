@@ -23,9 +23,7 @@ class ConferenceParameters extends \Google\Model
   protected $addOnParametersDataType = '';
 
   /**
-   * Additional add-on specific data.
-   *
-   * @param ConferenceParametersAddOnParameters $addOnParameters
+   * @param ConferenceParametersAddOnParameters
    */
   public function setAddOnParameters(ConferenceParametersAddOnParameters $addOnParameters)
   {

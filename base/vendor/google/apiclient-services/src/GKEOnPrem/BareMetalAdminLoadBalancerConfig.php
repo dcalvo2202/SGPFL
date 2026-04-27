@@ -19,8 +19,6 @@ namespace Google\Service\GKEOnPrem;
 
 class BareMetalAdminLoadBalancerConfig extends \Google\Model
 {
-  protected $bgpLbConfigType = BareMetalAdminBgpLbConfig::class;
-  protected $bgpLbConfigDataType = '';
   protected $manualLbConfigType = BareMetalAdminManualLbConfig::class;
   protected $manualLbConfigDataType = '';
   protected $portConfigType = BareMetalAdminPortConfig::class;
@@ -29,25 +27,7 @@ class BareMetalAdminLoadBalancerConfig extends \Google\Model
   protected $vipConfigDataType = '';
 
   /**
-   * Configuration for BGP typed load balancers.
-   *
-   * @param BareMetalAdminBgpLbConfig $bgpLbConfig
-   */
-  public function setBgpLbConfig(BareMetalAdminBgpLbConfig $bgpLbConfig)
-  {
-    $this->bgpLbConfig = $bgpLbConfig;
-  }
-  /**
-   * @return BareMetalAdminBgpLbConfig
-   */
-  public function getBgpLbConfig()
-  {
-    return $this->bgpLbConfig;
-  }
-  /**
-   * Manually configured load balancers.
-   *
-   * @param BareMetalAdminManualLbConfig $manualLbConfig
+   * @param BareMetalAdminManualLbConfig
    */
   public function setManualLbConfig(BareMetalAdminManualLbConfig $manualLbConfig)
   {
@@ -61,9 +41,7 @@ class BareMetalAdminLoadBalancerConfig extends \Google\Model
     return $this->manualLbConfig;
   }
   /**
-   * Configures the ports that the load balancer will listen on.
-   *
-   * @param BareMetalAdminPortConfig $portConfig
+   * @param BareMetalAdminPortConfig
    */
   public function setPortConfig(BareMetalAdminPortConfig $portConfig)
   {
@@ -77,9 +55,7 @@ class BareMetalAdminLoadBalancerConfig extends \Google\Model
     return $this->portConfig;
   }
   /**
-   * The VIPs used by the load balancer.
-   *
-   * @param BareMetalAdminVipConfig $vipConfig
+   * @param BareMetalAdminVipConfig
    */
   public function setVipConfig(BareMetalAdminVipConfig $vipConfig)
   {

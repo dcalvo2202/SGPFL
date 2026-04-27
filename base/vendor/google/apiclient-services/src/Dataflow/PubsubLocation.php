@@ -20,62 +20,40 @@ namespace Google\Service\Dataflow;
 class PubsubLocation extends \Google\Model
 {
   /**
-   * Indicates whether the pipeline allows late-arriving data.
-   *
    * @var bool
    */
   public $dropLateData;
   /**
-   * If true, then this location represents dynamic topics.
-   *
    * @var bool
    */
   public $dynamicDestinations;
   /**
-   * If set, contains a pubsub label from which to extract record ids. If left
-   * empty, record deduplication will be strictly best effort.
-   *
    * @var string
    */
   public $idLabel;
   /**
-   * A pubsub subscription, in the form of
-   * "pubsub.googleapis.com/subscriptions//"
-   *
    * @var string
    */
   public $subscription;
   /**
-   * If set, contains a pubsub label from which to extract record timestamps. If
-   * left empty, record timestamps will be generated upon arrival.
-   *
    * @var string
    */
   public $timestampLabel;
   /**
-   * A pubsub topic, in the form of "pubsub.googleapis.com/topics//"
-   *
    * @var string
    */
   public $topic;
   /**
-   * If set, specifies the pubsub subscription that will be used for tracking
-   * custom time timestamps for watermark estimation.
-   *
    * @var string
    */
   public $trackingSubscription;
   /**
-   * If true, then the client has requested to get pubsub attributes.
-   *
    * @var bool
    */
   public $withAttributes;
 
   /**
-   * Indicates whether the pipeline allows late-arriving data.
-   *
-   * @param bool $dropLateData
+   * @param bool
    */
   public function setDropLateData($dropLateData)
   {
@@ -89,9 +67,7 @@ class PubsubLocation extends \Google\Model
     return $this->dropLateData;
   }
   /**
-   * If true, then this location represents dynamic topics.
-   *
-   * @param bool $dynamicDestinations
+   * @param bool
    */
   public function setDynamicDestinations($dynamicDestinations)
   {
@@ -105,10 +81,7 @@ class PubsubLocation extends \Google\Model
     return $this->dynamicDestinations;
   }
   /**
-   * If set, contains a pubsub label from which to extract record ids. If left
-   * empty, record deduplication will be strictly best effort.
-   *
-   * @param string $idLabel
+   * @param string
    */
   public function setIdLabel($idLabel)
   {
@@ -122,10 +95,7 @@ class PubsubLocation extends \Google\Model
     return $this->idLabel;
   }
   /**
-   * A pubsub subscription, in the form of
-   * "pubsub.googleapis.com/subscriptions//"
-   *
-   * @param string $subscription
+   * @param string
    */
   public function setSubscription($subscription)
   {
@@ -139,10 +109,7 @@ class PubsubLocation extends \Google\Model
     return $this->subscription;
   }
   /**
-   * If set, contains a pubsub label from which to extract record timestamps. If
-   * left empty, record timestamps will be generated upon arrival.
-   *
-   * @param string $timestampLabel
+   * @param string
    */
   public function setTimestampLabel($timestampLabel)
   {
@@ -156,9 +123,7 @@ class PubsubLocation extends \Google\Model
     return $this->timestampLabel;
   }
   /**
-   * A pubsub topic, in the form of "pubsub.googleapis.com/topics//"
-   *
-   * @param string $topic
+   * @param string
    */
   public function setTopic($topic)
   {
@@ -172,10 +137,7 @@ class PubsubLocation extends \Google\Model
     return $this->topic;
   }
   /**
-   * If set, specifies the pubsub subscription that will be used for tracking
-   * custom time timestamps for watermark estimation.
-   *
-   * @param string $trackingSubscription
+   * @param string
    */
   public function setTrackingSubscription($trackingSubscription)
   {
@@ -189,9 +151,7 @@ class PubsubLocation extends \Google\Model
     return $this->trackingSubscription;
   }
   /**
-   * If true, then the client has requested to get pubsub attributes.
-   *
-   * @param bool $withAttributes
+   * @param bool
    */
   public function setWithAttributes($withAttributes)
   {

@@ -20,62 +20,36 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1DeploymentResourcePool extends \Google\Model
 {
   /**
-   * Output only. Timestamp when this DeploymentResourcePool was created.
-   *
    * @var string
    */
   public $createTime;
   protected $dedicatedResourcesType = GoogleCloudAiplatformV1DedicatedResources::class;
   protected $dedicatedResourcesDataType = '';
   /**
-   * If the DeploymentResourcePool is deployed with custom-trained Models or
-   * AutoML Tabular Models, the container(s) of the DeploymentResourcePool will
-   * send `stderr` and `stdout` streams to Cloud Logging by default. Please note
-   * that the logs incur cost, which are subject to [Cloud Logging
-   * pricing](https://cloud.google.com/logging/pricing). User can disable
-   * container logging by setting this flag to true.
-   *
    * @var bool
    */
   public $disableContainerLogging;
   protected $encryptionSpecType = GoogleCloudAiplatformV1EncryptionSpec::class;
   protected $encryptionSpecDataType = '';
   /**
-   * Immutable. The resource name of the DeploymentResourcePool. Format: `projec
-   * ts/{project}/locations/{location}/deploymentResourcePools/{deployment_resou
-   * rce_pool}`
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Reserved for future use.
-   *
    * @var bool
    */
   public $satisfiesPzi;
   /**
-   * Output only. Reserved for future use.
-   *
    * @var bool
    */
   public $satisfiesPzs;
   /**
-   * The service account that the DeploymentResourcePool's container(s) run as.
-   * Specify the email address of the service account. If this service account
-   * is not specified, the container(s) run as a service account that doesn't
-   * have access to the resource project. Users deploying the Models to this
-   * DeploymentResourcePool must have the `iam.serviceAccounts.actAs` permission
-   * on this service account.
-   *
    * @var string
    */
   public $serviceAccount;
 
   /**
-   * Output only. Timestamp when this DeploymentResourcePool was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -89,10 +63,7 @@ class GoogleCloudAiplatformV1DeploymentResourcePool extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Required. The underlying DedicatedResources that the DeploymentResourcePool
-   * uses.
-   *
-   * @param GoogleCloudAiplatformV1DedicatedResources $dedicatedResources
+   * @param GoogleCloudAiplatformV1DedicatedResources
    */
   public function setDedicatedResources(GoogleCloudAiplatformV1DedicatedResources $dedicatedResources)
   {
@@ -106,14 +77,7 @@ class GoogleCloudAiplatformV1DeploymentResourcePool extends \Google\Model
     return $this->dedicatedResources;
   }
   /**
-   * If the DeploymentResourcePool is deployed with custom-trained Models or
-   * AutoML Tabular Models, the container(s) of the DeploymentResourcePool will
-   * send `stderr` and `stdout` streams to Cloud Logging by default. Please note
-   * that the logs incur cost, which are subject to [Cloud Logging
-   * pricing](https://cloud.google.com/logging/pricing). User can disable
-   * container logging by setting this flag to true.
-   *
-   * @param bool $disableContainerLogging
+   * @param bool
    */
   public function setDisableContainerLogging($disableContainerLogging)
   {
@@ -127,11 +91,7 @@ class GoogleCloudAiplatformV1DeploymentResourcePool extends \Google\Model
     return $this->disableContainerLogging;
   }
   /**
-   * Customer-managed encryption key spec for a DeploymentResourcePool. If set,
-   * this DeploymentResourcePool will be secured by this key. Endpoints and the
-   * DeploymentResourcePool they deploy in need to have the same EncryptionSpec.
-   *
-   * @param GoogleCloudAiplatformV1EncryptionSpec $encryptionSpec
+   * @param GoogleCloudAiplatformV1EncryptionSpec
    */
   public function setEncryptionSpec(GoogleCloudAiplatformV1EncryptionSpec $encryptionSpec)
   {
@@ -145,11 +105,7 @@ class GoogleCloudAiplatformV1DeploymentResourcePool extends \Google\Model
     return $this->encryptionSpec;
   }
   /**
-   * Immutable. The resource name of the DeploymentResourcePool. Format: `projec
-   * ts/{project}/locations/{location}/deploymentResourcePools/{deployment_resou
-   * rce_pool}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -163,9 +119,7 @@ class GoogleCloudAiplatformV1DeploymentResourcePool extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Reserved for future use.
-   *
-   * @param bool $satisfiesPzi
+   * @param bool
    */
   public function setSatisfiesPzi($satisfiesPzi)
   {
@@ -179,9 +133,7 @@ class GoogleCloudAiplatformV1DeploymentResourcePool extends \Google\Model
     return $this->satisfiesPzi;
   }
   /**
-   * Output only. Reserved for future use.
-   *
-   * @param bool $satisfiesPzs
+   * @param bool
    */
   public function setSatisfiesPzs($satisfiesPzs)
   {
@@ -195,14 +147,7 @@ class GoogleCloudAiplatformV1DeploymentResourcePool extends \Google\Model
     return $this->satisfiesPzs;
   }
   /**
-   * The service account that the DeploymentResourcePool's container(s) run as.
-   * Specify the email address of the service account. If this service account
-   * is not specified, the container(s) run as a service account that doesn't
-   * have access to the resource project. Users deploying the Models to this
-   * DeploymentResourcePool must have the `iam.serviceAccounts.actAs` permission
-   * on this service account.
-   *
-   * @param string $serviceAccount
+   * @param string
    */
   public function setServiceAccount($serviceAccount)
   {

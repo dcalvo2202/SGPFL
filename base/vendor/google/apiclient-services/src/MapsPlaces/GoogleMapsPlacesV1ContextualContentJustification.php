@@ -25,11 +25,7 @@ class GoogleMapsPlacesV1ContextualContentJustification extends \Google\Model
   protected $reviewJustificationDataType = '';
 
   /**
-   * Experimental: See
-   * https://developers.google.com/maps/documentation/places/web-
-   * service/experimental/places-generative for more details.
-   *
-   * @param GoogleMapsPlacesV1ContextualContentJustificationBusinessAvailabilityAttributesJustification $businessAvailabilityAttributesJustification
+   * @param GoogleMapsPlacesV1ContextualContentJustificationBusinessAvailabilityAttributesJustification
    */
   public function setBusinessAvailabilityAttributesJustification(GoogleMapsPlacesV1ContextualContentJustificationBusinessAvailabilityAttributesJustification $businessAvailabilityAttributesJustification)
   {
@@ -43,11 +39,7 @@ class GoogleMapsPlacesV1ContextualContentJustification extends \Google\Model
     return $this->businessAvailabilityAttributesJustification;
   }
   /**
-   * Experimental: See
-   * https://developers.google.com/maps/documentation/places/web-
-   * service/experimental/places-generative for more details.
-   *
-   * @param GoogleMapsPlacesV1ContextualContentJustificationReviewJustification $reviewJustification
+   * @param GoogleMapsPlacesV1ContextualContentJustificationReviewJustification
    */
   public function setReviewJustification(GoogleMapsPlacesV1ContextualContentJustificationReviewJustification $reviewJustification)
   {

@@ -21,10 +21,6 @@ class ListPerfSamplesResponse extends \Google\Collection
 {
   protected $collection_key = 'perfSamples';
   /**
-   * Optional, returned if result size exceeds the page size specified in the
-   * request (or the default page size, 500, if unspecified). It indicates the
-   * last sample timestamp to be used as page_token in subsequent request
-   *
    * @var string
    */
   public $nextPageToken;
@@ -32,11 +28,7 @@ class ListPerfSamplesResponse extends \Google\Collection
   protected $perfSamplesDataType = 'array';
 
   /**
-   * Optional, returned if result size exceeds the page size specified in the
-   * request (or the default page size, 500, if unspecified). It indicates the
-   * last sample timestamp to be used as page_token in subsequent request
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -50,7 +42,7 @@ class ListPerfSamplesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * @param PerfSample[] $perfSamples
+   * @param PerfSample[]
    */
   public function setPerfSamples($perfSamples)
   {

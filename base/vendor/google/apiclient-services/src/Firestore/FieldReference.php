@@ -20,20 +20,12 @@ namespace Google\Service\Firestore;
 class FieldReference extends \Google\Model
 {
   /**
-   * A reference to a field in a document. Requires: * MUST be a dot-delimited
-   * (`.`) string of segments, where each segment conforms to document field
-   * name limitations.
-   *
    * @var string
    */
   public $fieldPath;
 
   /**
-   * A reference to a field in a document. Requires: * MUST be a dot-delimited
-   * (`.`) string of segments, where each segment conforms to document field
-   * name limitations.
-   *
-   * @param string $fieldPath
+   * @param string
    */
   public function setFieldPath($fieldPath)
   {

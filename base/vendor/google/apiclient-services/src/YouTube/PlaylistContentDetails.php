@@ -20,16 +20,12 @@ namespace Google\Service\YouTube;
 class PlaylistContentDetails extends \Google\Model
 {
   /**
-   * The number of videos in the playlist.
-   *
    * @var string
    */
   public $itemCount;
 
   /**
-   * The number of videos in the playlist.
-   *
-   * @param string $itemCount
+   * @param string
    */
   public function setItemCount($itemCount)
   {

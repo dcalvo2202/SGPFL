@@ -20,18 +20,12 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1ComputeEnvironmentScoresRequestFilter extends \Google\Model
 {
   /**
-   * Optional. Return scores for this component. Example:
-   * "/org@myorg/envgroup@myenvgroup/env@myenv/proxies/proxy@myproxy/source"
-   *
    * @var string
    */
   public $scorePath;
 
   /**
-   * Optional. Return scores for this component. Example:
-   * "/org@myorg/envgroup@myenvgroup/env@myenv/proxies/proxy@myproxy/source"
-   *
-   * @param string $scorePath
+   * @param string
    */
   public function setScorePath($scorePath)
   {

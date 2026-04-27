@@ -21,257 +21,164 @@ class VerifyAssertionResponse extends \Google\Collection
 {
   protected $collection_key = 'verifiedProvider';
   /**
-   * The action code.
-   *
    * @var string
    */
   public $action;
   /**
-   * URL for OTA app installation.
-   *
    * @var string
    */
   public $appInstallationUrl;
   /**
-   * The custom scheme used by mobile app.
-   *
    * @var string
    */
   public $appScheme;
   /**
-   * The opaque value used by the client to maintain context info between the
-   * authentication request and the IDP callback.
-   *
    * @var string
    */
   public $context;
   /**
-   * The birth date of the IdP account.
-   *
    * @var string
    */
   public $dateOfBirth;
   /**
-   * The display name of the user.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * The email returned by the IdP. NOTE: The federated login user may not own
-   * the email.
-   *
    * @var string
    */
   public $email;
   /**
-   * It's true if the email is recycled.
-   *
    * @var bool
    */
   public $emailRecycled;
   /**
-   * The value is true if the IDP is also the email provider. It means the user
-   * owns the email.
-   *
    * @var bool
    */
   public $emailVerified;
   /**
-   * Client error code.
-   *
    * @var string
    */
   public $errorMessage;
   /**
-   * If idToken is STS id token, then this field will be expiration time of STS
-   * id token in seconds.
-   *
    * @var string
    */
   public $expiresIn;
   /**
-   * The unique ID identifies the IdP account.
-   *
    * @var string
    */
   public $federatedId;
   /**
-   * The first name of the user.
-   *
    * @var string
    */
   public $firstName;
   /**
-   * The full name of the user.
-   *
    * @var string
    */
   public $fullName;
   /**
-   * The ID token.
-   *
    * @var string
    */
   public $idToken;
   /**
-   * It's the identifier param in the createAuthUri request if the identifier is
-   * an email. It can be used to check whether the user input email is different
-   * from the asserted email.
-   *
    * @var string
    */
   public $inputEmail;
   /**
-   * True if it's a new user sign-in, false if it's a returning user.
-   *
    * @var bool
    */
   public $isNewUser;
   /**
-   * The fixed string "identitytoolkit#VerifyAssertionResponse".
-   *
    * @var string
    */
   public $kind;
   /**
-   * The language preference of the user.
-   *
    * @var string
    */
   public $language;
   /**
-   * The last name of the user.
-   *
    * @var string
    */
   public $lastName;
   /**
-   * The RP local ID if it's already been mapped to the IdP account identified
-   * by the federated ID.
-   *
    * @var string
    */
   public $localId;
   /**
-   * Whether the assertion is from a non-trusted IDP and need account linking
-   * confirmation.
-   *
    * @var bool
    */
   public $needConfirmation;
   /**
-   * Whether need client to supply email to complete the federated login flow.
-   *
    * @var bool
    */
   public $needEmail;
   /**
-   * The nick name of the user.
-   *
    * @var string
    */
   public $nickName;
   /**
-   * The OAuth2 access token.
-   *
    * @var string
    */
   public $oauthAccessToken;
   /**
-   * The OAuth2 authorization code.
-   *
    * @var string
    */
   public $oauthAuthorizationCode;
   /**
-   * The lifetime in seconds of the OAuth2 access token.
-   *
    * @var int
    */
   public $oauthExpireIn;
   /**
-   * The OIDC id token.
-   *
    * @var string
    */
   public $oauthIdToken;
   /**
-   * The user approved request token for the OpenID OAuth extension.
-   *
    * @var string
    */
   public $oauthRequestToken;
   /**
-   * The scope for the OpenID OAuth extension.
-   *
    * @var string
    */
   public $oauthScope;
   /**
-   * The OAuth1 access token secret.
-   *
    * @var string
    */
   public $oauthTokenSecret;
   /**
-   * The original email stored in the mapping storage. It's returned when the
-   * federated ID is associated to a different email.
-   *
    * @var string
    */
   public $originalEmail;
   /**
-   * The URI of the public accessible profiel picture.
-   *
    * @var string
    */
   public $photoUrl;
   /**
-   * The IdP ID. For white listed IdPs it's a short domain name e.g. google.com,
-   * aol.com, live.net and yahoo.com. If the "providerId" param is set to OpenID
-   * OP identifer other than the whilte listed IdPs the OP identifier is
-   * returned. If the "identifier" param is federated ID in the createAuthUri
-   * request. The domain part of the federated ID is returned.
-   *
    * @var string
    */
   public $providerId;
   /**
-   * Raw IDP-returned user info.
-   *
    * @var string
    */
   public $rawUserInfo;
   /**
-   * If idToken is STS id token, then this field will be refresh token.
-   *
    * @var string
    */
   public $refreshToken;
   /**
-   * The screen_name of a Twitter user or the login name at Github.
-   *
    * @var string
    */
   public $screenName;
   /**
-   * The timezone of the user.
-   *
    * @var string
    */
   public $timeZone;
   /**
-   * When action is 'map', contains the idps which can be used for confirmation.
-   *
    * @var string[]
    */
   public $verifiedProvider;
 
   /**
-   * The action code.
-   *
-   * @param string $action
+   * @param string
    */
   public function setAction($action)
   {
@@ -285,9 +192,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->action;
   }
   /**
-   * URL for OTA app installation.
-   *
-   * @param string $appInstallationUrl
+   * @param string
    */
   public function setAppInstallationUrl($appInstallationUrl)
   {
@@ -301,9 +206,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->appInstallationUrl;
   }
   /**
-   * The custom scheme used by mobile app.
-   *
-   * @param string $appScheme
+   * @param string
    */
   public function setAppScheme($appScheme)
   {
@@ -317,10 +220,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->appScheme;
   }
   /**
-   * The opaque value used by the client to maintain context info between the
-   * authentication request and the IDP callback.
-   *
-   * @param string $context
+   * @param string
    */
   public function setContext($context)
   {
@@ -334,9 +234,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->context;
   }
   /**
-   * The birth date of the IdP account.
-   *
-   * @param string $dateOfBirth
+   * @param string
    */
   public function setDateOfBirth($dateOfBirth)
   {
@@ -350,9 +248,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->dateOfBirth;
   }
   /**
-   * The display name of the user.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -366,10 +262,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * The email returned by the IdP. NOTE: The federated login user may not own
-   * the email.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {
@@ -383,9 +276,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->email;
   }
   /**
-   * It's true if the email is recycled.
-   *
-   * @param bool $emailRecycled
+   * @param bool
    */
   public function setEmailRecycled($emailRecycled)
   {
@@ -399,10 +290,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->emailRecycled;
   }
   /**
-   * The value is true if the IDP is also the email provider. It means the user
-   * owns the email.
-   *
-   * @param bool $emailVerified
+   * @param bool
    */
   public function setEmailVerified($emailVerified)
   {
@@ -416,9 +304,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->emailVerified;
   }
   /**
-   * Client error code.
-   *
-   * @param string $errorMessage
+   * @param string
    */
   public function setErrorMessage($errorMessage)
   {
@@ -432,10 +318,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->errorMessage;
   }
   /**
-   * If idToken is STS id token, then this field will be expiration time of STS
-   * id token in seconds.
-   *
-   * @param string $expiresIn
+   * @param string
    */
   public function setExpiresIn($expiresIn)
   {
@@ -449,9 +332,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->expiresIn;
   }
   /**
-   * The unique ID identifies the IdP account.
-   *
-   * @param string $federatedId
+   * @param string
    */
   public function setFederatedId($federatedId)
   {
@@ -465,9 +346,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->federatedId;
   }
   /**
-   * The first name of the user.
-   *
-   * @param string $firstName
+   * @param string
    */
   public function setFirstName($firstName)
   {
@@ -481,9 +360,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->firstName;
   }
   /**
-   * The full name of the user.
-   *
-   * @param string $fullName
+   * @param string
    */
   public function setFullName($fullName)
   {
@@ -497,9 +374,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->fullName;
   }
   /**
-   * The ID token.
-   *
-   * @param string $idToken
+   * @param string
    */
   public function setIdToken($idToken)
   {
@@ -513,11 +388,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->idToken;
   }
   /**
-   * It's the identifier param in the createAuthUri request if the identifier is
-   * an email. It can be used to check whether the user input email is different
-   * from the asserted email.
-   *
-   * @param string $inputEmail
+   * @param string
    */
   public function setInputEmail($inputEmail)
   {
@@ -531,9 +402,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->inputEmail;
   }
   /**
-   * True if it's a new user sign-in, false if it's a returning user.
-   *
-   * @param bool $isNewUser
+   * @param bool
    */
   public function setIsNewUser($isNewUser)
   {
@@ -547,9 +416,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->isNewUser;
   }
   /**
-   * The fixed string "identitytoolkit#VerifyAssertionResponse".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -563,9 +430,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The language preference of the user.
-   *
-   * @param string $language
+   * @param string
    */
   public function setLanguage($language)
   {
@@ -579,9 +444,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->language;
   }
   /**
-   * The last name of the user.
-   *
-   * @param string $lastName
+   * @param string
    */
   public function setLastName($lastName)
   {
@@ -595,10 +458,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->lastName;
   }
   /**
-   * The RP local ID if it's already been mapped to the IdP account identified
-   * by the federated ID.
-   *
-   * @param string $localId
+   * @param string
    */
   public function setLocalId($localId)
   {
@@ -612,10 +472,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->localId;
   }
   /**
-   * Whether the assertion is from a non-trusted IDP and need account linking
-   * confirmation.
-   *
-   * @param bool $needConfirmation
+   * @param bool
    */
   public function setNeedConfirmation($needConfirmation)
   {
@@ -629,9 +486,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->needConfirmation;
   }
   /**
-   * Whether need client to supply email to complete the federated login flow.
-   *
-   * @param bool $needEmail
+   * @param bool
    */
   public function setNeedEmail($needEmail)
   {
@@ -645,9 +500,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->needEmail;
   }
   /**
-   * The nick name of the user.
-   *
-   * @param string $nickName
+   * @param string
    */
   public function setNickName($nickName)
   {
@@ -661,9 +514,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->nickName;
   }
   /**
-   * The OAuth2 access token.
-   *
-   * @param string $oauthAccessToken
+   * @param string
    */
   public function setOauthAccessToken($oauthAccessToken)
   {
@@ -677,9 +528,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->oauthAccessToken;
   }
   /**
-   * The OAuth2 authorization code.
-   *
-   * @param string $oauthAuthorizationCode
+   * @param string
    */
   public function setOauthAuthorizationCode($oauthAuthorizationCode)
   {
@@ -693,9 +542,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->oauthAuthorizationCode;
   }
   /**
-   * The lifetime in seconds of the OAuth2 access token.
-   *
-   * @param int $oauthExpireIn
+   * @param int
    */
   public function setOauthExpireIn($oauthExpireIn)
   {
@@ -709,9 +556,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->oauthExpireIn;
   }
   /**
-   * The OIDC id token.
-   *
-   * @param string $oauthIdToken
+   * @param string
    */
   public function setOauthIdToken($oauthIdToken)
   {
@@ -725,9 +570,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->oauthIdToken;
   }
   /**
-   * The user approved request token for the OpenID OAuth extension.
-   *
-   * @param string $oauthRequestToken
+   * @param string
    */
   public function setOauthRequestToken($oauthRequestToken)
   {
@@ -741,9 +584,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->oauthRequestToken;
   }
   /**
-   * The scope for the OpenID OAuth extension.
-   *
-   * @param string $oauthScope
+   * @param string
    */
   public function setOauthScope($oauthScope)
   {
@@ -757,9 +598,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->oauthScope;
   }
   /**
-   * The OAuth1 access token secret.
-   *
-   * @param string $oauthTokenSecret
+   * @param string
    */
   public function setOauthTokenSecret($oauthTokenSecret)
   {
@@ -773,10 +612,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->oauthTokenSecret;
   }
   /**
-   * The original email stored in the mapping storage. It's returned when the
-   * federated ID is associated to a different email.
-   *
-   * @param string $originalEmail
+   * @param string
    */
   public function setOriginalEmail($originalEmail)
   {
@@ -790,9 +626,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->originalEmail;
   }
   /**
-   * The URI of the public accessible profiel picture.
-   *
-   * @param string $photoUrl
+   * @param string
    */
   public function setPhotoUrl($photoUrl)
   {
@@ -806,13 +640,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->photoUrl;
   }
   /**
-   * The IdP ID. For white listed IdPs it's a short domain name e.g. google.com,
-   * aol.com, live.net and yahoo.com. If the "providerId" param is set to OpenID
-   * OP identifer other than the whilte listed IdPs the OP identifier is
-   * returned. If the "identifier" param is federated ID in the createAuthUri
-   * request. The domain part of the federated ID is returned.
-   *
-   * @param string $providerId
+   * @param string
    */
   public function setProviderId($providerId)
   {
@@ -826,9 +654,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->providerId;
   }
   /**
-   * Raw IDP-returned user info.
-   *
-   * @param string $rawUserInfo
+   * @param string
    */
   public function setRawUserInfo($rawUserInfo)
   {
@@ -842,9 +668,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->rawUserInfo;
   }
   /**
-   * If idToken is STS id token, then this field will be refresh token.
-   *
-   * @param string $refreshToken
+   * @param string
    */
   public function setRefreshToken($refreshToken)
   {
@@ -858,9 +682,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->refreshToken;
   }
   /**
-   * The screen_name of a Twitter user or the login name at Github.
-   *
-   * @param string $screenName
+   * @param string
    */
   public function setScreenName($screenName)
   {
@@ -874,9 +696,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->screenName;
   }
   /**
-   * The timezone of the user.
-   *
-   * @param string $timeZone
+   * @param string
    */
   public function setTimeZone($timeZone)
   {
@@ -890,9 +710,7 @@ class VerifyAssertionResponse extends \Google\Collection
     return $this->timeZone;
   }
   /**
-   * When action is 'map', contains the idps which can be used for confirmation.
-   *
-   * @param string[] $verifiedProvider
+   * @param string[]
    */
   public function setVerifiedProvider($verifiedProvider)
   {

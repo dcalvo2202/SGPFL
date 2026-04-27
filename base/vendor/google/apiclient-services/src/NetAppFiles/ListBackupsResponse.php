@@ -23,23 +23,16 @@ class ListBackupsResponse extends \Google\Collection
   protected $backupsType = Backup::class;
   protected $backupsDataType = 'array';
   /**
-   * The token you can use to retrieve the next page of results. Not returned if
-   * there are no more results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * A list of backups in the project.
-   *
-   * @param Backup[] $backups
+   * @param Backup[]
    */
   public function setBackups($backups)
   {
@@ -53,10 +46,7 @@ class ListBackupsResponse extends \Google\Collection
     return $this->backups;
   }
   /**
-   * The token you can use to retrieve the next page of results. Not returned if
-   * there are no more results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -70,9 +60,7 @@ class ListBackupsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

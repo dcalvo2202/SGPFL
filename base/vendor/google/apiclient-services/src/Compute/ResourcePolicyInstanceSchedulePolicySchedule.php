@@ -20,16 +20,12 @@ namespace Google\Service\Compute;
 class ResourcePolicyInstanceSchedulePolicySchedule extends \Google\Model
 {
   /**
-   * Specifies the frequency for the operation, using the unix-cron format.
-   *
    * @var string
    */
   public $schedule;
 
   /**
-   * Specifies the frequency for the operation, using the unix-cron format.
-   *
-   * @param string $schedule
+   * @param string
    */
   public function setSchedule($schedule)
   {

@@ -20,24 +20,16 @@ namespace Google\Service\CloudNaturalLanguage;
 class TextSpan extends \Google\Model
 {
   /**
-   * The API calculates the beginning offset of the content in the original
-   * document according to the EncodingType specified in the API request.
-   *
    * @var int
    */
   public $beginOffset;
   /**
-   * The content of the text span, which is a substring of the document.
-   *
    * @var string
    */
   public $content;
 
   /**
-   * The API calculates the beginning offset of the content in the original
-   * document according to the EncodingType specified in the API request.
-   *
-   * @param int $beginOffset
+   * @param int
    */
   public function setBeginOffset($beginOffset)
   {
@@ -51,9 +43,7 @@ class TextSpan extends \Google\Model
     return $this->beginOffset;
   }
   /**
-   * The content of the text span, which is a substring of the document.
-   *
-   * @param string $content
+   * @param string
    */
   public function setContent($content)
   {

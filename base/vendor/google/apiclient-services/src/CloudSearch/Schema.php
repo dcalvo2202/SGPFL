@@ -23,19 +23,12 @@ class Schema extends \Google\Collection
   protected $objectDefinitionsType = ObjectDefinition::class;
   protected $objectDefinitionsDataType = 'array';
   /**
-   * IDs of the Long Running Operations (LROs) currently running for this
-   * schema. After modifying the schema, wait for operations to complete before
-   * indexing additional content.
-   *
    * @var string[]
    */
   public $operationIds;
 
   /**
-   * The list of top-level objects for the data source. The maximum number of
-   * elements is 10.
-   *
-   * @param ObjectDefinition[] $objectDefinitions
+   * @param ObjectDefinition[]
    */
   public function setObjectDefinitions($objectDefinitions)
   {
@@ -49,11 +42,7 @@ class Schema extends \Google\Collection
     return $this->objectDefinitions;
   }
   /**
-   * IDs of the Long Running Operations (LROs) currently running for this
-   * schema. After modifying the schema, wait for operations to complete before
-   * indexing additional content.
-   *
-   * @param string[] $operationIds
+   * @param string[]
    */
   public function setOperationIds($operationIds)
   {

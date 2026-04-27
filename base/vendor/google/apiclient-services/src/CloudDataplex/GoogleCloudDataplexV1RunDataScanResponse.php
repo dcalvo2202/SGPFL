@@ -23,9 +23,7 @@ class GoogleCloudDataplexV1RunDataScanResponse extends \Google\Model
   protected $jobDataType = '';
 
   /**
-   * DataScanJob created by RunDataScan request.
-   *
-   * @param GoogleCloudDataplexV1DataScanJob $job
+   * @param GoogleCloudDataplexV1DataScanJob
    */
   public function setJob(GoogleCloudDataplexV1DataScanJob $job)
   {

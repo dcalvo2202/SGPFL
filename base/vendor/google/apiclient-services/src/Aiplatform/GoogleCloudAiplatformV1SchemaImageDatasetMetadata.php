@@ -20,25 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1SchemaImageDatasetMetadata extends \Google\Model
 {
   /**
-   * Points to a YAML file stored on Google Cloud Storage describing payload of
-   * the Image DataItems that belong to this Dataset.
-   *
    * @var string
    */
   public $dataItemSchemaUri;
   /**
-   * Google Cloud Storage Bucket name that contains the blob data of this
-   * Dataset.
-   *
    * @var string
    */
   public $gcsBucket;
 
   /**
-   * Points to a YAML file stored on Google Cloud Storage describing payload of
-   * the Image DataItems that belong to this Dataset.
-   *
-   * @param string $dataItemSchemaUri
+   * @param string
    */
   public function setDataItemSchemaUri($dataItemSchemaUri)
   {
@@ -52,10 +43,7 @@ class GoogleCloudAiplatformV1SchemaImageDatasetMetadata extends \Google\Model
     return $this->dataItemSchemaUri;
   }
   /**
-   * Google Cloud Storage Bucket name that contains the blob data of this
-   * Dataset.
-   *
-   * @param string $gcsBucket
+   * @param string
    */
   public function setGcsBucket($gcsBucket)
   {

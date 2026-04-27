@@ -19,63 +19,26 @@ namespace Google\Service\Aiplatform;
 
 class GoogleCloudAiplatformV1FeatureViewIndexConfig extends \Google\Collection
 {
-  /**
-   * Should not be set.
-   */
-  public const DISTANCE_MEASURE_TYPE_DISTANCE_MEASURE_TYPE_UNSPECIFIED = 'DISTANCE_MEASURE_TYPE_UNSPECIFIED';
-  /**
-   * Euclidean (L_2) Distance.
-   */
-  public const DISTANCE_MEASURE_TYPE_SQUARED_L2_DISTANCE = 'SQUARED_L2_DISTANCE';
-  /**
-   * Cosine Distance. Defined as 1 - cosine similarity. We strongly suggest
-   * using DOT_PRODUCT_DISTANCE + UNIT_L2_NORM instead of COSINE distance. Our
-   * algorithms have been more optimized for DOT_PRODUCT distance which, when
-   * combined with UNIT_L2_NORM, is mathematically equivalent to COSINE distance
-   * and results in the same ranking.
-   */
-  public const DISTANCE_MEASURE_TYPE_COSINE_DISTANCE = 'COSINE_DISTANCE';
-  /**
-   * Dot Product Distance. Defined as a negative of the dot product.
-   */
-  public const DISTANCE_MEASURE_TYPE_DOT_PRODUCT_DISTANCE = 'DOT_PRODUCT_DISTANCE';
   protected $collection_key = 'filterColumns';
   protected $bruteForceConfigType = GoogleCloudAiplatformV1FeatureViewIndexConfigBruteForceConfig::class;
   protected $bruteForceConfigDataType = '';
   /**
-   * Optional. Column of crowding. This column contains crowding attribute which
-   * is a constraint on a neighbor list produced by
-   * FeatureOnlineStoreService.SearchNearestEntities to diversify search
-   * results. If NearestNeighborQuery.per_crowding_attribute_neighbor_count is
-   * set to K in SearchNearestEntitiesRequest, it's guaranteed that no more than
-   * K entities of the same crowding attribute are returned in the response.
-   *
    * @var string
    */
   public $crowdingColumn;
   /**
-   * Optional. The distance measure used in nearest neighbor search.
-   *
    * @var string
    */
   public $distanceMeasureType;
   /**
-   * Optional. Column of embedding. This column contains the source data to
-   * create index for vector search. embedding_column must be set when using
-   * vector search.
-   *
    * @var string
    */
   public $embeddingColumn;
   /**
-   * Optional. The number of dimensions of the input embedding.
-   *
    * @var int
    */
   public $embeddingDimension;
   /**
-   * Optional. Columns of features that're used to filter vector search results.
-   *
    * @var string[]
    */
   public $filterColumns;
@@ -83,12 +46,7 @@ class GoogleCloudAiplatformV1FeatureViewIndexConfig extends \Google\Collection
   protected $treeAhConfigDataType = '';
 
   /**
-   * Optional. Configuration options for using brute force search, which simply
-   * implements the standard linear search in the database for each query. It is
-   * primarily meant for benchmarking and to generate the ground truth for
-   * approximate search.
-   *
-   * @param GoogleCloudAiplatformV1FeatureViewIndexConfigBruteForceConfig $bruteForceConfig
+   * @param GoogleCloudAiplatformV1FeatureViewIndexConfigBruteForceConfig
    */
   public function setBruteForceConfig(GoogleCloudAiplatformV1FeatureViewIndexConfigBruteForceConfig $bruteForceConfig)
   {
@@ -102,14 +60,7 @@ class GoogleCloudAiplatformV1FeatureViewIndexConfig extends \Google\Collection
     return $this->bruteForceConfig;
   }
   /**
-   * Optional. Column of crowding. This column contains crowding attribute which
-   * is a constraint on a neighbor list produced by
-   * FeatureOnlineStoreService.SearchNearestEntities to diversify search
-   * results. If NearestNeighborQuery.per_crowding_attribute_neighbor_count is
-   * set to K in SearchNearestEntitiesRequest, it's guaranteed that no more than
-   * K entities of the same crowding attribute are returned in the response.
-   *
-   * @param string $crowdingColumn
+   * @param string
    */
   public function setCrowdingColumn($crowdingColumn)
   {
@@ -123,30 +74,21 @@ class GoogleCloudAiplatformV1FeatureViewIndexConfig extends \Google\Collection
     return $this->crowdingColumn;
   }
   /**
-   * Optional. The distance measure used in nearest neighbor search.
-   *
-   * Accepted values: DISTANCE_MEASURE_TYPE_UNSPECIFIED, SQUARED_L2_DISTANCE,
-   * COSINE_DISTANCE, DOT_PRODUCT_DISTANCE
-   *
-   * @param self::DISTANCE_MEASURE_TYPE_* $distanceMeasureType
+   * @param string
    */
   public function setDistanceMeasureType($distanceMeasureType)
   {
     $this->distanceMeasureType = $distanceMeasureType;
   }
   /**
-   * @return self::DISTANCE_MEASURE_TYPE_*
+   * @return string
    */
   public function getDistanceMeasureType()
   {
     return $this->distanceMeasureType;
   }
   /**
-   * Optional. Column of embedding. This column contains the source data to
-   * create index for vector search. embedding_column must be set when using
-   * vector search.
-   *
-   * @param string $embeddingColumn
+   * @param string
    */
   public function setEmbeddingColumn($embeddingColumn)
   {
@@ -160,9 +102,7 @@ class GoogleCloudAiplatformV1FeatureViewIndexConfig extends \Google\Collection
     return $this->embeddingColumn;
   }
   /**
-   * Optional. The number of dimensions of the input embedding.
-   *
-   * @param int $embeddingDimension
+   * @param int
    */
   public function setEmbeddingDimension($embeddingDimension)
   {
@@ -176,9 +116,7 @@ class GoogleCloudAiplatformV1FeatureViewIndexConfig extends \Google\Collection
     return $this->embeddingDimension;
   }
   /**
-   * Optional. Columns of features that're used to filter vector search results.
-   *
-   * @param string[] $filterColumns
+   * @param string[]
    */
   public function setFilterColumns($filterColumns)
   {
@@ -192,11 +130,7 @@ class GoogleCloudAiplatformV1FeatureViewIndexConfig extends \Google\Collection
     return $this->filterColumns;
   }
   /**
-   * Optional. Configuration options for the tree-AH algorithm (Shallow tree +
-   * Asymmetric Hashing). Please refer to this paper for more details:
-   * https://arxiv.org/abs/1908.10396
-   *
-   * @param GoogleCloudAiplatformV1FeatureViewIndexConfigTreeAHConfig $treeAhConfig
+   * @param GoogleCloudAiplatformV1FeatureViewIndexConfigTreeAHConfig
    */
   public function setTreeAhConfig(GoogleCloudAiplatformV1FeatureViewIndexConfigTreeAHConfig $treeAhConfig)
   {

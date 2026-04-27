@@ -28,10 +28,7 @@ class GoogleCloudVideointelligenceV1beta2LogoRecognitionAnnotation extends \Goog
   protected $tracksDataType = 'array';
 
   /**
-   * Entity category information to specify the logo class that all the logo
-   * tracks within this LogoRecognitionAnnotation are recognized as.
-   *
-   * @param GoogleCloudVideointelligenceV1beta2Entity $entity
+   * @param GoogleCloudVideointelligenceV1beta2Entity
    */
   public function setEntity(GoogleCloudVideointelligenceV1beta2Entity $entity)
   {
@@ -45,10 +42,7 @@ class GoogleCloudVideointelligenceV1beta2LogoRecognitionAnnotation extends \Goog
     return $this->entity;
   }
   /**
-   * All video segments where the recognized logo appears. There might be
-   * multiple instances of the same logo class appearing in one VideoSegment.
-   *
-   * @param GoogleCloudVideointelligenceV1beta2VideoSegment[] $segments
+   * @param GoogleCloudVideointelligenceV1beta2VideoSegment[]
    */
   public function setSegments($segments)
   {
@@ -62,10 +56,7 @@ class GoogleCloudVideointelligenceV1beta2LogoRecognitionAnnotation extends \Goog
     return $this->segments;
   }
   /**
-   * All logo tracks where the recognized logo appears. Each track corresponds
-   * to one logo instance appearing in consecutive frames.
-   *
-   * @param GoogleCloudVideointelligenceV1beta2Track[] $tracks
+   * @param GoogleCloudVideointelligenceV1beta2Track[]
    */
   public function setTracks($tracks)
   {

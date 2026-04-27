@@ -23,18 +23,12 @@ class GoogleCloudAiplatformV1ListMetadataStoresResponse extends \Google\Collecti
   protected $metadataStoresType = GoogleCloudAiplatformV1MetadataStore::class;
   protected $metadataStoresDataType = 'array';
   /**
-   * A token, which can be sent as ListMetadataStoresRequest.page_token to
-   * retrieve the next page. If this field is not populated, there are no
-   * subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The MetadataStores found for the Location.
-   *
-   * @param GoogleCloudAiplatformV1MetadataStore[] $metadataStores
+   * @param GoogleCloudAiplatformV1MetadataStore[]
    */
   public function setMetadataStores($metadataStores)
   {
@@ -48,11 +42,7 @@ class GoogleCloudAiplatformV1ListMetadataStoresResponse extends \Google\Collecti
     return $this->metadataStores;
   }
   /**
-   * A token, which can be sent as ListMetadataStoresRequest.page_token to
-   * retrieve the next page. If this field is not populated, there are no
-   * subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

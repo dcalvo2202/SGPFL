@@ -20,41 +20,28 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1SecurityReportQueryMetric extends \Google\Model
 {
   /**
-   * Aggregation function: avg, min, max, or sum.
-   *
    * @var string
    */
   public $aggregationFunction;
   /**
-   * Alias for the metric. Alias will be used to replace metric name in query
-   * results.
-   *
    * @var string
    */
   public $alias;
   /**
-   * Required. Metric name.
-   *
    * @var string
    */
   public $name;
   /**
-   * One of `+`, `-`, `/`, `%`, `*`.
-   *
    * @var string
    */
   public $operator;
   /**
-   * Operand value should be provided when operator is set.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Aggregation function: avg, min, max, or sum.
-   *
-   * @param string $aggregationFunction
+   * @param string
    */
   public function setAggregationFunction($aggregationFunction)
   {
@@ -68,10 +55,7 @@ class GoogleCloudApigeeV1SecurityReportQueryMetric extends \Google\Model
     return $this->aggregationFunction;
   }
   /**
-   * Alias for the metric. Alias will be used to replace metric name in query
-   * results.
-   *
-   * @param string $alias
+   * @param string
    */
   public function setAlias($alias)
   {
@@ -85,9 +69,7 @@ class GoogleCloudApigeeV1SecurityReportQueryMetric extends \Google\Model
     return $this->alias;
   }
   /**
-   * Required. Metric name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -101,9 +83,7 @@ class GoogleCloudApigeeV1SecurityReportQueryMetric extends \Google\Model
     return $this->name;
   }
   /**
-   * One of `+`, `-`, `/`, `%`, `*`.
-   *
-   * @param string $operator
+   * @param string
    */
   public function setOperator($operator)
   {
@@ -117,9 +97,7 @@ class GoogleCloudApigeeV1SecurityReportQueryMetric extends \Google\Model
     return $this->operator;
   }
   /**
-   * Operand value should be provided when operator is set.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

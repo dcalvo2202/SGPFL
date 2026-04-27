@@ -21,22 +21,12 @@ class Regions extends \Google\Collection
 {
   protected $collection_key = 'regionCode';
   /**
-   * Regions targeted by the recovery action. Region codes are ISO 3166 Alpha-2
-   * country codes. For example, US stands for United States of America. See
-   * https://www.iso.org/iso-3166-country-codes.html for the complete list of
-   * country codes.
-   *
    * @var string[]
    */
   public $regionCode;
 
   /**
-   * Regions targeted by the recovery action. Region codes are ISO 3166 Alpha-2
-   * country codes. For example, US stands for United States of America. See
-   * https://www.iso.org/iso-3166-country-codes.html for the complete list of
-   * country codes.
-   *
-   * @param string[] $regionCode
+   * @param string[]
    */
   public function setRegionCode($regionCode)
   {

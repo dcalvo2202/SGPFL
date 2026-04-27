@@ -22,36 +22,24 @@ class HttpUpdate extends \Google\Model
   protected $checkErrorType = Status::class;
   protected $checkErrorDataType = '';
   /**
-   * Output only. A text string to serve at the path.
-   *
    * @var string
    */
   public $desired;
   /**
-   * Output only. Whether Hosting was able to find the required file contents on
-   * the specified path during its last check.
-   *
    * @var string
    */
   public $discovered;
   /**
-   * Output only. The last time Hosting systems checked for the file contents.
-   *
    * @var string
    */
   public $lastCheckTime;
   /**
-   * Output only. The path to the file.
-   *
    * @var string
    */
   public $path;
 
   /**
-   * Output only. An error encountered during the last contents check. If null,
-   * the check completed successfully.
-   *
-   * @param Status $checkError
+   * @param Status
    */
   public function setCheckError(Status $checkError)
   {
@@ -65,9 +53,7 @@ class HttpUpdate extends \Google\Model
     return $this->checkError;
   }
   /**
-   * Output only. A text string to serve at the path.
-   *
-   * @param string $desired
+   * @param string
    */
   public function setDesired($desired)
   {
@@ -81,10 +67,7 @@ class HttpUpdate extends \Google\Model
     return $this->desired;
   }
   /**
-   * Output only. Whether Hosting was able to find the required file contents on
-   * the specified path during its last check.
-   *
-   * @param string $discovered
+   * @param string
    */
   public function setDiscovered($discovered)
   {
@@ -98,9 +81,7 @@ class HttpUpdate extends \Google\Model
     return $this->discovered;
   }
   /**
-   * Output only. The last time Hosting systems checked for the file contents.
-   *
-   * @param string $lastCheckTime
+   * @param string
    */
   public function setLastCheckTime($lastCheckTime)
   {
@@ -114,9 +95,7 @@ class HttpUpdate extends \Google\Model
     return $this->lastCheckTime;
   }
   /**
-   * Output only. The path to the file.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {

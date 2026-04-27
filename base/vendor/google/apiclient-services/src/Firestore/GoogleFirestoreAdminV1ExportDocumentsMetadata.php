@@ -19,69 +19,24 @@ namespace Google\Service\Firestore;
 
 class GoogleFirestoreAdminV1ExportDocumentsMetadata extends \Google\Collection
 {
-  /**
-   * Unspecified.
-   */
-  public const OPERATION_STATE_OPERATION_STATE_UNSPECIFIED = 'OPERATION_STATE_UNSPECIFIED';
-  /**
-   * Request is being prepared for processing.
-   */
-  public const OPERATION_STATE_INITIALIZING = 'INITIALIZING';
-  /**
-   * Request is actively being processed.
-   */
-  public const OPERATION_STATE_PROCESSING = 'PROCESSING';
-  /**
-   * Request is in the process of being cancelled after user called
-   * google.longrunning.Operations.CancelOperation on the operation.
-   */
-  public const OPERATION_STATE_CANCELLING = 'CANCELLING';
-  /**
-   * Request has been processed and is in its finalization stage.
-   */
-  public const OPERATION_STATE_FINALIZING = 'FINALIZING';
-  /**
-   * Request has completed successfully.
-   */
-  public const OPERATION_STATE_SUCCESSFUL = 'SUCCESSFUL';
-  /**
-   * Request has finished being processed, but encountered an error.
-   */
-  public const OPERATION_STATE_FAILED = 'FAILED';
-  /**
-   * Request has finished being cancelled after user called
-   * google.longrunning.Operations.CancelOperation.
-   */
-  public const OPERATION_STATE_CANCELLED = 'CANCELLED';
   protected $collection_key = 'namespaceIds';
   /**
-   * Which collection IDs are being exported.
-   *
    * @var string[]
    */
   public $collectionIds;
   /**
-   * The time this operation completed. Will be unset if operation still in
-   * progress.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * Which namespace IDs are being exported.
-   *
    * @var string[]
    */
   public $namespaceIds;
   /**
-   * The state of the export operation.
-   *
    * @var string
    */
   public $operationState;
   /**
-   * Where the documents are being exported to.
-   *
    * @var string
    */
   public $outputUriPrefix;
@@ -90,24 +45,16 @@ class GoogleFirestoreAdminV1ExportDocumentsMetadata extends \Google\Collection
   protected $progressDocumentsType = GoogleFirestoreAdminV1Progress::class;
   protected $progressDocumentsDataType = '';
   /**
-   * The timestamp that corresponds to the version of the database that is being
-   * exported. If unspecified, there are no guarantees about the consistency of
-   * the documents being exported.
-   *
    * @var string
    */
   public $snapshotTime;
   /**
-   * The time this operation started.
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * Which collection IDs are being exported.
-   *
-   * @param string[] $collectionIds
+   * @param string[]
    */
   public function setCollectionIds($collectionIds)
   {
@@ -121,10 +68,7 @@ class GoogleFirestoreAdminV1ExportDocumentsMetadata extends \Google\Collection
     return $this->collectionIds;
   }
   /**
-   * The time this operation completed. Will be unset if operation still in
-   * progress.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -138,9 +82,7 @@ class GoogleFirestoreAdminV1ExportDocumentsMetadata extends \Google\Collection
     return $this->endTime;
   }
   /**
-   * Which namespace IDs are being exported.
-   *
-   * @param string[] $namespaceIds
+   * @param string[]
    */
   public function setNamespaceIds($namespaceIds)
   {
@@ -154,28 +96,21 @@ class GoogleFirestoreAdminV1ExportDocumentsMetadata extends \Google\Collection
     return $this->namespaceIds;
   }
   /**
-   * The state of the export operation.
-   *
-   * Accepted values: OPERATION_STATE_UNSPECIFIED, INITIALIZING, PROCESSING,
-   * CANCELLING, FINALIZING, SUCCESSFUL, FAILED, CANCELLED
-   *
-   * @param self::OPERATION_STATE_* $operationState
+   * @param string
    */
   public function setOperationState($operationState)
   {
     $this->operationState = $operationState;
   }
   /**
-   * @return self::OPERATION_STATE_*
+   * @return string
    */
   public function getOperationState()
   {
     return $this->operationState;
   }
   /**
-   * Where the documents are being exported to.
-   *
-   * @param string $outputUriPrefix
+   * @param string
    */
   public function setOutputUriPrefix($outputUriPrefix)
   {
@@ -189,9 +124,7 @@ class GoogleFirestoreAdminV1ExportDocumentsMetadata extends \Google\Collection
     return $this->outputUriPrefix;
   }
   /**
-   * The progress, in bytes, of this operation.
-   *
-   * @param GoogleFirestoreAdminV1Progress $progressBytes
+   * @param GoogleFirestoreAdminV1Progress
    */
   public function setProgressBytes(GoogleFirestoreAdminV1Progress $progressBytes)
   {
@@ -205,9 +138,7 @@ class GoogleFirestoreAdminV1ExportDocumentsMetadata extends \Google\Collection
     return $this->progressBytes;
   }
   /**
-   * The progress, in documents, of this operation.
-   *
-   * @param GoogleFirestoreAdminV1Progress $progressDocuments
+   * @param GoogleFirestoreAdminV1Progress
    */
   public function setProgressDocuments(GoogleFirestoreAdminV1Progress $progressDocuments)
   {
@@ -221,11 +152,7 @@ class GoogleFirestoreAdminV1ExportDocumentsMetadata extends \Google\Collection
     return $this->progressDocuments;
   }
   /**
-   * The timestamp that corresponds to the version of the database that is being
-   * exported. If unspecified, there are no guarantees about the consistency of
-   * the documents being exported.
-   *
-   * @param string $snapshotTime
+   * @param string
    */
   public function setSnapshotTime($snapshotTime)
   {
@@ -239,9 +166,7 @@ class GoogleFirestoreAdminV1ExportDocumentsMetadata extends \Google\Collection
     return $this->snapshotTime;
   }
   /**
-   * The time this operation started.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

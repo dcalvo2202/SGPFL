@@ -20,24 +20,16 @@ namespace Google\Service\Vision;
 class GoogleCloudVisionV1p1beta1TextAnnotationDetectedLanguage extends \Google\Model
 {
   /**
-   * Confidence of detected language. Range [0, 1].
-   *
    * @var float
    */
   public $confidence;
   /**
-   * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
-   * information, see
-   * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
-   *
    * @var string
    */
   public $languageCode;
 
   /**
-   * Confidence of detected language. Range [0, 1].
-   *
-   * @param float $confidence
+   * @param float
    */
   public function setConfidence($confidence)
   {
@@ -51,11 +43,7 @@ class GoogleCloudVisionV1p1beta1TextAnnotationDetectedLanguage extends \Google\M
     return $this->confidence;
   }
   /**
-   * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
-   * information, see
-   * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
-   *
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {

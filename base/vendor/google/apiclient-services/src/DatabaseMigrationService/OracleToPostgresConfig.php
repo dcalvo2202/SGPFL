@@ -25,9 +25,7 @@ class OracleToPostgresConfig extends \Google\Model
   protected $postgresDestinationConfigDataType = '';
 
   /**
-   * Optional. Configuration for Oracle source.
-   *
-   * @param OracleSourceConfig $oracleSourceConfig
+   * @param OracleSourceConfig
    */
   public function setOracleSourceConfig(OracleSourceConfig $oracleSourceConfig)
   {
@@ -41,9 +39,7 @@ class OracleToPostgresConfig extends \Google\Model
     return $this->oracleSourceConfig;
   }
   /**
-   * Optional. Configuration for Postgres destination.
-   *
-   * @param PostgresDestinationConfig $postgresDestinationConfig
+   * @param PostgresDestinationConfig
    */
   public function setPostgresDestinationConfig(PostgresDestinationConfig $postgresDestinationConfig)
   {

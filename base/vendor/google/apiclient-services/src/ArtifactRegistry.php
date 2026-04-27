@@ -131,16 +131,6 @@ class ArtifactRegistry extends \Google\Service
                   'required' => true,
                 ],
               ],
-            ],'getProjectConfig' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
             ],'getVpcscConfig' => [
               'path' => 'v1/{+name}',
               'httpMethod' => 'GET',
@@ -178,20 +168,6 @@ class ArtifactRegistry extends \Google\Service
                   'type' => 'string',
                 ],
               ],
-            ],'updateProjectConfig' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'PATCH',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'updateMask' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
             ],'updateVpcscConfig' => [
               'path' => 'v1/{+name}',
               'httpMethod' => 'PATCH',
@@ -216,17 +192,7 @@ class ArtifactRegistry extends \Google\Service
         'operations',
         [
           'methods' => [
-            'cancel' => [
-              'path' => 'v1/{+name}:cancel',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'get' => [
+            'get' => [
               'path' => 'v1/{+name}',
               'httpMethod' => 'GET',
               'parameters' => [
@@ -265,16 +231,6 @@ class ArtifactRegistry extends \Google\Service
               'httpMethod' => 'DELETE',
               'parameters' => [
                 'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'exportArtifact' => [
-              'path' => 'v1/{+repository}:exportArtifact',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'repository' => [
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,

@@ -21,70 +21,44 @@ class WorkflowConfig extends \Google\Collection
 {
   protected $collection_key = 'recentScheduledExecutionRecords';
   /**
-   * Output only. The timestamp of when the WorkflowConfig was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. Optional schedule (in cron format) for automatic execution of
-   * this workflow config.
-   *
    * @var string
    */
   public $cronSchedule;
   /**
-   * Optional. Disables automatic creation of workflow invocations.
-   *
    * @var bool
    */
   public $disabled;
   /**
-   * Output only. All the metadata information that is used internally to serve
-   * the resource. For example: timestamps, flags, status fields, etc. The
-   * format of this field is a JSON string.
-   *
    * @var string
    */
   public $internalMetadata;
   protected $invocationConfigType = InvocationConfig::class;
   protected $invocationConfigDataType = '';
   /**
-   * Identifier. The workflow config's name.
-   *
    * @var string
    */
   public $name;
   protected $recentScheduledExecutionRecordsType = ScheduledExecutionRecord::class;
   protected $recentScheduledExecutionRecordsDataType = 'array';
   /**
-   * Required. The name of the release config whose release_compilation_result
-   * should be executed. Must be in the format
-   * `projects/locations/repositories/releaseConfigs`.
-   *
    * @var string
    */
   public $releaseConfig;
   /**
-   * Optional. Specifies the time zone to be used when interpreting
-   * cron_schedule. Must be a time zone name from the time zone database
-   * (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If left
-   * unspecified, the default is UTC.
-   *
    * @var string
    */
   public $timeZone;
   /**
-   * Output only. The timestamp of when the WorkflowConfig was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. The timestamp of when the WorkflowConfig was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -98,10 +72,7 @@ class WorkflowConfig extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Optional. Optional schedule (in cron format) for automatic execution of
-   * this workflow config.
-   *
-   * @param string $cronSchedule
+   * @param string
    */
   public function setCronSchedule($cronSchedule)
   {
@@ -115,9 +86,7 @@ class WorkflowConfig extends \Google\Collection
     return $this->cronSchedule;
   }
   /**
-   * Optional. Disables automatic creation of workflow invocations.
-   *
-   * @param bool $disabled
+   * @param bool
    */
   public function setDisabled($disabled)
   {
@@ -131,11 +100,7 @@ class WorkflowConfig extends \Google\Collection
     return $this->disabled;
   }
   /**
-   * Output only. All the metadata information that is used internally to serve
-   * the resource. For example: timestamps, flags, status fields, etc. The
-   * format of this field is a JSON string.
-   *
-   * @param string $internalMetadata
+   * @param string
    */
   public function setInternalMetadata($internalMetadata)
   {
@@ -149,9 +114,7 @@ class WorkflowConfig extends \Google\Collection
     return $this->internalMetadata;
   }
   /**
-   * Optional. If left unset, a default InvocationConfig will be used.
-   *
-   * @param InvocationConfig $invocationConfig
+   * @param InvocationConfig
    */
   public function setInvocationConfig(InvocationConfig $invocationConfig)
   {
@@ -165,9 +128,7 @@ class WorkflowConfig extends \Google\Collection
     return $this->invocationConfig;
   }
   /**
-   * Identifier. The workflow config's name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -181,11 +142,7 @@ class WorkflowConfig extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. Records of the 10 most recent scheduled execution attempts,
-   * ordered in descending order of `execution_time`. Updated whenever automatic
-   * creation of a workflow invocation is triggered by cron_schedule.
-   *
-   * @param ScheduledExecutionRecord[] $recentScheduledExecutionRecords
+   * @param ScheduledExecutionRecord[]
    */
   public function setRecentScheduledExecutionRecords($recentScheduledExecutionRecords)
   {
@@ -199,11 +156,7 @@ class WorkflowConfig extends \Google\Collection
     return $this->recentScheduledExecutionRecords;
   }
   /**
-   * Required. The name of the release config whose release_compilation_result
-   * should be executed. Must be in the format
-   * `projects/locations/repositories/releaseConfigs`.
-   *
-   * @param string $releaseConfig
+   * @param string
    */
   public function setReleaseConfig($releaseConfig)
   {
@@ -217,12 +170,7 @@ class WorkflowConfig extends \Google\Collection
     return $this->releaseConfig;
   }
   /**
-   * Optional. Specifies the time zone to be used when interpreting
-   * cron_schedule. Must be a time zone name from the time zone database
-   * (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If left
-   * unspecified, the default is UTC.
-   *
-   * @param string $timeZone
+   * @param string
    */
   public function setTimeZone($timeZone)
   {
@@ -236,9 +184,7 @@ class WorkflowConfig extends \Google\Collection
     return $this->timeZone;
   }
   /**
-   * Output only. The timestamp of when the WorkflowConfig was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

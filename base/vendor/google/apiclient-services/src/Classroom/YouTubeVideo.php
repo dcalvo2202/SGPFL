@@ -20,34 +20,24 @@ namespace Google\Service\Classroom;
 class YouTubeVideo extends \Google\Model
 {
   /**
-   * URL that can be used to view the YouTube video. Read-only.
-   *
    * @var string
    */
   public $alternateLink;
   /**
-   * YouTube API resource ID.
-   *
    * @var string
    */
   public $id;
   /**
-   * URL of a thumbnail image of the YouTube video. Read-only.
-   *
    * @var string
    */
   public $thumbnailUrl;
   /**
-   * Title of the YouTube video. Read-only.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * URL that can be used to view the YouTube video. Read-only.
-   *
-   * @param string $alternateLink
+   * @param string
    */
   public function setAlternateLink($alternateLink)
   {
@@ -61,9 +51,7 @@ class YouTubeVideo extends \Google\Model
     return $this->alternateLink;
   }
   /**
-   * YouTube API resource ID.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -77,9 +65,7 @@ class YouTubeVideo extends \Google\Model
     return $this->id;
   }
   /**
-   * URL of a thumbnail image of the YouTube video. Read-only.
-   *
-   * @param string $thumbnailUrl
+   * @param string
    */
   public function setThumbnailUrl($thumbnailUrl)
   {
@@ -93,9 +79,7 @@ class YouTubeVideo extends \Google\Model
     return $this->thumbnailUrl;
   }
   /**
-   * Title of the YouTube video. Read-only.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

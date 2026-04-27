@@ -42,9 +42,7 @@ class GoogleChecksReportV1alphaCheckEvidence extends \Google\Collection
   protected $sdksDataType = 'array';
 
   /**
-   * Evidence concerning data security.
-   *
-   * @param GoogleChecksReportV1alphaCheckDataSecurityEvidence $dataSecurity
+   * @param GoogleChecksReportV1alphaCheckDataSecurityEvidence
    */
   public function setDataSecurity(GoogleChecksReportV1alphaCheckDataSecurityEvidence $dataSecurity)
   {
@@ -58,9 +56,7 @@ class GoogleChecksReportV1alphaCheckEvidence extends \Google\Collection
     return $this->dataSecurity;
   }
   /**
-   * Evidence concerning data types found in your app.
-   *
-   * @param GoogleChecksReportV1alphaCheckDataTypeEvidence[] $dataTypes
+   * @param GoogleChecksReportV1alphaCheckDataTypeEvidence[]
    */
   public function setDataTypes($dataTypes)
   {
@@ -74,9 +70,7 @@ class GoogleChecksReportV1alphaCheckEvidence extends \Google\Collection
     return $this->dataTypes;
   }
   /**
-   * Evidence collected from endpoint restriction violation analysis.
-   *
-   * @param GoogleChecksReportV1alphaCheckEndpointRestrictionViolationEvidence[] $endpointRestrictionViolations
+   * @param GoogleChecksReportV1alphaCheckEndpointRestrictionViolationEvidence[]
    */
   public function setEndpointRestrictionViolations($endpointRestrictionViolations)
   {
@@ -90,9 +84,7 @@ class GoogleChecksReportV1alphaCheckEvidence extends \Google\Collection
     return $this->endpointRestrictionViolations;
   }
   /**
-   * Evidence concerning endpoints that were contacted by your app.
-   *
-   * @param GoogleChecksReportV1alphaCheckEndpointEvidence[] $endpoints
+   * @param GoogleChecksReportV1alphaCheckEndpointEvidence[]
    */
   public function setEndpoints($endpoints)
   {
@@ -106,9 +98,7 @@ class GoogleChecksReportV1alphaCheckEvidence extends \Google\Collection
     return $this->endpoints;
   }
   /**
-   * Evidence collected from permission restriction violation analysis.
-   *
-   * @param GoogleChecksReportV1alphaCheckPermissionRestrictionViolationEvidence[] $permissionRestrictionViolations
+   * @param GoogleChecksReportV1alphaCheckPermissionRestrictionViolationEvidence[]
    */
   public function setPermissionRestrictionViolations($permissionRestrictionViolations)
   {
@@ -122,9 +112,7 @@ class GoogleChecksReportV1alphaCheckEvidence extends \Google\Collection
     return $this->permissionRestrictionViolations;
   }
   /**
-   * Evidence concerning permissions that were found in your app.
-   *
-   * @param GoogleChecksReportV1alphaCheckPermissionEvidence[] $permissions
+   * @param GoogleChecksReportV1alphaCheckPermissionEvidence[]
    */
   public function setPermissions($permissions)
   {
@@ -138,9 +126,7 @@ class GoogleChecksReportV1alphaCheckEvidence extends \Google\Collection
     return $this->permissions;
   }
   /**
-   * Evidence collected from your privacy policy(s).
-   *
-   * @param GoogleChecksReportV1alphaCheckPrivacyPolicyTextEvidence[] $privacyPolicyTexts
+   * @param GoogleChecksReportV1alphaCheckPrivacyPolicyTextEvidence[]
    */
   public function setPrivacyPolicyTexts($privacyPolicyTexts)
   {
@@ -154,9 +140,7 @@ class GoogleChecksReportV1alphaCheckEvidence extends \Google\Collection
     return $this->privacyPolicyTexts;
   }
   /**
-   * Evidence concerning SDK issues.
-   *
-   * @param GoogleChecksReportV1alphaCheckSdkIssueEvidence[] $sdkIssues
+   * @param GoogleChecksReportV1alphaCheckSdkIssueEvidence[]
    */
   public function setSdkIssues($sdkIssues)
   {
@@ -170,9 +154,7 @@ class GoogleChecksReportV1alphaCheckEvidence extends \Google\Collection
     return $this->sdkIssues;
   }
   /**
-   * Evidence collected from SDK restriction violation analysis.
-   *
-   * @param GoogleChecksReportV1alphaCheckSdkRestrictionViolationEvidence[] $sdkRestrictionViolations
+   * @param GoogleChecksReportV1alphaCheckSdkRestrictionViolationEvidence[]
    */
   public function setSdkRestrictionViolations($sdkRestrictionViolations)
   {
@@ -186,9 +168,7 @@ class GoogleChecksReportV1alphaCheckEvidence extends \Google\Collection
     return $this->sdkRestrictionViolations;
   }
   /**
-   * Evidence concerning SDKs that were found in your app.
-   *
-   * @param GoogleChecksReportV1alphaCheckSdkEvidence[] $sdks
+   * @param GoogleChecksReportV1alphaCheckSdkEvidence[]
    */
   public function setSdks($sdks)
   {

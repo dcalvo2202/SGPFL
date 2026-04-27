@@ -21,22 +21,16 @@ class FetchGitRefsResponse extends \Google\Collection
 {
   protected $collection_key = 'refNames';
   /**
-   * A token identifying a page of results the server should return.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Name of the refs fetched.
-   *
    * @var string[]
    */
   public $refNames;
 
   /**
-   * A token identifying a page of results the server should return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -50,9 +44,7 @@ class FetchGitRefsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Name of the refs fetched.
-   *
-   * @param string[] $refNames
+   * @param string[]
    */
   public function setRefNames($refNames)
   {

@@ -21,38 +21,26 @@ class JobList extends \Google\Collection
 {
   protected $collection_key = 'unreachable';
   /**
-   * A hash of this page of results.
-   *
    * @var string
    */
   public $etag;
   protected $jobsType = JobListJobs::class;
   protected $jobsDataType = 'array';
   /**
-   * The resource type of the response.
-   *
    * @var string
    */
   public $kind;
   /**
-   * A token to request the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * A list of skipped locations that were unreachable. For more information
-   * about BigQuery locations, see:
-   * https://cloud.google.com/bigquery/docs/locations. Example: "europe-west5"
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * A hash of this page of results.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -66,9 +54,7 @@ class JobList extends \Google\Collection
     return $this->etag;
   }
   /**
-   * List of jobs that were requested.
-   *
-   * @param JobListJobs[] $jobs
+   * @param JobListJobs[]
    */
   public function setJobs($jobs)
   {
@@ -82,9 +68,7 @@ class JobList extends \Google\Collection
     return $this->jobs;
   }
   /**
-   * The resource type of the response.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -98,9 +82,7 @@ class JobList extends \Google\Collection
     return $this->kind;
   }
   /**
-   * A token to request the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -114,11 +96,7 @@ class JobList extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * A list of skipped locations that were unreachable. For more information
-   * about BigQuery locations, see:
-   * https://cloud.google.com/bigquery/docs/locations. Example: "europe-west5"
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

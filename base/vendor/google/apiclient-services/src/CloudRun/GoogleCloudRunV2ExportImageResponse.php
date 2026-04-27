@@ -20,18 +20,12 @@ namespace Google\Service\CloudRun;
 class GoogleCloudRunV2ExportImageResponse extends \Google\Model
 {
   /**
-   * An operation ID used to track the status of image exports tied to the
-   * original pod ID in the request.
-   *
    * @var string
    */
   public $operationId;
 
   /**
-   * An operation ID used to track the status of image exports tied to the
-   * original pod ID in the request.
-   *
-   * @param string $operationId
+   * @param string
    */
   public function setOperationId($operationId)
   {

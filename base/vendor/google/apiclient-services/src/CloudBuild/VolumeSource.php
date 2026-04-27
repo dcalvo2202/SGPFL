@@ -22,18 +22,12 @@ class VolumeSource extends \Google\Model
   protected $emptyDirType = EmptyDirVolumeSource::class;
   protected $emptyDirDataType = '';
   /**
-   * Name of the Volume. Must be a DNS_LABEL and unique within the pod. More
-   * info: https://kubernetes.io/docs/concepts/overview/working-with-
-   * objects/names/#names
-   *
    * @var string
    */
   public $name;
 
   /**
-   * A temporary directory that shares a pod's lifetime.
-   *
-   * @param EmptyDirVolumeSource $emptyDir
+   * @param EmptyDirVolumeSource
    */
   public function setEmptyDir(EmptyDirVolumeSource $emptyDir)
   {
@@ -47,11 +41,7 @@ class VolumeSource extends \Google\Model
     return $this->emptyDir;
   }
   /**
-   * Name of the Volume. Must be a DNS_LABEL and unique within the pod. More
-   * info: https://kubernetes.io/docs/concepts/overview/working-with-
-   * objects/names/#names
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

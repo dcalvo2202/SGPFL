@@ -20,23 +20,16 @@ namespace Google\Service\CloudBuild;
 class SecretVolumeSource extends \Google\Model
 {
   /**
-   * Name of the secret referenced by the WorkspaceBinding.
-   *
    * @var string
    */
   public $secretName;
   /**
-   * Optional. Resource name of the SecretVersion. In format:
-   * projects/secrets/versions
-   *
    * @var string
    */
   public $secretVersion;
 
   /**
-   * Name of the secret referenced by the WorkspaceBinding.
-   *
-   * @param string $secretName
+   * @param string
    */
   public function setSecretName($secretName)
   {
@@ -50,10 +43,7 @@ class SecretVolumeSource extends \Google\Model
     return $this->secretName;
   }
   /**
-   * Optional. Resource name of the SecretVersion. In format:
-   * projects/secrets/versions
-   *
-   * @param string $secretVersion
+   * @param string
    */
   public function setSecretVersion($secretVersion)
   {

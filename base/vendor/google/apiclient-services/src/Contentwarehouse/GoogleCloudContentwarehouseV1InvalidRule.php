@@ -20,8 +20,6 @@ namespace Google\Service\Contentwarehouse;
 class GoogleCloudContentwarehouseV1InvalidRule extends \Google\Model
 {
   /**
-   * Validation error on a parsed expression.
-   *
    * @var string
    */
   public $error;
@@ -29,9 +27,7 @@ class GoogleCloudContentwarehouseV1InvalidRule extends \Google\Model
   protected $ruleDataType = '';
 
   /**
-   * Validation error on a parsed expression.
-   *
-   * @param string $error
+   * @param string
    */
   public function setError($error)
   {
@@ -45,9 +41,7 @@ class GoogleCloudContentwarehouseV1InvalidRule extends \Google\Model
     return $this->error;
   }
   /**
-   * Triggered rule.
-   *
-   * @param GoogleCloudContentwarehouseV1Rule $rule
+   * @param GoogleCloudContentwarehouseV1Rule
    */
   public function setRule(GoogleCloudContentwarehouseV1Rule $rule)
   {

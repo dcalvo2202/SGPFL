@@ -19,61 +19,37 @@ namespace Google\Service\Dfareporting;
 
 class DfareportingFile extends \Google\Model
 {
-  public const FORMAT_CSV = 'CSV';
-  public const FORMAT_EXCEL = 'EXCEL';
-  public const STATUS_PROCESSING = 'PROCESSING';
-  public const STATUS_REPORT_AVAILABLE = 'REPORT_AVAILABLE';
-  public const STATUS_FAILED = 'FAILED';
-  public const STATUS_CANCELLED = 'CANCELLED';
-  public const STATUS_QUEUED = 'QUEUED';
   protected $dateRangeType = DateRange::class;
   protected $dateRangeDataType = '';
   /**
-   * Etag of this resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * The filename of the file.
-   *
    * @var string
    */
   public $fileName;
   /**
-   * The output format of the report. Only available once the file is available.
-   *
    * @var string
    */
   public $format;
   /**
-   * The unique ID of this report file.
-   *
    * @var string
    */
   public $id;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#file".
-   *
    * @var string
    */
   public $kind;
   /**
-   * The timestamp in milliseconds since epoch when this file was last modified.
-   *
    * @var string
    */
   public $lastModifiedTime;
   /**
-   * The ID of the report this file was generated from.
-   *
    * @var string
    */
   public $reportId;
   /**
-   * The status of the report file.
-   *
    * @var string
    */
   public $status;
@@ -81,10 +57,7 @@ class DfareportingFile extends \Google\Model
   protected $urlsDataType = '';
 
   /**
-   * The date range for which the file has report data. The date range will
-   * always be the absolute date range for which the report is run.
-   *
-   * @param DateRange $dateRange
+   * @param DateRange
    */
   public function setDateRange(DateRange $dateRange)
   {
@@ -98,9 +71,7 @@ class DfareportingFile extends \Google\Model
     return $this->dateRange;
   }
   /**
-   * Etag of this resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -114,9 +85,7 @@ class DfareportingFile extends \Google\Model
     return $this->etag;
   }
   /**
-   * The filename of the file.
-   *
-   * @param string $fileName
+   * @param string
    */
   public function setFileName($fileName)
   {
@@ -130,27 +99,21 @@ class DfareportingFile extends \Google\Model
     return $this->fileName;
   }
   /**
-   * The output format of the report. Only available once the file is available.
-   *
-   * Accepted values: CSV, EXCEL
-   *
-   * @param self::FORMAT_* $format
+   * @param string
    */
   public function setFormat($format)
   {
     $this->format = $format;
   }
   /**
-   * @return self::FORMAT_*
+   * @return string
    */
   public function getFormat()
   {
     return $this->format;
   }
   /**
-   * The unique ID of this report file.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -164,10 +127,7 @@ class DfareportingFile extends \Google\Model
     return $this->id;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#file".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -181,9 +141,7 @@ class DfareportingFile extends \Google\Model
     return $this->kind;
   }
   /**
-   * The timestamp in milliseconds since epoch when this file was last modified.
-   *
-   * @param string $lastModifiedTime
+   * @param string
    */
   public function setLastModifiedTime($lastModifiedTime)
   {
@@ -197,9 +155,7 @@ class DfareportingFile extends \Google\Model
     return $this->lastModifiedTime;
   }
   /**
-   * The ID of the report this file was generated from.
-   *
-   * @param string $reportId
+   * @param string
    */
   public function setReportId($reportId)
   {
@@ -213,27 +169,21 @@ class DfareportingFile extends \Google\Model
     return $this->reportId;
   }
   /**
-   * The status of the report file.
-   *
-   * Accepted values: PROCESSING, REPORT_AVAILABLE, FAILED, CANCELLED, QUEUED
-   *
-   * @param self::STATUS_* $status
+   * @param string
    */
   public function setStatus($status)
   {
     $this->status = $status;
   }
   /**
-   * @return self::STATUS_*
+   * @return string
    */
   public function getStatus()
   {
     return $this->status;
   }
   /**
-   * The URLs where the completed report file can be downloaded.
-   *
-   * @param DfareportingFileUrls $urls
+   * @param DfareportingFileUrls
    */
   public function setUrls(DfareportingFileUrls $urls)
   {

@@ -19,42 +19,20 @@ namespace Google\Service\DisplayVideo;
 
 class ProductFeedData extends \Google\Collection
 {
-  /**
-   * Not specified or unknown.
-   */
-  public const PRODUCT_MATCH_TYPE_PRODUCT_MATCH_TYPE_UNSPECIFIED = 'PRODUCT_MATCH_TYPE_UNSPECIFIED';
-  /**
-   * All the products are matched.
-   */
-  public const PRODUCT_MATCH_TYPE_PRODUCT_MATCH_TYPE_ALL_PRODUCTS = 'PRODUCT_MATCH_TYPE_ALL_PRODUCTS';
-  /**
-   * Specific products are selected.
-   */
-  public const PRODUCT_MATCH_TYPE_PRODUCT_MATCH_TYPE_SPECIFIC_PRODUCTS = 'PRODUCT_MATCH_TYPE_SPECIFIC_PRODUCTS';
-  /**
-   * Match products by their custom labels.
-   */
-  public const PRODUCT_MATCH_TYPE_PRODUCT_MATCH_TYPE_CUSTOM_LABEL = 'PRODUCT_MATCH_TYPE_CUSTOM_LABEL';
   protected $collection_key = 'productMatchDimensions';
   /**
-   * Whether the product feed has opted-out of showing products.
-   *
    * @var bool
    */
   public $isFeedDisabled;
   protected $productMatchDimensionsType = ProductMatchDimension::class;
   protected $productMatchDimensionsDataType = 'array';
   /**
-   * How products are selected by the product feed.
-   *
    * @var string
    */
   public $productMatchType;
 
   /**
-   * Whether the product feed has opted-out of showing products.
-   *
-   * @param bool $isFeedDisabled
+   * @param bool
    */
   public function setIsFeedDisabled($isFeedDisabled)
   {
@@ -68,9 +46,7 @@ class ProductFeedData extends \Google\Collection
     return $this->isFeedDisabled;
   }
   /**
-   * A list of dimensions used to match products.
-   *
-   * @param ProductMatchDimension[] $productMatchDimensions
+   * @param ProductMatchDimension[]
    */
   public function setProductMatchDimensions($productMatchDimensions)
   {
@@ -84,20 +60,14 @@ class ProductFeedData extends \Google\Collection
     return $this->productMatchDimensions;
   }
   /**
-   * How products are selected by the product feed.
-   *
-   * Accepted values: PRODUCT_MATCH_TYPE_UNSPECIFIED,
-   * PRODUCT_MATCH_TYPE_ALL_PRODUCTS, PRODUCT_MATCH_TYPE_SPECIFIC_PRODUCTS,
-   * PRODUCT_MATCH_TYPE_CUSTOM_LABEL
-   *
-   * @param self::PRODUCT_MATCH_TYPE_* $productMatchType
+   * @param string
    */
   public function setProductMatchType($productMatchType)
   {
     $this->productMatchType = $productMatchType;
   }
   /**
-   * @return self::PRODUCT_MATCH_TYPE_*
+   * @return string
    */
   public function getProductMatchType()
   {

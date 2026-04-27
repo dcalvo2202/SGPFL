@@ -20,16 +20,12 @@ namespace Google\Service\DataLabeling;
 class GoogleCloudDatalabelingV1beta1PdfInstruction extends \Google\Model
 {
   /**
-   * PDF file for the instruction. Only gcs path is allowed.
-   *
    * @var string
    */
   public $gcsFileUri;
 
   /**
-   * PDF file for the instruction. Only gcs path is allowed.
-   *
-   * @param string $gcsFileUri
+   * @param string
    */
   public function setGcsFileUri($gcsFileUri)
   {

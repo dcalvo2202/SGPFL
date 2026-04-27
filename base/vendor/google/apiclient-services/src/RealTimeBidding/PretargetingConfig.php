@@ -19,64 +19,22 @@ namespace Google\Service\RealTimeBidding;
 
 class PretargetingConfig extends \Google\Collection
 {
-  /**
-   * Unspecified interstitial targeting. Represents an interstitial-agnostic
-   * selection.
-   */
-  public const INTERSTITIAL_TARGETING_INTERSTITIAL_TARGETING_UNSPECIFIED = 'INTERSTITIAL_TARGETING_UNSPECIFIED';
-  /**
-   * Only bid requests for interstitial inventory should be sent.
-   */
-  public const INTERSTITIAL_TARGETING_ONLY_INTERSTITIAL_REQUESTS = 'ONLY_INTERSTITIAL_REQUESTS';
-  /**
-   * Only bid requests for non-interstitial inventory should be sent.
-   */
-  public const INTERSTITIAL_TARGETING_ONLY_NON_INTERSTITIAL_REQUESTS = 'ONLY_NON_INTERSTITIAL_REQUESTS';
-  /**
-   * Placeholder for undefined state.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * This pretargeting config is actively being used to filter bid requests.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * This pretargeting config is suspended and not used in serving.
-   */
-  public const STATE_SUSPENDED = 'SUSPENDED';
   protected $collection_key = 'invalidGeoIds';
   /**
-   * Targeting modes included by this config. A bid request must allow all the
-   * specified targeting modes. An unset value allows all bid requests to be
-   * sent, regardless of which targeting modes they allow.
-   *
    * @var string[]
    */
   public $allowedUserTargetingModes;
   protected $appTargetingType = AppTargeting::class;
   protected $appTargetingDataType = '';
   /**
-   * Output only. The identifier that corresponds to this pretargeting config
-   * that helps buyers track and attribute their spend across their own
-   * arbitrary divisions. If a bid request matches more than one config, the
-   * buyer chooses which billing_id to attribute each of their bids.
-   *
    * @var string
    */
   public $billingId;
   /**
-   * The diplay name associated with this config. This name must be unique among
-   * all the pretargeting configs a bidder has.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * The sensitive content category label IDs excluded in this config. Bid
-   * requests for inventory with any of the specified content label IDs will not
-   * be sent. Refer to this file https://storage.googleapis.com/adx-rtb-
-   * dictionaries/content-labels.txt for category IDs.
-   *
    * @var string[]
    */
   public $excludedContentLabelIds;
@@ -85,99 +43,52 @@ class PretargetingConfig extends \Google\Collection
   protected $includedCreativeDimensionsType = CreativeDimensions::class;
   protected $includedCreativeDimensionsDataType = 'array';
   /**
-   * Environments that are being included. Bid requests will not be sent for a
-   * given environment if it is not included. Further restrictions can be
-   * applied to included environments to target only a subset of its inventory.
-   * An unset value includes all environments.
-   *
    * @var string[]
    */
   public $includedEnvironments;
   /**
-   * Creative formats included by this config. Only bid requests eligible for at
-   * least one of the specified creative formats will be sent. An unset value
-   * will allow all bid requests to be sent, regardless of format.
-   *
    * @var string[]
    */
   public $includedFormats;
   /**
-   * The languages included in this config, represented by their language code.
-   * See https://developers.google.com/adwords/api/docs/appendix/languagecodes.
-   *
    * @var string[]
    */
   public $includedLanguages;
   /**
-   * The mobile operating systems included in this config as defined in
-   * https://storage.googleapis.com/adx-rtb-dictionaries/mobile-os.csv
-   *
    * @var string[]
    */
   public $includedMobileOperatingSystemIds;
   /**
-   * The platforms included by this config. Bid requests for devices with the
-   * specified platform types will be sent. An unset value allows all bid
-   * requests to be sent, regardless of platform.
-   *
    * @var string[]
    */
   public $includedPlatforms;
   /**
-   * User identifier types included in this config. At least one of the user
-   * identifier types specified in this list must be available for the bid
-   * request to be sent.
-   *
    * @var string[]
    */
   public $includedUserIdTypes;
   /**
-   * The interstitial targeting specified for this config. The unset value will
-   * allow bid requests to be sent regardless of whether they are for
-   * interstitials or not.
-   *
    * @var string
    */
   public $interstitialTargeting;
   /**
-   * Output only. Existing included or excluded geos that are invalid.
-   * Previously targeted geos may become invalid due to privacy restrictions.
-   *
    * @var string[]
    */
   public $invalidGeoIds;
   /**
-   * The maximum QPS threshold for this config. The bidder should receive no
-   * more than this number of bid requests matching this config per second
-   * across all their bidding endpoints among all trading locations. Further
-   * information available at https://developers.google.com/authorized-
-   * buyers/rtb/peer-guide
-   *
    * @var string
    */
   public $maximumQps;
   /**
-   * The targeted minimum viewability decile, ranging in values [0, 10]. A value
-   * of 5 means that the config will only match adslots for which we predict at
-   * least 50% viewability. Values > 10 will be rounded down to 10. An unset
-   * value or a value of 0 indicates that bid requests will be sent regardless
-   * of viewability.
-   *
    * @var int
    */
   public $minimumViewabilityDecile;
   /**
-   * Output only. Name of the pretargeting config that must follow the pattern
-   * `bidders/{bidder_account_id}/pretargetingConfigs/{config_id}`
-   *
    * @var string
    */
   public $name;
   protected $publisherTargetingType = StringTargetingDimension::class;
   protected $publisherTargetingDataType = '';
   /**
-   * Output only. The state of this pretargeting config.
-   *
    * @var string
    */
   public $state;
@@ -189,11 +100,7 @@ class PretargetingConfig extends \Google\Collection
   protected $webTargetingDataType = '';
 
   /**
-   * Targeting modes included by this config. A bid request must allow all the
-   * specified targeting modes. An unset value allows all bid requests to be
-   * sent, regardless of which targeting modes they allow.
-   *
-   * @param string[] $allowedUserTargetingModes
+   * @param string[]
    */
   public function setAllowedUserTargetingModes($allowedUserTargetingModes)
   {
@@ -207,15 +114,7 @@ class PretargetingConfig extends \Google\Collection
     return $this->allowedUserTargetingModes;
   }
   /**
-   * Targeting on a subset of app inventory. If APP is listed in
-   * targeted_environments, the specified targeting is applied. A maximum of
-   * 30,000 app IDs can be targeted. An unset value for targeting allows all
-   * app-based bid requests to be sent. Apps can either be targeting positively
-   * (bid requests will be sent only if the destination app is listed in the
-   * targeting dimension) or negatively (bid requests will be sent only if the
-   * destination app is not listed in the targeting dimension).
-   *
-   * @param AppTargeting $appTargeting
+   * @param AppTargeting
    */
   public function setAppTargeting(AppTargeting $appTargeting)
   {
@@ -229,12 +128,7 @@ class PretargetingConfig extends \Google\Collection
     return $this->appTargeting;
   }
   /**
-   * Output only. The identifier that corresponds to this pretargeting config
-   * that helps buyers track and attribute their spend across their own
-   * arbitrary divisions. If a bid request matches more than one config, the
-   * buyer chooses which billing_id to attribute each of their bids.
-   *
-   * @param string $billingId
+   * @param string
    */
   public function setBillingId($billingId)
   {
@@ -248,10 +142,7 @@ class PretargetingConfig extends \Google\Collection
     return $this->billingId;
   }
   /**
-   * The diplay name associated with this config. This name must be unique among
-   * all the pretargeting configs a bidder has.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -265,12 +156,7 @@ class PretargetingConfig extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * The sensitive content category label IDs excluded in this config. Bid
-   * requests for inventory with any of the specified content label IDs will not
-   * be sent. Refer to this file https://storage.googleapis.com/adx-rtb-
-   * dictionaries/content-labels.txt for category IDs.
-   *
-   * @param string[] $excludedContentLabelIds
+   * @param string[]
    */
   public function setExcludedContentLabelIds($excludedContentLabelIds)
   {
@@ -284,10 +170,7 @@ class PretargetingConfig extends \Google\Collection
     return $this->excludedContentLabelIds;
   }
   /**
-   * The geos included or excluded in this config defined in
-   * https://storage.googleapis.com/adx-rtb-dictionaries/geo-table.csv
-   *
-   * @param NumericTargetingDimension $geoTargeting
+   * @param NumericTargetingDimension
    */
   public function setGeoTargeting(NumericTargetingDimension $geoTargeting)
   {
@@ -301,11 +184,7 @@ class PretargetingConfig extends \Google\Collection
     return $this->geoTargeting;
   }
   /**
-   * Creative dimensions included by this config. Only bid requests eligible for
-   * at least one of the specified creative dimensions will be sent. An unset
-   * value allows all bid requests to be sent, regardless of creative dimension.
-   *
-   * @param CreativeDimensions[] $includedCreativeDimensions
+   * @param CreativeDimensions[]
    */
   public function setIncludedCreativeDimensions($includedCreativeDimensions)
   {
@@ -319,12 +198,7 @@ class PretargetingConfig extends \Google\Collection
     return $this->includedCreativeDimensions;
   }
   /**
-   * Environments that are being included. Bid requests will not be sent for a
-   * given environment if it is not included. Further restrictions can be
-   * applied to included environments to target only a subset of its inventory.
-   * An unset value includes all environments.
-   *
-   * @param string[] $includedEnvironments
+   * @param string[]
    */
   public function setIncludedEnvironments($includedEnvironments)
   {
@@ -338,11 +212,7 @@ class PretargetingConfig extends \Google\Collection
     return $this->includedEnvironments;
   }
   /**
-   * Creative formats included by this config. Only bid requests eligible for at
-   * least one of the specified creative formats will be sent. An unset value
-   * will allow all bid requests to be sent, regardless of format.
-   *
-   * @param string[] $includedFormats
+   * @param string[]
    */
   public function setIncludedFormats($includedFormats)
   {
@@ -356,10 +226,7 @@ class PretargetingConfig extends \Google\Collection
     return $this->includedFormats;
   }
   /**
-   * The languages included in this config, represented by their language code.
-   * See https://developers.google.com/adwords/api/docs/appendix/languagecodes.
-   *
-   * @param string[] $includedLanguages
+   * @param string[]
    */
   public function setIncludedLanguages($includedLanguages)
   {
@@ -373,10 +240,7 @@ class PretargetingConfig extends \Google\Collection
     return $this->includedLanguages;
   }
   /**
-   * The mobile operating systems included in this config as defined in
-   * https://storage.googleapis.com/adx-rtb-dictionaries/mobile-os.csv
-   *
-   * @param string[] $includedMobileOperatingSystemIds
+   * @param string[]
    */
   public function setIncludedMobileOperatingSystemIds($includedMobileOperatingSystemIds)
   {
@@ -390,11 +254,7 @@ class PretargetingConfig extends \Google\Collection
     return $this->includedMobileOperatingSystemIds;
   }
   /**
-   * The platforms included by this config. Bid requests for devices with the
-   * specified platform types will be sent. An unset value allows all bid
-   * requests to be sent, regardless of platform.
-   *
-   * @param string[] $includedPlatforms
+   * @param string[]
    */
   public function setIncludedPlatforms($includedPlatforms)
   {
@@ -408,11 +268,7 @@ class PretargetingConfig extends \Google\Collection
     return $this->includedPlatforms;
   }
   /**
-   * User identifier types included in this config. At least one of the user
-   * identifier types specified in this list must be available for the bid
-   * request to be sent.
-   *
-   * @param string[] $includedUserIdTypes
+   * @param string[]
    */
   public function setIncludedUserIdTypes($includedUserIdTypes)
   {
@@ -426,31 +282,21 @@ class PretargetingConfig extends \Google\Collection
     return $this->includedUserIdTypes;
   }
   /**
-   * The interstitial targeting specified for this config. The unset value will
-   * allow bid requests to be sent regardless of whether they are for
-   * interstitials or not.
-   *
-   * Accepted values: INTERSTITIAL_TARGETING_UNSPECIFIED,
-   * ONLY_INTERSTITIAL_REQUESTS, ONLY_NON_INTERSTITIAL_REQUESTS
-   *
-   * @param self::INTERSTITIAL_TARGETING_* $interstitialTargeting
+   * @param string
    */
   public function setInterstitialTargeting($interstitialTargeting)
   {
     $this->interstitialTargeting = $interstitialTargeting;
   }
   /**
-   * @return self::INTERSTITIAL_TARGETING_*
+   * @return string
    */
   public function getInterstitialTargeting()
   {
     return $this->interstitialTargeting;
   }
   /**
-   * Output only. Existing included or excluded geos that are invalid.
-   * Previously targeted geos may become invalid due to privacy restrictions.
-   *
-   * @param string[] $invalidGeoIds
+   * @param string[]
    */
   public function setInvalidGeoIds($invalidGeoIds)
   {
@@ -464,13 +310,7 @@ class PretargetingConfig extends \Google\Collection
     return $this->invalidGeoIds;
   }
   /**
-   * The maximum QPS threshold for this config. The bidder should receive no
-   * more than this number of bid requests matching this config per second
-   * across all their bidding endpoints among all trading locations. Further
-   * information available at https://developers.google.com/authorized-
-   * buyers/rtb/peer-guide
-   *
-   * @param string $maximumQps
+   * @param string
    */
   public function setMaximumQps($maximumQps)
   {
@@ -484,13 +324,7 @@ class PretargetingConfig extends \Google\Collection
     return $this->maximumQps;
   }
   /**
-   * The targeted minimum viewability decile, ranging in values [0, 10]. A value
-   * of 5 means that the config will only match adslots for which we predict at
-   * least 50% viewability. Values > 10 will be rounded down to 10. An unset
-   * value or a value of 0 indicates that bid requests will be sent regardless
-   * of viewability.
-   *
-   * @param int $minimumViewabilityDecile
+   * @param int
    */
   public function setMinimumViewabilityDecile($minimumViewabilityDecile)
   {
@@ -504,10 +338,7 @@ class PretargetingConfig extends \Google\Collection
     return $this->minimumViewabilityDecile;
   }
   /**
-   * Output only. Name of the pretargeting config that must follow the pattern
-   * `bidders/{bidder_account_id}/pretargetingConfigs/{config_id}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -521,22 +352,7 @@ class PretargetingConfig extends \Google\Collection
     return $this->name;
   }
   /**
-   * Targeting on a subset of publisher inventory. Publishers can either be
-   * targeted positively (bid requests will be sent only if the publisher is
-   * listed in the targeting dimension) or negatively (bid requests will be sent
-   * only if the publisher is not listed in the targeting dimension). A maximum
-   * of 10,000 publisher IDs can be targeted. Publisher IDs are found in
-   * [ads.txt](https://iabtechlab.com/ads-txt/) / [app-
-   * ads.txt](https://iabtechlab.com/app-ads-txt/) and in bid requests in the
-   * `BidRequest.publisher_id` field on the [Google RTB
-   * protocol](https://developers.google.com/authorized-
-   * buyers/rtb/downloads/realtime-bidding-proto) or the
-   * `BidRequest.site.publisher.id` / `BidRequest.app.publisher.id` field on the
-   * [OpenRTB protocol](https://developers.google.com/authorized-
-   * buyers/rtb/downloads/openrtb-adx-proto). Publisher IDs will be returned in
-   * the order that they were entered.
-   *
-   * @param StringTargetingDimension $publisherTargeting
+   * @param StringTargetingDimension
    */
   public function setPublisherTargeting(StringTargetingDimension $publisherTargeting)
   {
@@ -550,28 +366,21 @@ class PretargetingConfig extends \Google\Collection
     return $this->publisherTargeting;
   }
   /**
-   * Output only. The state of this pretargeting config.
-   *
-   * Accepted values: STATE_UNSPECIFIED, ACTIVE, SUSPENDED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * The remarketing lists included or excluded in this config as defined in
-   * UserList.
-   *
-   * @param NumericTargetingDimension $userListTargeting
+   * @param NumericTargetingDimension
    */
   public function setUserListTargeting(NumericTargetingDimension $userListTargeting)
   {
@@ -585,11 +394,7 @@ class PretargetingConfig extends \Google\Collection
     return $this->userListTargeting;
   }
   /**
-   * The verticals included or excluded in this config as defined in
-   * https://developers.google.com/authorized-buyers/rtb/downloads/publisher-
-   * verticals
-   *
-   * @param NumericTargetingDimension $verticalTargeting
+   * @param NumericTargetingDimension
    */
   public function setVerticalTargeting(NumericTargetingDimension $verticalTargeting)
   {
@@ -603,15 +408,7 @@ class PretargetingConfig extends \Google\Collection
     return $this->verticalTargeting;
   }
   /**
-   * Targeting on a subset of site inventory. If WEB is listed in
-   * included_environments, the specified targeting is applied. A maximum of
-   * 50,000 site URLs can be targeted. An unset value for targeting allows all
-   * web-based bid requests to be sent. Sites can either be targeting positively
-   * (bid requests will be sent only if the destination site is listed in the
-   * targeting dimension) or negatively (bid requests will be sent only if the
-   * destination site is not listed in the pretargeting config).
-   *
-   * @param StringTargetingDimension $webTargeting
+   * @param StringTargetingDimension
    */
   public function setWebTargeting(StringTargetingDimension $webTargeting)
   {

@@ -21,8 +21,6 @@ class CommitRequest extends \Google\Collection
 {
   protected $collection_key = 'writes';
   /**
-   * If set, applies all writes in this transaction, and commits it.
-   *
    * @var string
    */
   public $transaction;
@@ -30,9 +28,7 @@ class CommitRequest extends \Google\Collection
   protected $writesDataType = 'array';
 
   /**
-   * If set, applies all writes in this transaction, and commits it.
-   *
-   * @param string $transaction
+   * @param string
    */
   public function setTransaction($transaction)
   {
@@ -46,9 +42,7 @@ class CommitRequest extends \Google\Collection
     return $this->transaction;
   }
   /**
-   * The writes to apply. Always executed atomically and in order.
-   *
-   * @param Write[] $writes
+   * @param Write[]
    */
   public function setWrites($writes)
   {

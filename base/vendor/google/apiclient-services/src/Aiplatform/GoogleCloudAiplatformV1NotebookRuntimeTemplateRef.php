@@ -20,16 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1NotebookRuntimeTemplateRef extends \Google\Model
 {
   /**
-   * Immutable. A resource name of the NotebookRuntimeTemplate.
-   *
    * @var string
    */
   public $notebookRuntimeTemplate;
 
   /**
-   * Immutable. A resource name of the NotebookRuntimeTemplate.
-   *
-   * @param string $notebookRuntimeTemplate
+   * @param string
    */
   public function setNotebookRuntimeTemplate($notebookRuntimeTemplate)
   {

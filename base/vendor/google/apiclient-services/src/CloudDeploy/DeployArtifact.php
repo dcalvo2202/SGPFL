@@ -21,25 +21,16 @@ class DeployArtifact extends \Google\Collection
 {
   protected $collection_key = 'manifestPaths';
   /**
-   * Output only. URI of a directory containing the artifacts. All paths are
-   * relative to this location.
-   *
    * @var string
    */
   public $artifactUri;
   /**
-   * Output only. File paths of the manifests applied during the deploy
-   * operation relative to the URI.
-   *
    * @var string[]
    */
   public $manifestPaths;
 
   /**
-   * Output only. URI of a directory containing the artifacts. All paths are
-   * relative to this location.
-   *
-   * @param string $artifactUri
+   * @param string
    */
   public function setArtifactUri($artifactUri)
   {
@@ -53,10 +44,7 @@ class DeployArtifact extends \Google\Collection
     return $this->artifactUri;
   }
   /**
-   * Output only. File paths of the manifests applied during the deploy
-   * operation relative to the URI.
-   *
-   * @param string[] $manifestPaths
+   * @param string[]
    */
   public function setManifestPaths($manifestPaths)
   {

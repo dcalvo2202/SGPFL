@@ -22,22 +22,16 @@ class GoogleCloudAssetV1Access extends \Google\Model
   protected $analysisStateType = IamPolicyAnalysisState::class;
   protected $analysisStateDataType = '';
   /**
-   * The permission.
-   *
    * @var string
    */
   public $permission;
   /**
-   * The role.
-   *
    * @var string
    */
   public $role;
 
   /**
-   * The analysis state of this access.
-   *
-   * @param IamPolicyAnalysisState $analysisState
+   * @param IamPolicyAnalysisState
    */
   public function setAnalysisState(IamPolicyAnalysisState $analysisState)
   {
@@ -51,9 +45,7 @@ class GoogleCloudAssetV1Access extends \Google\Model
     return $this->analysisState;
   }
   /**
-   * The permission.
-   *
-   * @param string $permission
+   * @param string
    */
   public function setPermission($permission)
   {
@@ -67,9 +59,7 @@ class GoogleCloudAssetV1Access extends \Google\Model
     return $this->permission;
   }
   /**
-   * The role.
-   *
-   * @param string $role
+   * @param string
    */
   public function setRole($role)
   {

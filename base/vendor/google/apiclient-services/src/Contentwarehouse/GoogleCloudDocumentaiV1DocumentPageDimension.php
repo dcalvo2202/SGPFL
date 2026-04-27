@@ -20,28 +20,20 @@ namespace Google\Service\Contentwarehouse;
 class GoogleCloudDocumentaiV1DocumentPageDimension extends \Google\Model
 {
   /**
-   * Page height.
-   *
    * @var float
    */
   public $height;
   /**
-   * Dimension unit.
-   *
    * @var string
    */
   public $unit;
   /**
-   * Page width.
-   *
    * @var float
    */
   public $width;
 
   /**
-   * Page height.
-   *
-   * @param float $height
+   * @param float
    */
   public function setHeight($height)
   {
@@ -55,9 +47,7 @@ class GoogleCloudDocumentaiV1DocumentPageDimension extends \Google\Model
     return $this->height;
   }
   /**
-   * Dimension unit.
-   *
-   * @param string $unit
+   * @param string
    */
   public function setUnit($unit)
   {
@@ -71,9 +61,7 @@ class GoogleCloudDocumentaiV1DocumentPageDimension extends \Google\Model
     return $this->unit;
   }
   /**
-   * Page width.
-   *
-   * @param float $width
+   * @param float
    */
   public function setWidth($width)
   {

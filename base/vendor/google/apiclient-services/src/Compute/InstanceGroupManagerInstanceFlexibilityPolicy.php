@@ -23,10 +23,7 @@ class InstanceGroupManagerInstanceFlexibilityPolicy extends \Google\Model
   protected $instanceSelectionsDataType = 'map';
 
   /**
-   * Named instance selections configuring properties that the group will use
-   * when creating new VMs.
-   *
-   * @param InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelection[] $instanceSelections
+   * @param InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelection[]
    */
   public function setInstanceSelections($instanceSelections)
   {

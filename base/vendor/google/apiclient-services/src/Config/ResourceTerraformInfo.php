@@ -20,30 +20,20 @@ namespace Google\Service\Config;
 class ResourceTerraformInfo extends \Google\Model
 {
   /**
-   * TF resource address that uniquely identifies this resource within this
-   * deployment.
-   *
    * @var string
    */
   public $address;
   /**
-   * ID attribute of the TF resource
-   *
    * @var string
    */
   public $id;
   /**
-   * TF resource type
-   *
    * @var string
    */
   public $type;
 
   /**
-   * TF resource address that uniquely identifies this resource within this
-   * deployment.
-   *
-   * @param string $address
+   * @param string
    */
   public function setAddress($address)
   {
@@ -57,9 +47,7 @@ class ResourceTerraformInfo extends \Google\Model
     return $this->address;
   }
   /**
-   * ID attribute of the TF resource
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -73,9 +61,7 @@ class ResourceTerraformInfo extends \Google\Model
     return $this->id;
   }
   /**
-   * TF resource type
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

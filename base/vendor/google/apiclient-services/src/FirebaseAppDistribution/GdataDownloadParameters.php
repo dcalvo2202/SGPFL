@@ -20,29 +20,16 @@ namespace Google\Service\FirebaseAppDistribution;
 class GdataDownloadParameters extends \Google\Model
 {
   /**
-   * A boolean to be returned in the response to Scotty. Allows/disallows gzip
-   * encoding of the payload content when the server thinks it's advantageous
-   * (hence, does not guarantee compression) which allows Scotty to GZip the
-   * response to the client.
-   *
    * @var bool
    */
   public $allowGzipCompression;
   /**
-   * Determining whether or not Apiary should skip the inclusion of any Content-
-   * Range header on its response to Scotty.
-   *
    * @var bool
    */
   public $ignoreRange;
 
   /**
-   * A boolean to be returned in the response to Scotty. Allows/disallows gzip
-   * encoding of the payload content when the server thinks it's advantageous
-   * (hence, does not guarantee compression) which allows Scotty to GZip the
-   * response to the client.
-   *
-   * @param bool $allowGzipCompression
+   * @param bool
    */
   public function setAllowGzipCompression($allowGzipCompression)
   {
@@ -56,10 +43,7 @@ class GdataDownloadParameters extends \Google\Model
     return $this->allowGzipCompression;
   }
   /**
-   * Determining whether or not Apiary should skip the inclusion of any Content-
-   * Range header on its response to Scotty.
-   *
-   * @param bool $ignoreRange
+   * @param bool
    */
   public function setIgnoreRange($ignoreRange)
   {

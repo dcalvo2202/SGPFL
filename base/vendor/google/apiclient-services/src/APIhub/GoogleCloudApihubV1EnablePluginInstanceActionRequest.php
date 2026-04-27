@@ -20,16 +20,12 @@ namespace Google\Service\APIhub;
 class GoogleCloudApihubV1EnablePluginInstanceActionRequest extends \Google\Model
 {
   /**
-   * Required. The action id to enable.
-   *
    * @var string
    */
   public $actionId;
 
   /**
-   * Required. The action id to enable.
-   *
-   * @param string $actionId
+   * @param string
    */
   public function setActionId($actionId)
   {

@@ -20,129 +20,48 @@ namespace Google\Service\Compute;
 class AccessConfig extends \Google\Model
 {
   /**
-   * Public internet quality with fixed bandwidth.
-   */
-  public const NETWORK_TIER_FIXED_STANDARD = 'FIXED_STANDARD';
-  /**
-   * High quality, Google-grade network tier, support for all networking
-   * products.
-   */
-  public const NETWORK_TIER_PREMIUM = 'PREMIUM';
-  /**
-   * Public internet quality, only limited support for other networking
-   * products.
-   */
-  public const NETWORK_TIER_STANDARD = 'STANDARD';
-  /**
-   * (Output only) Temporary tier for FIXED_STANDARD when fixed standard tier is
-   * expired or not configured.
-   */
-  public const NETWORK_TIER_STANDARD_OVERRIDES_FIXED_STANDARD = 'STANDARD_OVERRIDES_FIXED_STANDARD';
-  public const TYPE_DIRECT_IPV6 = 'DIRECT_IPV6';
-  public const TYPE_ONE_TO_ONE_NAT = 'ONE_TO_ONE_NAT';
-  /**
-   * Applies to ipv6AccessConfigs only. The first IPv6 address of the external
-   * IPv6 range associated with this instance, prefix length is stored
-   * inexternalIpv6PrefixLength in ipv6AccessConfig. To use a static external IP
-   * address, it must be unused and in the same region as the instance's zone.
-   * If not specified, Google Cloud will automatically assign an external IPv6
-   * address from the instance's subnetwork.
-   *
    * @var string
    */
   public $externalIpv6;
   /**
-   * Applies to ipv6AccessConfigs only. The prefix length of the external IPv6
-   * range.
-   *
    * @var int
    */
   public $externalIpv6PrefixLength;
   /**
-   * Output only. [Output Only] Type of the resource. Alwayscompute#accessConfig
-   * for access configs.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The name of this access configuration. In accessConfigs (IPv4), the default
-   * and recommended name is External NAT, but you can use any arbitrary string,
-   * such as My external IP orNetwork Access. In ipv6AccessConfigs, the
-   * recommend name is External IPv6.
-   *
    * @var string
    */
   public $name;
   /**
-   * Applies to accessConfigs (IPv4) only. Anexternal IP address associated with
-   * this instance. Specify an unused static external IP address available to
-   * the project or leave this field undefined to use an IP from a shared
-   * ephemeral IP address pool. If you specify a static external IP address, it
-   * must live in the same region as the zone of the instance.
-   *
    * @var string
    */
   public $natIP;
   /**
-   * This signifies the networking tier used for configuring this access
-   * configuration and can only take the following values: PREMIUM,STANDARD.
-   *
-   * If an AccessConfig is specified without a valid external IP address, an
-   * ephemeral IP will be created with this networkTier.
-   *
-   * If an AccessConfig with a valid external IP address is specified, it must
-   * match that of the networkTier associated with the Address resource owning
-   * that IP.
-   *
    * @var string
    */
   public $networkTier;
   /**
-   * The DNS domain name for the public PTR record.
-   *
-   * You can set this field only if the `setPublicPtr` field is enabled
-   * inaccessConfig. If this field is unspecified inipv6AccessConfig, a default
-   * PTR record will be created for first IP in associated external IPv6 range.
-   *
    * @var string
    */
   public $publicPtrDomainName;
   /**
-   * The resource URL for the security policy associated with this access
-   * config.
-   *
    * @var string
    */
   public $securityPolicy;
   /**
-   * Specifies whether a public DNS 'PTR' record should be created to map the
-   * external IP address of the instance to a DNS domain name.
-   *
-   * This field is not used in ipv6AccessConfig. A default PTR record will be
-   * created if the VM has external IPv6 range associated.
-   *
    * @var bool
    */
   public $setPublicPtr;
   /**
-   * The type of configuration. In accessConfigs (IPv4), the default and only
-   * option is ONE_TO_ONE_NAT. Inipv6AccessConfigs, the default and only option
-   * isDIRECT_IPV6.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Applies to ipv6AccessConfigs only. The first IPv6 address of the external
-   * IPv6 range associated with this instance, prefix length is stored
-   * inexternalIpv6PrefixLength in ipv6AccessConfig. To use a static external IP
-   * address, it must be unused and in the same region as the instance's zone.
-   * If not specified, Google Cloud will automatically assign an external IPv6
-   * address from the instance's subnetwork.
-   *
-   * @param string $externalIpv6
+   * @param string
    */
   public function setExternalIpv6($externalIpv6)
   {
@@ -156,10 +75,7 @@ class AccessConfig extends \Google\Model
     return $this->externalIpv6;
   }
   /**
-   * Applies to ipv6AccessConfigs only. The prefix length of the external IPv6
-   * range.
-   *
-   * @param int $externalIpv6PrefixLength
+   * @param int
    */
   public function setExternalIpv6PrefixLength($externalIpv6PrefixLength)
   {
@@ -173,10 +89,7 @@ class AccessConfig extends \Google\Model
     return $this->externalIpv6PrefixLength;
   }
   /**
-   * Output only. [Output Only] Type of the resource. Alwayscompute#accessConfig
-   * for access configs.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -190,12 +103,7 @@ class AccessConfig extends \Google\Model
     return $this->kind;
   }
   /**
-   * The name of this access configuration. In accessConfigs (IPv4), the default
-   * and recommended name is External NAT, but you can use any arbitrary string,
-   * such as My external IP orNetwork Access. In ipv6AccessConfigs, the
-   * recommend name is External IPv6.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -209,13 +117,7 @@ class AccessConfig extends \Google\Model
     return $this->name;
   }
   /**
-   * Applies to accessConfigs (IPv4) only. Anexternal IP address associated with
-   * this instance. Specify an unused static external IP address available to
-   * the project or leave this field undefined to use an IP from a shared
-   * ephemeral IP address pool. If you specify a static external IP address, it
-   * must live in the same region as the zone of the instance.
-   *
-   * @param string $natIP
+   * @param string
    */
   public function setNatIP($natIP)
   {
@@ -229,40 +131,21 @@ class AccessConfig extends \Google\Model
     return $this->natIP;
   }
   /**
-   * This signifies the networking tier used for configuring this access
-   * configuration and can only take the following values: PREMIUM,STANDARD.
-   *
-   * If an AccessConfig is specified without a valid external IP address, an
-   * ephemeral IP will be created with this networkTier.
-   *
-   * If an AccessConfig with a valid external IP address is specified, it must
-   * match that of the networkTier associated with the Address resource owning
-   * that IP.
-   *
-   * Accepted values: FIXED_STANDARD, PREMIUM, STANDARD,
-   * STANDARD_OVERRIDES_FIXED_STANDARD
-   *
-   * @param self::NETWORK_TIER_* $networkTier
+   * @param string
    */
   public function setNetworkTier($networkTier)
   {
     $this->networkTier = $networkTier;
   }
   /**
-   * @return self::NETWORK_TIER_*
+   * @return string
    */
   public function getNetworkTier()
   {
     return $this->networkTier;
   }
   /**
-   * The DNS domain name for the public PTR record.
-   *
-   * You can set this field only if the `setPublicPtr` field is enabled
-   * inaccessConfig. If this field is unspecified inipv6AccessConfig, a default
-   * PTR record will be created for first IP in associated external IPv6 range.
-   *
-   * @param string $publicPtrDomainName
+   * @param string
    */
   public function setPublicPtrDomainName($publicPtrDomainName)
   {
@@ -276,10 +159,7 @@ class AccessConfig extends \Google\Model
     return $this->publicPtrDomainName;
   }
   /**
-   * The resource URL for the security policy associated with this access
-   * config.
-   *
-   * @param string $securityPolicy
+   * @param string
    */
   public function setSecurityPolicy($securityPolicy)
   {
@@ -293,13 +173,7 @@ class AccessConfig extends \Google\Model
     return $this->securityPolicy;
   }
   /**
-   * Specifies whether a public DNS 'PTR' record should be created to map the
-   * external IP address of the instance to a DNS domain name.
-   *
-   * This field is not used in ipv6AccessConfig. A default PTR record will be
-   * created if the VM has external IPv6 range associated.
-   *
-   * @param bool $setPublicPtr
+   * @param bool
    */
   public function setSetPublicPtr($setPublicPtr)
   {
@@ -313,20 +187,14 @@ class AccessConfig extends \Google\Model
     return $this->setPublicPtr;
   }
   /**
-   * The type of configuration. In accessConfigs (IPv4), the default and only
-   * option is ONE_TO_ONE_NAT. Inipv6AccessConfigs, the default and only option
-   * isDIRECT_IPV6.
-   *
-   * Accepted values: DIRECT_IPV6, ONE_TO_ONE_NAT
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

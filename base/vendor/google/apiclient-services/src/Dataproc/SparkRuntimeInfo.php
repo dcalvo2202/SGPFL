@@ -33,7 +33,7 @@ class SparkRuntimeInfo extends \Google\Model
   public $scalaVersion;
 
   /**
-   * @param string $javaHome
+   * @param string
    */
   public function setJavaHome($javaHome)
   {
@@ -47,7 +47,7 @@ class SparkRuntimeInfo extends \Google\Model
     return $this->javaHome;
   }
   /**
-   * @param string $javaVersion
+   * @param string
    */
   public function setJavaVersion($javaVersion)
   {
@@ -61,7 +61,7 @@ class SparkRuntimeInfo extends \Google\Model
     return $this->javaVersion;
   }
   /**
-   * @param string $scalaVersion
+   * @param string
    */
   public function setScalaVersion($scalaVersion)
   {

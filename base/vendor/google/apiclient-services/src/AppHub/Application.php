@@ -19,77 +19,41 @@ namespace Google\Service\AppHub;
 
 class Application extends \Google\Model
 {
-  /**
-   * Unspecified state.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The Application is being created.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * The Application is ready to register Services and Workloads.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * The Application is being deleted.
-   */
-  public const STATE_DELETING = 'DELETING';
   protected $attributesType = Attributes::class;
   protected $attributesDataType = '';
   /**
-   * Output only. Create time.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. User-defined description of an Application. Can have a maximum
-   * length of 2048 characters.
-   *
    * @var string
    */
   public $description;
   /**
-   * Optional. User-defined name for the Application. Can have a maximum length
-   * of 63 characters.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Identifier. The resource name of an Application. Format: `"projects/{host-
-   * project-id}/locations/{location}/applications/{application-id}"`
-   *
    * @var string
    */
   public $name;
   protected $scopeType = Scope::class;
   protected $scopeDataType = '';
   /**
-   * Output only. Application state.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. A universally unique identifier (in UUID4 format) for the
-   * `Application`.
-   *
    * @var string
    */
   public $uid;
   /**
-   * Output only. Update time.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Optional. Consumer provided attributes.
-   *
-   * @param Attributes $attributes
+   * @param Attributes
    */
   public function setAttributes(Attributes $attributes)
   {
@@ -103,9 +67,7 @@ class Application extends \Google\Model
     return $this->attributes;
   }
   /**
-   * Output only. Create time.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -119,10 +81,7 @@ class Application extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Optional. User-defined description of an Application. Can have a maximum
-   * length of 2048 characters.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -136,10 +95,7 @@ class Application extends \Google\Model
     return $this->description;
   }
   /**
-   * Optional. User-defined name for the Application. Can have a maximum length
-   * of 63 characters.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -153,10 +109,7 @@ class Application extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Identifier. The resource name of an Application. Format: `"projects/{host-
-   * project-id}/locations/{location}/applications/{application-id}"`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -170,10 +123,7 @@ class Application extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. Immutable. Defines what data can be included into this
-   * Application. Limits which Services and Workloads can be registered.
-   *
-   * @param Scope $scope
+   * @param Scope
    */
   public function setScope(Scope $scope)
   {
@@ -187,28 +137,21 @@ class Application extends \Google\Model
     return $this->scope;
   }
   /**
-   * Output only. Application state.
-   *
-   * Accepted values: STATE_UNSPECIFIED, CREATING, ACTIVE, DELETING
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. A universally unique identifier (in UUID4 format) for the
-   * `Application`.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {
@@ -222,9 +165,7 @@ class Application extends \Google\Model
     return $this->uid;
   }
   /**
-   * Output only. Update time.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

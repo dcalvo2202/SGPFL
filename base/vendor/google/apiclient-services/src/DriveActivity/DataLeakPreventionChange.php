@@ -20,37 +20,19 @@ namespace Google\Service\DriveActivity;
 class DataLeakPreventionChange extends \Google\Model
 {
   /**
-   * An update to the DLP state that is neither FLAGGED or CLEARED.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * Document has been flagged as containing sensitive content.
-   */
-  public const TYPE_FLAGGED = 'FLAGGED';
-  /**
-   * Document is no longer flagged as containing sensitive content.
-   */
-  public const TYPE_CLEARED = 'CLEARED';
-  /**
-   * The type of Data Leak Prevention (DLP) change.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The type of Data Leak Prevention (DLP) change.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, FLAGGED, CLEARED
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

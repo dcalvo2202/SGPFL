@@ -29,7 +29,7 @@ class GoogleCloudDialogflowCxV3MatchIntentRequest extends \Google\Model
   protected $queryParamsDataType = '';
 
   /**
-   * @param bool $persistParameterChanges
+   * @param bool
    */
   public function setPersistParameterChanges($persistParameterChanges)
   {
@@ -43,7 +43,7 @@ class GoogleCloudDialogflowCxV3MatchIntentRequest extends \Google\Model
     return $this->persistParameterChanges;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3QueryInput $queryInput
+   * @param GoogleCloudDialogflowCxV3QueryInput
    */
   public function setQueryInput(GoogleCloudDialogflowCxV3QueryInput $queryInput)
   {
@@ -57,7 +57,7 @@ class GoogleCloudDialogflowCxV3MatchIntentRequest extends \Google\Model
     return $this->queryInput;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3QueryParameters $queryParams
+   * @param GoogleCloudDialogflowCxV3QueryParameters
    */
   public function setQueryParams(GoogleCloudDialogflowCxV3QueryParameters $queryParams)
   {

@@ -20,40 +20,28 @@ namespace Google\Service\Datastream;
 class ForwardSshTunnelConnectivity extends \Google\Model
 {
   /**
-   * Required. Hostname for the SSH tunnel.
-   *
    * @var string
    */
   public $hostname;
   /**
-   * Input only. SSH password.
-   *
    * @var string
    */
   public $password;
   /**
-   * Port for the SSH tunnel, default value is 22.
-   *
    * @var int
    */
   public $port;
   /**
-   * Input only. SSH private key.
-   *
    * @var string
    */
   public $privateKey;
   /**
-   * Required. Username for the SSH tunnel.
-   *
    * @var string
    */
   public $username;
 
   /**
-   * Required. Hostname for the SSH tunnel.
-   *
-   * @param string $hostname
+   * @param string
    */
   public function setHostname($hostname)
   {
@@ -67,9 +55,7 @@ class ForwardSshTunnelConnectivity extends \Google\Model
     return $this->hostname;
   }
   /**
-   * Input only. SSH password.
-   *
-   * @param string $password
+   * @param string
    */
   public function setPassword($password)
   {
@@ -83,9 +69,7 @@ class ForwardSshTunnelConnectivity extends \Google\Model
     return $this->password;
   }
   /**
-   * Port for the SSH tunnel, default value is 22.
-   *
-   * @param int $port
+   * @param int
    */
   public function setPort($port)
   {
@@ -99,9 +83,7 @@ class ForwardSshTunnelConnectivity extends \Google\Model
     return $this->port;
   }
   /**
-   * Input only. SSH private key.
-   *
-   * @param string $privateKey
+   * @param string
    */
   public function setPrivateKey($privateKey)
   {
@@ -115,9 +97,7 @@ class ForwardSshTunnelConnectivity extends \Google\Model
     return $this->privateKey;
   }
   /**
-   * Required. Username for the SSH tunnel.
-   *
-   * @param string $username
+   * @param string
    */
   public function setUsername($username)
   {

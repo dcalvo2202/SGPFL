@@ -25,9 +25,7 @@ class GoogleCloudAiplatformV1PairwiseMetricInput extends \Google\Model
   protected $metricSpecDataType = '';
 
   /**
-   * Required. Pairwise metric instance.
-   *
-   * @param GoogleCloudAiplatformV1PairwiseMetricInstance $instance
+   * @param GoogleCloudAiplatformV1PairwiseMetricInstance
    */
   public function setInstance(GoogleCloudAiplatformV1PairwiseMetricInstance $instance)
   {
@@ -41,9 +39,7 @@ class GoogleCloudAiplatformV1PairwiseMetricInput extends \Google\Model
     return $this->instance;
   }
   /**
-   * Required. Spec for pairwise metric.
-   *
-   * @param GoogleCloudAiplatformV1PairwiseMetricSpec $metricSpec
+   * @param GoogleCloudAiplatformV1PairwiseMetricSpec
    */
   public function setMetricSpec(GoogleCloudAiplatformV1PairwiseMetricSpec $metricSpec)
   {

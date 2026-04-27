@@ -20,16 +20,12 @@ namespace Google\Service\FirebaseCloudMessaging;
 class FcmOptions extends \Google\Model
 {
   /**
-   * Label associated with the message's analytics data.
-   *
    * @var string
    */
   public $analyticsLabel;
 
   /**
-   * Label associated with the message's analytics data.
-   *
-   * @param string $analyticsLabel
+   * @param string
    */
   public function setAnalyticsLabel($analyticsLabel)
   {

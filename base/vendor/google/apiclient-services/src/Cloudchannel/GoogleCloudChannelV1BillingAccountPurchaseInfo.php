@@ -23,9 +23,7 @@ class GoogleCloudChannelV1BillingAccountPurchaseInfo extends \Google\Model
   protected $billingAccountDataType = '';
 
   /**
-   * The billing account resource.
-   *
-   * @param GoogleCloudChannelV1BillingAccount $billingAccount
+   * @param GoogleCloudChannelV1BillingAccount
    */
   public function setBillingAccount(GoogleCloudChannelV1BillingAccount $billingAccount)
   {

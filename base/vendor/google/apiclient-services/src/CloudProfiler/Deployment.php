@@ -20,51 +20,20 @@ namespace Google\Service\CloudProfiler;
 class Deployment extends \Google\Model
 {
   /**
-   * Labels identify the deployment within the user universe and same target.
-   * Validation regex for label names: `^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$`.
-   * Value for an individual label must be <= 512 bytes, the total size of all
-   * label names and values must be <= 1024 bytes. Label named "language" can be
-   * used to record the programming language of the profiled deployment. The
-   * standard choices for the value include "java", "go", "python", "ruby",
-   * "nodejs", "php", "dotnet". For deployments running on Google Cloud
-   * Platform, "zone" or "region" label should be present describing the
-   * deployment location. An example of a zone is "us-central1-a", an example of
-   * a region is "us-central1" or "us-central".
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Project ID is the ID of a cloud project. Validation regex:
-   * `^a-z{4,61}[a-z0-9]$`.
-   *
    * @var string
    */
   public $projectId;
   /**
-   * Target is the service name used to group related deployments: * Service
-   * name for App Engine Flex / Standard. * Cluster and container name for GKE.
-   * * User-specified string for direct Compute Engine profiling (e.g. Java). *
-   * Job name for Dataflow. Validation regex:
-   * `^[a-z0-9]([-a-z0-9_.]{0,253}[a-z0-9])?$`.
-   *
    * @var string
    */
   public $target;
 
   /**
-   * Labels identify the deployment within the user universe and same target.
-   * Validation regex for label names: `^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$`.
-   * Value for an individual label must be <= 512 bytes, the total size of all
-   * label names and values must be <= 1024 bytes. Label named "language" can be
-   * used to record the programming language of the profiled deployment. The
-   * standard choices for the value include "java", "go", "python", "ruby",
-   * "nodejs", "php", "dotnet". For deployments running on Google Cloud
-   * Platform, "zone" or "region" label should be present describing the
-   * deployment location. An example of a zone is "us-central1-a", an example of
-   * a region is "us-central1" or "us-central".
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -78,10 +47,7 @@ class Deployment extends \Google\Model
     return $this->labels;
   }
   /**
-   * Project ID is the ID of a cloud project. Validation regex:
-   * `^a-z{4,61}[a-z0-9]$`.
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {
@@ -95,13 +61,7 @@ class Deployment extends \Google\Model
     return $this->projectId;
   }
   /**
-   * Target is the service name used to group related deployments: * Service
-   * name for App Engine Flex / Standard. * Cluster and container name for GKE.
-   * * User-specified string for direct Compute Engine profiling (e.g. Java). *
-   * Job name for Dataflow. Validation regex:
-   * `^[a-z0-9]([-a-z0-9_.]{0,253}[a-z0-9])?$`.
-   *
-   * @param string $target
+   * @param string
    */
   public function setTarget($target)
   {

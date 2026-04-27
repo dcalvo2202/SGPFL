@@ -20,36 +20,18 @@ namespace Google\Service\CloudSearch;
 class EnterpriseTopazSidekickMeetingNotesCardError extends \Google\Model
 {
   /**
-   * No reason (default value).
-   */
-  public const REASON_NONE = 'NONE';
-  /**
-   * The user is not an owner.
-   */
-  public const REASON_NOT_OWNER = 'NOT_OWNER';
-  /**
-   * Unknown reason.
-   */
-  public const REASON_UNKNOWN = 'UNKNOWN';
-  /**
-   * The description of the reason why create-meeting-notes failed.
-   *
    * @var string
    */
   public $description;
   protected $eventType = EnterpriseTopazSidekickAgendaEntry::class;
   protected $eventDataType = '';
   /**
-   * The reason why create-meeting-notes failed.
-   *
    * @var string
    */
   public $reason;
 
   /**
-   * The description of the reason why create-meeting-notes failed.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -63,9 +45,7 @@ class EnterpriseTopazSidekickMeetingNotesCardError extends \Google\Model
     return $this->description;
   }
   /**
-   * The event to request meeting notes creation
-   *
-   * @param EnterpriseTopazSidekickAgendaEntry $event
+   * @param EnterpriseTopazSidekickAgendaEntry
    */
   public function setEvent(EnterpriseTopazSidekickAgendaEntry $event)
   {
@@ -79,18 +59,14 @@ class EnterpriseTopazSidekickMeetingNotesCardError extends \Google\Model
     return $this->event;
   }
   /**
-   * The reason why create-meeting-notes failed.
-   *
-   * Accepted values: NONE, NOT_OWNER, UNKNOWN
-   *
-   * @param self::REASON_* $reason
+   * @param string
    */
   public function setReason($reason)
   {
     $this->reason = $reason;
   }
   /**
-   * @return self::REASON_*
+   * @return string
    */
   public function getReason()
   {

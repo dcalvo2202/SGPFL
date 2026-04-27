@@ -20,22 +20,16 @@ namespace Google\Service\Dataflow;
 class Sink extends \Google\Model
 {
   /**
-   * The codec to use to encode data written to the sink.
-   *
    * @var array[]
    */
   public $codec;
   /**
-   * The sink to write to, plus its parameters.
-   *
    * @var array[]
    */
   public $spec;
 
   /**
-   * The codec to use to encode data written to the sink.
-   *
-   * @param array[] $codec
+   * @param array[]
    */
   public function setCodec($codec)
   {
@@ -49,9 +43,7 @@ class Sink extends \Google\Model
     return $this->codec;
   }
   /**
-   * The sink to write to, plus its parameters.
-   *
-   * @param array[] $spec
+   * @param array[]
    */
   public function setSpec($spec)
   {

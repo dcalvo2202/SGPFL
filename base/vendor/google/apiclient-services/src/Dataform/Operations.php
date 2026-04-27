@@ -23,37 +23,26 @@ class Operations extends \Google\Collection
   protected $dependencyTargetsType = Target::class;
   protected $dependencyTargetsDataType = 'array';
   /**
-   * Whether this action is disabled (i.e. should not be run).
-   *
    * @var bool
    */
   public $disabled;
   /**
-   * Whether these operations produce an output relation.
-   *
    * @var bool
    */
   public $hasOutput;
   /**
-   * A list of arbitrary SQL statements that will be executed without
-   * alteration.
-   *
    * @var string[]
    */
   public $queries;
   protected $relationDescriptorType = RelationDescriptor::class;
   protected $relationDescriptorDataType = '';
   /**
-   * Arbitrary, user-defined tags on this action.
-   *
    * @var string[]
    */
   public $tags;
 
   /**
-   * A list of actions that this action depends on.
-   *
-   * @param Target[] $dependencyTargets
+   * @param Target[]
    */
   public function setDependencyTargets($dependencyTargets)
   {
@@ -67,9 +56,7 @@ class Operations extends \Google\Collection
     return $this->dependencyTargets;
   }
   /**
-   * Whether this action is disabled (i.e. should not be run).
-   *
-   * @param bool $disabled
+   * @param bool
    */
   public function setDisabled($disabled)
   {
@@ -83,9 +70,7 @@ class Operations extends \Google\Collection
     return $this->disabled;
   }
   /**
-   * Whether these operations produce an output relation.
-   *
-   * @param bool $hasOutput
+   * @param bool
    */
   public function setHasOutput($hasOutput)
   {
@@ -99,10 +84,7 @@ class Operations extends \Google\Collection
     return $this->hasOutput;
   }
   /**
-   * A list of arbitrary SQL statements that will be executed without
-   * alteration.
-   *
-   * @param string[] $queries
+   * @param string[]
    */
   public function setQueries($queries)
   {
@@ -116,10 +98,7 @@ class Operations extends \Google\Collection
     return $this->queries;
   }
   /**
-   * Descriptor for any output relation and its columns. Only set if
-   * `has_output` is true.
-   *
-   * @param RelationDescriptor $relationDescriptor
+   * @param RelationDescriptor
    */
   public function setRelationDescriptor(RelationDescriptor $relationDescriptor)
   {
@@ -133,9 +112,7 @@ class Operations extends \Google\Collection
     return $this->relationDescriptor;
   }
   /**
-   * Arbitrary, user-defined tags on this action.
-   *
-   * @param string[] $tags
+   * @param string[]
    */
   public function setTags($tags)
   {

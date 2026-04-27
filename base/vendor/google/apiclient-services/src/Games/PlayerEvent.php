@@ -20,43 +20,28 @@ namespace Google\Service\Games;
 class PlayerEvent extends \Google\Model
 {
   /**
-   * The ID of the event definition.
-   *
    * @var string
    */
   public $definitionId;
   /**
-   * The current number of times this event has occurred, as a string. The
-   * formatting of this string depends on the configuration of your event in the
-   * Play Games Developer Console.
-   *
    * @var string
    */
   public $formattedNumEvents;
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#playerEvent`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The current number of times this event has occurred.
-   *
    * @var string
    */
   public $numEvents;
   /**
-   * The ID of the player.
-   *
    * @var string
    */
   public $playerId;
 
   /**
-   * The ID of the event definition.
-   *
-   * @param string $definitionId
+   * @param string
    */
   public function setDefinitionId($definitionId)
   {
@@ -70,11 +55,7 @@ class PlayerEvent extends \Google\Model
     return $this->definitionId;
   }
   /**
-   * The current number of times this event has occurred, as a string. The
-   * formatting of this string depends on the configuration of your event in the
-   * Play Games Developer Console.
-   *
-   * @param string $formattedNumEvents
+   * @param string
    */
   public function setFormattedNumEvents($formattedNumEvents)
   {
@@ -88,10 +69,7 @@ class PlayerEvent extends \Google\Model
     return $this->formattedNumEvents;
   }
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#playerEvent`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -105,9 +83,7 @@ class PlayerEvent extends \Google\Model
     return $this->kind;
   }
   /**
-   * The current number of times this event has occurred.
-   *
-   * @param string $numEvents
+   * @param string
    */
   public function setNumEvents($numEvents)
   {
@@ -121,9 +97,7 @@ class PlayerEvent extends \Google\Model
     return $this->numEvents;
   }
   /**
-   * The ID of the player.
-   *
-   * @param string $playerId
+   * @param string
    */
   public function setPlayerId($playerId)
   {

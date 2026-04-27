@@ -26,9 +26,7 @@ class LoyaltyObjectListResponse extends \Google\Collection
   protected $resourcesDataType = 'array';
 
   /**
-   * Pagination of the response.
-   *
-   * @param Pagination $pagination
+   * @param Pagination
    */
   public function setPagination(Pagination $pagination)
   {
@@ -42,9 +40,7 @@ class LoyaltyObjectListResponse extends \Google\Collection
     return $this->pagination;
   }
   /**
-   * Resources corresponding to the list request.
-   *
-   * @param LoyaltyObject[] $resources
+   * @param LoyaltyObject[]
    */
   public function setResources($resources)
   {

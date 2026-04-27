@@ -23,17 +23,12 @@ class ProductstatusesCustomBatchResponse extends \Google\Collection
   protected $entriesType = ProductstatusesCustomBatchResponseEntry::class;
   protected $entriesDataType = 'array';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#productstatusesCustomBatchResponse`".
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * The result of the execution of the batch requests.
-   *
-   * @param ProductstatusesCustomBatchResponseEntry[] $entries
+   * @param ProductstatusesCustomBatchResponseEntry[]
    */
   public function setEntries($entries)
   {
@@ -47,10 +42,7 @@ class ProductstatusesCustomBatchResponse extends \Google\Collection
     return $this->entries;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#productstatusesCustomBatchResponse`".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

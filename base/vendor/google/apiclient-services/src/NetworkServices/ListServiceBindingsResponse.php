@@ -21,30 +21,18 @@ class ListServiceBindingsResponse extends \Google\Collection
 {
   protected $collection_key = 'unreachable';
   /**
-   * If there might be more results than those appearing in this response, then
-   * `next_page_token` is included. To get the next set of results, call this
-   * method again using the value of `next_page_token` as `page_token`.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $serviceBindingsType = ServiceBinding::class;
   protected $serviceBindingsDataType = 'array';
   /**
-   * Unreachable resources. Populated when the request attempts to list all
-   * resources across all supported locations, while some locations are
-   * temporarily unavailable.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * If there might be more results than those appearing in this response, then
-   * `next_page_token` is included. To get the next set of results, call this
-   * method again using the value of `next_page_token` as `page_token`.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -58,9 +46,7 @@ class ListServiceBindingsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * List of ServiceBinding resources.
-   *
-   * @param ServiceBinding[] $serviceBindings
+   * @param ServiceBinding[]
    */
   public function setServiceBindings($serviceBindings)
   {
@@ -74,11 +60,7 @@ class ListServiceBindingsResponse extends \Google\Collection
     return $this->serviceBindings;
   }
   /**
-   * Unreachable resources. Populated when the request attempts to list all
-   * resources across all supported locations, while some locations are
-   * temporarily unavailable.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

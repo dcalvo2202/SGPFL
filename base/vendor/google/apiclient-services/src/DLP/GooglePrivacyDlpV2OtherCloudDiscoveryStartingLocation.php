@@ -23,9 +23,7 @@ class GooglePrivacyDlpV2OtherCloudDiscoveryStartingLocation extends \Google\Mode
   protected $awsLocationDataType = '';
 
   /**
-   * The AWS starting location for discovery.
-   *
-   * @param GooglePrivacyDlpV2AwsDiscoveryStartingLocation $awsLocation
+   * @param GooglePrivacyDlpV2AwsDiscoveryStartingLocation
    */
   public function setAwsLocation(GooglePrivacyDlpV2AwsDiscoveryStartingLocation $awsLocation)
   {

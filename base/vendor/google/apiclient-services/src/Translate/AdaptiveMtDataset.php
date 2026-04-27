@@ -20,56 +20,36 @@ namespace Google\Service\Translate;
 class AdaptiveMtDataset extends \Google\Model
 {
   /**
-   * Output only. Timestamp when this dataset was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * The name of the dataset to show in the interface. The name can be up to 32
-   * characters long and can consist only of ASCII Latin letters A-Z and a-z,
-   * underscores (_), and ASCII digits 0-9.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * The number of examples in the dataset.
-   *
    * @var int
    */
   public $exampleCount;
   /**
-   * Identifier. The resource name of the dataset, in form of
-   * `projects/{project-number-or-
-   * id}/locations/{location_id}/adaptiveMtDatasets/{dataset_id}`
-   *
    * @var string
    */
   public $name;
   /**
-   * The BCP-47 language code of the source language.
-   *
    * @var string
    */
   public $sourceLanguageCode;
   /**
-   * The BCP-47 language code of the target language.
-   *
    * @var string
    */
   public $targetLanguageCode;
   /**
-   * Output only. Timestamp when this dataset was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. Timestamp when this dataset was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -83,11 +63,7 @@ class AdaptiveMtDataset extends \Google\Model
     return $this->createTime;
   }
   /**
-   * The name of the dataset to show in the interface. The name can be up to 32
-   * characters long and can consist only of ASCII Latin letters A-Z and a-z,
-   * underscores (_), and ASCII digits 0-9.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -101,9 +77,7 @@ class AdaptiveMtDataset extends \Google\Model
     return $this->displayName;
   }
   /**
-   * The number of examples in the dataset.
-   *
-   * @param int $exampleCount
+   * @param int
    */
   public function setExampleCount($exampleCount)
   {
@@ -117,11 +91,7 @@ class AdaptiveMtDataset extends \Google\Model
     return $this->exampleCount;
   }
   /**
-   * Identifier. The resource name of the dataset, in form of
-   * `projects/{project-number-or-
-   * id}/locations/{location_id}/adaptiveMtDatasets/{dataset_id}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -135,9 +105,7 @@ class AdaptiveMtDataset extends \Google\Model
     return $this->name;
   }
   /**
-   * The BCP-47 language code of the source language.
-   *
-   * @param string $sourceLanguageCode
+   * @param string
    */
   public function setSourceLanguageCode($sourceLanguageCode)
   {
@@ -151,9 +119,7 @@ class AdaptiveMtDataset extends \Google\Model
     return $this->sourceLanguageCode;
   }
   /**
-   * The BCP-47 language code of the target language.
-   *
-   * @param string $targetLanguageCode
+   * @param string
    */
   public function setTargetLanguageCode($targetLanguageCode)
   {
@@ -167,9 +133,7 @@ class AdaptiveMtDataset extends \Google\Model
     return $this->targetLanguageCode;
   }
   /**
-   * Output only. Timestamp when this dataset was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

@@ -25,9 +25,7 @@ class AuxiliaryServicesConfig extends \Google\Model
   protected $sparkHistoryServerConfigDataType = '';
 
   /**
-   * Optional. The Hive Metastore configuration for this workload.
-   *
-   * @param MetastoreConfig $metastoreConfig
+   * @param MetastoreConfig
    */
   public function setMetastoreConfig(MetastoreConfig $metastoreConfig)
   {
@@ -41,9 +39,7 @@ class AuxiliaryServicesConfig extends \Google\Model
     return $this->metastoreConfig;
   }
   /**
-   * Optional. The Spark History Server configuration for the workload.
-   *
-   * @param SparkHistoryServerConfig $sparkHistoryServerConfig
+   * @param SparkHistoryServerConfig
    */
   public function setSparkHistoryServerConfig(SparkHistoryServerConfig $sparkHistoryServerConfig)
   {

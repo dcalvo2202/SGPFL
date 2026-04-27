@@ -29,18 +29,12 @@ class GoogleCloudVideointelligenceV1LabelAnnotation extends \Google\Collection
   protected $segmentsType = GoogleCloudVideointelligenceV1LabelSegment::class;
   protected $segmentsDataType = 'array';
   /**
-   * Feature version.
-   *
    * @var string
    */
   public $version;
 
   /**
-   * Common categories for the detected entity. For example, when the label is
-   * `Terrier`, the category is likely `dog`. And in some cases there might be
-   * more than one categories e.g., `Terrier` could also be a `pet`.
-   *
-   * @param GoogleCloudVideointelligenceV1Entity[] $categoryEntities
+   * @param GoogleCloudVideointelligenceV1Entity[]
    */
   public function setCategoryEntities($categoryEntities)
   {
@@ -54,9 +48,7 @@ class GoogleCloudVideointelligenceV1LabelAnnotation extends \Google\Collection
     return $this->categoryEntities;
   }
   /**
-   * Detected entity.
-   *
-   * @param GoogleCloudVideointelligenceV1Entity $entity
+   * @param GoogleCloudVideointelligenceV1Entity
    */
   public function setEntity(GoogleCloudVideointelligenceV1Entity $entity)
   {
@@ -70,9 +62,7 @@ class GoogleCloudVideointelligenceV1LabelAnnotation extends \Google\Collection
     return $this->entity;
   }
   /**
-   * All video frames where a label was detected.
-   *
-   * @param GoogleCloudVideointelligenceV1LabelFrame[] $frames
+   * @param GoogleCloudVideointelligenceV1LabelFrame[]
    */
   public function setFrames($frames)
   {
@@ -86,9 +76,7 @@ class GoogleCloudVideointelligenceV1LabelAnnotation extends \Google\Collection
     return $this->frames;
   }
   /**
-   * All video segments where a label was detected.
-   *
-   * @param GoogleCloudVideointelligenceV1LabelSegment[] $segments
+   * @param GoogleCloudVideointelligenceV1LabelSegment[]
    */
   public function setSegments($segments)
   {
@@ -102,9 +90,7 @@ class GoogleCloudVideointelligenceV1LabelAnnotation extends \Google\Collection
     return $this->segments;
   }
   /**
-   * Feature version.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

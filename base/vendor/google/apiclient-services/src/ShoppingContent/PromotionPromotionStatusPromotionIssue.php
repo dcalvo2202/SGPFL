@@ -20,22 +20,16 @@ namespace Google\Service\ShoppingContent;
 class PromotionPromotionStatusPromotionIssue extends \Google\Model
 {
   /**
-   * Code of the issue.
-   *
    * @var string
    */
   public $code;
   /**
-   * Explanation of the issue.
-   *
    * @var string
    */
   public $detail;
 
   /**
-   * Code of the issue.
-   *
-   * @param string $code
+   * @param string
    */
   public function setCode($code)
   {
@@ -49,9 +43,7 @@ class PromotionPromotionStatusPromotionIssue extends \Google\Model
     return $this->code;
   }
   /**
-   * Explanation of the issue.
-   *
-   * @param string $detail
+   * @param string
    */
   public function setDetail($detail)
   {

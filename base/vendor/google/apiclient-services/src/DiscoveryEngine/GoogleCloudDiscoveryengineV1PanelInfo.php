@@ -21,38 +21,26 @@ class GoogleCloudDiscoveryengineV1PanelInfo extends \Google\Collection
 {
   protected $collection_key = 'documents';
   /**
-   * The display name of the panel.
-   *
    * @var string
    */
   public $displayName;
   protected $documentsType = GoogleCloudDiscoveryengineV1DocumentInfo::class;
   protected $documentsDataType = 'array';
   /**
-   * Required. The panel ID.
-   *
    * @var string
    */
   public $panelId;
   /**
-   * The ordered position of the panel, if shown to the user with other panels.
-   * If set, then total_panels must also be set.
-   *
    * @var int
    */
   public $panelPosition;
   /**
-   * The total number of panels, including this one, shown to the user. Must be
-   * set if panel_position is set.
-   *
    * @var int
    */
   public $totalPanels;
 
   /**
-   * The display name of the panel.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -66,9 +54,7 @@ class GoogleCloudDiscoveryengineV1PanelInfo extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Optional. The document IDs associated with this panel.
-   *
-   * @param GoogleCloudDiscoveryengineV1DocumentInfo[] $documents
+   * @param GoogleCloudDiscoveryengineV1DocumentInfo[]
    */
   public function setDocuments($documents)
   {
@@ -82,9 +68,7 @@ class GoogleCloudDiscoveryengineV1PanelInfo extends \Google\Collection
     return $this->documents;
   }
   /**
-   * Required. The panel ID.
-   *
-   * @param string $panelId
+   * @param string
    */
   public function setPanelId($panelId)
   {
@@ -98,10 +82,7 @@ class GoogleCloudDiscoveryengineV1PanelInfo extends \Google\Collection
     return $this->panelId;
   }
   /**
-   * The ordered position of the panel, if shown to the user with other panels.
-   * If set, then total_panels must also be set.
-   *
-   * @param int $panelPosition
+   * @param int
    */
   public function setPanelPosition($panelPosition)
   {
@@ -115,10 +96,7 @@ class GoogleCloudDiscoveryengineV1PanelInfo extends \Google\Collection
     return $this->panelPosition;
   }
   /**
-   * The total number of panels, including this one, shown to the user. Must be
-   * set if panel_position is set.
-   *
-   * @param int $totalPanels
+   * @param int
    */
   public function setTotalPanels($totalPanels)
   {

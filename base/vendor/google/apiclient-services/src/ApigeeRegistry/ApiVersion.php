@@ -20,81 +20,44 @@ namespace Google\Service\ApigeeRegistry;
 class ApiVersion extends \Google\Model
 {
   /**
-   * Annotations attach non-identifying metadata to resources. Annotation keys
-   * and values are less restricted than those of labels, but should be
-   * generally used for small values of broad interest. Larger, topic- specific
-   * metadata should be stored in Artifacts.
-   *
    * @var string[]
    */
   public $annotations;
   /**
-   * Output only. Creation timestamp.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * A detailed description.
-   *
    * @var string
    */
   public $description;
   /**
-   * Human-meaningful name.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Labels attach identifying metadata to resources. Identifying metadata can
-   * be used to filter list operations. Label keys and values can be no longer
-   * than 64 characters (Unicode codepoints), can only contain lowercase
-   * letters, numeric characters, underscores and dashes. International
-   * characters are allowed. No more than 64 user labels can be associated with
-   * one resource (System labels are excluded). See https://goo.gl/xmQnxf for
-   * more information and examples of labels. System reserved label keys are
-   * prefixed with `apigeeregistry.googleapis.com/` and cannot be changed.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Resource name.
-   *
    * @var string
    */
   public $name;
   /**
-   * The primary spec for this version. Format: projects/{project}/locations/{lo
-   * cation}/apis/{api}/versions/{version}/specs/{spec}
-   *
    * @var string
    */
   public $primarySpec;
   /**
-   * A user-definable description of the lifecycle phase of this API version.
-   * Format: free-form, but we expect single words that describe API maturity,
-   * e.g., "CONCEPT", "DESIGN", "DEVELOPMENT", "STAGING", "PRODUCTION",
-   * "DEPRECATED", "RETIRED".
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. Last update timestamp.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Annotations attach non-identifying metadata to resources. Annotation keys
-   * and values are less restricted than those of labels, but should be
-   * generally used for small values of broad interest. Larger, topic- specific
-   * metadata should be stored in Artifacts.
-   *
-   * @param string[] $annotations
+   * @param string[]
    */
   public function setAnnotations($annotations)
   {
@@ -108,9 +71,7 @@ class ApiVersion extends \Google\Model
     return $this->annotations;
   }
   /**
-   * Output only. Creation timestamp.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -124,9 +85,7 @@ class ApiVersion extends \Google\Model
     return $this->createTime;
   }
   /**
-   * A detailed description.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -140,9 +99,7 @@ class ApiVersion extends \Google\Model
     return $this->description;
   }
   /**
-   * Human-meaningful name.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -156,16 +113,7 @@ class ApiVersion extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Labels attach identifying metadata to resources. Identifying metadata can
-   * be used to filter list operations. Label keys and values can be no longer
-   * than 64 characters (Unicode codepoints), can only contain lowercase
-   * letters, numeric characters, underscores and dashes. International
-   * characters are allowed. No more than 64 user labels can be associated with
-   * one resource (System labels are excluded). See https://goo.gl/xmQnxf for
-   * more information and examples of labels. System reserved label keys are
-   * prefixed with `apigeeregistry.googleapis.com/` and cannot be changed.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -179,9 +127,7 @@ class ApiVersion extends \Google\Model
     return $this->labels;
   }
   /**
-   * Resource name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -195,10 +141,7 @@ class ApiVersion extends \Google\Model
     return $this->name;
   }
   /**
-   * The primary spec for this version. Format: projects/{project}/locations/{lo
-   * cation}/apis/{api}/versions/{version}/specs/{spec}
-   *
-   * @param string $primarySpec
+   * @param string
    */
   public function setPrimarySpec($primarySpec)
   {
@@ -212,12 +155,7 @@ class ApiVersion extends \Google\Model
     return $this->primarySpec;
   }
   /**
-   * A user-definable description of the lifecycle phase of this API version.
-   * Format: free-form, but we expect single words that describe API maturity,
-   * e.g., "CONCEPT", "DESIGN", "DEVELOPMENT", "STAGING", "PRODUCTION",
-   * "DEPRECATED", "RETIRED".
-   *
-   * @param string $state
+   * @param string
    */
   public function setState($state)
   {
@@ -231,9 +169,7 @@ class ApiVersion extends \Google\Model
     return $this->state;
   }
   /**
-   * Output only. Last update timestamp.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

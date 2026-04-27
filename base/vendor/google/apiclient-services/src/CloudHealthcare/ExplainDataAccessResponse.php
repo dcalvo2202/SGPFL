@@ -23,19 +23,12 @@ class ExplainDataAccessResponse extends \Google\Collection
   protected $consentScopesType = ExplainDataAccessConsentScope::class;
   protected $consentScopesDataType = 'array';
   /**
-   * Warnings associated with this response. It inform user with exceeded scope
-   * limit errors.
-   *
    * @var string
    */
   public $warning;
 
   /**
-   * List of applicable consent scopes. Sorted in order of actor such that
-   * scopes belonging to the same actor will be adjacent to each other in the
-   * list.
-   *
-   * @param ExplainDataAccessConsentScope[] $consentScopes
+   * @param ExplainDataAccessConsentScope[]
    */
   public function setConsentScopes($consentScopes)
   {
@@ -49,10 +42,7 @@ class ExplainDataAccessResponse extends \Google\Collection
     return $this->consentScopes;
   }
   /**
-   * Warnings associated with this response. It inform user with exceeded scope
-   * limit errors.
-   *
-   * @param string $warning
+   * @param string
    */
   public function setWarning($warning)
   {

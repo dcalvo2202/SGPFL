@@ -20,18 +20,12 @@ namespace Google\Service\Dataproc;
 class DiagnoseClusterResults extends \Google\Model
 {
   /**
-   * Output only. The Cloud Storage URI of the diagnostic output. The output
-   * report is a plain text file with a summary of collected diagnostics.
-   *
    * @var string
    */
   public $outputUri;
 
   /**
-   * Output only. The Cloud Storage URI of the diagnostic output. The output
-   * report is a plain text file with a summary of collected diagnostics.
-   *
-   * @param string $outputUri
+   * @param string
    */
   public function setOutputUri($outputUri)
   {

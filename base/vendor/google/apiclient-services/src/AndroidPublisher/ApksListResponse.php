@@ -23,16 +23,12 @@ class ApksListResponse extends \Google\Collection
   protected $apksType = Apk::class;
   protected $apksDataType = 'array';
   /**
-   * The kind of this response ("androidpublisher#apksListResponse").
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * All APKs.
-   *
-   * @param Apk[] $apks
+   * @param Apk[]
    */
   public function setApks($apks)
   {
@@ -46,9 +42,7 @@ class ApksListResponse extends \Google\Collection
     return $this->apks;
   }
   /**
-   * The kind of this response ("androidpublisher#apksListResponse").
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

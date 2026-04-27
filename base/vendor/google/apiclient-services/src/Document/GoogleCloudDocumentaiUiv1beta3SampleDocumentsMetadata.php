@@ -23,9 +23,7 @@ class GoogleCloudDocumentaiUiv1beta3SampleDocumentsMetadata extends \Google\Mode
   protected $commonMetadataDataType = '';
 
   /**
-   * The basic metadata of the long-running operation.
-   *
-   * @param GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata $commonMetadata
+   * @param GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata
    */
   public function setCommonMetadata(GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata $commonMetadata)
   {

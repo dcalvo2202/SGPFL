@@ -20,28 +20,16 @@ namespace Google\Service\CloudRun;
 class GoogleCloudRunV2ContainerStatus extends \Google\Model
 {
   /**
-   * ImageDigest holds the resolved digest for the image specified and resolved
-   * during the creation of Revision. This field holds the digest value
-   * regardless of whether a tag or digest was originally specified in the
-   * Container object.
-   *
    * @var string
    */
   public $imageDigest;
   /**
-   * The name of the container, if specified.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * ImageDigest holds the resolved digest for the image specified and resolved
-   * during the creation of Revision. This field holds the digest value
-   * regardless of whether a tag or digest was originally specified in the
-   * Container object.
-   *
-   * @param string $imageDigest
+   * @param string
    */
   public function setImageDigest($imageDigest)
   {
@@ -55,9 +43,7 @@ class GoogleCloudRunV2ContainerStatus extends \Google\Model
     return $this->imageDigest;
   }
   /**
-   * The name of the container, if specified.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

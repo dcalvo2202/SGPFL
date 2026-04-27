@@ -20,22 +20,16 @@ namespace Google\Service\ShoppingContent;
 class PriceAmount extends \Google\Model
 {
   /**
-   * The currency of the price.
-   *
    * @var string
    */
   public $currency;
   /**
-   * The price represented as a number.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * The currency of the price.
-   *
-   * @param string $currency
+   * @param string
    */
   public function setCurrency($currency)
   {
@@ -49,9 +43,7 @@ class PriceAmount extends \Google\Model
     return $this->currency;
   }
   /**
-   * The price represented as a number.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

@@ -24,10 +24,7 @@ class FetchGitHubInstallationsResponse extends \Google\Collection
   protected $installationsDataType = 'array';
 
   /**
-   * List of installations available to the OAuth user (for github.com) or all
-   * the installations (for GitHub enterprise).
-   *
-   * @param Installation[] $installations
+   * @param Installation[]
    */
   public function setInstallations($installations)
   {

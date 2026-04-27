@@ -20,16 +20,12 @@ namespace Google\Service\AndroidManagement;
 class WifiSsid extends \Google\Model
 {
   /**
-   * Required. Wi-Fi SSID represented as a string.
-   *
    * @var string
    */
   public $wifiSsid;
 
   /**
-   * Required. Wi-Fi SSID represented as a string.
-   *
-   * @param string $wifiSsid
+   * @param string
    */
   public function setWifiSsid($wifiSsid)
   {

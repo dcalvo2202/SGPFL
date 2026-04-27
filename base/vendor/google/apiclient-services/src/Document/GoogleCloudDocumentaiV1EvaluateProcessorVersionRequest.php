@@ -23,10 +23,7 @@ class GoogleCloudDocumentaiV1EvaluateProcessorVersionRequest extends \Google\Mod
   protected $evaluationDocumentsDataType = '';
 
   /**
-   * Optional. The documents used in the evaluation. If unspecified, use the
-   * processor's dataset as evaluation input.
-   *
-   * @param GoogleCloudDocumentaiV1BatchDocumentsInputConfig $evaluationDocuments
+   * @param GoogleCloudDocumentaiV1BatchDocumentsInputConfig
    */
   public function setEvaluationDocuments(GoogleCloudDocumentaiV1BatchDocumentsInputConfig $evaluationDocuments)
   {

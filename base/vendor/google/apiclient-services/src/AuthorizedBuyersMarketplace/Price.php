@@ -19,32 +19,15 @@ namespace Google\Service\AuthorizedBuyersMarketplace;
 
 class Price extends \Google\Model
 {
-  /**
-   * A placeholder for an undefined pricing type. If the pricing type is
-   * unspecified, CPM will be used instead.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * Cost per thousand impressions.
-   */
-  public const TYPE_CPM = 'CPM';
-  /**
-   * Cost per day.
-   */
-  public const TYPE_CPD = 'CPD';
   protected $amountType = Money::class;
   protected $amountDataType = '';
   /**
-   * The pricing type for the deal.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The actual price with currency specified.
-   *
-   * @param Money $amount
+   * @param Money
    */
   public function setAmount(Money $amount)
   {
@@ -58,18 +41,14 @@ class Price extends \Google\Model
     return $this->amount;
   }
   /**
-   * The pricing type for the deal.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, CPM, CPD
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

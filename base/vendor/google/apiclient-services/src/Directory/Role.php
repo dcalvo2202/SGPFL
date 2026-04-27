@@ -21,44 +21,30 @@ class Role extends \Google\Collection
 {
   protected $collection_key = 'rolePrivileges';
   /**
-   * ETag of the resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Returns `true` if the role is a super admin role.
-   *
    * @var bool
    */
   public $isSuperAdminRole;
   /**
-   * Returns `true` if this is a pre-defined system role.
-   *
    * @var bool
    */
   public $isSystemRole;
   /**
-   * The type of the API resource. This is always `admin#directory#role`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * A short description of the role.
-   *
    * @var string
    */
   public $roleDescription;
   /**
-   * ID of the role.
-   *
    * @var string
    */
   public $roleId;
   /**
-   * Name of the role.
-   *
    * @var string
    */
   public $roleName;
@@ -66,9 +52,7 @@ class Role extends \Google\Collection
   protected $rolePrivilegesDataType = 'array';
 
   /**
-   * ETag of the resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -82,9 +66,7 @@ class Role extends \Google\Collection
     return $this->etag;
   }
   /**
-   * Returns `true` if the role is a super admin role.
-   *
-   * @param bool $isSuperAdminRole
+   * @param bool
    */
   public function setIsSuperAdminRole($isSuperAdminRole)
   {
@@ -98,9 +80,7 @@ class Role extends \Google\Collection
     return $this->isSuperAdminRole;
   }
   /**
-   * Returns `true` if this is a pre-defined system role.
-   *
-   * @param bool $isSystemRole
+   * @param bool
    */
   public function setIsSystemRole($isSystemRole)
   {
@@ -114,9 +94,7 @@ class Role extends \Google\Collection
     return $this->isSystemRole;
   }
   /**
-   * The type of the API resource. This is always `admin#directory#role`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -130,9 +108,7 @@ class Role extends \Google\Collection
     return $this->kind;
   }
   /**
-   * A short description of the role.
-   *
-   * @param string $roleDescription
+   * @param string
    */
   public function setRoleDescription($roleDescription)
   {
@@ -146,9 +122,7 @@ class Role extends \Google\Collection
     return $this->roleDescription;
   }
   /**
-   * ID of the role.
-   *
-   * @param string $roleId
+   * @param string
    */
   public function setRoleId($roleId)
   {
@@ -162,9 +136,7 @@ class Role extends \Google\Collection
     return $this->roleId;
   }
   /**
-   * Name of the role.
-   *
-   * @param string $roleName
+   * @param string
    */
   public function setRoleName($roleName)
   {
@@ -178,9 +150,7 @@ class Role extends \Google\Collection
     return $this->roleName;
   }
   /**
-   * The set of privileges that are granted to this role.
-   *
-   * @param RoleRolePrivileges[] $rolePrivileges
+   * @param RoleRolePrivileges[]
    */
   public function setRolePrivileges($rolePrivileges)
   {

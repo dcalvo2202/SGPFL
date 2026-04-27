@@ -20,22 +20,16 @@ namespace Google\Service\CloudHealthcare;
 class TextSpan extends \Google\Model
 {
   /**
-   * The unicode codepoint index of the beginning of this span.
-   *
    * @var int
    */
   public $beginOffset;
   /**
-   * The original text contained in this span.
-   *
    * @var string
    */
   public $content;
 
   /**
-   * The unicode codepoint index of the beginning of this span.
-   *
-   * @param int $beginOffset
+   * @param int
    */
   public function setBeginOffset($beginOffset)
   {
@@ -49,9 +43,7 @@ class TextSpan extends \Google\Model
     return $this->beginOffset;
   }
   /**
-   * The original text contained in this span.
-   *
-   * @param string $content
+   * @param string
    */
   public function setContent($content)
   {

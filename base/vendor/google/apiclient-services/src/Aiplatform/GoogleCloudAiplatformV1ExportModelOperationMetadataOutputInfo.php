@@ -20,27 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1ExportModelOperationMetadataOutputInfo extends \Google\Model
 {
   /**
-   * Output only. If the Model artifact is being exported to Google Cloud
-   * Storage this is the full path of the directory created, into which the
-   * Model files are being written to.
-   *
    * @var string
    */
   public $artifactOutputUri;
   /**
-   * Output only. If the Model image is being exported to Google Container
-   * Registry or Artifact Registry this is the full path of the image created.
-   *
    * @var string
    */
   public $imageOutputUri;
 
   /**
-   * Output only. If the Model artifact is being exported to Google Cloud
-   * Storage this is the full path of the directory created, into which the
-   * Model files are being written to.
-   *
-   * @param string $artifactOutputUri
+   * @param string
    */
   public function setArtifactOutputUri($artifactOutputUri)
   {
@@ -54,10 +43,7 @@ class GoogleCloudAiplatformV1ExportModelOperationMetadataOutputInfo extends \Goo
     return $this->artifactOutputUri;
   }
   /**
-   * Output only. If the Model image is being exported to Google Container
-   * Registry or Artifact Registry this is the full path of the image created.
-   *
-   * @param string $imageOutputUri
+   * @param string
    */
   public function setImageOutputUri($imageOutputUri)
   {

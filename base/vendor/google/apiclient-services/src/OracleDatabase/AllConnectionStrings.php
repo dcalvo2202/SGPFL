@@ -20,32 +20,20 @@ namespace Google\Service\OracleDatabase;
 class AllConnectionStrings extends \Google\Model
 {
   /**
-   * Output only. The database service provides the highest level of resources
-   * to each SQL statement.
-   *
    * @var string
    */
   public $high;
   /**
-   * Output only. The database service provides the least level of resources to
-   * each SQL statement.
-   *
    * @var string
    */
   public $low;
   /**
-   * Output only. The database service provides a lower level of resources to
-   * each SQL statement.
-   *
    * @var string
    */
   public $medium;
 
   /**
-   * Output only. The database service provides the highest level of resources
-   * to each SQL statement.
-   *
-   * @param string $high
+   * @param string
    */
   public function setHigh($high)
   {
@@ -59,10 +47,7 @@ class AllConnectionStrings extends \Google\Model
     return $this->high;
   }
   /**
-   * Output only. The database service provides the least level of resources to
-   * each SQL statement.
-   *
-   * @param string $low
+   * @param string
    */
   public function setLow($low)
   {
@@ -76,10 +61,7 @@ class AllConnectionStrings extends \Google\Model
     return $this->low;
   }
   /**
-   * Output only. The database service provides a lower level of resources to
-   * each SQL statement.
-   *
-   * @param string $medium
+   * @param string
    */
   public function setMedium($medium)
   {

@@ -20,30 +20,20 @@ namespace Google\Service\Books;
 class AnnotationLayerSummary extends \Google\Model
 {
   /**
-   * Maximum allowed characters on this layer, especially for the "copy" layer.
-   *
    * @var int
    */
   public $allowedCharacterCount;
   /**
-   * Type of limitation on this layer. "limited" or "unlimited" for the "copy"
-   * layer.
-   *
    * @var string
    */
   public $limitType;
   /**
-   * Remaining allowed characters on this layer, especially for the "copy"
-   * layer.
-   *
    * @var int
    */
   public $remainingCharacterCount;
 
   /**
-   * Maximum allowed characters on this layer, especially for the "copy" layer.
-   *
-   * @param int $allowedCharacterCount
+   * @param int
    */
   public function setAllowedCharacterCount($allowedCharacterCount)
   {
@@ -57,10 +47,7 @@ class AnnotationLayerSummary extends \Google\Model
     return $this->allowedCharacterCount;
   }
   /**
-   * Type of limitation on this layer. "limited" or "unlimited" for the "copy"
-   * layer.
-   *
-   * @param string $limitType
+   * @param string
    */
   public function setLimitType($limitType)
   {
@@ -74,10 +61,7 @@ class AnnotationLayerSummary extends \Google\Model
     return $this->limitType;
   }
   /**
-   * Remaining allowed characters on this layer, especially for the "copy"
-   * layer.
-   *
-   * @param int $remainingCharacterCount
+   * @param int
    */
   public function setRemainingCharacterCount($remainingCharacterCount)
   {

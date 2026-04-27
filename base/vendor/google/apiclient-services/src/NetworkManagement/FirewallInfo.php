@@ -19,180 +19,58 @@ namespace Google\Service\NetworkManagement;
 
 class FirewallInfo extends \Google\Collection
 {
-  /**
-   * Unspecified type.
-   */
-  public const FIREWALL_RULE_TYPE_FIREWALL_RULE_TYPE_UNSPECIFIED = 'FIREWALL_RULE_TYPE_UNSPECIFIED';
-  /**
-   * Hierarchical firewall policy rule. For details, see [Hierarchical firewall
-   * policies overview](https://cloud.google.com/vpc/docs/firewall-policies).
-   */
-  public const FIREWALL_RULE_TYPE_HIERARCHICAL_FIREWALL_POLICY_RULE = 'HIERARCHICAL_FIREWALL_POLICY_RULE';
-  /**
-   * VPC firewall rule. For details, see [VPC firewall rules
-   * overview](https://cloud.google.com/vpc/docs/firewalls).
-   */
-  public const FIREWALL_RULE_TYPE_VPC_FIREWALL_RULE = 'VPC_FIREWALL_RULE';
-  /**
-   * Implied VPC firewall rule. For details, see [Implied
-   * rules](https://cloud.google.com/vpc/docs/firewalls#default_firewall_rules).
-   */
-  public const FIREWALL_RULE_TYPE_IMPLIED_VPC_FIREWALL_RULE = 'IMPLIED_VPC_FIREWALL_RULE';
-  /**
-   * Implicit firewall rules that are managed by serverless VPC access to allow
-   * ingress access. They are not visible in the Google Cloud console. For
-   * details, see [VPC connector's implicit
-   * rules](https://cloud.google.com/functions/docs/networking/connecting-
-   * vpc#restrict-access).
-   */
-  public const FIREWALL_RULE_TYPE_SERVERLESS_VPC_ACCESS_MANAGED_FIREWALL_RULE = 'SERVERLESS_VPC_ACCESS_MANAGED_FIREWALL_RULE';
-  /**
-   * User-defined global network firewall policy rule. For details, see [Network
-   * firewall policies](https://cloud.google.com/vpc/docs/network-firewall-
-   * policies).
-   */
-  public const FIREWALL_RULE_TYPE_NETWORK_FIREWALL_POLICY_RULE = 'NETWORK_FIREWALL_POLICY_RULE';
-  /**
-   * User-defined regional network firewall policy rule. For details, see
-   * [Regional network firewall
-   * policies](https://cloud.google.com/firewall/docs/regional-firewall-
-   * policies).
-   */
-  public const FIREWALL_RULE_TYPE_NETWORK_REGIONAL_FIREWALL_POLICY_RULE = 'NETWORK_REGIONAL_FIREWALL_POLICY_RULE';
-  /**
-   * System-defined global network firewall policy rule.
-   */
-  public const FIREWALL_RULE_TYPE_SYSTEM_NETWORK_FIREWALL_POLICY_RULE = 'SYSTEM_NETWORK_FIREWALL_POLICY_RULE';
-  /**
-   * System-defined regional network firewall policy rule.
-   */
-  public const FIREWALL_RULE_TYPE_SYSTEM_REGIONAL_NETWORK_FIREWALL_POLICY_RULE = 'SYSTEM_REGIONAL_NETWORK_FIREWALL_POLICY_RULE';
-  /**
-   * Firewall policy rule containing attributes not yet supported in
-   * Connectivity tests. Firewall analysis is skipped if such a rule can
-   * potentially be matched. Please see the [list of unsupported
-   * configurations](https://cloud.google.com/network-intelligence-
-   * center/docs/connectivity-tests/concepts/overview#unsupported-configs).
-   */
-  public const FIREWALL_RULE_TYPE_UNSUPPORTED_FIREWALL_POLICY_RULE = 'UNSUPPORTED_FIREWALL_POLICY_RULE';
-  /**
-   * Tracking state for response traffic created when request traffic goes
-   * through allow firewall rule. For details, see [firewall rules specification
-   * s](https://cloud.google.com/firewall/docs/firewalls#specifications)
-   */
-  public const FIREWALL_RULE_TYPE_TRACKING_STATE = 'TRACKING_STATE';
-  /**
-   * Firewall analysis was skipped due to executing Connectivity Test in the
-   * BypassFirewallChecks mode
-   */
-  public const FIREWALL_RULE_TYPE_ANALYSIS_SKIPPED = 'ANALYSIS_SKIPPED';
-  /**
-   * Target type is not specified. In this case we treat the rule as applying to
-   * INSTANCES target type.
-   */
-  public const TARGET_TYPE_TARGET_TYPE_UNSPECIFIED = 'TARGET_TYPE_UNSPECIFIED';
-  /**
-   * Firewall rule applies to instances.
-   */
-  public const TARGET_TYPE_INSTANCES = 'INSTANCES';
-  /**
-   * Firewall rule applies to internal managed load balancers.
-   */
-  public const TARGET_TYPE_INTERNAL_MANAGED_LB = 'INTERNAL_MANAGED_LB';
   protected $collection_key = 'targetTags';
   /**
-   * Possible values: ALLOW, DENY, APPLY_SECURITY_PROFILE_GROUP
-   *
    * @var string
    */
   public $action;
   /**
-   * Possible values: INGRESS, EGRESS
-   *
    * @var string
    */
   public $direction;
   /**
-   * The display name of the firewall rule. This field might be empty for
-   * firewall policy rules.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * The firewall rule's type.
-   *
    * @var string
    */
   public $firewallRuleType;
   /**
-   * The URI of the VPC network that the firewall rule is associated with. This
-   * field is not applicable to hierarchical firewall policy rules.
-   *
    * @var string
    */
   public $networkUri;
   /**
-   * The name of the firewall policy that this rule is associated with. This
-   * field is not applicable to VPC firewall rules and implied VPC firewall
-   * rules.
-   *
    * @var string
    */
   public $policy;
   /**
-   * The priority of the firewall policy that this rule is associated with. This
-   * field is not applicable to VPC firewall rules and implied VPC firewall
-   * rules.
-   *
    * @var int
    */
   public $policyPriority;
   /**
-   * The URI of the firewall policy that this rule is associated with. This
-   * field is not applicable to VPC firewall rules and implied VPC firewall
-   * rules.
-   *
    * @var string
    */
   public $policyUri;
   /**
-   * The priority of the firewall rule.
-   *
    * @var int
    */
   public $priority;
   /**
-   * The target service accounts specified by the firewall rule.
-   *
    * @var string[]
    */
   public $targetServiceAccounts;
   /**
-   * The target tags defined by the VPC firewall rule. This field is not
-   * applicable to firewall policy rules.
-   *
    * @var string[]
    */
   public $targetTags;
   /**
-   * Target type of the firewall rule.
-   *
-   * @var string
-   */
-  public $targetType;
-  /**
-   * The URI of the firewall rule. This field is not applicable to implied VPC
-   * firewall rules.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * Possible values: ALLOW, DENY, APPLY_SECURITY_PROFILE_GROUP
-   *
-   * @param string $action
+   * @param string
    */
   public function setAction($action)
   {
@@ -206,9 +84,7 @@ class FirewallInfo extends \Google\Collection
     return $this->action;
   }
   /**
-   * Possible values: INGRESS, EGRESS
-   *
-   * @param string $direction
+   * @param string
    */
   public function setDirection($direction)
   {
@@ -222,10 +98,7 @@ class FirewallInfo extends \Google\Collection
     return $this->direction;
   }
   /**
-   * The display name of the firewall rule. This field might be empty for
-   * firewall policy rules.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -239,34 +112,21 @@ class FirewallInfo extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * The firewall rule's type.
-   *
-   * Accepted values: FIREWALL_RULE_TYPE_UNSPECIFIED,
-   * HIERARCHICAL_FIREWALL_POLICY_RULE, VPC_FIREWALL_RULE,
-   * IMPLIED_VPC_FIREWALL_RULE, SERVERLESS_VPC_ACCESS_MANAGED_FIREWALL_RULE,
-   * NETWORK_FIREWALL_POLICY_RULE, NETWORK_REGIONAL_FIREWALL_POLICY_RULE,
-   * SYSTEM_NETWORK_FIREWALL_POLICY_RULE,
-   * SYSTEM_REGIONAL_NETWORK_FIREWALL_POLICY_RULE,
-   * UNSUPPORTED_FIREWALL_POLICY_RULE, TRACKING_STATE, ANALYSIS_SKIPPED
-   *
-   * @param self::FIREWALL_RULE_TYPE_* $firewallRuleType
+   * @param string
    */
   public function setFirewallRuleType($firewallRuleType)
   {
     $this->firewallRuleType = $firewallRuleType;
   }
   /**
-   * @return self::FIREWALL_RULE_TYPE_*
+   * @return string
    */
   public function getFirewallRuleType()
   {
     return $this->firewallRuleType;
   }
   /**
-   * The URI of the VPC network that the firewall rule is associated with. This
-   * field is not applicable to hierarchical firewall policy rules.
-   *
-   * @param string $networkUri
+   * @param string
    */
   public function setNetworkUri($networkUri)
   {
@@ -280,11 +140,7 @@ class FirewallInfo extends \Google\Collection
     return $this->networkUri;
   }
   /**
-   * The name of the firewall policy that this rule is associated with. This
-   * field is not applicable to VPC firewall rules and implied VPC firewall
-   * rules.
-   *
-   * @param string $policy
+   * @param string
    */
   public function setPolicy($policy)
   {
@@ -298,11 +154,7 @@ class FirewallInfo extends \Google\Collection
     return $this->policy;
   }
   /**
-   * The priority of the firewall policy that this rule is associated with. This
-   * field is not applicable to VPC firewall rules and implied VPC firewall
-   * rules.
-   *
-   * @param int $policyPriority
+   * @param int
    */
   public function setPolicyPriority($policyPriority)
   {
@@ -316,11 +168,7 @@ class FirewallInfo extends \Google\Collection
     return $this->policyPriority;
   }
   /**
-   * The URI of the firewall policy that this rule is associated with. This
-   * field is not applicable to VPC firewall rules and implied VPC firewall
-   * rules.
-   *
-   * @param string $policyUri
+   * @param string
    */
   public function setPolicyUri($policyUri)
   {
@@ -334,9 +182,7 @@ class FirewallInfo extends \Google\Collection
     return $this->policyUri;
   }
   /**
-   * The priority of the firewall rule.
-   *
-   * @param int $priority
+   * @param int
    */
   public function setPriority($priority)
   {
@@ -350,9 +196,7 @@ class FirewallInfo extends \Google\Collection
     return $this->priority;
   }
   /**
-   * The target service accounts specified by the firewall rule.
-   *
-   * @param string[] $targetServiceAccounts
+   * @param string[]
    */
   public function setTargetServiceAccounts($targetServiceAccounts)
   {
@@ -366,10 +210,7 @@ class FirewallInfo extends \Google\Collection
     return $this->targetServiceAccounts;
   }
   /**
-   * The target tags defined by the VPC firewall rule. This field is not
-   * applicable to firewall policy rules.
-   *
-   * @param string[] $targetTags
+   * @param string[]
    */
   public function setTargetTags($targetTags)
   {
@@ -383,28 +224,7 @@ class FirewallInfo extends \Google\Collection
     return $this->targetTags;
   }
   /**
-   * Target type of the firewall rule.
-   *
-   * Accepted values: TARGET_TYPE_UNSPECIFIED, INSTANCES, INTERNAL_MANAGED_LB
-   *
-   * @param self::TARGET_TYPE_* $targetType
-   */
-  public function setTargetType($targetType)
-  {
-    $this->targetType = $targetType;
-  }
-  /**
-   * @return self::TARGET_TYPE_*
-   */
-  public function getTargetType()
-  {
-    return $this->targetType;
-  }
-  /**
-   * The URI of the firewall rule. This field is not applicable to implied VPC
-   * firewall rules.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

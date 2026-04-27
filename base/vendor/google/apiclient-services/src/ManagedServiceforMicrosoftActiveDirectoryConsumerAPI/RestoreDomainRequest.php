@@ -20,16 +20,12 @@ namespace Google\Service\ManagedServiceforMicrosoftActiveDirectoryConsumerAPI;
 class RestoreDomainRequest extends \Google\Model
 {
   /**
-   * Required. ID of the backup to be restored
-   *
    * @var string
    */
   public $backupId;
 
   /**
-   * Required. ID of the backup to be restored
-   *
-   * @param string $backupId
+   * @param string
    */
   public function setBackupId($backupId)
   {

@@ -20,28 +20,12 @@ namespace Google\Service\ArtifactRegistry;
 class CleanupPolicy extends \Google\Model
 {
   /**
-   * Action not specified.
-   */
-  public const ACTION_ACTION_UNSPECIFIED = 'ACTION_UNSPECIFIED';
-  /**
-   * Delete action.
-   */
-  public const ACTION_DELETE = 'DELETE';
-  /**
-   * Keep action.
-   */
-  public const ACTION_KEEP = 'KEEP';
-  /**
-   * Policy action.
-   *
    * @var string
    */
   public $action;
   protected $conditionType = CleanupPolicyCondition::class;
   protected $conditionDataType = '';
   /**
-   * The user-provided ID of the cleanup policy.
-   *
    * @var string
    */
   public $id;
@@ -49,27 +33,21 @@ class CleanupPolicy extends \Google\Model
   protected $mostRecentVersionsDataType = '';
 
   /**
-   * Policy action.
-   *
-   * Accepted values: ACTION_UNSPECIFIED, DELETE, KEEP
-   *
-   * @param self::ACTION_* $action
+   * @param string
    */
   public function setAction($action)
   {
     $this->action = $action;
   }
   /**
-   * @return self::ACTION_*
+   * @return string
    */
   public function getAction()
   {
     return $this->action;
   }
   /**
-   * Policy condition for matching versions.
-   *
-   * @param CleanupPolicyCondition $condition
+   * @param CleanupPolicyCondition
    */
   public function setCondition(CleanupPolicyCondition $condition)
   {
@@ -83,9 +61,7 @@ class CleanupPolicy extends \Google\Model
     return $this->condition;
   }
   /**
-   * The user-provided ID of the cleanup policy.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -99,10 +75,7 @@ class CleanupPolicy extends \Google\Model
     return $this->id;
   }
   /**
-   * Policy condition for retaining a minimum number of versions. May only be
-   * specified with a Keep action.
-   *
-   * @param CleanupPolicyMostRecentVersions $mostRecentVersions
+   * @param CleanupPolicyMostRecentVersions
    */
   public function setMostRecentVersions(CleanupPolicyMostRecentVersions $mostRecentVersions)
   {

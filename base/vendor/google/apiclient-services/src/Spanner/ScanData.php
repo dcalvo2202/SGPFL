@@ -22,25 +22,16 @@ class ScanData extends \Google\Model
   protected $dataType = VisualizationData::class;
   protected $dataDataType = '';
   /**
-   * The upper bound for when the contained data is defined.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * A range of time (inclusive) for when the contained data is defined. The
-   * lower bound for when the contained data is defined.
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * Cloud Key Visualizer scan data. The range of time this information covers
-   * is captured via the above time range fields. Note, this field is not
-   * available to the ListScans method.
-   *
-   * @param VisualizationData $data
+   * @param VisualizationData
    */
   public function setData(VisualizationData $data)
   {
@@ -54,9 +45,7 @@ class ScanData extends \Google\Model
     return $this->data;
   }
   /**
-   * The upper bound for when the contained data is defined.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -70,10 +59,7 @@ class ScanData extends \Google\Model
     return $this->endTime;
   }
   /**
-   * A range of time (inclusive) for when the contained data is defined. The
-   * lower bound for when the contained data is defined.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\BackupforGKE;
 class GetBackupIndexDownloadUrlResponse extends \Google\Model
 {
   /**
-   * Required. The signed URL for downloading the backup index.
-   *
    * @var string
    */
   public $signedUrl;
 
   /**
-   * Required. The signed URL for downloading the backup index.
-   *
-   * @param string $signedUrl
+   * @param string
    */
   public function setSignedUrl($signedUrl)
   {

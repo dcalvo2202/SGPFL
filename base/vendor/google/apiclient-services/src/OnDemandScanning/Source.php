@@ -23,9 +23,6 @@ class Source extends \Google\Collection
   protected $additionalContextsType = SourceContext::class;
   protected $additionalContextsDataType = 'array';
   /**
-   * If provided, the input binary artifacts for the build came from this
-   * location.
-   *
    * @var string
    */
   public $artifactStorageSourceUri;
@@ -35,12 +32,7 @@ class Source extends \Google\Collection
   protected $fileHashesDataType = 'map';
 
   /**
-   * If provided, some of the source code used for the build may be found in
-   * these locations, in the case where the source repository had multiple
-   * remotes or submodules. This list will not include the context specified in
-   * the context field.
-   *
-   * @param SourceContext[] $additionalContexts
+   * @param SourceContext[]
    */
   public function setAdditionalContexts($additionalContexts)
   {
@@ -54,10 +46,7 @@ class Source extends \Google\Collection
     return $this->additionalContexts;
   }
   /**
-   * If provided, the input binary artifacts for the build came from this
-   * location.
-   *
-   * @param string $artifactStorageSourceUri
+   * @param string
    */
   public function setArtifactStorageSourceUri($artifactStorageSourceUri)
   {
@@ -71,9 +60,7 @@ class Source extends \Google\Collection
     return $this->artifactStorageSourceUri;
   }
   /**
-   * If provided, the source code used for the build came from this location.
-   *
-   * @param SourceContext $context
+   * @param SourceContext
    */
   public function setContext(SourceContext $context)
   {
@@ -87,13 +74,7 @@ class Source extends \Google\Collection
     return $this->context;
   }
   /**
-   * Hash(es) of the build source, which can be used to verify that the original
-   * source integrity was maintained in the build. The keys to this map are file
-   * paths used as build source and the values contain the hash values for those
-   * files. If the build source came in a single package such as a gzipped
-   * tarfile (.tar.gz), the FileHash will be for the single path to that file.
-   *
-   * @param FileHashes[] $fileHashes
+   * @param FileHashes[]
    */
   public function setFileHashes($fileHashes)
   {

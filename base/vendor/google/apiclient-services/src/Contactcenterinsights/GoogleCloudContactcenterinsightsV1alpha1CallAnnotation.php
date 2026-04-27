@@ -24,9 +24,6 @@ class GoogleCloudContactcenterinsightsV1alpha1CallAnnotation extends \Google\Mod
   protected $annotationStartBoundaryType = GoogleCloudContactcenterinsightsV1alpha1AnnotationBoundary::class;
   protected $annotationStartBoundaryDataType = '';
   /**
-   * The channel of the audio where the annotation occurs. For single-channel
-   * audio, this field is not populated.
-   *
    * @var int
    */
   public $channelTag;
@@ -48,9 +45,7 @@ class GoogleCloudContactcenterinsightsV1alpha1CallAnnotation extends \Google\Mod
   protected $silenceDataDataType = '';
 
   /**
-   * The boundary in the conversation where the annotation ends, inclusive.
-   *
-   * @param GoogleCloudContactcenterinsightsV1alpha1AnnotationBoundary $annotationEndBoundary
+   * @param GoogleCloudContactcenterinsightsV1alpha1AnnotationBoundary
    */
   public function setAnnotationEndBoundary(GoogleCloudContactcenterinsightsV1alpha1AnnotationBoundary $annotationEndBoundary)
   {
@@ -64,9 +59,7 @@ class GoogleCloudContactcenterinsightsV1alpha1CallAnnotation extends \Google\Mod
     return $this->annotationEndBoundary;
   }
   /**
-   * The boundary in the conversation where the annotation starts, inclusive.
-   *
-   * @param GoogleCloudContactcenterinsightsV1alpha1AnnotationBoundary $annotationStartBoundary
+   * @param GoogleCloudContactcenterinsightsV1alpha1AnnotationBoundary
    */
   public function setAnnotationStartBoundary(GoogleCloudContactcenterinsightsV1alpha1AnnotationBoundary $annotationStartBoundary)
   {
@@ -80,10 +73,7 @@ class GoogleCloudContactcenterinsightsV1alpha1CallAnnotation extends \Google\Mod
     return $this->annotationStartBoundary;
   }
   /**
-   * The channel of the audio where the annotation occurs. For single-channel
-   * audio, this field is not populated.
-   *
-   * @param int $channelTag
+   * @param int
    */
   public function setChannelTag($channelTag)
   {
@@ -97,9 +87,7 @@ class GoogleCloudContactcenterinsightsV1alpha1CallAnnotation extends \Google\Mod
     return $this->channelTag;
   }
   /**
-   * Data specifying an entity mention.
-   *
-   * @param GoogleCloudContactcenterinsightsV1alpha1EntityMentionData $entityMentionData
+   * @param GoogleCloudContactcenterinsightsV1alpha1EntityMentionData
    */
   public function setEntityMentionData(GoogleCloudContactcenterinsightsV1alpha1EntityMentionData $entityMentionData)
   {
@@ -113,9 +101,7 @@ class GoogleCloudContactcenterinsightsV1alpha1CallAnnotation extends \Google\Mod
     return $this->entityMentionData;
   }
   /**
-   * Data specifying a hold.
-   *
-   * @param GoogleCloudContactcenterinsightsV1alpha1HoldData $holdData
+   * @param GoogleCloudContactcenterinsightsV1alpha1HoldData
    */
   public function setHoldData(GoogleCloudContactcenterinsightsV1alpha1HoldData $holdData)
   {
@@ -129,9 +115,7 @@ class GoogleCloudContactcenterinsightsV1alpha1CallAnnotation extends \Google\Mod
     return $this->holdData;
   }
   /**
-   * Data specifying an intent match.
-   *
-   * @param GoogleCloudContactcenterinsightsV1alpha1IntentMatchData $intentMatchData
+   * @param GoogleCloudContactcenterinsightsV1alpha1IntentMatchData
    */
   public function setIntentMatchData(GoogleCloudContactcenterinsightsV1alpha1IntentMatchData $intentMatchData)
   {
@@ -145,9 +129,7 @@ class GoogleCloudContactcenterinsightsV1alpha1CallAnnotation extends \Google\Mod
     return $this->intentMatchData;
   }
   /**
-   * Data specifying an interruption.
-   *
-   * @param GoogleCloudContactcenterinsightsV1alpha1InterruptionData $interruptionData
+   * @param GoogleCloudContactcenterinsightsV1alpha1InterruptionData
    */
   public function setInterruptionData(GoogleCloudContactcenterinsightsV1alpha1InterruptionData $interruptionData)
   {
@@ -161,9 +143,7 @@ class GoogleCloudContactcenterinsightsV1alpha1CallAnnotation extends \Google\Mod
     return $this->interruptionData;
   }
   /**
-   * Data specifying an issue match.
-   *
-   * @param GoogleCloudContactcenterinsightsV1alpha1IssueMatchData $issueMatchData
+   * @param GoogleCloudContactcenterinsightsV1alpha1IssueMatchData
    */
   public function setIssueMatchData(GoogleCloudContactcenterinsightsV1alpha1IssueMatchData $issueMatchData)
   {
@@ -177,9 +157,7 @@ class GoogleCloudContactcenterinsightsV1alpha1CallAnnotation extends \Google\Mod
     return $this->issueMatchData;
   }
   /**
-   * Data specifying a phrase match.
-   *
-   * @param GoogleCloudContactcenterinsightsV1alpha1PhraseMatchData $phraseMatchData
+   * @param GoogleCloudContactcenterinsightsV1alpha1PhraseMatchData
    */
   public function setPhraseMatchData(GoogleCloudContactcenterinsightsV1alpha1PhraseMatchData $phraseMatchData)
   {
@@ -193,9 +171,7 @@ class GoogleCloudContactcenterinsightsV1alpha1CallAnnotation extends \Google\Mod
     return $this->phraseMatchData;
   }
   /**
-   * Data specifying sentiment.
-   *
-   * @param GoogleCloudContactcenterinsightsV1alpha1SentimentData $sentimentData
+   * @param GoogleCloudContactcenterinsightsV1alpha1SentimentData
    */
   public function setSentimentData(GoogleCloudContactcenterinsightsV1alpha1SentimentData $sentimentData)
   {
@@ -209,9 +185,7 @@ class GoogleCloudContactcenterinsightsV1alpha1CallAnnotation extends \Google\Mod
     return $this->sentimentData;
   }
   /**
-   * Data specifying silence.
-   *
-   * @param GoogleCloudContactcenterinsightsV1alpha1SilenceData $silenceData
+   * @param GoogleCloudContactcenterinsightsV1alpha1SilenceData
    */
   public function setSilenceData(GoogleCloudContactcenterinsightsV1alpha1SilenceData $silenceData)
   {

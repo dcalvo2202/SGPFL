@@ -29,7 +29,7 @@ class GoogleCloudDialogflowCxV3CompareVersionsRequest extends \Google\Model
   public $targetVersion;
 
   /**
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {
@@ -43,7 +43,7 @@ class GoogleCloudDialogflowCxV3CompareVersionsRequest extends \Google\Model
     return $this->languageCode;
   }
   /**
-   * @param string $targetVersion
+   * @param string
    */
   public function setTargetVersion($targetVersion)
   {

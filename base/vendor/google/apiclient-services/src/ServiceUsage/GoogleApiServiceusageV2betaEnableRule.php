@@ -21,18 +21,12 @@ class GoogleApiServiceusageV2betaEnableRule extends \Google\Collection
 {
   protected $collection_key = 'services';
   /**
-   * The names of the services that are enabled. Example:
-   * `services/storage.googleapis.com`.
-   *
    * @var string[]
    */
   public $services;
 
   /**
-   * The names of the services that are enabled. Example:
-   * `services/storage.googleapis.com`.
-   *
-   * @param string[] $services
+   * @param string[]
    */
   public function setServices($services)
   {

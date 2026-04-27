@@ -23,10 +23,6 @@ class X509Parameters extends \Google\Collection
   protected $additionalExtensionsType = X509Extension::class;
   protected $additionalExtensionsDataType = 'array';
   /**
-   * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint
-   * addresses that appear in the "Authority Information Access" extension in
-   * the certificate.
-   *
    * @var string[]
    */
   public $aiaOcspServers;
@@ -40,9 +36,7 @@ class X509Parameters extends \Google\Collection
   protected $policyIdsDataType = 'array';
 
   /**
-   * Optional. Describes custom X.509 extensions.
-   *
-   * @param X509Extension[] $additionalExtensions
+   * @param X509Extension[]
    */
   public function setAdditionalExtensions($additionalExtensions)
   {
@@ -56,11 +50,7 @@ class X509Parameters extends \Google\Collection
     return $this->additionalExtensions;
   }
   /**
-   * Optional. Describes Online Certificate Status Protocol (OCSP) endpoint
-   * addresses that appear in the "Authority Information Access" extension in
-   * the certificate.
-   *
-   * @param string[] $aiaOcspServers
+   * @param string[]
    */
   public function setAiaOcspServers($aiaOcspServers)
   {
@@ -74,11 +64,7 @@ class X509Parameters extends \Google\Collection
     return $this->aiaOcspServers;
   }
   /**
-   * Optional. Describes options in this X509Parameters that are relevant in a
-   * CA certificate. If not specified, a default basic constraints extension
-   * with `is_ca=false` will be added for leaf certificates.
-   *
-   * @param CaOptions $caOptions
+   * @param CaOptions
    */
   public function setCaOptions(CaOptions $caOptions)
   {
@@ -92,10 +78,7 @@ class X509Parameters extends \Google\Collection
     return $this->caOptions;
   }
   /**
-   * Optional. Indicates the intended use for keys that correspond to a
-   * certificate.
-   *
-   * @param KeyUsage $keyUsage
+   * @param KeyUsage
    */
   public function setKeyUsage(KeyUsage $keyUsage)
   {
@@ -109,9 +92,7 @@ class X509Parameters extends \Google\Collection
     return $this->keyUsage;
   }
   /**
-   * Optional. Describes the X.509 name constraints extension.
-   *
-   * @param NameConstraints $nameConstraints
+   * @param NameConstraints
    */
   public function setNameConstraints(NameConstraints $nameConstraints)
   {
@@ -125,10 +106,7 @@ class X509Parameters extends \Google\Collection
     return $this->nameConstraints;
   }
   /**
-   * Optional. Describes the X.509 certificate policy object identifiers, per
-   * https://tools.ietf.org/html/rfc5280#section-4.2.1.4.
-   *
-   * @param ObjectId[] $policyIds
+   * @param ObjectId[]
    */
   public function setPolicyIds($policyIds)
   {

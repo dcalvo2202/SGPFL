@@ -22,18 +22,12 @@ class ExportInstanceRequest extends \Google\Model
   protected $encryptionConfigType = ExportEncryptionConfig::class;
   protected $encryptionConfigDataType = '';
   /**
-   * The path to the folder in Google Cloud Storage where the export will be
-   * stored. The URI is in the form `gs://bucketName/folderName`.
-   *
    * @var string
    */
   public $gcsUri;
 
   /**
-   * Required. Encryption configuration (CMEK). For CMEK enabled instances it
-   * should be same as looker CMEK.
-   *
-   * @param ExportEncryptionConfig $encryptionConfig
+   * @param ExportEncryptionConfig
    */
   public function setEncryptionConfig(ExportEncryptionConfig $encryptionConfig)
   {
@@ -47,10 +41,7 @@ class ExportInstanceRequest extends \Google\Model
     return $this->encryptionConfig;
   }
   /**
-   * The path to the folder in Google Cloud Storage where the export will be
-   * stored. The URI is in the form `gs://bucketName/folderName`.
-   *
-   * @param string $gcsUri
+   * @param string
    */
   public function setGcsUri($gcsUri)
   {

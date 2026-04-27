@@ -19,53 +19,25 @@ namespace Google\Service\Integrations;
 
 class GoogleCloudIntegrationsV1alphaOAuth2ClientCredentials extends \Google\Model
 {
-  /**
-   * Unspecified request type
-   */
-  public const REQUEST_TYPE_REQUEST_TYPE_UNSPECIFIED = 'REQUEST_TYPE_UNSPECIFIED';
-  /**
-   * To pass all the parameters in post body.
-   */
-  public const REQUEST_TYPE_REQUEST_BODY = 'REQUEST_BODY';
-  /**
-   * To pass all the parameters as a part of query parameter.
-   */
-  public const REQUEST_TYPE_QUERY_PARAMETERS = 'QUERY_PARAMETERS';
-  /**
-   * To pass client id and client secret as base 64 encoding of
-   * client_id:client_password and rest parameters in post body.
-   */
-  public const REQUEST_TYPE_ENCODED_HEADER = 'ENCODED_HEADER';
   protected $accessTokenType = GoogleCloudIntegrationsV1alphaAccessToken::class;
   protected $accessTokenDataType = '';
   /**
-   * The client's ID.
-   *
    * @var string
    */
   public $clientId;
   /**
-   * The client's secret.
-   *
    * @var string
    */
   public $clientSecret;
   /**
-   * Represent how to pass parameters to fetch access token
-   *
    * @var string
    */
   public $requestType;
   /**
-   * A space-delimited list of requested scope permissions.
-   *
    * @var string
    */
   public $scope;
   /**
-   * The token endpoint is used by the client to obtain an access token by
-   * presenting its authorization grant or refresh token.
-   *
    * @var string
    */
   public $tokenEndpoint;
@@ -73,9 +45,7 @@ class GoogleCloudIntegrationsV1alphaOAuth2ClientCredentials extends \Google\Mode
   protected $tokenParamsDataType = '';
 
   /**
-   * Access token fetched from the authorization server.
-   *
-   * @param GoogleCloudIntegrationsV1alphaAccessToken $accessToken
+   * @param GoogleCloudIntegrationsV1alphaAccessToken
    */
   public function setAccessToken(GoogleCloudIntegrationsV1alphaAccessToken $accessToken)
   {
@@ -89,9 +59,7 @@ class GoogleCloudIntegrationsV1alphaOAuth2ClientCredentials extends \Google\Mode
     return $this->accessToken;
   }
   /**
-   * The client's ID.
-   *
-   * @param string $clientId
+   * @param string
    */
   public function setClientId($clientId)
   {
@@ -105,9 +73,7 @@ class GoogleCloudIntegrationsV1alphaOAuth2ClientCredentials extends \Google\Mode
     return $this->clientId;
   }
   /**
-   * The client's secret.
-   *
-   * @param string $clientSecret
+   * @param string
    */
   public function setClientSecret($clientSecret)
   {
@@ -121,28 +87,21 @@ class GoogleCloudIntegrationsV1alphaOAuth2ClientCredentials extends \Google\Mode
     return $this->clientSecret;
   }
   /**
-   * Represent how to pass parameters to fetch access token
-   *
-   * Accepted values: REQUEST_TYPE_UNSPECIFIED, REQUEST_BODY, QUERY_PARAMETERS,
-   * ENCODED_HEADER
-   *
-   * @param self::REQUEST_TYPE_* $requestType
+   * @param string
    */
   public function setRequestType($requestType)
   {
     $this->requestType = $requestType;
   }
   /**
-   * @return self::REQUEST_TYPE_*
+   * @return string
    */
   public function getRequestType()
   {
     return $this->requestType;
   }
   /**
-   * A space-delimited list of requested scope permissions.
-   *
-   * @param string $scope
+   * @param string
    */
   public function setScope($scope)
   {
@@ -156,10 +115,7 @@ class GoogleCloudIntegrationsV1alphaOAuth2ClientCredentials extends \Google\Mode
     return $this->scope;
   }
   /**
-   * The token endpoint is used by the client to obtain an access token by
-   * presenting its authorization grant or refresh token.
-   *
-   * @param string $tokenEndpoint
+   * @param string
    */
   public function setTokenEndpoint($tokenEndpoint)
   {
@@ -173,9 +129,7 @@ class GoogleCloudIntegrationsV1alphaOAuth2ClientCredentials extends \Google\Mode
     return $this->tokenEndpoint;
   }
   /**
-   * Token parameters for the auth request.
-   *
-   * @param GoogleCloudIntegrationsV1alphaParameterMap $tokenParams
+   * @param GoogleCloudIntegrationsV1alphaParameterMap
    */
   public function setTokenParams(GoogleCloudIntegrationsV1alphaParameterMap $tokenParams)
   {

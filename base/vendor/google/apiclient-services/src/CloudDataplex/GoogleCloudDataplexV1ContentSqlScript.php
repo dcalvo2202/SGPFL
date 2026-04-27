@@ -20,33 +20,19 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1ContentSqlScript extends \Google\Model
 {
   /**
-   * Value was unspecified.
-   */
-  public const ENGINE_QUERY_ENGINE_UNSPECIFIED = 'QUERY_ENGINE_UNSPECIFIED';
-  /**
-   * Spark SQL Query.
-   */
-  public const ENGINE_SPARK = 'SPARK';
-  /**
-   * Required. Query Engine to be used for the Sql Query.
-   *
    * @var string
    */
   public $engine;
 
   /**
-   * Required. Query Engine to be used for the Sql Query.
-   *
-   * Accepted values: QUERY_ENGINE_UNSPECIFIED, SPARK
-   *
-   * @param self::ENGINE_* $engine
+   * @param string
    */
   public function setEngine($engine)
   {
     $this->engine = $engine;
   }
   /**
-   * @return self::ENGINE_*
+   * @return string
    */
   public function getEngine()
   {

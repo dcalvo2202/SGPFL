@@ -20,48 +20,30 @@ namespace Google\Service\FirebaseML;
 class ModelOperationMetadata extends \Google\Model
 {
   /**
-   * The status is unspecified
-   */
-  public const BASIC_OPERATION_STATUS_BASIC_OPERATION_STATUS_UNSPECIFIED = 'BASIC_OPERATION_STATUS_UNSPECIFIED';
-  /**
-   * The model file is being uploaded
-   */
-  public const BASIC_OPERATION_STATUS_BASIC_OPERATION_STATUS_UPLOADING = 'BASIC_OPERATION_STATUS_UPLOADING';
-  /**
-   * The model file is being verified
-   */
-  public const BASIC_OPERATION_STATUS_BASIC_OPERATION_STATUS_VERIFYING = 'BASIC_OPERATION_STATUS_VERIFYING';
-  /**
    * @var string
    */
   public $basicOperationStatus;
   /**
-   * The name of the model we are creating/updating The name must have the form
-   * `projects/{project_id}/models/{model_id}`
-   *
    * @var string
    */
   public $name;
 
   /**
-   * @param self::BASIC_OPERATION_STATUS_* $basicOperationStatus
+   * @param string
    */
   public function setBasicOperationStatus($basicOperationStatus)
   {
     $this->basicOperationStatus = $basicOperationStatus;
   }
   /**
-   * @return self::BASIC_OPERATION_STATUS_*
+   * @return string
    */
   public function getBasicOperationStatus()
   {
     return $this->basicOperationStatus;
   }
   /**
-   * The name of the model we are creating/updating The name must have the form
-   * `projects/{project_id}/models/{model_id}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

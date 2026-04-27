@@ -21,8 +21,6 @@ class HistoryLabelAdded extends \Google\Collection
 {
   protected $collection_key = 'labelIds';
   /**
-   * Label IDs added to the message.
-   *
    * @var string[]
    */
   public $labelIds;
@@ -30,9 +28,7 @@ class HistoryLabelAdded extends \Google\Collection
   protected $messageDataType = '';
 
   /**
-   * Label IDs added to the message.
-   *
-   * @param string[] $labelIds
+   * @param string[]
    */
   public function setLabelIds($labelIds)
   {
@@ -46,7 +42,7 @@ class HistoryLabelAdded extends \Google\Collection
     return $this->labelIds;
   }
   /**
-   * @param Message $message
+   * @param Message
    */
   public function setMessage(Message $message)
   {

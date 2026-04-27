@@ -21,8 +21,6 @@ class Sdk extends \Google\Collection
 {
   protected $collection_key = 'stacks';
   /**
-   * The SDK harness id.
-   *
    * @var string
    */
   public $sdkId;
@@ -30,9 +28,7 @@ class Sdk extends \Google\Collection
   protected $stacksDataType = 'array';
 
   /**
-   * The SDK harness id.
-   *
-   * @param string $sdkId
+   * @param string
    */
   public function setSdkId($sdkId)
   {
@@ -46,9 +42,7 @@ class Sdk extends \Google\Collection
     return $this->sdkId;
   }
   /**
-   * The stacktraces for the processes running on the SDK harness.
-   *
-   * @param Stack[] $stacks
+   * @param Stack[]
    */
   public function setStacks($stacks)
   {

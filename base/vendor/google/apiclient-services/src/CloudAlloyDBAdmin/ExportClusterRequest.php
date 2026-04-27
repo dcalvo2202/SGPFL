@@ -22,10 +22,6 @@ class ExportClusterRequest extends \Google\Model
   protected $csvExportOptionsType = CsvExportOptions::class;
   protected $csvExportOptionsDataType = '';
   /**
-   * Required. Name of the database where the export command will be executed.
-   * Note - Value provided should be the same as expected from `SELECT
-   * current_database();` and NOT as a resource reference.
-   *
    * @var string
    */
   public $database;
@@ -35,10 +31,7 @@ class ExportClusterRequest extends \Google\Model
   protected $sqlExportOptionsDataType = '';
 
   /**
-   * Options for exporting data in CSV format. Required field to be set for CSV
-   * file type.
-   *
-   * @param CsvExportOptions $csvExportOptions
+   * @param CsvExportOptions
    */
   public function setCsvExportOptions(CsvExportOptions $csvExportOptions)
   {
@@ -52,11 +45,7 @@ class ExportClusterRequest extends \Google\Model
     return $this->csvExportOptions;
   }
   /**
-   * Required. Name of the database where the export command will be executed.
-   * Note - Value provided should be the same as expected from `SELECT
-   * current_database();` and NOT as a resource reference.
-   *
-   * @param string $database
+   * @param string
    */
   public function setDatabase($database)
   {
@@ -70,9 +59,7 @@ class ExportClusterRequest extends \Google\Model
     return $this->database;
   }
   /**
-   * Required. Option to export data to cloud storage.
-   *
-   * @param GcsDestination $gcsDestination
+   * @param GcsDestination
    */
   public function setGcsDestination(GcsDestination $gcsDestination)
   {
@@ -86,10 +73,7 @@ class ExportClusterRequest extends \Google\Model
     return $this->gcsDestination;
   }
   /**
-   * Options for exporting data in SQL format. Required field to be set for SQL
-   * file type.
-   *
-   * @param SqlExportOptions $sqlExportOptions
+   * @param SqlExportOptions
    */
   public function setSqlExportOptions(SqlExportOptions $sqlExportOptions)
   {

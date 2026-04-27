@@ -20,10 +20,6 @@ namespace Google\Service\Fitness;
 class BucketByTime extends \Google\Model
 {
   /**
-   * Specifies that result buckets aggregate data by exactly durationMillis time
-   * frames. Time frames that contain no data will be included in the response
-   * with an empty dataset.
-   *
    * @var string
    */
   public $durationMillis;
@@ -31,11 +27,7 @@ class BucketByTime extends \Google\Model
   protected $periodDataType = '';
 
   /**
-   * Specifies that result buckets aggregate data by exactly durationMillis time
-   * frames. Time frames that contain no data will be included in the response
-   * with an empty dataset.
-   *
-   * @param string $durationMillis
+   * @param string
    */
   public function setDurationMillis($durationMillis)
   {
@@ -49,7 +41,7 @@ class BucketByTime extends \Google\Model
     return $this->durationMillis;
   }
   /**
-   * @param BucketByTimePeriod $period
+   * @param BucketByTimePeriod
    */
   public function setPeriod(BucketByTimePeriod $period)
   {

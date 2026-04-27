@@ -23,16 +23,12 @@ class ListContainersResponse extends \Google\Collection
   protected $containerType = Container::class;
   protected $containerDataType = 'array';
   /**
-   * Continuation token for fetching the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * All Containers of a GTM Account.
-   *
-   * @param Container[] $container
+   * @param Container[]
    */
   public function setContainer($container)
   {
@@ -46,9 +42,7 @@ class ListContainersResponse extends \Google\Collection
     return $this->container;
   }
   /**
-   * Continuation token for fetching the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

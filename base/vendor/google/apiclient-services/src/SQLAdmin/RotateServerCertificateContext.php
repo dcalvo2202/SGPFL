@@ -20,23 +20,16 @@ namespace Google\Service\SQLAdmin;
 class RotateServerCertificateContext extends \Google\Model
 {
   /**
-   * Optional. This is always `sql#rotateServerCertificateContext`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The fingerprint of the next version to be rotated to. If left unspecified,
-   * will be rotated to the most recently added server certificate version.
-   *
    * @var string
    */
   public $nextVersion;
 
   /**
-   * Optional. This is always `sql#rotateServerCertificateContext`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -50,10 +43,7 @@ class RotateServerCertificateContext extends \Google\Model
     return $this->kind;
   }
   /**
-   * The fingerprint of the next version to be rotated to. If left unspecified,
-   * will be rotated to the most recently added server certificate version.
-   *
-   * @param string $nextVersion
+   * @param string
    */
   public function setNextVersion($nextVersion)
   {

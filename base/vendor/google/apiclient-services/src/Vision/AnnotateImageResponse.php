@@ -50,10 +50,7 @@ class AnnotateImageResponse extends \Google\Collection
   protected $webDetectionDataType = '';
 
   /**
-   * If present, contextual information is needed to understand where this image
-   * comes from.
-   *
-   * @param ImageAnnotationContext $context
+   * @param ImageAnnotationContext
    */
   public function setContext(ImageAnnotationContext $context)
   {
@@ -67,9 +64,7 @@ class AnnotateImageResponse extends \Google\Collection
     return $this->context;
   }
   /**
-   * If present, crop hints have completed successfully.
-   *
-   * @param CropHintsAnnotation $cropHintsAnnotation
+   * @param CropHintsAnnotation
    */
   public function setCropHintsAnnotation(CropHintsAnnotation $cropHintsAnnotation)
   {
@@ -83,10 +78,7 @@ class AnnotateImageResponse extends \Google\Collection
     return $this->cropHintsAnnotation;
   }
   /**
-   * If set, represents the error message for the operation. Note that filled-in
-   * image annotations are guaranteed to be correct, even when `error` is set.
-   *
-   * @param Status $error
+   * @param Status
    */
   public function setError(Status $error)
   {
@@ -100,9 +92,7 @@ class AnnotateImageResponse extends \Google\Collection
     return $this->error;
   }
   /**
-   * If present, face detection has completed successfully.
-   *
-   * @param FaceAnnotation[] $faceAnnotations
+   * @param FaceAnnotation[]
    */
   public function setFaceAnnotations($faceAnnotations)
   {
@@ -116,11 +106,7 @@ class AnnotateImageResponse extends \Google\Collection
     return $this->faceAnnotations;
   }
   /**
-   * If present, text (OCR) detection or document (OCR) text detection has
-   * completed successfully. This annotation provides the structural hierarchy
-   * for the OCR detected text.
-   *
-   * @param TextAnnotation $fullTextAnnotation
+   * @param TextAnnotation
    */
   public function setFullTextAnnotation(TextAnnotation $fullTextAnnotation)
   {
@@ -134,9 +120,7 @@ class AnnotateImageResponse extends \Google\Collection
     return $this->fullTextAnnotation;
   }
   /**
-   * If present, image properties were extracted successfully.
-   *
-   * @param ImageProperties $imagePropertiesAnnotation
+   * @param ImageProperties
    */
   public function setImagePropertiesAnnotation(ImageProperties $imagePropertiesAnnotation)
   {
@@ -150,9 +134,7 @@ class AnnotateImageResponse extends \Google\Collection
     return $this->imagePropertiesAnnotation;
   }
   /**
-   * If present, label detection has completed successfully.
-   *
-   * @param EntityAnnotation[] $labelAnnotations
+   * @param EntityAnnotation[]
    */
   public function setLabelAnnotations($labelAnnotations)
   {
@@ -166,9 +148,7 @@ class AnnotateImageResponse extends \Google\Collection
     return $this->labelAnnotations;
   }
   /**
-   * If present, landmark detection has completed successfully.
-   *
-   * @param EntityAnnotation[] $landmarkAnnotations
+   * @param EntityAnnotation[]
    */
   public function setLandmarkAnnotations($landmarkAnnotations)
   {
@@ -182,10 +162,7 @@ class AnnotateImageResponse extends \Google\Collection
     return $this->landmarkAnnotations;
   }
   /**
-   * If present, localized object detection has completed successfully. This
-   * will be sorted descending by confidence score.
-   *
-   * @param LocalizedObjectAnnotation[] $localizedObjectAnnotations
+   * @param LocalizedObjectAnnotation[]
    */
   public function setLocalizedObjectAnnotations($localizedObjectAnnotations)
   {
@@ -199,9 +176,7 @@ class AnnotateImageResponse extends \Google\Collection
     return $this->localizedObjectAnnotations;
   }
   /**
-   * If present, logo detection has completed successfully.
-   *
-   * @param EntityAnnotation[] $logoAnnotations
+   * @param EntityAnnotation[]
    */
   public function setLogoAnnotations($logoAnnotations)
   {
@@ -215,9 +190,7 @@ class AnnotateImageResponse extends \Google\Collection
     return $this->logoAnnotations;
   }
   /**
-   * If present, product search has completed successfully.
-   *
-   * @param ProductSearchResults $productSearchResults
+   * @param ProductSearchResults
    */
   public function setProductSearchResults(ProductSearchResults $productSearchResults)
   {
@@ -231,9 +204,7 @@ class AnnotateImageResponse extends \Google\Collection
     return $this->productSearchResults;
   }
   /**
-   * If present, safe-search annotation has completed successfully.
-   *
-   * @param SafeSearchAnnotation $safeSearchAnnotation
+   * @param SafeSearchAnnotation
    */
   public function setSafeSearchAnnotation(SafeSearchAnnotation $safeSearchAnnotation)
   {
@@ -247,9 +218,7 @@ class AnnotateImageResponse extends \Google\Collection
     return $this->safeSearchAnnotation;
   }
   /**
-   * If present, text (OCR) detection has completed successfully.
-   *
-   * @param EntityAnnotation[] $textAnnotations
+   * @param EntityAnnotation[]
    */
   public function setTextAnnotations($textAnnotations)
   {
@@ -263,9 +232,7 @@ class AnnotateImageResponse extends \Google\Collection
     return $this->textAnnotations;
   }
   /**
-   * If present, web detection has completed successfully.
-   *
-   * @param WebDetection $webDetection
+   * @param WebDetection
    */
   public function setWebDetection(WebDetection $webDetection)
   {

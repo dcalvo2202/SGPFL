@@ -20,16 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1RagVectorDbConfigPinecone extends \Google\Model
 {
   /**
-   * Pinecone index name. This value cannot be changed after it's set.
-   *
    * @var string
    */
   public $indexName;
 
   /**
-   * Pinecone index name. This value cannot be changed after it's set.
-   *
-   * @param string $indexName
+   * @param string
    */
   public function setIndexName($indexName)
   {

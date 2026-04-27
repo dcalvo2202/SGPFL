@@ -23,23 +23,16 @@ class GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlockLayoutTabl
   protected $blocksType = GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlock::class;
   protected $blocksDataType = 'array';
   /**
-   * How many columns this cell spans.
-   *
    * @var int
    */
   public $colSpan;
   /**
-   * How many rows this cell spans.
-   *
    * @var int
    */
   public $rowSpan;
 
   /**
-   * A table cell is a list of blocks. Repeated blocks support further
-   * hierarchies and nested blocks.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlock[] $blocks
+   * @param GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlock[]
    */
   public function setBlocks($blocks)
   {
@@ -53,9 +46,7 @@ class GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlockLayoutTabl
     return $this->blocks;
   }
   /**
-   * How many columns this cell spans.
-   *
-   * @param int $colSpan
+   * @param int
    */
   public function setColSpan($colSpan)
   {
@@ -69,9 +60,7 @@ class GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlockLayoutTabl
     return $this->colSpan;
   }
   /**
-   * How many rows this cell spans.
-   *
-   * @param int $rowSpan
+   * @param int
    */
   public function setRowSpan($rowSpan)
   {

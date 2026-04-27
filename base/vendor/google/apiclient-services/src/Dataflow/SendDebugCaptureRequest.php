@@ -20,63 +20,28 @@ namespace Google\Service\Dataflow;
 class SendDebugCaptureRequest extends \Google\Model
 {
   /**
-   * Format unspecified, parsing is determined based upon page type and legacy
-   * encoding. (go/protodosdonts#do-include-an-unspecified-value-in-an-enum)
-   */
-  public const DATA_FORMAT_DATA_FORMAT_UNSPECIFIED = 'DATA_FORMAT_UNSPECIFIED';
-  /**
-   * Raw HTML string.
-   */
-  public const DATA_FORMAT_RAW = 'RAW';
-  /**
-   * JSON-encoded string.
-   */
-  public const DATA_FORMAT_JSON = 'JSON';
-  /**
-   * Websafe encoded zlib-compressed string.
-   */
-  public const DATA_FORMAT_ZLIB = 'ZLIB';
-  /**
-   * Websafe encoded brotli-compressed string.
-   */
-  public const DATA_FORMAT_BROTLI = 'BROTLI';
-  /**
-   * The internal component id for which debug information is sent.
-   *
    * @var string
    */
   public $componentId;
   /**
-   * The encoded debug information.
-   *
    * @var string
    */
   public $data;
   /**
-   * Format for the data field above (id=5).
-   *
    * @var string
    */
   public $dataFormat;
   /**
-   * The [regional endpoint]
-   * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
-   * contains the job specified by job_id.
-   *
    * @var string
    */
   public $location;
   /**
-   * The worker id, i.e., VM hostname.
-   *
    * @var string
    */
   public $workerId;
 
   /**
-   * The internal component id for which debug information is sent.
-   *
-   * @param string $componentId
+   * @param string
    */
   public function setComponentId($componentId)
   {
@@ -90,9 +55,7 @@ class SendDebugCaptureRequest extends \Google\Model
     return $this->componentId;
   }
   /**
-   * The encoded debug information.
-   *
-   * @param string $data
+   * @param string
    */
   public function setData($data)
   {
@@ -106,29 +69,21 @@ class SendDebugCaptureRequest extends \Google\Model
     return $this->data;
   }
   /**
-   * Format for the data field above (id=5).
-   *
-   * Accepted values: DATA_FORMAT_UNSPECIFIED, RAW, JSON, ZLIB, BROTLI
-   *
-   * @param self::DATA_FORMAT_* $dataFormat
+   * @param string
    */
   public function setDataFormat($dataFormat)
   {
     $this->dataFormat = $dataFormat;
   }
   /**
-   * @return self::DATA_FORMAT_*
+   * @return string
    */
   public function getDataFormat()
   {
     return $this->dataFormat;
   }
   /**
-   * The [regional endpoint]
-   * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
-   * contains the job specified by job_id.
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -142,9 +97,7 @@ class SendDebugCaptureRequest extends \Google\Model
     return $this->location;
   }
   /**
-   * The worker id, i.e., VM hostname.
-   *
-   * @param string $workerId
+   * @param string
    */
   public function setWorkerId($workerId)
   {

@@ -23,9 +23,7 @@ class MessageCreatedEventData extends \Google\Model
   protected $messageDataType = '';
 
   /**
-   * The new message.
-   *
-   * @param Message $message
+   * @param Message
    */
   public function setMessage(Message $message)
   {

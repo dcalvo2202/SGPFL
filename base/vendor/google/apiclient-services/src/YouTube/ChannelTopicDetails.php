@@ -21,24 +21,16 @@ class ChannelTopicDetails extends \Google\Collection
 {
   protected $collection_key = 'topicIds';
   /**
-   * A list of Wikipedia URLs that describe the channel's content.
-   *
    * @var string[]
    */
   public $topicCategories;
   /**
-   * A list of Freebase topic IDs associated with the channel. You can retrieve
-   * information about each topic using the Freebase Topic API.
-   *
-   * @deprecated
    * @var string[]
    */
   public $topicIds;
 
   /**
-   * A list of Wikipedia URLs that describe the channel's content.
-   *
-   * @param string[] $topicCategories
+   * @param string[]
    */
   public function setTopicCategories($topicCategories)
   {
@@ -52,18 +44,13 @@ class ChannelTopicDetails extends \Google\Collection
     return $this->topicCategories;
   }
   /**
-   * A list of Freebase topic IDs associated with the channel. You can retrieve
-   * information about each topic using the Freebase Topic API.
-   *
-   * @deprecated
-   * @param string[] $topicIds
+   * @param string[]
    */
   public function setTopicIds($topicIds)
   {
     $this->topicIds = $topicIds;
   }
   /**
-   * @deprecated
    * @return string[]
    */
   public function getTopicIds()

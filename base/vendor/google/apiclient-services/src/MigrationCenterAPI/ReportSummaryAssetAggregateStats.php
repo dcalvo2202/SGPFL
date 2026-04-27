@@ -27,41 +27,29 @@ class ReportSummaryAssetAggregateStats extends \Google\Model
   protected $memoryUtilizationChartDataType = '';
   protected $operatingSystemType = ReportSummaryChartData::class;
   protected $operatingSystemDataType = '';
-  protected $softwareInstancesType = ReportSummaryChartData::class;
-  protected $softwareInstancesDataType = '';
   protected $storageBytesHistogramType = ReportSummaryHistogramChartData::class;
   protected $storageBytesHistogramDataType = '';
   protected $storageUtilizationChartType = ReportSummaryUtilizationChartData::class;
   protected $storageUtilizationChartDataType = '';
   /**
-   * Count of the number of unique assets in this collection.
-   *
    * @var string
    */
   public $totalAssets;
   /**
-   * Sum of the CPU core count of all the assets in this collection.
-   *
    * @var string
    */
   public $totalCores;
   /**
-   * Sum of the memory in bytes of all the assets in this collection.
-   *
    * @var string
    */
   public $totalMemoryBytes;
   /**
-   * Sum of persistent storage in bytes of all the assets in this collection.
-   *
    * @var string
    */
   public $totalStorageBytes;
 
   /**
-   * Histogram showing a distribution of logical CPU core counts.
-   *
-   * @param ReportSummaryHistogramChartData $coreCountHistogram
+   * @param ReportSummaryHistogramChartData
    */
   public function setCoreCountHistogram(ReportSummaryHistogramChartData $coreCountHistogram)
   {
@@ -75,9 +63,7 @@ class ReportSummaryAssetAggregateStats extends \Google\Model
     return $this->coreCountHistogram;
   }
   /**
-   * Histogram showing a distribution of memory sizes.
-   *
-   * @param ReportSummaryHistogramChartData $memoryBytesHistogram
+   * @param ReportSummaryHistogramChartData
    */
   public function setMemoryBytesHistogram(ReportSummaryHistogramChartData $memoryBytesHistogram)
   {
@@ -91,9 +77,7 @@ class ReportSummaryAssetAggregateStats extends \Google\Model
     return $this->memoryBytesHistogram;
   }
   /**
-   * Total memory split into Used/Free buckets.
-   *
-   * @param ReportSummaryUtilizationChartData $memoryUtilizationChart
+   * @param ReportSummaryUtilizationChartData
    */
   public function setMemoryUtilizationChart(ReportSummaryUtilizationChartData $memoryUtilizationChart)
   {
@@ -107,9 +91,7 @@ class ReportSummaryAssetAggregateStats extends \Google\Model
     return $this->memoryUtilizationChart;
   }
   /**
-   * Count of assets grouped by Operating System families.
-   *
-   * @param ReportSummaryChartData $operatingSystem
+   * @param ReportSummaryChartData
    */
   public function setOperatingSystem(ReportSummaryChartData $operatingSystem)
   {
@@ -123,26 +105,7 @@ class ReportSummaryAssetAggregateStats extends \Google\Model
     return $this->operatingSystem;
   }
   /**
-   * Output only. Count of assets grouped by software name. Only present for
-   * virtual machines.
-   *
-   * @param ReportSummaryChartData $softwareInstances
-   */
-  public function setSoftwareInstances(ReportSummaryChartData $softwareInstances)
-  {
-    $this->softwareInstances = $softwareInstances;
-  }
-  /**
-   * @return ReportSummaryChartData
-   */
-  public function getSoftwareInstances()
-  {
-    return $this->softwareInstances;
-  }
-  /**
-   * Histogram showing a distribution of storage sizes.
-   *
-   * @param ReportSummaryHistogramChartData $storageBytesHistogram
+   * @param ReportSummaryHistogramChartData
    */
   public function setStorageBytesHistogram(ReportSummaryHistogramChartData $storageBytesHistogram)
   {
@@ -156,9 +119,7 @@ class ReportSummaryAssetAggregateStats extends \Google\Model
     return $this->storageBytesHistogram;
   }
   /**
-   * Total memory split into Used/Free buckets.
-   *
-   * @param ReportSummaryUtilizationChartData $storageUtilizationChart
+   * @param ReportSummaryUtilizationChartData
    */
   public function setStorageUtilizationChart(ReportSummaryUtilizationChartData $storageUtilizationChart)
   {
@@ -172,9 +133,7 @@ class ReportSummaryAssetAggregateStats extends \Google\Model
     return $this->storageUtilizationChart;
   }
   /**
-   * Count of the number of unique assets in this collection.
-   *
-   * @param string $totalAssets
+   * @param string
    */
   public function setTotalAssets($totalAssets)
   {
@@ -188,9 +147,7 @@ class ReportSummaryAssetAggregateStats extends \Google\Model
     return $this->totalAssets;
   }
   /**
-   * Sum of the CPU core count of all the assets in this collection.
-   *
-   * @param string $totalCores
+   * @param string
    */
   public function setTotalCores($totalCores)
   {
@@ -204,9 +161,7 @@ class ReportSummaryAssetAggregateStats extends \Google\Model
     return $this->totalCores;
   }
   /**
-   * Sum of the memory in bytes of all the assets in this collection.
-   *
-   * @param string $totalMemoryBytes
+   * @param string
    */
   public function setTotalMemoryBytes($totalMemoryBytes)
   {
@@ -220,9 +175,7 @@ class ReportSummaryAssetAggregateStats extends \Google\Model
     return $this->totalMemoryBytes;
   }
   /**
-   * Sum of persistent storage in bytes of all the assets in this collection.
-   *
-   * @param string $totalStorageBytes
+   * @param string
    */
   public function setTotalStorageBytes($totalStorageBytes)
   {

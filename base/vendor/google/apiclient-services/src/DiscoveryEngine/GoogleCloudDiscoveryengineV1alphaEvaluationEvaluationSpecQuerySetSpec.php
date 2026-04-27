@@ -20,20 +20,12 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1alphaEvaluationEvaluationSpecQuerySetSpec extends \Google\Model
 {
   /**
-   * Optional. The full resource name of the SampleQuerySet used for the
-   * evaluation, in the format of
-   * `projects/{project}/locations/{location}/sampleQuerySets/{sampleQuerySet}`.
-   *
    * @var string
    */
   public $sampleQuerySet;
 
   /**
-   * Optional. The full resource name of the SampleQuerySet used for the
-   * evaluation, in the format of
-   * `projects/{project}/locations/{location}/sampleQuerySets/{sampleQuerySet}`.
-   *
-   * @param string $sampleQuerySet
+   * @param string
    */
   public function setSampleQuerySet($sampleQuerySet)
   {

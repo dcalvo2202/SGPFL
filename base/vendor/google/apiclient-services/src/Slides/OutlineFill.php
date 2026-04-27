@@ -23,9 +23,7 @@ class OutlineFill extends \Google\Model
   protected $solidFillDataType = '';
 
   /**
-   * Solid color fill.
-   *
-   * @param SolidFill $solidFill
+   * @param SolidFill
    */
   public function setSolidFill(SolidFill $solidFill)
   {

@@ -40,7 +40,7 @@ class Value extends \Google\Model
   public $timestampValue;
 
   /**
-   * @param bool $booleanValue
+   * @param bool
    */
   public function setBooleanValue($booleanValue)
   {
@@ -54,7 +54,7 @@ class Value extends \Google\Model
     return $this->booleanValue;
   }
   /**
-   * @param Date $dateValue
+   * @param Date
    */
   public function setDateValue(Date $dateValue)
   {
@@ -76,7 +76,7 @@ class Value extends \Google\Model
     return $this->doubleValue;
   }
   /**
-   * @param string $integerValue
+   * @param string
    */
   public function setIntegerValue($integerValue)
   {
@@ -90,7 +90,7 @@ class Value extends \Google\Model
     return $this->integerValue;
   }
   /**
-   * @param string $stringValue
+   * @param string
    */
   public function setStringValue($stringValue)
   {
@@ -104,7 +104,7 @@ class Value extends \Google\Model
     return $this->stringValue;
   }
   /**
-   * @param string $timestampValue
+   * @param string
    */
   public function setTimestampValue($timestampValue)
   {

@@ -20,41 +20,28 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1betaImportSampleQueriesMetadata extends \Google\Model
 {
   /**
-   * ImportSampleQueries operation create time.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Count of SampleQuerys that failed to be imported.
-   *
    * @var string
    */
   public $failureCount;
   /**
-   * Count of SampleQuerys successfully imported.
-   *
    * @var string
    */
   public $successCount;
   /**
-   * Total count of SampleQuerys that were processed.
-   *
    * @var string
    */
   public $totalCount;
   /**
-   * ImportSampleQueries operation last update time. If the operation is done,
-   * this is also the finish time.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * ImportSampleQueries operation create time.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -68,9 +55,7 @@ class GoogleCloudDiscoveryengineV1betaImportSampleQueriesMetadata extends \Googl
     return $this->createTime;
   }
   /**
-   * Count of SampleQuerys that failed to be imported.
-   *
-   * @param string $failureCount
+   * @param string
    */
   public function setFailureCount($failureCount)
   {
@@ -84,9 +69,7 @@ class GoogleCloudDiscoveryengineV1betaImportSampleQueriesMetadata extends \Googl
     return $this->failureCount;
   }
   /**
-   * Count of SampleQuerys successfully imported.
-   *
-   * @param string $successCount
+   * @param string
    */
   public function setSuccessCount($successCount)
   {
@@ -100,9 +83,7 @@ class GoogleCloudDiscoveryengineV1betaImportSampleQueriesMetadata extends \Googl
     return $this->successCount;
   }
   /**
-   * Total count of SampleQuerys that were processed.
-   *
-   * @param string $totalCount
+   * @param string
    */
   public function setTotalCount($totalCount)
   {
@@ -116,10 +97,7 @@ class GoogleCloudDiscoveryengineV1betaImportSampleQueriesMetadata extends \Googl
     return $this->totalCount;
   }
   /**
-   * ImportSampleQueries operation last update time. If the operation is done,
-   * this is also the finish time.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

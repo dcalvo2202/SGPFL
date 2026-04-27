@@ -25,9 +25,7 @@ class GoogleCloudAiplatformV1SummarizationHelpfulnessInput extends \Google\Model
   protected $metricSpecDataType = '';
 
   /**
-   * Required. Summarization helpfulness instance.
-   *
-   * @param GoogleCloudAiplatformV1SummarizationHelpfulnessInstance $instance
+   * @param GoogleCloudAiplatformV1SummarizationHelpfulnessInstance
    */
   public function setInstance(GoogleCloudAiplatformV1SummarizationHelpfulnessInstance $instance)
   {
@@ -41,9 +39,7 @@ class GoogleCloudAiplatformV1SummarizationHelpfulnessInput extends \Google\Model
     return $this->instance;
   }
   /**
-   * Required. Spec for summarization helpfulness score metric.
-   *
-   * @param GoogleCloudAiplatformV1SummarizationHelpfulnessSpec $metricSpec
+   * @param GoogleCloudAiplatformV1SummarizationHelpfulnessSpec
    */
   public function setMetricSpec(GoogleCloudAiplatformV1SummarizationHelpfulnessSpec $metricSpec)
   {

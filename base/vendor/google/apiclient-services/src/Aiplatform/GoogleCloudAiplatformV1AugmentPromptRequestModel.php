@@ -20,24 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1AugmentPromptRequestModel extends \Google\Model
 {
   /**
-   * Optional. The model that the user will send the augmented prompt for
-   * content generation.
-   *
    * @var string
    */
   public $model;
   /**
-   * Optional. The model version of the backend deployed model.
-   *
    * @var string
    */
   public $modelVersion;
 
   /**
-   * Optional. The model that the user will send the augmented prompt for
-   * content generation.
-   *
-   * @param string $model
+   * @param string
    */
   public function setModel($model)
   {
@@ -51,9 +43,7 @@ class GoogleCloudAiplatformV1AugmentPromptRequestModel extends \Google\Model
     return $this->model;
   }
   /**
-   * Optional. The model version of the backend deployed model.
-   *
-   * @param string $modelVersion
+   * @param string
    */
   public function setModelVersion($modelVersion)
   {

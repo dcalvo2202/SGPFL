@@ -23,40 +23,24 @@ class GoogleCloudAiplatformV1CachedContent extends \Google\Collection
   protected $contentsType = GoogleCloudAiplatformV1Content::class;
   protected $contentsDataType = 'array';
   /**
-   * Output only. Creation time of the cache entry.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. Immutable. The user-generated meaningful display name of the
-   * cached content.
-   *
    * @var string
    */
   public $displayName;
   protected $encryptionSpecType = GoogleCloudAiplatformV1EncryptionSpec::class;
   protected $encryptionSpecDataType = '';
   /**
-   * Timestamp of when this resource is considered expired. This is *always*
-   * provided on output, regardless of what was sent on input.
-   *
    * @var string
    */
   public $expireTime;
   /**
-   * Immutable. The name of the `Model` to use for cached content. Currently,
-   * only the published Gemini base models are supported, in form of
-   * projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}
-   *
    * @var string
    */
   public $model;
   /**
-   * Immutable. Identifier. The server-generated resource name of the cached
-   * content Format:
-   * projects/{project}/locations/{location}/cachedContents/{cached_content}
-   *
    * @var string
    */
   public $name;
@@ -67,15 +51,10 @@ class GoogleCloudAiplatformV1CachedContent extends \Google\Collection
   protected $toolsType = GoogleCloudAiplatformV1Tool::class;
   protected $toolsDataType = 'array';
   /**
-   * Input only. The TTL for this resource. The expiration time is computed: now
-   * + TTL.
-   *
    * @var string
    */
   public $ttl;
   /**
-   * Output only. When the cache entry was last updated in UTC time.
-   *
    * @var string
    */
   public $updateTime;
@@ -83,9 +62,7 @@ class GoogleCloudAiplatformV1CachedContent extends \Google\Collection
   protected $usageMetadataDataType = '';
 
   /**
-   * Optional. Input only. Immutable. The content to cache
-   *
-   * @param GoogleCloudAiplatformV1Content[] $contents
+   * @param GoogleCloudAiplatformV1Content[]
    */
   public function setContents($contents)
   {
@@ -99,9 +76,7 @@ class GoogleCloudAiplatformV1CachedContent extends \Google\Collection
     return $this->contents;
   }
   /**
-   * Output only. Creation time of the cache entry.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -115,10 +90,7 @@ class GoogleCloudAiplatformV1CachedContent extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Optional. Immutable. The user-generated meaningful display name of the
-   * cached content.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -132,11 +104,7 @@ class GoogleCloudAiplatformV1CachedContent extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Input only. Immutable. Customer-managed encryption key spec for a
-   * `CachedContent`. If set, this `CachedContent` and all its sub-resources
-   * will be secured by this key.
-   *
-   * @param GoogleCloudAiplatformV1EncryptionSpec $encryptionSpec
+   * @param GoogleCloudAiplatformV1EncryptionSpec
    */
   public function setEncryptionSpec(GoogleCloudAiplatformV1EncryptionSpec $encryptionSpec)
   {
@@ -150,10 +118,7 @@ class GoogleCloudAiplatformV1CachedContent extends \Google\Collection
     return $this->encryptionSpec;
   }
   /**
-   * Timestamp of when this resource is considered expired. This is *always*
-   * provided on output, regardless of what was sent on input.
-   *
-   * @param string $expireTime
+   * @param string
    */
   public function setExpireTime($expireTime)
   {
@@ -167,11 +132,7 @@ class GoogleCloudAiplatformV1CachedContent extends \Google\Collection
     return $this->expireTime;
   }
   /**
-   * Immutable. The name of the `Model` to use for cached content. Currently,
-   * only the published Gemini base models are supported, in form of
-   * projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}
-   *
-   * @param string $model
+   * @param string
    */
   public function setModel($model)
   {
@@ -185,11 +146,7 @@ class GoogleCloudAiplatformV1CachedContent extends \Google\Collection
     return $this->model;
   }
   /**
-   * Immutable. Identifier. The server-generated resource name of the cached
-   * content Format:
-   * projects/{project}/locations/{location}/cachedContents/{cached_content}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -203,10 +160,7 @@ class GoogleCloudAiplatformV1CachedContent extends \Google\Collection
     return $this->name;
   }
   /**
-   * Optional. Input only. Immutable. Developer set system instruction.
-   * Currently, text only
-   *
-   * @param GoogleCloudAiplatformV1Content $systemInstruction
+   * @param GoogleCloudAiplatformV1Content
    */
   public function setSystemInstruction(GoogleCloudAiplatformV1Content $systemInstruction)
   {
@@ -220,10 +174,7 @@ class GoogleCloudAiplatformV1CachedContent extends \Google\Collection
     return $this->systemInstruction;
   }
   /**
-   * Optional. Input only. Immutable. Tool config. This config is shared for all
-   * tools
-   *
-   * @param GoogleCloudAiplatformV1ToolConfig $toolConfig
+   * @param GoogleCloudAiplatformV1ToolConfig
    */
   public function setToolConfig(GoogleCloudAiplatformV1ToolConfig $toolConfig)
   {
@@ -237,10 +188,7 @@ class GoogleCloudAiplatformV1CachedContent extends \Google\Collection
     return $this->toolConfig;
   }
   /**
-   * Optional. Input only. Immutable. A list of `Tools` the model may use to
-   * generate the next response
-   *
-   * @param GoogleCloudAiplatformV1Tool[] $tools
+   * @param GoogleCloudAiplatformV1Tool[]
    */
   public function setTools($tools)
   {
@@ -254,10 +202,7 @@ class GoogleCloudAiplatformV1CachedContent extends \Google\Collection
     return $this->tools;
   }
   /**
-   * Input only. The TTL for this resource. The expiration time is computed: now
-   * + TTL.
-   *
-   * @param string $ttl
+   * @param string
    */
   public function setTtl($ttl)
   {
@@ -271,9 +216,7 @@ class GoogleCloudAiplatformV1CachedContent extends \Google\Collection
     return $this->ttl;
   }
   /**
-   * Output only. When the cache entry was last updated in UTC time.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -287,9 +230,7 @@ class GoogleCloudAiplatformV1CachedContent extends \Google\Collection
     return $this->updateTime;
   }
   /**
-   * Output only. Metadata on the usage of the cached content.
-   *
-   * @param GoogleCloudAiplatformV1CachedContentUsageMetadata $usageMetadata
+   * @param GoogleCloudAiplatformV1CachedContentUsageMetadata
    */
   public function setUsageMetadata(GoogleCloudAiplatformV1CachedContentUsageMetadata $usageMetadata)
   {

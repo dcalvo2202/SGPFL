@@ -24,24 +24,16 @@ class CheckCompatibilityResponse extends \Google\Collection
         "isCompatible" => "is_compatible",
   ];
   /**
-   * The compatibility check result. If true, the schema is compatible with the
-   * resource.
-   *
    * @var bool
    */
   public $isCompatible;
   /**
-   * Failure reasons if verbose = true.
-   *
    * @var string[]
    */
   public $messages;
 
   /**
-   * The compatibility check result. If true, the schema is compatible with the
-   * resource.
-   *
-   * @param bool $isCompatible
+   * @param bool
    */
   public function setIsCompatible($isCompatible)
   {
@@ -55,9 +47,7 @@ class CheckCompatibilityResponse extends \Google\Collection
     return $this->isCompatible;
   }
   /**
-   * Failure reasons if verbose = true.
-   *
-   * @param string[] $messages
+   * @param string[]
    */
   public function setMessages($messages)
   {

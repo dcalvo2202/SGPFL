@@ -20,92 +20,40 @@ namespace Google\Service\SecurityCommandCenter;
 class GoogleCloudSecuritycenterV2BigQueryExport extends \Google\Model
 {
   /**
-   * Output only. The time at which the BigQuery export was created. This field
-   * is set by the server and will be ignored if provided on export on creation.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. The resource name of the Cloud KMS `CryptoKey` used to protect
-   * this configuration's data, if configured during Security Command Center
-   * activation.
-   *
-   * @var string
-   */
-  public $cryptoKeyName;
-  /**
-   * The dataset to write findings' updates to. Its format is
-   * "projects/[project_id]/datasets/[bigquery_dataset_id]". BigQuery dataset
-   * unique ID must contain only letters (a-z, A-Z), numbers (0-9), or
-   * underscores (_).
-   *
    * @var string
    */
   public $dataset;
   /**
-   * The description of the export (max of 1024 characters).
-   *
    * @var string
    */
   public $description;
   /**
-   * Expression that defines the filter to apply across create/update events of
-   * findings. The expression is a list of zero or more restrictions combined
-   * via logical operators `AND` and `OR`. Parentheses are supported, and `OR`
-   * has higher precedence than `AND`. Restrictions have the form ` ` and may
-   * have a `-` character in front of them to indicate negation. The fields map
-   * to those defined in the corresponding resource. The supported operators
-   * are: * `=` for all value types. * `>`, `<`, `>=`, `<=` for integer values.
-   * * `:`, meaning substring matching, for strings. The supported value types
-   * are: * string literals in quotes. * integer literals without quotes. *
-   * boolean literals `true` and `false` without quotes.
-   *
    * @var string
    */
   public $filter;
   /**
-   * Output only. Email address of the user who last edited the BigQuery export.
-   * This field is set by the server and will be ignored if provided on export
-   * creation or update.
-   *
    * @var string
    */
   public $mostRecentEditor;
   /**
-   * Identifier. The relative resource name of this export. See:
-   * https://cloud.google.com/apis/design/resource_names#relative_resource_name.
-   * The following list shows some examples: + `organizations/{organization_id}/
-   * locations/{location_id}/bigQueryExports/{export_id}` +
-   * `folders/{folder_id}/locations/{location_id}/bigQueryExports/{export_id}` +
-   * `projects/{project_id}/locations/{location_id}/bigQueryExports/{export_id}`
-   * This field is provided in responses, and is ignored when provided in create
-   * requests.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The service account that needs permission to create table and
-   * upload data to the BigQuery dataset.
-   *
    * @var string
    */
   public $principal;
   /**
-   * Output only. The most recent time at which the BigQuery export was updated.
-   * This field is set by the server and will be ignored if provided on export
-   * creation or update.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. The time at which the BigQuery export was created. This field
-   * is set by the server and will be ignored if provided on export on creation.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -119,30 +67,7 @@ class GoogleCloudSecuritycenterV2BigQueryExport extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. The resource name of the Cloud KMS `CryptoKey` used to protect
-   * this configuration's data, if configured during Security Command Center
-   * activation.
-   *
-   * @param string $cryptoKeyName
-   */
-  public function setCryptoKeyName($cryptoKeyName)
-  {
-    $this->cryptoKeyName = $cryptoKeyName;
-  }
-  /**
-   * @return string
-   */
-  public function getCryptoKeyName()
-  {
-    return $this->cryptoKeyName;
-  }
-  /**
-   * The dataset to write findings' updates to. Its format is
-   * "projects/[project_id]/datasets/[bigquery_dataset_id]". BigQuery dataset
-   * unique ID must contain only letters (a-z, A-Z), numbers (0-9), or
-   * underscores (_).
-   *
-   * @param string $dataset
+   * @param string
    */
   public function setDataset($dataset)
   {
@@ -156,9 +81,7 @@ class GoogleCloudSecuritycenterV2BigQueryExport extends \Google\Model
     return $this->dataset;
   }
   /**
-   * The description of the export (max of 1024 characters).
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -172,18 +95,7 @@ class GoogleCloudSecuritycenterV2BigQueryExport extends \Google\Model
     return $this->description;
   }
   /**
-   * Expression that defines the filter to apply across create/update events of
-   * findings. The expression is a list of zero or more restrictions combined
-   * via logical operators `AND` and `OR`. Parentheses are supported, and `OR`
-   * has higher precedence than `AND`. Restrictions have the form ` ` and may
-   * have a `-` character in front of them to indicate negation. The fields map
-   * to those defined in the corresponding resource. The supported operators
-   * are: * `=` for all value types. * `>`, `<`, `>=`, `<=` for integer values.
-   * * `:`, meaning substring matching, for strings. The supported value types
-   * are: * string literals in quotes. * integer literals without quotes. *
-   * boolean literals `true` and `false` without quotes.
-   *
-   * @param string $filter
+   * @param string
    */
   public function setFilter($filter)
   {
@@ -197,11 +109,7 @@ class GoogleCloudSecuritycenterV2BigQueryExport extends \Google\Model
     return $this->filter;
   }
   /**
-   * Output only. Email address of the user who last edited the BigQuery export.
-   * This field is set by the server and will be ignored if provided on export
-   * creation or update.
-   *
-   * @param string $mostRecentEditor
+   * @param string
    */
   public function setMostRecentEditor($mostRecentEditor)
   {
@@ -215,16 +123,7 @@ class GoogleCloudSecuritycenterV2BigQueryExport extends \Google\Model
     return $this->mostRecentEditor;
   }
   /**
-   * Identifier. The relative resource name of this export. See:
-   * https://cloud.google.com/apis/design/resource_names#relative_resource_name.
-   * The following list shows some examples: + `organizations/{organization_id}/
-   * locations/{location_id}/bigQueryExports/{export_id}` +
-   * `folders/{folder_id}/locations/{location_id}/bigQueryExports/{export_id}` +
-   * `projects/{project_id}/locations/{location_id}/bigQueryExports/{export_id}`
-   * This field is provided in responses, and is ignored when provided in create
-   * requests.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -238,10 +137,7 @@ class GoogleCloudSecuritycenterV2BigQueryExport extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The service account that needs permission to create table and
-   * upload data to the BigQuery dataset.
-   *
-   * @param string $principal
+   * @param string
    */
   public function setPrincipal($principal)
   {
@@ -255,11 +151,7 @@ class GoogleCloudSecuritycenterV2BigQueryExport extends \Google\Model
     return $this->principal;
   }
   /**
-   * Output only. The most recent time at which the BigQuery export was updated.
-   * This field is set by the server and will be ignored if provided on export
-   * creation or update.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

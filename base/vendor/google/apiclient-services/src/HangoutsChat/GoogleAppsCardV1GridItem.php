@@ -20,50 +20,26 @@ namespace Google\Service\HangoutsChat;
 class GoogleAppsCardV1GridItem extends \Google\Model
 {
   /**
-   * Don't use. Unspecified.
-   */
-  public const LAYOUT_GRID_ITEM_LAYOUT_UNSPECIFIED = 'GRID_ITEM_LAYOUT_UNSPECIFIED';
-  /**
-   * The title and subtitle are shown below the grid item's image.
-   */
-  public const LAYOUT_TEXT_BELOW = 'TEXT_BELOW';
-  /**
-   * The title and subtitle are shown above the grid item's image.
-   */
-  public const LAYOUT_TEXT_ABOVE = 'TEXT_ABOVE';
-  /**
-   * A user-specified identifier for this grid item. This identifier is returned
-   * in the parent grid's `onClick` callback parameters.
-   *
    * @var string
    */
   public $id;
   protected $imageType = GoogleAppsCardV1ImageComponent::class;
   protected $imageDataType = '';
   /**
-   * The layout to use for the grid item.
-   *
    * @var string
    */
   public $layout;
   /**
-   * The grid item's subtitle.
-   *
    * @var string
    */
   public $subtitle;
   /**
-   * The grid item's title.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * A user-specified identifier for this grid item. This identifier is returned
-   * in the parent grid's `onClick` callback parameters.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -77,9 +53,7 @@ class GoogleAppsCardV1GridItem extends \Google\Model
     return $this->id;
   }
   /**
-   * The image that displays in the grid item.
-   *
-   * @param GoogleAppsCardV1ImageComponent $image
+   * @param GoogleAppsCardV1ImageComponent
    */
   public function setImage(GoogleAppsCardV1ImageComponent $image)
   {
@@ -93,27 +67,21 @@ class GoogleAppsCardV1GridItem extends \Google\Model
     return $this->image;
   }
   /**
-   * The layout to use for the grid item.
-   *
-   * Accepted values: GRID_ITEM_LAYOUT_UNSPECIFIED, TEXT_BELOW, TEXT_ABOVE
-   *
-   * @param self::LAYOUT_* $layout
+   * @param string
    */
   public function setLayout($layout)
   {
     $this->layout = $layout;
   }
   /**
-   * @return self::LAYOUT_*
+   * @return string
    */
   public function getLayout()
   {
     return $this->layout;
   }
   /**
-   * The grid item's subtitle.
-   *
-   * @param string $subtitle
+   * @param string
    */
   public function setSubtitle($subtitle)
   {
@@ -127,9 +95,7 @@ class GoogleAppsCardV1GridItem extends \Google\Model
     return $this->subtitle;
   }
   /**
-   * The grid item's title.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

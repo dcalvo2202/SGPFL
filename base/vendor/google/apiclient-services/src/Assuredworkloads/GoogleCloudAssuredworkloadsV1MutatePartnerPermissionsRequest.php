@@ -20,27 +20,18 @@ namespace Google\Service\Assuredworkloads;
 class GoogleCloudAssuredworkloadsV1MutatePartnerPermissionsRequest extends \Google\Model
 {
   /**
-   * Optional. The etag of the workload. If this is provided, it must match the
-   * server's etag.
-   *
    * @var string
    */
   public $etag;
   protected $partnerPermissionsType = GoogleCloudAssuredworkloadsV1WorkloadPartnerPermissions::class;
   protected $partnerPermissionsDataType = '';
   /**
-   * Required. The list of fields to be updated. E.g. update_mask { paths:
-   * "partner_permissions.data_logs_viewer"}
-   *
    * @var string
    */
   public $updateMask;
 
   /**
-   * Optional. The etag of the workload. If this is provided, it must match the
-   * server's etag.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -54,9 +45,7 @@ class GoogleCloudAssuredworkloadsV1MutatePartnerPermissionsRequest extends \Goog
     return $this->etag;
   }
   /**
-   * Required. The partner permissions to be updated.
-   *
-   * @param GoogleCloudAssuredworkloadsV1WorkloadPartnerPermissions $partnerPermissions
+   * @param GoogleCloudAssuredworkloadsV1WorkloadPartnerPermissions
    */
   public function setPartnerPermissions(GoogleCloudAssuredworkloadsV1WorkloadPartnerPermissions $partnerPermissions)
   {
@@ -70,10 +59,7 @@ class GoogleCloudAssuredworkloadsV1MutatePartnerPermissionsRequest extends \Goog
     return $this->partnerPermissions;
   }
   /**
-   * Required. The list of fields to be updated. E.g. update_mask { paths:
-   * "partner_permissions.data_logs_viewer"}
-   *
-   * @param string $updateMask
+   * @param string
    */
   public function setUpdateMask($updateMask)
   {

@@ -21,103 +21,70 @@ class Annotation extends \Google\Collection
 {
   protected $collection_key = 'pageIds';
   /**
-   * Anchor text after excerpt. For requests, if the user bookmarked a screen
-   * that has no flowing text on it, then this field should be empty.
-   *
    * @var string
    */
   public $afterSelectedText;
   /**
-   * Anchor text before excerpt. For requests, if the user bookmarked a screen
-   * that has no flowing text on it, then this field should be empty.
-   *
    * @var string
    */
   public $beforeSelectedText;
   protected $clientVersionRangesType = AnnotationClientVersionRanges::class;
   protected $clientVersionRangesDataType = '';
   /**
-   * Timestamp for the created time of this annotation.
-   *
    * @var string
    */
   public $created;
   protected $currentVersionRangesType = AnnotationCurrentVersionRanges::class;
   protected $currentVersionRangesDataType = '';
   /**
-   * User-created data for this annotation.
-   *
    * @var string
    */
   public $data;
   /**
-   * Indicates that this annotation is deleted.
-   *
    * @var bool
    */
   public $deleted;
   /**
-   * The highlight style for this annotation.
-   *
    * @var string
    */
   public $highlightStyle;
   /**
-   * Id of this annotation, in the form of a GUID.
-   *
    * @var string
    */
   public $id;
   /**
-   * Resource type.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The layer this annotation is for.
-   *
    * @var string
    */
   public $layerId;
   protected $layerSummaryType = AnnotationLayerSummary::class;
   protected $layerSummaryDataType = '';
   /**
-   * Pages that this annotation spans.
-   *
    * @var string[]
    */
   public $pageIds;
   /**
-   * Excerpt from the volume.
-   *
    * @var string
    */
   public $selectedText;
   /**
-   * URL to this resource.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * Timestamp for the last time this annotation was modified.
-   *
    * @var string
    */
   public $updated;
   /**
-   * The volume that this annotation belongs to.
-   *
    * @var string
    */
   public $volumeId;
 
   /**
-   * Anchor text after excerpt. For requests, if the user bookmarked a screen
-   * that has no flowing text on it, then this field should be empty.
-   *
-   * @param string $afterSelectedText
+   * @param string
    */
   public function setAfterSelectedText($afterSelectedText)
   {
@@ -131,10 +98,7 @@ class Annotation extends \Google\Collection
     return $this->afterSelectedText;
   }
   /**
-   * Anchor text before excerpt. For requests, if the user bookmarked a screen
-   * that has no flowing text on it, then this field should be empty.
-   *
-   * @param string $beforeSelectedText
+   * @param string
    */
   public function setBeforeSelectedText($beforeSelectedText)
   {
@@ -148,9 +112,7 @@ class Annotation extends \Google\Collection
     return $this->beforeSelectedText;
   }
   /**
-   * Selection ranges sent from the client.
-   *
-   * @param AnnotationClientVersionRanges $clientVersionRanges
+   * @param AnnotationClientVersionRanges
    */
   public function setClientVersionRanges(AnnotationClientVersionRanges $clientVersionRanges)
   {
@@ -164,9 +126,7 @@ class Annotation extends \Google\Collection
     return $this->clientVersionRanges;
   }
   /**
-   * Timestamp for the created time of this annotation.
-   *
-   * @param string $created
+   * @param string
    */
   public function setCreated($created)
   {
@@ -180,9 +140,7 @@ class Annotation extends \Google\Collection
     return $this->created;
   }
   /**
-   * Selection ranges for the most recent content version.
-   *
-   * @param AnnotationCurrentVersionRanges $currentVersionRanges
+   * @param AnnotationCurrentVersionRanges
    */
   public function setCurrentVersionRanges(AnnotationCurrentVersionRanges $currentVersionRanges)
   {
@@ -196,9 +154,7 @@ class Annotation extends \Google\Collection
     return $this->currentVersionRanges;
   }
   /**
-   * User-created data for this annotation.
-   *
-   * @param string $data
+   * @param string
    */
   public function setData($data)
   {
@@ -212,9 +168,7 @@ class Annotation extends \Google\Collection
     return $this->data;
   }
   /**
-   * Indicates that this annotation is deleted.
-   *
-   * @param bool $deleted
+   * @param bool
    */
   public function setDeleted($deleted)
   {
@@ -228,9 +182,7 @@ class Annotation extends \Google\Collection
     return $this->deleted;
   }
   /**
-   * The highlight style for this annotation.
-   *
-   * @param string $highlightStyle
+   * @param string
    */
   public function setHighlightStyle($highlightStyle)
   {
@@ -244,9 +196,7 @@ class Annotation extends \Google\Collection
     return $this->highlightStyle;
   }
   /**
-   * Id of this annotation, in the form of a GUID.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -260,9 +210,7 @@ class Annotation extends \Google\Collection
     return $this->id;
   }
   /**
-   * Resource type.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -276,9 +224,7 @@ class Annotation extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The layer this annotation is for.
-   *
-   * @param string $layerId
+   * @param string
    */
   public function setLayerId($layerId)
   {
@@ -292,7 +238,7 @@ class Annotation extends \Google\Collection
     return $this->layerId;
   }
   /**
-   * @param AnnotationLayerSummary $layerSummary
+   * @param AnnotationLayerSummary
    */
   public function setLayerSummary(AnnotationLayerSummary $layerSummary)
   {
@@ -306,9 +252,7 @@ class Annotation extends \Google\Collection
     return $this->layerSummary;
   }
   /**
-   * Pages that this annotation spans.
-   *
-   * @param string[] $pageIds
+   * @param string[]
    */
   public function setPageIds($pageIds)
   {
@@ -322,9 +266,7 @@ class Annotation extends \Google\Collection
     return $this->pageIds;
   }
   /**
-   * Excerpt from the volume.
-   *
-   * @param string $selectedText
+   * @param string
    */
   public function setSelectedText($selectedText)
   {
@@ -338,9 +280,7 @@ class Annotation extends \Google\Collection
     return $this->selectedText;
   }
   /**
-   * URL to this resource.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -354,9 +294,7 @@ class Annotation extends \Google\Collection
     return $this->selfLink;
   }
   /**
-   * Timestamp for the last time this annotation was modified.
-   *
-   * @param string $updated
+   * @param string
    */
   public function setUpdated($updated)
   {
@@ -370,9 +308,7 @@ class Annotation extends \Google\Collection
     return $this->updated;
   }
   /**
-   * The volume that this annotation belongs to.
-   *
-   * @param string $volumeId
+   * @param string
    */
   public function setVolumeId($volumeId)
   {

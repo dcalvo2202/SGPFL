@@ -25,9 +25,7 @@ class GoogleChecksReportV1alphaDataMonitoringSdkResult extends \Google\Model
   protected $sdkDataType = '';
 
   /**
-   * Metadata about the result.
-   *
-   * @param GoogleChecksReportV1alphaDataMonitoringResultMetadata $metadata
+   * @param GoogleChecksReportV1alphaDataMonitoringResultMetadata
    */
   public function setMetadata(GoogleChecksReportV1alphaDataMonitoringResultMetadata $metadata)
   {
@@ -41,9 +39,7 @@ class GoogleChecksReportV1alphaDataMonitoringSdkResult extends \Google\Model
     return $this->metadata;
   }
   /**
-   * The SDK that was found in your app.
-   *
-   * @param GoogleChecksReportV1alphaSdk $sdk
+   * @param GoogleChecksReportV1alphaSdk
    */
   public function setSdk(GoogleChecksReportV1alphaSdk $sdk)
   {

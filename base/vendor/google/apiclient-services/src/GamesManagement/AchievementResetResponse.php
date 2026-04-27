@@ -20,41 +20,24 @@ namespace Google\Service\GamesManagement;
 class AchievementResetResponse extends \Google\Model
 {
   /**
-   * The current state of the achievement. This is the same as the initial state
-   * of the achievement. Possible values are: - "`HIDDEN`"- Achievement is
-   * hidden. - "`REVEALED`" - Achievement is revealed. - "`UNLOCKED`" -
-   * Achievement is unlocked.
-   *
    * @var string
    */
   public $currentState;
   /**
-   * The ID of an achievement for which player state has been updated.
-   *
    * @var string
    */
   public $definitionId;
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `gamesManagement#achievementResetResponse`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Flag to indicate if the requested update actually occurred.
-   *
    * @var bool
    */
   public $updateOccurred;
 
   /**
-   * The current state of the achievement. This is the same as the initial state
-   * of the achievement. Possible values are: - "`HIDDEN`"- Achievement is
-   * hidden. - "`REVEALED`" - Achievement is revealed. - "`UNLOCKED`" -
-   * Achievement is unlocked.
-   *
-   * @param string $currentState
+   * @param string
    */
   public function setCurrentState($currentState)
   {
@@ -68,9 +51,7 @@ class AchievementResetResponse extends \Google\Model
     return $this->currentState;
   }
   /**
-   * The ID of an achievement for which player state has been updated.
-   *
-   * @param string $definitionId
+   * @param string
    */
   public function setDefinitionId($definitionId)
   {
@@ -84,10 +65,7 @@ class AchievementResetResponse extends \Google\Model
     return $this->definitionId;
   }
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `gamesManagement#achievementResetResponse`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -101,9 +79,7 @@ class AchievementResetResponse extends \Google\Model
     return $this->kind;
   }
   /**
-   * Flag to indicate if the requested update actually occurred.
-   *
-   * @param bool $updateOccurred
+   * @param bool
    */
   public function setUpdateOccurred($updateOccurred)
   {

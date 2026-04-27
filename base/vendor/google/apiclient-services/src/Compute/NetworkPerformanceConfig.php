@@ -19,22 +19,20 @@ namespace Google\Service\Compute;
 
 class NetworkPerformanceConfig extends \Google\Model
 {
-  public const TOTAL_EGRESS_BANDWIDTH_TIER_DEFAULT = 'DEFAULT';
-  public const TOTAL_EGRESS_BANDWIDTH_TIER_TIER_1 = 'TIER_1';
   /**
    * @var string
    */
   public $totalEgressBandwidthTier;
 
   /**
-   * @param self::TOTAL_EGRESS_BANDWIDTH_TIER_* $totalEgressBandwidthTier
+   * @param string
    */
   public function setTotalEgressBandwidthTier($totalEgressBandwidthTier)
   {
     $this->totalEgressBandwidthTier = $totalEgressBandwidthTier;
   }
   /**
-   * @return self::TOTAL_EGRESS_BANDWIDTH_TIER_*
+   * @return string
    */
   public function getTotalEgressBandwidthTier()
   {

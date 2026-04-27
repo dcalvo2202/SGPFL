@@ -19,36 +19,21 @@ namespace Google\Service\Document;
 
 class GoogleCloudDocumentaiV1ReviewDocumentRequest extends \Google\Model
 {
-  /**
-   * The default priority level.
-   */
-  public const PRIORITY_DEFAULT = 'DEFAULT';
-  /**
-   * The urgent priority level. The labeling manager should allocate labeler
-   * resource to the urgent task queue to respect this priority level.
-   */
-  public const PRIORITY_URGENT = 'URGENT';
   protected $documentSchemaType = GoogleCloudDocumentaiV1DocumentSchema::class;
   protected $documentSchemaDataType = '';
   /**
-   * Whether the validation should be performed on the ad-hoc review request.
-   *
    * @var bool
    */
   public $enableSchemaValidation;
   protected $inlineDocumentType = GoogleCloudDocumentaiV1Document::class;
   protected $inlineDocumentDataType = '';
   /**
-   * The priority of the human review task.
-   *
    * @var string
    */
   public $priority;
 
   /**
-   * The document schema of the human review task.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentSchema $documentSchema
+   * @param GoogleCloudDocumentaiV1DocumentSchema
    */
   public function setDocumentSchema(GoogleCloudDocumentaiV1DocumentSchema $documentSchema)
   {
@@ -62,9 +47,7 @@ class GoogleCloudDocumentaiV1ReviewDocumentRequest extends \Google\Model
     return $this->documentSchema;
   }
   /**
-   * Whether the validation should be performed on the ad-hoc review request.
-   *
-   * @param bool $enableSchemaValidation
+   * @param bool
    */
   public function setEnableSchemaValidation($enableSchemaValidation)
   {
@@ -78,9 +61,7 @@ class GoogleCloudDocumentaiV1ReviewDocumentRequest extends \Google\Model
     return $this->enableSchemaValidation;
   }
   /**
-   * An inline document proto.
-   *
-   * @param GoogleCloudDocumentaiV1Document $inlineDocument
+   * @param GoogleCloudDocumentaiV1Document
    */
   public function setInlineDocument(GoogleCloudDocumentaiV1Document $inlineDocument)
   {
@@ -94,18 +75,14 @@ class GoogleCloudDocumentaiV1ReviewDocumentRequest extends \Google\Model
     return $this->inlineDocument;
   }
   /**
-   * The priority of the human review task.
-   *
-   * Accepted values: DEFAULT, URGENT
-   *
-   * @param self::PRIORITY_* $priority
+   * @param string
    */
   public function setPriority($priority)
   {
     $this->priority = $priority;
   }
   /**
-   * @return self::PRIORITY_*
+   * @return string
    */
   public function getPriority()
   {

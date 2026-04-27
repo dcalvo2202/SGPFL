@@ -27,9 +27,7 @@ class GooglePrivacyDlpV2DiscoveryCloudSqlFilter extends \Google\Model
   protected $othersDataType = '';
 
   /**
-   * A specific set of database resources for this filter to apply to.
-   *
-   * @param GooglePrivacyDlpV2DatabaseResourceCollection $collection
+   * @param GooglePrivacyDlpV2DatabaseResourceCollection
    */
   public function setCollection(GooglePrivacyDlpV2DatabaseResourceCollection $collection)
   {
@@ -43,10 +41,7 @@ class GooglePrivacyDlpV2DiscoveryCloudSqlFilter extends \Google\Model
     return $this->collection;
   }
   /**
-   * The database resource to scan. Targets including this can only include one
-   * target (the target with this database resource reference).
-   *
-   * @param GooglePrivacyDlpV2DatabaseResourceReference $databaseResourceReference
+   * @param GooglePrivacyDlpV2DatabaseResourceReference
    */
   public function setDatabaseResourceReference(GooglePrivacyDlpV2DatabaseResourceReference $databaseResourceReference)
   {
@@ -60,12 +55,7 @@ class GooglePrivacyDlpV2DiscoveryCloudSqlFilter extends \Google\Model
     return $this->databaseResourceReference;
   }
   /**
-   * Catch-all. This should always be the last target in the list because
-   * anything above it will apply first. Should only appear once in a
-   * configuration. If none is specified, a default one will be added
-   * automatically.
-   *
-   * @param GooglePrivacyDlpV2AllOtherDatabaseResources $others
+   * @param GooglePrivacyDlpV2AllOtherDatabaseResources
    */
   public function setOthers(GooglePrivacyDlpV2AllOtherDatabaseResources $others)
   {

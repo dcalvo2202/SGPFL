@@ -20,42 +20,24 @@ namespace Google\Service\FirebaseManagement;
 class RemoveWebAppRequest extends \Google\Model
 {
   /**
-   * If set to true, and the App is not found, the request will succeed but no
-   * action will be taken on the server.
-   *
    * @var bool
    */
   public $allowMissing;
   /**
-   * Checksum provided in the WebApp resource. If provided, this checksum
-   * ensures that the client has an up-to-date value before proceeding.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Determines whether to _immediately_ delete the WebApp. If set to true, the
-   * App is immediately deleted from the Project and cannot be undeleted (that
-   * is, restored to the Project). If not set, defaults to false, which means
-   * the App will be set to expire in 30 days. Within the 30 days, the App may
-   * be restored to the Project using UndeleteWebApp
-   *
    * @var bool
    */
   public $immediate;
   /**
-   * If set to true, the request is only validated. The App will _not_ be
-   * removed.
-   *
    * @var bool
    */
   public $validateOnly;
 
   /**
-   * If set to true, and the App is not found, the request will succeed but no
-   * action will be taken on the server.
-   *
-   * @param bool $allowMissing
+   * @param bool
    */
   public function setAllowMissing($allowMissing)
   {
@@ -69,10 +51,7 @@ class RemoveWebAppRequest extends \Google\Model
     return $this->allowMissing;
   }
   /**
-   * Checksum provided in the WebApp resource. If provided, this checksum
-   * ensures that the client has an up-to-date value before proceeding.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -86,13 +65,7 @@ class RemoveWebAppRequest extends \Google\Model
     return $this->etag;
   }
   /**
-   * Determines whether to _immediately_ delete the WebApp. If set to true, the
-   * App is immediately deleted from the Project and cannot be undeleted (that
-   * is, restored to the Project). If not set, defaults to false, which means
-   * the App will be set to expire in 30 days. Within the 30 days, the App may
-   * be restored to the Project using UndeleteWebApp
-   *
-   * @param bool $immediate
+   * @param bool
    */
   public function setImmediate($immediate)
   {
@@ -106,10 +79,7 @@ class RemoveWebAppRequest extends \Google\Model
     return $this->immediate;
   }
   /**
-   * If set to true, the request is only validated. The App will _not_ be
-   * removed.
-   *
-   * @param bool $validateOnly
+   * @param bool
    */
   public function setValidateOnly($validateOnly)
   {

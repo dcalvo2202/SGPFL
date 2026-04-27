@@ -20,29 +20,20 @@ namespace Google\Service\ApigeeRegistry;
 class Build extends \Google\Model
 {
   /**
-   * Output only. Commit ID of the latest commit in the build.
-   *
    * @var string
    */
   public $commitId;
   /**
-   * Output only. Commit time of the latest commit in the build.
-   *
    * @var string
    */
   public $commitTime;
   /**
-   * Output only. Path of the open source repository:
-   * github.com/apigee/registry.
-   *
    * @var string
    */
   public $repo;
 
   /**
-   * Output only. Commit ID of the latest commit in the build.
-   *
-   * @param string $commitId
+   * @param string
    */
   public function setCommitId($commitId)
   {
@@ -56,9 +47,7 @@ class Build extends \Google\Model
     return $this->commitId;
   }
   /**
-   * Output only. Commit time of the latest commit in the build.
-   *
-   * @param string $commitTime
+   * @param string
    */
   public function setCommitTime($commitTime)
   {
@@ -72,10 +61,7 @@ class Build extends \Google\Model
     return $this->commitTime;
   }
   /**
-   * Output only. Path of the open source repository:
-   * github.com/apigee/registry.
-   *
-   * @param string $repo
+   * @param string
    */
   public function setRepo($repo)
   {

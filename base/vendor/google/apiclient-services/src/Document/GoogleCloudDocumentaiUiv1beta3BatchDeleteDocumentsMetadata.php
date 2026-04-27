@@ -23,24 +23,18 @@ class GoogleCloudDocumentaiUiv1beta3BatchDeleteDocumentsMetadata extends \Google
   protected $commonMetadataType = GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata::class;
   protected $commonMetadataDataType = '';
   /**
-   * Total number of documents that failed to be deleted in storage.
-   *
    * @var int
    */
   public $errorDocumentCount;
   protected $individualBatchDeleteStatusesType = GoogleCloudDocumentaiUiv1beta3BatchDeleteDocumentsMetadataIndividualBatchDeleteStatus::class;
   protected $individualBatchDeleteStatusesDataType = 'array';
   /**
-   * Total number of documents deleting from dataset.
-   *
    * @var int
    */
   public $totalDocumentCount;
 
   /**
-   * The basic metadata of the long-running operation.
-   *
-   * @param GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata $commonMetadata
+   * @param GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata
    */
   public function setCommonMetadata(GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata $commonMetadata)
   {
@@ -54,9 +48,7 @@ class GoogleCloudDocumentaiUiv1beta3BatchDeleteDocumentsMetadata extends \Google
     return $this->commonMetadata;
   }
   /**
-   * Total number of documents that failed to be deleted in storage.
-   *
-   * @param int $errorDocumentCount
+   * @param int
    */
   public function setErrorDocumentCount($errorDocumentCount)
   {
@@ -70,9 +62,7 @@ class GoogleCloudDocumentaiUiv1beta3BatchDeleteDocumentsMetadata extends \Google
     return $this->errorDocumentCount;
   }
   /**
-   * The list of response details of each document.
-   *
-   * @param GoogleCloudDocumentaiUiv1beta3BatchDeleteDocumentsMetadataIndividualBatchDeleteStatus[] $individualBatchDeleteStatuses
+   * @param GoogleCloudDocumentaiUiv1beta3BatchDeleteDocumentsMetadataIndividualBatchDeleteStatus[]
    */
   public function setIndividualBatchDeleteStatuses($individualBatchDeleteStatuses)
   {
@@ -86,9 +76,7 @@ class GoogleCloudDocumentaiUiv1beta3BatchDeleteDocumentsMetadata extends \Google
     return $this->individualBatchDeleteStatuses;
   }
   /**
-   * Total number of documents deleting from dataset.
-   *
-   * @param int $totalDocumentCount
+   * @param int
    */
   public function setTotalDocumentCount($totalDocumentCount)
   {

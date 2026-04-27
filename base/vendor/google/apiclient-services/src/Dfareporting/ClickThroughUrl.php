@@ -20,48 +20,24 @@ namespace Google\Service\Dfareporting;
 class ClickThroughUrl extends \Google\Model
 {
   /**
-   * Read-only convenience field representing the actual URL that will be used
-   * for this click-through. The URL is computed as follows: - If
-   * defaultLandingPage is enabled then the campaign's default landing page URL
-   * is assigned to this field. - If defaultLandingPage is not enabled and a
-   * landingPageId is specified then that landing page's URL is assigned to this
-   * field. - If neither of the above cases apply, then the
-   * customClickThroughUrl is assigned to this field.
-   *
    * @var string
    */
   public $computedClickThroughUrl;
   /**
-   * Custom click-through URL. Applicable if the defaultLandingPage field is set
-   * to false and the landingPageId field is left unset.
-   *
    * @var string
    */
   public $customClickThroughUrl;
   /**
-   * Whether the campaign default landing page is used.
-   *
    * @var bool
    */
   public $defaultLandingPage;
   /**
-   * ID of the landing page for the click-through URL. Applicable if the
-   * defaultLandingPage field is set to false.
-   *
    * @var string
    */
   public $landingPageId;
 
   /**
-   * Read-only convenience field representing the actual URL that will be used
-   * for this click-through. The URL is computed as follows: - If
-   * defaultLandingPage is enabled then the campaign's default landing page URL
-   * is assigned to this field. - If defaultLandingPage is not enabled and a
-   * landingPageId is specified then that landing page's URL is assigned to this
-   * field. - If neither of the above cases apply, then the
-   * customClickThroughUrl is assigned to this field.
-   *
-   * @param string $computedClickThroughUrl
+   * @param string
    */
   public function setComputedClickThroughUrl($computedClickThroughUrl)
   {
@@ -75,10 +51,7 @@ class ClickThroughUrl extends \Google\Model
     return $this->computedClickThroughUrl;
   }
   /**
-   * Custom click-through URL. Applicable if the defaultLandingPage field is set
-   * to false and the landingPageId field is left unset.
-   *
-   * @param string $customClickThroughUrl
+   * @param string
    */
   public function setCustomClickThroughUrl($customClickThroughUrl)
   {
@@ -92,9 +65,7 @@ class ClickThroughUrl extends \Google\Model
     return $this->customClickThroughUrl;
   }
   /**
-   * Whether the campaign default landing page is used.
-   *
-   * @param bool $defaultLandingPage
+   * @param bool
    */
   public function setDefaultLandingPage($defaultLandingPage)
   {
@@ -108,10 +79,7 @@ class ClickThroughUrl extends \Google\Model
     return $this->defaultLandingPage;
   }
   /**
-   * ID of the landing page for the click-through URL. Applicable if the
-   * defaultLandingPage field is set to false.
-   *
-   * @param string $landingPageId
+   * @param string
    */
   public function setLandingPageId($landingPageId)
   {

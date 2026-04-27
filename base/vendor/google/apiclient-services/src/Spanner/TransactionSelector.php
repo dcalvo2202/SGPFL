@@ -22,8 +22,6 @@ class TransactionSelector extends \Google\Model
   protected $beginType = TransactionOptions::class;
   protected $beginDataType = '';
   /**
-   * Execute the read or SQL query in a previously-started transaction.
-   *
    * @var string
    */
   public $id;
@@ -31,11 +29,7 @@ class TransactionSelector extends \Google\Model
   protected $singleUseDataType = '';
 
   /**
-   * Begin a new transaction and execute this read or SQL query in it. The
-   * transaction ID of the new transaction is returned in
-   * ResultSetMetadata.transaction, which is a Transaction.
-   *
-   * @param TransactionOptions $begin
+   * @param TransactionOptions
    */
   public function setBegin(TransactionOptions $begin)
   {
@@ -49,9 +43,7 @@ class TransactionSelector extends \Google\Model
     return $this->begin;
   }
   /**
-   * Execute the read or SQL query in a previously-started transaction.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -65,10 +57,7 @@ class TransactionSelector extends \Google\Model
     return $this->id;
   }
   /**
-   * Execute the read or SQL query in a temporary transaction. This is the most
-   * efficient way to execute a transaction that consists of a single SQL query.
-   *
-   * @param TransactionOptions $singleUse
+   * @param TransactionOptions
    */
   public function setSingleUse(TransactionOptions $singleUse)
   {

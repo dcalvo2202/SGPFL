@@ -23,20 +23,12 @@ class GooglePrivacyDlpV2InspectResult extends \Google\Collection
   protected $findingsType = GooglePrivacyDlpV2Finding::class;
   protected $findingsDataType = 'array';
   /**
-   * If true, then this item might have more findings than were returned, and
-   * the findings returned are an arbitrary subset of all findings. The findings
-   * list might be truncated because the input items were too large, or because
-   * the server reached the maximum amount of resources allowed for a single API
-   * call. For best results, divide the input into smaller batches.
-   *
    * @var bool
    */
   public $findingsTruncated;
 
   /**
-   * List of findings for an item.
-   *
-   * @param GooglePrivacyDlpV2Finding[] $findings
+   * @param GooglePrivacyDlpV2Finding[]
    */
   public function setFindings($findings)
   {
@@ -50,13 +42,7 @@ class GooglePrivacyDlpV2InspectResult extends \Google\Collection
     return $this->findings;
   }
   /**
-   * If true, then this item might have more findings than were returned, and
-   * the findings returned are an arbitrary subset of all findings. The findings
-   * list might be truncated because the input items were too large, or because
-   * the server reached the maximum amount of resources allowed for a single API
-   * call. For best results, divide the input into smaller batches.
-   *
-   * @param bool $findingsTruncated
+   * @param bool
    */
   public function setFindingsTruncated($findingsTruncated)
   {

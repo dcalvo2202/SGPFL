@@ -20,48 +20,24 @@ namespace Google\Service\ShoppingContent;
 class AccountReturnCarrier extends \Google\Model
 {
   /**
-   * Carrier not specified
-   */
-  public const CARRIER_CODE_CARRIER_CODE_UNSPECIFIED = 'CARRIER_CODE_UNSPECIFIED';
-  /**
-   * FedEx carrier
-   */
-  public const CARRIER_CODE_FEDEX = 'FEDEX';
-  /**
-   * UPS carrier
-   */
-  public const CARRIER_CODE_UPS = 'UPS';
-  /**
-   * Output only. Immutable. The Google-provided unique carrier ID, used to
-   * update the resource.
-   *
    * @var string
    */
   public $carrierAccountId;
   /**
-   * Name of the carrier account.
-   *
    * @var string
    */
   public $carrierAccountName;
   /**
-   * Number of the carrier account.
-   *
    * @var string
    */
   public $carrierAccountNumber;
   /**
-   * The carrier code enum. Accepts the values FEDEX or UPS.
-   *
    * @var string
    */
   public $carrierCode;
 
   /**
-   * Output only. Immutable. The Google-provided unique carrier ID, used to
-   * update the resource.
-   *
-   * @param string $carrierAccountId
+   * @param string
    */
   public function setCarrierAccountId($carrierAccountId)
   {
@@ -75,9 +51,7 @@ class AccountReturnCarrier extends \Google\Model
     return $this->carrierAccountId;
   }
   /**
-   * Name of the carrier account.
-   *
-   * @param string $carrierAccountName
+   * @param string
    */
   public function setCarrierAccountName($carrierAccountName)
   {
@@ -91,9 +65,7 @@ class AccountReturnCarrier extends \Google\Model
     return $this->carrierAccountName;
   }
   /**
-   * Number of the carrier account.
-   *
-   * @param string $carrierAccountNumber
+   * @param string
    */
   public function setCarrierAccountNumber($carrierAccountNumber)
   {
@@ -107,18 +79,14 @@ class AccountReturnCarrier extends \Google\Model
     return $this->carrierAccountNumber;
   }
   /**
-   * The carrier code enum. Accepts the values FEDEX or UPS.
-   *
-   * Accepted values: CARRIER_CODE_UNSPECIFIED, FEDEX, UPS
-   *
-   * @param self::CARRIER_CODE_* $carrierCode
+   * @param string
    */
   public function setCarrierCode($carrierCode)
   {
     $this->carrierCode = $carrierCode;
   }
   /**
-   * @return self::CARRIER_CODE_*
+   * @return string
    */
   public function getCarrierCode()
   {

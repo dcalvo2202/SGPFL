@@ -21,36 +21,20 @@ class GooglePrivacyDlpV2DeltaPresenceEstimationHistogramBucket extends \Google\C
 {
   protected $collection_key = 'bucketValues';
   /**
-   * Number of records within these probability bounds.
-   *
    * @var string
    */
   public $bucketSize;
   /**
-   * Total number of distinct quasi-identifier tuple values in this bucket.
-   *
    * @var string
    */
   public $bucketValueCount;
   protected $bucketValuesType = GooglePrivacyDlpV2DeltaPresenceEstimationQuasiIdValues::class;
   protected $bucketValuesDataType = 'array';
-  /**
-   * Always greater than or equal to min_probability.
-   *
-   * @var 
-   */
   public $maxProbability;
-  /**
-   * Between 0 and 1.
-   *
-   * @var 
-   */
   public $minProbability;
 
   /**
-   * Number of records within these probability bounds.
-   *
-   * @param string $bucketSize
+   * @param string
    */
   public function setBucketSize($bucketSize)
   {
@@ -64,9 +48,7 @@ class GooglePrivacyDlpV2DeltaPresenceEstimationHistogramBucket extends \Google\C
     return $this->bucketSize;
   }
   /**
-   * Total number of distinct quasi-identifier tuple values in this bucket.
-   *
-   * @param string $bucketValueCount
+   * @param string
    */
   public function setBucketValueCount($bucketValueCount)
   {
@@ -80,10 +62,7 @@ class GooglePrivacyDlpV2DeltaPresenceEstimationHistogramBucket extends \Google\C
     return $this->bucketValueCount;
   }
   /**
-   * Sample of quasi-identifier tuple values in this bucket. The total number of
-   * classes returned per bucket is capped at 20.
-   *
-   * @param GooglePrivacyDlpV2DeltaPresenceEstimationQuasiIdValues[] $bucketValues
+   * @param GooglePrivacyDlpV2DeltaPresenceEstimationQuasiIdValues[]
    */
   public function setBucketValues($bucketValues)
   {

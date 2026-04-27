@@ -20,49 +20,18 @@ namespace Google\Service\SecurityPosture;
 class Violation extends \Google\Model
 {
   /**
-   * Default value. This value is unused.
-   */
-  public const SEVERITY_SEVERITY_UNSPECIFIED = 'SEVERITY_UNSPECIFIED';
-  /**
-   * Critical severity.
-   */
-  public const SEVERITY_CRITICAL = 'CRITICAL';
-  /**
-   * High severity.
-   */
-  public const SEVERITY_HIGH = 'HIGH';
-  /**
-   * Medium severity.
-   */
-  public const SEVERITY_MEDIUM = 'MEDIUM';
-  /**
-   * Low severity.
-   */
-  public const SEVERITY_LOW = 'LOW';
-  /**
-   * The full resource name of the asset that caused the violation. For details
-   * about the format of the full resource name for each asset type, see
-   * [Resource name format](https://cloud.google.com/asset-
-   * inventory/docs/resource-name-format).
-   *
    * @var string
    */
   public $assetId;
   /**
-   * A description of the steps that you can take to fix the violation.
-   *
    * @var string
    */
   public $nextSteps;
   /**
-   * The policy that was violated.
-   *
    * @var string
    */
   public $policyId;
   /**
-   * The severity of the violation.
-   *
    * @var string
    */
   public $severity;
@@ -74,12 +43,7 @@ class Violation extends \Google\Model
   protected $violatedPostureDataType = '';
 
   /**
-   * The full resource name of the asset that caused the violation. For details
-   * about the format of the full resource name for each asset type, see
-   * [Resource name format](https://cloud.google.com/asset-
-   * inventory/docs/resource-name-format).
-   *
-   * @param string $assetId
+   * @param string
    */
   public function setAssetId($assetId)
   {
@@ -93,9 +57,7 @@ class Violation extends \Google\Model
     return $this->assetId;
   }
   /**
-   * A description of the steps that you can take to fix the violation.
-   *
-   * @param string $nextSteps
+   * @param string
    */
   public function setNextSteps($nextSteps)
   {
@@ -109,9 +71,7 @@ class Violation extends \Google\Model
     return $this->nextSteps;
   }
   /**
-   * The policy that was violated.
-   *
-   * @param string $policyId
+   * @param string
    */
   public function setPolicyId($policyId)
   {
@@ -125,27 +85,21 @@ class Violation extends \Google\Model
     return $this->policyId;
   }
   /**
-   * The severity of the violation.
-   *
-   * Accepted values: SEVERITY_UNSPECIFIED, CRITICAL, HIGH, MEDIUM, LOW
-   *
-   * @param self::SEVERITY_* $severity
+   * @param string
    */
   public function setSeverity($severity)
   {
     $this->severity = $severity;
   }
   /**
-   * @return self::SEVERITY_*
+   * @return string
    */
   public function getSeverity()
   {
     return $this->severity;
   }
   /**
-   * Details of the Cloud Asset Inventory asset that caused the violation.
-   *
-   * @param AssetDetails $violatedAsset
+   * @param AssetDetails
    */
   public function setViolatedAsset(AssetDetails $violatedAsset)
   {
@@ -159,9 +113,7 @@ class Violation extends \Google\Model
     return $this->violatedAsset;
   }
   /**
-   * Details of the policy that was violated.
-   *
-   * @param PolicyDetails $violatedPolicy
+   * @param PolicyDetails
    */
   public function setViolatedPolicy(PolicyDetails $violatedPolicy)
   {
@@ -175,10 +127,7 @@ class Violation extends \Google\Model
     return $this->violatedPolicy;
   }
   /**
-   * Details for the posture that was violated. This field is present only if
-   * the violated policy belongs to a deployed posture.
-   *
-   * @param PostureDetails $violatedPosture
+   * @param PostureDetails
    */
   public function setViolatedPosture(PostureDetails $violatedPosture)
   {

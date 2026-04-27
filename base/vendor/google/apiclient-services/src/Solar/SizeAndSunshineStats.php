@@ -21,33 +21,20 @@ class SizeAndSunshineStats extends \Google\Collection
 {
   protected $collection_key = 'sunshineQuantiles';
   /**
-   * The area of the roof or roof segment, in m^2. This is the roof area
-   * (accounting for tilt), not the ground footprint area.
-   *
    * @var float
    */
   public $areaMeters2;
   /**
-   * The ground footprint area covered by the roof or roof segment, in m^2.
-   *
    * @var float
    */
   public $groundAreaMeters2;
   /**
-   * Quantiles of the pointwise sunniness across the area. If there are N values
-   * here, this represents the (N-1)-iles. For example, if there are 5 values,
-   * then they would be the quartiles (min, 25%, 50%, 75%, max). Values are in
-   * annual kWh/kW like max_sunshine_hours_per_year.
-   *
    * @var float[]
    */
   public $sunshineQuantiles;
 
   /**
-   * The area of the roof or roof segment, in m^2. This is the roof area
-   * (accounting for tilt), not the ground footprint area.
-   *
-   * @param float $areaMeters2
+   * @param float
    */
   public function setAreaMeters2($areaMeters2)
   {
@@ -61,9 +48,7 @@ class SizeAndSunshineStats extends \Google\Collection
     return $this->areaMeters2;
   }
   /**
-   * The ground footprint area covered by the roof or roof segment, in m^2.
-   *
-   * @param float $groundAreaMeters2
+   * @param float
    */
   public function setGroundAreaMeters2($groundAreaMeters2)
   {
@@ -77,12 +62,7 @@ class SizeAndSunshineStats extends \Google\Collection
     return $this->groundAreaMeters2;
   }
   /**
-   * Quantiles of the pointwise sunniness across the area. If there are N values
-   * here, this represents the (N-1)-iles. For example, if there are 5 values,
-   * then they would be the quartiles (min, 25%, 50%, 75%, max). Values are in
-   * annual kWh/kW like max_sunshine_hours_per_year.
-   *
-   * @param float[] $sunshineQuantiles
+   * @param float[]
    */
   public function setSunshineQuantiles($sunshineQuantiles)
   {

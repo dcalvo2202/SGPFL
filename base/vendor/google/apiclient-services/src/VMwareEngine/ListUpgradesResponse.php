@@ -21,15 +21,10 @@ class ListUpgradesResponse extends \Google\Collection
 {
   protected $collection_key = 'upgrades';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * List of unreachable resources.
-   *
    * @var string[]
    */
   public $unreachable;
@@ -37,10 +32,7 @@ class ListUpgradesResponse extends \Google\Collection
   protected $upgradesDataType = 'array';
 
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -54,9 +46,7 @@ class ListUpgradesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * List of unreachable resources.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {
@@ -70,9 +60,7 @@ class ListUpgradesResponse extends \Google\Collection
     return $this->unreachable;
   }
   /**
-   * A list of `Upgrades`.
-   *
-   * @param Upgrade[] $upgrades
+   * @param Upgrade[]
    */
   public function setUpgrades($upgrades)
   {

@@ -23,10 +23,7 @@ class GoogleCloudBigqueryAnalyticshubV1ListingCommercialInfo extends \Google\Mod
   protected $cloudMarketplaceDataType = '';
 
   /**
-   * Output only. Details of the Marketplace Data Product associated with the
-   * Listing.
-   *
-   * @param GoogleCloudBigqueryAnalyticshubV1ListingCommercialInfoGoogleCloudMarketplaceInfo $cloudMarketplace
+   * @param GoogleCloudBigqueryAnalyticshubV1ListingCommercialInfoGoogleCloudMarketplaceInfo
    */
   public function setCloudMarketplace(GoogleCloudBigqueryAnalyticshubV1ListingCommercialInfoGoogleCloudMarketplaceInfo $cloudMarketplace)
   {

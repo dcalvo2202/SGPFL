@@ -20,29 +20,20 @@ namespace Google\Service\Container;
 class StandardRolloutPolicy extends \Google\Model
 {
   /**
-   * Number of blue nodes to drain in a batch.
-   *
    * @var int
    */
   public $batchNodeCount;
   /**
-   * Percentage of the blue pool nodes to drain in a batch. The range of this
-   * field should be (0.0, 1.0].
-   *
    * @var float
    */
   public $batchPercentage;
   /**
-   * Soak time after each batch gets drained. Default to zero.
-   *
    * @var string
    */
   public $batchSoakDuration;
 
   /**
-   * Number of blue nodes to drain in a batch.
-   *
-   * @param int $batchNodeCount
+   * @param int
    */
   public function setBatchNodeCount($batchNodeCount)
   {
@@ -56,10 +47,7 @@ class StandardRolloutPolicy extends \Google\Model
     return $this->batchNodeCount;
   }
   /**
-   * Percentage of the blue pool nodes to drain in a batch. The range of this
-   * field should be (0.0, 1.0].
-   *
-   * @param float $batchPercentage
+   * @param float
    */
   public function setBatchPercentage($batchPercentage)
   {
@@ -73,9 +61,7 @@ class StandardRolloutPolicy extends \Google\Model
     return $this->batchPercentage;
   }
   /**
-   * Soak time after each batch gets drained. Default to zero.
-   *
-   * @param string $batchSoakDuration
+   * @param string
    */
   public function setBatchSoakDuration($batchSoakDuration)
   {

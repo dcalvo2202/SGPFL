@@ -21,39 +21,26 @@ class ChannelSectionTargeting extends \Google\Collection
 {
   protected $collection_key = 'regions';
   /**
-   * The country the channel section is targeting.
-   *
-   * @deprecated
    * @var string[]
    */
   public $countries;
   /**
-   * The language the channel section is targeting.
-   *
-   * @deprecated
    * @var string[]
    */
   public $languages;
   /**
-   * The region the channel section is targeting.
-   *
-   * @deprecated
    * @var string[]
    */
   public $regions;
 
   /**
-   * The country the channel section is targeting.
-   *
-   * @deprecated
-   * @param string[] $countries
+   * @param string[]
    */
   public function setCountries($countries)
   {
     $this->countries = $countries;
   }
   /**
-   * @deprecated
    * @return string[]
    */
   public function getCountries()
@@ -61,17 +48,13 @@ class ChannelSectionTargeting extends \Google\Collection
     return $this->countries;
   }
   /**
-   * The language the channel section is targeting.
-   *
-   * @deprecated
-   * @param string[] $languages
+   * @param string[]
    */
   public function setLanguages($languages)
   {
     $this->languages = $languages;
   }
   /**
-   * @deprecated
    * @return string[]
    */
   public function getLanguages()
@@ -79,17 +62,13 @@ class ChannelSectionTargeting extends \Google\Collection
     return $this->languages;
   }
   /**
-   * The region the channel section is targeting.
-   *
-   * @deprecated
-   * @param string[] $regions
+   * @param string[]
    */
   public function setRegions($regions)
   {
     $this->regions = $regions;
   }
   /**
-   * @deprecated
    * @return string[]
    */
   public function getRegions()

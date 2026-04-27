@@ -33,17 +33,12 @@ class GoogleApiServiceusageV1ServiceConfig extends \Google\Collection
   protected $monitoringType = Monitoring::class;
   protected $monitoringDataType = '';
   /**
-   * The DNS address at which this service is available. An example DNS address
-   * would be: `calendar.googleapis.com`.
-   *
    * @var string
    */
   public $name;
   protected $quotaType = Quota::class;
   protected $quotaDataType = '';
   /**
-   * The product title for this service.
-   *
    * @var string
    */
   public $title;
@@ -51,10 +46,7 @@ class GoogleApiServiceusageV1ServiceConfig extends \Google\Collection
   protected $usageDataType = '';
 
   /**
-   * A list of API interfaces exported by this service. Contains only the names,
-   * versions, and method names of the interfaces.
-   *
-   * @param Api[] $apis
+   * @param Api[]
    */
   public function setApis($apis)
   {
@@ -68,9 +60,7 @@ class GoogleApiServiceusageV1ServiceConfig extends \Google\Collection
     return $this->apis;
   }
   /**
-   * Auth configuration. Contains only the OAuth rules.
-   *
-   * @param Authentication $authentication
+   * @param Authentication
    */
   public function setAuthentication(Authentication $authentication)
   {
@@ -84,10 +74,7 @@ class GoogleApiServiceusageV1ServiceConfig extends \Google\Collection
     return $this->authentication;
   }
   /**
-   * Additional API documentation. Contains only the summary and the
-   * documentation URL.
-   *
-   * @param Documentation $documentation
+   * @param Documentation
    */
   public function setDocumentation(Documentation $documentation)
   {
@@ -101,10 +88,7 @@ class GoogleApiServiceusageV1ServiceConfig extends \Google\Collection
     return $this->documentation;
   }
   /**
-   * Configuration for network endpoints. Contains only the names and aliases of
-   * the endpoints.
-   *
-   * @param Endpoint[] $endpoints
+   * @param Endpoint[]
    */
   public function setEndpoints($endpoints)
   {
@@ -118,10 +102,7 @@ class GoogleApiServiceusageV1ServiceConfig extends \Google\Collection
     return $this->endpoints;
   }
   /**
-   * Defines the monitored resources used by this service. This is required by
-   * the Service.monitoring and Service.logging configurations.
-   *
-   * @param MonitoredResourceDescriptor[] $monitoredResources
+   * @param MonitoredResourceDescriptor[]
    */
   public function setMonitoredResources($monitoredResources)
   {
@@ -135,10 +116,7 @@ class GoogleApiServiceusageV1ServiceConfig extends \Google\Collection
     return $this->monitoredResources;
   }
   /**
-   * Monitoring configuration. This should not include the
-   * 'producer_destinations' field.
-   *
-   * @param Monitoring $monitoring
+   * @param Monitoring
    */
   public function setMonitoring(Monitoring $monitoring)
   {
@@ -152,10 +130,7 @@ class GoogleApiServiceusageV1ServiceConfig extends \Google\Collection
     return $this->monitoring;
   }
   /**
-   * The DNS address at which this service is available. An example DNS address
-   * would be: `calendar.googleapis.com`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -169,9 +144,7 @@ class GoogleApiServiceusageV1ServiceConfig extends \Google\Collection
     return $this->name;
   }
   /**
-   * Quota configuration.
-   *
-   * @param Quota $quota
+   * @param Quota
    */
   public function setQuota(Quota $quota)
   {
@@ -185,9 +158,7 @@ class GoogleApiServiceusageV1ServiceConfig extends \Google\Collection
     return $this->quota;
   }
   /**
-   * The product title for this service.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -201,9 +172,7 @@ class GoogleApiServiceusageV1ServiceConfig extends \Google\Collection
     return $this->title;
   }
   /**
-   * Configuration controlling usage of this service.
-   *
-   * @param Usage $usage
+   * @param Usage
    */
   public function setUsage(Usage $usage)
   {

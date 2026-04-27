@@ -21,25 +21,18 @@ class UserProfileList extends \Google\Collection
 {
   protected $collection_key = 'items';
   /**
-   * Etag of this resource.
-   *
    * @var string
    */
   public $etag;
   protected $itemsType = UserProfile::class;
   protected $itemsDataType = 'array';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#userProfileList".
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * Etag of this resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -53,9 +46,7 @@ class UserProfileList extends \Google\Collection
     return $this->etag;
   }
   /**
-   * The user profiles returned in this response.
-   *
-   * @param UserProfile[] $items
+   * @param UserProfile[]
    */
   public function setItems($items)
   {
@@ -69,10 +60,7 @@ class UserProfileList extends \Google\Collection
     return $this->items;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#userProfileList".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

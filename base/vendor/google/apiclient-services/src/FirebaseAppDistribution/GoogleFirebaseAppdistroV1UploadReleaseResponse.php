@@ -19,36 +19,15 @@ namespace Google\Service\FirebaseAppDistribution;
 
 class GoogleFirebaseAppdistroV1UploadReleaseResponse extends \Google\Model
 {
-  /**
-   * Upload binary result unspecified
-   */
-  public const RESULT_UPLOAD_RELEASE_RESULT_UNSPECIFIED = 'UPLOAD_RELEASE_RESULT_UNSPECIFIED';
-  /**
-   * Upload binary resulted in a new release
-   */
-  public const RESULT_RELEASE_CREATED = 'RELEASE_CREATED';
-  /**
-   * Upload binary updated an existing release
-   */
-  public const RESULT_RELEASE_UPDATED = 'RELEASE_UPDATED';
-  /**
-   * Upload binary resulted in a no-op. A release with the exact same binary
-   * already exists.
-   */
-  public const RESULT_RELEASE_UNMODIFIED = 'RELEASE_UNMODIFIED';
   protected $releaseType = GoogleFirebaseAppdistroV1Release::class;
   protected $releaseDataType = '';
   /**
-   * Result of upload release.
-   *
    * @var string
    */
   public $result;
 
   /**
-   * Release associated with the uploaded binary.
-   *
-   * @param GoogleFirebaseAppdistroV1Release $release
+   * @param GoogleFirebaseAppdistroV1Release
    */
   public function setRelease(GoogleFirebaseAppdistroV1Release $release)
   {
@@ -62,19 +41,14 @@ class GoogleFirebaseAppdistroV1UploadReleaseResponse extends \Google\Model
     return $this->release;
   }
   /**
-   * Result of upload release.
-   *
-   * Accepted values: UPLOAD_RELEASE_RESULT_UNSPECIFIED, RELEASE_CREATED,
-   * RELEASE_UPDATED, RELEASE_UNMODIFIED
-   *
-   * @param self::RESULT_* $result
+   * @param string
    */
   public function setResult($result)
   {
     $this->result = $result;
   }
   /**
-   * @return self::RESULT_*
+   * @return string
    */
   public function getResult()
   {

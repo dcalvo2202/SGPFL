@@ -20,38 +20,24 @@ namespace Google\Service\Directory;
 class UserPhone extends \Google\Model
 {
   /**
-   * Custom Type.
-   *
    * @var string
    */
   public $customType;
   /**
-   * If this is user's primary phone or not.
-   *
    * @var bool
    */
   public $primary;
   /**
-   * Each entry can have a type which indicates standard types of that entry.
-   * For example phone could be of home_fax work mobile etc. In addition to the
-   * standard type an entry can have a custom type and can give it any name.
-   * Such types should have the CUSTOM value as type and also have a customType
-   * value.
-   *
    * @var string
    */
   public $type;
   /**
-   * Phone number.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Custom Type.
-   *
-   * @param string $customType
+   * @param string
    */
   public function setCustomType($customType)
   {
@@ -65,9 +51,7 @@ class UserPhone extends \Google\Model
     return $this->customType;
   }
   /**
-   * If this is user's primary phone or not.
-   *
-   * @param bool $primary
+   * @param bool
    */
   public function setPrimary($primary)
   {
@@ -81,13 +65,7 @@ class UserPhone extends \Google\Model
     return $this->primary;
   }
   /**
-   * Each entry can have a type which indicates standard types of that entry.
-   * For example phone could be of home_fax work mobile etc. In addition to the
-   * standard type an entry can have a custom type and can give it any name.
-   * Such types should have the CUSTOM value as type and also have a customType
-   * value.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {
@@ -101,9 +79,7 @@ class UserPhone extends \Google\Model
     return $this->type;
   }
   /**
-   * Phone number.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

@@ -20,18 +20,12 @@ namespace Google\Service\Contactcenterinsights;
 class GoogleCloudContactcenterinsightsV1IntentMatchData extends \Google\Model
 {
   /**
-   * The id of the matched intent. Can be used to retrieve the corresponding
-   * intent information.
-   *
    * @var string
    */
   public $intentUniqueId;
 
   /**
-   * The id of the matched intent. Can be used to retrieve the corresponding
-   * intent information.
-   *
-   * @param string $intentUniqueId
+   * @param string
    */
   public function setIntentUniqueId($intentUniqueId)
   {

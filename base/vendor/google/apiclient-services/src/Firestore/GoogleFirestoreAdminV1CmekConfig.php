@@ -21,40 +21,16 @@ class GoogleFirestoreAdminV1CmekConfig extends \Google\Collection
 {
   protected $collection_key = 'activeKeyVersion';
   /**
-   * Output only. Currently in-use [KMS key
-   * versions](https://cloud.google.com/kms/docs/resource-
-   * hierarchy#key_versions). During [key
-   * rotation](https://cloud.google.com/kms/docs/key-rotation), there can be
-   * multiple in-use key versions. The expected format is `projects/{project_id}
-   * /locations/{kms_location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/crypt
-   * oKeyVersions/{key_version}`.
-   *
    * @var string[]
    */
   public $activeKeyVersion;
   /**
-   * Required. Only keys in the same location as this database are allowed to be
-   * used for encryption. For Firestore's nam5 multi-region, this corresponds to
-   * Cloud KMS multi-region us. For Firestore's eur3 multi-region, this
-   * corresponds to Cloud KMS multi-region europe. See
-   * https://cloud.google.com/kms/docs/locations. The expected format is `projec
-   * ts/{project_id}/locations/{kms_location}/keyRings/{key_ring}/cryptoKeys/{cr
-   * ypto_key}`.
-   *
    * @var string
    */
   public $kmsKeyName;
 
   /**
-   * Output only. Currently in-use [KMS key
-   * versions](https://cloud.google.com/kms/docs/resource-
-   * hierarchy#key_versions). During [key
-   * rotation](https://cloud.google.com/kms/docs/key-rotation), there can be
-   * multiple in-use key versions. The expected format is `projects/{project_id}
-   * /locations/{kms_location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/crypt
-   * oKeyVersions/{key_version}`.
-   *
-   * @param string[] $activeKeyVersion
+   * @param string[]
    */
   public function setActiveKeyVersion($activeKeyVersion)
   {
@@ -68,15 +44,7 @@ class GoogleFirestoreAdminV1CmekConfig extends \Google\Collection
     return $this->activeKeyVersion;
   }
   /**
-   * Required. Only keys in the same location as this database are allowed to be
-   * used for encryption. For Firestore's nam5 multi-region, this corresponds to
-   * Cloud KMS multi-region us. For Firestore's eur3 multi-region, this
-   * corresponds to Cloud KMS multi-region europe. See
-   * https://cloud.google.com/kms/docs/locations. The expected format is `projec
-   * ts/{project_id}/locations/{kms_location}/keyRings/{key_ring}/cryptoKeys/{cr
-   * ypto_key}`.
-   *
-   * @param string $kmsKeyName
+   * @param string
    */
   public function setKmsKeyName($kmsKeyName)
   {

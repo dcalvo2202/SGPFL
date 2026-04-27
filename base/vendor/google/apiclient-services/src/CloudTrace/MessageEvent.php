@@ -20,49 +20,24 @@ namespace Google\Service\CloudTrace;
 class MessageEvent extends \Google\Model
 {
   /**
-   * Unknown event type.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * Indicates a sent message.
-   */
-  public const TYPE_SENT = 'SENT';
-  /**
-   * Indicates a received message.
-   */
-  public const TYPE_RECEIVED = 'RECEIVED';
-  /**
-   * The number of compressed bytes sent or received. If missing, the compressed
-   * size is assumed to be the same size as the uncompressed size.
-   *
    * @var string
    */
   public $compressedSizeBytes;
   /**
-   * An identifier for the MessageEvent's message that can be used to match
-   * `SENT` and `RECEIVED` MessageEvents.
-   *
    * @var string
    */
   public $id;
   /**
-   * Type of MessageEvent. Indicates whether the message was sent or received.
-   *
    * @var string
    */
   public $type;
   /**
-   * The number of uncompressed bytes sent or received.
-   *
    * @var string
    */
   public $uncompressedSizeBytes;
 
   /**
-   * The number of compressed bytes sent or received. If missing, the compressed
-   * size is assumed to be the same size as the uncompressed size.
-   *
-   * @param string $compressedSizeBytes
+   * @param string
    */
   public function setCompressedSizeBytes($compressedSizeBytes)
   {
@@ -76,10 +51,7 @@ class MessageEvent extends \Google\Model
     return $this->compressedSizeBytes;
   }
   /**
-   * An identifier for the MessageEvent's message that can be used to match
-   * `SENT` and `RECEIVED` MessageEvents.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -93,27 +65,21 @@ class MessageEvent extends \Google\Model
     return $this->id;
   }
   /**
-   * Type of MessageEvent. Indicates whether the message was sent or received.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, SENT, RECEIVED
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * The number of uncompressed bytes sent or received.
-   *
-   * @param string $uncompressedSizeBytes
+   * @param string
    */
   public function setUncompressedSizeBytes($uncompressedSizeBytes)
   {

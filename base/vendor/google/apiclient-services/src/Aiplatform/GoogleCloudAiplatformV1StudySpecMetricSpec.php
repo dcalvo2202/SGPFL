@@ -20,27 +20,10 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1StudySpecMetricSpec extends \Google\Model
 {
   /**
-   * Goal Type will default to maximize.
-   */
-  public const GOAL_GOAL_TYPE_UNSPECIFIED = 'GOAL_TYPE_UNSPECIFIED';
-  /**
-   * Maximize the goal metric.
-   */
-  public const GOAL_MAXIMIZE = 'MAXIMIZE';
-  /**
-   * Minimize the goal metric.
-   */
-  public const GOAL_MINIMIZE = 'MINIMIZE';
-  /**
-   * Required. The optimization goal of the metric.
-   *
    * @var string
    */
   public $goal;
   /**
-   * Required. The ID of the metric. Must not contain whitespaces and must be
-   * unique amongst all MetricSpecs.
-   *
    * @var string
    */
   public $metricId;
@@ -48,28 +31,21 @@ class GoogleCloudAiplatformV1StudySpecMetricSpec extends \Google\Model
   protected $safetyConfigDataType = '';
 
   /**
-   * Required. The optimization goal of the metric.
-   *
-   * Accepted values: GOAL_TYPE_UNSPECIFIED, MAXIMIZE, MINIMIZE
-   *
-   * @param self::GOAL_* $goal
+   * @param string
    */
   public function setGoal($goal)
   {
     $this->goal = $goal;
   }
   /**
-   * @return self::GOAL_*
+   * @return string
    */
   public function getGoal()
   {
     return $this->goal;
   }
   /**
-   * Required. The ID of the metric. Must not contain whitespaces and must be
-   * unique amongst all MetricSpecs.
-   *
-   * @param string $metricId
+   * @param string
    */
   public function setMetricId($metricId)
   {
@@ -83,10 +59,7 @@ class GoogleCloudAiplatformV1StudySpecMetricSpec extends \Google\Model
     return $this->metricId;
   }
   /**
-   * Used for safe search. In the case, the metric will be a safety metric. You
-   * must provide a separate metric for objective metric.
-   *
-   * @param GoogleCloudAiplatformV1StudySpecMetricSpecSafetyMetricConfig $safetyConfig
+   * @param GoogleCloudAiplatformV1StudySpecMetricSpecSafetyMetricConfig
    */
   public function setSafetyConfig(GoogleCloudAiplatformV1StudySpecMetricSpecSafetyMetricConfig $safetyConfig)
   {

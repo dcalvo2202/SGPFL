@@ -28,10 +28,7 @@ class SpokeSummary extends \Google\Collection
   protected $spokeTypeCountsDataType = 'array';
 
   /**
-   * Output only. Counts the number of spokes that are in each state and
-   * associated with a given hub.
-   *
-   * @param SpokeStateCount[] $spokeStateCounts
+   * @param SpokeStateCount[]
    */
   public function setSpokeStateCounts($spokeStateCounts)
   {
@@ -45,10 +42,7 @@ class SpokeSummary extends \Google\Collection
     return $this->spokeStateCounts;
   }
   /**
-   * Output only. Counts the number of spokes that are inactive for each
-   * possible reason and associated with a given hub.
-   *
-   * @param SpokeStateReasonCount[] $spokeStateReasonCounts
+   * @param SpokeStateReasonCount[]
    */
   public function setSpokeStateReasonCounts($spokeStateReasonCounts)
   {
@@ -62,10 +56,7 @@ class SpokeSummary extends \Google\Collection
     return $this->spokeStateReasonCounts;
   }
   /**
-   * Output only. Counts the number of spokes of each type that are associated
-   * with a specific hub.
-   *
-   * @param SpokeTypeCount[] $spokeTypeCounts
+   * @param SpokeTypeCount[]
    */
   public function setSpokeTypeCounts($spokeTypeCounts)
   {

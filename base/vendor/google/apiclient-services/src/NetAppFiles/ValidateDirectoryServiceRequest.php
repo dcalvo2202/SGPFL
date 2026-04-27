@@ -20,33 +20,19 @@ namespace Google\Service\NetAppFiles;
 class ValidateDirectoryServiceRequest extends \Google\Model
 {
   /**
-   * Directory service type is not specified.
-   */
-  public const DIRECTORY_SERVICE_TYPE_DIRECTORY_SERVICE_TYPE_UNSPECIFIED = 'DIRECTORY_SERVICE_TYPE_UNSPECIFIED';
-  /**
-   * Active directory policy attached to the storage pool.
-   */
-  public const DIRECTORY_SERVICE_TYPE_ACTIVE_DIRECTORY = 'ACTIVE_DIRECTORY';
-  /**
-   * Type of directory service policy attached to the storage pool.
-   *
    * @var string
    */
   public $directoryServiceType;
 
   /**
-   * Type of directory service policy attached to the storage pool.
-   *
-   * Accepted values: DIRECTORY_SERVICE_TYPE_UNSPECIFIED, ACTIVE_DIRECTORY
-   *
-   * @param self::DIRECTORY_SERVICE_TYPE_* $directoryServiceType
+   * @param string
    */
   public function setDirectoryServiceType($directoryServiceType)
   {
     $this->directoryServiceType = $directoryServiceType;
   }
   /**
-   * @return self::DIRECTORY_SERVICE_TYPE_*
+   * @return string
    */
   public function getDirectoryServiceType()
   {

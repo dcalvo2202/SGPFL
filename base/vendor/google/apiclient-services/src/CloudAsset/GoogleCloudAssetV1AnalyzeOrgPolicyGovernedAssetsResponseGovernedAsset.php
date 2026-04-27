@@ -30,14 +30,7 @@ class GoogleCloudAssetV1AnalyzeOrgPolicyGovernedAssetsResponseGovernedAsset exte
   protected $policyBundleDataType = 'array';
 
   /**
-   * The consolidated policy for the analyzed asset. The consolidated policy is
-   * computed by merging and evaluating
-   * AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.policy_bundle. The
-   * evaluation will respect the organization policy [hierarchy
-   * rules](https://cloud.google.com/resource-manager/docs/organization-
-   * policy/understanding-hierarchy).
-   *
-   * @param AnalyzerOrgPolicy $consolidatedPolicy
+   * @param AnalyzerOrgPolicy
    */
   public function setConsolidatedPolicy(AnalyzerOrgPolicy $consolidatedPolicy)
   {
@@ -51,10 +44,7 @@ class GoogleCloudAssetV1AnalyzeOrgPolicyGovernedAssetsResponseGovernedAsset exte
     return $this->consolidatedPolicy;
   }
   /**
-   * An IAM policy governed by the organization policies of the
-   * AnalyzeOrgPolicyGovernedAssetsRequest.constraint.
-   *
-   * @param GoogleCloudAssetV1AnalyzeOrgPolicyGovernedAssetsResponseGovernedIamPolicy $governedIamPolicy
+   * @param GoogleCloudAssetV1AnalyzeOrgPolicyGovernedAssetsResponseGovernedIamPolicy
    */
   public function setGovernedIamPolicy(GoogleCloudAssetV1AnalyzeOrgPolicyGovernedAssetsResponseGovernedIamPolicy $governedIamPolicy)
   {
@@ -68,10 +58,7 @@ class GoogleCloudAssetV1AnalyzeOrgPolicyGovernedAssetsResponseGovernedAsset exte
     return $this->governedIamPolicy;
   }
   /**
-   * A Google Cloud resource governed by the organization policies of the
-   * AnalyzeOrgPolicyGovernedAssetsRequest.constraint.
-   *
-   * @param GoogleCloudAssetV1AnalyzeOrgPolicyGovernedAssetsResponseGovernedResource $governedResource
+   * @param GoogleCloudAssetV1AnalyzeOrgPolicyGovernedAssetsResponseGovernedResource
    */
   public function setGovernedResource(GoogleCloudAssetV1AnalyzeOrgPolicyGovernedAssetsResponseGovernedResource $governedResource)
   {
@@ -85,12 +72,7 @@ class GoogleCloudAssetV1AnalyzeOrgPolicyGovernedAssetsResponseGovernedAsset exte
     return $this->governedResource;
   }
   /**
-   * The ordered list of all organization policies from the
-   * consolidated_policy.attached_resource to the scope specified in the
-   * request. If the constraint is defined with default policy, it will also
-   * appear in the list.
-   *
-   * @param AnalyzerOrgPolicy[] $policyBundle
+   * @param AnalyzerOrgPolicy[]
    */
   public function setPolicyBundle($policyBundle)
   {

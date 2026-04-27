@@ -23,9 +23,6 @@ class GlobalSetPolicyRequest extends \Google\Collection
   protected $bindingsType = Binding::class;
   protected $bindingsDataType = 'array';
   /**
-   * Flatten Policy to create a backward compatible wire-format. Deprecated. Use
-   * 'policy' to specify the etag.
-   *
    * @var string
    */
   public $etag;
@@ -33,10 +30,7 @@ class GlobalSetPolicyRequest extends \Google\Collection
   protected $policyDataType = '';
 
   /**
-   * Flatten Policy to create a backward compatible wire-format. Deprecated. Use
-   * 'policy' to specify bindings.
-   *
-   * @param Binding[] $bindings
+   * @param Binding[]
    */
   public function setBindings($bindings)
   {
@@ -50,10 +44,7 @@ class GlobalSetPolicyRequest extends \Google\Collection
     return $this->bindings;
   }
   /**
-   * Flatten Policy to create a backward compatible wire-format. Deprecated. Use
-   * 'policy' to specify the etag.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -67,11 +58,7 @@ class GlobalSetPolicyRequest extends \Google\Collection
     return $this->etag;
   }
   /**
-   * REQUIRED: The complete policy to be applied to the 'resource'. The size of
-   * the policy is limited to a few 10s of KB. An empty policy is in general a
-   * valid policy but certain services (like Projects) might reject them.
-   *
-   * @param Policy $policy
+   * @param Policy
    */
   public function setPolicy(Policy $policy)
   {

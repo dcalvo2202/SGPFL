@@ -24,9 +24,7 @@ class CreateOrUpdateTagsRequest extends \Google\Collection
   protected $tagsDataType = 'array';
 
   /**
-   * Tags to be inserted or updated.
-   *
-   * @param Tag[] $tags
+   * @param Tag[]
    */
   public function setTags($tags)
   {

@@ -21,9 +21,6 @@ class GoogleCloudAiplatformV1ListNotebookRuntimeTemplatesResponse extends \Googl
 {
   protected $collection_key = 'notebookRuntimeTemplates';
   /**
-   * A token to retrieve next page of results. Pass to
-   * ListNotebookRuntimeTemplatesRequest.page_token to obtain that page.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GoogleCloudAiplatformV1ListNotebookRuntimeTemplatesResponse extends \Googl
   protected $notebookRuntimeTemplatesDataType = 'array';
 
   /**
-   * A token to retrieve next page of results. Pass to
-   * ListNotebookRuntimeTemplatesRequest.page_token to obtain that page.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class GoogleCloudAiplatformV1ListNotebookRuntimeTemplatesResponse extends \Googl
     return $this->nextPageToken;
   }
   /**
-   * List of NotebookRuntimeTemplates in the requested page.
-   *
-   * @param GoogleCloudAiplatformV1NotebookRuntimeTemplate[] $notebookRuntimeTemplates
+   * @param GoogleCloudAiplatformV1NotebookRuntimeTemplate[]
    */
   public function setNotebookRuntimeTemplates($notebookRuntimeTemplates)
   {

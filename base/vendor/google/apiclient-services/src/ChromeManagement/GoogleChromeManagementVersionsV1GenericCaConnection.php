@@ -20,18 +20,12 @@ namespace Google\Service\ChromeManagement;
 class GoogleChromeManagementVersionsV1GenericCaConnection extends \Google\Model
 {
   /**
-   * Output only. A string that references the administrator-provided
-   * configuration for the certification authority service.
-   *
    * @var string
    */
   public $caConnectionAdapterConfigReference;
 
   /**
-   * Output only. A string that references the administrator-provided
-   * configuration for the certification authority service.
-   *
-   * @param string $caConnectionAdapterConfigReference
+   * @param string
    */
   public function setCaConnectionAdapterConfigReference($caConnectionAdapterConfigReference)
   {

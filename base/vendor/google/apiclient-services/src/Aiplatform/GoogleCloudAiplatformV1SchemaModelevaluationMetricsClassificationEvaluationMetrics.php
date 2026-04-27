@@ -21,16 +21,10 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsClassificationEvaluatio
 {
   protected $collection_key = 'confidenceMetrics';
   /**
-   * The Area Under Precision-Recall Curve metric. Micro-averaged for the
-   * overall evaluation.
-   *
    * @var float
    */
   public $auPrc;
   /**
-   * The Area Under Receiver Operating Characteristic curve metric. Micro-
-   * averaged for the overall evaluation.
-   *
    * @var float
    */
   public $auRoc;
@@ -39,17 +33,12 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsClassificationEvaluatio
   protected $confusionMatrixType = GoogleCloudAiplatformV1SchemaModelevaluationMetricsConfusionMatrix::class;
   protected $confusionMatrixDataType = '';
   /**
-   * The Log Loss metric.
-   *
    * @var float
    */
   public $logLoss;
 
   /**
-   * The Area Under Precision-Recall Curve metric. Micro-averaged for the
-   * overall evaluation.
-   *
-   * @param float $auPrc
+   * @param float
    */
   public function setAuPrc($auPrc)
   {
@@ -63,10 +52,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsClassificationEvaluatio
     return $this->auPrc;
   }
   /**
-   * The Area Under Receiver Operating Characteristic curve metric. Micro-
-   * averaged for the overall evaluation.
-   *
-   * @param float $auRoc
+   * @param float
    */
   public function setAuRoc($auRoc)
   {
@@ -80,14 +66,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsClassificationEvaluatio
     return $this->auRoc;
   }
   /**
-   * Metrics for each `confidenceThreshold` in
-   * 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and `positionThreshold` =
-   * INT32_MAX_VALUE. ROC and precision-recall curves, and other aggregated
-   * metrics are derived from them. The confidence metrics entries may also be
-   * supplied for additional values of `positionThreshold`, but from these no
-   * aggregated metrics are computed.
-   *
-   * @param GoogleCloudAiplatformV1SchemaModelevaluationMetricsClassificationEvaluationMetricsConfidenceMetrics[] $confidenceMetrics
+   * @param GoogleCloudAiplatformV1SchemaModelevaluationMetricsClassificationEvaluationMetricsConfidenceMetrics[]
    */
   public function setConfidenceMetrics($confidenceMetrics)
   {
@@ -101,9 +80,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsClassificationEvaluatio
     return $this->confidenceMetrics;
   }
   /**
-   * Confusion matrix of the evaluation.
-   *
-   * @param GoogleCloudAiplatformV1SchemaModelevaluationMetricsConfusionMatrix $confusionMatrix
+   * @param GoogleCloudAiplatformV1SchemaModelevaluationMetricsConfusionMatrix
    */
   public function setConfusionMatrix(GoogleCloudAiplatformV1SchemaModelevaluationMetricsConfusionMatrix $confusionMatrix)
   {
@@ -117,9 +94,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsClassificationEvaluatio
     return $this->confusionMatrix;
   }
   /**
-   * The Log Loss metric.
-   *
-   * @param float $logLoss
+   * @param float
    */
   public function setLogLoss($logLoss)
   {

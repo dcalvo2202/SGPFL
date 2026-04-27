@@ -23,16 +23,12 @@ class ListConnectorsResponse extends \Google\Collection
   protected $connectorsType = Connector::class;
   protected $connectorsDataType = 'array';
   /**
-   * Continuation token.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * List of Serverless VPC Access connectors.
-   *
-   * @param Connector[] $connectors
+   * @param Connector[]
    */
   public function setConnectors($connectors)
   {
@@ -46,9 +42,7 @@ class ListConnectorsResponse extends \Google\Collection
     return $this->connectors;
   }
   /**
-   * Continuation token.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

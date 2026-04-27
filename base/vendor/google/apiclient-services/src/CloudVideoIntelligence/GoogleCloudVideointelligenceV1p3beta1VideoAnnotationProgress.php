@@ -19,92 +19,33 @@ namespace Google\Service\CloudVideoIntelligence;
 
 class GoogleCloudVideointelligenceV1p3beta1VideoAnnotationProgress extends \Google\Model
 {
-  /**
-   * Unspecified.
-   */
-  public const FEATURE_FEATURE_UNSPECIFIED = 'FEATURE_UNSPECIFIED';
-  /**
-   * Label detection. Detect objects, such as dog or flower.
-   */
-  public const FEATURE_LABEL_DETECTION = 'LABEL_DETECTION';
-  /**
-   * Shot change detection.
-   */
-  public const FEATURE_SHOT_CHANGE_DETECTION = 'SHOT_CHANGE_DETECTION';
-  /**
-   * Explicit content detection.
-   */
-  public const FEATURE_EXPLICIT_CONTENT_DETECTION = 'EXPLICIT_CONTENT_DETECTION';
-  /**
-   * Human face detection.
-   */
-  public const FEATURE_FACE_DETECTION = 'FACE_DETECTION';
-  /**
-   * Speech transcription.
-   */
-  public const FEATURE_SPEECH_TRANSCRIPTION = 'SPEECH_TRANSCRIPTION';
-  /**
-   * OCR text detection and tracking.
-   */
-  public const FEATURE_TEXT_DETECTION = 'TEXT_DETECTION';
-  /**
-   * Object detection and tracking.
-   */
-  public const FEATURE_OBJECT_TRACKING = 'OBJECT_TRACKING';
-  /**
-   * Logo detection, tracking, and recognition.
-   */
-  public const FEATURE_LOGO_RECOGNITION = 'LOGO_RECOGNITION';
-  /**
-   * Celebrity recognition.
-   */
-  public const FEATURE_CELEBRITY_RECOGNITION = 'CELEBRITY_RECOGNITION';
-  /**
-   * Person detection.
-   */
-  public const FEATURE_PERSON_DETECTION = 'PERSON_DETECTION';
   protected $exportStatusType = GoogleCloudVideointelligenceV1p3beta1ExportToOutputUriStatus::class;
   protected $exportStatusDataType = '';
   /**
-   * Specifies which feature is being tracked if the request contains more than
-   * one feature.
-   *
    * @var string
    */
   public $feature;
   /**
-   * Video file location in [Cloud Storage](https://cloud.google.com/storage/).
-   *
    * @var string
    */
   public $inputUri;
   /**
-   * Approximate percentage processed thus far. Guaranteed to be 100 when fully
-   * processed.
-   *
    * @var int
    */
   public $progressPercent;
   protected $segmentType = GoogleCloudVideointelligenceV1p3beta1VideoSegment::class;
   protected $segmentDataType = '';
   /**
-   * Time when the request was received.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * Time of the most recent update.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Status of exporting annotation response to user specified `output_uri`.
-   * Only set if `output_uri` is set in the request.
-   *
-   * @param GoogleCloudVideointelligenceV1p3beta1ExportToOutputUriStatus $exportStatus
+   * @param GoogleCloudVideointelligenceV1p3beta1ExportToOutputUriStatus
    */
   public function setExportStatus(GoogleCloudVideointelligenceV1p3beta1ExportToOutputUriStatus $exportStatus)
   {
@@ -118,31 +59,21 @@ class GoogleCloudVideointelligenceV1p3beta1VideoAnnotationProgress extends \Goog
     return $this->exportStatus;
   }
   /**
-   * Specifies which feature is being tracked if the request contains more than
-   * one feature.
-   *
-   * Accepted values: FEATURE_UNSPECIFIED, LABEL_DETECTION,
-   * SHOT_CHANGE_DETECTION, EXPLICIT_CONTENT_DETECTION, FACE_DETECTION,
-   * SPEECH_TRANSCRIPTION, TEXT_DETECTION, OBJECT_TRACKING, LOGO_RECOGNITION,
-   * CELEBRITY_RECOGNITION, PERSON_DETECTION
-   *
-   * @param self::FEATURE_* $feature
+   * @param string
    */
   public function setFeature($feature)
   {
     $this->feature = $feature;
   }
   /**
-   * @return self::FEATURE_*
+   * @return string
    */
   public function getFeature()
   {
     return $this->feature;
   }
   /**
-   * Video file location in [Cloud Storage](https://cloud.google.com/storage/).
-   *
-   * @param string $inputUri
+   * @param string
    */
   public function setInputUri($inputUri)
   {
@@ -156,10 +87,7 @@ class GoogleCloudVideointelligenceV1p3beta1VideoAnnotationProgress extends \Goog
     return $this->inputUri;
   }
   /**
-   * Approximate percentage processed thus far. Guaranteed to be 100 when fully
-   * processed.
-   *
-   * @param int $progressPercent
+   * @param int
    */
   public function setProgressPercent($progressPercent)
   {
@@ -173,10 +101,7 @@ class GoogleCloudVideointelligenceV1p3beta1VideoAnnotationProgress extends \Goog
     return $this->progressPercent;
   }
   /**
-   * Specifies which segment is being tracked if the request contains more than
-   * one segment.
-   *
-   * @param GoogleCloudVideointelligenceV1p3beta1VideoSegment $segment
+   * @param GoogleCloudVideointelligenceV1p3beta1VideoSegment
    */
   public function setSegment(GoogleCloudVideointelligenceV1p3beta1VideoSegment $segment)
   {
@@ -190,9 +115,7 @@ class GoogleCloudVideointelligenceV1p3beta1VideoAnnotationProgress extends \Goog
     return $this->segment;
   }
   /**
-   * Time when the request was received.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -206,9 +129,7 @@ class GoogleCloudVideointelligenceV1p3beta1VideoAnnotationProgress extends \Goog
     return $this->startTime;
   }
   /**
-   * Time of the most recent update.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

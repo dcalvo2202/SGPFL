@@ -23,9 +23,7 @@ class AddTableRequest extends \Google\Model
   protected $tableDataType = '';
 
   /**
-   * Required. The table to add.
-   *
-   * @param Table $table
+   * @param Table
    */
   public function setTable(Table $table)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\Games;
 class PlayGroupingApiToken extends \Google\Model
 {
   /**
-   * Value of the token.
-   *
    * @var string
    */
   public $tokenValue;
 
   /**
-   * Value of the token.
-   *
-   * @param string $tokenValue
+   * @param string
    */
   public function setTokenValue($tokenValue)
   {

@@ -20,20 +20,12 @@ namespace Google\Service\Compute;
 class InstancesSetMachineTypeRequest extends \Google\Model
 {
   /**
-   * Full or partial URL of the machine type resource. See Machine Types for a
-   * full list of machine types. For example:zones/us-
-   * central1-f/machineTypes/n1-standard-1
-   *
    * @var string
    */
   public $machineType;
 
   /**
-   * Full or partial URL of the machine type resource. See Machine Types for a
-   * full list of machine types. For example:zones/us-
-   * central1-f/machineTypes/n1-standard-1
-   *
-   * @param string $machineType
+   * @param string
    */
   public function setMachineType($machineType)
   {

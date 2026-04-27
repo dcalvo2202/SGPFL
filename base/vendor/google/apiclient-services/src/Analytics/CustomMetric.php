@@ -24,97 +24,66 @@ class CustomMetric extends \Google\Model
         "minValue" => "min_value",
   ];
   /**
-   * Account ID.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * Boolean indicating whether the custom metric is active.
-   *
    * @var bool
    */
   public $active;
   /**
-   * Time the custom metric was created.
-   *
    * @var string
    */
   public $created;
   /**
-   * Custom metric ID.
-   *
    * @var string
    */
   public $id;
   /**
-   * Index of the custom metric.
-   *
    * @var int
    */
   public $index;
   /**
-   * Kind value for a custom metric. Set to "analytics#customMetric". It is a
-   * read-only field.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Max value of custom metric.
-   *
    * @var string
    */
   public $maxValue;
   /**
-   * Min value of custom metric.
-   *
    * @var string
    */
   public $minValue;
   /**
-   * Name of the custom metric.
-   *
    * @var string
    */
   public $name;
   protected $parentLinkType = CustomMetricParentLink::class;
   protected $parentLinkDataType = '';
   /**
-   * Scope of the custom metric: HIT or PRODUCT.
-   *
    * @var string
    */
   public $scope;
   /**
-   * Link for the custom metric
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * Data type of custom metric.
-   *
    * @var string
    */
   public $type;
   /**
-   * Time the custom metric was last modified.
-   *
    * @var string
    */
   public $updated;
   /**
-   * Property ID.
-   *
    * @var string
    */
   public $webPropertyId;
 
   /**
-   * Account ID.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -128,9 +97,7 @@ class CustomMetric extends \Google\Model
     return $this->accountId;
   }
   /**
-   * Boolean indicating whether the custom metric is active.
-   *
-   * @param bool $active
+   * @param bool
    */
   public function setActive($active)
   {
@@ -144,9 +111,7 @@ class CustomMetric extends \Google\Model
     return $this->active;
   }
   /**
-   * Time the custom metric was created.
-   *
-   * @param string $created
+   * @param string
    */
   public function setCreated($created)
   {
@@ -160,9 +125,7 @@ class CustomMetric extends \Google\Model
     return $this->created;
   }
   /**
-   * Custom metric ID.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -176,9 +139,7 @@ class CustomMetric extends \Google\Model
     return $this->id;
   }
   /**
-   * Index of the custom metric.
-   *
-   * @param int $index
+   * @param int
    */
   public function setIndex($index)
   {
@@ -192,10 +153,7 @@ class CustomMetric extends \Google\Model
     return $this->index;
   }
   /**
-   * Kind value for a custom metric. Set to "analytics#customMetric". It is a
-   * read-only field.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -209,9 +167,7 @@ class CustomMetric extends \Google\Model
     return $this->kind;
   }
   /**
-   * Max value of custom metric.
-   *
-   * @param string $maxValue
+   * @param string
    */
   public function setMaxValue($maxValue)
   {
@@ -225,9 +181,7 @@ class CustomMetric extends \Google\Model
     return $this->maxValue;
   }
   /**
-   * Min value of custom metric.
-   *
-   * @param string $minValue
+   * @param string
    */
   public function setMinValue($minValue)
   {
@@ -241,9 +195,7 @@ class CustomMetric extends \Google\Model
     return $this->minValue;
   }
   /**
-   * Name of the custom metric.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -257,10 +209,7 @@ class CustomMetric extends \Google\Model
     return $this->name;
   }
   /**
-   * Parent link for the custom metric. Points to the property to which the
-   * custom metric belongs.
-   *
-   * @param CustomMetricParentLink $parentLink
+   * @param CustomMetricParentLink
    */
   public function setParentLink(CustomMetricParentLink $parentLink)
   {
@@ -274,9 +223,7 @@ class CustomMetric extends \Google\Model
     return $this->parentLink;
   }
   /**
-   * Scope of the custom metric: HIT or PRODUCT.
-   *
-   * @param string $scope
+   * @param string
    */
   public function setScope($scope)
   {
@@ -290,9 +237,7 @@ class CustomMetric extends \Google\Model
     return $this->scope;
   }
   /**
-   * Link for the custom metric
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -306,9 +251,7 @@ class CustomMetric extends \Google\Model
     return $this->selfLink;
   }
   /**
-   * Data type of custom metric.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {
@@ -322,9 +265,7 @@ class CustomMetric extends \Google\Model
     return $this->type;
   }
   /**
-   * Time the custom metric was last modified.
-   *
-   * @param string $updated
+   * @param string
    */
   public function setUpdated($updated)
   {
@@ -338,9 +279,7 @@ class CustomMetric extends \Google\Model
     return $this->updated;
   }
   /**
-   * Property ID.
-   *
-   * @param string $webPropertyId
+   * @param string
    */
   public function setWebPropertyId($webPropertyId)
   {

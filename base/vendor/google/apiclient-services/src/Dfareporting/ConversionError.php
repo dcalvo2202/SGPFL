@@ -19,53 +19,35 @@ namespace Google\Service\Dfareporting;
 
 class ConversionError extends \Google\Model
 {
-  public const CODE_INVALID_ARGUMENT = 'INVALID_ARGUMENT';
-  public const CODE_INTERNAL = 'INTERNAL';
-  public const CODE_PERMISSION_DENIED = 'PERMISSION_DENIED';
-  public const CODE_NOT_FOUND = 'NOT_FOUND';
   /**
-   * The error code.
-   *
    * @var string
    */
   public $code;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#conversionError".
-   *
    * @var string
    */
   public $kind;
   /**
-   * A description of the error.
-   *
    * @var string
    */
   public $message;
 
   /**
-   * The error code.
-   *
-   * Accepted values: INVALID_ARGUMENT, INTERNAL, PERMISSION_DENIED, NOT_FOUND
-   *
-   * @param self::CODE_* $code
+   * @param string
    */
   public function setCode($code)
   {
     $this->code = $code;
   }
   /**
-   * @return self::CODE_*
+   * @return string
    */
   public function getCode()
   {
     return $this->code;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#conversionError".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -79,9 +61,7 @@ class ConversionError extends \Google\Model
     return $this->kind;
   }
   /**
-   * A description of the error.
-   *
-   * @param string $message
+   * @param string
    */
   public function setMessage($message)
   {

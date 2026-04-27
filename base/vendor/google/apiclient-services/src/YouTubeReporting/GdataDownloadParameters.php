@@ -20,22 +20,16 @@ namespace Google\Service\YouTubeReporting;
 class GdataDownloadParameters extends \Google\Model
 {
   /**
-   * gdata
-   *
    * @var bool
    */
   public $allowGzipCompression;
   /**
-   * gdata
-   *
    * @var bool
    */
   public $ignoreRange;
 
   /**
-   * gdata
-   *
-   * @param bool $allowGzipCompression
+   * @param bool
    */
   public function setAllowGzipCompression($allowGzipCompression)
   {
@@ -49,9 +43,7 @@ class GdataDownloadParameters extends \Google\Model
     return $this->allowGzipCompression;
   }
   /**
-   * gdata
-   *
-   * @param bool $ignoreRange
+   * @param bool
    */
   public function setIgnoreRange($ignoreRange)
   {

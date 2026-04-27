@@ -20,29 +20,16 @@ namespace Google\Service\Appengine;
 class CloudBuildOptions extends \Google\Model
 {
   /**
-   * Path to the yaml file used in deployment, used to determine runtime
-   * configuration details.Required for flexible environment builds.See
-   * https://cloud.google.com/appengine/docs/standard/python/config/appref for
-   * more details.
-   *
    * @var string
    */
   public $appYamlPath;
   /**
-   * The Cloud Build timeout used as part of any dependent builds performed by
-   * version creation. Defaults to 10 minutes.
-   *
    * @var string
    */
   public $cloudBuildTimeout;
 
   /**
-   * Path to the yaml file used in deployment, used to determine runtime
-   * configuration details.Required for flexible environment builds.See
-   * https://cloud.google.com/appengine/docs/standard/python/config/appref for
-   * more details.
-   *
-   * @param string $appYamlPath
+   * @param string
    */
   public function setAppYamlPath($appYamlPath)
   {
@@ -56,10 +43,7 @@ class CloudBuildOptions extends \Google\Model
     return $this->appYamlPath;
   }
   /**
-   * The Cloud Build timeout used as part of any dependent builds performed by
-   * version creation. Defaults to 10 minutes.
-   *
-   * @param string $cloudBuildTimeout
+   * @param string
    */
   public function setCloudBuildTimeout($cloudBuildTimeout)
   {

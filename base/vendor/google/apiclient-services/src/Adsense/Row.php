@@ -24,9 +24,7 @@ class Row extends \Google\Collection
   protected $cellsDataType = 'array';
 
   /**
-   * Cells in the row.
-   *
-   * @param Cell[] $cells
+   * @param Cell[]
    */
   public function setCells($cells)
   {

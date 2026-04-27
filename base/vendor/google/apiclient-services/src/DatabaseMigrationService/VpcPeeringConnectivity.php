@@ -20,16 +20,12 @@ namespace Google\Service\DatabaseMigrationService;
 class VpcPeeringConnectivity extends \Google\Model
 {
   /**
-   * The name of the VPC network to peer with the Cloud SQL private network.
-   *
    * @var string
    */
   public $vpc;
 
   /**
-   * The name of the VPC network to peer with the Cloud SQL private network.
-   *
-   * @param string $vpc
+   * @param string
    */
   public function setVpc($vpc)
   {

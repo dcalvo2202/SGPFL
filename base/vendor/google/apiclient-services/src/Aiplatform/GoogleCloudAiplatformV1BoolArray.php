@@ -21,16 +21,12 @@ class GoogleCloudAiplatformV1BoolArray extends \Google\Collection
 {
   protected $collection_key = 'values';
   /**
-   * A list of bool values.
-   *
    * @var bool[]
    */
   public $values;
 
   /**
-   * A list of bool values.
-   *
-   * @param bool[] $values
+   * @param bool[]
    */
   public function setValues($values)
   {

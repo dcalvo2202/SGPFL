@@ -20,41 +20,28 @@ namespace Google\Service\Dfareporting;
 class CampaignSummary extends \Google\Model
 {
   /**
-   * Campaign billing invoice code.
-   *
    * @var string
    */
   public $billingInvoiceCode;
   /**
-   * Campaign ID.
-   *
    * @var string
    */
   public $campaignId;
   /**
-   * The pre-tax amount for this campaign, in micros of the invoice's currency.
-   *
    * @var string
    */
   public $preTaxAmountMicros;
   /**
-   * The tax amount for this campaign, in micros of the invoice's currency.
-   *
    * @var string
    */
   public $taxAmountMicros;
   /**
-   * The total amount of charges for this campaign, in micros of the invoice's
-   * currency.
-   *
    * @var string
    */
   public $totalAmountMicros;
 
   /**
-   * Campaign billing invoice code.
-   *
-   * @param string $billingInvoiceCode
+   * @param string
    */
   public function setBillingInvoiceCode($billingInvoiceCode)
   {
@@ -68,9 +55,7 @@ class CampaignSummary extends \Google\Model
     return $this->billingInvoiceCode;
   }
   /**
-   * Campaign ID.
-   *
-   * @param string $campaignId
+   * @param string
    */
   public function setCampaignId($campaignId)
   {
@@ -84,9 +69,7 @@ class CampaignSummary extends \Google\Model
     return $this->campaignId;
   }
   /**
-   * The pre-tax amount for this campaign, in micros of the invoice's currency.
-   *
-   * @param string $preTaxAmountMicros
+   * @param string
    */
   public function setPreTaxAmountMicros($preTaxAmountMicros)
   {
@@ -100,9 +83,7 @@ class CampaignSummary extends \Google\Model
     return $this->preTaxAmountMicros;
   }
   /**
-   * The tax amount for this campaign, in micros of the invoice's currency.
-   *
-   * @param string $taxAmountMicros
+   * @param string
    */
   public function setTaxAmountMicros($taxAmountMicros)
   {
@@ -116,10 +97,7 @@ class CampaignSummary extends \Google\Model
     return $this->taxAmountMicros;
   }
   /**
-   * The total amount of charges for this campaign, in micros of the invoice's
-   * currency.
-   *
-   * @param string $totalAmountMicros
+   * @param string
    */
   public function setTotalAmountMicros($totalAmountMicros)
   {

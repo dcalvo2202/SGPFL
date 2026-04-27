@@ -27,70 +27,44 @@ class Notification extends \Google\Collection
         "payloadFormat" => "payload_format",
   ];
   /**
-   * An optional list of additional attributes to attach to each Cloud PubSub
-   * message published for this notification subscription.
-   *
    * @var string[]
    */
   public $customAttributes;
   /**
-   * HTTP 1.1 Entity tag for this subscription notification.
-   *
    * @var string
    */
   public $etag;
   /**
-   * If present, only send notifications about listed event types. If empty,
-   * sent notifications for all event types.
-   *
    * @var string[]
    */
   public $eventTypes;
   /**
-   * The ID of the notification.
-   *
    * @var string
    */
   public $id;
   /**
-   * The kind of item this is. For notifications, this is always
-   * storage#notification.
-   *
    * @var string
    */
   public $kind;
   /**
-   * If present, only apply this notification configuration to object names that
-   * begin with this prefix.
-   *
    * @var string
    */
   public $objectNamePrefix;
   /**
-   * The desired content of the Payload.
-   *
    * @var string
    */
   public $payloadFormat;
   /**
-   * The canonical URL of this notification.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * The Cloud PubSub topic to which this subscription publishes. Formatted as:
-   * '//pubsub.googleapis.com/projects/{project-identifier}/topics/{my-topic}'
-   *
    * @var string
    */
   public $topic;
 
   /**
-   * An optional list of additional attributes to attach to each Cloud PubSub
-   * message published for this notification subscription.
-   *
-   * @param string[] $customAttributes
+   * @param string[]
    */
   public function setCustomAttributes($customAttributes)
   {
@@ -104,9 +78,7 @@ class Notification extends \Google\Collection
     return $this->customAttributes;
   }
   /**
-   * HTTP 1.1 Entity tag for this subscription notification.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -120,10 +92,7 @@ class Notification extends \Google\Collection
     return $this->etag;
   }
   /**
-   * If present, only send notifications about listed event types. If empty,
-   * sent notifications for all event types.
-   *
-   * @param string[] $eventTypes
+   * @param string[]
    */
   public function setEventTypes($eventTypes)
   {
@@ -137,9 +106,7 @@ class Notification extends \Google\Collection
     return $this->eventTypes;
   }
   /**
-   * The ID of the notification.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -153,10 +120,7 @@ class Notification extends \Google\Collection
     return $this->id;
   }
   /**
-   * The kind of item this is. For notifications, this is always
-   * storage#notification.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -170,10 +134,7 @@ class Notification extends \Google\Collection
     return $this->kind;
   }
   /**
-   * If present, only apply this notification configuration to object names that
-   * begin with this prefix.
-   *
-   * @param string $objectNamePrefix
+   * @param string
    */
   public function setObjectNamePrefix($objectNamePrefix)
   {
@@ -187,9 +148,7 @@ class Notification extends \Google\Collection
     return $this->objectNamePrefix;
   }
   /**
-   * The desired content of the Payload.
-   *
-   * @param string $payloadFormat
+   * @param string
    */
   public function setPayloadFormat($payloadFormat)
   {
@@ -203,9 +162,7 @@ class Notification extends \Google\Collection
     return $this->payloadFormat;
   }
   /**
-   * The canonical URL of this notification.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -219,10 +176,7 @@ class Notification extends \Google\Collection
     return $this->selfLink;
   }
   /**
-   * The Cloud PubSub topic to which this subscription publishes. Formatted as:
-   * '//pubsub.googleapis.com/projects/{project-identifier}/topics/{my-topic}'
-   *
-   * @param string $topic
+   * @param string
    */
   public function setTopic($topic)
   {

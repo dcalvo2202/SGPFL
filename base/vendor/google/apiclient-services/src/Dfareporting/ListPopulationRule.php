@@ -21,16 +21,10 @@ class ListPopulationRule extends \Google\Collection
 {
   protected $collection_key = 'listPopulationClauses';
   /**
-   * Floodlight activity ID associated with this rule. This field can be left
-   * blank.
-   *
    * @var string
    */
   public $floodlightActivityId;
   /**
-   * Name of floodlight activity associated with this rule. This is a read-only,
-   * auto-generated field.
-   *
    * @var string
    */
   public $floodlightActivityName;
@@ -38,10 +32,7 @@ class ListPopulationRule extends \Google\Collection
   protected $listPopulationClausesDataType = 'array';
 
   /**
-   * Floodlight activity ID associated with this rule. This field can be left
-   * blank.
-   *
-   * @param string $floodlightActivityId
+   * @param string
    */
   public function setFloodlightActivityId($floodlightActivityId)
   {
@@ -55,10 +46,7 @@ class ListPopulationRule extends \Google\Collection
     return $this->floodlightActivityId;
   }
   /**
-   * Name of floodlight activity associated with this rule. This is a read-only,
-   * auto-generated field.
-   *
-   * @param string $floodlightActivityName
+   * @param string
    */
   public function setFloodlightActivityName($floodlightActivityName)
   {
@@ -72,11 +60,7 @@ class ListPopulationRule extends \Google\Collection
     return $this->floodlightActivityName;
   }
   /**
-   * Clauses that make up this list population rule. Clauses are joined by ANDs,
-   * and the clauses themselves are made up of list population terms which are
-   * joined by ORs.
-   *
-   * @param ListPopulationClause[] $listPopulationClauses
+   * @param ListPopulationClause[]
    */
   public function setListPopulationClauses($listPopulationClauses)
   {

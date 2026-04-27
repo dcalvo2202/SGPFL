@@ -20,22 +20,16 @@ namespace Google\Service\ServiceControl;
 class FirstPartyPrincipal extends \Google\Model
 {
   /**
-   * The email address of a Google account. .
-   *
    * @var string
    */
   public $principalEmail;
   /**
-   * Metadata about the service that uses the service account. .
-   *
    * @var array[]
    */
   public $serviceMetadata;
 
   /**
-   * The email address of a Google account. .
-   *
-   * @param string $principalEmail
+   * @param string
    */
   public function setPrincipalEmail($principalEmail)
   {
@@ -49,9 +43,7 @@ class FirstPartyPrincipal extends \Google\Model
     return $this->principalEmail;
   }
   /**
-   * Metadata about the service that uses the service account. .
-   *
-   * @param array[] $serviceMetadata
+   * @param array[]
    */
   public function setServiceMetadata($serviceMetadata)
   {

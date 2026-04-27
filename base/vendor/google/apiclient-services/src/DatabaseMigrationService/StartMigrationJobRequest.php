@@ -20,18 +20,12 @@ namespace Google\Service\DatabaseMigrationService;
 class StartMigrationJobRequest extends \Google\Model
 {
   /**
-   * Optional. Start the migration job without running prior configuration
-   * verification. Defaults to `false`.
-   *
    * @var bool
    */
   public $skipValidation;
 
   /**
-   * Optional. Start the migration job without running prior configuration
-   * verification. Defaults to `false`.
-   *
-   * @param bool $skipValidation
+   * @param bool
    */
   public function setSkipValidation($skipValidation)
   {

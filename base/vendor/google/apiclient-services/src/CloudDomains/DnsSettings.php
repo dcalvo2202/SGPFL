@@ -27,24 +27,12 @@ class DnsSettings extends \Google\Collection
   protected $googleDomainsDnsType = GoogleDomainsDns::class;
   protected $googleDomainsDnsDataType = '';
   /**
-   * Output only. Indicates if this `Registration` has configured one of the
-   * following deprecated Google Domains DNS features: * Domain forwarding (HTTP
-   * `301` and `302` response status codes), * Email forwarding. See
-   * https://cloud.google.com/domains/docs/deprecations/feature-deprecations for
-   * more details. If any of these features is enabled call the
-   * `RetrieveGoogleDomainsForwardingConfig` method to get details about the
-   * feature's configuration. A forwarding configuration might not work
-   * correctly if required DNS records are not present in the domain's
-   * authoritative DNS Zone.
-   *
    * @var bool
    */
   public $googleDomainsRedirectsDataAvailable;
 
   /**
-   * An arbitrary DNS provider identified by its name servers.
-   *
-   * @param CustomDns $customDns
+   * @param CustomDns
    */
   public function setCustomDns(CustomDns $customDns)
   {
@@ -58,9 +46,7 @@ class DnsSettings extends \Google\Collection
     return $this->customDns;
   }
   /**
-   * The list of glue records for this `Registration`. Commonly empty.
-   *
-   * @param GlueRecord[] $glueRecords
+   * @param GlueRecord[]
    */
   public function setGlueRecords($glueRecords)
   {
@@ -74,20 +60,13 @@ class DnsSettings extends \Google\Collection
     return $this->glueRecords;
   }
   /**
-   * Deprecated: For more information, see [Cloud Domains feature
-   * deprecation](https://cloud.google.com/domains/docs/deprecations/feature-
-   * deprecations). The free DNS zone provided by [Google
-   * Domains](https://domains.google/).
-   *
-   * @deprecated
-   * @param GoogleDomainsDns $googleDomainsDns
+   * @param GoogleDomainsDns
    */
   public function setGoogleDomainsDns(GoogleDomainsDns $googleDomainsDns)
   {
     $this->googleDomainsDns = $googleDomainsDns;
   }
   /**
-   * @deprecated
    * @return GoogleDomainsDns
    */
   public function getGoogleDomainsDns()
@@ -95,17 +74,7 @@ class DnsSettings extends \Google\Collection
     return $this->googleDomainsDns;
   }
   /**
-   * Output only. Indicates if this `Registration` has configured one of the
-   * following deprecated Google Domains DNS features: * Domain forwarding (HTTP
-   * `301` and `302` response status codes), * Email forwarding. See
-   * https://cloud.google.com/domains/docs/deprecations/feature-deprecations for
-   * more details. If any of these features is enabled call the
-   * `RetrieveGoogleDomainsForwardingConfig` method to get details about the
-   * feature's configuration. A forwarding configuration might not work
-   * correctly if required DNS records are not present in the domain's
-   * authoritative DNS Zone.
-   *
-   * @param bool $googleDomainsRedirectsDataAvailable
+   * @param bool
    */
   public function setGoogleDomainsRedirectsDataAvailable($googleDomainsRedirectsDataAvailable)
   {

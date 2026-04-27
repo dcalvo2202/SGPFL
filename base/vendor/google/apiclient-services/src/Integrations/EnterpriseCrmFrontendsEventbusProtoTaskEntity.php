@@ -20,20 +20,6 @@ namespace Google\Service\Integrations;
 class EnterpriseCrmFrontendsEventbusProtoTaskEntity extends \Google\Model
 {
   /**
-   * Normal IP task
-   */
-  public const TASK_TYPE_TASK = 'TASK';
-  /**
-   * Task is of As-Is Template type
-   */
-  public const TASK_TYPE_ASIS_TEMPLATE = 'ASIS_TEMPLATE';
-  /**
-   * Task is of I/O template type with a different underlying task
-   */
-  public const TASK_TYPE_IO_TEMPLATE = 'IO_TEMPLATE';
-  /**
-   * True if the task has conflict with vpcsc
-   *
    * @var bool
    */
   public $disabledForVpcSc;
@@ -44,8 +30,6 @@ class EnterpriseCrmFrontendsEventbusProtoTaskEntity extends \Google\Model
   protected $statsType = EnterpriseCrmEventbusStats::class;
   protected $statsDataType = '';
   /**
-   * Defines the type of the task
-   *
    * @var string
    */
   public $taskType;
@@ -53,9 +37,7 @@ class EnterpriseCrmFrontendsEventbusProtoTaskEntity extends \Google\Model
   protected $uiConfigDataType = '';
 
   /**
-   * True if the task has conflict with vpcsc
-   *
-   * @param bool $disabledForVpcSc
+   * @param bool
    */
   public function setDisabledForVpcSc($disabledForVpcSc)
   {
@@ -69,9 +51,7 @@ class EnterpriseCrmFrontendsEventbusProtoTaskEntity extends \Google\Model
     return $this->disabledForVpcSc;
   }
   /**
-   * Metadata inclueds the task name, author and so on.
-   *
-   * @param EnterpriseCrmEventbusProtoTaskMetadata $metadata
+   * @param EnterpriseCrmEventbusProtoTaskMetadata
    */
   public function setMetadata(EnterpriseCrmEventbusProtoTaskMetadata $metadata)
   {
@@ -85,10 +65,7 @@ class EnterpriseCrmFrontendsEventbusProtoTaskEntity extends \Google\Model
     return $this->metadata;
   }
   /**
-   * Declarations for inputs/outputs for a TypedTask. This is also associated
-   * with the METADATA mask.
-   *
-   * @param EnterpriseCrmFrontendsEventbusProtoParamSpecsMessage $paramSpecs
+   * @param EnterpriseCrmFrontendsEventbusProtoParamSpecsMessage
    */
   public function setParamSpecs(EnterpriseCrmFrontendsEventbusProtoParamSpecsMessage $paramSpecs)
   {
@@ -102,17 +79,13 @@ class EnterpriseCrmFrontendsEventbusProtoTaskEntity extends \Google\Model
     return $this->paramSpecs;
   }
   /**
-   * Deprecated - statistics from the Monarch query.
-   *
-   * @deprecated
-   * @param EnterpriseCrmEventbusStats $stats
+   * @param EnterpriseCrmEventbusStats
    */
   public function setStats(EnterpriseCrmEventbusStats $stats)
   {
     $this->stats = $stats;
   }
   /**
-   * @deprecated
    * @return EnterpriseCrmEventbusStats
    */
   public function getStats()
@@ -120,27 +93,21 @@ class EnterpriseCrmFrontendsEventbusProtoTaskEntity extends \Google\Model
     return $this->stats;
   }
   /**
-   * Defines the type of the task
-   *
-   * Accepted values: TASK, ASIS_TEMPLATE, IO_TEMPLATE
-   *
-   * @param self::TASK_TYPE_* $taskType
+   * @param string
    */
   public function setTaskType($taskType)
   {
     $this->taskType = $taskType;
   }
   /**
-   * @return self::TASK_TYPE_*
+   * @return string
    */
   public function getTaskType()
   {
     return $this->taskType;
   }
   /**
-   * UI configuration for this task Also associated with the METADATA mask.
-   *
-   * @param EnterpriseCrmEventbusProtoTaskUiConfig $uiConfig
+   * @param EnterpriseCrmEventbusProtoTaskUiConfig
    */
   public function setUiConfig(EnterpriseCrmEventbusProtoTaskUiConfig $uiConfig)
   {

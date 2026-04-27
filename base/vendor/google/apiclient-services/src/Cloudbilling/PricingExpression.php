@@ -21,61 +21,28 @@ class PricingExpression extends \Google\Collection
 {
   protected $collection_key = 'tieredRates';
   /**
-   * The base unit for the SKU which is the unit used in usage exports. Example:
-   * "By"
-   *
    * @var string
    */
   public $baseUnit;
-  /**
-   * Conversion factor for converting from price per usage_unit to price per
-   * base_unit, and start_usage_amount to start_usage_amount in base_unit.
-   * unit_price / base_unit_conversion_factor = price per base_unit.
-   * start_usage_amount * base_unit_conversion_factor = start_usage_amount in
-   * base_unit.
-   *
-   * @var 
-   */
   public $baseUnitConversionFactor;
   /**
-   * The base unit in human readable form. Example: "byte".
-   *
    * @var string
    */
   public $baseUnitDescription;
-  /**
-   * The recommended quantity of units for displaying pricing info. When
-   * displaying pricing info it is recommended to display: (unit_price *
-   * display_quantity) per display_quantity usage_unit. This field does not
-   * affect the pricing formula and is for display purposes only. Example: If
-   * the unit_price is "0.0001 USD", the usage_unit is "GB" and the
-   * display_quantity is "1000" then the recommended way of displaying the
-   * pricing info is "0.10 USD per 1000 GB"
-   *
-   * @var 
-   */
   public $displayQuantity;
   protected $tieredRatesType = TierRate::class;
   protected $tieredRatesDataType = 'array';
   /**
-   * The short hand for unit of usage this pricing is specified in. Example:
-   * usage_unit of "GiBy" means that usage is specified in "Gibi Byte".
-   *
    * @var string
    */
   public $usageUnit;
   /**
-   * The unit of usage in human readable form. Example: "gibi byte".
-   *
    * @var string
    */
   public $usageUnitDescription;
 
   /**
-   * The base unit for the SKU which is the unit used in usage exports. Example:
-   * "By"
-   *
-   * @param string $baseUnit
+   * @param string
    */
   public function setBaseUnit($baseUnit)
   {
@@ -97,9 +64,7 @@ class PricingExpression extends \Google\Collection
     return $this->baseUnitConversionFactor;
   }
   /**
-   * The base unit in human readable form. Example: "byte".
-   *
-   * @param string $baseUnitDescription
+   * @param string
    */
   public function setBaseUnitDescription($baseUnitDescription)
   {
@@ -121,11 +86,7 @@ class PricingExpression extends \Google\Collection
     return $this->displayQuantity;
   }
   /**
-   * The list of tiered rates for this pricing. The total cost is computed by
-   * applying each of the tiered rates on usage. This repeated list is sorted by
-   * ascending order of start_usage_amount.
-   *
-   * @param TierRate[] $tieredRates
+   * @param TierRate[]
    */
   public function setTieredRates($tieredRates)
   {
@@ -139,10 +100,7 @@ class PricingExpression extends \Google\Collection
     return $this->tieredRates;
   }
   /**
-   * The short hand for unit of usage this pricing is specified in. Example:
-   * usage_unit of "GiBy" means that usage is specified in "Gibi Byte".
-   *
-   * @param string $usageUnit
+   * @param string
    */
   public function setUsageUnit($usageUnit)
   {
@@ -156,9 +114,7 @@ class PricingExpression extends \Google\Collection
     return $this->usageUnit;
   }
   /**
-   * The unit of usage in human readable form. Example: "gibi byte".
-   *
-   * @param string $usageUnitDescription
+   * @param string
    */
   public function setUsageUnitDescription($usageUnitDescription)
   {

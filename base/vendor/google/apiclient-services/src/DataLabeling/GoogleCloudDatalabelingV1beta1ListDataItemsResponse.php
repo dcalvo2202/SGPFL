@@ -23,16 +23,12 @@ class GoogleCloudDatalabelingV1beta1ListDataItemsResponse extends \Google\Collec
   protected $dataItemsType = GoogleCloudDatalabelingV1beta1DataItem::class;
   protected $dataItemsDataType = 'array';
   /**
-   * A token to retrieve next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of data items to return.
-   *
-   * @param GoogleCloudDatalabelingV1beta1DataItem[] $dataItems
+   * @param GoogleCloudDatalabelingV1beta1DataItem[]
    */
   public function setDataItems($dataItems)
   {
@@ -46,9 +42,7 @@ class GoogleCloudDatalabelingV1beta1ListDataItemsResponse extends \Google\Collec
     return $this->dataItems;
   }
   /**
-   * A token to retrieve next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

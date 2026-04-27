@@ -20,39 +20,19 @@ namespace Google\Service\Meet;
 class RecordingConfig extends \Google\Model
 {
   /**
-   * Default value specified by user policy. This should never be returned.
-   */
-  public const AUTO_RECORDING_GENERATION_AUTO_GENERATION_TYPE_UNSPECIFIED = 'AUTO_GENERATION_TYPE_UNSPECIFIED';
-  /**
-   * The artifact is generated automatically.
-   */
-  public const AUTO_RECORDING_GENERATION_ON = 'ON';
-  /**
-   * The artifact is not generated automatically.
-   */
-  public const AUTO_RECORDING_GENERATION_OFF = 'OFF';
-  /**
-   * Defines whether a meeting space is automatically recorded when someone with
-   * the privilege to record joins the meeting.
-   *
    * @var string
    */
   public $autoRecordingGeneration;
 
   /**
-   * Defines whether a meeting space is automatically recorded when someone with
-   * the privilege to record joins the meeting.
-   *
-   * Accepted values: AUTO_GENERATION_TYPE_UNSPECIFIED, ON, OFF
-   *
-   * @param self::AUTO_RECORDING_GENERATION_* $autoRecordingGeneration
+   * @param string
    */
   public function setAutoRecordingGeneration($autoRecordingGeneration)
   {
     $this->autoRecordingGeneration = $autoRecordingGeneration;
   }
   /**
-   * @return self::AUTO_RECORDING_GENERATION_*
+   * @return string
    */
   public function getAutoRecordingGeneration()
   {

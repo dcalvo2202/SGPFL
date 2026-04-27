@@ -21,28 +21,18 @@ class ListResourcesResponse extends \Google\Collection
 {
   protected $collection_key = 'unreachable';
   /**
-   * A token to request the next page of resources from the 'ListResources'
-   * method. The value of an empty string means that there are no more resources
-   * to return.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $resourcesType = ConfigResource::class;
   protected $resourcesDataType = 'array';
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * A token to request the next page of resources from the 'ListResources'
-   * method. The value of an empty string means that there are no more resources
-   * to return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -56,9 +46,7 @@ class ListResourcesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * List of Resources.
-   *
-   * @param ConfigResource[] $resources
+   * @param ConfigResource[]
    */
   public function setResources($resources)
   {
@@ -72,9 +60,7 @@ class ListResourcesResponse extends \Google\Collection
     return $this->resources;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

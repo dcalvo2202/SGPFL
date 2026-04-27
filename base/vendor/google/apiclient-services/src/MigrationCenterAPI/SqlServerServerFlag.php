@@ -20,30 +20,20 @@ namespace Google\Service\MigrationCenterAPI;
 class SqlServerServerFlag extends \Google\Model
 {
   /**
-   * Required. The server flag name.
-   *
    * @var string
    */
   public $serverFlagName;
   /**
-   * Required. The server flag value set by the user.
-   *
    * @var string
    */
   public $value;
   /**
-   * Required. The server flag actual value. If `value_in_use` is different from
-   * `value` it means that either the configuration change was not applied or it
-   * is an expected behavior. See SQL Server documentation for more details.
-   *
    * @var string
    */
   public $valueInUse;
 
   /**
-   * Required. The server flag name.
-   *
-   * @param string $serverFlagName
+   * @param string
    */
   public function setServerFlagName($serverFlagName)
   {
@@ -57,9 +47,7 @@ class SqlServerServerFlag extends \Google\Model
     return $this->serverFlagName;
   }
   /**
-   * Required. The server flag value set by the user.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {
@@ -73,11 +61,7 @@ class SqlServerServerFlag extends \Google\Model
     return $this->value;
   }
   /**
-   * Required. The server flag actual value. If `value_in_use` is different from
-   * `value` it means that either the configuration change was not applied or it
-   * is an expected behavior. See SQL Server documentation for more details.
-   *
-   * @param string $valueInUse
+   * @param string
    */
   public function setValueInUse($valueInUse)
   {

@@ -20,34 +20,24 @@ namespace Google\Service\Analytics;
 class AccountRef extends \Google\Model
 {
   /**
-   * Link for this account.
-   *
    * @var string
    */
   public $href;
   /**
-   * Account ID.
-   *
    * @var string
    */
   public $id;
   /**
-   * Analytics account reference.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Account name.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Link for this account.
-   *
-   * @param string $href
+   * @param string
    */
   public function setHref($href)
   {
@@ -61,9 +51,7 @@ class AccountRef extends \Google\Model
     return $this->href;
   }
   /**
-   * Account ID.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -77,9 +65,7 @@ class AccountRef extends \Google\Model
     return $this->id;
   }
   /**
-   * Analytics account reference.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -93,9 +79,7 @@ class AccountRef extends \Google\Model
     return $this->kind;
   }
   /**
-   * Account name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

@@ -20,52 +20,30 @@ namespace Google\Service\Games;
 class AchievementRevealResponse extends \Google\Model
 {
   /**
-   * Achievement is revealed.
-   */
-  public const CURRENT_STATE_REVEALED = 'REVEALED';
-  /**
-   * Achievement is unlocked.
-   */
-  public const CURRENT_STATE_UNLOCKED = 'UNLOCKED';
-  /**
-   * The current state of the achievement for which a reveal was attempted. This
-   * might be `UNLOCKED` if the achievement was already unlocked.
-   *
    * @var string
    */
   public $currentState;
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#achievementRevealResponse`.
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * The current state of the achievement for which a reveal was attempted. This
-   * might be `UNLOCKED` if the achievement was already unlocked.
-   *
-   * Accepted values: REVEALED, UNLOCKED
-   *
-   * @param self::CURRENT_STATE_* $currentState
+   * @param string
    */
   public function setCurrentState($currentState)
   {
     $this->currentState = $currentState;
   }
   /**
-   * @return self::CURRENT_STATE_*
+   * @return string
    */
   public function getCurrentState()
   {
     return $this->currentState;
   }
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#achievementRevealResponse`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

@@ -25,7 +25,7 @@ class GoogleCloudDialogflowCxV3ResponseMessageConversationSuccess extends \Googl
   public $metadata;
 
   /**
-   * @param array[] $metadata
+   * @param array[]
    */
   public function setMetadata($metadata)
   {

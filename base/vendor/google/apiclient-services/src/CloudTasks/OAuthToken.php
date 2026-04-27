@@ -20,27 +20,16 @@ namespace Google\Service\CloudTasks;
 class OAuthToken extends \Google\Model
 {
   /**
-   * OAuth scope to be used for generating OAuth access token. If not specified,
-   * "https://www.googleapis.com/auth/cloud-platform" will be used.
-   *
    * @var string
    */
   public $scope;
   /**
-   * [Service account email](https://cloud.google.com/iam/docs/service-accounts)
-   * to be used for generating OAuth token. The service account must be within
-   * the same project as the queue. The caller must have
-   * iam.serviceAccounts.actAs permission for the service account.
-   *
    * @var string
    */
   public $serviceAccountEmail;
 
   /**
-   * OAuth scope to be used for generating OAuth access token. If not specified,
-   * "https://www.googleapis.com/auth/cloud-platform" will be used.
-   *
-   * @param string $scope
+   * @param string
    */
   public function setScope($scope)
   {
@@ -54,12 +43,7 @@ class OAuthToken extends \Google\Model
     return $this->scope;
   }
   /**
-   * [Service account email](https://cloud.google.com/iam/docs/service-accounts)
-   * to be used for generating OAuth token. The service account must be within
-   * the same project as the queue. The caller must have
-   * iam.serviceAccounts.actAs permission for the service account.
-   *
-   * @param string $serviceAccountEmail
+   * @param string
    */
   public function setServiceAccountEmail($serviceAccountEmail)
   {

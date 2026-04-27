@@ -20,34 +20,24 @@ namespace Google\Service\Backupdr;
 class DiskDataSourceProperties extends \Google\Model
 {
   /**
-   * The description of the disk.
-   *
    * @var string
    */
   public $description;
   /**
-   * Name of the disk backed up by the datasource.
-   *
    * @var string
    */
   public $name;
   /**
-   * The size of the disk in GB.
-   *
    * @var string
    */
   public $sizeGb;
   /**
-   * The type of the disk.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The description of the disk.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -61,9 +51,7 @@ class DiskDataSourceProperties extends \Google\Model
     return $this->description;
   }
   /**
-   * Name of the disk backed up by the datasource.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -77,9 +65,7 @@ class DiskDataSourceProperties extends \Google\Model
     return $this->name;
   }
   /**
-   * The size of the disk in GB.
-   *
-   * @param string $sizeGb
+   * @param string
    */
   public function setSizeGb($sizeGb)
   {
@@ -93,9 +79,7 @@ class DiskDataSourceProperties extends \Google\Model
     return $this->sizeGb;
   }
   /**
-   * The type of the disk.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

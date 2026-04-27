@@ -23,18 +23,12 @@ class ListInterceptEndpointGroupsResponse extends \Google\Collection
   protected $interceptEndpointGroupsType = InterceptEndpointGroup::class;
   protected $interceptEndpointGroupsDataType = 'array';
   /**
-   * A token that can be sent as `page_token` to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages. See
-   * https://google.aip.dev/158 for more details.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The endpoint groups from the specified parent.
-   *
-   * @param InterceptEndpointGroup[] $interceptEndpointGroups
+   * @param InterceptEndpointGroup[]
    */
   public function setInterceptEndpointGroups($interceptEndpointGroups)
   {
@@ -48,11 +42,7 @@ class ListInterceptEndpointGroupsResponse extends \Google\Collection
     return $this->interceptEndpointGroups;
   }
   /**
-   * A token that can be sent as `page_token` to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages. See
-   * https://google.aip.dev/158 for more details.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

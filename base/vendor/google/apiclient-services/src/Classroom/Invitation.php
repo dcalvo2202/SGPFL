@@ -20,53 +20,24 @@ namespace Google\Service\Classroom;
 class Invitation extends \Google\Model
 {
   /**
-   * No course role.
-   */
-  public const ROLE_COURSE_ROLE_UNSPECIFIED = 'COURSE_ROLE_UNSPECIFIED';
-  /**
-   * Student in the course.
-   */
-  public const ROLE_STUDENT = 'STUDENT';
-  /**
-   * Teacher of the course.
-   */
-  public const ROLE_TEACHER = 'TEACHER';
-  /**
-   * Owner of the course.
-   */
-  public const ROLE_OWNER = 'OWNER';
-  /**
-   * Identifier of the course to invite the user to.
-   *
    * @var string
    */
   public $courseId;
   /**
-   * Identifier assigned by Classroom. Read-only.
-   *
    * @var string
    */
   public $id;
   /**
-   * Role to invite the user to have. Must not be `COURSE_ROLE_UNSPECIFIED`.
-   *
    * @var string
    */
   public $role;
   /**
-   * Identifier of the invited user. When specified as a parameter of a request,
-   * this identifier can be set to one of the following: * the numeric
-   * identifier for the user * the email address of the user * the string
-   * literal `"me"`, indicating the requesting user
-   *
    * @var string
    */
   public $userId;
 
   /**
-   * Identifier of the course to invite the user to.
-   *
-   * @param string $courseId
+   * @param string
    */
   public function setCourseId($courseId)
   {
@@ -80,9 +51,7 @@ class Invitation extends \Google\Model
     return $this->courseId;
   }
   /**
-   * Identifier assigned by Classroom. Read-only.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -96,30 +65,21 @@ class Invitation extends \Google\Model
     return $this->id;
   }
   /**
-   * Role to invite the user to have. Must not be `COURSE_ROLE_UNSPECIFIED`.
-   *
-   * Accepted values: COURSE_ROLE_UNSPECIFIED, STUDENT, TEACHER, OWNER
-   *
-   * @param self::ROLE_* $role
+   * @param string
    */
   public function setRole($role)
   {
     $this->role = $role;
   }
   /**
-   * @return self::ROLE_*
+   * @return string
    */
   public function getRole()
   {
     return $this->role;
   }
   /**
-   * Identifier of the invited user. When specified as a parameter of a request,
-   * this identifier can be set to one of the following: * the numeric
-   * identifier for the user * the email address of the user * the string
-   * literal `"me"`, indicating the requesting user
-   *
-   * @param string $userId
+   * @param string
    */
   public function setUserId($userId)
   {

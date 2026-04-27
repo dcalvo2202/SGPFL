@@ -21,16 +21,12 @@ class GooglePrivacyDlpV2BigQueryTableTypes extends \Google\Collection
 {
   protected $collection_key = 'types';
   /**
-   * A set of BigQuery table types.
-   *
    * @var string[]
    */
   public $types;
 
   /**
-   * A set of BigQuery table types.
-   *
-   * @param string[] $types
+   * @param string[]
    */
   public function setTypes($types)
   {

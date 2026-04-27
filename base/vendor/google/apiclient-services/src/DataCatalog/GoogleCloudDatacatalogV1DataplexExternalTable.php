@@ -20,74 +20,24 @@ namespace Google\Service\DataCatalog;
 class GoogleCloudDatacatalogV1DataplexExternalTable extends \Google\Model
 {
   /**
-   * Default unknown system.
-   */
-  public const SYSTEM_INTEGRATED_SYSTEM_UNSPECIFIED = 'INTEGRATED_SYSTEM_UNSPECIFIED';
-  /**
-   * BigQuery.
-   */
-  public const SYSTEM_BIGQUERY = 'BIGQUERY';
-  /**
-   * Cloud Pub/Sub.
-   */
-  public const SYSTEM_CLOUD_PUBSUB = 'CLOUD_PUBSUB';
-  /**
-   * Dataproc Metastore.
-   */
-  public const SYSTEM_DATAPROC_METASTORE = 'DATAPROC_METASTORE';
-  /**
-   * Dataplex Universal Catalog.
-   */
-  public const SYSTEM_DATAPLEX = 'DATAPLEX';
-  /**
-   * Cloud Spanner
-   */
-  public const SYSTEM_CLOUD_SPANNER = 'CLOUD_SPANNER';
-  /**
-   * Cloud Bigtable
-   */
-  public const SYSTEM_CLOUD_BIGTABLE = 'CLOUD_BIGTABLE';
-  /**
-   * Cloud Sql
-   */
-  public const SYSTEM_CLOUD_SQL = 'CLOUD_SQL';
-  /**
-   * Looker
-   */
-  public const SYSTEM_LOOKER = 'LOOKER';
-  /**
-   * Vertex AI
-   */
-  public const SYSTEM_VERTEX_AI = 'VERTEX_AI';
-  /**
-   * Name of the Data Catalog entry representing the external table.
-   *
    * @var string
    */
   public $dataCatalogEntry;
   /**
-   * Fully qualified name (FQN) of the external table.
-   *
    * @var string
    */
   public $fullyQualifiedName;
   /**
-   * Google Cloud resource name of the external table.
-   *
    * @var string
    */
   public $googleCloudResource;
   /**
-   * Service in which the external table is registered.
-   *
    * @var string
    */
   public $system;
 
   /**
-   * Name of the Data Catalog entry representing the external table.
-   *
-   * @param string $dataCatalogEntry
+   * @param string
    */
   public function setDataCatalogEntry($dataCatalogEntry)
   {
@@ -101,9 +51,7 @@ class GoogleCloudDatacatalogV1DataplexExternalTable extends \Google\Model
     return $this->dataCatalogEntry;
   }
   /**
-   * Fully qualified name (FQN) of the external table.
-   *
-   * @param string $fullyQualifiedName
+   * @param string
    */
   public function setFullyQualifiedName($fullyQualifiedName)
   {
@@ -117,9 +65,7 @@ class GoogleCloudDatacatalogV1DataplexExternalTable extends \Google\Model
     return $this->fullyQualifiedName;
   }
   /**
-   * Google Cloud resource name of the external table.
-   *
-   * @param string $googleCloudResource
+   * @param string
    */
   public function setGoogleCloudResource($googleCloudResource)
   {
@@ -133,20 +79,14 @@ class GoogleCloudDatacatalogV1DataplexExternalTable extends \Google\Model
     return $this->googleCloudResource;
   }
   /**
-   * Service in which the external table is registered.
-   *
-   * Accepted values: INTEGRATED_SYSTEM_UNSPECIFIED, BIGQUERY, CLOUD_PUBSUB,
-   * DATAPROC_METASTORE, DATAPLEX, CLOUD_SPANNER, CLOUD_BIGTABLE, CLOUD_SQL,
-   * LOOKER, VERTEX_AI
-   *
-   * @param self::SYSTEM_* $system
+   * @param string
    */
   public function setSystem($system)
   {
     $this->system = $system;
   }
   /**
-   * @return self::SYSTEM_*
+   * @return string
    */
   public function getSystem()
   {

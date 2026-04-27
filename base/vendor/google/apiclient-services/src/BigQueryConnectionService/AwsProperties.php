@@ -23,10 +23,7 @@ class AwsProperties extends \Google\Model
   protected $accessRoleDataType = '';
 
   /**
-   * Authentication using Google owned service account to assume into customer's
-   * AWS IAM Role.
-   *
-   * @param AwsAccessRole $accessRole
+   * @param AwsAccessRole
    */
   public function setAccessRole(AwsAccessRole $accessRole)
   {

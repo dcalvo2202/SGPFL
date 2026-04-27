@@ -19,13 +19,6 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowCxV3DataStoreConnectionSignalsSafetySignals extends \Google\Model
 {
-  public const BANNED_PHRASE_MATCH_BANNED_PHRASE_MATCH_UNSPECIFIED = 'BANNED_PHRASE_MATCH_UNSPECIFIED';
-  public const BANNED_PHRASE_MATCH_BANNED_PHRASE_MATCH_NONE = 'BANNED_PHRASE_MATCH_NONE';
-  public const BANNED_PHRASE_MATCH_BANNED_PHRASE_MATCH_QUERY = 'BANNED_PHRASE_MATCH_QUERY';
-  public const BANNED_PHRASE_MATCH_BANNED_PHRASE_MATCH_RESPONSE = 'BANNED_PHRASE_MATCH_RESPONSE';
-  public const DECISION_SAFETY_DECISION_UNSPECIFIED = 'SAFETY_DECISION_UNSPECIFIED';
-  public const DECISION_ACCEPTED_BY_SAFETY_CHECK = 'ACCEPTED_BY_SAFETY_CHECK';
-  public const DECISION_REJECTED_BY_SAFETY_CHECK = 'REJECTED_BY_SAFETY_CHECK';
   /**
    * @var string
    */
@@ -40,35 +33,35 @@ class GoogleCloudDialogflowCxV3DataStoreConnectionSignalsSafetySignals extends \
   public $matchedBannedPhrase;
 
   /**
-   * @param self::BANNED_PHRASE_MATCH_* $bannedPhraseMatch
+   * @param string
    */
   public function setBannedPhraseMatch($bannedPhraseMatch)
   {
     $this->bannedPhraseMatch = $bannedPhraseMatch;
   }
   /**
-   * @return self::BANNED_PHRASE_MATCH_*
+   * @return string
    */
   public function getBannedPhraseMatch()
   {
     return $this->bannedPhraseMatch;
   }
   /**
-   * @param self::DECISION_* $decision
+   * @param string
    */
   public function setDecision($decision)
   {
     $this->decision = $decision;
   }
   /**
-   * @return self::DECISION_*
+   * @return string
    */
   public function getDecision()
   {
     return $this->decision;
   }
   /**
-   * @param string $matchedBannedPhrase
+   * @param string
    */
   public function setMatchedBannedPhrase($matchedBannedPhrase)
   {

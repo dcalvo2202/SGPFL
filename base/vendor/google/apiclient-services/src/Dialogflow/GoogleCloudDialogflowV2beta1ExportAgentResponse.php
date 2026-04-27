@@ -29,7 +29,7 @@ class GoogleCloudDialogflowV2beta1ExportAgentResponse extends \Google\Model
   public $agentUri;
 
   /**
-   * @param string $agentContent
+   * @param string
    */
   public function setAgentContent($agentContent)
   {
@@ -43,7 +43,7 @@ class GoogleCloudDialogflowV2beta1ExportAgentResponse extends \Google\Model
     return $this->agentContent;
   }
   /**
-   * @param string $agentUri
+   * @param string
    */
   public function setAgentUri($agentUri)
   {

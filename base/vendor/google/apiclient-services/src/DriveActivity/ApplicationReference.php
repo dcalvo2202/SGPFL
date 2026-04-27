@@ -20,37 +20,19 @@ namespace Google\Service\DriveActivity;
 class ApplicationReference extends \Google\Model
 {
   /**
-   * The type is not available.
-   */
-  public const TYPE_UNSPECIFIED_REFERENCE_TYPE = 'UNSPECIFIED_REFERENCE_TYPE';
-  /**
-   * The links of one or more Drive items were posted.
-   */
-  public const TYPE_LINK = 'LINK';
-  /**
-   * Comments were made regarding a Drive item.
-   */
-  public const TYPE_DISCUSS = 'DISCUSS';
-  /**
-   * The reference type corresponding to this event.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The reference type corresponding to this event.
-   *
-   * Accepted values: UNSPECIFIED_REFERENCE_TYPE, LINK, DISCUSS
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

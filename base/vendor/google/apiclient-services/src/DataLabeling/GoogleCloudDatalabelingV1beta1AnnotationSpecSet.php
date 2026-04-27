@@ -23,39 +23,24 @@ class GoogleCloudDatalabelingV1beta1AnnotationSpecSet extends \Google\Collection
   protected $annotationSpecsType = GoogleCloudDatalabelingV1beta1AnnotationSpec::class;
   protected $annotationSpecsDataType = 'array';
   /**
-   * Output only. The names of any related resources that are blocking changes
-   * to the annotation spec set.
-   *
    * @var string[]
    */
   public $blockingResources;
   /**
-   * Optional. User-provided description of the annotation specification set.
-   * The description can be up to 10,000 characters long.
-   *
    * @var string
    */
   public $description;
   /**
-   * Required. The display name for AnnotationSpecSet that you define when you
-   * create it. Maximum of 64 characters.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. The AnnotationSpecSet resource name in the following format:
-   * "projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}"
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Required. The array of AnnotationSpecs that you define when you create the
-   * AnnotationSpecSet. These are the possible labels for the labeling task.
-   *
-   * @param GoogleCloudDatalabelingV1beta1AnnotationSpec[] $annotationSpecs
+   * @param GoogleCloudDatalabelingV1beta1AnnotationSpec[]
    */
   public function setAnnotationSpecs($annotationSpecs)
   {
@@ -69,10 +54,7 @@ class GoogleCloudDatalabelingV1beta1AnnotationSpecSet extends \Google\Collection
     return $this->annotationSpecs;
   }
   /**
-   * Output only. The names of any related resources that are blocking changes
-   * to the annotation spec set.
-   *
-   * @param string[] $blockingResources
+   * @param string[]
    */
   public function setBlockingResources($blockingResources)
   {
@@ -86,10 +68,7 @@ class GoogleCloudDatalabelingV1beta1AnnotationSpecSet extends \Google\Collection
     return $this->blockingResources;
   }
   /**
-   * Optional. User-provided description of the annotation specification set.
-   * The description can be up to 10,000 characters long.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -103,10 +82,7 @@ class GoogleCloudDatalabelingV1beta1AnnotationSpecSet extends \Google\Collection
     return $this->description;
   }
   /**
-   * Required. The display name for AnnotationSpecSet that you define when you
-   * create it. Maximum of 64 characters.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -120,10 +96,7 @@ class GoogleCloudDatalabelingV1beta1AnnotationSpecSet extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Output only. The AnnotationSpecSet resource name in the following format:
-   * "projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}"
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

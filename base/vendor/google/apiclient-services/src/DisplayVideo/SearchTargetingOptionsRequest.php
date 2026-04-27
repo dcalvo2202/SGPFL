@@ -20,8 +20,6 @@ namespace Google\Service\DisplayVideo;
 class SearchTargetingOptionsRequest extends \Google\Model
 {
   /**
-   * Required. The Advertiser this request is being made in the context of.
-   *
    * @var string
    */
   public $advertiserId;
@@ -30,19 +28,10 @@ class SearchTargetingOptionsRequest extends \Google\Model
   protected $geoRegionSearchTermsType = GeoRegionSearchTerms::class;
   protected $geoRegionSearchTermsDataType = '';
   /**
-   * Requested page size. Must be between `1` and `200`. If unspecified will
-   * default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value
-   * is specified.
-   *
    * @var int
    */
   public $pageSize;
   /**
-   * A token identifying a page of results the server should return. Typically,
-   * this is the value of next_page_token returned from the previous call to
-   * `SearchTargetingOptions` method. If not specified, the first page of
-   * results will be returned.
-   *
    * @var string
    */
   public $pageToken;
@@ -50,9 +39,7 @@ class SearchTargetingOptionsRequest extends \Google\Model
   protected $poiSearchTermsDataType = '';
 
   /**
-   * Required. The Advertiser this request is being made in the context of.
-   *
-   * @param string $advertiserId
+   * @param string
    */
   public function setAdvertiserId($advertiserId)
   {
@@ -66,10 +53,7 @@ class SearchTargetingOptionsRequest extends \Google\Model
     return $this->advertiserId;
   }
   /**
-   * Search terms for Business Chain targeting options. Can only be used when
-   * targeting_type is `TARGETING_TYPE_BUSINESS_CHAIN`.
-   *
-   * @param BusinessChainSearchTerms $businessChainSearchTerms
+   * @param BusinessChainSearchTerms
    */
   public function setBusinessChainSearchTerms(BusinessChainSearchTerms $businessChainSearchTerms)
   {
@@ -83,10 +67,7 @@ class SearchTargetingOptionsRequest extends \Google\Model
     return $this->businessChainSearchTerms;
   }
   /**
-   * Search terms for geo region targeting options. Can only be used when
-   * targeting_type is `TARGETING_TYPE_GEO_REGION`.
-   *
-   * @param GeoRegionSearchTerms $geoRegionSearchTerms
+   * @param GeoRegionSearchTerms
    */
   public function setGeoRegionSearchTerms(GeoRegionSearchTerms $geoRegionSearchTerms)
   {
@@ -100,11 +81,7 @@ class SearchTargetingOptionsRequest extends \Google\Model
     return $this->geoRegionSearchTerms;
   }
   /**
-   * Requested page size. Must be between `1` and `200`. If unspecified will
-   * default to `100`. Returns error code `INVALID_ARGUMENT` if an invalid value
-   * is specified.
-   *
-   * @param int $pageSize
+   * @param int
    */
   public function setPageSize($pageSize)
   {
@@ -118,12 +95,7 @@ class SearchTargetingOptionsRequest extends \Google\Model
     return $this->pageSize;
   }
   /**
-   * A token identifying a page of results the server should return. Typically,
-   * this is the value of next_page_token returned from the previous call to
-   * `SearchTargetingOptions` method. If not specified, the first page of
-   * results will be returned.
-   *
-   * @param string $pageToken
+   * @param string
    */
   public function setPageToken($pageToken)
   {
@@ -137,10 +109,7 @@ class SearchTargetingOptionsRequest extends \Google\Model
     return $this->pageToken;
   }
   /**
-   * Search terms for POI targeting options. Can only be used when
-   * targeting_type is `TARGETING_TYPE_POI`.
-   *
-   * @param PoiSearchTerms $poiSearchTerms
+   * @param PoiSearchTerms
    */
   public function setPoiSearchTerms(PoiSearchTerms $poiSearchTerms)
   {

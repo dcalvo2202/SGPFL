@@ -23,9 +23,7 @@ class GoogleCloudAiplatformV1CreateTensorboardOperationMetadata extends \Google\
   protected $genericMetadataDataType = '';
 
   /**
-   * Operation metadata for Tensorboard.
-   *
-   * @param GoogleCloudAiplatformV1GenericOperationMetadata $genericMetadata
+   * @param GoogleCloudAiplatformV1GenericOperationMetadata
    */
   public function setGenericMetadata(GoogleCloudAiplatformV1GenericOperationMetadata $genericMetadata)
   {

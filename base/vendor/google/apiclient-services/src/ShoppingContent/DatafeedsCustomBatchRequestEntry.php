@@ -20,37 +20,26 @@ namespace Google\Service\ShoppingContent;
 class DatafeedsCustomBatchRequestEntry extends \Google\Model
 {
   /**
-   * An entry ID, unique within the batch request.
-   *
    * @var string
    */
   public $batchId;
   protected $datafeedType = Datafeed::class;
   protected $datafeedDataType = '';
   /**
-   * The ID of the data feed to get, delete or fetch.
-   *
    * @var string
    */
   public $datafeedId;
   /**
-   * The ID of the managing account.
-   *
    * @var string
    */
   public $merchantId;
   /**
-   * The method of the batch entry. Acceptable values are: - "`delete`" -
-   * "`fetchNow`" - "`get`" - "`insert`" - "`update`"
-   *
    * @var string
    */
   public $method;
 
   /**
-   * An entry ID, unique within the batch request.
-   *
-   * @param string $batchId
+   * @param string
    */
   public function setBatchId($batchId)
   {
@@ -64,9 +53,7 @@ class DatafeedsCustomBatchRequestEntry extends \Google\Model
     return $this->batchId;
   }
   /**
-   * The data feed to insert.
-   *
-   * @param Datafeed $datafeed
+   * @param Datafeed
    */
   public function setDatafeed(Datafeed $datafeed)
   {
@@ -80,9 +67,7 @@ class DatafeedsCustomBatchRequestEntry extends \Google\Model
     return $this->datafeed;
   }
   /**
-   * The ID of the data feed to get, delete or fetch.
-   *
-   * @param string $datafeedId
+   * @param string
    */
   public function setDatafeedId($datafeedId)
   {
@@ -96,9 +81,7 @@ class DatafeedsCustomBatchRequestEntry extends \Google\Model
     return $this->datafeedId;
   }
   /**
-   * The ID of the managing account.
-   *
-   * @param string $merchantId
+   * @param string
    */
   public function setMerchantId($merchantId)
   {
@@ -112,10 +95,7 @@ class DatafeedsCustomBatchRequestEntry extends \Google\Model
     return $this->merchantId;
   }
   /**
-   * The method of the batch entry. Acceptable values are: - "`delete`" -
-   * "`fetchNow`" - "`get`" - "`insert`" - "`update`"
-   *
-   * @param string $method
+   * @param string
    */
   public function setMethod($method)
   {

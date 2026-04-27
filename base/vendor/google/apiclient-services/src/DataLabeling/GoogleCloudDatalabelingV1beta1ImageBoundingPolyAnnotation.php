@@ -27,9 +27,7 @@ class GoogleCloudDatalabelingV1beta1ImageBoundingPolyAnnotation extends \Google\
   protected $normalizedBoundingPolyDataType = '';
 
   /**
-   * Label of object in this bounding polygon.
-   *
-   * @param GoogleCloudDatalabelingV1beta1AnnotationSpec $annotationSpec
+   * @param GoogleCloudDatalabelingV1beta1AnnotationSpec
    */
   public function setAnnotationSpec(GoogleCloudDatalabelingV1beta1AnnotationSpec $annotationSpec)
   {
@@ -43,7 +41,7 @@ class GoogleCloudDatalabelingV1beta1ImageBoundingPolyAnnotation extends \Google\
     return $this->annotationSpec;
   }
   /**
-   * @param GoogleCloudDatalabelingV1beta1BoundingPoly $boundingPoly
+   * @param GoogleCloudDatalabelingV1beta1BoundingPoly
    */
   public function setBoundingPoly(GoogleCloudDatalabelingV1beta1BoundingPoly $boundingPoly)
   {
@@ -57,7 +55,7 @@ class GoogleCloudDatalabelingV1beta1ImageBoundingPolyAnnotation extends \Google\
     return $this->boundingPoly;
   }
   /**
-   * @param GoogleCloudDatalabelingV1beta1NormalizedBoundingPoly $normalizedBoundingPoly
+   * @param GoogleCloudDatalabelingV1beta1NormalizedBoundingPoly
    */
   public function setNormalizedBoundingPoly(GoogleCloudDatalabelingV1beta1NormalizedBoundingPoly $normalizedBoundingPoly)
   {

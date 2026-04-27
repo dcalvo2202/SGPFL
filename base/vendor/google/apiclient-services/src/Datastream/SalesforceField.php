@@ -20,28 +20,20 @@ namespace Google\Service\Datastream;
 class SalesforceField extends \Google\Model
 {
   /**
-   * The data type.
-   *
    * @var string
    */
   public $dataType;
   /**
-   * The field name.
-   *
    * @var string
    */
   public $name;
   /**
-   * Indicates whether the field can accept nil values.
-   *
    * @var bool
    */
   public $nillable;
 
   /**
-   * The data type.
-   *
-   * @param string $dataType
+   * @param string
    */
   public function setDataType($dataType)
   {
@@ -55,9 +47,7 @@ class SalesforceField extends \Google\Model
     return $this->dataType;
   }
   /**
-   * The field name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -71,9 +61,7 @@ class SalesforceField extends \Google\Model
     return $this->name;
   }
   /**
-   * Indicates whether the field can accept nil values.
-   *
-   * @param bool $nillable
+   * @param bool
    */
   public function setNillable($nillable)
   {

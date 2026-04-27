@@ -23,17 +23,12 @@ class ListAddOnAttachmentsResponse extends \Google\Collection
   protected $addOnAttachmentsType = AddOnAttachment::class;
   protected $addOnAttachmentsDataType = 'array';
   /**
-   * A token, which can be sent as `pageToken` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Attachments under the given post.
-   *
-   * @param AddOnAttachment[] $addOnAttachments
+   * @param AddOnAttachment[]
    */
   public function setAddOnAttachments($addOnAttachments)
   {
@@ -47,10 +42,7 @@ class ListAddOnAttachmentsResponse extends \Google\Collection
     return $this->addOnAttachments;
   }
   /**
-   * A token, which can be sent as `pageToken` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

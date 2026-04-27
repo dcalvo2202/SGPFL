@@ -20,137 +20,40 @@ namespace Google\Service\MyBusinessLodging;
 class Accessibility extends \Google\Model
 {
   /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const MOBILITY_ACCESSIBLE_ELEVATOR_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const MOBILITY_ACCESSIBLE_ELEVATOR_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const MOBILITY_ACCESSIBLE_ELEVATOR_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const MOBILITY_ACCESSIBLE_ELEVATOR_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const MOBILITY_ACCESSIBLE_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const MOBILITY_ACCESSIBLE_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const MOBILITY_ACCESSIBLE_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const MOBILITY_ACCESSIBLE_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const MOBILITY_ACCESSIBLE_PARKING_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const MOBILITY_ACCESSIBLE_PARKING_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const MOBILITY_ACCESSIBLE_PARKING_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const MOBILITY_ACCESSIBLE_PARKING_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const MOBILITY_ACCESSIBLE_POOL_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const MOBILITY_ACCESSIBLE_POOL_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const MOBILITY_ACCESSIBLE_POOL_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const MOBILITY_ACCESSIBLE_POOL_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Mobility accessible. Throughout the property there are physical adaptations
-   * to ease the stay of a person in a wheelchair, such as auto-opening doors,
-   * wide elevators, wide bathrooms or ramps.
-   *
    * @var bool
    */
   public $mobilityAccessible;
   /**
-   * Mobility accessible elevator. A lift that transports people from one level
-   * to another and is built to accommodate a wheelchair-using passenger owing
-   * to the width of its doors and placement of call buttons.
-   *
    * @var bool
    */
   public $mobilityAccessibleElevator;
   /**
-   * Mobility accessible elevator exception.
-   *
    * @var string
    */
   public $mobilityAccessibleElevatorException;
   /**
-   * Mobility accessible exception.
-   *
    * @var string
    */
   public $mobilityAccessibleException;
   /**
-   * Mobility accessible parking. The presence of a marked, designated area of
-   * prescribed size in which only registered, labeled vehicles transporting a
-   * person with physical challenges may park.
-   *
    * @var bool
    */
   public $mobilityAccessibleParking;
   /**
-   * Mobility accessible parking exception.
-   *
    * @var string
    */
   public $mobilityAccessibleParkingException;
   /**
-   * Mobility accessible pool. A swimming pool equipped with a mechanical chair
-   * that can be lowered and raised for the purpose of moving physically
-   * challenged guests into and out of the pool. May be powered by electricity
-   * or water. Also known as pool lift.
-   *
    * @var bool
    */
   public $mobilityAccessiblePool;
   /**
-   * Mobility accessible pool exception.
-   *
    * @var string
    */
   public $mobilityAccessiblePoolException;
 
   /**
-   * Mobility accessible. Throughout the property there are physical adaptations
-   * to ease the stay of a person in a wheelchair, such as auto-opening doors,
-   * wide elevators, wide bathrooms or ramps.
-   *
-   * @param bool $mobilityAccessible
+   * @param bool
    */
   public function setMobilityAccessible($mobilityAccessible)
   {
@@ -164,11 +67,7 @@ class Accessibility extends \Google\Model
     return $this->mobilityAccessible;
   }
   /**
-   * Mobility accessible elevator. A lift that transports people from one level
-   * to another and is built to accommodate a wheelchair-using passenger owing
-   * to the width of its doors and placement of call buttons.
-   *
-   * @param bool $mobilityAccessibleElevator
+   * @param bool
    */
   public function setMobilityAccessibleElevator($mobilityAccessibleElevator)
   {
@@ -182,49 +81,35 @@ class Accessibility extends \Google\Model
     return $this->mobilityAccessibleElevator;
   }
   /**
-   * Mobility accessible elevator exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::MOBILITY_ACCESSIBLE_ELEVATOR_EXCEPTION_* $mobilityAccessibleElevatorException
+   * @param string
    */
   public function setMobilityAccessibleElevatorException($mobilityAccessibleElevatorException)
   {
     $this->mobilityAccessibleElevatorException = $mobilityAccessibleElevatorException;
   }
   /**
-   * @return self::MOBILITY_ACCESSIBLE_ELEVATOR_EXCEPTION_*
+   * @return string
    */
   public function getMobilityAccessibleElevatorException()
   {
     return $this->mobilityAccessibleElevatorException;
   }
   /**
-   * Mobility accessible exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::MOBILITY_ACCESSIBLE_EXCEPTION_* $mobilityAccessibleException
+   * @param string
    */
   public function setMobilityAccessibleException($mobilityAccessibleException)
   {
     $this->mobilityAccessibleException = $mobilityAccessibleException;
   }
   /**
-   * @return self::MOBILITY_ACCESSIBLE_EXCEPTION_*
+   * @return string
    */
   public function getMobilityAccessibleException()
   {
     return $this->mobilityAccessibleException;
   }
   /**
-   * Mobility accessible parking. The presence of a marked, designated area of
-   * prescribed size in which only registered, labeled vehicles transporting a
-   * person with physical challenges may park.
-   *
-   * @param bool $mobilityAccessibleParking
+   * @param bool
    */
   public function setMobilityAccessibleParking($mobilityAccessibleParking)
   {
@@ -238,31 +123,21 @@ class Accessibility extends \Google\Model
     return $this->mobilityAccessibleParking;
   }
   /**
-   * Mobility accessible parking exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::MOBILITY_ACCESSIBLE_PARKING_EXCEPTION_* $mobilityAccessibleParkingException
+   * @param string
    */
   public function setMobilityAccessibleParkingException($mobilityAccessibleParkingException)
   {
     $this->mobilityAccessibleParkingException = $mobilityAccessibleParkingException;
   }
   /**
-   * @return self::MOBILITY_ACCESSIBLE_PARKING_EXCEPTION_*
+   * @return string
    */
   public function getMobilityAccessibleParkingException()
   {
     return $this->mobilityAccessibleParkingException;
   }
   /**
-   * Mobility accessible pool. A swimming pool equipped with a mechanical chair
-   * that can be lowered and raised for the purpose of moving physically
-   * challenged guests into and out of the pool. May be powered by electricity
-   * or water. Also known as pool lift.
-   *
-   * @param bool $mobilityAccessiblePool
+   * @param bool
    */
   public function setMobilityAccessiblePool($mobilityAccessiblePool)
   {
@@ -276,19 +151,14 @@ class Accessibility extends \Google\Model
     return $this->mobilityAccessiblePool;
   }
   /**
-   * Mobility accessible pool exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::MOBILITY_ACCESSIBLE_POOL_EXCEPTION_* $mobilityAccessiblePoolException
+   * @param string
    */
   public function setMobilityAccessiblePoolException($mobilityAccessiblePoolException)
   {
     $this->mobilityAccessiblePoolException = $mobilityAccessiblePoolException;
   }
   /**
-   * @return self::MOBILITY_ACCESSIBLE_POOL_EXCEPTION_*
+   * @return string
    */
   public function getMobilityAccessiblePoolException()
   {

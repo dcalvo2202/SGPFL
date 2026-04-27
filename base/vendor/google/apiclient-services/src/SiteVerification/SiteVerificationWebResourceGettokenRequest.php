@@ -22,17 +22,12 @@ class SiteVerificationWebResourceGettokenRequest extends \Google\Model
   protected $siteType = SiteVerificationWebResourceGettokenRequestSite::class;
   protected $siteDataType = '';
   /**
-   * The verification method that will be used to verify this site. For sites,
-   * 'FILE' or 'META' methods may be used. For domains, only 'DNS' may be used.
-   *
    * @var string
    */
   public $verificationMethod;
 
   /**
-   * The site for which a verification token will be generated.
-   *
-   * @param SiteVerificationWebResourceGettokenRequestSite $site
+   * @param SiteVerificationWebResourceGettokenRequestSite
    */
   public function setSite(SiteVerificationWebResourceGettokenRequestSite $site)
   {
@@ -46,10 +41,7 @@ class SiteVerificationWebResourceGettokenRequest extends \Google\Model
     return $this->site;
   }
   /**
-   * The verification method that will be used to verify this site. For sites,
-   * 'FILE' or 'META' methods may be used. For domains, only 'DNS' may be used.
-   *
-   * @param string $verificationMethod
+   * @param string
    */
   public function setVerificationMethod($verificationMethod)
   {

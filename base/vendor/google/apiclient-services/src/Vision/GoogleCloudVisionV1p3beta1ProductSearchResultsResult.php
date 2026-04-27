@@ -20,27 +20,18 @@ namespace Google\Service\Vision;
 class GoogleCloudVisionV1p3beta1ProductSearchResultsResult extends \Google\Model
 {
   /**
-   * The resource name of the image from the product that is the closest match
-   * to the query.
-   *
    * @var string
    */
   public $image;
   protected $productType = GoogleCloudVisionV1p3beta1Product::class;
   protected $productDataType = '';
   /**
-   * A confidence level on the match, ranging from 0 (no confidence) to 1 (full
-   * confidence).
-   *
    * @var float
    */
   public $score;
 
   /**
-   * The resource name of the image from the product that is the closest match
-   * to the query.
-   *
-   * @param string $image
+   * @param string
    */
   public function setImage($image)
   {
@@ -54,9 +45,7 @@ class GoogleCloudVisionV1p3beta1ProductSearchResultsResult extends \Google\Model
     return $this->image;
   }
   /**
-   * The Product.
-   *
-   * @param GoogleCloudVisionV1p3beta1Product $product
+   * @param GoogleCloudVisionV1p3beta1Product
    */
   public function setProduct(GoogleCloudVisionV1p3beta1Product $product)
   {
@@ -70,10 +59,7 @@ class GoogleCloudVisionV1p3beta1ProductSearchResultsResult extends \Google\Model
     return $this->product;
   }
   /**
-   * A confidence level on the match, ranging from 0 (no confidence) to 1 (full
-   * confidence).
-   *
-   * @param float $score
+   * @param float
    */
   public function setScore($score)
   {

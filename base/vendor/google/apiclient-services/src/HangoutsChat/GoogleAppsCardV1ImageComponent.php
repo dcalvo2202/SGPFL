@@ -20,8 +20,6 @@ namespace Google\Service\HangoutsChat;
 class GoogleAppsCardV1ImageComponent extends \Google\Model
 {
   /**
-   * The accessibility label for the image.
-   *
    * @var string
    */
   public $altText;
@@ -30,16 +28,12 @@ class GoogleAppsCardV1ImageComponent extends \Google\Model
   protected $cropStyleType = GoogleAppsCardV1ImageCropStyle::class;
   protected $cropStyleDataType = '';
   /**
-   * The image URL.
-   *
    * @var string
    */
   public $imageUri;
 
   /**
-   * The accessibility label for the image.
-   *
-   * @param string $altText
+   * @param string
    */
   public function setAltText($altText)
   {
@@ -53,9 +47,7 @@ class GoogleAppsCardV1ImageComponent extends \Google\Model
     return $this->altText;
   }
   /**
-   * The border style to apply to the image.
-   *
-   * @param GoogleAppsCardV1BorderStyle $borderStyle
+   * @param GoogleAppsCardV1BorderStyle
    */
   public function setBorderStyle(GoogleAppsCardV1BorderStyle $borderStyle)
   {
@@ -69,9 +61,7 @@ class GoogleAppsCardV1ImageComponent extends \Google\Model
     return $this->borderStyle;
   }
   /**
-   * The crop style to apply to the image.
-   *
-   * @param GoogleAppsCardV1ImageCropStyle $cropStyle
+   * @param GoogleAppsCardV1ImageCropStyle
    */
   public function setCropStyle(GoogleAppsCardV1ImageCropStyle $cropStyle)
   {
@@ -85,9 +75,7 @@ class GoogleAppsCardV1ImageComponent extends \Google\Model
     return $this->cropStyle;
   }
   /**
-   * The image URL.
-   *
-   * @param string $imageUri
+   * @param string
    */
   public function setImageUri($imageUri)
   {

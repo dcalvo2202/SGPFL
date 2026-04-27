@@ -22,29 +22,20 @@ class DefaultBucket extends \Google\Model
   protected $bucketType = Bucket::class;
   protected $bucketDataType = '';
   /**
-   * Immutable. Location of the default bucket.
-   *
    * @var string
    */
   public $location;
   /**
-   * Identifier. Resource name of the default bucket.
-   *
    * @var string
    */
   public $name;
   /**
-   * Immutable. Storage class of the default bucket. Supported values are
-   * available at https://cloud.google.com/storage/docs/storage-classes#classes.
-   *
    * @var string
    */
   public $storageClass;
 
   /**
-   * Output only. Underlying bucket resource.
-   *
-   * @param Bucket $bucket
+   * @param Bucket
    */
   public function setBucket(Bucket $bucket)
   {
@@ -58,9 +49,7 @@ class DefaultBucket extends \Google\Model
     return $this->bucket;
   }
   /**
-   * Immutable. Location of the default bucket.
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -74,9 +63,7 @@ class DefaultBucket extends \Google\Model
     return $this->location;
   }
   /**
-   * Identifier. Resource name of the default bucket.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -90,10 +77,7 @@ class DefaultBucket extends \Google\Model
     return $this->name;
   }
   /**
-   * Immutable. Storage class of the default bucket. Supported values are
-   * available at https://cloud.google.com/storage/docs/storage-classes#classes.
-   *
-   * @param string $storageClass
+   * @param string
    */
   public function setStorageClass($storageClass)
   {

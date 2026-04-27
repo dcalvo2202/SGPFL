@@ -20,25 +20,16 @@ namespace Google\Service\Dfareporting;
 class ClickThroughUrlSuffixProperties extends \Google\Model
 {
   /**
-   * Click-through URL suffix to apply to all ads in this entity's scope. Must
-   * be less than 128 characters long.
-   *
    * @var string
    */
   public $clickThroughUrlSuffix;
   /**
-   * Whether this entity should override the inherited click-through URL suffix
-   * with its own defined value.
-   *
    * @var bool
    */
   public $overrideInheritedSuffix;
 
   /**
-   * Click-through URL suffix to apply to all ads in this entity's scope. Must
-   * be less than 128 characters long.
-   *
-   * @param string $clickThroughUrlSuffix
+   * @param string
    */
   public function setClickThroughUrlSuffix($clickThroughUrlSuffix)
   {
@@ -52,10 +43,7 @@ class ClickThroughUrlSuffixProperties extends \Google\Model
     return $this->clickThroughUrlSuffix;
   }
   /**
-   * Whether this entity should override the inherited click-through URL suffix
-   * with its own defined value.
-   *
-   * @param bool $overrideInheritedSuffix
+   * @param bool
    */
   public function setOverrideInheritedSuffix($overrideInheritedSuffix)
   {

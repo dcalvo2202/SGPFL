@@ -20,24 +20,16 @@ namespace Google\Service\ShoppingContent;
 class LiaAboutPageSettings extends \Google\Model
 {
   /**
-   * The status of the verification process for the About page. Supported values
-   * are: - "`active`" - "`inactive`" - "`pending`"
-   *
    * @var string
    */
   public $status;
   /**
-   * The URL for the About page.
-   *
    * @var string
    */
   public $url;
 
   /**
-   * The status of the verification process for the About page. Supported values
-   * are: - "`active`" - "`inactive`" - "`pending`"
-   *
-   * @param string $status
+   * @param string
    */
   public function setStatus($status)
   {
@@ -51,9 +43,7 @@ class LiaAboutPageSettings extends \Google\Model
     return $this->status;
   }
   /**
-   * The URL for the About page.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

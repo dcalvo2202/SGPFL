@@ -20,123 +20,50 @@ namespace Google\Service\Compute;
 class ReservationSubBlock extends \Google\Model
 {
   /**
-   * Resources are being allocated for the reservation subBlock.
-   */
-  public const STATUS_CREATING = 'CREATING';
-  /**
-   * Reservation subBlock is currently being deleted.
-   */
-  public const STATUS_DELETING = 'DELETING';
-  public const STATUS_INVALID = 'INVALID';
-  /**
-   * Reservation subBlock has allocated all its resources.
-   */
-  public const STATUS_READY = 'READY';
-  protected $acceleratorTopologiesInfoType = AcceleratorTopologiesInfo::class;
-  protected $acceleratorTopologiesInfoDataType = '';
-  /**
-   * Output only. [Output Only] The number of hosts that are allocated in this
-   * reservation subBlock.
-   *
    * @var int
    */
   public $count;
   /**
-   * Output only. [Output Only] Creation timestamp inRFC3339 text format.
-   *
    * @var string
    */
   public $creationTimestamp;
-  protected $healthInfoType = ReservationSubBlockHealthInfo::class;
-  protected $healthInfoDataType = '';
   /**
-   * Output only. [Output Only] The unique identifier for the resource. This
-   * identifier is defined by the server.
-   *
    * @var string
    */
   public $id;
   /**
-   * Output only. [Output Only] The number of instances that are currently in
-   * use on this reservation subBlock.
-   *
    * @var int
    */
   public $inUseCount;
   /**
-   * Output only. Number of hosts currently in use. If there is one or more
-   * Instances running on the host, it is considered in use.
-   *
-   * @var int
-   */
-  public $inUseHostCount;
-  /**
-   * Output only. [Output Only] Type of the resource.
-   * Alwayscompute#reservationSubBlock for reservation subBlocks.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Output only. [Output Only] The name of this reservation subBlock generated
-   * by Google Compute Engine. The name must be 1-63 characters long, and comply
-   * with RFC1035 @pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-   *
    * @var string
    */
   public $name;
   protected $physicalTopologyType = ReservationSubBlockPhysicalTopology::class;
   protected $physicalTopologyDataType = '';
-  protected $reservationSubBlockMaintenanceType = GroupMaintenanceInfo::class;
-  protected $reservationSubBlockMaintenanceDataType = '';
   /**
-   * Output only. [Output Only] Server-defined fully-qualified URL for this
-   * resource.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * Output only. [Output Only] Server-defined URL for this resource with the
-   * resource id.
-   *
    * @var string
    */
   public $selfLinkWithId;
   /**
-   * Output only. [Output Only] Status of the reservation subBlock.
-   *
    * @var string
    */
   public $status;
   /**
-   * Output only. [Output Only] Zone in which the reservation subBlock resides.
-   *
    * @var string
    */
   public $zone;
 
   /**
-   * Output only. [Output Only] Slice info for the reservation subBlock.
-   *
-   * @param AcceleratorTopologiesInfo $acceleratorTopologiesInfo
-   */
-  public function setAcceleratorTopologiesInfo(AcceleratorTopologiesInfo $acceleratorTopologiesInfo)
-  {
-    $this->acceleratorTopologiesInfo = $acceleratorTopologiesInfo;
-  }
-  /**
-   * @return AcceleratorTopologiesInfo
-   */
-  public function getAcceleratorTopologiesInfo()
-  {
-    return $this->acceleratorTopologiesInfo;
-  }
-  /**
-   * Output only. [Output Only] The number of hosts that are allocated in this
-   * reservation subBlock.
-   *
-   * @param int $count
+   * @param int
    */
   public function setCount($count)
   {
@@ -150,9 +77,7 @@ class ReservationSubBlock extends \Google\Model
     return $this->count;
   }
   /**
-   * Output only. [Output Only] Creation timestamp inRFC3339 text format.
-   *
-   * @param string $creationTimestamp
+   * @param string
    */
   public function setCreationTimestamp($creationTimestamp)
   {
@@ -166,26 +91,7 @@ class ReservationSubBlock extends \Google\Model
     return $this->creationTimestamp;
   }
   /**
-   * Output only. [Output Only] Health information for the reservation subBlock.
-   *
-   * @param ReservationSubBlockHealthInfo $healthInfo
-   */
-  public function setHealthInfo(ReservationSubBlockHealthInfo $healthInfo)
-  {
-    $this->healthInfo = $healthInfo;
-  }
-  /**
-   * @return ReservationSubBlockHealthInfo
-   */
-  public function getHealthInfo()
-  {
-    return $this->healthInfo;
-  }
-  /**
-   * Output only. [Output Only] The unique identifier for the resource. This
-   * identifier is defined by the server.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -199,10 +105,7 @@ class ReservationSubBlock extends \Google\Model
     return $this->id;
   }
   /**
-   * Output only. [Output Only] The number of instances that are currently in
-   * use on this reservation subBlock.
-   *
-   * @param int $inUseCount
+   * @param int
    */
   public function setInUseCount($inUseCount)
   {
@@ -216,27 +119,7 @@ class ReservationSubBlock extends \Google\Model
     return $this->inUseCount;
   }
   /**
-   * Output only. Number of hosts currently in use. If there is one or more
-   * Instances running on the host, it is considered in use.
-   *
-   * @param int $inUseHostCount
-   */
-  public function setInUseHostCount($inUseHostCount)
-  {
-    $this->inUseHostCount = $inUseHostCount;
-  }
-  /**
-   * @return int
-   */
-  public function getInUseHostCount()
-  {
-    return $this->inUseHostCount;
-  }
-  /**
-   * Output only. [Output Only] Type of the resource.
-   * Alwayscompute#reservationSubBlock for reservation subBlocks.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -250,11 +133,7 @@ class ReservationSubBlock extends \Google\Model
     return $this->kind;
   }
   /**
-   * Output only. [Output Only] The name of this reservation subBlock generated
-   * by Google Compute Engine. The name must be 1-63 characters long, and comply
-   * with RFC1035 @pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -268,10 +147,7 @@ class ReservationSubBlock extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. [Output Only] The physical topology of the reservation
-   * subBlock.
-   *
-   * @param ReservationSubBlockPhysicalTopology $physicalTopology
+   * @param ReservationSubBlockPhysicalTopology
    */
   public function setPhysicalTopology(ReservationSubBlockPhysicalTopology $physicalTopology)
   {
@@ -285,26 +161,7 @@ class ReservationSubBlock extends \Google\Model
     return $this->physicalTopology;
   }
   /**
-   * Output only. Maintenance information for this reservation subBlock.
-   *
-   * @param GroupMaintenanceInfo $reservationSubBlockMaintenance
-   */
-  public function setReservationSubBlockMaintenance(GroupMaintenanceInfo $reservationSubBlockMaintenance)
-  {
-    $this->reservationSubBlockMaintenance = $reservationSubBlockMaintenance;
-  }
-  /**
-   * @return GroupMaintenanceInfo
-   */
-  public function getReservationSubBlockMaintenance()
-  {
-    return $this->reservationSubBlockMaintenance;
-  }
-  /**
-   * Output only. [Output Only] Server-defined fully-qualified URL for this
-   * resource.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -318,10 +175,7 @@ class ReservationSubBlock extends \Google\Model
     return $this->selfLink;
   }
   /**
-   * Output only. [Output Only] Server-defined URL for this resource with the
-   * resource id.
-   *
-   * @param string $selfLinkWithId
+   * @param string
    */
   public function setSelfLinkWithId($selfLinkWithId)
   {
@@ -335,27 +189,21 @@ class ReservationSubBlock extends \Google\Model
     return $this->selfLinkWithId;
   }
   /**
-   * Output only. [Output Only] Status of the reservation subBlock.
-   *
-   * Accepted values: CREATING, DELETING, INVALID, READY
-   *
-   * @param self::STATUS_* $status
+   * @param string
    */
   public function setStatus($status)
   {
     $this->status = $status;
   }
   /**
-   * @return self::STATUS_*
+   * @return string
    */
   public function getStatus()
   {
     return $this->status;
   }
   /**
-   * Output only. [Output Only] Zone in which the reservation subBlock resides.
-   *
-   * @param string $zone
+   * @param string
    */
   public function setZone($zone)
   {

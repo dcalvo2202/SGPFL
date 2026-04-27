@@ -21,68 +21,42 @@ class TcpRoute extends \Google\Collection
 {
   protected $collection_key = 'rules';
   /**
-   * Output only. The timestamp when the resource was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. A free-text description of the resource. Max length 1024
-   * characters.
-   *
    * @var string
    */
   public $description;
   /**
-   * Optional. Gateways defines a list of gateways this TcpRoute is attached to,
-   * as one of the routing rules to route the requests served by the gateway.
-   * Each gateway reference should match the pattern:
-   * `projects/locations/gateways/`
-   *
    * @var string[]
    */
   public $gateways;
   /**
-   * Optional. Set of label tags associated with the TcpRoute resource.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Optional. Meshes defines a list of meshes this TcpRoute is attached to, as
-   * one of the routing rules to route the requests served by the mesh. Each
-   * mesh reference should match the pattern: `projects/locations/meshes/` The
-   * attached Mesh should be of a type SIDECAR
-   *
    * @var string[]
    */
   public $meshes;
   /**
-   * Identifier. Name of the TcpRoute resource. It matches pattern
-   * `projects/locations/tcpRoutes/tcp_route_name>`.
-   *
    * @var string
    */
   public $name;
   protected $rulesType = TcpRouteRouteRule::class;
   protected $rulesDataType = 'array';
   /**
-   * Output only. Server-defined URL of this resource
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * Output only. The timestamp when the resource was updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. The timestamp when the resource was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -96,10 +70,7 @@ class TcpRoute extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Optional. A free-text description of the resource. Max length 1024
-   * characters.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -113,12 +84,7 @@ class TcpRoute extends \Google\Collection
     return $this->description;
   }
   /**
-   * Optional. Gateways defines a list of gateways this TcpRoute is attached to,
-   * as one of the routing rules to route the requests served by the gateway.
-   * Each gateway reference should match the pattern:
-   * `projects/locations/gateways/`
-   *
-   * @param string[] $gateways
+   * @param string[]
    */
   public function setGateways($gateways)
   {
@@ -132,9 +98,7 @@ class TcpRoute extends \Google\Collection
     return $this->gateways;
   }
   /**
-   * Optional. Set of label tags associated with the TcpRoute resource.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -148,12 +112,7 @@ class TcpRoute extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Optional. Meshes defines a list of meshes this TcpRoute is attached to, as
-   * one of the routing rules to route the requests served by the mesh. Each
-   * mesh reference should match the pattern: `projects/locations/meshes/` The
-   * attached Mesh should be of a type SIDECAR
-   *
-   * @param string[] $meshes
+   * @param string[]
    */
   public function setMeshes($meshes)
   {
@@ -167,10 +126,7 @@ class TcpRoute extends \Google\Collection
     return $this->meshes;
   }
   /**
-   * Identifier. Name of the TcpRoute resource. It matches pattern
-   * `projects/locations/tcpRoutes/tcp_route_name>`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -184,11 +140,7 @@ class TcpRoute extends \Google\Collection
     return $this->name;
   }
   /**
-   * Required. Rules that define how traffic is routed and handled. At least one
-   * RouteRule must be supplied. If there are multiple rules then the action
-   * taken will be the first rule to match.
-   *
-   * @param TcpRouteRouteRule[] $rules
+   * @param TcpRouteRouteRule[]
    */
   public function setRules($rules)
   {
@@ -202,9 +154,7 @@ class TcpRoute extends \Google\Collection
     return $this->rules;
   }
   /**
-   * Output only. Server-defined URL of this resource
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -218,9 +168,7 @@ class TcpRoute extends \Google\Collection
     return $this->selfLink;
   }
   /**
-   * Output only. The timestamp when the resource was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

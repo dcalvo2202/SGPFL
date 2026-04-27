@@ -23,17 +23,12 @@ class GoogleCloudApigeeV1ListDnsZonesResponse extends \Google\Collection
   protected $dnsZonesType = GoogleCloudApigeeV1DnsZone::class;
   protected $dnsZonesDataType = 'array';
   /**
-   * Page token that you can include in an `ListDnsZones` request to retrieve
-   * the next page. If omitted, no subsequent pages exist.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * DNS zones in a given organization.
-   *
-   * @param GoogleCloudApigeeV1DnsZone[] $dnsZones
+   * @param GoogleCloudApigeeV1DnsZone[]
    */
   public function setDnsZones($dnsZones)
   {
@@ -47,10 +42,7 @@ class GoogleCloudApigeeV1ListDnsZonesResponse extends \Google\Collection
     return $this->dnsZones;
   }
   /**
-   * Page token that you can include in an `ListDnsZones` request to retrieve
-   * the next page. If omitted, no subsequent pages exist.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

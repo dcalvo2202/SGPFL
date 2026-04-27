@@ -20,33 +20,14 @@ namespace Google\Service\Transcoder;
 class AnimationFade extends \Google\Model
 {
   /**
-   * The fade type is not specified.
-   */
-  public const FADE_TYPE_FADE_TYPE_UNSPECIFIED = 'FADE_TYPE_UNSPECIFIED';
-  /**
-   * Fade the overlay object into view.
-   */
-  public const FADE_TYPE_FADE_IN = 'FADE_IN';
-  /**
-   * Fade the overlay object out of view.
-   */
-  public const FADE_TYPE_FADE_OUT = 'FADE_OUT';
-  /**
-   * The time to end the fade animation, in seconds. Default:
-   * `start_time_offset` + 1s
-   *
    * @var string
    */
   public $endTimeOffset;
   /**
-   * Required. Type of fade animation: `FADE_IN` or `FADE_OUT`.
-   *
    * @var string
    */
   public $fadeType;
   /**
-   * The time to start the fade animation, in seconds. Default: 0
-   *
    * @var string
    */
   public $startTimeOffset;
@@ -54,10 +35,7 @@ class AnimationFade extends \Google\Model
   protected $xyDataType = '';
 
   /**
-   * The time to end the fade animation, in seconds. Default:
-   * `start_time_offset` + 1s
-   *
-   * @param string $endTimeOffset
+   * @param string
    */
   public function setEndTimeOffset($endTimeOffset)
   {
@@ -71,27 +49,21 @@ class AnimationFade extends \Google\Model
     return $this->endTimeOffset;
   }
   /**
-   * Required. Type of fade animation: `FADE_IN` or `FADE_OUT`.
-   *
-   * Accepted values: FADE_TYPE_UNSPECIFIED, FADE_IN, FADE_OUT
-   *
-   * @param self::FADE_TYPE_* $fadeType
+   * @param string
    */
   public function setFadeType($fadeType)
   {
     $this->fadeType = $fadeType;
   }
   /**
-   * @return self::FADE_TYPE_*
+   * @return string
    */
   public function getFadeType()
   {
     return $this->fadeType;
   }
   /**
-   * The time to start the fade animation, in seconds. Default: 0
-   *
-   * @param string $startTimeOffset
+   * @param string
    */
   public function setStartTimeOffset($startTimeOffset)
   {
@@ -105,12 +77,7 @@ class AnimationFade extends \Google\Model
     return $this->startTimeOffset;
   }
   /**
-   * Normalized coordinates based on output video resolution. Valid values:
-   * `0.0`–`1.0`. `xy` is the upper-left coordinate of the overlay object. For
-   * example, use the x and y coordinates {0,0} to position the top-left corner
-   * of the overlay animation in the top-left corner of the output video.
-   *
-   * @param NormalizedCoordinate $xy
+   * @param NormalizedCoordinate
    */
   public function setXy(NormalizedCoordinate $xy)
   {

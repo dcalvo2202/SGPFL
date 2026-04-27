@@ -20,16 +20,12 @@ namespace Google\Service\DatabaseMigrationService;
 class SshScript extends \Google\Model
 {
   /**
-   * The ssh configuration script.
-   *
    * @var string
    */
   public $script;
 
   /**
-   * The ssh configuration script.
-   *
-   * @param string $script
+   * @param string
    */
   public function setScript($script)
   {

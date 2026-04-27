@@ -20,18 +20,6 @@ namespace Google\Service\HangoutsChat;
 class GoogleAppsCardV1PlatformDataSource extends \Google\Model
 {
   /**
-   * Default value. Don't use.
-   */
-  public const COMMON_DATA_SOURCE_UNKNOWN = 'UNKNOWN';
-  /**
-   * Google Workspace users. The user can only view and select users from their
-   * Google Workspace organization.
-   */
-  public const COMMON_DATA_SOURCE_USER = 'USER';
-  /**
-   * A data source shared by all Google Workspace applications, such as users in
-   * a Google Workspace organization.
-   *
    * @var string
    */
   public $commonDataSource;
@@ -39,32 +27,21 @@ class GoogleAppsCardV1PlatformDataSource extends \Google\Model
   protected $hostAppDataSourceDataType = '';
 
   /**
-   * A data source shared by all Google Workspace applications, such as users in
-   * a Google Workspace organization.
-   *
-   * Accepted values: UNKNOWN, USER
-   *
-   * @param self::COMMON_DATA_SOURCE_* $commonDataSource
+   * @param string
    */
   public function setCommonDataSource($commonDataSource)
   {
     $this->commonDataSource = $commonDataSource;
   }
   /**
-   * @return self::COMMON_DATA_SOURCE_*
+   * @return string
    */
   public function getCommonDataSource()
   {
     return $this->commonDataSource;
   }
   /**
-   * A data source that's unique to a Google Workspace host application, such
-   * spaces in Google Chat. This field supports the Google API Client Libraries
-   * but isn't available in the Cloud Client Libraries. To learn more, see
-   * [Install the client
-   * libraries](https://developers.google.com/workspace/chat/libraries).
-   *
-   * @param HostAppDataSourceMarkup $hostAppDataSource
+   * @param HostAppDataSourceMarkup
    */
   public function setHostAppDataSource(HostAppDataSourceMarkup $hostAppDataSource)
   {

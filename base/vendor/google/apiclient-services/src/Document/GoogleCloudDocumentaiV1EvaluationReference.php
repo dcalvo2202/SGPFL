@@ -24,22 +24,16 @@ class GoogleCloudDocumentaiV1EvaluationReference extends \Google\Model
   protected $aggregateMetricsExactType = GoogleCloudDocumentaiV1EvaluationMetrics::class;
   protected $aggregateMetricsExactDataType = '';
   /**
-   * The resource name of the evaluation.
-   *
    * @var string
    */
   public $evaluation;
   /**
-   * The resource name of the Long Running Operation for the evaluation.
-   *
    * @var string
    */
   public $operation;
 
   /**
-   * An aggregate of the statistics for the evaluation with fuzzy matching on.
-   *
-   * @param GoogleCloudDocumentaiV1EvaluationMetrics $aggregateMetrics
+   * @param GoogleCloudDocumentaiV1EvaluationMetrics
    */
   public function setAggregateMetrics(GoogleCloudDocumentaiV1EvaluationMetrics $aggregateMetrics)
   {
@@ -53,9 +47,7 @@ class GoogleCloudDocumentaiV1EvaluationReference extends \Google\Model
     return $this->aggregateMetrics;
   }
   /**
-   * An aggregate of the statistics for the evaluation with fuzzy matching off.
-   *
-   * @param GoogleCloudDocumentaiV1EvaluationMetrics $aggregateMetricsExact
+   * @param GoogleCloudDocumentaiV1EvaluationMetrics
    */
   public function setAggregateMetricsExact(GoogleCloudDocumentaiV1EvaluationMetrics $aggregateMetricsExact)
   {
@@ -69,9 +61,7 @@ class GoogleCloudDocumentaiV1EvaluationReference extends \Google\Model
     return $this->aggregateMetricsExact;
   }
   /**
-   * The resource name of the evaluation.
-   *
-   * @param string $evaluation
+   * @param string
    */
   public function setEvaluation($evaluation)
   {
@@ -85,9 +75,7 @@ class GoogleCloudDocumentaiV1EvaluationReference extends \Google\Model
     return $this->evaluation;
   }
   /**
-   * The resource name of the Long Running Operation for the evaluation.
-   *
-   * @param string $operation
+   * @param string
    */
   public function setOperation($operation)
   {

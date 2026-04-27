@@ -29,10 +29,7 @@ class GooglePrivacyDlpV2CloudSqlDiscoveryTarget extends \Google\Model
   protected $generationCadenceDataType = '';
 
   /**
-   * In addition to matching the filter, these conditions must be true before a
-   * profile is generated.
-   *
-   * @param GooglePrivacyDlpV2DiscoveryCloudSqlConditions $conditions
+   * @param GooglePrivacyDlpV2DiscoveryCloudSqlConditions
    */
   public function setConditions(GooglePrivacyDlpV2DiscoveryCloudSqlConditions $conditions)
   {
@@ -46,9 +43,7 @@ class GooglePrivacyDlpV2CloudSqlDiscoveryTarget extends \Google\Model
     return $this->conditions;
   }
   /**
-   * Disable profiling for database resources that match this filter.
-   *
-   * @param GooglePrivacyDlpV2Disabled $disabled
+   * @param GooglePrivacyDlpV2Disabled
    */
   public function setDisabled(GooglePrivacyDlpV2Disabled $disabled)
   {
@@ -62,10 +57,7 @@ class GooglePrivacyDlpV2CloudSqlDiscoveryTarget extends \Google\Model
     return $this->disabled;
   }
   /**
-   * Required. The tables the discovery cadence applies to. The first target
-   * with a matching filter will be the one to apply to a table.
-   *
-   * @param GooglePrivacyDlpV2DiscoveryCloudSqlFilter $filter
+   * @param GooglePrivacyDlpV2DiscoveryCloudSqlFilter
    */
   public function setFilter(GooglePrivacyDlpV2DiscoveryCloudSqlFilter $filter)
   {
@@ -79,11 +71,7 @@ class GooglePrivacyDlpV2CloudSqlDiscoveryTarget extends \Google\Model
     return $this->filter;
   }
   /**
-   * How often and when to update profiles. New tables that match both the
-   * filter and conditions are scanned as quickly as possible depending on
-   * system capacity.
-   *
-   * @param GooglePrivacyDlpV2DiscoveryCloudSqlGenerationCadence $generationCadence
+   * @param GooglePrivacyDlpV2DiscoveryCloudSqlGenerationCadence
    */
   public function setGenerationCadence(GooglePrivacyDlpV2DiscoveryCloudSqlGenerationCadence $generationCadence)
   {

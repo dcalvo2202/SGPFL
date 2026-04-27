@@ -24,9 +24,7 @@ class NodeTaints extends \Google\Collection
   protected $taintsDataType = 'array';
 
   /**
-   * List of node taints.
-   *
-   * @param NodeTaint[] $taints
+   * @param NodeTaint[]
    */
   public function setTaints($taints)
   {

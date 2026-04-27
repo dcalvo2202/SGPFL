@@ -20,77 +20,24 @@ namespace Google\Service\BackupforGKE;
 class TransformationRuleAction extends \Google\Model
 {
   /**
-   * Unspecified operation
-   */
-  public const OP_OP_UNSPECIFIED = 'OP_UNSPECIFIED';
-  /**
-   * The "remove" operation removes the value at the target location.
-   */
-  public const OP_REMOVE = 'REMOVE';
-  /**
-   * The "move" operation removes the value at a specified location and adds it
-   * to the target location.
-   */
-  public const OP_MOVE = 'MOVE';
-  /**
-   * The "copy" operation copies the value at a specified location to the target
-   * location.
-   */
-  public const OP_COPY = 'COPY';
-  /**
-   * The "add" operation performs one of the following functions, depending upon
-   * what the target location references: 1. If the target location specifies an
-   * array index, a new value is inserted into the array at the specified index.
-   * 2. If the target location specifies an object member that does not already
-   * exist, a new member is added to the object. 3. If the target location
-   * specifies an object member that does exist, that member's value is
-   * replaced.
-   */
-  public const OP_ADD = 'ADD';
-  /**
-   * The "test" operation tests that a value at the target location is equal to
-   * a specified value.
-   */
-  public const OP_TEST = 'TEST';
-  /**
-   * The "replace" operation replaces the value at the target location with a
-   * new value. The operation object MUST contain a "value" member whose content
-   * specifies the replacement value.
-   */
-  public const OP_REPLACE = 'REPLACE';
-  /**
-   * Optional. A string containing a JSON Pointer value that references the
-   * location in the target document to move the value from.
-   *
    * @var string
    */
   public $fromPath;
   /**
-   * Required. op specifies the operation to perform.
-   *
    * @var string
    */
   public $op;
   /**
-   * Optional. A string containing a JSON-Pointer value that references a
-   * location within the target document where the operation is performed.
-   *
    * @var string
    */
   public $path;
   /**
-   * Optional. A string that specifies the desired value in string format to use
-   * for transformation.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Optional. A string containing a JSON Pointer value that references the
-   * location in the target document to move the value from.
-   *
-   * @param string $fromPath
+   * @param string
    */
   public function setFromPath($fromPath)
   {
@@ -104,28 +51,21 @@ class TransformationRuleAction extends \Google\Model
     return $this->fromPath;
   }
   /**
-   * Required. op specifies the operation to perform.
-   *
-   * Accepted values: OP_UNSPECIFIED, REMOVE, MOVE, COPY, ADD, TEST, REPLACE
-   *
-   * @param self::OP_* $op
+   * @param string
    */
   public function setOp($op)
   {
     $this->op = $op;
   }
   /**
-   * @return self::OP_*
+   * @return string
    */
   public function getOp()
   {
     return $this->op;
   }
   /**
-   * Optional. A string containing a JSON-Pointer value that references a
-   * location within the target document where the operation is performed.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {
@@ -139,10 +79,7 @@ class TransformationRuleAction extends \Google\Model
     return $this->path;
   }
   /**
-   * Optional. A string that specifies the desired value in string format to use
-   * for transformation.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

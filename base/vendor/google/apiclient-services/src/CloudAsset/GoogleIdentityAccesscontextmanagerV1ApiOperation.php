@@ -23,21 +23,12 @@ class GoogleIdentityAccesscontextmanagerV1ApiOperation extends \Google\Collectio
   protected $methodSelectorsType = GoogleIdentityAccesscontextmanagerV1MethodSelector::class;
   protected $methodSelectorsDataType = 'array';
   /**
-   * The name of the API whose methods or permissions the IngressPolicy or
-   * EgressPolicy want to allow. A single ApiOperation with `service_name` field
-   * set to `*` will allow all methods AND permissions for all services.
-   *
    * @var string
    */
   public $serviceName;
 
   /**
-   * API methods or permissions to allow. Method or permission must belong to
-   * the service specified by `service_name` field. A single MethodSelector
-   * entry with `*` specified for the `method` field will allow all methods AND
-   * permissions for the service specified in `service_name`.
-   *
-   * @param GoogleIdentityAccesscontextmanagerV1MethodSelector[] $methodSelectors
+   * @param GoogleIdentityAccesscontextmanagerV1MethodSelector[]
    */
   public function setMethodSelectors($methodSelectors)
   {
@@ -51,11 +42,7 @@ class GoogleIdentityAccesscontextmanagerV1ApiOperation extends \Google\Collectio
     return $this->methodSelectors;
   }
   /**
-   * The name of the API whose methods or permissions the IngressPolicy or
-   * EgressPolicy want to allow. A single ApiOperation with `service_name` field
-   * set to `*` will allow all methods AND permissions for all services.
-   *
-   * @param string $serviceName
+   * @param string
    */
   public function setServiceName($serviceName)
   {

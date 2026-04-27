@@ -21,47 +21,32 @@ class SAMLParams extends \Google\Collection
 {
   protected $collection_key = 'authenticationContexts';
   /**
-   * Additional contexts used for authentication.
-   *
    * @var string[]
    */
   public $authenticationContexts;
   /**
-   * SAML certificate
-   *
    * @var string
    */
   public $certificate;
   /**
-   * IdP field that maps to the user’s email address
-   *
    * @var string
    */
   public $emailMapping;
   /**
-   * Entity id URL
-   *
    * @var string
    */
   public $entityId;
   /**
-   * Single sign-on URL
-   *
    * @var string
    */
   public $ssoUri;
   /**
-   * Email address of the first admin users.
-   *
-   * @deprecated
    * @var string
    */
   public $userEmail;
 
   /**
-   * Additional contexts used for authentication.
-   *
-   * @param string[] $authenticationContexts
+   * @param string[]
    */
   public function setAuthenticationContexts($authenticationContexts)
   {
@@ -75,9 +60,7 @@ class SAMLParams extends \Google\Collection
     return $this->authenticationContexts;
   }
   /**
-   * SAML certificate
-   *
-   * @param string $certificate
+   * @param string
    */
   public function setCertificate($certificate)
   {
@@ -91,9 +74,7 @@ class SAMLParams extends \Google\Collection
     return $this->certificate;
   }
   /**
-   * IdP field that maps to the user’s email address
-   *
-   * @param string $emailMapping
+   * @param string
    */
   public function setEmailMapping($emailMapping)
   {
@@ -107,9 +88,7 @@ class SAMLParams extends \Google\Collection
     return $this->emailMapping;
   }
   /**
-   * Entity id URL
-   *
-   * @param string $entityId
+   * @param string
    */
   public function setEntityId($entityId)
   {
@@ -123,9 +102,7 @@ class SAMLParams extends \Google\Collection
     return $this->entityId;
   }
   /**
-   * Single sign-on URL
-   *
-   * @param string $ssoUri
+   * @param string
    */
   public function setSsoUri($ssoUri)
   {
@@ -139,17 +116,13 @@ class SAMLParams extends \Google\Collection
     return $this->ssoUri;
   }
   /**
-   * Email address of the first admin users.
-   *
-   * @deprecated
-   * @param string $userEmail
+   * @param string
    */
   public function setUserEmail($userEmail)
   {
     $this->userEmail = $userEmail;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getUserEmail()

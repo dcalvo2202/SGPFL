@@ -20,44 +20,10 @@ namespace Google\Service\CloudDomains;
 class Domain extends \Google\Model
 {
   /**
-   * The assessment is undefined.
-   */
-  public const RESOURCE_STATE_RESOURCE_STATE_UNSPECIFIED = 'RESOURCE_STATE_UNSPECIFIED';
-  /**
-   * A `Registration` resource can be created for this domain by calling
-   * `ImportDomain`.
-   */
-  public const RESOURCE_STATE_IMPORTABLE = 'IMPORTABLE';
-  /**
-   * A `Registration` resource cannot be created for this domain because it is
-   * not supported by Cloud Domains; for example, the top-level domain is not
-   * supported or the registry charges non-standard pricing for yearly renewals.
-   */
-  public const RESOURCE_STATE_UNSUPPORTED = 'UNSUPPORTED';
-  /**
-   * A `Registration` resource cannot be created for this domain because it is
-   * suspended and needs to be resolved with Google Domains.
-   */
-  public const RESOURCE_STATE_SUSPENDED = 'SUSPENDED';
-  /**
-   * A `Registration` resource cannot be created for this domain because it is
-   * expired and needs to be renewed with Google Domains.
-   */
-  public const RESOURCE_STATE_EXPIRED = 'EXPIRED';
-  /**
-   * A `Registration` resource cannot be created for this domain because it is
-   * deleted, but it may be possible to restore it with Google Domains.
-   */
-  public const RESOURCE_STATE_DELETED = 'DELETED';
-  /**
-   * The domain name. Unicode domain names are expressed in Punycode format.
-   *
    * @var string
    */
   public $domainName;
   /**
-   * The state of this domain as a `Registration` resource.
-   *
    * @var string
    */
   public $resourceState;
@@ -65,9 +31,7 @@ class Domain extends \Google\Model
   protected $yearlyPriceDataType = '';
 
   /**
-   * The domain name. Unicode domain names are expressed in Punycode format.
-   *
-   * @param string $domainName
+   * @param string
    */
   public function setDomainName($domainName)
   {
@@ -81,29 +45,21 @@ class Domain extends \Google\Model
     return $this->domainName;
   }
   /**
-   * The state of this domain as a `Registration` resource.
-   *
-   * Accepted values: RESOURCE_STATE_UNSPECIFIED, IMPORTABLE, UNSUPPORTED,
-   * SUSPENDED, EXPIRED, DELETED
-   *
-   * @param self::RESOURCE_STATE_* $resourceState
+   * @param string
    */
   public function setResourceState($resourceState)
   {
     $this->resourceState = $resourceState;
   }
   /**
-   * @return self::RESOURCE_STATE_*
+   * @return string
    */
   public function getResourceState()
   {
     return $this->resourceState;
   }
   /**
-   * Price to renew the domain for one year. Only set when `resource_state` is
-   * `IMPORTABLE`.
-   *
-   * @param Money $yearlyPrice
+   * @param Money
    */
   public function setYearlyPrice(Money $yearlyPrice)
   {

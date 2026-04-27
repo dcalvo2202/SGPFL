@@ -20,23 +20,16 @@ namespace Google\Service\Apigee;
 class EdgeConfigstoreBundleBadBundleViolation extends \Google\Model
 {
   /**
-   * A description of why the bundle is invalid and how to fix it.
-   *
    * @var string
    */
   public $description;
   /**
-   * The filename (including relative path from the bundle root) in which the
-   * error occurred.
-   *
    * @var string
    */
   public $filename;
 
   /**
-   * A description of why the bundle is invalid and how to fix it.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -50,10 +43,7 @@ class EdgeConfigstoreBundleBadBundleViolation extends \Google\Model
     return $this->description;
   }
   /**
-   * The filename (including relative path from the bundle root) in which the
-   * error occurred.
-   *
-   * @param string $filename
+   * @param string
    */
   public function setFilename($filename)
   {

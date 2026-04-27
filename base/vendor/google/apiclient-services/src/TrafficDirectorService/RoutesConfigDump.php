@@ -26,9 +26,7 @@ class RoutesConfigDump extends \Google\Collection
   protected $staticRouteConfigsDataType = 'array';
 
   /**
-   * The dynamically loaded route configs.
-   *
-   * @param DynamicRouteConfig[] $dynamicRouteConfigs
+   * @param DynamicRouteConfig[]
    */
   public function setDynamicRouteConfigs($dynamicRouteConfigs)
   {
@@ -42,9 +40,7 @@ class RoutesConfigDump extends \Google\Collection
     return $this->dynamicRouteConfigs;
   }
   /**
-   * The statically loaded route configs.
-   *
-   * @param StaticRouteConfig[] $staticRouteConfigs
+   * @param StaticRouteConfig[]
    */
   public function setStaticRouteConfigs($staticRouteConfigs)
   {

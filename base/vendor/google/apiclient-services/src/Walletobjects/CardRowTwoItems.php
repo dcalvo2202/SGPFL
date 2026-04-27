@@ -25,10 +25,7 @@ class CardRowTwoItems extends \Google\Model
   protected $startItemDataType = '';
 
   /**
-   * The item to be displayed at the end of the row. This item will be aligned
-   * to the right.
-   *
-   * @param TemplateItem $endItem
+   * @param TemplateItem
    */
   public function setEndItem(TemplateItem $endItem)
   {
@@ -42,10 +39,7 @@ class CardRowTwoItems extends \Google\Model
     return $this->endItem;
   }
   /**
-   * The item to be displayed at the start of the row. This item will be aligned
-   * to the left.
-   *
-   * @param TemplateItem $startItem
+   * @param TemplateItem
    */
   public function setStartItem(TemplateItem $startItem)
   {

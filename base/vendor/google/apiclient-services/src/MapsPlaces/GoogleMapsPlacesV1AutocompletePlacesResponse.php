@@ -24,9 +24,7 @@ class GoogleMapsPlacesV1AutocompletePlacesResponse extends \Google\Collection
   protected $suggestionsDataType = 'array';
 
   /**
-   * Contains a list of suggestions, ordered in descending order of relevance.
-   *
-   * @param GoogleMapsPlacesV1AutocompletePlacesResponseSuggestion[] $suggestions
+   * @param GoogleMapsPlacesV1AutocompletePlacesResponseSuggestion[]
    */
   public function setSuggestions($suggestions)
   {

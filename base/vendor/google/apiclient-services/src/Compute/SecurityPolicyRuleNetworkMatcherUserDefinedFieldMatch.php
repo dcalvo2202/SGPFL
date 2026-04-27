@@ -21,24 +21,16 @@ class SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch extends \Google\Coll
 {
   protected $collection_key = 'values';
   /**
-   * Name of the user-defined field, as given in the definition.
-   *
    * @var string
    */
   public $name;
   /**
-   * Matching values of the field. Each element can be a 32-bit unsigned decimal
-   * or hexadecimal (starting with "0x") number (e.g. "64") or range (e.g.
-   * "0x400-0x7ff").
-   *
    * @var string[]
    */
   public $values;
 
   /**
-   * Name of the user-defined field, as given in the definition.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -52,11 +44,7 @@ class SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch extends \Google\Coll
     return $this->name;
   }
   /**
-   * Matching values of the field. Each element can be a 32-bit unsigned decimal
-   * or hexadecimal (starting with "0x") number (e.g. "64") or range (e.g.
-   * "0x400-0x7ff").
-   *
-   * @param string[] $values
+   * @param string[]
    */
   public function setValues($values)
   {

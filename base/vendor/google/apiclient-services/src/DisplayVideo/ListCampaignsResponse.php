@@ -23,18 +23,12 @@ class ListCampaignsResponse extends \Google\Collection
   protected $campaignsType = Campaign::class;
   protected $campaignsDataType = 'array';
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * page_token field in the subsequent call to `ListCampaigns` method to
-   * retrieve the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of campaigns. This list will be absent if empty.
-   *
-   * @param Campaign[] $campaigns
+   * @param Campaign[]
    */
   public function setCampaigns($campaigns)
   {
@@ -48,11 +42,7 @@ class ListCampaignsResponse extends \Google\Collection
     return $this->campaigns;
   }
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * page_token field in the subsequent call to `ListCampaigns` method to
-   * retrieve the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

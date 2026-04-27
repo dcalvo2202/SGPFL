@@ -24,7 +24,7 @@ class GuestAttributesValue extends \Google\Collection
   protected $itemsDataType = 'array';
 
   /**
-   * @param GuestAttributesEntry[] $items
+   * @param GuestAttributesEntry[]
    */
   public function setItems($items)
   {

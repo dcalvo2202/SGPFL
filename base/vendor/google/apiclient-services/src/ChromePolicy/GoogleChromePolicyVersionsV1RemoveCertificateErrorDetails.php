@@ -24,11 +24,7 @@ class GoogleChromePolicyVersionsV1RemoveCertificateErrorDetails extends \Google\
   protected $certificateReferencesDataType = 'array';
 
   /**
-   * Output only. If the certificate was not removed, a list of references to
-   * the certificate that prevented it from being removed. Only unreferenced
-   * certificates can be removed.
-   *
-   * @param GoogleChromePolicyVersionsV1CertificateReference[] $certificateReferences
+   * @param GoogleChromePolicyVersionsV1CertificateReference[]
    */
   public function setCertificateReferences($certificateReferences)
   {

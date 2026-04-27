@@ -20,22 +20,16 @@ namespace Google\Service\CloudSearch;
 class Action extends \Google\Model
 {
   /**
-   * [Required] Title of the action.
-   *
    * @var string
    */
   public $title;
   /**
-   * [Optional] Url of the action.
-   *
    * @var string
    */
   public $url;
 
   /**
-   * [Required] Title of the action.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -49,9 +43,7 @@ class Action extends \Google\Model
     return $this->title;
   }
   /**
-   * [Optional] Url of the action.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

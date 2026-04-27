@@ -23,18 +23,12 @@ class InterceptEndpointGroupConnectedDeploymentGroup extends \Google\Collection
   protected $locationsType = InterceptLocation::class;
   protected $locationsDataType = 'array';
   /**
-   * Output only. The connected deployment group's resource name, for example:
-   * `projects/123456789/locations/global/interceptDeploymentGroups/my-dg`. See
-   * https://google.aip.dev/124.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Output only. The list of locations where the deployment group is present.
-   *
-   * @param InterceptLocation[] $locations
+   * @param InterceptLocation[]
    */
   public function setLocations($locations)
   {
@@ -48,11 +42,7 @@ class InterceptEndpointGroupConnectedDeploymentGroup extends \Google\Collection
     return $this->locations;
   }
   /**
-   * Output only. The connected deployment group's resource name, for example:
-   * `projects/123456789/locations/global/interceptDeploymentGroups/my-dg`. See
-   * https://google.aip.dev/124.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

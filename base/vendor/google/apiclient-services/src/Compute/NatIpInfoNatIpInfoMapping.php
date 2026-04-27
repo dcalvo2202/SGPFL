@@ -19,52 +19,35 @@ namespace Google\Service\Compute;
 
 class NatIpInfoNatIpInfoMapping extends \Google\Model
 {
-  public const MODE_AUTO = 'AUTO';
-  public const MODE_MANUAL = 'MANUAL';
-  public const USAGE_IN_USE = 'IN_USE';
-  public const USAGE_UNUSED = 'UNUSED';
   /**
-   * Output only. Specifies whether NAT IP is auto or manual.
-   *
    * @var string
    */
   public $mode;
   /**
-   * Output only. NAT IP address. For example: 203.0.113.11.
-   *
    * @var string
    */
   public $natIp;
   /**
-   * Output only. Specifies whether NAT IP is currently serving at least one
-   * endpoint or not.
-   *
    * @var string
    */
   public $usage;
 
   /**
-   * Output only. Specifies whether NAT IP is auto or manual.
-   *
-   * Accepted values: AUTO, MANUAL
-   *
-   * @param self::MODE_* $mode
+   * @param string
    */
   public function setMode($mode)
   {
     $this->mode = $mode;
   }
   /**
-   * @return self::MODE_*
+   * @return string
    */
   public function getMode()
   {
     return $this->mode;
   }
   /**
-   * Output only. NAT IP address. For example: 203.0.113.11.
-   *
-   * @param string $natIp
+   * @param string
    */
   public function setNatIp($natIp)
   {
@@ -78,19 +61,14 @@ class NatIpInfoNatIpInfoMapping extends \Google\Model
     return $this->natIp;
   }
   /**
-   * Output only. Specifies whether NAT IP is currently serving at least one
-   * endpoint or not.
-   *
-   * Accepted values: IN_USE, UNUSED
-   *
-   * @param self::USAGE_* $usage
+   * @param string
    */
   public function setUsage($usage)
   {
     $this->usage = $usage;
   }
   /**
-   * @return self::USAGE_*
+   * @return string
    */
   public function getUsage()
   {

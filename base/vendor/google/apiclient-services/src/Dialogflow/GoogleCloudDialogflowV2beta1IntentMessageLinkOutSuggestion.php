@@ -29,7 +29,7 @@ class GoogleCloudDialogflowV2beta1IntentMessageLinkOutSuggestion extends \Google
   public $uri;
 
   /**
-   * @param string $destinationName
+   * @param string
    */
   public function setDestinationName($destinationName)
   {
@@ -43,7 +43,7 @@ class GoogleCloudDialogflowV2beta1IntentMessageLinkOutSuggestion extends \Google
     return $this->destinationName;
   }
   /**
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

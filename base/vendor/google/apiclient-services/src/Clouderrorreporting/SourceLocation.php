@@ -20,32 +20,20 @@ namespace Google\Service\Clouderrorreporting;
 class SourceLocation extends \Google\Model
 {
   /**
-   * The source code filename, which can include a truncated relative path, or a
-   * full path from a production machine.
-   *
    * @var string
    */
   public $filePath;
   /**
-   * Human-readable name of a function or method. The value can include optional
-   * context like the class or package name. For example,
-   * `my.package.MyClass.method` in case of Java.
-   *
    * @var string
    */
   public $functionName;
   /**
-   * 1-based. 0 indicates that the line number is unknown.
-   *
    * @var int
    */
   public $lineNumber;
 
   /**
-   * The source code filename, which can include a truncated relative path, or a
-   * full path from a production machine.
-   *
-   * @param string $filePath
+   * @param string
    */
   public function setFilePath($filePath)
   {
@@ -59,11 +47,7 @@ class SourceLocation extends \Google\Model
     return $this->filePath;
   }
   /**
-   * Human-readable name of a function or method. The value can include optional
-   * context like the class or package name. For example,
-   * `my.package.MyClass.method` in case of Java.
-   *
-   * @param string $functionName
+   * @param string
    */
   public function setFunctionName($functionName)
   {
@@ -77,9 +61,7 @@ class SourceLocation extends \Google\Model
     return $this->functionName;
   }
   /**
-   * 1-based. 0 indicates that the line number is unknown.
-   *
-   * @param int $lineNumber
+   * @param int
    */
   public function setLineNumber($lineNumber)
   {

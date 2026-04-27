@@ -23,9 +23,7 @@ class ComputeEngineMigrationTarget extends \Google\Model
   protected $shapeDataType = '';
 
   /**
-   * Description of the suggested shape for the migration target.
-   *
-   * @param ComputeEngineShapeDescriptor $shape
+   * @param ComputeEngineShapeDescriptor
    */
   public function setShape(ComputeEngineShapeDescriptor $shape)
   {

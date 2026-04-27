@@ -26,9 +26,7 @@ class GoogleCloudDocumentaiV1BoundingPoly extends \Google\Collection
   protected $verticesDataType = 'array';
 
   /**
-   * The bounding polygon normalized vertices.
-   *
-   * @param GoogleCloudDocumentaiV1NormalizedVertex[] $normalizedVertices
+   * @param GoogleCloudDocumentaiV1NormalizedVertex[]
    */
   public function setNormalizedVertices($normalizedVertices)
   {
@@ -42,9 +40,7 @@ class GoogleCloudDocumentaiV1BoundingPoly extends \Google\Collection
     return $this->normalizedVertices;
   }
   /**
-   * The bounding polygon vertices.
-   *
-   * @param GoogleCloudDocumentaiV1Vertex[] $vertices
+   * @param GoogleCloudDocumentaiV1Vertex[]
    */
   public function setVertices($vertices)
   {

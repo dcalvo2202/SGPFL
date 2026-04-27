@@ -23,16 +23,12 @@ class ListCloudExadataInfrastructuresResponse extends \Google\Collection
   protected $cloudExadataInfrastructuresType = CloudExadataInfrastructure::class;
   protected $cloudExadataInfrastructuresDataType = 'array';
   /**
-   * A token for fetching next page of response.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of Exadata Infrastructures.
-   *
-   * @param CloudExadataInfrastructure[] $cloudExadataInfrastructures
+   * @param CloudExadataInfrastructure[]
    */
   public function setCloudExadataInfrastructures($cloudExadataInfrastructures)
   {
@@ -46,9 +42,7 @@ class ListCloudExadataInfrastructuresResponse extends \Google\Collection
     return $this->cloudExadataInfrastructures;
   }
   /**
-   * A token for fetching next page of response.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

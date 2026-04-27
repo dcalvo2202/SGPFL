@@ -21,17 +21,10 @@ class HorizontalRule extends \Google\Collection
 {
   protected $collection_key = 'suggestedInsertionIds';
   /**
-   * The suggested deletion IDs. If empty, then there are no suggested deletions
-   * of this content.
-   *
    * @var string[]
    */
   public $suggestedDeletionIds;
   /**
-   * The suggested insertion IDs. A HorizontalRule may have multiple insertion
-   * IDs if it is a nested suggested change. If empty, then this is not a
-   * suggested insertion.
-   *
    * @var string[]
    */
   public $suggestedInsertionIds;
@@ -41,10 +34,7 @@ class HorizontalRule extends \Google\Collection
   protected $textStyleDataType = '';
 
   /**
-   * The suggested deletion IDs. If empty, then there are no suggested deletions
-   * of this content.
-   *
-   * @param string[] $suggestedDeletionIds
+   * @param string[]
    */
   public function setSuggestedDeletionIds($suggestedDeletionIds)
   {
@@ -58,11 +48,7 @@ class HorizontalRule extends \Google\Collection
     return $this->suggestedDeletionIds;
   }
   /**
-   * The suggested insertion IDs. A HorizontalRule may have multiple insertion
-   * IDs if it is a nested suggested change. If empty, then this is not a
-   * suggested insertion.
-   *
-   * @param string[] $suggestedInsertionIds
+   * @param string[]
    */
   public function setSuggestedInsertionIds($suggestedInsertionIds)
   {
@@ -76,10 +62,7 @@ class HorizontalRule extends \Google\Collection
     return $this->suggestedInsertionIds;
   }
   /**
-   * The suggested text style changes to this HorizontalRule, keyed by
-   * suggestion ID.
-   *
-   * @param SuggestedTextStyle[] $suggestedTextStyleChanges
+   * @param SuggestedTextStyle[]
    */
   public function setSuggestedTextStyleChanges($suggestedTextStyleChanges)
   {
@@ -93,11 +76,7 @@ class HorizontalRule extends \Google\Collection
     return $this->suggestedTextStyleChanges;
   }
   /**
-   * The text style of this HorizontalRule. Similar to text content, like text
-   * runs and footnote references, the text style of a horizontal rule can
-   * affect content layout as well as the styling of text inserted next to it.
-   *
-   * @param TextStyle $textStyle
+   * @param TextStyle
    */
   public function setTextStyle(TextStyle $textStyle)
   {

@@ -20,25 +20,16 @@ namespace Google\Service\Compute;
 class LicenseResourceRequirements extends \Google\Model
 {
   /**
-   * [Input Only] Deprecated. This field no longer reflects the minimum number
-   * of guest cpus required to use the Instance.
-   *
    * @var int
    */
   public $minGuestCpuCount;
   /**
-   * [Input Only] Deprecated. This field no longer reflects the minimum memory
-   * required to use the Instance.
-   *
    * @var int
    */
   public $minMemoryMb;
 
   /**
-   * [Input Only] Deprecated. This field no longer reflects the minimum number
-   * of guest cpus required to use the Instance.
-   *
-   * @param int $minGuestCpuCount
+   * @param int
    */
   public function setMinGuestCpuCount($minGuestCpuCount)
   {
@@ -52,10 +43,7 @@ class LicenseResourceRequirements extends \Google\Model
     return $this->minGuestCpuCount;
   }
   /**
-   * [Input Only] Deprecated. This field no longer reflects the minimum memory
-   * required to use the Instance.
-   *
-   * @param int $minMemoryMb
+   * @param int
    */
   public function setMinMemoryMb($minMemoryMb)
   {

@@ -20,38 +20,20 @@ namespace Google\Service\RecaptchaEnterprise;
 class GoogleCloudRecaptchaenterpriseV1RelatedAccountGroupMembership extends \Google\Model
 {
   /**
-   * The unique stable account identifier of the member. The identifier
-   * corresponds to an `account_id` provided in a previous `CreateAssessment` or
-   * `AnnotateAssessment` call.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * Deprecated: use `account_id` instead. The unique stable hashed account
-   * identifier of the member. The identifier corresponds to a
-   * `hashed_account_id` provided in a previous `CreateAssessment` or
-   * `AnnotateAssessment` call.
-   *
-   * @deprecated
    * @var string
    */
   public $hashedAccountId;
   /**
-   * Required. Identifier. The resource name for this membership in the format `
-   * projects/{project}/relatedaccountgroups/{relatedaccountgroup}/memberships/{
-   * membership}`.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The unique stable account identifier of the member. The identifier
-   * corresponds to an `account_id` provided in a previous `CreateAssessment` or
-   * `AnnotateAssessment` call.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -65,20 +47,13 @@ class GoogleCloudRecaptchaenterpriseV1RelatedAccountGroupMembership extends \Goo
     return $this->accountId;
   }
   /**
-   * Deprecated: use `account_id` instead. The unique stable hashed account
-   * identifier of the member. The identifier corresponds to a
-   * `hashed_account_id` provided in a previous `CreateAssessment` or
-   * `AnnotateAssessment` call.
-   *
-   * @deprecated
-   * @param string $hashedAccountId
+   * @param string
    */
   public function setHashedAccountId($hashedAccountId)
   {
     $this->hashedAccountId = $hashedAccountId;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getHashedAccountId()
@@ -86,11 +61,7 @@ class GoogleCloudRecaptchaenterpriseV1RelatedAccountGroupMembership extends \Goo
     return $this->hashedAccountId;
   }
   /**
-   * Required. Identifier. The resource name for this membership in the format `
-   * projects/{project}/relatedaccountgroups/{relatedaccountgroup}/memberships/{
-   * membership}`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

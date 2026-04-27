@@ -19,47 +19,6 @@ namespace Google\Service\AndroidEnterprise;
 
 class Notification extends \Google\Model
 {
-  public const NOTIFICATION_TYPE_unknown = 'unknown';
-  /**
-   * A test push notification.
-   */
-  public const NOTIFICATION_TYPE_testNotification = 'testNotification';
-  /**
-   * Notification about change to a product's approval status.
-   */
-  public const NOTIFICATION_TYPE_productApproval = 'productApproval';
-  /**
-   * Notification about an app installation failure.
-   */
-  public const NOTIFICATION_TYPE_installFailure = 'installFailure';
-  /**
-   * Notification about app update.
-   */
-  public const NOTIFICATION_TYPE_appUpdate = 'appUpdate';
-  /**
-   * Notification about new app permissions.
-   */
-  public const NOTIFICATION_TYPE_newPermissions = 'newPermissions';
-  /**
-   * Notification about new app restrictions schema change.
-   */
-  public const NOTIFICATION_TYPE_appRestricionsSchemaChange = 'appRestricionsSchemaChange';
-  /**
-   * Notification about product availability change.
-   */
-  public const NOTIFICATION_TYPE_productAvailabilityChange = 'productAvailabilityChange';
-  /**
-   * Notification about a new device.
-   */
-  public const NOTIFICATION_TYPE_newDevice = 'newDevice';
-  /**
-   * Notification about an updated device report.
-   */
-  public const NOTIFICATION_TYPE_deviceReportUpdate = 'deviceReportUpdate';
-  /**
-   * Notification about an enterprise upgrade.
-   */
-  public const NOTIFICATION_TYPE_enterpriseUpgrade = 'enterpriseUpgrade';
   protected $appRestrictionsSchemaChangeEventType = AppRestrictionsSchemaChangeEvent::class;
   protected $appRestrictionsSchemaChangeEventDataType = '';
   protected $appUpdateEventType = AppUpdateEvent::class;
@@ -67,9 +26,6 @@ class Notification extends \Google\Model
   protected $deviceReportUpdateEventType = DeviceReportUpdateEvent::class;
   protected $deviceReportUpdateEventDataType = '';
   /**
-   * The ID of the enterprise for which the notification is sent. This will
-   * always be present.
-   *
    * @var string
    */
   public $enterpriseId;
@@ -82,8 +38,6 @@ class Notification extends \Google\Model
   protected $newPermissionsEventType = NewPermissionsEvent::class;
   protected $newPermissionsEventDataType = '';
   /**
-   * Type of the notification.
-   *
    * @var string
    */
   public $notificationType;
@@ -92,17 +46,12 @@ class Notification extends \Google\Model
   protected $productAvailabilityChangeEventType = ProductAvailabilityChangeEvent::class;
   protected $productAvailabilityChangeEventDataType = '';
   /**
-   * The time when the notification was published in milliseconds since
-   * 1970-01-01T00:00:00Z. This will always be present.
-   *
    * @var string
    */
   public $timestampMillis;
 
   /**
-   * Notifications about new app restrictions schema changes.
-   *
-   * @param AppRestrictionsSchemaChangeEvent $appRestrictionsSchemaChangeEvent
+   * @param AppRestrictionsSchemaChangeEvent
    */
   public function setAppRestrictionsSchemaChangeEvent(AppRestrictionsSchemaChangeEvent $appRestrictionsSchemaChangeEvent)
   {
@@ -116,9 +65,7 @@ class Notification extends \Google\Model
     return $this->appRestrictionsSchemaChangeEvent;
   }
   /**
-   * Notifications about app updates.
-   *
-   * @param AppUpdateEvent $appUpdateEvent
+   * @param AppUpdateEvent
    */
   public function setAppUpdateEvent(AppUpdateEvent $appUpdateEvent)
   {
@@ -132,9 +79,7 @@ class Notification extends \Google\Model
     return $this->appUpdateEvent;
   }
   /**
-   * Notifications about device report updates.
-   *
-   * @param DeviceReportUpdateEvent $deviceReportUpdateEvent
+   * @param DeviceReportUpdateEvent
    */
   public function setDeviceReportUpdateEvent(DeviceReportUpdateEvent $deviceReportUpdateEvent)
   {
@@ -148,10 +93,7 @@ class Notification extends \Google\Model
     return $this->deviceReportUpdateEvent;
   }
   /**
-   * The ID of the enterprise for which the notification is sent. This will
-   * always be present.
-   *
-   * @param string $enterpriseId
+   * @param string
    */
   public function setEnterpriseId($enterpriseId)
   {
@@ -165,9 +107,7 @@ class Notification extends \Google\Model
     return $this->enterpriseId;
   }
   /**
-   * Notifications about enterprise upgrade.
-   *
-   * @param EnterpriseUpgradeEvent $enterpriseUpgradeEvent
+   * @param EnterpriseUpgradeEvent
    */
   public function setEnterpriseUpgradeEvent(EnterpriseUpgradeEvent $enterpriseUpgradeEvent)
   {
@@ -181,9 +121,7 @@ class Notification extends \Google\Model
     return $this->enterpriseUpgradeEvent;
   }
   /**
-   * Notifications about an app installation failure.
-   *
-   * @param InstallFailureEvent $installFailureEvent
+   * @param InstallFailureEvent
    */
   public function setInstallFailureEvent(InstallFailureEvent $installFailureEvent)
   {
@@ -197,9 +135,7 @@ class Notification extends \Google\Model
     return $this->installFailureEvent;
   }
   /**
-   * Notifications about new devices.
-   *
-   * @param NewDeviceEvent $newDeviceEvent
+   * @param NewDeviceEvent
    */
   public function setNewDeviceEvent(NewDeviceEvent $newDeviceEvent)
   {
@@ -213,9 +149,7 @@ class Notification extends \Google\Model
     return $this->newDeviceEvent;
   }
   /**
-   * Notifications about new app permissions.
-   *
-   * @param NewPermissionsEvent $newPermissionsEvent
+   * @param NewPermissionsEvent
    */
   public function setNewPermissionsEvent(NewPermissionsEvent $newPermissionsEvent)
   {
@@ -229,29 +163,21 @@ class Notification extends \Google\Model
     return $this->newPermissionsEvent;
   }
   /**
-   * Type of the notification.
-   *
-   * Accepted values: unknown, testNotification, productApproval,
-   * installFailure, appUpdate, newPermissions, appRestricionsSchemaChange,
-   * productAvailabilityChange, newDevice, deviceReportUpdate, enterpriseUpgrade
-   *
-   * @param self::NOTIFICATION_TYPE_* $notificationType
+   * @param string
    */
   public function setNotificationType($notificationType)
   {
     $this->notificationType = $notificationType;
   }
   /**
-   * @return self::NOTIFICATION_TYPE_*
+   * @return string
    */
   public function getNotificationType()
   {
     return $this->notificationType;
   }
   /**
-   * Notifications about changes to a product's approval status.
-   *
-   * @param ProductApprovalEvent $productApprovalEvent
+   * @param ProductApprovalEvent
    */
   public function setProductApprovalEvent(ProductApprovalEvent $productApprovalEvent)
   {
@@ -265,9 +191,7 @@ class Notification extends \Google\Model
     return $this->productApprovalEvent;
   }
   /**
-   * Notifications about product availability changes.
-   *
-   * @param ProductAvailabilityChangeEvent $productAvailabilityChangeEvent
+   * @param ProductAvailabilityChangeEvent
    */
   public function setProductAvailabilityChangeEvent(ProductAvailabilityChangeEvent $productAvailabilityChangeEvent)
   {
@@ -281,10 +205,7 @@ class Notification extends \Google\Model
     return $this->productAvailabilityChangeEvent;
   }
   /**
-   * The time when the notification was published in milliseconds since
-   * 1970-01-01T00:00:00Z. This will always be present.
-   *
-   * @param string $timestampMillis
+   * @param string
    */
   public function setTimestampMillis($timestampMillis)
   {

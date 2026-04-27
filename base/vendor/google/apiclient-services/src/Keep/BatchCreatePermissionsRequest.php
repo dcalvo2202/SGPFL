@@ -24,9 +24,7 @@ class BatchCreatePermissionsRequest extends \Google\Collection
   protected $requestsDataType = 'array';
 
   /**
-   * The request message specifying the resources to create.
-   *
-   * @param CreatePermissionRequest[] $requests
+   * @param CreatePermissionRequest[]
    */
   public function setRequests($requests)
   {

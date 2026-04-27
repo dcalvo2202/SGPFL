@@ -23,10 +23,7 @@ class ServiceBusinessContext extends \Google\Model
   protected $addressDataType = '';
 
   /**
-   * The verification address of the location. It is used to either enable more
-   * verification options or send a postcard.
-   *
-   * @param PostalAddress $address
+   * @param PostalAddress
    */
   public function setAddress(PostalAddress $address)
   {

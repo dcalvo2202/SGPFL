@@ -20,22 +20,16 @@ namespace Google\Service\CloudBuild;
 class EnvVar extends \Google\Model
 {
   /**
-   * Name of the environment variable.
-   *
    * @var string
    */
   public $name;
   /**
-   * Value of the environment variable.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Name of the environment variable.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -49,9 +43,7 @@ class EnvVar extends \Google\Model
     return $this->name;
   }
   /**
-   * Value of the environment variable.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

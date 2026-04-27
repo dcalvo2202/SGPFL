@@ -20,29 +20,20 @@ namespace Google\Service\AndroidManagement;
 class CertAuthorityInstalledEvent extends \Google\Model
 {
   /**
-   * Subject of the certificate.
-   *
    * @var string
    */
   public $certificate;
   /**
-   * Whether the installation event succeeded.
-   *
    * @var bool
    */
   public $success;
   /**
-   * The user in which the certificate install event happened. Only available
-   * for devices running Android 11 and above.
-   *
    * @var int
    */
   public $userId;
 
   /**
-   * Subject of the certificate.
-   *
-   * @param string $certificate
+   * @param string
    */
   public function setCertificate($certificate)
   {
@@ -56,9 +47,7 @@ class CertAuthorityInstalledEvent extends \Google\Model
     return $this->certificate;
   }
   /**
-   * Whether the installation event succeeded.
-   *
-   * @param bool $success
+   * @param bool
    */
   public function setSuccess($success)
   {
@@ -72,10 +61,7 @@ class CertAuthorityInstalledEvent extends \Google\Model
     return $this->success;
   }
   /**
-   * The user in which the certificate install event happened. Only available
-   * for devices running Android 11 and above.
-   *
-   * @param int $userId
+   * @param int
    */
   public function setUserId($userId)
   {

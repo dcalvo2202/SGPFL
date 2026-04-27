@@ -26,9 +26,7 @@ class ImportYumArtifactsResponse extends \Google\Collection
   protected $yumArtifactsDataType = 'array';
 
   /**
-   * Detailed error info for packages that were not imported.
-   *
-   * @param ImportYumArtifactsErrorInfo[] $errors
+   * @param ImportYumArtifactsErrorInfo[]
    */
   public function setErrors($errors)
   {
@@ -42,9 +40,7 @@ class ImportYumArtifactsResponse extends \Google\Collection
     return $this->errors;
   }
   /**
-   * The yum artifacts imported.
-   *
-   * @param YumArtifact[] $yumArtifacts
+   * @param YumArtifact[]
    */
   public function setYumArtifacts($yumArtifacts)
   {

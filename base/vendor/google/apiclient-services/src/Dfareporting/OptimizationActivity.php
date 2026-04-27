@@ -20,28 +20,18 @@ namespace Google\Service\Dfareporting;
 class OptimizationActivity extends \Google\Model
 {
   /**
-   * Floodlight activity ID of this optimization activity. This is a required
-   * field.
-   *
    * @var string
    */
   public $floodlightActivityId;
   protected $floodlightActivityIdDimensionValueType = DimensionValue::class;
   protected $floodlightActivityIdDimensionValueDataType = '';
   /**
-   * Weight associated with this optimization. The weight assigned will be
-   * understood in proportion to the weights assigned to the other optimization
-   * activities. Value must be greater than or equal to 1.
-   *
    * @var int
    */
   public $weight;
 
   /**
-   * Floodlight activity ID of this optimization activity. This is a required
-   * field.
-   *
-   * @param string $floodlightActivityId
+   * @param string
    */
   public function setFloodlightActivityId($floodlightActivityId)
   {
@@ -55,10 +45,7 @@ class OptimizationActivity extends \Google\Model
     return $this->floodlightActivityId;
   }
   /**
-   * Dimension value for the ID of the floodlight activity. This is a read-only,
-   * auto-generated field.
-   *
-   * @param DimensionValue $floodlightActivityIdDimensionValue
+   * @param DimensionValue
    */
   public function setFloodlightActivityIdDimensionValue(DimensionValue $floodlightActivityIdDimensionValue)
   {
@@ -72,11 +59,7 @@ class OptimizationActivity extends \Google\Model
     return $this->floodlightActivityIdDimensionValue;
   }
   /**
-   * Weight associated with this optimization. The weight assigned will be
-   * understood in proportion to the weights assigned to the other optimization
-   * activities. Value must be greater than or equal to 1.
-   *
-   * @param int $weight
+   * @param int
    */
   public function setWeight($weight)
   {

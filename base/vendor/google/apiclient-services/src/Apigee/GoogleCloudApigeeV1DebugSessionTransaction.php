@@ -21,8 +21,6 @@ class GoogleCloudApigeeV1DebugSessionTransaction extends \Google\Collection
 {
   protected $collection_key = 'point';
   /**
-   * Flag indicating whether a transaction is completed or not
-   *
    * @var bool
    */
   public $completed;
@@ -30,9 +28,7 @@ class GoogleCloudApigeeV1DebugSessionTransaction extends \Google\Collection
   protected $pointDataType = 'array';
 
   /**
-   * Flag indicating whether a transaction is completed or not
-   *
-   * @param bool $completed
+   * @param bool
    */
   public function setCompleted($completed)
   {
@@ -46,10 +42,7 @@ class GoogleCloudApigeeV1DebugSessionTransaction extends \Google\Collection
     return $this->completed;
   }
   /**
-   * List of debug data collected by runtime plane at various defined points in
-   * the flow.
-   *
-   * @param GoogleCloudApigeeV1Point[] $point
+   * @param GoogleCloudApigeeV1Point[]
    */
   public function setPoint($point)
   {

@@ -25,9 +25,7 @@ class Comment extends \Google\Model
   protected $userCommentDataType = '';
 
   /**
-   * A comment from a developer.
-   *
-   * @param DeveloperComment $developerComment
+   * @param DeveloperComment
    */
   public function setDeveloperComment(DeveloperComment $developerComment)
   {
@@ -41,9 +39,7 @@ class Comment extends \Google\Model
     return $this->developerComment;
   }
   /**
-   * A comment from a user.
-   *
-   * @param UserComment $userComment
+   * @param UserComment
    */
   public function setUserComment(UserComment $userComment)
   {

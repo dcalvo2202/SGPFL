@@ -23,18 +23,12 @@ class ArimaResult extends \Google\Collection
   protected $arimaModelInfoType = ArimaModelInfo::class;
   protected $arimaModelInfoDataType = 'array';
   /**
-   * Seasonal periods. Repeated because multiple periods are supported for one
-   * time series.
-   *
    * @var string[]
    */
   public $seasonalPeriods;
 
   /**
-   * This message is repeated because there are multiple arima models fitted in
-   * auto-arima. For non-auto-arima model, its size is one.
-   *
-   * @param ArimaModelInfo[] $arimaModelInfo
+   * @param ArimaModelInfo[]
    */
   public function setArimaModelInfo($arimaModelInfo)
   {
@@ -48,10 +42,7 @@ class ArimaResult extends \Google\Collection
     return $this->arimaModelInfo;
   }
   /**
-   * Seasonal periods. Repeated because multiple periods are supported for one
-   * time series.
-   *
-   * @param string[] $seasonalPeriods
+   * @param string[]
    */
   public function setSeasonalPeriods($seasonalPeriods)
   {

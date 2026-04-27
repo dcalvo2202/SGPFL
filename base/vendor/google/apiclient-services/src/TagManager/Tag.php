@@ -19,157 +19,98 @@ namespace Google\Service\TagManager;
 
 class Tag extends \Google\Collection
 {
-  public const TAG_FIRING_OPTION_tagFiringOptionUnspecified = 'tagFiringOptionUnspecified';
-  /**
-   * Tag can be fired multiple times per event.
-   */
-  public const TAG_FIRING_OPTION_unlimited = 'unlimited';
-  /**
-   * Tag can only be fired per event but can be fired multiple times per load
-   * (e.g., app load or page load).
-   */
-  public const TAG_FIRING_OPTION_oncePerEvent = 'oncePerEvent';
-  /**
-   * Tag can only be fired per load (e.g., app load or page load).
-   */
-  public const TAG_FIRING_OPTION_oncePerLoad = 'oncePerLoad';
   protected $collection_key = 'teardownTag';
   /**
-   * GTM Account ID.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * Blocking trigger IDs. If any of the listed triggers evaluate to true, the
-   * tag will not fire.
-   *
    * @var string[]
    */
   public $blockingTriggerId;
   protected $consentSettingsType = TagConsentSetting::class;
   protected $consentSettingsDataType = '';
   /**
-   * GTM Container ID.
-   *
    * @var string
    */
   public $containerId;
   /**
-   * The fingerprint of the GTM Tag as computed at storage time. This value is
-   * recomputed whenever the tag is modified.
-   *
    * @var string
    */
   public $fingerprint;
   /**
-   * Firing trigger IDs. A tag will fire when any of the listed triggers are
-   * true and all of its blockingTriggerIds (if any specified) are false.
-   *
    * @var string[]
    */
   public $firingTriggerId;
   /**
-   * If set to true, this tag will only fire in the live environment (e.g. not
-   * in preview or debug mode).
-   *
    * @var bool
    */
   public $liveOnly;
   protected $monitoringMetadataType = Parameter::class;
   protected $monitoringMetadataDataType = '';
   /**
-   * If non-empty, then the tag display name will be included in the monitoring
-   * metadata map using the key specified.
-   *
    * @var string
    */
   public $monitoringMetadataTagNameKey;
   /**
-   * Tag display name.
-   *
    * @var string
    */
   public $name;
   /**
-   * User notes on how to apply this tag in the container.
-   *
    * @var string
    */
   public $notes;
   protected $parameterType = Parameter::class;
   protected $parameterDataType = 'array';
   /**
-   * Parent folder id.
-   *
    * @var string
    */
   public $parentFolderId;
   /**
-   * GTM Tag's API relative path.
-   *
    * @var string
    */
   public $path;
   /**
-   * Indicates whether the tag is paused, which prevents the tag from firing.
-   *
    * @var bool
    */
   public $paused;
   protected $priorityType = Parameter::class;
   protected $priorityDataType = '';
   /**
-   * The end timestamp in milliseconds to schedule a tag.
-   *
    * @var string
    */
   public $scheduleEndMs;
   /**
-   * The start timestamp in milliseconds to schedule a tag.
-   *
    * @var string
    */
   public $scheduleStartMs;
   protected $setupTagType = SetupTag::class;
   protected $setupTagDataType = 'array';
   /**
-   * Option to fire this tag.
-   *
    * @var string
    */
   public $tagFiringOption;
   /**
-   * The Tag ID uniquely identifies the GTM Tag.
-   *
    * @var string
    */
   public $tagId;
   /**
-   * Auto generated link to the tag manager UI
-   *
    * @var string
    */
   public $tagManagerUrl;
   protected $teardownTagType = TeardownTag::class;
   protected $teardownTagDataType = 'array';
   /**
-   * GTM Tag Type.
-   *
    * @var string
    */
   public $type;
   /**
-   * GTM Workspace ID.
-   *
    * @var string
    */
   public $workspaceId;
 
   /**
-   * GTM Account ID.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -183,10 +124,7 @@ class Tag extends \Google\Collection
     return $this->accountId;
   }
   /**
-   * Blocking trigger IDs. If any of the listed triggers evaluate to true, the
-   * tag will not fire.
-   *
-   * @param string[] $blockingTriggerId
+   * @param string[]
    */
   public function setBlockingTriggerId($blockingTriggerId)
   {
@@ -200,9 +138,7 @@ class Tag extends \Google\Collection
     return $this->blockingTriggerId;
   }
   /**
-   * Consent settings of a tag.
-   *
-   * @param TagConsentSetting $consentSettings
+   * @param TagConsentSetting
    */
   public function setConsentSettings(TagConsentSetting $consentSettings)
   {
@@ -216,9 +152,7 @@ class Tag extends \Google\Collection
     return $this->consentSettings;
   }
   /**
-   * GTM Container ID.
-   *
-   * @param string $containerId
+   * @param string
    */
   public function setContainerId($containerId)
   {
@@ -232,10 +166,7 @@ class Tag extends \Google\Collection
     return $this->containerId;
   }
   /**
-   * The fingerprint of the GTM Tag as computed at storage time. This value is
-   * recomputed whenever the tag is modified.
-   *
-   * @param string $fingerprint
+   * @param string
    */
   public function setFingerprint($fingerprint)
   {
@@ -249,10 +180,7 @@ class Tag extends \Google\Collection
     return $this->fingerprint;
   }
   /**
-   * Firing trigger IDs. A tag will fire when any of the listed triggers are
-   * true and all of its blockingTriggerIds (if any specified) are false.
-   *
-   * @param string[] $firingTriggerId
+   * @param string[]
    */
   public function setFiringTriggerId($firingTriggerId)
   {
@@ -266,10 +194,7 @@ class Tag extends \Google\Collection
     return $this->firingTriggerId;
   }
   /**
-   * If set to true, this tag will only fire in the live environment (e.g. not
-   * in preview or debug mode).
-   *
-   * @param bool $liveOnly
+   * @param bool
    */
   public function setLiveOnly($liveOnly)
   {
@@ -283,12 +208,7 @@ class Tag extends \Google\Collection
     return $this->liveOnly;
   }
   /**
-   * A map of key-value pairs of tag metadata to be included in the event data
-   * for tag monitoring. Notes: - This parameter must be type MAP. - Each
-   * parameter in the map are type TEMPLATE, however cannot contain variable
-   * references.
-   *
-   * @param Parameter $monitoringMetadata
+   * @param Parameter
    */
   public function setMonitoringMetadata(Parameter $monitoringMetadata)
   {
@@ -302,10 +222,7 @@ class Tag extends \Google\Collection
     return $this->monitoringMetadata;
   }
   /**
-   * If non-empty, then the tag display name will be included in the monitoring
-   * metadata map using the key specified.
-   *
-   * @param string $monitoringMetadataTagNameKey
+   * @param string
    */
   public function setMonitoringMetadataTagNameKey($monitoringMetadataTagNameKey)
   {
@@ -319,9 +236,7 @@ class Tag extends \Google\Collection
     return $this->monitoringMetadataTagNameKey;
   }
   /**
-   * Tag display name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -335,9 +250,7 @@ class Tag extends \Google\Collection
     return $this->name;
   }
   /**
-   * User notes on how to apply this tag in the container.
-   *
-   * @param string $notes
+   * @param string
    */
   public function setNotes($notes)
   {
@@ -351,9 +264,7 @@ class Tag extends \Google\Collection
     return $this->notes;
   }
   /**
-   * The tag's parameters.
-   *
-   * @param Parameter[] $parameter
+   * @param Parameter[]
    */
   public function setParameter($parameter)
   {
@@ -367,9 +278,7 @@ class Tag extends \Google\Collection
     return $this->parameter;
   }
   /**
-   * Parent folder id.
-   *
-   * @param string $parentFolderId
+   * @param string
    */
   public function setParentFolderId($parentFolderId)
   {
@@ -383,9 +292,7 @@ class Tag extends \Google\Collection
     return $this->parentFolderId;
   }
   /**
-   * GTM Tag's API relative path.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {
@@ -399,9 +306,7 @@ class Tag extends \Google\Collection
     return $this->path;
   }
   /**
-   * Indicates whether the tag is paused, which prevents the tag from firing.
-   *
-   * @param bool $paused
+   * @param bool
    */
   public function setPaused($paused)
   {
@@ -415,11 +320,7 @@ class Tag extends \Google\Collection
     return $this->paused;
   }
   /**
-   * User defined numeric priority of the tag. Tags are fired asynchronously in
-   * order of priority. Tags with higher numeric value fire first. A tag's
-   * priority can be a positive or negative value. The default value is 0.
-   *
-   * @param Parameter $priority
+   * @param Parameter
    */
   public function setPriority(Parameter $priority)
   {
@@ -433,9 +334,7 @@ class Tag extends \Google\Collection
     return $this->priority;
   }
   /**
-   * The end timestamp in milliseconds to schedule a tag.
-   *
-   * @param string $scheduleEndMs
+   * @param string
    */
   public function setScheduleEndMs($scheduleEndMs)
   {
@@ -449,9 +348,7 @@ class Tag extends \Google\Collection
     return $this->scheduleEndMs;
   }
   /**
-   * The start timestamp in milliseconds to schedule a tag.
-   *
-   * @param string $scheduleStartMs
+   * @param string
    */
   public function setScheduleStartMs($scheduleStartMs)
   {
@@ -465,9 +362,7 @@ class Tag extends \Google\Collection
     return $this->scheduleStartMs;
   }
   /**
-   * The list of setup tags. Currently we only allow one.
-   *
-   * @param SetupTag[] $setupTag
+   * @param SetupTag[]
    */
   public function setSetupTag($setupTag)
   {
@@ -481,28 +376,21 @@ class Tag extends \Google\Collection
     return $this->setupTag;
   }
   /**
-   * Option to fire this tag.
-   *
-   * Accepted values: tagFiringOptionUnspecified, unlimited, oncePerEvent,
-   * oncePerLoad
-   *
-   * @param self::TAG_FIRING_OPTION_* $tagFiringOption
+   * @param string
    */
   public function setTagFiringOption($tagFiringOption)
   {
     $this->tagFiringOption = $tagFiringOption;
   }
   /**
-   * @return self::TAG_FIRING_OPTION_*
+   * @return string
    */
   public function getTagFiringOption()
   {
     return $this->tagFiringOption;
   }
   /**
-   * The Tag ID uniquely identifies the GTM Tag.
-   *
-   * @param string $tagId
+   * @param string
    */
   public function setTagId($tagId)
   {
@@ -516,9 +404,7 @@ class Tag extends \Google\Collection
     return $this->tagId;
   }
   /**
-   * Auto generated link to the tag manager UI
-   *
-   * @param string $tagManagerUrl
+   * @param string
    */
   public function setTagManagerUrl($tagManagerUrl)
   {
@@ -532,9 +418,7 @@ class Tag extends \Google\Collection
     return $this->tagManagerUrl;
   }
   /**
-   * The list of teardown tags. Currently we only allow one.
-   *
-   * @param TeardownTag[] $teardownTag
+   * @param TeardownTag[]
    */
   public function setTeardownTag($teardownTag)
   {
@@ -548,9 +432,7 @@ class Tag extends \Google\Collection
     return $this->teardownTag;
   }
   /**
-   * GTM Tag Type.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {
@@ -564,9 +446,7 @@ class Tag extends \Google\Collection
     return $this->type;
   }
   /**
-   * GTM Workspace ID.
-   *
-   * @param string $workspaceId
+   * @param string
    */
   public function setWorkspaceId($workspaceId)
   {

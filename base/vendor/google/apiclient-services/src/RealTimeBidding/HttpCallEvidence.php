@@ -21,16 +21,12 @@ class HttpCallEvidence extends \Google\Collection
 {
   protected $collection_key = 'urls';
   /**
-   * URLs of HTTP calls made by the creative.
-   *
    * @var string[]
    */
   public $urls;
 
   /**
-   * URLs of HTTP calls made by the creative.
-   *
-   * @param string[] $urls
+   * @param string[]
    */
   public function setUrls($urls)
   {

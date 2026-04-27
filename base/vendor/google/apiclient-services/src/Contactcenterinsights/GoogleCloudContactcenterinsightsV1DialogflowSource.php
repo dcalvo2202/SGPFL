@@ -20,26 +20,16 @@ namespace Google\Service\Contactcenterinsights;
 class GoogleCloudContactcenterinsightsV1DialogflowSource extends \Google\Model
 {
   /**
-   * Cloud Storage URI that points to a file that contains the conversation
-   * audio.
-   *
    * @var string
    */
   public $audioUri;
   /**
-   * Output only. The name of the Dialogflow conversation that this conversation
-   * resource is derived from. Format:
-   * projects/{project}/locations/{location}/conversations/{conversation}
-   *
    * @var string
    */
   public $dialogflowConversation;
 
   /**
-   * Cloud Storage URI that points to a file that contains the conversation
-   * audio.
-   *
-   * @param string $audioUri
+   * @param string
    */
   public function setAudioUri($audioUri)
   {
@@ -53,11 +43,7 @@ class GoogleCloudContactcenterinsightsV1DialogflowSource extends \Google\Model
     return $this->audioUri;
   }
   /**
-   * Output only. The name of the Dialogflow conversation that this conversation
-   * resource is derived from. Format:
-   * projects/{project}/locations/{location}/conversations/{conversation}
-   *
-   * @param string $dialogflowConversation
+   * @param string
    */
   public function setDialogflowConversation($dialogflowConversation)
   {

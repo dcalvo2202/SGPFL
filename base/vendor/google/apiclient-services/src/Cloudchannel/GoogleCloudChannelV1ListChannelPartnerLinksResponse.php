@@ -23,17 +23,12 @@ class GoogleCloudChannelV1ListChannelPartnerLinksResponse extends \Google\Collec
   protected $channelPartnerLinksType = GoogleCloudChannelV1ChannelPartnerLink::class;
   protected $channelPartnerLinksDataType = 'array';
   /**
-   * A token to retrieve the next page of results. Pass to
-   * ListChannelPartnerLinksRequest.page_token to obtain that page.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The Channel partner links for a reseller.
-   *
-   * @param GoogleCloudChannelV1ChannelPartnerLink[] $channelPartnerLinks
+   * @param GoogleCloudChannelV1ChannelPartnerLink[]
    */
   public function setChannelPartnerLinks($channelPartnerLinks)
   {
@@ -47,10 +42,7 @@ class GoogleCloudChannelV1ListChannelPartnerLinksResponse extends \Google\Collec
     return $this->channelPartnerLinks;
   }
   /**
-   * A token to retrieve the next page of results. Pass to
-   * ListChannelPartnerLinksRequest.page_token to obtain that page.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

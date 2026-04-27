@@ -19,41 +19,17 @@ namespace Google\Service\ContainerAnalysis;
 
 class ContaineranalysisGoogleDevtoolsCloudbuildV1BuildApproval extends \Google\Model
 {
-  /**
-   * Default enum type. This should not be used.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Build approval is pending.
-   */
-  public const STATE_PENDING = 'PENDING';
-  /**
-   * Build approval has been approved.
-   */
-  public const STATE_APPROVED = 'APPROVED';
-  /**
-   * Build approval has been rejected.
-   */
-  public const STATE_REJECTED = 'REJECTED';
-  /**
-   * Build was cancelled while it was still pending approval.
-   */
-  public const STATE_CANCELLED = 'CANCELLED';
   protected $configType = ContaineranalysisGoogleDevtoolsCloudbuildV1ApprovalConfig::class;
   protected $configDataType = '';
   protected $resultType = ContaineranalysisGoogleDevtoolsCloudbuildV1ApprovalResult::class;
   protected $resultDataType = '';
   /**
-   * Output only. The state of this build's approval.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Output only. Configuration for manual approval of this build.
-   *
-   * @param ContaineranalysisGoogleDevtoolsCloudbuildV1ApprovalConfig $config
+   * @param ContaineranalysisGoogleDevtoolsCloudbuildV1ApprovalConfig
    */
   public function setConfig(ContaineranalysisGoogleDevtoolsCloudbuildV1ApprovalConfig $config)
   {
@@ -67,9 +43,7 @@ class ContaineranalysisGoogleDevtoolsCloudbuildV1BuildApproval extends \Google\M
     return $this->config;
   }
   /**
-   * Output only. Result of manual approval for this Build.
-   *
-   * @param ContaineranalysisGoogleDevtoolsCloudbuildV1ApprovalResult $result
+   * @param ContaineranalysisGoogleDevtoolsCloudbuildV1ApprovalResult
    */
   public function setResult(ContaineranalysisGoogleDevtoolsCloudbuildV1ApprovalResult $result)
   {
@@ -83,18 +57,14 @@ class ContaineranalysisGoogleDevtoolsCloudbuildV1BuildApproval extends \Google\M
     return $this->result;
   }
   /**
-   * Output only. The state of this build's approval.
-   *
-   * Accepted values: STATE_UNSPECIFIED, PENDING, APPROVED, REJECTED, CANCELLED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

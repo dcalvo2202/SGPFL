@@ -20,30 +20,20 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1EnvironmentInfrastructureSpecComputeResources extends \Google\Model
 {
   /**
-   * Optional. Size in GB of the disk. Default is 100 GB.
-   *
    * @var int
    */
   public $diskSizeGb;
   /**
-   * Optional. Max configurable nodes. If max_node_count > node_count, then
-   * auto-scaling is enabled.
-   *
    * @var int
    */
   public $maxNodeCount;
   /**
-   * Optional. Total number of nodes in the sessions created for this
-   * environment.
-   *
    * @var int
    */
   public $nodeCount;
 
   /**
-   * Optional. Size in GB of the disk. Default is 100 GB.
-   *
-   * @param int $diskSizeGb
+   * @param int
    */
   public function setDiskSizeGb($diskSizeGb)
   {
@@ -57,10 +47,7 @@ class GoogleCloudDataplexV1EnvironmentInfrastructureSpecComputeResources extends
     return $this->diskSizeGb;
   }
   /**
-   * Optional. Max configurable nodes. If max_node_count > node_count, then
-   * auto-scaling is enabled.
-   *
-   * @param int $maxNodeCount
+   * @param int
    */
   public function setMaxNodeCount($maxNodeCount)
   {
@@ -74,10 +61,7 @@ class GoogleCloudDataplexV1EnvironmentInfrastructureSpecComputeResources extends
     return $this->maxNodeCount;
   }
   /**
-   * Optional. Total number of nodes in the sessions created for this
-   * environment.
-   *
-   * @param int $nodeCount
+   * @param int
    */
   public function setNodeCount($nodeCount)
   {

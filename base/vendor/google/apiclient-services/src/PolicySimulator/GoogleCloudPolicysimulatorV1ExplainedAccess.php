@@ -19,33 +19,8 @@ namespace Google\Service\PolicySimulator;
 
 class GoogleCloudPolicysimulatorV1ExplainedAccess extends \Google\Collection
 {
-  /**
-   * Default value. This value is unused.
-   */
-  public const ACCESS_STATE_ACCESS_STATE_UNSPECIFIED = 'ACCESS_STATE_UNSPECIFIED';
-  /**
-   * The principal has the permission.
-   */
-  public const ACCESS_STATE_GRANTED = 'GRANTED';
-  /**
-   * The principal does not have the permission.
-   */
-  public const ACCESS_STATE_NOT_GRANTED = 'NOT_GRANTED';
-  /**
-   * The principal has the permission only if a condition expression evaluates
-   * to `true`.
-   */
-  public const ACCESS_STATE_UNKNOWN_CONDITIONAL = 'UNKNOWN_CONDITIONAL';
-  /**
-   * The user who created the Replay does not have access to all of the policies
-   * that Policy Simulator needs to evaluate.
-   */
-  public const ACCESS_STATE_UNKNOWN_INFO_DENIED = 'UNKNOWN_INFO_DENIED';
   protected $collection_key = 'policies';
   /**
-   * Whether the principal in the access tuple has permission to access the
-   * resource in the access tuple under the given policies.
-   *
    * @var string
    */
   public $accessState;
@@ -55,31 +30,21 @@ class GoogleCloudPolicysimulatorV1ExplainedAccess extends \Google\Collection
   protected $policiesDataType = 'array';
 
   /**
-   * Whether the principal in the access tuple has permission to access the
-   * resource in the access tuple under the given policies.
-   *
-   * Accepted values: ACCESS_STATE_UNSPECIFIED, GRANTED, NOT_GRANTED,
-   * UNKNOWN_CONDITIONAL, UNKNOWN_INFO_DENIED
-   *
-   * @param self::ACCESS_STATE_* $accessState
+   * @param string
    */
   public function setAccessState($accessState)
   {
     $this->accessState = $accessState;
   }
   /**
-   * @return self::ACCESS_STATE_*
+   * @return string
    */
   public function getAccessState()
   {
     return $this->accessState;
   }
   /**
-   * If the AccessState is `UNKNOWN`, this field contains a list of errors
-   * explaining why the result is `UNKNOWN`. If the `AccessState` is `GRANTED`
-   * or `NOT_GRANTED`, this field is omitted.
-   *
-   * @param GoogleRpcStatus[] $errors
+   * @param GoogleRpcStatus[]
    */
   public function setErrors($errors)
   {
@@ -93,11 +58,7 @@ class GoogleCloudPolicysimulatorV1ExplainedAccess extends \Google\Collection
     return $this->errors;
   }
   /**
-   * If the AccessState is `UNKNOWN`, this field contains the policies that led
-   * to that result. If the `AccessState` is `GRANTED` or `NOT_GRANTED`, this
-   * field is omitted.
-   *
-   * @param GoogleCloudPolicysimulatorV1ExplainedPolicy[] $policies
+   * @param GoogleCloudPolicysimulatorV1ExplainedPolicy[]
    */
   public function setPolicies($policies)
   {

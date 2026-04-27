@@ -21,40 +21,18 @@ class AnalyzerOrgPolicy extends \Google\Collection
 {
   protected $collection_key = 'rules';
   /**
-   * The [full resource name] (https://cloud.google.com/asset-
-   * inventory/docs/resource-name-format) of an organization/folder/project
-   * resource where this organization policy applies to. For any user defined
-   * org policies, this field has the same value as the [attached_resource]
-   * field. Only for default policy, this field has the different value.
-   *
    * @var string
    */
   public $appliedResource;
   /**
-   * The [full resource name] (https://cloud.google.com/asset-
-   * inventory/docs/resource-name-format) of an organization/folder/project
-   * resource where this organization policy is set. Notice that some type of
-   * constraints are defined with default policy. This field will be empty for
-   * them.
-   *
    * @var string
    */
   public $attachedResource;
   /**
-   * If `inherit_from_parent` is true, Rules set higher up in the hierarchy (up
-   * to the closest root) are inherited and present in the effective policy. If
-   * it is false, then no rules are inherited, and this policy becomes the
-   * effective root for evaluation.
-   *
    * @var bool
    */
   public $inheritFromParent;
   /**
-   * Ignores policies set above this resource and restores the default behavior
-   * of the constraint at this resource. This field can be set in policies for
-   * either list or boolean constraints. If set, `rules` must be empty and
-   * `inherit_from_parent` must be set to false.
-   *
    * @var bool
    */
   public $reset;
@@ -62,13 +40,7 @@ class AnalyzerOrgPolicy extends \Google\Collection
   protected $rulesDataType = 'array';
 
   /**
-   * The [full resource name] (https://cloud.google.com/asset-
-   * inventory/docs/resource-name-format) of an organization/folder/project
-   * resource where this organization policy applies to. For any user defined
-   * org policies, this field has the same value as the [attached_resource]
-   * field. Only for default policy, this field has the different value.
-   *
-   * @param string $appliedResource
+   * @param string
    */
   public function setAppliedResource($appliedResource)
   {
@@ -82,13 +54,7 @@ class AnalyzerOrgPolicy extends \Google\Collection
     return $this->appliedResource;
   }
   /**
-   * The [full resource name] (https://cloud.google.com/asset-
-   * inventory/docs/resource-name-format) of an organization/folder/project
-   * resource where this organization policy is set. Notice that some type of
-   * constraints are defined with default policy. This field will be empty for
-   * them.
-   *
-   * @param string $attachedResource
+   * @param string
    */
   public function setAttachedResource($attachedResource)
   {
@@ -102,12 +68,7 @@ class AnalyzerOrgPolicy extends \Google\Collection
     return $this->attachedResource;
   }
   /**
-   * If `inherit_from_parent` is true, Rules set higher up in the hierarchy (up
-   * to the closest root) are inherited and present in the effective policy. If
-   * it is false, then no rules are inherited, and this policy becomes the
-   * effective root for evaluation.
-   *
-   * @param bool $inheritFromParent
+   * @param bool
    */
   public function setInheritFromParent($inheritFromParent)
   {
@@ -121,12 +82,7 @@ class AnalyzerOrgPolicy extends \Google\Collection
     return $this->inheritFromParent;
   }
   /**
-   * Ignores policies set above this resource and restores the default behavior
-   * of the constraint at this resource. This field can be set in policies for
-   * either list or boolean constraints. If set, `rules` must be empty and
-   * `inherit_from_parent` must be set to false.
-   *
-   * @param bool $reset
+   * @param bool
    */
   public function setReset($reset)
   {
@@ -140,9 +96,7 @@ class AnalyzerOrgPolicy extends \Google\Collection
     return $this->reset;
   }
   /**
-   * List of rules for this organization policy.
-   *
-   * @param GoogleCloudAssetV1Rule[] $rules
+   * @param GoogleCloudAssetV1Rule[]
    */
   public function setRules($rules)
   {

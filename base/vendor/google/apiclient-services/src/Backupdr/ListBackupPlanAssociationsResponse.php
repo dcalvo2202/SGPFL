@@ -23,27 +23,16 @@ class ListBackupPlanAssociationsResponse extends \Google\Collection
   protected $backupPlanAssociationsType = BackupPlanAssociation::class;
   protected $backupPlanAssociationsDataType = 'array';
   /**
-   * A token identifying a page of results the server should return.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * The list of Backup Plan Associations in the project for the specified
-   * location. If the `{location}` value in the request is "-", the response
-   * contains a list of instances from all locations. In case any location is
-   * unreachable, the response will only return backup plan associations in
-   * reachable locations and the 'unreachable' field will be populated with a
-   * list of unreachable locations.
-   *
-   * @param BackupPlanAssociation[] $backupPlanAssociations
+   * @param BackupPlanAssociation[]
    */
   public function setBackupPlanAssociations($backupPlanAssociations)
   {
@@ -57,9 +46,7 @@ class ListBackupPlanAssociationsResponse extends \Google\Collection
     return $this->backupPlanAssociations;
   }
   /**
-   * A token identifying a page of results the server should return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -73,9 +60,7 @@ class ListBackupPlanAssociationsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

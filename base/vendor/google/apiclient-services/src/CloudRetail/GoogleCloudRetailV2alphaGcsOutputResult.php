@@ -20,16 +20,12 @@ namespace Google\Service\CloudRetail;
 class GoogleCloudRetailV2alphaGcsOutputResult extends \Google\Model
 {
   /**
-   * The uri of Gcs output
-   *
    * @var string
    */
   public $outputUri;
 
   /**
-   * The uri of Gcs output
-   *
-   * @param string $outputUri
+   * @param string
    */
   public function setOutputUri($outputUri)
   {

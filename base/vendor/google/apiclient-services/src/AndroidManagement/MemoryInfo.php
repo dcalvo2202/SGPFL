@@ -20,22 +20,16 @@ namespace Google\Service\AndroidManagement;
 class MemoryInfo extends \Google\Model
 {
   /**
-   * Total internal storage on device in bytes.
-   *
    * @var string
    */
   public $totalInternalStorage;
   /**
-   * Total RAM on device in bytes.
-   *
    * @var string
    */
   public $totalRam;
 
   /**
-   * Total internal storage on device in bytes.
-   *
-   * @param string $totalInternalStorage
+   * @param string
    */
   public function setTotalInternalStorage($totalInternalStorage)
   {
@@ -49,9 +43,7 @@ class MemoryInfo extends \Google\Model
     return $this->totalInternalStorage;
   }
   /**
-   * Total RAM on device in bytes.
-   *
-   * @param string $totalRam
+   * @param string
    */
   public function setTotalRam($totalRam)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\Container;
 class NetworkPolicyConfig extends \Google\Model
 {
   /**
-   * Whether NetworkPolicy is enabled for this cluster.
-   *
    * @var bool
    */
   public $disabled;
 
   /**
-   * Whether NetworkPolicy is enabled for this cluster.
-   *
-   * @param bool $disabled
+   * @param bool
    */
   public function setDisabled($disabled)
   {

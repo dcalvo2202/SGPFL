@@ -20,11 +20,6 @@ namespace Google\Service\Spanner;
 class DatabaseMoveConfig extends \Google\Model
 {
   /**
-   * Required. The unique identifier of the database resource in the Instance.
-   * For example, if the database uri is
-   * `projects/foo/instances/bar/databases/baz`, then the id to supply here is
-   * baz.
-   *
    * @var string
    */
   public $databaseId;
@@ -32,12 +27,7 @@ class DatabaseMoveConfig extends \Google\Model
   protected $encryptionConfigDataType = '';
 
   /**
-   * Required. The unique identifier of the database resource in the Instance.
-   * For example, if the database uri is
-   * `projects/foo/instances/bar/databases/baz`, then the id to supply here is
-   * baz.
-   *
-   * @param string $databaseId
+   * @param string
    */
   public function setDatabaseId($databaseId)
   {
@@ -51,18 +41,7 @@ class DatabaseMoveConfig extends \Google\Model
     return $this->databaseId;
   }
   /**
-   * Optional. Encryption configuration to be used for the database in the
-   * target configuration. The encryption configuration must be specified for
-   * every database which currently uses CMEK encryption. If a database
-   * currently uses Google-managed encryption and a target encryption
-   * configuration is not specified, then the database defaults to Google-
-   * managed encryption. If a database currently uses Google-managed encryption
-   * and a target CMEK encryption is specified, the request is rejected. If a
-   * database currently uses CMEK encryption, then a target encryption
-   * configuration must be specified. You can't move a CMEK database to a
-   * Google-managed encryption database using the MoveInstance API.
-   *
-   * @param InstanceEncryptionConfig $encryptionConfig
+   * @param InstanceEncryptionConfig
    */
   public function setEncryptionConfig(InstanceEncryptionConfig $encryptionConfig)
   {

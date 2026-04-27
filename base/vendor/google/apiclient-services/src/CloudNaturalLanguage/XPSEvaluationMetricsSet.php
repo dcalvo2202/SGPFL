@@ -25,17 +25,12 @@ class XPSEvaluationMetricsSet extends \Google\Collection
   protected $fileSpecType = XPSFileSpec::class;
   protected $fileSpecDataType = '';
   /**
-   * Number of the evaluation metrics (usually one per label plus overall).
-   *
    * @var string
    */
   public $numEvaluationMetrics;
 
   /**
-   * Inline EvaluationMetrics - should be relatively small. For passing large
-   * quantities of exhaustive metrics, use file_spec.
-   *
-   * @param XPSEvaluationMetrics[] $evaluationMetrics
+   * @param XPSEvaluationMetrics[]
    */
   public function setEvaluationMetrics($evaluationMetrics)
   {
@@ -49,10 +44,7 @@ class XPSEvaluationMetricsSet extends \Google\Collection
     return $this->evaluationMetrics;
   }
   /**
-   * File spec containing evaluation metrics of a model, must point to RecordIO
-   * file(s) of intelligence.cloud.automl.xps.EvaluationMetrics messages.
-   *
-   * @param XPSFileSpec $fileSpec
+   * @param XPSFileSpec
    */
   public function setFileSpec(XPSFileSpec $fileSpec)
   {
@@ -66,9 +58,7 @@ class XPSEvaluationMetricsSet extends \Google\Collection
     return $this->fileSpec;
   }
   /**
-   * Number of the evaluation metrics (usually one per label plus overall).
-   *
-   * @param string $numEvaluationMetrics
+   * @param string
    */
   public function setNumEvaluationMetrics($numEvaluationMetrics)
   {

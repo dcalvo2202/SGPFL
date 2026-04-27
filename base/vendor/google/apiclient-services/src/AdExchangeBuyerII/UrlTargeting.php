@@ -21,22 +21,16 @@ class UrlTargeting extends \Google\Collection
 {
   protected $collection_key = 'targetedUrls';
   /**
-   * A list of URLs to be excluded.
-   *
    * @var string[]
    */
   public $excludedUrls;
   /**
-   * A list of URLs to be included.
-   *
    * @var string[]
    */
   public $targetedUrls;
 
   /**
-   * A list of URLs to be excluded.
-   *
-   * @param string[] $excludedUrls
+   * @param string[]
    */
   public function setExcludedUrls($excludedUrls)
   {
@@ -50,9 +44,7 @@ class UrlTargeting extends \Google\Collection
     return $this->excludedUrls;
   }
   /**
-   * A list of URLs to be included.
-   *
-   * @param string[] $targetedUrls
+   * @param string[]
    */
   public function setTargetedUrls($targetedUrls)
   {

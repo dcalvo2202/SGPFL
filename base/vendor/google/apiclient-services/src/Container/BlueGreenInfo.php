@@ -19,78 +19,30 @@ namespace Google\Service\Container;
 
 class BlueGreenInfo extends \Google\Collection
 {
-  /**
-   * Unspecified phase.
-   */
-  public const PHASE_PHASE_UNSPECIFIED = 'PHASE_UNSPECIFIED';
-  /**
-   * blue-green upgrade has been initiated.
-   */
-  public const PHASE_UPDATE_STARTED = 'UPDATE_STARTED';
-  /**
-   * Start creating green pool nodes.
-   */
-  public const PHASE_CREATING_GREEN_POOL = 'CREATING_GREEN_POOL';
-  /**
-   * Start cordoning blue pool nodes.
-   */
-  public const PHASE_CORDONING_BLUE_POOL = 'CORDONING_BLUE_POOL';
-  /**
-   * Start draining blue pool nodes.
-   */
-  public const PHASE_DRAINING_BLUE_POOL = 'DRAINING_BLUE_POOL';
-  /**
-   * Start soaking time after draining entire blue pool.
-   */
-  public const PHASE_NODE_POOL_SOAKING = 'NODE_POOL_SOAKING';
-  /**
-   * Start deleting blue nodes.
-   */
-  public const PHASE_DELETING_BLUE_POOL = 'DELETING_BLUE_POOL';
-  /**
-   * Rollback has been initiated.
-   */
-  public const PHASE_ROLLBACK_STARTED = 'ROLLBACK_STARTED';
   protected $collection_key = 'greenInstanceGroupUrls';
   /**
-   * The resource URLs of the [managed instance groups] (/compute/docs/instance-
-   * groups/creating-groups-of-managed-instances) associated with blue pool.
-   *
    * @var string[]
    */
   public $blueInstanceGroupUrls;
   /**
-   * Time to start deleting blue pool to complete blue-green upgrade, in
-   * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
-   *
    * @var string
    */
   public $bluePoolDeletionStartTime;
   /**
-   * The resource URLs of the [managed instance groups] (/compute/docs/instance-
-   * groups/creating-groups-of-managed-instances) associated with green pool.
-   *
    * @var string[]
    */
   public $greenInstanceGroupUrls;
   /**
-   * Version of green pool.
-   *
    * @var string
    */
   public $greenPoolVersion;
   /**
-   * Current blue-green upgrade phase.
-   *
    * @var string
    */
   public $phase;
 
   /**
-   * The resource URLs of the [managed instance groups] (/compute/docs/instance-
-   * groups/creating-groups-of-managed-instances) associated with blue pool.
-   *
-   * @param string[] $blueInstanceGroupUrls
+   * @param string[]
    */
   public function setBlueInstanceGroupUrls($blueInstanceGroupUrls)
   {
@@ -104,10 +56,7 @@ class BlueGreenInfo extends \Google\Collection
     return $this->blueInstanceGroupUrls;
   }
   /**
-   * Time to start deleting blue pool to complete blue-green upgrade, in
-   * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
-   *
-   * @param string $bluePoolDeletionStartTime
+   * @param string
    */
   public function setBluePoolDeletionStartTime($bluePoolDeletionStartTime)
   {
@@ -121,10 +70,7 @@ class BlueGreenInfo extends \Google\Collection
     return $this->bluePoolDeletionStartTime;
   }
   /**
-   * The resource URLs of the [managed instance groups] (/compute/docs/instance-
-   * groups/creating-groups-of-managed-instances) associated with green pool.
-   *
-   * @param string[] $greenInstanceGroupUrls
+   * @param string[]
    */
   public function setGreenInstanceGroupUrls($greenInstanceGroupUrls)
   {
@@ -138,9 +84,7 @@ class BlueGreenInfo extends \Google\Collection
     return $this->greenInstanceGroupUrls;
   }
   /**
-   * Version of green pool.
-   *
-   * @param string $greenPoolVersion
+   * @param string
    */
   public function setGreenPoolVersion($greenPoolVersion)
   {
@@ -154,20 +98,14 @@ class BlueGreenInfo extends \Google\Collection
     return $this->greenPoolVersion;
   }
   /**
-   * Current blue-green upgrade phase.
-   *
-   * Accepted values: PHASE_UNSPECIFIED, UPDATE_STARTED, CREATING_GREEN_POOL,
-   * CORDONING_BLUE_POOL, DRAINING_BLUE_POOL, NODE_POOL_SOAKING,
-   * DELETING_BLUE_POOL, ROLLBACK_STARTED
-   *
-   * @param self::PHASE_* $phase
+   * @param string
    */
   public function setPhase($phase)
   {
     $this->phase = $phase;
   }
   /**
-   * @return self::PHASE_*
+   * @return string
    */
   public function getPhase()
   {

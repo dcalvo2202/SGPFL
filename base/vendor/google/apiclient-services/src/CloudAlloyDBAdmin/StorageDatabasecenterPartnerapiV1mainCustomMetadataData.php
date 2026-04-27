@@ -24,10 +24,7 @@ class StorageDatabasecenterPartnerapiV1mainCustomMetadataData extends \Google\Co
   protected $internalResourceMetadataDataType = 'array';
 
   /**
-   * Metadata for individual internal resources in an instance. e.g. spanner
-   * instance can have multiple databases with unique configuration.
-   *
-   * @param StorageDatabasecenterPartnerapiV1mainInternalResourceMetadata[] $internalResourceMetadata
+   * @param StorageDatabasecenterPartnerapiV1mainInternalResourceMetadata[]
    */
   public function setInternalResourceMetadata($internalResourceMetadata)
   {

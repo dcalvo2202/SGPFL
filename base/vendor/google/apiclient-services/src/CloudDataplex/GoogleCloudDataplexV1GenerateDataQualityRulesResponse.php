@@ -24,10 +24,7 @@ class GoogleCloudDataplexV1GenerateDataQualityRulesResponse extends \Google\Coll
   protected $ruleDataType = 'array';
 
   /**
-   * The data quality rules that Dataplex Universal Catalog generates based on
-   * the results of a data profiling scan.
-   *
-   * @param GoogleCloudDataplexV1DataQualityRule[] $rule
+   * @param GoogleCloudDataplexV1DataQualityRule[]
    */
   public function setRule($rule)
   {

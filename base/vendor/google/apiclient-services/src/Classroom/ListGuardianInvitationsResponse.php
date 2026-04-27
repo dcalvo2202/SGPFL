@@ -23,17 +23,12 @@ class ListGuardianInvitationsResponse extends \Google\Collection
   protected $guardianInvitationsType = GuardianInvitation::class;
   protected $guardianInvitationsDataType = 'array';
   /**
-   * Token identifying the next page of results to return. If empty, no further
-   * results are available.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Guardian invitations that matched the list request.
-   *
-   * @param GuardianInvitation[] $guardianInvitations
+   * @param GuardianInvitation[]
    */
   public function setGuardianInvitations($guardianInvitations)
   {
@@ -47,10 +42,7 @@ class ListGuardianInvitationsResponse extends \Google\Collection
     return $this->guardianInvitations;
   }
   /**
-   * Token identifying the next page of results to return. If empty, no further
-   * results are available.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

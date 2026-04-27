@@ -23,9 +23,7 @@ class AccessSessionSparkApplicationSqlQueryResponse extends \Google\Model
   protected $executionDataDataType = '';
 
   /**
-   * SQL Execution Data
-   *
-   * @param SqlExecutionUiData $executionData
+   * @param SqlExecutionUiData
    */
   public function setExecutionData(SqlExecutionUiData $executionData)
   {

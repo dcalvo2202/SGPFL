@@ -20,23 +20,16 @@ namespace Google\Service\Compute;
 class AllocationAggregateReservationReservedResourceInfoAccelerator extends \Google\Model
 {
   /**
-   * Number of accelerators of specified type.
-   *
    * @var int
    */
   public $acceleratorCount;
   /**
-   * Full or partial URL to accelerator type. e.g.
-   * "projects/{PROJECT}/zones/{ZONE}/acceleratorTypes/ct4l"
-   *
    * @var string
    */
   public $acceleratorType;
 
   /**
-   * Number of accelerators of specified type.
-   *
-   * @param int $acceleratorCount
+   * @param int
    */
   public function setAcceleratorCount($acceleratorCount)
   {
@@ -50,10 +43,7 @@ class AllocationAggregateReservationReservedResourceInfoAccelerator extends \Goo
     return $this->acceleratorCount;
   }
   /**
-   * Full or partial URL to accelerator type. e.g.
-   * "projects/{PROJECT}/zones/{ZONE}/acceleratorTypes/ct4l"
-   *
-   * @param string $acceleratorType
+   * @param string
    */
   public function setAcceleratorType($acceleratorType)
   {

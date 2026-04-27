@@ -23,22 +23,16 @@ class ListAcceleratorTypesResponse extends \Google\Collection
   protected $acceleratorTypesType = AcceleratorType::class;
   protected $acceleratorTypesDataType = 'array';
   /**
-   * The next page token or empty if none.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * The listed nodes.
-   *
-   * @param AcceleratorType[] $acceleratorTypes
+   * @param AcceleratorType[]
    */
   public function setAcceleratorTypes($acceleratorTypes)
   {
@@ -52,9 +46,7 @@ class ListAcceleratorTypesResponse extends \Google\Collection
     return $this->acceleratorTypes;
   }
   /**
-   * The next page token or empty if none.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -68,9 +60,7 @@ class ListAcceleratorTypesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

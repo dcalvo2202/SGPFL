@@ -26,9 +26,7 @@ class GooglePrivacyDlpV2RecordTransformations extends \Google\Collection
   protected $recordSuppressionsDataType = 'array';
 
   /**
-   * Transform the record by applying various field transformations.
-   *
-   * @param GooglePrivacyDlpV2FieldTransformation[] $fieldTransformations
+   * @param GooglePrivacyDlpV2FieldTransformation[]
    */
   public function setFieldTransformations($fieldTransformations)
   {
@@ -42,10 +40,7 @@ class GooglePrivacyDlpV2RecordTransformations extends \Google\Collection
     return $this->fieldTransformations;
   }
   /**
-   * Configuration defining which records get suppressed entirely. Records that
-   * match any suppression rule are omitted from the output.
-   *
-   * @param GooglePrivacyDlpV2RecordSuppression[] $recordSuppressions
+   * @param GooglePrivacyDlpV2RecordSuppression[]
    */
   public function setRecordSuppressions($recordSuppressions)
   {

@@ -20,27 +20,18 @@ namespace Google\Service\SQLAdmin;
 class UserPasswordValidationPolicy extends \Google\Model
 {
   /**
-   * Number of failed login attempts allowed before user get locked.
-   *
    * @var int
    */
   public $allowedFailedAttempts;
   /**
-   * If true, failed login attempts check will be enabled.
-   *
    * @var bool
    */
   public $enableFailedAttemptsCheck;
   /**
-   * If true, the user must specify the current password before changing the
-   * password. This flag is supported only for MySQL.
-   *
    * @var bool
    */
   public $enablePasswordVerification;
   /**
-   * Expiration duration after password is updated.
-   *
    * @var string
    */
   public $passwordExpirationDuration;
@@ -48,9 +39,7 @@ class UserPasswordValidationPolicy extends \Google\Model
   protected $statusDataType = '';
 
   /**
-   * Number of failed login attempts allowed before user get locked.
-   *
-   * @param int $allowedFailedAttempts
+   * @param int
    */
   public function setAllowedFailedAttempts($allowedFailedAttempts)
   {
@@ -64,9 +53,7 @@ class UserPasswordValidationPolicy extends \Google\Model
     return $this->allowedFailedAttempts;
   }
   /**
-   * If true, failed login attempts check will be enabled.
-   *
-   * @param bool $enableFailedAttemptsCheck
+   * @param bool
    */
   public function setEnableFailedAttemptsCheck($enableFailedAttemptsCheck)
   {
@@ -80,10 +67,7 @@ class UserPasswordValidationPolicy extends \Google\Model
     return $this->enableFailedAttemptsCheck;
   }
   /**
-   * If true, the user must specify the current password before changing the
-   * password. This flag is supported only for MySQL.
-   *
-   * @param bool $enablePasswordVerification
+   * @param bool
    */
   public function setEnablePasswordVerification($enablePasswordVerification)
   {
@@ -97,9 +81,7 @@ class UserPasswordValidationPolicy extends \Google\Model
     return $this->enablePasswordVerification;
   }
   /**
-   * Expiration duration after password is updated.
-   *
-   * @param string $passwordExpirationDuration
+   * @param string
    */
   public function setPasswordExpirationDuration($passwordExpirationDuration)
   {
@@ -113,9 +95,7 @@ class UserPasswordValidationPolicy extends \Google\Model
     return $this->passwordExpirationDuration;
   }
   /**
-   * Output only. Read-only password status.
-   *
-   * @param PasswordStatus $status
+   * @param PasswordStatus
    */
   public function setStatus(PasswordStatus $status)
   {

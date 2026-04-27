@@ -23,9 +23,7 @@ class GoogleBigtableAdminV2TypeBytes extends \Google\Model
   protected $encodingDataType = '';
 
   /**
-   * The encoding to use when converting to or from lower level types.
-   *
-   * @param GoogleBigtableAdminV2TypeBytesEncoding $encoding
+   * @param GoogleBigtableAdminV2TypeBytesEncoding
    */
   public function setEncoding(GoogleBigtableAdminV2TypeBytesEncoding $encoding)
   {

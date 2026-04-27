@@ -20,26 +20,16 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1GroundingFact extends \Google\Model
 {
   /**
-   * Attributes associated with the fact. Common attributes include `source`
-   * (indicating where the fact was sourced from), `author` (indicating the
-   * author of the fact), and so on.
-   *
    * @var string[]
    */
   public $attributes;
   /**
-   * Text content of the fact. Can be at most 10K characters long.
-   *
    * @var string
    */
   public $factText;
 
   /**
-   * Attributes associated with the fact. Common attributes include `source`
-   * (indicating where the fact was sourced from), `author` (indicating the
-   * author of the fact), and so on.
-   *
-   * @param string[] $attributes
+   * @param string[]
    */
   public function setAttributes($attributes)
   {
@@ -53,9 +43,7 @@ class GoogleCloudDiscoveryengineV1GroundingFact extends \Google\Model
     return $this->attributes;
   }
   /**
-   * Text content of the fact. Can be at most 10K characters long.
-   *
-   * @param string $factText
+   * @param string
    */
   public function setFactText($factText)
   {

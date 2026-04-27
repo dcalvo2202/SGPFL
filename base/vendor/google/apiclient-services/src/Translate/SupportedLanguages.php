@@ -24,10 +24,7 @@ class SupportedLanguages extends \Google\Collection
   protected $languagesDataType = 'array';
 
   /**
-   * A list of supported language responses. This list contains an entry for
-   * each language the Translation API supports.
-   *
-   * @param SupportedLanguage[] $languages
+   * @param SupportedLanguage[]
    */
   public function setLanguages($languages)
   {

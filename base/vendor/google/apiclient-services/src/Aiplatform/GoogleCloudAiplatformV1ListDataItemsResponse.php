@@ -23,16 +23,12 @@ class GoogleCloudAiplatformV1ListDataItemsResponse extends \Google\Collection
   protected $dataItemsType = GoogleCloudAiplatformV1DataItem::class;
   protected $dataItemsDataType = 'array';
   /**
-   * The standard List next-page token.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * A list of DataItems that matches the specified filter in the request.
-   *
-   * @param GoogleCloudAiplatformV1DataItem[] $dataItems
+   * @param GoogleCloudAiplatformV1DataItem[]
    */
   public function setDataItems($dataItems)
   {
@@ -46,9 +42,7 @@ class GoogleCloudAiplatformV1ListDataItemsResponse extends \Google\Collection
     return $this->dataItems;
   }
   /**
-   * The standard List next-page token.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

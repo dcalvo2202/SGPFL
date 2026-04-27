@@ -21,90 +21,50 @@ class AuctionPackage extends \Google\Collection
 {
   protected $collection_key = 'subscribedMediaPlanners';
   /**
-   * Output only. Time the auction package was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. The buyer that created this auction package. Format:
-   * `buyers/{buyerAccountId}`
-   *
    * @var string
    */
   public $creator;
   /**
-   * Output only. If set, this field contains the DSP specific seat id set by
-   * the media planner account that is considered the owner of this deal. The
-   * seat ID is in the calling DSP's namespace.
-   *
    * @var string
    */
   public $dealOwnerSeatId;
   /**
-   * Output only. A description of the auction package.
-   *
    * @var string
    */
   public $description;
   /**
-   * The display_name assigned to the auction package.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. If set, this field identifies a seat that the media planner
-   * selected as the owner of this auction package. This is a seat ID in the
-   * DSP's namespace that was provided to the media planner.
-   *
    * @var string[]
    */
   public $eligibleSeatIds;
-  protected $floorPriceCpmType = Money::class;
-  protected $floorPriceCpmDataType = '';
   /**
-   * Immutable. The unique identifier for the auction package. Format:
-   * `buyers/{accountId}/auctionPackages/{auctionPackageId}` The
-   * auction_package_id part of name is sent in the BidRequest to all RTB
-   * bidders and is returned as deal_id by the bidder in the BidResponse.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The list of buyers that are subscribed to the AuctionPackage.
-   * This field is only populated when calling as a bidder. Format:
-   * `buyers/{buyerAccountId}`
-   *
    * @var string[]
    */
   public $subscribedBuyers;
   /**
-   * Output only. When calling as a buyer, the list of clients of the current
-   * buyer that are subscribed to the AuctionPackage. When calling as a bidder,
-   * the list of clients that are subscribed to the AuctionPackage owned by the
-   * bidder or its buyers. Format:
-   * `buyers/{buyerAccountId}/clients/{clientAccountId}`
-   *
    * @var string[]
    */
   public $subscribedClients;
   protected $subscribedMediaPlannersType = MediaPlanner::class;
   protected $subscribedMediaPlannersDataType = 'array';
   /**
-   * Output only. Time the auction package was last updated. This value is only
-   * increased when this auction package is updated but never when a buyer
-   * subscribed.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. Time the auction package was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -118,10 +78,7 @@ class AuctionPackage extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Output only. The buyer that created this auction package. Format:
-   * `buyers/{buyerAccountId}`
-   *
-   * @param string $creator
+   * @param string
    */
   public function setCreator($creator)
   {
@@ -135,11 +92,7 @@ class AuctionPackage extends \Google\Collection
     return $this->creator;
   }
   /**
-   * Output only. If set, this field contains the DSP specific seat id set by
-   * the media planner account that is considered the owner of this deal. The
-   * seat ID is in the calling DSP's namespace.
-   *
-   * @param string $dealOwnerSeatId
+   * @param string
    */
   public function setDealOwnerSeatId($dealOwnerSeatId)
   {
@@ -153,9 +106,7 @@ class AuctionPackage extends \Google\Collection
     return $this->dealOwnerSeatId;
   }
   /**
-   * Output only. A description of the auction package.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -169,9 +120,7 @@ class AuctionPackage extends \Google\Collection
     return $this->description;
   }
   /**
-   * The display_name assigned to the auction package.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -185,11 +134,7 @@ class AuctionPackage extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Output only. If set, this field identifies a seat that the media planner
-   * selected as the owner of this auction package. This is a seat ID in the
-   * DSP's namespace that was provided to the media planner.
-   *
-   * @param string[] $eligibleSeatIds
+   * @param string[]
    */
   public function setEligibleSeatIds($eligibleSeatIds)
   {
@@ -203,30 +148,7 @@ class AuctionPackage extends \Google\Collection
     return $this->eligibleSeatIds;
   }
   /**
-   * Output only. The minimum price a buyer has to bid to compete in this
-   * auction package. If this is field is not populated, there is no floor
-   * price.
-   *
-   * @param Money $floorPriceCpm
-   */
-  public function setFloorPriceCpm(Money $floorPriceCpm)
-  {
-    $this->floorPriceCpm = $floorPriceCpm;
-  }
-  /**
-   * @return Money
-   */
-  public function getFloorPriceCpm()
-  {
-    return $this->floorPriceCpm;
-  }
-  /**
-   * Immutable. The unique identifier for the auction package. Format:
-   * `buyers/{accountId}/auctionPackages/{auctionPackageId}` The
-   * auction_package_id part of name is sent in the BidRequest to all RTB
-   * bidders and is returned as deal_id by the bidder in the BidResponse.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -240,11 +162,7 @@ class AuctionPackage extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. The list of buyers that are subscribed to the AuctionPackage.
-   * This field is only populated when calling as a bidder. Format:
-   * `buyers/{buyerAccountId}`
-   *
-   * @param string[] $subscribedBuyers
+   * @param string[]
    */
   public function setSubscribedBuyers($subscribedBuyers)
   {
@@ -258,13 +176,7 @@ class AuctionPackage extends \Google\Collection
     return $this->subscribedBuyers;
   }
   /**
-   * Output only. When calling as a buyer, the list of clients of the current
-   * buyer that are subscribed to the AuctionPackage. When calling as a bidder,
-   * the list of clients that are subscribed to the AuctionPackage owned by the
-   * bidder or its buyers. Format:
-   * `buyers/{buyerAccountId}/clients/{clientAccountId}`
-   *
-   * @param string[] $subscribedClients
+   * @param string[]
    */
   public function setSubscribedClients($subscribedClients)
   {
@@ -278,10 +190,7 @@ class AuctionPackage extends \Google\Collection
     return $this->subscribedClients;
   }
   /**
-   * Output only. The list of media planners that are subscribed to the
-   * AuctionPackage. This field is only populated when calling as a bidder.
-   *
-   * @param MediaPlanner[] $subscribedMediaPlanners
+   * @param MediaPlanner[]
    */
   public function setSubscribedMediaPlanners($subscribedMediaPlanners)
   {
@@ -295,11 +204,7 @@ class AuctionPackage extends \Google\Collection
     return $this->subscribedMediaPlanners;
   }
   /**
-   * Output only. Time the auction package was last updated. This value is only
-   * increased when this auction package is updated but never when a buyer
-   * subscribed.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

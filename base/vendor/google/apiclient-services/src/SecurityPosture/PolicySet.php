@@ -21,24 +21,18 @@ class PolicySet extends \Google\Collection
 {
   protected $collection_key = 'policies';
   /**
-   * Optional. A description of the policy set.
-   *
    * @var string
    */
   public $description;
   protected $policiesType = Policy::class;
   protected $policiesDataType = 'array';
   /**
-   * Required. An identifier for the policy set.
-   *
    * @var string
    */
   public $policySetId;
 
   /**
-   * Optional. A description of the policy set.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -52,10 +46,7 @@ class PolicySet extends \Google\Collection
     return $this->description;
   }
   /**
-   * Required. The Policy resources in the policy set. Each policy must have a
-   * policy_id that's unique within the policy set.
-   *
-   * @param Policy[] $policies
+   * @param Policy[]
    */
   public function setPolicies($policies)
   {
@@ -69,9 +60,7 @@ class PolicySet extends \Google\Collection
     return $this->policies;
   }
   /**
-   * Required. An identifier for the policy set.
-   *
-   * @param string $policySetId
+   * @param string
    */
   public function setPolicySetId($policySetId)
   {

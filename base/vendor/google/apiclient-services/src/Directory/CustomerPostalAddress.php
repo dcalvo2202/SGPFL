@@ -20,71 +20,44 @@ namespace Google\Service\Directory;
 class CustomerPostalAddress extends \Google\Model
 {
   /**
-   * A customer's physical address. The address can be composed of one to three
-   * lines.
-   *
    * @var string
    */
   public $addressLine1;
   /**
-   * Address line 2 of the address.
-   *
    * @var string
    */
   public $addressLine2;
   /**
-   * Address line 3 of the address.
-   *
    * @var string
    */
   public $addressLine3;
   /**
-   * The customer contact's name.
-   *
    * @var string
    */
   public $contactName;
   /**
-   * This is a required property. For `countryCode` information see the [ISO
-   * 3166 country code elements](https://www.iso.org/iso/country_codes.htm).
-   *
    * @var string
    */
   public $countryCode;
   /**
-   * Name of the locality. An example of a locality value is the city of `San
-   * Francisco`.
-   *
    * @var string
    */
   public $locality;
   /**
-   * The company or company division name.
-   *
    * @var string
    */
   public $organizationName;
   /**
-   * The postal code. A postalCode example is a postal zip code such as `10009`.
-   * This is in accordance with - http: //portablecontacts.net/draft-
-   * spec.html#address_element.
-   *
    * @var string
    */
   public $postalCode;
   /**
-   * Name of the region. An example of a region value is `NY` for the state of
-   * New York.
-   *
    * @var string
    */
   public $region;
 
   /**
-   * A customer's physical address. The address can be composed of one to three
-   * lines.
-   *
-   * @param string $addressLine1
+   * @param string
    */
   public function setAddressLine1($addressLine1)
   {
@@ -98,9 +71,7 @@ class CustomerPostalAddress extends \Google\Model
     return $this->addressLine1;
   }
   /**
-   * Address line 2 of the address.
-   *
-   * @param string $addressLine2
+   * @param string
    */
   public function setAddressLine2($addressLine2)
   {
@@ -114,9 +85,7 @@ class CustomerPostalAddress extends \Google\Model
     return $this->addressLine2;
   }
   /**
-   * Address line 3 of the address.
-   *
-   * @param string $addressLine3
+   * @param string
    */
   public function setAddressLine3($addressLine3)
   {
@@ -130,9 +99,7 @@ class CustomerPostalAddress extends \Google\Model
     return $this->addressLine3;
   }
   /**
-   * The customer contact's name.
-   *
-   * @param string $contactName
+   * @param string
    */
   public function setContactName($contactName)
   {
@@ -146,10 +113,7 @@ class CustomerPostalAddress extends \Google\Model
     return $this->contactName;
   }
   /**
-   * This is a required property. For `countryCode` information see the [ISO
-   * 3166 country code elements](https://www.iso.org/iso/country_codes.htm).
-   *
-   * @param string $countryCode
+   * @param string
    */
   public function setCountryCode($countryCode)
   {
@@ -163,10 +127,7 @@ class CustomerPostalAddress extends \Google\Model
     return $this->countryCode;
   }
   /**
-   * Name of the locality. An example of a locality value is the city of `San
-   * Francisco`.
-   *
-   * @param string $locality
+   * @param string
    */
   public function setLocality($locality)
   {
@@ -180,9 +141,7 @@ class CustomerPostalAddress extends \Google\Model
     return $this->locality;
   }
   /**
-   * The company or company division name.
-   *
-   * @param string $organizationName
+   * @param string
    */
   public function setOrganizationName($organizationName)
   {
@@ -196,11 +155,7 @@ class CustomerPostalAddress extends \Google\Model
     return $this->organizationName;
   }
   /**
-   * The postal code. A postalCode example is a postal zip code such as `10009`.
-   * This is in accordance with - http: //portablecontacts.net/draft-
-   * spec.html#address_element.
-   *
-   * @param string $postalCode
+   * @param string
    */
   public function setPostalCode($postalCode)
   {
@@ -214,10 +169,7 @@ class CustomerPostalAddress extends \Google\Model
     return $this->postalCode;
   }
   /**
-   * Name of the region. An example of a region value is `NY` for the state of
-   * New York.
-   *
-   * @param string $region
+   * @param string
    */
   public function setRegion($region)
   {

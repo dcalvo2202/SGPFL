@@ -20,22 +20,13 @@ namespace Google\Service\DataLabeling;
 class GoogleCloudDatalabelingV1beta1ObjectDetectionConfig extends \Google\Model
 {
   /**
-   * Required. Annotation spec set resource name.
-   *
    * @var string
    */
   public $annotationSpecSet;
-  /**
-   * Required. Number of frames per second to be extracted from the video.
-   *
-   * @var 
-   */
   public $extractionFrameRate;
 
   /**
-   * Required. Annotation spec set resource name.
-   *
-   * @param string $annotationSpecSet
+   * @param string
    */
   public function setAnnotationSpecSet($annotationSpecSet)
   {

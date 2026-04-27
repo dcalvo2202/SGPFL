@@ -20,53 +20,24 @@ namespace Google\Service\SA360;
 class GoogleAdsSearchads360V0ResourcesAdGroupAssetSet extends \Google\Model
 {
   /**
-   * The status has not been specified.
-   */
-  public const STATUS_UNSPECIFIED = 'UNSPECIFIED';
-  /**
-   * The received value is not known in this version. This is a response-only
-   * value.
-   */
-  public const STATUS_UNKNOWN = 'UNKNOWN';
-  /**
-   * The linkage between asset set and its container is enabled.
-   */
-  public const STATUS_ENABLED = 'ENABLED';
-  /**
-   * The linkage between asset set and its container is removed.
-   */
-  public const STATUS_REMOVED = 'REMOVED';
-  /**
-   * Immutable. The ad group to which this asset set is linked.
-   *
    * @var string
    */
   public $adGroup;
   /**
-   * Immutable. The asset set which is linked to the ad group.
-   *
    * @var string
    */
   public $assetSet;
   /**
-   * Immutable. The resource name of the ad group asset set. Ad group asset set
-   * resource names have the form:
-   * `customers/{customer_id}/adGroupAssetSets/{ad_group_id}~{asset_set_id}`
-   *
    * @var string
    */
   public $resourceName;
   /**
-   * Output only. The status of the ad group asset set. Read-only.
-   *
    * @var string
    */
   public $status;
 
   /**
-   * Immutable. The ad group to which this asset set is linked.
-   *
-   * @param string $adGroup
+   * @param string
    */
   public function setAdGroup($adGroup)
   {
@@ -80,9 +51,7 @@ class GoogleAdsSearchads360V0ResourcesAdGroupAssetSet extends \Google\Model
     return $this->adGroup;
   }
   /**
-   * Immutable. The asset set which is linked to the ad group.
-   *
-   * @param string $assetSet
+   * @param string
    */
   public function setAssetSet($assetSet)
   {
@@ -96,11 +65,7 @@ class GoogleAdsSearchads360V0ResourcesAdGroupAssetSet extends \Google\Model
     return $this->assetSet;
   }
   /**
-   * Immutable. The resource name of the ad group asset set. Ad group asset set
-   * resource names have the form:
-   * `customers/{customer_id}/adGroupAssetSets/{ad_group_id}~{asset_set_id}`
-   *
-   * @param string $resourceName
+   * @param string
    */
   public function setResourceName($resourceName)
   {
@@ -114,18 +79,14 @@ class GoogleAdsSearchads360V0ResourcesAdGroupAssetSet extends \Google\Model
     return $this->resourceName;
   }
   /**
-   * Output only. The status of the ad group asset set. Read-only.
-   *
-   * Accepted values: UNSPECIFIED, UNKNOWN, ENABLED, REMOVED
-   *
-   * @param self::STATUS_* $status
+   * @param string
    */
   public function setStatus($status)
   {
     $this->status = $status;
   }
   /**
-   * @return self::STATUS_*
+   * @return string
    */
   public function getStatus()
   {

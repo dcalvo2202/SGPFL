@@ -23,9 +23,7 @@ class Background extends \Google\Model
   protected $colorDataType = '';
 
   /**
-   * The background color.
-   *
-   * @param OptionalColor $color
+   * @param OptionalColor
    */
   public function setColor(OptionalColor $color)
   {

@@ -21,21 +21,14 @@ class GoogleCloudAiplatformV1GenerateVideoResponse extends \Google\Collection
 {
   protected $collection_key = 'videos';
   /**
-   * The cloud storage uris of the generated videos.
-   *
-   * @deprecated
    * @var string[]
    */
   public $generatedSamples;
   /**
-   * Returns if any videos were filtered due to RAI policies.
-   *
    * @var int
    */
   public $raiMediaFilteredCount;
   /**
-   * Returns rai failure reasons if any.
-   *
    * @var string[]
    */
   public $raiMediaFilteredReasons;
@@ -43,17 +36,13 @@ class GoogleCloudAiplatformV1GenerateVideoResponse extends \Google\Collection
   protected $videosDataType = 'array';
 
   /**
-   * The cloud storage uris of the generated videos.
-   *
-   * @deprecated
-   * @param string[] $generatedSamples
+   * @param string[]
    */
   public function setGeneratedSamples($generatedSamples)
   {
     $this->generatedSamples = $generatedSamples;
   }
   /**
-   * @deprecated
    * @return string[]
    */
   public function getGeneratedSamples()
@@ -61,9 +50,7 @@ class GoogleCloudAiplatformV1GenerateVideoResponse extends \Google\Collection
     return $this->generatedSamples;
   }
   /**
-   * Returns if any videos were filtered due to RAI policies.
-   *
-   * @param int $raiMediaFilteredCount
+   * @param int
    */
   public function setRaiMediaFilteredCount($raiMediaFilteredCount)
   {
@@ -77,9 +64,7 @@ class GoogleCloudAiplatformV1GenerateVideoResponse extends \Google\Collection
     return $this->raiMediaFilteredCount;
   }
   /**
-   * Returns rai failure reasons if any.
-   *
-   * @param string[] $raiMediaFilteredReasons
+   * @param string[]
    */
   public function setRaiMediaFilteredReasons($raiMediaFilteredReasons)
   {
@@ -93,9 +78,7 @@ class GoogleCloudAiplatformV1GenerateVideoResponse extends \Google\Collection
     return $this->raiMediaFilteredReasons;
   }
   /**
-   * List of video bytes or Cloud Storage URIs of the generated videos.
-   *
-   * @param GoogleCloudAiplatformV1GenerateVideoResponseVideo[] $videos
+   * @param GoogleCloudAiplatformV1GenerateVideoResponseVideo[]
    */
   public function setVideos($videos)
   {

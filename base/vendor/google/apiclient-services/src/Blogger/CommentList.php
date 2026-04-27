@@ -21,36 +21,26 @@ class CommentList extends \Google\Collection
 {
   protected $collection_key = 'items';
   /**
-   * Etag of the response.
-   *
    * @var string
    */
   public $etag;
   protected $itemsType = Comment::class;
   protected $itemsDataType = 'array';
   /**
-   * The kind of this entry. Always blogger#commentList.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Pagination token to fetch the next page, if one exists.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Pagination token to fetch the previous page, if one exists.
-   *
    * @var string
    */
   public $prevPageToken;
 
   /**
-   * Etag of the response.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -64,9 +54,7 @@ class CommentList extends \Google\Collection
     return $this->etag;
   }
   /**
-   * The List of Comments for a Post.
-   *
-   * @param Comment[] $items
+   * @param Comment[]
    */
   public function setItems($items)
   {
@@ -80,9 +68,7 @@ class CommentList extends \Google\Collection
     return $this->items;
   }
   /**
-   * The kind of this entry. Always blogger#commentList.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -96,9 +82,7 @@ class CommentList extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Pagination token to fetch the next page, if one exists.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -112,9 +96,7 @@ class CommentList extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Pagination token to fetch the previous page, if one exists.
-   *
-   * @param string $prevPageToken
+   * @param string
    */
   public function setPrevPageToken($prevPageToken)
   {

@@ -21,40 +21,24 @@ class InstantSnapshotAggregatedList extends \Google\Collection
 {
   protected $collection_key = 'unreachables';
   /**
-   * [Output Only] Unique identifier for the resource; defined by the server.
-   *
    * @var string
    */
   public $id;
   protected $itemsType = InstantSnapshotsScopedList::class;
   protected $itemsDataType = 'map';
   /**
-   * Output only. [Output Only] Type of resource.
-   * Alwayscompute#instantSnapshotAggregatedList for aggregated lists of
-   * instantSnapshots.
-   *
    * @var string
    */
   public $kind;
   /**
-   * [Output Only] This token allows you to get the next page of results for
-   * list requests. If the number of results is larger thanmaxResults, use the
-   * nextPageToken as a value for the query parameter pageToken in the next list
-   * request. Subsequent list requests will have their own nextPageToken to
-   * continue paging through the results.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Output only. [Output Only] Server-defined URL for this resource.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * Output only. [Output Only] Unreachable resources.
-   *
    * @var string[]
    */
   public $unreachables;
@@ -62,9 +46,7 @@ class InstantSnapshotAggregatedList extends \Google\Collection
   protected $warningDataType = '';
 
   /**
-   * [Output Only] Unique identifier for the resource; defined by the server.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -78,9 +60,7 @@ class InstantSnapshotAggregatedList extends \Google\Collection
     return $this->id;
   }
   /**
-   * A list of InstantSnapshotsScopedList resources.
-   *
-   * @param InstantSnapshotsScopedList[] $items
+   * @param InstantSnapshotsScopedList[]
    */
   public function setItems($items)
   {
@@ -94,11 +74,7 @@ class InstantSnapshotAggregatedList extends \Google\Collection
     return $this->items;
   }
   /**
-   * Output only. [Output Only] Type of resource.
-   * Alwayscompute#instantSnapshotAggregatedList for aggregated lists of
-   * instantSnapshots.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -112,13 +88,7 @@ class InstantSnapshotAggregatedList extends \Google\Collection
     return $this->kind;
   }
   /**
-   * [Output Only] This token allows you to get the next page of results for
-   * list requests. If the number of results is larger thanmaxResults, use the
-   * nextPageToken as a value for the query parameter pageToken in the next list
-   * request. Subsequent list requests will have their own nextPageToken to
-   * continue paging through the results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -132,9 +102,7 @@ class InstantSnapshotAggregatedList extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Output only. [Output Only] Server-defined URL for this resource.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -148,9 +116,7 @@ class InstantSnapshotAggregatedList extends \Google\Collection
     return $this->selfLink;
   }
   /**
-   * Output only. [Output Only] Unreachable resources.
-   *
-   * @param string[] $unreachables
+   * @param string[]
    */
   public function setUnreachables($unreachables)
   {
@@ -164,9 +130,7 @@ class InstantSnapshotAggregatedList extends \Google\Collection
     return $this->unreachables;
   }
   /**
-   * [Output Only] Informational warning message.
-   *
-   * @param InstantSnapshotAggregatedListWarning $warning
+   * @param InstantSnapshotAggregatedListWarning
    */
   public function setWarning(InstantSnapshotAggregatedListWarning $warning)
   {

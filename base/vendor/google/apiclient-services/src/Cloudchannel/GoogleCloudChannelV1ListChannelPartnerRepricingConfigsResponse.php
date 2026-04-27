@@ -23,17 +23,12 @@ class GoogleCloudChannelV1ListChannelPartnerRepricingConfigsResponse extends \Go
   protected $channelPartnerRepricingConfigsType = GoogleCloudChannelV1ChannelPartnerRepricingConfig::class;
   protected $channelPartnerRepricingConfigsDataType = 'array';
   /**
-   * A token to retrieve the next page of results. Pass to
-   * ListChannelPartnerRepricingConfigsRequest.page_token to obtain that page.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The repricing configs for this channel partner.
-   *
-   * @param GoogleCloudChannelV1ChannelPartnerRepricingConfig[] $channelPartnerRepricingConfigs
+   * @param GoogleCloudChannelV1ChannelPartnerRepricingConfig[]
    */
   public function setChannelPartnerRepricingConfigs($channelPartnerRepricingConfigs)
   {
@@ -47,10 +42,7 @@ class GoogleCloudChannelV1ListChannelPartnerRepricingConfigsResponse extends \Go
     return $this->channelPartnerRepricingConfigs;
   }
   /**
-   * A token to retrieve the next page of results. Pass to
-   * ListChannelPartnerRepricingConfigsRequest.page_token to obtain that page.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

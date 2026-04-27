@@ -27,24 +27,18 @@ class DatabaseSchema extends \Google\Collection
   protected $postgresqlType = PostgreSqlSchemaDetails::class;
   protected $postgresqlDataType = '';
   /**
-   * Required. The name of the schema.
-   *
    * @var string
    */
   public $schemaName;
   protected $sqlServerType = SqlServerSchemaDetails::class;
   protected $sqlServerDataType = '';
   /**
-   * Optional. The total size of tables in bytes.
-   *
    * @var string
    */
   public $tablesSizeBytes;
 
   /**
-   * Optional. Details of a Mysql schema.
-   *
-   * @param MySqlSchemaDetails $mysql
+   * @param MySqlSchemaDetails
    */
   public function setMysql(MySqlSchemaDetails $mysql)
   {
@@ -58,9 +52,7 @@ class DatabaseSchema extends \Google\Collection
     return $this->mysql;
   }
   /**
-   * Optional. List of details of objects by category.
-   *
-   * @param DatabaseObjects[] $objects
+   * @param DatabaseObjects[]
    */
   public function setObjects($objects)
   {
@@ -74,9 +66,7 @@ class DatabaseSchema extends \Google\Collection
     return $this->objects;
   }
   /**
-   * Optional. Details of a PostgreSql schema.
-   *
-   * @param PostgreSqlSchemaDetails $postgresql
+   * @param PostgreSqlSchemaDetails
    */
   public function setPostgresql(PostgreSqlSchemaDetails $postgresql)
   {
@@ -90,9 +80,7 @@ class DatabaseSchema extends \Google\Collection
     return $this->postgresql;
   }
   /**
-   * Required. The name of the schema.
-   *
-   * @param string $schemaName
+   * @param string
    */
   public function setSchemaName($schemaName)
   {
@@ -106,9 +94,7 @@ class DatabaseSchema extends \Google\Collection
     return $this->schemaName;
   }
   /**
-   * Optional. Details of a SqlServer schema.
-   *
-   * @param SqlServerSchemaDetails $sqlServer
+   * @param SqlServerSchemaDetails
    */
   public function setSqlServer(SqlServerSchemaDetails $sqlServer)
   {
@@ -122,9 +108,7 @@ class DatabaseSchema extends \Google\Collection
     return $this->sqlServer;
   }
   /**
-   * Optional. The total size of tables in bytes.
-   *
-   * @param string $tablesSizeBytes
+   * @param string
    */
   public function setTablesSizeBytes($tablesSizeBytes)
   {

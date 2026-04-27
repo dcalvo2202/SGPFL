@@ -23,9 +23,7 @@ class JobExecutionInfo extends \Google\Model
   protected $stagesDataType = 'map';
 
   /**
-   * A mapping from each stage to the information about that stage.
-   *
-   * @param JobExecutionStageInfo[] $stages
+   * @param JobExecutionStageInfo[]
    */
   public function setStages($stages)
   {

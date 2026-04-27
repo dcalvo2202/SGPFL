@@ -23,18 +23,12 @@ class ListDicomStoresResponse extends \Google\Collection
   protected $dicomStoresType = DicomStore::class;
   protected $dicomStoresDataType = 'array';
   /**
-   * Token to retrieve the next page of results or empty if there are no more
-   * results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The returned DICOM stores. Won't be more DICOM stores than the value of
-   * page_size in the request.
-   *
-   * @param DicomStore[] $dicomStores
+   * @param DicomStore[]
    */
   public function setDicomStores($dicomStores)
   {
@@ -48,10 +42,7 @@ class ListDicomStoresResponse extends \Google\Collection
     return $this->dicomStores;
   }
   /**
-   * Token to retrieve the next page of results or empty if there are no more
-   * results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

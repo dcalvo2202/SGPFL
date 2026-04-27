@@ -22,107 +22,62 @@ class ImageSettings extends \Google\Model
   protected $backgroundImageUrlType = LocalizedProperty::class;
   protected $backgroundImageUrlDataType = '';
   /**
-   * This is generated when a ChannelBanner.Insert request has succeeded for the
-   * given channel.
-   *
    * @var string
    */
   public $bannerExternalUrl;
   /**
-   * Banner image. Desktop size (1060x175).
-   *
-   * @deprecated
    * @var string
    */
   public $bannerImageUrl;
   /**
-   * Banner image. Mobile size high resolution (1440x395).
-   *
-   * @deprecated
    * @var string
    */
   public $bannerMobileExtraHdImageUrl;
   /**
-   * Banner image. Mobile size high resolution (1280x360).
-   *
-   * @deprecated
    * @var string
    */
   public $bannerMobileHdImageUrl;
   /**
-   * Banner image. Mobile size (640x175).
-   *
-   * @deprecated
    * @var string
    */
   public $bannerMobileImageUrl;
   /**
-   * Banner image. Mobile size low resolution (320x88).
-   *
-   * @deprecated
    * @var string
    */
   public $bannerMobileLowImageUrl;
   /**
-   * Banner image. Mobile size medium/high resolution (960x263).
-   *
-   * @deprecated
    * @var string
    */
   public $bannerMobileMediumHdImageUrl;
   /**
-   * Banner image. Tablet size extra high resolution (2560x424).
-   *
-   * @deprecated
    * @var string
    */
   public $bannerTabletExtraHdImageUrl;
   /**
-   * Banner image. Tablet size high resolution (2276x377).
-   *
-   * @deprecated
    * @var string
    */
   public $bannerTabletHdImageUrl;
   /**
-   * Banner image. Tablet size (1707x283).
-   *
-   * @deprecated
    * @var string
    */
   public $bannerTabletImageUrl;
   /**
-   * Banner image. Tablet size low resolution (1138x188).
-   *
-   * @deprecated
    * @var string
    */
   public $bannerTabletLowImageUrl;
   /**
-   * Banner image. TV size high resolution (1920x1080).
-   *
-   * @deprecated
    * @var string
    */
   public $bannerTvHighImageUrl;
   /**
-   * Banner image. TV size extra high resolution (2120x1192).
-   *
-   * @deprecated
    * @var string
    */
   public $bannerTvImageUrl;
   /**
-   * Banner image. TV size low resolution (854x480).
-   *
-   * @deprecated
    * @var string
    */
   public $bannerTvLowImageUrl;
   /**
-   * Banner image. TV size medium resolution (1280x720).
-   *
-   * @deprecated
    * @var string
    */
   public $bannerTvMediumImageUrl;
@@ -135,32 +90,22 @@ class ImageSettings extends \Google\Model
   protected $smallBrandedBannerImageUrlType = LocalizedProperty::class;
   protected $smallBrandedBannerImageUrlDataType = '';
   /**
-   * The URL for a 1px by 1px tracking pixel that can be used to collect
-   * statistics for views of the channel or video pages.
-   *
-   * @deprecated
    * @var string
    */
   public $trackingImageUrl;
   /**
-   * @deprecated
    * @var string
    */
   public $watchIconImageUrl;
 
   /**
-   * The URL for the background image shown on the video watch page. The image
-   * should be 1200px by 615px, with a maximum file size of 128k.
-   *
-   * @deprecated
-   * @param LocalizedProperty $backgroundImageUrl
+   * @param LocalizedProperty
    */
   public function setBackgroundImageUrl(LocalizedProperty $backgroundImageUrl)
   {
     $this->backgroundImageUrl = $backgroundImageUrl;
   }
   /**
-   * @deprecated
    * @return LocalizedProperty
    */
   public function getBackgroundImageUrl()
@@ -168,10 +113,7 @@ class ImageSettings extends \Google\Model
     return $this->backgroundImageUrl;
   }
   /**
-   * This is generated when a ChannelBanner.Insert request has succeeded for the
-   * given channel.
-   *
-   * @param string $bannerExternalUrl
+   * @param string
    */
   public function setBannerExternalUrl($bannerExternalUrl)
   {
@@ -185,17 +127,13 @@ class ImageSettings extends \Google\Model
     return $this->bannerExternalUrl;
   }
   /**
-   * Banner image. Desktop size (1060x175).
-   *
-   * @deprecated
-   * @param string $bannerImageUrl
+   * @param string
    */
   public function setBannerImageUrl($bannerImageUrl)
   {
     $this->bannerImageUrl = $bannerImageUrl;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getBannerImageUrl()
@@ -203,17 +141,13 @@ class ImageSettings extends \Google\Model
     return $this->bannerImageUrl;
   }
   /**
-   * Banner image. Mobile size high resolution (1440x395).
-   *
-   * @deprecated
-   * @param string $bannerMobileExtraHdImageUrl
+   * @param string
    */
   public function setBannerMobileExtraHdImageUrl($bannerMobileExtraHdImageUrl)
   {
     $this->bannerMobileExtraHdImageUrl = $bannerMobileExtraHdImageUrl;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getBannerMobileExtraHdImageUrl()
@@ -221,17 +155,13 @@ class ImageSettings extends \Google\Model
     return $this->bannerMobileExtraHdImageUrl;
   }
   /**
-   * Banner image. Mobile size high resolution (1280x360).
-   *
-   * @deprecated
-   * @param string $bannerMobileHdImageUrl
+   * @param string
    */
   public function setBannerMobileHdImageUrl($bannerMobileHdImageUrl)
   {
     $this->bannerMobileHdImageUrl = $bannerMobileHdImageUrl;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getBannerMobileHdImageUrl()
@@ -239,17 +169,13 @@ class ImageSettings extends \Google\Model
     return $this->bannerMobileHdImageUrl;
   }
   /**
-   * Banner image. Mobile size (640x175).
-   *
-   * @deprecated
-   * @param string $bannerMobileImageUrl
+   * @param string
    */
   public function setBannerMobileImageUrl($bannerMobileImageUrl)
   {
     $this->bannerMobileImageUrl = $bannerMobileImageUrl;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getBannerMobileImageUrl()
@@ -257,17 +183,13 @@ class ImageSettings extends \Google\Model
     return $this->bannerMobileImageUrl;
   }
   /**
-   * Banner image. Mobile size low resolution (320x88).
-   *
-   * @deprecated
-   * @param string $bannerMobileLowImageUrl
+   * @param string
    */
   public function setBannerMobileLowImageUrl($bannerMobileLowImageUrl)
   {
     $this->bannerMobileLowImageUrl = $bannerMobileLowImageUrl;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getBannerMobileLowImageUrl()
@@ -275,17 +197,13 @@ class ImageSettings extends \Google\Model
     return $this->bannerMobileLowImageUrl;
   }
   /**
-   * Banner image. Mobile size medium/high resolution (960x263).
-   *
-   * @deprecated
-   * @param string $bannerMobileMediumHdImageUrl
+   * @param string
    */
   public function setBannerMobileMediumHdImageUrl($bannerMobileMediumHdImageUrl)
   {
     $this->bannerMobileMediumHdImageUrl = $bannerMobileMediumHdImageUrl;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getBannerMobileMediumHdImageUrl()
@@ -293,17 +211,13 @@ class ImageSettings extends \Google\Model
     return $this->bannerMobileMediumHdImageUrl;
   }
   /**
-   * Banner image. Tablet size extra high resolution (2560x424).
-   *
-   * @deprecated
-   * @param string $bannerTabletExtraHdImageUrl
+   * @param string
    */
   public function setBannerTabletExtraHdImageUrl($bannerTabletExtraHdImageUrl)
   {
     $this->bannerTabletExtraHdImageUrl = $bannerTabletExtraHdImageUrl;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getBannerTabletExtraHdImageUrl()
@@ -311,17 +225,13 @@ class ImageSettings extends \Google\Model
     return $this->bannerTabletExtraHdImageUrl;
   }
   /**
-   * Banner image. Tablet size high resolution (2276x377).
-   *
-   * @deprecated
-   * @param string $bannerTabletHdImageUrl
+   * @param string
    */
   public function setBannerTabletHdImageUrl($bannerTabletHdImageUrl)
   {
     $this->bannerTabletHdImageUrl = $bannerTabletHdImageUrl;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getBannerTabletHdImageUrl()
@@ -329,17 +239,13 @@ class ImageSettings extends \Google\Model
     return $this->bannerTabletHdImageUrl;
   }
   /**
-   * Banner image. Tablet size (1707x283).
-   *
-   * @deprecated
-   * @param string $bannerTabletImageUrl
+   * @param string
    */
   public function setBannerTabletImageUrl($bannerTabletImageUrl)
   {
     $this->bannerTabletImageUrl = $bannerTabletImageUrl;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getBannerTabletImageUrl()
@@ -347,17 +253,13 @@ class ImageSettings extends \Google\Model
     return $this->bannerTabletImageUrl;
   }
   /**
-   * Banner image. Tablet size low resolution (1138x188).
-   *
-   * @deprecated
-   * @param string $bannerTabletLowImageUrl
+   * @param string
    */
   public function setBannerTabletLowImageUrl($bannerTabletLowImageUrl)
   {
     $this->bannerTabletLowImageUrl = $bannerTabletLowImageUrl;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getBannerTabletLowImageUrl()
@@ -365,17 +267,13 @@ class ImageSettings extends \Google\Model
     return $this->bannerTabletLowImageUrl;
   }
   /**
-   * Banner image. TV size high resolution (1920x1080).
-   *
-   * @deprecated
-   * @param string $bannerTvHighImageUrl
+   * @param string
    */
   public function setBannerTvHighImageUrl($bannerTvHighImageUrl)
   {
     $this->bannerTvHighImageUrl = $bannerTvHighImageUrl;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getBannerTvHighImageUrl()
@@ -383,17 +281,13 @@ class ImageSettings extends \Google\Model
     return $this->bannerTvHighImageUrl;
   }
   /**
-   * Banner image. TV size extra high resolution (2120x1192).
-   *
-   * @deprecated
-   * @param string $bannerTvImageUrl
+   * @param string
    */
   public function setBannerTvImageUrl($bannerTvImageUrl)
   {
     $this->bannerTvImageUrl = $bannerTvImageUrl;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getBannerTvImageUrl()
@@ -401,17 +295,13 @@ class ImageSettings extends \Google\Model
     return $this->bannerTvImageUrl;
   }
   /**
-   * Banner image. TV size low resolution (854x480).
-   *
-   * @deprecated
-   * @param string $bannerTvLowImageUrl
+   * @param string
    */
   public function setBannerTvLowImageUrl($bannerTvLowImageUrl)
   {
     $this->bannerTvLowImageUrl = $bannerTvLowImageUrl;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getBannerTvLowImageUrl()
@@ -419,17 +309,13 @@ class ImageSettings extends \Google\Model
     return $this->bannerTvLowImageUrl;
   }
   /**
-   * Banner image. TV size medium resolution (1280x720).
-   *
-   * @deprecated
-   * @param string $bannerTvMediumImageUrl
+   * @param string
    */
   public function setBannerTvMediumImageUrl($bannerTvMediumImageUrl)
   {
     $this->bannerTvMediumImageUrl = $bannerTvMediumImageUrl;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getBannerTvMediumImageUrl()
@@ -437,17 +323,13 @@ class ImageSettings extends \Google\Model
     return $this->bannerTvMediumImageUrl;
   }
   /**
-   * The image map script for the large banner image.
-   *
-   * @deprecated
-   * @param LocalizedProperty $largeBrandedBannerImageImapScript
+   * @param LocalizedProperty
    */
   public function setLargeBrandedBannerImageImapScript(LocalizedProperty $largeBrandedBannerImageImapScript)
   {
     $this->largeBrandedBannerImageImapScript = $largeBrandedBannerImageImapScript;
   }
   /**
-   * @deprecated
    * @return LocalizedProperty
    */
   public function getLargeBrandedBannerImageImapScript()
@@ -455,18 +337,13 @@ class ImageSettings extends \Google\Model
     return $this->largeBrandedBannerImageImapScript;
   }
   /**
-   * The URL for the 854px by 70px image that appears below the video player in
-   * the expanded video view of the video watch page.
-   *
-   * @deprecated
-   * @param LocalizedProperty $largeBrandedBannerImageUrl
+   * @param LocalizedProperty
    */
   public function setLargeBrandedBannerImageUrl(LocalizedProperty $largeBrandedBannerImageUrl)
   {
     $this->largeBrandedBannerImageUrl = $largeBrandedBannerImageUrl;
   }
   /**
-   * @deprecated
    * @return LocalizedProperty
    */
   public function getLargeBrandedBannerImageUrl()
@@ -474,17 +351,13 @@ class ImageSettings extends \Google\Model
     return $this->largeBrandedBannerImageUrl;
   }
   /**
-   * The image map script for the small banner image.
-   *
-   * @deprecated
-   * @param LocalizedProperty $smallBrandedBannerImageImapScript
+   * @param LocalizedProperty
    */
   public function setSmallBrandedBannerImageImapScript(LocalizedProperty $smallBrandedBannerImageImapScript)
   {
     $this->smallBrandedBannerImageImapScript = $smallBrandedBannerImageImapScript;
   }
   /**
-   * @deprecated
    * @return LocalizedProperty
    */
   public function getSmallBrandedBannerImageImapScript()
@@ -492,20 +365,13 @@ class ImageSettings extends \Google\Model
     return $this->smallBrandedBannerImageImapScript;
   }
   /**
-   * The URL for the 640px by 70px banner image that appears below the video
-   * player in the default view of the video watch page. The URL for the image
-   * that appears above the top-left corner of the video player. This is a
-   * 25-pixel-high image with a flexible width that cannot exceed 170 pixels.
-   *
-   * @deprecated
-   * @param LocalizedProperty $smallBrandedBannerImageUrl
+   * @param LocalizedProperty
    */
   public function setSmallBrandedBannerImageUrl(LocalizedProperty $smallBrandedBannerImageUrl)
   {
     $this->smallBrandedBannerImageUrl = $smallBrandedBannerImageUrl;
   }
   /**
-   * @deprecated
    * @return LocalizedProperty
    */
   public function getSmallBrandedBannerImageUrl()
@@ -513,18 +379,13 @@ class ImageSettings extends \Google\Model
     return $this->smallBrandedBannerImageUrl;
   }
   /**
-   * The URL for a 1px by 1px tracking pixel that can be used to collect
-   * statistics for views of the channel or video pages.
-   *
-   * @deprecated
-   * @param string $trackingImageUrl
+   * @param string
    */
   public function setTrackingImageUrl($trackingImageUrl)
   {
     $this->trackingImageUrl = $trackingImageUrl;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getTrackingImageUrl()
@@ -532,15 +393,13 @@ class ImageSettings extends \Google\Model
     return $this->trackingImageUrl;
   }
   /**
-   * @deprecated
-   * @param string $watchIconImageUrl
+   * @param string
    */
   public function setWatchIconImageUrl($watchIconImageUrl)
   {
     $this->watchIconImageUrl = $watchIconImageUrl;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getWatchIconImageUrl()

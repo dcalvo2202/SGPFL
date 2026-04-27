@@ -21,34 +21,22 @@ class QueryResponse extends \Google\Collection
 {
   protected $collection_key = 'rows';
   /**
-   * Whether the query result was fetched from the query cache.
-   *
    * @var bool
    */
   public $cacheHit;
   /**
-   * Output only. Creation time of this query, in milliseconds since the epoch.
-   * This field will be present on all queries.
-   *
    * @var string
    */
   public $creationTime;
   protected $dmlStatsType = DmlStatistics::class;
   protected $dmlStatsDataType = '';
   /**
-   * Output only. End time of this query, in milliseconds since the epoch. This
-   * field will be present whenever a query job is in the DONE state.
-   *
    * @var string
    */
   public $endTime;
   protected $errorsType = ErrorProto::class;
   protected $errorsDataType = 'array';
   /**
-   * Whether the query has completed or not. If rows or totalRows are present,
-   * this will always be true. If this is false, totalRows will not be
-   * available.
-   *
    * @var bool
    */
   public $jobComplete;
@@ -57,39 +45,22 @@ class QueryResponse extends \Google\Collection
   protected $jobReferenceType = JobReference::class;
   protected $jobReferenceDataType = '';
   /**
-   * The resource type.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Output only. The geographic location of the query. For more information
-   * about BigQuery locations, see:
-   * https://cloud.google.com/bigquery/docs/locations
-   *
    * @var string
    */
   public $location;
   /**
-   * Output only. The number of rows affected by a DML statement. Present only
-   * for DML statements INSERT, UPDATE or DELETE.
-   *
    * @var string
    */
   public $numDmlAffectedRows;
   /**
-   * A token used for paging results. A non-empty token indicates that
-   * additional results are available. To see additional results, query the [`jo
-   * bs.getQueryResults`](https://cloud.google.com/bigquery/docs/reference/rest/
-   * v2/jobs/getQueryResults) method. For more information, see [Paging through
-   * table data](https://cloud.google.com/bigquery/docs/paging-results).
-   *
    * @var string
    */
   public $pageToken;
   /**
-   * Auto-generated ID for the query.
-   *
    * @var string
    */
   public $queryId;
@@ -100,48 +71,28 @@ class QueryResponse extends \Google\Collection
   protected $sessionInfoType = SessionInfo::class;
   protected $sessionInfoDataType = '';
   /**
-   * Output only. Start time of this query, in milliseconds since the epoch.
-   * This field will be present when the query job transitions from the PENDING
-   * state to either RUNNING or DONE.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * Output only. If the project is configured to use on-demand pricing, then
-   * this field contains the total bytes billed for the job. If the project is
-   * configured to use flat-rate pricing, then you are not billed for bytes and
-   * this field is informational only.
-   *
    * @var string
    */
   public $totalBytesBilled;
   /**
-   * The total number of bytes processed for this query. If this query was a dry
-   * run, this is the number of bytes that would be processed if the query were
-   * run.
-   *
    * @var string
    */
   public $totalBytesProcessed;
   /**
-   * The total number of rows in the complete query result set, which can be
-   * more than the number of rows in this single page of results.
-   *
    * @var string
    */
   public $totalRows;
   /**
-   * Output only. Number of slot ms the user is actually billed for.
-   *
    * @var string
    */
   public $totalSlotMs;
 
   /**
-   * Whether the query result was fetched from the query cache.
-   *
-   * @param bool $cacheHit
+   * @param bool
    */
   public function setCacheHit($cacheHit)
   {
@@ -155,10 +106,7 @@ class QueryResponse extends \Google\Collection
     return $this->cacheHit;
   }
   /**
-   * Output only. Creation time of this query, in milliseconds since the epoch.
-   * This field will be present on all queries.
-   *
-   * @param string $creationTime
+   * @param string
    */
   public function setCreationTime($creationTime)
   {
@@ -172,10 +120,7 @@ class QueryResponse extends \Google\Collection
     return $this->creationTime;
   }
   /**
-   * Output only. Detailed statistics for DML statements INSERT, UPDATE, DELETE,
-   * MERGE or TRUNCATE.
-   *
-   * @param DmlStatistics $dmlStats
+   * @param DmlStatistics
    */
   public function setDmlStats(DmlStatistics $dmlStats)
   {
@@ -189,10 +134,7 @@ class QueryResponse extends \Google\Collection
     return $this->dmlStats;
   }
   /**
-   * Output only. End time of this query, in milliseconds since the epoch. This
-   * field will be present whenever a query job is in the DONE state.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -206,14 +148,7 @@ class QueryResponse extends \Google\Collection
     return $this->endTime;
   }
   /**
-   * Output only. The first errors or warnings encountered during the running of
-   * the job. The final message includes the number of errors that caused the
-   * process to stop. Errors here do not necessarily mean that the job has
-   * completed or was unsuccessful. For more information about error messages,
-   * see [Error messages](https://cloud.google.com/bigquery/docs/error-
-   * messages).
-   *
-   * @param ErrorProto[] $errors
+   * @param ErrorProto[]
    */
   public function setErrors($errors)
   {
@@ -227,11 +162,7 @@ class QueryResponse extends \Google\Collection
     return $this->errors;
   }
   /**
-   * Whether the query has completed or not. If rows or totalRows are present,
-   * this will always be true. If this is false, totalRows will not be
-   * available.
-   *
-   * @param bool $jobComplete
+   * @param bool
    */
   public function setJobComplete($jobComplete)
   {
@@ -245,11 +176,7 @@ class QueryResponse extends \Google\Collection
     return $this->jobComplete;
   }
   /**
-   * Optional. The reason why a Job was created. Only relevant when a
-   * job_reference is present in the response. If job_reference is not present
-   * it will always be unset.
-   *
-   * @param JobCreationReason $jobCreationReason
+   * @param JobCreationReason
    */
   public function setJobCreationReason(JobCreationReason $jobCreationReason)
   {
@@ -263,15 +190,7 @@ class QueryResponse extends \Google\Collection
     return $this->jobCreationReason;
   }
   /**
-   * Reference to the Job that was created to run the query. This field will be
-   * present even if the original request timed out, in which case
-   * GetQueryResults can be used to read the results once the query has
-   * completed. Since this API only returns the first page of results,
-   * subsequent pages can be fetched via the same mechanism (GetQueryResults).
-   * If job_creation_mode was set to `JOB_CREATION_OPTIONAL` and the query
-   * completes without creating a job, this field will be empty.
-   *
-   * @param JobReference $jobReference
+   * @param JobReference
    */
   public function setJobReference(JobReference $jobReference)
   {
@@ -285,9 +204,7 @@ class QueryResponse extends \Google\Collection
     return $this->jobReference;
   }
   /**
-   * The resource type.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -301,11 +218,7 @@ class QueryResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Output only. The geographic location of the query. For more information
-   * about BigQuery locations, see:
-   * https://cloud.google.com/bigquery/docs/locations
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -319,10 +232,7 @@ class QueryResponse extends \Google\Collection
     return $this->location;
   }
   /**
-   * Output only. The number of rows affected by a DML statement. Present only
-   * for DML statements INSERT, UPDATE or DELETE.
-   *
-   * @param string $numDmlAffectedRows
+   * @param string
    */
   public function setNumDmlAffectedRows($numDmlAffectedRows)
   {
@@ -336,13 +246,7 @@ class QueryResponse extends \Google\Collection
     return $this->numDmlAffectedRows;
   }
   /**
-   * A token used for paging results. A non-empty token indicates that
-   * additional results are available. To see additional results, query the [`jo
-   * bs.getQueryResults`](https://cloud.google.com/bigquery/docs/reference/rest/
-   * v2/jobs/getQueryResults) method. For more information, see [Paging through
-   * table data](https://cloud.google.com/bigquery/docs/paging-results).
-   *
-   * @param string $pageToken
+   * @param string
    */
   public function setPageToken($pageToken)
   {
@@ -356,9 +260,7 @@ class QueryResponse extends \Google\Collection
     return $this->pageToken;
   }
   /**
-   * Auto-generated ID for the query.
-   *
-   * @param string $queryId
+   * @param string
    */
   public function setQueryId($queryId)
   {
@@ -372,11 +274,7 @@ class QueryResponse extends \Google\Collection
     return $this->queryId;
   }
   /**
-   * An object with as many results as can be contained within the maximum
-   * permitted reply size. To get any additional rows, you can call
-   * GetQueryResults and specify the jobReference returned above.
-   *
-   * @param TableRow[] $rows
+   * @param TableRow[]
    */
   public function setRows($rows)
   {
@@ -390,10 +288,7 @@ class QueryResponse extends \Google\Collection
     return $this->rows;
   }
   /**
-   * The schema of the results. Present only when the query completes
-   * successfully.
-   *
-   * @param TableSchema $schema
+   * @param TableSchema
    */
   public function setSchema(TableSchema $schema)
   {
@@ -407,9 +302,7 @@ class QueryResponse extends \Google\Collection
     return $this->schema;
   }
   /**
-   * Output only. Information of the session if this job is part of one.
-   *
-   * @param SessionInfo $sessionInfo
+   * @param SessionInfo
    */
   public function setSessionInfo(SessionInfo $sessionInfo)
   {
@@ -423,11 +316,7 @@ class QueryResponse extends \Google\Collection
     return $this->sessionInfo;
   }
   /**
-   * Output only. Start time of this query, in milliseconds since the epoch.
-   * This field will be present when the query job transitions from the PENDING
-   * state to either RUNNING or DONE.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -441,12 +330,7 @@ class QueryResponse extends \Google\Collection
     return $this->startTime;
   }
   /**
-   * Output only. If the project is configured to use on-demand pricing, then
-   * this field contains the total bytes billed for the job. If the project is
-   * configured to use flat-rate pricing, then you are not billed for bytes and
-   * this field is informational only.
-   *
-   * @param string $totalBytesBilled
+   * @param string
    */
   public function setTotalBytesBilled($totalBytesBilled)
   {
@@ -460,11 +344,7 @@ class QueryResponse extends \Google\Collection
     return $this->totalBytesBilled;
   }
   /**
-   * The total number of bytes processed for this query. If this query was a dry
-   * run, this is the number of bytes that would be processed if the query were
-   * run.
-   *
-   * @param string $totalBytesProcessed
+   * @param string
    */
   public function setTotalBytesProcessed($totalBytesProcessed)
   {
@@ -478,10 +358,7 @@ class QueryResponse extends \Google\Collection
     return $this->totalBytesProcessed;
   }
   /**
-   * The total number of rows in the complete query result set, which can be
-   * more than the number of rows in this single page of results.
-   *
-   * @param string $totalRows
+   * @param string
    */
   public function setTotalRows($totalRows)
   {
@@ -495,9 +372,7 @@ class QueryResponse extends \Google\Collection
     return $this->totalRows;
   }
   /**
-   * Output only. Number of slot ms the user is actually billed for.
-   *
-   * @param string $totalSlotMs
+   * @param string
    */
   public function setTotalSlotMs($totalSlotMs)
   {

@@ -20,34 +20,24 @@ namespace Google\Service\Docs;
 class EmbeddedObjectBorderSuggestionState extends \Google\Model
 {
   /**
-   * Indicates if there was a suggested change to color.
-   *
    * @var bool
    */
   public $colorSuggested;
   /**
-   * Indicates if there was a suggested change to dash_style.
-   *
    * @var bool
    */
   public $dashStyleSuggested;
   /**
-   * Indicates if there was a suggested change to property_state.
-   *
    * @var bool
    */
   public $propertyStateSuggested;
   /**
-   * Indicates if there was a suggested change to width.
-   *
    * @var bool
    */
   public $widthSuggested;
 
   /**
-   * Indicates if there was a suggested change to color.
-   *
-   * @param bool $colorSuggested
+   * @param bool
    */
   public function setColorSuggested($colorSuggested)
   {
@@ -61,9 +51,7 @@ class EmbeddedObjectBorderSuggestionState extends \Google\Model
     return $this->colorSuggested;
   }
   /**
-   * Indicates if there was a suggested change to dash_style.
-   *
-   * @param bool $dashStyleSuggested
+   * @param bool
    */
   public function setDashStyleSuggested($dashStyleSuggested)
   {
@@ -77,9 +65,7 @@ class EmbeddedObjectBorderSuggestionState extends \Google\Model
     return $this->dashStyleSuggested;
   }
   /**
-   * Indicates if there was a suggested change to property_state.
-   *
-   * @param bool $propertyStateSuggested
+   * @param bool
    */
   public function setPropertyStateSuggested($propertyStateSuggested)
   {
@@ -93,9 +79,7 @@ class EmbeddedObjectBorderSuggestionState extends \Google\Model
     return $this->propertyStateSuggested;
   }
   /**
-   * Indicates if there was a suggested change to width.
-   *
-   * @param bool $widthSuggested
+   * @param bool
    */
   public function setWidthSuggested($widthSuggested)
   {

@@ -20,22 +20,16 @@ namespace Google\Service\IdentityToolkit;
 class IdentitytoolkitRelyingpartySignOutUserRequest extends \Google\Model
 {
   /**
-   * Instance id token of the app.
-   *
    * @var string
    */
   public $instanceId;
   /**
-   * The local ID of the user.
-   *
    * @var string
    */
   public $localId;
 
   /**
-   * Instance id token of the app.
-   *
-   * @param string $instanceId
+   * @param string
    */
   public function setInstanceId($instanceId)
   {
@@ -49,9 +43,7 @@ class IdentitytoolkitRelyingpartySignOutUserRequest extends \Google\Model
     return $this->instanceId;
   }
   /**
-   * The local ID of the user.
-   *
-   * @param string $localId
+   * @param string
    */
   public function setLocalId($localId)
   {

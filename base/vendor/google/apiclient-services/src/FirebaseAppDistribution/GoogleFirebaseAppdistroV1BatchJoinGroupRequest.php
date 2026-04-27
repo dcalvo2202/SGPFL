@@ -21,25 +21,16 @@ class GoogleFirebaseAppdistroV1BatchJoinGroupRequest extends \Google\Collection
 {
   protected $collection_key = 'emails';
   /**
-   * Indicates whether to create tester resources based on `emails` if they
-   * don't exist yet.
-   *
    * @var bool
    */
   public $createMissingTesters;
   /**
-   * Required. The emails of the testers to be added to the group. A maximum of
-   * 999 and a minimum of 1 tester can be created in a batch.
-   *
    * @var string[]
    */
   public $emails;
 
   /**
-   * Indicates whether to create tester resources based on `emails` if they
-   * don't exist yet.
-   *
-   * @param bool $createMissingTesters
+   * @param bool
    */
   public function setCreateMissingTesters($createMissingTesters)
   {
@@ -53,10 +44,7 @@ class GoogleFirebaseAppdistroV1BatchJoinGroupRequest extends \Google\Collection
     return $this->createMissingTesters;
   }
   /**
-   * Required. The emails of the testers to be added to the group. A maximum of
-   * 999 and a minimum of 1 tester can be created in a batch.
-   *
-   * @param string[] $emails
+   * @param string[]
    */
   public function setEmails($emails)
   {

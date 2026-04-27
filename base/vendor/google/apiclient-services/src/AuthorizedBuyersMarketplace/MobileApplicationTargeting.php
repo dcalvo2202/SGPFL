@@ -23,10 +23,7 @@ class MobileApplicationTargeting extends \Google\Model
   protected $firstPartyTargetingDataType = '';
 
   /**
-   * Publisher owned apps to be targeted or excluded by the publisher to display
-   * the ads in.
-   *
-   * @param FirstPartyMobileApplicationTargeting $firstPartyTargeting
+   * @param FirstPartyMobileApplicationTargeting
    */
   public function setFirstPartyTargeting(FirstPartyMobileApplicationTargeting $firstPartyTargeting)
   {

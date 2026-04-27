@@ -24,9 +24,7 @@ class Tpu extends \Google\Collection
   protected $nodeSpecDataType = 'array';
 
   /**
-   * Optional. The TPU node(s) being requested.
-   *
-   * @param NodeSpec[] $nodeSpec
+   * @param NodeSpec[]
    */
   public function setNodeSpec($nodeSpec)
   {

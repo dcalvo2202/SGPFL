@@ -21,8 +21,6 @@ class ReportWorkItemStatusResponse extends \Google\Collection
 {
   protected $collection_key = 'workItemServiceStates';
   /**
-   * Untranslated bag-of-bytes WorkProgressUpdateResponse for UnifiedWorker.
-   *
    * @var array[]
    */
   public $unifiedWorkerResponse;
@@ -30,9 +28,7 @@ class ReportWorkItemStatusResponse extends \Google\Collection
   protected $workItemServiceStatesDataType = 'array';
 
   /**
-   * Untranslated bag-of-bytes WorkProgressUpdateResponse for UnifiedWorker.
-   *
-   * @param array[] $unifiedWorkerResponse
+   * @param array[]
    */
   public function setUnifiedWorkerResponse($unifiedWorkerResponse)
   {
@@ -46,11 +42,7 @@ class ReportWorkItemStatusResponse extends \Google\Collection
     return $this->unifiedWorkerResponse;
   }
   /**
-   * A set of messages indicating the service-side state for each WorkItem whose
-   * status was reported, in the same order as the WorkItemStatus messages in
-   * the ReportWorkItemStatusRequest which resulting in this response.
-   *
-   * @param WorkItemServiceState[] $workItemServiceStates
+   * @param WorkItemServiceState[]
    */
   public function setWorkItemServiceStates($workItemServiceStates)
   {

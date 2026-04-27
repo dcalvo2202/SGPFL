@@ -20,24 +20,16 @@ namespace Google\Service\ShoppingContent;
 class PaymentServiceProviderLinkInfo extends \Google\Model
 {
   /**
-   * The business country of the merchant account as identified by the third
-   * party service provider.
-   *
    * @var string
    */
   public $externalAccountBusinessCountry;
   /**
-   * The id used by the third party service provider to identify the merchant.
-   *
    * @var string
    */
   public $externalAccountId;
 
   /**
-   * The business country of the merchant account as identified by the third
-   * party service provider.
-   *
-   * @param string $externalAccountBusinessCountry
+   * @param string
    */
   public function setExternalAccountBusinessCountry($externalAccountBusinessCountry)
   {
@@ -51,9 +43,7 @@ class PaymentServiceProviderLinkInfo extends \Google\Model
     return $this->externalAccountBusinessCountry;
   }
   /**
-   * The id used by the third party service provider to identify the merchant.
-   *
-   * @param string $externalAccountId
+   * @param string
    */
   public function setExternalAccountId($externalAccountId)
   {

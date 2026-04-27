@@ -20,24 +20,18 @@ namespace Google\Service\PeopleService;
 class UserDefined extends \Google\Model
 {
   /**
-   * The end user specified key of the user defined data.
-   *
    * @var string
    */
   public $key;
   protected $metadataType = FieldMetadata::class;
   protected $metadataDataType = '';
   /**
-   * The end user specified value of the user defined data.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * The end user specified key of the user defined data.
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {
@@ -51,9 +45,7 @@ class UserDefined extends \Google\Model
     return $this->key;
   }
   /**
-   * Metadata about the user defined data.
-   *
-   * @param FieldMetadata $metadata
+   * @param FieldMetadata
    */
   public function setMetadata(FieldMetadata $metadata)
   {
@@ -67,9 +59,7 @@ class UserDefined extends \Google\Model
     return $this->metadata;
   }
   /**
-   * The end user specified value of the user defined data.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

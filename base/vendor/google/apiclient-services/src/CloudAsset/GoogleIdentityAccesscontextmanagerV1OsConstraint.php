@@ -20,63 +20,20 @@ namespace Google\Service\CloudAsset;
 class GoogleIdentityAccesscontextmanagerV1OsConstraint extends \Google\Model
 {
   /**
-   * The operating system of the device is not specified or not known.
-   */
-  public const OS_TYPE_OS_UNSPECIFIED = 'OS_UNSPECIFIED';
-  /**
-   * A desktop Mac operating system.
-   */
-  public const OS_TYPE_DESKTOP_MAC = 'DESKTOP_MAC';
-  /**
-   * A desktop Windows operating system.
-   */
-  public const OS_TYPE_DESKTOP_WINDOWS = 'DESKTOP_WINDOWS';
-  /**
-   * A desktop Linux operating system.
-   */
-  public const OS_TYPE_DESKTOP_LINUX = 'DESKTOP_LINUX';
-  /**
-   * A desktop ChromeOS operating system.
-   */
-  public const OS_TYPE_DESKTOP_CHROME_OS = 'DESKTOP_CHROME_OS';
-  /**
-   * An Android operating system.
-   */
-  public const OS_TYPE_ANDROID = 'ANDROID';
-  /**
-   * An iOS operating system.
-   */
-  public const OS_TYPE_IOS = 'IOS';
-  /**
-   * The minimum allowed OS version. If not set, any version of this OS
-   * satisfies the constraint. Format: `"major.minor.patch"`. Examples:
-   * `"10.5.301"`, `"9.2.1"`.
-   *
    * @var string
    */
   public $minimumVersion;
   /**
-   * Required. The allowed OS type.
-   *
    * @var string
    */
   public $osType;
   /**
-   * Only allows requests from devices with a verified Chrome OS. Verifications
-   * includes requirements that the device is enterprise-managed, conformant to
-   * domain policies, and the caller has permission to call the API targeted by
-   * the request.
-   *
    * @var bool
    */
   public $requireVerifiedChromeOs;
 
   /**
-   * The minimum allowed OS version. If not set, any version of this OS
-   * satisfies the constraint. Format: `"major.minor.patch"`. Examples:
-   * `"10.5.301"`, `"9.2.1"`.
-   *
-   * @param string $minimumVersion
+   * @param string
    */
   public function setMinimumVersion($minimumVersion)
   {
@@ -90,31 +47,21 @@ class GoogleIdentityAccesscontextmanagerV1OsConstraint extends \Google\Model
     return $this->minimumVersion;
   }
   /**
-   * Required. The allowed OS type.
-   *
-   * Accepted values: OS_UNSPECIFIED, DESKTOP_MAC, DESKTOP_WINDOWS,
-   * DESKTOP_LINUX, DESKTOP_CHROME_OS, ANDROID, IOS
-   *
-   * @param self::OS_TYPE_* $osType
+   * @param string
    */
   public function setOsType($osType)
   {
     $this->osType = $osType;
   }
   /**
-   * @return self::OS_TYPE_*
+   * @return string
    */
   public function getOsType()
   {
     return $this->osType;
   }
   /**
-   * Only allows requests from devices with a verified Chrome OS. Verifications
-   * includes requirements that the device is enterprise-managed, conformant to
-   * domain policies, and the caller has permission to call the API targeted by
-   * the request.
-   *
-   * @param bool $requireVerifiedChromeOs
+   * @param bool
    */
   public function setRequireVerifiedChromeOs($requireVerifiedChromeOs)
   {

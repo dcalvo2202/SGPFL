@@ -21,31 +21,22 @@ class SiteCompanionSetting extends \Google\Collection
 {
   protected $collection_key = 'enabledSizes';
   /**
-   * Whether companions are disabled for this site template.
-   *
    * @var bool
    */
   public $companionsDisabled;
   protected $enabledSizesType = Size::class;
   protected $enabledSizesDataType = 'array';
   /**
-   * Whether to serve only static images as companions.
-   *
    * @var bool
    */
   public $imageOnly;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#siteCompanionSetting".
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * Whether companions are disabled for this site template.
-   *
-   * @param bool $companionsDisabled
+   * @param bool
    */
   public function setCompanionsDisabled($companionsDisabled)
   {
@@ -59,10 +50,7 @@ class SiteCompanionSetting extends \Google\Collection
     return $this->companionsDisabled;
   }
   /**
-   * Allowlist of companion sizes to be served via this site template. Set this
-   * list to null or empty to serve all companion sizes.
-   *
-   * @param Size[] $enabledSizes
+   * @param Size[]
    */
   public function setEnabledSizes($enabledSizes)
   {
@@ -76,9 +64,7 @@ class SiteCompanionSetting extends \Google\Collection
     return $this->enabledSizes;
   }
   /**
-   * Whether to serve only static images as companions.
-   *
-   * @param bool $imageOnly
+   * @param bool
    */
   public function setImageOnly($imageOnly)
   {
@@ -92,10 +78,7 @@ class SiteCompanionSetting extends \Google\Collection
     return $this->imageOnly;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#siteCompanionSetting".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

@@ -20,34 +20,20 @@ namespace Google\Service\ServiceConsumerManagement;
 class AttachTenantProjectRequest extends \Google\Model
 {
   /**
-   * When attaching an external project, this is in the format of
-   * `projects/{project_number}`.
-   *
    * @var string
    */
   public $externalResource;
   /**
-   * When attaching a reserved project already in tenancy units, this is the tag
-   * of a tenant resource under the tenancy unit for the managed service's
-   * service producer project. The reserved tenant resource must be in an active
-   * state.
-   *
    * @var string
    */
   public $reservedResource;
   /**
-   * Required. Tag of the tenant resource after attachment. Must be less than
-   * 128 characters. Required.
-   *
    * @var string
    */
   public $tag;
 
   /**
-   * When attaching an external project, this is in the format of
-   * `projects/{project_number}`.
-   *
-   * @param string $externalResource
+   * @param string
    */
   public function setExternalResource($externalResource)
   {
@@ -61,12 +47,7 @@ class AttachTenantProjectRequest extends \Google\Model
     return $this->externalResource;
   }
   /**
-   * When attaching a reserved project already in tenancy units, this is the tag
-   * of a tenant resource under the tenancy unit for the managed service's
-   * service producer project. The reserved tenant resource must be in an active
-   * state.
-   *
-   * @param string $reservedResource
+   * @param string
    */
   public function setReservedResource($reservedResource)
   {
@@ -80,10 +61,7 @@ class AttachTenantProjectRequest extends \Google\Model
     return $this->reservedResource;
   }
   /**
-   * Required. Tag of the tenant resource after attachment. Must be less than
-   * 128 characters. Required.
-   *
-   * @param string $tag
+   * @param string
    */
   public function setTag($tag)
   {

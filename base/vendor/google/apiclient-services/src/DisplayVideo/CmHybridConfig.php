@@ -21,62 +21,36 @@ class CmHybridConfig extends \Google\Collection
 {
   protected $collection_key = 'cmSyncableSiteIds';
   /**
-   * Required. Immutable. Account ID of the CM360 Floodlight configuration
-   * linked with the DV360 advertiser.
-   *
    * @var string
    */
   public $cmAccountId;
   /**
-   * Output only. The set of CM360 Advertiser IDs sharing the CM360 Floodlight
-   * configuration.
-   *
    * @var string[]
    */
   public $cmAdvertiserIds;
   /**
-   * Required. Immutable. ID of the CM360 Floodlight configuration linked with
-   * the DV360 advertiser.
-   *
    * @var string
    */
   public $cmFloodlightConfigId;
   /**
-   * Required. Immutable. By setting this field to `true`, you, on behalf of
-   * your company, authorize the sharing of information from the given
-   * Floodlight configuration to this Display & Video 360 advertiser.
-   *
    * @var bool
    */
   public $cmFloodlightLinkingAuthorized;
   /**
-   * A list of CM360 sites whose placements will be synced to DV360 as
-   * creatives. If absent or empty in CreateAdvertiser method, the system will
-   * automatically create a CM360 site. Removing sites from this list may cause
-   * DV360 creatives synced from CM360 to be deleted. At least one site must be
-   * specified.
-   *
    * @var string[]
    */
   public $cmSyncableSiteIds;
   /**
-   * Whether or not to report DV360 cost to CM360.
-   *
    * @var bool
    */
   public $dv360ToCmCostReportingEnabled;
   /**
-   * Whether or not to include DV360 data in CM360 data transfer reports.
-   *
    * @var bool
    */
   public $dv360ToCmDataSharingEnabled;
 
   /**
-   * Required. Immutable. Account ID of the CM360 Floodlight configuration
-   * linked with the DV360 advertiser.
-   *
-   * @param string $cmAccountId
+   * @param string
    */
   public function setCmAccountId($cmAccountId)
   {
@@ -90,10 +64,7 @@ class CmHybridConfig extends \Google\Collection
     return $this->cmAccountId;
   }
   /**
-   * Output only. The set of CM360 Advertiser IDs sharing the CM360 Floodlight
-   * configuration.
-   *
-   * @param string[] $cmAdvertiserIds
+   * @param string[]
    */
   public function setCmAdvertiserIds($cmAdvertiserIds)
   {
@@ -107,10 +78,7 @@ class CmHybridConfig extends \Google\Collection
     return $this->cmAdvertiserIds;
   }
   /**
-   * Required. Immutable. ID of the CM360 Floodlight configuration linked with
-   * the DV360 advertiser.
-   *
-   * @param string $cmFloodlightConfigId
+   * @param string
    */
   public function setCmFloodlightConfigId($cmFloodlightConfigId)
   {
@@ -124,11 +92,7 @@ class CmHybridConfig extends \Google\Collection
     return $this->cmFloodlightConfigId;
   }
   /**
-   * Required. Immutable. By setting this field to `true`, you, on behalf of
-   * your company, authorize the sharing of information from the given
-   * Floodlight configuration to this Display & Video 360 advertiser.
-   *
-   * @param bool $cmFloodlightLinkingAuthorized
+   * @param bool
    */
   public function setCmFloodlightLinkingAuthorized($cmFloodlightLinkingAuthorized)
   {
@@ -142,13 +106,7 @@ class CmHybridConfig extends \Google\Collection
     return $this->cmFloodlightLinkingAuthorized;
   }
   /**
-   * A list of CM360 sites whose placements will be synced to DV360 as
-   * creatives. If absent or empty in CreateAdvertiser method, the system will
-   * automatically create a CM360 site. Removing sites from this list may cause
-   * DV360 creatives synced from CM360 to be deleted. At least one site must be
-   * specified.
-   *
-   * @param string[] $cmSyncableSiteIds
+   * @param string[]
    */
   public function setCmSyncableSiteIds($cmSyncableSiteIds)
   {
@@ -162,9 +120,7 @@ class CmHybridConfig extends \Google\Collection
     return $this->cmSyncableSiteIds;
   }
   /**
-   * Whether or not to report DV360 cost to CM360.
-   *
-   * @param bool $dv360ToCmCostReportingEnabled
+   * @param bool
    */
   public function setDv360ToCmCostReportingEnabled($dv360ToCmCostReportingEnabled)
   {
@@ -178,9 +134,7 @@ class CmHybridConfig extends \Google\Collection
     return $this->dv360ToCmCostReportingEnabled;
   }
   /**
-   * Whether or not to include DV360 data in CM360 data transfer reports.
-   *
-   * @param bool $dv360ToCmDataSharingEnabled
+   * @param bool
    */
   public function setDv360ToCmDataSharingEnabled($dv360ToCmDataSharingEnabled)
   {

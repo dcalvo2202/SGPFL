@@ -22,16 +22,12 @@ class GoogleCloudContactcenterinsightsV1ExportIssueModelRequest extends \Google\
   protected $gcsDestinationType = GoogleCloudContactcenterinsightsV1ExportIssueModelRequestGcsDestination::class;
   protected $gcsDestinationDataType = '';
   /**
-   * Required. The issue model to export.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Google Cloud Storage URI to export the issue model to.
-   *
-   * @param GoogleCloudContactcenterinsightsV1ExportIssueModelRequestGcsDestination $gcsDestination
+   * @param GoogleCloudContactcenterinsightsV1ExportIssueModelRequestGcsDestination
    */
   public function setGcsDestination(GoogleCloudContactcenterinsightsV1ExportIssueModelRequestGcsDestination $gcsDestination)
   {
@@ -45,9 +41,7 @@ class GoogleCloudContactcenterinsightsV1ExportIssueModelRequest extends \Google\
     return $this->gcsDestination;
   }
   /**
-   * Required. The issue model to export.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

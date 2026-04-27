@@ -20,22 +20,16 @@ namespace Google\Service\DatabaseMigrationService;
 class SinglePackageChange extends \Google\Model
 {
   /**
-   * Optional. Sql code for package body
-   *
    * @var string
    */
   public $packageBody;
   /**
-   * Optional. Sql code for package description
-   *
    * @var string
    */
   public $packageDescription;
 
   /**
-   * Optional. Sql code for package body
-   *
-   * @param string $packageBody
+   * @param string
    */
   public function setPackageBody($packageBody)
   {
@@ -49,9 +43,7 @@ class SinglePackageChange extends \Google\Model
     return $this->packageBody;
   }
   /**
-   * Optional. Sql code for package description
-   *
-   * @param string $packageDescription
+   * @param string
    */
   public function setPackageDescription($packageDescription)
   {

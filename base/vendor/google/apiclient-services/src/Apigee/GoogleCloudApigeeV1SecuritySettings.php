@@ -20,25 +20,16 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1SecuritySettings extends \Google\Model
 {
   /**
-   * Optional. If true the user consents to the use of ML models for Abuse
-   * detection.
-   *
    * @var bool
    */
   public $mlRetrainingFeedbackEnabled;
   /**
-   * Identifier. Full resource name is always
-   * `organizations/{org}/securitySettings`.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Optional. If true the user consents to the use of ML models for Abuse
-   * detection.
-   *
-   * @param bool $mlRetrainingFeedbackEnabled
+   * @param bool
    */
   public function setMlRetrainingFeedbackEnabled($mlRetrainingFeedbackEnabled)
   {
@@ -52,10 +43,7 @@ class GoogleCloudApigeeV1SecuritySettings extends \Google\Model
     return $this->mlRetrainingFeedbackEnabled;
   }
   /**
-   * Identifier. Full resource name is always
-   * `organizations/{org}/securitySettings`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

@@ -21,9 +21,6 @@ class SearchResponse extends \Google\Collection
 {
   protected $collection_key = 'results';
   /**
-   * Token which can be sent as `page_token` to retrieve the next page. If
-   * omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class SearchResponse extends \Google\Collection
   protected $resultsDataType = 'array';
 
   /**
-   * Token which can be sent as `page_token` to retrieve the next page. If
-   * omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class SearchResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Rows that matched the search query.
-   *
-   * @param ReportRow[] $results
+   * @param ReportRow[]
    */
   public function setResults($results)
   {

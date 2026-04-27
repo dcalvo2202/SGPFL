@@ -23,9 +23,7 @@ class StragglerDebuggingInfo extends \Google\Model
   protected $hotKeyDataType = '';
 
   /**
-   * Hot key debugging details.
-   *
-   * @param HotKeyDebuggingInfo $hotKey
+   * @param HotKeyDebuggingInfo
    */
   public function setHotKey(HotKeyDebuggingInfo $hotKey)
   {

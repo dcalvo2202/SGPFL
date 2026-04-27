@@ -20,8 +20,6 @@ namespace Google\Service\Directory;
 class CreatePrinterRequest extends \Google\Model
 {
   /**
-   * Required. The name of the customer. Format: customers/{customer_id}
-   *
    * @var string
    */
   public $parent;
@@ -29,9 +27,7 @@ class CreatePrinterRequest extends \Google\Model
   protected $printerDataType = '';
 
   /**
-   * Required. The name of the customer. Format: customers/{customer_id}
-   *
-   * @param string $parent
+   * @param string
    */
   public function setParent($parent)
   {
@@ -45,11 +41,7 @@ class CreatePrinterRequest extends \Google\Model
     return $this->parent;
   }
   /**
-   * Required. A printer to create. If you want to place the printer under
-   * particular OU then populate printer.org_unit_id filed. Otherwise the
-   * printer will be placed under root OU.
-   *
-   * @param Printer $printer
+   * @param Printer
    */
   public function setPrinter(Printer $printer)
   {

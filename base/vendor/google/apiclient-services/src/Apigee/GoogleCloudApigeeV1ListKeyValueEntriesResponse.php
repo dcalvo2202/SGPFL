@@ -23,17 +23,12 @@ class GoogleCloudApigeeV1ListKeyValueEntriesResponse extends \Google\Collection
   protected $keyValueEntriesType = GoogleCloudApigeeV1KeyValueEntry::class;
   protected $keyValueEntriesDataType = 'array';
   /**
-   * Token that can be sent as `next_page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * One or more key value map keys and values.
-   *
-   * @param GoogleCloudApigeeV1KeyValueEntry[] $keyValueEntries
+   * @param GoogleCloudApigeeV1KeyValueEntry[]
    */
   public function setKeyValueEntries($keyValueEntries)
   {
@@ -47,10 +42,7 @@ class GoogleCloudApigeeV1ListKeyValueEntriesResponse extends \Google\Collection
     return $this->keyValueEntries;
   }
   /**
-   * Token that can be sent as `next_page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

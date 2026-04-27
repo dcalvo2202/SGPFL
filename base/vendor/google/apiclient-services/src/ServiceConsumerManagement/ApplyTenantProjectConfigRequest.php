@@ -22,16 +22,12 @@ class ApplyTenantProjectConfigRequest extends \Google\Model
   protected $projectConfigType = TenantProjectConfig::class;
   protected $projectConfigDataType = '';
   /**
-   * Required. Tag of the project. Must be less than 128 characters. Required.
-   *
    * @var string
    */
   public $tag;
 
   /**
-   * Configuration that should be applied to the existing tenant project.
-   *
-   * @param TenantProjectConfig $projectConfig
+   * @param TenantProjectConfig
    */
   public function setProjectConfig(TenantProjectConfig $projectConfig)
   {
@@ -45,9 +41,7 @@ class ApplyTenantProjectConfigRequest extends \Google\Model
     return $this->projectConfig;
   }
   /**
-   * Required. Tag of the project. Must be less than 128 characters. Required.
-   *
-   * @param string $tag
+   * @param string
    */
   public function setTag($tag)
   {

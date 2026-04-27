@@ -20,23 +20,6 @@ namespace Google\Service\CloudSearch;
 class IndexItemRequest extends \Google\Model
 {
   /**
-   * The priority is not specified in the update request. Leaving priority
-   * unspecified results in an update failure.
-   */
-  public const MODE_UNSPECIFIED = 'UNSPECIFIED';
-  /**
-   * For real-time updates.
-   */
-  public const MODE_SYNCHRONOUS = 'SYNCHRONOUS';
-  /**
-   * For changes that are executed after the response is sent back to the
-   * caller.
-   */
-  public const MODE_ASYNCHRONOUS = 'ASYNCHRONOUS';
-  /**
-   * The name of connector making this call. Format:
-   * datasources/{source_id}/connectors/{ID}
-   *
    * @var string
    */
   public $connectorName;
@@ -47,17 +30,12 @@ class IndexItemRequest extends \Google\Model
   protected $itemType = Item::class;
   protected $itemDataType = '';
   /**
-   * Required. The RequestMode for this request.
-   *
    * @var string
    */
   public $mode;
 
   /**
-   * The name of connector making this call. Format:
-   * datasources/{source_id}/connectors/{ID}
-   *
-   * @param string $connectorName
+   * @param string
    */
   public function setConnectorName($connectorName)
   {
@@ -71,9 +49,7 @@ class IndexItemRequest extends \Google\Model
     return $this->connectorName;
   }
   /**
-   * Common debug options.
-   *
-   * @param DebugOptions $debugOptions
+   * @param DebugOptions
    */
   public function setDebugOptions(DebugOptions $debugOptions)
   {
@@ -87,7 +63,7 @@ class IndexItemRequest extends \Google\Model
     return $this->debugOptions;
   }
   /**
-   * @param IndexItemOptions $indexItemOptions
+   * @param IndexItemOptions
    */
   public function setIndexItemOptions(IndexItemOptions $indexItemOptions)
   {
@@ -101,9 +77,7 @@ class IndexItemRequest extends \Google\Model
     return $this->indexItemOptions;
   }
   /**
-   * The name of the item. Format: datasources/{source_id}/items/{item_id}
-   *
-   * @param Item $item
+   * @param Item
    */
   public function setItem(Item $item)
   {
@@ -117,18 +91,14 @@ class IndexItemRequest extends \Google\Model
     return $this->item;
   }
   /**
-   * Required. The RequestMode for this request.
-   *
-   * Accepted values: UNSPECIFIED, SYNCHRONOUS, ASYNCHRONOUS
-   *
-   * @param self::MODE_* $mode
+   * @param string
    */
   public function setMode($mode)
   {
     $this->mode = $mode;
   }
   /**
-   * @return self::MODE_*
+   * @return string
    */
   public function getMode()
   {

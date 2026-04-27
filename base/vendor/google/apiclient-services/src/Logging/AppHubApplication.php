@@ -20,30 +20,20 @@ namespace Google\Service\Logging;
 class AppHubApplication extends \Google\Model
 {
   /**
-   * Resource container that owns the application. Example:
-   * "projects/management_project"
-   *
    * @var string
    */
   public $container;
   /**
-   * Application Id. Example: "my-app"
-   *
    * @var string
    */
   public $id;
   /**
-   * Location associated with the Application. Example: "us-east1"
-   *
    * @var string
    */
   public $location;
 
   /**
-   * Resource container that owns the application. Example:
-   * "projects/management_project"
-   *
-   * @param string $container
+   * @param string
    */
   public function setContainer($container)
   {
@@ -57,9 +47,7 @@ class AppHubApplication extends \Google\Model
     return $this->container;
   }
   /**
-   * Application Id. Example: "my-app"
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -73,9 +61,7 @@ class AppHubApplication extends \Google\Model
     return $this->id;
   }
   /**
-   * Location associated with the Application. Example: "us-east1"
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {

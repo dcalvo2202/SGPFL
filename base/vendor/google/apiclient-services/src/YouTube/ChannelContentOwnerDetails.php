@@ -20,22 +20,16 @@ namespace Google\Service\YouTube;
 class ChannelContentOwnerDetails extends \Google\Model
 {
   /**
-   * The ID of the content owner linked to the channel.
-   *
    * @var string
    */
   public $contentOwner;
   /**
-   * The date and time when the channel was linked to the content owner.
-   *
    * @var string
    */
   public $timeLinked;
 
   /**
-   * The ID of the content owner linked to the channel.
-   *
-   * @param string $contentOwner
+   * @param string
    */
   public function setContentOwner($contentOwner)
   {
@@ -49,9 +43,7 @@ class ChannelContentOwnerDetails extends \Google\Model
     return $this->contentOwner;
   }
   /**
-   * The date and time when the channel was linked to the content owner.
-   *
-   * @param string $timeLinked
+   * @param string
    */
   public function setTimeLinked($timeLinked)
   {

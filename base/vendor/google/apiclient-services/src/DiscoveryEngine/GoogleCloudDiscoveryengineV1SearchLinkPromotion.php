@@ -20,50 +20,32 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1SearchLinkPromotion extends \Google\Model
 {
   /**
-   * Optional. The Promotion description. Maximum length: 200 characters.
-   *
    * @var string
    */
   public $description;
   /**
-   * Optional. The Document the user wants to promote. For site search, leave
-   * unset and only populate uri. Can be set along with uri.
-   *
    * @var string
    */
   public $document;
   /**
-   * Optional. The enabled promotion will be returned for any serving configs
-   * associated with the parent of the control this promotion is attached to.
-   * This flag is used for basic site search only.
-   *
    * @var bool
    */
   public $enabled;
   /**
-   * Optional. The promotion thumbnail image url.
-   *
    * @var string
    */
   public $imageUri;
   /**
-   * Required. The title of the promotion. Maximum length: 160 characters.
-   *
    * @var string
    */
   public $title;
   /**
-   * Optional. The URL for the page the user wants to promote. Must be set for
-   * site search. For other verticals, this is optional.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * Optional. The Promotion description. Maximum length: 200 characters.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -77,10 +59,7 @@ class GoogleCloudDiscoveryengineV1SearchLinkPromotion extends \Google\Model
     return $this->description;
   }
   /**
-   * Optional. The Document the user wants to promote. For site search, leave
-   * unset and only populate uri. Can be set along with uri.
-   *
-   * @param string $document
+   * @param string
    */
   public function setDocument($document)
   {
@@ -94,11 +73,7 @@ class GoogleCloudDiscoveryengineV1SearchLinkPromotion extends \Google\Model
     return $this->document;
   }
   /**
-   * Optional. The enabled promotion will be returned for any serving configs
-   * associated with the parent of the control this promotion is attached to.
-   * This flag is used for basic site search only.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {
@@ -112,9 +87,7 @@ class GoogleCloudDiscoveryengineV1SearchLinkPromotion extends \Google\Model
     return $this->enabled;
   }
   /**
-   * Optional. The promotion thumbnail image url.
-   *
-   * @param string $imageUri
+   * @param string
    */
   public function setImageUri($imageUri)
   {
@@ -128,9 +101,7 @@ class GoogleCloudDiscoveryengineV1SearchLinkPromotion extends \Google\Model
     return $this->imageUri;
   }
   /**
-   * Required. The title of the promotion. Maximum length: 160 characters.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -144,10 +115,7 @@ class GoogleCloudDiscoveryengineV1SearchLinkPromotion extends \Google\Model
     return $this->title;
   }
   /**
-   * Optional. The URL for the page the user wants to promote. Must be set for
-   * site search. For other verticals, this is optional.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

@@ -23,22 +23,16 @@ class ListAuthzExtensionsResponse extends \Google\Collection
   protected $authzExtensionsType = AuthzExtension::class;
   protected $authzExtensionsDataType = 'array';
   /**
-   * A token identifying a page of results that the server returns.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * The list of `AuthzExtension` resources.
-   *
-   * @param AuthzExtension[] $authzExtensions
+   * @param AuthzExtension[]
    */
   public function setAuthzExtensions($authzExtensions)
   {
@@ -52,9 +46,7 @@ class ListAuthzExtensionsResponse extends \Google\Collection
     return $this->authzExtensions;
   }
   /**
-   * A token identifying a page of results that the server returns.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -68,9 +60,7 @@ class ListAuthzExtensionsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

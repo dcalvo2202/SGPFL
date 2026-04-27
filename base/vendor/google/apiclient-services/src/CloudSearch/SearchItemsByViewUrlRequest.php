@@ -22,23 +22,16 @@ class SearchItemsByViewUrlRequest extends \Google\Model
   protected $debugOptionsType = DebugOptions::class;
   protected $debugOptionsDataType = '';
   /**
-   * The next_page_token value returned from a previous request, if any.
-   *
    * @var string
    */
   public $pageToken;
   /**
-   * Specify the full view URL to find the corresponding item. The maximum
-   * length is 2048 characters.
-   *
    * @var string
    */
   public $viewUrl;
 
   /**
-   * Common debug options.
-   *
-   * @param DebugOptions $debugOptions
+   * @param DebugOptions
    */
   public function setDebugOptions(DebugOptions $debugOptions)
   {
@@ -52,9 +45,7 @@ class SearchItemsByViewUrlRequest extends \Google\Model
     return $this->debugOptions;
   }
   /**
-   * The next_page_token value returned from a previous request, if any.
-   *
-   * @param string $pageToken
+   * @param string
    */
   public function setPageToken($pageToken)
   {
@@ -68,10 +59,7 @@ class SearchItemsByViewUrlRequest extends \Google\Model
     return $this->pageToken;
   }
   /**
-   * Specify the full view URL to find the corresponding item. The maximum
-   * length is 2048 characters.
-   *
-   * @param string $viewUrl
+   * @param string
    */
   public function setViewUrl($viewUrl)
   {

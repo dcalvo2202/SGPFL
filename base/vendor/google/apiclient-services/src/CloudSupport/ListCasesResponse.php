@@ -23,19 +23,12 @@ class ListCasesResponse extends \Google\Collection
   protected $casesType = CloudsupportCase::class;
   protected $casesDataType = 'array';
   /**
-   * A token to retrieve the next page of results. Set this in the `page_token`
-   * field of subsequent `cases.list` requests. If unspecified, there are no
-   * more results to retrieve.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of cases associated with the parent after any filters have been
-   * applied.
-   *
-   * @param CloudsupportCase[] $cases
+   * @param CloudsupportCase[]
    */
   public function setCases($cases)
   {
@@ -49,11 +42,7 @@ class ListCasesResponse extends \Google\Collection
     return $this->cases;
   }
   /**
-   * A token to retrieve the next page of results. Set this in the `page_token`
-   * field of subsequent `cases.list` requests. If unspecified, there are no
-   * more results to retrieve.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

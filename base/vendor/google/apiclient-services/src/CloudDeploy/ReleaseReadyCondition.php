@@ -20,22 +20,12 @@ namespace Google\Service\CloudDeploy;
 class ReleaseReadyCondition extends \Google\Model
 {
   /**
-   * True if the Release is in a valid state. Otherwise at least one condition
-   * in `ReleaseCondition` is in an invalid state. Iterate over those conditions
-   * and see which condition(s) has status = false to find out what is wrong
-   * with the Release.
-   *
    * @var bool
    */
   public $status;
 
   /**
-   * True if the Release is in a valid state. Otherwise at least one condition
-   * in `ReleaseCondition` is in an invalid state. Iterate over those conditions
-   * and see which condition(s) has status = false to find out what is wrong
-   * with the Release.
-   *
-   * @param bool $status
+   * @param bool
    */
   public function setStatus($status)
   {

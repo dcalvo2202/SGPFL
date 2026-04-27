@@ -20,8 +20,6 @@ namespace Google\Service\TagManager;
 class QuickPreviewResponse extends \Google\Model
 {
   /**
-   * Were there compiler errors or not.
-   *
    * @var bool
    */
   public $compilerError;
@@ -31,9 +29,7 @@ class QuickPreviewResponse extends \Google\Model
   protected $syncStatusDataType = '';
 
   /**
-   * Were there compiler errors or not.
-   *
-   * @param bool $compilerError
+   * @param bool
    */
   public function setCompilerError($compilerError)
   {
@@ -47,9 +43,7 @@ class QuickPreviewResponse extends \Google\Model
     return $this->compilerError;
   }
   /**
-   * The quick previewed container version.
-   *
-   * @param ContainerVersion $containerVersion
+   * @param ContainerVersion
    */
   public function setContainerVersion(ContainerVersion $containerVersion)
   {
@@ -63,10 +57,7 @@ class QuickPreviewResponse extends \Google\Model
     return $this->containerVersion;
   }
   /**
-   * Whether quick previewing failed when syncing the workspace to the latest
-   * container version.
-   *
-   * @param SyncStatus $syncStatus
+   * @param SyncStatus
    */
   public function setSyncStatus(SyncStatus $syncStatus)
   {

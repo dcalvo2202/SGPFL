@@ -20,42 +20,16 @@ namespace Google\Service\APIhub;
 class GoogleCloudApihubV1SummaryEntry extends \Google\Model
 {
   /**
-   * Severity unspecified.
-   */
-  public const SEVERITY_SEVERITY_UNSPECIFIED = 'SEVERITY_UNSPECIFIED';
-  /**
-   * Severity error.
-   */
-  public const SEVERITY_SEVERITY_ERROR = 'SEVERITY_ERROR';
-  /**
-   * Severity warning.
-   */
-  public const SEVERITY_SEVERITY_WARNING = 'SEVERITY_WARNING';
-  /**
-   * Severity info.
-   */
-  public const SEVERITY_SEVERITY_INFO = 'SEVERITY_INFO';
-  /**
-   * Severity hint.
-   */
-  public const SEVERITY_SEVERITY_HINT = 'SEVERITY_HINT';
-  /**
-   * Required. Count of issues with the given severity.
-   *
    * @var int
    */
   public $count;
   /**
-   * Required. Severity of the issue.
-   *
    * @var string
    */
   public $severity;
 
   /**
-   * Required. Count of issues with the given severity.
-   *
-   * @param int $count
+   * @param int
    */
   public function setCount($count)
   {
@@ -69,19 +43,14 @@ class GoogleCloudApihubV1SummaryEntry extends \Google\Model
     return $this->count;
   }
   /**
-   * Required. Severity of the issue.
-   *
-   * Accepted values: SEVERITY_UNSPECIFIED, SEVERITY_ERROR, SEVERITY_WARNING,
-   * SEVERITY_INFO, SEVERITY_HINT
-   *
-   * @param self::SEVERITY_* $severity
+   * @param string
    */
   public function setSeverity($severity)
   {
     $this->severity = $severity;
   }
   /**
-   * @return self::SEVERITY_*
+   * @return string
    */
   public function getSeverity()
   {

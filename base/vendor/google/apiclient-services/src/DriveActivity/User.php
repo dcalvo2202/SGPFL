@@ -27,9 +27,7 @@ class User extends \Google\Model
   protected $unknownUserDataType = '';
 
   /**
-   * A user whose account has since been deleted.
-   *
-   * @param DeletedUser $deletedUser
+   * @param DeletedUser
    */
   public function setDeletedUser(DeletedUser $deletedUser)
   {
@@ -43,9 +41,7 @@ class User extends \Google\Model
     return $this->deletedUser;
   }
   /**
-   * A known user.
-   *
-   * @param KnownUser $knownUser
+   * @param KnownUser
    */
   public function setKnownUser(KnownUser $knownUser)
   {
@@ -59,9 +55,7 @@ class User extends \Google\Model
     return $this->knownUser;
   }
   /**
-   * A user about whom nothing is currently known.
-   *
-   * @param UnknownUser $unknownUser
+   * @param UnknownUser
    */
   public function setUnknownUser(UnknownUser $unknownUser)
   {

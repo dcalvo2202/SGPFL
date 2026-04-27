@@ -24,16 +24,12 @@ class UrlNotificationMetadata extends \Google\Model
   protected $latestUpdateType = UrlNotification::class;
   protected $latestUpdateDataType = '';
   /**
-   * URL to which this metadata refers.
-   *
    * @var string
    */
   public $url;
 
   /**
-   * Latest notification received with type `URL_REMOVED`.
-   *
-   * @param UrlNotification $latestRemove
+   * @param UrlNotification
    */
   public function setLatestRemove(UrlNotification $latestRemove)
   {
@@ -47,9 +43,7 @@ class UrlNotificationMetadata extends \Google\Model
     return $this->latestRemove;
   }
   /**
-   * Latest notification received with type `URL_UPDATED`.
-   *
-   * @param UrlNotification $latestUpdate
+   * @param UrlNotification
    */
   public function setLatestUpdate(UrlNotification $latestUpdate)
   {
@@ -63,9 +57,7 @@ class UrlNotificationMetadata extends \Google\Model
     return $this->latestUpdate;
   }
   /**
-   * URL to which this metadata refers.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

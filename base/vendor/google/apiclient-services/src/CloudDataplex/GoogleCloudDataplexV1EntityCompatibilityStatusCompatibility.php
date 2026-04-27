@@ -20,25 +20,16 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1EntityCompatibilityStatusCompatibility extends \Google\Model
 {
   /**
-   * Output only. Whether the entity is compatible and can be represented in the
-   * metadata store.
-   *
    * @var bool
    */
   public $compatible;
   /**
-   * Output only. Provides additional detail if the entity is incompatible with
-   * the metadata store.
-   *
    * @var string
    */
   public $reason;
 
   /**
-   * Output only. Whether the entity is compatible and can be represented in the
-   * metadata store.
-   *
-   * @param bool $compatible
+   * @param bool
    */
   public function setCompatible($compatible)
   {
@@ -52,10 +43,7 @@ class GoogleCloudDataplexV1EntityCompatibilityStatusCompatibility extends \Googl
     return $this->compatible;
   }
   /**
-   * Output only. Provides additional detail if the entity is incompatible with
-   * the metadata store.
-   *
-   * @param string $reason
+   * @param string
    */
   public function setReason($reason)
   {

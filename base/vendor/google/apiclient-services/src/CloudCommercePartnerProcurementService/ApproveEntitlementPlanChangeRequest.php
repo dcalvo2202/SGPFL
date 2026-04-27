@@ -20,16 +20,12 @@ namespace Google\Service\CloudCommercePartnerProcurementService;
 class ApproveEntitlementPlanChangeRequest extends \Google\Model
 {
   /**
-   * Required. Name of the pending plan that's being approved.
-   *
    * @var string
    */
   public $pendingPlanName;
 
   /**
-   * Required. Name of the pending plan that's being approved.
-   *
-   * @param string $pendingPlanName
+   * @param string
    */
   public function setPendingPlanName($pendingPlanName)
   {

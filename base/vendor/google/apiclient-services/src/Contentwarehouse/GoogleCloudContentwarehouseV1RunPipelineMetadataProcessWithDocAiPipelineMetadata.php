@@ -21,8 +21,6 @@ class GoogleCloudContentwarehouseV1RunPipelineMetadataProcessWithDocAiPipelineMe
 {
   protected $collection_key = 'documents';
   /**
-   * The input list of all the resource names of the documents to be processed.
-   *
    * @var string[]
    */
   public $documents;
@@ -30,9 +28,7 @@ class GoogleCloudContentwarehouseV1RunPipelineMetadataProcessWithDocAiPipelineMe
   protected $processorInfoDataType = '';
 
   /**
-   * The input list of all the resource names of the documents to be processed.
-   *
-   * @param string[] $documents
+   * @param string[]
    */
   public function setDocuments($documents)
   {
@@ -46,9 +42,7 @@ class GoogleCloudContentwarehouseV1RunPipelineMetadataProcessWithDocAiPipelineMe
     return $this->documents;
   }
   /**
-   * The DocAI processor to process the documents with.
-   *
-   * @param GoogleCloudContentwarehouseV1ProcessorInfo $processorInfo
+   * @param GoogleCloudContentwarehouseV1ProcessorInfo
    */
   public function setProcessorInfo(GoogleCloudContentwarehouseV1ProcessorInfo $processorInfo)
   {

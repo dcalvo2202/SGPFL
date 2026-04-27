@@ -20,16 +20,10 @@ namespace Google\Service\Document;
 class GoogleCloudDocumentaiV1DocumentOutputConfigGcsOutputConfig extends \Google\Model
 {
   /**
-   * Specifies which fields to include in the output documents. Only supports
-   * top level document and pages field so it must be in the form of
-   * `{document_field_name}` or `pages.{page_field_name}`.
-   *
    * @var string
    */
   public $fieldMask;
   /**
-   * The Cloud Storage uri (a directory) of the output.
-   *
    * @var string
    */
   public $gcsUri;
@@ -37,11 +31,7 @@ class GoogleCloudDocumentaiV1DocumentOutputConfigGcsOutputConfig extends \Google
   protected $shardingConfigDataType = '';
 
   /**
-   * Specifies which fields to include in the output documents. Only supports
-   * top level document and pages field so it must be in the form of
-   * `{document_field_name}` or `pages.{page_field_name}`.
-   *
-   * @param string $fieldMask
+   * @param string
    */
   public function setFieldMask($fieldMask)
   {
@@ -55,9 +45,7 @@ class GoogleCloudDocumentaiV1DocumentOutputConfigGcsOutputConfig extends \Google
     return $this->fieldMask;
   }
   /**
-   * The Cloud Storage uri (a directory) of the output.
-   *
-   * @param string $gcsUri
+   * @param string
    */
   public function setGcsUri($gcsUri)
   {
@@ -71,9 +59,7 @@ class GoogleCloudDocumentaiV1DocumentOutputConfigGcsOutputConfig extends \Google
     return $this->gcsUri;
   }
   /**
-   * Specifies the sharding config for the output document.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentOutputConfigGcsOutputConfigShardingConfig $shardingConfig
+   * @param GoogleCloudDocumentaiV1DocumentOutputConfigGcsOutputConfigShardingConfig
    */
   public function setShardingConfig(GoogleCloudDocumentaiV1DocumentOutputConfigGcsOutputConfigShardingConfig $shardingConfig)
   {

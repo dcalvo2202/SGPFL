@@ -21,29 +21,15 @@ class XPSMetricEntry extends \Google\Collection
 {
   protected $collection_key = 'systemLabels';
   /**
-   * For billing metrics that are using legacy sku's, set the legacy billing
-   * metric id here. This will be sent to Chemist as the
-   * "cloudbilling.googleapis.com/argentum_metric_id" label. Otherwise leave
-   * empty.
-   *
    * @var string
    */
   public $argentumMetricId;
-  /**
-   * A double value.
-   *
-   * @var 
-   */
   public $doubleValue;
   /**
-   * A signed 64-bit integer value.
-   *
    * @var string
    */
   public $int64Value;
   /**
-   * The metric name defined in the service configuration.
-   *
    * @var string
    */
   public $metricName;
@@ -51,12 +37,7 @@ class XPSMetricEntry extends \Google\Collection
   protected $systemLabelsDataType = 'array';
 
   /**
-   * For billing metrics that are using legacy sku's, set the legacy billing
-   * metric id here. This will be sent to Chemist as the
-   * "cloudbilling.googleapis.com/argentum_metric_id" label. Otherwise leave
-   * empty.
-   *
-   * @param string $argentumMetricId
+   * @param string
    */
   public function setArgentumMetricId($argentumMetricId)
   {
@@ -78,9 +59,7 @@ class XPSMetricEntry extends \Google\Collection
     return $this->doubleValue;
   }
   /**
-   * A signed 64-bit integer value.
-   *
-   * @param string $int64Value
+   * @param string
    */
   public function setInt64Value($int64Value)
   {
@@ -94,9 +73,7 @@ class XPSMetricEntry extends \Google\Collection
     return $this->int64Value;
   }
   /**
-   * The metric name defined in the service configuration.
-   *
-   * @param string $metricName
+   * @param string
    */
   public function setMetricName($metricName)
   {
@@ -110,9 +87,7 @@ class XPSMetricEntry extends \Google\Collection
     return $this->metricName;
   }
   /**
-   * Billing system labels for this (metric, value) pair.
-   *
-   * @param XPSMetricEntryLabel[] $systemLabels
+   * @param XPSMetricEntryLabel[]
    */
   public function setSystemLabels($systemLabels)
   {

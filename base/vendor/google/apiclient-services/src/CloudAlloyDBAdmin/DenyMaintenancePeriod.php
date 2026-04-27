@@ -27,10 +27,7 @@ class DenyMaintenancePeriod extends \Google\Model
   protected $timeDataType = '';
 
   /**
-   * Deny period end date. This can be: * A full date, with non-zero year, month
-   * and day values OR * A month and day value, with a zero year for recurring
-   *
-   * @param GoogleTypeDate $endDate
+   * @param GoogleTypeDate
    */
   public function setEndDate(GoogleTypeDate $endDate)
   {
@@ -44,11 +41,7 @@ class DenyMaintenancePeriod extends \Google\Model
     return $this->endDate;
   }
   /**
-   * Deny period start date. This can be: * A full date, with non-zero year,
-   * month and day values OR * A month and day value, with a zero year for
-   * recurring
-   *
-   * @param GoogleTypeDate $startDate
+   * @param GoogleTypeDate
    */
   public function setStartDate(GoogleTypeDate $startDate)
   {
@@ -62,10 +55,7 @@ class DenyMaintenancePeriod extends \Google\Model
     return $this->startDate;
   }
   /**
-   * Time in UTC when the deny period starts on start_date and ends on end_date.
-   * This can be: * Full time OR * All zeros for 00:00:00 UTC
-   *
-   * @param GoogleTypeTimeOfDay $time
+   * @param GoogleTypeTimeOfDay
    */
   public function setTime(GoogleTypeTimeOfDay $time)
   {

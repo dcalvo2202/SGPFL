@@ -26,18 +26,12 @@ class SuggestResult extends \Google\Model
   protected $sourceType = Source::class;
   protected $sourceDataType = '';
   /**
-   * The suggested query that will be used for search, when the user clicks on
-   * the suggestion
-   *
    * @var string
    */
   public $suggestedQuery;
 
   /**
-   * This is present when the suggestion indicates a person. It contains more
-   * information about the person - like their email ID, name etc.
-   *
-   * @param PeopleSuggestion $peopleSuggestion
+   * @param PeopleSuggestion
    */
   public function setPeopleSuggestion(PeopleSuggestion $peopleSuggestion)
   {
@@ -51,10 +45,7 @@ class SuggestResult extends \Google\Model
     return $this->peopleSuggestion;
   }
   /**
-   * This field will be present if the suggested query is a word/phrase
-   * completion.
-   *
-   * @param QuerySuggestion $querySuggestion
+   * @param QuerySuggestion
    */
   public function setQuerySuggestion(QuerySuggestion $querySuggestion)
   {
@@ -68,9 +59,7 @@ class SuggestResult extends \Google\Model
     return $this->querySuggestion;
   }
   /**
-   * The source of the suggestion.
-   *
-   * @param Source $source
+   * @param Source
    */
   public function setSource(Source $source)
   {
@@ -84,10 +73,7 @@ class SuggestResult extends \Google\Model
     return $this->source;
   }
   /**
-   * The suggested query that will be used for search, when the user clicks on
-   * the suggestion
-   *
-   * @param string $suggestedQuery
+   * @param string
    */
   public function setSuggestedQuery($suggestedQuery)
   {

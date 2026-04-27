@@ -19,66 +19,27 @@ namespace Google\Service\CloudNaturalLanguage;
 
 class XPSTablesConfidenceMetricsEntry extends \Google\Model
 {
-  /**
-   * The confidence threshold value used to compute the metrics.
-   *
-   * @var 
-   */
   public $confidenceThreshold;
-  /**
-   * The harmonic mean of recall and precision. (2 * precision * recall) /
-   * (precision + recall)
-   *
-   * @var 
-   */
   public $f1Score;
   /**
-   * False negative count.
-   *
    * @var string
    */
   public $falseNegativeCount;
   /**
-   * False positive count.
-   *
    * @var string
    */
   public $falsePositiveCount;
-  /**
-   * FPR = #false positives / (#false positives + #true negatives)
-   *
-   * @var 
-   */
   public $falsePositiveRate;
-  /**
-   * Precision = #true positives / (#true positives + #false positives).
-   *
-   * @var 
-   */
   public $precision;
-  /**
-   * Recall = #true positives / (#true positives + #false negatives).
-   *
-   * @var 
-   */
   public $recall;
   /**
-   * True negative count.
-   *
    * @var string
    */
   public $trueNegativeCount;
   /**
-   * True positive count.
-   *
    * @var string
    */
   public $truePositiveCount;
-  /**
-   * TPR = #true positives / (#true positives + #false negatvies)
-   *
-   * @var 
-   */
   public $truePositiveRate;
 
   public function setConfidenceThreshold($confidenceThreshold)
@@ -98,9 +59,7 @@ class XPSTablesConfidenceMetricsEntry extends \Google\Model
     return $this->f1Score;
   }
   /**
-   * False negative count.
-   *
-   * @param string $falseNegativeCount
+   * @param string
    */
   public function setFalseNegativeCount($falseNegativeCount)
   {
@@ -114,9 +73,7 @@ class XPSTablesConfidenceMetricsEntry extends \Google\Model
     return $this->falseNegativeCount;
   }
   /**
-   * False positive count.
-   *
-   * @param string $falsePositiveCount
+   * @param string
    */
   public function setFalsePositiveCount($falsePositiveCount)
   {
@@ -154,9 +111,7 @@ class XPSTablesConfidenceMetricsEntry extends \Google\Model
     return $this->recall;
   }
   /**
-   * True negative count.
-   *
-   * @param string $trueNegativeCount
+   * @param string
    */
   public function setTrueNegativeCount($trueNegativeCount)
   {
@@ -170,9 +125,7 @@ class XPSTablesConfidenceMetricsEntry extends \Google\Model
     return $this->trueNegativeCount;
   }
   /**
-   * True positive count.
-   *
-   * @param string $truePositiveCount
+   * @param string
    */
   public function setTruePositiveCount($truePositiveCount)
   {

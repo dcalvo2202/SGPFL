@@ -23,23 +23,16 @@ class ListNetworkPeeringsResponse extends \Google\Collection
   protected $networkPeeringsType = NetworkPeering::class;
   protected $networkPeeringsDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Unreachable resources.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * A list of network peerings.
-   *
-   * @param NetworkPeering[] $networkPeerings
+   * @param NetworkPeering[]
    */
   public function setNetworkPeerings($networkPeerings)
   {
@@ -53,10 +46,7 @@ class ListNetworkPeeringsResponse extends \Google\Collection
     return $this->networkPeerings;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -70,9 +60,7 @@ class ListNetworkPeeringsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Unreachable resources.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

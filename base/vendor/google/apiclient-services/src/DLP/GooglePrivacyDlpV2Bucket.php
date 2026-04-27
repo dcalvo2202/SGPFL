@@ -27,9 +27,7 @@ class GooglePrivacyDlpV2Bucket extends \Google\Model
   protected $replacementValueDataType = '';
 
   /**
-   * Upper bound of the range, exclusive; type must match min.
-   *
-   * @param GooglePrivacyDlpV2Value $max
+   * @param GooglePrivacyDlpV2Value
    */
   public function setMax(GooglePrivacyDlpV2Value $max)
   {
@@ -43,10 +41,7 @@ class GooglePrivacyDlpV2Bucket extends \Google\Model
     return $this->max;
   }
   /**
-   * Lower bound of the range, inclusive. Type should be the same as max if
-   * used.
-   *
-   * @param GooglePrivacyDlpV2Value $min
+   * @param GooglePrivacyDlpV2Value
    */
   public function setMin(GooglePrivacyDlpV2Value $min)
   {
@@ -60,9 +55,7 @@ class GooglePrivacyDlpV2Bucket extends \Google\Model
     return $this->min;
   }
   /**
-   * Required. Replacement value for this bucket.
-   *
-   * @param GooglePrivacyDlpV2Value $replacementValue
+   * @param GooglePrivacyDlpV2Value
    */
   public function setReplacementValue(GooglePrivacyDlpV2Value $replacementValue)
   {

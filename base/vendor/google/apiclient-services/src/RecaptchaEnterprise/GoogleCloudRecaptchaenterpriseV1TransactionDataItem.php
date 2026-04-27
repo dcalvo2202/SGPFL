@@ -20,37 +20,21 @@ namespace Google\Service\RecaptchaEnterprise;
 class GoogleCloudRecaptchaenterpriseV1TransactionDataItem extends \Google\Model
 {
   /**
-   * Optional. When a merchant is specified, its corresponding account_id.
-   * Necessary to populate marketplace-style transactions.
-   *
    * @var string
    */
   public $merchantAccountId;
   /**
-   * Optional. The full name of the item.
-   *
    * @var string
    */
   public $name;
   /**
-   * Optional. The quantity of this item that is being purchased.
-   *
    * @var string
    */
   public $quantity;
-  /**
-   * Optional. The value per item that the user is paying, in the transaction
-   * currency, after discounts.
-   *
-   * @var 
-   */
   public $value;
 
   /**
-   * Optional. When a merchant is specified, its corresponding account_id.
-   * Necessary to populate marketplace-style transactions.
-   *
-   * @param string $merchantAccountId
+   * @param string
    */
   public function setMerchantAccountId($merchantAccountId)
   {
@@ -64,9 +48,7 @@ class GoogleCloudRecaptchaenterpriseV1TransactionDataItem extends \Google\Model
     return $this->merchantAccountId;
   }
   /**
-   * Optional. The full name of the item.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -80,9 +62,7 @@ class GoogleCloudRecaptchaenterpriseV1TransactionDataItem extends \Google\Model
     return $this->name;
   }
   /**
-   * Optional. The quantity of this item that is being purchased.
-   *
-   * @param string $quantity
+   * @param string
    */
   public function setQuantity($quantity)
   {

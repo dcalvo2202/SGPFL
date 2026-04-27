@@ -20,54 +20,20 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1ChunkDocumentMetadata extends \Google\Model
 {
   /**
-   * The mime type of the document. https://www.iana.org/assignments/media-
-   * types/media-types.xhtml.
-   *
-   * @var string
-   */
-  public $mimeType;
-  /**
-   * Data representation. The structured JSON data for the document. It should
-   * conform to the registered Schema or an `INVALID_ARGUMENT` error is thrown.
-   *
    * @var array[]
    */
   public $structData;
   /**
-   * Title of the document.
-   *
    * @var string
    */
   public $title;
   /**
-   * Uri of the document.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * The mime type of the document. https://www.iana.org/assignments/media-
-   * types/media-types.xhtml.
-   *
-   * @param string $mimeType
-   */
-  public function setMimeType($mimeType)
-  {
-    $this->mimeType = $mimeType;
-  }
-  /**
-   * @return string
-   */
-  public function getMimeType()
-  {
-    return $this->mimeType;
-  }
-  /**
-   * Data representation. The structured JSON data for the document. It should
-   * conform to the registered Schema or an `INVALID_ARGUMENT` error is thrown.
-   *
-   * @param array[] $structData
+   * @param array[]
    */
   public function setStructData($structData)
   {
@@ -81,9 +47,7 @@ class GoogleCloudDiscoveryengineV1ChunkDocumentMetadata extends \Google\Model
     return $this->structData;
   }
   /**
-   * Title of the document.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -97,9 +61,7 @@ class GoogleCloudDiscoveryengineV1ChunkDocumentMetadata extends \Google\Model
     return $this->title;
   }
   /**
-   * Uri of the document.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

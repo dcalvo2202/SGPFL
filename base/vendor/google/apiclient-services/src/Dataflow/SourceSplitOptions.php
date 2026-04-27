@@ -20,25 +20,16 @@ namespace Google\Service\Dataflow;
 class SourceSplitOptions extends \Google\Model
 {
   /**
-   * The source should be split into a set of bundles where the estimated size
-   * of each is approximately this many bytes.
-   *
    * @var string
    */
   public $desiredBundleSizeBytes;
   /**
-   * DEPRECATED in favor of desired_bundle_size_bytes.
-   *
-   * @deprecated
    * @var string
    */
   public $desiredShardSizeBytes;
 
   /**
-   * The source should be split into a set of bundles where the estimated size
-   * of each is approximately this many bytes.
-   *
-   * @param string $desiredBundleSizeBytes
+   * @param string
    */
   public function setDesiredBundleSizeBytes($desiredBundleSizeBytes)
   {
@@ -52,17 +43,13 @@ class SourceSplitOptions extends \Google\Model
     return $this->desiredBundleSizeBytes;
   }
   /**
-   * DEPRECATED in favor of desired_bundle_size_bytes.
-   *
-   * @deprecated
-   * @param string $desiredShardSizeBytes
+   * @param string
    */
   public function setDesiredShardSizeBytes($desiredShardSizeBytes)
   {
     $this->desiredShardSizeBytes = $desiredShardSizeBytes;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getDesiredShardSizeBytes()

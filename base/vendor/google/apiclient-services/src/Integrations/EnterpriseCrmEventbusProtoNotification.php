@@ -35,7 +35,7 @@ class EnterpriseCrmEventbusProtoNotification extends \Google\Model
   protected $requestDataType = '';
 
   /**
-   * @param EnterpriseCrmEventbusProtoBuganizerNotification $buganizerNotification
+   * @param EnterpriseCrmEventbusProtoBuganizerNotification
    */
   public function setBuganizerNotification(EnterpriseCrmEventbusProtoBuganizerNotification $buganizerNotification)
   {
@@ -49,7 +49,7 @@ class EnterpriseCrmEventbusProtoNotification extends \Google\Model
     return $this->buganizerNotification;
   }
   /**
-   * @param EnterpriseCrmEventbusProtoAddress $emailAddress
+   * @param EnterpriseCrmEventbusProtoAddress
    */
   public function setEmailAddress(EnterpriseCrmEventbusProtoAddress $emailAddress)
   {
@@ -63,7 +63,7 @@ class EnterpriseCrmEventbusProtoNotification extends \Google\Model
     return $this->emailAddress;
   }
   /**
-   * @param string $escalatorQueue
+   * @param string
    */
   public function setEscalatorQueue($escalatorQueue)
   {
@@ -77,7 +77,7 @@ class EnterpriseCrmEventbusProtoNotification extends \Google\Model
     return $this->escalatorQueue;
   }
   /**
-   * @param string $pubsubTopic
+   * @param string
    */
   public function setPubsubTopic($pubsubTopic)
   {
@@ -91,11 +91,7 @@ class EnterpriseCrmEventbusProtoNotification extends \Google\Model
     return $this->pubsubTopic;
   }
   /**
-   * If the out-of-the-box email/pubsub notifications are not suitable and
-   * custom logic is required, fire a workflow containing all info needed to
-   * notify users to resume execution.
-   *
-   * @param EnterpriseCrmEventbusProtoCustomSuspensionRequest $request
+   * @param EnterpriseCrmEventbusProtoCustomSuspensionRequest
    */
   public function setRequest(EnterpriseCrmEventbusProtoCustomSuspensionRequest $request)
   {

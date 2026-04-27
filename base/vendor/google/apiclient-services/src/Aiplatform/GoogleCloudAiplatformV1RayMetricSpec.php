@@ -20,16 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1RayMetricSpec extends \Google\Model
 {
   /**
-   * Optional. Flag to disable the Ray metrics collection.
-   *
    * @var bool
    */
   public $disabled;
 
   /**
-   * Optional. Flag to disable the Ray metrics collection.
-   *
-   * @param bool $disabled
+   * @param bool
    */
   public function setDisabled($disabled)
   {

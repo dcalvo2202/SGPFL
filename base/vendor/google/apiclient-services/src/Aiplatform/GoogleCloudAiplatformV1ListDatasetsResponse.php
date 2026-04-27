@@ -23,16 +23,12 @@ class GoogleCloudAiplatformV1ListDatasetsResponse extends \Google\Collection
   protected $datasetsType = GoogleCloudAiplatformV1Dataset::class;
   protected $datasetsDataType = 'array';
   /**
-   * The standard List next-page token.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * A list of Datasets that matches the specified filter in the request.
-   *
-   * @param GoogleCloudAiplatformV1Dataset[] $datasets
+   * @param GoogleCloudAiplatformV1Dataset[]
    */
   public function setDatasets($datasets)
   {
@@ -46,9 +42,7 @@ class GoogleCloudAiplatformV1ListDatasetsResponse extends \Google\Collection
     return $this->datasets;
   }
   /**
-   * The standard List next-page token.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

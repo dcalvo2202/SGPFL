@@ -21,15 +21,10 @@ class AccountstatusesListResponse extends \Google\Collection
 {
   protected $collection_key = 'resources';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#accountstatusesListResponse`".
-   *
    * @var string
    */
   public $kind;
   /**
-   * The token for the retrieval of the next page of account statuses.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -37,10 +32,7 @@ class AccountstatusesListResponse extends \Google\Collection
   protected $resourcesDataType = 'array';
 
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#accountstatusesListResponse`".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -54,9 +46,7 @@ class AccountstatusesListResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The token for the retrieval of the next page of account statuses.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -70,7 +60,7 @@ class AccountstatusesListResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * @param AccountStatus[] $resources
+   * @param AccountStatus[]
    */
   public function setResources($resources)
   {

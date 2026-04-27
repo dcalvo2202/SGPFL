@@ -22,19 +22,12 @@ class CreatePhraseSetRequest extends \Google\Model
   protected $phraseSetType = PhraseSet::class;
   protected $phraseSetDataType = '';
   /**
-   * Required. The ID to use for the phrase set, which will become the final
-   * component of the phrase set's resource name. This value should restrict to
-   * letters, numbers, and hyphens, with the first character a letter, the last
-   * a letter or a number, and be 4-63 characters.
-   *
    * @var string
    */
   public $phraseSetId;
 
   /**
-   * Required. The phrase set to create.
-   *
-   * @param PhraseSet $phraseSet
+   * @param PhraseSet
    */
   public function setPhraseSet(PhraseSet $phraseSet)
   {
@@ -48,12 +41,7 @@ class CreatePhraseSetRequest extends \Google\Model
     return $this->phraseSet;
   }
   /**
-   * Required. The ID to use for the phrase set, which will become the final
-   * component of the phrase set's resource name. This value should restrict to
-   * letters, numbers, and hyphens, with the first character a letter, the last
-   * a letter or a number, and be 4-63 characters.
-   *
-   * @param string $phraseSetId
+   * @param string
    */
   public function setPhraseSetId($phraseSetId)
   {

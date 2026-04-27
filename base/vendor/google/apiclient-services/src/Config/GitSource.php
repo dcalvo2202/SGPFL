@@ -20,29 +20,20 @@ namespace Google\Service\Config;
 class GitSource extends \Google\Model
 {
   /**
-   * Optional. Subdirectory inside the repository. Example: 'staging/my-package'
-   *
    * @var string
    */
   public $directory;
   /**
-   * Optional. Git reference (e.g. branch or tag).
-   *
    * @var string
    */
   public $ref;
   /**
-   * Optional. Repository URL. Example:
-   * 'https://github.com/kubernetes/examples.git'
-   *
    * @var string
    */
   public $repo;
 
   /**
-   * Optional. Subdirectory inside the repository. Example: 'staging/my-package'
-   *
-   * @param string $directory
+   * @param string
    */
   public function setDirectory($directory)
   {
@@ -56,9 +47,7 @@ class GitSource extends \Google\Model
     return $this->directory;
   }
   /**
-   * Optional. Git reference (e.g. branch or tag).
-   *
-   * @param string $ref
+   * @param string
    */
   public function setRef($ref)
   {
@@ -72,10 +61,7 @@ class GitSource extends \Google\Model
     return $this->ref;
   }
   /**
-   * Optional. Repository URL. Example:
-   * 'https://github.com/kubernetes/examples.git'
-   *
-   * @param string $repo
+   * @param string
    */
   public function setRepo($repo)
   {

@@ -24,10 +24,7 @@ class GooglePlayDeveloperReportingV1beta1FreshnessInfo extends \Google\Collectio
   protected $freshnessesDataType = 'array';
 
   /**
-   * Information about data freshness for every supported aggregation period.
-   * This field has set semantics, keyed by the `aggregation_period` field.
-   *
-   * @param GooglePlayDeveloperReportingV1beta1FreshnessInfoFreshness[] $freshnesses
+   * @param GooglePlayDeveloperReportingV1beta1FreshnessInfoFreshness[]
    */
   public function setFreshnesses($freshnesses)
   {

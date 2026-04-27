@@ -21,16 +21,12 @@ class GoogleCloudDatacatalogV1BigQueryRoutineSpec extends \Google\Collection
 {
   protected $collection_key = 'importedLibraries';
   /**
-   * Paths of the imported libraries.
-   *
    * @var string[]
    */
   public $importedLibraries;
 
   /**
-   * Paths of the imported libraries.
-   *
-   * @param string[] $importedLibraries
+   * @param string[]
    */
   public function setImportedLibraries($importedLibraries)
   {

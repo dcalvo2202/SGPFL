@@ -21,8 +21,6 @@ class GoogleCloudDiscoveryengineV1ListSessionsResponse extends \Google\Collectio
 {
   protected $collection_key = 'sessions';
   /**
-   * Pagination token, if not returned indicates the last page.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -30,9 +28,7 @@ class GoogleCloudDiscoveryengineV1ListSessionsResponse extends \Google\Collectio
   protected $sessionsDataType = 'array';
 
   /**
-   * Pagination token, if not returned indicates the last page.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -46,9 +42,7 @@ class GoogleCloudDiscoveryengineV1ListSessionsResponse extends \Google\Collectio
     return $this->nextPageToken;
   }
   /**
-   * All the Sessions for a given data store.
-   *
-   * @param GoogleCloudDiscoveryengineV1Session[] $sessions
+   * @param GoogleCloudDiscoveryengineV1Session[]
    */
   public function setSessions($sessions)
   {

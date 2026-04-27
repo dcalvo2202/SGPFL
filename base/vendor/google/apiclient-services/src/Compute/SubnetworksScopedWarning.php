@@ -20,8 +20,6 @@ namespace Google\Service\Compute;
 class SubnetworksScopedWarning extends \Google\Model
 {
   /**
-   * Name of the scope containing this set of Subnetworks.
-   *
    * @var string
    */
   public $scopeName;
@@ -29,9 +27,7 @@ class SubnetworksScopedWarning extends \Google\Model
   protected $warningDataType = '';
 
   /**
-   * Name of the scope containing this set of Subnetworks.
-   *
-   * @param string $scopeName
+   * @param string
    */
   public function setScopeName($scopeName)
   {
@@ -45,9 +41,7 @@ class SubnetworksScopedWarning extends \Google\Model
     return $this->scopeName;
   }
   /**
-   * An informational warning about unreachable scope
-   *
-   * @param SubnetworksScopedWarningWarning $warning
+   * @param SubnetworksScopedWarningWarning
    */
   public function setWarning(SubnetworksScopedWarningWarning $warning)
   {

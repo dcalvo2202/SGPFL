@@ -21,16 +21,12 @@ class Resources extends \Google\Collection
 {
   protected $collection_key = 'resources';
   /**
-   * List of resources IDs. For example, "Patient/1234".
-   *
    * @var string[]
    */
   public $resources;
 
   /**
-   * List of resources IDs. For example, "Patient/1234".
-   *
-   * @param string[] $resources
+   * @param string[]
    */
   public function setResources($resources)
   {

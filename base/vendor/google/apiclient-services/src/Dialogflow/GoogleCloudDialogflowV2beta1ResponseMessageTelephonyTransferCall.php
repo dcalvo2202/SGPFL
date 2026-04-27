@@ -29,7 +29,7 @@ class GoogleCloudDialogflowV2beta1ResponseMessageTelephonyTransferCall extends \
   public $sipUri;
 
   /**
-   * @param string $phoneNumber
+   * @param string
    */
   public function setPhoneNumber($phoneNumber)
   {
@@ -43,7 +43,7 @@ class GoogleCloudDialogflowV2beta1ResponseMessageTelephonyTransferCall extends \
     return $this->phoneNumber;
   }
   /**
-   * @param string $sipUri
+   * @param string
    */
   public function setSipUri($sipUri)
   {

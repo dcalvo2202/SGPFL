@@ -20,23 +20,16 @@ namespace Google\Service\ShoppingContent;
 class LiaOnDisplayToOrderSettings extends \Google\Model
 {
   /**
-   * Shipping cost and policy URL.
-   *
    * @var string
    */
   public $shippingCostPolicyUrl;
   /**
-   * The status of the ?On display to order? feature. Acceptable values are: -
-   * "`active`" - "`inactive`" - "`pending`"
-   *
    * @var string
    */
   public $status;
 
   /**
-   * Shipping cost and policy URL.
-   *
-   * @param string $shippingCostPolicyUrl
+   * @param string
    */
   public function setShippingCostPolicyUrl($shippingCostPolicyUrl)
   {
@@ -50,10 +43,7 @@ class LiaOnDisplayToOrderSettings extends \Google\Model
     return $this->shippingCostPolicyUrl;
   }
   /**
-   * The status of the ?On display to order? feature. Acceptable values are: -
-   * "`active`" - "`inactive`" - "`pending`"
-   *
-   * @param string $status
+   * @param string
    */
   public function setStatus($status)
   {

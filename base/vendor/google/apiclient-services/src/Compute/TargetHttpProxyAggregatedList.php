@@ -21,48 +21,30 @@ class TargetHttpProxyAggregatedList extends \Google\Collection
 {
   protected $collection_key = 'unreachables';
   /**
-   * [Output Only] Unique identifier for the resource; defined by the server.
-   *
    * @var string
    */
   public $id;
   protected $itemsType = TargetHttpProxiesScopedList::class;
   protected $itemsDataType = 'map';
   /**
-   * Output only. [Output Only] Type of resource.
-   * Alwayscompute#targetHttpProxyAggregatedList for lists of Target HTTP
-   * Proxies.
-   *
    * @var string
    */
   public $kind;
   /**
-   * [Output Only] This token allows you to get the next page of results for
-   * list requests. If the number of results is larger thanmaxResults, use the
-   * nextPageToken as a value for the query parameter pageToken in the next list
-   * request. Subsequent list requests will have their own nextPageToken to
-   * continue paging through the results.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Output only. [Output Only] Server-defined URL for this resource.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * Output only. [Output Only] Unreachable resources.
-   *
    * @var string[]
    */
   public $unreachables;
 
   /**
-   * [Output Only] Unique identifier for the resource; defined by the server.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -76,9 +58,7 @@ class TargetHttpProxyAggregatedList extends \Google\Collection
     return $this->id;
   }
   /**
-   * A list of TargetHttpProxiesScopedList resources.
-   *
-   * @param TargetHttpProxiesScopedList[] $items
+   * @param TargetHttpProxiesScopedList[]
    */
   public function setItems($items)
   {
@@ -92,11 +72,7 @@ class TargetHttpProxyAggregatedList extends \Google\Collection
     return $this->items;
   }
   /**
-   * Output only. [Output Only] Type of resource.
-   * Alwayscompute#targetHttpProxyAggregatedList for lists of Target HTTP
-   * Proxies.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -110,13 +86,7 @@ class TargetHttpProxyAggregatedList extends \Google\Collection
     return $this->kind;
   }
   /**
-   * [Output Only] This token allows you to get the next page of results for
-   * list requests. If the number of results is larger thanmaxResults, use the
-   * nextPageToken as a value for the query parameter pageToken in the next list
-   * request. Subsequent list requests will have their own nextPageToken to
-   * continue paging through the results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -130,9 +100,7 @@ class TargetHttpProxyAggregatedList extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Output only. [Output Only] Server-defined URL for this resource.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -146,9 +114,7 @@ class TargetHttpProxyAggregatedList extends \Google\Collection
     return $this->selfLink;
   }
   /**
-   * Output only. [Output Only] Unreachable resources.
-   *
-   * @param string[] $unreachables
+   * @param string[]
    */
   public function setUnreachables($unreachables)
   {

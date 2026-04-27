@@ -20,37 +20,16 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1SuggestionDenyListEntry extends \Google\Model
 {
   /**
-   * Default value. Should not be used
-   */
-  public const MATCH_OPERATOR_MATCH_OPERATOR_UNSPECIFIED = 'MATCH_OPERATOR_UNSPECIFIED';
-  /**
-   * If the suggestion is an exact match to the block_phrase, then block it.
-   */
-  public const MATCH_OPERATOR_EXACT_MATCH = 'EXACT_MATCH';
-  /**
-   * If the suggestion contains the block_phrase, then block it.
-   */
-  public const MATCH_OPERATOR_CONTAINS = 'CONTAINS';
-  /**
-   * Required. Phrase to block from suggestions served. Can be maximum 125
-   * characters.
-   *
    * @var string
    */
   public $blockPhrase;
   /**
-   * Required. The match operator to apply for this phrase. Whether to block the
-   * exact phrase, or block any suggestions containing this phrase.
-   *
    * @var string
    */
   public $matchOperator;
 
   /**
-   * Required. Phrase to block from suggestions served. Can be maximum 125
-   * characters.
-   *
-   * @param string $blockPhrase
+   * @param string
    */
   public function setBlockPhrase($blockPhrase)
   {
@@ -64,19 +43,14 @@ class GoogleCloudDiscoveryengineV1SuggestionDenyListEntry extends \Google\Model
     return $this->blockPhrase;
   }
   /**
-   * Required. The match operator to apply for this phrase. Whether to block the
-   * exact phrase, or block any suggestions containing this phrase.
-   *
-   * Accepted values: MATCH_OPERATOR_UNSPECIFIED, EXACT_MATCH, CONTAINS
-   *
-   * @param self::MATCH_OPERATOR_* $matchOperator
+   * @param string
    */
   public function setMatchOperator($matchOperator)
   {
     $this->matchOperator = $matchOperator;
   }
   /**
-   * @return self::MATCH_OPERATOR_*
+   * @return string
    */
   public function getMatchOperator()
   {

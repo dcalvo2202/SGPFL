@@ -20,52 +20,28 @@ namespace Google\Service\Dfareporting;
 class FsCommand extends \Google\Model
 {
   /**
-   * Center of the window Corresponds to "center" in UI
-   */
-  public const POSITION_OPTION_CENTERED = 'CENTERED';
-  /**
-   * user-defined distance from top left-hand corner of the window Corresponds
-   * to "top-left" in UI
-   */
-  public const POSITION_OPTION_DISTANCE_FROM_TOP_LEFT_CORNER = 'DISTANCE_FROM_TOP_LEFT_CORNER';
-  /**
-   * Distance from the left of the browser.Applicable when positionOption is
-   * DISTANCE_FROM_TOP_LEFT_CORNER.
-   *
    * @var int
    */
   public $left;
   /**
-   * Position in the browser where the window will open.
-   *
    * @var string
    */
   public $positionOption;
   /**
-   * Distance from the top of the browser. Applicable when positionOption is
-   * DISTANCE_FROM_TOP_LEFT_CORNER.
-   *
    * @var int
    */
   public $top;
   /**
-   * Height of the window.
-   *
    * @var int
    */
   public $windowHeight;
   /**
-   * Width of the window.
-   *
    * @var int
    */
   public $windowWidth;
 
   /**
-   * Distance from the left of the browser.Applicable when positionOption is
-   * DISTANCE_FROM_TOP_LEFT_CORNER.
-   *
-   * @param int $left
+   * @param int
    */
   public function setLeft($left)
   {
@@ -79,28 +55,21 @@ class FsCommand extends \Google\Model
     return $this->left;
   }
   /**
-   * Position in the browser where the window will open.
-   *
-   * Accepted values: CENTERED, DISTANCE_FROM_TOP_LEFT_CORNER
-   *
-   * @param self::POSITION_OPTION_* $positionOption
+   * @param string
    */
   public function setPositionOption($positionOption)
   {
     $this->positionOption = $positionOption;
   }
   /**
-   * @return self::POSITION_OPTION_*
+   * @return string
    */
   public function getPositionOption()
   {
     return $this->positionOption;
   }
   /**
-   * Distance from the top of the browser. Applicable when positionOption is
-   * DISTANCE_FROM_TOP_LEFT_CORNER.
-   *
-   * @param int $top
+   * @param int
    */
   public function setTop($top)
   {
@@ -114,9 +83,7 @@ class FsCommand extends \Google\Model
     return $this->top;
   }
   /**
-   * Height of the window.
-   *
-   * @param int $windowHeight
+   * @param int
    */
   public function setWindowHeight($windowHeight)
   {
@@ -130,9 +97,7 @@ class FsCommand extends \Google\Model
     return $this->windowHeight;
   }
   /**
-   * Width of the window.
-   *
-   * @param int $windowWidth
+   * @param int
    */
   public function setWindowWidth($windowWidth)
   {

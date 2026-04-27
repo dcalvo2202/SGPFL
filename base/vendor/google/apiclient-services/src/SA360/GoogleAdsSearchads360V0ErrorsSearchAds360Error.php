@@ -26,8 +26,6 @@ class GoogleAdsSearchads360V0ErrorsSearchAds360Error extends \Google\Model
   protected $locationType = GoogleAdsSearchads360V0ErrorsErrorLocation::class;
   protected $locationDataType = '';
   /**
-   * A human-readable description of the error.
-   *
    * @var string
    */
   public $message;
@@ -35,10 +33,7 @@ class GoogleAdsSearchads360V0ErrorsSearchAds360Error extends \Google\Model
   protected $triggerDataType = '';
 
   /**
-   * Additional error details, which are returned by certain error codes. Most
-   * error codes do not include details.
-   *
-   * @param GoogleAdsSearchads360V0ErrorsErrorDetails $details
+   * @param GoogleAdsSearchads360V0ErrorsErrorDetails
    */
   public function setDetails(GoogleAdsSearchads360V0ErrorsErrorDetails $details)
   {
@@ -52,9 +47,7 @@ class GoogleAdsSearchads360V0ErrorsSearchAds360Error extends \Google\Model
     return $this->details;
   }
   /**
-   * An enum value that indicates which error occurred.
-   *
-   * @param GoogleAdsSearchads360V0ErrorsErrorCode $errorCode
+   * @param GoogleAdsSearchads360V0ErrorsErrorCode
    */
   public function setErrorCode(GoogleAdsSearchads360V0ErrorsErrorCode $errorCode)
   {
@@ -68,9 +61,7 @@ class GoogleAdsSearchads360V0ErrorsSearchAds360Error extends \Google\Model
     return $this->errorCode;
   }
   /**
-   * Describes the part of the request proto that caused the error.
-   *
-   * @param GoogleAdsSearchads360V0ErrorsErrorLocation $location
+   * @param GoogleAdsSearchads360V0ErrorsErrorLocation
    */
   public function setLocation(GoogleAdsSearchads360V0ErrorsErrorLocation $location)
   {
@@ -84,9 +75,7 @@ class GoogleAdsSearchads360V0ErrorsSearchAds360Error extends \Google\Model
     return $this->location;
   }
   /**
-   * A human-readable description of the error.
-   *
-   * @param string $message
+   * @param string
    */
   public function setMessage($message)
   {
@@ -100,9 +89,7 @@ class GoogleAdsSearchads360V0ErrorsSearchAds360Error extends \Google\Model
     return $this->message;
   }
   /**
-   * The value that triggered the error.
-   *
-   * @param GoogleAdsSearchads360V0CommonValue $trigger
+   * @param GoogleAdsSearchads360V0CommonValue
    */
   public function setTrigger(GoogleAdsSearchads360V0CommonValue $trigger)
   {

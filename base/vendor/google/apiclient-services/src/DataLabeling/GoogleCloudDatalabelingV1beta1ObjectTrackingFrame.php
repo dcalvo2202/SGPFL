@@ -24,14 +24,12 @@ class GoogleCloudDatalabelingV1beta1ObjectTrackingFrame extends \Google\Model
   protected $normalizedBoundingPolyType = GoogleCloudDatalabelingV1beta1NormalizedBoundingPoly::class;
   protected $normalizedBoundingPolyDataType = '';
   /**
-   * The time offset of this frame relative to the beginning of the video.
-   *
    * @var string
    */
   public $timeOffset;
 
   /**
-   * @param GoogleCloudDatalabelingV1beta1BoundingPoly $boundingPoly
+   * @param GoogleCloudDatalabelingV1beta1BoundingPoly
    */
   public function setBoundingPoly(GoogleCloudDatalabelingV1beta1BoundingPoly $boundingPoly)
   {
@@ -45,7 +43,7 @@ class GoogleCloudDatalabelingV1beta1ObjectTrackingFrame extends \Google\Model
     return $this->boundingPoly;
   }
   /**
-   * @param GoogleCloudDatalabelingV1beta1NormalizedBoundingPoly $normalizedBoundingPoly
+   * @param GoogleCloudDatalabelingV1beta1NormalizedBoundingPoly
    */
   public function setNormalizedBoundingPoly(GoogleCloudDatalabelingV1beta1NormalizedBoundingPoly $normalizedBoundingPoly)
   {
@@ -59,9 +57,7 @@ class GoogleCloudDatalabelingV1beta1ObjectTrackingFrame extends \Google\Model
     return $this->normalizedBoundingPoly;
   }
   /**
-   * The time offset of this frame relative to the beginning of the video.
-   *
-   * @param string $timeOffset
+   * @param string
    */
   public function setTimeOffset($timeOffset)
   {

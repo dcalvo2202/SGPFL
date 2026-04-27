@@ -20,26 +20,12 @@ namespace Google\Service\CloudIAP;
 class TagsFullStateForChildResource extends \Google\Model
 {
   /**
-   * If TagsFullStateForChildResource is initialized, the values in this field
-   * represent all the tags in the next state for the child resource. Only one
-   * type of tags reference (numeric or namespace) is required to be passed.
-   * IMPORTANT: This field should only be used when the target resource IAM
-   * policy name is UNKNOWN and the resource's parent IAM policy name is being
-   * passed in the request.
-   *
    * @var string[]
    */
   public $tags;
 
   /**
-   * If TagsFullStateForChildResource is initialized, the values in this field
-   * represent all the tags in the next state for the child resource. Only one
-   * type of tags reference (numeric or namespace) is required to be passed.
-   * IMPORTANT: This field should only be used when the target resource IAM
-   * policy name is UNKNOWN and the resource's parent IAM policy name is being
-   * passed in the request.
-   *
-   * @param string[] $tags
+   * @param string[]
    */
   public function setTags($tags)
   {

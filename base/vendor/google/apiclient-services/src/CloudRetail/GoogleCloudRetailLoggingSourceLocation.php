@@ -20,18 +20,12 @@ namespace Google\Service\CloudRetail;
 class GoogleCloudRetailLoggingSourceLocation extends \Google\Model
 {
   /**
-   * Human-readable name of a function or method. For example,
-   * "google.cloud.retail.v2.UserEventService.ImportUserEvents".
-   *
    * @var string
    */
   public $functionName;
 
   /**
-   * Human-readable name of a function or method. For example,
-   * "google.cloud.retail.v2.UserEventService.ImportUserEvents".
-   *
-   * @param string $functionName
+   * @param string
    */
   public function setFunctionName($functionName)
   {

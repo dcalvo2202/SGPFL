@@ -21,8 +21,6 @@ class GoogleChromeManagementV1ListTelemetryEventsResponse extends \Google\Collec
 {
   protected $collection_key = 'telemetryEvents';
   /**
-   * Token to specify next page in the list.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -30,9 +28,7 @@ class GoogleChromeManagementV1ListTelemetryEventsResponse extends \Google\Collec
   protected $telemetryEventsDataType = 'array';
 
   /**
-   * Token to specify next page in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -46,9 +42,7 @@ class GoogleChromeManagementV1ListTelemetryEventsResponse extends \Google\Collec
     return $this->nextPageToken;
   }
   /**
-   * Telemetry events returned in the response.
-   *
-   * @param GoogleChromeManagementV1TelemetryEvent[] $telemetryEvents
+   * @param GoogleChromeManagementV1TelemetryEvent[]
    */
   public function setTelemetryEvents($telemetryEvents)
   {

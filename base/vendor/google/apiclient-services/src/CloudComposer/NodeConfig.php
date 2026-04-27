@@ -21,154 +21,54 @@ class NodeConfig extends \Google\Collection
 {
   protected $collection_key = 'tags';
   /**
-   * Optional. The IP range in CIDR notation to use internally by Cloud
-   * Composer. IP addresses are not reserved - and the same range can be used by
-   * multiple Cloud Composer environments. In case of overlap, IPs from this
-   * range will not be accessible in the user's VPC network. Cannot be updated.
-   * If not specified, the default value of '100.64.128.0/20' is used. This
-   * field is supported for Cloud Composer environments in versions
-   * composer-3-airflow-*.*.*-build.* and newer.
-   *
    * @var string
    */
   public $composerInternalIpv4CidrBlock;
   /**
-   * Optional. Network Attachment that Cloud Composer environment is connected
-   * to, which provides connectivity with a user's VPC network. Takes precedence
-   * over network and subnetwork settings. If not provided, but network and
-   * subnetwork are defined during environment, it will be provisioned. If not
-   * provided and network and subnetwork are also empty, then connectivity to
-   * user's VPC network is disabled. Network attachment must be provided in
-   * format
-   * projects/{project}/regions/{region}/networkAttachments/{networkAttachment}.
-   * This field is supported for Cloud Composer environments in versions
-   * composer-3-airflow-*.*.*-build.* and newer.
-   *
    * @var string
    */
   public $composerNetworkAttachment;
   /**
-   * Optional. The disk size in GB used for node VMs. Minimum size is 30GB. If
-   * unspecified, defaults to 100GB. Cannot be updated. This field is supported
-   * for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.
-   *
    * @var int
    */
   public $diskSizeGb;
   /**
-   * Optional. Deploys 'ip-masq-agent' daemon set in the GKE cluster and defines
-   * nonMasqueradeCIDRs equals to pod IP range so IP masquerading is used for
-   * all destination addresses, except between pods traffic. See:
-   * https://cloud.google.com/kubernetes-engine/docs/how-to/ip-masquerade-agent
-   *
    * @var bool
    */
   public $enableIpMasqAgent;
   protected $ipAllocationPolicyType = IPAllocationPolicy::class;
   protected $ipAllocationPolicyDataType = '';
   /**
-   * Optional. The Compute Engine [zone](/compute/docs/regions-zones) in which
-   * to deploy the VMs used to run the Apache Airflow software, specified as a
-   * [relative resource
-   * name](/apis/design/resource_names#relative_resource_name). For example:
-   * "projects/{projectId}/zones/{zoneId}". This `location` must belong to the
-   * enclosing environment's project and location. If both this field and
-   * `nodeConfig.machineType` are specified, `nodeConfig.machineType` must
-   * belong to this `location`; if both are unspecified, the service will pick a
-   * zone in the Compute Engine region corresponding to the Cloud Composer
-   * location, and propagate that choice to both fields. If only one field
-   * (`location` or `nodeConfig.machineType`) is specified, the location
-   * information from the specified field will be propagated to the unspecified
-   * field. This field is supported for Cloud Composer environments in versions
-   * composer-1.*.*-airflow-*.*.*.
-   *
    * @var string
    */
   public $location;
   /**
-   * Optional. The Compute Engine [machine type](/compute/docs/machine-types)
-   * used for cluster instances, specified as a [relative resource
-   * name](/apis/design/resource_names#relative_resource_name). For example:
-   * "projects/{projectId}/zones/{zoneId}/machineTypes/{machineTypeId}". The
-   * `machineType` must belong to the enclosing environment's project and
-   * location. If both this field and `nodeConfig.location` are specified, this
-   * `machineType` must belong to the `nodeConfig.location`; if both are
-   * unspecified, the service will pick a zone in the Compute Engine region
-   * corresponding to the Cloud Composer location, and propagate that choice to
-   * both fields. If exactly one of this field and `nodeConfig.location` is
-   * specified, the location information from the specified field will be
-   * propagated to the unspecified field. The `machineTypeId` must not be a
-   * [shared-core machine type](/compute/docs/machine-types#sharedcore). If this
-   * field is unspecified, the `machineTypeId` defaults to "n1-standard-1". This
-   * field is supported for Cloud Composer environments in versions
-   * composer-1.*.*-airflow-*.*.*.
-   *
    * @var string
    */
   public $machineType;
   /**
-   * Optional. The Compute Engine network to be used for machine communications,
-   * specified as a [relative resource
-   * name](/apis/design/resource_names#relative_resource_name). For example:
-   * "projects/{projectId}/global/networks/{networkId}". If unspecified, the
-   * "default" network ID in the environment's project is used. If a [Custom
-   * Subnet Network](/vpc/docs/vpc#vpc_networks_and_subnets) is provided,
-   * `nodeConfig.subnetwork` must also be provided. For [Shared
-   * VPC](/vpc/docs/shared-vpc) subnetwork requirements, see
-   * `nodeConfig.subnetwork`.
-   *
    * @var string
    */
   public $network;
   /**
-   * Optional. The set of Google API scopes to be made available on all node
-   * VMs. If `oauth_scopes` is empty, defaults to
-   * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated. This
-   * field is supported for Cloud Composer environments in versions
-   * composer-1.*.*-airflow-*.*.*.
-   *
    * @var string[]
    */
   public $oauthScopes;
   /**
-   * Optional. The Google Cloud Platform Service Account to be used by the node
-   * VMs. If a service account is not specified, the "default" Compute Engine
-   * service account is used. Cannot be updated.
-   *
    * @var string
    */
   public $serviceAccount;
   /**
-   * Optional. The Compute Engine subnetwork to be used for machine
-   * communications, specified as a [relative resource
-   * name](/apis/design/resource_names#relative_resource_name). For example:
-   * "projects/{projectId}/regions/{regionId}/subnetworks/{subnetworkId}" If a
-   * subnetwork is provided, `nodeConfig.network` must also be provided, and the
-   * subnetwork must belong to the enclosing environment's project and location.
-   *
    * @var string
    */
   public $subnetwork;
   /**
-   * Optional. The list of instance tags applied to all node VMs. Tags are used
-   * to identify valid sources or targets for network firewalls. Each tag within
-   * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
-   * Cannot be updated.
-   *
    * @var string[]
    */
   public $tags;
 
   /**
-   * Optional. The IP range in CIDR notation to use internally by Cloud
-   * Composer. IP addresses are not reserved - and the same range can be used by
-   * multiple Cloud Composer environments. In case of overlap, IPs from this
-   * range will not be accessible in the user's VPC network. Cannot be updated.
-   * If not specified, the default value of '100.64.128.0/20' is used. This
-   * field is supported for Cloud Composer environments in versions
-   * composer-3-airflow-*.*.*-build.* and newer.
-   *
-   * @param string $composerInternalIpv4CidrBlock
+   * @param string
    */
   public function setComposerInternalIpv4CidrBlock($composerInternalIpv4CidrBlock)
   {
@@ -182,18 +82,7 @@ class NodeConfig extends \Google\Collection
     return $this->composerInternalIpv4CidrBlock;
   }
   /**
-   * Optional. Network Attachment that Cloud Composer environment is connected
-   * to, which provides connectivity with a user's VPC network. Takes precedence
-   * over network and subnetwork settings. If not provided, but network and
-   * subnetwork are defined during environment, it will be provisioned. If not
-   * provided and network and subnetwork are also empty, then connectivity to
-   * user's VPC network is disabled. Network attachment must be provided in
-   * format
-   * projects/{project}/regions/{region}/networkAttachments/{networkAttachment}.
-   * This field is supported for Cloud Composer environments in versions
-   * composer-3-airflow-*.*.*-build.* and newer.
-   *
-   * @param string $composerNetworkAttachment
+   * @param string
    */
   public function setComposerNetworkAttachment($composerNetworkAttachment)
   {
@@ -207,11 +96,7 @@ class NodeConfig extends \Google\Collection
     return $this->composerNetworkAttachment;
   }
   /**
-   * Optional. The disk size in GB used for node VMs. Minimum size is 30GB. If
-   * unspecified, defaults to 100GB. Cannot be updated. This field is supported
-   * for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.
-   *
-   * @param int $diskSizeGb
+   * @param int
    */
   public function setDiskSizeGb($diskSizeGb)
   {
@@ -225,12 +110,7 @@ class NodeConfig extends \Google\Collection
     return $this->diskSizeGb;
   }
   /**
-   * Optional. Deploys 'ip-masq-agent' daemon set in the GKE cluster and defines
-   * nonMasqueradeCIDRs equals to pod IP range so IP masquerading is used for
-   * all destination addresses, except between pods traffic. See:
-   * https://cloud.google.com/kubernetes-engine/docs/how-to/ip-masquerade-agent
-   *
-   * @param bool $enableIpMasqAgent
+   * @param bool
    */
   public function setEnableIpMasqAgent($enableIpMasqAgent)
   {
@@ -244,10 +124,7 @@ class NodeConfig extends \Google\Collection
     return $this->enableIpMasqAgent;
   }
   /**
-   * Optional. The configuration for controlling how IPs are allocated in the
-   * GKE cluster.
-   *
-   * @param IPAllocationPolicy $ipAllocationPolicy
+   * @param IPAllocationPolicy
    */
   public function setIpAllocationPolicy(IPAllocationPolicy $ipAllocationPolicy)
   {
@@ -261,22 +138,7 @@ class NodeConfig extends \Google\Collection
     return $this->ipAllocationPolicy;
   }
   /**
-   * Optional. The Compute Engine [zone](/compute/docs/regions-zones) in which
-   * to deploy the VMs used to run the Apache Airflow software, specified as a
-   * [relative resource
-   * name](/apis/design/resource_names#relative_resource_name). For example:
-   * "projects/{projectId}/zones/{zoneId}". This `location` must belong to the
-   * enclosing environment's project and location. If both this field and
-   * `nodeConfig.machineType` are specified, `nodeConfig.machineType` must
-   * belong to this `location`; if both are unspecified, the service will pick a
-   * zone in the Compute Engine region corresponding to the Cloud Composer
-   * location, and propagate that choice to both fields. If only one field
-   * (`location` or `nodeConfig.machineType`) is specified, the location
-   * information from the specified field will be propagated to the unspecified
-   * field. This field is supported for Cloud Composer environments in versions
-   * composer-1.*.*-airflow-*.*.*.
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -290,24 +152,7 @@ class NodeConfig extends \Google\Collection
     return $this->location;
   }
   /**
-   * Optional. The Compute Engine [machine type](/compute/docs/machine-types)
-   * used for cluster instances, specified as a [relative resource
-   * name](/apis/design/resource_names#relative_resource_name). For example:
-   * "projects/{projectId}/zones/{zoneId}/machineTypes/{machineTypeId}". The
-   * `machineType` must belong to the enclosing environment's project and
-   * location. If both this field and `nodeConfig.location` are specified, this
-   * `machineType` must belong to the `nodeConfig.location`; if both are
-   * unspecified, the service will pick a zone in the Compute Engine region
-   * corresponding to the Cloud Composer location, and propagate that choice to
-   * both fields. If exactly one of this field and `nodeConfig.location` is
-   * specified, the location information from the specified field will be
-   * propagated to the unspecified field. The `machineTypeId` must not be a
-   * [shared-core machine type](/compute/docs/machine-types#sharedcore). If this
-   * field is unspecified, the `machineTypeId` defaults to "n1-standard-1". This
-   * field is supported for Cloud Composer environments in versions
-   * composer-1.*.*-airflow-*.*.*.
-   *
-   * @param string $machineType
+   * @param string
    */
   public function setMachineType($machineType)
   {
@@ -321,17 +166,7 @@ class NodeConfig extends \Google\Collection
     return $this->machineType;
   }
   /**
-   * Optional. The Compute Engine network to be used for machine communications,
-   * specified as a [relative resource
-   * name](/apis/design/resource_names#relative_resource_name). For example:
-   * "projects/{projectId}/global/networks/{networkId}". If unspecified, the
-   * "default" network ID in the environment's project is used. If a [Custom
-   * Subnet Network](/vpc/docs/vpc#vpc_networks_and_subnets) is provided,
-   * `nodeConfig.subnetwork` must also be provided. For [Shared
-   * VPC](/vpc/docs/shared-vpc) subnetwork requirements, see
-   * `nodeConfig.subnetwork`.
-   *
-   * @param string $network
+   * @param string
    */
   public function setNetwork($network)
   {
@@ -345,13 +180,7 @@ class NodeConfig extends \Google\Collection
     return $this->network;
   }
   /**
-   * Optional. The set of Google API scopes to be made available on all node
-   * VMs. If `oauth_scopes` is empty, defaults to
-   * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated. This
-   * field is supported for Cloud Composer environments in versions
-   * composer-1.*.*-airflow-*.*.*.
-   *
-   * @param string[] $oauthScopes
+   * @param string[]
    */
   public function setOauthScopes($oauthScopes)
   {
@@ -365,11 +194,7 @@ class NodeConfig extends \Google\Collection
     return $this->oauthScopes;
   }
   /**
-   * Optional. The Google Cloud Platform Service Account to be used by the node
-   * VMs. If a service account is not specified, the "default" Compute Engine
-   * service account is used. Cannot be updated.
-   *
-   * @param string $serviceAccount
+   * @param string
    */
   public function setServiceAccount($serviceAccount)
   {
@@ -383,14 +208,7 @@ class NodeConfig extends \Google\Collection
     return $this->serviceAccount;
   }
   /**
-   * Optional. The Compute Engine subnetwork to be used for machine
-   * communications, specified as a [relative resource
-   * name](/apis/design/resource_names#relative_resource_name). For example:
-   * "projects/{projectId}/regions/{regionId}/subnetworks/{subnetworkId}" If a
-   * subnetwork is provided, `nodeConfig.network` must also be provided, and the
-   * subnetwork must belong to the enclosing environment's project and location.
-   *
-   * @param string $subnetwork
+   * @param string
    */
   public function setSubnetwork($subnetwork)
   {
@@ -404,12 +222,7 @@ class NodeConfig extends \Google\Collection
     return $this->subnetwork;
   }
   /**
-   * Optional. The list of instance tags applied to all node VMs. Tags are used
-   * to identify valid sources or targets for network firewalls. Each tag within
-   * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
-   * Cannot be updated.
-   *
-   * @param string[] $tags
+   * @param string[]
    */
   public function setTags($tags)
   {

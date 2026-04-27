@@ -20,38 +20,24 @@ namespace Google\Service\Adsense;
 class CustomChannel extends \Google\Model
 {
   /**
-   * Whether the custom channel is active and collecting data. See
-   * https://support.google.com/adsense/answer/10077192.
-   *
    * @var bool
    */
   public $active;
   /**
-   * Required. Display name of the custom channel.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. Resource name of the custom channel. Format:
-   * accounts/{account}/adclients/{adclient}/customchannels/{customchannel}
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Unique ID of the custom channel as used in the
-   * `CUSTOM_CHANNEL_ID` reporting dimension.
-   *
    * @var string
    */
   public $reportingDimensionId;
 
   /**
-   * Whether the custom channel is active and collecting data. See
-   * https://support.google.com/adsense/answer/10077192.
-   *
-   * @param bool $active
+   * @param bool
    */
   public function setActive($active)
   {
@@ -65,9 +51,7 @@ class CustomChannel extends \Google\Model
     return $this->active;
   }
   /**
-   * Required. Display name of the custom channel.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -81,10 +65,7 @@ class CustomChannel extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Output only. Resource name of the custom channel. Format:
-   * accounts/{account}/adclients/{adclient}/customchannels/{customchannel}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -98,10 +79,7 @@ class CustomChannel extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Unique ID of the custom channel as used in the
-   * `CUSTOM_CHANNEL_ID` reporting dimension.
-   *
-   * @param string $reportingDimensionId
+   * @param string
    */
   public function setReportingDimensionId($reportingDimensionId)
   {

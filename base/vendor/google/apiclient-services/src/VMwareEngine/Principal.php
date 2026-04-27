@@ -20,22 +20,16 @@ namespace Google\Service\VMwareEngine;
 class Principal extends \Google\Model
 {
   /**
-   * The service account which needs to be granted the permission.
-   *
    * @var string
    */
   public $serviceAccount;
   /**
-   * The user who needs to be granted permission.
-   *
    * @var string
    */
   public $user;
 
   /**
-   * The service account which needs to be granted the permission.
-   *
-   * @param string $serviceAccount
+   * @param string
    */
   public function setServiceAccount($serviceAccount)
   {
@@ -49,9 +43,7 @@ class Principal extends \Google\Model
     return $this->serviceAccount;
   }
   /**
-   * The user who needs to be granted permission.
-   *
-   * @param string $user
+   * @param string
    */
   public function setUser($user)
   {

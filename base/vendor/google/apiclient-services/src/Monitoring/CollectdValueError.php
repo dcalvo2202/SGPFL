@@ -22,17 +22,12 @@ class CollectdValueError extends \Google\Model
   protected $errorType = Status::class;
   protected $errorDataType = '';
   /**
-   * The zero-based index in CollectdPayload.values within the parent
-   * CreateCollectdTimeSeriesRequest.collectd_payloads.
-   *
    * @var int
    */
   public $index;
 
   /**
-   * Records the error status for the value.
-   *
-   * @param Status $error
+   * @param Status
    */
   public function setError(Status $error)
   {
@@ -46,10 +41,7 @@ class CollectdValueError extends \Google\Model
     return $this->error;
   }
   /**
-   * The zero-based index in CollectdPayload.values within the parent
-   * CreateCollectdTimeSeriesRequest.collectd_payloads.
-   *
-   * @param int $index
+   * @param int
    */
   public function setIndex($index)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\Contactcenterinsights;
 class GoogleCloudContactcenterinsightsV1ExactMatchConfig extends \Google\Model
 {
   /**
-   * Whether to consider case sensitivity when performing an exact match.
-   *
    * @var bool
    */
   public $caseSensitive;
 
   /**
-   * Whether to consider case sensitivity when performing an exact match.
-   *
-   * @param bool $caseSensitive
+   * @param bool
    */
   public function setCaseSensitive($caseSensitive)
   {

@@ -23,18 +23,12 @@ class ListLineItemsResponse extends \Google\Collection
   protected $lineItemsType = LineItem::class;
   protected $lineItemsDataType = 'array';
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * page_token field in the subsequent call to `ListLineItems` method to
-   * retrieve the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of line items. This list will be absent if empty.
-   *
-   * @param LineItem[] $lineItems
+   * @param LineItem[]
    */
   public function setLineItems($lineItems)
   {
@@ -48,11 +42,7 @@ class ListLineItemsResponse extends \Google\Collection
     return $this->lineItems;
   }
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * page_token field in the subsequent call to `ListLineItems` method to
-   * retrieve the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

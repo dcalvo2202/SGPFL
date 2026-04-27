@@ -20,30 +20,16 @@ namespace Google\Service\Eventarc;
 class Pubsub extends \Google\Model
 {
   /**
-   * Output only. The name of the Pub/Sub subscription created and managed by
-   * Eventarc as a transport for the event delivery. Format:
-   * `projects/{PROJECT_ID}/subscriptions/{SUBSCRIPTION_NAME}`.
-   *
    * @var string
    */
   public $subscription;
   /**
-   * Optional. The name of the Pub/Sub topic created and managed by Eventarc as
-   * a transport for the event delivery. Format:
-   * `projects/{PROJECT_ID}/topics/{TOPIC_NAME}`. You can set an existing topic
-   * for triggers of the type `google.cloud.pubsub.topic.v1.messagePublished`.
-   * The topic you provide here is not deleted by Eventarc at trigger deletion.
-   *
    * @var string
    */
   public $topic;
 
   /**
-   * Output only. The name of the Pub/Sub subscription created and managed by
-   * Eventarc as a transport for the event delivery. Format:
-   * `projects/{PROJECT_ID}/subscriptions/{SUBSCRIPTION_NAME}`.
-   *
-   * @param string $subscription
+   * @param string
    */
   public function setSubscription($subscription)
   {
@@ -57,13 +43,7 @@ class Pubsub extends \Google\Model
     return $this->subscription;
   }
   /**
-   * Optional. The name of the Pub/Sub topic created and managed by Eventarc as
-   * a transport for the event delivery. Format:
-   * `projects/{PROJECT_ID}/topics/{TOPIC_NAME}`. You can set an existing topic
-   * for triggers of the type `google.cloud.pubsub.topic.v1.messagePublished`.
-   * The topic you provide here is not deleted by Eventarc at trigger deletion.
-   *
-   * @param string $topic
+   * @param string
    */
   public function setTopic($topic)
   {

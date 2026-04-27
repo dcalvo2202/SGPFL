@@ -20,22 +20,16 @@ namespace Google\Service\CloudWorkstations;
 class ReadinessCheck extends \Google\Model
 {
   /**
-   * Optional. Path to which the request should be sent.
-   *
    * @var string
    */
   public $path;
   /**
-   * Optional. Port to which the request should be sent.
-   *
    * @var int
    */
   public $port;
 
   /**
-   * Optional. Path to which the request should be sent.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {
@@ -49,9 +43,7 @@ class ReadinessCheck extends \Google\Model
     return $this->path;
   }
   /**
-   * Optional. Port to which the request should be sent.
-   *
-   * @param int $port
+   * @param int
    */
   public function setPort($port)
   {

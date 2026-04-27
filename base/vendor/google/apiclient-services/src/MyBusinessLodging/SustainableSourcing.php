@@ -20,266 +20,72 @@ namespace Google\Service\MyBusinessLodging;
 class SustainableSourcing extends \Google\Model
 {
   /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const ECO_FRIENDLY_TOILETRIES_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const ECO_FRIENDLY_TOILETRIES_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const ECO_FRIENDLY_TOILETRIES_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const ECO_FRIENDLY_TOILETRIES_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const LOCALLY_SOURCED_FOOD_AND_BEVERAGES_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const LOCALLY_SOURCED_FOOD_AND_BEVERAGES_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const LOCALLY_SOURCED_FOOD_AND_BEVERAGES_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const LOCALLY_SOURCED_FOOD_AND_BEVERAGES_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const ORGANIC_CAGE_FREE_EGGS_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const ORGANIC_CAGE_FREE_EGGS_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const ORGANIC_CAGE_FREE_EGGS_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const ORGANIC_CAGE_FREE_EGGS_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const ORGANIC_FOOD_AND_BEVERAGES_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const ORGANIC_FOOD_AND_BEVERAGES_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const ORGANIC_FOOD_AND_BEVERAGES_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const ORGANIC_FOOD_AND_BEVERAGES_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const RESPONSIBLE_PURCHASING_POLICY_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const RESPONSIBLE_PURCHASING_POLICY_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const RESPONSIBLE_PURCHASING_POLICY_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const RESPONSIBLE_PURCHASING_POLICY_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const RESPONSIBLY_SOURCES_SEAFOOD_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const RESPONSIBLY_SOURCES_SEAFOOD_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const RESPONSIBLY_SOURCES_SEAFOOD_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const RESPONSIBLY_SOURCES_SEAFOOD_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const VEGAN_MEALS_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const VEGAN_MEALS_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const VEGAN_MEALS_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const VEGAN_MEALS_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const VEGETARIAN_MEALS_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const VEGETARIAN_MEALS_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const VEGETARIAN_MEALS_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const VEGETARIAN_MEALS_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Eco friendly toiletries. Soap, shampoo, lotion, and other toiletries
-   * provided for guests have a nationally or internationally recognized
-   * sustainability certification, such as USDA Organic, EU Organic, or cruelty-
-   * free.
-   *
    * @var bool
    */
   public $ecoFriendlyToiletries;
   /**
-   * Eco friendly toiletries exception.
-   *
    * @var string
    */
   public $ecoFriendlyToiletriesException;
   /**
-   * Locally sourced food and beverages. Property sources locally in order to
-   * lower the environmental footprint from reduced transportation and to
-   * stimulate the local economy. Products produced less than 62 miles from the
-   * establishment are normally considered as locally produced.
-   *
    * @var bool
    */
   public $locallySourcedFoodAndBeverages;
   /**
-   * Locally sourced food and beverages exception.
-   *
    * @var string
    */
   public $locallySourcedFoodAndBeveragesException;
   /**
-   * Organic cage free eggs. The property sources 100% certified organic and
-   * cage-free eggs (shell, liquid, and egg products). Cage-free means hens are
-   * able to walk, spread their wings and lay their eggs in nests).
-   *
    * @var bool
    */
   public $organicCageFreeEggs;
   /**
-   * Organic cage free eggs exception.
-   *
    * @var string
    */
   public $organicCageFreeEggsException;
   /**
-   * Organic food and beverages. At least 25% of food and beverages, by spend,
-   * are certified organic. Organic means products that are certified to one of
-   * the organic standard listed in the IFOAM family of standards. Qualifying
-   * certifications include USDA Organic and EU Organic, among others.
-   *
    * @var bool
    */
   public $organicFoodAndBeverages;
   /**
-   * Organic food and beverages exception.
-   *
    * @var string
    */
   public $organicFoodAndBeveragesException;
   /**
-   * Responsible purchasing policy. The property has a responsible procurement
-   * policy in place. Responsible means integration of social, ethical, and/or
-   * environmental performance factors into the procurement process when
-   * selecting suppliers.
-   *
    * @var bool
    */
   public $responsiblePurchasingPolicy;
   /**
-   * Responsible purchasing policy exception.
-   *
    * @var string
    */
   public $responsiblePurchasingPolicyException;
   /**
-   * Responsibly sources seafood. The property does not source seafood from the
-   * Monterey Bay Aquarium Seafood Watch "avoid" list, and must sustainably
-   * source seafood listed as "good alternative," "eco-certified," and "best
-   * choice". The property has a policy outlining a commitment to source Marine
-   * Stewardship Council (MSC) and/or Aquaculture Stewardship Council (ASC)
-   * Chain of Custody certified seafood.
-   *
    * @var bool
    */
   public $responsiblySourcesSeafood;
   /**
-   * Responsibly sources seafood exception.
-   *
    * @var string
    */
   public $responsiblySourcesSeafoodException;
   /**
-   * Vegan meals. The property provides vegan menu options for guests. Vegan
-   * food does not contain animal products or byproducts.
-   *
    * @var bool
    */
   public $veganMeals;
   /**
-   * Vegan meals exception.
-   *
    * @var string
    */
   public $veganMealsException;
   /**
-   * Vegetarian meals. The property provides vegetarian menu options for guests.
-   * Vegetarian food does not contain meat, poultry, fish, or seafood.
-   *
    * @var bool
    */
   public $vegetarianMeals;
   /**
-   * Vegetarian meals exception.
-   *
    * @var string
    */
   public $vegetarianMealsException;
 
   /**
-   * Eco friendly toiletries. Soap, shampoo, lotion, and other toiletries
-   * provided for guests have a nationally or internationally recognized
-   * sustainability certification, such as USDA Organic, EU Organic, or cruelty-
-   * free.
-   *
-   * @param bool $ecoFriendlyToiletries
+   * @param bool
    */
   public function setEcoFriendlyToiletries($ecoFriendlyToiletries)
   {
@@ -293,31 +99,21 @@ class SustainableSourcing extends \Google\Model
     return $this->ecoFriendlyToiletries;
   }
   /**
-   * Eco friendly toiletries exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::ECO_FRIENDLY_TOILETRIES_EXCEPTION_* $ecoFriendlyToiletriesException
+   * @param string
    */
   public function setEcoFriendlyToiletriesException($ecoFriendlyToiletriesException)
   {
     $this->ecoFriendlyToiletriesException = $ecoFriendlyToiletriesException;
   }
   /**
-   * @return self::ECO_FRIENDLY_TOILETRIES_EXCEPTION_*
+   * @return string
    */
   public function getEcoFriendlyToiletriesException()
   {
     return $this->ecoFriendlyToiletriesException;
   }
   /**
-   * Locally sourced food and beverages. Property sources locally in order to
-   * lower the environmental footprint from reduced transportation and to
-   * stimulate the local economy. Products produced less than 62 miles from the
-   * establishment are normally considered as locally produced.
-   *
-   * @param bool $locallySourcedFoodAndBeverages
+   * @param bool
    */
   public function setLocallySourcedFoodAndBeverages($locallySourcedFoodAndBeverages)
   {
@@ -331,30 +127,21 @@ class SustainableSourcing extends \Google\Model
     return $this->locallySourcedFoodAndBeverages;
   }
   /**
-   * Locally sourced food and beverages exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::LOCALLY_SOURCED_FOOD_AND_BEVERAGES_EXCEPTION_* $locallySourcedFoodAndBeveragesException
+   * @param string
    */
   public function setLocallySourcedFoodAndBeveragesException($locallySourcedFoodAndBeveragesException)
   {
     $this->locallySourcedFoodAndBeveragesException = $locallySourcedFoodAndBeveragesException;
   }
   /**
-   * @return self::LOCALLY_SOURCED_FOOD_AND_BEVERAGES_EXCEPTION_*
+   * @return string
    */
   public function getLocallySourcedFoodAndBeveragesException()
   {
     return $this->locallySourcedFoodAndBeveragesException;
   }
   /**
-   * Organic cage free eggs. The property sources 100% certified organic and
-   * cage-free eggs (shell, liquid, and egg products). Cage-free means hens are
-   * able to walk, spread their wings and lay their eggs in nests).
-   *
-   * @param bool $organicCageFreeEggs
+   * @param bool
    */
   public function setOrganicCageFreeEggs($organicCageFreeEggs)
   {
@@ -368,31 +155,21 @@ class SustainableSourcing extends \Google\Model
     return $this->organicCageFreeEggs;
   }
   /**
-   * Organic cage free eggs exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::ORGANIC_CAGE_FREE_EGGS_EXCEPTION_* $organicCageFreeEggsException
+   * @param string
    */
   public function setOrganicCageFreeEggsException($organicCageFreeEggsException)
   {
     $this->organicCageFreeEggsException = $organicCageFreeEggsException;
   }
   /**
-   * @return self::ORGANIC_CAGE_FREE_EGGS_EXCEPTION_*
+   * @return string
    */
   public function getOrganicCageFreeEggsException()
   {
     return $this->organicCageFreeEggsException;
   }
   /**
-   * Organic food and beverages. At least 25% of food and beverages, by spend,
-   * are certified organic. Organic means products that are certified to one of
-   * the organic standard listed in the IFOAM family of standards. Qualifying
-   * certifications include USDA Organic and EU Organic, among others.
-   *
-   * @param bool $organicFoodAndBeverages
+   * @param bool
    */
   public function setOrganicFoodAndBeverages($organicFoodAndBeverages)
   {
@@ -406,31 +183,21 @@ class SustainableSourcing extends \Google\Model
     return $this->organicFoodAndBeverages;
   }
   /**
-   * Organic food and beverages exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::ORGANIC_FOOD_AND_BEVERAGES_EXCEPTION_* $organicFoodAndBeveragesException
+   * @param string
    */
   public function setOrganicFoodAndBeveragesException($organicFoodAndBeveragesException)
   {
     $this->organicFoodAndBeveragesException = $organicFoodAndBeveragesException;
   }
   /**
-   * @return self::ORGANIC_FOOD_AND_BEVERAGES_EXCEPTION_*
+   * @return string
    */
   public function getOrganicFoodAndBeveragesException()
   {
     return $this->organicFoodAndBeveragesException;
   }
   /**
-   * Responsible purchasing policy. The property has a responsible procurement
-   * policy in place. Responsible means integration of social, ethical, and/or
-   * environmental performance factors into the procurement process when
-   * selecting suppliers.
-   *
-   * @param bool $responsiblePurchasingPolicy
+   * @param bool
    */
   public function setResponsiblePurchasingPolicy($responsiblePurchasingPolicy)
   {
@@ -444,33 +211,21 @@ class SustainableSourcing extends \Google\Model
     return $this->responsiblePurchasingPolicy;
   }
   /**
-   * Responsible purchasing policy exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::RESPONSIBLE_PURCHASING_POLICY_EXCEPTION_* $responsiblePurchasingPolicyException
+   * @param string
    */
   public function setResponsiblePurchasingPolicyException($responsiblePurchasingPolicyException)
   {
     $this->responsiblePurchasingPolicyException = $responsiblePurchasingPolicyException;
   }
   /**
-   * @return self::RESPONSIBLE_PURCHASING_POLICY_EXCEPTION_*
+   * @return string
    */
   public function getResponsiblePurchasingPolicyException()
   {
     return $this->responsiblePurchasingPolicyException;
   }
   /**
-   * Responsibly sources seafood. The property does not source seafood from the
-   * Monterey Bay Aquarium Seafood Watch "avoid" list, and must sustainably
-   * source seafood listed as "good alternative," "eco-certified," and "best
-   * choice". The property has a policy outlining a commitment to source Marine
-   * Stewardship Council (MSC) and/or Aquaculture Stewardship Council (ASC)
-   * Chain of Custody certified seafood.
-   *
-   * @param bool $responsiblySourcesSeafood
+   * @param bool
    */
   public function setResponsiblySourcesSeafood($responsiblySourcesSeafood)
   {
@@ -484,29 +239,21 @@ class SustainableSourcing extends \Google\Model
     return $this->responsiblySourcesSeafood;
   }
   /**
-   * Responsibly sources seafood exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::RESPONSIBLY_SOURCES_SEAFOOD_EXCEPTION_* $responsiblySourcesSeafoodException
+   * @param string
    */
   public function setResponsiblySourcesSeafoodException($responsiblySourcesSeafoodException)
   {
     $this->responsiblySourcesSeafoodException = $responsiblySourcesSeafoodException;
   }
   /**
-   * @return self::RESPONSIBLY_SOURCES_SEAFOOD_EXCEPTION_*
+   * @return string
    */
   public function getResponsiblySourcesSeafoodException()
   {
     return $this->responsiblySourcesSeafoodException;
   }
   /**
-   * Vegan meals. The property provides vegan menu options for guests. Vegan
-   * food does not contain animal products or byproducts.
-   *
-   * @param bool $veganMeals
+   * @param bool
    */
   public function setVeganMeals($veganMeals)
   {
@@ -520,29 +267,21 @@ class SustainableSourcing extends \Google\Model
     return $this->veganMeals;
   }
   /**
-   * Vegan meals exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::VEGAN_MEALS_EXCEPTION_* $veganMealsException
+   * @param string
    */
   public function setVeganMealsException($veganMealsException)
   {
     $this->veganMealsException = $veganMealsException;
   }
   /**
-   * @return self::VEGAN_MEALS_EXCEPTION_*
+   * @return string
    */
   public function getVeganMealsException()
   {
     return $this->veganMealsException;
   }
   /**
-   * Vegetarian meals. The property provides vegetarian menu options for guests.
-   * Vegetarian food does not contain meat, poultry, fish, or seafood.
-   *
-   * @param bool $vegetarianMeals
+   * @param bool
    */
   public function setVegetarianMeals($vegetarianMeals)
   {
@@ -556,19 +295,14 @@ class SustainableSourcing extends \Google\Model
     return $this->vegetarianMeals;
   }
   /**
-   * Vegetarian meals exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::VEGETARIAN_MEALS_EXCEPTION_* $vegetarianMealsException
+   * @param string
    */
   public function setVegetarianMealsException($vegetarianMealsException)
   {
     $this->vegetarianMealsException = $vegetarianMealsException;
   }
   /**
-   * @return self::VEGETARIAN_MEALS_EXCEPTION_*
+   * @return string
    */
   public function getVegetarianMealsException()
   {

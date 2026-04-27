@@ -24,9 +24,7 @@ class GoogleCloudDiscoveryengineV1ListCustomModelsResponse extends \Google\Colle
   protected $modelsDataType = 'array';
 
   /**
-   * List of custom tuning models.
-   *
-   * @param GoogleCloudDiscoveryengineV1CustomTuningModel[] $models
+   * @param GoogleCloudDiscoveryengineV1CustomTuningModel[]
    */
   public function setModels($models)
   {

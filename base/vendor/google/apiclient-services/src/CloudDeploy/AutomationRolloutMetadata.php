@@ -21,32 +21,20 @@ class AutomationRolloutMetadata extends \Google\Collection
 {
   protected $collection_key = 'repairAutomationRuns';
   /**
-   * Output only. The names of the AutomationRuns initiated by an advance
-   * rollout rule.
-   *
    * @var string[]
    */
   public $advanceAutomationRuns;
   /**
-   * Output only. The name of the AutomationRun initiated by a promote release
-   * rule.
-   *
    * @var string
    */
   public $promoteAutomationRun;
   /**
-   * Output only. The names of the AutomationRuns initiated by a repair rollout
-   * rule.
-   *
    * @var string[]
    */
   public $repairAutomationRuns;
 
   /**
-   * Output only. The names of the AutomationRuns initiated by an advance
-   * rollout rule.
-   *
-   * @param string[] $advanceAutomationRuns
+   * @param string[]
    */
   public function setAdvanceAutomationRuns($advanceAutomationRuns)
   {
@@ -60,10 +48,7 @@ class AutomationRolloutMetadata extends \Google\Collection
     return $this->advanceAutomationRuns;
   }
   /**
-   * Output only. The name of the AutomationRun initiated by a promote release
-   * rule.
-   *
-   * @param string $promoteAutomationRun
+   * @param string
    */
   public function setPromoteAutomationRun($promoteAutomationRun)
   {
@@ -77,10 +62,7 @@ class AutomationRolloutMetadata extends \Google\Collection
     return $this->promoteAutomationRun;
   }
   /**
-   * Output only. The names of the AutomationRuns initiated by a repair rollout
-   * rule.
-   *
-   * @param string[] $repairAutomationRuns
+   * @param string[]
    */
   public function setRepairAutomationRuns($repairAutomationRuns)
   {

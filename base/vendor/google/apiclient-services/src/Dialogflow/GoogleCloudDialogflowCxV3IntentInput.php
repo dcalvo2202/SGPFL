@@ -25,7 +25,7 @@ class GoogleCloudDialogflowCxV3IntentInput extends \Google\Model
   public $intent;
 
   /**
-   * @param string $intent
+   * @param string
    */
   public function setIntent($intent)
   {

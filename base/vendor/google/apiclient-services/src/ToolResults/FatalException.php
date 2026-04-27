@@ -23,9 +23,7 @@ class FatalException extends \Google\Model
   protected $stackTraceDataType = '';
 
   /**
-   * The stack trace of the fatal exception. Optional.
-   *
-   * @param StackTrace $stackTrace
+   * @param StackTrace
    */
   public function setStackTrace(StackTrace $stackTrace)
   {

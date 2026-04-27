@@ -25,40 +25,24 @@ class RoutersListBgpRoutes extends \Google\Collection
    */
   public $etag;
   /**
-   * [Output Only] The unique identifier for the resource. This identifier is
-   * defined by the server.
-   *
    * @var string
    */
   public $id;
   /**
-   * Output only. [Output Only] Type of resource.
-   * Alwayscompute#routersListBgpRoutes for lists of bgp routes.
-   *
    * @var string
    */
   public $kind;
   /**
-   * [Output Only] This token allows you to get the next page of results for
-   * list requests. If the number of results is larger thanmaxResults, use the
-   * nextPageToken as a value for the query parameter pageToken in the next list
-   * request. Subsequent list requests will have their own nextPageToken to
-   * continue paging through the results.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $resultType = BgpRoute::class;
   protected $resultDataType = 'array';
   /**
-   * Output only. [Output Only] Server-defined URL for this resource.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * Output only. [Output Only] Unreachable resources.
-   *
    * @var string[]
    */
   public $unreachables;
@@ -66,7 +50,7 @@ class RoutersListBgpRoutes extends \Google\Collection
   protected $warningDataType = '';
 
   /**
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -80,10 +64,7 @@ class RoutersListBgpRoutes extends \Google\Collection
     return $this->etag;
   }
   /**
-   * [Output Only] The unique identifier for the resource. This identifier is
-   * defined by the server.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -97,10 +78,7 @@ class RoutersListBgpRoutes extends \Google\Collection
     return $this->id;
   }
   /**
-   * Output only. [Output Only] Type of resource.
-   * Alwayscompute#routersListBgpRoutes for lists of bgp routes.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -114,13 +92,7 @@ class RoutersListBgpRoutes extends \Google\Collection
     return $this->kind;
   }
   /**
-   * [Output Only] This token allows you to get the next page of results for
-   * list requests. If the number of results is larger thanmaxResults, use the
-   * nextPageToken as a value for the query parameter pageToken in the next list
-   * request. Subsequent list requests will have their own nextPageToken to
-   * continue paging through the results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -134,9 +106,7 @@ class RoutersListBgpRoutes extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * [Output Only] A list of bgp routes.
-   *
-   * @param BgpRoute[] $result
+   * @param BgpRoute[]
    */
   public function setResult($result)
   {
@@ -150,9 +120,7 @@ class RoutersListBgpRoutes extends \Google\Collection
     return $this->result;
   }
   /**
-   * Output only. [Output Only] Server-defined URL for this resource.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -166,9 +134,7 @@ class RoutersListBgpRoutes extends \Google\Collection
     return $this->selfLink;
   }
   /**
-   * Output only. [Output Only] Unreachable resources.
-   *
-   * @param string[] $unreachables
+   * @param string[]
    */
   public function setUnreachables($unreachables)
   {
@@ -182,9 +148,7 @@ class RoutersListBgpRoutes extends \Google\Collection
     return $this->unreachables;
   }
   /**
-   * [Output Only] Informational warning message.
-   *
-   * @param RoutersListBgpRoutesWarning $warning
+   * @param RoutersListBgpRoutesWarning
    */
   public function setWarning(RoutersListBgpRoutesWarning $warning)
   {

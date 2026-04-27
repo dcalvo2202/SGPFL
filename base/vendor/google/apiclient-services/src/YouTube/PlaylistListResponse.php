@@ -21,57 +21,38 @@ class PlaylistListResponse extends \Google\Collection
 {
   protected $collection_key = 'items';
   /**
-   * Etag of this resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Serialized EventId of the request which produced this response.
-   *
-   * @deprecated
    * @var string
    */
   public $eventId;
   protected $itemsType = Playlist::class;
   protected $itemsDataType = 'array';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "youtube#playlistListResponse".
-   *
    * @var string
    */
   public $kind;
   /**
-   * The token that can be used as the value of the pageToken parameter to
-   * retrieve the next page in the result set.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $pageInfoType = PageInfo::class;
   protected $pageInfoDataType = '';
   /**
-   * The token that can be used as the value of the pageToken parameter to
-   * retrieve the previous page in the result set.
-   *
    * @var string
    */
   public $prevPageToken;
   protected $tokenPaginationType = TokenPagination::class;
   protected $tokenPaginationDataType = '';
   /**
-   * The visitorId identifies the visitor.
-   *
-   * @deprecated
    * @var string
    */
   public $visitorId;
 
   /**
-   * Etag of this resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -85,17 +66,13 @@ class PlaylistListResponse extends \Google\Collection
     return $this->etag;
   }
   /**
-   * Serialized EventId of the request which produced this response.
-   *
-   * @deprecated
-   * @param string $eventId
+   * @param string
    */
   public function setEventId($eventId)
   {
     $this->eventId = $eventId;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getEventId()
@@ -103,9 +80,7 @@ class PlaylistListResponse extends \Google\Collection
     return $this->eventId;
   }
   /**
-   * A list of playlists that match the request criteria
-   *
-   * @param Playlist[] $items
+   * @param Playlist[]
    */
   public function setItems($items)
   {
@@ -119,10 +94,7 @@ class PlaylistListResponse extends \Google\Collection
     return $this->items;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "youtube#playlistListResponse".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -136,10 +108,7 @@ class PlaylistListResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The token that can be used as the value of the pageToken parameter to
-   * retrieve the next page in the result set.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -153,9 +122,7 @@ class PlaylistListResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * General pagination information.
-   *
-   * @param PageInfo $pageInfo
+   * @param PageInfo
    */
   public function setPageInfo(PageInfo $pageInfo)
   {
@@ -169,10 +136,7 @@ class PlaylistListResponse extends \Google\Collection
     return $this->pageInfo;
   }
   /**
-   * The token that can be used as the value of the pageToken parameter to
-   * retrieve the previous page in the result set.
-   *
-   * @param string $prevPageToken
+   * @param string
    */
   public function setPrevPageToken($prevPageToken)
   {
@@ -186,15 +150,13 @@ class PlaylistListResponse extends \Google\Collection
     return $this->prevPageToken;
   }
   /**
-   * @deprecated
-   * @param TokenPagination $tokenPagination
+   * @param TokenPagination
    */
   public function setTokenPagination(TokenPagination $tokenPagination)
   {
     $this->tokenPagination = $tokenPagination;
   }
   /**
-   * @deprecated
    * @return TokenPagination
    */
   public function getTokenPagination()
@@ -202,17 +164,13 @@ class PlaylistListResponse extends \Google\Collection
     return $this->tokenPagination;
   }
   /**
-   * The visitorId identifies the visitor.
-   *
-   * @deprecated
-   * @param string $visitorId
+   * @param string
    */
   public function setVisitorId($visitorId)
   {
     $this->visitorId = $visitorId;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getVisitorId()

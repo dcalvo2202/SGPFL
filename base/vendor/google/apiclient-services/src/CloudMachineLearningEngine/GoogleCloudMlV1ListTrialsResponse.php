@@ -24,9 +24,7 @@ class GoogleCloudMlV1ListTrialsResponse extends \Google\Collection
   protected $trialsDataType = 'array';
 
   /**
-   * The trials associated with the study.
-   *
-   * @param GoogleCloudMlV1Trial[] $trials
+   * @param GoogleCloudMlV1Trial[]
    */
   public function setTrials($trials)
   {

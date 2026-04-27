@@ -21,9 +21,6 @@ class ListSSHKeysResponse extends \Google\Collection
 {
   protected $collection_key = 'sshKeys';
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListSSHKeysResponse extends \Google\Collection
   protected $sshKeysDataType = 'array';
 
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class ListSSHKeysResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The SSH keys registered in the project.
-   *
-   * @param SSHKey[] $sshKeys
+   * @param SSHKey[]
    */
   public function setSshKeys($sshKeys)
   {

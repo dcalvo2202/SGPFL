@@ -32,7 +32,7 @@ class GoogleCloudDialogflowCxV3FlowValidationResult extends \Google\Collection
   protected $validationMessagesDataType = 'array';
 
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -46,7 +46,7 @@ class GoogleCloudDialogflowCxV3FlowValidationResult extends \Google\Collection
     return $this->name;
   }
   /**
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -60,7 +60,7 @@ class GoogleCloudDialogflowCxV3FlowValidationResult extends \Google\Collection
     return $this->updateTime;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3ValidationMessage[] $validationMessages
+   * @param GoogleCloudDialogflowCxV3ValidationMessage[]
    */
   public function setValidationMessages($validationMessages)
   {

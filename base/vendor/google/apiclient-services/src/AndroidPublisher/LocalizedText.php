@@ -20,24 +20,16 @@ namespace Google\Service\AndroidPublisher;
 class LocalizedText extends \Google\Model
 {
   /**
-   * Language localization code (a BCP-47 language tag; for example, "de-AT" for
-   * Austrian German).
-   *
    * @var string
    */
   public $language;
   /**
-   * The text in the given language.
-   *
    * @var string
    */
   public $text;
 
   /**
-   * Language localization code (a BCP-47 language tag; for example, "de-AT" for
-   * Austrian German).
-   *
-   * @param string $language
+   * @param string
    */
   public function setLanguage($language)
   {
@@ -51,9 +43,7 @@ class LocalizedText extends \Google\Model
     return $this->language;
   }
   /**
-   * The text in the given language.
-   *
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {

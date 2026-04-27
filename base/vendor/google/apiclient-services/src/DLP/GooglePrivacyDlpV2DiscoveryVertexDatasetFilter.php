@@ -27,9 +27,7 @@ class GooglePrivacyDlpV2DiscoveryVertexDatasetFilter extends \Google\Model
   protected $vertexDatasetResourceReferenceDataType = '';
 
   /**
-   * A specific set of Vertex AI datasets for this filter to apply to.
-   *
-   * @param GooglePrivacyDlpV2VertexDatasetCollection $collection
+   * @param GooglePrivacyDlpV2VertexDatasetCollection
    */
   public function setCollection(GooglePrivacyDlpV2VertexDatasetCollection $collection)
   {
@@ -43,12 +41,7 @@ class GooglePrivacyDlpV2DiscoveryVertexDatasetFilter extends \Google\Model
     return $this->collection;
   }
   /**
-   * Catch-all. This should always be the last target in the list because
-   * anything above it will apply first. Should only appear once in a
-   * configuration. If none is specified, a default one will be added
-   * automatically.
-   *
-   * @param GooglePrivacyDlpV2AllOtherResources $others
+   * @param GooglePrivacyDlpV2AllOtherResources
    */
   public function setOthers(GooglePrivacyDlpV2AllOtherResources $others)
   {
@@ -62,10 +55,7 @@ class GooglePrivacyDlpV2DiscoveryVertexDatasetFilter extends \Google\Model
     return $this->others;
   }
   /**
-   * The dataset resource to scan. Targets including this can only include one
-   * target (the target with this dataset resource reference).
-   *
-   * @param GooglePrivacyDlpV2VertexDatasetResourceReference $vertexDatasetResourceReference
+   * @param GooglePrivacyDlpV2VertexDatasetResourceReference
    */
   public function setVertexDatasetResourceReference(GooglePrivacyDlpV2VertexDatasetResourceReference $vertexDatasetResourceReference)
   {

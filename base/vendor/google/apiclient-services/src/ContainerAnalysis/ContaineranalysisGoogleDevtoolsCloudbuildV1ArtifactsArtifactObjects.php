@@ -21,18 +21,10 @@ class ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsArtifactObjects extend
 {
   protected $collection_key = 'paths';
   /**
-   * Cloud Storage bucket and optional object path, in the form
-   * "gs://bucket/path/to/somewhere/". (see [Bucket Name
-   * Requirements](https://cloud.google.com/storage/docs/bucket-
-   * naming#requirements)). Files in the workspace matching any path pattern
-   * will be uploaded to Cloud Storage with this location as a prefix.
-   *
    * @var string
    */
   public $location;
   /**
-   * Path globs used to match files in the build's workspace.
-   *
    * @var string[]
    */
   public $paths;
@@ -40,13 +32,7 @@ class ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsArtifactObjects extend
   protected $timingDataType = '';
 
   /**
-   * Cloud Storage bucket and optional object path, in the form
-   * "gs://bucket/path/to/somewhere/". (see [Bucket Name
-   * Requirements](https://cloud.google.com/storage/docs/bucket-
-   * naming#requirements)). Files in the workspace matching any path pattern
-   * will be uploaded to Cloud Storage with this location as a prefix.
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -60,9 +46,7 @@ class ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsArtifactObjects extend
     return $this->location;
   }
   /**
-   * Path globs used to match files in the build's workspace.
-   *
-   * @param string[] $paths
+   * @param string[]
    */
   public function setPaths($paths)
   {
@@ -76,9 +60,7 @@ class ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsArtifactObjects extend
     return $this->paths;
   }
   /**
-   * Output only. Stores timing information for pushing all artifact objects.
-   *
-   * @param ContaineranalysisGoogleDevtoolsCloudbuildV1TimeSpan $timing
+   * @param ContaineranalysisGoogleDevtoolsCloudbuildV1TimeSpan
    */
   public function setTiming(ContaineranalysisGoogleDevtoolsCloudbuildV1TimeSpan $timing)
   {

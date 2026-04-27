@@ -19,30 +19,10 @@ namespace Google\Service\PeopleService;
 
 class Person extends \Google\Collection
 {
-  /**
-   * Unspecified.
-   */
-  public const AGE_RANGE_AGE_RANGE_UNSPECIFIED = 'AGE_RANGE_UNSPECIFIED';
-  /**
-   * Younger than eighteen.
-   */
-  public const AGE_RANGE_LESS_THAN_EIGHTEEN = 'LESS_THAN_EIGHTEEN';
-  /**
-   * Between eighteen and twenty.
-   */
-  public const AGE_RANGE_EIGHTEEN_TO_TWENTY = 'EIGHTEEN_TO_TWENTY';
-  /**
-   * Twenty-one and older.
-   */
-  public const AGE_RANGE_TWENTY_ONE_OR_OLDER = 'TWENTY_ONE_OR_OLDER';
   protected $collection_key = 'userDefined';
   protected $addressesType = Address::class;
   protected $addressesDataType = 'array';
   /**
-   * Output only. **DEPRECATED** (Please use `person.ageRanges` instead) The
-   * person's age range.
-   *
-   * @deprecated
    * @var string
    */
   public $ageRange;
@@ -63,9 +43,6 @@ class Person extends \Google\Collection
   protected $emailAddressesType = EmailAddress::class;
   protected $emailAddressesDataType = 'array';
   /**
-   * The [HTTP entity tag](https://en.wikipedia.org/wiki/HTTP_ETag) of the
-   * resource. Used for web cache validation.
-   *
    * @var string
    */
   public $etag;
@@ -112,9 +89,6 @@ class Person extends \Google\Collection
   protected $residencesType = Residence::class;
   protected $residencesDataType = 'array';
   /**
-   * The resource name for the person, assigned by the server. An ASCII string
-   * in the form of `people/{person_id}`.
-   *
    * @var string
    */
   public $resourceName;
@@ -130,9 +104,7 @@ class Person extends \Google\Collection
   protected $userDefinedDataType = 'array';
 
   /**
-   * The person's street addresses.
-   *
-   * @param Address[] $addresses
+   * @param Address[]
    */
   public function setAddresses($addresses)
   {
@@ -146,31 +118,21 @@ class Person extends \Google\Collection
     return $this->addresses;
   }
   /**
-   * Output only. **DEPRECATED** (Please use `person.ageRanges` instead) The
-   * person's age range.
-   *
-   * Accepted values: AGE_RANGE_UNSPECIFIED, LESS_THAN_EIGHTEEN,
-   * EIGHTEEN_TO_TWENTY, TWENTY_ONE_OR_OLDER
-   *
-   * @deprecated
-   * @param self::AGE_RANGE_* $ageRange
+   * @param string
    */
   public function setAgeRange($ageRange)
   {
     $this->ageRange = $ageRange;
   }
   /**
-   * @deprecated
-   * @return self::AGE_RANGE_*
+   * @return string
    */
   public function getAgeRange()
   {
     return $this->ageRange;
   }
   /**
-   * Output only. The person's age ranges.
-   *
-   * @param AgeRangeType[] $ageRanges
+   * @param AgeRangeType[]
    */
   public function setAgeRanges($ageRanges)
   {
@@ -184,9 +146,7 @@ class Person extends \Google\Collection
     return $this->ageRanges;
   }
   /**
-   * The person's biographies. This field is a singleton for contact sources.
-   *
-   * @param Biography[] $biographies
+   * @param Biography[]
    */
   public function setBiographies($biographies)
   {
@@ -200,9 +160,7 @@ class Person extends \Google\Collection
     return $this->biographies;
   }
   /**
-   * The person's birthdays. This field is a singleton for contact sources.
-   *
-   * @param Birthday[] $birthdays
+   * @param Birthday[]
    */
   public function setBirthdays($birthdays)
   {
@@ -216,17 +174,13 @@ class Person extends \Google\Collection
     return $this->birthdays;
   }
   /**
-   * **DEPRECATED**: No data will be returned The person's bragging rights.
-   *
-   * @deprecated
-   * @param BraggingRights[] $braggingRights
+   * @param BraggingRights[]
    */
   public function setBraggingRights($braggingRights)
   {
     $this->braggingRights = $braggingRights;
   }
   /**
-   * @deprecated
    * @return BraggingRights[]
    */
   public function getBraggingRights()
@@ -234,9 +188,7 @@ class Person extends \Google\Collection
     return $this->braggingRights;
   }
   /**
-   * The person's calendar URLs.
-   *
-   * @param CalendarUrl[] $calendarUrls
+   * @param CalendarUrl[]
    */
   public function setCalendarUrls($calendarUrls)
   {
@@ -250,9 +202,7 @@ class Person extends \Google\Collection
     return $this->calendarUrls;
   }
   /**
-   * The person's client data.
-   *
-   * @param ClientData[] $clientData
+   * @param ClientData[]
    */
   public function setClientData($clientData)
   {
@@ -266,9 +216,7 @@ class Person extends \Google\Collection
     return $this->clientData;
   }
   /**
-   * Output only. The person's cover photos.
-   *
-   * @param CoverPhoto[] $coverPhotos
+   * @param CoverPhoto[]
    */
   public function setCoverPhotos($coverPhotos)
   {
@@ -282,12 +230,7 @@ class Person extends \Google\Collection
     return $this->coverPhotos;
   }
   /**
-   * The person's email addresses. For `people.connections.list` and
-   * `otherContacts.list` the number of email addresses is limited to 100. If a
-   * Person has more email addresses the entire set can be obtained by calling
-   * GetPeople.
-   *
-   * @param EmailAddress[] $emailAddresses
+   * @param EmailAddress[]
    */
   public function setEmailAddresses($emailAddresses)
   {
@@ -301,10 +244,7 @@ class Person extends \Google\Collection
     return $this->emailAddresses;
   }
   /**
-   * The [HTTP entity tag](https://en.wikipedia.org/wiki/HTTP_ETag) of the
-   * resource. Used for web cache validation.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -318,9 +258,7 @@ class Person extends \Google\Collection
     return $this->etag;
   }
   /**
-   * The person's events.
-   *
-   * @param Event[] $events
+   * @param Event[]
    */
   public function setEvents($events)
   {
@@ -334,9 +272,7 @@ class Person extends \Google\Collection
     return $this->events;
   }
   /**
-   * The person's external IDs.
-   *
-   * @param ExternalId[] $externalIds
+   * @param ExternalId[]
    */
   public function setExternalIds($externalIds)
   {
@@ -350,9 +286,7 @@ class Person extends \Google\Collection
     return $this->externalIds;
   }
   /**
-   * The person's file-ases.
-   *
-   * @param FileAs[] $fileAses
+   * @param FileAs[]
    */
   public function setFileAses($fileAses)
   {
@@ -366,9 +300,7 @@ class Person extends \Google\Collection
     return $this->fileAses;
   }
   /**
-   * The person's genders. This field is a singleton for contact sources.
-   *
-   * @param Gender[] $genders
+   * @param Gender[]
    */
   public function setGenders($genders)
   {
@@ -382,9 +314,7 @@ class Person extends \Google\Collection
     return $this->genders;
   }
   /**
-   * The person's instant messaging clients.
-   *
-   * @param ImClient[] $imClients
+   * @param ImClient[]
    */
   public function setImClients($imClients)
   {
@@ -398,9 +328,7 @@ class Person extends \Google\Collection
     return $this->imClients;
   }
   /**
-   * The person's interests.
-   *
-   * @param Interest[] $interests
+   * @param Interest[]
    */
   public function setInterests($interests)
   {
@@ -414,9 +342,7 @@ class Person extends \Google\Collection
     return $this->interests;
   }
   /**
-   * The person's locale preferences.
-   *
-   * @param Locale[] $locales
+   * @param Locale[]
    */
   public function setLocales($locales)
   {
@@ -430,9 +356,7 @@ class Person extends \Google\Collection
     return $this->locales;
   }
   /**
-   * The person's locations.
-   *
-   * @param Location[] $locations
+   * @param Location[]
    */
   public function setLocations($locations)
   {
@@ -446,9 +370,7 @@ class Person extends \Google\Collection
     return $this->locations;
   }
   /**
-   * The person's group memberships.
-   *
-   * @param Membership[] $memberships
+   * @param Membership[]
    */
   public function setMemberships($memberships)
   {
@@ -462,9 +384,7 @@ class Person extends \Google\Collection
     return $this->memberships;
   }
   /**
-   * Output only. Metadata about the person.
-   *
-   * @param PersonMetadata $metadata
+   * @param PersonMetadata
    */
   public function setMetadata(PersonMetadata $metadata)
   {
@@ -478,9 +398,7 @@ class Person extends \Google\Collection
     return $this->metadata;
   }
   /**
-   * The person's miscellaneous keywords.
-   *
-   * @param MiscKeyword[] $miscKeywords
+   * @param MiscKeyword[]
    */
   public function setMiscKeywords($miscKeywords)
   {
@@ -494,9 +412,7 @@ class Person extends \Google\Collection
     return $this->miscKeywords;
   }
   /**
-   * The person's names. This field is a singleton for contact sources.
-   *
-   * @param Name[] $names
+   * @param Name[]
    */
   public function setNames($names)
   {
@@ -510,9 +426,7 @@ class Person extends \Google\Collection
     return $this->names;
   }
   /**
-   * The person's nicknames.
-   *
-   * @param Nickname[] $nicknames
+   * @param Nickname[]
    */
   public function setNicknames($nicknames)
   {
@@ -526,9 +440,7 @@ class Person extends \Google\Collection
     return $this->nicknames;
   }
   /**
-   * The person's occupations.
-   *
-   * @param Occupation[] $occupations
+   * @param Occupation[]
    */
   public function setOccupations($occupations)
   {
@@ -542,9 +454,7 @@ class Person extends \Google\Collection
     return $this->occupations;
   }
   /**
-   * The person's past or current organizations.
-   *
-   * @param Organization[] $organizations
+   * @param Organization[]
    */
   public function setOrganizations($organizations)
   {
@@ -558,12 +468,7 @@ class Person extends \Google\Collection
     return $this->organizations;
   }
   /**
-   * The person's phone numbers. For `people.connections.list` and
-   * `otherContacts.list` the number of phone numbers is limited to 100. If a
-   * Person has more phone numbers the entire set can be obtained by calling
-   * GetPeople.
-   *
-   * @param PhoneNumber[] $phoneNumbers
+   * @param PhoneNumber[]
    */
   public function setPhoneNumbers($phoneNumbers)
   {
@@ -577,9 +482,7 @@ class Person extends \Google\Collection
     return $this->phoneNumbers;
   }
   /**
-   * Output only. The person's photos.
-   *
-   * @param Photo[] $photos
+   * @param Photo[]
    */
   public function setPhotos($photos)
   {
@@ -593,9 +496,7 @@ class Person extends \Google\Collection
     return $this->photos;
   }
   /**
-   * The person's relations.
-   *
-   * @param Relation[] $relations
+   * @param Relation[]
    */
   public function setRelations($relations)
   {
@@ -609,18 +510,13 @@ class Person extends \Google\Collection
     return $this->relations;
   }
   /**
-   * Output only. **DEPRECATED**: No data will be returned The person's
-   * relationship interests.
-   *
-   * @deprecated
-   * @param RelationshipInterest[] $relationshipInterests
+   * @param RelationshipInterest[]
    */
   public function setRelationshipInterests($relationshipInterests)
   {
     $this->relationshipInterests = $relationshipInterests;
   }
   /**
-   * @deprecated
    * @return RelationshipInterest[]
    */
   public function getRelationshipInterests()
@@ -628,18 +524,13 @@ class Person extends \Google\Collection
     return $this->relationshipInterests;
   }
   /**
-   * Output only. **DEPRECATED**: No data will be returned The person's
-   * relationship statuses.
-   *
-   * @deprecated
-   * @param RelationshipStatus[] $relationshipStatuses
+   * @param RelationshipStatus[]
    */
   public function setRelationshipStatuses($relationshipStatuses)
   {
     $this->relationshipStatuses = $relationshipStatuses;
   }
   /**
-   * @deprecated
    * @return RelationshipStatus[]
    */
   public function getRelationshipStatuses()
@@ -647,18 +538,13 @@ class Person extends \Google\Collection
     return $this->relationshipStatuses;
   }
   /**
-   * **DEPRECATED**: (Please use `person.locations` instead) The person's
-   * residences.
-   *
-   * @deprecated
-   * @param Residence[] $residences
+   * @param Residence[]
    */
   public function setResidences($residences)
   {
     $this->residences = $residences;
   }
   /**
-   * @deprecated
    * @return Residence[]
    */
   public function getResidences()
@@ -666,10 +552,7 @@ class Person extends \Google\Collection
     return $this->residences;
   }
   /**
-   * The resource name for the person, assigned by the server. An ASCII string
-   * in the form of `people/{person_id}`.
-   *
-   * @param string $resourceName
+   * @param string
    */
   public function setResourceName($resourceName)
   {
@@ -683,9 +566,7 @@ class Person extends \Google\Collection
     return $this->resourceName;
   }
   /**
-   * The person's SIP addresses.
-   *
-   * @param SipAddress[] $sipAddresses
+   * @param SipAddress[]
    */
   public function setSipAddresses($sipAddresses)
   {
@@ -699,9 +580,7 @@ class Person extends \Google\Collection
     return $this->sipAddresses;
   }
   /**
-   * The person's skills.
-   *
-   * @param Skill[] $skills
+   * @param Skill[]
    */
   public function setSkills($skills)
   {
@@ -715,18 +594,13 @@ class Person extends \Google\Collection
     return $this->skills;
   }
   /**
-   * Output only. **DEPRECATED**: No data will be returned The person's
-   * taglines.
-   *
-   * @deprecated
-   * @param Tagline[] $taglines
+   * @param Tagline[]
    */
   public function setTaglines($taglines)
   {
     $this->taglines = $taglines;
   }
   /**
-   * @deprecated
    * @return Tagline[]
    */
   public function getTaglines()
@@ -734,9 +608,7 @@ class Person extends \Google\Collection
     return $this->taglines;
   }
   /**
-   * The person's associated URLs.
-   *
-   * @param Url[] $urls
+   * @param Url[]
    */
   public function setUrls($urls)
   {
@@ -750,9 +622,7 @@ class Person extends \Google\Collection
     return $this->urls;
   }
   /**
-   * The person's user defined data.
-   *
-   * @param UserDefined[] $userDefined
+   * @param UserDefined[]
    */
   public function setUserDefined($userDefined)
   {

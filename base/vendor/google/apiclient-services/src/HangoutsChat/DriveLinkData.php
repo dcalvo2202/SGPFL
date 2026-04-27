@@ -22,18 +22,12 @@ class DriveLinkData extends \Google\Model
   protected $driveDataRefType = DriveDataRef::class;
   protected $driveDataRefDataType = '';
   /**
-   * The mime type of the linked Google Drive resource.
-   *
    * @var string
    */
   public $mimeType;
 
   /**
-   * A [DriveDataRef](https://developers.google.com/workspace/chat/api/reference
-   * /rest/v1/spaces.messages.attachments#drivedataref) which references a
-   * Google Drive file.
-   *
-   * @param DriveDataRef $driveDataRef
+   * @param DriveDataRef
    */
   public function setDriveDataRef(DriveDataRef $driveDataRef)
   {
@@ -47,9 +41,7 @@ class DriveLinkData extends \Google\Model
     return $this->driveDataRef;
   }
   /**
-   * The mime type of the linked Google Drive resource.
-   *
-   * @param string $mimeType
+   * @param string
    */
   public function setMimeType($mimeType)
   {

@@ -20,18 +20,12 @@ namespace Google\Service\ShoppingContent;
 class LiasettingsRequestGmbAccessResponse extends \Google\Model
 {
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#liasettingsRequestGmbAccessResponse`".
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#liasettingsRequestGmbAccessResponse`".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

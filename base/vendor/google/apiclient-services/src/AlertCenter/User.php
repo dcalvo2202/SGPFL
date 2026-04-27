@@ -20,22 +20,16 @@ namespace Google\Service\AlertCenter;
 class User extends \Google\Model
 {
   /**
-   * Display name of the user.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Email address of the user.
-   *
    * @var string
    */
   public $emailAddress;
 
   /**
-   * Display name of the user.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -49,9 +43,7 @@ class User extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Email address of the user.
-   *
-   * @param string $emailAddress
+   * @param string
    */
   public function setEmailAddress($emailAddress)
   {

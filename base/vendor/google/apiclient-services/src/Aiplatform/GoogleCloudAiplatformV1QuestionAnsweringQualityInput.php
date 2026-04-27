@@ -25,9 +25,7 @@ class GoogleCloudAiplatformV1QuestionAnsweringQualityInput extends \Google\Model
   protected $metricSpecDataType = '';
 
   /**
-   * Required. Question answering quality instance.
-   *
-   * @param GoogleCloudAiplatformV1QuestionAnsweringQualityInstance $instance
+   * @param GoogleCloudAiplatformV1QuestionAnsweringQualityInstance
    */
   public function setInstance(GoogleCloudAiplatformV1QuestionAnsweringQualityInstance $instance)
   {
@@ -41,9 +39,7 @@ class GoogleCloudAiplatformV1QuestionAnsweringQualityInput extends \Google\Model
     return $this->instance;
   }
   /**
-   * Required. Spec for question answering quality score metric.
-   *
-   * @param GoogleCloudAiplatformV1QuestionAnsweringQualitySpec $metricSpec
+   * @param GoogleCloudAiplatformV1QuestionAnsweringQualitySpec
    */
   public function setMetricSpec(GoogleCloudAiplatformV1QuestionAnsweringQualitySpec $metricSpec)
   {

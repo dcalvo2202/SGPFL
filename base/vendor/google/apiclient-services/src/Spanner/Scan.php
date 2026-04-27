@@ -20,38 +20,26 @@ namespace Google\Service\Spanner;
 class Scan extends \Google\Model
 {
   /**
-   * Additional information provided by the implementer.
-   *
    * @var array[]
    */
   public $details;
   /**
-   * The upper bound for when the scan is defined.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * The unique name of the scan, specific to the Database service implementing
-   * this interface.
-   *
    * @var string
    */
   public $name;
   protected $scanDataType = ScanData::class;
   protected $scanDataDataType = '';
   /**
-   * A range of time (inclusive) for when the scan is defined. The lower bound
-   * for when the scan is defined.
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * Additional information provided by the implementer.
-   *
-   * @param array[] $details
+   * @param array[]
    */
   public function setDetails($details)
   {
@@ -65,9 +53,7 @@ class Scan extends \Google\Model
     return $this->details;
   }
   /**
-   * The upper bound for when the scan is defined.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -81,10 +67,7 @@ class Scan extends \Google\Model
     return $this->endTime;
   }
   /**
-   * The unique name of the scan, specific to the Database service implementing
-   * this interface.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -98,10 +81,7 @@ class Scan extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Cloud Key Visualizer scan data. Note, this field is not
-   * available to the ListScans method.
-   *
-   * @param ScanData $scanData
+   * @param ScanData
    */
   public function setScanData(ScanData $scanData)
   {
@@ -115,10 +95,7 @@ class Scan extends \Google\Model
     return $this->scanData;
   }
   /**
-   * A range of time (inclusive) for when the scan is defined. The lower bound
-   * for when the scan is defined.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

@@ -20,10 +20,6 @@ namespace Google\Service\ShoppingContent;
 class FreeShippingThreshold extends \Google\Model
 {
   /**
-   * Required. The [CLDR territory
-   * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml) of
-   * the country to which an item will ship.
-   *
    * @var string
    */
   public $country;
@@ -31,11 +27,7 @@ class FreeShippingThreshold extends \Google\Model
   protected $priceThresholdDataType = '';
 
   /**
-   * Required. The [CLDR territory
-   * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml) of
-   * the country to which an item will ship.
-   *
-   * @param string $country
+   * @param string
    */
   public function setCountry($country)
   {
@@ -49,10 +41,7 @@ class FreeShippingThreshold extends \Google\Model
     return $this->country;
   }
   /**
-   * Required. The minimum product price for the shipping cost to become free.
-   * Represented as a number.
-   *
-   * @param Price $priceThreshold
+   * @param Price
    */
   public function setPriceThreshold(Price $priceThreshold)
   {

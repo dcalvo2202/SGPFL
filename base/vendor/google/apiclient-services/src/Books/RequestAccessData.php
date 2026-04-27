@@ -24,16 +24,12 @@ class RequestAccessData extends \Google\Model
   protected $downloadAccessType = DownloadAccessRestriction::class;
   protected $downloadAccessDataType = '';
   /**
-   * Resource type.
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * A concurrent access response.
-   *
-   * @param ConcurrentAccessRestriction $concurrentAccess
+   * @param ConcurrentAccessRestriction
    */
   public function setConcurrentAccess(ConcurrentAccessRestriction $concurrentAccess)
   {
@@ -47,9 +43,7 @@ class RequestAccessData extends \Google\Model
     return $this->concurrentAccess;
   }
   /**
-   * A download access response.
-   *
-   * @param DownloadAccessRestriction $downloadAccess
+   * @param DownloadAccessRestriction
    */
   public function setDownloadAccess(DownloadAccessRestriction $downloadAccess)
   {
@@ -63,9 +57,7 @@ class RequestAccessData extends \Google\Model
     return $this->downloadAccess;
   }
   /**
-   * Resource type.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

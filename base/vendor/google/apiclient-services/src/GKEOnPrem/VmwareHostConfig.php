@@ -21,28 +21,20 @@ class VmwareHostConfig extends \Google\Collection
 {
   protected $collection_key = 'ntpServers';
   /**
-   * DNS search domains.
-   *
    * @var string[]
    */
   public $dnsSearchDomains;
   /**
-   * DNS servers.
-   *
    * @var string[]
    */
   public $dnsServers;
   /**
-   * NTP servers.
-   *
    * @var string[]
    */
   public $ntpServers;
 
   /**
-   * DNS search domains.
-   *
-   * @param string[] $dnsSearchDomains
+   * @param string[]
    */
   public function setDnsSearchDomains($dnsSearchDomains)
   {
@@ -56,9 +48,7 @@ class VmwareHostConfig extends \Google\Collection
     return $this->dnsSearchDomains;
   }
   /**
-   * DNS servers.
-   *
-   * @param string[] $dnsServers
+   * @param string[]
    */
   public function setDnsServers($dnsServers)
   {
@@ -72,9 +62,7 @@ class VmwareHostConfig extends \Google\Collection
     return $this->dnsServers;
   }
   /**
-   * NTP servers.
-   *
-   * @param string[] $ntpServers
+   * @param string[]
    */
   public function setNtpServers($ntpServers)
   {

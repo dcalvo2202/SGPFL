@@ -20,22 +20,16 @@ namespace Google\Service\OnDemandScanning;
 class GitSourceContext extends \Google\Model
 {
   /**
-   * Git commit hash.
-   *
    * @var string
    */
   public $revisionId;
   /**
-   * Git repository URL.
-   *
    * @var string
    */
   public $url;
 
   /**
-   * Git commit hash.
-   *
-   * @param string $revisionId
+   * @param string
    */
   public function setRevisionId($revisionId)
   {
@@ -49,9 +43,7 @@ class GitSourceContext extends \Google\Model
     return $this->revisionId;
   }
   /**
-   * Git repository URL.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

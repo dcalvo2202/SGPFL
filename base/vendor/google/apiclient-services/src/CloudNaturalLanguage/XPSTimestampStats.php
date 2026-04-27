@@ -29,7 +29,7 @@ class XPSTimestampStats extends \Google\Model
   public $medianTimestampNanos;
 
   /**
-   * @param XPSCommonStats $commonStats
+   * @param XPSCommonStats
    */
   public function setCommonStats(XPSCommonStats $commonStats)
   {
@@ -43,12 +43,7 @@ class XPSTimestampStats extends \Google\Model
     return $this->commonStats;
   }
   /**
-   * The string key is the pre-defined granularity. Currently supported:
-   * hour_of_day, day_of_week, month_of_year. Granularities finer that the
-   * granularity of timestamp data are not populated (e.g. if timestamps are at
-   * day granularity, then hour_of_day is not populated).
-   *
-   * @param XPSTimestampStatsGranularStats[] $granularStats
+   * @param XPSTimestampStatsGranularStats[]
    */
   public function setGranularStats($granularStats)
   {
@@ -62,7 +57,7 @@ class XPSTimestampStats extends \Google\Model
     return $this->granularStats;
   }
   /**
-   * @param string $medianTimestampNanos
+   * @param string
    */
   public function setMedianTimestampNanos($medianTimestampNanos)
   {

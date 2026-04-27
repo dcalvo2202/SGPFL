@@ -25,7 +25,7 @@ class GoogleCloudDialogflowCxV3beta1EventInput extends \Google\Model
   public $event;
 
   /**
-   * @param string $event
+   * @param string
    */
   public function setEvent($event)
   {

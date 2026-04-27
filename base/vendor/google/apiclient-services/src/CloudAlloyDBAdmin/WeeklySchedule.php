@@ -21,9 +21,6 @@ class WeeklySchedule extends \Google\Collection
 {
   protected $collection_key = 'startTimes';
   /**
-   * The days of the week to perform a backup. If this field is left empty, the
-   * default of every day of the week is used.
-   *
    * @var string[]
    */
   public $daysOfWeek;
@@ -31,10 +28,7 @@ class WeeklySchedule extends \Google\Collection
   protected $startTimesDataType = 'array';
 
   /**
-   * The days of the week to perform a backup. If this field is left empty, the
-   * default of every day of the week is used.
-   *
-   * @param string[] $daysOfWeek
+   * @param string[]
    */
   public function setDaysOfWeek($daysOfWeek)
   {
@@ -48,11 +42,7 @@ class WeeklySchedule extends \Google\Collection
     return $this->daysOfWeek;
   }
   /**
-   * The times during the day to start a backup. The start times are assumed to
-   * be in UTC and to be an exact hour (e.g., 04:00:00). If no start times are
-   * provided, a single fixed start time is chosen arbitrarily.
-   *
-   * @param GoogleTypeTimeOfDay[] $startTimes
+   * @param GoogleTypeTimeOfDay[]
    */
   public function setStartTimes($startTimes)
   {

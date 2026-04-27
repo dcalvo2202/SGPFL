@@ -20,16 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1BleuSpec extends \Google\Model
 {
   /**
-   * Optional. Whether to use_effective_order to compute bleu score.
-   *
    * @var bool
    */
   public $useEffectiveOrder;
 
   /**
-   * Optional. Whether to use_effective_order to compute bleu score.
-   *
-   * @param bool $useEffectiveOrder
+   * @param bool
    */
   public function setUseEffectiveOrder($useEffectiveOrder)
   {

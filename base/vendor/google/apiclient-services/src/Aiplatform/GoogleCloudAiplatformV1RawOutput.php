@@ -21,16 +21,12 @@ class GoogleCloudAiplatformV1RawOutput extends \Google\Collection
 {
   protected $collection_key = 'rawOutput';
   /**
-   * Output only. Raw output string.
-   *
    * @var string[]
    */
   public $rawOutput;
 
   /**
-   * Output only. Raw output string.
-   *
-   * @param string[] $rawOutput
+   * @param string[]
    */
   public function setRawOutput($rawOutput)
   {

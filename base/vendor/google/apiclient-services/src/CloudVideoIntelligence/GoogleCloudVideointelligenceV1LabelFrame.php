@@ -20,23 +20,16 @@ namespace Google\Service\CloudVideoIntelligence;
 class GoogleCloudVideointelligenceV1LabelFrame extends \Google\Model
 {
   /**
-   * Confidence that the label is accurate. Range: [0, 1].
-   *
    * @var float
    */
   public $confidence;
   /**
-   * Time-offset, relative to the beginning of the video, corresponding to the
-   * video frame for this location.
-   *
    * @var string
    */
   public $timeOffset;
 
   /**
-   * Confidence that the label is accurate. Range: [0, 1].
-   *
-   * @param float $confidence
+   * @param float
    */
   public function setConfidence($confidence)
   {
@@ -50,10 +43,7 @@ class GoogleCloudVideointelligenceV1LabelFrame extends \Google\Model
     return $this->confidence;
   }
   /**
-   * Time-offset, relative to the beginning of the video, corresponding to the
-   * video frame for this location.
-   *
-   * @param string $timeOffset
+   * @param string
    */
   public function setTimeOffset($timeOffset)
   {

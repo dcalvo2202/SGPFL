@@ -20,18 +20,12 @@ namespace Google\Service\YouTube;
 class VideoPaidProductPlacementDetails extends \Google\Model
 {
   /**
-   * This boolean represents whether the video contains Paid Product Placement,
-   * Studio equivalent: https://screenshot.googleplex.com/4Me79DE6AfT2ktp.png
-   *
    * @var bool
    */
   public $hasPaidProductPlacement;
 
   /**
-   * This boolean represents whether the video contains Paid Product Placement,
-   * Studio equivalent: https://screenshot.googleplex.com/4Me79DE6AfT2ktp.png
-   *
-   * @param bool $hasPaidProductPlacement
+   * @param bool
    */
   public function setHasPaidProductPlacement($hasPaidProductPlacement)
   {

@@ -21,46 +21,30 @@ class FreeBusyRequest extends \Google\Collection
 {
   protected $collection_key = 'items';
   /**
-   * Maximal number of calendars for which FreeBusy information is to be
-   * provided. Optional. Maximum value is 50.
-   *
    * @var int
    */
   public $calendarExpansionMax;
   /**
-   * Maximal number of calendar identifiers to be provided for a single group.
-   * Optional. An error is returned for a group with more members than this
-   * value. Maximum value is 100.
-   *
    * @var int
    */
   public $groupExpansionMax;
   protected $itemsType = FreeBusyRequestItem::class;
   protected $itemsDataType = 'array';
   /**
-   * The end of the interval for the query formatted as per RFC3339.
-   *
    * @var string
    */
   public $timeMax;
   /**
-   * The start of the interval for the query formatted as per RFC3339.
-   *
    * @var string
    */
   public $timeMin;
   /**
-   * Time zone used in the response. Optional. The default is UTC.
-   *
    * @var string
    */
   public $timeZone;
 
   /**
-   * Maximal number of calendars for which FreeBusy information is to be
-   * provided. Optional. Maximum value is 50.
-   *
-   * @param int $calendarExpansionMax
+   * @param int
    */
   public function setCalendarExpansionMax($calendarExpansionMax)
   {
@@ -74,11 +58,7 @@ class FreeBusyRequest extends \Google\Collection
     return $this->calendarExpansionMax;
   }
   /**
-   * Maximal number of calendar identifiers to be provided for a single group.
-   * Optional. An error is returned for a group with more members than this
-   * value. Maximum value is 100.
-   *
-   * @param int $groupExpansionMax
+   * @param int
    */
   public function setGroupExpansionMax($groupExpansionMax)
   {
@@ -92,9 +72,7 @@ class FreeBusyRequest extends \Google\Collection
     return $this->groupExpansionMax;
   }
   /**
-   * List of calendars and/or groups to query.
-   *
-   * @param FreeBusyRequestItem[] $items
+   * @param FreeBusyRequestItem[]
    */
   public function setItems($items)
   {
@@ -108,9 +86,7 @@ class FreeBusyRequest extends \Google\Collection
     return $this->items;
   }
   /**
-   * The end of the interval for the query formatted as per RFC3339.
-   *
-   * @param string $timeMax
+   * @param string
    */
   public function setTimeMax($timeMax)
   {
@@ -124,9 +100,7 @@ class FreeBusyRequest extends \Google\Collection
     return $this->timeMax;
   }
   /**
-   * The start of the interval for the query formatted as per RFC3339.
-   *
-   * @param string $timeMin
+   * @param string
    */
   public function setTimeMin($timeMin)
   {
@@ -140,9 +114,7 @@ class FreeBusyRequest extends \Google\Collection
     return $this->timeMin;
   }
   /**
-   * Time zone used in the response. Optional. The default is UTC.
-   *
-   * @param string $timeZone
+   * @param string
    */
   public function setTimeZone($timeZone)
   {

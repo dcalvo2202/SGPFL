@@ -20,27 +20,18 @@ namespace Google\Service\Vault;
 class AddMatterPermissionsRequest extends \Google\Model
 {
   /**
-   * Only relevant if **sendEmails** is **true**. To CC the requestor in the
-   * email message, set to **true**. To not CC requestor, set to **false**.
-   *
    * @var bool
    */
   public $ccMe;
   protected $matterPermissionType = MatterPermission::class;
   protected $matterPermissionDataType = '';
   /**
-   * To send a notification email to the added account, set to **true**. To not
-   * send a notification email, set to **false**.
-   *
    * @var bool
    */
   public $sendEmails;
 
   /**
-   * Only relevant if **sendEmails** is **true**. To CC the requestor in the
-   * email message, set to **true**. To not CC requestor, set to **false**.
-   *
-   * @param bool $ccMe
+   * @param bool
    */
   public function setCcMe($ccMe)
   {
@@ -54,9 +45,7 @@ class AddMatterPermissionsRequest extends \Google\Model
     return $this->ccMe;
   }
   /**
-   * The account and its role to add.
-   *
-   * @param MatterPermission $matterPermission
+   * @param MatterPermission
    */
   public function setMatterPermission(MatterPermission $matterPermission)
   {
@@ -70,10 +59,7 @@ class AddMatterPermissionsRequest extends \Google\Model
     return $this->matterPermission;
   }
   /**
-   * To send a notification email to the added account, set to **true**. To not
-   * send a notification email, set to **false**.
-   *
-   * @param bool $sendEmails
+   * @param bool
    */
   public function setSendEmails($sendEmails)
   {

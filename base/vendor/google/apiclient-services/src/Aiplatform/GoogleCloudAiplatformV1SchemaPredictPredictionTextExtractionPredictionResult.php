@@ -21,48 +21,28 @@ class GoogleCloudAiplatformV1SchemaPredictPredictionTextExtractionPredictionResu
 {
   protected $collection_key = 'textSegmentStartOffsets';
   /**
-   * The Model's confidences in correctness of the predicted IDs, higher value
-   * means higher confidence. Order matches the Ids.
-   *
    * @var float[]
    */
   public $confidences;
   /**
-   * The display names of the AnnotationSpecs that had been identified, order
-   * matches the IDs.
-   *
    * @var string[]
    */
   public $displayNames;
   /**
-   * The resource IDs of the AnnotationSpecs that had been identified, ordered
-   * by the confidence score descendingly.
-   *
    * @var string[]
    */
   public $ids;
   /**
-   * The end offsets, inclusive, of the text segment in which the AnnotationSpec
-   * has been identified. Expressed as a zero-based number of characters as
-   * measured from the start of the text snippet.
-   *
    * @var string[]
    */
   public $textSegmentEndOffsets;
   /**
-   * The start offsets, inclusive, of the text segment in which the
-   * AnnotationSpec has been identified. Expressed as a zero-based number of
-   * characters as measured from the start of the text snippet.
-   *
    * @var string[]
    */
   public $textSegmentStartOffsets;
 
   /**
-   * The Model's confidences in correctness of the predicted IDs, higher value
-   * means higher confidence. Order matches the Ids.
-   *
-   * @param float[] $confidences
+   * @param float[]
    */
   public function setConfidences($confidences)
   {
@@ -76,10 +56,7 @@ class GoogleCloudAiplatformV1SchemaPredictPredictionTextExtractionPredictionResu
     return $this->confidences;
   }
   /**
-   * The display names of the AnnotationSpecs that had been identified, order
-   * matches the IDs.
-   *
-   * @param string[] $displayNames
+   * @param string[]
    */
   public function setDisplayNames($displayNames)
   {
@@ -93,10 +70,7 @@ class GoogleCloudAiplatformV1SchemaPredictPredictionTextExtractionPredictionResu
     return $this->displayNames;
   }
   /**
-   * The resource IDs of the AnnotationSpecs that had been identified, ordered
-   * by the confidence score descendingly.
-   *
-   * @param string[] $ids
+   * @param string[]
    */
   public function setIds($ids)
   {
@@ -110,11 +84,7 @@ class GoogleCloudAiplatformV1SchemaPredictPredictionTextExtractionPredictionResu
     return $this->ids;
   }
   /**
-   * The end offsets, inclusive, of the text segment in which the AnnotationSpec
-   * has been identified. Expressed as a zero-based number of characters as
-   * measured from the start of the text snippet.
-   *
-   * @param string[] $textSegmentEndOffsets
+   * @param string[]
    */
   public function setTextSegmentEndOffsets($textSegmentEndOffsets)
   {
@@ -128,11 +98,7 @@ class GoogleCloudAiplatformV1SchemaPredictPredictionTextExtractionPredictionResu
     return $this->textSegmentEndOffsets;
   }
   /**
-   * The start offsets, inclusive, of the text segment in which the
-   * AnnotationSpec has been identified. Expressed as a zero-based number of
-   * characters as measured from the start of the text snippet.
-   *
-   * @param string[] $textSegmentStartOffsets
+   * @param string[]
    */
   public function setTextSegmentStartOffsets($textSegmentStartOffsets)
   {

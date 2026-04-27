@@ -23,32 +23,22 @@ class InlineObject extends \Google\Collection
   protected $inlineObjectPropertiesType = InlineObjectProperties::class;
   protected $inlineObjectPropertiesDataType = '';
   /**
-   * The ID of this inline object. Can be used to update an object’s properties.
-   *
    * @var string
    */
   public $objectId;
   /**
-   * The suggested deletion IDs. If empty, then there are no suggested deletions
-   * of this content.
-   *
    * @var string[]
    */
   public $suggestedDeletionIds;
   protected $suggestedInlineObjectPropertiesChangesType = SuggestedInlineObjectProperties::class;
   protected $suggestedInlineObjectPropertiesChangesDataType = 'map';
   /**
-   * The suggested insertion ID. If empty, then this is not a suggested
-   * insertion.
-   *
    * @var string
    */
   public $suggestedInsertionId;
 
   /**
-   * The properties of this inline object.
-   *
-   * @param InlineObjectProperties $inlineObjectProperties
+   * @param InlineObjectProperties
    */
   public function setInlineObjectProperties(InlineObjectProperties $inlineObjectProperties)
   {
@@ -62,9 +52,7 @@ class InlineObject extends \Google\Collection
     return $this->inlineObjectProperties;
   }
   /**
-   * The ID of this inline object. Can be used to update an object’s properties.
-   *
-   * @param string $objectId
+   * @param string
    */
   public function setObjectId($objectId)
   {
@@ -78,10 +66,7 @@ class InlineObject extends \Google\Collection
     return $this->objectId;
   }
   /**
-   * The suggested deletion IDs. If empty, then there are no suggested deletions
-   * of this content.
-   *
-   * @param string[] $suggestedDeletionIds
+   * @param string[]
    */
   public function setSuggestedDeletionIds($suggestedDeletionIds)
   {
@@ -95,10 +80,7 @@ class InlineObject extends \Google\Collection
     return $this->suggestedDeletionIds;
   }
   /**
-   * The suggested changes to the inline object properties, keyed by suggestion
-   * ID.
-   *
-   * @param SuggestedInlineObjectProperties[] $suggestedInlineObjectPropertiesChanges
+   * @param SuggestedInlineObjectProperties[]
    */
   public function setSuggestedInlineObjectPropertiesChanges($suggestedInlineObjectPropertiesChanges)
   {
@@ -112,10 +94,7 @@ class InlineObject extends \Google\Collection
     return $this->suggestedInlineObjectPropertiesChanges;
   }
   /**
-   * The suggested insertion ID. If empty, then this is not a suggested
-   * insertion.
-   *
-   * @param string $suggestedInsertionId
+   * @param string
    */
   public function setSuggestedInsertionId($suggestedInsertionId)
   {

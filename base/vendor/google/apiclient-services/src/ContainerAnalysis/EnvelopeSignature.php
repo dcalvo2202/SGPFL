@@ -29,7 +29,7 @@ class EnvelopeSignature extends \Google\Model
   public $sig;
 
   /**
-   * @param string $keyid
+   * @param string
    */
   public function setKeyid($keyid)
   {
@@ -43,7 +43,7 @@ class EnvelopeSignature extends \Google\Model
     return $this->keyid;
   }
   /**
-   * @param string $sig
+   * @param string
    */
   public function setSig($sig)
   {

@@ -20,20 +20,6 @@ namespace Google\Service\HangoutsChat;
 class UserMentionMetadata extends \Google\Model
 {
   /**
-   * Default value for the enum. Don't use.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * Add user to space.
-   */
-  public const TYPE_ADD = 'ADD';
-  /**
-   * Mention user in space.
-   */
-  public const TYPE_MENTION = 'MENTION';
-  /**
-   * The type of user mention.
-   *
    * @var string
    */
   public $type;
@@ -41,27 +27,21 @@ class UserMentionMetadata extends \Google\Model
   protected $userDataType = '';
 
   /**
-   * The type of user mention.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, ADD, MENTION
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * The user mentioned.
-   *
-   * @param User $user
+   * @param User
    */
   public function setUser(User $user)
   {

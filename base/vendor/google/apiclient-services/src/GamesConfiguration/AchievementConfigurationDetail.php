@@ -22,37 +22,26 @@ class AchievementConfigurationDetail extends \Google\Model
   protected $descriptionType = LocalizedStringBundle::class;
   protected $descriptionDataType = '';
   /**
-   * The icon url of this achievement. Writes to this field are ignored.
-   *
    * @var string
    */
   public $iconUrl;
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `gamesConfiguration#achievementConfigurationDetail`.
-   *
    * @var string
    */
   public $kind;
   protected $nameType = LocalizedStringBundle::class;
   protected $nameDataType = '';
   /**
-   * Point value for the achievement.
-   *
    * @var int
    */
   public $pointValue;
   /**
-   * The sort rank of this achievement. Writes to this field are ignored.
-   *
    * @var int
    */
   public $sortRank;
 
   /**
-   * Localized strings for the achievement description.
-   *
-   * @param LocalizedStringBundle $description
+   * @param LocalizedStringBundle
    */
   public function setDescription(LocalizedStringBundle $description)
   {
@@ -66,9 +55,7 @@ class AchievementConfigurationDetail extends \Google\Model
     return $this->description;
   }
   /**
-   * The icon url of this achievement. Writes to this field are ignored.
-   *
-   * @param string $iconUrl
+   * @param string
    */
   public function setIconUrl($iconUrl)
   {
@@ -82,10 +69,7 @@ class AchievementConfigurationDetail extends \Google\Model
     return $this->iconUrl;
   }
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `gamesConfiguration#achievementConfigurationDetail`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -99,9 +83,7 @@ class AchievementConfigurationDetail extends \Google\Model
     return $this->kind;
   }
   /**
-   * Localized strings for the achievement name.
-   *
-   * @param LocalizedStringBundle $name
+   * @param LocalizedStringBundle
    */
   public function setName(LocalizedStringBundle $name)
   {
@@ -115,9 +97,7 @@ class AchievementConfigurationDetail extends \Google\Model
     return $this->name;
   }
   /**
-   * Point value for the achievement.
-   *
-   * @param int $pointValue
+   * @param int
    */
   public function setPointValue($pointValue)
   {
@@ -131,9 +111,7 @@ class AchievementConfigurationDetail extends \Google\Model
     return $this->pointValue;
   }
   /**
-   * The sort rank of this achievement. Writes to this field are ignored.
-   *
-   * @param int $sortRank
+   * @param int
    */
   public function setSortRank($sortRank)
   {

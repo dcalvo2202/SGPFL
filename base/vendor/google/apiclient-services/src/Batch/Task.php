@@ -20,10 +20,6 @@ namespace Google\Service\Batch;
 class Task extends \Google\Model
 {
   /**
-   * Task name. The name is generated from the parent TaskGroup name and 'id'
-   * field. For example: "projects/123456/locations/us-
-   * west1/jobs/job01/taskGroups/group01/tasks/task01".
-   *
    * @var string
    */
   public $name;
@@ -31,11 +27,7 @@ class Task extends \Google\Model
   protected $statusDataType = '';
 
   /**
-   * Task name. The name is generated from the parent TaskGroup name and 'id'
-   * field. For example: "projects/123456/locations/us-
-   * west1/jobs/job01/taskGroups/group01/tasks/task01".
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -49,9 +41,7 @@ class Task extends \Google\Model
     return $this->name;
   }
   /**
-   * Task Status.
-   *
-   * @param TaskStatus $status
+   * @param TaskStatus
    */
   public function setStatus(TaskStatus $status)
   {

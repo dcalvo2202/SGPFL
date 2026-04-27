@@ -20,67 +20,36 @@ namespace Google\Service\CloudAsset;
 class QueryAssetsRequest extends \Google\Model
 {
   /**
-   * Optional. Reference to the query job, which is from the
-   * `QueryAssetsResponse` of previous `QueryAssets` call.
-   *
    * @var string
    */
   public $jobReference;
   protected $outputConfigType = QueryAssetsOutputConfig::class;
   protected $outputConfigDataType = '';
   /**
-   * Optional. The maximum number of rows to return in the results. Responses
-   * are limited to 10 MB and 1000 rows. By default, the maximum row count is
-   * 1000. When the byte or row count limit is reached, the rest of the query
-   * results will be paginated. The field will be ignored when [output_config]
-   * is specified.
-   *
    * @var int
    */
   public $pageSize;
   /**
-   * Optional. A page token received from previous `QueryAssets`. The field will
-   * be ignored when [output_config] is specified.
-   *
    * @var string
    */
   public $pageToken;
   /**
-   * Optional. Queries cloud assets as they appeared at the specified point in
-   * time.
-   *
    * @var string
    */
   public $readTime;
   protected $readTimeWindowType = TimeWindow::class;
   protected $readTimeWindowDataType = '';
   /**
-   * Optional. A SQL statement that's compatible with [BigQuery
-   * SQL](https://cloud.google.com/bigquery/docs/introduction-sql).
-   *
    * @var string
    */
   public $statement;
   /**
-   * Optional. Specifies the maximum amount of time that the client is willing
-   * to wait for the query to complete. By default, this limit is 5 min for the
-   * first query, and 1 minute for the following queries. If the query is
-   * complete, the `done` field in the `QueryAssetsResponse` is true, otherwise
-   * false. Like BigQuery [jobs.query API](https://cloud.google.com/bigquery/doc
-   * s/reference/rest/v2/jobs/query#queryrequest) The call is not guaranteed to
-   * wait for the specified timeout; it typically returns after around 200
-   * seconds (200,000 milliseconds), even if the query is not complete. The
-   * field will be ignored when [output_config] is specified.
-   *
    * @var string
    */
   public $timeout;
 
   /**
-   * Optional. Reference to the query job, which is from the
-   * `QueryAssetsResponse` of previous `QueryAssets` call.
-   *
-   * @param string $jobReference
+   * @param string
    */
   public function setJobReference($jobReference)
   {
@@ -94,15 +63,7 @@ class QueryAssetsRequest extends \Google\Model
     return $this->jobReference;
   }
   /**
-   * Optional. Destination where the query results will be saved. When this
-   * field is specified, the query results won't be saved in the
-   * [QueryAssetsResponse.query_result]. Instead
-   * [QueryAssetsResponse.output_config] will be set. Meanwhile,
-   * [QueryAssetsResponse.job_reference] will be set and can be used to check
-   * the status of the query job when passed to a following [QueryAssets] API
-   * call.
-   *
-   * @param QueryAssetsOutputConfig $outputConfig
+   * @param QueryAssetsOutputConfig
    */
   public function setOutputConfig(QueryAssetsOutputConfig $outputConfig)
   {
@@ -116,13 +77,7 @@ class QueryAssetsRequest extends \Google\Model
     return $this->outputConfig;
   }
   /**
-   * Optional. The maximum number of rows to return in the results. Responses
-   * are limited to 10 MB and 1000 rows. By default, the maximum row count is
-   * 1000. When the byte or row count limit is reached, the rest of the query
-   * results will be paginated. The field will be ignored when [output_config]
-   * is specified.
-   *
-   * @param int $pageSize
+   * @param int
    */
   public function setPageSize($pageSize)
   {
@@ -136,10 +91,7 @@ class QueryAssetsRequest extends \Google\Model
     return $this->pageSize;
   }
   /**
-   * Optional. A page token received from previous `QueryAssets`. The field will
-   * be ignored when [output_config] is specified.
-   *
-   * @param string $pageToken
+   * @param string
    */
   public function setPageToken($pageToken)
   {
@@ -153,10 +105,7 @@ class QueryAssetsRequest extends \Google\Model
     return $this->pageToken;
   }
   /**
-   * Optional. Queries cloud assets as they appeared at the specified point in
-   * time.
-   *
-   * @param string $readTime
+   * @param string
    */
   public function setReadTime($readTime)
   {
@@ -170,11 +119,7 @@ class QueryAssetsRequest extends \Google\Model
     return $this->readTime;
   }
   /**
-   * Optional. [start_time] is required. [start_time] must be less than
-   * [end_time] Defaults [end_time] to now if [start_time] is set and [end_time]
-   * isn't. Maximum permitted time range is 7 days.
-   *
-   * @param TimeWindow $readTimeWindow
+   * @param TimeWindow
    */
   public function setReadTimeWindow(TimeWindow $readTimeWindow)
   {
@@ -188,10 +133,7 @@ class QueryAssetsRequest extends \Google\Model
     return $this->readTimeWindow;
   }
   /**
-   * Optional. A SQL statement that's compatible with [BigQuery
-   * SQL](https://cloud.google.com/bigquery/docs/introduction-sql).
-   *
-   * @param string $statement
+   * @param string
    */
   public function setStatement($statement)
   {
@@ -205,17 +147,7 @@ class QueryAssetsRequest extends \Google\Model
     return $this->statement;
   }
   /**
-   * Optional. Specifies the maximum amount of time that the client is willing
-   * to wait for the query to complete. By default, this limit is 5 min for the
-   * first query, and 1 minute for the following queries. If the query is
-   * complete, the `done` field in the `QueryAssetsResponse` is true, otherwise
-   * false. Like BigQuery [jobs.query API](https://cloud.google.com/bigquery/doc
-   * s/reference/rest/v2/jobs/query#queryrequest) The call is not guaranteed to
-   * wait for the specified timeout; it typically returns after around 200
-   * seconds (200,000 milliseconds), even if the query is not complete. The
-   * field will be ignored when [output_config] is specified.
-   *
-   * @param string $timeout
+   * @param string
    */
   public function setTimeout($timeout)
   {

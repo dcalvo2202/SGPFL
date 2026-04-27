@@ -20,90 +20,58 @@ namespace Google\Service\Compute;
 class NodeType extends \Google\Model
 {
   /**
-   * [Output Only] The CPU platform used by this node type.
-   *
    * @var string
    */
   public $cpuPlatform;
   /**
-   * [Output Only] Creation timestamp inRFC3339 text format.
-   *
    * @var string
    */
   public $creationTimestamp;
   protected $deprecatedType = DeprecationStatus::class;
   protected $deprecatedDataType = '';
   /**
-   * [Output Only] An optional textual description of the resource.
-   *
    * @var string
    */
   public $description;
   /**
-   * [Output Only] The number of virtual CPUs that are available to the node
-   * type.
-   *
    * @var int
    */
   public $guestCpus;
   /**
-   * [Output Only] The unique identifier for the resource. This identifier is
-   * defined by the server.
-   *
    * @var string
    */
   public $id;
   /**
-   * Output only. [Output Only] The type of the resource. Alwayscompute#nodeType
-   * for node types.
-   *
    * @var string
    */
   public $kind;
   /**
-   * [Output Only] Local SSD available to the node type, defined in GB.
-   *
    * @var int
    */
   public $localSsdGb;
   /**
-   * Output only. [Output Only] Maximum number of VMs that can be created for
-   * this node type.
-   *
    * @var int
    */
   public $maxVms;
   /**
-   * [Output Only] The amount of physical memory available to the node type,
-   * defined in MB.
-   *
    * @var int
    */
   public $memoryMb;
   /**
-   * [Output Only] Name of the resource.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. [Output Only] Server-defined URL for the resource.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * Output only. [Output Only] The name of the zone where the node type
-   * resides, such as us-central1-a.
-   *
    * @var string
    */
   public $zone;
 
   /**
-   * [Output Only] The CPU platform used by this node type.
-   *
-   * @param string $cpuPlatform
+   * @param string
    */
   public function setCpuPlatform($cpuPlatform)
   {
@@ -117,9 +85,7 @@ class NodeType extends \Google\Model
     return $this->cpuPlatform;
   }
   /**
-   * [Output Only] Creation timestamp inRFC3339 text format.
-   *
-   * @param string $creationTimestamp
+   * @param string
    */
   public function setCreationTimestamp($creationTimestamp)
   {
@@ -133,9 +99,7 @@ class NodeType extends \Google\Model
     return $this->creationTimestamp;
   }
   /**
-   * [Output Only] The deprecation status associated with this node type.
-   *
-   * @param DeprecationStatus $deprecated
+   * @param DeprecationStatus
    */
   public function setDeprecated(DeprecationStatus $deprecated)
   {
@@ -149,9 +113,7 @@ class NodeType extends \Google\Model
     return $this->deprecated;
   }
   /**
-   * [Output Only] An optional textual description of the resource.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -165,10 +127,7 @@ class NodeType extends \Google\Model
     return $this->description;
   }
   /**
-   * [Output Only] The number of virtual CPUs that are available to the node
-   * type.
-   *
-   * @param int $guestCpus
+   * @param int
    */
   public function setGuestCpus($guestCpus)
   {
@@ -182,10 +141,7 @@ class NodeType extends \Google\Model
     return $this->guestCpus;
   }
   /**
-   * [Output Only] The unique identifier for the resource. This identifier is
-   * defined by the server.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -199,10 +155,7 @@ class NodeType extends \Google\Model
     return $this->id;
   }
   /**
-   * Output only. [Output Only] The type of the resource. Alwayscompute#nodeType
-   * for node types.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -216,9 +169,7 @@ class NodeType extends \Google\Model
     return $this->kind;
   }
   /**
-   * [Output Only] Local SSD available to the node type, defined in GB.
-   *
-   * @param int $localSsdGb
+   * @param int
    */
   public function setLocalSsdGb($localSsdGb)
   {
@@ -232,10 +183,7 @@ class NodeType extends \Google\Model
     return $this->localSsdGb;
   }
   /**
-   * Output only. [Output Only] Maximum number of VMs that can be created for
-   * this node type.
-   *
-   * @param int $maxVms
+   * @param int
    */
   public function setMaxVms($maxVms)
   {
@@ -249,10 +197,7 @@ class NodeType extends \Google\Model
     return $this->maxVms;
   }
   /**
-   * [Output Only] The amount of physical memory available to the node type,
-   * defined in MB.
-   *
-   * @param int $memoryMb
+   * @param int
    */
   public function setMemoryMb($memoryMb)
   {
@@ -266,9 +211,7 @@ class NodeType extends \Google\Model
     return $this->memoryMb;
   }
   /**
-   * [Output Only] Name of the resource.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -282,9 +225,7 @@ class NodeType extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. [Output Only] Server-defined URL for the resource.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -298,10 +239,7 @@ class NodeType extends \Google\Model
     return $this->selfLink;
   }
   /**
-   * Output only. [Output Only] The name of the zone where the node type
-   * resides, such as us-central1-a.
-   *
-   * @param string $zone
+   * @param string
    */
   public function setZone($zone)
   {

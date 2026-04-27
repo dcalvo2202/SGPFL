@@ -20,9 +20,6 @@ namespace Google\Service\CloudFunctions;
 class Source extends \Google\Model
 {
   /**
-   * If provided, get the source from GitHub repository. This option is valid
-   * only for GCF 1st Gen function. Example: https://github.comblob//
-   *
    * @var string
    */
   public $gitUri;
@@ -32,10 +29,7 @@ class Source extends \Google\Model
   protected $storageSourceDataType = '';
 
   /**
-   * If provided, get the source from GitHub repository. This option is valid
-   * only for GCF 1st Gen function. Example: https://github.comblob//
-   *
-   * @param string $gitUri
+   * @param string
    */
   public function setGitUri($gitUri)
   {
@@ -49,10 +43,7 @@ class Source extends \Google\Model
     return $this->gitUri;
   }
   /**
-   * If provided, get the source from this location in a Cloud Source
-   * Repository.
-   *
-   * @param RepoSource $repoSource
+   * @param RepoSource
    */
   public function setRepoSource(RepoSource $repoSource)
   {
@@ -66,9 +57,7 @@ class Source extends \Google\Model
     return $this->repoSource;
   }
   /**
-   * If provided, get the source from this location in Google Cloud Storage.
-   *
-   * @param StorageSource $storageSource
+   * @param StorageSource
    */
   public function setStorageSource(StorageSource $storageSource)
   {

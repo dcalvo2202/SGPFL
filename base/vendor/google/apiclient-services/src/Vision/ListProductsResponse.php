@@ -21,9 +21,6 @@ class ListProductsResponse extends \Google\Collection
 {
   protected $collection_key = 'products';
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListProductsResponse extends \Google\Collection
   protected $productsDataType = 'array';
 
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class ListProductsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * List of products.
-   *
-   * @param Product[] $products
+   * @param Product[]
    */
   public function setProducts($products)
   {

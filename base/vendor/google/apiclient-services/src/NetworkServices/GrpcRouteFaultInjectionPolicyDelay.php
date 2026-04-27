@@ -20,23 +20,16 @@ namespace Google\Service\NetworkServices;
 class GrpcRouteFaultInjectionPolicyDelay extends \Google\Model
 {
   /**
-   * Specify a fixed delay before forwarding the request.
-   *
    * @var string
    */
   public $fixedDelay;
   /**
-   * The percentage of traffic on which delay will be injected. The value must
-   * be between [0, 100]
-   *
    * @var int
    */
   public $percentage;
 
   /**
-   * Specify a fixed delay before forwarding the request.
-   *
-   * @param string $fixedDelay
+   * @param string
    */
   public function setFixedDelay($fixedDelay)
   {
@@ -50,10 +43,7 @@ class GrpcRouteFaultInjectionPolicyDelay extends \Google\Model
     return $this->fixedDelay;
   }
   /**
-   * The percentage of traffic on which delay will be injected. The value must
-   * be between [0, 100]
-   *
-   * @param int $percentage
+   * @param int
    */
   public function setPercentage($percentage)
   {

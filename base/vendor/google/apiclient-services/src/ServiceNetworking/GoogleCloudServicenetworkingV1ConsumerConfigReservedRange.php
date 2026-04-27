@@ -20,32 +20,20 @@ namespace Google\Service\ServiceNetworking;
 class GoogleCloudServicenetworkingV1ConsumerConfigReservedRange extends \Google\Model
 {
   /**
-   * The starting address of the reserved range. The address must be a valid
-   * IPv4 address in the x.x.x.x format. This value combined with the IP prefix
-   * length is the CIDR range for the reserved range.
-   *
    * @var string
    */
   public $address;
   /**
-   * The prefix length of the reserved range.
-   *
    * @var int
    */
   public $ipPrefixLength;
   /**
-   * The name of the reserved range.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The starting address of the reserved range. The address must be a valid
-   * IPv4 address in the x.x.x.x format. This value combined with the IP prefix
-   * length is the CIDR range for the reserved range.
-   *
-   * @param string $address
+   * @param string
    */
   public function setAddress($address)
   {
@@ -59,9 +47,7 @@ class GoogleCloudServicenetworkingV1ConsumerConfigReservedRange extends \Google\
     return $this->address;
   }
   /**
-   * The prefix length of the reserved range.
-   *
-   * @param int $ipPrefixLength
+   * @param int
    */
   public function setIpPrefixLength($ipPrefixLength)
   {
@@ -75,9 +61,7 @@ class GoogleCloudServicenetworkingV1ConsumerConfigReservedRange extends \Google\
     return $this->ipPrefixLength;
   }
   /**
-   * The name of the reserved range.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

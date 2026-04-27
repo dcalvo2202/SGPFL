@@ -20,109 +20,55 @@ namespace Google\Service\Parallelstore;
 class TransferMetadataOptions extends \Google\Model
 {
   /**
-   * default is GID_NUMBER_PRESERVE.
-   */
-  public const GID_GID_UNSPECIFIED = 'GID_UNSPECIFIED';
-  /**
-   * Do not preserve GID during a transfer job.
-   */
-  public const GID_GID_SKIP = 'GID_SKIP';
-  /**
-   * Preserve GID that is in number format during a transfer job.
-   */
-  public const GID_GID_NUMBER_PRESERVE = 'GID_NUMBER_PRESERVE';
-  /**
-   * default is MODE_PRESERVE.
-   */
-  public const MODE_MODE_UNSPECIFIED = 'MODE_UNSPECIFIED';
-  /**
-   * Do not preserve mode during a transfer job.
-   */
-  public const MODE_MODE_SKIP = 'MODE_SKIP';
-  /**
-   * Preserve mode during a transfer job.
-   */
-  public const MODE_MODE_PRESERVE = 'MODE_PRESERVE';
-  /**
-   * default is UID_NUMBER_PRESERVE.
-   */
-  public const UID_UID_UNSPECIFIED = 'UID_UNSPECIFIED';
-  /**
-   * Do not preserve UID during a transfer job.
-   */
-  public const UID_UID_SKIP = 'UID_SKIP';
-  /**
-   * Preserve UID that is in number format during a transfer job.
-   */
-  public const UID_UID_NUMBER_PRESERVE = 'UID_NUMBER_PRESERVE';
-  /**
-   * Optional. The GID preservation behavior.
-   *
    * @var string
    */
   public $gid;
   /**
-   * Optional. The mode preservation behavior.
-   *
    * @var string
    */
   public $mode;
   /**
-   * Optional. The UID preservation behavior.
-   *
    * @var string
    */
   public $uid;
 
   /**
-   * Optional. The GID preservation behavior.
-   *
-   * Accepted values: GID_UNSPECIFIED, GID_SKIP, GID_NUMBER_PRESERVE
-   *
-   * @param self::GID_* $gid
+   * @param string
    */
   public function setGid($gid)
   {
     $this->gid = $gid;
   }
   /**
-   * @return self::GID_*
+   * @return string
    */
   public function getGid()
   {
     return $this->gid;
   }
   /**
-   * Optional. The mode preservation behavior.
-   *
-   * Accepted values: MODE_UNSPECIFIED, MODE_SKIP, MODE_PRESERVE
-   *
-   * @param self::MODE_* $mode
+   * @param string
    */
   public function setMode($mode)
   {
     $this->mode = $mode;
   }
   /**
-   * @return self::MODE_*
+   * @return string
    */
   public function getMode()
   {
     return $this->mode;
   }
   /**
-   * Optional. The UID preservation behavior.
-   *
-   * Accepted values: UID_UNSPECIFIED, UID_SKIP, UID_NUMBER_PRESERVE
-   *
-   * @param self::UID_* $uid
+   * @param string
    */
   public function setUid($uid)
   {
     $this->uid = $uid;
   }
   /**
-   * @return self::UID_*
+   * @return string
    */
   public function getUid()
   {

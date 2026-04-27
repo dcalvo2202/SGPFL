@@ -25,14 +25,10 @@ class GooglePlayDeveloperReportingV1beta1Anomaly extends \Google\Collection
   protected $metricType = GooglePlayDeveloperReportingV1beta1MetricValue::class;
   protected $metricDataType = '';
   /**
-   * Metric set resource where the anomaly was detected.
-   *
    * @var string
    */
   public $metricSet;
   /**
-   * Identifier. Name of the anomaly. Format: apps/{app}/anomalies/{anomaly}
-   *
    * @var string
    */
   public $name;
@@ -40,9 +36,7 @@ class GooglePlayDeveloperReportingV1beta1Anomaly extends \Google\Collection
   protected $timelineSpecDataType = '';
 
   /**
-   * Combination of dimensions in which the anomaly was detected.
-   *
-   * @param GooglePlayDeveloperReportingV1beta1DimensionValue[] $dimensions
+   * @param GooglePlayDeveloperReportingV1beta1DimensionValue[]
    */
   public function setDimensions($dimensions)
   {
@@ -56,9 +50,7 @@ class GooglePlayDeveloperReportingV1beta1Anomaly extends \Google\Collection
     return $this->dimensions;
   }
   /**
-   * Metric where the anomaly was detected, together with the anomalous value.
-   *
-   * @param GooglePlayDeveloperReportingV1beta1MetricValue $metric
+   * @param GooglePlayDeveloperReportingV1beta1MetricValue
    */
   public function setMetric(GooglePlayDeveloperReportingV1beta1MetricValue $metric)
   {
@@ -72,9 +64,7 @@ class GooglePlayDeveloperReportingV1beta1Anomaly extends \Google\Collection
     return $this->metric;
   }
   /**
-   * Metric set resource where the anomaly was detected.
-   *
-   * @param string $metricSet
+   * @param string
    */
   public function setMetricSet($metricSet)
   {
@@ -88,9 +78,7 @@ class GooglePlayDeveloperReportingV1beta1Anomaly extends \Google\Collection
     return $this->metricSet;
   }
   /**
-   * Identifier. Name of the anomaly. Format: apps/{app}/anomalies/{anomaly}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -104,9 +92,7 @@ class GooglePlayDeveloperReportingV1beta1Anomaly extends \Google\Collection
     return $this->name;
   }
   /**
-   * Timeline specification that covers the anomaly period.
-   *
-   * @param GooglePlayDeveloperReportingV1beta1TimelineSpec $timelineSpec
+   * @param GooglePlayDeveloperReportingV1beta1TimelineSpec
    */
   public function setTimelineSpec(GooglePlayDeveloperReportingV1beta1TimelineSpec $timelineSpec)
   {

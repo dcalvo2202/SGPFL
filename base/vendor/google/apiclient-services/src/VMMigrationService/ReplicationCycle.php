@@ -19,73 +19,36 @@ namespace Google\Service\VMMigrationService;
 
 class ReplicationCycle extends \Google\Collection
 {
-  /**
-   * The state is unknown. This is used for API compatibility only and is not
-   * used by the system.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The replication cycle is running.
-   */
-  public const STATE_RUNNING = 'RUNNING';
-  /**
-   * The replication cycle is paused.
-   */
-  public const STATE_PAUSED = 'PAUSED';
-  /**
-   * The replication cycle finished with errors.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * The replication cycle finished successfully.
-   */
-  public const STATE_SUCCEEDED = 'SUCCEEDED';
   protected $collection_key = 'warnings';
   /**
-   * The cycle's ordinal number.
-   *
    * @var int
    */
   public $cycleNumber;
   /**
-   * The time the replication cycle has ended.
-   *
    * @var string
    */
   public $endTime;
   protected $errorType = Status::class;
   protected $errorDataType = '';
   /**
-   * The identifier of the ReplicationCycle.
-   *
    * @var string
    */
   public $name;
   /**
-   * The current progress in percentage of this cycle. Was replaced by 'steps'
-   * field, which breaks down the cycle progression more accurately.
-   *
-   * @deprecated
    * @var int
    */
   public $progressPercent;
   /**
-   * The time the replication cycle has started.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * State of the ReplicationCycle.
-   *
    * @var string
    */
   public $state;
   protected $stepsType = CycleStep::class;
   protected $stepsDataType = 'array';
   /**
-   * The accumulated duration the replication cycle was paused.
-   *
    * @var string
    */
   public $totalPauseDuration;
@@ -93,9 +56,7 @@ class ReplicationCycle extends \Google\Collection
   protected $warningsDataType = 'array';
 
   /**
-   * The cycle's ordinal number.
-   *
-   * @param int $cycleNumber
+   * @param int
    */
   public function setCycleNumber($cycleNumber)
   {
@@ -109,9 +70,7 @@ class ReplicationCycle extends \Google\Collection
     return $this->cycleNumber;
   }
   /**
-   * The time the replication cycle has ended.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -125,10 +84,7 @@ class ReplicationCycle extends \Google\Collection
     return $this->endTime;
   }
   /**
-   * Output only. Provides details on the state of the cycle in case of an
-   * error.
-   *
-   * @param Status $error
+   * @param Status
    */
   public function setError(Status $error)
   {
@@ -142,9 +98,7 @@ class ReplicationCycle extends \Google\Collection
     return $this->error;
   }
   /**
-   * The identifier of the ReplicationCycle.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -158,18 +112,13 @@ class ReplicationCycle extends \Google\Collection
     return $this->name;
   }
   /**
-   * The current progress in percentage of this cycle. Was replaced by 'steps'
-   * field, which breaks down the cycle progression more accurately.
-   *
-   * @deprecated
-   * @param int $progressPercent
+   * @param int
    */
   public function setProgressPercent($progressPercent)
   {
     $this->progressPercent = $progressPercent;
   }
   /**
-   * @deprecated
    * @return int
    */
   public function getProgressPercent()
@@ -177,9 +126,7 @@ class ReplicationCycle extends \Google\Collection
     return $this->progressPercent;
   }
   /**
-   * The time the replication cycle has started.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -193,27 +140,21 @@ class ReplicationCycle extends \Google\Collection
     return $this->startTime;
   }
   /**
-   * State of the ReplicationCycle.
-   *
-   * Accepted values: STATE_UNSPECIFIED, RUNNING, PAUSED, FAILED, SUCCEEDED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * The cycle's steps list representing its progress.
-   *
-   * @param CycleStep[] $steps
+   * @param CycleStep[]
    */
   public function setSteps($steps)
   {
@@ -227,9 +168,7 @@ class ReplicationCycle extends \Google\Collection
     return $this->steps;
   }
   /**
-   * The accumulated duration the replication cycle was paused.
-   *
-   * @param string $totalPauseDuration
+   * @param string
    */
   public function setTotalPauseDuration($totalPauseDuration)
   {
@@ -243,9 +182,7 @@ class ReplicationCycle extends \Google\Collection
     return $this->totalPauseDuration;
   }
   /**
-   * Output only. Warnings that occurred during the cycle.
-   *
-   * @param MigrationWarning[] $warnings
+   * @param MigrationWarning[]
    */
   public function setWarnings($warnings)
   {

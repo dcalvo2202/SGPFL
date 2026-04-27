@@ -24,16 +24,12 @@ class RefundExternalTransactionRequest extends \Google\Model
   protected $partialRefundType = PartialRefund::class;
   protected $partialRefundDataType = '';
   /**
-   * Required. The time that the transaction was refunded.
-   *
    * @var string
    */
   public $refundTime;
 
   /**
-   * A full-amount refund.
-   *
-   * @param FullRefund $fullRefund
+   * @param FullRefund
    */
   public function setFullRefund(FullRefund $fullRefund)
   {
@@ -47,9 +43,7 @@ class RefundExternalTransactionRequest extends \Google\Model
     return $this->fullRefund;
   }
   /**
-   * A partial refund.
-   *
-   * @param PartialRefund $partialRefund
+   * @param PartialRefund
    */
   public function setPartialRefund(PartialRefund $partialRefund)
   {
@@ -63,9 +57,7 @@ class RefundExternalTransactionRequest extends \Google\Model
     return $this->partialRefund;
   }
   /**
-   * Required. The time that the transaction was refunded.
-   *
-   * @param string $refundTime
+   * @param string
    */
   public function setRefundTime($refundTime)
   {

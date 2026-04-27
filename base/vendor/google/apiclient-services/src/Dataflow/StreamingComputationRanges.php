@@ -21,8 +21,6 @@ class StreamingComputationRanges extends \Google\Collection
 {
   protected $collection_key = 'rangeAssignments';
   /**
-   * The ID of the computation.
-   *
    * @var string
    */
   public $computationId;
@@ -30,9 +28,7 @@ class StreamingComputationRanges extends \Google\Collection
   protected $rangeAssignmentsDataType = 'array';
 
   /**
-   * The ID of the computation.
-   *
-   * @param string $computationId
+   * @param string
    */
   public function setComputationId($computationId)
   {
@@ -46,9 +42,7 @@ class StreamingComputationRanges extends \Google\Collection
     return $this->computationId;
   }
   /**
-   * Data disk assignments for ranges from this computation.
-   *
-   * @param KeyRangeDataDiskAssignment[] $rangeAssignments
+   * @param KeyRangeDataDiskAssignment[]
    */
   public function setRangeAssignments($rangeAssignments)
   {

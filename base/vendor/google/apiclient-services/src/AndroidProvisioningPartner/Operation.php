@@ -20,46 +20,26 @@ namespace Google\Service\AndroidProvisioningPartner;
 class Operation extends \Google\Model
 {
   /**
-   * If the value is `false`, it means the operation is still in progress. If
-   * `true`, the operation is completed, and either `error` or `response` is
-   * available.
-   *
    * @var bool
    */
   public $done;
   protected $errorType = Status::class;
   protected $errorDataType = '';
   /**
-   * This field will contain a `DevicesLongRunningOperationMetadata` object if
-   * the operation is created by `claimAsync`, `unclaimAsync`, or
-   * `updateMetadataAsync`.
-   *
    * @var array[]
    */
   public $metadata;
   /**
-   * The server-assigned name, which is only unique within the same service that
-   * originally returns it. If you use the default HTTP mapping, the `name`
-   * should be a resource name ending with `operations/{unique_id}`.
-   *
    * @var string
    */
   public $name;
   /**
-   * This field will contain a `DevicesLongRunningOperationResponse` object if
-   * the operation is created by `claimAsync`, `unclaimAsync`, or
-   * `updateMetadataAsync`.
-   *
    * @var array[]
    */
   public $response;
 
   /**
-   * If the value is `false`, it means the operation is still in progress. If
-   * `true`, the operation is completed, and either `error` or `response` is
-   * available.
-   *
-   * @param bool $done
+   * @param bool
    */
   public function setDone($done)
   {
@@ -73,12 +53,7 @@ class Operation extends \Google\Model
     return $this->done;
   }
   /**
-   * This field will always be not set if the operation is created by
-   * `claimAsync`, `unclaimAsync`, or `updateMetadataAsync`. In this case, error
-   * information for each device is set in
-   * `response.perDeviceStatus.result.status`.
-   *
-   * @param Status $error
+   * @param Status
    */
   public function setError(Status $error)
   {
@@ -92,11 +67,7 @@ class Operation extends \Google\Model
     return $this->error;
   }
   /**
-   * This field will contain a `DevicesLongRunningOperationMetadata` object if
-   * the operation is created by `claimAsync`, `unclaimAsync`, or
-   * `updateMetadataAsync`.
-   *
-   * @param array[] $metadata
+   * @param array[]
    */
   public function setMetadata($metadata)
   {
@@ -110,11 +81,7 @@ class Operation extends \Google\Model
     return $this->metadata;
   }
   /**
-   * The server-assigned name, which is only unique within the same service that
-   * originally returns it. If you use the default HTTP mapping, the `name`
-   * should be a resource name ending with `operations/{unique_id}`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -128,11 +95,7 @@ class Operation extends \Google\Model
     return $this->name;
   }
   /**
-   * This field will contain a `DevicesLongRunningOperationResponse` object if
-   * the operation is created by `claimAsync`, `unclaimAsync`, or
-   * `updateMetadataAsync`.
-   *
-   * @param array[] $response
+   * @param array[]
    */
   public function setResponse($response)
   {

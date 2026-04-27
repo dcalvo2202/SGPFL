@@ -20,16 +20,10 @@ namespace Google\Service\HangoutsChat;
 class ChatAppLogEntry extends \Google\Model
 {
   /**
-   * The deployment that caused the error. For Chat apps built in Apps Script,
-   * this is the deployment ID defined by Apps Script.
-   *
    * @var string
    */
   public $deployment;
   /**
-   * The unencrypted `callback_method` name that was running when the error was
-   * encountered.
-   *
    * @var string
    */
   public $deploymentFunction;
@@ -37,10 +31,7 @@ class ChatAppLogEntry extends \Google\Model
   protected $errorDataType = '';
 
   /**
-   * The deployment that caused the error. For Chat apps built in Apps Script,
-   * this is the deployment ID defined by Apps Script.
-   *
-   * @param string $deployment
+   * @param string
    */
   public function setDeployment($deployment)
   {
@@ -54,10 +45,7 @@ class ChatAppLogEntry extends \Google\Model
     return $this->deployment;
   }
   /**
-   * The unencrypted `callback_method` name that was running when the error was
-   * encountered.
-   *
-   * @param string $deploymentFunction
+   * @param string
    */
   public function setDeploymentFunction($deploymentFunction)
   {
@@ -71,9 +59,7 @@ class ChatAppLogEntry extends \Google\Model
     return $this->deploymentFunction;
   }
   /**
-   * The error code and message.
-   *
-   * @param Status $error
+   * @param Status
    */
   public function setError(Status $error)
   {

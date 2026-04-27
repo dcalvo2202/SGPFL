@@ -20,113 +20,56 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1Artifact extends \Google\Model
 {
   /**
-   * Unspecified state for the Artifact.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * A state used by systems like Vertex AI Pipelines to indicate that the
-   * underlying data item represented by this Artifact is being created.
-   */
-  public const STATE_PENDING = 'PENDING';
-  /**
-   * A state indicating that the Artifact should exist, unless something
-   * external to the system deletes it.
-   */
-  public const STATE_LIVE = 'LIVE';
-  /**
-   * Output only. Timestamp when this Artifact was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Description of the Artifact
-   *
    * @var string
    */
   public $description;
   /**
-   * User provided display name of the Artifact. May be up to 128 Unicode
-   * characters.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * An eTag used to perform consistent read-modify-write updates. If not set, a
-   * blind "overwrite" update happens.
-   *
    * @var string
    */
   public $etag;
   /**
-   * The labels with user-defined metadata to organize your Artifacts. Label
-   * keys and values can be no longer than 64 characters (Unicode codepoints),
-   * can only contain lowercase letters, numeric characters, underscores and
-   * dashes. International characters are allowed. No more than 64 user labels
-   * can be associated with one Artifact (System labels are excluded).
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Properties of the Artifact. Top level metadata keys' heading and trailing
-   * spaces will be trimmed. The size of this field should not exceed 200KB.
-   *
    * @var array[]
    */
   public $metadata;
   /**
-   * Output only. The resource name of the Artifact.
-   *
    * @var string
    */
   public $name;
   /**
-   * The title of the schema describing the metadata. Schema title and version
-   * is expected to be registered in earlier Create Schema calls. And both are
-   * used together as unique identifiers to identify schemas within the local
-   * metadata store.
-   *
    * @var string
    */
   public $schemaTitle;
   /**
-   * The version of the schema in schema_name to use. Schema title and version
-   * is expected to be registered in earlier Create Schema calls. And both are
-   * used together as unique identifiers to identify schemas within the local
-   * metadata store.
-   *
    * @var string
    */
   public $schemaVersion;
   /**
-   * The state of this Artifact. This is a property of the Artifact, and does
-   * not imply or capture any ongoing process. This property is managed by
-   * clients (such as Vertex AI Pipelines), and the system does not prescribe or
-   * check the validity of state transitions.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. Timestamp when this Artifact was last updated.
-   *
    * @var string
    */
   public $updateTime;
   /**
-   * The uniform resource identifier of the artifact file. May be empty if there
-   * is no actual artifact file.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * Output only. Timestamp when this Artifact was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -140,9 +83,7 @@ class GoogleCloudAiplatformV1Artifact extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Description of the Artifact
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -156,10 +97,7 @@ class GoogleCloudAiplatformV1Artifact extends \Google\Model
     return $this->description;
   }
   /**
-   * User provided display name of the Artifact. May be up to 128 Unicode
-   * characters.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -173,10 +111,7 @@ class GoogleCloudAiplatformV1Artifact extends \Google\Model
     return $this->displayName;
   }
   /**
-   * An eTag used to perform consistent read-modify-write updates. If not set, a
-   * blind "overwrite" update happens.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -190,13 +125,7 @@ class GoogleCloudAiplatformV1Artifact extends \Google\Model
     return $this->etag;
   }
   /**
-   * The labels with user-defined metadata to organize your Artifacts. Label
-   * keys and values can be no longer than 64 characters (Unicode codepoints),
-   * can only contain lowercase letters, numeric characters, underscores and
-   * dashes. International characters are allowed. No more than 64 user labels
-   * can be associated with one Artifact (System labels are excluded).
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -210,10 +139,7 @@ class GoogleCloudAiplatformV1Artifact extends \Google\Model
     return $this->labels;
   }
   /**
-   * Properties of the Artifact. Top level metadata keys' heading and trailing
-   * spaces will be trimmed. The size of this field should not exceed 200KB.
-   *
-   * @param array[] $metadata
+   * @param array[]
    */
   public function setMetadata($metadata)
   {
@@ -227,9 +153,7 @@ class GoogleCloudAiplatformV1Artifact extends \Google\Model
     return $this->metadata;
   }
   /**
-   * Output only. The resource name of the Artifact.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -243,12 +167,7 @@ class GoogleCloudAiplatformV1Artifact extends \Google\Model
     return $this->name;
   }
   /**
-   * The title of the schema describing the metadata. Schema title and version
-   * is expected to be registered in earlier Create Schema calls. And both are
-   * used together as unique identifiers to identify schemas within the local
-   * metadata store.
-   *
-   * @param string $schemaTitle
+   * @param string
    */
   public function setSchemaTitle($schemaTitle)
   {
@@ -262,12 +181,7 @@ class GoogleCloudAiplatformV1Artifact extends \Google\Model
     return $this->schemaTitle;
   }
   /**
-   * The version of the schema in schema_name to use. Schema title and version
-   * is expected to be registered in earlier Create Schema calls. And both are
-   * used together as unique identifiers to identify schemas within the local
-   * metadata store.
-   *
-   * @param string $schemaVersion
+   * @param string
    */
   public function setSchemaVersion($schemaVersion)
   {
@@ -281,30 +195,21 @@ class GoogleCloudAiplatformV1Artifact extends \Google\Model
     return $this->schemaVersion;
   }
   /**
-   * The state of this Artifact. This is a property of the Artifact, and does
-   * not imply or capture any ongoing process. This property is managed by
-   * clients (such as Vertex AI Pipelines), and the system does not prescribe or
-   * check the validity of state transitions.
-   *
-   * Accepted values: STATE_UNSPECIFIED, PENDING, LIVE
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. Timestamp when this Artifact was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -318,10 +223,7 @@ class GoogleCloudAiplatformV1Artifact extends \Google\Model
     return $this->updateTime;
   }
   /**
-   * The uniform resource identifier of the artifact file. May be empty if there
-   * is no actual artifact file.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

@@ -20,28 +20,20 @@ namespace Google\Service\BigQueryReservation;
 class TableReference extends \Google\Model
 {
   /**
-   * Optional. The ID of the dataset in the above project.
-   *
    * @var string
    */
   public $datasetId;
   /**
-   * Optional. The assigned project ID of the project.
-   *
    * @var string
    */
   public $projectId;
   /**
-   * Optional. The ID of the table in the above dataset.
-   *
    * @var string
    */
   public $tableId;
 
   /**
-   * Optional. The ID of the dataset in the above project.
-   *
-   * @param string $datasetId
+   * @param string
    */
   public function setDatasetId($datasetId)
   {
@@ -55,9 +47,7 @@ class TableReference extends \Google\Model
     return $this->datasetId;
   }
   /**
-   * Optional. The assigned project ID of the project.
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {
@@ -71,9 +61,7 @@ class TableReference extends \Google\Model
     return $this->projectId;
   }
   /**
-   * Optional. The ID of the table in the above dataset.
-   *
-   * @param string $tableId
+   * @param string
    */
   public function setTableId($tableId)
   {

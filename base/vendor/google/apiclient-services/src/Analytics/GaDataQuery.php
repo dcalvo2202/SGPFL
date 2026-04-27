@@ -27,76 +27,52 @@ class GaDataQuery extends \Google\Collection
         "startIndex" => "start-index",
   ];
   /**
-   * List of analytics dimensions.
-   *
    * @var string
    */
   public $dimensions;
   /**
-   * End date.
-   *
    * @var string
    */
   public $endDate;
   /**
-   * Comma-separated list of dimension or metric filters.
-   *
    * @var string
    */
   public $filters;
   /**
-   * Unique table ID.
-   *
    * @var string
    */
   public $ids;
   /**
-   * Maximum results per page.
-   *
    * @var int
    */
   public $maxResults;
   /**
-   * List of analytics metrics.
-   *
    * @var string[]
    */
   public $metrics;
   /**
-   * Desired sampling level
-   *
    * @var string
    */
   public $samplingLevel;
   /**
-   * Analytics advanced segment.
-   *
    * @var string
    */
   public $segment;
   /**
-   * List of dimensions or metrics based on which Analytics data is sorted.
-   *
    * @var string[]
    */
   public $sort;
   /**
-   * Start date.
-   *
    * @var string
    */
   public $startDate;
   /**
-   * Start index.
-   *
    * @var int
    */
   public $startIndex;
 
   /**
-   * List of analytics dimensions.
-   *
-   * @param string $dimensions
+   * @param string
    */
   public function setDimensions($dimensions)
   {
@@ -110,9 +86,7 @@ class GaDataQuery extends \Google\Collection
     return $this->dimensions;
   }
   /**
-   * End date.
-   *
-   * @param string $endDate
+   * @param string
    */
   public function setEndDate($endDate)
   {
@@ -126,9 +100,7 @@ class GaDataQuery extends \Google\Collection
     return $this->endDate;
   }
   /**
-   * Comma-separated list of dimension or metric filters.
-   *
-   * @param string $filters
+   * @param string
    */
   public function setFilters($filters)
   {
@@ -142,9 +114,7 @@ class GaDataQuery extends \Google\Collection
     return $this->filters;
   }
   /**
-   * Unique table ID.
-   *
-   * @param string $ids
+   * @param string
    */
   public function setIds($ids)
   {
@@ -158,9 +128,7 @@ class GaDataQuery extends \Google\Collection
     return $this->ids;
   }
   /**
-   * Maximum results per page.
-   *
-   * @param int $maxResults
+   * @param int
    */
   public function setMaxResults($maxResults)
   {
@@ -174,9 +142,7 @@ class GaDataQuery extends \Google\Collection
     return $this->maxResults;
   }
   /**
-   * List of analytics metrics.
-   *
-   * @param string[] $metrics
+   * @param string[]
    */
   public function setMetrics($metrics)
   {
@@ -190,9 +156,7 @@ class GaDataQuery extends \Google\Collection
     return $this->metrics;
   }
   /**
-   * Desired sampling level
-   *
-   * @param string $samplingLevel
+   * @param string
    */
   public function setSamplingLevel($samplingLevel)
   {
@@ -206,9 +170,7 @@ class GaDataQuery extends \Google\Collection
     return $this->samplingLevel;
   }
   /**
-   * Analytics advanced segment.
-   *
-   * @param string $segment
+   * @param string
    */
   public function setSegment($segment)
   {
@@ -222,9 +184,7 @@ class GaDataQuery extends \Google\Collection
     return $this->segment;
   }
   /**
-   * List of dimensions or metrics based on which Analytics data is sorted.
-   *
-   * @param string[] $sort
+   * @param string[]
    */
   public function setSort($sort)
   {
@@ -238,9 +198,7 @@ class GaDataQuery extends \Google\Collection
     return $this->sort;
   }
   /**
-   * Start date.
-   *
-   * @param string $startDate
+   * @param string
    */
   public function setStartDate($startDate)
   {
@@ -254,9 +212,7 @@ class GaDataQuery extends \Google\Collection
     return $this->startDate;
   }
   /**
-   * Start index.
-   *
-   * @param int $startIndex
+   * @param int
    */
   public function setStartIndex($startIndex)
   {

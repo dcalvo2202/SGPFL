@@ -31,9 +31,7 @@ class TestEnvironmentCatalog extends \Google\Model
   protected $softwareCatalogDataType = '';
 
   /**
-   * Supported Android devices.
-   *
-   * @param AndroidDeviceCatalog $androidDeviceCatalog
+   * @param AndroidDeviceCatalog
    */
   public function setAndroidDeviceCatalog(AndroidDeviceCatalog $androidDeviceCatalog)
   {
@@ -47,9 +45,7 @@ class TestEnvironmentCatalog extends \Google\Model
     return $this->androidDeviceCatalog;
   }
   /**
-   * The IP blocks used by devices in the test environment.
-   *
-   * @param DeviceIpBlockCatalog $deviceIpBlockCatalog
+   * @param DeviceIpBlockCatalog
    */
   public function setDeviceIpBlockCatalog(DeviceIpBlockCatalog $deviceIpBlockCatalog)
   {
@@ -63,9 +59,7 @@ class TestEnvironmentCatalog extends \Google\Model
     return $this->deviceIpBlockCatalog;
   }
   /**
-   * Supported iOS devices.
-   *
-   * @param IosDeviceCatalog $iosDeviceCatalog
+   * @param IosDeviceCatalog
    */
   public function setIosDeviceCatalog(IosDeviceCatalog $iosDeviceCatalog)
   {
@@ -79,9 +73,7 @@ class TestEnvironmentCatalog extends \Google\Model
     return $this->iosDeviceCatalog;
   }
   /**
-   * Supported network configurations.
-   *
-   * @param NetworkConfigurationCatalog $networkConfigurationCatalog
+   * @param NetworkConfigurationCatalog
    */
   public function setNetworkConfigurationCatalog(NetworkConfigurationCatalog $networkConfigurationCatalog)
   {
@@ -95,9 +87,7 @@ class TestEnvironmentCatalog extends \Google\Model
     return $this->networkConfigurationCatalog;
   }
   /**
-   * The software test environment provided by TestExecutionService.
-   *
-   * @param ProvidedSoftwareCatalog $softwareCatalog
+   * @param ProvidedSoftwareCatalog
    */
   public function setSoftwareCatalog(ProvidedSoftwareCatalog $softwareCatalog)
   {

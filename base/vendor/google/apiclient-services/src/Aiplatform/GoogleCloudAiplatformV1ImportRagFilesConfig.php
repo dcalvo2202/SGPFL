@@ -30,12 +30,6 @@ class GoogleCloudAiplatformV1ImportRagFilesConfig extends \Google\Model
   protected $jiraSourceType = GoogleCloudAiplatformV1JiraSource::class;
   protected $jiraSourceDataType = '';
   /**
-   * Optional. The max number of queries per minute that this job is allowed to
-   * make to the embedding model specified on the corpus. This value is specific
-   * to this job and not shared across other import jobs. Consult the Quotas
-   * page on the project to set an appropriate value here. If unspecified, a
-   * default value of 1,000 QPM would be used.
-   *
    * @var int
    */
   public $maxEmbeddingRequestsPerMin;
@@ -48,12 +42,6 @@ class GoogleCloudAiplatformV1ImportRagFilesConfig extends \Google\Model
   protected $ragFileTransformationConfigType = GoogleCloudAiplatformV1RagFileTransformationConfig::class;
   protected $ragFileTransformationConfigDataType = '';
   /**
-   * Rebuilds the ANN index to optimize for recall on the imported data. Only
-   * applicable for RagCorpora running on RagManagedDb with `retrieval_strategy`
-   * set to `ANN`. The rebuild will be performed using the existing ANN config
-   * set on the RagCorpus. To change the ANN config, please use the
-   * UpdateRagCorpus API. Default is false, i.e., index is not rebuilt.
-   *
    * @var bool
    */
   public $rebuildAnnIndex;
@@ -63,12 +51,7 @@ class GoogleCloudAiplatformV1ImportRagFilesConfig extends \Google\Model
   protected $slackSourceDataType = '';
 
   /**
-   * Google Cloud Storage location. Supports importing individual files as well
-   * as entire Google Cloud Storage directories. Sample formats: -
-   * `gs://bucket_name/my_directory/object_name/my_file.txt` -
-   * `gs://bucket_name/my_directory`
-   *
-   * @param GoogleCloudAiplatformV1GcsSource $gcsSource
+   * @param GoogleCloudAiplatformV1GcsSource
    */
   public function setGcsSource(GoogleCloudAiplatformV1GcsSource $gcsSource)
   {
@@ -82,10 +65,7 @@ class GoogleCloudAiplatformV1ImportRagFilesConfig extends \Google\Model
     return $this->gcsSource;
   }
   /**
-   * Google Drive location. Supports importing individual files as well as
-   * Google Drive folders.
-   *
-   * @param GoogleCloudAiplatformV1GoogleDriveSource $googleDriveSource
+   * @param GoogleCloudAiplatformV1GoogleDriveSource
    */
   public function setGoogleDriveSource(GoogleCloudAiplatformV1GoogleDriveSource $googleDriveSource)
   {
@@ -99,13 +79,7 @@ class GoogleCloudAiplatformV1ImportRagFilesConfig extends \Google\Model
     return $this->googleDriveSource;
   }
   /**
-   * The BigQuery destination to write import result to. It should be a bigquery
-   * table resource name (e.g. "bq://projectId.bqDatasetId.bqTableId"). The
-   * dataset must exist. If the table does not exist, it will be created with
-   * the expected schema. If the table exists, the schema will be validated and
-   * data will be added to this existing table.
-   *
-   * @param GoogleCloudAiplatformV1BigQueryDestination $importResultBigquerySink
+   * @param GoogleCloudAiplatformV1BigQueryDestination
    */
   public function setImportResultBigquerySink(GoogleCloudAiplatformV1BigQueryDestination $importResultBigquerySink)
   {
@@ -119,9 +93,7 @@ class GoogleCloudAiplatformV1ImportRagFilesConfig extends \Google\Model
     return $this->importResultBigquerySink;
   }
   /**
-   * The Cloud Storage path to write import result to.
-   *
-   * @param GoogleCloudAiplatformV1GcsDestination $importResultGcsSink
+   * @param GoogleCloudAiplatformV1GcsDestination
    */
   public function setImportResultGcsSink(GoogleCloudAiplatformV1GcsDestination $importResultGcsSink)
   {
@@ -135,9 +107,7 @@ class GoogleCloudAiplatformV1ImportRagFilesConfig extends \Google\Model
     return $this->importResultGcsSink;
   }
   /**
-   * Jira queries with their corresponding authentication.
-   *
-   * @param GoogleCloudAiplatformV1JiraSource $jiraSource
+   * @param GoogleCloudAiplatformV1JiraSource
    */
   public function setJiraSource(GoogleCloudAiplatformV1JiraSource $jiraSource)
   {
@@ -151,13 +121,7 @@ class GoogleCloudAiplatformV1ImportRagFilesConfig extends \Google\Model
     return $this->jiraSource;
   }
   /**
-   * Optional. The max number of queries per minute that this job is allowed to
-   * make to the embedding model specified on the corpus. This value is specific
-   * to this job and not shared across other import jobs. Consult the Quotas
-   * page on the project to set an appropriate value here. If unspecified, a
-   * default value of 1,000 QPM would be used.
-   *
-   * @param int $maxEmbeddingRequestsPerMin
+   * @param int
    */
   public function setMaxEmbeddingRequestsPerMin($maxEmbeddingRequestsPerMin)
   {
@@ -171,22 +135,13 @@ class GoogleCloudAiplatformV1ImportRagFilesConfig extends \Google\Model
     return $this->maxEmbeddingRequestsPerMin;
   }
   /**
-   * The BigQuery destination to write partial failures to. It should be a
-   * bigquery table resource name (e.g. "bq://projectId.bqDatasetId.bqTableId").
-   * The dataset must exist. If the table does not exist, it will be created
-   * with the expected schema. If the table exists, the schema will be validated
-   * and data will be added to this existing table. Deprecated. Prefer to use
-   * `import_result_bq_sink`.
-   *
-   * @deprecated
-   * @param GoogleCloudAiplatformV1BigQueryDestination $partialFailureBigquerySink
+   * @param GoogleCloudAiplatformV1BigQueryDestination
    */
   public function setPartialFailureBigquerySink(GoogleCloudAiplatformV1BigQueryDestination $partialFailureBigquerySink)
   {
     $this->partialFailureBigquerySink = $partialFailureBigquerySink;
   }
   /**
-   * @deprecated
    * @return GoogleCloudAiplatformV1BigQueryDestination
    */
   public function getPartialFailureBigquerySink()
@@ -194,18 +149,13 @@ class GoogleCloudAiplatformV1ImportRagFilesConfig extends \Google\Model
     return $this->partialFailureBigquerySink;
   }
   /**
-   * The Cloud Storage path to write partial failures to. Deprecated. Prefer to
-   * use `import_result_gcs_sink`.
-   *
-   * @deprecated
-   * @param GoogleCloudAiplatformV1GcsDestination $partialFailureGcsSink
+   * @param GoogleCloudAiplatformV1GcsDestination
    */
   public function setPartialFailureGcsSink(GoogleCloudAiplatformV1GcsDestination $partialFailureGcsSink)
   {
     $this->partialFailureGcsSink = $partialFailureGcsSink;
   }
   /**
-   * @deprecated
    * @return GoogleCloudAiplatformV1GcsDestination
    */
   public function getPartialFailureGcsSink()
@@ -213,10 +163,7 @@ class GoogleCloudAiplatformV1ImportRagFilesConfig extends \Google\Model
     return $this->partialFailureGcsSink;
   }
   /**
-   * Optional. Specifies the parsing config for RagFiles. RAG will use the
-   * default parser if this field is not set.
-   *
-   * @param GoogleCloudAiplatformV1RagFileParsingConfig $ragFileParsingConfig
+   * @param GoogleCloudAiplatformV1RagFileParsingConfig
    */
   public function setRagFileParsingConfig(GoogleCloudAiplatformV1RagFileParsingConfig $ragFileParsingConfig)
   {
@@ -230,9 +177,7 @@ class GoogleCloudAiplatformV1ImportRagFilesConfig extends \Google\Model
     return $this->ragFileParsingConfig;
   }
   /**
-   * Specifies the transformation config for RagFiles.
-   *
-   * @param GoogleCloudAiplatformV1RagFileTransformationConfig $ragFileTransformationConfig
+   * @param GoogleCloudAiplatformV1RagFileTransformationConfig
    */
   public function setRagFileTransformationConfig(GoogleCloudAiplatformV1RagFileTransformationConfig $ragFileTransformationConfig)
   {
@@ -246,13 +191,7 @@ class GoogleCloudAiplatformV1ImportRagFilesConfig extends \Google\Model
     return $this->ragFileTransformationConfig;
   }
   /**
-   * Rebuilds the ANN index to optimize for recall on the imported data. Only
-   * applicable for RagCorpora running on RagManagedDb with `retrieval_strategy`
-   * set to `ANN`. The rebuild will be performed using the existing ANN config
-   * set on the RagCorpus. To change the ANN config, please use the
-   * UpdateRagCorpus API. Default is false, i.e., index is not rebuilt.
-   *
-   * @param bool $rebuildAnnIndex
+   * @param bool
    */
   public function setRebuildAnnIndex($rebuildAnnIndex)
   {
@@ -266,9 +205,7 @@ class GoogleCloudAiplatformV1ImportRagFilesConfig extends \Google\Model
     return $this->rebuildAnnIndex;
   }
   /**
-   * SharePoint sources.
-   *
-   * @param GoogleCloudAiplatformV1SharePointSources $sharePointSources
+   * @param GoogleCloudAiplatformV1SharePointSources
    */
   public function setSharePointSources(GoogleCloudAiplatformV1SharePointSources $sharePointSources)
   {
@@ -282,9 +219,7 @@ class GoogleCloudAiplatformV1ImportRagFilesConfig extends \Google\Model
     return $this->sharePointSources;
   }
   /**
-   * Slack channels with their corresponding access tokens.
-   *
-   * @param GoogleCloudAiplatformV1SlackSource $slackSource
+   * @param GoogleCloudAiplatformV1SlackSource
    */
   public function setSlackSource(GoogleCloudAiplatformV1SlackSource $slackSource)
   {

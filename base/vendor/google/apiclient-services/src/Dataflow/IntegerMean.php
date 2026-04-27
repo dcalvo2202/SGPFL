@@ -25,9 +25,7 @@ class IntegerMean extends \Google\Model
   protected $sumDataType = '';
 
   /**
-   * The number of values being aggregated.
-   *
-   * @param SplitInt64 $count
+   * @param SplitInt64
    */
   public function setCount(SplitInt64 $count)
   {
@@ -41,9 +39,7 @@ class IntegerMean extends \Google\Model
     return $this->count;
   }
   /**
-   * The sum of all values being aggregated.
-   *
-   * @param SplitInt64 $sum
+   * @param SplitInt64
    */
   public function setSum(SplitInt64 $sum)
   {

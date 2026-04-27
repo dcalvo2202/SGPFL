@@ -21,9 +21,6 @@ class MultiClusterRoutingUseAny extends \Google\Collection
 {
   protected $collection_key = 'clusterIds';
   /**
-   * The set of clusters to route to. The order is ignored; clusters will be
-   * tried in order of distance. If left empty, all clusters are eligible.
-   *
    * @var string[]
    */
   public $clusterIds;
@@ -31,10 +28,7 @@ class MultiClusterRoutingUseAny extends \Google\Collection
   protected $rowAffinityDataType = '';
 
   /**
-   * The set of clusters to route to. The order is ignored; clusters will be
-   * tried in order of distance. If left empty, all clusters are eligible.
-   *
-   * @param string[] $clusterIds
+   * @param string[]
    */
   public function setClusterIds($clusterIds)
   {
@@ -48,10 +42,7 @@ class MultiClusterRoutingUseAny extends \Google\Collection
     return $this->clusterIds;
   }
   /**
-   * Row affinity sticky routing based on the row key of the request. Requests
-   * that span multiple rows are routed non-deterministically.
-   *
-   * @param RowAffinity $rowAffinity
+   * @param RowAffinity
    */
   public function setRowAffinity(RowAffinity $rowAffinity)
   {

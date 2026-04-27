@@ -20,95 +20,46 @@ namespace Google\Service\GKEOnPrem;
 class OperationMetadata extends \Google\Model
 {
   /**
-   * Not set.
-   */
-  public const TYPE_OPERATION_TYPE_UNSPECIFIED = 'OPERATION_TYPE_UNSPECIFIED';
-  /**
-   * The resource is being created.
-   */
-  public const TYPE_CREATE = 'CREATE';
-  /**
-   * The resource is being deleted.
-   */
-  public const TYPE_DELETE = 'DELETE';
-  /**
-   * The resource is being updated.
-   */
-  public const TYPE_UPDATE = 'UPDATE';
-  /**
-   * The resource is being upgraded.
-   */
-  public const TYPE_UPGRADE = 'UPGRADE';
-  /**
-   * The platform is being upgraded.
-   */
-  public const TYPE_PLATFORM_UPGRADE = 'PLATFORM_UPGRADE';
-  /**
-   * Output only. API version used to start the operation.
-   *
    * @var string
    */
   public $apiVersion;
   /**
-   * Output only. Denotes if the local managing cluster's control plane is
-   * currently disconnected. This is expected to occur temporarily during self-
-   * managed cluster upgrades.
-   *
    * @var bool
    */
   public $controlPlaneDisconnected;
   /**
-   * Output only. The time the operation was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. The time the operation finished running.
-   *
    * @var string
    */
   public $endTime;
   protected $progressType = OperationProgress::class;
   protected $progressDataType = '';
   /**
-   * Output only. Identifies whether the user has requested cancellation of the
-   * operation. Operations that have successfully been cancelled have
-   * [Operation.error] value with a [google.rpc.Status.code] of 1, corresponding
-   * to `Code.CANCELLED`.
-   *
    * @var bool
    */
   public $requestedCancellation;
   /**
-   * Output only. Human-readable status of the operation, if any.
-   *
    * @var string
    */
   public $statusMessage;
   /**
-   * Output only. Server-defined resource path for the target of the operation.
-   *
    * @var string
    */
   public $target;
   /**
-   * Output only. Type of operation being executed.
-   *
    * @var string
    */
   public $type;
   /**
-   * Output only. Name of the verb executed by the operation.
-   *
    * @var string
    */
   public $verb;
 
   /**
-   * Output only. API version used to start the operation.
-   *
-   * @param string $apiVersion
+   * @param string
    */
   public function setApiVersion($apiVersion)
   {
@@ -122,11 +73,7 @@ class OperationMetadata extends \Google\Model
     return $this->apiVersion;
   }
   /**
-   * Output only. Denotes if the local managing cluster's control plane is
-   * currently disconnected. This is expected to occur temporarily during self-
-   * managed cluster upgrades.
-   *
-   * @param bool $controlPlaneDisconnected
+   * @param bool
    */
   public function setControlPlaneDisconnected($controlPlaneDisconnected)
   {
@@ -140,9 +87,7 @@ class OperationMetadata extends \Google\Model
     return $this->controlPlaneDisconnected;
   }
   /**
-   * Output only. The time the operation was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -156,9 +101,7 @@ class OperationMetadata extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. The time the operation finished running.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -172,9 +115,7 @@ class OperationMetadata extends \Google\Model
     return $this->endTime;
   }
   /**
-   * Output only. Detailed progress information for the operation.
-   *
-   * @param OperationProgress $progress
+   * @param OperationProgress
    */
   public function setProgress(OperationProgress $progress)
   {
@@ -188,12 +129,7 @@ class OperationMetadata extends \Google\Model
     return $this->progress;
   }
   /**
-   * Output only. Identifies whether the user has requested cancellation of the
-   * operation. Operations that have successfully been cancelled have
-   * [Operation.error] value with a [google.rpc.Status.code] of 1, corresponding
-   * to `Code.CANCELLED`.
-   *
-   * @param bool $requestedCancellation
+   * @param bool
    */
   public function setRequestedCancellation($requestedCancellation)
   {
@@ -207,9 +143,7 @@ class OperationMetadata extends \Google\Model
     return $this->requestedCancellation;
   }
   /**
-   * Output only. Human-readable status of the operation, if any.
-   *
-   * @param string $statusMessage
+   * @param string
    */
   public function setStatusMessage($statusMessage)
   {
@@ -223,9 +157,7 @@ class OperationMetadata extends \Google\Model
     return $this->statusMessage;
   }
   /**
-   * Output only. Server-defined resource path for the target of the operation.
-   *
-   * @param string $target
+   * @param string
    */
   public function setTarget($target)
   {
@@ -239,28 +171,21 @@ class OperationMetadata extends \Google\Model
     return $this->target;
   }
   /**
-   * Output only. Type of operation being executed.
-   *
-   * Accepted values: OPERATION_TYPE_UNSPECIFIED, CREATE, DELETE, UPDATE,
-   * UPGRADE, PLATFORM_UPGRADE
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * Output only. Name of the verb executed by the operation.
-   *
-   * @param string $verb
+   * @param string
    */
   public function setVerb($verb)
   {

@@ -20,24 +20,18 @@ namespace Google\Service\ManufacturerCenter;
 class FeatureDescription extends \Google\Model
 {
   /**
-   * A short description of the feature.
-   *
    * @var string
    */
   public $headline;
   protected $imageType = Image::class;
   protected $imageDataType = '';
   /**
-   * A detailed description of the feature.
-   *
    * @var string
    */
   public $text;
 
   /**
-   * A short description of the feature.
-   *
-   * @param string $headline
+   * @param string
    */
   public function setHeadline($headline)
   {
@@ -51,9 +45,7 @@ class FeatureDescription extends \Google\Model
     return $this->headline;
   }
   /**
-   * An optional image describing the feature.
-   *
-   * @param Image $image
+   * @param Image
    */
   public function setImage(Image $image)
   {
@@ -67,9 +59,7 @@ class FeatureDescription extends \Google\Model
     return $this->image;
   }
   /**
-   * A detailed description of the feature.
-   *
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {

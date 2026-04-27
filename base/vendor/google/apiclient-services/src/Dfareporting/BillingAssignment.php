@@ -20,47 +20,28 @@ namespace Google\Service\Dfareporting;
 class BillingAssignment extends \Google\Model
 {
   /**
-   * ID of the account associated with the billing assignment.This is a read-
-   * only, auto-generated field.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * ID of the advertiser associated with the billing assignment.Wildcard (*)
-   * means this assignment is not limited to a single advertiser
-   *
    * @var string
    */
   public $advertiserId;
   /**
-   * ID of the campaign associated with the billing assignment. Wildcard (*)
-   * means this assignment is not limited to a single campaign
-   *
    * @var string
    */
   public $campaignId;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#billingAssignment".
-   *
    * @var string
    */
   public $kind;
   /**
-   * ID of the subaccount associated with the billing assignment.Wildcard (*)
-   * means this assignment is not limited to a single subaccountThis is a read-
-   * only, auto-generated field.
-   *
    * @var string
    */
   public $subaccountId;
 
   /**
-   * ID of the account associated with the billing assignment.This is a read-
-   * only, auto-generated field.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -74,10 +55,7 @@ class BillingAssignment extends \Google\Model
     return $this->accountId;
   }
   /**
-   * ID of the advertiser associated with the billing assignment.Wildcard (*)
-   * means this assignment is not limited to a single advertiser
-   *
-   * @param string $advertiserId
+   * @param string
    */
   public function setAdvertiserId($advertiserId)
   {
@@ -91,10 +69,7 @@ class BillingAssignment extends \Google\Model
     return $this->advertiserId;
   }
   /**
-   * ID of the campaign associated with the billing assignment. Wildcard (*)
-   * means this assignment is not limited to a single campaign
-   *
-   * @param string $campaignId
+   * @param string
    */
   public function setCampaignId($campaignId)
   {
@@ -108,10 +83,7 @@ class BillingAssignment extends \Google\Model
     return $this->campaignId;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#billingAssignment".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -125,11 +97,7 @@ class BillingAssignment extends \Google\Model
     return $this->kind;
   }
   /**
-   * ID of the subaccount associated with the billing assignment.Wildcard (*)
-   * means this assignment is not limited to a single subaccountThis is a read-
-   * only, auto-generated field.
-   *
-   * @param string $subaccountId
+   * @param string
    */
   public function setSubaccountId($subaccountId)
   {

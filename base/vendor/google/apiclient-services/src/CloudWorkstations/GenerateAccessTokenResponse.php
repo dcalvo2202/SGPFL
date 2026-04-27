@@ -20,26 +20,16 @@ namespace Google\Service\CloudWorkstations;
 class GenerateAccessTokenResponse extends \Google\Model
 {
   /**
-   * The generated bearer access token. To use this token, include it in an
-   * Authorization header of an HTTP request sent to the associated
-   * workstation's hostname—for example, `Authorization: Bearer `.
-   *
    * @var string
    */
   public $accessToken;
   /**
-   * Time at which the generated token will expire.
-   *
    * @var string
    */
   public $expireTime;
 
   /**
-   * The generated bearer access token. To use this token, include it in an
-   * Authorization header of an HTTP request sent to the associated
-   * workstation's hostname—for example, `Authorization: Bearer `.
-   *
-   * @param string $accessToken
+   * @param string
    */
   public function setAccessToken($accessToken)
   {
@@ -53,9 +43,7 @@ class GenerateAccessTokenResponse extends \Google\Model
     return $this->accessToken;
   }
   /**
-   * Time at which the generated token will expire.
-   *
-   * @param string $expireTime
+   * @param string
    */
   public function setExpireTime($expireTime)
   {

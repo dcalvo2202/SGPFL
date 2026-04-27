@@ -20,22 +20,16 @@ namespace Google\Service\ManagedServiceforMicrosoftActiveDirectoryConsumerAPI;
 class OnPremDomainDetails extends \Google\Model
 {
   /**
-   * Optional. Option to disable SID filtering.
-   *
    * @var bool
    */
   public $disableSidFiltering;
   /**
-   * Required. FQDN of the on-prem domain being migrated.
-   *
    * @var string
    */
   public $domainName;
 
   /**
-   * Optional. Option to disable SID filtering.
-   *
-   * @param bool $disableSidFiltering
+   * @param bool
    */
   public function setDisableSidFiltering($disableSidFiltering)
   {
@@ -49,9 +43,7 @@ class OnPremDomainDetails extends \Google\Model
     return $this->disableSidFiltering;
   }
   /**
-   * Required. FQDN of the on-prem domain being migrated.
-   *
-   * @param string $domainName
+   * @param string
    */
   public function setDomainName($domainName)
   {

@@ -19,93 +19,32 @@ namespace Google\Service\Container;
 
 class NodeConfig extends \Google\Collection
 {
-  /**
-   * EFFECTIVE_CGROUP_MODE_UNSPECIFIED means the cgroup configuration for the
-   * node pool is unspecified, i.e. the node pool is a Windows node pool.
-   */
-  public const EFFECTIVE_CGROUP_MODE_EFFECTIVE_CGROUP_MODE_UNSPECIFIED = 'EFFECTIVE_CGROUP_MODE_UNSPECIFIED';
-  /**
-   * CGROUP_MODE_V1 means the node pool is configured to use cgroupv1 for the
-   * cgroup configuration.
-   */
-  public const EFFECTIVE_CGROUP_MODE_EFFECTIVE_CGROUP_MODE_V1 = 'EFFECTIVE_CGROUP_MODE_V1';
-  /**
-   * CGROUP_MODE_V2 means the node pool is configured to use cgroupv2 for the
-   * cgroup configuration.
-   */
-  public const EFFECTIVE_CGROUP_MODE_EFFECTIVE_CGROUP_MODE_V2 = 'EFFECTIVE_CGROUP_MODE_V2';
-  /**
-   * The given node will be encrypted using keys managed by Google
-   * infrastructure and the keys will be deleted when the node is deleted.
-   */
-  public const LOCAL_SSD_ENCRYPTION_MODE_LOCAL_SSD_ENCRYPTION_MODE_UNSPECIFIED = 'LOCAL_SSD_ENCRYPTION_MODE_UNSPECIFIED';
-  /**
-   * The given node will be encrypted using keys managed by Google
-   * infrastructure and the keys will be deleted when the node is deleted.
-   */
-  public const LOCAL_SSD_ENCRYPTION_MODE_STANDARD_ENCRYPTION = 'STANDARD_ENCRYPTION';
-  /**
-   * The given node will opt-in for using ephemeral key for encryption of Local
-   * SSDs. The Local SSDs will not be able to recover data in case of node
-   * crash.
-   */
-  public const LOCAL_SSD_ENCRYPTION_MODE_EPHEMERAL_KEY_ENCRYPTION = 'EPHEMERAL_KEY_ENCRYPTION';
   protected $collection_key = 'taints';
   protected $acceleratorsType = AcceleratorConfig::class;
   protected $acceleratorsDataType = 'array';
   protected $advancedMachineFeaturesType = AdvancedMachineFeatures::class;
   protected $advancedMachineFeaturesDataType = '';
-  protected $bootDiskType = BootDisk::class;
-  protected $bootDiskDataType = '';
   /**
-   * The Customer Managed Encryption Key used to encrypt the boot disk attached
-   * to each node in the node pool. This should be of the form projects/[KEY_PRO
-   * JECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
-   * For more information about protecting resources with Cloud KMS Keys please
-   * see: https://cloud.google.com/compute/docs/disks/customer-managed-
-   * encryption
-   *
    * @var string
    */
   public $bootDiskKmsKey;
   protected $confidentialNodesType = ConfidentialNodes::class;
   protected $confidentialNodesDataType = '';
-  /**
-   * Consolidation delay defines duration after which the Cluster Autoscaler can
-   * scale down underutilized nodes. If not set, nodes are scaled down by
-   * default behavior, i.e. according to the chosen autoscaling profile.
-   *
-   * @var string
-   */
-  public $consolidationDelay;
   protected $containerdConfigType = ContainerdConfig::class;
   protected $containerdConfigDataType = '';
   /**
-   * Size of the disk attached to each node, specified in GB. The smallest
-   * allowed disk size is 10GB. If unspecified, the default disk size is 100GB.
-   *
    * @var int
    */
   public $diskSizeGb;
   /**
-   * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
-   * 'pd-balanced') If unspecified, the default disk type is 'pd-standard'
-   *
    * @var string
    */
   public $diskType;
   /**
-   * Output only. effective_cgroup_mode is the cgroup mode actually used by the
-   * node pool. It is determined by the cgroup mode specified in the
-   * LinuxNodeConfig or the default cgroup mode based on the cluster creation
-   * version.
-   *
    * @var string
    */
   public $effectiveCgroupMode;
   /**
-   * Optional. Reserved for future use.
-   *
    * @var bool
    */
   public $enableConfidentialStorage;
@@ -114,42 +53,20 @@ class NodeConfig extends \Google\Collection
   protected $fastSocketType = FastSocket::class;
   protected $fastSocketDataType = '';
   /**
-   * Flex Start flag for enabling Flex Start VM.
-   *
    * @var bool
    */
   public $flexStart;
   protected $gcfsConfigType = GcfsConfig::class;
   protected $gcfsConfigDataType = '';
-  protected $gpuDirectConfigType = GPUDirectConfig::class;
-  protected $gpuDirectConfigDataType = '';
   protected $gvnicType = VirtualNIC::class;
   protected $gvnicDataType = '';
   /**
-   * The image type to use for this node. Note that for a given image type, the
-   * latest version of it will be used. Please see
-   * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images for
-   * available image types.
-   *
    * @var string
    */
   public $imageType;
   protected $kubeletConfigType = NodeKubeletConfig::class;
   protected $kubeletConfigDataType = '';
   /**
-   * The Kubernetes labels (key/value pairs) to apply to each node. The values
-   * in this field are added to the set of default labels Kubernetes applies to
-   * nodes. This field has the following restrictions: * Labels must use a valid
-   * Kubernetes syntax and character set, as defined in
-   * https://kubernetes.io/docs/concepts/overview/working-with-
-   * objects/labels/#syntax-and-character-set. * This field supports up to 1,024
-   * total characters in a single request. Depending on the Kubernetes version,
-   * keys in this field might conflict with the keys of the default labels,
-   * which might change which of your labels are applied to the nodes. Assume
-   * that the behavior is unpredictable and avoid label key conflicts. For more
-   * information about the default labels, see:
-   * https://kubernetes.io/docs/reference/labels-annotations-taints/
-   *
    * @var string[]
    */
   public $labels;
@@ -158,107 +75,46 @@ class NodeConfig extends \Google\Collection
   protected $localNvmeSsdBlockConfigType = LocalNvmeSsdBlockConfig::class;
   protected $localNvmeSsdBlockConfigDataType = '';
   /**
-   * The number of local SSD disks to be attached to the node. The limit for
-   * this value is dependent upon the maximum number of disks available on a
-   * machine per zone. See: https://cloud.google.com/compute/docs/disks/local-
-   * ssd for more information.
-   *
    * @var int
    */
   public $localSsdCount;
   /**
-   * Specifies which method should be used for encrypting the Local SSDs
-   * attached to the node.
-   *
    * @var string
    */
   public $localSsdEncryptionMode;
   protected $loggingConfigType = NodePoolLoggingConfig::class;
   protected $loggingConfigDataType = '';
   /**
-   * The name of a Google Compute Engine [machine
-   * type](https://cloud.google.com/compute/docs/machine-types) If unspecified,
-   * the default machine type is `e2-medium`.
-   *
    * @var string
    */
   public $machineType;
   /**
-   * The maximum duration for the nodes to exist. If unspecified, the nodes can
-   * exist indefinitely.
-   *
    * @var string
    */
   public $maxRunDuration;
   /**
-   * The metadata key/value pairs assigned to instances in the cluster. Keys
-   * must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes in
-   * length. These are reflected as part of a URL in the metadata server.
-   * Additionally, to avoid ambiguity, keys must not conflict with any other
-   * metadata keys for the project or be one of the reserved keys: - "cluster-
-   * location" - "cluster-name" - "cluster-uid" - "configure-sh" - "containerd-
-   * configure-sh" - "enable-os-login" - "gci-ensure-gke-docker" - "gci-metrics-
-   * enabled" - "gci-update-strategy" - "instance-template" - "kube-env" -
-   * "startup-script" - "user-data" - "disable-address-manager" - "windows-
-   * startup-script-ps1" - "common-psm1" - "k8s-node-setup-psm1" - "install-ssh-
-   * psm1" - "user-profile-psm1" Values are free-form strings, and only have
-   * meaning as interpreted by the image running in the instance. The only
-   * restriction placed on them is that each value's size must be less than or
-   * equal to 32 KB. The total size of all keys and values must be less than 512
-   * KB.
-   *
    * @var string[]
    */
   public $metadata;
   /**
-   * Minimum CPU platform to be used by this instance. The instance may be
-   * scheduled on the specified or newer CPU platform. Applicable values are the
-   * friendly names of CPU platforms, such as `minCpuPlatform: "Intel Haswell"`
-   * or `minCpuPlatform: "Intel Sandy Bridge"`. For more information, read [how
-   * to specify min CPU
-   * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-
-   * platform)
-   *
    * @var string
    */
   public $minCpuPlatform;
   /**
-   * Setting this field will assign instances of this pool to run on the
-   * specified node group. This is useful for running workloads on [sole tenant
-   * nodes](https://cloud.google.com/compute/docs/nodes/sole-tenant-nodes).
-   *
    * @var string
    */
   public $nodeGroup;
   /**
-   * The set of Google API scopes to be made available on all of the node VMs
-   * under the "default" service account. The following scopes are recommended,
-   * but not required, and by default are not included: *
-   * `https://www.googleapis.com/auth/compute` is required for mounting
-   * persistent storage on your nodes. *
-   * `https://www.googleapis.com/auth/devstorage.read_only` is required for
-   * communicating with **gcr.io** (the [Artifact
-   * Registry](https://cloud.google.com/artifact-registry/)). If unspecified, no
-   * scopes are added, unless Cloud Logging or Cloud Monitoring are enabled, in
-   * which case their required scopes will be added.
-   *
    * @var string[]
    */
   public $oauthScopes;
   /**
-   * Whether the nodes are created as preemptible VM instances. See:
-   * https://cloud.google.com/compute/docs/instances/preemptible for more
-   * information about preemptible VM instances.
-   *
    * @var bool
    */
   public $preemptible;
   protected $reservationAffinityType = ReservationAffinity::class;
   protected $reservationAffinityDataType = '';
   /**
-   * The resource labels for the node pool to use to annotate any related Google
-   * Compute Engine resources.
-   *
    * @var string[]
    */
   public $resourceLabels;
@@ -271,10 +127,6 @@ class NodeConfig extends \Google\Collection
   protected $secondaryBootDisksType = SecondaryBootDisk::class;
   protected $secondaryBootDisksDataType = 'array';
   /**
-   * The Google Cloud Platform Service Account to be used by the node VMs.
-   * Specify the email address of the Service Account; otherwise, if no Service
-   * Account is specified, the "default" service account is used.
-   *
    * @var string
    */
   public $serviceAccount;
@@ -283,29 +135,17 @@ class NodeConfig extends \Google\Collection
   protected $soleTenantConfigType = SoleTenantConfig::class;
   protected $soleTenantConfigDataType = '';
   /**
-   * Spot flag for enabling Spot VM, which is a rebrand of the existing
-   * preemptible flag.
-   *
    * @var bool
    */
   public $spot;
   /**
-   * List of Storage Pools where boot disks are provisioned.
-   *
    * @var string[]
    */
   public $storagePools;
   /**
-   * The list of instance tags applied to all nodes. Tags are used to identify
-   * valid sources or targets for network firewalls and are specified by the
-   * client during cluster or node pool creation. Each tag within the list must
-   * comply with RFC1035.
-   *
    * @var string[]
    */
   public $tags;
-  protected $taintConfigType = TaintConfig::class;
-  protected $taintConfigDataType = '';
   protected $taintsType = NodeTaint::class;
   protected $taintsDataType = 'array';
   protected $windowsNodeConfigType = WindowsNodeConfig::class;
@@ -314,11 +154,7 @@ class NodeConfig extends \Google\Collection
   protected $workloadMetadataConfigDataType = '';
 
   /**
-   * A list of hardware accelerators to be attached to each node. See
-   * https://cloud.google.com/compute/docs/gpus for more information about
-   * support for GPUs.
-   *
-   * @param AcceleratorConfig[] $accelerators
+   * @param AcceleratorConfig[]
    */
   public function setAccelerators($accelerators)
   {
@@ -332,9 +168,7 @@ class NodeConfig extends \Google\Collection
     return $this->accelerators;
   }
   /**
-   * Advanced features for the Compute Engine VM.
-   *
-   * @param AdvancedMachineFeatures $advancedMachineFeatures
+   * @param AdvancedMachineFeatures
    */
   public function setAdvancedMachineFeatures(AdvancedMachineFeatures $advancedMachineFeatures)
   {
@@ -348,30 +182,7 @@ class NodeConfig extends \Google\Collection
     return $this->advancedMachineFeatures;
   }
   /**
-   * The boot disk configuration for the node pool.
-   *
-   * @param BootDisk $bootDisk
-   */
-  public function setBootDisk(BootDisk $bootDisk)
-  {
-    $this->bootDisk = $bootDisk;
-  }
-  /**
-   * @return BootDisk
-   */
-  public function getBootDisk()
-  {
-    return $this->bootDisk;
-  }
-  /**
-   * The Customer Managed Encryption Key used to encrypt the boot disk attached
-   * to each node in the node pool. This should be of the form projects/[KEY_PRO
-   * JECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME].
-   * For more information about protecting resources with Cloud KMS Keys please
-   * see: https://cloud.google.com/compute/docs/disks/customer-managed-
-   * encryption
-   *
-   * @param string $bootDiskKmsKey
+   * @param string
    */
   public function setBootDiskKmsKey($bootDiskKmsKey)
   {
@@ -385,10 +196,7 @@ class NodeConfig extends \Google\Collection
     return $this->bootDiskKmsKey;
   }
   /**
-   * Confidential nodes config. All the nodes in the node pool will be
-   * Confidential VM once enabled.
-   *
-   * @param ConfidentialNodes $confidentialNodes
+   * @param ConfidentialNodes
    */
   public function setConfidentialNodes(ConfidentialNodes $confidentialNodes)
   {
@@ -402,27 +210,7 @@ class NodeConfig extends \Google\Collection
     return $this->confidentialNodes;
   }
   /**
-   * Consolidation delay defines duration after which the Cluster Autoscaler can
-   * scale down underutilized nodes. If not set, nodes are scaled down by
-   * default behavior, i.e. according to the chosen autoscaling profile.
-   *
-   * @param string $consolidationDelay
-   */
-  public function setConsolidationDelay($consolidationDelay)
-  {
-    $this->consolidationDelay = $consolidationDelay;
-  }
-  /**
-   * @return string
-   */
-  public function getConsolidationDelay()
-  {
-    return $this->consolidationDelay;
-  }
-  /**
-   * Parameters for containerd customization.
-   *
-   * @param ContainerdConfig $containerdConfig
+   * @param ContainerdConfig
    */
   public function setContainerdConfig(ContainerdConfig $containerdConfig)
   {
@@ -436,10 +224,7 @@ class NodeConfig extends \Google\Collection
     return $this->containerdConfig;
   }
   /**
-   * Size of the disk attached to each node, specified in GB. The smallest
-   * allowed disk size is 10GB. If unspecified, the default disk size is 100GB.
-   *
-   * @param int $diskSizeGb
+   * @param int
    */
   public function setDiskSizeGb($diskSizeGb)
   {
@@ -453,10 +238,7 @@ class NodeConfig extends \Google\Collection
     return $this->diskSizeGb;
   }
   /**
-   * Type of the disk attached to each node (e.g. 'pd-standard', 'pd-ssd' or
-   * 'pd-balanced') If unspecified, the default disk type is 'pd-standard'
-   *
-   * @param string $diskType
+   * @param string
    */
   public function setDiskType($diskType)
   {
@@ -470,31 +252,21 @@ class NodeConfig extends \Google\Collection
     return $this->diskType;
   }
   /**
-   * Output only. effective_cgroup_mode is the cgroup mode actually used by the
-   * node pool. It is determined by the cgroup mode specified in the
-   * LinuxNodeConfig or the default cgroup mode based on the cluster creation
-   * version.
-   *
-   * Accepted values: EFFECTIVE_CGROUP_MODE_UNSPECIFIED,
-   * EFFECTIVE_CGROUP_MODE_V1, EFFECTIVE_CGROUP_MODE_V2
-   *
-   * @param self::EFFECTIVE_CGROUP_MODE_* $effectiveCgroupMode
+   * @param string
    */
   public function setEffectiveCgroupMode($effectiveCgroupMode)
   {
     $this->effectiveCgroupMode = $effectiveCgroupMode;
   }
   /**
-   * @return self::EFFECTIVE_CGROUP_MODE_*
+   * @return string
    */
   public function getEffectiveCgroupMode()
   {
     return $this->effectiveCgroupMode;
   }
   /**
-   * Optional. Reserved for future use.
-   *
-   * @param bool $enableConfidentialStorage
+   * @param bool
    */
   public function setEnableConfidentialStorage($enableConfidentialStorage)
   {
@@ -508,10 +280,7 @@ class NodeConfig extends \Google\Collection
     return $this->enableConfidentialStorage;
   }
   /**
-   * Parameters for the node ephemeral storage using Local SSDs. If unspecified,
-   * ephemeral storage is backed by the boot disk.
-   *
-   * @param EphemeralStorageLocalSsdConfig $ephemeralStorageLocalSsdConfig
+   * @param EphemeralStorageLocalSsdConfig
    */
   public function setEphemeralStorageLocalSsdConfig(EphemeralStorageLocalSsdConfig $ephemeralStorageLocalSsdConfig)
   {
@@ -525,9 +294,7 @@ class NodeConfig extends \Google\Collection
     return $this->ephemeralStorageLocalSsdConfig;
   }
   /**
-   * Enable or disable NCCL fast socket for the node pool.
-   *
-   * @param FastSocket $fastSocket
+   * @param FastSocket
    */
   public function setFastSocket(FastSocket $fastSocket)
   {
@@ -541,9 +308,7 @@ class NodeConfig extends \Google\Collection
     return $this->fastSocket;
   }
   /**
-   * Flex Start flag for enabling Flex Start VM.
-   *
-   * @param bool $flexStart
+   * @param bool
    */
   public function setFlexStart($flexStart)
   {
@@ -557,9 +322,7 @@ class NodeConfig extends \Google\Collection
     return $this->flexStart;
   }
   /**
-   * Google Container File System (image streaming) configs.
-   *
-   * @param GcfsConfig $gcfsConfig
+   * @param GcfsConfig
    */
   public function setGcfsConfig(GcfsConfig $gcfsConfig)
   {
@@ -573,25 +336,7 @@ class NodeConfig extends \Google\Collection
     return $this->gcfsConfig;
   }
   /**
-   * The configuration for GPU Direct
-   *
-   * @param GPUDirectConfig $gpuDirectConfig
-   */
-  public function setGpuDirectConfig(GPUDirectConfig $gpuDirectConfig)
-  {
-    $this->gpuDirectConfig = $gpuDirectConfig;
-  }
-  /**
-   * @return GPUDirectConfig
-   */
-  public function getGpuDirectConfig()
-  {
-    return $this->gpuDirectConfig;
-  }
-  /**
-   * Enable or disable gvnic in the node pool.
-   *
-   * @param VirtualNIC $gvnic
+   * @param VirtualNIC
    */
   public function setGvnic(VirtualNIC $gvnic)
   {
@@ -605,12 +350,7 @@ class NodeConfig extends \Google\Collection
     return $this->gvnic;
   }
   /**
-   * The image type to use for this node. Note that for a given image type, the
-   * latest version of it will be used. Please see
-   * https://cloud.google.com/kubernetes-engine/docs/concepts/node-images for
-   * available image types.
-   *
-   * @param string $imageType
+   * @param string
    */
   public function setImageType($imageType)
   {
@@ -624,9 +364,7 @@ class NodeConfig extends \Google\Collection
     return $this->imageType;
   }
   /**
-   * Node kubelet configs.
-   *
-   * @param NodeKubeletConfig $kubeletConfig
+   * @param NodeKubeletConfig
    */
   public function setKubeletConfig(NodeKubeletConfig $kubeletConfig)
   {
@@ -640,20 +378,7 @@ class NodeConfig extends \Google\Collection
     return $this->kubeletConfig;
   }
   /**
-   * The Kubernetes labels (key/value pairs) to apply to each node. The values
-   * in this field are added to the set of default labels Kubernetes applies to
-   * nodes. This field has the following restrictions: * Labels must use a valid
-   * Kubernetes syntax and character set, as defined in
-   * https://kubernetes.io/docs/concepts/overview/working-with-
-   * objects/labels/#syntax-and-character-set. * This field supports up to 1,024
-   * total characters in a single request. Depending on the Kubernetes version,
-   * keys in this field might conflict with the keys of the default labels,
-   * which might change which of your labels are applied to the nodes. Assume
-   * that the behavior is unpredictable and avoid label key conflicts. For more
-   * information about the default labels, see:
-   * https://kubernetes.io/docs/reference/labels-annotations-taints/
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -667,9 +392,7 @@ class NodeConfig extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Parameters that can be configured on Linux nodes.
-   *
-   * @param LinuxNodeConfig $linuxNodeConfig
+   * @param LinuxNodeConfig
    */
   public function setLinuxNodeConfig(LinuxNodeConfig $linuxNodeConfig)
   {
@@ -683,9 +406,7 @@ class NodeConfig extends \Google\Collection
     return $this->linuxNodeConfig;
   }
   /**
-   * Parameters for using raw-block Local NVMe SSDs.
-   *
-   * @param LocalNvmeSsdBlockConfig $localNvmeSsdBlockConfig
+   * @param LocalNvmeSsdBlockConfig
    */
   public function setLocalNvmeSsdBlockConfig(LocalNvmeSsdBlockConfig $localNvmeSsdBlockConfig)
   {
@@ -699,12 +420,7 @@ class NodeConfig extends \Google\Collection
     return $this->localNvmeSsdBlockConfig;
   }
   /**
-   * The number of local SSD disks to be attached to the node. The limit for
-   * this value is dependent upon the maximum number of disks available on a
-   * machine per zone. See: https://cloud.google.com/compute/docs/disks/local-
-   * ssd for more information.
-   *
-   * @param int $localSsdCount
+   * @param int
    */
   public function setLocalSsdCount($localSsdCount)
   {
@@ -718,29 +434,21 @@ class NodeConfig extends \Google\Collection
     return $this->localSsdCount;
   }
   /**
-   * Specifies which method should be used for encrypting the Local SSDs
-   * attached to the node.
-   *
-   * Accepted values: LOCAL_SSD_ENCRYPTION_MODE_UNSPECIFIED,
-   * STANDARD_ENCRYPTION, EPHEMERAL_KEY_ENCRYPTION
-   *
-   * @param self::LOCAL_SSD_ENCRYPTION_MODE_* $localSsdEncryptionMode
+   * @param string
    */
   public function setLocalSsdEncryptionMode($localSsdEncryptionMode)
   {
     $this->localSsdEncryptionMode = $localSsdEncryptionMode;
   }
   /**
-   * @return self::LOCAL_SSD_ENCRYPTION_MODE_*
+   * @return string
    */
   public function getLocalSsdEncryptionMode()
   {
     return $this->localSsdEncryptionMode;
   }
   /**
-   * Logging configuration.
-   *
-   * @param NodePoolLoggingConfig $loggingConfig
+   * @param NodePoolLoggingConfig
    */
   public function setLoggingConfig(NodePoolLoggingConfig $loggingConfig)
   {
@@ -754,11 +462,7 @@ class NodeConfig extends \Google\Collection
     return $this->loggingConfig;
   }
   /**
-   * The name of a Google Compute Engine [machine
-   * type](https://cloud.google.com/compute/docs/machine-types) If unspecified,
-   * the default machine type is `e2-medium`.
-   *
-   * @param string $machineType
+   * @param string
    */
   public function setMachineType($machineType)
   {
@@ -772,10 +476,7 @@ class NodeConfig extends \Google\Collection
     return $this->machineType;
   }
   /**
-   * The maximum duration for the nodes to exist. If unspecified, the nodes can
-   * exist indefinitely.
-   *
-   * @param string $maxRunDuration
+   * @param string
    */
   public function setMaxRunDuration($maxRunDuration)
   {
@@ -789,23 +490,7 @@ class NodeConfig extends \Google\Collection
     return $this->maxRunDuration;
   }
   /**
-   * The metadata key/value pairs assigned to instances in the cluster. Keys
-   * must conform to the regexp `[a-zA-Z0-9-_]+` and be less than 128 bytes in
-   * length. These are reflected as part of a URL in the metadata server.
-   * Additionally, to avoid ambiguity, keys must not conflict with any other
-   * metadata keys for the project or be one of the reserved keys: - "cluster-
-   * location" - "cluster-name" - "cluster-uid" - "configure-sh" - "containerd-
-   * configure-sh" - "enable-os-login" - "gci-ensure-gke-docker" - "gci-metrics-
-   * enabled" - "gci-update-strategy" - "instance-template" - "kube-env" -
-   * "startup-script" - "user-data" - "disable-address-manager" - "windows-
-   * startup-script-ps1" - "common-psm1" - "k8s-node-setup-psm1" - "install-ssh-
-   * psm1" - "user-profile-psm1" Values are free-form strings, and only have
-   * meaning as interpreted by the image running in the instance. The only
-   * restriction placed on them is that each value's size must be less than or
-   * equal to 32 KB. The total size of all keys and values must be less than 512
-   * KB.
-   *
-   * @param string[] $metadata
+   * @param string[]
    */
   public function setMetadata($metadata)
   {
@@ -819,15 +504,7 @@ class NodeConfig extends \Google\Collection
     return $this->metadata;
   }
   /**
-   * Minimum CPU platform to be used by this instance. The instance may be
-   * scheduled on the specified or newer CPU platform. Applicable values are the
-   * friendly names of CPU platforms, such as `minCpuPlatform: "Intel Haswell"`
-   * or `minCpuPlatform: "Intel Sandy Bridge"`. For more information, read [how
-   * to specify min CPU
-   * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-
-   * platform)
-   *
-   * @param string $minCpuPlatform
+   * @param string
    */
   public function setMinCpuPlatform($minCpuPlatform)
   {
@@ -841,11 +518,7 @@ class NodeConfig extends \Google\Collection
     return $this->minCpuPlatform;
   }
   /**
-   * Setting this field will assign instances of this pool to run on the
-   * specified node group. This is useful for running workloads on [sole tenant
-   * nodes](https://cloud.google.com/compute/docs/nodes/sole-tenant-nodes).
-   *
-   * @param string $nodeGroup
+   * @param string
    */
   public function setNodeGroup($nodeGroup)
   {
@@ -859,18 +532,7 @@ class NodeConfig extends \Google\Collection
     return $this->nodeGroup;
   }
   /**
-   * The set of Google API scopes to be made available on all of the node VMs
-   * under the "default" service account. The following scopes are recommended,
-   * but not required, and by default are not included: *
-   * `https://www.googleapis.com/auth/compute` is required for mounting
-   * persistent storage on your nodes. *
-   * `https://www.googleapis.com/auth/devstorage.read_only` is required for
-   * communicating with **gcr.io** (the [Artifact
-   * Registry](https://cloud.google.com/artifact-registry/)). If unspecified, no
-   * scopes are added, unless Cloud Logging or Cloud Monitoring are enabled, in
-   * which case their required scopes will be added.
-   *
-   * @param string[] $oauthScopes
+   * @param string[]
    */
   public function setOauthScopes($oauthScopes)
   {
@@ -884,11 +546,7 @@ class NodeConfig extends \Google\Collection
     return $this->oauthScopes;
   }
   /**
-   * Whether the nodes are created as preemptible VM instances. See:
-   * https://cloud.google.com/compute/docs/instances/preemptible for more
-   * information about preemptible VM instances.
-   *
-   * @param bool $preemptible
+   * @param bool
    */
   public function setPreemptible($preemptible)
   {
@@ -902,12 +560,7 @@ class NodeConfig extends \Google\Collection
     return $this->preemptible;
   }
   /**
-   * The optional reservation affinity. Setting this field will apply the
-   * specified [Zonal Compute
-   * Reservation](https://cloud.google.com/compute/docs/instances/reserving-
-   * zonal-resources) to this node pool.
-   *
-   * @param ReservationAffinity $reservationAffinity
+   * @param ReservationAffinity
    */
   public function setReservationAffinity(ReservationAffinity $reservationAffinity)
   {
@@ -921,10 +574,7 @@ class NodeConfig extends \Google\Collection
     return $this->reservationAffinity;
   }
   /**
-   * The resource labels for the node pool to use to annotate any related Google
-   * Compute Engine resources.
-   *
-   * @param string[] $resourceLabels
+   * @param string[]
    */
   public function setResourceLabels($resourceLabels)
   {
@@ -938,9 +588,7 @@ class NodeConfig extends \Google\Collection
     return $this->resourceLabels;
   }
   /**
-   * A map of resource manager tag keys and values to be attached to the nodes.
-   *
-   * @param ResourceManagerTags $resourceManagerTags
+   * @param ResourceManagerTags
    */
   public function setResourceManagerTags(ResourceManagerTags $resourceManagerTags)
   {
@@ -954,9 +602,7 @@ class NodeConfig extends \Google\Collection
     return $this->resourceManagerTags;
   }
   /**
-   * Sandbox configuration for this node.
-   *
-   * @param SandboxConfig $sandboxConfig
+   * @param SandboxConfig
    */
   public function setSandboxConfig(SandboxConfig $sandboxConfig)
   {
@@ -970,9 +616,7 @@ class NodeConfig extends \Google\Collection
     return $this->sandboxConfig;
   }
   /**
-   * Secondary boot disk update strategy.
-   *
-   * @param SecondaryBootDiskUpdateStrategy $secondaryBootDiskUpdateStrategy
+   * @param SecondaryBootDiskUpdateStrategy
    */
   public function setSecondaryBootDiskUpdateStrategy(SecondaryBootDiskUpdateStrategy $secondaryBootDiskUpdateStrategy)
   {
@@ -986,9 +630,7 @@ class NodeConfig extends \Google\Collection
     return $this->secondaryBootDiskUpdateStrategy;
   }
   /**
-   * List of secondary boot disks attached to the nodes.
-   *
-   * @param SecondaryBootDisk[] $secondaryBootDisks
+   * @param SecondaryBootDisk[]
    */
   public function setSecondaryBootDisks($secondaryBootDisks)
   {
@@ -1002,11 +644,7 @@ class NodeConfig extends \Google\Collection
     return $this->secondaryBootDisks;
   }
   /**
-   * The Google Cloud Platform Service Account to be used by the node VMs.
-   * Specify the email address of the Service Account; otherwise, if no Service
-   * Account is specified, the "default" service account is used.
-   *
-   * @param string $serviceAccount
+   * @param string
    */
   public function setServiceAccount($serviceAccount)
   {
@@ -1020,9 +658,7 @@ class NodeConfig extends \Google\Collection
     return $this->serviceAccount;
   }
   /**
-   * Shielded Instance options.
-   *
-   * @param ShieldedInstanceConfig $shieldedInstanceConfig
+   * @param ShieldedInstanceConfig
    */
   public function setShieldedInstanceConfig(ShieldedInstanceConfig $shieldedInstanceConfig)
   {
@@ -1036,9 +672,7 @@ class NodeConfig extends \Google\Collection
     return $this->shieldedInstanceConfig;
   }
   /**
-   * Parameters for node pools to be backed by shared sole tenant node groups.
-   *
-   * @param SoleTenantConfig $soleTenantConfig
+   * @param SoleTenantConfig
    */
   public function setSoleTenantConfig(SoleTenantConfig $soleTenantConfig)
   {
@@ -1052,10 +686,7 @@ class NodeConfig extends \Google\Collection
     return $this->soleTenantConfig;
   }
   /**
-   * Spot flag for enabling Spot VM, which is a rebrand of the existing
-   * preemptible flag.
-   *
-   * @param bool $spot
+   * @param bool
    */
   public function setSpot($spot)
   {
@@ -1069,9 +700,7 @@ class NodeConfig extends \Google\Collection
     return $this->spot;
   }
   /**
-   * List of Storage Pools where boot disks are provisioned.
-   *
-   * @param string[] $storagePools
+   * @param string[]
    */
   public function setStoragePools($storagePools)
   {
@@ -1085,12 +714,7 @@ class NodeConfig extends \Google\Collection
     return $this->storagePools;
   }
   /**
-   * The list of instance tags applied to all nodes. Tags are used to identify
-   * valid sources or targets for network firewalls and are specified by the
-   * client during cluster or node pool creation. Each tag within the list must
-   * comply with RFC1035.
-   *
-   * @param string[] $tags
+   * @param string[]
    */
   public function setTags($tags)
   {
@@ -1104,27 +728,7 @@ class NodeConfig extends \Google\Collection
     return $this->tags;
   }
   /**
-   * Optional. The taint configuration for the node pool.
-   *
-   * @param TaintConfig $taintConfig
-   */
-  public function setTaintConfig(TaintConfig $taintConfig)
-  {
-    $this->taintConfig = $taintConfig;
-  }
-  /**
-   * @return TaintConfig
-   */
-  public function getTaintConfig()
-  {
-    return $this->taintConfig;
-  }
-  /**
-   * List of kubernetes taints to be applied to each node. For more information,
-   * including usage and the valid values, see:
-   * https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
-   *
-   * @param NodeTaint[] $taints
+   * @param NodeTaint[]
    */
   public function setTaints($taints)
   {
@@ -1138,9 +742,7 @@ class NodeConfig extends \Google\Collection
     return $this->taints;
   }
   /**
-   * Parameters that can be configured on Windows nodes.
-   *
-   * @param WindowsNodeConfig $windowsNodeConfig
+   * @param WindowsNodeConfig
    */
   public function setWindowsNodeConfig(WindowsNodeConfig $windowsNodeConfig)
   {
@@ -1154,9 +756,7 @@ class NodeConfig extends \Google\Collection
     return $this->windowsNodeConfig;
   }
   /**
-   * The workload metadata configuration for this node.
-   *
-   * @param WorkloadMetadataConfig $workloadMetadataConfig
+   * @param WorkloadMetadataConfig
    */
   public function setWorkloadMetadataConfig(WorkloadMetadataConfig $workloadMetadataConfig)
   {

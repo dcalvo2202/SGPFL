@@ -20,129 +20,74 @@ namespace Google\Service\Games;
 class AchievementDefinition extends \Google\Model
 {
   /**
-   * Achievement is either locked or unlocked.
-   */
-  public const ACHIEVEMENT_TYPE_STANDARD = 'STANDARD';
-  /**
-   * Achievement is incremental.
-   */
-  public const ACHIEVEMENT_TYPE_INCREMENTAL = 'INCREMENTAL';
-  /**
-   * Achievement is hidden.
-   */
-  public const INITIAL_STATE_HIDDEN = 'HIDDEN';
-  /**
-   * Achievement is revealed.
-   */
-  public const INITIAL_STATE_REVEALED = 'REVEALED';
-  /**
-   * Achievement is unlocked.
-   */
-  public const INITIAL_STATE_UNLOCKED = 'UNLOCKED';
-  /**
-   * The type of the achievement.
-   *
    * @var string
    */
   public $achievementType;
   /**
-   * The description of the achievement.
-   *
    * @var string
    */
   public $description;
   /**
-   * Experience points which will be earned when unlocking this achievement.
-   *
    * @var string
    */
   public $experiencePoints;
   /**
-   * The total steps for an incremental achievement as a string.
-   *
    * @var string
    */
   public $formattedTotalSteps;
   /**
-   * The ID of the achievement.
-   *
    * @var string
    */
   public $id;
   /**
-   * The initial state of the achievement.
-   *
    * @var string
    */
   public $initialState;
   /**
-   * Indicates whether the revealed icon image being returned is a default
-   * image, or is provided by the game.
-   *
    * @var bool
    */
   public $isRevealedIconUrlDefault;
   /**
-   * Indicates whether the unlocked icon image being returned is a default
-   * image, or is game-provided.
-   *
    * @var bool
    */
   public $isUnlockedIconUrlDefault;
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#achievementDefinition`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The name of the achievement.
-   *
    * @var string
    */
   public $name;
   /**
-   * The image URL for the revealed achievement icon.
-   *
    * @var string
    */
   public $revealedIconUrl;
   /**
-   * The total steps for an incremental achievement.
-   *
    * @var int
    */
   public $totalSteps;
   /**
-   * The image URL for the unlocked achievement icon.
-   *
    * @var string
    */
   public $unlockedIconUrl;
 
   /**
-   * The type of the achievement.
-   *
-   * Accepted values: STANDARD, INCREMENTAL
-   *
-   * @param self::ACHIEVEMENT_TYPE_* $achievementType
+   * @param string
    */
   public function setAchievementType($achievementType)
   {
     $this->achievementType = $achievementType;
   }
   /**
-   * @return self::ACHIEVEMENT_TYPE_*
+   * @return string
    */
   public function getAchievementType()
   {
     return $this->achievementType;
   }
   /**
-   * The description of the achievement.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -156,9 +101,7 @@ class AchievementDefinition extends \Google\Model
     return $this->description;
   }
   /**
-   * Experience points which will be earned when unlocking this achievement.
-   *
-   * @param string $experiencePoints
+   * @param string
    */
   public function setExperiencePoints($experiencePoints)
   {
@@ -172,9 +115,7 @@ class AchievementDefinition extends \Google\Model
     return $this->experiencePoints;
   }
   /**
-   * The total steps for an incremental achievement as a string.
-   *
-   * @param string $formattedTotalSteps
+   * @param string
    */
   public function setFormattedTotalSteps($formattedTotalSteps)
   {
@@ -188,9 +129,7 @@ class AchievementDefinition extends \Google\Model
     return $this->formattedTotalSteps;
   }
   /**
-   * The ID of the achievement.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -204,28 +143,21 @@ class AchievementDefinition extends \Google\Model
     return $this->id;
   }
   /**
-   * The initial state of the achievement.
-   *
-   * Accepted values: HIDDEN, REVEALED, UNLOCKED
-   *
-   * @param self::INITIAL_STATE_* $initialState
+   * @param string
    */
   public function setInitialState($initialState)
   {
     $this->initialState = $initialState;
   }
   /**
-   * @return self::INITIAL_STATE_*
+   * @return string
    */
   public function getInitialState()
   {
     return $this->initialState;
   }
   /**
-   * Indicates whether the revealed icon image being returned is a default
-   * image, or is provided by the game.
-   *
-   * @param bool $isRevealedIconUrlDefault
+   * @param bool
    */
   public function setIsRevealedIconUrlDefault($isRevealedIconUrlDefault)
   {
@@ -239,10 +171,7 @@ class AchievementDefinition extends \Google\Model
     return $this->isRevealedIconUrlDefault;
   }
   /**
-   * Indicates whether the unlocked icon image being returned is a default
-   * image, or is game-provided.
-   *
-   * @param bool $isUnlockedIconUrlDefault
+   * @param bool
    */
   public function setIsUnlockedIconUrlDefault($isUnlockedIconUrlDefault)
   {
@@ -256,10 +185,7 @@ class AchievementDefinition extends \Google\Model
     return $this->isUnlockedIconUrlDefault;
   }
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#achievementDefinition`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -273,9 +199,7 @@ class AchievementDefinition extends \Google\Model
     return $this->kind;
   }
   /**
-   * The name of the achievement.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -289,9 +213,7 @@ class AchievementDefinition extends \Google\Model
     return $this->name;
   }
   /**
-   * The image URL for the revealed achievement icon.
-   *
-   * @param string $revealedIconUrl
+   * @param string
    */
   public function setRevealedIconUrl($revealedIconUrl)
   {
@@ -305,9 +227,7 @@ class AchievementDefinition extends \Google\Model
     return $this->revealedIconUrl;
   }
   /**
-   * The total steps for an incremental achievement.
-   *
-   * @param int $totalSteps
+   * @param int
    */
   public function setTotalSteps($totalSteps)
   {
@@ -321,9 +241,7 @@ class AchievementDefinition extends \Google\Model
     return $this->totalSteps;
   }
   /**
-   * The image URL for the unlocked achievement icon.
-   *
-   * @param string $unlockedIconUrl
+   * @param string
    */
   public function setUnlockedIconUrl($unlockedIconUrl)
   {

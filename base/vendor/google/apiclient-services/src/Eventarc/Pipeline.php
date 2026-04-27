@@ -21,52 +21,30 @@ class Pipeline extends \Google\Collection
 {
   protected $collection_key = 'mediations';
   /**
-   * Optional. User-defined annotations. See
-   * https://google.aip.dev/128#annotations.
-   *
    * @var string[]
    */
   public $annotations;
   /**
-   * Output only. The creation time. A timestamp in RFC3339 UTC "Zulu" format,
-   * with nanosecond resolution and up to nine fractional digits. Examples:
-   * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. Resource name of a KMS crypto key (managed by the user) used to
-   * encrypt/decrypt the event data. If not set, an internal Google-owned key
-   * will be used to encrypt messages. It must match the pattern "projects/{proj
-   * ect}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}".
-   *
    * @var string
    */
   public $cryptoKeyName;
   protected $destinationsType = GoogleCloudEventarcV1PipelineDestination::class;
   protected $destinationsDataType = 'array';
   /**
-   * Optional. Display name of resource.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. This checksum is computed by the server based on the value of
-   * other fields, and might be sent only on create requests to ensure that the
-   * client has an up-to-date value before proceeding.
-   *
    * @var string
    */
   public $etag;
   protected $inputPayloadFormatType = GoogleCloudEventarcV1PipelineMessagePayloadFormat::class;
   protected $inputPayloadFormatDataType = '';
   /**
-   * Optional. User labels attached to the Pipeline that can be used to group
-   * resources. An object containing a list of "key": value pairs. Example: {
-   * "name": "wrench", "mass": "1.3kg", "count": "3" }.
-   *
    * @var string[]
    */
   public $labels;
@@ -75,44 +53,22 @@ class Pipeline extends \Google\Collection
   protected $mediationsType = GoogleCloudEventarcV1PipelineMediation::class;
   protected $mediationsDataType = 'array';
   /**
-   * Identifier. The resource name of the Pipeline. Must be unique within the
-   * location of the project and must be in
-   * `projects/{project}/locations/{location}/pipelines/{pipeline}` format.
-   *
    * @var string
    */
   public $name;
   protected $retryPolicyType = GoogleCloudEventarcV1PipelineRetryPolicy::class;
   protected $retryPolicyDataType = '';
   /**
-   * Output only. Whether or not this Pipeline satisfies the requirements of
-   * physical zone separation
-   *
-   * @var bool
-   */
-  public $satisfiesPzs;
-  /**
-   * Output only. Server-assigned unique identifier for the Pipeline. The value
-   * is a UUID4 string and guaranteed to remain unchanged until the resource is
-   * deleted.
-   *
    * @var string
    */
   public $uid;
   /**
-   * Output only. The last-modified time. A timestamp in RFC3339 UTC "Zulu"
-   * format, with nanosecond resolution and up to nine fractional digits.
-   * Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Optional. User-defined annotations. See
-   * https://google.aip.dev/128#annotations.
-   *
-   * @param string[] $annotations
+   * @param string[]
    */
   public function setAnnotations($annotations)
   {
@@ -126,11 +82,7 @@ class Pipeline extends \Google\Collection
     return $this->annotations;
   }
   /**
-   * Output only. The creation time. A timestamp in RFC3339 UTC "Zulu" format,
-   * with nanosecond resolution and up to nine fractional digits. Examples:
-   * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -144,12 +96,7 @@ class Pipeline extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Optional. Resource name of a KMS crypto key (managed by the user) used to
-   * encrypt/decrypt the event data. If not set, an internal Google-owned key
-   * will be used to encrypt messages. It must match the pattern "projects/{proj
-   * ect}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}".
-   *
-   * @param string $cryptoKeyName
+   * @param string
    */
   public function setCryptoKeyName($cryptoKeyName)
   {
@@ -163,10 +110,7 @@ class Pipeline extends \Google\Collection
     return $this->cryptoKeyName;
   }
   /**
-   * Required. List of destinations to which messages will be forwarded.
-   * Currently, exactly one destination is supported per Pipeline.
-   *
-   * @param GoogleCloudEventarcV1PipelineDestination[] $destinations
+   * @param GoogleCloudEventarcV1PipelineDestination[]
    */
   public function setDestinations($destinations)
   {
@@ -180,9 +124,7 @@ class Pipeline extends \Google\Collection
     return $this->destinations;
   }
   /**
-   * Optional. Display name of resource.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -196,11 +138,7 @@ class Pipeline extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Output only. This checksum is computed by the server based on the value of
-   * other fields, and might be sent only on create requests to ensure that the
-   * client has an up-to-date value before proceeding.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -214,16 +152,7 @@ class Pipeline extends \Google\Collection
     return $this->etag;
   }
   /**
-   * Optional. The payload format expected for the messages received by the
-   * Pipeline. If input_payload_format is set then any messages not matching
-   * this format will be treated as persistent errors. If input_payload_format
-   * is not set, then the message data will be treated as an opaque binary and
-   * no output format can be set on the Pipeline through the
-   * Pipeline.Destination.output_payload_format field. Any Mediations on the
-   * Pipeline that involve access to the data field will fail as persistent
-   * errors.
-   *
-   * @param GoogleCloudEventarcV1PipelineMessagePayloadFormat $inputPayloadFormat
+   * @param GoogleCloudEventarcV1PipelineMessagePayloadFormat
    */
   public function setInputPayloadFormat(GoogleCloudEventarcV1PipelineMessagePayloadFormat $inputPayloadFormat)
   {
@@ -237,11 +166,7 @@ class Pipeline extends \Google\Collection
     return $this->inputPayloadFormat;
   }
   /**
-   * Optional. User labels attached to the Pipeline that can be used to group
-   * resources. An object containing a list of "key": value pairs. Example: {
-   * "name": "wrench", "mass": "1.3kg", "count": "3" }.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -255,9 +180,7 @@ class Pipeline extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Optional. Config to control Platform Logging for Pipelines.
-   *
-   * @param LoggingConfig $loggingConfig
+   * @param LoggingConfig
    */
   public function setLoggingConfig(LoggingConfig $loggingConfig)
   {
@@ -271,10 +194,7 @@ class Pipeline extends \Google\Collection
     return $this->loggingConfig;
   }
   /**
-   * Optional. List of mediation operations to be performed on the message.
-   * Currently, only one Transformation operation is allowed in each Pipeline.
-   *
-   * @param GoogleCloudEventarcV1PipelineMediation[] $mediations
+   * @param GoogleCloudEventarcV1PipelineMediation[]
    */
   public function setMediations($mediations)
   {
@@ -288,11 +208,7 @@ class Pipeline extends \Google\Collection
     return $this->mediations;
   }
   /**
-   * Identifier. The resource name of the Pipeline. Must be unique within the
-   * location of the project and must be in
-   * `projects/{project}/locations/{location}/pipelines/{pipeline}` format.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -306,9 +222,7 @@ class Pipeline extends \Google\Collection
     return $this->name;
   }
   /**
-   * Optional. The retry policy to use in the pipeline.
-   *
-   * @param GoogleCloudEventarcV1PipelineRetryPolicy $retryPolicy
+   * @param GoogleCloudEventarcV1PipelineRetryPolicy
    */
   public function setRetryPolicy(GoogleCloudEventarcV1PipelineRetryPolicy $retryPolicy)
   {
@@ -322,28 +236,7 @@ class Pipeline extends \Google\Collection
     return $this->retryPolicy;
   }
   /**
-   * Output only. Whether or not this Pipeline satisfies the requirements of
-   * physical zone separation
-   *
-   * @param bool $satisfiesPzs
-   */
-  public function setSatisfiesPzs($satisfiesPzs)
-  {
-    $this->satisfiesPzs = $satisfiesPzs;
-  }
-  /**
-   * @return bool
-   */
-  public function getSatisfiesPzs()
-  {
-    return $this->satisfiesPzs;
-  }
-  /**
-   * Output only. Server-assigned unique identifier for the Pipeline. The value
-   * is a UUID4 string and guaranteed to remain unchanged until the resource is
-   * deleted.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {
@@ -357,11 +250,7 @@ class Pipeline extends \Google\Collection
     return $this->uid;
   }
   /**
-   * Output only. The last-modified time. A timestamp in RFC3339 UTC "Zulu"
-   * format, with nanosecond resolution and up to nine fractional digits.
-   * Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

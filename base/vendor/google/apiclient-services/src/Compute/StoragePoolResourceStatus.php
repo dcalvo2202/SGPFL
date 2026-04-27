@@ -20,106 +20,48 @@ namespace Google\Service\Compute;
 class StoragePoolResourceStatus extends \Google\Model
 {
   /**
-   * [Output Only] Number of disks used.
-   *
    * @var string
    */
   public $diskCount;
   /**
-   * Output only. [Output Only] Maximum allowed read IOPS for this Exapool.
-   *
-   * @var string
-   */
-  public $exapoolMaxReadIops;
-  /**
-   * Output only. [Output Only] Maximum allowed read throughput in MiB/s for
-   * this Exapool.
-   *
-   * @var string
-   */
-  public $exapoolMaxReadThroughput;
-  /**
-   * Output only. [Output Only] Maximum allowed write IOPS for this Exapool.
-   *
-   * @var string
-   */
-  public $exapoolMaxWriteIops;
-  /**
-   * Output only. [Output Only] Maximum allowed write throughput in MiB/s for
-   * this Exapool.
-   *
-   * @var string
-   */
-  public $exapoolMaxWriteThroughput;
-  /**
-   * Output only. [Output Only] Timestamp of the last successful resize
-   * inRFC3339 text format.
-   *
    * @var string
    */
   public $lastResizeTimestamp;
   /**
-   * [Output Only] Maximum allowed aggregate disk size in GiB.
-   *
    * @var string
    */
   public $maxTotalProvisionedDiskCapacityGb;
   /**
-   * [Output Only] Space used by data stored in disks within the storage pool
-   * (in bytes). This will reflect the total number of bytes written to the
-   * disks in the pool, in contrast to the capacity of those disks.
-   *
    * @var string
    */
   public $poolUsedCapacityBytes;
   /**
-   * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount
-   * that is allowed per disk that is not counted towards pool's IOPS capacity.
-   * For more information, see
-   * https://cloud.google.com/compute/docs/disks/storage-pools.
-   *
    * @var string
    */
   public $poolUsedIops;
   /**
-   * [Output Only] Sum of all the disks' provisioned throughput in MiB/s.
-   *
    * @var string
    */
   public $poolUsedThroughput;
   /**
-   * [Output Only] Amount of data written into the pool, before it is compacted.
-   *
    * @var string
    */
   public $poolUserWrittenBytes;
   /**
-   * [Output Only] Sum of all the disks' provisioned capacity (in GiB) in this
-   * storage pool. A disk's provisioned capacity is the same as its total
-   * capacity.
-   *
    * @var string
    */
   public $totalProvisionedDiskCapacityGb;
   /**
-   * [Output Only] Sum of all the disks' provisioned IOPS.
-   *
    * @var string
    */
   public $totalProvisionedDiskIops;
   /**
-   * [Output Only] Sum of all the disks' provisioned throughput in MiB/s, minus
-   * some amount that is allowed per disk that is not counted towards pool's
-   * throughput capacity.
-   *
    * @var string
    */
   public $totalProvisionedDiskThroughput;
 
   /**
-   * [Output Only] Number of disks used.
-   *
-   * @param string $diskCount
+   * @param string
    */
   public function setDiskCount($diskCount)
   {
@@ -133,76 +75,7 @@ class StoragePoolResourceStatus extends \Google\Model
     return $this->diskCount;
   }
   /**
-   * Output only. [Output Only] Maximum allowed read IOPS for this Exapool.
-   *
-   * @param string $exapoolMaxReadIops
-   */
-  public function setExapoolMaxReadIops($exapoolMaxReadIops)
-  {
-    $this->exapoolMaxReadIops = $exapoolMaxReadIops;
-  }
-  /**
-   * @return string
-   */
-  public function getExapoolMaxReadIops()
-  {
-    return $this->exapoolMaxReadIops;
-  }
-  /**
-   * Output only. [Output Only] Maximum allowed read throughput in MiB/s for
-   * this Exapool.
-   *
-   * @param string $exapoolMaxReadThroughput
-   */
-  public function setExapoolMaxReadThroughput($exapoolMaxReadThroughput)
-  {
-    $this->exapoolMaxReadThroughput = $exapoolMaxReadThroughput;
-  }
-  /**
-   * @return string
-   */
-  public function getExapoolMaxReadThroughput()
-  {
-    return $this->exapoolMaxReadThroughput;
-  }
-  /**
-   * Output only. [Output Only] Maximum allowed write IOPS for this Exapool.
-   *
-   * @param string $exapoolMaxWriteIops
-   */
-  public function setExapoolMaxWriteIops($exapoolMaxWriteIops)
-  {
-    $this->exapoolMaxWriteIops = $exapoolMaxWriteIops;
-  }
-  /**
-   * @return string
-   */
-  public function getExapoolMaxWriteIops()
-  {
-    return $this->exapoolMaxWriteIops;
-  }
-  /**
-   * Output only. [Output Only] Maximum allowed write throughput in MiB/s for
-   * this Exapool.
-   *
-   * @param string $exapoolMaxWriteThroughput
-   */
-  public function setExapoolMaxWriteThroughput($exapoolMaxWriteThroughput)
-  {
-    $this->exapoolMaxWriteThroughput = $exapoolMaxWriteThroughput;
-  }
-  /**
-   * @return string
-   */
-  public function getExapoolMaxWriteThroughput()
-  {
-    return $this->exapoolMaxWriteThroughput;
-  }
-  /**
-   * Output only. [Output Only] Timestamp of the last successful resize
-   * inRFC3339 text format.
-   *
-   * @param string $lastResizeTimestamp
+   * @param string
    */
   public function setLastResizeTimestamp($lastResizeTimestamp)
   {
@@ -216,9 +89,7 @@ class StoragePoolResourceStatus extends \Google\Model
     return $this->lastResizeTimestamp;
   }
   /**
-   * [Output Only] Maximum allowed aggregate disk size in GiB.
-   *
-   * @param string $maxTotalProvisionedDiskCapacityGb
+   * @param string
    */
   public function setMaxTotalProvisionedDiskCapacityGb($maxTotalProvisionedDiskCapacityGb)
   {
@@ -232,11 +103,7 @@ class StoragePoolResourceStatus extends \Google\Model
     return $this->maxTotalProvisionedDiskCapacityGb;
   }
   /**
-   * [Output Only] Space used by data stored in disks within the storage pool
-   * (in bytes). This will reflect the total number of bytes written to the
-   * disks in the pool, in contrast to the capacity of those disks.
-   *
-   * @param string $poolUsedCapacityBytes
+   * @param string
    */
   public function setPoolUsedCapacityBytes($poolUsedCapacityBytes)
   {
@@ -250,12 +117,7 @@ class StoragePoolResourceStatus extends \Google\Model
     return $this->poolUsedCapacityBytes;
   }
   /**
-   * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount
-   * that is allowed per disk that is not counted towards pool's IOPS capacity.
-   * For more information, see
-   * https://cloud.google.com/compute/docs/disks/storage-pools.
-   *
-   * @param string $poolUsedIops
+   * @param string
    */
   public function setPoolUsedIops($poolUsedIops)
   {
@@ -269,9 +131,7 @@ class StoragePoolResourceStatus extends \Google\Model
     return $this->poolUsedIops;
   }
   /**
-   * [Output Only] Sum of all the disks' provisioned throughput in MiB/s.
-   *
-   * @param string $poolUsedThroughput
+   * @param string
    */
   public function setPoolUsedThroughput($poolUsedThroughput)
   {
@@ -285,9 +145,7 @@ class StoragePoolResourceStatus extends \Google\Model
     return $this->poolUsedThroughput;
   }
   /**
-   * [Output Only] Amount of data written into the pool, before it is compacted.
-   *
-   * @param string $poolUserWrittenBytes
+   * @param string
    */
   public function setPoolUserWrittenBytes($poolUserWrittenBytes)
   {
@@ -301,11 +159,7 @@ class StoragePoolResourceStatus extends \Google\Model
     return $this->poolUserWrittenBytes;
   }
   /**
-   * [Output Only] Sum of all the disks' provisioned capacity (in GiB) in this
-   * storage pool. A disk's provisioned capacity is the same as its total
-   * capacity.
-   *
-   * @param string $totalProvisionedDiskCapacityGb
+   * @param string
    */
   public function setTotalProvisionedDiskCapacityGb($totalProvisionedDiskCapacityGb)
   {
@@ -319,9 +173,7 @@ class StoragePoolResourceStatus extends \Google\Model
     return $this->totalProvisionedDiskCapacityGb;
   }
   /**
-   * [Output Only] Sum of all the disks' provisioned IOPS.
-   *
-   * @param string $totalProvisionedDiskIops
+   * @param string
    */
   public function setTotalProvisionedDiskIops($totalProvisionedDiskIops)
   {
@@ -335,11 +187,7 @@ class StoragePoolResourceStatus extends \Google\Model
     return $this->totalProvisionedDiskIops;
   }
   /**
-   * [Output Only] Sum of all the disks' provisioned throughput in MiB/s, minus
-   * some amount that is allowed per disk that is not counted towards pool's
-   * throughput capacity.
-   *
-   * @param string $totalProvisionedDiskThroughput
+   * @param string
    */
   public function setTotalProvisionedDiskThroughput($totalProvisionedDiskThroughput)
   {

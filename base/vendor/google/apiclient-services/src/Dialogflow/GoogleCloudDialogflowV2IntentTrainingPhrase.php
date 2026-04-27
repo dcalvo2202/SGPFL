@@ -19,12 +19,6 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowV2IntentTrainingPhrase extends \Google\Collection
 {
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  public const TYPE_EXAMPLE = 'EXAMPLE';
-  /**
-   * @deprecated
-   */
-  public const TYPE_TEMPLATE = 'TEMPLATE';
   protected $collection_key = 'parts';
   /**
    * @var string
@@ -42,7 +36,7 @@ class GoogleCloudDialogflowV2IntentTrainingPhrase extends \Google\Collection
   public $type;
 
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -56,7 +50,7 @@ class GoogleCloudDialogflowV2IntentTrainingPhrase extends \Google\Collection
     return $this->name;
   }
   /**
-   * @param GoogleCloudDialogflowV2IntentTrainingPhrasePart[] $parts
+   * @param GoogleCloudDialogflowV2IntentTrainingPhrasePart[]
    */
   public function setParts($parts)
   {
@@ -70,7 +64,7 @@ class GoogleCloudDialogflowV2IntentTrainingPhrase extends \Google\Collection
     return $this->parts;
   }
   /**
-   * @param int $timesAddedCount
+   * @param int
    */
   public function setTimesAddedCount($timesAddedCount)
   {
@@ -84,14 +78,14 @@ class GoogleCloudDialogflowV2IntentTrainingPhrase extends \Google\Collection
     return $this->timesAddedCount;
   }
   /**
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

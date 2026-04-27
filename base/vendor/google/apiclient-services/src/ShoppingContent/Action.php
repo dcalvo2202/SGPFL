@@ -25,20 +25,12 @@ class Action extends \Google\Collection
   protected $builtinUserInputActionType = BuiltInUserInputAction::class;
   protected $builtinUserInputActionDataType = '';
   /**
-   * Label of the action button.
-   *
    * @var string
    */
   public $buttonLabel;
   protected $externalActionType = ExternalAction::class;
   protected $externalActionDataType = '';
   /**
-   * Controlling whether the button is active or disabled. The value is 'false'
-   * when the action was already requested or is not available. If the action is
-   * not available then a reason will be present. If (your) third-party
-   * application shows a disabled button for action that is not available, then
-   * it should also show reasons.
-   *
    * @var bool
    */
   public $isAvailable;
@@ -46,12 +38,7 @@ class Action extends \Google\Collection
   protected $reasonsDataType = 'array';
 
   /**
-   * Action implemented and performed in (your) third-party application. The
-   * application should point the merchant to the place, where they can access
-   * the corresponding functionality or provide instructions, if the specific
-   * functionality is not available.
-   *
-   * @param BuiltInSimpleAction $builtinSimpleAction
+   * @param BuiltInSimpleAction
    */
   public function setBuiltinSimpleAction(BuiltInSimpleAction $builtinSimpleAction)
   {
@@ -65,12 +52,7 @@ class Action extends \Google\Collection
     return $this->builtinSimpleAction;
   }
   /**
-   * Action implemented and performed in (your) third-party application. The
-   * application needs to show an additional content and input form to the
-   * merchant as specified for given action. They can trigger the action only
-   * when they provided all required inputs.
-   *
-   * @param BuiltInUserInputAction $builtinUserInputAction
+   * @param BuiltInUserInputAction
    */
   public function setBuiltinUserInputAction(BuiltInUserInputAction $builtinUserInputAction)
   {
@@ -84,9 +66,7 @@ class Action extends \Google\Collection
     return $this->builtinUserInputAction;
   }
   /**
-   * Label of the action button.
-   *
-   * @param string $buttonLabel
+   * @param string
    */
   public function setButtonLabel($buttonLabel)
   {
@@ -100,11 +80,7 @@ class Action extends \Google\Collection
     return $this->buttonLabel;
   }
   /**
-   * Action that is implemented and performed outside of (your) third-party
-   * application. The application needs to redirect the merchant to the external
-   * location where they can perform the action.
-   *
-   * @param ExternalAction $externalAction
+   * @param ExternalAction
    */
   public function setExternalAction(ExternalAction $externalAction)
   {
@@ -118,13 +94,7 @@ class Action extends \Google\Collection
     return $this->externalAction;
   }
   /**
-   * Controlling whether the button is active or disabled. The value is 'false'
-   * when the action was already requested or is not available. If the action is
-   * not available then a reason will be present. If (your) third-party
-   * application shows a disabled button for action that is not available, then
-   * it should also show reasons.
-   *
-   * @param bool $isAvailable
+   * @param bool
    */
   public function setIsAvailable($isAvailable)
   {
@@ -138,12 +108,7 @@ class Action extends \Google\Collection
     return $this->isAvailable;
   }
   /**
-   * List of reasons why the action is not available. The list of reasons is
-   * empty if the action is available. If there is only one reason, it can be
-   * displayed next to the disabled button. If there are more reasons, all of
-   * them should be displayed, for example in a pop-up dialog.
-   *
-   * @param ActionReason[] $reasons
+   * @param ActionReason[]
    */
   public function setReasons($reasons)
   {

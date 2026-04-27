@@ -20,22 +20,16 @@ namespace Google\Service\ToolResults;
 class MemoryInfo extends \Google\Model
 {
   /**
-   * Maximum memory that can be allocated to the process in KiB
-   *
    * @var string
    */
   public $memoryCapInKibibyte;
   /**
-   * Total memory available on the device in KiB
-   *
    * @var string
    */
   public $memoryTotalInKibibyte;
 
   /**
-   * Maximum memory that can be allocated to the process in KiB
-   *
-   * @param string $memoryCapInKibibyte
+   * @param string
    */
   public function setMemoryCapInKibibyte($memoryCapInKibibyte)
   {
@@ -49,9 +43,7 @@ class MemoryInfo extends \Google\Model
     return $this->memoryCapInKibibyte;
   }
   /**
-   * Total memory available on the device in KiB
-   *
-   * @param string $memoryTotalInKibibyte
+   * @param string
    */
   public function setMemoryTotalInKibibyte($memoryTotalInKibibyte)
   {

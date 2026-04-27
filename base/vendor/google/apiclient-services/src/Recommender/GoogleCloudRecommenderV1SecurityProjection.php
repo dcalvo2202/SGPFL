@@ -20,16 +20,12 @@ namespace Google\Service\Recommender;
 class GoogleCloudRecommenderV1SecurityProjection extends \Google\Model
 {
   /**
-   * Additional security impact details that is provided by the recommender.
-   *
    * @var array[]
    */
   public $details;
 
   /**
-   * Additional security impact details that is provided by the recommender.
-   *
-   * @param array[] $details
+   * @param array[]
    */
   public function setDetails($details)
   {

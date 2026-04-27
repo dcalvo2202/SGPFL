@@ -49,7 +49,7 @@ class StreamingQueryData extends \Google\Model
   public $streamingQueryId;
 
   /**
-   * @param string $endTimestamp
+   * @param string
    */
   public function setEndTimestamp($endTimestamp)
   {
@@ -63,7 +63,7 @@ class StreamingQueryData extends \Google\Model
     return $this->endTimestamp;
   }
   /**
-   * @param string $exception
+   * @param string
    */
   public function setException($exception)
   {
@@ -77,7 +77,7 @@ class StreamingQueryData extends \Google\Model
     return $this->exception;
   }
   /**
-   * @param bool $isActive
+   * @param bool
    */
   public function setIsActive($isActive)
   {
@@ -91,7 +91,7 @@ class StreamingQueryData extends \Google\Model
     return $this->isActive;
   }
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -105,7 +105,7 @@ class StreamingQueryData extends \Google\Model
     return $this->name;
   }
   /**
-   * @param string $runId
+   * @param string
    */
   public function setRunId($runId)
   {
@@ -119,7 +119,7 @@ class StreamingQueryData extends \Google\Model
     return $this->runId;
   }
   /**
-   * @param string $startTimestamp
+   * @param string
    */
   public function setStartTimestamp($startTimestamp)
   {
@@ -133,7 +133,7 @@ class StreamingQueryData extends \Google\Model
     return $this->startTimestamp;
   }
   /**
-   * @param string $streamingQueryId
+   * @param string
    */
   public function setStreamingQueryId($streamingQueryId)
   {

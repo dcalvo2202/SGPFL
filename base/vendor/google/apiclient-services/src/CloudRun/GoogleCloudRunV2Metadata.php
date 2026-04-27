@@ -20,18 +20,12 @@ namespace Google\Service\CloudRun;
 class GoogleCloudRunV2Metadata extends \Google\Model
 {
   /**
-   * JSON encoded Google-generated Customer Metadata for a given
-   * resource/project.
-   *
    * @var string
    */
   public $metadata;
 
   /**
-   * JSON encoded Google-generated Customer Metadata for a given
-   * resource/project.
-   *
-   * @param string $metadata
+   * @param string
    */
   public function setMetadata($metadata)
   {

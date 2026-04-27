@@ -19,78 +19,39 @@ namespace Google\Service\Cloudchannel;
 
 class GoogleCloudChannelV1ChannelPartnerLink extends \Google\Model
 {
-  /**
-   * Not used.
-   */
-  public const LINK_STATE_CHANNEL_PARTNER_LINK_STATE_UNSPECIFIED = 'CHANNEL_PARTNER_LINK_STATE_UNSPECIFIED';
-  /**
-   * An invitation has been sent to the reseller to create a channel partner
-   * link.
-   */
-  public const LINK_STATE_INVITED = 'INVITED';
-  /**
-   * Status when the reseller is active.
-   */
-  public const LINK_STATE_ACTIVE = 'ACTIVE';
-  /**
-   * Status when the reseller has been revoked by the distributor.
-   */
-  public const LINK_STATE_REVOKED = 'REVOKED';
-  /**
-   * Status when the reseller is suspended by Google or distributor.
-   */
-  public const LINK_STATE_SUSPENDED = 'SUSPENDED';
   protected $channelPartnerCloudIdentityInfoType = GoogleCloudChannelV1CloudIdentityInfo::class;
   protected $channelPartnerCloudIdentityInfoDataType = '';
   /**
-   * Output only. Timestamp of when the channel partner link is created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. URI of the web page where partner accepts the link invitation.
-   *
    * @var string
    */
   public $inviteLinkUri;
   /**
-   * Required. State of the channel partner link.
-   *
    * @var string
    */
   public $linkState;
   /**
-   * Output only. Resource name for the channel partner link, in the format
-   * accounts/{account_id}/channelPartnerLinks/{id}.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Public identifier that a customer must use to generate a
-   * transfer token to move to this distributor-reseller combination.
-   *
    * @var string
    */
   public $publicId;
   /**
-   * Required. Cloud Identity ID of the linked reseller.
-   *
    * @var string
    */
   public $resellerCloudIdentityId;
   /**
-   * Output only. Timestamp of when the channel partner link is updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. Cloud Identity info of the channel partner (IR).
-   *
-   * @param GoogleCloudChannelV1CloudIdentityInfo $channelPartnerCloudIdentityInfo
+   * @param GoogleCloudChannelV1CloudIdentityInfo
    */
   public function setChannelPartnerCloudIdentityInfo(GoogleCloudChannelV1CloudIdentityInfo $channelPartnerCloudIdentityInfo)
   {
@@ -104,9 +65,7 @@ class GoogleCloudChannelV1ChannelPartnerLink extends \Google\Model
     return $this->channelPartnerCloudIdentityInfo;
   }
   /**
-   * Output only. Timestamp of when the channel partner link is created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -120,9 +79,7 @@ class GoogleCloudChannelV1ChannelPartnerLink extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. URI of the web page where partner accepts the link invitation.
-   *
-   * @param string $inviteLinkUri
+   * @param string
    */
   public function setInviteLinkUri($inviteLinkUri)
   {
@@ -136,29 +93,21 @@ class GoogleCloudChannelV1ChannelPartnerLink extends \Google\Model
     return $this->inviteLinkUri;
   }
   /**
-   * Required. State of the channel partner link.
-   *
-   * Accepted values: CHANNEL_PARTNER_LINK_STATE_UNSPECIFIED, INVITED, ACTIVE,
-   * REVOKED, SUSPENDED
-   *
-   * @param self::LINK_STATE_* $linkState
+   * @param string
    */
   public function setLinkState($linkState)
   {
     $this->linkState = $linkState;
   }
   /**
-   * @return self::LINK_STATE_*
+   * @return string
    */
   public function getLinkState()
   {
     return $this->linkState;
   }
   /**
-   * Output only. Resource name for the channel partner link, in the format
-   * accounts/{account_id}/channelPartnerLinks/{id}.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -172,10 +121,7 @@ class GoogleCloudChannelV1ChannelPartnerLink extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Public identifier that a customer must use to generate a
-   * transfer token to move to this distributor-reseller combination.
-   *
-   * @param string $publicId
+   * @param string
    */
   public function setPublicId($publicId)
   {
@@ -189,9 +135,7 @@ class GoogleCloudChannelV1ChannelPartnerLink extends \Google\Model
     return $this->publicId;
   }
   /**
-   * Required. Cloud Identity ID of the linked reseller.
-   *
-   * @param string $resellerCloudIdentityId
+   * @param string
    */
   public function setResellerCloudIdentityId($resellerCloudIdentityId)
   {
@@ -205,9 +149,7 @@ class GoogleCloudChannelV1ChannelPartnerLink extends \Google\Model
     return $this->resellerCloudIdentityId;
   }
   /**
-   * Output only. Timestamp of when the channel partner link is updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

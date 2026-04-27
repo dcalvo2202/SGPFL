@@ -20,28 +20,16 @@ namespace Google\Service\VMwareEngine;
 class NodeTypeConfig extends \Google\Model
 {
   /**
-   * Optional. Customized number of cores available to each node of the type.
-   * This number must always be one of `nodeType.availableCustomCoreCounts`. If
-   * zero is provided max value from `nodeType.availableCustomCoreCounts` will
-   * be used.
-   *
    * @var int
    */
   public $customCoreCount;
   /**
-   * Required. The number of nodes of this type in the cluster
-   *
    * @var int
    */
   public $nodeCount;
 
   /**
-   * Optional. Customized number of cores available to each node of the type.
-   * This number must always be one of `nodeType.availableCustomCoreCounts`. If
-   * zero is provided max value from `nodeType.availableCustomCoreCounts` will
-   * be used.
-   *
-   * @param int $customCoreCount
+   * @param int
    */
   public function setCustomCoreCount($customCoreCount)
   {
@@ -55,9 +43,7 @@ class NodeTypeConfig extends \Google\Model
     return $this->customCoreCount;
   }
   /**
-   * Required. The number of nodes of this type in the cluster
-   *
-   * @param int $nodeCount
+   * @param int
    */
   public function setNodeCount($nodeCount)
   {

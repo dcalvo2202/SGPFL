@@ -20,22 +20,16 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1Query extends \Google\Model
 {
   /**
-   * Output only. Unique Id for the query.
-   *
    * @var string
    */
   public $queryId;
   /**
-   * Plain text.
-   *
    * @var string
    */
   public $text;
 
   /**
-   * Output only. Unique Id for the query.
-   *
-   * @param string $queryId
+   * @param string
    */
   public function setQueryId($queryId)
   {
@@ -49,9 +43,7 @@ class GoogleCloudDiscoveryengineV1Query extends \Google\Model
     return $this->queryId;
   }
   /**
-   * Plain text.
-   *
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {

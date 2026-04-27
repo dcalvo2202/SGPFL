@@ -21,8 +21,6 @@ class ListRoutinesResponse extends \Google\Collection
 {
   protected $collection_key = 'routines';
   /**
-   * A token to request the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -30,9 +28,7 @@ class ListRoutinesResponse extends \Google\Collection
   protected $routinesDataType = 'array';
 
   /**
-   * A token to request the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -46,12 +42,7 @@ class ListRoutinesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Routines in the requested dataset. Unless read_mask is set in the request,
-   * only the following fields are populated: etag, project_id, dataset_id,
-   * routine_id, routine_type, creation_time, last_modified_time, language, and
-   * remote_function_options.
-   *
-   * @param Routine[] $routines
+   * @param Routine[]
    */
   public function setRoutines($routines)
   {

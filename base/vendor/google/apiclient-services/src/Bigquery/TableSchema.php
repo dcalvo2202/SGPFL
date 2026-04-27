@@ -26,9 +26,7 @@ class TableSchema extends \Google\Collection
   protected $foreignTypeInfoDataType = '';
 
   /**
-   * Describes the fields in a table.
-   *
-   * @param TableFieldSchema[] $fields
+   * @param TableFieldSchema[]
    */
   public function setFields($fields)
   {
@@ -42,10 +40,7 @@ class TableSchema extends \Google\Collection
     return $this->fields;
   }
   /**
-   * Optional. Specifies metadata of the foreign data type definition in field
-   * schema (TableFieldSchema.foreign_type_definition).
-   *
-   * @param ForeignTypeInfo $foreignTypeInfo
+   * @param ForeignTypeInfo
    */
   public function setForeignTypeInfo(ForeignTypeInfo $foreignTypeInfo)
   {

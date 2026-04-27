@@ -26,9 +26,7 @@ class BoundingPoly extends \Google\Collection
   protected $verticesDataType = 'array';
 
   /**
-   * The bounding polygon normalized vertices.
-   *
-   * @param NormalizedVertex[] $normalizedVertices
+   * @param NormalizedVertex[]
    */
   public function setNormalizedVertices($normalizedVertices)
   {
@@ -42,9 +40,7 @@ class BoundingPoly extends \Google\Collection
     return $this->normalizedVertices;
   }
   /**
-   * The bounding polygon vertices.
-   *
-   * @param Vertex[] $vertices
+   * @param Vertex[]
    */
   public function setVertices($vertices)
   {

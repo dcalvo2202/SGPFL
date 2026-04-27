@@ -23,22 +23,16 @@ class AcceleratorType extends \Google\Collection
   protected $acceleratorConfigsType = AcceleratorConfig::class;
   protected $acceleratorConfigsDataType = 'array';
   /**
-   * The resource name.
-   *
    * @var string
    */
   public $name;
   /**
-   * The accelerator type.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The accelerator config.
-   *
-   * @param AcceleratorConfig[] $acceleratorConfigs
+   * @param AcceleratorConfig[]
    */
   public function setAcceleratorConfigs($acceleratorConfigs)
   {
@@ -52,9 +46,7 @@ class AcceleratorType extends \Google\Collection
     return $this->acceleratorConfigs;
   }
   /**
-   * The resource name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -68,9 +60,7 @@ class AcceleratorType extends \Google\Collection
     return $this->name;
   }
   /**
-   * The accelerator type.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

@@ -20,53 +20,30 @@ namespace Google\Service\AirQuality;
 class Concentration extends \Google\Model
 {
   /**
-   * Unspecified concentration unit.
-   */
-  public const UNITS_UNIT_UNSPECIFIED = 'UNIT_UNSPECIFIED';
-  /**
-   * The ppb (parts per billion) concentration unit.
-   */
-  public const UNITS_PARTS_PER_BILLION = 'PARTS_PER_BILLION';
-  /**
-   * The "µg/m^3" (micrograms per cubic meter) concentration unit.
-   */
-  public const UNITS_MICROGRAMS_PER_CUBIC_METER = 'MICROGRAMS_PER_CUBIC_METER';
-  /**
-   * Units for measuring this pollutant concentration.
-   *
    * @var string
    */
   public $units;
   /**
-   * Value of the pollutant concentration.
-   *
    * @var float
    */
   public $value;
 
   /**
-   * Units for measuring this pollutant concentration.
-   *
-   * Accepted values: UNIT_UNSPECIFIED, PARTS_PER_BILLION,
-   * MICROGRAMS_PER_CUBIC_METER
-   *
-   * @param self::UNITS_* $units
+   * @param string
    */
   public function setUnits($units)
   {
     $this->units = $units;
   }
   /**
-   * @return self::UNITS_*
+   * @return string
    */
   public function getUnits()
   {
     return $this->units;
   }
   /**
-   * Value of the pollutant concentration.
-   *
-   * @param float $value
+   * @param float
    */
   public function setValue($value)
   {

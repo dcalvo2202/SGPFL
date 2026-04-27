@@ -21,8 +21,6 @@ class GoogleCloudDiscoveryengineV1DocumentAclInfoAccessRestriction extends \Goog
 {
   protected $collection_key = 'principals';
   /**
-   * All users within the Identity Provider.
-   *
    * @var bool
    */
   public $idpWide;
@@ -30,9 +28,7 @@ class GoogleCloudDiscoveryengineV1DocumentAclInfoAccessRestriction extends \Goog
   protected $principalsDataType = 'array';
 
   /**
-   * All users within the Identity Provider.
-   *
-   * @param bool $idpWide
+   * @param bool
    */
   public function setIdpWide($idpWide)
   {
@@ -46,9 +42,7 @@ class GoogleCloudDiscoveryengineV1DocumentAclInfoAccessRestriction extends \Goog
     return $this->idpWide;
   }
   /**
-   * List of principals.
-   *
-   * @param GoogleCloudDiscoveryengineV1Principal[] $principals
+   * @param GoogleCloudDiscoveryengineV1Principal[]
    */
   public function setPrincipals($principals)
   {

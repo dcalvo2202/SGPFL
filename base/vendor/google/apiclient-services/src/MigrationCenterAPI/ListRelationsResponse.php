@@ -21,8 +21,6 @@ class ListRelationsResponse extends \Google\Collection
 {
   protected $collection_key = 'relations';
   /**
-   * A token identifying a page of results the server should return.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -30,9 +28,7 @@ class ListRelationsResponse extends \Google\Collection
   protected $relationsDataType = 'array';
 
   /**
-   * A token identifying a page of results the server should return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -46,9 +42,7 @@ class ListRelationsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * A list of relations.
-   *
-   * @param Relation[] $relations
+   * @param Relation[]
    */
   public function setRelations($relations)
   {

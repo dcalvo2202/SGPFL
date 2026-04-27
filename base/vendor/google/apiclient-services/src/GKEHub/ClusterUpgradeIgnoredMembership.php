@@ -20,22 +20,16 @@ namespace Google\Service\GKEHub;
 class ClusterUpgradeIgnoredMembership extends \Google\Model
 {
   /**
-   * Time when the membership was first set to ignored.
-   *
    * @var string
    */
   public $ignoredTime;
   /**
-   * Reason why the membership is ignored.
-   *
    * @var string
    */
   public $reason;
 
   /**
-   * Time when the membership was first set to ignored.
-   *
-   * @param string $ignoredTime
+   * @param string
    */
   public function setIgnoredTime($ignoredTime)
   {
@@ -49,9 +43,7 @@ class ClusterUpgradeIgnoredMembership extends \Google\Model
     return $this->ignoredTime;
   }
   /**
-   * Reason why the membership is ignored.
-   *
-   * @param string $reason
+   * @param string
    */
   public function setReason($reason)
   {

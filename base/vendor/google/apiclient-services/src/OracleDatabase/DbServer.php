@@ -20,16 +20,10 @@ namespace Google\Service\OracleDatabase;
 class DbServer extends \Google\Model
 {
   /**
-   * Optional. User friendly name for this resource.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Identifier. The name of the database server resource with the format: proje
-   * cts/{project}/locations/{location}/cloudExadataInfrastructures/{cloud_exada
-   * ta_infrastructure}/dbServers/{db_server}
-   *
    * @var string
    */
   public $name;
@@ -37,9 +31,7 @@ class DbServer extends \Google\Model
   protected $propertiesDataType = '';
 
   /**
-   * Optional. User friendly name for this resource.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -53,11 +45,7 @@ class DbServer extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Identifier. The name of the database server resource with the format: proje
-   * cts/{project}/locations/{location}/cloudExadataInfrastructures/{cloud_exada
-   * ta_infrastructure}/dbServers/{db_server}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -71,9 +59,7 @@ class DbServer extends \Google\Model
     return $this->name;
   }
   /**
-   * Optional. Various properties of the database server.
-   *
-   * @param DbServerProperties $properties
+   * @param DbServerProperties
    */
   public function setProperties(DbServerProperties $properties)
   {

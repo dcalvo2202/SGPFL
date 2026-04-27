@@ -20,18 +20,12 @@ namespace Google\Service\ArtifactRegistry;
 class UploadFileRequest extends \Google\Model
 {
   /**
-   * Optional. The ID of the file. If left empty will default to sha256 digest
-   * of the content uploaded.
-   *
    * @var string
    */
   public $fileId;
 
   /**
-   * Optional. The ID of the file. If left empty will default to sha256 digest
-   * of the content uploaded.
-   *
-   * @param string $fileId
+   * @param string
    */
   public function setFileId($fileId)
   {

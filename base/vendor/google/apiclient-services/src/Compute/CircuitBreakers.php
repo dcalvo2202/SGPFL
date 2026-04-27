@@ -20,63 +20,28 @@ namespace Google\Service\Compute;
 class CircuitBreakers extends \Google\Model
 {
   /**
-   * The maximum number of connections to the backend service. If not specified,
-   * there is no limit.
-   *
-   * Not supported when the backend service is referenced by a URL map that is
-   * bound to target gRPC proxy that has validateForProxyless field set to true.
-   *
    * @var int
    */
   public $maxConnections;
   /**
-   * The maximum number of pending requests allowed to the backend service. If
-   * not specified, there is no limit.
-   *
-   * Not supported when the backend service is referenced by a URL map that is
-   * bound to target gRPC proxy that has validateForProxyless field set to true.
-   *
    * @var int
    */
   public $maxPendingRequests;
   /**
-   * The maximum number of parallel requests that allowed to the backend
-   * service. If not specified, there is no limit.
-   *
    * @var int
    */
   public $maxRequests;
   /**
-   * Maximum requests for a single connection to the backend service. This
-   * parameter is respected by both the HTTP/1.1 and HTTP/2 implementations. If
-   * not specified, there is no limit. Setting this parameter to 1 will
-   * effectively disable keep alive.
-   *
-   * Not supported when the backend service is referenced by a URL map that is
-   * bound to target gRPC proxy that has validateForProxyless field set to true.
-   *
    * @var int
    */
   public $maxRequestsPerConnection;
   /**
-   * The maximum number of parallel retries allowed to the backend cluster. If
-   * not specified, the default is 1.
-   *
-   * Not supported when the backend service is referenced by a URL map that is
-   * bound to target gRPC proxy that has validateForProxyless field set to true.
-   *
    * @var int
    */
   public $maxRetries;
 
   /**
-   * The maximum number of connections to the backend service. If not specified,
-   * there is no limit.
-   *
-   * Not supported when the backend service is referenced by a URL map that is
-   * bound to target gRPC proxy that has validateForProxyless field set to true.
-   *
-   * @param int $maxConnections
+   * @param int
    */
   public function setMaxConnections($maxConnections)
   {
@@ -90,13 +55,7 @@ class CircuitBreakers extends \Google\Model
     return $this->maxConnections;
   }
   /**
-   * The maximum number of pending requests allowed to the backend service. If
-   * not specified, there is no limit.
-   *
-   * Not supported when the backend service is referenced by a URL map that is
-   * bound to target gRPC proxy that has validateForProxyless field set to true.
-   *
-   * @param int $maxPendingRequests
+   * @param int
    */
   public function setMaxPendingRequests($maxPendingRequests)
   {
@@ -110,10 +69,7 @@ class CircuitBreakers extends \Google\Model
     return $this->maxPendingRequests;
   }
   /**
-   * The maximum number of parallel requests that allowed to the backend
-   * service. If not specified, there is no limit.
-   *
-   * @param int $maxRequests
+   * @param int
    */
   public function setMaxRequests($maxRequests)
   {
@@ -127,15 +83,7 @@ class CircuitBreakers extends \Google\Model
     return $this->maxRequests;
   }
   /**
-   * Maximum requests for a single connection to the backend service. This
-   * parameter is respected by both the HTTP/1.1 and HTTP/2 implementations. If
-   * not specified, there is no limit. Setting this parameter to 1 will
-   * effectively disable keep alive.
-   *
-   * Not supported when the backend service is referenced by a URL map that is
-   * bound to target gRPC proxy that has validateForProxyless field set to true.
-   *
-   * @param int $maxRequestsPerConnection
+   * @param int
    */
   public function setMaxRequestsPerConnection($maxRequestsPerConnection)
   {
@@ -149,13 +97,7 @@ class CircuitBreakers extends \Google\Model
     return $this->maxRequestsPerConnection;
   }
   /**
-   * The maximum number of parallel retries allowed to the backend cluster. If
-   * not specified, the default is 1.
-   *
-   * Not supported when the backend service is referenced by a URL map that is
-   * bound to target gRPC proxy that has validateForProxyless field set to true.
-   *
-   * @param int $maxRetries
+   * @param int
    */
   public function setMaxRetries($maxRetries)
   {

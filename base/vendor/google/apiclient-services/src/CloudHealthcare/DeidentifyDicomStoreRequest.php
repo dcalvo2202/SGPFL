@@ -22,36 +22,18 @@ class DeidentifyDicomStoreRequest extends \Google\Model
   protected $configType = DeidentifyConfig::class;
   protected $configDataType = '';
   /**
-   * Required. The name of the DICOM store to write the redacted data to. For
-   * example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_i
-   * d}/dicomStores/{dicom_store_id}`. * The destination dataset and DICOM store
-   * must exist. * The source dataset and destination dataset must both reside
-   * in the same location. De-identifying data across multiple locations is not
-   * supported. * The caller must have the healthcare.dicomStores.dicomWebWrite
-   * permission to write to the destination DICOM store.
-   *
    * @var string
    */
   public $destinationStore;
   protected $filterConfigType = DicomFilterConfig::class;
   protected $filterConfigDataType = '';
   /**
-   * Cloud Storage location to read the JSON
-   * cloud.healthcare.deidentify.DeidentifyConfig from, overriding the default
-   * config. Must be of the form `gs://{bucket_id}/path/to/object`. The Cloud
-   * Storage location must grant the Cloud IAM role `roles/storage.objectViewer`
-   * to the project's Cloud Healthcare Service Agent service account. Only one
-   * of `config` and `gcs_config_uri` can be specified.
-   *
    * @var string
    */
   public $gcsConfigUri;
 
   /**
-   * Deidentify configuration. Only one of `config` and `gcs_config_uri` can be
-   * specified.
-   *
-   * @param DeidentifyConfig $config
+   * @param DeidentifyConfig
    */
   public function setConfig(DeidentifyConfig $config)
   {
@@ -65,15 +47,7 @@ class DeidentifyDicomStoreRequest extends \Google\Model
     return $this->config;
   }
   /**
-   * Required. The name of the DICOM store to write the redacted data to. For
-   * example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_i
-   * d}/dicomStores/{dicom_store_id}`. * The destination dataset and DICOM store
-   * must exist. * The source dataset and destination dataset must both reside
-   * in the same location. De-identifying data across multiple locations is not
-   * supported. * The caller must have the healthcare.dicomStores.dicomWebWrite
-   * permission to write to the destination DICOM store.
-   *
-   * @param string $destinationStore
+   * @param string
    */
   public function setDestinationStore($destinationStore)
   {
@@ -87,9 +61,7 @@ class DeidentifyDicomStoreRequest extends \Google\Model
     return $this->destinationStore;
   }
   /**
-   * Filter configuration.
-   *
-   * @param DicomFilterConfig $filterConfig
+   * @param DicomFilterConfig
    */
   public function setFilterConfig(DicomFilterConfig $filterConfig)
   {
@@ -103,14 +75,7 @@ class DeidentifyDicomStoreRequest extends \Google\Model
     return $this->filterConfig;
   }
   /**
-   * Cloud Storage location to read the JSON
-   * cloud.healthcare.deidentify.DeidentifyConfig from, overriding the default
-   * config. Must be of the form `gs://{bucket_id}/path/to/object`. The Cloud
-   * Storage location must grant the Cloud IAM role `roles/storage.objectViewer`
-   * to the project's Cloud Healthcare Service Agent service account. Only one
-   * of `config` and `gcs_config_uri` can be specified.
-   *
-   * @param string $gcsConfigUri
+   * @param string
    */
   public function setGcsConfigUri($gcsConfigUri)
   {

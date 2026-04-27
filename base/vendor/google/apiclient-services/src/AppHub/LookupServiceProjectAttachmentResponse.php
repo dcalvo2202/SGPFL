@@ -23,9 +23,7 @@ class LookupServiceProjectAttachmentResponse extends \Google\Model
   protected $serviceProjectAttachmentDataType = '';
 
   /**
-   * Service project attachment for a project if exists, empty otherwise.
-   *
-   * @param ServiceProjectAttachment $serviceProjectAttachment
+   * @param ServiceProjectAttachment
    */
   public function setServiceProjectAttachment(ServiceProjectAttachment $serviceProjectAttachment)
   {

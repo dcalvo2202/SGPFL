@@ -20,23 +20,16 @@ namespace Google\Service\SQLAdmin;
 class FailoverContext extends \Google\Model
 {
   /**
-   * This is always `sql#failoverContext`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The current settings version of this instance. Request will be rejected if
-   * this version doesn't match the current settings version.
-   *
    * @var string
    */
   public $settingsVersion;
 
   /**
-   * This is always `sql#failoverContext`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -50,10 +43,7 @@ class FailoverContext extends \Google\Model
     return $this->kind;
   }
   /**
-   * The current settings version of this instance. Request will be rejected if
-   * this version doesn't match the current settings version.
-   *
-   * @param string $settingsVersion
+   * @param string
    */
   public function setSettingsVersion($settingsVersion)
   {

@@ -23,9 +23,7 @@ class ReadPoolInstancesUpgradeStageStatus extends \Google\Model
   protected $upgradeStatsDataType = '';
 
   /**
-   * Read pool instances upgrade statistics.
-   *
-   * @param Stats $upgradeStats
+   * @param Stats
    */
   public function setUpgradeStats(Stats $upgradeStats)
   {

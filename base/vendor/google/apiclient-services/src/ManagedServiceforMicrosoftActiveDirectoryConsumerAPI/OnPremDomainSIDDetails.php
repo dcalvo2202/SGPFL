@@ -20,34 +20,16 @@ namespace Google\Service\ManagedServiceforMicrosoftActiveDirectoryConsumerAPI;
 class OnPremDomainSIDDetails extends \Google\Model
 {
   /**
-   * SID Filtering is in unspecified state.
-   */
-  public const SID_FILTERING_STATE_SID_FILTERING_STATE_UNSPECIFIED = 'SID_FILTERING_STATE_UNSPECIFIED';
-  /**
-   * SID Filtering is Enabled.
-   */
-  public const SID_FILTERING_STATE_ENABLED = 'ENABLED';
-  /**
-   * SID Filtering is Disabled.
-   */
-  public const SID_FILTERING_STATE_DISABLED = 'DISABLED';
-  /**
-   * FQDN of the on-prem domain being migrated.
-   *
    * @var string
    */
   public $name;
   /**
-   * Current SID filtering state.
-   *
    * @var string
    */
   public $sidFilteringState;
 
   /**
-   * FQDN of the on-prem domain being migrated.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -61,18 +43,14 @@ class OnPremDomainSIDDetails extends \Google\Model
     return $this->name;
   }
   /**
-   * Current SID filtering state.
-   *
-   * Accepted values: SID_FILTERING_STATE_UNSPECIFIED, ENABLED, DISABLED
-   *
-   * @param self::SID_FILTERING_STATE_* $sidFilteringState
+   * @param string
    */
   public function setSidFilteringState($sidFilteringState)
   {
     $this->sidFilteringState = $sidFilteringState;
   }
   /**
-   * @return self::SID_FILTERING_STATE_*
+   * @return string
    */
   public function getSidFilteringState()
   {

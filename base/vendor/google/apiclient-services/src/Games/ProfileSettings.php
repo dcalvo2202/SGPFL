@@ -20,59 +20,34 @@ namespace Google\Service\Games;
 class ProfileSettings extends \Google\Model
 {
   /**
-   * The friends list is currently visible to the game.
-   */
-  public const FRIENDS_LIST_VISIBILITY_VISIBLE = 'VISIBLE';
-  /**
-   * The developer does not have access to the friends list, but can call the
-   * Android API to show a consent dialog.
-   */
-  public const FRIENDS_LIST_VISIBILITY_REQUEST_REQUIRED = 'REQUEST_REQUIRED';
-  /**
-   * The friends list is currently unavailable for this user, and it is not
-   * possible to request access at this time, either because the user has
-   * permanently declined or the friends feature is not available to them. In
-   * this state, any attempts to request access to the friends list will be
-   * unsuccessful.
-   */
-  public const FRIENDS_LIST_VISIBILITY_UNAVAILABLE = 'UNAVAILABLE';
-  /**
    * @var string
    */
   public $friendsListVisibility;
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#profileSettings`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Whether the player's profile is visible to the currently signed in player.
-   *
    * @var bool
    */
   public $profileVisible;
 
   /**
-   * @param self::FRIENDS_LIST_VISIBILITY_* $friendsListVisibility
+   * @param string
    */
   public function setFriendsListVisibility($friendsListVisibility)
   {
     $this->friendsListVisibility = $friendsListVisibility;
   }
   /**
-   * @return self::FRIENDS_LIST_VISIBILITY_*
+   * @return string
    */
   public function getFriendsListVisibility()
   {
     return $this->friendsListVisibility;
   }
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#profileSettings`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -86,9 +61,7 @@ class ProfileSettings extends \Google\Model
     return $this->kind;
   }
   /**
-   * Whether the player's profile is visible to the currently signed in player.
-   *
-   * @param bool $profileVisible
+   * @param bool
    */
   public function setProfileVisible($profileVisible)
   {

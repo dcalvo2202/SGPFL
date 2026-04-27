@@ -23,9 +23,7 @@ class AddTableResponse extends \Google\Model
   protected $tableDataType = '';
 
   /**
-   * Output only. The table that was added.
-   *
-   * @param Table $table
+   * @param Table
    */
   public function setTable(Table $table)
   {

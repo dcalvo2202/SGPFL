@@ -20,22 +20,16 @@ namespace Google\Service\ContainerAnalysis;
 class Identity extends \Google\Model
 {
   /**
-   * The revision number of the update.
-   *
    * @var int
    */
   public $revision;
   /**
-   * The revision independent identifier of the update.
-   *
    * @var string
    */
   public $updateId;
 
   /**
-   * The revision number of the update.
-   *
-   * @param int $revision
+   * @param int
    */
   public function setRevision($revision)
   {
@@ -49,9 +43,7 @@ class Identity extends \Google\Model
     return $this->revision;
   }
   /**
-   * The revision independent identifier of the update.
-   *
-   * @param string $updateId
+   * @param string
    */
   public function setUpdateId($updateId)
   {

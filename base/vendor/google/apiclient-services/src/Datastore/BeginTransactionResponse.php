@@ -20,16 +20,12 @@ namespace Google\Service\Datastore;
 class BeginTransactionResponse extends \Google\Model
 {
   /**
-   * The transaction identifier (always present).
-   *
    * @var string
    */
   public $transaction;
 
   /**
-   * The transaction identifier (always present).
-   *
-   * @param string $transaction
+   * @param string
    */
   public function setTransaction($transaction)
   {

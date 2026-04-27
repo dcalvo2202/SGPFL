@@ -19,48 +19,20 @@ namespace Google\Service\CloudDomains;
 
 class GoogleDomainsDns extends \Google\Collection
 {
-  /**
-   * DS state is unspecified.
-   */
-  public const DS_STATE_DS_STATE_UNSPECIFIED = 'DS_STATE_UNSPECIFIED';
-  /**
-   * DNSSEC is disabled for this domain. No DS records for this domain are
-   * published in the parent DNS zone.
-   */
-  public const DS_STATE_DS_RECORDS_UNPUBLISHED = 'DS_RECORDS_UNPUBLISHED';
-  /**
-   * DNSSEC is enabled for this domain. Appropriate DS records for this domain
-   * are published in the parent DNS zone. This option is valid only if the DNS
-   * zone referenced in the `Registration`'s `dns_provider` field is already
-   * DNSSEC-signed.
-   */
-  public const DS_STATE_DS_RECORDS_PUBLISHED = 'DS_RECORDS_PUBLISHED';
   protected $collection_key = 'nameServers';
   protected $dsRecordsType = DsRecord::class;
   protected $dsRecordsDataType = 'array';
   /**
-   * Required. The state of DS records for this domain. Used to enable or
-   * disable automatic DNSSEC.
-   *
    * @var string
    */
   public $dsState;
   /**
-   * Output only. A list of name servers that store the DNS zone for this
-   * domain. Each name server is a domain name, with Unicode domain names
-   * expressed in Punycode format. This field is automatically populated with
-   * the name servers assigned to the Google Domains DNS zone.
-   *
    * @var string[]
    */
   public $nameServers;
 
   /**
-   * Output only. The list of DS records published for this domain. The list is
-   * automatically populated when `ds_state` is `DS_RECORDS_PUBLISHED`,
-   * otherwise it remains empty.
-   *
-   * @param DsRecord[] $dsRecords
+   * @param DsRecord[]
    */
   public function setDsRecords($dsRecords)
   {
@@ -74,32 +46,21 @@ class GoogleDomainsDns extends \Google\Collection
     return $this->dsRecords;
   }
   /**
-   * Required. The state of DS records for this domain. Used to enable or
-   * disable automatic DNSSEC.
-   *
-   * Accepted values: DS_STATE_UNSPECIFIED, DS_RECORDS_UNPUBLISHED,
-   * DS_RECORDS_PUBLISHED
-   *
-   * @param self::DS_STATE_* $dsState
+   * @param string
    */
   public function setDsState($dsState)
   {
     $this->dsState = $dsState;
   }
   /**
-   * @return self::DS_STATE_*
+   * @return string
    */
   public function getDsState()
   {
     return $this->dsState;
   }
   /**
-   * Output only. A list of name servers that store the DNS zone for this
-   * domain. Each name server is a domain name, with Unicode domain names
-   * expressed in Punycode format. This field is automatically populated with
-   * the name servers assigned to the Google Domains DNS zone.
-   *
-   * @param string[] $nameServers
+   * @param string[]
    */
   public function setNameServers($nameServers)
   {

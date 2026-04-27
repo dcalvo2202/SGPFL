@@ -21,22 +21,16 @@ class NfsExport extends \Google\Collection
 {
   protected $collection_key = 'hosts';
   /**
-   * The directory being exported.
-   *
    * @var string
    */
   public $exportDirectory;
   /**
-   * The hosts or networks to which the export is being shared.
-   *
    * @var string[]
    */
   public $hosts;
 
   /**
-   * The directory being exported.
-   *
-   * @param string $exportDirectory
+   * @param string
    */
   public function setExportDirectory($exportDirectory)
   {
@@ -50,9 +44,7 @@ class NfsExport extends \Google\Collection
     return $this->exportDirectory;
   }
   /**
-   * The hosts or networks to which the export is being shared.
-   *
-   * @param string[] $hosts
+   * @param string[]
    */
   public function setHosts($hosts)
   {

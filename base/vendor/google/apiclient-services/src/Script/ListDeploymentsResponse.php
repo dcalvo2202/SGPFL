@@ -23,17 +23,12 @@ class ListDeploymentsResponse extends \Google\Collection
   protected $deploymentsType = Deployment::class;
   protected $deploymentsDataType = 'array';
   /**
-   * The token that can be used in the next call to get the next page of
-   * results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of deployments.
-   *
-   * @param Deployment[] $deployments
+   * @param Deployment[]
    */
   public function setDeployments($deployments)
   {
@@ -47,10 +42,7 @@ class ListDeploymentsResponse extends \Google\Collection
     return $this->deployments;
   }
   /**
-   * The token that can be used in the next call to get the next page of
-   * results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

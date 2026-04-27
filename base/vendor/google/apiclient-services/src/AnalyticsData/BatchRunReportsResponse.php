@@ -21,10 +21,6 @@ class BatchRunReportsResponse extends \Google\Collection
 {
   protected $collection_key = 'reports';
   /**
-   * Identifies what kind of resource this message is. This `kind` is always the
-   * fixed string "analyticsData#batchRunReports". Useful to distinguish between
-   * response types in JSON.
-   *
    * @var string
    */
   public $kind;
@@ -32,11 +28,7 @@ class BatchRunReportsResponse extends \Google\Collection
   protected $reportsDataType = 'array';
 
   /**
-   * Identifies what kind of resource this message is. This `kind` is always the
-   * fixed string "analyticsData#batchRunReports". Useful to distinguish between
-   * response types in JSON.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -50,9 +42,7 @@ class BatchRunReportsResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Individual responses. Each response has a separate report request.
-   *
-   * @param RunReportResponse[] $reports
+   * @param RunReportResponse[]
    */
   public function setReports($reports)
   {

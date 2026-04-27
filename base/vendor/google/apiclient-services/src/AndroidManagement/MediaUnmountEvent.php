@@ -20,23 +20,16 @@ namespace Google\Service\AndroidManagement;
 class MediaUnmountEvent extends \Google\Model
 {
   /**
-   * Mount point.
-   *
    * @var string
    */
   public $mountPoint;
   /**
-   * Volume label. Redacted to empty string on organization-owned managed
-   * profile devices.
-   *
    * @var string
    */
   public $volumeLabel;
 
   /**
-   * Mount point.
-   *
-   * @param string $mountPoint
+   * @param string
    */
   public function setMountPoint($mountPoint)
   {
@@ -50,10 +43,7 @@ class MediaUnmountEvent extends \Google\Model
     return $this->mountPoint;
   }
   /**
-   * Volume label. Redacted to empty string on organization-owned managed
-   * profile devices.
-   *
-   * @param string $volumeLabel
+   * @param string
    */
   public function setVolumeLabel($volumeLabel)
   {

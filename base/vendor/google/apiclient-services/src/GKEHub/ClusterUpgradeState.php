@@ -26,11 +26,7 @@ class ClusterUpgradeState extends \Google\Collection
   protected $upgradesDataType = 'array';
 
   /**
-   * Whether this membership is ignored by the feature. For example, manually
-   * upgraded clusters can be ignored if they are newer than the default
-   * versions of its release channel.
-   *
-   * @param ClusterUpgradeIgnoredMembership $ignored
+   * @param ClusterUpgradeIgnoredMembership
    */
   public function setIgnored(ClusterUpgradeIgnoredMembership $ignored)
   {
@@ -44,9 +40,7 @@ class ClusterUpgradeState extends \Google\Collection
     return $this->ignored;
   }
   /**
-   * Actual upgrade state against desired.
-   *
-   * @param ClusterUpgradeMembershipGKEUpgradeState[] $upgrades
+   * @param ClusterUpgradeMembershipGKEUpgradeState[]
    */
   public function setUpgrades($upgrades)
   {

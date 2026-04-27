@@ -29,9 +29,7 @@ class CourseMaterial extends \Google\Model
   protected $youTubeVideoDataType = '';
 
   /**
-   * Google Drive file attachment.
-   *
-   * @param DriveFile $driveFile
+   * @param DriveFile
    */
   public function setDriveFile(DriveFile $driveFile)
   {
@@ -45,9 +43,7 @@ class CourseMaterial extends \Google\Model
     return $this->driveFile;
   }
   /**
-   * Google Forms attachment.
-   *
-   * @param Form $form
+   * @param Form
    */
   public function setForm(Form $form)
   {
@@ -61,9 +57,7 @@ class CourseMaterial extends \Google\Model
     return $this->form;
   }
   /**
-   * Link atatchment.
-   *
-   * @param Link $link
+   * @param Link
    */
   public function setLink(Link $link)
   {
@@ -77,9 +71,7 @@ class CourseMaterial extends \Google\Model
     return $this->link;
   }
   /**
-   * Youtube video attachment.
-   *
-   * @param YouTubeVideo $youTubeVideo
+   * @param YouTubeVideo
    */
   public function setYouTubeVideo(YouTubeVideo $youTubeVideo)
   {

@@ -21,9 +21,6 @@ class ListSecurityHealthAnalyticsCustomModulesResponse extends \Google\Collectio
 {
   protected $collection_key = 'securityHealthAnalyticsCustomModules';
   /**
-   * If not empty, indicates that there may be more custom modules to be
-   * returned.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListSecurityHealthAnalyticsCustomModulesResponse extends \Google\Collectio
   protected $securityHealthAnalyticsCustomModulesDataType = 'array';
 
   /**
-   * If not empty, indicates that there may be more custom modules to be
-   * returned.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class ListSecurityHealthAnalyticsCustomModulesResponse extends \Google\Collectio
     return $this->nextPageToken;
   }
   /**
-   * Custom modules belonging to the requested parent.
-   *
-   * @param GoogleCloudSecuritycenterV1SecurityHealthAnalyticsCustomModule[] $securityHealthAnalyticsCustomModules
+   * @param GoogleCloudSecuritycenterV1SecurityHealthAnalyticsCustomModule[]
    */
   public function setSecurityHealthAnalyticsCustomModules($securityHealthAnalyticsCustomModules)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\Sheets;
 class DeleteTableRequest extends \Google\Model
 {
   /**
-   * The ID of the table to delete.
-   *
    * @var string
    */
   public $tableId;
 
   /**
-   * The ID of the table to delete.
-   *
-   * @param string $tableId
+   * @param string
    */
   public function setTableId($tableId)
   {

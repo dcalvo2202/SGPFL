@@ -20,28 +20,20 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1SummarizationHelpfulnessResult extends \Google\Model
 {
   /**
-   * Output only. Confidence for summarization helpfulness score.
-   *
    * @var float
    */
   public $confidence;
   /**
-   * Output only. Explanation for summarization helpfulness score.
-   *
    * @var string
    */
   public $explanation;
   /**
-   * Output only. Summarization Helpfulness score.
-   *
    * @var float
    */
   public $score;
 
   /**
-   * Output only. Confidence for summarization helpfulness score.
-   *
-   * @param float $confidence
+   * @param float
    */
   public function setConfidence($confidence)
   {
@@ -55,9 +47,7 @@ class GoogleCloudAiplatformV1SummarizationHelpfulnessResult extends \Google\Mode
     return $this->confidence;
   }
   /**
-   * Output only. Explanation for summarization helpfulness score.
-   *
-   * @param string $explanation
+   * @param string
    */
   public function setExplanation($explanation)
   {
@@ -71,9 +61,7 @@ class GoogleCloudAiplatformV1SummarizationHelpfulnessResult extends \Google\Mode
     return $this->explanation;
   }
   /**
-   * Output only. Summarization Helpfulness score.
-   *
-   * @param float $score
+   * @param float
    */
   public function setScore($score)
   {

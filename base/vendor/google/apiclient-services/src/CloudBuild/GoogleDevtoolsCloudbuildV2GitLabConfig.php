@@ -22,41 +22,28 @@ class GoogleDevtoolsCloudbuildV2GitLabConfig extends \Google\Model
   protected $authorizerCredentialType = UserCredential::class;
   protected $authorizerCredentialDataType = '';
   /**
-   * Optional. The URI of the GitLab Enterprise host this connection is for. If
-   * not specified, the default value is https://gitlab.com.
-   *
    * @var string
    */
   public $hostUri;
   protected $readAuthorizerCredentialType = UserCredential::class;
   protected $readAuthorizerCredentialDataType = '';
   /**
-   * Output only. Version of the GitLab Enterprise server running on the
-   * `host_uri`.
-   *
    * @var string
    */
   public $serverVersion;
   protected $serviceDirectoryConfigType = GoogleDevtoolsCloudbuildV2ServiceDirectoryConfig::class;
   protected $serviceDirectoryConfigDataType = '';
   /**
-   * Optional. SSL certificate to use for requests to GitLab Enterprise.
-   *
    * @var string
    */
   public $sslCa;
   /**
-   * Required. Immutable. SecretManager resource containing the webhook secret
-   * of a GitLab Enterprise project, formatted as `projects/secrets/versions`.
-   *
    * @var string
    */
   public $webhookSecretSecretVersion;
 
   /**
-   * Required. A GitLab personal access token with the `api` scope access.
-   *
-   * @param UserCredential $authorizerCredential
+   * @param UserCredential
    */
   public function setAuthorizerCredential(UserCredential $authorizerCredential)
   {
@@ -70,10 +57,7 @@ class GoogleDevtoolsCloudbuildV2GitLabConfig extends \Google\Model
     return $this->authorizerCredential;
   }
   /**
-   * Optional. The URI of the GitLab Enterprise host this connection is for. If
-   * not specified, the default value is https://gitlab.com.
-   *
-   * @param string $hostUri
+   * @param string
    */
   public function setHostUri($hostUri)
   {
@@ -87,10 +71,7 @@ class GoogleDevtoolsCloudbuildV2GitLabConfig extends \Google\Model
     return $this->hostUri;
   }
   /**
-   * Required. A GitLab personal access token with the minimum `read_api` scope
-   * access.
-   *
-   * @param UserCredential $readAuthorizerCredential
+   * @param UserCredential
    */
   public function setReadAuthorizerCredential(UserCredential $readAuthorizerCredential)
   {
@@ -104,10 +85,7 @@ class GoogleDevtoolsCloudbuildV2GitLabConfig extends \Google\Model
     return $this->readAuthorizerCredential;
   }
   /**
-   * Output only. Version of the GitLab Enterprise server running on the
-   * `host_uri`.
-   *
-   * @param string $serverVersion
+   * @param string
    */
   public function setServerVersion($serverVersion)
   {
@@ -121,13 +99,7 @@ class GoogleDevtoolsCloudbuildV2GitLabConfig extends \Google\Model
     return $this->serverVersion;
   }
   /**
-   * Optional. Configuration for using Service Directory to privately connect to
-   * a GitLab Enterprise server. This should only be set if the GitLab
-   * Enterprise server is hosted on-premises and not reachable by public
-   * internet. If this field is left empty, calls to the GitLab Enterprise
-   * server will be made over the public internet.
-   *
-   * @param GoogleDevtoolsCloudbuildV2ServiceDirectoryConfig $serviceDirectoryConfig
+   * @param GoogleDevtoolsCloudbuildV2ServiceDirectoryConfig
    */
   public function setServiceDirectoryConfig(GoogleDevtoolsCloudbuildV2ServiceDirectoryConfig $serviceDirectoryConfig)
   {
@@ -141,9 +113,7 @@ class GoogleDevtoolsCloudbuildV2GitLabConfig extends \Google\Model
     return $this->serviceDirectoryConfig;
   }
   /**
-   * Optional. SSL certificate to use for requests to GitLab Enterprise.
-   *
-   * @param string $sslCa
+   * @param string
    */
   public function setSslCa($sslCa)
   {
@@ -157,10 +127,7 @@ class GoogleDevtoolsCloudbuildV2GitLabConfig extends \Google\Model
     return $this->sslCa;
   }
   /**
-   * Required. Immutable. SecretManager resource containing the webhook secret
-   * of a GitLab Enterprise project, formatted as `projects/secrets/versions`.
-   *
-   * @param string $webhookSecretSecretVersion
+   * @param string
    */
   public function setWebhookSecretSecretVersion($webhookSecretSecretVersion)
   {

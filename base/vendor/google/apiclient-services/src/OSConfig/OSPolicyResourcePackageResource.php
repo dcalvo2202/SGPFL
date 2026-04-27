@@ -19,26 +19,11 @@ namespace Google\Service\OSConfig;
 
 class OSPolicyResourcePackageResource extends \Google\Model
 {
-  /**
-   * Unspecified is invalid.
-   */
-  public const DESIRED_STATE_DESIRED_STATE_UNSPECIFIED = 'DESIRED_STATE_UNSPECIFIED';
-  /**
-   * Ensure that the package is installed.
-   */
-  public const DESIRED_STATE_INSTALLED = 'INSTALLED';
-  /**
-   * The agent ensures that the package is not installed and uninstalls it if
-   * detected.
-   */
-  public const DESIRED_STATE_REMOVED = 'REMOVED';
   protected $aptType = OSPolicyResourcePackageResourceAPT::class;
   protected $aptDataType = '';
   protected $debType = OSPolicyResourcePackageResourceDeb::class;
   protected $debDataType = '';
   /**
-   * Required. The desired state the agent should maintain for this package.
-   *
    * @var string
    */
   public $desiredState;
@@ -54,9 +39,7 @@ class OSPolicyResourcePackageResource extends \Google\Model
   protected $zypperDataType = '';
 
   /**
-   * A package managed by Apt.
-   *
-   * @param OSPolicyResourcePackageResourceAPT $apt
+   * @param OSPolicyResourcePackageResourceAPT
    */
   public function setApt(OSPolicyResourcePackageResourceAPT $apt)
   {
@@ -70,9 +53,7 @@ class OSPolicyResourcePackageResource extends \Google\Model
     return $this->apt;
   }
   /**
-   * A deb package file.
-   *
-   * @param OSPolicyResourcePackageResourceDeb $deb
+   * @param OSPolicyResourcePackageResourceDeb
    */
   public function setDeb(OSPolicyResourcePackageResourceDeb $deb)
   {
@@ -86,27 +67,21 @@ class OSPolicyResourcePackageResource extends \Google\Model
     return $this->deb;
   }
   /**
-   * Required. The desired state the agent should maintain for this package.
-   *
-   * Accepted values: DESIRED_STATE_UNSPECIFIED, INSTALLED, REMOVED
-   *
-   * @param self::DESIRED_STATE_* $desiredState
+   * @param string
    */
   public function setDesiredState($desiredState)
   {
     $this->desiredState = $desiredState;
   }
   /**
-   * @return self::DESIRED_STATE_*
+   * @return string
    */
   public function getDesiredState()
   {
     return $this->desiredState;
   }
   /**
-   * A package managed by GooGet.
-   *
-   * @param OSPolicyResourcePackageResourceGooGet $googet
+   * @param OSPolicyResourcePackageResourceGooGet
    */
   public function setGooget(OSPolicyResourcePackageResourceGooGet $googet)
   {
@@ -120,9 +95,7 @@ class OSPolicyResourcePackageResource extends \Google\Model
     return $this->googet;
   }
   /**
-   * An MSI package.
-   *
-   * @param OSPolicyResourcePackageResourceMSI $msi
+   * @param OSPolicyResourcePackageResourceMSI
    */
   public function setMsi(OSPolicyResourcePackageResourceMSI $msi)
   {
@@ -136,9 +109,7 @@ class OSPolicyResourcePackageResource extends \Google\Model
     return $this->msi;
   }
   /**
-   * An rpm package file.
-   *
-   * @param OSPolicyResourcePackageResourceRPM $rpm
+   * @param OSPolicyResourcePackageResourceRPM
    */
   public function setRpm(OSPolicyResourcePackageResourceRPM $rpm)
   {
@@ -152,9 +123,7 @@ class OSPolicyResourcePackageResource extends \Google\Model
     return $this->rpm;
   }
   /**
-   * A package managed by YUM.
-   *
-   * @param OSPolicyResourcePackageResourceYUM $yum
+   * @param OSPolicyResourcePackageResourceYUM
    */
   public function setYum(OSPolicyResourcePackageResourceYUM $yum)
   {
@@ -168,9 +137,7 @@ class OSPolicyResourcePackageResource extends \Google\Model
     return $this->yum;
   }
   /**
-   * A package managed by Zypper.
-   *
-   * @param OSPolicyResourcePackageResourceZypper $zypper
+   * @param OSPolicyResourcePackageResourceZypper
    */
   public function setZypper(OSPolicyResourcePackageResourceZypper $zypper)
   {

@@ -28,7 +28,7 @@ class RunDetails extends \Google\Collection
   protected $metadataDataType = '';
 
   /**
-   * @param ProvenanceBuilder $builder
+   * @param ProvenanceBuilder
    */
   public function setBuilder(ProvenanceBuilder $builder)
   {
@@ -42,7 +42,7 @@ class RunDetails extends \Google\Collection
     return $this->builder;
   }
   /**
-   * @param ResourceDescriptor[] $byproducts
+   * @param ResourceDescriptor[]
    */
   public function setByproducts($byproducts)
   {
@@ -56,7 +56,7 @@ class RunDetails extends \Google\Collection
     return $this->byproducts;
   }
   /**
-   * @param BuildMetadata $metadata
+   * @param BuildMetadata
    */
   public function setMetadata(BuildMetadata $metadata)
   {

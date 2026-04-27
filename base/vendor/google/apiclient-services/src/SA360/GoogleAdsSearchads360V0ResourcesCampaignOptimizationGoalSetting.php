@@ -21,16 +21,12 @@ class GoogleAdsSearchads360V0ResourcesCampaignOptimizationGoalSetting extends \G
 {
   protected $collection_key = 'optimizationGoalTypes';
   /**
-   * The list of optimization goal types.
-   *
    * @var string[]
    */
   public $optimizationGoalTypes;
 
   /**
-   * The list of optimization goal types.
-   *
-   * @param string[] $optimizationGoalTypes
+   * @param string[]
    */
   public function setOptimizationGoalTypes($optimizationGoalTypes)
   {

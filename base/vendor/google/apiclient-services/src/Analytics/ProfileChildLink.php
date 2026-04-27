@@ -20,22 +20,16 @@ namespace Google\Service\Analytics;
 class ProfileChildLink extends \Google\Model
 {
   /**
-   * Link to the list of goals for this view (profile).
-   *
    * @var string
    */
   public $href;
   /**
-   * Value is "analytics#goals".
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Link to the list of goals for this view (profile).
-   *
-   * @param string $href
+   * @param string
    */
   public function setHref($href)
   {
@@ -49,9 +43,7 @@ class ProfileChildLink extends \Google\Model
     return $this->href;
   }
   /**
-   * Value is "analytics#goals".
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

@@ -22,22 +22,14 @@ class Participant extends \Google\Model
   protected $anonymousUserType = AnonymousUser::class;
   protected $anonymousUserDataType = '';
   /**
-   * Output only. Time when the participant first joined the meeting.
-   *
    * @var string
    */
   public $earliestStartTime;
   /**
-   * Output only. Time when the participant left the meeting for the last time.
-   * This can be null if it's an active meeting.
-   *
    * @var string
    */
   public $latestEndTime;
   /**
-   * Output only. Resource name of the participant. Format:
-   * `conferenceRecords/{conference_record}/participants/{participant}`
-   *
    * @var string
    */
   public $name;
@@ -47,9 +39,7 @@ class Participant extends \Google\Model
   protected $signedinUserDataType = '';
 
   /**
-   * Anonymous user.
-   *
-   * @param AnonymousUser $anonymousUser
+   * @param AnonymousUser
    */
   public function setAnonymousUser(AnonymousUser $anonymousUser)
   {
@@ -63,9 +53,7 @@ class Participant extends \Google\Model
     return $this->anonymousUser;
   }
   /**
-   * Output only. Time when the participant first joined the meeting.
-   *
-   * @param string $earliestStartTime
+   * @param string
    */
   public function setEarliestStartTime($earliestStartTime)
   {
@@ -79,10 +67,7 @@ class Participant extends \Google\Model
     return $this->earliestStartTime;
   }
   /**
-   * Output only. Time when the participant left the meeting for the last time.
-   * This can be null if it's an active meeting.
-   *
-   * @param string $latestEndTime
+   * @param string
    */
   public function setLatestEndTime($latestEndTime)
   {
@@ -96,10 +81,7 @@ class Participant extends \Google\Model
     return $this->latestEndTime;
   }
   /**
-   * Output only. Resource name of the participant. Format:
-   * `conferenceRecords/{conference_record}/participants/{participant}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -113,9 +95,7 @@ class Participant extends \Google\Model
     return $this->name;
   }
   /**
-   * User calling from their phone.
-   *
-   * @param PhoneUser $phoneUser
+   * @param PhoneUser
    */
   public function setPhoneUser(PhoneUser $phoneUser)
   {
@@ -129,9 +109,7 @@ class Participant extends \Google\Model
     return $this->phoneUser;
   }
   /**
-   * Signed-in user.
-   *
-   * @param SignedinUser $signedinUser
+   * @param SignedinUser
    */
   public function setSignedinUser(SignedinUser $signedinUser)
   {

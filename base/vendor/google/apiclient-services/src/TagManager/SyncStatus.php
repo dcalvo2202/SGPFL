@@ -20,22 +20,16 @@ namespace Google\Service\TagManager;
 class SyncStatus extends \Google\Model
 {
   /**
-   * Synchornization operation detected a merge conflict.
-   *
    * @var bool
    */
   public $mergeConflict;
   /**
-   * An error occurred during the synchronization operation.
-   *
    * @var bool
    */
   public $syncError;
 
   /**
-   * Synchornization operation detected a merge conflict.
-   *
-   * @param bool $mergeConflict
+   * @param bool
    */
   public function setMergeConflict($mergeConflict)
   {
@@ -49,9 +43,7 @@ class SyncStatus extends \Google\Model
     return $this->mergeConflict;
   }
   /**
-   * An error occurred during the synchronization operation.
-   *
-   * @param bool $syncError
+   * @param bool
    */
   public function setSyncError($syncError)
   {

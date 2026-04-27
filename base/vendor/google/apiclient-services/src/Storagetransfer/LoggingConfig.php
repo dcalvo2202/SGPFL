@@ -21,36 +21,20 @@ class LoggingConfig extends \Google\Collection
 {
   protected $collection_key = 'logActions';
   /**
-   * For PosixFilesystem transfers, enables [file system transfer
-   * logs](https://cloud.google.com/storage-transfer/docs/on-prem-transfer-log-
-   * format) instead of, or in addition to, Cloud Logging. This option ignores
-   * [LoggableAction] and [LoggableActionState]. If these are set, Cloud Logging
-   * will also be enabled for this transfer.
-   *
    * @var bool
    */
   public $enableOnpremGcsTransferLogs;
   /**
-   * States in which `log_actions` are logged. If empty, no logs are generated.
-   *
    * @var string[]
    */
   public $logActionStates;
   /**
-   * Specifies the actions to be logged. If empty, no logs are generated.
-   *
    * @var string[]
    */
   public $logActions;
 
   /**
-   * For PosixFilesystem transfers, enables [file system transfer
-   * logs](https://cloud.google.com/storage-transfer/docs/on-prem-transfer-log-
-   * format) instead of, or in addition to, Cloud Logging. This option ignores
-   * [LoggableAction] and [LoggableActionState]. If these are set, Cloud Logging
-   * will also be enabled for this transfer.
-   *
-   * @param bool $enableOnpremGcsTransferLogs
+   * @param bool
    */
   public function setEnableOnpremGcsTransferLogs($enableOnpremGcsTransferLogs)
   {
@@ -64,9 +48,7 @@ class LoggingConfig extends \Google\Collection
     return $this->enableOnpremGcsTransferLogs;
   }
   /**
-   * States in which `log_actions` are logged. If empty, no logs are generated.
-   *
-   * @param string[] $logActionStates
+   * @param string[]
    */
   public function setLogActionStates($logActionStates)
   {
@@ -80,9 +62,7 @@ class LoggingConfig extends \Google\Collection
     return $this->logActionStates;
   }
   /**
-   * Specifies the actions to be logged. If empty, no logs are generated.
-   *
-   * @param string[] $logActions
+   * @param string[]
    */
   public function setLogActions($logActions)
   {

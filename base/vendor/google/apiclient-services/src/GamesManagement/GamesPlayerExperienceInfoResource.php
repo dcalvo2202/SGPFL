@@ -20,17 +20,12 @@ namespace Google\Service\GamesManagement;
 class GamesPlayerExperienceInfoResource extends \Google\Model
 {
   /**
-   * The current number of experience points for the player.
-   *
    * @var string
    */
   public $currentExperiencePoints;
   protected $currentLevelType = GamesPlayerLevelResource::class;
   protected $currentLevelDataType = '';
   /**
-   * The timestamp when the player was leveled up, in millis since Unix epoch
-   * UTC.
-   *
    * @var string
    */
   public $lastLevelUpTimestampMillis;
@@ -38,9 +33,7 @@ class GamesPlayerExperienceInfoResource extends \Google\Model
   protected $nextLevelDataType = '';
 
   /**
-   * The current number of experience points for the player.
-   *
-   * @param string $currentExperiencePoints
+   * @param string
    */
   public function setCurrentExperiencePoints($currentExperiencePoints)
   {
@@ -54,9 +47,7 @@ class GamesPlayerExperienceInfoResource extends \Google\Model
     return $this->currentExperiencePoints;
   }
   /**
-   * The current level of the player.
-   *
-   * @param GamesPlayerLevelResource $currentLevel
+   * @param GamesPlayerLevelResource
    */
   public function setCurrentLevel(GamesPlayerLevelResource $currentLevel)
   {
@@ -70,10 +61,7 @@ class GamesPlayerExperienceInfoResource extends \Google\Model
     return $this->currentLevel;
   }
   /**
-   * The timestamp when the player was leveled up, in millis since Unix epoch
-   * UTC.
-   *
-   * @param string $lastLevelUpTimestampMillis
+   * @param string
    */
   public function setLastLevelUpTimestampMillis($lastLevelUpTimestampMillis)
   {
@@ -87,10 +75,7 @@ class GamesPlayerExperienceInfoResource extends \Google\Model
     return $this->lastLevelUpTimestampMillis;
   }
   /**
-   * The next level of the player. If the current level is the maximum level,
-   * this should be same as the current level.
-   *
-   * @param GamesPlayerLevelResource $nextLevel
+   * @param GamesPlayerLevelResource
    */
   public function setNextLevel(GamesPlayerLevelResource $nextLevel)
   {

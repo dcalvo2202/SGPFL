@@ -22,42 +22,24 @@ class GooglePrivacyDlpV2DeidentifyContentRequest extends \Google\Model
   protected $deidentifyConfigType = GooglePrivacyDlpV2DeidentifyConfig::class;
   protected $deidentifyConfigDataType = '';
   /**
-   * Template to use. Any configuration directly specified in deidentify_config
-   * will override those set in the template. Singular fields that are set in
-   * this request will replace their corresponding fields in the template.
-   * Repeated fields are appended. Singular sub-messages and groups are
-   * recursively merged.
-   *
    * @var string
    */
   public $deidentifyTemplateName;
   protected $inspectConfigType = GooglePrivacyDlpV2InspectConfig::class;
   protected $inspectConfigDataType = '';
   /**
-   * Template to use. Any configuration directly specified in inspect_config
-   * will override those set in the template. Singular fields that are set in
-   * this request will replace their corresponding fields in the template.
-   * Repeated fields are appended. Singular sub-messages and groups are
-   * recursively merged.
-   *
    * @var string
    */
   public $inspectTemplateName;
   protected $itemType = GooglePrivacyDlpV2ContentItem::class;
   protected $itemDataType = '';
   /**
-   * Deprecated. This field has no effect.
-   *
    * @var string
    */
   public $locationId;
 
   /**
-   * Configuration for the de-identification of the content item. Items
-   * specified here will override the template referenced by the
-   * deidentify_template_name argument.
-   *
-   * @param GooglePrivacyDlpV2DeidentifyConfig $deidentifyConfig
+   * @param GooglePrivacyDlpV2DeidentifyConfig
    */
   public function setDeidentifyConfig(GooglePrivacyDlpV2DeidentifyConfig $deidentifyConfig)
   {
@@ -71,13 +53,7 @@ class GooglePrivacyDlpV2DeidentifyContentRequest extends \Google\Model
     return $this->deidentifyConfig;
   }
   /**
-   * Template to use. Any configuration directly specified in deidentify_config
-   * will override those set in the template. Singular fields that are set in
-   * this request will replace their corresponding fields in the template.
-   * Repeated fields are appended. Singular sub-messages and groups are
-   * recursively merged.
-   *
-   * @param string $deidentifyTemplateName
+   * @param string
    */
   public function setDeidentifyTemplateName($deidentifyTemplateName)
   {
@@ -91,10 +67,7 @@ class GooglePrivacyDlpV2DeidentifyContentRequest extends \Google\Model
     return $this->deidentifyTemplateName;
   }
   /**
-   * Configuration for the inspector. Items specified here will override the
-   * template referenced by the inspect_template_name argument.
-   *
-   * @param GooglePrivacyDlpV2InspectConfig $inspectConfig
+   * @param GooglePrivacyDlpV2InspectConfig
    */
   public function setInspectConfig(GooglePrivacyDlpV2InspectConfig $inspectConfig)
   {
@@ -108,13 +81,7 @@ class GooglePrivacyDlpV2DeidentifyContentRequest extends \Google\Model
     return $this->inspectConfig;
   }
   /**
-   * Template to use. Any configuration directly specified in inspect_config
-   * will override those set in the template. Singular fields that are set in
-   * this request will replace their corresponding fields in the template.
-   * Repeated fields are appended. Singular sub-messages and groups are
-   * recursively merged.
-   *
-   * @param string $inspectTemplateName
+   * @param string
    */
   public function setInspectTemplateName($inspectTemplateName)
   {
@@ -128,10 +95,7 @@ class GooglePrivacyDlpV2DeidentifyContentRequest extends \Google\Model
     return $this->inspectTemplateName;
   }
   /**
-   * The item to de-identify. Will be treated as text. This value must be of
-   * type Table if your deidentify_config is a RecordTransformations object.
-   *
-   * @param GooglePrivacyDlpV2ContentItem $item
+   * @param GooglePrivacyDlpV2ContentItem
    */
   public function setItem(GooglePrivacyDlpV2ContentItem $item)
   {
@@ -145,9 +109,7 @@ class GooglePrivacyDlpV2DeidentifyContentRequest extends \Google\Model
     return $this->item;
   }
   /**
-   * Deprecated. This field has no effect.
-   *
-   * @param string $locationId
+   * @param string
    */
   public function setLocationId($locationId)
   {

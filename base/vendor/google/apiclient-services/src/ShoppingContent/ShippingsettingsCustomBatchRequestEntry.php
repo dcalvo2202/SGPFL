@@ -20,27 +20,18 @@ namespace Google\Service\ShoppingContent;
 class ShippingsettingsCustomBatchRequestEntry extends \Google\Model
 {
   /**
-   * The ID of the account for which to get/update account shipping settings.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * An entry ID, unique within the batch request.
-   *
    * @var string
    */
   public $batchId;
   /**
-   * The ID of the managing account.
-   *
    * @var string
    */
   public $merchantId;
   /**
-   * The method of the batch entry. Acceptable values are: - "`get`" -
-   * "`update`"
-   *
    * @var string
    */
   public $method;
@@ -48,9 +39,7 @@ class ShippingsettingsCustomBatchRequestEntry extends \Google\Model
   protected $shippingSettingsDataType = '';
 
   /**
-   * The ID of the account for which to get/update account shipping settings.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -64,9 +53,7 @@ class ShippingsettingsCustomBatchRequestEntry extends \Google\Model
     return $this->accountId;
   }
   /**
-   * An entry ID, unique within the batch request.
-   *
-   * @param string $batchId
+   * @param string
    */
   public function setBatchId($batchId)
   {
@@ -80,9 +67,7 @@ class ShippingsettingsCustomBatchRequestEntry extends \Google\Model
     return $this->batchId;
   }
   /**
-   * The ID of the managing account.
-   *
-   * @param string $merchantId
+   * @param string
    */
   public function setMerchantId($merchantId)
   {
@@ -96,10 +81,7 @@ class ShippingsettingsCustomBatchRequestEntry extends \Google\Model
     return $this->merchantId;
   }
   /**
-   * The method of the batch entry. Acceptable values are: - "`get`" -
-   * "`update`"
-   *
-   * @param string $method
+   * @param string
    */
   public function setMethod($method)
   {
@@ -113,10 +95,7 @@ class ShippingsettingsCustomBatchRequestEntry extends \Google\Model
     return $this->method;
   }
   /**
-   * The account shipping settings to update. Only defined if the method is
-   * `update`.
-   *
-   * @param ShippingSettings $shippingSettings
+   * @param ShippingSettings
    */
   public function setShippingSettings(ShippingSettings $shippingSettings)
   {

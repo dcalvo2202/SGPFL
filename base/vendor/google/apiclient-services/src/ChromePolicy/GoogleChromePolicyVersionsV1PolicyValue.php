@@ -20,23 +20,16 @@ namespace Google\Service\ChromePolicy;
 class GoogleChromePolicyVersionsV1PolicyValue extends \Google\Model
 {
   /**
-   * The fully qualified name of the policy schema associated with this policy.
-   *
    * @var string
    */
   public $policySchema;
   /**
-   * The value of the policy that is compatible with the schema that it is
-   * associated with.
-   *
    * @var array[]
    */
   public $value;
 
   /**
-   * The fully qualified name of the policy schema associated with this policy.
-   *
-   * @param string $policySchema
+   * @param string
    */
   public function setPolicySchema($policySchema)
   {
@@ -50,10 +43,7 @@ class GoogleChromePolicyVersionsV1PolicyValue extends \Google\Model
     return $this->policySchema;
   }
   /**
-   * The value of the policy that is compatible with the schema that it is
-   * associated with.
-   *
-   * @param array[] $value
+   * @param array[]
    */
   public function setValue($value)
   {

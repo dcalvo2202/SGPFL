@@ -20,75 +20,37 @@ namespace Google\Service\DisplayVideo;
 class Consent extends \Google\Model
 {
   /**
-   * Type value is not specified or is unknown in this version.
-   */
-  public const AD_PERSONALIZATION_CONSENT_STATUS_UNSPECIFIED = 'CONSENT_STATUS_UNSPECIFIED';
-  /**
-   * Consent is granted.
-   */
-  public const AD_PERSONALIZATION_CONSENT_STATUS_GRANTED = 'CONSENT_STATUS_GRANTED';
-  /**
-   * Consent is denied.
-   */
-  public const AD_PERSONALIZATION_CONSENT_STATUS_DENIED = 'CONSENT_STATUS_DENIED';
-  /**
-   * Type value is not specified or is unknown in this version.
-   */
-  public const AD_USER_DATA_CONSENT_STATUS_UNSPECIFIED = 'CONSENT_STATUS_UNSPECIFIED';
-  /**
-   * Consent is granted.
-   */
-  public const AD_USER_DATA_CONSENT_STATUS_GRANTED = 'CONSENT_STATUS_GRANTED';
-  /**
-   * Consent is denied.
-   */
-  public const AD_USER_DATA_CONSENT_STATUS_DENIED = 'CONSENT_STATUS_DENIED';
-  /**
-   * Represents consent for ad personalization.
-   *
    * @var string
    */
   public $adPersonalization;
   /**
-   * Represents consent for ad user data.
-   *
    * @var string
    */
   public $adUserData;
 
   /**
-   * Represents consent for ad personalization.
-   *
-   * Accepted values: CONSENT_STATUS_UNSPECIFIED, CONSENT_STATUS_GRANTED,
-   * CONSENT_STATUS_DENIED
-   *
-   * @param self::AD_PERSONALIZATION_* $adPersonalization
+   * @param string
    */
   public function setAdPersonalization($adPersonalization)
   {
     $this->adPersonalization = $adPersonalization;
   }
   /**
-   * @return self::AD_PERSONALIZATION_*
+   * @return string
    */
   public function getAdPersonalization()
   {
     return $this->adPersonalization;
   }
   /**
-   * Represents consent for ad user data.
-   *
-   * Accepted values: CONSENT_STATUS_UNSPECIFIED, CONSENT_STATUS_GRANTED,
-   * CONSENT_STATUS_DENIED
-   *
-   * @param self::AD_USER_DATA_* $adUserData
+   * @param string
    */
   public function setAdUserData($adUserData)
   {
     $this->adUserData = $adUserData;
   }
   /**
-   * @return self::AD_USER_DATA_*
+   * @return string
    */
   public function getAdUserData()
   {

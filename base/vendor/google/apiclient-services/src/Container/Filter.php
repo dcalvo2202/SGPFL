@@ -21,16 +21,12 @@ class Filter extends \Google\Collection
 {
   protected $collection_key = 'eventType';
   /**
-   * Event types to allowlist.
-   *
    * @var string[]
    */
   public $eventType;
 
   /**
-   * Event types to allowlist.
-   *
-   * @param string[] $eventType
+   * @param string[]
    */
   public function setEventType($eventType)
   {

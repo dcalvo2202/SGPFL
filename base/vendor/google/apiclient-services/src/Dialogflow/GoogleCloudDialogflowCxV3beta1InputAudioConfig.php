@@ -19,19 +19,6 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowCxV3beta1InputAudioConfig extends \Google\Collection
 {
-  public const AUDIO_ENCODING_AUDIO_ENCODING_UNSPECIFIED = 'AUDIO_ENCODING_UNSPECIFIED';
-  public const AUDIO_ENCODING_AUDIO_ENCODING_LINEAR_16 = 'AUDIO_ENCODING_LINEAR_16';
-  public const AUDIO_ENCODING_AUDIO_ENCODING_FLAC = 'AUDIO_ENCODING_FLAC';
-  public const AUDIO_ENCODING_AUDIO_ENCODING_MULAW = 'AUDIO_ENCODING_MULAW';
-  public const AUDIO_ENCODING_AUDIO_ENCODING_AMR = 'AUDIO_ENCODING_AMR';
-  public const AUDIO_ENCODING_AUDIO_ENCODING_AMR_WB = 'AUDIO_ENCODING_AMR_WB';
-  public const AUDIO_ENCODING_AUDIO_ENCODING_OGG_OPUS = 'AUDIO_ENCODING_OGG_OPUS';
-  public const AUDIO_ENCODING_AUDIO_ENCODING_SPEEX_WITH_HEADER_BYTE = 'AUDIO_ENCODING_SPEEX_WITH_HEADER_BYTE';
-  public const AUDIO_ENCODING_AUDIO_ENCODING_ALAW = 'AUDIO_ENCODING_ALAW';
-  public const MODEL_VARIANT_SPEECH_MODEL_VARIANT_UNSPECIFIED = 'SPEECH_MODEL_VARIANT_UNSPECIFIED';
-  public const MODEL_VARIANT_USE_BEST_AVAILABLE = 'USE_BEST_AVAILABLE';
-  public const MODEL_VARIANT_USE_STANDARD = 'USE_STANDARD';
-  public const MODEL_VARIANT_USE_ENHANCED = 'USE_ENHANCED';
   protected $collection_key = 'phraseHints';
   /**
    * @var string
@@ -69,21 +56,21 @@ class GoogleCloudDialogflowCxV3beta1InputAudioConfig extends \Google\Collection
   public $singleUtterance;
 
   /**
-   * @param self::AUDIO_ENCODING_* $audioEncoding
+   * @param string
    */
   public function setAudioEncoding($audioEncoding)
   {
     $this->audioEncoding = $audioEncoding;
   }
   /**
-   * @return self::AUDIO_ENCODING_*
+   * @return string
    */
   public function getAudioEncoding()
   {
     return $this->audioEncoding;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3beta1BargeInConfig $bargeInConfig
+   * @param GoogleCloudDialogflowCxV3beta1BargeInConfig
    */
   public function setBargeInConfig(GoogleCloudDialogflowCxV3beta1BargeInConfig $bargeInConfig)
   {
@@ -97,7 +84,7 @@ class GoogleCloudDialogflowCxV3beta1InputAudioConfig extends \Google\Collection
     return $this->bargeInConfig;
   }
   /**
-   * @param bool $enableWordInfo
+   * @param bool
    */
   public function setEnableWordInfo($enableWordInfo)
   {
@@ -111,7 +98,7 @@ class GoogleCloudDialogflowCxV3beta1InputAudioConfig extends \Google\Collection
     return $this->enableWordInfo;
   }
   /**
-   * @param string $model
+   * @param string
    */
   public function setModel($model)
   {
@@ -125,21 +112,21 @@ class GoogleCloudDialogflowCxV3beta1InputAudioConfig extends \Google\Collection
     return $this->model;
   }
   /**
-   * @param self::MODEL_VARIANT_* $modelVariant
+   * @param string
    */
   public function setModelVariant($modelVariant)
   {
     $this->modelVariant = $modelVariant;
   }
   /**
-   * @return self::MODEL_VARIANT_*
+   * @return string
    */
   public function getModelVariant()
   {
     return $this->modelVariant;
   }
   /**
-   * @param bool $optOutConformerModelMigration
+   * @param bool
    */
   public function setOptOutConformerModelMigration($optOutConformerModelMigration)
   {
@@ -153,7 +140,7 @@ class GoogleCloudDialogflowCxV3beta1InputAudioConfig extends \Google\Collection
     return $this->optOutConformerModelMigration;
   }
   /**
-   * @param string[] $phraseHints
+   * @param string[]
    */
   public function setPhraseHints($phraseHints)
   {
@@ -167,7 +154,7 @@ class GoogleCloudDialogflowCxV3beta1InputAudioConfig extends \Google\Collection
     return $this->phraseHints;
   }
   /**
-   * @param int $sampleRateHertz
+   * @param int
    */
   public function setSampleRateHertz($sampleRateHertz)
   {
@@ -181,7 +168,7 @@ class GoogleCloudDialogflowCxV3beta1InputAudioConfig extends \Google\Collection
     return $this->sampleRateHertz;
   }
   /**
-   * @param bool $singleUtterance
+   * @param bool
    */
   public function setSingleUtterance($singleUtterance)
   {

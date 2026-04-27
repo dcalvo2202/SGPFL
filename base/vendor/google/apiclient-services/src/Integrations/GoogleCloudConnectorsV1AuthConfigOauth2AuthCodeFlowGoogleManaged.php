@@ -21,29 +21,20 @@ class GoogleCloudConnectorsV1AuthConfigOauth2AuthCodeFlowGoogleManaged extends \
 {
   protected $collection_key = 'scopes';
   /**
-   * Optional. Authorization code to be exchanged for access and refresh tokens.
-   *
    * @var string
    */
   public $authCode;
   /**
-   * Optional. Redirect URI to be provided during the auth code exchange.
-   *
    * @var string
    */
   public $redirectUri;
   /**
-   * Required. Scopes the connection will request when the user performs the
-   * auth code flow.
-   *
    * @var string[]
    */
   public $scopes;
 
   /**
-   * Optional. Authorization code to be exchanged for access and refresh tokens.
-   *
-   * @param string $authCode
+   * @param string
    */
   public function setAuthCode($authCode)
   {
@@ -57,9 +48,7 @@ class GoogleCloudConnectorsV1AuthConfigOauth2AuthCodeFlowGoogleManaged extends \
     return $this->authCode;
   }
   /**
-   * Optional. Redirect URI to be provided during the auth code exchange.
-   *
-   * @param string $redirectUri
+   * @param string
    */
   public function setRedirectUri($redirectUri)
   {
@@ -73,10 +62,7 @@ class GoogleCloudConnectorsV1AuthConfigOauth2AuthCodeFlowGoogleManaged extends \
     return $this->redirectUri;
   }
   /**
-   * Required. Scopes the connection will request when the user performs the
-   * auth code flow.
-   *
-   * @param string[] $scopes
+   * @param string[]
    */
   public function setScopes($scopes)
   {

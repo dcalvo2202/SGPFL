@@ -44,7 +44,6 @@ class DeveloperConnect extends \Google\Service
   public $projects_locations_connections;
   public $projects_locations_connections_gitRepositoryLinks;
   public $projects_locations_insightsConfigs;
-  public $projects_locations_insightsConfigs_deploymentEvents;
   public $projects_locations_operations;
   public $rootUrlTemplate;
 
@@ -164,28 +163,6 @@ class DeveloperConnect extends \Google\Service
                 'validateOnly' => [
                   'location' => 'query',
                   'type' => 'boolean',
-                ],
-              ],
-            ],'fetchUserRepositories' => [
-              'path' => 'v1/{+accountConnector}:fetchUserRepositories',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'accountConnector' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'pageSize' => [
-                  'location' => 'query',
-                  'type' => 'integer',
-                ],
-                'pageToken' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'repository' => [
-                  'location' => 'query',
-                  'type' => 'string',
                 ],
               ],
             ],'get' => [
@@ -312,37 +289,6 @@ class DeveloperConnect extends \Google\Service
                   'required' => true,
                 ],
               ],
-            ],'finishOAuthFlow' => [
-              'path' => 'v1/{+accountConnector}/users:finishOAuthFlow',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'accountConnector' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'googleOauthParams.scopes' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ],
-                'googleOauthParams.ticket' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'googleOauthParams.versionInfo' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'oauthParams.code' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'oauthParams.ticket' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
             ],'list' => [
               'path' => 'v1/{+parent}/users',
               'httpMethod' => 'GET',
@@ -367,16 +313,6 @@ class DeveloperConnect extends \Google\Service
                 'pageToken' => [
                   'location' => 'query',
                   'type' => 'string',
-                ],
-              ],
-            ],'startOAuthFlow' => [
-              'path' => 'v1/{+accountConnector}/users:startOAuthFlow',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'accountConnector' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
                 ],
               ],
             ],
@@ -817,48 +753,6 @@ class DeveloperConnect extends \Google\Service
           ]
         ]
     );
-    $this->projects_locations_insightsConfigs_deploymentEvents = new DeveloperConnect\Resource\ProjectsLocationsInsightsConfigsDeploymentEvents(
-        $this,
-        $this->serviceName,
-        'deploymentEvents',
-        [
-          'methods' => [
-            'get' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'list' => [
-              'path' => 'v1/{+parent}/deploymentEvents',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'parent' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'filter' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'pageSize' => [
-                  'location' => 'query',
-                  'type' => 'integer',
-                ],
-                'pageToken' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],
-          ]
-        ]
-    );
     $this->projects_locations_operations = new DeveloperConnect\Resource\ProjectsLocationsOperations(
         $this,
         $this->serviceName,
@@ -915,10 +809,6 @@ class DeveloperConnect extends \Google\Service
                 'pageToken' => [
                   'location' => 'query',
                   'type' => 'string',
-                ],
-                'returnPartialSuccess' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ],
               ],
             ],

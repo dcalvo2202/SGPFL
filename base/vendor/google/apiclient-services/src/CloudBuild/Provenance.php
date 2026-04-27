@@ -20,118 +20,55 @@ namespace Google\Service\CloudBuild;
 class Provenance extends \Google\Model
 {
   /**
-   * Default to disabled (before AA regionalization), optimistic after
-   */
-  public const ENABLED_ENABLED_UNSPECIFIED = 'ENABLED_UNSPECIFIED';
-  /**
-   * Provenance failures would fail the run
-   */
-  public const ENABLED_REQUIRED = 'REQUIRED';
-  /**
-   * GCB will attempt to push to artifact analaysis and build state would not be
-   * impacted by the push failures.
-   */
-  public const ENABLED_OPTIMISTIC = 'OPTIMISTIC';
-  /**
-   * Disable the provenance push entirely.
-   */
-  public const ENABLED_DISABLED = 'DISABLED';
-  /**
-   * The PipelineRun/TaskRun/Workflow will be rejected. Update this comment to
-   * push to the same region as the run in Artifact Analysis when it's
-   * regionalized.
-   */
-  public const REGION_REGION_UNSPECIFIED = 'REGION_UNSPECIFIED';
-  /**
-   * Push provenance to Artifact Analysis in global region.
-   */
-  public const REGION_GLOBAL = 'GLOBAL';
-  /**
-   * Default PREFER_ARTIFACT_PROJECT.
-   */
-  public const STORAGE_STORAGE_UNSPECIFIED = 'STORAGE_UNSPECIFIED';
-  /**
-   * GCB will attempt to push provenance to the artifact project. If it is not
-   * available, fallback to build project.
-   */
-  public const STORAGE_PREFER_ARTIFACT_PROJECT = 'PREFER_ARTIFACT_PROJECT';
-  /**
-   * Only push to artifact project.
-   */
-  public const STORAGE_ARTIFACT_PROJECT_ONLY = 'ARTIFACT_PROJECT_ONLY';
-  /**
-   * Only push to build project.
-   */
-  public const STORAGE_BUILD_PROJECT_ONLY = 'BUILD_PROJECT_ONLY';
-  /**
-   * Optional. Provenance push mode.
-   *
    * @var string
    */
   public $enabled;
   /**
-   * Optional. Provenance region.
-   *
    * @var string
    */
   public $region;
   /**
-   * Optional. Where provenance is stored.
-   *
    * @var string
    */
   public $storage;
 
   /**
-   * Optional. Provenance push mode.
-   *
-   * Accepted values: ENABLED_UNSPECIFIED, REQUIRED, OPTIMISTIC, DISABLED
-   *
-   * @param self::ENABLED_* $enabled
+   * @param string
    */
   public function setEnabled($enabled)
   {
     $this->enabled = $enabled;
   }
   /**
-   * @return self::ENABLED_*
+   * @return string
    */
   public function getEnabled()
   {
     return $this->enabled;
   }
   /**
-   * Optional. Provenance region.
-   *
-   * Accepted values: REGION_UNSPECIFIED, GLOBAL
-   *
-   * @param self::REGION_* $region
+   * @param string
    */
   public function setRegion($region)
   {
     $this->region = $region;
   }
   /**
-   * @return self::REGION_*
+   * @return string
    */
   public function getRegion()
   {
     return $this->region;
   }
   /**
-   * Optional. Where provenance is stored.
-   *
-   * Accepted values: STORAGE_UNSPECIFIED, PREFER_ARTIFACT_PROJECT,
-   * ARTIFACT_PROJECT_ONLY, BUILD_PROJECT_ONLY
-   *
-   * @param self::STORAGE_* $storage
+   * @param string
    */
   public function setStorage($storage)
   {
     $this->storage = $storage;
   }
   /**
-   * @return self::STORAGE_*
+   * @return string
    */
   public function getStorage()
   {

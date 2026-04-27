@@ -25,10 +25,7 @@ class GoogleCloudContentwarehouseV1SetAclResponse extends \Google\Model
   protected $policyDataType = '';
 
   /**
-   * Additional information for the API invocation, such as the request tracking
-   * id.
-   *
-   * @param GoogleCloudContentwarehouseV1ResponseMetadata $metadata
+   * @param GoogleCloudContentwarehouseV1ResponseMetadata
    */
   public function setMetadata(GoogleCloudContentwarehouseV1ResponseMetadata $metadata)
   {
@@ -42,9 +39,7 @@ class GoogleCloudContentwarehouseV1SetAclResponse extends \Google\Model
     return $this->metadata;
   }
   /**
-   * The policy will be attached to a resource (e.g. projecct, document).
-   *
-   * @param GoogleIamV1Policy $policy
+   * @param GoogleIamV1Policy
    */
   public function setPolicy(GoogleIamV1Policy $policy)
   {

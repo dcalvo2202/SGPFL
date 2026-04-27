@@ -21,9 +21,6 @@ class ListPlaceActionLinksResponse extends \Google\Collection
 {
   protected $collection_key = 'placeActionLinks';
   /**
-   * If there are more place action links than the requested page size, then
-   * this field is populated with a token to fetch the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListPlaceActionLinksResponse extends \Google\Collection
   protected $placeActionLinksDataType = 'array';
 
   /**
-   * If there are more place action links than the requested page size, then
-   * this field is populated with a token to fetch the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class ListPlaceActionLinksResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The returned list of place action links.
-   *
-   * @param PlaceActionLink[] $placeActionLinks
+   * @param PlaceActionLink[]
    */
   public function setPlaceActionLinks($placeActionLinks)
   {

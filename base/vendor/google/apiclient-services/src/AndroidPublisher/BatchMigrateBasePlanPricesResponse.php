@@ -24,10 +24,7 @@ class BatchMigrateBasePlanPricesResponse extends \Google\Collection
   protected $responsesDataType = 'array';
 
   /**
-   * Contains one response per requested price migration, in the same order as
-   * the request.
-   *
-   * @param MigrateBasePlanPricesResponse[] $responses
+   * @param MigrateBasePlanPricesResponse[]
    */
   public function setResponses($responses)
   {

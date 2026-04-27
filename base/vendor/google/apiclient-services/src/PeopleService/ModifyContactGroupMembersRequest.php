@@ -21,31 +21,16 @@ class ModifyContactGroupMembersRequest extends \Google\Collection
 {
   protected $collection_key = 'resourceNamesToRemove';
   /**
-   * Optional. The resource names of the contact people to add in the form of
-   * `people/{person_id}`. The total number of resource names in
-   * `resource_names_to_add` and `resource_names_to_remove` must be less than or
-   * equal to 1000.
-   *
    * @var string[]
    */
   public $resourceNamesToAdd;
   /**
-   * Optional. The resource names of the contact people to remove in the form of
-   * `people/{person_id}`. The total number of resource names in
-   * `resource_names_to_add` and `resource_names_to_remove` must be less than or
-   * equal to 1000.
-   *
    * @var string[]
    */
   public $resourceNamesToRemove;
 
   /**
-   * Optional. The resource names of the contact people to add in the form of
-   * `people/{person_id}`. The total number of resource names in
-   * `resource_names_to_add` and `resource_names_to_remove` must be less than or
-   * equal to 1000.
-   *
-   * @param string[] $resourceNamesToAdd
+   * @param string[]
    */
   public function setResourceNamesToAdd($resourceNamesToAdd)
   {
@@ -59,12 +44,7 @@ class ModifyContactGroupMembersRequest extends \Google\Collection
     return $this->resourceNamesToAdd;
   }
   /**
-   * Optional. The resource names of the contact people to remove in the form of
-   * `people/{person_id}`. The total number of resource names in
-   * `resource_names_to_add` and `resource_names_to_remove` must be less than or
-   * equal to 1000.
-   *
-   * @param string[] $resourceNamesToRemove
+   * @param string[]
    */
   public function setResourceNamesToRemove($resourceNamesToRemove)
   {

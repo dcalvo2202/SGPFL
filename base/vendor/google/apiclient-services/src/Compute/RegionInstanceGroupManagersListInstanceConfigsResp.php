@@ -23,12 +23,6 @@ class RegionInstanceGroupManagersListInstanceConfigsResp extends \Google\Collect
   protected $itemsType = PerInstanceConfig::class;
   protected $itemsDataType = 'array';
   /**
-   * Output only. [Output Only] This token allows you to get the next page of
-   * results for list requests. If the number of results is larger
-   * thanmaxResults, use the nextPageToken as a value for the query parameter
-   * pageToken in the next list request. Subsequent list requests will have
-   * their own nextPageToken to continue paging through the results.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -36,9 +30,7 @@ class RegionInstanceGroupManagersListInstanceConfigsResp extends \Google\Collect
   protected $warningDataType = '';
 
   /**
-   * Output only. [Output Only] The list of PerInstanceConfig.
-   *
-   * @param PerInstanceConfig[] $items
+   * @param PerInstanceConfig[]
    */
   public function setItems($items)
   {
@@ -52,13 +44,7 @@ class RegionInstanceGroupManagersListInstanceConfigsResp extends \Google\Collect
     return $this->items;
   }
   /**
-   * Output only. [Output Only] This token allows you to get the next page of
-   * results for list requests. If the number of results is larger
-   * thanmaxResults, use the nextPageToken as a value for the query parameter
-   * pageToken in the next list request. Subsequent list requests will have
-   * their own nextPageToken to continue paging through the results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -72,9 +58,7 @@ class RegionInstanceGroupManagersListInstanceConfigsResp extends \Google\Collect
     return $this->nextPageToken;
   }
   /**
-   * Output only. [Output Only] Informational warning message.
-   *
-   * @param RegionInstanceGroupManagersListInstanceConfigsRespWarning $warning
+   * @param RegionInstanceGroupManagersListInstanceConfigsRespWarning
    */
   public function setWarning(RegionInstanceGroupManagersListInstanceConfigsRespWarning $warning)
   {

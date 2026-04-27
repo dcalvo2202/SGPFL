@@ -21,20 +21,10 @@ class GoogleMapsPlacesV1Circle extends \Google\Model
 {
   protected $centerType = GoogleTypeLatLng::class;
   protected $centerDataType = '';
-  /**
-   * Required. Radius measured in meters. The radius must be within [0.0,
-   * 50000.0].
-   *
-   * @var 
-   */
   public $radius;
 
   /**
-   * Required. Center latitude and longitude. The range of latitude must be
-   * within [-90.0, 90.0]. The range of the longitude must be within [-180.0,
-   * 180.0].
-   *
-   * @param GoogleTypeLatLng $center
+   * @param GoogleTypeLatLng
    */
   public function setCenter(GoogleTypeLatLng $center)
   {

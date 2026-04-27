@@ -20,16 +20,12 @@ namespace Google\Service\PubsubLite;
 class ComputeHeadCursorRequest extends \Google\Model
 {
   /**
-   * Required. The partition for which we should compute the head cursor.
-   *
    * @var string
    */
   public $partition;
 
   /**
-   * Required. The partition for which we should compute the head cursor.
-   *
-   * @param string $partition
+   * @param string
    */
   public function setPartition($partition)
   {

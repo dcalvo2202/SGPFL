@@ -29,9 +29,7 @@ class ReplicationSpec extends \Google\Model
   protected $transferOptionsDataType = '';
 
   /**
-   * The Cloud Storage bucket to which to replicate objects.
-   *
-   * @param GcsData $gcsDataSink
+   * @param GcsData
    */
   public function setGcsDataSink(GcsData $gcsDataSink)
   {
@@ -45,9 +43,7 @@ class ReplicationSpec extends \Google\Model
     return $this->gcsDataSink;
   }
   /**
-   * The Cloud Storage bucket from which to replicate objects.
-   *
-   * @param GcsData $gcsDataSource
+   * @param GcsData
    */
   public function setGcsDataSource(GcsData $gcsDataSource)
   {
@@ -61,11 +57,7 @@ class ReplicationSpec extends \Google\Model
     return $this->gcsDataSource;
   }
   /**
-   * Object conditions that determine which objects are transferred. For
-   * replication jobs, only `include_prefixes` and `exclude_prefixes` are
-   * supported.
-   *
-   * @param ObjectConditions $objectConditions
+   * @param ObjectConditions
    */
   public function setObjectConditions(ObjectConditions $objectConditions)
   {
@@ -79,11 +71,7 @@ class ReplicationSpec extends \Google\Model
     return $this->objectConditions;
   }
   /**
-   * Specifies the metadata options to be applied during replication. Delete
-   * options are not supported. If a delete option is specified, the request
-   * fails with an INVALID_ARGUMENT error.
-   *
-   * @param TransferOptions $transferOptions
+   * @param TransferOptions
    */
   public function setTransferOptions(TransferOptions $transferOptions)
   {

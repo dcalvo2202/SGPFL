@@ -20,50 +20,6 @@ namespace Google\Service\Docs;
 class NamedStyleSuggestionState extends \Google\Model
 {
   /**
-   * The type of named style is unspecified.
-   */
-  public const NAMED_STYLE_TYPE_NAMED_STYLE_TYPE_UNSPECIFIED = 'NAMED_STYLE_TYPE_UNSPECIFIED';
-  /**
-   * Normal text.
-   */
-  public const NAMED_STYLE_TYPE_NORMAL_TEXT = 'NORMAL_TEXT';
-  /**
-   * Title.
-   */
-  public const NAMED_STYLE_TYPE_TITLE = 'TITLE';
-  /**
-   * Subtitle.
-   */
-  public const NAMED_STYLE_TYPE_SUBTITLE = 'SUBTITLE';
-  /**
-   * Heading 1.
-   */
-  public const NAMED_STYLE_TYPE_HEADING_1 = 'HEADING_1';
-  /**
-   * Heading 2.
-   */
-  public const NAMED_STYLE_TYPE_HEADING_2 = 'HEADING_2';
-  /**
-   * Heading 3.
-   */
-  public const NAMED_STYLE_TYPE_HEADING_3 = 'HEADING_3';
-  /**
-   * Heading 4.
-   */
-  public const NAMED_STYLE_TYPE_HEADING_4 = 'HEADING_4';
-  /**
-   * Heading 5.
-   */
-  public const NAMED_STYLE_TYPE_HEADING_5 = 'HEADING_5';
-  /**
-   * Heading 6.
-   */
-  public const NAMED_STYLE_TYPE_HEADING_6 = 'HEADING_6';
-  /**
-   * The named style type that this suggestion state corresponds to. This field
-   * is provided as a convenience for matching the NamedStyleSuggestionState
-   * with its corresponding NamedStyle.
-   *
    * @var string
    */
   public $namedStyleType;
@@ -73,31 +29,21 @@ class NamedStyleSuggestionState extends \Google\Model
   protected $textStyleSuggestionStateDataType = '';
 
   /**
-   * The named style type that this suggestion state corresponds to. This field
-   * is provided as a convenience for matching the NamedStyleSuggestionState
-   * with its corresponding NamedStyle.
-   *
-   * Accepted values: NAMED_STYLE_TYPE_UNSPECIFIED, NORMAL_TEXT, TITLE,
-   * SUBTITLE, HEADING_1, HEADING_2, HEADING_3, HEADING_4, HEADING_5, HEADING_6
-   *
-   * @param self::NAMED_STYLE_TYPE_* $namedStyleType
+   * @param string
    */
   public function setNamedStyleType($namedStyleType)
   {
     $this->namedStyleType = $namedStyleType;
   }
   /**
-   * @return self::NAMED_STYLE_TYPE_*
+   * @return string
    */
   public function getNamedStyleType()
   {
     return $this->namedStyleType;
   }
   /**
-   * A mask that indicates which of the fields in paragraph style have been
-   * changed in this suggestion.
-   *
-   * @param ParagraphStyleSuggestionState $paragraphStyleSuggestionState
+   * @param ParagraphStyleSuggestionState
    */
   public function setParagraphStyleSuggestionState(ParagraphStyleSuggestionState $paragraphStyleSuggestionState)
   {
@@ -111,10 +57,7 @@ class NamedStyleSuggestionState extends \Google\Model
     return $this->paragraphStyleSuggestionState;
   }
   /**
-   * A mask that indicates which of the fields in text style have been changed
-   * in this suggestion.
-   *
-   * @param TextStyleSuggestionState $textStyleSuggestionState
+   * @param TextStyleSuggestionState
    */
   public function setTextStyleSuggestionState(TextStyleSuggestionState $textStyleSuggestionState)
   {

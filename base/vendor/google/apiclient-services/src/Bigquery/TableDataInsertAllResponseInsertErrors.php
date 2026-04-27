@@ -23,16 +23,12 @@ class TableDataInsertAllResponseInsertErrors extends \Google\Collection
   protected $errorsType = ErrorProto::class;
   protected $errorsDataType = 'array';
   /**
-   * The index of the row that error applies to.
-   *
    * @var string
    */
   public $index;
 
   /**
-   * Error information for the row indicated by the index property.
-   *
-   * @param ErrorProto[] $errors
+   * @param ErrorProto[]
    */
   public function setErrors($errors)
   {
@@ -46,9 +42,7 @@ class TableDataInsertAllResponseInsertErrors extends \Google\Collection
     return $this->errors;
   }
   /**
-   * The index of the row that error applies to.
-   *
-   * @param string $index
+   * @param string
    */
   public function setIndex($index)
   {

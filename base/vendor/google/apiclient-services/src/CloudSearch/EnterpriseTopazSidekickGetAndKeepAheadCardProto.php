@@ -27,7 +27,7 @@ class EnterpriseTopazSidekickGetAndKeepAheadCardProto extends \Google\Model
   protected $sharedDocumentsDataType = '';
 
   /**
-   * @param EnterpriseTopazSidekickGetAndKeepAheadCardProtoDeclinedEvents $declinedEvents
+   * @param EnterpriseTopazSidekickGetAndKeepAheadCardProtoDeclinedEvents
    */
   public function setDeclinedEvents(EnterpriseTopazSidekickGetAndKeepAheadCardProtoDeclinedEvents $declinedEvents)
   {
@@ -41,7 +41,7 @@ class EnterpriseTopazSidekickGetAndKeepAheadCardProto extends \Google\Model
     return $this->declinedEvents;
   }
   /**
-   * @param EnterpriseTopazSidekickDocumentPerCategoryList $mentionedDocuments
+   * @param EnterpriseTopazSidekickDocumentPerCategoryList
    */
   public function setMentionedDocuments(EnterpriseTopazSidekickDocumentPerCategoryList $mentionedDocuments)
   {
@@ -55,7 +55,7 @@ class EnterpriseTopazSidekickGetAndKeepAheadCardProto extends \Google\Model
     return $this->mentionedDocuments;
   }
   /**
-   * @param EnterpriseTopazSidekickDocumentPerCategoryList $sharedDocuments
+   * @param EnterpriseTopazSidekickDocumentPerCategoryList
    */
   public function setSharedDocuments(EnterpriseTopazSidekickDocumentPerCategoryList $sharedDocuments)
   {

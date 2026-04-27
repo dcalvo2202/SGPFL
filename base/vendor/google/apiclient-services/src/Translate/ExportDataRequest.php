@@ -23,9 +23,7 @@ class ExportDataRequest extends \Google\Model
   protected $outputConfigDataType = '';
 
   /**
-   * Required. The config for the output content.
-   *
-   * @param DatasetOutputConfig $outputConfig
+   * @param DatasetOutputConfig
    */
   public function setOutputConfig(DatasetOutputConfig $outputConfig)
   {

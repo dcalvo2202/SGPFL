@@ -23,16 +23,12 @@ class SslCertsListResponse extends \Google\Collection
   protected $itemsType = SslCert::class;
   protected $itemsDataType = 'array';
   /**
-   * This is always `sql#sslCertsList`.
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * List of client certificates for the instance.
-   *
-   * @param SslCert[] $items
+   * @param SslCert[]
    */
   public function setItems($items)
   {
@@ -46,9 +42,7 @@ class SslCertsListResponse extends \Google\Collection
     return $this->items;
   }
   /**
-   * This is always `sql#sslCertsList`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

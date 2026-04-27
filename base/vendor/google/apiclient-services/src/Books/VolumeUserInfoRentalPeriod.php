@@ -29,7 +29,7 @@ class VolumeUserInfoRentalPeriod extends \Google\Model
   public $startUtcSec;
 
   /**
-   * @param string $endUtcSec
+   * @param string
    */
   public function setEndUtcSec($endUtcSec)
   {
@@ -43,7 +43,7 @@ class VolumeUserInfoRentalPeriod extends \Google\Model
     return $this->endUtcSec;
   }
   /**
-   * @param string $startUtcSec
+   * @param string
    */
   public function setStartUtcSec($startUtcSec)
   {

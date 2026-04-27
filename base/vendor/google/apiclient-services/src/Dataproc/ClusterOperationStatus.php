@@ -20,50 +20,24 @@ namespace Google\Service\Dataproc;
 class ClusterOperationStatus extends \Google\Model
 {
   /**
-   * Unused.
-   */
-  public const STATE_UNKNOWN = 'UNKNOWN';
-  /**
-   * The operation has been created.
-   */
-  public const STATE_PENDING = 'PENDING';
-  /**
-   * The operation is running.
-   */
-  public const STATE_RUNNING = 'RUNNING';
-  /**
-   * The operation is done; either cancelled or completed.
-   */
-  public const STATE_DONE = 'DONE';
-  /**
-   * Output only. A message containing any operation metadata details.
-   *
    * @var string
    */
   public $details;
   /**
-   * Output only. A message containing the detailed operation state.
-   *
    * @var string
    */
   public $innerState;
   /**
-   * Output only. A message containing the operation state.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. The time this state was entered.
-   *
    * @var string
    */
   public $stateStartTime;
 
   /**
-   * Output only. A message containing any operation metadata details.
-   *
-   * @param string $details
+   * @param string
    */
   public function setDetails($details)
   {
@@ -77,9 +51,7 @@ class ClusterOperationStatus extends \Google\Model
     return $this->details;
   }
   /**
-   * Output only. A message containing the detailed operation state.
-   *
-   * @param string $innerState
+   * @param string
    */
   public function setInnerState($innerState)
   {
@@ -93,27 +65,21 @@ class ClusterOperationStatus extends \Google\Model
     return $this->innerState;
   }
   /**
-   * Output only. A message containing the operation state.
-   *
-   * Accepted values: UNKNOWN, PENDING, RUNNING, DONE
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. The time this state was entered.
-   *
-   * @param string $stateStartTime
+   * @param string
    */
   public function setStateStartTime($stateStartTime)
   {

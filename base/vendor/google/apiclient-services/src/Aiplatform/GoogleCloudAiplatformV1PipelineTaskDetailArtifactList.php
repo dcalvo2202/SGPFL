@@ -24,9 +24,7 @@ class GoogleCloudAiplatformV1PipelineTaskDetailArtifactList extends \Google\Coll
   protected $artifactsDataType = 'array';
 
   /**
-   * Output only. A list of artifact metadata.
-   *
-   * @param GoogleCloudAiplatformV1Artifact[] $artifacts
+   * @param GoogleCloudAiplatformV1Artifact[]
    */
   public function setArtifacts($artifacts)
   {

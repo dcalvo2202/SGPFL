@@ -20,81 +20,56 @@ namespace Google\Service\Analytics;
 class Goal extends \Google\Model
 {
   /**
-   * Account ID to which this goal belongs.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * Determines whether this goal is active.
-   *
    * @var bool
    */
   public $active;
   /**
-   * Time this goal was created.
-   *
    * @var string
    */
   public $created;
   protected $eventDetailsType = GoalEventDetails::class;
   protected $eventDetailsDataType = '';
   /**
-   * Goal ID.
-   *
    * @var string
    */
   public $id;
   /**
-   * Internal ID for the web property to which this goal belongs.
-   *
    * @var string
    */
   public $internalWebPropertyId;
   /**
-   * Resource type for an Analytics goal.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Goal name.
-   *
    * @var string
    */
   public $name;
   protected $parentLinkType = GoalParentLink::class;
   protected $parentLinkDataType = '';
   /**
-   * View (Profile) ID to which this goal belongs.
-   *
    * @var string
    */
   public $profileId;
   /**
-   * Link for this goal.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * Goal type. Possible values are URL_DESTINATION, VISIT_TIME_ON_SITE,
-   * VISIT_NUM_PAGES, AND EVENT.
-   *
    * @var string
    */
   public $type;
   /**
-   * Time this goal was last modified.
-   *
    * @var string
    */
   public $updated;
   protected $urlDestinationDetailsType = GoalUrlDestinationDetails::class;
   protected $urlDestinationDetailsDataType = '';
   /**
-   * Goal value.
-   *
    * @var float
    */
   public $value;
@@ -103,17 +78,12 @@ class Goal extends \Google\Model
   protected $visitTimeOnSiteDetailsType = GoalVisitTimeOnSiteDetails::class;
   protected $visitTimeOnSiteDetailsDataType = '';
   /**
-   * Web property ID to which this goal belongs. The web property ID is of the
-   * form UA-XXXXX-YY.
-   *
    * @var string
    */
   public $webPropertyId;
 
   /**
-   * Account ID to which this goal belongs.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -127,9 +97,7 @@ class Goal extends \Google\Model
     return $this->accountId;
   }
   /**
-   * Determines whether this goal is active.
-   *
-   * @param bool $active
+   * @param bool
    */
   public function setActive($active)
   {
@@ -143,9 +111,7 @@ class Goal extends \Google\Model
     return $this->active;
   }
   /**
-   * Time this goal was created.
-   *
-   * @param string $created
+   * @param string
    */
   public function setCreated($created)
   {
@@ -159,9 +125,7 @@ class Goal extends \Google\Model
     return $this->created;
   }
   /**
-   * Details for the goal of the type EVENT.
-   *
-   * @param GoalEventDetails $eventDetails
+   * @param GoalEventDetails
    */
   public function setEventDetails(GoalEventDetails $eventDetails)
   {
@@ -175,9 +139,7 @@ class Goal extends \Google\Model
     return $this->eventDetails;
   }
   /**
-   * Goal ID.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -191,9 +153,7 @@ class Goal extends \Google\Model
     return $this->id;
   }
   /**
-   * Internal ID for the web property to which this goal belongs.
-   *
-   * @param string $internalWebPropertyId
+   * @param string
    */
   public function setInternalWebPropertyId($internalWebPropertyId)
   {
@@ -207,9 +167,7 @@ class Goal extends \Google\Model
     return $this->internalWebPropertyId;
   }
   /**
-   * Resource type for an Analytics goal.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -223,9 +181,7 @@ class Goal extends \Google\Model
     return $this->kind;
   }
   /**
-   * Goal name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -239,10 +195,7 @@ class Goal extends \Google\Model
     return $this->name;
   }
   /**
-   * Parent link for a goal. Points to the view (profile) to which this goal
-   * belongs.
-   *
-   * @param GoalParentLink $parentLink
+   * @param GoalParentLink
    */
   public function setParentLink(GoalParentLink $parentLink)
   {
@@ -256,9 +209,7 @@ class Goal extends \Google\Model
     return $this->parentLink;
   }
   /**
-   * View (Profile) ID to which this goal belongs.
-   *
-   * @param string $profileId
+   * @param string
    */
   public function setProfileId($profileId)
   {
@@ -272,9 +223,7 @@ class Goal extends \Google\Model
     return $this->profileId;
   }
   /**
-   * Link for this goal.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -288,10 +237,7 @@ class Goal extends \Google\Model
     return $this->selfLink;
   }
   /**
-   * Goal type. Possible values are URL_DESTINATION, VISIT_TIME_ON_SITE,
-   * VISIT_NUM_PAGES, AND EVENT.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {
@@ -305,9 +251,7 @@ class Goal extends \Google\Model
     return $this->type;
   }
   /**
-   * Time this goal was last modified.
-   *
-   * @param string $updated
+   * @param string
    */
   public function setUpdated($updated)
   {
@@ -321,9 +265,7 @@ class Goal extends \Google\Model
     return $this->updated;
   }
   /**
-   * Details for the goal of the type URL_DESTINATION.
-   *
-   * @param GoalUrlDestinationDetails $urlDestinationDetails
+   * @param GoalUrlDestinationDetails
    */
   public function setUrlDestinationDetails(GoalUrlDestinationDetails $urlDestinationDetails)
   {
@@ -337,9 +279,7 @@ class Goal extends \Google\Model
     return $this->urlDestinationDetails;
   }
   /**
-   * Goal value.
-   *
-   * @param float $value
+   * @param float
    */
   public function setValue($value)
   {
@@ -353,9 +293,7 @@ class Goal extends \Google\Model
     return $this->value;
   }
   /**
-   * Details for the goal of the type VISIT_NUM_PAGES.
-   *
-   * @param GoalVisitNumPagesDetails $visitNumPagesDetails
+   * @param GoalVisitNumPagesDetails
    */
   public function setVisitNumPagesDetails(GoalVisitNumPagesDetails $visitNumPagesDetails)
   {
@@ -369,9 +307,7 @@ class Goal extends \Google\Model
     return $this->visitNumPagesDetails;
   }
   /**
-   * Details for the goal of the type VISIT_TIME_ON_SITE.
-   *
-   * @param GoalVisitTimeOnSiteDetails $visitTimeOnSiteDetails
+   * @param GoalVisitTimeOnSiteDetails
    */
   public function setVisitTimeOnSiteDetails(GoalVisitTimeOnSiteDetails $visitTimeOnSiteDetails)
   {
@@ -385,10 +321,7 @@ class Goal extends \Google\Model
     return $this->visitTimeOnSiteDetails;
   }
   /**
-   * Web property ID to which this goal belongs. The web property ID is of the
-   * form UA-XXXXX-YY.
-   *
-   * @param string $webPropertyId
+   * @param string
    */
   public function setWebPropertyId($webPropertyId)
   {

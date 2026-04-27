@@ -20,31 +20,10 @@ namespace Google\Service\GKEHub;
 class ServiceMeshAnalysisMessageBase extends \Google\Model
 {
   /**
-   * Illegal. Same istio.analysis.v1alpha1.AnalysisMessageBase.Level.UNKNOWN.
-   */
-  public const LEVEL_LEVEL_UNSPECIFIED = 'LEVEL_UNSPECIFIED';
-  /**
-   * ERROR represents a misconfiguration that must be fixed.
-   */
-  public const LEVEL_ERROR = 'ERROR';
-  /**
-   * WARNING represents a misconfiguration that should be fixed.
-   */
-  public const LEVEL_WARNING = 'WARNING';
-  /**
-   * INFO represents an informational finding.
-   */
-  public const LEVEL_INFO = 'INFO';
-  /**
-   * A url pointing to the Service Mesh or Istio documentation for this specific
-   * error type.
-   *
    * @var string
    */
   public $documentationUrl;
   /**
-   * Represents how severe a message is.
-   *
    * @var string
    */
   public $level;
@@ -52,10 +31,7 @@ class ServiceMeshAnalysisMessageBase extends \Google\Model
   protected $typeDataType = '';
 
   /**
-   * A url pointing to the Service Mesh or Istio documentation for this specific
-   * error type.
-   *
-   * @param string $documentationUrl
+   * @param string
    */
   public function setDocumentationUrl($documentationUrl)
   {
@@ -69,27 +45,21 @@ class ServiceMeshAnalysisMessageBase extends \Google\Model
     return $this->documentationUrl;
   }
   /**
-   * Represents how severe a message is.
-   *
-   * Accepted values: LEVEL_UNSPECIFIED, ERROR, WARNING, INFO
-   *
-   * @param self::LEVEL_* $level
+   * @param string
    */
   public function setLevel($level)
   {
     $this->level = $level;
   }
   /**
-   * @return self::LEVEL_*
+   * @return string
    */
   public function getLevel()
   {
     return $this->level;
   }
   /**
-   * Represents the specific type of a message.
-   *
-   * @param ServiceMeshType $type
+   * @param ServiceMeshType
    */
   public function setType(ServiceMeshType $type)
   {

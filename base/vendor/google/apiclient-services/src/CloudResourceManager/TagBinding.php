@@ -20,46 +20,24 @@ namespace Google\Service\CloudResourceManager;
 class TagBinding extends \Google\Model
 {
   /**
-   * Output only. The name of the TagBinding. This is a String of the form:
-   * `tagBindings/{full-resource-name}/{tag-value-name}` (e.g. `tagBindings/%2F%
-   * 2Fcloudresourcemanager.googleapis.com%2Fprojects%2F123/tagValues/456`) or
-   * `tagBindings/{full-resource-name}/{tag-key-name}` (e.g. `tagBindings/%2F%2F
-   * cloudresourcemanager.googleapis.com%2Fprojects%2F123/tagKeys/123`).
-   *
    * @var string
    */
   public $name;
   /**
-   * The full resource name of the resource the TagValue is bound to. E.g.
-   * `//cloudresourcemanager.googleapis.com/projects/123`
-   *
    * @var string
    */
   public $parent;
   /**
-   * The TagValue of the TagBinding. Must be of the form `tagValues/456`.
-   *
    * @var string
    */
   public $tagValue;
   /**
-   * The namespaced name for the TagValue of the TagBinding. Must be in the
-   * format `{parent_id}/{tag_key_short_name}/{short_name}`. For methods that
-   * support TagValue namespaced name, only one of tag_value_namespaced_name or
-   * tag_value may be filled. Requests with both fields will be rejected.
-   *
    * @var string
    */
   public $tagValueNamespacedName;
 
   /**
-   * Output only. The name of the TagBinding. This is a String of the form:
-   * `tagBindings/{full-resource-name}/{tag-value-name}` (e.g. `tagBindings/%2F%
-   * 2Fcloudresourcemanager.googleapis.com%2Fprojects%2F123/tagValues/456`) or
-   * `tagBindings/{full-resource-name}/{tag-key-name}` (e.g. `tagBindings/%2F%2F
-   * cloudresourcemanager.googleapis.com%2Fprojects%2F123/tagKeys/123`).
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -73,10 +51,7 @@ class TagBinding extends \Google\Model
     return $this->name;
   }
   /**
-   * The full resource name of the resource the TagValue is bound to. E.g.
-   * `//cloudresourcemanager.googleapis.com/projects/123`
-   *
-   * @param string $parent
+   * @param string
    */
   public function setParent($parent)
   {
@@ -90,9 +65,7 @@ class TagBinding extends \Google\Model
     return $this->parent;
   }
   /**
-   * The TagValue of the TagBinding. Must be of the form `tagValues/456`.
-   *
-   * @param string $tagValue
+   * @param string
    */
   public function setTagValue($tagValue)
   {
@@ -106,12 +79,7 @@ class TagBinding extends \Google\Model
     return $this->tagValue;
   }
   /**
-   * The namespaced name for the TagValue of the TagBinding. Must be in the
-   * format `{parent_id}/{tag_key_short_name}/{short_name}`. For methods that
-   * support TagValue namespaced name, only one of tag_value_namespaced_name or
-   * tag_value may be filled. Requests with both fields will be rejected.
-   *
-   * @param string $tagValueNamespacedName
+   * @param string
    */
   public function setTagValueNamespacedName($tagValueNamespacedName)
   {

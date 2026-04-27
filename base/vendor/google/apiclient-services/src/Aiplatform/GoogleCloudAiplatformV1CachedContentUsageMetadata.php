@@ -20,40 +20,28 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1CachedContentUsageMetadata extends \Google\Model
 {
   /**
-   * Duration of audio in seconds.
-   *
    * @var int
    */
   public $audioDurationSeconds;
   /**
-   * Number of images.
-   *
    * @var int
    */
   public $imageCount;
   /**
-   * Number of text characters.
-   *
    * @var int
    */
   public $textCount;
   /**
-   * Total number of tokens that the cached content consumes.
-   *
    * @var int
    */
   public $totalTokenCount;
   /**
-   * Duration of video in seconds.
-   *
    * @var int
    */
   public $videoDurationSeconds;
 
   /**
-   * Duration of audio in seconds.
-   *
-   * @param int $audioDurationSeconds
+   * @param int
    */
   public function setAudioDurationSeconds($audioDurationSeconds)
   {
@@ -67,9 +55,7 @@ class GoogleCloudAiplatformV1CachedContentUsageMetadata extends \Google\Model
     return $this->audioDurationSeconds;
   }
   /**
-   * Number of images.
-   *
-   * @param int $imageCount
+   * @param int
    */
   public function setImageCount($imageCount)
   {
@@ -83,9 +69,7 @@ class GoogleCloudAiplatformV1CachedContentUsageMetadata extends \Google\Model
     return $this->imageCount;
   }
   /**
-   * Number of text characters.
-   *
-   * @param int $textCount
+   * @param int
    */
   public function setTextCount($textCount)
   {
@@ -99,9 +83,7 @@ class GoogleCloudAiplatformV1CachedContentUsageMetadata extends \Google\Model
     return $this->textCount;
   }
   /**
-   * Total number of tokens that the cached content consumes.
-   *
-   * @param int $totalTokenCount
+   * @param int
    */
   public function setTotalTokenCount($totalTokenCount)
   {
@@ -115,9 +97,7 @@ class GoogleCloudAiplatformV1CachedContentUsageMetadata extends \Google\Model
     return $this->totalTokenCount;
   }
   /**
-   * Duration of video in seconds.
-   *
-   * @param int $videoDurationSeconds
+   * @param int
    */
   public function setVideoDurationSeconds($videoDurationSeconds)
   {

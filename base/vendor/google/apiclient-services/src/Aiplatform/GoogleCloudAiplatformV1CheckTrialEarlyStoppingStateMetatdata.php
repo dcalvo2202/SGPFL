@@ -22,22 +22,16 @@ class GoogleCloudAiplatformV1CheckTrialEarlyStoppingStateMetatdata extends \Goog
   protected $genericMetadataType = GoogleCloudAiplatformV1GenericOperationMetadata::class;
   protected $genericMetadataDataType = '';
   /**
-   * The name of the Study that the Trial belongs to.
-   *
    * @var string
    */
   public $study;
   /**
-   * The Trial name.
-   *
    * @var string
    */
   public $trial;
 
   /**
-   * Operation metadata for suggesting Trials.
-   *
-   * @param GoogleCloudAiplatformV1GenericOperationMetadata $genericMetadata
+   * @param GoogleCloudAiplatformV1GenericOperationMetadata
    */
   public function setGenericMetadata(GoogleCloudAiplatformV1GenericOperationMetadata $genericMetadata)
   {
@@ -51,9 +45,7 @@ class GoogleCloudAiplatformV1CheckTrialEarlyStoppingStateMetatdata extends \Goog
     return $this->genericMetadata;
   }
   /**
-   * The name of the Study that the Trial belongs to.
-   *
-   * @param string $study
+   * @param string
    */
   public function setStudy($study)
   {
@@ -67,9 +59,7 @@ class GoogleCloudAiplatformV1CheckTrialEarlyStoppingStateMetatdata extends \Goog
     return $this->study;
   }
   /**
-   * The Trial name.
-   *
-   * @param string $trial
+   * @param string
    */
   public function setTrial($trial)
   {

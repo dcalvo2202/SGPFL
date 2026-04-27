@@ -20,50 +20,13 @@ namespace Google\Service\Bigquery;
 class HparamTuningTrial extends \Google\Model
 {
   /**
-   * Default value.
-   */
-  public const STATUS_TRIAL_STATUS_UNSPECIFIED = 'TRIAL_STATUS_UNSPECIFIED';
-  /**
-   * Scheduled but not started.
-   */
-  public const STATUS_NOT_STARTED = 'NOT_STARTED';
-  /**
-   * Running state.
-   */
-  public const STATUS_RUNNING = 'RUNNING';
-  /**
-   * The trial succeeded.
-   */
-  public const STATUS_SUCCEEDED = 'SUCCEEDED';
-  /**
-   * The trial failed.
-   */
-  public const STATUS_FAILED = 'FAILED';
-  /**
-   * The trial is infeasible due to the invalid params.
-   */
-  public const STATUS_INFEASIBLE = 'INFEASIBLE';
-  /**
-   * Trial stopped early because it's not promising.
-   */
-  public const STATUS_STOPPED_EARLY = 'STOPPED_EARLY';
-  /**
-   * Ending time of the trial.
-   *
    * @var string
    */
   public $endTimeMs;
   /**
-   * Error message for FAILED and INFEASIBLE trial.
-   *
    * @var string
    */
   public $errorMessage;
-  /**
-   * Loss computed on the eval data at the end of trial.
-   *
-   * @var 
-   */
   public $evalLoss;
   protected $evaluationMetricsType = EvaluationMetrics::class;
   protected $evaluationMetricsDataType = '';
@@ -72,34 +35,21 @@ class HparamTuningTrial extends \Google\Model
   protected $hparamsType = TrainingOptions::class;
   protected $hparamsDataType = '';
   /**
-   * Starting time of the trial.
-   *
    * @var string
    */
   public $startTimeMs;
   /**
-   * The status of the trial.
-   *
    * @var string
    */
   public $status;
-  /**
-   * Loss computed on the training data at the end of trial.
-   *
-   * @var 
-   */
   public $trainingLoss;
   /**
-   * 1-based index of the trial.
-   *
    * @var string
    */
   public $trialId;
 
   /**
-   * Ending time of the trial.
-   *
-   * @param string $endTimeMs
+   * @param string
    */
   public function setEndTimeMs($endTimeMs)
   {
@@ -113,9 +63,7 @@ class HparamTuningTrial extends \Google\Model
     return $this->endTimeMs;
   }
   /**
-   * Error message for FAILED and INFEASIBLE trial.
-   *
-   * @param string $errorMessage
+   * @param string
    */
   public function setErrorMessage($errorMessage)
   {
@@ -137,10 +85,7 @@ class HparamTuningTrial extends \Google\Model
     return $this->evalLoss;
   }
   /**
-   * Evaluation metrics of this trial calculated on the test data. Empty in Job
-   * API.
-   *
-   * @param EvaluationMetrics $evaluationMetrics
+   * @param EvaluationMetrics
    */
   public function setEvaluationMetrics(EvaluationMetrics $evaluationMetrics)
   {
@@ -154,11 +99,7 @@ class HparamTuningTrial extends \Google\Model
     return $this->evaluationMetrics;
   }
   /**
-   * Hyperparameter tuning evaluation metrics of this trial calculated on the
-   * eval data. Unlike evaluation_metrics, only the fields corresponding to the
-   * hparam_tuning_objectives are set.
-   *
-   * @param EvaluationMetrics $hparamTuningEvaluationMetrics
+   * @param EvaluationMetrics
    */
   public function setHparamTuningEvaluationMetrics(EvaluationMetrics $hparamTuningEvaluationMetrics)
   {
@@ -172,9 +113,7 @@ class HparamTuningTrial extends \Google\Model
     return $this->hparamTuningEvaluationMetrics;
   }
   /**
-   * The hyperprameters selected for this trial.
-   *
-   * @param TrainingOptions $hparams
+   * @param TrainingOptions
    */
   public function setHparams(TrainingOptions $hparams)
   {
@@ -188,9 +127,7 @@ class HparamTuningTrial extends \Google\Model
     return $this->hparams;
   }
   /**
-   * Starting time of the trial.
-   *
-   * @param string $startTimeMs
+   * @param string
    */
   public function setStartTimeMs($startTimeMs)
   {
@@ -204,19 +141,14 @@ class HparamTuningTrial extends \Google\Model
     return $this->startTimeMs;
   }
   /**
-   * The status of the trial.
-   *
-   * Accepted values: TRIAL_STATUS_UNSPECIFIED, NOT_STARTED, RUNNING, SUCCEEDED,
-   * FAILED, INFEASIBLE, STOPPED_EARLY
-   *
-   * @param self::STATUS_* $status
+   * @param string
    */
   public function setStatus($status)
   {
     $this->status = $status;
   }
   /**
-   * @return self::STATUS_*
+   * @return string
    */
   public function getStatus()
   {
@@ -231,9 +163,7 @@ class HparamTuningTrial extends \Google\Model
     return $this->trainingLoss;
   }
   /**
-   * 1-based index of the trial.
-   *
-   * @param string $trialId
+   * @param string
    */
   public function setTrialId($trialId)
   {

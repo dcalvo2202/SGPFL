@@ -21,9 +21,6 @@ class XPSVideoActionRecognitionEvaluationMetrics extends \Google\Collection
 {
   protected $collection_key = 'videoActionMetricsEntries';
   /**
-   * Output only. The number of ground truth actions used to create this
-   * evaluation.
-   *
    * @var int
    */
   public $evaluatedActionCount;
@@ -31,10 +28,7 @@ class XPSVideoActionRecognitionEvaluationMetrics extends \Google\Collection
   protected $videoActionMetricsEntriesDataType = 'array';
 
   /**
-   * Output only. The number of ground truth actions used to create this
-   * evaluation.
-   *
-   * @param int $evaluatedActionCount
+   * @param int
    */
   public function setEvaluatedActionCount($evaluatedActionCount)
   {
@@ -48,10 +42,7 @@ class XPSVideoActionRecognitionEvaluationMetrics extends \Google\Collection
     return $this->evaluatedActionCount;
   }
   /**
-   * Output only. The metric entries for precision window lengths: 1s,2s,3s,4s,
-   * 5s.
-   *
-   * @param XPSVideoActionMetricsEntry[] $videoActionMetricsEntries
+   * @param XPSVideoActionMetricsEntry[]
    */
   public function setVideoActionMetricsEntries($videoActionMetricsEntries)
   {

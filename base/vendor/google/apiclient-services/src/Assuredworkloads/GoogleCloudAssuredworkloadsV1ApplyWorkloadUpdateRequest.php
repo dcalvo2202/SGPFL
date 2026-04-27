@@ -20,33 +20,19 @@ namespace Google\Service\Assuredworkloads;
 class GoogleCloudAssuredworkloadsV1ApplyWorkloadUpdateRequest extends \Google\Model
 {
   /**
-   * Unspecified value.
-   */
-  public const ACTION_WORKLOAD_UPDATE_ACTION_UNSPECIFIED = 'WORKLOAD_UPDATE_ACTION_UNSPECIFIED';
-  /**
-   * The update is applied.
-   */
-  public const ACTION_APPLY = 'APPLY';
-  /**
-   * The action to be performed on the update.
-   *
    * @var string
    */
   public $action;
 
   /**
-   * The action to be performed on the update.
-   *
-   * Accepted values: WORKLOAD_UPDATE_ACTION_UNSPECIFIED, APPLY
-   *
-   * @param self::ACTION_* $action
+   * @param string
    */
   public function setAction($action)
   {
     $this->action = $action;
   }
   /**
-   * @return self::ACTION_*
+   * @return string
    */
   public function getAction()
   {

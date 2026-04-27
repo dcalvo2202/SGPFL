@@ -20,25 +20,16 @@ namespace Google\Service\Storagetransfer;
 class FederatedIdentityConfig extends \Google\Model
 {
   /**
-   * Required. The client (application) ID of the application with federated
-   * credentials.
-   *
    * @var string
    */
   public $clientId;
   /**
-   * Required. The tenant (directory) ID of the application with federated
-   * credentials.
-   *
    * @var string
    */
   public $tenantId;
 
   /**
-   * Required. The client (application) ID of the application with federated
-   * credentials.
-   *
-   * @param string $clientId
+   * @param string
    */
   public function setClientId($clientId)
   {
@@ -52,10 +43,7 @@ class FederatedIdentityConfig extends \Google\Model
     return $this->clientId;
   }
   /**
-   * Required. The tenant (directory) ID of the application with federated
-   * credentials.
-   *
-   * @param string $tenantId
+   * @param string
    */
   public function setTenantId($tenantId)
   {

@@ -25,10 +25,6 @@ class GoogleCloudDatalabelingV1beta1Example extends \Google\Collection
   protected $imagePayloadType = GoogleCloudDatalabelingV1beta1ImagePayload::class;
   protected $imagePayloadDataType = '';
   /**
-   * Output only. Name of the example, in format of:
-   * projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/
-   * {annotated_dataset_id}/examples/{example_id}
-   *
    * @var string
    */
   public $name;
@@ -38,10 +34,7 @@ class GoogleCloudDatalabelingV1beta1Example extends \Google\Collection
   protected $videoPayloadDataType = '';
 
   /**
-   * Output only. Annotations for the piece of data in Example. One piece of
-   * data can have multiple annotations.
-   *
-   * @param GoogleCloudDatalabelingV1beta1Annotation[] $annotations
+   * @param GoogleCloudDatalabelingV1beta1Annotation[]
    */
   public function setAnnotations($annotations)
   {
@@ -55,9 +48,7 @@ class GoogleCloudDatalabelingV1beta1Example extends \Google\Collection
     return $this->annotations;
   }
   /**
-   * The image payload, a container of the image bytes/uri.
-   *
-   * @param GoogleCloudDatalabelingV1beta1ImagePayload $imagePayload
+   * @param GoogleCloudDatalabelingV1beta1ImagePayload
    */
   public function setImagePayload(GoogleCloudDatalabelingV1beta1ImagePayload $imagePayload)
   {
@@ -71,11 +62,7 @@ class GoogleCloudDatalabelingV1beta1Example extends \Google\Collection
     return $this->imagePayload;
   }
   /**
-   * Output only. Name of the example, in format of:
-   * projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/
-   * {annotated_dataset_id}/examples/{example_id}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -89,9 +76,7 @@ class GoogleCloudDatalabelingV1beta1Example extends \Google\Collection
     return $this->name;
   }
   /**
-   * The text payload, a container of the text content.
-   *
-   * @param GoogleCloudDatalabelingV1beta1TextPayload $textPayload
+   * @param GoogleCloudDatalabelingV1beta1TextPayload
    */
   public function setTextPayload(GoogleCloudDatalabelingV1beta1TextPayload $textPayload)
   {
@@ -105,9 +90,7 @@ class GoogleCloudDatalabelingV1beta1Example extends \Google\Collection
     return $this->textPayload;
   }
   /**
-   * The video payload, a container of the video uri.
-   *
-   * @param GoogleCloudDatalabelingV1beta1VideoPayload $videoPayload
+   * @param GoogleCloudDatalabelingV1beta1VideoPayload
    */
   public function setVideoPayload(GoogleCloudDatalabelingV1beta1VideoPayload $videoPayload)
   {

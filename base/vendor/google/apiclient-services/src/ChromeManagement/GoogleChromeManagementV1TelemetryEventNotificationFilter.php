@@ -21,16 +21,12 @@ class GoogleChromeManagementV1TelemetryEventNotificationFilter extends \Google\C
 {
   protected $collection_key = 'eventTypes';
   /**
-   * Only sends the notifications for events of these types. Must not be empty.
-   *
    * @var string[]
    */
   public $eventTypes;
 
   /**
-   * Only sends the notifications for events of these types. Must not be empty.
-   *
-   * @param string[] $eventTypes
+   * @param string[]
    */
   public function setEventTypes($eventTypes)
   {

@@ -21,9 +21,6 @@ class ListRulesResponse extends \Google\Collection
 {
   protected $collection_key = 'rules';
   /**
-   * The token to retrieve the next page of rules, or empty if there are no more
-   * rules to return.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListRulesResponse extends \Google\Collection
   protected $rulesDataType = 'array';
 
   /**
-   * The token to retrieve the next page of rules, or empty if there are no more
-   * rules to return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class ListRulesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The rules returned.
-   *
-   * @param GoogleDevtoolsArtifactregistryV1Rule[] $rules
+   * @param GoogleDevtoolsArtifactregistryV1Rule[]
    */
   public function setRules($rules)
   {

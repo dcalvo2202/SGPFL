@@ -20,8 +20,6 @@ namespace Google\Service\HangoutsChat;
 class CardAction extends \Google\Model
 {
   /**
-   * The label used to be displayed in the action menu item.
-   *
    * @var string
    */
   public $actionLabel;
@@ -29,9 +27,7 @@ class CardAction extends \Google\Model
   protected $onClickDataType = '';
 
   /**
-   * The label used to be displayed in the action menu item.
-   *
-   * @param string $actionLabel
+   * @param string
    */
   public function setActionLabel($actionLabel)
   {
@@ -45,9 +41,7 @@ class CardAction extends \Google\Model
     return $this->actionLabel;
   }
   /**
-   * The onclick action for this action item.
-   *
-   * @param OnClick $onClick
+   * @param OnClick
    */
   public function setOnClick(OnClick $onClick)
   {

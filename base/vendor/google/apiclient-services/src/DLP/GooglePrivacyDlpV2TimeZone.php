@@ -20,18 +20,12 @@ namespace Google\Service\DLP;
 class GooglePrivacyDlpV2TimeZone extends \Google\Model
 {
   /**
-   * Set only if the offset can be determined. Positive for time ahead of UTC.
-   * E.g. For "UTC-9", this value is -540.
-   *
    * @var int
    */
   public $offsetMinutes;
 
   /**
-   * Set only if the offset can be determined. Positive for time ahead of UTC.
-   * E.g. For "UTC-9", this value is -540.
-   *
-   * @param int $offsetMinutes
+   * @param int
    */
   public function setOffsetMinutes($offsetMinutes)
   {

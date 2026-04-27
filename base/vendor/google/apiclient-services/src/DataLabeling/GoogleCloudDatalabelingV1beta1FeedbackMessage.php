@@ -20,29 +20,18 @@ namespace Google\Service\DataLabeling;
 class GoogleCloudDatalabelingV1beta1FeedbackMessage extends \Google\Model
 {
   /**
-   * String content of the feedback. Maximum of 10000 characters.
-   *
    * @var string
    */
   public $body;
   /**
-   * Create time.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * The image storing this feedback if the feedback is an image representing
-   * operator's comments.
-   *
    * @var string
    */
   public $image;
   /**
-   * Name of the feedback message in a feedback thread. Format: 'project/{projec
-   * t_id}/datasets/{dataset_id}/annotatedDatasets/{annotated_dataset_id}/feedba
-   * ckThreads/{feedback_thread_id}/feedbackMessage/{feedback_message_id}'
-   *
    * @var string
    */
   public $name;
@@ -52,9 +41,7 @@ class GoogleCloudDatalabelingV1beta1FeedbackMessage extends \Google\Model
   protected $requesterFeedbackMetadataDataType = '';
 
   /**
-   * String content of the feedback. Maximum of 10000 characters.
-   *
-   * @param string $body
+   * @param string
    */
   public function setBody($body)
   {
@@ -68,9 +55,7 @@ class GoogleCloudDatalabelingV1beta1FeedbackMessage extends \Google\Model
     return $this->body;
   }
   /**
-   * Create time.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -84,10 +69,7 @@ class GoogleCloudDatalabelingV1beta1FeedbackMessage extends \Google\Model
     return $this->createTime;
   }
   /**
-   * The image storing this feedback if the feedback is an image representing
-   * operator's comments.
-   *
-   * @param string $image
+   * @param string
    */
   public function setImage($image)
   {
@@ -101,11 +83,7 @@ class GoogleCloudDatalabelingV1beta1FeedbackMessage extends \Google\Model
     return $this->image;
   }
   /**
-   * Name of the feedback message in a feedback thread. Format: 'project/{projec
-   * t_id}/datasets/{dataset_id}/annotatedDatasets/{annotated_dataset_id}/feedba
-   * ckThreads/{feedback_thread_id}/feedbackMessage/{feedback_message_id}'
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -119,7 +97,7 @@ class GoogleCloudDatalabelingV1beta1FeedbackMessage extends \Google\Model
     return $this->name;
   }
   /**
-   * @param GoogleCloudDatalabelingV1beta1OperatorFeedbackMetadata $operatorFeedbackMetadata
+   * @param GoogleCloudDatalabelingV1beta1OperatorFeedbackMetadata
    */
   public function setOperatorFeedbackMetadata(GoogleCloudDatalabelingV1beta1OperatorFeedbackMetadata $operatorFeedbackMetadata)
   {
@@ -133,7 +111,7 @@ class GoogleCloudDatalabelingV1beta1FeedbackMessage extends \Google\Model
     return $this->operatorFeedbackMetadata;
   }
   /**
-   * @param GoogleCloudDatalabelingV1beta1RequesterFeedbackMetadata $requesterFeedbackMetadata
+   * @param GoogleCloudDatalabelingV1beta1RequesterFeedbackMetadata
    */
   public function setRequesterFeedbackMetadata(GoogleCloudDatalabelingV1beta1RequesterFeedbackMetadata $requesterFeedbackMetadata)
   {

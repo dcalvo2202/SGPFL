@@ -24,9 +24,7 @@ class GoogleCloudDocumentaiV1GcsDocuments extends \Google\Collection
   protected $documentsDataType = 'array';
 
   /**
-   * The list of documents.
-   *
-   * @param GoogleCloudDocumentaiV1GcsDocument[] $documents
+   * @param GoogleCloudDocumentaiV1GcsDocument[]
    */
   public function setDocuments($documents)
   {

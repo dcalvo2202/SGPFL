@@ -19,38 +19,12 @@ namespace Google\Service\Compute;
 
 class BfdStatus extends \Google\Collection
 {
-  public const BFD_SESSION_INITIALIZATION_MODE_ACTIVE = 'ACTIVE';
-  public const BFD_SESSION_INITIALIZATION_MODE_DISABLED = 'DISABLED';
-  public const BFD_SESSION_INITIALIZATION_MODE_PASSIVE = 'PASSIVE';
-  public const LOCAL_DIAGNOSTIC_ADMINISTRATIVELY_DOWN = 'ADMINISTRATIVELY_DOWN';
-  public const LOCAL_DIAGNOSTIC_CONCATENATED_PATH_DOWN = 'CONCATENATED_PATH_DOWN';
-  public const LOCAL_DIAGNOSTIC_CONTROL_DETECTION_TIME_EXPIRED = 'CONTROL_DETECTION_TIME_EXPIRED';
-  public const LOCAL_DIAGNOSTIC_DIAGNOSTIC_UNSPECIFIED = 'DIAGNOSTIC_UNSPECIFIED';
-  public const LOCAL_DIAGNOSTIC_ECHO_FUNCTION_FAILED = 'ECHO_FUNCTION_FAILED';
-  public const LOCAL_DIAGNOSTIC_FORWARDING_PLANE_RESET = 'FORWARDING_PLANE_RESET';
-  public const LOCAL_DIAGNOSTIC_NEIGHBOR_SIGNALED_SESSION_DOWN = 'NEIGHBOR_SIGNALED_SESSION_DOWN';
-  public const LOCAL_DIAGNOSTIC_NO_DIAGNOSTIC = 'NO_DIAGNOSTIC';
-  public const LOCAL_DIAGNOSTIC_PATH_DOWN = 'PATH_DOWN';
-  public const LOCAL_DIAGNOSTIC_REVERSE_CONCATENATED_PATH_DOWN = 'REVERSE_CONCATENATED_PATH_DOWN';
-  public const LOCAL_STATE_ADMIN_DOWN = 'ADMIN_DOWN';
-  public const LOCAL_STATE_DOWN = 'DOWN';
-  public const LOCAL_STATE_INIT = 'INIT';
-  public const LOCAL_STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  public const LOCAL_STATE_UP = 'UP';
   protected $collection_key = 'controlPacketIntervals';
   /**
-   * The BFD session initialization mode for this BGP peer. If set to ACTIVE,
-   * the Cloud Router will initiate the BFD session for this BGP peer. If set to
-   * PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD
-   * session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP
-   * peer.
-   *
    * @var string
    */
   public $bfdSessionInitializationMode;
   /**
-   * Unix timestamp of the most recent config update.
-   *
    * @var string
    */
   public $configUpdateTimestampMicros;
@@ -59,24 +33,14 @@ class BfdStatus extends \Google\Collection
   protected $controlPacketIntervalsType = PacketIntervals::class;
   protected $controlPacketIntervalsDataType = 'array';
   /**
-   * The diagnostic code specifies the local system's reason for the last change
-   * in session state. This allows remote systems to determine the reason that
-   * the previous session failed, for example. These diagnostic codes are
-   * specified in section 4.1 ofRFC5880
-   *
    * @var string
    */
   public $localDiagnostic;
   /**
-   * The current BFD session state as seen by the transmitting system. These
-   * states are specified in section 4.1 ofRFC5880
-   *
    * @var string
    */
   public $localState;
   /**
-   * Negotiated transmit interval for control packets.
-   *
    * @var string
    */
   public $negotiatedLocalControlTxIntervalMs;
@@ -85,38 +49,26 @@ class BfdStatus extends \Google\Collection
   protected $txPacketType = BfdPacket::class;
   protected $txPacketDataType = '';
   /**
-   * Session uptime in milliseconds. Value will be 0 if session is not up.
-   *
    * @var string
    */
   public $uptimeMs;
 
   /**
-   * The BFD session initialization mode for this BGP peer. If set to ACTIVE,
-   * the Cloud Router will initiate the BFD session for this BGP peer. If set to
-   * PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD
-   * session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP
-   * peer.
-   *
-   * Accepted values: ACTIVE, DISABLED, PASSIVE
-   *
-   * @param self::BFD_SESSION_INITIALIZATION_MODE_* $bfdSessionInitializationMode
+   * @param string
    */
   public function setBfdSessionInitializationMode($bfdSessionInitializationMode)
   {
     $this->bfdSessionInitializationMode = $bfdSessionInitializationMode;
   }
   /**
-   * @return self::BFD_SESSION_INITIALIZATION_MODE_*
+   * @return string
    */
   public function getBfdSessionInitializationMode()
   {
     return $this->bfdSessionInitializationMode;
   }
   /**
-   * Unix timestamp of the most recent config update.
-   *
-   * @param string $configUpdateTimestampMicros
+   * @param string
    */
   public function setConfigUpdateTimestampMicros($configUpdateTimestampMicros)
   {
@@ -130,9 +82,7 @@ class BfdStatus extends \Google\Collection
     return $this->configUpdateTimestampMicros;
   }
   /**
-   * Control packet counts for the current BFD session.
-   *
-   * @param BfdStatusPacketCounts $controlPacketCounts
+   * @param BfdStatusPacketCounts
    */
   public function setControlPacketCounts(BfdStatusPacketCounts $controlPacketCounts)
   {
@@ -146,9 +96,7 @@ class BfdStatus extends \Google\Collection
     return $this->controlPacketCounts;
   }
   /**
-   * Inter-packet time interval statistics for control packets.
-   *
-   * @param PacketIntervals[] $controlPacketIntervals
+   * @param PacketIntervals[]
    */
   public function setControlPacketIntervals($controlPacketIntervals)
   {
@@ -162,53 +110,35 @@ class BfdStatus extends \Google\Collection
     return $this->controlPacketIntervals;
   }
   /**
-   * The diagnostic code specifies the local system's reason for the last change
-   * in session state. This allows remote systems to determine the reason that
-   * the previous session failed, for example. These diagnostic codes are
-   * specified in section 4.1 ofRFC5880
-   *
-   * Accepted values: ADMINISTRATIVELY_DOWN, CONCATENATED_PATH_DOWN,
-   * CONTROL_DETECTION_TIME_EXPIRED, DIAGNOSTIC_UNSPECIFIED,
-   * ECHO_FUNCTION_FAILED, FORWARDING_PLANE_RESET,
-   * NEIGHBOR_SIGNALED_SESSION_DOWN, NO_DIAGNOSTIC, PATH_DOWN,
-   * REVERSE_CONCATENATED_PATH_DOWN
-   *
-   * @param self::LOCAL_DIAGNOSTIC_* $localDiagnostic
+   * @param string
    */
   public function setLocalDiagnostic($localDiagnostic)
   {
     $this->localDiagnostic = $localDiagnostic;
   }
   /**
-   * @return self::LOCAL_DIAGNOSTIC_*
+   * @return string
    */
   public function getLocalDiagnostic()
   {
     return $this->localDiagnostic;
   }
   /**
-   * The current BFD session state as seen by the transmitting system. These
-   * states are specified in section 4.1 ofRFC5880
-   *
-   * Accepted values: ADMIN_DOWN, DOWN, INIT, STATE_UNSPECIFIED, UP
-   *
-   * @param self::LOCAL_STATE_* $localState
+   * @param string
    */
   public function setLocalState($localState)
   {
     $this->localState = $localState;
   }
   /**
-   * @return self::LOCAL_STATE_*
+   * @return string
    */
   public function getLocalState()
   {
     return $this->localState;
   }
   /**
-   * Negotiated transmit interval for control packets.
-   *
-   * @param string $negotiatedLocalControlTxIntervalMs
+   * @param string
    */
   public function setNegotiatedLocalControlTxIntervalMs($negotiatedLocalControlTxIntervalMs)
   {
@@ -222,9 +152,7 @@ class BfdStatus extends \Google\Collection
     return $this->negotiatedLocalControlTxIntervalMs;
   }
   /**
-   * The most recent Rx control packet for this BFD session.
-   *
-   * @param BfdPacket $rxPacket
+   * @param BfdPacket
    */
   public function setRxPacket(BfdPacket $rxPacket)
   {
@@ -238,9 +166,7 @@ class BfdStatus extends \Google\Collection
     return $this->rxPacket;
   }
   /**
-   * The most recent Tx control packet for this BFD session.
-   *
-   * @param BfdPacket $txPacket
+   * @param BfdPacket
    */
   public function setTxPacket(BfdPacket $txPacket)
   {
@@ -254,9 +180,7 @@ class BfdStatus extends \Google\Collection
     return $this->txPacket;
   }
   /**
-   * Session uptime in milliseconds. Value will be 0 if session is not up.
-   *
-   * @param string $uptimeMs
+   * @param string
    */
   public function setUptimeMs($uptimeMs)
   {

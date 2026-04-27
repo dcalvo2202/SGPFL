@@ -19,15 +19,6 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowV2ConversationModel extends \Google\Collection
 {
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  public const STATE_CREATING = 'CREATING';
-  public const STATE_UNDEPLOYED = 'UNDEPLOYED';
-  public const STATE_DEPLOYING = 'DEPLOYING';
-  public const STATE_DEPLOYED = 'DEPLOYED';
-  public const STATE_UNDEPLOYING = 'UNDEPLOYING';
-  public const STATE_DELETING = 'DELETING';
-  public const STATE_FAILED = 'FAILED';
-  public const STATE_PENDING = 'PENDING';
   protected $collection_key = 'datasets';
   protected $articleSuggestionModelMetadataType = GoogleCloudDialogflowV2ArticleSuggestionModelMetadata::class;
   protected $articleSuggestionModelMetadataDataType = '';
@@ -65,7 +56,7 @@ class GoogleCloudDialogflowV2ConversationModel extends \Google\Collection
   public $state;
 
   /**
-   * @param GoogleCloudDialogflowV2ArticleSuggestionModelMetadata $articleSuggestionModelMetadata
+   * @param GoogleCloudDialogflowV2ArticleSuggestionModelMetadata
    */
   public function setArticleSuggestionModelMetadata(GoogleCloudDialogflowV2ArticleSuggestionModelMetadata $articleSuggestionModelMetadata)
   {
@@ -79,7 +70,7 @@ class GoogleCloudDialogflowV2ConversationModel extends \Google\Collection
     return $this->articleSuggestionModelMetadata;
   }
   /**
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -93,7 +84,7 @@ class GoogleCloudDialogflowV2ConversationModel extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * @param GoogleCloudDialogflowV2InputDataset[] $datasets
+   * @param GoogleCloudDialogflowV2InputDataset[]
    */
   public function setDatasets($datasets)
   {
@@ -107,7 +98,7 @@ class GoogleCloudDialogflowV2ConversationModel extends \Google\Collection
     return $this->datasets;
   }
   /**
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -121,7 +112,7 @@ class GoogleCloudDialogflowV2ConversationModel extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {
@@ -135,7 +126,7 @@ class GoogleCloudDialogflowV2ConversationModel extends \Google\Collection
     return $this->languageCode;
   }
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -149,7 +140,7 @@ class GoogleCloudDialogflowV2ConversationModel extends \Google\Collection
     return $this->name;
   }
   /**
-   * @param bool $satisfiesPzi
+   * @param bool
    */
   public function setSatisfiesPzi($satisfiesPzi)
   {
@@ -163,7 +154,7 @@ class GoogleCloudDialogflowV2ConversationModel extends \Google\Collection
     return $this->satisfiesPzi;
   }
   /**
-   * @param bool $satisfiesPzs
+   * @param bool
    */
   public function setSatisfiesPzs($satisfiesPzs)
   {
@@ -177,7 +168,7 @@ class GoogleCloudDialogflowV2ConversationModel extends \Google\Collection
     return $this->satisfiesPzs;
   }
   /**
-   * @param GoogleCloudDialogflowV2SmartReplyModelMetadata $smartReplyModelMetadata
+   * @param GoogleCloudDialogflowV2SmartReplyModelMetadata
    */
   public function setSmartReplyModelMetadata(GoogleCloudDialogflowV2SmartReplyModelMetadata $smartReplyModelMetadata)
   {
@@ -191,14 +182,14 @@ class GoogleCloudDialogflowV2ConversationModel extends \Google\Collection
     return $this->smartReplyModelMetadata;
   }
   /**
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

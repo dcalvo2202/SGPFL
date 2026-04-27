@@ -20,16 +20,12 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1DeleteCustomReportResponse extends \Google\Model
 {
   /**
-   * The response contains only a message field.
-   *
    * @var string
    */
   public $message;
 
   /**
-   * The response contains only a message field.
-   *
-   * @param string $message
+   * @param string
    */
   public function setMessage($message)
   {

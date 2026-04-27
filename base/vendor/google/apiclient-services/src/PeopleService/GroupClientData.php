@@ -20,22 +20,16 @@ namespace Google\Service\PeopleService;
 class GroupClientData extends \Google\Model
 {
   /**
-   * The client specified key of the client data.
-   *
    * @var string
    */
   public $key;
   /**
-   * The client specified value of the client data.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * The client specified key of the client data.
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {
@@ -49,9 +43,7 @@ class GroupClientData extends \Google\Model
     return $this->key;
   }
   /**
-   * The client specified value of the client data.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

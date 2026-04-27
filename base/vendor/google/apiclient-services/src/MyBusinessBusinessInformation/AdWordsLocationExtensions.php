@@ -20,18 +20,12 @@ namespace Google\Service\MyBusinessBusinessInformation;
 class AdWordsLocationExtensions extends \Google\Model
 {
   /**
-   * Required. An alternate phone number to display on AdWords location
-   * extensions instead of the location's primary phone number.
-   *
    * @var string
    */
   public $adPhone;
 
   /**
-   * Required. An alternate phone number to display on AdWords location
-   * extensions instead of the location's primary phone number.
-   *
-   * @param string $adPhone
+   * @param string
    */
   public function setAdPhone($adPhone)
   {

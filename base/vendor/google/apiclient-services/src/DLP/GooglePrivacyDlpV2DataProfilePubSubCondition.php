@@ -23,9 +23,7 @@ class GooglePrivacyDlpV2DataProfilePubSubCondition extends \Google\Model
   protected $expressionsDataType = '';
 
   /**
-   * An expression.
-   *
-   * @param GooglePrivacyDlpV2PubSubExpressions $expressions
+   * @param GooglePrivacyDlpV2PubSubExpressions
    */
   public function setExpressions(GooglePrivacyDlpV2PubSubExpressions $expressions)
   {

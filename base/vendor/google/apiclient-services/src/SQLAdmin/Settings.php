@@ -19,142 +19,8 @@ namespace Google\Service\SQLAdmin;
 
 class Settings extends \Google\Collection
 {
-  /**
-   * Unknown activation plan.
-   */
-  public const ACTIVATION_POLICY_SQL_ACTIVATION_POLICY_UNSPECIFIED = 'SQL_ACTIVATION_POLICY_UNSPECIFIED';
-  /**
-   * The instance is always up and running.
-   */
-  public const ACTIVATION_POLICY_ALWAYS = 'ALWAYS';
-  /**
-   * The instance never starts.
-   */
-  public const ACTIVATION_POLICY_NEVER = 'NEVER';
-  /**
-   * The instance starts upon receiving requests.
-   *
-   * @deprecated
-   */
-  public const ACTIVATION_POLICY_ON_DEMAND = 'ON_DEMAND';
-  /**
-   * This is an unknown Availability type.
-   */
-  public const AVAILABILITY_TYPE_SQL_AVAILABILITY_TYPE_UNSPECIFIED = 'SQL_AVAILABILITY_TYPE_UNSPECIFIED';
-  /**
-   * Zonal available instance.
-   */
-  public const AVAILABILITY_TYPE_ZONAL = 'ZONAL';
-  /**
-   * Regional available instance.
-   */
-  public const AVAILABILITY_TYPE_REGIONAL = 'REGIONAL';
-  /**
-   * The requirement for Cloud SQL connectors is unknown.
-   */
-  public const CONNECTOR_ENFORCEMENT_CONNECTOR_ENFORCEMENT_UNSPECIFIED = 'CONNECTOR_ENFORCEMENT_UNSPECIFIED';
-  /**
-   * Do not require Cloud SQL connectors.
-   */
-  public const CONNECTOR_ENFORCEMENT_NOT_REQUIRED = 'NOT_REQUIRED';
-  /**
-   * Require all connections to use Cloud SQL connectors, including the Cloud
-   * SQL Auth Proxy and Cloud SQL Java, Python, and Go connectors. Note: This
-   * disables all existing authorized networks.
-   */
-  public const CONNECTOR_ENFORCEMENT_REQUIRED = 'REQUIRED';
-  /**
-   * Unspecified, effectively the same as `DISALLOW_DATA_API`.
-   */
-  public const DATA_API_ACCESS_DATA_API_ACCESS_UNSPECIFIED = 'DATA_API_ACCESS_UNSPECIFIED';
-  /**
-   * Disallow using ExecuteSql API to connect to the instance.
-   */
-  public const DATA_API_ACCESS_DISALLOW_DATA_API = 'DISALLOW_DATA_API';
-  /**
-   * Allow using ExecuteSql API to connect to the instance. For private IP
-   * instances, this allows authorized users to access the instance from the
-   * public internet using ExecuteSql API.
-   */
-  public const DATA_API_ACCESS_ALLOW_DATA_API = 'ALLOW_DATA_API';
-  /**
-   * This is an unknown data disk type.
-   */
-  public const DATA_DISK_TYPE_SQL_DATA_DISK_TYPE_UNSPECIFIED = 'SQL_DATA_DISK_TYPE_UNSPECIFIED';
-  /**
-   * An SSD data disk.
-   */
-  public const DATA_DISK_TYPE_PD_SSD = 'PD_SSD';
-  /**
-   * An HDD data disk.
-   */
-  public const DATA_DISK_TYPE_PD_HDD = 'PD_HDD';
-  /**
-   * This field is deprecated and will be removed from a future version of the
-   * API.
-   *
-   * @deprecated
-   */
-  public const DATA_DISK_TYPE_OBSOLETE_LOCAL_SSD = 'OBSOLETE_LOCAL_SSD';
-  /**
-   * A Hyperdisk Balanced data disk.
-   */
-  public const DATA_DISK_TYPE_HYPERDISK_BALANCED = 'HYPERDISK_BALANCED';
-  /**
-   * The instance did not specify the edition.
-   */
-  public const EDITION_EDITION_UNSPECIFIED = 'EDITION_UNSPECIFIED';
-  /**
-   * The instance is an enterprise edition.
-   */
-  public const EDITION_ENTERPRISE = 'ENTERPRISE';
-  /**
-   * The instance is an Enterprise Plus edition.
-   */
-  public const EDITION_ENTERPRISE_PLUS = 'ENTERPRISE_PLUS';
-  /**
-   * This is an unknown pricing plan for this instance.
-   */
-  public const PRICING_PLAN_SQL_PRICING_PLAN_UNSPECIFIED = 'SQL_PRICING_PLAN_UNSPECIFIED';
-  /**
-   * The instance is billed at a monthly flat rate.
-   */
-  public const PRICING_PLAN_PACKAGE = 'PACKAGE';
-  /**
-   * The instance is billed per usage.
-   */
-  public const PRICING_PLAN_PER_USE = 'PER_USE';
-  /**
-   * This is an unknown replication type for a Cloud SQL instance.
-   */
-  public const REPLICATION_TYPE_SQL_REPLICATION_TYPE_UNSPECIFIED = 'SQL_REPLICATION_TYPE_UNSPECIFIED';
-  /**
-   * The synchronous replication mode for First Generation instances. It is the
-   * default value.
-   */
-  public const REPLICATION_TYPE_SYNCHRONOUS = 'SYNCHRONOUS';
-  /**
-   * The asynchronous replication mode for First Generation instances. It
-   * provides a slight performance gain, but if an outage occurs while this
-   * option is set to asynchronous, you can lose up to a few seconds of updates
-   * to your data.
-   */
-  public const REPLICATION_TYPE_ASYNCHRONOUS = 'ASYNCHRONOUS';
   protected $collection_key = 'denyMaintenancePeriods';
   /**
-   * Optional. Whether the replica is in accelerated mode. This feature is in
-   * private preview and requires allowlisting to take effect.
-   *
-   * @var bool
-   */
-  public $acceleratedReplicaMode;
-  /**
-   * The activation policy specifies when the instance is activated; it is
-   * applicable only when the instance state is RUNNABLE. Valid values: *
-   * `ALWAYS`: The instance is on, and remains so even in the absence of
-   * connection requests. * `NEVER`: The instance is off; it is not activated,
-   * even if a connection request arrives.
-   *
    * @var string
    */
   public $activationPolicy;
@@ -163,152 +29,76 @@ class Settings extends \Google\Collection
   protected $advancedMachineFeaturesType = AdvancedMachineFeatures::class;
   protected $advancedMachineFeaturesDataType = '';
   /**
-   * The App Engine app IDs that can access this instance. (Deprecated) Applied
-   * to First Generation instances only.
-   *
-   * @deprecated
    * @var string[]
    */
   public $authorizedGaeApplications;
   /**
-   * Optional. Cloud SQL for MySQL auto-upgrade configuration. When this
-   * parameter is set to true, auto-upgrade is enabled for MySQL 8.0 minor
-   * versions. The MySQL version must be 8.0.35 or higher.
-   *
-   * @var bool
-   */
-  public $autoUpgradeEnabled;
-  /**
-   * Availability type. Potential values: * `ZONAL`: The instance serves data
-   * from only one zone. Outages in that zone affect data accessibility. *
-   * `REGIONAL`: The instance can serve data from more than one zone in a region
-   * (it is highly available)./ For more information, see [Overview of the High
-   * Availability Configuration](https://cloud.google.com/sql/docs/mysql/high-
-   * availability).
-   *
    * @var string
    */
   public $availabilityType;
   protected $backupConfigurationType = BackupConfiguration::class;
   protected $backupConfigurationDataType = '';
   /**
-   * The name of server Instance collation.
-   *
    * @var string
    */
   public $collation;
   protected $connectionPoolConfigType = ConnectionPoolConfig::class;
   protected $connectionPoolConfigDataType = '';
   /**
-   * Specifies if connections must use Cloud SQL connectors. Option values
-   * include the following: `NOT_REQUIRED` (Cloud SQL instances can be connected
-   * without Cloud SQL Connectors) and `REQUIRED` (Only allow connections that
-   * use Cloud SQL Connectors). Note that using REQUIRED disables all existing
-   * authorized networks. If this field is not specified when creating a new
-   * instance, NOT_REQUIRED is used. If this field is not specified when
-   * patching or updating an existing instance, it is left unchanged in the
-   * instance.
-   *
    * @var string
    */
   public $connectorEnforcement;
   /**
-   * Configuration specific to read replica instances. Indicates whether
-   * database flags for crash-safe replication are enabled. This property was
-   * only applicable to First Generation instances.
-   *
-   * @deprecated
    * @var bool
    */
   public $crashSafeReplicationEnabled;
-  /**
-   * This parameter controls whether to allow using ExecuteSql API to connect to
-   * the instance. Not allowed by default.
-   *
-   * @var string
-   */
-  public $dataApiAccess;
   protected $dataCacheConfigType = DataCacheConfig::class;
   protected $dataCacheConfigDataType = '';
   /**
-   * Optional. Provisioned number of I/O operations per second for the data
-   * disk. This field is only used for hyperdisk-balanced disk types.
-   *
    * @var string
    */
   public $dataDiskProvisionedIops;
   /**
-   * Optional. Provisioned throughput measured in MiB per second for the data
-   * disk. This field is only used for hyperdisk-balanced disk types.
-   *
    * @var string
    */
   public $dataDiskProvisionedThroughput;
   /**
-   * The size of data disk, in GB. The data disk size minimum is 10GB.
-   *
    * @var string
    */
   public $dataDiskSizeGb;
   /**
-   * The type of data disk: `PD_SSD` (default) or `PD_HDD`. Not used for First
-   * Generation instances.
-   *
    * @var string
    */
   public $dataDiskType;
   protected $databaseFlagsType = DatabaseFlags::class;
   protected $databaseFlagsDataType = 'array';
   /**
-   * Configuration specific to read replica instances. Indicates whether
-   * replication is enabled or not. WARNING: Changing this restarts the
-   * instance.
-   *
    * @var bool
    */
   public $databaseReplicationEnabled;
   /**
-   * Configuration to protect against accidental instance deletion.
-   *
    * @var bool
    */
   public $deletionProtectionEnabled;
   protected $denyMaintenancePeriodsType = DenyMaintenancePeriod::class;
   protected $denyMaintenancePeriodsDataType = 'array';
   /**
-   * Optional. The edition of the instance.
-   *
    * @var string
    */
   public $edition;
   /**
-   * Optional. By default, Cloud SQL instances have schema extraction disabled
-   * for Dataplex. When this parameter is set to true, schema extraction for
-   * Dataplex on Cloud SQL instances is activated.
-   *
    * @var bool
    */
   public $enableDataplexIntegration;
   /**
-   * Optional. When this parameter is set to true, Cloud SQL instances can
-   * connect to Vertex AI to pass requests for real-time predictions and
-   * insights to the AI. The default value is false. This applies only to Cloud
-   * SQL for MySQL and Cloud SQL for PostgreSQL instances.
-   *
    * @var bool
    */
   public $enableGoogleMlIntegration;
-  protected $entraidConfigType = SqlServerEntraIdConfig::class;
-  protected $entraidConfigDataType = '';
-  protected $finalBackupConfigType = FinalBackupConfig::class;
-  protected $finalBackupConfigDataType = '';
   protected $insightsConfigType = InsightsConfig::class;
   protected $insightsConfigDataType = '';
   protected $ipConfigurationType = IpConfiguration::class;
   protected $ipConfigurationDataType = '';
   /**
-   * This is always `sql#settings`.
-   *
    * @var string
    */
   public $kind;
@@ -318,132 +108,65 @@ class Settings extends \Google\Collection
   protected $maintenanceWindowDataType = '';
   protected $passwordValidationPolicyType = PasswordValidationPolicy::class;
   protected $passwordValidationPolicyDataType = '';
-  protected $performanceCaptureConfigType = PerformanceCaptureConfig::class;
-  protected $performanceCaptureConfigDataType = '';
   /**
-   * The pricing plan for this instance. This can be either `PER_USE` or
-   * `PACKAGE`. Only `PER_USE` is supported for Second Generation instances.
-   *
    * @var string
    */
   public $pricingPlan;
-  protected $readPoolAutoScaleConfigType = ReadPoolAutoScaleConfig::class;
-  protected $readPoolAutoScaleConfigDataType = '';
   /**
-   * Optional. Configuration value for recreation of replica after certain
-   * replication lag
-   *
    * @var int
    */
   public $replicationLagMaxSeconds;
   /**
-   * The type of replication this instance uses. This can be either
-   * `ASYNCHRONOUS` or `SYNCHRONOUS`. (Deprecated) This property was only
-   * applicable to First Generation instances.
-   *
-   * @deprecated
    * @var string
    */
   public $replicationType;
   /**
-   * Optional. When this parameter is set to true, Cloud SQL retains backups of
-   * the instance even after the instance is deleted. The ON_DEMAND backup will
-   * be retained until customer deletes the backup or the project. The AUTOMATED
-   * backup will be retained based on the backups retention setting.
-   *
    * @var bool
    */
   public $retainBackupsOnDelete;
   /**
-   * The version of instance settings. This is a required field for update
-   * method to make sure concurrent updates are handled properly. During update,
-   * use the most recent settingsVersion value for this instance and do not try
-   * to update this value.
-   *
    * @var string
    */
   public $settingsVersion;
   protected $sqlServerAuditConfigType = SqlServerAuditConfig::class;
   protected $sqlServerAuditConfigDataType = '';
   /**
-   * Configuration to increase storage size automatically. The default value is
-   * true.
-   *
    * @var bool
    */
   public $storageAutoResize;
   /**
-   * The maximum size to which storage capacity can be automatically increased.
-   * The default value is 0, which specifies that there is no limit.
-   *
    * @var string
    */
   public $storageAutoResizeLimit;
   /**
-   * The tier (or machine type) for this instance, for example `db-
-   * custom-1-3840`. WARNING: Changing this restarts the instance.
-   *
    * @var string
    */
   public $tier;
   /**
-   * Server timezone, relevant only for Cloud SQL for SQL Server.
-   *
    * @var string
    */
   public $timeZone;
   /**
-   * User-provided labels, represented as a dictionary where each label is a
-   * single key value pair.
-   *
    * @var string[]
    */
   public $userLabels;
 
   /**
-   * Optional. Whether the replica is in accelerated mode. This feature is in
-   * private preview and requires allowlisting to take effect.
-   *
-   * @param bool $acceleratedReplicaMode
-   */
-  public function setAcceleratedReplicaMode($acceleratedReplicaMode)
-  {
-    $this->acceleratedReplicaMode = $acceleratedReplicaMode;
-  }
-  /**
-   * @return bool
-   */
-  public function getAcceleratedReplicaMode()
-  {
-    return $this->acceleratedReplicaMode;
-  }
-  /**
-   * The activation policy specifies when the instance is activated; it is
-   * applicable only when the instance state is RUNNABLE. Valid values: *
-   * `ALWAYS`: The instance is on, and remains so even in the absence of
-   * connection requests. * `NEVER`: The instance is off; it is not activated,
-   * even if a connection request arrives.
-   *
-   * Accepted values: SQL_ACTIVATION_POLICY_UNSPECIFIED, ALWAYS, NEVER,
-   * ON_DEMAND
-   *
-   * @param self::ACTIVATION_POLICY_* $activationPolicy
+   * @param string
    */
   public function setActivationPolicy($activationPolicy)
   {
     $this->activationPolicy = $activationPolicy;
   }
   /**
-   * @return self::ACTIVATION_POLICY_*
+   * @return string
    */
   public function getActivationPolicy()
   {
     return $this->activationPolicy;
   }
   /**
-   * Active Directory configuration, relevant only for Cloud SQL for SQL Server.
-   *
-   * @param SqlActiveDirectoryConfig $activeDirectoryConfig
+   * @param SqlActiveDirectoryConfig
    */
   public function setActiveDirectoryConfig(SqlActiveDirectoryConfig $activeDirectoryConfig)
   {
@@ -457,10 +180,7 @@ class Settings extends \Google\Collection
     return $this->activeDirectoryConfig;
   }
   /**
-   * Specifies advanced machine configuration for the instances relevant only
-   * for SQL Server.
-   *
-   * @param AdvancedMachineFeatures $advancedMachineFeatures
+   * @param AdvancedMachineFeatures
    */
   public function setAdvancedMachineFeatures(AdvancedMachineFeatures $advancedMachineFeatures)
   {
@@ -474,18 +194,13 @@ class Settings extends \Google\Collection
     return $this->advancedMachineFeatures;
   }
   /**
-   * The App Engine app IDs that can access this instance. (Deprecated) Applied
-   * to First Generation instances only.
-   *
-   * @deprecated
-   * @param string[] $authorizedGaeApplications
+   * @param string[]
    */
   public function setAuthorizedGaeApplications($authorizedGaeApplications)
   {
     $this->authorizedGaeApplications = $authorizedGaeApplications;
   }
   /**
-   * @deprecated
    * @return string[]
    */
   public function getAuthorizedGaeApplications()
@@ -493,50 +208,21 @@ class Settings extends \Google\Collection
     return $this->authorizedGaeApplications;
   }
   /**
-   * Optional. Cloud SQL for MySQL auto-upgrade configuration. When this
-   * parameter is set to true, auto-upgrade is enabled for MySQL 8.0 minor
-   * versions. The MySQL version must be 8.0.35 or higher.
-   *
-   * @param bool $autoUpgradeEnabled
-   */
-  public function setAutoUpgradeEnabled($autoUpgradeEnabled)
-  {
-    $this->autoUpgradeEnabled = $autoUpgradeEnabled;
-  }
-  /**
-   * @return bool
-   */
-  public function getAutoUpgradeEnabled()
-  {
-    return $this->autoUpgradeEnabled;
-  }
-  /**
-   * Availability type. Potential values: * `ZONAL`: The instance serves data
-   * from only one zone. Outages in that zone affect data accessibility. *
-   * `REGIONAL`: The instance can serve data from more than one zone in a region
-   * (it is highly available)./ For more information, see [Overview of the High
-   * Availability Configuration](https://cloud.google.com/sql/docs/mysql/high-
-   * availability).
-   *
-   * Accepted values: SQL_AVAILABILITY_TYPE_UNSPECIFIED, ZONAL, REGIONAL
-   *
-   * @param self::AVAILABILITY_TYPE_* $availabilityType
+   * @param string
    */
   public function setAvailabilityType($availabilityType)
   {
     $this->availabilityType = $availabilityType;
   }
   /**
-   * @return self::AVAILABILITY_TYPE_*
+   * @return string
    */
   public function getAvailabilityType()
   {
     return $this->availabilityType;
   }
   /**
-   * The daily backup configuration for the instance.
-   *
-   * @param BackupConfiguration $backupConfiguration
+   * @param BackupConfiguration
    */
   public function setBackupConfiguration(BackupConfiguration $backupConfiguration)
   {
@@ -550,9 +236,7 @@ class Settings extends \Google\Collection
     return $this->backupConfiguration;
   }
   /**
-   * The name of server Instance collation.
-   *
-   * @param string $collation
+   * @param string
    */
   public function setCollation($collation)
   {
@@ -566,9 +250,7 @@ class Settings extends \Google\Collection
     return $this->collation;
   }
   /**
-   * Optional. The managed connection pooling configuration for the instance.
-   *
-   * @param ConnectionPoolConfig $connectionPoolConfig
+   * @param ConnectionPoolConfig
    */
   public function setConnectionPoolConfig(ConnectionPoolConfig $connectionPoolConfig)
   {
@@ -582,44 +264,27 @@ class Settings extends \Google\Collection
     return $this->connectionPoolConfig;
   }
   /**
-   * Specifies if connections must use Cloud SQL connectors. Option values
-   * include the following: `NOT_REQUIRED` (Cloud SQL instances can be connected
-   * without Cloud SQL Connectors) and `REQUIRED` (Only allow connections that
-   * use Cloud SQL Connectors). Note that using REQUIRED disables all existing
-   * authorized networks. If this field is not specified when creating a new
-   * instance, NOT_REQUIRED is used. If this field is not specified when
-   * patching or updating an existing instance, it is left unchanged in the
-   * instance.
-   *
-   * Accepted values: CONNECTOR_ENFORCEMENT_UNSPECIFIED, NOT_REQUIRED, REQUIRED
-   *
-   * @param self::CONNECTOR_ENFORCEMENT_* $connectorEnforcement
+   * @param string
    */
   public function setConnectorEnforcement($connectorEnforcement)
   {
     $this->connectorEnforcement = $connectorEnforcement;
   }
   /**
-   * @return self::CONNECTOR_ENFORCEMENT_*
+   * @return string
    */
   public function getConnectorEnforcement()
   {
     return $this->connectorEnforcement;
   }
   /**
-   * Configuration specific to read replica instances. Indicates whether
-   * database flags for crash-safe replication are enabled. This property was
-   * only applicable to First Generation instances.
-   *
-   * @deprecated
-   * @param bool $crashSafeReplicationEnabled
+   * @param bool
    */
   public function setCrashSafeReplicationEnabled($crashSafeReplicationEnabled)
   {
     $this->crashSafeReplicationEnabled = $crashSafeReplicationEnabled;
   }
   /**
-   * @deprecated
    * @return bool
    */
   public function getCrashSafeReplicationEnabled()
@@ -627,29 +292,7 @@ class Settings extends \Google\Collection
     return $this->crashSafeReplicationEnabled;
   }
   /**
-   * This parameter controls whether to allow using ExecuteSql API to connect to
-   * the instance. Not allowed by default.
-   *
-   * Accepted values: DATA_API_ACCESS_UNSPECIFIED, DISALLOW_DATA_API,
-   * ALLOW_DATA_API
-   *
-   * @param self::DATA_API_ACCESS_* $dataApiAccess
-   */
-  public function setDataApiAccess($dataApiAccess)
-  {
-    $this->dataApiAccess = $dataApiAccess;
-  }
-  /**
-   * @return self::DATA_API_ACCESS_*
-   */
-  public function getDataApiAccess()
-  {
-    return $this->dataApiAccess;
-  }
-  /**
-   * Configuration for data cache.
-   *
-   * @param DataCacheConfig $dataCacheConfig
+   * @param DataCacheConfig
    */
   public function setDataCacheConfig(DataCacheConfig $dataCacheConfig)
   {
@@ -663,10 +306,7 @@ class Settings extends \Google\Collection
     return $this->dataCacheConfig;
   }
   /**
-   * Optional. Provisioned number of I/O operations per second for the data
-   * disk. This field is only used for hyperdisk-balanced disk types.
-   *
-   * @param string $dataDiskProvisionedIops
+   * @param string
    */
   public function setDataDiskProvisionedIops($dataDiskProvisionedIops)
   {
@@ -680,10 +320,7 @@ class Settings extends \Google\Collection
     return $this->dataDiskProvisionedIops;
   }
   /**
-   * Optional. Provisioned throughput measured in MiB per second for the data
-   * disk. This field is only used for hyperdisk-balanced disk types.
-   *
-   * @param string $dataDiskProvisionedThroughput
+   * @param string
    */
   public function setDataDiskProvisionedThroughput($dataDiskProvisionedThroughput)
   {
@@ -697,9 +334,7 @@ class Settings extends \Google\Collection
     return $this->dataDiskProvisionedThroughput;
   }
   /**
-   * The size of data disk, in GB. The data disk size minimum is 10GB.
-   *
-   * @param string $dataDiskSizeGb
+   * @param string
    */
   public function setDataDiskSizeGb($dataDiskSizeGb)
   {
@@ -713,29 +348,21 @@ class Settings extends \Google\Collection
     return $this->dataDiskSizeGb;
   }
   /**
-   * The type of data disk: `PD_SSD` (default) or `PD_HDD`. Not used for First
-   * Generation instances.
-   *
-   * Accepted values: SQL_DATA_DISK_TYPE_UNSPECIFIED, PD_SSD, PD_HDD,
-   * OBSOLETE_LOCAL_SSD, HYPERDISK_BALANCED
-   *
-   * @param self::DATA_DISK_TYPE_* $dataDiskType
+   * @param string
    */
   public function setDataDiskType($dataDiskType)
   {
     $this->dataDiskType = $dataDiskType;
   }
   /**
-   * @return self::DATA_DISK_TYPE_*
+   * @return string
    */
   public function getDataDiskType()
   {
     return $this->dataDiskType;
   }
   /**
-   * The database flags passed to the instance at startup.
-   *
-   * @param DatabaseFlags[] $databaseFlags
+   * @param DatabaseFlags[]
    */
   public function setDatabaseFlags($databaseFlags)
   {
@@ -749,11 +376,7 @@ class Settings extends \Google\Collection
     return $this->databaseFlags;
   }
   /**
-   * Configuration specific to read replica instances. Indicates whether
-   * replication is enabled or not. WARNING: Changing this restarts the
-   * instance.
-   *
-   * @param bool $databaseReplicationEnabled
+   * @param bool
    */
   public function setDatabaseReplicationEnabled($databaseReplicationEnabled)
   {
@@ -767,9 +390,7 @@ class Settings extends \Google\Collection
     return $this->databaseReplicationEnabled;
   }
   /**
-   * Configuration to protect against accidental instance deletion.
-   *
-   * @param bool $deletionProtectionEnabled
+   * @param bool
    */
   public function setDeletionProtectionEnabled($deletionProtectionEnabled)
   {
@@ -783,9 +404,7 @@ class Settings extends \Google\Collection
     return $this->deletionProtectionEnabled;
   }
   /**
-   * Deny maintenance periods
-   *
-   * @param DenyMaintenancePeriod[] $denyMaintenancePeriods
+   * @param DenyMaintenancePeriod[]
    */
   public function setDenyMaintenancePeriods($denyMaintenancePeriods)
   {
@@ -799,29 +418,21 @@ class Settings extends \Google\Collection
     return $this->denyMaintenancePeriods;
   }
   /**
-   * Optional. The edition of the instance.
-   *
-   * Accepted values: EDITION_UNSPECIFIED, ENTERPRISE, ENTERPRISE_PLUS
-   *
-   * @param self::EDITION_* $edition
+   * @param string
    */
   public function setEdition($edition)
   {
     $this->edition = $edition;
   }
   /**
-   * @return self::EDITION_*
+   * @return string
    */
   public function getEdition()
   {
     return $this->edition;
   }
   /**
-   * Optional. By default, Cloud SQL instances have schema extraction disabled
-   * for Dataplex. When this parameter is set to true, schema extraction for
-   * Dataplex on Cloud SQL instances is activated.
-   *
-   * @param bool $enableDataplexIntegration
+   * @param bool
    */
   public function setEnableDataplexIntegration($enableDataplexIntegration)
   {
@@ -835,12 +446,7 @@ class Settings extends \Google\Collection
     return $this->enableDataplexIntegration;
   }
   /**
-   * Optional. When this parameter is set to true, Cloud SQL instances can
-   * connect to Vertex AI to pass requests for real-time predictions and
-   * insights to the AI. The default value is false. This applies only to Cloud
-   * SQL for MySQL and Cloud SQL for PostgreSQL instances.
-   *
-   * @param bool $enableGoogleMlIntegration
+   * @param bool
    */
   public function setEnableGoogleMlIntegration($enableGoogleMlIntegration)
   {
@@ -854,41 +460,7 @@ class Settings extends \Google\Collection
     return $this->enableGoogleMlIntegration;
   }
   /**
-   * Optional. The Microsoft Entra ID configuration for the SQL Server instance.
-   *
-   * @param SqlServerEntraIdConfig $entraidConfig
-   */
-  public function setEntraidConfig(SqlServerEntraIdConfig $entraidConfig)
-  {
-    $this->entraidConfig = $entraidConfig;
-  }
-  /**
-   * @return SqlServerEntraIdConfig
-   */
-  public function getEntraidConfig()
-  {
-    return $this->entraidConfig;
-  }
-  /**
-   * Optional. The final backup configuration for the instance.
-   *
-   * @param FinalBackupConfig $finalBackupConfig
-   */
-  public function setFinalBackupConfig(FinalBackupConfig $finalBackupConfig)
-  {
-    $this->finalBackupConfig = $finalBackupConfig;
-  }
-  /**
-   * @return FinalBackupConfig
-   */
-  public function getFinalBackupConfig()
-  {
-    return $this->finalBackupConfig;
-  }
-  /**
-   * Insights configuration, for now relevant only for Postgres.
-   *
-   * @param InsightsConfig $insightsConfig
+   * @param InsightsConfig
    */
   public function setInsightsConfig(InsightsConfig $insightsConfig)
   {
@@ -902,11 +474,7 @@ class Settings extends \Google\Collection
     return $this->insightsConfig;
   }
   /**
-   * The settings for IP Management. This allows to enable or disable the
-   * instance IP and manage which external networks can connect to the instance.
-   * The IPv4 address cannot be disabled for Second Generation instances.
-   *
-   * @param IpConfiguration $ipConfiguration
+   * @param IpConfiguration
    */
   public function setIpConfiguration(IpConfiguration $ipConfiguration)
   {
@@ -920,9 +488,7 @@ class Settings extends \Google\Collection
     return $this->ipConfiguration;
   }
   /**
-   * This is always `sql#settings`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -936,12 +502,7 @@ class Settings extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The location preference settings. This allows the instance to be located as
-   * near as possible to either an App Engine app or Compute Engine zone for
-   * better performance. App Engine co-location was only applicable to First
-   * Generation instances.
-   *
-   * @param LocationPreference $locationPreference
+   * @param LocationPreference
    */
   public function setLocationPreference(LocationPreference $locationPreference)
   {
@@ -955,10 +516,7 @@ class Settings extends \Google\Collection
     return $this->locationPreference;
   }
   /**
-   * The maintenance window for this instance. This specifies when the instance
-   * can be restarted for maintenance purposes.
-   *
-   * @param MaintenanceWindow $maintenanceWindow
+   * @param MaintenanceWindow
    */
   public function setMaintenanceWindow(MaintenanceWindow $maintenanceWindow)
   {
@@ -972,9 +530,7 @@ class Settings extends \Google\Collection
     return $this->maintenanceWindow;
   }
   /**
-   * The local user password validation policy of the instance.
-   *
-   * @param PasswordValidationPolicy $passwordValidationPolicy
+   * @param PasswordValidationPolicy
    */
   public function setPasswordValidationPolicy(PasswordValidationPolicy $passwordValidationPolicy)
   {
@@ -988,62 +544,21 @@ class Settings extends \Google\Collection
     return $this->passwordValidationPolicy;
   }
   /**
-   * Optional. Configuration for Performance Capture, provides diagnostic
-   * metrics during high load situations.
-   *
-   * @param PerformanceCaptureConfig $performanceCaptureConfig
-   */
-  public function setPerformanceCaptureConfig(PerformanceCaptureConfig $performanceCaptureConfig)
-  {
-    $this->performanceCaptureConfig = $performanceCaptureConfig;
-  }
-  /**
-   * @return PerformanceCaptureConfig
-   */
-  public function getPerformanceCaptureConfig()
-  {
-    return $this->performanceCaptureConfig;
-  }
-  /**
-   * The pricing plan for this instance. This can be either `PER_USE` or
-   * `PACKAGE`. Only `PER_USE` is supported for Second Generation instances.
-   *
-   * Accepted values: SQL_PRICING_PLAN_UNSPECIFIED, PACKAGE, PER_USE
-   *
-   * @param self::PRICING_PLAN_* $pricingPlan
+   * @param string
    */
   public function setPricingPlan($pricingPlan)
   {
     $this->pricingPlan = $pricingPlan;
   }
   /**
-   * @return self::PRICING_PLAN_*
+   * @return string
    */
   public function getPricingPlan()
   {
     return $this->pricingPlan;
   }
   /**
-   * Optional. The read pool auto-scale configuration for the instance.
-   *
-   * @param ReadPoolAutoScaleConfig $readPoolAutoScaleConfig
-   */
-  public function setReadPoolAutoScaleConfig(ReadPoolAutoScaleConfig $readPoolAutoScaleConfig)
-  {
-    $this->readPoolAutoScaleConfig = $readPoolAutoScaleConfig;
-  }
-  /**
-   * @return ReadPoolAutoScaleConfig
-   */
-  public function getReadPoolAutoScaleConfig()
-  {
-    return $this->readPoolAutoScaleConfig;
-  }
-  /**
-   * Optional. Configuration value for recreation of replica after certain
-   * replication lag
-   *
-   * @param int $replicationLagMaxSeconds
+   * @param int
    */
   public function setReplicationLagMaxSeconds($replicationLagMaxSeconds)
   {
@@ -1057,35 +572,21 @@ class Settings extends \Google\Collection
     return $this->replicationLagMaxSeconds;
   }
   /**
-   * The type of replication this instance uses. This can be either
-   * `ASYNCHRONOUS` or `SYNCHRONOUS`. (Deprecated) This property was only
-   * applicable to First Generation instances.
-   *
-   * Accepted values: SQL_REPLICATION_TYPE_UNSPECIFIED, SYNCHRONOUS,
-   * ASYNCHRONOUS
-   *
-   * @deprecated
-   * @param self::REPLICATION_TYPE_* $replicationType
+   * @param string
    */
   public function setReplicationType($replicationType)
   {
     $this->replicationType = $replicationType;
   }
   /**
-   * @deprecated
-   * @return self::REPLICATION_TYPE_*
+   * @return string
    */
   public function getReplicationType()
   {
     return $this->replicationType;
   }
   /**
-   * Optional. When this parameter is set to true, Cloud SQL retains backups of
-   * the instance even after the instance is deleted. The ON_DEMAND backup will
-   * be retained until customer deletes the backup or the project. The AUTOMATED
-   * backup will be retained based on the backups retention setting.
-   *
-   * @param bool $retainBackupsOnDelete
+   * @param bool
    */
   public function setRetainBackupsOnDelete($retainBackupsOnDelete)
   {
@@ -1099,12 +600,7 @@ class Settings extends \Google\Collection
     return $this->retainBackupsOnDelete;
   }
   /**
-   * The version of instance settings. This is a required field for update
-   * method to make sure concurrent updates are handled properly. During update,
-   * use the most recent settingsVersion value for this instance and do not try
-   * to update this value.
-   *
-   * @param string $settingsVersion
+   * @param string
    */
   public function setSettingsVersion($settingsVersion)
   {
@@ -1118,9 +614,7 @@ class Settings extends \Google\Collection
     return $this->settingsVersion;
   }
   /**
-   * SQL Server specific audit configuration.
-   *
-   * @param SqlServerAuditConfig $sqlServerAuditConfig
+   * @param SqlServerAuditConfig
    */
   public function setSqlServerAuditConfig(SqlServerAuditConfig $sqlServerAuditConfig)
   {
@@ -1134,10 +628,7 @@ class Settings extends \Google\Collection
     return $this->sqlServerAuditConfig;
   }
   /**
-   * Configuration to increase storage size automatically. The default value is
-   * true.
-   *
-   * @param bool $storageAutoResize
+   * @param bool
    */
   public function setStorageAutoResize($storageAutoResize)
   {
@@ -1151,10 +642,7 @@ class Settings extends \Google\Collection
     return $this->storageAutoResize;
   }
   /**
-   * The maximum size to which storage capacity can be automatically increased.
-   * The default value is 0, which specifies that there is no limit.
-   *
-   * @param string $storageAutoResizeLimit
+   * @param string
    */
   public function setStorageAutoResizeLimit($storageAutoResizeLimit)
   {
@@ -1168,10 +656,7 @@ class Settings extends \Google\Collection
     return $this->storageAutoResizeLimit;
   }
   /**
-   * The tier (or machine type) for this instance, for example `db-
-   * custom-1-3840`. WARNING: Changing this restarts the instance.
-   *
-   * @param string $tier
+   * @param string
    */
   public function setTier($tier)
   {
@@ -1185,9 +670,7 @@ class Settings extends \Google\Collection
     return $this->tier;
   }
   /**
-   * Server timezone, relevant only for Cloud SQL for SQL Server.
-   *
-   * @param string $timeZone
+   * @param string
    */
   public function setTimeZone($timeZone)
   {
@@ -1201,10 +684,7 @@ class Settings extends \Google\Collection
     return $this->timeZone;
   }
   /**
-   * User-provided labels, represented as a dictionary where each label is a
-   * single key value pair.
-   *
-   * @param string[] $userLabels
+   * @param string[]
    */
   public function setUserLabels($userLabels)
   {

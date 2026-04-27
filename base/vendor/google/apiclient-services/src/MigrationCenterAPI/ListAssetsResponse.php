@@ -23,22 +23,16 @@ class ListAssetsResponse extends \Google\Collection
   protected $assetsType = Asset::class;
   protected $assetsDataType = 'array';
   /**
-   * A token identifying a page of results the server should return.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * A list of assets.
-   *
-   * @param Asset[] $assets
+   * @param Asset[]
    */
   public function setAssets($assets)
   {
@@ -52,9 +46,7 @@ class ListAssetsResponse extends \Google\Collection
     return $this->assets;
   }
   /**
-   * A token identifying a page of results the server should return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -68,9 +60,7 @@ class ListAssetsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

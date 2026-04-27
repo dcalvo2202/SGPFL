@@ -24,17 +24,12 @@ class GoogleCloudAiplatformV1FetchFeatureValuesResponse extends \Google\Model
   protected $keyValuesType = GoogleCloudAiplatformV1FetchFeatureValuesResponseFeatureNameValuePairList::class;
   protected $keyValuesDataType = '';
   /**
-   * Feature values in proto Struct format.
-   *
    * @var array[]
    */
   public $protoStruct;
 
   /**
-   * The data key associated with this response. Will only be populated for
-   * FeatureOnlineStoreService.StreamingFetchFeatureValues RPCs.
-   *
-   * @param GoogleCloudAiplatformV1FeatureViewDataKey $dataKey
+   * @param GoogleCloudAiplatformV1FeatureViewDataKey
    */
   public function setDataKey(GoogleCloudAiplatformV1FeatureViewDataKey $dataKey)
   {
@@ -48,9 +43,7 @@ class GoogleCloudAiplatformV1FetchFeatureValuesResponse extends \Google\Model
     return $this->dataKey;
   }
   /**
-   * Feature values in KeyValue format.
-   *
-   * @param GoogleCloudAiplatformV1FetchFeatureValuesResponseFeatureNameValuePairList $keyValues
+   * @param GoogleCloudAiplatformV1FetchFeatureValuesResponseFeatureNameValuePairList
    */
   public function setKeyValues(GoogleCloudAiplatformV1FetchFeatureValuesResponseFeatureNameValuePairList $keyValues)
   {
@@ -64,9 +57,7 @@ class GoogleCloudAiplatformV1FetchFeatureValuesResponse extends \Google\Model
     return $this->keyValues;
   }
   /**
-   * Feature values in proto Struct format.
-   *
-   * @param array[] $protoStruct
+   * @param array[]
    */
   public function setProtoStruct($protoStruct)
   {

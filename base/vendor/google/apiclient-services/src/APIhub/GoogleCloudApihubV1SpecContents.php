@@ -20,23 +20,16 @@ namespace Google\Service\APIhub;
 class GoogleCloudApihubV1SpecContents extends \Google\Model
 {
   /**
-   * Required. The contents of the spec.
-   *
    * @var string
    */
   public $contents;
   /**
-   * Required. The mime type of the content for example application/json,
-   * application/yaml, application/wsdl etc.
-   *
    * @var string
    */
   public $mimeType;
 
   /**
-   * Required. The contents of the spec.
-   *
-   * @param string $contents
+   * @param string
    */
   public function setContents($contents)
   {
@@ -50,10 +43,7 @@ class GoogleCloudApihubV1SpecContents extends \Google\Model
     return $this->contents;
   }
   /**
-   * Required. The mime type of the content for example application/json,
-   * application/yaml, application/wsdl etc.
-   *
-   * @param string $mimeType
+   * @param string
    */
   public function setMimeType($mimeType)
   {

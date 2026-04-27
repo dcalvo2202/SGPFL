@@ -20,35 +20,24 @@ namespace Google\Service\Games;
 class InstanceAndroidDetails extends \Google\Model
 {
   /**
-   * Flag indicating whether the anti-piracy check is enabled.
-   *
    * @var bool
    */
   public $enablePiracyCheck;
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#instanceAndroidDetails`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Android package name which maps to Google Play URL.
-   *
    * @var string
    */
   public $packageName;
   /**
-   * Indicates that this instance is the default for new installations.
-   *
    * @var bool
    */
   public $preferred;
 
   /**
-   * Flag indicating whether the anti-piracy check is enabled.
-   *
-   * @param bool $enablePiracyCheck
+   * @param bool
    */
   public function setEnablePiracyCheck($enablePiracyCheck)
   {
@@ -62,10 +51,7 @@ class InstanceAndroidDetails extends \Google\Model
     return $this->enablePiracyCheck;
   }
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#instanceAndroidDetails`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -79,9 +65,7 @@ class InstanceAndroidDetails extends \Google\Model
     return $this->kind;
   }
   /**
-   * Android package name which maps to Google Play URL.
-   *
-   * @param string $packageName
+   * @param string
    */
   public function setPackageName($packageName)
   {
@@ -95,9 +79,7 @@ class InstanceAndroidDetails extends \Google\Model
     return $this->packageName;
   }
   /**
-   * Indicates that this instance is the default for new installations.
-   *
-   * @param bool $preferred
+   * @param bool
    */
   public function setPreferred($preferred)
   {

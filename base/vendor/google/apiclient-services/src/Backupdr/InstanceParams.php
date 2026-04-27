@@ -20,16 +20,12 @@ namespace Google\Service\Backupdr;
 class InstanceParams extends \Google\Model
 {
   /**
-   * Optional. Resource manager tags to be bound to the instance.
-   *
    * @var string[]
    */
   public $resourceManagerTags;
 
   /**
-   * Optional. Resource manager tags to be bound to the instance.
-   *
-   * @param string[] $resourceManagerTags
+   * @param string[]
    */
   public function setResourceManagerTags($resourceManagerTags)
   {

@@ -20,56 +20,36 @@ namespace Google\Service\Appengine;
 class HealthCheck extends \Google\Model
 {
   /**
-   * Interval between health checks.
-   *
    * @var string
    */
   public $checkInterval;
   /**
-   * Whether to explicitly disable health checks for this instance.
-   *
    * @var bool
    */
   public $disableHealthCheck;
   /**
-   * Number of consecutive successful health checks required before receiving
-   * traffic.
-   *
    * @var string
    */
   public $healthyThreshold;
   /**
-   * Host header to send when performing an HTTP health check. Example:
-   * "myapp.appspot.com"
-   *
    * @var string
    */
   public $host;
   /**
-   * Number of consecutive failed health checks required before an instance is
-   * restarted.
-   *
    * @var string
    */
   public $restartThreshold;
   /**
-   * Time before the health check is considered failed.
-   *
    * @var string
    */
   public $timeout;
   /**
-   * Number of consecutive failed health checks required before removing
-   * traffic.
-   *
    * @var string
    */
   public $unhealthyThreshold;
 
   /**
-   * Interval between health checks.
-   *
-   * @param string $checkInterval
+   * @param string
    */
   public function setCheckInterval($checkInterval)
   {
@@ -83,9 +63,7 @@ class HealthCheck extends \Google\Model
     return $this->checkInterval;
   }
   /**
-   * Whether to explicitly disable health checks for this instance.
-   *
-   * @param bool $disableHealthCheck
+   * @param bool
    */
   public function setDisableHealthCheck($disableHealthCheck)
   {
@@ -99,10 +77,7 @@ class HealthCheck extends \Google\Model
     return $this->disableHealthCheck;
   }
   /**
-   * Number of consecutive successful health checks required before receiving
-   * traffic.
-   *
-   * @param string $healthyThreshold
+   * @param string
    */
   public function setHealthyThreshold($healthyThreshold)
   {
@@ -116,10 +91,7 @@ class HealthCheck extends \Google\Model
     return $this->healthyThreshold;
   }
   /**
-   * Host header to send when performing an HTTP health check. Example:
-   * "myapp.appspot.com"
-   *
-   * @param string $host
+   * @param string
    */
   public function setHost($host)
   {
@@ -133,10 +105,7 @@ class HealthCheck extends \Google\Model
     return $this->host;
   }
   /**
-   * Number of consecutive failed health checks required before an instance is
-   * restarted.
-   *
-   * @param string $restartThreshold
+   * @param string
    */
   public function setRestartThreshold($restartThreshold)
   {
@@ -150,9 +119,7 @@ class HealthCheck extends \Google\Model
     return $this->restartThreshold;
   }
   /**
-   * Time before the health check is considered failed.
-   *
-   * @param string $timeout
+   * @param string
    */
   public function setTimeout($timeout)
   {
@@ -166,10 +133,7 @@ class HealthCheck extends \Google\Model
     return $this->timeout;
   }
   /**
-   * Number of consecutive failed health checks required before removing
-   * traffic.
-   *
-   * @param string $unhealthyThreshold
+   * @param string
    */
   public function setUnhealthyThreshold($unhealthyThreshold)
   {

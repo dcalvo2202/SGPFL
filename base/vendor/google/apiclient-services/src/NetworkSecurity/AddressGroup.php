@@ -19,86 +19,50 @@ namespace Google\Service\NetworkSecurity;
 
 class AddressGroup extends \Google\Collection
 {
-  /**
-   * Default value.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * IP v4 ranges.
-   */
-  public const TYPE_IPV4 = 'IPV4';
-  /**
-   * IP v6 ranges.
-   */
-  public const TYPE_IPV6 = 'IPV6';
   protected $collection_key = 'purpose';
   /**
-   * Required. Capacity of the Address Group
-   *
    * @var int
    */
   public $capacity;
   /**
-   * Output only. The timestamp when the resource was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. Free-text description of the resource.
-   *
    * @var string
    */
   public $description;
   /**
-   * Optional. List of items.
-   *
    * @var string[]
    */
   public $items;
   /**
-   * Optional. Set of label tags associated with the AddressGroup resource.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Required. Name of the AddressGroup resource. It matches pattern
-   * `projects/locations/{location}/addressGroups/`.
-   *
    * @var string
    */
   public $name;
   /**
-   * Optional. List of supported purposes of the Address Group.
-   *
    * @var string[]
    */
   public $purpose;
   /**
-   * Output only. Server-defined fully-qualified URL for this resource.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * Required. The type of the Address Group. Possible values are "IPv4" or
-   * "IPV6".
-   *
    * @var string
    */
   public $type;
   /**
-   * Output only. The timestamp when the resource was updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Required. Capacity of the Address Group
-   *
-   * @param int $capacity
+   * @param int
    */
   public function setCapacity($capacity)
   {
@@ -112,9 +76,7 @@ class AddressGroup extends \Google\Collection
     return $this->capacity;
   }
   /**
-   * Output only. The timestamp when the resource was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -128,9 +90,7 @@ class AddressGroup extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Optional. Free-text description of the resource.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -144,9 +104,7 @@ class AddressGroup extends \Google\Collection
     return $this->description;
   }
   /**
-   * Optional. List of items.
-   *
-   * @param string[] $items
+   * @param string[]
    */
   public function setItems($items)
   {
@@ -160,9 +118,7 @@ class AddressGroup extends \Google\Collection
     return $this->items;
   }
   /**
-   * Optional. Set of label tags associated with the AddressGroup resource.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -176,10 +132,7 @@ class AddressGroup extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Required. Name of the AddressGroup resource. It matches pattern
-   * `projects/locations/{location}/addressGroups/`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -193,9 +146,7 @@ class AddressGroup extends \Google\Collection
     return $this->name;
   }
   /**
-   * Optional. List of supported purposes of the Address Group.
-   *
-   * @param string[] $purpose
+   * @param string[]
    */
   public function setPurpose($purpose)
   {
@@ -209,9 +160,7 @@ class AddressGroup extends \Google\Collection
     return $this->purpose;
   }
   /**
-   * Output only. Server-defined fully-qualified URL for this resource.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -225,28 +174,21 @@ class AddressGroup extends \Google\Collection
     return $this->selfLink;
   }
   /**
-   * Required. The type of the Address Group. Possible values are "IPv4" or
-   * "IPV6".
-   *
-   * Accepted values: TYPE_UNSPECIFIED, IPV4, IPV6
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * Output only. The timestamp when the resource was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

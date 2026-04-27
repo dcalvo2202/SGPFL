@@ -26,9 +26,7 @@ class GoogleCloudAiplatformV1TrajectoryExactMatchInput extends \Google\Collectio
   protected $metricSpecDataType = '';
 
   /**
-   * Required. Repeated TrajectoryExactMatch instance.
-   *
-   * @param GoogleCloudAiplatformV1TrajectoryExactMatchInstance[] $instances
+   * @param GoogleCloudAiplatformV1TrajectoryExactMatchInstance[]
    */
   public function setInstances($instances)
   {
@@ -42,9 +40,7 @@ class GoogleCloudAiplatformV1TrajectoryExactMatchInput extends \Google\Collectio
     return $this->instances;
   }
   /**
-   * Required. Spec for TrajectoryExactMatch metric.
-   *
-   * @param GoogleCloudAiplatformV1TrajectoryExactMatchSpec $metricSpec
+   * @param GoogleCloudAiplatformV1TrajectoryExactMatchSpec
    */
   public function setMetricSpec(GoogleCloudAiplatformV1TrajectoryExactMatchSpec $metricSpec)
   {

@@ -22,16 +22,12 @@ class GoogleCloudVideointelligenceV1ObjectTrackingFrame extends \Google\Model
   protected $normalizedBoundingBoxType = GoogleCloudVideointelligenceV1NormalizedBoundingBox::class;
   protected $normalizedBoundingBoxDataType = '';
   /**
-   * The timestamp of the frame in microseconds.
-   *
    * @var string
    */
   public $timeOffset;
 
   /**
-   * The normalized bounding box location of this object track for the frame.
-   *
-   * @param GoogleCloudVideointelligenceV1NormalizedBoundingBox $normalizedBoundingBox
+   * @param GoogleCloudVideointelligenceV1NormalizedBoundingBox
    */
   public function setNormalizedBoundingBox(GoogleCloudVideointelligenceV1NormalizedBoundingBox $normalizedBoundingBox)
   {
@@ -45,9 +41,7 @@ class GoogleCloudVideointelligenceV1ObjectTrackingFrame extends \Google\Model
     return $this->normalizedBoundingBox;
   }
   /**
-   * The timestamp of the frame in microseconds.
-   *
-   * @param string $timeOffset
+   * @param string
    */
   public function setTimeOffset($timeOffset)
   {

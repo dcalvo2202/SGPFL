@@ -20,31 +20,10 @@ namespace Google\Service\FirebaseRules;
 class Issue extends \Google\Model
 {
   /**
-   * An unspecified severity.
-   */
-  public const SEVERITY_SEVERITY_UNSPECIFIED = 'SEVERITY_UNSPECIFIED';
-  /**
-   * Deprecation issue for statements and method that may no longer be supported
-   * or maintained.
-   */
-  public const SEVERITY_DEPRECATION = 'DEPRECATION';
-  /**
-   * Warnings such as: unused variables.
-   */
-  public const SEVERITY_WARNING = 'WARNING';
-  /**
-   * Errors such as: unmatched curly braces or variable redefinition.
-   */
-  public const SEVERITY_ERROR = 'ERROR';
-  /**
-   * Short error description.
-   *
    * @var string
    */
   public $description;
   /**
-   * The severity of the issue.
-   *
    * @var string
    */
   public $severity;
@@ -52,9 +31,7 @@ class Issue extends \Google\Model
   protected $sourcePositionDataType = '';
 
   /**
-   * Short error description.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -68,27 +45,21 @@ class Issue extends \Google\Model
     return $this->description;
   }
   /**
-   * The severity of the issue.
-   *
-   * Accepted values: SEVERITY_UNSPECIFIED, DEPRECATION, WARNING, ERROR
-   *
-   * @param self::SEVERITY_* $severity
+   * @param string
    */
   public function setSeverity($severity)
   {
     $this->severity = $severity;
   }
   /**
-   * @return self::SEVERITY_*
+   * @return string
    */
   public function getSeverity()
   {
     return $this->severity;
   }
   /**
-   * Position of the issue in the `Source`.
-   *
-   * @param SourcePosition $sourcePosition
+   * @param SourcePosition
    */
   public function setSourcePosition(SourcePosition $sourcePosition)
   {

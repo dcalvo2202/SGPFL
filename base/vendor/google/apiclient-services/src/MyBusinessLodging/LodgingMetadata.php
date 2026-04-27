@@ -20,20 +20,12 @@ namespace Google\Service\MyBusinessLodging;
 class LodgingMetadata extends \Google\Model
 {
   /**
-   * Required. The latest time at which the Lodging data is asserted to be true
-   * in the real world. This is not necessarily the time at which the request is
-   * made.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Required. The latest time at which the Lodging data is asserted to be true
-   * in the real world. This is not necessarily the time at which the request is
-   * made.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

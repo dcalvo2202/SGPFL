@@ -19,138 +19,64 @@ namespace Google\Service\CloudFunctions;
 
 class CloudfunctionsFunction extends \Google\Collection
 {
-  /**
-   * Unspecified
-   */
-  public const ENVIRONMENT_ENVIRONMENT_UNSPECIFIED = 'ENVIRONMENT_UNSPECIFIED';
-  /**
-   * Gen 1
-   */
-  public const ENVIRONMENT_GEN_1 = 'GEN_1';
-  /**
-   * Gen 2
-   */
-  public const ENVIRONMENT_GEN_2 = 'GEN_2';
-  /**
-   * Not specified. Invalid state.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Function has been successfully deployed and is serving.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * Function deployment failed and the function is not serving.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * Function is being created or updated.
-   */
-  public const STATE_DEPLOYING = 'DEPLOYING';
-  /**
-   * Function is being deleted.
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * Function deployment failed and the function serving state is undefined. The
-   * function should be updated or deleted to move it out of this state.
-   */
-  public const STATE_UNKNOWN = 'UNKNOWN';
-  /**
-   * Function is being detached.
-   */
-  public const STATE_DETACHING = 'DETACHING';
-  /**
-   * Function detach failed and the function is still serving.
-   */
-  public const STATE_DETACH_FAILED = 'DETACH_FAILED';
   protected $collection_key = 'stateMessages';
   protected $buildConfigType = BuildConfig::class;
   protected $buildConfigDataType = '';
   /**
-   * Output only. The create timestamp of a Cloud Function. This is only
-   * applicable to 2nd Gen functions.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * User-provided description of a function.
-   *
    * @var string
    */
   public $description;
   /**
-   * Describe whether the function is 1st Gen or 2nd Gen.
-   *
    * @var string
    */
   public $environment;
   protected $eventTriggerType = EventTrigger::class;
   protected $eventTriggerDataType = '';
   /**
-   * Resource name of a KMS crypto key (managed by the user) used to
-   * encrypt/decrypt function resources. It must match the pattern `projects/{pr
-   * oject}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
-   *
    * @var string
    */
   public $kmsKeyName;
   /**
-   * Labels associated with this Cloud Function.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * A user-defined name of the function. Function names must be unique globally
-   * and match pattern `projects/locations/functions`
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Reserved for future use.
-   *
    * @var bool
    */
   public $satisfiesPzi;
   /**
-   * Output only. Reserved for future use.
-   *
    * @var bool
    */
   public $satisfiesPzs;
   protected $serviceConfigType = ServiceConfig::class;
   protected $serviceConfigDataType = '';
   /**
-   * Output only. State of the function.
-   *
    * @var string
    */
   public $state;
   protected $stateMessagesType = GoogleCloudFunctionsV2StateMessage::class;
   protected $stateMessagesDataType = 'array';
   /**
-   * Output only. The last update timestamp of a Cloud Function.
-   *
    * @var string
    */
   public $updateTime;
   protected $upgradeInfoType = UpgradeInfo::class;
   protected $upgradeInfoDataType = '';
   /**
-   * Output only. The deployed url for the function.
-   *
    * @var string
    */
   public $url;
 
   /**
-   * Describes the Build step of the function that builds a container from the
-   * given source.
-   *
-   * @param BuildConfig $buildConfig
+   * @param BuildConfig
    */
   public function setBuildConfig(BuildConfig $buildConfig)
   {
@@ -164,10 +90,7 @@ class CloudfunctionsFunction extends \Google\Collection
     return $this->buildConfig;
   }
   /**
-   * Output only. The create timestamp of a Cloud Function. This is only
-   * applicable to 2nd Gen functions.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -181,9 +104,7 @@ class CloudfunctionsFunction extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * User-provided description of a function.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -197,28 +118,21 @@ class CloudfunctionsFunction extends \Google\Collection
     return $this->description;
   }
   /**
-   * Describe whether the function is 1st Gen or 2nd Gen.
-   *
-   * Accepted values: ENVIRONMENT_UNSPECIFIED, GEN_1, GEN_2
-   *
-   * @param self::ENVIRONMENT_* $environment
+   * @param string
    */
   public function setEnvironment($environment)
   {
     $this->environment = $environment;
   }
   /**
-   * @return self::ENVIRONMENT_*
+   * @return string
    */
   public function getEnvironment()
   {
     return $this->environment;
   }
   /**
-   * An Eventarc trigger managed by Google Cloud Functions that fires events in
-   * response to a condition in another service.
-   *
-   * @param EventTrigger $eventTrigger
+   * @param EventTrigger
    */
   public function setEventTrigger(EventTrigger $eventTrigger)
   {
@@ -232,11 +146,7 @@ class CloudfunctionsFunction extends \Google\Collection
     return $this->eventTrigger;
   }
   /**
-   * Resource name of a KMS crypto key (managed by the user) used to
-   * encrypt/decrypt function resources. It must match the pattern `projects/{pr
-   * oject}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
-   *
-   * @param string $kmsKeyName
+   * @param string
    */
   public function setKmsKeyName($kmsKeyName)
   {
@@ -250,9 +160,7 @@ class CloudfunctionsFunction extends \Google\Collection
     return $this->kmsKeyName;
   }
   /**
-   * Labels associated with this Cloud Function.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -266,10 +174,7 @@ class CloudfunctionsFunction extends \Google\Collection
     return $this->labels;
   }
   /**
-   * A user-defined name of the function. Function names must be unique globally
-   * and match pattern `projects/locations/functions`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -283,9 +188,7 @@ class CloudfunctionsFunction extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. Reserved for future use.
-   *
-   * @param bool $satisfiesPzi
+   * @param bool
    */
   public function setSatisfiesPzi($satisfiesPzi)
   {
@@ -299,9 +202,7 @@ class CloudfunctionsFunction extends \Google\Collection
     return $this->satisfiesPzi;
   }
   /**
-   * Output only. Reserved for future use.
-   *
-   * @param bool $satisfiesPzs
+   * @param bool
    */
   public function setSatisfiesPzs($satisfiesPzs)
   {
@@ -315,10 +216,7 @@ class CloudfunctionsFunction extends \Google\Collection
     return $this->satisfiesPzs;
   }
   /**
-   * Describes the Service being deployed. Currently deploys services to Cloud
-   * Run (fully managed).
-   *
-   * @param ServiceConfig $serviceConfig
+   * @param ServiceConfig
    */
   public function setServiceConfig(ServiceConfig $serviceConfig)
   {
@@ -332,28 +230,21 @@ class CloudfunctionsFunction extends \Google\Collection
     return $this->serviceConfig;
   }
   /**
-   * Output only. State of the function.
-   *
-   * Accepted values: STATE_UNSPECIFIED, ACTIVE, FAILED, DEPLOYING, DELETING,
-   * UNKNOWN, DETACHING, DETACH_FAILED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. State Messages for this Cloud Function.
-   *
-   * @param GoogleCloudFunctionsV2StateMessage[] $stateMessages
+   * @param GoogleCloudFunctionsV2StateMessage[]
    */
   public function setStateMessages($stateMessages)
   {
@@ -367,9 +258,7 @@ class CloudfunctionsFunction extends \Google\Collection
     return $this->stateMessages;
   }
   /**
-   * Output only. The last update timestamp of a Cloud Function.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -383,9 +272,7 @@ class CloudfunctionsFunction extends \Google\Collection
     return $this->updateTime;
   }
   /**
-   * Output only. UpgradeInfo for this Cloud Function
-   *
-   * @param UpgradeInfo $upgradeInfo
+   * @param UpgradeInfo
    */
   public function setUpgradeInfo(UpgradeInfo $upgradeInfo)
   {
@@ -399,9 +286,7 @@ class CloudfunctionsFunction extends \Google\Collection
     return $this->upgradeInfo;
   }
   /**
-   * Output only. The deployed url for the function.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

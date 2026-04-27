@@ -20,8 +20,6 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1SecretEnvVar extends \Google\Model
 {
   /**
-   * Required. Name of the secret environment variable.
-   *
    * @var string
    */
   public $name;
@@ -29,9 +27,7 @@ class GoogleCloudAiplatformV1SecretEnvVar extends \Google\Model
   protected $secretRefDataType = '';
 
   /**
-   * Required. Name of the secret environment variable.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -45,10 +41,7 @@ class GoogleCloudAiplatformV1SecretEnvVar extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. Reference to a secret stored in the Cloud Secret Manager that
-   * will provide the value for this environment variable.
-   *
-   * @param GoogleCloudAiplatformV1SecretRef $secretRef
+   * @param GoogleCloudAiplatformV1SecretRef
    */
   public function setSecretRef(GoogleCloudAiplatformV1SecretRef $secretRef)
   {

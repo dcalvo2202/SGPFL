@@ -20,8 +20,6 @@ namespace Google\Service\DLP;
 class GooglePrivacyDlpV2ValueFrequency extends \Google\Model
 {
   /**
-   * How many times the value is contained in the field.
-   *
    * @var string
    */
   public $count;
@@ -29,9 +27,7 @@ class GooglePrivacyDlpV2ValueFrequency extends \Google\Model
   protected $valueDataType = '';
 
   /**
-   * How many times the value is contained in the field.
-   *
-   * @param string $count
+   * @param string
    */
   public function setCount($count)
   {
@@ -45,9 +41,7 @@ class GooglePrivacyDlpV2ValueFrequency extends \Google\Model
     return $this->count;
   }
   /**
-   * A value contained in the field in question.
-   *
-   * @param GooglePrivacyDlpV2Value $value
+   * @param GooglePrivacyDlpV2Value
    */
   public function setValue(GooglePrivacyDlpV2Value $value)
   {

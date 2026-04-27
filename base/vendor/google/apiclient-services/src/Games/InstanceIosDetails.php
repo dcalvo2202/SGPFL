@@ -20,55 +20,36 @@ namespace Google\Service\Games;
 class InstanceIosDetails extends \Google\Model
 {
   /**
-   * Bundle identifier.
-   *
    * @var string
    */
   public $bundleIdentifier;
   /**
-   * iTunes App ID.
-   *
    * @var string
    */
   public $itunesAppId;
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#instanceIosDetails`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Indicates that this instance is the default for new installations on iPad
-   * devices.
-   *
    * @var bool
    */
   public $preferredForIpad;
   /**
-   * Indicates that this instance is the default for new installations on iPhone
-   * devices.
-   *
    * @var bool
    */
   public $preferredForIphone;
   /**
-   * Flag to indicate if this instance supports iPad.
-   *
    * @var bool
    */
   public $supportIpad;
   /**
-   * Flag to indicate if this instance supports iPhone.
-   *
    * @var bool
    */
   public $supportIphone;
 
   /**
-   * Bundle identifier.
-   *
-   * @param string $bundleIdentifier
+   * @param string
    */
   public function setBundleIdentifier($bundleIdentifier)
   {
@@ -82,9 +63,7 @@ class InstanceIosDetails extends \Google\Model
     return $this->bundleIdentifier;
   }
   /**
-   * iTunes App ID.
-   *
-   * @param string $itunesAppId
+   * @param string
    */
   public function setItunesAppId($itunesAppId)
   {
@@ -98,10 +77,7 @@ class InstanceIosDetails extends \Google\Model
     return $this->itunesAppId;
   }
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#instanceIosDetails`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -115,10 +91,7 @@ class InstanceIosDetails extends \Google\Model
     return $this->kind;
   }
   /**
-   * Indicates that this instance is the default for new installations on iPad
-   * devices.
-   *
-   * @param bool $preferredForIpad
+   * @param bool
    */
   public function setPreferredForIpad($preferredForIpad)
   {
@@ -132,10 +105,7 @@ class InstanceIosDetails extends \Google\Model
     return $this->preferredForIpad;
   }
   /**
-   * Indicates that this instance is the default for new installations on iPhone
-   * devices.
-   *
-   * @param bool $preferredForIphone
+   * @param bool
    */
   public function setPreferredForIphone($preferredForIphone)
   {
@@ -149,9 +119,7 @@ class InstanceIosDetails extends \Google\Model
     return $this->preferredForIphone;
   }
   /**
-   * Flag to indicate if this instance supports iPad.
-   *
-   * @param bool $supportIpad
+   * @param bool
    */
   public function setSupportIpad($supportIpad)
   {
@@ -165,9 +133,7 @@ class InstanceIosDetails extends \Google\Model
     return $this->supportIpad;
   }
   /**
-   * Flag to indicate if this instance supports iPhone.
-   *
-   * @param bool $supportIphone
+   * @param bool
    */
   public function setSupportIphone($supportIphone)
   {

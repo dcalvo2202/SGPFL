@@ -24,9 +24,7 @@ class DescribeConversionWorkspaceRevisionsResponse extends \Google\Collection
   protected $revisionsDataType = 'array';
 
   /**
-   * The list of conversion workspace revisions.
-   *
-   * @param ConversionWorkspace[] $revisions
+   * @param ConversionWorkspace[]
    */
   public function setRevisions($revisions)
   {

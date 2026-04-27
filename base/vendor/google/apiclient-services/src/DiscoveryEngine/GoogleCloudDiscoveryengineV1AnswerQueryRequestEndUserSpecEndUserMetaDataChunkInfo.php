@@ -20,8 +20,6 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1AnswerQueryRequestEndUserSpecEndUserMetaDataChunkInfo extends \Google\Model
 {
   /**
-   * Chunk textual content. It is limited to 8000 characters.
-   *
    * @var string
    */
   public $content;
@@ -29,9 +27,7 @@ class GoogleCloudDiscoveryengineV1AnswerQueryRequestEndUserSpecEndUserMetaDataCh
   protected $documentMetadataDataType = '';
 
   /**
-   * Chunk textual content. It is limited to 8000 characters.
-   *
-   * @param string $content
+   * @param string
    */
   public function setContent($content)
   {
@@ -45,9 +41,7 @@ class GoogleCloudDiscoveryengineV1AnswerQueryRequestEndUserSpecEndUserMetaDataCh
     return $this->content;
   }
   /**
-   * Metadata of the document from the current chunk.
-   *
-   * @param GoogleCloudDiscoveryengineV1AnswerQueryRequestEndUserSpecEndUserMetaDataChunkInfoDocumentMetadata $documentMetadata
+   * @param GoogleCloudDiscoveryengineV1AnswerQueryRequestEndUserSpecEndUserMetaDataChunkInfoDocumentMetadata
    */
   public function setDocumentMetadata(GoogleCloudDiscoveryengineV1AnswerQueryRequestEndUserSpecEndUserMetaDataChunkInfoDocumentMetadata $documentMetadata)
   {

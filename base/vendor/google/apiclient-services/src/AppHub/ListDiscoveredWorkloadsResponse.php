@@ -23,22 +23,16 @@ class ListDiscoveredWorkloadsResponse extends \Google\Collection
   protected $discoveredWorkloadsType = DiscoveredWorkload::class;
   protected $discoveredWorkloadsDataType = 'array';
   /**
-   * A token identifying a page of results the server should return.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * List of Discovered Workloads.
-   *
-   * @param DiscoveredWorkload[] $discoveredWorkloads
+   * @param DiscoveredWorkload[]
    */
   public function setDiscoveredWorkloads($discoveredWorkloads)
   {
@@ -52,9 +46,7 @@ class ListDiscoveredWorkloadsResponse extends \Google\Collection
     return $this->discoveredWorkloads;
   }
   /**
-   * A token identifying a page of results the server should return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -68,9 +60,7 @@ class ListDiscoveredWorkloadsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

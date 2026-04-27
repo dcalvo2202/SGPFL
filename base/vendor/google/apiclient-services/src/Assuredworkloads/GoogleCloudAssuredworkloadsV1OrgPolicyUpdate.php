@@ -25,9 +25,7 @@ class GoogleCloudAssuredworkloadsV1OrgPolicyUpdate extends \Google\Model
   protected $suggestedPolicyDataType = '';
 
   /**
-   * The org policy currently applied on the assured workload resource.
-   *
-   * @param GoogleCloudAssuredworkloadsV1OrgPolicy $appliedPolicy
+   * @param GoogleCloudAssuredworkloadsV1OrgPolicy
    */
   public function setAppliedPolicy(GoogleCloudAssuredworkloadsV1OrgPolicy $appliedPolicy)
   {
@@ -41,9 +39,7 @@ class GoogleCloudAssuredworkloadsV1OrgPolicyUpdate extends \Google\Model
     return $this->appliedPolicy;
   }
   /**
-   * The suggested org policy that replaces the applied policy.
-   *
-   * @param GoogleCloudAssuredworkloadsV1OrgPolicy $suggestedPolicy
+   * @param GoogleCloudAssuredworkloadsV1OrgPolicy
    */
   public function setSuggestedPolicy(GoogleCloudAssuredworkloadsV1OrgPolicy $suggestedPolicy)
   {

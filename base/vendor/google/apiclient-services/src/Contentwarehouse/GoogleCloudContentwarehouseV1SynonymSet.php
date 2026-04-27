@@ -21,18 +21,10 @@ class GoogleCloudContentwarehouseV1SynonymSet extends \Google\Collection
 {
   protected $collection_key = 'synonyms';
   /**
-   * This is a freeform field. Example contexts can be "sales," "engineering,"
-   * "real estate," "accounting," etc. The context can be supplied during search
-   * requests.
-   *
    * @var string
    */
   public $context;
   /**
-   * The resource name of the SynonymSet This is mandatory for
-   * google.api.resource. Format:
-   * projects/{project_number}/locations/{location}/synonymSets/{context}.
-   *
    * @var string
    */
   public $name;
@@ -40,11 +32,7 @@ class GoogleCloudContentwarehouseV1SynonymSet extends \Google\Collection
   protected $synonymsDataType = 'array';
 
   /**
-   * This is a freeform field. Example contexts can be "sales," "engineering,"
-   * "real estate," "accounting," etc. The context can be supplied during search
-   * requests.
-   *
-   * @param string $context
+   * @param string
    */
   public function setContext($context)
   {
@@ -58,11 +46,7 @@ class GoogleCloudContentwarehouseV1SynonymSet extends \Google\Collection
     return $this->context;
   }
   /**
-   * The resource name of the SynonymSet This is mandatory for
-   * google.api.resource. Format:
-   * projects/{project_number}/locations/{location}/synonymSets/{context}.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -76,9 +60,7 @@ class GoogleCloudContentwarehouseV1SynonymSet extends \Google\Collection
     return $this->name;
   }
   /**
-   * List of Synonyms for the context.
-   *
-   * @param GoogleCloudContentwarehouseV1SynonymSetSynonym[] $synonyms
+   * @param GoogleCloudContentwarehouseV1SynonymSetSynonym[]
    */
   public function setSynonyms($synonyms)
   {

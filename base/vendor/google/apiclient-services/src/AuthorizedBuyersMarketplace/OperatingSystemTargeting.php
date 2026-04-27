@@ -25,9 +25,7 @@ class OperatingSystemTargeting extends \Google\Model
   protected $operatingSystemVersionCriteriaDataType = '';
 
   /**
-   * IDs of operating systems to be included/excluded.
-   *
-   * @param CriteriaTargeting $operatingSystemCriteria
+   * @param CriteriaTargeting
    */
   public function setOperatingSystemCriteria(CriteriaTargeting $operatingSystemCriteria)
   {
@@ -41,9 +39,7 @@ class OperatingSystemTargeting extends \Google\Model
     return $this->operatingSystemCriteria;
   }
   /**
-   * IDs of operating system versions to be included/excluded.
-   *
-   * @param CriteriaTargeting $operatingSystemVersionCriteria
+   * @param CriteriaTargeting
    */
   public function setOperatingSystemVersionCriteria(CriteriaTargeting $operatingSystemVersionCriteria)
   {

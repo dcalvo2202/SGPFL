@@ -22,18 +22,12 @@ class UpdateFormInfoRequest extends \Google\Model
   protected $infoType = Info::class;
   protected $infoDataType = '';
   /**
-   * Required. Only values named in this mask are changed. At least one field
-   * must be specified. The root `info` is implied and should not be specified.
-   * A single `"*"` can be used as short-hand for updating every field.
-   *
    * @var string
    */
   public $updateMask;
 
   /**
-   * The info to update.
-   *
-   * @param Info $info
+   * @param Info
    */
   public function setInfo(Info $info)
   {
@@ -47,11 +41,7 @@ class UpdateFormInfoRequest extends \Google\Model
     return $this->info;
   }
   /**
-   * Required. Only values named in this mask are changed. At least one field
-   * must be specified. The root `info` is implied and should not be specified.
-   * A single `"*"` can be used as short-hand for updating every field.
-   *
-   * @param string $updateMask
+   * @param string
    */
   public function setUpdateMask($updateMask)
   {

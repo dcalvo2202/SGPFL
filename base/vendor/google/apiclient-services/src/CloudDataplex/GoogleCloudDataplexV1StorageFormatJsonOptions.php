@@ -20,18 +20,12 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1StorageFormatJsonOptions extends \Google\Model
 {
   /**
-   * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8"
-   * and "ISO-8859-1". Defaults to UTF-8 if not specified.
-   *
    * @var string
    */
   public $encoding;
 
   /**
-   * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8"
-   * and "ISO-8859-1". Defaults to UTF-8 if not specified.
-   *
-   * @param string $encoding
+   * @param string
    */
   public function setEncoding($encoding)
   {

@@ -19,109 +19,51 @@ namespace Google\Service\CloudDataplex;
 
 class GoogleCloudDataplexV1Zone extends \Google\Model
 {
-  /**
-   * State is not specified.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Resource is active, i.e., ready to use.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * Resource is under creation.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * Resource is under deletion.
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * Resource is active but has unresolved actions.
-   */
-  public const STATE_ACTION_REQUIRED = 'ACTION_REQUIRED';
-  /**
-   * Zone type not specified.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * A zone that contains data that needs further processing before it is
-   * considered generally ready for consumption and analytics workloads.
-   */
-  public const TYPE_RAW = 'RAW';
-  /**
-   * A zone that contains data that is considered to be ready for broader
-   * consumption and analytics workloads. Curated structured data stored in
-   * Cloud Storage must conform to certain file formats (parquet, avro and orc)
-   * and organized in a hive-compatible directory layout.
-   */
-  public const TYPE_CURATED = 'CURATED';
   protected $assetStatusType = GoogleCloudDataplexV1AssetStatus::class;
   protected $assetStatusDataType = '';
   /**
-   * Output only. The time when the zone was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. Description of the zone.
-   *
    * @var string
    */
   public $description;
   protected $discoverySpecType = GoogleCloudDataplexV1ZoneDiscoverySpec::class;
   protected $discoverySpecDataType = '';
   /**
-   * Optional. User friendly display name.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Optional. User defined labels for the zone.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Output only. The relative resource name of the zone, of the form: projects/
-   * {project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}.
-   *
    * @var string
    */
   public $name;
   protected $resourceSpecType = GoogleCloudDataplexV1ZoneResourceSpec::class;
   protected $resourceSpecDataType = '';
   /**
-   * Output only. Current state of the zone.
-   *
    * @var string
    */
   public $state;
   /**
-   * Required. Immutable. The type of the zone.
-   *
    * @var string
    */
   public $type;
   /**
-   * Output only. System generated globally unique ID for the zone. This ID will
-   * be different if the zone is deleted and re-created with the same name.
-   *
    * @var string
    */
   public $uid;
   /**
-   * Output only. The time when the zone was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. Aggregated status of the underlying assets of the zone.
-   *
-   * @param GoogleCloudDataplexV1AssetStatus $assetStatus
+   * @param GoogleCloudDataplexV1AssetStatus
    */
   public function setAssetStatus(GoogleCloudDataplexV1AssetStatus $assetStatus)
   {
@@ -135,9 +77,7 @@ class GoogleCloudDataplexV1Zone extends \Google\Model
     return $this->assetStatus;
   }
   /**
-   * Output only. The time when the zone was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -151,9 +91,7 @@ class GoogleCloudDataplexV1Zone extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Optional. Description of the zone.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -167,10 +105,7 @@ class GoogleCloudDataplexV1Zone extends \Google\Model
     return $this->description;
   }
   /**
-   * Optional. Specification of the discovery feature applied to data in this
-   * zone.
-   *
-   * @param GoogleCloudDataplexV1ZoneDiscoverySpec $discoverySpec
+   * @param GoogleCloudDataplexV1ZoneDiscoverySpec
    */
   public function setDiscoverySpec(GoogleCloudDataplexV1ZoneDiscoverySpec $discoverySpec)
   {
@@ -184,9 +119,7 @@ class GoogleCloudDataplexV1Zone extends \Google\Model
     return $this->discoverySpec;
   }
   /**
-   * Optional. User friendly display name.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -200,9 +133,7 @@ class GoogleCloudDataplexV1Zone extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Optional. User defined labels for the zone.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -216,10 +147,7 @@ class GoogleCloudDataplexV1Zone extends \Google\Model
     return $this->labels;
   }
   /**
-   * Output only. The relative resource name of the zone, of the form: projects/
-   * {project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -233,10 +161,7 @@ class GoogleCloudDataplexV1Zone extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. Specification of the resources that are referenced by the assets
-   * within this zone.
-   *
-   * @param GoogleCloudDataplexV1ZoneResourceSpec $resourceSpec
+   * @param GoogleCloudDataplexV1ZoneResourceSpec
    */
   public function setResourceSpec(GoogleCloudDataplexV1ZoneResourceSpec $resourceSpec)
   {
@@ -250,47 +175,35 @@ class GoogleCloudDataplexV1Zone extends \Google\Model
     return $this->resourceSpec;
   }
   /**
-   * Output only. Current state of the zone.
-   *
-   * Accepted values: STATE_UNSPECIFIED, ACTIVE, CREATING, DELETING,
-   * ACTION_REQUIRED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Required. Immutable. The type of the zone.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, RAW, CURATED
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * Output only. System generated globally unique ID for the zone. This ID will
-   * be different if the zone is deleted and re-created with the same name.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {
@@ -304,9 +217,7 @@ class GoogleCloudDataplexV1Zone extends \Google\Model
     return $this->uid;
   }
   /**
-   * Output only. The time when the zone was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

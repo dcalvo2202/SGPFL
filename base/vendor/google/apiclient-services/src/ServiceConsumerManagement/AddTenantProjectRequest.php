@@ -22,18 +22,12 @@ class AddTenantProjectRequest extends \Google\Model
   protected $projectConfigType = TenantProjectConfig::class;
   protected $projectConfigDataType = '';
   /**
-   * Required. Tag of the added project. Must be less than 128 characters.
-   * Required.
-   *
    * @var string
    */
   public $tag;
 
   /**
-   * Configuration of the new tenant project to be added to tenancy unit
-   * resources.
-   *
-   * @param TenantProjectConfig $projectConfig
+   * @param TenantProjectConfig
    */
   public function setProjectConfig(TenantProjectConfig $projectConfig)
   {
@@ -47,10 +41,7 @@ class AddTenantProjectRequest extends \Google\Model
     return $this->projectConfig;
   }
   /**
-   * Required. Tag of the added project. Must be less than 128 characters.
-   * Required.
-   *
-   * @param string $tag
+   * @param string
    */
   public function setTag($tag)
   {

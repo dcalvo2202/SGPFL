@@ -20,16 +20,12 @@ namespace Google\Service\AlertCenter;
 class SSOProfileDeletedEvent extends \Google\Model
 {
   /**
-   * sso profile name which got deleted
-   *
    * @var string
    */
   public $inboundSsoProfileName;
 
   /**
-   * sso profile name which got deleted
-   *
-   * @param string $inboundSsoProfileName
+   * @param string
    */
   public function setInboundSsoProfileName($inboundSsoProfileName)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\CloudAlloyDBAdmin;
 class ImportClusterResponse extends \Google\Model
 {
   /**
-   * Required. Size of the object downloaded from Google Cloud Storage in bytes.
-   *
    * @var string
    */
   public $bytesDownloaded;
 
   /**
-   * Required. Size of the object downloaded from Google Cloud Storage in bytes.
-   *
-   * @param string $bytesDownloaded
+   * @param string
    */
   public function setBytesDownloaded($bytesDownloaded)
   {

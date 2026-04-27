@@ -20,22 +20,16 @@ namespace Google\Service\DataCatalog;
 class GoogleCloudDatacatalogV1ContactsPerson extends \Google\Model
 {
   /**
-   * Designation of the person, for example, Data Steward.
-   *
    * @var string
    */
   public $designation;
   /**
-   * Email of the person in the format of `john.doe@xyz`, ``, or `John Doe`.
-   *
    * @var string
    */
   public $email;
 
   /**
-   * Designation of the person, for example, Data Steward.
-   *
-   * @param string $designation
+   * @param string
    */
   public function setDesignation($designation)
   {
@@ -49,9 +43,7 @@ class GoogleCloudDatacatalogV1ContactsPerson extends \Google\Model
     return $this->designation;
   }
   /**
-   * Email of the person in the format of `john.doe@xyz`, ``, or `John Doe`.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {

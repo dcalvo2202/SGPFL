@@ -20,29 +20,14 @@ namespace Google\Service\CloudNaturalLanguage;
 class XPSEvaluationMetrics extends \Google\Model
 {
   /**
-   * The annotation_spec for which this evaluation metrics instance had been
-   * created. Empty iff this is an overall model evaluation (like Tables
-   * evaluation metrics), i.e. aggregated across all labels. The value comes
-   * from the input annotations in AnnotatedExample. For MVP product or for text
-   * sentiment models where annotation_spec_id_token is not available, set label
-   * instead.
-   *
    * @var string
    */
   public $annotationSpecIdToken;
   /**
-   * The integer category label for which this evaluation metric instance had
-   * been created. Valid categories are 0 or higher. Overall model evaluation
-   * should set this to negative values (rather than implicit zero). Only used
-   * for Image Segmentation (prefer to set annotation_spec_id_token instead).
-   * Note: uCAIP Image Segmentation should use annotation_spec_id_token.
-   *
    * @var int
    */
   public $category;
   /**
-   * The number of examples used to create this evaluation metrics instance.
-   *
    * @var int
    */
   public $evaluatedExampleCount;
@@ -53,12 +38,6 @@ class XPSEvaluationMetrics extends \Google\Model
   protected $imageSegmentationEvalMetricsType = XPSImageSegmentationEvaluationMetrics::class;
   protected $imageSegmentationEvalMetricsDataType = '';
   /**
-   * The label for which this evaluation metrics instance had been created.
-   * Empty iff this is an overall model evaluation (like Tables evaluation
-   * metrics), i.e. aggregated across all labels. The label maps to
-   * AnnotationSpec.display_name in Public API protos. Only used by MVP
-   * implementation and text sentiment FULL implementation.
-   *
    * @var string
    */
   public $label;
@@ -84,14 +63,7 @@ class XPSEvaluationMetrics extends \Google\Model
   protected $videoObjectTrackingEvalMetricsDataType = '';
 
   /**
-   * The annotation_spec for which this evaluation metrics instance had been
-   * created. Empty iff this is an overall model evaluation (like Tables
-   * evaluation metrics), i.e. aggregated across all labels. The value comes
-   * from the input annotations in AnnotatedExample. For MVP product or for text
-   * sentiment models where annotation_spec_id_token is not available, set label
-   * instead.
-   *
-   * @param string $annotationSpecIdToken
+   * @param string
    */
   public function setAnnotationSpecIdToken($annotationSpecIdToken)
   {
@@ -105,13 +77,7 @@ class XPSEvaluationMetrics extends \Google\Model
     return $this->annotationSpecIdToken;
   }
   /**
-   * The integer category label for which this evaluation metric instance had
-   * been created. Valid categories are 0 or higher. Overall model evaluation
-   * should set this to negative values (rather than implicit zero). Only used
-   * for Image Segmentation (prefer to set annotation_spec_id_token instead).
-   * Note: uCAIP Image Segmentation should use annotation_spec_id_token.
-   *
-   * @param int $category
+   * @param int
    */
   public function setCategory($category)
   {
@@ -125,9 +91,7 @@ class XPSEvaluationMetrics extends \Google\Model
     return $this->category;
   }
   /**
-   * The number of examples used to create this evaluation metrics instance.
-   *
-   * @param int $evaluatedExampleCount
+   * @param int
    */
   public function setEvaluatedExampleCount($evaluatedExampleCount)
   {
@@ -141,7 +105,7 @@ class XPSEvaluationMetrics extends \Google\Model
     return $this->evaluatedExampleCount;
   }
   /**
-   * @param XPSClassificationEvaluationMetrics $imageClassificationEvalMetrics
+   * @param XPSClassificationEvaluationMetrics
    */
   public function setImageClassificationEvalMetrics(XPSClassificationEvaluationMetrics $imageClassificationEvalMetrics)
   {
@@ -155,7 +119,7 @@ class XPSEvaluationMetrics extends \Google\Model
     return $this->imageClassificationEvalMetrics;
   }
   /**
-   * @param XPSImageObjectDetectionEvaluationMetrics $imageObjectDetectionEvalMetrics
+   * @param XPSImageObjectDetectionEvaluationMetrics
    */
   public function setImageObjectDetectionEvalMetrics(XPSImageObjectDetectionEvaluationMetrics $imageObjectDetectionEvalMetrics)
   {
@@ -169,7 +133,7 @@ class XPSEvaluationMetrics extends \Google\Model
     return $this->imageObjectDetectionEvalMetrics;
   }
   /**
-   * @param XPSImageSegmentationEvaluationMetrics $imageSegmentationEvalMetrics
+   * @param XPSImageSegmentationEvaluationMetrics
    */
   public function setImageSegmentationEvalMetrics(XPSImageSegmentationEvaluationMetrics $imageSegmentationEvalMetrics)
   {
@@ -183,13 +147,7 @@ class XPSEvaluationMetrics extends \Google\Model
     return $this->imageSegmentationEvalMetrics;
   }
   /**
-   * The label for which this evaluation metrics instance had been created.
-   * Empty iff this is an overall model evaluation (like Tables evaluation
-   * metrics), i.e. aggregated across all labels. The label maps to
-   * AnnotationSpec.display_name in Public API protos. Only used by MVP
-   * implementation and text sentiment FULL implementation.
-   *
-   * @param string $label
+   * @param string
    */
   public function setLabel($label)
   {
@@ -203,7 +161,7 @@ class XPSEvaluationMetrics extends \Google\Model
     return $this->label;
   }
   /**
-   * @param XPSRegressionEvaluationMetrics $regressionEvalMetrics
+   * @param XPSRegressionEvaluationMetrics
    */
   public function setRegressionEvalMetrics(XPSRegressionEvaluationMetrics $regressionEvalMetrics)
   {
@@ -217,7 +175,7 @@ class XPSEvaluationMetrics extends \Google\Model
     return $this->regressionEvalMetrics;
   }
   /**
-   * @param XPSClassificationEvaluationMetrics $tablesClassificationEvalMetrics
+   * @param XPSClassificationEvaluationMetrics
    */
   public function setTablesClassificationEvalMetrics(XPSClassificationEvaluationMetrics $tablesClassificationEvalMetrics)
   {
@@ -231,7 +189,7 @@ class XPSEvaluationMetrics extends \Google\Model
     return $this->tablesClassificationEvalMetrics;
   }
   /**
-   * @param XPSTablesEvaluationMetrics $tablesEvalMetrics
+   * @param XPSTablesEvaluationMetrics
    */
   public function setTablesEvalMetrics(XPSTablesEvaluationMetrics $tablesEvalMetrics)
   {
@@ -245,7 +203,7 @@ class XPSEvaluationMetrics extends \Google\Model
     return $this->tablesEvalMetrics;
   }
   /**
-   * @param XPSClassificationEvaluationMetrics $textClassificationEvalMetrics
+   * @param XPSClassificationEvaluationMetrics
    */
   public function setTextClassificationEvalMetrics(XPSClassificationEvaluationMetrics $textClassificationEvalMetrics)
   {
@@ -259,7 +217,7 @@ class XPSEvaluationMetrics extends \Google\Model
     return $this->textClassificationEvalMetrics;
   }
   /**
-   * @param XPSTextExtractionEvaluationMetrics $textExtractionEvalMetrics
+   * @param XPSTextExtractionEvaluationMetrics
    */
   public function setTextExtractionEvalMetrics(XPSTextExtractionEvaluationMetrics $textExtractionEvalMetrics)
   {
@@ -273,7 +231,7 @@ class XPSEvaluationMetrics extends \Google\Model
     return $this->textExtractionEvalMetrics;
   }
   /**
-   * @param XPSTextSentimentEvaluationMetrics $textSentimentEvalMetrics
+   * @param XPSTextSentimentEvaluationMetrics
    */
   public function setTextSentimentEvalMetrics(XPSTextSentimentEvaluationMetrics $textSentimentEvalMetrics)
   {
@@ -287,7 +245,7 @@ class XPSEvaluationMetrics extends \Google\Model
     return $this->textSentimentEvalMetrics;
   }
   /**
-   * @param XPSTranslationEvaluationMetrics $translationEvalMetrics
+   * @param XPSTranslationEvaluationMetrics
    */
   public function setTranslationEvalMetrics(XPSTranslationEvaluationMetrics $translationEvalMetrics)
   {
@@ -301,7 +259,7 @@ class XPSEvaluationMetrics extends \Google\Model
     return $this->translationEvalMetrics;
   }
   /**
-   * @param XPSVideoActionRecognitionEvaluationMetrics $videoActionRecognitionEvalMetrics
+   * @param XPSVideoActionRecognitionEvaluationMetrics
    */
   public function setVideoActionRecognitionEvalMetrics(XPSVideoActionRecognitionEvaluationMetrics $videoActionRecognitionEvalMetrics)
   {
@@ -315,7 +273,7 @@ class XPSEvaluationMetrics extends \Google\Model
     return $this->videoActionRecognitionEvalMetrics;
   }
   /**
-   * @param XPSClassificationEvaluationMetrics $videoClassificationEvalMetrics
+   * @param XPSClassificationEvaluationMetrics
    */
   public function setVideoClassificationEvalMetrics(XPSClassificationEvaluationMetrics $videoClassificationEvalMetrics)
   {
@@ -329,7 +287,7 @@ class XPSEvaluationMetrics extends \Google\Model
     return $this->videoClassificationEvalMetrics;
   }
   /**
-   * @param XPSVideoObjectTrackingEvaluationMetrics $videoObjectTrackingEvalMetrics
+   * @param XPSVideoObjectTrackingEvaluationMetrics
    */
   public function setVideoObjectTrackingEvalMetrics(XPSVideoObjectTrackingEvaluationMetrics $videoObjectTrackingEvalMetrics)
   {

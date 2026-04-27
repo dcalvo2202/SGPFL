@@ -23,11 +23,7 @@ class GoogleCloudAiplatformV1UpdateEndpointLongRunningRequest extends \Google\Mo
   protected $endpointDataType = '';
 
   /**
-   * Required. The Endpoint which replaces the resource on the server. Currently
-   * we only support updating the `client_connection_config` field, all the
-   * other fields' update will be blocked.
-   *
-   * @param GoogleCloudAiplatformV1Endpoint $endpoint
+   * @param GoogleCloudAiplatformV1Endpoint
    */
   public function setEndpoint(GoogleCloudAiplatformV1Endpoint $endpoint)
   {

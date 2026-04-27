@@ -20,16 +20,12 @@ namespace Google\Service\Datastream;
 class OracleScnPosition extends \Google\Model
 {
   /**
-   * Required. SCN number from where Logs will be read
-   *
    * @var string
    */
   public $scn;
 
   /**
-   * Required. SCN number from where Logs will be read
-   *
-   * @param string $scn
+   * @param string
    */
   public function setScn($scn)
   {

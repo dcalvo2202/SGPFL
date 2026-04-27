@@ -19,30 +19,14 @@ namespace Google\Service\Baremetalsolution;
 
 class VRF extends \Google\Collection
 {
-  /**
-   * The unspecified state.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The vrf is provisioning.
-   */
-  public const STATE_PROVISIONING = 'PROVISIONING';
-  /**
-   * The vrf is provisioned.
-   */
-  public const STATE_PROVISIONED = 'PROVISIONED';
   protected $collection_key = 'vlanAttachments';
   /**
-   * The name of the VRF.
-   *
    * @var string
    */
   public $name;
   protected $qosPolicyType = QosPolicy::class;
   protected $qosPolicyDataType = '';
   /**
-   * The possible state of VRF.
-   *
    * @var string
    */
   public $state;
@@ -50,9 +34,7 @@ class VRF extends \Google\Collection
   protected $vlanAttachmentsDataType = 'array';
 
   /**
-   * The name of the VRF.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -66,12 +48,7 @@ class VRF extends \Google\Collection
     return $this->name;
   }
   /**
-   * The QOS policy applied to this VRF. The value is only meaningful when all
-   * the vlan attachments have the same QoS. This field should not be used for
-   * new integrations, use vlan attachment level qos instead. The field is left
-   * for backward-compatibility.
-   *
-   * @param QosPolicy $qosPolicy
+   * @param QosPolicy
    */
   public function setQosPolicy(QosPolicy $qosPolicy)
   {
@@ -85,27 +62,21 @@ class VRF extends \Google\Collection
     return $this->qosPolicy;
   }
   /**
-   * The possible state of VRF.
-   *
-   * Accepted values: STATE_UNSPECIFIED, PROVISIONING, PROVISIONED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * The list of VLAN attachments for the VRF.
-   *
-   * @param VlanAttachment[] $vlanAttachments
+   * @param VlanAttachment[]
    */
   public function setVlanAttachments($vlanAttachments)
   {

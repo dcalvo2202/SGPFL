@@ -20,30 +20,20 @@ namespace Google\Service\Games;
 class AchievementIncrementResponse extends \Google\Model
 {
   /**
-   * The current steps recorded for this incremental achievement.
-   *
    * @var int
    */
   public $currentSteps;
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#achievementIncrementResponse`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Whether the current steps for the achievement has reached the number of
-   * steps required to unlock.
-   *
    * @var bool
    */
   public $newlyUnlocked;
 
   /**
-   * The current steps recorded for this incremental achievement.
-   *
-   * @param int $currentSteps
+   * @param int
    */
   public function setCurrentSteps($currentSteps)
   {
@@ -57,10 +47,7 @@ class AchievementIncrementResponse extends \Google\Model
     return $this->currentSteps;
   }
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#achievementIncrementResponse`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -74,10 +61,7 @@ class AchievementIncrementResponse extends \Google\Model
     return $this->kind;
   }
   /**
-   * Whether the current steps for the achievement has reached the number of
-   * steps required to unlock.
-   *
-   * @param bool $newlyUnlocked
+   * @param bool
    */
   public function setNewlyUnlocked($newlyUnlocked)
   {

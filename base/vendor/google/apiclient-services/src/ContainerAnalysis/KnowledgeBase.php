@@ -20,23 +20,16 @@ namespace Google\Service\ContainerAnalysis;
 class KnowledgeBase extends \Google\Model
 {
   /**
-   * The KB name (generally of the form KB[0-9]+ (e.g., KB123456)).
-   *
    * @var string
    */
   public $name;
   /**
-   * A link to the KB in the [Windows update catalog]
-   * (https://www.catalog.update.microsoft.com/).
-   *
    * @var string
    */
   public $url;
 
   /**
-   * The KB name (generally of the form KB[0-9]+ (e.g., KB123456)).
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -50,10 +43,7 @@ class KnowledgeBase extends \Google\Model
     return $this->name;
   }
   /**
-   * A link to the KB in the [Windows update catalog]
-   * (https://www.catalog.update.microsoft.com/).
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

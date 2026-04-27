@@ -23,22 +23,16 @@ class ListBackendsResponse extends \Google\Collection
   protected $backendsType = Backend::class;
   protected $backendsDataType = 'array';
   /**
-   * A token identifying the next page of results the server should return.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * The list of backends
-   *
-   * @param Backend[] $backends
+   * @param Backend[]
    */
   public function setBackends($backends)
   {
@@ -52,9 +46,7 @@ class ListBackendsResponse extends \Google\Collection
     return $this->backends;
   }
   /**
-   * A token identifying the next page of results the server should return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -68,9 +60,7 @@ class ListBackendsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

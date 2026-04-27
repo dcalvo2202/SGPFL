@@ -20,14 +20,10 @@ namespace Google\Service\Cloudchannel;
 class GoogleCloudChannelV1PriceTier extends \Google\Model
 {
   /**
-   * First resource for which the tier price applies.
-   *
    * @var int
    */
   public $firstResource;
   /**
-   * Last resource for which the tier price applies.
-   *
    * @var int
    */
   public $lastResource;
@@ -35,9 +31,7 @@ class GoogleCloudChannelV1PriceTier extends \Google\Model
   protected $priceDataType = '';
 
   /**
-   * First resource for which the tier price applies.
-   *
-   * @param int $firstResource
+   * @param int
    */
   public function setFirstResource($firstResource)
   {
@@ -51,9 +45,7 @@ class GoogleCloudChannelV1PriceTier extends \Google\Model
     return $this->firstResource;
   }
   /**
-   * Last resource for which the tier price applies.
-   *
-   * @param int $lastResource
+   * @param int
    */
   public function setLastResource($lastResource)
   {
@@ -67,9 +59,7 @@ class GoogleCloudChannelV1PriceTier extends \Google\Model
     return $this->lastResource;
   }
   /**
-   * Price of the tier.
-   *
-   * @param GoogleCloudChannelV1Price $price
+   * @param GoogleCloudChannelV1Price
    */
   public function setPrice(GoogleCloudChannelV1Price $price)
   {

@@ -21,9 +21,6 @@ class GoogleCloudApigeeV1ListDebugSessionsResponse extends \Google\Collection
 {
   protected $collection_key = 'sessions';
   /**
-   * Page token that you can include in a ListDebugSessionsRequest to retrieve
-   * the next page. If omitted, no subsequent pages exist.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GoogleCloudApigeeV1ListDebugSessionsResponse extends \Google\Collection
   protected $sessionsDataType = 'array';
 
   /**
-   * Page token that you can include in a ListDebugSessionsRequest to retrieve
-   * the next page. If omitted, no subsequent pages exist.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,10 +42,7 @@ class GoogleCloudApigeeV1ListDebugSessionsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Session info that includes debug session ID and the first transaction
-   * creation timestamp.
-   *
-   * @param GoogleCloudApigeeV1Session[] $sessions
+   * @param GoogleCloudApigeeV1Session[]
    */
   public function setSessions($sessions)
   {

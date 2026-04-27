@@ -23,8 +23,6 @@ class InappproductsListResponse extends \Google\Collection
   protected $inappproductType = InAppProduct::class;
   protected $inappproductDataType = 'array';
   /**
-   * The kind of this response ("androidpublisher#inappproductsListResponse").
-   *
    * @var string
    */
   public $kind;
@@ -34,9 +32,7 @@ class InappproductsListResponse extends \Google\Collection
   protected $tokenPaginationDataType = '';
 
   /**
-   * All in-app products.
-   *
-   * @param InAppProduct[] $inappproduct
+   * @param InAppProduct[]
    */
   public function setInappproduct($inappproduct)
   {
@@ -50,9 +46,7 @@ class InappproductsListResponse extends \Google\Collection
     return $this->inappproduct;
   }
   /**
-   * The kind of this response ("androidpublisher#inappproductsListResponse").
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -66,17 +60,13 @@ class InappproductsListResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Deprecated and unset.
-   *
-   * @deprecated
-   * @param PageInfo $pageInfo
+   * @param PageInfo
    */
   public function setPageInfo(PageInfo $pageInfo)
   {
     $this->pageInfo = $pageInfo;
   }
   /**
-   * @deprecated
    * @return PageInfo
    */
   public function getPageInfo()
@@ -84,9 +74,7 @@ class InappproductsListResponse extends \Google\Collection
     return $this->pageInfo;
   }
   /**
-   * Pagination token, to handle a number of products that is over one page.
-   *
-   * @param TokenPagination $tokenPagination
+   * @param TokenPagination
    */
   public function setTokenPagination(TokenPagination $tokenPagination)
   {

@@ -24,9 +24,7 @@ class FetchVerificationOptionsResponse extends \Google\Collection
   protected $optionsDataType = 'array';
 
   /**
-   * The available verification options.
-   *
-   * @param VerificationOption[] $options
+   * @param VerificationOption[]
    */
   public function setOptions($options)
   {

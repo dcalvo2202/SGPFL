@@ -23,16 +23,12 @@ class GoogleCloudAiplatformV1ListAnnotationsResponse extends \Google\Collection
   protected $annotationsType = GoogleCloudAiplatformV1Annotation::class;
   protected $annotationsDataType = 'array';
   /**
-   * The standard List next-page token.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * A list of Annotations that matches the specified filter in the request.
-   *
-   * @param GoogleCloudAiplatformV1Annotation[] $annotations
+   * @param GoogleCloudAiplatformV1Annotation[]
    */
   public function setAnnotations($annotations)
   {
@@ -46,9 +42,7 @@ class GoogleCloudAiplatformV1ListAnnotationsResponse extends \Google\Collection
     return $this->annotations;
   }
   /**
-   * The standard List next-page token.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

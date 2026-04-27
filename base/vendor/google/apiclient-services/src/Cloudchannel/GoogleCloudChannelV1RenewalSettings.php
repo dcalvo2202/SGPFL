@@ -20,55 +20,22 @@ namespace Google\Service\Cloudchannel;
 class GoogleCloudChannelV1RenewalSettings extends \Google\Model
 {
   /**
-   * Not used.
-   */
-  public const PAYMENT_PLAN_PAYMENT_PLAN_UNSPECIFIED = 'PAYMENT_PLAN_UNSPECIFIED';
-  /**
-   * Commitment.
-   */
-  public const PAYMENT_PLAN_COMMITMENT = 'COMMITMENT';
-  /**
-   * No commitment.
-   */
-  public const PAYMENT_PLAN_FLEXIBLE = 'FLEXIBLE';
-  /**
-   * Free.
-   */
-  public const PAYMENT_PLAN_FREE = 'FREE';
-  /**
-   * Trial.
-   */
-  public const PAYMENT_PLAN_TRIAL = 'TRIAL';
-  /**
-   * Price and ordering not available through API.
-   */
-  public const PAYMENT_PLAN_OFFLINE = 'OFFLINE';
-  /**
-   * If false, the plan will be completed at the end date.
-   *
    * @var bool
    */
   public $enableRenewal;
   protected $paymentCycleType = GoogleCloudChannelV1Period::class;
   protected $paymentCycleDataType = '';
   /**
-   * Describes how a reseller will be billed.
-   *
    * @var string
    */
   public $paymentPlan;
   /**
-   * If true and enable_renewal = true, the unit (for example seats or licenses)
-   * will be set to the number of active units at renewal time.
-   *
    * @var bool
    */
   public $resizeUnitCount;
 
   /**
-   * If false, the plan will be completed at the end date.
-   *
-   * @param bool $enableRenewal
+   * @param bool
    */
   public function setEnableRenewal($enableRenewal)
   {
@@ -82,10 +49,7 @@ class GoogleCloudChannelV1RenewalSettings extends \Google\Model
     return $this->enableRenewal;
   }
   /**
-   * Describes how frequently the reseller will be billed, such as once per
-   * month.
-   *
-   * @param GoogleCloudChannelV1Period $paymentCycle
+   * @param GoogleCloudChannelV1Period
    */
   public function setPaymentCycle(GoogleCloudChannelV1Period $paymentCycle)
   {
@@ -99,29 +63,21 @@ class GoogleCloudChannelV1RenewalSettings extends \Google\Model
     return $this->paymentCycle;
   }
   /**
-   * Describes how a reseller will be billed.
-   *
-   * Accepted values: PAYMENT_PLAN_UNSPECIFIED, COMMITMENT, FLEXIBLE, FREE,
-   * TRIAL, OFFLINE
-   *
-   * @param self::PAYMENT_PLAN_* $paymentPlan
+   * @param string
    */
   public function setPaymentPlan($paymentPlan)
   {
     $this->paymentPlan = $paymentPlan;
   }
   /**
-   * @return self::PAYMENT_PLAN_*
+   * @return string
    */
   public function getPaymentPlan()
   {
     return $this->paymentPlan;
   }
   /**
-   * If true and enable_renewal = true, the unit (for example seats or licenses)
-   * will be set to the number of active units at renewal time.
-   *
-   * @param bool $resizeUnitCount
+   * @param bool
    */
   public function setResizeUnitCount($resizeUnitCount)
   {

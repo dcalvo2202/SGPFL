@@ -23,23 +23,16 @@ class CreativeFieldsListResponse extends \Google\Collection
   protected $creativeFieldsType = CreativeField::class;
   protected $creativeFieldsDataType = 'array';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#creativeFieldsListResponse".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Pagination token to be used for the next list operation.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Creative field collection.
-   *
-   * @param CreativeField[] $creativeFields
+   * @param CreativeField[]
    */
   public function setCreativeFields($creativeFields)
   {
@@ -53,10 +46,7 @@ class CreativeFieldsListResponse extends \Google\Collection
     return $this->creativeFields;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#creativeFieldsListResponse".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -70,9 +60,7 @@ class CreativeFieldsListResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Pagination token to be used for the next list operation.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

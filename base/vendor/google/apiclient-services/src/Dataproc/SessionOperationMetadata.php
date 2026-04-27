@@ -19,76 +19,42 @@ namespace Google\Service\Dataproc;
 
 class SessionOperationMetadata extends \Google\Collection
 {
-  /**
-   * Session operation type is unknown.
-   */
-  public const OPERATION_TYPE_SESSION_OPERATION_TYPE_UNSPECIFIED = 'SESSION_OPERATION_TYPE_UNSPECIFIED';
-  /**
-   * Create Session operation type.
-   */
-  public const OPERATION_TYPE_CREATE = 'CREATE';
-  /**
-   * Terminate Session operation type.
-   */
-  public const OPERATION_TYPE_TERMINATE = 'TERMINATE';
-  /**
-   * Delete Session operation type.
-   */
-  public const OPERATION_TYPE_DELETE = 'DELETE';
   protected $collection_key = 'warnings';
   /**
-   * The time when the operation was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Short description of the operation.
-   *
    * @var string
    */
   public $description;
   /**
-   * The time when the operation was finished.
-   *
    * @var string
    */
   public $doneTime;
   /**
-   * Labels associated with the operation.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * The operation type.
-   *
    * @var string
    */
   public $operationType;
   /**
-   * Name of the session for the operation.
-   *
    * @var string
    */
   public $session;
   /**
-   * Session UUID for the operation.
-   *
    * @var string
    */
   public $sessionUuid;
   /**
-   * Warnings encountered during operation execution.
-   *
    * @var string[]
    */
   public $warnings;
 
   /**
-   * The time when the operation was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -102,9 +68,7 @@ class SessionOperationMetadata extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Short description of the operation.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -118,9 +82,7 @@ class SessionOperationMetadata extends \Google\Collection
     return $this->description;
   }
   /**
-   * The time when the operation was finished.
-   *
-   * @param string $doneTime
+   * @param string
    */
   public function setDoneTime($doneTime)
   {
@@ -134,9 +96,7 @@ class SessionOperationMetadata extends \Google\Collection
     return $this->doneTime;
   }
   /**
-   * Labels associated with the operation.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -150,28 +110,21 @@ class SessionOperationMetadata extends \Google\Collection
     return $this->labels;
   }
   /**
-   * The operation type.
-   *
-   * Accepted values: SESSION_OPERATION_TYPE_UNSPECIFIED, CREATE, TERMINATE,
-   * DELETE
-   *
-   * @param self::OPERATION_TYPE_* $operationType
+   * @param string
    */
   public function setOperationType($operationType)
   {
     $this->operationType = $operationType;
   }
   /**
-   * @return self::OPERATION_TYPE_*
+   * @return string
    */
   public function getOperationType()
   {
     return $this->operationType;
   }
   /**
-   * Name of the session for the operation.
-   *
-   * @param string $session
+   * @param string
    */
   public function setSession($session)
   {
@@ -185,9 +138,7 @@ class SessionOperationMetadata extends \Google\Collection
     return $this->session;
   }
   /**
-   * Session UUID for the operation.
-   *
-   * @param string $sessionUuid
+   * @param string
    */
   public function setSessionUuid($sessionUuid)
   {
@@ -201,9 +152,7 @@ class SessionOperationMetadata extends \Google\Collection
     return $this->sessionUuid;
   }
   /**
-   * Warnings encountered during operation execution.
-   *
-   * @param string[] $warnings
+   * @param string[]
    */
   public function setWarnings($warnings)
   {

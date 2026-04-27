@@ -20,99 +20,48 @@ namespace Google\Service\NetworkServices;
 class EndpointPolicy extends \Google\Model
 {
   /**
-   * Default value. Must not be used.
-   */
-  public const TYPE_ENDPOINT_POLICY_TYPE_UNSPECIFIED = 'ENDPOINT_POLICY_TYPE_UNSPECIFIED';
-  /**
-   * Represents a proxy deployed as a sidecar.
-   */
-  public const TYPE_SIDECAR_PROXY = 'SIDECAR_PROXY';
-  /**
-   * Represents a proxyless gRPC backend.
-   */
-  public const TYPE_GRPC_SERVER = 'GRPC_SERVER';
-  /**
-   * Optional. This field specifies the URL of AuthorizationPolicy resource that
-   * applies authorization policies to the inbound traffic at the matched
-   * endpoints. Refer to Authorization. If this field is not specified,
-   * authorization is disabled(no authz checks) for this endpoint.
-   *
    * @var string
    */
   public $authorizationPolicy;
   /**
-   * Optional. A URL referring to a ClientTlsPolicy resource. ClientTlsPolicy
-   * can be set to specify the authentication for traffic from the proxy to the
-   * actual endpoints. More specifically, it is applied to the outgoing traffic
-   * from the proxy to the endpoint. This is typically used for sidecar model
-   * where the proxy identifies itself as endpoint to the control plane, with
-   * the connection between sidecar and endpoint requiring authentication. If
-   * this field is not set, authentication is disabled(open). Applicable only
-   * when EndpointPolicyType is SIDECAR_PROXY.
-   *
    * @var string
    */
   public $clientTlsPolicy;
   /**
-   * Output only. The timestamp when the resource was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. A free-text description of the resource. Max length 1024
-   * characters.
-   *
    * @var string
    */
   public $description;
   protected $endpointMatcherType = EndpointMatcher::class;
   protected $endpointMatcherDataType = '';
   /**
-   * Optional. Set of label tags associated with the EndpointPolicy resource.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Identifier. Name of the EndpointPolicy resource. It matches pattern
-   * `projects/{project}/locations/endpointPolicies/{endpoint_policy}`.
-   *
    * @var string
    */
   public $name;
   /**
-   * Optional. A URL referring to ServerTlsPolicy resource. ServerTlsPolicy is
-   * used to determine the authentication policy to be applied to terminate the
-   * inbound traffic at the identified backends. If this field is not set,
-   * authentication is disabled(open) for this endpoint.
-   *
    * @var string
    */
   public $serverTlsPolicy;
   protected $trafficPortSelectorType = TrafficPortSelector::class;
   protected $trafficPortSelectorDataType = '';
   /**
-   * Required. The type of endpoint policy. This is primarily used to validate
-   * the configuration.
-   *
    * @var string
    */
   public $type;
   /**
-   * Output only. The timestamp when the resource was updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Optional. This field specifies the URL of AuthorizationPolicy resource that
-   * applies authorization policies to the inbound traffic at the matched
-   * endpoints. Refer to Authorization. If this field is not specified,
-   * authorization is disabled(no authz checks) for this endpoint.
-   *
-   * @param string $authorizationPolicy
+   * @param string
    */
   public function setAuthorizationPolicy($authorizationPolicy)
   {
@@ -126,16 +75,7 @@ class EndpointPolicy extends \Google\Model
     return $this->authorizationPolicy;
   }
   /**
-   * Optional. A URL referring to a ClientTlsPolicy resource. ClientTlsPolicy
-   * can be set to specify the authentication for traffic from the proxy to the
-   * actual endpoints. More specifically, it is applied to the outgoing traffic
-   * from the proxy to the endpoint. This is typically used for sidecar model
-   * where the proxy identifies itself as endpoint to the control plane, with
-   * the connection between sidecar and endpoint requiring authentication. If
-   * this field is not set, authentication is disabled(open). Applicable only
-   * when EndpointPolicyType is SIDECAR_PROXY.
-   *
-   * @param string $clientTlsPolicy
+   * @param string
    */
   public function setClientTlsPolicy($clientTlsPolicy)
   {
@@ -149,9 +89,7 @@ class EndpointPolicy extends \Google\Model
     return $this->clientTlsPolicy;
   }
   /**
-   * Output only. The timestamp when the resource was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -165,10 +103,7 @@ class EndpointPolicy extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Optional. A free-text description of the resource. Max length 1024
-   * characters.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -182,10 +117,7 @@ class EndpointPolicy extends \Google\Model
     return $this->description;
   }
   /**
-   * Required. A matcher that selects endpoints to which the policies should be
-   * applied.
-   *
-   * @param EndpointMatcher $endpointMatcher
+   * @param EndpointMatcher
    */
   public function setEndpointMatcher(EndpointMatcher $endpointMatcher)
   {
@@ -199,9 +131,7 @@ class EndpointPolicy extends \Google\Model
     return $this->endpointMatcher;
   }
   /**
-   * Optional. Set of label tags associated with the EndpointPolicy resource.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -215,10 +145,7 @@ class EndpointPolicy extends \Google\Model
     return $this->labels;
   }
   /**
-   * Identifier. Name of the EndpointPolicy resource. It matches pattern
-   * `projects/{project}/locations/endpointPolicies/{endpoint_policy}`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -232,12 +159,7 @@ class EndpointPolicy extends \Google\Model
     return $this->name;
   }
   /**
-   * Optional. A URL referring to ServerTlsPolicy resource. ServerTlsPolicy is
-   * used to determine the authentication policy to be applied to terminate the
-   * inbound traffic at the identified backends. If this field is not set,
-   * authentication is disabled(open) for this endpoint.
-   *
-   * @param string $serverTlsPolicy
+   * @param string
    */
   public function setServerTlsPolicy($serverTlsPolicy)
   {
@@ -251,10 +173,7 @@ class EndpointPolicy extends \Google\Model
     return $this->serverTlsPolicy;
   }
   /**
-   * Optional. Port selector for the (matched) endpoints. If no port selector is
-   * provided, the matched config is applied to all ports.
-   *
-   * @param TrafficPortSelector $trafficPortSelector
+   * @param TrafficPortSelector
    */
   public function setTrafficPortSelector(TrafficPortSelector $trafficPortSelector)
   {
@@ -268,29 +187,21 @@ class EndpointPolicy extends \Google\Model
     return $this->trafficPortSelector;
   }
   /**
-   * Required. The type of endpoint policy. This is primarily used to validate
-   * the configuration.
-   *
-   * Accepted values: ENDPOINT_POLICY_TYPE_UNSPECIFIED, SIDECAR_PROXY,
-   * GRPC_SERVER
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * Output only. The timestamp when the resource was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

@@ -21,78 +21,52 @@ class GoogleCloudApigeeV1CertInfo extends \Google\Collection
 {
   protected $collection_key = 'subjectAlternativeNames';
   /**
-   * X.509 basic constraints extension.
-   *
    * @var string
    */
   public $basicConstraints;
   /**
-   * X.509 `notAfter` validity period in milliseconds since epoch.
-   *
    * @var string
    */
   public $expiryDate;
   /**
-   * Flag that specifies whether the certificate is valid. Flag is set to `Yes`
-   * if the certificate is valid, `No` if expired, or `Not yet` if not yet
-   * valid.
-   *
    * @var string
    */
   public $isValid;
   /**
-   * X.509 issuer.
-   *
    * @var string
    */
   public $issuer;
   /**
-   * Public key component of the X.509 subject public key info.
-   *
    * @var string
    */
   public $publicKey;
   /**
-   * X.509 serial number.
-   *
    * @var string
    */
   public $serialNumber;
   /**
-   * X.509 signatureAlgorithm.
-   *
    * @var string
    */
   public $sigAlgName;
   /**
-   * X.509 subject.
-   *
    * @var string
    */
   public $subject;
   /**
-   * X.509 subject alternative names (SANs) extension.
-   *
    * @var string[]
    */
   public $subjectAlternativeNames;
   /**
-   * X.509 `notBefore` validity period in milliseconds since epoch.
-   *
    * @var string
    */
   public $validFrom;
   /**
-   * X.509 version.
-   *
    * @var int
    */
   public $version;
 
   /**
-   * X.509 basic constraints extension.
-   *
-   * @param string $basicConstraints
+   * @param string
    */
   public function setBasicConstraints($basicConstraints)
   {
@@ -106,9 +80,7 @@ class GoogleCloudApigeeV1CertInfo extends \Google\Collection
     return $this->basicConstraints;
   }
   /**
-   * X.509 `notAfter` validity period in milliseconds since epoch.
-   *
-   * @param string $expiryDate
+   * @param string
    */
   public function setExpiryDate($expiryDate)
   {
@@ -122,11 +94,7 @@ class GoogleCloudApigeeV1CertInfo extends \Google\Collection
     return $this->expiryDate;
   }
   /**
-   * Flag that specifies whether the certificate is valid. Flag is set to `Yes`
-   * if the certificate is valid, `No` if expired, or `Not yet` if not yet
-   * valid.
-   *
-   * @param string $isValid
+   * @param string
    */
   public function setIsValid($isValid)
   {
@@ -140,9 +108,7 @@ class GoogleCloudApigeeV1CertInfo extends \Google\Collection
     return $this->isValid;
   }
   /**
-   * X.509 issuer.
-   *
-   * @param string $issuer
+   * @param string
    */
   public function setIssuer($issuer)
   {
@@ -156,9 +122,7 @@ class GoogleCloudApigeeV1CertInfo extends \Google\Collection
     return $this->issuer;
   }
   /**
-   * Public key component of the X.509 subject public key info.
-   *
-   * @param string $publicKey
+   * @param string
    */
   public function setPublicKey($publicKey)
   {
@@ -172,9 +136,7 @@ class GoogleCloudApigeeV1CertInfo extends \Google\Collection
     return $this->publicKey;
   }
   /**
-   * X.509 serial number.
-   *
-   * @param string $serialNumber
+   * @param string
    */
   public function setSerialNumber($serialNumber)
   {
@@ -188,9 +150,7 @@ class GoogleCloudApigeeV1CertInfo extends \Google\Collection
     return $this->serialNumber;
   }
   /**
-   * X.509 signatureAlgorithm.
-   *
-   * @param string $sigAlgName
+   * @param string
    */
   public function setSigAlgName($sigAlgName)
   {
@@ -204,9 +164,7 @@ class GoogleCloudApigeeV1CertInfo extends \Google\Collection
     return $this->sigAlgName;
   }
   /**
-   * X.509 subject.
-   *
-   * @param string $subject
+   * @param string
    */
   public function setSubject($subject)
   {
@@ -220,9 +178,7 @@ class GoogleCloudApigeeV1CertInfo extends \Google\Collection
     return $this->subject;
   }
   /**
-   * X.509 subject alternative names (SANs) extension.
-   *
-   * @param string[] $subjectAlternativeNames
+   * @param string[]
    */
   public function setSubjectAlternativeNames($subjectAlternativeNames)
   {
@@ -236,9 +192,7 @@ class GoogleCloudApigeeV1CertInfo extends \Google\Collection
     return $this->subjectAlternativeNames;
   }
   /**
-   * X.509 `notBefore` validity period in milliseconds since epoch.
-   *
-   * @param string $validFrom
+   * @param string
    */
   public function setValidFrom($validFrom)
   {
@@ -252,9 +206,7 @@ class GoogleCloudApigeeV1CertInfo extends \Google\Collection
     return $this->validFrom;
   }
   /**
-   * X.509 version.
-   *
-   * @param int $version
+   * @param int
    */
   public function setVersion($version)
   {

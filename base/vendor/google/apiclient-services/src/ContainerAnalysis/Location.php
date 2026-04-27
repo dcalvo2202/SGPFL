@@ -20,15 +20,10 @@ namespace Google\Service\ContainerAnalysis;
 class Location extends \Google\Model
 {
   /**
-   * Deprecated. The CPE URI in [CPE
-   * format](https://cpe.mitre.org/specification/)
-   *
    * @var string
    */
   public $cpeUri;
   /**
-   * The path from which we gathered that this package/version is installed.
-   *
    * @var string
    */
   public $path;
@@ -36,10 +31,7 @@ class Location extends \Google\Model
   protected $versionDataType = '';
 
   /**
-   * Deprecated. The CPE URI in [CPE
-   * format](https://cpe.mitre.org/specification/)
-   *
-   * @param string $cpeUri
+   * @param string
    */
   public function setCpeUri($cpeUri)
   {
@@ -53,9 +45,7 @@ class Location extends \Google\Model
     return $this->cpeUri;
   }
   /**
-   * The path from which we gathered that this package/version is installed.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {
@@ -69,9 +59,7 @@ class Location extends \Google\Model
     return $this->path;
   }
   /**
-   * Deprecated. The version installed at this location.
-   *
-   * @param Version $version
+   * @param Version
    */
   public function setVersion(Version $version)
   {

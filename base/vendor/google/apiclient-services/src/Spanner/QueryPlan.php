@@ -26,11 +26,7 @@ class QueryPlan extends \Google\Collection
   protected $queryAdviceDataType = '';
 
   /**
-   * The nodes in the query plan. Plan nodes are returned in pre-order starting
-   * with the plan root. Each PlanNode's `id` corresponds to its index in
-   * `plan_nodes`.
-   *
-   * @param PlanNode[] $planNodes
+   * @param PlanNode[]
    */
   public function setPlanNodes($planNodes)
   {
@@ -44,10 +40,7 @@ class QueryPlan extends \Google\Collection
     return $this->planNodes;
   }
   /**
-   * Optional. The advise/recommendations for a query. Currently this field will
-   * be serving index recommendations for a query.
-   *
-   * @param QueryAdvisorResult $queryAdvice
+   * @param QueryAdvisorResult
    */
   public function setQueryAdvice(QueryAdvisorResult $queryAdvice)
   {

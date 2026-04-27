@@ -20,22 +20,16 @@ namespace Google\Service\OnDemandScanning;
 class ProjectRepoId extends \Google\Model
 {
   /**
-   * The ID of the project.
-   *
    * @var string
    */
   public $projectId;
   /**
-   * The name of the repo. Leave empty for the default repo.
-   *
    * @var string
    */
   public $repoName;
 
   /**
-   * The ID of the project.
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {
@@ -49,9 +43,7 @@ class ProjectRepoId extends \Google\Model
     return $this->projectId;
   }
   /**
-   * The name of the repo. Leave empty for the default repo.
-   *
-   * @param string $repoName
+   * @param string
    */
   public function setRepoName($repoName)
   {

@@ -21,8 +21,6 @@ class ListPoliciesResponse extends \Google\Collection
 {
   protected $collection_key = 'policies';
   /**
-   * If there are more results, a token to retrieve next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -30,9 +28,7 @@ class ListPoliciesResponse extends \Google\Collection
   protected $policiesDataType = 'array';
 
   /**
-   * If there are more results, a token to retrieve next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -46,9 +42,7 @@ class ListPoliciesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The list of policies.
-   *
-   * @param Policy[] $policies
+   * @param Policy[]
    */
   public function setPolicies($policies)
   {

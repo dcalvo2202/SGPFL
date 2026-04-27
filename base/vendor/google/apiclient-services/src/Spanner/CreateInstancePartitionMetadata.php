@@ -20,34 +20,22 @@ namespace Google\Service\Spanner;
 class CreateInstancePartitionMetadata extends \Google\Model
 {
   /**
-   * The time at which this operation was cancelled. If set, this operation is
-   * in the process of undoing itself (which is guaranteed to succeed) and
-   * cannot be cancelled again.
-   *
    * @var string
    */
   public $cancelTime;
   /**
-   * The time at which this operation failed or was completed successfully.
-   *
    * @var string
    */
   public $endTime;
   protected $instancePartitionType = InstancePartition::class;
   protected $instancePartitionDataType = '';
   /**
-   * The time at which the CreateInstancePartition request was received.
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * The time at which this operation was cancelled. If set, this operation is
-   * in the process of undoing itself (which is guaranteed to succeed) and
-   * cannot be cancelled again.
-   *
-   * @param string $cancelTime
+   * @param string
    */
   public function setCancelTime($cancelTime)
   {
@@ -61,9 +49,7 @@ class CreateInstancePartitionMetadata extends \Google\Model
     return $this->cancelTime;
   }
   /**
-   * The time at which this operation failed or was completed successfully.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -77,9 +63,7 @@ class CreateInstancePartitionMetadata extends \Google\Model
     return $this->endTime;
   }
   /**
-   * The instance partition being created.
-   *
-   * @param InstancePartition $instancePartition
+   * @param InstancePartition
    */
   public function setInstancePartition(InstancePartition $instancePartition)
   {
@@ -93,9 +77,7 @@ class CreateInstancePartitionMetadata extends \Google\Model
     return $this->instancePartition;
   }
   /**
-   * The time at which the CreateInstancePartition request was received.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

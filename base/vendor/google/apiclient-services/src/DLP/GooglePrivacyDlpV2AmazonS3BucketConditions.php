@@ -21,25 +21,16 @@ class GooglePrivacyDlpV2AmazonS3BucketConditions extends \Google\Collection
 {
   protected $collection_key = 'objectStorageClasses';
   /**
-   * Optional. Bucket types that should be profiled. Optional. Defaults to
-   * TYPE_ALL_SUPPORTED if unspecified.
-   *
    * @var string[]
    */
   public $bucketTypes;
   /**
-   * Optional. Object classes that should be profiled. Optional. Defaults to
-   * ALL_SUPPORTED_CLASSES if unspecified.
-   *
    * @var string[]
    */
   public $objectStorageClasses;
 
   /**
-   * Optional. Bucket types that should be profiled. Optional. Defaults to
-   * TYPE_ALL_SUPPORTED if unspecified.
-   *
-   * @param string[] $bucketTypes
+   * @param string[]
    */
   public function setBucketTypes($bucketTypes)
   {
@@ -53,10 +44,7 @@ class GooglePrivacyDlpV2AmazonS3BucketConditions extends \Google\Collection
     return $this->bucketTypes;
   }
   /**
-   * Optional. Object classes that should be profiled. Optional. Defaults to
-   * ALL_SUPPORTED_CLASSES if unspecified.
-   *
-   * @param string[] $objectStorageClasses
+   * @param string[]
    */
   public function setObjectStorageClasses($objectStorageClasses)
   {

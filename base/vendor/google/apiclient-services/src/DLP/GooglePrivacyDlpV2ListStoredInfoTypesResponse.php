@@ -21,9 +21,6 @@ class GooglePrivacyDlpV2ListStoredInfoTypesResponse extends \Google\Collection
 {
   protected $collection_key = 'storedInfoTypes';
   /**
-   * If the next page is available then the next page token to be used in the
-   * following ListStoredInfoTypes request.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GooglePrivacyDlpV2ListStoredInfoTypesResponse extends \Google\Collection
   protected $storedInfoTypesDataType = 'array';
 
   /**
-   * If the next page is available then the next page token to be used in the
-   * following ListStoredInfoTypes request.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class GooglePrivacyDlpV2ListStoredInfoTypesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * List of storedInfoTypes, up to page_size in ListStoredInfoTypesRequest.
-   *
-   * @param GooglePrivacyDlpV2StoredInfoType[] $storedInfoTypes
+   * @param GooglePrivacyDlpV2StoredInfoType[]
    */
   public function setStoredInfoTypes($storedInfoTypes)
   {

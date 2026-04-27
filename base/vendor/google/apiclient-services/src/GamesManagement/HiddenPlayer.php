@@ -20,15 +20,10 @@ namespace Google\Service\GamesManagement;
 class HiddenPlayer extends \Google\Model
 {
   /**
-   * Output only. The time this player was hidden.
-   *
    * @var string
    */
   public $hiddenTimeMillis;
   /**
-   * Output only. Uniquely identifies the type of this resource. Value is always
-   * the fixed string `gamesManagement#hiddenPlayer`.
-   *
    * @var string
    */
   public $kind;
@@ -36,9 +31,7 @@ class HiddenPlayer extends \Google\Model
   protected $playerDataType = '';
 
   /**
-   * Output only. The time this player was hidden.
-   *
-   * @param string $hiddenTimeMillis
+   * @param string
    */
   public function setHiddenTimeMillis($hiddenTimeMillis)
   {
@@ -52,10 +45,7 @@ class HiddenPlayer extends \Google\Model
     return $this->hiddenTimeMillis;
   }
   /**
-   * Output only. Uniquely identifies the type of this resource. Value is always
-   * the fixed string `gamesManagement#hiddenPlayer`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -69,9 +59,7 @@ class HiddenPlayer extends \Google\Model
     return $this->kind;
   }
   /**
-   * Output only. The player information.
-   *
-   * @param Player $player
+   * @param Player
    */
   public function setPlayer(Player $player)
   {

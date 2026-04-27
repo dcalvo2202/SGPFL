@@ -20,22 +20,16 @@ namespace Google\Service\Backupdr;
 class DiskTargetEnvironment extends \Google\Model
 {
   /**
-   * Required. Target project for the disk.
-   *
    * @var string
    */
   public $project;
   /**
-   * Required. Target zone for the disk.
-   *
    * @var string
    */
   public $zone;
 
   /**
-   * Required. Target project for the disk.
-   *
-   * @param string $project
+   * @param string
    */
   public function setProject($project)
   {
@@ -49,9 +43,7 @@ class DiskTargetEnvironment extends \Google\Model
     return $this->project;
   }
   /**
-   * Required. Target zone for the disk.
-   *
-   * @param string $zone
+   * @param string
    */
   public function setZone($zone)
   {

@@ -19,60 +19,32 @@ namespace Google\Service\ManagedKafka;
 
 class SchemaVersion extends \Google\Collection
 {
-  /**
-   * No schema type. The default will be AVRO.
-   */
-  public const SCHEMA_TYPE_SCHEMA_TYPE_UNSPECIFIED = 'SCHEMA_TYPE_UNSPECIFIED';
-  /**
-   * Avro schema type.
-   */
-  public const SCHEMA_TYPE_AVRO = 'AVRO';
-  /**
-   * JSON schema type.
-   */
-  public const SCHEMA_TYPE_JSON = 'JSON';
-  /**
-   * Protobuf schema type.
-   */
-  public const SCHEMA_TYPE_PROTOBUF = 'PROTOBUF';
   protected $collection_key = 'references';
   /**
-   * Required. The schema ID.
-   *
    * @var int
    */
   public $id;
   protected $referencesType = SchemaReference::class;
   protected $referencesDataType = 'array';
   /**
-   * Required. The schema payload.
-   *
    * @var string
    */
   public $schema;
   /**
-   * Optional. The schema type of the schema.
-   *
    * @var string
    */
   public $schemaType;
   /**
-   * Required. The subject of the version.
-   *
    * @var string
    */
   public $subject;
   /**
-   * Required. The version ID
-   *
    * @var int
    */
   public $version;
 
   /**
-   * Required. The schema ID.
-   *
-   * @param int $id
+   * @param int
    */
   public function setId($id)
   {
@@ -86,9 +58,7 @@ class SchemaVersion extends \Google\Collection
     return $this->id;
   }
   /**
-   * Optional. The schema references used by the schema.
-   *
-   * @param SchemaReference[] $references
+   * @param SchemaReference[]
    */
   public function setReferences($references)
   {
@@ -102,9 +72,7 @@ class SchemaVersion extends \Google\Collection
     return $this->references;
   }
   /**
-   * Required. The schema payload.
-   *
-   * @param string $schema
+   * @param string
    */
   public function setSchema($schema)
   {
@@ -118,27 +86,21 @@ class SchemaVersion extends \Google\Collection
     return $this->schema;
   }
   /**
-   * Optional. The schema type of the schema.
-   *
-   * Accepted values: SCHEMA_TYPE_UNSPECIFIED, AVRO, JSON, PROTOBUF
-   *
-   * @param self::SCHEMA_TYPE_* $schemaType
+   * @param string
    */
   public function setSchemaType($schemaType)
   {
     $this->schemaType = $schemaType;
   }
   /**
-   * @return self::SCHEMA_TYPE_*
+   * @return string
    */
   public function getSchemaType()
   {
     return $this->schemaType;
   }
   /**
-   * Required. The subject of the version.
-   *
-   * @param string $subject
+   * @param string
    */
   public function setSubject($subject)
   {
@@ -152,9 +114,7 @@ class SchemaVersion extends \Google\Collection
     return $this->subject;
   }
   /**
-   * Required. The version ID
-   *
-   * @param int $version
+   * @param int
    */
   public function setVersion($version)
   {

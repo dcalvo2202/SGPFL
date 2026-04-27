@@ -20,78 +20,48 @@ namespace Google\Service\Translate;
 class Model extends \Google\Model
 {
   /**
-   * Output only. Timestamp when the model resource was created, which is also
-   * when the training started.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Required. The dataset from which the model is trained, in form of
-   * `projects/{project-number-or-
-   * id}/locations/{location_id}/datasets/{dataset_id}`
-   *
    * @var string
    */
   public $dataset;
   /**
-   * The name of the model to show in the interface. The name can be up to 32
-   * characters long and can consist only of ASCII Latin letters A-Z and a-z,
-   * underscores (_), and ASCII digits 0-9.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * The resource name of the model, in form of `projects/{project-number-or-
-   * id}/locations/{location_id}/models/{model_id}`
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The BCP-47 language code of the source language.
-   *
    * @var string
    */
   public $sourceLanguageCode;
   /**
-   * Output only. The BCP-47 language code of the target language.
-   *
    * @var string
    */
   public $targetLanguageCode;
   /**
-   * Output only. Number of examples (sentence pairs) used to test the model.
-   *
    * @var int
    */
   public $testExampleCount;
   /**
-   * Output only. Number of examples (sentence pairs) used to train the model.
-   *
    * @var int
    */
   public $trainExampleCount;
   /**
-   * Output only. Timestamp when this model was last updated.
-   *
    * @var string
    */
   public $updateTime;
   /**
-   * Output only. Number of examples (sentence pairs) used to validate the
-   * model.
-   *
    * @var int
    */
   public $validateExampleCount;
 
   /**
-   * Output only. Timestamp when the model resource was created, which is also
-   * when the training started.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -105,11 +75,7 @@ class Model extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Required. The dataset from which the model is trained, in form of
-   * `projects/{project-number-or-
-   * id}/locations/{location_id}/datasets/{dataset_id}`
-   *
-   * @param string $dataset
+   * @param string
    */
   public function setDataset($dataset)
   {
@@ -123,11 +89,7 @@ class Model extends \Google\Model
     return $this->dataset;
   }
   /**
-   * The name of the model to show in the interface. The name can be up to 32
-   * characters long and can consist only of ASCII Latin letters A-Z and a-z,
-   * underscores (_), and ASCII digits 0-9.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -141,10 +103,7 @@ class Model extends \Google\Model
     return $this->displayName;
   }
   /**
-   * The resource name of the model, in form of `projects/{project-number-or-
-   * id}/locations/{location_id}/models/{model_id}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -158,9 +117,7 @@ class Model extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The BCP-47 language code of the source language.
-   *
-   * @param string $sourceLanguageCode
+   * @param string
    */
   public function setSourceLanguageCode($sourceLanguageCode)
   {
@@ -174,9 +131,7 @@ class Model extends \Google\Model
     return $this->sourceLanguageCode;
   }
   /**
-   * Output only. The BCP-47 language code of the target language.
-   *
-   * @param string $targetLanguageCode
+   * @param string
    */
   public function setTargetLanguageCode($targetLanguageCode)
   {
@@ -190,9 +145,7 @@ class Model extends \Google\Model
     return $this->targetLanguageCode;
   }
   /**
-   * Output only. Number of examples (sentence pairs) used to test the model.
-   *
-   * @param int $testExampleCount
+   * @param int
    */
   public function setTestExampleCount($testExampleCount)
   {
@@ -206,9 +159,7 @@ class Model extends \Google\Model
     return $this->testExampleCount;
   }
   /**
-   * Output only. Number of examples (sentence pairs) used to train the model.
-   *
-   * @param int $trainExampleCount
+   * @param int
    */
   public function setTrainExampleCount($trainExampleCount)
   {
@@ -222,9 +173,7 @@ class Model extends \Google\Model
     return $this->trainExampleCount;
   }
   /**
-   * Output only. Timestamp when this model was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -238,10 +187,7 @@ class Model extends \Google\Model
     return $this->updateTime;
   }
   /**
-   * Output only. Number of examples (sentence pairs) used to validate the
-   * model.
-   *
-   * @param int $validateExampleCount
+   * @param int
    */
   public function setValidateExampleCount($validateExampleCount)
   {

@@ -23,9 +23,7 @@ class GooglePrivacyDlpV2FileStoreInfoTypeSummary extends \Google\Model
   protected $infoTypeDataType = '';
 
   /**
-   * The InfoType seen.
-   *
-   * @param GooglePrivacyDlpV2InfoType $infoType
+   * @param GooglePrivacyDlpV2InfoType
    */
   public function setInfoType(GooglePrivacyDlpV2InfoType $infoType)
   {

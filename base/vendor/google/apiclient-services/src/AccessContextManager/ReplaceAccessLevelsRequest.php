@@ -23,22 +23,12 @@ class ReplaceAccessLevelsRequest extends \Google\Collection
   protected $accessLevelsType = AccessLevel::class;
   protected $accessLevelsDataType = 'array';
   /**
-   * Optional. The etag for the version of the Access Policy that this replace
-   * operation is to be performed on. If, at the time of replace, the etag for
-   * the Access Policy stored in Access Context Manager is different from the
-   * specified etag, then the replace operation will not be performed and the
-   * call will fail. This field is not required. If etag is not provided, the
-   * operation will be performed as if a valid etag is provided.
-   *
    * @var string
    */
   public $etag;
 
   /**
-   * Required. The desired Access Levels that should replace all existing Access
-   * Levels in the Access Policy.
-   *
-   * @param AccessLevel[] $accessLevels
+   * @param AccessLevel[]
    */
   public function setAccessLevels($accessLevels)
   {
@@ -52,14 +42,7 @@ class ReplaceAccessLevelsRequest extends \Google\Collection
     return $this->accessLevels;
   }
   /**
-   * Optional. The etag for the version of the Access Policy that this replace
-   * operation is to be performed on. If, at the time of replace, the etag for
-   * the Access Policy stored in Access Context Manager is different from the
-   * specified etag, then the replace operation will not be performed and the
-   * call will fail. This field is not required. If etag is not provided, the
-   * operation will be performed as if a valid etag is provided.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {

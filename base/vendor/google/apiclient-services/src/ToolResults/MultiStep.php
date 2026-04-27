@@ -20,26 +20,18 @@ namespace Google\Service\ToolResults;
 class MultiStep extends \Google\Model
 {
   /**
-   * Unique int given to each step. Ranges from 0(inclusive) to total number of
-   * steps(exclusive). The primary step is 0.
-   *
    * @var int
    */
   public $multistepNumber;
   protected $primaryStepType = PrimaryStep::class;
   protected $primaryStepDataType = '';
   /**
-   * Step Id of the primary (original) step, which might be this step.
-   *
    * @var string
    */
   public $primaryStepId;
 
   /**
-   * Unique int given to each step. Ranges from 0(inclusive) to total number of
-   * steps(exclusive). The primary step is 0.
-   *
-   * @param int $multistepNumber
+   * @param int
    */
   public function setMultistepNumber($multistepNumber)
   {
@@ -53,9 +45,7 @@ class MultiStep extends \Google\Model
     return $this->multistepNumber;
   }
   /**
-   * Present if it is a primary (original) step.
-   *
-   * @param PrimaryStep $primaryStep
+   * @param PrimaryStep
    */
   public function setPrimaryStep(PrimaryStep $primaryStep)
   {
@@ -69,9 +59,7 @@ class MultiStep extends \Google\Model
     return $this->primaryStep;
   }
   /**
-   * Step Id of the primary (original) step, which might be this step.
-   *
-   * @param string $primaryStepId
+   * @param string
    */
   public function setPrimaryStepId($primaryStepId)
   {

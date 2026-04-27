@@ -25,10 +25,7 @@ class GoogleCloudEventarcV1PipelineDestinationAuthenticationConfig extends \Goog
   protected $oauthTokenDataType = '';
 
   /**
-   * Optional. This authenticate method will apply Google OIDC tokens signed by
-   * a Google Cloud service account to the requests.
-   *
-   * @param GoogleCloudEventarcV1PipelineDestinationAuthenticationConfigOidcToken $googleOidc
+   * @param GoogleCloudEventarcV1PipelineDestinationAuthenticationConfigOidcToken
    */
   public function setGoogleOidc(GoogleCloudEventarcV1PipelineDestinationAuthenticationConfigOidcToken $googleOidc)
   {
@@ -42,13 +39,7 @@ class GoogleCloudEventarcV1PipelineDestinationAuthenticationConfig extends \Goog
     return $this->googleOidc;
   }
   /**
-   * Optional. If specified, an [OAuth
-   * token](https://developers.google.com/identity/protocols/OAuth2) will be
-   * generated and attached as an `Authorization` header in the HTTP request.
-   * This type of authorization should generally only be used when calling
-   * Google APIs hosted on *.googleapis.com.
-   *
-   * @param GoogleCloudEventarcV1PipelineDestinationAuthenticationConfigOAuthToken $oauthToken
+   * @param GoogleCloudEventarcV1PipelineDestinationAuthenticationConfigOAuthToken
    */
   public function setOauthToken(GoogleCloudEventarcV1PipelineDestinationAuthenticationConfigOAuthToken $oauthToken)
   {

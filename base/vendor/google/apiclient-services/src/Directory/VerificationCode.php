@@ -20,36 +20,24 @@ namespace Google\Service\Directory;
 class VerificationCode extends \Google\Model
 {
   /**
-   * ETag of the resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * The type of the resource. This is always
-   * `admin#directory#verificationCode`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The obfuscated unique ID of the user.
-   *
    * @var string
    */
   public $userId;
   /**
-   * A current verification code for the user. Invalidated or used verification
-   * codes are not returned as part of the result.
-   *
    * @var string
    */
   public $verificationCode;
 
   /**
-   * ETag of the resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -63,10 +51,7 @@ class VerificationCode extends \Google\Model
     return $this->etag;
   }
   /**
-   * The type of the resource. This is always
-   * `admin#directory#verificationCode`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -80,9 +65,7 @@ class VerificationCode extends \Google\Model
     return $this->kind;
   }
   /**
-   * The obfuscated unique ID of the user.
-   *
-   * @param string $userId
+   * @param string
    */
   public function setUserId($userId)
   {
@@ -96,10 +79,7 @@ class VerificationCode extends \Google\Model
     return $this->userId;
   }
   /**
-   * A current verification code for the user. Invalidated or used verification
-   * codes are not returned as part of the result.
-   *
-   * @param string $verificationCode
+   * @param string
    */
   public function setVerificationCode($verificationCode)
   {

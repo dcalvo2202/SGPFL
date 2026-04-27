@@ -21,14 +21,10 @@ class Action extends \Google\Collection
 {
   protected $collection_key = 'resultMetadata';
   /**
-   * Brief Description of action
-   *
    * @var string
    */
   public $description;
   /**
-   * Display Name of action to be shown on client side
-   *
    * @var string
    */
   public $displayName;
@@ -37,14 +33,6 @@ class Action extends \Google\Collection
   protected $inputParametersType = InputParameter::class;
   protected $inputParametersDataType = 'array';
   /**
-   * Metadata like service latency, etc.
-   *
-   * @var array[]
-   */
-  public $metadata;
-  /**
-   * Name of the action.
-   *
    * @var string
    */
   public $name;
@@ -54,9 +42,7 @@ class Action extends \Google\Collection
   protected $resultMetadataDataType = 'array';
 
   /**
-   * Brief Description of action
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -70,9 +56,7 @@ class Action extends \Google\Collection
     return $this->description;
   }
   /**
-   * Display Name of action to be shown on client side
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -86,9 +70,7 @@ class Action extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * JsonSchema representation of this actions's input schema
-   *
-   * @param JsonSchema $inputJsonSchema
+   * @param JsonSchema
    */
   public function setInputJsonSchema(JsonSchema $inputJsonSchema)
   {
@@ -102,9 +84,7 @@ class Action extends \Google\Collection
     return $this->inputJsonSchema;
   }
   /**
-   * List containing input parameter metadata.
-   *
-   * @param InputParameter[] $inputParameters
+   * @param InputParameter[]
    */
   public function setInputParameters($inputParameters)
   {
@@ -118,25 +98,7 @@ class Action extends \Google\Collection
     return $this->inputParameters;
   }
   /**
-   * Metadata like service latency, etc.
-   *
-   * @param array[] $metadata
-   */
-  public function setMetadata($metadata)
-  {
-    $this->metadata = $metadata;
-  }
-  /**
-   * @return array[]
-   */
-  public function getMetadata()
-  {
-    return $this->metadata;
-  }
-  /**
-   * Name of the action.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -150,9 +112,7 @@ class Action extends \Google\Collection
     return $this->name;
   }
   /**
-   * JsonSchema representation of this actions's result schema
-   *
-   * @param JsonSchema $resultJsonSchema
+   * @param JsonSchema
    */
   public function setResultJsonSchema(JsonSchema $resultJsonSchema)
   {
@@ -166,9 +126,7 @@ class Action extends \Google\Collection
     return $this->resultJsonSchema;
   }
   /**
-   * List containing the metadata of result fields.
-   *
-   * @param ResultMetadata[] $resultMetadata
+   * @param ResultMetadata[]
    */
   public function setResultMetadata($resultMetadata)
   {

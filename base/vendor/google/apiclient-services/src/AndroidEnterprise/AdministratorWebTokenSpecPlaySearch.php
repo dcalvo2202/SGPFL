@@ -20,22 +20,16 @@ namespace Google\Service\AndroidEnterprise;
 class AdministratorWebTokenSpecPlaySearch extends \Google\Model
 {
   /**
-   * Allow access to the iframe in approve mode. Default is false.
-   *
    * @var bool
    */
   public $approveApps;
   /**
-   * Whether the managed Play Search apps page is displayed. Default is true.
-   *
    * @var bool
    */
   public $enabled;
 
   /**
-   * Allow access to the iframe in approve mode. Default is false.
-   *
-   * @param bool $approveApps
+   * @param bool
    */
   public function setApproveApps($approveApps)
   {
@@ -49,9 +43,7 @@ class AdministratorWebTokenSpecPlaySearch extends \Google\Model
     return $this->approveApps;
   }
   /**
-   * Whether the managed Play Search apps page is displayed. Default is true.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {

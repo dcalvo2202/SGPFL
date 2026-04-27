@@ -20,18 +20,12 @@ namespace Google\Service\DriveLabels;
 class GoogleAppsDriveLabelsV2DeltaUpdateLabelResponseUpdateFieldPropertiesResponse extends \Google\Model
 {
   /**
-   * The priority of the updated field. The priority may change from what was
-   * specified to assure contiguous priorities between fields (1-n).
-   *
    * @var int
    */
   public $priority;
 
   /**
-   * The priority of the updated field. The priority may change from what was
-   * specified to assure contiguous priorities between fields (1-n).
-   *
-   * @param int $priority
+   * @param int
    */
   public function setPriority($priority)
   {

@@ -24,10 +24,7 @@ class ListPopulationClause extends \Google\Collection
   protected $termsDataType = 'array';
 
   /**
-   * Terms of this list population clause. Each clause is made up of list
-   * population terms representing constraints and are joined by ORs.
-   *
-   * @param ListPopulationTerm[] $terms
+   * @param ListPopulationTerm[]
    */
   public function setTerms($terms)
   {

@@ -23,15 +23,13 @@ class GoogleCloudDialogflowV2beta1KnowledgeAssistAnswer extends \Google\Model
    * @var string
    */
   public $answerRecord;
-  protected $knowledgeAssistDebugInfoType = GoogleCloudDialogflowV2beta1KnowledgeAssistDebugInfo::class;
-  protected $knowledgeAssistDebugInfoDataType = '';
   protected $suggestedQueryType = GoogleCloudDialogflowV2beta1KnowledgeAssistAnswerSuggestedQuery::class;
   protected $suggestedQueryDataType = '';
   protected $suggestedQueryAnswerType = GoogleCloudDialogflowV2beta1KnowledgeAssistAnswerKnowledgeAnswer::class;
   protected $suggestedQueryAnswerDataType = '';
 
   /**
-   * @param string $answerRecord
+   * @param string
    */
   public function setAnswerRecord($answerRecord)
   {
@@ -45,21 +43,7 @@ class GoogleCloudDialogflowV2beta1KnowledgeAssistAnswer extends \Google\Model
     return $this->answerRecord;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1KnowledgeAssistDebugInfo $knowledgeAssistDebugInfo
-   */
-  public function setKnowledgeAssistDebugInfo(GoogleCloudDialogflowV2beta1KnowledgeAssistDebugInfo $knowledgeAssistDebugInfo)
-  {
-    $this->knowledgeAssistDebugInfo = $knowledgeAssistDebugInfo;
-  }
-  /**
-   * @return GoogleCloudDialogflowV2beta1KnowledgeAssistDebugInfo
-   */
-  public function getKnowledgeAssistDebugInfo()
-  {
-    return $this->knowledgeAssistDebugInfo;
-  }
-  /**
-   * @param GoogleCloudDialogflowV2beta1KnowledgeAssistAnswerSuggestedQuery $suggestedQuery
+   * @param GoogleCloudDialogflowV2beta1KnowledgeAssistAnswerSuggestedQuery
    */
   public function setSuggestedQuery(GoogleCloudDialogflowV2beta1KnowledgeAssistAnswerSuggestedQuery $suggestedQuery)
   {
@@ -73,7 +57,7 @@ class GoogleCloudDialogflowV2beta1KnowledgeAssistAnswer extends \Google\Model
     return $this->suggestedQuery;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1KnowledgeAssistAnswerKnowledgeAnswer $suggestedQueryAnswer
+   * @param GoogleCloudDialogflowV2beta1KnowledgeAssistAnswerKnowledgeAnswer
    */
   public function setSuggestedQueryAnswer(GoogleCloudDialogflowV2beta1KnowledgeAssistAnswerKnowledgeAnswer $suggestedQueryAnswer)
   {

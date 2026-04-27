@@ -20,24 +20,16 @@ namespace Google\Service\AndroidManagement;
 class KeyguardDismissAuthAttemptEvent extends \Google\Model
 {
   /**
-   * Whether a strong form of authentication (password, PIN, or pattern) was
-   * used to unlock device.
-   *
    * @var bool
    */
   public $strongAuthMethodUsed;
   /**
-   * Whether the unlock attempt was successful.
-   *
    * @var bool
    */
   public $success;
 
   /**
-   * Whether a strong form of authentication (password, PIN, or pattern) was
-   * used to unlock device.
-   *
-   * @param bool $strongAuthMethodUsed
+   * @param bool
    */
   public function setStrongAuthMethodUsed($strongAuthMethodUsed)
   {
@@ -51,9 +43,7 @@ class KeyguardDismissAuthAttemptEvent extends \Google\Model
     return $this->strongAuthMethodUsed;
   }
   /**
-   * Whether the unlock attempt was successful.
-   *
-   * @param bool $success
+   * @param bool
    */
   public function setSuccess($success)
   {

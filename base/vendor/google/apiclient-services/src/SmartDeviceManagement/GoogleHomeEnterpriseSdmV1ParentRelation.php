@@ -20,35 +20,16 @@ namespace Google\Service\SmartDeviceManagement;
 class GoogleHomeEnterpriseSdmV1ParentRelation extends \Google\Model
 {
   /**
-   * Output only. The custom name of the relation -- e.g., structure/room where
-   * the device is assigned to.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. The GHP name of the relation -- e.g., structure/room where the
-   * device is assigned to. For example:
-   * "homegraph.googleapis.com/Structure/ABC" or
-   * "homegraph.googleapis.com/Room/ABC"
-   *
-   * @var string
-   */
-  public $ghpParent;
-  /**
-   * Output only. The name of the relation -- e.g., structure/room where the
-   * device is assigned to. For example: "enterprises/XYZ/structures/ABC" or
-   * "enterprises/XYZ/structures/ABC/rooms/123"
-   *
    * @var string
    */
   public $parent;
 
   /**
-   * Output only. The custom name of the relation -- e.g., structure/room where
-   * the device is assigned to.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -62,30 +43,7 @@ class GoogleHomeEnterpriseSdmV1ParentRelation extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Output only. The GHP name of the relation -- e.g., structure/room where the
-   * device is assigned to. For example:
-   * "homegraph.googleapis.com/Structure/ABC" or
-   * "homegraph.googleapis.com/Room/ABC"
-   *
-   * @param string $ghpParent
-   */
-  public function setGhpParent($ghpParent)
-  {
-    $this->ghpParent = $ghpParent;
-  }
-  /**
-   * @return string
-   */
-  public function getGhpParent()
-  {
-    return $this->ghpParent;
-  }
-  /**
-   * Output only. The name of the relation -- e.g., structure/room where the
-   * device is assigned to. For example: "enterprises/XYZ/structures/ABC" or
-   * "enterprises/XYZ/structures/ABC/rooms/123"
-   *
-   * @param string $parent
+   * @param string
    */
   public function setParent($parent)
   {

@@ -21,26 +21,18 @@ class ListRepositoriesResponse extends \Google\Collection
 {
   protected $collection_key = 'unreachable';
   /**
-   * A token which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $repositoriesType = Repository::class;
   protected $repositoriesDataType = 'array';
   /**
-   * Locations which could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * A token which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -54,9 +46,7 @@ class ListRepositoriesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * List of repositories.
-   *
-   * @param Repository[] $repositories
+   * @param Repository[]
    */
   public function setRepositories($repositories)
   {
@@ -70,9 +60,7 @@ class ListRepositoriesResponse extends \Google\Collection
     return $this->repositories;
   }
   /**
-   * Locations which could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

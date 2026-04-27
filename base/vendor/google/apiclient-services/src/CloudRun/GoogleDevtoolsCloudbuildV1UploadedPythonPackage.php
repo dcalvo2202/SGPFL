@@ -19,43 +19,17 @@ namespace Google\Service\CloudRun;
 
 class GoogleDevtoolsCloudbuildV1UploadedPythonPackage extends \Google\Model
 {
-  /**
-   * Output only. Path to the artifact in Artifact Registry.
-   *
-   * @var string
-   */
-  public $artifactRegistryPackage;
   protected $fileHashesType = GoogleDevtoolsCloudbuildV1FileHashes::class;
   protected $fileHashesDataType = '';
   protected $pushTimingType = GoogleDevtoolsCloudbuildV1TimeSpan::class;
   protected $pushTimingDataType = '';
   /**
-   * URI of the uploaded artifact.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * Output only. Path to the artifact in Artifact Registry.
-   *
-   * @param string $artifactRegistryPackage
-   */
-  public function setArtifactRegistryPackage($artifactRegistryPackage)
-  {
-    $this->artifactRegistryPackage = $artifactRegistryPackage;
-  }
-  /**
-   * @return string
-   */
-  public function getArtifactRegistryPackage()
-  {
-    return $this->artifactRegistryPackage;
-  }
-  /**
-   * Hash types and values of the Python Artifact.
-   *
-   * @param GoogleDevtoolsCloudbuildV1FileHashes $fileHashes
+   * @param GoogleDevtoolsCloudbuildV1FileHashes
    */
   public function setFileHashes(GoogleDevtoolsCloudbuildV1FileHashes $fileHashes)
   {
@@ -69,9 +43,7 @@ class GoogleDevtoolsCloudbuildV1UploadedPythonPackage extends \Google\Model
     return $this->fileHashes;
   }
   /**
-   * Output only. Stores timing information for pushing the specified artifact.
-   *
-   * @param GoogleDevtoolsCloudbuildV1TimeSpan $pushTiming
+   * @param GoogleDevtoolsCloudbuildV1TimeSpan
    */
   public function setPushTiming(GoogleDevtoolsCloudbuildV1TimeSpan $pushTiming)
   {
@@ -85,9 +57,7 @@ class GoogleDevtoolsCloudbuildV1UploadedPythonPackage extends \Google\Model
     return $this->pushTiming;
   }
   /**
-   * URI of the uploaded artifact.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

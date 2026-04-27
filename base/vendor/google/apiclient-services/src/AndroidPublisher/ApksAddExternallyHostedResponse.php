@@ -23,9 +23,7 @@ class ApksAddExternallyHostedResponse extends \Google\Model
   protected $externallyHostedApkDataType = '';
 
   /**
-   * The definition of the externally-hosted APK and where it is located.
-   *
-   * @param ExternallyHostedApk $externallyHostedApk
+   * @param ExternallyHostedApk
    */
   public function setExternallyHostedApk(ExternallyHostedApk $externallyHostedApk)
   {

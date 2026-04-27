@@ -38,7 +38,7 @@ class GoogleCloudDialogflowV2IntentMessageBasicCard extends \Google\Collection
   public $title;
 
   /**
-   * @param GoogleCloudDialogflowV2IntentMessageBasicCardButton[] $buttons
+   * @param GoogleCloudDialogflowV2IntentMessageBasicCardButton[]
    */
   public function setButtons($buttons)
   {
@@ -52,7 +52,7 @@ class GoogleCloudDialogflowV2IntentMessageBasicCard extends \Google\Collection
     return $this->buttons;
   }
   /**
-   * @param string $formattedText
+   * @param string
    */
   public function setFormattedText($formattedText)
   {
@@ -66,7 +66,7 @@ class GoogleCloudDialogflowV2IntentMessageBasicCard extends \Google\Collection
     return $this->formattedText;
   }
   /**
-   * @param GoogleCloudDialogflowV2IntentMessageImage $image
+   * @param GoogleCloudDialogflowV2IntentMessageImage
    */
   public function setImage(GoogleCloudDialogflowV2IntentMessageImage $image)
   {
@@ -80,7 +80,7 @@ class GoogleCloudDialogflowV2IntentMessageBasicCard extends \Google\Collection
     return $this->image;
   }
   /**
-   * @param string $subtitle
+   * @param string
    */
   public function setSubtitle($subtitle)
   {
@@ -94,7 +94,7 @@ class GoogleCloudDialogflowV2IntentMessageBasicCard extends \Google\Collection
     return $this->subtitle;
   }
   /**
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

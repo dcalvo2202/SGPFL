@@ -22,24 +22,16 @@ class CreateLogicalViewRequest extends \Google\Model
   protected $logicalViewType = LogicalView::class;
   protected $logicalViewDataType = '';
   /**
-   * Required. The ID to use for the logical view, which will become the final
-   * component of the logical view's resource name.
-   *
    * @var string
    */
   public $logicalViewId;
   /**
-   * Required. The parent instance where this logical view will be created.
-   * Format: `projects/{project}/instances/{instance}`.
-   *
    * @var string
    */
   public $parent;
 
   /**
-   * Required. The logical view to create.
-   *
-   * @param LogicalView $logicalView
+   * @param LogicalView
    */
   public function setLogicalView(LogicalView $logicalView)
   {
@@ -53,10 +45,7 @@ class CreateLogicalViewRequest extends \Google\Model
     return $this->logicalView;
   }
   /**
-   * Required. The ID to use for the logical view, which will become the final
-   * component of the logical view's resource name.
-   *
-   * @param string $logicalViewId
+   * @param string
    */
   public function setLogicalViewId($logicalViewId)
   {
@@ -70,10 +59,7 @@ class CreateLogicalViewRequest extends \Google\Model
     return $this->logicalViewId;
   }
   /**
-   * Required. The parent instance where this logical view will be created.
-   * Format: `projects/{project}/instances/{instance}`.
-   *
-   * @param string $parent
+   * @param string
    */
   public function setParent($parent)
   {

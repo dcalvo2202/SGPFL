@@ -29,10 +29,7 @@ class GooglePrivacyDlpV2VertexDatasetDiscoveryTarget extends \Google\Model
   protected $generationCadenceDataType = '';
 
   /**
-   * In addition to matching the filter, these conditions must be true before a
-   * profile is generated.
-   *
-   * @param GooglePrivacyDlpV2DiscoveryVertexDatasetConditions $conditions
+   * @param GooglePrivacyDlpV2DiscoveryVertexDatasetConditions
    */
   public function setConditions(GooglePrivacyDlpV2DiscoveryVertexDatasetConditions $conditions)
   {
@@ -46,9 +43,7 @@ class GooglePrivacyDlpV2VertexDatasetDiscoveryTarget extends \Google\Model
     return $this->conditions;
   }
   /**
-   * Disable profiling for datasets that match this filter.
-   *
-   * @param GooglePrivacyDlpV2Disabled $disabled
+   * @param GooglePrivacyDlpV2Disabled
    */
   public function setDisabled(GooglePrivacyDlpV2Disabled $disabled)
   {
@@ -62,10 +57,7 @@ class GooglePrivacyDlpV2VertexDatasetDiscoveryTarget extends \Google\Model
     return $this->disabled;
   }
   /**
-   * Required. The datasets the discovery cadence applies to. The first target
-   * with a matching filter will be the one to apply to a dataset.
-   *
-   * @param GooglePrivacyDlpV2DiscoveryVertexDatasetFilter $filter
+   * @param GooglePrivacyDlpV2DiscoveryVertexDatasetFilter
    */
   public function setFilter(GooglePrivacyDlpV2DiscoveryVertexDatasetFilter $filter)
   {
@@ -79,11 +71,7 @@ class GooglePrivacyDlpV2VertexDatasetDiscoveryTarget extends \Google\Model
     return $this->filter;
   }
   /**
-   * How often and when to update profiles. New datasets that match both the
-   * filter and conditions are scanned as quickly as possible depending on
-   * system capacity.
-   *
-   * @param GooglePrivacyDlpV2DiscoveryVertexDatasetGenerationCadence $generationCadence
+   * @param GooglePrivacyDlpV2DiscoveryVertexDatasetGenerationCadence
    */
   public function setGenerationCadence(GooglePrivacyDlpV2DiscoveryVertexDatasetGenerationCadence $generationCadence)
   {

@@ -21,8 +21,6 @@ class ListVersionsResponse extends \Google\Collection
 {
   protected $collection_key = 'versions';
   /**
-   * Continuation token for fetching the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -30,9 +28,7 @@ class ListVersionsResponse extends \Google\Collection
   protected $versionsDataType = 'array';
 
   /**
-   * Continuation token for fetching the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -46,9 +42,7 @@ class ListVersionsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The versions belonging to the requested service.
-   *
-   * @param Version[] $versions
+   * @param Version[]
    */
   public function setVersions($versions)
   {

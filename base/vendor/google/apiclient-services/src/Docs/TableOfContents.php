@@ -23,25 +23,16 @@ class TableOfContents extends \Google\Collection
   protected $contentType = StructuralElement::class;
   protected $contentDataType = 'array';
   /**
-   * The suggested deletion IDs. If empty, then there are no suggested deletions
-   * of this content.
-   *
    * @var string[]
    */
   public $suggestedDeletionIds;
   /**
-   * The suggested insertion IDs. A TableOfContents may have multiple insertion
-   * IDs if it is a nested suggested change. If empty, then this is not a
-   * suggested insertion.
-   *
    * @var string[]
    */
   public $suggestedInsertionIds;
 
   /**
-   * The content of the table of contents.
-   *
-   * @param StructuralElement[] $content
+   * @param StructuralElement[]
    */
   public function setContent($content)
   {
@@ -55,10 +46,7 @@ class TableOfContents extends \Google\Collection
     return $this->content;
   }
   /**
-   * The suggested deletion IDs. If empty, then there are no suggested deletions
-   * of this content.
-   *
-   * @param string[] $suggestedDeletionIds
+   * @param string[]
    */
   public function setSuggestedDeletionIds($suggestedDeletionIds)
   {
@@ -72,11 +60,7 @@ class TableOfContents extends \Google\Collection
     return $this->suggestedDeletionIds;
   }
   /**
-   * The suggested insertion IDs. A TableOfContents may have multiple insertion
-   * IDs if it is a nested suggested change. If empty, then this is not a
-   * suggested insertion.
-   *
-   * @param string[] $suggestedInsertionIds
+   * @param string[]
    */
   public function setSuggestedInsertionIds($suggestedInsertionIds)
   {

@@ -20,50 +20,24 @@ namespace Google\Service\DisplayVideo;
 class ScriptError extends \Google\Model
 {
   /**
-   * The script error is not specified or is unknown in this version.
-   */
-  public const ERROR_CODE_ERROR_CODE_UNSPECIFIED = 'ERROR_CODE_UNSPECIFIED';
-  /**
-   * The script has a syntax error.
-   */
-  public const ERROR_CODE_SYNTAX_ERROR = 'SYNTAX_ERROR';
-  /**
-   * The script uses deprecated syntax.
-   */
-  public const ERROR_CODE_DEPRECATED_SYNTAX = 'DEPRECATED_SYNTAX';
-  /**
-   * Internal errors were thrown while processing the script.
-   */
-  public const ERROR_CODE_INTERNAL_ERROR = 'INTERNAL_ERROR';
-  /**
-   * The column number in the script where the error was thrown.
-   *
    * @var string
    */
   public $column;
   /**
-   * The type of error.
-   *
    * @var string
    */
   public $errorCode;
   /**
-   * The detailed error message.
-   *
    * @var string
    */
   public $errorMessage;
   /**
-   * The line number in the script where the error was thrown.
-   *
    * @var string
    */
   public $line;
 
   /**
-   * The column number in the script where the error was thrown.
-   *
-   * @param string $column
+   * @param string
    */
   public function setColumn($column)
   {
@@ -77,28 +51,21 @@ class ScriptError extends \Google\Model
     return $this->column;
   }
   /**
-   * The type of error.
-   *
-   * Accepted values: ERROR_CODE_UNSPECIFIED, SYNTAX_ERROR, DEPRECATED_SYNTAX,
-   * INTERNAL_ERROR
-   *
-   * @param self::ERROR_CODE_* $errorCode
+   * @param string
    */
   public function setErrorCode($errorCode)
   {
     $this->errorCode = $errorCode;
   }
   /**
-   * @return self::ERROR_CODE_*
+   * @return string
    */
   public function getErrorCode()
   {
     return $this->errorCode;
   }
   /**
-   * The detailed error message.
-   *
-   * @param string $errorMessage
+   * @param string
    */
   public function setErrorMessage($errorMessage)
   {
@@ -112,9 +79,7 @@ class ScriptError extends \Google\Model
     return $this->errorMessage;
   }
   /**
-   * The line number in the script where the error was thrown.
-   *
-   * @param string $line
+   * @param string
    */
   public function setLine($line)
   {

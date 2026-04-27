@@ -27,9 +27,7 @@ class GoogleCloudDatalabelingV1beta1ImagePolylineAnnotation extends \Google\Mode
   protected $polylineDataType = '';
 
   /**
-   * Label of this polyline.
-   *
-   * @param GoogleCloudDatalabelingV1beta1AnnotationSpec $annotationSpec
+   * @param GoogleCloudDatalabelingV1beta1AnnotationSpec
    */
   public function setAnnotationSpec(GoogleCloudDatalabelingV1beta1AnnotationSpec $annotationSpec)
   {
@@ -43,7 +41,7 @@ class GoogleCloudDatalabelingV1beta1ImagePolylineAnnotation extends \Google\Mode
     return $this->annotationSpec;
   }
   /**
-   * @param GoogleCloudDatalabelingV1beta1NormalizedPolyline $normalizedPolyline
+   * @param GoogleCloudDatalabelingV1beta1NormalizedPolyline
    */
   public function setNormalizedPolyline(GoogleCloudDatalabelingV1beta1NormalizedPolyline $normalizedPolyline)
   {
@@ -57,7 +55,7 @@ class GoogleCloudDatalabelingV1beta1ImagePolylineAnnotation extends \Google\Mode
     return $this->normalizedPolyline;
   }
   /**
-   * @param GoogleCloudDatalabelingV1beta1Polyline $polyline
+   * @param GoogleCloudDatalabelingV1beta1Polyline
    */
   public function setPolyline(GoogleCloudDatalabelingV1beta1Polyline $polyline)
   {

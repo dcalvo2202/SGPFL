@@ -20,37 +20,22 @@ namespace Google\Service\Walletobjects;
 class CallbackOptions extends \Google\Model
 {
   /**
-   * URL for the merchant endpoint that would be called to request updates. The
-   * URL should be hosted on HTTPS and robots.txt should allow the URL path to
-   * be accessible by UserAgent:Googlebot. Deprecated.
-   *
-   * @deprecated
    * @var string
    */
   public $updateRequestUrl;
   /**
-   * The HTTPS url configured by the merchant. The URL should be hosted on HTTPS
-   * and robots.txt should allow the URL path to be accessible by
-   * UserAgent:Googlebot.
-   *
    * @var string
    */
   public $url;
 
   /**
-   * URL for the merchant endpoint that would be called to request updates. The
-   * URL should be hosted on HTTPS and robots.txt should allow the URL path to
-   * be accessible by UserAgent:Googlebot. Deprecated.
-   *
-   * @deprecated
-   * @param string $updateRequestUrl
+   * @param string
    */
   public function setUpdateRequestUrl($updateRequestUrl)
   {
     $this->updateRequestUrl = $updateRequestUrl;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getUpdateRequestUrl()
@@ -58,11 +43,7 @@ class CallbackOptions extends \Google\Model
     return $this->updateRequestUrl;
   }
   /**
-   * The HTTPS url configured by the merchant. The URL should be hosted on HTTPS
-   * and robots.txt should allow the URL path to be accessible by
-   * UserAgent:Googlebot.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

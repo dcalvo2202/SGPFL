@@ -20,42 +20,20 @@ namespace Google\Service\Document;
 class GoogleCloudDocumentaiV1beta3ReviewDocumentResponse extends \Google\Model
 {
   /**
-   * The default value. This value is used if the state is omitted.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The review operation is rejected by the reviewer.
-   */
-  public const STATE_REJECTED = 'REJECTED';
-  /**
-   * The review operation is succeeded.
-   */
-  public const STATE_SUCCEEDED = 'SUCCEEDED';
-  /**
-   * The Cloud Storage uri for the human reviewed document if the review is
-   * succeeded.
-   *
    * @var string
    */
   public $gcsDestination;
   /**
-   * The reason why the review is rejected by reviewer.
-   *
    * @var string
    */
   public $rejectionReason;
   /**
-   * The state of the review operation.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * The Cloud Storage uri for the human reviewed document if the review is
-   * succeeded.
-   *
-   * @param string $gcsDestination
+   * @param string
    */
   public function setGcsDestination($gcsDestination)
   {
@@ -69,9 +47,7 @@ class GoogleCloudDocumentaiV1beta3ReviewDocumentResponse extends \Google\Model
     return $this->gcsDestination;
   }
   /**
-   * The reason why the review is rejected by reviewer.
-   *
-   * @param string $rejectionReason
+   * @param string
    */
   public function setRejectionReason($rejectionReason)
   {
@@ -85,18 +61,14 @@ class GoogleCloudDocumentaiV1beta3ReviewDocumentResponse extends \Google\Model
     return $this->rejectionReason;
   }
   /**
-   * The state of the review operation.
-   *
-   * Accepted values: STATE_UNSPECIFIED, REJECTED, SUCCEEDED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

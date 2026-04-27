@@ -20,53 +20,24 @@ namespace Google\Service\GoogleAnalyticsAdmin;
 class GoogleAnalyticsAdminV1betaPropertySummary extends \Google\Model
 {
   /**
-   * Unknown or unspecified property type
-   */
-  public const PROPERTY_TYPE_PROPERTY_TYPE_UNSPECIFIED = 'PROPERTY_TYPE_UNSPECIFIED';
-  /**
-   * Ordinary Google Analytics property
-   */
-  public const PROPERTY_TYPE_PROPERTY_TYPE_ORDINARY = 'PROPERTY_TYPE_ORDINARY';
-  /**
-   * Google Analytics subproperty
-   */
-  public const PROPERTY_TYPE_PROPERTY_TYPE_SUBPROPERTY = 'PROPERTY_TYPE_SUBPROPERTY';
-  /**
-   * Google Analytics rollup property
-   */
-  public const PROPERTY_TYPE_PROPERTY_TYPE_ROLLUP = 'PROPERTY_TYPE_ROLLUP';
-  /**
-   * Display name for the property referred to in this property summary.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Resource name of this property's logical parent. Note: The Property-Moving
-   * UI can be used to change the parent. Format: accounts/{account},
-   * properties/{property} Example: "accounts/100", "properties/200"
-   *
    * @var string
    */
   public $parent;
   /**
-   * Resource name of property referred to by this property summary Format:
-   * properties/{property_id} Example: "properties/1000"
-   *
    * @var string
    */
   public $property;
   /**
-   * The property's property type.
-   *
    * @var string
    */
   public $propertyType;
 
   /**
-   * Display name for the property referred to in this property summary.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -80,11 +51,7 @@ class GoogleAnalyticsAdminV1betaPropertySummary extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Resource name of this property's logical parent. Note: The Property-Moving
-   * UI can be used to change the parent. Format: accounts/{account},
-   * properties/{property} Example: "accounts/100", "properties/200"
-   *
-   * @param string $parent
+   * @param string
    */
   public function setParent($parent)
   {
@@ -98,10 +65,7 @@ class GoogleAnalyticsAdminV1betaPropertySummary extends \Google\Model
     return $this->parent;
   }
   /**
-   * Resource name of property referred to by this property summary Format:
-   * properties/{property_id} Example: "properties/1000"
-   *
-   * @param string $property
+   * @param string
    */
   public function setProperty($property)
   {
@@ -115,19 +79,14 @@ class GoogleAnalyticsAdminV1betaPropertySummary extends \Google\Model
     return $this->property;
   }
   /**
-   * The property's property type.
-   *
-   * Accepted values: PROPERTY_TYPE_UNSPECIFIED, PROPERTY_TYPE_ORDINARY,
-   * PROPERTY_TYPE_SUBPROPERTY, PROPERTY_TYPE_ROLLUP
-   *
-   * @param self::PROPERTY_TYPE_* $propertyType
+   * @param string
    */
   public function setPropertyType($propertyType)
   {
     $this->propertyType = $propertyType;
   }
   /**
-   * @return self::PROPERTY_TYPE_*
+   * @return string
    */
   public function getPropertyType()
   {

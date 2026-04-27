@@ -20,40 +20,16 @@ namespace Google\Service\Integrations;
 class GoogleCloudConnectorsV1LogConfig extends \Google\Model
 {
   /**
-   * Log level unspecified.
-   */
-  public const LEVEL_LOG_LEVEL_UNSPECIFIED = 'LOG_LEVEL_UNSPECIFIED';
-  /**
-   * Only error logs are enabled.
-   */
-  public const LEVEL_ERROR = 'ERROR';
-  /**
-   * Info and error logs are enabled.
-   */
-  public const LEVEL_INFO = 'INFO';
-  /**
-   * Debug and high verbosity logs are enabled.
-   */
-  public const LEVEL_DEBUG = 'DEBUG';
-  /**
-   * Optional. Enabled represents whether logging is enabled or not for a
-   * connection.
-   *
    * @var bool
    */
   public $enabled;
   /**
-   * Optional. Log configuration level.
-   *
    * @var string
    */
   public $level;
 
   /**
-   * Optional. Enabled represents whether logging is enabled or not for a
-   * connection.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {
@@ -67,18 +43,14 @@ class GoogleCloudConnectorsV1LogConfig extends \Google\Model
     return $this->enabled;
   }
   /**
-   * Optional. Log configuration level.
-   *
-   * Accepted values: LOG_LEVEL_UNSPECIFIED, ERROR, INFO, DEBUG
-   *
-   * @param self::LEVEL_* $level
+   * @param string
    */
   public function setLevel($level)
   {
     $this->level = $level;
   }
   /**
-   * @return self::LEVEL_*
+   * @return string
    */
   public function getLevel()
   {

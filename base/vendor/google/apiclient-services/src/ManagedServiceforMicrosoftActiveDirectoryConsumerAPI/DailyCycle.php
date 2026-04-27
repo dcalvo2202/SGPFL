@@ -20,8 +20,6 @@ namespace Google\Service\ManagedServiceforMicrosoftActiveDirectoryConsumerAPI;
 class DailyCycle extends \Google\Model
 {
   /**
-   * Output only. Duration of the time window, set by service producer.
-   *
    * @var string
    */
   public $duration;
@@ -29,9 +27,7 @@ class DailyCycle extends \Google\Model
   protected $startTimeDataType = '';
 
   /**
-   * Output only. Duration of the time window, set by service producer.
-   *
-   * @param string $duration
+   * @param string
    */
   public function setDuration($duration)
   {
@@ -45,9 +41,7 @@ class DailyCycle extends \Google\Model
     return $this->duration;
   }
   /**
-   * Time within the day to start the operations.
-   *
-   * @param TimeOfDay $startTime
+   * @param TimeOfDay
    */
   public function setStartTime(TimeOfDay $startTime)
   {

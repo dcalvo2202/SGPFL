@@ -20,21 +20,12 @@ namespace Google\Service\PeopleService;
 class PersonResponse extends \Google\Model
 {
   /**
-   * **DEPRECATED** (Please use status instead) [HTTP 1.1 status code]
-   * (http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
-   *
-   * @deprecated
    * @var int
    */
   public $httpStatusCode;
   protected $personType = Person::class;
   protected $personDataType = '';
   /**
-   * The original requested resource name. May be different than the resource
-   * name on the returned person. The resource name can change when adding or
-   * removing fields that link a contact and profile such as a verified email,
-   * verified phone number, or a profile URL.
-   *
    * @var string
    */
   public $requestedResourceName;
@@ -42,18 +33,13 @@ class PersonResponse extends \Google\Model
   protected $statusDataType = '';
 
   /**
-   * **DEPRECATED** (Please use status instead) [HTTP 1.1 status code]
-   * (http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
-   *
-   * @deprecated
-   * @param int $httpStatusCode
+   * @param int
    */
   public function setHttpStatusCode($httpStatusCode)
   {
     $this->httpStatusCode = $httpStatusCode;
   }
   /**
-   * @deprecated
    * @return int
    */
   public function getHttpStatusCode()
@@ -61,9 +47,7 @@ class PersonResponse extends \Google\Model
     return $this->httpStatusCode;
   }
   /**
-   * The person.
-   *
-   * @param Person $person
+   * @param Person
    */
   public function setPerson(Person $person)
   {
@@ -77,12 +61,7 @@ class PersonResponse extends \Google\Model
     return $this->person;
   }
   /**
-   * The original requested resource name. May be different than the resource
-   * name on the returned person. The resource name can change when adding or
-   * removing fields that link a contact and profile such as a verified email,
-   * verified phone number, or a profile URL.
-   *
-   * @param string $requestedResourceName
+   * @param string
    */
   public function setRequestedResourceName($requestedResourceName)
   {
@@ -96,9 +75,7 @@ class PersonResponse extends \Google\Model
     return $this->requestedResourceName;
   }
   /**
-   * The status of the response.
-   *
-   * @param Status $status
+   * @param Status
    */
   public function setStatus(Status $status)
   {

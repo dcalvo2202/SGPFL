@@ -25,9 +25,7 @@ class Asset extends \Google\Model
   protected $webDataType = '';
 
   /**
-   * Set if this is an Android App asset.
-   *
-   * @param AndroidAppAsset $androidApp
+   * @param AndroidAppAsset
    */
   public function setAndroidApp(AndroidAppAsset $androidApp)
   {
@@ -41,9 +39,7 @@ class Asset extends \Google\Model
     return $this->androidApp;
   }
   /**
-   * Set if this is a web asset.
-   *
-   * @param WebAsset $web
+   * @param WebAsset
    */
   public function setWeb(WebAsset $web)
   {

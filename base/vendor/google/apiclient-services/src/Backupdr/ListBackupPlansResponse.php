@@ -23,29 +23,16 @@ class ListBackupPlansResponse extends \Google\Collection
   protected $backupPlansType = BackupPlan::class;
   protected $backupPlansDataType = 'array';
   /**
-   * A token which may be sent as page_token in a subsequent `ListBackupPlans`
-   * call to retrieve the next page of results. If this field is omitted or
-   * empty, then there are no more results to return.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * The list of `BackupPlans` in the project for the specified location. If the
-   * `{location}` value in the request is "-", the response contains a list of
-   * resources from all locations. In case any location is unreachable, the
-   * response will only return backup plans in reachable locations and the
-   * 'unreachable' field will be populated with a list of unreachable locations.
-   * BackupPlan
-   *
-   * @param BackupPlan[] $backupPlans
+   * @param BackupPlan[]
    */
   public function setBackupPlans($backupPlans)
   {
@@ -59,11 +46,7 @@ class ListBackupPlansResponse extends \Google\Collection
     return $this->backupPlans;
   }
   /**
-   * A token which may be sent as page_token in a subsequent `ListBackupPlans`
-   * call to retrieve the next page of results. If this field is omitted or
-   * empty, then there are no more results to return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -77,9 +60,7 @@ class ListBackupPlansResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

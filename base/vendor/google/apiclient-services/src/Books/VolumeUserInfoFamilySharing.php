@@ -20,31 +20,20 @@ namespace Google\Service\Books;
 class VolumeUserInfoFamilySharing extends \Google\Model
 {
   /**
-   * The role of the user in the family.
-   *
    * @var string
    */
   public $familyRole;
   /**
-   * Whether or not this volume can be shared with the family by the user. This
-   * includes sharing eligibility of both the volume and the user. If the value
-   * is true, the user can initiate a family sharing action.
-   *
    * @var bool
    */
   public $isSharingAllowed;
   /**
-   * Whether or not sharing this volume is temporarily disabled due to issues
-   * with the Family Wallet.
-   *
    * @var bool
    */
   public $isSharingDisabledByFop;
 
   /**
-   * The role of the user in the family.
-   *
-   * @param string $familyRole
+   * @param string
    */
   public function setFamilyRole($familyRole)
   {
@@ -58,11 +47,7 @@ class VolumeUserInfoFamilySharing extends \Google\Model
     return $this->familyRole;
   }
   /**
-   * Whether or not this volume can be shared with the family by the user. This
-   * includes sharing eligibility of both the volume and the user. If the value
-   * is true, the user can initiate a family sharing action.
-   *
-   * @param bool $isSharingAllowed
+   * @param bool
    */
   public function setIsSharingAllowed($isSharingAllowed)
   {
@@ -76,10 +61,7 @@ class VolumeUserInfoFamilySharing extends \Google\Model
     return $this->isSharingAllowed;
   }
   /**
-   * Whether or not sharing this volume is temporarily disabled due to issues
-   * with the Family Wallet.
-   *
-   * @param bool $isSharingDisabledByFop
+   * @param bool
    */
   public function setIsSharingDisabledByFop($isSharingDisabledByFop)
   {

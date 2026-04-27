@@ -24,9 +24,7 @@ class NfsExportList extends \Google\Collection
   protected $entriesDataType = 'array';
 
   /**
-   * NFS export entries.
-   *
-   * @param NfsExport[] $entries
+   * @param NfsExport[]
    */
   public function setEntries($entries)
   {

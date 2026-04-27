@@ -20,30 +20,20 @@ namespace Google\Service\DisplayVideo;
 class AssignedLocation extends \Google\Model
 {
   /**
-   * Output only. The unique ID of the assigned location. The ID is only unique
-   * within a location list. It may be reused in other contexts.
-   *
    * @var string
    */
   public $assignedLocationId;
   /**
-   * Output only. The resource name of the assigned location.
-   *
    * @var string
    */
   public $name;
   /**
-   * Required. The ID of the targeting option assigned to the location list.
-   *
    * @var string
    */
   public $targetingOptionId;
 
   /**
-   * Output only. The unique ID of the assigned location. The ID is only unique
-   * within a location list. It may be reused in other contexts.
-   *
-   * @param string $assignedLocationId
+   * @param string
    */
   public function setAssignedLocationId($assignedLocationId)
   {
@@ -57,9 +47,7 @@ class AssignedLocation extends \Google\Model
     return $this->assignedLocationId;
   }
   /**
-   * Output only. The resource name of the assigned location.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -73,9 +61,7 @@ class AssignedLocation extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. The ID of the targeting option assigned to the location list.
-   *
-   * @param string $targetingOptionId
+   * @param string
    */
   public function setTargetingOptionId($targetingOptionId)
   {

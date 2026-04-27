@@ -25,17 +25,10 @@ class GoogleCloudAiplatformV1CountTokensRequest extends \Google\Collection
   protected $generationConfigType = GoogleCloudAiplatformV1GenerationConfig::class;
   protected $generationConfigDataType = '';
   /**
-   * Optional. The instances that are the input to token counting call. Schema
-   * is identical to the prediction schema of the underlying model.
-   *
    * @var array[]
    */
   public $instances;
   /**
-   * Optional. The name of the publisher model requested to serve the
-   * prediction. Format:
-   * `projects/{project}/locations/{location}/publishers/models`
-   *
    * @var string
    */
   public $model;
@@ -45,9 +38,7 @@ class GoogleCloudAiplatformV1CountTokensRequest extends \Google\Collection
   protected $toolsDataType = 'array';
 
   /**
-   * Optional. Input content.
-   *
-   * @param GoogleCloudAiplatformV1Content[] $contents
+   * @param GoogleCloudAiplatformV1Content[]
    */
   public function setContents($contents)
   {
@@ -61,10 +52,7 @@ class GoogleCloudAiplatformV1CountTokensRequest extends \Google\Collection
     return $this->contents;
   }
   /**
-   * Optional. Generation config that the model will use to generate the
-   * response.
-   *
-   * @param GoogleCloudAiplatformV1GenerationConfig $generationConfig
+   * @param GoogleCloudAiplatformV1GenerationConfig
    */
   public function setGenerationConfig(GoogleCloudAiplatformV1GenerationConfig $generationConfig)
   {
@@ -78,10 +66,7 @@ class GoogleCloudAiplatformV1CountTokensRequest extends \Google\Collection
     return $this->generationConfig;
   }
   /**
-   * Optional. The instances that are the input to token counting call. Schema
-   * is identical to the prediction schema of the underlying model.
-   *
-   * @param array[] $instances
+   * @param array[]
    */
   public function setInstances($instances)
   {
@@ -95,11 +80,7 @@ class GoogleCloudAiplatformV1CountTokensRequest extends \Google\Collection
     return $this->instances;
   }
   /**
-   * Optional. The name of the publisher model requested to serve the
-   * prediction. Format:
-   * `projects/{project}/locations/{location}/publishers/models`
-   *
-   * @param string $model
+   * @param string
    */
   public function setModel($model)
   {
@@ -113,11 +94,7 @@ class GoogleCloudAiplatformV1CountTokensRequest extends \Google\Collection
     return $this->model;
   }
   /**
-   * Optional. The user provided system instructions for the model. Note: only
-   * text should be used in parts and content in each part will be in a separate
-   * paragraph.
-   *
-   * @param GoogleCloudAiplatformV1Content $systemInstruction
+   * @param GoogleCloudAiplatformV1Content
    */
   public function setSystemInstruction(GoogleCloudAiplatformV1Content $systemInstruction)
   {
@@ -131,12 +108,7 @@ class GoogleCloudAiplatformV1CountTokensRequest extends \Google\Collection
     return $this->systemInstruction;
   }
   /**
-   * Optional. A list of `Tools` the model may use to generate the next
-   * response. A `Tool` is a piece of code that enables the system to interact
-   * with external systems to perform an action, or set of actions, outside of
-   * knowledge and scope of the model.
-   *
-   * @param GoogleCloudAiplatformV1Tool[] $tools
+   * @param GoogleCloudAiplatformV1Tool[]
    */
   public function setTools($tools)
   {

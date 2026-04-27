@@ -20,48 +20,32 @@ namespace Google\Service\Backupdr;
 class BackupApplianceLockInfo extends \Google\Model
 {
   /**
-   * Required. The ID of the backup/recovery appliance that created this lock.
-   *
    * @var string
    */
   public $backupApplianceId;
   /**
-   * Required. The name of the backup/recovery appliance that created this lock.
-   *
    * @var string
    */
   public $backupApplianceName;
   /**
-   * The image name that depends on this Backup.
-   *
    * @var string
    */
   public $backupImage;
   /**
-   * The job name on the backup/recovery appliance that created this lock.
-   *
    * @var string
    */
   public $jobName;
   /**
-   * Required. The reason for the lock: e.g. MOUNT/RESTORE/BACKUP/etc. The value
-   * of this string is only meaningful to the client and it is not interpreted
-   * by the BackupVault service.
-   *
    * @var string
    */
   public $lockReason;
   /**
-   * The SLA on the backup/recovery appliance that owns the lock.
-   *
    * @var string
    */
   public $slaId;
 
   /**
-   * Required. The ID of the backup/recovery appliance that created this lock.
-   *
-   * @param string $backupApplianceId
+   * @param string
    */
   public function setBackupApplianceId($backupApplianceId)
   {
@@ -75,9 +59,7 @@ class BackupApplianceLockInfo extends \Google\Model
     return $this->backupApplianceId;
   }
   /**
-   * Required. The name of the backup/recovery appliance that created this lock.
-   *
-   * @param string $backupApplianceName
+   * @param string
    */
   public function setBackupApplianceName($backupApplianceName)
   {
@@ -91,9 +73,7 @@ class BackupApplianceLockInfo extends \Google\Model
     return $this->backupApplianceName;
   }
   /**
-   * The image name that depends on this Backup.
-   *
-   * @param string $backupImage
+   * @param string
    */
   public function setBackupImage($backupImage)
   {
@@ -107,9 +87,7 @@ class BackupApplianceLockInfo extends \Google\Model
     return $this->backupImage;
   }
   /**
-   * The job name on the backup/recovery appliance that created this lock.
-   *
-   * @param string $jobName
+   * @param string
    */
   public function setJobName($jobName)
   {
@@ -123,11 +101,7 @@ class BackupApplianceLockInfo extends \Google\Model
     return $this->jobName;
   }
   /**
-   * Required. The reason for the lock: e.g. MOUNT/RESTORE/BACKUP/etc. The value
-   * of this string is only meaningful to the client and it is not interpreted
-   * by the BackupVault service.
-   *
-   * @param string $lockReason
+   * @param string
    */
   public function setLockReason($lockReason)
   {
@@ -141,9 +115,7 @@ class BackupApplianceLockInfo extends \Google\Model
     return $this->lockReason;
   }
   /**
-   * The SLA on the backup/recovery appliance that owns the lock.
-   *
-   * @param string $slaId
+   * @param string
    */
   public function setSlaId($slaId)
   {

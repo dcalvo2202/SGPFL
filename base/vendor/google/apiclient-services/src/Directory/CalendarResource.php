@@ -20,105 +20,68 @@ namespace Google\Service\Directory;
 class CalendarResource extends \Google\Model
 {
   /**
-   * Unique ID for the building a resource is located in.
-   *
    * @var string
    */
   public $buildingId;
   /**
-   * Capacity of a resource, number of seats in a room.
-   *
    * @var int
    */
   public $capacity;
   /**
-   * ETag of the resource.
-   *
    * @var string
    */
   public $etags;
   /**
-   * Instances of features for the calendar resource.
-   *
    * @var array
    */
   public $featureInstances;
   /**
-   * Name of the floor a resource is located on.
-   *
    * @var string
    */
   public $floorName;
   /**
-   * Name of the section within a floor a resource is located in.
-   *
    * @var string
    */
   public $floorSection;
   /**
-   * The read-only auto-generated name of the calendar resource which includes
-   * metadata about the resource such as building name, floor, capacity, etc.
-   * For example, "NYC-2-Training Room 1A (16)".
-   *
    * @var string
    */
   public $generatedResourceName;
   /**
-   * The type of the resource. For calendar resources, the value is
-   * `admin#directory#resources#calendars#CalendarResource`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The category of the calendar resource. Either CONFERENCE_ROOM or OTHER.
-   * Legacy data is set to CATEGORY_UNKNOWN.
-   *
    * @var string
    */
   public $resourceCategory;
   /**
-   * Description of the resource, visible only to admins.
-   *
    * @var string
    */
   public $resourceDescription;
   /**
-   * The read-only email for the calendar resource. Generated as part of
-   * creating a new calendar resource.
-   *
    * @var string
    */
   public $resourceEmail;
   /**
-   * The unique ID for the calendar resource.
-   *
    * @var string
    */
   public $resourceId;
   /**
-   * The name of the calendar resource. For example, "Training Room 1A".
-   *
    * @var string
    */
   public $resourceName;
   /**
-   * The type of the calendar resource, intended for non-room resources.
-   *
    * @var string
    */
   public $resourceType;
   /**
-   * Description of the resource, visible to users and admins.
-   *
    * @var string
    */
   public $userVisibleDescription;
 
   /**
-   * Unique ID for the building a resource is located in.
-   *
-   * @param string $buildingId
+   * @param string
    */
   public function setBuildingId($buildingId)
   {
@@ -132,9 +95,7 @@ class CalendarResource extends \Google\Model
     return $this->buildingId;
   }
   /**
-   * Capacity of a resource, number of seats in a room.
-   *
-   * @param int $capacity
+   * @param int
    */
   public function setCapacity($capacity)
   {
@@ -148,9 +109,7 @@ class CalendarResource extends \Google\Model
     return $this->capacity;
   }
   /**
-   * ETag of the resource.
-   *
-   * @param string $etags
+   * @param string
    */
   public function setEtags($etags)
   {
@@ -164,9 +123,7 @@ class CalendarResource extends \Google\Model
     return $this->etags;
   }
   /**
-   * Instances of features for the calendar resource.
-   *
-   * @param array $featureInstances
+   * @param array
    */
   public function setFeatureInstances($featureInstances)
   {
@@ -180,9 +137,7 @@ class CalendarResource extends \Google\Model
     return $this->featureInstances;
   }
   /**
-   * Name of the floor a resource is located on.
-   *
-   * @param string $floorName
+   * @param string
    */
   public function setFloorName($floorName)
   {
@@ -196,9 +151,7 @@ class CalendarResource extends \Google\Model
     return $this->floorName;
   }
   /**
-   * Name of the section within a floor a resource is located in.
-   *
-   * @param string $floorSection
+   * @param string
    */
   public function setFloorSection($floorSection)
   {
@@ -212,11 +165,7 @@ class CalendarResource extends \Google\Model
     return $this->floorSection;
   }
   /**
-   * The read-only auto-generated name of the calendar resource which includes
-   * metadata about the resource such as building name, floor, capacity, etc.
-   * For example, "NYC-2-Training Room 1A (16)".
-   *
-   * @param string $generatedResourceName
+   * @param string
    */
   public function setGeneratedResourceName($generatedResourceName)
   {
@@ -230,10 +179,7 @@ class CalendarResource extends \Google\Model
     return $this->generatedResourceName;
   }
   /**
-   * The type of the resource. For calendar resources, the value is
-   * `admin#directory#resources#calendars#CalendarResource`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -247,10 +193,7 @@ class CalendarResource extends \Google\Model
     return $this->kind;
   }
   /**
-   * The category of the calendar resource. Either CONFERENCE_ROOM or OTHER.
-   * Legacy data is set to CATEGORY_UNKNOWN.
-   *
-   * @param string $resourceCategory
+   * @param string
    */
   public function setResourceCategory($resourceCategory)
   {
@@ -264,9 +207,7 @@ class CalendarResource extends \Google\Model
     return $this->resourceCategory;
   }
   /**
-   * Description of the resource, visible only to admins.
-   *
-   * @param string $resourceDescription
+   * @param string
    */
   public function setResourceDescription($resourceDescription)
   {
@@ -280,10 +221,7 @@ class CalendarResource extends \Google\Model
     return $this->resourceDescription;
   }
   /**
-   * The read-only email for the calendar resource. Generated as part of
-   * creating a new calendar resource.
-   *
-   * @param string $resourceEmail
+   * @param string
    */
   public function setResourceEmail($resourceEmail)
   {
@@ -297,9 +235,7 @@ class CalendarResource extends \Google\Model
     return $this->resourceEmail;
   }
   /**
-   * The unique ID for the calendar resource.
-   *
-   * @param string $resourceId
+   * @param string
    */
   public function setResourceId($resourceId)
   {
@@ -313,9 +249,7 @@ class CalendarResource extends \Google\Model
     return $this->resourceId;
   }
   /**
-   * The name of the calendar resource. For example, "Training Room 1A".
-   *
-   * @param string $resourceName
+   * @param string
    */
   public function setResourceName($resourceName)
   {
@@ -329,9 +263,7 @@ class CalendarResource extends \Google\Model
     return $this->resourceName;
   }
   /**
-   * The type of the calendar resource, intended for non-room resources.
-   *
-   * @param string $resourceType
+   * @param string
    */
   public function setResourceType($resourceType)
   {
@@ -345,9 +277,7 @@ class CalendarResource extends \Google\Model
     return $this->resourceType;
   }
   /**
-   * Description of the resource, visible to users and admins.
-   *
-   * @param string $userVisibleDescription
+   * @param string
    */
   public function setUserVisibleDescription($userVisibleDescription)
   {

@@ -20,24 +20,16 @@ namespace Google\Service\Books;
 class VolumeLayerInfoLayers extends \Google\Model
 {
   /**
-   * The layer id of this layer (e.g. "geo").
-   *
    * @var string
    */
   public $layerId;
   /**
-   * The current version of this layer's volume annotations. Note that this
-   * version applies only to the data in the books.layers.volumeAnnotations.*
-   * responses. The actual annotation data is versioned separately.
-   *
    * @var string
    */
   public $volumeAnnotationsVersion;
 
   /**
-   * The layer id of this layer (e.g. "geo").
-   *
-   * @param string $layerId
+   * @param string
    */
   public function setLayerId($layerId)
   {
@@ -51,11 +43,7 @@ class VolumeLayerInfoLayers extends \Google\Model
     return $this->layerId;
   }
   /**
-   * The current version of this layer's volume annotations. Note that this
-   * version applies only to the data in the books.layers.volumeAnnotations.*
-   * responses. The actual annotation data is versioned separately.
-   *
-   * @param string $volumeAnnotationsVersion
+   * @param string
    */
   public function setVolumeAnnotationsVersion($volumeAnnotationsVersion)
   {

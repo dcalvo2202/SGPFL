@@ -23,16 +23,12 @@ class ListListingsResponse extends \Google\Collection
   protected $listingsType = Listing::class;
   protected $listingsDataType = 'array';
   /**
-   * A token to request the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of Listing.
-   *
-   * @param Listing[] $listings
+   * @param Listing[]
    */
   public function setListings($listings)
   {
@@ -46,9 +42,7 @@ class ListListingsResponse extends \Google\Collection
     return $this->listings;
   }
   /**
-   * A token to request the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

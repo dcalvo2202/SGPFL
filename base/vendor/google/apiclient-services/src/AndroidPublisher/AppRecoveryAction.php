@@ -20,70 +20,28 @@ namespace Google\Service\AndroidPublisher;
 class AppRecoveryAction extends \Google\Model
 {
   /**
-   * RecoveryStatus is unspecified.
-   */
-  public const STATUS_RECOVERY_STATUS_UNSPECIFIED = 'RECOVERY_STATUS_UNSPECIFIED';
-  /**
-   * The app recovery action has not been canceled since it has been created.
-   */
-  public const STATUS_RECOVERY_STATUS_ACTIVE = 'RECOVERY_STATUS_ACTIVE';
-  /**
-   * The recovery action has been canceled. The action cannot be resumed.
-   */
-  public const STATUS_RECOVERY_STATUS_CANCELED = 'RECOVERY_STATUS_CANCELED';
-  /**
-   * The recovery action is in the draft state and has not yet been deployed to
-   * users.
-   */
-  public const STATUS_RECOVERY_STATUS_DRAFT = 'RECOVERY_STATUS_DRAFT';
-  /**
-   * The recovery action is generating recovery apks.
-   */
-  public const STATUS_RECOVERY_STATUS_GENERATION_IN_PROGRESS = 'RECOVERY_STATUS_GENERATION_IN_PROGRESS';
-  /**
-   * The app recovery action generation has failed.
-   */
-  public const STATUS_RECOVERY_STATUS_GENERATION_FAILED = 'RECOVERY_STATUS_GENERATION_FAILED';
-  /**
-   * ID corresponding to the app recovery action.
-   *
    * @var string
    */
   public $appRecoveryId;
   /**
-   * Timestamp of when the app recovery action is canceled by the developer.
-   * Only set if the recovery action has been canceled.
-   *
    * @var string
    */
   public $cancelTime;
   /**
-   * Timestamp of when the app recovery action is created by the developer. It
-   * is always set after creation of the recovery action.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Timestamp of when the app recovery action is deployed to the users. Only
-   * set if the recovery action has been deployed.
-   *
    * @var string
    */
   public $deployTime;
   /**
-   * Timestamp of when the developer last updated recovery action. In case the
-   * action is cancelled, it corresponds to cancellation time. It is always set
-   * after creation of the recovery action.
-   *
    * @var string
    */
   public $lastUpdateTime;
   protected $remoteInAppUpdateDataType = RemoteInAppUpdateData::class;
   protected $remoteInAppUpdateDataDataType = '';
   /**
-   * The status of the recovery action.
-   *
    * @var string
    */
   public $status;
@@ -91,9 +49,7 @@ class AppRecoveryAction extends \Google\Model
   protected $targetingDataType = '';
 
   /**
-   * ID corresponding to the app recovery action.
-   *
-   * @param string $appRecoveryId
+   * @param string
    */
   public function setAppRecoveryId($appRecoveryId)
   {
@@ -107,10 +63,7 @@ class AppRecoveryAction extends \Google\Model
     return $this->appRecoveryId;
   }
   /**
-   * Timestamp of when the app recovery action is canceled by the developer.
-   * Only set if the recovery action has been canceled.
-   *
-   * @param string $cancelTime
+   * @param string
    */
   public function setCancelTime($cancelTime)
   {
@@ -124,10 +77,7 @@ class AppRecoveryAction extends \Google\Model
     return $this->cancelTime;
   }
   /**
-   * Timestamp of when the app recovery action is created by the developer. It
-   * is always set after creation of the recovery action.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -141,10 +91,7 @@ class AppRecoveryAction extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Timestamp of when the app recovery action is deployed to the users. Only
-   * set if the recovery action has been deployed.
-   *
-   * @param string $deployTime
+   * @param string
    */
   public function setDeployTime($deployTime)
   {
@@ -158,11 +105,7 @@ class AppRecoveryAction extends \Google\Model
     return $this->deployTime;
   }
   /**
-   * Timestamp of when the developer last updated recovery action. In case the
-   * action is cancelled, it corresponds to cancellation time. It is always set
-   * after creation of the recovery action.
-   *
-   * @param string $lastUpdateTime
+   * @param string
    */
   public function setLastUpdateTime($lastUpdateTime)
   {
@@ -176,11 +119,7 @@ class AppRecoveryAction extends \Google\Model
     return $this->lastUpdateTime;
   }
   /**
-   * Data about the remote in-app update action such as such as recovered user
-   * base, recoverable user base etc. Set only if the recovery action type is
-   * Remote In-App Update.
-   *
-   * @param RemoteInAppUpdateData $remoteInAppUpdateData
+   * @param RemoteInAppUpdateData
    */
   public function setRemoteInAppUpdateData(RemoteInAppUpdateData $remoteInAppUpdateData)
   {
@@ -194,30 +133,21 @@ class AppRecoveryAction extends \Google\Model
     return $this->remoteInAppUpdateData;
   }
   /**
-   * The status of the recovery action.
-   *
-   * Accepted values: RECOVERY_STATUS_UNSPECIFIED, RECOVERY_STATUS_ACTIVE,
-   * RECOVERY_STATUS_CANCELED, RECOVERY_STATUS_DRAFT,
-   * RECOVERY_STATUS_GENERATION_IN_PROGRESS, RECOVERY_STATUS_GENERATION_FAILED
-   *
-   * @param self::STATUS_* $status
+   * @param string
    */
   public function setStatus($status)
   {
     $this->status = $status;
   }
   /**
-   * @return self::STATUS_*
+   * @return string
    */
   public function getStatus()
   {
     return $this->status;
   }
   /**
-   * Specifies targeting criteria for the recovery action such as regions,
-   * android sdk versions, app versions etc.
-   *
-   * @param Targeting $targeting
+   * @param Targeting
    */
   public function setTargeting(Targeting $targeting)
   {

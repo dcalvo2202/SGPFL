@@ -22,9 +22,6 @@ class GoogleCloudDocumentaiUiv1beta3ExportDocumentsMetadataIndividualExportStatu
   protected $documentIdType = GoogleCloudDocumentaiUiv1beta3DocumentId::class;
   protected $documentIdDataType = '';
   /**
-   * The output_gcs_destination of the exported document if it was successful,
-   * otherwise empty.
-   *
    * @var string
    */
   public $outputGcsDestination;
@@ -32,9 +29,7 @@ class GoogleCloudDocumentaiUiv1beta3ExportDocumentsMetadataIndividualExportStatu
   protected $statusDataType = '';
 
   /**
-   * The path to source docproto of the document.
-   *
-   * @param GoogleCloudDocumentaiUiv1beta3DocumentId $documentId
+   * @param GoogleCloudDocumentaiUiv1beta3DocumentId
    */
   public function setDocumentId(GoogleCloudDocumentaiUiv1beta3DocumentId $documentId)
   {
@@ -48,10 +43,7 @@ class GoogleCloudDocumentaiUiv1beta3ExportDocumentsMetadataIndividualExportStatu
     return $this->documentId;
   }
   /**
-   * The output_gcs_destination of the exported document if it was successful,
-   * otherwise empty.
-   *
-   * @param string $outputGcsDestination
+   * @param string
    */
   public function setOutputGcsDestination($outputGcsDestination)
   {
@@ -65,9 +57,7 @@ class GoogleCloudDocumentaiUiv1beta3ExportDocumentsMetadataIndividualExportStatu
     return $this->outputGcsDestination;
   }
   /**
-   * The status of the exporting of the document.
-   *
-   * @param GoogleRpcStatus $status
+   * @param GoogleRpcStatus
    */
   public function setStatus(GoogleRpcStatus $status)
   {

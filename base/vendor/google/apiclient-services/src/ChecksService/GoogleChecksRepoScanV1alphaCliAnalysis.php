@@ -26,9 +26,7 @@ class GoogleChecksRepoScanV1alphaCliAnalysis extends \Google\Collection
   protected $sourcesDataType = 'array';
 
   /**
-   * Optional. Requested code scans resulting from preliminary CLI analysis.
-   *
-   * @param GoogleChecksRepoScanV1alphaCodeScan[] $codeScans
+   * @param GoogleChecksRepoScanV1alphaCodeScan[]
    */
   public function setCodeScans($codeScans)
   {
@@ -42,9 +40,7 @@ class GoogleChecksRepoScanV1alphaCliAnalysis extends \Google\Collection
     return $this->codeScans;
   }
   /**
-   * Optional. Data sources detected in the scan.
-   *
-   * @param GoogleChecksRepoScanV1alphaSource[] $sources
+   * @param GoogleChecksRepoScanV1alphaSource[]
    */
   public function setSources($sources)
   {

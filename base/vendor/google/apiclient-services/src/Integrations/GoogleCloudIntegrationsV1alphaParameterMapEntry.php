@@ -25,9 +25,7 @@ class GoogleCloudIntegrationsV1alphaParameterMapEntry extends \Google\Model
   protected $valueDataType = '';
 
   /**
-   * Key of the map entry.
-   *
-   * @param GoogleCloudIntegrationsV1alphaParameterMapField $key
+   * @param GoogleCloudIntegrationsV1alphaParameterMapField
    */
   public function setKey(GoogleCloudIntegrationsV1alphaParameterMapField $key)
   {
@@ -41,9 +39,7 @@ class GoogleCloudIntegrationsV1alphaParameterMapEntry extends \Google\Model
     return $this->key;
   }
   /**
-   * Value of the map entry.
-   *
-   * @param GoogleCloudIntegrationsV1alphaParameterMapField $value
+   * @param GoogleCloudIntegrationsV1alphaParameterMapField
    */
   public function setValue(GoogleCloudIntegrationsV1alphaParameterMapField $value)
   {

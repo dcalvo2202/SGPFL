@@ -23,29 +23,18 @@ class TableCell extends \Google\Collection
   protected $contentType = StructuralElement::class;
   protected $contentDataType = 'array';
   /**
-   * The zero-based end index of this cell, exclusive, in UTF-16 code units.
-   *
    * @var int
    */
   public $endIndex;
   /**
-   * The zero-based start index of this cell, in UTF-16 code units.
-   *
    * @var int
    */
   public $startIndex;
   /**
-   * The suggested deletion IDs. If empty, then there are no suggested deletions
-   * of this content.
-   *
    * @var string[]
    */
   public $suggestedDeletionIds;
   /**
-   * The suggested insertion IDs. A TableCell may have multiple insertion IDs if
-   * it's a nested suggested change. If empty, then this is not a suggested
-   * insertion.
-   *
    * @var string[]
    */
   public $suggestedInsertionIds;
@@ -55,9 +44,7 @@ class TableCell extends \Google\Collection
   protected $tableCellStyleDataType = '';
 
   /**
-   * The content of the cell.
-   *
-   * @param StructuralElement[] $content
+   * @param StructuralElement[]
    */
   public function setContent($content)
   {
@@ -71,9 +58,7 @@ class TableCell extends \Google\Collection
     return $this->content;
   }
   /**
-   * The zero-based end index of this cell, exclusive, in UTF-16 code units.
-   *
-   * @param int $endIndex
+   * @param int
    */
   public function setEndIndex($endIndex)
   {
@@ -87,9 +72,7 @@ class TableCell extends \Google\Collection
     return $this->endIndex;
   }
   /**
-   * The zero-based start index of this cell, in UTF-16 code units.
-   *
-   * @param int $startIndex
+   * @param int
    */
   public function setStartIndex($startIndex)
   {
@@ -103,10 +86,7 @@ class TableCell extends \Google\Collection
     return $this->startIndex;
   }
   /**
-   * The suggested deletion IDs. If empty, then there are no suggested deletions
-   * of this content.
-   *
-   * @param string[] $suggestedDeletionIds
+   * @param string[]
    */
   public function setSuggestedDeletionIds($suggestedDeletionIds)
   {
@@ -120,11 +100,7 @@ class TableCell extends \Google\Collection
     return $this->suggestedDeletionIds;
   }
   /**
-   * The suggested insertion IDs. A TableCell may have multiple insertion IDs if
-   * it's a nested suggested change. If empty, then this is not a suggested
-   * insertion.
-   *
-   * @param string[] $suggestedInsertionIds
+   * @param string[]
    */
   public function setSuggestedInsertionIds($suggestedInsertionIds)
   {
@@ -138,9 +114,7 @@ class TableCell extends \Google\Collection
     return $this->suggestedInsertionIds;
   }
   /**
-   * The suggested changes to the table cell style, keyed by suggestion ID.
-   *
-   * @param SuggestedTableCellStyle[] $suggestedTableCellStyleChanges
+   * @param SuggestedTableCellStyle[]
    */
   public function setSuggestedTableCellStyleChanges($suggestedTableCellStyleChanges)
   {
@@ -154,9 +128,7 @@ class TableCell extends \Google\Collection
     return $this->suggestedTableCellStyleChanges;
   }
   /**
-   * The style of the cell.
-   *
-   * @param TableCellStyle $tableCellStyle
+   * @param TableCellStyle
    */
   public function setTableCellStyle(TableCellStyle $tableCellStyle)
   {

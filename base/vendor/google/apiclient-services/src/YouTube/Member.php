@@ -20,15 +20,10 @@ namespace Google\Service\YouTube;
 class Member extends \Google\Model
 {
   /**
-   * Etag of this resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "youtube#member".
-   *
    * @var string
    */
   public $kind;
@@ -36,9 +31,7 @@ class Member extends \Google\Model
   protected $snippetDataType = '';
 
   /**
-   * Etag of this resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -52,10 +45,7 @@ class Member extends \Google\Model
     return $this->etag;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "youtube#member".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -69,9 +59,7 @@ class Member extends \Google\Model
     return $this->kind;
   }
   /**
-   * The snippet object contains basic details about the member.
-   *
-   * @param MemberSnippet $snippet
+   * @param MemberSnippet
    */
   public function setSnippet(MemberSnippet $snippet)
   {

@@ -19,71 +19,27 @@ namespace Google\Service\CloudDeploy;
 
 class AutomationRun extends \Google\Model
 {
-  /**
-   * The `AutomationRun` has an unspecified state.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The `AutomationRun` has succeeded.
-   */
-  public const STATE_SUCCEEDED = 'SUCCEEDED';
-  /**
-   * The `AutomationRun` was cancelled.
-   */
-  public const STATE_CANCELLED = 'CANCELLED';
-  /**
-   * The `AutomationRun` has failed.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * The `AutomationRun` is in progress.
-   */
-  public const STATE_IN_PROGRESS = 'IN_PROGRESS';
-  /**
-   * The `AutomationRun` is pending.
-   */
-  public const STATE_PENDING = 'PENDING';
-  /**
-   * The `AutomationRun` was aborted.
-   */
-  public const STATE_ABORTED = 'ABORTED';
   protected $advanceRolloutOperationType = AdvanceRolloutOperation::class;
   protected $advanceRolloutOperationDataType = '';
   /**
-   * Output only. The ID of the automation that initiated the operation.
-   *
    * @var string
    */
   public $automationId;
   protected $automationSnapshotType = Automation::class;
   protected $automationSnapshotDataType = '';
   /**
-   * Output only. Time at which the `AutomationRun` was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. The weak etag of the `AutomationRun` resource. This checksum
-   * is computed by the server based on the value of other fields, and may be
-   * sent on update and delete requests to ensure the client has an up-to-date
-   * value before proceeding.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Output only. Time the `AutomationRun` expires. An `AutomationRun` expires
-   * after 14 days from its creation date.
-   *
    * @var string
    */
   public $expireTime;
   /**
-   * Output only. Name of the `AutomationRun`. Format is `projects/{project}/loc
-   * ations/{location}/deliveryPipelines/{delivery_pipeline}/automationRuns/{aut
-   * omation_run}`.
-   *
    * @var string
    */
   public $name;
@@ -94,65 +50,38 @@ class AutomationRun extends \Google\Model
   protected $repairRolloutOperationType = RepairRolloutOperation::class;
   protected $repairRolloutOperationDataType = '';
   /**
-   * Output only. The ID of the automation rule that initiated the operation.
-   *
    * @var string
    */
   public $ruleId;
   /**
-   * Output only. Email address of the user-managed IAM service account that
-   * performs the operations against Cloud Deploy resources.
-   *
    * @var string
    */
   public $serviceAccount;
   /**
-   * Output only. Current state of the `AutomationRun`.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. Explains the current state of the `AutomationRun`. Present
-   * only when an explanation is needed.
-   *
    * @var string
    */
   public $stateDescription;
   /**
-   * Output only. The ID of the source target that initiates the
-   * `AutomationRun`. The value of this field is the last segment of a target
-   * name.
-   *
    * @var string
    */
   public $targetId;
   protected $timedPromoteReleaseOperationType = TimedPromoteReleaseOperation::class;
   protected $timedPromoteReleaseOperationDataType = '';
   /**
-   * Output only. Unique identifier of the `AutomationRun`.
-   *
-   * @var string
-   */
-  public $uid;
-  /**
-   * Output only. Time at which the automationRun was updated.
-   *
    * @var string
    */
   public $updateTime;
   /**
-   * Output only. Earliest time the `AutomationRun` will attempt to resume.
-   * Wait-time is configured by `wait` in automation rule.
-   *
    * @var string
    */
   public $waitUntilTime;
 
   /**
-   * Output only. Advances a rollout to the next phase.
-   *
-   * @param AdvanceRolloutOperation $advanceRolloutOperation
+   * @param AdvanceRolloutOperation
    */
   public function setAdvanceRolloutOperation(AdvanceRolloutOperation $advanceRolloutOperation)
   {
@@ -166,9 +95,7 @@ class AutomationRun extends \Google\Model
     return $this->advanceRolloutOperation;
   }
   /**
-   * Output only. The ID of the automation that initiated the operation.
-   *
-   * @param string $automationId
+   * @param string
    */
   public function setAutomationId($automationId)
   {
@@ -182,10 +109,7 @@ class AutomationRun extends \Google\Model
     return $this->automationId;
   }
   /**
-   * Output only. Snapshot of the Automation taken at AutomationRun creation
-   * time.
-   *
-   * @param Automation $automationSnapshot
+   * @param Automation
    */
   public function setAutomationSnapshot(Automation $automationSnapshot)
   {
@@ -199,9 +123,7 @@ class AutomationRun extends \Google\Model
     return $this->automationSnapshot;
   }
   /**
-   * Output only. Time at which the `AutomationRun` was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -215,12 +137,7 @@ class AutomationRun extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. The weak etag of the `AutomationRun` resource. This checksum
-   * is computed by the server based on the value of other fields, and may be
-   * sent on update and delete requests to ensure the client has an up-to-date
-   * value before proceeding.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -234,10 +151,7 @@ class AutomationRun extends \Google\Model
     return $this->etag;
   }
   /**
-   * Output only. Time the `AutomationRun` expires. An `AutomationRun` expires
-   * after 14 days from its creation date.
-   *
-   * @param string $expireTime
+   * @param string
    */
   public function setExpireTime($expireTime)
   {
@@ -251,11 +165,7 @@ class AutomationRun extends \Google\Model
     return $this->expireTime;
   }
   /**
-   * Output only. Name of the `AutomationRun`. Format is `projects/{project}/loc
-   * ations/{location}/deliveryPipelines/{delivery_pipeline}/automationRuns/{aut
-   * omation_run}`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -269,10 +179,7 @@ class AutomationRun extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Contains information about what policies prevented the
-   * `AutomationRun` from proceeding.
-   *
-   * @param PolicyViolation $policyViolation
+   * @param PolicyViolation
    */
   public function setPolicyViolation(PolicyViolation $policyViolation)
   {
@@ -286,9 +193,7 @@ class AutomationRun extends \Google\Model
     return $this->policyViolation;
   }
   /**
-   * Output only. Promotes a release to a specified 'Target'.
-   *
-   * @param PromoteReleaseOperation $promoteReleaseOperation
+   * @param PromoteReleaseOperation
    */
   public function setPromoteReleaseOperation(PromoteReleaseOperation $promoteReleaseOperation)
   {
@@ -302,9 +207,7 @@ class AutomationRun extends \Google\Model
     return $this->promoteReleaseOperation;
   }
   /**
-   * Output only. Repairs a failed 'Rollout'.
-   *
-   * @param RepairRolloutOperation $repairRolloutOperation
+   * @param RepairRolloutOperation
    */
   public function setRepairRolloutOperation(RepairRolloutOperation $repairRolloutOperation)
   {
@@ -318,9 +221,7 @@ class AutomationRun extends \Google\Model
     return $this->repairRolloutOperation;
   }
   /**
-   * Output only. The ID of the automation rule that initiated the operation.
-   *
-   * @param string $ruleId
+   * @param string
    */
   public function setRuleId($ruleId)
   {
@@ -334,10 +235,7 @@ class AutomationRun extends \Google\Model
     return $this->ruleId;
   }
   /**
-   * Output only. Email address of the user-managed IAM service account that
-   * performs the operations against Cloud Deploy resources.
-   *
-   * @param string $serviceAccount
+   * @param string
    */
   public function setServiceAccount($serviceAccount)
   {
@@ -351,29 +249,21 @@ class AutomationRun extends \Google\Model
     return $this->serviceAccount;
   }
   /**
-   * Output only. Current state of the `AutomationRun`.
-   *
-   * Accepted values: STATE_UNSPECIFIED, SUCCEEDED, CANCELLED, FAILED,
-   * IN_PROGRESS, PENDING, ABORTED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. Explains the current state of the `AutomationRun`. Present
-   * only when an explanation is needed.
-   *
-   * @param string $stateDescription
+   * @param string
    */
   public function setStateDescription($stateDescription)
   {
@@ -387,11 +277,7 @@ class AutomationRun extends \Google\Model
     return $this->stateDescription;
   }
   /**
-   * Output only. The ID of the source target that initiates the
-   * `AutomationRun`. The value of this field is the last segment of a target
-   * name.
-   *
-   * @param string $targetId
+   * @param string
    */
   public function setTargetId($targetId)
   {
@@ -405,10 +291,7 @@ class AutomationRun extends \Google\Model
     return $this->targetId;
   }
   /**
-   * Output only. Promotes a release to a specified 'Target' as defined in a
-   * Timed Promote Release rule.
-   *
-   * @param TimedPromoteReleaseOperation $timedPromoteReleaseOperation
+   * @param TimedPromoteReleaseOperation
    */
   public function setTimedPromoteReleaseOperation(TimedPromoteReleaseOperation $timedPromoteReleaseOperation)
   {
@@ -422,25 +305,7 @@ class AutomationRun extends \Google\Model
     return $this->timedPromoteReleaseOperation;
   }
   /**
-   * Output only. Unique identifier of the `AutomationRun`.
-   *
-   * @param string $uid
-   */
-  public function setUid($uid)
-  {
-    $this->uid = $uid;
-  }
-  /**
-   * @return string
-   */
-  public function getUid()
-  {
-    return $this->uid;
-  }
-  /**
-   * Output only. Time at which the automationRun was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -454,10 +319,7 @@ class AutomationRun extends \Google\Model
     return $this->updateTime;
   }
   /**
-   * Output only. Earliest time the `AutomationRun` will attempt to resume.
-   * Wait-time is configured by `wait` in automation rule.
-   *
-   * @param string $waitUntilTime
+   * @param string
    */
   public function setWaitUntilTime($waitUntilTime)
   {

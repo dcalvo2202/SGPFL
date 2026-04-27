@@ -20,22 +20,12 @@ namespace Google\Service\CloudIdentity;
 class CheckTransitiveMembershipResponse extends \Google\Model
 {
   /**
-   * Response does not include the possible roles of a member since the behavior
-   * of this rpc is not all-or-nothing unlike the other rpcs. So, it may not be
-   * possible to list all the roles definitively, due to possible lack of
-   * authorization in some of the paths.
-   *
    * @var bool
    */
   public $hasMembership;
 
   /**
-   * Response does not include the possible roles of a member since the behavior
-   * of this rpc is not all-or-nothing unlike the other rpcs. So, it may not be
-   * possible to list all the roles definitively, due to possible lack of
-   * authorization in some of the paths.
-   *
-   * @param bool $hasMembership
+   * @param bool
    */
   public function setHasMembership($hasMembership)
   {

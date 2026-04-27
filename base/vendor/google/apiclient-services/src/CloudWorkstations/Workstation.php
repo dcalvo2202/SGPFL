@@ -20,153 +20,74 @@ namespace Google\Service\CloudWorkstations;
 class Workstation extends \Google\Model
 {
   /**
-   * Do not use.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The workstation is not yet ready to accept requests from users but will be
-   * soon.
-   */
-  public const STATE_STATE_STARTING = 'STATE_STARTING';
-  /**
-   * The workstation is ready to accept requests from users.
-   */
-  public const STATE_STATE_RUNNING = 'STATE_RUNNING';
-  /**
-   * The workstation is being stopped.
-   */
-  public const STATE_STATE_STOPPING = 'STATE_STOPPING';
-  /**
-   * The workstation is stopped and will not be able to receive requests until
-   * it is started.
-   */
-  public const STATE_STATE_STOPPED = 'STATE_STOPPED';
-  /**
-   * The workstation is being suspended.
-   */
-  public const STATE_STATE_SUSPENDING = 'STATE_SUSPENDING';
-  /**
-   * The workstation is suspended.
-   */
-  public const STATE_STATE_SUSPENDED = 'STATE_SUSPENDED';
-  /**
-   * Optional. Client-specified annotations.
-   *
    * @var string[]
    */
   public $annotations;
   /**
-   * Output only. Time when this workstation was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. Time when this workstation was soft-deleted.
-   *
    * @var string
    */
   public $deleteTime;
   /**
-   * Optional. Human-readable name for this workstation.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Optional. Environment variables passed to the workstation container's
-   * entrypoint.
-   *
    * @var string[]
    */
   public $env;
   /**
-   * Optional. Checksum computed by the server. May be sent on update and delete
-   * requests to make sure that the client has an up-to-date value before
-   * proceeding.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Output only. Host to which clients can send HTTPS traffic that will be
-   * received by the workstation. Authorized traffic will be received to the
-   * workstation as HTTP on port 80. To send traffic to a different port,
-   * clients may prefix the host with the destination port in the format
-   * `{port}-{host}`.
-   *
    * @var string
    */
   public $host;
   /**
-   * Output only. The name of the Google Cloud KMS encryption key used to
-   * encrypt this workstation. The KMS key can only be configured in the
-   * WorkstationConfig. The expected format is
-   * `projects/locations/keyRings/cryptoKeys`.
-   *
    * @var string
    */
   public $kmsKey;
   /**
-   * Optional. [Labels](https://cloud.google.com/workstations/docs/label-
-   * resources) that are applied to the workstation and that are also propagated
-   * to the underlying Compute Engine resources.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Identifier. Full name of this workstation.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Indicates whether this workstation is currently being updated
-   * to match its intended state.
-   *
    * @var bool
    */
   public $reconciling;
   protected $runtimeHostType = RuntimeHost::class;
   protected $runtimeHostDataType = '';
   /**
-   * Optional. The source workstation from which this workstation's persistent
-   * directories were cloned on creation.
-   *
    * @var string
    */
   public $sourceWorkstation;
   /**
-   * Output only. Time when this workstation was most recently successfully
-   * started, regardless of the workstation's initial state.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * Output only. Current state of the workstation.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. A system-assigned unique identifier for this workstation.
-   *
    * @var string
    */
   public $uid;
   /**
-   * Output only. Time when this workstation was most recently updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Optional. Client-specified annotations.
-   *
-   * @param string[] $annotations
+   * @param string[]
    */
   public function setAnnotations($annotations)
   {
@@ -180,9 +101,7 @@ class Workstation extends \Google\Model
     return $this->annotations;
   }
   /**
-   * Output only. Time when this workstation was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -196,9 +115,7 @@ class Workstation extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. Time when this workstation was soft-deleted.
-   *
-   * @param string $deleteTime
+   * @param string
    */
   public function setDeleteTime($deleteTime)
   {
@@ -212,9 +129,7 @@ class Workstation extends \Google\Model
     return $this->deleteTime;
   }
   /**
-   * Optional. Human-readable name for this workstation.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -228,10 +143,7 @@ class Workstation extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Optional. Environment variables passed to the workstation container's
-   * entrypoint.
-   *
-   * @param string[] $env
+   * @param string[]
    */
   public function setEnv($env)
   {
@@ -245,11 +157,7 @@ class Workstation extends \Google\Model
     return $this->env;
   }
   /**
-   * Optional. Checksum computed by the server. May be sent on update and delete
-   * requests to make sure that the client has an up-to-date value before
-   * proceeding.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -263,13 +171,7 @@ class Workstation extends \Google\Model
     return $this->etag;
   }
   /**
-   * Output only. Host to which clients can send HTTPS traffic that will be
-   * received by the workstation. Authorized traffic will be received to the
-   * workstation as HTTP on port 80. To send traffic to a different port,
-   * clients may prefix the host with the destination port in the format
-   * `{port}-{host}`.
-   *
-   * @param string $host
+   * @param string
    */
   public function setHost($host)
   {
@@ -283,12 +185,7 @@ class Workstation extends \Google\Model
     return $this->host;
   }
   /**
-   * Output only. The name of the Google Cloud KMS encryption key used to
-   * encrypt this workstation. The KMS key can only be configured in the
-   * WorkstationConfig. The expected format is
-   * `projects/locations/keyRings/cryptoKeys`.
-   *
-   * @param string $kmsKey
+   * @param string
    */
   public function setKmsKey($kmsKey)
   {
@@ -302,11 +199,7 @@ class Workstation extends \Google\Model
     return $this->kmsKey;
   }
   /**
-   * Optional. [Labels](https://cloud.google.com/workstations/docs/label-
-   * resources) that are applied to the workstation and that are also propagated
-   * to the underlying Compute Engine resources.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -320,9 +213,7 @@ class Workstation extends \Google\Model
     return $this->labels;
   }
   /**
-   * Identifier. Full name of this workstation.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -336,10 +227,7 @@ class Workstation extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Indicates whether this workstation is currently being updated
-   * to match its intended state.
-   *
-   * @param bool $reconciling
+   * @param bool
    */
   public function setReconciling($reconciling)
   {
@@ -353,10 +241,7 @@ class Workstation extends \Google\Model
     return $this->reconciling;
   }
   /**
-   * Optional. Output only. Runtime host for the workstation when in
-   * STATE_RUNNING.
-   *
-   * @param RuntimeHost $runtimeHost
+   * @param RuntimeHost
    */
   public function setRuntimeHost(RuntimeHost $runtimeHost)
   {
@@ -370,10 +255,7 @@ class Workstation extends \Google\Model
     return $this->runtimeHost;
   }
   /**
-   * Optional. The source workstation from which this workstation's persistent
-   * directories were cloned on creation.
-   *
-   * @param string $sourceWorkstation
+   * @param string
    */
   public function setSourceWorkstation($sourceWorkstation)
   {
@@ -387,10 +269,7 @@ class Workstation extends \Google\Model
     return $this->sourceWorkstation;
   }
   /**
-   * Output only. Time when this workstation was most recently successfully
-   * started, regardless of the workstation's initial state.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -404,28 +283,21 @@ class Workstation extends \Google\Model
     return $this->startTime;
   }
   /**
-   * Output only. Current state of the workstation.
-   *
-   * Accepted values: STATE_UNSPECIFIED, STATE_STARTING, STATE_RUNNING,
-   * STATE_STOPPING, STATE_STOPPED, STATE_SUSPENDING, STATE_SUSPENDED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. A system-assigned unique identifier for this workstation.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {
@@ -439,9 +311,7 @@ class Workstation extends \Google\Model
     return $this->uid;
   }
   /**
-   * Output only. Time when this workstation was most recently updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

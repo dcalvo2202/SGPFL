@@ -20,25 +20,16 @@ namespace Google\Service\OSConfig;
 class OSPolicyAssignmentInstanceFilterInventory extends \Google\Model
 {
   /**
-   * Required. The OS short name
-   *
    * @var string
    */
   public $osShortName;
   /**
-   * The OS version Prefix matches are supported if asterisk(*) is provided as
-   * the last character. For example, to match all versions with a major version
-   * of `7`, specify the following value for this field `7.*` An empty string
-   * matches all OS versions.
-   *
    * @var string
    */
   public $osVersion;
 
   /**
-   * Required. The OS short name
-   *
-   * @param string $osShortName
+   * @param string
    */
   public function setOsShortName($osShortName)
   {
@@ -52,12 +43,7 @@ class OSPolicyAssignmentInstanceFilterInventory extends \Google\Model
     return $this->osShortName;
   }
   /**
-   * The OS version Prefix matches are supported if asterisk(*) is provided as
-   * the last character. For example, to match all versions with a major version
-   * of `7`, specify the following value for this field `7.*` An empty string
-   * matches all OS versions.
-   *
-   * @param string $osVersion
+   * @param string
    */
   public function setOsVersion($osVersion)
   {

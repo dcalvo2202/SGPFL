@@ -23,17 +23,12 @@ class ListAccessLevelsResponse extends \Google\Collection
   protected $accessLevelsType = AccessLevel::class;
   protected $accessLevelsDataType = 'array';
   /**
-   * The pagination token to retrieve the next page of results. If the value is
-   * empty, no further results remain.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * List of the Access Level instances.
-   *
-   * @param AccessLevel[] $accessLevels
+   * @param AccessLevel[]
    */
   public function setAccessLevels($accessLevels)
   {
@@ -47,10 +42,7 @@ class ListAccessLevelsResponse extends \Google\Collection
     return $this->accessLevels;
   }
   /**
-   * The pagination token to retrieve the next page of results. If the value is
-   * empty, no further results remain.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

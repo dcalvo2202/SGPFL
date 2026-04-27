@@ -22,19 +22,12 @@ class DeidentifiedStoreDestination extends \Google\Model
   protected $configType = DeidentifyConfig::class;
   protected $configDataType = '';
   /**
-   * Optional. The full resource name of a Cloud Healthcare FHIR store, for
-   * example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_i
-   * d}/fhirStores/{fhir_store_id}`.
-   *
    * @var string
    */
   public $store;
 
   /**
-   * Optional. The configuration to use when de-identifying resources that are
-   * added to this store.
-   *
-   * @param DeidentifyConfig $config
+   * @param DeidentifyConfig
    */
   public function setConfig(DeidentifyConfig $config)
   {
@@ -48,11 +41,7 @@ class DeidentifiedStoreDestination extends \Google\Model
     return $this->config;
   }
   /**
-   * Optional. The full resource name of a Cloud Healthcare FHIR store, for
-   * example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_i
-   * d}/fhirStores/{fhir_store_id}`.
-   *
-   * @param string $store
+   * @param string
    */
   public function setStore($store)
   {

@@ -20,32 +20,16 @@ namespace Google\Service\Compute;
 class InstanceMoveRequest extends \Google\Model
 {
   /**
-   * The URL of the destination zone to move the instance. This can be a full or
-   * partial URL. For example, the following are all valid URLs to a zone:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone     -
-   * projects/project/zones/zone     - zones/zone
-   *
    * @var string
    */
   public $destinationZone;
   /**
-   * The URL of the target instance to move. This can be a full or partial URL.
-   * For example, the following are all valid URLs to an instance:        - http
-   * s://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/ins
-   * tance     - projects/project/zones/zone/instances/instance     -
-   * zones/zone/instances/instance
-   *
    * @var string
    */
   public $targetInstance;
 
   /**
-   * The URL of the destination zone to move the instance. This can be a full or
-   * partial URL. For example, the following are all valid URLs to a zone:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone     -
-   * projects/project/zones/zone     - zones/zone
-   *
-   * @param string $destinationZone
+   * @param string
    */
   public function setDestinationZone($destinationZone)
   {
@@ -59,13 +43,7 @@ class InstanceMoveRequest extends \Google\Model
     return $this->destinationZone;
   }
   /**
-   * The URL of the target instance to move. This can be a full or partial URL.
-   * For example, the following are all valid URLs to an instance:        - http
-   * s://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/ins
-   * tance     - projects/project/zones/zone/instances/instance     -
-   * zones/zone/instances/instance
-   *
-   * @param string $targetInstance
+   * @param string
    */
   public function setTargetInstance($targetInstance)
   {

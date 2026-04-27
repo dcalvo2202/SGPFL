@@ -37,7 +37,7 @@ class AccumulableInfo extends \Google\Model
   public $value;
 
   /**
-   * @param string $accumullableInfoId
+   * @param string
    */
   public function setAccumullableInfoId($accumullableInfoId)
   {
@@ -51,7 +51,7 @@ class AccumulableInfo extends \Google\Model
     return $this->accumullableInfoId;
   }
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -65,7 +65,7 @@ class AccumulableInfo extends \Google\Model
     return $this->name;
   }
   /**
-   * @param string $update
+   * @param string
    */
   public function setUpdate($update)
   {
@@ -79,7 +79,7 @@ class AccumulableInfo extends \Google\Model
     return $this->update;
   }
   /**
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

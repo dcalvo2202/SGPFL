@@ -19,68 +19,42 @@ namespace Google\Service\Dataproc;
 
 class BatchOperationMetadata extends \Google\Collection
 {
-  /**
-   * Batch operation type is unknown.
-   */
-  public const OPERATION_TYPE_BATCH_OPERATION_TYPE_UNSPECIFIED = 'BATCH_OPERATION_TYPE_UNSPECIFIED';
-  /**
-   * Batch operation type.
-   */
-  public const OPERATION_TYPE_BATCH = 'BATCH';
   protected $collection_key = 'warnings';
   /**
-   * Name of the batch for the operation.
-   *
    * @var string
    */
   public $batch;
   /**
-   * Batch UUID for the operation.
-   *
    * @var string
    */
   public $batchUuid;
   /**
-   * The time when the operation was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Short description of the operation.
-   *
    * @var string
    */
   public $description;
   /**
-   * The time when the operation finished.
-   *
    * @var string
    */
   public $doneTime;
   /**
-   * Labels associated with the operation.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * The operation type.
-   *
    * @var string
    */
   public $operationType;
   /**
-   * Warnings encountered during operation execution.
-   *
    * @var string[]
    */
   public $warnings;
 
   /**
-   * Name of the batch for the operation.
-   *
-   * @param string $batch
+   * @param string
    */
   public function setBatch($batch)
   {
@@ -94,9 +68,7 @@ class BatchOperationMetadata extends \Google\Collection
     return $this->batch;
   }
   /**
-   * Batch UUID for the operation.
-   *
-   * @param string $batchUuid
+   * @param string
    */
   public function setBatchUuid($batchUuid)
   {
@@ -110,9 +82,7 @@ class BatchOperationMetadata extends \Google\Collection
     return $this->batchUuid;
   }
   /**
-   * The time when the operation was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -126,9 +96,7 @@ class BatchOperationMetadata extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Short description of the operation.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -142,9 +110,7 @@ class BatchOperationMetadata extends \Google\Collection
     return $this->description;
   }
   /**
-   * The time when the operation finished.
-   *
-   * @param string $doneTime
+   * @param string
    */
   public function setDoneTime($doneTime)
   {
@@ -158,9 +124,7 @@ class BatchOperationMetadata extends \Google\Collection
     return $this->doneTime;
   }
   /**
-   * Labels associated with the operation.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -174,27 +138,21 @@ class BatchOperationMetadata extends \Google\Collection
     return $this->labels;
   }
   /**
-   * The operation type.
-   *
-   * Accepted values: BATCH_OPERATION_TYPE_UNSPECIFIED, BATCH
-   *
-   * @param self::OPERATION_TYPE_* $operationType
+   * @param string
    */
   public function setOperationType($operationType)
   {
     $this->operationType = $operationType;
   }
   /**
-   * @return self::OPERATION_TYPE_*
+   * @return string
    */
   public function getOperationType()
   {
     return $this->operationType;
   }
   /**
-   * Warnings encountered during operation execution.
-   *
-   * @param string[] $warnings
+   * @param string[]
    */
   public function setWarnings($warnings)
   {

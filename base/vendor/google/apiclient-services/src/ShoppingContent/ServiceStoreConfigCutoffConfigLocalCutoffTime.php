@@ -20,22 +20,16 @@ namespace Google\Service\ShoppingContent;
 class ServiceStoreConfigCutoffConfigLocalCutoffTime extends \Google\Model
 {
   /**
-   * Hour local delivery orders must be placed by to process the same day.
-   *
    * @var string
    */
   public $hour;
   /**
-   * Minute local delivery orders must be placed by to process the same day.
-   *
    * @var string
    */
   public $minute;
 
   /**
-   * Hour local delivery orders must be placed by to process the same day.
-   *
-   * @param string $hour
+   * @param string
    */
   public function setHour($hour)
   {
@@ -49,9 +43,7 @@ class ServiceStoreConfigCutoffConfigLocalCutoffTime extends \Google\Model
     return $this->hour;
   }
   /**
-   * Minute local delivery orders must be placed by to process the same day.
-   *
-   * @param string $minute
+   * @param string
    */
   public function setMinute($minute)
   {

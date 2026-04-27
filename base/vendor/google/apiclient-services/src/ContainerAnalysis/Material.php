@@ -29,7 +29,7 @@ class Material extends \Google\Model
   public $uri;
 
   /**
-   * @param string[] $digest
+   * @param string[]
    */
   public function setDigest($digest)
   {
@@ -43,7 +43,7 @@ class Material extends \Google\Model
     return $this->digest;
   }
   /**
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

@@ -19,21 +19,7 @@ namespace Google\Service\YouTube;
 
 class VideoContentDetails extends \Google\Model
 {
-  public const CAPTION_true = 'true';
-  public const CAPTION_false = 'false';
   /**
-   * sd
-   */
-  public const DEFINITION_sd = 'sd';
-  /**
-   * hd
-   */
-  public const DEFINITION_hd = 'hd';
-  public const PROJECTION_rectangular = 'rectangular';
-  public const PROJECTION_value_360 = '360';
-  /**
-   * The value of captions indicates whether the video has captions or not.
-   *
    * @var string
    */
   public $caption;
@@ -42,48 +28,26 @@ class VideoContentDetails extends \Google\Model
   protected $countryRestrictionType = AccessPolicy::class;
   protected $countryRestrictionDataType = '';
   /**
-   * The value of definition indicates whether the video is available in high
-   * definition or only in standard definition.
-   *
    * @var string
    */
   public $definition;
   /**
-   * The value of dimension indicates whether the video is available in 3D or in
-   * 2D.
-   *
    * @var string
    */
   public $dimension;
   /**
-   * The length of the video. The tag value is an ISO 8601 duration in the
-   * format PT#M#S, in which the letters PT indicate that the value specifies a
-   * period of time, and the letters M and S refer to length in minutes and
-   * seconds, respectively. The # characters preceding the M and S letters are
-   * both integers that specify the number of minutes (or seconds) of the video.
-   * For example, a value of PT15M51S indicates that the video is 15 minutes and
-   * 51 seconds long.
-   *
    * @var string
    */
   public $duration;
   /**
-   * Indicates whether the video uploader has provided a custom thumbnail image
-   * for the video. This property is only visible to the video uploader.
-   *
    * @var bool
    */
   public $hasCustomThumbnail;
   /**
-   * The value of is_license_content indicates whether the video is licensed
-   * content.
-   *
    * @var bool
    */
   public $licensedContent;
   /**
-   * Specifies the projection format of the video.
-   *
    * @var string
    */
   public $projection;
@@ -91,27 +55,21 @@ class VideoContentDetails extends \Google\Model
   protected $regionRestrictionDataType = '';
 
   /**
-   * The value of captions indicates whether the video has captions or not.
-   *
-   * Accepted values: true, false
-   *
-   * @param self::CAPTION_* $caption
+   * @param string
    */
   public function setCaption($caption)
   {
     $this->caption = $caption;
   }
   /**
-   * @return self::CAPTION_*
+   * @return string
    */
   public function getCaption()
   {
     return $this->caption;
   }
   /**
-   * Specifies the ratings that the video received under various rating schemes.
-   *
-   * @param ContentRating $contentRating
+   * @param ContentRating
    */
   public function setContentRating(ContentRating $contentRating)
   {
@@ -125,10 +83,7 @@ class VideoContentDetails extends \Google\Model
     return $this->contentRating;
   }
   /**
-   * The countryRestriction object contains information about the countries
-   * where a video is (or is not) viewable.
-   *
-   * @param AccessPolicy $countryRestriction
+   * @param AccessPolicy
    */
   public function setCountryRestriction(AccessPolicy $countryRestriction)
   {
@@ -142,29 +97,21 @@ class VideoContentDetails extends \Google\Model
     return $this->countryRestriction;
   }
   /**
-   * The value of definition indicates whether the video is available in high
-   * definition or only in standard definition.
-   *
-   * Accepted values: sd, hd
-   *
-   * @param self::DEFINITION_* $definition
+   * @param string
    */
   public function setDefinition($definition)
   {
     $this->definition = $definition;
   }
   /**
-   * @return self::DEFINITION_*
+   * @return string
    */
   public function getDefinition()
   {
     return $this->definition;
   }
   /**
-   * The value of dimension indicates whether the video is available in 3D or in
-   * 2D.
-   *
-   * @param string $dimension
+   * @param string
    */
   public function setDimension($dimension)
   {
@@ -178,15 +125,7 @@ class VideoContentDetails extends \Google\Model
     return $this->dimension;
   }
   /**
-   * The length of the video. The tag value is an ISO 8601 duration in the
-   * format PT#M#S, in which the letters PT indicate that the value specifies a
-   * period of time, and the letters M and S refer to length in minutes and
-   * seconds, respectively. The # characters preceding the M and S letters are
-   * both integers that specify the number of minutes (or seconds) of the video.
-   * For example, a value of PT15M51S indicates that the video is 15 minutes and
-   * 51 seconds long.
-   *
-   * @param string $duration
+   * @param string
    */
   public function setDuration($duration)
   {
@@ -200,10 +139,7 @@ class VideoContentDetails extends \Google\Model
     return $this->duration;
   }
   /**
-   * Indicates whether the video uploader has provided a custom thumbnail image
-   * for the video. This property is only visible to the video uploader.
-   *
-   * @param bool $hasCustomThumbnail
+   * @param bool
    */
   public function setHasCustomThumbnail($hasCustomThumbnail)
   {
@@ -217,10 +153,7 @@ class VideoContentDetails extends \Google\Model
     return $this->hasCustomThumbnail;
   }
   /**
-   * The value of is_license_content indicates whether the video is licensed
-   * content.
-   *
-   * @param bool $licensedContent
+   * @param bool
    */
   public function setLicensedContent($licensedContent)
   {
@@ -234,38 +167,27 @@ class VideoContentDetails extends \Google\Model
     return $this->licensedContent;
   }
   /**
-   * Specifies the projection format of the video.
-   *
-   * Accepted values: rectangular, 360
-   *
-   * @param self::PROJECTION_* $projection
+   * @param string
    */
   public function setProjection($projection)
   {
     $this->projection = $projection;
   }
   /**
-   * @return self::PROJECTION_*
+   * @return string
    */
   public function getProjection()
   {
     return $this->projection;
   }
   /**
-   * The regionRestriction object contains information about the countries where
-   * a video is (or is not) viewable. The object will contain either the
-   * contentDetails.regionRestriction.allowed property or the
-   * contentDetails.regionRestriction.blocked property.
-   *
-   * @deprecated
-   * @param VideoContentDetailsRegionRestriction $regionRestriction
+   * @param VideoContentDetailsRegionRestriction
    */
   public function setRegionRestriction(VideoContentDetailsRegionRestriction $regionRestriction)
   {
     $this->regionRestriction = $regionRestriction;
   }
   /**
-   * @deprecated
    * @return VideoContentDetailsRegionRestriction
    */
   public function getRegionRestriction()

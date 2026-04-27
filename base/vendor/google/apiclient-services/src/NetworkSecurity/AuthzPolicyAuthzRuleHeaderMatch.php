@@ -20,8 +20,6 @@ namespace Google\Service\NetworkSecurity;
 class AuthzPolicyAuthzRuleHeaderMatch extends \Google\Model
 {
   /**
-   * Optional. Specifies the name of the header in the request.
-   *
    * @var string
    */
   public $name;
@@ -29,9 +27,7 @@ class AuthzPolicyAuthzRuleHeaderMatch extends \Google\Model
   protected $valueDataType = '';
 
   /**
-   * Optional. Specifies the name of the header in the request.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -45,9 +41,7 @@ class AuthzPolicyAuthzRuleHeaderMatch extends \Google\Model
     return $this->name;
   }
   /**
-   * Optional. Specifies how the header match will be performed.
-   *
-   * @param AuthzPolicyAuthzRuleStringMatch $value
+   * @param AuthzPolicyAuthzRuleStringMatch
    */
   public function setValue(AuthzPolicyAuthzRuleStringMatch $value)
   {

@@ -21,64 +21,44 @@ class VideoPerformanceAd extends \Google\Collection
 {
   protected $collection_key = 'videos';
   /**
-   * The list of text assets shown on the call-to-action button.
-   *
    * @var string[]
    */
   public $actionButtonLabels;
   protected $companionBannersType = ImageAsset::class;
   protected $companionBannersDataType = 'array';
   /**
-   * The custom parameters and accompanying values to add to the tracking URL.
-   *
    * @var string[]
    */
   public $customParameters;
   /**
-   * The list of descriptions shown on the call-to-action banner.
-   *
    * @var string[]
    */
   public $descriptions;
   /**
-   * The first piece after the domain in the display URL.
-   *
    * @var string
    */
   public $displayUrlBreadcrumb1;
   /**
-   * The second piece after the domain in the display URL.
-   *
    * @var string
    */
   public $displayUrlBreadcrumb2;
   /**
-   * The domain of the display URL.
-   *
    * @var string
    */
   public $domain;
   /**
-   * The URL address of the webpage that people reach after they click the ad.
-   *
    * @var string
    */
   public $finalUrl;
   /**
-   * The list of headlines shown on the call-to-action banner.
-   *
    * @var string[]
    */
   public $headlines;
   /**
-   * The list of long headlines shown on the call-to-action banner.
-   *
    * @var string[]
    */
   public $longHeadlines;
   /**
-   * The URL address loaded in the background for tracking purposes.
-   *
    * @var string
    */
   public $trackingUrl;
@@ -86,9 +66,7 @@ class VideoPerformanceAd extends \Google\Collection
   protected $videosDataType = 'array';
 
   /**
-   * The list of text assets shown on the call-to-action button.
-   *
-   * @param string[] $actionButtonLabels
+   * @param string[]
    */
   public function setActionButtonLabels($actionButtonLabels)
   {
@@ -102,9 +80,7 @@ class VideoPerformanceAd extends \Google\Collection
     return $this->actionButtonLabels;
   }
   /**
-   * The list of companion banners used by this ad.
-   *
-   * @param ImageAsset[] $companionBanners
+   * @param ImageAsset[]
    */
   public function setCompanionBanners($companionBanners)
   {
@@ -118,9 +94,7 @@ class VideoPerformanceAd extends \Google\Collection
     return $this->companionBanners;
   }
   /**
-   * The custom parameters and accompanying values to add to the tracking URL.
-   *
-   * @param string[] $customParameters
+   * @param string[]
    */
   public function setCustomParameters($customParameters)
   {
@@ -134,9 +108,7 @@ class VideoPerformanceAd extends \Google\Collection
     return $this->customParameters;
   }
   /**
-   * The list of descriptions shown on the call-to-action banner.
-   *
-   * @param string[] $descriptions
+   * @param string[]
    */
   public function setDescriptions($descriptions)
   {
@@ -150,9 +122,7 @@ class VideoPerformanceAd extends \Google\Collection
     return $this->descriptions;
   }
   /**
-   * The first piece after the domain in the display URL.
-   *
-   * @param string $displayUrlBreadcrumb1
+   * @param string
    */
   public function setDisplayUrlBreadcrumb1($displayUrlBreadcrumb1)
   {
@@ -166,9 +136,7 @@ class VideoPerformanceAd extends \Google\Collection
     return $this->displayUrlBreadcrumb1;
   }
   /**
-   * The second piece after the domain in the display URL.
-   *
-   * @param string $displayUrlBreadcrumb2
+   * @param string
    */
   public function setDisplayUrlBreadcrumb2($displayUrlBreadcrumb2)
   {
@@ -182,9 +150,7 @@ class VideoPerformanceAd extends \Google\Collection
     return $this->displayUrlBreadcrumb2;
   }
   /**
-   * The domain of the display URL.
-   *
-   * @param string $domain
+   * @param string
    */
   public function setDomain($domain)
   {
@@ -198,9 +164,7 @@ class VideoPerformanceAd extends \Google\Collection
     return $this->domain;
   }
   /**
-   * The URL address of the webpage that people reach after they click the ad.
-   *
-   * @param string $finalUrl
+   * @param string
    */
   public function setFinalUrl($finalUrl)
   {
@@ -214,9 +178,7 @@ class VideoPerformanceAd extends \Google\Collection
     return $this->finalUrl;
   }
   /**
-   * The list of headlines shown on the call-to-action banner.
-   *
-   * @param string[] $headlines
+   * @param string[]
    */
   public function setHeadlines($headlines)
   {
@@ -230,9 +192,7 @@ class VideoPerformanceAd extends \Google\Collection
     return $this->headlines;
   }
   /**
-   * The list of long headlines shown on the call-to-action banner.
-   *
-   * @param string[] $longHeadlines
+   * @param string[]
    */
   public function setLongHeadlines($longHeadlines)
   {
@@ -246,9 +206,7 @@ class VideoPerformanceAd extends \Google\Collection
     return $this->longHeadlines;
   }
   /**
-   * The URL address loaded in the background for tracking purposes.
-   *
-   * @param string $trackingUrl
+   * @param string
    */
   public function setTrackingUrl($trackingUrl)
   {
@@ -262,9 +220,7 @@ class VideoPerformanceAd extends \Google\Collection
     return $this->trackingUrl;
   }
   /**
-   * The list of YouTube video assets used by this ad.
-   *
-   * @param YoutubeVideoDetails[] $videos
+   * @param YoutubeVideoDetails[]
    */
   public function setVideos($videos)
   {

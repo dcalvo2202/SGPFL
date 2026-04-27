@@ -21,215 +21,110 @@ class Experiment extends \Google\Collection
 {
   protected $collection_key = 'variations';
   /**
-   * Account ID to which this experiment belongs. This field is read-only.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * Time the experiment was created. This field is read-only.
-   *
    * @var string
    */
   public $created;
   /**
-   * Notes about this experiment.
-   *
    * @var string
    */
   public $description;
   /**
-   * If true, the end user will be able to edit the experiment via the Google
-   * Analytics user interface.
-   *
    * @var bool
    */
   public $editableInGaUi;
   /**
-   * The ending time of the experiment (the time the status changed from RUNNING
-   * to ENDED). This field is present only if the experiment has ended. This
-   * field is read-only.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * Boolean specifying whether to distribute traffic evenly across all
-   * variations. If the value is False, content experiments follows the default
-   * behavior of adjusting traffic dynamically based on variation performance.
-   * Optional -- defaults to False. This field may not be changed for an
-   * experiment whose status is ENDED.
-   *
    * @var bool
    */
   public $equalWeighting;
   /**
-   * Experiment ID. Required for patch and update. Disallowed for create.
-   *
    * @var string
    */
   public $id;
   /**
-   * Internal ID for the web property to which this experiment belongs. This
-   * field is read-only.
-   *
    * @var string
    */
   public $internalWebPropertyId;
   /**
-   * Resource type for an Analytics experiment. This field is read-only.
-   *
    * @var string
    */
   public $kind;
   /**
-   * An integer number in [3, 90]. Specifies the minimum length of the
-   * experiment. Can be changed for a running experiment. This field may not be
-   * changed for an experiments whose status is ENDED.
-   *
    * @var int
    */
   public $minimumExperimentLengthInDays;
   /**
-   * Experiment name. This field may not be changed for an experiment whose
-   * status is ENDED. This field is required when creating an experiment.
-   *
    * @var string
    */
   public $name;
   /**
-   * The metric that the experiment is optimizing. Valid values:
-   * "ga:goal(n)Completions", "ga:adsenseAdsClicks", "ga:adsenseAdsViewed",
-   * "ga:adsenseRevenue", "ga:bounces", "ga:pageviews", "ga:sessionDuration",
-   * "ga:transactions", "ga:transactionRevenue". This field is required if
-   * status is "RUNNING" and servingFramework is one of "REDIRECT" or "API".
-   *
    * @var string
    */
   public $objectiveMetric;
   /**
-   * Whether the objectiveMetric should be minimized or maximized. Possible
-   * values: "MAXIMUM", "MINIMUM". Optional--defaults to "MAXIMUM". Cannot be
-   * specified without objectiveMetric. Cannot be modified when status is
-   * "RUNNING" or "ENDED".
-   *
    * @var string
    */
   public $optimizationType;
   protected $parentLinkType = ExperimentParentLink::class;
   protected $parentLinkDataType = '';
   /**
-   * View (Profile) ID to which this experiment belongs. This field is read-
-   * only.
-   *
    * @var string
    */
   public $profileId;
   /**
-   * Why the experiment ended. Possible values: "STOPPED_BY_USER",
-   * "WINNER_FOUND", "EXPERIMENT_EXPIRED", "ENDED_WITH_NO_WINNER",
-   * "GOAL_OBJECTIVE_CHANGED". "ENDED_WITH_NO_WINNER" means that the experiment
-   * didn't expire but no winner was projected to be found. If the experiment
-   * status is changed via the API to ENDED this field is set to
-   * STOPPED_BY_USER. This field is read-only.
-   *
    * @var string
    */
   public $reasonExperimentEnded;
   /**
-   * Boolean specifying whether variations URLS are rewritten to match those of
-   * the original. This field may not be changed for an experiments whose status
-   * is ENDED.
-   *
    * @var bool
    */
   public $rewriteVariationUrlsAsOriginal;
   /**
-   * Link for this experiment. This field is read-only.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * The framework used to serve the experiment variations and evaluate the
-   * results. One of: - REDIRECT: Google Analytics redirects traffic to
-   * different variation pages, reports the chosen variation and evaluates the
-   * results. - API: Google Analytics chooses and reports the variation to serve
-   * and evaluates the results; the caller is responsible for serving the
-   * selected variation. - EXTERNAL: The variations will be served externally
-   * and the chosen variation reported to Google Analytics. The caller is
-   * responsible for serving the selected variation and evaluating the results.
-   *
    * @var string
    */
   public $servingFramework;
   /**
-   * The snippet of code to include on the control page(s). This field is read-
-   * only.
-   *
    * @var string
    */
   public $snippet;
   /**
-   * The starting time of the experiment (the time the status changed from
-   * READY_TO_RUN to RUNNING). This field is present only if the experiment has
-   * started. This field is read-only.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * Experiment status. Possible values: "DRAFT", "READY_TO_RUN", "RUNNING",
-   * "ENDED". Experiments can be created in the "DRAFT", "READY_TO_RUN" or
-   * "RUNNING" state. This field is required when creating an experiment.
-   *
    * @var string
    */
   public $status;
-  /**
-   * A floating-point number in (0, 1]. Specifies the fraction of the traffic
-   * that participates in the experiment. Can be changed for a running
-   * experiment. This field may not be changed for an experiments whose status
-   * is ENDED.
-   *
-   * @var 
-   */
   public $trafficCoverage;
   /**
-   * Time the experiment was last modified. This field is read-only.
-   *
    * @var string
    */
   public $updated;
   protected $variationsType = ExperimentVariations::class;
   protected $variationsDataType = 'array';
   /**
-   * Web property ID to which this experiment belongs. The web property ID is of
-   * the form UA-XXXXX-YY. This field is read-only.
-   *
    * @var string
    */
   public $webPropertyId;
-  /**
-   * A floating-point number in (0, 1). Specifies the necessary confidence level
-   * to choose a winner. This field may not be changed for an experiments whose
-   * status is ENDED.
-   *
-   * @var 
-   */
   public $winnerConfidenceLevel;
   /**
-   * Boolean specifying whether a winner has been found for this experiment.
-   * This field is read-only.
-   *
    * @var bool
    */
   public $winnerFound;
 
   /**
-   * Account ID to which this experiment belongs. This field is read-only.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -243,9 +138,7 @@ class Experiment extends \Google\Collection
     return $this->accountId;
   }
   /**
-   * Time the experiment was created. This field is read-only.
-   *
-   * @param string $created
+   * @param string
    */
   public function setCreated($created)
   {
@@ -259,9 +152,7 @@ class Experiment extends \Google\Collection
     return $this->created;
   }
   /**
-   * Notes about this experiment.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -275,10 +166,7 @@ class Experiment extends \Google\Collection
     return $this->description;
   }
   /**
-   * If true, the end user will be able to edit the experiment via the Google
-   * Analytics user interface.
-   *
-   * @param bool $editableInGaUi
+   * @param bool
    */
   public function setEditableInGaUi($editableInGaUi)
   {
@@ -292,11 +180,7 @@ class Experiment extends \Google\Collection
     return $this->editableInGaUi;
   }
   /**
-   * The ending time of the experiment (the time the status changed from RUNNING
-   * to ENDED). This field is present only if the experiment has ended. This
-   * field is read-only.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -310,13 +194,7 @@ class Experiment extends \Google\Collection
     return $this->endTime;
   }
   /**
-   * Boolean specifying whether to distribute traffic evenly across all
-   * variations. If the value is False, content experiments follows the default
-   * behavior of adjusting traffic dynamically based on variation performance.
-   * Optional -- defaults to False. This field may not be changed for an
-   * experiment whose status is ENDED.
-   *
-   * @param bool $equalWeighting
+   * @param bool
    */
   public function setEqualWeighting($equalWeighting)
   {
@@ -330,9 +208,7 @@ class Experiment extends \Google\Collection
     return $this->equalWeighting;
   }
   /**
-   * Experiment ID. Required for patch and update. Disallowed for create.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -346,10 +222,7 @@ class Experiment extends \Google\Collection
     return $this->id;
   }
   /**
-   * Internal ID for the web property to which this experiment belongs. This
-   * field is read-only.
-   *
-   * @param string $internalWebPropertyId
+   * @param string
    */
   public function setInternalWebPropertyId($internalWebPropertyId)
   {
@@ -363,9 +236,7 @@ class Experiment extends \Google\Collection
     return $this->internalWebPropertyId;
   }
   /**
-   * Resource type for an Analytics experiment. This field is read-only.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -379,11 +250,7 @@ class Experiment extends \Google\Collection
     return $this->kind;
   }
   /**
-   * An integer number in [3, 90]. Specifies the minimum length of the
-   * experiment. Can be changed for a running experiment. This field may not be
-   * changed for an experiments whose status is ENDED.
-   *
-   * @param int $minimumExperimentLengthInDays
+   * @param int
    */
   public function setMinimumExperimentLengthInDays($minimumExperimentLengthInDays)
   {
@@ -397,10 +264,7 @@ class Experiment extends \Google\Collection
     return $this->minimumExperimentLengthInDays;
   }
   /**
-   * Experiment name. This field may not be changed for an experiment whose
-   * status is ENDED. This field is required when creating an experiment.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -414,13 +278,7 @@ class Experiment extends \Google\Collection
     return $this->name;
   }
   /**
-   * The metric that the experiment is optimizing. Valid values:
-   * "ga:goal(n)Completions", "ga:adsenseAdsClicks", "ga:adsenseAdsViewed",
-   * "ga:adsenseRevenue", "ga:bounces", "ga:pageviews", "ga:sessionDuration",
-   * "ga:transactions", "ga:transactionRevenue". This field is required if
-   * status is "RUNNING" and servingFramework is one of "REDIRECT" or "API".
-   *
-   * @param string $objectiveMetric
+   * @param string
    */
   public function setObjectiveMetric($objectiveMetric)
   {
@@ -434,12 +292,7 @@ class Experiment extends \Google\Collection
     return $this->objectiveMetric;
   }
   /**
-   * Whether the objectiveMetric should be minimized or maximized. Possible
-   * values: "MAXIMUM", "MINIMUM". Optional--defaults to "MAXIMUM". Cannot be
-   * specified without objectiveMetric. Cannot be modified when status is
-   * "RUNNING" or "ENDED".
-   *
-   * @param string $optimizationType
+   * @param string
    */
   public function setOptimizationType($optimizationType)
   {
@@ -453,10 +306,7 @@ class Experiment extends \Google\Collection
     return $this->optimizationType;
   }
   /**
-   * Parent link for an experiment. Points to the view (profile) to which this
-   * experiment belongs.
-   *
-   * @param ExperimentParentLink $parentLink
+   * @param ExperimentParentLink
    */
   public function setParentLink(ExperimentParentLink $parentLink)
   {
@@ -470,10 +320,7 @@ class Experiment extends \Google\Collection
     return $this->parentLink;
   }
   /**
-   * View (Profile) ID to which this experiment belongs. This field is read-
-   * only.
-   *
-   * @param string $profileId
+   * @param string
    */
   public function setProfileId($profileId)
   {
@@ -487,14 +334,7 @@ class Experiment extends \Google\Collection
     return $this->profileId;
   }
   /**
-   * Why the experiment ended. Possible values: "STOPPED_BY_USER",
-   * "WINNER_FOUND", "EXPERIMENT_EXPIRED", "ENDED_WITH_NO_WINNER",
-   * "GOAL_OBJECTIVE_CHANGED". "ENDED_WITH_NO_WINNER" means that the experiment
-   * didn't expire but no winner was projected to be found. If the experiment
-   * status is changed via the API to ENDED this field is set to
-   * STOPPED_BY_USER. This field is read-only.
-   *
-   * @param string $reasonExperimentEnded
+   * @param string
    */
   public function setReasonExperimentEnded($reasonExperimentEnded)
   {
@@ -508,11 +348,7 @@ class Experiment extends \Google\Collection
     return $this->reasonExperimentEnded;
   }
   /**
-   * Boolean specifying whether variations URLS are rewritten to match those of
-   * the original. This field may not be changed for an experiments whose status
-   * is ENDED.
-   *
-   * @param bool $rewriteVariationUrlsAsOriginal
+   * @param bool
    */
   public function setRewriteVariationUrlsAsOriginal($rewriteVariationUrlsAsOriginal)
   {
@@ -526,9 +362,7 @@ class Experiment extends \Google\Collection
     return $this->rewriteVariationUrlsAsOriginal;
   }
   /**
-   * Link for this experiment. This field is read-only.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -542,16 +376,7 @@ class Experiment extends \Google\Collection
     return $this->selfLink;
   }
   /**
-   * The framework used to serve the experiment variations and evaluate the
-   * results. One of: - REDIRECT: Google Analytics redirects traffic to
-   * different variation pages, reports the chosen variation and evaluates the
-   * results. - API: Google Analytics chooses and reports the variation to serve
-   * and evaluates the results; the caller is responsible for serving the
-   * selected variation. - EXTERNAL: The variations will be served externally
-   * and the chosen variation reported to Google Analytics. The caller is
-   * responsible for serving the selected variation and evaluating the results.
-   *
-   * @param string $servingFramework
+   * @param string
    */
   public function setServingFramework($servingFramework)
   {
@@ -565,10 +390,7 @@ class Experiment extends \Google\Collection
     return $this->servingFramework;
   }
   /**
-   * The snippet of code to include on the control page(s). This field is read-
-   * only.
-   *
-   * @param string $snippet
+   * @param string
    */
   public function setSnippet($snippet)
   {
@@ -582,11 +404,7 @@ class Experiment extends \Google\Collection
     return $this->snippet;
   }
   /**
-   * The starting time of the experiment (the time the status changed from
-   * READY_TO_RUN to RUNNING). This field is present only if the experiment has
-   * started. This field is read-only.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -600,11 +418,7 @@ class Experiment extends \Google\Collection
     return $this->startTime;
   }
   /**
-   * Experiment status. Possible values: "DRAFT", "READY_TO_RUN", "RUNNING",
-   * "ENDED". Experiments can be created in the "DRAFT", "READY_TO_RUN" or
-   * "RUNNING" state. This field is required when creating an experiment.
-   *
-   * @param string $status
+   * @param string
    */
   public function setStatus($status)
   {
@@ -626,9 +440,7 @@ class Experiment extends \Google\Collection
     return $this->trafficCoverage;
   }
   /**
-   * Time the experiment was last modified. This field is read-only.
-   *
-   * @param string $updated
+   * @param string
    */
   public function setUpdated($updated)
   {
@@ -642,12 +454,7 @@ class Experiment extends \Google\Collection
     return $this->updated;
   }
   /**
-   * Array of variations. The first variation in the array is the original. The
-   * number of variations may not change once an experiment is in the RUNNING
-   * state. At least two variations are required before status can be set to
-   * RUNNING.
-   *
-   * @param ExperimentVariations[] $variations
+   * @param ExperimentVariations[]
    */
   public function setVariations($variations)
   {
@@ -661,10 +468,7 @@ class Experiment extends \Google\Collection
     return $this->variations;
   }
   /**
-   * Web property ID to which this experiment belongs. The web property ID is of
-   * the form UA-XXXXX-YY. This field is read-only.
-   *
-   * @param string $webPropertyId
+   * @param string
    */
   public function setWebPropertyId($webPropertyId)
   {
@@ -686,10 +490,7 @@ class Experiment extends \Google\Collection
     return $this->winnerConfidenceLevel;
   }
   /**
-   * Boolean specifying whether a winner has been found for this experiment.
-   * This field is read-only.
-   *
-   * @param bool $winnerFound
+   * @param bool
    */
   public function setWinnerFound($winnerFound)
   {

@@ -19,22 +19,6 @@ namespace Google\Service\Sasportal;
 
 class SasPortalDevice extends \Google\Collection
 {
-  /**
-   * Unspecified state.
-   */
-  public const STATE_DEVICE_STATE_UNSPECIFIED = 'DEVICE_STATE_UNSPECIFIED';
-  /**
-   * Device created in the SAS Portal, however, not yet registered with SAS.
-   */
-  public const STATE_RESERVED = 'RESERVED';
-  /**
-   * Device registered with SAS.
-   */
-  public const STATE_REGISTERED = 'REGISTERED';
-  /**
-   * Device de-registered with SAS.
-   */
-  public const STATE_DEREGISTERED = 'DEREGISTERED';
   protected $collection_key = 'grants';
   protected $activeConfigType = SasPortalDeviceConfig::class;
   protected $activeConfigDataType = '';
@@ -43,16 +27,10 @@ class SasPortalDevice extends \Google\Collection
   protected $deviceMetadataType = SasPortalDeviceMetadata::class;
   protected $deviceMetadataDataType = '';
   /**
-   * Device display name.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * The FCC identifier of the device. Refer to https://www.fcc.gov/oet/ea/fccid
-   * for FccID format. Accept underscores and periods because some test-SAS
-   * customers use them.
-   *
    * @var string
    */
   public $fccId;
@@ -61,30 +39,22 @@ class SasPortalDevice extends \Google\Collection
   protected $grantsType = SasPortalDeviceGrant::class;
   protected $grantsDataType = 'array';
   /**
-   * Output only. The resource path name.
-   *
    * @var string
    */
   public $name;
   protected $preloadedConfigType = SasPortalDeviceConfig::class;
   protected $preloadedConfigDataType = '';
   /**
-   * A serial number assigned to the device by the device manufacturer.
-   *
    * @var string
    */
   public $serialNumber;
   /**
-   * Output only. Device state.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Output only. Current configuration of the device as registered to the SAS.
-   *
-   * @param SasPortalDeviceConfig $activeConfig
+   * @param SasPortalDeviceConfig
    */
   public function setActiveConfig(SasPortalDeviceConfig $activeConfig)
   {
@@ -98,17 +68,13 @@ class SasPortalDevice extends \Google\Collection
     return $this->activeConfig;
   }
   /**
-   * Output only. Current channels with scores.
-   *
-   * @deprecated
-   * @param SasPortalChannelWithScore[] $currentChannels
+   * @param SasPortalChannelWithScore[]
    */
   public function setCurrentChannels($currentChannels)
   {
     $this->currentChannels = $currentChannels;
   }
   /**
-   * @deprecated
    * @return SasPortalChannelWithScore[]
    */
   public function getCurrentChannels()
@@ -116,10 +82,7 @@ class SasPortalDevice extends \Google\Collection
     return $this->currentChannels;
   }
   /**
-   * Device parameters that can be overridden by both SAS Portal and SAS
-   * registration requests.
-   *
-   * @param SasPortalDeviceMetadata $deviceMetadata
+   * @param SasPortalDeviceMetadata
    */
   public function setDeviceMetadata(SasPortalDeviceMetadata $deviceMetadata)
   {
@@ -133,9 +96,7 @@ class SasPortalDevice extends \Google\Collection
     return $this->deviceMetadata;
   }
   /**
-   * Device display name.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -149,11 +110,7 @@ class SasPortalDevice extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * The FCC identifier of the device. Refer to https://www.fcc.gov/oet/ea/fccid
-   * for FccID format. Accept underscores and periods because some test-SAS
-   * customers use them.
-   *
-   * @param string $fccId
+   * @param string
    */
   public function setFccId($fccId)
   {
@@ -167,9 +124,7 @@ class SasPortalDevice extends \Google\Collection
     return $this->fccId;
   }
   /**
-   * Only ranges that are within the allowlists are available for new grants.
-   *
-   * @param SasPortalFrequencyRange[] $grantRangeAllowlists
+   * @param SasPortalFrequencyRange[]
    */
   public function setGrantRangeAllowlists($grantRangeAllowlists)
   {
@@ -183,9 +138,7 @@ class SasPortalDevice extends \Google\Collection
     return $this->grantRangeAllowlists;
   }
   /**
-   * Output only. Grants held by the device.
-   *
-   * @param SasPortalDeviceGrant[] $grants
+   * @param SasPortalDeviceGrant[]
    */
   public function setGrants($grants)
   {
@@ -199,9 +152,7 @@ class SasPortalDevice extends \Google\Collection
     return $this->grants;
   }
   /**
-   * Output only. The resource path name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -215,9 +166,7 @@ class SasPortalDevice extends \Google\Collection
     return $this->name;
   }
   /**
-   * Configuration of the device, as specified via SAS Portal API.
-   *
-   * @param SasPortalDeviceConfig $preloadedConfig
+   * @param SasPortalDeviceConfig
    */
   public function setPreloadedConfig(SasPortalDeviceConfig $preloadedConfig)
   {
@@ -231,9 +180,7 @@ class SasPortalDevice extends \Google\Collection
     return $this->preloadedConfig;
   }
   /**
-   * A serial number assigned to the device by the device manufacturer.
-   *
-   * @param string $serialNumber
+   * @param string
    */
   public function setSerialNumber($serialNumber)
   {
@@ -247,19 +194,14 @@ class SasPortalDevice extends \Google\Collection
     return $this->serialNumber;
   }
   /**
-   * Output only. Device state.
-   *
-   * Accepted values: DEVICE_STATE_UNSPECIFIED, RESERVED, REGISTERED,
-   * DEREGISTERED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

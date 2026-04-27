@@ -23,16 +23,12 @@ class GoogleChromeManagementV1TouchScreenInfo extends \Google\Collection
   protected $devicesType = GoogleChromeManagementV1TouchScreenDevice::class;
   protected $devicesDataType = 'array';
   /**
-   * Output only. Touchpad library name used by the input stack.
-   *
    * @var string
    */
   public $touchpadLibrary;
 
   /**
-   * Output only. List of the internal touch screen devices.
-   *
-   * @param GoogleChromeManagementV1TouchScreenDevice[] $devices
+   * @param GoogleChromeManagementV1TouchScreenDevice[]
    */
   public function setDevices($devices)
   {
@@ -46,9 +42,7 @@ class GoogleChromeManagementV1TouchScreenInfo extends \Google\Collection
     return $this->devices;
   }
   /**
-   * Output only. Touchpad library name used by the input stack.
-   *
-   * @param string $touchpadLibrary
+   * @param string
    */
   public function setTouchpadLibrary($touchpadLibrary)
   {

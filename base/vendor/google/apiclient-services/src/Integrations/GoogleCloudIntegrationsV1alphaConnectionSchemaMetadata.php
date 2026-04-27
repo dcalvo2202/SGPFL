@@ -21,22 +21,16 @@ class GoogleCloudIntegrationsV1alphaConnectionSchemaMetadata extends \Google\Col
 {
   protected $collection_key = 'entities';
   /**
-   * List of actions.
-   *
    * @var string[]
    */
   public $actions;
   /**
-   * List of entity names.
-   *
    * @var string[]
    */
   public $entities;
 
   /**
-   * List of actions.
-   *
-   * @param string[] $actions
+   * @param string[]
    */
   public function setActions($actions)
   {
@@ -50,9 +44,7 @@ class GoogleCloudIntegrationsV1alphaConnectionSchemaMetadata extends \Google\Col
     return $this->actions;
   }
   /**
-   * List of entity names.
-   *
-   * @param string[] $entities
+   * @param string[]
    */
   public function setEntities($entities)
   {

@@ -25,7 +25,7 @@ class LiveChatMessageDeletedDetails extends \Google\Model
   public $deletedMessageId;
 
   /**
-   * @param string $deletedMessageId
+   * @param string
    */
   public function setDeletedMessageId($deletedMessageId)
   {

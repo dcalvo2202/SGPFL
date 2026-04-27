@@ -20,25 +20,16 @@ namespace Google\Service\Container;
 class AuthenticatorGroupsConfig extends \Google\Model
 {
   /**
-   * Whether this cluster should return group membership lookups during
-   * authentication using a group of security groups.
-   *
    * @var bool
    */
   public $enabled;
   /**
-   * The name of the security group-of-groups to be used. Only relevant if
-   * enabled = true.
-   *
    * @var string
    */
   public $securityGroup;
 
   /**
-   * Whether this cluster should return group membership lookups during
-   * authentication using a group of security groups.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {
@@ -52,10 +43,7 @@ class AuthenticatorGroupsConfig extends \Google\Model
     return $this->enabled;
   }
   /**
-   * The name of the security group-of-groups to be used. Only relevant if
-   * enabled = true.
-   *
-   * @param string $securityGroup
+   * @param string
    */
   public function setSecurityGroup($securityGroup)
   {

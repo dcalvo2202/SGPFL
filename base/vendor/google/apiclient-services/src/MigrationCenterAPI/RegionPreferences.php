@@ -21,20 +21,12 @@ class RegionPreferences extends \Google\Collection
 {
   protected $collection_key = 'preferredRegions';
   /**
-   * A list of preferred regions, ordered by the most preferred region first.
-   * Set only valid Google Cloud region names. See
-   * https://cloud.google.com/compute/docs/regions-zones for available regions.
-   *
    * @var string[]
    */
   public $preferredRegions;
 
   /**
-   * A list of preferred regions, ordered by the most preferred region first.
-   * Set only valid Google Cloud region names. See
-   * https://cloud.google.com/compute/docs/regions-zones for available regions.
-   *
-   * @param string[] $preferredRegions
+   * @param string[]
    */
   public function setPreferredRegions($preferredRegions)
   {

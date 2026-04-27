@@ -20,30 +20,20 @@ namespace Google\Service\RecaptchaEnterprise;
 class GoogleCloudRecaptchaenterpriseV1UserId extends \Google\Model
 {
   /**
-   * Optional. An email address.
-   *
    * @var string
    */
   public $email;
   /**
-   * Optional. A phone number. Should use the E.164 format.
-   *
    * @var string
    */
   public $phoneNumber;
   /**
-   * Optional. A unique username, if different from all the other identifiers
-   * and `account_id` that are provided. Can be a unique login handle or display
-   * name for a user.
-   *
    * @var string
    */
   public $username;
 
   /**
-   * Optional. An email address.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {
@@ -57,9 +47,7 @@ class GoogleCloudRecaptchaenterpriseV1UserId extends \Google\Model
     return $this->email;
   }
   /**
-   * Optional. A phone number. Should use the E.164 format.
-   *
-   * @param string $phoneNumber
+   * @param string
    */
   public function setPhoneNumber($phoneNumber)
   {
@@ -73,11 +61,7 @@ class GoogleCloudRecaptchaenterpriseV1UserId extends \Google\Model
     return $this->phoneNumber;
   }
   /**
-   * Optional. A unique username, if different from all the other identifiers
-   * and `account_id` that are provided. Can be a unique login handle or display
-   * name for a user.
-   *
-   * @param string $username
+   * @param string
    */
   public function setUsername($username)
   {

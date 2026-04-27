@@ -20,34 +20,24 @@ namespace Google\Service\AndroidPublisher;
 class GetSubscriptionOfferRequest extends \Google\Model
 {
   /**
-   * Required. The parent base plan (ID) of the offer to get.
-   *
    * @var string
    */
   public $basePlanId;
   /**
-   * Required. The unique offer ID of the offer to get.
-   *
    * @var string
    */
   public $offerId;
   /**
-   * Required. The parent app (package name) of the offer to get.
-   *
    * @var string
    */
   public $packageName;
   /**
-   * Required. The parent subscription (ID) of the offer to get.
-   *
    * @var string
    */
   public $productId;
 
   /**
-   * Required. The parent base plan (ID) of the offer to get.
-   *
-   * @param string $basePlanId
+   * @param string
    */
   public function setBasePlanId($basePlanId)
   {
@@ -61,9 +51,7 @@ class GetSubscriptionOfferRequest extends \Google\Model
     return $this->basePlanId;
   }
   /**
-   * Required. The unique offer ID of the offer to get.
-   *
-   * @param string $offerId
+   * @param string
    */
   public function setOfferId($offerId)
   {
@@ -77,9 +65,7 @@ class GetSubscriptionOfferRequest extends \Google\Model
     return $this->offerId;
   }
   /**
-   * Required. The parent app (package name) of the offer to get.
-   *
-   * @param string $packageName
+   * @param string
    */
   public function setPackageName($packageName)
   {
@@ -93,9 +79,7 @@ class GetSubscriptionOfferRequest extends \Google\Model
     return $this->packageName;
   }
   /**
-   * Required. The parent subscription (ID) of the offer to get.
-   *
-   * @param string $productId
+   * @param string
    */
   public function setProductId($productId)
   {

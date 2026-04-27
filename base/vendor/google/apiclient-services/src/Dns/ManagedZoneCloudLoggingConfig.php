@@ -20,9 +20,6 @@ namespace Google\Service\Dns;
 class ManagedZoneCloudLoggingConfig extends \Google\Model
 {
   /**
-   * If set, enable query logging for this ManagedZone. False by default, making
-   * logging opt-in.
-   *
    * @var bool
    */
   public $enableLogging;
@@ -32,10 +29,7 @@ class ManagedZoneCloudLoggingConfig extends \Google\Model
   public $kind;
 
   /**
-   * If set, enable query logging for this ManagedZone. False by default, making
-   * logging opt-in.
-   *
-   * @param bool $enableLogging
+   * @param bool
    */
   public function setEnableLogging($enableLogging)
   {
@@ -49,7 +43,7 @@ class ManagedZoneCloudLoggingConfig extends \Google\Model
     return $this->enableLogging;
   }
   /**
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

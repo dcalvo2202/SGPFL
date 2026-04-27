@@ -21,23 +21,16 @@ class UsageReport extends \Google\Collection
 {
   protected $collection_key = 'parameters';
   /**
-   * Output only. The date of the report request.
-   *
    * @var string
    */
   public $date;
   protected $entityType = UsageReportEntity::class;
   protected $entityDataType = '';
   /**
-   * ETag of the resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * The type of API resource. For a usage report, the value is
-   * `admin#reports#usageReport`.
-   *
    * @var string
    */
   public $kind;
@@ -45,9 +38,7 @@ class UsageReport extends \Google\Collection
   protected $parametersDataType = 'array';
 
   /**
-   * Output only. The date of the report request.
-   *
-   * @param string $date
+   * @param string
    */
   public function setDate($date)
   {
@@ -61,9 +52,7 @@ class UsageReport extends \Google\Collection
     return $this->date;
   }
   /**
-   * Output only. Information about the type of the item.
-   *
-   * @param UsageReportEntity $entity
+   * @param UsageReportEntity
    */
   public function setEntity(UsageReportEntity $entity)
   {
@@ -77,9 +66,7 @@ class UsageReport extends \Google\Collection
     return $this->entity;
   }
   /**
-   * ETag of the resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -93,10 +80,7 @@ class UsageReport extends \Google\Collection
     return $this->etag;
   }
   /**
-   * The type of API resource. For a usage report, the value is
-   * `admin#reports#usageReport`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -110,12 +94,7 @@ class UsageReport extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Output only. Parameter value pairs for various applications. For the Entity
-   * Usage Report parameters and values, see [the Entity Usage parameters refere
-   * nce](https://developers.google.com/workspace/admin/reports/v1/reference/usa
-   * ge-ref-appendix-a/entities).
-   *
-   * @param UsageReportParameters[] $parameters
+   * @param UsageReportParameters[]
    */
   public function setParameters($parameters)
   {

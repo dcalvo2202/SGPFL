@@ -20,16 +20,12 @@ namespace Google\Service\Bigquery;
 class SessionInfo extends \Google\Model
 {
   /**
-   * Output only. The id of the session.
-   *
    * @var string
    */
   public $sessionId;
 
   /**
-   * Output only. The id of the session.
-   *
-   * @param string $sessionId
+   * @param string
    */
   public function setSessionId($sessionId)
   {

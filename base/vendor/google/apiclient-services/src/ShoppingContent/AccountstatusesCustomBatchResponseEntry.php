@@ -22,8 +22,6 @@ class AccountstatusesCustomBatchResponseEntry extends \Google\Model
   protected $accountStatusType = AccountStatus::class;
   protected $accountStatusDataType = '';
   /**
-   * The ID of the request entry this entry responds to.
-   *
    * @var string
    */
   public $batchId;
@@ -31,10 +29,7 @@ class AccountstatusesCustomBatchResponseEntry extends \Google\Model
   protected $errorsDataType = '';
 
   /**
-   * The requested account status. Defined if and only if the request was
-   * successful.
-   *
-   * @param AccountStatus $accountStatus
+   * @param AccountStatus
    */
   public function setAccountStatus(AccountStatus $accountStatus)
   {
@@ -48,9 +43,7 @@ class AccountstatusesCustomBatchResponseEntry extends \Google\Model
     return $this->accountStatus;
   }
   /**
-   * The ID of the request entry this entry responds to.
-   *
-   * @param string $batchId
+   * @param string
    */
   public function setBatchId($batchId)
   {
@@ -64,10 +57,7 @@ class AccountstatusesCustomBatchResponseEntry extends \Google\Model
     return $this->batchId;
   }
   /**
-   * A list of errors for failed custombatch entries. *Note:* Schema errors fail
-   * the whole request.
-   *
-   * @param Errors $errors
+   * @param Errors
    */
   public function setErrors(Errors $errors)
   {

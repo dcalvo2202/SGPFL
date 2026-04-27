@@ -23,9 +23,7 @@ class ModifyLinkedOfferObjectsRequest extends \Google\Model
   protected $linkedOfferObjectIdsDataType = '';
 
   /**
-   * The linked offer object ids to add or remove from the object.
-   *
-   * @param ModifyLinkedOfferObjects $linkedOfferObjectIds
+   * @param ModifyLinkedOfferObjects
    */
   public function setLinkedOfferObjectIds(ModifyLinkedOfferObjects $linkedOfferObjectIds)
   {

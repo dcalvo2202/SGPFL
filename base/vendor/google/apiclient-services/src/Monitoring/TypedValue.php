@@ -20,37 +20,23 @@ namespace Google\Service\Monitoring;
 class TypedValue extends \Google\Model
 {
   /**
-   * A Boolean value: true or false.
-   *
    * @var bool
    */
   public $boolValue;
   protected $distributionValueType = Distribution::class;
   protected $distributionValueDataType = '';
-  /**
-   * A 64-bit double-precision floating-point number. Its magnitude is
-   * approximately ±10±300 and it has 16 significant digits of precision.
-   *
-   * @var 
-   */
   public $doubleValue;
   /**
-   * A 64-bit integer. Its range is approximately ±9.2x1018.
-   *
    * @var string
    */
   public $int64Value;
   /**
-   * A variable-length string value.
-   *
    * @var string
    */
   public $stringValue;
 
   /**
-   * A Boolean value: true or false.
-   *
-   * @param bool $boolValue
+   * @param bool
    */
   public function setBoolValue($boolValue)
   {
@@ -64,9 +50,7 @@ class TypedValue extends \Google\Model
     return $this->boolValue;
   }
   /**
-   * A distribution value.
-   *
-   * @param Distribution $distributionValue
+   * @param Distribution
    */
   public function setDistributionValue(Distribution $distributionValue)
   {
@@ -88,9 +72,7 @@ class TypedValue extends \Google\Model
     return $this->doubleValue;
   }
   /**
-   * A 64-bit integer. Its range is approximately ±9.2x1018.
-   *
-   * @param string $int64Value
+   * @param string
    */
   public function setInt64Value($int64Value)
   {
@@ -104,9 +86,7 @@ class TypedValue extends \Google\Model
     return $this->int64Value;
   }
   /**
-   * A variable-length string value.
-   *
-   * @param string $stringValue
+   * @param string
    */
   public function setStringValue($stringValue)
   {

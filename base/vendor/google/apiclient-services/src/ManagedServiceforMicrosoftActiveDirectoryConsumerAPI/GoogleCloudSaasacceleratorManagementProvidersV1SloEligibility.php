@@ -20,24 +20,16 @@ namespace Google\Service\ManagedServiceforMicrosoftActiveDirectoryConsumerAPI;
 class GoogleCloudSaasacceleratorManagementProvidersV1SloEligibility extends \Google\Model
 {
   /**
-   * Whether an instance is eligible or ineligible.
-   *
    * @var bool
    */
   public $eligible;
   /**
-   * User-defined reason for the current value of instance eligibility. Usually,
-   * this can be directly mapped to the internal state. An empty reason is
-   * allowed.
-   *
    * @var string
    */
   public $reason;
 
   /**
-   * Whether an instance is eligible or ineligible.
-   *
-   * @param bool $eligible
+   * @param bool
    */
   public function setEligible($eligible)
   {
@@ -51,11 +43,7 @@ class GoogleCloudSaasacceleratorManagementProvidersV1SloEligibility extends \Goo
     return $this->eligible;
   }
   /**
-   * User-defined reason for the current value of instance eligibility. Usually,
-   * this can be directly mapped to the internal state. An empty reason is
-   * allowed.
-   *
-   * @param string $reason
+   * @param string
    */
   public function setReason($reason)
   {

@@ -20,52 +20,28 @@ namespace Google\Service\ShoppingContent;
 class AccountLabel extends \Google\Model
 {
   /**
-   * Unknown label type.
-   */
-  public const LABEL_TYPE_LABEL_TYPE_UNSPECIFIED = 'LABEL_TYPE_UNSPECIFIED';
-  /**
-   * Indicates that the label was created manually.
-   */
-  public const LABEL_TYPE_MANUAL = 'MANUAL';
-  /**
-   * Indicates that the label was created automatically by CSS Center.
-   */
-  public const LABEL_TYPE_AUTOMATIC = 'AUTOMATIC';
-  /**
-   * Immutable. The ID of account this label belongs to.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * The description of this label.
-   *
    * @var string
    */
   public $description;
   /**
-   * Output only. The ID of the label.
-   *
    * @var string
    */
   public $labelId;
   /**
-   * Output only. The type of this label.
-   *
    * @var string
    */
   public $labelType;
   /**
-   * The display name of this label.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Immutable. The ID of account this label belongs to.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -79,9 +55,7 @@ class AccountLabel extends \Google\Model
     return $this->accountId;
   }
   /**
-   * The description of this label.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -95,9 +69,7 @@ class AccountLabel extends \Google\Model
     return $this->description;
   }
   /**
-   * Output only. The ID of the label.
-   *
-   * @param string $labelId
+   * @param string
    */
   public function setLabelId($labelId)
   {
@@ -111,27 +83,21 @@ class AccountLabel extends \Google\Model
     return $this->labelId;
   }
   /**
-   * Output only. The type of this label.
-   *
-   * Accepted values: LABEL_TYPE_UNSPECIFIED, MANUAL, AUTOMATIC
-   *
-   * @param self::LABEL_TYPE_* $labelType
+   * @param string
    */
   public function setLabelType($labelType)
   {
     $this->labelType = $labelType;
   }
   /**
-   * @return self::LABEL_TYPE_*
+   * @return string
    */
   public function getLabelType()
   {
     return $this->labelType;
   }
   /**
-   * The display name of this label.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

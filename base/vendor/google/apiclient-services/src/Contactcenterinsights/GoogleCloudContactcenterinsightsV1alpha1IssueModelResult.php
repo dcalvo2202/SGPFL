@@ -21,9 +21,6 @@ class GoogleCloudContactcenterinsightsV1alpha1IssueModelResult extends \Google\C
 {
   protected $collection_key = 'issues';
   /**
-   * Issue model that generates the result. Format:
-   * projects/{project}/locations/{location}/issueModels/{issue_model}
-   *
    * @var string
    */
   public $issueModel;
@@ -31,10 +28,7 @@ class GoogleCloudContactcenterinsightsV1alpha1IssueModelResult extends \Google\C
   protected $issuesDataType = 'array';
 
   /**
-   * Issue model that generates the result. Format:
-   * projects/{project}/locations/{location}/issueModels/{issue_model}
-   *
-   * @param string $issueModel
+   * @param string
    */
   public function setIssueModel($issueModel)
   {
@@ -48,9 +42,7 @@ class GoogleCloudContactcenterinsightsV1alpha1IssueModelResult extends \Google\C
     return $this->issueModel;
   }
   /**
-   * All the matched issues.
-   *
-   * @param GoogleCloudContactcenterinsightsV1alpha1IssueAssignment[] $issues
+   * @param GoogleCloudContactcenterinsightsV1alpha1IssueAssignment[]
    */
   public function setIssues($issues)
   {

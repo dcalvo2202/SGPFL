@@ -21,27 +21,18 @@ class GuestUnitType extends \Google\Collection
 {
   protected $collection_key = 'codes';
   /**
-   * Required. Unit or room code identifiers for a single GuestUnitType. Each
-   * code must be unique within a Lodging instance.
-   *
    * @var string[]
    */
   public $codes;
   protected $featuresType = GuestUnitFeatures::class;
   protected $featuresDataType = '';
   /**
-   * Required. Short, English label or name of the GuestUnitType. Target <50
-   * chars.
-   *
    * @var string
    */
   public $label;
 
   /**
-   * Required. Unit or room code identifiers for a single GuestUnitType. Each
-   * code must be unique within a Lodging instance.
-   *
-   * @param string[] $codes
+   * @param string[]
    */
   public function setCodes($codes)
   {
@@ -55,9 +46,7 @@ class GuestUnitType extends \Google\Collection
     return $this->codes;
   }
   /**
-   * Features and available amenities of the GuestUnitType.
-   *
-   * @param GuestUnitFeatures $features
+   * @param GuestUnitFeatures
    */
   public function setFeatures(GuestUnitFeatures $features)
   {
@@ -71,10 +60,7 @@ class GuestUnitType extends \Google\Collection
     return $this->features;
   }
   /**
-   * Required. Short, English label or name of the GuestUnitType. Target <50
-   * chars.
-   *
-   * @param string $label
+   * @param string
    */
   public function setLabel($label)
   {

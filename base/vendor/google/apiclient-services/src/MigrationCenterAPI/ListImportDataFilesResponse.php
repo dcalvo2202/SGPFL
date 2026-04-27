@@ -23,23 +23,16 @@ class ListImportDataFilesResponse extends \Google\Collection
   protected $importDataFilesType = ImportDataFile::class;
   protected $importDataFilesDataType = 'array';
   /**
-   * A token that can be sent as `page_token` to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * The list of import data files.
-   *
-   * @param ImportDataFile[] $importDataFiles
+   * @param ImportDataFile[]
    */
   public function setImportDataFiles($importDataFiles)
   {
@@ -53,10 +46,7 @@ class ListImportDataFilesResponse extends \Google\Collection
     return $this->importDataFiles;
   }
   /**
-   * A token that can be sent as `page_token` to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -70,9 +60,7 @@ class ListImportDataFilesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

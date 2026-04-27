@@ -21,10 +21,6 @@ class JobExecutionDetails extends \Google\Collection
 {
   protected $collection_key = 'stages';
   /**
-   * If present, this response does not contain all requested tasks. To obtain
-   * the next page of results, repeat the request with page_token set to this
-   * value.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -32,11 +28,7 @@ class JobExecutionDetails extends \Google\Collection
   protected $stagesDataType = 'array';
 
   /**
-   * If present, this response does not contain all requested tasks. To obtain
-   * the next page of results, repeat the request with page_token set to this
-   * value.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -50,9 +42,7 @@ class JobExecutionDetails extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The stages of the job execution.
-   *
-   * @param StageSummary[] $stages
+   * @param StageSummary[]
    */
   public function setStages($stages)
   {

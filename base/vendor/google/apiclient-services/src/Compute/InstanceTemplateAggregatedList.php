@@ -20,32 +20,20 @@ namespace Google\Service\Compute;
 class InstanceTemplateAggregatedList extends \Google\Model
 {
   /**
-   * [Output Only] Unique identifier for the resource; defined by the server.
-   *
    * @var string
    */
   public $id;
   protected $itemsType = InstanceTemplatesScopedList::class;
   protected $itemsDataType = 'map';
   /**
-   * Output only. Type of resource.
-   *
    * @var string
    */
   public $kind;
   /**
-   * [Output Only] This token allows you to get the next page of results for
-   * list requests. If the number of results is larger thanmaxResults, use the
-   * nextPageToken as a value for the query parameter pageToken in the next list
-   * request. Subsequent list requests will have their own nextPageToken to
-   * continue paging through the results.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Output only. [Output Only] Server-defined URL for this resource.
-   *
    * @var string
    */
   public $selfLink;
@@ -53,9 +41,7 @@ class InstanceTemplateAggregatedList extends \Google\Model
   protected $warningDataType = '';
 
   /**
-   * [Output Only] Unique identifier for the resource; defined by the server.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -69,9 +55,7 @@ class InstanceTemplateAggregatedList extends \Google\Model
     return $this->id;
   }
   /**
-   * A list of InstanceTemplatesScopedList resources.
-   *
-   * @param InstanceTemplatesScopedList[] $items
+   * @param InstanceTemplatesScopedList[]
    */
   public function setItems($items)
   {
@@ -85,9 +69,7 @@ class InstanceTemplateAggregatedList extends \Google\Model
     return $this->items;
   }
   /**
-   * Output only. Type of resource.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -101,13 +83,7 @@ class InstanceTemplateAggregatedList extends \Google\Model
     return $this->kind;
   }
   /**
-   * [Output Only] This token allows you to get the next page of results for
-   * list requests. If the number of results is larger thanmaxResults, use the
-   * nextPageToken as a value for the query parameter pageToken in the next list
-   * request. Subsequent list requests will have their own nextPageToken to
-   * continue paging through the results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -121,9 +97,7 @@ class InstanceTemplateAggregatedList extends \Google\Model
     return $this->nextPageToken;
   }
   /**
-   * Output only. [Output Only] Server-defined URL for this resource.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -137,9 +111,7 @@ class InstanceTemplateAggregatedList extends \Google\Model
     return $this->selfLink;
   }
   /**
-   * [Output Only] Informational warning message.
-   *
-   * @param InstanceTemplateAggregatedListWarning $warning
+   * @param InstanceTemplateAggregatedListWarning
    */
   public function setWarning(InstanceTemplateAggregatedListWarning $warning)
   {

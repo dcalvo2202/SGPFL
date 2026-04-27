@@ -20,22 +20,16 @@ namespace Google\Service\YouTubeReporting;
 class GdataDiffVersionResponse extends \Google\Model
 {
   /**
-   * gdata
-   *
    * @var string
    */
   public $objectSizeBytes;
   /**
-   * gdata
-   *
    * @var string
    */
   public $objectVersion;
 
   /**
-   * gdata
-   *
-   * @param string $objectSizeBytes
+   * @param string
    */
   public function setObjectSizeBytes($objectSizeBytes)
   {
@@ -49,9 +43,7 @@ class GdataDiffVersionResponse extends \Google\Model
     return $this->objectSizeBytes;
   }
   /**
-   * gdata
-   *
-   * @param string $objectVersion
+   * @param string
    */
   public function setObjectVersion($objectVersion)
   {

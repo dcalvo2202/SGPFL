@@ -20,27 +20,16 @@ namespace Google\Service\Meet;
 class SignedinUser extends \Google\Model
 {
   /**
-   * Output only. For a personal device, it's the user's first name and last
-   * name. For a robot account, it's the administrator-specified device name.
-   * For example, "Altostrat Room".
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. Unique ID for the user. Interoperable with Admin SDK API and
-   * People API. Format: `users/{user}`
-   *
    * @var string
    */
   public $user;
 
   /**
-   * Output only. For a personal device, it's the user's first name and last
-   * name. For a robot account, it's the administrator-specified device name.
-   * For example, "Altostrat Room".
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -54,10 +43,7 @@ class SignedinUser extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Output only. Unique ID for the user. Interoperable with Admin SDK API and
-   * People API. Format: `users/{user}`
-   *
-   * @param string $user
+   * @param string
    */
   public function setUser($user)
   {

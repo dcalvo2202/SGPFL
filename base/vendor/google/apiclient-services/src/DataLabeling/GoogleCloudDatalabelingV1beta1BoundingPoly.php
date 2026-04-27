@@ -24,9 +24,7 @@ class GoogleCloudDatalabelingV1beta1BoundingPoly extends \Google\Collection
   protected $verticesDataType = 'array';
 
   /**
-   * The bounding polygon vertices.
-   *
-   * @param GoogleCloudDatalabelingV1beta1Vertex[] $vertices
+   * @param GoogleCloudDatalabelingV1beta1Vertex[]
    */
   public function setVertices($vertices)
   {

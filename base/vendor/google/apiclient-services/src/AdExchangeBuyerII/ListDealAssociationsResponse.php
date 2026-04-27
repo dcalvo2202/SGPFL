@@ -23,18 +23,12 @@ class ListDealAssociationsResponse extends \Google\Collection
   protected $associationsType = CreativeDealAssociation::class;
   protected $associationsDataType = 'array';
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * ListDealAssociationsRequest.page_token field in the subsequent call to
-   * 'ListDealAssociation' method to retrieve the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of associations.
-   *
-   * @param CreativeDealAssociation[] $associations
+   * @param CreativeDealAssociation[]
    */
   public function setAssociations($associations)
   {
@@ -48,11 +42,7 @@ class ListDealAssociationsResponse extends \Google\Collection
     return $this->associations;
   }
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * ListDealAssociationsRequest.page_token field in the subsequent call to
-   * 'ListDealAssociation' method to retrieve the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

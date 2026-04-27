@@ -22,16 +22,12 @@ class SyncResponse extends \Google\Model
   protected $payloadType = SyncResponsePayload::class;
   protected $payloadDataType = '';
   /**
-   * Request ID used for debugging. Copied from the request.
-   *
    * @var string
    */
   public $requestId;
 
   /**
-   * Devices associated with the third-party user.
-   *
-   * @param SyncResponsePayload $payload
+   * @param SyncResponsePayload
    */
   public function setPayload(SyncResponsePayload $payload)
   {
@@ -45,9 +41,7 @@ class SyncResponse extends \Google\Model
     return $this->payload;
   }
   /**
-   * Request ID used for debugging. Copied from the request.
-   *
-   * @param string $requestId
+   * @param string
    */
   public function setRequestId($requestId)
   {

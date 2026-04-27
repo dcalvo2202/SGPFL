@@ -20,34 +20,24 @@ namespace Google\Service\AndroidPublisher;
 class AppDetails extends \Google\Model
 {
   /**
-   * The user-visible support email for this app.
-   *
    * @var string
    */
   public $contactEmail;
   /**
-   * The user-visible support telephone number for this app.
-   *
    * @var string
    */
   public $contactPhone;
   /**
-   * The user-visible website for this app.
-   *
    * @var string
    */
   public $contactWebsite;
   /**
-   * Default language code, in BCP 47 format (eg "en-US").
-   *
    * @var string
    */
   public $defaultLanguage;
 
   /**
-   * The user-visible support email for this app.
-   *
-   * @param string $contactEmail
+   * @param string
    */
   public function setContactEmail($contactEmail)
   {
@@ -61,9 +51,7 @@ class AppDetails extends \Google\Model
     return $this->contactEmail;
   }
   /**
-   * The user-visible support telephone number for this app.
-   *
-   * @param string $contactPhone
+   * @param string
    */
   public function setContactPhone($contactPhone)
   {
@@ -77,9 +65,7 @@ class AppDetails extends \Google\Model
     return $this->contactPhone;
   }
   /**
-   * The user-visible website for this app.
-   *
-   * @param string $contactWebsite
+   * @param string
    */
   public function setContactWebsite($contactWebsite)
   {
@@ -93,9 +79,7 @@ class AppDetails extends \Google\Model
     return $this->contactWebsite;
   }
   /**
-   * Default language code, in BCP 47 format (eg "en-US").
-   *
-   * @param string $defaultLanguage
+   * @param string
    */
   public function setDefaultLanguage($defaultLanguage)
   {

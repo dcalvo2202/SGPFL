@@ -21,16 +21,12 @@ class NodeGroupsSimulateMaintenanceEventRequest extends \Google\Collection
 {
   protected $collection_key = 'nodes';
   /**
-   * Names of the nodes to go under maintenance simulation.
-   *
    * @var string[]
    */
   public $nodes;
 
   /**
-   * Names of the nodes to go under maintenance simulation.
-   *
-   * @param string[] $nodes
+   * @param string[]
    */
   public function setNodes($nodes)
   {

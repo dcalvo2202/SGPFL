@@ -24,16 +24,12 @@ class GoogleCloudAiplatformV1SpeculativeDecodingSpec extends \Google\Model
   protected $ngramSpeculationType = GoogleCloudAiplatformV1SpeculativeDecodingSpecNgramSpeculation::class;
   protected $ngramSpeculationDataType = '';
   /**
-   * The number of speculative tokens to generate at each step.
-   *
    * @var int
    */
   public $speculativeTokenCount;
 
   /**
-   * draft model speculation.
-   *
-   * @param GoogleCloudAiplatformV1SpeculativeDecodingSpecDraftModelSpeculation $draftModelSpeculation
+   * @param GoogleCloudAiplatformV1SpeculativeDecodingSpecDraftModelSpeculation
    */
   public function setDraftModelSpeculation(GoogleCloudAiplatformV1SpeculativeDecodingSpecDraftModelSpeculation $draftModelSpeculation)
   {
@@ -47,9 +43,7 @@ class GoogleCloudAiplatformV1SpeculativeDecodingSpec extends \Google\Model
     return $this->draftModelSpeculation;
   }
   /**
-   * N-Gram speculation.
-   *
-   * @param GoogleCloudAiplatformV1SpeculativeDecodingSpecNgramSpeculation $ngramSpeculation
+   * @param GoogleCloudAiplatformV1SpeculativeDecodingSpecNgramSpeculation
    */
   public function setNgramSpeculation(GoogleCloudAiplatformV1SpeculativeDecodingSpecNgramSpeculation $ngramSpeculation)
   {
@@ -63,9 +57,7 @@ class GoogleCloudAiplatformV1SpeculativeDecodingSpec extends \Google\Model
     return $this->ngramSpeculation;
   }
   /**
-   * The number of speculative tokens to generate at each step.
-   *
-   * @param int $speculativeTokenCount
+   * @param int
    */
   public function setSpeculativeTokenCount($speculativeTokenCount)
   {

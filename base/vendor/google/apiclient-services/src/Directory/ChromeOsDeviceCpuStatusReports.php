@@ -27,16 +27,12 @@ class ChromeOsDeviceCpuStatusReports extends \Google\Collection
    */
   public $cpuUtilizationPercentageInfo;
   /**
-   * Date and time the report was received.
-   *
    * @var string
    */
   public $reportTime;
 
   /**
-   * A list of CPU temperature samples.
-   *
-   * @param ChromeOsDeviceCpuStatusReportsCpuTemperatureInfo[] $cpuTemperatureInfo
+   * @param ChromeOsDeviceCpuStatusReportsCpuTemperatureInfo[]
    */
   public function setCpuTemperatureInfo($cpuTemperatureInfo)
   {
@@ -50,7 +46,7 @@ class ChromeOsDeviceCpuStatusReports extends \Google\Collection
     return $this->cpuTemperatureInfo;
   }
   /**
-   * @param int[] $cpuUtilizationPercentageInfo
+   * @param int[]
    */
   public function setCpuUtilizationPercentageInfo($cpuUtilizationPercentageInfo)
   {
@@ -64,9 +60,7 @@ class ChromeOsDeviceCpuStatusReports extends \Google\Collection
     return $this->cpuUtilizationPercentageInfo;
   }
   /**
-   * Date and time the report was received.
-   *
-   * @param string $reportTime
+   * @param string
    */
   public function setReportTime($reportTime)
   {

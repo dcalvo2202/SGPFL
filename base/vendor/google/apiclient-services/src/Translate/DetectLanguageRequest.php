@@ -20,48 +20,24 @@ namespace Google\Service\Translate;
 class DetectLanguageRequest extends \Google\Model
 {
   /**
-   * The content of the input stored as a string.
-   *
    * @var string
    */
   public $content;
-  protected $documentInputConfigType = DocumentInputConfig::class;
-  protected $documentInputConfigDataType = '';
   /**
-   * Optional. The labels with user-defined metadata for the request. Label keys
-   * and values can be no longer than 63 characters (Unicode codepoints), can
-   * only contain lowercase letters, numeric characters, underscores and dashes.
-   * International characters are allowed. Label values are optional. Label keys
-   * must start with a letter. See
-   * https://cloud.google.com/translate/docs/advanced/labels for more
-   * information.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Optional. The format of the source text, for example, "text/html",
-   * "text/plain". If left blank, the MIME type defaults to "text/html".
-   *
    * @var string
    */
   public $mimeType;
   /**
-   * Optional. The language detection model to be used. Format:
-   * `projects/{project-number-or-id}/locations/{location-id}/models/language-
-   * detection/{model-id}` Only one language detection model is currently
-   * supported: `projects/{project-number-or-id}/locations/{location-
-   * id}/models/language-detection/default`. If not specified, the default model
-   * is used.
-   *
    * @var string
    */
   public $model;
 
   /**
-   * The content of the input stored as a string.
-   *
-   * @param string $content
+   * @param string
    */
   public function setContent($content)
   {
@@ -75,31 +51,7 @@ class DetectLanguageRequest extends \Google\Model
     return $this->content;
   }
   /**
-   * Optional. The document configuration of the input.
-   *
-   * @param DocumentInputConfig $documentInputConfig
-   */
-  public function setDocumentInputConfig(DocumentInputConfig $documentInputConfig)
-  {
-    $this->documentInputConfig = $documentInputConfig;
-  }
-  /**
-   * @return DocumentInputConfig
-   */
-  public function getDocumentInputConfig()
-  {
-    return $this->documentInputConfig;
-  }
-  /**
-   * Optional. The labels with user-defined metadata for the request. Label keys
-   * and values can be no longer than 63 characters (Unicode codepoints), can
-   * only contain lowercase letters, numeric characters, underscores and dashes.
-   * International characters are allowed. Label values are optional. Label keys
-   * must start with a letter. See
-   * https://cloud.google.com/translate/docs/advanced/labels for more
-   * information.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -113,10 +65,7 @@ class DetectLanguageRequest extends \Google\Model
     return $this->labels;
   }
   /**
-   * Optional. The format of the source text, for example, "text/html",
-   * "text/plain". If left blank, the MIME type defaults to "text/html".
-   *
-   * @param string $mimeType
+   * @param string
    */
   public function setMimeType($mimeType)
   {
@@ -130,14 +79,7 @@ class DetectLanguageRequest extends \Google\Model
     return $this->mimeType;
   }
   /**
-   * Optional. The language detection model to be used. Format:
-   * `projects/{project-number-or-id}/locations/{location-id}/models/language-
-   * detection/{model-id}` Only one language detection model is currently
-   * supported: `projects/{project-number-or-id}/locations/{location-
-   * id}/models/language-detection/default`. If not specified, the default model
-   * is used.
-   *
-   * @param string $model
+   * @param string
    */
   public function setModel($model)
   {

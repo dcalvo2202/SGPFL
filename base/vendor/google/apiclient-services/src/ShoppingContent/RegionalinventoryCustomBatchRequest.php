@@ -24,9 +24,7 @@ class RegionalinventoryCustomBatchRequest extends \Google\Collection
   protected $entriesDataType = 'array';
 
   /**
-   * The request entries to be processed in the batch.
-   *
-   * @param RegionalinventoryCustomBatchRequestEntry[] $entries
+   * @param RegionalinventoryCustomBatchRequestEntry[]
    */
   public function setEntries($entries)
   {

@@ -22,38 +22,24 @@ class ActivityActor extends \Google\Model
   protected $applicationInfoType = ActivityActorApplicationInfo::class;
   protected $applicationInfoDataType = '';
   /**
-   * The type of actor.
-   *
    * @var string
    */
   public $callerType;
   /**
-   * The primary email address of the actor. May be absent if there is no email
-   * address associated with the actor.
-   *
    * @var string
    */
   public $email;
   /**
-   * Only present when `callerType` is `KEY`. Can be the `consumer_key` of the
-   * requestor for OAuth 2LO API requests or an identifier for robot accounts.
-   *
    * @var string
    */
   public $key;
   /**
-   * The unique Google Workspace profile ID of the actor. This value might be
-   * absent if the actor is not a Google Workspace user, or may be the number
-   * 105250506097979753968 which acts as a placeholder ID.
-   *
    * @var string
    */
   public $profileId;
 
   /**
-   * Details of the application that was the actor for the activity.
-   *
-   * @param ActivityActorApplicationInfo $applicationInfo
+   * @param ActivityActorApplicationInfo
    */
   public function setApplicationInfo(ActivityActorApplicationInfo $applicationInfo)
   {
@@ -67,9 +53,7 @@ class ActivityActor extends \Google\Model
     return $this->applicationInfo;
   }
   /**
-   * The type of actor.
-   *
-   * @param string $callerType
+   * @param string
    */
   public function setCallerType($callerType)
   {
@@ -83,10 +67,7 @@ class ActivityActor extends \Google\Model
     return $this->callerType;
   }
   /**
-   * The primary email address of the actor. May be absent if there is no email
-   * address associated with the actor.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {
@@ -100,10 +81,7 @@ class ActivityActor extends \Google\Model
     return $this->email;
   }
   /**
-   * Only present when `callerType` is `KEY`. Can be the `consumer_key` of the
-   * requestor for OAuth 2LO API requests or an identifier for robot accounts.
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {
@@ -117,11 +95,7 @@ class ActivityActor extends \Google\Model
     return $this->key;
   }
   /**
-   * The unique Google Workspace profile ID of the actor. This value might be
-   * absent if the actor is not a Google Workspace user, or may be the number
-   * 105250506097979753968 which acts as a placeholder ID.
-   *
-   * @param string $profileId
+   * @param string
    */
   public function setProfileId($profileId)
   {

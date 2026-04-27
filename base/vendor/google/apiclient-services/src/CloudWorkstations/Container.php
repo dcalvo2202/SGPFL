@@ -21,57 +21,32 @@ class Container extends \Google\Collection
 {
   protected $collection_key = 'command';
   /**
-   * Optional. Arguments passed to the entrypoint.
-   *
    * @var string[]
    */
   public $args;
   /**
-   * Optional. If set, overrides the default ENTRYPOINT specified by the image.
-   *
    * @var string[]
    */
   public $command;
   /**
-   * Optional. Environment variables passed to the container's entrypoint.
-   *
    * @var string[]
    */
   public $env;
   /**
-   * Optional. A Docker container image that defines a custom environment. Cloud
-   * Workstations provides a number of [preconfigured
-   * images](https://cloud.google.com/workstations/docs/preconfigured-base-
-   * images), but you can create your own [custom container
-   * images](https://cloud.google.com/workstations/docs/custom-container-
-   * images). If using a private image, the `host.gceInstance.serviceAccount`
-   * field must be specified in the workstation configuration. If using a custom
-   * container image, the service account must have [Artifact Registry
-   * Reader](https://cloud.google.com/artifact-registry/docs/access-
-   * control#roles) permission to pull the specified image. Otherwise, the image
-   * must be publicly accessible.
-   *
    * @var string
    */
   public $image;
   /**
-   * Optional. If set, overrides the USER specified in the image with the given
-   * uid.
-   *
    * @var int
    */
   public $runAsUser;
   /**
-   * Optional. If set, overrides the default DIR specified by the image.
-   *
    * @var string
    */
   public $workingDir;
 
   /**
-   * Optional. Arguments passed to the entrypoint.
-   *
-   * @param string[] $args
+   * @param string[]
    */
   public function setArgs($args)
   {
@@ -85,9 +60,7 @@ class Container extends \Google\Collection
     return $this->args;
   }
   /**
-   * Optional. If set, overrides the default ENTRYPOINT specified by the image.
-   *
-   * @param string[] $command
+   * @param string[]
    */
   public function setCommand($command)
   {
@@ -101,9 +74,7 @@ class Container extends \Google\Collection
     return $this->command;
   }
   /**
-   * Optional. Environment variables passed to the container's entrypoint.
-   *
-   * @param string[] $env
+   * @param string[]
    */
   public function setEnv($env)
   {
@@ -117,19 +88,7 @@ class Container extends \Google\Collection
     return $this->env;
   }
   /**
-   * Optional. A Docker container image that defines a custom environment. Cloud
-   * Workstations provides a number of [preconfigured
-   * images](https://cloud.google.com/workstations/docs/preconfigured-base-
-   * images), but you can create your own [custom container
-   * images](https://cloud.google.com/workstations/docs/custom-container-
-   * images). If using a private image, the `host.gceInstance.serviceAccount`
-   * field must be specified in the workstation configuration. If using a custom
-   * container image, the service account must have [Artifact Registry
-   * Reader](https://cloud.google.com/artifact-registry/docs/access-
-   * control#roles) permission to pull the specified image. Otherwise, the image
-   * must be publicly accessible.
-   *
-   * @param string $image
+   * @param string
    */
   public function setImage($image)
   {
@@ -143,10 +102,7 @@ class Container extends \Google\Collection
     return $this->image;
   }
   /**
-   * Optional. If set, overrides the USER specified in the image with the given
-   * uid.
-   *
-   * @param int $runAsUser
+   * @param int
    */
   public function setRunAsUser($runAsUser)
   {
@@ -160,9 +116,7 @@ class Container extends \Google\Collection
     return $this->runAsUser;
   }
   /**
-   * Optional. If set, overrides the default DIR specified by the image.
-   *
-   * @param string $workingDir
+   * @param string
    */
   public function setWorkingDir($workingDir)
   {

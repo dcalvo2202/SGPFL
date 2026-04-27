@@ -21,8 +21,6 @@ class WriteSessionSparkApplicationContextRequest extends \Google\Collection
 {
   protected $collection_key = 'sparkWrapperObjects';
   /**
-   * Required. Parent (Batch) resource reference.
-   *
    * @var string
    */
   public $parent;
@@ -30,9 +28,7 @@ class WriteSessionSparkApplicationContextRequest extends \Google\Collection
   protected $sparkWrapperObjectsDataType = 'array';
 
   /**
-   * Required. Parent (Batch) resource reference.
-   *
-   * @param string $parent
+   * @param string
    */
   public function setParent($parent)
   {
@@ -46,10 +42,7 @@ class WriteSessionSparkApplicationContextRequest extends \Google\Collection
     return $this->parent;
   }
   /**
-   * Required. The batch of spark application context objects sent for
-   * ingestion.
-   *
-   * @param SparkWrapperObject[] $sparkWrapperObjects
+   * @param SparkWrapperObject[]
    */
   public function setSparkWrapperObjects($sparkWrapperObjects)
   {

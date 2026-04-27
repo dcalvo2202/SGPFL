@@ -20,34 +20,24 @@ namespace Google\Service\MigrationCenterAPI;
 class OpenFileDetails extends \Google\Model
 {
   /**
-   * Opened file command.
-   *
    * @var string
    */
   public $command;
   /**
-   * Opened file file path.
-   *
    * @var string
    */
   public $filePath;
   /**
-   * Opened file file type.
-   *
    * @var string
    */
   public $fileType;
   /**
-   * Opened file user.
-   *
    * @var string
    */
   public $user;
 
   /**
-   * Opened file command.
-   *
-   * @param string $command
+   * @param string
    */
   public function setCommand($command)
   {
@@ -61,9 +51,7 @@ class OpenFileDetails extends \Google\Model
     return $this->command;
   }
   /**
-   * Opened file file path.
-   *
-   * @param string $filePath
+   * @param string
    */
   public function setFilePath($filePath)
   {
@@ -77,9 +65,7 @@ class OpenFileDetails extends \Google\Model
     return $this->filePath;
   }
   /**
-   * Opened file file type.
-   *
-   * @param string $fileType
+   * @param string
    */
   public function setFileType($fileType)
   {
@@ -93,9 +79,7 @@ class OpenFileDetails extends \Google\Model
     return $this->fileType;
   }
   /**
-   * Opened file user.
-   *
-   * @param string $user
+   * @param string
    */
   public function setUser($user)
   {

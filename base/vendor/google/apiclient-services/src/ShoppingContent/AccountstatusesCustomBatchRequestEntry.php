@@ -21,41 +21,28 @@ class AccountstatusesCustomBatchRequestEntry extends \Google\Collection
 {
   protected $collection_key = 'destinations';
   /**
-   * The ID of the (sub-)account whose status to get.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * An entry ID, unique within the batch request.
-   *
    * @var string
    */
   public $batchId;
   /**
-   * If set, only issues for the specified destinations are returned, otherwise
-   * only issues for the Shopping destination.
-   *
    * @var string[]
    */
   public $destinations;
   /**
-   * The ID of the managing account.
-   *
    * @var string
    */
   public $merchantId;
   /**
-   * The method of the batch entry. Acceptable values are: - "`get`"
-   *
    * @var string
    */
   public $method;
 
   /**
-   * The ID of the (sub-)account whose status to get.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -69,9 +56,7 @@ class AccountstatusesCustomBatchRequestEntry extends \Google\Collection
     return $this->accountId;
   }
   /**
-   * An entry ID, unique within the batch request.
-   *
-   * @param string $batchId
+   * @param string
    */
   public function setBatchId($batchId)
   {
@@ -85,10 +70,7 @@ class AccountstatusesCustomBatchRequestEntry extends \Google\Collection
     return $this->batchId;
   }
   /**
-   * If set, only issues for the specified destinations are returned, otherwise
-   * only issues for the Shopping destination.
-   *
-   * @param string[] $destinations
+   * @param string[]
    */
   public function setDestinations($destinations)
   {
@@ -102,9 +84,7 @@ class AccountstatusesCustomBatchRequestEntry extends \Google\Collection
     return $this->destinations;
   }
   /**
-   * The ID of the managing account.
-   *
-   * @param string $merchantId
+   * @param string
    */
   public function setMerchantId($merchantId)
   {
@@ -118,9 +98,7 @@ class AccountstatusesCustomBatchRequestEntry extends \Google\Collection
     return $this->merchantId;
   }
   /**
-   * The method of the batch entry. Acceptable values are: - "`get`"
-   *
-   * @param string $method
+   * @param string
    */
   public function setMethod($method)
   {

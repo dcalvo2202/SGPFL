@@ -20,56 +20,30 @@ namespace Google\Service\Container;
 class ConfidentialNodes extends \Google\Model
 {
   /**
-   * No type specified. Do not use this value.
-   */
-  public const CONFIDENTIAL_INSTANCE_TYPE_CONFIDENTIAL_INSTANCE_TYPE_UNSPECIFIED = 'CONFIDENTIAL_INSTANCE_TYPE_UNSPECIFIED';
-  /**
-   * AMD Secure Encrypted Virtualization.
-   */
-  public const CONFIDENTIAL_INSTANCE_TYPE_SEV = 'SEV';
-  /**
-   * AMD Secure Encrypted Virtualization - Secure Nested Paging.
-   */
-  public const CONFIDENTIAL_INSTANCE_TYPE_SEV_SNP = 'SEV_SNP';
-  /**
-   * Intel Trust Domain eXtension.
-   */
-  public const CONFIDENTIAL_INSTANCE_TYPE_TDX = 'TDX';
-  /**
-   * Defines the type of technology used by the confidential node.
-   *
    * @var string
    */
   public $confidentialInstanceType;
   /**
-   * Whether Confidential Nodes feature is enabled.
-   *
    * @var bool
    */
   public $enabled;
 
   /**
-   * Defines the type of technology used by the confidential node.
-   *
-   * Accepted values: CONFIDENTIAL_INSTANCE_TYPE_UNSPECIFIED, SEV, SEV_SNP, TDX
-   *
-   * @param self::CONFIDENTIAL_INSTANCE_TYPE_* $confidentialInstanceType
+   * @param string
    */
   public function setConfidentialInstanceType($confidentialInstanceType)
   {
     $this->confidentialInstanceType = $confidentialInstanceType;
   }
   /**
-   * @return self::CONFIDENTIAL_INSTANCE_TYPE_*
+   * @return string
    */
   public function getConfidentialInstanceType()
   {
     return $this->confidentialInstanceType;
   }
   /**
-   * Whether Confidential Nodes feature is enabled.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {

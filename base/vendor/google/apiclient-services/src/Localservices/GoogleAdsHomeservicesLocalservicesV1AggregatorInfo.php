@@ -20,18 +20,12 @@ namespace Google\Service\Localservices;
 class GoogleAdsHomeservicesLocalservicesV1AggregatorInfo extends \Google\Model
 {
   /**
-   * Provider id (listed in aggregator system) which maps to a account id in GLS
-   * system.
-   *
    * @var string
    */
   public $aggregatorProviderId;
 
   /**
-   * Provider id (listed in aggregator system) which maps to a account id in GLS
-   * system.
-   *
-   * @param string $aggregatorProviderId
+   * @param string
    */
   public function setAggregatorProviderId($aggregatorProviderId)
   {

@@ -22,16 +22,12 @@ class AccountCount extends \Google\Model
   protected $accountType = UserInfo::class;
   protected $accountDataType = '';
   /**
-   * The number of results (messages or files) found for this account.
-   *
    * @var string
    */
   public $count;
 
   /**
-   * Account owner.
-   *
-   * @param UserInfo $account
+   * @param UserInfo
    */
   public function setAccount(UserInfo $account)
   {
@@ -45,9 +41,7 @@ class AccountCount extends \Google\Model
     return $this->account;
   }
   /**
-   * The number of results (messages or files) found for this account.
-   *
-   * @param string $count
+   * @param string
    */
   public function setCount($count)
   {

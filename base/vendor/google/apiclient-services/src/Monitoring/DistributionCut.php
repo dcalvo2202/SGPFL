@@ -20,10 +20,6 @@ namespace Google\Service\Monitoring;
 class DistributionCut extends \Google\Model
 {
   /**
-   * A monitoring filter (https://cloud.google.com/monitoring/api/v3/filters)
-   * specifying a TimeSeries aggregating values. Must have ValueType =
-   * DISTRIBUTION and MetricKind = DELTA or MetricKind = CUMULATIVE.
-   *
    * @var string
    */
   public $distributionFilter;
@@ -31,11 +27,7 @@ class DistributionCut extends \Google\Model
   protected $rangeDataType = '';
 
   /**
-   * A monitoring filter (https://cloud.google.com/monitoring/api/v3/filters)
-   * specifying a TimeSeries aggregating values. Must have ValueType =
-   * DISTRIBUTION and MetricKind = DELTA or MetricKind = CUMULATIVE.
-   *
-   * @param string $distributionFilter
+   * @param string
    */
   public function setDistributionFilter($distributionFilter)
   {
@@ -49,10 +41,7 @@ class DistributionCut extends \Google\Model
     return $this->distributionFilter;
   }
   /**
-   * Range of values considered "good." For a one-sided range, set one bound to
-   * an infinite value.
-   *
-   * @param GoogleMonitoringV3Range $range
+   * @param GoogleMonitoringV3Range
    */
   public function setRange(GoogleMonitoringV3Range $range)
   {

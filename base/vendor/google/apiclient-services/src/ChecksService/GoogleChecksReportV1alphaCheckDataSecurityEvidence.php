@@ -24,9 +24,7 @@ class GoogleChecksReportV1alphaCheckDataSecurityEvidence extends \Google\Collect
   protected $dataInTransitInfoDataType = 'array';
 
   /**
-   * Evidence related to data in transit.
-   *
-   * @param GoogleChecksReportV1alphaCheckDataSecurityEvidenceDataInTransitInfo[] $dataInTransitInfo
+   * @param GoogleChecksReportV1alphaCheckDataSecurityEvidenceDataInTransitInfo[]
    */
   public function setDataInTransitInfo($dataInTransitInfo)
   {

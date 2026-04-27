@@ -20,11 +20,6 @@ namespace Google\Service\ManagedKafka;
 class ConsumerGroup extends \Google\Model
 {
   /**
-   * Identifier. The name of the consumer group. The `consumer_group` segment is
-   * used when connecting directly to the cluster. Structured like: projects/{pr
-   * oject}/locations/{location}/clusters/{cluster}/consumerGroups/{consumer_gro
-   * up}
-   *
    * @var string
    */
   public $name;
@@ -32,12 +27,7 @@ class ConsumerGroup extends \Google\Model
   protected $topicsDataType = 'map';
 
   /**
-   * Identifier. The name of the consumer group. The `consumer_group` segment is
-   * used when connecting directly to the cluster. Structured like: projects/{pr
-   * oject}/locations/{location}/clusters/{cluster}/consumerGroups/{consumer_gro
-   * up}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -51,11 +41,7 @@ class ConsumerGroup extends \Google\Model
     return $this->name;
   }
   /**
-   * Optional. Metadata for this consumer group for all topics it has metadata
-   * for. The key of the map is a topic name, structured like:
-   * projects/{project}/locations/{location}/clusters/{cluster}/topics/{topic}
-   *
-   * @param ConsumerTopicMetadata[] $topics
+   * @param ConsumerTopicMetadata[]
    */
   public function setTopics($topics)
   {

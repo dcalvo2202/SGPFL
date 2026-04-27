@@ -25,9 +25,7 @@ class GoogleCloudAiplatformV1ReadFeatureValuesResponseEntityViewData extends \Go
   protected $valuesDataType = '';
 
   /**
-   * Feature value if a single value is requested.
-   *
-   * @param GoogleCloudAiplatformV1FeatureValue $value
+   * @param GoogleCloudAiplatformV1FeatureValue
    */
   public function setValue(GoogleCloudAiplatformV1FeatureValue $value)
   {
@@ -41,11 +39,7 @@ class GoogleCloudAiplatformV1ReadFeatureValuesResponseEntityViewData extends \Go
     return $this->value;
   }
   /**
-   * Feature values list if values, successive in time, are requested. If the
-   * requested number of values is greater than the number of existing Feature
-   * values, nonexistent values are omitted instead of being returned as empty.
-   *
-   * @param GoogleCloudAiplatformV1FeatureValueList $values
+   * @param GoogleCloudAiplatformV1FeatureValueList
    */
   public function setValues(GoogleCloudAiplatformV1FeatureValueList $values)
   {

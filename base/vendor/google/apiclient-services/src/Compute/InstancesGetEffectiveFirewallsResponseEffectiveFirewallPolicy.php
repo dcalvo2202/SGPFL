@@ -19,65 +19,40 @@ namespace Google\Service\Compute;
 
 class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy extends \Google\Collection
 {
-  public const TYPE_HIERARCHY = 'HIERARCHY';
-  public const TYPE_NETWORK = 'NETWORK';
-  public const TYPE_NETWORK_REGIONAL = 'NETWORK_REGIONAL';
-  public const TYPE_SYSTEM_GLOBAL = 'SYSTEM_GLOBAL';
-  public const TYPE_SYSTEM_REGIONAL = 'SYSTEM_REGIONAL';
-  public const TYPE_UNSPECIFIED = 'UNSPECIFIED';
   protected $collection_key = 'rules';
   /**
-   * Output only. [Output Only] Deprecated, please use short name instead. The
-   * display name of the firewall policy.
-   *
-   * @deprecated
    * @var string
    */
   public $displayName;
   /**
-   * Output only. [Output Only] The name of the firewall policy.
-   *
    * @var string
    */
   public $name;
   protected $packetMirroringRulesType = FirewallPolicyRule::class;
   protected $packetMirroringRulesDataType = 'array';
   /**
-   * Output only. [Output only] Priority of firewall policy association. Not
-   * applicable for type=HIERARCHY.
-   *
    * @var int
    */
   public $priority;
   protected $rulesType = FirewallPolicyRule::class;
   protected $rulesDataType = 'array';
   /**
-   * Output only. [Output Only] The short name of the firewall policy.
-   *
    * @var string
    */
   public $shortName;
   /**
-   * Output only. [Output Only] The type of the firewall policy. Can be one of
-   * HIERARCHY, NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Output only. [Output Only] Deprecated, please use short name instead. The
-   * display name of the firewall policy.
-   *
-   * @deprecated
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
     $this->displayName = $displayName;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getDisplayName()
@@ -85,9 +60,7 @@ class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy extends \Goo
     return $this->displayName;
   }
   /**
-   * Output only. [Output Only] The name of the firewall policy.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -101,10 +74,7 @@ class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy extends \Goo
     return $this->name;
   }
   /**
-   * Output only. [Output Only] The packet mirroring rules that apply to the
-   * instance.
-   *
-   * @param FirewallPolicyRule[] $packetMirroringRules
+   * @param FirewallPolicyRule[]
    */
   public function setPacketMirroringRules($packetMirroringRules)
   {
@@ -118,10 +88,7 @@ class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy extends \Goo
     return $this->packetMirroringRules;
   }
   /**
-   * Output only. [Output only] Priority of firewall policy association. Not
-   * applicable for type=HIERARCHY.
-   *
-   * @param int $priority
+   * @param int
    */
   public function setPriority($priority)
   {
@@ -135,11 +102,7 @@ class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy extends \Goo
     return $this->priority;
   }
   /**
-   * [Output Only] The rules that apply to the instance. Only rules that target
-   * the specific VM instance are returned if target service accounts or target
-   * secure tags are specified in the rules.
-   *
-   * @param FirewallPolicyRule[] $rules
+   * @param FirewallPolicyRule[]
    */
   public function setRules($rules)
   {
@@ -153,9 +116,7 @@ class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy extends \Goo
     return $this->rules;
   }
   /**
-   * Output only. [Output Only] The short name of the firewall policy.
-   *
-   * @param string $shortName
+   * @param string
    */
   public function setShortName($shortName)
   {
@@ -169,20 +130,14 @@ class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy extends \Goo
     return $this->shortName;
   }
   /**
-   * Output only. [Output Only] The type of the firewall policy. Can be one of
-   * HIERARCHY, NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
-   *
-   * Accepted values: HIERARCHY, NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL,
-   * SYSTEM_REGIONAL, UNSPECIFIED
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

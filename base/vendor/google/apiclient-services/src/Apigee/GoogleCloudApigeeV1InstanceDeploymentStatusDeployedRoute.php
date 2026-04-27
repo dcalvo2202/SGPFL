@@ -20,35 +20,24 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1InstanceDeploymentStatusDeployedRoute extends \Google\Model
 {
   /**
-   * Base path in the routing table.
-   *
    * @var string
    */
   public $basepath;
   /**
-   * Environment group where this route is installed.
-   *
    * @var string
    */
   public $envgroup;
   /**
-   * Destination environment. This will be empty if the route is not yet
-   * reported.
-   *
    * @var string
    */
   public $environment;
   /**
-   * Percentage of ingress replicas reporting this route.
-   *
    * @var int
    */
   public $percentage;
 
   /**
-   * Base path in the routing table.
-   *
-   * @param string $basepath
+   * @param string
    */
   public function setBasepath($basepath)
   {
@@ -62,9 +51,7 @@ class GoogleCloudApigeeV1InstanceDeploymentStatusDeployedRoute extends \Google\M
     return $this->basepath;
   }
   /**
-   * Environment group where this route is installed.
-   *
-   * @param string $envgroup
+   * @param string
    */
   public function setEnvgroup($envgroup)
   {
@@ -78,10 +65,7 @@ class GoogleCloudApigeeV1InstanceDeploymentStatusDeployedRoute extends \Google\M
     return $this->envgroup;
   }
   /**
-   * Destination environment. This will be empty if the route is not yet
-   * reported.
-   *
-   * @param string $environment
+   * @param string
    */
   public function setEnvironment($environment)
   {
@@ -95,9 +79,7 @@ class GoogleCloudApigeeV1InstanceDeploymentStatusDeployedRoute extends \Google\M
     return $this->environment;
   }
   /**
-   * Percentage of ingress replicas reporting this route.
-   *
-   * @param int $percentage
+   * @param int
    */
   public function setPercentage($percentage)
   {

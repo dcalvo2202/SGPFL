@@ -20,16 +20,12 @@ namespace Google\Service\ShoppingContent;
 class AccountShippingImprovements extends \Google\Model
 {
   /**
-   * Enables automatic shipping improvements.
-   *
    * @var bool
    */
   public $allowShippingImprovements;
 
   /**
-   * Enables automatic shipping improvements.
-   *
-   * @param bool $allowShippingImprovements
+   * @param bool
    */
   public function setAllowShippingImprovements($allowShippingImprovements)
   {

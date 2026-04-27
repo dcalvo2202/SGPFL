@@ -21,40 +21,20 @@ class GoogleCloudRunV2NetworkInterface extends \Google\Collection
 {
   protected $collection_key = 'tags';
   /**
-   * Optional. The VPC network that the Cloud Run resource will be able to send
-   * traffic to. At least one of network or subnetwork must be specified. If
-   * both network and subnetwork are specified, the given VPC subnetwork must
-   * belong to the given VPC network. If network is not specified, it will be
-   * looked up from the subnetwork.
-   *
    * @var string
    */
   public $network;
   /**
-   * Optional. The VPC subnetwork that the Cloud Run resource will get IPs from.
-   * At least one of network or subnetwork must be specified. If both network
-   * and subnetwork are specified, the given VPC subnetwork must belong to the
-   * given VPC network. If subnetwork is not specified, the subnetwork with the
-   * same name with the network will be used.
-   *
    * @var string
    */
   public $subnetwork;
   /**
-   * Optional. Network tags applied to this Cloud Run resource.
-   *
    * @var string[]
    */
   public $tags;
 
   /**
-   * Optional. The VPC network that the Cloud Run resource will be able to send
-   * traffic to. At least one of network or subnetwork must be specified. If
-   * both network and subnetwork are specified, the given VPC subnetwork must
-   * belong to the given VPC network. If network is not specified, it will be
-   * looked up from the subnetwork.
-   *
-   * @param string $network
+   * @param string
    */
   public function setNetwork($network)
   {
@@ -68,13 +48,7 @@ class GoogleCloudRunV2NetworkInterface extends \Google\Collection
     return $this->network;
   }
   /**
-   * Optional. The VPC subnetwork that the Cloud Run resource will get IPs from.
-   * At least one of network or subnetwork must be specified. If both network
-   * and subnetwork are specified, the given VPC subnetwork must belong to the
-   * given VPC network. If subnetwork is not specified, the subnetwork with the
-   * same name with the network will be used.
-   *
-   * @param string $subnetwork
+   * @param string
    */
   public function setSubnetwork($subnetwork)
   {
@@ -88,9 +62,7 @@ class GoogleCloudRunV2NetworkInterface extends \Google\Collection
     return $this->subnetwork;
   }
   /**
-   * Optional. Network tags applied to this Cloud Run resource.
-   *
-   * @param string[] $tags
+   * @param string[]
    */
   public function setTags($tags)
   {

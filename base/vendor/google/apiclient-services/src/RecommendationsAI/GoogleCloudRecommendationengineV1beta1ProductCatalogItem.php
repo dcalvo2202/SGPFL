@@ -19,53 +19,20 @@ namespace Google\Service\RecommendationsAI;
 
 class GoogleCloudRecommendationengineV1beta1ProductCatalogItem extends \Google\Collection
 {
-  /**
-   * Default item stock status. Should never be used.
-   */
-  public const STOCK_STATE_STOCK_STATE_UNSPECIFIED = 'STOCK_STATE_UNSPECIFIED';
-  /**
-   * Item in stock.
-   */
-  public const STOCK_STATE_IN_STOCK = 'IN_STOCK';
-  /**
-   * Item out of stock.
-   */
-  public const STOCK_STATE_OUT_OF_STOCK = 'OUT_OF_STOCK';
-  /**
-   * Item that is in pre-order state.
-   */
-  public const STOCK_STATE_PREORDER = 'PREORDER';
-  /**
-   * Item that is back-ordered (i.e. temporarily out of stock).
-   */
-  public const STOCK_STATE_BACKORDER = 'BACKORDER';
   protected $collection_key = 'images';
   /**
-   * Optional. The available quantity of the item.
-   *
    * @var string
    */
   public $availableQuantity;
   /**
-   * Optional. Canonical URL directly linking to the item detail page with a
-   * length limit of 5 KiB..
-   *
    * @var string
    */
   public $canonicalProductUri;
   /**
-   * Optional. A map to pass the costs associated with the product. For example:
-   * {"manufacturing": 45.5} The profit of selling this item is computed like
-   * so: * If 'exactPrice' is provided, profit = displayPrice - sum(costs) * If
-   * 'priceRange' is provided, profit = minPrice - sum(costs)
-   *
    * @var float[]
    */
   public $costs;
   /**
-   * Optional. Only required if the price is set. Currency code for price/costs.
-   * Use three-character ISO-4217 code.
-   *
    * @var string
    */
   public $currencyCode;
@@ -76,16 +43,12 @@ class GoogleCloudRecommendationengineV1beta1ProductCatalogItem extends \Google\C
   protected $priceRangeType = GoogleCloudRecommendationengineV1beta1ProductCatalogItemPriceRange::class;
   protected $priceRangeDataType = '';
   /**
-   * Optional. Online stock state of the catalog item. Default is `IN_STOCK`.
-   *
    * @var string
    */
   public $stockState;
 
   /**
-   * Optional. The available quantity of the item.
-   *
-   * @param string $availableQuantity
+   * @param string
    */
   public function setAvailableQuantity($availableQuantity)
   {
@@ -99,10 +62,7 @@ class GoogleCloudRecommendationengineV1beta1ProductCatalogItem extends \Google\C
     return $this->availableQuantity;
   }
   /**
-   * Optional. Canonical URL directly linking to the item detail page with a
-   * length limit of 5 KiB..
-   *
-   * @param string $canonicalProductUri
+   * @param string
    */
   public function setCanonicalProductUri($canonicalProductUri)
   {
@@ -116,12 +76,7 @@ class GoogleCloudRecommendationengineV1beta1ProductCatalogItem extends \Google\C
     return $this->canonicalProductUri;
   }
   /**
-   * Optional. A map to pass the costs associated with the product. For example:
-   * {"manufacturing": 45.5} The profit of selling this item is computed like
-   * so: * If 'exactPrice' is provided, profit = displayPrice - sum(costs) * If
-   * 'priceRange' is provided, profit = minPrice - sum(costs)
-   *
-   * @param float[] $costs
+   * @param float[]
    */
   public function setCosts($costs)
   {
@@ -135,10 +90,7 @@ class GoogleCloudRecommendationengineV1beta1ProductCatalogItem extends \Google\C
     return $this->costs;
   }
   /**
-   * Optional. Only required if the price is set. Currency code for price/costs.
-   * Use three-character ISO-4217 code.
-   *
-   * @param string $currencyCode
+   * @param string
    */
   public function setCurrencyCode($currencyCode)
   {
@@ -152,9 +104,7 @@ class GoogleCloudRecommendationengineV1beta1ProductCatalogItem extends \Google\C
     return $this->currencyCode;
   }
   /**
-   * Optional. The exact product price.
-   *
-   * @param GoogleCloudRecommendationengineV1beta1ProductCatalogItemExactPrice $exactPrice
+   * @param GoogleCloudRecommendationengineV1beta1ProductCatalogItemExactPrice
    */
   public function setExactPrice(GoogleCloudRecommendationengineV1beta1ProductCatalogItemExactPrice $exactPrice)
   {
@@ -168,9 +118,7 @@ class GoogleCloudRecommendationengineV1beta1ProductCatalogItem extends \Google\C
     return $this->exactPrice;
   }
   /**
-   * Optional. Product images for the catalog item.
-   *
-   * @param GoogleCloudRecommendationengineV1beta1Image[] $images
+   * @param GoogleCloudRecommendationengineV1beta1Image[]
    */
   public function setImages($images)
   {
@@ -184,9 +132,7 @@ class GoogleCloudRecommendationengineV1beta1ProductCatalogItem extends \Google\C
     return $this->images;
   }
   /**
-   * Optional. The product price range.
-   *
-   * @param GoogleCloudRecommendationengineV1beta1ProductCatalogItemPriceRange $priceRange
+   * @param GoogleCloudRecommendationengineV1beta1ProductCatalogItemPriceRange
    */
   public function setPriceRange(GoogleCloudRecommendationengineV1beta1ProductCatalogItemPriceRange $priceRange)
   {
@@ -200,19 +146,14 @@ class GoogleCloudRecommendationengineV1beta1ProductCatalogItem extends \Google\C
     return $this->priceRange;
   }
   /**
-   * Optional. Online stock state of the catalog item. Default is `IN_STOCK`.
-   *
-   * Accepted values: STOCK_STATE_UNSPECIFIED, IN_STOCK, OUT_OF_STOCK, PREORDER,
-   * BACKORDER
-   *
-   * @param self::STOCK_STATE_* $stockState
+   * @param string
    */
   public function setStockState($stockState)
   {
     $this->stockState = $stockState;
   }
   /**
-   * @return self::STOCK_STATE_*
+   * @return string
    */
   public function getStockState()
   {

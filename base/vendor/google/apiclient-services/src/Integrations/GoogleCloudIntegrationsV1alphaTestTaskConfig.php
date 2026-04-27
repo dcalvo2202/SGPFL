@@ -25,28 +25,18 @@ class GoogleCloudIntegrationsV1alphaTestTaskConfig extends \Google\Collection
   protected $mockConfigType = GoogleCloudIntegrationsV1alphaMockConfig::class;
   protected $mockConfigDataType = '';
   /**
-   * Required. This defines in the test case, the task name in integration which
-   * will be mocked by this test task config
-   *
    * @var string
    */
   public $task;
   protected $taskConfigType = GoogleCloudIntegrationsV1alphaTaskConfig::class;
   protected $taskConfigDataType = '';
   /**
-   * Required. This defines in the test case, the task in integration which will
-   * be mocked by this test task config
-   *
    * @var string
    */
   public $taskNumber;
 
   /**
-   * Optional. List of conditions or expressions which should be evaluated to
-   * true unless there is a bug/problem in the integration. These are evaluated
-   * one the task execution is completed as per the mock strategy in test case
-   *
-   * @param GoogleCloudIntegrationsV1alphaAssertion[] $assertions
+   * @param GoogleCloudIntegrationsV1alphaAssertion[]
    */
   public function setAssertions($assertions)
   {
@@ -60,9 +50,7 @@ class GoogleCloudIntegrationsV1alphaTestTaskConfig extends \Google\Collection
     return $this->assertions;
   }
   /**
-   * Optional. Defines how to mock the given task during test execution
-   *
-   * @param GoogleCloudIntegrationsV1alphaMockConfig $mockConfig
+   * @param GoogleCloudIntegrationsV1alphaMockConfig
    */
   public function setMockConfig(GoogleCloudIntegrationsV1alphaMockConfig $mockConfig)
   {
@@ -76,10 +64,7 @@ class GoogleCloudIntegrationsV1alphaTestTaskConfig extends \Google\Collection
     return $this->mockConfig;
   }
   /**
-   * Required. This defines in the test case, the task name in integration which
-   * will be mocked by this test task config
-   *
-   * @param string $task
+   * @param string
    */
   public function setTask($task)
   {
@@ -93,9 +78,7 @@ class GoogleCloudIntegrationsV1alphaTestTaskConfig extends \Google\Collection
     return $this->task;
   }
   /**
-   * Optional. Auto-generated.
-   *
-   * @param GoogleCloudIntegrationsV1alphaTaskConfig $taskConfig
+   * @param GoogleCloudIntegrationsV1alphaTaskConfig
    */
   public function setTaskConfig(GoogleCloudIntegrationsV1alphaTaskConfig $taskConfig)
   {
@@ -109,10 +92,7 @@ class GoogleCloudIntegrationsV1alphaTestTaskConfig extends \Google\Collection
     return $this->taskConfig;
   }
   /**
-   * Required. This defines in the test case, the task in integration which will
-   * be mocked by this test task config
-   *
-   * @param string $taskNumber
+   * @param string
    */
   public function setTaskNumber($taskNumber)
   {

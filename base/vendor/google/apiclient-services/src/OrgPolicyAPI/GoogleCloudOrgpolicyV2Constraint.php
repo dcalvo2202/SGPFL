@@ -19,82 +19,41 @@ namespace Google\Service\OrgPolicyAPI;
 
 class GoogleCloudOrgpolicyV2Constraint extends \Google\Model
 {
-  /**
-   * This is only used for distinguishing unset values and should never be used.
-   * Results in an error.
-   */
-  public const CONSTRAINT_DEFAULT_CONSTRAINT_DEFAULT_UNSPECIFIED = 'CONSTRAINT_DEFAULT_UNSPECIFIED';
-  /**
-   * Indicate that all values are allowed for list constraints. Indicate that
-   * enforcement is off for boolean constraints.
-   */
-  public const CONSTRAINT_DEFAULT_ALLOW = 'ALLOW';
-  /**
-   * Indicate that all values are denied for list constraints. Indicate that
-   * enforcement is on for boolean constraints.
-   */
-  public const CONSTRAINT_DEFAULT_DENY = 'DENY';
   protected $booleanConstraintType = GoogleCloudOrgpolicyV2ConstraintBooleanConstraint::class;
   protected $booleanConstraintDataType = '';
   /**
-   * The evaluation behavior of this constraint in the absence of a policy.
-   *
    * @var string
    */
   public $constraintDefault;
   /**
-   * Detailed description of what this constraint controls as well as how and
-   * where it is enforced. Mutable.
-   *
    * @var string
    */
   public $description;
   /**
-   * The human readable name. Mutable.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Defines the equivalent constraint name, if it exists. Managed constraints
-   * can have an equivalent legacy managed constraint, and legacy managed
-   * constraints can have an equivalent managed constraint. For example,
-   * "constraints/iam.disableServiceAccountKeyUpload" is equivalent to
-   * "constraints/iam.managed.disableServiceAccountKeyUpload".
-   *
    * @var string
    */
   public $equivalentConstraint;
   protected $listConstraintType = GoogleCloudOrgpolicyV2ConstraintListConstraint::class;
   protected $listConstraintDataType = '';
   /**
-   * Immutable. The resource name of the constraint. Must be in one of the
-   * following forms: *
-   * `projects/{project_number}/constraints/{constraint_name}` *
-   * `folders/{folder_id}/constraints/{constraint_name}` *
-   * `organizations/{organization_id}/constraints/{constraint_name}` For
-   * example, "/projects/123/constraints/compute.disableSerialPortAccess".
-   *
    * @var string
    */
   public $name;
   /**
-   * Shows if dry run is supported for this constraint or not.
-   *
    * @var bool
    */
   public $supportsDryRun;
   /**
-   * Shows if simulation is supported for this constraint or not.
-   *
    * @var bool
    */
   public $supportsSimulation;
 
   /**
-   * Defines this constraint as being a boolean constraint.
-   *
-   * @param GoogleCloudOrgpolicyV2ConstraintBooleanConstraint $booleanConstraint
+   * @param GoogleCloudOrgpolicyV2ConstraintBooleanConstraint
    */
   public function setBooleanConstraint(GoogleCloudOrgpolicyV2ConstraintBooleanConstraint $booleanConstraint)
   {
@@ -108,28 +67,21 @@ class GoogleCloudOrgpolicyV2Constraint extends \Google\Model
     return $this->booleanConstraint;
   }
   /**
-   * The evaluation behavior of this constraint in the absence of a policy.
-   *
-   * Accepted values: CONSTRAINT_DEFAULT_UNSPECIFIED, ALLOW, DENY
-   *
-   * @param self::CONSTRAINT_DEFAULT_* $constraintDefault
+   * @param string
    */
   public function setConstraintDefault($constraintDefault)
   {
     $this->constraintDefault = $constraintDefault;
   }
   /**
-   * @return self::CONSTRAINT_DEFAULT_*
+   * @return string
    */
   public function getConstraintDefault()
   {
     return $this->constraintDefault;
   }
   /**
-   * Detailed description of what this constraint controls as well as how and
-   * where it is enforced. Mutable.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -143,9 +95,7 @@ class GoogleCloudOrgpolicyV2Constraint extends \Google\Model
     return $this->description;
   }
   /**
-   * The human readable name. Mutable.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -159,13 +109,7 @@ class GoogleCloudOrgpolicyV2Constraint extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Defines the equivalent constraint name, if it exists. Managed constraints
-   * can have an equivalent legacy managed constraint, and legacy managed
-   * constraints can have an equivalent managed constraint. For example,
-   * "constraints/iam.disableServiceAccountKeyUpload" is equivalent to
-   * "constraints/iam.managed.disableServiceAccountKeyUpload".
-   *
-   * @param string $equivalentConstraint
+   * @param string
    */
   public function setEquivalentConstraint($equivalentConstraint)
   {
@@ -179,9 +123,7 @@ class GoogleCloudOrgpolicyV2Constraint extends \Google\Model
     return $this->equivalentConstraint;
   }
   /**
-   * Defines this constraint as being a list constraint.
-   *
-   * @param GoogleCloudOrgpolicyV2ConstraintListConstraint $listConstraint
+   * @param GoogleCloudOrgpolicyV2ConstraintListConstraint
    */
   public function setListConstraint(GoogleCloudOrgpolicyV2ConstraintListConstraint $listConstraint)
   {
@@ -195,14 +137,7 @@ class GoogleCloudOrgpolicyV2Constraint extends \Google\Model
     return $this->listConstraint;
   }
   /**
-   * Immutable. The resource name of the constraint. Must be in one of the
-   * following forms: *
-   * `projects/{project_number}/constraints/{constraint_name}` *
-   * `folders/{folder_id}/constraints/{constraint_name}` *
-   * `organizations/{organization_id}/constraints/{constraint_name}` For
-   * example, "/projects/123/constraints/compute.disableSerialPortAccess".
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -216,9 +151,7 @@ class GoogleCloudOrgpolicyV2Constraint extends \Google\Model
     return $this->name;
   }
   /**
-   * Shows if dry run is supported for this constraint or not.
-   *
-   * @param bool $supportsDryRun
+   * @param bool
    */
   public function setSupportsDryRun($supportsDryRun)
   {
@@ -232,9 +165,7 @@ class GoogleCloudOrgpolicyV2Constraint extends \Google\Model
     return $this->supportsDryRun;
   }
   /**
-   * Shows if simulation is supported for this constraint or not.
-   *
-   * @param bool $supportsSimulation
+   * @param bool
    */
   public function setSupportsSimulation($supportsSimulation)
   {

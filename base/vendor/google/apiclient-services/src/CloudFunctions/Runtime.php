@@ -19,86 +19,34 @@ namespace Google\Service\CloudFunctions;
 
 class Runtime extends \Google\Collection
 {
-  /**
-   * Unspecified
-   */
-  public const ENVIRONMENT_ENVIRONMENT_UNSPECIFIED = 'ENVIRONMENT_UNSPECIFIED';
-  /**
-   * Gen 1
-   */
-  public const ENVIRONMENT_GEN_1 = 'GEN_1';
-  /**
-   * Gen 2
-   */
-  public const ENVIRONMENT_GEN_2 = 'GEN_2';
-  /**
-   * Not specified.
-   */
-  public const STAGE_RUNTIME_STAGE_UNSPECIFIED = 'RUNTIME_STAGE_UNSPECIFIED';
-  /**
-   * The runtime is in development.
-   */
-  public const STAGE_DEVELOPMENT = 'DEVELOPMENT';
-  /**
-   * The runtime is in the Alpha stage.
-   */
-  public const STAGE_ALPHA = 'ALPHA';
-  /**
-   * The runtime is in the Beta stage.
-   */
-  public const STAGE_BETA = 'BETA';
-  /**
-   * The runtime is generally available.
-   */
-  public const STAGE_GA = 'GA';
-  /**
-   * The runtime is deprecated.
-   */
-  public const STAGE_DEPRECATED = 'DEPRECATED';
-  /**
-   * The runtime is no longer supported.
-   */
-  public const STAGE_DECOMMISSIONED = 'DECOMMISSIONED';
   protected $collection_key = 'warnings';
   protected $decommissionDateType = Date::class;
   protected $decommissionDateDataType = '';
   protected $deprecationDateType = Date::class;
   protected $deprecationDateDataType = '';
   /**
-   * The user facing name, eg 'Go 1.13', 'Node.js 12', etc.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * The environment for the runtime.
-   *
    * @var string
    */
   public $environment;
   /**
-   * The name of the runtime, e.g., 'go113', 'nodejs12', etc.
-   *
    * @var string
    */
   public $name;
   /**
-   * The stage of life this runtime is in, e.g., BETA, GA, etc.
-   *
    * @var string
    */
   public $stage;
   /**
-   * Warning messages, e.g., a deprecation warning.
-   *
    * @var string[]
    */
   public $warnings;
 
   /**
-   * Decommission date for the runtime.
-   *
-   * @param Date $decommissionDate
+   * @param Date
    */
   public function setDecommissionDate(Date $decommissionDate)
   {
@@ -112,9 +60,7 @@ class Runtime extends \Google\Collection
     return $this->decommissionDate;
   }
   /**
-   * Deprecation date for the runtime.
-   *
-   * @param Date $deprecationDate
+   * @param Date
    */
   public function setDeprecationDate(Date $deprecationDate)
   {
@@ -128,9 +74,7 @@ class Runtime extends \Google\Collection
     return $this->deprecationDate;
   }
   /**
-   * The user facing name, eg 'Go 1.13', 'Node.js 12', etc.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -144,27 +88,21 @@ class Runtime extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * The environment for the runtime.
-   *
-   * Accepted values: ENVIRONMENT_UNSPECIFIED, GEN_1, GEN_2
-   *
-   * @param self::ENVIRONMENT_* $environment
+   * @param string
    */
   public function setEnvironment($environment)
   {
     $this->environment = $environment;
   }
   /**
-   * @return self::ENVIRONMENT_*
+   * @return string
    */
   public function getEnvironment()
   {
     return $this->environment;
   }
   /**
-   * The name of the runtime, e.g., 'go113', 'nodejs12', etc.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -178,28 +116,21 @@ class Runtime extends \Google\Collection
     return $this->name;
   }
   /**
-   * The stage of life this runtime is in, e.g., BETA, GA, etc.
-   *
-   * Accepted values: RUNTIME_STAGE_UNSPECIFIED, DEVELOPMENT, ALPHA, BETA, GA,
-   * DEPRECATED, DECOMMISSIONED
-   *
-   * @param self::STAGE_* $stage
+   * @param string
    */
   public function setStage($stage)
   {
     $this->stage = $stage;
   }
   /**
-   * @return self::STAGE_*
+   * @return string
    */
   public function getStage()
   {
     return $this->stage;
   }
   /**
-   * Warning messages, e.g., a deprecation warning.
-   *
-   * @param string[] $warnings
+   * @param string[]
    */
   public function setWarnings($warnings)
   {

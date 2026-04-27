@@ -20,25 +20,16 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1alphaDocumentProcessingConfigChunkingConfigLayoutBasedChunkingConfig extends \Google\Model
 {
   /**
-   * The token size limit for each chunk. Supported values: 100-500 (inclusive).
-   * Default value: 500.
-   *
    * @var int
    */
   public $chunkSize;
   /**
-   * Whether to include appending different levels of headings to chunks from
-   * the middle of the document to prevent context loss. Default value: False.
-   *
    * @var bool
    */
   public $includeAncestorHeadings;
 
   /**
-   * The token size limit for each chunk. Supported values: 100-500 (inclusive).
-   * Default value: 500.
-   *
-   * @param int $chunkSize
+   * @param int
    */
   public function setChunkSize($chunkSize)
   {
@@ -52,10 +43,7 @@ class GoogleCloudDiscoveryengineV1alphaDocumentProcessingConfigChunkingConfigLay
     return $this->chunkSize;
   }
   /**
-   * Whether to include appending different levels of headings to chunks from
-   * the middle of the document to prevent context loss. Default value: False.
-   *
-   * @param bool $includeAncestorHeadings
+   * @param bool
    */
   public function setIncludeAncestorHeadings($includeAncestorHeadings)
   {

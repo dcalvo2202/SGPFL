@@ -26,9 +26,7 @@ class TextContent extends \Google\Collection
   protected $textElementsDataType = 'array';
 
   /**
-   * The bulleted lists contained in this text, keyed by list ID.
-   *
-   * @param SlidesList[] $lists
+   * @param SlidesList[]
    */
   public function setLists($lists)
   {
@@ -42,10 +40,7 @@ class TextContent extends \Google\Collection
     return $this->lists;
   }
   /**
-   * The text contents broken down into its component parts, including styling
-   * information. This property is read-only.
-   *
-   * @param TextElement[] $textElements
+   * @param TextElement[]
    */
   public function setTextElements($textElements)
   {

@@ -20,18 +20,12 @@ namespace Google\Service\BinaryAuthorization;
 class ImageFreshnessCheck extends \Google\Model
 {
   /**
-   * Required. The max number of days that is allowed since the image was
-   * uploaded. Must be greater than zero.
-   *
    * @var int
    */
   public $maxUploadAgeDays;
 
   /**
-   * Required. The max number of days that is allowed since the image was
-   * uploaded. Must be greater than zero.
-   *
-   * @param int $maxUploadAgeDays
+   * @param int
    */
   public function setMaxUploadAgeDays($maxUploadAgeDays)
   {

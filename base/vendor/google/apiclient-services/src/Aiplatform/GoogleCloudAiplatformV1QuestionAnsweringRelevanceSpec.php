@@ -20,24 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1QuestionAnsweringRelevanceSpec extends \Google\Model
 {
   /**
-   * Optional. Whether to use instance.reference to compute question answering
-   * relevance.
-   *
    * @var bool
    */
   public $useReference;
   /**
-   * Optional. Which version to use for evaluation.
-   *
    * @var int
    */
   public $version;
 
   /**
-   * Optional. Whether to use instance.reference to compute question answering
-   * relevance.
-   *
-   * @param bool $useReference
+   * @param bool
    */
   public function setUseReference($useReference)
   {
@@ -51,9 +43,7 @@ class GoogleCloudAiplatformV1QuestionAnsweringRelevanceSpec extends \Google\Mode
     return $this->useReference;
   }
   /**
-   * Optional. Which version to use for evaluation.
-   *
-   * @param int $version
+   * @param int
    */
   public function setVersion($version)
   {

@@ -24,10 +24,7 @@ class BatchCreateJobsResponse extends \Google\Collection
   protected $jobResultsDataType = 'array';
 
   /**
-   * List of job mutation results from a batch create operation. It can change
-   * until operation status is FINISHED, FAILED or CANCELLED.
-   *
-   * @param JobResult[] $jobResults
+   * @param JobResult[]
    */
   public function setJobResults($jobResults)
   {

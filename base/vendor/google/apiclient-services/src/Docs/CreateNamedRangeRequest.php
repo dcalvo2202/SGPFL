@@ -20,10 +20,6 @@ namespace Google\Service\Docs;
 class CreateNamedRangeRequest extends \Google\Model
 {
   /**
-   * The name of the NamedRange. Names do not need to be unique. Names must be
-   * at least 1 character and no more than 256 characters, measured in UTF-16
-   * code units.
-   *
    * @var string
    */
   public $name;
@@ -31,11 +27,7 @@ class CreateNamedRangeRequest extends \Google\Model
   protected $rangeDataType = '';
 
   /**
-   * The name of the NamedRange. Names do not need to be unique. Names must be
-   * at least 1 character and no more than 256 characters, measured in UTF-16
-   * code units.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -49,9 +41,7 @@ class CreateNamedRangeRequest extends \Google\Model
     return $this->name;
   }
   /**
-   * The range to apply the name to.
-   *
-   * @param Range $range
+   * @param Range
    */
   public function setRange(Range $range)
   {

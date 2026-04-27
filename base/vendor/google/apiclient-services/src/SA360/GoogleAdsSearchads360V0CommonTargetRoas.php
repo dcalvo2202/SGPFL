@@ -20,35 +20,17 @@ namespace Google\Service\SA360;
 class GoogleAdsSearchads360V0CommonTargetRoas extends \Google\Model
 {
   /**
-   * Maximum bid limit that can be set by the bid strategy. The limit applies to
-   * all keywords managed by the strategy. This should only be set for portfolio
-   * bid strategies.
-   *
    * @var string
    */
   public $cpcBidCeilingMicros;
   /**
-   * Minimum bid limit that can be set by the bid strategy. The limit applies to
-   * all keywords managed by the strategy. This should only be set for portfolio
-   * bid strategies.
-   *
    * @var string
    */
   public $cpcBidFloorMicros;
-  /**
-   * Required. The chosen revenue (based on conversion data) per unit of spend.
-   * Value must be between 0.01 and 1000.0, inclusive.
-   *
-   * @var 
-   */
   public $targetRoas;
 
   /**
-   * Maximum bid limit that can be set by the bid strategy. The limit applies to
-   * all keywords managed by the strategy. This should only be set for portfolio
-   * bid strategies.
-   *
-   * @param string $cpcBidCeilingMicros
+   * @param string
    */
   public function setCpcBidCeilingMicros($cpcBidCeilingMicros)
   {
@@ -62,11 +44,7 @@ class GoogleAdsSearchads360V0CommonTargetRoas extends \Google\Model
     return $this->cpcBidCeilingMicros;
   }
   /**
-   * Minimum bid limit that can be set by the bid strategy. The limit applies to
-   * all keywords managed by the strategy. This should only be set for portfolio
-   * bid strategies.
-   *
-   * @param string $cpcBidFloorMicros
+   * @param string
    */
   public function setCpcBidFloorMicros($cpcBidFloorMicros)
   {

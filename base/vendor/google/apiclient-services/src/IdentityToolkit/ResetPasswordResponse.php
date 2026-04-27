@@ -20,36 +20,24 @@ namespace Google\Service\IdentityToolkit;
 class ResetPasswordResponse extends \Google\Model
 {
   /**
-   * The user's email. If the out-of-band code is for email recovery, the user's
-   * original email.
-   *
    * @var string
    */
   public $email;
   /**
-   * The fixed string "identitytoolkit#ResetPasswordResponse".
-   *
    * @var string
    */
   public $kind;
   /**
-   * If the out-of-band code is for email recovery, the user's new email.
-   *
    * @var string
    */
   public $newEmail;
   /**
-   * The request type.
-   *
    * @var string
    */
   public $requestType;
 
   /**
-   * The user's email. If the out-of-band code is for email recovery, the user's
-   * original email.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {
@@ -63,9 +51,7 @@ class ResetPasswordResponse extends \Google\Model
     return $this->email;
   }
   /**
-   * The fixed string "identitytoolkit#ResetPasswordResponse".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -79,9 +65,7 @@ class ResetPasswordResponse extends \Google\Model
     return $this->kind;
   }
   /**
-   * If the out-of-band code is for email recovery, the user's new email.
-   *
-   * @param string $newEmail
+   * @param string
    */
   public function setNewEmail($newEmail)
   {
@@ -95,9 +79,7 @@ class ResetPasswordResponse extends \Google\Model
     return $this->newEmail;
   }
   /**
-   * The request type.
-   *
-   * @param string $requestType
+   * @param string
    */
   public function setRequestType($requestType)
   {

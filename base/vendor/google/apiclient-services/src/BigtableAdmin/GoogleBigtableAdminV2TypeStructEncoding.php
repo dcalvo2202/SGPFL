@@ -27,9 +27,7 @@ class GoogleBigtableAdminV2TypeStructEncoding extends \Google\Model
   protected $singletonDataType = '';
 
   /**
-   * Use `DelimitedBytes` encoding.
-   *
-   * @param GoogleBigtableAdminV2TypeStructEncodingDelimitedBytes $delimitedBytes
+   * @param GoogleBigtableAdminV2TypeStructEncodingDelimitedBytes
    */
   public function setDelimitedBytes(GoogleBigtableAdminV2TypeStructEncodingDelimitedBytes $delimitedBytes)
   {
@@ -43,9 +41,7 @@ class GoogleBigtableAdminV2TypeStructEncoding extends \Google\Model
     return $this->delimitedBytes;
   }
   /**
-   * User `OrderedCodeBytes` encoding.
-   *
-   * @param GoogleBigtableAdminV2TypeStructEncodingOrderedCodeBytes $orderedCodeBytes
+   * @param GoogleBigtableAdminV2TypeStructEncodingOrderedCodeBytes
    */
   public function setOrderedCodeBytes(GoogleBigtableAdminV2TypeStructEncodingOrderedCodeBytes $orderedCodeBytes)
   {
@@ -59,9 +55,7 @@ class GoogleBigtableAdminV2TypeStructEncoding extends \Google\Model
     return $this->orderedCodeBytes;
   }
   /**
-   * Use `Singleton` encoding.
-   *
-   * @param GoogleBigtableAdminV2TypeStructEncodingSingleton $singleton
+   * @param GoogleBigtableAdminV2TypeStructEncodingSingleton
    */
   public function setSingleton(GoogleBigtableAdminV2TypeStructEncodingSingleton $singleton)
   {

@@ -21,18 +21,12 @@ class DocumentMask extends \Google\Collection
 {
   protected $collection_key = 'fieldPaths';
   /**
-   * The list of field paths in the mask. See Document.fields for a field path
-   * syntax reference.
-   *
    * @var string[]
    */
   public $fieldPaths;
 
   /**
-   * The list of field paths in the mask. See Document.fields for a field path
-   * syntax reference.
-   *
-   * @param string[] $fieldPaths
+   * @param string[]
    */
   public function setFieldPaths($fieldPaths)
   {

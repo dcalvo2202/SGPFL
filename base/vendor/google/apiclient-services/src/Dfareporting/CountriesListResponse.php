@@ -23,17 +23,12 @@ class CountriesListResponse extends \Google\Collection
   protected $countriesType = Country::class;
   protected $countriesDataType = 'array';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#countriesListResponse".
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * Country collection.
-   *
-   * @param Country[] $countries
+   * @param Country[]
    */
   public function setCountries($countries)
   {
@@ -47,10 +42,7 @@ class CountriesListResponse extends \Google\Collection
     return $this->countries;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#countriesListResponse".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

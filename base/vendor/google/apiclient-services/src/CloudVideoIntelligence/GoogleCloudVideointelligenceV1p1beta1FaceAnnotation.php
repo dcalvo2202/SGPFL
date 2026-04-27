@@ -25,16 +25,12 @@ class GoogleCloudVideointelligenceV1p1beta1FaceAnnotation extends \Google\Collec
   protected $segmentsType = GoogleCloudVideointelligenceV1p1beta1FaceSegment::class;
   protected $segmentsDataType = 'array';
   /**
-   * Thumbnail of a representative face view (in JPEG format).
-   *
    * @var string
    */
   public $thumbnail;
 
   /**
-   * All video frames where a face was detected.
-   *
-   * @param GoogleCloudVideointelligenceV1p1beta1FaceFrame[] $frames
+   * @param GoogleCloudVideointelligenceV1p1beta1FaceFrame[]
    */
   public function setFrames($frames)
   {
@@ -48,9 +44,7 @@ class GoogleCloudVideointelligenceV1p1beta1FaceAnnotation extends \Google\Collec
     return $this->frames;
   }
   /**
-   * All video segments where a face was detected.
-   *
-   * @param GoogleCloudVideointelligenceV1p1beta1FaceSegment[] $segments
+   * @param GoogleCloudVideointelligenceV1p1beta1FaceSegment[]
    */
   public function setSegments($segments)
   {
@@ -64,9 +58,7 @@ class GoogleCloudVideointelligenceV1p1beta1FaceAnnotation extends \Google\Collec
     return $this->segments;
   }
   /**
-   * Thumbnail of a representative face view (in JPEG format).
-   *
-   * @param string $thumbnail
+   * @param string
    */
   public function setThumbnail($thumbnail)
   {

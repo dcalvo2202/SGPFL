@@ -20,93 +20,50 @@ namespace Google\Service\GamesConfiguration;
 class AchievementConfiguration extends \Google\Model
 {
   /**
-   * Default value. This value is unused.
-   */
-  public const ACHIEVEMENT_TYPE_ACHIEVEMENT_TYPE_UNSPECIFIED = 'ACHIEVEMENT_TYPE_UNSPECIFIED';
-  /**
-   * Achievement is either locked or unlocked.
-   */
-  public const ACHIEVEMENT_TYPE_STANDARD = 'STANDARD';
-  /**
-   * Achievement is incremental.
-   */
-  public const ACHIEVEMENT_TYPE_INCREMENTAL = 'INCREMENTAL';
-  /**
-   * Default value. This value is unused.
-   */
-  public const INITIAL_STATE_INITIAL_STATE_UNSPECIFIED = 'INITIAL_STATE_UNSPECIFIED';
-  /**
-   * Achievement is hidden.
-   */
-  public const INITIAL_STATE_HIDDEN = 'HIDDEN';
-  /**
-   * Achievement is revealed.
-   */
-  public const INITIAL_STATE_REVEALED = 'REVEALED';
-  /**
-   * The type of the achievement.
-   *
    * @var string
    */
   public $achievementType;
   protected $draftType = AchievementConfigurationDetail::class;
   protected $draftDataType = '';
   /**
-   * The ID of the achievement.
-   *
    * @var string
    */
   public $id;
   /**
-   * The initial state of the achievement.
-   *
    * @var string
    */
   public $initialState;
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `gamesConfiguration#achievementConfiguration`.
-   *
    * @var string
    */
   public $kind;
   protected $publishedType = AchievementConfigurationDetail::class;
   protected $publishedDataType = '';
   /**
-   * Steps to unlock. Only applicable to incremental achievements.
-   *
    * @var int
    */
   public $stepsToUnlock;
   /**
-   * The token for this resource.
-   *
    * @var string
    */
   public $token;
 
   /**
-   * The type of the achievement.
-   *
-   * Accepted values: ACHIEVEMENT_TYPE_UNSPECIFIED, STANDARD, INCREMENTAL
-   *
-   * @param self::ACHIEVEMENT_TYPE_* $achievementType
+   * @param string
    */
   public function setAchievementType($achievementType)
   {
     $this->achievementType = $achievementType;
   }
   /**
-   * @return self::ACHIEVEMENT_TYPE_*
+   * @return string
    */
   public function getAchievementType()
   {
     return $this->achievementType;
   }
   /**
-   * The draft data of the achievement.
-   *
-   * @param AchievementConfigurationDetail $draft
+   * @param AchievementConfigurationDetail
    */
   public function setDraft(AchievementConfigurationDetail $draft)
   {
@@ -120,9 +77,7 @@ class AchievementConfiguration extends \Google\Model
     return $this->draft;
   }
   /**
-   * The ID of the achievement.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -136,28 +91,21 @@ class AchievementConfiguration extends \Google\Model
     return $this->id;
   }
   /**
-   * The initial state of the achievement.
-   *
-   * Accepted values: INITIAL_STATE_UNSPECIFIED, HIDDEN, REVEALED
-   *
-   * @param self::INITIAL_STATE_* $initialState
+   * @param string
    */
   public function setInitialState($initialState)
   {
     $this->initialState = $initialState;
   }
   /**
-   * @return self::INITIAL_STATE_*
+   * @return string
    */
   public function getInitialState()
   {
     return $this->initialState;
   }
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `gamesConfiguration#achievementConfiguration`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -171,9 +119,7 @@ class AchievementConfiguration extends \Google\Model
     return $this->kind;
   }
   /**
-   * The read-only published data of the achievement.
-   *
-   * @param AchievementConfigurationDetail $published
+   * @param AchievementConfigurationDetail
    */
   public function setPublished(AchievementConfigurationDetail $published)
   {
@@ -187,9 +133,7 @@ class AchievementConfiguration extends \Google\Model
     return $this->published;
   }
   /**
-   * Steps to unlock. Only applicable to incremental achievements.
-   *
-   * @param int $stepsToUnlock
+   * @param int
    */
   public function setStepsToUnlock($stepsToUnlock)
   {
@@ -203,9 +147,7 @@ class AchievementConfiguration extends \Google\Model
     return $this->stepsToUnlock;
   }
   /**
-   * The token for this resource.
-   *
-   * @param string $token
+   * @param string
    */
   public function setToken($token)
   {

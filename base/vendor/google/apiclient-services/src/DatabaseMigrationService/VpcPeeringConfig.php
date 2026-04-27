@@ -20,23 +20,16 @@ namespace Google\Service\DatabaseMigrationService;
 class VpcPeeringConfig extends \Google\Model
 {
   /**
-   * Required. A free subnet for peering. (CIDR of /29)
-   *
    * @var string
    */
   public $subnet;
   /**
-   * Required. Fully qualified name of the VPC that Database Migration Service
-   * will peer to.
-   *
    * @var string
    */
   public $vpcName;
 
   /**
-   * Required. A free subnet for peering. (CIDR of /29)
-   *
-   * @param string $subnet
+   * @param string
    */
   public function setSubnet($subnet)
   {
@@ -50,10 +43,7 @@ class VpcPeeringConfig extends \Google\Model
     return $this->subnet;
   }
   /**
-   * Required. Fully qualified name of the VPC that Database Migration Service
-   * will peer to.
-   *
-   * @param string $vpcName
+   * @param string
    */
   public function setVpcName($vpcName)
   {

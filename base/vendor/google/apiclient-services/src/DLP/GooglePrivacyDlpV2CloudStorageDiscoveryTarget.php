@@ -29,10 +29,7 @@ class GooglePrivacyDlpV2CloudStorageDiscoveryTarget extends \Google\Model
   protected $generationCadenceDataType = '';
 
   /**
-   * Optional. In addition to matching the filter, these conditions must be true
-   * before a profile is generated.
-   *
-   * @param GooglePrivacyDlpV2DiscoveryFileStoreConditions $conditions
+   * @param GooglePrivacyDlpV2DiscoveryFileStoreConditions
    */
   public function setConditions(GooglePrivacyDlpV2DiscoveryFileStoreConditions $conditions)
   {
@@ -46,9 +43,7 @@ class GooglePrivacyDlpV2CloudStorageDiscoveryTarget extends \Google\Model
     return $this->conditions;
   }
   /**
-   * Optional. Disable profiling for buckets that match this filter.
-   *
-   * @param GooglePrivacyDlpV2Disabled $disabled
+   * @param GooglePrivacyDlpV2Disabled
    */
   public function setDisabled(GooglePrivacyDlpV2Disabled $disabled)
   {
@@ -62,10 +57,7 @@ class GooglePrivacyDlpV2CloudStorageDiscoveryTarget extends \Google\Model
     return $this->disabled;
   }
   /**
-   * Required. The buckets the generation_cadence applies to. The first target
-   * with a matching filter will be the one to apply to a bucket.
-   *
-   * @param GooglePrivacyDlpV2DiscoveryCloudStorageFilter $filter
+   * @param GooglePrivacyDlpV2DiscoveryCloudStorageFilter
    */
   public function setFilter(GooglePrivacyDlpV2DiscoveryCloudStorageFilter $filter)
   {
@@ -79,11 +71,7 @@ class GooglePrivacyDlpV2CloudStorageDiscoveryTarget extends \Google\Model
     return $this->filter;
   }
   /**
-   * Optional. How often and when to update profiles. New buckets that match
-   * both the filter and conditions are scanned as quickly as possible depending
-   * on system capacity.
-   *
-   * @param GooglePrivacyDlpV2DiscoveryCloudStorageGenerationCadence $generationCadence
+   * @param GooglePrivacyDlpV2DiscoveryCloudStorageGenerationCadence
    */
   public function setGenerationCadence(GooglePrivacyDlpV2DiscoveryCloudStorageGenerationCadence $generationCadence)
   {

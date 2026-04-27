@@ -20,74 +20,28 @@ namespace Google\Service\DatabaseMigrationService;
 class SslConfig extends \Google\Model
 {
   /**
-   * Unspecified.
-   */
-  public const TYPE_SSL_TYPE_UNSPECIFIED = 'SSL_TYPE_UNSPECIFIED';
-  /**
-   * Only 'ca_certificate' specified.
-   */
-  public const TYPE_SERVER_ONLY = 'SERVER_ONLY';
-  /**
-   * Both server ('ca_certificate'), and client ('client_key',
-   * 'client_certificate') specified.
-   */
-  public const TYPE_SERVER_CLIENT = 'SERVER_CLIENT';
-  /**
-   * Mandates SSL encryption for all connections. This does not require
-   * certificate verification.
-   */
-  public const TYPE_REQUIRED = 'REQUIRED';
-  /**
-   * Connection is not encrypted.
-   */
-  public const TYPE_NONE = 'NONE';
-  /**
-   * Required. Input only. The x509 PEM-encoded certificate of the CA that
-   * signed the source database server's certificate. The replica will use this
-   * certificate to verify it's connecting to the right host.
-   *
    * @var string
    */
   public $caCertificate;
   /**
-   * Input only. The x509 PEM-encoded certificate that will be used by the
-   * replica to authenticate against the source database server.If this field is
-   * used then the 'client_key' field is mandatory.
-   *
    * @var string
    */
   public $clientCertificate;
   /**
-   * Input only. The unencrypted PKCS#1 or PKCS#8 PEM-encoded private key
-   * associated with the Client Certificate. If this field is used then the
-   * 'client_certificate' field is mandatory.
-   *
    * @var string
    */
   public $clientKey;
   /**
-   * Optional. SSL flags used for establishing SSL connection to the source
-   * database. Only source specific flags are supported. An object containing a
-   * list of "key": "value" pairs. Example: { "server_certificate_hostname":
-   * "server.com"}.
-   *
    * @var string[]
    */
   public $sslFlags;
   /**
-   * Optional. The ssl config type according to 'client_key',
-   * 'client_certificate' and 'ca_certificate'.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Required. Input only. The x509 PEM-encoded certificate of the CA that
-   * signed the source database server's certificate. The replica will use this
-   * certificate to verify it's connecting to the right host.
-   *
-   * @param string $caCertificate
+   * @param string
    */
   public function setCaCertificate($caCertificate)
   {
@@ -101,11 +55,7 @@ class SslConfig extends \Google\Model
     return $this->caCertificate;
   }
   /**
-   * Input only. The x509 PEM-encoded certificate that will be used by the
-   * replica to authenticate against the source database server.If this field is
-   * used then the 'client_key' field is mandatory.
-   *
-   * @param string $clientCertificate
+   * @param string
    */
   public function setClientCertificate($clientCertificate)
   {
@@ -119,11 +69,7 @@ class SslConfig extends \Google\Model
     return $this->clientCertificate;
   }
   /**
-   * Input only. The unencrypted PKCS#1 or PKCS#8 PEM-encoded private key
-   * associated with the Client Certificate. If this field is used then the
-   * 'client_certificate' field is mandatory.
-   *
-   * @param string $clientKey
+   * @param string
    */
   public function setClientKey($clientKey)
   {
@@ -137,12 +83,7 @@ class SslConfig extends \Google\Model
     return $this->clientKey;
   }
   /**
-   * Optional. SSL flags used for establishing SSL connection to the source
-   * database. Only source specific flags are supported. An object containing a
-   * list of "key": "value" pairs. Example: { "server_certificate_hostname":
-   * "server.com"}.
-   *
-   * @param string[] $sslFlags
+   * @param string[]
    */
   public function setSslFlags($sslFlags)
   {
@@ -156,20 +97,14 @@ class SslConfig extends \Google\Model
     return $this->sslFlags;
   }
   /**
-   * Optional. The ssl config type according to 'client_key',
-   * 'client_certificate' and 'ca_certificate'.
-   *
-   * Accepted values: SSL_TYPE_UNSPECIFIED, SERVER_ONLY, SERVER_CLIENT,
-   * REQUIRED, NONE
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

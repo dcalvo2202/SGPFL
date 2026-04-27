@@ -23,9 +23,7 @@ class EnableServiceResponse extends \Google\Model
   protected $serviceDataType = '';
 
   /**
-   * The new state of the service after enabling.
-   *
-   * @param GoogleApiServiceusageV1Service $service
+   * @param GoogleApiServiceusageV1Service
    */
   public function setService(GoogleApiServiceusageV1Service $service)
   {

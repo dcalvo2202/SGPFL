@@ -20,18 +20,12 @@ namespace Google\Service\GKEOnPrem;
 class BareMetalAdminClusterOperationsConfig extends \Google\Model
 {
   /**
-   * Whether collection of application logs/metrics should be enabled (in
-   * addition to system logs/metrics).
-   *
    * @var bool
    */
   public $enableApplicationLogs;
 
   /**
-   * Whether collection of application logs/metrics should be enabled (in
-   * addition to system logs/metrics).
-   *
-   * @param bool $enableApplicationLogs
+   * @param bool
    */
   public function setEnableApplicationLogs($enableApplicationLogs)
   {

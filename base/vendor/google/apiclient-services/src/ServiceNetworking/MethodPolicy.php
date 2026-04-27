@@ -23,19 +23,12 @@ class MethodPolicy extends \Google\Collection
   protected $requestPoliciesType = FieldPolicy::class;
   protected $requestPoliciesDataType = 'array';
   /**
-   * Selects a method to which these policies should be enforced, for example,
-   * "google.pubsub.v1.Subscriber.CreateSubscription". Refer to selector for
-   * syntax details. NOTE: This field must not be set in the proto annotation.
-   * It will be automatically filled by the service config compiler .
-   *
    * @var string
    */
   public $selector;
 
   /**
-   * Policies that are applicable to the request message.
-   *
-   * @param FieldPolicy[] $requestPolicies
+   * @param FieldPolicy[]
    */
   public function setRequestPolicies($requestPolicies)
   {
@@ -49,12 +42,7 @@ class MethodPolicy extends \Google\Collection
     return $this->requestPolicies;
   }
   /**
-   * Selects a method to which these policies should be enforced, for example,
-   * "google.pubsub.v1.Subscriber.CreateSubscription". Refer to selector for
-   * syntax details. NOTE: This field must not be set in the proto annotation.
-   * It will be automatically filled by the service config compiler .
-   *
-   * @param string $selector
+   * @param string
    */
   public function setSelector($selector)
   {

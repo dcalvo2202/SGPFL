@@ -21,50 +21,30 @@ class GoogleCloudAiplatformV1SchemaPredictPredictionVideoObjectTrackingPredictio
 {
   protected $collection_key = 'frames';
   /**
-   * The Model's confidence in correction of this prediction, higher value means
-   * higher confidence.
-   *
    * @var float
    */
   public $confidence;
   /**
-   * The display name of the AnnotationSpec that had been identified.
-   *
    * @var string
    */
   public $displayName;
   protected $framesType = GoogleCloudAiplatformV1SchemaPredictPredictionVideoObjectTrackingPredictionResultFrame::class;
   protected $framesDataType = 'array';
   /**
-   * The resource ID of the AnnotationSpec that had been identified.
-   *
    * @var string
    */
   public $id;
   /**
-   * The end, inclusive, of the video's time segment in which the object
-   * instance has been detected. Expressed as a number of seconds as measured
-   * from the start of the video, with fractions up to a microsecond precision,
-   * and with "s" appended at the end.
-   *
    * @var string
    */
   public $timeSegmentEnd;
   /**
-   * The beginning, inclusive, of the video's time segment in which the object
-   * instance has been detected. Expressed as a number of seconds as measured
-   * from the start of the video, with fractions up to a microsecond precision,
-   * and with "s" appended at the end.
-   *
    * @var string
    */
   public $timeSegmentStart;
 
   /**
-   * The Model's confidence in correction of this prediction, higher value means
-   * higher confidence.
-   *
-   * @param float $confidence
+   * @param float
    */
   public function setConfidence($confidence)
   {
@@ -78,9 +58,7 @@ class GoogleCloudAiplatformV1SchemaPredictPredictionVideoObjectTrackingPredictio
     return $this->confidence;
   }
   /**
-   * The display name of the AnnotationSpec that had been identified.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -94,10 +72,7 @@ class GoogleCloudAiplatformV1SchemaPredictPredictionVideoObjectTrackingPredictio
     return $this->displayName;
   }
   /**
-   * All of the frames of the video in which a single object instance has been
-   * detected. The bounding boxes in the frames identify the same object.
-   *
-   * @param GoogleCloudAiplatformV1SchemaPredictPredictionVideoObjectTrackingPredictionResultFrame[] $frames
+   * @param GoogleCloudAiplatformV1SchemaPredictPredictionVideoObjectTrackingPredictionResultFrame[]
    */
   public function setFrames($frames)
   {
@@ -111,9 +86,7 @@ class GoogleCloudAiplatformV1SchemaPredictPredictionVideoObjectTrackingPredictio
     return $this->frames;
   }
   /**
-   * The resource ID of the AnnotationSpec that had been identified.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -127,12 +100,7 @@ class GoogleCloudAiplatformV1SchemaPredictPredictionVideoObjectTrackingPredictio
     return $this->id;
   }
   /**
-   * The end, inclusive, of the video's time segment in which the object
-   * instance has been detected. Expressed as a number of seconds as measured
-   * from the start of the video, with fractions up to a microsecond precision,
-   * and with "s" appended at the end.
-   *
-   * @param string $timeSegmentEnd
+   * @param string
    */
   public function setTimeSegmentEnd($timeSegmentEnd)
   {
@@ -146,12 +114,7 @@ class GoogleCloudAiplatformV1SchemaPredictPredictionVideoObjectTrackingPredictio
     return $this->timeSegmentEnd;
   }
   /**
-   * The beginning, inclusive, of the video's time segment in which the object
-   * instance has been detected. Expressed as a number of seconds as measured
-   * from the start of the video, with fractions up to a microsecond precision,
-   * and with "s" appended at the end.
-   *
-   * @param string $timeSegmentStart
+   * @param string
    */
   public function setTimeSegmentStart($timeSegmentStart)
   {

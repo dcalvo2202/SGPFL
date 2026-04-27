@@ -20,54 +20,32 @@ namespace Google\Service\PeopleService;
 class Biography extends \Google\Model
 {
   /**
-   * Unspecified.
-   */
-  public const CONTENT_TYPE_CONTENT_TYPE_UNSPECIFIED = 'CONTENT_TYPE_UNSPECIFIED';
-  /**
-   * Plain text.
-   */
-  public const CONTENT_TYPE_TEXT_PLAIN = 'TEXT_PLAIN';
-  /**
-   * HTML text.
-   */
-  public const CONTENT_TYPE_TEXT_HTML = 'TEXT_HTML';
-  /**
-   * The content type of the biography.
-   *
    * @var string
    */
   public $contentType;
   protected $metadataType = FieldMetadata::class;
   protected $metadataDataType = '';
   /**
-   * The short biography.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * The content type of the biography.
-   *
-   * Accepted values: CONTENT_TYPE_UNSPECIFIED, TEXT_PLAIN, TEXT_HTML
-   *
-   * @param self::CONTENT_TYPE_* $contentType
+   * @param string
    */
   public function setContentType($contentType)
   {
     $this->contentType = $contentType;
   }
   /**
-   * @return self::CONTENT_TYPE_*
+   * @return string
    */
   public function getContentType()
   {
     return $this->contentType;
   }
   /**
-   * Metadata about the biography.
-   *
-   * @param FieldMetadata $metadata
+   * @param FieldMetadata
    */
   public function setMetadata(FieldMetadata $metadata)
   {
@@ -81,9 +59,7 @@ class Biography extends \Google\Model
     return $this->metadata;
   }
   /**
-   * The short biography.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

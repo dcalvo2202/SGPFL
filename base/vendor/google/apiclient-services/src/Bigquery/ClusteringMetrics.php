@@ -22,23 +22,11 @@ class ClusteringMetrics extends \Google\Collection
   protected $collection_key = 'clusters';
   protected $clustersType = Cluster::class;
   protected $clustersDataType = 'array';
-  /**
-   * Davies-Bouldin index.
-   *
-   * @var 
-   */
   public $daviesBouldinIndex;
-  /**
-   * Mean of squared distances between each sample to its cluster centroid.
-   *
-   * @var 
-   */
   public $meanSquaredDistance;
 
   /**
-   * Information for all clusters.
-   *
-   * @param Cluster[] $clusters
+   * @param Cluster[]
    */
   public function setClusters($clusters)
   {

@@ -19,115 +19,59 @@ namespace Google\Service\Aiplatform;
 
 class GoogleCloudAiplatformV1Tensor extends \Google\Collection
 {
-  /**
-   * Not a legal value for DataType. Used to indicate a DataType field has not
-   * been set.
-   */
-  public const DTYPE_DATA_TYPE_UNSPECIFIED = 'DATA_TYPE_UNSPECIFIED';
-  /**
-   * Data types that all computation devices are expected to be capable to
-   * support.
-   */
-  public const DTYPE_BOOL = 'BOOL';
-  public const DTYPE_STRING = 'STRING';
-  public const DTYPE_FLOAT = 'FLOAT';
-  public const DTYPE_DOUBLE = 'DOUBLE';
-  public const DTYPE_INT8 = 'INT8';
-  public const DTYPE_INT16 = 'INT16';
-  public const DTYPE_INT32 = 'INT32';
-  public const DTYPE_INT64 = 'INT64';
-  public const DTYPE_UINT8 = 'UINT8';
-  public const DTYPE_UINT16 = 'UINT16';
-  public const DTYPE_UINT32 = 'UINT32';
-  public const DTYPE_UINT64 = 'UINT64';
   protected $collection_key = 'uintVal';
   /**
-   * Type specific representations that make it easy to create tensor protos in
-   * all languages. Only the representation corresponding to "dtype" can be set.
-   * The values hold the flattened representation of the tensor in row major
-   * order. BOOL
-   *
    * @var bool[]
    */
   public $boolVal;
   /**
-   * STRING
-   *
    * @var string[]
    */
   public $bytesVal;
-  /**
-   * DOUBLE
-   *
-   * @var []
-   */
   public $doubleVal;
   /**
-   * The data type of tensor.
-   *
    * @var string
    */
   public $dtype;
   /**
-   * FLOAT
-   *
    * @var float[]
    */
   public $floatVal;
   /**
-   * INT64
-   *
    * @var string[]
    */
   public $int64Val;
   /**
-   * INT_8 INT_16 INT_32
-   *
    * @var int[]
    */
   public $intVal;
   protected $listValType = GoogleCloudAiplatformV1Tensor::class;
   protected $listValDataType = 'array';
   /**
-   * Shape of the tensor.
-   *
    * @var string[]
    */
   public $shape;
   /**
-   * STRING
-   *
    * @var string[]
    */
   public $stringVal;
   protected $structValType = GoogleCloudAiplatformV1Tensor::class;
   protected $structValDataType = 'map';
   /**
-   * Serialized raw tensor content.
-   *
    * @var string
    */
   public $tensorVal;
   /**
-   * UINT64
-   *
    * @var string[]
    */
   public $uint64Val;
   /**
-   * UINT8 UINT16 UINT32
-   *
    * @var string[]
    */
   public $uintVal;
 
   /**
-   * Type specific representations that make it easy to create tensor protos in
-   * all languages. Only the representation corresponding to "dtype" can be set.
-   * The values hold the flattened representation of the tensor in row major
-   * order. BOOL
-   *
-   * @param bool[] $boolVal
+   * @param bool[]
    */
   public function setBoolVal($boolVal)
   {
@@ -141,9 +85,7 @@ class GoogleCloudAiplatformV1Tensor extends \Google\Collection
     return $this->boolVal;
   }
   /**
-   * STRING
-   *
-   * @param string[] $bytesVal
+   * @param string[]
    */
   public function setBytesVal($bytesVal)
   {
@@ -165,28 +107,21 @@ class GoogleCloudAiplatformV1Tensor extends \Google\Collection
     return $this->doubleVal;
   }
   /**
-   * The data type of tensor.
-   *
-   * Accepted values: DATA_TYPE_UNSPECIFIED, BOOL, STRING, FLOAT, DOUBLE, INT8,
-   * INT16, INT32, INT64, UINT8, UINT16, UINT32, UINT64
-   *
-   * @param self::DTYPE_* $dtype
+   * @param string
    */
   public function setDtype($dtype)
   {
     $this->dtype = $dtype;
   }
   /**
-   * @return self::DTYPE_*
+   * @return string
    */
   public function getDtype()
   {
     return $this->dtype;
   }
   /**
-   * FLOAT
-   *
-   * @param float[] $floatVal
+   * @param float[]
    */
   public function setFloatVal($floatVal)
   {
@@ -200,9 +135,7 @@ class GoogleCloudAiplatformV1Tensor extends \Google\Collection
     return $this->floatVal;
   }
   /**
-   * INT64
-   *
-   * @param string[] $int64Val
+   * @param string[]
    */
   public function setInt64Val($int64Val)
   {
@@ -216,9 +149,7 @@ class GoogleCloudAiplatformV1Tensor extends \Google\Collection
     return $this->int64Val;
   }
   /**
-   * INT_8 INT_16 INT_32
-   *
-   * @param int[] $intVal
+   * @param int[]
    */
   public function setIntVal($intVal)
   {
@@ -232,9 +163,7 @@ class GoogleCloudAiplatformV1Tensor extends \Google\Collection
     return $this->intVal;
   }
   /**
-   * A list of tensor values.
-   *
-   * @param GoogleCloudAiplatformV1Tensor[] $listVal
+   * @param GoogleCloudAiplatformV1Tensor[]
    */
   public function setListVal($listVal)
   {
@@ -248,9 +177,7 @@ class GoogleCloudAiplatformV1Tensor extends \Google\Collection
     return $this->listVal;
   }
   /**
-   * Shape of the tensor.
-   *
-   * @param string[] $shape
+   * @param string[]
    */
   public function setShape($shape)
   {
@@ -264,9 +191,7 @@ class GoogleCloudAiplatformV1Tensor extends \Google\Collection
     return $this->shape;
   }
   /**
-   * STRING
-   *
-   * @param string[] $stringVal
+   * @param string[]
    */
   public function setStringVal($stringVal)
   {
@@ -280,9 +205,7 @@ class GoogleCloudAiplatformV1Tensor extends \Google\Collection
     return $this->stringVal;
   }
   /**
-   * A map of string to tensor.
-   *
-   * @param GoogleCloudAiplatformV1Tensor[] $structVal
+   * @param GoogleCloudAiplatformV1Tensor[]
    */
   public function setStructVal($structVal)
   {
@@ -296,9 +219,7 @@ class GoogleCloudAiplatformV1Tensor extends \Google\Collection
     return $this->structVal;
   }
   /**
-   * Serialized raw tensor content.
-   *
-   * @param string $tensorVal
+   * @param string
    */
   public function setTensorVal($tensorVal)
   {
@@ -312,9 +233,7 @@ class GoogleCloudAiplatformV1Tensor extends \Google\Collection
     return $this->tensorVal;
   }
   /**
-   * UINT64
-   *
-   * @param string[] $uint64Val
+   * @param string[]
    */
   public function setUint64Val($uint64Val)
   {
@@ -328,9 +247,7 @@ class GoogleCloudAiplatformV1Tensor extends \Google\Collection
     return $this->uint64Val;
   }
   /**
-   * UINT8 UINT16 UINT32
-   *
-   * @param string[] $uintVal
+   * @param string[]
    */
   public function setUintVal($uintVal)
   {

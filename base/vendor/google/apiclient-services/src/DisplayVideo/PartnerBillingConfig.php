@@ -20,16 +20,12 @@ namespace Google\Service\DisplayVideo;
 class PartnerBillingConfig extends \Google\Model
 {
   /**
-   * The ID of a partner default billing profile.
-   *
    * @var string
    */
   public $billingProfileId;
 
   /**
-   * The ID of a partner default billing profile.
-   *
-   * @param string $billingProfileId
+   * @param string
    */
   public function setBillingProfileId($billingProfileId)
   {

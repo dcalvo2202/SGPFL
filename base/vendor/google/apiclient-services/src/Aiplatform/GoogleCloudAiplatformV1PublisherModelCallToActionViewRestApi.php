@@ -23,16 +23,12 @@ class GoogleCloudAiplatformV1PublisherModelCallToActionViewRestApi extends \Goog
   protected $documentationsType = GoogleCloudAiplatformV1PublisherModelDocumentation::class;
   protected $documentationsDataType = 'array';
   /**
-   * Required. The title of the view rest API.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * Required.
-   *
-   * @param GoogleCloudAiplatformV1PublisherModelDocumentation[] $documentations
+   * @param GoogleCloudAiplatformV1PublisherModelDocumentation[]
    */
   public function setDocumentations($documentations)
   {
@@ -46,9 +42,7 @@ class GoogleCloudAiplatformV1PublisherModelCallToActionViewRestApi extends \Goog
     return $this->documentations;
   }
   /**
-   * Required. The title of the view rest API.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

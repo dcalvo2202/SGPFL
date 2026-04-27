@@ -22,25 +22,12 @@ class MemberRestriction extends \Google\Model
   protected $evaluationType = RestrictionEvaluation::class;
   protected $evaluationDataType = '';
   /**
-   * Member Restriction as defined by CEL expression. Supported restrictions
-   * are: `member.customer_id` and `member.type`. Valid values for `member.type`
-   * are `1`, `2` and `3`. They correspond to USER, SERVICE_ACCOUNT, and GROUP
-   * respectively. The value for `member.customer_id` only supports
-   * `groupCustomerId()` currently which means the customer id of the group will
-   * be used for restriction. Supported operators are `&&`, `||` and `==`,
-   * corresponding to AND, OR, and EQUAL. Examples: Allow only service accounts
-   * of given customer to be members. `member.type == 2 && member.customer_id ==
-   * groupCustomerId()` Allow only users or groups to be members. `member.type
-   * == 1 || member.type == 3`
-   *
    * @var string
    */
   public $query;
 
   /**
-   * The evaluated state of this restriction on a group.
-   *
-   * @param RestrictionEvaluation $evaluation
+   * @param RestrictionEvaluation
    */
   public function setEvaluation(RestrictionEvaluation $evaluation)
   {
@@ -54,18 +41,7 @@ class MemberRestriction extends \Google\Model
     return $this->evaluation;
   }
   /**
-   * Member Restriction as defined by CEL expression. Supported restrictions
-   * are: `member.customer_id` and `member.type`. Valid values for `member.type`
-   * are `1`, `2` and `3`. They correspond to USER, SERVICE_ACCOUNT, and GROUP
-   * respectively. The value for `member.customer_id` only supports
-   * `groupCustomerId()` currently which means the customer id of the group will
-   * be used for restriction. Supported operators are `&&`, `||` and `==`,
-   * corresponding to AND, OR, and EQUAL. Examples: Allow only service accounts
-   * of given customer to be members. `member.type == 2 && member.customer_id ==
-   * groupCustomerId()` Allow only users or groups to be members. `member.type
-   * == 1 || member.type == 3`
-   *
-   * @param string $query
+   * @param string
    */
   public function setQuery($query)
   {

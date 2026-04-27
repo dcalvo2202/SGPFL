@@ -20,37 +20,24 @@ namespace Google\Service\Compute;
 class Reference extends \Google\Model
 {
   /**
-   * Output only. [Output Only] Type of the resource. Always compute#reference
-   * for references.
-   *
    * @var string
    */
   public $kind;
   /**
-   * A description of the reference type with no implied semantics. Possible
-   * values include:             1. MEMBER_OF
-   *
    * @var string
    */
   public $referenceType;
   /**
-   * URL of the resource which refers to the target.
-   *
    * @var string
    */
   public $referrer;
   /**
-   * URL of the resource to which this reference points.
-   *
    * @var string
    */
   public $target;
 
   /**
-   * Output only. [Output Only] Type of the resource. Always compute#reference
-   * for references.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -64,10 +51,7 @@ class Reference extends \Google\Model
     return $this->kind;
   }
   /**
-   * A description of the reference type with no implied semantics. Possible
-   * values include:             1. MEMBER_OF
-   *
-   * @param string $referenceType
+   * @param string
    */
   public function setReferenceType($referenceType)
   {
@@ -81,9 +65,7 @@ class Reference extends \Google\Model
     return $this->referenceType;
   }
   /**
-   * URL of the resource which refers to the target.
-   *
-   * @param string $referrer
+   * @param string
    */
   public function setReferrer($referrer)
   {
@@ -97,9 +79,7 @@ class Reference extends \Google\Model
     return $this->referrer;
   }
   /**
-   * URL of the resource to which this reference points.
-   *
-   * @param string $target
+   * @param string
    */
   public function setTarget($target)
   {

@@ -25,7 +25,7 @@ class UrlMapReference extends \Google\Model
   public $urlMap;
 
   /**
-   * @param string $urlMap
+   * @param string
    */
   public function setUrlMap($urlMap)
   {

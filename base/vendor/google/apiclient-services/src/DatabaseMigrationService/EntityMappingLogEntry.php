@@ -20,28 +20,20 @@ namespace Google\Service\DatabaseMigrationService;
 class EntityMappingLogEntry extends \Google\Model
 {
   /**
-   * Comment.
-   *
    * @var string
    */
   public $mappingComment;
   /**
-   * Which rule caused this log entry.
-   *
    * @var string
    */
   public $ruleId;
   /**
-   * Rule revision ID.
-   *
    * @var string
    */
   public $ruleRevisionId;
 
   /**
-   * Comment.
-   *
-   * @param string $mappingComment
+   * @param string
    */
   public function setMappingComment($mappingComment)
   {
@@ -55,9 +47,7 @@ class EntityMappingLogEntry extends \Google\Model
     return $this->mappingComment;
   }
   /**
-   * Which rule caused this log entry.
-   *
-   * @param string $ruleId
+   * @param string
    */
   public function setRuleId($ruleId)
   {
@@ -71,9 +61,7 @@ class EntityMappingLogEntry extends \Google\Model
     return $this->ruleId;
   }
   /**
-   * Rule revision ID.
-   *
-   * @param string $ruleRevisionId
+   * @param string
    */
   public function setRuleRevisionId($ruleRevisionId)
   {

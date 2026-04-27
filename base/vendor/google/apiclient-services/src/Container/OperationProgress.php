@@ -19,52 +19,22 @@ namespace Google\Service\Container;
 
 class OperationProgress extends \Google\Collection
 {
-  /**
-   * Not set.
-   */
-  public const STATUS_STATUS_UNSPECIFIED = 'STATUS_UNSPECIFIED';
-  /**
-   * The operation has been created.
-   */
-  public const STATUS_PENDING = 'PENDING';
-  /**
-   * The operation is currently running.
-   */
-  public const STATUS_RUNNING = 'RUNNING';
-  /**
-   * The operation is done, either cancelled or completed.
-   */
-  public const STATUS_DONE = 'DONE';
-  /**
-   * The operation is aborting.
-   */
-  public const STATUS_ABORTING = 'ABORTING';
   protected $collection_key = 'stages';
   protected $metricsType = Metric::class;
   protected $metricsDataType = 'array';
   /**
-   * A non-parameterized string describing an operation stage. Unset for single-
-   * stage operations.
-   *
    * @var string
    */
   public $name;
   protected $stagesType = OperationProgress::class;
   protected $stagesDataType = 'array';
   /**
-   * Status of an operation stage. Unset for single-stage operations.
-   *
    * @var string
    */
   public $status;
 
   /**
-   * Progress metric bundle, for example: metrics: [{name: "nodes done",
-   * int_value: 15}, {name: "nodes total", int_value: 32}] or metrics: [{name:
-   * "progress", double_value: 0.56}, {name: "progress scale", double_value:
-   * 1.0}]
-   *
-   * @param Metric[] $metrics
+   * @param Metric[]
    */
   public function setMetrics($metrics)
   {
@@ -78,10 +48,7 @@ class OperationProgress extends \Google\Collection
     return $this->metrics;
   }
   /**
-   * A non-parameterized string describing an operation stage. Unset for single-
-   * stage operations.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -95,9 +62,7 @@ class OperationProgress extends \Google\Collection
     return $this->name;
   }
   /**
-   * Substages of an operation or a stage.
-   *
-   * @param OperationProgress[] $stages
+   * @param OperationProgress[]
    */
   public function setStages($stages)
   {
@@ -111,18 +76,14 @@ class OperationProgress extends \Google\Collection
     return $this->stages;
   }
   /**
-   * Status of an operation stage. Unset for single-stage operations.
-   *
-   * Accepted values: STATUS_UNSPECIFIED, PENDING, RUNNING, DONE, ABORTING
-   *
-   * @param self::STATUS_* $status
+   * @param string
    */
   public function setStatus($status)
   {
     $this->status = $status;
   }
   /**
-   * @return self::STATUS_*
+   * @return string
    */
   public function getStatus()
   {

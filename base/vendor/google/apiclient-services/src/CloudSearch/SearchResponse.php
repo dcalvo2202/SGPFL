@@ -27,22 +27,16 @@ class SearchResponse extends \Google\Collection
   protected $facetResultsType = FacetResult::class;
   protected $facetResultsDataType = 'array';
   /**
-   * Whether there are more search results matching the query.
-   *
    * @var bool
    */
   public $hasMoreResults;
   protected $queryInterpretationType = QueryInterpretation::class;
   protected $queryInterpretationDataType = '';
   /**
-   * The estimated result count for this query.
-   *
    * @var string
    */
   public $resultCountEstimate;
   /**
-   * The exact result count for this query.
-   *
    * @var string
    */
   public $resultCountExact;
@@ -56,9 +50,7 @@ class SearchResponse extends \Google\Collection
   protected $structuredResultsDataType = 'array';
 
   /**
-   * Debugging information about the response.
-   *
-   * @param ResponseDebugInfo $debugInfo
+   * @param ResponseDebugInfo
    */
   public function setDebugInfo(ResponseDebugInfo $debugInfo)
   {
@@ -72,9 +64,7 @@ class SearchResponse extends \Google\Collection
     return $this->debugInfo;
   }
   /**
-   * Error information about the response.
-   *
-   * @param ErrorInfo $errorInfo
+   * @param ErrorInfo
    */
   public function setErrorInfo(ErrorInfo $errorInfo)
   {
@@ -88,9 +78,7 @@ class SearchResponse extends \Google\Collection
     return $this->errorInfo;
   }
   /**
-   * Repeated facet results.
-   *
-   * @param FacetResult[] $facetResults
+   * @param FacetResult[]
    */
   public function setFacetResults($facetResults)
   {
@@ -104,9 +92,7 @@ class SearchResponse extends \Google\Collection
     return $this->facetResults;
   }
   /**
-   * Whether there are more search results matching the query.
-   *
-   * @param bool $hasMoreResults
+   * @param bool
    */
   public function setHasMoreResults($hasMoreResults)
   {
@@ -120,10 +106,7 @@ class SearchResponse extends \Google\Collection
     return $this->hasMoreResults;
   }
   /**
-   * Query interpretation result for user query. Empty if query interpretation
-   * is disabled.
-   *
-   * @param QueryInterpretation $queryInterpretation
+   * @param QueryInterpretation
    */
   public function setQueryInterpretation(QueryInterpretation $queryInterpretation)
   {
@@ -137,9 +120,7 @@ class SearchResponse extends \Google\Collection
     return $this->queryInterpretation;
   }
   /**
-   * The estimated result count for this query.
-   *
-   * @param string $resultCountEstimate
+   * @param string
    */
   public function setResultCountEstimate($resultCountEstimate)
   {
@@ -153,9 +134,7 @@ class SearchResponse extends \Google\Collection
     return $this->resultCountEstimate;
   }
   /**
-   * The exact result count for this query.
-   *
-   * @param string $resultCountExact
+   * @param string
    */
   public function setResultCountExact($resultCountExact)
   {
@@ -169,9 +148,7 @@ class SearchResponse extends \Google\Collection
     return $this->resultCountExact;
   }
   /**
-   * Expanded result count information.
-   *
-   * @param ResultCounts $resultCounts
+   * @param ResultCounts
    */
   public function setResultCounts(ResultCounts $resultCounts)
   {
@@ -185,9 +162,7 @@ class SearchResponse extends \Google\Collection
     return $this->resultCounts;
   }
   /**
-   * Results from a search query.
-   *
-   * @param SearchResult[] $results
+   * @param SearchResult[]
    */
   public function setResults($results)
   {
@@ -201,9 +176,7 @@ class SearchResponse extends \Google\Collection
     return $this->results;
   }
   /**
-   * Suggested spelling for the query.
-   *
-   * @param SpellResult[] $spellResults
+   * @param SpellResult[]
    */
   public function setSpellResults($spellResults)
   {
@@ -217,10 +190,7 @@ class SearchResponse extends \Google\Collection
     return $this->spellResults;
   }
   /**
-   * Structured results for the user query. These results are not counted
-   * against the page_size.
-   *
-   * @param StructuredResult[] $structuredResults
+   * @param StructuredResult[]
    */
   public function setStructuredResults($structuredResults)
   {

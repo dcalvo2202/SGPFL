@@ -20,28 +20,20 @@ namespace Google\Service\Container;
 class ResourceLimit extends \Google\Model
 {
   /**
-   * Maximum amount of the resource in the cluster.
-   *
    * @var string
    */
   public $maximum;
   /**
-   * Minimum amount of the resource in the cluster.
-   *
    * @var string
    */
   public $minimum;
   /**
-   * Resource name "cpu", "memory" or gpu-specific string.
-   *
    * @var string
    */
   public $resourceType;
 
   /**
-   * Maximum amount of the resource in the cluster.
-   *
-   * @param string $maximum
+   * @param string
    */
   public function setMaximum($maximum)
   {
@@ -55,9 +47,7 @@ class ResourceLimit extends \Google\Model
     return $this->maximum;
   }
   /**
-   * Minimum amount of the resource in the cluster.
-   *
-   * @param string $minimum
+   * @param string
    */
   public function setMinimum($minimum)
   {
@@ -71,9 +61,7 @@ class ResourceLimit extends \Google\Model
     return $this->minimum;
   }
   /**
-   * Resource name "cpu", "memory" or gpu-specific string.
-   *
-   * @param string $resourceType
+   * @param string
    */
   public function setResourceType($resourceType)
   {

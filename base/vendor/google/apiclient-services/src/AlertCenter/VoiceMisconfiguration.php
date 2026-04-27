@@ -20,32 +20,14 @@ namespace Google\Service\AlertCenter;
 class VoiceMisconfiguration extends \Google\Model
 {
   /**
-   * Entity type wasn't set.
-   */
-  public const ENTITY_TYPE_ENTITY_TYPE_UNSPECIFIED = 'ENTITY_TYPE_UNSPECIFIED';
-  /**
-   * Invalid auto attendant.
-   */
-  public const ENTITY_TYPE_AUTO_ATTENDANT = 'AUTO_ATTENDANT';
-  /**
-   * Invalid ring group.
-   */
-  public const ENTITY_TYPE_RING_GROUP = 'RING_GROUP';
-  /**
-   * Name of the entity whose configuration is now invalid.
-   *
    * @var string
    */
   public $entityName;
   /**
-   * Type of the entity whose configuration is now invalid.
-   *
    * @var string
    */
   public $entityType;
   /**
-   * Link that the admin can follow to fix the issue.
-   *
    * @var string
    */
   public $fixUri;
@@ -57,9 +39,7 @@ class VoiceMisconfiguration extends \Google\Model
   protected $voicemailMisconfigurationDataType = '';
 
   /**
-   * Name of the entity whose configuration is now invalid.
-   *
-   * @param string $entityName
+   * @param string
    */
   public function setEntityName($entityName)
   {
@@ -73,27 +53,21 @@ class VoiceMisconfiguration extends \Google\Model
     return $this->entityName;
   }
   /**
-   * Type of the entity whose configuration is now invalid.
-   *
-   * Accepted values: ENTITY_TYPE_UNSPECIFIED, AUTO_ATTENDANT, RING_GROUP
-   *
-   * @param self::ENTITY_TYPE_* $entityType
+   * @param string
    */
   public function setEntityType($entityType)
   {
     $this->entityType = $entityType;
   }
   /**
-   * @return self::ENTITY_TYPE_*
+   * @return string
    */
   public function getEntityType()
   {
     return $this->entityType;
   }
   /**
-   * Link that the admin can follow to fix the issue.
-   *
-   * @param string $fixUri
+   * @param string
    */
   public function setFixUri($fixUri)
   {
@@ -107,9 +81,7 @@ class VoiceMisconfiguration extends \Google\Model
     return $this->fixUri;
   }
   /**
-   * Issue(s) with members of a ring group.
-   *
-   * @param TransferMisconfiguration $membersMisconfiguration
+   * @param TransferMisconfiguration
    */
   public function setMembersMisconfiguration(TransferMisconfiguration $membersMisconfiguration)
   {
@@ -123,9 +95,7 @@ class VoiceMisconfiguration extends \Google\Model
     return $this->membersMisconfiguration;
   }
   /**
-   * Issue(s) with transferring or forwarding to an external entity.
-   *
-   * @param TransferMisconfiguration $transferMisconfiguration
+   * @param TransferMisconfiguration
    */
   public function setTransferMisconfiguration(TransferMisconfiguration $transferMisconfiguration)
   {
@@ -139,9 +109,7 @@ class VoiceMisconfiguration extends \Google\Model
     return $this->transferMisconfiguration;
   }
   /**
-   * Issue(s) with sending to voicemail.
-   *
-   * @param VoicemailMisconfiguration $voicemailMisconfiguration
+   * @param VoicemailMisconfiguration
    */
   public function setVoicemailMisconfiguration(VoicemailMisconfiguration $voicemailMisconfiguration)
   {

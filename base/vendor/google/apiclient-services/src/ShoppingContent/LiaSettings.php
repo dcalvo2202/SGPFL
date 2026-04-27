@@ -21,27 +21,18 @@ class LiaSettings extends \Google\Collection
 {
   protected $collection_key = 'countrySettings';
   /**
-   * The ID of the account to which these LIA settings belong. Ignored upon
-   * update, always present in get request responses.
-   *
    * @var string
    */
   public $accountId;
   protected $countrySettingsType = LiaCountrySettings::class;
   protected $countrySettingsDataType = 'array';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#liaSettings`"
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * The ID of the account to which these LIA settings belong. Ignored upon
-   * update, always present in get request responses.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -55,9 +46,7 @@ class LiaSettings extends \Google\Collection
     return $this->accountId;
   }
   /**
-   * The LIA settings for each country.
-   *
-   * @param LiaCountrySettings[] $countrySettings
+   * @param LiaCountrySettings[]
    */
   public function setCountrySettings($countrySettings)
   {
@@ -71,10 +60,7 @@ class LiaSettings extends \Google\Collection
     return $this->countrySettings;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#liaSettings`"
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

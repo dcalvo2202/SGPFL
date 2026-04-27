@@ -24,9 +24,7 @@ class GoogleCloudAiplatformV1BatchImportEvaluatedAnnotationsRequest extends \Goo
   protected $evaluatedAnnotationsDataType = 'array';
 
   /**
-   * Required. Evaluated annotations resource to be imported.
-   *
-   * @param GoogleCloudAiplatformV1EvaluatedAnnotation[] $evaluatedAnnotations
+   * @param GoogleCloudAiplatformV1EvaluatedAnnotation[]
    */
   public function setEvaluatedAnnotations($evaluatedAnnotations)
   {

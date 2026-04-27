@@ -20,16 +20,12 @@ namespace Google\Service\Config;
 class UnlockDeploymentRequest extends \Google\Model
 {
   /**
-   * Required. Lock ID of the lock file to be unlocked.
-   *
    * @var string
    */
   public $lockId;
 
   /**
-   * Required. Lock ID of the lock file to be unlocked.
-   *
-   * @param string $lockId
+   * @param string
    */
   public function setLockId($lockId)
   {

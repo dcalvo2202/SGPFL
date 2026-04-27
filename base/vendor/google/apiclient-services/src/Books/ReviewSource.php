@@ -20,28 +20,20 @@ namespace Google\Service\Books;
 class ReviewSource extends \Google\Model
 {
   /**
-   * Name of the source.
-   *
    * @var string
    */
   public $description;
   /**
-   * Extra text about the source of the review.
-   *
    * @var string
    */
   public $extraDescription;
   /**
-   * URL of the source of the review.
-   *
    * @var string
    */
   public $url;
 
   /**
-   * Name of the source.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -55,9 +47,7 @@ class ReviewSource extends \Google\Model
     return $this->description;
   }
   /**
-   * Extra text about the source of the review.
-   *
-   * @param string $extraDescription
+   * @param string
    */
   public function setExtraDescription($extraDescription)
   {
@@ -71,9 +61,7 @@ class ReviewSource extends \Google\Model
     return $this->extraDescription;
   }
   /**
-   * URL of the source of the review.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

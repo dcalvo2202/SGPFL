@@ -24,10 +24,7 @@ class SasPortalMigrateOrganizationResponse extends \Google\Collection
   protected $deploymentAssociationDataType = 'array';
 
   /**
-   * Optional. A list of deployment association that were created for the
-   * migration, or current associations if they already exist.
-   *
-   * @param SasPortalDeploymentAssociation[] $deploymentAssociation
+   * @param SasPortalDeploymentAssociation[]
    */
   public function setDeploymentAssociation($deploymentAssociation)
   {

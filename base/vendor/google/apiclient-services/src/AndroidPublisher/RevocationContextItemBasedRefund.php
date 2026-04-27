@@ -20,18 +20,12 @@ namespace Google\Service\AndroidPublisher;
 class RevocationContextItemBasedRefund extends \Google\Model
 {
   /**
-   * Required. If the subscription is a subscription with add-ons, the product
-   * id of the subscription item to revoke.
-   *
    * @var string
    */
   public $productId;
 
   /**
-   * Required. If the subscription is a subscription with add-ons, the product
-   * id of the subscription item to revoke.
-   *
-   * @param string $productId
+   * @param string
    */
   public function setProductId($productId)
   {

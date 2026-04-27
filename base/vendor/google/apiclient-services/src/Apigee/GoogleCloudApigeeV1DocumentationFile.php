@@ -20,23 +20,16 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1DocumentationFile extends \Google\Model
 {
   /**
-   * Required. The file contents. The max size is 4 MB.
-   *
    * @var string
    */
   public $contents;
   /**
-   * Required. A display name for the file, shown in the management UI. Max
-   * length is 255 characters.
-   *
    * @var string
    */
   public $displayName;
 
   /**
-   * Required. The file contents. The max size is 4 MB.
-   *
-   * @param string $contents
+   * @param string
    */
   public function setContents($contents)
   {
@@ -50,10 +43,7 @@ class GoogleCloudApigeeV1DocumentationFile extends \Google\Model
     return $this->contents;
   }
   /**
-   * Required. A display name for the file, shown in the management UI. Max
-   * length is 255 characters.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {

@@ -21,52 +21,32 @@ class IncrementalTableConfig extends \Google\Collection
 {
   protected $collection_key = 'uniqueKeyParts';
   /**
-   * SQL statements to be executed after inserting new rows into the relation.
-   *
    * @var string[]
    */
   public $incrementalPostOperations;
   /**
-   * SQL statements to be executed before inserting new rows into the relation.
-   *
    * @var string[]
    */
   public $incrementalPreOperations;
   /**
-   * The SELECT query which returns rows which should be inserted into the
-   * relation if it already exists and is not being refreshed.
-   *
    * @var string
    */
   public $incrementalSelectQuery;
   /**
-   * Whether this table should be protected from being refreshed.
-   *
    * @var bool
    */
   public $refreshDisabled;
   /**
-   * A set of columns or SQL expressions used to define row uniqueness. If any
-   * duplicates are discovered (as defined by `unique_key_parts`), only the
-   * newly selected rows (as defined by `incremental_select_query`) will be
-   * included in the relation.
-   *
    * @var string[]
    */
   public $uniqueKeyParts;
   /**
-   * A SQL expression conditional used to limit the set of existing rows
-   * considered for a merge operation (see `unique_key_parts` for more
-   * information).
-   *
    * @var string
    */
   public $updatePartitionFilter;
 
   /**
-   * SQL statements to be executed after inserting new rows into the relation.
-   *
-   * @param string[] $incrementalPostOperations
+   * @param string[]
    */
   public function setIncrementalPostOperations($incrementalPostOperations)
   {
@@ -80,9 +60,7 @@ class IncrementalTableConfig extends \Google\Collection
     return $this->incrementalPostOperations;
   }
   /**
-   * SQL statements to be executed before inserting new rows into the relation.
-   *
-   * @param string[] $incrementalPreOperations
+   * @param string[]
    */
   public function setIncrementalPreOperations($incrementalPreOperations)
   {
@@ -96,10 +74,7 @@ class IncrementalTableConfig extends \Google\Collection
     return $this->incrementalPreOperations;
   }
   /**
-   * The SELECT query which returns rows which should be inserted into the
-   * relation if it already exists and is not being refreshed.
-   *
-   * @param string $incrementalSelectQuery
+   * @param string
    */
   public function setIncrementalSelectQuery($incrementalSelectQuery)
   {
@@ -113,9 +88,7 @@ class IncrementalTableConfig extends \Google\Collection
     return $this->incrementalSelectQuery;
   }
   /**
-   * Whether this table should be protected from being refreshed.
-   *
-   * @param bool $refreshDisabled
+   * @param bool
    */
   public function setRefreshDisabled($refreshDisabled)
   {
@@ -129,12 +102,7 @@ class IncrementalTableConfig extends \Google\Collection
     return $this->refreshDisabled;
   }
   /**
-   * A set of columns or SQL expressions used to define row uniqueness. If any
-   * duplicates are discovered (as defined by `unique_key_parts`), only the
-   * newly selected rows (as defined by `incremental_select_query`) will be
-   * included in the relation.
-   *
-   * @param string[] $uniqueKeyParts
+   * @param string[]
    */
   public function setUniqueKeyParts($uniqueKeyParts)
   {
@@ -148,11 +116,7 @@ class IncrementalTableConfig extends \Google\Collection
     return $this->uniqueKeyParts;
   }
   /**
-   * A SQL expression conditional used to limit the set of existing rows
-   * considered for a merge operation (see `unique_key_parts` for more
-   * information).
-   *
-   * @param string $updatePartitionFilter
+   * @param string
    */
   public function setUpdatePartitionFilter($updatePartitionFilter)
   {

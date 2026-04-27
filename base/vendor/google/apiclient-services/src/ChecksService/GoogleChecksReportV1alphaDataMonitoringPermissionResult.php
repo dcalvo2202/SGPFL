@@ -25,9 +25,7 @@ class GoogleChecksReportV1alphaDataMonitoringPermissionResult extends \Google\Mo
   protected $permissionDataType = '';
 
   /**
-   * Metadata about the result.
-   *
-   * @param GoogleChecksReportV1alphaDataMonitoringResultMetadata $metadata
+   * @param GoogleChecksReportV1alphaDataMonitoringResultMetadata
    */
   public function setMetadata(GoogleChecksReportV1alphaDataMonitoringResultMetadata $metadata)
   {
@@ -41,9 +39,7 @@ class GoogleChecksReportV1alphaDataMonitoringPermissionResult extends \Google\Mo
     return $this->metadata;
   }
   /**
-   * The permission that was found in your app.
-   *
-   * @param GoogleChecksReportV1alphaPermission $permission
+   * @param GoogleChecksReportV1alphaPermission
    */
   public function setPermission(GoogleChecksReportV1alphaPermission $permission)
   {

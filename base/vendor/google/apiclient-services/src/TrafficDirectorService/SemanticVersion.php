@@ -33,7 +33,7 @@ class SemanticVersion extends \Google\Model
   public $patch;
 
   /**
-   * @param string $majorNumber
+   * @param string
    */
   public function setMajorNumber($majorNumber)
   {
@@ -47,7 +47,7 @@ class SemanticVersion extends \Google\Model
     return $this->majorNumber;
   }
   /**
-   * @param string $minorNumber
+   * @param string
    */
   public function setMinorNumber($minorNumber)
   {
@@ -61,7 +61,7 @@ class SemanticVersion extends \Google\Model
     return $this->minorNumber;
   }
   /**
-   * @param string $patch
+   * @param string
    */
   public function setPatch($patch)
   {

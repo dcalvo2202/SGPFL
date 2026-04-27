@@ -20,27 +20,16 @@ namespace Google\Service\CloudRetail;
 class GoogleCloudRetailV2RuleForceReturnFacetActionFacetPositionAdjustment extends \Google\Model
 {
   /**
-   * The attribute name to force return as a facet. Each attribute name should
-   * be a valid attribute name, be non-empty and contain at most 80 characters
-   * long.
-   *
    * @var string
    */
   public $attributeName;
   /**
-   * This is the position in the request as explained above. It should be
-   * strictly positive be at most 100.
-   *
    * @var int
    */
   public $position;
 
   /**
-   * The attribute name to force return as a facet. Each attribute name should
-   * be a valid attribute name, be non-empty and contain at most 80 characters
-   * long.
-   *
-   * @param string $attributeName
+   * @param string
    */
   public function setAttributeName($attributeName)
   {
@@ -54,10 +43,7 @@ class GoogleCloudRetailV2RuleForceReturnFacetActionFacetPositionAdjustment exten
     return $this->attributeName;
   }
   /**
-   * This is the position in the request as explained above. It should be
-   * strictly positive be at most 100.
-   *
-   * @param int $position
+   * @param int
    */
   public function setPosition($position)
   {

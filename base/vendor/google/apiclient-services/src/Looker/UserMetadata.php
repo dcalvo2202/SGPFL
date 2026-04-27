@@ -20,32 +20,20 @@ namespace Google\Service\Looker;
 class UserMetadata extends \Google\Model
 {
   /**
-   * Optional. The number of additional developer users the instance owner has
-   * purchased.
-   *
    * @var int
    */
   public $additionalDeveloperUserCount;
   /**
-   * Optional. The number of additional standard users the instance owner has
-   * purchased.
-   *
    * @var int
    */
   public $additionalStandardUserCount;
   /**
-   * Optional. The number of additional viewer users the instance owner has
-   * purchased.
-   *
    * @var int
    */
   public $additionalViewerUserCount;
 
   /**
-   * Optional. The number of additional developer users the instance owner has
-   * purchased.
-   *
-   * @param int $additionalDeveloperUserCount
+   * @param int
    */
   public function setAdditionalDeveloperUserCount($additionalDeveloperUserCount)
   {
@@ -59,10 +47,7 @@ class UserMetadata extends \Google\Model
     return $this->additionalDeveloperUserCount;
   }
   /**
-   * Optional. The number of additional standard users the instance owner has
-   * purchased.
-   *
-   * @param int $additionalStandardUserCount
+   * @param int
    */
   public function setAdditionalStandardUserCount($additionalStandardUserCount)
   {
@@ -76,10 +61,7 @@ class UserMetadata extends \Google\Model
     return $this->additionalStandardUserCount;
   }
   /**
-   * Optional. The number of additional viewer users the instance owner has
-   * purchased.
-   *
-   * @param int $additionalViewerUserCount
+   * @param int
    */
   public function setAdditionalViewerUserCount($additionalViewerUserCount)
   {

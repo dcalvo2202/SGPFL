@@ -20,55 +20,24 @@ namespace Google\Service\CloudIdentity;
 class UserInvitation extends \Google\Model
 {
   /**
-   * The default value. This value is used if the state is omitted.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The `UserInvitation` has been created and is ready for sending as an email.
-   */
-  public const STATE_NOT_YET_SENT = 'NOT_YET_SENT';
-  /**
-   * The user has been invited by email.
-   */
-  public const STATE_INVITED = 'INVITED';
-  /**
-   * The user has accepted the invitation and is part of the organization.
-   */
-  public const STATE_ACCEPTED = 'ACCEPTED';
-  /**
-   * The user declined the invitation.
-   */
-  public const STATE_DECLINED = 'DECLINED';
-  /**
-   * Number of invitation emails sent to the user.
-   *
    * @var string
    */
   public $mailsSentCount;
   /**
-   * Shall be of the form
-   * `customers/{customer}/userinvitations/{user_email_address}`.
-   *
    * @var string
    */
   public $name;
   /**
-   * State of the `UserInvitation`.
-   *
    * @var string
    */
   public $state;
   /**
-   * Time when the `UserInvitation` was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Number of invitation emails sent to the user.
-   *
-   * @param string $mailsSentCount
+   * @param string
    */
   public function setMailsSentCount($mailsSentCount)
   {
@@ -82,10 +51,7 @@ class UserInvitation extends \Google\Model
     return $this->mailsSentCount;
   }
   /**
-   * Shall be of the form
-   * `customers/{customer}/userinvitations/{user_email_address}`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -99,28 +65,21 @@ class UserInvitation extends \Google\Model
     return $this->name;
   }
   /**
-   * State of the `UserInvitation`.
-   *
-   * Accepted values: STATE_UNSPECIFIED, NOT_YET_SENT, INVITED, ACCEPTED,
-   * DECLINED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Time when the `UserInvitation` was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

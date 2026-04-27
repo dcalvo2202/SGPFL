@@ -23,25 +23,16 @@ class ReportRequestFilters extends \Google\Collection
   protected $columnType = ReportApiColumnSpec::class;
   protected $columnDataType = '';
   /**
-   * Operator to use in the filter. See the filter reference for a list of
-   * available operators.
-   *
    * @var string
    */
   public $operator;
   /**
-   * A list of values to filter the column value against.\ The maximum number of
-   * filter values per request is 300.
-   *
    * @var array[]
    */
   public $values;
 
   /**
-   * Column to perform the filter on. This can be a DoubleClick Search column or
-   * a saved column.
-   *
-   * @param ReportApiColumnSpec $column
+   * @param ReportApiColumnSpec
    */
   public function setColumn(ReportApiColumnSpec $column)
   {
@@ -55,10 +46,7 @@ class ReportRequestFilters extends \Google\Collection
     return $this->column;
   }
   /**
-   * Operator to use in the filter. See the filter reference for a list of
-   * available operators.
-   *
-   * @param string $operator
+   * @param string
    */
   public function setOperator($operator)
   {
@@ -72,10 +60,7 @@ class ReportRequestFilters extends \Google\Collection
     return $this->operator;
   }
   /**
-   * A list of values to filter the column value against.\ The maximum number of
-   * filter values per request is 300.
-   *
-   * @param array[] $values
+   * @param array[]
    */
   public function setValues($values)
   {

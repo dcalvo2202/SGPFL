@@ -21,22 +21,16 @@ class ForwardingRule extends \Google\Collection
 {
   protected $collection_key = 'nameServers';
   /**
-   * Required. Domain used to resolve a `name_servers` list.
-   *
    * @var string
    */
   public $domain;
   /**
-   * Required. List of DNS servers to use for domain resolution
-   *
    * @var string[]
    */
   public $nameServers;
 
   /**
-   * Required. Domain used to resolve a `name_servers` list.
-   *
-   * @param string $domain
+   * @param string
    */
   public function setDomain($domain)
   {
@@ -50,9 +44,7 @@ class ForwardingRule extends \Google\Collection
     return $this->domain;
   }
   /**
-   * Required. List of DNS servers to use for domain resolution
-   *
-   * @param string[] $nameServers
+   * @param string[]
    */
   public function setNameServers($nameServers)
   {

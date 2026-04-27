@@ -21,24 +21,18 @@ class ListSourcesResponse extends \Google\Collection
 {
   protected $collection_key = 'unreachable';
   /**
-   * A token identifying a page of results the server should return.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $sourcesType = Source::class;
   protected $sourcesDataType = 'array';
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * A token identifying a page of results the server should return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -52,9 +46,7 @@ class ListSourcesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The list of sources.
-   *
-   * @param Source[] $sources
+   * @param Source[]
    */
   public function setSources($sources)
   {
@@ -68,9 +60,7 @@ class ListSourcesResponse extends \Google\Collection
     return $this->sources;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

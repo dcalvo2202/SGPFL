@@ -23,10 +23,7 @@ class GoogleCloudContentwarehouseV1GetDocumentRequest extends \Google\Model
   protected $requestMetadataDataType = '';
 
   /**
-   * The meta information collected about the end user, used to enforce access
-   * control for the service.
-   *
-   * @param GoogleCloudContentwarehouseV1RequestMetadata $requestMetadata
+   * @param GoogleCloudContentwarehouseV1RequestMetadata
    */
   public function setRequestMetadata(GoogleCloudContentwarehouseV1RequestMetadata $requestMetadata)
   {

@@ -18,7 +18,6 @@
 namespace Google\Service\Backupdr\Resource;
 
 use Google\Service\Backupdr\BackupPlanAssociation;
-use Google\Service\Backupdr\FetchBackupPlanAssociationsForResourceTypeResponse;
 use Google\Service\Backupdr\ListBackupPlanAssociationsResponse;
 use Google\Service\Backupdr\Operation;
 use Google\Service\Backupdr\TriggerBackupRequest;
@@ -37,9 +36,8 @@ class ProjectsLocationsBackupPlanAssociations extends \Google\Service\Resource
    * Create a BackupPlanAssociation (backupPlanAssociations.create)
    *
    * @param string $parent Required. The backup plan association project and
-   * location in the format `projects/{project_id}/locations/{location}`. In
-   * Backup and DR locations map to Google Cloud regions, for example **us-
-   * central1**.
+   * location in the format `projects/{project_id}/locations/{location}`. In Cloud
+   * BackupDR locations map to GCP regions, for example **us-central1**.
    * @param BackupPlanAssociation $postBody
    * @param array $optParams Optional parameters.
    *
@@ -95,42 +93,6 @@ class ProjectsLocationsBackupPlanAssociations extends \Google\Service\Resource
     return $this->call('delete', [$params], Operation::class);
   }
   /**
-   * List BackupPlanAssociations for a given resource type.
-   * (backupPlanAssociations.fetchForResourceType)
-   *
-   * @param string $parent Required. The parent resource name. Format:
-   * projects/{project}/locations/{location}
-   * @param array $optParams Optional parameters.
-   *
-   * @opt_param string filter Optional. A filter expression that filters the
-   * results fetched in the response. The expression must specify the field name,
-   * a comparison operator, and the value that you want to use for filtering.
-   * Supported fields: * resource * backup_plan * state * data_source *
-   * cloud_sql_instance_backup_plan_association_properties.instance_create_time
-   * @opt_param string orderBy Optional. A comma-separated list of fields to order
-   * by, sorted in ascending order. Use "desc" after a field name for descending.
-   * Supported fields: * name
-   * @opt_param int pageSize Optional. The maximum number of
-   * BackupPlanAssociations to return. The service may return fewer than this
-   * value. If unspecified, at most 50 BackupPlanAssociations will be returned.
-   * The maximum value is 100; values above 100 will be coerced to 100.
-   * @opt_param string pageToken Optional. A page token, received from a previous
-   * call of `FetchBackupPlanAssociationsForResourceType`. Provide this to
-   * retrieve the subsequent page. When paginating, all other parameters provided
-   * to `FetchBackupPlanAssociationsForResourceType` must match the call that
-   * provided the page token.
-   * @opt_param string resourceType Required. The type of the Google Cloud
-   * resource. Ex: sql.googleapis.com/Instance
-   * @return FetchBackupPlanAssociationsForResourceTypeResponse
-   * @throws \Google\Service\Exception
-   */
-  public function fetchForResourceType($parent, $optParams = [])
-  {
-    $params = ['parent' => $parent];
-    $params = array_merge($params, $optParams);
-    return $this->call('fetchForResourceType', [$params], FetchBackupPlanAssociationsForResourceTypeResponse::class);
-  }
-  /**
    * Gets details of a single BackupPlanAssociation. (backupPlanAssociations.get)
    *
    * @param string $name Required. Name of the backup plan association resource,
@@ -152,8 +114,8 @@ class ProjectsLocationsBackupPlanAssociations extends \Google\Service\Resource
    *
    * @param string $parent Required. The project and location for which to
    * retrieve backup Plan Associations information, in the format
-   * `projects/{project_id}/locations/{location}`. In Backup and DR, locations map
-   * to Google Cloud regions, for example **us-central1**. To retrieve backup plan
+   * `projects/{project_id}/locations/{location}`. In Cloud BackupDR, locations
+   * map to GCP regions, for example **us-central1**. To retrieve backup plan
    * associations for all locations, use "-" for the `{location}` value.
    * @param array $optParams Optional parameters.
    *
@@ -173,7 +135,7 @@ class ProjectsLocationsBackupPlanAssociations extends \Google\Service\Resource
     return $this->call('list', [$params], ListBackupPlanAssociationsResponse::class);
   }
   /**
-   * Update a BackupPlanAssociation. (backupPlanAssociations.patch)
+   * Update a BackupPlanAssociation (backupPlanAssociations.patch)
    *
    * @param string $name Output only. Identifier. The resource name of
    * BackupPlanAssociation in below format Format : projects/{project}/locations/{

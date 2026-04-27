@@ -20,28 +20,20 @@ namespace Google\Service\YouTubeReporting;
 class GdataObjectId extends \Google\Model
 {
   /**
-   * gdata
-   *
    * @var string
    */
   public $bucketName;
   /**
-   * gdata
-   *
    * @var string
    */
   public $generation;
   /**
-   * gdata
-   *
    * @var string
    */
   public $objectName;
 
   /**
-   * gdata
-   *
-   * @param string $bucketName
+   * @param string
    */
   public function setBucketName($bucketName)
   {
@@ -55,9 +47,7 @@ class GdataObjectId extends \Google\Model
     return $this->bucketName;
   }
   /**
-   * gdata
-   *
-   * @param string $generation
+   * @param string
    */
   public function setGeneration($generation)
   {
@@ -71,9 +61,7 @@ class GdataObjectId extends \Google\Model
     return $this->generation;
   }
   /**
-   * gdata
-   *
-   * @param string $objectName
+   * @param string
    */
   public function setObjectName($objectName)
   {

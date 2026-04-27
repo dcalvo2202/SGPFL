@@ -20,16 +20,12 @@ namespace Google\Service\Bigquery;
 class DataMaskingStatistics extends \Google\Model
 {
   /**
-   * Whether any accessed data was protected by the data masking.
-   *
    * @var bool
    */
   public $dataMaskingApplied;
 
   /**
-   * Whether any accessed data was protected by the data masking.
-   *
-   * @param bool $dataMaskingApplied
+   * @param bool
    */
   public function setDataMaskingApplied($dataMaskingApplied)
   {

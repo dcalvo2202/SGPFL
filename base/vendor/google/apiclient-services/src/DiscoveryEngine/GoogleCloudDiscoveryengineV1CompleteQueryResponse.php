@@ -23,19 +23,12 @@ class GoogleCloudDiscoveryengineV1CompleteQueryResponse extends \Google\Collecti
   protected $querySuggestionsType = GoogleCloudDiscoveryengineV1CompleteQueryResponseQuerySuggestion::class;
   protected $querySuggestionsDataType = 'array';
   /**
-   * True if the returned suggestions are all tail suggestions. For tail
-   * matching to be triggered, include_tail_suggestions in the request must be
-   * true and there must be no suggestions that match the full query.
-   *
    * @var bool
    */
   public $tailMatchTriggered;
 
   /**
-   * Results of the matched query suggestions. The result list is ordered and
-   * the first result is a top suggestion.
-   *
-   * @param GoogleCloudDiscoveryengineV1CompleteQueryResponseQuerySuggestion[] $querySuggestions
+   * @param GoogleCloudDiscoveryengineV1CompleteQueryResponseQuerySuggestion[]
    */
   public function setQuerySuggestions($querySuggestions)
   {
@@ -49,11 +42,7 @@ class GoogleCloudDiscoveryengineV1CompleteQueryResponse extends \Google\Collecti
     return $this->querySuggestions;
   }
   /**
-   * True if the returned suggestions are all tail suggestions. For tail
-   * matching to be triggered, include_tail_suggestions in the request must be
-   * true and there must be no suggestions that match the full query.
-   *
-   * @param bool $tailMatchTriggered
+   * @param bool
    */
   public function setTailMatchTriggered($tailMatchTriggered)
   {

@@ -20,42 +20,22 @@ namespace Google\Service\YouTube;
 class LiveChatBanSnippet extends \Google\Model
 {
   /**
-   * An invalid ban type.
-   */
-  public const TYPE_liveChatBanTypeUnspecified = 'liveChatBanTypeUnspecified';
-  /**
-   * A permanent ban.
-   */
-  public const TYPE_permanent = 'permanent';
-  /**
-   * A temporary ban.
-   */
-  public const TYPE_temporary = 'temporary';
-  /**
-   * The duration of a ban, only filled if the ban has type TEMPORARY.
-   *
    * @var string
    */
   public $banDurationSeconds;
   protected $bannedUserDetailsType = ChannelProfileDetails::class;
   protected $bannedUserDetailsDataType = '';
   /**
-   * The chat this ban is pertinent to.
-   *
    * @var string
    */
   public $liveChatId;
   /**
-   * The type of ban.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The duration of a ban, only filled if the ban has type TEMPORARY.
-   *
-   * @param string $banDurationSeconds
+   * @param string
    */
   public function setBanDurationSeconds($banDurationSeconds)
   {
@@ -69,7 +49,7 @@ class LiveChatBanSnippet extends \Google\Model
     return $this->banDurationSeconds;
   }
   /**
-   * @param ChannelProfileDetails $bannedUserDetails
+   * @param ChannelProfileDetails
    */
   public function setBannedUserDetails(ChannelProfileDetails $bannedUserDetails)
   {
@@ -83,9 +63,7 @@ class LiveChatBanSnippet extends \Google\Model
     return $this->bannedUserDetails;
   }
   /**
-   * The chat this ban is pertinent to.
-   *
-   * @param string $liveChatId
+   * @param string
    */
   public function setLiveChatId($liveChatId)
   {
@@ -99,18 +77,14 @@ class LiveChatBanSnippet extends \Google\Model
     return $this->liveChatId;
   }
   /**
-   * The type of ban.
-   *
-   * Accepted values: liveChatBanTypeUnspecified, permanent, temporary
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

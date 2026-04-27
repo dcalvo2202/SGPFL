@@ -27,17 +27,12 @@ class AnnotateFileResponse extends \Google\Collection
   protected $responsesType = AnnotateImageResponse::class;
   protected $responsesDataType = 'array';
   /**
-   * This field gives the total number of pages in the file.
-   *
    * @var int
    */
   public $totalPages;
 
   /**
-   * If set, represents the error message for the failed request. The
-   * `responses` field will not be set in this case.
-   *
-   * @param Status $error
+   * @param Status
    */
   public function setError(Status $error)
   {
@@ -51,9 +46,7 @@ class AnnotateFileResponse extends \Google\Collection
     return $this->error;
   }
   /**
-   * Information about the file for which this response is generated.
-   *
-   * @param InputConfig $inputConfig
+   * @param InputConfig
    */
   public function setInputConfig(InputConfig $inputConfig)
   {
@@ -67,10 +60,7 @@ class AnnotateFileResponse extends \Google\Collection
     return $this->inputConfig;
   }
   /**
-   * Individual responses to images found within the file. This field will be
-   * empty if the `error` field is set.
-   *
-   * @param AnnotateImageResponse[] $responses
+   * @param AnnotateImageResponse[]
    */
   public function setResponses($responses)
   {
@@ -84,9 +74,7 @@ class AnnotateFileResponse extends \Google\Collection
     return $this->responses;
   }
   /**
-   * This field gives the total number of pages in the file.
-   *
-   * @param int $totalPages
+   * @param int
    */
   public function setTotalPages($totalPages)
   {

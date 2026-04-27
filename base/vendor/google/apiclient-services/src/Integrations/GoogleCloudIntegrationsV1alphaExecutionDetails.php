@@ -19,60 +19,22 @@ namespace Google\Service\Integrations;
 
 class GoogleCloudIntegrationsV1alphaExecutionDetails extends \Google\Collection
 {
-  /**
-   * Default.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Execution is scheduled and awaiting to be triggered.
-   */
-  public const STATE_PENDING = 'PENDING';
-  /**
-   * Execution is processing.
-   */
-  public const STATE_PROCESSING = 'PROCESSING';
-  /**
-   * Execution successfully finished. There's no more change after this state.
-   */
-  public const STATE_SUCCEEDED = 'SUCCEEDED';
-  /**
-   * Execution failed. There's no more change after this state.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * Execution canceled by user. There's no more change after this state.
-   */
-  public const STATE_CANCELLED = 'CANCELLED';
-  /**
-   * Execution failed and waiting for retry.
-   */
-  public const STATE_RETRY_ON_HOLD = 'RETRY_ON_HOLD';
-  /**
-   * Execution suspended and waiting for manual intervention.
-   */
-  public const STATE_SUSPENDED = 'SUSPENDED';
   protected $collection_key = 'executionSnapshots';
   protected $attemptStatsType = GoogleCloudIntegrationsV1alphaAttemptStats::class;
   protected $attemptStatsDataType = 'array';
   /**
-   * Total size of all event_execution_snapshots for an execution
-   *
    * @var string
    */
   public $eventExecutionSnapshotsSize;
   protected $executionSnapshotsType = GoogleCloudIntegrationsV1alphaExecutionSnapshot::class;
   protected $executionSnapshotsDataType = 'array';
   /**
-   * Status of the execution.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * List of Start and end time of the execution attempts.
-   *
-   * @param GoogleCloudIntegrationsV1alphaAttemptStats[] $attemptStats
+   * @param GoogleCloudIntegrationsV1alphaAttemptStats[]
    */
   public function setAttemptStats($attemptStats)
   {
@@ -86,9 +48,7 @@ class GoogleCloudIntegrationsV1alphaExecutionDetails extends \Google\Collection
     return $this->attemptStats;
   }
   /**
-   * Total size of all event_execution_snapshots for an execution
-   *
-   * @param string $eventExecutionSnapshotsSize
+   * @param string
    */
   public function setEventExecutionSnapshotsSize($eventExecutionSnapshotsSize)
   {
@@ -102,9 +62,7 @@ class GoogleCloudIntegrationsV1alphaExecutionDetails extends \Google\Collection
     return $this->eventExecutionSnapshotsSize;
   }
   /**
-   * List of snapshots taken during the execution.
-   *
-   * @param GoogleCloudIntegrationsV1alphaExecutionSnapshot[] $executionSnapshots
+   * @param GoogleCloudIntegrationsV1alphaExecutionSnapshot[]
    */
   public function setExecutionSnapshots($executionSnapshots)
   {
@@ -118,19 +76,14 @@ class GoogleCloudIntegrationsV1alphaExecutionDetails extends \Google\Collection
     return $this->executionSnapshots;
   }
   /**
-   * Status of the execution.
-   *
-   * Accepted values: STATE_UNSPECIFIED, PENDING, PROCESSING, SUCCEEDED, FAILED,
-   * CANCELLED, RETRY_ON_HOLD, SUSPENDED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

@@ -20,16 +20,12 @@ namespace Google\Service\DataCatalog;
 class GoogleCloudDatacatalogV1PhysicalSchemaProtobufSchema extends \Google\Model
 {
   /**
-   * Protocol buffer source of the schema.
-   *
    * @var string
    */
   public $text;
 
   /**
-   * Protocol buffer source of the schema.
-   *
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {

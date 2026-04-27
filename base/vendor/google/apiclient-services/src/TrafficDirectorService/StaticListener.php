@@ -20,22 +20,16 @@ namespace Google\Service\TrafficDirectorService;
 class StaticListener extends \Google\Model
 {
   /**
-   * The timestamp when the Listener was last successfully updated.
-   *
    * @var string
    */
   public $lastUpdated;
   /**
-   * The listener config.
-   *
    * @var array[]
    */
   public $listener;
 
   /**
-   * The timestamp when the Listener was last successfully updated.
-   *
-   * @param string $lastUpdated
+   * @param string
    */
   public function setLastUpdated($lastUpdated)
   {
@@ -49,9 +43,7 @@ class StaticListener extends \Google\Model
     return $this->lastUpdated;
   }
   /**
-   * The listener config.
-   *
-   * @param array[] $listener
+   * @param array[]
    */
   public function setListener($listener)
   {

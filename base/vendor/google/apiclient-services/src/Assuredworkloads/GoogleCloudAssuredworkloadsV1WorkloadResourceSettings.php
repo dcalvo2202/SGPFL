@@ -20,58 +20,20 @@ namespace Google\Service\Assuredworkloads;
 class GoogleCloudAssuredworkloadsV1WorkloadResourceSettings extends \Google\Model
 {
   /**
-   * Unknown resource type.
-   */
-  public const RESOURCE_TYPE_RESOURCE_TYPE_UNSPECIFIED = 'RESOURCE_TYPE_UNSPECIFIED';
-  /**
-   * Deprecated. Existing workloads will continue to support this, but new
-   * CreateWorkloadRequests should not specify this as an input value.
-   *
-   * @deprecated
-   */
-  public const RESOURCE_TYPE_CONSUMER_PROJECT = 'CONSUMER_PROJECT';
-  /**
-   * Consumer Folder.
-   */
-  public const RESOURCE_TYPE_CONSUMER_FOLDER = 'CONSUMER_FOLDER';
-  /**
-   * Consumer project containing encryption keys.
-   */
-  public const RESOURCE_TYPE_ENCRYPTION_KEYS_PROJECT = 'ENCRYPTION_KEYS_PROJECT';
-  /**
-   * Keyring resource that hosts encryption keys.
-   */
-  public const RESOURCE_TYPE_KEYRING = 'KEYRING';
-  /**
-   * User-assigned resource display name. If not empty it will be used to create
-   * a resource with the specified name.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Resource identifier. For a project this represents project_id. If the
-   * project is already taken, the workload creation will fail. For KeyRing,
-   * this represents the keyring_id. For a folder, don't set this value as
-   * folder_id is assigned by Google.
-   *
    * @var string
    */
   public $resourceId;
   /**
-   * Indicates the type of resource. This field should be specified to
-   * correspond the id to the right project type (CONSUMER_PROJECT or
-   * ENCRYPTION_KEYS_PROJECT)
-   *
    * @var string
    */
   public $resourceType;
 
   /**
-   * User-assigned resource display name. If not empty it will be used to create
-   * a resource with the specified name.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -85,12 +47,7 @@ class GoogleCloudAssuredworkloadsV1WorkloadResourceSettings extends \Google\Mode
     return $this->displayName;
   }
   /**
-   * Resource identifier. For a project this represents project_id. If the
-   * project is already taken, the workload creation will fail. For KeyRing,
-   * this represents the keyring_id. For a folder, don't set this value as
-   * folder_id is assigned by Google.
-   *
-   * @param string $resourceId
+   * @param string
    */
   public function setResourceId($resourceId)
   {
@@ -104,21 +61,14 @@ class GoogleCloudAssuredworkloadsV1WorkloadResourceSettings extends \Google\Mode
     return $this->resourceId;
   }
   /**
-   * Indicates the type of resource. This field should be specified to
-   * correspond the id to the right project type (CONSUMER_PROJECT or
-   * ENCRYPTION_KEYS_PROJECT)
-   *
-   * Accepted values: RESOURCE_TYPE_UNSPECIFIED, CONSUMER_PROJECT,
-   * CONSUMER_FOLDER, ENCRYPTION_KEYS_PROJECT, KEYRING
-   *
-   * @param self::RESOURCE_TYPE_* $resourceType
+   * @param string
    */
   public function setResourceType($resourceType)
   {
     $this->resourceType = $resourceType;
   }
   /**
-   * @return self::RESOURCE_TYPE_*
+   * @return string
    */
   public function getResourceType()
   {

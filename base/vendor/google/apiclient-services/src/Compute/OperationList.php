@@ -21,34 +21,20 @@ class OperationList extends \Google\Collection
 {
   protected $collection_key = 'items';
   /**
-   * [Output Only] The unique identifier for the resource. This identifier is
-   * defined by the server.
-   *
    * @var string
    */
   public $id;
   protected $itemsType = Operation::class;
   protected $itemsDataType = 'array';
   /**
-   * Output only. [Output Only] Type of resource. Always `compute#operations`
-   * for Operations resource.
-   *
    * @var string
    */
   public $kind;
   /**
-   * [Output Only] This token allows you to get the next page of results for
-   * list requests. If the number of results is larger than `maxResults`, use
-   * the `nextPageToken` as a value for the query parameter `pageToken` in the
-   * next list request. Subsequent list requests will have their own
-   * `nextPageToken` to continue paging through the results.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * [Output Only] Server-defined URL for this resource.
-   *
    * @var string
    */
   public $selfLink;
@@ -56,10 +42,7 @@ class OperationList extends \Google\Collection
   protected $warningDataType = '';
 
   /**
-   * [Output Only] The unique identifier for the resource. This identifier is
-   * defined by the server.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -73,9 +56,7 @@ class OperationList extends \Google\Collection
     return $this->id;
   }
   /**
-   * [Output Only] A list of Operation resources.
-   *
-   * @param Operation[] $items
+   * @param Operation[]
    */
   public function setItems($items)
   {
@@ -89,10 +70,7 @@ class OperationList extends \Google\Collection
     return $this->items;
   }
   /**
-   * Output only. [Output Only] Type of resource. Always `compute#operations`
-   * for Operations resource.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -106,13 +84,7 @@ class OperationList extends \Google\Collection
     return $this->kind;
   }
   /**
-   * [Output Only] This token allows you to get the next page of results for
-   * list requests. If the number of results is larger than `maxResults`, use
-   * the `nextPageToken` as a value for the query parameter `pageToken` in the
-   * next list request. Subsequent list requests will have their own
-   * `nextPageToken` to continue paging through the results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -126,9 +98,7 @@ class OperationList extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * [Output Only] Server-defined URL for this resource.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -142,9 +112,7 @@ class OperationList extends \Google\Collection
     return $this->selfLink;
   }
   /**
-   * [Output Only] Informational warning message.
-   *
-   * @param OperationListWarning $warning
+   * @param OperationListWarning
    */
   public function setWarning(OperationListWarning $warning)
   {

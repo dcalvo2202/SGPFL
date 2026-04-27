@@ -20,9 +20,6 @@ namespace Google\Service\CloudTrace;
 class StackFrame extends \Google\Model
 {
   /**
-   * The column number where the function call appears, if available. This is
-   * important in JavaScript because of its anonymous functions.
-   *
    * @var string
    */
   public $columnNumber;
@@ -31,8 +28,6 @@ class StackFrame extends \Google\Model
   protected $functionNameType = TruncatableString::class;
   protected $functionNameDataType = '';
   /**
-   * The line number in `file_name` where the function call appears.
-   *
    * @var string
    */
   public $lineNumber;
@@ -44,10 +39,7 @@ class StackFrame extends \Google\Model
   protected $sourceVersionDataType = '';
 
   /**
-   * The column number where the function call appears, if available. This is
-   * important in JavaScript because of its anonymous functions.
-   *
-   * @param string $columnNumber
+   * @param string
    */
   public function setColumnNumber($columnNumber)
   {
@@ -61,10 +53,7 @@ class StackFrame extends \Google\Model
     return $this->columnNumber;
   }
   /**
-   * The name of the source file where the function call appears (up to 256
-   * bytes).
-   *
-   * @param TruncatableString $fileName
+   * @param TruncatableString
    */
   public function setFileName(TruncatableString $fileName)
   {
@@ -78,10 +67,7 @@ class StackFrame extends \Google\Model
     return $this->fileName;
   }
   /**
-   * The fully-qualified name that uniquely identifies the function or method
-   * that is active in this frame (up to 1024 bytes).
-   *
-   * @param TruncatableString $functionName
+   * @param TruncatableString
    */
   public function setFunctionName(TruncatableString $functionName)
   {
@@ -95,9 +81,7 @@ class StackFrame extends \Google\Model
     return $this->functionName;
   }
   /**
-   * The line number in `file_name` where the function call appears.
-   *
-   * @param string $lineNumber
+   * @param string
    */
   public function setLineNumber($lineNumber)
   {
@@ -111,9 +95,7 @@ class StackFrame extends \Google\Model
     return $this->lineNumber;
   }
   /**
-   * The binary module from where the code was loaded.
-   *
-   * @param Module $loadModule
+   * @param Module
    */
   public function setLoadModule(Module $loadModule)
   {
@@ -127,12 +109,7 @@ class StackFrame extends \Google\Model
     return $this->loadModule;
   }
   /**
-   * An un-mangled function name, if `function_name` is mangled. To get
-   * information about name mangling, run [this
-   * search](https://www.google.com/search?q=cxx+name+mangling). The name can be
-   * fully-qualified (up to 1024 bytes).
-   *
-   * @param TruncatableString $originalFunctionName
+   * @param TruncatableString
    */
   public function setOriginalFunctionName(TruncatableString $originalFunctionName)
   {
@@ -146,9 +123,7 @@ class StackFrame extends \Google\Model
     return $this->originalFunctionName;
   }
   /**
-   * The version of the deployed source code (up to 128 bytes).
-   *
-   * @param TruncatableString $sourceVersion
+   * @param TruncatableString
    */
   public function setSourceVersion(TruncatableString $sourceVersion)
   {

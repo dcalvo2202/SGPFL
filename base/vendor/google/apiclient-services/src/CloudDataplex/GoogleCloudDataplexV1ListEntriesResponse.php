@@ -23,17 +23,12 @@ class GoogleCloudDataplexV1ListEntriesResponse extends \Google\Collection
   protected $entriesType = GoogleCloudDataplexV1Entry::class;
   protected $entriesDataType = 'array';
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of entries under the given parent location.
-   *
-   * @param GoogleCloudDataplexV1Entry[] $entries
+   * @param GoogleCloudDataplexV1Entry[]
    */
   public function setEntries($entries)
   {
@@ -47,10 +42,7 @@ class GoogleCloudDataplexV1ListEntriesResponse extends \Google\Collection
     return $this->entries;
   }
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

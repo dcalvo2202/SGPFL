@@ -22,19 +22,12 @@ class Grid extends \Google\Model
   protected $columnsType = ChoiceQuestion::class;
   protected $columnsDataType = '';
   /**
-   * If `true`, the questions are randomly ordered. In other words, the rows
-   * appear in a different order for every respondent.
-   *
    * @var bool
    */
   public $shuffleQuestions;
 
   /**
-   * Required. The choices shared by each question in the grid. In other words,
-   * the values of the columns. Only `CHECK_BOX` and `RADIO` choices are
-   * allowed.
-   *
-   * @param ChoiceQuestion $columns
+   * @param ChoiceQuestion
    */
   public function setColumns(ChoiceQuestion $columns)
   {
@@ -48,10 +41,7 @@ class Grid extends \Google\Model
     return $this->columns;
   }
   /**
-   * If `true`, the questions are randomly ordered. In other words, the rows
-   * appear in a different order for every respondent.
-   *
-   * @param bool $shuffleQuestions
+   * @param bool
    */
   public function setShuffleQuestions($shuffleQuestions)
   {

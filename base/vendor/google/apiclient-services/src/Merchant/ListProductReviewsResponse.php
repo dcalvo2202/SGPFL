@@ -21,9 +21,6 @@ class ListProductReviewsResponse extends \Google\Collection
 {
   protected $collection_key = 'productReviews';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListProductReviewsResponse extends \Google\Collection
   protected $productReviewsDataType = 'array';
 
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class ListProductReviewsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The product review.
-   *
-   * @param ProductReview[] $productReviews
+   * @param ProductReview[]
    */
   public function setProductReviews($productReviews)
   {

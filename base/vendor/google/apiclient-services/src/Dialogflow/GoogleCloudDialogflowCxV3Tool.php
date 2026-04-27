@@ -19,9 +19,6 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowCxV3Tool extends \Google\Model
 {
-  public const TOOL_TYPE_TOOL_TYPE_UNSPECIFIED = 'TOOL_TYPE_UNSPECIFIED';
-  public const TOOL_TYPE_CUSTOMIZED_TOOL = 'CUSTOMIZED_TOOL';
-  public const TOOL_TYPE_BUILTIN_TOOL = 'BUILTIN_TOOL';
   protected $dataStoreSpecType = GoogleCloudDialogflowCxV3ToolDataStoreTool::class;
   protected $dataStoreSpecDataType = '';
   /**
@@ -46,7 +43,7 @@ class GoogleCloudDialogflowCxV3Tool extends \Google\Model
   public $toolType;
 
   /**
-   * @param GoogleCloudDialogflowCxV3ToolDataStoreTool $dataStoreSpec
+   * @param GoogleCloudDialogflowCxV3ToolDataStoreTool
    */
   public function setDataStoreSpec(GoogleCloudDialogflowCxV3ToolDataStoreTool $dataStoreSpec)
   {
@@ -60,7 +57,7 @@ class GoogleCloudDialogflowCxV3Tool extends \Google\Model
     return $this->dataStoreSpec;
   }
   /**
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -74,7 +71,7 @@ class GoogleCloudDialogflowCxV3Tool extends \Google\Model
     return $this->description;
   }
   /**
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -88,7 +85,7 @@ class GoogleCloudDialogflowCxV3Tool extends \Google\Model
     return $this->displayName;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3ToolFunctionTool $functionSpec
+   * @param GoogleCloudDialogflowCxV3ToolFunctionTool
    */
   public function setFunctionSpec(GoogleCloudDialogflowCxV3ToolFunctionTool $functionSpec)
   {
@@ -102,7 +99,7 @@ class GoogleCloudDialogflowCxV3Tool extends \Google\Model
     return $this->functionSpec;
   }
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -116,7 +113,7 @@ class GoogleCloudDialogflowCxV3Tool extends \Google\Model
     return $this->name;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3ToolOpenApiTool $openApiSpec
+   * @param GoogleCloudDialogflowCxV3ToolOpenApiTool
    */
   public function setOpenApiSpec(GoogleCloudDialogflowCxV3ToolOpenApiTool $openApiSpec)
   {
@@ -130,14 +127,14 @@ class GoogleCloudDialogflowCxV3Tool extends \Google\Model
     return $this->openApiSpec;
   }
   /**
-   * @param self::TOOL_TYPE_* $toolType
+   * @param string
    */
   public function setToolType($toolType)
   {
     $this->toolType = $toolType;
   }
   /**
-   * @return self::TOOL_TYPE_*
+   * @return string
    */
   public function getToolType()
   {

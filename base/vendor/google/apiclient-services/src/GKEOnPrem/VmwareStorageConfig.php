@@ -20,18 +20,12 @@ namespace Google\Service\GKEOnPrem;
 class VmwareStorageConfig extends \Google\Model
 {
   /**
-   * Whether or not to deploy vSphere CSI components in the VMware user cluster.
-   * Enabled by default.
-   *
    * @var bool
    */
   public $vsphereCsiDisabled;
 
   /**
-   * Whether or not to deploy vSphere CSI components in the VMware user cluster.
-   * Enabled by default.
-   *
-   * @param bool $vsphereCsiDisabled
+   * @param bool
    */
   public function setVsphereCsiDisabled($vsphereCsiDisabled)
   {

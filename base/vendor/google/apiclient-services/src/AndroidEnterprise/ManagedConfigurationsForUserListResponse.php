@@ -24,9 +24,7 @@ class ManagedConfigurationsForUserListResponse extends \Google\Collection
   protected $managedConfigurationForUserDataType = 'array';
 
   /**
-   * A managed configuration for an app for a specific user.
-   *
-   * @param ManagedConfiguration[] $managedConfigurationForUser
+   * @param ManagedConfiguration[]
    */
   public function setManagedConfigurationForUser($managedConfigurationForUser)
   {

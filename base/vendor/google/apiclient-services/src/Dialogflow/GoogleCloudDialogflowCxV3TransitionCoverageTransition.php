@@ -37,7 +37,7 @@ class GoogleCloudDialogflowCxV3TransitionCoverageTransition extends \Google\Mode
   protected $transitionRouteDataType = '';
 
   /**
-   * @param bool $covered
+   * @param bool
    */
   public function setCovered($covered)
   {
@@ -51,7 +51,7 @@ class GoogleCloudDialogflowCxV3TransitionCoverageTransition extends \Google\Mode
     return $this->covered;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3EventHandler $eventHandler
+   * @param GoogleCloudDialogflowCxV3EventHandler
    */
   public function setEventHandler(GoogleCloudDialogflowCxV3EventHandler $eventHandler)
   {
@@ -65,7 +65,7 @@ class GoogleCloudDialogflowCxV3TransitionCoverageTransition extends \Google\Mode
     return $this->eventHandler;
   }
   /**
-   * @param int $index
+   * @param int
    */
   public function setIndex($index)
   {
@@ -79,7 +79,7 @@ class GoogleCloudDialogflowCxV3TransitionCoverageTransition extends \Google\Mode
     return $this->index;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3TransitionCoverageTransitionNode $source
+   * @param GoogleCloudDialogflowCxV3TransitionCoverageTransitionNode
    */
   public function setSource(GoogleCloudDialogflowCxV3TransitionCoverageTransitionNode $source)
   {
@@ -93,7 +93,7 @@ class GoogleCloudDialogflowCxV3TransitionCoverageTransition extends \Google\Mode
     return $this->source;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3TransitionCoverageTransitionNode $target
+   * @param GoogleCloudDialogflowCxV3TransitionCoverageTransitionNode
    */
   public function setTarget(GoogleCloudDialogflowCxV3TransitionCoverageTransitionNode $target)
   {
@@ -107,7 +107,7 @@ class GoogleCloudDialogflowCxV3TransitionCoverageTransition extends \Google\Mode
     return $this->target;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3TransitionRoute $transitionRoute
+   * @param GoogleCloudDialogflowCxV3TransitionRoute
    */
   public function setTransitionRoute(GoogleCloudDialogflowCxV3TransitionRoute $transitionRoute)
   {

@@ -20,20 +20,12 @@ namespace Google\Service\CloudIAP;
 class CorsSettings extends \Google\Model
 {
   /**
-   * Configuration to allow HTTP `OPTIONS` calls to skip authentication and
-   * authorization. If undefined, IAP will not apply any special logic to
-   * `OPTIONS` requests.
-   *
    * @var bool
    */
   public $allowHttpOptions;
 
   /**
-   * Configuration to allow HTTP `OPTIONS` calls to skip authentication and
-   * authorization. If undefined, IAP will not apply any special logic to
-   * `OPTIONS` requests.
-   *
-   * @param bool $allowHttpOptions
+   * @param bool
    */
   public function setAllowHttpOptions($allowHttpOptions)
   {

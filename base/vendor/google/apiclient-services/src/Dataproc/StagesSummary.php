@@ -45,7 +45,7 @@ class StagesSummary extends \Google\Model
   public $numSkippedStages;
 
   /**
-   * @param string $applicationId
+   * @param string
    */
   public function setApplicationId($applicationId)
   {
@@ -59,7 +59,7 @@ class StagesSummary extends \Google\Model
     return $this->applicationId;
   }
   /**
-   * @param int $numActiveStages
+   * @param int
    */
   public function setNumActiveStages($numActiveStages)
   {
@@ -73,7 +73,7 @@ class StagesSummary extends \Google\Model
     return $this->numActiveStages;
   }
   /**
-   * @param int $numCompletedStages
+   * @param int
    */
   public function setNumCompletedStages($numCompletedStages)
   {
@@ -87,7 +87,7 @@ class StagesSummary extends \Google\Model
     return $this->numCompletedStages;
   }
   /**
-   * @param int $numFailedStages
+   * @param int
    */
   public function setNumFailedStages($numFailedStages)
   {
@@ -101,7 +101,7 @@ class StagesSummary extends \Google\Model
     return $this->numFailedStages;
   }
   /**
-   * @param int $numPendingStages
+   * @param int
    */
   public function setNumPendingStages($numPendingStages)
   {
@@ -115,7 +115,7 @@ class StagesSummary extends \Google\Model
     return $this->numPendingStages;
   }
   /**
-   * @param int $numSkippedStages
+   * @param int
    */
   public function setNumSkippedStages($numSkippedStages)
   {

@@ -20,27 +20,16 @@ namespace Google\Service\Compute;
 class SslCertificateSelfManagedSslCertificate extends \Google\Model
 {
   /**
-   * A local certificate file. The certificate must be in PEM format. The
-   * certificate chain must be no greater than 5 certs long. The chain must
-   * include at least one intermediate cert.
-   *
    * @var string
    */
   public $certificate;
   /**
-   * A write-only private key in PEM format. Only insert requests will include
-   * this field.
-   *
    * @var string
    */
   public $privateKey;
 
   /**
-   * A local certificate file. The certificate must be in PEM format. The
-   * certificate chain must be no greater than 5 certs long. The chain must
-   * include at least one intermediate cert.
-   *
-   * @param string $certificate
+   * @param string
    */
   public function setCertificate($certificate)
   {
@@ -54,10 +43,7 @@ class SslCertificateSelfManagedSslCertificate extends \Google\Model
     return $this->certificate;
   }
   /**
-   * A write-only private key in PEM format. Only insert requests will include
-   * this field.
-   *
-   * @param string $privateKey
+   * @param string
    */
   public function setPrivateKey($privateKey)
   {

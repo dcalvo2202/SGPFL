@@ -23,16 +23,12 @@ class ListGiVersionsResponse extends \Google\Collection
   protected $giVersionsType = GiVersion::class;
   protected $giVersionsDataType = 'array';
   /**
-   * A token identifying a page of results the server should return.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of Oracle Grid Infrastructure (GI) versions.
-   *
-   * @param GiVersion[] $giVersions
+   * @param GiVersion[]
    */
   public function setGiVersions($giVersions)
   {
@@ -46,9 +42,7 @@ class ListGiVersionsResponse extends \Google\Collection
     return $this->giVersions;
   }
   /**
-   * A token identifying a page of results the server should return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

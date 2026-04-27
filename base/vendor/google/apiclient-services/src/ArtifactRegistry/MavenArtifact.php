@@ -20,60 +20,36 @@ namespace Google\Service\ArtifactRegistry;
 class MavenArtifact extends \Google\Model
 {
   /**
-   * Artifact ID for the artifact.
-   *
    * @var string
    */
   public $artifactId;
   /**
-   * Output only. Time the artifact was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Group ID for the artifact. Example: com.google.guava
-   *
    * @var string
    */
   public $groupId;
   /**
-   * Required. registry_location, project_id, repository_name and maven_artifact
-   * forms a unique artifact For example, "projects/test-project/locations/us-
-   * west4/repositories/test-repo/mavenArtifacts/
-   * com.google.guava:guava:31.0-jre", where "us-west4" is the
-   * registry_location, "test-project" is the project_id, "test-repo" is the
-   * repository_name and "com.google.guava:guava:31.0-jre" is the maven
-   * artifact.
-   *
    * @var string
    */
   public $name;
   /**
-   * Required. URL to access the pom file of the artifact. Example: us-
-   * west4-maven.pkg.dev/test-project/test-
-   * repo/com/google/guava/guava/31.0/guava-31.0.pom
-   *
    * @var string
    */
   public $pomUri;
   /**
-   * Output only. Time the artifact was updated.
-   *
    * @var string
    */
   public $updateTime;
   /**
-   * Version of this artifact.
-   *
    * @var string
    */
   public $version;
 
   /**
-   * Artifact ID for the artifact.
-   *
-   * @param string $artifactId
+   * @param string
    */
   public function setArtifactId($artifactId)
   {
@@ -87,9 +63,7 @@ class MavenArtifact extends \Google\Model
     return $this->artifactId;
   }
   /**
-   * Output only. Time the artifact was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -103,9 +77,7 @@ class MavenArtifact extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Group ID for the artifact. Example: com.google.guava
-   *
-   * @param string $groupId
+   * @param string
    */
   public function setGroupId($groupId)
   {
@@ -119,15 +91,7 @@ class MavenArtifact extends \Google\Model
     return $this->groupId;
   }
   /**
-   * Required. registry_location, project_id, repository_name and maven_artifact
-   * forms a unique artifact For example, "projects/test-project/locations/us-
-   * west4/repositories/test-repo/mavenArtifacts/
-   * com.google.guava:guava:31.0-jre", where "us-west4" is the
-   * registry_location, "test-project" is the project_id, "test-repo" is the
-   * repository_name and "com.google.guava:guava:31.0-jre" is the maven
-   * artifact.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -141,11 +105,7 @@ class MavenArtifact extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. URL to access the pom file of the artifact. Example: us-
-   * west4-maven.pkg.dev/test-project/test-
-   * repo/com/google/guava/guava/31.0/guava-31.0.pom
-   *
-   * @param string $pomUri
+   * @param string
    */
   public function setPomUri($pomUri)
   {
@@ -159,9 +119,7 @@ class MavenArtifact extends \Google\Model
     return $this->pomUri;
   }
   /**
-   * Output only. Time the artifact was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -175,9 +133,7 @@ class MavenArtifact extends \Google\Model
     return $this->updateTime;
   }
   /**
-   * Version of this artifact.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

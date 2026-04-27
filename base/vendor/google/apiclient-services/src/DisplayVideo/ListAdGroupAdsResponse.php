@@ -23,18 +23,12 @@ class ListAdGroupAdsResponse extends \Google\Collection
   protected $adGroupAdsType = AdGroupAd::class;
   protected $adGroupAdsDataType = 'array';
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * page_token field in the subsequent call to `ListAdGroupAds` method to
-   * retrieve the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of ads. This list will be absent if empty.
-   *
-   * @param AdGroupAd[] $adGroupAds
+   * @param AdGroupAd[]
    */
   public function setAdGroupAds($adGroupAds)
   {
@@ -48,11 +42,7 @@ class ListAdGroupAdsResponse extends \Google\Collection
     return $this->adGroupAds;
   }
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * page_token field in the subsequent call to `ListAdGroupAds` method to
-   * retrieve the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

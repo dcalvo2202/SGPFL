@@ -20,22 +20,16 @@ namespace Google\Service\SASPortalTesting;
 class SasPortalDeploymentAssociation extends \Google\Model
 {
   /**
-   * GCP project id of the associated project.
-   *
    * @var string
    */
   public $gcpProjectId;
   /**
-   * User id of the deployment.
-   *
    * @var string
    */
   public $userId;
 
   /**
-   * GCP project id of the associated project.
-   *
-   * @param string $gcpProjectId
+   * @param string
    */
   public function setGcpProjectId($gcpProjectId)
   {
@@ -49,9 +43,7 @@ class SasPortalDeploymentAssociation extends \Google\Model
     return $this->gcpProjectId;
   }
   /**
-   * User id of the deployment.
-   *
-   * @param string $userId
+   * @param string
    */
   public function setUserId($userId)
   {

@@ -76,7 +76,7 @@ class SqlExecutionUiData extends \Google\Collection
   public $submissionTime;
 
   /**
-   * @param string $completionTime
+   * @param string
    */
   public function setCompletionTime($completionTime)
   {
@@ -90,7 +90,7 @@ class SqlExecutionUiData extends \Google\Collection
     return $this->completionTime;
   }
   /**
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -104,7 +104,7 @@ class SqlExecutionUiData extends \Google\Collection
     return $this->description;
   }
   /**
-   * @param string $details
+   * @param string
    */
   public function setDetails($details)
   {
@@ -118,7 +118,7 @@ class SqlExecutionUiData extends \Google\Collection
     return $this->details;
   }
   /**
-   * @param string $errorMessage
+   * @param string
    */
   public function setErrorMessage($errorMessage)
   {
@@ -132,7 +132,7 @@ class SqlExecutionUiData extends \Google\Collection
     return $this->errorMessage;
   }
   /**
-   * @param string $executionId
+   * @param string
    */
   public function setExecutionId($executionId)
   {
@@ -146,7 +146,7 @@ class SqlExecutionUiData extends \Google\Collection
     return $this->executionId;
   }
   /**
-   * @param string[] $jobs
+   * @param string[]
    */
   public function setJobs($jobs)
   {
@@ -160,7 +160,7 @@ class SqlExecutionUiData extends \Google\Collection
     return $this->jobs;
   }
   /**
-   * @param string[] $metricValues
+   * @param string[]
    */
   public function setMetricValues($metricValues)
   {
@@ -174,7 +174,7 @@ class SqlExecutionUiData extends \Google\Collection
     return $this->metricValues;
   }
   /**
-   * @param bool $metricValuesIsNull
+   * @param bool
    */
   public function setMetricValuesIsNull($metricValuesIsNull)
   {
@@ -188,7 +188,7 @@ class SqlExecutionUiData extends \Google\Collection
     return $this->metricValuesIsNull;
   }
   /**
-   * @param SqlPlanMetric[] $metrics
+   * @param SqlPlanMetric[]
    */
   public function setMetrics($metrics)
   {
@@ -202,7 +202,7 @@ class SqlExecutionUiData extends \Google\Collection
     return $this->metrics;
   }
   /**
-   * @param string[] $modifiedConfigs
+   * @param string[]
    */
   public function setModifiedConfigs($modifiedConfigs)
   {
@@ -216,7 +216,7 @@ class SqlExecutionUiData extends \Google\Collection
     return $this->modifiedConfigs;
   }
   /**
-   * @param string $physicalPlanDescription
+   * @param string
    */
   public function setPhysicalPlanDescription($physicalPlanDescription)
   {
@@ -230,7 +230,7 @@ class SqlExecutionUiData extends \Google\Collection
     return $this->physicalPlanDescription;
   }
   /**
-   * @param string $rootExecutionId
+   * @param string
    */
   public function setRootExecutionId($rootExecutionId)
   {
@@ -244,7 +244,7 @@ class SqlExecutionUiData extends \Google\Collection
     return $this->rootExecutionId;
   }
   /**
-   * @param string[] $stages
+   * @param string[]
    */
   public function setStages($stages)
   {
@@ -258,7 +258,7 @@ class SqlExecutionUiData extends \Google\Collection
     return $this->stages;
   }
   /**
-   * @param string $submissionTime
+   * @param string
    */
   public function setSubmissionTime($submissionTime)
   {

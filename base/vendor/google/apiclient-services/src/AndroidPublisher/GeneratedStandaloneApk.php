@@ -20,24 +20,16 @@ namespace Google\Service\AndroidPublisher;
 class GeneratedStandaloneApk extends \Google\Model
 {
   /**
-   * Download ID, which uniquely identifies the APK to download. Should be
-   * supplied to `generatedapks.download` method.
-   *
    * @var string
    */
   public $downloadId;
   /**
-   * ID of the generated variant.
-   *
    * @var int
    */
   public $variantId;
 
   /**
-   * Download ID, which uniquely identifies the APK to download. Should be
-   * supplied to `generatedapks.download` method.
-   *
-   * @param string $downloadId
+   * @param string
    */
   public function setDownloadId($downloadId)
   {
@@ -51,9 +43,7 @@ class GeneratedStandaloneApk extends \Google\Model
     return $this->downloadId;
   }
   /**
-   * ID of the generated variant.
-   *
-   * @param int $variantId
+   * @param int
    */
   public function setVariantId($variantId)
   {

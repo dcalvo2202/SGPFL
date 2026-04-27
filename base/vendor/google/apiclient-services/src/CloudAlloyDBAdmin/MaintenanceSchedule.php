@@ -20,16 +20,12 @@ namespace Google\Service\CloudAlloyDBAdmin;
 class MaintenanceSchedule extends \Google\Model
 {
   /**
-   * Output only. The scheduled start time for the maintenance.
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * Output only. The scheduled start time for the maintenance.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

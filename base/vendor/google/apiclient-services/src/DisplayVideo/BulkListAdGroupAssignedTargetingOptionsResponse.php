@@ -23,21 +23,12 @@ class BulkListAdGroupAssignedTargetingOptionsResponse extends \Google\Collection
   protected $adGroupAssignedTargetingOptionsType = AdGroupAssignedTargetingOption::class;
   protected $adGroupAssignedTargetingOptionsDataType = 'array';
   /**
-   * A token identifying the next page of results. This value should be
-   * specified as the pageToken in a subsequent call to
-   * `BulkListAdGroupAssignedTargetingOptions` to fetch the next page of
-   * results. This token will be absent if there are no more
-   * AdGroupAssignedTargetingOption resources to return.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of wrapper objects, each providing an assigned targeting option
-   * and the ad group it is assigned to. This list will be absent if empty.
-   *
-   * @param AdGroupAssignedTargetingOption[] $adGroupAssignedTargetingOptions
+   * @param AdGroupAssignedTargetingOption[]
    */
   public function setAdGroupAssignedTargetingOptions($adGroupAssignedTargetingOptions)
   {
@@ -51,13 +42,7 @@ class BulkListAdGroupAssignedTargetingOptionsResponse extends \Google\Collection
     return $this->adGroupAssignedTargetingOptions;
   }
   /**
-   * A token identifying the next page of results. This value should be
-   * specified as the pageToken in a subsequent call to
-   * `BulkListAdGroupAssignedTargetingOptions` to fetch the next page of
-   * results. This token will be absent if there are no more
-   * AdGroupAssignedTargetingOption resources to return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

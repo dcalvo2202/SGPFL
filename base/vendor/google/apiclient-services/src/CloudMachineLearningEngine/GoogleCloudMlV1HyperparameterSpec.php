@@ -19,130 +19,58 @@ namespace Google\Service\CloudMachineLearningEngine;
 
 class GoogleCloudMlV1HyperparameterSpec extends \Google\Collection
 {
-  /**
-   * The default algorithm used by the hyperparameter tuning service. This is a
-   * Bayesian optimization algorithm.
-   */
-  public const ALGORITHM_ALGORITHM_UNSPECIFIED = 'ALGORITHM_UNSPECIFIED';
-  /**
-   * Simple grid search within the feasible space. To use grid search, all
-   * parameters must be `INTEGER`, `CATEGORICAL`, or `DISCRETE`.
-   */
-  public const ALGORITHM_GRID_SEARCH = 'GRID_SEARCH';
-  /**
-   * Simple random search within the feasible space.
-   */
-  public const ALGORITHM_RANDOM_SEARCH = 'RANDOM_SEARCH';
-  /**
-   * Goal Type will default to maximize.
-   */
-  public const GOAL_GOAL_TYPE_UNSPECIFIED = 'GOAL_TYPE_UNSPECIFIED';
-  /**
-   * Maximize the goal metric.
-   */
-  public const GOAL_MAXIMIZE = 'MAXIMIZE';
-  /**
-   * Minimize the goal metric.
-   */
-  public const GOAL_MINIMIZE = 'MINIMIZE';
   protected $collection_key = 'params';
   /**
-   * Optional. The search algorithm specified for the hyperparameter tuning job.
-   * Uses the default AI Platform hyperparameter tuning algorithm if
-   * unspecified.
-   *
    * @var string
    */
   public $algorithm;
   /**
-   * Optional. Indicates if the hyperparameter tuning job enables auto trial
-   * early stopping.
-   *
    * @var bool
    */
   public $enableTrialEarlyStopping;
   /**
-   * Required. The type of goal to use for tuning. Available types are
-   * `MAXIMIZE` and `MINIMIZE`. Defaults to `MAXIMIZE`.
-   *
    * @var string
    */
   public $goal;
   /**
-   * Optional. The TensorFlow summary tag name to use for optimizing trials. For
-   * current versions of TensorFlow, this tag name should exactly match what is
-   * shown in TensorBoard, including all scopes. For versions of TensorFlow
-   * prior to 0.12, this should be only the tag passed to tf.Summary. By
-   * default, "training/hptuning/metric" will be used.
-   *
    * @var string
    */
   public $hyperparameterMetricTag;
   /**
-   * Optional. The number of failed trials that need to be seen before failing
-   * the hyperparameter tuning job. You can specify this field to override the
-   * default failing criteria for AI Platform hyperparameter tuning jobs.
-   * Defaults to zero, which means the service decides when a hyperparameter job
-   * should fail.
-   *
    * @var int
    */
   public $maxFailedTrials;
   /**
-   * Optional. The number of training trials to run concurrently. You can reduce
-   * the time it takes to perform hyperparameter tuning by adding trials in
-   * parallel. However, each trail only benefits from the information gained in
-   * completed trials. That means that a trial does not get access to the
-   * results of trials running at the same time, which could reduce the quality
-   * of the overall optimization. Each trial will use the same scale tier and
-   * machine types. Defaults to one.
-   *
    * @var int
    */
   public $maxParallelTrials;
   /**
-   * Optional. How many training trials should be attempted to optimize the
-   * specified hyperparameters. Defaults to one.
-   *
    * @var int
    */
   public $maxTrials;
   protected $paramsType = GoogleCloudMlV1ParameterSpec::class;
   protected $paramsDataType = 'array';
   /**
-   * Optional. The prior hyperparameter tuning job id that users hope to
-   * continue with. The job id will be used to find the corresponding vizier
-   * study guid and resume the study.
-   *
    * @var string
    */
   public $resumePreviousJobId;
 
   /**
-   * Optional. The search algorithm specified for the hyperparameter tuning job.
-   * Uses the default AI Platform hyperparameter tuning algorithm if
-   * unspecified.
-   *
-   * Accepted values: ALGORITHM_UNSPECIFIED, GRID_SEARCH, RANDOM_SEARCH
-   *
-   * @param self::ALGORITHM_* $algorithm
+   * @param string
    */
   public function setAlgorithm($algorithm)
   {
     $this->algorithm = $algorithm;
   }
   /**
-   * @return self::ALGORITHM_*
+   * @return string
    */
   public function getAlgorithm()
   {
     return $this->algorithm;
   }
   /**
-   * Optional. Indicates if the hyperparameter tuning job enables auto trial
-   * early stopping.
-   *
-   * @param bool $enableTrialEarlyStopping
+   * @param bool
    */
   public function setEnableTrialEarlyStopping($enableTrialEarlyStopping)
   {
@@ -156,32 +84,21 @@ class GoogleCloudMlV1HyperparameterSpec extends \Google\Collection
     return $this->enableTrialEarlyStopping;
   }
   /**
-   * Required. The type of goal to use for tuning. Available types are
-   * `MAXIMIZE` and `MINIMIZE`. Defaults to `MAXIMIZE`.
-   *
-   * Accepted values: GOAL_TYPE_UNSPECIFIED, MAXIMIZE, MINIMIZE
-   *
-   * @param self::GOAL_* $goal
+   * @param string
    */
   public function setGoal($goal)
   {
     $this->goal = $goal;
   }
   /**
-   * @return self::GOAL_*
+   * @return string
    */
   public function getGoal()
   {
     return $this->goal;
   }
   /**
-   * Optional. The TensorFlow summary tag name to use for optimizing trials. For
-   * current versions of TensorFlow, this tag name should exactly match what is
-   * shown in TensorBoard, including all scopes. For versions of TensorFlow
-   * prior to 0.12, this should be only the tag passed to tf.Summary. By
-   * default, "training/hptuning/metric" will be used.
-   *
-   * @param string $hyperparameterMetricTag
+   * @param string
    */
   public function setHyperparameterMetricTag($hyperparameterMetricTag)
   {
@@ -195,13 +112,7 @@ class GoogleCloudMlV1HyperparameterSpec extends \Google\Collection
     return $this->hyperparameterMetricTag;
   }
   /**
-   * Optional. The number of failed trials that need to be seen before failing
-   * the hyperparameter tuning job. You can specify this field to override the
-   * default failing criteria for AI Platform hyperparameter tuning jobs.
-   * Defaults to zero, which means the service decides when a hyperparameter job
-   * should fail.
-   *
-   * @param int $maxFailedTrials
+   * @param int
    */
   public function setMaxFailedTrials($maxFailedTrials)
   {
@@ -215,15 +126,7 @@ class GoogleCloudMlV1HyperparameterSpec extends \Google\Collection
     return $this->maxFailedTrials;
   }
   /**
-   * Optional. The number of training trials to run concurrently. You can reduce
-   * the time it takes to perform hyperparameter tuning by adding trials in
-   * parallel. However, each trail only benefits from the information gained in
-   * completed trials. That means that a trial does not get access to the
-   * results of trials running at the same time, which could reduce the quality
-   * of the overall optimization. Each trial will use the same scale tier and
-   * machine types. Defaults to one.
-   *
-   * @param int $maxParallelTrials
+   * @param int
    */
   public function setMaxParallelTrials($maxParallelTrials)
   {
@@ -237,10 +140,7 @@ class GoogleCloudMlV1HyperparameterSpec extends \Google\Collection
     return $this->maxParallelTrials;
   }
   /**
-   * Optional. How many training trials should be attempted to optimize the
-   * specified hyperparameters. Defaults to one.
-   *
-   * @param int $maxTrials
+   * @param int
    */
   public function setMaxTrials($maxTrials)
   {
@@ -254,9 +154,7 @@ class GoogleCloudMlV1HyperparameterSpec extends \Google\Collection
     return $this->maxTrials;
   }
   /**
-   * Required. The set of parameters to tune.
-   *
-   * @param GoogleCloudMlV1ParameterSpec[] $params
+   * @param GoogleCloudMlV1ParameterSpec[]
    */
   public function setParams($params)
   {
@@ -270,11 +168,7 @@ class GoogleCloudMlV1HyperparameterSpec extends \Google\Collection
     return $this->params;
   }
   /**
-   * Optional. The prior hyperparameter tuning job id that users hope to
-   * continue with. The job id will be used to find the corresponding vizier
-   * study guid and resume the study.
-   *
-   * @param string $resumePreviousJobId
+   * @param string
    */
   public function setResumePreviousJobId($resumePreviousJobId)
   {

@@ -19,23 +19,20 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowCxV3ToolAuthenticationServiceAgentAuthConfig extends \Google\Model
 {
-  public const SERVICE_AGENT_AUTH_SERVICE_AGENT_AUTH_UNSPECIFIED = 'SERVICE_AGENT_AUTH_UNSPECIFIED';
-  public const SERVICE_AGENT_AUTH_ID_TOKEN = 'ID_TOKEN';
-  public const SERVICE_AGENT_AUTH_ACCESS_TOKEN = 'ACCESS_TOKEN';
   /**
    * @var string
    */
   public $serviceAgentAuth;
 
   /**
-   * @param self::SERVICE_AGENT_AUTH_* $serviceAgentAuth
+   * @param string
    */
   public function setServiceAgentAuth($serviceAgentAuth)
   {
     $this->serviceAgentAuth = $serviceAgentAuth;
   }
   /**
-   * @return self::SERVICE_AGENT_AUTH_*
+   * @return string
    */
   public function getServiceAgentAuth()
   {

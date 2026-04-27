@@ -21,30 +21,20 @@ class TargetsPresentCondition extends \Google\Collection
 {
   protected $collection_key = 'missingTargets';
   /**
-   * The list of Target names that do not exist. For example,
-   * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
-   *
    * @var string[]
    */
   public $missingTargets;
   /**
-   * True if there aren't any missing Targets.
-   *
    * @var bool
    */
   public $status;
   /**
-   * Last time the condition was updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * The list of Target names that do not exist. For example,
-   * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
-   *
-   * @param string[] $missingTargets
+   * @param string[]
    */
   public function setMissingTargets($missingTargets)
   {
@@ -58,9 +48,7 @@ class TargetsPresentCondition extends \Google\Collection
     return $this->missingTargets;
   }
   /**
-   * True if there aren't any missing Targets.
-   *
-   * @param bool $status
+   * @param bool
    */
   public function setStatus($status)
   {
@@ -74,9 +62,7 @@ class TargetsPresentCondition extends \Google\Collection
     return $this->status;
   }
   /**
-   * Last time the condition was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

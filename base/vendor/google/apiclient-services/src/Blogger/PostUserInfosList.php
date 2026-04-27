@@ -23,22 +23,16 @@ class PostUserInfosList extends \Google\Collection
   protected $itemsType = PostUserInfo::class;
   protected $itemsDataType = 'array';
   /**
-   * The kind of this entity. Always blogger#postList.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Pagination token to fetch the next page, if one exists.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of Posts with User information for the post, for this Blog.
-   *
-   * @param PostUserInfo[] $items
+   * @param PostUserInfo[]
    */
   public function setItems($items)
   {
@@ -52,9 +46,7 @@ class PostUserInfosList extends \Google\Collection
     return $this->items;
   }
   /**
-   * The kind of this entity. Always blogger#postList.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -68,9 +60,7 @@ class PostUserInfosList extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Pagination token to fetch the next page, if one exists.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

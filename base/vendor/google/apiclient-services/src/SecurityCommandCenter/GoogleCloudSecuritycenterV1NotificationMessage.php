@@ -22,8 +22,6 @@ class GoogleCloudSecuritycenterV1NotificationMessage extends \Google\Model
   protected $findingType = Finding::class;
   protected $findingDataType = '';
   /**
-   * Name of the notification config that generated current notification.
-   *
    * @var string
    */
   public $notificationConfigName;
@@ -31,9 +29,7 @@ class GoogleCloudSecuritycenterV1NotificationMessage extends \Google\Model
   protected $resourceDataType = '';
 
   /**
-   * If it's a Finding based notification config, this field will be populated.
-   *
-   * @param Finding $finding
+   * @param Finding
    */
   public function setFinding(Finding $finding)
   {
@@ -47,9 +43,7 @@ class GoogleCloudSecuritycenterV1NotificationMessage extends \Google\Model
     return $this->finding;
   }
   /**
-   * Name of the notification config that generated current notification.
-   *
-   * @param string $notificationConfigName
+   * @param string
    */
   public function setNotificationConfigName($notificationConfigName)
   {
@@ -63,9 +57,7 @@ class GoogleCloudSecuritycenterV1NotificationMessage extends \Google\Model
     return $this->notificationConfigName;
   }
   /**
-   * The Cloud resource tied to this notification's Finding.
-   *
-   * @param GoogleCloudSecuritycenterV1Resource $resource
+   * @param GoogleCloudSecuritycenterV1Resource
    */
   public function setResource(GoogleCloudSecuritycenterV1Resource $resource)
   {

@@ -19,116 +19,52 @@ namespace Google\Service\Contactcenterinsights;
 
 class GoogleCloudContactcenterinsightsV1PhraseMatcher extends \Google\Collection
 {
-  /**
-   * Participant's role is not set.
-   */
-  public const ROLE_MATCH_ROLE_UNSPECIFIED = 'ROLE_UNSPECIFIED';
-  /**
-   * Participant is a human agent.
-   */
-  public const ROLE_MATCH_HUMAN_AGENT = 'HUMAN_AGENT';
-  /**
-   * Participant is an automated agent.
-   */
-  public const ROLE_MATCH_AUTOMATED_AGENT = 'AUTOMATED_AGENT';
-  /**
-   * Participant is an end user who conversed with the contact center.
-   */
-  public const ROLE_MATCH_END_USER = 'END_USER';
-  /**
-   * Participant is either a human or automated agent.
-   */
-  public const ROLE_MATCH_ANY_AGENT = 'ANY_AGENT';
-  /**
-   * Unspecified.
-   */
-  public const TYPE_PHRASE_MATCHER_TYPE_UNSPECIFIED = 'PHRASE_MATCHER_TYPE_UNSPECIFIED';
-  /**
-   * Must meet all phrase match rule groups or there is no match.
-   */
-  public const TYPE_ALL_OF = 'ALL_OF';
-  /**
-   * If any of the phrase match rule groups are met, there is a match.
-   */
-  public const TYPE_ANY_OF = 'ANY_OF';
   protected $collection_key = 'phraseMatchRuleGroups';
   /**
-   * Output only. The most recent time at which the activation status was
-   * updated.
-   *
    * @var string
    */
   public $activationUpdateTime;
   /**
-   * Applies the phrase matcher only when it is active.
-   *
    * @var bool
    */
   public $active;
   /**
-   * The human-readable name of the phrase matcher.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * The resource name of the phrase matcher. Format:
-   * projects/{project}/locations/{location}/phraseMatchers/{phrase_matcher}
-   *
    * @var string
    */
   public $name;
   protected $phraseMatchRuleGroupsType = GoogleCloudContactcenterinsightsV1PhraseMatchRuleGroup::class;
   protected $phraseMatchRuleGroupsDataType = 'array';
   /**
-   * Output only. The timestamp of when the revision was created. It is also the
-   * create time when a new matcher is added.
-   *
    * @var string
    */
   public $revisionCreateTime;
   /**
-   * Output only. Immutable. The revision ID of the phrase matcher. A new
-   * revision is committed whenever the matcher is changed, except when it is
-   * activated or deactivated. A server generated random ID will be used.
-   * Example: locations/global/phraseMatchers/my-first-matcher@1234567
-   *
    * @var string
    */
   public $revisionId;
   /**
-   * The role whose utterances the phrase matcher should be matched against. If
-   * the role is ROLE_UNSPECIFIED it will be matched against any utterances in
-   * the transcript.
-   *
    * @var string
    */
   public $roleMatch;
   /**
-   * Required. The type of this phrase matcher.
-   *
    * @var string
    */
   public $type;
   /**
-   * Output only. The most recent time at which the phrase matcher was updated.
-   *
    * @var string
    */
   public $updateTime;
   /**
-   * The customized version tag to use for the phrase matcher. If not specified,
-   * it will default to `revision_id`.
-   *
    * @var string
    */
   public $versionTag;
 
   /**
-   * Output only. The most recent time at which the activation status was
-   * updated.
-   *
-   * @param string $activationUpdateTime
+   * @param string
    */
   public function setActivationUpdateTime($activationUpdateTime)
   {
@@ -142,9 +78,7 @@ class GoogleCloudContactcenterinsightsV1PhraseMatcher extends \Google\Collection
     return $this->activationUpdateTime;
   }
   /**
-   * Applies the phrase matcher only when it is active.
-   *
-   * @param bool $active
+   * @param bool
    */
   public function setActive($active)
   {
@@ -158,9 +92,7 @@ class GoogleCloudContactcenterinsightsV1PhraseMatcher extends \Google\Collection
     return $this->active;
   }
   /**
-   * The human-readable name of the phrase matcher.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -174,10 +106,7 @@ class GoogleCloudContactcenterinsightsV1PhraseMatcher extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * The resource name of the phrase matcher. Format:
-   * projects/{project}/locations/{location}/phraseMatchers/{phrase_matcher}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -191,9 +120,7 @@ class GoogleCloudContactcenterinsightsV1PhraseMatcher extends \Google\Collection
     return $this->name;
   }
   /**
-   * A list of phase match rule groups that are included in this matcher.
-   *
-   * @param GoogleCloudContactcenterinsightsV1PhraseMatchRuleGroup[] $phraseMatchRuleGroups
+   * @param GoogleCloudContactcenterinsightsV1PhraseMatchRuleGroup[]
    */
   public function setPhraseMatchRuleGroups($phraseMatchRuleGroups)
   {
@@ -207,10 +134,7 @@ class GoogleCloudContactcenterinsightsV1PhraseMatcher extends \Google\Collection
     return $this->phraseMatchRuleGroups;
   }
   /**
-   * Output only. The timestamp of when the revision was created. It is also the
-   * create time when a new matcher is added.
-   *
-   * @param string $revisionCreateTime
+   * @param string
    */
   public function setRevisionCreateTime($revisionCreateTime)
   {
@@ -224,12 +148,7 @@ class GoogleCloudContactcenterinsightsV1PhraseMatcher extends \Google\Collection
     return $this->revisionCreateTime;
   }
   /**
-   * Output only. Immutable. The revision ID of the phrase matcher. A new
-   * revision is committed whenever the matcher is changed, except when it is
-   * activated or deactivated. A server generated random ID will be used.
-   * Example: locations/global/phraseMatchers/my-first-matcher@1234567
-   *
-   * @param string $revisionId
+   * @param string
    */
   public function setRevisionId($revisionId)
   {
@@ -243,48 +162,35 @@ class GoogleCloudContactcenterinsightsV1PhraseMatcher extends \Google\Collection
     return $this->revisionId;
   }
   /**
-   * The role whose utterances the phrase matcher should be matched against. If
-   * the role is ROLE_UNSPECIFIED it will be matched against any utterances in
-   * the transcript.
-   *
-   * Accepted values: ROLE_UNSPECIFIED, HUMAN_AGENT, AUTOMATED_AGENT, END_USER,
-   * ANY_AGENT
-   *
-   * @param self::ROLE_MATCH_* $roleMatch
+   * @param string
    */
   public function setRoleMatch($roleMatch)
   {
     $this->roleMatch = $roleMatch;
   }
   /**
-   * @return self::ROLE_MATCH_*
+   * @return string
    */
   public function getRoleMatch()
   {
     return $this->roleMatch;
   }
   /**
-   * Required. The type of this phrase matcher.
-   *
-   * Accepted values: PHRASE_MATCHER_TYPE_UNSPECIFIED, ALL_OF, ANY_OF
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * Output only. The most recent time at which the phrase matcher was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -298,10 +204,7 @@ class GoogleCloudContactcenterinsightsV1PhraseMatcher extends \Google\Collection
     return $this->updateTime;
   }
   /**
-   * The customized version tag to use for the phrase matcher. If not specified,
-   * it will default to `revision_id`.
-   *
-   * @param string $versionTag
+   * @param string
    */
   public function setVersionTag($versionTag)
   {

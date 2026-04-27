@@ -23,17 +23,12 @@ class GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlockLayoutList
   protected $listEntriesType = GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlockLayoutListEntry::class;
   protected $listEntriesDataType = 'array';
   /**
-   * Type of the list_entries (if exist). Available options are `ordered` and
-   * `unordered`.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * List entries that constitute a list block.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlockLayoutListEntry[] $listEntries
+   * @param GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlockLayoutListEntry[]
    */
   public function setListEntries($listEntries)
   {
@@ -47,10 +42,7 @@ class GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlockLayoutList
     return $this->listEntries;
   }
   /**
-   * Type of the list_entries (if exist). Available options are `ordered` and
-   * `unordered`.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

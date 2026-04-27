@@ -23,17 +23,12 @@ class GoogleCloudContactcenterinsightsV1ListAnalysisRulesResponse extends \Googl
   protected $analysisRulesType = GoogleCloudContactcenterinsightsV1AnalysisRule::class;
   protected $analysisRulesDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The analysis_rule that match the request.
-   *
-   * @param GoogleCloudContactcenterinsightsV1AnalysisRule[] $analysisRules
+   * @param GoogleCloudContactcenterinsightsV1AnalysisRule[]
    */
   public function setAnalysisRules($analysisRules)
   {
@@ -47,10 +42,7 @@ class GoogleCloudContactcenterinsightsV1ListAnalysisRulesResponse extends \Googl
     return $this->analysisRules;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

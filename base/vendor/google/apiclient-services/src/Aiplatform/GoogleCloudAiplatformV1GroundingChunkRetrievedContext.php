@@ -19,62 +19,23 @@ namespace Google\Service\Aiplatform;
 
 class GoogleCloudAiplatformV1GroundingChunkRetrievedContext extends \Google\Model
 {
-  /**
-   * Output only. The full resource name of the referenced Vertex AI Search
-   * document. This is used to identify the specific document that was
-   * retrieved. The format is `projects/{project}/locations/{location}/collectio
-   * ns/{collection}/dataStores/{data_store}/branches/{branch}/documents/{docume
-   * nt}`.
-   *
-   * @var string
-   */
-  public $documentName;
   protected $ragChunkType = GoogleCloudAiplatformV1RagChunk::class;
   protected $ragChunkDataType = '';
   /**
-   * The content of the retrieved data source.
-   *
    * @var string
    */
   public $text;
   /**
-   * The title of the retrieved data source.
-   *
    * @var string
    */
   public $title;
   /**
-   * The URI of the retrieved data source.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * Output only. The full resource name of the referenced Vertex AI Search
-   * document. This is used to identify the specific document that was
-   * retrieved. The format is `projects/{project}/locations/{location}/collectio
-   * ns/{collection}/dataStores/{data_store}/branches/{branch}/documents/{docume
-   * nt}`.
-   *
-   * @param string $documentName
-   */
-  public function setDocumentName($documentName)
-  {
-    $this->documentName = $documentName;
-  }
-  /**
-   * @return string
-   */
-  public function getDocumentName()
-  {
-    return $this->documentName;
-  }
-  /**
-   * Additional context for a Retrieval-Augmented Generation (RAG) retrieval
-   * result. This is populated only when the RAG retrieval tool is used.
-   *
-   * @param GoogleCloudAiplatformV1RagChunk $ragChunk
+   * @param GoogleCloudAiplatformV1RagChunk
    */
   public function setRagChunk(GoogleCloudAiplatformV1RagChunk $ragChunk)
   {
@@ -88,9 +49,7 @@ class GoogleCloudAiplatformV1GroundingChunkRetrievedContext extends \Google\Mode
     return $this->ragChunk;
   }
   /**
-   * The content of the retrieved data source.
-   *
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {
@@ -104,9 +63,7 @@ class GoogleCloudAiplatformV1GroundingChunkRetrievedContext extends \Google\Mode
     return $this->text;
   }
   /**
-   * The title of the retrieved data source.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -120,9 +77,7 @@ class GoogleCloudAiplatformV1GroundingChunkRetrievedContext extends \Google\Mode
     return $this->title;
   }
   /**
-   * The URI of the retrieved data source.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

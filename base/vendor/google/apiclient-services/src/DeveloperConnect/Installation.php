@@ -20,28 +20,20 @@ namespace Google\Service\DeveloperConnect;
 class Installation extends \Google\Model
 {
   /**
-   * ID of the installation in GitHub.
-   *
    * @var string
    */
   public $id;
   /**
-   * Name of the GitHub user or organization that owns this installation.
-   *
    * @var string
    */
   public $name;
   /**
-   * Either "user" or "organization".
-   *
    * @var string
    */
   public $type;
 
   /**
-   * ID of the installation in GitHub.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -55,9 +47,7 @@ class Installation extends \Google\Model
     return $this->id;
   }
   /**
-   * Name of the GitHub user or organization that owns this installation.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -71,9 +61,7 @@ class Installation extends \Google\Model
     return $this->name;
   }
   /**
-   * Either "user" or "organization".
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

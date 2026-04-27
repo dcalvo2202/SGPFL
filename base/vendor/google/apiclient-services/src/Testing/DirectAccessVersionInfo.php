@@ -20,29 +20,16 @@ namespace Google\Service\Testing;
 class DirectAccessVersionInfo extends \Google\Model
 {
   /**
-   * Whether direct access is supported at all. Clients are expected to filter
-   * down the device list to only android models and versions which support
-   * Direct Access when that is the user intent.
-   *
    * @var bool
    */
   public $directAccessSupported;
   /**
-   * Output only. Indicates client-device compatibility, where a device is known
-   * to work only with certain workarounds implemented in the Android Studio
-   * client. Expected format "major.minor.micro.patch", e.g.
-   * "5921.22.2211.8881706".
-   *
    * @var string
    */
   public $minimumAndroidStudioVersion;
 
   /**
-   * Whether direct access is supported at all. Clients are expected to filter
-   * down the device list to only android models and versions which support
-   * Direct Access when that is the user intent.
-   *
-   * @param bool $directAccessSupported
+   * @param bool
    */
   public function setDirectAccessSupported($directAccessSupported)
   {
@@ -56,12 +43,7 @@ class DirectAccessVersionInfo extends \Google\Model
     return $this->directAccessSupported;
   }
   /**
-   * Output only. Indicates client-device compatibility, where a device is known
-   * to work only with certain workarounds implemented in the Android Studio
-   * client. Expected format "major.minor.micro.patch", e.g.
-   * "5921.22.2211.8881706".
-   *
-   * @param string $minimumAndroidStudioVersion
+   * @param string
    */
   public function setMinimumAndroidStudioVersion($minimumAndroidStudioVersion)
   {

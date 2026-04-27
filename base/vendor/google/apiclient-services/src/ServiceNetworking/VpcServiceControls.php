@@ -20,22 +20,12 @@ namespace Google\Service\ServiceNetworking;
 class VpcServiceControls extends \Google\Model
 {
   /**
-   * Output only. Indicates whether the VPC Service Controls are enabled or
-   * disabled for the connection. If the consumer called the
-   * EnableVpcServiceControls method, then this is true. If the consumer called
-   * DisableVpcServiceControls, then this is false. The default is false.
-   *
    * @var bool
    */
   public $enabled;
 
   /**
-   * Output only. Indicates whether the VPC Service Controls are enabled or
-   * disabled for the connection. If the consumer called the
-   * EnableVpcServiceControls method, then this is true. If the consumer called
-   * DisableVpcServiceControls, then this is false. The default is false.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {

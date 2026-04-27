@@ -20,16 +20,12 @@ namespace Google\Service\Bigquery;
 class QueryInfo extends \Google\Model
 {
   /**
-   * Output only. Information about query optimizations.
-   *
    * @var array[]
    */
   public $optimizationDetails;
 
   /**
-   * Output only. Information about query optimizations.
-   *
-   * @param array[] $optimizationDetails
+   * @param array[]
    */
   public function setOptimizationDetails($optimizationDetails)
   {

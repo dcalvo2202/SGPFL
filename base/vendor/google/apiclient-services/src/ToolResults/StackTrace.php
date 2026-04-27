@@ -20,16 +20,12 @@ namespace Google\Service\ToolResults;
 class StackTrace extends \Google\Model
 {
   /**
-   * The stack trace message. Required
-   *
    * @var string
    */
   public $exception;
 
   /**
-   * The stack trace message. Required
-   *
-   * @param string $exception
+   * @param string
    */
   public function setException($exception)
   {

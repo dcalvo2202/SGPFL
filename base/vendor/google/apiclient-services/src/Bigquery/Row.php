@@ -21,8 +21,6 @@ class Row extends \Google\Collection
 {
   protected $collection_key = 'entries';
   /**
-   * The original label of this row.
-   *
    * @var string
    */
   public $actualLabel;
@@ -30,9 +28,7 @@ class Row extends \Google\Collection
   protected $entriesDataType = 'array';
 
   /**
-   * The original label of this row.
-   *
-   * @param string $actualLabel
+   * @param string
    */
   public function setActualLabel($actualLabel)
   {
@@ -46,9 +42,7 @@ class Row extends \Google\Collection
     return $this->actualLabel;
   }
   /**
-   * Info describing predicted label distribution.
-   *
-   * @param Entry[] $entries
+   * @param Entry[]
    */
   public function setEntries($entries)
   {

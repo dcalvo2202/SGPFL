@@ -20,18 +20,12 @@ namespace Google\Service\FirebaseDynamicLinks;
 class NavigationInfo extends \Google\Model
 {
   /**
-   * If this option is on, FDL click will be forced to redirect rather than show
-   * an interstitial page.
-   *
    * @var bool
    */
   public $enableForcedRedirect;
 
   /**
-   * If this option is on, FDL click will be forced to redirect rather than show
-   * an interstitial page.
-   *
-   * @param bool $enableForcedRedirect
+   * @param bool
    */
   public function setEnableForcedRedirect($enableForcedRedirect)
   {

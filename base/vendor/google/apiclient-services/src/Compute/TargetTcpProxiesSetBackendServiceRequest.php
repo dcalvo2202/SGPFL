@@ -20,16 +20,12 @@ namespace Google\Service\Compute;
 class TargetTcpProxiesSetBackendServiceRequest extends \Google\Model
 {
   /**
-   * The URL of the new BackendService resource for the targetTcpProxy.
-   *
    * @var string
    */
   public $service;
 
   /**
-   * The URL of the new BackendService resource for the targetTcpProxy.
-   *
-   * @param string $service
+   * @param string
    */
   public function setService($service)
   {

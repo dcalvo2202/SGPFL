@@ -22,21 +22,14 @@ class Activity extends \Google\Model
   protected $contentDetailsType = ActivityContentDetails::class;
   protected $contentDetailsDataType = '';
   /**
-   * Etag of this resource
-   *
    * @var string
    */
   public $etag;
   /**
-   * The ID that YouTube uses to uniquely identify the activity.
-   *
    * @var string
    */
   public $id;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "youtube#activity".
-   *
    * @var string
    */
   public $kind;
@@ -44,11 +37,7 @@ class Activity extends \Google\Model
   protected $snippetDataType = '';
 
   /**
-   * The contentDetails object contains information about the content associated
-   * with the activity. For example, if the snippet.type value is videoRated,
-   * then the contentDetails object's content identifies the rated video.
-   *
-   * @param ActivityContentDetails $contentDetails
+   * @param ActivityContentDetails
    */
   public function setContentDetails(ActivityContentDetails $contentDetails)
   {
@@ -62,9 +51,7 @@ class Activity extends \Google\Model
     return $this->contentDetails;
   }
   /**
-   * Etag of this resource
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -78,9 +65,7 @@ class Activity extends \Google\Model
     return $this->etag;
   }
   /**
-   * The ID that YouTube uses to uniquely identify the activity.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -94,10 +79,7 @@ class Activity extends \Google\Model
     return $this->id;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "youtube#activity".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -111,10 +93,7 @@ class Activity extends \Google\Model
     return $this->kind;
   }
   /**
-   * The snippet object contains basic details about the activity, including the
-   * activity's type and group ID.
-   *
-   * @param ActivitySnippet $snippet
+   * @param ActivitySnippet
    */
   public function setSnippet(ActivitySnippet $snippet)
   {

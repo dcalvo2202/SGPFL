@@ -21,22 +21,16 @@ class DebugInfo extends \Google\Collection
 {
   protected $collection_key = 'stackEntries';
   /**
-   * Additional debugging information provided by the server.
-   *
    * @var string
    */
   public $detail;
   /**
-   * The stack trace entries indicating where the error occurred.
-   *
    * @var string[]
    */
   public $stackEntries;
 
   /**
-   * Additional debugging information provided by the server.
-   *
-   * @param string $detail
+   * @param string
    */
   public function setDetail($detail)
   {
@@ -50,9 +44,7 @@ class DebugInfo extends \Google\Collection
     return $this->detail;
   }
   /**
-   * The stack trace entries indicating where the error occurred.
-   *
-   * @param string[] $stackEntries
+   * @param string[]
    */
   public function setStackEntries($stackEntries)
   {

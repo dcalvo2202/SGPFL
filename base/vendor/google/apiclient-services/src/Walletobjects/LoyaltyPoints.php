@@ -22,9 +22,6 @@ class LoyaltyPoints extends \Google\Model
   protected $balanceType = LoyaltyPointsBalance::class;
   protected $balanceDataType = '';
   /**
-   * The loyalty points label, such as "Points". Recommended maximum length is 9
-   * characters.
-   *
    * @var string
    */
   public $label;
@@ -32,11 +29,7 @@ class LoyaltyPoints extends \Google\Model
   protected $localizedLabelDataType = '';
 
   /**
-   * The account holder's loyalty point balance, such as "500" or "$10.00".
-   * Recommended maximum length is 7 characters. This is a required field of
-   * `loyaltyPoints` and `secondaryLoyaltyPoints`.
-   *
-   * @param LoyaltyPointsBalance $balance
+   * @param LoyaltyPointsBalance
    */
   public function setBalance(LoyaltyPointsBalance $balance)
   {
@@ -50,10 +43,7 @@ class LoyaltyPoints extends \Google\Model
     return $this->balance;
   }
   /**
-   * The loyalty points label, such as "Points". Recommended maximum length is 9
-   * characters.
-   *
-   * @param string $label
+   * @param string
    */
   public function setLabel($label)
   {
@@ -67,10 +57,7 @@ class LoyaltyPoints extends \Google\Model
     return $this->label;
   }
   /**
-   * Translated strings for the label. Recommended maximum length is 9
-   * characters.
-   *
-   * @param LocalizedString $localizedLabel
+   * @param LocalizedString
    */
   public function setLocalizedLabel(LocalizedString $localizedLabel)
   {

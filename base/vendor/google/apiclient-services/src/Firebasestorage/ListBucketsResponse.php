@@ -23,17 +23,12 @@ class ListBucketsResponse extends \Google\Collection
   protected $bucketsType = Bucket::class;
   protected $bucketsDataType = 'array';
   /**
-   * A token that can be sent as `page_token` to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of linked buckets.
-   *
-   * @param Bucket[] $buckets
+   * @param Bucket[]
    */
   public function setBuckets($buckets)
   {
@@ -47,10 +42,7 @@ class ListBucketsResponse extends \Google\Collection
     return $this->buckets;
   }
   /**
-   * A token that can be sent as `page_token` to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

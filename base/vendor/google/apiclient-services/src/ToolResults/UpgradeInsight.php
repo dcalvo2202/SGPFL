@@ -20,23 +20,16 @@ namespace Google\Service\ToolResults;
 class UpgradeInsight extends \Google\Model
 {
   /**
-   * The name of the package to be upgraded.
-   *
    * @var string
    */
   public $packageName;
   /**
-   * The suggested version to upgrade to. Optional: In case we are not sure
-   * which version solves this problem
-   *
    * @var string
    */
   public $upgradeToVersion;
 
   /**
-   * The name of the package to be upgraded.
-   *
-   * @param string $packageName
+   * @param string
    */
   public function setPackageName($packageName)
   {
@@ -50,10 +43,7 @@ class UpgradeInsight extends \Google\Model
     return $this->packageName;
   }
   /**
-   * The suggested version to upgrade to. Optional: In case we are not sure
-   * which version solves this problem
-   *
-   * @param string $upgradeToVersion
+   * @param string
    */
   public function setUpgradeToVersion($upgradeToVersion)
   {

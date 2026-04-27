@@ -23,16 +23,12 @@ class GoogleCloudDatalabelingV1beta1ListAnnotationSpecSetsResponse extends \Goog
   protected $annotationSpecSetsType = GoogleCloudDatalabelingV1beta1AnnotationSpecSet::class;
   protected $annotationSpecSetsDataType = 'array';
   /**
-   * A token to retrieve next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of annotation spec sets.
-   *
-   * @param GoogleCloudDatalabelingV1beta1AnnotationSpecSet[] $annotationSpecSets
+   * @param GoogleCloudDatalabelingV1beta1AnnotationSpecSet[]
    */
   public function setAnnotationSpecSets($annotationSpecSets)
   {
@@ -46,9 +42,7 @@ class GoogleCloudDatalabelingV1beta1ListAnnotationSpecSetsResponse extends \Goog
     return $this->annotationSpecSets;
   }
   /**
-   * A token to retrieve next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

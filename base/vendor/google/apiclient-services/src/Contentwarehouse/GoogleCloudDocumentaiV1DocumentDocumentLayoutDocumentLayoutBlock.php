@@ -20,8 +20,6 @@ namespace Google\Service\Contentwarehouse;
 class GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlock extends \Google\Model
 {
   /**
-   * ID of the block.
-   *
    * @var string
    */
   public $blockId;
@@ -35,9 +33,7 @@ class GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlock extends \
   protected $textBlockDataType = '';
 
   /**
-   * ID of the block.
-   *
-   * @param string $blockId
+   * @param string
    */
   public function setBlockId($blockId)
   {
@@ -51,9 +47,7 @@ class GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlock extends \
     return $this->blockId;
   }
   /**
-   * Block consisting of list content/structure.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlockLayoutListBlock $listBlock
+   * @param GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlockLayoutListBlock
    */
   public function setListBlock(GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlockLayoutListBlock $listBlock)
   {
@@ -67,9 +61,7 @@ class GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlock extends \
     return $this->listBlock;
   }
   /**
-   * Page span of the block.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlockLayoutPageSpan $pageSpan
+   * @param GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlockLayoutPageSpan
    */
   public function setPageSpan(GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlockLayoutPageSpan $pageSpan)
   {
@@ -83,9 +75,7 @@ class GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlock extends \
     return $this->pageSpan;
   }
   /**
-   * Block consisting of table content/structure.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlockLayoutTableBlock $tableBlock
+   * @param GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlockLayoutTableBlock
    */
   public function setTableBlock(GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlockLayoutTableBlock $tableBlock)
   {
@@ -99,9 +89,7 @@ class GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlock extends \
     return $this->tableBlock;
   }
   /**
-   * Block consisting of text content.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlockLayoutTextBlock $textBlock
+   * @param GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlockLayoutTextBlock
    */
   public function setTextBlock(GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlockLayoutTextBlock $textBlock)
   {

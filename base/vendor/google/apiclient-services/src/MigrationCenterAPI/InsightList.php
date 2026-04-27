@@ -23,16 +23,12 @@ class InsightList extends \Google\Collection
   protected $insightsType = Insight::class;
   protected $insightsDataType = 'array';
   /**
-   * Output only. Update timestamp.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. Insights of the list.
-   *
-   * @param Insight[] $insights
+   * @param Insight[]
    */
   public function setInsights($insights)
   {
@@ -46,9 +42,7 @@ class InsightList extends \Google\Collection
     return $this->insights;
   }
   /**
-   * Output only. Update timestamp.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

@@ -29,12 +29,7 @@ class XPSPreprocessResponse extends \Google\Model
   protected $translationPreprocessRespDataType = '';
 
   /**
-   * Preprocessed examples, that are to be imported into AutoML storage. This
-   * should point to RecordIO file(s) of PreprocessedExample messages. The
-   * PreprocessedExample.mvp_training_data-s returned here are later verbatim
-   * passed to Train() call in TrainExample.mvp_training_data.
-   *
-   * @param XPSExampleSet $outputExampleSet
+   * @param XPSExampleSet
    */
   public function setOutputExampleSet(XPSExampleSet $outputExampleSet)
   {
@@ -48,7 +43,7 @@ class XPSPreprocessResponse extends \Google\Model
     return $this->outputExampleSet;
   }
   /**
-   * @param XPSSpeechPreprocessResponse $speechPreprocessResp
+   * @param XPSSpeechPreprocessResponse
    */
   public function setSpeechPreprocessResp(XPSSpeechPreprocessResponse $speechPreprocessResp)
   {
@@ -62,7 +57,7 @@ class XPSPreprocessResponse extends \Google\Model
     return $this->speechPreprocessResp;
   }
   /**
-   * @param XPSTablesPreprocessResponse $tablesPreprocessResponse
+   * @param XPSTablesPreprocessResponse
    */
   public function setTablesPreprocessResponse(XPSTablesPreprocessResponse $tablesPreprocessResponse)
   {
@@ -76,7 +71,7 @@ class XPSPreprocessResponse extends \Google\Model
     return $this->tablesPreprocessResponse;
   }
   /**
-   * @param XPSTranslationPreprocessResponse $translationPreprocessResp
+   * @param XPSTranslationPreprocessResponse
    */
   public function setTranslationPreprocessResp(XPSTranslationPreprocessResponse $translationPreprocessResp)
   {

@@ -19,68 +19,17 @@ namespace Google\Service\Config;
 
 class ConfigResource extends \Google\Model
 {
-  /**
-   * The default value. This value is used if the intent is omitted.
-   */
-  public const INTENT_INTENT_UNSPECIFIED = 'INTENT_UNSPECIFIED';
-  /**
-   * Infra Manager will create this Resource.
-   */
-  public const INTENT_CREATE = 'CREATE';
-  /**
-   * Infra Manager will update this Resource.
-   */
-  public const INTENT_UPDATE = 'UPDATE';
-  /**
-   * Infra Manager will delete this Resource.
-   */
-  public const INTENT_DELETE = 'DELETE';
-  /**
-   * Infra Manager will destroy and recreate this Resource.
-   */
-  public const INTENT_RECREATE = 'RECREATE';
-  /**
-   * Infra Manager will leave this Resource untouched.
-   */
-  public const INTENT_UNCHANGED = 'UNCHANGED';
-  /**
-   * The default value. This value is used if the state is omitted.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Resource has been planned for reconcile.
-   */
-  public const STATE_PLANNED = 'PLANNED';
-  /**
-   * Resource is actively reconciling into the intended state.
-   */
-  public const STATE_IN_PROGRESS = 'IN_PROGRESS';
-  /**
-   * Resource has reconciled to intended state.
-   */
-  public const STATE_RECONCILED = 'RECONCILED';
-  /**
-   * Resource failed to reconcile.
-   */
-  public const STATE_FAILED = 'FAILED';
   protected $caiAssetsType = ResourceCAIInfo::class;
   protected $caiAssetsDataType = 'map';
   /**
-   * Output only. Intent of the resource.
-   *
    * @var string
    */
   public $intent;
   /**
-   * Output only. Resource name. Format: `projects/{project}/locations/{location
-   * }/deployments/{deployment}/revisions/{revision}/resources/{resource}`
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Current state of the resource.
-   *
    * @var string
    */
   public $state;
@@ -88,11 +37,7 @@ class ConfigResource extends \Google\Model
   protected $terraformInfoDataType = '';
 
   /**
-   * Output only. Map of Cloud Asset Inventory (CAI) type to CAI info (e.g. CAI
-   * ID). CAI type format follows https://cloud.google.com/asset-
-   * inventory/docs/supported-asset-types
-   *
-   * @param ResourceCAIInfo[] $caiAssets
+   * @param ResourceCAIInfo[]
    */
   public function setCaiAssets($caiAssets)
   {
@@ -106,29 +51,21 @@ class ConfigResource extends \Google\Model
     return $this->caiAssets;
   }
   /**
-   * Output only. Intent of the resource.
-   *
-   * Accepted values: INTENT_UNSPECIFIED, CREATE, UPDATE, DELETE, RECREATE,
-   * UNCHANGED
-   *
-   * @param self::INTENT_* $intent
+   * @param string
    */
   public function setIntent($intent)
   {
     $this->intent = $intent;
   }
   /**
-   * @return self::INTENT_*
+   * @return string
    */
   public function getIntent()
   {
     return $this->intent;
   }
   /**
-   * Output only. Resource name. Format: `projects/{project}/locations/{location
-   * }/deployments/{deployment}/revisions/{revision}/resources/{resource}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -142,29 +79,21 @@ class ConfigResource extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Current state of the resource.
-   *
-   * Accepted values: STATE_UNSPECIFIED, PLANNED, IN_PROGRESS, RECONCILED,
-   * FAILED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. Terraform-specific info if this resource was created using
-   * Terraform.
-   *
-   * @param ResourceTerraformInfo $terraformInfo
+   * @param ResourceTerraformInfo
    */
   public function setTerraformInfo(ResourceTerraformInfo $terraformInfo)
   {

@@ -19,67 +19,31 @@ namespace Google\Service\Aiplatform;
 
 class GoogleCloudAiplatformV1SchemaPredictParamsGroundingConfigSourceEntry extends \Google\Model
 {
-  public const TYPE_UNSPECIFIED = 'UNSPECIFIED';
   /**
-   * Uses Web Search to check the grounding.
-   */
-  public const TYPE_WEB = 'WEB';
-  /**
-   * Uses Vertex AI Search to check the grounding. Deprecated. Use
-   * VERTEX_AI_SEARCH instead.
-   *
-   * @deprecated
-   */
-  public const TYPE_ENTERPRISE = 'ENTERPRISE';
-  /**
-   * Uses Vertex AI Search to check the grounding
-   */
-  public const TYPE_VERTEX_AI_SEARCH = 'VERTEX_AI_SEARCH';
-  /**
-   * Uses inline context to check the grounding.
-   */
-  public const TYPE_INLINE = 'INLINE';
-  /**
-   * The uri of the Vertex AI Search data source. Deprecated. Use
-   * vertex_ai_search_datastore instead.
-   *
-   * @deprecated
    * @var string
    */
   public $enterpriseDatastore;
   /**
-   * The grounding text passed inline with the Predict API. It can support up to
-   * 1 million bytes.
-   *
    * @var string
    */
   public $inlineContext;
   /**
-   * The type of the grounding checking source.
-   *
    * @var string
    */
   public $type;
   /**
-   * The uri of the Vertex AI Search data source.
-   *
    * @var string
    */
   public $vertexAiSearchDatastore;
 
   /**
-   * The uri of the Vertex AI Search data source. Deprecated. Use
-   * vertex_ai_search_datastore instead.
-   *
-   * @deprecated
-   * @param string $enterpriseDatastore
+   * @param string
    */
   public function setEnterpriseDatastore($enterpriseDatastore)
   {
     $this->enterpriseDatastore = $enterpriseDatastore;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getEnterpriseDatastore()
@@ -87,10 +51,7 @@ class GoogleCloudAiplatformV1SchemaPredictParamsGroundingConfigSourceEntry exten
     return $this->enterpriseDatastore;
   }
   /**
-   * The grounding text passed inline with the Predict API. It can support up to
-   * 1 million bytes.
-   *
-   * @param string $inlineContext
+   * @param string
    */
   public function setInlineContext($inlineContext)
   {
@@ -104,27 +65,21 @@ class GoogleCloudAiplatformV1SchemaPredictParamsGroundingConfigSourceEntry exten
     return $this->inlineContext;
   }
   /**
-   * The type of the grounding checking source.
-   *
-   * Accepted values: UNSPECIFIED, WEB, ENTERPRISE, VERTEX_AI_SEARCH, INLINE
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * The uri of the Vertex AI Search data source.
-   *
-   * @param string $vertexAiSearchDatastore
+   * @param string
    */
   public function setVertexAiSearchDatastore($vertexAiSearchDatastore)
   {

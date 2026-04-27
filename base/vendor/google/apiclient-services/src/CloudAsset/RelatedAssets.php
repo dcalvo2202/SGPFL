@@ -26,9 +26,7 @@ class RelatedAssets extends \Google\Collection
   protected $relationshipAttributesDataType = '';
 
   /**
-   * The peer resources of the relationship.
-   *
-   * @param RelatedAsset[] $assets
+   * @param RelatedAsset[]
    */
   public function setAssets($assets)
   {
@@ -42,9 +40,7 @@ class RelatedAssets extends \Google\Collection
     return $this->assets;
   }
   /**
-   * The detailed relationship attributes.
-   *
-   * @param RelationshipAttributes $relationshipAttributes
+   * @param RelationshipAttributes
    */
   public function setRelationshipAttributes(RelationshipAttributes $relationshipAttributes)
   {

@@ -22,31 +22,20 @@ class GoogleCloudDatapipelinesV1LaunchFlexTemplateRequest extends \Google\Model
   protected $launchParameterType = GoogleCloudDatapipelinesV1LaunchFlexTemplateParameter::class;
   protected $launchParameterDataType = '';
   /**
-   * Required. The [regional endpoint]
-   * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to
-   * which to direct the request. For example, `us-central1`, `us-west1`.
-   *
    * @var string
    */
   public $location;
   /**
-   * Required. The ID of the Cloud Platform project that the job belongs to.
-   *
    * @var string
    */
   public $projectId;
   /**
-   * If true, the request is validated but not actually executed. Defaults to
-   * false.
-   *
    * @var bool
    */
   public $validateOnly;
 
   /**
-   * Required. Parameter to launch a job from a Flex Template.
-   *
-   * @param GoogleCloudDatapipelinesV1LaunchFlexTemplateParameter $launchParameter
+   * @param GoogleCloudDatapipelinesV1LaunchFlexTemplateParameter
    */
   public function setLaunchParameter(GoogleCloudDatapipelinesV1LaunchFlexTemplateParameter $launchParameter)
   {
@@ -60,11 +49,7 @@ class GoogleCloudDatapipelinesV1LaunchFlexTemplateRequest extends \Google\Model
     return $this->launchParameter;
   }
   /**
-   * Required. The [regional endpoint]
-   * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to
-   * which to direct the request. For example, `us-central1`, `us-west1`.
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -78,9 +63,7 @@ class GoogleCloudDatapipelinesV1LaunchFlexTemplateRequest extends \Google\Model
     return $this->location;
   }
   /**
-   * Required. The ID of the Cloud Platform project that the job belongs to.
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {
@@ -94,10 +77,7 @@ class GoogleCloudDatapipelinesV1LaunchFlexTemplateRequest extends \Google\Model
     return $this->projectId;
   }
   /**
-   * If true, the request is validated but not actually executed. Defaults to
-   * false.
-   *
-   * @param bool $validateOnly
+   * @param bool
    */
   public function setValidateOnly($validateOnly)
   {

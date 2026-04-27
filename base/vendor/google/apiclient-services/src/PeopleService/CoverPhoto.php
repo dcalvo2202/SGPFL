@@ -20,26 +20,18 @@ namespace Google\Service\PeopleService;
 class CoverPhoto extends \Google\Model
 {
   /**
-   * True if the cover photo is the default cover photo; false if the cover
-   * photo is a user-provided cover photo.
-   *
    * @var bool
    */
   public $default;
   protected $metadataType = FieldMetadata::class;
   protected $metadataDataType = '';
   /**
-   * The URL of the cover photo.
-   *
    * @var string
    */
   public $url;
 
   /**
-   * True if the cover photo is the default cover photo; false if the cover
-   * photo is a user-provided cover photo.
-   *
-   * @param bool $default
+   * @param bool
    */
   public function setDefault($default)
   {
@@ -53,9 +45,7 @@ class CoverPhoto extends \Google\Model
     return $this->default;
   }
   /**
-   * Metadata about the cover photo.
-   *
-   * @param FieldMetadata $metadata
+   * @param FieldMetadata
    */
   public function setMetadata(FieldMetadata $metadata)
   {
@@ -69,9 +59,7 @@ class CoverPhoto extends \Google\Model
     return $this->metadata;
   }
   /**
-   * The URL of the cover photo.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

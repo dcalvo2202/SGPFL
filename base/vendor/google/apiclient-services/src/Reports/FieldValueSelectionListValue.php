@@ -24,9 +24,7 @@ class FieldValueSelectionListValue extends \Google\Collection
   protected $valuesDataType = 'array';
 
   /**
-   * List of selections.
-   *
-   * @param FieldValueSelectionValue[] $values
+   * @param FieldValueSelectionValue[]
    */
   public function setValues($values)
   {

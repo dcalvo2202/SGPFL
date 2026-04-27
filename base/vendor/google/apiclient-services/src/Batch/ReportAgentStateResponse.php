@@ -21,32 +21,22 @@ class ReportAgentStateResponse extends \Google\Collection
 {
   protected $collection_key = 'tasks';
   /**
-   * Default report interval override
-   *
    * @var string
    */
   public $defaultReportInterval;
   /**
-   * Minimum report interval override
-   *
    * @var string
    */
   public $minReportInterval;
   protected $tasksType = AgentTask::class;
   protected $tasksDataType = 'array';
   /**
-   * If true, the cloud logging for batch agent will use
-   * batch.googleapis.com/Job as monitored resource for Batch job related
-   * logging.
-   *
    * @var bool
    */
   public $useBatchMonitoredResource;
 
   /**
-   * Default report interval override
-   *
-   * @param string $defaultReportInterval
+   * @param string
    */
   public function setDefaultReportInterval($defaultReportInterval)
   {
@@ -60,9 +50,7 @@ class ReportAgentStateResponse extends \Google\Collection
     return $this->defaultReportInterval;
   }
   /**
-   * Minimum report interval override
-   *
-   * @param string $minReportInterval
+   * @param string
    */
   public function setMinReportInterval($minReportInterval)
   {
@@ -76,9 +64,7 @@ class ReportAgentStateResponse extends \Google\Collection
     return $this->minReportInterval;
   }
   /**
-   * Tasks assigned to the agent
-   *
-   * @param AgentTask[] $tasks
+   * @param AgentTask[]
    */
   public function setTasks($tasks)
   {
@@ -92,11 +78,7 @@ class ReportAgentStateResponse extends \Google\Collection
     return $this->tasks;
   }
   /**
-   * If true, the cloud logging for batch agent will use
-   * batch.googleapis.com/Job as monitored resource for Batch job related
-   * logging.
-   *
-   * @param bool $useBatchMonitoredResource
+   * @param bool
    */
   public function setUseBatchMonitoredResource($useBatchMonitoredResource)
   {

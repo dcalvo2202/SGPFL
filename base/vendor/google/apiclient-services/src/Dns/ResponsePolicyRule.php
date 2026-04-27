@@ -19,32 +19,11 @@ namespace Google\Service\Dns;
 
 class ResponsePolicyRule extends \Google\Model
 {
-  public const BEHAVIOR_behaviorUnspecified = 'behaviorUnspecified';
   /**
-   * Skip a less-specific Response Policy Rule and let the query logic continue.
-   * This mechanism, when used with wildcard selectors, lets you exempt specific
-   * subdomains from a broader Response Policy Rule and direct the queries to
-   * the public internet instead. For example, if the following rules exist: ```
-   * *.example.com -> LocalData 1.2.3.4 foo.example.com -> Behavior
-   * 'passthrough' ``` A query for foo.example.com skips the wildcard rule. This
-   * functionality also facilitates allowlisting. Response Policy Zones (RPZs)
-   * can be applied at multiple levels within the hierarchy: for example, an
-   * organization, a folder, a project, or a VPC network. If an RPZ rule is
-   * applied at a higher level, adding a `passthrough` rule at a lower level
-   * will override it. Queries from affected virtual machines (VMs) to that
-   * domain bypass the RPZ and proceed with normal resolution.
-   */
-  public const BEHAVIOR_bypassResponsePolicy = 'bypassResponsePolicy';
-  /**
-   * Answer this query with a behavior rather than DNS data.
-   *
    * @var string
    */
   public $behavior;
   /**
-   * The DNS name (wildcard or exact) to apply this rule to. Must be unique
-   * within the Response Policy Rule.
-   *
    * @var string
    */
   public $dnsName;
@@ -55,35 +34,26 @@ class ResponsePolicyRule extends \Google\Model
   protected $localDataType = ResponsePolicyRuleLocalData::class;
   protected $localDataDataType = '';
   /**
-   * An identifier for this rule. Must be unique with the ResponsePolicy.
-   *
    * @var string
    */
   public $ruleName;
 
   /**
-   * Answer this query with a behavior rather than DNS data.
-   *
-   * Accepted values: behaviorUnspecified, bypassResponsePolicy
-   *
-   * @param self::BEHAVIOR_* $behavior
+   * @param string
    */
   public function setBehavior($behavior)
   {
     $this->behavior = $behavior;
   }
   /**
-   * @return self::BEHAVIOR_*
+   * @return string
    */
   public function getBehavior()
   {
     return $this->behavior;
   }
   /**
-   * The DNS name (wildcard or exact) to apply this rule to. Must be unique
-   * within the Response Policy Rule.
-   *
-   * @param string $dnsName
+   * @param string
    */
   public function setDnsName($dnsName)
   {
@@ -97,7 +67,7 @@ class ResponsePolicyRule extends \Google\Model
     return $this->dnsName;
   }
   /**
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -111,12 +81,7 @@ class ResponsePolicyRule extends \Google\Model
     return $this->kind;
   }
   /**
-   * Answer this query directly with DNS data. These ResourceRecordSets override
-   * any other DNS behavior for the matched name; in particular they override
-   * private zones, the public internet, and GCP internal DNS. No SOA nor NS
-   * types are allowed.
-   *
-   * @param ResponsePolicyRuleLocalData $localData
+   * @param ResponsePolicyRuleLocalData
    */
   public function setLocalData(ResponsePolicyRuleLocalData $localData)
   {
@@ -130,9 +95,7 @@ class ResponsePolicyRule extends \Google\Model
     return $this->localData;
   }
   /**
-   * An identifier for this rule. Must be unique with the ResponsePolicy.
-   *
-   * @param string $ruleName
+   * @param string
    */
   public function setRuleName($ruleName)
   {

@@ -20,22 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1ReadTensorboardUsageResponsePerUserUsageData extends \Google\Model
 {
   /**
-   * User's username
-   *
    * @var string
    */
   public $username;
   /**
-   * Number of times the user has read data within the Tensorboard.
-   *
    * @var string
    */
   public $viewCount;
 
   /**
-   * User's username
-   *
-   * @param string $username
+   * @param string
    */
   public function setUsername($username)
   {
@@ -49,9 +43,7 @@ class GoogleCloudAiplatformV1ReadTensorboardUsageResponsePerUserUsageData extend
     return $this->username;
   }
   /**
-   * Number of times the user has read data within the Tensorboard.
-   *
-   * @param string $viewCount
+   * @param string
    */
   public function setViewCount($viewCount)
   {

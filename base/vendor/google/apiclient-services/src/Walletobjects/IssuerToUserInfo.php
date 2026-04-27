@@ -19,21 +19,6 @@ namespace Google\Service\Walletobjects;
 
 class IssuerToUserInfo extends \Google\Model
 {
-  public const ACTION_ACTION_UNSPECIFIED = 'ACTION_UNSPECIFIED';
-  public const ACTION_S2AP = 'S2AP';
-  /**
-   * Legacy alias for `S2AP`. Deprecated.
-   *
-   * @deprecated
-   */
-  public const ACTION_s2ap = 's2ap';
-  public const ACTION_SIGN_UP = 'SIGN_UP';
-  /**
-   * Legacy alias for `SIGN_UP`. Deprecated.
-   *
-   * @deprecated
-   */
-  public const ACTION_signUp = 'signUp';
   /**
    * @var string
    */
@@ -41,34 +26,30 @@ class IssuerToUserInfo extends \Google\Model
   protected $signUpInfoType = SignUpInfo::class;
   protected $signUpInfoDataType = '';
   /**
-   * Currently not used, consider deprecating.
-   *
    * @var string
    */
   public $url;
   /**
-   * JSON web token for action S2AP.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * @param self::ACTION_* $action
+   * @param string
    */
   public function setAction($action)
   {
     $this->action = $action;
   }
   /**
-   * @return self::ACTION_*
+   * @return string
    */
   public function getAction()
   {
     return $this->action;
   }
   /**
-   * @param SignUpInfo $signUpInfo
+   * @param SignUpInfo
    */
   public function setSignUpInfo(SignUpInfo $signUpInfo)
   {
@@ -82,9 +63,7 @@ class IssuerToUserInfo extends \Google\Model
     return $this->signUpInfo;
   }
   /**
-   * Currently not used, consider deprecating.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {
@@ -98,9 +77,7 @@ class IssuerToUserInfo extends \Google\Model
     return $this->url;
   }
   /**
-   * JSON web token for action S2AP.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

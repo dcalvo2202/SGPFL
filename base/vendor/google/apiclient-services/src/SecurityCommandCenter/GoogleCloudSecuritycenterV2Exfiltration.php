@@ -25,18 +25,12 @@ class GoogleCloudSecuritycenterV2Exfiltration extends \Google\Collection
   protected $targetsType = GoogleCloudSecuritycenterV2ExfilResource::class;
   protected $targetsDataType = 'array';
   /**
-   * Total exfiltrated bytes processed for the entire job.
-   *
    * @var string
    */
   public $totalExfiltratedBytes;
 
   /**
-   * If there are multiple sources, then the data is considered "joined" between
-   * them. For instance, BigQuery can join multiple tables, and each table would
-   * be considered a source.
-   *
-   * @param GoogleCloudSecuritycenterV2ExfilResource[] $sources
+   * @param GoogleCloudSecuritycenterV2ExfilResource[]
    */
   public function setSources($sources)
   {
@@ -50,10 +44,7 @@ class GoogleCloudSecuritycenterV2Exfiltration extends \Google\Collection
     return $this->sources;
   }
   /**
-   * If there are multiple targets, each target would get a complete copy of the
-   * "joined" source data.
-   *
-   * @param GoogleCloudSecuritycenterV2ExfilResource[] $targets
+   * @param GoogleCloudSecuritycenterV2ExfilResource[]
    */
   public function setTargets($targets)
   {
@@ -67,9 +58,7 @@ class GoogleCloudSecuritycenterV2Exfiltration extends \Google\Collection
     return $this->targets;
   }
   /**
-   * Total exfiltrated bytes processed for the entire job.
-   *
-   * @param string $totalExfiltratedBytes
+   * @param string
    */
   public function setTotalExfiltratedBytes($totalExfiltratedBytes)
   {

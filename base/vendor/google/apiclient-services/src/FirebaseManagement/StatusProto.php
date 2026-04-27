@@ -20,44 +20,26 @@ namespace Google\Service\FirebaseManagement;
 class StatusProto extends \Google\Model
 {
   /**
-   * copybara:strip_begin(b/383363683) copybara:strip_end_and_replace optional
-   * int32 canonical_code = 6;
-   *
    * @var int
    */
   public $canonicalCode;
   /**
-   * Numeric code drawn from the space specified below. Often, this is the
-   * canonical error space, and code is drawn from google3/util/task/codes.proto
-   * copybara:strip_begin(b/383363683) copybara:strip_end_and_replace optional
-   * int32 code = 1;
-   *
    * @var int
    */
   public $code;
   /**
-   * Detail message copybara:strip_begin(b/383363683)
-   * copybara:strip_end_and_replace optional string message = 3;
-   *
    * @var string
    */
   public $message;
   protected $messageSetType = MessageSet::class;
   protected $messageSetDataType = '';
   /**
-   * copybara:strip_begin(b/383363683) Space to which this status belongs
-   * copybara:strip_end_and_replace optional string space = 2; // Space to which
-   * this status belongs
-   *
    * @var string
    */
   public $space;
 
   /**
-   * copybara:strip_begin(b/383363683) copybara:strip_end_and_replace optional
-   * int32 canonical_code = 6;
-   *
-   * @param int $canonicalCode
+   * @param int
    */
   public function setCanonicalCode($canonicalCode)
   {
@@ -71,12 +53,7 @@ class StatusProto extends \Google\Model
     return $this->canonicalCode;
   }
   /**
-   * Numeric code drawn from the space specified below. Often, this is the
-   * canonical error space, and code is drawn from google3/util/task/codes.proto
-   * copybara:strip_begin(b/383363683) copybara:strip_end_and_replace optional
-   * int32 code = 1;
-   *
-   * @param int $code
+   * @param int
    */
   public function setCode($code)
   {
@@ -90,10 +67,7 @@ class StatusProto extends \Google\Model
     return $this->code;
   }
   /**
-   * Detail message copybara:strip_begin(b/383363683)
-   * copybara:strip_end_and_replace optional string message = 3;
-   *
-   * @param string $message
+   * @param string
    */
   public function setMessage($message)
   {
@@ -107,11 +81,7 @@ class StatusProto extends \Google\Model
     return $this->message;
   }
   /**
-   * message_set associates an arbitrary proto message with the status.
-   * copybara:strip_begin(b/383363683) copybara:strip_end_and_replace optional
-   * proto2.bridge.MessageSet message_set = 5;
-   *
-   * @param MessageSet $messageSet
+   * @param MessageSet
    */
   public function setMessageSet(MessageSet $messageSet)
   {
@@ -125,11 +95,7 @@ class StatusProto extends \Google\Model
     return $this->messageSet;
   }
   /**
-   * copybara:strip_begin(b/383363683) Space to which this status belongs
-   * copybara:strip_end_and_replace optional string space = 2; // Space to which
-   * this status belongs
-   *
-   * @param string $space
+   * @param string
    */
   public function setSpace($space)
   {

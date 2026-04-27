@@ -24,23 +24,16 @@ class Video extends \Google\Model
   protected $contentDetailsType = VideoContentDetails::class;
   protected $contentDetailsDataType = '';
   /**
-   * Etag of this resource.
-   *
    * @var string
    */
   public $etag;
   protected $fileDetailsType = VideoFileDetails::class;
   protected $fileDetailsDataType = '';
   /**
-   * The ID that YouTube uses to uniquely identify the video.
-   *
    * @var string
    */
   public $id;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "youtube#video".
-   *
    * @var string
    */
   public $kind;
@@ -72,10 +65,7 @@ class Video extends \Google\Model
   protected $topicDetailsDataType = '';
 
   /**
-   * Age restriction details related to a video. This data can only be retrieved
-   * by the video owner.
-   *
-   * @param VideoAgeGating $ageGating
+   * @param VideoAgeGating
    */
   public function setAgeGating(VideoAgeGating $ageGating)
   {
@@ -89,10 +79,7 @@ class Video extends \Google\Model
     return $this->ageGating;
   }
   /**
-   * The contentDetails object contains information about the video content,
-   * including the length of the video and its aspect ratio.
-   *
-   * @param VideoContentDetails $contentDetails
+   * @param VideoContentDetails
    */
   public function setContentDetails(VideoContentDetails $contentDetails)
   {
@@ -106,9 +93,7 @@ class Video extends \Google\Model
     return $this->contentDetails;
   }
   /**
-   * Etag of this resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -122,12 +107,7 @@ class Video extends \Google\Model
     return $this->etag;
   }
   /**
-   * The fileDetails object encapsulates information about the video file that
-   * was uploaded to YouTube, including the file's resolution, duration, audio
-   * and video codecs, stream bitrates, and more. This data can only be
-   * retrieved by the video owner.
-   *
-   * @param VideoFileDetails $fileDetails
+   * @param VideoFileDetails
    */
   public function setFileDetails(VideoFileDetails $fileDetails)
   {
@@ -141,9 +121,7 @@ class Video extends \Google\Model
     return $this->fileDetails;
   }
   /**
-   * The ID that YouTube uses to uniquely identify the video.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -157,10 +135,7 @@ class Video extends \Google\Model
     return $this->id;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "youtube#video".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -174,11 +149,7 @@ class Video extends \Google\Model
     return $this->kind;
   }
   /**
-   * The liveStreamingDetails object contains metadata about a live video
-   * broadcast. The object will only be present in a video resource if the video
-   * is an upcoming, live, or completed live broadcast.
-   *
-   * @param VideoLiveStreamingDetails $liveStreamingDetails
+   * @param VideoLiveStreamingDetails
    */
   public function setLiveStreamingDetails(VideoLiveStreamingDetails $liveStreamingDetails)
   {
@@ -192,10 +163,7 @@ class Video extends \Google\Model
     return $this->liveStreamingDetails;
   }
   /**
-   * The localizations object contains localized versions of the basic details
-   * about the video, such as its title and description.
-   *
-   * @param VideoLocalization[] $localizations
+   * @param VideoLocalization[]
    */
   public function setLocalizations($localizations)
   {
@@ -209,10 +177,7 @@ class Video extends \Google\Model
     return $this->localizations;
   }
   /**
-   * The monetizationDetails object encapsulates information about the
-   * monetization status of the video.
-   *
-   * @param VideoMonetizationDetails $monetizationDetails
+   * @param VideoMonetizationDetails
    */
   public function setMonetizationDetails(VideoMonetizationDetails $monetizationDetails)
   {
@@ -226,7 +191,7 @@ class Video extends \Google\Model
     return $this->monetizationDetails;
   }
   /**
-   * @param VideoPaidProductPlacementDetails $paidProductPlacementDetails
+   * @param VideoPaidProductPlacementDetails
    */
   public function setPaidProductPlacementDetails(VideoPaidProductPlacementDetails $paidProductPlacementDetails)
   {
@@ -240,10 +205,7 @@ class Video extends \Google\Model
     return $this->paidProductPlacementDetails;
   }
   /**
-   * The player object contains information that you would use to play the video
-   * in an embedded player.
-   *
-   * @param VideoPlayer $player
+   * @param VideoPlayer
    */
   public function setPlayer(VideoPlayer $player)
   {
@@ -257,17 +219,7 @@ class Video extends \Google\Model
     return $this->player;
   }
   /**
-   * The processingDetails object encapsulates information about YouTube's
-   * progress in processing the uploaded video file. The properties in the
-   * object identify the current processing status and an estimate of the time
-   * remaining until YouTube finishes processing the video. This part also
-   * indicates whether different types of data or content, such as file details
-   * or thumbnail images, are available for the video. The processingProgress
-   * object is designed to be polled so that the video uploaded can track the
-   * progress that YouTube has made in processing the uploaded video file. This
-   * data can only be retrieved by the video owner.
-   *
-   * @param VideoProcessingDetails $processingDetails
+   * @param VideoProcessingDetails
    */
   public function setProcessingDetails(VideoProcessingDetails $processingDetails)
   {
@@ -281,15 +233,13 @@ class Video extends \Google\Model
     return $this->processingDetails;
   }
   /**
-   * @deprecated
-   * @param VideoProjectDetails $projectDetails
+   * @param VideoProjectDetails
    */
   public function setProjectDetails(VideoProjectDetails $projectDetails)
   {
     $this->projectDetails = $projectDetails;
   }
   /**
-   * @deprecated
    * @return VideoProjectDetails
    */
   public function getProjectDetails()
@@ -297,10 +247,7 @@ class Video extends \Google\Model
     return $this->projectDetails;
   }
   /**
-   * The recordingDetails object encapsulates information about the location,
-   * date and address where the video was recorded.
-   *
-   * @param VideoRecordingDetails $recordingDetails
+   * @param VideoRecordingDetails
    */
   public function setRecordingDetails(VideoRecordingDetails $recordingDetails)
   {
@@ -314,10 +261,7 @@ class Video extends \Google\Model
     return $this->recordingDetails;
   }
   /**
-   * The snippet object contains basic details about the video, such as its
-   * title, description, and category.
-   *
-   * @param VideoSnippet $snippet
+   * @param VideoSnippet
    */
   public function setSnippet(VideoSnippet $snippet)
   {
@@ -331,9 +275,7 @@ class Video extends \Google\Model
     return $this->snippet;
   }
   /**
-   * The statistics object contains statistics about the video.
-   *
-   * @param VideoStatistics $statistics
+   * @param VideoStatistics
    */
   public function setStatistics(VideoStatistics $statistics)
   {
@@ -347,10 +289,7 @@ class Video extends \Google\Model
     return $this->statistics;
   }
   /**
-   * The status object contains information about the video's uploading,
-   * processing, and privacy statuses.
-   *
-   * @param VideoStatus $status
+   * @param VideoStatus
    */
   public function setStatus(VideoStatus $status)
   {
@@ -364,11 +303,7 @@ class Video extends \Google\Model
     return $this->status;
   }
   /**
-   * The suggestions object encapsulates suggestions that identify opportunities
-   * to improve the video quality or the metadata for the uploaded video. This
-   * data can only be retrieved by the video owner.
-   *
-   * @param VideoSuggestions $suggestions
+   * @param VideoSuggestions
    */
   public function setSuggestions(VideoSuggestions $suggestions)
   {
@@ -382,10 +317,7 @@ class Video extends \Google\Model
     return $this->suggestions;
   }
   /**
-   * The topicDetails object encapsulates information about Freebase topics
-   * associated with the video.
-   *
-   * @param VideoTopicDetails $topicDetails
+   * @param VideoTopicDetails
    */
   public function setTopicDetails(VideoTopicDetails $topicDetails)
   {

@@ -20,28 +20,20 @@ namespace Google\Service\PlayIntegrity;
 class Values extends \Google\Model
 {
   /**
-   * Required. First recall bit value.
-   *
    * @var bool
    */
   public $bitFirst;
   /**
-   * Required. Second recall bit value.
-   *
    * @var bool
    */
   public $bitSecond;
   /**
-   * Required. Third recall bit value.
-   *
    * @var bool
    */
   public $bitThird;
 
   /**
-   * Required. First recall bit value.
-   *
-   * @param bool $bitFirst
+   * @param bool
    */
   public function setBitFirst($bitFirst)
   {
@@ -55,9 +47,7 @@ class Values extends \Google\Model
     return $this->bitFirst;
   }
   /**
-   * Required. Second recall bit value.
-   *
-   * @param bool $bitSecond
+   * @param bool
    */
   public function setBitSecond($bitSecond)
   {
@@ -71,9 +61,7 @@ class Values extends \Google\Model
     return $this->bitSecond;
   }
   /**
-   * Required. Third recall bit value.
-   *
-   * @param bool $bitThird
+   * @param bool
    */
   public function setBitThird($bitThird)
   {

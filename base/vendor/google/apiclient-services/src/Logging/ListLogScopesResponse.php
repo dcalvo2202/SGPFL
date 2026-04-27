@@ -23,18 +23,12 @@ class ListLogScopesResponse extends \Google\Collection
   protected $logScopesType = LogScope::class;
   protected $logScopesDataType = 'array';
   /**
-   * If there might be more results than appear in this response, then
-   * nextPageToken is included. To get the next set of results, call the same
-   * method again using the value of nextPageToken as pageToken.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * A list of log scopes.
-   *
-   * @param LogScope[] $logScopes
+   * @param LogScope[]
    */
   public function setLogScopes($logScopes)
   {
@@ -48,11 +42,7 @@ class ListLogScopesResponse extends \Google\Collection
     return $this->logScopes;
   }
   /**
-   * If there might be more results than appear in this response, then
-   * nextPageToken is included. To get the next set of results, call the same
-   * method again using the value of nextPageToken as pageToken.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

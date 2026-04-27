@@ -20,38 +20,16 @@ namespace Google\Service\Integrations;
 class GoogleCloudConnectorsV1EncryptionKey extends \Google\Model
 {
   /**
-   * Value type is not specified.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * Google Managed.
-   */
-  public const TYPE_GOOGLE_MANAGED = 'GOOGLE_MANAGED';
-  /**
-   * Customer Managed.
-   */
-  public const TYPE_CUSTOMER_MANAGED = 'CUSTOMER_MANAGED';
-  /**
-   * Optional. The [KMS key name] with which the content of the Operation is
-   * encrypted. The expected format: `projects/locations/keyRings/cryptoKeys`.
-   * Will be empty string if google managed.
-   *
    * @var string
    */
   public $kmsKeyName;
   /**
-   * Optional. Specifies the type of the encryption key.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Optional. The [KMS key name] with which the content of the Operation is
-   * encrypted. The expected format: `projects/locations/keyRings/cryptoKeys`.
-   * Will be empty string if google managed.
-   *
-   * @param string $kmsKeyName
+   * @param string
    */
   public function setKmsKeyName($kmsKeyName)
   {
@@ -65,18 +43,14 @@ class GoogleCloudConnectorsV1EncryptionKey extends \Google\Model
     return $this->kmsKeyName;
   }
   /**
-   * Optional. Specifies the type of the encryption key.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, GOOGLE_MANAGED, CUSTOMER_MANAGED
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

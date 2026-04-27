@@ -20,23 +20,16 @@ namespace Google\Service\CloudResourceManager;
 class CreateFolderMetadata extends \Google\Model
 {
   /**
-   * The display name of the folder.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * The resource name of the folder or organization we are creating the folder
-   * under.
-   *
    * @var string
    */
   public $parent;
 
   /**
-   * The display name of the folder.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -50,10 +43,7 @@ class CreateFolderMetadata extends \Google\Model
     return $this->displayName;
   }
   /**
-   * The resource name of the folder or organization we are creating the folder
-   * under.
-   *
-   * @param string $parent
+   * @param string
    */
   public function setParent($parent)
   {

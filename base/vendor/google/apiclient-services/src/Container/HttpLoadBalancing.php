@@ -20,20 +20,12 @@ namespace Google\Service\Container;
 class HttpLoadBalancing extends \Google\Model
 {
   /**
-   * Whether the HTTP Load Balancing controller is enabled in the cluster. When
-   * enabled, it runs a small pod in the cluster that manages the load
-   * balancers.
-   *
    * @var bool
    */
   public $disabled;
 
   /**
-   * Whether the HTTP Load Balancing controller is enabled in the cluster. When
-   * enabled, it runs a small pod in the cluster that manages the load
-   * balancers.
-   *
-   * @param bool $disabled
+   * @param bool
    */
   public function setDisabled($disabled)
   {

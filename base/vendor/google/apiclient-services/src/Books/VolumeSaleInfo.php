@@ -21,22 +21,14 @@ class VolumeSaleInfo extends \Google\Collection
 {
   protected $collection_key = 'offers';
   /**
-   * URL to purchase this volume on the Google Books site. (In LITE projection)
-   *
    * @var string
    */
   public $buyLink;
   /**
-   * The two-letter ISO_3166-1 country code for which this sale information is
-   * valid. (In LITE projection.)
-   *
    * @var string
    */
   public $country;
   /**
-   * Whether or not this volume is an eBook (can be added to the My eBooks
-   * shelf).
-   *
    * @var bool
    */
   public $isEbook;
@@ -45,27 +37,18 @@ class VolumeSaleInfo extends \Google\Collection
   protected $offersType = VolumeSaleInfoOffers::class;
   protected $offersDataType = 'array';
   /**
-   * The date on which this book is available for sale.
-   *
    * @var string
    */
   public $onSaleDate;
   protected $retailPriceType = VolumeSaleInfoRetailPrice::class;
   protected $retailPriceDataType = '';
   /**
-   * Whether or not this book is available for sale or offered for free in the
-   * Google eBookstore for the country listed above. Possible values are
-   * FOR_SALE, FOR_RENTAL_ONLY, FOR_SALE_AND_RENTAL, FREE, NOT_FOR_SALE, or
-   * FOR_PREORDER.
-   *
    * @var string
    */
   public $saleability;
 
   /**
-   * URL to purchase this volume on the Google Books site. (In LITE projection)
-   *
-   * @param string $buyLink
+   * @param string
    */
   public function setBuyLink($buyLink)
   {
@@ -79,10 +62,7 @@ class VolumeSaleInfo extends \Google\Collection
     return $this->buyLink;
   }
   /**
-   * The two-letter ISO_3166-1 country code for which this sale information is
-   * valid. (In LITE projection.)
-   *
-   * @param string $country
+   * @param string
    */
   public function setCountry($country)
   {
@@ -96,10 +76,7 @@ class VolumeSaleInfo extends \Google\Collection
     return $this->country;
   }
   /**
-   * Whether or not this volume is an eBook (can be added to the My eBooks
-   * shelf).
-   *
-   * @param bool $isEbook
+   * @param bool
    */
   public function setIsEbook($isEbook)
   {
@@ -113,9 +90,7 @@ class VolumeSaleInfo extends \Google\Collection
     return $this->isEbook;
   }
   /**
-   * Suggested retail price. (In LITE projection.)
-   *
-   * @param VolumeSaleInfoListPrice $listPrice
+   * @param VolumeSaleInfoListPrice
    */
   public function setListPrice(VolumeSaleInfoListPrice $listPrice)
   {
@@ -129,9 +104,7 @@ class VolumeSaleInfo extends \Google\Collection
     return $this->listPrice;
   }
   /**
-   * Offers available for this volume (sales and rentals).
-   *
-   * @param VolumeSaleInfoOffers[] $offers
+   * @param VolumeSaleInfoOffers[]
    */
   public function setOffers($offers)
   {
@@ -145,9 +118,7 @@ class VolumeSaleInfo extends \Google\Collection
     return $this->offers;
   }
   /**
-   * The date on which this book is available for sale.
-   *
-   * @param string $onSaleDate
+   * @param string
    */
   public function setOnSaleDate($onSaleDate)
   {
@@ -161,11 +132,7 @@ class VolumeSaleInfo extends \Google\Collection
     return $this->onSaleDate;
   }
   /**
-   * The actual selling price of the book. This is the same as the suggested
-   * retail or list price unless there are offers or discounts on this volume.
-   * (In LITE projection.)
-   *
-   * @param VolumeSaleInfoRetailPrice $retailPrice
+   * @param VolumeSaleInfoRetailPrice
    */
   public function setRetailPrice(VolumeSaleInfoRetailPrice $retailPrice)
   {
@@ -179,12 +146,7 @@ class VolumeSaleInfo extends \Google\Collection
     return $this->retailPrice;
   }
   /**
-   * Whether or not this book is available for sale or offered for free in the
-   * Google eBookstore for the country listed above. Possible values are
-   * FOR_SALE, FOR_RENTAL_ONLY, FOR_SALE_AND_RENTAL, FREE, NOT_FOR_SALE, or
-   * FOR_PREORDER.
-   *
-   * @param string $saleability
+   * @param string
    */
   public function setSaleability($saleability)
   {

@@ -21,90 +21,60 @@ class GoogleChromeManagementV1DiskInfo extends \Google\Collection
 {
   protected $collection_key = 'volumeIds';
   /**
-   * Output only. Number of bytes read since last boot.
-   *
    * @var string
    */
   public $bytesReadThisSession;
   /**
-   * Output only. Number of bytes written since last boot.
-   *
    * @var string
    */
   public $bytesWrittenThisSession;
   /**
-   * Output only. Time spent discarding since last boot. Discarding is writing
-   * to clear blocks which are no longer in use. Supported on kernels 4.18+.
-   *
    * @var string
    */
   public $discardTimeThisSession;
   /**
-   * Output only. Disk health.
-   *
    * @var string
    */
   public $health;
   /**
-   * Output only. Counts the time the disk and queue were busy, so unlike the
-   * fields above, parallel requests are not counted multiple times.
-   *
    * @var string
    */
   public $ioTimeThisSession;
   /**
-   * Output only. Disk manufacturer.
-   *
    * @var string
    */
   public $manufacturer;
   /**
-   * Output only. Disk model.
-   *
    * @var string
    */
   public $model;
   /**
-   * Output only. Time spent reading from disk since last boot.
-   *
    * @var string
    */
   public $readTimeThisSession;
   /**
-   * Output only. Disk serial number.
-   *
    * @var string
    */
   public $serialNumber;
   /**
-   * Output only. Disk size.
-   *
    * @var string
    */
   public $sizeBytes;
   /**
-   * Output only. Disk type: eMMC / NVMe / ATA / SCSI.
-   *
    * @var string
    */
   public $type;
   /**
-   * Output only. Disk volumes.
-   *
    * @var string[]
    */
   public $volumeIds;
   /**
-   * Output only. Time spent writing to disk since last boot.
-   *
    * @var string
    */
   public $writeTimeThisSession;
 
   /**
-   * Output only. Number of bytes read since last boot.
-   *
-   * @param string $bytesReadThisSession
+   * @param string
    */
   public function setBytesReadThisSession($bytesReadThisSession)
   {
@@ -118,9 +88,7 @@ class GoogleChromeManagementV1DiskInfo extends \Google\Collection
     return $this->bytesReadThisSession;
   }
   /**
-   * Output only. Number of bytes written since last boot.
-   *
-   * @param string $bytesWrittenThisSession
+   * @param string
    */
   public function setBytesWrittenThisSession($bytesWrittenThisSession)
   {
@@ -134,10 +102,7 @@ class GoogleChromeManagementV1DiskInfo extends \Google\Collection
     return $this->bytesWrittenThisSession;
   }
   /**
-   * Output only. Time spent discarding since last boot. Discarding is writing
-   * to clear blocks which are no longer in use. Supported on kernels 4.18+.
-   *
-   * @param string $discardTimeThisSession
+   * @param string
    */
   public function setDiscardTimeThisSession($discardTimeThisSession)
   {
@@ -151,9 +116,7 @@ class GoogleChromeManagementV1DiskInfo extends \Google\Collection
     return $this->discardTimeThisSession;
   }
   /**
-   * Output only. Disk health.
-   *
-   * @param string $health
+   * @param string
    */
   public function setHealth($health)
   {
@@ -167,10 +130,7 @@ class GoogleChromeManagementV1DiskInfo extends \Google\Collection
     return $this->health;
   }
   /**
-   * Output only. Counts the time the disk and queue were busy, so unlike the
-   * fields above, parallel requests are not counted multiple times.
-   *
-   * @param string $ioTimeThisSession
+   * @param string
    */
   public function setIoTimeThisSession($ioTimeThisSession)
   {
@@ -184,9 +144,7 @@ class GoogleChromeManagementV1DiskInfo extends \Google\Collection
     return $this->ioTimeThisSession;
   }
   /**
-   * Output only. Disk manufacturer.
-   *
-   * @param string $manufacturer
+   * @param string
    */
   public function setManufacturer($manufacturer)
   {
@@ -200,9 +158,7 @@ class GoogleChromeManagementV1DiskInfo extends \Google\Collection
     return $this->manufacturer;
   }
   /**
-   * Output only. Disk model.
-   *
-   * @param string $model
+   * @param string
    */
   public function setModel($model)
   {
@@ -216,9 +172,7 @@ class GoogleChromeManagementV1DiskInfo extends \Google\Collection
     return $this->model;
   }
   /**
-   * Output only. Time spent reading from disk since last boot.
-   *
-   * @param string $readTimeThisSession
+   * @param string
    */
   public function setReadTimeThisSession($readTimeThisSession)
   {
@@ -232,9 +186,7 @@ class GoogleChromeManagementV1DiskInfo extends \Google\Collection
     return $this->readTimeThisSession;
   }
   /**
-   * Output only. Disk serial number.
-   *
-   * @param string $serialNumber
+   * @param string
    */
   public function setSerialNumber($serialNumber)
   {
@@ -248,9 +200,7 @@ class GoogleChromeManagementV1DiskInfo extends \Google\Collection
     return $this->serialNumber;
   }
   /**
-   * Output only. Disk size.
-   *
-   * @param string $sizeBytes
+   * @param string
    */
   public function setSizeBytes($sizeBytes)
   {
@@ -264,9 +214,7 @@ class GoogleChromeManagementV1DiskInfo extends \Google\Collection
     return $this->sizeBytes;
   }
   /**
-   * Output only. Disk type: eMMC / NVMe / ATA / SCSI.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {
@@ -280,9 +228,7 @@ class GoogleChromeManagementV1DiskInfo extends \Google\Collection
     return $this->type;
   }
   /**
-   * Output only. Disk volumes.
-   *
-   * @param string[] $volumeIds
+   * @param string[]
    */
   public function setVolumeIds($volumeIds)
   {
@@ -296,9 +242,7 @@ class GoogleChromeManagementV1DiskInfo extends \Google\Collection
     return $this->volumeIds;
   }
   /**
-   * Output only. Time spent writing to disk since last boot.
-   *
-   * @param string $writeTimeThisSession
+   * @param string
    */
   public function setWriteTimeThisSession($writeTimeThisSession)
   {

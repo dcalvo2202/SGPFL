@@ -23,21 +23,14 @@ class GoogleCloudRecaptchaenterpriseV1TransactionData extends \Google\Collection
   protected $billingAddressType = GoogleCloudRecaptchaenterpriseV1TransactionDataAddress::class;
   protected $billingAddressDataType = '';
   /**
-   * Optional. The Bank Identification Number - generally the first 6 or 8
-   * digits of the card.
-   *
    * @var string
    */
   public $cardBin;
   /**
-   * Optional. The last four digits of the card.
-   *
    * @var string
    */
   public $cardLastFour;
   /**
-   * Optional. The currency code in ISO-4217 format.
-   *
    * @var string
    */
   public $currencyCode;
@@ -48,45 +41,22 @@ class GoogleCloudRecaptchaenterpriseV1TransactionData extends \Google\Collection
   protected $merchantsType = GoogleCloudRecaptchaenterpriseV1TransactionDataUser::class;
   protected $merchantsDataType = 'array';
   /**
-   * Optional. The payment method for the transaction. The allowed values are: *
-   * credit-card * debit-card * gift-card * processor-{name} (If a third-party
-   * is used, for example, processor-paypal) * custom-{name} (If an alternative
-   * method is used, for example, custom-crypto)
-   *
    * @var string
    */
   public $paymentMethod;
   protected $shippingAddressType = GoogleCloudRecaptchaenterpriseV1TransactionDataAddress::class;
   protected $shippingAddressDataType = '';
-  /**
-   * Optional. The value of shipping in the specified currency. 0 for free or no
-   * shipping.
-   *
-   * @var 
-   */
   public $shippingValue;
   /**
-   * Unique identifier for the transaction. This custom identifier can be used
-   * to reference this transaction in the future, for example, labeling a refund
-   * or chargeback event. Two attempts at the same transaction should use the
-   * same transaction id.
-   *
    * @var string
    */
   public $transactionId;
   protected $userType = GoogleCloudRecaptchaenterpriseV1TransactionDataUser::class;
   protected $userDataType = '';
-  /**
-   * Optional. The decimal value of the transaction in the specified currency.
-   *
-   * @var 
-   */
   public $value;
 
   /**
-   * Optional. Address associated with the payment method when applicable.
-   *
-   * @param GoogleCloudRecaptchaenterpriseV1TransactionDataAddress $billingAddress
+   * @param GoogleCloudRecaptchaenterpriseV1TransactionDataAddress
    */
   public function setBillingAddress(GoogleCloudRecaptchaenterpriseV1TransactionDataAddress $billingAddress)
   {
@@ -100,10 +70,7 @@ class GoogleCloudRecaptchaenterpriseV1TransactionData extends \Google\Collection
     return $this->billingAddress;
   }
   /**
-   * Optional. The Bank Identification Number - generally the first 6 or 8
-   * digits of the card.
-   *
-   * @param string $cardBin
+   * @param string
    */
   public function setCardBin($cardBin)
   {
@@ -117,9 +84,7 @@ class GoogleCloudRecaptchaenterpriseV1TransactionData extends \Google\Collection
     return $this->cardBin;
   }
   /**
-   * Optional. The last four digits of the card.
-   *
-   * @param string $cardLastFour
+   * @param string
    */
   public function setCardLastFour($cardLastFour)
   {
@@ -133,9 +98,7 @@ class GoogleCloudRecaptchaenterpriseV1TransactionData extends \Google\Collection
     return $this->cardLastFour;
   }
   /**
-   * Optional. The currency code in ISO-4217 format.
-   *
-   * @param string $currencyCode
+   * @param string
    */
   public function setCurrencyCode($currencyCode)
   {
@@ -149,10 +112,7 @@ class GoogleCloudRecaptchaenterpriseV1TransactionData extends \Google\Collection
     return $this->currencyCode;
   }
   /**
-   * Optional. Information about the payment gateway's response to the
-   * transaction.
-   *
-   * @param GoogleCloudRecaptchaenterpriseV1TransactionDataGatewayInfo $gatewayInfo
+   * @param GoogleCloudRecaptchaenterpriseV1TransactionDataGatewayInfo
    */
   public function setGatewayInfo(GoogleCloudRecaptchaenterpriseV1TransactionDataGatewayInfo $gatewayInfo)
   {
@@ -166,9 +126,7 @@ class GoogleCloudRecaptchaenterpriseV1TransactionData extends \Google\Collection
     return $this->gatewayInfo;
   }
   /**
-   * Optional. Items purchased in this transaction.
-   *
-   * @param GoogleCloudRecaptchaenterpriseV1TransactionDataItem[] $items
+   * @param GoogleCloudRecaptchaenterpriseV1TransactionDataItem[]
    */
   public function setItems($items)
   {
@@ -182,9 +140,7 @@ class GoogleCloudRecaptchaenterpriseV1TransactionData extends \Google\Collection
     return $this->items;
   }
   /**
-   * Optional. Information about the user or users fulfilling the transaction.
-   *
-   * @param GoogleCloudRecaptchaenterpriseV1TransactionDataUser[] $merchants
+   * @param GoogleCloudRecaptchaenterpriseV1TransactionDataUser[]
    */
   public function setMerchants($merchants)
   {
@@ -198,12 +154,7 @@ class GoogleCloudRecaptchaenterpriseV1TransactionData extends \Google\Collection
     return $this->merchants;
   }
   /**
-   * Optional. The payment method for the transaction. The allowed values are: *
-   * credit-card * debit-card * gift-card * processor-{name} (If a third-party
-   * is used, for example, processor-paypal) * custom-{name} (If an alternative
-   * method is used, for example, custom-crypto)
-   *
-   * @param string $paymentMethod
+   * @param string
    */
   public function setPaymentMethod($paymentMethod)
   {
@@ -217,10 +168,7 @@ class GoogleCloudRecaptchaenterpriseV1TransactionData extends \Google\Collection
     return $this->paymentMethod;
   }
   /**
-   * Optional. Destination address if this transaction involves shipping a
-   * physical item.
-   *
-   * @param GoogleCloudRecaptchaenterpriseV1TransactionDataAddress $shippingAddress
+   * @param GoogleCloudRecaptchaenterpriseV1TransactionDataAddress
    */
   public function setShippingAddress(GoogleCloudRecaptchaenterpriseV1TransactionDataAddress $shippingAddress)
   {
@@ -242,12 +190,7 @@ class GoogleCloudRecaptchaenterpriseV1TransactionData extends \Google\Collection
     return $this->shippingValue;
   }
   /**
-   * Unique identifier for the transaction. This custom identifier can be used
-   * to reference this transaction in the future, for example, labeling a refund
-   * or chargeback event. Two attempts at the same transaction should use the
-   * same transaction id.
-   *
-   * @param string $transactionId
+   * @param string
    */
   public function setTransactionId($transactionId)
   {
@@ -261,9 +204,7 @@ class GoogleCloudRecaptchaenterpriseV1TransactionData extends \Google\Collection
     return $this->transactionId;
   }
   /**
-   * Optional. Information about the user paying/initiating the transaction.
-   *
-   * @param GoogleCloudRecaptchaenterpriseV1TransactionDataUser $user
+   * @param GoogleCloudRecaptchaenterpriseV1TransactionDataUser
    */
   public function setUser(GoogleCloudRecaptchaenterpriseV1TransactionDataUser $user)
   {

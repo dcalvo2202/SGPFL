@@ -21,9 +21,6 @@ class OperatingSystemsListResponse extends \Google\Collection
 {
   protected $collection_key = 'operatingSystems';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#operatingSystemsListResponse".
-   *
    * @var string
    */
   public $kind;
@@ -31,10 +28,7 @@ class OperatingSystemsListResponse extends \Google\Collection
   protected $operatingSystemsDataType = 'array';
 
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#operatingSystemsListResponse".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -48,9 +42,7 @@ class OperatingSystemsListResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Operating system collection.
-   *
-   * @param OperatingSystem[] $operatingSystems
+   * @param OperatingSystem[]
    */
   public function setOperatingSystems($operatingSystems)
   {

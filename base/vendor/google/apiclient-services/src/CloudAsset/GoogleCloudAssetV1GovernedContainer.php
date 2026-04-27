@@ -25,57 +25,30 @@ class GoogleCloudAssetV1GovernedContainer extends \Google\Collection
   protected $effectiveTagsType = EffectiveTagDetails::class;
   protected $effectiveTagsDataType = 'array';
   /**
-   * The folder(s) that this resource belongs to, in the format of
-   * folders/{FOLDER_NUMBER}. This field is available when the resource belongs
-   * (directly or cascadingly) to one or more folders.
-   *
    * @var string[]
    */
   public $folders;
   /**
-   * The [full resource name] (https://cloud.google.com/asset-
-   * inventory/docs/resource-name-format) of an organization/folder/project
-   * resource.
-   *
    * @var string
    */
   public $fullResourceName;
   /**
-   * The organization that this resource belongs to, in the format of
-   * organizations/{ORGANIZATION_NUMBER}. This field is available when the
-   * resource belongs (directly or cascadingly) to an organization.
-   *
    * @var string
    */
   public $organization;
   /**
-   * The [full resource name] (https://cloud.google.com/asset-
-   * inventory/docs/resource-name-format) of the parent of AnalyzeOrgPolicyGover
-   * nedContainersResponse.GovernedContainer.full_resource_name.
-   *
    * @var string
    */
   public $parent;
   protected $policyBundleType = AnalyzerOrgPolicy::class;
   protected $policyBundleDataType = 'array';
   /**
-   * The project that this resource belongs to, in the format of
-   * projects/{PROJECT_NUMBER}. This field is available when the resource
-   * belongs to a project.
-   *
    * @var string
    */
   public $project;
 
   /**
-   * The consolidated organization policy for the analyzed resource. The
-   * consolidated organization policy is computed by merging and evaluating
-   * AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer.policy_bundle.
-   * The evaluation will respect the organization policy [hierarchy
-   * rules](https://cloud.google.com/resource-manager/docs/organization-
-   * policy/understanding-hierarchy).
-   *
-   * @param AnalyzerOrgPolicy $consolidatedPolicy
+   * @param AnalyzerOrgPolicy
    */
   public function setConsolidatedPolicy(AnalyzerOrgPolicy $consolidatedPolicy)
   {
@@ -89,9 +62,7 @@ class GoogleCloudAssetV1GovernedContainer extends \Google\Collection
     return $this->consolidatedPolicy;
   }
   /**
-   * The effective tags on this resource.
-   *
-   * @param EffectiveTagDetails[] $effectiveTags
+   * @param EffectiveTagDetails[]
    */
   public function setEffectiveTags($effectiveTags)
   {
@@ -105,11 +76,7 @@ class GoogleCloudAssetV1GovernedContainer extends \Google\Collection
     return $this->effectiveTags;
   }
   /**
-   * The folder(s) that this resource belongs to, in the format of
-   * folders/{FOLDER_NUMBER}. This field is available when the resource belongs
-   * (directly or cascadingly) to one or more folders.
-   *
-   * @param string[] $folders
+   * @param string[]
    */
   public function setFolders($folders)
   {
@@ -123,11 +90,7 @@ class GoogleCloudAssetV1GovernedContainer extends \Google\Collection
     return $this->folders;
   }
   /**
-   * The [full resource name] (https://cloud.google.com/asset-
-   * inventory/docs/resource-name-format) of an organization/folder/project
-   * resource.
-   *
-   * @param string $fullResourceName
+   * @param string
    */
   public function setFullResourceName($fullResourceName)
   {
@@ -141,11 +104,7 @@ class GoogleCloudAssetV1GovernedContainer extends \Google\Collection
     return $this->fullResourceName;
   }
   /**
-   * The organization that this resource belongs to, in the format of
-   * organizations/{ORGANIZATION_NUMBER}. This field is available when the
-   * resource belongs (directly or cascadingly) to an organization.
-   *
-   * @param string $organization
+   * @param string
    */
   public function setOrganization($organization)
   {
@@ -159,11 +118,7 @@ class GoogleCloudAssetV1GovernedContainer extends \Google\Collection
     return $this->organization;
   }
   /**
-   * The [full resource name] (https://cloud.google.com/asset-
-   * inventory/docs/resource-name-format) of the parent of AnalyzeOrgPolicyGover
-   * nedContainersResponse.GovernedContainer.full_resource_name.
-   *
-   * @param string $parent
+   * @param string
    */
   public function setParent($parent)
   {
@@ -177,12 +132,7 @@ class GoogleCloudAssetV1GovernedContainer extends \Google\Collection
     return $this->parent;
   }
   /**
-   * The ordered list of all organization policies from the
-   * consolidated_policy.attached_resource. to the scope specified in the
-   * request. If the constraint is defined with default policy, it will also
-   * appear in the list.
-   *
-   * @param AnalyzerOrgPolicy[] $policyBundle
+   * @param AnalyzerOrgPolicy[]
    */
   public function setPolicyBundle($policyBundle)
   {
@@ -196,11 +146,7 @@ class GoogleCloudAssetV1GovernedContainer extends \Google\Collection
     return $this->policyBundle;
   }
   /**
-   * The project that this resource belongs to, in the format of
-   * projects/{PROJECT_NUMBER}. This field is available when the resource
-   * belongs to a project.
-   *
-   * @param string $project
+   * @param string
    */
   public function setProject($project)
   {

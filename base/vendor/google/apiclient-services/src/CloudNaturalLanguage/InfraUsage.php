@@ -32,9 +32,7 @@ class InfraUsage extends \Google\Collection
   protected $tpuMetricsDataType = 'array';
 
   /**
-   * Aggregated core metrics since requested start_time.
-   *
-   * @param CpuMetric[] $cpuMetrics
+   * @param CpuMetric[]
    */
   public function setCpuMetrics($cpuMetrics)
   {
@@ -48,9 +46,7 @@ class InfraUsage extends \Google\Collection
     return $this->cpuMetrics;
   }
   /**
-   * Aggregated persistent disk metrics since requested start_time.
-   *
-   * @param DiskMetric[] $diskMetrics
+   * @param DiskMetric[]
    */
   public function setDiskMetrics($diskMetrics)
   {
@@ -64,9 +60,7 @@ class InfraUsage extends \Google\Collection
     return $this->diskMetrics;
   }
   /**
-   * Aggregated gpu metrics since requested start_time.
-   *
-   * @param GpuMetric[] $gpuMetrics
+   * @param GpuMetric[]
    */
   public function setGpuMetrics($gpuMetrics)
   {
@@ -80,9 +74,7 @@ class InfraUsage extends \Google\Collection
     return $this->gpuMetrics;
   }
   /**
-   * Aggregated ram metrics since requested start_time.
-   *
-   * @param RamMetric[] $ramMetrics
+   * @param RamMetric[]
    */
   public function setRamMetrics($ramMetrics)
   {
@@ -96,9 +88,7 @@ class InfraUsage extends \Google\Collection
     return $this->ramMetrics;
   }
   /**
-   * Aggregated tpu metrics since requested start_time.
-   *
-   * @param TpuMetric[] $tpuMetrics
+   * @param TpuMetric[]
    */
   public function setTpuMetrics($tpuMetrics)
   {

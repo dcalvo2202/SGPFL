@@ -19,56 +19,27 @@ namespace Google\Service\GoogleAnalyticsAdmin;
 
 class GoogleAnalyticsAdminV1betaDataStream extends \Google\Model
 {
-  /**
-   * Type unknown or not specified.
-   */
-  public const TYPE_DATA_STREAM_TYPE_UNSPECIFIED = 'DATA_STREAM_TYPE_UNSPECIFIED';
-  /**
-   * Web data stream.
-   */
-  public const TYPE_WEB_DATA_STREAM = 'WEB_DATA_STREAM';
-  /**
-   * Android app data stream.
-   */
-  public const TYPE_ANDROID_APP_DATA_STREAM = 'ANDROID_APP_DATA_STREAM';
-  /**
-   * iOS app data stream.
-   */
-  public const TYPE_IOS_APP_DATA_STREAM = 'IOS_APP_DATA_STREAM';
   protected $androidAppStreamDataType = GoogleAnalyticsAdminV1betaDataStreamAndroidAppStreamData::class;
   protected $androidAppStreamDataDataType = '';
   /**
-   * Output only. Time when this stream was originally created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Human-readable display name for the Data Stream. Required for web data
-   * streams. The max allowed display name length is 255 UTF-16 code units.
-   *
    * @var string
    */
   public $displayName;
   protected $iosAppStreamDataType = GoogleAnalyticsAdminV1betaDataStreamIosAppStreamData::class;
   protected $iosAppStreamDataDataType = '';
   /**
-   * Identifier. Resource name of this Data Stream. Format:
-   * properties/{property_id}/dataStreams/{stream_id} Example:
-   * "properties/1000/dataStreams/2000"
-   *
    * @var string
    */
   public $name;
   /**
-   * Required. Immutable. The type of this DataStream resource.
-   *
    * @var string
    */
   public $type;
   /**
-   * Output only. Time when stream payload fields were last updated.
-   *
    * @var string
    */
   public $updateTime;
@@ -76,10 +47,7 @@ class GoogleAnalyticsAdminV1betaDataStream extends \Google\Model
   protected $webStreamDataDataType = '';
 
   /**
-   * Data specific to Android app streams. Must be populated if type is
-   * ANDROID_APP_DATA_STREAM.
-   *
-   * @param GoogleAnalyticsAdminV1betaDataStreamAndroidAppStreamData $androidAppStreamData
+   * @param GoogleAnalyticsAdminV1betaDataStreamAndroidAppStreamData
    */
   public function setAndroidAppStreamData(GoogleAnalyticsAdminV1betaDataStreamAndroidAppStreamData $androidAppStreamData)
   {
@@ -93,9 +61,7 @@ class GoogleAnalyticsAdminV1betaDataStream extends \Google\Model
     return $this->androidAppStreamData;
   }
   /**
-   * Output only. Time when this stream was originally created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -109,10 +75,7 @@ class GoogleAnalyticsAdminV1betaDataStream extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Human-readable display name for the Data Stream. Required for web data
-   * streams. The max allowed display name length is 255 UTF-16 code units.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -126,10 +89,7 @@ class GoogleAnalyticsAdminV1betaDataStream extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Data specific to iOS app streams. Must be populated if type is
-   * IOS_APP_DATA_STREAM.
-   *
-   * @param GoogleAnalyticsAdminV1betaDataStreamIosAppStreamData $iosAppStreamData
+   * @param GoogleAnalyticsAdminV1betaDataStreamIosAppStreamData
    */
   public function setIosAppStreamData(GoogleAnalyticsAdminV1betaDataStreamIosAppStreamData $iosAppStreamData)
   {
@@ -143,11 +103,7 @@ class GoogleAnalyticsAdminV1betaDataStream extends \Google\Model
     return $this->iosAppStreamData;
   }
   /**
-   * Identifier. Resource name of this Data Stream. Format:
-   * properties/{property_id}/dataStreams/{stream_id} Example:
-   * "properties/1000/dataStreams/2000"
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -161,28 +117,21 @@ class GoogleAnalyticsAdminV1betaDataStream extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. Immutable. The type of this DataStream resource.
-   *
-   * Accepted values: DATA_STREAM_TYPE_UNSPECIFIED, WEB_DATA_STREAM,
-   * ANDROID_APP_DATA_STREAM, IOS_APP_DATA_STREAM
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * Output only. Time when stream payload fields were last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -196,9 +145,7 @@ class GoogleAnalyticsAdminV1betaDataStream extends \Google\Model
     return $this->updateTime;
   }
   /**
-   * Data specific to web streams. Must be populated if type is WEB_DATA_STREAM.
-   *
-   * @param GoogleAnalyticsAdminV1betaDataStreamWebStreamData $webStreamData
+   * @param GoogleAnalyticsAdminV1betaDataStreamWebStreamData
    */
   public function setWebStreamData(GoogleAnalyticsAdminV1betaDataStreamWebStreamData $webStreamData)
   {

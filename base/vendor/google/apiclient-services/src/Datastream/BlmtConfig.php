@@ -20,56 +20,28 @@ namespace Google\Service\Datastream;
 class BlmtConfig extends \Google\Model
 {
   /**
-   * Default value.
-   */
-  public const FILE_FORMAT_FILE_FORMAT_UNSPECIFIED = 'FILE_FORMAT_UNSPECIFIED';
-  /**
-   * Parquet file format.
-   */
-  public const FILE_FORMAT_PARQUET = 'PARQUET';
-  /**
-   * Default value.
-   */
-  public const TABLE_FORMAT_TABLE_FORMAT_UNSPECIFIED = 'TABLE_FORMAT_UNSPECIFIED';
-  /**
-   * Iceberg table format.
-   */
-  public const TABLE_FORMAT_ICEBERG = 'ICEBERG';
-  /**
-   * Required. The Cloud Storage bucket name.
-   *
    * @var string
    */
   public $bucket;
   /**
-   * Required. The bigquery connection. Format: `{project}.{location}.{name}`
-   *
    * @var string
    */
   public $connectionName;
   /**
-   * Required. The file format.
-   *
    * @var string
    */
   public $fileFormat;
   /**
-   * The root path inside the Cloud Storage bucket.
-   *
    * @var string
    */
   public $rootPath;
   /**
-   * Required. The table format.
-   *
    * @var string
    */
   public $tableFormat;
 
   /**
-   * Required. The Cloud Storage bucket name.
-   *
-   * @param string $bucket
+   * @param string
    */
   public function setBucket($bucket)
   {
@@ -83,9 +55,7 @@ class BlmtConfig extends \Google\Model
     return $this->bucket;
   }
   /**
-   * Required. The bigquery connection. Format: `{project}.{location}.{name}`
-   *
-   * @param string $connectionName
+   * @param string
    */
   public function setConnectionName($connectionName)
   {
@@ -99,27 +69,21 @@ class BlmtConfig extends \Google\Model
     return $this->connectionName;
   }
   /**
-   * Required. The file format.
-   *
-   * Accepted values: FILE_FORMAT_UNSPECIFIED, PARQUET
-   *
-   * @param self::FILE_FORMAT_* $fileFormat
+   * @param string
    */
   public function setFileFormat($fileFormat)
   {
     $this->fileFormat = $fileFormat;
   }
   /**
-   * @return self::FILE_FORMAT_*
+   * @return string
    */
   public function getFileFormat()
   {
     return $this->fileFormat;
   }
   /**
-   * The root path inside the Cloud Storage bucket.
-   *
-   * @param string $rootPath
+   * @param string
    */
   public function setRootPath($rootPath)
   {
@@ -133,18 +97,14 @@ class BlmtConfig extends \Google\Model
     return $this->rootPath;
   }
   /**
-   * Required. The table format.
-   *
-   * Accepted values: TABLE_FORMAT_UNSPECIFIED, ICEBERG
-   *
-   * @param self::TABLE_FORMAT_* $tableFormat
+   * @param string
    */
   public function setTableFormat($tableFormat)
   {
     $this->tableFormat = $tableFormat;
   }
   /**
-   * @return self::TABLE_FORMAT_*
+   * @return string
    */
   public function getTableFormat()
   {

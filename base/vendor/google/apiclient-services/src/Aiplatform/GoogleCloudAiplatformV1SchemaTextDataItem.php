@@ -20,20 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1SchemaTextDataItem extends \Google\Model
 {
   /**
-   * Output only. Google Cloud Storage URI points to a copy of the original text
-   * in the Vertex-managed bucket in the user's project. The text file is up to
-   * 10MB in size.
-   *
    * @var string
    */
   public $gcsUri;
 
   /**
-   * Output only. Google Cloud Storage URI points to a copy of the original text
-   * in the Vertex-managed bucket in the user's project. The text file is up to
-   * 10MB in size.
-   *
-   * @param string $gcsUri
+   * @param string
    */
   public function setGcsUri($gcsUri)
   {

@@ -32,9 +32,7 @@ class GoogleCloudDocumentaiV1DocumentPageToken extends \Google\Collection
   protected $styleInfoDataType = '';
 
   /**
-   * Detected break at the end of a Token.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentPageTokenDetectedBreak $detectedBreak
+   * @param GoogleCloudDocumentaiV1DocumentPageTokenDetectedBreak
    */
   public function setDetectedBreak(GoogleCloudDocumentaiV1DocumentPageTokenDetectedBreak $detectedBreak)
   {
@@ -48,9 +46,7 @@ class GoogleCloudDocumentaiV1DocumentPageToken extends \Google\Collection
     return $this->detectedBreak;
   }
   /**
-   * A list of detected languages together with confidence.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentPageDetectedLanguage[] $detectedLanguages
+   * @param GoogleCloudDocumentaiV1DocumentPageDetectedLanguage[]
    */
   public function setDetectedLanguages($detectedLanguages)
   {
@@ -64,9 +60,7 @@ class GoogleCloudDocumentaiV1DocumentPageToken extends \Google\Collection
     return $this->detectedLanguages;
   }
   /**
-   * Layout for Token.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentPageLayout $layout
+   * @param GoogleCloudDocumentaiV1DocumentPageLayout
    */
   public function setLayout(GoogleCloudDocumentaiV1DocumentPageLayout $layout)
   {
@@ -80,17 +74,13 @@ class GoogleCloudDocumentaiV1DocumentPageToken extends \Google\Collection
     return $this->layout;
   }
   /**
-   * The history of this annotation.
-   *
-   * @deprecated
-   * @param GoogleCloudDocumentaiV1DocumentProvenance $provenance
+   * @param GoogleCloudDocumentaiV1DocumentProvenance
    */
   public function setProvenance(GoogleCloudDocumentaiV1DocumentProvenance $provenance)
   {
     $this->provenance = $provenance;
   }
   /**
-   * @deprecated
    * @return GoogleCloudDocumentaiV1DocumentProvenance
    */
   public function getProvenance()
@@ -98,9 +88,7 @@ class GoogleCloudDocumentaiV1DocumentPageToken extends \Google\Collection
     return $this->provenance;
   }
   /**
-   * Text style attributes.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentPageTokenStyleInfo $styleInfo
+   * @param GoogleCloudDocumentaiV1DocumentPageTokenStyleInfo
    */
   public function setStyleInfo(GoogleCloudDocumentaiV1DocumentPageTokenStyleInfo $styleInfo)
   {

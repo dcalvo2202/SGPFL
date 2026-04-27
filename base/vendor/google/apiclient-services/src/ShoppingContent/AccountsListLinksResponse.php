@@ -21,26 +21,18 @@ class AccountsListLinksResponse extends \Google\Collection
 {
   protected $collection_key = 'links';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#accountsListLinksResponse`".
-   *
    * @var string
    */
   public $kind;
   protected $linksType = LinkedAccount::class;
   protected $linksDataType = 'array';
   /**
-   * The token for the retrieval of the next page of links.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#accountsListLinksResponse`".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -54,9 +46,7 @@ class AccountsListLinksResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The list of available links.
-   *
-   * @param LinkedAccount[] $links
+   * @param LinkedAccount[]
    */
   public function setLinks($links)
   {
@@ -70,9 +60,7 @@ class AccountsListLinksResponse extends \Google\Collection
     return $this->links;
   }
   /**
-   * The token for the retrieval of the next page of links.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

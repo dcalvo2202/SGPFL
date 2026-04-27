@@ -20,22 +20,12 @@ namespace Google\Service\DataCatalog;
 class GoogleCloudDatacatalogV1FieldTypeEnumTypeEnumValue extends \Google\Model
 {
   /**
-   * Required. The display name of the enum value. Must not be an empty string.
-   * The name must contain only Unicode letters, numbers (0-9), underscores (_),
-   * dashes (-), spaces ( ), and can't start or end with spaces. The maximum
-   * length is 200 characters.
-   *
    * @var string
    */
   public $displayName;
 
   /**
-   * Required. The display name of the enum value. Must not be an empty string.
-   * The name must contain only Unicode letters, numbers (0-9), underscores (_),
-   * dashes (-), spaces ( ), and can't start or end with spaces. The maximum
-   * length is 200 characters.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {

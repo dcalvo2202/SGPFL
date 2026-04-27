@@ -20,52 +20,36 @@ namespace Google\Service\Doubleclicksearch;
 class ReportRequestReportScope extends \Google\Model
 {
   /**
-   * DS ad group ID.
-   *
    * @var string
    */
   public $adGroupId;
   /**
-   * DS ad ID.
-   *
    * @var string
    */
   public $adId;
   /**
-   * DS advertiser ID.
-   *
    * @var string
    */
   public $advertiserId;
   /**
-   * DS agency ID.
-   *
    * @var string
    */
   public $agencyId;
   /**
-   * DS campaign ID.
-   *
    * @var string
    */
   public $campaignId;
   /**
-   * DS engine account ID.
-   *
    * @var string
    */
   public $engineAccountId;
   /**
-   * DS keyword ID.
-   *
    * @var string
    */
   public $keywordId;
 
   /**
-   * DS ad group ID.
-   *
-   * @param string $adGroupId
+   * @param string
    */
   public function setAdGroupId($adGroupId)
   {
@@ -79,9 +63,7 @@ class ReportRequestReportScope extends \Google\Model
     return $this->adGroupId;
   }
   /**
-   * DS ad ID.
-   *
-   * @param string $adId
+   * @param string
    */
   public function setAdId($adId)
   {
@@ -95,9 +77,7 @@ class ReportRequestReportScope extends \Google\Model
     return $this->adId;
   }
   /**
-   * DS advertiser ID.
-   *
-   * @param string $advertiserId
+   * @param string
    */
   public function setAdvertiserId($advertiserId)
   {
@@ -111,9 +91,7 @@ class ReportRequestReportScope extends \Google\Model
     return $this->advertiserId;
   }
   /**
-   * DS agency ID.
-   *
-   * @param string $agencyId
+   * @param string
    */
   public function setAgencyId($agencyId)
   {
@@ -127,9 +105,7 @@ class ReportRequestReportScope extends \Google\Model
     return $this->agencyId;
   }
   /**
-   * DS campaign ID.
-   *
-   * @param string $campaignId
+   * @param string
    */
   public function setCampaignId($campaignId)
   {
@@ -143,9 +119,7 @@ class ReportRequestReportScope extends \Google\Model
     return $this->campaignId;
   }
   /**
-   * DS engine account ID.
-   *
-   * @param string $engineAccountId
+   * @param string
    */
   public function setEngineAccountId($engineAccountId)
   {
@@ -159,9 +133,7 @@ class ReportRequestReportScope extends \Google\Model
     return $this->engineAccountId;
   }
   /**
-   * DS keyword ID.
-   *
-   * @param string $keywordId
+   * @param string
    */
   public function setKeywordId($keywordId)
   {

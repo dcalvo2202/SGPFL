@@ -22,34 +22,24 @@ class GoogleCloudApigeeV1ApiDocResponse extends \Google\Model
   protected $dataType = GoogleCloudApigeeV1ApiDoc::class;
   protected $dataDataType = '';
   /**
-   * Unique error code for the request, if any.
-   *
    * @var string
    */
   public $errorCode;
   /**
-   * Description of the operation.
-   *
    * @var string
    */
   public $message;
   /**
-   * Unique ID of the request.
-   *
    * @var string
    */
   public $requestId;
   /**
-   * Status of the operation.
-   *
    * @var string
    */
   public $status;
 
   /**
-   * The catalog item resource.
-   *
-   * @param GoogleCloudApigeeV1ApiDoc $data
+   * @param GoogleCloudApigeeV1ApiDoc
    */
   public function setData(GoogleCloudApigeeV1ApiDoc $data)
   {
@@ -63,9 +53,7 @@ class GoogleCloudApigeeV1ApiDocResponse extends \Google\Model
     return $this->data;
   }
   /**
-   * Unique error code for the request, if any.
-   *
-   * @param string $errorCode
+   * @param string
    */
   public function setErrorCode($errorCode)
   {
@@ -79,9 +67,7 @@ class GoogleCloudApigeeV1ApiDocResponse extends \Google\Model
     return $this->errorCode;
   }
   /**
-   * Description of the operation.
-   *
-   * @param string $message
+   * @param string
    */
   public function setMessage($message)
   {
@@ -95,9 +81,7 @@ class GoogleCloudApigeeV1ApiDocResponse extends \Google\Model
     return $this->message;
   }
   /**
-   * Unique ID of the request.
-   *
-   * @param string $requestId
+   * @param string
    */
   public function setRequestId($requestId)
   {
@@ -111,9 +95,7 @@ class GoogleCloudApigeeV1ApiDocResponse extends \Google\Model
     return $this->requestId;
   }
   /**
-   * Status of the operation.
-   *
-   * @param string $status
+   * @param string
    */
   public function setStatus($status)
   {

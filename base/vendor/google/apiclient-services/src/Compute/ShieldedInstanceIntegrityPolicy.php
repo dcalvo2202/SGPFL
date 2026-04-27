@@ -20,18 +20,12 @@ namespace Google\Service\Compute;
 class ShieldedInstanceIntegrityPolicy extends \Google\Model
 {
   /**
-   * Updates the integrity policy baseline using the measurements from the VM
-   * instance's most recent boot.
-   *
    * @var bool
    */
   public $updateAutoLearnPolicy;
 
   /**
-   * Updates the integrity policy baseline using the measurements from the VM
-   * instance's most recent boot.
-   *
-   * @param bool $updateAutoLearnPolicy
+   * @param bool
    */
   public function setUpdateAutoLearnPolicy($updateAutoLearnPolicy)
   {

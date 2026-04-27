@@ -20,33 +20,20 @@ namespace Google\Service\Cloudchannel;
 class GoogleCloudChannelV1alpha1ProvisionedService extends \Google\Model
 {
   /**
-   * Output only. The product pertaining to the provisioning resource as
-   * specified in the Offer.
-   *
    * @var string
    */
   public $productId;
   /**
-   * Output only. Provisioning ID of the entitlement. For Google Workspace, this
-   * is the underlying Subscription ID. For Google Cloud, this is the Billing
-   * Account ID of the billing subaccount.
-   *
    * @var string
    */
   public $provisioningId;
   /**
-   * Output only. The SKU pertaining to the provisioning resource as specified
-   * in the Offer.
-   *
    * @var string
    */
   public $skuId;
 
   /**
-   * Output only. The product pertaining to the provisioning resource as
-   * specified in the Offer.
-   *
-   * @param string $productId
+   * @param string
    */
   public function setProductId($productId)
   {
@@ -60,11 +47,7 @@ class GoogleCloudChannelV1alpha1ProvisionedService extends \Google\Model
     return $this->productId;
   }
   /**
-   * Output only. Provisioning ID of the entitlement. For Google Workspace, this
-   * is the underlying Subscription ID. For Google Cloud, this is the Billing
-   * Account ID of the billing subaccount.
-   *
-   * @param string $provisioningId
+   * @param string
    */
   public function setProvisioningId($provisioningId)
   {
@@ -78,10 +61,7 @@ class GoogleCloudChannelV1alpha1ProvisionedService extends \Google\Model
     return $this->provisioningId;
   }
   /**
-   * Output only. The SKU pertaining to the provisioning resource as specified
-   * in the Offer.
-   *
-   * @param string $skuId
+   * @param string
    */
   public function setSkuId($skuId)
   {

@@ -30,14 +30,7 @@ class GooglePrivacyDlpV2FieldTransformation extends \Google\Collection
   protected $primitiveTransformationDataType = '';
 
   /**
-   * Only apply the transformation if the condition evaluates to true for the
-   * given `RecordCondition`. The conditions are allowed to reference fields
-   * that are not used in the actual transformation. Example Use Cases: - Apply
-   * a different bucket transformation to an age column if the zip code column
-   * for the same record is within a specific range. - Redact a field if the
-   * date of birth field is greater than 85.
-   *
-   * @param GooglePrivacyDlpV2RecordCondition $condition
+   * @param GooglePrivacyDlpV2RecordCondition
    */
   public function setCondition(GooglePrivacyDlpV2RecordCondition $condition)
   {
@@ -51,12 +44,7 @@ class GooglePrivacyDlpV2FieldTransformation extends \Google\Collection
     return $this->condition;
   }
   /**
-   * Required. Input field(s) to apply the transformation to. When you have
-   * columns that reference their position within a list, omit the index from
-   * the FieldId. FieldId name matching ignores the index. For example, instead
-   * of "contact.nums[0].type", use "contact.nums.type".
-   *
-   * @param GooglePrivacyDlpV2FieldId[] $fields
+   * @param GooglePrivacyDlpV2FieldId[]
    */
   public function setFields($fields)
   {
@@ -70,10 +58,7 @@ class GooglePrivacyDlpV2FieldTransformation extends \Google\Collection
     return $this->fields;
   }
   /**
-   * Treat the contents of the field as free text, and selectively transform
-   * content that matches an `InfoType`.
-   *
-   * @param GooglePrivacyDlpV2InfoTypeTransformations $infoTypeTransformations
+   * @param GooglePrivacyDlpV2InfoTypeTransformations
    */
   public function setInfoTypeTransformations(GooglePrivacyDlpV2InfoTypeTransformations $infoTypeTransformations)
   {
@@ -87,9 +72,7 @@ class GooglePrivacyDlpV2FieldTransformation extends \Google\Collection
     return $this->infoTypeTransformations;
   }
   /**
-   * Apply the transformation to the entire field.
-   *
-   * @param GooglePrivacyDlpV2PrimitiveTransformation $primitiveTransformation
+   * @param GooglePrivacyDlpV2PrimitiveTransformation
    */
   public function setPrimitiveTransformation(GooglePrivacyDlpV2PrimitiveTransformation $primitiveTransformation)
   {

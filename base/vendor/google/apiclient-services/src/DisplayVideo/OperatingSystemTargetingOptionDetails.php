@@ -20,16 +20,12 @@ namespace Google\Service\DisplayVideo;
 class OperatingSystemTargetingOptionDetails extends \Google\Model
 {
   /**
-   * Output only. The display name of the operating system.
-   *
    * @var string
    */
   public $displayName;
 
   /**
-   * Output only. The display name of the operating system.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {

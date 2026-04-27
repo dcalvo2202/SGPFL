@@ -20,25 +20,16 @@ namespace Google\Service\Dataproc;
 class InjectCredentialsRequest extends \Google\Model
 {
   /**
-   * Required. The cluster UUID.
-   *
    * @var string
    */
   public $clusterUuid;
   /**
-   * Required. The encrypted credentials being injected in to the cluster.The
-   * client is responsible for encrypting the credentials in a way that is
-   * supported by the cluster.A wrapped value is used here so that the actual
-   * contents of the encrypted credentials are not written to audit logs.
-   *
    * @var string
    */
   public $credentialsCiphertext;
 
   /**
-   * Required. The cluster UUID.
-   *
-   * @param string $clusterUuid
+   * @param string
    */
   public function setClusterUuid($clusterUuid)
   {
@@ -52,12 +43,7 @@ class InjectCredentialsRequest extends \Google\Model
     return $this->clusterUuid;
   }
   /**
-   * Required. The encrypted credentials being injected in to the cluster.The
-   * client is responsible for encrypting the credentials in a way that is
-   * supported by the cluster.A wrapped value is used here so that the actual
-   * contents of the encrypted credentials are not written to audit logs.
-   *
-   * @param string $credentialsCiphertext
+   * @param string
    */
   public function setCredentialsCiphertext($credentialsCiphertext)
   {

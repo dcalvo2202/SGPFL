@@ -20,35 +20,24 @@ namespace Google\Service\CloudRetail;
 class GoogleCloudRetailV2betaPurgeProductsMetadata extends \Google\Model
 {
   /**
-   * Operation create time.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Count of entries that encountered errors while processing.
-   *
    * @var string
    */
   public $failureCount;
   /**
-   * Count of entries that were deleted successfully.
-   *
    * @var string
    */
   public $successCount;
   /**
-   * Operation last update time. If the operation is done, this is also the
-   * finish time.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Operation create time.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -62,9 +51,7 @@ class GoogleCloudRetailV2betaPurgeProductsMetadata extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Count of entries that encountered errors while processing.
-   *
-   * @param string $failureCount
+   * @param string
    */
   public function setFailureCount($failureCount)
   {
@@ -78,9 +65,7 @@ class GoogleCloudRetailV2betaPurgeProductsMetadata extends \Google\Model
     return $this->failureCount;
   }
   /**
-   * Count of entries that were deleted successfully.
-   *
-   * @param string $successCount
+   * @param string
    */
   public function setSuccessCount($successCount)
   {
@@ -94,10 +79,7 @@ class GoogleCloudRetailV2betaPurgeProductsMetadata extends \Google\Model
     return $this->successCount;
   }
   /**
-   * Operation last update time. If the operation is done, this is also the
-   * finish time.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

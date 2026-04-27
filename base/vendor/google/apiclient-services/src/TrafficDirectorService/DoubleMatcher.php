@@ -19,12 +19,6 @@ namespace Google\Service\TrafficDirectorService;
 
 class DoubleMatcher extends \Google\Model
 {
-  /**
-   * If specified, the input double value must be equal to the value specified
-   * here.
-   *
-   * @var 
-   */
   public $exact;
   protected $rangeType = DoubleRange::class;
   protected $rangeDataType = '';
@@ -38,10 +32,7 @@ class DoubleMatcher extends \Google\Model
     return $this->exact;
   }
   /**
-   * If specified, the input double value must be in the range specified here.
-   * Note: The range is using half-open interval semantics [start, end).
-   *
-   * @param DoubleRange $range
+   * @param DoubleRange
    */
   public function setRange(DoubleRange $range)
   {

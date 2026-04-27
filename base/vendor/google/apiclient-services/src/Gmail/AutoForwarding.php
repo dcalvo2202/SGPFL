@@ -20,69 +20,34 @@ namespace Google\Service\Gmail;
 class AutoForwarding extends \Google\Model
 {
   /**
-   * Unspecified disposition.
-   */
-  public const DISPOSITION_dispositionUnspecified = 'dispositionUnspecified';
-  /**
-   * Leave the message in the `INBOX`.
-   */
-  public const DISPOSITION_leaveInInbox = 'leaveInInbox';
-  /**
-   * Archive the message.
-   */
-  public const DISPOSITION_archive = 'archive';
-  /**
-   * Move the message to the `TRASH`.
-   */
-  public const DISPOSITION_trash = 'trash';
-  /**
-   * Leave the message in the `INBOX` and mark it as read.
-   */
-  public const DISPOSITION_markRead = 'markRead';
-  /**
-   * The state that a message should be left in after it has been forwarded.
-   *
    * @var string
    */
   public $disposition;
   /**
-   * Email address to which all incoming messages are forwarded. This email
-   * address must be a verified member of the forwarding addresses.
-   *
    * @var string
    */
   public $emailAddress;
   /**
-   * Whether all incoming mail is automatically forwarded to another address.
-   *
    * @var bool
    */
   public $enabled;
 
   /**
-   * The state that a message should be left in after it has been forwarded.
-   *
-   * Accepted values: dispositionUnspecified, leaveInInbox, archive, trash,
-   * markRead
-   *
-   * @param self::DISPOSITION_* $disposition
+   * @param string
    */
   public function setDisposition($disposition)
   {
     $this->disposition = $disposition;
   }
   /**
-   * @return self::DISPOSITION_*
+   * @return string
    */
   public function getDisposition()
   {
     return $this->disposition;
   }
   /**
-   * Email address to which all incoming messages are forwarded. This email
-   * address must be a verified member of the forwarding addresses.
-   *
-   * @param string $emailAddress
+   * @param string
    */
   public function setEmailAddress($emailAddress)
   {
@@ -96,9 +61,7 @@ class AutoForwarding extends \Google\Model
     return $this->emailAddress;
   }
   /**
-   * Whether all incoming mail is automatically forwarded to another address.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {

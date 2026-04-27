@@ -27,9 +27,7 @@ class GoogleAppsDriveLabelsV2BadgeColors extends \Google\Model
   protected $soloColorDataType = '';
 
   /**
-   * Output only. Badge background that pairs with the foreground.
-   *
-   * @param GoogleTypeColor $backgroundColor
+   * @param GoogleTypeColor
    */
   public function setBackgroundColor(GoogleTypeColor $backgroundColor)
   {
@@ -43,9 +41,7 @@ class GoogleAppsDriveLabelsV2BadgeColors extends \Google\Model
     return $this->backgroundColor;
   }
   /**
-   * Output only. Badge foreground that pairs with the background.
-   *
-   * @param GoogleTypeColor $foregroundColor
+   * @param GoogleTypeColor
    */
   public function setForegroundColor(GoogleTypeColor $foregroundColor)
   {
@@ -59,9 +55,7 @@ class GoogleAppsDriveLabelsV2BadgeColors extends \Google\Model
     return $this->foregroundColor;
   }
   /**
-   * Output only. Color that can be used for text without a background.
-   *
-   * @param GoogleTypeColor $soloColor
+   * @param GoogleTypeColor
    */
   public function setSoloColor(GoogleTypeColor $soloColor)
   {

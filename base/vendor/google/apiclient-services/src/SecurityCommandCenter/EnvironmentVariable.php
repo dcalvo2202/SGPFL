@@ -20,22 +20,16 @@ namespace Google\Service\SecurityCommandCenter;
 class EnvironmentVariable extends \Google\Model
 {
   /**
-   * Environment variable name as a JSON encoded string.
-   *
    * @var string
    */
   public $name;
   /**
-   * Environment variable value as a JSON encoded string.
-   *
    * @var string
    */
   public $val;
 
   /**
-   * Environment variable name as a JSON encoded string.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -49,9 +43,7 @@ class EnvironmentVariable extends \Google\Model
     return $this->name;
   }
   /**
-   * Environment variable value as a JSON encoded string.
-   *
-   * @param string $val
+   * @param string
    */
   public function setVal($val)
   {

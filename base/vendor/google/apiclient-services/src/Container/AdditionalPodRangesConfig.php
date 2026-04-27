@@ -23,16 +23,12 @@ class AdditionalPodRangesConfig extends \Google\Collection
   protected $podRangeInfoType = RangeInfo::class;
   protected $podRangeInfoDataType = 'array';
   /**
-   * Name for pod secondary ipv4 range which has the actual range defined ahead.
-   *
    * @var string[]
    */
   public $podRangeNames;
 
   /**
-   * Output only. Information for additional pod range.
-   *
-   * @param RangeInfo[] $podRangeInfo
+   * @param RangeInfo[]
    */
   public function setPodRangeInfo($podRangeInfo)
   {
@@ -46,9 +42,7 @@ class AdditionalPodRangesConfig extends \Google\Collection
     return $this->podRangeInfo;
   }
   /**
-   * Name for pod secondary ipv4 range which has the actual range defined ahead.
-   *
-   * @param string[] $podRangeNames
+   * @param string[]
    */
   public function setPodRangeNames($podRangeNames)
   {

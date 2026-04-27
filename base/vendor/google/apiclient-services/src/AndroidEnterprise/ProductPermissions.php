@@ -23,17 +23,12 @@ class ProductPermissions extends \Google\Collection
   protected $permissionType = ProductPermission::class;
   protected $permissionDataType = 'array';
   /**
-   * The ID of the app that the permissions relate to, e.g.
-   * "app:com.google.android.gm".
-   *
    * @var string
    */
   public $productId;
 
   /**
-   * The permissions required by the app.
-   *
-   * @param ProductPermission[] $permission
+   * @param ProductPermission[]
    */
   public function setPermission($permission)
   {
@@ -47,10 +42,7 @@ class ProductPermissions extends \Google\Collection
     return $this->permission;
   }
   /**
-   * The ID of the app that the permissions relate to, e.g.
-   * "app:com.google.android.gm".
-   *
-   * @param string $productId
+   * @param string
    */
   public function setProductId($productId)
   {

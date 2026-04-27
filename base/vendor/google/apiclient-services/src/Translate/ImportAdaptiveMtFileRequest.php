@@ -25,9 +25,7 @@ class ImportAdaptiveMtFileRequest extends \Google\Model
   protected $gcsInputSourceDataType = '';
 
   /**
-   * Inline file source.
-   *
-   * @param FileInputSource $fileInputSource
+   * @param FileInputSource
    */
   public function setFileInputSource(FileInputSource $fileInputSource)
   {
@@ -41,9 +39,7 @@ class ImportAdaptiveMtFileRequest extends \Google\Model
     return $this->fileInputSource;
   }
   /**
-   * Google Cloud Storage file source.
-   *
-   * @param GcsInputSource $gcsInputSource
+   * @param GcsInputSource
    */
   public function setGcsInputSource(GcsInputSource $gcsInputSource)
   {

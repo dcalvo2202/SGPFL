@@ -20,64 +20,28 @@ namespace Google\Service\AndroidPublisher;
 class SubscriptionDetails extends \Google\Model
 {
   /**
-   * Offer phase unspecified. This value is not used.
-   */
-  public const OFFER_PHASE_OFFER_PHASE_UNSPECIFIED = 'OFFER_PHASE_UNSPECIFIED';
-  /**
-   * The order funds a base price period.
-   */
-  public const OFFER_PHASE_BASE = 'BASE';
-  /**
-   * The order funds an introductory pricing period.
-   */
-  public const OFFER_PHASE_INTRODUCTORY = 'INTRODUCTORY';
-  /**
-   * The order funds a free trial period.
-   */
-  public const OFFER_PHASE_FREE_TRIAL = 'FREE_TRIAL';
-  /**
-   * The base plan ID of the subscription.
-   *
    * @var string
    */
   public $basePlanId;
   /**
-   * The offer ID for the current subscription offer.
-   *
    * @var string
    */
   public $offerId;
   /**
-   * The pricing phase for the billing period funded by this order. Deprecated.
-   * Use offer_phase_details instead.
-   *
    * @var string
    */
   public $offerPhase;
-  protected $offerPhaseDetailsType = OfferPhaseDetails::class;
-  protected $offerPhaseDetailsDataType = '';
   /**
-   * The end of the billing period funded by this order. This is a snapshot of
-   * the billing/service period end time at the moment the order was processed,
-   * and should be used only for accounting. To get the current end time of the
-   * subscription service period, use purchases.subscriptionsv2.get.
-   *
    * @var string
    */
   public $servicePeriodEndTime;
   /**
-   * The start of the billing period funded by this order. This is a snapshot of
-   * the billing/service period start time at the moment the order was
-   * processed, and should be used only for accounting.
-   *
    * @var string
    */
   public $servicePeriodStartTime;
 
   /**
-   * The base plan ID of the subscription.
-   *
-   * @param string $basePlanId
+   * @param string
    */
   public function setBasePlanId($basePlanId)
   {
@@ -91,9 +55,7 @@ class SubscriptionDetails extends \Google\Model
     return $this->basePlanId;
   }
   /**
-   * The offer ID for the current subscription offer.
-   *
-   * @param string $offerId
+   * @param string
    */
   public function setOfferId($offerId)
   {
@@ -107,47 +69,21 @@ class SubscriptionDetails extends \Google\Model
     return $this->offerId;
   }
   /**
-   * The pricing phase for the billing period funded by this order. Deprecated.
-   * Use offer_phase_details instead.
-   *
-   * Accepted values: OFFER_PHASE_UNSPECIFIED, BASE, INTRODUCTORY, FREE_TRIAL
-   *
-   * @param self::OFFER_PHASE_* $offerPhase
+   * @param string
    */
   public function setOfferPhase($offerPhase)
   {
     $this->offerPhase = $offerPhase;
   }
   /**
-   * @return self::OFFER_PHASE_*
+   * @return string
    */
   public function getOfferPhase()
   {
     return $this->offerPhase;
   }
   /**
-   * The pricing phase details for the entitlement period funded by this order.
-   *
-   * @param OfferPhaseDetails $offerPhaseDetails
-   */
-  public function setOfferPhaseDetails(OfferPhaseDetails $offerPhaseDetails)
-  {
-    $this->offerPhaseDetails = $offerPhaseDetails;
-  }
-  /**
-   * @return OfferPhaseDetails
-   */
-  public function getOfferPhaseDetails()
-  {
-    return $this->offerPhaseDetails;
-  }
-  /**
-   * The end of the billing period funded by this order. This is a snapshot of
-   * the billing/service period end time at the moment the order was processed,
-   * and should be used only for accounting. To get the current end time of the
-   * subscription service period, use purchases.subscriptionsv2.get.
-   *
-   * @param string $servicePeriodEndTime
+   * @param string
    */
   public function setServicePeriodEndTime($servicePeriodEndTime)
   {
@@ -161,11 +97,7 @@ class SubscriptionDetails extends \Google\Model
     return $this->servicePeriodEndTime;
   }
   /**
-   * The start of the billing period funded by this order. This is a snapshot of
-   * the billing/service period start time at the moment the order was
-   * processed, and should be used only for accounting.
-   *
-   * @param string $servicePeriodStartTime
+   * @param string
    */
   public function setServicePeriodStartTime($servicePeriodStartTime)
   {

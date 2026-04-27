@@ -20,16 +20,12 @@ namespace Google\Service\RapidMigrationAssessment;
 class VSphereScan extends \Google\Model
 {
   /**
-   * reference to the corresponding VSphere Scan in MC Source.
-   *
    * @var string
    */
   public $coreSource;
 
   /**
-   * reference to the corresponding VSphere Scan in MC Source.
-   *
-   * @param string $coreSource
+   * @param string
    */
   public function setCoreSource($coreSource)
   {

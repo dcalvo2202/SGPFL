@@ -24,16 +24,10 @@ class FetchInventoryResponse extends \Google\Model
   protected $azureVmsType = AzureVmsDetails::class;
   protected $azureVmsDataType = '';
   /**
-   * Output only. A token, which can be sent as `page_token` to retrieve the
-   * next page. If this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Output only. The timestamp when the source was last queried (if the result
-   * is from the cache).
-   *
    * @var string
    */
   public $updateTime;
@@ -41,9 +35,7 @@ class FetchInventoryResponse extends \Google\Model
   protected $vmwareVmsDataType = '';
 
   /**
-   * The description of the VMs in a Source of type AWS.
-   *
-   * @param AwsVmsDetails $awsVms
+   * @param AwsVmsDetails
    */
   public function setAwsVms(AwsVmsDetails $awsVms)
   {
@@ -57,9 +49,7 @@ class FetchInventoryResponse extends \Google\Model
     return $this->awsVms;
   }
   /**
-   * The description of the VMs in a Source of type Azure.
-   *
-   * @param AzureVmsDetails $azureVms
+   * @param AzureVmsDetails
    */
   public function setAzureVms(AzureVmsDetails $azureVms)
   {
@@ -73,10 +63,7 @@ class FetchInventoryResponse extends \Google\Model
     return $this->azureVms;
   }
   /**
-   * Output only. A token, which can be sent as `page_token` to retrieve the
-   * next page. If this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -90,10 +77,7 @@ class FetchInventoryResponse extends \Google\Model
     return $this->nextPageToken;
   }
   /**
-   * Output only. The timestamp when the source was last queried (if the result
-   * is from the cache).
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -107,9 +91,7 @@ class FetchInventoryResponse extends \Google\Model
     return $this->updateTime;
   }
   /**
-   * The description of the VMs in a Source of type Vmware.
-   *
-   * @param VmwareVmsDetails $vmwareVms
+   * @param VmwareVmsDetails
    */
   public function setVmwareVms(VmwareVmsDetails $vmwareVms)
   {

@@ -20,31 +20,20 @@ namespace Google\Service\ChromeManagement;
 class GoogleChromeManagementV1ChromeAppPermission extends \Google\Model
 {
   /**
-   * Output only. If available, whether this permissions grants the
-   * app/extension access to user data.
-   *
    * @var bool
    */
   public $accessUserData;
   /**
-   * Output only. If available, a URI to a page that has documentation for the
-   * current permission.
-   *
    * @var string
    */
   public $documentationUri;
   /**
-   * Output only. The type of the permission.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Output only. If available, whether this permissions grants the
-   * app/extension access to user data.
-   *
-   * @param bool $accessUserData
+   * @param bool
    */
   public function setAccessUserData($accessUserData)
   {
@@ -58,10 +47,7 @@ class GoogleChromeManagementV1ChromeAppPermission extends \Google\Model
     return $this->accessUserData;
   }
   /**
-   * Output only. If available, a URI to a page that has documentation for the
-   * current permission.
-   *
-   * @param string $documentationUri
+   * @param string
    */
   public function setDocumentationUri($documentationUri)
   {
@@ -75,9 +61,7 @@ class GoogleChromeManagementV1ChromeAppPermission extends \Google\Model
     return $this->documentationUri;
   }
   /**
-   * Output only. The type of the permission.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

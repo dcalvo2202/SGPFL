@@ -22,23 +22,16 @@ class GoogleCloudAiplatformV1CreateNotebookExecutionJobRequest extends \Google\M
   protected $notebookExecutionJobType = GoogleCloudAiplatformV1NotebookExecutionJob::class;
   protected $notebookExecutionJobDataType = '';
   /**
-   * Optional. User specified ID for the NotebookExecutionJob.
-   *
    * @var string
    */
   public $notebookExecutionJobId;
   /**
-   * Required. The resource name of the Location to create the
-   * NotebookExecutionJob. Format: `projects/{project}/locations/{location}`
-   *
    * @var string
    */
   public $parent;
 
   /**
-   * Required. The NotebookExecutionJob to create.
-   *
-   * @param GoogleCloudAiplatformV1NotebookExecutionJob $notebookExecutionJob
+   * @param GoogleCloudAiplatformV1NotebookExecutionJob
    */
   public function setNotebookExecutionJob(GoogleCloudAiplatformV1NotebookExecutionJob $notebookExecutionJob)
   {
@@ -52,9 +45,7 @@ class GoogleCloudAiplatformV1CreateNotebookExecutionJobRequest extends \Google\M
     return $this->notebookExecutionJob;
   }
   /**
-   * Optional. User specified ID for the NotebookExecutionJob.
-   *
-   * @param string $notebookExecutionJobId
+   * @param string
    */
   public function setNotebookExecutionJobId($notebookExecutionJobId)
   {
@@ -68,10 +59,7 @@ class GoogleCloudAiplatformV1CreateNotebookExecutionJobRequest extends \Google\M
     return $this->notebookExecutionJobId;
   }
   /**
-   * Required. The resource name of the Location to create the
-   * NotebookExecutionJob. Format: `projects/{project}/locations/{location}`
-   *
-   * @param string $parent
+   * @param string
    */
   public function setParent($parent)
   {

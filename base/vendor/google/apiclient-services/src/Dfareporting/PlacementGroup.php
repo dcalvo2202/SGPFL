@@ -19,170 +19,96 @@ namespace Google\Service\Dfareporting;
 
 class PlacementGroup extends \Google\Collection
 {
-  public const ACTIVE_STATUS_PLACEMENT_STATUS_UNKNOWN = 'PLACEMENT_STATUS_UNKNOWN';
-  public const ACTIVE_STATUS_PLACEMENT_STATUS_ACTIVE = 'PLACEMENT_STATUS_ACTIVE';
-  public const ACTIVE_STATUS_PLACEMENT_STATUS_INACTIVE = 'PLACEMENT_STATUS_INACTIVE';
-  public const ACTIVE_STATUS_PLACEMENT_STATUS_ARCHIVED = 'PLACEMENT_STATUS_ARCHIVED';
-  public const ACTIVE_STATUS_PLACEMENT_STATUS_PERMANENTLY_ARCHIVED = 'PLACEMENT_STATUS_PERMANENTLY_ARCHIVED';
-  /**
-   * A simple group of site-placements (tags). Basically acts as a single
-   * pricing point for a group of tags.
-   */
-  public const PLACEMENT_GROUP_TYPE_PLACEMENT_PACKAGE = 'PLACEMENT_PACKAGE';
-  /**
-   * A group of site-placements (tags) that not only acts as a single pricing
-   * point but also assumes that all the tags in it will be served at the same
-   * time. This kind of group requires one of its assigned site-placements to be
-   * marked as primary for reporting purposes.
-   */
-  public const PLACEMENT_GROUP_TYPE_PLACEMENT_ROADBLOCK = 'PLACEMENT_ROADBLOCK';
   protected $collection_key = 'childPlacementIds';
   /**
-   * Account ID of this placement group. This is a read-only field that can be
-   * left blank.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * Whether this placement group is active, inactive, archived or permanently
-   * archived.
-   *
    * @var string
    */
   public $activeStatus;
   /**
-   * Advertiser ID of this placement group. This is a required field on
-   * insertion.
-   *
    * @var string
    */
   public $advertiserId;
   protected $advertiserIdDimensionValueType = DimensionValue::class;
   protected $advertiserIdDimensionValueDataType = '';
   /**
-   * Campaign ID of this placement group. This field is required on insertion.
-   *
    * @var string
    */
   public $campaignId;
   protected $campaignIdDimensionValueType = DimensionValue::class;
   protected $campaignIdDimensionValueDataType = '';
   /**
-   * IDs of placements which are assigned to this placement group. This is a
-   * read-only, auto-generated field.
-   *
    * @var string[]
    */
   public $childPlacementIds;
   /**
-   * Comments for this placement group.
-   *
    * @var string
    */
   public $comment;
   /**
-   * ID of the content category assigned to this placement group.
-   *
    * @var string
    */
   public $contentCategoryId;
   protected $createInfoType = LastModifiedInfo::class;
   protected $createInfoDataType = '';
   /**
-   * Directory site ID associated with this placement group. On insert, you must
-   * set either this field or the site_id field to specify the site associated
-   * with this placement group. This is a required field that is read-only after
-   * insertion.
-   *
    * @var string
    */
   public $directorySiteId;
   protected $directorySiteIdDimensionValueType = DimensionValue::class;
   protected $directorySiteIdDimensionValueDataType = '';
   /**
-   * External ID for this placement.
-   *
    * @var string
    */
   public $externalId;
   /**
-   * ID of this placement group. This is a read-only, auto-generated field.
-   *
    * @var string
    */
   public $id;
   protected $idDimensionValueType = DimensionValue::class;
   protected $idDimensionValueDataType = '';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#placementGroup".
-   *
    * @var string
    */
   public $kind;
   protected $lastModifiedInfoType = LastModifiedInfo::class;
   protected $lastModifiedInfoDataType = '';
   /**
-   * Name of this placement group. This is a required field and must be less
-   * than 256 characters long.
-   *
    * @var string
    */
   public $name;
   /**
-   * Type of this placement group. A package is a simple group of placements
-   * that acts as a single pricing point for a group of tags. A roadblock is a
-   * group of placements that not only acts as a single pricing point, but also
-   * assumes that all the tags in it will be served at the same time. A
-   * roadblock requires one of its assigned placements to be marked as primary
-   * for reporting. This field is required on insertion.
-   *
    * @var string
    */
   public $placementGroupType;
   /**
-   * ID of the placement strategy assigned to this placement group.
-   *
    * @var string
    */
   public $placementStrategyId;
   protected $pricingScheduleType = PricingSchedule::class;
   protected $pricingScheduleDataType = '';
   /**
-   * ID of the primary placement, used to calculate the media cost of a
-   * roadblock (placement group). Modifying this field will automatically modify
-   * the primary field on all affected roadblock child placements.
-   *
    * @var string
    */
   public $primaryPlacementId;
   protected $primaryPlacementIdDimensionValueType = DimensionValue::class;
   protected $primaryPlacementIdDimensionValueDataType = '';
   /**
-   * Site ID associated with this placement group. On insert, you must set
-   * either this field or the directorySiteId field to specify the site
-   * associated with this placement group. This is a required field that is
-   * read-only after insertion.
-   *
    * @var string
    */
   public $siteId;
   protected $siteIdDimensionValueType = DimensionValue::class;
   protected $siteIdDimensionValueDataType = '';
   /**
-   * Subaccount ID of this placement group. This is a read-only field that can
-   * be left blank.
-   *
    * @var string
    */
   public $subaccountId;
 
   /**
-   * Account ID of this placement group. This is a read-only field that can be
-   * left blank.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -196,31 +122,21 @@ class PlacementGroup extends \Google\Collection
     return $this->accountId;
   }
   /**
-   * Whether this placement group is active, inactive, archived or permanently
-   * archived.
-   *
-   * Accepted values: PLACEMENT_STATUS_UNKNOWN, PLACEMENT_STATUS_ACTIVE,
-   * PLACEMENT_STATUS_INACTIVE, PLACEMENT_STATUS_ARCHIVED,
-   * PLACEMENT_STATUS_PERMANENTLY_ARCHIVED
-   *
-   * @param self::ACTIVE_STATUS_* $activeStatus
+   * @param string
    */
   public function setActiveStatus($activeStatus)
   {
     $this->activeStatus = $activeStatus;
   }
   /**
-   * @return self::ACTIVE_STATUS_*
+   * @return string
    */
   public function getActiveStatus()
   {
     return $this->activeStatus;
   }
   /**
-   * Advertiser ID of this placement group. This is a required field on
-   * insertion.
-   *
-   * @param string $advertiserId
+   * @param string
    */
   public function setAdvertiserId($advertiserId)
   {
@@ -234,10 +150,7 @@ class PlacementGroup extends \Google\Collection
     return $this->advertiserId;
   }
   /**
-   * Dimension value for the ID of the advertiser. This is a read-only, auto-
-   * generated field.
-   *
-   * @param DimensionValue $advertiserIdDimensionValue
+   * @param DimensionValue
    */
   public function setAdvertiserIdDimensionValue(DimensionValue $advertiserIdDimensionValue)
   {
@@ -251,9 +164,7 @@ class PlacementGroup extends \Google\Collection
     return $this->advertiserIdDimensionValue;
   }
   /**
-   * Campaign ID of this placement group. This field is required on insertion.
-   *
-   * @param string $campaignId
+   * @param string
    */
   public function setCampaignId($campaignId)
   {
@@ -267,10 +178,7 @@ class PlacementGroup extends \Google\Collection
     return $this->campaignId;
   }
   /**
-   * Dimension value for the ID of the campaign. This is a read-only, auto-
-   * generated field.
-   *
-   * @param DimensionValue $campaignIdDimensionValue
+   * @param DimensionValue
    */
   public function setCampaignIdDimensionValue(DimensionValue $campaignIdDimensionValue)
   {
@@ -284,10 +192,7 @@ class PlacementGroup extends \Google\Collection
     return $this->campaignIdDimensionValue;
   }
   /**
-   * IDs of placements which are assigned to this placement group. This is a
-   * read-only, auto-generated field.
-   *
-   * @param string[] $childPlacementIds
+   * @param string[]
    */
   public function setChildPlacementIds($childPlacementIds)
   {
@@ -301,9 +206,7 @@ class PlacementGroup extends \Google\Collection
     return $this->childPlacementIds;
   }
   /**
-   * Comments for this placement group.
-   *
-   * @param string $comment
+   * @param string
    */
   public function setComment($comment)
   {
@@ -317,9 +220,7 @@ class PlacementGroup extends \Google\Collection
     return $this->comment;
   }
   /**
-   * ID of the content category assigned to this placement group.
-   *
-   * @param string $contentCategoryId
+   * @param string
    */
   public function setContentCategoryId($contentCategoryId)
   {
@@ -333,10 +234,7 @@ class PlacementGroup extends \Google\Collection
     return $this->contentCategoryId;
   }
   /**
-   * Information about the creation of this placement group. This is a read-only
-   * field.
-   *
-   * @param LastModifiedInfo $createInfo
+   * @param LastModifiedInfo
    */
   public function setCreateInfo(LastModifiedInfo $createInfo)
   {
@@ -350,12 +248,7 @@ class PlacementGroup extends \Google\Collection
     return $this->createInfo;
   }
   /**
-   * Directory site ID associated with this placement group. On insert, you must
-   * set either this field or the site_id field to specify the site associated
-   * with this placement group. This is a required field that is read-only after
-   * insertion.
-   *
-   * @param string $directorySiteId
+   * @param string
    */
   public function setDirectorySiteId($directorySiteId)
   {
@@ -369,10 +262,7 @@ class PlacementGroup extends \Google\Collection
     return $this->directorySiteId;
   }
   /**
-   * Dimension value for the ID of the directory site. This is a read-only,
-   * auto-generated field.
-   *
-   * @param DimensionValue $directorySiteIdDimensionValue
+   * @param DimensionValue
    */
   public function setDirectorySiteIdDimensionValue(DimensionValue $directorySiteIdDimensionValue)
   {
@@ -386,9 +276,7 @@ class PlacementGroup extends \Google\Collection
     return $this->directorySiteIdDimensionValue;
   }
   /**
-   * External ID for this placement.
-   *
-   * @param string $externalId
+   * @param string
    */
   public function setExternalId($externalId)
   {
@@ -402,9 +290,7 @@ class PlacementGroup extends \Google\Collection
     return $this->externalId;
   }
   /**
-   * ID of this placement group. This is a read-only, auto-generated field.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -418,10 +304,7 @@ class PlacementGroup extends \Google\Collection
     return $this->id;
   }
   /**
-   * Dimension value for the ID of this placement group. This is a read-only,
-   * auto-generated field.
-   *
-   * @param DimensionValue $idDimensionValue
+   * @param DimensionValue
    */
   public function setIdDimensionValue(DimensionValue $idDimensionValue)
   {
@@ -435,10 +318,7 @@ class PlacementGroup extends \Google\Collection
     return $this->idDimensionValue;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#placementGroup".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -452,10 +332,7 @@ class PlacementGroup extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Information about the most recent modification of this placement group.
-   * This is a read-only field.
-   *
-   * @param LastModifiedInfo $lastModifiedInfo
+   * @param LastModifiedInfo
    */
   public function setLastModifiedInfo(LastModifiedInfo $lastModifiedInfo)
   {
@@ -469,10 +346,7 @@ class PlacementGroup extends \Google\Collection
     return $this->lastModifiedInfo;
   }
   /**
-   * Name of this placement group. This is a required field and must be less
-   * than 256 characters long.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -486,32 +360,21 @@ class PlacementGroup extends \Google\Collection
     return $this->name;
   }
   /**
-   * Type of this placement group. A package is a simple group of placements
-   * that acts as a single pricing point for a group of tags. A roadblock is a
-   * group of placements that not only acts as a single pricing point, but also
-   * assumes that all the tags in it will be served at the same time. A
-   * roadblock requires one of its assigned placements to be marked as primary
-   * for reporting. This field is required on insertion.
-   *
-   * Accepted values: PLACEMENT_PACKAGE, PLACEMENT_ROADBLOCK
-   *
-   * @param self::PLACEMENT_GROUP_TYPE_* $placementGroupType
+   * @param string
    */
   public function setPlacementGroupType($placementGroupType)
   {
     $this->placementGroupType = $placementGroupType;
   }
   /**
-   * @return self::PLACEMENT_GROUP_TYPE_*
+   * @return string
    */
   public function getPlacementGroupType()
   {
     return $this->placementGroupType;
   }
   /**
-   * ID of the placement strategy assigned to this placement group.
-   *
-   * @param string $placementStrategyId
+   * @param string
    */
   public function setPlacementStrategyId($placementStrategyId)
   {
@@ -525,10 +388,7 @@ class PlacementGroup extends \Google\Collection
     return $this->placementStrategyId;
   }
   /**
-   * Pricing schedule of this placement group. This field is required on
-   * insertion.
-   *
-   * @param PricingSchedule $pricingSchedule
+   * @param PricingSchedule
    */
   public function setPricingSchedule(PricingSchedule $pricingSchedule)
   {
@@ -542,11 +402,7 @@ class PlacementGroup extends \Google\Collection
     return $this->pricingSchedule;
   }
   /**
-   * ID of the primary placement, used to calculate the media cost of a
-   * roadblock (placement group). Modifying this field will automatically modify
-   * the primary field on all affected roadblock child placements.
-   *
-   * @param string $primaryPlacementId
+   * @param string
    */
   public function setPrimaryPlacementId($primaryPlacementId)
   {
@@ -560,10 +416,7 @@ class PlacementGroup extends \Google\Collection
     return $this->primaryPlacementId;
   }
   /**
-   * Dimension value for the ID of the primary placement. This is a read-only,
-   * auto-generated field.
-   *
-   * @param DimensionValue $primaryPlacementIdDimensionValue
+   * @param DimensionValue
    */
   public function setPrimaryPlacementIdDimensionValue(DimensionValue $primaryPlacementIdDimensionValue)
   {
@@ -577,12 +430,7 @@ class PlacementGroup extends \Google\Collection
     return $this->primaryPlacementIdDimensionValue;
   }
   /**
-   * Site ID associated with this placement group. On insert, you must set
-   * either this field or the directorySiteId field to specify the site
-   * associated with this placement group. This is a required field that is
-   * read-only after insertion.
-   *
-   * @param string $siteId
+   * @param string
    */
   public function setSiteId($siteId)
   {
@@ -596,10 +444,7 @@ class PlacementGroup extends \Google\Collection
     return $this->siteId;
   }
   /**
-   * Dimension value for the ID of the site. This is a read-only, auto-generated
-   * field.
-   *
-   * @param DimensionValue $siteIdDimensionValue
+   * @param DimensionValue
    */
   public function setSiteIdDimensionValue(DimensionValue $siteIdDimensionValue)
   {
@@ -613,10 +458,7 @@ class PlacementGroup extends \Google\Collection
     return $this->siteIdDimensionValue;
   }
   /**
-   * Subaccount ID of this placement group. This is a read-only field that can
-   * be left blank.
-   *
-   * @param string $subaccountId
+   * @param string
    */
   public function setSubaccountId($subaccountId)
   {

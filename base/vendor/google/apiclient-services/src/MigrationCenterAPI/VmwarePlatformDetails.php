@@ -20,85 +20,50 @@ namespace Google\Service\MigrationCenterAPI;
 class VmwarePlatformDetails extends \Google\Model
 {
   /**
-   * Simultaneous Multithreading status unknown.
-   */
-  public const ESX_HYPERTHREADING_HYPERTHREADING_STATUS_UNSPECIFIED = 'HYPERTHREADING_STATUS_UNSPECIFIED';
-  /**
-   * Simultaneous Multithreading is disabled or unavailable.
-   */
-  public const ESX_HYPERTHREADING_HYPERTHREADING_STATUS_DISABLED = 'HYPERTHREADING_STATUS_DISABLED';
-  /**
-   * Simultaneous Multithreading is enabled.
-   */
-  public const ESX_HYPERTHREADING_HYPERTHREADING_STATUS_ENABLED = 'HYPERTHREADING_STATUS_ENABLED';
-  /**
-   * Whether the ESX is hyperthreaded.
-   *
    * @var string
    */
   public $esxHyperthreading;
   /**
-   * ESX version.
-   *
    * @var string
    */
   public $esxVersion;
   /**
-   * VMware os enum - https://vdc-repo.vmware.com/vmwb-repository/dcr-public/da4
-   * 7f910-60ac-438b-8b9b-6122f4d14524/16b7274a-bf8b-4b4c-a05e-
-   * 746f2aa93c8c/doc/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html.
-   *
    * @var string
    */
   public $osid;
   /**
-   * Folder name in vCenter where asset resides.
-   *
    * @var string
    */
   public $vcenterFolder;
   /**
-   * vCenter URI used in collection.
-   *
    * @var string
    */
   public $vcenterUri;
   /**
-   * vCenter version.
-   *
    * @var string
    */
   public $vcenterVersion;
   /**
-   * vCenter VM ID.
-   *
    * @var string
    */
   public $vcenterVmId;
 
   /**
-   * Whether the ESX is hyperthreaded.
-   *
-   * Accepted values: HYPERTHREADING_STATUS_UNSPECIFIED,
-   * HYPERTHREADING_STATUS_DISABLED, HYPERTHREADING_STATUS_ENABLED
-   *
-   * @param self::ESX_HYPERTHREADING_* $esxHyperthreading
+   * @param string
    */
   public function setEsxHyperthreading($esxHyperthreading)
   {
     $this->esxHyperthreading = $esxHyperthreading;
   }
   /**
-   * @return self::ESX_HYPERTHREADING_*
+   * @return string
    */
   public function getEsxHyperthreading()
   {
     return $this->esxHyperthreading;
   }
   /**
-   * ESX version.
-   *
-   * @param string $esxVersion
+   * @param string
    */
   public function setEsxVersion($esxVersion)
   {
@@ -112,11 +77,7 @@ class VmwarePlatformDetails extends \Google\Model
     return $this->esxVersion;
   }
   /**
-   * VMware os enum - https://vdc-repo.vmware.com/vmwb-repository/dcr-public/da4
-   * 7f910-60ac-438b-8b9b-6122f4d14524/16b7274a-bf8b-4b4c-a05e-
-   * 746f2aa93c8c/doc/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html.
-   *
-   * @param string $osid
+   * @param string
    */
   public function setOsid($osid)
   {
@@ -130,9 +91,7 @@ class VmwarePlatformDetails extends \Google\Model
     return $this->osid;
   }
   /**
-   * Folder name in vCenter where asset resides.
-   *
-   * @param string $vcenterFolder
+   * @param string
    */
   public function setVcenterFolder($vcenterFolder)
   {
@@ -146,9 +105,7 @@ class VmwarePlatformDetails extends \Google\Model
     return $this->vcenterFolder;
   }
   /**
-   * vCenter URI used in collection.
-   *
-   * @param string $vcenterUri
+   * @param string
    */
   public function setVcenterUri($vcenterUri)
   {
@@ -162,9 +119,7 @@ class VmwarePlatformDetails extends \Google\Model
     return $this->vcenterUri;
   }
   /**
-   * vCenter version.
-   *
-   * @param string $vcenterVersion
+   * @param string
    */
   public function setVcenterVersion($vcenterVersion)
   {
@@ -178,9 +133,7 @@ class VmwarePlatformDetails extends \Google\Model
     return $this->vcenterVersion;
   }
   /**
-   * vCenter VM ID.
-   *
-   * @param string $vcenterVmId
+   * @param string
    */
   public function setVcenterVmId($vcenterVmId)
   {

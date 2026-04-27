@@ -20,70 +20,40 @@ namespace Google\Service\CloudAlloyDBAdmin;
 class ObservabilityInstanceConfig extends \Google\Model
 {
   /**
-   * Observability feature status for an instance. This flag is turned "off" by
-   * default.
-   *
    * @var bool
    */
   public $enabled;
   /**
-   * Query string length. The default value is 10k.
-   *
    * @var int
    */
   public $maxQueryStringLength;
   /**
-   * Preserve comments in query string for an instance. This flag is turned
-   * "off" by default.
-   *
    * @var bool
    */
   public $preserveComments;
   /**
-   * Number of query execution plans captured by Insights per minute for all
-   * queries combined. The default value is 200. Any integer between 0 to 200 is
-   * considered valid.
-   *
    * @var int
    */
   public $queryPlansPerMinute;
   /**
-   * Record application tags for an instance. This flag is turned "off" by
-   * default.
-   *
    * @var bool
    */
   public $recordApplicationTags;
   /**
-   * Track actively running queries on the instance. If not set, this flag is
-   * "off" by default.
-   *
    * @var bool
    */
   public $trackActiveQueries;
   /**
-   * Output only. Track wait event types during query execution for an instance.
-   * This flag is turned "on" by default but tracking is enabled only after
-   * observability enabled flag is also turned on. This is read-only flag and
-   * only modifiable by internal API.
-   *
    * @var bool
    */
   public $trackWaitEventTypes;
   /**
-   * Track wait events during query execution for an instance. This flag is
-   * turned "on" by default but tracking is enabled only after observability
-   * enabled flag is also turned on.
-   *
    * @var bool
    */
   public $trackWaitEvents;
 
   /**
-   * Observability feature status for an instance. This flag is turned "off" by
-   * default.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {
@@ -97,9 +67,7 @@ class ObservabilityInstanceConfig extends \Google\Model
     return $this->enabled;
   }
   /**
-   * Query string length. The default value is 10k.
-   *
-   * @param int $maxQueryStringLength
+   * @param int
    */
   public function setMaxQueryStringLength($maxQueryStringLength)
   {
@@ -113,10 +81,7 @@ class ObservabilityInstanceConfig extends \Google\Model
     return $this->maxQueryStringLength;
   }
   /**
-   * Preserve comments in query string for an instance. This flag is turned
-   * "off" by default.
-   *
-   * @param bool $preserveComments
+   * @param bool
    */
   public function setPreserveComments($preserveComments)
   {
@@ -130,11 +95,7 @@ class ObservabilityInstanceConfig extends \Google\Model
     return $this->preserveComments;
   }
   /**
-   * Number of query execution plans captured by Insights per minute for all
-   * queries combined. The default value is 200. Any integer between 0 to 200 is
-   * considered valid.
-   *
-   * @param int $queryPlansPerMinute
+   * @param int
    */
   public function setQueryPlansPerMinute($queryPlansPerMinute)
   {
@@ -148,10 +109,7 @@ class ObservabilityInstanceConfig extends \Google\Model
     return $this->queryPlansPerMinute;
   }
   /**
-   * Record application tags for an instance. This flag is turned "off" by
-   * default.
-   *
-   * @param bool $recordApplicationTags
+   * @param bool
    */
   public function setRecordApplicationTags($recordApplicationTags)
   {
@@ -165,10 +123,7 @@ class ObservabilityInstanceConfig extends \Google\Model
     return $this->recordApplicationTags;
   }
   /**
-   * Track actively running queries on the instance. If not set, this flag is
-   * "off" by default.
-   *
-   * @param bool $trackActiveQueries
+   * @param bool
    */
   public function setTrackActiveQueries($trackActiveQueries)
   {
@@ -182,12 +137,7 @@ class ObservabilityInstanceConfig extends \Google\Model
     return $this->trackActiveQueries;
   }
   /**
-   * Output only. Track wait event types during query execution for an instance.
-   * This flag is turned "on" by default but tracking is enabled only after
-   * observability enabled flag is also turned on. This is read-only flag and
-   * only modifiable by internal API.
-   *
-   * @param bool $trackWaitEventTypes
+   * @param bool
    */
   public function setTrackWaitEventTypes($trackWaitEventTypes)
   {
@@ -201,11 +151,7 @@ class ObservabilityInstanceConfig extends \Google\Model
     return $this->trackWaitEventTypes;
   }
   /**
-   * Track wait events during query execution for an instance. This flag is
-   * turned "on" by default but tracking is enabled only after observability
-   * enabled flag is also turned on.
-   *
-   * @param bool $trackWaitEvents
+   * @param bool
    */
   public function setTrackWaitEvents($trackWaitEvents)
   {

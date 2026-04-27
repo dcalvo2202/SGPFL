@@ -21,10 +21,6 @@ class Breakdown extends \Google\Collection
 {
   protected $collection_key = 'regions';
   /**
-   * Human readable, localized description of issue's effect on different
-   * targets. Should be rendered as a list. For example: * "Products not showing
-   * in ads" * "Products not showing organically"
-   *
    * @var string[]
    */
   public $details;
@@ -32,11 +28,7 @@ class Breakdown extends \Google\Collection
   protected $regionsDataType = 'array';
 
   /**
-   * Human readable, localized description of issue's effect on different
-   * targets. Should be rendered as a list. For example: * "Products not showing
-   * in ads" * "Products not showing organically"
-   *
-   * @param string[] $details
+   * @param string[]
    */
   public function setDetails($details)
   {
@@ -50,11 +42,7 @@ class Breakdown extends \Google\Collection
     return $this->details;
   }
   /**
-   * Lists of regions. Should be rendered as a title for this group of details.
-   * The full list should be shown to merchant. If the list is too long, it is
-   * recommended to make it expandable.
-   *
-   * @param BreakdownRegion[] $regions
+   * @param BreakdownRegion[]
    */
   public function setRegions($regions)
   {

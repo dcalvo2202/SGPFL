@@ -24,10 +24,7 @@ class V2AndroidKeyRestrictions extends \Google\Collection
   protected $allowedApplicationsDataType = 'array';
 
   /**
-   * A list of Android applications that are allowed to make API calls with this
-   * key.
-   *
-   * @param V2AndroidApplication[] $allowedApplications
+   * @param V2AndroidApplication[]
    */
   public function setAllowedApplications($allowedApplications)
   {

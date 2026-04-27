@@ -25,31 +25,20 @@ class GoogleCloudAiplatformV1QueryDeployedModelsResponse extends \Google\Collect
   protected $deployedModelsType = GoogleCloudAiplatformV1DeployedModel::class;
   protected $deployedModelsDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * The total number of DeployedModels on this DeploymentResourcePool.
-   *
    * @var int
    */
   public $totalDeployedModelCount;
   /**
-   * The total number of Endpoints that have DeployedModels on this
-   * DeploymentResourcePool.
-   *
    * @var int
    */
   public $totalEndpointCount;
 
   /**
-   * References to the DeployedModels that share the specified
-   * deploymentResourcePool.
-   *
-   * @param GoogleCloudAiplatformV1DeployedModelRef[] $deployedModelRefs
+   * @param GoogleCloudAiplatformV1DeployedModelRef[]
    */
   public function setDeployedModelRefs($deployedModelRefs)
   {
@@ -63,17 +52,13 @@ class GoogleCloudAiplatformV1QueryDeployedModelsResponse extends \Google\Collect
     return $this->deployedModelRefs;
   }
   /**
-   * DEPRECATED Use deployed_model_refs instead.
-   *
-   * @deprecated
-   * @param GoogleCloudAiplatformV1DeployedModel[] $deployedModels
+   * @param GoogleCloudAiplatformV1DeployedModel[]
    */
   public function setDeployedModels($deployedModels)
   {
     $this->deployedModels = $deployedModels;
   }
   /**
-   * @deprecated
    * @return GoogleCloudAiplatformV1DeployedModel[]
    */
   public function getDeployedModels()
@@ -81,10 +66,7 @@ class GoogleCloudAiplatformV1QueryDeployedModelsResponse extends \Google\Collect
     return $this->deployedModels;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -98,9 +80,7 @@ class GoogleCloudAiplatformV1QueryDeployedModelsResponse extends \Google\Collect
     return $this->nextPageToken;
   }
   /**
-   * The total number of DeployedModels on this DeploymentResourcePool.
-   *
-   * @param int $totalDeployedModelCount
+   * @param int
    */
   public function setTotalDeployedModelCount($totalDeployedModelCount)
   {
@@ -114,10 +94,7 @@ class GoogleCloudAiplatformV1QueryDeployedModelsResponse extends \Google\Collect
     return $this->totalDeployedModelCount;
   }
   /**
-   * The total number of Endpoints that have DeployedModels on this
-   * DeploymentResourcePool.
-   *
-   * @param int $totalEndpointCount
+   * @param int
    */
   public function setTotalEndpointCount($totalEndpointCount)
   {

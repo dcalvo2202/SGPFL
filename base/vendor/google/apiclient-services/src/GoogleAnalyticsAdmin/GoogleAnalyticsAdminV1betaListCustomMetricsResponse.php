@@ -23,17 +23,12 @@ class GoogleAnalyticsAdminV1betaListCustomMetricsResponse extends \Google\Collec
   protected $customMetricsType = GoogleAnalyticsAdminV1betaCustomMetric::class;
   protected $customMetricsDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * List of CustomMetrics.
-   *
-   * @param GoogleAnalyticsAdminV1betaCustomMetric[] $customMetrics
+   * @param GoogleAnalyticsAdminV1betaCustomMetric[]
    */
   public function setCustomMetrics($customMetrics)
   {
@@ -47,10 +42,7 @@ class GoogleAnalyticsAdminV1betaListCustomMetricsResponse extends \Google\Collec
     return $this->customMetrics;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

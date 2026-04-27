@@ -20,28 +20,14 @@ namespace Google\Service\MigrationCenterAPI;
 class AggregationResultHistogramBucket extends \Google\Model
 {
   /**
-   * Count of items in the bucket.
-   *
    * @var string
    */
   public $count;
-  /**
-   * Lower bound - inclusive.
-   *
-   * @var 
-   */
   public $lowerBound;
-  /**
-   * Upper bound - exclusive.
-   *
-   * @var 
-   */
   public $upperBound;
 
   /**
-   * Count of items in the bucket.
-   *
-   * @param string $count
+   * @param string
    */
   public function setCount($count)
   {

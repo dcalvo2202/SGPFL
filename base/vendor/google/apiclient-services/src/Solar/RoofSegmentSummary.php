@@ -20,49 +20,28 @@ namespace Google\Service\Solar;
 class RoofSegmentSummary extends \Google\Model
 {
   /**
-   * Compass direction the roof segment is pointing in. 0 = North, 90 = East,
-   * 180 = South. For a "flat" roof segment (`pitch_degrees` very near 0),
-   * azimuth is not well defined, so for consistency, we define it arbitrarily
-   * to be 0 (North).
-   *
    * @var float
    */
   public $azimuthDegrees;
   /**
-   * The total number of panels on this segment.
-   *
    * @var int
    */
   public $panelsCount;
   /**
-   * Angle of the roof segment relative to the theoretical ground plane. 0 =
-   * parallel to the ground, 90 = perpendicular to the ground.
-   *
    * @var float
    */
   public $pitchDegrees;
   /**
-   * Index in roof_segment_stats of the corresponding
-   * `RoofSegmentSizeAndSunshineStats`.
-   *
    * @var int
    */
   public $segmentIndex;
   /**
-   * How much sunlight energy this part of the layout captures over the course
-   * of a year, in DC kWh, assuming the panels described above.
-   *
    * @var float
    */
   public $yearlyEnergyDcKwh;
 
   /**
-   * Compass direction the roof segment is pointing in. 0 = North, 90 = East,
-   * 180 = South. For a "flat" roof segment (`pitch_degrees` very near 0),
-   * azimuth is not well defined, so for consistency, we define it arbitrarily
-   * to be 0 (North).
-   *
-   * @param float $azimuthDegrees
+   * @param float
    */
   public function setAzimuthDegrees($azimuthDegrees)
   {
@@ -76,9 +55,7 @@ class RoofSegmentSummary extends \Google\Model
     return $this->azimuthDegrees;
   }
   /**
-   * The total number of panels on this segment.
-   *
-   * @param int $panelsCount
+   * @param int
    */
   public function setPanelsCount($panelsCount)
   {
@@ -92,10 +69,7 @@ class RoofSegmentSummary extends \Google\Model
     return $this->panelsCount;
   }
   /**
-   * Angle of the roof segment relative to the theoretical ground plane. 0 =
-   * parallel to the ground, 90 = perpendicular to the ground.
-   *
-   * @param float $pitchDegrees
+   * @param float
    */
   public function setPitchDegrees($pitchDegrees)
   {
@@ -109,10 +83,7 @@ class RoofSegmentSummary extends \Google\Model
     return $this->pitchDegrees;
   }
   /**
-   * Index in roof_segment_stats of the corresponding
-   * `RoofSegmentSizeAndSunshineStats`.
-   *
-   * @param int $segmentIndex
+   * @param int
    */
   public function setSegmentIndex($segmentIndex)
   {
@@ -126,10 +97,7 @@ class RoofSegmentSummary extends \Google\Model
     return $this->segmentIndex;
   }
   /**
-   * How much sunlight energy this part of the layout captures over the course
-   * of a year, in DC kWh, assuming the panels described above.
-   *
-   * @param float $yearlyEnergyDcKwh
+   * @param float
    */
   public function setYearlyEnergyDcKwh($yearlyEnergyDcKwh)
   {

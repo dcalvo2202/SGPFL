@@ -21,21 +21,14 @@ class XPSClassificationEvaluationMetrics extends \Google\Collection
 {
   protected $collection_key = 'confidenceMetricsEntries';
   /**
-   * The Area under precision recall curve metric.
-   *
    * @var float
    */
   public $auPrc;
   /**
-   * The Area Under Receiver Operating Characteristic curve metric. Micro-
-   * averaged for the overall evaluation.
-   *
    * @var float
    */
   public $auRoc;
   /**
-   * The Area under precision recall curve metric based on priors.
-   *
    * @var float
    */
   public $baseAuPrc;
@@ -44,22 +37,16 @@ class XPSClassificationEvaluationMetrics extends \Google\Collection
   protected $confusionMatrixType = XPSConfusionMatrix::class;
   protected $confusionMatrixDataType = '';
   /**
-   * The number of examples used for model evaluation.
-   *
    * @var int
    */
   public $evaluatedExamplesCount;
   /**
-   * The Log Loss metric.
-   *
    * @var float
    */
   public $logLoss;
 
   /**
-   * The Area under precision recall curve metric.
-   *
-   * @param float $auPrc
+   * @param float
    */
   public function setAuPrc($auPrc)
   {
@@ -73,10 +60,7 @@ class XPSClassificationEvaluationMetrics extends \Google\Collection
     return $this->auPrc;
   }
   /**
-   * The Area Under Receiver Operating Characteristic curve metric. Micro-
-   * averaged for the overall evaluation.
-   *
-   * @param float $auRoc
+   * @param float
    */
   public function setAuRoc($auRoc)
   {
@@ -90,9 +74,7 @@ class XPSClassificationEvaluationMetrics extends \Google\Collection
     return $this->auRoc;
   }
   /**
-   * The Area under precision recall curve metric based on priors.
-   *
-   * @param float $baseAuPrc
+   * @param float
    */
   public function setBaseAuPrc($baseAuPrc)
   {
@@ -106,10 +88,7 @@ class XPSClassificationEvaluationMetrics extends \Google\Collection
     return $this->baseAuPrc;
   }
   /**
-   * Metrics that have confidence thresholds. Precision-recall curve can be
-   * derived from it.
-   *
-   * @param XPSConfidenceMetricsEntry[] $confidenceMetricsEntries
+   * @param XPSConfidenceMetricsEntry[]
    */
   public function setConfidenceMetricsEntries($confidenceMetricsEntries)
   {
@@ -123,11 +102,7 @@ class XPSClassificationEvaluationMetrics extends \Google\Collection
     return $this->confidenceMetricsEntries;
   }
   /**
-   * Confusion matrix of the evaluation. Only set for MULTICLASS classification
-   * problems where number of annotation specs is no more than 10. Only set for
-   * model level evaluation, not for evaluation per label.
-   *
-   * @param XPSConfusionMatrix $confusionMatrix
+   * @param XPSConfusionMatrix
    */
   public function setConfusionMatrix(XPSConfusionMatrix $confusionMatrix)
   {
@@ -141,9 +116,7 @@ class XPSClassificationEvaluationMetrics extends \Google\Collection
     return $this->confusionMatrix;
   }
   /**
-   * The number of examples used for model evaluation.
-   *
-   * @param int $evaluatedExamplesCount
+   * @param int
    */
   public function setEvaluatedExamplesCount($evaluatedExamplesCount)
   {
@@ -157,9 +130,7 @@ class XPSClassificationEvaluationMetrics extends \Google\Collection
     return $this->evaluatedExamplesCount;
   }
   /**
-   * The Log Loss metric.
-   *
-   * @param float $logLoss
+   * @param float
    */
   public function setLogLoss($logLoss)
   {

@@ -23,9 +23,7 @@ class GoogleCloudAiplatformV1SchemaPromptSpecMultimodalPrompt extends \Google\Mo
   protected $promptMessageDataType = '';
 
   /**
-   * The prompt message.
-   *
-   * @param GoogleCloudAiplatformV1SchemaPromptSpecPromptMessage $promptMessage
+   * @param GoogleCloudAiplatformV1SchemaPromptSpecPromptMessage
    */
   public function setPromptMessage(GoogleCloudAiplatformV1SchemaPromptSpecPromptMessage $promptMessage)
   {

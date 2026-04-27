@@ -20,16 +20,12 @@ namespace Google\Service\VMMigrationService;
 class DiskImageDefaults extends \Google\Model
 {
   /**
-   * Required. The Image resource used when creating the disk.
-   *
    * @var string
    */
   public $sourceImage;
 
   /**
-   * Required. The Image resource used when creating the disk.
-   *
-   * @param string $sourceImage
+   * @param string
    */
   public function setSourceImage($sourceImage)
   {

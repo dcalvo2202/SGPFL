@@ -21,9 +21,6 @@ class GoogleCloudApigeeV1ListSecurityIncidentsResponse extends \Google\Collectio
 {
   protected $collection_key = 'securityIncidents';
   /**
-   * A token that can be sent as `page_token` to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GoogleCloudApigeeV1ListSecurityIncidentsResponse extends \Google\Collectio
   protected $securityIncidentsDataType = 'array';
 
   /**
-   * A token that can be sent as `page_token` to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class GoogleCloudApigeeV1ListSecurityIncidentsResponse extends \Google\Collectio
     return $this->nextPageToken;
   }
   /**
-   * List of security incidents in the organization
-   *
-   * @param GoogleCloudApigeeV1SecurityIncident[] $securityIncidents
+   * @param GoogleCloudApigeeV1SecurityIncident[]
    */
   public function setSecurityIncidents($securityIncidents)
   {

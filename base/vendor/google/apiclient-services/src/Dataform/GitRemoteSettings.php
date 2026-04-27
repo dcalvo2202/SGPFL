@@ -20,60 +20,26 @@ namespace Google\Service\Dataform;
 class GitRemoteSettings extends \Google\Model
 {
   /**
-   * Default value. This value is unused.
-   */
-  public const TOKEN_STATUS_TOKEN_STATUS_UNSPECIFIED = 'TOKEN_STATUS_UNSPECIFIED';
-  /**
-   * The token could not be found in Secret Manager (or the Dataform Service
-   * Account did not have permission to access it).
-   */
-  public const TOKEN_STATUS_NOT_FOUND = 'NOT_FOUND';
-  /**
-   * The token could not be used to authenticate against the Git remote.
-   */
-  public const TOKEN_STATUS_INVALID = 'INVALID';
-  /**
-   * The token was used successfully to authenticate against the Git remote.
-   */
-  public const TOKEN_STATUS_VALID = 'VALID';
-  /**
-   * Optional. The name of the Secret Manager secret version to use as an
-   * authentication token for Git operations. Must be in the format
-   * `projects/secrets/versions`.
-   *
    * @var string
    */
   public $authenticationTokenSecretVersion;
   /**
-   * Required. The Git remote's default branch name. If not set, `main` will be
-   * used and stored for the repository.
-   *
    * @var string
    */
   public $defaultBranch;
   protected $sshAuthenticationConfigType = SshAuthenticationConfig::class;
   protected $sshAuthenticationConfigDataType = '';
   /**
-   * Output only. Deprecated: The field does not contain any token status
-   * information.
-   *
-   * @deprecated
    * @var string
    */
   public $tokenStatus;
   /**
-   * Required. The Git remote's URL.
-   *
    * @var string
    */
   public $url;
 
   /**
-   * Optional. The name of the Secret Manager secret version to use as an
-   * authentication token for Git operations. Must be in the format
-   * `projects/secrets/versions`.
-   *
-   * @param string $authenticationTokenSecretVersion
+   * @param string
    */
   public function setAuthenticationTokenSecretVersion($authenticationTokenSecretVersion)
   {
@@ -87,10 +53,7 @@ class GitRemoteSettings extends \Google\Model
     return $this->authenticationTokenSecretVersion;
   }
   /**
-   * Required. The Git remote's default branch name. If not set, `main` will be
-   * used and stored for the repository.
-   *
-   * @param string $defaultBranch
+   * @param string
    */
   public function setDefaultBranch($defaultBranch)
   {
@@ -104,9 +67,7 @@ class GitRemoteSettings extends \Google\Model
     return $this->defaultBranch;
   }
   /**
-   * Optional. Authentication fields for remote uris using SSH protocol.
-   *
-   * @param SshAuthenticationConfig $sshAuthenticationConfig
+   * @param SshAuthenticationConfig
    */
   public function setSshAuthenticationConfig(SshAuthenticationConfig $sshAuthenticationConfig)
   {
@@ -120,30 +81,21 @@ class GitRemoteSettings extends \Google\Model
     return $this->sshAuthenticationConfig;
   }
   /**
-   * Output only. Deprecated: The field does not contain any token status
-   * information.
-   *
-   * Accepted values: TOKEN_STATUS_UNSPECIFIED, NOT_FOUND, INVALID, VALID
-   *
-   * @deprecated
-   * @param self::TOKEN_STATUS_* $tokenStatus
+   * @param string
    */
   public function setTokenStatus($tokenStatus)
   {
     $this->tokenStatus = $tokenStatus;
   }
   /**
-   * @deprecated
-   * @return self::TOKEN_STATUS_*
+   * @return string
    */
   public function getTokenStatus()
   {
     return $this->tokenStatus;
   }
   /**
-   * Required. The Git remote's URL.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

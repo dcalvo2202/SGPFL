@@ -21,47 +21,32 @@ class IdpConfig extends \Google\Collection
 {
   protected $collection_key = 'whitelistedAudiences';
   /**
-   * OAuth2 client ID.
-   *
    * @var string
    */
   public $clientId;
   /**
-   * Whether this IDP is enabled.
-   *
    * @var bool
    */
   public $enabled;
   /**
-   * Percent of users who will be prompted/redirected federated login for this
-   * IDP.
-   *
    * @var int
    */
   public $experimentPercent;
   /**
-   * OAuth2 provider.
-   *
    * @var string
    */
   public $provider;
   /**
-   * OAuth2 client secret.
-   *
    * @var string
    */
   public $secret;
   /**
-   * Whitelisted client IDs for audience check.
-   *
    * @var string[]
    */
   public $whitelistedAudiences;
 
   /**
-   * OAuth2 client ID.
-   *
-   * @param string $clientId
+   * @param string
    */
   public function setClientId($clientId)
   {
@@ -75,9 +60,7 @@ class IdpConfig extends \Google\Collection
     return $this->clientId;
   }
   /**
-   * Whether this IDP is enabled.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {
@@ -91,10 +74,7 @@ class IdpConfig extends \Google\Collection
     return $this->enabled;
   }
   /**
-   * Percent of users who will be prompted/redirected federated login for this
-   * IDP.
-   *
-   * @param int $experimentPercent
+   * @param int
    */
   public function setExperimentPercent($experimentPercent)
   {
@@ -108,9 +88,7 @@ class IdpConfig extends \Google\Collection
     return $this->experimentPercent;
   }
   /**
-   * OAuth2 provider.
-   *
-   * @param string $provider
+   * @param string
    */
   public function setProvider($provider)
   {
@@ -124,9 +102,7 @@ class IdpConfig extends \Google\Collection
     return $this->provider;
   }
   /**
-   * OAuth2 client secret.
-   *
-   * @param string $secret
+   * @param string
    */
   public function setSecret($secret)
   {
@@ -140,9 +116,7 @@ class IdpConfig extends \Google\Collection
     return $this->secret;
   }
   /**
-   * Whitelisted client IDs for audience check.
-   *
-   * @param string[] $whitelistedAudiences
+   * @param string[]
    */
   public function setWhitelistedAudiences($whitelistedAudiences)
   {

@@ -20,20 +20,12 @@ namespace Google\Service\BigQueryConnectionService;
 class ConnectorConfigurationEndpoint extends \Google\Model
 {
   /**
-   * Host and port in a format of `hostname:port` as defined in
-   * https://www.ietf.org/rfc/rfc3986.html#section-3.2.2 and
-   * https://www.ietf.org/rfc/rfc3986.html#section-3.2.3.
-   *
    * @var string
    */
   public $hostPort;
 
   /**
-   * Host and port in a format of `hostname:port` as defined in
-   * https://www.ietf.org/rfc/rfc3986.html#section-3.2.2 and
-   * https://www.ietf.org/rfc/rfc3986.html#section-3.2.3.
-   *
-   * @param string $hostPort
+   * @param string
    */
   public function setHostPort($hostPort)
   {

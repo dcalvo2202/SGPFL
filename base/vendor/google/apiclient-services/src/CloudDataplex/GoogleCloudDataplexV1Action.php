@@ -19,50 +19,20 @@ namespace Google\Service\CloudDataplex;
 
 class GoogleCloudDataplexV1Action extends \Google\Collection
 {
-  /**
-   * Unspecified category.
-   */
-  public const CATEGORY_CATEGORY_UNSPECIFIED = 'CATEGORY_UNSPECIFIED';
-  /**
-   * Resource management related issues.
-   */
-  public const CATEGORY_RESOURCE_MANAGEMENT = 'RESOURCE_MANAGEMENT';
-  /**
-   * Security policy related issues.
-   */
-  public const CATEGORY_SECURITY_POLICY = 'SECURITY_POLICY';
-  /**
-   * Data and discovery related issues.
-   */
-  public const CATEGORY_DATA_DISCOVERY = 'DATA_DISCOVERY';
   protected $collection_key = 'dataLocations';
   /**
-   * Output only. The relative resource name of the asset, of the form: projects
-   * /{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/a
-   * ssets/{asset_id}.
-   *
    * @var string
    */
   public $asset;
   /**
-   * The category of issue associated with the action.
-   *
    * @var string
    */
   public $category;
   /**
-   * The list of data locations associated with this action. Cloud Storage
-   * locations are represented as URI paths(E.g.
-   * gs://bucket/table1/year=2020/month=Jan/). BigQuery locations refer to
-   * resource names(E.g. bigquery.googleapis.com/projects/project-
-   * id/datasets/dataset-id).
-   *
    * @var string[]
    */
   public $dataLocations;
   /**
-   * The time that the issue was detected.
-   *
    * @var string
    */
   public $detectTime;
@@ -77,15 +47,10 @@ class GoogleCloudDataplexV1Action extends \Google\Collection
   protected $invalidDataPartitionType = GoogleCloudDataplexV1ActionInvalidDataPartition::class;
   protected $invalidDataPartitionDataType = '';
   /**
-   * Detailed description of the issue requiring action.
-   *
    * @var string
    */
   public $issue;
   /**
-   * Output only. The relative resource name of the lake, of the form:
-   * projects/{project_number}/locations/{location_id}/lakes/{lake_id}.
-   *
    * @var string
    */
   public $lake;
@@ -94,31 +59,18 @@ class GoogleCloudDataplexV1Action extends \Google\Collection
   protected $missingResourceType = GoogleCloudDataplexV1ActionMissingResource::class;
   protected $missingResourceDataType = '';
   /**
-   * Output only. The relative resource name of the action, of the form:
-   * projects/{project}/locations/{location}/lakes/{lake}/actions/{action} proje
-   * cts/{project}/locations/{location}/lakes/{lake}/zones/{zone}/actions/{actio
-   * n} projects/{project}/locations/{location}/lakes/{lake}/zones/{zone}/assets
-   * /{asset}/actions/{action}.
-   *
    * @var string
    */
   public $name;
   protected $unauthorizedResourceType = GoogleCloudDataplexV1ActionUnauthorizedResource::class;
   protected $unauthorizedResourceDataType = '';
   /**
-   * Output only. The relative resource name of the zone, of the form: projects/
-   * {project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}.
-   *
    * @var string
    */
   public $zone;
 
   /**
-   * Output only. The relative resource name of the asset, of the form: projects
-   * /{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/a
-   * ssets/{asset_id}.
-   *
-   * @param string $asset
+   * @param string
    */
   public function setAsset($asset)
   {
@@ -132,32 +84,21 @@ class GoogleCloudDataplexV1Action extends \Google\Collection
     return $this->asset;
   }
   /**
-   * The category of issue associated with the action.
-   *
-   * Accepted values: CATEGORY_UNSPECIFIED, RESOURCE_MANAGEMENT,
-   * SECURITY_POLICY, DATA_DISCOVERY
-   *
-   * @param self::CATEGORY_* $category
+   * @param string
    */
   public function setCategory($category)
   {
     $this->category = $category;
   }
   /**
-   * @return self::CATEGORY_*
+   * @return string
    */
   public function getCategory()
   {
     return $this->category;
   }
   /**
-   * The list of data locations associated with this action. Cloud Storage
-   * locations are represented as URI paths(E.g.
-   * gs://bucket/table1/year=2020/month=Jan/). BigQuery locations refer to
-   * resource names(E.g. bigquery.googleapis.com/projects/project-
-   * id/datasets/dataset-id).
-   *
-   * @param string[] $dataLocations
+   * @param string[]
    */
   public function setDataLocations($dataLocations)
   {
@@ -171,9 +112,7 @@ class GoogleCloudDataplexV1Action extends \Google\Collection
     return $this->dataLocations;
   }
   /**
-   * The time that the issue was detected.
-   *
-   * @param string $detectTime
+   * @param string
    */
   public function setDetectTime($detectTime)
   {
@@ -187,9 +126,7 @@ class GoogleCloudDataplexV1Action extends \Google\Collection
     return $this->detectTime;
   }
   /**
-   * Details for issues related to applying security policy.
-   *
-   * @param GoogleCloudDataplexV1ActionFailedSecurityPolicyApply $failedSecurityPolicyApply
+   * @param GoogleCloudDataplexV1ActionFailedSecurityPolicyApply
    */
   public function setFailedSecurityPolicyApply(GoogleCloudDataplexV1ActionFailedSecurityPolicyApply $failedSecurityPolicyApply)
   {
@@ -203,9 +140,7 @@ class GoogleCloudDataplexV1Action extends \Google\Collection
     return $this->failedSecurityPolicyApply;
   }
   /**
-   * Details for issues related to incompatible schemas detected within data.
-   *
-   * @param GoogleCloudDataplexV1ActionIncompatibleDataSchema $incompatibleDataSchema
+   * @param GoogleCloudDataplexV1ActionIncompatibleDataSchema
    */
   public function setIncompatibleDataSchema(GoogleCloudDataplexV1ActionIncompatibleDataSchema $incompatibleDataSchema)
   {
@@ -219,9 +154,7 @@ class GoogleCloudDataplexV1Action extends \Google\Collection
     return $this->incompatibleDataSchema;
   }
   /**
-   * Details for issues related to invalid or unsupported data formats.
-   *
-   * @param GoogleCloudDataplexV1ActionInvalidDataFormat $invalidDataFormat
+   * @param GoogleCloudDataplexV1ActionInvalidDataFormat
    */
   public function setInvalidDataFormat(GoogleCloudDataplexV1ActionInvalidDataFormat $invalidDataFormat)
   {
@@ -235,9 +168,7 @@ class GoogleCloudDataplexV1Action extends \Google\Collection
     return $this->invalidDataFormat;
   }
   /**
-   * Details for issues related to invalid data arrangement.
-   *
-   * @param GoogleCloudDataplexV1ActionInvalidDataOrganization $invalidDataOrganization
+   * @param GoogleCloudDataplexV1ActionInvalidDataOrganization
    */
   public function setInvalidDataOrganization(GoogleCloudDataplexV1ActionInvalidDataOrganization $invalidDataOrganization)
   {
@@ -251,10 +182,7 @@ class GoogleCloudDataplexV1Action extends \Google\Collection
     return $this->invalidDataOrganization;
   }
   /**
-   * Details for issues related to invalid or unsupported data partition
-   * structure.
-   *
-   * @param GoogleCloudDataplexV1ActionInvalidDataPartition $invalidDataPartition
+   * @param GoogleCloudDataplexV1ActionInvalidDataPartition
    */
   public function setInvalidDataPartition(GoogleCloudDataplexV1ActionInvalidDataPartition $invalidDataPartition)
   {
@@ -268,9 +196,7 @@ class GoogleCloudDataplexV1Action extends \Google\Collection
     return $this->invalidDataPartition;
   }
   /**
-   * Detailed description of the issue requiring action.
-   *
-   * @param string $issue
+   * @param string
    */
   public function setIssue($issue)
   {
@@ -284,10 +210,7 @@ class GoogleCloudDataplexV1Action extends \Google\Collection
     return $this->issue;
   }
   /**
-   * Output only. The relative resource name of the lake, of the form:
-   * projects/{project_number}/locations/{location_id}/lakes/{lake_id}.
-   *
-   * @param string $lake
+   * @param string
    */
   public function setLake($lake)
   {
@@ -301,9 +224,7 @@ class GoogleCloudDataplexV1Action extends \Google\Collection
     return $this->lake;
   }
   /**
-   * Details for issues related to absence of data within managed resources.
-   *
-   * @param GoogleCloudDataplexV1ActionMissingData $missingData
+   * @param GoogleCloudDataplexV1ActionMissingData
    */
   public function setMissingData(GoogleCloudDataplexV1ActionMissingData $missingData)
   {
@@ -317,9 +238,7 @@ class GoogleCloudDataplexV1Action extends \Google\Collection
     return $this->missingData;
   }
   /**
-   * Details for issues related to absence of a managed resource.
-   *
-   * @param GoogleCloudDataplexV1ActionMissingResource $missingResource
+   * @param GoogleCloudDataplexV1ActionMissingResource
    */
   public function setMissingResource(GoogleCloudDataplexV1ActionMissingResource $missingResource)
   {
@@ -333,13 +252,7 @@ class GoogleCloudDataplexV1Action extends \Google\Collection
     return $this->missingResource;
   }
   /**
-   * Output only. The relative resource name of the action, of the form:
-   * projects/{project}/locations/{location}/lakes/{lake}/actions/{action} proje
-   * cts/{project}/locations/{location}/lakes/{lake}/zones/{zone}/actions/{actio
-   * n} projects/{project}/locations/{location}/lakes/{lake}/zones/{zone}/assets
-   * /{asset}/actions/{action}.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -353,9 +266,7 @@ class GoogleCloudDataplexV1Action extends \Google\Collection
     return $this->name;
   }
   /**
-   * Details for issues related to lack of permissions to access data resources.
-   *
-   * @param GoogleCloudDataplexV1ActionUnauthorizedResource $unauthorizedResource
+   * @param GoogleCloudDataplexV1ActionUnauthorizedResource
    */
   public function setUnauthorizedResource(GoogleCloudDataplexV1ActionUnauthorizedResource $unauthorizedResource)
   {
@@ -369,10 +280,7 @@ class GoogleCloudDataplexV1Action extends \Google\Collection
     return $this->unauthorizedResource;
   }
   /**
-   * Output only. The relative resource name of the zone, of the form: projects/
-   * {project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}.
-   *
-   * @param string $zone
+   * @param string
    */
   public function setZone($zone)
   {

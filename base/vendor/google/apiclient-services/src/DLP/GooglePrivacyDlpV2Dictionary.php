@@ -25,10 +25,7 @@ class GooglePrivacyDlpV2Dictionary extends \Google\Model
   protected $wordListDataType = '';
 
   /**
-   * Newline-delimited file of words in Cloud Storage. Only a single file is
-   * accepted.
-   *
-   * @param GooglePrivacyDlpV2CloudStoragePath $cloudStoragePath
+   * @param GooglePrivacyDlpV2CloudStoragePath
    */
   public function setCloudStoragePath(GooglePrivacyDlpV2CloudStoragePath $cloudStoragePath)
   {
@@ -42,9 +39,7 @@ class GooglePrivacyDlpV2Dictionary extends \Google\Model
     return $this->cloudStoragePath;
   }
   /**
-   * List of words or phrases to search for.
-   *
-   * @param GooglePrivacyDlpV2WordList $wordList
+   * @param GooglePrivacyDlpV2WordList
    */
   public function setWordList(GooglePrivacyDlpV2WordList $wordList)
   {

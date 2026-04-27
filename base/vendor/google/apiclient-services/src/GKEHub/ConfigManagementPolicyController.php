@@ -21,66 +21,42 @@ class ConfigManagementPolicyController extends \Google\Collection
 {
   protected $collection_key = 'exemptableNamespaces';
   /**
-   * Sets the interval for Policy Controller Audit Scans (in seconds). When set
-   * to 0, this disables audit functionality altogether.
-   *
    * @var string
    */
   public $auditIntervalSeconds;
   /**
-   * Enables the installation of Policy Controller. If false, the rest of
-   * PolicyController fields take no effect.
-   *
    * @var bool
    */
   public $enabled;
   /**
-   * The set of namespaces that are excluded from Policy Controller checks.
-   * Namespaces do not need to currently exist on the cluster.
-   *
    * @var string[]
    */
   public $exemptableNamespaces;
   /**
-   * Logs all denies and dry run failures.
-   *
    * @var bool
    */
   public $logDeniesEnabled;
   protected $monitoringType = ConfigManagementPolicyControllerMonitoring::class;
   protected $monitoringDataType = '';
   /**
-   * Enable or disable mutation in policy controller. If true, mutation CRDs,
-   * webhook and controller deployment will be deployed to the cluster.
-   *
    * @var bool
    */
   public $mutationEnabled;
   /**
-   * Enables the ability to use Constraint Templates that reference to objects
-   * other than the object currently being evaluated.
-   *
    * @var bool
    */
   public $referentialRulesEnabled;
   /**
-   * Installs the default template library along with Policy Controller.
-   *
    * @var bool
    */
   public $templateLibraryInstalled;
   /**
-   * Output only. Last time this membership spec was updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Sets the interval for Policy Controller Audit Scans (in seconds). When set
-   * to 0, this disables audit functionality altogether.
-   *
-   * @param string $auditIntervalSeconds
+   * @param string
    */
   public function setAuditIntervalSeconds($auditIntervalSeconds)
   {
@@ -94,10 +70,7 @@ class ConfigManagementPolicyController extends \Google\Collection
     return $this->auditIntervalSeconds;
   }
   /**
-   * Enables the installation of Policy Controller. If false, the rest of
-   * PolicyController fields take no effect.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {
@@ -111,10 +84,7 @@ class ConfigManagementPolicyController extends \Google\Collection
     return $this->enabled;
   }
   /**
-   * The set of namespaces that are excluded from Policy Controller checks.
-   * Namespaces do not need to currently exist on the cluster.
-   *
-   * @param string[] $exemptableNamespaces
+   * @param string[]
    */
   public function setExemptableNamespaces($exemptableNamespaces)
   {
@@ -128,9 +98,7 @@ class ConfigManagementPolicyController extends \Google\Collection
     return $this->exemptableNamespaces;
   }
   /**
-   * Logs all denies and dry run failures.
-   *
-   * @param bool $logDeniesEnabled
+   * @param bool
    */
   public function setLogDeniesEnabled($logDeniesEnabled)
   {
@@ -144,9 +112,7 @@ class ConfigManagementPolicyController extends \Google\Collection
     return $this->logDeniesEnabled;
   }
   /**
-   * Monitoring specifies the configuration of monitoring.
-   *
-   * @param ConfigManagementPolicyControllerMonitoring $monitoring
+   * @param ConfigManagementPolicyControllerMonitoring
    */
   public function setMonitoring(ConfigManagementPolicyControllerMonitoring $monitoring)
   {
@@ -160,10 +126,7 @@ class ConfigManagementPolicyController extends \Google\Collection
     return $this->monitoring;
   }
   /**
-   * Enable or disable mutation in policy controller. If true, mutation CRDs,
-   * webhook and controller deployment will be deployed to the cluster.
-   *
-   * @param bool $mutationEnabled
+   * @param bool
    */
   public function setMutationEnabled($mutationEnabled)
   {
@@ -177,10 +140,7 @@ class ConfigManagementPolicyController extends \Google\Collection
     return $this->mutationEnabled;
   }
   /**
-   * Enables the ability to use Constraint Templates that reference to objects
-   * other than the object currently being evaluated.
-   *
-   * @param bool $referentialRulesEnabled
+   * @param bool
    */
   public function setReferentialRulesEnabled($referentialRulesEnabled)
   {
@@ -194,9 +154,7 @@ class ConfigManagementPolicyController extends \Google\Collection
     return $this->referentialRulesEnabled;
   }
   /**
-   * Installs the default template library along with Policy Controller.
-   *
-   * @param bool $templateLibraryInstalled
+   * @param bool
    */
   public function setTemplateLibraryInstalled($templateLibraryInstalled)
   {
@@ -210,9 +168,7 @@ class ConfigManagementPolicyController extends \Google\Collection
     return $this->templateLibraryInstalled;
   }
   /**
-   * Output only. Last time this membership spec was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

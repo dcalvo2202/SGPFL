@@ -20,8 +20,6 @@ namespace Google\Service\APIhub;
 class GoogleCloudApihubV1SpecDetails extends \Google\Model
 {
   /**
-   * Output only. The description of the spec.
-   *
    * @var string
    */
   public $description;
@@ -29,9 +27,7 @@ class GoogleCloudApihubV1SpecDetails extends \Google\Model
   protected $openApiSpecDetailsDataType = '';
 
   /**
-   * Output only. The description of the spec.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -45,11 +41,7 @@ class GoogleCloudApihubV1SpecDetails extends \Google\Model
     return $this->description;
   }
   /**
-   * Output only. Additional details apart from `OperationDetails` parsed from
-   * an OpenAPI spec. The OperationDetails parsed from the spec can be obtained
-   * by using ListAPIOperations method.
-   *
-   * @param GoogleCloudApihubV1OpenApiSpecDetails $openApiSpecDetails
+   * @param GoogleCloudApihubV1OpenApiSpecDetails
    */
   public function setOpenApiSpecDetails(GoogleCloudApihubV1OpenApiSpecDetails $openApiSpecDetails)
   {

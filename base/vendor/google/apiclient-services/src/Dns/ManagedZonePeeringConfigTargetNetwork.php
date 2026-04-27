@@ -20,12 +20,6 @@ namespace Google\Service\Dns;
 class ManagedZonePeeringConfigTargetNetwork extends \Google\Model
 {
   /**
-   * The time at which the zone was deactivated, in RFC 3339 date-time format.
-   * An empty string indicates that the peering connection is active. The
-   * producer network can deactivate a zone. The zone is automatically
-   * deactivated if the producer network that the zone targeted is deleted.
-   * Output only.
-   *
    * @var string
    */
   public $deactivateTime;
@@ -34,22 +28,12 @@ class ManagedZonePeeringConfigTargetNetwork extends \Google\Model
    */
   public $kind;
   /**
-   * The fully qualified URL of the VPC network to forward queries to. This
-   * should be formatted like `https://www.googleapis.com/compute/v1/projects/{p
-   * roject}/global/networks/{network}`
-   *
    * @var string
    */
   public $networkUrl;
 
   /**
-   * The time at which the zone was deactivated, in RFC 3339 date-time format.
-   * An empty string indicates that the peering connection is active. The
-   * producer network can deactivate a zone. The zone is automatically
-   * deactivated if the producer network that the zone targeted is deleted.
-   * Output only.
-   *
-   * @param string $deactivateTime
+   * @param string
    */
   public function setDeactivateTime($deactivateTime)
   {
@@ -63,7 +47,7 @@ class ManagedZonePeeringConfigTargetNetwork extends \Google\Model
     return $this->deactivateTime;
   }
   /**
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -77,11 +61,7 @@ class ManagedZonePeeringConfigTargetNetwork extends \Google\Model
     return $this->kind;
   }
   /**
-   * The fully qualified URL of the VPC network to forward queries to. This
-   * should be formatted like `https://www.googleapis.com/compute/v1/projects/{p
-   * roject}/global/networks/{network}`
-   *
-   * @param string $networkUrl
+   * @param string
    */
   public function setNetworkUrl($networkUrl)
   {

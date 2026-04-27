@@ -20,104 +20,52 @@ namespace Google\Service\Transcoder;
 class SpriteSheet extends \Google\Model
 {
   /**
-   * The maximum number of sprites per row in a sprite sheet. The default is 0,
-   * which indicates no maximum limit.
-   *
    * @var int
    */
   public $columnCount;
   /**
-   * End time in seconds, relative to the output file timeline. When
-   * `end_time_offset` is not specified, the sprites are generated until the end
-   * of the output file.
-   *
    * @var string
    */
   public $endTimeOffset;
   /**
-   * Required. File name prefix for the generated sprite sheets. Each sprite
-   * sheet has an incremental 10-digit zero-padded suffix starting from 0 before
-   * the extension, such as `sprite_sheet0000000123.jpeg`.
-   *
    * @var string
    */
   public $filePrefix;
   /**
-   * Format type. The default is `jpeg`. Supported formats: - `jpeg`
-   *
    * @var string
    */
   public $format;
   /**
-   * Starting from `0s`, create sprites at regular intervals. Specify the
-   * interval value in seconds.
-   *
    * @var string
    */
   public $interval;
   /**
-   * The quality of the generated sprite sheet. Enter a value between 1 and 100,
-   * where 1 is the lowest quality and 100 is the highest quality. The default
-   * is 100. A high quality value corresponds to a low image data compression
-   * ratio.
-   *
    * @var int
    */
   public $quality;
   /**
-   * The maximum number of rows per sprite sheet. When the sprite sheet is full,
-   * a new sprite sheet is created. The default is 0, which indicates no maximum
-   * limit.
-   *
    * @var int
    */
   public $rowCount;
   /**
-   * Required. The height of sprite in pixels. Must be an even integer. To
-   * preserve the source aspect ratio, set the SpriteSheet.sprite_height_pixels
-   * field or the SpriteSheet.sprite_width_pixels field, but not both (the API
-   * will automatically calculate the missing field). For portrait videos that
-   * contain horizontal ASR and rotation metadata, provide the height, in
-   * pixels, per the horizontal ASR. The API calculates the width per the
-   * horizontal ASR. The API detects any rotation metadata and swaps the
-   * requested height and width for the output.
-   *
    * @var int
    */
   public $spriteHeightPixels;
   /**
-   * Required. The width of sprite in pixels. Must be an even integer. To
-   * preserve the source aspect ratio, set the SpriteSheet.sprite_width_pixels
-   * field or the SpriteSheet.sprite_height_pixels field, but not both (the API
-   * will automatically calculate the missing field). For portrait videos that
-   * contain horizontal ASR and rotation metadata, provide the width, in pixels,
-   * per the horizontal ASR. The API calculates the height per the horizontal
-   * ASR. The API detects any rotation metadata and swaps the requested height
-   * and width for the output.
-   *
    * @var int
    */
   public $spriteWidthPixels;
   /**
-   * Start time in seconds, relative to the output file timeline. Determines the
-   * first sprite to pick. The default is `0s`.
-   *
    * @var string
    */
   public $startTimeOffset;
   /**
-   * Total number of sprites. Create the specified number of sprites distributed
-   * evenly across the timeline of the output media. The default is 100.
-   *
    * @var int
    */
   public $totalCount;
 
   /**
-   * The maximum number of sprites per row in a sprite sheet. The default is 0,
-   * which indicates no maximum limit.
-   *
-   * @param int $columnCount
+   * @param int
    */
   public function setColumnCount($columnCount)
   {
@@ -131,11 +79,7 @@ class SpriteSheet extends \Google\Model
     return $this->columnCount;
   }
   /**
-   * End time in seconds, relative to the output file timeline. When
-   * `end_time_offset` is not specified, the sprites are generated until the end
-   * of the output file.
-   *
-   * @param string $endTimeOffset
+   * @param string
    */
   public function setEndTimeOffset($endTimeOffset)
   {
@@ -149,11 +93,7 @@ class SpriteSheet extends \Google\Model
     return $this->endTimeOffset;
   }
   /**
-   * Required. File name prefix for the generated sprite sheets. Each sprite
-   * sheet has an incremental 10-digit zero-padded suffix starting from 0 before
-   * the extension, such as `sprite_sheet0000000123.jpeg`.
-   *
-   * @param string $filePrefix
+   * @param string
    */
   public function setFilePrefix($filePrefix)
   {
@@ -167,9 +107,7 @@ class SpriteSheet extends \Google\Model
     return $this->filePrefix;
   }
   /**
-   * Format type. The default is `jpeg`. Supported formats: - `jpeg`
-   *
-   * @param string $format
+   * @param string
    */
   public function setFormat($format)
   {
@@ -183,10 +121,7 @@ class SpriteSheet extends \Google\Model
     return $this->format;
   }
   /**
-   * Starting from `0s`, create sprites at regular intervals. Specify the
-   * interval value in seconds.
-   *
-   * @param string $interval
+   * @param string
    */
   public function setInterval($interval)
   {
@@ -200,12 +135,7 @@ class SpriteSheet extends \Google\Model
     return $this->interval;
   }
   /**
-   * The quality of the generated sprite sheet. Enter a value between 1 and 100,
-   * where 1 is the lowest quality and 100 is the highest quality. The default
-   * is 100. A high quality value corresponds to a low image data compression
-   * ratio.
-   *
-   * @param int $quality
+   * @param int
    */
   public function setQuality($quality)
   {
@@ -219,11 +149,7 @@ class SpriteSheet extends \Google\Model
     return $this->quality;
   }
   /**
-   * The maximum number of rows per sprite sheet. When the sprite sheet is full,
-   * a new sprite sheet is created. The default is 0, which indicates no maximum
-   * limit.
-   *
-   * @param int $rowCount
+   * @param int
    */
   public function setRowCount($rowCount)
   {
@@ -237,16 +163,7 @@ class SpriteSheet extends \Google\Model
     return $this->rowCount;
   }
   /**
-   * Required. The height of sprite in pixels. Must be an even integer. To
-   * preserve the source aspect ratio, set the SpriteSheet.sprite_height_pixels
-   * field or the SpriteSheet.sprite_width_pixels field, but not both (the API
-   * will automatically calculate the missing field). For portrait videos that
-   * contain horizontal ASR and rotation metadata, provide the height, in
-   * pixels, per the horizontal ASR. The API calculates the width per the
-   * horizontal ASR. The API detects any rotation metadata and swaps the
-   * requested height and width for the output.
-   *
-   * @param int $spriteHeightPixels
+   * @param int
    */
   public function setSpriteHeightPixels($spriteHeightPixels)
   {
@@ -260,16 +177,7 @@ class SpriteSheet extends \Google\Model
     return $this->spriteHeightPixels;
   }
   /**
-   * Required. The width of sprite in pixels. Must be an even integer. To
-   * preserve the source aspect ratio, set the SpriteSheet.sprite_width_pixels
-   * field or the SpriteSheet.sprite_height_pixels field, but not both (the API
-   * will automatically calculate the missing field). For portrait videos that
-   * contain horizontal ASR and rotation metadata, provide the width, in pixels,
-   * per the horizontal ASR. The API calculates the height per the horizontal
-   * ASR. The API detects any rotation metadata and swaps the requested height
-   * and width for the output.
-   *
-   * @param int $spriteWidthPixels
+   * @param int
    */
   public function setSpriteWidthPixels($spriteWidthPixels)
   {
@@ -283,10 +191,7 @@ class SpriteSheet extends \Google\Model
     return $this->spriteWidthPixels;
   }
   /**
-   * Start time in seconds, relative to the output file timeline. Determines the
-   * first sprite to pick. The default is `0s`.
-   *
-   * @param string $startTimeOffset
+   * @param string
    */
   public function setStartTimeOffset($startTimeOffset)
   {
@@ -300,10 +205,7 @@ class SpriteSheet extends \Google\Model
     return $this->startTimeOffset;
   }
   /**
-   * Total number of sprites. Create the specified number of sprites distributed
-   * evenly across the timeline of the output media. The default is 100.
-   *
-   * @param int $totalCount
+   * @param int
    */
   public function setTotalCount($totalCount)
   {

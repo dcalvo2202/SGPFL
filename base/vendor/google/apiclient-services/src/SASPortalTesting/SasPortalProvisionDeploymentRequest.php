@@ -20,32 +20,20 @@ namespace Google\Service\SASPortalTesting;
 class SasPortalProvisionDeploymentRequest extends \Google\Model
 {
   /**
-   * Optional. If this field is set, and a new SAS Portal Deployment needs to be
-   * created, its display name will be set to the value of this field.
-   *
    * @var string
    */
   public $newDeploymentDisplayName;
   /**
-   * Optional. If this field is set, and a new SAS Portal Organization needs to
-   * be created, its display name will be set to the value of this field.
-   *
    * @var string
    */
   public $newOrganizationDisplayName;
   /**
-   * Optional. If this field is set then a new deployment will be created under
-   * the organization specified by this id.
-   *
    * @var string
    */
   public $organizationId;
 
   /**
-   * Optional. If this field is set, and a new SAS Portal Deployment needs to be
-   * created, its display name will be set to the value of this field.
-   *
-   * @param string $newDeploymentDisplayName
+   * @param string
    */
   public function setNewDeploymentDisplayName($newDeploymentDisplayName)
   {
@@ -59,10 +47,7 @@ class SasPortalProvisionDeploymentRequest extends \Google\Model
     return $this->newDeploymentDisplayName;
   }
   /**
-   * Optional. If this field is set, and a new SAS Portal Organization needs to
-   * be created, its display name will be set to the value of this field.
-   *
-   * @param string $newOrganizationDisplayName
+   * @param string
    */
   public function setNewOrganizationDisplayName($newOrganizationDisplayName)
   {
@@ -76,10 +61,7 @@ class SasPortalProvisionDeploymentRequest extends \Google\Model
     return $this->newOrganizationDisplayName;
   }
   /**
-   * Optional. If this field is set then a new deployment will be created under
-   * the organization specified by this id.
-   *
-   * @param string $organizationId
+   * @param string
    */
   public function setOrganizationId($organizationId)
   {

@@ -20,18 +20,12 @@ namespace Google\Service\RecaptchaEnterprise;
 class GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentStolenInstrumentVerdict extends \Google\Model
 {
   /**
-   * Output only. Probability of this transaction being executed with a stolen
-   * instrument. Values are from 0.0 (lowest) to 1.0 (highest).
-   *
    * @var float
    */
   public $risk;
 
   /**
-   * Output only. Probability of this transaction being executed with a stolen
-   * instrument. Values are from 0.0 (lowest) to 1.0 (highest).
-   *
-   * @param float $risk
+   * @param float
    */
   public function setRisk($risk)
   {

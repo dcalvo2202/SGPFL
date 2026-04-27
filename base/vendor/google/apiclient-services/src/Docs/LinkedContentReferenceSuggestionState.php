@@ -23,10 +23,7 @@ class LinkedContentReferenceSuggestionState extends \Google\Model
   protected $sheetsChartReferenceSuggestionStateDataType = '';
 
   /**
-   * A mask that indicates which of the fields in sheets_chart_reference have
-   * been changed in this suggestion.
-   *
-   * @param SheetsChartReferenceSuggestionState $sheetsChartReferenceSuggestionState
+   * @param SheetsChartReferenceSuggestionState
    */
   public function setSheetsChartReferenceSuggestionState(SheetsChartReferenceSuggestionState $sheetsChartReferenceSuggestionState)
   {

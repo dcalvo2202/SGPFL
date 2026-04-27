@@ -20,17 +20,12 @@ namespace Google\Service\Forms;
 class Item extends \Google\Model
 {
   /**
-   * The description of the item.
-   *
    * @var string
    */
   public $description;
   protected $imageItemType = ImageItem::class;
   protected $imageItemDataType = '';
   /**
-   * The item ID. On creation, it can be provided but the ID must not be already
-   * used in the form. If not provided, a new ID is assigned.
-   *
    * @var string
    */
   public $itemId;
@@ -43,8 +38,6 @@ class Item extends \Google\Model
   protected $textItemType = TextItem::class;
   protected $textItemDataType = '';
   /**
-   * The title of the item.
-   *
    * @var string
    */
   public $title;
@@ -52,9 +45,7 @@ class Item extends \Google\Model
   protected $videoItemDataType = '';
 
   /**
-   * The description of the item.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -68,9 +59,7 @@ class Item extends \Google\Model
     return $this->description;
   }
   /**
-   * Displays an image on the page.
-   *
-   * @param ImageItem $imageItem
+   * @param ImageItem
    */
   public function setImageItem(ImageItem $imageItem)
   {
@@ -84,10 +73,7 @@ class Item extends \Google\Model
     return $this->imageItem;
   }
   /**
-   * The item ID. On creation, it can be provided but the ID must not be already
-   * used in the form. If not provided, a new ID is assigned.
-   *
-   * @param string $itemId
+   * @param string
    */
   public function setItemId($itemId)
   {
@@ -101,9 +87,7 @@ class Item extends \Google\Model
     return $this->itemId;
   }
   /**
-   * Starts a new page with a title.
-   *
-   * @param PageBreakItem $pageBreakItem
+   * @param PageBreakItem
    */
   public function setPageBreakItem(PageBreakItem $pageBreakItem)
   {
@@ -117,9 +101,7 @@ class Item extends \Google\Model
     return $this->pageBreakItem;
   }
   /**
-   * Poses one or more questions to the user with a single major prompt.
-   *
-   * @param QuestionGroupItem $questionGroupItem
+   * @param QuestionGroupItem
    */
   public function setQuestionGroupItem(QuestionGroupItem $questionGroupItem)
   {
@@ -133,9 +115,7 @@ class Item extends \Google\Model
     return $this->questionGroupItem;
   }
   /**
-   * Poses a question to the user.
-   *
-   * @param QuestionItem $questionItem
+   * @param QuestionItem
    */
   public function setQuestionItem(QuestionItem $questionItem)
   {
@@ -149,9 +129,7 @@ class Item extends \Google\Model
     return $this->questionItem;
   }
   /**
-   * Displays a title and description on the page.
-   *
-   * @param TextItem $textItem
+   * @param TextItem
    */
   public function setTextItem(TextItem $textItem)
   {
@@ -165,9 +143,7 @@ class Item extends \Google\Model
     return $this->textItem;
   }
   /**
-   * The title of the item.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -181,9 +157,7 @@ class Item extends \Google\Model
     return $this->title;
   }
   /**
-   * Displays a video on the page.
-   *
-   * @param VideoItem $videoItem
+   * @param VideoItem
    */
   public function setVideoItem(VideoItem $videoItem)
   {

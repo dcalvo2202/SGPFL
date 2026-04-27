@@ -21,8 +21,6 @@ class GoogleCloudSecuritycenterV2Cwe extends \Google\Collection
 {
   protected $collection_key = 'references';
   /**
-   * The CWE identifier, e.g. CWE-94
-   *
    * @var string
    */
   public $id;
@@ -30,9 +28,7 @@ class GoogleCloudSecuritycenterV2Cwe extends \Google\Collection
   protected $referencesDataType = 'array';
 
   /**
-   * The CWE identifier, e.g. CWE-94
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -46,10 +42,7 @@ class GoogleCloudSecuritycenterV2Cwe extends \Google\Collection
     return $this->id;
   }
   /**
-   * Any reference to the details on the CWE, for example,
-   * https://cwe.mitre.org/data/definitions/94.html
-   *
-   * @param GoogleCloudSecuritycenterV2Reference[] $references
+   * @param GoogleCloudSecuritycenterV2Reference[]
    */
   public function setReferences($references)
   {

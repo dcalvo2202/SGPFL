@@ -27,19 +27,12 @@ class GoogleCloudDiscoveryengineV1CheckGroundingResponse extends \Google\Collect
   protected $claimsType = GoogleCloudDiscoveryengineV1CheckGroundingResponseClaim::class;
   protected $claimsDataType = 'array';
   /**
-   * The support score for the input answer candidate. Higher the score, higher
-   * is the fraction of claims that are supported by the provided facts. This is
-   * always set when a response is returned.
-   *
    * @var float
    */
   public $supportScore;
 
   /**
-   * List of facts cited across all claims in the answer candidate. These are
-   * derived from the facts supplied in the request.
-   *
-   * @param GoogleCloudDiscoveryengineV1FactChunk[] $citedChunks
+   * @param GoogleCloudDiscoveryengineV1FactChunk[]
    */
   public function setCitedChunks($citedChunks)
   {
@@ -53,10 +46,7 @@ class GoogleCloudDiscoveryengineV1CheckGroundingResponse extends \Google\Collect
     return $this->citedChunks;
   }
   /**
-   * List of facts cited across all claims in the answer candidate. These are
-   * derived from the facts supplied in the request.
-   *
-   * @param GoogleCloudDiscoveryengineV1CheckGroundingResponseCheckGroundingFactChunk[] $citedFacts
+   * @param GoogleCloudDiscoveryengineV1CheckGroundingResponseCheckGroundingFactChunk[]
    */
   public function setCitedFacts($citedFacts)
   {
@@ -70,9 +60,7 @@ class GoogleCloudDiscoveryengineV1CheckGroundingResponse extends \Google\Collect
     return $this->citedFacts;
   }
   /**
-   * Claim texts and citation info across all claims in the answer candidate.
-   *
-   * @param GoogleCloudDiscoveryengineV1CheckGroundingResponseClaim[] $claims
+   * @param GoogleCloudDiscoveryengineV1CheckGroundingResponseClaim[]
    */
   public function setClaims($claims)
   {
@@ -86,11 +74,7 @@ class GoogleCloudDiscoveryengineV1CheckGroundingResponse extends \Google\Collect
     return $this->claims;
   }
   /**
-   * The support score for the input answer candidate. Higher the score, higher
-   * is the fraction of claims that are supported by the provided facts. This is
-   * always set when a response is returned.
-   *
-   * @param float $supportScore
+   * @param float
    */
   public function setSupportScore($supportScore)
   {

@@ -21,120 +21,76 @@ class GoogleCloudAiplatformV1SchemaTextPromptDatasetMetadata extends \Google\Col
 {
   protected $collection_key = 'stopSequences';
   /**
-   * Number of candidates.
-   *
    * @var string
    */
   public $candidateCount;
   /**
-   * The Google Cloud Storage URI that stores the prompt data.
-   *
    * @var string
    */
   public $gcsUri;
   protected $groundingConfigType = GoogleCloudAiplatformV1SchemaPredictParamsGroundingConfig::class;
   protected $groundingConfigDataType = '';
   /**
-   * Whether the prompt dataset has prompt variable.
-   *
    * @var bool
    */
   public $hasPromptVariable;
   /**
-   * Whether or not the user has enabled logit probabilities in the model
-   * parameters.
-   *
    * @var bool
    */
   public $logprobs;
   /**
-   * Value of the maximum number of tokens generated set when the dataset was
-   * saved.
-   *
    * @var string
    */
   public $maxOutputTokens;
   /**
-   * User-created prompt note. Note size limit is 2KB.
-   *
    * @var string
    */
   public $note;
   protected $promptApiSchemaType = GoogleCloudAiplatformV1SchemaPromptApiSchema::class;
   protected $promptApiSchemaDataType = '';
   /**
-   * Type of the prompt dataset.
-   *
    * @var string
    */
   public $promptType;
   /**
-   * Seeding enables model to return a deterministic response on a best effort
-   * basis. Determinism isn't guaranteed. This field determines whether or not
-   * seeding is enabled.
-   *
    * @var bool
    */
   public $seedEnabled;
   /**
-   * The actual value of the seed.
-   *
    * @var string
    */
   public $seedValue;
   /**
-   * Customized stop sequences.
-   *
    * @var string[]
    */
   public $stopSequences;
   /**
-   * The content of the prompt dataset system instruction.
-   *
    * @var string
    */
   public $systemInstruction;
   /**
-   * The Google Cloud Storage URI that stores the system instruction, starting
-   * with gs://.
-   *
    * @var string
    */
   public $systemInstructionGcsUri;
   /**
-   * Temperature value used for sampling set when the dataset was saved. This
-   * value is used to tune the degree of randomness.
-   *
    * @var float
    */
   public $temperature;
   /**
-   * The content of the prompt dataset.
-   *
    * @var string
    */
   public $text;
   /**
-   * Top K value set when the dataset was saved. This value determines how many
-   * candidates with highest probability from the vocab would be selected for
-   * each decoding step.
-   *
    * @var string
    */
   public $topK;
   /**
-   * Top P value set when the dataset was saved. Given topK tokens for decoding,
-   * top candidates will be selected until the sum of their probabilities is
-   * topP.
-   *
    * @var float
    */
   public $topP;
 
   /**
-   * Number of candidates.
-   *
-   * @param string $candidateCount
+   * @param string
    */
   public function setCandidateCount($candidateCount)
   {
@@ -148,9 +104,7 @@ class GoogleCloudAiplatformV1SchemaTextPromptDatasetMetadata extends \Google\Col
     return $this->candidateCount;
   }
   /**
-   * The Google Cloud Storage URI that stores the prompt data.
-   *
-   * @param string $gcsUri
+   * @param string
    */
   public function setGcsUri($gcsUri)
   {
@@ -164,9 +118,7 @@ class GoogleCloudAiplatformV1SchemaTextPromptDatasetMetadata extends \Google\Col
     return $this->gcsUri;
   }
   /**
-   * Grounding checking configuration.
-   *
-   * @param GoogleCloudAiplatformV1SchemaPredictParamsGroundingConfig $groundingConfig
+   * @param GoogleCloudAiplatformV1SchemaPredictParamsGroundingConfig
    */
   public function setGroundingConfig(GoogleCloudAiplatformV1SchemaPredictParamsGroundingConfig $groundingConfig)
   {
@@ -180,9 +132,7 @@ class GoogleCloudAiplatformV1SchemaTextPromptDatasetMetadata extends \Google\Col
     return $this->groundingConfig;
   }
   /**
-   * Whether the prompt dataset has prompt variable.
-   *
-   * @param bool $hasPromptVariable
+   * @param bool
    */
   public function setHasPromptVariable($hasPromptVariable)
   {
@@ -196,10 +146,7 @@ class GoogleCloudAiplatformV1SchemaTextPromptDatasetMetadata extends \Google\Col
     return $this->hasPromptVariable;
   }
   /**
-   * Whether or not the user has enabled logit probabilities in the model
-   * parameters.
-   *
-   * @param bool $logprobs
+   * @param bool
    */
   public function setLogprobs($logprobs)
   {
@@ -213,10 +160,7 @@ class GoogleCloudAiplatformV1SchemaTextPromptDatasetMetadata extends \Google\Col
     return $this->logprobs;
   }
   /**
-   * Value of the maximum number of tokens generated set when the dataset was
-   * saved.
-   *
-   * @param string $maxOutputTokens
+   * @param string
    */
   public function setMaxOutputTokens($maxOutputTokens)
   {
@@ -230,9 +174,7 @@ class GoogleCloudAiplatformV1SchemaTextPromptDatasetMetadata extends \Google\Col
     return $this->maxOutputTokens;
   }
   /**
-   * User-created prompt note. Note size limit is 2KB.
-   *
-   * @param string $note
+   * @param string
    */
   public function setNote($note)
   {
@@ -246,9 +188,7 @@ class GoogleCloudAiplatformV1SchemaTextPromptDatasetMetadata extends \Google\Col
     return $this->note;
   }
   /**
-   * The API schema of the prompt to support both UI and SDK usages.
-   *
-   * @param GoogleCloudAiplatformV1SchemaPromptApiSchema $promptApiSchema
+   * @param GoogleCloudAiplatformV1SchemaPromptApiSchema
    */
   public function setPromptApiSchema(GoogleCloudAiplatformV1SchemaPromptApiSchema $promptApiSchema)
   {
@@ -262,9 +202,7 @@ class GoogleCloudAiplatformV1SchemaTextPromptDatasetMetadata extends \Google\Col
     return $this->promptApiSchema;
   }
   /**
-   * Type of the prompt dataset.
-   *
-   * @param string $promptType
+   * @param string
    */
   public function setPromptType($promptType)
   {
@@ -278,11 +216,7 @@ class GoogleCloudAiplatformV1SchemaTextPromptDatasetMetadata extends \Google\Col
     return $this->promptType;
   }
   /**
-   * Seeding enables model to return a deterministic response on a best effort
-   * basis. Determinism isn't guaranteed. This field determines whether or not
-   * seeding is enabled.
-   *
-   * @param bool $seedEnabled
+   * @param bool
    */
   public function setSeedEnabled($seedEnabled)
   {
@@ -296,9 +230,7 @@ class GoogleCloudAiplatformV1SchemaTextPromptDatasetMetadata extends \Google\Col
     return $this->seedEnabled;
   }
   /**
-   * The actual value of the seed.
-   *
-   * @param string $seedValue
+   * @param string
    */
   public function setSeedValue($seedValue)
   {
@@ -312,9 +244,7 @@ class GoogleCloudAiplatformV1SchemaTextPromptDatasetMetadata extends \Google\Col
     return $this->seedValue;
   }
   /**
-   * Customized stop sequences.
-   *
-   * @param string[] $stopSequences
+   * @param string[]
    */
   public function setStopSequences($stopSequences)
   {
@@ -328,9 +258,7 @@ class GoogleCloudAiplatformV1SchemaTextPromptDatasetMetadata extends \Google\Col
     return $this->stopSequences;
   }
   /**
-   * The content of the prompt dataset system instruction.
-   *
-   * @param string $systemInstruction
+   * @param string
    */
   public function setSystemInstruction($systemInstruction)
   {
@@ -344,10 +272,7 @@ class GoogleCloudAiplatformV1SchemaTextPromptDatasetMetadata extends \Google\Col
     return $this->systemInstruction;
   }
   /**
-   * The Google Cloud Storage URI that stores the system instruction, starting
-   * with gs://.
-   *
-   * @param string $systemInstructionGcsUri
+   * @param string
    */
   public function setSystemInstructionGcsUri($systemInstructionGcsUri)
   {
@@ -361,10 +286,7 @@ class GoogleCloudAiplatformV1SchemaTextPromptDatasetMetadata extends \Google\Col
     return $this->systemInstructionGcsUri;
   }
   /**
-   * Temperature value used for sampling set when the dataset was saved. This
-   * value is used to tune the degree of randomness.
-   *
-   * @param float $temperature
+   * @param float
    */
   public function setTemperature($temperature)
   {
@@ -378,9 +300,7 @@ class GoogleCloudAiplatformV1SchemaTextPromptDatasetMetadata extends \Google\Col
     return $this->temperature;
   }
   /**
-   * The content of the prompt dataset.
-   *
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {
@@ -394,11 +314,7 @@ class GoogleCloudAiplatformV1SchemaTextPromptDatasetMetadata extends \Google\Col
     return $this->text;
   }
   /**
-   * Top K value set when the dataset was saved. This value determines how many
-   * candidates with highest probability from the vocab would be selected for
-   * each decoding step.
-   *
-   * @param string $topK
+   * @param string
    */
   public function setTopK($topK)
   {
@@ -412,11 +328,7 @@ class GoogleCloudAiplatformV1SchemaTextPromptDatasetMetadata extends \Google\Col
     return $this->topK;
   }
   /**
-   * Top P value set when the dataset was saved. Given topK tokens for decoding,
-   * top candidates will be selected until the sum of their probabilities is
-   * topP.
-   *
-   * @param float $topP
+   * @param float
    */
   public function setTopP($topP)
   {

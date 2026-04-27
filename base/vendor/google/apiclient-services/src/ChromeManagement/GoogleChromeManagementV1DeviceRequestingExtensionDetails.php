@@ -20,22 +20,16 @@ namespace Google\Service\ChromeManagement;
 class GoogleChromeManagementV1DeviceRequestingExtensionDetails extends \Google\Model
 {
   /**
-   * The name of a device that has requested the extension.
-   *
    * @var string
    */
   public $deviceName;
   /**
-   * Request justification as entered by the user.
-   *
    * @var string
    */
   public $justification;
 
   /**
-   * The name of a device that has requested the extension.
-   *
-   * @param string $deviceName
+   * @param string
    */
   public function setDeviceName($deviceName)
   {
@@ -49,9 +43,7 @@ class GoogleChromeManagementV1DeviceRequestingExtensionDetails extends \Google\M
     return $this->deviceName;
   }
   /**
-   * Request justification as entered by the user.
-   *
-   * @param string $justification
+   * @param string
    */
   public function setJustification($justification)
   {

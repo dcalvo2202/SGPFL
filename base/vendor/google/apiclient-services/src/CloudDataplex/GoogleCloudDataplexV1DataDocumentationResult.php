@@ -17,44 +17,25 @@
 
 namespace Google\Service\CloudDataplex;
 
-class GoogleCloudDataplexV1DataDocumentationResult extends \Google\Model
+class GoogleCloudDataplexV1DataDocumentationResult extends \Google\Collection
 {
-  protected $datasetResultType = GoogleCloudDataplexV1DataDocumentationResultDatasetResult::class;
-  protected $datasetResultDataType = '';
-  protected $tableResultType = GoogleCloudDataplexV1DataDocumentationResultTableResult::class;
-  protected $tableResultDataType = '';
+  protected $collection_key = 'queries';
+  protected $queriesType = GoogleCloudDataplexV1DataDocumentationResultQuery::class;
+  protected $queriesDataType = 'array';
 
   /**
-   * Output only. Insights for a Dataset resource.
-   *
-   * @param GoogleCloudDataplexV1DataDocumentationResultDatasetResult $datasetResult
+   * @param GoogleCloudDataplexV1DataDocumentationResultQuery[]
    */
-  public function setDatasetResult(GoogleCloudDataplexV1DataDocumentationResultDatasetResult $datasetResult)
+  public function setQueries($queries)
   {
-    $this->datasetResult = $datasetResult;
+    $this->queries = $queries;
   }
   /**
-   * @return GoogleCloudDataplexV1DataDocumentationResultDatasetResult
+   * @return GoogleCloudDataplexV1DataDocumentationResultQuery[]
    */
-  public function getDatasetResult()
+  public function getQueries()
   {
-    return $this->datasetResult;
-  }
-  /**
-   * Output only. Insights for a Table resource.
-   *
-   * @param GoogleCloudDataplexV1DataDocumentationResultTableResult $tableResult
-   */
-  public function setTableResult(GoogleCloudDataplexV1DataDocumentationResultTableResult $tableResult)
-  {
-    $this->tableResult = $tableResult;
-  }
-  /**
-   * @return GoogleCloudDataplexV1DataDocumentationResultTableResult
-   */
-  public function getTableResult()
-  {
-    return $this->tableResult;
+    return $this->queries;
   }
 }
 

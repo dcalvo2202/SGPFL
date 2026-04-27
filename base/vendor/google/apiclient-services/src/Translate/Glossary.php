@@ -20,20 +20,14 @@ namespace Google\Service\Translate;
 class Glossary extends \Google\Model
 {
   /**
-   * Optional. The display name of the glossary.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. When the glossary creation was finished.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * Output only. The number of entries defined in the glossary.
-   *
    * @var int
    */
   public $entryCount;
@@ -44,24 +38,16 @@ class Glossary extends \Google\Model
   protected $languagePairType = LanguageCodePair::class;
   protected $languagePairDataType = '';
   /**
-   * Identifier. The resource name of the glossary. Glossary names have the form
-   * `projects/{project-number-or-id}/locations/{location-
-   * id}/glossaries/{glossary-id}`.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. When CreateGlossary was called.
-   *
    * @var string
    */
   public $submitTime;
 
   /**
-   * Optional. The display name of the glossary.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -75,9 +61,7 @@ class Glossary extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Output only. When the glossary creation was finished.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -91,9 +75,7 @@ class Glossary extends \Google\Model
     return $this->endTime;
   }
   /**
-   * Output only. The number of entries defined in the glossary.
-   *
-   * @param int $entryCount
+   * @param int
    */
   public function setEntryCount($entryCount)
   {
@@ -107,10 +89,7 @@ class Glossary extends \Google\Model
     return $this->entryCount;
   }
   /**
-   * Required. Provides examples to build the glossary from. Total glossary must
-   * not exceed 10M Unicode codepoints.
-   *
-   * @param GlossaryInputConfig $inputConfig
+   * @param GlossaryInputConfig
    */
   public function setInputConfig(GlossaryInputConfig $inputConfig)
   {
@@ -124,9 +103,7 @@ class Glossary extends \Google\Model
     return $this->inputConfig;
   }
   /**
-   * Used with equivalent term set glossaries.
-   *
-   * @param LanguageCodesSet $languageCodesSet
+   * @param LanguageCodesSet
    */
   public function setLanguageCodesSet(LanguageCodesSet $languageCodesSet)
   {
@@ -140,9 +117,7 @@ class Glossary extends \Google\Model
     return $this->languageCodesSet;
   }
   /**
-   * Used with unidirectional glossaries.
-   *
-   * @param LanguageCodePair $languagePair
+   * @param LanguageCodePair
    */
   public function setLanguagePair(LanguageCodePair $languagePair)
   {
@@ -156,11 +131,7 @@ class Glossary extends \Google\Model
     return $this->languagePair;
   }
   /**
-   * Identifier. The resource name of the glossary. Glossary names have the form
-   * `projects/{project-number-or-id}/locations/{location-
-   * id}/glossaries/{glossary-id}`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -174,9 +145,7 @@ class Glossary extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. When CreateGlossary was called.
-   *
-   * @param string $submitTime
+   * @param string
    */
   public function setSubmitTime($submitTime)
   {

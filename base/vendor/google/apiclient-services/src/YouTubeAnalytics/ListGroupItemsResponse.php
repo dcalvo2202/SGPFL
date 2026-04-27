@@ -23,25 +23,18 @@ class ListGroupItemsResponse extends \Google\Collection
   protected $errorsType = Errors::class;
   protected $errorsDataType = '';
   /**
-   * The Etag of this resource.
-   *
    * @var string
    */
   public $etag;
   protected $itemsType = GroupItem::class;
   protected $itemsDataType = 'array';
   /**
-   * Identifies the API resource's type. The value will be
-   * `youtube#groupItemListResponse`.
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * Apiary error details
-   *
-   * @param Errors $errors
+   * @param Errors
    */
   public function setErrors(Errors $errors)
   {
@@ -55,9 +48,7 @@ class ListGroupItemsResponse extends \Google\Collection
     return $this->errors;
   }
   /**
-   * The Etag of this resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -71,10 +62,7 @@ class ListGroupItemsResponse extends \Google\Collection
     return $this->etag;
   }
   /**
-   * A list of groups that match the API request parameters. Each item in the
-   * list represents a `groupItem` resource.
-   *
-   * @param GroupItem[] $items
+   * @param GroupItem[]
    */
   public function setItems($items)
   {
@@ -88,10 +76,7 @@ class ListGroupItemsResponse extends \Google\Collection
     return $this->items;
   }
   /**
-   * Identifies the API resource's type. The value will be
-   * `youtube#groupItemListResponse`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\MigrationCenterAPI;
 class SqlServerSchemaDetails extends \Google\Model
 {
   /**
-   * Optional. SqlServer number of CLR objects.
-   *
    * @var int
    */
   public $clrObjectCount;
 
   /**
-   * Optional. SqlServer number of CLR objects.
-   *
-   * @param int $clrObjectCount
+   * @param int
    */
   public function setClrObjectCount($clrObjectCount)
   {

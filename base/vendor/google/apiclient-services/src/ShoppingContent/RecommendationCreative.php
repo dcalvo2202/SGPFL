@@ -20,52 +20,30 @@ namespace Google\Service\ShoppingContent;
 class RecommendationCreative extends \Google\Model
 {
   /**
-   * Default value. If provided, shall be considered invalid.
-   */
-  public const TYPE_CREATIVE_TYPE_UNSPECIFIED = 'CREATIVE_TYPE_UNSPECIFIED';
-  /**
-   * Video creatives.
-   */
-  public const TYPE_VIDEO = 'VIDEO';
-  /**
-   * Photo creatives.
-   */
-  public const TYPE_PHOTO = 'PHOTO';
-  /**
-   * Type of the creative.
-   *
    * @var string
    */
   public $type;
   /**
-   * URL of the creative.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * Type of the creative.
-   *
-   * Accepted values: CREATIVE_TYPE_UNSPECIFIED, VIDEO, PHOTO
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * URL of the creative.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

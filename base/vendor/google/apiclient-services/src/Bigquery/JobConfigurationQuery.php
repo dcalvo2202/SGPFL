@@ -21,13 +21,6 @@ class JobConfigurationQuery extends \Google\Collection
 {
   protected $collection_key = 'userDefinedFunctionResources';
   /**
-   * Optional. If true and query uses legacy SQL dialect, allows the query to
-   * produce arbitrarily large result tables at a slight cost in performance.
-   * Requires destinationTable to be set. For GoogleSQL queries, this flag is
-   * ignored and large results are always allowed. However, you must still set
-   * destinationTable when result size exceeds the allowed maximum response
-   * size.
-   *
    * @var bool
    */
   public $allowLargeResults;
@@ -36,32 +29,14 @@ class JobConfigurationQuery extends \Google\Collection
   protected $connectionPropertiesType = ConnectionProperty::class;
   protected $connectionPropertiesDataType = 'array';
   /**
-   * [Optional] Specifies whether the query should be executed as a continuous
-   * query. The default value is false.
-   *
    * @var bool
    */
   public $continuous;
   /**
-   * Optional. Specifies whether the job is allowed to create new tables. The
-   * following values are supported: * CREATE_IF_NEEDED: If the table does not
-   * exist, BigQuery creates the table. * CREATE_NEVER: The table must already
-   * exist. If it does not, a 'notFound' error is returned in the job result.
-   * The default value is CREATE_IF_NEEDED. Creation, truncation and append
-   * actions occur as one atomic update upon job completion.
-   *
    * @var string
    */
   public $createDisposition;
   /**
-   * If this property is true, the job creates a new session using a randomly
-   * generated session_id. To continue using a created session with subsequent
-   * queries, pass the existing session identifier as a `ConnectionProperty`
-   * value. The session identifier is returned as part of the `SessionInfo`
-   * message within the query statistics. The new session's location will be set
-   * to `Job.JobReference.location` if it is present, otherwise it's set to the
-   * default location based on existing routing logic.
-   *
    * @var bool
    */
   public $createSession;
@@ -72,60 +47,30 @@ class JobConfigurationQuery extends \Google\Collection
   protected $destinationTableType = TableReference::class;
   protected $destinationTableDataType = '';
   /**
-   * Optional. If true and query uses legacy SQL dialect, flattens all nested
-   * and repeated fields in the query results. allowLargeResults must be true if
-   * this is set to false. For GoogleSQL queries, this flag is ignored and
-   * results are never flattened.
-   *
    * @var bool
    */
   public $flattenResults;
   /**
-   * Optional. [Deprecated] Maximum billing tier allowed for this query. The
-   * billing tier controls the amount of compute resources allotted to the
-   * query, and multiplies the on-demand cost of the query accordingly. A query
-   * that runs within its allotted resources will succeed and indicate its
-   * billing tier in statistics.query.billingTier, but if the query exceeds its
-   * allotted resources, it will fail with billingTierLimitExceeded. WARNING:
-   * The billed byte amount can be multiplied by an amount up to this number!
-   * Most users should not need to alter this setting, and we recommend that you
-   * avoid introducing new uses of it.
-   *
    * @var int
    */
   public $maximumBillingTier;
   /**
-   * Limits the bytes billed for this job. Queries that will have bytes billed
-   * beyond this limit will fail (without incurring a charge). If unspecified,
-   * this will be set to your project default.
-   *
    * @var string
    */
   public $maximumBytesBilled;
   /**
-   * GoogleSQL only. Set to POSITIONAL to use positional (?) query parameters or
-   * to NAMED to use named (@myparam) query parameters in this query.
-   *
    * @var string
    */
   public $parameterMode;
   /**
-   * [Deprecated] This property is deprecated.
-   *
    * @var bool
    */
   public $preserveNulls;
   /**
-   * Optional. Specifies a priority for the query. Possible values include
-   * INTERACTIVE and BATCH. The default value is INTERACTIVE.
-   *
    * @var string
    */
   public $priority;
   /**
-   * [Required] SQL query text to execute. The useLegacySql field can be used to
-   * indicate whether the query uses legacy SQL or GoogleSQL.
-   *
    * @var string
    */
   public $query;
@@ -134,17 +79,6 @@ class JobConfigurationQuery extends \Google\Collection
   protected $rangePartitioningType = RangePartitioning::class;
   protected $rangePartitioningDataType = '';
   /**
-   * Allows the schema of the destination table to be updated as a side effect
-   * of the query job. Schema update options are supported in three cases: when
-   * writeDisposition is WRITE_APPEND; when writeDisposition is
-   * WRITE_TRUNCATE_DATA; when writeDisposition is WRITE_TRUNCATE and the
-   * destination table is a partition of a table, specified by partition
-   * decorators. For normal tables, WRITE_TRUNCATE will always overwrite the
-   * schema. One or more of the following values are specified: *
-   * ALLOW_FIELD_ADDITION: allow adding a nullable field to the schema. *
-   * ALLOW_FIELD_RELAXATION: allow relaxing a required field in the original
-   * schema to nullable.
-   *
    * @var string[]
    */
   public $schemaUpdateOptions;
@@ -157,64 +91,26 @@ class JobConfigurationQuery extends \Google\Collection
   protected $timePartitioningType = TimePartitioning::class;
   protected $timePartitioningDataType = '';
   /**
-   * Optional. Specifies whether to use BigQuery's legacy SQL dialect for this
-   * query. The default value is true. If set to false, the query uses
-   * BigQuery's
-   * [GoogleSQL](https://docs.cloud.google.com/bigquery/docs/introduction-sql).
-   * When useLegacySql is set to false, the value of flattenResults is ignored;
-   * query will be run as if flattenResults is false.
-   *
    * @var bool
    */
   public $useLegacySql;
   /**
-   * Optional. Whether to look for the result in the query cache. The query
-   * cache is a best-effort cache that will be flushed whenever tables in the
-   * query are modified. Moreover, the query cache is only available when a
-   * query does not have a destination table specified. The default value is
-   * true.
-   *
    * @var bool
    */
   public $useQueryCache;
   protected $userDefinedFunctionResourcesType = UserDefinedFunctionResource::class;
   protected $userDefinedFunctionResourcesDataType = 'array';
   /**
-   * Optional. Specifies the action that occurs if the destination table already
-   * exists. The following values are supported: * WRITE_TRUNCATE: If the table
-   * already exists, BigQuery overwrites the data, removes the constraints, and
-   * uses the schema from the query result. * WRITE_TRUNCATE_DATA: If the table
-   * already exists, BigQuery overwrites the data, but keeps the constraints and
-   * schema of the existing table. * WRITE_APPEND: If the table already exists,
-   * BigQuery appends the data to the table. * WRITE_EMPTY: If the table already
-   * exists and contains data, a 'duplicate' error is returned in the job
-   * result. The default value is WRITE_EMPTY. Each action is atomic and only
-   * occurs if BigQuery is able to complete the job successfully. Creation,
-   * truncation and append actions occur as one atomic update upon job
-   * completion.
-   *
    * @var string
    */
   public $writeDisposition;
   /**
-   * Optional. This is only supported for a SELECT query using a temporary
-   * table. If set, the query is allowed to write results incrementally to the
-   * temporary result table. This may incur a performance penalty. This option
-   * cannot be used with Legacy SQL. This feature is not yet available.
-   *
    * @var bool
    */
   public $writeIncrementalResults;
 
   /**
-   * Optional. If true and query uses legacy SQL dialect, allows the query to
-   * produce arbitrarily large result tables at a slight cost in performance.
-   * Requires destinationTable to be set. For GoogleSQL queries, this flag is
-   * ignored and large results are always allowed. However, you must still set
-   * destinationTable when result size exceeds the allowed maximum response
-   * size.
-   *
-   * @param bool $allowLargeResults
+   * @param bool
    */
   public function setAllowLargeResults($allowLargeResults)
   {
@@ -228,9 +124,7 @@ class JobConfigurationQuery extends \Google\Collection
     return $this->allowLargeResults;
   }
   /**
-   * Clustering specification for the destination table.
-   *
-   * @param Clustering $clustering
+   * @param Clustering
    */
   public function setClustering(Clustering $clustering)
   {
@@ -244,9 +138,7 @@ class JobConfigurationQuery extends \Google\Collection
     return $this->clustering;
   }
   /**
-   * Connection properties which can modify the query behavior.
-   *
-   * @param ConnectionProperty[] $connectionProperties
+   * @param ConnectionProperty[]
    */
   public function setConnectionProperties($connectionProperties)
   {
@@ -260,10 +152,7 @@ class JobConfigurationQuery extends \Google\Collection
     return $this->connectionProperties;
   }
   /**
-   * [Optional] Specifies whether the query should be executed as a continuous
-   * query. The default value is false.
-   *
-   * @param bool $continuous
+   * @param bool
    */
   public function setContinuous($continuous)
   {
@@ -277,14 +166,7 @@ class JobConfigurationQuery extends \Google\Collection
     return $this->continuous;
   }
   /**
-   * Optional. Specifies whether the job is allowed to create new tables. The
-   * following values are supported: * CREATE_IF_NEEDED: If the table does not
-   * exist, BigQuery creates the table. * CREATE_NEVER: The table must already
-   * exist. If it does not, a 'notFound' error is returned in the job result.
-   * The default value is CREATE_IF_NEEDED. Creation, truncation and append
-   * actions occur as one atomic update upon job completion.
-   *
-   * @param string $createDisposition
+   * @param string
    */
   public function setCreateDisposition($createDisposition)
   {
@@ -298,15 +180,7 @@ class JobConfigurationQuery extends \Google\Collection
     return $this->createDisposition;
   }
   /**
-   * If this property is true, the job creates a new session using a randomly
-   * generated session_id. To continue using a created session with subsequent
-   * queries, pass the existing session identifier as a `ConnectionProperty`
-   * value. The session identifier is returned as part of the `SessionInfo`
-   * message within the query statistics. The new session's location will be set
-   * to `Job.JobReference.location` if it is present, otherwise it's set to the
-   * default location based on existing routing logic.
-   *
-   * @param bool $createSession
+   * @param bool
    */
   public function setCreateSession($createSession)
   {
@@ -320,13 +194,7 @@ class JobConfigurationQuery extends \Google\Collection
     return $this->createSession;
   }
   /**
-   * Optional. Specifies the default dataset to use for unqualified table names
-   * in the query. This setting does not alter behavior of unqualified dataset
-   * names. Setting the system variable `@@dataset_id` achieves the same
-   * behavior. See https://cloud.google.com/bigquery/docs/reference/system-
-   * variables for more information on system variables.
-   *
-   * @param DatasetReference $defaultDataset
+   * @param DatasetReference
    */
   public function setDefaultDataset(DatasetReference $defaultDataset)
   {
@@ -340,9 +208,7 @@ class JobConfigurationQuery extends \Google\Collection
     return $this->defaultDataset;
   }
   /**
-   * Custom encryption configuration (e.g., Cloud KMS keys)
-   *
-   * @param EncryptionConfiguration $destinationEncryptionConfiguration
+   * @param EncryptionConfiguration
    */
   public function setDestinationEncryptionConfiguration(EncryptionConfiguration $destinationEncryptionConfiguration)
   {
@@ -356,12 +222,7 @@ class JobConfigurationQuery extends \Google\Collection
     return $this->destinationEncryptionConfiguration;
   }
   /**
-   * Optional. Describes the table where the query results should be stored.
-   * This property must be set for large results that exceed the maximum
-   * response size. For queries that produce anonymous (cached) results, this
-   * field will be populated by BigQuery.
-   *
-   * @param TableReference $destinationTable
+   * @param TableReference
    */
   public function setDestinationTable(TableReference $destinationTable)
   {
@@ -375,12 +236,7 @@ class JobConfigurationQuery extends \Google\Collection
     return $this->destinationTable;
   }
   /**
-   * Optional. If true and query uses legacy SQL dialect, flattens all nested
-   * and repeated fields in the query results. allowLargeResults must be true if
-   * this is set to false. For GoogleSQL queries, this flag is ignored and
-   * results are never flattened.
-   *
-   * @param bool $flattenResults
+   * @param bool
    */
   public function setFlattenResults($flattenResults)
   {
@@ -394,17 +250,7 @@ class JobConfigurationQuery extends \Google\Collection
     return $this->flattenResults;
   }
   /**
-   * Optional. [Deprecated] Maximum billing tier allowed for this query. The
-   * billing tier controls the amount of compute resources allotted to the
-   * query, and multiplies the on-demand cost of the query accordingly. A query
-   * that runs within its allotted resources will succeed and indicate its
-   * billing tier in statistics.query.billingTier, but if the query exceeds its
-   * allotted resources, it will fail with billingTierLimitExceeded. WARNING:
-   * The billed byte amount can be multiplied by an amount up to this number!
-   * Most users should not need to alter this setting, and we recommend that you
-   * avoid introducing new uses of it.
-   *
-   * @param int $maximumBillingTier
+   * @param int
    */
   public function setMaximumBillingTier($maximumBillingTier)
   {
@@ -418,11 +264,7 @@ class JobConfigurationQuery extends \Google\Collection
     return $this->maximumBillingTier;
   }
   /**
-   * Limits the bytes billed for this job. Queries that will have bytes billed
-   * beyond this limit will fail (without incurring a charge). If unspecified,
-   * this will be set to your project default.
-   *
-   * @param string $maximumBytesBilled
+   * @param string
    */
   public function setMaximumBytesBilled($maximumBytesBilled)
   {
@@ -436,10 +278,7 @@ class JobConfigurationQuery extends \Google\Collection
     return $this->maximumBytesBilled;
   }
   /**
-   * GoogleSQL only. Set to POSITIONAL to use positional (?) query parameters or
-   * to NAMED to use named (@myparam) query parameters in this query.
-   *
-   * @param string $parameterMode
+   * @param string
    */
   public function setParameterMode($parameterMode)
   {
@@ -453,9 +292,7 @@ class JobConfigurationQuery extends \Google\Collection
     return $this->parameterMode;
   }
   /**
-   * [Deprecated] This property is deprecated.
-   *
-   * @param bool $preserveNulls
+   * @param bool
    */
   public function setPreserveNulls($preserveNulls)
   {
@@ -469,10 +306,7 @@ class JobConfigurationQuery extends \Google\Collection
     return $this->preserveNulls;
   }
   /**
-   * Optional. Specifies a priority for the query. Possible values include
-   * INTERACTIVE and BATCH. The default value is INTERACTIVE.
-   *
-   * @param string $priority
+   * @param string
    */
   public function setPriority($priority)
   {
@@ -486,10 +320,7 @@ class JobConfigurationQuery extends \Google\Collection
     return $this->priority;
   }
   /**
-   * [Required] SQL query text to execute. The useLegacySql field can be used to
-   * indicate whether the query uses legacy SQL or GoogleSQL.
-   *
-   * @param string $query
+   * @param string
    */
   public function setQuery($query)
   {
@@ -503,9 +334,7 @@ class JobConfigurationQuery extends \Google\Collection
     return $this->query;
   }
   /**
-   * Query parameters for GoogleSQL queries.
-   *
-   * @param QueryParameter[] $queryParameters
+   * @param QueryParameter[]
    */
   public function setQueryParameters($queryParameters)
   {
@@ -519,10 +348,7 @@ class JobConfigurationQuery extends \Google\Collection
     return $this->queryParameters;
   }
   /**
-   * Range partitioning specification for the destination table. Only one of
-   * timePartitioning and rangePartitioning should be specified.
-   *
-   * @param RangePartitioning $rangePartitioning
+   * @param RangePartitioning
    */
   public function setRangePartitioning(RangePartitioning $rangePartitioning)
   {
@@ -536,18 +362,7 @@ class JobConfigurationQuery extends \Google\Collection
     return $this->rangePartitioning;
   }
   /**
-   * Allows the schema of the destination table to be updated as a side effect
-   * of the query job. Schema update options are supported in three cases: when
-   * writeDisposition is WRITE_APPEND; when writeDisposition is
-   * WRITE_TRUNCATE_DATA; when writeDisposition is WRITE_TRUNCATE and the
-   * destination table is a partition of a table, specified by partition
-   * decorators. For normal tables, WRITE_TRUNCATE will always overwrite the
-   * schema. One or more of the following values are specified: *
-   * ALLOW_FIELD_ADDITION: allow adding a nullable field to the schema. *
-   * ALLOW_FIELD_RELAXATION: allow relaxing a required field in the original
-   * schema to nullable.
-   *
-   * @param string[] $schemaUpdateOptions
+   * @param string[]
    */
   public function setSchemaUpdateOptions($schemaUpdateOptions)
   {
@@ -561,9 +376,7 @@ class JobConfigurationQuery extends \Google\Collection
     return $this->schemaUpdateOptions;
   }
   /**
-   * Options controlling the execution of scripts.
-   *
-   * @param ScriptOptions $scriptOptions
+   * @param ScriptOptions
    */
   public function setScriptOptions(ScriptOptions $scriptOptions)
   {
@@ -577,11 +390,7 @@ class JobConfigurationQuery extends \Google\Collection
     return $this->scriptOptions;
   }
   /**
-   * Output only. System variables for GoogleSQL queries. A system variable is
-   * output if the variable is settable and its value differs from the system
-   * default. "@@" prefix is not included in the name of the System variables.
-   *
-   * @param SystemVariables $systemVariables
+   * @param SystemVariables
    */
   public function setSystemVariables(SystemVariables $systemVariables)
   {
@@ -595,12 +404,7 @@ class JobConfigurationQuery extends \Google\Collection
     return $this->systemVariables;
   }
   /**
-   * Optional. You can specify external table definitions, which operate as
-   * ephemeral tables that can be queried. These definitions are configured
-   * using a JSON map, where the string key represents the table identifier, and
-   * the value is the corresponding external data configuration object.
-   *
-   * @param ExternalDataConfiguration[] $tableDefinitions
+   * @param ExternalDataConfiguration[]
    */
   public function setTableDefinitions($tableDefinitions)
   {
@@ -614,10 +418,7 @@ class JobConfigurationQuery extends \Google\Collection
     return $this->tableDefinitions;
   }
   /**
-   * Time-based partitioning specification for the destination table. Only one
-   * of timePartitioning and rangePartitioning should be specified.
-   *
-   * @param TimePartitioning $timePartitioning
+   * @param TimePartitioning
    */
   public function setTimePartitioning(TimePartitioning $timePartitioning)
   {
@@ -631,14 +432,7 @@ class JobConfigurationQuery extends \Google\Collection
     return $this->timePartitioning;
   }
   /**
-   * Optional. Specifies whether to use BigQuery's legacy SQL dialect for this
-   * query. The default value is true. If set to false, the query uses
-   * BigQuery's
-   * [GoogleSQL](https://docs.cloud.google.com/bigquery/docs/introduction-sql).
-   * When useLegacySql is set to false, the value of flattenResults is ignored;
-   * query will be run as if flattenResults is false.
-   *
-   * @param bool $useLegacySql
+   * @param bool
    */
   public function setUseLegacySql($useLegacySql)
   {
@@ -652,13 +446,7 @@ class JobConfigurationQuery extends \Google\Collection
     return $this->useLegacySql;
   }
   /**
-   * Optional. Whether to look for the result in the query cache. The query
-   * cache is a best-effort cache that will be flushed whenever tables in the
-   * query are modified. Moreover, the query cache is only available when a
-   * query does not have a destination table specified. The default value is
-   * true.
-   *
-   * @param bool $useQueryCache
+   * @param bool
    */
   public function setUseQueryCache($useQueryCache)
   {
@@ -672,9 +460,7 @@ class JobConfigurationQuery extends \Google\Collection
     return $this->useQueryCache;
   }
   /**
-   * Describes user-defined function resources used in the query.
-   *
-   * @param UserDefinedFunctionResource[] $userDefinedFunctionResources
+   * @param UserDefinedFunctionResource[]
    */
   public function setUserDefinedFunctionResources($userDefinedFunctionResources)
   {
@@ -688,20 +474,7 @@ class JobConfigurationQuery extends \Google\Collection
     return $this->userDefinedFunctionResources;
   }
   /**
-   * Optional. Specifies the action that occurs if the destination table already
-   * exists. The following values are supported: * WRITE_TRUNCATE: If the table
-   * already exists, BigQuery overwrites the data, removes the constraints, and
-   * uses the schema from the query result. * WRITE_TRUNCATE_DATA: If the table
-   * already exists, BigQuery overwrites the data, but keeps the constraints and
-   * schema of the existing table. * WRITE_APPEND: If the table already exists,
-   * BigQuery appends the data to the table. * WRITE_EMPTY: If the table already
-   * exists and contains data, a 'duplicate' error is returned in the job
-   * result. The default value is WRITE_EMPTY. Each action is atomic and only
-   * occurs if BigQuery is able to complete the job successfully. Creation,
-   * truncation and append actions occur as one atomic update upon job
-   * completion.
-   *
-   * @param string $writeDisposition
+   * @param string
    */
   public function setWriteDisposition($writeDisposition)
   {
@@ -715,12 +488,7 @@ class JobConfigurationQuery extends \Google\Collection
     return $this->writeDisposition;
   }
   /**
-   * Optional. This is only supported for a SELECT query using a temporary
-   * table. If set, the query is allowed to write results incrementally to the
-   * temporary result table. This may incur a performance penalty. This option
-   * cannot be used with Legacy SQL. This feature is not yet available.
-   *
-   * @param bool $writeIncrementalResults
+   * @param bool
    */
   public function setWriteIncrementalResults($writeIncrementalResults)
   {

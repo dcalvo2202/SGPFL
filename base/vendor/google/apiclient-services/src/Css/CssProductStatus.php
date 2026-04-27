@@ -21,36 +21,24 @@ class CssProductStatus extends \Google\Collection
 {
   protected $collection_key = 'itemLevelIssues';
   /**
-   * Date on which the item has been created, in [ISO
-   * 8601](http://en.wikipedia.org/wiki/ISO_8601) format.
-   *
    * @var string
    */
   public $creationDate;
   protected $destinationStatusesType = DestinationStatus::class;
   protected $destinationStatusesDataType = 'array';
   /**
-   * Date on which the item expires, in [ISO
-   * 8601](http://en.wikipedia.org/wiki/ISO_8601) format.
-   *
    * @var string
    */
   public $googleExpirationDate;
   protected $itemLevelIssuesType = ItemLevelIssue::class;
   protected $itemLevelIssuesDataType = 'array';
   /**
-   * Date on which the item has been last updated, in [ISO
-   * 8601](http://en.wikipedia.org/wiki/ISO_8601) format.
-   *
    * @var string
    */
   public $lastUpdateDate;
 
   /**
-   * Date on which the item has been created, in [ISO
-   * 8601](http://en.wikipedia.org/wiki/ISO_8601) format.
-   *
-   * @param string $creationDate
+   * @param string
    */
   public function setCreationDate($creationDate)
   {
@@ -64,9 +52,7 @@ class CssProductStatus extends \Google\Collection
     return $this->creationDate;
   }
   /**
-   * The intended destinations for the product.
-   *
-   * @param DestinationStatus[] $destinationStatuses
+   * @param DestinationStatus[]
    */
   public function setDestinationStatuses($destinationStatuses)
   {
@@ -80,10 +66,7 @@ class CssProductStatus extends \Google\Collection
     return $this->destinationStatuses;
   }
   /**
-   * Date on which the item expires, in [ISO
-   * 8601](http://en.wikipedia.org/wiki/ISO_8601) format.
-   *
-   * @param string $googleExpirationDate
+   * @param string
    */
   public function setGoogleExpirationDate($googleExpirationDate)
   {
@@ -97,9 +80,7 @@ class CssProductStatus extends \Google\Collection
     return $this->googleExpirationDate;
   }
   /**
-   * A list of all issues associated with the product.
-   *
-   * @param ItemLevelIssue[] $itemLevelIssues
+   * @param ItemLevelIssue[]
    */
   public function setItemLevelIssues($itemLevelIssues)
   {
@@ -113,10 +94,7 @@ class CssProductStatus extends \Google\Collection
     return $this->itemLevelIssues;
   }
   /**
-   * Date on which the item has been last updated, in [ISO
-   * 8601](http://en.wikipedia.org/wiki/ISO_8601) format.
-   *
-   * @param string $lastUpdateDate
+   * @param string
    */
   public function setLastUpdateDate($lastUpdateDate)
   {

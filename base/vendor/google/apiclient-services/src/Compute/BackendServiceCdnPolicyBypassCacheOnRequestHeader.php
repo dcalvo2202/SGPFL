@@ -20,18 +20,12 @@ namespace Google\Service\Compute;
 class BackendServiceCdnPolicyBypassCacheOnRequestHeader extends \Google\Model
 {
   /**
-   * The header field name to match on when bypassing cache. Values are case-
-   * insensitive.
-   *
    * @var string
    */
   public $headerName;
 
   /**
-   * The header field name to match on when bypassing cache. Values are case-
-   * insensitive.
-   *
-   * @param string $headerName
+   * @param string
    */
   public function setHeaderName($headerName)
   {

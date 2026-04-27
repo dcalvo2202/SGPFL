@@ -20,30 +20,20 @@ namespace Google\Service\Games;
 class GamesAchievementIncrement extends \Google\Model
 {
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#GamesAchievementIncrement`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The requestId associated with an increment to an achievement.
-   *
    * @var string
    */
   public $requestId;
   /**
-   * The number of steps to be incremented.
-   *
    * @var int
    */
   public $steps;
 
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#GamesAchievementIncrement`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -57,9 +47,7 @@ class GamesAchievementIncrement extends \Google\Model
     return $this->kind;
   }
   /**
-   * The requestId associated with an increment to an achievement.
-   *
-   * @param string $requestId
+   * @param string
    */
   public function setRequestId($requestId)
   {
@@ -73,9 +61,7 @@ class GamesAchievementIncrement extends \Google\Model
     return $this->requestId;
   }
   /**
-   * The number of steps to be incremented.
-   *
-   * @param int $steps
+   * @param int
    */
   public function setSteps($steps)
   {

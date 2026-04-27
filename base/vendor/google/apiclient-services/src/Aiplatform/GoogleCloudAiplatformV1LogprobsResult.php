@@ -26,11 +26,7 @@ class GoogleCloudAiplatformV1LogprobsResult extends \Google\Collection
   protected $topCandidatesDataType = 'array';
 
   /**
-   * A list of the chosen candidate tokens at each decoding step. The length of
-   * this list is equal to the total number of decoding steps. Note that the
-   * chosen candidate might not be in `top_candidates`.
-   *
-   * @param GoogleCloudAiplatformV1LogprobsResultCandidate[] $chosenCandidates
+   * @param GoogleCloudAiplatformV1LogprobsResultCandidate[]
    */
   public function setChosenCandidates($chosenCandidates)
   {
@@ -44,10 +40,7 @@ class GoogleCloudAiplatformV1LogprobsResult extends \Google\Collection
     return $this->chosenCandidates;
   }
   /**
-   * A list of the top candidate tokens at each decoding step. The length of
-   * this list is equal to the total number of decoding steps.
-   *
-   * @param GoogleCloudAiplatformV1LogprobsResultTopCandidates[] $topCandidates
+   * @param GoogleCloudAiplatformV1LogprobsResultTopCandidates[]
    */
   public function setTopCandidates($topCandidates)
   {

@@ -23,9 +23,7 @@ class LinkedContentReference extends \Google\Model
   protected $sheetsChartReferenceDataType = '';
 
   /**
-   * A reference to the linked chart.
-   *
-   * @param SheetsChartReference $sheetsChartReference
+   * @param SheetsChartReference
    */
   public function setSheetsChartReference(SheetsChartReference $sheetsChartReference)
   {

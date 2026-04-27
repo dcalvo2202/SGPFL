@@ -28,7 +28,7 @@ class GoogleCloudDialogflowCxV3beta1FulfillmentConditionalCasesCase extends \Goo
   public $condition;
 
   /**
-   * @param GoogleCloudDialogflowCxV3beta1FulfillmentConditionalCasesCaseCaseContent[] $caseContent
+   * @param GoogleCloudDialogflowCxV3beta1FulfillmentConditionalCasesCaseCaseContent[]
    */
   public function setCaseContent($caseContent)
   {
@@ -42,7 +42,7 @@ class GoogleCloudDialogflowCxV3beta1FulfillmentConditionalCasesCase extends \Goo
     return $this->caseContent;
   }
   /**
-   * @param string $condition
+   * @param string
    */
   public function setCondition($condition)
   {

@@ -19,12 +19,6 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowCxV3ImportEntityTypesRequest extends \Google\Model
 {
-  public const MERGE_OPTION_MERGE_OPTION_UNSPECIFIED = 'MERGE_OPTION_UNSPECIFIED';
-  public const MERGE_OPTION_REPLACE = 'REPLACE';
-  public const MERGE_OPTION_MERGE = 'MERGE';
-  public const MERGE_OPTION_RENAME = 'RENAME';
-  public const MERGE_OPTION_REPORT_CONFLICT = 'REPORT_CONFLICT';
-  public const MERGE_OPTION_KEEP = 'KEEP';
   protected $entityTypesContentType = GoogleCloudDialogflowCxV3InlineSource::class;
   protected $entityTypesContentDataType = '';
   /**
@@ -41,7 +35,7 @@ class GoogleCloudDialogflowCxV3ImportEntityTypesRequest extends \Google\Model
   public $targetEntityType;
 
   /**
-   * @param GoogleCloudDialogflowCxV3InlineSource $entityTypesContent
+   * @param GoogleCloudDialogflowCxV3InlineSource
    */
   public function setEntityTypesContent(GoogleCloudDialogflowCxV3InlineSource $entityTypesContent)
   {
@@ -55,7 +49,7 @@ class GoogleCloudDialogflowCxV3ImportEntityTypesRequest extends \Google\Model
     return $this->entityTypesContent;
   }
   /**
-   * @param string $entityTypesUri
+   * @param string
    */
   public function setEntityTypesUri($entityTypesUri)
   {
@@ -69,21 +63,21 @@ class GoogleCloudDialogflowCxV3ImportEntityTypesRequest extends \Google\Model
     return $this->entityTypesUri;
   }
   /**
-   * @param self::MERGE_OPTION_* $mergeOption
+   * @param string
    */
   public function setMergeOption($mergeOption)
   {
     $this->mergeOption = $mergeOption;
   }
   /**
-   * @return self::MERGE_OPTION_*
+   * @return string
    */
   public function getMergeOption()
   {
     return $this->mergeOption;
   }
   /**
-   * @param string $targetEntityType
+   * @param string
    */
   public function setTargetEntityType($targetEntityType)
   {

@@ -20,35 +20,20 @@ namespace Google\Service\YouTube;
 class LiveChatMemberMilestoneChatDetails extends \Google\Model
 {
   /**
-   * The name of the Level at which the viever is a member. The Level names are
-   * defined by the YouTube channel offering the Membership. In some situations
-   * this field isn't filled.
-   *
    * @var string
    */
   public $memberLevelName;
   /**
-   * The total amount of months (rounded up) the viewer has been a member that
-   * granted them this Member Milestone Chat. This is the same number of months
-   * as is being displayed to YouTube users.
-   *
    * @var string
    */
   public $memberMonth;
   /**
-   * The comment added by the member to this Member Milestone Chat. This field
-   * is empty for messages without a comment from the member.
-   *
    * @var string
    */
   public $userComment;
 
   /**
-   * The name of the Level at which the viever is a member. The Level names are
-   * defined by the YouTube channel offering the Membership. In some situations
-   * this field isn't filled.
-   *
-   * @param string $memberLevelName
+   * @param string
    */
   public function setMemberLevelName($memberLevelName)
   {
@@ -62,11 +47,7 @@ class LiveChatMemberMilestoneChatDetails extends \Google\Model
     return $this->memberLevelName;
   }
   /**
-   * The total amount of months (rounded up) the viewer has been a member that
-   * granted them this Member Milestone Chat. This is the same number of months
-   * as is being displayed to YouTube users.
-   *
-   * @param string $memberMonth
+   * @param string
    */
   public function setMemberMonth($memberMonth)
   {
@@ -80,10 +61,7 @@ class LiveChatMemberMilestoneChatDetails extends \Google\Model
     return $this->memberMonth;
   }
   /**
-   * The comment added by the member to this Member Milestone Chat. This field
-   * is empty for messages without a comment from the member.
-   *
-   * @param string $userComment
+   * @param string
    */
   public function setUserComment($userComment)
   {

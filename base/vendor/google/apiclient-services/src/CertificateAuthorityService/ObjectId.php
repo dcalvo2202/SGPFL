@@ -21,18 +21,12 @@ class ObjectId extends \Google\Collection
 {
   protected $collection_key = 'objectIdPath';
   /**
-   * Required. The parts of an OID path. The most significant parts of the path
-   * come first.
-   *
    * @var int[]
    */
   public $objectIdPath;
 
   /**
-   * Required. The parts of an OID path. The most significant parts of the path
-   * come first.
-   *
-   * @param int[] $objectIdPath
+   * @param int[]
    */
   public function setObjectIdPath($objectIdPath)
   {

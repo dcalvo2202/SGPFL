@@ -20,22 +20,16 @@ namespace Google\Service\DataCatalog;
 class GoogleCloudDatacatalogV1PersonalDetails extends \Google\Model
 {
   /**
-   * Set if the entry is starred; unset otherwise.
-   *
    * @var string
    */
   public $starTime;
   /**
-   * True if the entry is starred by the user; false otherwise.
-   *
    * @var bool
    */
   public $starred;
 
   /**
-   * Set if the entry is starred; unset otherwise.
-   *
-   * @param string $starTime
+   * @param string
    */
   public function setStarTime($starTime)
   {
@@ -49,9 +43,7 @@ class GoogleCloudDatacatalogV1PersonalDetails extends \Google\Model
     return $this->starTime;
   }
   /**
-   * True if the entry is starred by the user; false otherwise.
-   *
-   * @param bool $starred
+   * @param bool
    */
   public function setStarred($starred)
   {

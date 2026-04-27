@@ -20,9 +20,6 @@ namespace Google\Service\Spanner;
 class UpdateDatabaseMetadata extends \Google\Model
 {
   /**
-   * The time at which this operation was cancelled. If set, this operation is
-   * in the process of undoing itself (which is best-effort).
-   *
    * @var string
    */
   public $cancelTime;
@@ -32,10 +29,7 @@ class UpdateDatabaseMetadata extends \Google\Model
   protected $requestDataType = '';
 
   /**
-   * The time at which this operation was cancelled. If set, this operation is
-   * in the process of undoing itself (which is best-effort).
-   *
-   * @param string $cancelTime
+   * @param string
    */
   public function setCancelTime($cancelTime)
   {
@@ -49,9 +43,7 @@ class UpdateDatabaseMetadata extends \Google\Model
     return $this->cancelTime;
   }
   /**
-   * The progress of the UpdateDatabase operation.
-   *
-   * @param OperationProgress $progress
+   * @param OperationProgress
    */
   public function setProgress(OperationProgress $progress)
   {
@@ -65,9 +57,7 @@ class UpdateDatabaseMetadata extends \Google\Model
     return $this->progress;
   }
   /**
-   * The request for UpdateDatabase.
-   *
-   * @param UpdateDatabaseRequest $request
+   * @param UpdateDatabaseRequest
    */
   public function setRequest(UpdateDatabaseRequest $request)
   {

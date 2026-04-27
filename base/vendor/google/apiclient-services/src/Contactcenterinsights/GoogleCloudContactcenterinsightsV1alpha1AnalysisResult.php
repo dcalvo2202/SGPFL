@@ -22,16 +22,12 @@ class GoogleCloudContactcenterinsightsV1alpha1AnalysisResult extends \Google\Mod
   protected $callAnalysisMetadataType = GoogleCloudContactcenterinsightsV1alpha1AnalysisResultCallAnalysisMetadata::class;
   protected $callAnalysisMetadataDataType = '';
   /**
-   * The time at which the analysis ended.
-   *
    * @var string
    */
   public $endTime;
 
   /**
-   * Call-specific metadata created by the analysis.
-   *
-   * @param GoogleCloudContactcenterinsightsV1alpha1AnalysisResultCallAnalysisMetadata $callAnalysisMetadata
+   * @param GoogleCloudContactcenterinsightsV1alpha1AnalysisResultCallAnalysisMetadata
    */
   public function setCallAnalysisMetadata(GoogleCloudContactcenterinsightsV1alpha1AnalysisResultCallAnalysisMetadata $callAnalysisMetadata)
   {
@@ -45,9 +41,7 @@ class GoogleCloudContactcenterinsightsV1alpha1AnalysisResult extends \Google\Mod
     return $this->callAnalysisMetadata;
   }
   /**
-   * The time at which the analysis ended.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {

@@ -19,29 +19,20 @@ namespace Google\Service\YouTube;
 
 class PlaylistItemStatus extends \Google\Model
 {
-  public const PRIVACY_STATUS_public = 'public';
-  public const PRIVACY_STATUS_unlisted = 'unlisted';
-  public const PRIVACY_STATUS_private = 'private';
   /**
-   * This resource's privacy status.
-   *
    * @var string
    */
   public $privacyStatus;
 
   /**
-   * This resource's privacy status.
-   *
-   * Accepted values: public, unlisted, private
-   *
-   * @param self::PRIVACY_STATUS_* $privacyStatus
+   * @param string
    */
   public function setPrivacyStatus($privacyStatus)
   {
     $this->privacyStatus = $privacyStatus;
   }
   /**
-   * @return self::PRIVACY_STATUS_*
+   * @return string
    */
   public function getPrivacyStatus()
   {

@@ -20,20 +20,12 @@ namespace Google\Service\DataprocMetastore;
 class Secret extends \Google\Model
 {
   /**
-   * Optional. The relative resource name of a Secret Manager secret version, in
-   * the following
-   * form:projects/{project_number}/secrets/{secret_id}/versions/{version_id}.
-   *
    * @var string
    */
   public $cloudSecret;
 
   /**
-   * Optional. The relative resource name of a Secret Manager secret version, in
-   * the following
-   * form:projects/{project_number}/secrets/{secret_id}/versions/{version_id}.
-   *
-   * @param string $cloudSecret
+   * @param string
    */
   public function setCloudSecret($cloudSecret)
   {

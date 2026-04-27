@@ -26,12 +26,7 @@ class BareMetalControlPlaneConfig extends \Google\Collection
   protected $controlPlaneNodePoolConfigDataType = '';
 
   /**
-   * Customizes the default API server args. Only a subset of customized flags
-   * are supported. For the exact format, refer to the [API server
-   * documentation](https://kubernetes.io/docs/reference/command-line-tools-
-   * reference/kube-apiserver/).
-   *
-   * @param BareMetalApiServerArgument[] $apiServerArgs
+   * @param BareMetalApiServerArgument[]
    */
   public function setApiServerArgs($apiServerArgs)
   {
@@ -45,9 +40,7 @@ class BareMetalControlPlaneConfig extends \Google\Collection
     return $this->apiServerArgs;
   }
   /**
-   * Required. Configures the node pool running the control plane.
-   *
-   * @param BareMetalControlPlaneNodePoolConfig $controlPlaneNodePoolConfig
+   * @param BareMetalControlPlaneNodePoolConfig
    */
   public function setControlPlaneNodePoolConfig(BareMetalControlPlaneNodePoolConfig $controlPlaneNodePoolConfig)
   {

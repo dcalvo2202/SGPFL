@@ -19,186 +19,90 @@ namespace Google\Service\Contentwarehouse;
 
 class GoogleCloudContentwarehouseV1Document extends \Google\Collection
 {
-  /**
-   * No category is specified.
-   */
-  public const CONTENT_CATEGORY_CONTENT_CATEGORY_UNSPECIFIED = 'CONTENT_CATEGORY_UNSPECIFIED';
-  /**
-   * Content is of image type.
-   */
-  public const CONTENT_CATEGORY_CONTENT_CATEGORY_IMAGE = 'CONTENT_CATEGORY_IMAGE';
-  /**
-   * Content is of audio type.
-   */
-  public const CONTENT_CATEGORY_CONTENT_CATEGORY_AUDIO = 'CONTENT_CATEGORY_AUDIO';
-  /**
-   * Content is of video type.
-   */
-  public const CONTENT_CATEGORY_CONTENT_CATEGORY_VIDEO = 'CONTENT_CATEGORY_VIDEO';
-  /**
-   * No raw document specified or it is non-parsable
-   */
-  public const RAW_DOCUMENT_FILE_TYPE_RAW_DOCUMENT_FILE_TYPE_UNSPECIFIED = 'RAW_DOCUMENT_FILE_TYPE_UNSPECIFIED';
-  /**
-   * Adobe PDF format
-   */
-  public const RAW_DOCUMENT_FILE_TYPE_RAW_DOCUMENT_FILE_TYPE_PDF = 'RAW_DOCUMENT_FILE_TYPE_PDF';
-  /**
-   * Microsoft Word format
-   */
-  public const RAW_DOCUMENT_FILE_TYPE_RAW_DOCUMENT_FILE_TYPE_DOCX = 'RAW_DOCUMENT_FILE_TYPE_DOCX';
-  /**
-   * Microsoft Excel format
-   */
-  public const RAW_DOCUMENT_FILE_TYPE_RAW_DOCUMENT_FILE_TYPE_XLSX = 'RAW_DOCUMENT_FILE_TYPE_XLSX';
-  /**
-   * Microsoft Powerpoint format
-   */
-  public const RAW_DOCUMENT_FILE_TYPE_RAW_DOCUMENT_FILE_TYPE_PPTX = 'RAW_DOCUMENT_FILE_TYPE_PPTX';
-  /**
-   * UTF-8 encoded text format
-   */
-  public const RAW_DOCUMENT_FILE_TYPE_RAW_DOCUMENT_FILE_TYPE_TEXT = 'RAW_DOCUMENT_FILE_TYPE_TEXT';
-  /**
-   * TIFF or TIF image file format
-   */
-  public const RAW_DOCUMENT_FILE_TYPE_RAW_DOCUMENT_FILE_TYPE_TIFF = 'RAW_DOCUMENT_FILE_TYPE_TIFF';
   protected $collection_key = 'properties';
   protected $cloudAiDocumentType = GoogleCloudDocumentaiV1Document::class;
   protected $cloudAiDocumentDataType = '';
   /**
-   * Indicates the category (image, audio, video etc.) of the original content.
-   *
    * @var string
    */
   public $contentCategory;
   /**
-   * Output only. The time when the document is created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * The user who creates the document.
-   *
    * @var string
    */
   public $creator;
   /**
-   * Required. Display name of the document given by the user. This name will be
-   * displayed in the UI. Customer can populate this field with the name of the
-   * document. This differs from the 'title' field as 'title' is optional and
-   * stores the top heading in the document.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Uri to display the document, for example, in the UI.
-   *
    * @var string
    */
   public $displayUri;
   /**
-   * Output only. If linked to a Collection with RetentionPolicy, the date when
-   * the document becomes mutable.
-   *
    * @var string
    */
   public $dispositionTime;
   /**
-   * The Document schema name. Format: projects/{project_number}/locations/{loca
-   * tion}/documentSchemas/{document_schema_id}.
-   *
    * @var string
    */
   public $documentSchemaName;
   /**
-   * Raw document content.
-   *
    * @var string
    */
   public $inlineRawDocument;
   /**
-   * Output only. Indicates if the document has a legal hold on it.
-   *
    * @var bool
    */
   public $legalHold;
   /**
-   * The resource name of the document. Format:
-   * projects/{project_number}/locations/{location}/documents/{document_id}. The
-   * name is ignored when creating a document.
-   *
    * @var string
    */
   public $name;
   /**
-   * Other document format, such as PPTX, XLXS
-   *
    * @var string
    */
   public $plainText;
   protected $propertiesType = GoogleCloudContentwarehouseV1Property::class;
   protected $propertiesDataType = 'array';
   /**
-   * This is used when DocAI was not used to load the document and parsing/
-   * extracting is needed for the inline_raw_document. For example, if
-   * inline_raw_document is the byte representation of a PDF file, then this
-   * should be set to: RAW_DOCUMENT_FILE_TYPE_PDF.
-   *
    * @var string
    */
   public $rawDocumentFileType;
   /**
-   * Raw document file in Cloud Storage path.
-   *
    * @var string
    */
   public $rawDocumentPath;
   /**
-   * The reference ID set by customers. Must be unique per project and location.
-   *
    * @var string
    */
   public $referenceId;
   /**
-   * If true, text extraction will not be performed.
-   *
-   * @deprecated
    * @var bool
    */
   public $textExtractionDisabled;
   /**
-   * If true, text extraction will be performed.
-   *
    * @var bool
    */
   public $textExtractionEnabled;
   /**
-   * Title that describes the document. This can be the top heading or text that
-   * describes the document.
-   *
    * @var string
    */
   public $title;
   /**
-   * Output only. The time when the document is last updated.
-   *
    * @var string
    */
   public $updateTime;
   /**
-   * The user who lastly updates the document.
-   *
    * @var string
    */
   public $updater;
 
   /**
-   * Document AI format to save the structured content, including OCR.
-   *
-   * @param GoogleCloudDocumentaiV1Document $cloudAiDocument
+   * @param GoogleCloudDocumentaiV1Document
    */
   public function setCloudAiDocument(GoogleCloudDocumentaiV1Document $cloudAiDocument)
   {
@@ -212,28 +116,21 @@ class GoogleCloudContentwarehouseV1Document extends \Google\Collection
     return $this->cloudAiDocument;
   }
   /**
-   * Indicates the category (image, audio, video etc.) of the original content.
-   *
-   * Accepted values: CONTENT_CATEGORY_UNSPECIFIED, CONTENT_CATEGORY_IMAGE,
-   * CONTENT_CATEGORY_AUDIO, CONTENT_CATEGORY_VIDEO
-   *
-   * @param self::CONTENT_CATEGORY_* $contentCategory
+   * @param string
    */
   public function setContentCategory($contentCategory)
   {
     $this->contentCategory = $contentCategory;
   }
   /**
-   * @return self::CONTENT_CATEGORY_*
+   * @return string
    */
   public function getContentCategory()
   {
     return $this->contentCategory;
   }
   /**
-   * Output only. The time when the document is created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -247,9 +144,7 @@ class GoogleCloudContentwarehouseV1Document extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * The user who creates the document.
-   *
-   * @param string $creator
+   * @param string
    */
   public function setCreator($creator)
   {
@@ -263,12 +158,7 @@ class GoogleCloudContentwarehouseV1Document extends \Google\Collection
     return $this->creator;
   }
   /**
-   * Required. Display name of the document given by the user. This name will be
-   * displayed in the UI. Customer can populate this field with the name of the
-   * document. This differs from the 'title' field as 'title' is optional and
-   * stores the top heading in the document.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -282,9 +172,7 @@ class GoogleCloudContentwarehouseV1Document extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Uri to display the document, for example, in the UI.
-   *
-   * @param string $displayUri
+   * @param string
    */
   public function setDisplayUri($displayUri)
   {
@@ -298,10 +186,7 @@ class GoogleCloudContentwarehouseV1Document extends \Google\Collection
     return $this->displayUri;
   }
   /**
-   * Output only. If linked to a Collection with RetentionPolicy, the date when
-   * the document becomes mutable.
-   *
-   * @param string $dispositionTime
+   * @param string
    */
   public function setDispositionTime($dispositionTime)
   {
@@ -315,10 +200,7 @@ class GoogleCloudContentwarehouseV1Document extends \Google\Collection
     return $this->dispositionTime;
   }
   /**
-   * The Document schema name. Format: projects/{project_number}/locations/{loca
-   * tion}/documentSchemas/{document_schema_id}.
-   *
-   * @param string $documentSchemaName
+   * @param string
    */
   public function setDocumentSchemaName($documentSchemaName)
   {
@@ -332,9 +214,7 @@ class GoogleCloudContentwarehouseV1Document extends \Google\Collection
     return $this->documentSchemaName;
   }
   /**
-   * Raw document content.
-   *
-   * @param string $inlineRawDocument
+   * @param string
    */
   public function setInlineRawDocument($inlineRawDocument)
   {
@@ -348,9 +228,7 @@ class GoogleCloudContentwarehouseV1Document extends \Google\Collection
     return $this->inlineRawDocument;
   }
   /**
-   * Output only. Indicates if the document has a legal hold on it.
-   *
-   * @param bool $legalHold
+   * @param bool
    */
   public function setLegalHold($legalHold)
   {
@@ -364,11 +242,7 @@ class GoogleCloudContentwarehouseV1Document extends \Google\Collection
     return $this->legalHold;
   }
   /**
-   * The resource name of the document. Format:
-   * projects/{project_number}/locations/{location}/documents/{document_id}. The
-   * name is ignored when creating a document.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -382,9 +256,7 @@ class GoogleCloudContentwarehouseV1Document extends \Google\Collection
     return $this->name;
   }
   /**
-   * Other document format, such as PPTX, XLXS
-   *
-   * @param string $plainText
+   * @param string
    */
   public function setPlainText($plainText)
   {
@@ -398,9 +270,7 @@ class GoogleCloudContentwarehouseV1Document extends \Google\Collection
     return $this->plainText;
   }
   /**
-   * List of values that are user supplied metadata.
-   *
-   * @param GoogleCloudContentwarehouseV1Property[] $properties
+   * @param GoogleCloudContentwarehouseV1Property[]
    */
   public function setProperties($properties)
   {
@@ -414,33 +284,21 @@ class GoogleCloudContentwarehouseV1Document extends \Google\Collection
     return $this->properties;
   }
   /**
-   * This is used when DocAI was not used to load the document and parsing/
-   * extracting is needed for the inline_raw_document. For example, if
-   * inline_raw_document is the byte representation of a PDF file, then this
-   * should be set to: RAW_DOCUMENT_FILE_TYPE_PDF.
-   *
-   * Accepted values: RAW_DOCUMENT_FILE_TYPE_UNSPECIFIED,
-   * RAW_DOCUMENT_FILE_TYPE_PDF, RAW_DOCUMENT_FILE_TYPE_DOCX,
-   * RAW_DOCUMENT_FILE_TYPE_XLSX, RAW_DOCUMENT_FILE_TYPE_PPTX,
-   * RAW_DOCUMENT_FILE_TYPE_TEXT, RAW_DOCUMENT_FILE_TYPE_TIFF
-   *
-   * @param self::RAW_DOCUMENT_FILE_TYPE_* $rawDocumentFileType
+   * @param string
    */
   public function setRawDocumentFileType($rawDocumentFileType)
   {
     $this->rawDocumentFileType = $rawDocumentFileType;
   }
   /**
-   * @return self::RAW_DOCUMENT_FILE_TYPE_*
+   * @return string
    */
   public function getRawDocumentFileType()
   {
     return $this->rawDocumentFileType;
   }
   /**
-   * Raw document file in Cloud Storage path.
-   *
-   * @param string $rawDocumentPath
+   * @param string
    */
   public function setRawDocumentPath($rawDocumentPath)
   {
@@ -454,9 +312,7 @@ class GoogleCloudContentwarehouseV1Document extends \Google\Collection
     return $this->rawDocumentPath;
   }
   /**
-   * The reference ID set by customers. Must be unique per project and location.
-   *
-   * @param string $referenceId
+   * @param string
    */
   public function setReferenceId($referenceId)
   {
@@ -470,17 +326,13 @@ class GoogleCloudContentwarehouseV1Document extends \Google\Collection
     return $this->referenceId;
   }
   /**
-   * If true, text extraction will not be performed.
-   *
-   * @deprecated
-   * @param bool $textExtractionDisabled
+   * @param bool
    */
   public function setTextExtractionDisabled($textExtractionDisabled)
   {
     $this->textExtractionDisabled = $textExtractionDisabled;
   }
   /**
-   * @deprecated
    * @return bool
    */
   public function getTextExtractionDisabled()
@@ -488,9 +340,7 @@ class GoogleCloudContentwarehouseV1Document extends \Google\Collection
     return $this->textExtractionDisabled;
   }
   /**
-   * If true, text extraction will be performed.
-   *
-   * @param bool $textExtractionEnabled
+   * @param bool
    */
   public function setTextExtractionEnabled($textExtractionEnabled)
   {
@@ -504,10 +354,7 @@ class GoogleCloudContentwarehouseV1Document extends \Google\Collection
     return $this->textExtractionEnabled;
   }
   /**
-   * Title that describes the document. This can be the top heading or text that
-   * describes the document.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -521,9 +368,7 @@ class GoogleCloudContentwarehouseV1Document extends \Google\Collection
     return $this->title;
   }
   /**
-   * Output only. The time when the document is last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -537,9 +382,7 @@ class GoogleCloudContentwarehouseV1Document extends \Google\Collection
     return $this->updateTime;
   }
   /**
-   * The user who lastly updates the document.
-   *
-   * @param string $updater
+   * @param string
    */
   public function setUpdater($updater)
   {

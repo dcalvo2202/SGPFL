@@ -20,39 +20,24 @@ namespace Google\Service\Testing;
 class IosDevice extends \Google\Model
 {
   /**
-   * Required. The id of the iOS device to be used. Use the
-   * TestEnvironmentDiscoveryService to get supported options.
-   *
    * @var string
    */
   public $iosModelId;
   /**
-   * Required. The id of the iOS major software version to be used. Use the
-   * TestEnvironmentDiscoveryService to get supported options.
-   *
    * @var string
    */
   public $iosVersionId;
   /**
-   * Required. The locale the test device used for testing. Use the
-   * TestEnvironmentDiscoveryService to get supported options.
-   *
    * @var string
    */
   public $locale;
   /**
-   * Required. How the device is oriented during the test. Use the
-   * TestEnvironmentDiscoveryService to get supported options.
-   *
    * @var string
    */
   public $orientation;
 
   /**
-   * Required. The id of the iOS device to be used. Use the
-   * TestEnvironmentDiscoveryService to get supported options.
-   *
-   * @param string $iosModelId
+   * @param string
    */
   public function setIosModelId($iosModelId)
   {
@@ -66,10 +51,7 @@ class IosDevice extends \Google\Model
     return $this->iosModelId;
   }
   /**
-   * Required. The id of the iOS major software version to be used. Use the
-   * TestEnvironmentDiscoveryService to get supported options.
-   *
-   * @param string $iosVersionId
+   * @param string
    */
   public function setIosVersionId($iosVersionId)
   {
@@ -83,10 +65,7 @@ class IosDevice extends \Google\Model
     return $this->iosVersionId;
   }
   /**
-   * Required. The locale the test device used for testing. Use the
-   * TestEnvironmentDiscoveryService to get supported options.
-   *
-   * @param string $locale
+   * @param string
    */
   public function setLocale($locale)
   {
@@ -100,10 +79,7 @@ class IosDevice extends \Google\Model
     return $this->locale;
   }
   /**
-   * Required. How the device is oriented during the test. Use the
-   * TestEnvironmentDiscoveryService to get supported options.
-   *
-   * @param string $orientation
+   * @param string
    */
   public function setOrientation($orientation)
   {

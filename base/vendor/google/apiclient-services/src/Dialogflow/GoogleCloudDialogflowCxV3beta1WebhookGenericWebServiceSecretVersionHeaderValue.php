@@ -25,7 +25,7 @@ class GoogleCloudDialogflowCxV3beta1WebhookGenericWebServiceSecretVersionHeaderV
   public $secretVersion;
 
   /**
-   * @param string $secretVersion
+   * @param string
    */
   public function setSecretVersion($secretVersion)
   {

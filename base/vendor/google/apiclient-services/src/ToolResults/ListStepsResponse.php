@@ -21,10 +21,6 @@ class ListStepsResponse extends \Google\Collection
 {
   protected $collection_key = 'steps';
   /**
-   * A continuation token to resume the query at the next item. If set,
-   * indicates that there are more steps to read, by calling list again with
-   * this value in the page_token field.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -32,11 +28,7 @@ class ListStepsResponse extends \Google\Collection
   protected $stepsDataType = 'array';
 
   /**
-   * A continuation token to resume the query at the next item. If set,
-   * indicates that there are more steps to read, by calling list again with
-   * this value in the page_token field.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -50,9 +42,7 @@ class ListStepsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Steps.
-   *
-   * @param Step[] $steps
+   * @param Step[]
    */
   public function setSteps($steps)
   {

@@ -20,52 +20,30 @@ namespace Google\Service\DataprocMetastore;
 class ScheduledBackup extends \Google\Model
 {
   /**
-   * Optional. A Cloud Storage URI of a folder, in the format gs:. A sub-folder
-   * containing backup files will be stored below it.
-   *
    * @var string
    */
   public $backupLocation;
   /**
-   * Optional. The scheduled interval in Cron format, see
-   * https://en.wikipedia.org/wiki/Cron The default is empty: scheduled backup
-   * is not enabled. Must be specified to enable scheduled backups.
-   *
    * @var string
    */
   public $cronSchedule;
   /**
-   * Optional. Defines whether the scheduled backup is enabled. The default
-   * value is false.
-   *
    * @var bool
    */
   public $enabled;
   protected $latestBackupType = LatestBackup::class;
   protected $latestBackupDataType = '';
   /**
-   * Output only. The time when the next backups execution is scheduled to
-   * start.
-   *
    * @var string
    */
   public $nextScheduledTime;
   /**
-   * Optional. Specifies the time zone to be used when interpreting
-   * cron_schedule. Must be a time zone name from the time zone database
-   * (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones), e.g.
-   * America/Los_Angeles or Africa/Abidjan. If left unspecified, the default is
-   * UTC.
-   *
    * @var string
    */
   public $timeZone;
 
   /**
-   * Optional. A Cloud Storage URI of a folder, in the format gs:. A sub-folder
-   * containing backup files will be stored below it.
-   *
-   * @param string $backupLocation
+   * @param string
    */
   public function setBackupLocation($backupLocation)
   {
@@ -79,11 +57,7 @@ class ScheduledBackup extends \Google\Model
     return $this->backupLocation;
   }
   /**
-   * Optional. The scheduled interval in Cron format, see
-   * https://en.wikipedia.org/wiki/Cron The default is empty: scheduled backup
-   * is not enabled. Must be specified to enable scheduled backups.
-   *
-   * @param string $cronSchedule
+   * @param string
    */
   public function setCronSchedule($cronSchedule)
   {
@@ -97,10 +71,7 @@ class ScheduledBackup extends \Google\Model
     return $this->cronSchedule;
   }
   /**
-   * Optional. Defines whether the scheduled backup is enabled. The default
-   * value is false.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {
@@ -114,9 +85,7 @@ class ScheduledBackup extends \Google\Model
     return $this->enabled;
   }
   /**
-   * Output only. The details of the latest scheduled backup.
-   *
-   * @param LatestBackup $latestBackup
+   * @param LatestBackup
    */
   public function setLatestBackup(LatestBackup $latestBackup)
   {
@@ -130,10 +99,7 @@ class ScheduledBackup extends \Google\Model
     return $this->latestBackup;
   }
   /**
-   * Output only. The time when the next backups execution is scheduled to
-   * start.
-   *
-   * @param string $nextScheduledTime
+   * @param string
    */
   public function setNextScheduledTime($nextScheduledTime)
   {
@@ -147,13 +113,7 @@ class ScheduledBackup extends \Google\Model
     return $this->nextScheduledTime;
   }
   /**
-   * Optional. Specifies the time zone to be used when interpreting
-   * cron_schedule. Must be a time zone name from the time zone database
-   * (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones), e.g.
-   * America/Los_Angeles or Africa/Abidjan. If left unspecified, the default is
-   * UTC.
-   *
-   * @param string $timeZone
+   * @param string
    */
   public function setTimeZone($timeZone)
   {

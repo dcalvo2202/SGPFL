@@ -24,15 +24,10 @@ class PricingSchedulePricingPeriod extends \Google\Model
    */
   public $endDate;
   /**
-   * Comments for this pricing period.
-   *
    * @var string
    */
   public $pricingComment;
   /**
-   * Rate or cost of this pricing period in nanos (i.e., multiplied by
-   * 1000000000). Acceptable values are 0 to 1000000000000000000, inclusive.
-   *
    * @var string
    */
   public $rateOrCostNanos;
@@ -41,15 +36,12 @@ class PricingSchedulePricingPeriod extends \Google\Model
    */
   public $startDate;
   /**
-   * Units of this pricing period. Acceptable values are 0 to 10000000000,
-   * inclusive.
-   *
    * @var string
    */
   public $units;
 
   /**
-   * @param string $endDate
+   * @param string
    */
   public function setEndDate($endDate)
   {
@@ -63,9 +55,7 @@ class PricingSchedulePricingPeriod extends \Google\Model
     return $this->endDate;
   }
   /**
-   * Comments for this pricing period.
-   *
-   * @param string $pricingComment
+   * @param string
    */
   public function setPricingComment($pricingComment)
   {
@@ -79,10 +69,7 @@ class PricingSchedulePricingPeriod extends \Google\Model
     return $this->pricingComment;
   }
   /**
-   * Rate or cost of this pricing period in nanos (i.e., multiplied by
-   * 1000000000). Acceptable values are 0 to 1000000000000000000, inclusive.
-   *
-   * @param string $rateOrCostNanos
+   * @param string
    */
   public function setRateOrCostNanos($rateOrCostNanos)
   {
@@ -96,7 +83,7 @@ class PricingSchedulePricingPeriod extends \Google\Model
     return $this->rateOrCostNanos;
   }
   /**
-   * @param string $startDate
+   * @param string
    */
   public function setStartDate($startDate)
   {
@@ -110,10 +97,7 @@ class PricingSchedulePricingPeriod extends \Google\Model
     return $this->startDate;
   }
   /**
-   * Units of this pricing period. Acceptable values are 0 to 10000000000,
-   * inclusive.
-   *
-   * @param string $units
+   * @param string
    */
   public function setUnits($units)
   {

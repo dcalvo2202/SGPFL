@@ -21,8 +21,6 @@ class GoogleCloudChannelV1ListSkusResponse extends \Google\Collection
 {
   protected $collection_key = 'skus';
   /**
-   * A token to retrieve the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -30,9 +28,7 @@ class GoogleCloudChannelV1ListSkusResponse extends \Google\Collection
   protected $skusDataType = 'array';
 
   /**
-   * A token to retrieve the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -46,9 +42,7 @@ class GoogleCloudChannelV1ListSkusResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The list of SKUs requested.
-   *
-   * @param GoogleCloudChannelV1Sku[] $skus
+   * @param GoogleCloudChannelV1Sku[]
    */
   public function setSkus($skus)
   {

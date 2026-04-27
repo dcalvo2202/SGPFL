@@ -20,48 +20,32 @@ namespace Google\Service\Tasks;
 class TaskList extends \Google\Model
 {
   /**
-   * ETag of the resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Task list identifier.
-   *
    * @var string
    */
   public $id;
   /**
-   * Output only. Type of the resource. This is always "tasks#taskList".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Output only. URL pointing to this task list. Used to retrieve, update, or
-   * delete this task list.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * Title of the task list. Maximum length allowed: 1024 characters.
-   *
    * @var string
    */
   public $title;
   /**
-   * Output only. Last modification time of the task list (as a RFC 3339
-   * timestamp).
-   *
    * @var string
    */
   public $updated;
 
   /**
-   * ETag of the resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -75,9 +59,7 @@ class TaskList extends \Google\Model
     return $this->etag;
   }
   /**
-   * Task list identifier.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -91,9 +73,7 @@ class TaskList extends \Google\Model
     return $this->id;
   }
   /**
-   * Output only. Type of the resource. This is always "tasks#taskList".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -107,10 +87,7 @@ class TaskList extends \Google\Model
     return $this->kind;
   }
   /**
-   * Output only. URL pointing to this task list. Used to retrieve, update, or
-   * delete this task list.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -124,9 +101,7 @@ class TaskList extends \Google\Model
     return $this->selfLink;
   }
   /**
-   * Title of the task list. Maximum length allowed: 1024 characters.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -140,10 +115,7 @@ class TaskList extends \Google\Model
     return $this->title;
   }
   /**
-   * Output only. Last modification time of the task list (as a RFC 3339
-   * timestamp).
-   *
-   * @param string $updated
+   * @param string
    */
   public function setUpdated($updated)
   {

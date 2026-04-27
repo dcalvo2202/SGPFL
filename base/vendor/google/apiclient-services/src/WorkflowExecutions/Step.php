@@ -20,22 +20,16 @@ namespace Google\Service\WorkflowExecutions;
 class Step extends \Google\Model
 {
   /**
-   * Name of a routine within the workflow.
-   *
    * @var string
    */
   public $routine;
   /**
-   * Name of a step within the routine.
-   *
    * @var string
    */
   public $step;
 
   /**
-   * Name of a routine within the workflow.
-   *
-   * @param string $routine
+   * @param string
    */
   public function setRoutine($routine)
   {
@@ -49,9 +43,7 @@ class Step extends \Google\Model
     return $this->routine;
   }
   /**
-   * Name of a step within the routine.
-   *
-   * @param string $step
+   * @param string
    */
   public function setStep($step)
   {

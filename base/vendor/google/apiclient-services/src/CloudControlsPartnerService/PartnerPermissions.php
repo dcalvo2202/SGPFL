@@ -21,24 +21,16 @@ class PartnerPermissions extends \Google\Collection
 {
   protected $collection_key = 'partnerPermissions';
   /**
-   * Identifier. Format: `organizations/{organization}/locations/{location}/cust
-   * omers/{customer}/workloads/{workload}/partnerPermissions`
-   *
    * @var string
    */
   public $name;
   /**
-   * The partner permissions granted for the workload
-   *
    * @var string[]
    */
   public $partnerPermissions;
 
   /**
-   * Identifier. Format: `organizations/{organization}/locations/{location}/cust
-   * omers/{customer}/workloads/{workload}/partnerPermissions`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -52,9 +44,7 @@ class PartnerPermissions extends \Google\Collection
     return $this->name;
   }
   /**
-   * The partner permissions granted for the workload
-   *
-   * @param string[] $partnerPermissions
+   * @param string[]
    */
   public function setPartnerPermissions($partnerPermissions)
   {

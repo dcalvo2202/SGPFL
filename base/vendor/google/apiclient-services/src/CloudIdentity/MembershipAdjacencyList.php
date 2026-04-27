@@ -23,19 +23,12 @@ class MembershipAdjacencyList extends \Google\Collection
   protected $edgesType = Membership::class;
   protected $edgesDataType = 'array';
   /**
-   * Resource name of the group that the members belong to.
-   *
    * @var string
    */
   public $group;
 
   /**
-   * Each edge contains information about the member that belongs to this group.
-   * Note: Fields returned here will help identify the specific Membership
-   * resource (e.g `name`, `preferred_member_key` and `role`), but may not be a
-   * comprehensive list of all fields.
-   *
-   * @param Membership[] $edges
+   * @param Membership[]
    */
   public function setEdges($edges)
   {
@@ -49,9 +42,7 @@ class MembershipAdjacencyList extends \Google\Collection
     return $this->edges;
   }
   /**
-   * Resource name of the group that the members belong to.
-   *
-   * @param string $group
+   * @param string
    */
   public function setGroup($group)
   {

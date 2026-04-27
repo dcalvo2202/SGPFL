@@ -28,7 +28,7 @@ class DictlayerdataDictWordsSensesDefinitions extends \Google\Collection
   protected $examplesDataType = 'array';
 
   /**
-   * @param string $definition
+   * @param string
    */
   public function setDefinition($definition)
   {
@@ -42,7 +42,7 @@ class DictlayerdataDictWordsSensesDefinitions extends \Google\Collection
     return $this->definition;
   }
   /**
-   * @param DictlayerdataDictWordsSensesDefinitionsExamples[] $examples
+   * @param DictlayerdataDictWordsSensesDefinitionsExamples[]
    */
   public function setExamples($examples)
   {

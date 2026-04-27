@@ -21,38 +21,24 @@ class AndroidInstrumentationTest extends \Google\Collection
 {
   protected $collection_key = 'testTargets';
   /**
-   * The java package for the test to be executed. Required
-   *
    * @var string
    */
   public $testPackageId;
   /**
-   * The InstrumentationTestRunner class. Required
-   *
    * @var string
    */
   public $testRunnerClass;
   /**
-   * Each target must be fully qualified with the package name or class name, in
-   * one of these formats: - "package package_name" - "class
-   * package_name.class_name" - "class package_name.class_name#method_name" If
-   * empty, all targets in the module will be run.
-   *
    * @var string[]
    */
   public $testTargets;
   /**
-   * The flag indicates whether Android Test Orchestrator will be used to run
-   * test or not.
-   *
    * @var bool
    */
   public $useOrchestrator;
 
   /**
-   * The java package for the test to be executed. Required
-   *
-   * @param string $testPackageId
+   * @param string
    */
   public function setTestPackageId($testPackageId)
   {
@@ -66,9 +52,7 @@ class AndroidInstrumentationTest extends \Google\Collection
     return $this->testPackageId;
   }
   /**
-   * The InstrumentationTestRunner class. Required
-   *
-   * @param string $testRunnerClass
+   * @param string
    */
   public function setTestRunnerClass($testRunnerClass)
   {
@@ -82,12 +66,7 @@ class AndroidInstrumentationTest extends \Google\Collection
     return $this->testRunnerClass;
   }
   /**
-   * Each target must be fully qualified with the package name or class name, in
-   * one of these formats: - "package package_name" - "class
-   * package_name.class_name" - "class package_name.class_name#method_name" If
-   * empty, all targets in the module will be run.
-   *
-   * @param string[] $testTargets
+   * @param string[]
    */
   public function setTestTargets($testTargets)
   {
@@ -101,10 +80,7 @@ class AndroidInstrumentationTest extends \Google\Collection
     return $this->testTargets;
   }
   /**
-   * The flag indicates whether Android Test Orchestrator will be used to run
-   * test or not.
-   *
-   * @param bool $useOrchestrator
+   * @param bool
    */
   public function setUseOrchestrator($useOrchestrator)
   {

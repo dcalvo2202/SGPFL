@@ -20,49 +20,32 @@ namespace Google\Service\Meet;
 class TranscriptEntry extends \Google\Model
 {
   /**
-   * Output only. Timestamp when the transcript entry ended.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * Output only. Language of spoken text, such as "en-US". IETF BCP 47 syntax
-   * (https://tools.ietf.org/html/bcp47)
-   *
    * @var string
    */
   public $languageCode;
   /**
-   * Output only. Resource name of the entry. Format: "conferenceRecords/{confer
-   * ence_record}/transcripts/{transcript}/entries/{entry}"
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Refers to the participant who speaks.
-   *
    * @var string
    */
   public $participant;
   /**
-   * Output only. Timestamp when the transcript entry started.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * Output only. The transcribed text of the participant's voice, at maximum
-   * 10K words. Note that the limit is subject to change.
-   *
    * @var string
    */
   public $text;
 
   /**
-   * Output only. Timestamp when the transcript entry ended.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -76,10 +59,7 @@ class TranscriptEntry extends \Google\Model
     return $this->endTime;
   }
   /**
-   * Output only. Language of spoken text, such as "en-US". IETF BCP 47 syntax
-   * (https://tools.ietf.org/html/bcp47)
-   *
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {
@@ -93,10 +73,7 @@ class TranscriptEntry extends \Google\Model
     return $this->languageCode;
   }
   /**
-   * Output only. Resource name of the entry. Format: "conferenceRecords/{confer
-   * ence_record}/transcripts/{transcript}/entries/{entry}"
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -110,9 +87,7 @@ class TranscriptEntry extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Refers to the participant who speaks.
-   *
-   * @param string $participant
+   * @param string
    */
   public function setParticipant($participant)
   {
@@ -126,9 +101,7 @@ class TranscriptEntry extends \Google\Model
     return $this->participant;
   }
   /**
-   * Output only. Timestamp when the transcript entry started.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -142,10 +115,7 @@ class TranscriptEntry extends \Google\Model
     return $this->startTime;
   }
   /**
-   * Output only. The transcribed text of the participant's voice, at maximum
-   * 10K words. Note that the limit is subject to change.
-   *
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {

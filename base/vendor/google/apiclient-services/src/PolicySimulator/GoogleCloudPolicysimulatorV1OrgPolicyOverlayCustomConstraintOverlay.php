@@ -22,17 +22,12 @@ class GoogleCloudPolicysimulatorV1OrgPolicyOverlayCustomConstraintOverlay extend
   protected $customConstraintType = GoogleCloudOrgpolicyV2CustomConstraint::class;
   protected $customConstraintDataType = '';
   /**
-   * Optional. Resource the constraint is attached to. Example:
-   * "organization/987654"
-   *
    * @var string
    */
   public $customConstraintParent;
 
   /**
-   * Optional. The new or updated custom constraint.
-   *
-   * @param GoogleCloudOrgpolicyV2CustomConstraint $customConstraint
+   * @param GoogleCloudOrgpolicyV2CustomConstraint
    */
   public function setCustomConstraint(GoogleCloudOrgpolicyV2CustomConstraint $customConstraint)
   {
@@ -46,10 +41,7 @@ class GoogleCloudPolicysimulatorV1OrgPolicyOverlayCustomConstraintOverlay extend
     return $this->customConstraint;
   }
   /**
-   * Optional. Resource the constraint is attached to. Example:
-   * "organization/987654"
-   *
-   * @param string $customConstraintParent
+   * @param string
    */
   public function setCustomConstraintParent($customConstraintParent)
   {

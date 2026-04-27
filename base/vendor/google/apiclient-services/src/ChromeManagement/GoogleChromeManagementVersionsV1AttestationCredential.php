@@ -20,58 +20,24 @@ namespace Google\Service\ChromeManagement;
 class GoogleChromeManagementVersionsV1AttestationCredential extends \Google\Model
 {
   /**
-   * Represents an unspecified public key trust level.
-   */
-  public const KEY_TRUST_LEVEL_KEY_TRUST_LEVEL_UNSPECIFIED = 'KEY_TRUST_LEVEL_UNSPECIFIED';
-  /**
-   * Represents a HW key.
-   */
-  public const KEY_TRUST_LEVEL_CHROME_BROWSER_HW_KEY = 'CHROME_BROWSER_HW_KEY';
-  /**
-   * Represents an OS key.
-   */
-  public const KEY_TRUST_LEVEL_CHROME_BROWSER_OS_KEY = 'CHROME_BROWSER_OS_KEY';
-  /**
-   * Represents an unspecified public key type.
-   */
-  public const KEY_TYPE_KEY_TYPE_UNSPECIFIED = 'KEY_TYPE_UNSPECIFIED';
-  /**
-   * Represents a RSA key.
-   */
-  public const KEY_TYPE_RSA_KEY = 'RSA_KEY';
-  /**
-   * Represents an EC key.
-   */
-  public const KEY_TYPE_EC_KEY = 'EC_KEY';
-  /**
-   * Output only. Latest rotation timestamp of the public key rotation.
-   *
    * @var string
    */
   public $keyRotationTime;
   /**
-   * Output only. Trust level of the public key.
-   *
    * @var string
    */
   public $keyTrustLevel;
   /**
-   * Output only. Type of the public key.
-   *
    * @var string
    */
   public $keyType;
   /**
-   * Output only. Value of the public key.
-   *
    * @var string
    */
   public $publicKey;
 
   /**
-   * Output only. Latest rotation timestamp of the public key rotation.
-   *
-   * @param string $keyRotationTime
+   * @param string
    */
   public function setKeyRotationTime($keyRotationTime)
   {
@@ -85,46 +51,35 @@ class GoogleChromeManagementVersionsV1AttestationCredential extends \Google\Mode
     return $this->keyRotationTime;
   }
   /**
-   * Output only. Trust level of the public key.
-   *
-   * Accepted values: KEY_TRUST_LEVEL_UNSPECIFIED, CHROME_BROWSER_HW_KEY,
-   * CHROME_BROWSER_OS_KEY
-   *
-   * @param self::KEY_TRUST_LEVEL_* $keyTrustLevel
+   * @param string
    */
   public function setKeyTrustLevel($keyTrustLevel)
   {
     $this->keyTrustLevel = $keyTrustLevel;
   }
   /**
-   * @return self::KEY_TRUST_LEVEL_*
+   * @return string
    */
   public function getKeyTrustLevel()
   {
     return $this->keyTrustLevel;
   }
   /**
-   * Output only. Type of the public key.
-   *
-   * Accepted values: KEY_TYPE_UNSPECIFIED, RSA_KEY, EC_KEY
-   *
-   * @param self::KEY_TYPE_* $keyType
+   * @param string
    */
   public function setKeyType($keyType)
   {
     $this->keyType = $keyType;
   }
   /**
-   * @return self::KEY_TYPE_*
+   * @return string
    */
   public function getKeyType()
   {
     return $this->keyType;
   }
   /**
-   * Output only. Value of the public key.
-   *
-   * @param string $publicKey
+   * @param string
    */
   public function setPublicKey($publicKey)
   {

@@ -23,9 +23,7 @@ class ClientScope extends \Google\Model
   protected $restrictedClientApplicationDataType = '';
 
   /**
-   * Optional. The application that is subject to this binding's scope.
-   *
-   * @param Application $restrictedClientApplication
+   * @param Application
    */
   public function setRestrictedClientApplication(Application $restrictedClientApplication)
   {

@@ -20,22 +20,16 @@ namespace Google\Service\Directory;
 class ChromeOsDeviceCpuInfoLogicalCpusCStates extends \Google\Model
 {
   /**
-   * Name of the state.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Time spent in the state since the last reboot.
-   *
    * @var string
    */
   public $sessionDuration;
 
   /**
-   * Name of the state.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -49,9 +43,7 @@ class ChromeOsDeviceCpuInfoLogicalCpusCStates extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Time spent in the state since the last reboot.
-   *
-   * @param string $sessionDuration
+   * @param string
    */
   public function setSessionDuration($sessionDuration)
   {

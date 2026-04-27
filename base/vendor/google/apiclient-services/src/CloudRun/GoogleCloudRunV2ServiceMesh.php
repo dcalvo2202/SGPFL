@@ -20,20 +20,12 @@ namespace Google\Service\CloudRun;
 class GoogleCloudRunV2ServiceMesh extends \Google\Model
 {
   /**
-   * The Mesh resource name. Format:
-   * `projects/{project}/locations/global/meshes/{mesh}`, where `{project}` can
-   * be project id or number.
-   *
    * @var string
    */
   public $mesh;
 
   /**
-   * The Mesh resource name. Format:
-   * `projects/{project}/locations/global/meshes/{mesh}`, where `{project}` can
-   * be project id or number.
-   *
-   * @param string $mesh
+   * @param string
    */
   public function setMesh($mesh)
   {

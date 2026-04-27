@@ -20,77 +20,44 @@ namespace Google\Service\BackupforGKE;
 class BackupChannel extends \Google\Model
 {
   /**
-   * Output only. The timestamp when this BackupChannel resource was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. User specified descriptive string for this BackupChannel.
-   *
    * @var string
    */
   public $description;
   /**
-   * Required. Immutable. The project where Backups are allowed to be stored.
-   * The format is `projects/{projectId}` or `projects/{projectNumber}`.
-   *
    * @var string
    */
   public $destinationProject;
   /**
-   * Output only. The project_id where Backups are allowed to be stored. Example
-   * Project ID: "my-project-id". This will be an OUTPUT_ONLY field to return
-   * the project_id of the destination project.
-   *
    * @var string
    */
   public $destinationProjectId;
   /**
-   * Output only. `etag` is used for optimistic concurrency control as a way to
-   * help prevent simultaneous updates of a BackupChannel from overwriting each
-   * other. It is strongly suggested that systems make use of the 'etag' in the
-   * read-modify-write cycle to perform BackupChannel updates in order to avoid
-   * race conditions: An `etag` is returned in the response to
-   * `GetBackupChannel`, and systems are expected to put that etag in the
-   * request to `UpdateBackupChannel` or `DeleteBackupChannel` to ensure that
-   * their change will be applied to the same version of the resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Optional. A set of custom labels supplied by user.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Identifier. The fully qualified name of the BackupChannel.
-   * `projects/locations/backupChannels`
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Server generated global unique identifier of
-   * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) format.
-   *
    * @var string
    */
   public $uid;
   /**
-   * Output only. The timestamp when this BackupChannel resource was last
-   * updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. The timestamp when this BackupChannel resource was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -104,9 +71,7 @@ class BackupChannel extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Optional. User specified descriptive string for this BackupChannel.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -120,10 +85,7 @@ class BackupChannel extends \Google\Model
     return $this->description;
   }
   /**
-   * Required. Immutable. The project where Backups are allowed to be stored.
-   * The format is `projects/{projectId}` or `projects/{projectNumber}`.
-   *
-   * @param string $destinationProject
+   * @param string
    */
   public function setDestinationProject($destinationProject)
   {
@@ -137,11 +99,7 @@ class BackupChannel extends \Google\Model
     return $this->destinationProject;
   }
   /**
-   * Output only. The project_id where Backups are allowed to be stored. Example
-   * Project ID: "my-project-id". This will be an OUTPUT_ONLY field to return
-   * the project_id of the destination project.
-   *
-   * @param string $destinationProjectId
+   * @param string
    */
   public function setDestinationProjectId($destinationProjectId)
   {
@@ -155,16 +113,7 @@ class BackupChannel extends \Google\Model
     return $this->destinationProjectId;
   }
   /**
-   * Output only. `etag` is used for optimistic concurrency control as a way to
-   * help prevent simultaneous updates of a BackupChannel from overwriting each
-   * other. It is strongly suggested that systems make use of the 'etag' in the
-   * read-modify-write cycle to perform BackupChannel updates in order to avoid
-   * race conditions: An `etag` is returned in the response to
-   * `GetBackupChannel`, and systems are expected to put that etag in the
-   * request to `UpdateBackupChannel` or `DeleteBackupChannel` to ensure that
-   * their change will be applied to the same version of the resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -178,9 +127,7 @@ class BackupChannel extends \Google\Model
     return $this->etag;
   }
   /**
-   * Optional. A set of custom labels supplied by user.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -194,10 +141,7 @@ class BackupChannel extends \Google\Model
     return $this->labels;
   }
   /**
-   * Identifier. The fully qualified name of the BackupChannel.
-   * `projects/locations/backupChannels`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -211,10 +155,7 @@ class BackupChannel extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Server generated global unique identifier of
-   * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) format.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {
@@ -228,10 +169,7 @@ class BackupChannel extends \Google\Model
     return $this->uid;
   }
   /**
-   * Output only. The timestamp when this BackupChannel resource was last
-   * updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

@@ -21,26 +21,18 @@ class ListServiceConnectionPoliciesResponse extends \Google\Collection
 {
   protected $collection_key = 'unreachable';
   /**
-   * The next pagination token in the List response. It should be used as
-   * page_token for the following request. An empty value means no more result.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $serviceConnectionPoliciesType = ServiceConnectionPolicy::class;
   protected $serviceConnectionPoliciesDataType = 'array';
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * The next pagination token in the List response. It should be used as
-   * page_token for the following request. An empty value means no more result.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -54,9 +46,7 @@ class ListServiceConnectionPoliciesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * ServiceConnectionPolicies to be returned.
-   *
-   * @param ServiceConnectionPolicy[] $serviceConnectionPolicies
+   * @param ServiceConnectionPolicy[]
    */
   public function setServiceConnectionPolicies($serviceConnectionPolicies)
   {
@@ -70,9 +60,7 @@ class ListServiceConnectionPoliciesResponse extends \Google\Collection
     return $this->serviceConnectionPolicies;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

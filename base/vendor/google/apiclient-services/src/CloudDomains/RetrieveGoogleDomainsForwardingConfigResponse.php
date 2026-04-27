@@ -26,11 +26,7 @@ class RetrieveGoogleDomainsForwardingConfigResponse extends \Google\Collection
   protected $emailForwardingsDataType = 'array';
 
   /**
-   * The list of domain forwarding configurations. A forwarding configuration
-   * might not work correctly if the required DNS records are not present in the
-   * domain's authoritative DNS zone.
-   *
-   * @param DomainForwarding[] $domainForwardings
+   * @param DomainForwarding[]
    */
   public function setDomainForwardings($domainForwardings)
   {
@@ -44,11 +40,7 @@ class RetrieveGoogleDomainsForwardingConfigResponse extends \Google\Collection
     return $this->domainForwardings;
   }
   /**
-   * The list of email forwarding configurations. A forwarding configuration
-   * might not work correctly if the required DNS records are not present in the
-   * domain's authoritative DNS zone.
-   *
-   * @param EmailForwarding[] $emailForwardings
+   * @param EmailForwarding[]
    */
   public function setEmailForwardings($emailForwardings)
   {

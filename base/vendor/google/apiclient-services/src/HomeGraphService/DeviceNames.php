@@ -21,32 +21,20 @@ class DeviceNames extends \Google\Collection
 {
   protected $collection_key = 'nicknames';
   /**
-   * List of names provided by the manufacturer rather than the user, such as
-   * serial numbers, SKUs, etc.
-   *
    * @var string[]
    */
   public $defaultNames;
   /**
-   * Primary name of the device, generally provided by the user. Names will be
-   * truncated if over the 60 Unicode code point (character) limit and no errors
-   * will be thrown. Developers are responsible for handling long names.
-   *
    * @var string
    */
   public $name;
   /**
-   * Additional names provided by the user for the device.
-   *
    * @var string[]
    */
   public $nicknames;
 
   /**
-   * List of names provided by the manufacturer rather than the user, such as
-   * serial numbers, SKUs, etc.
-   *
-   * @param string[] $defaultNames
+   * @param string[]
    */
   public function setDefaultNames($defaultNames)
   {
@@ -60,11 +48,7 @@ class DeviceNames extends \Google\Collection
     return $this->defaultNames;
   }
   /**
-   * Primary name of the device, generally provided by the user. Names will be
-   * truncated if over the 60 Unicode code point (character) limit and no errors
-   * will be thrown. Developers are responsible for handling long names.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -78,9 +62,7 @@ class DeviceNames extends \Google\Collection
     return $this->name;
   }
   /**
-   * Additional names provided by the user for the device.
-   *
-   * @param string[] $nicknames
+   * @param string[]
    */
   public function setNicknames($nicknames)
   {

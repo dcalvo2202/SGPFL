@@ -19,32 +19,9 @@ namespace Google\Service\HangoutsChat;
 
 class Annotation extends \Google\Model
 {
-  /**
-   * Default value for the enum. Don't use.
-   */
-  public const TYPE_ANNOTATION_TYPE_UNSPECIFIED = 'ANNOTATION_TYPE_UNSPECIFIED';
-  /**
-   * A user is mentioned.
-   */
-  public const TYPE_USER_MENTION = 'USER_MENTION';
-  /**
-   * A slash command is invoked.
-   */
-  public const TYPE_SLASH_COMMAND = 'SLASH_COMMAND';
-  /**
-   * A rich link annotation.
-   */
-  public const TYPE_RICH_LINK = 'RICH_LINK';
-  /**
-   * A custom emoji annotation.
-   */
-  public const TYPE_CUSTOM_EMOJI = 'CUSTOM_EMOJI';
   protected $customEmojiMetadataType = CustomEmojiMetadata::class;
   protected $customEmojiMetadataDataType = '';
   /**
-   * Length of the substring in the plain-text message body this annotation
-   * corresponds to. If not present, indicates a length of 0.
-   *
    * @var int
    */
   public $length;
@@ -53,15 +30,10 @@ class Annotation extends \Google\Model
   protected $slashCommandType = SlashCommandMetadata::class;
   protected $slashCommandDataType = '';
   /**
-   * Start index (0-based, inclusive) in the plain-text message body this
-   * annotation corresponds to.
-   *
    * @var int
    */
   public $startIndex;
   /**
-   * The type of this annotation.
-   *
    * @var string
    */
   public $type;
@@ -69,9 +41,7 @@ class Annotation extends \Google\Model
   protected $userMentionDataType = '';
 
   /**
-   * The metadata for a custom emoji.
-   *
-   * @param CustomEmojiMetadata $customEmojiMetadata
+   * @param CustomEmojiMetadata
    */
   public function setCustomEmojiMetadata(CustomEmojiMetadata $customEmojiMetadata)
   {
@@ -85,10 +55,7 @@ class Annotation extends \Google\Model
     return $this->customEmojiMetadata;
   }
   /**
-   * Length of the substring in the plain-text message body this annotation
-   * corresponds to. If not present, indicates a length of 0.
-   *
-   * @param int $length
+   * @param int
    */
   public function setLength($length)
   {
@@ -102,9 +69,7 @@ class Annotation extends \Google\Model
     return $this->length;
   }
   /**
-   * The metadata for a rich link.
-   *
-   * @param RichLinkMetadata $richLinkMetadata
+   * @param RichLinkMetadata
    */
   public function setRichLinkMetadata(RichLinkMetadata $richLinkMetadata)
   {
@@ -118,9 +83,7 @@ class Annotation extends \Google\Model
     return $this->richLinkMetadata;
   }
   /**
-   * The metadata for a slash command.
-   *
-   * @param SlashCommandMetadata $slashCommand
+   * @param SlashCommandMetadata
    */
   public function setSlashCommand(SlashCommandMetadata $slashCommand)
   {
@@ -134,10 +97,7 @@ class Annotation extends \Google\Model
     return $this->slashCommand;
   }
   /**
-   * Start index (0-based, inclusive) in the plain-text message body this
-   * annotation corresponds to.
-   *
-   * @param int $startIndex
+   * @param int
    */
   public function setStartIndex($startIndex)
   {
@@ -151,28 +111,21 @@ class Annotation extends \Google\Model
     return $this->startIndex;
   }
   /**
-   * The type of this annotation.
-   *
-   * Accepted values: ANNOTATION_TYPE_UNSPECIFIED, USER_MENTION, SLASH_COMMAND,
-   * RICH_LINK, CUSTOM_EMOJI
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * The metadata of user mention.
-   *
-   * @param UserMentionMetadata $userMention
+   * @param UserMentionMetadata
    */
   public function setUserMention(UserMentionMetadata $userMention)
   {

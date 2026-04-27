@@ -21,20 +21,12 @@ class PublishResponse extends \Google\Collection
 {
   protected $collection_key = 'messageIds';
   /**
-   * Optional. The server-assigned ID of each published message, in the same
-   * order as the messages in the request. IDs are guaranteed to be unique
-   * within the topic.
-   *
    * @var string[]
    */
   public $messageIds;
 
   /**
-   * Optional. The server-assigned ID of each published message, in the same
-   * order as the messages in the request. IDs are guaranteed to be unique
-   * within the topic.
-   *
-   * @param string[] $messageIds
+   * @param string[]
    */
   public function setMessageIds($messageIds)
   {

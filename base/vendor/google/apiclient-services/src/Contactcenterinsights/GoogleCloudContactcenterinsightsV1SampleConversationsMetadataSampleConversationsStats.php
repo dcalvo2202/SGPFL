@@ -20,25 +20,16 @@ namespace Google\Service\Contactcenterinsights;
 class GoogleCloudContactcenterinsightsV1SampleConversationsMetadataSampleConversationsStats extends \Google\Model
 {
   /**
-   * Output only. The number of objects which were unable to be sampled due to
-   * errors. The errors are populated in the partial_errors field.
-   *
    * @var int
    */
   public $failedSampleCount;
   /**
-   * Output only. The number of new conversations added during this sample
-   * operation.
-   *
    * @var int
    */
   public $successfulSampleCount;
 
   /**
-   * Output only. The number of objects which were unable to be sampled due to
-   * errors. The errors are populated in the partial_errors field.
-   *
-   * @param int $failedSampleCount
+   * @param int
    */
   public function setFailedSampleCount($failedSampleCount)
   {
@@ -52,10 +43,7 @@ class GoogleCloudContactcenterinsightsV1SampleConversationsMetadataSampleConvers
     return $this->failedSampleCount;
   }
   /**
-   * Output only. The number of new conversations added during this sample
-   * operation.
-   *
-   * @param int $successfulSampleCount
+   * @param int
    */
   public function setSuccessfulSampleCount($successfulSampleCount)
   {

@@ -20,18 +20,12 @@ namespace Google\Service\AndroidManagement;
 class AdbShellCommandEvent extends \Google\Model
 {
   /**
-   * Shell command that was issued over ADB via "adb shell command". Redacted to
-   * empty string on organization-owned managed profile devices.
-   *
    * @var string
    */
   public $shellCmd;
 
   /**
-   * Shell command that was issued over ADB via "adb shell command". Redacted to
-   * empty string on organization-owned managed profile devices.
-   *
-   * @param string $shellCmd
+   * @param string
    */
   public function setShellCmd($shellCmd)
   {

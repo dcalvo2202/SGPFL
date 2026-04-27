@@ -20,13 +20,6 @@ namespace Google\Service\Appengine;
 class AutomaticScaling extends \Google\Model
 {
   /**
-   * The time period that the Autoscaler
-   * (https://cloud.google.com/compute/docs/autoscaler/) should wait before it
-   * starts collecting information from a new instance. This prevents the
-   * autoscaler from collecting information when the instance is initializing,
-   * during which the collected usage would not be reliable. Only applicable in
-   * the App Engine flexible environment.
-   *
    * @var string
    */
   public $coolDownPeriod;
@@ -35,52 +28,30 @@ class AutomaticScaling extends \Google\Model
   protected $diskUtilizationType = DiskUtilization::class;
   protected $diskUtilizationDataType = '';
   /**
-   * Number of concurrent requests an automatic scaling instance can accept
-   * before the scheduler spawns a new instance.Defaults to a runtime-specific
-   * value.
-   *
    * @var int
    */
   public $maxConcurrentRequests;
   /**
-   * Maximum number of idle instances that should be maintained for this
-   * version.
-   *
    * @var int
    */
   public $maxIdleInstances;
   /**
-   * Maximum amount of time that a request should wait in the pending queue
-   * before starting a new instance to handle it.
-   *
    * @var string
    */
   public $maxPendingLatency;
   /**
-   * Maximum number of instances that should be started to handle requests for
-   * this version.
-   *
    * @var int
    */
   public $maxTotalInstances;
   /**
-   * Minimum number of idle instances that should be maintained for this
-   * version. Only applicable for the default version of a service.
-   *
    * @var int
    */
   public $minIdleInstances;
   /**
-   * Minimum amount of time a request should wait in the pending queue before
-   * starting a new instance to handle it.
-   *
    * @var string
    */
   public $minPendingLatency;
   /**
-   * Minimum number of running instances that should be maintained for this
-   * version.
-   *
    * @var int
    */
   public $minTotalInstances;
@@ -92,14 +63,7 @@ class AutomaticScaling extends \Google\Model
   protected $standardSchedulerSettingsDataType = '';
 
   /**
-   * The time period that the Autoscaler
-   * (https://cloud.google.com/compute/docs/autoscaler/) should wait before it
-   * starts collecting information from a new instance. This prevents the
-   * autoscaler from collecting information when the instance is initializing,
-   * during which the collected usage would not be reliable. Only applicable in
-   * the App Engine flexible environment.
-   *
-   * @param string $coolDownPeriod
+   * @param string
    */
   public function setCoolDownPeriod($coolDownPeriod)
   {
@@ -113,9 +77,7 @@ class AutomaticScaling extends \Google\Model
     return $this->coolDownPeriod;
   }
   /**
-   * Target scaling by CPU usage.
-   *
-   * @param CpuUtilization $cpuUtilization
+   * @param CpuUtilization
    */
   public function setCpuUtilization(CpuUtilization $cpuUtilization)
   {
@@ -129,9 +91,7 @@ class AutomaticScaling extends \Google\Model
     return $this->cpuUtilization;
   }
   /**
-   * Target scaling by disk usage.
-   *
-   * @param DiskUtilization $diskUtilization
+   * @param DiskUtilization
    */
   public function setDiskUtilization(DiskUtilization $diskUtilization)
   {
@@ -145,11 +105,7 @@ class AutomaticScaling extends \Google\Model
     return $this->diskUtilization;
   }
   /**
-   * Number of concurrent requests an automatic scaling instance can accept
-   * before the scheduler spawns a new instance.Defaults to a runtime-specific
-   * value.
-   *
-   * @param int $maxConcurrentRequests
+   * @param int
    */
   public function setMaxConcurrentRequests($maxConcurrentRequests)
   {
@@ -163,10 +119,7 @@ class AutomaticScaling extends \Google\Model
     return $this->maxConcurrentRequests;
   }
   /**
-   * Maximum number of idle instances that should be maintained for this
-   * version.
-   *
-   * @param int $maxIdleInstances
+   * @param int
    */
   public function setMaxIdleInstances($maxIdleInstances)
   {
@@ -180,10 +133,7 @@ class AutomaticScaling extends \Google\Model
     return $this->maxIdleInstances;
   }
   /**
-   * Maximum amount of time that a request should wait in the pending queue
-   * before starting a new instance to handle it.
-   *
-   * @param string $maxPendingLatency
+   * @param string
    */
   public function setMaxPendingLatency($maxPendingLatency)
   {
@@ -197,10 +147,7 @@ class AutomaticScaling extends \Google\Model
     return $this->maxPendingLatency;
   }
   /**
-   * Maximum number of instances that should be started to handle requests for
-   * this version.
-   *
-   * @param int $maxTotalInstances
+   * @param int
    */
   public function setMaxTotalInstances($maxTotalInstances)
   {
@@ -214,10 +161,7 @@ class AutomaticScaling extends \Google\Model
     return $this->maxTotalInstances;
   }
   /**
-   * Minimum number of idle instances that should be maintained for this
-   * version. Only applicable for the default version of a service.
-   *
-   * @param int $minIdleInstances
+   * @param int
    */
   public function setMinIdleInstances($minIdleInstances)
   {
@@ -231,10 +175,7 @@ class AutomaticScaling extends \Google\Model
     return $this->minIdleInstances;
   }
   /**
-   * Minimum amount of time a request should wait in the pending queue before
-   * starting a new instance to handle it.
-   *
-   * @param string $minPendingLatency
+   * @param string
    */
   public function setMinPendingLatency($minPendingLatency)
   {
@@ -248,10 +189,7 @@ class AutomaticScaling extends \Google\Model
     return $this->minPendingLatency;
   }
   /**
-   * Minimum number of running instances that should be maintained for this
-   * version.
-   *
-   * @param int $minTotalInstances
+   * @param int
    */
   public function setMinTotalInstances($minTotalInstances)
   {
@@ -265,9 +203,7 @@ class AutomaticScaling extends \Google\Model
     return $this->minTotalInstances;
   }
   /**
-   * Target scaling by network usage.
-   *
-   * @param NetworkUtilization $networkUtilization
+   * @param NetworkUtilization
    */
   public function setNetworkUtilization(NetworkUtilization $networkUtilization)
   {
@@ -281,9 +217,7 @@ class AutomaticScaling extends \Google\Model
     return $this->networkUtilization;
   }
   /**
-   * Target scaling by request utilization.
-   *
-   * @param RequestUtilization $requestUtilization
+   * @param RequestUtilization
    */
   public function setRequestUtilization(RequestUtilization $requestUtilization)
   {
@@ -297,9 +231,7 @@ class AutomaticScaling extends \Google\Model
     return $this->requestUtilization;
   }
   /**
-   * Scheduler settings for standard environment.
-   *
-   * @param StandardSchedulerSettings $standardSchedulerSettings
+   * @param StandardSchedulerSettings
    */
   public function setStandardSchedulerSettings(StandardSchedulerSettings $standardSchedulerSettings)
   {

@@ -20,39 +20,6 @@ namespace Google\Service\Docs;
 class PositionedObjectPositioning extends \Google\Model
 {
   /**
-   * The layout is unspecified.
-   */
-  public const LAYOUT_POSITIONED_OBJECT_LAYOUT_UNSPECIFIED = 'POSITIONED_OBJECT_LAYOUT_UNSPECIFIED';
-  /**
-   * The text wraps around the positioned object.
-   */
-  public const LAYOUT_WRAP_TEXT = 'WRAP_TEXT';
-  /**
-   * Breaks text such that the positioned object is on the left and text is on
-   * the right.
-   */
-  public const LAYOUT_BREAK_LEFT = 'BREAK_LEFT';
-  /**
-   * Breaks text such that the positioned object is on the right and text is on
-   * the left.
-   */
-  public const LAYOUT_BREAK_RIGHT = 'BREAK_RIGHT';
-  /**
-   * Breaks text such that there's no text on the left or right of the
-   * positioned object.
-   */
-  public const LAYOUT_BREAK_LEFT_RIGHT = 'BREAK_LEFT_RIGHT';
-  /**
-   * The positioned object is in front of the text.
-   */
-  public const LAYOUT_IN_FRONT_OF_TEXT = 'IN_FRONT_OF_TEXT';
-  /**
-   * The positioned object is behind the text.
-   */
-  public const LAYOUT_BEHIND_TEXT = 'BEHIND_TEXT';
-  /**
-   * The layout of this positioned object.
-   *
    * @var string
    */
   public $layout;
@@ -62,31 +29,21 @@ class PositionedObjectPositioning extends \Google\Model
   protected $topOffsetDataType = '';
 
   /**
-   * The layout of this positioned object.
-   *
-   * Accepted values: POSITIONED_OBJECT_LAYOUT_UNSPECIFIED, WRAP_TEXT,
-   * BREAK_LEFT, BREAK_RIGHT, BREAK_LEFT_RIGHT, IN_FRONT_OF_TEXT, BEHIND_TEXT
-   *
-   * @param self::LAYOUT_* $layout
+   * @param string
    */
   public function setLayout($layout)
   {
     $this->layout = $layout;
   }
   /**
-   * @return self::LAYOUT_*
+   * @return string
    */
   public function getLayout()
   {
     return $this->layout;
   }
   /**
-   * The offset of the left edge of the positioned object relative to the
-   * beginning of the Paragraph it's tethered to. The exact positioning of the
-   * object can depend on other content in the document and the document's
-   * styling.
-   *
-   * @param Dimension $leftOffset
+   * @param Dimension
    */
   public function setLeftOffset(Dimension $leftOffset)
   {
@@ -100,12 +57,7 @@ class PositionedObjectPositioning extends \Google\Model
     return $this->leftOffset;
   }
   /**
-   * The offset of the top edge of the positioned object relative to the
-   * beginning of the Paragraph it's tethered to. The exact positioning of the
-   * object can depend on other content in the document and the document's
-   * styling.
-   *
-   * @param Dimension $topOffset
+   * @param Dimension
    */
   public function setTopOffset(Dimension $topOffset)
   {

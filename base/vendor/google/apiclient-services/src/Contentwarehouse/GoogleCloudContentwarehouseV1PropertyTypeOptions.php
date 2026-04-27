@@ -24,9 +24,7 @@ class GoogleCloudContentwarehouseV1PropertyTypeOptions extends \Google\Collectio
   protected $propertyDefinitionsDataType = 'array';
 
   /**
-   * Required. List of property definitions.
-   *
-   * @param GoogleCloudContentwarehouseV1PropertyDefinition[] $propertyDefinitions
+   * @param GoogleCloudContentwarehouseV1PropertyDefinition[]
    */
   public function setPropertyDefinitions($propertyDefinitions)
   {

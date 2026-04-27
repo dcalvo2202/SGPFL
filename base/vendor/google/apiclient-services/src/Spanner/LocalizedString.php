@@ -20,35 +20,20 @@ namespace Google\Service\Spanner;
 class LocalizedString extends \Google\Model
 {
   /**
-   * A map of arguments used when creating the localized message. Keys represent
-   * parameter names which may be used by the localized version when
-   * substituting dynamic values.
-   *
    * @var string[]
    */
   public $args;
   /**
-   * The canonical English version of this message. If no token is provided or
-   * the front-end has no message associated with the token, this text will be
-   * displayed as-is.
-   *
    * @var string
    */
   public $message;
   /**
-   * The token identifying the message, e.g. 'METRIC_READ_CPU'. This should be
-   * unique within the service.
-   *
    * @var string
    */
   public $token;
 
   /**
-   * A map of arguments used when creating the localized message. Keys represent
-   * parameter names which may be used by the localized version when
-   * substituting dynamic values.
-   *
-   * @param string[] $args
+   * @param string[]
    */
   public function setArgs($args)
   {
@@ -62,11 +47,7 @@ class LocalizedString extends \Google\Model
     return $this->args;
   }
   /**
-   * The canonical English version of this message. If no token is provided or
-   * the front-end has no message associated with the token, this text will be
-   * displayed as-is.
-   *
-   * @param string $message
+   * @param string
    */
   public function setMessage($message)
   {
@@ -80,10 +61,7 @@ class LocalizedString extends \Google\Model
     return $this->message;
   }
   /**
-   * The token identifying the message, e.g. 'METRIC_READ_CPU'. This should be
-   * unique within the service.
-   *
-   * @param string $token
+   * @param string
    */
   public function setToken($token)
   {

@@ -23,17 +23,12 @@ class ListAppsResponse extends \Google\Collection
   protected $appsType = App::class;
   protected $appsDataType = 'array';
   /**
-   * If not empty, indicates that there may be more apps for the request; this
-   * value should be passed in a new `ListAppsRequest`.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The resulting apps for the requested account.
-   *
-   * @param App[] $apps
+   * @param App[]
    */
   public function setApps($apps)
   {
@@ -47,10 +42,7 @@ class ListAppsResponse extends \Google\Collection
     return $this->apps;
   }
   /**
-   * If not empty, indicates that there may be more apps for the request; this
-   * value should be passed in a new `ListAppsRequest`.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

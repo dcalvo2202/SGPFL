@@ -23,19 +23,12 @@ class GoogleCloudAiplatformV1Content extends \Google\Collection
   protected $partsType = GoogleCloudAiplatformV1Part::class;
   protected $partsDataType = 'array';
   /**
-   * Optional. The producer of the content. Must be either 'user' or 'model'. If
-   * not set, the service will default to 'user'.
-   *
    * @var string
    */
   public $role;
 
   /**
-   * Required. A list of Part objects that make up a single message. Parts of a
-   * message can have different MIME types. A Content message must have at least
-   * one Part.
-   *
-   * @param GoogleCloudAiplatformV1Part[] $parts
+   * @param GoogleCloudAiplatformV1Part[]
    */
   public function setParts($parts)
   {
@@ -49,10 +42,7 @@ class GoogleCloudAiplatformV1Content extends \Google\Collection
     return $this->parts;
   }
   /**
-   * Optional. The producer of the content. Must be either 'user' or 'model'. If
-   * not set, the service will default to 'user'.
-   *
-   * @param string $role
+   * @param string
    */
   public function setRole($role)
   {

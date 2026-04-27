@@ -20,24 +20,16 @@ namespace Google\Service\YouTube;
 class LiveChatMembershipGiftingDetails extends \Google\Model
 {
   /**
-   * The number of gift memberships purchased by the user.
-   *
    * @var int
    */
   public $giftMembershipsCount;
   /**
-   * The name of the level of the gift memberships purchased by the user. The
-   * Level names are defined by the YouTube channel offering the Membership. In
-   * some situations this field isn't filled.
-   *
    * @var string
    */
   public $giftMembershipsLevelName;
 
   /**
-   * The number of gift memberships purchased by the user.
-   *
-   * @param int $giftMembershipsCount
+   * @param int
    */
   public function setGiftMembershipsCount($giftMembershipsCount)
   {
@@ -51,11 +43,7 @@ class LiveChatMembershipGiftingDetails extends \Google\Model
     return $this->giftMembershipsCount;
   }
   /**
-   * The name of the level of the gift memberships purchased by the user. The
-   * Level names are defined by the YouTube channel offering the Membership. In
-   * some situations this field isn't filled.
-   *
-   * @param string $giftMembershipsLevelName
+   * @param string
    */
   public function setGiftMembershipsLevelName($giftMembershipsLevelName)
   {

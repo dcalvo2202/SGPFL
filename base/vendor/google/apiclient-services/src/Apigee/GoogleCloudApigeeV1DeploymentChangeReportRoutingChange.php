@@ -20,24 +20,16 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1DeploymentChangeReportRoutingChange extends \Google\Model
 {
   /**
-   * Human-readable description of this routing change.
-   *
    * @var string
    */
   public $description;
   /**
-   * Name of the environment group affected by this routing change.
-   *
    * @var string
    */
   public $environmentGroup;
   protected $fromDeploymentType = GoogleCloudApigeeV1DeploymentChangeReportRoutingDeployment::class;
   protected $fromDeploymentDataType = '';
   /**
-   * Set to `true` if using sequenced rollout would make this routing change
-   * safer. **Note**: This does not necessarily imply that automated sequenced
-   * rollout mode is supported for the operation.
-   *
    * @var bool
    */
   public $shouldSequenceRollout;
@@ -45,9 +37,7 @@ class GoogleCloudApigeeV1DeploymentChangeReportRoutingChange extends \Google\Mod
   protected $toDeploymentDataType = '';
 
   /**
-   * Human-readable description of this routing change.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -61,9 +51,7 @@ class GoogleCloudApigeeV1DeploymentChangeReportRoutingChange extends \Google\Mod
     return $this->description;
   }
   /**
-   * Name of the environment group affected by this routing change.
-   *
-   * @param string $environmentGroup
+   * @param string
    */
   public function setEnvironmentGroup($environmentGroup)
   {
@@ -77,9 +65,7 @@ class GoogleCloudApigeeV1DeploymentChangeReportRoutingChange extends \Google\Mod
     return $this->environmentGroup;
   }
   /**
-   * Base path/deployment that may stop receiving some traffic.
-   *
-   * @param GoogleCloudApigeeV1DeploymentChangeReportRoutingDeployment $fromDeployment
+   * @param GoogleCloudApigeeV1DeploymentChangeReportRoutingDeployment
    */
   public function setFromDeployment(GoogleCloudApigeeV1DeploymentChangeReportRoutingDeployment $fromDeployment)
   {
@@ -93,11 +79,7 @@ class GoogleCloudApigeeV1DeploymentChangeReportRoutingChange extends \Google\Mod
     return $this->fromDeployment;
   }
   /**
-   * Set to `true` if using sequenced rollout would make this routing change
-   * safer. **Note**: This does not necessarily imply that automated sequenced
-   * rollout mode is supported for the operation.
-   *
-   * @param bool $shouldSequenceRollout
+   * @param bool
    */
   public function setShouldSequenceRollout($shouldSequenceRollout)
   {
@@ -111,10 +93,7 @@ class GoogleCloudApigeeV1DeploymentChangeReportRoutingChange extends \Google\Mod
     return $this->shouldSequenceRollout;
   }
   /**
-   * Base path/deployment that may start receiving that traffic. May be null if
-   * no deployment is able to receive the traffic.
-   *
-   * @param GoogleCloudApigeeV1DeploymentChangeReportRoutingDeployment $toDeployment
+   * @param GoogleCloudApigeeV1DeploymentChangeReportRoutingDeployment
    */
   public function setToDeployment(GoogleCloudApigeeV1DeploymentChangeReportRoutingDeployment $toDeployment)
   {

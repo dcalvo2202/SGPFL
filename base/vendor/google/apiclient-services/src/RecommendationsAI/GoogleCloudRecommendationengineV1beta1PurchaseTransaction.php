@@ -20,56 +20,28 @@ namespace Google\Service\RecommendationsAI;
 class GoogleCloudRecommendationengineV1beta1PurchaseTransaction extends \Google\Model
 {
   /**
-   * Optional. All the costs associated with the product. These can be
-   * manufacturing costs, shipping expenses not borne by the end user, or any
-   * other costs. Total product cost such that profit = revenue - (sum(taxes) +
-   * sum(costs)) If product_cost is not set, then profit = revenue - tax -
-   * shipping - sum(CatalogItem.costs). If CatalogItem.cost is not specified for
-   * one of the items, CatalogItem.cost based profit *cannot* be calculated for
-   * this Transaction.
-   *
    * @var float[]
    */
   public $costs;
   /**
-   * Required. Currency code. Use three-character ISO-4217 code. This field is
-   * not required if the event type is `refund`.
-   *
    * @var string
    */
   public $currencyCode;
   /**
-   * Optional. The transaction ID with a length limit of 128 bytes.
-   *
    * @var string
    */
   public $id;
   /**
-   * Required. Total revenue or grand total associated with the transaction.
-   * This value include shipping, tax, or other adjustments to total revenue
-   * that you want to include as part of your revenue calculations. This field
-   * is not required if the event type is `refund`.
-   *
    * @var float
    */
   public $revenue;
   /**
-   * Optional. All the taxes associated with the transaction.
-   *
    * @var float[]
    */
   public $taxes;
 
   /**
-   * Optional. All the costs associated with the product. These can be
-   * manufacturing costs, shipping expenses not borne by the end user, or any
-   * other costs. Total product cost such that profit = revenue - (sum(taxes) +
-   * sum(costs)) If product_cost is not set, then profit = revenue - tax -
-   * shipping - sum(CatalogItem.costs). If CatalogItem.cost is not specified for
-   * one of the items, CatalogItem.cost based profit *cannot* be calculated for
-   * this Transaction.
-   *
-   * @param float[] $costs
+   * @param float[]
    */
   public function setCosts($costs)
   {
@@ -83,10 +55,7 @@ class GoogleCloudRecommendationengineV1beta1PurchaseTransaction extends \Google\
     return $this->costs;
   }
   /**
-   * Required. Currency code. Use three-character ISO-4217 code. This field is
-   * not required if the event type is `refund`.
-   *
-   * @param string $currencyCode
+   * @param string
    */
   public function setCurrencyCode($currencyCode)
   {
@@ -100,9 +69,7 @@ class GoogleCloudRecommendationengineV1beta1PurchaseTransaction extends \Google\
     return $this->currencyCode;
   }
   /**
-   * Optional. The transaction ID with a length limit of 128 bytes.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -116,12 +83,7 @@ class GoogleCloudRecommendationengineV1beta1PurchaseTransaction extends \Google\
     return $this->id;
   }
   /**
-   * Required. Total revenue or grand total associated with the transaction.
-   * This value include shipping, tax, or other adjustments to total revenue
-   * that you want to include as part of your revenue calculations. This field
-   * is not required if the event type is `refund`.
-   *
-   * @param float $revenue
+   * @param float
    */
   public function setRevenue($revenue)
   {
@@ -135,9 +97,7 @@ class GoogleCloudRecommendationengineV1beta1PurchaseTransaction extends \Google\
     return $this->revenue;
   }
   /**
-   * Optional. All the taxes associated with the transaction.
-   *
-   * @param float[] $taxes
+   * @param float[]
    */
   public function setTaxes($taxes)
   {

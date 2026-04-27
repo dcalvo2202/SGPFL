@@ -21,29 +21,20 @@ class RequestInfo extends \Google\Collection
 {
   protected $collection_key = 'appDeveloperEmail';
   /**
-   * List of app developers who triggered notifications for above application.
-   *
    * @var string[]
    */
   public $appDeveloperEmail;
   /**
-   * Required. The application that requires the SQL setup.
-   *
    * @var string
    */
   public $appKey;
   /**
-   * Required. Number of requests sent for this application to set up default
-   * SQL instance.
-   *
    * @var string
    */
   public $numberOfRequests;
 
   /**
-   * List of app developers who triggered notifications for above application.
-   *
-   * @param string[] $appDeveloperEmail
+   * @param string[]
    */
   public function setAppDeveloperEmail($appDeveloperEmail)
   {
@@ -57,9 +48,7 @@ class RequestInfo extends \Google\Collection
     return $this->appDeveloperEmail;
   }
   /**
-   * Required. The application that requires the SQL setup.
-   *
-   * @param string $appKey
+   * @param string
    */
   public function setAppKey($appKey)
   {
@@ -73,10 +62,7 @@ class RequestInfo extends \Google\Collection
     return $this->appKey;
   }
   /**
-   * Required. Number of requests sent for this application to set up default
-   * SQL instance.
-   *
-   * @param string $numberOfRequests
+   * @param string
    */
   public function setNumberOfRequests($numberOfRequests)
   {

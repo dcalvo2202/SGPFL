@@ -20,16 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1GenerationConfigRoutingConfigManualRoutingMode extends \Google\Model
 {
   /**
-   * The name of the model to use. Only public LLM models are accepted.
-   *
    * @var string
    */
   public $modelName;
 
   /**
-   * The name of the model to use. Only public LLM models are accepted.
-   *
-   * @param string $modelName
+   * @param string
    */
   public function setModelName($modelName)
   {

@@ -22,18 +22,12 @@ class StragglerInfo extends \Google\Model
   protected $causesType = StragglerDebuggingInfo::class;
   protected $causesDataType = 'map';
   /**
-   * The time when the work item attempt became a straggler.
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * The straggler causes, keyed by the string representation of the
-   * StragglerCause enum and contains specialized debugging information for each
-   * straggler cause.
-   *
-   * @param StragglerDebuggingInfo[] $causes
+   * @param StragglerDebuggingInfo[]
    */
   public function setCauses($causes)
   {
@@ -47,9 +41,7 @@ class StragglerInfo extends \Google\Model
     return $this->causes;
   }
   /**
-   * The time when the work item attempt became a straggler.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

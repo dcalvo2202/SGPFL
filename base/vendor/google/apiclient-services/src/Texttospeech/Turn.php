@@ -20,24 +20,16 @@ namespace Google\Service\Texttospeech;
 class Turn extends \Google\Model
 {
   /**
-   * Required. The speaker of the turn, for example, 'O' or 'Q'. Please refer to
-   * documentation for available speakers.
-   *
    * @var string
    */
   public $speaker;
   /**
-   * Required. The text to speak.
-   *
    * @var string
    */
   public $text;
 
   /**
-   * Required. The speaker of the turn, for example, 'O' or 'Q'. Please refer to
-   * documentation for available speakers.
-   *
-   * @param string $speaker
+   * @param string
    */
   public function setSpeaker($speaker)
   {
@@ -51,9 +43,7 @@ class Turn extends \Google\Model
     return $this->speaker;
   }
   /**
-   * Required. The text to speak.
-   *
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {

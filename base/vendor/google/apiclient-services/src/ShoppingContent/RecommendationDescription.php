@@ -20,34 +20,16 @@ namespace Google\Service\ShoppingContent;
 class RecommendationDescription extends \Google\Model
 {
   /**
-   * Default value. Will never be provided by the API.
-   */
-  public const TYPE_DESCRIPTION_TYPE_UNSPECIFIED = 'DESCRIPTION_TYPE_UNSPECIFIED';
-  /**
-   * Short description.
-   */
-  public const TYPE_SHORT = 'SHORT';
-  /**
-   * Long description.
-   */
-  public const TYPE_LONG = 'LONG';
-  /**
-   * Output only. Text of the description.
-   *
    * @var string
    */
   public $text;
   /**
-   * Output only. Type of the description.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Output only. Text of the description.
-   *
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {
@@ -61,18 +43,14 @@ class RecommendationDescription extends \Google\Model
     return $this->text;
   }
   /**
-   * Output only. Type of the description.
-   *
-   * Accepted values: DESCRIPTION_TYPE_UNSPECIFIED, SHORT, LONG
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

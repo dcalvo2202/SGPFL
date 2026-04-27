@@ -21,61 +21,40 @@ class Token extends \Google\Collection
 {
   protected $collection_key = 'scopes';
   /**
-   * Whether the application is registered with Google. The value is `true` if
-   * the application has an anonymous Client ID.
-   *
    * @var bool
    */
   public $anonymous;
   /**
-   * The Client ID of the application the token is issued to.
-   *
    * @var string
    */
   public $clientId;
   /**
-   * The displayable name of the application the token is issued to.
-   *
    * @var string
    */
   public $displayText;
   /**
-   * ETag of the resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * The type of the API resource. This is always `admin#directory#token`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Whether the token is issued to an installed application. The value is
-   * `true` if the application is installed to a desktop or mobile device.
-   *
    * @var bool
    */
   public $nativeApp;
   /**
-   * A list of authorization scopes the application is granted.
-   *
    * @var string[]
    */
   public $scopes;
   /**
-   * The unique ID of the user that issued the token.
-   *
    * @var string
    */
   public $userKey;
 
   /**
-   * Whether the application is registered with Google. The value is `true` if
-   * the application has an anonymous Client ID.
-   *
-   * @param bool $anonymous
+   * @param bool
    */
   public function setAnonymous($anonymous)
   {
@@ -89,9 +68,7 @@ class Token extends \Google\Collection
     return $this->anonymous;
   }
   /**
-   * The Client ID of the application the token is issued to.
-   *
-   * @param string $clientId
+   * @param string
    */
   public function setClientId($clientId)
   {
@@ -105,9 +82,7 @@ class Token extends \Google\Collection
     return $this->clientId;
   }
   /**
-   * The displayable name of the application the token is issued to.
-   *
-   * @param string $displayText
+   * @param string
    */
   public function setDisplayText($displayText)
   {
@@ -121,9 +96,7 @@ class Token extends \Google\Collection
     return $this->displayText;
   }
   /**
-   * ETag of the resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -137,9 +110,7 @@ class Token extends \Google\Collection
     return $this->etag;
   }
   /**
-   * The type of the API resource. This is always `admin#directory#token`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -153,10 +124,7 @@ class Token extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Whether the token is issued to an installed application. The value is
-   * `true` if the application is installed to a desktop or mobile device.
-   *
-   * @param bool $nativeApp
+   * @param bool
    */
   public function setNativeApp($nativeApp)
   {
@@ -170,9 +138,7 @@ class Token extends \Google\Collection
     return $this->nativeApp;
   }
   /**
-   * A list of authorization scopes the application is granted.
-   *
-   * @param string[] $scopes
+   * @param string[]
    */
   public function setScopes($scopes)
   {
@@ -186,9 +152,7 @@ class Token extends \Google\Collection
     return $this->scopes;
   }
   /**
-   * The unique ID of the user that issued the token.
-   *
-   * @param string $userKey
+   * @param string
    */
   public function setUserKey($userKey)
   {

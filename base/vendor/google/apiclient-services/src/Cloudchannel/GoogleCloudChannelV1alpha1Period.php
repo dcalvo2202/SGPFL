@@ -20,38 +20,16 @@ namespace Google\Service\Cloudchannel;
 class GoogleCloudChannelV1alpha1Period extends \Google\Model
 {
   /**
-   * Not used.
-   */
-  public const PERIOD_TYPE_PERIOD_TYPE_UNSPECIFIED = 'PERIOD_TYPE_UNSPECIFIED';
-  /**
-   * Day.
-   */
-  public const PERIOD_TYPE_DAY = 'DAY';
-  /**
-   * Month.
-   */
-  public const PERIOD_TYPE_MONTH = 'MONTH';
-  /**
-   * Year.
-   */
-  public const PERIOD_TYPE_YEAR = 'YEAR';
-  /**
-   * Total duration of Period Type defined.
-   *
    * @var int
    */
   public $duration;
   /**
-   * Period Type.
-   *
    * @var string
    */
   public $periodType;
 
   /**
-   * Total duration of Period Type defined.
-   *
-   * @param int $duration
+   * @param int
    */
   public function setDuration($duration)
   {
@@ -65,18 +43,14 @@ class GoogleCloudChannelV1alpha1Period extends \Google\Model
     return $this->duration;
   }
   /**
-   * Period Type.
-   *
-   * Accepted values: PERIOD_TYPE_UNSPECIFIED, DAY, MONTH, YEAR
-   *
-   * @param self::PERIOD_TYPE_* $periodType
+   * @param string
    */
   public function setPeriodType($periodType)
   {
     $this->periodType = $periodType;
   }
   /**
-   * @return self::PERIOD_TYPE_*
+   * @return string
    */
   public function getPeriodType()
   {

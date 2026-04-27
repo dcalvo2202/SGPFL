@@ -20,18 +20,12 @@ namespace Google\Service\GKEHub;
 class ConfigManagementPolicyControllerVersion extends \Google\Model
 {
   /**
-   * The gatekeeper image tag that is composed of ACM version, git tag, build
-   * number.
-   *
    * @var string
    */
   public $version;
 
   /**
-   * The gatekeeper image tag that is composed of ACM version, git tag, build
-   * number.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

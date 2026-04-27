@@ -20,20 +20,6 @@ namespace Google\Service\Datastore;
 class PropertyOrder extends \Google\Model
 {
   /**
-   * Unspecified. This value must not be used.
-   */
-  public const DIRECTION_DIRECTION_UNSPECIFIED = 'DIRECTION_UNSPECIFIED';
-  /**
-   * Ascending.
-   */
-  public const DIRECTION_ASCENDING = 'ASCENDING';
-  /**
-   * Descending.
-   */
-  public const DIRECTION_DESCENDING = 'DESCENDING';
-  /**
-   * The direction to order by. Defaults to `ASCENDING`.
-   *
    * @var string
    */
   public $direction;
@@ -41,27 +27,21 @@ class PropertyOrder extends \Google\Model
   protected $propertyDataType = '';
 
   /**
-   * The direction to order by. Defaults to `ASCENDING`.
-   *
-   * Accepted values: DIRECTION_UNSPECIFIED, ASCENDING, DESCENDING
-   *
-   * @param self::DIRECTION_* $direction
+   * @param string
    */
   public function setDirection($direction)
   {
     $this->direction = $direction;
   }
   /**
-   * @return self::DIRECTION_*
+   * @return string
    */
   public function getDirection()
   {
     return $this->direction;
   }
   /**
-   * The property to order by.
-   *
-   * @param PropertyReference $property
+   * @param PropertyReference
    */
   public function setProperty(PropertyReference $property)
   {

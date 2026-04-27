@@ -20,38 +20,24 @@ namespace Google\Service\Contactcenterinsights;
 class GoogleCloudContactcenterinsightsV1ConversationTranscriptTranscriptSegmentWordInfo extends \Google\Model
 {
   /**
-   * A confidence estimate between 0.0 and 1.0 of the fidelity of this word. A
-   * default value of 0.0 indicates that the value is unset.
-   *
    * @var float
    */
   public $confidence;
   /**
-   * Time offset of the end of this word relative to the beginning of the total
-   * conversation.
-   *
    * @var string
    */
   public $endOffset;
   /**
-   * Time offset of the start of this word relative to the beginning of the
-   * total conversation.
-   *
    * @var string
    */
   public $startOffset;
   /**
-   * The word itself. Includes punctuation marks that surround the word.
-   *
    * @var string
    */
   public $word;
 
   /**
-   * A confidence estimate between 0.0 and 1.0 of the fidelity of this word. A
-   * default value of 0.0 indicates that the value is unset.
-   *
-   * @param float $confidence
+   * @param float
    */
   public function setConfidence($confidence)
   {
@@ -65,10 +51,7 @@ class GoogleCloudContactcenterinsightsV1ConversationTranscriptTranscriptSegmentW
     return $this->confidence;
   }
   /**
-   * Time offset of the end of this word relative to the beginning of the total
-   * conversation.
-   *
-   * @param string $endOffset
+   * @param string
    */
   public function setEndOffset($endOffset)
   {
@@ -82,10 +65,7 @@ class GoogleCloudContactcenterinsightsV1ConversationTranscriptTranscriptSegmentW
     return $this->endOffset;
   }
   /**
-   * Time offset of the start of this word relative to the beginning of the
-   * total conversation.
-   *
-   * @param string $startOffset
+   * @param string
    */
   public function setStartOffset($startOffset)
   {
@@ -99,9 +79,7 @@ class GoogleCloudContactcenterinsightsV1ConversationTranscriptTranscriptSegmentW
     return $this->startOffset;
   }
   /**
-   * The word itself. Includes punctuation marks that surround the word.
-   *
-   * @param string $word
+   * @param string
    */
   public function setWord($word)
   {

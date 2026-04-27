@@ -20,28 +20,20 @@ namespace Google\Service\AdExchangeBuyerII;
 class HtmlContent extends \Google\Model
 {
   /**
-   * The height of the HTML snippet in pixels.
-   *
    * @var int
    */
   public $height;
   /**
-   * The HTML snippet that displays the ad when inserted in the web page.
-   *
    * @var string
    */
   public $snippet;
   /**
-   * The width of the HTML snippet in pixels.
-   *
    * @var int
    */
   public $width;
 
   /**
-   * The height of the HTML snippet in pixels.
-   *
-   * @param int $height
+   * @param int
    */
   public function setHeight($height)
   {
@@ -55,9 +47,7 @@ class HtmlContent extends \Google\Model
     return $this->height;
   }
   /**
-   * The HTML snippet that displays the ad when inserted in the web page.
-   *
-   * @param string $snippet
+   * @param string
    */
   public function setSnippet($snippet)
   {
@@ -71,9 +61,7 @@ class HtmlContent extends \Google\Model
     return $this->snippet;
   }
   /**
-   * The width of the HTML snippet in pixels.
-   *
-   * @param int $width
+   * @param int
    */
   public function setWidth($width)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\GKEOnPrem;
 class BareMetalAdminManualLbConfig extends \Google\Model
 {
   /**
-   * Whether manual load balancing is enabled.
-   *
    * @var bool
    */
   public $enabled;
 
   /**
-   * Whether manual load balancing is enabled.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {

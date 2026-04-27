@@ -20,16 +20,12 @@ namespace Google\Service\Document;
 class GoogleCloudDocumentaiUiv1beta3ExportProcessorVersionResponse extends \Google\Model
 {
   /**
-   * The Cloud Storage URI containing the output artifacts.
-   *
    * @var string
    */
   public $gcsUri;
 
   /**
-   * The Cloud Storage URI containing the output artifacts.
-   *
-   * @param string $gcsUri
+   * @param string
    */
   public function setGcsUri($gcsUri)
   {

@@ -20,18 +20,12 @@ namespace Google\Service\CertificateManager;
 class AllowlistedCertificate extends \Google\Model
 {
   /**
-   * Required. PEM certificate that is allowlisted. The certificate can be up to
-   * 5k bytes, and must be a parseable X.509 certificate.
-   *
    * @var string
    */
   public $pemCertificate;
 
   /**
-   * Required. PEM certificate that is allowlisted. The certificate can be up to
-   * 5k bytes, and must be a parseable X.509 certificate.
-   *
-   * @param string $pemCertificate
+   * @param string
    */
   public function setPemCertificate($pemCertificate)
   {

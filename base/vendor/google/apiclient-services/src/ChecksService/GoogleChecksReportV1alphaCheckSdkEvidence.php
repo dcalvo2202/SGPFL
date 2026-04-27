@@ -23,9 +23,7 @@ class GoogleChecksReportV1alphaCheckSdkEvidence extends \Google\Model
   protected $sdkDataType = '';
 
   /**
-   * The SDK that was found in your app.
-   *
-   * @param GoogleChecksReportV1alphaSdk $sdk
+   * @param GoogleChecksReportV1alphaSdk
    */
   public function setSdk(GoogleChecksReportV1alphaSdk $sdk)
   {

@@ -24,9 +24,7 @@ class GoogleCloudDiscoveryengineV1alphaAnswerQueryUnderstandingInfo extends \Goo
   protected $queryClassificationInfoDataType = 'array';
 
   /**
-   * Query classification information.
-   *
-   * @param GoogleCloudDiscoveryengineV1alphaAnswerQueryUnderstandingInfoQueryClassificationInfo[] $queryClassificationInfo
+   * @param GoogleCloudDiscoveryengineV1alphaAnswerQueryUnderstandingInfoQueryClassificationInfo[]
    */
   public function setQueryClassificationInfo($queryClassificationInfo)
   {

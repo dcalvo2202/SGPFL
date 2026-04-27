@@ -19,9 +19,6 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowCxV3DetectIntentResponse extends \Google\Model
 {
-  public const RESPONSE_TYPE_RESPONSE_TYPE_UNSPECIFIED = 'RESPONSE_TYPE_UNSPECIFIED';
-  public const RESPONSE_TYPE_PARTIAL = 'PARTIAL';
-  public const RESPONSE_TYPE_FINAL = 'FINAL';
   /**
    * @var bool
    */
@@ -44,7 +41,7 @@ class GoogleCloudDialogflowCxV3DetectIntentResponse extends \Google\Model
   public $responseType;
 
   /**
-   * @param bool $allowCancellation
+   * @param bool
    */
   public function setAllowCancellation($allowCancellation)
   {
@@ -58,7 +55,7 @@ class GoogleCloudDialogflowCxV3DetectIntentResponse extends \Google\Model
     return $this->allowCancellation;
   }
   /**
-   * @param string $outputAudio
+   * @param string
    */
   public function setOutputAudio($outputAudio)
   {
@@ -72,7 +69,7 @@ class GoogleCloudDialogflowCxV3DetectIntentResponse extends \Google\Model
     return $this->outputAudio;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3OutputAudioConfig $outputAudioConfig
+   * @param GoogleCloudDialogflowCxV3OutputAudioConfig
    */
   public function setOutputAudioConfig(GoogleCloudDialogflowCxV3OutputAudioConfig $outputAudioConfig)
   {
@@ -86,7 +83,7 @@ class GoogleCloudDialogflowCxV3DetectIntentResponse extends \Google\Model
     return $this->outputAudioConfig;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3QueryResult $queryResult
+   * @param GoogleCloudDialogflowCxV3QueryResult
    */
   public function setQueryResult(GoogleCloudDialogflowCxV3QueryResult $queryResult)
   {
@@ -100,7 +97,7 @@ class GoogleCloudDialogflowCxV3DetectIntentResponse extends \Google\Model
     return $this->queryResult;
   }
   /**
-   * @param string $responseId
+   * @param string
    */
   public function setResponseId($responseId)
   {
@@ -114,14 +111,14 @@ class GoogleCloudDialogflowCxV3DetectIntentResponse extends \Google\Model
     return $this->responseId;
   }
   /**
-   * @param self::RESPONSE_TYPE_* $responseType
+   * @param string
    */
   public function setResponseType($responseType)
   {
     $this->responseType = $responseType;
   }
   /**
-   * @return self::RESPONSE_TYPE_*
+   * @return string
    */
   public function getResponseType()
   {

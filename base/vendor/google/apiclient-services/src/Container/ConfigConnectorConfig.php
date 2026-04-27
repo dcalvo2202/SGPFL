@@ -20,16 +20,12 @@ namespace Google\Service\Container;
 class ConfigConnectorConfig extends \Google\Model
 {
   /**
-   * Whether Cloud Connector is enabled for this cluster.
-   *
    * @var bool
    */
   public $enabled;
 
   /**
-   * Whether Cloud Connector is enabled for this cluster.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {

@@ -24,13 +24,7 @@ class GoogleCloudAiplatformV1BatchCreateFeaturesRequest extends \Google\Collecti
   protected $requestsDataType = 'array';
 
   /**
-   * Required. The request message specifying the Features to create. All
-   * Features must be created under the same parent EntityType / FeatureGroup.
-   * The `parent` field in each child request message can be omitted. If
-   * `parent` is set in a child request, then the value must match the `parent`
-   * value in this request message.
-   *
-   * @param GoogleCloudAiplatformV1CreateFeatureRequest[] $requests
+   * @param GoogleCloudAiplatformV1CreateFeatureRequest[]
    */
   public function setRequests($requests)
   {

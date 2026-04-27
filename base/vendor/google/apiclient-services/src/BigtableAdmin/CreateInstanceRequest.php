@@ -24,28 +24,16 @@ class CreateInstanceRequest extends \Google\Model
   protected $instanceType = Instance::class;
   protected $instanceDataType = '';
   /**
-   * Required. The ID to be used when referring to the new instance within its
-   * project, e.g., just `myinstance` rather than
-   * `projects/myproject/instances/myinstance`.
-   *
    * @var string
    */
   public $instanceId;
   /**
-   * Required. The unique name of the project in which to create the new
-   * instance. Values are of the form `projects/{project}`.
-   *
    * @var string
    */
   public $parent;
 
   /**
-   * Required. The clusters to be created within the instance, mapped by desired
-   * cluster ID, e.g., just `mycluster` rather than
-   * `projects/myproject/instances/myinstance/clusters/mycluster`. Fields marked
-   * `OutputOnly` must be left blank.
-   *
-   * @param Cluster[] $clusters
+   * @param Cluster[]
    */
   public function setClusters($clusters)
   {
@@ -59,10 +47,7 @@ class CreateInstanceRequest extends \Google\Model
     return $this->clusters;
   }
   /**
-   * Required. The instance to create. Fields marked `OutputOnly` must be left
-   * blank.
-   *
-   * @param Instance $instance
+   * @param Instance
    */
   public function setInstance(Instance $instance)
   {
@@ -76,11 +61,7 @@ class CreateInstanceRequest extends \Google\Model
     return $this->instance;
   }
   /**
-   * Required. The ID to be used when referring to the new instance within its
-   * project, e.g., just `myinstance` rather than
-   * `projects/myproject/instances/myinstance`.
-   *
-   * @param string $instanceId
+   * @param string
    */
   public function setInstanceId($instanceId)
   {
@@ -94,10 +75,7 @@ class CreateInstanceRequest extends \Google\Model
     return $this->instanceId;
   }
   /**
-   * Required. The unique name of the project in which to create the new
-   * instance. Values are of the form `projects/{project}`.
-   *
-   * @param string $parent
+   * @param string
    */
   public function setParent($parent)
   {

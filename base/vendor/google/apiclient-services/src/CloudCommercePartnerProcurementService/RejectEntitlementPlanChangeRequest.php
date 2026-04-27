@@ -20,23 +20,16 @@ namespace Google\Service\CloudCommercePartnerProcurementService;
 class RejectEntitlementPlanChangeRequest extends \Google\Model
 {
   /**
-   * Required. Name of the pending plan that is being rejected.
-   *
    * @var string
    */
   public $pendingPlanName;
   /**
-   * Free form text string explaining the rejection reason. Max allowed length:
-   * 256 bytes. Longer strings will be truncated.
-   *
    * @var string
    */
   public $reason;
 
   /**
-   * Required. Name of the pending plan that is being rejected.
-   *
-   * @param string $pendingPlanName
+   * @param string
    */
   public function setPendingPlanName($pendingPlanName)
   {
@@ -50,10 +43,7 @@ class RejectEntitlementPlanChangeRequest extends \Google\Model
     return $this->pendingPlanName;
   }
   /**
-   * Free form text string explaining the rejection reason. Max allowed length:
-   * 256 bytes. Longer strings will be truncated.
-   *
-   * @param string $reason
+   * @param string
    */
   public function setReason($reason)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\DatabaseMigrationService;
 class PrivateConnectivity extends \Google\Model
 {
   /**
-   * Required. The resource name (URI) of the private connection.
-   *
    * @var string
    */
   public $privateConnection;
 
   /**
-   * Required. The resource name (URI) of the private connection.
-   *
-   * @param string $privateConnection
+   * @param string
    */
   public function setPrivateConnection($privateConnection)
   {

@@ -20,18 +20,12 @@ namespace Google\Service\DriveLabels;
 class GoogleAppsDriveLabelsV2DeltaUpdateLabelResponseUpdateSelectionChoicePropertiesResponse extends \Google\Model
 {
   /**
-   * The priority of the updated choice. The priority may change from what was
-   * specified to assure contiguous priorities between choices (1-n).
-   *
    * @var int
    */
   public $priority;
 
   /**
-   * The priority of the updated choice. The priority may change from what was
-   * specified to assure contiguous priorities between choices (1-n).
-   *
-   * @param int $priority
+   * @param int
    */
   public function setPriority($priority)
   {

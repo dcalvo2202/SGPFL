@@ -20,116 +20,59 @@ namespace Google\Service\Localservices;
 class GoogleAdsHomeservicesLocalservicesV1AccountReport extends \Google\Model
 {
   /**
-   * Unique identifier of the GLS account.
-   *
    * @var string
    */
   public $accountId;
   protected $aggregatorInfoType = GoogleAdsHomeservicesLocalservicesV1AggregatorInfo::class;
   protected $aggregatorInfoDataType = '';
-  /**
-   * Average review rating score from 1-5 stars.
-   *
-   * @var 
-   */
   public $averageFiveStarRating;
-  /**
-   * Average weekly budget in the currency code of the account.
-   *
-   * @var 
-   */
   public $averageWeeklyBudget;
   /**
-   * Business name of the account.
-   *
    * @var string
    */
   public $businessName;
   /**
-   * Currency code of the account.
-   *
    * @var string
    */
   public $currencyCode;
   /**
-   * Number of charged leads the account received in current specified period.
-   *
    * @var string
    */
   public $currentPeriodChargedLeads;
   /**
-   * Number of connected phone calls (duration over 30s) in current specified
-   * period.
-   *
    * @var string
    */
   public $currentPeriodConnectedPhoneCalls;
   /**
-   * Number of phone calls in current specified period, including both connected
-   * and unconnected calls.
-   *
    * @var string
    */
   public $currentPeriodPhoneCalls;
-  /**
-   * Total cost of the account in current specified period in the account's
-   * specified currency.
-   *
-   * @var 
-   */
   public $currentPeriodTotalCost;
   /**
-   * Number of impressions that customers have had in the past 2 days.
-   *
    * @var string
    */
   public $impressionsLastTwoDays;
-  /**
-   * Phone lead responsiveness of the account for the past 90 days from current
-   * date. This is computed by taking the total number of connected calls from
-   * charged phone leads and dividing by the total number of calls received.
-   *
-   * @var 
-   */
   public $phoneLeadResponsiveness;
   /**
-   * Number of charged leads the account received in previous specified period.
-   *
    * @var string
    */
   public $previousPeriodChargedLeads;
   /**
-   * Number of connected phone calls (duration over 30s) in previous specified
-   * period.
-   *
    * @var string
    */
   public $previousPeriodConnectedPhoneCalls;
   /**
-   * Number of phone calls in previous specified period, including both
-   * connected and unconnected calls.
-   *
    * @var string
    */
   public $previousPeriodPhoneCalls;
-  /**
-   * Total cost of the account in previous specified period in the account's
-   * specified currency.
-   *
-   * @var 
-   */
   public $previousPeriodTotalCost;
   /**
-   * Total number of reviews the account has up to current date.
-   *
    * @var int
    */
   public $totalReview;
 
   /**
-   * Unique identifier of the GLS account.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -143,9 +86,7 @@ class GoogleAdsHomeservicesLocalservicesV1AccountReport extends \Google\Model
     return $this->accountId;
   }
   /**
-   * Aggregator specific information related to the account.
-   *
-   * @param GoogleAdsHomeservicesLocalservicesV1AggregatorInfo $aggregatorInfo
+   * @param GoogleAdsHomeservicesLocalservicesV1AggregatorInfo
    */
   public function setAggregatorInfo(GoogleAdsHomeservicesLocalservicesV1AggregatorInfo $aggregatorInfo)
   {
@@ -175,9 +116,7 @@ class GoogleAdsHomeservicesLocalservicesV1AccountReport extends \Google\Model
     return $this->averageWeeklyBudget;
   }
   /**
-   * Business name of the account.
-   *
-   * @param string $businessName
+   * @param string
    */
   public function setBusinessName($businessName)
   {
@@ -191,9 +130,7 @@ class GoogleAdsHomeservicesLocalservicesV1AccountReport extends \Google\Model
     return $this->businessName;
   }
   /**
-   * Currency code of the account.
-   *
-   * @param string $currencyCode
+   * @param string
    */
   public function setCurrencyCode($currencyCode)
   {
@@ -207,9 +144,7 @@ class GoogleAdsHomeservicesLocalservicesV1AccountReport extends \Google\Model
     return $this->currencyCode;
   }
   /**
-   * Number of charged leads the account received in current specified period.
-   *
-   * @param string $currentPeriodChargedLeads
+   * @param string
    */
   public function setCurrentPeriodChargedLeads($currentPeriodChargedLeads)
   {
@@ -223,10 +158,7 @@ class GoogleAdsHomeservicesLocalservicesV1AccountReport extends \Google\Model
     return $this->currentPeriodChargedLeads;
   }
   /**
-   * Number of connected phone calls (duration over 30s) in current specified
-   * period.
-   *
-   * @param string $currentPeriodConnectedPhoneCalls
+   * @param string
    */
   public function setCurrentPeriodConnectedPhoneCalls($currentPeriodConnectedPhoneCalls)
   {
@@ -240,10 +172,7 @@ class GoogleAdsHomeservicesLocalservicesV1AccountReport extends \Google\Model
     return $this->currentPeriodConnectedPhoneCalls;
   }
   /**
-   * Number of phone calls in current specified period, including both connected
-   * and unconnected calls.
-   *
-   * @param string $currentPeriodPhoneCalls
+   * @param string
    */
   public function setCurrentPeriodPhoneCalls($currentPeriodPhoneCalls)
   {
@@ -265,9 +194,7 @@ class GoogleAdsHomeservicesLocalservicesV1AccountReport extends \Google\Model
     return $this->currentPeriodTotalCost;
   }
   /**
-   * Number of impressions that customers have had in the past 2 days.
-   *
-   * @param string $impressionsLastTwoDays
+   * @param string
    */
   public function setImpressionsLastTwoDays($impressionsLastTwoDays)
   {
@@ -289,9 +216,7 @@ class GoogleAdsHomeservicesLocalservicesV1AccountReport extends \Google\Model
     return $this->phoneLeadResponsiveness;
   }
   /**
-   * Number of charged leads the account received in previous specified period.
-   *
-   * @param string $previousPeriodChargedLeads
+   * @param string
    */
   public function setPreviousPeriodChargedLeads($previousPeriodChargedLeads)
   {
@@ -305,10 +230,7 @@ class GoogleAdsHomeservicesLocalservicesV1AccountReport extends \Google\Model
     return $this->previousPeriodChargedLeads;
   }
   /**
-   * Number of connected phone calls (duration over 30s) in previous specified
-   * period.
-   *
-   * @param string $previousPeriodConnectedPhoneCalls
+   * @param string
    */
   public function setPreviousPeriodConnectedPhoneCalls($previousPeriodConnectedPhoneCalls)
   {
@@ -322,10 +244,7 @@ class GoogleAdsHomeservicesLocalservicesV1AccountReport extends \Google\Model
     return $this->previousPeriodConnectedPhoneCalls;
   }
   /**
-   * Number of phone calls in previous specified period, including both
-   * connected and unconnected calls.
-   *
-   * @param string $previousPeriodPhoneCalls
+   * @param string
    */
   public function setPreviousPeriodPhoneCalls($previousPeriodPhoneCalls)
   {
@@ -347,9 +266,7 @@ class GoogleAdsHomeservicesLocalservicesV1AccountReport extends \Google\Model
     return $this->previousPeriodTotalCost;
   }
   /**
-   * Total number of reviews the account has up to current date.
-   *
-   * @param int $totalReview
+   * @param int
    */
   public function setTotalReview($totalReview)
   {

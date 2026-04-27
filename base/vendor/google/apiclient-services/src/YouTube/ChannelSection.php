@@ -22,21 +22,14 @@ class ChannelSection extends \Google\Model
   protected $contentDetailsType = ChannelSectionContentDetails::class;
   protected $contentDetailsDataType = '';
   /**
-   * Etag of this resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * The ID that YouTube uses to uniquely identify the channel section.
-   *
    * @var string
    */
   public $id;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "youtube#channelSection".
-   *
    * @var string
    */
   public $kind;
@@ -48,10 +41,7 @@ class ChannelSection extends \Google\Model
   protected $targetingDataType = '';
 
   /**
-   * The contentDetails object contains details about the channel section
-   * content, such as a list of playlists or channels featured in the section.
-   *
-   * @param ChannelSectionContentDetails $contentDetails
+   * @param ChannelSectionContentDetails
    */
   public function setContentDetails(ChannelSectionContentDetails $contentDetails)
   {
@@ -65,9 +55,7 @@ class ChannelSection extends \Google\Model
     return $this->contentDetails;
   }
   /**
-   * Etag of this resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -81,9 +69,7 @@ class ChannelSection extends \Google\Model
     return $this->etag;
   }
   /**
-   * The ID that YouTube uses to uniquely identify the channel section.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -97,10 +83,7 @@ class ChannelSection extends \Google\Model
     return $this->id;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "youtube#channelSection".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -114,17 +97,13 @@ class ChannelSection extends \Google\Model
     return $this->kind;
   }
   /**
-   * Localizations for different languages
-   *
-   * @deprecated
-   * @param ChannelSectionLocalization[] $localizations
+   * @param ChannelSectionLocalization[]
    */
   public function setLocalizations($localizations)
   {
     $this->localizations = $localizations;
   }
   /**
-   * @deprecated
    * @return ChannelSectionLocalization[]
    */
   public function getLocalizations()
@@ -132,10 +111,7 @@ class ChannelSection extends \Google\Model
     return $this->localizations;
   }
   /**
-   * The snippet object contains basic details about the channel section, such
-   * as its type, style and title.
-   *
-   * @param ChannelSectionSnippet $snippet
+   * @param ChannelSectionSnippet
    */
   public function setSnippet(ChannelSectionSnippet $snippet)
   {
@@ -149,18 +125,13 @@ class ChannelSection extends \Google\Model
     return $this->snippet;
   }
   /**
-   * The targeting object contains basic targeting settings about the channel
-   * section.
-   *
-   * @deprecated
-   * @param ChannelSectionTargeting $targeting
+   * @param ChannelSectionTargeting
    */
   public function setTargeting(ChannelSectionTargeting $targeting)
   {
     $this->targeting = $targeting;
   }
   /**
-   * @deprecated
    * @return ChannelSectionTargeting
    */
   public function getTargeting()

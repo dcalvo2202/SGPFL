@@ -20,26 +20,16 @@ namespace Google\Service\Dataform;
 class SshAuthenticationConfig extends \Google\Model
 {
   /**
-   * Required. Content of a public SSH key to verify an identity of a remote Git
-   * host.
-   *
    * @var string
    */
   public $hostPublicKey;
   /**
-   * Required. The name of the Secret Manager secret version to use as a ssh
-   * private key for Git operations. Must be in the format
-   * `projects/secrets/versions`.
-   *
    * @var string
    */
   public $userPrivateKeySecretVersion;
 
   /**
-   * Required. Content of a public SSH key to verify an identity of a remote Git
-   * host.
-   *
-   * @param string $hostPublicKey
+   * @param string
    */
   public function setHostPublicKey($hostPublicKey)
   {
@@ -53,11 +43,7 @@ class SshAuthenticationConfig extends \Google\Model
     return $this->hostPublicKey;
   }
   /**
-   * Required. The name of the Secret Manager secret version to use as a ssh
-   * private key for Git operations. Must be in the format
-   * `projects/secrets/versions`.
-   *
-   * @param string $userPrivateKeySecretVersion
+   * @param string
    */
   public function setUserPrivateKeySecretVersion($userPrivateKeySecretVersion)
   {

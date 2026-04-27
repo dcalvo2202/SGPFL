@@ -20,26 +20,16 @@ namespace Google\Service\FirebaseAppHosting;
 class Redirect extends \Google\Model
 {
   /**
-   * Optional. The status code to use in a redirect response. Must be a valid
-   * HTTP 3XX status code. Defaults to 302 if not present.
-   *
    * @var string
    */
   public $status;
   /**
-   * Required. The URI of the redirect's intended destination. This URI will be
-   * prepended to the original request path. URI without a scheme are assumed to
-   * be HTTPS.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * Optional. The status code to use in a redirect response. Must be a valid
-   * HTTP 3XX status code. Defaults to 302 if not present.
-   *
-   * @param string $status
+   * @param string
    */
   public function setStatus($status)
   {
@@ -53,11 +43,7 @@ class Redirect extends \Google\Model
     return $this->status;
   }
   /**
-   * Required. The URI of the redirect's intended destination. This URI will be
-   * prepended to the original request path. URI without a scheme are assumed to
-   * be HTTPS.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

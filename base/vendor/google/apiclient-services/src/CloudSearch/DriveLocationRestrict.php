@@ -19,23 +19,20 @@ namespace Google\Service\CloudSearch;
 
 class DriveLocationRestrict extends \Google\Model
 {
-  public const TYPE_UNSPECIFIED = 'UNSPECIFIED';
-  public const TYPE_TRASHED = 'TRASHED';
-  public const TYPE_STARRED = 'STARRED';
   /**
    * @var string
    */
   public $type;
 
   /**
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

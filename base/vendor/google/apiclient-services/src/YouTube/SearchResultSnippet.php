@@ -19,68 +19,35 @@ namespace Google\Service\YouTube;
 
 class SearchResultSnippet extends \Google\Model
 {
-  public const LIVE_BROADCAST_CONTENT_none = 'none';
   /**
-   * The live broadcast is upcoming.
-   */
-  public const LIVE_BROADCAST_CONTENT_upcoming = 'upcoming';
-  /**
-   * The live broadcast is active.
-   */
-  public const LIVE_BROADCAST_CONTENT_live = 'live';
-  /**
-   * The live broadcast has been completed.
-   */
-  public const LIVE_BROADCAST_CONTENT_completed = 'completed';
-  /**
-   * The value that YouTube uses to uniquely identify the channel that published
-   * the resource that the search result identifies.
-   *
    * @var string
    */
   public $channelId;
   /**
-   * The title of the channel that published the resource that the search result
-   * identifies.
-   *
    * @var string
    */
   public $channelTitle;
   /**
-   * A description of the search result.
-   *
    * @var string
    */
   public $description;
   /**
-   * It indicates if the resource (video or channel) has upcoming/active live
-   * broadcast content. Or it's "none" if there is not any upcoming/active live
-   * broadcasts.
-   *
    * @var string
    */
   public $liveBroadcastContent;
   /**
-   * The creation date and time of the resource that the search result
-   * identifies.
-   *
    * @var string
    */
   public $publishedAt;
   protected $thumbnailsType = ThumbnailDetails::class;
   protected $thumbnailsDataType = '';
   /**
-   * The title of the search result.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * The value that YouTube uses to uniquely identify the channel that published
-   * the resource that the search result identifies.
-   *
-   * @param string $channelId
+   * @param string
    */
   public function setChannelId($channelId)
   {
@@ -94,10 +61,7 @@ class SearchResultSnippet extends \Google\Model
     return $this->channelId;
   }
   /**
-   * The title of the channel that published the resource that the search result
-   * identifies.
-   *
-   * @param string $channelTitle
+   * @param string
    */
   public function setChannelTitle($channelTitle)
   {
@@ -111,9 +75,7 @@ class SearchResultSnippet extends \Google\Model
     return $this->channelTitle;
   }
   /**
-   * A description of the search result.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -127,30 +89,21 @@ class SearchResultSnippet extends \Google\Model
     return $this->description;
   }
   /**
-   * It indicates if the resource (video or channel) has upcoming/active live
-   * broadcast content. Or it's "none" if there is not any upcoming/active live
-   * broadcasts.
-   *
-   * Accepted values: none, upcoming, live, completed
-   *
-   * @param self::LIVE_BROADCAST_CONTENT_* $liveBroadcastContent
+   * @param string
    */
   public function setLiveBroadcastContent($liveBroadcastContent)
   {
     $this->liveBroadcastContent = $liveBroadcastContent;
   }
   /**
-   * @return self::LIVE_BROADCAST_CONTENT_*
+   * @return string
    */
   public function getLiveBroadcastContent()
   {
     return $this->liveBroadcastContent;
   }
   /**
-   * The creation date and time of the resource that the search result
-   * identifies.
-   *
-   * @param string $publishedAt
+   * @param string
    */
   public function setPublishedAt($publishedAt)
   {
@@ -164,11 +117,7 @@ class SearchResultSnippet extends \Google\Model
     return $this->publishedAt;
   }
   /**
-   * A map of thumbnail images associated with the search result. For each
-   * object in the map, the key is the name of the thumbnail image, and the
-   * value is an object that contains other information about the thumbnail.
-   *
-   * @param ThumbnailDetails $thumbnails
+   * @param ThumbnailDetails
    */
   public function setThumbnails(ThumbnailDetails $thumbnails)
   {
@@ -182,9 +131,7 @@ class SearchResultSnippet extends \Google\Model
     return $this->thumbnails;
   }
   /**
-   * The title of the search result.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

@@ -20,34 +20,20 @@ namespace Google\Service\Dataflow;
 class KeyRangeDataDiskAssignment extends \Google\Model
 {
   /**
-   * The name of the data disk where data for this range is stored. This name is
-   * local to the Google Cloud Platform project and uniquely identifies the disk
-   * within that project, for example
-   * "myproject-1014-104817-4c2-harness-0-disk-1".
-   *
    * @var string
    */
   public $dataDisk;
   /**
-   * The end (exclusive) of the key range.
-   *
    * @var string
    */
   public $end;
   /**
-   * The start (inclusive) of the key range.
-   *
    * @var string
    */
   public $start;
 
   /**
-   * The name of the data disk where data for this range is stored. This name is
-   * local to the Google Cloud Platform project and uniquely identifies the disk
-   * within that project, for example
-   * "myproject-1014-104817-4c2-harness-0-disk-1".
-   *
-   * @param string $dataDisk
+   * @param string
    */
   public function setDataDisk($dataDisk)
   {
@@ -61,9 +47,7 @@ class KeyRangeDataDiskAssignment extends \Google\Model
     return $this->dataDisk;
   }
   /**
-   * The end (exclusive) of the key range.
-   *
-   * @param string $end
+   * @param string
    */
   public function setEnd($end)
   {
@@ -77,9 +61,7 @@ class KeyRangeDataDiskAssignment extends \Google\Model
     return $this->end;
   }
   /**
-   * The start (inclusive) of the key range.
-   *
-   * @param string $start
+   * @param string
    */
   public function setStart($start)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\Container;
 class ServiceExternalIPsConfig extends \Google\Model
 {
   /**
-   * Whether Services with ExternalIPs field are allowed or not.
-   *
    * @var bool
    */
   public $enabled;
 
   /**
-   * Whether Services with ExternalIPs field are allowed or not.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {

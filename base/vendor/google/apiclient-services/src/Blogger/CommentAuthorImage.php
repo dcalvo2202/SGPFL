@@ -20,16 +20,12 @@ namespace Google\Service\Blogger;
 class CommentAuthorImage extends \Google\Model
 {
   /**
-   * The creator's avatar URL.
-   *
    * @var string
    */
   public $url;
 
   /**
-   * The creator's avatar URL.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

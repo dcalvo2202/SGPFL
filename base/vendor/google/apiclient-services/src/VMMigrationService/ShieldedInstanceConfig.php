@@ -20,49 +20,20 @@ namespace Google\Service\VMMigrationService;
 class ShieldedInstanceConfig extends \Google\Model
 {
   /**
-   * No explicit value is selected. Will use the configuration of the source (if
-   * exists, otherwise the default will be false).
-   */
-  public const SECURE_BOOT_SECURE_BOOT_UNSPECIFIED = 'SECURE_BOOT_UNSPECIFIED';
-  /**
-   * Use secure boot. This can be set to true only if the image boot option is
-   * EFI.
-   */
-  public const SECURE_BOOT_TRUE = 'TRUE';
-  /**
-   * Do not use secure boot.
-   */
-  public const SECURE_BOOT_FALSE = 'FALSE';
-  /**
-   * Optional. Defines whether the instance created by the machine image has
-   * integrity monitoring enabled. This can be set to true only if the image
-   * boot option is EFI, and vTPM is enabled.
-   *
    * @var bool
    */
   public $enableIntegrityMonitoring;
   /**
-   * Optional. Defines whether the instance created by the machine image has
-   * vTPM enabled. This can be set to true only if the image boot option is EFI.
-   *
    * @var bool
    */
   public $enableVtpm;
   /**
-   * Optional. Defines whether the instance created by the machine image has
-   * Secure Boot enabled. This can be set to true only if the image boot option
-   * is EFI.
-   *
    * @var string
    */
   public $secureBoot;
 
   /**
-   * Optional. Defines whether the instance created by the machine image has
-   * integrity monitoring enabled. This can be set to true only if the image
-   * boot option is EFI, and vTPM is enabled.
-   *
-   * @param bool $enableIntegrityMonitoring
+   * @param bool
    */
   public function setEnableIntegrityMonitoring($enableIntegrityMonitoring)
   {
@@ -76,10 +47,7 @@ class ShieldedInstanceConfig extends \Google\Model
     return $this->enableIntegrityMonitoring;
   }
   /**
-   * Optional. Defines whether the instance created by the machine image has
-   * vTPM enabled. This can be set to true only if the image boot option is EFI.
-   *
-   * @param bool $enableVtpm
+   * @param bool
    */
   public function setEnableVtpm($enableVtpm)
   {
@@ -93,20 +61,14 @@ class ShieldedInstanceConfig extends \Google\Model
     return $this->enableVtpm;
   }
   /**
-   * Optional. Defines whether the instance created by the machine image has
-   * Secure Boot enabled. This can be set to true only if the image boot option
-   * is EFI.
-   *
-   * Accepted values: SECURE_BOOT_UNSPECIFIED, TRUE, FALSE
-   *
-   * @param self::SECURE_BOOT_* $secureBoot
+   * @param string
    */
   public function setSecureBoot($secureBoot)
   {
     $this->secureBoot = $secureBoot;
   }
   /**
-   * @return self::SECURE_BOOT_*
+   * @return string
    */
   public function getSecureBoot()
   {

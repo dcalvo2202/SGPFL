@@ -23,17 +23,12 @@ class ListModelsResponse extends \Google\Collection
   protected $modelsType = Model::class;
   protected $modelsDataType = 'array';
   /**
-   * A token to request the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Models in the requested dataset. Only the following fields are populated:
-   * model_reference, model_type, creation_time, last_modified_time and labels.
-   *
-   * @param Model[] $models
+   * @param Model[]
    */
   public function setModels($models)
   {
@@ -47,9 +42,7 @@ class ListModelsResponse extends \Google\Collection
     return $this->models;
   }
   /**
-   * A token to request the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

@@ -20,96 +20,48 @@ namespace Google\Service\NetworkSecurity;
 class FirewallEndpointAssociation extends \Google\Model
 {
   /**
-   * Not set.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Being created.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * Active and ready for traffic.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * Being deleted.
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * Down or in an error state.
-   */
-  public const STATE_INACTIVE = 'INACTIVE';
-  /**
-   * The project that housed the association has been deleted.
-   */
-  public const STATE_ORPHAN = 'ORPHAN';
-  /**
-   * Output only. Create time stamp
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. Whether the association is disabled. True indicates that traffic
-   * won't be intercepted
-   *
    * @var bool
    */
   public $disabled;
   /**
-   * Required. The URL of the FirewallEndpoint that is being associated.
-   *
    * @var string
    */
   public $firewallEndpoint;
   /**
-   * Optional. Labels as key value pairs
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Immutable. Identifier. name of resource
-   *
    * @var string
    */
   public $name;
   /**
-   * Required. The URL of the network that is being associated.
-   *
    * @var string
    */
   public $network;
   /**
-   * Output only. Whether reconciling is in progress, recommended per
-   * https://google.aip.dev/128.
-   *
    * @var bool
    */
   public $reconciling;
   /**
-   * Output only. Current state of the association.
-   *
    * @var string
    */
   public $state;
   /**
-   * Optional. The URL of the TlsInspectionPolicy that is being associated.
-   *
    * @var string
    */
   public $tlsInspectionPolicy;
   /**
-   * Output only. Update time stamp
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. Create time stamp
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -123,10 +75,7 @@ class FirewallEndpointAssociation extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Optional. Whether the association is disabled. True indicates that traffic
-   * won't be intercepted
-   *
-   * @param bool $disabled
+   * @param bool
    */
   public function setDisabled($disabled)
   {
@@ -140,9 +89,7 @@ class FirewallEndpointAssociation extends \Google\Model
     return $this->disabled;
   }
   /**
-   * Required. The URL of the FirewallEndpoint that is being associated.
-   *
-   * @param string $firewallEndpoint
+   * @param string
    */
   public function setFirewallEndpoint($firewallEndpoint)
   {
@@ -156,9 +103,7 @@ class FirewallEndpointAssociation extends \Google\Model
     return $this->firewallEndpoint;
   }
   /**
-   * Optional. Labels as key value pairs
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -172,9 +117,7 @@ class FirewallEndpointAssociation extends \Google\Model
     return $this->labels;
   }
   /**
-   * Immutable. Identifier. name of resource
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -188,9 +131,7 @@ class FirewallEndpointAssociation extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. The URL of the network that is being associated.
-   *
-   * @param string $network
+   * @param string
    */
   public function setNetwork($network)
   {
@@ -204,10 +145,7 @@ class FirewallEndpointAssociation extends \Google\Model
     return $this->network;
   }
   /**
-   * Output only. Whether reconciling is in progress, recommended per
-   * https://google.aip.dev/128.
-   *
-   * @param bool $reconciling
+   * @param bool
    */
   public function setReconciling($reconciling)
   {
@@ -221,28 +159,21 @@ class FirewallEndpointAssociation extends \Google\Model
     return $this->reconciling;
   }
   /**
-   * Output only. Current state of the association.
-   *
-   * Accepted values: STATE_UNSPECIFIED, CREATING, ACTIVE, DELETING, INACTIVE,
-   * ORPHAN
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Optional. The URL of the TlsInspectionPolicy that is being associated.
-   *
-   * @param string $tlsInspectionPolicy
+   * @param string
    */
   public function setTlsInspectionPolicy($tlsInspectionPolicy)
   {
@@ -256,9 +187,7 @@ class FirewallEndpointAssociation extends \Google\Model
     return $this->tlsInspectionPolicy;
   }
   /**
-   * Output only. Update time stamp
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

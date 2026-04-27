@@ -25,10 +25,7 @@ class DateRange extends \Google\Model
   protected $startDateDataType = '';
 
   /**
-   * End date of the date range, inclusive. Must be greater than or equal to the
-   * start date.
-   *
-   * @param Date $endDate
+   * @param Date
    */
   public function setEndDate(Date $endDate)
   {
@@ -42,10 +39,7 @@ class DateRange extends \Google\Model
     return $this->endDate;
   }
   /**
-   * Start date of the date range, inclusive. Must be less than or equal to the
-   * end date.
-   *
-   * @param Date $startDate
+   * @param Date
    */
   public function setStartDate(Date $startDate)
   {

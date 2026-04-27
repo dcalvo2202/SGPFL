@@ -20,18 +20,12 @@ namespace Google\Service\Bigquery;
 class DataPolicyOption extends \Google\Model
 {
   /**
-   * Data policy resource name in the form of
-   * projects/project_id/locations/location_id/dataPolicies/data_policy_id.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Data policy resource name in the form of
-   * projects/project_id/locations/location_id/dataPolicies/data_policy_id.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

@@ -23,18 +23,12 @@ class GoogleCloudBeyondcorpAppconnectionsV1ResolveAppConnectionsResponseAppConne
   protected $appConnectionType = GoogleCloudBeyondcorpAppconnectionsV1AppConnection::class;
   protected $appConnectionDataType = '';
   /**
-   * If type=GCP_REGIONAL_MIG, contains most recent VM instances, like `https://
-   * www.googleapis.com/compute/v1/projects/{project_id}/zones/{zone_id}/instanc
-   * es/{instance_id}`.
-   *
    * @var string[]
    */
   public $recentMigVms;
 
   /**
-   * A BeyondCorp AppConnection in the project.
-   *
-   * @param GoogleCloudBeyondcorpAppconnectionsV1AppConnection $appConnection
+   * @param GoogleCloudBeyondcorpAppconnectionsV1AppConnection
    */
   public function setAppConnection(GoogleCloudBeyondcorpAppconnectionsV1AppConnection $appConnection)
   {
@@ -48,11 +42,7 @@ class GoogleCloudBeyondcorpAppconnectionsV1ResolveAppConnectionsResponseAppConne
     return $this->appConnection;
   }
   /**
-   * If type=GCP_REGIONAL_MIG, contains most recent VM instances, like `https://
-   * www.googleapis.com/compute/v1/projects/{project_id}/zones/{zone_id}/instanc
-   * es/{instance_id}`.
-   *
-   * @param string[] $recentMigVms
+   * @param string[]
    */
   public function setRecentMigVms($recentMigVms)
   {

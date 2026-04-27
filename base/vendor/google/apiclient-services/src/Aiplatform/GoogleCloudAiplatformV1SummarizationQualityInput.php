@@ -25,9 +25,7 @@ class GoogleCloudAiplatformV1SummarizationQualityInput extends \Google\Model
   protected $metricSpecDataType = '';
 
   /**
-   * Required. Summarization quality instance.
-   *
-   * @param GoogleCloudAiplatformV1SummarizationQualityInstance $instance
+   * @param GoogleCloudAiplatformV1SummarizationQualityInstance
    */
   public function setInstance(GoogleCloudAiplatformV1SummarizationQualityInstance $instance)
   {
@@ -41,9 +39,7 @@ class GoogleCloudAiplatformV1SummarizationQualityInput extends \Google\Model
     return $this->instance;
   }
   /**
-   * Required. Spec for summarization quality score metric.
-   *
-   * @param GoogleCloudAiplatformV1SummarizationQualitySpec $metricSpec
+   * @param GoogleCloudAiplatformV1SummarizationQualitySpec
    */
   public function setMetricSpec(GoogleCloudAiplatformV1SummarizationQualitySpec $metricSpec)
   {

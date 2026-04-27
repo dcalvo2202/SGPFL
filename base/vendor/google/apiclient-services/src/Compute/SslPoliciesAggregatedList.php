@@ -25,39 +25,24 @@ class SslPoliciesAggregatedList extends \Google\Collection
    */
   public $etag;
   /**
-   * [Output Only] Unique identifier for the resource; defined by the server.
-   *
    * @var string
    */
   public $id;
   protected $itemsType = SslPoliciesScopedList::class;
   protected $itemsDataType = 'map';
   /**
-   * Output only. [Output Only] Type of resource.
-   * Alwayscompute#sslPolicyAggregatedList for lists of SSL Policies.
-   *
    * @var string
    */
   public $kind;
   /**
-   * [Output Only] This token allows you to get the next page of results for
-   * list requests. If the number of results is larger thanmaxResults, use the
-   * nextPageToken as a value for the query parameter pageToken in the next list
-   * request. Subsequent list requests will have their own nextPageToken to
-   * continue paging through the results.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Output only. [Output Only] Server-defined URL for this resource.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * Output only. [Output Only] Unreachable resources.
-   *
    * @var string[]
    */
   public $unreachables;
@@ -65,7 +50,7 @@ class SslPoliciesAggregatedList extends \Google\Collection
   protected $warningDataType = '';
 
   /**
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -79,9 +64,7 @@ class SslPoliciesAggregatedList extends \Google\Collection
     return $this->etag;
   }
   /**
-   * [Output Only] Unique identifier for the resource; defined by the server.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -95,9 +78,7 @@ class SslPoliciesAggregatedList extends \Google\Collection
     return $this->id;
   }
   /**
-   * A list of SslPoliciesScopedList resources.
-   *
-   * @param SslPoliciesScopedList[] $items
+   * @param SslPoliciesScopedList[]
    */
   public function setItems($items)
   {
@@ -111,10 +92,7 @@ class SslPoliciesAggregatedList extends \Google\Collection
     return $this->items;
   }
   /**
-   * Output only. [Output Only] Type of resource.
-   * Alwayscompute#sslPolicyAggregatedList for lists of SSL Policies.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -128,13 +106,7 @@ class SslPoliciesAggregatedList extends \Google\Collection
     return $this->kind;
   }
   /**
-   * [Output Only] This token allows you to get the next page of results for
-   * list requests. If the number of results is larger thanmaxResults, use the
-   * nextPageToken as a value for the query parameter pageToken in the next list
-   * request. Subsequent list requests will have their own nextPageToken to
-   * continue paging through the results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -148,9 +120,7 @@ class SslPoliciesAggregatedList extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Output only. [Output Only] Server-defined URL for this resource.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -164,9 +134,7 @@ class SslPoliciesAggregatedList extends \Google\Collection
     return $this->selfLink;
   }
   /**
-   * Output only. [Output Only] Unreachable resources.
-   *
-   * @param string[] $unreachables
+   * @param string[]
    */
   public function setUnreachables($unreachables)
   {
@@ -180,9 +148,7 @@ class SslPoliciesAggregatedList extends \Google\Collection
     return $this->unreachables;
   }
   /**
-   * [Output Only] Informational warning message.
-   *
-   * @param SslPoliciesAggregatedListWarning $warning
+   * @param SslPoliciesAggregatedListWarning
    */
   public function setWarning(SslPoliciesAggregatedListWarning $warning)
   {

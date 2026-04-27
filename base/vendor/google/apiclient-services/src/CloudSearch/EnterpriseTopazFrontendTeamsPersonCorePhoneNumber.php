@@ -19,13 +19,7 @@ namespace Google\Service\CloudSearch;
 
 class EnterpriseTopazFrontendTeamsPersonCorePhoneNumber extends \Google\Model
 {
-  public const TYPE_UNKNOWN = 'UNKNOWN';
-  public const TYPE_MOBILE = 'MOBILE';
-  public const TYPE_OFFICE = 'OFFICE';
-  public const TYPE_OTHER = 'OTHER';
   /**
-   * Phone number in no particular format (as comes from the Focus profile).
-   *
    * @var string
    */
   public $phoneNumber;
@@ -37,9 +31,7 @@ class EnterpriseTopazFrontendTeamsPersonCorePhoneNumber extends \Google\Model
   public $type;
 
   /**
-   * Phone number in no particular format (as comes from the Focus profile).
-   *
-   * @param string $phoneNumber
+   * @param string
    */
   public function setPhoneNumber($phoneNumber)
   {
@@ -53,9 +45,7 @@ class EnterpriseTopazFrontendTeamsPersonCorePhoneNumber extends \Google\Model
     return $this->phoneNumber;
   }
   /**
-   * Phone number URL
-   *
-   * @param SafeUrlProto $phoneUrl
+   * @param SafeUrlProto
    */
   public function setPhoneUrl(SafeUrlProto $phoneUrl)
   {
@@ -69,14 +59,14 @@ class EnterpriseTopazFrontendTeamsPersonCorePhoneNumber extends \Google\Model
     return $this->phoneUrl;
   }
   /**
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

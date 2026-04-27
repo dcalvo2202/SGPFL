@@ -20,69 +20,42 @@ namespace Google\Service\Fitness;
 class Session extends \Google\Model
 {
   /**
-   * Session active time. While start_time_millis and end_time_millis define the
-   * full session time, the active time can be shorter and specified by
-   * active_time_millis. If the inactive time during the session is known, it
-   * should also be inserted via a com.google.activity.segment data point with a
-   * STILL activity value
-   *
    * @var string
    */
   public $activeTimeMillis;
   /**
-   * The type of activity this session represents.
-   *
    * @var int
    */
   public $activityType;
   protected $applicationType = Application::class;
   protected $applicationDataType = '';
   /**
-   * A description for this session.
-   *
    * @var string
    */
   public $description;
   /**
-   * An end time, in milliseconds since epoch, inclusive.
-   *
    * @var string
    */
   public $endTimeMillis;
   /**
-   * A client-generated identifier that is unique across all sessions owned by
-   * this particular user.
-   *
    * @var string
    */
   public $id;
   /**
-   * A timestamp that indicates when the session was last modified.
-   *
    * @var string
    */
   public $modifiedTimeMillis;
   /**
-   * A human readable name of the session.
-   *
    * @var string
    */
   public $name;
   /**
-   * A start time, in milliseconds since epoch, inclusive.
-   *
    * @var string
    */
   public $startTimeMillis;
 
   /**
-   * Session active time. While start_time_millis and end_time_millis define the
-   * full session time, the active time can be shorter and specified by
-   * active_time_millis. If the inactive time during the session is known, it
-   * should also be inserted via a com.google.activity.segment data point with a
-   * STILL activity value
-   *
-   * @param string $activeTimeMillis
+   * @param string
    */
   public function setActiveTimeMillis($activeTimeMillis)
   {
@@ -96,9 +69,7 @@ class Session extends \Google\Model
     return $this->activeTimeMillis;
   }
   /**
-   * The type of activity this session represents.
-   *
-   * @param int $activityType
+   * @param int
    */
   public function setActivityType($activityType)
   {
@@ -112,9 +83,7 @@ class Session extends \Google\Model
     return $this->activityType;
   }
   /**
-   * The application that created the session.
-   *
-   * @param Application $application
+   * @param Application
    */
   public function setApplication(Application $application)
   {
@@ -128,9 +97,7 @@ class Session extends \Google\Model
     return $this->application;
   }
   /**
-   * A description for this session.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -144,9 +111,7 @@ class Session extends \Google\Model
     return $this->description;
   }
   /**
-   * An end time, in milliseconds since epoch, inclusive.
-   *
-   * @param string $endTimeMillis
+   * @param string
    */
   public function setEndTimeMillis($endTimeMillis)
   {
@@ -160,10 +125,7 @@ class Session extends \Google\Model
     return $this->endTimeMillis;
   }
   /**
-   * A client-generated identifier that is unique across all sessions owned by
-   * this particular user.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -177,9 +139,7 @@ class Session extends \Google\Model
     return $this->id;
   }
   /**
-   * A timestamp that indicates when the session was last modified.
-   *
-   * @param string $modifiedTimeMillis
+   * @param string
    */
   public function setModifiedTimeMillis($modifiedTimeMillis)
   {
@@ -193,9 +153,7 @@ class Session extends \Google\Model
     return $this->modifiedTimeMillis;
   }
   /**
-   * A human readable name of the session.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -209,9 +167,7 @@ class Session extends \Google\Model
     return $this->name;
   }
   /**
-   * A start time, in milliseconds since epoch, inclusive.
-   *
-   * @param string $startTimeMillis
+   * @param string
    */
   public function setStartTimeMillis($startTimeMillis)
   {

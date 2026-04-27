@@ -20,27 +20,16 @@ namespace Google\Service\ServiceNetworking;
 class PeeredDnsDomain extends \Google\Model
 {
   /**
-   * The DNS domain name suffix e.g. `example.com.`. Cloud DNS requires that a
-   * DNS suffix ends with a trailing dot.
-   *
    * @var string
    */
   public $dnsSuffix;
   /**
-   * Required. User assigned name for this resource. Must be unique within the
-   * consumer network. The name must be 1-63 characters long, must begin with a
-   * letter, end with a letter or digit, and only contain lowercase letters,
-   * digits or dashes.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The DNS domain name suffix e.g. `example.com.`. Cloud DNS requires that a
-   * DNS suffix ends with a trailing dot.
-   *
-   * @param string $dnsSuffix
+   * @param string
    */
   public function setDnsSuffix($dnsSuffix)
   {
@@ -54,12 +43,7 @@ class PeeredDnsDomain extends \Google\Model
     return $this->dnsSuffix;
   }
   /**
-   * Required. User assigned name for this resource. Must be unique within the
-   * consumer network. The name must be 1-63 characters long, must begin with a
-   * letter, end with a letter or digit, and only contain lowercase letters,
-   * digits or dashes.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

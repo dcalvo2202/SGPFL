@@ -21,16 +21,12 @@ class DayOfWeekList extends \Google\Collection
 {
   protected $collection_key = 'daysOfWeek';
   /**
-   * Optional. A list of days of week.
-   *
    * @var string[]
    */
   public $daysOfWeek;
 
   /**
-   * Optional. A list of days of week.
-   *
-   * @param string[] $daysOfWeek
+   * @param string[]
    */
   public function setDaysOfWeek($daysOfWeek)
   {

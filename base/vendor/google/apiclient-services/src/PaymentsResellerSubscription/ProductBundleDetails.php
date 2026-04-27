@@ -19,58 +19,37 @@ namespace Google\Service\PaymentsResellerSubscription;
 
 class ProductBundleDetails extends \Google\Collection
 {
-  /**
-   * Unspecified. It's reserved as an unexpected value, should not be used.
-   */
-  public const ENTITLEMENT_MODE_ENTITLEMENT_MODE_UNSPECIFIED = 'ENTITLEMENT_MODE_UNSPECIFIED';
-  /**
-   * All the bundle elements must be fully activated in a single request.
-   */
-  public const ENTITLEMENT_MODE_ENTITLEMENT_MODE_FULL = 'ENTITLEMENT_MODE_FULL';
-  /**
-   * The bundle elements could be incrementally activated.
-   */
-  public const ENTITLEMENT_MODE_ENTITLEMENT_MODE_INCREMENTAL = 'ENTITLEMENT_MODE_INCREMENTAL';
   protected $collection_key = 'bundleElements';
-  protected $bundleElementsType = ProductBundleDetailsBundleElement::class;
+  protected $bundleElementsType = GoogleCloudPaymentsResellerSubscriptionV1ProductBundleDetailsBundleElement::class;
   protected $bundleElementsDataType = 'array';
   /**
-   * The entitlement mode of the bundle product.
-   *
    * @var string
    */
   public $entitlementMode;
 
   /**
-   * The individual products that are included in the bundle.
-   *
-   * @param ProductBundleDetailsBundleElement[] $bundleElements
+   * @param GoogleCloudPaymentsResellerSubscriptionV1ProductBundleDetailsBundleElement[]
    */
   public function setBundleElements($bundleElements)
   {
     $this->bundleElements = $bundleElements;
   }
   /**
-   * @return ProductBundleDetailsBundleElement[]
+   * @return GoogleCloudPaymentsResellerSubscriptionV1ProductBundleDetailsBundleElement[]
    */
   public function getBundleElements()
   {
     return $this->bundleElements;
   }
   /**
-   * The entitlement mode of the bundle product.
-   *
-   * Accepted values: ENTITLEMENT_MODE_UNSPECIFIED, ENTITLEMENT_MODE_FULL,
-   * ENTITLEMENT_MODE_INCREMENTAL
-   *
-   * @param self::ENTITLEMENT_MODE_* $entitlementMode
+   * @param string
    */
   public function setEntitlementMode($entitlementMode)
   {
     $this->entitlementMode = $entitlementMode;
   }
   /**
-   * @return self::ENTITLEMENT_MODE_*
+   * @return string
    */
   public function getEntitlementMode()
   {

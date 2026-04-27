@@ -20,28 +20,20 @@ namespace Google\Service\ShoppingContent;
 class CollectionFeaturedProduct extends \Google\Model
 {
   /**
-   * The unique identifier for the product item.
-   *
    * @var string
    */
   public $offerId;
   /**
-   * Required. X-coordinate of the product callout on the Shoppable Image.
-   *
    * @var float
    */
   public $x;
   /**
-   * Required. Y-coordinate of the product callout on the Shoppable Image.
-   *
    * @var float
    */
   public $y;
 
   /**
-   * The unique identifier for the product item.
-   *
-   * @param string $offerId
+   * @param string
    */
   public function setOfferId($offerId)
   {
@@ -55,9 +47,7 @@ class CollectionFeaturedProduct extends \Google\Model
     return $this->offerId;
   }
   /**
-   * Required. X-coordinate of the product callout on the Shoppable Image.
-   *
-   * @param float $x
+   * @param float
    */
   public function setX($x)
   {
@@ -71,9 +61,7 @@ class CollectionFeaturedProduct extends \Google\Model
     return $this->x;
   }
   /**
-   * Required. Y-coordinate of the product callout on the Shoppable Image.
-   *
-   * @param float $y
+   * @param float
    */
   public function setY($y)
   {

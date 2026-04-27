@@ -21,22 +21,16 @@ class AllowedDomainsSettings extends \Google\Collection
 {
   protected $collection_key = 'domains';
   /**
-   * Optional. List of trusted domains.
-   *
    * @var string[]
    */
   public $domains;
   /**
-   * Optional. Configuration for customers to opt in for the feature.
-   *
    * @var bool
    */
   public $enable;
 
   /**
-   * Optional. List of trusted domains.
-   *
-   * @param string[] $domains
+   * @param string[]
    */
   public function setDomains($domains)
   {
@@ -50,9 +44,7 @@ class AllowedDomainsSettings extends \Google\Collection
     return $this->domains;
   }
   /**
-   * Optional. Configuration for customers to opt in for the feature.
-   *
-   * @param bool $enable
+   * @param bool
    */
   public function setEnable($enable)
   {

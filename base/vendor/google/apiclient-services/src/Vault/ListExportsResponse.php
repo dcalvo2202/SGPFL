@@ -23,16 +23,12 @@ class ListExportsResponse extends \Google\Collection
   protected $exportsType = Export::class;
   protected $exportsDataType = 'array';
   /**
-   * Page token to retrieve the next page of results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of exports.
-   *
-   * @param Export[] $exports
+   * @param Export[]
    */
   public function setExports($exports)
   {
@@ -46,9 +42,7 @@ class ListExportsResponse extends \Google\Collection
     return $this->exports;
   }
   /**
-   * Page token to retrieve the next page of results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

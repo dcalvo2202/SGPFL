@@ -20,42 +20,20 @@ namespace Google\Service\SQLAdmin;
 class ReplicationCluster extends \Google\Model
 {
   /**
-   * Output only. Read-only field that indicates whether the replica is a DR
-   * replica. This field is not set if the instance is a primary instance.
-   *
    * @var bool
    */
   public $drReplica;
   /**
-   * Optional. If the instance is a primary instance, then this field identifies
-   * the disaster recovery (DR) replica. A DR replica is an optional
-   * configuration for Enterprise Plus edition instances. If the instance is a
-   * read replica, then the field is not set. Set this field to a replica name
-   * to designate a DR replica for a primary instance. Remove the replica name
-   * to remove the DR replica designation.
-   *
    * @var string
    */
   public $failoverDrReplicaName;
   /**
-   * Output only. If set, this field indicates this instance has a private
-   * service access (PSA) DNS endpoint that is pointing to the primary instance
-   * of the cluster. If this instance is the primary, then the DNS endpoint
-   * points to this instance. After a switchover or replica failover operation,
-   * this DNS endpoint points to the promoted instance. This is a read-only
-   * field, returned to the user as information. This field can exist even if a
-   * standalone instance doesn't have a DR replica yet or the DR replica is
-   * deleted.
-   *
    * @var string
    */
   public $psaWriteEndpoint;
 
   /**
-   * Output only. Read-only field that indicates whether the replica is a DR
-   * replica. This field is not set if the instance is a primary instance.
-   *
-   * @param bool $drReplica
+   * @param bool
    */
   public function setDrReplica($drReplica)
   {
@@ -69,14 +47,7 @@ class ReplicationCluster extends \Google\Model
     return $this->drReplica;
   }
   /**
-   * Optional. If the instance is a primary instance, then this field identifies
-   * the disaster recovery (DR) replica. A DR replica is an optional
-   * configuration for Enterprise Plus edition instances. If the instance is a
-   * read replica, then the field is not set. Set this field to a replica name
-   * to designate a DR replica for a primary instance. Remove the replica name
-   * to remove the DR replica designation.
-   *
-   * @param string $failoverDrReplicaName
+   * @param string
    */
   public function setFailoverDrReplicaName($failoverDrReplicaName)
   {
@@ -90,16 +61,7 @@ class ReplicationCluster extends \Google\Model
     return $this->failoverDrReplicaName;
   }
   /**
-   * Output only. If set, this field indicates this instance has a private
-   * service access (PSA) DNS endpoint that is pointing to the primary instance
-   * of the cluster. If this instance is the primary, then the DNS endpoint
-   * points to this instance. After a switchover or replica failover operation,
-   * this DNS endpoint points to the promoted instance. This is a read-only
-   * field, returned to the user as information. This field can exist even if a
-   * standalone instance doesn't have a DR replica yet or the DR replica is
-   * deleted.
-   *
-   * @param string $psaWriteEndpoint
+   * @param string
    */
   public function setPsaWriteEndpoint($psaWriteEndpoint)
   {

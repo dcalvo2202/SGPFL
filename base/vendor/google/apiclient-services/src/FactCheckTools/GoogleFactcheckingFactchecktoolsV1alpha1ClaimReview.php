@@ -20,42 +20,30 @@ namespace Google\Service\FactCheckTools;
 class GoogleFactcheckingFactchecktoolsV1alpha1ClaimReview extends \Google\Model
 {
   /**
-   * The language this review was written in. For instance, "en" or "de".
-   *
    * @var string
    */
   public $languageCode;
   protected $publisherType = GoogleFactcheckingFactchecktoolsV1alpha1Publisher::class;
   protected $publisherDataType = '';
   /**
-   * The date the claim was reviewed.
-   *
    * @var string
    */
   public $reviewDate;
   /**
-   * Textual rating. For instance, "Mostly false".
-   *
    * @var string
    */
   public $textualRating;
   /**
-   * The title of this claim review, if it can be determined.
-   *
    * @var string
    */
   public $title;
   /**
-   * The URL of this claim review.
-   *
    * @var string
    */
   public $url;
 
   /**
-   * The language this review was written in. For instance, "en" or "de".
-   *
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {
@@ -69,9 +57,7 @@ class GoogleFactcheckingFactchecktoolsV1alpha1ClaimReview extends \Google\Model
     return $this->languageCode;
   }
   /**
-   * The publisher of this claim review.
-   *
-   * @param GoogleFactcheckingFactchecktoolsV1alpha1Publisher $publisher
+   * @param GoogleFactcheckingFactchecktoolsV1alpha1Publisher
    */
   public function setPublisher(GoogleFactcheckingFactchecktoolsV1alpha1Publisher $publisher)
   {
@@ -85,9 +71,7 @@ class GoogleFactcheckingFactchecktoolsV1alpha1ClaimReview extends \Google\Model
     return $this->publisher;
   }
   /**
-   * The date the claim was reviewed.
-   *
-   * @param string $reviewDate
+   * @param string
    */
   public function setReviewDate($reviewDate)
   {
@@ -101,9 +85,7 @@ class GoogleFactcheckingFactchecktoolsV1alpha1ClaimReview extends \Google\Model
     return $this->reviewDate;
   }
   /**
-   * Textual rating. For instance, "Mostly false".
-   *
-   * @param string $textualRating
+   * @param string
    */
   public function setTextualRating($textualRating)
   {
@@ -117,9 +99,7 @@ class GoogleFactcheckingFactchecktoolsV1alpha1ClaimReview extends \Google\Model
     return $this->textualRating;
   }
   /**
-   * The title of this claim review, if it can be determined.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -133,9 +113,7 @@ class GoogleFactcheckingFactchecktoolsV1alpha1ClaimReview extends \Google\Model
     return $this->title;
   }
   /**
-   * The URL of this claim review.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

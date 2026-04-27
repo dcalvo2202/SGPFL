@@ -21,9 +21,6 @@ class ListSpaceEventsResponse extends \Google\Collection
 {
   protected $collection_key = 'spaceEvents';
   /**
-   * Continuation token used to fetch more events. If this field is omitted,
-   * there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListSpaceEventsResponse extends \Google\Collection
   protected $spaceEventsDataType = 'array';
 
   /**
-   * Continuation token used to fetch more events. If this field is omitted,
-   * there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,11 +42,7 @@ class ListSpaceEventsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Results are returned in chronological order (oldest event first). Note: The
-   * `permissionSettings` field is not returned in the Space object for list
-   * requests.
-   *
-   * @param SpaceEvent[] $spaceEvents
+   * @param SpaceEvent[]
    */
   public function setSpaceEvents($spaceEvents)
   {

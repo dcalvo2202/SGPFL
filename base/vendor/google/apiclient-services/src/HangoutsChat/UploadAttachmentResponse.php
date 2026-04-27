@@ -23,9 +23,7 @@ class UploadAttachmentResponse extends \Google\Model
   protected $attachmentDataRefDataType = '';
 
   /**
-   * Reference to the uploaded attachment.
-   *
-   * @param AttachmentDataRef $attachmentDataRef
+   * @param AttachmentDataRef
    */
   public function setAttachmentDataRef(AttachmentDataRef $attachmentDataRef)
   {

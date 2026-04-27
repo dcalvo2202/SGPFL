@@ -23,9 +23,7 @@ class InputConfig extends \Google\Model
   protected $gcsSourceDataType = '';
 
   /**
-   * Google Cloud Storage location where input content is located.
-   *
-   * @param GcsSource $gcsSource
+   * @param GcsSource
    */
   public function setGcsSource(GcsSource $gcsSource)
   {

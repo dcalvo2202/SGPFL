@@ -21,14 +21,10 @@ class GoogleCloudContactcenterinsightsV1alpha1SampleConversationsMetadata extend
 {
   protected $collection_key = 'partialErrors';
   /**
-   * Output only. The time the operation was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. The time the operation finished running.
-   *
    * @var string
    */
   public $endTime;
@@ -40,9 +36,7 @@ class GoogleCloudContactcenterinsightsV1alpha1SampleConversationsMetadata extend
   protected $sampleConversationsStatsDataType = '';
 
   /**
-   * Output only. The time the operation was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -56,9 +50,7 @@ class GoogleCloudContactcenterinsightsV1alpha1SampleConversationsMetadata extend
     return $this->createTime;
   }
   /**
-   * Output only. The time the operation finished running.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -72,10 +64,7 @@ class GoogleCloudContactcenterinsightsV1alpha1SampleConversationsMetadata extend
     return $this->endTime;
   }
   /**
-   * Output only. Partial errors during sample conversations operation that
-   * might cause the operation output to be incomplete.
-   *
-   * @param GoogleRpcStatus[] $partialErrors
+   * @param GoogleRpcStatus[]
    */
   public function setPartialErrors($partialErrors)
   {
@@ -89,9 +78,7 @@ class GoogleCloudContactcenterinsightsV1alpha1SampleConversationsMetadata extend
     return $this->partialErrors;
   }
   /**
-   * Output only. The original request for sample conversations to dataset.
-   *
-   * @param GoogleCloudContactcenterinsightsV1alpha1SampleConversationsRequest $request
+   * @param GoogleCloudContactcenterinsightsV1alpha1SampleConversationsRequest
    */
   public function setRequest(GoogleCloudContactcenterinsightsV1alpha1SampleConversationsRequest $request)
   {
@@ -105,9 +92,7 @@ class GoogleCloudContactcenterinsightsV1alpha1SampleConversationsMetadata extend
     return $this->request;
   }
   /**
-   * Output only. Statistics for SampleConversations operation.
-   *
-   * @param GoogleCloudContactcenterinsightsV1alpha1SampleConversationsMetadataSampleConversationsStats $sampleConversationsStats
+   * @param GoogleCloudContactcenterinsightsV1alpha1SampleConversationsMetadataSampleConversationsStats
    */
   public function setSampleConversationsStats(GoogleCloudContactcenterinsightsV1alpha1SampleConversationsMetadataSampleConversationsStats $sampleConversationsStats)
   {

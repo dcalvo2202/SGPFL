@@ -21,60 +21,32 @@ class GeolayerdataGeo extends \Google\Collection
 {
   protected $collection_key = 'boundary';
   /**
-   * The boundary of the location as a set of loops containing pairs of
-   * latitude, longitude coordinates.
-   *
    * @var string[]
    */
   public $boundary;
   /**
-   * The cache policy active for this data. EX: UNRESTRICTED, RESTRICTED, NEVER
-   *
    * @var string
    */
   public $cachePolicy;
   /**
-   * The country code of the location.
-   *
    * @var string
    */
   public $countryCode;
-  /**
-   * The latitude of the location.
-   *
-   * @var 
-   */
   public $latitude;
-  /**
-   * The longitude of the location.
-   *
-   * @var 
-   */
   public $longitude;
   /**
-   * The type of map that should be used for this location. EX: HYBRID, ROADMAP,
-   * SATELLITE, TERRAIN
-   *
    * @var string
    */
   public $mapType;
   protected $viewportType = GeolayerdataGeoViewport::class;
   protected $viewportDataType = '';
   /**
-   * The Zoom level to use for the map. Zoom levels between 0 (the lowest zoom
-   * level, in which the entire world can be seen on one map) to 21+ (down to
-   * individual buildings). See: https:
-   * //developers.google.com/maps/documentation/staticmaps/#Zoomlevels
-   *
    * @var int
    */
   public $zoom;
 
   /**
-   * The boundary of the location as a set of loops containing pairs of
-   * latitude, longitude coordinates.
-   *
-   * @param string[] $boundary
+   * @param string[]
    */
   public function setBoundary($boundary)
   {
@@ -88,9 +60,7 @@ class GeolayerdataGeo extends \Google\Collection
     return $this->boundary;
   }
   /**
-   * The cache policy active for this data. EX: UNRESTRICTED, RESTRICTED, NEVER
-   *
-   * @param string $cachePolicy
+   * @param string
    */
   public function setCachePolicy($cachePolicy)
   {
@@ -104,9 +74,7 @@ class GeolayerdataGeo extends \Google\Collection
     return $this->cachePolicy;
   }
   /**
-   * The country code of the location.
-   *
-   * @param string $countryCode
+   * @param string
    */
   public function setCountryCode($countryCode)
   {
@@ -136,10 +104,7 @@ class GeolayerdataGeo extends \Google\Collection
     return $this->longitude;
   }
   /**
-   * The type of map that should be used for this location. EX: HYBRID, ROADMAP,
-   * SATELLITE, TERRAIN
-   *
-   * @param string $mapType
+   * @param string
    */
   public function setMapType($mapType)
   {
@@ -153,10 +118,7 @@ class GeolayerdataGeo extends \Google\Collection
     return $this->mapType;
   }
   /**
-   * The viewport for showing this location. This is a latitude, longitude
-   * rectangle.
-   *
-   * @param GeolayerdataGeoViewport $viewport
+   * @param GeolayerdataGeoViewport
    */
   public function setViewport(GeolayerdataGeoViewport $viewport)
   {
@@ -170,12 +132,7 @@ class GeolayerdataGeo extends \Google\Collection
     return $this->viewport;
   }
   /**
-   * The Zoom level to use for the map. Zoom levels between 0 (the lowest zoom
-   * level, in which the entire world can be seen on one map) to 21+ (down to
-   * individual buildings). See: https:
-   * //developers.google.com/maps/documentation/staticmaps/#Zoomlevels
-   *
-   * @param int $zoom
+   * @param int
    */
   public function setZoom($zoom)
   {

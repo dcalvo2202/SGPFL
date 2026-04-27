@@ -25,11 +25,7 @@ class PostgresqlSslConfig extends \Google\Model
   protected $serverVerificationDataType = '';
 
   /**
-   * If this field is set, the communication will be encrypted with TLS
-   * encryption and both the server identity and the client identity will be
-   * authenticated.
-   *
-   * @param ServerAndClientVerification $serverAndClientVerification
+   * @param ServerAndClientVerification
    */
   public function setServerAndClientVerification(ServerAndClientVerification $serverAndClientVerification)
   {
@@ -43,10 +39,7 @@ class PostgresqlSslConfig extends \Google\Model
     return $this->serverAndClientVerification;
   }
   /**
-   * If this field is set, the communication will be encrypted with TLS
-   * encryption and the server identity will be authenticated.
-   *
-   * @param ServerVerification $serverVerification
+   * @param ServerVerification
    */
   public function setServerVerification(ServerVerification $serverVerification)
   {

@@ -21,60 +21,42 @@ class DatabaseDeploymentTopology extends \Google\Collection
 {
   protected $collection_key = 'instances';
   /**
-   * Optional. Number of total logical cores.
-   *
    * @var int
    */
   public $coreCount;
   /**
-   * Optional. Number of total logical cores limited by db deployment.
-   *
    * @var int
    */
   public $coreLimit;
   /**
-   * Optional. Disk allocated in bytes.
-   *
    * @var string
    */
   public $diskAllocatedBytes;
   /**
-   * Optional. Disk used in bytes.
-   *
    * @var string
    */
   public $diskUsedBytes;
   protected $instancesType = DatabaseInstance::class;
   protected $instancesDataType = 'array';
   /**
-   * Optional. Total memory in bytes.
-   *
    * @var string
    */
   public $memoryBytes;
   /**
-   * Optional. Total memory in bytes limited by db deployment.
-   *
    * @var string
    */
   public $memoryLimitBytes;
   /**
-   * Optional. Number of total physical cores.
-   *
    * @var int
    */
   public $physicalCoreCount;
   /**
-   * Optional. Number of total physical cores limited by db deployment.
-   *
    * @var int
    */
   public $physicalCoreLimit;
 
   /**
-   * Optional. Number of total logical cores.
-   *
-   * @param int $coreCount
+   * @param int
    */
   public function setCoreCount($coreCount)
   {
@@ -88,9 +70,7 @@ class DatabaseDeploymentTopology extends \Google\Collection
     return $this->coreCount;
   }
   /**
-   * Optional. Number of total logical cores limited by db deployment.
-   *
-   * @param int $coreLimit
+   * @param int
    */
   public function setCoreLimit($coreLimit)
   {
@@ -104,9 +84,7 @@ class DatabaseDeploymentTopology extends \Google\Collection
     return $this->coreLimit;
   }
   /**
-   * Optional. Disk allocated in bytes.
-   *
-   * @param string $diskAllocatedBytes
+   * @param string
    */
   public function setDiskAllocatedBytes($diskAllocatedBytes)
   {
@@ -120,9 +98,7 @@ class DatabaseDeploymentTopology extends \Google\Collection
     return $this->diskAllocatedBytes;
   }
   /**
-   * Optional. Disk used in bytes.
-   *
-   * @param string $diskUsedBytes
+   * @param string
    */
   public function setDiskUsedBytes($diskUsedBytes)
   {
@@ -136,9 +112,7 @@ class DatabaseDeploymentTopology extends \Google\Collection
     return $this->diskUsedBytes;
   }
   /**
-   * Optional. List of database instances.
-   *
-   * @param DatabaseInstance[] $instances
+   * @param DatabaseInstance[]
    */
   public function setInstances($instances)
   {
@@ -152,9 +126,7 @@ class DatabaseDeploymentTopology extends \Google\Collection
     return $this->instances;
   }
   /**
-   * Optional. Total memory in bytes.
-   *
-   * @param string $memoryBytes
+   * @param string
    */
   public function setMemoryBytes($memoryBytes)
   {
@@ -168,9 +140,7 @@ class DatabaseDeploymentTopology extends \Google\Collection
     return $this->memoryBytes;
   }
   /**
-   * Optional. Total memory in bytes limited by db deployment.
-   *
-   * @param string $memoryLimitBytes
+   * @param string
    */
   public function setMemoryLimitBytes($memoryLimitBytes)
   {
@@ -184,9 +154,7 @@ class DatabaseDeploymentTopology extends \Google\Collection
     return $this->memoryLimitBytes;
   }
   /**
-   * Optional. Number of total physical cores.
-   *
-   * @param int $physicalCoreCount
+   * @param int
    */
   public function setPhysicalCoreCount($physicalCoreCount)
   {
@@ -200,9 +168,7 @@ class DatabaseDeploymentTopology extends \Google\Collection
     return $this->physicalCoreCount;
   }
   /**
-   * Optional. Number of total physical cores limited by db deployment.
-   *
-   * @param int $physicalCoreLimit
+   * @param int
    */
   public function setPhysicalCoreLimit($physicalCoreLimit)
   {

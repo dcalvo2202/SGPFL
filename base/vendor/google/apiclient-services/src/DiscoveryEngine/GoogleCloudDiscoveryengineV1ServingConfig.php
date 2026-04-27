@@ -19,194 +19,84 @@ namespace Google\Service\DiscoveryEngine;
 
 class GoogleCloudDiscoveryengineV1ServingConfig extends \Google\Collection
 {
-  /**
-   * Default value.
-   */
-  public const SOLUTION_TYPE_SOLUTION_TYPE_UNSPECIFIED = 'SOLUTION_TYPE_UNSPECIFIED';
-  /**
-   * Used for Recommendations AI.
-   */
-  public const SOLUTION_TYPE_SOLUTION_TYPE_RECOMMENDATION = 'SOLUTION_TYPE_RECOMMENDATION';
-  /**
-   * Used for Discovery Search.
-   */
-  public const SOLUTION_TYPE_SOLUTION_TYPE_SEARCH = 'SOLUTION_TYPE_SEARCH';
-  /**
-   * Used for use cases related to the Generative AI agent.
-   */
-  public const SOLUTION_TYPE_SOLUTION_TYPE_CHAT = 'SOLUTION_TYPE_CHAT';
-  /**
-   * Used for use cases related to the Generative Chat agent. It's used for
-   * Generative chat engine only, the associated data stores must enrolled with
-   * `SOLUTION_TYPE_CHAT` solution.
-   */
-  public const SOLUTION_TYPE_SOLUTION_TYPE_GENERATIVE_CHAT = 'SOLUTION_TYPE_GENERATIVE_CHAT';
-  /**
-   * Used for AI Mode.
-   */
-  public const SOLUTION_TYPE_SOLUTION_TYPE_AI_MODE = 'SOLUTION_TYPE_AI_MODE';
   protected $collection_key = 'synonymsControlIds';
   protected $answerGenerationSpecType = GoogleCloudDiscoveryengineV1AnswerGenerationSpec::class;
   protected $answerGenerationSpecDataType = '';
   /**
-   * Boost controls to use in serving path. All triggered boost controls will be
-   * applied. Boost controls must be in the same data store as the serving
-   * config. Maximum of 20 boost controls.
-   *
    * @var string[]
    */
   public $boostControlIds;
   /**
-   * Output only. ServingConfig created timestamp.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Required. The human readable serving config display name. Used in Discovery
-   * UI. This field must be a UTF-8 encoded string with a length limit of 128
-   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Condition do not associate specifications. If multiple do not associate
-   * conditions match, all matching do not associate controls in the list will
-   * execute. Order does not matter. Maximum number of specifications is 100.
-   * Can only be set if SolutionType is SOLUTION_TYPE_SEARCH.
-   *
    * @var string[]
    */
   public $dissociateControlIds;
   /**
-   * How much diversity to use in recommendation model results e.g. `medium-
-   * diversity` or `high-diversity`. Currently supported values: * `no-
-   * diversity` * `low-diversity` * `medium-diversity` * `high-diversity` *
-   * `auto-diversity` If not specified, we choose default based on
-   * recommendation model type. Default value: `no-diversity`. Can only be set
-   * if SolutionType is SOLUTION_TYPE_RECOMMENDATION.
-   *
    * @var string
    */
   public $diversityLevel;
   /**
-   * Filter controls to use in serving path. All triggered filter controls will
-   * be applied. Filter controls must be in the same data store as the serving
-   * config. Maximum of 20 filter controls.
-   *
    * @var string[]
    */
   public $filterControlIds;
   protected $genericConfigType = GoogleCloudDiscoveryengineV1ServingConfigGenericConfig::class;
   protected $genericConfigDataType = '';
   /**
-   * Condition ignore specifications. If multiple ignore conditions match, all
-   * matching ignore controls in the list will execute. Order does not matter.
-   * Maximum number of specifications is 100.
-   *
    * @var string[]
    */
   public $ignoreControlIds;
   protected $mediaConfigType = GoogleCloudDiscoveryengineV1ServingConfigMediaConfig::class;
   protected $mediaConfigDataType = '';
   /**
-   * The id of the model to use at serving time. Currently only
-   * RecommendationModels are supported. Can be changed but only to a compatible
-   * model (e.g. others-you-may-like CTR to others-you-may-like CVR). Required
-   * when SolutionType is SOLUTION_TYPE_RECOMMENDATION.
-   *
    * @var string
    */
   public $modelId;
   /**
-   * Immutable. Fully qualified name `projects/{project}/locations/{location}/co
-   * llections/{collection_id}/engines/{engine_id}/servingConfigs/{serving_confi
-   * g_id}`
-   *
    * @var string
    */
   public $name;
   /**
-   * Condition oneway synonyms specifications. If multiple oneway synonyms
-   * conditions match, all matching oneway synonyms controls in the list will
-   * execute. Maximum number of specifications is 100. Can only be set if
-   * SolutionType is SOLUTION_TYPE_SEARCH.
-   *
    * @var string[]
    */
   public $onewaySynonymsControlIds;
   /**
-   * Condition promote specifications. Maximum number of specifications is 100.
-   *
    * @var string[]
    */
   public $promoteControlIds;
   /**
-   * The ranking expression controls the customized ranking on retrieval
-   * documents. To leverage this, document embedding is required. The ranking
-   * expression setting in ServingConfig applies to all search requests served
-   * by the serving config. However, if `SearchRequest.ranking_expression` is
-   * specified, it overrides the ServingConfig ranking expression. The ranking
-   * expression is a single function or multiple functions that are joined by
-   * "+". * ranking_expression = function, { " + ", function }; Supported
-   * functions: * double * relevance_score * double *
-   * dotProduct(embedding_field_path) Function variables: * `relevance_score`:
-   * pre-defined keywords, used for measure relevance between query and
-   * document. * `embedding_field_path`: the document embedding field used with
-   * query embedding vector. * `dotProduct`: embedding function between
-   * embedding_field_path and query embedding vector. Example ranking
-   * expression: If document has an embedding field doc_embedding, the ranking
-   * expression could be `0.5 * relevance_score + 0.3 *
-   * dotProduct(doc_embedding)`.
-   *
    * @var string
    */
   public $rankingExpression;
   /**
-   * IDs of the redirect controls. Only the first triggered redirect action is
-   * applied, even if multiple apply. Maximum number of specifications is 100.
-   * Can only be set if SolutionType is SOLUTION_TYPE_SEARCH.
-   *
    * @var string[]
    */
   public $redirectControlIds;
   /**
-   * Condition replacement specifications. Applied according to the order in the
-   * list. A previously replaced term can not be re-replaced. Maximum number of
-   * specifications is 100. Can only be set if SolutionType is
-   * SOLUTION_TYPE_SEARCH.
-   *
    * @var string[]
    */
   public $replacementControlIds;
   /**
-   * Required. Immutable. Specifies the solution type that a serving config can
-   * be associated with.
-   *
    * @var string
    */
   public $solutionType;
   /**
-   * Condition synonyms specifications. If multiple synonyms conditions match,
-   * all matching synonyms controls in the list will execute. Maximum number of
-   * specifications is 100. Can only be set if SolutionType is
-   * SOLUTION_TYPE_SEARCH.
-   *
    * @var string[]
    */
   public $synonymsControlIds;
   /**
-   * Output only. ServingConfig updated timestamp.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Optional. The specification for answer generation.
-   *
-   * @param GoogleCloudDiscoveryengineV1AnswerGenerationSpec $answerGenerationSpec
+   * @param GoogleCloudDiscoveryengineV1AnswerGenerationSpec
    */
   public function setAnswerGenerationSpec(GoogleCloudDiscoveryengineV1AnswerGenerationSpec $answerGenerationSpec)
   {
@@ -220,11 +110,7 @@ class GoogleCloudDiscoveryengineV1ServingConfig extends \Google\Collection
     return $this->answerGenerationSpec;
   }
   /**
-   * Boost controls to use in serving path. All triggered boost controls will be
-   * applied. Boost controls must be in the same data store as the serving
-   * config. Maximum of 20 boost controls.
-   *
-   * @param string[] $boostControlIds
+   * @param string[]
    */
   public function setBoostControlIds($boostControlIds)
   {
@@ -238,9 +124,7 @@ class GoogleCloudDiscoveryengineV1ServingConfig extends \Google\Collection
     return $this->boostControlIds;
   }
   /**
-   * Output only. ServingConfig created timestamp.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -254,11 +138,7 @@ class GoogleCloudDiscoveryengineV1ServingConfig extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Required. The human readable serving config display name. Used in Discovery
-   * UI. This field must be a UTF-8 encoded string with a length limit of 128
-   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -272,12 +152,7 @@ class GoogleCloudDiscoveryengineV1ServingConfig extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Condition do not associate specifications. If multiple do not associate
-   * conditions match, all matching do not associate controls in the list will
-   * execute. Order does not matter. Maximum number of specifications is 100.
-   * Can only be set if SolutionType is SOLUTION_TYPE_SEARCH.
-   *
-   * @param string[] $dissociateControlIds
+   * @param string[]
    */
   public function setDissociateControlIds($dissociateControlIds)
   {
@@ -291,14 +166,7 @@ class GoogleCloudDiscoveryengineV1ServingConfig extends \Google\Collection
     return $this->dissociateControlIds;
   }
   /**
-   * How much diversity to use in recommendation model results e.g. `medium-
-   * diversity` or `high-diversity`. Currently supported values: * `no-
-   * diversity` * `low-diversity` * `medium-diversity` * `high-diversity` *
-   * `auto-diversity` If not specified, we choose default based on
-   * recommendation model type. Default value: `no-diversity`. Can only be set
-   * if SolutionType is SOLUTION_TYPE_RECOMMENDATION.
-   *
-   * @param string $diversityLevel
+   * @param string
    */
   public function setDiversityLevel($diversityLevel)
   {
@@ -312,11 +180,7 @@ class GoogleCloudDiscoveryengineV1ServingConfig extends \Google\Collection
     return $this->diversityLevel;
   }
   /**
-   * Filter controls to use in serving path. All triggered filter controls will
-   * be applied. Filter controls must be in the same data store as the serving
-   * config. Maximum of 20 filter controls.
-   *
-   * @param string[] $filterControlIds
+   * @param string[]
    */
   public function setFilterControlIds($filterControlIds)
   {
@@ -330,9 +194,7 @@ class GoogleCloudDiscoveryengineV1ServingConfig extends \Google\Collection
     return $this->filterControlIds;
   }
   /**
-   * The GenericConfig of the serving configuration.
-   *
-   * @param GoogleCloudDiscoveryengineV1ServingConfigGenericConfig $genericConfig
+   * @param GoogleCloudDiscoveryengineV1ServingConfigGenericConfig
    */
   public function setGenericConfig(GoogleCloudDiscoveryengineV1ServingConfigGenericConfig $genericConfig)
   {
@@ -346,11 +208,7 @@ class GoogleCloudDiscoveryengineV1ServingConfig extends \Google\Collection
     return $this->genericConfig;
   }
   /**
-   * Condition ignore specifications. If multiple ignore conditions match, all
-   * matching ignore controls in the list will execute. Order does not matter.
-   * Maximum number of specifications is 100.
-   *
-   * @param string[] $ignoreControlIds
+   * @param string[]
    */
   public function setIgnoreControlIds($ignoreControlIds)
   {
@@ -364,9 +222,7 @@ class GoogleCloudDiscoveryengineV1ServingConfig extends \Google\Collection
     return $this->ignoreControlIds;
   }
   /**
-   * The MediaConfig of the serving configuration.
-   *
-   * @param GoogleCloudDiscoveryengineV1ServingConfigMediaConfig $mediaConfig
+   * @param GoogleCloudDiscoveryengineV1ServingConfigMediaConfig
    */
   public function setMediaConfig(GoogleCloudDiscoveryengineV1ServingConfigMediaConfig $mediaConfig)
   {
@@ -380,12 +236,7 @@ class GoogleCloudDiscoveryengineV1ServingConfig extends \Google\Collection
     return $this->mediaConfig;
   }
   /**
-   * The id of the model to use at serving time. Currently only
-   * RecommendationModels are supported. Can be changed but only to a compatible
-   * model (e.g. others-you-may-like CTR to others-you-may-like CVR). Required
-   * when SolutionType is SOLUTION_TYPE_RECOMMENDATION.
-   *
-   * @param string $modelId
+   * @param string
    */
   public function setModelId($modelId)
   {
@@ -399,11 +250,7 @@ class GoogleCloudDiscoveryengineV1ServingConfig extends \Google\Collection
     return $this->modelId;
   }
   /**
-   * Immutable. Fully qualified name `projects/{project}/locations/{location}/co
-   * llections/{collection_id}/engines/{engine_id}/servingConfigs/{serving_confi
-   * g_id}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -417,12 +264,7 @@ class GoogleCloudDiscoveryengineV1ServingConfig extends \Google\Collection
     return $this->name;
   }
   /**
-   * Condition oneway synonyms specifications. If multiple oneway synonyms
-   * conditions match, all matching oneway synonyms controls in the list will
-   * execute. Maximum number of specifications is 100. Can only be set if
-   * SolutionType is SOLUTION_TYPE_SEARCH.
-   *
-   * @param string[] $onewaySynonymsControlIds
+   * @param string[]
    */
   public function setOnewaySynonymsControlIds($onewaySynonymsControlIds)
   {
@@ -436,9 +278,7 @@ class GoogleCloudDiscoveryengineV1ServingConfig extends \Google\Collection
     return $this->onewaySynonymsControlIds;
   }
   /**
-   * Condition promote specifications. Maximum number of specifications is 100.
-   *
-   * @param string[] $promoteControlIds
+   * @param string[]
    */
   public function setPromoteControlIds($promoteControlIds)
   {
@@ -452,24 +292,7 @@ class GoogleCloudDiscoveryengineV1ServingConfig extends \Google\Collection
     return $this->promoteControlIds;
   }
   /**
-   * The ranking expression controls the customized ranking on retrieval
-   * documents. To leverage this, document embedding is required. The ranking
-   * expression setting in ServingConfig applies to all search requests served
-   * by the serving config. However, if `SearchRequest.ranking_expression` is
-   * specified, it overrides the ServingConfig ranking expression. The ranking
-   * expression is a single function or multiple functions that are joined by
-   * "+". * ranking_expression = function, { " + ", function }; Supported
-   * functions: * double * relevance_score * double *
-   * dotProduct(embedding_field_path) Function variables: * `relevance_score`:
-   * pre-defined keywords, used for measure relevance between query and
-   * document. * `embedding_field_path`: the document embedding field used with
-   * query embedding vector. * `dotProduct`: embedding function between
-   * embedding_field_path and query embedding vector. Example ranking
-   * expression: If document has an embedding field doc_embedding, the ranking
-   * expression could be `0.5 * relevance_score + 0.3 *
-   * dotProduct(doc_embedding)`.
-   *
-   * @param string $rankingExpression
+   * @param string
    */
   public function setRankingExpression($rankingExpression)
   {
@@ -483,11 +306,7 @@ class GoogleCloudDiscoveryengineV1ServingConfig extends \Google\Collection
     return $this->rankingExpression;
   }
   /**
-   * IDs of the redirect controls. Only the first triggered redirect action is
-   * applied, even if multiple apply. Maximum number of specifications is 100.
-   * Can only be set if SolutionType is SOLUTION_TYPE_SEARCH.
-   *
-   * @param string[] $redirectControlIds
+   * @param string[]
    */
   public function setRedirectControlIds($redirectControlIds)
   {
@@ -501,12 +320,7 @@ class GoogleCloudDiscoveryengineV1ServingConfig extends \Google\Collection
     return $this->redirectControlIds;
   }
   /**
-   * Condition replacement specifications. Applied according to the order in the
-   * list. A previously replaced term can not be re-replaced. Maximum number of
-   * specifications is 100. Can only be set if SolutionType is
-   * SOLUTION_TYPE_SEARCH.
-   *
-   * @param string[] $replacementControlIds
+   * @param string[]
    */
   public function setReplacementControlIds($replacementControlIds)
   {
@@ -520,33 +334,21 @@ class GoogleCloudDiscoveryengineV1ServingConfig extends \Google\Collection
     return $this->replacementControlIds;
   }
   /**
-   * Required. Immutable. Specifies the solution type that a serving config can
-   * be associated with.
-   *
-   * Accepted values: SOLUTION_TYPE_UNSPECIFIED, SOLUTION_TYPE_RECOMMENDATION,
-   * SOLUTION_TYPE_SEARCH, SOLUTION_TYPE_CHAT, SOLUTION_TYPE_GENERATIVE_CHAT,
-   * SOLUTION_TYPE_AI_MODE
-   *
-   * @param self::SOLUTION_TYPE_* $solutionType
+   * @param string
    */
   public function setSolutionType($solutionType)
   {
     $this->solutionType = $solutionType;
   }
   /**
-   * @return self::SOLUTION_TYPE_*
+   * @return string
    */
   public function getSolutionType()
   {
     return $this->solutionType;
   }
   /**
-   * Condition synonyms specifications. If multiple synonyms conditions match,
-   * all matching synonyms controls in the list will execute. Maximum number of
-   * specifications is 100. Can only be set if SolutionType is
-   * SOLUTION_TYPE_SEARCH.
-   *
-   * @param string[] $synonymsControlIds
+   * @param string[]
    */
   public function setSynonymsControlIds($synonymsControlIds)
   {
@@ -560,9 +362,7 @@ class GoogleCloudDiscoveryengineV1ServingConfig extends \Google\Collection
     return $this->synonymsControlIds;
   }
   /**
-   * Output only. ServingConfig updated timestamp.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

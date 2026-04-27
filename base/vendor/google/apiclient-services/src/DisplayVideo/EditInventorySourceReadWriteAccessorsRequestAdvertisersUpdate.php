@@ -21,22 +21,16 @@ class EditInventorySourceReadWriteAccessorsRequestAdvertisersUpdate extends \Goo
 {
   protected $collection_key = 'removedAdvertisers';
   /**
-   * The advertisers to add.
-   *
    * @var string[]
    */
   public $addedAdvertisers;
   /**
-   * The advertisers to remove.
-   *
    * @var string[]
    */
   public $removedAdvertisers;
 
   /**
-   * The advertisers to add.
-   *
-   * @param string[] $addedAdvertisers
+   * @param string[]
    */
   public function setAddedAdvertisers($addedAdvertisers)
   {
@@ -50,9 +44,7 @@ class EditInventorySourceReadWriteAccessorsRequestAdvertisersUpdate extends \Goo
     return $this->addedAdvertisers;
   }
   /**
-   * The advertisers to remove.
-   *
-   * @param string[] $removedAdvertisers
+   * @param string[]
    */
   public function setRemovedAdvertisers($removedAdvertisers)
   {

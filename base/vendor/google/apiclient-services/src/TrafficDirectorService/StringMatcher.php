@@ -20,56 +20,32 @@ namespace Google\Service\TrafficDirectorService;
 class StringMatcher extends \Google\Model
 {
   /**
-   * The input string must have the substring specified here. .. note:: Empty
-   * contains match is not allowed, please use ``safe_regex`` instead. Examples:
-   * * ``abc`` matches the value ``xyz.abc.def``
-   *
    * @var string
    */
   public $contains;
   protected $customType = TypedExtensionConfig::class;
   protected $customDataType = '';
   /**
-   * The input string must match exactly the string specified here. Examples: *
-   * ``abc`` only matches the value ``abc``.
-   *
    * @var string
    */
   public $exact;
   /**
-   * If ``true``, indicates the exact/prefix/suffix/contains matching should be
-   * case insensitive. This has no effect for the ``safe_regex`` match. For
-   * example, the matcher ``data`` will match both input string ``Data`` and
-   * ``data`` if this option is set to ``true``.
-   *
    * @var bool
    */
   public $ignoreCase;
   /**
-   * The input string must have the prefix specified here. .. note:: Empty
-   * prefix match is not allowed, please use ``safe_regex`` instead. Examples: *
-   * ``abc`` matches the value ``abc.xyz``
-   *
    * @var string
    */
   public $prefix;
   protected $safeRegexType = RegexMatcher::class;
   protected $safeRegexDataType = '';
   /**
-   * The input string must have the suffix specified here. .. note:: Empty
-   * suffix match is not allowed, please use ``safe_regex`` instead. Examples: *
-   * ``abc`` matches the value ``xyz.abc``
-   *
    * @var string
    */
   public $suffix;
 
   /**
-   * The input string must have the substring specified here. .. note:: Empty
-   * contains match is not allowed, please use ``safe_regex`` instead. Examples:
-   * * ``abc`` matches the value ``xyz.abc.def``
-   *
-   * @param string $contains
+   * @param string
    */
   public function setContains($contains)
   {
@@ -83,10 +59,7 @@ class StringMatcher extends \Google\Model
     return $this->contains;
   }
   /**
-   * Use an extension as the matcher type. [#extension-category:
-   * envoy.string_matcher]
-   *
-   * @param TypedExtensionConfig $custom
+   * @param TypedExtensionConfig
    */
   public function setCustom(TypedExtensionConfig $custom)
   {
@@ -100,10 +73,7 @@ class StringMatcher extends \Google\Model
     return $this->custom;
   }
   /**
-   * The input string must match exactly the string specified here. Examples: *
-   * ``abc`` only matches the value ``abc``.
-   *
-   * @param string $exact
+   * @param string
    */
   public function setExact($exact)
   {
@@ -117,12 +87,7 @@ class StringMatcher extends \Google\Model
     return $this->exact;
   }
   /**
-   * If ``true``, indicates the exact/prefix/suffix/contains matching should be
-   * case insensitive. This has no effect for the ``safe_regex`` match. For
-   * example, the matcher ``data`` will match both input string ``Data`` and
-   * ``data`` if this option is set to ``true``.
-   *
-   * @param bool $ignoreCase
+   * @param bool
    */
   public function setIgnoreCase($ignoreCase)
   {
@@ -136,11 +101,7 @@ class StringMatcher extends \Google\Model
     return $this->ignoreCase;
   }
   /**
-   * The input string must have the prefix specified here. .. note:: Empty
-   * prefix match is not allowed, please use ``safe_regex`` instead. Examples: *
-   * ``abc`` matches the value ``abc.xyz``
-   *
-   * @param string $prefix
+   * @param string
    */
   public function setPrefix($prefix)
   {
@@ -154,9 +115,7 @@ class StringMatcher extends \Google\Model
     return $this->prefix;
   }
   /**
-   * The input string must match the regular expression specified here.
-   *
-   * @param RegexMatcher $safeRegex
+   * @param RegexMatcher
    */
   public function setSafeRegex(RegexMatcher $safeRegex)
   {
@@ -170,11 +129,7 @@ class StringMatcher extends \Google\Model
     return $this->safeRegex;
   }
   /**
-   * The input string must have the suffix specified here. .. note:: Empty
-   * suffix match is not allowed, please use ``safe_regex`` instead. Examples: *
-   * ``abc`` matches the value ``xyz.abc``
-   *
-   * @param string $suffix
+   * @param string
    */
   public function setSuffix($suffix)
   {

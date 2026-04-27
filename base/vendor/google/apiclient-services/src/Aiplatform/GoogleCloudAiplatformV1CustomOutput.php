@@ -23,9 +23,7 @@ class GoogleCloudAiplatformV1CustomOutput extends \Google\Model
   protected $rawOutputsDataType = '';
 
   /**
-   * Output only. List of raw output strings.
-   *
-   * @param GoogleCloudAiplatformV1RawOutput $rawOutputs
+   * @param GoogleCloudAiplatformV1RawOutput
    */
   public function setRawOutputs(GoogleCloudAiplatformV1RawOutput $rawOutputs)
   {

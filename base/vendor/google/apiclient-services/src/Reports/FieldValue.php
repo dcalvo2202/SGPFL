@@ -22,26 +22,18 @@ class FieldValue extends \Google\Model
   protected $dateValueType = Date::class;
   protected $dateValueDataType = '';
   /**
-   * Display name of the field
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Identifier of the field
-   *
    * @var string
    */
   public $id;
   /**
-   * Setting an integer value.
-   *
    * @var string
    */
   public $integerValue;
   /**
-   * Setting a long text value.
-   *
    * @var string
    */
   public $longTextValue;
@@ -54,20 +46,14 @@ class FieldValue extends \Google\Model
   protected $textListValueType = FieldValueTextListValue::class;
   protected $textListValueDataType = '';
   /**
-   * Setting a text value.
-   *
    * @var string
    */
   public $textValue;
   /**
-   * Type of the field
-   *
    * @var string
    */
   public $type;
   /**
-   * If the field is unset, this will be true.
-   *
    * @var bool
    */
   public $unsetValue;
@@ -77,9 +63,7 @@ class FieldValue extends \Google\Model
   protected $userValueDataType = '';
 
   /**
-   * Setting a date value.
-   *
-   * @param Date $dateValue
+   * @param Date
    */
   public function setDateValue(Date $dateValue)
   {
@@ -93,9 +77,7 @@ class FieldValue extends \Google\Model
     return $this->dateValue;
   }
   /**
-   * Display name of the field
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -109,9 +91,7 @@ class FieldValue extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Identifier of the field
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -125,9 +105,7 @@ class FieldValue extends \Google\Model
     return $this->id;
   }
   /**
-   * Setting an integer value.
-   *
-   * @param string $integerValue
+   * @param string
    */
   public function setIntegerValue($integerValue)
   {
@@ -141,9 +119,7 @@ class FieldValue extends \Google\Model
     return $this->integerValue;
   }
   /**
-   * Setting a long text value.
-   *
-   * @param string $longTextValue
+   * @param string
    */
   public function setLongTextValue($longTextValue)
   {
@@ -157,9 +133,7 @@ class FieldValue extends \Google\Model
     return $this->longTextValue;
   }
   /**
-   * The reason why the field was applied to the label.
-   *
-   * @param Reason $reason
+   * @param Reason
    */
   public function setReason(Reason $reason)
   {
@@ -173,10 +147,7 @@ class FieldValue extends \Google\Model
     return $this->reason;
   }
   /**
-   * Setting a selection list value by selecting multiple values from a
-   * dropdown.
-   *
-   * @param FieldValueSelectionListValue $selectionListValue
+   * @param FieldValueSelectionListValue
    */
   public function setSelectionListValue(FieldValueSelectionListValue $selectionListValue)
   {
@@ -190,9 +161,7 @@ class FieldValue extends \Google\Model
     return $this->selectionListValue;
   }
   /**
-   * Setting a selection value by selecting a single value from a dropdown.
-   *
-   * @param FieldValueSelectionValue $selectionValue
+   * @param FieldValueSelectionValue
    */
   public function setSelectionValue(FieldValueSelectionValue $selectionValue)
   {
@@ -206,9 +175,7 @@ class FieldValue extends \Google\Model
     return $this->selectionValue;
   }
   /**
-   * Setting a text list value.
-   *
-   * @param FieldValueTextListValue $textListValue
+   * @param FieldValueTextListValue
    */
   public function setTextListValue(FieldValueTextListValue $textListValue)
   {
@@ -222,9 +189,7 @@ class FieldValue extends \Google\Model
     return $this->textListValue;
   }
   /**
-   * Setting a text value.
-   *
-   * @param string $textValue
+   * @param string
    */
   public function setTextValue($textValue)
   {
@@ -238,9 +203,7 @@ class FieldValue extends \Google\Model
     return $this->textValue;
   }
   /**
-   * Type of the field
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {
@@ -254,9 +217,7 @@ class FieldValue extends \Google\Model
     return $this->type;
   }
   /**
-   * If the field is unset, this will be true.
-   *
-   * @param bool $unsetValue
+   * @param bool
    */
   public function setUnsetValue($unsetValue)
   {
@@ -270,9 +231,7 @@ class FieldValue extends \Google\Model
     return $this->unsetValue;
   }
   /**
-   * Setting a user list value by selecting multiple users.
-   *
-   * @param FieldValueUserListValue $userListValue
+   * @param FieldValueUserListValue
    */
   public function setUserListValue(FieldValueUserListValue $userListValue)
   {
@@ -286,9 +245,7 @@ class FieldValue extends \Google\Model
     return $this->userListValue;
   }
   /**
-   * Setting a user value by selecting a single user.
-   *
-   * @param FieldValueUserValue $userValue
+   * @param FieldValueUserValue
    */
   public function setUserValue(FieldValueUserValue $userValue)
   {

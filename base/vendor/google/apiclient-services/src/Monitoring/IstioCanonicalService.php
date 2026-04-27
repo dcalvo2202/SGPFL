@@ -20,36 +20,20 @@ namespace Google\Service\Monitoring;
 class IstioCanonicalService extends \Google\Model
 {
   /**
-   * The name of the canonical service underlying this service. Corresponds to
-   * the destination_canonical_service_name metric label in label in Istio
-   * metrics (https://cloud.google.com/monitoring/api/metrics_istio).
-   *
    * @var string
    */
   public $canonicalService;
   /**
-   * The namespace of the canonical service underlying this service. Corresponds
-   * to the destination_canonical_service_namespace metric label in Istio
-   * metrics (https://cloud.google.com/monitoring/api/metrics_istio).
-   *
    * @var string
    */
   public $canonicalServiceNamespace;
   /**
-   * Identifier for the Istio mesh in which this canonical service is defined.
-   * Corresponds to the mesh_uid metric label in Istio metrics
-   * (https://cloud.google.com/monitoring/api/metrics_istio).
-   *
    * @var string
    */
   public $meshUid;
 
   /**
-   * The name of the canonical service underlying this service. Corresponds to
-   * the destination_canonical_service_name metric label in label in Istio
-   * metrics (https://cloud.google.com/monitoring/api/metrics_istio).
-   *
-   * @param string $canonicalService
+   * @param string
    */
   public function setCanonicalService($canonicalService)
   {
@@ -63,11 +47,7 @@ class IstioCanonicalService extends \Google\Model
     return $this->canonicalService;
   }
   /**
-   * The namespace of the canonical service underlying this service. Corresponds
-   * to the destination_canonical_service_namespace metric label in Istio
-   * metrics (https://cloud.google.com/monitoring/api/metrics_istio).
-   *
-   * @param string $canonicalServiceNamespace
+   * @param string
    */
   public function setCanonicalServiceNamespace($canonicalServiceNamespace)
   {
@@ -81,11 +61,7 @@ class IstioCanonicalService extends \Google\Model
     return $this->canonicalServiceNamespace;
   }
   /**
-   * Identifier for the Istio mesh in which this canonical service is defined.
-   * Corresponds to the mesh_uid metric label in Istio metrics
-   * (https://cloud.google.com/monitoring/api/metrics_istio).
-   *
-   * @param string $meshUid
+   * @param string
    */
   public function setMeshUid($meshUid)
   {

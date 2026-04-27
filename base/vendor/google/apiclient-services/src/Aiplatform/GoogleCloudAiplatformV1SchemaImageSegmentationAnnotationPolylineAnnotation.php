@@ -21,14 +21,10 @@ class GoogleCloudAiplatformV1SchemaImageSegmentationAnnotationPolylineAnnotation
 {
   protected $collection_key = 'vertexes';
   /**
-   * The resource Id of the AnnotationSpec that this Annotation pertains to.
-   *
    * @var string
    */
   public $annotationSpecId;
   /**
-   * The display name of the AnnotationSpec that this Annotation pertains to.
-   *
    * @var string
    */
   public $displayName;
@@ -36,9 +32,7 @@ class GoogleCloudAiplatformV1SchemaImageSegmentationAnnotationPolylineAnnotation
   protected $vertexesDataType = 'array';
 
   /**
-   * The resource Id of the AnnotationSpec that this Annotation pertains to.
-   *
-   * @param string $annotationSpecId
+   * @param string
    */
   public function setAnnotationSpecId($annotationSpecId)
   {
@@ -52,9 +46,7 @@ class GoogleCloudAiplatformV1SchemaImageSegmentationAnnotationPolylineAnnotation
     return $this->annotationSpecId;
   }
   /**
-   * The display name of the AnnotationSpec that this Annotation pertains to.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -68,10 +60,7 @@ class GoogleCloudAiplatformV1SchemaImageSegmentationAnnotationPolylineAnnotation
     return $this->displayName;
   }
   /**
-   * The vertexes are connected one by one and the last vertex in not connected
-   * to the first one.
-   *
-   * @param GoogleCloudAiplatformV1SchemaVertex[] $vertexes
+   * @param GoogleCloudAiplatformV1SchemaVertex[]
    */
   public function setVertexes($vertexes)
   {

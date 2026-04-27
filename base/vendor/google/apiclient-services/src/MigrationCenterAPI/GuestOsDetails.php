@@ -19,46 +19,25 @@ namespace Google\Service\MigrationCenterAPI;
 
 class GuestOsDetails extends \Google\Model
 {
-  public const FAMILY_OS_FAMILY_UNKNOWN = 'OS_FAMILY_UNKNOWN';
-  /**
-   * Microsoft Windows Server and Desktop.
-   */
-  public const FAMILY_OS_FAMILY_WINDOWS = 'OS_FAMILY_WINDOWS';
-  /**
-   * Various Linux flavors.
-   */
-  public const FAMILY_OS_FAMILY_LINUX = 'OS_FAMILY_LINUX';
-  /**
-   * Non-Linux Unix flavors.
-   */
-  public const FAMILY_OS_FAMILY_UNIX = 'OS_FAMILY_UNIX';
   protected $configType = GuestConfigDetails::class;
   protected $configDataType = '';
   /**
-   * What family the OS belong to, if known.
-   *
    * @var string
    */
   public $family;
   /**
-   * The name of the operating system.
-   *
    * @var string
    */
   public $osName;
   protected $runtimeType = GuestRuntimeDetails::class;
   protected $runtimeDataType = '';
   /**
-   * The version of the operating system.
-   *
    * @var string
    */
   public $version;
 
   /**
-   * OS and app configuration.
-   *
-   * @param GuestConfigDetails $config
+   * @param GuestConfigDetails
    */
   public function setConfig(GuestConfigDetails $config)
   {
@@ -72,28 +51,21 @@ class GuestOsDetails extends \Google\Model
     return $this->config;
   }
   /**
-   * What family the OS belong to, if known.
-   *
-   * Accepted values: OS_FAMILY_UNKNOWN, OS_FAMILY_WINDOWS, OS_FAMILY_LINUX,
-   * OS_FAMILY_UNIX
-   *
-   * @param self::FAMILY_* $family
+   * @param string
    */
   public function setFamily($family)
   {
     $this->family = $family;
   }
   /**
-   * @return self::FAMILY_*
+   * @return string
    */
   public function getFamily()
   {
     return $this->family;
   }
   /**
-   * The name of the operating system.
-   *
-   * @param string $osName
+   * @param string
    */
   public function setOsName($osName)
   {
@@ -107,9 +79,7 @@ class GuestOsDetails extends \Google\Model
     return $this->osName;
   }
   /**
-   * Runtime information.
-   *
-   * @param GuestRuntimeDetails $runtime
+   * @param GuestRuntimeDetails
    */
   public function setRuntime(GuestRuntimeDetails $runtime)
   {
@@ -123,9 +93,7 @@ class GuestOsDetails extends \Google\Model
     return $this->runtime;
   }
   /**
-   * The version of the operating system.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

@@ -20,26 +20,18 @@ namespace Google\Service\ShoppingContent;
 class RegionalinventoryCustomBatchRequestEntry extends \Google\Model
 {
   /**
-   * An entry ID, unique within the batch request.
-   *
    * @var string
    */
   public $batchId;
   /**
-   * The ID of the managing account.
-   *
    * @var string
    */
   public $merchantId;
   /**
-   * Method of the batch request entry. Acceptable values are: - "`insert`"
-   *
    * @var string
    */
   public $method;
   /**
-   * The ID of the product for which to update price and availability.
-   *
    * @var string
    */
   public $productId;
@@ -47,9 +39,7 @@ class RegionalinventoryCustomBatchRequestEntry extends \Google\Model
   protected $regionalInventoryDataType = '';
 
   /**
-   * An entry ID, unique within the batch request.
-   *
-   * @param string $batchId
+   * @param string
    */
   public function setBatchId($batchId)
   {
@@ -63,9 +53,7 @@ class RegionalinventoryCustomBatchRequestEntry extends \Google\Model
     return $this->batchId;
   }
   /**
-   * The ID of the managing account.
-   *
-   * @param string $merchantId
+   * @param string
    */
   public function setMerchantId($merchantId)
   {
@@ -79,9 +67,7 @@ class RegionalinventoryCustomBatchRequestEntry extends \Google\Model
     return $this->merchantId;
   }
   /**
-   * Method of the batch request entry. Acceptable values are: - "`insert`"
-   *
-   * @param string $method
+   * @param string
    */
   public function setMethod($method)
   {
@@ -95,9 +81,7 @@ class RegionalinventoryCustomBatchRequestEntry extends \Google\Model
     return $this->method;
   }
   /**
-   * The ID of the product for which to update price and availability.
-   *
-   * @param string $productId
+   * @param string
    */
   public function setProductId($productId)
   {
@@ -111,9 +95,7 @@ class RegionalinventoryCustomBatchRequestEntry extends \Google\Model
     return $this->productId;
   }
   /**
-   * Price and availability of the product.
-   *
-   * @param RegionalInventory $regionalInventory
+   * @param RegionalInventory
    */
   public function setRegionalInventory(RegionalInventory $regionalInventory)
   {

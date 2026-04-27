@@ -26,10 +26,7 @@ class AlgorithmRulesRule extends \Google\Collection
   protected $defaultReturnValueDataType = '';
 
   /**
-   * List of conditions in this rule. The criteria among conditions should be
-   * mutually exclusive.
-   *
-   * @param AlgorithmRulesRuleCondition[] $conditions
+   * @param AlgorithmRulesRuleCondition[]
    */
   public function setConditions($conditions)
   {
@@ -43,9 +40,7 @@ class AlgorithmRulesRule extends \Google\Collection
     return $this->conditions;
   }
   /**
-   * The default return value applied when none of the conditions are met.
-   *
-   * @param AlgorithmRulesSignalValue $defaultReturnValue
+   * @param AlgorithmRulesSignalValue
    */
   public function setDefaultReturnValue(AlgorithmRulesSignalValue $defaultReturnValue)
   {

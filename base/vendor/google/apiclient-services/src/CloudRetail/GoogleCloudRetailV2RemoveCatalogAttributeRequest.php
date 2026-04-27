@@ -20,16 +20,12 @@ namespace Google\Service\CloudRetail;
 class GoogleCloudRetailV2RemoveCatalogAttributeRequest extends \Google\Model
 {
   /**
-   * Required. The attribute name key of the CatalogAttribute to remove.
-   *
    * @var string
    */
   public $key;
 
   /**
-   * Required. The attribute name key of the CatalogAttribute to remove.
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {

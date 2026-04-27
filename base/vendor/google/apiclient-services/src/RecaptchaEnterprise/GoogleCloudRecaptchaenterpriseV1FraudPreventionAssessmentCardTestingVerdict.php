@@ -20,18 +20,12 @@ namespace Google\Service\RecaptchaEnterprise;
 class GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessmentCardTestingVerdict extends \Google\Model
 {
   /**
-   * Output only. Probability of this transaction attempt being part of a card
-   * testing attack. Values are from 0.0 (lowest) to 1.0 (highest).
-   *
    * @var float
    */
   public $risk;
 
   /**
-   * Output only. Probability of this transaction attempt being part of a card
-   * testing attack. Values are from 0.0 (lowest) to 1.0 (highest).
-   *
-   * @param float $risk
+   * @param float
    */
   public function setRisk($risk)
   {

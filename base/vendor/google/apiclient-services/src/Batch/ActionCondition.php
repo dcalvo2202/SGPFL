@@ -21,20 +21,12 @@ class ActionCondition extends \Google\Collection
 {
   protected $collection_key = 'exitCodes';
   /**
-   * Exit codes of a task execution. If there are more than 1 exit codes, when
-   * task executes with any of the exit code in the list, the condition is met
-   * and the action will be executed.
-   *
    * @var int[]
    */
   public $exitCodes;
 
   /**
-   * Exit codes of a task execution. If there are more than 1 exit codes, when
-   * task executes with any of the exit code in the list, the condition is met
-   * and the action will be executed.
-   *
-   * @param int[] $exitCodes
+   * @param int[]
    */
   public function setExitCodes($exitCodes)
   {

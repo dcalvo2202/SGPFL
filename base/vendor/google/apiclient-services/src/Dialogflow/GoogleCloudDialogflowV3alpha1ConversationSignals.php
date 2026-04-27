@@ -23,7 +23,7 @@ class GoogleCloudDialogflowV3alpha1ConversationSignals extends \Google\Model
   protected $turnSignalsDataType = '';
 
   /**
-   * @param GoogleCloudDialogflowV3alpha1TurnSignals $turnSignals
+   * @param GoogleCloudDialogflowV3alpha1TurnSignals
    */
   public function setTurnSignals(GoogleCloudDialogflowV3alpha1TurnSignals $turnSignals)
   {

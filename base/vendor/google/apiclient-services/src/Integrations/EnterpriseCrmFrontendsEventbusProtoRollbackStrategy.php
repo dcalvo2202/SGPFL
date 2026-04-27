@@ -23,25 +23,16 @@ class EnterpriseCrmFrontendsEventbusProtoRollbackStrategy extends \Google\Collec
   protected $parametersType = EnterpriseCrmFrontendsEventbusProtoEventParameters::class;
   protected $parametersDataType = '';
   /**
-   * Required. This is the name of the task that needs to be executed upon
-   * rollback of this task.
-   *
    * @var string
    */
   public $rollbackTaskImplementationClassName;
   /**
-   * Required. These are the tasks numbers of the tasks whose
-   * `rollback_strategy.rollback_task_implementation_class_name` needs to be
-   * executed upon failure of this task.
-   *
    * @var string[]
    */
   public $taskNumbersToRollback;
 
   /**
-   * Optional. The customized parameters the user can pass to this task.
-   *
-   * @param EnterpriseCrmFrontendsEventbusProtoEventParameters $parameters
+   * @param EnterpriseCrmFrontendsEventbusProtoEventParameters
    */
   public function setParameters(EnterpriseCrmFrontendsEventbusProtoEventParameters $parameters)
   {
@@ -55,10 +46,7 @@ class EnterpriseCrmFrontendsEventbusProtoRollbackStrategy extends \Google\Collec
     return $this->parameters;
   }
   /**
-   * Required. This is the name of the task that needs to be executed upon
-   * rollback of this task.
-   *
-   * @param string $rollbackTaskImplementationClassName
+   * @param string
    */
   public function setRollbackTaskImplementationClassName($rollbackTaskImplementationClassName)
   {
@@ -72,11 +60,7 @@ class EnterpriseCrmFrontendsEventbusProtoRollbackStrategy extends \Google\Collec
     return $this->rollbackTaskImplementationClassName;
   }
   /**
-   * Required. These are the tasks numbers of the tasks whose
-   * `rollback_strategy.rollback_task_implementation_class_name` needs to be
-   * executed upon failure of this task.
-   *
-   * @param string[] $taskNumbersToRollback
+   * @param string[]
    */
   public function setTaskNumbersToRollback($taskNumbersToRollback)
   {

@@ -21,16 +21,12 @@ class Key extends \Google\Collection
 {
   protected $collection_key = 'keyParts';
   /**
-   * Required. The column values making up the split key.
-   *
    * @var array[]
    */
   public $keyParts;
 
   /**
-   * Required. The column values making up the split key.
-   *
-   * @param array[] $keyParts
+   * @param array[]
    */
   public function setKeyParts($keyParts)
   {

@@ -20,17 +20,10 @@ namespace Google\Service\Batch;
 class AttachedDisk extends \Google\Model
 {
   /**
-   * Device name that the guest operating system will see. It is used by
-   * Runnable.volumes field to mount disks. So please specify the device_name if
-   * you want Batch to help mount the disk, and it should match the device_name
-   * field in volumes.
-   *
    * @var string
    */
   public $deviceName;
   /**
-   * Name of an existing PD.
-   *
    * @var string
    */
   public $existingDisk;
@@ -38,12 +31,7 @@ class AttachedDisk extends \Google\Model
   protected $newDiskDataType = '';
 
   /**
-   * Device name that the guest operating system will see. It is used by
-   * Runnable.volumes field to mount disks. So please specify the device_name if
-   * you want Batch to help mount the disk, and it should match the device_name
-   * field in volumes.
-   *
-   * @param string $deviceName
+   * @param string
    */
   public function setDeviceName($deviceName)
   {
@@ -57,9 +45,7 @@ class AttachedDisk extends \Google\Model
     return $this->deviceName;
   }
   /**
-   * Name of an existing PD.
-   *
-   * @param string $existingDisk
+   * @param string
    */
   public function setExistingDisk($existingDisk)
   {
@@ -73,7 +59,7 @@ class AttachedDisk extends \Google\Model
     return $this->existingDisk;
   }
   /**
-   * @param Disk $newDisk
+   * @param Disk
    */
   public function setNewDisk(Disk $newDisk)
   {

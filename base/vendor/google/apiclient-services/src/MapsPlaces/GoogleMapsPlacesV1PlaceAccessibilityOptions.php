@@ -20,34 +20,24 @@ namespace Google\Service\MapsPlaces;
 class GoogleMapsPlacesV1PlaceAccessibilityOptions extends \Google\Model
 {
   /**
-   * Places has wheelchair accessible entrance.
-   *
    * @var bool
    */
   public $wheelchairAccessibleEntrance;
   /**
-   * Place offers wheelchair accessible parking.
-   *
    * @var bool
    */
   public $wheelchairAccessibleParking;
   /**
-   * Place has wheelchair accessible restroom.
-   *
    * @var bool
    */
   public $wheelchairAccessibleRestroom;
   /**
-   * Place has wheelchair accessible seating.
-   *
    * @var bool
    */
   public $wheelchairAccessibleSeating;
 
   /**
-   * Places has wheelchair accessible entrance.
-   *
-   * @param bool $wheelchairAccessibleEntrance
+   * @param bool
    */
   public function setWheelchairAccessibleEntrance($wheelchairAccessibleEntrance)
   {
@@ -61,9 +51,7 @@ class GoogleMapsPlacesV1PlaceAccessibilityOptions extends \Google\Model
     return $this->wheelchairAccessibleEntrance;
   }
   /**
-   * Place offers wheelchair accessible parking.
-   *
-   * @param bool $wheelchairAccessibleParking
+   * @param bool
    */
   public function setWheelchairAccessibleParking($wheelchairAccessibleParking)
   {
@@ -77,9 +65,7 @@ class GoogleMapsPlacesV1PlaceAccessibilityOptions extends \Google\Model
     return $this->wheelchairAccessibleParking;
   }
   /**
-   * Place has wheelchair accessible restroom.
-   *
-   * @param bool $wheelchairAccessibleRestroom
+   * @param bool
    */
   public function setWheelchairAccessibleRestroom($wheelchairAccessibleRestroom)
   {
@@ -93,9 +79,7 @@ class GoogleMapsPlacesV1PlaceAccessibilityOptions extends \Google\Model
     return $this->wheelchairAccessibleRestroom;
   }
   /**
-   * Place has wheelchair accessible seating.
-   *
-   * @param bool $wheelchairAccessibleSeating
+   * @param bool
    */
   public function setWheelchairAccessibleSeating($wheelchairAccessibleSeating)
   {

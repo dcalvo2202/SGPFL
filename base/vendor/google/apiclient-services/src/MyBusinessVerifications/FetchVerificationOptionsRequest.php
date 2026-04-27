@@ -22,21 +22,12 @@ class FetchVerificationOptionsRequest extends \Google\Model
   protected $contextType = ServiceBusinessContext::class;
   protected $contextDataType = '';
   /**
-   * Required. The BCP 47 language code representing the language that is to be
-   * used for the verification process. Available options vary by language.
-   *
    * @var string
    */
   public $languageCode;
 
   /**
-   * Optional. Extra context information for the verification of service
-   * businesses. Can only be applied to the locations whose business type is
-   * CUSTOMER_LOCATION_ONLY. Specifying an accurate address could enable more
-   * options. INVALID_ARGUMENT will be thrown if it is set for other business
-   * types of locations.
-   *
-   * @param ServiceBusinessContext $context
+   * @param ServiceBusinessContext
    */
   public function setContext(ServiceBusinessContext $context)
   {
@@ -50,10 +41,7 @@ class FetchVerificationOptionsRequest extends \Google\Model
     return $this->context;
   }
   /**
-   * Required. The BCP 47 language code representing the language that is to be
-   * used for the verification process. Available options vary by language.
-   *
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {

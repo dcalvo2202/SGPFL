@@ -21,10 +21,6 @@ class ListServicesResponse extends \Google\Collection
 {
   protected $collection_key = 'services';
   /**
-   * If there are more results than have been returned, then this field is set
-   * to a non-empty value. To see the additional results, use that value as
-   * page_token in the next call to this method.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -32,11 +28,7 @@ class ListServicesResponse extends \Google\Collection
   protected $servicesDataType = 'array';
 
   /**
-   * If there are more results than have been returned, then this field is set
-   * to a non-empty value. To see the additional results, use that value as
-   * page_token in the next call to this method.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -50,9 +42,7 @@ class ListServicesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The Services matching the specified filter.
-   *
-   * @param Service[] $services
+   * @param Service[]
    */
   public function setServices($services)
   {

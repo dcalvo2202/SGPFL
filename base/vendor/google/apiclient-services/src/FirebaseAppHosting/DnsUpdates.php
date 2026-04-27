@@ -21,9 +21,6 @@ class DnsUpdates extends \Google\Collection
 {
   protected $collection_key = 'discovered';
   /**
-   * Output only. The last time App Hosting checked your custom domain's DNS
-   * records.
-   *
    * @var string
    */
   public $checkTime;
@@ -32,17 +29,12 @@ class DnsUpdates extends \Google\Collection
   protected $discoveredType = DnsRecordSet::class;
   protected $discoveredDataType = 'array';
   /**
-   * Output only. The domain name the DNS updates pertain to.
-   *
    * @var string
    */
   public $domainName;
 
   /**
-   * Output only. The last time App Hosting checked your custom domain's DNS
-   * records.
-   *
-   * @param string $checkTime
+   * @param string
    */
   public function setCheckTime($checkTime)
   {
@@ -56,10 +48,7 @@ class DnsUpdates extends \Google\Collection
     return $this->checkTime;
   }
   /**
-   * Output only. The set of DNS records App Hosting needs in order to be able
-   * to serve secure content on the domain.
-   *
-   * @param DnsRecordSet[] $desired
+   * @param DnsRecordSet[]
    */
   public function setDesired($desired)
   {
@@ -73,10 +62,7 @@ class DnsUpdates extends \Google\Collection
     return $this->desired;
   }
   /**
-   * Output only. The set of DNS records App Hosting discovered when inspecting
-   * a domain.
-   *
-   * @param DnsRecordSet[] $discovered
+   * @param DnsRecordSet[]
    */
   public function setDiscovered($discovered)
   {
@@ -90,9 +76,7 @@ class DnsUpdates extends \Google\Collection
     return $this->discovered;
   }
   /**
-   * Output only. The domain name the DNS updates pertain to.
-   *
-   * @param string $domainName
+   * @param string
    */
   public function setDomainName($domainName)
   {

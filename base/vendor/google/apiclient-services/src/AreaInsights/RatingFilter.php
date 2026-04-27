@@ -20,25 +20,16 @@ namespace Google\Service\AreaInsights;
 class RatingFilter extends \Google\Model
 {
   /**
-   * Optional. Restricts results to places whose average user rating is strictly
-   * less than or equal to max_rating. Values must be between 1.0 and 5.0.
-   *
    * @var float
    */
   public $maxRating;
   /**
-   * Optional. Restricts results to places whose average user rating is greater
-   * than or equal to min_rating. Values must be between 1.0 and 5.0.
-   *
    * @var float
    */
   public $minRating;
 
   /**
-   * Optional. Restricts results to places whose average user rating is strictly
-   * less than or equal to max_rating. Values must be between 1.0 and 5.0.
-   *
-   * @param float $maxRating
+   * @param float
    */
   public function setMaxRating($maxRating)
   {
@@ -52,10 +43,7 @@ class RatingFilter extends \Google\Model
     return $this->maxRating;
   }
   /**
-   * Optional. Restricts results to places whose average user rating is greater
-   * than or equal to min_rating. Values must be between 1.0 and 5.0.
-   *
-   * @param float $minRating
+   * @param float
    */
   public function setMinRating($minRating)
   {

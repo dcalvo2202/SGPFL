@@ -20,34 +20,24 @@ namespace Google\Service\ContainerAnalysis;
 class SbomReferenceIntotoPredicate extends \Google\Model
 {
   /**
-   * A map of algorithm to digest of the contents of the SBOM.
-   *
    * @var string[]
    */
   public $digest;
   /**
-   * The location of the SBOM.
-   *
    * @var string
    */
   public $location;
   /**
-   * The mime type of the SBOM.
-   *
    * @var string
    */
   public $mimeType;
   /**
-   * The person or system referring this predicate to the consumer.
-   *
    * @var string
    */
   public $referrerId;
 
   /**
-   * A map of algorithm to digest of the contents of the SBOM.
-   *
-   * @param string[] $digest
+   * @param string[]
    */
   public function setDigest($digest)
   {
@@ -61,9 +51,7 @@ class SbomReferenceIntotoPredicate extends \Google\Model
     return $this->digest;
   }
   /**
-   * The location of the SBOM.
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -77,9 +65,7 @@ class SbomReferenceIntotoPredicate extends \Google\Model
     return $this->location;
   }
   /**
-   * The mime type of the SBOM.
-   *
-   * @param string $mimeType
+   * @param string
    */
   public function setMimeType($mimeType)
   {
@@ -93,9 +79,7 @@ class SbomReferenceIntotoPredicate extends \Google\Model
     return $this->mimeType;
   }
   /**
-   * The person or system referring this predicate to the consumer.
-   *
-   * @param string $referrerId
+   * @param string
    */
   public function setReferrerId($referrerId)
   {

@@ -24,9 +24,7 @@ class CustomerOnboardingState extends \Google\Collection
   protected $onboardingStepsDataType = 'array';
 
   /**
-   * List of customer onboarding steps
-   *
-   * @param CustomerOnboardingStep[] $onboardingSteps
+   * @param CustomerOnboardingStep[]
    */
   public function setOnboardingSteps($onboardingSteps)
   {

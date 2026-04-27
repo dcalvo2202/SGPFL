@@ -23,9 +23,7 @@ class GoogleCloudAiplatformV1CsvDestination extends \Google\Model
   protected $gcsDestinationDataType = '';
 
   /**
-   * Required. Google Cloud Storage location.
-   *
-   * @param GoogleCloudAiplatformV1GcsDestination $gcsDestination
+   * @param GoogleCloudAiplatformV1GcsDestination
    */
   public function setGcsDestination(GoogleCloudAiplatformV1GcsDestination $gcsDestination)
   {

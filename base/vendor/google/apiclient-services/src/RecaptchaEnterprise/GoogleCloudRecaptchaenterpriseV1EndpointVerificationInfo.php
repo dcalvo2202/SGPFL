@@ -20,37 +20,24 @@ namespace Google\Service\RecaptchaEnterprise;
 class GoogleCloudRecaptchaenterpriseV1EndpointVerificationInfo extends \Google\Model
 {
   /**
-   * Email address for which to trigger a verification request.
-   *
    * @var string
    */
   public $emailAddress;
   /**
-   * Output only. Timestamp of the last successful verification for the
-   * endpoint, if any.
-   *
    * @var string
    */
   public $lastVerificationTime;
   /**
-   * Phone number for which to trigger a verification request. Should be given
-   * in E.164 format.
-   *
    * @var string
    */
   public $phoneNumber;
   /**
-   * Output only. Token to provide to the client to trigger endpoint
-   * verification. It must be used within 15 minutes.
-   *
    * @var string
    */
   public $requestToken;
 
   /**
-   * Email address for which to trigger a verification request.
-   *
-   * @param string $emailAddress
+   * @param string
    */
   public function setEmailAddress($emailAddress)
   {
@@ -64,10 +51,7 @@ class GoogleCloudRecaptchaenterpriseV1EndpointVerificationInfo extends \Google\M
     return $this->emailAddress;
   }
   /**
-   * Output only. Timestamp of the last successful verification for the
-   * endpoint, if any.
-   *
-   * @param string $lastVerificationTime
+   * @param string
    */
   public function setLastVerificationTime($lastVerificationTime)
   {
@@ -81,10 +65,7 @@ class GoogleCloudRecaptchaenterpriseV1EndpointVerificationInfo extends \Google\M
     return $this->lastVerificationTime;
   }
   /**
-   * Phone number for which to trigger a verification request. Should be given
-   * in E.164 format.
-   *
-   * @param string $phoneNumber
+   * @param string
    */
   public function setPhoneNumber($phoneNumber)
   {
@@ -98,10 +79,7 @@ class GoogleCloudRecaptchaenterpriseV1EndpointVerificationInfo extends \Google\M
     return $this->phoneNumber;
   }
   /**
-   * Output only. Token to provide to the client to trigger endpoint
-   * verification. It must be used within 15 minutes.
-   *
-   * @param string $requestToken
+   * @param string
    */
   public function setRequestToken($requestToken)
   {

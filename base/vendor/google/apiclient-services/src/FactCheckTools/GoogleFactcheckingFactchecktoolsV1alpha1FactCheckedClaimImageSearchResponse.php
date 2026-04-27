@@ -21,10 +21,6 @@ class GoogleFactcheckingFactchecktoolsV1alpha1FactCheckedClaimImageSearchRespons
 {
   protected $collection_key = 'results';
   /**
-   * The next pagination token in the Search response. It should be used as the
-   * `page_token` for the following request. An empty value means no more
-   * results.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -32,11 +28,7 @@ class GoogleFactcheckingFactchecktoolsV1alpha1FactCheckedClaimImageSearchRespons
   protected $resultsDataType = 'array';
 
   /**
-   * The next pagination token in the Search response. It should be used as the
-   * `page_token` for the following request. An empty value means no more
-   * results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -50,9 +42,7 @@ class GoogleFactcheckingFactchecktoolsV1alpha1FactCheckedClaimImageSearchRespons
     return $this->nextPageToken;
   }
   /**
-   * The list of claims and all of their associated information.
-   *
-   * @param GoogleFactcheckingFactchecktoolsV1alpha1FactCheckedClaimImageSearchResponseResult[] $results
+   * @param GoogleFactcheckingFactchecktoolsV1alpha1FactCheckedClaimImageSearchResponseResult[]
    */
   public function setResults($results)
   {

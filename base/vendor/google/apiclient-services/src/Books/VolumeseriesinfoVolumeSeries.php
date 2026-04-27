@@ -23,29 +23,20 @@ class VolumeseriesinfoVolumeSeries extends \Google\Collection
   protected $issueType = VolumeseriesinfoVolumeSeriesIssue::class;
   protected $issueDataType = 'array';
   /**
-   * The book order number in the series.
-   *
    * @var int
    */
   public $orderNumber;
   /**
-   * The book type in the context of series. Examples - Single Issue, Collection
-   * Edition, etc.
-   *
    * @var string
    */
   public $seriesBookType;
   /**
-   * The series id.
-   *
    * @var string
    */
   public $seriesId;
 
   /**
-   * List of issues. Applicable only for Collection Edition and Omnibus.
-   *
-   * @param VolumeseriesinfoVolumeSeriesIssue[] $issue
+   * @param VolumeseriesinfoVolumeSeriesIssue[]
    */
   public function setIssue($issue)
   {
@@ -59,9 +50,7 @@ class VolumeseriesinfoVolumeSeries extends \Google\Collection
     return $this->issue;
   }
   /**
-   * The book order number in the series.
-   *
-   * @param int $orderNumber
+   * @param int
    */
   public function setOrderNumber($orderNumber)
   {
@@ -75,10 +64,7 @@ class VolumeseriesinfoVolumeSeries extends \Google\Collection
     return $this->orderNumber;
   }
   /**
-   * The book type in the context of series. Examples - Single Issue, Collection
-   * Edition, etc.
-   *
-   * @param string $seriesBookType
+   * @param string
    */
   public function setSeriesBookType($seriesBookType)
   {
@@ -92,9 +78,7 @@ class VolumeseriesinfoVolumeSeries extends \Google\Collection
     return $this->seriesBookType;
   }
   /**
-   * The series id.
-   *
-   * @param string $seriesId
+   * @param string
    */
   public function setSeriesId($seriesId)
   {

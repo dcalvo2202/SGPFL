@@ -22,19 +22,12 @@ class Daily extends \Google\Model
   protected $executionTimeType = TimeOfDay::class;
   protected $executionTimeDataType = '';
   /**
-   * Required. The number of days between runs. Must be greater than or equal to
-   * 1 day and less than or equal to 31 days.
-   *
    * @var int
    */
   public $periodicity;
 
   /**
-   * Optional. The time of day (in UTC) at which the query should run. If left
-   * unspecified, the server picks an arbitrary time of day and runs the query
-   * at the same time each day.
-   *
-   * @param TimeOfDay $executionTime
+   * @param TimeOfDay
    */
   public function setExecutionTime(TimeOfDay $executionTime)
   {
@@ -48,10 +41,7 @@ class Daily extends \Google\Model
     return $this->executionTime;
   }
   /**
-   * Required. The number of days between runs. Must be greater than or equal to
-   * 1 day and less than or equal to 31 days.
-   *
-   * @param int $periodicity
+   * @param int
    */
   public function setPeriodicity($periodicity)
   {

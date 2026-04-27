@@ -20,11 +20,6 @@ namespace Google\Service\ServiceNetworking;
 class UpdateDnsRecordSetRequest extends \Google\Model
 {
   /**
-   * Required. The network that the consumer is using to connect with services.
-   * Must be in the form of projects/{project}/global/networks/{network}
-   * {project} is the project number, as in '12345' {network} is the network
-   * name.
-   *
    * @var string
    */
   public $consumerNetwork;
@@ -33,20 +28,12 @@ class UpdateDnsRecordSetRequest extends \Google\Model
   protected $newDnsRecordSetType = DnsRecordSet::class;
   protected $newDnsRecordSetDataType = '';
   /**
-   * Required. The name of the private DNS zone in the shared producer host
-   * project from which the record set will be removed.
-   *
    * @var string
    */
   public $zone;
 
   /**
-   * Required. The network that the consumer is using to connect with services.
-   * Must be in the form of projects/{project}/global/networks/{network}
-   * {project} is the project number, as in '12345' {network} is the network
-   * name.
-   *
-   * @param string $consumerNetwork
+   * @param string
    */
   public function setConsumerNetwork($consumerNetwork)
   {
@@ -60,9 +47,7 @@ class UpdateDnsRecordSetRequest extends \Google\Model
     return $this->consumerNetwork;
   }
   /**
-   * Required. The existing DNS record set to update.
-   *
-   * @param DnsRecordSet $existingDnsRecordSet
+   * @param DnsRecordSet
    */
   public function setExistingDnsRecordSet(DnsRecordSet $existingDnsRecordSet)
   {
@@ -76,9 +61,7 @@ class UpdateDnsRecordSetRequest extends \Google\Model
     return $this->existingDnsRecordSet;
   }
   /**
-   * Required. The new values that the DNS record set should be updated to hold.
-   *
-   * @param DnsRecordSet $newDnsRecordSet
+   * @param DnsRecordSet
    */
   public function setNewDnsRecordSet(DnsRecordSet $newDnsRecordSet)
   {
@@ -92,10 +75,7 @@ class UpdateDnsRecordSetRequest extends \Google\Model
     return $this->newDnsRecordSet;
   }
   /**
-   * Required. The name of the private DNS zone in the shared producer host
-   * project from which the record set will be removed.
-   *
-   * @param string $zone
+   * @param string
    */
   public function setZone($zone)
   {

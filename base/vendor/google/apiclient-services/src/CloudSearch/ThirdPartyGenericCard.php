@@ -20,14 +20,10 @@ namespace Google\Service\CloudSearch;
 class ThirdPartyGenericCard extends \Google\Model
 {
   /**
-   * Unique identifier for the card.
-   *
    * @var string
    */
   public $cardId;
   /**
-   * Category that the card belongs to.
-   *
    * @var string
    */
   public $category;
@@ -36,22 +32,16 @@ class ThirdPartyGenericCard extends \Google\Model
   protected $contextType = Context::class;
   protected $contextDataType = '';
   /**
-   * Whether the card can be dismissed.
-   *
    * @var bool
    */
   public $isDismissible;
   /**
-   * Priority of the card, where 0 is the highest priority.
-   *
    * @var int
    */
   public $priority;
 
   /**
-   * Unique identifier for the card.
-   *
-   * @param string $cardId
+   * @param string
    */
   public function setCardId($cardId)
   {
@@ -65,9 +55,7 @@ class ThirdPartyGenericCard extends \Google\Model
     return $this->cardId;
   }
   /**
-   * Category that the card belongs to.
-   *
-   * @param string $category
+   * @param string
    */
   public function setCategory($category)
   {
@@ -81,9 +69,7 @@ class ThirdPartyGenericCard extends \Google\Model
     return $this->category;
   }
   /**
-   * [Required] Card content.
-   *
-   * @param Content $content
+   * @param Content
    */
   public function setContent(Content $content)
   {
@@ -97,9 +83,7 @@ class ThirdPartyGenericCard extends \Google\Model
     return $this->content;
   }
   /**
-   * [Required] Context where the card should be triggered.
-   *
-   * @param Context $context
+   * @param Context
    */
   public function setContext(Context $context)
   {
@@ -113,9 +97,7 @@ class ThirdPartyGenericCard extends \Google\Model
     return $this->context;
   }
   /**
-   * Whether the card can be dismissed.
-   *
-   * @param bool $isDismissible
+   * @param bool
    */
   public function setIsDismissible($isDismissible)
   {
@@ -129,9 +111,7 @@ class ThirdPartyGenericCard extends \Google\Model
     return $this->isDismissible;
   }
   /**
-   * Priority of the card, where 0 is the highest priority.
-   *
-   * @param int $priority
+   * @param int
    */
   public function setPriority($priority)
   {

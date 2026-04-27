@@ -17,68 +17,19 @@
 
 namespace Google\Service\HomeGraphService;
 
-class ReportStateAndNotificationDevice extends \Google\Collection
+class ReportStateAndNotificationDevice extends \Google\Model
 {
-  protected $collection_key = 'homeTraits';
-  protected $homeEventsType = HomeEvents::class;
-  protected $homeEventsDataType = 'array';
-  protected $homeTraitsType = HomeTraitUpdates::class;
-  protected $homeTraitsDataType = 'array';
   /**
-   * Notifications metadata for devices. See the **Device NOTIFICATIONS**
-   * section of the individual trait [reference
-   * guides](https://developers.home.google.com/cloud-to-cloud/traits).
-   *
    * @var array[]
    */
   public $notifications;
   /**
-   * States of devices to update. See the **Device STATES** section of the
-   * individual trait [reference
-   * guides](https://developers.home.google.com/cloud-to-cloud/traits).
-   *
    * @var array[]
    */
   public $states;
 
   /**
-   * Optional. UDDM/WHDM trait events
-   *
-   * @param HomeEvents[] $homeEvents
-   */
-  public function setHomeEvents($homeEvents)
-  {
-    $this->homeEvents = $homeEvents;
-  }
-  /**
-   * @return HomeEvents[]
-   */
-  public function getHomeEvents()
-  {
-    return $this->homeEvents;
-  }
-  /**
-   * Optional. UDDM/WHDM trait updates.
-   *
-   * @param HomeTraitUpdates[] $homeTraits
-   */
-  public function setHomeTraits($homeTraits)
-  {
-    $this->homeTraits = $homeTraits;
-  }
-  /**
-   * @return HomeTraitUpdates[]
-   */
-  public function getHomeTraits()
-  {
-    return $this->homeTraits;
-  }
-  /**
-   * Notifications metadata for devices. See the **Device NOTIFICATIONS**
-   * section of the individual trait [reference
-   * guides](https://developers.home.google.com/cloud-to-cloud/traits).
-   *
-   * @param array[] $notifications
+   * @param array[]
    */
   public function setNotifications($notifications)
   {
@@ -92,11 +43,7 @@ class ReportStateAndNotificationDevice extends \Google\Collection
     return $this->notifications;
   }
   /**
-   * States of devices to update. See the **Device STATES** section of the
-   * individual trait [reference
-   * guides](https://developers.home.google.com/cloud-to-cloud/traits).
-   *
-   * @param array[] $states
+   * @param array[]
    */
   public function setStates($states)
   {

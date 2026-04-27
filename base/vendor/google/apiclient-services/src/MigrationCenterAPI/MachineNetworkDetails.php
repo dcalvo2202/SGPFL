@@ -22,35 +22,20 @@ class MachineNetworkDetails extends \Google\Model
   protected $adaptersType = NetworkAdapterList::class;
   protected $adaptersDataType = '';
   /**
-   * Optional. Default gateway address.
-   *
-   * @var string
-   */
-  public $defaultGateway;
-  /**
-   * The primary IP address of the machine.
-   *
    * @var string
    */
   public $primaryIpAddress;
   /**
-   * MAC address of the machine. This property is used to uniqly identify the
-   * machine.
-   *
    * @var string
    */
   public $primaryMacAddress;
   /**
-   * The public IP address of the machine.
-   *
    * @var string
    */
   public $publicIpAddress;
 
   /**
-   * List of network adapters.
-   *
-   * @param NetworkAdapterList $adapters
+   * @param NetworkAdapterList
    */
   public function setAdapters(NetworkAdapterList $adapters)
   {
@@ -64,25 +49,7 @@ class MachineNetworkDetails extends \Google\Model
     return $this->adapters;
   }
   /**
-   * Optional. Default gateway address.
-   *
-   * @param string $defaultGateway
-   */
-  public function setDefaultGateway($defaultGateway)
-  {
-    $this->defaultGateway = $defaultGateway;
-  }
-  /**
-   * @return string
-   */
-  public function getDefaultGateway()
-  {
-    return $this->defaultGateway;
-  }
-  /**
-   * The primary IP address of the machine.
-   *
-   * @param string $primaryIpAddress
+   * @param string
    */
   public function setPrimaryIpAddress($primaryIpAddress)
   {
@@ -96,10 +63,7 @@ class MachineNetworkDetails extends \Google\Model
     return $this->primaryIpAddress;
   }
   /**
-   * MAC address of the machine. This property is used to uniqly identify the
-   * machine.
-   *
-   * @param string $primaryMacAddress
+   * @param string
    */
   public function setPrimaryMacAddress($primaryMacAddress)
   {
@@ -113,9 +77,7 @@ class MachineNetworkDetails extends \Google\Model
     return $this->primaryMacAddress;
   }
   /**
-   * The public IP address of the machine.
-   *
-   * @param string $publicIpAddress
+   * @param string
    */
   public function setPublicIpAddress($publicIpAddress)
   {

@@ -22,19 +22,12 @@ class GoogleAppsDriveLabelsV2BadgeConfig extends \Google\Model
   protected $colorType = GoogleTypeColor::class;
   protected $colorDataType = '';
   /**
-   * Override the default global priority of this badge. When set to 0, the
-   * default priority heuristic is used.
-   *
    * @var string
    */
   public $priorityOverride;
 
   /**
-   * The color of the badge. When not specified, no badge is rendered. The
-   * background, foreground, and solo (light and dark mode) colors set here are
-   * changed in the Drive UI into the closest recommended supported color.
-   *
-   * @param GoogleTypeColor $color
+   * @param GoogleTypeColor
    */
   public function setColor(GoogleTypeColor $color)
   {
@@ -48,10 +41,7 @@ class GoogleAppsDriveLabelsV2BadgeConfig extends \Google\Model
     return $this->color;
   }
   /**
-   * Override the default global priority of this badge. When set to 0, the
-   * default priority heuristic is used.
-   *
-   * @param string $priorityOverride
+   * @param string
    */
   public function setPriorityOverride($priorityOverride)
   {

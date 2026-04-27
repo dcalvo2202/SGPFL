@@ -28,7 +28,7 @@ class GoogleCloudDialogflowCxV3ListPlaybooksResponse extends \Google\Collection
   protected $playbooksDataType = 'array';
 
   /**
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -42,7 +42,7 @@ class GoogleCloudDialogflowCxV3ListPlaybooksResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3Playbook[] $playbooks
+   * @param GoogleCloudDialogflowCxV3Playbook[]
    */
   public function setPlaybooks($playbooks)
   {

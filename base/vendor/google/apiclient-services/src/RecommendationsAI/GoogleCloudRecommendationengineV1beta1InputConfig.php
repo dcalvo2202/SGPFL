@@ -29,9 +29,7 @@ class GoogleCloudRecommendationengineV1beta1InputConfig extends \Google\Model
   protected $userEventInlineSourceDataType = '';
 
   /**
-   * BigQuery input source.
-   *
-   * @param GoogleCloudRecommendationengineV1beta1BigQuerySource $bigQuerySource
+   * @param GoogleCloudRecommendationengineV1beta1BigQuerySource
    */
   public function setBigQuerySource(GoogleCloudRecommendationengineV1beta1BigQuerySource $bigQuerySource)
   {
@@ -45,9 +43,7 @@ class GoogleCloudRecommendationengineV1beta1InputConfig extends \Google\Model
     return $this->bigQuerySource;
   }
   /**
-   * The Inline source for the input content for Catalog items.
-   *
-   * @param GoogleCloudRecommendationengineV1beta1CatalogInlineSource $catalogInlineSource
+   * @param GoogleCloudRecommendationengineV1beta1CatalogInlineSource
    */
   public function setCatalogInlineSource(GoogleCloudRecommendationengineV1beta1CatalogInlineSource $catalogInlineSource)
   {
@@ -61,9 +57,7 @@ class GoogleCloudRecommendationengineV1beta1InputConfig extends \Google\Model
     return $this->catalogInlineSource;
   }
   /**
-   * Google Cloud Storage location for the input content.
-   *
-   * @param GoogleCloudRecommendationengineV1beta1GcsSource $gcsSource
+   * @param GoogleCloudRecommendationengineV1beta1GcsSource
    */
   public function setGcsSource(GoogleCloudRecommendationengineV1beta1GcsSource $gcsSource)
   {
@@ -77,9 +71,7 @@ class GoogleCloudRecommendationengineV1beta1InputConfig extends \Google\Model
     return $this->gcsSource;
   }
   /**
-   * The Inline source for the input content for UserEvents.
-   *
-   * @param GoogleCloudRecommendationengineV1beta1UserEventInlineSource $userEventInlineSource
+   * @param GoogleCloudRecommendationengineV1beta1UserEventInlineSource
    */
   public function setUserEventInlineSource(GoogleCloudRecommendationengineV1beta1UserEventInlineSource $userEventInlineSource)
   {

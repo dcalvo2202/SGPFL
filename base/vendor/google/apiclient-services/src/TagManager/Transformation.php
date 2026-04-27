@@ -21,79 +21,54 @@ class Transformation extends \Google\Collection
 {
   protected $collection_key = 'parameter';
   /**
-   * GTM Account ID.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * GTM Container ID.
-   *
    * @var string
    */
   public $containerId;
   /**
-   * The fingerprint of the GTM Transformation as computed at storage time. This
-   * value is recomputed whenever the transformation is modified.
-   *
    * @var string
    */
   public $fingerprint;
   /**
-   * Transformation display name.
-   *
    * @var string
    */
   public $name;
   /**
-   * User notes on how to apply this transformation in the container.
-   *
    * @var string
    */
   public $notes;
   protected $parameterType = Parameter::class;
   protected $parameterDataType = 'array';
   /**
-   * Parent folder id.
-   *
    * @var string
    */
   public $parentFolderId;
   /**
-   * GTM transformation's API relative path.
-   *
    * @var string
    */
   public $path;
   /**
-   * Auto generated link to the tag manager UI
-   *
    * @var string
    */
   public $tagManagerUrl;
   /**
-   * The Transformation ID uniquely identifies the GTM transformation.
-   *
    * @var string
    */
   public $transformationId;
   /**
-   * Transformation type.
-   *
    * @var string
    */
   public $type;
   /**
-   * GTM Workspace ID.
-   *
    * @var string
    */
   public $workspaceId;
 
   /**
-   * GTM Account ID.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -107,9 +82,7 @@ class Transformation extends \Google\Collection
     return $this->accountId;
   }
   /**
-   * GTM Container ID.
-   *
-   * @param string $containerId
+   * @param string
    */
   public function setContainerId($containerId)
   {
@@ -123,10 +96,7 @@ class Transformation extends \Google\Collection
     return $this->containerId;
   }
   /**
-   * The fingerprint of the GTM Transformation as computed at storage time. This
-   * value is recomputed whenever the transformation is modified.
-   *
-   * @param string $fingerprint
+   * @param string
    */
   public function setFingerprint($fingerprint)
   {
@@ -140,9 +110,7 @@ class Transformation extends \Google\Collection
     return $this->fingerprint;
   }
   /**
-   * Transformation display name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -156,9 +124,7 @@ class Transformation extends \Google\Collection
     return $this->name;
   }
   /**
-   * User notes on how to apply this transformation in the container.
-   *
-   * @param string $notes
+   * @param string
    */
   public function setNotes($notes)
   {
@@ -172,9 +138,7 @@ class Transformation extends \Google\Collection
     return $this->notes;
   }
   /**
-   * The transformation's parameters.
-   *
-   * @param Parameter[] $parameter
+   * @param Parameter[]
    */
   public function setParameter($parameter)
   {
@@ -188,9 +152,7 @@ class Transformation extends \Google\Collection
     return $this->parameter;
   }
   /**
-   * Parent folder id.
-   *
-   * @param string $parentFolderId
+   * @param string
    */
   public function setParentFolderId($parentFolderId)
   {
@@ -204,9 +166,7 @@ class Transformation extends \Google\Collection
     return $this->parentFolderId;
   }
   /**
-   * GTM transformation's API relative path.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {
@@ -220,9 +180,7 @@ class Transformation extends \Google\Collection
     return $this->path;
   }
   /**
-   * Auto generated link to the tag manager UI
-   *
-   * @param string $tagManagerUrl
+   * @param string
    */
   public function setTagManagerUrl($tagManagerUrl)
   {
@@ -236,9 +194,7 @@ class Transformation extends \Google\Collection
     return $this->tagManagerUrl;
   }
   /**
-   * The Transformation ID uniquely identifies the GTM transformation.
-   *
-   * @param string $transformationId
+   * @param string
    */
   public function setTransformationId($transformationId)
   {
@@ -252,9 +208,7 @@ class Transformation extends \Google\Collection
     return $this->transformationId;
   }
   /**
-   * Transformation type.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {
@@ -268,9 +222,7 @@ class Transformation extends \Google\Collection
     return $this->type;
   }
   /**
-   * GTM Workspace ID.
-   *
-   * @param string $workspaceId
+   * @param string
    */
   public function setWorkspaceId($workspaceId)
   {

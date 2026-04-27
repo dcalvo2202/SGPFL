@@ -20,22 +20,13 @@ namespace Google\Service\ShoppingContent;
 class ProductUnitPricingMeasure extends \Google\Model
 {
   /**
-   * The unit of the measure.
-   *
    * @var string
    */
   public $unit;
-  /**
-   * The measure of an item.
-   *
-   * @var 
-   */
   public $value;
 
   /**
-   * The unit of the measure.
-   *
-   * @param string $unit
+   * @param string
    */
   public function setUnit($unit)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\Integrations;
 class GoogleCloudIntegrationsV1alphaDownloadTestCaseResponse extends \Google\Model
 {
   /**
-   * String representation of the test case.
-   *
    * @var string
    */
   public $content;
 
   /**
-   * String representation of the test case.
-   *
-   * @param string $content
+   * @param string
    */
   public function setContent($content)
   {

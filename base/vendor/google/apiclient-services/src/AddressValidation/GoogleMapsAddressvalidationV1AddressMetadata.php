@@ -20,32 +20,20 @@ namespace Google\Service\AddressValidation;
 class GoogleMapsAddressvalidationV1AddressMetadata extends \Google\Model
 {
   /**
-   * Indicates that this is the address of a business. If unset, indicates that
-   * the value is unknown.
-   *
    * @var bool
    */
   public $business;
   /**
-   * Indicates that the address of a PO box. If unset, indicates that the value
-   * is unknown.
-   *
    * @var bool
    */
   public $poBox;
   /**
-   * Indicates that this is the address of a residence. If unset, indicates that
-   * the value is unknown.
-   *
    * @var bool
    */
   public $residential;
 
   /**
-   * Indicates that this is the address of a business. If unset, indicates that
-   * the value is unknown.
-   *
-   * @param bool $business
+   * @param bool
    */
   public function setBusiness($business)
   {
@@ -59,10 +47,7 @@ class GoogleMapsAddressvalidationV1AddressMetadata extends \Google\Model
     return $this->business;
   }
   /**
-   * Indicates that the address of a PO box. If unset, indicates that the value
-   * is unknown.
-   *
-   * @param bool $poBox
+   * @param bool
    */
   public function setPoBox($poBox)
   {
@@ -76,10 +61,7 @@ class GoogleMapsAddressvalidationV1AddressMetadata extends \Google\Model
     return $this->poBox;
   }
   /**
-   * Indicates that this is the address of a residence. If unset, indicates that
-   * the value is unknown.
-   *
-   * @param bool $residential
+   * @param bool
    */
   public function setResidential($residential)
   {

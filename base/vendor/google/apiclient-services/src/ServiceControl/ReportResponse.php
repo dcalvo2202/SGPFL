@@ -20,18 +20,12 @@ namespace Google\Service\ServiceControl;
 class ReportResponse extends \Google\Model
 {
   /**
-   * The extension field to store serialized OTel responses. e.g.
-   * ExportLogsServiceResponse, ExportMetricsServiceResponse.
-   *
    * @var array[]
    */
   public $extensions;
 
   /**
-   * The extension field to store serialized OTel responses. e.g.
-   * ExportLogsServiceResponse, ExportMetricsServiceResponse.
-   *
-   * @param array[] $extensions
+   * @param array[]
    */
   public function setExtensions($extensions)
   {

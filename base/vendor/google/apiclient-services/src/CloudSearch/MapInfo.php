@@ -20,26 +20,13 @@ namespace Google\Service\CloudSearch;
 class MapInfo extends \Google\Collection
 {
   protected $collection_key = 'mapTile';
-  /**
-   * Latitude in degrees
-   *
-   * @var 
-   */
   public $lat;
   protected $locationUrlType = SafeUrlProto::class;
   protected $locationUrlDataType = '';
-  /**
-   * Longitude in degrees
-   *
-   * @var 
-   */
   public $long;
   protected $mapTileType = MapTile::class;
   protected $mapTileDataType = 'array';
   /**
-   * The zoom level of the map. A constant zoom value of 18 is used for now to
-   * match the zoom of the map shown on a Moma Teams Profile page
-   *
    * @var int
    */
   public $zoom;
@@ -53,10 +40,7 @@ class MapInfo extends \Google\Collection
     return $this->lat;
   }
   /**
-   * URL to a view of a map centered on the user's work location in Campus Maps
-   * (for google.com) or Google Maps (external).
-   *
-   * @param SafeUrlProto $locationUrl
+   * @param SafeUrlProto
    */
   public function setLocationUrl(SafeUrlProto $locationUrl)
   {
@@ -78,9 +62,7 @@ class MapInfo extends \Google\Collection
     return $this->long;
   }
   /**
-   * MapTiles for the area around a user's work location
-   *
-   * @param MapTile[] $mapTile
+   * @param MapTile[]
    */
   public function setMapTile($mapTile)
   {
@@ -94,10 +76,7 @@ class MapInfo extends \Google\Collection
     return $this->mapTile;
   }
   /**
-   * The zoom level of the map. A constant zoom value of 18 is used for now to
-   * match the zoom of the map shown on a Moma Teams Profile page
-   *
-   * @param int $zoom
+   * @param int
    */
   public function setZoom($zoom)
   {

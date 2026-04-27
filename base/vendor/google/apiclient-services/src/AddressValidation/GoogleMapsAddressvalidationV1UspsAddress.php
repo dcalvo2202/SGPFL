@@ -20,64 +20,44 @@ namespace Google\Service\AddressValidation;
 class GoogleMapsAddressvalidationV1UspsAddress extends \Google\Model
 {
   /**
-   * City name.
-   *
    * @var string
    */
   public $city;
   /**
-   * City + state + postal code.
-   *
    * @var string
    */
   public $cityStateZipAddressLine;
   /**
-   * Firm name.
-   *
    * @var string
    */
   public $firm;
   /**
-   * First address line.
-   *
    * @var string
    */
   public $firstAddressLine;
   /**
-   * Second address line.
-   *
    * @var string
    */
   public $secondAddressLine;
   /**
-   * 2 letter state code.
-   *
    * @var string
    */
   public $state;
   /**
-   * Puerto Rican urbanization name.
-   *
    * @var string
    */
   public $urbanization;
   /**
-   * Postal code e.g. 10009.
-   *
    * @var string
    */
   public $zipCode;
   /**
-   * 4-digit postal code extension e.g. 5023.
-   *
    * @var string
    */
   public $zipCodeExtension;
 
   /**
-   * City name.
-   *
-   * @param string $city
+   * @param string
    */
   public function setCity($city)
   {
@@ -91,9 +71,7 @@ class GoogleMapsAddressvalidationV1UspsAddress extends \Google\Model
     return $this->city;
   }
   /**
-   * City + state + postal code.
-   *
-   * @param string $cityStateZipAddressLine
+   * @param string
    */
   public function setCityStateZipAddressLine($cityStateZipAddressLine)
   {
@@ -107,9 +85,7 @@ class GoogleMapsAddressvalidationV1UspsAddress extends \Google\Model
     return $this->cityStateZipAddressLine;
   }
   /**
-   * Firm name.
-   *
-   * @param string $firm
+   * @param string
    */
   public function setFirm($firm)
   {
@@ -123,9 +99,7 @@ class GoogleMapsAddressvalidationV1UspsAddress extends \Google\Model
     return $this->firm;
   }
   /**
-   * First address line.
-   *
-   * @param string $firstAddressLine
+   * @param string
    */
   public function setFirstAddressLine($firstAddressLine)
   {
@@ -139,9 +113,7 @@ class GoogleMapsAddressvalidationV1UspsAddress extends \Google\Model
     return $this->firstAddressLine;
   }
   /**
-   * Second address line.
-   *
-   * @param string $secondAddressLine
+   * @param string
    */
   public function setSecondAddressLine($secondAddressLine)
   {
@@ -155,9 +127,7 @@ class GoogleMapsAddressvalidationV1UspsAddress extends \Google\Model
     return $this->secondAddressLine;
   }
   /**
-   * 2 letter state code.
-   *
-   * @param string $state
+   * @param string
    */
   public function setState($state)
   {
@@ -171,9 +141,7 @@ class GoogleMapsAddressvalidationV1UspsAddress extends \Google\Model
     return $this->state;
   }
   /**
-   * Puerto Rican urbanization name.
-   *
-   * @param string $urbanization
+   * @param string
    */
   public function setUrbanization($urbanization)
   {
@@ -187,9 +155,7 @@ class GoogleMapsAddressvalidationV1UspsAddress extends \Google\Model
     return $this->urbanization;
   }
   /**
-   * Postal code e.g. 10009.
-   *
-   * @param string $zipCode
+   * @param string
    */
   public function setZipCode($zipCode)
   {
@@ -203,9 +169,7 @@ class GoogleMapsAddressvalidationV1UspsAddress extends \Google\Model
     return $this->zipCode;
   }
   /**
-   * 4-digit postal code extension e.g. 5023.
-   *
-   * @param string $zipCodeExtension
+   * @param string
    */
   public function setZipCodeExtension($zipCodeExtension)
   {

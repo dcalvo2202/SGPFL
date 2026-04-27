@@ -20,36 +20,22 @@ namespace Google\Service\CloudDeploy;
 class TargetArtifact extends \Google\Model
 {
   /**
-   * Output only. URI of a directory containing the artifacts. This contains
-   * deployment configuration used by Skaffold during a rollout, and all paths
-   * are relative to this location.
-   *
    * @var string
    */
   public $artifactUri;
   /**
-   * Output only. File path of the rendered manifest relative to the URI for the
-   * stable phase.
-   *
    * @var string
    */
   public $manifestPath;
   protected $phaseArtifactsType = PhaseArtifact::class;
   protected $phaseArtifactsDataType = 'map';
   /**
-   * Output only. File path of the resolved Skaffold configuration for the
-   * stable phase, relative to the URI.
-   *
    * @var string
    */
   public $skaffoldConfigPath;
 
   /**
-   * Output only. URI of a directory containing the artifacts. This contains
-   * deployment configuration used by Skaffold during a rollout, and all paths
-   * are relative to this location.
-   *
-   * @param string $artifactUri
+   * @param string
    */
   public function setArtifactUri($artifactUri)
   {
@@ -63,10 +49,7 @@ class TargetArtifact extends \Google\Model
     return $this->artifactUri;
   }
   /**
-   * Output only. File path of the rendered manifest relative to the URI for the
-   * stable phase.
-   *
-   * @param string $manifestPath
+   * @param string
    */
   public function setManifestPath($manifestPath)
   {
@@ -80,9 +63,7 @@ class TargetArtifact extends \Google\Model
     return $this->manifestPath;
   }
   /**
-   * Output only. Map from the phase ID to the phase artifacts for the `Target`.
-   *
-   * @param PhaseArtifact[] $phaseArtifacts
+   * @param PhaseArtifact[]
    */
   public function setPhaseArtifacts($phaseArtifacts)
   {
@@ -96,10 +77,7 @@ class TargetArtifact extends \Google\Model
     return $this->phaseArtifacts;
   }
   /**
-   * Output only. File path of the resolved Skaffold configuration for the
-   * stable phase, relative to the URI.
-   *
-   * @param string $skaffoldConfigPath
+   * @param string
    */
   public function setSkaffoldConfigPath($skaffoldConfigPath)
   {

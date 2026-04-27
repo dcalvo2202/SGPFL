@@ -21,17 +21,10 @@ class SasPortalChannelWithScore extends \Google\Model
 {
   protected $frequencyRangeType = SasPortalFrequencyRange::class;
   protected $frequencyRangeDataType = '';
-  /**
-   * The channel score, normalized to be in the range [0,100].
-   *
-   * @var 
-   */
   public $score;
 
   /**
-   * The frequency range of the channel.
-   *
-   * @param SasPortalFrequencyRange $frequencyRange
+   * @param SasPortalFrequencyRange
    */
   public function setFrequencyRange(SasPortalFrequencyRange $frequencyRange)
   {

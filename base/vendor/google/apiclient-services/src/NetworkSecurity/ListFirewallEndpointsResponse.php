@@ -23,22 +23,16 @@ class ListFirewallEndpointsResponse extends \Google\Collection
   protected $firewallEndpointsType = FirewallEndpoint::class;
   protected $firewallEndpointsDataType = 'array';
   /**
-   * A token identifying a page of results the server should return.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * The list of Endpoint
-   *
-   * @param FirewallEndpoint[] $firewallEndpoints
+   * @param FirewallEndpoint[]
    */
   public function setFirewallEndpoints($firewallEndpoints)
   {
@@ -52,9 +46,7 @@ class ListFirewallEndpointsResponse extends \Google\Collection
     return $this->firewallEndpoints;
   }
   /**
-   * A token identifying a page of results the server should return.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -68,9 +60,7 @@ class ListFirewallEndpointsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

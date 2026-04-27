@@ -20,35 +20,24 @@ namespace Google\Service\YouTube;
 class VideoFileDetailsAudioStream extends \Google\Model
 {
   /**
-   * The audio stream's bitrate, in bits per second.
-   *
    * @var string
    */
   public $bitrateBps;
   /**
-   * The number of audio channels that the stream contains.
-   *
    * @var string
    */
   public $channelCount;
   /**
-   * The audio codec that the stream uses.
-   *
    * @var string
    */
   public $codec;
   /**
-   * A value that uniquely identifies a video vendor. Typically, the value is a
-   * four-letter vendor code.
-   *
    * @var string
    */
   public $vendor;
 
   /**
-   * The audio stream's bitrate, in bits per second.
-   *
-   * @param string $bitrateBps
+   * @param string
    */
   public function setBitrateBps($bitrateBps)
   {
@@ -62,9 +51,7 @@ class VideoFileDetailsAudioStream extends \Google\Model
     return $this->bitrateBps;
   }
   /**
-   * The number of audio channels that the stream contains.
-   *
-   * @param string $channelCount
+   * @param string
    */
   public function setChannelCount($channelCount)
   {
@@ -78,9 +65,7 @@ class VideoFileDetailsAudioStream extends \Google\Model
     return $this->channelCount;
   }
   /**
-   * The audio codec that the stream uses.
-   *
-   * @param string $codec
+   * @param string
    */
   public function setCodec($codec)
   {
@@ -94,10 +79,7 @@ class VideoFileDetailsAudioStream extends \Google\Model
     return $this->codec;
   }
   /**
-   * A value that uniquely identifies a video vendor. Typically, the value is a
-   * four-letter vendor code.
-   *
-   * @param string $vendor
+   * @param string
    */
   public function setVendor($vendor)
   {

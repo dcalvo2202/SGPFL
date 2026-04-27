@@ -20,52 +20,28 @@ namespace Google\Service\RapidMigrationAssessment;
 class Annotation extends \Google\Model
 {
   /**
-   * Unknown type
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * Indicates that this project has opted into StratoZone export.
-   */
-  public const TYPE_TYPE_LEGACY_EXPORT_CONSENT = 'TYPE_LEGACY_EXPORT_CONSENT';
-  /**
-   * Indicates that this project is created by Qwiklab.
-   */
-  public const TYPE_TYPE_QWIKLAB = 'TYPE_QWIKLAB';
-  /**
-   * Output only. Create time stamp.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Labels as key value pairs.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * name of resource.
-   *
    * @var string
    */
   public $name;
   /**
-   * Type of an annotation.
-   *
    * @var string
    */
   public $type;
   /**
-   * Output only. Update time stamp.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. Create time stamp.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -79,9 +55,7 @@ class Annotation extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Labels as key value pairs.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -95,9 +69,7 @@ class Annotation extends \Google\Model
     return $this->labels;
   }
   /**
-   * name of resource.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -111,27 +83,21 @@ class Annotation extends \Google\Model
     return $this->name;
   }
   /**
-   * Type of an annotation.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, TYPE_LEGACY_EXPORT_CONSENT, TYPE_QWIKLAB
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * Output only. Update time stamp.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

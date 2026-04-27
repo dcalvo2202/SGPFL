@@ -23,9 +23,7 @@ class BareMetalNodePoolUpgradePolicy extends \Google\Model
   protected $parallelUpgradeConfigDataType = '';
 
   /**
-   * The parallel upgrade settings for worker node pools.
-   *
-   * @param BareMetalParallelUpgradeConfig $parallelUpgradeConfig
+   * @param BareMetalParallelUpgradeConfig
    */
   public function setParallelUpgradeConfig(BareMetalParallelUpgradeConfig $parallelUpgradeConfig)
   {

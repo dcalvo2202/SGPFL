@@ -20,48 +20,28 @@ namespace Google\Service\Monitoring;
 class Group extends \Google\Model
 {
   /**
-   * A user-assigned name for this group, used only for display purposes.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * The filter used to determine which monitored resources belong to this
-   * group.
-   *
    * @var string
    */
   public $filter;
   /**
-   * If true, the members of this group are considered to be a cluster. The
-   * system can perform additional analysis on groups that are clusters.
-   *
    * @var bool
    */
   public $isCluster;
   /**
-   * Output only. The name of this group. The format is:
-   * projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID] When creating a group,
-   * this field is ignored and a new name is created consisting of the project
-   * specified in the call to CreateGroup and a unique [GROUP_ID] that is
-   * generated automatically.
-   *
    * @var string
    */
   public $name;
   /**
-   * The name of the group's parent, if it has one. The format is:
-   * projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID] For groups with no
-   * parent, parent_name is the empty string, "".
-   *
    * @var string
    */
   public $parentName;
 
   /**
-   * A user-assigned name for this group, used only for display purposes.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -75,10 +55,7 @@ class Group extends \Google\Model
     return $this->displayName;
   }
   /**
-   * The filter used to determine which monitored resources belong to this
-   * group.
-   *
-   * @param string $filter
+   * @param string
    */
   public function setFilter($filter)
   {
@@ -92,10 +69,7 @@ class Group extends \Google\Model
     return $this->filter;
   }
   /**
-   * If true, the members of this group are considered to be a cluster. The
-   * system can perform additional analysis on groups that are clusters.
-   *
-   * @param bool $isCluster
+   * @param bool
    */
   public function setIsCluster($isCluster)
   {
@@ -109,13 +83,7 @@ class Group extends \Google\Model
     return $this->isCluster;
   }
   /**
-   * Output only. The name of this group. The format is:
-   * projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID] When creating a group,
-   * this field is ignored and a new name is created consisting of the project
-   * specified in the call to CreateGroup and a unique [GROUP_ID] that is
-   * generated automatically.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -129,11 +97,7 @@ class Group extends \Google\Model
     return $this->name;
   }
   /**
-   * The name of the group's parent, if it has one. The format is:
-   * projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID] For groups with no
-   * parent, parent_name is the empty string, "".
-   *
-   * @param string $parentName
+   * @param string
    */
   public function setParentName($parentName)
   {

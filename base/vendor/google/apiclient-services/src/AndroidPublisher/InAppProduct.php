@@ -20,44 +20,12 @@ namespace Google\Service\AndroidPublisher;
 class InAppProduct extends \Google\Model
 {
   /**
-   * Unspecified purchase type.
-   */
-  public const PURCHASE_TYPE_purchaseTypeUnspecified = 'purchaseTypeUnspecified';
-  /**
-   * The default product type - one time purchase.
-   */
-  public const PURCHASE_TYPE_managedUser = 'managedUser';
-  /**
-   * In-app product with a recurring period.
-   */
-  public const PURCHASE_TYPE_subscription = 'subscription';
-  /**
-   * Unspecified status.
-   */
-  public const STATUS_statusUnspecified = 'statusUnspecified';
-  /**
-   * The product is published and active in the store.
-   */
-  public const STATUS_active = 'active';
-  /**
-   * The product is not published and therefore inactive in the store.
-   */
-  public const STATUS_inactive = 'inactive';
-  /**
-   * Default language of the localized data, as defined by BCP-47. e.g. "en-US".
-   *
    * @var string
    */
   public $defaultLanguage;
   protected $defaultPriceType = Price::class;
   protected $defaultPriceDataType = '';
   /**
-   * Grace period of the subscription, specified in ISO 8601 format. Allows
-   * developers to give their subscribers a grace period when the payment for
-   * the new recurrence period is declined. Acceptable values are P0D (zero
-   * days), P3D (three days), P7D (seven days), P14D (14 days), and P30D (30
-   * days).
-   *
    * @var string
    */
   public $gracePeriod;
@@ -66,53 +34,36 @@ class InAppProduct extends \Google\Model
   protected $managedProductTaxesAndComplianceSettingsType = ManagedProductTaxAndComplianceSettings::class;
   protected $managedProductTaxesAndComplianceSettingsDataType = '';
   /**
-   * Package name of the parent app.
-   *
    * @var string
    */
   public $packageName;
   protected $pricesType = Price::class;
   protected $pricesDataType = 'map';
   /**
-   * The type of the product, e.g. a recurring subscription.
-   *
    * @var string
    */
   public $purchaseType;
   /**
-   * Stock-keeping-unit (SKU) of the product, unique within an app.
-   *
    * @var string
    */
   public $sku;
   /**
-   * The status of the product, e.g. whether it's active.
-   *
    * @var string
    */
   public $status;
   /**
-   * Subscription period, specified in ISO 8601 format. Acceptable values are
-   * P1W (one week), P1M (one month), P3M (three months), P6M (six months), and
-   * P1Y (one year).
-   *
    * @var string
    */
   public $subscriptionPeriod;
   protected $subscriptionTaxesAndComplianceSettingsType = SubscriptionTaxAndComplianceSettings::class;
   protected $subscriptionTaxesAndComplianceSettingsDataType = '';
   /**
-   * Trial period, specified in ISO 8601 format. Acceptable values are anything
-   * between P7D (seven days) and P999D (999 days).
-   *
    * @var string
    */
   public $trialPeriod;
 
   /**
-   * Default language of the localized data, as defined by BCP-47. e.g. "en-US".
-   *
-   * @param string $defaultLanguage
+   * @param string
    */
   public function setDefaultLanguage($defaultLanguage)
   {
@@ -126,10 +77,7 @@ class InAppProduct extends \Google\Model
     return $this->defaultLanguage;
   }
   /**
-   * Default price. Cannot be zero, as in-app products are never free. Always in
-   * the developer's Checkout merchant currency.
-   *
-   * @param Price $defaultPrice
+   * @param Price
    */
   public function setDefaultPrice(Price $defaultPrice)
   {
@@ -143,13 +91,7 @@ class InAppProduct extends \Google\Model
     return $this->defaultPrice;
   }
   /**
-   * Grace period of the subscription, specified in ISO 8601 format. Allows
-   * developers to give their subscribers a grace period when the payment for
-   * the new recurrence period is declined. Acceptable values are P0D (zero
-   * days), P3D (three days), P7D (seven days), P14D (14 days), and P30D (30
-   * days).
-   *
-   * @param string $gracePeriod
+   * @param string
    */
   public function setGracePeriod($gracePeriod)
   {
@@ -163,10 +105,7 @@ class InAppProduct extends \Google\Model
     return $this->gracePeriod;
   }
   /**
-   * List of localized title and description data. Map key is the language of
-   * the localized data, as defined by BCP-47, e.g. "en-US".
-   *
-   * @param InAppProductListing[] $listings
+   * @param InAppProductListing[]
    */
   public function setListings($listings)
   {
@@ -180,10 +119,7 @@ class InAppProduct extends \Google\Model
     return $this->listings;
   }
   /**
-   * Details about taxes and legal compliance. Only applicable to managed
-   * products.
-   *
-   * @param ManagedProductTaxAndComplianceSettings $managedProductTaxesAndComplianceSettings
+   * @param ManagedProductTaxAndComplianceSettings
    */
   public function setManagedProductTaxesAndComplianceSettings(ManagedProductTaxAndComplianceSettings $managedProductTaxesAndComplianceSettings)
   {
@@ -197,9 +133,7 @@ class InAppProduct extends \Google\Model
     return $this->managedProductTaxesAndComplianceSettings;
   }
   /**
-   * Package name of the parent app.
-   *
-   * @param string $packageName
+   * @param string
    */
   public function setPackageName($packageName)
   {
@@ -213,10 +147,7 @@ class InAppProduct extends \Google\Model
     return $this->packageName;
   }
   /**
-   * Prices per buyer region. None of these can be zero, as in-app products are
-   * never free. Map key is region code, as defined by ISO 3166-2.
-   *
-   * @param Price[] $prices
+   * @param Price[]
    */
   public function setPrices($prices)
   {
@@ -230,27 +161,21 @@ class InAppProduct extends \Google\Model
     return $this->prices;
   }
   /**
-   * The type of the product, e.g. a recurring subscription.
-   *
-   * Accepted values: purchaseTypeUnspecified, managedUser, subscription
-   *
-   * @param self::PURCHASE_TYPE_* $purchaseType
+   * @param string
    */
   public function setPurchaseType($purchaseType)
   {
     $this->purchaseType = $purchaseType;
   }
   /**
-   * @return self::PURCHASE_TYPE_*
+   * @return string
    */
   public function getPurchaseType()
   {
     return $this->purchaseType;
   }
   /**
-   * Stock-keeping-unit (SKU) of the product, unique within an app.
-   *
-   * @param string $sku
+   * @param string
    */
   public function setSku($sku)
   {
@@ -264,29 +189,21 @@ class InAppProduct extends \Google\Model
     return $this->sku;
   }
   /**
-   * The status of the product, e.g. whether it's active.
-   *
-   * Accepted values: statusUnspecified, active, inactive
-   *
-   * @param self::STATUS_* $status
+   * @param string
    */
   public function setStatus($status)
   {
     $this->status = $status;
   }
   /**
-   * @return self::STATUS_*
+   * @return string
    */
   public function getStatus()
   {
     return $this->status;
   }
   /**
-   * Subscription period, specified in ISO 8601 format. Acceptable values are
-   * P1W (one week), P1M (one month), P3M (three months), P6M (six months), and
-   * P1Y (one year).
-   *
-   * @param string $subscriptionPeriod
+   * @param string
    */
   public function setSubscriptionPeriod($subscriptionPeriod)
   {
@@ -300,10 +217,7 @@ class InAppProduct extends \Google\Model
     return $this->subscriptionPeriod;
   }
   /**
-   * Details about taxes and legal compliance. Only applicable to subscription
-   * products.
-   *
-   * @param SubscriptionTaxAndComplianceSettings $subscriptionTaxesAndComplianceSettings
+   * @param SubscriptionTaxAndComplianceSettings
    */
   public function setSubscriptionTaxesAndComplianceSettings(SubscriptionTaxAndComplianceSettings $subscriptionTaxesAndComplianceSettings)
   {
@@ -317,10 +231,7 @@ class InAppProduct extends \Google\Model
     return $this->subscriptionTaxesAndComplianceSettings;
   }
   /**
-   * Trial period, specified in ISO 8601 format. Acceptable values are anything
-   * between P7D (seven days) and P999D (999 days).
-   *
-   * @param string $trialPeriod
+   * @param string
    */
   public function setTrialPeriod($trialPeriod)
   {

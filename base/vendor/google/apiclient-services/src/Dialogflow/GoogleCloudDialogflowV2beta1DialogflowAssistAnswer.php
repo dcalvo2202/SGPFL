@@ -29,7 +29,7 @@ class GoogleCloudDialogflowV2beta1DialogflowAssistAnswer extends \Google\Model
   protected $queryResultDataType = '';
 
   /**
-   * @param string $answerRecord
+   * @param string
    */
   public function setAnswerRecord($answerRecord)
   {
@@ -43,7 +43,7 @@ class GoogleCloudDialogflowV2beta1DialogflowAssistAnswer extends \Google\Model
     return $this->answerRecord;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1IntentSuggestion $intentSuggestion
+   * @param GoogleCloudDialogflowV2beta1IntentSuggestion
    */
   public function setIntentSuggestion(GoogleCloudDialogflowV2beta1IntentSuggestion $intentSuggestion)
   {
@@ -57,7 +57,7 @@ class GoogleCloudDialogflowV2beta1DialogflowAssistAnswer extends \Google\Model
     return $this->intentSuggestion;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1QueryResult $queryResult
+   * @param GoogleCloudDialogflowV2beta1QueryResult
    */
   public function setQueryResult(GoogleCloudDialogflowV2beta1QueryResult $queryResult)
   {

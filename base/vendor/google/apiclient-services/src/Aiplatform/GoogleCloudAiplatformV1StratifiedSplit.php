@@ -20,36 +20,15 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1StratifiedSplit extends \Google\Model
 {
   /**
-   * Required. The key is a name of one of the Dataset's data columns. The key
-   * provided must be for a categorical column.
-   *
    * @var string
    */
   public $key;
-  /**
-   * The fraction of the input data that is to be used to evaluate the Model.
-   *
-   * @var 
-   */
   public $testFraction;
-  /**
-   * The fraction of the input data that is to be used to train the Model.
-   *
-   * @var 
-   */
   public $trainingFraction;
-  /**
-   * The fraction of the input data that is to be used to validate the Model.
-   *
-   * @var 
-   */
   public $validationFraction;
 
   /**
-   * Required. The key is a name of one of the Dataset's data columns. The key
-   * provided must be for a categorical column.
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {

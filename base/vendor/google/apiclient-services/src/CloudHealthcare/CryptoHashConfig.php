@@ -20,11 +20,6 @@ namespace Google\Service\CloudHealthcare;
 class CryptoHashConfig extends \Google\Model
 {
   /**
-   * An AES 128/192/256 bit key. Causes the hash to be computed based on this
-   * key. A default key is generated for each Deidentify operation and is used
-   * when neither `crypto_key` nor `kms_wrapped` is specified. Must not be set
-   * if `kms_wrapped` is set.
-   *
    * @var string
    */
   public $cryptoKey;
@@ -32,12 +27,7 @@ class CryptoHashConfig extends \Google\Model
   protected $kmsWrappedDataType = '';
 
   /**
-   * An AES 128/192/256 bit key. Causes the hash to be computed based on this
-   * key. A default key is generated for each Deidentify operation and is used
-   * when neither `crypto_key` nor `kms_wrapped` is specified. Must not be set
-   * if `kms_wrapped` is set.
-   *
-   * @param string $cryptoKey
+   * @param string
    */
   public function setCryptoKey($cryptoKey)
   {
@@ -51,9 +41,7 @@ class CryptoHashConfig extends \Google\Model
     return $this->cryptoKey;
   }
   /**
-   * KMS wrapped key. Must not be set if `crypto_key` is set.
-   *
-   * @param KmsWrappedCryptoKey $kmsWrapped
+   * @param KmsWrappedCryptoKey
    */
   public function setKmsWrapped(KmsWrappedCryptoKey $kmsWrapped)
   {

@@ -19,27 +19,9 @@ namespace Google\Service\Script;
 
 class EntryPoint extends \Google\Model
 {
-  /**
-   * An unspecified entry point.
-   */
-  public const ENTRY_POINT_TYPE_ENTRY_POINT_TYPE_UNSPECIFIED = 'ENTRY_POINT_TYPE_UNSPECIFIED';
-  /**
-   * A web application entry point.
-   */
-  public const ENTRY_POINT_TYPE_WEB_APP = 'WEB_APP';
-  /**
-   * An API executable entry point.
-   */
-  public const ENTRY_POINT_TYPE_EXECUTION_API = 'EXECUTION_API';
-  /**
-   * An Add-On entry point.
-   */
-  public const ENTRY_POINT_TYPE_ADD_ON = 'ADD_ON';
   protected $addOnType = GoogleAppsScriptTypeAddOnEntryPoint::class;
   protected $addOnDataType = '';
   /**
-   * The type of the entry point.
-   *
    * @var string
    */
   public $entryPointType;
@@ -49,9 +31,7 @@ class EntryPoint extends \Google\Model
   protected $webAppDataType = '';
 
   /**
-   * Add-on properties.
-   *
-   * @param GoogleAppsScriptTypeAddOnEntryPoint $addOn
+   * @param GoogleAppsScriptTypeAddOnEntryPoint
    */
   public function setAddOn(GoogleAppsScriptTypeAddOnEntryPoint $addOn)
   {
@@ -65,28 +45,21 @@ class EntryPoint extends \Google\Model
     return $this->addOn;
   }
   /**
-   * The type of the entry point.
-   *
-   * Accepted values: ENTRY_POINT_TYPE_UNSPECIFIED, WEB_APP, EXECUTION_API,
-   * ADD_ON
-   *
-   * @param self::ENTRY_POINT_TYPE_* $entryPointType
+   * @param string
    */
   public function setEntryPointType($entryPointType)
   {
     $this->entryPointType = $entryPointType;
   }
   /**
-   * @return self::ENTRY_POINT_TYPE_*
+   * @return string
    */
   public function getEntryPointType()
   {
     return $this->entryPointType;
   }
   /**
-   * An entry point specification for Apps Script API execution calls.
-   *
-   * @param GoogleAppsScriptTypeExecutionApiEntryPoint $executionApi
+   * @param GoogleAppsScriptTypeExecutionApiEntryPoint
    */
   public function setExecutionApi(GoogleAppsScriptTypeExecutionApiEntryPoint $executionApi)
   {
@@ -100,9 +73,7 @@ class EntryPoint extends \Google\Model
     return $this->executionApi;
   }
   /**
-   * An entry point specification for web apps.
-   *
-   * @param GoogleAppsScriptTypeWebAppEntryPoint $webApp
+   * @param GoogleAppsScriptTypeWebAppEntryPoint
    */
   public function setWebApp(GoogleAppsScriptTypeWebAppEntryPoint $webApp)
   {

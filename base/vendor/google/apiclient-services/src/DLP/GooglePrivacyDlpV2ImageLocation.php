@@ -24,9 +24,7 @@ class GooglePrivacyDlpV2ImageLocation extends \Google\Collection
   protected $boundingBoxesDataType = 'array';
 
   /**
-   * Bounding boxes locating the pixels within the image containing the finding.
-   *
-   * @param GooglePrivacyDlpV2BoundingBox[] $boundingBoxes
+   * @param GooglePrivacyDlpV2BoundingBox[]
    */
   public function setBoundingBoxes($boundingBoxes)
   {

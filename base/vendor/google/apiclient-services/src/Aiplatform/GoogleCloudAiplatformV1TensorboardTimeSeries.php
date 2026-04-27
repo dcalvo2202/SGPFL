@@ -20,89 +20,46 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1TensorboardTimeSeries extends \Google\Model
 {
   /**
-   * The value type is unspecified.
-   */
-  public const VALUE_TYPE_VALUE_TYPE_UNSPECIFIED = 'VALUE_TYPE_UNSPECIFIED';
-  /**
-   * Used for TensorboardTimeSeries that is a list of scalars. E.g. accuracy of
-   * a model over epochs/time.
-   */
-  public const VALUE_TYPE_SCALAR = 'SCALAR';
-  /**
-   * Used for TensorboardTimeSeries that is a list of tensors. E.g. histograms
-   * of weights of layer in a model over epoch/time.
-   */
-  public const VALUE_TYPE_TENSOR = 'TENSOR';
-  /**
-   * Used for TensorboardTimeSeries that is a list of blob sequences. E.g. set
-   * of sample images with labels over epochs/time.
-   */
-  public const VALUE_TYPE_BLOB_SEQUENCE = 'BLOB_SEQUENCE';
-  /**
-   * Output only. Timestamp when this TensorboardTimeSeries was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Description of this TensorboardTimeSeries.
-   *
    * @var string
    */
   public $description;
   /**
-   * Required. User provided name of this TensorboardTimeSeries. This value
-   * should be unique among all TensorboardTimeSeries resources belonging to the
-   * same TensorboardRun resource (parent resource).
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Used to perform a consistent read-modify-write updates. If not set, a blind
-   * "overwrite" update happens.
-   *
    * @var string
    */
   public $etag;
   protected $metadataType = GoogleCloudAiplatformV1TensorboardTimeSeriesMetadata::class;
   protected $metadataDataType = '';
   /**
-   * Output only. Name of the TensorboardTimeSeries.
-   *
    * @var string
    */
   public $name;
   /**
-   * Data of the current plugin, with the size limited to 65KB.
-   *
    * @var string
    */
   public $pluginData;
   /**
-   * Immutable. Name of the plugin this time series pertain to. Such as Scalar,
-   * Tensor, Blob
-   *
    * @var string
    */
   public $pluginName;
   /**
-   * Output only. Timestamp when this TensorboardTimeSeries was last updated.
-   *
    * @var string
    */
   public $updateTime;
   /**
-   * Required. Immutable. Type of TensorboardTimeSeries value.
-   *
    * @var string
    */
   public $valueType;
 
   /**
-   * Output only. Timestamp when this TensorboardTimeSeries was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -116,9 +73,7 @@ class GoogleCloudAiplatformV1TensorboardTimeSeries extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Description of this TensorboardTimeSeries.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -132,11 +87,7 @@ class GoogleCloudAiplatformV1TensorboardTimeSeries extends \Google\Model
     return $this->description;
   }
   /**
-   * Required. User provided name of this TensorboardTimeSeries. This value
-   * should be unique among all TensorboardTimeSeries resources belonging to the
-   * same TensorboardRun resource (parent resource).
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -150,10 +101,7 @@ class GoogleCloudAiplatformV1TensorboardTimeSeries extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Used to perform a consistent read-modify-write updates. If not set, a blind
-   * "overwrite" update happens.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -167,10 +115,7 @@ class GoogleCloudAiplatformV1TensorboardTimeSeries extends \Google\Model
     return $this->etag;
   }
   /**
-   * Output only. Scalar, Tensor, or Blob metadata for this
-   * TensorboardTimeSeries.
-   *
-   * @param GoogleCloudAiplatformV1TensorboardTimeSeriesMetadata $metadata
+   * @param GoogleCloudAiplatformV1TensorboardTimeSeriesMetadata
    */
   public function setMetadata(GoogleCloudAiplatformV1TensorboardTimeSeriesMetadata $metadata)
   {
@@ -184,9 +129,7 @@ class GoogleCloudAiplatformV1TensorboardTimeSeries extends \Google\Model
     return $this->metadata;
   }
   /**
-   * Output only. Name of the TensorboardTimeSeries.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -200,9 +143,7 @@ class GoogleCloudAiplatformV1TensorboardTimeSeries extends \Google\Model
     return $this->name;
   }
   /**
-   * Data of the current plugin, with the size limited to 65KB.
-   *
-   * @param string $pluginData
+   * @param string
    */
   public function setPluginData($pluginData)
   {
@@ -216,10 +157,7 @@ class GoogleCloudAiplatformV1TensorboardTimeSeries extends \Google\Model
     return $this->pluginData;
   }
   /**
-   * Immutable. Name of the plugin this time series pertain to. Such as Scalar,
-   * Tensor, Blob
-   *
-   * @param string $pluginName
+   * @param string
    */
   public function setPluginName($pluginName)
   {
@@ -233,9 +171,7 @@ class GoogleCloudAiplatformV1TensorboardTimeSeries extends \Google\Model
     return $this->pluginName;
   }
   /**
-   * Output only. Timestamp when this TensorboardTimeSeries was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -249,18 +185,14 @@ class GoogleCloudAiplatformV1TensorboardTimeSeries extends \Google\Model
     return $this->updateTime;
   }
   /**
-   * Required. Immutable. Type of TensorboardTimeSeries value.
-   *
-   * Accepted values: VALUE_TYPE_UNSPECIFIED, SCALAR, TENSOR, BLOB_SEQUENCE
-   *
-   * @param self::VALUE_TYPE_* $valueType
+   * @param string
    */
   public function setValueType($valueType)
   {
     $this->valueType = $valueType;
   }
   /**
-   * @return self::VALUE_TYPE_*
+   * @return string
    */
   public function getValueType()
   {

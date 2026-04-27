@@ -20,119 +20,44 @@ namespace Google\Service\NetAppFiles;
 class KmsConfig extends \Google\Model
 {
   /**
-   * Unspecified KmsConfig State
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * KmsConfig State is Ready
-   */
-  public const STATE_READY = 'READY';
-  /**
-   * KmsConfig State is Creating
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * KmsConfig State is Deleting
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * KmsConfig State is Updating
-   */
-  public const STATE_UPDATING = 'UPDATING';
-  /**
-   * KmsConfig State is In Use.
-   */
-  public const STATE_IN_USE = 'IN_USE';
-  /**
-   * KmsConfig State is Error
-   */
-  public const STATE_ERROR = 'ERROR';
-  /**
-   * KmsConfig State is Pending to verify crypto key access.
-   */
-  public const STATE_KEY_CHECK_PENDING = 'KEY_CHECK_PENDING';
-  /**
-   * KmsConfig State is Not accessbile by the SDE service account to the crypto
-   * key.
-   */
-  public const STATE_KEY_NOT_REACHABLE = 'KEY_NOT_REACHABLE';
-  /**
-   * KmsConfig State is Disabling.
-   */
-  public const STATE_DISABLING = 'DISABLING';
-  /**
-   * KmsConfig State is Disabled.
-   */
-  public const STATE_DISABLED = 'DISABLED';
-  /**
-   * KmsConfig State is Migrating. The existing volumes are migrating from SMEK
-   * to CMEK.
-   */
-  public const STATE_MIGRATING = 'MIGRATING';
-  /**
-   * Output only. Create time of the KmsConfig.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Required. Customer-managed crypto key resource full name. Format: `projects
-   * /{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}
-   * `
-   *
    * @var string
    */
   public $cryptoKeyName;
   /**
-   * Description of the KmsConfig.
-   *
    * @var string
    */
   public $description;
   /**
-   * Output only. Instructions to provide the access to the customer provided
-   * encryption key.
-   *
    * @var string
    */
   public $instructions;
   /**
-   * Labels as key value pairs
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Identifier. Name of the KmsConfig. Format:
-   * `projects/{project}/locations/{location}/kmsConfigs/{kms_config}`
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The Service account which will have access to the customer
-   * provided encryption key.
-   *
    * @var string
    */
   public $serviceAccount;
   /**
-   * Output only. State of the KmsConfig.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. State details of the KmsConfig.
-   *
    * @var string
    */
   public $stateDetails;
 
   /**
-   * Output only. Create time of the KmsConfig.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -146,11 +71,7 @@ class KmsConfig extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Required. Customer-managed crypto key resource full name. Format: `projects
-   * /{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}
-   * `
-   *
-   * @param string $cryptoKeyName
+   * @param string
    */
   public function setCryptoKeyName($cryptoKeyName)
   {
@@ -164,9 +85,7 @@ class KmsConfig extends \Google\Model
     return $this->cryptoKeyName;
   }
   /**
-   * Description of the KmsConfig.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -180,10 +99,7 @@ class KmsConfig extends \Google\Model
     return $this->description;
   }
   /**
-   * Output only. Instructions to provide the access to the customer provided
-   * encryption key.
-   *
-   * @param string $instructions
+   * @param string
    */
   public function setInstructions($instructions)
   {
@@ -197,9 +113,7 @@ class KmsConfig extends \Google\Model
     return $this->instructions;
   }
   /**
-   * Labels as key value pairs
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -213,10 +127,7 @@ class KmsConfig extends \Google\Model
     return $this->labels;
   }
   /**
-   * Identifier. Name of the KmsConfig. Format:
-   * `projects/{project}/locations/{location}/kmsConfigs/{kms_config}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -230,10 +141,7 @@ class KmsConfig extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The Service account which will have access to the customer
-   * provided encryption key.
-   *
-   * @param string $serviceAccount
+   * @param string
    */
   public function setServiceAccount($serviceAccount)
   {
@@ -247,29 +155,21 @@ class KmsConfig extends \Google\Model
     return $this->serviceAccount;
   }
   /**
-   * Output only. State of the KmsConfig.
-   *
-   * Accepted values: STATE_UNSPECIFIED, READY, CREATING, DELETING, UPDATING,
-   * IN_USE, ERROR, KEY_CHECK_PENDING, KEY_NOT_REACHABLE, DISABLING, DISABLED,
-   * MIGRATING
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. State details of the KmsConfig.
-   *
-   * @param string $stateDetails
+   * @param string
    */
   public function setStateDetails($stateDetails)
   {

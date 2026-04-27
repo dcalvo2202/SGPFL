@@ -23,43 +23,30 @@ class WindowsUpdate extends \Google\Collection
   protected $categoriesType = Category::class;
   protected $categoriesDataType = 'array';
   /**
-   * The localized description of the update.
-   *
    * @var string
    */
   public $description;
   protected $identityType = Identity::class;
   protected $identityDataType = '';
   /**
-   * The Microsoft Knowledge Base article IDs that are associated with the
-   * update.
-   *
    * @var string[]
    */
   public $kbArticleIds;
   /**
-   * The last published timestamp of the update.
-   *
    * @var string
    */
   public $lastPublishedTimestamp;
   /**
-   * The hyperlink to the support information for the update.
-   *
    * @var string
    */
   public $supportUrl;
   /**
-   * The localized title of the update.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * The list of categories to which the update belongs.
-   *
-   * @param Category[] $categories
+   * @param Category[]
    */
   public function setCategories($categories)
   {
@@ -73,9 +60,7 @@ class WindowsUpdate extends \Google\Collection
     return $this->categories;
   }
   /**
-   * The localized description of the update.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -89,9 +74,7 @@ class WindowsUpdate extends \Google\Collection
     return $this->description;
   }
   /**
-   * Required - The unique identifier for the update.
-   *
-   * @param Identity $identity
+   * @param Identity
    */
   public function setIdentity(Identity $identity)
   {
@@ -105,10 +88,7 @@ class WindowsUpdate extends \Google\Collection
     return $this->identity;
   }
   /**
-   * The Microsoft Knowledge Base article IDs that are associated with the
-   * update.
-   *
-   * @param string[] $kbArticleIds
+   * @param string[]
    */
   public function setKbArticleIds($kbArticleIds)
   {
@@ -122,9 +102,7 @@ class WindowsUpdate extends \Google\Collection
     return $this->kbArticleIds;
   }
   /**
-   * The last published timestamp of the update.
-   *
-   * @param string $lastPublishedTimestamp
+   * @param string
    */
   public function setLastPublishedTimestamp($lastPublishedTimestamp)
   {
@@ -138,9 +116,7 @@ class WindowsUpdate extends \Google\Collection
     return $this->lastPublishedTimestamp;
   }
   /**
-   * The hyperlink to the support information for the update.
-   *
-   * @param string $supportUrl
+   * @param string
    */
   public function setSupportUrl($supportUrl)
   {
@@ -154,9 +130,7 @@ class WindowsUpdate extends \Google\Collection
     return $this->supportUrl;
   }
   /**
-   * The localized title of the update.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

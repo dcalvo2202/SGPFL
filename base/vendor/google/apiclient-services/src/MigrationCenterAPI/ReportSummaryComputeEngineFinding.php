@@ -21,20 +21,14 @@ class ReportSummaryComputeEngineFinding extends \Google\Collection
 {
   protected $collection_key = 'machineSeriesAllocations';
   /**
-   * Count of assets which were allocated.
-   *
    * @var string
    */
   public $allocatedAssetCount;
   /**
-   * Set of disk types allocated to assets.
-   *
    * @var string[]
    */
   public $allocatedDiskTypes;
   /**
-   * Set of regions in which the assets were allocated.
-   *
    * @var string[]
    */
   public $allocatedRegions;
@@ -42,9 +36,7 @@ class ReportSummaryComputeEngineFinding extends \Google\Collection
   protected $machineSeriesAllocationsDataType = 'array';
 
   /**
-   * Count of assets which were allocated.
-   *
-   * @param string $allocatedAssetCount
+   * @param string
    */
   public function setAllocatedAssetCount($allocatedAssetCount)
   {
@@ -58,9 +50,7 @@ class ReportSummaryComputeEngineFinding extends \Google\Collection
     return $this->allocatedAssetCount;
   }
   /**
-   * Set of disk types allocated to assets.
-   *
-   * @param string[] $allocatedDiskTypes
+   * @param string[]
    */
   public function setAllocatedDiskTypes($allocatedDiskTypes)
   {
@@ -74,9 +64,7 @@ class ReportSummaryComputeEngineFinding extends \Google\Collection
     return $this->allocatedDiskTypes;
   }
   /**
-   * Set of regions in which the assets were allocated.
-   *
-   * @param string[] $allocatedRegions
+   * @param string[]
    */
   public function setAllocatedRegions($allocatedRegions)
   {
@@ -90,9 +78,7 @@ class ReportSummaryComputeEngineFinding extends \Google\Collection
     return $this->allocatedRegions;
   }
   /**
-   * Distribution of assets based on the Machine Series.
-   *
-   * @param ReportSummaryMachineSeriesAllocation[] $machineSeriesAllocations
+   * @param ReportSummaryMachineSeriesAllocation[]
    */
   public function setMachineSeriesAllocations($machineSeriesAllocations)
   {

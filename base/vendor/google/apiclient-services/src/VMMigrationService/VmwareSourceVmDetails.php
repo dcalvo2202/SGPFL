@@ -19,48 +19,18 @@ namespace Google\Service\VMMigrationService;
 
 class VmwareSourceVmDetails extends \Google\Collection
 {
-  /**
-   * The architecture is unknown.
-   */
-  public const ARCHITECTURE_VM_ARCHITECTURE_UNSPECIFIED = 'VM_ARCHITECTURE_UNSPECIFIED';
-  /**
-   * The architecture is one of the x86 architectures.
-   */
-  public const ARCHITECTURE_VM_ARCHITECTURE_X86_FAMILY = 'VM_ARCHITECTURE_X86_FAMILY';
-  /**
-   * The architecture is ARM64.
-   */
-  public const ARCHITECTURE_VM_ARCHITECTURE_ARM64 = 'VM_ARCHITECTURE_ARM64';
-  /**
-   * The firmware is unknown.
-   */
-  public const FIRMWARE_FIRMWARE_UNSPECIFIED = 'FIRMWARE_UNSPECIFIED';
-  /**
-   * The firmware is EFI.
-   */
-  public const FIRMWARE_EFI = 'EFI';
-  /**
-   * The firmware is BIOS.
-   */
-  public const FIRMWARE_BIOS = 'BIOS';
   protected $collection_key = 'disks';
   /**
-   * Output only. The VM architecture.
-   *
    * @var string
    */
   public $architecture;
   /**
-   * Output only. The total size of the disks being migrated in bytes.
-   *
    * @var string
    */
   public $committedStorageBytes;
   protected $disksType = VmwareDiskDetails::class;
   protected $disksDataType = 'array';
   /**
-   * Output only. The firmware type of the source VM.
-   *
    * @var string
    */
   public $firmware;
@@ -68,28 +38,21 @@ class VmwareSourceVmDetails extends \Google\Collection
   protected $vmCapabilitiesInfoDataType = '';
 
   /**
-   * Output only. The VM architecture.
-   *
-   * Accepted values: VM_ARCHITECTURE_UNSPECIFIED, VM_ARCHITECTURE_X86_FAMILY,
-   * VM_ARCHITECTURE_ARM64
-   *
-   * @param self::ARCHITECTURE_* $architecture
+   * @param string
    */
   public function setArchitecture($architecture)
   {
     $this->architecture = $architecture;
   }
   /**
-   * @return self::ARCHITECTURE_*
+   * @return string
    */
   public function getArchitecture()
   {
     return $this->architecture;
   }
   /**
-   * Output only. The total size of the disks being migrated in bytes.
-   *
-   * @param string $committedStorageBytes
+   * @param string
    */
   public function setCommittedStorageBytes($committedStorageBytes)
   {
@@ -103,9 +66,7 @@ class VmwareSourceVmDetails extends \Google\Collection
     return $this->committedStorageBytes;
   }
   /**
-   * Output only. The disks attached to the source VM.
-   *
-   * @param VmwareDiskDetails[] $disks
+   * @param VmwareDiskDetails[]
    */
   public function setDisks($disks)
   {
@@ -119,28 +80,21 @@ class VmwareSourceVmDetails extends \Google\Collection
     return $this->disks;
   }
   /**
-   * Output only. The firmware type of the source VM.
-   *
-   * Accepted values: FIRMWARE_UNSPECIFIED, EFI, BIOS
-   *
-   * @param self::FIRMWARE_* $firmware
+   * @param string
    */
   public function setFirmware($firmware)
   {
     $this->firmware = $firmware;
   }
   /**
-   * @return self::FIRMWARE_*
+   * @return string
    */
   public function getFirmware()
   {
     return $this->firmware;
   }
   /**
-   * Output only. Information about VM capabilities needed for some Compute
-   * Engine features.
-   *
-   * @param VmCapabilities $vmCapabilitiesInfo
+   * @param VmCapabilities
    */
   public function setVmCapabilitiesInfo(VmCapabilities $vmCapabilitiesInfo)
   {

@@ -32,7 +32,7 @@ class GoogleCloudDialogflowCxV3TransitionRouteGroup extends \Google\Collection
   protected $transitionRoutesDataType = 'array';
 
   /**
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -46,7 +46,7 @@ class GoogleCloudDialogflowCxV3TransitionRouteGroup extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -60,7 +60,7 @@ class GoogleCloudDialogflowCxV3TransitionRouteGroup extends \Google\Collection
     return $this->name;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3TransitionRoute[] $transitionRoutes
+   * @param GoogleCloudDialogflowCxV3TransitionRoute[]
    */
   public function setTransitionRoutes($transitionRoutes)
   {

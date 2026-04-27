@@ -27,56 +27,34 @@ class GoogleCloudAiplatformV1ImportFeatureValuesRequest extends \Google\Collecti
   protected $csvSourceType = GoogleCloudAiplatformV1CsvSource::class;
   protected $csvSourceDataType = '';
   /**
-   * If true, API doesn't start ingestion analysis pipeline.
-   *
    * @var bool
    */
   public $disableIngestionAnalysis;
   /**
-   * If set, data will not be imported for online serving. This is typically
-   * used for backfilling, where Feature generation timestamps are not in the
-   * timestamp range needed for online serving.
-   *
    * @var bool
    */
   public $disableOnlineServing;
   /**
-   * Source column that holds entity IDs. If not provided, entity IDs are
-   * extracted from the column named entity_id.
-   *
    * @var string
    */
   public $entityIdField;
   protected $featureSpecsType = GoogleCloudAiplatformV1ImportFeatureValuesRequestFeatureSpec::class;
   protected $featureSpecsDataType = 'array';
   /**
-   * Single Feature timestamp for all entities being imported. The timestamp
-   * must not have higher than millisecond precision.
-   *
    * @var string
    */
   public $featureTime;
   /**
-   * Source column that holds the Feature timestamp for all Feature values in
-   * each entity.
-   *
    * @var string
    */
   public $featureTimeField;
   /**
-   * Specifies the number of workers that are used to write data to the
-   * Featurestore. Consider the online serving capacity that you require to
-   * achieve the desired import throughput without interfering with online
-   * serving. The value must be positive, and less than or equal to 100. If not
-   * set, defaults to using 1 worker. The low count ensures minimal impact on
-   * online serving performance.
-   *
    * @var int
    */
   public $workerCount;
 
   /**
-   * @param GoogleCloudAiplatformV1AvroSource $avroSource
+   * @param GoogleCloudAiplatformV1AvroSource
    */
   public function setAvroSource(GoogleCloudAiplatformV1AvroSource $avroSource)
   {
@@ -90,7 +68,7 @@ class GoogleCloudAiplatformV1ImportFeatureValuesRequest extends \Google\Collecti
     return $this->avroSource;
   }
   /**
-   * @param GoogleCloudAiplatformV1BigQuerySource $bigquerySource
+   * @param GoogleCloudAiplatformV1BigQuerySource
    */
   public function setBigquerySource(GoogleCloudAiplatformV1BigQuerySource $bigquerySource)
   {
@@ -104,7 +82,7 @@ class GoogleCloudAiplatformV1ImportFeatureValuesRequest extends \Google\Collecti
     return $this->bigquerySource;
   }
   /**
-   * @param GoogleCloudAiplatformV1CsvSource $csvSource
+   * @param GoogleCloudAiplatformV1CsvSource
    */
   public function setCsvSource(GoogleCloudAiplatformV1CsvSource $csvSource)
   {
@@ -118,9 +96,7 @@ class GoogleCloudAiplatformV1ImportFeatureValuesRequest extends \Google\Collecti
     return $this->csvSource;
   }
   /**
-   * If true, API doesn't start ingestion analysis pipeline.
-   *
-   * @param bool $disableIngestionAnalysis
+   * @param bool
    */
   public function setDisableIngestionAnalysis($disableIngestionAnalysis)
   {
@@ -134,11 +110,7 @@ class GoogleCloudAiplatformV1ImportFeatureValuesRequest extends \Google\Collecti
     return $this->disableIngestionAnalysis;
   }
   /**
-   * If set, data will not be imported for online serving. This is typically
-   * used for backfilling, where Feature generation timestamps are not in the
-   * timestamp range needed for online serving.
-   *
-   * @param bool $disableOnlineServing
+   * @param bool
    */
   public function setDisableOnlineServing($disableOnlineServing)
   {
@@ -152,10 +124,7 @@ class GoogleCloudAiplatformV1ImportFeatureValuesRequest extends \Google\Collecti
     return $this->disableOnlineServing;
   }
   /**
-   * Source column that holds entity IDs. If not provided, entity IDs are
-   * extracted from the column named entity_id.
-   *
-   * @param string $entityIdField
+   * @param string
    */
   public function setEntityIdField($entityIdField)
   {
@@ -169,11 +138,7 @@ class GoogleCloudAiplatformV1ImportFeatureValuesRequest extends \Google\Collecti
     return $this->entityIdField;
   }
   /**
-   * Required. Specifications defining which Feature values to import from the
-   * entity. The request fails if no feature_specs are provided, and having
-   * multiple feature_specs for one Feature is not allowed.
-   *
-   * @param GoogleCloudAiplatformV1ImportFeatureValuesRequestFeatureSpec[] $featureSpecs
+   * @param GoogleCloudAiplatformV1ImportFeatureValuesRequestFeatureSpec[]
    */
   public function setFeatureSpecs($featureSpecs)
   {
@@ -187,10 +152,7 @@ class GoogleCloudAiplatformV1ImportFeatureValuesRequest extends \Google\Collecti
     return $this->featureSpecs;
   }
   /**
-   * Single Feature timestamp for all entities being imported. The timestamp
-   * must not have higher than millisecond precision.
-   *
-   * @param string $featureTime
+   * @param string
    */
   public function setFeatureTime($featureTime)
   {
@@ -204,10 +166,7 @@ class GoogleCloudAiplatformV1ImportFeatureValuesRequest extends \Google\Collecti
     return $this->featureTime;
   }
   /**
-   * Source column that holds the Feature timestamp for all Feature values in
-   * each entity.
-   *
-   * @param string $featureTimeField
+   * @param string
    */
   public function setFeatureTimeField($featureTimeField)
   {
@@ -221,14 +180,7 @@ class GoogleCloudAiplatformV1ImportFeatureValuesRequest extends \Google\Collecti
     return $this->featureTimeField;
   }
   /**
-   * Specifies the number of workers that are used to write data to the
-   * Featurestore. Consider the online serving capacity that you require to
-   * achieve the desired import throughput without interfering with online
-   * serving. The value must be positive, and less than or equal to 100. If not
-   * set, defaults to using 1 worker. The low count ensures minimal impact on
-   * online serving performance.
-   *
-   * @param int $workerCount
+   * @param int
    */
   public function setWorkerCount($workerCount)
   {

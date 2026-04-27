@@ -20,24 +20,16 @@ namespace Google\Service\CloudAlloyDBAdmin;
 class MachineConfig extends \Google\Model
 {
   /**
-   * The number of CPU's in the VM instance.
-   *
    * @var int
    */
   public $cpuCount;
   /**
-   * Machine type of the VM instance. E.g. "n2-highmem-4", "n2-highmem-8",
-   * "c4a-highmem-4-lssd". cpu_count must match the number of vCPUs in the
-   * machine type.
-   *
    * @var string
    */
   public $machineType;
 
   /**
-   * The number of CPU's in the VM instance.
-   *
-   * @param int $cpuCount
+   * @param int
    */
   public function setCpuCount($cpuCount)
   {
@@ -51,11 +43,7 @@ class MachineConfig extends \Google\Model
     return $this->cpuCount;
   }
   /**
-   * Machine type of the VM instance. E.g. "n2-highmem-4", "n2-highmem-8",
-   * "c4a-highmem-4-lssd". cpu_count must match the number of vCPUs in the
-   * machine type.
-   *
-   * @param string $machineType
+   * @param string
    */
   public function setMachineType($machineType)
   {

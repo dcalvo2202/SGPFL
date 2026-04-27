@@ -24,9 +24,7 @@ class OpenFileList extends \Google\Collection
   protected $entriesDataType = 'array';
 
   /**
-   * Open file details entries.
-   *
-   * @param OpenFileDetails[] $entries
+   * @param OpenFileDetails[]
    */
   public function setEntries($entries)
   {

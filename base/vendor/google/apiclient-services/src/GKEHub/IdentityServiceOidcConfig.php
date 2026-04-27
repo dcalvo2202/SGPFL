@@ -20,99 +20,64 @@ namespace Google\Service\GKEHub;
 class IdentityServiceOidcConfig extends \Google\Model
 {
   /**
-   * PEM-encoded CA for OIDC provider.
-   *
    * @var string
    */
   public $certificateAuthorityData;
   /**
-   * ID for OIDC client application.
-   *
    * @var string
    */
   public $clientId;
   /**
-   * Input only. Unencrypted OIDC client secret will be passed to the GKE Hub
-   * CLH.
-   *
    * @var string
    */
   public $clientSecret;
   /**
-   * Flag to denote if reverse proxy is used to connect to auth provider. This
-   * flag should be set to true when provider is not reachable by Google Cloud
-   * Console.
-   *
    * @var bool
    */
   public $deployCloudConsoleProxy;
   /**
-   * Enable access token.
-   *
    * @var bool
    */
   public $enableAccessToken;
   /**
-   * Output only. Encrypted OIDC Client secret
-   *
    * @var string
    */
   public $encryptedClientSecret;
   /**
-   * Comma-separated list of key-value pairs.
-   *
    * @var string
    */
   public $extraParams;
   /**
-   * Prefix to prepend to group name.
-   *
    * @var string
    */
   public $groupPrefix;
   /**
-   * Claim in OIDC ID token that holds group information.
-   *
    * @var string
    */
   public $groupsClaim;
   /**
-   * URI for the OIDC provider. This should point to the level below .well-
-   * known/openid-configuration.
-   *
    * @var string
    */
   public $issuerUri;
   /**
-   * Registered redirect uri to redirect users going through OAuth flow using
-   * kubectl plugin.
-   *
    * @var string
    */
   public $kubectlRedirectUri;
   /**
-   * Comma-separated list of identifiers.
-   *
    * @var string
    */
   public $scopes;
   /**
-   * Claim in OIDC ID token that holds username.
-   *
    * @var string
    */
   public $userClaim;
   /**
-   * Prefix to prepend to user name.
-   *
    * @var string
    */
   public $userPrefix;
 
   /**
-   * PEM-encoded CA for OIDC provider.
-   *
-   * @param string $certificateAuthorityData
+   * @param string
    */
   public function setCertificateAuthorityData($certificateAuthorityData)
   {
@@ -126,9 +91,7 @@ class IdentityServiceOidcConfig extends \Google\Model
     return $this->certificateAuthorityData;
   }
   /**
-   * ID for OIDC client application.
-   *
-   * @param string $clientId
+   * @param string
    */
   public function setClientId($clientId)
   {
@@ -142,10 +105,7 @@ class IdentityServiceOidcConfig extends \Google\Model
     return $this->clientId;
   }
   /**
-   * Input only. Unencrypted OIDC client secret will be passed to the GKE Hub
-   * CLH.
-   *
-   * @param string $clientSecret
+   * @param string
    */
   public function setClientSecret($clientSecret)
   {
@@ -159,11 +119,7 @@ class IdentityServiceOidcConfig extends \Google\Model
     return $this->clientSecret;
   }
   /**
-   * Flag to denote if reverse proxy is used to connect to auth provider. This
-   * flag should be set to true when provider is not reachable by Google Cloud
-   * Console.
-   *
-   * @param bool $deployCloudConsoleProxy
+   * @param bool
    */
   public function setDeployCloudConsoleProxy($deployCloudConsoleProxy)
   {
@@ -177,9 +133,7 @@ class IdentityServiceOidcConfig extends \Google\Model
     return $this->deployCloudConsoleProxy;
   }
   /**
-   * Enable access token.
-   *
-   * @param bool $enableAccessToken
+   * @param bool
    */
   public function setEnableAccessToken($enableAccessToken)
   {
@@ -193,9 +147,7 @@ class IdentityServiceOidcConfig extends \Google\Model
     return $this->enableAccessToken;
   }
   /**
-   * Output only. Encrypted OIDC Client secret
-   *
-   * @param string $encryptedClientSecret
+   * @param string
    */
   public function setEncryptedClientSecret($encryptedClientSecret)
   {
@@ -209,9 +161,7 @@ class IdentityServiceOidcConfig extends \Google\Model
     return $this->encryptedClientSecret;
   }
   /**
-   * Comma-separated list of key-value pairs.
-   *
-   * @param string $extraParams
+   * @param string
    */
   public function setExtraParams($extraParams)
   {
@@ -225,9 +175,7 @@ class IdentityServiceOidcConfig extends \Google\Model
     return $this->extraParams;
   }
   /**
-   * Prefix to prepend to group name.
-   *
-   * @param string $groupPrefix
+   * @param string
    */
   public function setGroupPrefix($groupPrefix)
   {
@@ -241,9 +189,7 @@ class IdentityServiceOidcConfig extends \Google\Model
     return $this->groupPrefix;
   }
   /**
-   * Claim in OIDC ID token that holds group information.
-   *
-   * @param string $groupsClaim
+   * @param string
    */
   public function setGroupsClaim($groupsClaim)
   {
@@ -257,10 +203,7 @@ class IdentityServiceOidcConfig extends \Google\Model
     return $this->groupsClaim;
   }
   /**
-   * URI for the OIDC provider. This should point to the level below .well-
-   * known/openid-configuration.
-   *
-   * @param string $issuerUri
+   * @param string
    */
   public function setIssuerUri($issuerUri)
   {
@@ -274,10 +217,7 @@ class IdentityServiceOidcConfig extends \Google\Model
     return $this->issuerUri;
   }
   /**
-   * Registered redirect uri to redirect users going through OAuth flow using
-   * kubectl plugin.
-   *
-   * @param string $kubectlRedirectUri
+   * @param string
    */
   public function setKubectlRedirectUri($kubectlRedirectUri)
   {
@@ -291,9 +231,7 @@ class IdentityServiceOidcConfig extends \Google\Model
     return $this->kubectlRedirectUri;
   }
   /**
-   * Comma-separated list of identifiers.
-   *
-   * @param string $scopes
+   * @param string
    */
   public function setScopes($scopes)
   {
@@ -307,9 +245,7 @@ class IdentityServiceOidcConfig extends \Google\Model
     return $this->scopes;
   }
   /**
-   * Claim in OIDC ID token that holds username.
-   *
-   * @param string $userClaim
+   * @param string
    */
   public function setUserClaim($userClaim)
   {
@@ -323,9 +259,7 @@ class IdentityServiceOidcConfig extends \Google\Model
     return $this->userClaim;
   }
   /**
-   * Prefix to prepend to user name.
-   *
-   * @param string $userPrefix
+   * @param string
    */
   public function setUserPrefix($userPrefix)
   {

@@ -21,28 +21,20 @@ class GoogleChecksReportV1alphaCheckStateMetadata extends \Google\Collection
 {
   protected $collection_key = 'badges';
   /**
-   * Indicators related to the check state.
-   *
    * @var string[]
    */
   public $badges;
   /**
-   * The time when the check first started failing.
-   *
    * @var string
    */
   public $firstFailingTime;
   /**
-   * The last time the check failed.
-   *
    * @var string
    */
   public $lastFailingTime;
 
   /**
-   * Indicators related to the check state.
-   *
-   * @param string[] $badges
+   * @param string[]
    */
   public function setBadges($badges)
   {
@@ -56,9 +48,7 @@ class GoogleChecksReportV1alphaCheckStateMetadata extends \Google\Collection
     return $this->badges;
   }
   /**
-   * The time when the check first started failing.
-   *
-   * @param string $firstFailingTime
+   * @param string
    */
   public function setFirstFailingTime($firstFailingTime)
   {
@@ -72,9 +62,7 @@ class GoogleChecksReportV1alphaCheckStateMetadata extends \Google\Collection
     return $this->firstFailingTime;
   }
   /**
-   * The last time the check failed.
-   *
-   * @param string $lastFailingTime
+   * @param string
    */
   public function setLastFailingTime($lastFailingTime)
   {

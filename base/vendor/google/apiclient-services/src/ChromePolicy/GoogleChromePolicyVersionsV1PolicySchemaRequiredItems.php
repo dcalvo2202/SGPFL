@@ -21,26 +21,16 @@ class GoogleChromePolicyVersionsV1PolicySchemaRequiredItems extends \Google\Coll
 {
   protected $collection_key = 'requiredFields';
   /**
-   * The value(s) of the field that provoke required field enforcement. An empty
-   * field_conditions implies that any value assigned to this field will provoke
-   * required field enforcement.
-   *
    * @var string[]
    */
   public $fieldConditions;
   /**
-   * The fields that are required as a consequence of the field conditions.
-   *
    * @var string[]
    */
   public $requiredFields;
 
   /**
-   * The value(s) of the field that provoke required field enforcement. An empty
-   * field_conditions implies that any value assigned to this field will provoke
-   * required field enforcement.
-   *
-   * @param string[] $fieldConditions
+   * @param string[]
    */
   public function setFieldConditions($fieldConditions)
   {
@@ -54,9 +44,7 @@ class GoogleChromePolicyVersionsV1PolicySchemaRequiredItems extends \Google\Coll
     return $this->fieldConditions;
   }
   /**
-   * The fields that are required as a consequence of the field conditions.
-   *
-   * @param string[] $requiredFields
+   * @param string[]
    */
   public function setRequiredFields($requiredFields)
   {

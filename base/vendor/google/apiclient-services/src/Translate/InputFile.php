@@ -22,17 +22,12 @@ class InputFile extends \Google\Model
   protected $gcsSourceType = GcsInputSource::class;
   protected $gcsSourceDataType = '';
   /**
-   * Optional. Usage of the file contents. Options are TRAIN|VALIDATION|TEST, or
-   * UNASSIGNED (by default) for auto split.
-   *
    * @var string
    */
   public $usage;
 
   /**
-   * Google Cloud Storage file source.
-   *
-   * @param GcsInputSource $gcsSource
+   * @param GcsInputSource
    */
   public function setGcsSource(GcsInputSource $gcsSource)
   {
@@ -46,10 +41,7 @@ class InputFile extends \Google\Model
     return $this->gcsSource;
   }
   /**
-   * Optional. Usage of the file contents. Options are TRAIN|VALIDATION|TEST, or
-   * UNASSIGNED (by default) for auto split.
-   *
-   * @param string $usage
+   * @param string
    */
   public function setUsage($usage)
   {

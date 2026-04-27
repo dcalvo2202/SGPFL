@@ -21,8 +21,6 @@ class ListUserWorkloadsConfigMapsResponse extends \Google\Collection
 {
   protected $collection_key = 'userWorkloadsConfigMaps';
   /**
-   * The page token used to query for the next page if one exists.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -30,9 +28,7 @@ class ListUserWorkloadsConfigMapsResponse extends \Google\Collection
   protected $userWorkloadsConfigMapsDataType = 'array';
 
   /**
-   * The page token used to query for the next page if one exists.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -46,9 +42,7 @@ class ListUserWorkloadsConfigMapsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The list of ConfigMaps returned by a ListUserWorkloadsConfigMapsRequest.
-   *
-   * @param UserWorkloadsConfigMap[] $userWorkloadsConfigMaps
+   * @param UserWorkloadsConfigMap[]
    */
   public function setUserWorkloadsConfigMaps($userWorkloadsConfigMaps)
   {

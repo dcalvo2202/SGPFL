@@ -23,10 +23,7 @@ class BufferTaskRequest extends \Google\Model
   protected $bodyDataType = '';
 
   /**
-   * Optional. Body of the HTTP request. The body can take any generic value.
-   * The value is written to the HttpRequest of the [Task].
-   *
-   * @param HttpBody $body
+   * @param HttpBody
    */
   public function setBody(HttpBody $body)
   {

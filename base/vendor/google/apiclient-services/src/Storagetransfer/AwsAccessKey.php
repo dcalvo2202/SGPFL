@@ -20,23 +20,16 @@ namespace Google\Service\Storagetransfer;
 class AwsAccessKey extends \Google\Model
 {
   /**
-   * Required. AWS access key ID.
-   *
    * @var string
    */
   public $accessKeyId;
   /**
-   * Required. AWS secret access key. This field is not returned in RPC
-   * responses.
-   *
    * @var string
    */
   public $secretAccessKey;
 
   /**
-   * Required. AWS access key ID.
-   *
-   * @param string $accessKeyId
+   * @param string
    */
   public function setAccessKeyId($accessKeyId)
   {
@@ -50,10 +43,7 @@ class AwsAccessKey extends \Google\Model
     return $this->accessKeyId;
   }
   /**
-   * Required. AWS secret access key. This field is not returned in RPC
-   * responses.
-   *
-   * @param string $secretAccessKey
+   * @param string
    */
   public function setSecretAccessKey($secretAccessKey)
   {

@@ -20,9 +20,6 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1Retrieval extends \Google\Model
 {
   /**
-   * Optional. Deprecated. This option is no longer supported.
-   *
-   * @deprecated
    * @var bool
    */
   public $disableAttribution;
@@ -34,17 +31,13 @@ class GoogleCloudAiplatformV1Retrieval extends \Google\Model
   protected $vertexRagStoreDataType = '';
 
   /**
-   * Optional. Deprecated. This option is no longer supported.
-   *
-   * @deprecated
-   * @param bool $disableAttribution
+   * @param bool
    */
   public function setDisableAttribution($disableAttribution)
   {
     $this->disableAttribution = $disableAttribution;
   }
   /**
-   * @deprecated
    * @return bool
    */
   public function getDisableAttribution()
@@ -52,9 +45,7 @@ class GoogleCloudAiplatformV1Retrieval extends \Google\Model
     return $this->disableAttribution;
   }
   /**
-   * Use data source powered by external API for grounding.
-   *
-   * @param GoogleCloudAiplatformV1ExternalApi $externalApi
+   * @param GoogleCloudAiplatformV1ExternalApi
    */
   public function setExternalApi(GoogleCloudAiplatformV1ExternalApi $externalApi)
   {
@@ -68,9 +59,7 @@ class GoogleCloudAiplatformV1Retrieval extends \Google\Model
     return $this->externalApi;
   }
   /**
-   * Set to use data source powered by Vertex AI Search.
-   *
-   * @param GoogleCloudAiplatformV1VertexAISearch $vertexAiSearch
+   * @param GoogleCloudAiplatformV1VertexAISearch
    */
   public function setVertexAiSearch(GoogleCloudAiplatformV1VertexAISearch $vertexAiSearch)
   {
@@ -84,10 +73,7 @@ class GoogleCloudAiplatformV1Retrieval extends \Google\Model
     return $this->vertexAiSearch;
   }
   /**
-   * Set to use data source powered by Vertex RAG store. User data is uploaded
-   * via the VertexRagDataService.
-   *
-   * @param GoogleCloudAiplatformV1VertexRagStore $vertexRagStore
+   * @param GoogleCloudAiplatformV1VertexRagStore
    */
   public function setVertexRagStore(GoogleCloudAiplatformV1VertexRagStore $vertexRagStore)
   {

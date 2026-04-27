@@ -23,9 +23,7 @@ class StructuredResult extends \Google\Model
   protected $personDataType = '';
 
   /**
-   * Representation of a person
-   *
-   * @param Person $person
+   * @param Person
    */
   public function setPerson(Person $person)
   {

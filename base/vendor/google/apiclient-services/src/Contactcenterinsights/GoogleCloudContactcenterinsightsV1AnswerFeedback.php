@@ -20,45 +20,20 @@ namespace Google\Service\Contactcenterinsights;
 class GoogleCloudContactcenterinsightsV1AnswerFeedback extends \Google\Model
 {
   /**
-   * Correctness level unspecified.
-   */
-  public const CORRECTNESS_LEVEL_CORRECTNESS_LEVEL_UNSPECIFIED = 'CORRECTNESS_LEVEL_UNSPECIFIED';
-  /**
-   * Answer is totally wrong.
-   */
-  public const CORRECTNESS_LEVEL_NOT_CORRECT = 'NOT_CORRECT';
-  /**
-   * Answer is partially correct.
-   */
-  public const CORRECTNESS_LEVEL_PARTIALLY_CORRECT = 'PARTIALLY_CORRECT';
-  /**
-   * Answer is fully correct.
-   */
-  public const CORRECTNESS_LEVEL_FULLY_CORRECT = 'FULLY_CORRECT';
-  /**
-   * Indicates whether an answer or item was clicked by the human agent.
-   *
    * @var bool
    */
   public $clicked;
   /**
-   * The correctness level of an answer.
-   *
    * @var string
    */
   public $correctnessLevel;
   /**
-   * Indicates whether an answer or item was displayed to the human agent in the
-   * agent desktop UI.
-   *
    * @var bool
    */
   public $displayed;
 
   /**
-   * Indicates whether an answer or item was clicked by the human agent.
-   *
-   * @param bool $clicked
+   * @param bool
    */
   public function setClicked($clicked)
   {
@@ -72,29 +47,21 @@ class GoogleCloudContactcenterinsightsV1AnswerFeedback extends \Google\Model
     return $this->clicked;
   }
   /**
-   * The correctness level of an answer.
-   *
-   * Accepted values: CORRECTNESS_LEVEL_UNSPECIFIED, NOT_CORRECT,
-   * PARTIALLY_CORRECT, FULLY_CORRECT
-   *
-   * @param self::CORRECTNESS_LEVEL_* $correctnessLevel
+   * @param string
    */
   public function setCorrectnessLevel($correctnessLevel)
   {
     $this->correctnessLevel = $correctnessLevel;
   }
   /**
-   * @return self::CORRECTNESS_LEVEL_*
+   * @return string
    */
   public function getCorrectnessLevel()
   {
     return $this->correctnessLevel;
   }
   /**
-   * Indicates whether an answer or item was displayed to the human agent in the
-   * agent desktop UI.
-   *
-   * @param bool $displayed
+   * @param bool
    */
   public function setDisplayed($displayed)
   {

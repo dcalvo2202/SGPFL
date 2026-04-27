@@ -23,18 +23,12 @@ class ListAttestorsResponse extends \Google\Collection
   protected $attestorsType = Attestor::class;
   protected $attestorsDataType = 'array';
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * ListAttestorsRequest.page_token field in the subsequent call to the
-   * `ListAttestors` method to retrieve the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of attestors.
-   *
-   * @param Attestor[] $attestors
+   * @param Attestor[]
    */
   public function setAttestors($attestors)
   {
@@ -48,11 +42,7 @@ class ListAttestorsResponse extends \Google\Collection
     return $this->attestors;
   }
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * ListAttestorsRequest.page_token field in the subsequent call to the
-   * `ListAttestors` method to retrieve the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

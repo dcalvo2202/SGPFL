@@ -23,9 +23,7 @@ class ApplyHash extends \Google\Model
   protected $uuidFromBytesDataType = '';
 
   /**
-   * Optional. Generate UUID from the data's byte array
-   *
-   * @param DatamigrationEmpty $uuidFromBytes
+   * @param DatamigrationEmpty
    */
   public function setUuidFromBytes(DatamigrationEmpty $uuidFromBytes)
   {

@@ -28,7 +28,7 @@ class GoogleCloudDialogflowV2beta1IntentMessageRbmText extends \Google\Collectio
   public $text;
 
   /**
-   * @param GoogleCloudDialogflowV2beta1IntentMessageRbmSuggestion[] $rbmSuggestion
+   * @param GoogleCloudDialogflowV2beta1IntentMessageRbmSuggestion[]
    */
   public function setRbmSuggestion($rbmSuggestion)
   {
@@ -42,7 +42,7 @@ class GoogleCloudDialogflowV2beta1IntentMessageRbmText extends \Google\Collectio
     return $this->rbmSuggestion;
   }
   /**
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {

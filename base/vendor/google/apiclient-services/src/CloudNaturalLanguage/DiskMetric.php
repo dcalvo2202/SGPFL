@@ -19,48 +19,31 @@ namespace Google\Service\CloudNaturalLanguage;
 
 class DiskMetric extends \Google\Model
 {
-  public const DISK_TYPE_UNKNOWN_DISK_TYPE = 'UNKNOWN_DISK_TYPE';
-  public const DISK_TYPE_REGIONAL_SSD = 'REGIONAL_SSD';
-  public const DISK_TYPE_REGIONAL_STORAGE = 'REGIONAL_STORAGE';
-  public const DISK_TYPE_PD_SSD = 'PD_SSD';
-  public const DISK_TYPE_PD_STANDARD = 'PD_STANDARD';
-  public const DISK_TYPE_STORAGE_SNAPSHOT = 'STORAGE_SNAPSHOT';
   /**
-   * Required. Type of Disk, e.g. REGIONAL_SSD.
-   *
    * @var string
    */
   public $diskType;
   /**
-   * Required. Seconds of physical disk usage, e.g. 3600.
-   *
    * @var string
    */
   public $gibSec;
 
   /**
-   * Required. Type of Disk, e.g. REGIONAL_SSD.
-   *
-   * Accepted values: UNKNOWN_DISK_TYPE, REGIONAL_SSD, REGIONAL_STORAGE, PD_SSD,
-   * PD_STANDARD, STORAGE_SNAPSHOT
-   *
-   * @param self::DISK_TYPE_* $diskType
+   * @param string
    */
   public function setDiskType($diskType)
   {
     $this->diskType = $diskType;
   }
   /**
-   * @return self::DISK_TYPE_*
+   * @return string
    */
   public function getDiskType()
   {
     return $this->diskType;
   }
   /**
-   * Required. Seconds of physical disk usage, e.g. 3600.
-   *
-   * @param string $gibSec
+   * @param string
    */
   public function setGibSec($gibSec)
   {

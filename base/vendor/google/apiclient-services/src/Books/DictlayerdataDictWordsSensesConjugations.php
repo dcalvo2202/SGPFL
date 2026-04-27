@@ -29,7 +29,7 @@ class DictlayerdataDictWordsSensesConjugations extends \Google\Model
   public $value;
 
   /**
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {
@@ -43,7 +43,7 @@ class DictlayerdataDictWordsSensesConjugations extends \Google\Model
     return $this->type;
   }
   /**
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

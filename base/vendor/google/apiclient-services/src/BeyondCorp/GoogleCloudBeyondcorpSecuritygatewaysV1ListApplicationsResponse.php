@@ -23,23 +23,16 @@ class GoogleCloudBeyondcorpSecuritygatewaysV1ListApplicationsResponse extends \G
   protected $applicationsType = GoogleCloudBeyondcorpSecuritygatewaysV1Application::class;
   protected $applicationsDataType = 'array';
   /**
-   * A token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * A list of locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * A list of BeyondCorp Application in the project.
-   *
-   * @param GoogleCloudBeyondcorpSecuritygatewaysV1Application[] $applications
+   * @param GoogleCloudBeyondcorpSecuritygatewaysV1Application[]
    */
   public function setApplications($applications)
   {
@@ -53,10 +46,7 @@ class GoogleCloudBeyondcorpSecuritygatewaysV1ListApplicationsResponse extends \G
     return $this->applications;
   }
   /**
-   * A token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -70,9 +60,7 @@ class GoogleCloudBeyondcorpSecuritygatewaysV1ListApplicationsResponse extends \G
     return $this->nextPageToken;
   }
   /**
-   * A list of locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

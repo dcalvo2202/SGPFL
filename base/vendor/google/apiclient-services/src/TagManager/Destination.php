@@ -20,59 +20,40 @@ namespace Google\Service\TagManager;
 class Destination extends \Google\Model
 {
   /**
-   * GTM Account ID.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * GTM Container ID.
-   *
    * @var string
    */
   public $containerId;
   /**
-   * Destination ID.
-   *
    * @var string
    */
   public $destinationId;
   /**
-   * The Destination link ID uniquely identifies the Destination.
-   *
    * @var string
    */
   public $destinationLinkId;
   /**
-   * The fingerprint of the Google Tag Destination as computed at storage time.
-   * This value is recomputed whenever the destination is modified.
-   *
    * @var string
    */
   public $fingerprint;
   /**
-   * Destination display name.
-   *
    * @var string
    */
   public $name;
   /**
-   * Destination's API relative path.
-   *
    * @var string
    */
   public $path;
   /**
-   * Auto generated link to the tag manager UI.
-   *
    * @var string
    */
   public $tagManagerUrl;
 
   /**
-   * GTM Account ID.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -86,9 +67,7 @@ class Destination extends \Google\Model
     return $this->accountId;
   }
   /**
-   * GTM Container ID.
-   *
-   * @param string $containerId
+   * @param string
    */
   public function setContainerId($containerId)
   {
@@ -102,9 +81,7 @@ class Destination extends \Google\Model
     return $this->containerId;
   }
   /**
-   * Destination ID.
-   *
-   * @param string $destinationId
+   * @param string
    */
   public function setDestinationId($destinationId)
   {
@@ -118,9 +95,7 @@ class Destination extends \Google\Model
     return $this->destinationId;
   }
   /**
-   * The Destination link ID uniquely identifies the Destination.
-   *
-   * @param string $destinationLinkId
+   * @param string
    */
   public function setDestinationLinkId($destinationLinkId)
   {
@@ -134,10 +109,7 @@ class Destination extends \Google\Model
     return $this->destinationLinkId;
   }
   /**
-   * The fingerprint of the Google Tag Destination as computed at storage time.
-   * This value is recomputed whenever the destination is modified.
-   *
-   * @param string $fingerprint
+   * @param string
    */
   public function setFingerprint($fingerprint)
   {
@@ -151,9 +123,7 @@ class Destination extends \Google\Model
     return $this->fingerprint;
   }
   /**
-   * Destination display name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -167,9 +137,7 @@ class Destination extends \Google\Model
     return $this->name;
   }
   /**
-   * Destination's API relative path.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {
@@ -183,9 +151,7 @@ class Destination extends \Google\Model
     return $this->path;
   }
   /**
-   * Auto generated link to the tag manager UI.
-   *
-   * @param string $tagManagerUrl
+   * @param string
    */
   public function setTagManagerUrl($tagManagerUrl)
   {

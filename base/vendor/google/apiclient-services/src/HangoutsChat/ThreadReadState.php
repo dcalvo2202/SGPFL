@@ -20,25 +20,16 @@ namespace Google\Service\HangoutsChat;
 class ThreadReadState extends \Google\Model
 {
   /**
-   * The time when the user's thread read state was updated. Usually this
-   * corresponds with the timestamp of the last read message in a thread.
-   *
    * @var string
    */
   public $lastReadTime;
   /**
-   * Resource name of the thread read state. Format:
-   * `users/{user}/spaces/{space}/threads/{thread}/threadReadState`
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The time when the user's thread read state was updated. Usually this
-   * corresponds with the timestamp of the last read message in a thread.
-   *
-   * @param string $lastReadTime
+   * @param string
    */
   public function setLastReadTime($lastReadTime)
   {
@@ -52,10 +43,7 @@ class ThreadReadState extends \Google\Model
     return $this->lastReadTime;
   }
   /**
-   * Resource name of the thread read state. Format:
-   * `users/{user}/spaces/{space}/threads/{thread}/threadReadState`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

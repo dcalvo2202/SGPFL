@@ -24,9 +24,7 @@ class MembershipBatchCreatedEventData extends \Google\Collection
   protected $membershipsDataType = 'array';
 
   /**
-   * A list of new memberships.
-   *
-   * @param MembershipCreatedEventData[] $memberships
+   * @param MembershipCreatedEventData[]
    */
   public function setMemberships($memberships)
   {

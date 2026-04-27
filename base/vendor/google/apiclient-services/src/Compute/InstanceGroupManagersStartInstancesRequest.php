@@ -21,18 +21,12 @@ class InstanceGroupManagersStartInstancesRequest extends \Google\Collection
 {
   protected $collection_key = 'instances';
   /**
-   * The URLs of one or more instances to start. This can be a full URL or a
-   * partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
-   *
    * @var string[]
    */
   public $instances;
 
   /**
-   * The URLs of one or more instances to start. This can be a full URL or a
-   * partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
-   *
-   * @param string[] $instances
+   * @param string[]
    */
   public function setInstances($instances)
   {

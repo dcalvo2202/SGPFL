@@ -25,7 +25,7 @@ class ContextParams extends \Google\Model
   public $params;
 
   /**
-   * @param string[] $params
+   * @param string[]
    */
   public function setParams($params)
   {

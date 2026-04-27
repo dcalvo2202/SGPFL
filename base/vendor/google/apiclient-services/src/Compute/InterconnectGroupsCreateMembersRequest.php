@@ -23,7 +23,7 @@ class InterconnectGroupsCreateMembersRequest extends \Google\Model
   protected $requestDataType = '';
 
   /**
-   * @param InterconnectGroupsCreateMembers $request
+   * @param InterconnectGroupsCreateMembers
    */
   public function setRequest(InterconnectGroupsCreateMembers $request)
   {

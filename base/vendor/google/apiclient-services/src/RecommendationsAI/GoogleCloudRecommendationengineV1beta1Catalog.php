@@ -22,28 +22,20 @@ class GoogleCloudRecommendationengineV1beta1Catalog extends \Google\Model
   protected $catalogItemLevelConfigType = GoogleCloudRecommendationengineV1beta1CatalogItemLevelConfig::class;
   protected $catalogItemLevelConfigDataType = '';
   /**
-   * Required. The ID of the default event store.
-   *
    * @var string
    */
   public $defaultEventStoreId;
   /**
-   * Required. The catalog display name.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * The fully qualified resource name of the catalog.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Required. The catalog item level configuration.
-   *
-   * @param GoogleCloudRecommendationengineV1beta1CatalogItemLevelConfig $catalogItemLevelConfig
+   * @param GoogleCloudRecommendationengineV1beta1CatalogItemLevelConfig
    */
   public function setCatalogItemLevelConfig(GoogleCloudRecommendationengineV1beta1CatalogItemLevelConfig $catalogItemLevelConfig)
   {
@@ -57,9 +49,7 @@ class GoogleCloudRecommendationengineV1beta1Catalog extends \Google\Model
     return $this->catalogItemLevelConfig;
   }
   /**
-   * Required. The ID of the default event store.
-   *
-   * @param string $defaultEventStoreId
+   * @param string
    */
   public function setDefaultEventStoreId($defaultEventStoreId)
   {
@@ -73,9 +63,7 @@ class GoogleCloudRecommendationengineV1beta1Catalog extends \Google\Model
     return $this->defaultEventStoreId;
   }
   /**
-   * Required. The catalog display name.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -89,9 +77,7 @@ class GoogleCloudRecommendationengineV1beta1Catalog extends \Google\Model
     return $this->displayName;
   }
   /**
-   * The fully qualified resource name of the catalog.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

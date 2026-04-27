@@ -21,84 +21,58 @@ class RemarketingAudience extends \Google\Collection
 {
   protected $collection_key = 'linkedViews';
   /**
-   * Account ID to which this remarketing audience belongs.
-   *
    * @var string
    */
   public $accountId;
   protected $audienceDefinitionType = RemarketingAudienceAudienceDefinition::class;
   protected $audienceDefinitionDataType = '';
   /**
-   * The type of audience, either SIMPLE or STATE_BASED.
-   *
    * @var string
    */
   public $audienceType;
   /**
-   * Time this remarketing audience was created.
-   *
    * @var string
    */
   public $created;
   /**
-   * The description of this remarketing audience.
-   *
    * @var string
    */
   public $description;
   /**
-   * Remarketing Audience ID.
-   *
    * @var string
    */
   public $id;
   /**
-   * Internal ID for the web property to which this remarketing audience
-   * belongs.
-   *
    * @var string
    */
   public $internalWebPropertyId;
   /**
-   * Collection type.
-   *
    * @var string
    */
   public $kind;
   protected $linkedAdAccountsType = LinkedForeignAccount::class;
   protected $linkedAdAccountsDataType = 'array';
   /**
-   * The views (profiles) that this remarketing audience is linked to.
-   *
    * @var string[]
    */
   public $linkedViews;
   /**
-   * The name of this remarketing audience.
-   *
    * @var string
    */
   public $name;
   protected $stateBasedAudienceDefinitionType = RemarketingAudienceStateBasedAudienceDefinition::class;
   protected $stateBasedAudienceDefinitionDataType = '';
   /**
-   * Time this remarketing audience was last modified.
-   *
    * @var string
    */
   public $updated;
   /**
-   * Web property ID of the form UA-XXXXX-YY to which this remarketing audience
-   * belongs.
-   *
    * @var string
    */
   public $webPropertyId;
 
   /**
-   * Account ID to which this remarketing audience belongs.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -112,10 +86,7 @@ class RemarketingAudience extends \Google\Collection
     return $this->accountId;
   }
   /**
-   * The simple audience definition that will cause a user to be added to an
-   * audience.
-   *
-   * @param RemarketingAudienceAudienceDefinition $audienceDefinition
+   * @param RemarketingAudienceAudienceDefinition
    */
   public function setAudienceDefinition(RemarketingAudienceAudienceDefinition $audienceDefinition)
   {
@@ -129,9 +100,7 @@ class RemarketingAudience extends \Google\Collection
     return $this->audienceDefinition;
   }
   /**
-   * The type of audience, either SIMPLE or STATE_BASED.
-   *
-   * @param string $audienceType
+   * @param string
    */
   public function setAudienceType($audienceType)
   {
@@ -145,9 +114,7 @@ class RemarketingAudience extends \Google\Collection
     return $this->audienceType;
   }
   /**
-   * Time this remarketing audience was created.
-   *
-   * @param string $created
+   * @param string
    */
   public function setCreated($created)
   {
@@ -161,9 +128,7 @@ class RemarketingAudience extends \Google\Collection
     return $this->created;
   }
   /**
-   * The description of this remarketing audience.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -177,9 +142,7 @@ class RemarketingAudience extends \Google\Collection
     return $this->description;
   }
   /**
-   * Remarketing Audience ID.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -193,10 +156,7 @@ class RemarketingAudience extends \Google\Collection
     return $this->id;
   }
   /**
-   * Internal ID for the web property to which this remarketing audience
-   * belongs.
-   *
-   * @param string $internalWebPropertyId
+   * @param string
    */
   public function setInternalWebPropertyId($internalWebPropertyId)
   {
@@ -210,9 +170,7 @@ class RemarketingAudience extends \Google\Collection
     return $this->internalWebPropertyId;
   }
   /**
-   * Collection type.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -226,10 +184,7 @@ class RemarketingAudience extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The linked ad accounts associated with this remarketing audience. A
-   * remarketing audience can have only one linkedAdAccount currently.
-   *
-   * @param LinkedForeignAccount[] $linkedAdAccounts
+   * @param LinkedForeignAccount[]
    */
   public function setLinkedAdAccounts($linkedAdAccounts)
   {
@@ -243,9 +198,7 @@ class RemarketingAudience extends \Google\Collection
     return $this->linkedAdAccounts;
   }
   /**
-   * The views (profiles) that this remarketing audience is linked to.
-   *
-   * @param string[] $linkedViews
+   * @param string[]
    */
   public function setLinkedViews($linkedViews)
   {
@@ -259,9 +212,7 @@ class RemarketingAudience extends \Google\Collection
     return $this->linkedViews;
   }
   /**
-   * The name of this remarketing audience.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -275,10 +226,7 @@ class RemarketingAudience extends \Google\Collection
     return $this->name;
   }
   /**
-   * A state based audience definition that will cause a user to be added or
-   * removed from an audience.
-   *
-   * @param RemarketingAudienceStateBasedAudienceDefinition $stateBasedAudienceDefinition
+   * @param RemarketingAudienceStateBasedAudienceDefinition
    */
   public function setStateBasedAudienceDefinition(RemarketingAudienceStateBasedAudienceDefinition $stateBasedAudienceDefinition)
   {
@@ -292,9 +240,7 @@ class RemarketingAudience extends \Google\Collection
     return $this->stateBasedAudienceDefinition;
   }
   /**
-   * Time this remarketing audience was last modified.
-   *
-   * @param string $updated
+   * @param string
    */
   public function setUpdated($updated)
   {
@@ -308,10 +254,7 @@ class RemarketingAudience extends \Google\Collection
     return $this->updated;
   }
   /**
-   * Web property ID of the form UA-XXXXX-YY to which this remarketing audience
-   * belongs.
-   *
-   * @param string $webPropertyId
+   * @param string
    */
   public function setWebPropertyId($webPropertyId)
   {

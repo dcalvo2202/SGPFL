@@ -20,28 +20,16 @@ namespace Google\Service\CloudControlsPartnerService;
 class Sku extends \Google\Model
 {
   /**
-   * Display name of the product identified by the SKU. A partner may want to
-   * show partner branded names for their offerings such as local sovereign
-   * cloud solutions.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Argentum product SKU, that is associated with the partner offerings to
-   * customers used by Syntro for billing purposes. SKUs can represent resold
-   * Google products or support services.
-   *
    * @var string
    */
   public $id;
 
   /**
-   * Display name of the product identified by the SKU. A partner may want to
-   * show partner branded names for their offerings such as local sovereign
-   * cloud solutions.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -55,11 +43,7 @@ class Sku extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Argentum product SKU, that is associated with the partner offerings to
-   * customers used by Syntro for billing purposes. SKUs can represent resold
-   * Google products or support services.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {

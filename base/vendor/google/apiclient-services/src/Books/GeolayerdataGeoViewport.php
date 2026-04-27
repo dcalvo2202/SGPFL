@@ -25,7 +25,7 @@ class GeolayerdataGeoViewport extends \Google\Model
   protected $loDataType = '';
 
   /**
-   * @param GeolayerdataGeoViewportHi $hi
+   * @param GeolayerdataGeoViewportHi
    */
   public function setHi(GeolayerdataGeoViewportHi $hi)
   {
@@ -39,7 +39,7 @@ class GeolayerdataGeoViewport extends \Google\Model
     return $this->hi;
   }
   /**
-   * @param GeolayerdataGeoViewportLo $lo
+   * @param GeolayerdataGeoViewportLo
    */
   public function setLo(GeolayerdataGeoViewportLo $lo)
   {

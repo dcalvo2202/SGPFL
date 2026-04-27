@@ -23,10 +23,7 @@ class AutomaticStatus extends \Google\Model
   protected $customerManagedEncryptionDataType = '';
 
   /**
-   * Output only. The customer-managed encryption status of the SecretVersion.
-   * Only populated if customer-managed encryption is used.
-   *
-   * @param CustomerManagedEncryptionStatus $customerManagedEncryption
+   * @param CustomerManagedEncryptionStatus
    */
   public function setCustomerManagedEncryption(CustomerManagedEncryptionStatus $customerManagedEncryption)
   {

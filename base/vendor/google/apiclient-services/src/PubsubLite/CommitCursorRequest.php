@@ -22,17 +22,12 @@ class CommitCursorRequest extends \Google\Model
   protected $cursorType = Cursor::class;
   protected $cursorDataType = '';
   /**
-   * The partition for which to update the cursor. Partitions are zero indexed,
-   * so `partition` must be in the range [0, topic.num_partitions).
-   *
    * @var string
    */
   public $partition;
 
   /**
-   * The new value for the committed cursor.
-   *
-   * @param Cursor $cursor
+   * @param Cursor
    */
   public function setCursor(Cursor $cursor)
   {
@@ -46,10 +41,7 @@ class CommitCursorRequest extends \Google\Model
     return $this->cursor;
   }
   /**
-   * The partition for which to update the cursor. Partitions are zero indexed,
-   * so `partition` must be in the range [0, topic.num_partitions).
-   *
-   * @param string $partition
+   * @param string
    */
   public function setPartition($partition)
   {

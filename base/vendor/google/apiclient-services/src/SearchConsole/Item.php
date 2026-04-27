@@ -23,16 +23,12 @@ class Item extends \Google\Collection
   protected $issuesType = RichResultsIssue::class;
   protected $issuesDataType = 'array';
   /**
-   * The user-provided name of this item.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * A list of zero or more rich result issues found for this instance.
-   *
-   * @param RichResultsIssue[] $issues
+   * @param RichResultsIssue[]
    */
   public function setIssues($issues)
   {
@@ -46,9 +42,7 @@ class Item extends \Google\Collection
     return $this->issues;
   }
   /**
-   * The user-provided name of this item.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

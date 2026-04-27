@@ -23,23 +23,16 @@ class ListDomainsResponse extends \Google\Collection
   protected $domainsType = Domain::class;
   protected $domainsDataType = 'array';
   /**
-   * A token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * A list of locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * A list of Managed Identities Service domains in the project.
-   *
-   * @param Domain[] $domains
+   * @param Domain[]
    */
   public function setDomains($domains)
   {
@@ -53,10 +46,7 @@ class ListDomainsResponse extends \Google\Collection
     return $this->domains;
   }
   /**
-   * A token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -70,9 +60,7 @@ class ListDomainsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * A list of locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

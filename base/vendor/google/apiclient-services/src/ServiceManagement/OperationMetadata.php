@@ -21,21 +21,14 @@ class OperationMetadata extends \Google\Collection
 {
   protected $collection_key = 'steps';
   /**
-   * Percentage of completion of this operation, ranging from 0 to 100.
-   *
    * @var int
    */
   public $progressPercentage;
   /**
-   * The full name of the resources that this operation is directly associated
-   * with.
-   *
    * @var string[]
    */
   public $resourceNames;
   /**
-   * The start time of the operation.
-   *
    * @var string
    */
   public $startTime;
@@ -43,9 +36,7 @@ class OperationMetadata extends \Google\Collection
   protected $stepsDataType = 'array';
 
   /**
-   * Percentage of completion of this operation, ranging from 0 to 100.
-   *
-   * @param int $progressPercentage
+   * @param int
    */
   public function setProgressPercentage($progressPercentage)
   {
@@ -59,10 +50,7 @@ class OperationMetadata extends \Google\Collection
     return $this->progressPercentage;
   }
   /**
-   * The full name of the resources that this operation is directly associated
-   * with.
-   *
-   * @param string[] $resourceNames
+   * @param string[]
    */
   public function setResourceNames($resourceNames)
   {
@@ -76,9 +64,7 @@ class OperationMetadata extends \Google\Collection
     return $this->resourceNames;
   }
   /**
-   * The start time of the operation.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -92,9 +78,7 @@ class OperationMetadata extends \Google\Collection
     return $this->startTime;
   }
   /**
-   * Detailed status information for each step. The order is undetermined.
-   *
-   * @param Step[] $steps
+   * @param Step[]
    */
   public function setSteps($steps)
   {

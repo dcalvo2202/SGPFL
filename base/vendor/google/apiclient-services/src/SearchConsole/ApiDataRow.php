@@ -54,7 +54,7 @@ class ApiDataRow extends \Google\Collection
     return $this->impressions;
   }
   /**
-   * @param string[] $keys
+   * @param string[]
    */
   public function setKeys($keys)
   {

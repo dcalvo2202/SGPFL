@@ -19,71 +19,34 @@ namespace Google\Service\AndroidEnterprise;
 
 class Enterprise extends \Google\Collection
 {
-  /**
-   * This value is not used.
-   */
-  public const ENTERPRISE_TYPE_enterpriseTypeUnspecified = 'enterpriseTypeUnspecified';
-  /**
-   * The enterprise belongs to a managed Google domain.
-   */
-  public const ENTERPRISE_TYPE_managedGoogleDomain = 'managedGoogleDomain';
-  /**
-   * The enterprise is a managed Google Play Accounts enterprise.
-   */
-  public const ENTERPRISE_TYPE_managedGooglePlayAccountsEnterprise = 'managedGooglePlayAccountsEnterprise';
-  /**
-   * The managed Google domain type is not specified.
-   */
-  public const MANAGED_GOOGLE_DOMAIN_TYPE_managedGoogleDomainTypeUnspecified = 'managedGoogleDomainTypeUnspecified';
-  /**
-   * The managed Google domain is an email-verified team.
-   */
-  public const MANAGED_GOOGLE_DOMAIN_TYPE_typeTeam = 'typeTeam';
-  /**
-   * The managed Google domain is domain-verified.
-   */
-  public const MANAGED_GOOGLE_DOMAIN_TYPE_typeDomain = 'typeDomain';
   protected $collection_key = 'administrator';
   protected $administratorType = Administrator::class;
   protected $administratorDataType = 'array';
   /**
-   * The type of the enterprise.
-   *
    * @var string
    */
   public $enterpriseType;
   protected $googleAuthenticationSettingsType = GoogleAuthenticationSettings::class;
   protected $googleAuthenticationSettingsDataType = '';
   /**
-   * The unique ID for the enterprise.
-   *
    * @var string
    */
   public $id;
   /**
-   * The type of managed Google domain
-   *
    * @var string
    */
   public $managedGoogleDomainType;
   /**
-   * The name of the enterprise, for example, "Example, Inc".
-   *
    * @var string
    */
   public $name;
   /**
-   * The enterprise's primary domain, such as "example.com".
-   *
    * @var string
    */
   public $primaryDomain;
 
   /**
-   * Admins of the enterprise. This is only supported for enterprises created
-   * via the EMM-initiated flow.
-   *
-   * @param Administrator[] $administrator
+   * @param Administrator[]
    */
   public function setAdministrator($administrator)
   {
@@ -97,28 +60,21 @@ class Enterprise extends \Google\Collection
     return $this->administrator;
   }
   /**
-   * The type of the enterprise.
-   *
-   * Accepted values: enterpriseTypeUnspecified, managedGoogleDomain,
-   * managedGooglePlayAccountsEnterprise
-   *
-   * @param self::ENTERPRISE_TYPE_* $enterpriseType
+   * @param string
    */
   public function setEnterpriseType($enterpriseType)
   {
     $this->enterpriseType = $enterpriseType;
   }
   /**
-   * @return self::ENTERPRISE_TYPE_*
+   * @return string
    */
   public function getEnterpriseType()
   {
     return $this->enterpriseType;
   }
   /**
-   * Output only. Settings for Google-provided user authentication.
-   *
-   * @param GoogleAuthenticationSettings $googleAuthenticationSettings
+   * @param GoogleAuthenticationSettings
    */
   public function setGoogleAuthenticationSettings(GoogleAuthenticationSettings $googleAuthenticationSettings)
   {
@@ -132,9 +88,7 @@ class Enterprise extends \Google\Collection
     return $this->googleAuthenticationSettings;
   }
   /**
-   * The unique ID for the enterprise.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -148,27 +102,21 @@ class Enterprise extends \Google\Collection
     return $this->id;
   }
   /**
-   * The type of managed Google domain
-   *
-   * Accepted values: managedGoogleDomainTypeUnspecified, typeTeam, typeDomain
-   *
-   * @param self::MANAGED_GOOGLE_DOMAIN_TYPE_* $managedGoogleDomainType
+   * @param string
    */
   public function setManagedGoogleDomainType($managedGoogleDomainType)
   {
     $this->managedGoogleDomainType = $managedGoogleDomainType;
   }
   /**
-   * @return self::MANAGED_GOOGLE_DOMAIN_TYPE_*
+   * @return string
    */
   public function getManagedGoogleDomainType()
   {
     return $this->managedGoogleDomainType;
   }
   /**
-   * The name of the enterprise, for example, "Example, Inc".
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -182,9 +130,7 @@ class Enterprise extends \Google\Collection
     return $this->name;
   }
   /**
-   * The enterprise's primary domain, such as "example.com".
-   *
-   * @param string $primaryDomain
+   * @param string
    */
   public function setPrimaryDomain($primaryDomain)
   {

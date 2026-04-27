@@ -25,10 +25,7 @@ class GoogleAppsCardV1CardFixedFooter extends \Google\Model
   protected $secondaryButtonDataType = '';
 
   /**
-   * The primary button of the fixed footer. The button must be a text button
-   * with text and color set.
-   *
-   * @param GoogleAppsCardV1Button $primaryButton
+   * @param GoogleAppsCardV1Button
    */
   public function setPrimaryButton(GoogleAppsCardV1Button $primaryButton)
   {
@@ -42,11 +39,7 @@ class GoogleAppsCardV1CardFixedFooter extends \Google\Model
     return $this->primaryButton;
   }
   /**
-   * The secondary button of the fixed footer. The button must be a text button
-   * with text and color set. If `secondaryButton` is set, you must also set
-   * `primaryButton`.
-   *
-   * @param GoogleAppsCardV1Button $secondaryButton
+   * @param GoogleAppsCardV1Button
    */
   public function setSecondaryButton(GoogleAppsCardV1Button $secondaryButton)
   {

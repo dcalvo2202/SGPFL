@@ -23,18 +23,12 @@ class ListGlossariesResponse extends \Google\Collection
   protected $glossariesType = Glossary::class;
   protected $glossariesDataType = 'array';
   /**
-   * A token to retrieve a page of results. Pass this value in the
-   * [ListGlossariesRequest.page_token] field in the subsequent call to
-   * `ListGlossaries` method to retrieve the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of glossaries for a project.
-   *
-   * @param Glossary[] $glossaries
+   * @param Glossary[]
    */
   public function setGlossaries($glossaries)
   {
@@ -48,11 +42,7 @@ class ListGlossariesResponse extends \Google\Collection
     return $this->glossaries;
   }
   /**
-   * A token to retrieve a page of results. Pass this value in the
-   * [ListGlossariesRequest.page_token] field in the subsequent call to
-   * `ListGlossaries` method to retrieve the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

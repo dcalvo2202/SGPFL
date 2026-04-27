@@ -20,29 +20,17 @@ namespace Google\Service\Bigquery;
 class ClusterInfo extends \Google\Model
 {
   /**
-   * Centroid id.
-   *
    * @var string
    */
   public $centroidId;
-  /**
-   * Cluster radius, the average distance from centroid to each point assigned
-   * to the cluster.
-   *
-   * @var 
-   */
   public $clusterRadius;
   /**
-   * Cluster size, the total number of points assigned to the cluster.
-   *
    * @var string
    */
   public $clusterSize;
 
   /**
-   * Centroid id.
-   *
-   * @param string $centroidId
+   * @param string
    */
   public function setCentroidId($centroidId)
   {
@@ -64,9 +52,7 @@ class ClusterInfo extends \Google\Model
     return $this->clusterRadius;
   }
   /**
-   * Cluster size, the total number of points assigned to the cluster.
-   *
-   * @param string $clusterSize
+   * @param string
    */
   public function setClusterSize($clusterSize)
   {

@@ -20,36 +20,24 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1SchemaModelevaluationMetricsTextExtractionEvaluationMetricsConfidenceMetrics extends \Google\Model
 {
   /**
-   * Metrics are computed with an assumption that the Model never returns
-   * predictions with score lower than this value.
-   *
    * @var float
    */
   public $confidenceThreshold;
   /**
-   * The harmonic mean of recall and precision.
-   *
    * @var float
    */
   public $f1Score;
   /**
-   * Precision for the given confidence threshold.
-   *
    * @var float
    */
   public $precision;
   /**
-   * Recall (True Positive Rate) for the given confidence threshold.
-   *
    * @var float
    */
   public $recall;
 
   /**
-   * Metrics are computed with an assumption that the Model never returns
-   * predictions with score lower than this value.
-   *
-   * @param float $confidenceThreshold
+   * @param float
    */
   public function setConfidenceThreshold($confidenceThreshold)
   {
@@ -63,9 +51,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsTextExtractionEvaluatio
     return $this->confidenceThreshold;
   }
   /**
-   * The harmonic mean of recall and precision.
-   *
-   * @param float $f1Score
+   * @param float
    */
   public function setF1Score($f1Score)
   {
@@ -79,9 +65,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsTextExtractionEvaluatio
     return $this->f1Score;
   }
   /**
-   * Precision for the given confidence threshold.
-   *
-   * @param float $precision
+   * @param float
    */
   public function setPrecision($precision)
   {
@@ -95,9 +79,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsTextExtractionEvaluatio
     return $this->precision;
   }
   /**
-   * Recall (True Positive Rate) for the given confidence threshold.
-   *
-   * @param float $recall
+   * @param float
    */
   public function setRecall($recall)
   {

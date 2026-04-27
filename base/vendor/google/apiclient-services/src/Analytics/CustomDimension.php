@@ -20,79 +20,54 @@ namespace Google\Service\Analytics;
 class CustomDimension extends \Google\Model
 {
   /**
-   * Account ID.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * Boolean indicating whether the custom dimension is active.
-   *
    * @var bool
    */
   public $active;
   /**
-   * Time the custom dimension was created.
-   *
    * @var string
    */
   public $created;
   /**
-   * Custom dimension ID.
-   *
    * @var string
    */
   public $id;
   /**
-   * Index of the custom dimension.
-   *
    * @var int
    */
   public $index;
   /**
-   * Kind value for a custom dimension. Set to "analytics#customDimension". It
-   * is a read-only field.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Name of the custom dimension.
-   *
    * @var string
    */
   public $name;
   protected $parentLinkType = CustomDimensionParentLink::class;
   protected $parentLinkDataType = '';
   /**
-   * Scope of the custom dimension: HIT, SESSION, USER or PRODUCT.
-   *
    * @var string
    */
   public $scope;
   /**
-   * Link for the custom dimension
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * Time the custom dimension was last modified.
-   *
    * @var string
    */
   public $updated;
   /**
-   * Property ID.
-   *
    * @var string
    */
   public $webPropertyId;
 
   /**
-   * Account ID.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -106,9 +81,7 @@ class CustomDimension extends \Google\Model
     return $this->accountId;
   }
   /**
-   * Boolean indicating whether the custom dimension is active.
-   *
-   * @param bool $active
+   * @param bool
    */
   public function setActive($active)
   {
@@ -122,9 +95,7 @@ class CustomDimension extends \Google\Model
     return $this->active;
   }
   /**
-   * Time the custom dimension was created.
-   *
-   * @param string $created
+   * @param string
    */
   public function setCreated($created)
   {
@@ -138,9 +109,7 @@ class CustomDimension extends \Google\Model
     return $this->created;
   }
   /**
-   * Custom dimension ID.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -154,9 +123,7 @@ class CustomDimension extends \Google\Model
     return $this->id;
   }
   /**
-   * Index of the custom dimension.
-   *
-   * @param int $index
+   * @param int
    */
   public function setIndex($index)
   {
@@ -170,10 +137,7 @@ class CustomDimension extends \Google\Model
     return $this->index;
   }
   /**
-   * Kind value for a custom dimension. Set to "analytics#customDimension". It
-   * is a read-only field.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -187,9 +151,7 @@ class CustomDimension extends \Google\Model
     return $this->kind;
   }
   /**
-   * Name of the custom dimension.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -203,10 +165,7 @@ class CustomDimension extends \Google\Model
     return $this->name;
   }
   /**
-   * Parent link for the custom dimension. Points to the property to which the
-   * custom dimension belongs.
-   *
-   * @param CustomDimensionParentLink $parentLink
+   * @param CustomDimensionParentLink
    */
   public function setParentLink(CustomDimensionParentLink $parentLink)
   {
@@ -220,9 +179,7 @@ class CustomDimension extends \Google\Model
     return $this->parentLink;
   }
   /**
-   * Scope of the custom dimension: HIT, SESSION, USER or PRODUCT.
-   *
-   * @param string $scope
+   * @param string
    */
   public function setScope($scope)
   {
@@ -236,9 +193,7 @@ class CustomDimension extends \Google\Model
     return $this->scope;
   }
   /**
-   * Link for the custom dimension
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -252,9 +207,7 @@ class CustomDimension extends \Google\Model
     return $this->selfLink;
   }
   /**
-   * Time the custom dimension was last modified.
-   *
-   * @param string $updated
+   * @param string
    */
   public function setUpdated($updated)
   {
@@ -268,9 +221,7 @@ class CustomDimension extends \Google\Model
     return $this->updated;
   }
   /**
-   * Property ID.
-   *
-   * @param string $webPropertyId
+   * @param string
    */
   public function setWebPropertyId($webPropertyId)
   {

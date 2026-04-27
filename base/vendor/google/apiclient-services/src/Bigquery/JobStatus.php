@@ -25,18 +25,12 @@ class JobStatus extends \Google\Collection
   protected $errorsType = ErrorProto::class;
   protected $errorsDataType = 'array';
   /**
-   * Output only. Running state of the job. Valid states include 'PENDING',
-   * 'RUNNING', and 'DONE'.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Output only. Final error result of the job. If present, indicates that the
-   * job has completed and was unsuccessful.
-   *
-   * @param ErrorProto $errorResult
+   * @param ErrorProto
    */
   public function setErrorResult(ErrorProto $errorResult)
   {
@@ -50,12 +44,7 @@ class JobStatus extends \Google\Collection
     return $this->errorResult;
   }
   /**
-   * Output only. The first errors encountered during the running of the job.
-   * The final message includes the number of errors that caused the process to
-   * stop. Errors here do not necessarily mean that the job has not completed or
-   * was unsuccessful.
-   *
-   * @param ErrorProto[] $errors
+   * @param ErrorProto[]
    */
   public function setErrors($errors)
   {
@@ -69,10 +58,7 @@ class JobStatus extends \Google\Collection
     return $this->errors;
   }
   /**
-   * Output only. Running state of the job. Valid states include 'PENDING',
-   * 'RUNNING', and 'DONE'.
-   *
-   * @param string $state
+   * @param string
    */
   public function setState($state)
   {

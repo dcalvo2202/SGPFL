@@ -25,7 +25,7 @@ class GoogleCloudDialogflowCxV3RunTestCaseRequest extends \Google\Model
   public $environment;
 
   /**
-   * @param string $environment
+   * @param string
    */
   public function setEnvironment($environment)
   {

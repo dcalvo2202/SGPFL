@@ -20,23 +20,16 @@ namespace Google\Service\DataCatalog;
 class GoogleCloudDatacatalogV1ImportEntriesRequest extends \Google\Model
 {
   /**
-   * Path to a Cloud Storage bucket that contains a dump ready for ingestion.
-   *
    * @var string
    */
   public $gcsBucketPath;
   /**
-   * Optional. (Optional) Dataplex Universal Catalog task job id, if specified
-   * will be used as part of ImportEntries LRO ID
-   *
    * @var string
    */
   public $jobId;
 
   /**
-   * Path to a Cloud Storage bucket that contains a dump ready for ingestion.
-   *
-   * @param string $gcsBucketPath
+   * @param string
    */
   public function setGcsBucketPath($gcsBucketPath)
   {
@@ -50,10 +43,7 @@ class GoogleCloudDatacatalogV1ImportEntriesRequest extends \Google\Model
     return $this->gcsBucketPath;
   }
   /**
-   * Optional. (Optional) Dataplex Universal Catalog task job id, if specified
-   * will be used as part of ImportEntries LRO ID
-   *
-   * @param string $jobId
+   * @param string
    */
   public function setJobId($jobId)
   {

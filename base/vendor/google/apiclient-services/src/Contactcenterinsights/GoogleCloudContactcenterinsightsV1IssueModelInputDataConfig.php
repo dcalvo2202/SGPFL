@@ -20,47 +20,20 @@ namespace Google\Service\Contactcenterinsights;
 class GoogleCloudContactcenterinsightsV1IssueModelInputDataConfig extends \Google\Model
 {
   /**
-   * Default value for unspecified.
-   */
-  public const MEDIUM_MEDIUM_UNSPECIFIED = 'MEDIUM_UNSPECIFIED';
-  /**
-   * The format for conversations that took place over the phone.
-   */
-  public const MEDIUM_PHONE_CALL = 'PHONE_CALL';
-  /**
-   * The format for conversations that took place over chat.
-   */
-  public const MEDIUM_CHAT = 'CHAT';
-  /**
-   * A filter to reduce the conversations used for training the model to a
-   * specific subset. Refer to https://cloud.google.com/contact-
-   * center/insights/docs/filtering for details.
-   *
    * @var string
    */
   public $filter;
   /**
-   * Medium of conversations used in training data. This field is being
-   * deprecated. To specify the medium to be used in training a new issue model,
-   * set the `medium` field on `filter`.
-   *
-   * @deprecated
    * @var string
    */
   public $medium;
   /**
-   * Output only. Number of conversations used in training. Output only.
-   *
    * @var string
    */
   public $trainingConversationsCount;
 
   /**
-   * A filter to reduce the conversations used for training the model to a
-   * specific subset. Refer to https://cloud.google.com/contact-
-   * center/insights/docs/filtering for details.
-   *
-   * @param string $filter
+   * @param string
    */
   public function setFilter($filter)
   {
@@ -74,31 +47,21 @@ class GoogleCloudContactcenterinsightsV1IssueModelInputDataConfig extends \Googl
     return $this->filter;
   }
   /**
-   * Medium of conversations used in training data. This field is being
-   * deprecated. To specify the medium to be used in training a new issue model,
-   * set the `medium` field on `filter`.
-   *
-   * Accepted values: MEDIUM_UNSPECIFIED, PHONE_CALL, CHAT
-   *
-   * @deprecated
-   * @param self::MEDIUM_* $medium
+   * @param string
    */
   public function setMedium($medium)
   {
     $this->medium = $medium;
   }
   /**
-   * @deprecated
-   * @return self::MEDIUM_*
+   * @return string
    */
   public function getMedium()
   {
     return $this->medium;
   }
   /**
-   * Output only. Number of conversations used in training. Output only.
-   *
-   * @param string $trainingConversationsCount
+   * @param string
    */
   public function setTrainingConversationsCount($trainingConversationsCount)
   {

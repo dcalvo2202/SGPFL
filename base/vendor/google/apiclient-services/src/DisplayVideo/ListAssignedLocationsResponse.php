@@ -23,18 +23,12 @@ class ListAssignedLocationsResponse extends \Google\Collection
   protected $assignedLocationsType = AssignedLocation::class;
   protected $assignedLocationsDataType = 'array';
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * page_token field in the subsequent call to `ListAssignedLocations` method
-   * to retrieve the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of assigned locations. This list will be absent if empty.
-   *
-   * @param AssignedLocation[] $assignedLocations
+   * @param AssignedLocation[]
    */
   public function setAssignedLocations($assignedLocations)
   {
@@ -48,11 +42,7 @@ class ListAssignedLocationsResponse extends \Google\Collection
     return $this->assignedLocations;
   }
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * page_token field in the subsequent call to `ListAssignedLocations` method
-   * to retrieve the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

@@ -20,30 +20,6 @@ namespace Google\Service\CloudAlloyDBAdmin;
 class StorageDatabasecenterPartnerapiV1mainRetentionSettings extends \Google\Model
 {
   /**
-   * Backup retention unit is unspecified, will be treated as COUNT.
-   */
-  public const RETENTION_UNIT_RETENTION_UNIT_UNSPECIFIED = 'RETENTION_UNIT_UNSPECIFIED';
-  /**
-   * Retention will be by count, eg. "retain the most recent 7 backups".
-   */
-  public const RETENTION_UNIT_COUNT = 'COUNT';
-  /**
-   * Retention will be by Time, eg. "retain backups till a specific time" i.e.
-   * till 2024-05-01T00:00:00Z.
-   */
-  public const RETENTION_UNIT_TIME = 'TIME';
-  /**
-   * Retention will be by duration, eg. "retain the backups for 172800 seconds
-   * (2 days)".
-   */
-  public const RETENTION_UNIT_DURATION = 'DURATION';
-  /**
-   * For rest of the other category
-   */
-  public const RETENTION_UNIT_RETENTION_UNIT_OTHER = 'RETENTION_UNIT_OTHER';
-  /**
-   * Duration based retention period i.e. 172800 seconds (2 days)
-   *
    * @var string
    */
   public $durationBasedRetention;
@@ -52,28 +28,20 @@ class StorageDatabasecenterPartnerapiV1mainRetentionSettings extends \Google\Mod
    */
   public $quantityBasedRetention;
   /**
-   * The unit that 'retained_backups' represents.
-   *
-   * @deprecated
    * @var string
    */
   public $retentionUnit;
   /**
-   * @deprecated
    * @var string
    */
   public $timeBasedRetention;
   /**
-   * Timestamp based retention period i.e. 2024-05-01T00:00:00Z
-   *
    * @var string
    */
   public $timestampBasedRetentionTime;
 
   /**
-   * Duration based retention period i.e. 172800 seconds (2 days)
-   *
-   * @param string $durationBasedRetention
+   * @param string
    */
   public function setDurationBasedRetention($durationBasedRetention)
   {
@@ -87,7 +55,7 @@ class StorageDatabasecenterPartnerapiV1mainRetentionSettings extends \Google\Mod
     return $this->durationBasedRetention;
   }
   /**
-   * @param int $quantityBasedRetention
+   * @param int
    */
   public function setQuantityBasedRetention($quantityBasedRetention)
   {
@@ -101,36 +69,27 @@ class StorageDatabasecenterPartnerapiV1mainRetentionSettings extends \Google\Mod
     return $this->quantityBasedRetention;
   }
   /**
-   * The unit that 'retained_backups' represents.
-   *
-   * Accepted values: RETENTION_UNIT_UNSPECIFIED, COUNT, TIME, DURATION,
-   * RETENTION_UNIT_OTHER
-   *
-   * @deprecated
-   * @param self::RETENTION_UNIT_* $retentionUnit
+   * @param string
    */
   public function setRetentionUnit($retentionUnit)
   {
     $this->retentionUnit = $retentionUnit;
   }
   /**
-   * @deprecated
-   * @return self::RETENTION_UNIT_*
+   * @return string
    */
   public function getRetentionUnit()
   {
     return $this->retentionUnit;
   }
   /**
-   * @deprecated
-   * @param string $timeBasedRetention
+   * @param string
    */
   public function setTimeBasedRetention($timeBasedRetention)
   {
     $this->timeBasedRetention = $timeBasedRetention;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getTimeBasedRetention()
@@ -138,9 +97,7 @@ class StorageDatabasecenterPartnerapiV1mainRetentionSettings extends \Google\Mod
     return $this->timeBasedRetention;
   }
   /**
-   * Timestamp based retention period i.e. 2024-05-01T00:00:00Z
-   *
-   * @param string $timestampBasedRetentionTime
+   * @param string
    */
   public function setTimestampBasedRetentionTime($timestampBasedRetentionTime)
   {

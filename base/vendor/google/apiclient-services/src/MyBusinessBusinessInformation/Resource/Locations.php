@@ -83,10 +83,8 @@ class Locations extends \Google\Service\Resource
     return $this->call('getAttributes', [$params], AttributesModel::class);
   }
   /**
-   * Gets the version of the specified location, returning a
-   * `GoogleUpdatedLocation` that provides the location view as it appears to
-   * consumers and masks indicating which fields are different than the merchant's
-   * information. (locations.getGoogleUpdated)
+   * Gets the Google-updated version of the specified location.
+   * (locations.getGoogleUpdated)
    *
    * @param string $name Required. The name of the location to fetch.
    * @param array $optParams Optional parameters.

@@ -20,40 +20,28 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1PairwiseQuestionAnsweringQualityInstance extends \Google\Model
 {
   /**
-   * Required. Output of the baseline model.
-   *
    * @var string
    */
   public $baselinePrediction;
   /**
-   * Required. Text to answer the question.
-   *
    * @var string
    */
   public $context;
   /**
-   * Required. Question Answering prompt for LLM.
-   *
    * @var string
    */
   public $instruction;
   /**
-   * Required. Output of the candidate model.
-   *
    * @var string
    */
   public $prediction;
   /**
-   * Optional. Ground truth used to compare against the prediction.
-   *
    * @var string
    */
   public $reference;
 
   /**
-   * Required. Output of the baseline model.
-   *
-   * @param string $baselinePrediction
+   * @param string
    */
   public function setBaselinePrediction($baselinePrediction)
   {
@@ -67,9 +55,7 @@ class GoogleCloudAiplatformV1PairwiseQuestionAnsweringQualityInstance extends \G
     return $this->baselinePrediction;
   }
   /**
-   * Required. Text to answer the question.
-   *
-   * @param string $context
+   * @param string
    */
   public function setContext($context)
   {
@@ -83,9 +69,7 @@ class GoogleCloudAiplatformV1PairwiseQuestionAnsweringQualityInstance extends \G
     return $this->context;
   }
   /**
-   * Required. Question Answering prompt for LLM.
-   *
-   * @param string $instruction
+   * @param string
    */
   public function setInstruction($instruction)
   {
@@ -99,9 +83,7 @@ class GoogleCloudAiplatformV1PairwiseQuestionAnsweringQualityInstance extends \G
     return $this->instruction;
   }
   /**
-   * Required. Output of the candidate model.
-   *
-   * @param string $prediction
+   * @param string
    */
   public function setPrediction($prediction)
   {
@@ -115,9 +97,7 @@ class GoogleCloudAiplatformV1PairwiseQuestionAnsweringQualityInstance extends \G
     return $this->prediction;
   }
   /**
-   * Optional. Ground truth used to compare against the prediction.
-   *
-   * @param string $reference
+   * @param string
    */
   public function setReference($reference)
   {

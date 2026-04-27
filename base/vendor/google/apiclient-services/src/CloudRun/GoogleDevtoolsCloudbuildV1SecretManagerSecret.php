@@ -20,26 +20,16 @@ namespace Google\Service\CloudRun;
 class GoogleDevtoolsCloudbuildV1SecretManagerSecret extends \Google\Model
 {
   /**
-   * Environment variable name to associate with the secret. Secret environment
-   * variables must be unique across all of a build's secrets, and must be used
-   * by at least one build step.
-   *
    * @var string
    */
   public $env;
   /**
-   * Resource name of the SecretVersion. In format: projects/secrets/versions
-   *
    * @var string
    */
   public $versionName;
 
   /**
-   * Environment variable name to associate with the secret. Secret environment
-   * variables must be unique across all of a build's secrets, and must be used
-   * by at least one build step.
-   *
-   * @param string $env
+   * @param string
    */
   public function setEnv($env)
   {
@@ -53,9 +43,7 @@ class GoogleDevtoolsCloudbuildV1SecretManagerSecret extends \Google\Model
     return $this->env;
   }
   /**
-   * Resource name of the SecretVersion. In format: projects/secrets/versions
-   *
-   * @param string $versionName
+   * @param string
    */
   public function setVersionName($versionName)
   {

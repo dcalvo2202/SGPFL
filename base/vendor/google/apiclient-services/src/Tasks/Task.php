@@ -23,127 +23,70 @@ class Task extends \Google\Collection
   protected $assignmentInfoType = AssignmentInfo::class;
   protected $assignmentInfoDataType = '';
   /**
-   * Completion date of the task (as a RFC 3339 timestamp). This field is
-   * omitted if the task has not been completed.
-   *
    * @var string
    */
   public $completed;
   /**
-   * Flag indicating whether the task has been deleted. For assigned tasks this
-   * field is read-only. They can only be deleted by calling tasks.delete, in
-   * which case both the assigned task and the original task (in Docs or Chat
-   * Spaces) are deleted. To delete the assigned task only, navigate to the
-   * assignment surface and unassign the task from there. The default is False.
-   *
    * @var bool
    */
   public $deleted;
   /**
-   * Scheduled date for the task (as an RFC 3339 timestamp). Optional. This
-   * represents the day that the task should be done, or that the task is
-   * visible on the calendar grid. It doesn't represent the deadline of the
-   * task. Only date information is recorded; the time portion of the timestamp
-   * is discarded when setting this field. It isn't possible to read or write
-   * the time that a task is scheduled for using the API.
-   *
    * @var string
    */
   public $due;
   /**
-   * ETag of the resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * Flag indicating whether the task is hidden. This is the case if the task
-   * had been marked completed when the task list was last cleared. The default
-   * is False. This field is read-only.
-   *
    * @var bool
    */
   public $hidden;
   /**
-   * Task identifier.
-   *
    * @var string
    */
   public $id;
   /**
-   * Output only. Type of the resource. This is always "tasks#task".
-   *
    * @var string
    */
   public $kind;
   protected $linksType = TaskLinks::class;
   protected $linksDataType = 'array';
   /**
-   * Notes describing the task. Tasks assigned from Google Docs cannot have
-   * notes. Optional. Maximum length allowed: 8192 characters.
-   *
    * @var string
    */
   public $notes;
   /**
-   * Output only. Parent task identifier. This field is omitted if it is a top-
-   * level task. Use the "move" method to move the task under a different parent
-   * or to the top level. A parent task can never be an assigned task (from Chat
-   * Spaces, Docs). This field is read-only.
-   *
    * @var string
    */
   public $parent;
   /**
-   * Output only. String indicating the position of the task among its sibling
-   * tasks under the same parent task or at the top level. If this string is
-   * greater than another task's corresponding position string according to
-   * lexicographical ordering, the task is positioned after the other task under
-   * the same parent task (or at the top level). Use the "move" method to move
-   * the task to another position.
-   *
    * @var string
    */
   public $position;
   /**
-   * Output only. URL pointing to this task. Used to retrieve, update, or delete
-   * this task.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * Status of the task. This is either "needsAction" or "completed".
-   *
    * @var string
    */
   public $status;
   /**
-   * Title of the task. Maximum length allowed: 1024 characters.
-   *
    * @var string
    */
   public $title;
   /**
-   * Output only. Last modification time of the task (as a RFC 3339 timestamp).
-   *
    * @var string
    */
   public $updated;
   /**
-   * Output only. An absolute link to the task in the Google Tasks Web UI.
-   *
    * @var string
    */
   public $webViewLink;
 
   /**
-   * Output only. Context information for assigned tasks. A task can be assigned
-   * to a user, currently possible from surfaces like Docs and Chat Spaces. This
-   * field is populated for tasks assigned to the current user and identifies
-   * where the task was assigned from. This field is read-only.
-   *
-   * @param AssignmentInfo $assignmentInfo
+   * @param AssignmentInfo
    */
   public function setAssignmentInfo(AssignmentInfo $assignmentInfo)
   {
@@ -157,10 +100,7 @@ class Task extends \Google\Collection
     return $this->assignmentInfo;
   }
   /**
-   * Completion date of the task (as a RFC 3339 timestamp). This field is
-   * omitted if the task has not been completed.
-   *
-   * @param string $completed
+   * @param string
    */
   public function setCompleted($completed)
   {
@@ -174,13 +114,7 @@ class Task extends \Google\Collection
     return $this->completed;
   }
   /**
-   * Flag indicating whether the task has been deleted. For assigned tasks this
-   * field is read-only. They can only be deleted by calling tasks.delete, in
-   * which case both the assigned task and the original task (in Docs or Chat
-   * Spaces) are deleted. To delete the assigned task only, navigate to the
-   * assignment surface and unassign the task from there. The default is False.
-   *
-   * @param bool $deleted
+   * @param bool
    */
   public function setDeleted($deleted)
   {
@@ -194,14 +128,7 @@ class Task extends \Google\Collection
     return $this->deleted;
   }
   /**
-   * Scheduled date for the task (as an RFC 3339 timestamp). Optional. This
-   * represents the day that the task should be done, or that the task is
-   * visible on the calendar grid. It doesn't represent the deadline of the
-   * task. Only date information is recorded; the time portion of the timestamp
-   * is discarded when setting this field. It isn't possible to read or write
-   * the time that a task is scheduled for using the API.
-   *
-   * @param string $due
+   * @param string
    */
   public function setDue($due)
   {
@@ -215,9 +142,7 @@ class Task extends \Google\Collection
     return $this->due;
   }
   /**
-   * ETag of the resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -231,11 +156,7 @@ class Task extends \Google\Collection
     return $this->etag;
   }
   /**
-   * Flag indicating whether the task is hidden. This is the case if the task
-   * had been marked completed when the task list was last cleared. The default
-   * is False. This field is read-only.
-   *
-   * @param bool $hidden
+   * @param bool
    */
   public function setHidden($hidden)
   {
@@ -249,9 +170,7 @@ class Task extends \Google\Collection
     return $this->hidden;
   }
   /**
-   * Task identifier.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -265,9 +184,7 @@ class Task extends \Google\Collection
     return $this->id;
   }
   /**
-   * Output only. Type of the resource. This is always "tasks#task".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -281,9 +198,7 @@ class Task extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Output only. Collection of links. This collection is read-only.
-   *
-   * @param TaskLinks[] $links
+   * @param TaskLinks[]
    */
   public function setLinks($links)
   {
@@ -297,10 +212,7 @@ class Task extends \Google\Collection
     return $this->links;
   }
   /**
-   * Notes describing the task. Tasks assigned from Google Docs cannot have
-   * notes. Optional. Maximum length allowed: 8192 characters.
-   *
-   * @param string $notes
+   * @param string
    */
   public function setNotes($notes)
   {
@@ -314,12 +226,7 @@ class Task extends \Google\Collection
     return $this->notes;
   }
   /**
-   * Output only. Parent task identifier. This field is omitted if it is a top-
-   * level task. Use the "move" method to move the task under a different parent
-   * or to the top level. A parent task can never be an assigned task (from Chat
-   * Spaces, Docs). This field is read-only.
-   *
-   * @param string $parent
+   * @param string
    */
   public function setParent($parent)
   {
@@ -333,14 +240,7 @@ class Task extends \Google\Collection
     return $this->parent;
   }
   /**
-   * Output only. String indicating the position of the task among its sibling
-   * tasks under the same parent task or at the top level. If this string is
-   * greater than another task's corresponding position string according to
-   * lexicographical ordering, the task is positioned after the other task under
-   * the same parent task (or at the top level). Use the "move" method to move
-   * the task to another position.
-   *
-   * @param string $position
+   * @param string
    */
   public function setPosition($position)
   {
@@ -354,10 +254,7 @@ class Task extends \Google\Collection
     return $this->position;
   }
   /**
-   * Output only. URL pointing to this task. Used to retrieve, update, or delete
-   * this task.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -371,9 +268,7 @@ class Task extends \Google\Collection
     return $this->selfLink;
   }
   /**
-   * Status of the task. This is either "needsAction" or "completed".
-   *
-   * @param string $status
+   * @param string
    */
   public function setStatus($status)
   {
@@ -387,9 +282,7 @@ class Task extends \Google\Collection
     return $this->status;
   }
   /**
-   * Title of the task. Maximum length allowed: 1024 characters.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -403,9 +296,7 @@ class Task extends \Google\Collection
     return $this->title;
   }
   /**
-   * Output only. Last modification time of the task (as a RFC 3339 timestamp).
-   *
-   * @param string $updated
+   * @param string
    */
   public function setUpdated($updated)
   {
@@ -419,9 +310,7 @@ class Task extends \Google\Collection
     return $this->updated;
   }
   /**
-   * Output only. An absolute link to the task in the Google Tasks Web UI.
-   *
-   * @param string $webViewLink
+   * @param string
    */
   public function setWebViewLink($webViewLink)
   {

@@ -20,91 +20,34 @@ namespace Google\Service\CloudSearch;
 class PushItem extends \Google\Model
 {
   /**
-   * Default UNSPECIFIED. Specifies that the push operation should not modify
-   * ItemStatus
-   */
-  public const TYPE_UNSPECIFIED = 'UNSPECIFIED';
-  /**
-   * Indicates that the repository document has been modified or updated since
-   * the previous update call. This changes status to MODIFIED state for an
-   * existing item. If this is called on a non existing item, the status is
-   * changed to NEW_ITEM.
-   */
-  public const TYPE_MODIFIED = 'MODIFIED';
-  /**
-   * Item in the repository has not been modified since the last update call.
-   * This push operation will set status to ACCEPTED state.
-   */
-  public const TYPE_NOT_MODIFIED = 'NOT_MODIFIED';
-  /**
-   * Connector is facing a repository error regarding this item. Change status
-   * to REPOSITORY_ERROR state. Item is unreserved and rescheduled at a future
-   * time determined by exponential backoff.
-   */
-  public const TYPE_REPOSITORY_ERROR = 'REPOSITORY_ERROR';
-  /**
-   * Call push with REQUEUE only for items that have been reserved. This action
-   * unreserves the item and resets its available time to the wall clock time.
-   */
-  public const TYPE_REQUEUE = 'REQUEUE';
-  /**
-   * Content hash of the item according to the repository. If specified, this is
-   * used to determine how to modify this item's status. Setting this field and
-   * the type field results in argument error. The maximum length is 2048
-   * characters.
-   *
    * @var string
    */
   public $contentHash;
   /**
-   * The metadata hash of the item according to the repository. If specified,
-   * this is used to determine how to modify this item's status. Setting this
-   * field and the type field results in argument error. The maximum length is
-   * 2048 characters.
-   *
    * @var string
    */
   public $metadataHash;
   /**
-   * Provides additional document state information for the connector, such as
-   * an alternate repository ID and other metadata. The maximum length is 8192
-   * bytes.
-   *
    * @var string
    */
   public $payload;
   /**
-   * Queue to which this item belongs. The `default` queue is chosen if this
-   * field is not specified. The maximum length is 512 characters.
-   *
    * @var string
    */
   public $queue;
   protected $repositoryErrorType = RepositoryError::class;
   protected $repositoryErrorDataType = '';
   /**
-   * Structured data hash of the item according to the repository. If specified,
-   * this is used to determine how to modify this item's status. Setting this
-   * field and the type field results in argument error. The maximum length is
-   * 2048 characters.
-   *
    * @var string
    */
   public $structuredDataHash;
   /**
-   * The type of the push operation that defines the push behavior.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Content hash of the item according to the repository. If specified, this is
-   * used to determine how to modify this item's status. Setting this field and
-   * the type field results in argument error. The maximum length is 2048
-   * characters.
-   *
-   * @param string $contentHash
+   * @param string
    */
   public function setContentHash($contentHash)
   {
@@ -118,12 +61,7 @@ class PushItem extends \Google\Model
     return $this->contentHash;
   }
   /**
-   * The metadata hash of the item according to the repository. If specified,
-   * this is used to determine how to modify this item's status. Setting this
-   * field and the type field results in argument error. The maximum length is
-   * 2048 characters.
-   *
-   * @param string $metadataHash
+   * @param string
    */
   public function setMetadataHash($metadataHash)
   {
@@ -137,11 +75,7 @@ class PushItem extends \Google\Model
     return $this->metadataHash;
   }
   /**
-   * Provides additional document state information for the connector, such as
-   * an alternate repository ID and other metadata. The maximum length is 8192
-   * bytes.
-   *
-   * @param string $payload
+   * @param string
    */
   public function setPayload($payload)
   {
@@ -155,10 +89,7 @@ class PushItem extends \Google\Model
     return $this->payload;
   }
   /**
-   * Queue to which this item belongs. The `default` queue is chosen if this
-   * field is not specified. The maximum length is 512 characters.
-   *
-   * @param string $queue
+   * @param string
    */
   public function setQueue($queue)
   {
@@ -172,11 +103,7 @@ class PushItem extends \Google\Model
     return $this->queue;
   }
   /**
-   * Populate this field to store Connector or repository error details. This
-   * information is displayed in the Admin Console. This field may only be
-   * populated when the Type is REPOSITORY_ERROR.
-   *
-   * @param RepositoryError $repositoryError
+   * @param RepositoryError
    */
   public function setRepositoryError(RepositoryError $repositoryError)
   {
@@ -190,12 +117,7 @@ class PushItem extends \Google\Model
     return $this->repositoryError;
   }
   /**
-   * Structured data hash of the item according to the repository. If specified,
-   * this is used to determine how to modify this item's status. Setting this
-   * field and the type field results in argument error. The maximum length is
-   * 2048 characters.
-   *
-   * @param string $structuredDataHash
+   * @param string
    */
   public function setStructuredDataHash($structuredDataHash)
   {
@@ -209,19 +131,14 @@ class PushItem extends \Google\Model
     return $this->structuredDataHash;
   }
   /**
-   * The type of the push operation that defines the push behavior.
-   *
-   * Accepted values: UNSPECIFIED, MODIFIED, NOT_MODIFIED, REPOSITORY_ERROR,
-   * REQUEUE
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

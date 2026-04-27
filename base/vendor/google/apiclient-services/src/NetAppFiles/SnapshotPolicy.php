@@ -22,9 +22,6 @@ class SnapshotPolicy extends \Google\Model
   protected $dailyScheduleType = DailySchedule::class;
   protected $dailyScheduleDataType = '';
   /**
-   * If enabled, make snapshots automatically according to the schedules.
-   * Default is false.
-   *
    * @var bool
    */
   public $enabled;
@@ -36,9 +33,7 @@ class SnapshotPolicy extends \Google\Model
   protected $weeklyScheduleDataType = '';
 
   /**
-   * Daily schedule policy.
-   *
-   * @param DailySchedule $dailySchedule
+   * @param DailySchedule
    */
   public function setDailySchedule(DailySchedule $dailySchedule)
   {
@@ -52,10 +47,7 @@ class SnapshotPolicy extends \Google\Model
     return $this->dailySchedule;
   }
   /**
-   * If enabled, make snapshots automatically according to the schedules.
-   * Default is false.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {
@@ -69,9 +61,7 @@ class SnapshotPolicy extends \Google\Model
     return $this->enabled;
   }
   /**
-   * Hourly schedule policy.
-   *
-   * @param HourlySchedule $hourlySchedule
+   * @param HourlySchedule
    */
   public function setHourlySchedule(HourlySchedule $hourlySchedule)
   {
@@ -85,9 +75,7 @@ class SnapshotPolicy extends \Google\Model
     return $this->hourlySchedule;
   }
   /**
-   * Monthly schedule policy.
-   *
-   * @param MonthlySchedule $monthlySchedule
+   * @param MonthlySchedule
    */
   public function setMonthlySchedule(MonthlySchedule $monthlySchedule)
   {
@@ -101,9 +89,7 @@ class SnapshotPolicy extends \Google\Model
     return $this->monthlySchedule;
   }
   /**
-   * Weekly schedule policy.
-   *
-   * @param WeeklySchedule $weeklySchedule
+   * @param WeeklySchedule
    */
   public function setWeeklySchedule(WeeklySchedule $weeklySchedule)
   {

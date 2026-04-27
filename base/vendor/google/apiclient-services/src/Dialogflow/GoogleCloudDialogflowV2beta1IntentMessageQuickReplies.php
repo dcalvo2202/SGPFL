@@ -30,7 +30,7 @@ class GoogleCloudDialogflowV2beta1IntentMessageQuickReplies extends \Google\Coll
   public $title;
 
   /**
-   * @param string[] $quickReplies
+   * @param string[]
    */
   public function setQuickReplies($quickReplies)
   {
@@ -44,7 +44,7 @@ class GoogleCloudDialogflowV2beta1IntentMessageQuickReplies extends \Google\Coll
     return $this->quickReplies;
   }
   /**
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

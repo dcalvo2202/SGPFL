@@ -24,9 +24,7 @@ class GoogleCloudContactcenterinsightsV1ListIssuesResponse extends \Google\Colle
   protected $issuesDataType = 'array';
 
   /**
-   * The issues that match the request.
-   *
-   * @param GoogleCloudContactcenterinsightsV1Issue[] $issues
+   * @param GoogleCloudContactcenterinsightsV1Issue[]
    */
   public function setIssues($issues)
   {

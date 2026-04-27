@@ -20,20 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1BigQuerySource extends \Google\Model
 {
   /**
-   * Required. BigQuery URI to a table, up to 2000 characters long. Accepted
-   * forms: * BigQuery path. For example:
-   * `bq://projectId.bqDatasetId.bqTableId`.
-   *
    * @var string
    */
   public $inputUri;
 
   /**
-   * Required. BigQuery URI to a table, up to 2000 characters long. Accepted
-   * forms: * BigQuery path. For example:
-   * `bq://projectId.bqDatasetId.bqTableId`.
-   *
-   * @param string $inputUri
+   * @param string
    */
   public function setInputUri($inputUri)
   {

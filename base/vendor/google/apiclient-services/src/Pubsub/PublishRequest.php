@@ -24,9 +24,7 @@ class PublishRequest extends \Google\Collection
   protected $messagesDataType = 'array';
 
   /**
-   * Required. The messages to publish.
-   *
-   * @param PubsubMessage[] $messages
+   * @param PubsubMessage[]
    */
   public function setMessages($messages)
   {

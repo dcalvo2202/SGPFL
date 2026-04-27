@@ -19,56 +19,12 @@ namespace Google\Service\APIManagement;
 
 class HttpOperation extends \Google\Collection
 {
-  /**
-   * Unspecified HTTP method
-   */
-  public const METHOD_HTTP_METHOD_UNSPECIFIED = 'HTTP_METHOD_UNSPECIFIED';
-  /**
-   * GET HTTP method
-   */
-  public const METHOD_GET = 'GET';
-  /**
-   * HEAD HTTP method
-   */
-  public const METHOD_HEAD = 'HEAD';
-  /**
-   * POST HTTP method
-   */
-  public const METHOD_POST = 'POST';
-  /**
-   * PUT HTTP method
-   */
-  public const METHOD_PUT = 'PUT';
-  /**
-   * PATCH HTTP method
-   */
-  public const METHOD_PATCH = 'PATCH';
-  /**
-   * DELETE HTTP method
-   */
-  public const METHOD_DELETE = 'DELETE';
-  /**
-   * TRACE HTTP method
-   */
-  public const METHOD_TRACE = 'TRACE';
-  /**
-   * OPTIONS HTTP method
-   */
-  public const METHOD_OPTIONS = 'OPTIONS';
-  /**
-   * CONNECT HTTP method
-   */
-  public const METHOD_CONNECT = 'CONNECT';
   protected $collection_key = 'pathParams';
   /**
-   * HTTP Method.
-   *
    * @var string
    */
   public $method;
   /**
-   * Path of the HTTP request.
-   *
    * @var string
    */
   public $path;
@@ -82,28 +38,21 @@ class HttpOperation extends \Google\Collection
   protected $responseDataType = '';
 
   /**
-   * HTTP Method.
-   *
-   * Accepted values: HTTP_METHOD_UNSPECIFIED, GET, HEAD, POST, PUT, PATCH,
-   * DELETE, TRACE, OPTIONS, CONNECT
-   *
-   * @param self::METHOD_* $method
+   * @param string
    */
   public function setMethod($method)
   {
     $this->method = $method;
   }
   /**
-   * @return self::METHOD_*
+   * @return string
    */
   public function getMethod()
   {
     return $this->method;
   }
   /**
-   * Path of the HTTP request.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {
@@ -117,9 +66,7 @@ class HttpOperation extends \Google\Collection
     return $this->path;
   }
   /**
-   * Path params of HttpOperation
-   *
-   * @param HttpOperationPathParam[] $pathParams
+   * @param HttpOperationPathParam[]
    */
   public function setPathParams($pathParams)
   {
@@ -133,9 +80,7 @@ class HttpOperation extends \Google\Collection
     return $this->pathParams;
   }
   /**
-   * Query params of HttpOperation
-   *
-   * @param HttpOperationQueryParam[] $queryParams
+   * @param HttpOperationQueryParam[]
    */
   public function setQueryParams($queryParams)
   {
@@ -149,9 +94,7 @@ class HttpOperation extends \Google\Collection
     return $this->queryParams;
   }
   /**
-   * Request metadata.
-   *
-   * @param HttpOperationHttpRequest $request
+   * @param HttpOperationHttpRequest
    */
   public function setRequest(HttpOperationHttpRequest $request)
   {
@@ -165,9 +108,7 @@ class HttpOperation extends \Google\Collection
     return $this->request;
   }
   /**
-   * Response metadata.
-   *
-   * @param HttpOperationHttpResponse $response
+   * @param HttpOperationHttpResponse
    */
   public function setResponse(HttpOperationHttpResponse $response)
   {

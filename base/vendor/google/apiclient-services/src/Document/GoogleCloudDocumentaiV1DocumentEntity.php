@@ -19,51 +19,23 @@ namespace Google\Service\Document;
 
 class GoogleCloudDocumentaiV1DocumentEntity extends \Google\Collection
 {
-  /**
-   * When the method is not specified, it should be treated as `EXTRACT`.
-   */
-  public const METHOD_METHOD_UNSPECIFIED = 'METHOD_UNSPECIFIED';
-  /**
-   * The entity's value is directly extracted as-is from the document text.
-   */
-  public const METHOD_EXTRACT = 'EXTRACT';
-  /**
-   * The entity's value is derived through inference and is not necessarily an
-   * exact text extraction from the document.
-   */
-  public const METHOD_DERIVE = 'DERIVE';
   protected $collection_key = 'properties';
   /**
-   * Optional. Confidence of detected Schema entity. Range `[0, 1]`.
-   *
    * @var float
    */
   public $confidence;
   /**
-   * Optional. Canonical id. This will be a unique value in the entity list for
-   * this document.
-   *
    * @var string
    */
   public $id;
   /**
-   * Optional. Deprecated. Use `id` field instead.
-   *
    * @var string
    */
   public $mentionId;
   /**
-   * Optional. Text value of the entity, for example, `1600 Amphitheatre Pkwy`.
-   *
    * @var string
    */
   public $mentionText;
-  /**
-   * Optional. Specifies how the entity's value is obtained.
-   *
-   * @var string
-   */
-  public $method;
   protected $normalizedValueType = GoogleCloudDocumentaiV1DocumentEntityNormalizedValue::class;
   protected $normalizedValueDataType = '';
   protected $pageAnchorType = GoogleCloudDocumentaiV1DocumentPageAnchor::class;
@@ -73,25 +45,18 @@ class GoogleCloudDocumentaiV1DocumentEntity extends \Google\Collection
   protected $provenanceType = GoogleCloudDocumentaiV1DocumentProvenance::class;
   protected $provenanceDataType = '';
   /**
-   * Optional. Whether the entity will be redacted for de-identification
-   * purposes.
-   *
    * @var bool
    */
   public $redacted;
   protected $textAnchorType = GoogleCloudDocumentaiV1DocumentTextAnchor::class;
   protected $textAnchorDataType = '';
   /**
-   * Required. Entity type from a schema, for example, `Address`.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Optional. Confidence of detected Schema entity. Range `[0, 1]`.
-   *
-   * @param float $confidence
+   * @param float
    */
   public function setConfidence($confidence)
   {
@@ -105,10 +70,7 @@ class GoogleCloudDocumentaiV1DocumentEntity extends \Google\Collection
     return $this->confidence;
   }
   /**
-   * Optional. Canonical id. This will be a unique value in the entity list for
-   * this document.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -122,9 +84,7 @@ class GoogleCloudDocumentaiV1DocumentEntity extends \Google\Collection
     return $this->id;
   }
   /**
-   * Optional. Deprecated. Use `id` field instead.
-   *
-   * @param string $mentionId
+   * @param string
    */
   public function setMentionId($mentionId)
   {
@@ -138,9 +98,7 @@ class GoogleCloudDocumentaiV1DocumentEntity extends \Google\Collection
     return $this->mentionId;
   }
   /**
-   * Optional. Text value of the entity, for example, `1600 Amphitheatre Pkwy`.
-   *
-   * @param string $mentionText
+   * @param string
    */
   public function setMentionText($mentionText)
   {
@@ -154,30 +112,7 @@ class GoogleCloudDocumentaiV1DocumentEntity extends \Google\Collection
     return $this->mentionText;
   }
   /**
-   * Optional. Specifies how the entity's value is obtained.
-   *
-   * Accepted values: METHOD_UNSPECIFIED, EXTRACT, DERIVE
-   *
-   * @param self::METHOD_* $method
-   */
-  public function setMethod($method)
-  {
-    $this->method = $method;
-  }
-  /**
-   * @return self::METHOD_*
-   */
-  public function getMethod()
-  {
-    return $this->method;
-  }
-  /**
-   * Optional. Normalized entity value. Absent if the extracted value could not
-   * be converted or the type (for example, address) is not supported for
-   * certain parsers. This field is also only populated for certain supported
-   * document types.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentEntityNormalizedValue $normalizedValue
+   * @param GoogleCloudDocumentaiV1DocumentEntityNormalizedValue
    */
   public function setNormalizedValue(GoogleCloudDocumentaiV1DocumentEntityNormalizedValue $normalizedValue)
   {
@@ -191,10 +126,7 @@ class GoogleCloudDocumentaiV1DocumentEntity extends \Google\Collection
     return $this->normalizedValue;
   }
   /**
-   * Optional. Represents the provenance of this entity wrt. the location on the
-   * page where it was found.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentPageAnchor $pageAnchor
+   * @param GoogleCloudDocumentaiV1DocumentPageAnchor
    */
   public function setPageAnchor(GoogleCloudDocumentaiV1DocumentPageAnchor $pageAnchor)
   {
@@ -208,10 +140,7 @@ class GoogleCloudDocumentaiV1DocumentEntity extends \Google\Collection
     return $this->pageAnchor;
   }
   /**
-   * Optional. Entities can be nested to form a hierarchical data structure
-   * representing the content in the document.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentEntity[] $properties
+   * @param GoogleCloudDocumentaiV1DocumentEntity[]
    */
   public function setProperties($properties)
   {
@@ -225,9 +154,7 @@ class GoogleCloudDocumentaiV1DocumentEntity extends \Google\Collection
     return $this->properties;
   }
   /**
-   * Optional. The history of this annotation.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentProvenance $provenance
+   * @param GoogleCloudDocumentaiV1DocumentProvenance
    */
   public function setProvenance(GoogleCloudDocumentaiV1DocumentProvenance $provenance)
   {
@@ -241,10 +168,7 @@ class GoogleCloudDocumentaiV1DocumentEntity extends \Google\Collection
     return $this->provenance;
   }
   /**
-   * Optional. Whether the entity will be redacted for de-identification
-   * purposes.
-   *
-   * @param bool $redacted
+   * @param bool
    */
   public function setRedacted($redacted)
   {
@@ -258,10 +182,7 @@ class GoogleCloudDocumentaiV1DocumentEntity extends \Google\Collection
     return $this->redacted;
   }
   /**
-   * Optional. Provenance of the entity. Text anchor indexing into the
-   * Document.text.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentTextAnchor $textAnchor
+   * @param GoogleCloudDocumentaiV1DocumentTextAnchor
    */
   public function setTextAnchor(GoogleCloudDocumentaiV1DocumentTextAnchor $textAnchor)
   {
@@ -275,9 +196,7 @@ class GoogleCloudDocumentaiV1DocumentEntity extends \Google\Collection
     return $this->textAnchor;
   }
   /**
-   * Required. Entity type from a schema, for example, `Address`.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

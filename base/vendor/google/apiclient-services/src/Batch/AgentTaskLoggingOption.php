@@ -20,16 +20,12 @@ namespace Google\Service\Batch;
 class AgentTaskLoggingOption extends \Google\Model
 {
   /**
-   * Labels to be added to the log entry. Now only cloud logging is supported.
-   *
    * @var string[]
    */
   public $labels;
 
   /**
-   * Labels to be added to the log entry. Now only cloud logging is supported.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {

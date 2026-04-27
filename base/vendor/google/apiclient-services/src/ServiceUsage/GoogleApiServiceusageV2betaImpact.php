@@ -20,41 +20,16 @@ namespace Google\Service\ServiceUsage;
 class GoogleApiServiceusageV2betaImpact extends \Google\Model
 {
   /**
-   * Reserved Blocks (Block n contains codes from 100n to 100(n+1) -1 Block 0 -
-   * Special/Admin codes Block 1 - Impact Type of ANALYSIS_TYPE_DEPENDENCY Block
-   * 2 - Impact Type of ANALYSIS_TYPE_RESOURCE_USAGE ...
-   */
-  public const IMPACT_TYPE_IMPACT_TYPE_UNSPECIFIED = 'IMPACT_TYPE_UNSPECIFIED';
-  /**
-   * Block 1 - Impact Type of ANALYSIS_TYPE_DEPENDENCY
-   */
-  public const IMPACT_TYPE_DEPENDENCY_MISSING_DEPENDENCIES = 'DEPENDENCY_MISSING_DEPENDENCIES';
-  /**
-   * Output only. User friendly impact detail in a free form message.
-   *
    * @var string
    */
   public $detail;
   /**
-   * Output only. The type of impact.
-   *
    * @var string
    */
   public $impactType;
-  /**
-   * Output only. This field will be populated only for the
-   * `DEPENDENCY_MISSING_DEPENDENCIES` impact type. Example:
-   * `services/compute.googleapis.com`. Impact.detail will be in format :
-   * `missing service dependency: {missing_dependency}.`
-   *
-   * @var string
-   */
-  public $missingDependency;
 
   /**
-   * Output only. User friendly impact detail in a free form message.
-   *
-   * @param string $detail
+   * @param string
    */
   public function setDetail($detail)
   {
@@ -68,41 +43,18 @@ class GoogleApiServiceusageV2betaImpact extends \Google\Model
     return $this->detail;
   }
   /**
-   * Output only. The type of impact.
-   *
-   * Accepted values: IMPACT_TYPE_UNSPECIFIED, DEPENDENCY_MISSING_DEPENDENCIES
-   *
-   * @param self::IMPACT_TYPE_* $impactType
+   * @param string
    */
   public function setImpactType($impactType)
   {
     $this->impactType = $impactType;
   }
   /**
-   * @return self::IMPACT_TYPE_*
+   * @return string
    */
   public function getImpactType()
   {
     return $this->impactType;
-  }
-  /**
-   * Output only. This field will be populated only for the
-   * `DEPENDENCY_MISSING_DEPENDENCIES` impact type. Example:
-   * `services/compute.googleapis.com`. Impact.detail will be in format :
-   * `missing service dependency: {missing_dependency}.`
-   *
-   * @param string $missingDependency
-   */
-  public function setMissingDependency($missingDependency)
-  {
-    $this->missingDependency = $missingDependency;
-  }
-  /**
-   * @return string
-   */
-  public function getMissingDependency()
-  {
-    return $this->missingDependency;
   }
 }
 

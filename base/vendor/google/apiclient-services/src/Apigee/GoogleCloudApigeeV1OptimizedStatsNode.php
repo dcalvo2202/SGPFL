@@ -21,16 +21,12 @@ class GoogleCloudApigeeV1OptimizedStatsNode extends \Google\Collection
 {
   protected $collection_key = 'data';
   /**
-   * List of data values.
-   *
    * @var array[]
    */
   public $data;
 
   /**
-   * List of data values.
-   *
-   * @param array[] $data
+   * @param array[]
    */
   public function setData($data)
   {

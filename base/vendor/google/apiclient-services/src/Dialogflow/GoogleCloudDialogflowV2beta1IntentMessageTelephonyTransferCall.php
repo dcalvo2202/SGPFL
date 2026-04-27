@@ -25,7 +25,7 @@ class GoogleCloudDialogflowV2beta1IntentMessageTelephonyTransferCall extends \Go
   public $phoneNumber;
 
   /**
-   * @param string $phoneNumber
+   * @param string
    */
   public function setPhoneNumber($phoneNumber)
   {

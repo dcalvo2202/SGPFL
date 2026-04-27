@@ -22,24 +22,16 @@ class GoogleCloudVisionV1p3beta1CropHint extends \Google\Model
   protected $boundingPolyType = GoogleCloudVisionV1p3beta1BoundingPoly::class;
   protected $boundingPolyDataType = '';
   /**
-   * Confidence of this being a salient region. Range [0, 1].
-   *
    * @var float
    */
   public $confidence;
   /**
-   * Fraction of importance of this salient region with respect to the original
-   * image.
-   *
    * @var float
    */
   public $importanceFraction;
 
   /**
-   * The bounding polygon for the crop region. The coordinates of the bounding
-   * box are in the original image's scale.
-   *
-   * @param GoogleCloudVisionV1p3beta1BoundingPoly $boundingPoly
+   * @param GoogleCloudVisionV1p3beta1BoundingPoly
    */
   public function setBoundingPoly(GoogleCloudVisionV1p3beta1BoundingPoly $boundingPoly)
   {
@@ -53,9 +45,7 @@ class GoogleCloudVisionV1p3beta1CropHint extends \Google\Model
     return $this->boundingPoly;
   }
   /**
-   * Confidence of this being a salient region. Range [0, 1].
-   *
-   * @param float $confidence
+   * @param float
    */
   public function setConfidence($confidence)
   {
@@ -69,10 +59,7 @@ class GoogleCloudVisionV1p3beta1CropHint extends \Google\Model
     return $this->confidence;
   }
   /**
-   * Fraction of importance of this salient region with respect to the original
-   * image.
-   *
-   * @param float $importanceFraction
+   * @param float
    */
   public function setImportanceFraction($importanceFraction)
   {

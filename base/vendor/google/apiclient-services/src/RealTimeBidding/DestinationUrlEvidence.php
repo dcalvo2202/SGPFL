@@ -20,16 +20,12 @@ namespace Google\Service\RealTimeBidding;
 class DestinationUrlEvidence extends \Google\Model
 {
   /**
-   * The full landing page URL of the destination.
-   *
    * @var string
    */
   public $destinationUrl;
 
   /**
-   * The full landing page URL of the destination.
-   *
-   * @param string $destinationUrl
+   * @param string
    */
   public function setDestinationUrl($destinationUrl)
   {

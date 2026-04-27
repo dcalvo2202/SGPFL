@@ -20,22 +20,16 @@ namespace Google\Service\DLP;
 class GooglePrivacyDlpV2DataProfileLocation extends \Google\Model
 {
   /**
-   * The ID of the folder within an organization to scan.
-   *
    * @var string
    */
   public $folderId;
   /**
-   * The ID of an organization to scan.
-   *
    * @var string
    */
   public $organizationId;
 
   /**
-   * The ID of the folder within an organization to scan.
-   *
-   * @param string $folderId
+   * @param string
    */
   public function setFolderId($folderId)
   {
@@ -49,9 +43,7 @@ class GooglePrivacyDlpV2DataProfileLocation extends \Google\Model
     return $this->folderId;
   }
   /**
-   * The ID of an organization to scan.
-   *
-   * @param string $organizationId
+   * @param string
    */
   public function setOrganizationId($organizationId)
   {

@@ -19,85 +19,44 @@ namespace Google\Service\Compute;
 
 class LicenseCode extends \Google\Collection
 {
-  /**
-   * Machines are not allowed to attach boot disks with this License Code.
-   * Requests to create new resources with this license will be rejected.
-   */
-  public const STATE_DISABLED = 'DISABLED';
-  /**
-   * Use is allowed for anyone with USE_READ_ONLY access to this License Code.
-   */
-  public const STATE_ENABLED = 'ENABLED';
-  /**
-   * Use of this license is limited to a project whitelist.
-   */
-  public const STATE_RESTRICTED = 'RESTRICTED';
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Reserved state.
-   */
-  public const STATE_TERMINATED = 'TERMINATED';
   protected $collection_key = 'licenseAlias';
   /**
-   * Output only. [Output Only] Creation timestamp inRFC3339 text format.
-   *
    * @var string
    */
   public $creationTimestamp;
   /**
-   * Output only. [Output Only] Description of this License Code.
-   *
    * @var string
    */
   public $description;
   /**
-   * Output only. [Output Only] The unique identifier for the resource. This
-   * identifier is defined by the server.
-   *
    * @var string
    */
   public $id;
   /**
-   * Output only. [Output Only] Type of resource. Always compute#licenseCode for
-   * licenses.
-   *
    * @var string
    */
   public $kind;
   protected $licenseAliasType = LicenseCodeLicenseAlias::class;
   protected $licenseAliasDataType = 'array';
   /**
-   * Output only. [Output Only] Name of the resource. The name is 1-20
-   * characters long and must be a valid 64 bit integer.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. [Output Only] Server-defined URL for the resource.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * Output only. [Output Only] Current state of this License Code.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. [Output Only] If true, the license will remain attached when
-   * creating images or snapshots from disks. Otherwise, the license is not
-   * transferred.
-   *
    * @var bool
    */
   public $transferable;
 
   /**
-   * Output only. [Output Only] Creation timestamp inRFC3339 text format.
-   *
-   * @param string $creationTimestamp
+   * @param string
    */
   public function setCreationTimestamp($creationTimestamp)
   {
@@ -111,9 +70,7 @@ class LicenseCode extends \Google\Collection
     return $this->creationTimestamp;
   }
   /**
-   * Output only. [Output Only] Description of this License Code.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -127,10 +84,7 @@ class LicenseCode extends \Google\Collection
     return $this->description;
   }
   /**
-   * Output only. [Output Only] The unique identifier for the resource. This
-   * identifier is defined by the server.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -144,10 +98,7 @@ class LicenseCode extends \Google\Collection
     return $this->id;
   }
   /**
-   * Output only. [Output Only] Type of resource. Always compute#licenseCode for
-   * licenses.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -161,10 +112,7 @@ class LicenseCode extends \Google\Collection
     return $this->kind;
   }
   /**
-   * [Output Only] URL and description aliases of Licenses with the same License
-   * Code.
-   *
-   * @param LicenseCodeLicenseAlias[] $licenseAlias
+   * @param LicenseCodeLicenseAlias[]
    */
   public function setLicenseAlias($licenseAlias)
   {
@@ -178,10 +126,7 @@ class LicenseCode extends \Google\Collection
     return $this->licenseAlias;
   }
   /**
-   * Output only. [Output Only] Name of the resource. The name is 1-20
-   * characters long and must be a valid 64 bit integer.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -195,9 +140,7 @@ class LicenseCode extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. [Output Only] Server-defined URL for the resource.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -211,30 +154,21 @@ class LicenseCode extends \Google\Collection
     return $this->selfLink;
   }
   /**
-   * Output only. [Output Only] Current state of this License Code.
-   *
-   * Accepted values: DISABLED, ENABLED, RESTRICTED, STATE_UNSPECIFIED,
-   * TERMINATED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. [Output Only] If true, the license will remain attached when
-   * creating images or snapshots from disks. Otherwise, the license is not
-   * transferred.
-   *
-   * @param bool $transferable
+   * @param bool
    */
   public function setTransferable($transferable)
   {

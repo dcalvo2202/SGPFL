@@ -19,14 +19,8 @@ namespace Google\Service\Compute;
 
 class InterconnectGroupsCreateMembers extends \Google\Collection
 {
-  public const INTENT_MISMATCH_BEHAVIOR_CREATE = 'CREATE';
-  public const INTENT_MISMATCH_BEHAVIOR_REJECT = 'REJECT';
-  public const INTENT_MISMATCH_BEHAVIOR_UNSPECIFIED = 'UNSPECIFIED';
   protected $collection_key = 'interconnects';
   /**
-   * How to behave when configured.topologyCapability.supportedSLA would not
-   * equal intent.topologyCapability after this call.
-   *
    * @var string
    */
   public $intentMismatchBehavior;
@@ -36,26 +30,21 @@ class InterconnectGroupsCreateMembers extends \Google\Collection
   protected $templateInterconnectDataType = '';
 
   /**
-   * How to behave when configured.topologyCapability.supportedSLA would not
-   * equal intent.topologyCapability after this call.
-   *
-   * Accepted values: CREATE, REJECT, UNSPECIFIED
-   *
-   * @param self::INTENT_MISMATCH_BEHAVIOR_* $intentMismatchBehavior
+   * @param string
    */
   public function setIntentMismatchBehavior($intentMismatchBehavior)
   {
     $this->intentMismatchBehavior = $intentMismatchBehavior;
   }
   /**
-   * @return self::INTENT_MISMATCH_BEHAVIOR_*
+   * @return string
    */
   public function getIntentMismatchBehavior()
   {
     return $this->intentMismatchBehavior;
   }
   /**
-   * @param InterconnectGroupsCreateMembersInterconnectInput[] $interconnects
+   * @param InterconnectGroupsCreateMembersInterconnectInput[]
    */
   public function setInterconnects($interconnects)
   {
@@ -69,9 +58,7 @@ class InterconnectGroupsCreateMembers extends \Google\Collection
     return $this->interconnects;
   }
   /**
-   * Parameters for the Interconnects to create.
-   *
-   * @param InterconnectGroupsCreateMembersInterconnectInput $templateInterconnect
+   * @param InterconnectGroupsCreateMembersInterconnectInput
    */
   public function setTemplateInterconnect(InterconnectGroupsCreateMembersInterconnectInput $templateInterconnect)
   {

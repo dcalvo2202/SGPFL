@@ -23,17 +23,12 @@ class GoogleCloudApigeeV1ListNatAddressesResponse extends \Google\Collection
   protected $natAddressesType = GoogleCloudApigeeV1NatAddress::class;
   protected $natAddressesDataType = 'array';
   /**
-   * Page token that you can include in a ListNatAddresses request to retrieve
-   * the next page of content. If omitted, no subsequent pages exist.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * List of NAT Addresses for the instance.
-   *
-   * @param GoogleCloudApigeeV1NatAddress[] $natAddresses
+   * @param GoogleCloudApigeeV1NatAddress[]
    */
   public function setNatAddresses($natAddresses)
   {
@@ -47,10 +42,7 @@ class GoogleCloudApigeeV1ListNatAddressesResponse extends \Google\Collection
     return $this->natAddresses;
   }
   /**
-   * Page token that you can include in a ListNatAddresses request to retrieve
-   * the next page of content. If omitted, no subsequent pages exist.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

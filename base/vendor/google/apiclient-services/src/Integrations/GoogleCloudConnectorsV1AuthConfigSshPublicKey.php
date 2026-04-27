@@ -20,8 +20,6 @@ namespace Google\Service\Integrations;
 class GoogleCloudConnectorsV1AuthConfigSshPublicKey extends \Google\Model
 {
   /**
-   * Optional. Format of SSH Client cert.
-   *
    * @var string
    */
   public $certType;
@@ -30,16 +28,12 @@ class GoogleCloudConnectorsV1AuthConfigSshPublicKey extends \Google\Model
   protected $sshClientCertPassType = GoogleCloudConnectorsV1Secret::class;
   protected $sshClientCertPassDataType = '';
   /**
-   * Optional. The user account used to authenticate.
-   *
    * @var string
    */
   public $username;
 
   /**
-   * Optional. Format of SSH Client cert.
-   *
-   * @param string $certType
+   * @param string
    */
   public function setCertType($certType)
   {
@@ -53,9 +47,7 @@ class GoogleCloudConnectorsV1AuthConfigSshPublicKey extends \Google\Model
     return $this->certType;
   }
   /**
-   * Optional. SSH Client Cert. It should contain both public and private key.
-   *
-   * @param GoogleCloudConnectorsV1Secret $sshClientCert
+   * @param GoogleCloudConnectorsV1Secret
    */
   public function setSshClientCert(GoogleCloudConnectorsV1Secret $sshClientCert)
   {
@@ -69,9 +61,7 @@ class GoogleCloudConnectorsV1AuthConfigSshPublicKey extends \Google\Model
     return $this->sshClientCert;
   }
   /**
-   * Optional. Password (passphrase) for ssh client certificate if it has one.
-   *
-   * @param GoogleCloudConnectorsV1Secret $sshClientCertPass
+   * @param GoogleCloudConnectorsV1Secret
    */
   public function setSshClientCertPass(GoogleCloudConnectorsV1Secret $sshClientCertPass)
   {
@@ -85,9 +75,7 @@ class GoogleCloudConnectorsV1AuthConfigSshPublicKey extends \Google\Model
     return $this->sshClientCertPass;
   }
   /**
-   * Optional. The user account used to authenticate.
-   *
-   * @param string $username
+   * @param string
    */
   public function setUsername($username)
   {

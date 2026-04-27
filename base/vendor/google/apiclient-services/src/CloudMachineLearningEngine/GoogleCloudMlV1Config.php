@@ -20,16 +20,12 @@ namespace Google\Service\CloudMachineLearningEngine;
 class GoogleCloudMlV1Config extends \Google\Model
 {
   /**
-   * The service account Cloud ML uses to run on TPU node.
-   *
    * @var string
    */
   public $tpuServiceAccount;
 
   /**
-   * The service account Cloud ML uses to run on TPU node.
-   *
-   * @param string $tpuServiceAccount
+   * @param string
    */
   public function setTpuServiceAccount($tpuServiceAccount)
   {

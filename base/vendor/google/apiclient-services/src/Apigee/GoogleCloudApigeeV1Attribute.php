@@ -20,22 +20,16 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1Attribute extends \Google\Model
 {
   /**
-   * API key of the attribute.
-   *
    * @var string
    */
   public $name;
   /**
-   * Value of the attribute.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * API key of the attribute.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -49,9 +43,7 @@ class GoogleCloudApigeeV1Attribute extends \Google\Model
     return $this->name;
   }
   /**
-   * Value of the attribute.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

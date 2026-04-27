@@ -20,20 +20,12 @@ namespace Google\Service\DataLabeling;
 class GoogleCloudDatalabelingV1beta1SentimentConfig extends \Google\Model
 {
   /**
-   * If set to true, contributors will have the option to select sentiment of
-   * the label they selected, to mark it as negative or positive label. Default
-   * is false.
-   *
    * @var bool
    */
   public $enableLabelSentimentSelection;
 
   /**
-   * If set to true, contributors will have the option to select sentiment of
-   * the label they selected, to mark it as negative or positive label. Default
-   * is false.
-   *
-   * @param bool $enableLabelSentimentSelection
+   * @param bool
    */
   public function setEnableLabelSentimentSelection($enableLabelSentimentSelection)
   {

@@ -20,10 +20,6 @@ namespace Google\Service\Directory;
 class CreatePrintServerRequest extends \Google\Model
 {
   /**
-   * Required. The [unique ID](https://developers.google.com/workspace/admin/dir
-   * ectory/reference/rest/v1/customers) of the customer's Google Workspace
-   * account. Format: `customers/{id}`
-   *
    * @var string
    */
   public $parent;
@@ -31,11 +27,7 @@ class CreatePrintServerRequest extends \Google\Model
   protected $printServerDataType = '';
 
   /**
-   * Required. The [unique ID](https://developers.google.com/workspace/admin/dir
-   * ectory/reference/rest/v1/customers) of the customer's Google Workspace
-   * account. Format: `customers/{id}`
-   *
-   * @param string $parent
+   * @param string
    */
   public function setParent($parent)
   {
@@ -49,13 +41,7 @@ class CreatePrintServerRequest extends \Google\Model
     return $this->parent;
   }
   /**
-   * Required. A print server to create. If you want to place the print server
-   * under a specific organizational unit (OU), then populate the `org_unit_id`.
-   * Otherwise the print server is created under the root OU. The `org_unit_id`
-   * can be retrieved using the [Directory API](https://developers.google.com/wo
-   * rkspace/admin/directory/v1/guides/manage-org-units).
-   *
-   * @param PrintServer $printServer
+   * @param PrintServer
    */
   public function setPrintServer(PrintServer $printServer)
   {

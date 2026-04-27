@@ -24,9 +24,7 @@ class TableSchema extends \Google\Collection
   protected $fieldsDataType = 'array';
 
   /**
-   * Describes the fields in a table.
-   *
-   * @param TableFieldSchema[] $fields
+   * @param TableFieldSchema[]
    */
   public function setFields($fields)
   {

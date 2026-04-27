@@ -24,24 +24,13 @@ class GoogleCloudAiplatformV1EvaluateDatasetRequest extends \Google\Collection
   protected $autoraterConfigDataType = '';
   protected $datasetType = GoogleCloudAiplatformV1EvaluationDataset::class;
   protected $datasetDataType = '';
-  /**
-   * Required. The resource name of the Location to evaluate the dataset.
-   * Format: `projects/{project}/locations/{location}`
-   *
-   * @var string
-   */
-  public $location;
   protected $metricsType = GoogleCloudAiplatformV1Metric::class;
   protected $metricsDataType = 'array';
   protected $outputConfigType = GoogleCloudAiplatformV1OutputConfig::class;
   protected $outputConfigDataType = '';
 
   /**
-   * Optional. Autorater config used for evaluation. Currently only publisher
-   * Gemini models are supported. Format:
-   * `projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}.`
-   *
-   * @param GoogleCloudAiplatformV1AutoraterConfig $autoraterConfig
+   * @param GoogleCloudAiplatformV1AutoraterConfig
    */
   public function setAutoraterConfig(GoogleCloudAiplatformV1AutoraterConfig $autoraterConfig)
   {
@@ -55,9 +44,7 @@ class GoogleCloudAiplatformV1EvaluateDatasetRequest extends \Google\Collection
     return $this->autoraterConfig;
   }
   /**
-   * Required. The dataset used for evaluation.
-   *
-   * @param GoogleCloudAiplatformV1EvaluationDataset $dataset
+   * @param GoogleCloudAiplatformV1EvaluationDataset
    */
   public function setDataset(GoogleCloudAiplatformV1EvaluationDataset $dataset)
   {
@@ -71,26 +58,7 @@ class GoogleCloudAiplatformV1EvaluateDatasetRequest extends \Google\Collection
     return $this->dataset;
   }
   /**
-   * Required. The resource name of the Location to evaluate the dataset.
-   * Format: `projects/{project}/locations/{location}`
-   *
-   * @param string $location
-   */
-  public function setLocation($location)
-  {
-    $this->location = $location;
-  }
-  /**
-   * @return string
-   */
-  public function getLocation()
-  {
-    return $this->location;
-  }
-  /**
-   * Required. The metrics used for evaluation.
-   *
-   * @param GoogleCloudAiplatformV1Metric[] $metrics
+   * @param GoogleCloudAiplatformV1Metric[]
    */
   public function setMetrics($metrics)
   {
@@ -104,9 +72,7 @@ class GoogleCloudAiplatformV1EvaluateDatasetRequest extends \Google\Collection
     return $this->metrics;
   }
   /**
-   * Required. Config for evaluation output.
-   *
-   * @param GoogleCloudAiplatformV1OutputConfig $outputConfig
+   * @param GoogleCloudAiplatformV1OutputConfig
    */
   public function setOutputConfig(GoogleCloudAiplatformV1OutputConfig $outputConfig)
   {

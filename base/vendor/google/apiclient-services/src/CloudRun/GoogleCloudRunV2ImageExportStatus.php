@@ -20,62 +20,36 @@ namespace Google\Service\CloudRun;
 class GoogleCloudRunV2ImageExportStatus extends \Google\Model
 {
   /**
-   * State unspecified.
-   */
-  public const EXPORT_JOB_STATE_EXPORT_JOB_STATE_UNSPECIFIED = 'EXPORT_JOB_STATE_UNSPECIFIED';
-  /**
-   * Job still in progress.
-   */
-  public const EXPORT_JOB_STATE_IN_PROGRESS = 'IN_PROGRESS';
-  /**
-   * Job finished.
-   */
-  public const EXPORT_JOB_STATE_FINISHED = 'FINISHED';
-  /**
-   * Output only. Has the image export job finished (regardless of successful or
-   * failure).
-   *
    * @var string
    */
   public $exportJobState;
   /**
-   * The exported image ID as it will appear in Artifact Registry.
-   *
    * @var string
    */
   public $exportedImageDigest;
   protected $statusType = UtilStatusProto::class;
   protected $statusDataType = '';
   /**
-   * The image tag as it will appear in Artifact Registry.
-   *
    * @var string
    */
   public $tag;
 
   /**
-   * Output only. Has the image export job finished (regardless of successful or
-   * failure).
-   *
-   * Accepted values: EXPORT_JOB_STATE_UNSPECIFIED, IN_PROGRESS, FINISHED
-   *
-   * @param self::EXPORT_JOB_STATE_* $exportJobState
+   * @param string
    */
   public function setExportJobState($exportJobState)
   {
     $this->exportJobState = $exportJobState;
   }
   /**
-   * @return self::EXPORT_JOB_STATE_*
+   * @return string
    */
   public function getExportJobState()
   {
     return $this->exportJobState;
   }
   /**
-   * The exported image ID as it will appear in Artifact Registry.
-   *
-   * @param string $exportedImageDigest
+   * @param string
    */
   public function setExportedImageDigest($exportedImageDigest)
   {
@@ -89,9 +63,7 @@ class GoogleCloudRunV2ImageExportStatus extends \Google\Model
     return $this->exportedImageDigest;
   }
   /**
-   * The status of the export task if done.
-   *
-   * @param UtilStatusProto $status
+   * @param UtilStatusProto
    */
   public function setStatus(UtilStatusProto $status)
   {
@@ -105,9 +77,7 @@ class GoogleCloudRunV2ImageExportStatus extends \Google\Model
     return $this->status;
   }
   /**
-   * The image tag as it will appear in Artifact Registry.
-   *
-   * @param string $tag
+   * @param string
    */
   public function setTag($tag)
   {

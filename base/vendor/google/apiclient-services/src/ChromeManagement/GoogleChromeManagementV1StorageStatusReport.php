@@ -23,16 +23,12 @@ class GoogleChromeManagementV1StorageStatusReport extends \Google\Collection
   protected $diskType = GoogleChromeManagementV1DiskInfo::class;
   protected $diskDataType = 'array';
   /**
-   * Output only. Timestamp of when the sample was collected on device
-   *
    * @var string
    */
   public $reportTime;
 
   /**
-   * Output only. Reports on disk.
-   *
-   * @param GoogleChromeManagementV1DiskInfo[] $disk
+   * @param GoogleChromeManagementV1DiskInfo[]
    */
   public function setDisk($disk)
   {
@@ -46,9 +42,7 @@ class GoogleChromeManagementV1StorageStatusReport extends \Google\Collection
     return $this->disk;
   }
   /**
-   * Output only. Timestamp of when the sample was collected on device
-   *
-   * @param string $reportTime
+   * @param string
    */
   public function setReportTime($reportTime)
   {

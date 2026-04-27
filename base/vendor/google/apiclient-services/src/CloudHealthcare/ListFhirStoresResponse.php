@@ -23,18 +23,12 @@ class ListFhirStoresResponse extends \Google\Collection
   protected $fhirStoresType = FhirStore::class;
   protected $fhirStoresDataType = 'array';
   /**
-   * Token to retrieve the next page of results or empty if there are no more
-   * results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The returned FHIR stores. Won't be more FHIR stores than the value of
-   * page_size in the request.
-   *
-   * @param FhirStore[] $fhirStores
+   * @param FhirStore[]
    */
   public function setFhirStores($fhirStores)
   {
@@ -48,10 +42,7 @@ class ListFhirStoresResponse extends \Google\Collection
     return $this->fhirStores;
   }
   /**
-   * Token to retrieve the next page of results or empty if there are no more
-   * results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

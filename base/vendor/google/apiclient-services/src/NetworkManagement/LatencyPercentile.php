@@ -20,26 +20,16 @@ namespace Google\Service\NetworkManagement;
 class LatencyPercentile extends \Google\Model
 {
   /**
-   * percent-th percentile of latency observed, in microseconds. Fraction of
-   * percent/100 of samples have latency lower or equal to the value of this
-   * field.
-   *
    * @var string
    */
   public $latencyMicros;
   /**
-   * Percentage of samples this data point applies to.
-   *
    * @var int
    */
   public $percent;
 
   /**
-   * percent-th percentile of latency observed, in microseconds. Fraction of
-   * percent/100 of samples have latency lower or equal to the value of this
-   * field.
-   *
-   * @param string $latencyMicros
+   * @param string
    */
   public function setLatencyMicros($latencyMicros)
   {
@@ -53,9 +43,7 @@ class LatencyPercentile extends \Google\Model
     return $this->latencyMicros;
   }
   /**
-   * Percentage of samples this data point applies to.
-   *
-   * @param int $percent
+   * @param int
    */
   public function setPercent($percent)
   {

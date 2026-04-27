@@ -21,38 +21,20 @@ class GooglePrivacyDlpV2CloudStorageRegexFileSet extends \Google\Collection
 {
   protected $collection_key = 'includeRegex';
   /**
-   * The name of a Cloud Storage bucket. Required.
-   *
    * @var string
    */
   public $bucketName;
   /**
-   * A list of regular expressions matching file paths to exclude. All files in
-   * the bucket that match at least one of these regular expressions will be
-   * excluded from the scan. Regular expressions use RE2
-   * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
-   * under the google/re2 repository on GitHub.
-   *
    * @var string[]
    */
   public $excludeRegex;
   /**
-   * A list of regular expressions matching file paths to include. All files in
-   * the bucket that match at least one of these regular expressions will be
-   * included in the set of files, except for those that also match an item in
-   * `exclude_regex`. Leaving this field empty will match all files by default
-   * (this is equivalent to including `.*` in the list). Regular expressions use
-   * RE2 [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be
-   * found under the google/re2 repository on GitHub.
-   *
    * @var string[]
    */
   public $includeRegex;
 
   /**
-   * The name of a Cloud Storage bucket. Required.
-   *
-   * @param string $bucketName
+   * @param string
    */
   public function setBucketName($bucketName)
   {
@@ -66,13 +48,7 @@ class GooglePrivacyDlpV2CloudStorageRegexFileSet extends \Google\Collection
     return $this->bucketName;
   }
   /**
-   * A list of regular expressions matching file paths to exclude. All files in
-   * the bucket that match at least one of these regular expressions will be
-   * excluded from the scan. Regular expressions use RE2
-   * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
-   * under the google/re2 repository on GitHub.
-   *
-   * @param string[] $excludeRegex
+   * @param string[]
    */
   public function setExcludeRegex($excludeRegex)
   {
@@ -86,15 +62,7 @@ class GooglePrivacyDlpV2CloudStorageRegexFileSet extends \Google\Collection
     return $this->excludeRegex;
   }
   /**
-   * A list of regular expressions matching file paths to include. All files in
-   * the bucket that match at least one of these regular expressions will be
-   * included in the set of files, except for those that also match an item in
-   * `exclude_regex`. Leaving this field empty will match all files by default
-   * (this is equivalent to including `.*` in the list). Regular expressions use
-   * RE2 [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be
-   * found under the google/re2 repository on GitHub.
-   *
-   * @param string[] $includeRegex
+   * @param string[]
    */
   public function setIncludeRegex($includeRegex)
   {

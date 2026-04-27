@@ -23,20 +23,12 @@ class GoogleCloudAiplatformV1SchemaImageSegmentationAnnotationMaskAnnotation ext
   protected $annotationSpecColorsType = GoogleCloudAiplatformV1SchemaAnnotationSpecColor::class;
   protected $annotationSpecColorsDataType = 'array';
   /**
-   * Google Cloud Storage URI that points to the mask image. The image must be
-   * in PNG format. It must have the same size as the DataItem's image. Each
-   * pixel in the image mask represents the AnnotationSpec which the pixel in
-   * the image DataItem belong to. Each color is mapped to one AnnotationSpec
-   * based on annotation_spec_colors.
-   *
    * @var string
    */
   public $maskGcsUri;
 
   /**
-   * The mapping between color and AnnotationSpec for this Annotation.
-   *
-   * @param GoogleCloudAiplatformV1SchemaAnnotationSpecColor[] $annotationSpecColors
+   * @param GoogleCloudAiplatformV1SchemaAnnotationSpecColor[]
    */
   public function setAnnotationSpecColors($annotationSpecColors)
   {
@@ -50,13 +42,7 @@ class GoogleCloudAiplatformV1SchemaImageSegmentationAnnotationMaskAnnotation ext
     return $this->annotationSpecColors;
   }
   /**
-   * Google Cloud Storage URI that points to the mask image. The image must be
-   * in PNG format. It must have the same size as the DataItem's image. Each
-   * pixel in the image mask represents the AnnotationSpec which the pixel in
-   * the image DataItem belong to. Each color is mapped to one AnnotationSpec
-   * based on annotation_spec_colors.
-   *
-   * @param string $maskGcsUri
+   * @param string
    */
   public function setMaskGcsUri($maskGcsUri)
   {

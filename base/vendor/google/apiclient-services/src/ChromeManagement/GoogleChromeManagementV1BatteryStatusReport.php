@@ -19,81 +19,46 @@ namespace Google\Service\ChromeManagement;
 
 class GoogleChromeManagementV1BatteryStatusReport extends \Google\Collection
 {
-  /**
-   * Health unknown.
-   */
-  public const BATTERY_HEALTH_BATTERY_HEALTH_UNSPECIFIED = 'BATTERY_HEALTH_UNSPECIFIED';
-  /**
-   * Battery is healthy, full charge capacity / design capacity > 80%
-   */
-  public const BATTERY_HEALTH_BATTERY_HEALTH_NORMAL = 'BATTERY_HEALTH_NORMAL';
-  /**
-   * Battery is moderately unhealthy and suggested to be replaced soon, full
-   * charge capacity / design capacity 75% - 80%
-   */
-  public const BATTERY_HEALTH_BATTERY_REPLACE_SOON = 'BATTERY_REPLACE_SOON';
-  /**
-   * Battery is unhealthy and suggested to be replaced, full charge capacity /
-   * design capacity < 75%
-   */
-  public const BATTERY_HEALTH_BATTERY_REPLACE_NOW = 'BATTERY_REPLACE_NOW';
   protected $collection_key = 'sample';
   /**
-   * Output only. Battery health.
-   *
    * @var string
    */
   public $batteryHealth;
   /**
-   * Output only. Cycle count.
-   *
    * @var int
    */
   public $cycleCount;
   /**
-   * Output only. Full charge capacity (mAmpere-hours).
-   *
    * @var string
    */
   public $fullChargeCapacity;
   /**
-   * Output only. Timestamp of when the sample was collected on device
-   *
    * @var string
    */
   public $reportTime;
   protected $sampleType = GoogleChromeManagementV1BatterySampleReport::class;
   protected $sampleDataType = 'array';
   /**
-   * Output only. Battery serial number.
-   *
    * @var string
    */
   public $serialNumber;
 
   /**
-   * Output only. Battery health.
-   *
-   * Accepted values: BATTERY_HEALTH_UNSPECIFIED, BATTERY_HEALTH_NORMAL,
-   * BATTERY_REPLACE_SOON, BATTERY_REPLACE_NOW
-   *
-   * @param self::BATTERY_HEALTH_* $batteryHealth
+   * @param string
    */
   public function setBatteryHealth($batteryHealth)
   {
     $this->batteryHealth = $batteryHealth;
   }
   /**
-   * @return self::BATTERY_HEALTH_*
+   * @return string
    */
   public function getBatteryHealth()
   {
     return $this->batteryHealth;
   }
   /**
-   * Output only. Cycle count.
-   *
-   * @param int $cycleCount
+   * @param int
    */
   public function setCycleCount($cycleCount)
   {
@@ -107,9 +72,7 @@ class GoogleChromeManagementV1BatteryStatusReport extends \Google\Collection
     return $this->cycleCount;
   }
   /**
-   * Output only. Full charge capacity (mAmpere-hours).
-   *
-   * @param string $fullChargeCapacity
+   * @param string
    */
   public function setFullChargeCapacity($fullChargeCapacity)
   {
@@ -123,9 +86,7 @@ class GoogleChromeManagementV1BatteryStatusReport extends \Google\Collection
     return $this->fullChargeCapacity;
   }
   /**
-   * Output only. Timestamp of when the sample was collected on device
-   *
-   * @param string $reportTime
+   * @param string
    */
   public function setReportTime($reportTime)
   {
@@ -139,10 +100,7 @@ class GoogleChromeManagementV1BatteryStatusReport extends \Google\Collection
     return $this->reportTime;
   }
   /**
-   * Output only. Sampling data for the battery sorted in a decreasing order of
-   * report_time.
-   *
-   * @param GoogleChromeManagementV1BatterySampleReport[] $sample
+   * @param GoogleChromeManagementV1BatterySampleReport[]
    */
   public function setSample($sample)
   {
@@ -156,9 +114,7 @@ class GoogleChromeManagementV1BatteryStatusReport extends \Google\Collection
     return $this->sample;
   }
   /**
-   * Output only. Battery serial number.
-   *
-   * @param string $serialNumber
+   * @param string
    */
   public function setSerialNumber($serialNumber)
   {

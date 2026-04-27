@@ -27,9 +27,7 @@ class ConfigManagementPolicyControllerState extends \Google\Model
   protected $versionDataType = '';
 
   /**
-   * The state about the policy controller installation.
-   *
-   * @param ConfigManagementGatekeeperDeploymentState $deploymentState
+   * @param ConfigManagementGatekeeperDeploymentState
    */
   public function setDeploymentState(ConfigManagementGatekeeperDeploymentState $deploymentState)
   {
@@ -43,9 +41,7 @@ class ConfigManagementPolicyControllerState extends \Google\Model
     return $this->deploymentState;
   }
   /**
-   * Record state of ACM -> PoCo Hub migration for this feature.
-   *
-   * @param ConfigManagementPolicyControllerMigration $migration
+   * @param ConfigManagementPolicyControllerMigration
    */
   public function setMigration(ConfigManagementPolicyControllerMigration $migration)
   {
@@ -59,9 +55,7 @@ class ConfigManagementPolicyControllerState extends \Google\Model
     return $this->migration;
   }
   /**
-   * The version of Gatekeeper Policy Controller deployed.
-   *
-   * @param ConfigManagementPolicyControllerVersion $version
+   * @param ConfigManagementPolicyControllerVersion
    */
   public function setVersion(ConfigManagementPolicyControllerVersion $version)
   {

@@ -21,38 +21,24 @@ class GoogleCloudApigeeV1OrganizationProjectMapping extends \Google\Collection
 {
   protected $collection_key = 'projectIds';
   /**
-   * Output only. The Google Cloud region where control plane data is located.
-   * For more information, see https://cloud.google.com/about/locations/.
-   *
    * @var string
    */
   public $location;
   /**
-   * Name of the Apigee organization.
-   *
    * @var string
    */
   public $organization;
   /**
-   * Google Cloud project associated with the Apigee organization
-   *
    * @var string
    */
   public $projectId;
   /**
-   * DEPRECATED: Use `project_id`. An Apigee Organization is mapped to a single
-   * project.
-   *
-   * @deprecated
    * @var string[]
    */
   public $projectIds;
 
   /**
-   * Output only. The Google Cloud region where control plane data is located.
-   * For more information, see https://cloud.google.com/about/locations/.
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -66,9 +52,7 @@ class GoogleCloudApigeeV1OrganizationProjectMapping extends \Google\Collection
     return $this->location;
   }
   /**
-   * Name of the Apigee organization.
-   *
-   * @param string $organization
+   * @param string
    */
   public function setOrganization($organization)
   {
@@ -82,9 +66,7 @@ class GoogleCloudApigeeV1OrganizationProjectMapping extends \Google\Collection
     return $this->organization;
   }
   /**
-   * Google Cloud project associated with the Apigee organization
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {
@@ -98,18 +80,13 @@ class GoogleCloudApigeeV1OrganizationProjectMapping extends \Google\Collection
     return $this->projectId;
   }
   /**
-   * DEPRECATED: Use `project_id`. An Apigee Organization is mapped to a single
-   * project.
-   *
-   * @deprecated
-   * @param string[] $projectIds
+   * @param string[]
    */
   public function setProjectIds($projectIds)
   {
     $this->projectIds = $projectIds;
   }
   /**
-   * @deprecated
    * @return string[]
    */
   public function getProjectIds()

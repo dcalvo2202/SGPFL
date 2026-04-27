@@ -45,7 +45,7 @@ class DiscoveryclustersClusters extends \Google\Collection
   protected $volumesDataType = 'array';
 
   /**
-   * @param DiscoveryclustersClustersBannerWithContentContainer $bannerWithContentContainer
+   * @param DiscoveryclustersClustersBannerWithContentContainer
    */
   public function setBannerWithContentContainer(DiscoveryclustersClustersBannerWithContentContainer $bannerWithContentContainer)
   {
@@ -59,7 +59,7 @@ class DiscoveryclustersClusters extends \Google\Collection
     return $this->bannerWithContentContainer;
   }
   /**
-   * @param string $subTitle
+   * @param string
    */
   public function setSubTitle($subTitle)
   {
@@ -73,7 +73,7 @@ class DiscoveryclustersClusters extends \Google\Collection
     return $this->subTitle;
   }
   /**
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -87,7 +87,7 @@ class DiscoveryclustersClusters extends \Google\Collection
     return $this->title;
   }
   /**
-   * @param int $totalVolumes
+   * @param int
    */
   public function setTotalVolumes($totalVolumes)
   {
@@ -101,7 +101,7 @@ class DiscoveryclustersClusters extends \Google\Collection
     return $this->totalVolumes;
   }
   /**
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {
@@ -115,7 +115,7 @@ class DiscoveryclustersClusters extends \Google\Collection
     return $this->uid;
   }
   /**
-   * @param Volume[] $volumes
+   * @param Volume[]
    */
   public function setVolumes($volumes)
   {

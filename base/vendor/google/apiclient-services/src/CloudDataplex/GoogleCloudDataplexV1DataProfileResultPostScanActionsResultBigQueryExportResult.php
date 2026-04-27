@@ -20,39 +20,16 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1DataProfileResultPostScanActionsResultBigQueryExportResult extends \Google\Model
 {
   /**
-   * The exporting state is unspecified.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The exporting completed successfully.
-   */
-  public const STATE_SUCCEEDED = 'SUCCEEDED';
-  /**
-   * The exporting is no longer running due to an error.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * The exporting is skipped due to no valid scan result to export (usually
-   * caused by scan failed).
-   */
-  public const STATE_SKIPPED = 'SKIPPED';
-  /**
-   * Output only. Additional information about the BigQuery exporting.
-   *
    * @var string
    */
   public $message;
   /**
-   * Output only. Execution state for the BigQuery exporting.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Output only. Additional information about the BigQuery exporting.
-   *
-   * @param string $message
+   * @param string
    */
   public function setMessage($message)
   {
@@ -66,18 +43,14 @@ class GoogleCloudDataplexV1DataProfileResultPostScanActionsResultBigQueryExportR
     return $this->message;
   }
   /**
-   * Output only. Execution state for the BigQuery exporting.
-   *
-   * Accepted values: STATE_UNSPECIFIED, SUCCEEDED, FAILED, SKIPPED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

@@ -21,28 +21,20 @@ class CustomRegionMetadata extends \Google\Collection
 {
   protected $collection_key = 'requiredReadWriteRegions';
   /**
-   * The read-only regions for this custom region.
-   *
    * @var string[]
    */
   public $optionalReadOnlyRegions;
   /**
-   * The read-write regions for this custom region.
-   *
    * @var string[]
    */
   public $requiredReadWriteRegions;
   /**
-   * The Spanner witness region for this custom region.
-   *
    * @var string
    */
   public $witnessRegion;
 
   /**
-   * The read-only regions for this custom region.
-   *
-   * @param string[] $optionalReadOnlyRegions
+   * @param string[]
    */
   public function setOptionalReadOnlyRegions($optionalReadOnlyRegions)
   {
@@ -56,9 +48,7 @@ class CustomRegionMetadata extends \Google\Collection
     return $this->optionalReadOnlyRegions;
   }
   /**
-   * The read-write regions for this custom region.
-   *
-   * @param string[] $requiredReadWriteRegions
+   * @param string[]
    */
   public function setRequiredReadWriteRegions($requiredReadWriteRegions)
   {
@@ -72,9 +62,7 @@ class CustomRegionMetadata extends \Google\Collection
     return $this->requiredReadWriteRegions;
   }
   /**
-   * The Spanner witness region for this custom region.
-   *
-   * @param string $witnessRegion
+   * @param string
    */
   public function setWitnessRegion($witnessRegion)
   {

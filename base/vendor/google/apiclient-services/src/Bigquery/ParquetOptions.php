@@ -20,41 +20,20 @@ namespace Google\Service\Bigquery;
 class ParquetOptions extends \Google\Model
 {
   /**
-   * In this mode, the map will have the following schema: struct map_field_name
-   * { repeated struct key_value { key value } }.
-   */
-  public const MAP_TARGET_TYPE_MAP_TARGET_TYPE_UNSPECIFIED = 'MAP_TARGET_TYPE_UNSPECIFIED';
-  /**
-   * In this mode, the map will have the following schema: repeated struct
-   * map_field_name { key value }.
-   */
-  public const MAP_TARGET_TYPE_ARRAY_OF_STRUCT = 'ARRAY_OF_STRUCT';
-  /**
-   * Optional. Indicates whether to use schema inference specifically for
-   * Parquet LIST logical type.
-   *
    * @var bool
    */
   public $enableListInference;
   /**
-   * Optional. Indicates whether to infer Parquet ENUM logical type as STRING
-   * instead of BYTES by default.
-   *
    * @var bool
    */
   public $enumAsString;
   /**
-   * Optional. Indicates how to represent a Parquet map if present.
-   *
    * @var string
    */
   public $mapTargetType;
 
   /**
-   * Optional. Indicates whether to use schema inference specifically for
-   * Parquet LIST logical type.
-   *
-   * @param bool $enableListInference
+   * @param bool
    */
   public function setEnableListInference($enableListInference)
   {
@@ -68,10 +47,7 @@ class ParquetOptions extends \Google\Model
     return $this->enableListInference;
   }
   /**
-   * Optional. Indicates whether to infer Parquet ENUM logical type as STRING
-   * instead of BYTES by default.
-   *
-   * @param bool $enumAsString
+   * @param bool
    */
   public function setEnumAsString($enumAsString)
   {
@@ -85,18 +61,14 @@ class ParquetOptions extends \Google\Model
     return $this->enumAsString;
   }
   /**
-   * Optional. Indicates how to represent a Parquet map if present.
-   *
-   * Accepted values: MAP_TARGET_TYPE_UNSPECIFIED, ARRAY_OF_STRUCT
-   *
-   * @param self::MAP_TARGET_TYPE_* $mapTargetType
+   * @param string
    */
   public function setMapTargetType($mapTargetType)
   {
     $this->mapTargetType = $mapTargetType;
   }
   /**
-   * @return self::MAP_TARGET_TYPE_*
+   * @return string
    */
   public function getMapTargetType()
   {

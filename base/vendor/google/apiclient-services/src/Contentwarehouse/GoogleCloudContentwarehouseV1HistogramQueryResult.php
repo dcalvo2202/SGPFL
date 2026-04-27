@@ -20,26 +20,16 @@ namespace Google\Service\Contentwarehouse;
 class GoogleCloudContentwarehouseV1HistogramQueryResult extends \Google\Model
 {
   /**
-   * A map from the values of the facet associated with distinct values to the
-   * number of matching entries with corresponding value. The key format is: *
-   * (for string histogram) string values stored in the field.
-   *
    * @var string[]
    */
   public $histogram;
   /**
-   * Requested histogram expression.
-   *
    * @var string
    */
   public $histogramQuery;
 
   /**
-   * A map from the values of the facet associated with distinct values to the
-   * number of matching entries with corresponding value. The key format is: *
-   * (for string histogram) string values stored in the field.
-   *
-   * @param string[] $histogram
+   * @param string[]
    */
   public function setHistogram($histogram)
   {
@@ -53,9 +43,7 @@ class GoogleCloudContentwarehouseV1HistogramQueryResult extends \Google\Model
     return $this->histogram;
   }
   /**
-   * Requested histogram expression.
-   *
-   * @param string $histogramQuery
+   * @param string
    */
   public function setHistogramQuery($histogramQuery)
   {

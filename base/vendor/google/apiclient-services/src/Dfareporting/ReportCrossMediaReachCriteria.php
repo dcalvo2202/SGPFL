@@ -27,16 +27,12 @@ class ReportCrossMediaReachCriteria extends \Google\Collection
   protected $dimensionsType = SortedDimension::class;
   protected $dimensionsDataType = 'array';
   /**
-   * Required. The list of names of metrics the report should include.
-   *
    * @var string[]
    */
   public $metricNames;
 
   /**
-   * Required. The date range this report should be run for.
-   *
-   * @param DateRange $dateRange
+   * @param DateRange
    */
   public function setDateRange(DateRange $dateRange)
   {
@@ -50,11 +46,7 @@ class ReportCrossMediaReachCriteria extends \Google\Collection
     return $this->dateRange;
   }
   /**
-   * Required. The list of filters on which dimensions are filtered. Filters for
-   * different dimensions are ANDed, filters for the same dimension are grouped
-   * together and ORed.
-   *
-   * @param DimensionValue[] $dimensionFilters
+   * @param DimensionValue[]
    */
   public function setDimensionFilters($dimensionFilters)
   {
@@ -68,9 +60,7 @@ class ReportCrossMediaReachCriteria extends \Google\Collection
     return $this->dimensionFilters;
   }
   /**
-   * Required. The list of dimensions the report should include.
-   *
-   * @param SortedDimension[] $dimensions
+   * @param SortedDimension[]
    */
   public function setDimensions($dimensions)
   {
@@ -84,9 +74,7 @@ class ReportCrossMediaReachCriteria extends \Google\Collection
     return $this->dimensions;
   }
   /**
-   * Required. The list of names of metrics the report should include.
-   *
-   * @param string[] $metricNames
+   * @param string[]
    */
   public function setMetricNames($metricNames)
   {

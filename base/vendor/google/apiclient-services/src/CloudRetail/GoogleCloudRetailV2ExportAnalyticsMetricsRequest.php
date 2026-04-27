@@ -20,17 +20,6 @@ namespace Google\Service\CloudRetail;
 class GoogleCloudRetailV2ExportAnalyticsMetricsRequest extends \Google\Model
 {
   /**
-   * A filtering expression to specify restrictions on returned metrics. The
-   * expression is a sequence of terms. Each term applies a restriction to the
-   * returned metrics. Use this expression to restrict results to a specific
-   * time range. Currently we expect only one types of fields: * `timestamp`:
-   * This can be specified twice, once with a less than operator and once with a
-   * greater than operator. The `timestamp` restriction should result in one,
-   * contiguous, valid, `timestamp` range. Some examples of valid filters
-   * expressions: * Example 1: `timestamp > "2012-04-23T18:25:43.511Z" timestamp
-   * < "2012-04-23T18:30:43.511Z"` * Example 2: `timestamp >
-   * "2012-04-23T18:25:43.511Z"`
-   *
    * @var string
    */
   public $filter;
@@ -38,18 +27,7 @@ class GoogleCloudRetailV2ExportAnalyticsMetricsRequest extends \Google\Model
   protected $outputConfigDataType = '';
 
   /**
-   * A filtering expression to specify restrictions on returned metrics. The
-   * expression is a sequence of terms. Each term applies a restriction to the
-   * returned metrics. Use this expression to restrict results to a specific
-   * time range. Currently we expect only one types of fields: * `timestamp`:
-   * This can be specified twice, once with a less than operator and once with a
-   * greater than operator. The `timestamp` restriction should result in one,
-   * contiguous, valid, `timestamp` range. Some examples of valid filters
-   * expressions: * Example 1: `timestamp > "2012-04-23T18:25:43.511Z" timestamp
-   * < "2012-04-23T18:30:43.511Z"` * Example 2: `timestamp >
-   * "2012-04-23T18:25:43.511Z"`
-   *
-   * @param string $filter
+   * @param string
    */
   public function setFilter($filter)
   {
@@ -63,10 +41,7 @@ class GoogleCloudRetailV2ExportAnalyticsMetricsRequest extends \Google\Model
     return $this->filter;
   }
   /**
-   * Required. The output location of the data. Only `bigquery_destination` is
-   * supported, and `bigquery_destination.table_type` must be set to `view`.
-   *
-   * @param GoogleCloudRetailV2OutputConfig $outputConfig
+   * @param GoogleCloudRetailV2OutputConfig
    */
   public function setOutputConfig(GoogleCloudRetailV2OutputConfig $outputConfig)
   {

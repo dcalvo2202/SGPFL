@@ -26,9 +26,7 @@ class ImportAptArtifactsResponse extends \Google\Collection
   protected $errorsDataType = 'array';
 
   /**
-   * The Apt artifacts imported.
-   *
-   * @param AptArtifact[] $aptArtifacts
+   * @param AptArtifact[]
    */
   public function setAptArtifacts($aptArtifacts)
   {
@@ -42,9 +40,7 @@ class ImportAptArtifactsResponse extends \Google\Collection
     return $this->aptArtifacts;
   }
   /**
-   * Detailed error info for packages that were not imported.
-   *
-   * @param ImportAptArtifactsErrorInfo[] $errors
+   * @param ImportAptArtifactsErrorInfo[]
    */
   public function setErrors($errors)
   {

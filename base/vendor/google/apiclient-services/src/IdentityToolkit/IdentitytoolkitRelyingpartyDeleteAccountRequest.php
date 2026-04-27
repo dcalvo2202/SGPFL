@@ -20,30 +20,20 @@ namespace Google\Service\IdentityToolkit;
 class IdentitytoolkitRelyingpartyDeleteAccountRequest extends \Google\Model
 {
   /**
-   * GCP project number of the requesting delegated app. Currently only intended
-   * for Firebase V1 migration.
-   *
    * @var string
    */
   public $delegatedProjectNumber;
   /**
-   * The GITKit token or STS id token of the authenticated user.
-   *
    * @var string
    */
   public $idToken;
   /**
-   * The local ID of the user.
-   *
    * @var string
    */
   public $localId;
 
   /**
-   * GCP project number of the requesting delegated app. Currently only intended
-   * for Firebase V1 migration.
-   *
-   * @param string $delegatedProjectNumber
+   * @param string
    */
   public function setDelegatedProjectNumber($delegatedProjectNumber)
   {
@@ -57,9 +47,7 @@ class IdentitytoolkitRelyingpartyDeleteAccountRequest extends \Google\Model
     return $this->delegatedProjectNumber;
   }
   /**
-   * The GITKit token or STS id token of the authenticated user.
-   *
-   * @param string $idToken
+   * @param string
    */
   public function setIdToken($idToken)
   {
@@ -73,9 +61,7 @@ class IdentitytoolkitRelyingpartyDeleteAccountRequest extends \Google\Model
     return $this->idToken;
   }
   /**
-   * The local ID of the user.
-   *
-   * @param string $localId
+   * @param string
    */
   public function setLocalId($localId)
   {

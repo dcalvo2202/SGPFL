@@ -20,28 +20,20 @@ namespace Google\Service\Batch;
 class AgentTimingInfo extends \Google\Model
 {
   /**
-   * Agent startup time
-   *
    * @var string
    */
   public $agentStartupTime;
   /**
-   * Boot timestamp of the VM OS
-   *
    * @var string
    */
   public $bootTime;
   /**
-   * Startup time of the Batch VM script.
-   *
    * @var string
    */
   public $scriptStartupTime;
 
   /**
-   * Agent startup time
-   *
-   * @param string $agentStartupTime
+   * @param string
    */
   public function setAgentStartupTime($agentStartupTime)
   {
@@ -55,9 +47,7 @@ class AgentTimingInfo extends \Google\Model
     return $this->agentStartupTime;
   }
   /**
-   * Boot timestamp of the VM OS
-   *
-   * @param string $bootTime
+   * @param string
    */
   public function setBootTime($bootTime)
   {
@@ -71,9 +61,7 @@ class AgentTimingInfo extends \Google\Model
     return $this->bootTime;
   }
   /**
-   * Startup time of the Batch VM script.
-   *
-   * @param string $scriptStartupTime
+   * @param string
    */
   public function setScriptStartupTime($scriptStartupTime)
   {

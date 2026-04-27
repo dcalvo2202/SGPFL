@@ -21,16 +21,12 @@ class AssetList extends \Google\Collection
 {
   protected $collection_key = 'assetIds';
   /**
-   * Required. A list of asset IDs
-   *
    * @var string[]
    */
   public $assetIds;
 
   /**
-   * Required. A list of asset IDs
-   *
-   * @param string[] $assetIds
+   * @param string[]
    */
   public function setAssetIds($assetIds)
   {

@@ -20,18 +20,12 @@ namespace Google\Service\SA360;
 class GoogleAdsSearchads360V0ResourcesAccessibleBiddingStrategyTargetCpa extends \Google\Model
 {
   /**
-   * Output only. Average CPA target. This target should be greater than or
-   * equal to minimum billable unit based on the currency for the account.
-   *
    * @var string
    */
   public $targetCpaMicros;
 
   /**
-   * Output only. Average CPA target. This target should be greater than or
-   * equal to minimum billable unit based on the currency for the account.
-   *
-   * @param string $targetCpaMicros
+   * @param string
    */
   public function setTargetCpaMicros($targetCpaMicros)
   {

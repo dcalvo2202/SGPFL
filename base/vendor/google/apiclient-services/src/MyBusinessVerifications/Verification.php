@@ -20,89 +20,28 @@ namespace Google\Service\MyBusinessVerifications;
 class Verification extends \Google\Model
 {
   /**
-   * Default value, will result in errors.
-   */
-  public const METHOD_VERIFICATION_METHOD_UNSPECIFIED = 'VERIFICATION_METHOD_UNSPECIFIED';
-  /**
-   * Send a postcard with a verification PIN to a specific mailing address. The
-   * PIN is used to complete verification with Google.
-   */
-  public const METHOD_ADDRESS = 'ADDRESS';
-  /**
-   * Send an email with a verification PIN to a specific email address. The PIN
-   * is used to complete verification with Google.
-   */
-  public const METHOD_EMAIL = 'EMAIL';
-  /**
-   * Make a phone call with a verification PIN to a specific phone number. The
-   * PIN is used to complete verification with Google.
-   */
-  public const METHOD_PHONE_CALL = 'PHONE_CALL';
-  /**
-   * Send an SMS with a verification PIN to a specific phone number. The PIN is
-   * used to complete verification with Google.
-   */
-  public const METHOD_SMS = 'SMS';
-  /**
-   * Verify the location without additional user action. This option may not be
-   * available for all locations.
-   */
-  public const METHOD_AUTO = 'AUTO';
-  /**
-   * Verify the location via a trusted partner.
-   */
-  public const METHOD_TRUSTED_PARTNER = 'TRUSTED_PARTNER';
-  /**
-   * Default value, will result in errors.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The verification is pending.
-   */
-  public const STATE_PENDING = 'PENDING';
-  /**
-   * The verification is completed.
-   */
-  public const STATE_COMPLETED = 'COMPLETED';
-  /**
-   * The verification is failed.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * Optional. Response announcement set only if the method is VETTED_PARTNER.
-   *
    * @var string
    */
   public $announcement;
   /**
-   * The timestamp when the verification is requested.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * The method of the verification.
-   *
    * @var string
    */
   public $method;
   /**
-   * Resource name of the verification.
-   *
    * @var string
    */
   public $name;
   /**
-   * The state of the verification.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Optional. Response announcement set only if the method is VETTED_PARTNER.
-   *
-   * @param string $announcement
+   * @param string
    */
   public function setAnnouncement($announcement)
   {
@@ -116,9 +55,7 @@ class Verification extends \Google\Model
     return $this->announcement;
   }
   /**
-   * The timestamp when the verification is requested.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -132,28 +69,21 @@ class Verification extends \Google\Model
     return $this->createTime;
   }
   /**
-   * The method of the verification.
-   *
-   * Accepted values: VERIFICATION_METHOD_UNSPECIFIED, ADDRESS, EMAIL,
-   * PHONE_CALL, SMS, AUTO, TRUSTED_PARTNER
-   *
-   * @param self::METHOD_* $method
+   * @param string
    */
   public function setMethod($method)
   {
     $this->method = $method;
   }
   /**
-   * @return self::METHOD_*
+   * @return string
    */
   public function getMethod()
   {
     return $this->method;
   }
   /**
-   * Resource name of the verification.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -167,18 +97,14 @@ class Verification extends \Google\Model
     return $this->name;
   }
   /**
-   * The state of the verification.
-   *
-   * Accepted values: STATE_UNSPECIFIED, PENDING, COMPLETED, FAILED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

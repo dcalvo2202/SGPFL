@@ -20,40 +20,20 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1IdentityMappingEntry extends \Google\Model
 {
   /**
-   * Required. Identity outside the customer identity provider. The length limit
-   * of external identity will be of 100 characters.
-   *
    * @var string
    */
   public $externalIdentity;
   /**
-   * Optional. The name of the external identity.
-   *
-   * @var string
-   */
-  public $externalIdentityName;
-  /**
-   * Group identifier. For Google Workspace user account, group_id should be the
-   * google workspace group email. For non-google identity provider, group_id is
-   * the mapped group identifier configured during the workforcepool config.
-   *
    * @var string
    */
   public $groupId;
   /**
-   * User identifier. For Google Workspace user account, user_id should be the
-   * google workspace user email. For non-google identity provider, user_id is
-   * the mapped user identifier configured during the workforcepool config.
-   *
    * @var string
    */
   public $userId;
 
   /**
-   * Required. Identity outside the customer identity provider. The length limit
-   * of external identity will be of 100 characters.
-   *
-   * @param string $externalIdentity
+   * @param string
    */
   public function setExternalIdentity($externalIdentity)
   {
@@ -67,27 +47,7 @@ class GoogleCloudDiscoveryengineV1IdentityMappingEntry extends \Google\Model
     return $this->externalIdentity;
   }
   /**
-   * Optional. The name of the external identity.
-   *
-   * @param string $externalIdentityName
-   */
-  public function setExternalIdentityName($externalIdentityName)
-  {
-    $this->externalIdentityName = $externalIdentityName;
-  }
-  /**
-   * @return string
-   */
-  public function getExternalIdentityName()
-  {
-    return $this->externalIdentityName;
-  }
-  /**
-   * Group identifier. For Google Workspace user account, group_id should be the
-   * google workspace group email. For non-google identity provider, group_id is
-   * the mapped group identifier configured during the workforcepool config.
-   *
-   * @param string $groupId
+   * @param string
    */
   public function setGroupId($groupId)
   {
@@ -101,11 +61,7 @@ class GoogleCloudDiscoveryengineV1IdentityMappingEntry extends \Google\Model
     return $this->groupId;
   }
   /**
-   * User identifier. For Google Workspace user account, user_id should be the
-   * google workspace user email. For non-google identity provider, user_id is
-   * the mapped user identifier configured during the workforcepool config.
-   *
-   * @param string $userId
+   * @param string
    */
   public function setUserId($userId)
   {

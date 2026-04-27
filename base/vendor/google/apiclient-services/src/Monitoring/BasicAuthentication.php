@@ -20,22 +20,16 @@ namespace Google\Service\Monitoring;
 class BasicAuthentication extends \Google\Model
 {
   /**
-   * The password to use when authenticating with the HTTP server.
-   *
    * @var string
    */
   public $password;
   /**
-   * The username to use when authenticating with the HTTP server.
-   *
    * @var string
    */
   public $username;
 
   /**
-   * The password to use when authenticating with the HTTP server.
-   *
-   * @param string $password
+   * @param string
    */
   public function setPassword($password)
   {
@@ -49,9 +43,7 @@ class BasicAuthentication extends \Google\Model
     return $this->password;
   }
   /**
-   * The username to use when authenticating with the HTTP server.
-   *
-   * @param string $username
+   * @param string
    */
   public function setUsername($username)
   {

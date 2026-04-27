@@ -20,25 +20,18 @@ namespace Google\Service\Container;
 class PubSub extends \Google\Model
 {
   /**
-   * Enable notifications for Pub/Sub.
-   *
    * @var bool
    */
   public $enabled;
   protected $filterType = Filter::class;
   protected $filterDataType = '';
   /**
-   * The desired Pub/Sub topic to which notifications will be sent by GKE.
-   * Format is `projects/{project}/topics/{topic}`.
-   *
    * @var string
    */
   public $topic;
 
   /**
-   * Enable notifications for Pub/Sub.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {
@@ -52,11 +45,7 @@ class PubSub extends \Google\Model
     return $this->enabled;
   }
   /**
-   * Allows filtering to one or more specific event types. If no filter is
-   * specified, or if a filter is specified with no event types, all event types
-   * will be sent
-   *
-   * @param Filter $filter
+   * @param Filter
    */
   public function setFilter(Filter $filter)
   {
@@ -70,10 +59,7 @@ class PubSub extends \Google\Model
     return $this->filter;
   }
   /**
-   * The desired Pub/Sub topic to which notifications will be sent by GKE.
-   * Format is `projects/{project}/topics/{topic}`.
-   *
-   * @param string $topic
+   * @param string
    */
   public function setTopic($topic)
   {

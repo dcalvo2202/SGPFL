@@ -20,23 +20,16 @@ namespace Google\Service\Docs;
 class PersonProperties extends \Google\Model
 {
   /**
-   * The email address linked to this Person. This field is always present.
-   *
    * @var string
    */
   public $email;
   /**
-   * The name of the person if it's displayed in the link text instead of the
-   * person's email address.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The email address linked to this Person. This field is always present.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {
@@ -50,10 +43,7 @@ class PersonProperties extends \Google\Model
     return $this->email;
   }
   /**
-   * The name of the person if it's displayed in the link text instead of the
-   * person's email address.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

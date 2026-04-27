@@ -20,21 +20,6 @@ namespace Google\Service\CloudSearch;
 class Interaction extends \Google\Model
 {
   /**
-   * Invalid value.
-   */
-  public const TYPE_UNSPECIFIED = 'UNSPECIFIED';
-  /**
-   * This interaction indicates the user viewed the item.
-   */
-  public const TYPE_VIEW = 'VIEW';
-  /**
-   * This interaction indicates the user edited the item.
-   */
-  public const TYPE_EDIT = 'EDIT';
-  /**
-   * The time when the user acted on the item. If multiple actions of the same
-   * type exist for a single user, only the most recent action is recorded.
-   *
    * @var string
    */
   public $interactionTime;
@@ -46,10 +31,7 @@ class Interaction extends \Google\Model
   public $type;
 
   /**
-   * The time when the user acted on the item. If multiple actions of the same
-   * type exist for a single user, only the most recent action is recorded.
-   *
-   * @param string $interactionTime
+   * @param string
    */
   public function setInteractionTime($interactionTime)
   {
@@ -63,9 +45,7 @@ class Interaction extends \Google\Model
     return $this->interactionTime;
   }
   /**
-   * The user that acted on the item.
-   *
-   * @param Principal $principal
+   * @param Principal
    */
   public function setPrincipal(Principal $principal)
   {
@@ -79,14 +59,14 @@ class Interaction extends \Google\Model
     return $this->principal;
   }
   /**
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

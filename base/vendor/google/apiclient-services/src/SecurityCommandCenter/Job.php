@@ -20,57 +20,24 @@ namespace Google\Service\SecurityCommandCenter;
 class Job extends \Google\Model
 {
   /**
-   * Unspecified represents an unknown state and should not be used.
-   */
-  public const STATE_JOB_STATE_UNSPECIFIED = 'JOB_STATE_UNSPECIFIED';
-  /**
-   * Job is scheduled and pending for run
-   */
-  public const STATE_PENDING = 'PENDING';
-  /**
-   * Job in progress
-   */
-  public const STATE_RUNNING = 'RUNNING';
-  /**
-   * Job has completed with success
-   */
-  public const STATE_SUCCEEDED = 'SUCCEEDED';
-  /**
-   * Job has completed but with failure
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * Optional. If the job did not complete successfully, this field describes
-   * why.
-   *
    * @var int
    */
   public $errorCode;
   /**
-   * Optional. Gives the location where the job ran, such as `US` or `europe-
-   * west1`
-   *
    * @var string
    */
   public $location;
   /**
-   * The fully-qualified name for a job. e.g. `projects//jobs/`
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. State of the job, such as `RUNNING` or `PENDING`.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Optional. If the job did not complete successfully, this field describes
-   * why.
-   *
-   * @param int $errorCode
+   * @param int
    */
   public function setErrorCode($errorCode)
   {
@@ -84,10 +51,7 @@ class Job extends \Google\Model
     return $this->errorCode;
   }
   /**
-   * Optional. Gives the location where the job ran, such as `US` or `europe-
-   * west1`
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -101,9 +65,7 @@ class Job extends \Google\Model
     return $this->location;
   }
   /**
-   * The fully-qualified name for a job. e.g. `projects//jobs/`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -117,18 +79,14 @@ class Job extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. State of the job, such as `RUNNING` or `PENDING`.
-   *
-   * Accepted values: JOB_STATE_UNSPECIFIED, PENDING, RUNNING, SUCCEEDED, FAILED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

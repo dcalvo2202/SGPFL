@@ -24,9 +24,7 @@ class DatafeedsCustomBatchRequest extends \Google\Collection
   protected $entriesDataType = 'array';
 
   /**
-   * The request entries to be processed in the batch.
-   *
-   * @param DatafeedsCustomBatchRequestEntry[] $entries
+   * @param DatafeedsCustomBatchRequestEntry[]
    */
   public function setEntries($entries)
   {

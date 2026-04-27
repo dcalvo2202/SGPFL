@@ -19,87 +19,29 @@ namespace Google\Service\CloudDataplex;
 
 class GoogleCloudDataplexV1DiscoveryEvent extends \Google\Model
 {
-  /**
-   * An unspecified event type.
-   */
-  public const TYPE_EVENT_TYPE_UNSPECIFIED = 'EVENT_TYPE_UNSPECIFIED';
-  /**
-   * An event representing discovery configuration in effect.
-   */
-  public const TYPE_CONFIG = 'CONFIG';
-  /**
-   * An event representing a metadata entity being created.
-   */
-  public const TYPE_ENTITY_CREATED = 'ENTITY_CREATED';
-  /**
-   * An event representing a metadata entity being updated.
-   */
-  public const TYPE_ENTITY_UPDATED = 'ENTITY_UPDATED';
-  /**
-   * An event representing a metadata entity being deleted.
-   */
-  public const TYPE_ENTITY_DELETED = 'ENTITY_DELETED';
-  /**
-   * An event representing a partition being created.
-   */
-  public const TYPE_PARTITION_CREATED = 'PARTITION_CREATED';
-  /**
-   * An event representing a partition being updated.
-   */
-  public const TYPE_PARTITION_UPDATED = 'PARTITION_UPDATED';
-  /**
-   * An event representing a partition being deleted.
-   */
-  public const TYPE_PARTITION_DELETED = 'PARTITION_DELETED';
-  /**
-   * An event representing a table being published.
-   */
-  public const TYPE_TABLE_PUBLISHED = 'TABLE_PUBLISHED';
-  /**
-   * An event representing a table being updated.
-   */
-  public const TYPE_TABLE_UPDATED = 'TABLE_UPDATED';
-  /**
-   * An event representing a table being skipped in publishing.
-   */
-  public const TYPE_TABLE_IGNORED = 'TABLE_IGNORED';
-  /**
-   * An event representing a table being deleted.
-   */
-  public const TYPE_TABLE_DELETED = 'TABLE_DELETED';
   protected $actionType = GoogleCloudDataplexV1DiscoveryEventActionDetails::class;
   protected $actionDataType = '';
   /**
-   * The id of the associated asset.
-   *
    * @var string
    */
   public $assetId;
   protected $configType = GoogleCloudDataplexV1DiscoveryEventConfigDetails::class;
   protected $configDataType = '';
   /**
-   * The data location associated with the event.
-   *
    * @var string
    */
   public $dataLocation;
   /**
-   * The id of the associated datascan for standalone discovery.
-   *
    * @var string
    */
   public $datascanId;
   protected $entityType = GoogleCloudDataplexV1DiscoveryEventEntityDetails::class;
   protected $entityDataType = '';
   /**
-   * The id of the associated lake.
-   *
    * @var string
    */
   public $lakeId;
   /**
-   * The log message.
-   *
    * @var string
    */
   public $message;
@@ -108,22 +50,16 @@ class GoogleCloudDataplexV1DiscoveryEvent extends \Google\Model
   protected $tableType = GoogleCloudDataplexV1DiscoveryEventTableDetails::class;
   protected $tableDataType = '';
   /**
-   * The type of the event being logged.
-   *
    * @var string
    */
   public $type;
   /**
-   * The id of the associated zone.
-   *
    * @var string
    */
   public $zoneId;
 
   /**
-   * Details about the action associated with the event.
-   *
-   * @param GoogleCloudDataplexV1DiscoveryEventActionDetails $action
+   * @param GoogleCloudDataplexV1DiscoveryEventActionDetails
    */
   public function setAction(GoogleCloudDataplexV1DiscoveryEventActionDetails $action)
   {
@@ -137,9 +73,7 @@ class GoogleCloudDataplexV1DiscoveryEvent extends \Google\Model
     return $this->action;
   }
   /**
-   * The id of the associated asset.
-   *
-   * @param string $assetId
+   * @param string
    */
   public function setAssetId($assetId)
   {
@@ -153,9 +87,7 @@ class GoogleCloudDataplexV1DiscoveryEvent extends \Google\Model
     return $this->assetId;
   }
   /**
-   * Details about discovery configuration in effect.
-   *
-   * @param GoogleCloudDataplexV1DiscoveryEventConfigDetails $config
+   * @param GoogleCloudDataplexV1DiscoveryEventConfigDetails
    */
   public function setConfig(GoogleCloudDataplexV1DiscoveryEventConfigDetails $config)
   {
@@ -169,9 +101,7 @@ class GoogleCloudDataplexV1DiscoveryEvent extends \Google\Model
     return $this->config;
   }
   /**
-   * The data location associated with the event.
-   *
-   * @param string $dataLocation
+   * @param string
    */
   public function setDataLocation($dataLocation)
   {
@@ -185,9 +115,7 @@ class GoogleCloudDataplexV1DiscoveryEvent extends \Google\Model
     return $this->dataLocation;
   }
   /**
-   * The id of the associated datascan for standalone discovery.
-   *
-   * @param string $datascanId
+   * @param string
    */
   public function setDatascanId($datascanId)
   {
@@ -201,9 +129,7 @@ class GoogleCloudDataplexV1DiscoveryEvent extends \Google\Model
     return $this->datascanId;
   }
   /**
-   * Details about the entity associated with the event.
-   *
-   * @param GoogleCloudDataplexV1DiscoveryEventEntityDetails $entity
+   * @param GoogleCloudDataplexV1DiscoveryEventEntityDetails
    */
   public function setEntity(GoogleCloudDataplexV1DiscoveryEventEntityDetails $entity)
   {
@@ -217,9 +143,7 @@ class GoogleCloudDataplexV1DiscoveryEvent extends \Google\Model
     return $this->entity;
   }
   /**
-   * The id of the associated lake.
-   *
-   * @param string $lakeId
+   * @param string
    */
   public function setLakeId($lakeId)
   {
@@ -233,9 +157,7 @@ class GoogleCloudDataplexV1DiscoveryEvent extends \Google\Model
     return $this->lakeId;
   }
   /**
-   * The log message.
-   *
-   * @param string $message
+   * @param string
    */
   public function setMessage($message)
   {
@@ -249,9 +171,7 @@ class GoogleCloudDataplexV1DiscoveryEvent extends \Google\Model
     return $this->message;
   }
   /**
-   * Details about the partition associated with the event.
-   *
-   * @param GoogleCloudDataplexV1DiscoveryEventPartitionDetails $partition
+   * @param GoogleCloudDataplexV1DiscoveryEventPartitionDetails
    */
   public function setPartition(GoogleCloudDataplexV1DiscoveryEventPartitionDetails $partition)
   {
@@ -265,9 +185,7 @@ class GoogleCloudDataplexV1DiscoveryEvent extends \Google\Model
     return $this->partition;
   }
   /**
-   * Details about the BigQuery table publishing associated with the event.
-   *
-   * @param GoogleCloudDataplexV1DiscoveryEventTableDetails $table
+   * @param GoogleCloudDataplexV1DiscoveryEventTableDetails
    */
   public function setTable(GoogleCloudDataplexV1DiscoveryEventTableDetails $table)
   {
@@ -281,30 +199,21 @@ class GoogleCloudDataplexV1DiscoveryEvent extends \Google\Model
     return $this->table;
   }
   /**
-   * The type of the event being logged.
-   *
-   * Accepted values: EVENT_TYPE_UNSPECIFIED, CONFIG, ENTITY_CREATED,
-   * ENTITY_UPDATED, ENTITY_DELETED, PARTITION_CREATED, PARTITION_UPDATED,
-   * PARTITION_DELETED, TABLE_PUBLISHED, TABLE_UPDATED, TABLE_IGNORED,
-   * TABLE_DELETED
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * The id of the associated zone.
-   *
-   * @param string $zoneId
+   * @param string
    */
   public function setZoneId($zoneId)
   {

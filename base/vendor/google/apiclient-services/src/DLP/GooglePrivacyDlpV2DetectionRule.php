@@ -23,9 +23,7 @@ class GooglePrivacyDlpV2DetectionRule extends \Google\Model
   protected $hotwordRuleDataType = '';
 
   /**
-   * Hotword-based detection rule.
-   *
-   * @param GooglePrivacyDlpV2HotwordRule $hotwordRule
+   * @param GooglePrivacyDlpV2HotwordRule
    */
   public function setHotwordRule(GooglePrivacyDlpV2HotwordRule $hotwordRule)
   {

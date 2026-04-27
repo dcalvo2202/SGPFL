@@ -21,23 +21,14 @@ class RolloutRestriction extends \Google\Collection
 {
   protected $collection_key = 'invokers';
   /**
-   * Optional. Rollout actions to be restricted as part of the policy. If left
-   * empty, all actions will be restricted.
-   *
    * @var string[]
    */
   public $actions;
   /**
-   * Required. Restriction rule ID. Required and must be unique within a
-   * DeployPolicy. The format is `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`.
-   *
    * @var string
    */
   public $id;
   /**
-   * Optional. What invoked the action. If left empty, all invoker types will be
-   * restricted.
-   *
    * @var string[]
    */
   public $invokers;
@@ -45,10 +36,7 @@ class RolloutRestriction extends \Google\Collection
   protected $timeWindowsDataType = '';
 
   /**
-   * Optional. Rollout actions to be restricted as part of the policy. If left
-   * empty, all actions will be restricted.
-   *
-   * @param string[] $actions
+   * @param string[]
    */
   public function setActions($actions)
   {
@@ -62,10 +50,7 @@ class RolloutRestriction extends \Google\Collection
     return $this->actions;
   }
   /**
-   * Required. Restriction rule ID. Required and must be unique within a
-   * DeployPolicy. The format is `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -79,10 +64,7 @@ class RolloutRestriction extends \Google\Collection
     return $this->id;
   }
   /**
-   * Optional. What invoked the action. If left empty, all invoker types will be
-   * restricted.
-   *
-   * @param string[] $invokers
+   * @param string[]
    */
   public function setInvokers($invokers)
   {
@@ -96,9 +78,7 @@ class RolloutRestriction extends \Google\Collection
     return $this->invokers;
   }
   /**
-   * Required. Time window within which actions are restricted.
-   *
-   * @param TimeWindows $timeWindows
+   * @param TimeWindows
    */
   public function setTimeWindows(TimeWindows $timeWindows)
   {

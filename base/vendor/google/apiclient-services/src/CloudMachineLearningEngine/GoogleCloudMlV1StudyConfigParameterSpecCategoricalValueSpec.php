@@ -21,18 +21,12 @@ class GoogleCloudMlV1StudyConfigParameterSpecCategoricalValueSpec extends \Googl
 {
   protected $collection_key = 'values';
   /**
-   * Must be specified if type is `CATEGORICAL`. The list of possible
-   * categories.
-   *
    * @var string[]
    */
   public $values;
 
   /**
-   * Must be specified if type is `CATEGORICAL`. The list of possible
-   * categories.
-   *
-   * @param string[] $values
+   * @param string[]
    */
   public function setValues($values)
   {

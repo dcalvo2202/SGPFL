@@ -20,28 +20,18 @@ namespace Google\Service\CertificateAuthorityService;
 class X509Extension extends \Google\Model
 {
   /**
-   * Optional. Indicates whether or not this extension is critical (i.e., if the
-   * client does not know how to handle this extension, the client should
-   * consider this to be an error).
-   *
    * @var bool
    */
   public $critical;
   protected $objectIdType = ObjectId::class;
   protected $objectIdDataType = '';
   /**
-   * Required. The value of this X.509 extension.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Optional. Indicates whether or not this extension is critical (i.e., if the
-   * client does not know how to handle this extension, the client should
-   * consider this to be an error).
-   *
-   * @param bool $critical
+   * @param bool
    */
   public function setCritical($critical)
   {
@@ -55,9 +45,7 @@ class X509Extension extends \Google\Model
     return $this->critical;
   }
   /**
-   * Required. The OID for this X.509 extension.
-   *
-   * @param ObjectId $objectId
+   * @param ObjectId
    */
   public function setObjectId(ObjectId $objectId)
   {
@@ -71,9 +59,7 @@ class X509Extension extends \Google\Model
     return $this->objectId;
   }
   /**
-   * Required. The value of this X.509 extension.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

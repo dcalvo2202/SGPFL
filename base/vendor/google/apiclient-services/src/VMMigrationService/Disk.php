@@ -20,28 +20,20 @@ namespace Google\Service\VMMigrationService;
 class Disk extends \Google\Model
 {
   /**
-   * The disk's Logical Unit Number (LUN).
-   *
    * @var int
    */
   public $lun;
   /**
-   * The disk name.
-   *
    * @var string
    */
   public $name;
   /**
-   * The disk size in GB.
-   *
    * @var int
    */
   public $sizeGb;
 
   /**
-   * The disk's Logical Unit Number (LUN).
-   *
-   * @param int $lun
+   * @param int
    */
   public function setLun($lun)
   {
@@ -55,9 +47,7 @@ class Disk extends \Google\Model
     return $this->lun;
   }
   /**
-   * The disk name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -71,9 +61,7 @@ class Disk extends \Google\Model
     return $this->name;
   }
   /**
-   * The disk size in GB.
-   *
-   * @param int $sizeGb
+   * @param int
    */
   public function setSizeGb($sizeGb)
   {

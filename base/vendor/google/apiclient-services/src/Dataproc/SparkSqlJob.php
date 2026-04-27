@@ -21,41 +21,28 @@ class SparkSqlJob extends \Google\Collection
 {
   protected $collection_key = 'jarFileUris';
   /**
-   * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
-   *
    * @var string[]
    */
   public $jarFileUris;
   protected $loggingConfigType = LoggingConfig::class;
   protected $loggingConfigDataType = '';
   /**
-   * Optional. A mapping of property names to values, used to configure Spark
-   * SQL's SparkConf. Properties that conflict with values set by the Dataproc
-   * API might be overwritten.
-   *
    * @var string[]
    */
   public $properties;
   /**
-   * The HCFS URI of the script that contains SQL queries.
-   *
    * @var string
    */
   public $queryFileUri;
   protected $queryListType = QueryList::class;
   protected $queryListDataType = '';
   /**
-   * Optional. Mapping of query variable names to values (equivalent to the
-   * Spark SQL command: SET name="value";).
-   *
    * @var string[]
    */
   public $scriptVariables;
 
   /**
-   * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
-   *
-   * @param string[] $jarFileUris
+   * @param string[]
    */
   public function setJarFileUris($jarFileUris)
   {
@@ -69,9 +56,7 @@ class SparkSqlJob extends \Google\Collection
     return $this->jarFileUris;
   }
   /**
-   * Optional. The runtime log config for job execution.
-   *
-   * @param LoggingConfig $loggingConfig
+   * @param LoggingConfig
    */
   public function setLoggingConfig(LoggingConfig $loggingConfig)
   {
@@ -85,11 +70,7 @@ class SparkSqlJob extends \Google\Collection
     return $this->loggingConfig;
   }
   /**
-   * Optional. A mapping of property names to values, used to configure Spark
-   * SQL's SparkConf. Properties that conflict with values set by the Dataproc
-   * API might be overwritten.
-   *
-   * @param string[] $properties
+   * @param string[]
    */
   public function setProperties($properties)
   {
@@ -103,9 +84,7 @@ class SparkSqlJob extends \Google\Collection
     return $this->properties;
   }
   /**
-   * The HCFS URI of the script that contains SQL queries.
-   *
-   * @param string $queryFileUri
+   * @param string
    */
   public function setQueryFileUri($queryFileUri)
   {
@@ -119,9 +98,7 @@ class SparkSqlJob extends \Google\Collection
     return $this->queryFileUri;
   }
   /**
-   * A list of queries.
-   *
-   * @param QueryList $queryList
+   * @param QueryList
    */
   public function setQueryList(QueryList $queryList)
   {
@@ -135,10 +112,7 @@ class SparkSqlJob extends \Google\Collection
     return $this->queryList;
   }
   /**
-   * Optional. Mapping of query variable names to values (equivalent to the
-   * Spark SQL command: SET name="value";).
-   *
-   * @param string[] $scriptVariables
+   * @param string[]
    */
   public function setScriptVariables($scriptVariables)
   {

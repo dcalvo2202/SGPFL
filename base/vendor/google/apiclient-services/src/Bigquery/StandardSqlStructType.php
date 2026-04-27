@@ -24,9 +24,7 @@ class StandardSqlStructType extends \Google\Collection
   protected $fieldsDataType = 'array';
 
   /**
-   * Fields within the struct.
-   *
-   * @param StandardSqlField[] $fields
+   * @param StandardSqlField[]
    */
   public function setFields($fields)
   {

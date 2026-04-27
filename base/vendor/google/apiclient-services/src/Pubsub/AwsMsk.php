@@ -20,83 +20,28 @@ namespace Google\Service\Pubsub;
 class AwsMsk extends \Google\Model
 {
   /**
-   * Default value. This value is unused.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Ingestion is active.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * Permission denied encountered while consuming data from Amazon MSK.
-   */
-  public const STATE_MSK_PERMISSION_DENIED = 'MSK_PERMISSION_DENIED';
-  /**
-   * Permission denied encountered while publishing to the topic.
-   */
-  public const STATE_PUBLISH_PERMISSION_DENIED = 'PUBLISH_PERMISSION_DENIED';
-  /**
-   * The provided MSK cluster wasn't found.
-   */
-  public const STATE_CLUSTER_NOT_FOUND = 'CLUSTER_NOT_FOUND';
-  /**
-   * The provided topic wasn't found.
-   */
-  public const STATE_TOPIC_NOT_FOUND = 'TOPIC_NOT_FOUND';
-  /**
-   * Indicates an error state where the ingestion source cannot be processed.
-   * This occurs because there is no overlap between the regions allowed by the
-   * topic's `MessageStoragePolicy` and the regions permitted by the Regional
-   * Access Boundary (RAB) restrictions on the project's Pub/Sub service
-   * account. A common, allowed region is required to determine a valid
-   * ingestion region.
-   */
-  public const STATE_CONFLICTING_REGION_CONSTRAINTS = 'CONFLICTING_REGION_CONSTRAINTS';
-  /**
-   * Required. AWS role ARN to be used for Federated Identity authentication
-   * with Amazon MSK. Check the Pub/Sub docs for how to set up this role and the
-   * required permissions that need to be attached to it.
-   *
    * @var string
    */
   public $awsRoleArn;
   /**
-   * Required. The Amazon Resource Name (ARN) that uniquely identifies the
-   * cluster.
-   *
    * @var string
    */
   public $clusterArn;
   /**
-   * Required. The GCP service account to be used for Federated Identity
-   * authentication with Amazon MSK (via a `AssumeRoleWithWebIdentity` call for
-   * the provided role). The `aws_role_arn` must be set up with
-   * `accounts.google.com:sub` equals to this service account number.
-   *
    * @var string
    */
   public $gcpServiceAccount;
   /**
-   * Output only. An output-only field that indicates the state of the Amazon
-   * MSK ingestion source.
-   *
    * @var string
    */
   public $state;
   /**
-   * Required. The name of the topic in the Amazon MSK cluster that Pub/Sub will
-   * import from.
-   *
    * @var string
    */
   public $topic;
 
   /**
-   * Required. AWS role ARN to be used for Federated Identity authentication
-   * with Amazon MSK. Check the Pub/Sub docs for how to set up this role and the
-   * required permissions that need to be attached to it.
-   *
-   * @param string $awsRoleArn
+   * @param string
    */
   public function setAwsRoleArn($awsRoleArn)
   {
@@ -110,10 +55,7 @@ class AwsMsk extends \Google\Model
     return $this->awsRoleArn;
   }
   /**
-   * Required. The Amazon Resource Name (ARN) that uniquely identifies the
-   * cluster.
-   *
-   * @param string $clusterArn
+   * @param string
    */
   public function setClusterArn($clusterArn)
   {
@@ -127,12 +69,7 @@ class AwsMsk extends \Google\Model
     return $this->clusterArn;
   }
   /**
-   * Required. The GCP service account to be used for Federated Identity
-   * authentication with Amazon MSK (via a `AssumeRoleWithWebIdentity` call for
-   * the provided role). The `aws_role_arn` must be set up with
-   * `accounts.google.com:sub` equals to this service account number.
-   *
-   * @param string $gcpServiceAccount
+   * @param string
    */
   public function setGcpServiceAccount($gcpServiceAccount)
   {
@@ -146,31 +83,21 @@ class AwsMsk extends \Google\Model
     return $this->gcpServiceAccount;
   }
   /**
-   * Output only. An output-only field that indicates the state of the Amazon
-   * MSK ingestion source.
-   *
-   * Accepted values: STATE_UNSPECIFIED, ACTIVE, MSK_PERMISSION_DENIED,
-   * PUBLISH_PERMISSION_DENIED, CLUSTER_NOT_FOUND, TOPIC_NOT_FOUND,
-   * CONFLICTING_REGION_CONSTRAINTS
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Required. The name of the topic in the Amazon MSK cluster that Pub/Sub will
-   * import from.
-   *
-   * @param string $topic
+   * @param string
    */
   public function setTopic($topic)
   {

@@ -25,7 +25,7 @@ class HealthCheckReference extends \Google\Model
   public $healthCheck;
 
   /**
-   * @param string $healthCheck
+   * @param string
    */
   public function setHealthCheck($healthCheck)
   {

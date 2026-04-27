@@ -26,9 +26,7 @@ class GoogleCloudRetailV2betaImportProductsResponse extends \Google\Collection
   protected $errorsConfigDataType = '';
 
   /**
-   * A sample of errors encountered while processing the request.
-   *
-   * @param GoogleRpcStatus[] $errorSamples
+   * @param GoogleRpcStatus[]
    */
   public function setErrorSamples($errorSamples)
   {
@@ -42,9 +40,7 @@ class GoogleCloudRetailV2betaImportProductsResponse extends \Google\Collection
     return $this->errorSamples;
   }
   /**
-   * Echoes the destination for the complete errors in the request if set.
-   *
-   * @param GoogleCloudRetailV2betaImportErrorsConfig $errorsConfig
+   * @param GoogleCloudRetailV2betaImportErrorsConfig
    */
   public function setErrorsConfig(GoogleCloudRetailV2betaImportErrorsConfig $errorsConfig)
   {

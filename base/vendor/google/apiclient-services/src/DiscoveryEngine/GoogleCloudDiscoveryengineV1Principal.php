@@ -20,55 +20,16 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1Principal extends \Google\Model
 {
   /**
-   * For 3P application identities which are not present in the customer
-   * identity provider.
-   *
-   * @var string
-   */
-  public $externalEntityId;
-  /**
-   * Group identifier. For Google Workspace user account, group_id should be the
-   * google workspace group email. For non-google identity provider user
-   * account, group_id is the mapped group identifier configured during the
-   * workforcepool config.
-   *
    * @var string
    */
   public $groupId;
   /**
-   * User identifier. For Google Workspace user account, user_id should be the
-   * google workspace user email. For non-google identity provider user account,
-   * user_id is the mapped user identifier configured during the workforcepool
-   * config.
-   *
    * @var string
    */
   public $userId;
 
   /**
-   * For 3P application identities which are not present in the customer
-   * identity provider.
-   *
-   * @param string $externalEntityId
-   */
-  public function setExternalEntityId($externalEntityId)
-  {
-    $this->externalEntityId = $externalEntityId;
-  }
-  /**
-   * @return string
-   */
-  public function getExternalEntityId()
-  {
-    return $this->externalEntityId;
-  }
-  /**
-   * Group identifier. For Google Workspace user account, group_id should be the
-   * google workspace group email. For non-google identity provider user
-   * account, group_id is the mapped group identifier configured during the
-   * workforcepool config.
-   *
-   * @param string $groupId
+   * @param string
    */
   public function setGroupId($groupId)
   {
@@ -82,12 +43,7 @@ class GoogleCloudDiscoveryengineV1Principal extends \Google\Model
     return $this->groupId;
   }
   /**
-   * User identifier. For Google Workspace user account, user_id should be the
-   * google workspace user email. For non-google identity provider user account,
-   * user_id is the mapped user identifier configured during the workforcepool
-   * config.
-   *
-   * @param string $userId
+   * @param string
    */
   public function setUserId($userId)
   {

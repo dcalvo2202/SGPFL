@@ -23,9 +23,7 @@ class GooglePrivacyDlpV2DatabaseResourceCollection extends \Google\Model
   protected $includeRegexesDataType = '';
 
   /**
-   * A collection of regular expressions to match a database resource against.
-   *
-   * @param GooglePrivacyDlpV2DatabaseResourceRegexes $includeRegexes
+   * @param GooglePrivacyDlpV2DatabaseResourceRegexes
    */
   public function setIncludeRegexes(GooglePrivacyDlpV2DatabaseResourceRegexes $includeRegexes)
   {

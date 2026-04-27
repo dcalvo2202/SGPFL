@@ -20,22 +20,16 @@ namespace Google\Service\CloudSearch;
 class MatchRange extends \Google\Model
 {
   /**
-   * End of the match in the snippet.
-   *
    * @var int
    */
   public $end;
   /**
-   * Starting position of the match in the snippet.
-   *
    * @var int
    */
   public $start;
 
   /**
-   * End of the match in the snippet.
-   *
-   * @param int $end
+   * @param int
    */
   public function setEnd($end)
   {
@@ -49,9 +43,7 @@ class MatchRange extends \Google\Model
     return $this->end;
   }
   /**
-   * Starting position of the match in the snippet.
-   *
-   * @param int $start
+   * @param int
    */
   public function setStart($start)
   {

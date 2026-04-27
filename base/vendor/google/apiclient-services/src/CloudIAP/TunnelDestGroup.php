@@ -21,29 +21,20 @@ class TunnelDestGroup extends \Google\Collection
 {
   protected $collection_key = 'fqdns';
   /**
-   * Optional. Unordered list. List of CIDRs that this group applies to.
-   *
    * @var string[]
    */
   public $cidrs;
   /**
-   * Optional. Unordered list. List of FQDNs that this group applies to.
-   *
    * @var string[]
    */
   public $fqdns;
   /**
-   * Identifier. Identifier for the TunnelDestGroup. Must be unique within the
-   * project and contain only lower case letters (a-z) and dashes (-).
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Optional. Unordered list. List of CIDRs that this group applies to.
-   *
-   * @param string[] $cidrs
+   * @param string[]
    */
   public function setCidrs($cidrs)
   {
@@ -57,9 +48,7 @@ class TunnelDestGroup extends \Google\Collection
     return $this->cidrs;
   }
   /**
-   * Optional. Unordered list. List of FQDNs that this group applies to.
-   *
-   * @param string[] $fqdns
+   * @param string[]
    */
   public function setFqdns($fqdns)
   {
@@ -73,10 +62,7 @@ class TunnelDestGroup extends \Google\Collection
     return $this->fqdns;
   }
   /**
-   * Identifier. Identifier for the TunnelDestGroup. Must be unique within the
-   * project and contain only lower case letters (a-z) and dashes (-).
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

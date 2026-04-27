@@ -20,22 +20,16 @@ namespace Google\Service\Doubleclicksearch;
 class ReportFiles extends \Google\Model
 {
   /**
-   * The size of this report file in bytes.
-   *
    * @var string
    */
   public $byteCount;
   /**
-   * Use this url to download the report file.
-   *
    * @var string
    */
   public $url;
 
   /**
-   * The size of this report file in bytes.
-   *
-   * @param string $byteCount
+   * @param string
    */
   public function setByteCount($byteCount)
   {
@@ -49,9 +43,7 @@ class ReportFiles extends \Google\Model
     return $this->byteCount;
   }
   /**
-   * Use this url to download the report file.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

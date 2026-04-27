@@ -21,9 +21,6 @@ class GoogleCloudAiplatformV1ListRagCorporaResponse extends \Google\Collection
 {
   protected $collection_key = 'ragCorpora';
   /**
-   * A token to retrieve the next page of results. Pass to
-   * ListRagCorporaRequest.page_token to obtain that page.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GoogleCloudAiplatformV1ListRagCorporaResponse extends \Google\Collection
   protected $ragCorporaDataType = 'array';
 
   /**
-   * A token to retrieve the next page of results. Pass to
-   * ListRagCorporaRequest.page_token to obtain that page.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class GoogleCloudAiplatformV1ListRagCorporaResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * List of RagCorpora in the requested page.
-   *
-   * @param GoogleCloudAiplatformV1RagCorpus[] $ragCorpora
+   * @param GoogleCloudAiplatformV1RagCorpus[]
    */
   public function setRagCorpora($ragCorpora)
   {

@@ -21,24 +21,16 @@ class ModifyContactGroupMembersResponse extends \Google\Collection
 {
   protected $collection_key = 'notFoundResourceNames';
   /**
-   * The contact people resource names that cannot be removed from their last
-   * contact group.
-   *
    * @var string[]
    */
   public $canNotRemoveLastContactGroupResourceNames;
   /**
-   * The contact people resource names that were not found.
-   *
    * @var string[]
    */
   public $notFoundResourceNames;
 
   /**
-   * The contact people resource names that cannot be removed from their last
-   * contact group.
-   *
-   * @param string[] $canNotRemoveLastContactGroupResourceNames
+   * @param string[]
    */
   public function setCanNotRemoveLastContactGroupResourceNames($canNotRemoveLastContactGroupResourceNames)
   {
@@ -52,9 +44,7 @@ class ModifyContactGroupMembersResponse extends \Google\Collection
     return $this->canNotRemoveLastContactGroupResourceNames;
   }
   /**
-   * The contact people resource names that were not found.
-   *
-   * @param string[] $notFoundResourceNames
+   * @param string[]
    */
   public function setNotFoundResourceNames($notFoundResourceNames)
   {

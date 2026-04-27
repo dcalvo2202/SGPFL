@@ -22,23 +22,12 @@ class GoogleCloudApigeeV1CreditDeveloperBalanceRequest extends \Google\Model
   protected $transactionAmountType = GoogleTypeMoney::class;
   protected $transactionAmountDataType = '';
   /**
-   * Each transaction_id uniquely identifies a credit balance request. If
-   * multiple requests are received with the same transaction_id, only one of
-   * them will be considered.
-   *
    * @var string
    */
   public $transactionId;
 
   /**
-   * The amount of money to be credited. The wallet corresponding to the
-   * currency specified within `transaction_amount` will be updated. For
-   * example, if you specified `currency_code` within `transaction_amount` as
-   * "USD", then the amount would be added to the wallet which has the "USD"
-   * currency or if no such wallet exists, a new wallet will be created with the
-   * "USD" currency.
-   *
-   * @param GoogleTypeMoney $transactionAmount
+   * @param GoogleTypeMoney
    */
   public function setTransactionAmount(GoogleTypeMoney $transactionAmount)
   {
@@ -52,11 +41,7 @@ class GoogleCloudApigeeV1CreditDeveloperBalanceRequest extends \Google\Model
     return $this->transactionAmount;
   }
   /**
-   * Each transaction_id uniquely identifies a credit balance request. If
-   * multiple requests are received with the same transaction_id, only one of
-   * them will be considered.
-   *
-   * @param string $transactionId
+   * @param string
    */
   public function setTransactionId($transactionId)
   {

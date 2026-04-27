@@ -21,22 +21,16 @@ class GoogleCloudAiplatformV1FeatureViewFeatureRegistrySourceFeatureGroup extend
 {
   protected $collection_key = 'featureIds';
   /**
-   * Required. Identifier of the feature group.
-   *
    * @var string
    */
   public $featureGroupId;
   /**
-   * Required. Identifiers of features under the feature group.
-   *
    * @var string[]
    */
   public $featureIds;
 
   /**
-   * Required. Identifier of the feature group.
-   *
-   * @param string $featureGroupId
+   * @param string
    */
   public function setFeatureGroupId($featureGroupId)
   {
@@ -50,9 +44,7 @@ class GoogleCloudAiplatformV1FeatureViewFeatureRegistrySourceFeatureGroup extend
     return $this->featureGroupId;
   }
   /**
-   * Required. Identifiers of features under the feature group.
-   *
-   * @param string[] $featureIds
+   * @param string[]
    */
   public function setFeatureIds($featureIds)
   {

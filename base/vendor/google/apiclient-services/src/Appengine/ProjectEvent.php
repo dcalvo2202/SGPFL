@@ -19,21 +19,11 @@ namespace Google\Service\Appengine;
 
 class ProjectEvent extends \Google\Model
 {
-  public const PHASE_CONTAINER_EVENT_PHASE_UNSPECIFIED = 'CONTAINER_EVENT_PHASE_UNSPECIFIED';
-  public const PHASE_BEFORE_RESOURCE_HANDLING = 'BEFORE_RESOURCE_HANDLING';
-  public const PHASE_AFTER_RESOURCE_HANDLING = 'AFTER_RESOURCE_HANDLING';
   /**
-   * The unique ID for this project event. CLHs can use this value to dedup
-   * repeated calls. required
-   *
    * @var string
    */
   public $eventId;
   /**
-   * Phase indicates when in the container event propagation this event is being
-   * communicated. Events are sent before and after the per-resource events are
-   * propagated. required
-   *
    * @var string
    */
   public $phase;
@@ -43,10 +33,7 @@ class ProjectEvent extends \Google\Model
   protected $stateDataType = '';
 
   /**
-   * The unique ID for this project event. CLHs can use this value to dedup
-   * repeated calls. required
-   *
-   * @param string $eventId
+   * @param string
    */
   public function setEventId($eventId)
   {
@@ -60,30 +47,21 @@ class ProjectEvent extends \Google\Model
     return $this->eventId;
   }
   /**
-   * Phase indicates when in the container event propagation this event is being
-   * communicated. Events are sent before and after the per-resource events are
-   * propagated. required
-   *
-   * Accepted values: CONTAINER_EVENT_PHASE_UNSPECIFIED,
-   * BEFORE_RESOURCE_HANDLING, AFTER_RESOURCE_HANDLING
-   *
-   * @param self::PHASE_* $phase
+   * @param string
    */
   public function setPhase($phase)
   {
     $this->phase = $phase;
   }
   /**
-   * @return self::PHASE_*
+   * @return string
    */
   public function getPhase()
   {
     return $this->phase;
   }
   /**
-   * The projects metadata for this project. required
-   *
-   * @param ProjectsMetadata $projectMetadata
+   * @param ProjectsMetadata
    */
   public function setProjectMetadata(ProjectsMetadata $projectMetadata)
   {
@@ -97,9 +75,7 @@ class ProjectEvent extends \Google\Model
     return $this->projectMetadata;
   }
   /**
-   * The state of the organization that led to this event.
-   *
-   * @param ContainerState $state
+   * @param ContainerState
    */
   public function setState(ContainerState $state)
   {

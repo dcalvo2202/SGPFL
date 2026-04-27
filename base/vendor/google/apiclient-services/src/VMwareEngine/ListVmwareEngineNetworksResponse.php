@@ -21,15 +21,10 @@ class ListVmwareEngineNetworksResponse extends \Google\Collection
 {
   protected $collection_key = 'vmwareEngineNetworks';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Unreachable resources.
-   *
    * @var string[]
    */
   public $unreachable;
@@ -37,10 +32,7 @@ class ListVmwareEngineNetworksResponse extends \Google\Collection
   protected $vmwareEngineNetworksDataType = 'array';
 
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -54,9 +46,7 @@ class ListVmwareEngineNetworksResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Unreachable resources.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {
@@ -70,9 +60,7 @@ class ListVmwareEngineNetworksResponse extends \Google\Collection
     return $this->unreachable;
   }
   /**
-   * A list of VMware Engine networks.
-   *
-   * @param VmwareEngineNetwork[] $vmwareEngineNetworks
+   * @param VmwareEngineNetwork[]
    */
   public function setVmwareEngineNetworks($vmwareEngineNetworks)
   {

@@ -19,9 +19,6 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowCxV3SafetySettings extends \Google\Collection
 {
-  public const DEFAULT_BANNED_PHRASE_MATCH_STRATEGY_PHRASE_MATCH_STRATEGY_UNSPECIFIED = 'PHRASE_MATCH_STRATEGY_UNSPECIFIED';
-  public const DEFAULT_BANNED_PHRASE_MATCH_STRATEGY_PARTIAL_MATCH = 'PARTIAL_MATCH';
-  public const DEFAULT_BANNED_PHRASE_MATCH_STRATEGY_WORD_MATCH = 'WORD_MATCH';
   protected $collection_key = 'bannedPhrases';
   protected $bannedPhrasesType = GoogleCloudDialogflowCxV3SafetySettingsPhrase::class;
   protected $bannedPhrasesDataType = 'array';
@@ -29,15 +26,9 @@ class GoogleCloudDialogflowCxV3SafetySettings extends \Google\Collection
    * @var string
    */
   public $defaultBannedPhraseMatchStrategy;
-  protected $defaultRaiSettingsType = GoogleCloudDialogflowCxV3SafetySettingsRaiSettings::class;
-  protected $defaultRaiSettingsDataType = '';
-  protected $promptSecuritySettingsType = GoogleCloudDialogflowCxV3SafetySettingsPromptSecuritySettings::class;
-  protected $promptSecuritySettingsDataType = '';
-  protected $raiSettingsType = GoogleCloudDialogflowCxV3SafetySettingsRaiSettings::class;
-  protected $raiSettingsDataType = '';
 
   /**
-   * @param GoogleCloudDialogflowCxV3SafetySettingsPhrase[] $bannedPhrases
+   * @param GoogleCloudDialogflowCxV3SafetySettingsPhrase[]
    */
   public function setBannedPhrases($bannedPhrases)
   {
@@ -51,60 +42,18 @@ class GoogleCloudDialogflowCxV3SafetySettings extends \Google\Collection
     return $this->bannedPhrases;
   }
   /**
-   * @param self::DEFAULT_BANNED_PHRASE_MATCH_STRATEGY_* $defaultBannedPhraseMatchStrategy
+   * @param string
    */
   public function setDefaultBannedPhraseMatchStrategy($defaultBannedPhraseMatchStrategy)
   {
     $this->defaultBannedPhraseMatchStrategy = $defaultBannedPhraseMatchStrategy;
   }
   /**
-   * @return self::DEFAULT_BANNED_PHRASE_MATCH_STRATEGY_*
+   * @return string
    */
   public function getDefaultBannedPhraseMatchStrategy()
   {
     return $this->defaultBannedPhraseMatchStrategy;
-  }
-  /**
-   * @param GoogleCloudDialogflowCxV3SafetySettingsRaiSettings $defaultRaiSettings
-   */
-  public function setDefaultRaiSettings(GoogleCloudDialogflowCxV3SafetySettingsRaiSettings $defaultRaiSettings)
-  {
-    $this->defaultRaiSettings = $defaultRaiSettings;
-  }
-  /**
-   * @return GoogleCloudDialogflowCxV3SafetySettingsRaiSettings
-   */
-  public function getDefaultRaiSettings()
-  {
-    return $this->defaultRaiSettings;
-  }
-  /**
-   * @param GoogleCloudDialogflowCxV3SafetySettingsPromptSecuritySettings $promptSecuritySettings
-   */
-  public function setPromptSecuritySettings(GoogleCloudDialogflowCxV3SafetySettingsPromptSecuritySettings $promptSecuritySettings)
-  {
-    $this->promptSecuritySettings = $promptSecuritySettings;
-  }
-  /**
-   * @return GoogleCloudDialogflowCxV3SafetySettingsPromptSecuritySettings
-   */
-  public function getPromptSecuritySettings()
-  {
-    return $this->promptSecuritySettings;
-  }
-  /**
-   * @param GoogleCloudDialogflowCxV3SafetySettingsRaiSettings $raiSettings
-   */
-  public function setRaiSettings(GoogleCloudDialogflowCxV3SafetySettingsRaiSettings $raiSettings)
-  {
-    $this->raiSettings = $raiSettings;
-  }
-  /**
-   * @return GoogleCloudDialogflowCxV3SafetySettingsRaiSettings
-   */
-  public function getRaiSettings()
-  {
-    return $this->raiSettings;
   }
 }
 

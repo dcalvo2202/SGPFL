@@ -26,9 +26,7 @@ class GoogleCloudContentwarehouseV1RuleActionsPair extends \Google\Collection
   protected $ruleDataType = '';
 
   /**
-   * Outputs of executing the actions associated with the above rule.
-   *
-   * @param GoogleCloudContentwarehouseV1ActionOutput[] $actionOutputs
+   * @param GoogleCloudContentwarehouseV1ActionOutput[]
    */
   public function setActionOutputs($actionOutputs)
   {
@@ -42,9 +40,7 @@ class GoogleCloudContentwarehouseV1RuleActionsPair extends \Google\Collection
     return $this->actionOutputs;
   }
   /**
-   * Represents the rule.
-   *
-   * @param GoogleCloudContentwarehouseV1Rule $rule
+   * @param GoogleCloudContentwarehouseV1Rule
    */
   public function setRule(GoogleCloudContentwarehouseV1Rule $rule)
   {

@@ -23,51 +23,28 @@ class DotnetSettings extends \Google\Collection
   protected $commonType = CommonLanguageSettings::class;
   protected $commonDataType = '';
   /**
-   * Namespaces which must be aliased in snippets due to a known (but non-
-   * generator-predictable) naming collision
-   *
    * @var string[]
    */
   public $forcedNamespaceAliases;
   /**
-   * Method signatures (in the form "service.method(signature)") which are
-   * provided separately, so shouldn't be generated. Snippets *calling* these
-   * methods are still generated, however.
-   *
    * @var string[]
    */
   public $handwrittenSignatures;
   /**
-   * List of full resource types to ignore during generation. This is typically
-   * used for API-specific Location resources, which should be handled by the
-   * generator as if they were actually the common Location resources. Example
-   * entry: "documentai.googleapis.com/Location"
-   *
    * @var string[]
    */
   public $ignoredResources;
   /**
-   * Map from full resource types to the effective short name for the resource.
-   * This is used when otherwise resource named from different services would
-   * cause naming collisions. Example entry:
-   * "datalabeling.googleapis.com/Dataset": "DataLabelingDataset"
-   *
    * @var string[]
    */
   public $renamedResources;
   /**
-   * Map from original service names to renamed versions. This is used when the
-   * default generated types would cause a naming conflict. (Neither name is
-   * fully-qualified.) Example: Subscriber to SubscriberServiceApi.
-   *
    * @var string[]
    */
   public $renamedServices;
 
   /**
-   * Some settings.
-   *
-   * @param CommonLanguageSettings $common
+   * @param CommonLanguageSettings
    */
   public function setCommon(CommonLanguageSettings $common)
   {
@@ -81,10 +58,7 @@ class DotnetSettings extends \Google\Collection
     return $this->common;
   }
   /**
-   * Namespaces which must be aliased in snippets due to a known (but non-
-   * generator-predictable) naming collision
-   *
-   * @param string[] $forcedNamespaceAliases
+   * @param string[]
    */
   public function setForcedNamespaceAliases($forcedNamespaceAliases)
   {
@@ -98,11 +72,7 @@ class DotnetSettings extends \Google\Collection
     return $this->forcedNamespaceAliases;
   }
   /**
-   * Method signatures (in the form "service.method(signature)") which are
-   * provided separately, so shouldn't be generated. Snippets *calling* these
-   * methods are still generated, however.
-   *
-   * @param string[] $handwrittenSignatures
+   * @param string[]
    */
   public function setHandwrittenSignatures($handwrittenSignatures)
   {
@@ -116,12 +86,7 @@ class DotnetSettings extends \Google\Collection
     return $this->handwrittenSignatures;
   }
   /**
-   * List of full resource types to ignore during generation. This is typically
-   * used for API-specific Location resources, which should be handled by the
-   * generator as if they were actually the common Location resources. Example
-   * entry: "documentai.googleapis.com/Location"
-   *
-   * @param string[] $ignoredResources
+   * @param string[]
    */
   public function setIgnoredResources($ignoredResources)
   {
@@ -135,12 +100,7 @@ class DotnetSettings extends \Google\Collection
     return $this->ignoredResources;
   }
   /**
-   * Map from full resource types to the effective short name for the resource.
-   * This is used when otherwise resource named from different services would
-   * cause naming collisions. Example entry:
-   * "datalabeling.googleapis.com/Dataset": "DataLabelingDataset"
-   *
-   * @param string[] $renamedResources
+   * @param string[]
    */
   public function setRenamedResources($renamedResources)
   {
@@ -154,11 +114,7 @@ class DotnetSettings extends \Google\Collection
     return $this->renamedResources;
   }
   /**
-   * Map from original service names to renamed versions. This is used when the
-   * default generated types would cause a naming conflict. (Neither name is
-   * fully-qualified.) Example: Subscriber to SubscriberServiceApi.
-   *
-   * @param string[] $renamedServices
+   * @param string[]
    */
   public function setRenamedServices($renamedServices)
   {

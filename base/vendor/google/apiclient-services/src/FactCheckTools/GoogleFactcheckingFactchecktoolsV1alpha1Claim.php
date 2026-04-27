@@ -21,30 +21,22 @@ class GoogleFactcheckingFactchecktoolsV1alpha1Claim extends \Google\Collection
 {
   protected $collection_key = 'claimReview';
   /**
-   * The date that the claim was made.
-   *
    * @var string
    */
   public $claimDate;
   protected $claimReviewType = GoogleFactcheckingFactchecktoolsV1alpha1ClaimReview::class;
   protected $claimReviewDataType = 'array';
   /**
-   * A person or organization stating the claim. For instance, "John Doe".
-   *
    * @var string
    */
   public $claimant;
   /**
-   * The claim text. For instance, "Crime has doubled in the last 2 years."
-   *
    * @var string
    */
   public $text;
 
   /**
-   * The date that the claim was made.
-   *
-   * @param string $claimDate
+   * @param string
    */
   public function setClaimDate($claimDate)
   {
@@ -58,9 +50,7 @@ class GoogleFactcheckingFactchecktoolsV1alpha1Claim extends \Google\Collection
     return $this->claimDate;
   }
   /**
-   * One or more reviews of this claim (namely, a fact-checking article).
-   *
-   * @param GoogleFactcheckingFactchecktoolsV1alpha1ClaimReview[] $claimReview
+   * @param GoogleFactcheckingFactchecktoolsV1alpha1ClaimReview[]
    */
   public function setClaimReview($claimReview)
   {
@@ -74,9 +64,7 @@ class GoogleFactcheckingFactchecktoolsV1alpha1Claim extends \Google\Collection
     return $this->claimReview;
   }
   /**
-   * A person or organization stating the claim. For instance, "John Doe".
-   *
-   * @param string $claimant
+   * @param string
    */
   public function setClaimant($claimant)
   {
@@ -90,9 +78,7 @@ class GoogleFactcheckingFactchecktoolsV1alpha1Claim extends \Google\Collection
     return $this->claimant;
   }
   /**
-   * The claim text. For instance, "Crime has doubled in the last 2 years."
-   *
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {

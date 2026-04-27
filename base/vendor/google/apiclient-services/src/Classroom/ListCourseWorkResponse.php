@@ -23,17 +23,12 @@ class ListCourseWorkResponse extends \Google\Collection
   protected $courseWorkType = CourseWork::class;
   protected $courseWorkDataType = 'array';
   /**
-   * Token identifying the next page of results to return. If empty, no further
-   * results are available.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Course work items that match the request.
-   *
-   * @param CourseWork[] $courseWork
+   * @param CourseWork[]
    */
   public function setCourseWork($courseWork)
   {
@@ -47,10 +42,7 @@ class ListCourseWorkResponse extends \Google\Collection
     return $this->courseWork;
   }
   /**
-   * Token identifying the next page of results to return. If empty, no further
-   * results are available.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

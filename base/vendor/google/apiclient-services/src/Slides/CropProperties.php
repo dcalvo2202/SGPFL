@@ -20,50 +20,28 @@ namespace Google\Service\Slides;
 class CropProperties extends \Google\Model
 {
   /**
-   * The rotation angle of the crop window around its center, in radians.
-   * Rotation angle is applied after the offset.
-   *
    * @var float
    */
   public $angle;
   /**
-   * The offset specifies the bottom edge of the crop rectangle that is located
-   * above the original bounding rectangle bottom edge, relative to the object's
-   * original height.
-   *
    * @var float
    */
   public $bottomOffset;
   /**
-   * The offset specifies the left edge of the crop rectangle that is located to
-   * the right of the original bounding rectangle left edge, relative to the
-   * object's original width.
-   *
    * @var float
    */
   public $leftOffset;
   /**
-   * The offset specifies the right edge of the crop rectangle that is located
-   * to the left of the original bounding rectangle right edge, relative to the
-   * object's original width.
-   *
    * @var float
    */
   public $rightOffset;
   /**
-   * The offset specifies the top edge of the crop rectangle that is located
-   * below the original bounding rectangle top edge, relative to the object's
-   * original height.
-   *
    * @var float
    */
   public $topOffset;
 
   /**
-   * The rotation angle of the crop window around its center, in radians.
-   * Rotation angle is applied after the offset.
-   *
-   * @param float $angle
+   * @param float
    */
   public function setAngle($angle)
   {
@@ -77,11 +55,7 @@ class CropProperties extends \Google\Model
     return $this->angle;
   }
   /**
-   * The offset specifies the bottom edge of the crop rectangle that is located
-   * above the original bounding rectangle bottom edge, relative to the object's
-   * original height.
-   *
-   * @param float $bottomOffset
+   * @param float
    */
   public function setBottomOffset($bottomOffset)
   {
@@ -95,11 +69,7 @@ class CropProperties extends \Google\Model
     return $this->bottomOffset;
   }
   /**
-   * The offset specifies the left edge of the crop rectangle that is located to
-   * the right of the original bounding rectangle left edge, relative to the
-   * object's original width.
-   *
-   * @param float $leftOffset
+   * @param float
    */
   public function setLeftOffset($leftOffset)
   {
@@ -113,11 +83,7 @@ class CropProperties extends \Google\Model
     return $this->leftOffset;
   }
   /**
-   * The offset specifies the right edge of the crop rectangle that is located
-   * to the left of the original bounding rectangle right edge, relative to the
-   * object's original width.
-   *
-   * @param float $rightOffset
+   * @param float
    */
   public function setRightOffset($rightOffset)
   {
@@ -131,11 +97,7 @@ class CropProperties extends \Google\Model
     return $this->rightOffset;
   }
   /**
-   * The offset specifies the top edge of the crop rectangle that is located
-   * below the original bounding rectangle top edge, relative to the object's
-   * original height.
-   *
-   * @param float $topOffset
+   * @param float
    */
   public function setTopOffset($topOffset)
   {

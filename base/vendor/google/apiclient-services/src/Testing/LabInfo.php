@@ -20,25 +20,16 @@ namespace Google\Service\Testing;
 class LabInfo extends \Google\Model
 {
   /**
-   * Lab name where the device is hosted. If empty, the device is hosted in a
-   * Google owned lab.
-   *
    * @var string
    */
   public $name;
   /**
-   * The Unicode country/region code (CLDR) of the lab where the device is
-   * hosted. E.g. "US" for United States, "CH" for Switzerland.
-   *
    * @var string
    */
   public $regionCode;
 
   /**
-   * Lab name where the device is hosted. If empty, the device is hosted in a
-   * Google owned lab.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -52,10 +43,7 @@ class LabInfo extends \Google\Model
     return $this->name;
   }
   /**
-   * The Unicode country/region code (CLDR) of the lab where the device is
-   * hosted. E.g. "US" for United States, "CH" for Switzerland.
-   *
-   * @param string $regionCode
+   * @param string
    */
   public function setRegionCode($regionCode)
   {

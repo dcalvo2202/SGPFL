@@ -20,61 +20,24 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1ModelDeploymentMonitoringBigQueryTable extends \Google\Model
 {
   /**
-   * Unspecified source.
-   */
-  public const LOG_SOURCE_LOG_SOURCE_UNSPECIFIED = 'LOG_SOURCE_UNSPECIFIED';
-  /**
-   * Logs coming from Training dataset.
-   */
-  public const LOG_SOURCE_TRAINING = 'TRAINING';
-  /**
-   * Logs coming from Serving traffic.
-   */
-  public const LOG_SOURCE_SERVING = 'SERVING';
-  /**
-   * Unspecified type.
-   */
-  public const LOG_TYPE_LOG_TYPE_UNSPECIFIED = 'LOG_TYPE_UNSPECIFIED';
-  /**
-   * Predict logs.
-   */
-  public const LOG_TYPE_PREDICT = 'PREDICT';
-  /**
-   * Explain logs.
-   */
-  public const LOG_TYPE_EXPLAIN = 'EXPLAIN';
-  /**
-   * The created BigQuery table to store logs. Customer could do their own query
-   * & analysis. Format: `bq://.model_deployment_monitoring_._`
-   *
    * @var string
    */
   public $bigqueryTablePath;
   /**
-   * The source of log.
-   *
    * @var string
    */
   public $logSource;
   /**
-   * The type of log.
-   *
    * @var string
    */
   public $logType;
   /**
-   * Output only. The schema version of the request/response logging BigQuery
-   * table. Default to v1 if unset.
-   *
    * @var string
    */
   public $requestResponseLoggingSchemaVersion;
 
   /**
-   * The created BigQuery table to store logs. Customer could do their own query
-   * & analysis. Format: `bq://.model_deployment_monitoring_._`
-   *
-   * @param string $bigqueryTablePath
+   * @param string
    */
   public function setBigqueryTablePath($bigqueryTablePath)
   {
@@ -88,46 +51,35 @@ class GoogleCloudAiplatformV1ModelDeploymentMonitoringBigQueryTable extends \Goo
     return $this->bigqueryTablePath;
   }
   /**
-   * The source of log.
-   *
-   * Accepted values: LOG_SOURCE_UNSPECIFIED, TRAINING, SERVING
-   *
-   * @param self::LOG_SOURCE_* $logSource
+   * @param string
    */
   public function setLogSource($logSource)
   {
     $this->logSource = $logSource;
   }
   /**
-   * @return self::LOG_SOURCE_*
+   * @return string
    */
   public function getLogSource()
   {
     return $this->logSource;
   }
   /**
-   * The type of log.
-   *
-   * Accepted values: LOG_TYPE_UNSPECIFIED, PREDICT, EXPLAIN
-   *
-   * @param self::LOG_TYPE_* $logType
+   * @param string
    */
   public function setLogType($logType)
   {
     $this->logType = $logType;
   }
   /**
-   * @return self::LOG_TYPE_*
+   * @return string
    */
   public function getLogType()
   {
     return $this->logType;
   }
   /**
-   * Output only. The schema version of the request/response logging BigQuery
-   * table. Default to v1 if unset.
-   *
-   * @param string $requestResponseLoggingSchemaVersion
+   * @param string
    */
   public function setRequestResponseLoggingSchemaVersion($requestResponseLoggingSchemaVersion)
   {

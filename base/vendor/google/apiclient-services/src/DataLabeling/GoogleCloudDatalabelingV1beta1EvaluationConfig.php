@@ -23,11 +23,7 @@ class GoogleCloudDatalabelingV1beta1EvaluationConfig extends \Google\Model
   protected $boundingBoxEvaluationOptionsDataType = '';
 
   /**
-   * Only specify this field if the related model performs image object
-   * detection (`IMAGE_BOUNDING_BOX_ANNOTATION`). Describes how to evaluate
-   * bounding boxes.
-   *
-   * @param GoogleCloudDatalabelingV1beta1BoundingBoxEvaluationOptions $boundingBoxEvaluationOptions
+   * @param GoogleCloudDatalabelingV1beta1BoundingBoxEvaluationOptions
    */
   public function setBoundingBoxEvaluationOptions(GoogleCloudDatalabelingV1beta1BoundingBoxEvaluationOptions $boundingBoxEvaluationOptions)
   {

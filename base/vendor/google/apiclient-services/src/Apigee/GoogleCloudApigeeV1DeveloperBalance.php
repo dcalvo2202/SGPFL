@@ -24,10 +24,7 @@ class GoogleCloudApigeeV1DeveloperBalance extends \Google\Collection
   protected $walletsDataType = 'array';
 
   /**
-   * Output only. List of all wallets. Each individual wallet stores the account
-   * balance for a particular currency.
-   *
-   * @param GoogleCloudApigeeV1DeveloperBalanceWallet[] $wallets
+   * @param GoogleCloudApigeeV1DeveloperBalanceWallet[]
    */
   public function setWallets($wallets)
   {

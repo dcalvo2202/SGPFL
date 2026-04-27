@@ -19,11 +19,6 @@ namespace Google\Service\Fitness;
 
 class MapValue extends \Google\Model
 {
-  /**
-   * Floating point value.
-   *
-   * @var 
-   */
   public $fpVal;
 
   public function setFpVal($fpVal)

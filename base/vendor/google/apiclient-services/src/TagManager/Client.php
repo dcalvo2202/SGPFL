@@ -21,85 +21,58 @@ class Client extends \Google\Collection
 {
   protected $collection_key = 'parameter';
   /**
-   * GTM Account ID.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * The Client ID uniquely identifies the GTM client.
-   *
    * @var string
    */
   public $clientId;
   /**
-   * GTM Container ID.
-   *
    * @var string
    */
   public $containerId;
   /**
-   * The fingerprint of the GTM Client as computed at storage time. This value
-   * is recomputed whenever the client is modified.
-   *
    * @var string
    */
   public $fingerprint;
   /**
-   * Client display name.
-   *
    * @var string
    */
   public $name;
   /**
-   * User notes on how to apply this tag in the container.
-   *
    * @var string
    */
   public $notes;
   protected $parameterType = Parameter::class;
   protected $parameterDataType = 'array';
   /**
-   * Parent folder id.
-   *
    * @var string
    */
   public $parentFolderId;
   /**
-   * GTM client's API relative path.
-   *
    * @var string
    */
   public $path;
   /**
-   * Priority determines relative firing order.
-   *
    * @var int
    */
   public $priority;
   /**
-   * Auto generated link to the tag manager UI
-   *
    * @var string
    */
   public $tagManagerUrl;
   /**
-   * Client type.
-   *
    * @var string
    */
   public $type;
   /**
-   * GTM Workspace ID.
-   *
    * @var string
    */
   public $workspaceId;
 
   /**
-   * GTM Account ID.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -113,9 +86,7 @@ class Client extends \Google\Collection
     return $this->accountId;
   }
   /**
-   * The Client ID uniquely identifies the GTM client.
-   *
-   * @param string $clientId
+   * @param string
    */
   public function setClientId($clientId)
   {
@@ -129,9 +100,7 @@ class Client extends \Google\Collection
     return $this->clientId;
   }
   /**
-   * GTM Container ID.
-   *
-   * @param string $containerId
+   * @param string
    */
   public function setContainerId($containerId)
   {
@@ -145,10 +114,7 @@ class Client extends \Google\Collection
     return $this->containerId;
   }
   /**
-   * The fingerprint of the GTM Client as computed at storage time. This value
-   * is recomputed whenever the client is modified.
-   *
-   * @param string $fingerprint
+   * @param string
    */
   public function setFingerprint($fingerprint)
   {
@@ -162,9 +128,7 @@ class Client extends \Google\Collection
     return $this->fingerprint;
   }
   /**
-   * Client display name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -178,9 +142,7 @@ class Client extends \Google\Collection
     return $this->name;
   }
   /**
-   * User notes on how to apply this tag in the container.
-   *
-   * @param string $notes
+   * @param string
    */
   public function setNotes($notes)
   {
@@ -194,9 +156,7 @@ class Client extends \Google\Collection
     return $this->notes;
   }
   /**
-   * The client's parameters.
-   *
-   * @param Parameter[] $parameter
+   * @param Parameter[]
    */
   public function setParameter($parameter)
   {
@@ -210,9 +170,7 @@ class Client extends \Google\Collection
     return $this->parameter;
   }
   /**
-   * Parent folder id.
-   *
-   * @param string $parentFolderId
+   * @param string
    */
   public function setParentFolderId($parentFolderId)
   {
@@ -226,9 +184,7 @@ class Client extends \Google\Collection
     return $this->parentFolderId;
   }
   /**
-   * GTM client's API relative path.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {
@@ -242,9 +198,7 @@ class Client extends \Google\Collection
     return $this->path;
   }
   /**
-   * Priority determines relative firing order.
-   *
-   * @param int $priority
+   * @param int
    */
   public function setPriority($priority)
   {
@@ -258,9 +212,7 @@ class Client extends \Google\Collection
     return $this->priority;
   }
   /**
-   * Auto generated link to the tag manager UI
-   *
-   * @param string $tagManagerUrl
+   * @param string
    */
   public function setTagManagerUrl($tagManagerUrl)
   {
@@ -274,9 +226,7 @@ class Client extends \Google\Collection
     return $this->tagManagerUrl;
   }
   /**
-   * Client type.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {
@@ -290,9 +240,7 @@ class Client extends \Google\Collection
     return $this->type;
   }
   /**
-   * GTM Workspace ID.
-   *
-   * @param string $workspaceId
+   * @param string
    */
   public function setWorkspaceId($workspaceId)
   {

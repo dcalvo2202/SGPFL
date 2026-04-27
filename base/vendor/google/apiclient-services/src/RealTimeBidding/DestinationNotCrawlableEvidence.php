@@ -20,49 +20,20 @@ namespace Google\Service\RealTimeBidding;
 class DestinationNotCrawlableEvidence extends \Google\Model
 {
   /**
-   * Default value that should never be used.
-   */
-  public const REASON_REASON_UNSPECIFIED = 'REASON_UNSPECIFIED';
-  /**
-   * Site's robots exclusion file (for example, robots.txt) was unreachable.
-   */
-  public const REASON_UNREACHABLE_ROBOTS = 'UNREACHABLE_ROBOTS';
-  /**
-   * Timed out reading site's robots exclusion file (for example, robots.txt).
-   */
-  public const REASON_TIMEOUT_ROBOTS = 'TIMEOUT_ROBOTS';
-  /**
-   * Crawler was disallowed by the site's robots exclusion file (for example,
-   * robots.txt).
-   */
-  public const REASON_ROBOTED_DENIED = 'ROBOTED_DENIED';
-  /**
-   * Unknown reason.
-   */
-  public const REASON_UNKNOWN = 'UNKNOWN';
-  /**
-   * Approximate time of the crawl.
-   *
    * @var string
    */
   public $crawlTime;
   /**
-   * Destination URL that was attempted to be crawled.
-   *
    * @var string
    */
   public $crawledUrl;
   /**
-   * Reason of destination not crawlable.
-   *
    * @var string
    */
   public $reason;
 
   /**
-   * Approximate time of the crawl.
-   *
-   * @param string $crawlTime
+   * @param string
    */
   public function setCrawlTime($crawlTime)
   {
@@ -76,9 +47,7 @@ class DestinationNotCrawlableEvidence extends \Google\Model
     return $this->crawlTime;
   }
   /**
-   * Destination URL that was attempted to be crawled.
-   *
-   * @param string $crawledUrl
+   * @param string
    */
   public function setCrawledUrl($crawledUrl)
   {
@@ -92,19 +61,14 @@ class DestinationNotCrawlableEvidence extends \Google\Model
     return $this->crawledUrl;
   }
   /**
-   * Reason of destination not crawlable.
-   *
-   * Accepted values: REASON_UNSPECIFIED, UNREACHABLE_ROBOTS, TIMEOUT_ROBOTS,
-   * ROBOTED_DENIED, UNKNOWN
-   *
-   * @param self::REASON_* $reason
+   * @param string
    */
   public function setReason($reason)
   {
     $this->reason = $reason;
   }
   /**
-   * @return self::REASON_*
+   * @return string
    */
   public function getReason()
   {

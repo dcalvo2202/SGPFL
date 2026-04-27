@@ -19,39 +19,16 @@ namespace Google\Service\Aiplatform;
 
 class GoogleCloudAiplatformV1SuggestTrialsResponse extends \Google\Collection
 {
-  /**
-   * The study state is unspecified.
-   */
-  public const STUDY_STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The study is active.
-   */
-  public const STUDY_STATE_ACTIVE = 'ACTIVE';
-  /**
-   * The study is stopped due to an internal error.
-   */
-  public const STUDY_STATE_INACTIVE = 'INACTIVE';
-  /**
-   * The study is done when the service exhausts the parameter search space or
-   * max_trial_count is reached.
-   */
-  public const STUDY_STATE_COMPLETED = 'COMPLETED';
   protected $collection_key = 'trials';
   /**
-   * The time at which operation processing completed.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * The time at which the operation was started.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * The state of the Study.
-   *
    * @var string
    */
   public $studyState;
@@ -59,9 +36,7 @@ class GoogleCloudAiplatformV1SuggestTrialsResponse extends \Google\Collection
   protected $trialsDataType = 'array';
 
   /**
-   * The time at which operation processing completed.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -75,9 +50,7 @@ class GoogleCloudAiplatformV1SuggestTrialsResponse extends \Google\Collection
     return $this->endTime;
   }
   /**
-   * The time at which the operation was started.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -91,27 +64,21 @@ class GoogleCloudAiplatformV1SuggestTrialsResponse extends \Google\Collection
     return $this->startTime;
   }
   /**
-   * The state of the Study.
-   *
-   * Accepted values: STATE_UNSPECIFIED, ACTIVE, INACTIVE, COMPLETED
-   *
-   * @param self::STUDY_STATE_* $studyState
+   * @param string
    */
   public function setStudyState($studyState)
   {
     $this->studyState = $studyState;
   }
   /**
-   * @return self::STUDY_STATE_*
+   * @return string
    */
   public function getStudyState()
   {
     return $this->studyState;
   }
   /**
-   * A list of Trials.
-   *
-   * @param GoogleCloudAiplatformV1Trial[] $trials
+   * @param GoogleCloudAiplatformV1Trial[]
    */
   public function setTrials($trials)
   {

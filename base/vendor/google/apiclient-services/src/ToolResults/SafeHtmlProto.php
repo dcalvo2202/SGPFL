@@ -20,20 +20,12 @@ namespace Google\Service\ToolResults;
 class SafeHtmlProto extends \Google\Model
 {
   /**
-   * IMPORTANT: Never set or read this field, even from tests, it is private.
-   * See documentation at the top of .proto file for programming language
-   * packages with which to create or read this message.
-   *
    * @var string
    */
   public $privateDoNotAccessOrElseSafeHtmlWrappedValue;
 
   /**
-   * IMPORTANT: Never set or read this field, even from tests, it is private.
-   * See documentation at the top of .proto file for programming language
-   * packages with which to create or read this message.
-   *
-   * @param string $privateDoNotAccessOrElseSafeHtmlWrappedValue
+   * @param string
    */
   public function setPrivateDoNotAccessOrElseSafeHtmlWrappedValue($privateDoNotAccessOrElseSafeHtmlWrappedValue)
   {

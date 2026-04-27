@@ -20,29 +20,20 @@ namespace Google\Service\Directory;
 class UserRelation extends \Google\Model
 {
   /**
-   * Custom Type.
-   *
    * @var string
    */
   public $customType;
   /**
-   * The relation of the user. Some of the possible values are mother father
-   * sister brother manager assistant partner.
-   *
    * @var string
    */
   public $type;
   /**
-   * The name of the relation.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Custom Type.
-   *
-   * @param string $customType
+   * @param string
    */
   public function setCustomType($customType)
   {
@@ -56,10 +47,7 @@ class UserRelation extends \Google\Model
     return $this->customType;
   }
   /**
-   * The relation of the user. Some of the possible values are mother father
-   * sister brother manager assistant partner.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {
@@ -73,9 +61,7 @@ class UserRelation extends \Google\Model
     return $this->type;
   }
   /**
-   * The name of the relation.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

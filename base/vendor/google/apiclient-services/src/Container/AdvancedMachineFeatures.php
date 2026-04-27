@@ -20,47 +20,20 @@ namespace Google\Service\Container;
 class AdvancedMachineFeatures extends \Google\Model
 {
   /**
-   * PMU not enabled.
-   */
-  public const PERFORMANCE_MONITORING_UNIT_PERFORMANCE_MONITORING_UNIT_UNSPECIFIED = 'PERFORMANCE_MONITORING_UNIT_UNSPECIFIED';
-  /**
-   * Architecturally defined non-LLC events.
-   */
-  public const PERFORMANCE_MONITORING_UNIT_ARCHITECTURAL = 'ARCHITECTURAL';
-  /**
-   * Most documented core/L2 events.
-   */
-  public const PERFORMANCE_MONITORING_UNIT_STANDARD = 'STANDARD';
-  /**
-   * Most documented core/L2 and LLC events.
-   */
-  public const PERFORMANCE_MONITORING_UNIT_ENHANCED = 'ENHANCED';
-  /**
-   * Whether or not to enable nested virtualization (defaults to false).
-   *
    * @var bool
    */
   public $enableNestedVirtualization;
   /**
-   * Type of Performance Monitoring Unit (PMU) requested on node pool instances.
-   * If unset, PMU will not be available to the node.
-   *
    * @var string
    */
   public $performanceMonitoringUnit;
   /**
-   * The number of threads per physical core. To disable simultaneous
-   * multithreading (SMT) set this to 1. If unset, the maximum number of threads
-   * supported per core by the underlying processor is assumed.
-   *
    * @var string
    */
   public $threadsPerCore;
 
   /**
-   * Whether or not to enable nested virtualization (defaults to false).
-   *
-   * @param bool $enableNestedVirtualization
+   * @param bool
    */
   public function setEnableNestedVirtualization($enableNestedVirtualization)
   {
@@ -74,31 +47,21 @@ class AdvancedMachineFeatures extends \Google\Model
     return $this->enableNestedVirtualization;
   }
   /**
-   * Type of Performance Monitoring Unit (PMU) requested on node pool instances.
-   * If unset, PMU will not be available to the node.
-   *
-   * Accepted values: PERFORMANCE_MONITORING_UNIT_UNSPECIFIED, ARCHITECTURAL,
-   * STANDARD, ENHANCED
-   *
-   * @param self::PERFORMANCE_MONITORING_UNIT_* $performanceMonitoringUnit
+   * @param string
    */
   public function setPerformanceMonitoringUnit($performanceMonitoringUnit)
   {
     $this->performanceMonitoringUnit = $performanceMonitoringUnit;
   }
   /**
-   * @return self::PERFORMANCE_MONITORING_UNIT_*
+   * @return string
    */
   public function getPerformanceMonitoringUnit()
   {
     return $this->performanceMonitoringUnit;
   }
   /**
-   * The number of threads per physical core. To disable simultaneous
-   * multithreading (SMT) set this to 1. If unset, the maximum number of threads
-   * supported per core by the underlying processor is assumed.
-   *
-   * @param string $threadsPerCore
+   * @param string
    */
   public function setThreadsPerCore($threadsPerCore)
   {

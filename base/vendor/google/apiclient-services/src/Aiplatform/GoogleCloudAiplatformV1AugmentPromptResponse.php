@@ -26,9 +26,7 @@ class GoogleCloudAiplatformV1AugmentPromptResponse extends \Google\Collection
   protected $factsDataType = 'array';
 
   /**
-   * Augmented prompt, only text format is supported for now.
-   *
-   * @param GoogleCloudAiplatformV1Content[] $augmentedPrompt
+   * @param GoogleCloudAiplatformV1Content[]
    */
   public function setAugmentedPrompt($augmentedPrompt)
   {
@@ -42,9 +40,7 @@ class GoogleCloudAiplatformV1AugmentPromptResponse extends \Google\Collection
     return $this->augmentedPrompt;
   }
   /**
-   * Retrieved facts from RAG data sources.
-   *
-   * @param GoogleCloudAiplatformV1Fact[] $facts
+   * @param GoogleCloudAiplatformV1Fact[]
    */
   public function setFacts($facts)
   {

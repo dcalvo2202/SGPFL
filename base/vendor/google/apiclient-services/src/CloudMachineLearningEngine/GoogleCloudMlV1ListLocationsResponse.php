@@ -23,17 +23,12 @@ class GoogleCloudMlV1ListLocationsResponse extends \Google\Collection
   protected $locationsType = GoogleCloudMlV1Location::class;
   protected $locationsDataType = 'array';
   /**
-   * Optional. Pass this token as the `page_token` field of the request for a
-   * subsequent call.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Locations where at least one type of CMLE capability is available.
-   *
-   * @param GoogleCloudMlV1Location[] $locations
+   * @param GoogleCloudMlV1Location[]
    */
   public function setLocations($locations)
   {
@@ -47,10 +42,7 @@ class GoogleCloudMlV1ListLocationsResponse extends \Google\Collection
     return $this->locations;
   }
   /**
-   * Optional. Pass this token as the `page_token` field of the request for a
-   * subsequent call.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

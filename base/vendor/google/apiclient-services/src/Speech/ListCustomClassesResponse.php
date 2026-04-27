@@ -23,17 +23,12 @@ class ListCustomClassesResponse extends \Google\Collection
   protected $customClassesType = CustomClass::class;
   protected $customClassesDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The custom classes.
-   *
-   * @param CustomClass[] $customClasses
+   * @param CustomClass[]
    */
   public function setCustomClasses($customClasses)
   {
@@ -47,10 +42,7 @@ class ListCustomClassesResponse extends \Google\Collection
     return $this->customClasses;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

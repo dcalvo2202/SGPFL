@@ -20,24 +20,16 @@ namespace Google\Service\Appengine;
 class BasicScaling extends \Google\Model
 {
   /**
-   * Duration of time after the last request that an instance must wait before
-   * the instance is shut down.
-   *
    * @var string
    */
   public $idleTimeout;
   /**
-   * Maximum number of instances to create for this version.
-   *
    * @var int
    */
   public $maxInstances;
 
   /**
-   * Duration of time after the last request that an instance must wait before
-   * the instance is shut down.
-   *
-   * @param string $idleTimeout
+   * @param string
    */
   public function setIdleTimeout($idleTimeout)
   {
@@ -51,9 +43,7 @@ class BasicScaling extends \Google\Model
     return $this->idleTimeout;
   }
   /**
-   * Maximum number of instances to create for this version.
-   *
-   * @param int $maxInstances
+   * @param int
    */
   public function setMaxInstances($maxInstances)
   {

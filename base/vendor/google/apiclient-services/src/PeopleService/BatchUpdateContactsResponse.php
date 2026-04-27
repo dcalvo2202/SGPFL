@@ -23,10 +23,7 @@ class BatchUpdateContactsResponse extends \Google\Model
   protected $updateResultDataType = 'map';
 
   /**
-   * A map of resource names to the contacts that were updated, unless the
-   * request `read_mask` is empty.
-   *
-   * @param PersonResponse[] $updateResult
+   * @param PersonResponse[]
    */
   public function setUpdateResult($updateResult)
   {

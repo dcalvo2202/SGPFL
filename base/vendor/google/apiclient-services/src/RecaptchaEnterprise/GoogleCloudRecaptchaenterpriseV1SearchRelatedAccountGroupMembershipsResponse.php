@@ -21,9 +21,6 @@ class GoogleCloudRecaptchaenterpriseV1SearchRelatedAccountGroupMembershipsRespon
 {
   protected $collection_key = 'relatedAccountGroupMemberships';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GoogleCloudRecaptchaenterpriseV1SearchRelatedAccountGroupMembershipsRespon
   protected $relatedAccountGroupMembershipsDataType = 'array';
 
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class GoogleCloudRecaptchaenterpriseV1SearchRelatedAccountGroupMembershipsRespon
     return $this->nextPageToken;
   }
   /**
-   * The queried memberships.
-   *
-   * @param GoogleCloudRecaptchaenterpriseV1RelatedAccountGroupMembership[] $relatedAccountGroupMemberships
+   * @param GoogleCloudRecaptchaenterpriseV1RelatedAccountGroupMembership[]
    */
   public function setRelatedAccountGroupMemberships($relatedAccountGroupMemberships)
   {

@@ -20,23 +20,16 @@ namespace Google\Service\ChecksService;
 class GoogleChecksAisafetyV1alphaTextInput extends \Google\Model
 {
   /**
-   * Actual piece of text to be classified.
-   *
    * @var string
    */
   public $content;
   /**
-   * Optional. Language of the text in ISO 639-1 format. If the language is
-   * invalid or not specified, the system will try to detect it.
-   *
    * @var string
    */
   public $languageCode;
 
   /**
-   * Actual piece of text to be classified.
-   *
-   * @param string $content
+   * @param string
    */
   public function setContent($content)
   {
@@ -50,10 +43,7 @@ class GoogleChecksAisafetyV1alphaTextInput extends \Google\Model
     return $this->content;
   }
   /**
-   * Optional. Language of the text in ISO 639-1 format. If the language is
-   * invalid or not specified, the system will try to detect it.
-   *
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {

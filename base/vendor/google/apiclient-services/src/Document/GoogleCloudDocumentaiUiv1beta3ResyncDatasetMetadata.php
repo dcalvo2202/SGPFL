@@ -28,9 +28,7 @@ class GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadata extends \Google\Collec
   protected $individualDocumentResyncStatusesDataType = 'array';
 
   /**
-   * The basic metadata of the long-running operation.
-   *
-   * @param GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata $commonMetadata
+   * @param GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata
    */
   public function setCommonMetadata(GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata $commonMetadata)
   {
@@ -44,10 +42,7 @@ class GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadata extends \Google\Collec
     return $this->commonMetadata;
   }
   /**
-   * The list of dataset resync statuses. Not checked when
-   * ResyncDatasetRequest.dataset_documents is specified.
-   *
-   * @param GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataDatasetResyncStatus[] $datasetResyncStatuses
+   * @param GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataDatasetResyncStatus[]
    */
   public function setDatasetResyncStatuses($datasetResyncStatuses)
   {
@@ -61,10 +56,7 @@ class GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadata extends \Google\Collec
     return $this->datasetResyncStatuses;
   }
   /**
-   * The list of document resync statuses. The same document could have multiple
-   * `individual_document_resync_statuses` if it has multiple inconsistencies.
-   *
-   * @param GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataIndividualDocumentResyncStatus[] $individualDocumentResyncStatuses
+   * @param GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataIndividualDocumentResyncStatus[]
    */
   public function setIndividualDocumentResyncStatuses($individualDocumentResyncStatuses)
   {

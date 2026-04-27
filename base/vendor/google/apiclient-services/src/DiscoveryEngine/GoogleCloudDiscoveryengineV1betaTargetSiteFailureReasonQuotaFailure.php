@@ -20,18 +20,12 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1betaTargetSiteFailureReasonQuotaFailure extends \Google\Model
 {
   /**
-   * This number is an estimation on how much total quota this project needs to
-   * successfully complete indexing.
-   *
    * @var string
    */
   public $totalRequiredQuota;
 
   /**
-   * This number is an estimation on how much total quota this project needs to
-   * successfully complete indexing.
-   *
-   * @param string $totalRequiredQuota
+   * @param string
    */
   public function setTotalRequiredQuota($totalRequiredQuota)
   {

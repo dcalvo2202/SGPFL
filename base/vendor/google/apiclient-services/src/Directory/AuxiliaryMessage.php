@@ -20,46 +20,20 @@ namespace Google\Service\Directory;
 class AuxiliaryMessage extends \Google\Model
 {
   /**
-   * Message type unspecified.
-   */
-  public const SEVERITY_SEVERITY_UNSPECIFIED = 'SEVERITY_UNSPECIFIED';
-  /**
-   * Message of severity: info.
-   */
-  public const SEVERITY_SEVERITY_INFO = 'SEVERITY_INFO';
-  /**
-   * Message of severity: warning.
-   */
-  public const SEVERITY_SEVERITY_WARNING = 'SEVERITY_WARNING';
-  /**
-   * Message of severity: error.
-   */
-  public const SEVERITY_SEVERITY_ERROR = 'SEVERITY_ERROR';
-  /**
-   * Human readable message in English. Example: "Given printer is invalid or no
-   * longer supported."
-   *
    * @var string
    */
   public $auxiliaryMessage;
   /**
-   * Field that this message concerns.
-   *
    * @var string
    */
   public $fieldMask;
   /**
-   * Message severity
-   *
    * @var string
    */
   public $severity;
 
   /**
-   * Human readable message in English. Example: "Given printer is invalid or no
-   * longer supported."
-   *
-   * @param string $auxiliaryMessage
+   * @param string
    */
   public function setAuxiliaryMessage($auxiliaryMessage)
   {
@@ -73,9 +47,7 @@ class AuxiliaryMessage extends \Google\Model
     return $this->auxiliaryMessage;
   }
   /**
-   * Field that this message concerns.
-   *
-   * @param string $fieldMask
+   * @param string
    */
   public function setFieldMask($fieldMask)
   {
@@ -89,19 +61,14 @@ class AuxiliaryMessage extends \Google\Model
     return $this->fieldMask;
   }
   /**
-   * Message severity
-   *
-   * Accepted values: SEVERITY_UNSPECIFIED, SEVERITY_INFO, SEVERITY_WARNING,
-   * SEVERITY_ERROR
-   *
-   * @param self::SEVERITY_* $severity
+   * @param string
    */
   public function setSeverity($severity)
   {
     $this->severity = $severity;
   }
   /**
-   * @return self::SEVERITY_*
+   * @return string
    */
   public function getSeverity()
   {

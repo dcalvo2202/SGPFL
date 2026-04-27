@@ -21,91 +21,52 @@ class Context extends \Google\Collection
 {
   protected $collection_key = 'type';
   /**
-   * [Optional] App where the card should be shown. If missing, the card will be
-   * shown in TOPAZ.
-   *
    * @var string[]
    */
   public $app;
   /**
-   * [Optional] Day of week when the card should be shown, where 0 is Monday.
-   *
    * @var int[]
    */
   public $dayOfWeek;
   /**
-   * [Optional] Date (in seconds since epoch) when the card should stop being
-   * shown. If missing, end_date_sec will be set to Jan 1st, 2100.
-   *
    * @var string
    */
   public $endDateSec;
   /**
-   * [Optional] End time in seconds, within a day, when the card should stop
-   * being shown if it's within [start_date_sec, end_date_sec]. If missing, this
-   * is set to 86400 (24 hours x 3600 sec/hour), i.e., midnight next day.
-   *
    * @var string
    */
   public $endDayOffsetSec;
   /**
-   * [Optional] The locales for which the card should be triggered (e.g., en_US
-   * and en_CA). If missing, the card is going to show to clients regardless of
-   * their locale.
-   *
    * @var string[]
    */
   public $locale;
   /**
-   * [Optional] Text-free locations where the card should be shown. This is
-   * expected to match the user's location in focus. If no location is
-   * specified, the card will be shown for any location.
-   *
    * @var string[]
    */
   public $location;
   /**
-   * [Required only for Answer and RHS cards - will be ignored for Homepage]
-   * cards. It's the exact case-insensitive queries that will trigger the Answer
-   * or RHS card.
-   *
    * @var string[]
    */
   public $query;
   /**
-   * [Optional] Date (in seconds since epoch) when the card should start being
-   * shown. If missing, start_date_sec will be Jan 1st, 1970 UTC.
-   *
    * @var string
    */
   public $startDateSec;
   /**
-   * [Optional] Start time in seconds, within a day, when the card should be
-   * shown if it's within [start_date_sec, end_date_sec]. If 0, the card will be
-   * shown from 12:00am on.
-   *
    * @var string
    */
   public $startDayOffsetSec;
   /**
-   * [Optional] Surface where the card should be shown in. If missing, the card
-   * will be shown in any surface.
-   *
    * @var string[]
    */
   public $surface;
   /**
-   * [Required] Type of the card (homepage, Answer or RHS).
-   *
    * @var string[]
    */
   public $type;
 
   /**
-   * [Optional] App where the card should be shown. If missing, the card will be
-   * shown in TOPAZ.
-   *
-   * @param string[] $app
+   * @param string[]
    */
   public function setApp($app)
   {
@@ -119,9 +80,7 @@ class Context extends \Google\Collection
     return $this->app;
   }
   /**
-   * [Optional] Day of week when the card should be shown, where 0 is Monday.
-   *
-   * @param int[] $dayOfWeek
+   * @param int[]
    */
   public function setDayOfWeek($dayOfWeek)
   {
@@ -135,10 +94,7 @@ class Context extends \Google\Collection
     return $this->dayOfWeek;
   }
   /**
-   * [Optional] Date (in seconds since epoch) when the card should stop being
-   * shown. If missing, end_date_sec will be set to Jan 1st, 2100.
-   *
-   * @param string $endDateSec
+   * @param string
    */
   public function setEndDateSec($endDateSec)
   {
@@ -152,11 +108,7 @@ class Context extends \Google\Collection
     return $this->endDateSec;
   }
   /**
-   * [Optional] End time in seconds, within a day, when the card should stop
-   * being shown if it's within [start_date_sec, end_date_sec]. If missing, this
-   * is set to 86400 (24 hours x 3600 sec/hour), i.e., midnight next day.
-   *
-   * @param string $endDayOffsetSec
+   * @param string
    */
   public function setEndDayOffsetSec($endDayOffsetSec)
   {
@@ -170,11 +122,7 @@ class Context extends \Google\Collection
     return $this->endDayOffsetSec;
   }
   /**
-   * [Optional] The locales for which the card should be triggered (e.g., en_US
-   * and en_CA). If missing, the card is going to show to clients regardless of
-   * their locale.
-   *
-   * @param string[] $locale
+   * @param string[]
    */
   public function setLocale($locale)
   {
@@ -188,11 +136,7 @@ class Context extends \Google\Collection
     return $this->locale;
   }
   /**
-   * [Optional] Text-free locations where the card should be shown. This is
-   * expected to match the user's location in focus. If no location is
-   * specified, the card will be shown for any location.
-   *
-   * @param string[] $location
+   * @param string[]
    */
   public function setLocation($location)
   {
@@ -206,11 +150,7 @@ class Context extends \Google\Collection
     return $this->location;
   }
   /**
-   * [Required only for Answer and RHS cards - will be ignored for Homepage]
-   * cards. It's the exact case-insensitive queries that will trigger the Answer
-   * or RHS card.
-   *
-   * @param string[] $query
+   * @param string[]
    */
   public function setQuery($query)
   {
@@ -224,10 +164,7 @@ class Context extends \Google\Collection
     return $this->query;
   }
   /**
-   * [Optional] Date (in seconds since epoch) when the card should start being
-   * shown. If missing, start_date_sec will be Jan 1st, 1970 UTC.
-   *
-   * @param string $startDateSec
+   * @param string
    */
   public function setStartDateSec($startDateSec)
   {
@@ -241,11 +178,7 @@ class Context extends \Google\Collection
     return $this->startDateSec;
   }
   /**
-   * [Optional] Start time in seconds, within a day, when the card should be
-   * shown if it's within [start_date_sec, end_date_sec]. If 0, the card will be
-   * shown from 12:00am on.
-   *
-   * @param string $startDayOffsetSec
+   * @param string
    */
   public function setStartDayOffsetSec($startDayOffsetSec)
   {
@@ -259,10 +192,7 @@ class Context extends \Google\Collection
     return $this->startDayOffsetSec;
   }
   /**
-   * [Optional] Surface where the card should be shown in. If missing, the card
-   * will be shown in any surface.
-   *
-   * @param string[] $surface
+   * @param string[]
    */
   public function setSurface($surface)
   {
@@ -276,9 +206,7 @@ class Context extends \Google\Collection
     return $this->surface;
   }
   /**
-   * [Required] Type of the card (homepage, Answer or RHS).
-   *
-   * @param string[] $type
+   * @param string[]
    */
   public function setType($type)
   {

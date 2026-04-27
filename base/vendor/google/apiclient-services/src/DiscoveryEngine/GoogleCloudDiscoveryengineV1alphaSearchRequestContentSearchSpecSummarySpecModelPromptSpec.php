@@ -20,18 +20,12 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1alphaSearchRequestContentSearchSpecSummarySpecModelPromptSpec extends \Google\Model
 {
   /**
-   * Text at the beginning of the prompt that instructs the assistant. Examples
-   * are available in the user guide.
-   *
    * @var string
    */
   public $preamble;
 
   /**
-   * Text at the beginning of the prompt that instructs the assistant. Examples
-   * are available in the user guide.
-   *
-   * @param string $preamble
+   * @param string
    */
   public function setPreamble($preamble)
   {

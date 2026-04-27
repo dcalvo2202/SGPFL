@@ -19,12 +19,6 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowCxV3NluSettings extends \Google\Model
 {
-  public const MODEL_TRAINING_MODE_MODEL_TRAINING_MODE_UNSPECIFIED = 'MODEL_TRAINING_MODE_UNSPECIFIED';
-  public const MODEL_TRAINING_MODE_MODEL_TRAINING_MODE_AUTOMATIC = 'MODEL_TRAINING_MODE_AUTOMATIC';
-  public const MODEL_TRAINING_MODE_MODEL_TRAINING_MODE_MANUAL = 'MODEL_TRAINING_MODE_MANUAL';
-  public const MODEL_TYPE_MODEL_TYPE_UNSPECIFIED = 'MODEL_TYPE_UNSPECIFIED';
-  public const MODEL_TYPE_MODEL_TYPE_STANDARD = 'MODEL_TYPE_STANDARD';
-  public const MODEL_TYPE_MODEL_TYPE_ADVANCED = 'MODEL_TYPE_ADVANCED';
   /**
    * @var float
    */
@@ -39,7 +33,7 @@ class GoogleCloudDialogflowCxV3NluSettings extends \Google\Model
   public $modelType;
 
   /**
-   * @param float $classificationThreshold
+   * @param float
    */
   public function setClassificationThreshold($classificationThreshold)
   {
@@ -53,28 +47,28 @@ class GoogleCloudDialogflowCxV3NluSettings extends \Google\Model
     return $this->classificationThreshold;
   }
   /**
-   * @param self::MODEL_TRAINING_MODE_* $modelTrainingMode
+   * @param string
    */
   public function setModelTrainingMode($modelTrainingMode)
   {
     $this->modelTrainingMode = $modelTrainingMode;
   }
   /**
-   * @return self::MODEL_TRAINING_MODE_*
+   * @return string
    */
   public function getModelTrainingMode()
   {
     return $this->modelTrainingMode;
   }
   /**
-   * @param self::MODEL_TYPE_* $modelType
+   * @param string
    */
   public function setModelType($modelType)
   {
     $this->modelType = $modelType;
   }
   /**
-   * @return self::MODEL_TYPE_*
+   * @return string
    */
   public function getModelType()
   {

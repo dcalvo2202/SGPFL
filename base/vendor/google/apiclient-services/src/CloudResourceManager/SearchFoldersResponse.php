@@ -23,17 +23,12 @@ class SearchFoldersResponse extends \Google\Collection
   protected $foldersType = Folder::class;
   protected $foldersDataType = 'array';
   /**
-   * A pagination token returned from a previous call to `SearchFolders` that
-   * indicates from where searching should continue.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * A possibly paginated folder search results. the specified parent resource.
-   *
-   * @param Folder[] $folders
+   * @param Folder[]
    */
   public function setFolders($folders)
   {
@@ -47,10 +42,7 @@ class SearchFoldersResponse extends \Google\Collection
     return $this->folders;
   }
   /**
-   * A pagination token returned from a previous call to `SearchFolders` that
-   * indicates from where searching should continue.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

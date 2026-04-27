@@ -23,17 +23,12 @@ class ListCatalogsResponse extends \Google\Collection
   protected $catalogsType = Catalog::class;
   protected $catalogsDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The catalogs from the specified project.
-   *
-   * @param Catalog[] $catalogs
+   * @param Catalog[]
    */
   public function setCatalogs($catalogs)
   {
@@ -47,10 +42,7 @@ class ListCatalogsResponse extends \Google\Collection
     return $this->catalogs;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

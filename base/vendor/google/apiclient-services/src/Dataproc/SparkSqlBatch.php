@@ -21,30 +21,20 @@ class SparkSqlBatch extends \Google\Collection
 {
   protected $collection_key = 'jarFileUris';
   /**
-   * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
-   *
    * @var string[]
    */
   public $jarFileUris;
   /**
-   * Required. The HCFS URI of the script that contains Spark SQL queries to
-   * execute.
-   *
    * @var string
    */
   public $queryFileUri;
   /**
-   * Optional. Mapping of query variable names to values (equivalent to the
-   * Spark SQL command: SET name="value";).
-   *
    * @var string[]
    */
   public $queryVariables;
 
   /**
-   * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
-   *
-   * @param string[] $jarFileUris
+   * @param string[]
    */
   public function setJarFileUris($jarFileUris)
   {
@@ -58,10 +48,7 @@ class SparkSqlBatch extends \Google\Collection
     return $this->jarFileUris;
   }
   /**
-   * Required. The HCFS URI of the script that contains Spark SQL queries to
-   * execute.
-   *
-   * @param string $queryFileUri
+   * @param string
    */
   public function setQueryFileUri($queryFileUri)
   {
@@ -75,10 +62,7 @@ class SparkSqlBatch extends \Google\Collection
     return $this->queryFileUri;
   }
   /**
-   * Optional. Mapping of query variable names to values (equivalent to the
-   * Spark SQL command: SET name="value";).
-   *
-   * @param string[] $queryVariables
+   * @param string[]
    */
   public function setQueryVariables($queryVariables)
   {

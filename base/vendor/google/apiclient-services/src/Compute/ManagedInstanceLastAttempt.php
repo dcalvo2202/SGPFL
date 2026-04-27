@@ -23,10 +23,7 @@ class ManagedInstanceLastAttempt extends \Google\Model
   protected $errorsDataType = '';
 
   /**
-   * Output only. [Output Only] Encountered errors during the last attempt to
-   * create or delete the instance.
-   *
-   * @param ManagedInstanceLastAttemptErrors $errors
+   * @param ManagedInstanceLastAttemptErrors
    */
   public function setErrors(ManagedInstanceLastAttemptErrors $errors)
   {

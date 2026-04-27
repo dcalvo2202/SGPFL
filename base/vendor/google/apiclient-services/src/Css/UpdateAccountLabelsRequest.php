@@ -21,25 +21,16 @@ class UpdateAccountLabelsRequest extends \Google\Collection
 {
   protected $collection_key = 'labelIds';
   /**
-   * The list of label IDs to overwrite the existing account label IDs. If the
-   * list is empty, all currently assigned label IDs will be deleted.
-   *
    * @var string[]
    */
   public $labelIds;
   /**
-   * Optional. Only required when updating MC account labels. The CSS domain
-   * that is the parent resource of the MC account. Format: accounts/{account}
-   *
    * @var string
    */
   public $parent;
 
   /**
-   * The list of label IDs to overwrite the existing account label IDs. If the
-   * list is empty, all currently assigned label IDs will be deleted.
-   *
-   * @param string[] $labelIds
+   * @param string[]
    */
   public function setLabelIds($labelIds)
   {
@@ -53,10 +44,7 @@ class UpdateAccountLabelsRequest extends \Google\Collection
     return $this->labelIds;
   }
   /**
-   * Optional. Only required when updating MC account labels. The CSS domain
-   * that is the parent resource of the MC account. Format: accounts/{account}
-   *
-   * @param string $parent
+   * @param string
    */
   public function setParent($parent)
   {

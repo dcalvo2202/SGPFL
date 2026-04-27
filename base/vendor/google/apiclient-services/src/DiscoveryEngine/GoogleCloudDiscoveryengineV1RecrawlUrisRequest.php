@@ -21,24 +21,16 @@ class GoogleCloudDiscoveryengineV1RecrawlUrisRequest extends \Google\Collection
 {
   protected $collection_key = 'uris';
   /**
-   * Optional. Credential id to use for crawling.
-   *
    * @var string
    */
   public $siteCredential;
   /**
-   * Required. List of URIs to crawl. At most 10K URIs are supported, otherwise
-   * an INVALID_ARGUMENT error is thrown. Each URI should match at least one
-   * TargetSite in `site_search_engine`.
-   *
    * @var string[]
    */
   public $uris;
 
   /**
-   * Optional. Credential id to use for crawling.
-   *
-   * @param string $siteCredential
+   * @param string
    */
   public function setSiteCredential($siteCredential)
   {
@@ -52,11 +44,7 @@ class GoogleCloudDiscoveryengineV1RecrawlUrisRequest extends \Google\Collection
     return $this->siteCredential;
   }
   /**
-   * Required. List of URIs to crawl. At most 10K URIs are supported, otherwise
-   * an INVALID_ARGUMENT error is thrown. Each URI should match at least one
-   * TargetSite in `site_search_engine`.
-   *
-   * @param string[] $uris
+   * @param string[]
    */
   public function setUris($uris)
   {

@@ -20,26 +20,18 @@ namespace Google\Service\TPU;
 class QueuedResource extends \Google\Model
 {
   /**
-   * Output only. The time when the QueuedResource was created.
-   *
    * @var string
    */
   public $createTime;
   protected $guaranteedType = Guaranteed::class;
   protected $guaranteedDataType = '';
   /**
-   * Output only. Immutable. The name of the QueuedResource.
-   *
    * @var string
    */
   public $name;
   protected $queueingPolicyType = QueueingPolicy::class;
   protected $queueingPolicyDataType = '';
   /**
-   * Optional. Name of the reservation in which the resource should be
-   * provisioned. Format:
-   * projects/{project}/locations/{zone}/reservations/{reservation}
-   *
    * @var string
    */
   public $reservationName;
@@ -51,9 +43,7 @@ class QueuedResource extends \Google\Model
   protected $tpuDataType = '';
 
   /**
-   * Output only. The time when the QueuedResource was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -67,9 +57,7 @@ class QueuedResource extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Optional. The Guaranteed tier
-   *
-   * @param Guaranteed $guaranteed
+   * @param Guaranteed
    */
   public function setGuaranteed(Guaranteed $guaranteed)
   {
@@ -83,9 +71,7 @@ class QueuedResource extends \Google\Model
     return $this->guaranteed;
   }
   /**
-   * Output only. Immutable. The name of the QueuedResource.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -99,9 +85,7 @@ class QueuedResource extends \Google\Model
     return $this->name;
   }
   /**
-   * Optional. The queueing policy of the QueuedRequest.
-   *
-   * @param QueueingPolicy $queueingPolicy
+   * @param QueueingPolicy
    */
   public function setQueueingPolicy(QueueingPolicy $queueingPolicy)
   {
@@ -115,11 +99,7 @@ class QueuedResource extends \Google\Model
     return $this->queueingPolicy;
   }
   /**
-   * Optional. Name of the reservation in which the resource should be
-   * provisioned. Format:
-   * projects/{project}/locations/{zone}/reservations/{reservation}
-   *
-   * @param string $reservationName
+   * @param string
    */
   public function setReservationName($reservationName)
   {
@@ -133,9 +113,7 @@ class QueuedResource extends \Google\Model
     return $this->reservationName;
   }
   /**
-   * Optional. The Spot tier.
-   *
-   * @param Spot $spot
+   * @param Spot
    */
   public function setSpot(Spot $spot)
   {
@@ -149,9 +127,7 @@ class QueuedResource extends \Google\Model
     return $this->spot;
   }
   /**
-   * Output only. State of the QueuedResource request.
-   *
-   * @param QueuedResourceState $state
+   * @param QueuedResourceState
    */
   public function setState(QueuedResourceState $state)
   {
@@ -165,9 +141,7 @@ class QueuedResource extends \Google\Model
     return $this->state;
   }
   /**
-   * Optional. Defines a TPU resource.
-   *
-   * @param Tpu $tpu
+   * @param Tpu
    */
   public function setTpu(Tpu $tpu)
   {

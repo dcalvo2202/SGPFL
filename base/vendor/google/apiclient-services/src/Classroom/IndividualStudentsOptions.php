@@ -21,18 +21,12 @@ class IndividualStudentsOptions extends \Google\Collection
 {
   protected $collection_key = 'studentIds';
   /**
-   * Identifiers for the students that have access to the
-   * coursework/announcement.
-   *
    * @var string[]
    */
   public $studentIds;
 
   /**
-   * Identifiers for the students that have access to the
-   * coursework/announcement.
-   *
-   * @param string[] $studentIds
+   * @param string[]
    */
   public function setStudentIds($studentIds)
   {

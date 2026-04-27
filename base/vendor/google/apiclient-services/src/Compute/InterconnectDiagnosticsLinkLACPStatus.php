@@ -20,40 +20,20 @@ namespace Google\Service\Compute;
 class InterconnectDiagnosticsLinkLACPStatus extends \Google\Model
 {
   /**
-   * The link is configured and active within the bundle.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * The link is not configured within the bundle, this means the rest of the
-   * object should be empty.
-   */
-  public const STATE_DETACHED = 'DETACHED';
-  /**
-   * System ID of the port on Google's side of the LACP exchange.
-   *
    * @var string
    */
   public $googleSystemId;
   /**
-   * System ID of the port on the neighbor's side of the LACP exchange.
-   *
    * @var string
    */
   public $neighborSystemId;
   /**
-   * The state of a LACP link, which can take one of the following values:
-   * - ACTIVE: The link is configured and active within the bundle.    -
-   * DETACHED: The link is not configured within the bundle. This means    that
-   * the rest of the object should be empty.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * System ID of the port on Google's side of the LACP exchange.
-   *
-   * @param string $googleSystemId
+   * @param string
    */
   public function setGoogleSystemId($googleSystemId)
   {
@@ -67,9 +47,7 @@ class InterconnectDiagnosticsLinkLACPStatus extends \Google\Model
     return $this->googleSystemId;
   }
   /**
-   * System ID of the port on the neighbor's side of the LACP exchange.
-   *
-   * @param string $neighborSystemId
+   * @param string
    */
   public function setNeighborSystemId($neighborSystemId)
   {
@@ -83,21 +61,14 @@ class InterconnectDiagnosticsLinkLACPStatus extends \Google\Model
     return $this->neighborSystemId;
   }
   /**
-   * The state of a LACP link, which can take one of the following values:
-   * - ACTIVE: The link is configured and active within the bundle.    -
-   * DETACHED: The link is not configured within the bundle. This means    that
-   * the rest of the object should be empty.
-   *
-   * Accepted values: ACTIVE, DETACHED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

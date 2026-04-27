@@ -24,9 +24,7 @@ class ActivityEventsParametersMessageValue extends \Google\Collection
   protected $parameterDataType = 'array';
 
   /**
-   * Parameter values
-   *
-   * @param NestedParameter[] $parameter
+   * @param NestedParameter[]
    */
   public function setParameter($parameter)
   {

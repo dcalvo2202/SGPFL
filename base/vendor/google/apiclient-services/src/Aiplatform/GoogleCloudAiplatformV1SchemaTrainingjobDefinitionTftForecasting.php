@@ -25,9 +25,7 @@ class GoogleCloudAiplatformV1SchemaTrainingjobDefinitionTftForecasting extends \
   protected $metadataDataType = '';
 
   /**
-   * The input parameters of this TrainingJob.
-   *
-   * @param GoogleCloudAiplatformV1SchemaTrainingjobDefinitionTftForecastingInputs $inputs
+   * @param GoogleCloudAiplatformV1SchemaTrainingjobDefinitionTftForecastingInputs
    */
   public function setInputs(GoogleCloudAiplatformV1SchemaTrainingjobDefinitionTftForecastingInputs $inputs)
   {
@@ -41,9 +39,7 @@ class GoogleCloudAiplatformV1SchemaTrainingjobDefinitionTftForecasting extends \
     return $this->inputs;
   }
   /**
-   * The metadata information.
-   *
-   * @param GoogleCloudAiplatformV1SchemaTrainingjobDefinitionTftForecastingMetadata $metadata
+   * @param GoogleCloudAiplatformV1SchemaTrainingjobDefinitionTftForecastingMetadata
    */
   public function setMetadata(GoogleCloudAiplatformV1SchemaTrainingjobDefinitionTftForecastingMetadata $metadata)
   {

@@ -22,16 +22,12 @@ class LineItemAssignedTargetingOption extends \Google\Model
   protected $assignedTargetingOptionType = AssignedTargetingOption::class;
   protected $assignedTargetingOptionDataType = '';
   /**
-   * The ID of the line item the assigned targeting option is assigned to.
-   *
    * @var string
    */
   public $lineItemId;
 
   /**
-   * The assigned targeting option resource.
-   *
-   * @param AssignedTargetingOption $assignedTargetingOption
+   * @param AssignedTargetingOption
    */
   public function setAssignedTargetingOption(AssignedTargetingOption $assignedTargetingOption)
   {
@@ -45,9 +41,7 @@ class LineItemAssignedTargetingOption extends \Google\Model
     return $this->assignedTargetingOption;
   }
   /**
-   * The ID of the line item the assigned targeting option is assigned to.
-   *
-   * @param string $lineItemId
+   * @param string
    */
   public function setLineItemId($lineItemId)
   {

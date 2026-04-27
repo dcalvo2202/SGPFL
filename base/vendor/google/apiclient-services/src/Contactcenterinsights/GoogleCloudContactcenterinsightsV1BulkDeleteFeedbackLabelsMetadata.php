@@ -26,10 +26,7 @@ class GoogleCloudContactcenterinsightsV1BulkDeleteFeedbackLabelsMetadata extends
   protected $requestDataType = '';
 
   /**
-   * Partial errors during deletion operation that might cause the operation
-   * output to be incomplete.
-   *
-   * @param GoogleRpcStatus[] $partialErrors
+   * @param GoogleRpcStatus[]
    */
   public function setPartialErrors($partialErrors)
   {
@@ -43,9 +40,7 @@ class GoogleCloudContactcenterinsightsV1BulkDeleteFeedbackLabelsMetadata extends
     return $this->partialErrors;
   }
   /**
-   * Output only. The original request for delete.
-   *
-   * @param GoogleCloudContactcenterinsightsV1BulkDeleteFeedbackLabelsRequest $request
+   * @param GoogleCloudContactcenterinsightsV1BulkDeleteFeedbackLabelsRequest
    */
   public function setRequest(GoogleCloudContactcenterinsightsV1BulkDeleteFeedbackLabelsRequest $request)
   {

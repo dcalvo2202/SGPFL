@@ -21,18 +21,12 @@ class ClearAppsDataParams extends \Google\Collection
 {
   protected $collection_key = 'packageNames';
   /**
-   * The package names of the apps whose data will be cleared when the command
-   * is executed.
-   *
    * @var string[]
    */
   public $packageNames;
 
   /**
-   * The package names of the apps whose data will be cleared when the command
-   * is executed.
-   *
-   * @param string[] $packageNames
+   * @param string[]
    */
   public function setPackageNames($packageNames)
   {

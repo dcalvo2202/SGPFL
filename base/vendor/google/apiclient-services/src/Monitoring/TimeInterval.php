@@ -20,24 +20,16 @@ namespace Google\Service\Monitoring;
 class TimeInterval extends \Google\Model
 {
   /**
-   * Required. The end of the time interval.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * Optional. The beginning of the time interval. The default value for the
-   * start time is the end time. The start time must not be later than the end
-   * time.
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * Required. The end of the time interval.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -51,11 +43,7 @@ class TimeInterval extends \Google\Model
     return $this->endTime;
   }
   /**
-   * Optional. The beginning of the time interval. The default value for the
-   * start time is the end time. The start time must not be later than the end
-   * time.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

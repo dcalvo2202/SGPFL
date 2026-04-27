@@ -23,24 +23,16 @@ class ListManagementDnsZoneBindingsResponse extends \Google\Collection
   protected $managementDnsZoneBindingsType = ManagementDnsZoneBinding::class;
   protected $managementDnsZoneBindingsDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Locations that could not be reached when making an aggregated query using
-   * wildcards.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * A list of management DNS zone bindings.
-   *
-   * @param ManagementDnsZoneBinding[] $managementDnsZoneBindings
+   * @param ManagementDnsZoneBinding[]
    */
   public function setManagementDnsZoneBindings($managementDnsZoneBindings)
   {
@@ -54,10 +46,7 @@ class ListManagementDnsZoneBindingsResponse extends \Google\Collection
     return $this->managementDnsZoneBindings;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -71,10 +60,7 @@ class ListManagementDnsZoneBindingsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Locations that could not be reached when making an aggregated query using
-   * wildcards.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

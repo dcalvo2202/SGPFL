@@ -22,21 +22,14 @@ class LiveBroadcast extends \Google\Model
   protected $contentDetailsType = LiveBroadcastContentDetails::class;
   protected $contentDetailsDataType = '';
   /**
-   * Etag of this resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * The ID that YouTube assigns to uniquely identify the broadcast.
-   *
    * @var string
    */
   public $id;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "youtube#liveBroadcast".
-   *
    * @var string
    */
   public $kind;
@@ -50,12 +43,7 @@ class LiveBroadcast extends \Google\Model
   protected $statusDataType = '';
 
   /**
-   * The contentDetails object contains information about the event's video
-   * content, such as whether the content can be shown in an embedded video
-   * player or if it will be archived and therefore available for viewing after
-   * the event has concluded.
-   *
-   * @param LiveBroadcastContentDetails $contentDetails
+   * @param LiveBroadcastContentDetails
    */
   public function setContentDetails(LiveBroadcastContentDetails $contentDetails)
   {
@@ -69,9 +57,7 @@ class LiveBroadcast extends \Google\Model
     return $this->contentDetails;
   }
   /**
-   * Etag of this resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -85,9 +71,7 @@ class LiveBroadcast extends \Google\Model
     return $this->etag;
   }
   /**
-   * The ID that YouTube assigns to uniquely identify the broadcast.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -101,10 +85,7 @@ class LiveBroadcast extends \Google\Model
     return $this->id;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "youtube#liveBroadcast".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -118,10 +99,7 @@ class LiveBroadcast extends \Google\Model
     return $this->kind;
   }
   /**
-   * The monetizationDetails object contains information about the event's
-   * monetization details.
-   *
-   * @param LiveBroadcastMonetizationDetails $monetizationDetails
+   * @param LiveBroadcastMonetizationDetails
    */
   public function setMonetizationDetails(LiveBroadcastMonetizationDetails $monetizationDetails)
   {
@@ -135,10 +113,7 @@ class LiveBroadcast extends \Google\Model
     return $this->monetizationDetails;
   }
   /**
-   * The snippet object contains basic details about the event, including its
-   * title, description, start time, and end time.
-   *
-   * @param LiveBroadcastSnippet $snippet
+   * @param LiveBroadcastSnippet
    */
   public function setSnippet(LiveBroadcastSnippet $snippet)
   {
@@ -152,12 +127,7 @@ class LiveBroadcast extends \Google\Model
     return $this->snippet;
   }
   /**
-   * The statistics object contains info about the event's current stats. These
-   * include concurrent viewers and total chat count. Statistics can change (in
-   * either direction) during the lifetime of an event. Statistics are only
-   * returned while the event is live.
-   *
-   * @param LiveBroadcastStatistics $statistics
+   * @param LiveBroadcastStatistics
    */
   public function setStatistics(LiveBroadcastStatistics $statistics)
   {
@@ -171,9 +141,7 @@ class LiveBroadcast extends \Google\Model
     return $this->statistics;
   }
   /**
-   * The status object contains information about the event's status.
-   *
-   * @param LiveBroadcastStatus $status
+   * @param LiveBroadcastStatus
    */
   public function setStatus(LiveBroadcastStatus $status)
   {

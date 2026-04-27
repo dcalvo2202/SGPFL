@@ -20,34 +20,24 @@ namespace Google\Service\CCAIPlatform;
 class URIs extends \Google\Model
 {
   /**
-   * Chat Bot Uri of the ContactCenter
-   *
    * @var string
    */
   public $chatBotUri;
   /**
-   * Media Uri of the ContactCenter.
-   *
    * @var string
    */
   public $mediaUri;
   /**
-   * Root Uri of the ContactCenter.
-   *
    * @var string
    */
   public $rootUri;
   /**
-   * Virtual Agent Streaming Service Uri of the ContactCenter.
-   *
    * @var string
    */
   public $virtualAgentStreamingServiceUri;
 
   /**
-   * Chat Bot Uri of the ContactCenter
-   *
-   * @param string $chatBotUri
+   * @param string
    */
   public function setChatBotUri($chatBotUri)
   {
@@ -61,9 +51,7 @@ class URIs extends \Google\Model
     return $this->chatBotUri;
   }
   /**
-   * Media Uri of the ContactCenter.
-   *
-   * @param string $mediaUri
+   * @param string
    */
   public function setMediaUri($mediaUri)
   {
@@ -77,9 +65,7 @@ class URIs extends \Google\Model
     return $this->mediaUri;
   }
   /**
-   * Root Uri of the ContactCenter.
-   *
-   * @param string $rootUri
+   * @param string
    */
   public function setRootUri($rootUri)
   {
@@ -93,9 +79,7 @@ class URIs extends \Google\Model
     return $this->rootUri;
   }
   /**
-   * Virtual Agent Streaming Service Uri of the ContactCenter.
-   *
-   * @param string $virtualAgentStreamingServiceUri
+   * @param string
    */
   public function setVirtualAgentStreamingServiceUri($virtualAgentStreamingServiceUri)
   {

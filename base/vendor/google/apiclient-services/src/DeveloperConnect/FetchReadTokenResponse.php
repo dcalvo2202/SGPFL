@@ -20,29 +20,20 @@ namespace Google\Service\DeveloperConnect;
 class FetchReadTokenResponse extends \Google\Model
 {
   /**
-   * Expiration timestamp. Can be empty if unknown or non-expiring.
-   *
    * @var string
    */
   public $expirationTime;
   /**
-   * The git_username to specify when making a git clone with the token. For
-   * example, for GitHub GitRepositoryLinks, this would be "x-access-token"
-   *
    * @var string
    */
   public $gitUsername;
   /**
-   * The token content.
-   *
    * @var string
    */
   public $token;
 
   /**
-   * Expiration timestamp. Can be empty if unknown or non-expiring.
-   *
-   * @param string $expirationTime
+   * @param string
    */
   public function setExpirationTime($expirationTime)
   {
@@ -56,10 +47,7 @@ class FetchReadTokenResponse extends \Google\Model
     return $this->expirationTime;
   }
   /**
-   * The git_username to specify when making a git clone with the token. For
-   * example, for GitHub GitRepositoryLinks, this would be "x-access-token"
-   *
-   * @param string $gitUsername
+   * @param string
    */
   public function setGitUsername($gitUsername)
   {
@@ -73,9 +61,7 @@ class FetchReadTokenResponse extends \Google\Model
     return $this->gitUsername;
   }
   /**
-   * The token content.
-   *
-   * @param string $token
+   * @param string
    */
   public function setToken($token)
   {

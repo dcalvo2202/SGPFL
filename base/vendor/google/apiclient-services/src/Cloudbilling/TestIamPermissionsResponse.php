@@ -21,18 +21,12 @@ class TestIamPermissionsResponse extends \Google\Collection
 {
   protected $collection_key = 'permissions';
   /**
-   * A subset of `TestPermissionsRequest.permissions` that the caller is
-   * allowed.
-   *
    * @var string[]
    */
   public $permissions;
 
   /**
-   * A subset of `TestPermissionsRequest.permissions` that the caller is
-   * allowed.
-   *
-   * @param string[] $permissions
+   * @param string[]
    */
   public function setPermissions($permissions)
   {

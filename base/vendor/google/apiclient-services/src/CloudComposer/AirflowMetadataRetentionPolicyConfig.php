@@ -20,34 +20,16 @@ namespace Google\Service\CloudComposer;
 class AirflowMetadataRetentionPolicyConfig extends \Google\Model
 {
   /**
-   * Default mode doesn't change environment parameters.
-   */
-  public const RETENTION_MODE_RETENTION_MODE_UNSPECIFIED = 'RETENTION_MODE_UNSPECIFIED';
-  /**
-   * Retention policy is enabled.
-   */
-  public const RETENTION_MODE_RETENTION_MODE_ENABLED = 'RETENTION_MODE_ENABLED';
-  /**
-   * Retention policy is disabled.
-   */
-  public const RETENTION_MODE_RETENTION_MODE_DISABLED = 'RETENTION_MODE_DISABLED';
-  /**
-   * Optional. How many days data should be retained for.
-   *
    * @var int
    */
   public $retentionDays;
   /**
-   * Optional. Retention can be either enabled or disabled.
-   *
    * @var string
    */
   public $retentionMode;
 
   /**
-   * Optional. How many days data should be retained for.
-   *
-   * @param int $retentionDays
+   * @param int
    */
   public function setRetentionDays($retentionDays)
   {
@@ -61,19 +43,14 @@ class AirflowMetadataRetentionPolicyConfig extends \Google\Model
     return $this->retentionDays;
   }
   /**
-   * Optional. Retention can be either enabled or disabled.
-   *
-   * Accepted values: RETENTION_MODE_UNSPECIFIED, RETENTION_MODE_ENABLED,
-   * RETENTION_MODE_DISABLED
-   *
-   * @param self::RETENTION_MODE_* $retentionMode
+   * @param string
    */
   public function setRetentionMode($retentionMode)
   {
     $this->retentionMode = $retentionMode;
   }
   /**
-   * @return self::RETENTION_MODE_*
+   * @return string
    */
   public function getRetentionMode()
   {

@@ -20,24 +20,12 @@ namespace Google\Service\Spanner;
 class SingleRegionQuorum extends \Google\Model
 {
   /**
-   * Required. The location of the serving region, for example, "us-central1".
-   * The location must be one of the regions within the dual-region instance
-   * configuration of your database. The list of valid locations is available
-   * using the GetInstanceConfig API. This should only be used if you plan to
-   * change quorum to the single-region quorum type.
-   *
    * @var string
    */
   public $servingLocation;
 
   /**
-   * Required. The location of the serving region, for example, "us-central1".
-   * The location must be one of the regions within the dual-region instance
-   * configuration of your database. The list of valid locations is available
-   * using the GetInstanceConfig API. This should only be used if you plan to
-   * change quorum to the single-region quorum type.
-   *
-   * @param string $servingLocation
+   * @param string
    */
   public function setServingLocation($servingLocation)
   {

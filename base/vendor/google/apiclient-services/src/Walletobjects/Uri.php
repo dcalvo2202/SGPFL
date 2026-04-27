@@ -20,48 +20,26 @@ namespace Google\Service\Walletobjects;
 class Uri extends \Google\Model
 {
   /**
-   * The URI's title appearing in the app as text. Recommended maximum is 20
-   * characters to ensure full string is displayed on smaller screens. Note that
-   * in some contexts this text is not used, such as when `description` is part
-   * of an image.
-   *
    * @var string
    */
   public $description;
   /**
-   * The ID associated with a uri. This field is here to enable ease of
-   * management of uris.
-   *
    * @var string
    */
   public $id;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * `"walletobjects#uri"`.
-   *
-   * @deprecated
    * @var string
    */
   public $kind;
   protected $localizedDescriptionType = LocalizedString::class;
   protected $localizedDescriptionDataType = '';
   /**
-   * The location of a web page, image, or other resource. URIs in the
-   * `LinksModuleData` module can have different prefixes indicating the type of
-   * URI (a link to a web page, a link to a map, a telephone number, or an email
-   * address). URIs must have a scheme.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * The URI's title appearing in the app as text. Recommended maximum is 20
-   * characters to ensure full string is displayed on smaller screens. Note that
-   * in some contexts this text is not used, such as when `description` is part
-   * of an image.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -75,10 +53,7 @@ class Uri extends \Google\Model
     return $this->description;
   }
   /**
-   * The ID associated with a uri. This field is here to enable ease of
-   * management of uris.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -92,18 +67,13 @@ class Uri extends \Google\Model
     return $this->id;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * `"walletobjects#uri"`.
-   *
-   * @deprecated
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
     $this->kind = $kind;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getKind()
@@ -111,10 +81,7 @@ class Uri extends \Google\Model
     return $this->kind;
   }
   /**
-   * Translated strings for the description. Recommended maximum is 20
-   * characters to ensure full string is displayed on smaller screens.
-   *
-   * @param LocalizedString $localizedDescription
+   * @param LocalizedString
    */
   public function setLocalizedDescription(LocalizedString $localizedDescription)
   {
@@ -128,12 +95,7 @@ class Uri extends \Google\Model
     return $this->localizedDescription;
   }
   /**
-   * The location of a web page, image, or other resource. URIs in the
-   * `LinksModuleData` module can have different prefixes indicating the type of
-   * URI (a link to a web page, a link to a map, a telephone number, or an email
-   * address). URIs must have a scheme.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

@@ -23,20 +23,12 @@ class ListFirstPartyAndPartnerAudiencesResponse extends \Google\Collection
   protected $firstPartyAndPartnerAudiencesType = FirstPartyAndPartnerAudience::class;
   protected $firstPartyAndPartnerAudiencesDataType = 'array';
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * page_token field in the subsequent call to
-   * `ListFirstPartyAndPartnerAudiences` method to retrieve the next page of
-   * results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of first party and partner audiences. Audience size properties
-   * will not be included. This list will be absent if empty.
-   *
-   * @param FirstPartyAndPartnerAudience[] $firstPartyAndPartnerAudiences
+   * @param FirstPartyAndPartnerAudience[]
    */
   public function setFirstPartyAndPartnerAudiences($firstPartyAndPartnerAudiences)
   {
@@ -50,12 +42,7 @@ class ListFirstPartyAndPartnerAudiencesResponse extends \Google\Collection
     return $this->firstPartyAndPartnerAudiences;
   }
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * page_token field in the subsequent call to
-   * `ListFirstPartyAndPartnerAudiences` method to retrieve the next page of
-   * results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

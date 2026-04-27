@@ -20,24 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1PublisherModelCallToActionDeployDeployMetadata extends \Google\Model
 {
   /**
-   * Optional. Labels for the deployment config. For managing deployment config
-   * like verifying, source of deployment config, etc.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Optional. Sample request for deployed endpoint.
-   *
    * @var string
    */
   public $sampleRequest;
 
   /**
-   * Optional. Labels for the deployment config. For managing deployment config
-   * like verifying, source of deployment config, etc.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -51,9 +43,7 @@ class GoogleCloudAiplatformV1PublisherModelCallToActionDeployDeployMetadata exte
     return $this->labels;
   }
   /**
-   * Optional. Sample request for deployed endpoint.
-   *
-   * @param string $sampleRequest
+   * @param string
    */
   public function setSampleRequest($sampleRequest)
   {

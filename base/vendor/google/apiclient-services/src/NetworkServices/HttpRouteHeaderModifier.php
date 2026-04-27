@@ -21,31 +21,20 @@ class HttpRouteHeaderModifier extends \Google\Collection
 {
   protected $collection_key = 'remove';
   /**
-   * Add the headers with given map where key is the name of the header, value
-   * is the value of the header.
-   *
    * @var string[]
    */
   public $add;
   /**
-   * Remove headers (matching by header names) specified in the list.
-   *
    * @var string[]
    */
   public $remove;
   /**
-   * Completely overwrite/replace the headers with given map where key is the
-   * name of the header, value is the value of the header.
-   *
    * @var string[]
    */
   public $set;
 
   /**
-   * Add the headers with given map where key is the name of the header, value
-   * is the value of the header.
-   *
-   * @param string[] $add
+   * @param string[]
    */
   public function setAdd($add)
   {
@@ -59,9 +48,7 @@ class HttpRouteHeaderModifier extends \Google\Collection
     return $this->add;
   }
   /**
-   * Remove headers (matching by header names) specified in the list.
-   *
-   * @param string[] $remove
+   * @param string[]
    */
   public function setRemove($remove)
   {
@@ -75,10 +62,7 @@ class HttpRouteHeaderModifier extends \Google\Collection
     return $this->remove;
   }
   /**
-   * Completely overwrite/replace the headers with given map where key is the
-   * name of the header, value is the value of the header.
-   *
-   * @param string[] $set
+   * @param string[]
    */
   public function setSet($set)
   {

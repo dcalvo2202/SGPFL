@@ -20,69 +20,26 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1TargetServer extends \Google\Model
 {
   /**
-   * UNSPECIFIED defaults to HTTP for backwards compatibility.
-   */
-  public const PROTOCOL_PROTOCOL_UNSPECIFIED = 'PROTOCOL_UNSPECIFIED';
-  /**
-   * The TargetServer uses HTTP.
-   */
-  public const PROTOCOL_HTTP = 'HTTP';
-  /**
-   * The TargetSever uses HTTP2.
-   */
-  public const PROTOCOL_HTTP2 = 'HTTP2';
-  /**
-   * The TargetServer uses GRPC.
-   */
-  public const PROTOCOL_GRPC_TARGET = 'GRPC_TARGET';
-  /**
-   * GRPC TargetServer to be used in ExternalCallout Policy. Prefer to use
-   * EXTERNAL_CALLOUT instead. TODO(b/266125112) deprecate once EXTERNAL
-   * _CALLOUT generally available.
-   */
-  public const PROTOCOL_GRPC = 'GRPC';
-  /**
-   * The TargetServer is to be used in the ExternalCallout Policy
-   */
-  public const PROTOCOL_EXTERNAL_CALLOUT = 'EXTERNAL_CALLOUT';
-  /**
-   * Optional. A human-readable description of this TargetServer.
-   *
    * @var string
    */
   public $description;
   /**
-   * Required. The host name this target connects to. Value must be a valid
-   * hostname as described by RFC-1123.
-   *
    * @var string
    */
   public $host;
   /**
-   * Optional. Enabling/disabling a TargetServer is useful when TargetServers
-   * are used in load balancing configurations, and one or more TargetServers
-   * need to taken out of rotation periodically. Defaults to true.
-   *
    * @var bool
    */
   public $isEnabled;
   /**
-   * Required. The resource id of this target server. Values must match the
-   * regular expression
-   *
    * @var string
    */
   public $name;
   /**
-   * Required. The port number this target connects to on the given host. Value
-   * must be between 1 and 65535, inclusive.
-   *
    * @var int
    */
   public $port;
   /**
-   * Immutable. The protocol used by this TargetServer.
-   *
    * @var string
    */
   public $protocol;
@@ -90,9 +47,7 @@ class GoogleCloudApigeeV1TargetServer extends \Google\Model
   protected $sSLInfoDataType = '';
 
   /**
-   * Optional. A human-readable description of this TargetServer.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -106,10 +61,7 @@ class GoogleCloudApigeeV1TargetServer extends \Google\Model
     return $this->description;
   }
   /**
-   * Required. The host name this target connects to. Value must be a valid
-   * hostname as described by RFC-1123.
-   *
-   * @param string $host
+   * @param string
    */
   public function setHost($host)
   {
@@ -123,11 +75,7 @@ class GoogleCloudApigeeV1TargetServer extends \Google\Model
     return $this->host;
   }
   /**
-   * Optional. Enabling/disabling a TargetServer is useful when TargetServers
-   * are used in load balancing configurations, and one or more TargetServers
-   * need to taken out of rotation periodically. Defaults to true.
-   *
-   * @param bool $isEnabled
+   * @param bool
    */
   public function setIsEnabled($isEnabled)
   {
@@ -141,10 +89,7 @@ class GoogleCloudApigeeV1TargetServer extends \Google\Model
     return $this->isEnabled;
   }
   /**
-   * Required. The resource id of this target server. Values must match the
-   * regular expression
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -158,10 +103,7 @@ class GoogleCloudApigeeV1TargetServer extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. The port number this target connects to on the given host. Value
-   * must be between 1 and 65535, inclusive.
-   *
-   * @param int $port
+   * @param int
    */
   public function setPort($port)
   {
@@ -175,30 +117,21 @@ class GoogleCloudApigeeV1TargetServer extends \Google\Model
     return $this->port;
   }
   /**
-   * Immutable. The protocol used by this TargetServer.
-   *
-   * Accepted values: PROTOCOL_UNSPECIFIED, HTTP, HTTP2, GRPC_TARGET, GRPC,
-   * EXTERNAL_CALLOUT
-   *
-   * @param self::PROTOCOL_* $protocol
+   * @param string
    */
   public function setProtocol($protocol)
   {
     $this->protocol = $protocol;
   }
   /**
-   * @return self::PROTOCOL_*
+   * @return string
    */
   public function getProtocol()
   {
     return $this->protocol;
   }
   /**
-   * Optional. Specifies TLS configuration info for this TargetServer. The JSON
-   * name is `sSLInfo` for legacy/backwards compatibility reasons -- Edge
-   * originally supported SSL, and the name is still used for TLS configuration.
-   *
-   * @param GoogleCloudApigeeV1TlsInfo $sSLInfo
+   * @param GoogleCloudApigeeV1TlsInfo
    */
   public function setSSLInfo(GoogleCloudApigeeV1TlsInfo $sSLInfo)
   {

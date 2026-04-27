@@ -22,10 +22,6 @@ class CreateConferenceRequest extends \Google\Model
   protected $conferenceSolutionKeyType = ConferenceSolutionKey::class;
   protected $conferenceSolutionKeyDataType = '';
   /**
-   * The client-generated unique ID for this request. Clients should regenerate
-   * this ID for every new request. If an ID provided is the same as for the
-   * previous request, the request is ignored.
-   *
    * @var string
    */
   public $requestId;
@@ -33,9 +29,7 @@ class CreateConferenceRequest extends \Google\Model
   protected $statusDataType = '';
 
   /**
-   * The conference solution, such as Hangouts or Google Meet.
-   *
-   * @param ConferenceSolutionKey $conferenceSolutionKey
+   * @param ConferenceSolutionKey
    */
   public function setConferenceSolutionKey(ConferenceSolutionKey $conferenceSolutionKey)
   {
@@ -49,11 +43,7 @@ class CreateConferenceRequest extends \Google\Model
     return $this->conferenceSolutionKey;
   }
   /**
-   * The client-generated unique ID for this request. Clients should regenerate
-   * this ID for every new request. If an ID provided is the same as for the
-   * previous request, the request is ignored.
-   *
-   * @param string $requestId
+   * @param string
    */
   public function setRequestId($requestId)
   {
@@ -67,9 +57,7 @@ class CreateConferenceRequest extends \Google\Model
     return $this->requestId;
   }
   /**
-   * The status of the conference create request.
-   *
-   * @param ConferenceRequestStatus $status
+   * @param ConferenceRequestStatus
    */
   public function setStatus(ConferenceRequestStatus $status)
   {

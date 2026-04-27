@@ -23,18 +23,12 @@ class ListBiddersResponse extends \Google\Collection
   protected $biddersType = Bidder::class;
   protected $biddersDataType = 'array';
   /**
-   * A token which can be passed to a subsequent call to the `ListBidders`
-   * method to retrieve the next page of results in
-   * ListBiddersRequest.pageToken.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * List of bidders.
-   *
-   * @param Bidder[] $bidders
+   * @param Bidder[]
    */
   public function setBidders($bidders)
   {
@@ -48,11 +42,7 @@ class ListBiddersResponse extends \Google\Collection
     return $this->bidders;
   }
   /**
-   * A token which can be passed to a subsequent call to the `ListBidders`
-   * method to retrieve the next page of results in
-   * ListBiddersRequest.pageToken.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

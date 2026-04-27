@@ -23,17 +23,12 @@ class ListLogicalViewsResponse extends \Google\Collection
   protected $logicalViewsType = LogicalView::class;
   protected $logicalViewsDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of requested logical views.
-   *
-   * @param LogicalView[] $logicalViews
+   * @param LogicalView[]
    */
   public function setLogicalViews($logicalViews)
   {
@@ -47,10 +42,7 @@ class ListLogicalViewsResponse extends \Google\Collection
     return $this->logicalViews;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

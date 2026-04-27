@@ -21,87 +21,56 @@ class ActivityRule extends \Google\Collection
 {
   protected $collection_key = 'supersededAlerts';
   /**
-   * List of action names associated with the rule threshold.
-   *
    * @var string[]
    */
   public $actionNames;
   /**
-   * Rule create timestamp.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Description of the rule.
-   *
    * @var string
    */
   public $description;
   /**
-   * Alert display name.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Rule name.
-   *
    * @var string
    */
   public $name;
   /**
-   * Query that is used to get the data from the associated source.
-   *
    * @var string
    */
   public $query;
   /**
-   * List of alert IDs superseded by this alert. It is used to indicate that
-   * this alert is essentially extension of superseded alerts and we found the
-   * relationship after creating these alerts.
-   *
    * @var string[]
    */
   public $supersededAlerts;
   /**
-   * Alert ID superseding this alert. It is used to indicate that superseding
-   * alert is essentially extension of this alert and we found the relationship
-   * after creating both alerts.
-   *
    * @var string
    */
   public $supersedingAlert;
   /**
-   * Alert threshold is for example “COUNT > 5”.
-   *
    * @var string
    */
   public $threshold;
   /**
-   * The trigger sources for this rule. * GMAIL_EVENTS * DEVICE_EVENTS *
-   * USER_EVENTS
-   *
    * @var string
    */
   public $triggerSource;
   /**
-   * The timestamp of the last update to the rule.
-   *
    * @var string
    */
   public $updateTime;
   /**
-   * Rule window size. Possible values are 1 hour or 24 hours.
-   *
    * @var string
    */
   public $windowSize;
 
   /**
-   * List of action names associated with the rule threshold.
-   *
-   * @param string[] $actionNames
+   * @param string[]
    */
   public function setActionNames($actionNames)
   {
@@ -115,9 +84,7 @@ class ActivityRule extends \Google\Collection
     return $this->actionNames;
   }
   /**
-   * Rule create timestamp.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -131,9 +98,7 @@ class ActivityRule extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Description of the rule.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -147,9 +112,7 @@ class ActivityRule extends \Google\Collection
     return $this->description;
   }
   /**
-   * Alert display name.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -163,9 +126,7 @@ class ActivityRule extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Rule name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -179,9 +140,7 @@ class ActivityRule extends \Google\Collection
     return $this->name;
   }
   /**
-   * Query that is used to get the data from the associated source.
-   *
-   * @param string $query
+   * @param string
    */
   public function setQuery($query)
   {
@@ -195,11 +154,7 @@ class ActivityRule extends \Google\Collection
     return $this->query;
   }
   /**
-   * List of alert IDs superseded by this alert. It is used to indicate that
-   * this alert is essentially extension of superseded alerts and we found the
-   * relationship after creating these alerts.
-   *
-   * @param string[] $supersededAlerts
+   * @param string[]
    */
   public function setSupersededAlerts($supersededAlerts)
   {
@@ -213,11 +168,7 @@ class ActivityRule extends \Google\Collection
     return $this->supersededAlerts;
   }
   /**
-   * Alert ID superseding this alert. It is used to indicate that superseding
-   * alert is essentially extension of this alert and we found the relationship
-   * after creating both alerts.
-   *
-   * @param string $supersedingAlert
+   * @param string
    */
   public function setSupersedingAlert($supersedingAlert)
   {
@@ -231,9 +182,7 @@ class ActivityRule extends \Google\Collection
     return $this->supersedingAlert;
   }
   /**
-   * Alert threshold is for example “COUNT > 5”.
-   *
-   * @param string $threshold
+   * @param string
    */
   public function setThreshold($threshold)
   {
@@ -247,10 +196,7 @@ class ActivityRule extends \Google\Collection
     return $this->threshold;
   }
   /**
-   * The trigger sources for this rule. * GMAIL_EVENTS * DEVICE_EVENTS *
-   * USER_EVENTS
-   *
-   * @param string $triggerSource
+   * @param string
    */
   public function setTriggerSource($triggerSource)
   {
@@ -264,9 +210,7 @@ class ActivityRule extends \Google\Collection
     return $this->triggerSource;
   }
   /**
-   * The timestamp of the last update to the rule.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -280,9 +224,7 @@ class ActivityRule extends \Google\Collection
     return $this->updateTime;
   }
   /**
-   * Rule window size. Possible values are 1 hour or 24 hours.
-   *
-   * @param string $windowSize
+   * @param string
    */
   public function setWindowSize($windowSize)
   {

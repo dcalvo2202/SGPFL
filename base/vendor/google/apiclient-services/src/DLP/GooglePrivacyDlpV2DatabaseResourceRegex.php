@@ -20,38 +20,24 @@ namespace Google\Service\DLP;
 class GooglePrivacyDlpV2DatabaseResourceRegex extends \Google\Model
 {
   /**
-   * Regex to test the database name against. If empty, all databases match.
-   *
    * @var string
    */
   public $databaseRegex;
   /**
-   * Regex to test the database resource's name against. An example of a
-   * database resource name is a table's name. Other database resource names
-   * like view names could be included in the future. If empty, all database
-   * resources match.
-   *
    * @var string
    */
   public $databaseResourceNameRegex;
   /**
-   * Regex to test the instance name against. If empty, all instances match.
-   *
    * @var string
    */
   public $instanceRegex;
   /**
-   * For organizations, if unset, will match all projects. Has no effect for
-   * configurations created within a project.
-   *
    * @var string
    */
   public $projectIdRegex;
 
   /**
-   * Regex to test the database name against. If empty, all databases match.
-   *
-   * @param string $databaseRegex
+   * @param string
    */
   public function setDatabaseRegex($databaseRegex)
   {
@@ -65,12 +51,7 @@ class GooglePrivacyDlpV2DatabaseResourceRegex extends \Google\Model
     return $this->databaseRegex;
   }
   /**
-   * Regex to test the database resource's name against. An example of a
-   * database resource name is a table's name. Other database resource names
-   * like view names could be included in the future. If empty, all database
-   * resources match.
-   *
-   * @param string $databaseResourceNameRegex
+   * @param string
    */
   public function setDatabaseResourceNameRegex($databaseResourceNameRegex)
   {
@@ -84,9 +65,7 @@ class GooglePrivacyDlpV2DatabaseResourceRegex extends \Google\Model
     return $this->databaseResourceNameRegex;
   }
   /**
-   * Regex to test the instance name against. If empty, all instances match.
-   *
-   * @param string $instanceRegex
+   * @param string
    */
   public function setInstanceRegex($instanceRegex)
   {
@@ -100,10 +79,7 @@ class GooglePrivacyDlpV2DatabaseResourceRegex extends \Google\Model
     return $this->instanceRegex;
   }
   /**
-   * For organizations, if unset, will match all projects. Has no effect for
-   * configurations created within a project.
-   *
-   * @param string $projectIdRegex
+   * @param string
    */
   public function setProjectIdRegex($projectIdRegex)
   {

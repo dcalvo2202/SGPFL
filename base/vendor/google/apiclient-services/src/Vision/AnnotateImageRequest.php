@@ -28,9 +28,7 @@ class AnnotateImageRequest extends \Google\Collection
   protected $imageContextDataType = '';
 
   /**
-   * Requested features.
-   *
-   * @param Feature[] $features
+   * @param Feature[]
    */
   public function setFeatures($features)
   {
@@ -44,9 +42,7 @@ class AnnotateImageRequest extends \Google\Collection
     return $this->features;
   }
   /**
-   * The image to be processed.
-   *
-   * @param Image $image
+   * @param Image
    */
   public function setImage(Image $image)
   {
@@ -60,9 +56,7 @@ class AnnotateImageRequest extends \Google\Collection
     return $this->image;
   }
   /**
-   * Additional context that may accompany the image.
-   *
-   * @param ImageContext $imageContext
+   * @param ImageContext
    */
   public function setImageContext(ImageContext $imageContext)
   {

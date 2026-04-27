@@ -20,28 +20,20 @@ namespace Google\Service\DriveLabels;
 class GoogleAppsDriveLabelsV2FieldAppliedCapabilities extends \Google\Model
 {
   /**
-   * Whether the user can read related applied metadata on items.
-   *
    * @var bool
    */
   public $canRead;
   /**
-   * Whether the user can search for Drive items referencing this field.
-   *
    * @var bool
    */
   public $canSearch;
   /**
-   * Whether the user can set this field on Drive items.
-   *
    * @var bool
    */
   public $canWrite;
 
   /**
-   * Whether the user can read related applied metadata on items.
-   *
-   * @param bool $canRead
+   * @param bool
    */
   public function setCanRead($canRead)
   {
@@ -55,9 +47,7 @@ class GoogleAppsDriveLabelsV2FieldAppliedCapabilities extends \Google\Model
     return $this->canRead;
   }
   /**
-   * Whether the user can search for Drive items referencing this field.
-   *
-   * @param bool $canSearch
+   * @param bool
    */
   public function setCanSearch($canSearch)
   {
@@ -71,9 +61,7 @@ class GoogleAppsDriveLabelsV2FieldAppliedCapabilities extends \Google\Model
     return $this->canSearch;
   }
   /**
-   * Whether the user can set this field on Drive items.
-   *
-   * @param bool $canWrite
+   * @param bool
    */
   public function setCanWrite($canWrite)
   {

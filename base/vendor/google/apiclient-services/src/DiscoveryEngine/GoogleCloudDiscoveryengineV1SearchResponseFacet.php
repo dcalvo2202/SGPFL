@@ -21,15 +21,10 @@ class GoogleCloudDiscoveryengineV1SearchResponseFacet extends \Google\Collection
 {
   protected $collection_key = 'values';
   /**
-   * Whether the facet is dynamically generated.
-   *
    * @var bool
    */
   public $dynamicFacet;
   /**
-   * The key for this facet. For example, `"colors"` or `"price"`. It matches
-   * SearchRequest.FacetSpec.FacetKey.key.
-   *
    * @var string
    */
   public $key;
@@ -37,9 +32,7 @@ class GoogleCloudDiscoveryengineV1SearchResponseFacet extends \Google\Collection
   protected $valuesDataType = 'array';
 
   /**
-   * Whether the facet is dynamically generated.
-   *
-   * @param bool $dynamicFacet
+   * @param bool
    */
   public function setDynamicFacet($dynamicFacet)
   {
@@ -53,10 +46,7 @@ class GoogleCloudDiscoveryengineV1SearchResponseFacet extends \Google\Collection
     return $this->dynamicFacet;
   }
   /**
-   * The key for this facet. For example, `"colors"` or `"price"`. It matches
-   * SearchRequest.FacetSpec.FacetKey.key.
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {
@@ -70,9 +60,7 @@ class GoogleCloudDiscoveryengineV1SearchResponseFacet extends \Google\Collection
     return $this->key;
   }
   /**
-   * The facet values for this field.
-   *
-   * @param GoogleCloudDiscoveryengineV1SearchResponseFacetFacetValue[] $values
+   * @param GoogleCloudDiscoveryengineV1SearchResponseFacetFacetValue[]
    */
   public function setValues($values)
   {

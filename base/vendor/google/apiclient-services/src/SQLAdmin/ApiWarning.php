@@ -20,71 +20,34 @@ namespace Google\Service\SQLAdmin;
 class ApiWarning extends \Google\Model
 {
   /**
-   * An unknown or unset warning type from Cloud SQL API.
-   */
-  public const CODE_SQL_API_WARNING_CODE_UNSPECIFIED = 'SQL_API_WARNING_CODE_UNSPECIFIED';
-  /**
-   * Warning when one or more regions are not reachable. The returned result set
-   * may be incomplete.
-   */
-  public const CODE_REGION_UNREACHABLE = 'REGION_UNREACHABLE';
-  /**
-   * Warning when user provided maxResults parameter exceeds the limit. The
-   * returned result set may be incomplete.
-   */
-  public const CODE_MAX_RESULTS_EXCEEDS_LIMIT = 'MAX_RESULTS_EXCEEDS_LIMIT';
-  /**
-   * Warning when user tries to create/update a user with credentials that have
-   * previously been compromised by a public data breach.
-   */
-  public const CODE_COMPROMISED_CREDENTIALS = 'COMPROMISED_CREDENTIALS';
-  /**
-   * Warning when the operation succeeds but some non-critical workflow state
-   * failed.
-   */
-  public const CODE_INTERNAL_STATE_FAILURE = 'INTERNAL_STATE_FAILURE';
-  /**
-   * Code to uniquely identify the warning type.
-   *
    * @var string
    */
   public $code;
   /**
-   * The warning message.
-   *
    * @var string
    */
   public $message;
   /**
-   * The region name for REGION_UNREACHABLE warning.
-   *
    * @var string
    */
   public $region;
 
   /**
-   * Code to uniquely identify the warning type.
-   *
-   * Accepted values: SQL_API_WARNING_CODE_UNSPECIFIED, REGION_UNREACHABLE,
-   * MAX_RESULTS_EXCEEDS_LIMIT, COMPROMISED_CREDENTIALS, INTERNAL_STATE_FAILURE
-   *
-   * @param self::CODE_* $code
+   * @param string
    */
   public function setCode($code)
   {
     $this->code = $code;
   }
   /**
-   * @return self::CODE_*
+   * @return string
    */
   public function getCode()
   {
     return $this->code;
   }
   /**
-   * The warning message.
-   *
-   * @param string $message
+   * @param string
    */
   public function setMessage($message)
   {
@@ -98,9 +61,7 @@ class ApiWarning extends \Google\Model
     return $this->message;
   }
   /**
-   * The region name for REGION_UNREACHABLE warning.
-   *
-   * @param string $region
+   * @param string
    */
   public function setRegion($region)
   {

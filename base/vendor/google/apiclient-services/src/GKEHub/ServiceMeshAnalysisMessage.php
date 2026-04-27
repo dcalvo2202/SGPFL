@@ -21,37 +21,22 @@ class ServiceMeshAnalysisMessage extends \Google\Collection
 {
   protected $collection_key = 'resourcePaths';
   /**
-   * A UI can combine these args with a template (based on message_base.type) to
-   * produce an internationalized message.
-   *
    * @var array[]
    */
   public $args;
   /**
-   * A human readable description of what the error means. It is suitable for
-   * non-internationalize display purposes.
-   *
    * @var string
    */
   public $description;
   protected $messageBaseType = ServiceMeshAnalysisMessageBase::class;
   protected $messageBaseDataType = '';
   /**
-   * A list of strings specifying the resource identifiers that were the cause
-   * of message generation. A "path" here may be: * MEMBERSHIP_ID if the cause
-   * is a specific member cluster *
-   * MEMBERSHIP_ID/(NAMESPACE\/)?RESOURCETYPE/NAME if the cause is a resource in
-   * a cluster
-   *
    * @var string[]
    */
   public $resourcePaths;
 
   /**
-   * A UI can combine these args with a template (based on message_base.type) to
-   * produce an internationalized message.
-   *
-   * @param array[] $args
+   * @param array[]
    */
   public function setArgs($args)
   {
@@ -65,10 +50,7 @@ class ServiceMeshAnalysisMessage extends \Google\Collection
     return $this->args;
   }
   /**
-   * A human readable description of what the error means. It is suitable for
-   * non-internationalize display purposes.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -82,9 +64,7 @@ class ServiceMeshAnalysisMessage extends \Google\Collection
     return $this->description;
   }
   /**
-   * Details common to all types of Istio and ServiceMesh analysis messages.
-   *
-   * @param ServiceMeshAnalysisMessageBase $messageBase
+   * @param ServiceMeshAnalysisMessageBase
    */
   public function setMessageBase(ServiceMeshAnalysisMessageBase $messageBase)
   {
@@ -98,13 +78,7 @@ class ServiceMeshAnalysisMessage extends \Google\Collection
     return $this->messageBase;
   }
   /**
-   * A list of strings specifying the resource identifiers that were the cause
-   * of message generation. A "path" here may be: * MEMBERSHIP_ID if the cause
-   * is a specific member cluster *
-   * MEMBERSHIP_ID/(NAMESPACE\/)?RESOURCETYPE/NAME if the cause is a resource in
-   * a cluster
-   *
-   * @param string[] $resourcePaths
+   * @param string[]
    */
   public function setResourcePaths($resourcePaths)
   {

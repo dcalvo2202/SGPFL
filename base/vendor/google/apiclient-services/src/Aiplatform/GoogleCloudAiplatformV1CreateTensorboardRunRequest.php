@@ -20,30 +20,18 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1CreateTensorboardRunRequest extends \Google\Model
 {
   /**
-   * Required. The resource name of the TensorboardExperiment to create the
-   * TensorboardRun in. Format: `projects/{project}/locations/{location}/tensorb
-   * oards/{tensorboard}/experiments/{experiment}`
-   *
    * @var string
    */
   public $parent;
   protected $tensorboardRunType = GoogleCloudAiplatformV1TensorboardRun::class;
   protected $tensorboardRunDataType = '';
   /**
-   * Required. The ID to use for the Tensorboard run, which becomes the final
-   * component of the Tensorboard run's resource name. This value should be
-   * 1-128 characters, and valid characters are `/a-z-/`.
-   *
    * @var string
    */
   public $tensorboardRunId;
 
   /**
-   * Required. The resource name of the TensorboardExperiment to create the
-   * TensorboardRun in. Format: `projects/{project}/locations/{location}/tensorb
-   * oards/{tensorboard}/experiments/{experiment}`
-   *
-   * @param string $parent
+   * @param string
    */
   public function setParent($parent)
   {
@@ -57,9 +45,7 @@ class GoogleCloudAiplatformV1CreateTensorboardRunRequest extends \Google\Model
     return $this->parent;
   }
   /**
-   * Required. The TensorboardRun to create.
-   *
-   * @param GoogleCloudAiplatformV1TensorboardRun $tensorboardRun
+   * @param GoogleCloudAiplatformV1TensorboardRun
    */
   public function setTensorboardRun(GoogleCloudAiplatformV1TensorboardRun $tensorboardRun)
   {
@@ -73,11 +59,7 @@ class GoogleCloudAiplatformV1CreateTensorboardRunRequest extends \Google\Model
     return $this->tensorboardRun;
   }
   /**
-   * Required. The ID to use for the Tensorboard run, which becomes the final
-   * component of the Tensorboard run's resource name. This value should be
-   * 1-128 characters, and valid characters are `/a-z-/`.
-   *
-   * @param string $tensorboardRunId
+   * @param string
    */
   public function setTensorboardRunId($tensorboardRunId)
   {

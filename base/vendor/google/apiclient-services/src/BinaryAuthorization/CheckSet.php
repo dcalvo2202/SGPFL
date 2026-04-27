@@ -23,10 +23,6 @@ class CheckSet extends \Google\Collection
   protected $checksType = Check::class;
   protected $checksDataType = 'array';
   /**
-   * Optional. A user-provided name for this `CheckSet`. This field has no
-   * effect on the policy evaluation behavior except to improve readability of
-   * messages in evaluation results.
-   *
    * @var string
    */
   public $displayName;
@@ -36,11 +32,7 @@ class CheckSet extends \Google\Collection
   protected $scopeDataType = '';
 
   /**
-   * Optional. The checks to apply. The ultimate result of evaluating the check
-   * set will be "allow" if and only if every check in `checks` evaluates to
-   * "allow". If `checks` is empty, the default behavior is "always allow".
-   *
-   * @param Check[] $checks
+   * @param Check[]
    */
   public function setChecks($checks)
   {
@@ -54,11 +46,7 @@ class CheckSet extends \Google\Collection
     return $this->checks;
   }
   /**
-   * Optional. A user-provided name for this `CheckSet`. This field has no
-   * effect on the policy evaluation behavior except to improve readability of
-   * messages in evaluation results.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -72,11 +60,7 @@ class CheckSet extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Optional. Images exempted from this `CheckSet`. If any of the patterns
-   * match the image being evaluated, no checks in the `CheckSet` will be
-   * evaluated.
-   *
-   * @param ImageAllowlist $imageAllowlist
+   * @param ImageAllowlist
    */
   public function setImageAllowlist(ImageAllowlist $imageAllowlist)
   {
@@ -90,11 +74,7 @@ class CheckSet extends \Google\Collection
     return $this->imageAllowlist;
   }
   /**
-   * Optional. The scope to which this `CheckSet` applies. If unset or an empty
-   * string (the default), applies to all namespaces and service accounts. See
-   * the `Scope` message documentation for details on scoping rules.
-   *
-   * @param Scope $scope
+   * @param Scope
    */
   public function setScope(Scope $scope)
   {

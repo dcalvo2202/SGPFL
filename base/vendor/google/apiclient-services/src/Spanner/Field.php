@@ -20,13 +20,6 @@ namespace Google\Service\Spanner;
 class Field extends \Google\Model
 {
   /**
-   * The name of the field. For reads, this is the column name. For SQL queries,
-   * it is the column alias (e.g., `"Word"` in the query `"SELECT 'hello' AS
-   * Word"`), or the column name (e.g., `"ColName"` in the query `"SELECT
-   * ColName FROM Table"`). Some columns might have an empty name (e.g.,
-   * `"SELECT UPPER(ColName)"`). Note that a query result can contain multiple
-   * fields with the same name.
-   *
    * @var string
    */
   public $name;
@@ -34,14 +27,7 @@ class Field extends \Google\Model
   protected $typeDataType = '';
 
   /**
-   * The name of the field. For reads, this is the column name. For SQL queries,
-   * it is the column alias (e.g., `"Word"` in the query `"SELECT 'hello' AS
-   * Word"`), or the column name (e.g., `"ColName"` in the query `"SELECT
-   * ColName FROM Table"`). Some columns might have an empty name (e.g.,
-   * `"SELECT UPPER(ColName)"`). Note that a query result can contain multiple
-   * fields with the same name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -55,9 +41,7 @@ class Field extends \Google\Model
     return $this->name;
   }
   /**
-   * The type of the field.
-   *
-   * @param Type $type
+   * @param Type
    */
   public function setType(Type $type)
   {

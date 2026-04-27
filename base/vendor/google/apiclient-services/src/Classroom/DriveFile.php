@@ -20,34 +20,24 @@ namespace Google\Service\Classroom;
 class DriveFile extends \Google\Model
 {
   /**
-   * URL that can be used to access the Drive item. Read-only.
-   *
    * @var string
    */
   public $alternateLink;
   /**
-   * Drive API resource ID.
-   *
    * @var string
    */
   public $id;
   /**
-   * URL of a thumbnail image of the Drive item. Read-only.
-   *
    * @var string
    */
   public $thumbnailUrl;
   /**
-   * Title of the Drive item. Read-only.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * URL that can be used to access the Drive item. Read-only.
-   *
-   * @param string $alternateLink
+   * @param string
    */
   public function setAlternateLink($alternateLink)
   {
@@ -61,9 +51,7 @@ class DriveFile extends \Google\Model
     return $this->alternateLink;
   }
   /**
-   * Drive API resource ID.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -77,9 +65,7 @@ class DriveFile extends \Google\Model
     return $this->id;
   }
   /**
-   * URL of a thumbnail image of the Drive item. Read-only.
-   *
-   * @param string $thumbnailUrl
+   * @param string
    */
   public function setThumbnailUrl($thumbnailUrl)
   {
@@ -93,9 +79,7 @@ class DriveFile extends \Google\Model
     return $this->thumbnailUrl;
   }
   /**
-   * Title of the Drive item. Read-only.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

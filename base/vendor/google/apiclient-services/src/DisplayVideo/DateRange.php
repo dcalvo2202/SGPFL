@@ -25,10 +25,7 @@ class DateRange extends \Google\Model
   protected $startDateDataType = '';
 
   /**
-   * The upper bound of the date range, inclusive. Must specify a positive value
-   * for `year`, `month`, and `day`.
-   *
-   * @param Date $endDate
+   * @param Date
    */
   public function setEndDate(Date $endDate)
   {
@@ -42,10 +39,7 @@ class DateRange extends \Google\Model
     return $this->endDate;
   }
   /**
-   * The lower bound of the date range, inclusive. Must specify a positive value
-   * for `year`, `month`, and `day`.
-   *
-   * @param Date $startDate
+   * @param Date
    */
   public function setStartDate(Date $startDate)
   {

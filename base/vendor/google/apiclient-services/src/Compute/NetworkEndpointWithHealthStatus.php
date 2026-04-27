@@ -26,12 +26,7 @@ class NetworkEndpointWithHealthStatus extends \Google\Collection
   protected $networkEndpointDataType = '';
 
   /**
-   * Output only. [Output only] The health status of network endpoint.
-   *
-   * Optional. Displayed only if the network endpoint has centralized health
-   * checking configured.
-   *
-   * @param HealthStatusForNetworkEndpoint[] $healths
+   * @param HealthStatusForNetworkEndpoint[]
    */
   public function setHealths($healths)
   {
@@ -45,9 +40,7 @@ class NetworkEndpointWithHealthStatus extends \Google\Collection
     return $this->healths;
   }
   /**
-   * Output only. [Output only] The network endpoint.
-   *
-   * @param NetworkEndpoint $networkEndpoint
+   * @param NetworkEndpoint
    */
   public function setNetworkEndpoint(NetworkEndpoint $networkEndpoint)
   {

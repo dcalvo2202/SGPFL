@@ -24,9 +24,7 @@ class ListHeldAccountsResponse extends \Google\Collection
   protected $accountsDataType = 'array';
 
   /**
-   * The held accounts on a hold.
-   *
-   * @param HeldAccount[] $accounts
+   * @param HeldAccount[]
    */
   public function setAccounts($accounts)
   {

@@ -21,28 +21,20 @@ class DoubleVerifyBrandSafetyCategories extends \Google\Collection
 {
   protected $collection_key = 'avoidedMediumSeverityCategories';
   /**
-   * Unknown or unrateable.
-   *
    * @var bool
    */
   public $avoidUnknownBrandSafetyCategory;
   /**
-   * Brand safety high severity avoidance categories.
-   *
    * @var string[]
    */
   public $avoidedHighSeverityCategories;
   /**
-   * Brand safety medium severity avoidance categories.
-   *
    * @var string[]
    */
   public $avoidedMediumSeverityCategories;
 
   /**
-   * Unknown or unrateable.
-   *
-   * @param bool $avoidUnknownBrandSafetyCategory
+   * @param bool
    */
   public function setAvoidUnknownBrandSafetyCategory($avoidUnknownBrandSafetyCategory)
   {
@@ -56,9 +48,7 @@ class DoubleVerifyBrandSafetyCategories extends \Google\Collection
     return $this->avoidUnknownBrandSafetyCategory;
   }
   /**
-   * Brand safety high severity avoidance categories.
-   *
-   * @param string[] $avoidedHighSeverityCategories
+   * @param string[]
    */
   public function setAvoidedHighSeverityCategories($avoidedHighSeverityCategories)
   {
@@ -72,9 +62,7 @@ class DoubleVerifyBrandSafetyCategories extends \Google\Collection
     return $this->avoidedHighSeverityCategories;
   }
   /**
-   * Brand safety medium severity avoidance categories.
-   *
-   * @param string[] $avoidedMediumSeverityCategories
+   * @param string[]
    */
   public function setAvoidedMediumSeverityCategories($avoidedMediumSeverityCategories)
   {

@@ -26,9 +26,7 @@ class ServiceAttachmentsScopedList extends \Google\Collection
   protected $warningDataType = '';
 
   /**
-   * A list of ServiceAttachments contained in this scope.
-   *
-   * @param ServiceAttachment[] $serviceAttachments
+   * @param ServiceAttachment[]
    */
   public function setServiceAttachments($serviceAttachments)
   {
@@ -42,10 +40,7 @@ class ServiceAttachmentsScopedList extends \Google\Collection
     return $this->serviceAttachments;
   }
   /**
-   * Informational warning which replaces the list of service attachments when
-   * the list is empty.
-   *
-   * @param ServiceAttachmentsScopedListWarning $warning
+   * @param ServiceAttachmentsScopedListWarning
    */
   public function setWarning(ServiceAttachmentsScopedListWarning $warning)
   {

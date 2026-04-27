@@ -20,622 +20,168 @@ namespace Google\Service\MyBusinessLodging;
 class LivingAreaFeatures extends \Google\Model
 {
   /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const AIR_CONDITIONING_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const AIR_CONDITIONING_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const AIR_CONDITIONING_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const AIR_CONDITIONING_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const BATHTUB_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const BATHTUB_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const BATHTUB_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const BATHTUB_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const BIDET_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const BIDET_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const BIDET_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const BIDET_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const DRYER_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const DRYER_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const DRYER_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const DRYER_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const ELECTRONIC_ROOM_KEY_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const ELECTRONIC_ROOM_KEY_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const ELECTRONIC_ROOM_KEY_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const ELECTRONIC_ROOM_KEY_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const FIREPLACE_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const FIREPLACE_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const FIREPLACE_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const FIREPLACE_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const HAIRDRYER_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const HAIRDRYER_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const HAIRDRYER_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const HAIRDRYER_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const HEATING_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const HEATING_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const HEATING_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const HEATING_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const INUNIT_SAFE_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const INUNIT_SAFE_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const INUNIT_SAFE_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const INUNIT_SAFE_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const INUNIT_WIFI_AVAILABLE_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const INUNIT_WIFI_AVAILABLE_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const INUNIT_WIFI_AVAILABLE_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const INUNIT_WIFI_AVAILABLE_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const IRONING_EQUIPMENT_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const IRONING_EQUIPMENT_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const IRONING_EQUIPMENT_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const IRONING_EQUIPMENT_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const PAY_PER_VIEW_MOVIES_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const PAY_PER_VIEW_MOVIES_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const PAY_PER_VIEW_MOVIES_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const PAY_PER_VIEW_MOVIES_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const PRIVATE_BATHROOM_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const PRIVATE_BATHROOM_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const PRIVATE_BATHROOM_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const PRIVATE_BATHROOM_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const SHOWER_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const SHOWER_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const SHOWER_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const SHOWER_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const TOILET_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const TOILET_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const TOILET_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const TOILET_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const TV_CASTING_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const TV_CASTING_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const TV_CASTING_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const TV_CASTING_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const TV_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const TV_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const TV_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const TV_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const TV_STREAMING_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const TV_STREAMING_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const TV_STREAMING_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const TV_STREAMING_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const UNIVERSAL_POWER_ADAPTERS_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const UNIVERSAL_POWER_ADAPTERS_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const UNIVERSAL_POWER_ADAPTERS_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const UNIVERSAL_POWER_ADAPTERS_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const WASHER_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const WASHER_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const WASHER_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const WASHER_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Air conditioning. An electrical machine used to cool the temperature of the
-   * guestroom.
-   *
    * @var bool
    */
   public $airConditioning;
   /**
-   * Air conditioning exception.
-   *
    * @var string
    */
   public $airConditioningException;
   /**
-   * Bathtub. A fixed plumbing feature set on the floor and consisting of a
-   * large container that accommodates the body of an adult for the purpose of
-   * seated bathing. Includes knobs or fixtures to control the temperature of
-   * the water, a faucet through which the water flows, and a drain that can be
-   * closed for filling and opened for draining.
-   *
    * @var bool
    */
   public $bathtub;
   /**
-   * Bathtub exception.
-   *
    * @var string
    */
   public $bathtubException;
   /**
-   * Bidet. A plumbing fixture attached to a toilet or a low, fixed sink
-   * designed for the purpose of washing after toilet use.
-   *
    * @var bool
    */
   public $bidet;
   /**
-   * Bidet exception.
-   *
    * @var string
    */
   public $bidetException;
   /**
-   * Dryer. An electrical machine designed to dry clothing.
-   *
    * @var bool
    */
   public $dryer;
   /**
-   * Dryer exception.
-   *
    * @var string
    */
   public $dryerException;
   /**
-   * Electronic room key. A card coded by the check-in computer that is read by
-   * the lock on the hotel guestroom door to allow for entry.
-   *
    * @var bool
    */
   public $electronicRoomKey;
   /**
-   * Electronic room key exception.
-   *
    * @var string
    */
   public $electronicRoomKeyException;
   /**
-   * Fireplace. A framed opening (aka hearth) at the base of a chimney in which
-   * logs or an electrical fire feature are burned to provide a relaxing
-   * ambiance or to heat the room. Often made of bricks or stone.
-   *
    * @var bool
    */
   public $fireplace;
   /**
-   * Fireplace exception.
-   *
    * @var string
    */
   public $fireplaceException;
   /**
-   * Hairdryer. A handheld electric appliance that blows temperature-controlled
-   * air for the purpose of drying wet hair. Can be mounted to a bathroom wall
-   * or a freestanding device stored in the guestroom's bathroom or closet.
-   *
    * @var bool
    */
   public $hairdryer;
   /**
-   * Hairdryer exception.
-   *
    * @var string
    */
   public $hairdryerException;
   /**
-   * Heating. An electrical machine used to warm the temperature of the
-   * guestroom.
-   *
    * @var bool
    */
   public $heating;
   /**
-   * Heating exception.
-   *
    * @var string
    */
   public $heatingException;
   /**
-   * In-unit safe. A strong fireproof cabinet with a programmable lock, used for
-   * the protected storage of valuables in a guestroom. Often built into a
-   * closet.
-   *
    * @var bool
    */
   public $inunitSafe;
   /**
-   * In-unit safe exception.
-   *
    * @var string
    */
   public $inunitSafeException;
   /**
-   * In-unit Wifi available. Guests can wirelessly connect to the Internet in
-   * the guestroom. Can be free or for a fee.
-   *
    * @var bool
    */
   public $inunitWifiAvailable;
   /**
-   * In-unit Wifi available exception.
-   *
    * @var string
    */
   public $inunitWifiAvailableException;
   /**
-   * Ironing equipment. A device, usually with a flat metal base, that is heated
-   * to smooth, finish, or press clothes and a flat, padded, cloth-covered
-   * surface on which the clothes are worked.
-   *
    * @var bool
    */
   public $ironingEquipment;
   /**
-   * Ironing equipment exception.
-   *
    * @var string
    */
   public $ironingEquipmentException;
   /**
-   * Pay per view movies. Televisions with channels that offer films that can be
-   * viewed for a fee, and have an interface to allow the viewer to accept the
-   * terms and approve payment.
-   *
    * @var bool
    */
   public $payPerViewMovies;
   /**
-   * Pay per view movies exception.
-   *
    * @var string
    */
   public $payPerViewMoviesException;
   /**
-   * Private bathroom. A bathroom designated for the express use of the guests
-   * staying in a specific guestroom.
-   *
    * @var bool
    */
   public $privateBathroom;
   /**
-   * Private bathroom exception.
-   *
    * @var string
    */
   public $privateBathroomException;
   /**
-   * Shower. A fixed plumbing fixture for standing bathing that features a tall
-   * spray spout or faucet through which water flows, a knob or knobs that
-   * control the water's temperature, and a drain in the floor.
-   *
    * @var bool
    */
   public $shower;
   /**
-   * Shower exception.
-   *
    * @var string
    */
   public $showerException;
   /**
-   * Toilet. A fixed bathroom feature connected to a sewer or septic system and
-   * consisting of a water-flushed bowl with a seat, as well as a device that
-   * elicites the water-flushing action. Used for the process and disposal of
-   * human waste.
-   *
    * @var bool
    */
   public $toilet;
   /**
-   * Toilet exception.
-   *
    * @var string
    */
   public $toiletException;
   /**
-   * TV. A television is available in the guestroom.
-   *
    * @var bool
    */
   public $tv;
   /**
-   * TV casting. A television equipped with a device through which the video
-   * entertainment accessed on a personal computer, phone or tablet can be
-   * wirelessly delivered to and viewed on the guestroom's television.
-   *
    * @var bool
    */
   public $tvCasting;
   /**
-   * TV exception.
-   *
    * @var string
    */
   public $tvCastingException;
   /**
-   * TV exception.
-   *
    * @var string
    */
   public $tvException;
   /**
-   * TV streaming. Televisions that embed a range of web-based apps to allow for
-   * watching media from those apps.
-   *
    * @var bool
    */
   public $tvStreaming;
   /**
-   * TV streaming exception.
-   *
    * @var string
    */
   public $tvStreamingException;
   /**
-   * Universal power adapters. A power supply for electronic devices which plugs
-   * into a wall for the purpose of converting AC to a single DC voltage. Also
-   * know as AC adapter or charger.
-   *
    * @var bool
    */
   public $universalPowerAdapters;
   /**
-   * Universal power adapters exception.
-   *
    * @var string
    */
   public $universalPowerAdaptersException;
   /**
-   * Washer. An electrical machine connected to a running water source designed
-   * to launder clothing.
-   *
    * @var bool
    */
   public $washer;
   /**
-   * Washer exception.
-   *
    * @var string
    */
   public $washerException;
 
   /**
-   * Air conditioning. An electrical machine used to cool the temperature of the
-   * guestroom.
-   *
-   * @param bool $airConditioning
+   * @param bool
    */
   public function setAirConditioning($airConditioning)
   {
@@ -649,32 +195,21 @@ class LivingAreaFeatures extends \Google\Model
     return $this->airConditioning;
   }
   /**
-   * Air conditioning exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::AIR_CONDITIONING_EXCEPTION_* $airConditioningException
+   * @param string
    */
   public function setAirConditioningException($airConditioningException)
   {
     $this->airConditioningException = $airConditioningException;
   }
   /**
-   * @return self::AIR_CONDITIONING_EXCEPTION_*
+   * @return string
    */
   public function getAirConditioningException()
   {
     return $this->airConditioningException;
   }
   /**
-   * Bathtub. A fixed plumbing feature set on the floor and consisting of a
-   * large container that accommodates the body of an adult for the purpose of
-   * seated bathing. Includes knobs or fixtures to control the temperature of
-   * the water, a faucet through which the water flows, and a drain that can be
-   * closed for filling and opened for draining.
-   *
-   * @param bool $bathtub
+   * @param bool
    */
   public function setBathtub($bathtub)
   {
@@ -688,29 +223,21 @@ class LivingAreaFeatures extends \Google\Model
     return $this->bathtub;
   }
   /**
-   * Bathtub exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::BATHTUB_EXCEPTION_* $bathtubException
+   * @param string
    */
   public function setBathtubException($bathtubException)
   {
     $this->bathtubException = $bathtubException;
   }
   /**
-   * @return self::BATHTUB_EXCEPTION_*
+   * @return string
    */
   public function getBathtubException()
   {
     return $this->bathtubException;
   }
   /**
-   * Bidet. A plumbing fixture attached to a toilet or a low, fixed sink
-   * designed for the purpose of washing after toilet use.
-   *
-   * @param bool $bidet
+   * @param bool
    */
   public function setBidet($bidet)
   {
@@ -724,28 +251,21 @@ class LivingAreaFeatures extends \Google\Model
     return $this->bidet;
   }
   /**
-   * Bidet exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::BIDET_EXCEPTION_* $bidetException
+   * @param string
    */
   public function setBidetException($bidetException)
   {
     $this->bidetException = $bidetException;
   }
   /**
-   * @return self::BIDET_EXCEPTION_*
+   * @return string
    */
   public function getBidetException()
   {
     return $this->bidetException;
   }
   /**
-   * Dryer. An electrical machine designed to dry clothing.
-   *
-   * @param bool $dryer
+   * @param bool
    */
   public function setDryer($dryer)
   {
@@ -759,29 +279,21 @@ class LivingAreaFeatures extends \Google\Model
     return $this->dryer;
   }
   /**
-   * Dryer exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::DRYER_EXCEPTION_* $dryerException
+   * @param string
    */
   public function setDryerException($dryerException)
   {
     $this->dryerException = $dryerException;
   }
   /**
-   * @return self::DRYER_EXCEPTION_*
+   * @return string
    */
   public function getDryerException()
   {
     return $this->dryerException;
   }
   /**
-   * Electronic room key. A card coded by the check-in computer that is read by
-   * the lock on the hotel guestroom door to allow for entry.
-   *
-   * @param bool $electronicRoomKey
+   * @param bool
    */
   public function setElectronicRoomKey($electronicRoomKey)
   {
@@ -795,30 +307,21 @@ class LivingAreaFeatures extends \Google\Model
     return $this->electronicRoomKey;
   }
   /**
-   * Electronic room key exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::ELECTRONIC_ROOM_KEY_EXCEPTION_* $electronicRoomKeyException
+   * @param string
    */
   public function setElectronicRoomKeyException($electronicRoomKeyException)
   {
     $this->electronicRoomKeyException = $electronicRoomKeyException;
   }
   /**
-   * @return self::ELECTRONIC_ROOM_KEY_EXCEPTION_*
+   * @return string
    */
   public function getElectronicRoomKeyException()
   {
     return $this->electronicRoomKeyException;
   }
   /**
-   * Fireplace. A framed opening (aka hearth) at the base of a chimney in which
-   * logs or an electrical fire feature are burned to provide a relaxing
-   * ambiance or to heat the room. Often made of bricks or stone.
-   *
-   * @param bool $fireplace
+   * @param bool
    */
   public function setFireplace($fireplace)
   {
@@ -832,30 +335,21 @@ class LivingAreaFeatures extends \Google\Model
     return $this->fireplace;
   }
   /**
-   * Fireplace exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::FIREPLACE_EXCEPTION_* $fireplaceException
+   * @param string
    */
   public function setFireplaceException($fireplaceException)
   {
     $this->fireplaceException = $fireplaceException;
   }
   /**
-   * @return self::FIREPLACE_EXCEPTION_*
+   * @return string
    */
   public function getFireplaceException()
   {
     return $this->fireplaceException;
   }
   /**
-   * Hairdryer. A handheld electric appliance that blows temperature-controlled
-   * air for the purpose of drying wet hair. Can be mounted to a bathroom wall
-   * or a freestanding device stored in the guestroom's bathroom or closet.
-   *
-   * @param bool $hairdryer
+   * @param bool
    */
   public function setHairdryer($hairdryer)
   {
@@ -869,29 +363,21 @@ class LivingAreaFeatures extends \Google\Model
     return $this->hairdryer;
   }
   /**
-   * Hairdryer exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::HAIRDRYER_EXCEPTION_* $hairdryerException
+   * @param string
    */
   public function setHairdryerException($hairdryerException)
   {
     $this->hairdryerException = $hairdryerException;
   }
   /**
-   * @return self::HAIRDRYER_EXCEPTION_*
+   * @return string
    */
   public function getHairdryerException()
   {
     return $this->hairdryerException;
   }
   /**
-   * Heating. An electrical machine used to warm the temperature of the
-   * guestroom.
-   *
-   * @param bool $heating
+   * @param bool
    */
   public function setHeating($heating)
   {
@@ -905,30 +391,21 @@ class LivingAreaFeatures extends \Google\Model
     return $this->heating;
   }
   /**
-   * Heating exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::HEATING_EXCEPTION_* $heatingException
+   * @param string
    */
   public function setHeatingException($heatingException)
   {
     $this->heatingException = $heatingException;
   }
   /**
-   * @return self::HEATING_EXCEPTION_*
+   * @return string
    */
   public function getHeatingException()
   {
     return $this->heatingException;
   }
   /**
-   * In-unit safe. A strong fireproof cabinet with a programmable lock, used for
-   * the protected storage of valuables in a guestroom. Often built into a
-   * closet.
-   *
-   * @param bool $inunitSafe
+   * @param bool
    */
   public function setInunitSafe($inunitSafe)
   {
@@ -942,29 +419,21 @@ class LivingAreaFeatures extends \Google\Model
     return $this->inunitSafe;
   }
   /**
-   * In-unit safe exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::INUNIT_SAFE_EXCEPTION_* $inunitSafeException
+   * @param string
    */
   public function setInunitSafeException($inunitSafeException)
   {
     $this->inunitSafeException = $inunitSafeException;
   }
   /**
-   * @return self::INUNIT_SAFE_EXCEPTION_*
+   * @return string
    */
   public function getInunitSafeException()
   {
     return $this->inunitSafeException;
   }
   /**
-   * In-unit Wifi available. Guests can wirelessly connect to the Internet in
-   * the guestroom. Can be free or for a fee.
-   *
-   * @param bool $inunitWifiAvailable
+   * @param bool
    */
   public function setInunitWifiAvailable($inunitWifiAvailable)
   {
@@ -978,30 +447,21 @@ class LivingAreaFeatures extends \Google\Model
     return $this->inunitWifiAvailable;
   }
   /**
-   * In-unit Wifi available exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::INUNIT_WIFI_AVAILABLE_EXCEPTION_* $inunitWifiAvailableException
+   * @param string
    */
   public function setInunitWifiAvailableException($inunitWifiAvailableException)
   {
     $this->inunitWifiAvailableException = $inunitWifiAvailableException;
   }
   /**
-   * @return self::INUNIT_WIFI_AVAILABLE_EXCEPTION_*
+   * @return string
    */
   public function getInunitWifiAvailableException()
   {
     return $this->inunitWifiAvailableException;
   }
   /**
-   * Ironing equipment. A device, usually with a flat metal base, that is heated
-   * to smooth, finish, or press clothes and a flat, padded, cloth-covered
-   * surface on which the clothes are worked.
-   *
-   * @param bool $ironingEquipment
+   * @param bool
    */
   public function setIroningEquipment($ironingEquipment)
   {
@@ -1015,30 +475,21 @@ class LivingAreaFeatures extends \Google\Model
     return $this->ironingEquipment;
   }
   /**
-   * Ironing equipment exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::IRONING_EQUIPMENT_EXCEPTION_* $ironingEquipmentException
+   * @param string
    */
   public function setIroningEquipmentException($ironingEquipmentException)
   {
     $this->ironingEquipmentException = $ironingEquipmentException;
   }
   /**
-   * @return self::IRONING_EQUIPMENT_EXCEPTION_*
+   * @return string
    */
   public function getIroningEquipmentException()
   {
     return $this->ironingEquipmentException;
   }
   /**
-   * Pay per view movies. Televisions with channels that offer films that can be
-   * viewed for a fee, and have an interface to allow the viewer to accept the
-   * terms and approve payment.
-   *
-   * @param bool $payPerViewMovies
+   * @param bool
    */
   public function setPayPerViewMovies($payPerViewMovies)
   {
@@ -1052,29 +503,21 @@ class LivingAreaFeatures extends \Google\Model
     return $this->payPerViewMovies;
   }
   /**
-   * Pay per view movies exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::PAY_PER_VIEW_MOVIES_EXCEPTION_* $payPerViewMoviesException
+   * @param string
    */
   public function setPayPerViewMoviesException($payPerViewMoviesException)
   {
     $this->payPerViewMoviesException = $payPerViewMoviesException;
   }
   /**
-   * @return self::PAY_PER_VIEW_MOVIES_EXCEPTION_*
+   * @return string
    */
   public function getPayPerViewMoviesException()
   {
     return $this->payPerViewMoviesException;
   }
   /**
-   * Private bathroom. A bathroom designated for the express use of the guests
-   * staying in a specific guestroom.
-   *
-   * @param bool $privateBathroom
+   * @param bool
    */
   public function setPrivateBathroom($privateBathroom)
   {
@@ -1088,30 +531,21 @@ class LivingAreaFeatures extends \Google\Model
     return $this->privateBathroom;
   }
   /**
-   * Private bathroom exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::PRIVATE_BATHROOM_EXCEPTION_* $privateBathroomException
+   * @param string
    */
   public function setPrivateBathroomException($privateBathroomException)
   {
     $this->privateBathroomException = $privateBathroomException;
   }
   /**
-   * @return self::PRIVATE_BATHROOM_EXCEPTION_*
+   * @return string
    */
   public function getPrivateBathroomException()
   {
     return $this->privateBathroomException;
   }
   /**
-   * Shower. A fixed plumbing fixture for standing bathing that features a tall
-   * spray spout or faucet through which water flows, a knob or knobs that
-   * control the water's temperature, and a drain in the floor.
-   *
-   * @param bool $shower
+   * @param bool
    */
   public function setShower($shower)
   {
@@ -1125,31 +559,21 @@ class LivingAreaFeatures extends \Google\Model
     return $this->shower;
   }
   /**
-   * Shower exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::SHOWER_EXCEPTION_* $showerException
+   * @param string
    */
   public function setShowerException($showerException)
   {
     $this->showerException = $showerException;
   }
   /**
-   * @return self::SHOWER_EXCEPTION_*
+   * @return string
    */
   public function getShowerException()
   {
     return $this->showerException;
   }
   /**
-   * Toilet. A fixed bathroom feature connected to a sewer or septic system and
-   * consisting of a water-flushed bowl with a seat, as well as a device that
-   * elicites the water-flushing action. Used for the process and disposal of
-   * human waste.
-   *
-   * @param bool $toilet
+   * @param bool
    */
   public function setToilet($toilet)
   {
@@ -1163,28 +587,21 @@ class LivingAreaFeatures extends \Google\Model
     return $this->toilet;
   }
   /**
-   * Toilet exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::TOILET_EXCEPTION_* $toiletException
+   * @param string
    */
   public function setToiletException($toiletException)
   {
     $this->toiletException = $toiletException;
   }
   /**
-   * @return self::TOILET_EXCEPTION_*
+   * @return string
    */
   public function getToiletException()
   {
     return $this->toiletException;
   }
   /**
-   * TV. A television is available in the guestroom.
-   *
-   * @param bool $tv
+   * @param bool
    */
   public function setTv($tv)
   {
@@ -1198,11 +615,7 @@ class LivingAreaFeatures extends \Google\Model
     return $this->tv;
   }
   /**
-   * TV casting. A television equipped with a device through which the video
-   * entertainment accessed on a personal computer, phone or tablet can be
-   * wirelessly delivered to and viewed on the guestroom's television.
-   *
-   * @param bool $tvCasting
+   * @param bool
    */
   public function setTvCasting($tvCasting)
   {
@@ -1216,48 +629,35 @@ class LivingAreaFeatures extends \Google\Model
     return $this->tvCasting;
   }
   /**
-   * TV exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::TV_CASTING_EXCEPTION_* $tvCastingException
+   * @param string
    */
   public function setTvCastingException($tvCastingException)
   {
     $this->tvCastingException = $tvCastingException;
   }
   /**
-   * @return self::TV_CASTING_EXCEPTION_*
+   * @return string
    */
   public function getTvCastingException()
   {
     return $this->tvCastingException;
   }
   /**
-   * TV exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::TV_EXCEPTION_* $tvException
+   * @param string
    */
   public function setTvException($tvException)
   {
     $this->tvException = $tvException;
   }
   /**
-   * @return self::TV_EXCEPTION_*
+   * @return string
    */
   public function getTvException()
   {
     return $this->tvException;
   }
   /**
-   * TV streaming. Televisions that embed a range of web-based apps to allow for
-   * watching media from those apps.
-   *
-   * @param bool $tvStreaming
+   * @param bool
    */
   public function setTvStreaming($tvStreaming)
   {
@@ -1271,30 +671,21 @@ class LivingAreaFeatures extends \Google\Model
     return $this->tvStreaming;
   }
   /**
-   * TV streaming exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::TV_STREAMING_EXCEPTION_* $tvStreamingException
+   * @param string
    */
   public function setTvStreamingException($tvStreamingException)
   {
     $this->tvStreamingException = $tvStreamingException;
   }
   /**
-   * @return self::TV_STREAMING_EXCEPTION_*
+   * @return string
    */
   public function getTvStreamingException()
   {
     return $this->tvStreamingException;
   }
   /**
-   * Universal power adapters. A power supply for electronic devices which plugs
-   * into a wall for the purpose of converting AC to a single DC voltage. Also
-   * know as AC adapter or charger.
-   *
-   * @param bool $universalPowerAdapters
+   * @param bool
    */
   public function setUniversalPowerAdapters($universalPowerAdapters)
   {
@@ -1308,29 +699,21 @@ class LivingAreaFeatures extends \Google\Model
     return $this->universalPowerAdapters;
   }
   /**
-   * Universal power adapters exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::UNIVERSAL_POWER_ADAPTERS_EXCEPTION_* $universalPowerAdaptersException
+   * @param string
    */
   public function setUniversalPowerAdaptersException($universalPowerAdaptersException)
   {
     $this->universalPowerAdaptersException = $universalPowerAdaptersException;
   }
   /**
-   * @return self::UNIVERSAL_POWER_ADAPTERS_EXCEPTION_*
+   * @return string
    */
   public function getUniversalPowerAdaptersException()
   {
     return $this->universalPowerAdaptersException;
   }
   /**
-   * Washer. An electrical machine connected to a running water source designed
-   * to launder clothing.
-   *
-   * @param bool $washer
+   * @param bool
    */
   public function setWasher($washer)
   {
@@ -1344,19 +727,14 @@ class LivingAreaFeatures extends \Google\Model
     return $this->washer;
   }
   /**
-   * Washer exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::WASHER_EXCEPTION_* $washerException
+   * @param string
    */
   public function setWasherException($washerException)
   {
     $this->washerException = $washerException;
   }
   /**
-   * @return self::WASHER_EXCEPTION_*
+   * @return string
    */
   public function getWasherException()
   {

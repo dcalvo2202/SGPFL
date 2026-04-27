@@ -20,46 +20,24 @@ namespace Google\Service\BigtableAdmin;
 class UpdateLogicalViewMetadata extends \Google\Model
 {
   /**
-   * DEPRECATED: Use finish_time instead.
-   *
-   * @deprecated
    * @var string
    */
   public $endTime;
-  /**
-   * The time at which the operation failed or was completed successfully.
-   *
-   * @var string
-   */
-  public $finishTime;
   protected $originalRequestType = UpdateLogicalViewRequest::class;
   protected $originalRequestDataType = '';
   /**
-   * The time at which the original request was received.
-   *
-   * @var string
-   */
-  public $requestTime;
-  /**
-   * DEPRECATED: Use request_time instead.
-   *
-   * @deprecated
    * @var string
    */
   public $startTime;
 
   /**
-   * DEPRECATED: Use finish_time instead.
-   *
-   * @deprecated
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
     $this->endTime = $endTime;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getEndTime()
@@ -67,26 +45,7 @@ class UpdateLogicalViewMetadata extends \Google\Model
     return $this->endTime;
   }
   /**
-   * The time at which the operation failed or was completed successfully.
-   *
-   * @param string $finishTime
-   */
-  public function setFinishTime($finishTime)
-  {
-    $this->finishTime = $finishTime;
-  }
-  /**
-   * @return string
-   */
-  public function getFinishTime()
-  {
-    return $this->finishTime;
-  }
-  /**
-   * The request that prompted the initiation of this UpdateLogicalView
-   * operation.
-   *
-   * @param UpdateLogicalViewRequest $originalRequest
+   * @param UpdateLogicalViewRequest
    */
   public function setOriginalRequest(UpdateLogicalViewRequest $originalRequest)
   {
@@ -100,33 +59,13 @@ class UpdateLogicalViewMetadata extends \Google\Model
     return $this->originalRequest;
   }
   /**
-   * The time at which the original request was received.
-   *
-   * @param string $requestTime
-   */
-  public function setRequestTime($requestTime)
-  {
-    $this->requestTime = $requestTime;
-  }
-  /**
-   * @return string
-   */
-  public function getRequestTime()
-  {
-    return $this->requestTime;
-  }
-  /**
-   * DEPRECATED: Use request_time instead.
-   *
-   * @deprecated
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
     $this->startTime = $startTime;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getStartTime()

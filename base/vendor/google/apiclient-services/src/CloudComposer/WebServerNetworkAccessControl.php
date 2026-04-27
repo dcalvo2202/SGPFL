@@ -24,9 +24,7 @@ class WebServerNetworkAccessControl extends \Google\Collection
   protected $allowedIpRangesDataType = 'array';
 
   /**
-   * A collection of allowed IP ranges with descriptions.
-   *
-   * @param AllowedIpRange[] $allowedIpRanges
+   * @param AllowedIpRange[]
    */
   public function setAllowedIpRanges($allowedIpRanges)
   {

@@ -21,20 +21,12 @@ class PromotionPromotionStatus extends \Google\Collection
 {
   protected $collection_key = 'promotionIssue';
   /**
-   * Date on which the promotion has been created in [ISO
-   * 8601](http://en.wikipedia.org/wiki/ISO_8601) format: Date, time, and
-   * offset, for example "2020-01-02T09:00:00+01:00" or "2020-01-02T09:00:00Z"
-   *
    * @var string
    */
   public $creationDate;
   protected $destinationStatusesType = PromotionPromotionStatusDestinationStatus::class;
   protected $destinationStatusesDataType = 'array';
   /**
-   * Date on which the promotion status has been last updated in [ISO
-   * 8601](http://en.wikipedia.org/wiki/ISO_8601) format: Date, time, and
-   * offset, for example "2020-01-02T09:00:00+01:00" or "2020-01-02T09:00:00Z"
-   *
    * @var string
    */
   public $lastUpdateDate;
@@ -42,11 +34,7 @@ class PromotionPromotionStatus extends \Google\Collection
   protected $promotionIssueDataType = 'array';
 
   /**
-   * Date on which the promotion has been created in [ISO
-   * 8601](http://en.wikipedia.org/wiki/ISO_8601) format: Date, time, and
-   * offset, for example "2020-01-02T09:00:00+01:00" or "2020-01-02T09:00:00Z"
-   *
-   * @param string $creationDate
+   * @param string
    */
   public function setCreationDate($creationDate)
   {
@@ -60,9 +48,7 @@ class PromotionPromotionStatus extends \Google\Collection
     return $this->creationDate;
   }
   /**
-   * The intended destinations for the promotion.
-   *
-   * @param PromotionPromotionStatusDestinationStatus[] $destinationStatuses
+   * @param PromotionPromotionStatusDestinationStatus[]
    */
   public function setDestinationStatuses($destinationStatuses)
   {
@@ -76,11 +62,7 @@ class PromotionPromotionStatus extends \Google\Collection
     return $this->destinationStatuses;
   }
   /**
-   * Date on which the promotion status has been last updated in [ISO
-   * 8601](http://en.wikipedia.org/wiki/ISO_8601) format: Date, time, and
-   * offset, for example "2020-01-02T09:00:00+01:00" or "2020-01-02T09:00:00Z"
-   *
-   * @param string $lastUpdateDate
+   * @param string
    */
   public function setLastUpdateDate($lastUpdateDate)
   {
@@ -94,9 +76,7 @@ class PromotionPromotionStatus extends \Google\Collection
     return $this->lastUpdateDate;
   }
   /**
-   * A list of issues associated with the promotion.
-   *
-   * @param PromotionPromotionStatusPromotionIssue[] $promotionIssue
+   * @param PromotionPromotionStatusPromotionIssue[]
    */
   public function setPromotionIssue($promotionIssue)
   {

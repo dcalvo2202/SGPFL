@@ -20,22 +20,16 @@ namespace Google\Service\Container;
 class CidrBlock extends \Google\Model
 {
   /**
-   * cidr_block must be specified in CIDR notation.
-   *
    * @var string
    */
   public $cidrBlock;
   /**
-   * display_name is an optional field for users to identify CIDR blocks.
-   *
    * @var string
    */
   public $displayName;
 
   /**
-   * cidr_block must be specified in CIDR notation.
-   *
-   * @param string $cidrBlock
+   * @param string
    */
   public function setCidrBlock($cidrBlock)
   {
@@ -49,9 +43,7 @@ class CidrBlock extends \Google\Model
     return $this->cidrBlock;
   }
   /**
-   * display_name is an optional field for users to identify CIDR blocks.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {

@@ -20,18 +20,12 @@ namespace Google\Service\Walletobjects;
 class JwtResource extends \Google\Model
 {
   /**
-   * Required. A string representing a JWT of the format described at
-   * https://developers.google.com/wallet/reference/rest/v1/Jwt
-   *
    * @var string
    */
   public $jwt;
 
   /**
-   * Required. A string representing a JWT of the format described at
-   * https://developers.google.com/wallet/reference/rest/v1/Jwt
-   *
-   * @param string $jwt
+   * @param string
    */
   public function setJwt($jwt)
   {

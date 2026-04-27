@@ -23,9 +23,7 @@ class GoogleCloudContactcenterinsightsV1IssueMatchData extends \Google\Model
   protected $issueAssignmentDataType = '';
 
   /**
-   * Information about the issue's assignment.
-   *
-   * @param GoogleCloudContactcenterinsightsV1IssueAssignment $issueAssignment
+   * @param GoogleCloudContactcenterinsightsV1IssueAssignment
    */
   public function setIssueAssignment(GoogleCloudContactcenterinsightsV1IssueAssignment $issueAssignment)
   {

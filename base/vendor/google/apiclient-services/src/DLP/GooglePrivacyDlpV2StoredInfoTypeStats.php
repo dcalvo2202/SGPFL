@@ -23,9 +23,7 @@ class GooglePrivacyDlpV2StoredInfoTypeStats extends \Google\Model
   protected $largeCustomDictionaryDataType = '';
 
   /**
-   * StoredInfoType where findings are defined by a dictionary of phrases.
-   *
-   * @param GooglePrivacyDlpV2LargeCustomDictionaryStats $largeCustomDictionary
+   * @param GooglePrivacyDlpV2LargeCustomDictionaryStats
    */
   public function setLargeCustomDictionary(GooglePrivacyDlpV2LargeCustomDictionaryStats $largeCustomDictionary)
   {

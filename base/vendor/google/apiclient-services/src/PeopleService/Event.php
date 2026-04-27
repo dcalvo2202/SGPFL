@@ -22,26 +22,18 @@ class Event extends \Google\Model
   protected $dateType = Date::class;
   protected $dateDataType = '';
   /**
-   * Output only. The type of the event translated and formatted in the viewer's
-   * account locale or the `Accept-Language` HTTP header locale.
-   *
    * @var string
    */
   public $formattedType;
   protected $metadataType = FieldMetadata::class;
   protected $metadataDataType = '';
   /**
-   * The type of the event. The type can be custom or one of these predefined
-   * values: * `anniversary` * `other`
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The date of the event.
-   *
-   * @param Date $date
+   * @param Date
    */
   public function setDate(Date $date)
   {
@@ -55,10 +47,7 @@ class Event extends \Google\Model
     return $this->date;
   }
   /**
-   * Output only. The type of the event translated and formatted in the viewer's
-   * account locale or the `Accept-Language` HTTP header locale.
-   *
-   * @param string $formattedType
+   * @param string
    */
   public function setFormattedType($formattedType)
   {
@@ -72,9 +61,7 @@ class Event extends \Google\Model
     return $this->formattedType;
   }
   /**
-   * Metadata about the event.
-   *
-   * @param FieldMetadata $metadata
+   * @param FieldMetadata
    */
   public function setMetadata(FieldMetadata $metadata)
   {
@@ -88,10 +75,7 @@ class Event extends \Google\Model
     return $this->metadata;
   }
   /**
-   * The type of the event. The type can be custom or one of these predefined
-   * values: * `anniversary` * `other`
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

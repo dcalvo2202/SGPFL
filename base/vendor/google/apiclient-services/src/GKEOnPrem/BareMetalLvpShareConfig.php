@@ -22,16 +22,12 @@ class BareMetalLvpShareConfig extends \Google\Model
   protected $lvpConfigType = BareMetalLvpConfig::class;
   protected $lvpConfigDataType = '';
   /**
-   * The number of subdirectories to create under path.
-   *
    * @var int
    */
   public $sharedPathPvCount;
 
   /**
-   * Required. Defines the machine path and storage class for the LVP Share.
-   *
-   * @param BareMetalLvpConfig $lvpConfig
+   * @param BareMetalLvpConfig
    */
   public function setLvpConfig(BareMetalLvpConfig $lvpConfig)
   {
@@ -45,9 +41,7 @@ class BareMetalLvpShareConfig extends \Google\Model
     return $this->lvpConfig;
   }
   /**
-   * The number of subdirectories to create under path.
-   *
-   * @param int $sharedPathPvCount
+   * @param int
    */
   public function setSharedPathPvCount($sharedPathPvCount)
   {

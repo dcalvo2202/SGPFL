@@ -20,25 +20,16 @@ namespace Google\Service\NetworkServices;
 class HttpRouteFaultInjectionPolicyAbort extends \Google\Model
 {
   /**
-   * The HTTP status code used to abort the request. The value must be between
-   * 200 and 599 inclusive.
-   *
    * @var int
    */
   public $httpStatus;
   /**
-   * The percentage of traffic which will be aborted. The value must be between
-   * [0, 100]
-   *
    * @var int
    */
   public $percentage;
 
   /**
-   * The HTTP status code used to abort the request. The value must be between
-   * 200 and 599 inclusive.
-   *
-   * @param int $httpStatus
+   * @param int
    */
   public function setHttpStatus($httpStatus)
   {
@@ -52,10 +43,7 @@ class HttpRouteFaultInjectionPolicyAbort extends \Google\Model
     return $this->httpStatus;
   }
   /**
-   * The percentage of traffic which will be aborted. The value must be between
-   * [0, 100]
-   *
-   * @param int $percentage
+   * @param int
    */
   public function setPercentage($percentage)
   {

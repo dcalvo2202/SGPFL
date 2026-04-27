@@ -22,11 +22,6 @@ class GoogleCloudContentwarehouseV1CreateDocumentRequest extends \Google\Model
   protected $cloudAiDocumentOptionType = GoogleCloudContentwarehouseV1CloudAIDocumentOption::class;
   protected $cloudAiDocumentOptionDataType = '';
   /**
-   * Field mask for creating Document fields. If mask path is empty, it means
-   * all fields are masked. For the `FieldMask` definition, see
-   * https://developers.google.com/protocol-
-   * buffers/docs/reference/google.protobuf#fieldmask.
-   *
    * @var string
    */
   public $createMask;
@@ -38,12 +33,7 @@ class GoogleCloudContentwarehouseV1CreateDocumentRequest extends \Google\Model
   protected $requestMetadataDataType = '';
 
   /**
-   * Request Option for processing Cloud AI Document in Document Warehouse. This
-   * field offers limited support for mapping entities from Cloud AI Document to
-   * Warehouse Document. Please consult with product team before using this
-   * field and other available options.
-   *
-   * @param GoogleCloudContentwarehouseV1CloudAIDocumentOption $cloudAiDocumentOption
+   * @param GoogleCloudContentwarehouseV1CloudAIDocumentOption
    */
   public function setCloudAiDocumentOption(GoogleCloudContentwarehouseV1CloudAIDocumentOption $cloudAiDocumentOption)
   {
@@ -57,12 +47,7 @@ class GoogleCloudContentwarehouseV1CreateDocumentRequest extends \Google\Model
     return $this->cloudAiDocumentOption;
   }
   /**
-   * Field mask for creating Document fields. If mask path is empty, it means
-   * all fields are masked. For the `FieldMask` definition, see
-   * https://developers.google.com/protocol-
-   * buffers/docs/reference/google.protobuf#fieldmask.
-   *
-   * @param string $createMask
+   * @param string
    */
   public function setCreateMask($createMask)
   {
@@ -76,9 +61,7 @@ class GoogleCloudContentwarehouseV1CreateDocumentRequest extends \Google\Model
     return $this->createMask;
   }
   /**
-   * Required. The document to create.
-   *
-   * @param GoogleCloudContentwarehouseV1Document $document
+   * @param GoogleCloudContentwarehouseV1Document
    */
   public function setDocument(GoogleCloudContentwarehouseV1Document $document)
   {
@@ -92,11 +75,7 @@ class GoogleCloudContentwarehouseV1CreateDocumentRequest extends \Google\Model
     return $this->document;
   }
   /**
-   * Default document policy during creation. This refers to an Identity and
-   * Access (IAM) policy, which specifies access controls for the Document.
-   * Conditions defined in the policy will be ignored.
-   *
-   * @param GoogleIamV1Policy $policy
+   * @param GoogleIamV1Policy
    */
   public function setPolicy(GoogleIamV1Policy $policy)
   {
@@ -110,10 +89,7 @@ class GoogleCloudContentwarehouseV1CreateDocumentRequest extends \Google\Model
     return $this->policy;
   }
   /**
-   * The meta information collected about the end user, used to enforce access
-   * control for the service.
-   *
-   * @param GoogleCloudContentwarehouseV1RequestMetadata $requestMetadata
+   * @param GoogleCloudContentwarehouseV1RequestMetadata
    */
   public function setRequestMetadata(GoogleCloudContentwarehouseV1RequestMetadata $requestMetadata)
   {

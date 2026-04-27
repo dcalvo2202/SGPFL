@@ -24,9 +24,7 @@ class GoogleFirebaseAppcheckV1BatchUpdateResourcePoliciesResponse extends \Googl
   protected $resourcePoliciesDataType = 'array';
 
   /**
-   * ResourcePolicy objects after the updates have been applied.
-   *
-   * @param GoogleFirebaseAppcheckV1ResourcePolicy[] $resourcePolicies
+   * @param GoogleFirebaseAppcheckV1ResourcePolicy[]
    */
   public function setResourcePolicies($resourcePolicies)
   {

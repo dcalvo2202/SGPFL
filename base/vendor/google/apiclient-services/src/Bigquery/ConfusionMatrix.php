@@ -20,12 +20,6 @@ namespace Google\Service\Bigquery;
 class ConfusionMatrix extends \Google\Collection
 {
   protected $collection_key = 'rows';
-  /**
-   * Confidence threshold used when computing the entries of the confusion
-   * matrix.
-   *
-   * @var 
-   */
   public $confidenceThreshold;
   protected $rowsType = Row::class;
   protected $rowsDataType = 'array';
@@ -39,9 +33,7 @@ class ConfusionMatrix extends \Google\Collection
     return $this->confidenceThreshold;
   }
   /**
-   * One row per actual label.
-   *
-   * @param Row[] $rows
+   * @param Row[]
    */
   public function setRows($rows)
   {

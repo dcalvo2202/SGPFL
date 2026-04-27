@@ -24,121 +24,80 @@ class UnsampledReport extends \Google\Model
         "startDate" => "start-date",
   ];
   /**
-   * Account ID to which this unsampled report belongs.
-   *
    * @var string
    */
   public $accountId;
   protected $cloudStorageDownloadDetailsType = UnsampledReportCloudStorageDownloadDetails::class;
   protected $cloudStorageDownloadDetailsDataType = '';
   /**
-   * Time this unsampled report was created.
-   *
    * @var string
    */
   public $created;
   /**
-   * The dimensions for the unsampled report.
-   *
    * @var string
    */
   public $dimensions;
   /**
-   * The type of download you need to use for the report data file. Possible
-   * values include `GOOGLE_DRIVE` and `GOOGLE_CLOUD_STORAGE`. If the value is
-   * `GOOGLE_DRIVE`, see the `driveDownloadDetails` field. If the value is
-   * `GOOGLE_CLOUD_STORAGE`, see the `cloudStorageDownloadDetails` field.
-   *
    * @var string
    */
   public $downloadType;
   protected $driveDownloadDetailsType = UnsampledReportDriveDownloadDetails::class;
   protected $driveDownloadDetailsDataType = '';
   /**
-   * The end date for the unsampled report.
-   *
    * @var string
    */
   public $endDate;
   /**
-   * The filters for the unsampled report.
-   *
    * @var string
    */
   public $filters;
   /**
-   * Unsampled report ID.
-   *
    * @var string
    */
   public $id;
   /**
-   * Resource type for an Analytics unsampled report.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The metrics for the unsampled report.
-   *
    * @var string
    */
   public $metrics;
   /**
-   * View (Profile) ID to which this unsampled report belongs.
-   *
    * @var string
    */
   public $profileId;
   /**
-   * The segment for the unsampled report.
-   *
    * @var string
    */
   public $segment;
   /**
-   * Link for this unsampled report.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * The start date for the unsampled report.
-   *
    * @var string
    */
   public $startDate;
   /**
-   * Status of this unsampled report. Possible values are PENDING, COMPLETED, or
-   * FAILED.
-   *
    * @var string
    */
   public $status;
   /**
-   * Title of the unsampled report.
-   *
    * @var string
    */
   public $title;
   /**
-   * Time this unsampled report was last modified.
-   *
    * @var string
    */
   public $updated;
   /**
-   * Web property ID to which this unsampled report belongs. The web property ID
-   * is of the form UA-XXXXX-YY.
-   *
    * @var string
    */
   public $webPropertyId;
 
   /**
-   * Account ID to which this unsampled report belongs.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -152,9 +111,7 @@ class UnsampledReport extends \Google\Model
     return $this->accountId;
   }
   /**
-   * Download details for a file stored in Google Cloud Storage.
-   *
-   * @param UnsampledReportCloudStorageDownloadDetails $cloudStorageDownloadDetails
+   * @param UnsampledReportCloudStorageDownloadDetails
    */
   public function setCloudStorageDownloadDetails(UnsampledReportCloudStorageDownloadDetails $cloudStorageDownloadDetails)
   {
@@ -168,9 +125,7 @@ class UnsampledReport extends \Google\Model
     return $this->cloudStorageDownloadDetails;
   }
   /**
-   * Time this unsampled report was created.
-   *
-   * @param string $created
+   * @param string
    */
   public function setCreated($created)
   {
@@ -184,9 +139,7 @@ class UnsampledReport extends \Google\Model
     return $this->created;
   }
   /**
-   * The dimensions for the unsampled report.
-   *
-   * @param string $dimensions
+   * @param string
    */
   public function setDimensions($dimensions)
   {
@@ -200,12 +153,7 @@ class UnsampledReport extends \Google\Model
     return $this->dimensions;
   }
   /**
-   * The type of download you need to use for the report data file. Possible
-   * values include `GOOGLE_DRIVE` and `GOOGLE_CLOUD_STORAGE`. If the value is
-   * `GOOGLE_DRIVE`, see the `driveDownloadDetails` field. If the value is
-   * `GOOGLE_CLOUD_STORAGE`, see the `cloudStorageDownloadDetails` field.
-   *
-   * @param string $downloadType
+   * @param string
    */
   public function setDownloadType($downloadType)
   {
@@ -219,9 +167,7 @@ class UnsampledReport extends \Google\Model
     return $this->downloadType;
   }
   /**
-   * Download details for a file stored in Google Drive.
-   *
-   * @param UnsampledReportDriveDownloadDetails $driveDownloadDetails
+   * @param UnsampledReportDriveDownloadDetails
    */
   public function setDriveDownloadDetails(UnsampledReportDriveDownloadDetails $driveDownloadDetails)
   {
@@ -235,9 +181,7 @@ class UnsampledReport extends \Google\Model
     return $this->driveDownloadDetails;
   }
   /**
-   * The end date for the unsampled report.
-   *
-   * @param string $endDate
+   * @param string
    */
   public function setEndDate($endDate)
   {
@@ -251,9 +195,7 @@ class UnsampledReport extends \Google\Model
     return $this->endDate;
   }
   /**
-   * The filters for the unsampled report.
-   *
-   * @param string $filters
+   * @param string
    */
   public function setFilters($filters)
   {
@@ -267,9 +209,7 @@ class UnsampledReport extends \Google\Model
     return $this->filters;
   }
   /**
-   * Unsampled report ID.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -283,9 +223,7 @@ class UnsampledReport extends \Google\Model
     return $this->id;
   }
   /**
-   * Resource type for an Analytics unsampled report.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -299,9 +237,7 @@ class UnsampledReport extends \Google\Model
     return $this->kind;
   }
   /**
-   * The metrics for the unsampled report.
-   *
-   * @param string $metrics
+   * @param string
    */
   public function setMetrics($metrics)
   {
@@ -315,9 +251,7 @@ class UnsampledReport extends \Google\Model
     return $this->metrics;
   }
   /**
-   * View (Profile) ID to which this unsampled report belongs.
-   *
-   * @param string $profileId
+   * @param string
    */
   public function setProfileId($profileId)
   {
@@ -331,9 +265,7 @@ class UnsampledReport extends \Google\Model
     return $this->profileId;
   }
   /**
-   * The segment for the unsampled report.
-   *
-   * @param string $segment
+   * @param string
    */
   public function setSegment($segment)
   {
@@ -347,9 +279,7 @@ class UnsampledReport extends \Google\Model
     return $this->segment;
   }
   /**
-   * Link for this unsampled report.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -363,9 +293,7 @@ class UnsampledReport extends \Google\Model
     return $this->selfLink;
   }
   /**
-   * The start date for the unsampled report.
-   *
-   * @param string $startDate
+   * @param string
    */
   public function setStartDate($startDate)
   {
@@ -379,10 +307,7 @@ class UnsampledReport extends \Google\Model
     return $this->startDate;
   }
   /**
-   * Status of this unsampled report. Possible values are PENDING, COMPLETED, or
-   * FAILED.
-   *
-   * @param string $status
+   * @param string
    */
   public function setStatus($status)
   {
@@ -396,9 +321,7 @@ class UnsampledReport extends \Google\Model
     return $this->status;
   }
   /**
-   * Title of the unsampled report.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -412,9 +335,7 @@ class UnsampledReport extends \Google\Model
     return $this->title;
   }
   /**
-   * Time this unsampled report was last modified.
-   *
-   * @param string $updated
+   * @param string
    */
   public function setUpdated($updated)
   {
@@ -428,10 +349,7 @@ class UnsampledReport extends \Google\Model
     return $this->updated;
   }
   /**
-   * Web property ID to which this unsampled report belongs. The web property ID
-   * is of the form UA-XXXXX-YY.
-   *
-   * @param string $webPropertyId
+   * @param string
    */
   public function setWebPropertyId($webPropertyId)
   {

@@ -20,40 +20,26 @@ namespace Google\Service\Walletobjects;
 class AirportInfo extends \Google\Model
 {
   /**
-   * Three character IATA airport code. This is a required field for `origin`
-   * and `destination`. Eg: "SFO"
-   *
    * @var string
    */
   public $airportIataCode;
   protected $airportNameOverrideType = LocalizedString::class;
   protected $airportNameOverrideDataType = '';
   /**
-   * A name of the gate. Eg: "B59" or "59"
-   *
    * @var string
    */
   public $gate;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * `"walletobjects#airportInfo"`.
-   *
-   * @deprecated
    * @var string
    */
   public $kind;
   /**
-   * Terminal name. Eg: "INTL" or "I"
-   *
    * @var string
    */
   public $terminal;
 
   /**
-   * Three character IATA airport code. This is a required field for `origin`
-   * and `destination`. Eg: "SFO"
-   *
-   * @param string $airportIataCode
+   * @param string
    */
   public function setAirportIataCode($airportIataCode)
   {
@@ -67,16 +53,7 @@ class AirportInfo extends \Google\Model
     return $this->airportIataCode;
   }
   /**
-   * Optional field that overrides the airport city name defined by IATA. By
-   * default, Google takes the `airportIataCode` provided and maps it to the
-   * official airport city name defined by IATA. Official IATA airport city
-   * names can be found at IATA airport city names website. For example, for the
-   * airport IATA code "LTN", IATA website tells us that the corresponding
-   * airport city is "London". If this field is not populated, Google would
-   * display "London". However, populating this field with a custom name (eg:
-   * "London Luton") would override it.
-   *
-   * @param LocalizedString $airportNameOverride
+   * @param LocalizedString
    */
   public function setAirportNameOverride(LocalizedString $airportNameOverride)
   {
@@ -90,9 +67,7 @@ class AirportInfo extends \Google\Model
     return $this->airportNameOverride;
   }
   /**
-   * A name of the gate. Eg: "B59" or "59"
-   *
-   * @param string $gate
+   * @param string
    */
   public function setGate($gate)
   {
@@ -106,18 +81,13 @@ class AirportInfo extends \Google\Model
     return $this->gate;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * `"walletobjects#airportInfo"`.
-   *
-   * @deprecated
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
     $this->kind = $kind;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getKind()
@@ -125,9 +95,7 @@ class AirportInfo extends \Google\Model
     return $this->kind;
   }
   /**
-   * Terminal name. Eg: "INTL" or "I"
-   *
-   * @param string $terminal
+   * @param string
    */
   public function setTerminal($terminal)
   {

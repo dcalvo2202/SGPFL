@@ -23,10 +23,7 @@ class GoogleCloudAiplatformV1DeleteFeatureValuesRequestSelectEntity extends \Goo
   protected $entityIdSelectorDataType = '';
 
   /**
-   * Required. Selectors choosing feature values of which entity id to be
-   * deleted from the EntityType.
-   *
-   * @param GoogleCloudAiplatformV1EntityIdSelector $entityIdSelector
+   * @param GoogleCloudAiplatformV1EntityIdSelector
    */
   public function setEntityIdSelector(GoogleCloudAiplatformV1EntityIdSelector $entityIdSelector)
   {

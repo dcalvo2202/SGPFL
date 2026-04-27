@@ -20,197 +20,56 @@ namespace Google\Service\MyBusinessLodging;
 class LivingAreaLayout extends \Google\Model
 {
   /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const BALCONY_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const BALCONY_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const BALCONY_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const BALCONY_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const LIVING_AREA_SQ_METERS_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const LIVING_AREA_SQ_METERS_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const LIVING_AREA_SQ_METERS_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const LIVING_AREA_SQ_METERS_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const LOFT_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const LOFT_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const LOFT_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const LOFT_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const NON_SMOKING_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const NON_SMOKING_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const NON_SMOKING_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const NON_SMOKING_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const PATIO_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const PATIO_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const PATIO_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const PATIO_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const STAIRS_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const STAIRS_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const STAIRS_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const STAIRS_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Balcony. An outdoor platform attached to a building and surrounded by a
-   * short wall, fence or other safety railing. The balcony is accessed through
-   * a door in a guestroom or suite and is for use by the guest staying in that
-   * room. May or may not include seating or outdoor furniture. Is not located
-   * on the ground floor. Also lanai.
-   *
    * @var bool
    */
   public $balcony;
   /**
-   * Balcony exception.
-   *
    * @var string
    */
   public $balconyException;
   /**
-   * Living area sq meters. The measurement in meters of the area of a
-   * guestroom's living space.
-   *
    * @var float
    */
   public $livingAreaSqMeters;
   /**
-   * Living area sq meters exception.
-   *
    * @var string
    */
   public $livingAreaSqMetersException;
   /**
-   * Loft. A three-walled upper area accessed by stairs or a ladder that
-   * overlooks the lower area of a room.
-   *
    * @var bool
    */
   public $loft;
   /**
-   * Loft exception.
-   *
    * @var string
    */
   public $loftException;
   /**
-   * Non smoking. A guestroom in which the smoking of cigarettes, cigars and
-   * pipes is prohibited.
-   *
    * @var bool
    */
   public $nonSmoking;
   /**
-   * Non smoking exception.
-   *
    * @var string
    */
   public $nonSmokingException;
   /**
-   * Patio. A paved, outdoor area with seating attached to and accessed through
-   * a ground-floor guestroom for use by the occupants of the guestroom.
-   *
    * @var bool
    */
   public $patio;
   /**
-   * Patio exception.
-   *
    * @var string
    */
   public $patioException;
   /**
-   * Stairs. There are steps leading from one level or story to another in the
-   * unit.
-   *
    * @var bool
    */
   public $stairs;
   /**
-   * Stairs exception.
-   *
    * @var string
    */
   public $stairsException;
 
   /**
-   * Balcony. An outdoor platform attached to a building and surrounded by a
-   * short wall, fence or other safety railing. The balcony is accessed through
-   * a door in a guestroom or suite and is for use by the guest staying in that
-   * room. May or may not include seating or outdoor furniture. Is not located
-   * on the ground floor. Also lanai.
-   *
-   * @param bool $balcony
+   * @param bool
    */
   public function setBalcony($balcony)
   {
@@ -224,29 +83,21 @@ class LivingAreaLayout extends \Google\Model
     return $this->balcony;
   }
   /**
-   * Balcony exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::BALCONY_EXCEPTION_* $balconyException
+   * @param string
    */
   public function setBalconyException($balconyException)
   {
     $this->balconyException = $balconyException;
   }
   /**
-   * @return self::BALCONY_EXCEPTION_*
+   * @return string
    */
   public function getBalconyException()
   {
     return $this->balconyException;
   }
   /**
-   * Living area sq meters. The measurement in meters of the area of a
-   * guestroom's living space.
-   *
-   * @param float $livingAreaSqMeters
+   * @param float
    */
   public function setLivingAreaSqMeters($livingAreaSqMeters)
   {
@@ -260,29 +111,21 @@ class LivingAreaLayout extends \Google\Model
     return $this->livingAreaSqMeters;
   }
   /**
-   * Living area sq meters exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::LIVING_AREA_SQ_METERS_EXCEPTION_* $livingAreaSqMetersException
+   * @param string
    */
   public function setLivingAreaSqMetersException($livingAreaSqMetersException)
   {
     $this->livingAreaSqMetersException = $livingAreaSqMetersException;
   }
   /**
-   * @return self::LIVING_AREA_SQ_METERS_EXCEPTION_*
+   * @return string
    */
   public function getLivingAreaSqMetersException()
   {
     return $this->livingAreaSqMetersException;
   }
   /**
-   * Loft. A three-walled upper area accessed by stairs or a ladder that
-   * overlooks the lower area of a room.
-   *
-   * @param bool $loft
+   * @param bool
    */
   public function setLoft($loft)
   {
@@ -296,29 +139,21 @@ class LivingAreaLayout extends \Google\Model
     return $this->loft;
   }
   /**
-   * Loft exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::LOFT_EXCEPTION_* $loftException
+   * @param string
    */
   public function setLoftException($loftException)
   {
     $this->loftException = $loftException;
   }
   /**
-   * @return self::LOFT_EXCEPTION_*
+   * @return string
    */
   public function getLoftException()
   {
     return $this->loftException;
   }
   /**
-   * Non smoking. A guestroom in which the smoking of cigarettes, cigars and
-   * pipes is prohibited.
-   *
-   * @param bool $nonSmoking
+   * @param bool
    */
   public function setNonSmoking($nonSmoking)
   {
@@ -332,29 +167,21 @@ class LivingAreaLayout extends \Google\Model
     return $this->nonSmoking;
   }
   /**
-   * Non smoking exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::NON_SMOKING_EXCEPTION_* $nonSmokingException
+   * @param string
    */
   public function setNonSmokingException($nonSmokingException)
   {
     $this->nonSmokingException = $nonSmokingException;
   }
   /**
-   * @return self::NON_SMOKING_EXCEPTION_*
+   * @return string
    */
   public function getNonSmokingException()
   {
     return $this->nonSmokingException;
   }
   /**
-   * Patio. A paved, outdoor area with seating attached to and accessed through
-   * a ground-floor guestroom for use by the occupants of the guestroom.
-   *
-   * @param bool $patio
+   * @param bool
    */
   public function setPatio($patio)
   {
@@ -368,29 +195,21 @@ class LivingAreaLayout extends \Google\Model
     return $this->patio;
   }
   /**
-   * Patio exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::PATIO_EXCEPTION_* $patioException
+   * @param string
    */
   public function setPatioException($patioException)
   {
     $this->patioException = $patioException;
   }
   /**
-   * @return self::PATIO_EXCEPTION_*
+   * @return string
    */
   public function getPatioException()
   {
     return $this->patioException;
   }
   /**
-   * Stairs. There are steps leading from one level or story to another in the
-   * unit.
-   *
-   * @param bool $stairs
+   * @param bool
    */
   public function setStairs($stairs)
   {
@@ -404,19 +223,14 @@ class LivingAreaLayout extends \Google\Model
     return $this->stairs;
   }
   /**
-   * Stairs exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::STAIRS_EXCEPTION_* $stairsException
+   * @param string
    */
   public function setStairsException($stairsException)
   {
     $this->stairsException = $stairsException;
   }
   /**
-   * @return self::STAIRS_EXCEPTION_*
+   * @return string
    */
   public function getStairsException()
   {

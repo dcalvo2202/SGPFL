@@ -20,30 +20,20 @@ namespace Google\Service\Games;
 class RecallToken extends \Google\Model
 {
   /**
-   * Optional. Optional expiration time of the token
-   *
    * @var string
    */
   public $expireTime;
   /**
-   * Required. Whether the persona identified by the token is linked to multiple
-   * PGS Players
-   *
    * @var bool
    */
   public $multiPlayerPersona;
   /**
-   * Required. Value of the Recall token as it is provided by the client via
-   * LinkPersona RPC
-   *
    * @var string
    */
   public $token;
 
   /**
-   * Optional. Optional expiration time of the token
-   *
-   * @param string $expireTime
+   * @param string
    */
   public function setExpireTime($expireTime)
   {
@@ -57,10 +47,7 @@ class RecallToken extends \Google\Model
     return $this->expireTime;
   }
   /**
-   * Required. Whether the persona identified by the token is linked to multiple
-   * PGS Players
-   *
-   * @param bool $multiPlayerPersona
+   * @param bool
    */
   public function setMultiPlayerPersona($multiPlayerPersona)
   {
@@ -74,10 +61,7 @@ class RecallToken extends \Google\Model
     return $this->multiPlayerPersona;
   }
   /**
-   * Required. Value of the Recall token as it is provided by the client via
-   * LinkPersona RPC
-   *
-   * @param string $token
+   * @param string
    */
   public function setToken($token)
   {

@@ -19,43 +19,9 @@ namespace Google\Service\DLP;
 
 class GooglePrivacyDlpV2DateTime extends \Google\Model
 {
-  /**
-   * The day of the week is unspecified.
-   */
-  public const DAY_OF_WEEK_DAY_OF_WEEK_UNSPECIFIED = 'DAY_OF_WEEK_UNSPECIFIED';
-  /**
-   * Monday
-   */
-  public const DAY_OF_WEEK_MONDAY = 'MONDAY';
-  /**
-   * Tuesday
-   */
-  public const DAY_OF_WEEK_TUESDAY = 'TUESDAY';
-  /**
-   * Wednesday
-   */
-  public const DAY_OF_WEEK_WEDNESDAY = 'WEDNESDAY';
-  /**
-   * Thursday
-   */
-  public const DAY_OF_WEEK_THURSDAY = 'THURSDAY';
-  /**
-   * Friday
-   */
-  public const DAY_OF_WEEK_FRIDAY = 'FRIDAY';
-  /**
-   * Saturday
-   */
-  public const DAY_OF_WEEK_SATURDAY = 'SATURDAY';
-  /**
-   * Sunday
-   */
-  public const DAY_OF_WEEK_SUNDAY = 'SUNDAY';
   protected $dateType = GoogleTypeDate::class;
   protected $dateDataType = '';
   /**
-   * Day of week
-   *
    * @var string
    */
   public $dayOfWeek;
@@ -65,10 +31,7 @@ class GooglePrivacyDlpV2DateTime extends \Google\Model
   protected $timeZoneDataType = '';
 
   /**
-   * One or more of the following must be set. Must be a valid date or time
-   * value.
-   *
-   * @param GoogleTypeDate $date
+   * @param GoogleTypeDate
    */
   public function setDate(GoogleTypeDate $date)
   {
@@ -82,28 +45,21 @@ class GooglePrivacyDlpV2DateTime extends \Google\Model
     return $this->date;
   }
   /**
-   * Day of week
-   *
-   * Accepted values: DAY_OF_WEEK_UNSPECIFIED, MONDAY, TUESDAY, WEDNESDAY,
-   * THURSDAY, FRIDAY, SATURDAY, SUNDAY
-   *
-   * @param self::DAY_OF_WEEK_* $dayOfWeek
+   * @param string
    */
   public function setDayOfWeek($dayOfWeek)
   {
     $this->dayOfWeek = $dayOfWeek;
   }
   /**
-   * @return self::DAY_OF_WEEK_*
+   * @return string
    */
   public function getDayOfWeek()
   {
     return $this->dayOfWeek;
   }
   /**
-   * Time of day
-   *
-   * @param GoogleTypeTimeOfDay $time
+   * @param GoogleTypeTimeOfDay
    */
   public function setTime(GoogleTypeTimeOfDay $time)
   {
@@ -117,9 +73,7 @@ class GooglePrivacyDlpV2DateTime extends \Google\Model
     return $this->time;
   }
   /**
-   * Time zone
-   *
-   * @param GooglePrivacyDlpV2TimeZone $timeZone
+   * @param GooglePrivacyDlpV2TimeZone
    */
   public function setTimeZone(GooglePrivacyDlpV2TimeZone $timeZone)
   {

@@ -20,53 +20,34 @@ namespace Google\Service\SQLAdmin;
 class Database extends \Google\Model
 {
   /**
-   * The Cloud SQL charset value.
-   *
    * @var string
    */
   public $charset;
   /**
-   * The Cloud SQL collation value.
-   *
    * @var string
    */
   public $collation;
   /**
-   * This field is deprecated and will be removed from a future version of the
-   * API.
-   *
    * @var string
    */
   public $etag;
   /**
-   * The name of the Cloud SQL instance. This does not include the project ID.
-   *
    * @var string
    */
   public $instance;
   /**
-   * This is always `sql#database`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The name of the database in the Cloud SQL instance. This does not include
-   * the project ID or instance name.
-   *
    * @var string
    */
   public $name;
   /**
-   * The project ID of the project containing the Cloud SQL database. The Google
-   * apps domain is prefixed if applicable.
-   *
    * @var string
    */
   public $project;
   /**
-   * The URI of this resource.
-   *
    * @var string
    */
   public $selfLink;
@@ -74,9 +55,7 @@ class Database extends \Google\Model
   protected $sqlserverDatabaseDetailsDataType = '';
 
   /**
-   * The Cloud SQL charset value.
-   *
-   * @param string $charset
+   * @param string
    */
   public function setCharset($charset)
   {
@@ -90,9 +69,7 @@ class Database extends \Google\Model
     return $this->charset;
   }
   /**
-   * The Cloud SQL collation value.
-   *
-   * @param string $collation
+   * @param string
    */
   public function setCollation($collation)
   {
@@ -106,10 +83,7 @@ class Database extends \Google\Model
     return $this->collation;
   }
   /**
-   * This field is deprecated and will be removed from a future version of the
-   * API.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -123,9 +97,7 @@ class Database extends \Google\Model
     return $this->etag;
   }
   /**
-   * The name of the Cloud SQL instance. This does not include the project ID.
-   *
-   * @param string $instance
+   * @param string
    */
   public function setInstance($instance)
   {
@@ -139,9 +111,7 @@ class Database extends \Google\Model
     return $this->instance;
   }
   /**
-   * This is always `sql#database`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -155,10 +125,7 @@ class Database extends \Google\Model
     return $this->kind;
   }
   /**
-   * The name of the database in the Cloud SQL instance. This does not include
-   * the project ID or instance name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -172,10 +139,7 @@ class Database extends \Google\Model
     return $this->name;
   }
   /**
-   * The project ID of the project containing the Cloud SQL database. The Google
-   * apps domain is prefixed if applicable.
-   *
-   * @param string $project
+   * @param string
    */
   public function setProject($project)
   {
@@ -189,9 +153,7 @@ class Database extends \Google\Model
     return $this->project;
   }
   /**
-   * The URI of this resource.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -205,7 +167,7 @@ class Database extends \Google\Model
     return $this->selfLink;
   }
   /**
-   * @param SqlServerDatabaseDetails $sqlserverDatabaseDetails
+   * @param SqlServerDatabaseDetails
    */
   public function setSqlserverDatabaseDetails(SqlServerDatabaseDetails $sqlserverDatabaseDetails)
   {

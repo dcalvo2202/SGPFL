@@ -20,24 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1ProbeGrpcAction extends \Google\Model
 {
   /**
-   * Port number of the gRPC service. Number must be in the range 1 to 65535.
-   *
    * @var int
    */
   public $port;
   /**
-   * Service is the name of the service to place in the gRPC HealthCheckRequest.
-   * See https://github.com/grpc/grpc/blob/master/doc/health-checking.md. If
-   * this is not specified, the default behavior is defined by gRPC.
-   *
    * @var string
    */
   public $service;
 
   /**
-   * Port number of the gRPC service. Number must be in the range 1 to 65535.
-   *
-   * @param int $port
+   * @param int
    */
   public function setPort($port)
   {
@@ -51,11 +43,7 @@ class GoogleCloudAiplatformV1ProbeGrpcAction extends \Google\Model
     return $this->port;
   }
   /**
-   * Service is the name of the service to place in the gRPC HealthCheckRequest.
-   * See https://github.com/grpc/grpc/blob/master/doc/health-checking.md. If
-   * this is not specified, the default behavior is defined by gRPC.
-   *
-   * @param string $service
+   * @param string
    */
   public function setService($service)
   {

@@ -20,439 +20,120 @@ namespace Google\Service\MyBusinessLodging;
 class Pools extends \Google\Model
 {
   /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const ADULT_POOL_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const ADULT_POOL_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const ADULT_POOL_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const ADULT_POOL_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const HOT_TUB_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const HOT_TUB_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const HOT_TUB_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const HOT_TUB_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const INDOOR_POOL_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const INDOOR_POOL_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const INDOOR_POOL_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const INDOOR_POOL_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const INDOOR_POOLS_COUNT_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const INDOOR_POOLS_COUNT_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const INDOOR_POOLS_COUNT_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const INDOOR_POOLS_COUNT_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const LAZY_RIVER_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const LAZY_RIVER_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const LAZY_RIVER_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const LAZY_RIVER_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const LIFEGUARD_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const LIFEGUARD_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const LIFEGUARD_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const LIFEGUARD_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const OUTDOOR_POOL_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const OUTDOOR_POOL_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const OUTDOOR_POOL_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const OUTDOOR_POOL_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const OUTDOOR_POOLS_COUNT_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const OUTDOOR_POOLS_COUNT_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const OUTDOOR_POOLS_COUNT_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const OUTDOOR_POOLS_COUNT_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const POOL_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const POOL_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const POOL_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const POOL_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const POOLS_COUNT_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const POOLS_COUNT_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const POOLS_COUNT_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const POOLS_COUNT_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const WADING_POOL_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const WADING_POOL_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const WADING_POOL_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const WADING_POOL_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const WATER_PARK_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const WATER_PARK_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const WATER_PARK_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const WATER_PARK_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const WATERSLIDE_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const WATERSLIDE_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const WATERSLIDE_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const WATERSLIDE_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const WAVE_POOL_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const WAVE_POOL_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const WAVE_POOL_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const WAVE_POOL_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Adult pool. A pool restricted for use by adults only. Can be indoors or
-   * outdoors.
-   *
    * @var bool
    */
   public $adultPool;
   /**
-   * Adult pool exception.
-   *
    * @var string
    */
   public $adultPoolException;
   /**
-   * Hot tub. A man-made pool containing bubbling water maintained at a higher
-   * temperature and circulated by aerating jets for the purpose of soaking,
-   * relaxation and hydrotherapy. Can be indoors or outdoors. Not used for
-   * active swimming. Also known as Jacuzzi. Hot tub must be in a common area
-   * where all guests can access it. Does not apply to room-specific hot tubs
-   * that are only accessible to guest occupying that room.
-   *
    * @var bool
    */
   public $hotTub;
   /**
-   * Hot tub exception.
-   *
    * @var string
    */
   public $hotTubException;
   /**
-   * Indoor pool. A pool located inside the hotel and available for guests to
-   * use for swimming and/or soaking. Use may or may not be restricted to adults
-   * and/or children.
-   *
    * @var bool
    */
   public $indoorPool;
   /**
-   * Indoor pool exception.
-   *
    * @var string
    */
   public $indoorPoolException;
   /**
-   * Indoor pools count. The sum of all indoor pools at the hotel.
-   *
    * @var int
    */
   public $indoorPoolsCount;
   /**
-   * Indoor pools count exception.
-   *
    * @var string
    */
   public $indoorPoolsCountException;
   /**
-   * Lazy river. A man-made pool or several interconnected recreational pools
-   * built to mimic the shape and current of a winding river where guests float
-   * in the water on inflated rubber tubes. Can be indoors or outdoors.
-   *
    * @var bool
    */
   public $lazyRiver;
   /**
-   * Lazy river exception.
-   *
    * @var string
    */
   public $lazyRiverException;
   /**
-   * Lifeguard. A trained member of the hotel staff stationed by the hotel's
-   * indoor or outdoor swimming area and responsible for the safety of swimming
-   * guests.
-   *
    * @var bool
    */
   public $lifeguard;
   /**
-   * Lifeguard exception.
-   *
    * @var string
    */
   public $lifeguardException;
   /**
-   * Outdoor pool. A pool located outside on the grounds of the hotel and
-   * available for guests to use for swimming, soaking or recreation. Use may or
-   * may not be restricted to adults and/or children.
-   *
    * @var bool
    */
   public $outdoorPool;
   /**
-   * Outdoor pool exception.
-   *
    * @var string
    */
   public $outdoorPoolException;
   /**
-   * Outdoor pools count. The sum of all outdoor pools at the hotel.
-   *
    * @var int
    */
   public $outdoorPoolsCount;
   /**
-   * Outdoor pools count exception.
-   *
    * @var string
    */
   public $outdoorPoolsCountException;
   /**
-   * Pool. The presence of a pool, either indoors or outdoors, for guests to use
-   * for swimming and/or soaking. Use may or may not be restricted to adults
-   * and/or children.
-   *
    * @var bool
    */
   public $pool;
   /**
-   * Pool exception.
-   *
    * @var string
    */
   public $poolException;
   /**
-   * Pools count. The sum of all pools at the hotel.
-   *
    * @var int
    */
   public $poolsCount;
   /**
-   * Pools count exception.
-   *
    * @var string
    */
   public $poolsCountException;
   /**
-   * Wading pool. A shallow pool designed for small children to play in. Can be
-   * indoors or outdoors. Also known as kiddie pool.
-   *
    * @var bool
    */
   public $wadingPool;
   /**
-   * Wading pool exception.
-   *
    * @var string
    */
   public $wadingPoolException;
   /**
-   * Water park. An aquatic recreation area with a large pool or series of pools
-   * that has features such as a water slide or tube, wavepool, fountains, rope
-   * swings, and/or obstacle course. Can be indoors or outdoors. Also known as
-   * adventure pool.
-   *
    * @var bool
    */
   public $waterPark;
   /**
-   * Water park exception.
-   *
    * @var string
    */
   public $waterParkException;
   /**
-   * Waterslide. A continuously wetted chute positioned by an indoor or outdoor
-   * pool which people slide down into the water.
-   *
    * @var bool
    */
   public $waterslide;
   /**
-   * Waterslide exception.
-   *
    * @var string
    */
   public $waterslideException;
   /**
-   * Wave pool. A large indoor or outdoor pool with a machine that produces
-   * water currents to mimic the ocean's crests.
-   *
    * @var bool
    */
   public $wavePool;
   /**
-   * Wave pool exception.
-   *
    * @var string
    */
   public $wavePoolException;
 
   /**
-   * Adult pool. A pool restricted for use by adults only. Can be indoors or
-   * outdoors.
-   *
-   * @param bool $adultPool
+   * @param bool
    */
   public function setAdultPool($adultPool)
   {
@@ -466,33 +147,21 @@ class Pools extends \Google\Model
     return $this->adultPool;
   }
   /**
-   * Adult pool exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::ADULT_POOL_EXCEPTION_* $adultPoolException
+   * @param string
    */
   public function setAdultPoolException($adultPoolException)
   {
     $this->adultPoolException = $adultPoolException;
   }
   /**
-   * @return self::ADULT_POOL_EXCEPTION_*
+   * @return string
    */
   public function getAdultPoolException()
   {
     return $this->adultPoolException;
   }
   /**
-   * Hot tub. A man-made pool containing bubbling water maintained at a higher
-   * temperature and circulated by aerating jets for the purpose of soaking,
-   * relaxation and hydrotherapy. Can be indoors or outdoors. Not used for
-   * active swimming. Also known as Jacuzzi. Hot tub must be in a common area
-   * where all guests can access it. Does not apply to room-specific hot tubs
-   * that are only accessible to guest occupying that room.
-   *
-   * @param bool $hotTub
+   * @param bool
    */
   public function setHotTub($hotTub)
   {
@@ -506,30 +175,21 @@ class Pools extends \Google\Model
     return $this->hotTub;
   }
   /**
-   * Hot tub exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::HOT_TUB_EXCEPTION_* $hotTubException
+   * @param string
    */
   public function setHotTubException($hotTubException)
   {
     $this->hotTubException = $hotTubException;
   }
   /**
-   * @return self::HOT_TUB_EXCEPTION_*
+   * @return string
    */
   public function getHotTubException()
   {
     return $this->hotTubException;
   }
   /**
-   * Indoor pool. A pool located inside the hotel and available for guests to
-   * use for swimming and/or soaking. Use may or may not be restricted to adults
-   * and/or children.
-   *
-   * @param bool $indoorPool
+   * @param bool
    */
   public function setIndoorPool($indoorPool)
   {
@@ -543,28 +203,21 @@ class Pools extends \Google\Model
     return $this->indoorPool;
   }
   /**
-   * Indoor pool exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::INDOOR_POOL_EXCEPTION_* $indoorPoolException
+   * @param string
    */
   public function setIndoorPoolException($indoorPoolException)
   {
     $this->indoorPoolException = $indoorPoolException;
   }
   /**
-   * @return self::INDOOR_POOL_EXCEPTION_*
+   * @return string
    */
   public function getIndoorPoolException()
   {
     return $this->indoorPoolException;
   }
   /**
-   * Indoor pools count. The sum of all indoor pools at the hotel.
-   *
-   * @param int $indoorPoolsCount
+   * @param int
    */
   public function setIndoorPoolsCount($indoorPoolsCount)
   {
@@ -578,30 +231,21 @@ class Pools extends \Google\Model
     return $this->indoorPoolsCount;
   }
   /**
-   * Indoor pools count exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::INDOOR_POOLS_COUNT_EXCEPTION_* $indoorPoolsCountException
+   * @param string
    */
   public function setIndoorPoolsCountException($indoorPoolsCountException)
   {
     $this->indoorPoolsCountException = $indoorPoolsCountException;
   }
   /**
-   * @return self::INDOOR_POOLS_COUNT_EXCEPTION_*
+   * @return string
    */
   public function getIndoorPoolsCountException()
   {
     return $this->indoorPoolsCountException;
   }
   /**
-   * Lazy river. A man-made pool or several interconnected recreational pools
-   * built to mimic the shape and current of a winding river where guests float
-   * in the water on inflated rubber tubes. Can be indoors or outdoors.
-   *
-   * @param bool $lazyRiver
+   * @param bool
    */
   public function setLazyRiver($lazyRiver)
   {
@@ -615,30 +259,21 @@ class Pools extends \Google\Model
     return $this->lazyRiver;
   }
   /**
-   * Lazy river exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::LAZY_RIVER_EXCEPTION_* $lazyRiverException
+   * @param string
    */
   public function setLazyRiverException($lazyRiverException)
   {
     $this->lazyRiverException = $lazyRiverException;
   }
   /**
-   * @return self::LAZY_RIVER_EXCEPTION_*
+   * @return string
    */
   public function getLazyRiverException()
   {
     return $this->lazyRiverException;
   }
   /**
-   * Lifeguard. A trained member of the hotel staff stationed by the hotel's
-   * indoor or outdoor swimming area and responsible for the safety of swimming
-   * guests.
-   *
-   * @param bool $lifeguard
+   * @param bool
    */
   public function setLifeguard($lifeguard)
   {
@@ -652,30 +287,21 @@ class Pools extends \Google\Model
     return $this->lifeguard;
   }
   /**
-   * Lifeguard exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::LIFEGUARD_EXCEPTION_* $lifeguardException
+   * @param string
    */
   public function setLifeguardException($lifeguardException)
   {
     $this->lifeguardException = $lifeguardException;
   }
   /**
-   * @return self::LIFEGUARD_EXCEPTION_*
+   * @return string
    */
   public function getLifeguardException()
   {
     return $this->lifeguardException;
   }
   /**
-   * Outdoor pool. A pool located outside on the grounds of the hotel and
-   * available for guests to use for swimming, soaking or recreation. Use may or
-   * may not be restricted to adults and/or children.
-   *
-   * @param bool $outdoorPool
+   * @param bool
    */
   public function setOutdoorPool($outdoorPool)
   {
@@ -689,28 +315,21 @@ class Pools extends \Google\Model
     return $this->outdoorPool;
   }
   /**
-   * Outdoor pool exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::OUTDOOR_POOL_EXCEPTION_* $outdoorPoolException
+   * @param string
    */
   public function setOutdoorPoolException($outdoorPoolException)
   {
     $this->outdoorPoolException = $outdoorPoolException;
   }
   /**
-   * @return self::OUTDOOR_POOL_EXCEPTION_*
+   * @return string
    */
   public function getOutdoorPoolException()
   {
     return $this->outdoorPoolException;
   }
   /**
-   * Outdoor pools count. The sum of all outdoor pools at the hotel.
-   *
-   * @param int $outdoorPoolsCount
+   * @param int
    */
   public function setOutdoorPoolsCount($outdoorPoolsCount)
   {
@@ -724,30 +343,21 @@ class Pools extends \Google\Model
     return $this->outdoorPoolsCount;
   }
   /**
-   * Outdoor pools count exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::OUTDOOR_POOLS_COUNT_EXCEPTION_* $outdoorPoolsCountException
+   * @param string
    */
   public function setOutdoorPoolsCountException($outdoorPoolsCountException)
   {
     $this->outdoorPoolsCountException = $outdoorPoolsCountException;
   }
   /**
-   * @return self::OUTDOOR_POOLS_COUNT_EXCEPTION_*
+   * @return string
    */
   public function getOutdoorPoolsCountException()
   {
     return $this->outdoorPoolsCountException;
   }
   /**
-   * Pool. The presence of a pool, either indoors or outdoors, for guests to use
-   * for swimming and/or soaking. Use may or may not be restricted to adults
-   * and/or children.
-   *
-   * @param bool $pool
+   * @param bool
    */
   public function setPool($pool)
   {
@@ -761,28 +371,21 @@ class Pools extends \Google\Model
     return $this->pool;
   }
   /**
-   * Pool exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::POOL_EXCEPTION_* $poolException
+   * @param string
    */
   public function setPoolException($poolException)
   {
     $this->poolException = $poolException;
   }
   /**
-   * @return self::POOL_EXCEPTION_*
+   * @return string
    */
   public function getPoolException()
   {
     return $this->poolException;
   }
   /**
-   * Pools count. The sum of all pools at the hotel.
-   *
-   * @param int $poolsCount
+   * @param int
    */
   public function setPoolsCount($poolsCount)
   {
@@ -796,29 +399,21 @@ class Pools extends \Google\Model
     return $this->poolsCount;
   }
   /**
-   * Pools count exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::POOLS_COUNT_EXCEPTION_* $poolsCountException
+   * @param string
    */
   public function setPoolsCountException($poolsCountException)
   {
     $this->poolsCountException = $poolsCountException;
   }
   /**
-   * @return self::POOLS_COUNT_EXCEPTION_*
+   * @return string
    */
   public function getPoolsCountException()
   {
     return $this->poolsCountException;
   }
   /**
-   * Wading pool. A shallow pool designed for small children to play in. Can be
-   * indoors or outdoors. Also known as kiddie pool.
-   *
-   * @param bool $wadingPool
+   * @param bool
    */
   public function setWadingPool($wadingPool)
   {
@@ -832,31 +427,21 @@ class Pools extends \Google\Model
     return $this->wadingPool;
   }
   /**
-   * Wading pool exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::WADING_POOL_EXCEPTION_* $wadingPoolException
+   * @param string
    */
   public function setWadingPoolException($wadingPoolException)
   {
     $this->wadingPoolException = $wadingPoolException;
   }
   /**
-   * @return self::WADING_POOL_EXCEPTION_*
+   * @return string
    */
   public function getWadingPoolException()
   {
     return $this->wadingPoolException;
   }
   /**
-   * Water park. An aquatic recreation area with a large pool or series of pools
-   * that has features such as a water slide or tube, wavepool, fountains, rope
-   * swings, and/or obstacle course. Can be indoors or outdoors. Also known as
-   * adventure pool.
-   *
-   * @param bool $waterPark
+   * @param bool
    */
   public function setWaterPark($waterPark)
   {
@@ -870,29 +455,21 @@ class Pools extends \Google\Model
     return $this->waterPark;
   }
   /**
-   * Water park exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::WATER_PARK_EXCEPTION_* $waterParkException
+   * @param string
    */
   public function setWaterParkException($waterParkException)
   {
     $this->waterParkException = $waterParkException;
   }
   /**
-   * @return self::WATER_PARK_EXCEPTION_*
+   * @return string
    */
   public function getWaterParkException()
   {
     return $this->waterParkException;
   }
   /**
-   * Waterslide. A continuously wetted chute positioned by an indoor or outdoor
-   * pool which people slide down into the water.
-   *
-   * @param bool $waterslide
+   * @param bool
    */
   public function setWaterslide($waterslide)
   {
@@ -906,29 +483,21 @@ class Pools extends \Google\Model
     return $this->waterslide;
   }
   /**
-   * Waterslide exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::WATERSLIDE_EXCEPTION_* $waterslideException
+   * @param string
    */
   public function setWaterslideException($waterslideException)
   {
     $this->waterslideException = $waterslideException;
   }
   /**
-   * @return self::WATERSLIDE_EXCEPTION_*
+   * @return string
    */
   public function getWaterslideException()
   {
     return $this->waterslideException;
   }
   /**
-   * Wave pool. A large indoor or outdoor pool with a machine that produces
-   * water currents to mimic the ocean's crests.
-   *
-   * @param bool $wavePool
+   * @param bool
    */
   public function setWavePool($wavePool)
   {
@@ -942,19 +511,14 @@ class Pools extends \Google\Model
     return $this->wavePool;
   }
   /**
-   * Wave pool exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::WAVE_POOL_EXCEPTION_* $wavePoolException
+   * @param string
    */
   public function setWavePoolException($wavePoolException)
   {
     $this->wavePoolException = $wavePoolException;
   }
   /**
-   * @return self::WAVE_POOL_EXCEPTION_*
+   * @return string
    */
   public function getWavePoolException()
   {

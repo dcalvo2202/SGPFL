@@ -44,7 +44,7 @@ class GoogleCloudDialogflowCxV3beta1Environment extends \Google\Collection
   protected $webhookConfigDataType = '';
 
   /**
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -58,7 +58,7 @@ class GoogleCloudDialogflowCxV3beta1Environment extends \Google\Collection
     return $this->description;
   }
   /**
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -72,7 +72,7 @@ class GoogleCloudDialogflowCxV3beta1Environment extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -86,7 +86,7 @@ class GoogleCloudDialogflowCxV3beta1Environment extends \Google\Collection
     return $this->name;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3beta1EnvironmentTestCasesConfig $testCasesConfig
+   * @param GoogleCloudDialogflowCxV3beta1EnvironmentTestCasesConfig
    */
   public function setTestCasesConfig(GoogleCloudDialogflowCxV3beta1EnvironmentTestCasesConfig $testCasesConfig)
   {
@@ -100,7 +100,7 @@ class GoogleCloudDialogflowCxV3beta1Environment extends \Google\Collection
     return $this->testCasesConfig;
   }
   /**
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -114,7 +114,7 @@ class GoogleCloudDialogflowCxV3beta1Environment extends \Google\Collection
     return $this->updateTime;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3beta1EnvironmentVersionConfig[] $versionConfigs
+   * @param GoogleCloudDialogflowCxV3beta1EnvironmentVersionConfig[]
    */
   public function setVersionConfigs($versionConfigs)
   {
@@ -128,7 +128,7 @@ class GoogleCloudDialogflowCxV3beta1Environment extends \Google\Collection
     return $this->versionConfigs;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3beta1EnvironmentWebhookConfig $webhookConfig
+   * @param GoogleCloudDialogflowCxV3beta1EnvironmentWebhookConfig
    */
   public function setWebhookConfig(GoogleCloudDialogflowCxV3beta1EnvironmentWebhookConfig $webhookConfig)
   {

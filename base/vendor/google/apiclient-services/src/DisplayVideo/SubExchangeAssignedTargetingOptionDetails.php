@@ -20,18 +20,12 @@ namespace Google\Service\DisplayVideo;
 class SubExchangeAssignedTargetingOptionDetails extends \Google\Model
 {
   /**
-   * Required. The targeting_option_id of a TargetingOption of type
-   * `TARGETING_TYPE_SUB_EXCHANGE`.
-   *
    * @var string
    */
   public $targetingOptionId;
 
   /**
-   * Required. The targeting_option_id of a TargetingOption of type
-   * `TARGETING_TYPE_SUB_EXCHANGE`.
-   *
-   * @param string $targetingOptionId
+   * @param string
    */
   public function setTargetingOptionId($targetingOptionId)
   {

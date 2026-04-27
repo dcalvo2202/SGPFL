@@ -20,22 +20,16 @@ namespace Google\Service\RealTimeBidding;
 class CreativeDimensions extends \Google\Model
 {
   /**
-   * The height of the creative in pixels.
-   *
    * @var string
    */
   public $height;
   /**
-   * The width of the creative in pixels.
-   *
    * @var string
    */
   public $width;
 
   /**
-   * The height of the creative in pixels.
-   *
-   * @param string $height
+   * @param string
    */
   public function setHeight($height)
   {
@@ -49,9 +43,7 @@ class CreativeDimensions extends \Google\Model
     return $this->height;
   }
   /**
-   * The width of the creative in pixels.
-   *
-   * @param string $width
+   * @param string
    */
   public function setWidth($width)
   {

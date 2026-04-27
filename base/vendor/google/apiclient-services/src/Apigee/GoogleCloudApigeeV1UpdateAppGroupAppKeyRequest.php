@@ -21,18 +21,10 @@ class GoogleCloudApigeeV1UpdateAppGroupAppKeyRequest extends \Google\Collection
 {
   protected $collection_key = 'apiProducts';
   /**
-   * Approve or revoke the consumer key by setting this value to `approve` or
-   * `revoke` respectively. The `Content-Type` header, if set, must be set to
-   * `application/octet-stream`, with empty body.
-   *
    * @var string
    */
   public $action;
   /**
-   * The list of API products that will be associated with the credential. This
-   * list will be appended to the existing list of associated API Products for
-   * this App Key. Duplicates will be ignored.
-   *
    * @var string[]
    */
   public $apiProducts;
@@ -40,11 +32,7 @@ class GoogleCloudApigeeV1UpdateAppGroupAppKeyRequest extends \Google\Collection
   protected $appGroupAppKeyDataType = '';
 
   /**
-   * Approve or revoke the consumer key by setting this value to `approve` or
-   * `revoke` respectively. The `Content-Type` header, if set, must be set to
-   * `application/octet-stream`, with empty body.
-   *
-   * @param string $action
+   * @param string
    */
   public function setAction($action)
   {
@@ -58,11 +46,7 @@ class GoogleCloudApigeeV1UpdateAppGroupAppKeyRequest extends \Google\Collection
     return $this->action;
   }
   /**
-   * The list of API products that will be associated with the credential. This
-   * list will be appended to the existing list of associated API Products for
-   * this App Key. Duplicates will be ignored.
-   *
-   * @param string[] $apiProducts
+   * @param string[]
    */
   public function setApiProducts($apiProducts)
   {
@@ -76,11 +60,7 @@ class GoogleCloudApigeeV1UpdateAppGroupAppKeyRequest extends \Google\Collection
     return $this->apiProducts;
   }
   /**
-   * Note that only Scopes and Attributes of the AppGroupAppKey can be amended.
-   * Scopes and Attributes mentioned in the request will be inserted and the
-   * existing scopes and attributes will be removed.
-   *
-   * @param GoogleCloudApigeeV1AppGroupAppKey $appGroupAppKey
+   * @param GoogleCloudApigeeV1AppGroupAppKey
    */
   public function setAppGroupAppKey(GoogleCloudApigeeV1AppGroupAppKey $appGroupAppKey)
   {

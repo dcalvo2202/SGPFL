@@ -22,8 +22,6 @@ class AnnotationCurrentVersionRanges extends \Google\Model
   protected $cfiRangeType = BooksAnnotationsRange::class;
   protected $cfiRangeDataType = '';
   /**
-   * Content version applicable to ranges below.
-   *
    * @var string
    */
   public $contentVersion;
@@ -35,9 +33,7 @@ class AnnotationCurrentVersionRanges extends \Google\Model
   protected $imageCfiRangeDataType = '';
 
   /**
-   * Range in CFI format for this annotation for version above.
-   *
-   * @param BooksAnnotationsRange $cfiRange
+   * @param BooksAnnotationsRange
    */
   public function setCfiRange(BooksAnnotationsRange $cfiRange)
   {
@@ -51,9 +47,7 @@ class AnnotationCurrentVersionRanges extends \Google\Model
     return $this->cfiRange;
   }
   /**
-   * Content version applicable to ranges below.
-   *
-   * @param string $contentVersion
+   * @param string
    */
   public function setContentVersion($contentVersion)
   {
@@ -67,9 +61,7 @@ class AnnotationCurrentVersionRanges extends \Google\Model
     return $this->contentVersion;
   }
   /**
-   * Range in GB image format for this annotation for version above.
-   *
-   * @param BooksAnnotationsRange $gbImageRange
+   * @param BooksAnnotationsRange
    */
   public function setGbImageRange(BooksAnnotationsRange $gbImageRange)
   {
@@ -83,9 +75,7 @@ class AnnotationCurrentVersionRanges extends \Google\Model
     return $this->gbImageRange;
   }
   /**
-   * Range in GB text format for this annotation for version above.
-   *
-   * @param BooksAnnotationsRange $gbTextRange
+   * @param BooksAnnotationsRange
    */
   public function setGbTextRange(BooksAnnotationsRange $gbTextRange)
   {
@@ -99,9 +89,7 @@ class AnnotationCurrentVersionRanges extends \Google\Model
     return $this->gbTextRange;
   }
   /**
-   * Range in image CFI format for this annotation for version above.
-   *
-   * @param BooksAnnotationsRange $imageCfiRange
+   * @param BooksAnnotationsRange
    */
   public function setImageCfiRange(BooksAnnotationsRange $imageCfiRange)
   {

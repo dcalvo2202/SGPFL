@@ -20,29 +20,17 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoTopNValue extends \Google\Model
 {
   /**
-   * Output only. Count of the corresponding value in the scanned data.
-   *
    * @var string
    */
   public $count;
-  /**
-   * Output only. Ratio of the corresponding value in the field against the
-   * total number of rows in the scanned data.
-   *
-   * @var 
-   */
   public $ratio;
   /**
-   * Output only. String value of a top N non-null value.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Output only. Count of the corresponding value in the scanned data.
-   *
-   * @param string $count
+   * @param string
    */
   public function setCount($count)
   {
@@ -64,9 +52,7 @@ class GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoTopNValue ext
     return $this->ratio;
   }
   /**
-   * Output only. String value of a top N non-null value.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

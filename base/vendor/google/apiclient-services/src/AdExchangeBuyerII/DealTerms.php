@@ -20,36 +20,16 @@ namespace Google\Service\AdExchangeBuyerII;
 class DealTerms extends \Google\Model
 {
   /**
-   * A placeholder for an undefined branding type.
-   */
-  public const BRANDING_TYPE_BRANDING_TYPE_UNSPECIFIED = 'BRANDING_TYPE_UNSPECIFIED';
-  /**
-   * Full URL is included in bid requests.
-   */
-  public const BRANDING_TYPE_BRANDED = 'BRANDED';
-  /**
-   * A TopLevelDomain or masked URL is sent in bid requests rather than the full
-   * one.
-   */
-  public const BRANDING_TYPE_SEMI_TRANSPARENT = 'SEMI_TRANSPARENT';
-  /**
-   * Visibility of the URL in bid requests. (default: BRANDED)
-   *
    * @var string
    */
   public $brandingType;
   /**
-   * Publisher provided description for the terms.
-   *
    * @var string
    */
   public $description;
   protected $estimatedGrossSpendType = Price::class;
   protected $estimatedGrossSpendDataType = '';
   /**
-   * Non-binding estimate of the impressions served per day. Can be set by buyer
-   * or seller.
-   *
    * @var string
    */
   public $estimatedImpressionsPerDay;
@@ -60,37 +40,26 @@ class DealTerms extends \Google\Model
   protected $nonGuaranteedFixedPriceTermsType = NonGuaranteedFixedPriceTerms::class;
   protected $nonGuaranteedFixedPriceTermsDataType = '';
   /**
-   * The time zone name. For deals with Cost Per Day billing, defines the time
-   * zone used to mark the boundaries of a day. It should be an IANA TZ name,
-   * such as "America/Los_Angeles". For more information, see
-   * https://en.wikipedia.org/wiki/List_of_tz_database_time_zones.
-   *
    * @var string
    */
   public $sellerTimeZone;
 
   /**
-   * Visibility of the URL in bid requests. (default: BRANDED)
-   *
-   * Accepted values: BRANDING_TYPE_UNSPECIFIED, BRANDED, SEMI_TRANSPARENT
-   *
-   * @param self::BRANDING_TYPE_* $brandingType
+   * @param string
    */
   public function setBrandingType($brandingType)
   {
     $this->brandingType = $brandingType;
   }
   /**
-   * @return self::BRANDING_TYPE_*
+   * @return string
    */
   public function getBrandingType()
   {
     return $this->brandingType;
   }
   /**
-   * Publisher provided description for the terms.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -104,10 +73,7 @@ class DealTerms extends \Google\Model
     return $this->description;
   }
   /**
-   * Non-binding estimate of the estimated gross spend for this deal. Can be set
-   * by buyer or seller.
-   *
-   * @param Price $estimatedGrossSpend
+   * @param Price
    */
   public function setEstimatedGrossSpend(Price $estimatedGrossSpend)
   {
@@ -121,10 +87,7 @@ class DealTerms extends \Google\Model
     return $this->estimatedGrossSpend;
   }
   /**
-   * Non-binding estimate of the impressions served per day. Can be set by buyer
-   * or seller.
-   *
-   * @param string $estimatedImpressionsPerDay
+   * @param string
    */
   public function setEstimatedImpressionsPerDay($estimatedImpressionsPerDay)
   {
@@ -138,9 +101,7 @@ class DealTerms extends \Google\Model
     return $this->estimatedImpressionsPerDay;
   }
   /**
-   * The terms for guaranteed fixed price deals.
-   *
-   * @param GuaranteedFixedPriceTerms $guaranteedFixedPriceTerms
+   * @param GuaranteedFixedPriceTerms
    */
   public function setGuaranteedFixedPriceTerms(GuaranteedFixedPriceTerms $guaranteedFixedPriceTerms)
   {
@@ -154,9 +115,7 @@ class DealTerms extends \Google\Model
     return $this->guaranteedFixedPriceTerms;
   }
   /**
-   * The terms for non-guaranteed auction deals.
-   *
-   * @param NonGuaranteedAuctionTerms $nonGuaranteedAuctionTerms
+   * @param NonGuaranteedAuctionTerms
    */
   public function setNonGuaranteedAuctionTerms(NonGuaranteedAuctionTerms $nonGuaranteedAuctionTerms)
   {
@@ -170,9 +129,7 @@ class DealTerms extends \Google\Model
     return $this->nonGuaranteedAuctionTerms;
   }
   /**
-   * The terms for non-guaranteed fixed price deals.
-   *
-   * @param NonGuaranteedFixedPriceTerms $nonGuaranteedFixedPriceTerms
+   * @param NonGuaranteedFixedPriceTerms
    */
   public function setNonGuaranteedFixedPriceTerms(NonGuaranteedFixedPriceTerms $nonGuaranteedFixedPriceTerms)
   {
@@ -186,12 +143,7 @@ class DealTerms extends \Google\Model
     return $this->nonGuaranteedFixedPriceTerms;
   }
   /**
-   * The time zone name. For deals with Cost Per Day billing, defines the time
-   * zone used to mark the boundaries of a day. It should be an IANA TZ name,
-   * such as "America/Los_Angeles". For more information, see
-   * https://en.wikipedia.org/wiki/List_of_tz_database_time_zones.
-   *
-   * @param string $sellerTimeZone
+   * @param string
    */
   public function setSellerTimeZone($sellerTimeZone)
   {

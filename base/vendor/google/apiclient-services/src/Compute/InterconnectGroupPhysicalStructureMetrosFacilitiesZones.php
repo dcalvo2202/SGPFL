@@ -21,26 +21,16 @@ class InterconnectGroupPhysicalStructureMetrosFacilitiesZones extends \Google\Co
 {
   protected $collection_key = 'interconnects';
   /**
-   * Output only. [Output Only] URLs of Interconnects in this redundancy group
-   * in the given metro, facility, and zone.
-   *
    * @var string[]
    */
   public $interconnects;
   /**
-   * Output only. [Output Only] The name of the zone, either "zone1" or "zone2".
-   * This is the second component of the location of Interconnects in this
-   * facility.
-   *
    * @var string
    */
   public $zone;
 
   /**
-   * Output only. [Output Only] URLs of Interconnects in this redundancy group
-   * in the given metro, facility, and zone.
-   *
-   * @param string[] $interconnects
+   * @param string[]
    */
   public function setInterconnects($interconnects)
   {
@@ -54,11 +44,7 @@ class InterconnectGroupPhysicalStructureMetrosFacilitiesZones extends \Google\Co
     return $this->interconnects;
   }
   /**
-   * Output only. [Output Only] The name of the zone, either "zone1" or "zone2".
-   * This is the second component of the location of Interconnects in this
-   * facility.
-   *
-   * @param string $zone
+   * @param string
    */
   public function setZone($zone)
   {

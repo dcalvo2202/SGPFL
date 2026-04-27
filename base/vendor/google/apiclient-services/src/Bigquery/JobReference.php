@@ -20,34 +20,20 @@ namespace Google\Service\Bigquery;
 class JobReference extends \Google\Model
 {
   /**
-   * Required. The ID of the job. The ID must contain only letters (a-z, A-Z),
-   * numbers (0-9), underscores (_), or dashes (-). The maximum length is 1,024
-   * characters.
-   *
    * @var string
    */
   public $jobId;
   /**
-   * Optional. The geographic location of the job. The default value is US. For
-   * more information about BigQuery locations, see:
-   * https://cloud.google.com/bigquery/docs/locations
-   *
    * @var string
    */
   public $location;
   /**
-   * Required. The ID of the project containing this job.
-   *
    * @var string
    */
   public $projectId;
 
   /**
-   * Required. The ID of the job. The ID must contain only letters (a-z, A-Z),
-   * numbers (0-9), underscores (_), or dashes (-). The maximum length is 1,024
-   * characters.
-   *
-   * @param string $jobId
+   * @param string
    */
   public function setJobId($jobId)
   {
@@ -61,11 +47,7 @@ class JobReference extends \Google\Model
     return $this->jobId;
   }
   /**
-   * Optional. The geographic location of the job. The default value is US. For
-   * more information about BigQuery locations, see:
-   * https://cloud.google.com/bigquery/docs/locations
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -79,9 +61,7 @@ class JobReference extends \Google\Model
     return $this->location;
   }
   /**
-   * Required. The ID of the project containing this job.
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {

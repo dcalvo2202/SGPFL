@@ -23,18 +23,12 @@ class ListBillingAccountsResponse extends \Google\Collection
   protected $billingAccountsType = BillingAccount::class;
   protected $billingAccountsDataType = 'array';
   /**
-   * A token to retrieve the next page of results. To retrieve the next page,
-   * call `ListBillingAccounts` again with the `page_token` field set to this
-   * value. This field is empty if there are no more results to retrieve.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * A list of billing accounts.
-   *
-   * @param BillingAccount[] $billingAccounts
+   * @param BillingAccount[]
    */
   public function setBillingAccounts($billingAccounts)
   {
@@ -48,11 +42,7 @@ class ListBillingAccountsResponse extends \Google\Collection
     return $this->billingAccounts;
   }
   /**
-   * A token to retrieve the next page of results. To retrieve the next page,
-   * call `ListBillingAccounts` again with the `page_token` field set to this
-   * value. This field is empty if there are no more results to retrieve.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

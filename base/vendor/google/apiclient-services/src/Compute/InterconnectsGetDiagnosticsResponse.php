@@ -23,7 +23,7 @@ class InterconnectsGetDiagnosticsResponse extends \Google\Model
   protected $resultDataType = '';
 
   /**
-   * @param InterconnectDiagnostics $result
+   * @param InterconnectDiagnostics
    */
   public function setResult(InterconnectDiagnostics $result)
   {

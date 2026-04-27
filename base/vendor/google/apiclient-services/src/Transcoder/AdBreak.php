@@ -20,18 +20,12 @@ namespace Google\Service\Transcoder;
 class AdBreak extends \Google\Model
 {
   /**
-   * Start time in seconds for the ad break, relative to the output file
-   * timeline. The default is `0s`.
-   *
    * @var string
    */
   public $startTimeOffset;
 
   /**
-   * Start time in seconds for the ad break, relative to the output file
-   * timeline. The default is `0s`.
-   *
-   * @param string $startTimeOffset
+   * @param string
    */
   public function setStartTimeOffset($startTimeOffset)
   {

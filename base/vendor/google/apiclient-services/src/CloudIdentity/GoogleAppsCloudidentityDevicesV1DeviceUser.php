@@ -20,145 +20,62 @@ namespace Google\Service\CloudIdentity;
 class GoogleAppsCloudidentityDevicesV1DeviceUser extends \Google\Model
 {
   /**
-   * Compromised state of Device User account is unknown or unspecified.
-   */
-  public const COMPROMISED_STATE_COMPROMISED_STATE_UNSPECIFIED = 'COMPROMISED_STATE_UNSPECIFIED';
-  /**
-   * Device User Account is compromised.
-   */
-  public const COMPROMISED_STATE_COMPROMISED = 'COMPROMISED';
-  /**
-   * Device User Account is not compromised.
-   */
-  public const COMPROMISED_STATE_NOT_COMPROMISED = 'NOT_COMPROMISED';
-  /**
-   * Default value. This value is unused.
-   */
-  public const MANAGEMENT_STATE_MANAGEMENT_STATE_UNSPECIFIED = 'MANAGEMENT_STATE_UNSPECIFIED';
-  /**
-   * This user's data and profile is being removed from the device.
-   */
-  public const MANAGEMENT_STATE_WIPING = 'WIPING';
-  /**
-   * This user's data and profile is removed from the device.
-   */
-  public const MANAGEMENT_STATE_WIPED = 'WIPED';
-  /**
-   * User is approved to access data on the device.
-   */
-  public const MANAGEMENT_STATE_APPROVED = 'APPROVED';
-  /**
-   * User is blocked from accessing data on the device.
-   */
-  public const MANAGEMENT_STATE_BLOCKED = 'BLOCKED';
-  /**
-   * User is awaiting approval.
-   */
-  public const MANAGEMENT_STATE_PENDING_APPROVAL = 'PENDING_APPROVAL';
-  /**
-   * User is unenrolled from Advanced Windows Management, but the Windows
-   * account is still intact.
-   */
-  public const MANAGEMENT_STATE_UNENROLLED = 'UNENROLLED';
-  /**
-   * Password state not set.
-   */
-  public const PASSWORD_STATE_PASSWORD_STATE_UNSPECIFIED = 'PASSWORD_STATE_UNSPECIFIED';
-  /**
-   * Password set in object.
-   */
-  public const PASSWORD_STATE_PASSWORD_SET = 'PASSWORD_SET';
-  /**
-   * Password not set in object.
-   */
-  public const PASSWORD_STATE_PASSWORD_NOT_SET = 'PASSWORD_NOT_SET';
-  /**
-   * Compromised State of the DeviceUser object
-   *
    * @var string
    */
   public $compromisedState;
   /**
-   * When the user first signed in to the device
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. Most recent time when user registered with this service.
-   *
    * @var string
    */
   public $firstSyncTime;
   /**
-   * Output only. Default locale used on device, in IETF BCP-47 format.
-   *
    * @var string
    */
   public $languageCode;
   /**
-   * Output only. Last time when user synced with policies.
-   *
    * @var string
    */
   public $lastSyncTime;
   /**
-   * Output only. Management state of the user on the device.
-   *
    * @var string
    */
   public $managementState;
   /**
-   * Output only. [Resource
-   * name](https://cloud.google.com/apis/design/resource_names) of the
-   * DeviceUser in format: `devices/{device}/deviceUsers/{device_user}`, where
-   * `device_user` uniquely identifies a user's use of a device.
-   *
    * @var string
    */
   public $name;
   /**
-   * Password state of the DeviceUser object
-   *
    * @var string
    */
   public $passwordState;
   /**
-   * Output only. User agent on the device for this specific user
-   *
    * @var string
    */
   public $userAgent;
   /**
-   * Email address of the user registered on the device.
-   *
    * @var string
    */
   public $userEmail;
 
   /**
-   * Compromised State of the DeviceUser object
-   *
-   * Accepted values: COMPROMISED_STATE_UNSPECIFIED, COMPROMISED,
-   * NOT_COMPROMISED
-   *
-   * @param self::COMPROMISED_STATE_* $compromisedState
+   * @param string
    */
   public function setCompromisedState($compromisedState)
   {
     $this->compromisedState = $compromisedState;
   }
   /**
-   * @return self::COMPROMISED_STATE_*
+   * @return string
    */
   public function getCompromisedState()
   {
     return $this->compromisedState;
   }
   /**
-   * When the user first signed in to the device
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -172,9 +89,7 @@ class GoogleAppsCloudidentityDevicesV1DeviceUser extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. Most recent time when user registered with this service.
-   *
-   * @param string $firstSyncTime
+   * @param string
    */
   public function setFirstSyncTime($firstSyncTime)
   {
@@ -188,9 +103,7 @@ class GoogleAppsCloudidentityDevicesV1DeviceUser extends \Google\Model
     return $this->firstSyncTime;
   }
   /**
-   * Output only. Default locale used on device, in IETF BCP-47 format.
-   *
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {
@@ -204,9 +117,7 @@ class GoogleAppsCloudidentityDevicesV1DeviceUser extends \Google\Model
     return $this->languageCode;
   }
   /**
-   * Output only. Last time when user synced with policies.
-   *
-   * @param string $lastSyncTime
+   * @param string
    */
   public function setLastSyncTime($lastSyncTime)
   {
@@ -220,31 +131,21 @@ class GoogleAppsCloudidentityDevicesV1DeviceUser extends \Google\Model
     return $this->lastSyncTime;
   }
   /**
-   * Output only. Management state of the user on the device.
-   *
-   * Accepted values: MANAGEMENT_STATE_UNSPECIFIED, WIPING, WIPED, APPROVED,
-   * BLOCKED, PENDING_APPROVAL, UNENROLLED
-   *
-   * @param self::MANAGEMENT_STATE_* $managementState
+   * @param string
    */
   public function setManagementState($managementState)
   {
     $this->managementState = $managementState;
   }
   /**
-   * @return self::MANAGEMENT_STATE_*
+   * @return string
    */
   public function getManagementState()
   {
     return $this->managementState;
   }
   /**
-   * Output only. [Resource
-   * name](https://cloud.google.com/apis/design/resource_names) of the
-   * DeviceUser in format: `devices/{device}/deviceUsers/{device_user}`, where
-   * `device_user` uniquely identifies a user's use of a device.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -258,27 +159,21 @@ class GoogleAppsCloudidentityDevicesV1DeviceUser extends \Google\Model
     return $this->name;
   }
   /**
-   * Password state of the DeviceUser object
-   *
-   * Accepted values: PASSWORD_STATE_UNSPECIFIED, PASSWORD_SET, PASSWORD_NOT_SET
-   *
-   * @param self::PASSWORD_STATE_* $passwordState
+   * @param string
    */
   public function setPasswordState($passwordState)
   {
     $this->passwordState = $passwordState;
   }
   /**
-   * @return self::PASSWORD_STATE_*
+   * @return string
    */
   public function getPasswordState()
   {
     return $this->passwordState;
   }
   /**
-   * Output only. User agent on the device for this specific user
-   *
-   * @param string $userAgent
+   * @param string
    */
   public function setUserAgent($userAgent)
   {
@@ -292,9 +187,7 @@ class GoogleAppsCloudidentityDevicesV1DeviceUser extends \Google\Model
     return $this->userAgent;
   }
   /**
-   * Email address of the user registered on the device.
-   *
-   * @param string $userEmail
+   * @param string
    */
   public function setUserEmail($userEmail)
   {

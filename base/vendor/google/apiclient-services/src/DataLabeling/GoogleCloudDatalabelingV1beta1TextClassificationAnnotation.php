@@ -23,9 +23,7 @@ class GoogleCloudDatalabelingV1beta1TextClassificationAnnotation extends \Google
   protected $annotationSpecDataType = '';
 
   /**
-   * Label of the text.
-   *
-   * @param GoogleCloudDatalabelingV1beta1AnnotationSpec $annotationSpec
+   * @param GoogleCloudDatalabelingV1beta1AnnotationSpec
    */
   public function setAnnotationSpec(GoogleCloudDatalabelingV1beta1AnnotationSpec $annotationSpec)
   {

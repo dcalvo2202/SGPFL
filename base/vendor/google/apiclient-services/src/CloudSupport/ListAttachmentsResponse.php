@@ -23,18 +23,12 @@ class ListAttachmentsResponse extends \Google\Collection
   protected $attachmentsType = Attachment::class;
   protected $attachmentsDataType = 'array';
   /**
-   * A token to retrieve the next page of results. Set this in the `page_token`
-   * field of subsequent `cases.attachments.list` requests. If unspecified,
-   * there are no more results to retrieve.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of attachments associated with a case.
-   *
-   * @param Attachment[] $attachments
+   * @param Attachment[]
    */
   public function setAttachments($attachments)
   {
@@ -48,11 +42,7 @@ class ListAttachmentsResponse extends \Google\Collection
     return $this->attachments;
   }
   /**
-   * A token to retrieve the next page of results. Set this in the `page_token`
-   * field of subsequent `cases.attachments.list` requests. If unspecified,
-   * there are no more results to retrieve.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

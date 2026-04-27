@@ -20,52 +20,36 @@ namespace Google\Service\CloudRedis;
 class GoogleCloudRedisV1OperationMetadata extends \Google\Model
 {
   /**
-   * API version.
-   *
    * @var string
    */
   public $apiVersion;
   /**
-   * Specifies if cancellation was requested for the operation.
-   *
    * @var bool
    */
   public $cancelRequested;
   /**
-   * Creation timestamp.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * End timestamp.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * Operation status details.
-   *
    * @var string
    */
   public $statusDetail;
   /**
-   * Operation target.
-   *
    * @var string
    */
   public $target;
   /**
-   * Operation verb.
-   *
    * @var string
    */
   public $verb;
 
   /**
-   * API version.
-   *
-   * @param string $apiVersion
+   * @param string
    */
   public function setApiVersion($apiVersion)
   {
@@ -79,9 +63,7 @@ class GoogleCloudRedisV1OperationMetadata extends \Google\Model
     return $this->apiVersion;
   }
   /**
-   * Specifies if cancellation was requested for the operation.
-   *
-   * @param bool $cancelRequested
+   * @param bool
    */
   public function setCancelRequested($cancelRequested)
   {
@@ -95,9 +77,7 @@ class GoogleCloudRedisV1OperationMetadata extends \Google\Model
     return $this->cancelRequested;
   }
   /**
-   * Creation timestamp.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -111,9 +91,7 @@ class GoogleCloudRedisV1OperationMetadata extends \Google\Model
     return $this->createTime;
   }
   /**
-   * End timestamp.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -127,9 +105,7 @@ class GoogleCloudRedisV1OperationMetadata extends \Google\Model
     return $this->endTime;
   }
   /**
-   * Operation status details.
-   *
-   * @param string $statusDetail
+   * @param string
    */
   public function setStatusDetail($statusDetail)
   {
@@ -143,9 +119,7 @@ class GoogleCloudRedisV1OperationMetadata extends \Google\Model
     return $this->statusDetail;
   }
   /**
-   * Operation target.
-   *
-   * @param string $target
+   * @param string
    */
   public function setTarget($target)
   {
@@ -159,9 +133,7 @@ class GoogleCloudRedisV1OperationMetadata extends \Google\Model
     return $this->target;
   }
   /**
-   * Operation verb.
-   *
-   * @param string $verb
+   * @param string
    */
   public function setVerb($verb)
   {

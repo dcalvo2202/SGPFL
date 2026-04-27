@@ -20,31 +20,20 @@ namespace Google\Service\GKEHub;
 class MembershipFeature extends \Google\Model
 {
   /**
-   * Output only. When the MembershipFeature resource was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. When the MembershipFeature resource was deleted.
-   *
    * @var string
    */
   public $deleteTime;
   /**
-   * Google Cloud labels for this MembershipFeature.
-   *
    * @var string[]
    */
   public $labels;
   protected $lifecycleStateType = LifecycleState::class;
   protected $lifecycleStateDataType = '';
   /**
-   * Output only. The resource name of the membershipFeature, in the format: `pr
-   * ojects/{project}/locations/{location}/memberships/{membership}/features/{fe
-   * ature}`. Note that `membershipFeatures` is shortened to `features` in the
-   * resource name. (see http://go/aip/122#collection-identifiers)
-   *
    * @var string
    */
   public $name;
@@ -53,16 +42,12 @@ class MembershipFeature extends \Google\Model
   protected $stateType = FeatureState::class;
   protected $stateDataType = '';
   /**
-   * Output only. When the MembershipFeature resource was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. When the MembershipFeature resource was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -76,9 +61,7 @@ class MembershipFeature extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. When the MembershipFeature resource was deleted.
-   *
-   * @param string $deleteTime
+   * @param string
    */
   public function setDeleteTime($deleteTime)
   {
@@ -92,9 +75,7 @@ class MembershipFeature extends \Google\Model
     return $this->deleteTime;
   }
   /**
-   * Google Cloud labels for this MembershipFeature.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -108,9 +89,7 @@ class MembershipFeature extends \Google\Model
     return $this->labels;
   }
   /**
-   * Output only. Lifecycle information of the resource itself.
-   *
-   * @param LifecycleState $lifecycleState
+   * @param LifecycleState
    */
   public function setLifecycleState(LifecycleState $lifecycleState)
   {
@@ -124,12 +103,7 @@ class MembershipFeature extends \Google\Model
     return $this->lifecycleState;
   }
   /**
-   * Output only. The resource name of the membershipFeature, in the format: `pr
-   * ojects/{project}/locations/{location}/memberships/{membership}/features/{fe
-   * ature}`. Note that `membershipFeatures` is shortened to `features` in the
-   * resource name. (see http://go/aip/122#collection-identifiers)
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -143,9 +117,7 @@ class MembershipFeature extends \Google\Model
     return $this->name;
   }
   /**
-   * Optional. Spec of this membershipFeature.
-   *
-   * @param FeatureSpec $spec
+   * @param FeatureSpec
    */
   public function setSpec(FeatureSpec $spec)
   {
@@ -159,9 +131,7 @@ class MembershipFeature extends \Google\Model
     return $this->spec;
   }
   /**
-   * Output only. State of the this membershipFeature.
-   *
-   * @param FeatureState $state
+   * @param FeatureState
    */
   public function setState(FeatureState $state)
   {
@@ -175,9 +145,7 @@ class MembershipFeature extends \Google\Model
     return $this->state;
   }
   /**
-   * Output only. When the MembershipFeature resource was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

@@ -23,9 +23,7 @@ class GoogleCloudDocumentaiV1DeleteProcessorMetadata extends \Google\Model
   protected $commonMetadataDataType = '';
 
   /**
-   * The basic metadata of the long-running operation.
-   *
-   * @param GoogleCloudDocumentaiV1CommonOperationMetadata $commonMetadata
+   * @param GoogleCloudDocumentaiV1CommonOperationMetadata
    */
   public function setCommonMetadata(GoogleCloudDocumentaiV1CommonOperationMetadata $commonMetadata)
   {

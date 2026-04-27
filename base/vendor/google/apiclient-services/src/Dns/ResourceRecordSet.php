@@ -25,42 +25,30 @@ class ResourceRecordSet extends \Google\Collection
    */
   public $kind;
   /**
-   * For example, www.example.com.
-   *
    * @var string
    */
   public $name;
   protected $routingPolicyType = RRSetRoutingPolicy::class;
   protected $routingPolicyDataType = '';
   /**
-   * As defined in RFC 1035 (section 5) and RFC 1034 (section 3.6.1) -- see
-   * examples.
-   *
    * @var string[]
    */
   public $rrdatas;
   /**
-   * As defined in RFC 4034 (section 3.2).
-   *
    * @var string[]
    */
   public $signatureRrdatas;
   /**
-   * Number of seconds that this `ResourceRecordSet` can be cached by resolvers.
-   *
    * @var int
    */
   public $ttl;
   /**
-   * The identifier of a supported record type. See the list of Supported DNS
-   * record types.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -74,9 +62,7 @@ class ResourceRecordSet extends \Google\Collection
     return $this->kind;
   }
   /**
-   * For example, www.example.com.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -90,12 +76,7 @@ class ResourceRecordSet extends \Google\Collection
     return $this->name;
   }
   /**
-   * Configures dynamic query responses based on either the geo location of the
-   * querying user or a weighted round robin based routing policy. A valid
-   * `ResourceRecordSet` contains only `rrdata` (for static resolution) or a
-   * `routing_policy` (for dynamic resolution).
-   *
-   * @param RRSetRoutingPolicy $routingPolicy
+   * @param RRSetRoutingPolicy
    */
   public function setRoutingPolicy(RRSetRoutingPolicy $routingPolicy)
   {
@@ -109,10 +90,7 @@ class ResourceRecordSet extends \Google\Collection
     return $this->routingPolicy;
   }
   /**
-   * As defined in RFC 1035 (section 5) and RFC 1034 (section 3.6.1) -- see
-   * examples.
-   *
-   * @param string[] $rrdatas
+   * @param string[]
    */
   public function setRrdatas($rrdatas)
   {
@@ -126,9 +104,7 @@ class ResourceRecordSet extends \Google\Collection
     return $this->rrdatas;
   }
   /**
-   * As defined in RFC 4034 (section 3.2).
-   *
-   * @param string[] $signatureRrdatas
+   * @param string[]
    */
   public function setSignatureRrdatas($signatureRrdatas)
   {
@@ -142,9 +118,7 @@ class ResourceRecordSet extends \Google\Collection
     return $this->signatureRrdatas;
   }
   /**
-   * Number of seconds that this `ResourceRecordSet` can be cached by resolvers.
-   *
-   * @param int $ttl
+   * @param int
    */
   public function setTtl($ttl)
   {
@@ -158,10 +132,7 @@ class ResourceRecordSet extends \Google\Collection
     return $this->ttl;
   }
   /**
-   * The identifier of a supported record type. See the list of Supported DNS
-   * record types.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

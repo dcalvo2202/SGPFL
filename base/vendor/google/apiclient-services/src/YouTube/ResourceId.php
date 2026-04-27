@@ -20,42 +20,24 @@ namespace Google\Service\YouTube;
 class ResourceId extends \Google\Model
 {
   /**
-   * The ID that YouTube uses to uniquely identify the referred resource, if
-   * that resource is a channel. This property is only present if the
-   * resourceId.kind value is youtube#channel.
-   *
    * @var string
    */
   public $channelId;
   /**
-   * The type of the API resource.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The ID that YouTube uses to uniquely identify the referred resource, if
-   * that resource is a playlist. This property is only present if the
-   * resourceId.kind value is youtube#playlist.
-   *
    * @var string
    */
   public $playlistId;
   /**
-   * The ID that YouTube uses to uniquely identify the referred resource, if
-   * that resource is a video. This property is only present if the
-   * resourceId.kind value is youtube#video.
-   *
    * @var string
    */
   public $videoId;
 
   /**
-   * The ID that YouTube uses to uniquely identify the referred resource, if
-   * that resource is a channel. This property is only present if the
-   * resourceId.kind value is youtube#channel.
-   *
-   * @param string $channelId
+   * @param string
    */
   public function setChannelId($channelId)
   {
@@ -69,9 +51,7 @@ class ResourceId extends \Google\Model
     return $this->channelId;
   }
   /**
-   * The type of the API resource.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -85,11 +65,7 @@ class ResourceId extends \Google\Model
     return $this->kind;
   }
   /**
-   * The ID that YouTube uses to uniquely identify the referred resource, if
-   * that resource is a playlist. This property is only present if the
-   * resourceId.kind value is youtube#playlist.
-   *
-   * @param string $playlistId
+   * @param string
    */
   public function setPlaylistId($playlistId)
   {
@@ -103,11 +79,7 @@ class ResourceId extends \Google\Model
     return $this->playlistId;
   }
   /**
-   * The ID that YouTube uses to uniquely identify the referred resource, if
-   * that resource is a video. This property is only present if the
-   * resourceId.kind value is youtube#video.
-   *
-   * @param string $videoId
+   * @param string
    */
   public function setVideoId($videoId)
   {

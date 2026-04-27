@@ -20,8 +20,6 @@ namespace Google\Service\Dataflow;
 class GPUUsage extends \Google\Model
 {
   /**
-   * Required. Timestamp of the measurement.
-   *
    * @var string
    */
   public $timestamp;
@@ -29,9 +27,7 @@ class GPUUsage extends \Google\Model
   protected $utilizationDataType = '';
 
   /**
-   * Required. Timestamp of the measurement.
-   *
-   * @param string $timestamp
+   * @param string
    */
   public function setTimestamp($timestamp)
   {
@@ -45,9 +41,7 @@ class GPUUsage extends \Google\Model
     return $this->timestamp;
   }
   /**
-   * Required. Utilization info about the GPU.
-   *
-   * @param GPUUtilization $utilization
+   * @param GPUUtilization
    */
   public function setUtilization(GPUUtilization $utilization)
   {

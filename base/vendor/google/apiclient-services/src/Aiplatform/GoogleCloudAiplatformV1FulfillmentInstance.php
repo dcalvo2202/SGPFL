@@ -20,22 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1FulfillmentInstance extends \Google\Model
 {
   /**
-   * Required. Inference instruction prompt to compare prediction with.
-   *
    * @var string
    */
   public $instruction;
   /**
-   * Required. Output of the evaluated model.
-   *
    * @var string
    */
   public $prediction;
 
   /**
-   * Required. Inference instruction prompt to compare prediction with.
-   *
-   * @param string $instruction
+   * @param string
    */
   public function setInstruction($instruction)
   {
@@ -49,9 +43,7 @@ class GoogleCloudAiplatformV1FulfillmentInstance extends \Google\Model
     return $this->instruction;
   }
   /**
-   * Required. Output of the evaluated model.
-   *
-   * @param string $prediction
+   * @param string
    */
   public function setPrediction($prediction)
   {

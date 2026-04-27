@@ -20,32 +20,20 @@ namespace Google\Service\ContainerAnalysis;
 class ComplianceVersion extends \Google\Model
 {
   /**
-   * The name of the document that defines this benchmark, e.g. "CIS Container-
-   * Optimized OS".
-   *
    * @var string
    */
   public $benchmarkDocument;
   /**
-   * The CPE URI (https://cpe.mitre.org/specification/) this benchmark is
-   * applicable to.
-   *
    * @var string
    */
   public $cpeUri;
   /**
-   * The version of the benchmark. This is set to the version of the OS-specific
-   * CIS document the benchmark is defined in.
-   *
    * @var string
    */
   public $version;
 
   /**
-   * The name of the document that defines this benchmark, e.g. "CIS Container-
-   * Optimized OS".
-   *
-   * @param string $benchmarkDocument
+   * @param string
    */
   public function setBenchmarkDocument($benchmarkDocument)
   {
@@ -59,10 +47,7 @@ class ComplianceVersion extends \Google\Model
     return $this->benchmarkDocument;
   }
   /**
-   * The CPE URI (https://cpe.mitre.org/specification/) this benchmark is
-   * applicable to.
-   *
-   * @param string $cpeUri
+   * @param string
    */
   public function setCpeUri($cpeUri)
   {
@@ -76,10 +61,7 @@ class ComplianceVersion extends \Google\Model
     return $this->cpeUri;
   }
   /**
-   * The version of the benchmark. This is set to the version of the OS-specific
-   * CIS document the benchmark is defined in.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

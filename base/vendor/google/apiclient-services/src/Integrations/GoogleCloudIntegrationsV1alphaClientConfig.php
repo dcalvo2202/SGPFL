@@ -20,113 +20,56 @@ namespace Google\Service\Integrations;
 class GoogleCloudIntegrationsV1alphaClientConfig extends \Google\Model
 {
   /**
-   * Unspecified billing type
-   */
-  public const BILLING_TYPE_BILLING_TYPE_UNSPECIFIED = 'BILLING_TYPE_UNSPECIFIED';
-  /**
-   * A trial org provisioned through Apigee Provisioning Wizard
-   */
-  public const BILLING_TYPE_BILLING_TYPE_APIGEE_TRIALS = 'BILLING_TYPE_APIGEE_TRIALS';
-  /**
-   * Subscription based users of Apigee
-   */
-  public const BILLING_TYPE_BILLING_TYPE_APIGEE_SUBSCRIPTION = 'BILLING_TYPE_APIGEE_SUBSCRIPTION';
-  /**
-   * Consumption based users of IP
-   */
-  public const BILLING_TYPE_BILLING_TYPE_PAYG = 'BILLING_TYPE_PAYG';
-  /**
-   * The client state is unspecified
-   */
-  public const CLIENT_STATE_CLIENT_STATE_UNSPECIFIED = 'CLIENT_STATE_UNSPECIFIED';
-  /**
-   * The client is active and able to make calls to the IP APIs
-   */
-  public const CLIENT_STATE_CLIENT_STATE_ACTIVE = 'CLIENT_STATE_ACTIVE';
-  /**
-   * The client is disabled and will soon be deleted
-   */
-  public const CLIENT_STATE_CLIENT_STATE_DISABLED = 'CLIENT_STATE_DISABLED';
-  /**
-   * Indicates the billing type of the client
-   *
    * @var string
    */
   public $billingType;
   /**
-   * Indicates the activity state the client
-   *
    * @var string
    */
   public $clientState;
   protected $cloudKmsConfigType = GoogleCloudIntegrationsV1alphaCloudKmsConfig::class;
   protected $cloudKmsConfigDataType = '';
   /**
-   * The timestamp when the client was first created.
-   *
    * @var string
    */
   public $createTime;
-  protected $customerConfigType = GoogleCloudIntegrationsV1alphaCustomerConfig::class;
-  protected $customerConfigDataType = '';
   /**
-   * Description of what the client is used for
-   *
    * @var string
    */
   public $description;
   /**
-   * Optional.
-   *
    * @var bool
    */
   public $enableHttpCall;
   /**
-   * Optional. Indicates the client enables internal IP feature, this is
-   * applicable for internal clients only.
-   *
    * @var bool
    */
   public $enableInternalIp;
   /**
-   * Optional.
-   *
    * @var bool
    */
   public $enableManagedAiFeatures;
   /**
-   * Optional.
-   *
    * @var bool
    */
   public $enableVariableMasking;
   /**
-   * Globally unique ID (project_id + region)
-   *
    * @var string
    */
   public $id;
   /**
-   * Optional. Indicates the client is provisioned with CMEK or GMEK.
-   *
    * @var bool
    */
   public $isGmek;
   /**
-   * The service agent associated with this client
-   *
    * @var string
    */
   public $p4ServiceAccount;
   /**
-   * The GCP project id of the client associated with
-   *
    * @var string
    */
   public $projectId;
   /**
-   * The region the client is linked to.
-   *
    * @var string
    */
   public $region;
@@ -136,45 +79,35 @@ class GoogleCloudIntegrationsV1alphaClientConfig extends \Google\Model
   public $runAsServiceAccount;
 
   /**
-   * Indicates the billing type of the client
-   *
-   * Accepted values: BILLING_TYPE_UNSPECIFIED, BILLING_TYPE_APIGEE_TRIALS,
-   * BILLING_TYPE_APIGEE_SUBSCRIPTION, BILLING_TYPE_PAYG
-   *
-   * @param self::BILLING_TYPE_* $billingType
+   * @param string
    */
   public function setBillingType($billingType)
   {
     $this->billingType = $billingType;
   }
   /**
-   * @return self::BILLING_TYPE_*
+   * @return string
    */
   public function getBillingType()
   {
     return $this->billingType;
   }
   /**
-   * Indicates the activity state the client
-   *
-   * Accepted values: CLIENT_STATE_UNSPECIFIED, CLIENT_STATE_ACTIVE,
-   * CLIENT_STATE_DISABLED
-   *
-   * @param self::CLIENT_STATE_* $clientState
+   * @param string
    */
   public function setClientState($clientState)
   {
     $this->clientState = $clientState;
   }
   /**
-   * @return self::CLIENT_STATE_*
+   * @return string
    */
   public function getClientState()
   {
     return $this->clientState;
   }
   /**
-   * @param GoogleCloudIntegrationsV1alphaCloudKmsConfig $cloudKmsConfig
+   * @param GoogleCloudIntegrationsV1alphaCloudKmsConfig
    */
   public function setCloudKmsConfig(GoogleCloudIntegrationsV1alphaCloudKmsConfig $cloudKmsConfig)
   {
@@ -188,9 +121,7 @@ class GoogleCloudIntegrationsV1alphaClientConfig extends \Google\Model
     return $this->cloudKmsConfig;
   }
   /**
-   * The timestamp when the client was first created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -204,25 +135,7 @@ class GoogleCloudIntegrationsV1alphaClientConfig extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Optional. Customer configuration information for the given client.
-   *
-   * @param GoogleCloudIntegrationsV1alphaCustomerConfig $customerConfig
-   */
-  public function setCustomerConfig(GoogleCloudIntegrationsV1alphaCustomerConfig $customerConfig)
-  {
-    $this->customerConfig = $customerConfig;
-  }
-  /**
-   * @return GoogleCloudIntegrationsV1alphaCustomerConfig
-   */
-  public function getCustomerConfig()
-  {
-    return $this->customerConfig;
-  }
-  /**
-   * Description of what the client is used for
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -236,9 +149,7 @@ class GoogleCloudIntegrationsV1alphaClientConfig extends \Google\Model
     return $this->description;
   }
   /**
-   * Optional.
-   *
-   * @param bool $enableHttpCall
+   * @param bool
    */
   public function setEnableHttpCall($enableHttpCall)
   {
@@ -252,10 +163,7 @@ class GoogleCloudIntegrationsV1alphaClientConfig extends \Google\Model
     return $this->enableHttpCall;
   }
   /**
-   * Optional. Indicates the client enables internal IP feature, this is
-   * applicable for internal clients only.
-   *
-   * @param bool $enableInternalIp
+   * @param bool
    */
   public function setEnableInternalIp($enableInternalIp)
   {
@@ -269,9 +177,7 @@ class GoogleCloudIntegrationsV1alphaClientConfig extends \Google\Model
     return $this->enableInternalIp;
   }
   /**
-   * Optional.
-   *
-   * @param bool $enableManagedAiFeatures
+   * @param bool
    */
   public function setEnableManagedAiFeatures($enableManagedAiFeatures)
   {
@@ -285,9 +191,7 @@ class GoogleCloudIntegrationsV1alphaClientConfig extends \Google\Model
     return $this->enableManagedAiFeatures;
   }
   /**
-   * Optional.
-   *
-   * @param bool $enableVariableMasking
+   * @param bool
    */
   public function setEnableVariableMasking($enableVariableMasking)
   {
@@ -301,9 +205,7 @@ class GoogleCloudIntegrationsV1alphaClientConfig extends \Google\Model
     return $this->enableVariableMasking;
   }
   /**
-   * Globally unique ID (project_id + region)
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -317,9 +219,7 @@ class GoogleCloudIntegrationsV1alphaClientConfig extends \Google\Model
     return $this->id;
   }
   /**
-   * Optional. Indicates the client is provisioned with CMEK or GMEK.
-   *
-   * @param bool $isGmek
+   * @param bool
    */
   public function setIsGmek($isGmek)
   {
@@ -333,9 +233,7 @@ class GoogleCloudIntegrationsV1alphaClientConfig extends \Google\Model
     return $this->isGmek;
   }
   /**
-   * The service agent associated with this client
-   *
-   * @param string $p4ServiceAccount
+   * @param string
    */
   public function setP4ServiceAccount($p4ServiceAccount)
   {
@@ -349,9 +247,7 @@ class GoogleCloudIntegrationsV1alphaClientConfig extends \Google\Model
     return $this->p4ServiceAccount;
   }
   /**
-   * The GCP project id of the client associated with
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {
@@ -365,9 +261,7 @@ class GoogleCloudIntegrationsV1alphaClientConfig extends \Google\Model
     return $this->projectId;
   }
   /**
-   * The region the client is linked to.
-   *
-   * @param string $region
+   * @param string
    */
   public function setRegion($region)
   {
@@ -381,7 +275,7 @@ class GoogleCloudIntegrationsV1alphaClientConfig extends \Google\Model
     return $this->region;
   }
   /**
-   * @param string $runAsServiceAccount
+   * @param string
    */
   public function setRunAsServiceAccount($runAsServiceAccount)
   {

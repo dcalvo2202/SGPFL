@@ -37,7 +37,7 @@ class GoogleCloudDialogflowV2beta1KnowledgeAssistAnswerKnowledgeAnswerGenerative
   public $uri;
 
   /**
-   * @param array[] $metadata
+   * @param array[]
    */
   public function setMetadata($metadata)
   {
@@ -51,7 +51,7 @@ class GoogleCloudDialogflowV2beta1KnowledgeAssistAnswerKnowledgeAnswerGenerative
     return $this->metadata;
   }
   /**
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {
@@ -65,7 +65,7 @@ class GoogleCloudDialogflowV2beta1KnowledgeAssistAnswerKnowledgeAnswerGenerative
     return $this->text;
   }
   /**
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -79,7 +79,7 @@ class GoogleCloudDialogflowV2beta1KnowledgeAssistAnswerKnowledgeAnswerGenerative
     return $this->title;
   }
   /**
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

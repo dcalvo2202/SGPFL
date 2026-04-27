@@ -21,49 +21,22 @@ class GoogleCloudVideointelligenceV1AnnotateVideoRequest extends \Google\Collect
 {
   protected $collection_key = 'features';
   /**
-   * Required. Requested video annotation features.
-   *
    * @var string[]
    */
   public $features;
   /**
-   * The video data bytes. If unset, the input video(s) should be specified via
-   * the `input_uri`. If set, `input_uri` must be unset.
-   *
    * @var string
    */
   public $inputContent;
   /**
-   * Input video location. Currently, only [Cloud
-   * Storage](https://cloud.google.com/storage/) URIs are supported. URIs must
-   * be specified in the following format: `gs://bucket-id/object-id` (other URI
-   * formats return google.rpc.Code.INVALID_ARGUMENT). For more information, see
-   * [Request URIs](https://cloud.google.com/storage/docs/request-endpoints). To
-   * identify multiple videos, a video URI may include wildcards in the `object-
-   * id`. Supported wildcards: '*' to match 0 or more characters; '?' to match 1
-   * character. If unset, the input video should be embedded in the request as
-   * `input_content`. If set, `input_content` must be unset.
-   *
    * @var string
    */
   public $inputUri;
   /**
-   * Optional. Cloud region where annotation should take place. Supported cloud
-   * regions are: `us-east1`, `us-west1`, `europe-west1`, `asia-east1`. If no
-   * region is specified, the region will be determined based on video file
-   * location.
-   *
    * @var string
    */
   public $locationId;
   /**
-   * Optional. Location where the output (in JSON format) should be stored.
-   * Currently, only [Cloud Storage](https://cloud.google.com/storage/) URIs are
-   * supported. These must be specified in the following format: `gs://bucket-
-   * id/object-id` (other URI formats return google.rpc.Code.INVALID_ARGUMENT).
-   * For more information, see [Request
-   * URIs](https://cloud.google.com/storage/docs/request-endpoints).
-   *
    * @var string
    */
   public $outputUri;
@@ -71,9 +44,7 @@ class GoogleCloudVideointelligenceV1AnnotateVideoRequest extends \Google\Collect
   protected $videoContextDataType = '';
 
   /**
-   * Required. Requested video annotation features.
-   *
-   * @param string[] $features
+   * @param string[]
    */
   public function setFeatures($features)
   {
@@ -87,10 +58,7 @@ class GoogleCloudVideointelligenceV1AnnotateVideoRequest extends \Google\Collect
     return $this->features;
   }
   /**
-   * The video data bytes. If unset, the input video(s) should be specified via
-   * the `input_uri`. If set, `input_uri` must be unset.
-   *
-   * @param string $inputContent
+   * @param string
    */
   public function setInputContent($inputContent)
   {
@@ -104,17 +72,7 @@ class GoogleCloudVideointelligenceV1AnnotateVideoRequest extends \Google\Collect
     return $this->inputContent;
   }
   /**
-   * Input video location. Currently, only [Cloud
-   * Storage](https://cloud.google.com/storage/) URIs are supported. URIs must
-   * be specified in the following format: `gs://bucket-id/object-id` (other URI
-   * formats return google.rpc.Code.INVALID_ARGUMENT). For more information, see
-   * [Request URIs](https://cloud.google.com/storage/docs/request-endpoints). To
-   * identify multiple videos, a video URI may include wildcards in the `object-
-   * id`. Supported wildcards: '*' to match 0 or more characters; '?' to match 1
-   * character. If unset, the input video should be embedded in the request as
-   * `input_content`. If set, `input_content` must be unset.
-   *
-   * @param string $inputUri
+   * @param string
    */
   public function setInputUri($inputUri)
   {
@@ -128,12 +86,7 @@ class GoogleCloudVideointelligenceV1AnnotateVideoRequest extends \Google\Collect
     return $this->inputUri;
   }
   /**
-   * Optional. Cloud region where annotation should take place. Supported cloud
-   * regions are: `us-east1`, `us-west1`, `europe-west1`, `asia-east1`. If no
-   * region is specified, the region will be determined based on video file
-   * location.
-   *
-   * @param string $locationId
+   * @param string
    */
   public function setLocationId($locationId)
   {
@@ -147,14 +100,7 @@ class GoogleCloudVideointelligenceV1AnnotateVideoRequest extends \Google\Collect
     return $this->locationId;
   }
   /**
-   * Optional. Location where the output (in JSON format) should be stored.
-   * Currently, only [Cloud Storage](https://cloud.google.com/storage/) URIs are
-   * supported. These must be specified in the following format: `gs://bucket-
-   * id/object-id` (other URI formats return google.rpc.Code.INVALID_ARGUMENT).
-   * For more information, see [Request
-   * URIs](https://cloud.google.com/storage/docs/request-endpoints).
-   *
-   * @param string $outputUri
+   * @param string
    */
   public function setOutputUri($outputUri)
   {
@@ -168,9 +114,7 @@ class GoogleCloudVideointelligenceV1AnnotateVideoRequest extends \Google\Collect
     return $this->outputUri;
   }
   /**
-   * Additional video context and/or feature-specific parameters.
-   *
-   * @param GoogleCloudVideointelligenceV1VideoContext $videoContext
+   * @param GoogleCloudVideointelligenceV1VideoContext
    */
   public function setVideoContext(GoogleCloudVideointelligenceV1VideoContext $videoContext)
   {

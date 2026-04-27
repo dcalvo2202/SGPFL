@@ -20,16 +20,12 @@ namespace Google\Service\DatabaseMigrationService;
 class EntityMove extends \Google\Model
 {
   /**
-   * Required. The new schema
-   *
    * @var string
    */
   public $newSchema;
 
   /**
-   * Required. The new schema
-   *
-   * @param string $newSchema
+   * @param string
    */
   public function setNewSchema($newSchema)
   {

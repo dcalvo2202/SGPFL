@@ -20,37 +20,19 @@ namespace Google\Service\CloudNaturalLanguage;
 class XPSTranslationTrainResponse extends \Google\Model
 {
   /**
-   * Default
-   */
-  public const MODEL_TYPE_MODEL_TYPE_UNSPECIFIED = 'MODEL_TYPE_UNSPECIFIED';
-  /**
-   * Legacy model. Will be deprecated.
-   */
-  public const MODEL_TYPE_LEGACY = 'LEGACY';
-  /**
-   * Current model.
-   */
-  public const MODEL_TYPE_CURRENT = 'CURRENT';
-  /**
-   * Type of the model.
-   *
    * @var string
    */
   public $modelType;
 
   /**
-   * Type of the model.
-   *
-   * Accepted values: MODEL_TYPE_UNSPECIFIED, LEGACY, CURRENT
-   *
-   * @param self::MODEL_TYPE_* $modelType
+   * @param string
    */
   public function setModelType($modelType)
   {
     $this->modelType = $modelType;
   }
   /**
-   * @return self::MODEL_TYPE_*
+   * @return string
    */
   public function getModelType()
   {

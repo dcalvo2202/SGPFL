@@ -23,11 +23,7 @@ class TableRowProperties extends \Google\Model
   protected $minRowHeightDataType = '';
 
   /**
-   * Minimum height of the row. The row will be rendered in the Slides editor at
-   * a height equal to or greater than this value in order to show all the text
-   * in the row's cell(s).
-   *
-   * @param Dimension $minRowHeight
+   * @param Dimension
    */
   public function setMinRowHeight(Dimension $minRowHeight)
   {

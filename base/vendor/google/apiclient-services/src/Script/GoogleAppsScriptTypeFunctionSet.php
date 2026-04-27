@@ -24,9 +24,7 @@ class GoogleAppsScriptTypeFunctionSet extends \Google\Collection
   protected $valuesDataType = 'array';
 
   /**
-   * A list of functions composing the set.
-   *
-   * @param GoogleAppsScriptTypeFunction[] $values
+   * @param GoogleAppsScriptTypeFunction[]
    */
   public function setValues($values)
   {

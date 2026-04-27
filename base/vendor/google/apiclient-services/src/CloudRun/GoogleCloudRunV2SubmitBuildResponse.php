@@ -20,15 +20,10 @@ namespace Google\Service\CloudRun;
 class GoogleCloudRunV2SubmitBuildResponse extends \Google\Model
 {
   /**
-   * URI of the base builder image in Artifact Registry being used in the build.
-   * Used to opt into automatic base image updates.
-   *
    * @var string
    */
   public $baseImageUri;
   /**
-   * Warning message for the base image.
-   *
    * @var string
    */
   public $baseImageWarning;
@@ -36,10 +31,7 @@ class GoogleCloudRunV2SubmitBuildResponse extends \Google\Model
   protected $buildOperationDataType = '';
 
   /**
-   * URI of the base builder image in Artifact Registry being used in the build.
-   * Used to opt into automatic base image updates.
-   *
-   * @param string $baseImageUri
+   * @param string
    */
   public function setBaseImageUri($baseImageUri)
   {
@@ -53,9 +45,7 @@ class GoogleCloudRunV2SubmitBuildResponse extends \Google\Model
     return $this->baseImageUri;
   }
   /**
-   * Warning message for the base image.
-   *
-   * @param string $baseImageWarning
+   * @param string
    */
   public function setBaseImageWarning($baseImageWarning)
   {
@@ -69,9 +59,7 @@ class GoogleCloudRunV2SubmitBuildResponse extends \Google\Model
     return $this->baseImageWarning;
   }
   /**
-   * Cloud Build operation to be polled via CloudBuild API.
-   *
-   * @param GoogleLongrunningOperation $buildOperation
+   * @param GoogleLongrunningOperation
    */
   public function setBuildOperation(GoogleLongrunningOperation $buildOperation)
   {

@@ -20,22 +20,16 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1Property extends \Google\Model
 {
   /**
-   * The property key
-   *
    * @var string
    */
   public $name;
   /**
-   * The property value
-   *
    * @var string
    */
   public $value;
 
   /**
-   * The property key
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -49,9 +43,7 @@ class GoogleCloudApigeeV1Property extends \Google\Model
     return $this->name;
   }
   /**
-   * The property value
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

@@ -23,9 +23,7 @@ class CustomEmojiMetadata extends \Google\Model
   protected $customEmojiDataType = '';
 
   /**
-   * The custom emoji.
-   *
-   * @param CustomEmoji $customEmoji
+   * @param CustomEmoji
    */
   public function setCustomEmoji(CustomEmoji $customEmoji)
   {

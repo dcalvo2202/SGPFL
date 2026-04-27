@@ -22,8 +22,6 @@ class ResultStorage extends \Google\Model
   protected $googleCloudStorageType = GoogleCloudStorage::class;
   protected $googleCloudStorageDataType = '';
   /**
-   * Output only. URL to the results in the Firebase Web Console.
-   *
    * @var string
    */
   public $resultsUrl;
@@ -33,9 +31,7 @@ class ResultStorage extends \Google\Model
   protected $toolResultsHistoryDataType = '';
 
   /**
-   * Required.
-   *
-   * @param GoogleCloudStorage $googleCloudStorage
+   * @param GoogleCloudStorage
    */
   public function setGoogleCloudStorage(GoogleCloudStorage $googleCloudStorage)
   {
@@ -49,9 +45,7 @@ class ResultStorage extends \Google\Model
     return $this->googleCloudStorage;
   }
   /**
-   * Output only. URL to the results in the Firebase Web Console.
-   *
-   * @param string $resultsUrl
+   * @param string
    */
   public function setResultsUrl($resultsUrl)
   {
@@ -65,9 +59,7 @@ class ResultStorage extends \Google\Model
     return $this->resultsUrl;
   }
   /**
-   * Output only. The tool results execution that results are written to.
-   *
-   * @param ToolResultsExecution $toolResultsExecution
+   * @param ToolResultsExecution
    */
   public function setToolResultsExecution(ToolResultsExecution $toolResultsExecution)
   {
@@ -81,11 +73,7 @@ class ResultStorage extends \Google\Model
     return $this->toolResultsExecution;
   }
   /**
-   * The tool results history that contains the tool results execution that
-   * results are written to. If not provided, the service will choose an
-   * appropriate value.
-   *
-   * @param ToolResultsHistory $toolResultsHistory
+   * @param ToolResultsHistory
    */
   public function setToolResultsHistory(ToolResultsHistory $toolResultsHistory)
   {

@@ -20,54 +20,28 @@ namespace Google\Service\ChecksService;
 class GoogleChecksReportV1alphaAppBundle extends \Google\Model
 {
   /**
-   * Not specified.
-   */
-  public const RELEASE_TYPE_APP_BUNDLE_RELEASE_TYPE_UNSPECIFIED = 'APP_BUNDLE_RELEASE_TYPE_UNSPECIFIED';
-  /**
-   * Published production bundle.
-   */
-  public const RELEASE_TYPE_PUBLIC = 'PUBLIC';
-  /**
-   * Pre-release bundle.
-   */
-  public const RELEASE_TYPE_PRE_RELEASE = 'PRE_RELEASE';
-  /**
-   * Unique id of the bundle. For example: "com.google.Gmail".
-   *
    * @var string
    */
   public $bundleId;
   /**
-   * Git commit hash or changelist number associated with the release.
-   *
    * @var string
    */
   public $codeReferenceId;
   /**
-   * Identifies the type of release.
-   *
    * @var string
    */
   public $releaseType;
   /**
-   * The user-visible version of the bundle such as the Android `versionName` or
-   * iOS `CFBundleShortVersionString`. For example: "7.21.1".
-   *
    * @var string
    */
   public $version;
   /**
-   * The version used throughout the operating system and store to identify the
-   * build such as the Android `versionCode` or iOS `CFBundleVersion`.
-   *
    * @var string
    */
   public $versionId;
 
   /**
-   * Unique id of the bundle. For example: "com.google.Gmail".
-   *
-   * @param string $bundleId
+   * @param string
    */
   public function setBundleId($bundleId)
   {
@@ -81,9 +55,7 @@ class GoogleChecksReportV1alphaAppBundle extends \Google\Model
     return $this->bundleId;
   }
   /**
-   * Git commit hash or changelist number associated with the release.
-   *
-   * @param string $codeReferenceId
+   * @param string
    */
   public function setCodeReferenceId($codeReferenceId)
   {
@@ -97,28 +69,21 @@ class GoogleChecksReportV1alphaAppBundle extends \Google\Model
     return $this->codeReferenceId;
   }
   /**
-   * Identifies the type of release.
-   *
-   * Accepted values: APP_BUNDLE_RELEASE_TYPE_UNSPECIFIED, PUBLIC, PRE_RELEASE
-   *
-   * @param self::RELEASE_TYPE_* $releaseType
+   * @param string
    */
   public function setReleaseType($releaseType)
   {
     $this->releaseType = $releaseType;
   }
   /**
-   * @return self::RELEASE_TYPE_*
+   * @return string
    */
   public function getReleaseType()
   {
     return $this->releaseType;
   }
   /**
-   * The user-visible version of the bundle such as the Android `versionName` or
-   * iOS `CFBundleShortVersionString`. For example: "7.21.1".
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {
@@ -132,10 +97,7 @@ class GoogleChecksReportV1alphaAppBundle extends \Google\Model
     return $this->version;
   }
   /**
-   * The version used throughout the operating system and store to identify the
-   * build such as the Android `versionCode` or iOS `CFBundleVersion`.
-   *
-   * @param string $versionId
+   * @param string
    */
   public function setVersionId($versionId)
   {

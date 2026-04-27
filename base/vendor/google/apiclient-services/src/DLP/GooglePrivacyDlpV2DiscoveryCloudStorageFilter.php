@@ -27,12 +27,7 @@ class GooglePrivacyDlpV2DiscoveryCloudStorageFilter extends \Google\Model
   protected $othersDataType = '';
 
   /**
-   * Optional. The bucket to scan. Targets including this can only include one
-   * target (the target with this bucket). This enables profiling the contents
-   * of a single bucket, while the other options allow for easy profiling of
-   * many bucets within a project or an organization.
-   *
-   * @param GooglePrivacyDlpV2CloudStorageResourceReference $cloudStorageResourceReference
+   * @param GooglePrivacyDlpV2CloudStorageResourceReference
    */
   public function setCloudStorageResourceReference(GooglePrivacyDlpV2CloudStorageResourceReference $cloudStorageResourceReference)
   {
@@ -46,9 +41,7 @@ class GooglePrivacyDlpV2DiscoveryCloudStorageFilter extends \Google\Model
     return $this->cloudStorageResourceReference;
   }
   /**
-   * Optional. A specific set of buckets for this filter to apply to.
-   *
-   * @param GooglePrivacyDlpV2FileStoreCollection $collection
+   * @param GooglePrivacyDlpV2FileStoreCollection
    */
   public function setCollection(GooglePrivacyDlpV2FileStoreCollection $collection)
   {
@@ -62,12 +55,7 @@ class GooglePrivacyDlpV2DiscoveryCloudStorageFilter extends \Google\Model
     return $this->collection;
   }
   /**
-   * Optional. Catch-all. This should always be the last target in the list
-   * because anything above it will apply first. Should only appear once in a
-   * configuration. If none is specified, a default one will be added
-   * automatically.
-   *
-   * @param GooglePrivacyDlpV2AllOtherResources $others
+   * @param GooglePrivacyDlpV2AllOtherResources
    */
   public function setOthers(GooglePrivacyDlpV2AllOtherResources $others)
   {

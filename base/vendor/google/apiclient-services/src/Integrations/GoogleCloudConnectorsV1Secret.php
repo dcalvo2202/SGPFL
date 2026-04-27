@@ -20,18 +20,12 @@ namespace Google\Service\Integrations;
 class GoogleCloudConnectorsV1Secret extends \Google\Model
 {
   /**
-   * Optional. The resource name of the secret version in the format, format as:
-   * `projects/secrets/versions`.
-   *
    * @var string
    */
   public $secretVersion;
 
   /**
-   * Optional. The resource name of the secret version in the format, format as:
-   * `projects/secrets/versions`.
-   *
-   * @param string $secretVersion
+   * @param string
    */
   public function setSecretVersion($secretVersion)
   {

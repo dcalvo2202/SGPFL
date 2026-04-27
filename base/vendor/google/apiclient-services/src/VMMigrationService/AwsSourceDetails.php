@@ -19,71 +19,36 @@ namespace Google\Service\VMMigrationService;
 
 class AwsSourceDetails extends \Google\Collection
 {
-  /**
-   * The state is unknown. This is used for API compatibility only and is not
-   * used by the system.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The state was not sampled by the health checks yet.
-   */
-  public const STATE_PENDING = 'PENDING';
-  /**
-   * The source is available but might not be usable yet due to invalid
-   * credentials or another reason. The error message will contain further
-   * details.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * The source exists and its credentials were verified.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
   protected $collection_key = 'inventoryTagList';
   protected $accessKeyCredsType = AccessKeyCredentials::class;
   protected $accessKeyCredsDataType = '';
   /**
-   * Immutable. The AWS region that the source VMs will be migrated from.
-   *
    * @var string
    */
   public $awsRegion;
   protected $errorType = Status::class;
   protected $errorDataType = '';
   /**
-   * AWS security group names to limit the scope of the source inventory.
-   *
    * @var string[]
    */
   public $inventorySecurityGroupNames;
   protected $inventoryTagListType = Tag::class;
   protected $inventoryTagListDataType = 'array';
   /**
-   * User specified tags to add to every M2VM generated resource in AWS. These
-   * tags will be set in addition to the default tags that are set as part of
-   * the migration process. The tags must not begin with the reserved prefix
-   * `m2vm`.
-   *
    * @var string[]
    */
   public $migrationResourcesUserTags;
   /**
-   * Output only. The source's public IP. All communication initiated by this
-   * source will originate from this IP.
-   *
    * @var string
    */
   public $publicIp;
   /**
-   * Output only. State of the source as determined by the health check.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * AWS Credentials using access key id and secret.
-   *
-   * @param AccessKeyCredentials $accessKeyCreds
+   * @param AccessKeyCredentials
    */
   public function setAccessKeyCreds(AccessKeyCredentials $accessKeyCreds)
   {
@@ -97,9 +62,7 @@ class AwsSourceDetails extends \Google\Collection
     return $this->accessKeyCreds;
   }
   /**
-   * Immutable. The AWS region that the source VMs will be migrated from.
-   *
-   * @param string $awsRegion
+   * @param string
    */
   public function setAwsRegion($awsRegion)
   {
@@ -113,10 +76,7 @@ class AwsSourceDetails extends \Google\Collection
     return $this->awsRegion;
   }
   /**
-   * Output only. Provides details on the state of the Source in case of an
-   * error.
-   *
-   * @param Status $error
+   * @param Status
    */
   public function setError(Status $error)
   {
@@ -130,9 +90,7 @@ class AwsSourceDetails extends \Google\Collection
     return $this->error;
   }
   /**
-   * AWS security group names to limit the scope of the source inventory.
-   *
-   * @param string[] $inventorySecurityGroupNames
+   * @param string[]
    */
   public function setInventorySecurityGroupNames($inventorySecurityGroupNames)
   {
@@ -146,9 +104,7 @@ class AwsSourceDetails extends \Google\Collection
     return $this->inventorySecurityGroupNames;
   }
   /**
-   * AWS resource tags to limit the scope of the source inventory.
-   *
-   * @param Tag[] $inventoryTagList
+   * @param Tag[]
    */
   public function setInventoryTagList($inventoryTagList)
   {
@@ -162,12 +118,7 @@ class AwsSourceDetails extends \Google\Collection
     return $this->inventoryTagList;
   }
   /**
-   * User specified tags to add to every M2VM generated resource in AWS. These
-   * tags will be set in addition to the default tags that are set as part of
-   * the migration process. The tags must not begin with the reserved prefix
-   * `m2vm`.
-   *
-   * @param string[] $migrationResourcesUserTags
+   * @param string[]
    */
   public function setMigrationResourcesUserTags($migrationResourcesUserTags)
   {
@@ -181,10 +132,7 @@ class AwsSourceDetails extends \Google\Collection
     return $this->migrationResourcesUserTags;
   }
   /**
-   * Output only. The source's public IP. All communication initiated by this
-   * source will originate from this IP.
-   *
-   * @param string $publicIp
+   * @param string
    */
   public function setPublicIp($publicIp)
   {
@@ -198,18 +146,14 @@ class AwsSourceDetails extends \Google\Collection
     return $this->publicIp;
   }
   /**
-   * Output only. State of the source as determined by the health check.
-   *
-   * Accepted values: STATE_UNSPECIFIED, PENDING, FAILED, ACTIVE
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

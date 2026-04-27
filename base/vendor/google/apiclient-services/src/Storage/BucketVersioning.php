@@ -20,16 +20,12 @@ namespace Google\Service\Storage;
 class BucketVersioning extends \Google\Model
 {
   /**
-   * While set to true, versioning is fully enabled for this bucket.
-   *
    * @var bool
    */
   public $enabled;
 
   /**
-   * While set to true, versioning is fully enabled for this bucket.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {

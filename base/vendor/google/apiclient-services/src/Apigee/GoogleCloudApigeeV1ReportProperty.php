@@ -21,8 +21,6 @@ class GoogleCloudApigeeV1ReportProperty extends \Google\Collection
 {
   protected $collection_key = 'value';
   /**
-   * name of the property
-   *
    * @var string
    */
   public $property;
@@ -30,9 +28,7 @@ class GoogleCloudApigeeV1ReportProperty extends \Google\Collection
   protected $valueDataType = 'array';
 
   /**
-   * name of the property
-   *
-   * @param string $property
+   * @param string
    */
   public function setProperty($property)
   {
@@ -46,9 +42,7 @@ class GoogleCloudApigeeV1ReportProperty extends \Google\Collection
     return $this->property;
   }
   /**
-   * property values
-   *
-   * @param GoogleCloudApigeeV1Attribute[] $value
+   * @param GoogleCloudApigeeV1Attribute[]
    */
   public function setValue($value)
   {

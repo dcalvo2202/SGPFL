@@ -21,32 +21,22 @@ class GoogleCloudDataplexV1DataQualityColumnResult extends \Google\Collection
 {
   protected $collection_key = 'dimensions';
   /**
-   * Output only. The column specified in the DataQualityRule.
-   *
    * @var string
    */
   public $column;
   protected $dimensionsType = GoogleCloudDataplexV1DataQualityDimensionResult::class;
   protected $dimensionsDataType = 'array';
   /**
-   * Output only. Whether the column passed or failed.
-   *
    * @var bool
    */
   public $passed;
   /**
-   * Output only. The column-level data quality score for this data scan job if
-   * and only if the 'column' field is set.The score ranges between between 0,
-   * 100 (up to two decimal points).
-   *
    * @var float
    */
   public $score;
 
   /**
-   * Output only. The column specified in the DataQualityRule.
-   *
-   * @param string $column
+   * @param string
    */
   public function setColumn($column)
   {
@@ -60,9 +50,7 @@ class GoogleCloudDataplexV1DataQualityColumnResult extends \Google\Collection
     return $this->column;
   }
   /**
-   * Output only. The dimension-level results for this column.
-   *
-   * @param GoogleCloudDataplexV1DataQualityDimensionResult[] $dimensions
+   * @param GoogleCloudDataplexV1DataQualityDimensionResult[]
    */
   public function setDimensions($dimensions)
   {
@@ -76,9 +64,7 @@ class GoogleCloudDataplexV1DataQualityColumnResult extends \Google\Collection
     return $this->dimensions;
   }
   /**
-   * Output only. Whether the column passed or failed.
-   *
-   * @param bool $passed
+   * @param bool
    */
   public function setPassed($passed)
   {
@@ -92,11 +78,7 @@ class GoogleCloudDataplexV1DataQualityColumnResult extends \Google\Collection
     return $this->passed;
   }
   /**
-   * Output only. The column-level data quality score for this data scan job if
-   * and only if the 'column' field is set.The score ranges between between 0,
-   * 100 (up to two decimal points).
-   *
-   * @param float $score
+   * @param float
    */
   public function setScore($score)
   {

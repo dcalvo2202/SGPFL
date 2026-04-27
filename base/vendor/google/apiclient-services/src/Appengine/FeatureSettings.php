@@ -20,31 +20,16 @@ namespace Google\Service\Appengine;
 class FeatureSettings extends \Google\Model
 {
   /**
-   * Boolean value indicating if split health checks should be used instead of
-   * the legacy health checks. At an app.yaml level, this means defaulting to
-   * 'readiness_check' and 'liveness_check' values instead of 'health_check'
-   * ones. Once the legacy 'health_check' behavior is deprecated, and this value
-   * is always true, this setting can be removed.
-   *
    * @var bool
    */
   public $splitHealthChecks;
   /**
-   * If true, use Container-Optimized OS (https://cloud.google.com/container-
-   * optimized-os/) base image for VMs, rather than a base Debian image.
-   *
    * @var bool
    */
   public $useContainerOptimizedOs;
 
   /**
-   * Boolean value indicating if split health checks should be used instead of
-   * the legacy health checks. At an app.yaml level, this means defaulting to
-   * 'readiness_check' and 'liveness_check' values instead of 'health_check'
-   * ones. Once the legacy 'health_check' behavior is deprecated, and this value
-   * is always true, this setting can be removed.
-   *
-   * @param bool $splitHealthChecks
+   * @param bool
    */
   public function setSplitHealthChecks($splitHealthChecks)
   {
@@ -58,10 +43,7 @@ class FeatureSettings extends \Google\Model
     return $this->splitHealthChecks;
   }
   /**
-   * If true, use Container-Optimized OS (https://cloud.google.com/container-
-   * optimized-os/) base image for VMs, rather than a base Debian image.
-   *
-   * @param bool $useContainerOptimizedOs
+   * @param bool
    */
   public function setUseContainerOptimizedOs($useContainerOptimizedOs)
   {

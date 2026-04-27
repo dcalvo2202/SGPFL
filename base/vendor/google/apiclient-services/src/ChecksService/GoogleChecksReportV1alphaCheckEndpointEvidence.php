@@ -23,9 +23,7 @@ class GoogleChecksReportV1alphaCheckEndpointEvidence extends \Google\Model
   protected $endpointDataType = '';
 
   /**
-   * The endpoint that was contacted by your app.
-   *
-   * @param GoogleChecksReportV1alphaEndpoint $endpoint
+   * @param GoogleChecksReportV1alphaEndpoint
    */
   public function setEndpoint(GoogleChecksReportV1alphaEndpoint $endpoint)
   {

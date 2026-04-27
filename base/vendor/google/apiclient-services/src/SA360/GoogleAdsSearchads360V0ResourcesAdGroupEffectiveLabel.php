@@ -20,36 +20,24 @@ namespace Google\Service\SA360;
 class GoogleAdsSearchads360V0ResourcesAdGroupEffectiveLabel extends \Google\Model
 {
   /**
-   * Immutable. The ad group to which the effective label is attached.
-   *
    * @var string
    */
   public $adGroup;
   /**
-   * Immutable. The effective label assigned to the ad group.
-   *
    * @var string
    */
   public $label;
   /**
-   * Output only. The ID of the Customer which owns the effective label.
-   *
    * @var string
    */
   public $ownerCustomerId;
   /**
-   * Immutable. The resource name of the ad group effective label. Ad group
-   * effective label resource names have the form: `customers/{owner_customer_id
-   * }/adGroupEffectiveLabels/{ad_group_id}~{label_id}`
-   *
    * @var string
    */
   public $resourceName;
 
   /**
-   * Immutable. The ad group to which the effective label is attached.
-   *
-   * @param string $adGroup
+   * @param string
    */
   public function setAdGroup($adGroup)
   {
@@ -63,9 +51,7 @@ class GoogleAdsSearchads360V0ResourcesAdGroupEffectiveLabel extends \Google\Mode
     return $this->adGroup;
   }
   /**
-   * Immutable. The effective label assigned to the ad group.
-   *
-   * @param string $label
+   * @param string
    */
   public function setLabel($label)
   {
@@ -79,9 +65,7 @@ class GoogleAdsSearchads360V0ResourcesAdGroupEffectiveLabel extends \Google\Mode
     return $this->label;
   }
   /**
-   * Output only. The ID of the Customer which owns the effective label.
-   *
-   * @param string $ownerCustomerId
+   * @param string
    */
   public function setOwnerCustomerId($ownerCustomerId)
   {
@@ -95,11 +79,7 @@ class GoogleAdsSearchads360V0ResourcesAdGroupEffectiveLabel extends \Google\Mode
     return $this->ownerCustomerId;
   }
   /**
-   * Immutable. The resource name of the ad group effective label. Ad group
-   * effective label resource names have the form: `customers/{owner_customer_id
-   * }/adGroupEffectiveLabels/{ad_group_id}~{label_id}`
-   *
-   * @param string $resourceName
+   * @param string
    */
   public function setResourceName($resourceName)
   {

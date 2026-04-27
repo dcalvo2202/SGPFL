@@ -25,10 +25,6 @@ class RunPivotReportResponse extends \Google\Collection
   protected $dimensionHeadersType = DimensionHeader::class;
   protected $dimensionHeadersDataType = 'array';
   /**
-   * Identifies what kind of resource this message is. This `kind` is always the
-   * fixed string "analyticsData#runPivotReport". Useful to distinguish between
-   * response types in JSON.
-   *
    * @var string
    */
   public $kind;
@@ -44,12 +40,7 @@ class RunPivotReportResponse extends \Google\Collection
   protected $rowsDataType = 'array';
 
   /**
-   * Aggregation of metric values. Can be totals, minimums, or maximums. The
-   * returned aggregations are controlled by the metric_aggregations in the
-   * pivot. The type of aggregation returned in each row is shown by the
-   * dimension_values which are set to "RESERVED_".
-   *
-   * @param Row[] $aggregates
+   * @param Row[]
    */
   public function setAggregates($aggregates)
   {
@@ -63,10 +54,7 @@ class RunPivotReportResponse extends \Google\Collection
     return $this->aggregates;
   }
   /**
-   * Describes dimension columns. The number of DimensionHeaders and ordering of
-   * DimensionHeaders matches the dimensions present in rows.
-   *
-   * @param DimensionHeader[] $dimensionHeaders
+   * @param DimensionHeader[]
    */
   public function setDimensionHeaders($dimensionHeaders)
   {
@@ -80,11 +68,7 @@ class RunPivotReportResponse extends \Google\Collection
     return $this->dimensionHeaders;
   }
   /**
-   * Identifies what kind of resource this message is. This `kind` is always the
-   * fixed string "analyticsData#runPivotReport". Useful to distinguish between
-   * response types in JSON.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -98,9 +82,7 @@ class RunPivotReportResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Metadata for the report.
-   *
-   * @param ResponseMetaData $metadata
+   * @param ResponseMetaData
    */
   public function setMetadata(ResponseMetaData $metadata)
   {
@@ -114,10 +96,7 @@ class RunPivotReportResponse extends \Google\Collection
     return $this->metadata;
   }
   /**
-   * Describes metric columns. The number of MetricHeaders and ordering of
-   * MetricHeaders matches the metrics present in rows.
-   *
-   * @param MetricHeader[] $metricHeaders
+   * @param MetricHeader[]
    */
   public function setMetricHeaders($metricHeaders)
   {
@@ -131,17 +110,7 @@ class RunPivotReportResponse extends \Google\Collection
     return $this->metricHeaders;
   }
   /**
-   * Summarizes the columns and rows created by a pivot. Each pivot in the
-   * request produces one header in the response. If we have a request like
-   * this: "pivots": [{ "fieldNames": ["country", "city"] }, { "fieldNames":
-   * "eventName" }] We will have the following `pivotHeaders` in the response:
-   * "pivotHeaders" : [{ "dimensionHeaders": [{ "dimensionValues": [ { "value":
-   * "United Kingdom" }, { "value": "London" } ] }, { "dimensionValues": [ {
-   * "value": "Japan" }, { "value": "Osaka" } ] }] }, { "dimensionHeaders": [{
-   * "dimensionValues": [{ "value": "session_start" }] }, { "dimensionValues":
-   * [{ "value": "scroll" }] }] }]
-   *
-   * @param PivotHeader[] $pivotHeaders
+   * @param PivotHeader[]
    */
   public function setPivotHeaders($pivotHeaders)
   {
@@ -155,9 +124,7 @@ class RunPivotReportResponse extends \Google\Collection
     return $this->pivotHeaders;
   }
   /**
-   * This Google Analytics property's quota state including this request.
-   *
-   * @param PropertyQuota $propertyQuota
+   * @param PropertyQuota
    */
   public function setPropertyQuota(PropertyQuota $propertyQuota)
   {
@@ -171,9 +138,7 @@ class RunPivotReportResponse extends \Google\Collection
     return $this->propertyQuota;
   }
   /**
-   * Rows of dimension value combinations and metric values in the report.
-   *
-   * @param Row[] $rows
+   * @param Row[]
    */
   public function setRows($rows)
   {

@@ -20,25 +20,16 @@ namespace Google\Service\Firestore;
 class Precondition extends \Google\Model
 {
   /**
-   * When set to `true`, the target document must exist. When set to `false`,
-   * the target document must not exist.
-   *
    * @var bool
    */
   public $exists;
   /**
-   * When set, the target document must exist and have been last updated at that
-   * time. Timestamp must be microsecond aligned.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * When set to `true`, the target document must exist. When set to `false`,
-   * the target document must not exist.
-   *
-   * @param bool $exists
+   * @param bool
    */
   public function setExists($exists)
   {
@@ -52,10 +43,7 @@ class Precondition extends \Google\Model
     return $this->exists;
   }
   /**
-   * When set, the target document must exist and have been last updated at that
-   * time. Timestamp must be microsecond aligned.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

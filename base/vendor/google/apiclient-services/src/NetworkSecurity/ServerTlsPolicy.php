@@ -20,67 +20,36 @@ namespace Google\Service\NetworkSecurity;
 class ServerTlsPolicy extends \Google\Model
 {
   /**
-   * This field applies only for Traffic Director policies. It is must be set to
-   * false for Application Load Balancer policies. Determines if server allows
-   * plaintext connections. If set to true, server allows plain text
-   * connections. By default, it is set to false. This setting is not exclusive
-   * of other encryption modes. For example, if `allow_open` and `mtls_policy`
-   * are set, server allows both plain text and mTLS connections. See
-   * documentation of other encryption modes to confirm compatibility. Consider
-   * using it if you wish to upgrade in place your deployment to TLS while
-   * having mixed TLS and non-TLS traffic reaching port :80.
-   *
    * @var bool
    */
   public $allowOpen;
   /**
-   * Output only. The timestamp when the resource was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Free-text description of the resource.
-   *
    * @var string
    */
   public $description;
   /**
-   * Set of label tags associated with the resource.
-   *
    * @var string[]
    */
   public $labels;
   protected $mtlsPolicyType = MTLSPolicy::class;
   protected $mtlsPolicyDataType = '';
   /**
-   * Required. Name of the ServerTlsPolicy resource. It matches the pattern
-   * `projects/locations/{location}/serverTlsPolicies/{server_tls_policy}`
-   *
    * @var string
    */
   public $name;
   protected $serverCertificateType = GoogleCloudNetworksecurityV1CertificateProvider::class;
   protected $serverCertificateDataType = '';
   /**
-   * Output only. The timestamp when the resource was updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * This field applies only for Traffic Director policies. It is must be set to
-   * false for Application Load Balancer policies. Determines if server allows
-   * plaintext connections. If set to true, server allows plain text
-   * connections. By default, it is set to false. This setting is not exclusive
-   * of other encryption modes. For example, if `allow_open` and `mtls_policy`
-   * are set, server allows both plain text and mTLS connections. See
-   * documentation of other encryption modes to confirm compatibility. Consider
-   * using it if you wish to upgrade in place your deployment to TLS while
-   * having mixed TLS and non-TLS traffic reaching port :80.
-   *
-   * @param bool $allowOpen
+   * @param bool
    */
   public function setAllowOpen($allowOpen)
   {
@@ -94,9 +63,7 @@ class ServerTlsPolicy extends \Google\Model
     return $this->allowOpen;
   }
   /**
-   * Output only. The timestamp when the resource was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -110,9 +77,7 @@ class ServerTlsPolicy extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Free-text description of the resource.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -126,9 +91,7 @@ class ServerTlsPolicy extends \Google\Model
     return $this->description;
   }
   /**
-   * Set of label tags associated with the resource.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -142,15 +105,7 @@ class ServerTlsPolicy extends \Google\Model
     return $this->labels;
   }
   /**
-   * This field is required if the policy is used with Application Load
-   * Balancers. This field can be empty for Traffic Director. Defines a
-   * mechanism to provision peer validation certificates for peer to peer
-   * authentication (Mutual TLS - mTLS). If not specified, client certificate
-   * will not be requested. The connection is treated as TLS and not mTLS. If
-   * `allow_open` and `mtls_policy` are set, server allows both plain text and
-   * mTLS connections.
-   *
-   * @param MTLSPolicy $mtlsPolicy
+   * @param MTLSPolicy
    */
   public function setMtlsPolicy(MTLSPolicy $mtlsPolicy)
   {
@@ -164,10 +119,7 @@ class ServerTlsPolicy extends \Google\Model
     return $this->mtlsPolicy;
   }
   /**
-   * Required. Name of the ServerTlsPolicy resource. It matches the pattern
-   * `projects/locations/{location}/serverTlsPolicies/{server_tls_policy}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -181,12 +133,7 @@ class ServerTlsPolicy extends \Google\Model
     return $this->name;
   }
   /**
-   * Optional if policy is to be used with Traffic Director. For Application
-   * Load Balancers must be empty. Defines a mechanism to provision server
-   * identity (public and private keys). Cannot be combined with `allow_open` as
-   * a permissive mode that allows both plain text and TLS is not supported.
-   *
-   * @param GoogleCloudNetworksecurityV1CertificateProvider $serverCertificate
+   * @param GoogleCloudNetworksecurityV1CertificateProvider
    */
   public function setServerCertificate(GoogleCloudNetworksecurityV1CertificateProvider $serverCertificate)
   {
@@ -200,9 +147,7 @@ class ServerTlsPolicy extends \Google\Model
     return $this->serverCertificate;
   }
   /**
-   * Output only. The timestamp when the resource was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

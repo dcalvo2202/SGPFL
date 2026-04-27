@@ -23,7 +23,7 @@ class ResolveServiceResponse extends \Google\Model
   protected $serviceDataType = '';
 
   /**
-   * @param Service $service
+   * @param Service
    */
   public function setService(Service $service)
   {

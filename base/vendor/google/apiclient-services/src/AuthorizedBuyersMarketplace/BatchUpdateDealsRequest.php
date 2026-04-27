@@ -24,9 +24,7 @@ class BatchUpdateDealsRequest extends \Google\Collection
   protected $requestsDataType = 'array';
 
   /**
-   * Required. List of request messages to update deals.
-   *
-   * @param UpdateDealRequest[] $requests
+   * @param UpdateDealRequest[]
    */
   public function setRequests($requests)
   {

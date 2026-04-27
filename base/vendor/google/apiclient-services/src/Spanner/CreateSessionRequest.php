@@ -23,9 +23,7 @@ class CreateSessionRequest extends \Google\Model
   protected $sessionDataType = '';
 
   /**
-   * Required. The session to create.
-   *
-   * @param Session $session
+   * @param Session
    */
   public function setSession(Session $session)
   {

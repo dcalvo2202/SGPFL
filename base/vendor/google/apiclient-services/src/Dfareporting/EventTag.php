@@ -19,154 +19,78 @@ namespace Google\Service\Dfareporting;
 
 class EventTag extends \Google\Collection
 {
-  /**
-   * The event tag should only ever fire on specified sites.
-   */
-  public const SITE_FILTER_TYPE_ALLOWLIST = 'ALLOWLIST';
-  /**
-   * The event tag should fire on all sites EXCEPT the specified sites.
-   */
-  public const SITE_FILTER_TYPE_BLOCKLIST = 'BLOCKLIST';
-  public const STATUS_ENABLED = 'ENABLED';
-  public const STATUS_DISABLED = 'DISABLED';
-  /**
-   * A third-party pixel for impression tracking.
-   */
-  public const TYPE_IMPRESSION_IMAGE_EVENT_TAG = 'IMPRESSION_IMAGE_EVENT_TAG';
-  /**
-   * A third-party JavaScript URL for impression tracking.
-   */
-  public const TYPE_IMPRESSION_JAVASCRIPT_EVENT_TAG = 'IMPRESSION_JAVASCRIPT_EVENT_TAG';
-  /**
-   * A third-party URL for click tracking that redirects to the landing page.
-   */
-  public const TYPE_CLICK_THROUGH_EVENT_TAG = 'CLICK_THROUGH_EVENT_TAG';
   protected $collection_key = 'siteIds';
   /**
-   * Account ID of this event tag. This is a read-only field that can be left
-   * blank.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * Advertiser ID of this event tag. This field or the campaignId field is
-   * required on insertion.
-   *
    * @var string
    */
   public $advertiserId;
   protected $advertiserIdDimensionValueType = DimensionValue::class;
   protected $advertiserIdDimensionValueDataType = '';
   /**
-   * Campaign ID of this event tag. This field or the advertiserId field is
-   * required on insertion.
-   *
    * @var string
    */
   public $campaignId;
   protected $campaignIdDimensionValueType = DimensionValue::class;
   protected $campaignIdDimensionValueDataType = '';
   /**
-   * Whether this event tag should be automatically enabled for all of the
-   * advertiser's campaigns and ads.
-   *
    * @var bool
    */
   public $enabledByDefault;
   /**
-   * Whether to remove this event tag from ads that are trafficked through
-   * Display & Video 360 to Ad Exchange. This may be useful if the event tag
-   * uses a pixel that is unapproved for Ad Exchange bids on one or more
-   * networks, such as the Google Display Network.
-   *
    * @var bool
    */
   public $excludeFromAdxRequests;
   /**
-   * ID of this event tag. This is a read-only, auto-generated field.
-   *
    * @var string
    */
   public $id;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#eventTag".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Name of this event tag. This is a required field and must be less than 256
-   * characters long.
-   *
    * @var string
    */
   public $name;
   /**
-   * Site filter type for this event tag. If no type is specified then the event
-   * tag will be applied to all sites.
-   *
    * @var string
    */
   public $siteFilterType;
   /**
-   * Filter list of site IDs associated with this event tag. The siteFilterType
-   * determines whether this is a allowlist or blocklist filter.
-   *
    * @var string[]
    */
   public $siteIds;
   /**
-   * Whether this tag is SSL-compliant or not. This is a read-only field.
-   *
    * @var bool
    */
   public $sslCompliant;
   /**
-   * Status of this event tag. Must be ENABLED for this event tag to fire. This
-   * is a required field.
-   *
    * @var string
    */
   public $status;
   /**
-   * Subaccount ID of this event tag. This is a read-only field that can be left
-   * blank.
-   *
    * @var string
    */
   public $subaccountId;
   /**
-   * Event tag type. Can be used to specify whether to use a third-party pixel,
-   * a third-party JavaScript URL, or a third-party click-through URL for either
-   * impression or click tracking. This is a required field.
-   *
    * @var string
    */
   public $type;
   /**
-   * Payload URL for this event tag. The URL on a click-through event tag should
-   * have a landing page URL appended to the end of it. This field is required
-   * on insertion.
-   *
    * @var string
    */
   public $url;
   /**
-   * Number of times the landing page URL should be URL-escaped before being
-   * appended to the click-through event tag URL. Only applies to click-through
-   * event tags as specified by the event tag type.
-   *
    * @var int
    */
   public $urlEscapeLevels;
 
   /**
-   * Account ID of this event tag. This is a read-only field that can be left
-   * blank.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -180,10 +104,7 @@ class EventTag extends \Google\Collection
     return $this->accountId;
   }
   /**
-   * Advertiser ID of this event tag. This field or the campaignId field is
-   * required on insertion.
-   *
-   * @param string $advertiserId
+   * @param string
    */
   public function setAdvertiserId($advertiserId)
   {
@@ -197,10 +118,7 @@ class EventTag extends \Google\Collection
     return $this->advertiserId;
   }
   /**
-   * Dimension value for the ID of the advertiser. This is a read-only, auto-
-   * generated field.
-   *
-   * @param DimensionValue $advertiserIdDimensionValue
+   * @param DimensionValue
    */
   public function setAdvertiserIdDimensionValue(DimensionValue $advertiserIdDimensionValue)
   {
@@ -214,10 +132,7 @@ class EventTag extends \Google\Collection
     return $this->advertiserIdDimensionValue;
   }
   /**
-   * Campaign ID of this event tag. This field or the advertiserId field is
-   * required on insertion.
-   *
-   * @param string $campaignId
+   * @param string
    */
   public function setCampaignId($campaignId)
   {
@@ -231,10 +146,7 @@ class EventTag extends \Google\Collection
     return $this->campaignId;
   }
   /**
-   * Dimension value for the ID of the campaign. This is a read-only, auto-
-   * generated field.
-   *
-   * @param DimensionValue $campaignIdDimensionValue
+   * @param DimensionValue
    */
   public function setCampaignIdDimensionValue(DimensionValue $campaignIdDimensionValue)
   {
@@ -248,10 +160,7 @@ class EventTag extends \Google\Collection
     return $this->campaignIdDimensionValue;
   }
   /**
-   * Whether this event tag should be automatically enabled for all of the
-   * advertiser's campaigns and ads.
-   *
-   * @param bool $enabledByDefault
+   * @param bool
    */
   public function setEnabledByDefault($enabledByDefault)
   {
@@ -265,12 +174,7 @@ class EventTag extends \Google\Collection
     return $this->enabledByDefault;
   }
   /**
-   * Whether to remove this event tag from ads that are trafficked through
-   * Display & Video 360 to Ad Exchange. This may be useful if the event tag
-   * uses a pixel that is unapproved for Ad Exchange bids on one or more
-   * networks, such as the Google Display Network.
-   *
-   * @param bool $excludeFromAdxRequests
+   * @param bool
    */
   public function setExcludeFromAdxRequests($excludeFromAdxRequests)
   {
@@ -284,9 +188,7 @@ class EventTag extends \Google\Collection
     return $this->excludeFromAdxRequests;
   }
   /**
-   * ID of this event tag. This is a read-only, auto-generated field.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -300,10 +202,7 @@ class EventTag extends \Google\Collection
     return $this->id;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#eventTag".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -317,10 +216,7 @@ class EventTag extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Name of this event tag. This is a required field and must be less than 256
-   * characters long.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -334,29 +230,21 @@ class EventTag extends \Google\Collection
     return $this->name;
   }
   /**
-   * Site filter type for this event tag. If no type is specified then the event
-   * tag will be applied to all sites.
-   *
-   * Accepted values: ALLOWLIST, BLOCKLIST
-   *
-   * @param self::SITE_FILTER_TYPE_* $siteFilterType
+   * @param string
    */
   public function setSiteFilterType($siteFilterType)
   {
     $this->siteFilterType = $siteFilterType;
   }
   /**
-   * @return self::SITE_FILTER_TYPE_*
+   * @return string
    */
   public function getSiteFilterType()
   {
     return $this->siteFilterType;
   }
   /**
-   * Filter list of site IDs associated with this event tag. The siteFilterType
-   * determines whether this is a allowlist or blocklist filter.
-   *
-   * @param string[] $siteIds
+   * @param string[]
    */
   public function setSiteIds($siteIds)
   {
@@ -370,9 +258,7 @@ class EventTag extends \Google\Collection
     return $this->siteIds;
   }
   /**
-   * Whether this tag is SSL-compliant or not. This is a read-only field.
-   *
-   * @param bool $sslCompliant
+   * @param bool
    */
   public function setSslCompliant($sslCompliant)
   {
@@ -386,29 +272,21 @@ class EventTag extends \Google\Collection
     return $this->sslCompliant;
   }
   /**
-   * Status of this event tag. Must be ENABLED for this event tag to fire. This
-   * is a required field.
-   *
-   * Accepted values: ENABLED, DISABLED
-   *
-   * @param self::STATUS_* $status
+   * @param string
    */
   public function setStatus($status)
   {
     $this->status = $status;
   }
   /**
-   * @return self::STATUS_*
+   * @return string
    */
   public function getStatus()
   {
     return $this->status;
   }
   /**
-   * Subaccount ID of this event tag. This is a read-only field that can be left
-   * blank.
-   *
-   * @param string $subaccountId
+   * @param string
    */
   public function setSubaccountId($subaccountId)
   {
@@ -422,32 +300,21 @@ class EventTag extends \Google\Collection
     return $this->subaccountId;
   }
   /**
-   * Event tag type. Can be used to specify whether to use a third-party pixel,
-   * a third-party JavaScript URL, or a third-party click-through URL for either
-   * impression or click tracking. This is a required field.
-   *
-   * Accepted values: IMPRESSION_IMAGE_EVENT_TAG,
-   * IMPRESSION_JAVASCRIPT_EVENT_TAG, CLICK_THROUGH_EVENT_TAG
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * Payload URL for this event tag. The URL on a click-through event tag should
-   * have a landing page URL appended to the end of it. This field is required
-   * on insertion.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {
@@ -461,11 +328,7 @@ class EventTag extends \Google\Collection
     return $this->url;
   }
   /**
-   * Number of times the landing page URL should be URL-escaped before being
-   * appended to the click-through event tag URL. Only applies to click-through
-   * event tags as specified by the event tag type.
-   *
-   * @param int $urlEscapeLevels
+   * @param int
    */
   public function setUrlEscapeLevels($urlEscapeLevels)
   {

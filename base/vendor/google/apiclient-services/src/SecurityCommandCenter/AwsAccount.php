@@ -20,22 +20,16 @@ namespace Google\Service\SecurityCommandCenter;
 class AwsAccount extends \Google\Model
 {
   /**
-   * The unique identifier (ID) of the account, containing exactly 12 digits.
-   *
    * @var string
    */
   public $id;
   /**
-   * The friendly name of this account.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The unique identifier (ID) of the account, containing exactly 12 digits.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -49,9 +43,7 @@ class AwsAccount extends \Google\Model
     return $this->id;
   }
   /**
-   * The friendly name of this account.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

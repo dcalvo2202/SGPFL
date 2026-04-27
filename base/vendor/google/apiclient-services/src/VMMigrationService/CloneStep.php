@@ -22,8 +22,6 @@ class CloneStep extends \Google\Model
   protected $adaptingOsType = AdaptingOSStep::class;
   protected $adaptingOsDataType = '';
   /**
-   * The time the step has ended.
-   *
    * @var string
    */
   public $endTime;
@@ -32,16 +30,12 @@ class CloneStep extends \Google\Model
   protected $preparingVmDisksType = PreparingVMDisksStep::class;
   protected $preparingVmDisksDataType = '';
   /**
-   * The time the step has started.
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * Adapting OS step.
-   *
-   * @param AdaptingOSStep $adaptingOs
+   * @param AdaptingOSStep
    */
   public function setAdaptingOs(AdaptingOSStep $adaptingOs)
   {
@@ -55,9 +49,7 @@ class CloneStep extends \Google\Model
     return $this->adaptingOs;
   }
   /**
-   * The time the step has ended.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -71,9 +63,7 @@ class CloneStep extends \Google\Model
     return $this->endTime;
   }
   /**
-   * Instantiating migrated VM step.
-   *
-   * @param InstantiatingMigratedVMStep $instantiatingMigratedVm
+   * @param InstantiatingMigratedVMStep
    */
   public function setInstantiatingMigratedVm(InstantiatingMigratedVMStep $instantiatingMigratedVm)
   {
@@ -87,9 +77,7 @@ class CloneStep extends \Google\Model
     return $this->instantiatingMigratedVm;
   }
   /**
-   * Preparing VM disks step.
-   *
-   * @param PreparingVMDisksStep $preparingVmDisks
+   * @param PreparingVMDisksStep
    */
   public function setPreparingVmDisks(PreparingVMDisksStep $preparingVmDisks)
   {
@@ -103,9 +91,7 @@ class CloneStep extends \Google\Model
     return $this->preparingVmDisks;
   }
   /**
-   * The time the step has started.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

@@ -20,26 +20,16 @@ namespace Google\Service\PeopleService;
 class ContactGroupMetadata extends \Google\Model
 {
   /**
-   * Output only. True if the contact group resource has been deleted. Populated
-   * only for [`ListContactGroups`](/people/api/rest/v1/contactgroups/list)
-   * requests that include a sync token.
-   *
    * @var bool
    */
   public $deleted;
   /**
-   * Output only. The time the group was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. True if the contact group resource has been deleted. Populated
-   * only for [`ListContactGroups`](/people/api/rest/v1/contactgroups/list)
-   * requests that include a sync token.
-   *
-   * @param bool $deleted
+   * @param bool
    */
   public function setDeleted($deleted)
   {
@@ -53,9 +43,7 @@ class ContactGroupMetadata extends \Google\Model
     return $this->deleted;
   }
   /**
-   * Output only. The time the group was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

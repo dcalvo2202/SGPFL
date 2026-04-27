@@ -21,21 +21,14 @@ class GoogleCloudDatalabelingV1beta1LabelOperationMetadata extends \Google\Colle
 {
   protected $collection_key = 'partialFailures';
   /**
-   * Output only. The name of annotated dataset in format
-   * "projects/datasets/annotatedDatasets".
-   *
    * @var string
    */
   public $annotatedDataset;
   /**
-   * Output only. Timestamp when labeling request was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. The name of dataset to be labeled. "projects/datasets"
-   *
    * @var string
    */
   public $dataset;
@@ -54,8 +47,6 @@ class GoogleCloudDatalabelingV1beta1LabelOperationMetadata extends \Google\Colle
   protected $partialFailuresType = GoogleRpcStatus::class;
   protected $partialFailuresDataType = 'array';
   /**
-   * Output only. Progress of label operation. Range: [0, 100].
-   *
    * @var int
    */
   public $progressPercent;
@@ -73,10 +64,7 @@ class GoogleCloudDatalabelingV1beta1LabelOperationMetadata extends \Google\Colle
   protected $videoObjectTrackingDetailsDataType = '';
 
   /**
-   * Output only. The name of annotated dataset in format
-   * "projects/datasets/annotatedDatasets".
-   *
-   * @param string $annotatedDataset
+   * @param string
    */
   public function setAnnotatedDataset($annotatedDataset)
   {
@@ -90,9 +78,7 @@ class GoogleCloudDatalabelingV1beta1LabelOperationMetadata extends \Google\Colle
     return $this->annotatedDataset;
   }
   /**
-   * Output only. Timestamp when labeling request was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -106,9 +92,7 @@ class GoogleCloudDatalabelingV1beta1LabelOperationMetadata extends \Google\Colle
     return $this->createTime;
   }
   /**
-   * Output only. The name of dataset to be labeled. "projects/datasets"
-   *
-   * @param string $dataset
+   * @param string
    */
   public function setDataset($dataset)
   {
@@ -122,9 +106,7 @@ class GoogleCloudDatalabelingV1beta1LabelOperationMetadata extends \Google\Colle
     return $this->dataset;
   }
   /**
-   * Details of label image bounding box operation.
-   *
-   * @param GoogleCloudDatalabelingV1beta1LabelImageBoundingBoxOperationMetadata $imageBoundingBoxDetails
+   * @param GoogleCloudDatalabelingV1beta1LabelImageBoundingBoxOperationMetadata
    */
   public function setImageBoundingBoxDetails(GoogleCloudDatalabelingV1beta1LabelImageBoundingBoxOperationMetadata $imageBoundingBoxDetails)
   {
@@ -138,9 +120,7 @@ class GoogleCloudDatalabelingV1beta1LabelOperationMetadata extends \Google\Colle
     return $this->imageBoundingBoxDetails;
   }
   /**
-   * Details of label image bounding poly operation.
-   *
-   * @param GoogleCloudDatalabelingV1beta1LabelImageBoundingPolyOperationMetadata $imageBoundingPolyDetails
+   * @param GoogleCloudDatalabelingV1beta1LabelImageBoundingPolyOperationMetadata
    */
   public function setImageBoundingPolyDetails(GoogleCloudDatalabelingV1beta1LabelImageBoundingPolyOperationMetadata $imageBoundingPolyDetails)
   {
@@ -154,9 +134,7 @@ class GoogleCloudDatalabelingV1beta1LabelOperationMetadata extends \Google\Colle
     return $this->imageBoundingPolyDetails;
   }
   /**
-   * Details of label image classification operation.
-   *
-   * @param GoogleCloudDatalabelingV1beta1LabelImageClassificationOperationMetadata $imageClassificationDetails
+   * @param GoogleCloudDatalabelingV1beta1LabelImageClassificationOperationMetadata
    */
   public function setImageClassificationDetails(GoogleCloudDatalabelingV1beta1LabelImageClassificationOperationMetadata $imageClassificationDetails)
   {
@@ -170,9 +148,7 @@ class GoogleCloudDatalabelingV1beta1LabelOperationMetadata extends \Google\Colle
     return $this->imageClassificationDetails;
   }
   /**
-   * Details of label image oriented bounding box operation.
-   *
-   * @param GoogleCloudDatalabelingV1beta1LabelImageOrientedBoundingBoxOperationMetadata $imageOrientedBoundingBoxDetails
+   * @param GoogleCloudDatalabelingV1beta1LabelImageOrientedBoundingBoxOperationMetadata
    */
   public function setImageOrientedBoundingBoxDetails(GoogleCloudDatalabelingV1beta1LabelImageOrientedBoundingBoxOperationMetadata $imageOrientedBoundingBoxDetails)
   {
@@ -186,9 +162,7 @@ class GoogleCloudDatalabelingV1beta1LabelOperationMetadata extends \Google\Colle
     return $this->imageOrientedBoundingBoxDetails;
   }
   /**
-   * Details of label image polyline operation.
-   *
-   * @param GoogleCloudDatalabelingV1beta1LabelImagePolylineOperationMetadata $imagePolylineDetails
+   * @param GoogleCloudDatalabelingV1beta1LabelImagePolylineOperationMetadata
    */
   public function setImagePolylineDetails(GoogleCloudDatalabelingV1beta1LabelImagePolylineOperationMetadata $imagePolylineDetails)
   {
@@ -202,9 +176,7 @@ class GoogleCloudDatalabelingV1beta1LabelOperationMetadata extends \Google\Colle
     return $this->imagePolylineDetails;
   }
   /**
-   * Details of label image segmentation operation.
-   *
-   * @param GoogleCloudDatalabelingV1beta1LabelImageSegmentationOperationMetadata $imageSegmentationDetails
+   * @param GoogleCloudDatalabelingV1beta1LabelImageSegmentationOperationMetadata
    */
   public function setImageSegmentationDetails(GoogleCloudDatalabelingV1beta1LabelImageSegmentationOperationMetadata $imageSegmentationDetails)
   {
@@ -218,10 +190,7 @@ class GoogleCloudDatalabelingV1beta1LabelOperationMetadata extends \Google\Colle
     return $this->imageSegmentationDetails;
   }
   /**
-   * Output only. Partial failures encountered. E.g. single files that couldn't
-   * be read. Status details field will contain standard GCP error details.
-   *
-   * @param GoogleRpcStatus[] $partialFailures
+   * @param GoogleRpcStatus[]
    */
   public function setPartialFailures($partialFailures)
   {
@@ -235,9 +204,7 @@ class GoogleCloudDatalabelingV1beta1LabelOperationMetadata extends \Google\Colle
     return $this->partialFailures;
   }
   /**
-   * Output only. Progress of label operation. Range: [0, 100].
-   *
-   * @param int $progressPercent
+   * @param int
    */
   public function setProgressPercent($progressPercent)
   {
@@ -251,9 +218,7 @@ class GoogleCloudDatalabelingV1beta1LabelOperationMetadata extends \Google\Colle
     return $this->progressPercent;
   }
   /**
-   * Details of label text classification operation.
-   *
-   * @param GoogleCloudDatalabelingV1beta1LabelTextClassificationOperationMetadata $textClassificationDetails
+   * @param GoogleCloudDatalabelingV1beta1LabelTextClassificationOperationMetadata
    */
   public function setTextClassificationDetails(GoogleCloudDatalabelingV1beta1LabelTextClassificationOperationMetadata $textClassificationDetails)
   {
@@ -267,9 +232,7 @@ class GoogleCloudDatalabelingV1beta1LabelOperationMetadata extends \Google\Colle
     return $this->textClassificationDetails;
   }
   /**
-   * Details of label text entity extraction operation.
-   *
-   * @param GoogleCloudDatalabelingV1beta1LabelTextEntityExtractionOperationMetadata $textEntityExtractionDetails
+   * @param GoogleCloudDatalabelingV1beta1LabelTextEntityExtractionOperationMetadata
    */
   public function setTextEntityExtractionDetails(GoogleCloudDatalabelingV1beta1LabelTextEntityExtractionOperationMetadata $textEntityExtractionDetails)
   {
@@ -283,9 +246,7 @@ class GoogleCloudDatalabelingV1beta1LabelOperationMetadata extends \Google\Colle
     return $this->textEntityExtractionDetails;
   }
   /**
-   * Details of label video classification operation.
-   *
-   * @param GoogleCloudDatalabelingV1beta1LabelVideoClassificationOperationMetadata $videoClassificationDetails
+   * @param GoogleCloudDatalabelingV1beta1LabelVideoClassificationOperationMetadata
    */
   public function setVideoClassificationDetails(GoogleCloudDatalabelingV1beta1LabelVideoClassificationOperationMetadata $videoClassificationDetails)
   {
@@ -299,9 +260,7 @@ class GoogleCloudDatalabelingV1beta1LabelOperationMetadata extends \Google\Colle
     return $this->videoClassificationDetails;
   }
   /**
-   * Details of label video event operation.
-   *
-   * @param GoogleCloudDatalabelingV1beta1LabelVideoEventOperationMetadata $videoEventDetails
+   * @param GoogleCloudDatalabelingV1beta1LabelVideoEventOperationMetadata
    */
   public function setVideoEventDetails(GoogleCloudDatalabelingV1beta1LabelVideoEventOperationMetadata $videoEventDetails)
   {
@@ -315,9 +274,7 @@ class GoogleCloudDatalabelingV1beta1LabelOperationMetadata extends \Google\Colle
     return $this->videoEventDetails;
   }
   /**
-   * Details of label video object detection operation.
-   *
-   * @param GoogleCloudDatalabelingV1beta1LabelVideoObjectDetectionOperationMetadata $videoObjectDetectionDetails
+   * @param GoogleCloudDatalabelingV1beta1LabelVideoObjectDetectionOperationMetadata
    */
   public function setVideoObjectDetectionDetails(GoogleCloudDatalabelingV1beta1LabelVideoObjectDetectionOperationMetadata $videoObjectDetectionDetails)
   {
@@ -331,9 +288,7 @@ class GoogleCloudDatalabelingV1beta1LabelOperationMetadata extends \Google\Colle
     return $this->videoObjectDetectionDetails;
   }
   /**
-   * Details of label video object tracking operation.
-   *
-   * @param GoogleCloudDatalabelingV1beta1LabelVideoObjectTrackingOperationMetadata $videoObjectTrackingDetails
+   * @param GoogleCloudDatalabelingV1beta1LabelVideoObjectTrackingOperationMetadata
    */
   public function setVideoObjectTrackingDetails(GoogleCloudDatalabelingV1beta1LabelVideoObjectTrackingOperationMetadata $videoObjectTrackingDetails)
   {

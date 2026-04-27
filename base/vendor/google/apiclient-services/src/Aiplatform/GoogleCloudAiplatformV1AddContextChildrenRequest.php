@@ -21,16 +21,12 @@ class GoogleCloudAiplatformV1AddContextChildrenRequest extends \Google\Collectio
 {
   protected $collection_key = 'childContexts';
   /**
-   * The resource names of the child Contexts.
-   *
    * @var string[]
    */
   public $childContexts;
 
   /**
-   * The resource names of the child Contexts.
-   *
-   * @param string[] $childContexts
+   * @param string[]
    */
   public function setChildContexts($childContexts)
   {

@@ -20,21 +20,12 @@ namespace Google\Service\CloudAsset;
 class QueryAssetsResponse extends \Google\Model
 {
   /**
-   * The query response, which can be either an `error` or a valid `response`.
-   * If `done` == `false` and the query result is being saved in an output, the
-   * output_config field will be set. If `done` == `true`, exactly one of
-   * `error`, `query_result` or `output_config` will be set. [done] is unset
-   * unless the [QueryAssetsResponse] contains a
-   * [QueryAssetsResponse.job_reference].
-   *
    * @var bool
    */
   public $done;
   protected $errorType = Status::class;
   protected $errorDataType = '';
   /**
-   * Reference to a query job.
-   *
    * @var string
    */
   public $jobReference;
@@ -44,14 +35,7 @@ class QueryAssetsResponse extends \Google\Model
   protected $queryResultDataType = '';
 
   /**
-   * The query response, which can be either an `error` or a valid `response`.
-   * If `done` == `false` and the query result is being saved in an output, the
-   * output_config field will be set. If `done` == `true`, exactly one of
-   * `error`, `query_result` or `output_config` will be set. [done] is unset
-   * unless the [QueryAssetsResponse] contains a
-   * [QueryAssetsResponse.job_reference].
-   *
-   * @param bool $done
+   * @param bool
    */
   public function setDone($done)
   {
@@ -65,9 +49,7 @@ class QueryAssetsResponse extends \Google\Model
     return $this->done;
   }
   /**
-   * Error status.
-   *
-   * @param Status $error
+   * @param Status
    */
   public function setError(Status $error)
   {
@@ -81,9 +63,7 @@ class QueryAssetsResponse extends \Google\Model
     return $this->error;
   }
   /**
-   * Reference to a query job.
-   *
-   * @param string $jobReference
+   * @param string
    */
   public function setJobReference($jobReference)
   {
@@ -97,11 +77,7 @@ class QueryAssetsResponse extends \Google\Model
     return $this->jobReference;
   }
   /**
-   * Output configuration, which indicates that instead of being returned in an
-   * API response on the fly, the query result will be saved in a specific
-   * output.
-   *
-   * @param QueryAssetsOutputConfig $outputConfig
+   * @param QueryAssetsOutputConfig
    */
   public function setOutputConfig(QueryAssetsOutputConfig $outputConfig)
   {
@@ -115,9 +91,7 @@ class QueryAssetsResponse extends \Google\Model
     return $this->outputConfig;
   }
   /**
-   * Result of the query.
-   *
-   * @param QueryResult $queryResult
+   * @param QueryResult
    */
   public function setQueryResult(QueryResult $queryResult)
   {

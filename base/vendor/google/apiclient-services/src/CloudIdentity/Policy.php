@@ -20,31 +20,10 @@ namespace Google\Service\CloudIdentity;
 class Policy extends \Google\Model
 {
   /**
-   * Unspecified policy type.
-   */
-  public const TYPE_POLICY_TYPE_UNSPECIFIED = 'POLICY_TYPE_UNSPECIFIED';
-  /**
-   * Policy type denoting the system-configured policies.
-   */
-  public const TYPE_SYSTEM = 'SYSTEM';
-  /**
-   * Policy type denoting the admin-configurable policies.
-   */
-  public const TYPE_ADMIN = 'ADMIN';
-  /**
-   * Immutable. Customer that the Policy belongs to. The value is in the format
-   * 'customers/{customerId}'. The `customerId` must begin with "C" To find your
-   * customer ID in Admin Console see
-   * https://support.google.com/a/answer/10070793.
-   *
    * @var string
    */
   public $customer;
   /**
-   * Output only. Identifier. The [resource
-   * name](https://cloud.google.com/apis/design/resource_names) of the Policy.
-   * Format: policies/{policy}.
-   *
    * @var string
    */
   public $name;
@@ -53,19 +32,12 @@ class Policy extends \Google\Model
   protected $settingType = Setting::class;
   protected $settingDataType = '';
   /**
-   * Output only. The type of the policy.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Immutable. Customer that the Policy belongs to. The value is in the format
-   * 'customers/{customerId}'. The `customerId` must begin with "C" To find your
-   * customer ID in Admin Console see
-   * https://support.google.com/a/answer/10070793.
-   *
-   * @param string $customer
+   * @param string
    */
   public function setCustomer($customer)
   {
@@ -79,11 +51,7 @@ class Policy extends \Google\Model
     return $this->customer;
   }
   /**
-   * Output only. Identifier. The [resource
-   * name](https://cloud.google.com/apis/design/resource_names) of the Policy.
-   * Format: policies/{policy}.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -97,9 +65,7 @@ class Policy extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. The PolicyQuery the Setting applies to.
-   *
-   * @param PolicyQuery $policyQuery
+   * @param PolicyQuery
    */
   public function setPolicyQuery(PolicyQuery $policyQuery)
   {
@@ -113,9 +79,7 @@ class Policy extends \Google\Model
     return $this->policyQuery;
   }
   /**
-   * Required. The Setting configured by this Policy.
-   *
-   * @param Setting $setting
+   * @param Setting
    */
   public function setSetting(Setting $setting)
   {
@@ -129,18 +93,14 @@ class Policy extends \Google\Model
     return $this->setting;
   }
   /**
-   * Output only. The type of the policy.
-   *
-   * Accepted values: POLICY_TYPE_UNSPECIFIED, SYSTEM, ADMIN
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

@@ -20,26 +20,16 @@ namespace Google\Service\ServiceNetworking;
 class DnsZone extends \Google\Model
 {
   /**
-   * The DNS name suffix of this zone e.g. `example.com.`. Cloud DNS requires
-   * that a DNS suffix ends with a trailing dot.
-   *
    * @var string
    */
   public $dnsSuffix;
   /**
-   * User assigned name for this resource. Must be unique within the project.
-   * The name must be 1-63 characters long, must begin with a letter, end with a
-   * letter or digit, and only contain lowercase letters, digits or dashes.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The DNS name suffix of this zone e.g. `example.com.`. Cloud DNS requires
-   * that a DNS suffix ends with a trailing dot.
-   *
-   * @param string $dnsSuffix
+   * @param string
    */
   public function setDnsSuffix($dnsSuffix)
   {
@@ -53,11 +43,7 @@ class DnsZone extends \Google\Model
     return $this->dnsSuffix;
   }
   /**
-   * User assigned name for this resource. Must be unique within the project.
-   * The name must be 1-63 characters long, must begin with a letter, end with a
-   * letter or digit, and only contain lowercase letters, digits or dashes.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

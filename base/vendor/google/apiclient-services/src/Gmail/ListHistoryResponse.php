@@ -23,23 +23,16 @@ class ListHistoryResponse extends \Google\Collection
   protected $historyType = History::class;
   protected $historyDataType = 'array';
   /**
-   * The ID of the mailbox's current history record.
-   *
    * @var string
    */
   public $historyId;
   /**
-   * Page token to retrieve the next page of results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * List of history records. Any `messages` contained in the response will
-   * typically only have `id` and `threadId` fields populated.
-   *
-   * @param History[] $history
+   * @param History[]
    */
   public function setHistory($history)
   {
@@ -53,9 +46,7 @@ class ListHistoryResponse extends \Google\Collection
     return $this->history;
   }
   /**
-   * The ID of the mailbox's current history record.
-   *
-   * @param string $historyId
+   * @param string
    */
   public function setHistoryId($historyId)
   {
@@ -69,9 +60,7 @@ class ListHistoryResponse extends \Google\Collection
     return $this->historyId;
   }
   /**
-   * Page token to retrieve the next page of results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

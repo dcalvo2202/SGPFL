@@ -26,9 +26,7 @@ class ResourcePoliciesScopedList extends \Google\Collection
   protected $warningDataType = '';
 
   /**
-   * A list of resourcePolicies contained in this scope.
-   *
-   * @param ResourcePolicy[] $resourcePolicies
+   * @param ResourcePolicy[]
    */
   public function setResourcePolicies($resourcePolicies)
   {
@@ -42,10 +40,7 @@ class ResourcePoliciesScopedList extends \Google\Collection
     return $this->resourcePolicies;
   }
   /**
-   * Informational warning which replaces the list of resourcePolicies when the
-   * list is empty.
-   *
-   * @param ResourcePoliciesScopedListWarning $warning
+   * @param ResourcePoliciesScopedListWarning
    */
   public function setWarning(ResourcePoliciesScopedListWarning $warning)
   {

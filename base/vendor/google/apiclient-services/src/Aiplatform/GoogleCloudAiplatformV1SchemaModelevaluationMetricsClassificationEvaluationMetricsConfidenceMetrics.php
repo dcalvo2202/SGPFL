@@ -20,120 +20,74 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1SchemaModelevaluationMetricsClassificationEvaluationMetricsConfidenceMetrics extends \Google\Model
 {
   /**
-   * Metrics are computed with an assumption that the Model never returns
-   * predictions with score lower than this value.
-   *
    * @var float
    */
   public $confidenceThreshold;
   protected $confusionMatrixType = GoogleCloudAiplatformV1SchemaModelevaluationMetricsConfusionMatrix::class;
   protected $confusionMatrixDataType = '';
   /**
-   * The harmonic mean of recall and precision. For summary metrics, it computes
-   * the micro-averaged F1 score.
-   *
    * @var float
    */
   public $f1Score;
   /**
-   * The harmonic mean of recallAt1 and precisionAt1.
-   *
    * @var float
    */
   public $f1ScoreAt1;
   /**
-   * Macro-averaged F1 Score.
-   *
    * @var float
    */
   public $f1ScoreMacro;
   /**
-   * Micro-averaged F1 Score.
-   *
    * @var float
    */
   public $f1ScoreMicro;
   /**
-   * The number of ground truth labels that are not matched by a Model created
-   * label.
-   *
    * @var string
    */
   public $falseNegativeCount;
   /**
-   * The number of Model created labels that do not match a ground truth label.
-   *
    * @var string
    */
   public $falsePositiveCount;
   /**
-   * False Positive Rate for the given confidence threshold.
-   *
    * @var float
    */
   public $falsePositiveRate;
   /**
-   * The False Positive Rate when only considering the label that has the
-   * highest prediction score and not below the confidence threshold for each
-   * DataItem.
-   *
    * @var float
    */
   public $falsePositiveRateAt1;
   /**
-   * Metrics are computed with an assumption that the Model always returns at
-   * most this many predictions (ordered by their score, descendingly), but they
-   * all still need to meet the `confidenceThreshold`.
-   *
    * @var int
    */
   public $maxPredictions;
   /**
-   * Precision for the given confidence threshold.
-   *
    * @var float
    */
   public $precision;
   /**
-   * The precision when only considering the label that has the highest
-   * prediction score and not below the confidence threshold for each DataItem.
-   *
    * @var float
    */
   public $precisionAt1;
   /**
-   * Recall (True Positive Rate) for the given confidence threshold.
-   *
    * @var float
    */
   public $recall;
   /**
-   * The Recall (True Positive Rate) when only considering the label that has
-   * the highest prediction score and not below the confidence threshold for
-   * each DataItem.
-   *
    * @var float
    */
   public $recallAt1;
   /**
-   * The number of labels that were not created by the Model, but if they would,
-   * they would not match a ground truth label.
-   *
    * @var string
    */
   public $trueNegativeCount;
   /**
-   * The number of Model created labels that match a ground truth label.
-   *
    * @var string
    */
   public $truePositiveCount;
 
   /**
-   * Metrics are computed with an assumption that the Model never returns
-   * predictions with score lower than this value.
-   *
-   * @param float $confidenceThreshold
+   * @param float
    */
   public function setConfidenceThreshold($confidenceThreshold)
   {
@@ -147,9 +101,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsClassificationEvaluatio
     return $this->confidenceThreshold;
   }
   /**
-   * Confusion matrix of the evaluation for this confidence_threshold.
-   *
-   * @param GoogleCloudAiplatformV1SchemaModelevaluationMetricsConfusionMatrix $confusionMatrix
+   * @param GoogleCloudAiplatformV1SchemaModelevaluationMetricsConfusionMatrix
    */
   public function setConfusionMatrix(GoogleCloudAiplatformV1SchemaModelevaluationMetricsConfusionMatrix $confusionMatrix)
   {
@@ -163,10 +115,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsClassificationEvaluatio
     return $this->confusionMatrix;
   }
   /**
-   * The harmonic mean of recall and precision. For summary metrics, it computes
-   * the micro-averaged F1 score.
-   *
-   * @param float $f1Score
+   * @param float
    */
   public function setF1Score($f1Score)
   {
@@ -180,9 +129,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsClassificationEvaluatio
     return $this->f1Score;
   }
   /**
-   * The harmonic mean of recallAt1 and precisionAt1.
-   *
-   * @param float $f1ScoreAt1
+   * @param float
    */
   public function setF1ScoreAt1($f1ScoreAt1)
   {
@@ -196,9 +143,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsClassificationEvaluatio
     return $this->f1ScoreAt1;
   }
   /**
-   * Macro-averaged F1 Score.
-   *
-   * @param float $f1ScoreMacro
+   * @param float
    */
   public function setF1ScoreMacro($f1ScoreMacro)
   {
@@ -212,9 +157,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsClassificationEvaluatio
     return $this->f1ScoreMacro;
   }
   /**
-   * Micro-averaged F1 Score.
-   *
-   * @param float $f1ScoreMicro
+   * @param float
    */
   public function setF1ScoreMicro($f1ScoreMicro)
   {
@@ -228,10 +171,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsClassificationEvaluatio
     return $this->f1ScoreMicro;
   }
   /**
-   * The number of ground truth labels that are not matched by a Model created
-   * label.
-   *
-   * @param string $falseNegativeCount
+   * @param string
    */
   public function setFalseNegativeCount($falseNegativeCount)
   {
@@ -245,9 +185,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsClassificationEvaluatio
     return $this->falseNegativeCount;
   }
   /**
-   * The number of Model created labels that do not match a ground truth label.
-   *
-   * @param string $falsePositiveCount
+   * @param string
    */
   public function setFalsePositiveCount($falsePositiveCount)
   {
@@ -261,9 +199,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsClassificationEvaluatio
     return $this->falsePositiveCount;
   }
   /**
-   * False Positive Rate for the given confidence threshold.
-   *
-   * @param float $falsePositiveRate
+   * @param float
    */
   public function setFalsePositiveRate($falsePositiveRate)
   {
@@ -277,11 +213,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsClassificationEvaluatio
     return $this->falsePositiveRate;
   }
   /**
-   * The False Positive Rate when only considering the label that has the
-   * highest prediction score and not below the confidence threshold for each
-   * DataItem.
-   *
-   * @param float $falsePositiveRateAt1
+   * @param float
    */
   public function setFalsePositiveRateAt1($falsePositiveRateAt1)
   {
@@ -295,11 +227,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsClassificationEvaluatio
     return $this->falsePositiveRateAt1;
   }
   /**
-   * Metrics are computed with an assumption that the Model always returns at
-   * most this many predictions (ordered by their score, descendingly), but they
-   * all still need to meet the `confidenceThreshold`.
-   *
-   * @param int $maxPredictions
+   * @param int
    */
   public function setMaxPredictions($maxPredictions)
   {
@@ -313,9 +241,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsClassificationEvaluatio
     return $this->maxPredictions;
   }
   /**
-   * Precision for the given confidence threshold.
-   *
-   * @param float $precision
+   * @param float
    */
   public function setPrecision($precision)
   {
@@ -329,10 +255,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsClassificationEvaluatio
     return $this->precision;
   }
   /**
-   * The precision when only considering the label that has the highest
-   * prediction score and not below the confidence threshold for each DataItem.
-   *
-   * @param float $precisionAt1
+   * @param float
    */
   public function setPrecisionAt1($precisionAt1)
   {
@@ -346,9 +269,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsClassificationEvaluatio
     return $this->precisionAt1;
   }
   /**
-   * Recall (True Positive Rate) for the given confidence threshold.
-   *
-   * @param float $recall
+   * @param float
    */
   public function setRecall($recall)
   {
@@ -362,11 +283,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsClassificationEvaluatio
     return $this->recall;
   }
   /**
-   * The Recall (True Positive Rate) when only considering the label that has
-   * the highest prediction score and not below the confidence threshold for
-   * each DataItem.
-   *
-   * @param float $recallAt1
+   * @param float
    */
   public function setRecallAt1($recallAt1)
   {
@@ -380,10 +297,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsClassificationEvaluatio
     return $this->recallAt1;
   }
   /**
-   * The number of labels that were not created by the Model, but if they would,
-   * they would not match a ground truth label.
-   *
-   * @param string $trueNegativeCount
+   * @param string
    */
   public function setTrueNegativeCount($trueNegativeCount)
   {
@@ -397,9 +311,7 @@ class GoogleCloudAiplatformV1SchemaModelevaluationMetricsClassificationEvaluatio
     return $this->trueNegativeCount;
   }
   /**
-   * The number of Model created labels that match a ground truth label.
-   *
-   * @param string $truePositiveCount
+   * @param string
    */
   public function setTruePositiveCount($truePositiveCount)
   {

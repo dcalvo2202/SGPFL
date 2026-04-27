@@ -20,37 +20,18 @@ namespace Google\Service\Appengine;
 class StandardSchedulerSettings extends \Google\Model
 {
   /**
-   * Maximum number of instances to run for this version. Set to 2147483647 to
-   * disable max_instances configuration.
-   *
    * @var int
    */
   public $maxInstances;
   /**
-   * Minimum number of instances to run for this version. Set to zero to disable
-   * min_instances configuration.
-   *
    * @var int
    */
   public $minInstances;
-  /**
-   * Target CPU utilization ratio to maintain when scaling.
-   *
-   * @var 
-   */
   public $targetCpuUtilization;
-  /**
-   * Target throughput utilization ratio to maintain when scaling
-   *
-   * @var 
-   */
   public $targetThroughputUtilization;
 
   /**
-   * Maximum number of instances to run for this version. Set to 2147483647 to
-   * disable max_instances configuration.
-   *
-   * @param int $maxInstances
+   * @param int
    */
   public function setMaxInstances($maxInstances)
   {
@@ -64,10 +45,7 @@ class StandardSchedulerSettings extends \Google\Model
     return $this->maxInstances;
   }
   /**
-   * Minimum number of instances to run for this version. Set to zero to disable
-   * min_instances configuration.
-   *
-   * @param int $minInstances
+   * @param int
    */
   public function setMinInstances($minInstances)
   {

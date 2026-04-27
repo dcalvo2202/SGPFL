@@ -24,11 +24,7 @@ class InappproductsBatchUpdateRequest extends \Google\Collection
   protected $requestsDataType = 'array';
 
   /**
-   * Required. Individual update requests. At least one request is required. Can
-   * contain up to 100 requests. All requests must correspond to different in-
-   * app products.
-   *
-   * @param InappproductsUpdateRequest[] $requests
+   * @param InappproductsUpdateRequest[]
    */
   public function setRequests($requests)
   {

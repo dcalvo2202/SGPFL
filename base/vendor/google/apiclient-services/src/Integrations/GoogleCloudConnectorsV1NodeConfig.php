@@ -20,22 +20,16 @@ namespace Google\Service\Integrations;
 class GoogleCloudConnectorsV1NodeConfig extends \Google\Model
 {
   /**
-   * Optional. Maximum number of nodes in the runtime nodes.
-   *
    * @var int
    */
   public $maxNodeCount;
   /**
-   * Optional. Minimum number of nodes in the runtime nodes.
-   *
    * @var int
    */
   public $minNodeCount;
 
   /**
-   * Optional. Maximum number of nodes in the runtime nodes.
-   *
-   * @param int $maxNodeCount
+   * @param int
    */
   public function setMaxNodeCount($maxNodeCount)
   {
@@ -49,9 +43,7 @@ class GoogleCloudConnectorsV1NodeConfig extends \Google\Model
     return $this->maxNodeCount;
   }
   /**
-   * Optional. Minimum number of nodes in the runtime nodes.
-   *
-   * @param int $minNodeCount
+   * @param int
    */
   public function setMinNodeCount($minNodeCount)
   {

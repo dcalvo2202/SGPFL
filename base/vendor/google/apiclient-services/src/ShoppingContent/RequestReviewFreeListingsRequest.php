@@ -20,20 +20,12 @@ namespace Google\Service\ShoppingContent;
 class RequestReviewFreeListingsRequest extends \Google\Model
 {
   /**
-   * The code [ISO 3166-1
-   * alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the country
-   * for which review is to be requested.
-   *
    * @var string
    */
   public $regionCode;
 
   /**
-   * The code [ISO 3166-1
-   * alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the country
-   * for which review is to be requested.
-   *
-   * @param string $regionCode
+   * @param string
    */
   public function setRegionCode($regionCode)
   {

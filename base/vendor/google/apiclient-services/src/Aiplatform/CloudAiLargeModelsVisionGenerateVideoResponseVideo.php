@@ -20,30 +20,20 @@ namespace Google\Service\Aiplatform;
 class CloudAiLargeModelsVisionGenerateVideoResponseVideo extends \Google\Model
 {
   /**
-   * Base64 encoded bytes string representing the video.
-   *
    * @var string
    */
   public $bytesBase64Encoded;
-  protected $experimentsMetadataType = CloudAiLargeModelsVisionGenerateVideoExperiments::class;
-  protected $experimentsMetadataDataType = '';
   /**
-   * Cloud Storage URI where the generated video is written.
-   *
    * @var string
    */
   public $gcsUri;
   /**
-   * The MIME type of the content of the video. - video/mp4
-   *
    * @var string
    */
   public $mimeType;
 
   /**
-   * Base64 encoded bytes string representing the video.
-   *
-   * @param string $bytesBase64Encoded
+   * @param string
    */
   public function setBytesBase64Encoded($bytesBase64Encoded)
   {
@@ -57,26 +47,7 @@ class CloudAiLargeModelsVisionGenerateVideoResponseVideo extends \Google\Model
     return $this->bytesBase64Encoded;
   }
   /**
-   * Optional metadata returned from experimental requests. Likely only includes
-   * the rewritten prompt chunks.
-   *
-   * @param CloudAiLargeModelsVisionGenerateVideoExperiments $experimentsMetadata
-   */
-  public function setExperimentsMetadata(CloudAiLargeModelsVisionGenerateVideoExperiments $experimentsMetadata)
-  {
-    $this->experimentsMetadata = $experimentsMetadata;
-  }
-  /**
-   * @return CloudAiLargeModelsVisionGenerateVideoExperiments
-   */
-  public function getExperimentsMetadata()
-  {
-    return $this->experimentsMetadata;
-  }
-  /**
-   * Cloud Storage URI where the generated video is written.
-   *
-   * @param string $gcsUri
+   * @param string
    */
   public function setGcsUri($gcsUri)
   {
@@ -90,9 +61,7 @@ class CloudAiLargeModelsVisionGenerateVideoResponseVideo extends \Google\Model
     return $this->gcsUri;
   }
   /**
-   * The MIME type of the content of the video. - video/mp4
-   *
-   * @param string $mimeType
+   * @param string
    */
   public function setMimeType($mimeType)
   {

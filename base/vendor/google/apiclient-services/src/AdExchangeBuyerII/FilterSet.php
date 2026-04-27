@@ -19,126 +19,42 @@ namespace Google\Service\AdExchangeBuyerII;
 
 class FilterSet extends \Google\Collection
 {
-  /**
-   * A placeholder for an undefined environment; indicates that no environment
-   * filter will be applied.
-   */
-  public const ENVIRONMENT_ENVIRONMENT_UNSPECIFIED = 'ENVIRONMENT_UNSPECIFIED';
-  /**
-   * The ad impression appears on the web.
-   */
-  public const ENVIRONMENT_WEB = 'WEB';
-  /**
-   * The ad impression appears in an app.
-   */
-  public const ENVIRONMENT_APP = 'APP';
-  /**
-   * A placeholder for an undefined format; indicates that no format filter will
-   * be applied.
-   */
-  public const FORMAT_FORMAT_UNSPECIFIED = 'FORMAT_UNSPECIFIED';
-  /**
-   * The ad impression is a native ad, and display (for example, image) format.
-   */
-  public const FORMAT_NATIVE_DISPLAY = 'NATIVE_DISPLAY';
-  /**
-   * The ad impression is a native ad, and video format.
-   */
-  public const FORMAT_NATIVE_VIDEO = 'NATIVE_VIDEO';
-  /**
-   * The ad impression is not a native ad, and display (for example, image)
-   * format.
-   */
-  public const FORMAT_NON_NATIVE_DISPLAY = 'NON_NATIVE_DISPLAY';
-  /**
-   * The ad impression is not a native ad, and video format.
-   */
-  public const FORMAT_NON_NATIVE_VIDEO = 'NON_NATIVE_VIDEO';
-  /**
-   * A placeholder for an unspecified interval; no time series is applied. All
-   * rows in response will contain data for the entire requested time range.
-   */
-  public const TIME_SERIES_GRANULARITY_TIME_SERIES_GRANULARITY_UNSPECIFIED = 'TIME_SERIES_GRANULARITY_UNSPECIFIED';
-  /**
-   * Indicates that data will be broken down by the hour.
-   */
-  public const TIME_SERIES_GRANULARITY_HOURLY = 'HOURLY';
-  /**
-   * Indicates that data will be broken down by the day.
-   */
-  public const TIME_SERIES_GRANULARITY_DAILY = 'DAILY';
   protected $collection_key = 'sellerNetworkIds';
   protected $absoluteDateRangeType = AbsoluteDateRange::class;
   protected $absoluteDateRangeDataType = '';
   /**
-   * The set of dimensions along which to break down the response; may be empty.
-   * If multiple dimensions are requested, the breakdown is along the Cartesian
-   * product of the requested dimensions.
-   *
    * @var string[]
    */
   public $breakdownDimensions;
   /**
-   * The ID of the creative on which to filter; optional. This field may be set
-   * only for a filter set that accesses account-level troubleshooting data, for
-   * example, one whose name matches the `bidders/accounts/filterSets` pattern.
-   *
    * @var string
    */
   public $creativeId;
   /**
-   * The ID of the deal on which to filter; optional. This field may be set only
-   * for a filter set that accesses account-level troubleshooting data, for
-   * example, one whose name matches the `bidders/accounts/filterSets` pattern.
-   *
    * @var string
    */
   public $dealId;
   /**
-   * The environment on which to filter; optional.
-   *
    * @var string
    */
   public $environment;
   /**
-   * Creative format bidded on or allowed to bid on, can be empty.
-   *
    * @var string
    */
   public $format;
   /**
-   * Creative formats bidded on or allowed to bid on, can be empty. Although
-   * this field is a list, it can only be populated with a single item. A HTTP
-   * 400 bad request error will be returned in the response if you specify
-   * multiple items.
-   *
-   * @deprecated
    * @var string[]
    */
   public $formats;
   /**
-   * A user-defined name of the filter set. Filter set names must be unique
-   * globally and match one of the patterns: - `bidders/filterSets` (for
-   * accessing bidder-level troubleshooting data) -
-   * `bidders/accounts/filterSets` (for accessing account-level troubleshooting
-   * data) This field is required in create operations.
-   *
    * @var string
    */
   public $name;
   /**
-   * The list of platforms on which to filter; may be empty. The filters
-   * represented by multiple platforms are ORed together (for example, if non-
-   * empty, results must match any one of the platforms).
-   *
    * @var string[]
    */
   public $platforms;
   /**
-   * For Open Bidding partners only. The list of publisher identifiers on which
-   * to filter; may be empty. The filters represented by multiple publisher
-   * identifiers are ORed together.
-   *
    * @var string[]
    */
   public $publisherIdentifiers;
@@ -147,29 +63,16 @@ class FilterSet extends \Google\Collection
   protected $relativeDateRangeType = RelativeDateRange::class;
   protected $relativeDateRangeDataType = '';
   /**
-   * For Authorized Buyers only. The list of IDs of the seller (publisher)
-   * networks on which to filter; may be empty. The filters represented by
-   * multiple seller network IDs are ORed together (for example, if non-empty,
-   * results must match any one of the publisher networks). See [seller-network-
-   * ids](https://developers.google.com/authorized-buyers/rtb/downloads/seller-
-   * network-ids) file for the set of existing seller network IDs.
-   *
    * @var int[]
    */
   public $sellerNetworkIds;
   /**
-   * The granularity of time intervals if a time series breakdown is preferred;
-   * optional.
-   *
    * @var string
    */
   public $timeSeriesGranularity;
 
   /**
-   * An absolute date range, defined by a start date and an end date.
-   * Interpreted relative to Pacific time zone.
-   *
-   * @param AbsoluteDateRange $absoluteDateRange
+   * @param AbsoluteDateRange
    */
   public function setAbsoluteDateRange(AbsoluteDateRange $absoluteDateRange)
   {
@@ -183,11 +86,7 @@ class FilterSet extends \Google\Collection
     return $this->absoluteDateRange;
   }
   /**
-   * The set of dimensions along which to break down the response; may be empty.
-   * If multiple dimensions are requested, the breakdown is along the Cartesian
-   * product of the requested dimensions.
-   *
-   * @param string[] $breakdownDimensions
+   * @param string[]
    */
   public function setBreakdownDimensions($breakdownDimensions)
   {
@@ -201,11 +100,7 @@ class FilterSet extends \Google\Collection
     return $this->breakdownDimensions;
   }
   /**
-   * The ID of the creative on which to filter; optional. This field may be set
-   * only for a filter set that accesses account-level troubleshooting data, for
-   * example, one whose name matches the `bidders/accounts/filterSets` pattern.
-   *
-   * @param string $creativeId
+   * @param string
    */
   public function setCreativeId($creativeId)
   {
@@ -219,11 +114,7 @@ class FilterSet extends \Google\Collection
     return $this->creativeId;
   }
   /**
-   * The ID of the deal on which to filter; optional. This field may be set only
-   * for a filter set that accesses account-level troubleshooting data, for
-   * example, one whose name matches the `bidders/accounts/filterSets` pattern.
-   *
-   * @param string $dealId
+   * @param string
    */
   public function setDealId($dealId)
   {
@@ -237,57 +128,41 @@ class FilterSet extends \Google\Collection
     return $this->dealId;
   }
   /**
-   * The environment on which to filter; optional.
-   *
-   * Accepted values: ENVIRONMENT_UNSPECIFIED, WEB, APP
-   *
-   * @param self::ENVIRONMENT_* $environment
+   * @param string
    */
   public function setEnvironment($environment)
   {
     $this->environment = $environment;
   }
   /**
-   * @return self::ENVIRONMENT_*
+   * @return string
    */
   public function getEnvironment()
   {
     return $this->environment;
   }
   /**
-   * Creative format bidded on or allowed to bid on, can be empty.
-   *
-   * Accepted values: FORMAT_UNSPECIFIED, NATIVE_DISPLAY, NATIVE_VIDEO,
-   * NON_NATIVE_DISPLAY, NON_NATIVE_VIDEO
-   *
-   * @param self::FORMAT_* $format
+   * @param string
    */
   public function setFormat($format)
   {
     $this->format = $format;
   }
   /**
-   * @return self::FORMAT_*
+   * @return string
    */
   public function getFormat()
   {
     return $this->format;
   }
   /**
-   * Creative formats bidded on or allowed to bid on, can be empty. Although
-   * this field is a list, it can only be populated with a single item. A HTTP
-   * 400 bad request error will be returned in the response if you specify
-   * multiple items.
-   *
-   * @deprecated
-   * @param string[] $formats
+   * @param string[]
    */
   public function setFormats($formats)
   {
     $this->formats = $formats;
   }
   /**
-   * @deprecated
    * @return string[]
    */
   public function getFormats()
@@ -295,13 +170,7 @@ class FilterSet extends \Google\Collection
     return $this->formats;
   }
   /**
-   * A user-defined name of the filter set. Filter set names must be unique
-   * globally and match one of the patterns: - `bidders/filterSets` (for
-   * accessing bidder-level troubleshooting data) -
-   * `bidders/accounts/filterSets` (for accessing account-level troubleshooting
-   * data) This field is required in create operations.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -315,11 +184,7 @@ class FilterSet extends \Google\Collection
     return $this->name;
   }
   /**
-   * The list of platforms on which to filter; may be empty. The filters
-   * represented by multiple platforms are ORed together (for example, if non-
-   * empty, results must match any one of the platforms).
-   *
-   * @param string[] $platforms
+   * @param string[]
    */
   public function setPlatforms($platforms)
   {
@@ -333,11 +198,7 @@ class FilterSet extends \Google\Collection
     return $this->platforms;
   }
   /**
-   * For Open Bidding partners only. The list of publisher identifiers on which
-   * to filter; may be empty. The filters represented by multiple publisher
-   * identifiers are ORed together.
-   *
-   * @param string[] $publisherIdentifiers
+   * @param string[]
    */
   public function setPublisherIdentifiers($publisherIdentifiers)
   {
@@ -351,10 +212,7 @@ class FilterSet extends \Google\Collection
     return $this->publisherIdentifiers;
   }
   /**
-   * An open-ended realtime time range, defined by the aggregation start
-   * timestamp.
-   *
-   * @param RealtimeTimeRange $realtimeTimeRange
+   * @param RealtimeTimeRange
    */
   public function setRealtimeTimeRange(RealtimeTimeRange $realtimeTimeRange)
   {
@@ -368,10 +226,7 @@ class FilterSet extends \Google\Collection
     return $this->realtimeTimeRange;
   }
   /**
-   * A relative date range, defined by an offset from today and a duration.
-   * Interpreted relative to Pacific time zone.
-   *
-   * @param RelativeDateRange $relativeDateRange
+   * @param RelativeDateRange
    */
   public function setRelativeDateRange(RelativeDateRange $relativeDateRange)
   {
@@ -385,14 +240,7 @@ class FilterSet extends \Google\Collection
     return $this->relativeDateRange;
   }
   /**
-   * For Authorized Buyers only. The list of IDs of the seller (publisher)
-   * networks on which to filter; may be empty. The filters represented by
-   * multiple seller network IDs are ORed together (for example, if non-empty,
-   * results must match any one of the publisher networks). See [seller-network-
-   * ids](https://developers.google.com/authorized-buyers/rtb/downloads/seller-
-   * network-ids) file for the set of existing seller network IDs.
-   *
-   * @param int[] $sellerNetworkIds
+   * @param int[]
    */
   public function setSellerNetworkIds($sellerNetworkIds)
   {
@@ -406,19 +254,14 @@ class FilterSet extends \Google\Collection
     return $this->sellerNetworkIds;
   }
   /**
-   * The granularity of time intervals if a time series breakdown is preferred;
-   * optional.
-   *
-   * Accepted values: TIME_SERIES_GRANULARITY_UNSPECIFIED, HOURLY, DAILY
-   *
-   * @param self::TIME_SERIES_GRANULARITY_* $timeSeriesGranularity
+   * @param string
    */
   public function setTimeSeriesGranularity($timeSeriesGranularity)
   {
     $this->timeSeriesGranularity = $timeSeriesGranularity;
   }
   /**
-   * @return self::TIME_SERIES_GRANULARITY_*
+   * @return string
    */
   public function getTimeSeriesGranularity()
   {

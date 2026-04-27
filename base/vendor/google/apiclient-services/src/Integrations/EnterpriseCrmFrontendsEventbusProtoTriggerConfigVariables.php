@@ -21,16 +21,12 @@ class EnterpriseCrmFrontendsEventbusProtoTriggerConfigVariables extends \Google\
 {
   protected $collection_key = 'names';
   /**
-   * Optional. List of variable names.
-   *
    * @var string[]
    */
   public $names;
 
   /**
-   * Optional. List of variable names.
-   *
-   * @param string[] $names
+   * @param string[]
    */
   public function setNames($names)
   {

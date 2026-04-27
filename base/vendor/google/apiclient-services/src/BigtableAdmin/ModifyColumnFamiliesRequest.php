@@ -21,8 +21,6 @@ class ModifyColumnFamiliesRequest extends \Google\Collection
 {
   protected $collection_key = 'modifications';
   /**
-   * Optional. If true, ignore safety checks when modifying the column families.
-   *
    * @var bool
    */
   public $ignoreWarnings;
@@ -30,9 +28,7 @@ class ModifyColumnFamiliesRequest extends \Google\Collection
   protected $modificationsDataType = 'array';
 
   /**
-   * Optional. If true, ignore safety checks when modifying the column families.
-   *
-   * @param bool $ignoreWarnings
+   * @param bool
    */
   public function setIgnoreWarnings($ignoreWarnings)
   {
@@ -46,12 +42,7 @@ class ModifyColumnFamiliesRequest extends \Google\Collection
     return $this->ignoreWarnings;
   }
   /**
-   * Required. Modifications to be atomically applied to the specified table's
-   * families. Entries are applied in order, meaning that earlier modifications
-   * can be masked by later ones (in the case of repeated updates to the same
-   * family, for example).
-   *
-   * @param Modification[] $modifications
+   * @param Modification[]
    */
   public function setModifications($modifications)
   {

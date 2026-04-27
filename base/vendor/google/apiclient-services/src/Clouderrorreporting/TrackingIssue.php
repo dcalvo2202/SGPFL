@@ -20,18 +20,12 @@ namespace Google\Service\Clouderrorreporting;
 class TrackingIssue extends \Google\Model
 {
   /**
-   * A URL pointing to a related entry in an issue tracking system. Example:
-   * `https://github.com/user/project/issues/4`
-   *
    * @var string
    */
   public $url;
 
   /**
-   * A URL pointing to a related entry in an issue tracking system. Example:
-   * `https://github.com/user/project/issues/4`
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

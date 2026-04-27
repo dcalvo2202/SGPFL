@@ -20,28 +20,20 @@ namespace Google\Service\RealTimeBidding;
 class Image extends \Google\Model
 {
   /**
-   * Image height in pixels.
-   *
    * @var int
    */
   public $height;
   /**
-   * The URL of the image.
-   *
    * @var string
    */
   public $url;
   /**
-   * Image width in pixels.
-   *
    * @var int
    */
   public $width;
 
   /**
-   * Image height in pixels.
-   *
-   * @param int $height
+   * @param int
    */
   public function setHeight($height)
   {
@@ -55,9 +47,7 @@ class Image extends \Google\Model
     return $this->height;
   }
   /**
-   * The URL of the image.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {
@@ -71,9 +61,7 @@ class Image extends \Google\Model
     return $this->url;
   }
   /**
-   * Image width in pixels.
-   *
-   * @param int $width
+   * @param int
    */
   public function setWidth($width)
   {

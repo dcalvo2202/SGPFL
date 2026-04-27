@@ -21,16 +21,12 @@ class GoogleCloudContentwarehouseV1EnumArray extends \Google\Collection
 {
   protected $collection_key = 'values';
   /**
-   * List of enum values.
-   *
    * @var string[]
    */
   public $values;
 
   /**
-   * List of enum values.
-   *
-   * @param string[] $values
+   * @param string[]
    */
   public function setValues($values)
   {

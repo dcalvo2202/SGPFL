@@ -26,7 +26,7 @@ class XPSCategoryStats extends \Google\Collection
   protected $topCategoryStatsDataType = 'array';
 
   /**
-   * @param XPSCommonStats $commonStats
+   * @param XPSCommonStats
    */
   public function setCommonStats(XPSCommonStats $commonStats)
   {
@@ -40,10 +40,7 @@ class XPSCategoryStats extends \Google\Collection
     return $this->commonStats;
   }
   /**
-   * The statistics of the top 20 CATEGORY values, ordered by
-   * CategoryStats.SingleCategoryStats.count.
-   *
-   * @param XPSCategoryStatsSingleCategoryStats[] $topCategoryStats
+   * @param XPSCategoryStatsSingleCategoryStats[]
    */
   public function setTopCategoryStats($topCategoryStats)
   {

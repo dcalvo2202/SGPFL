@@ -19,17 +19,7 @@ namespace Google\Service\Integrations;
 
 class EnterpriseCrmEventbusProtoParamSpecEntryValidationRuleDoubleRange extends \Google\Model
 {
-  /**
-   * The inclusive maximum of the acceptable range.
-   *
-   * @var 
-   */
   public $max;
-  /**
-   * The inclusive minimum of the acceptable range.
-   *
-   * @var 
-   */
   public $min;
 
   public function setMax($max)

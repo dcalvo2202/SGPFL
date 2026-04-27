@@ -21,45 +21,24 @@ class GoogleCloudAiplatformV1SchemaPredictPredictionImageObjectDetectionPredicti
 {
   protected $collection_key = 'ids';
   /**
-   * Bounding boxes, i.e. the rectangles over the image, that pinpoint the found
-   * AnnotationSpecs. Given in order that matches the IDs. Each bounding box is
-   * an array of 4 numbers `xMin`, `xMax`, `yMin`, and `yMax`, which represent
-   * the extremal coordinates of the box. They are relative to the image size,
-   * and the point 0,0 is in the top left of the image.
-   *
    * @var array[]
    */
   public $bboxes;
   /**
-   * The Model's confidences in correctness of the predicted IDs, higher value
-   * means higher confidence. Order matches the Ids.
-   *
    * @var float[]
    */
   public $confidences;
   /**
-   * The display names of the AnnotationSpecs that had been identified, order
-   * matches the IDs.
-   *
    * @var string[]
    */
   public $displayNames;
   /**
-   * The resource IDs of the AnnotationSpecs that had been identified, ordered
-   * by the confidence score descendingly.
-   *
    * @var string[]
    */
   public $ids;
 
   /**
-   * Bounding boxes, i.e. the rectangles over the image, that pinpoint the found
-   * AnnotationSpecs. Given in order that matches the IDs. Each bounding box is
-   * an array of 4 numbers `xMin`, `xMax`, `yMin`, and `yMax`, which represent
-   * the extremal coordinates of the box. They are relative to the image size,
-   * and the point 0,0 is in the top left of the image.
-   *
-   * @param array[] $bboxes
+   * @param array[]
    */
   public function setBboxes($bboxes)
   {
@@ -73,10 +52,7 @@ class GoogleCloudAiplatformV1SchemaPredictPredictionImageObjectDetectionPredicti
     return $this->bboxes;
   }
   /**
-   * The Model's confidences in correctness of the predicted IDs, higher value
-   * means higher confidence. Order matches the Ids.
-   *
-   * @param float[] $confidences
+   * @param float[]
    */
   public function setConfidences($confidences)
   {
@@ -90,10 +66,7 @@ class GoogleCloudAiplatformV1SchemaPredictPredictionImageObjectDetectionPredicti
     return $this->confidences;
   }
   /**
-   * The display names of the AnnotationSpecs that had been identified, order
-   * matches the IDs.
-   *
-   * @param string[] $displayNames
+   * @param string[]
    */
   public function setDisplayNames($displayNames)
   {
@@ -107,10 +80,7 @@ class GoogleCloudAiplatformV1SchemaPredictPredictionImageObjectDetectionPredicti
     return $this->displayNames;
   }
   /**
-   * The resource IDs of the AnnotationSpecs that had been identified, ordered
-   * by the confidence score descendingly.
-   *
-   * @param string[] $ids
+   * @param string[]
    */
   public function setIds($ids)
   {

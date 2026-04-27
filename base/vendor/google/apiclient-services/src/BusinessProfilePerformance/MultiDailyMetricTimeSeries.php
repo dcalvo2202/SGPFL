@@ -24,9 +24,7 @@ class MultiDailyMetricTimeSeries extends \Google\Collection
   protected $dailyMetricTimeSeriesDataType = 'array';
 
   /**
-   * List of DailyMetric-TimeSeries pairs.
-   *
-   * @param DailyMetricTimeSeries[] $dailyMetricTimeSeries
+   * @param DailyMetricTimeSeries[]
    */
   public function setDailyMetricTimeSeries($dailyMetricTimeSeries)
   {

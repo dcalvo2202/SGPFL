@@ -21,40 +21,24 @@ class GoogleFirebaseAppdistroV1Tester extends \Google\Collection
 {
   protected $collection_key = 'groups';
   /**
-   * The name of the tester associated with the Google account used to accept
-   * the tester invitation.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * The resource names of the groups this tester belongs to.
-   *
    * @var string[]
    */
   public $groups;
   /**
-   * Output only. The time the tester was last active. This is the most recent
-   * time the tester installed one of the apps. If they've never installed one
-   * or if the release no longer exists, this is the time the tester was added
-   * to the project.
-   *
    * @var string
    */
   public $lastActivityTime;
   /**
-   * The name of the tester resource. Format:
-   * `projects/{project_number}/testers/{email_address}`
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The name of the tester associated with the Google account used to accept
-   * the tester invitation.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -68,9 +52,7 @@ class GoogleFirebaseAppdistroV1Tester extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * The resource names of the groups this tester belongs to.
-   *
-   * @param string[] $groups
+   * @param string[]
    */
   public function setGroups($groups)
   {
@@ -84,12 +66,7 @@ class GoogleFirebaseAppdistroV1Tester extends \Google\Collection
     return $this->groups;
   }
   /**
-   * Output only. The time the tester was last active. This is the most recent
-   * time the tester installed one of the apps. If they've never installed one
-   * or if the release no longer exists, this is the time the tester was added
-   * to the project.
-   *
-   * @param string $lastActivityTime
+   * @param string
    */
   public function setLastActivityTime($lastActivityTime)
   {
@@ -103,10 +80,7 @@ class GoogleFirebaseAppdistroV1Tester extends \Google\Collection
     return $this->lastActivityTime;
   }
   /**
-   * The name of the tester resource. Format:
-   * `projects/{project_number}/testers/{email_address}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

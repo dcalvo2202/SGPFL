@@ -25,9 +25,7 @@ class GoogleCloudAiplatformV1UpdateIndexOperationMetadata extends \Google\Model
   protected $nearestNeighborSearchOperationMetadataDataType = '';
 
   /**
-   * The operation generic information.
-   *
-   * @param GoogleCloudAiplatformV1GenericOperationMetadata $genericMetadata
+   * @param GoogleCloudAiplatformV1GenericOperationMetadata
    */
   public function setGenericMetadata(GoogleCloudAiplatformV1GenericOperationMetadata $genericMetadata)
   {
@@ -41,9 +39,7 @@ class GoogleCloudAiplatformV1UpdateIndexOperationMetadata extends \Google\Model
     return $this->genericMetadata;
   }
   /**
-   * The operation metadata with regard to Matching Engine Index operation.
-   *
-   * @param GoogleCloudAiplatformV1NearestNeighborSearchOperationMetadata $nearestNeighborSearchOperationMetadata
+   * @param GoogleCloudAiplatformV1NearestNeighborSearchOperationMetadata
    */
   public function setNearestNeighborSearchOperationMetadata(GoogleCloudAiplatformV1NearestNeighborSearchOperationMetadata $nearestNeighborSearchOperationMetadata)
   {

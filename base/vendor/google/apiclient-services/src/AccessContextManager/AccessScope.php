@@ -23,9 +23,7 @@ class AccessScope extends \Google\Model
   protected $clientScopeDataType = '';
 
   /**
-   * Optional. Client scope for this access scope.
-   *
-   * @param ClientScope $clientScope
+   * @param ClientScope
    */
   public function setClientScope(ClientScope $clientScope)
   {

@@ -24,21 +24,14 @@ class CheckSetResult extends \Google\Model
   protected $checkResultsType = CheckResults::class;
   protected $checkResultsDataType = '';
   /**
-   * The name of the check set.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Explanation of this check set result. Only populated if no checks were
-   * evaluated.
-   *
    * @var string
    */
   public $explanation;
   /**
-   * The index of the check set.
-   *
    * @var string
    */
   public $index;
@@ -46,10 +39,7 @@ class CheckSetResult extends \Google\Model
   protected $scopeDataType = '';
 
   /**
-   * If the image was exempted by an allow_pattern in the check set, contains
-   * the pattern that the image name matched.
-   *
-   * @param AllowlistResult $allowlistResult
+   * @param AllowlistResult
    */
   public function setAllowlistResult(AllowlistResult $allowlistResult)
   {
@@ -63,9 +53,7 @@ class CheckSetResult extends \Google\Model
     return $this->allowlistResult;
   }
   /**
-   * If checks were evaluated, contains the results of evaluating each check.
-   *
-   * @param CheckResults $checkResults
+   * @param CheckResults
    */
   public function setCheckResults(CheckResults $checkResults)
   {
@@ -79,9 +67,7 @@ class CheckSetResult extends \Google\Model
     return $this->checkResults;
   }
   /**
-   * The name of the check set.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -95,10 +81,7 @@ class CheckSetResult extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Explanation of this check set result. Only populated if no checks were
-   * evaluated.
-   *
-   * @param string $explanation
+   * @param string
    */
   public function setExplanation($explanation)
   {
@@ -112,9 +95,7 @@ class CheckSetResult extends \Google\Model
     return $this->explanation;
   }
   /**
-   * The index of the check set.
-   *
-   * @param string $index
+   * @param string
    */
   public function setIndex($index)
   {
@@ -128,9 +109,7 @@ class CheckSetResult extends \Google\Model
     return $this->index;
   }
   /**
-   * The scope of the check set.
-   *
-   * @param Scope $scope
+   * @param Scope
    */
   public function setScope(Scope $scope)
   {

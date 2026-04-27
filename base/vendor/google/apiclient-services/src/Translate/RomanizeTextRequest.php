@@ -21,27 +21,16 @@ class RomanizeTextRequest extends \Google\Collection
 {
   protected $collection_key = 'contents';
   /**
-   * Required. The content of the input in string format.
-   *
    * @var string[]
    */
   public $contents;
   /**
-   * Optional. The ISO-639 language code of the input text if known, for
-   * example, "hi" or "zh". Supported language codes are listed in [Language
-   * Support](https://cloud.google.com/translate/docs/languages#roman). If the
-   * source language isn't specified, the API attempts to identify the source
-   * language automatically and returns the source language for each content in
-   * the response.
-   *
    * @var string
    */
   public $sourceLanguageCode;
 
   /**
-   * Required. The content of the input in string format.
-   *
-   * @param string[] $contents
+   * @param string[]
    */
   public function setContents($contents)
   {
@@ -55,14 +44,7 @@ class RomanizeTextRequest extends \Google\Collection
     return $this->contents;
   }
   /**
-   * Optional. The ISO-639 language code of the input text if known, for
-   * example, "hi" or "zh". Supported language codes are listed in [Language
-   * Support](https://cloud.google.com/translate/docs/languages#roman). If the
-   * source language isn't specified, the API attempts to identify the source
-   * language automatically and returns the source language for each content in
-   * the response.
-   *
-   * @param string $sourceLanguageCode
+   * @param string
    */
   public function setSourceLanguageCode($sourceLanguageCode)
   {

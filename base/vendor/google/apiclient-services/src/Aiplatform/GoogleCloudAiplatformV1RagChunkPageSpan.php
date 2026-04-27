@@ -20,22 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1RagChunkPageSpan extends \Google\Model
 {
   /**
-   * Page where chunk starts in the document. Inclusive. 1-indexed.
-   *
    * @var int
    */
   public $firstPage;
   /**
-   * Page where chunk ends in the document. Inclusive. 1-indexed.
-   *
    * @var int
    */
   public $lastPage;
 
   /**
-   * Page where chunk starts in the document. Inclusive. 1-indexed.
-   *
-   * @param int $firstPage
+   * @param int
    */
   public function setFirstPage($firstPage)
   {
@@ -49,9 +43,7 @@ class GoogleCloudAiplatformV1RagChunkPageSpan extends \Google\Model
     return $this->firstPage;
   }
   /**
-   * Page where chunk ends in the document. Inclusive. 1-indexed.
-   *
-   * @param int $lastPage
+   * @param int
    */
   public function setLastPage($lastPage)
   {

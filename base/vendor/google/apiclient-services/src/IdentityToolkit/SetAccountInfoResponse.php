@@ -21,79 +21,54 @@ class SetAccountInfoResponse extends \Google\Collection
 {
   protected $collection_key = 'providerUserInfo';
   /**
-   * The name of the user.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * The email of the user.
-   *
    * @var string
    */
   public $email;
   /**
-   * If email has been verified.
-   *
    * @var bool
    */
   public $emailVerified;
   /**
-   * If idToken is STS id token, then this field will be expiration time of STS
-   * id token in seconds.
-   *
    * @var string
    */
   public $expiresIn;
   /**
-   * The Gitkit id token to login the newly sign up user.
-   *
    * @var string
    */
   public $idToken;
   /**
-   * The fixed string "identitytoolkit#SetAccountInfoResponse".
-   *
    * @var string
    */
   public $kind;
   /**
-   * The local ID of the user.
-   *
    * @var string
    */
   public $localId;
   /**
-   * The new email the user attempts to change to.
-   *
    * @var string
    */
   public $newEmail;
   /**
-   * The user's hashed password.
-   *
    * @var string
    */
   public $passwordHash;
   /**
-   * The photo url of the user.
-   *
    * @var string
    */
   public $photoUrl;
   protected $providerUserInfoType = SetAccountInfoResponseProviderUserInfo::class;
   protected $providerUserInfoDataType = 'array';
   /**
-   * If idToken is STS id token, then this field will be refresh token.
-   *
    * @var string
    */
   public $refreshToken;
 
   /**
-   * The name of the user.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -107,9 +82,7 @@ class SetAccountInfoResponse extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * The email of the user.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {
@@ -123,9 +96,7 @@ class SetAccountInfoResponse extends \Google\Collection
     return $this->email;
   }
   /**
-   * If email has been verified.
-   *
-   * @param bool $emailVerified
+   * @param bool
    */
   public function setEmailVerified($emailVerified)
   {
@@ -139,10 +110,7 @@ class SetAccountInfoResponse extends \Google\Collection
     return $this->emailVerified;
   }
   /**
-   * If idToken is STS id token, then this field will be expiration time of STS
-   * id token in seconds.
-   *
-   * @param string $expiresIn
+   * @param string
    */
   public function setExpiresIn($expiresIn)
   {
@@ -156,9 +124,7 @@ class SetAccountInfoResponse extends \Google\Collection
     return $this->expiresIn;
   }
   /**
-   * The Gitkit id token to login the newly sign up user.
-   *
-   * @param string $idToken
+   * @param string
    */
   public function setIdToken($idToken)
   {
@@ -172,9 +138,7 @@ class SetAccountInfoResponse extends \Google\Collection
     return $this->idToken;
   }
   /**
-   * The fixed string "identitytoolkit#SetAccountInfoResponse".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -188,9 +152,7 @@ class SetAccountInfoResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The local ID of the user.
-   *
-   * @param string $localId
+   * @param string
    */
   public function setLocalId($localId)
   {
@@ -204,9 +166,7 @@ class SetAccountInfoResponse extends \Google\Collection
     return $this->localId;
   }
   /**
-   * The new email the user attempts to change to.
-   *
-   * @param string $newEmail
+   * @param string
    */
   public function setNewEmail($newEmail)
   {
@@ -220,9 +180,7 @@ class SetAccountInfoResponse extends \Google\Collection
     return $this->newEmail;
   }
   /**
-   * The user's hashed password.
-   *
-   * @param string $passwordHash
+   * @param string
    */
   public function setPasswordHash($passwordHash)
   {
@@ -236,9 +194,7 @@ class SetAccountInfoResponse extends \Google\Collection
     return $this->passwordHash;
   }
   /**
-   * The photo url of the user.
-   *
-   * @param string $photoUrl
+   * @param string
    */
   public function setPhotoUrl($photoUrl)
   {
@@ -252,9 +208,7 @@ class SetAccountInfoResponse extends \Google\Collection
     return $this->photoUrl;
   }
   /**
-   * The user's profiles at the associated IdPs.
-   *
-   * @param SetAccountInfoResponseProviderUserInfo[] $providerUserInfo
+   * @param SetAccountInfoResponseProviderUserInfo[]
    */
   public function setProviderUserInfo($providerUserInfo)
   {
@@ -268,9 +222,7 @@ class SetAccountInfoResponse extends \Google\Collection
     return $this->providerUserInfo;
   }
   /**
-   * If idToken is STS id token, then this field will be refresh token.
-   *
-   * @param string $refreshToken
+   * @param string
    */
   public function setRefreshToken($refreshToken)
   {

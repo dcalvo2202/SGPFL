@@ -23,7 +23,7 @@ class EntityAdWordsLinkEntity extends \Google\Model
   protected $webPropertyRefDataType = '';
 
   /**
-   * @param WebPropertyRef $webPropertyRef
+   * @param WebPropertyRef
    */
   public function setWebPropertyRef(WebPropertyRef $webPropertyRef)
   {

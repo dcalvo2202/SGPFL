@@ -20,14 +20,10 @@ namespace Google\Service\Dataflow;
 class MetricValue extends \Google\Model
 {
   /**
-   * Base name for this metric.
-   *
    * @var string
    */
   public $metric;
   /**
-   * Optional. Set of metric labels for this metric.
-   *
    * @var string[]
    */
   public $metricLabels;
@@ -36,16 +32,12 @@ class MetricValue extends \Google\Model
   protected $valueHistogramType = DataflowHistogramValue::class;
   protected $valueHistogramDataType = '';
   /**
-   * Integer value of this metric.
-   *
    * @var string
    */
   public $valueInt64;
 
   /**
-   * Base name for this metric.
-   *
-   * @param string $metric
+   * @param string
    */
   public function setMetric($metric)
   {
@@ -59,9 +51,7 @@ class MetricValue extends \Google\Model
     return $this->metric;
   }
   /**
-   * Optional. Set of metric labels for this metric.
-   *
-   * @param string[] $metricLabels
+   * @param string[]
    */
   public function setMetricLabels($metricLabels)
   {
@@ -75,9 +65,7 @@ class MetricValue extends \Google\Model
     return $this->metricLabels;
   }
   /**
-   * Non-cumulative int64 value of this metric.
-   *
-   * @param DataflowGaugeValue $valueGauge64
+   * @param DataflowGaugeValue
    */
   public function setValueGauge64(DataflowGaugeValue $valueGauge64)
   {
@@ -91,9 +79,7 @@ class MetricValue extends \Google\Model
     return $this->valueGauge64;
   }
   /**
-   * Histogram value of this metric.
-   *
-   * @param DataflowHistogramValue $valueHistogram
+   * @param DataflowHistogramValue
    */
   public function setValueHistogram(DataflowHistogramValue $valueHistogram)
   {
@@ -107,9 +93,7 @@ class MetricValue extends \Google\Model
     return $this->valueHistogram;
   }
   /**
-   * Integer value of this metric.
-   *
-   * @param string $valueInt64
+   * @param string
    */
   public function setValueInt64($valueInt64)
   {

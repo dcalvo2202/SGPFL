@@ -25,9 +25,7 @@ class GlossaryTermsPair extends \Google\Model
   protected $targetTermDataType = '';
 
   /**
-   * The source term is the term that will get match in the text,
-   *
-   * @param GlossaryTerm $sourceTerm
+   * @param GlossaryTerm
    */
   public function setSourceTerm(GlossaryTerm $sourceTerm)
   {
@@ -41,9 +39,7 @@ class GlossaryTermsPair extends \Google\Model
     return $this->sourceTerm;
   }
   /**
-   * The term that will replace the match source term.
-   *
-   * @param GlossaryTerm $targetTerm
+   * @param GlossaryTerm
    */
   public function setTargetTerm(GlossaryTerm $targetTerm)
   {

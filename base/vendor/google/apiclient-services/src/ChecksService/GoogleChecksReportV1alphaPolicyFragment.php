@@ -20,22 +20,16 @@ namespace Google\Service\ChecksService;
 class GoogleChecksReportV1alphaPolicyFragment extends \Google\Model
 {
   /**
-   * HTML content.
-   *
    * @var string
    */
   public $htmlContent;
   /**
-   * Policy URL.
-   *
    * @var string
    */
   public $sourceUri;
 
   /**
-   * HTML content.
-   *
-   * @param string $htmlContent
+   * @param string
    */
   public function setHtmlContent($htmlContent)
   {
@@ -49,9 +43,7 @@ class GoogleChecksReportV1alphaPolicyFragment extends \Google\Model
     return $this->htmlContent;
   }
   /**
-   * Policy URL.
-   *
-   * @param string $sourceUri
+   * @param string
    */
   public function setSourceUri($sourceUri)
   {

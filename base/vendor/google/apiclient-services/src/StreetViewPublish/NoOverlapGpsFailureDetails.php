@@ -20,34 +20,24 @@ namespace Google\Service\StreetViewPublish;
 class NoOverlapGpsFailureDetails extends \Google\Model
 {
   /**
-   * Time of last recorded GPS point.
-   *
    * @var string
    */
   public $gpsEndTime;
   /**
-   * Time of first recorded GPS point.
-   *
    * @var string
    */
   public $gpsStartTime;
   /**
-   * End time of video.
-   *
    * @var string
    */
   public $videoEndTime;
   /**
-   * Start time of video.
-   *
    * @var string
    */
   public $videoStartTime;
 
   /**
-   * Time of last recorded GPS point.
-   *
-   * @param string $gpsEndTime
+   * @param string
    */
   public function setGpsEndTime($gpsEndTime)
   {
@@ -61,9 +51,7 @@ class NoOverlapGpsFailureDetails extends \Google\Model
     return $this->gpsEndTime;
   }
   /**
-   * Time of first recorded GPS point.
-   *
-   * @param string $gpsStartTime
+   * @param string
    */
   public function setGpsStartTime($gpsStartTime)
   {
@@ -77,9 +65,7 @@ class NoOverlapGpsFailureDetails extends \Google\Model
     return $this->gpsStartTime;
   }
   /**
-   * End time of video.
-   *
-   * @param string $videoEndTime
+   * @param string
    */
   public function setVideoEndTime($videoEndTime)
   {
@@ -93,9 +79,7 @@ class NoOverlapGpsFailureDetails extends \Google\Model
     return $this->videoEndTime;
   }
   /**
-   * Start time of video.
-   *
-   * @param string $videoStartTime
+   * @param string
    */
   public function setVideoStartTime($videoStartTime)
   {

@@ -20,48 +20,34 @@ namespace Google\Service\DatabaseMigrationService;
 class OracleAsmConfig extends \Google\Model
 {
   /**
-   * Required. ASM service name for the Oracle ASM connection.
-   *
    * @var string
    */
   public $asmService;
   /**
-   * Required. Hostname for the Oracle ASM connection.
-   *
    * @var string
    */
   public $hostname;
   /**
-   * Required. Input only. Password for the Oracle ASM connection.
-   *
    * @var string
    */
   public $password;
   /**
-   * Output only. Indicates whether a new password is included in the request.
-   *
    * @var bool
    */
   public $passwordSet;
   /**
-   * Required. Port for the Oracle ASM connection.
-   *
    * @var int
    */
   public $port;
   protected $sslType = SslConfig::class;
   protected $sslDataType = '';
   /**
-   * Required. Username for the Oracle ASM connection.
-   *
    * @var string
    */
   public $username;
 
   /**
-   * Required. ASM service name for the Oracle ASM connection.
-   *
-   * @param string $asmService
+   * @param string
    */
   public function setAsmService($asmService)
   {
@@ -75,9 +61,7 @@ class OracleAsmConfig extends \Google\Model
     return $this->asmService;
   }
   /**
-   * Required. Hostname for the Oracle ASM connection.
-   *
-   * @param string $hostname
+   * @param string
    */
   public function setHostname($hostname)
   {
@@ -91,9 +75,7 @@ class OracleAsmConfig extends \Google\Model
     return $this->hostname;
   }
   /**
-   * Required. Input only. Password for the Oracle ASM connection.
-   *
-   * @param string $password
+   * @param string
    */
   public function setPassword($password)
   {
@@ -107,9 +89,7 @@ class OracleAsmConfig extends \Google\Model
     return $this->password;
   }
   /**
-   * Output only. Indicates whether a new password is included in the request.
-   *
-   * @param bool $passwordSet
+   * @param bool
    */
   public function setPasswordSet($passwordSet)
   {
@@ -123,9 +103,7 @@ class OracleAsmConfig extends \Google\Model
     return $this->passwordSet;
   }
   /**
-   * Required. Port for the Oracle ASM connection.
-   *
-   * @param int $port
+   * @param int
    */
   public function setPort($port)
   {
@@ -139,9 +117,7 @@ class OracleAsmConfig extends \Google\Model
     return $this->port;
   }
   /**
-   * Optional. SSL configuration for the Oracle connection.
-   *
-   * @param SslConfig $ssl
+   * @param SslConfig
    */
   public function setSsl(SslConfig $ssl)
   {
@@ -155,9 +131,7 @@ class OracleAsmConfig extends \Google\Model
     return $this->ssl;
   }
   /**
-   * Required. Username for the Oracle ASM connection.
-   *
-   * @param string $username
+   * @param string
    */
   public function setUsername($username)
   {

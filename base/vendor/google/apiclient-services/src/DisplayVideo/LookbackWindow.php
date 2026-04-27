@@ -20,25 +20,16 @@ namespace Google\Service\DisplayVideo;
 class LookbackWindow extends \Google\Model
 {
   /**
-   * Lookback window, in days, from the last time a given user clicked on one of
-   * your ads.
-   *
    * @var int
    */
   public $clickDays;
   /**
-   * Lookback window, in days, from the last time a given user viewed one of
-   * your ads.
-   *
    * @var int
    */
   public $impressionDays;
 
   /**
-   * Lookback window, in days, from the last time a given user clicked on one of
-   * your ads.
-   *
-   * @param int $clickDays
+   * @param int
    */
   public function setClickDays($clickDays)
   {
@@ -52,10 +43,7 @@ class LookbackWindow extends \Google\Model
     return $this->clickDays;
   }
   /**
-   * Lookback window, in days, from the last time a given user viewed one of
-   * your ads.
-   *
-   * @param int $impressionDays
+   * @param int
    */
   public function setImpressionDays($impressionDays)
   {

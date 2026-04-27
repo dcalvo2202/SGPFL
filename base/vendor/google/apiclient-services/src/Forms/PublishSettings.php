@@ -23,12 +23,7 @@ class PublishSettings extends \Google\Model
   protected $publishStateDataType = '';
 
   /**
-   * Optional. The publishing state of a form. When updating `publish_state`,
-   * both `is_published` and `is_accepting_responses` must be set. However,
-   * setting `is_accepting_responses` to `true` and `is_published` to `false`
-   * isn't supported and returns an error.
-   *
-   * @param PublishState $publishState
+   * @param PublishState
    */
   public function setPublishState(PublishState $publishState)
   {

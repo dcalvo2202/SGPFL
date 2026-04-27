@@ -20,12 +20,6 @@ namespace Google\Service\Firestore;
 class QueryTarget extends \Google\Model
 {
   /**
-   * The parent resource name. In the format:
-   * `projects/{project_id}/databases/{database_id}/documents` or
-   * `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
-   * For example: `projects/my-project/databases/my-database/documents` or
-   * `projects/my-project/databases/my-database/documents/chatrooms/my-chatroom`
-   *
    * @var string
    */
   public $parent;
@@ -33,13 +27,7 @@ class QueryTarget extends \Google\Model
   protected $structuredQueryDataType = '';
 
   /**
-   * The parent resource name. In the format:
-   * `projects/{project_id}/databases/{database_id}/documents` or
-   * `projects/{project_id}/databases/{database_id}/documents/{document_path}`.
-   * For example: `projects/my-project/databases/my-database/documents` or
-   * `projects/my-project/databases/my-database/documents/chatrooms/my-chatroom`
-   *
-   * @param string $parent
+   * @param string
    */
   public function setParent($parent)
   {
@@ -53,9 +41,7 @@ class QueryTarget extends \Google\Model
     return $this->parent;
   }
   /**
-   * A structured query.
-   *
-   * @param StructuredQuery $structuredQuery
+   * @param StructuredQuery
    */
   public function setStructuredQuery(StructuredQuery $structuredQuery)
   {

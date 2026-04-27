@@ -21,28 +21,20 @@ class ProductViewItemIssueIssueSeverityPerDestination extends \Google\Collection
 {
   protected $collection_key = 'disapprovedCountries';
   /**
-   * List of demoted countries in the destination.
-   *
    * @var string[]
    */
   public $demotedCountries;
   /**
-   * Issue destination.
-   *
    * @var string
    */
   public $destination;
   /**
-   * List of disapproved countries in the destination.
-   *
    * @var string[]
    */
   public $disapprovedCountries;
 
   /**
-   * List of demoted countries in the destination.
-   *
-   * @param string[] $demotedCountries
+   * @param string[]
    */
   public function setDemotedCountries($demotedCountries)
   {
@@ -56,9 +48,7 @@ class ProductViewItemIssueIssueSeverityPerDestination extends \Google\Collection
     return $this->demotedCountries;
   }
   /**
-   * Issue destination.
-   *
-   * @param string $destination
+   * @param string
    */
   public function setDestination($destination)
   {
@@ -72,9 +62,7 @@ class ProductViewItemIssueIssueSeverityPerDestination extends \Google\Collection
     return $this->destination;
   }
   /**
-   * List of disapproved countries in the destination.
-   *
-   * @param string[] $disapprovedCountries
+   * @param string[]
    */
   public function setDisapprovedCountries($disapprovedCountries)
   {

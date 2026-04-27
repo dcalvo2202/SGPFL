@@ -37,7 +37,7 @@ class GoogleCloudDialogflowCxV3AdvancedSettingsSpeechSettings extends \Google\Mo
   public $useTimeoutBasedEndpointing;
 
   /**
-   * @param int $endpointerSensitivity
+   * @param int
    */
   public function setEndpointerSensitivity($endpointerSensitivity)
   {
@@ -51,7 +51,7 @@ class GoogleCloudDialogflowCxV3AdvancedSettingsSpeechSettings extends \Google\Mo
     return $this->endpointerSensitivity;
   }
   /**
-   * @param string[] $models
+   * @param string[]
    */
   public function setModels($models)
   {
@@ -65,7 +65,7 @@ class GoogleCloudDialogflowCxV3AdvancedSettingsSpeechSettings extends \Google\Mo
     return $this->models;
   }
   /**
-   * @param string $noSpeechTimeout
+   * @param string
    */
   public function setNoSpeechTimeout($noSpeechTimeout)
   {
@@ -79,7 +79,7 @@ class GoogleCloudDialogflowCxV3AdvancedSettingsSpeechSettings extends \Google\Mo
     return $this->noSpeechTimeout;
   }
   /**
-   * @param bool $useTimeoutBasedEndpointing
+   * @param bool
    */
   public function setUseTimeoutBasedEndpointing($useTimeoutBasedEndpointing)
   {

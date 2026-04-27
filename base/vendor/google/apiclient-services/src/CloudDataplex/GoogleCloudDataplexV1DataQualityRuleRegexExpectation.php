@@ -20,16 +20,12 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1DataQualityRuleRegexExpectation extends \Google\Model
 {
   /**
-   * Optional. A regular expression the column value is expected to match.
-   *
    * @var string
    */
   public $regex;
 
   /**
-   * Optional. A regular expression the column value is expected to match.
-   *
-   * @param string $regex
+   * @param string
    */
   public function setRegex($regex)
   {

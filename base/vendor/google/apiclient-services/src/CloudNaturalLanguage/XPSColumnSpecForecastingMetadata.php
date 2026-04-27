@@ -20,49 +20,19 @@ namespace Google\Service\CloudNaturalLanguage;
 class XPSColumnSpecForecastingMetadata extends \Google\Model
 {
   /**
-   * An un-set value of this enum.
-   */
-  public const COLUMN_TYPE_COLUMN_TYPE_UNSPECIFIED = 'COLUMN_TYPE_UNSPECIFIED';
-  /**
-   * Key columns are used to identify timeseries.
-   */
-  public const COLUMN_TYPE_KEY = 'KEY';
-  /**
-   * This column contains information describing static properties of the
-   * entities identified by the key column(s) (e.g. city's ZIP code).
-   */
-  public const COLUMN_TYPE_KEY_METADATA = 'KEY_METADATA';
-  /**
-   * This column contains information for the given entity, at any time poinrt,
-   * they are only available in the time series before.
-   */
-  public const COLUMN_TYPE_TIME_SERIES_AVAILABLE_PAST_ONLY = 'TIME_SERIES_AVAILABLE_PAST_ONLY';
-  /**
-   * This column contains information for the given entity is known both for the
-   * past and the sufficiently far future.
-   */
-  public const COLUMN_TYPE_TIME_SERIES_AVAILABLE_PAST_AND_FUTURE = 'TIME_SERIES_AVAILABLE_PAST_AND_FUTURE';
-  /**
-   * The type of the column for FORECASTING model training purposes.
-   *
    * @var string
    */
   public $columnType;
 
   /**
-   * The type of the column for FORECASTING model training purposes.
-   *
-   * Accepted values: COLUMN_TYPE_UNSPECIFIED, KEY, KEY_METADATA,
-   * TIME_SERIES_AVAILABLE_PAST_ONLY, TIME_SERIES_AVAILABLE_PAST_AND_FUTURE
-   *
-   * @param self::COLUMN_TYPE_* $columnType
+   * @param string
    */
   public function setColumnType($columnType)
   {
     $this->columnType = $columnType;
   }
   /**
-   * @return self::COLUMN_TYPE_*
+   * @return string
    */
   public function getColumnType()
   {

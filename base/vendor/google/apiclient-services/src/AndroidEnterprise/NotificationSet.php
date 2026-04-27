@@ -23,18 +23,12 @@ class NotificationSet extends \Google\Collection
   protected $notificationType = Notification::class;
   protected $notificationDataType = 'array';
   /**
-   * The notification set ID, required to mark the notification as received with
-   * the Enterprises.AcknowledgeNotification API. This will be omitted if no
-   * notifications are present.
-   *
    * @var string
    */
   public $notificationSetId;
 
   /**
-   * The notifications received, or empty if no notifications are present.
-   *
-   * @param Notification[] $notification
+   * @param Notification[]
    */
   public function setNotification($notification)
   {
@@ -48,11 +42,7 @@ class NotificationSet extends \Google\Collection
     return $this->notification;
   }
   /**
-   * The notification set ID, required to mark the notification as received with
-   * the Enterprises.AcknowledgeNotification API. This will be omitted if no
-   * notifications are present.
-   *
-   * @param string $notificationSetId
+   * @param string
    */
   public function setNotificationSetId($notificationSetId)
   {

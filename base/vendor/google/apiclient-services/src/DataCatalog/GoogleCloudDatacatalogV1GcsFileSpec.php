@@ -20,24 +20,18 @@ namespace Google\Service\DataCatalog;
 class GoogleCloudDatacatalogV1GcsFileSpec extends \Google\Model
 {
   /**
-   * Required. Full file path. Example: `gs://bucket_name/a/b.txt`.
-   *
    * @var string
    */
   public $filePath;
   protected $gcsTimestampsType = GoogleCloudDatacatalogV1SystemTimestamps::class;
   protected $gcsTimestampsDataType = '';
   /**
-   * Output only. File size in bytes.
-   *
    * @var string
    */
   public $sizeBytes;
 
   /**
-   * Required. Full file path. Example: `gs://bucket_name/a/b.txt`.
-   *
-   * @param string $filePath
+   * @param string
    */
   public function setFilePath($filePath)
   {
@@ -51,10 +45,7 @@ class GoogleCloudDatacatalogV1GcsFileSpec extends \Google\Model
     return $this->filePath;
   }
   /**
-   * Output only. Creation, modification, and expiration timestamps of a Cloud
-   * Storage file.
-   *
-   * @param GoogleCloudDatacatalogV1SystemTimestamps $gcsTimestamps
+   * @param GoogleCloudDatacatalogV1SystemTimestamps
    */
   public function setGcsTimestamps(GoogleCloudDatacatalogV1SystemTimestamps $gcsTimestamps)
   {
@@ -68,9 +59,7 @@ class GoogleCloudDatacatalogV1GcsFileSpec extends \Google\Model
     return $this->gcsTimestamps;
   }
   /**
-   * Output only. File size in bytes.
-   *
-   * @param string $sizeBytes
+   * @param string
    */
   public function setSizeBytes($sizeBytes)
   {

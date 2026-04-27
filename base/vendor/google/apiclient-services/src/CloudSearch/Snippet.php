@@ -23,17 +23,12 @@ class Snippet extends \Google\Collection
   protected $matchRangesType = MatchRange::class;
   protected $matchRangesDataType = 'array';
   /**
-   * The snippet of the document. May contain escaped HTML character that should
-   * be unescaped prior to rendering.
-   *
    * @var string
    */
   public $snippet;
 
   /**
-   * The matched ranges in the snippet.
-   *
-   * @param MatchRange[] $matchRanges
+   * @param MatchRange[]
    */
   public function setMatchRanges($matchRanges)
   {
@@ -47,10 +42,7 @@ class Snippet extends \Google\Collection
     return $this->matchRanges;
   }
   /**
-   * The snippet of the document. May contain escaped HTML character that should
-   * be unescaped prior to rendering.
-   *
-   * @param string $snippet
+   * @param string
    */
   public function setSnippet($snippet)
   {

@@ -20,18 +20,12 @@ namespace Google\Service\VMMigrationService;
 class Encryption extends \Google\Model
 {
   /**
-   * Required. The name of the encryption key that is stored in Google Cloud
-   * KMS.
-   *
    * @var string
    */
   public $kmsKey;
 
   /**
-   * Required. The name of the encryption key that is stored in Google Cloud
-   * KMS.
-   *
-   * @param string $kmsKey
+   * @param string
    */
   public function setKmsKey($kmsKey)
   {

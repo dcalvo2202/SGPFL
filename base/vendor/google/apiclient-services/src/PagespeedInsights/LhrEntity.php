@@ -21,46 +21,32 @@ class LhrEntity extends \Google\Collection
 {
   protected $collection_key = 'origins';
   /**
-   * Optional. An optional category name for the entity.
-   *
    * @var string
    */
   public $category;
   /**
-   * Optional. An optional homepage URL of the entity.
-   *
    * @var string
    */
   public $homepage;
   /**
-   * Optional. An optional flag indicating if the entity is the first party.
-   *
    * @var bool
    */
   public $isFirstParty;
   /**
-   * Optional. An optional flag indicating if the entity is not recognized.
-   *
    * @var bool
    */
   public $isUnrecognized;
   /**
-   * Required. Name of the entity.
-   *
    * @var string
    */
   public $name;
   /**
-   * Required. A list of URL origin strings that belong to this entity.
-   *
    * @var string[]
    */
   public $origins;
 
   /**
-   * Optional. An optional category name for the entity.
-   *
-   * @param string $category
+   * @param string
    */
   public function setCategory($category)
   {
@@ -74,9 +60,7 @@ class LhrEntity extends \Google\Collection
     return $this->category;
   }
   /**
-   * Optional. An optional homepage URL of the entity.
-   *
-   * @param string $homepage
+   * @param string
    */
   public function setHomepage($homepage)
   {
@@ -90,9 +74,7 @@ class LhrEntity extends \Google\Collection
     return $this->homepage;
   }
   /**
-   * Optional. An optional flag indicating if the entity is the first party.
-   *
-   * @param bool $isFirstParty
+   * @param bool
    */
   public function setIsFirstParty($isFirstParty)
   {
@@ -106,9 +88,7 @@ class LhrEntity extends \Google\Collection
     return $this->isFirstParty;
   }
   /**
-   * Optional. An optional flag indicating if the entity is not recognized.
-   *
-   * @param bool $isUnrecognized
+   * @param bool
    */
   public function setIsUnrecognized($isUnrecognized)
   {
@@ -122,9 +102,7 @@ class LhrEntity extends \Google\Collection
     return $this->isUnrecognized;
   }
   /**
-   * Required. Name of the entity.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -138,9 +116,7 @@ class LhrEntity extends \Google\Collection
     return $this->name;
   }
   /**
-   * Required. A list of URL origin strings that belong to this entity.
-   *
-   * @param string[] $origins
+   * @param string[]
    */
   public function setOrigins($origins)
   {

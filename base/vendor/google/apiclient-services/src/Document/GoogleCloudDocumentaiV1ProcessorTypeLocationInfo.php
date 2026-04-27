@@ -20,18 +20,12 @@ namespace Google\Service\Document;
 class GoogleCloudDocumentaiV1ProcessorTypeLocationInfo extends \Google\Model
 {
   /**
-   * The location ID. For supported locations, refer to [regional and multi-
-   * regional support](/document-ai/docs/regions).
-   *
    * @var string
    */
   public $locationId;
 
   /**
-   * The location ID. For supported locations, refer to [regional and multi-
-   * regional support](/document-ai/docs/regions).
-   *
-   * @param string $locationId
+   * @param string
    */
   public function setLocationId($locationId)
   {

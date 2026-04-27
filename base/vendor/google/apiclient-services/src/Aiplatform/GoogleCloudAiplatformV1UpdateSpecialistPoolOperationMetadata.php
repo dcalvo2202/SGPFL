@@ -22,18 +22,12 @@ class GoogleCloudAiplatformV1UpdateSpecialistPoolOperationMetadata extends \Goog
   protected $genericMetadataType = GoogleCloudAiplatformV1GenericOperationMetadata::class;
   protected $genericMetadataDataType = '';
   /**
-   * Output only. The name of the SpecialistPool to which the specialists are
-   * being added. Format: `projects/{project_id}/locations/{location_id}/special
-   * istPools/{specialist_pool}`
-   *
    * @var string
    */
   public $specialistPool;
 
   /**
-   * The operation generic information.
-   *
-   * @param GoogleCloudAiplatformV1GenericOperationMetadata $genericMetadata
+   * @param GoogleCloudAiplatformV1GenericOperationMetadata
    */
   public function setGenericMetadata(GoogleCloudAiplatformV1GenericOperationMetadata $genericMetadata)
   {
@@ -47,11 +41,7 @@ class GoogleCloudAiplatformV1UpdateSpecialistPoolOperationMetadata extends \Goog
     return $this->genericMetadata;
   }
   /**
-   * Output only. The name of the SpecialistPool to which the specialists are
-   * being added. Format: `projects/{project_id}/locations/{location_id}/special
-   * istPools/{specialist_pool}`
-   *
-   * @param string $specialistPool
+   * @param string
    */
   public function setSpecialistPool($specialistPool)
   {

@@ -20,20 +20,12 @@ namespace Google\Service\Games;
 class UnlinkPersonaResponse extends \Google\Model
 {
   /**
-   * Required. Whether a Recall token specified by the request was deleted. Can
-   * be 'false' when there were no Recall tokens satisfied the criteria from the
-   * request.
-   *
    * @var bool
    */
   public $unlinked;
 
   /**
-   * Required. Whether a Recall token specified by the request was deleted. Can
-   * be 'false' when there were no Recall tokens satisfied the criteria from the
-   * request.
-   *
-   * @param bool $unlinked
+   * @param bool
    */
   public function setUnlinked($unlinked)
   {

@@ -23,26 +23,16 @@ class LookupForecastResponse extends \Google\Collection
   protected $dailyInfoType = DayInfo::class;
   protected $dailyInfoDataType = 'array';
   /**
-   * Optional. The token to retrieve the next page.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * The ISO_3166-1 alpha-2 code of the country/region corresponding to the
-   * location provided in the request. This field might be omitted from the
-   * response if the location provided in the request resides in a disputed
-   * territory.
-   *
    * @var string
    */
   public $regionCode;
 
   /**
-   * Required. This object contains the daily forecast information for each day
-   * requested.
-   *
-   * @param DayInfo[] $dailyInfo
+   * @param DayInfo[]
    */
   public function setDailyInfo($dailyInfo)
   {
@@ -56,9 +46,7 @@ class LookupForecastResponse extends \Google\Collection
     return $this->dailyInfo;
   }
   /**
-   * Optional. The token to retrieve the next page.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -72,12 +60,7 @@ class LookupForecastResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The ISO_3166-1 alpha-2 code of the country/region corresponding to the
-   * location provided in the request. This field might be omitted from the
-   * response if the location provided in the request resides in a disputed
-   * territory.
-   *
-   * @param string $regionCode
+   * @param string
    */
   public function setRegionCode($regionCode)
   {

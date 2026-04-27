@@ -21,9 +21,6 @@ class ListTeachersResponse extends \Google\Collection
 {
   protected $collection_key = 'teachers';
   /**
-   * Token identifying the next page of results to return. If empty, no further
-   * results are available.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListTeachersResponse extends \Google\Collection
   protected $teachersDataType = 'array';
 
   /**
-   * Token identifying the next page of results to return. If empty, no further
-   * results are available.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class ListTeachersResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Teachers who match the list request.
-   *
-   * @param Teacher[] $teachers
+   * @param Teacher[]
    */
   public function setTeachers($teachers)
   {

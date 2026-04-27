@@ -20,16 +20,12 @@ namespace Google\Service\Translate;
 class GcsInputSource extends \Google\Model
 {
   /**
-   * Required. Source data URI. For example, `gs://my_bucket/my_object`.
-   *
    * @var string
    */
   public $inputUri;
 
   /**
-   * Required. Source data URI. For example, `gs://my_bucket/my_object`.
-   *
-   * @param string $inputUri
+   * @param string
    */
   public function setInputUri($inputUri)
   {

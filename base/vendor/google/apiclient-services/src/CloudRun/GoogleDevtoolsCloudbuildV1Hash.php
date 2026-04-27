@@ -20,64 +20,30 @@ namespace Google\Service\CloudRun;
 class GoogleDevtoolsCloudbuildV1Hash extends \Google\Model
 {
   /**
-   * No hash requested.
-   */
-  public const TYPE_NONE = 'NONE';
-  /**
-   * Use a sha256 hash.
-   */
-  public const TYPE_SHA256 = 'SHA256';
-  /**
-   * Use a md5 hash.
-   */
-  public const TYPE_MD5 = 'MD5';
-  /**
-   * Dirhash of a Go module's source code which is then hex-encoded.
-   */
-  public const TYPE_GO_MODULE_H1 = 'GO_MODULE_H1';
-  /**
-   * Use a sha512 hash.
-   */
-  public const TYPE_SHA512 = 'SHA512';
-  /**
-   * Use a dirsum_sha256 hash.
-   */
-  public const TYPE_DIRSUM_SHA256 = 'DIRSUM_SHA256';
-  /**
-   * The type of hash that was performed.
-   *
    * @var string
    */
   public $type;
   /**
-   * The hash value.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * The type of hash that was performed.
-   *
-   * Accepted values: NONE, SHA256, MD5, GO_MODULE_H1, SHA512, DIRSUM_SHA256
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * The hash value.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

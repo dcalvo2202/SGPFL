@@ -20,16 +20,12 @@ namespace Google\Service\Directory;
 class UserMakeAdmin extends \Google\Model
 {
   /**
-   * Indicates the administrator status of the user.
-   *
    * @var bool
    */
   public $status;
 
   /**
-   * Indicates the administrator status of the user.
-   *
-   * @param bool $status
+   * @param bool
    */
   public function setStatus($status)
   {

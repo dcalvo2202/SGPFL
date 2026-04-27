@@ -20,50 +20,16 @@ namespace Google\Service\TPU;
 class AcceleratorConfig extends \Google\Model
 {
   /**
-   * Unspecified version.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * TPU v2.
-   */
-  public const TYPE_V2 = 'V2';
-  /**
-   * TPU v3.
-   */
-  public const TYPE_V3 = 'V3';
-  /**
-   * TPU v4.
-   */
-  public const TYPE_V4 = 'V4';
-  /**
-   * TPU v5lite pod.
-   */
-  public const TYPE_V5LITE_POD = 'V5LITE_POD';
-  /**
-   * TPU v5p.
-   */
-  public const TYPE_V5P = 'V5P';
-  /**
-   * TPU v6e.
-   */
-  public const TYPE_V6E = 'V6E';
-  /**
-   * Required. Topology of TPU in chips.
-   *
    * @var string
    */
   public $topology;
   /**
-   * Required. Type of TPU.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Required. Topology of TPU in chips.
-   *
-   * @param string $topology
+   * @param string
    */
   public function setTopology($topology)
   {
@@ -77,18 +43,14 @@ class AcceleratorConfig extends \Google\Model
     return $this->topology;
   }
   /**
-   * Required. Type of TPU.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, V2, V3, V4, V5LITE_POD, V5P, V6E
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

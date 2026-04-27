@@ -24,9 +24,7 @@ class ListSnapshotsResponse extends \Google\Collection
   protected $snapshotsDataType = 'array';
 
   /**
-   * Returned snapshots.
-   *
-   * @param Snapshot[] $snapshots
+   * @param Snapshot[]
    */
   public function setSnapshots($snapshots)
   {

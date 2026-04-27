@@ -33,8 +33,6 @@ class ReportPathToConversionCriteria extends \Google\Collection
   protected $floodlightConfigIdType = DimensionValue::class;
   protected $floodlightConfigIdDataType = '';
   /**
-   * The list of names of metrics the report should include.
-   *
    * @var string[]
    */
   public $metricNames;
@@ -44,9 +42,7 @@ class ReportPathToConversionCriteria extends \Google\Collection
   protected $reportPropertiesDataType = '';
 
   /**
-   * The list of 'dfa:activity' values to filter on.
-   *
-   * @param DimensionValue[] $activityFilters
+   * @param DimensionValue[]
    */
   public function setActivityFilters($activityFilters)
   {
@@ -60,9 +56,7 @@ class ReportPathToConversionCriteria extends \Google\Collection
     return $this->activityFilters;
   }
   /**
-   * The list of conversion dimensions the report should include.
-   *
-   * @param SortedDimension[] $conversionDimensions
+   * @param SortedDimension[]
    */
   public function setConversionDimensions($conversionDimensions)
   {
@@ -76,9 +70,7 @@ class ReportPathToConversionCriteria extends \Google\Collection
     return $this->conversionDimensions;
   }
   /**
-   * The list of custom floodlight variables the report should include.
-   *
-   * @param SortedDimension[] $customFloodlightVariables
+   * @param SortedDimension[]
    */
   public function setCustomFloodlightVariables($customFloodlightVariables)
   {
@@ -92,9 +84,7 @@ class ReportPathToConversionCriteria extends \Google\Collection
     return $this->customFloodlightVariables;
   }
   /**
-   * The list of custom rich media events to include.
-   *
-   * @param DimensionValue[] $customRichMediaEvents
+   * @param DimensionValue[]
    */
   public function setCustomRichMediaEvents($customRichMediaEvents)
   {
@@ -108,9 +98,7 @@ class ReportPathToConversionCriteria extends \Google\Collection
     return $this->customRichMediaEvents;
   }
   /**
-   * The date range this report should be run for.
-   *
-   * @param DateRange $dateRange
+   * @param DateRange
    */
   public function setDateRange(DateRange $dateRange)
   {
@@ -124,11 +112,7 @@ class ReportPathToConversionCriteria extends \Google\Collection
     return $this->dateRange;
   }
   /**
-   * The floodlight ID for which to show data in this report. All advertisers
-   * associated with that ID will automatically be added. The dimension of the
-   * value needs to be 'dfa:floodlightConfigId'.
-   *
-   * @param DimensionValue $floodlightConfigId
+   * @param DimensionValue
    */
   public function setFloodlightConfigId(DimensionValue $floodlightConfigId)
   {
@@ -142,9 +126,7 @@ class ReportPathToConversionCriteria extends \Google\Collection
     return $this->floodlightConfigId;
   }
   /**
-   * The list of names of metrics the report should include.
-   *
-   * @param string[] $metricNames
+   * @param string[]
    */
   public function setMetricNames($metricNames)
   {
@@ -158,9 +140,7 @@ class ReportPathToConversionCriteria extends \Google\Collection
     return $this->metricNames;
   }
   /**
-   * The list of per interaction dimensions the report should include.
-   *
-   * @param SortedDimension[] $perInteractionDimensions
+   * @param SortedDimension[]
    */
   public function setPerInteractionDimensions($perInteractionDimensions)
   {
@@ -174,9 +154,7 @@ class ReportPathToConversionCriteria extends \Google\Collection
     return $this->perInteractionDimensions;
   }
   /**
-   * The properties of the report.
-   *
-   * @param ReportPathToConversionCriteriaReportProperties $reportProperties
+   * @param ReportPathToConversionCriteriaReportProperties
    */
   public function setReportProperties(ReportPathToConversionCriteriaReportProperties $reportProperties)
   {

@@ -29,25 +29,16 @@ class SecurityPolicyRulePreconfiguredWafConfigExclusion extends \Google\Collecti
   protected $requestUrisToExcludeType = SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams::class;
   protected $requestUrisToExcludeDataType = 'array';
   /**
-   * A list of target rule IDs under the WAF rule set to apply the preconfigured
-   * WAF exclusion. If omitted, it refers to all the rule IDs under the WAF rule
-   * set.
-   *
    * @var string[]
    */
   public $targetRuleIds;
   /**
-   * Target WAF rule set to apply the preconfigured WAF exclusion.
-   *
    * @var string
    */
   public $targetRuleSet;
 
   /**
-   * A list of request cookie names whose value will be excluded from inspection
-   * during preconfigured WAF evaluation.
-   *
-   * @param SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams[] $requestCookiesToExclude
+   * @param SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams[]
    */
   public function setRequestCookiesToExclude($requestCookiesToExclude)
   {
@@ -61,10 +52,7 @@ class SecurityPolicyRulePreconfiguredWafConfigExclusion extends \Google\Collecti
     return $this->requestCookiesToExclude;
   }
   /**
-   * A list of request header names whose value will be excluded from inspection
-   * during preconfigured WAF evaluation.
-   *
-   * @param SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams[] $requestHeadersToExclude
+   * @param SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams[]
    */
   public function setRequestHeadersToExclude($requestHeadersToExclude)
   {
@@ -78,11 +66,7 @@ class SecurityPolicyRulePreconfiguredWafConfigExclusion extends \Google\Collecti
     return $this->requestHeadersToExclude;
   }
   /**
-   * A list of request query parameter names whose value will be excluded from
-   * inspection during preconfigured WAF evaluation. Note that the parameter can
-   * be in the query string or in the POST body.
-   *
-   * @param SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams[] $requestQueryParamsToExclude
+   * @param SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams[]
    */
   public function setRequestQueryParamsToExclude($requestQueryParamsToExclude)
   {
@@ -96,11 +80,7 @@ class SecurityPolicyRulePreconfiguredWafConfigExclusion extends \Google\Collecti
     return $this->requestQueryParamsToExclude;
   }
   /**
-   * A list of request URIs from the request line to be excluded from inspection
-   * during preconfigured WAF evaluation. When specifying this field, the query
-   * or fragment part should be excluded.
-   *
-   * @param SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams[] $requestUrisToExclude
+   * @param SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams[]
    */
   public function setRequestUrisToExclude($requestUrisToExclude)
   {
@@ -114,11 +94,7 @@ class SecurityPolicyRulePreconfiguredWafConfigExclusion extends \Google\Collecti
     return $this->requestUrisToExclude;
   }
   /**
-   * A list of target rule IDs under the WAF rule set to apply the preconfigured
-   * WAF exclusion. If omitted, it refers to all the rule IDs under the WAF rule
-   * set.
-   *
-   * @param string[] $targetRuleIds
+   * @param string[]
    */
   public function setTargetRuleIds($targetRuleIds)
   {
@@ -132,9 +108,7 @@ class SecurityPolicyRulePreconfiguredWafConfigExclusion extends \Google\Collecti
     return $this->targetRuleIds;
   }
   /**
-   * Target WAF rule set to apply the preconfigured WAF exclusion.
-   *
-   * @param string $targetRuleSet
+   * @param string
    */
   public function setTargetRuleSet($targetRuleSet)
   {

@@ -19,26 +19,17 @@ namespace Google\Service\BigQueryConnectionService;
 
 class ConnectorConfigurationSecret extends \Google\Model
 {
-  public const SECRET_TYPE_SECRET_TYPE_UNSPECIFIED = 'SECRET_TYPE_UNSPECIFIED';
-  public const SECRET_TYPE_PLAINTEXT = 'PLAINTEXT';
   /**
-   * Input only. Secret as plaintext.
-   *
    * @var string
    */
   public $plaintext;
   /**
-   * Output only. Indicates type of secret. Can be used to check type of stored
-   * secret value even if it's `INPUT_ONLY`.
-   *
    * @var string
    */
   public $secretType;
 
   /**
-   * Input only. Secret as plaintext.
-   *
-   * @param string $plaintext
+   * @param string
    */
   public function setPlaintext($plaintext)
   {
@@ -52,19 +43,14 @@ class ConnectorConfigurationSecret extends \Google\Model
     return $this->plaintext;
   }
   /**
-   * Output only. Indicates type of secret. Can be used to check type of stored
-   * secret value even if it's `INPUT_ONLY`.
-   *
-   * Accepted values: SECRET_TYPE_UNSPECIFIED, PLAINTEXT
-   *
-   * @param self::SECRET_TYPE_* $secretType
+   * @param string
    */
   public function setSecretType($secretType)
   {
     $this->secretType = $secretType;
   }
   /**
-   * @return self::SECRET_TYPE_*
+   * @return string
    */
   public function getSecretType()
   {

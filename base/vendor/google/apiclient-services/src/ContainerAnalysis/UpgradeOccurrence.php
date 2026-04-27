@@ -22,8 +22,6 @@ class UpgradeOccurrence extends \Google\Model
   protected $distributionType = UpgradeDistribution::class;
   protected $distributionDataType = '';
   /**
-   * Required for non-Windows OS. The package this Upgrade is for.
-   *
    * @var string
    */
   public $package;
@@ -33,11 +31,7 @@ class UpgradeOccurrence extends \Google\Model
   protected $windowsUpdateDataType = '';
 
   /**
-   * Metadata about the upgrade for available for the specific operating system
-   * for the resource_url. This allows efficient filtering, as well as making it
-   * easier to use the occurrence.
-   *
-   * @param UpgradeDistribution $distribution
+   * @param UpgradeDistribution
    */
   public function setDistribution(UpgradeDistribution $distribution)
   {
@@ -51,9 +45,7 @@ class UpgradeOccurrence extends \Google\Model
     return $this->distribution;
   }
   /**
-   * Required for non-Windows OS. The package this Upgrade is for.
-   *
-   * @param string $package
+   * @param string
    */
   public function setPackage($package)
   {
@@ -67,10 +59,7 @@ class UpgradeOccurrence extends \Google\Model
     return $this->package;
   }
   /**
-   * Required for non-Windows OS. The version of the package in a machine +
-   * human readable form.
-   *
-   * @param Version $parsedVersion
+   * @param Version
    */
   public function setParsedVersion(Version $parsedVersion)
   {
@@ -84,9 +73,7 @@ class UpgradeOccurrence extends \Google\Model
     return $this->parsedVersion;
   }
   /**
-   * Required for Windows OS. Represents the metadata about the Windows update.
-   *
-   * @param WindowsUpdate $windowsUpdate
+   * @param WindowsUpdate
    */
   public function setWindowsUpdate(WindowsUpdate $windowsUpdate)
   {

@@ -20,8 +20,6 @@ namespace Google\Service\Gmail;
 class Draft extends \Google\Model
 {
   /**
-   * The immutable ID of the draft.
-   *
    * @var string
    */
   public $id;
@@ -29,9 +27,7 @@ class Draft extends \Google\Model
   protected $messageDataType = '';
 
   /**
-   * The immutable ID of the draft.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -45,9 +41,7 @@ class Draft extends \Google\Model
     return $this->id;
   }
   /**
-   * The message content of the draft.
-   *
-   * @param Message $message
+   * @param Message
    */
   public function setMessage(Message $message)
   {

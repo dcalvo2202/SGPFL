@@ -29,9 +29,7 @@ class SourceFork extends \Google\Model
   protected $residualSourceDataType = '';
 
   /**
-   * DEPRECATED
-   *
-   * @param SourceSplitShard $primary
+   * @param SourceSplitShard
    */
   public function setPrimary(SourceSplitShard $primary)
   {
@@ -45,9 +43,7 @@ class SourceFork extends \Google\Model
     return $this->primary;
   }
   /**
-   * DEPRECATED
-   *
-   * @param DerivedSource $primarySource
+   * @param DerivedSource
    */
   public function setPrimarySource(DerivedSource $primarySource)
   {
@@ -61,9 +57,7 @@ class SourceFork extends \Google\Model
     return $this->primarySource;
   }
   /**
-   * DEPRECATED
-   *
-   * @param SourceSplitShard $residual
+   * @param SourceSplitShard
    */
   public function setResidual(SourceSplitShard $residual)
   {
@@ -77,9 +71,7 @@ class SourceFork extends \Google\Model
     return $this->residual;
   }
   /**
-   * DEPRECATED
-   *
-   * @param DerivedSource $residualSource
+   * @param DerivedSource
    */
   public function setResidualSource(DerivedSource $residualSource)
   {

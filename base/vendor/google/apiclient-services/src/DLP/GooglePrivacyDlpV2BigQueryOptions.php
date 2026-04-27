@@ -19,20 +19,6 @@ namespace Google\Service\DLP;
 
 class GooglePrivacyDlpV2BigQueryOptions extends \Google\Collection
 {
-  /**
-   * No sampling.
-   */
-  public const SAMPLE_METHOD_SAMPLE_METHOD_UNSPECIFIED = 'SAMPLE_METHOD_UNSPECIFIED';
-  /**
-   * Scan groups of rows in the order BigQuery provides (default). Multiple
-   * groups of rows may be scanned in parallel, so results may not appear in the
-   * same order the rows are read.
-   */
-  public const SAMPLE_METHOD_TOP = 'TOP';
-  /**
-   * Randomly pick groups of rows to scan.
-   */
-  public const SAMPLE_METHOD_RANDOM_START = 'RANDOM_START';
   protected $collection_key = 'includedFields';
   protected $excludedFieldsType = GooglePrivacyDlpV2FieldId::class;
   protected $excludedFieldsDataType = 'array';
@@ -41,30 +27,14 @@ class GooglePrivacyDlpV2BigQueryOptions extends \Google\Collection
   protected $includedFieldsType = GooglePrivacyDlpV2FieldId::class;
   protected $includedFieldsDataType = 'array';
   /**
-   * Max number of rows to scan. If the table has more rows than this value, the
-   * rest of the rows are omitted. If not set, or if set to 0, all rows will be
-   * scanned. Only one of rows_limit and rows_limit_percent can be specified.
-   * Cannot be used in conjunction with TimespanConfig.
-   *
    * @var string
    */
   public $rowsLimit;
   /**
-   * Max percentage of rows to scan. The rest are omitted. The number of rows
-   * scanned is rounded down. Must be between 0 and 100, inclusively. Both 0 and
-   * 100 means no limit. Defaults to 0. Only one of rows_limit and
-   * rows_limit_percent can be specified. Cannot be used in conjunction with
-   * TimespanConfig. Caution: A [known
-   * issue](https://cloud.google.com/sensitive-data-protection/docs/known-
-   * issues#bq-sampling) is causing the `rowsLimitPercent` field to behave
-   * unexpectedly. We recommend using `rowsLimit` instead.
-   *
    * @var int
    */
   public $rowsLimitPercent;
   /**
-   * How to sample the data.
-   *
    * @var string
    */
   public $sampleMethod;
@@ -72,13 +42,7 @@ class GooglePrivacyDlpV2BigQueryOptions extends \Google\Collection
   protected $tableReferenceDataType = '';
 
   /**
-   * References to fields excluded from scanning. This allows you to skip
-   * inspection of entire columns which you know have no findings. When
-   * inspecting a table, we recommend that you inspect all columns. Otherwise,
-   * findings might be affected because hints from excluded columns will not be
-   * used.
-   *
-   * @param GooglePrivacyDlpV2FieldId[] $excludedFields
+   * @param GooglePrivacyDlpV2FieldId[]
    */
   public function setExcludedFields($excludedFields)
   {
@@ -92,13 +56,7 @@ class GooglePrivacyDlpV2BigQueryOptions extends \Google\Collection
     return $this->excludedFields;
   }
   /**
-   * Table fields that may uniquely identify a row within the table. When
-   * `actions.saveFindings.outputConfig.table` is specified, the values of
-   * columns specified here are available in the output table under
-   * `location.content_locations.record_location.record_key.id_values`. Nested
-   * fields such as `person.birthdate.year` are allowed.
-   *
-   * @param GooglePrivacyDlpV2FieldId[] $identifyingFields
+   * @param GooglePrivacyDlpV2FieldId[]
    */
   public function setIdentifyingFields($identifyingFields)
   {
@@ -112,11 +70,7 @@ class GooglePrivacyDlpV2BigQueryOptions extends \Google\Collection
     return $this->identifyingFields;
   }
   /**
-   * Limit scanning only to these fields. When inspecting a table, we recommend
-   * that you inspect all columns. Otherwise, findings might be affected because
-   * hints from excluded columns will not be used.
-   *
-   * @param GooglePrivacyDlpV2FieldId[] $includedFields
+   * @param GooglePrivacyDlpV2FieldId[]
    */
   public function setIncludedFields($includedFields)
   {
@@ -130,12 +84,7 @@ class GooglePrivacyDlpV2BigQueryOptions extends \Google\Collection
     return $this->includedFields;
   }
   /**
-   * Max number of rows to scan. If the table has more rows than this value, the
-   * rest of the rows are omitted. If not set, or if set to 0, all rows will be
-   * scanned. Only one of rows_limit and rows_limit_percent can be specified.
-   * Cannot be used in conjunction with TimespanConfig.
-   *
-   * @param string $rowsLimit
+   * @param string
    */
   public function setRowsLimit($rowsLimit)
   {
@@ -149,16 +98,7 @@ class GooglePrivacyDlpV2BigQueryOptions extends \Google\Collection
     return $this->rowsLimit;
   }
   /**
-   * Max percentage of rows to scan. The rest are omitted. The number of rows
-   * scanned is rounded down. Must be between 0 and 100, inclusively. Both 0 and
-   * 100 means no limit. Defaults to 0. Only one of rows_limit and
-   * rows_limit_percent can be specified. Cannot be used in conjunction with
-   * TimespanConfig. Caution: A [known
-   * issue](https://cloud.google.com/sensitive-data-protection/docs/known-
-   * issues#bq-sampling) is causing the `rowsLimitPercent` field to behave
-   * unexpectedly. We recommend using `rowsLimit` instead.
-   *
-   * @param int $rowsLimitPercent
+   * @param int
    */
   public function setRowsLimitPercent($rowsLimitPercent)
   {
@@ -172,27 +112,21 @@ class GooglePrivacyDlpV2BigQueryOptions extends \Google\Collection
     return $this->rowsLimitPercent;
   }
   /**
-   * How to sample the data.
-   *
-   * Accepted values: SAMPLE_METHOD_UNSPECIFIED, TOP, RANDOM_START
-   *
-   * @param self::SAMPLE_METHOD_* $sampleMethod
+   * @param string
    */
   public function setSampleMethod($sampleMethod)
   {
     $this->sampleMethod = $sampleMethod;
   }
   /**
-   * @return self::SAMPLE_METHOD_*
+   * @return string
    */
   public function getSampleMethod()
   {
     return $this->sampleMethod;
   }
   /**
-   * Complete BigQuery table reference.
-   *
-   * @param GooglePrivacyDlpV2BigQueryTable $tableReference
+   * @param GooglePrivacyDlpV2BigQueryTable
    */
   public function setTableReference(GooglePrivacyDlpV2BigQueryTable $tableReference)
   {

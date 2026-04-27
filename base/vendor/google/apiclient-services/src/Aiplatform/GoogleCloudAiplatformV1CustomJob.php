@@ -20,74 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1CustomJob extends \Google\Model
 {
   /**
-   * The job state is unspecified.
-   */
-  public const STATE_JOB_STATE_UNSPECIFIED = 'JOB_STATE_UNSPECIFIED';
-  /**
-   * The job has been just created or resumed and processing has not yet begun.
-   */
-  public const STATE_JOB_STATE_QUEUED = 'JOB_STATE_QUEUED';
-  /**
-   * The service is preparing to run the job.
-   */
-  public const STATE_JOB_STATE_PENDING = 'JOB_STATE_PENDING';
-  /**
-   * The job is in progress.
-   */
-  public const STATE_JOB_STATE_RUNNING = 'JOB_STATE_RUNNING';
-  /**
-   * The job completed successfully.
-   */
-  public const STATE_JOB_STATE_SUCCEEDED = 'JOB_STATE_SUCCEEDED';
-  /**
-   * The job failed.
-   */
-  public const STATE_JOB_STATE_FAILED = 'JOB_STATE_FAILED';
-  /**
-   * The job is being cancelled. From this state the job may only go to either
-   * `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED` or `JOB_STATE_CANCELLED`.
-   */
-  public const STATE_JOB_STATE_CANCELLING = 'JOB_STATE_CANCELLING';
-  /**
-   * The job has been cancelled.
-   */
-  public const STATE_JOB_STATE_CANCELLED = 'JOB_STATE_CANCELLED';
-  /**
-   * The job has been stopped, and can be resumed.
-   */
-  public const STATE_JOB_STATE_PAUSED = 'JOB_STATE_PAUSED';
-  /**
-   * The job has expired.
-   */
-  public const STATE_JOB_STATE_EXPIRED = 'JOB_STATE_EXPIRED';
-  /**
-   * The job is being updated. Only jobs in the `RUNNING` state can be updated.
-   * After updating, the job goes back to the `RUNNING` state.
-   */
-  public const STATE_JOB_STATE_UPDATING = 'JOB_STATE_UPDATING';
-  /**
-   * The job is partially succeeded, some results may be missing due to errors.
-   */
-  public const STATE_JOB_STATE_PARTIALLY_SUCCEEDED = 'JOB_STATE_PARTIALLY_SUCCEEDED';
-  /**
-   * Output only. Time when the CustomJob was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Required. The display name of the CustomJob. The name can be up to 128
-   * characters long and can consist of any UTF-8 characters.
-   *
    * @var string
    */
   public $displayName;
   protected $encryptionSpecType = GoogleCloudAiplatformV1EncryptionSpec::class;
   protected $encryptionSpecDataType = '';
   /**
-   * Output only. Time when the CustomJob entered any of the following states:
-   * `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`.
-   *
    * @var string
    */
   public $endTime;
@@ -96,70 +38,40 @@ class GoogleCloudAiplatformV1CustomJob extends \Google\Model
   protected $jobSpecType = GoogleCloudAiplatformV1CustomJobSpec::class;
   protected $jobSpecDataType = '';
   /**
-   * The labels with user-defined metadata to organize CustomJobs. Label keys
-   * and values can be no longer than 64 characters (Unicode codepoints), can
-   * only contain lowercase letters, numeric characters, underscores and dashes.
-   * International characters are allowed. See https://goo.gl/xmQnxf for more
-   * information and examples of labels.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Output only. Resource name of a CustomJob.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Reserved for future use.
-   *
    * @var bool
    */
   public $satisfiesPzi;
   /**
-   * Output only. Reserved for future use.
-   *
    * @var bool
    */
   public $satisfiesPzs;
   /**
-   * Output only. Time when the CustomJob for the first time entered the
-   * `JOB_STATE_RUNNING` state.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * Output only. The detailed state of the job.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. Time when the CustomJob was most recently updated.
-   *
    * @var string
    */
   public $updateTime;
   /**
-   * Output only. URIs for accessing [interactive
-   * shells](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-
-   * interactive-shell) (one URI for each training node). Only available if
-   * job_spec.enable_web_access is `true`. The keys are names of each node in
-   * the training job; for example, `workerpool0-0` for the primary node,
-   * `workerpool1-0` for the first node in the second worker pool, and
-   * `workerpool1-1` for the second node in the second worker pool. The values
-   * are the URIs for each node's interactive shell.
-   *
    * @var string[]
    */
   public $webAccessUris;
 
   /**
-   * Output only. Time when the CustomJob was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -173,10 +85,7 @@ class GoogleCloudAiplatformV1CustomJob extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Required. The display name of the CustomJob. The name can be up to 128
-   * characters long and can consist of any UTF-8 characters.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -190,11 +99,7 @@ class GoogleCloudAiplatformV1CustomJob extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Customer-managed encryption key options for a CustomJob. If this is set,
-   * then all resources created by the CustomJob will be encrypted with the
-   * provided encryption key.
-   *
-   * @param GoogleCloudAiplatformV1EncryptionSpec $encryptionSpec
+   * @param GoogleCloudAiplatformV1EncryptionSpec
    */
   public function setEncryptionSpec(GoogleCloudAiplatformV1EncryptionSpec $encryptionSpec)
   {
@@ -208,10 +113,7 @@ class GoogleCloudAiplatformV1CustomJob extends \Google\Model
     return $this->encryptionSpec;
   }
   /**
-   * Output only. Time when the CustomJob entered any of the following states:
-   * `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -225,10 +127,7 @@ class GoogleCloudAiplatformV1CustomJob extends \Google\Model
     return $this->endTime;
   }
   /**
-   * Output only. Only populated when job's state is `JOB_STATE_FAILED` or
-   * `JOB_STATE_CANCELLED`.
-   *
-   * @param GoogleRpcStatus $error
+   * @param GoogleRpcStatus
    */
   public function setError(GoogleRpcStatus $error)
   {
@@ -242,9 +141,7 @@ class GoogleCloudAiplatformV1CustomJob extends \Google\Model
     return $this->error;
   }
   /**
-   * Required. Job spec.
-   *
-   * @param GoogleCloudAiplatformV1CustomJobSpec $jobSpec
+   * @param GoogleCloudAiplatformV1CustomJobSpec
    */
   public function setJobSpec(GoogleCloudAiplatformV1CustomJobSpec $jobSpec)
   {
@@ -258,13 +155,7 @@ class GoogleCloudAiplatformV1CustomJob extends \Google\Model
     return $this->jobSpec;
   }
   /**
-   * The labels with user-defined metadata to organize CustomJobs. Label keys
-   * and values can be no longer than 64 characters (Unicode codepoints), can
-   * only contain lowercase letters, numeric characters, underscores and dashes.
-   * International characters are allowed. See https://goo.gl/xmQnxf for more
-   * information and examples of labels.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -278,9 +169,7 @@ class GoogleCloudAiplatformV1CustomJob extends \Google\Model
     return $this->labels;
   }
   /**
-   * Output only. Resource name of a CustomJob.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -294,9 +183,7 @@ class GoogleCloudAiplatformV1CustomJob extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Reserved for future use.
-   *
-   * @param bool $satisfiesPzi
+   * @param bool
    */
   public function setSatisfiesPzi($satisfiesPzi)
   {
@@ -310,9 +197,7 @@ class GoogleCloudAiplatformV1CustomJob extends \Google\Model
     return $this->satisfiesPzi;
   }
   /**
-   * Output only. Reserved for future use.
-   *
-   * @param bool $satisfiesPzs
+   * @param bool
    */
   public function setSatisfiesPzs($satisfiesPzs)
   {
@@ -326,10 +211,7 @@ class GoogleCloudAiplatformV1CustomJob extends \Google\Model
     return $this->satisfiesPzs;
   }
   /**
-   * Output only. Time when the CustomJob for the first time entered the
-   * `JOB_STATE_RUNNING` state.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -343,31 +225,21 @@ class GoogleCloudAiplatformV1CustomJob extends \Google\Model
     return $this->startTime;
   }
   /**
-   * Output only. The detailed state of the job.
-   *
-   * Accepted values: JOB_STATE_UNSPECIFIED, JOB_STATE_QUEUED,
-   * JOB_STATE_PENDING, JOB_STATE_RUNNING, JOB_STATE_SUCCEEDED,
-   * JOB_STATE_FAILED, JOB_STATE_CANCELLING, JOB_STATE_CANCELLED,
-   * JOB_STATE_PAUSED, JOB_STATE_EXPIRED, JOB_STATE_UPDATING,
-   * JOB_STATE_PARTIALLY_SUCCEEDED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. Time when the CustomJob was most recently updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -381,16 +253,7 @@ class GoogleCloudAiplatformV1CustomJob extends \Google\Model
     return $this->updateTime;
   }
   /**
-   * Output only. URIs for accessing [interactive
-   * shells](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-
-   * interactive-shell) (one URI for each training node). Only available if
-   * job_spec.enable_web_access is `true`. The keys are names of each node in
-   * the training job; for example, `workerpool0-0` for the primary node,
-   * `workerpool1-0` for the first node in the second worker pool, and
-   * `workerpool1-1` for the second node in the second worker pool. The values
-   * are the URIs for each node's interactive shell.
-   *
-   * @param string[] $webAccessUris
+   * @param string[]
    */
   public function setWebAccessUris($webAccessUris)
   {

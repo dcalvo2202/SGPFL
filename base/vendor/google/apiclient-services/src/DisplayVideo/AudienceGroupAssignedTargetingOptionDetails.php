@@ -34,13 +34,7 @@ class AudienceGroupAssignedTargetingOptionDetails extends \Google\Collection
   protected $includedGoogleAudienceGroupDataType = '';
 
   /**
-   * Optional. The first party and partner audience ids and recencies of the
-   * excluded first party and partner audience group. Used for negative
-   * targeting. The COMPLEMENT of the UNION of this group and other excluded
-   * audience groups is used as an INTERSECTION to any positive audience
-   * targeting. All items are logically ‘OR’ of each other.
-   *
-   * @param FirstPartyAndPartnerAudienceGroup $excludedFirstPartyAndPartnerAudienceGroup
+   * @param FirstPartyAndPartnerAudienceGroup
    */
   public function setExcludedFirstPartyAndPartnerAudienceGroup(FirstPartyAndPartnerAudienceGroup $excludedFirstPartyAndPartnerAudienceGroup)
   {
@@ -54,13 +48,7 @@ class AudienceGroupAssignedTargetingOptionDetails extends \Google\Collection
     return $this->excludedFirstPartyAndPartnerAudienceGroup;
   }
   /**
-   * Optional. The Google audience ids of the excluded Google audience group.
-   * Used for negative targeting. The COMPLEMENT of the UNION of this group and
-   * other excluded audience groups is used as an INTERSECTION to any positive
-   * audience targeting. Only contains Affinity, In-market and Installed-apps
-   * type Google audiences. All items are logically ‘OR’ of each other.
-   *
-   * @param GoogleAudienceGroup $excludedGoogleAudienceGroup
+   * @param GoogleAudienceGroup
    */
   public function setExcludedGoogleAudienceGroup(GoogleAudienceGroup $excludedGoogleAudienceGroup)
   {
@@ -74,10 +62,7 @@ class AudienceGroupAssignedTargetingOptionDetails extends \Google\Collection
     return $this->excludedGoogleAudienceGroup;
   }
   /**
-   * Optional. The combined audience ids of the included combined audience
-   * group. Contains combined audience ids only.
-   *
-   * @param CombinedAudienceGroup $includedCombinedAudienceGroup
+   * @param CombinedAudienceGroup
    */
   public function setIncludedCombinedAudienceGroup(CombinedAudienceGroup $includedCombinedAudienceGroup)
   {
@@ -91,10 +76,7 @@ class AudienceGroupAssignedTargetingOptionDetails extends \Google\Collection
     return $this->includedCombinedAudienceGroup;
   }
   /**
-   * Optional. The custom list ids of the included custom list group. Contains
-   * custom list ids only.
-   *
-   * @param CustomListGroup $includedCustomListGroup
+   * @param CustomListGroup
    */
   public function setIncludedCustomListGroup(CustomListGroup $includedCustomListGroup)
   {
@@ -108,14 +90,7 @@ class AudienceGroupAssignedTargetingOptionDetails extends \Google\Collection
     return $this->includedCustomListGroup;
   }
   /**
-   * Optional. The first party and partner audience ids and recencies of
-   * included first party and partner audience groups. Each first party and
-   * partner audience group contains first party and partner audience ids only.
-   * The relation between each first party and partner audience group is
-   * INTERSECTION, and the result is UNION'ed with other audience groups.
-   * Repeated groups with the same settings will be ignored.
-   *
-   * @param FirstPartyAndPartnerAudienceGroup[] $includedFirstPartyAndPartnerAudienceGroups
+   * @param FirstPartyAndPartnerAudienceGroup[]
    */
   public function setIncludedFirstPartyAndPartnerAudienceGroups($includedFirstPartyAndPartnerAudienceGroups)
   {
@@ -129,10 +104,7 @@ class AudienceGroupAssignedTargetingOptionDetails extends \Google\Collection
     return $this->includedFirstPartyAndPartnerAudienceGroups;
   }
   /**
-   * Optional. The Google audience ids of the included Google audience group.
-   * Contains Google audience ids only.
-   *
-   * @param GoogleAudienceGroup $includedGoogleAudienceGroup
+   * @param GoogleAudienceGroup
    */
   public function setIncludedGoogleAudienceGroup(GoogleAudienceGroup $includedGoogleAudienceGroup)
   {

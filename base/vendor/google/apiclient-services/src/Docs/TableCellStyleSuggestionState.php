@@ -20,82 +20,56 @@ namespace Google\Service\Docs;
 class TableCellStyleSuggestionState extends \Google\Model
 {
   /**
-   * Indicates if there was a suggested change to background_color.
-   *
    * @var bool
    */
   public $backgroundColorSuggested;
   /**
-   * Indicates if there was a suggested change to border_bottom.
-   *
    * @var bool
    */
   public $borderBottomSuggested;
   /**
-   * Indicates if there was a suggested change to border_left.
-   *
    * @var bool
    */
   public $borderLeftSuggested;
   /**
-   * Indicates if there was a suggested change to border_right.
-   *
    * @var bool
    */
   public $borderRightSuggested;
   /**
-   * Indicates if there was a suggested change to border_top.
-   *
    * @var bool
    */
   public $borderTopSuggested;
   /**
-   * Indicates if there was a suggested change to column_span.
-   *
    * @var bool
    */
   public $columnSpanSuggested;
   /**
-   * Indicates if there was a suggested change to content_alignment.
-   *
    * @var bool
    */
   public $contentAlignmentSuggested;
   /**
-   * Indicates if there was a suggested change to padding_bottom.
-   *
    * @var bool
    */
   public $paddingBottomSuggested;
   /**
-   * Indicates if there was a suggested change to padding_left.
-   *
    * @var bool
    */
   public $paddingLeftSuggested;
   /**
-   * Indicates if there was a suggested change to padding_right.
-   *
    * @var bool
    */
   public $paddingRightSuggested;
   /**
-   * Indicates if there was a suggested change to padding_top.
-   *
    * @var bool
    */
   public $paddingTopSuggested;
   /**
-   * Indicates if there was a suggested change to row_span.
-   *
    * @var bool
    */
   public $rowSpanSuggested;
 
   /**
-   * Indicates if there was a suggested change to background_color.
-   *
-   * @param bool $backgroundColorSuggested
+   * @param bool
    */
   public function setBackgroundColorSuggested($backgroundColorSuggested)
   {
@@ -109,9 +83,7 @@ class TableCellStyleSuggestionState extends \Google\Model
     return $this->backgroundColorSuggested;
   }
   /**
-   * Indicates if there was a suggested change to border_bottom.
-   *
-   * @param bool $borderBottomSuggested
+   * @param bool
    */
   public function setBorderBottomSuggested($borderBottomSuggested)
   {
@@ -125,9 +97,7 @@ class TableCellStyleSuggestionState extends \Google\Model
     return $this->borderBottomSuggested;
   }
   /**
-   * Indicates if there was a suggested change to border_left.
-   *
-   * @param bool $borderLeftSuggested
+   * @param bool
    */
   public function setBorderLeftSuggested($borderLeftSuggested)
   {
@@ -141,9 +111,7 @@ class TableCellStyleSuggestionState extends \Google\Model
     return $this->borderLeftSuggested;
   }
   /**
-   * Indicates if there was a suggested change to border_right.
-   *
-   * @param bool $borderRightSuggested
+   * @param bool
    */
   public function setBorderRightSuggested($borderRightSuggested)
   {
@@ -157,9 +125,7 @@ class TableCellStyleSuggestionState extends \Google\Model
     return $this->borderRightSuggested;
   }
   /**
-   * Indicates if there was a suggested change to border_top.
-   *
-   * @param bool $borderTopSuggested
+   * @param bool
    */
   public function setBorderTopSuggested($borderTopSuggested)
   {
@@ -173,9 +139,7 @@ class TableCellStyleSuggestionState extends \Google\Model
     return $this->borderTopSuggested;
   }
   /**
-   * Indicates if there was a suggested change to column_span.
-   *
-   * @param bool $columnSpanSuggested
+   * @param bool
    */
   public function setColumnSpanSuggested($columnSpanSuggested)
   {
@@ -189,9 +153,7 @@ class TableCellStyleSuggestionState extends \Google\Model
     return $this->columnSpanSuggested;
   }
   /**
-   * Indicates if there was a suggested change to content_alignment.
-   *
-   * @param bool $contentAlignmentSuggested
+   * @param bool
    */
   public function setContentAlignmentSuggested($contentAlignmentSuggested)
   {
@@ -205,9 +167,7 @@ class TableCellStyleSuggestionState extends \Google\Model
     return $this->contentAlignmentSuggested;
   }
   /**
-   * Indicates if there was a suggested change to padding_bottom.
-   *
-   * @param bool $paddingBottomSuggested
+   * @param bool
    */
   public function setPaddingBottomSuggested($paddingBottomSuggested)
   {
@@ -221,9 +181,7 @@ class TableCellStyleSuggestionState extends \Google\Model
     return $this->paddingBottomSuggested;
   }
   /**
-   * Indicates if there was a suggested change to padding_left.
-   *
-   * @param bool $paddingLeftSuggested
+   * @param bool
    */
   public function setPaddingLeftSuggested($paddingLeftSuggested)
   {
@@ -237,9 +195,7 @@ class TableCellStyleSuggestionState extends \Google\Model
     return $this->paddingLeftSuggested;
   }
   /**
-   * Indicates if there was a suggested change to padding_right.
-   *
-   * @param bool $paddingRightSuggested
+   * @param bool
    */
   public function setPaddingRightSuggested($paddingRightSuggested)
   {
@@ -253,9 +209,7 @@ class TableCellStyleSuggestionState extends \Google\Model
     return $this->paddingRightSuggested;
   }
   /**
-   * Indicates if there was a suggested change to padding_top.
-   *
-   * @param bool $paddingTopSuggested
+   * @param bool
    */
   public function setPaddingTopSuggested($paddingTopSuggested)
   {
@@ -269,9 +223,7 @@ class TableCellStyleSuggestionState extends \Google\Model
     return $this->paddingTopSuggested;
   }
   /**
-   * Indicates if there was a suggested change to row_span.
-   *
-   * @param bool $rowSpanSuggested
+   * @param bool
    */
   public function setRowSpanSuggested($rowSpanSuggested)
   {

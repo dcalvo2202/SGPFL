@@ -22,16 +22,12 @@ class ImportRowErrorArchiveErrorDetails extends \Google\Model
   protected $csvErrorType = ImportRowErrorCsvErrorDetails::class;
   protected $csvErrorDataType = '';
   /**
-   * Output only. The file path inside the archive where the error was detected.
-   *
    * @var string
    */
   public $filePath;
 
   /**
-   * Error details for a CSV file.
-   *
-   * @param ImportRowErrorCsvErrorDetails $csvError
+   * @param ImportRowErrorCsvErrorDetails
    */
   public function setCsvError(ImportRowErrorCsvErrorDetails $csvError)
   {
@@ -45,9 +41,7 @@ class ImportRowErrorArchiveErrorDetails extends \Google\Model
     return $this->csvError;
   }
   /**
-   * Output only. The file path inside the archive where the error was detected.
-   *
-   * @param string $filePath
+   * @param string
    */
   public function setFilePath($filePath)
   {

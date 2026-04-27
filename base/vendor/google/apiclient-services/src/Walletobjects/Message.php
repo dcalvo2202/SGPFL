@@ -19,61 +19,21 @@ namespace Google\Service\Walletobjects;
 
 class Message extends \Google\Model
 {
-  public const MESSAGE_TYPE_MESSAGE_TYPE_UNSPECIFIED = 'MESSAGE_TYPE_UNSPECIFIED';
   /**
-   * Renders the message as text on the card details screen. This is the default
-   * message type.
-   */
-  public const MESSAGE_TYPE_TEXT = 'TEXT';
-  /**
-   * Legacy alias for `TEXT`. Deprecated.
-   *
-   * @deprecated
-   */
-  public const MESSAGE_TYPE_text = 'text';
-  /**
-   * Note: This enum is currently not supported.
-   */
-  public const MESSAGE_TYPE_EXPIRATION_NOTIFICATION = 'EXPIRATION_NOTIFICATION';
-  /**
-   * Legacy alias for `EXPIRATION_NOTIFICATION`. Deprecated.
-   *
-   * @deprecated
-   */
-  public const MESSAGE_TYPE_expirationNotification = 'expirationNotification';
-  /**
-   * Renders the message as text on the card details screen and as an Android
-   * notification.
-   */
-  public const MESSAGE_TYPE_TEXT_AND_NOTIFY = 'TEXT_AND_NOTIFY';
-  /**
-   * The message body.
-   *
    * @var string
    */
   public $body;
   protected $displayIntervalType = TimeInterval::class;
   protected $displayIntervalDataType = '';
   /**
-   * The message header.
-   *
    * @var string
    */
   public $header;
   /**
-   * The ID associated with a message. This field is here to enable ease of
-   * management of messages. Notice ID values could possibly duplicate across
-   * multiple messages in the same class/instance, and care must be taken to
-   * select a reasonable ID for each message.
-   *
    * @var string
    */
   public $id;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * `"walletobjects#walletObjectMessage"`.
-   *
-   * @deprecated
    * @var string
    */
   public $kind;
@@ -82,16 +42,12 @@ class Message extends \Google\Model
   protected $localizedHeaderType = LocalizedString::class;
   protected $localizedHeaderDataType = '';
   /**
-   * The message type.
-   *
    * @var string
    */
   public $messageType;
 
   /**
-   * The message body.
-   *
-   * @param string $body
+   * @param string
    */
   public function setBody($body)
   {
@@ -105,13 +61,7 @@ class Message extends \Google\Model
     return $this->body;
   }
   /**
-   * The period of time that the message will be displayed to users. You can
-   * define both a `startTime` and `endTime` for each message. A message is
-   * displayed immediately after a Wallet Object is inserted unless a
-   * `startTime` is set. The message will appear in a list of messages
-   * indefinitely if `endTime` is not provided.
-   *
-   * @param TimeInterval $displayInterval
+   * @param TimeInterval
    */
   public function setDisplayInterval(TimeInterval $displayInterval)
   {
@@ -125,9 +75,7 @@ class Message extends \Google\Model
     return $this->displayInterval;
   }
   /**
-   * The message header.
-   *
-   * @param string $header
+   * @param string
    */
   public function setHeader($header)
   {
@@ -141,12 +89,7 @@ class Message extends \Google\Model
     return $this->header;
   }
   /**
-   * The ID associated with a message. This field is here to enable ease of
-   * management of messages. Notice ID values could possibly duplicate across
-   * multiple messages in the same class/instance, and care must be taken to
-   * select a reasonable ID for each message.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -160,18 +103,13 @@ class Message extends \Google\Model
     return $this->id;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * `"walletobjects#walletObjectMessage"`.
-   *
-   * @deprecated
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
     $this->kind = $kind;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getKind()
@@ -179,9 +117,7 @@ class Message extends \Google\Model
     return $this->kind;
   }
   /**
-   * Translated strings for the message body.
-   *
-   * @param LocalizedString $localizedBody
+   * @param LocalizedString
    */
   public function setLocalizedBody(LocalizedString $localizedBody)
   {
@@ -195,9 +131,7 @@ class Message extends \Google\Model
     return $this->localizedBody;
   }
   /**
-   * Translated strings for the message header.
-   *
-   * @param LocalizedString $localizedHeader
+   * @param LocalizedString
    */
   public function setLocalizedHeader(LocalizedString $localizedHeader)
   {
@@ -211,19 +145,14 @@ class Message extends \Google\Model
     return $this->localizedHeader;
   }
   /**
-   * The message type.
-   *
-   * Accepted values: MESSAGE_TYPE_UNSPECIFIED, TEXT, text,
-   * EXPIRATION_NOTIFICATION, expirationNotification, TEXT_AND_NOTIFY
-   *
-   * @param self::MESSAGE_TYPE_* $messageType
+   * @param string
    */
   public function setMessageType($messageType)
   {
     $this->messageType = $messageType;
   }
   /**
-   * @return self::MESSAGE_TYPE_*
+   * @return string
    */
   public function getMessageType()
   {

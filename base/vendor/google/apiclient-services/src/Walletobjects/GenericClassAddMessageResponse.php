@@ -23,9 +23,7 @@ class GenericClassAddMessageResponse extends \Google\Model
   protected $resourceDataType = '';
 
   /**
-   * The updated EventTicketClass resource.
-   *
-   * @param GenericClass $resource
+   * @param GenericClass
    */
   public function setResource(GenericClass $resource)
   {

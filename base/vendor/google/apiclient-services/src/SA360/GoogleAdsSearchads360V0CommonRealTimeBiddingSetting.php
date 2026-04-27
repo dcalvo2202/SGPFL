@@ -20,16 +20,12 @@ namespace Google\Service\SA360;
 class GoogleAdsSearchads360V0CommonRealTimeBiddingSetting extends \Google\Model
 {
   /**
-   * Whether the campaign is opted in to real-time bidding.
-   *
    * @var bool
    */
   public $optIn;
 
   /**
-   * Whether the campaign is opted in to real-time bidding.
-   *
-   * @param bool $optIn
+   * @param bool
    */
   public function setOptIn($optIn)
   {

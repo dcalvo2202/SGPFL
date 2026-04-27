@@ -23,10 +23,7 @@ class GooglePrivacyDlpV2NumericalStatsConfig extends \Google\Model
   protected $fieldDataType = '';
 
   /**
-   * Field to compute numerical stats on. Supported types are integer, float,
-   * date, datetime, timestamp, time.
-   *
-   * @param GooglePrivacyDlpV2FieldId $field
+   * @param GooglePrivacyDlpV2FieldId
    */
   public function setField(GooglePrivacyDlpV2FieldId $field)
   {

@@ -19,78 +19,52 @@ namespace Google\Service\Compute;
 
 class Zone extends \Google\Collection
 {
-  public const STATUS_DOWN = 'DOWN';
-  public const STATUS_UP = 'UP';
   protected $collection_key = 'availableCpuPlatforms';
   /**
-   * [Output Only] Available cpu/platform selections for the zone.
-   *
    * @var string[]
    */
   public $availableCpuPlatforms;
   /**
-   * [Output Only] Creation timestamp inRFC3339 text format.
-   *
    * @var string
    */
   public $creationTimestamp;
   protected $deprecatedType = DeprecationStatus::class;
   protected $deprecatedDataType = '';
   /**
-   * [Output Only] Textual description of the resource.
-   *
    * @var string
    */
   public $description;
   /**
-   * [Output Only] The unique identifier for the resource. This identifier is
-   * defined by the server.
-   *
    * @var string
    */
   public $id;
   /**
-   * Output only. [Output Only] Type of the resource. Always compute#zone for
-   * zones.
-   *
    * @var string
    */
   public $kind;
   /**
-   * [Output Only] Name of the resource.
-   *
    * @var string
    */
   public $name;
   /**
-   * [Output Only] Full URL reference to the region which hosts the zone.
-   *
    * @var string
    */
   public $region;
   /**
-   * [Output Only] Server-defined URL for the resource.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * [Output Only] Status of the zone, either UP orDOWN.
-   *
    * @var string
    */
   public $status;
   /**
-   * Output only. [Output Only] Reserved for future use.
-   *
    * @var bool
    */
   public $supportsPzs;
 
   /**
-   * [Output Only] Available cpu/platform selections for the zone.
-   *
-   * @param string[] $availableCpuPlatforms
+   * @param string[]
    */
   public function setAvailableCpuPlatforms($availableCpuPlatforms)
   {
@@ -104,9 +78,7 @@ class Zone extends \Google\Collection
     return $this->availableCpuPlatforms;
   }
   /**
-   * [Output Only] Creation timestamp inRFC3339 text format.
-   *
-   * @param string $creationTimestamp
+   * @param string
    */
   public function setCreationTimestamp($creationTimestamp)
   {
@@ -120,9 +92,7 @@ class Zone extends \Google\Collection
     return $this->creationTimestamp;
   }
   /**
-   * [Output Only] The deprecation status associated with this zone.
-   *
-   * @param DeprecationStatus $deprecated
+   * @param DeprecationStatus
    */
   public function setDeprecated(DeprecationStatus $deprecated)
   {
@@ -136,9 +106,7 @@ class Zone extends \Google\Collection
     return $this->deprecated;
   }
   /**
-   * [Output Only] Textual description of the resource.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -152,10 +120,7 @@ class Zone extends \Google\Collection
     return $this->description;
   }
   /**
-   * [Output Only] The unique identifier for the resource. This identifier is
-   * defined by the server.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -169,10 +134,7 @@ class Zone extends \Google\Collection
     return $this->id;
   }
   /**
-   * Output only. [Output Only] Type of the resource. Always compute#zone for
-   * zones.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -186,9 +148,7 @@ class Zone extends \Google\Collection
     return $this->kind;
   }
   /**
-   * [Output Only] Name of the resource.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -202,9 +162,7 @@ class Zone extends \Google\Collection
     return $this->name;
   }
   /**
-   * [Output Only] Full URL reference to the region which hosts the zone.
-   *
-   * @param string $region
+   * @param string
    */
   public function setRegion($region)
   {
@@ -218,9 +176,7 @@ class Zone extends \Google\Collection
     return $this->region;
   }
   /**
-   * [Output Only] Server-defined URL for the resource.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -234,27 +190,21 @@ class Zone extends \Google\Collection
     return $this->selfLink;
   }
   /**
-   * [Output Only] Status of the zone, either UP orDOWN.
-   *
-   * Accepted values: DOWN, UP
-   *
-   * @param self::STATUS_* $status
+   * @param string
    */
   public function setStatus($status)
   {
     $this->status = $status;
   }
   /**
-   * @return self::STATUS_*
+   * @return string
    */
   public function getStatus()
   {
     return $this->status;
   }
   /**
-   * Output only. [Output Only] Reserved for future use.
-   *
-   * @param bool $supportsPzs
+   * @param bool
    */
   public function setSupportsPzs($supportsPzs)
   {

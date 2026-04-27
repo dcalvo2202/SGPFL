@@ -50,7 +50,7 @@ class EnterpriseCrmEventbusProtoParameterValueType extends \Google\Model
   public $stringValue;
 
   /**
-   * @param EnterpriseCrmEventbusProtoBooleanParameterArray $booleanArray
+   * @param EnterpriseCrmEventbusProtoBooleanParameterArray
    */
   public function setBooleanArray(EnterpriseCrmEventbusProtoBooleanParameterArray $booleanArray)
   {
@@ -64,7 +64,7 @@ class EnterpriseCrmEventbusProtoParameterValueType extends \Google\Model
     return $this->booleanArray;
   }
   /**
-   * @param bool $booleanValue
+   * @param bool
    */
   public function setBooleanValue($booleanValue)
   {
@@ -78,7 +78,7 @@ class EnterpriseCrmEventbusProtoParameterValueType extends \Google\Model
     return $this->booleanValue;
   }
   /**
-   * @param EnterpriseCrmEventbusProtoDoubleParameterArray $doubleArray
+   * @param EnterpriseCrmEventbusProtoDoubleParameterArray
    */
   public function setDoubleArray(EnterpriseCrmEventbusProtoDoubleParameterArray $doubleArray)
   {
@@ -100,7 +100,7 @@ class EnterpriseCrmEventbusProtoParameterValueType extends \Google\Model
     return $this->doubleValue;
   }
   /**
-   * @param EnterpriseCrmEventbusProtoIntParameterArray $intArray
+   * @param EnterpriseCrmEventbusProtoIntParameterArray
    */
   public function setIntArray(EnterpriseCrmEventbusProtoIntParameterArray $intArray)
   {
@@ -114,7 +114,7 @@ class EnterpriseCrmEventbusProtoParameterValueType extends \Google\Model
     return $this->intArray;
   }
   /**
-   * @param string $intValue
+   * @param string
    */
   public function setIntValue($intValue)
   {
@@ -128,7 +128,7 @@ class EnterpriseCrmEventbusProtoParameterValueType extends \Google\Model
     return $this->intValue;
   }
   /**
-   * @param EnterpriseCrmEventbusProtoProtoParameterArray $protoArray
+   * @param EnterpriseCrmEventbusProtoProtoParameterArray
    */
   public function setProtoArray(EnterpriseCrmEventbusProtoProtoParameterArray $protoArray)
   {
@@ -142,7 +142,7 @@ class EnterpriseCrmEventbusProtoParameterValueType extends \Google\Model
     return $this->protoArray;
   }
   /**
-   * @param array[] $protoValue
+   * @param array[]
    */
   public function setProtoValue($protoValue)
   {
@@ -156,7 +156,7 @@ class EnterpriseCrmEventbusProtoParameterValueType extends \Google\Model
     return $this->protoValue;
   }
   /**
-   * @param EnterpriseCrmEventbusProtoSerializedObjectParameter $serializedObjectValue
+   * @param EnterpriseCrmEventbusProtoSerializedObjectParameter
    */
   public function setSerializedObjectValue(EnterpriseCrmEventbusProtoSerializedObjectParameter $serializedObjectValue)
   {
@@ -170,7 +170,7 @@ class EnterpriseCrmEventbusProtoParameterValueType extends \Google\Model
     return $this->serializedObjectValue;
   }
   /**
-   * @param EnterpriseCrmEventbusProtoStringParameterArray $stringArray
+   * @param EnterpriseCrmEventbusProtoStringParameterArray
    */
   public function setStringArray(EnterpriseCrmEventbusProtoStringParameterArray $stringArray)
   {
@@ -184,7 +184,7 @@ class EnterpriseCrmEventbusProtoParameterValueType extends \Google\Model
     return $this->stringArray;
   }
   /**
-   * @param string $stringValue
+   * @param string
    */
   public function setStringValue($stringValue)
   {

@@ -17,32 +17,15 @@
 
 namespace Google\Service\Compute;
 
-class InstanceGroupManagerStatus extends \Google\Collection
+class InstanceGroupManagerStatus extends \Google\Model
 {
-  protected $collection_key = 'appliedAcceleratorTopologies';
   protected $allInstancesConfigType = InstanceGroupManagerStatusAllInstancesConfig::class;
   protected $allInstancesConfigDataType = '';
-  protected $appliedAcceleratorTopologiesType = InstanceGroupManagerStatusAcceleratorTopology::class;
-  protected $appliedAcceleratorTopologiesDataType = 'array';
   /**
-   * Output only. The URL of theAutoscaler that targets this instance group
-   * manager.
-   *
    * @var string
    */
   public $autoscaler;
-  protected $bulkInstanceOperationType = InstanceGroupManagerStatusBulkInstanceOperation::class;
-  protected $bulkInstanceOperationDataType = '';
-  protected $currentInstanceStatusesType = InstanceGroupManagerStatusInstanceStatusSummary::class;
-  protected $currentInstanceStatusesDataType = '';
   /**
-   * Output only. A bit indicating whether the managed instance group is in a
-   * stable state. A stable state means that: none of the instances in the
-   * managed instance group is currently undergoing any type of change (for
-   * example, creation, restart, or deletion); no future changes are scheduled
-   * for instances in the managed instance group; and the managed instance group
-   * itself is not being modified.
-   *
    * @var bool
    */
   public $isStable;
@@ -52,9 +35,7 @@ class InstanceGroupManagerStatus extends \Google\Collection
   protected $versionTargetDataType = '';
 
   /**
-   * Output only. Status of all-instances configuration on the group.
-   *
-   * @param InstanceGroupManagerStatusAllInstancesConfig $allInstancesConfig
+   * @param InstanceGroupManagerStatusAllInstancesConfig
    */
   public function setAllInstancesConfig(InstanceGroupManagerStatusAllInstancesConfig $allInstancesConfig)
   {
@@ -68,27 +49,7 @@ class InstanceGroupManagerStatus extends \Google\Collection
     return $this->allInstancesConfig;
   }
   /**
-   * Output only. The accelerator topology applied to this MIG. Currently only
-   * one accelerator topology is supported.
-   *
-   * @param InstanceGroupManagerStatusAcceleratorTopology[] $appliedAcceleratorTopologies
-   */
-  public function setAppliedAcceleratorTopologies($appliedAcceleratorTopologies)
-  {
-    $this->appliedAcceleratorTopologies = $appliedAcceleratorTopologies;
-  }
-  /**
-   * @return InstanceGroupManagerStatusAcceleratorTopology[]
-   */
-  public function getAppliedAcceleratorTopologies()
-  {
-    return $this->appliedAcceleratorTopologies;
-  }
-  /**
-   * Output only. The URL of theAutoscaler that targets this instance group
-   * manager.
-   *
-   * @param string $autoscaler
+   * @param string
    */
   public function setAutoscaler($autoscaler)
   {
@@ -102,48 +63,7 @@ class InstanceGroupManagerStatus extends \Google\Collection
     return $this->autoscaler;
   }
   /**
-   * Output only. The status of bulk instance operation.
-   *
-   * @param InstanceGroupManagerStatusBulkInstanceOperation $bulkInstanceOperation
-   */
-  public function setBulkInstanceOperation(InstanceGroupManagerStatusBulkInstanceOperation $bulkInstanceOperation)
-  {
-    $this->bulkInstanceOperation = $bulkInstanceOperation;
-  }
-  /**
-   * @return InstanceGroupManagerStatusBulkInstanceOperation
-   */
-  public function getBulkInstanceOperation()
-  {
-    return $this->bulkInstanceOperation;
-  }
-  /**
-   * Output only. The list of instance statuses and the number of instances in
-   * this managed instance group that have the status. Currently only shown for
-   * TPU MIGs
-   *
-   * @param InstanceGroupManagerStatusInstanceStatusSummary $currentInstanceStatuses
-   */
-  public function setCurrentInstanceStatuses(InstanceGroupManagerStatusInstanceStatusSummary $currentInstanceStatuses)
-  {
-    $this->currentInstanceStatuses = $currentInstanceStatuses;
-  }
-  /**
-   * @return InstanceGroupManagerStatusInstanceStatusSummary
-   */
-  public function getCurrentInstanceStatuses()
-  {
-    return $this->currentInstanceStatuses;
-  }
-  /**
-   * Output only. A bit indicating whether the managed instance group is in a
-   * stable state. A stable state means that: none of the instances in the
-   * managed instance group is currently undergoing any type of change (for
-   * example, creation, restart, or deletion); no future changes are scheduled
-   * for instances in the managed instance group; and the managed instance group
-   * itself is not being modified.
-   *
-   * @param bool $isStable
+   * @param bool
    */
   public function setIsStable($isStable)
   {
@@ -157,9 +77,7 @@ class InstanceGroupManagerStatus extends \Google\Collection
     return $this->isStable;
   }
   /**
-   * Output only. Stateful status of the given Instance Group Manager.
-   *
-   * @param InstanceGroupManagerStatusStateful $stateful
+   * @param InstanceGroupManagerStatusStateful
    */
   public function setStateful(InstanceGroupManagerStatusStateful $stateful)
   {
@@ -173,10 +91,7 @@ class InstanceGroupManagerStatus extends \Google\Collection
     return $this->stateful;
   }
   /**
-   * Output only. A status of consistency of Instances' versions with their
-   * target version specified by version field on Instance Group Manager.
-   *
-   * @param InstanceGroupManagerStatusVersionTarget $versionTarget
+   * @param InstanceGroupManagerStatusVersionTarget
    */
   public function setVersionTarget(InstanceGroupManagerStatusVersionTarget $versionTarget)
   {

@@ -21,43 +21,30 @@ class UserPageLoadMetricV5 extends \Google\Collection
 {
   protected $collection_key = 'distributions';
   /**
-   * The category of the specific time metric.
-   *
    * @var string
    */
   public $category;
   protected $distributionsType = Bucket::class;
   protected $distributionsDataType = 'array';
   /**
-   * Identifies the form factor of the metric being collected.
-   *
    * @var string
    */
   public $formFactor;
   /**
-   * The median number of the metric, in millisecond.
-   *
    * @var int
    */
   public $median;
   /**
-   * Identifies the type of the metric.
-   *
    * @var string
    */
   public $metricId;
   /**
-   * We use this field to store certain percentile value for this metric. For
-   * v4, this field contains pc50. For v5, this field contains pc90.
-   *
    * @var int
    */
   public $percentile;
 
   /**
-   * The category of the specific time metric.
-   *
-   * @param string $category
+   * @param string
    */
   public function setCategory($category)
   {
@@ -71,9 +58,7 @@ class UserPageLoadMetricV5 extends \Google\Collection
     return $this->category;
   }
   /**
-   * Metric distributions. Proportions should sum up to 1.
-   *
-   * @param Bucket[] $distributions
+   * @param Bucket[]
    */
   public function setDistributions($distributions)
   {
@@ -87,9 +72,7 @@ class UserPageLoadMetricV5 extends \Google\Collection
     return $this->distributions;
   }
   /**
-   * Identifies the form factor of the metric being collected.
-   *
-   * @param string $formFactor
+   * @param string
    */
   public function setFormFactor($formFactor)
   {
@@ -103,9 +86,7 @@ class UserPageLoadMetricV5 extends \Google\Collection
     return $this->formFactor;
   }
   /**
-   * The median number of the metric, in millisecond.
-   *
-   * @param int $median
+   * @param int
    */
   public function setMedian($median)
   {
@@ -119,9 +100,7 @@ class UserPageLoadMetricV5 extends \Google\Collection
     return $this->median;
   }
   /**
-   * Identifies the type of the metric.
-   *
-   * @param string $metricId
+   * @param string
    */
   public function setMetricId($metricId)
   {
@@ -135,10 +114,7 @@ class UserPageLoadMetricV5 extends \Google\Collection
     return $this->metricId;
   }
   /**
-   * We use this field to store certain percentile value for this metric. For
-   * v4, this field contains pc50. For v5, this field contains pc90.
-   *
-   * @param int $percentile
+   * @param int
    */
   public function setPercentile($percentile)
   {

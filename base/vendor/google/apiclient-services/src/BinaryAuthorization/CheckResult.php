@@ -22,37 +22,26 @@ class CheckResult extends \Google\Model
   protected $allowlistResultType = AllowlistResult::class;
   protected $allowlistResultDataType = '';
   /**
-   * The name of the check.
-   *
    * @var string
    */
   public $displayName;
   protected $evaluationResultType = EvaluationResult::class;
   protected $evaluationResultDataType = '';
   /**
-   * Explanation of this check result.
-   *
    * @var string
    */
   public $explanation;
   /**
-   * The index of the check.
-   *
    * @var string
    */
   public $index;
   /**
-   * The type of the check.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * If the image was exempted by an allow_pattern in the check, contains the
-   * pattern that the image name matched.
-   *
-   * @param AllowlistResult $allowlistResult
+   * @param AllowlistResult
    */
   public function setAllowlistResult(AllowlistResult $allowlistResult)
   {
@@ -66,9 +55,7 @@ class CheckResult extends \Google\Model
     return $this->allowlistResult;
   }
   /**
-   * The name of the check.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -82,9 +69,7 @@ class CheckResult extends \Google\Model
     return $this->displayName;
   }
   /**
-   * If a check was evaluated, contains the result of the check.
-   *
-   * @param EvaluationResult $evaluationResult
+   * @param EvaluationResult
    */
   public function setEvaluationResult(EvaluationResult $evaluationResult)
   {
@@ -98,9 +83,7 @@ class CheckResult extends \Google\Model
     return $this->evaluationResult;
   }
   /**
-   * Explanation of this check result.
-   *
-   * @param string $explanation
+   * @param string
    */
   public function setExplanation($explanation)
   {
@@ -114,9 +97,7 @@ class CheckResult extends \Google\Model
     return $this->explanation;
   }
   /**
-   * The index of the check.
-   *
-   * @param string $index
+   * @param string
    */
   public function setIndex($index)
   {
@@ -130,9 +111,7 @@ class CheckResult extends \Google\Model
     return $this->index;
   }
   /**
-   * The type of the check.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

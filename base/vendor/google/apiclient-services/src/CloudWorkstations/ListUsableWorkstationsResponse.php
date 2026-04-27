@@ -21,15 +21,10 @@ class ListUsableWorkstationsResponse extends \Google\Collection
 {
   protected $collection_key = 'workstations';
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Unreachable resources.
-   *
    * @var string[]
    */
   public $unreachable;
@@ -37,10 +32,7 @@ class ListUsableWorkstationsResponse extends \Google\Collection
   protected $workstationsDataType = 'array';
 
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -54,9 +46,7 @@ class ListUsableWorkstationsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Unreachable resources.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {
@@ -70,9 +60,7 @@ class ListUsableWorkstationsResponse extends \Google\Collection
     return $this->unreachable;
   }
   /**
-   * The requested workstations.
-   *
-   * @param Workstation[] $workstations
+   * @param Workstation[]
    */
   public function setWorkstations($workstations)
   {

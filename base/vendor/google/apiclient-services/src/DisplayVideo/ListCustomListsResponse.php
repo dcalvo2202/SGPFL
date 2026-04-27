@@ -23,18 +23,12 @@ class ListCustomListsResponse extends \Google\Collection
   protected $customListsType = CustomList::class;
   protected $customListsDataType = 'array';
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * page_token field in the subsequent call to `ListCustomLists` method to
-   * retrieve the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of custom lists. This list will be absent if empty.
-   *
-   * @param CustomList[] $customLists
+   * @param CustomList[]
    */
   public function setCustomLists($customLists)
   {
@@ -48,11 +42,7 @@ class ListCustomListsResponse extends \Google\Collection
     return $this->customLists;
   }
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * page_token field in the subsequent call to `ListCustomLists` method to
-   * retrieve the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

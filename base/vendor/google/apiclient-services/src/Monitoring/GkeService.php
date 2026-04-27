@@ -20,42 +20,28 @@ namespace Google\Service\Monitoring;
 class GkeService extends \Google\Model
 {
   /**
-   * The name of the parent cluster.
-   *
    * @var string
    */
   public $clusterName;
   /**
-   * The location of the parent cluster. This may be a zone or region.
-   *
    * @var string
    */
   public $location;
   /**
-   * The name of the parent namespace.
-   *
    * @var string
    */
   public $namespaceName;
   /**
-   * Output only. The project this resource lives in. For legacy services
-   * migrated from the Custom type, this may be a distinct project from the one
-   * parenting the service itself.
-   *
    * @var string
    */
   public $projectId;
   /**
-   * The name of this service.
-   *
    * @var string
    */
   public $serviceName;
 
   /**
-   * The name of the parent cluster.
-   *
-   * @param string $clusterName
+   * @param string
    */
   public function setClusterName($clusterName)
   {
@@ -69,9 +55,7 @@ class GkeService extends \Google\Model
     return $this->clusterName;
   }
   /**
-   * The location of the parent cluster. This may be a zone or region.
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -85,9 +69,7 @@ class GkeService extends \Google\Model
     return $this->location;
   }
   /**
-   * The name of the parent namespace.
-   *
-   * @param string $namespaceName
+   * @param string
    */
   public function setNamespaceName($namespaceName)
   {
@@ -101,11 +83,7 @@ class GkeService extends \Google\Model
     return $this->namespaceName;
   }
   /**
-   * Output only. The project this resource lives in. For legacy services
-   * migrated from the Custom type, this may be a distinct project from the one
-   * parenting the service itself.
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {
@@ -119,9 +97,7 @@ class GkeService extends \Google\Model
     return $this->projectId;
   }
   /**
-   * The name of this service.
-   *
-   * @param string $serviceName
+   * @param string
    */
   public function setServiceName($serviceName)
   {

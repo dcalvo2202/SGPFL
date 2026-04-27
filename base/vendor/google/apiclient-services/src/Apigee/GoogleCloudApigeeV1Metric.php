@@ -21,23 +21,16 @@ class GoogleCloudApigeeV1Metric extends \Google\Collection
 {
   protected $collection_key = 'values';
   /**
-   * Metric name.
-   *
    * @var string
    */
   public $name;
   /**
-   * List of metric values. Possible value formats include: `"values":["39.0"]`
-   * or `"values":[ { "value": "39.0", "timestamp": 1232434354} ]`
-   *
    * @var array[]
    */
   public $values;
 
   /**
-   * Metric name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -51,10 +44,7 @@ class GoogleCloudApigeeV1Metric extends \Google\Collection
     return $this->name;
   }
   /**
-   * List of metric values. Possible value formats include: `"values":["39.0"]`
-   * or `"values":[ { "value": "39.0", "timestamp": 1232434354} ]`
-   *
-   * @param array[] $values
+   * @param array[]
    */
   public function setValues($values)
   {

@@ -20,28 +20,18 @@ namespace Google\Service\Dataform;
 class ScheduledReleaseRecord extends \Google\Model
 {
   /**
-   * The name of the created compilation result, if one was successfully
-   * created. Must be in the format
-   * `projects/locations/repositories/compilationResults`.
-   *
    * @var string
    */
   public $compilationResult;
   protected $errorStatusType = Status::class;
   protected $errorStatusDataType = '';
   /**
-   * Output only. The timestamp of this release attempt.
-   *
    * @var string
    */
   public $releaseTime;
 
   /**
-   * The name of the created compilation result, if one was successfully
-   * created. Must be in the format
-   * `projects/locations/repositories/compilationResults`.
-   *
-   * @param string $compilationResult
+   * @param string
    */
   public function setCompilationResult($compilationResult)
   {
@@ -55,10 +45,7 @@ class ScheduledReleaseRecord extends \Google\Model
     return $this->compilationResult;
   }
   /**
-   * The error status encountered upon this attempt to create the compilation
-   * result, if the attempt was unsuccessful.
-   *
-   * @param Status $errorStatus
+   * @param Status
    */
   public function setErrorStatus(Status $errorStatus)
   {
@@ -72,9 +59,7 @@ class ScheduledReleaseRecord extends \Google\Model
     return $this->errorStatus;
   }
   /**
-   * Output only. The timestamp of this release attempt.
-   *
-   * @param string $releaseTime
+   * @param string
    */
   public function setReleaseTime($releaseTime)
   {

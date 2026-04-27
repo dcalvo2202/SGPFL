@@ -20,22 +20,16 @@ namespace Google\Service\AlertCenter;
 class AppSettingsChanged extends \Google\Model
 {
   /**
-   * Any other associated alert details, for example, AlertConfiguration.
-   *
    * @var string
    */
   public $alertDetails;
   /**
-   * Rule name
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Any other associated alert details, for example, AlertConfiguration.
-   *
-   * @param string $alertDetails
+   * @param string
    */
   public function setAlertDetails($alertDetails)
   {
@@ -49,9 +43,7 @@ class AppSettingsChanged extends \Google\Model
     return $this->alertDetails;
   }
   /**
-   * Rule name
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

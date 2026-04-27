@@ -20,54 +20,28 @@ namespace Google\Service\Contactcenterinsights;
 class GoogleCloudContactcenterinsightsV1AuthorizedView extends \Google\Model
 {
   /**
-   * A filter to reduce conversation results to a specific subset. The
-   * AuthorizedView's assigned permission (read/write) could be applied to the
-   * subset of conversations. If conversation_filter is empty, there is no
-   * restriction on the conversations that the AuthorizedView can access. Having
-   * *authorizedViews.get* access to the AuthorizedView means having the same
-   * read/write access to the Conversations (as well as metadata/annotations
-   * linked to the conversation) that this AuthorizedView has.
-   *
    * @var string
    */
   public $conversationFilter;
   /**
-   * Output only. The time at which the authorized view was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Display Name. Limit 64 characters.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Identifier. The resource name of the AuthorizedView. Format: projects/{proj
-   * ect}/locations/{location}/authorizedViewSets/{authorized_view_set}/authoriz
-   * edViews/{authorized_view}
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The most recent time at which the authorized view was updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * A filter to reduce conversation results to a specific subset. The
-   * AuthorizedView's assigned permission (read/write) could be applied to the
-   * subset of conversations. If conversation_filter is empty, there is no
-   * restriction on the conversations that the AuthorizedView can access. Having
-   * *authorizedViews.get* access to the AuthorizedView means having the same
-   * read/write access to the Conversations (as well as metadata/annotations
-   * linked to the conversation) that this AuthorizedView has.
-   *
-   * @param string $conversationFilter
+   * @param string
    */
   public function setConversationFilter($conversationFilter)
   {
@@ -81,9 +55,7 @@ class GoogleCloudContactcenterinsightsV1AuthorizedView extends \Google\Model
     return $this->conversationFilter;
   }
   /**
-   * Output only. The time at which the authorized view was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -97,9 +69,7 @@ class GoogleCloudContactcenterinsightsV1AuthorizedView extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Display Name. Limit 64 characters.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -113,11 +83,7 @@ class GoogleCloudContactcenterinsightsV1AuthorizedView extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Identifier. The resource name of the AuthorizedView. Format: projects/{proj
-   * ect}/locations/{location}/authorizedViewSets/{authorized_view_set}/authoriz
-   * edViews/{authorized_view}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -131,9 +97,7 @@ class GoogleCloudContactcenterinsightsV1AuthorizedView extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The most recent time at which the authorized view was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

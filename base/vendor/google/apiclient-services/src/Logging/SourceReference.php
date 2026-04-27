@@ -20,25 +20,16 @@ namespace Google\Service\Logging;
 class SourceReference extends \Google\Model
 {
   /**
-   * Optional. A URI string identifying the repository. Example:
-   * "https://github.com/GoogleCloudPlatform/kubernetes.git"
-   *
    * @var string
    */
   public $repository;
   /**
-   * The canonical and persistent identifier of the deployed revision. Example
-   * (git): "0035781c50ec7aa23385dc841529ce8a4b70db1b"
-   *
    * @var string
    */
   public $revisionId;
 
   /**
-   * Optional. A URI string identifying the repository. Example:
-   * "https://github.com/GoogleCloudPlatform/kubernetes.git"
-   *
-   * @param string $repository
+   * @param string
    */
   public function setRepository($repository)
   {
@@ -52,10 +43,7 @@ class SourceReference extends \Google\Model
     return $this->repository;
   }
   /**
-   * The canonical and persistent identifier of the deployed revision. Example
-   * (git): "0035781c50ec7aa23385dc841529ce8a4b70db1b"
-   *
-   * @param string $revisionId
+   * @param string
    */
   public function setRevisionId($revisionId)
   {

@@ -23,10 +23,7 @@ class GooglePrivacyDlpV2RecordSuppression extends \Google\Model
   protected $conditionDataType = '';
 
   /**
-   * A condition that when it evaluates to true will result in the record being
-   * evaluated to be suppressed from the transformed content.
-   *
-   * @param GooglePrivacyDlpV2RecordCondition $condition
+   * @param GooglePrivacyDlpV2RecordCondition
    */
   public function setCondition(GooglePrivacyDlpV2RecordCondition $condition)
   {

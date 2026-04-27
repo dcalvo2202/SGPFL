@@ -20,38 +20,19 @@ namespace Google\Service\Compute;
 class NetworkEndpointGroupsListEndpointsRequest extends \Google\Model
 {
   /**
-   * Show the health status for each network endpoint. Impacts latency of the
-   * call.
-   */
-  public const HEALTH_STATUS_SHOW = 'SHOW';
-  /**
-   * Health status for network endpoints will not be provided.
-   */
-  public const HEALTH_STATUS_SKIP = 'SKIP';
-  /**
-   * Optional query parameter for showing the health status of each network
-   * endpoint. Valid options are SKIP or SHOW. If you don't specify this
-   * parameter, the health status of network endpoints will not be provided.
-   *
    * @var string
    */
   public $healthStatus;
 
   /**
-   * Optional query parameter for showing the health status of each network
-   * endpoint. Valid options are SKIP or SHOW. If you don't specify this
-   * parameter, the health status of network endpoints will not be provided.
-   *
-   * Accepted values: SHOW, SKIP
-   *
-   * @param self::HEALTH_STATUS_* $healthStatus
+   * @param string
    */
   public function setHealthStatus($healthStatus)
   {
     $this->healthStatus = $healthStatus;
   }
   /**
-   * @return self::HEALTH_STATUS_*
+   * @return string
    */
   public function getHealthStatus()
   {

@@ -20,59 +20,32 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1ArchiveDeployment extends \Google\Model
 {
   /**
-   * Output only. The time at which the Archive Deployment was created in
-   * milliseconds since the epoch.
-   *
    * @var string
    */
   public $createdAt;
   /**
-   * Input only. The Google Cloud Storage signed URL returned from
-   * GenerateUploadUrl and used to upload the Archive zip file.
-   *
    * @var string
    */
   public $gcsUri;
   /**
-   * User-supplied key-value pairs used to organize ArchiveDeployments. Label
-   * keys must be between 1 and 63 characters long, have a UTF-8 encoding of
-   * maximum 128 bytes, and must conform to the following PCRE regular
-   * expression: \p{Ll}\p{Lo}{0,62} Label values must be between 1 and 63
-   * characters long, have a UTF-8 encoding of maximum 128 bytes, and must
-   * conform to the following PCRE regular expression:
-   * [\p{Ll}\p{Lo}\p{N}_-]{0,63} No more than 64 labels can be associated with a
-   * given store.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Name of the Archive Deployment in the following format:
-   * `organizations/{org}/environments/{env}/archiveDeployments/{id}`.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. A reference to the LRO that created this Archive Deployment in
-   * the following format: `organizations/{org}/operations/{id}`
-   *
    * @var string
    */
   public $operation;
   /**
-   * Output only. The time at which the Archive Deployment was updated in
-   * milliseconds since the epoch.
-   *
    * @var string
    */
   public $updatedAt;
 
   /**
-   * Output only. The time at which the Archive Deployment was created in
-   * milliseconds since the epoch.
-   *
-   * @param string $createdAt
+   * @param string
    */
   public function setCreatedAt($createdAt)
   {
@@ -86,10 +59,7 @@ class GoogleCloudApigeeV1ArchiveDeployment extends \Google\Model
     return $this->createdAt;
   }
   /**
-   * Input only. The Google Cloud Storage signed URL returned from
-   * GenerateUploadUrl and used to upload the Archive zip file.
-   *
-   * @param string $gcsUri
+   * @param string
    */
   public function setGcsUri($gcsUri)
   {
@@ -103,16 +73,7 @@ class GoogleCloudApigeeV1ArchiveDeployment extends \Google\Model
     return $this->gcsUri;
   }
   /**
-   * User-supplied key-value pairs used to organize ArchiveDeployments. Label
-   * keys must be between 1 and 63 characters long, have a UTF-8 encoding of
-   * maximum 128 bytes, and must conform to the following PCRE regular
-   * expression: \p{Ll}\p{Lo}{0,62} Label values must be between 1 and 63
-   * characters long, have a UTF-8 encoding of maximum 128 bytes, and must
-   * conform to the following PCRE regular expression:
-   * [\p{Ll}\p{Lo}\p{N}_-]{0,63} No more than 64 labels can be associated with a
-   * given store.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -126,10 +87,7 @@ class GoogleCloudApigeeV1ArchiveDeployment extends \Google\Model
     return $this->labels;
   }
   /**
-   * Name of the Archive Deployment in the following format:
-   * `organizations/{org}/environments/{env}/archiveDeployments/{id}`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -143,10 +101,7 @@ class GoogleCloudApigeeV1ArchiveDeployment extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. A reference to the LRO that created this Archive Deployment in
-   * the following format: `organizations/{org}/operations/{id}`
-   *
-   * @param string $operation
+   * @param string
    */
   public function setOperation($operation)
   {
@@ -160,10 +115,7 @@ class GoogleCloudApigeeV1ArchiveDeployment extends \Google\Model
     return $this->operation;
   }
   /**
-   * Output only. The time at which the Archive Deployment was updated in
-   * milliseconds since the epoch.
-   *
-   * @param string $updatedAt
+   * @param string
    */
   public function setUpdatedAt($updatedAt)
   {

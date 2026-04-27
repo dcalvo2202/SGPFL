@@ -21,26 +21,16 @@ class BatchDeleteRowAccessPoliciesRequest extends \Google\Collection
 {
   protected $collection_key = 'policyIds';
   /**
-   * If set to true, it deletes the row access policy even if it's the last row
-   * access policy on the table and the deletion will widen the access rather
-   * narrowing it.
-   *
    * @var bool
    */
   public $force;
   /**
-   * Required. Policy IDs of the row access policies.
-   *
    * @var string[]
    */
   public $policyIds;
 
   /**
-   * If set to true, it deletes the row access policy even if it's the last row
-   * access policy on the table and the deletion will widen the access rather
-   * narrowing it.
-   *
-   * @param bool $force
+   * @param bool
    */
   public function setForce($force)
   {
@@ -54,9 +44,7 @@ class BatchDeleteRowAccessPoliciesRequest extends \Google\Collection
     return $this->force;
   }
   /**
-   * Required. Policy IDs of the row access policies.
-   *
-   * @param string[] $policyIds
+   * @param string[]
    */
   public function setPolicyIds($policyIds)
   {

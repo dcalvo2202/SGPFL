@@ -22,8 +22,6 @@ class GoogleCloudIntegrationsV1alphaUseTemplateRequest extends \Google\Model
   protected $integrationDetailsType = GoogleCloudIntegrationsV1alphaUseTemplateRequestIntegrationDetails::class;
   protected $integrationDetailsDataType = '';
   /**
-   * Required. The region of the Integration to be created.
-   *
    * @var string
    */
   public $integrationRegion;
@@ -31,9 +29,7 @@ class GoogleCloudIntegrationsV1alphaUseTemplateRequest extends \Google\Model
   protected $subIntegrationsDataType = 'map';
 
   /**
-   * Required. Integration details which would be created via templates.
-   *
-   * @param GoogleCloudIntegrationsV1alphaUseTemplateRequestIntegrationDetails $integrationDetails
+   * @param GoogleCloudIntegrationsV1alphaUseTemplateRequestIntegrationDetails
    */
   public function setIntegrationDetails(GoogleCloudIntegrationsV1alphaUseTemplateRequestIntegrationDetails $integrationDetails)
   {
@@ -47,9 +43,7 @@ class GoogleCloudIntegrationsV1alphaUseTemplateRequest extends \Google\Model
     return $this->integrationDetails;
   }
   /**
-   * Required. The region of the Integration to be created.
-   *
-   * @param string $integrationRegion
+   * @param string
    */
   public function setIntegrationRegion($integrationRegion)
   {
@@ -63,9 +57,7 @@ class GoogleCloudIntegrationsV1alphaUseTemplateRequest extends \Google\Model
     return $this->integrationRegion;
   }
   /**
-   * Optional. Sub Integration which would be created via templates.
-   *
-   * @param GoogleCloudIntegrationsV1alphaUseTemplateRequestIntegrationDetails[] $subIntegrations
+   * @param GoogleCloudIntegrationsV1alphaUseTemplateRequestIntegrationDetails[]
    */
   public function setSubIntegrations($subIntegrations)
   {

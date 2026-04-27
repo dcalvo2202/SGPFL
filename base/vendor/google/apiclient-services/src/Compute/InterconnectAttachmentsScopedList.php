@@ -26,9 +26,7 @@ class InterconnectAttachmentsScopedList extends \Google\Collection
   protected $warningDataType = '';
 
   /**
-   * A list of interconnect attachments contained in this scope.
-   *
-   * @param InterconnectAttachment[] $interconnectAttachments
+   * @param InterconnectAttachment[]
    */
   public function setInterconnectAttachments($interconnectAttachments)
   {
@@ -42,10 +40,7 @@ class InterconnectAttachmentsScopedList extends \Google\Collection
     return $this->interconnectAttachments;
   }
   /**
-   * Informational warning which replaces the list of addresses when the list is
-   * empty.
-   *
-   * @param InterconnectAttachmentsScopedListWarning $warning
+   * @param InterconnectAttachmentsScopedListWarning
    */
   public function setWarning(InterconnectAttachmentsScopedListWarning $warning)
   {

@@ -32,48 +32,30 @@ class Connection extends \Google\Model
   protected $configurationType = ConnectorConfiguration::class;
   protected $configurationDataType = '';
   /**
-   * Output only. The creation timestamp of the connection.
-   *
    * @var string
    */
   public $creationTime;
   /**
-   * User provided description.
-   *
    * @var string
    */
   public $description;
   /**
-   * User provided display name for the connection.
-   *
    * @var string
    */
   public $friendlyName;
   /**
-   * Output only. True, if credential is configured for this connection.
-   *
    * @var bool
    */
   public $hasCredential;
   /**
-   * Optional. The Cloud KMS key that is used for credentials encryption. If
-   * omitted, internal Google owned encryption keys are used. Example: `projects
-   * /[kms_project_id]/locations/[region]/keyRings/[key_region]/cryptoKeys/[key]
-   * `
-   *
    * @var string
    */
   public $kmsKeyName;
   /**
-   * Output only. The last update timestamp of the connection.
-   *
    * @var string
    */
   public $lastModifiedTime;
   /**
-   * Output only. The resource name of the connection in the form of:
-   * `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
-   *
    * @var string
    */
   public $name;
@@ -83,9 +65,7 @@ class Connection extends \Google\Model
   protected $sparkDataType = '';
 
   /**
-   * Amazon Web Services (AWS) properties.
-   *
-   * @param AwsProperties $aws
+   * @param AwsProperties
    */
   public function setAws(AwsProperties $aws)
   {
@@ -99,9 +79,7 @@ class Connection extends \Google\Model
     return $this->aws;
   }
   /**
-   * Azure properties.
-   *
-   * @param AzureProperties $azure
+   * @param AzureProperties
    */
   public function setAzure(AzureProperties $azure)
   {
@@ -115,9 +93,7 @@ class Connection extends \Google\Model
     return $this->azure;
   }
   /**
-   * Cloud Resource properties.
-   *
-   * @param CloudResourceProperties $cloudResource
+   * @param CloudResourceProperties
    */
   public function setCloudResource(CloudResourceProperties $cloudResource)
   {
@@ -131,9 +107,7 @@ class Connection extends \Google\Model
     return $this->cloudResource;
   }
   /**
-   * Cloud Spanner properties.
-   *
-   * @param CloudSpannerProperties $cloudSpanner
+   * @param CloudSpannerProperties
    */
   public function setCloudSpanner(CloudSpannerProperties $cloudSpanner)
   {
@@ -147,9 +121,7 @@ class Connection extends \Google\Model
     return $this->cloudSpanner;
   }
   /**
-   * Cloud SQL properties.
-   *
-   * @param CloudSqlProperties $cloudSql
+   * @param CloudSqlProperties
    */
   public function setCloudSql(CloudSqlProperties $cloudSql)
   {
@@ -163,9 +135,7 @@ class Connection extends \Google\Model
     return $this->cloudSql;
   }
   /**
-   * Optional. Connector configuration.
-   *
-   * @param ConnectorConfiguration $configuration
+   * @param ConnectorConfiguration
    */
   public function setConfiguration(ConnectorConfiguration $configuration)
   {
@@ -179,9 +149,7 @@ class Connection extends \Google\Model
     return $this->configuration;
   }
   /**
-   * Output only. The creation timestamp of the connection.
-   *
-   * @param string $creationTime
+   * @param string
    */
   public function setCreationTime($creationTime)
   {
@@ -195,9 +163,7 @@ class Connection extends \Google\Model
     return $this->creationTime;
   }
   /**
-   * User provided description.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -211,9 +177,7 @@ class Connection extends \Google\Model
     return $this->description;
   }
   /**
-   * User provided display name for the connection.
-   *
-   * @param string $friendlyName
+   * @param string
    */
   public function setFriendlyName($friendlyName)
   {
@@ -227,9 +191,7 @@ class Connection extends \Google\Model
     return $this->friendlyName;
   }
   /**
-   * Output only. True, if credential is configured for this connection.
-   *
-   * @param bool $hasCredential
+   * @param bool
    */
   public function setHasCredential($hasCredential)
   {
@@ -243,12 +205,7 @@ class Connection extends \Google\Model
     return $this->hasCredential;
   }
   /**
-   * Optional. The Cloud KMS key that is used for credentials encryption. If
-   * omitted, internal Google owned encryption keys are used. Example: `projects
-   * /[kms_project_id]/locations/[region]/keyRings/[key_region]/cryptoKeys/[key]
-   * `
-   *
-   * @param string $kmsKeyName
+   * @param string
    */
   public function setKmsKeyName($kmsKeyName)
   {
@@ -262,9 +219,7 @@ class Connection extends \Google\Model
     return $this->kmsKeyName;
   }
   /**
-   * Output only. The last update timestamp of the connection.
-   *
-   * @param string $lastModifiedTime
+   * @param string
    */
   public function setLastModifiedTime($lastModifiedTime)
   {
@@ -278,10 +233,7 @@ class Connection extends \Google\Model
     return $this->lastModifiedTime;
   }
   /**
-   * Output only. The resource name of the connection in the form of:
-   * `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -295,11 +247,7 @@ class Connection extends \Google\Model
     return $this->name;
   }
   /**
-   * Optional. Salesforce DataCloud properties. This field is intended for use
-   * only by Salesforce partner projects. This field contains properties for
-   * your Salesforce DataCloud connection.
-   *
-   * @param SalesforceDataCloudProperties $salesforceDataCloud
+   * @param SalesforceDataCloudProperties
    */
   public function setSalesforceDataCloud(SalesforceDataCloudProperties $salesforceDataCloud)
   {
@@ -313,9 +261,7 @@ class Connection extends \Google\Model
     return $this->salesforceDataCloud;
   }
   /**
-   * Spark properties.
-   *
-   * @param SparkProperties $spark
+   * @param SparkProperties
    */
   public function setSpark(SparkProperties $spark)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\Slides;
 class CreateSheetsChartResponse extends \Google\Model
 {
   /**
-   * The object ID of the created chart.
-   *
    * @var string
    */
   public $objectId;
 
   /**
-   * The object ID of the created chart.
-   *
-   * @param string $objectId
+   * @param string
    */
   public function setObjectId($objectId)
   {

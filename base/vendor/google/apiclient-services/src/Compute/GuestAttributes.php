@@ -20,45 +20,30 @@ namespace Google\Service\Compute;
 class GuestAttributes extends \Google\Model
 {
   /**
-   * Output only. [Output Only] Type of the resource.
-   * Alwayscompute#guestAttributes for guest attributes entry.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The path to be queried. This can be the default namespace ('') or a nested
-   * namespace ('\/') or a specified key ('\/\').
-   *
    * @var string
    */
   public $queryPath;
   protected $queryValueType = GuestAttributesValue::class;
   protected $queryValueDataType = '';
   /**
-   * Output only. [Output Only] Server-defined URL for this resource.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * The key to search for.
-   *
    * @var string
    */
   public $variableKey;
   /**
-   * Output only. [Output Only] The value found for the requested key.
-   *
    * @var string
    */
   public $variableValue;
 
   /**
-   * Output only. [Output Only] Type of the resource.
-   * Alwayscompute#guestAttributes for guest attributes entry.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -72,10 +57,7 @@ class GuestAttributes extends \Google\Model
     return $this->kind;
   }
   /**
-   * The path to be queried. This can be the default namespace ('') or a nested
-   * namespace ('\/') or a specified key ('\/\').
-   *
-   * @param string $queryPath
+   * @param string
    */
   public function setQueryPath($queryPath)
   {
@@ -89,9 +71,7 @@ class GuestAttributes extends \Google\Model
     return $this->queryPath;
   }
   /**
-   * Output only. [Output Only] The value of the requested queried path.
-   *
-   * @param GuestAttributesValue $queryValue
+   * @param GuestAttributesValue
    */
   public function setQueryValue(GuestAttributesValue $queryValue)
   {
@@ -105,9 +85,7 @@ class GuestAttributes extends \Google\Model
     return $this->queryValue;
   }
   /**
-   * Output only. [Output Only] Server-defined URL for this resource.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -121,9 +99,7 @@ class GuestAttributes extends \Google\Model
     return $this->selfLink;
   }
   /**
-   * The key to search for.
-   *
-   * @param string $variableKey
+   * @param string
    */
   public function setVariableKey($variableKey)
   {
@@ -137,9 +113,7 @@ class GuestAttributes extends \Google\Model
     return $this->variableKey;
   }
   /**
-   * Output only. [Output Only] The value found for the requested key.
-   *
-   * @param string $variableValue
+   * @param string
    */
   public function setVariableValue($variableValue)
   {

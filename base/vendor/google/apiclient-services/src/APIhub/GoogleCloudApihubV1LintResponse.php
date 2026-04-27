@@ -19,54 +19,22 @@ namespace Google\Service\APIhub;
 
 class GoogleCloudApihubV1LintResponse extends \Google\Collection
 {
-  /**
-   * Linter type unspecified.
-   */
-  public const LINTER_LINTER_UNSPECIFIED = 'LINTER_UNSPECIFIED';
-  /**
-   * Linter type spectral.
-   */
-  public const LINTER_SPECTRAL = 'SPECTRAL';
-  /**
-   * Linter type other.
-   */
-  public const LINTER_OTHER = 'OTHER';
-  /**
-   * Lint state unspecified.
-   */
-  public const STATE_LINT_STATE_UNSPECIFIED = 'LINT_STATE_UNSPECIFIED';
-  /**
-   * Linting was completed successfully.
-   */
-  public const STATE_LINT_STATE_SUCCESS = 'LINT_STATE_SUCCESS';
-  /**
-   * Linting encountered errors.
-   */
-  public const STATE_LINT_STATE_ERROR = 'LINT_STATE_ERROR';
   protected $collection_key = 'summary';
   /**
-   * Required. Timestamp when the linting response was generated.
-   *
    * @var string
    */
   public $createTime;
   protected $issuesType = GoogleCloudApihubV1Issue::class;
   protected $issuesDataType = 'array';
   /**
-   * Required. Name of the linter used.
-   *
    * @var string
    */
   public $linter;
   /**
-   * Required. Name of the linting application.
-   *
    * @var string
    */
   public $source;
   /**
-   * Required. Lint state represents success or failure for linting.
-   *
    * @var string
    */
   public $state;
@@ -74,9 +42,7 @@ class GoogleCloudApihubV1LintResponse extends \Google\Collection
   protected $summaryDataType = 'array';
 
   /**
-   * Required. Timestamp when the linting response was generated.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -90,9 +56,7 @@ class GoogleCloudApihubV1LintResponse extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Optional. Array of issues found in the analyzed document.
-   *
-   * @param GoogleCloudApihubV1Issue[] $issues
+   * @param GoogleCloudApihubV1Issue[]
    */
   public function setIssues($issues)
   {
@@ -106,27 +70,21 @@ class GoogleCloudApihubV1LintResponse extends \Google\Collection
     return $this->issues;
   }
   /**
-   * Required. Name of the linter used.
-   *
-   * Accepted values: LINTER_UNSPECIFIED, SPECTRAL, OTHER
-   *
-   * @param self::LINTER_* $linter
+   * @param string
    */
   public function setLinter($linter)
   {
     $this->linter = $linter;
   }
   /**
-   * @return self::LINTER_*
+   * @return string
    */
   public function getLinter()
   {
     return $this->linter;
   }
   /**
-   * Required. Name of the linting application.
-   *
-   * @param string $source
+   * @param string
    */
   public function setSource($source)
   {
@@ -140,28 +98,21 @@ class GoogleCloudApihubV1LintResponse extends \Google\Collection
     return $this->source;
   }
   /**
-   * Required. Lint state represents success or failure for linting.
-   *
-   * Accepted values: LINT_STATE_UNSPECIFIED, LINT_STATE_SUCCESS,
-   * LINT_STATE_ERROR
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Optional. Summary of all issue types and counts for each severity level.
-   *
-   * @param GoogleCloudApihubV1SummaryEntry[] $summary
+   * @param GoogleCloudApihubV1SummaryEntry[]
    */
   public function setSummary($summary)
   {

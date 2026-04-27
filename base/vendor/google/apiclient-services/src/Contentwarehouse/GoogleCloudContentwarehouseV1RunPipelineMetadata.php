@@ -23,8 +23,6 @@ class GoogleCloudContentwarehouseV1RunPipelineMetadata extends \Google\Collectio
   protected $exportToCdwPipelineMetadataType = GoogleCloudContentwarehouseV1RunPipelineMetadataExportToCdwPipelineMetadata::class;
   protected $exportToCdwPipelineMetadataDataType = '';
   /**
-   * Number of files that have failed at some point in the pipeline.
-   *
    * @var int
    */
   public $failedFileCount;
@@ -35,8 +33,6 @@ class GoogleCloudContentwarehouseV1RunPipelineMetadata extends \Google\Collectio
   protected $processWithDocAiPipelineMetadataType = GoogleCloudContentwarehouseV1RunPipelineMetadataProcessWithDocAiPipelineMetadata::class;
   protected $processWithDocAiPipelineMetadataDataType = '';
   /**
-   * Number of files that were processed by the pipeline.
-   *
    * @var int
    */
   public $totalFileCount;
@@ -44,9 +40,7 @@ class GoogleCloudContentwarehouseV1RunPipelineMetadata extends \Google\Collectio
   protected $userInfoDataType = '';
 
   /**
-   * The pipeline metadata for Export-to-CDW pipeline.
-   *
-   * @param GoogleCloudContentwarehouseV1RunPipelineMetadataExportToCdwPipelineMetadata $exportToCdwPipelineMetadata
+   * @param GoogleCloudContentwarehouseV1RunPipelineMetadataExportToCdwPipelineMetadata
    */
   public function setExportToCdwPipelineMetadata(GoogleCloudContentwarehouseV1RunPipelineMetadataExportToCdwPipelineMetadata $exportToCdwPipelineMetadata)
   {
@@ -60,9 +54,7 @@ class GoogleCloudContentwarehouseV1RunPipelineMetadata extends \Google\Collectio
     return $this->exportToCdwPipelineMetadata;
   }
   /**
-   * Number of files that have failed at some point in the pipeline.
-   *
-   * @param int $failedFileCount
+   * @param int
    */
   public function setFailedFileCount($failedFileCount)
   {
@@ -76,9 +68,7 @@ class GoogleCloudContentwarehouseV1RunPipelineMetadata extends \Google\Collectio
     return $this->failedFileCount;
   }
   /**
-   * The pipeline metadata for GcsIngest pipeline.
-   *
-   * @param GoogleCloudContentwarehouseV1RunPipelineMetadataGcsIngestPipelineMetadata $gcsIngestPipelineMetadata
+   * @param GoogleCloudContentwarehouseV1RunPipelineMetadataGcsIngestPipelineMetadata
    */
   public function setGcsIngestPipelineMetadata(GoogleCloudContentwarehouseV1RunPipelineMetadataGcsIngestPipelineMetadata $gcsIngestPipelineMetadata)
   {
@@ -92,9 +82,7 @@ class GoogleCloudContentwarehouseV1RunPipelineMetadata extends \Google\Collectio
     return $this->gcsIngestPipelineMetadata;
   }
   /**
-   * The list of response details of each document.
-   *
-   * @param GoogleCloudContentwarehouseV1RunPipelineMetadataIndividualDocumentStatus[] $individualDocumentStatuses
+   * @param GoogleCloudContentwarehouseV1RunPipelineMetadataIndividualDocumentStatus[]
    */
   public function setIndividualDocumentStatuses($individualDocumentStatuses)
   {
@@ -108,9 +96,7 @@ class GoogleCloudContentwarehouseV1RunPipelineMetadata extends \Google\Collectio
     return $this->individualDocumentStatuses;
   }
   /**
-   * The pipeline metadata for Process-with-DocAi pipeline.
-   *
-   * @param GoogleCloudContentwarehouseV1RunPipelineMetadataProcessWithDocAiPipelineMetadata $processWithDocAiPipelineMetadata
+   * @param GoogleCloudContentwarehouseV1RunPipelineMetadataProcessWithDocAiPipelineMetadata
    */
   public function setProcessWithDocAiPipelineMetadata(GoogleCloudContentwarehouseV1RunPipelineMetadataProcessWithDocAiPipelineMetadata $processWithDocAiPipelineMetadata)
   {
@@ -124,9 +110,7 @@ class GoogleCloudContentwarehouseV1RunPipelineMetadata extends \Google\Collectio
     return $this->processWithDocAiPipelineMetadata;
   }
   /**
-   * Number of files that were processed by the pipeline.
-   *
-   * @param int $totalFileCount
+   * @param int
    */
   public function setTotalFileCount($totalFileCount)
   {
@@ -140,9 +124,7 @@ class GoogleCloudContentwarehouseV1RunPipelineMetadata extends \Google\Collectio
     return $this->totalFileCount;
   }
   /**
-   * User unique identification and groups information.
-   *
-   * @param GoogleCloudContentwarehouseV1UserInfo $userInfo
+   * @param GoogleCloudContentwarehouseV1UserInfo
    */
   public function setUserInfo(GoogleCloudContentwarehouseV1UserInfo $userInfo)
   {

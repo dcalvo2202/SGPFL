@@ -25,9 +25,7 @@ class TransitObjectUploadRotatingBarcodeValuesRequest extends \Google\Model
   protected $mediaRequestInfoDataType = '';
 
   /**
-   * A reference to the rotating barcode values payload that was uploaded.
-   *
-   * @param Media $blob
+   * @param Media
    */
   public function setBlob(Media $blob)
   {
@@ -41,9 +39,7 @@ class TransitObjectUploadRotatingBarcodeValuesRequest extends \Google\Model
     return $this->blob;
   }
   /**
-   * Extra information about the uploaded media.
-   *
-   * @param MediaRequestInfo $mediaRequestInfo
+   * @param MediaRequestInfo
    */
   public function setMediaRequestInfo(MediaRequestInfo $mediaRequestInfo)
   {

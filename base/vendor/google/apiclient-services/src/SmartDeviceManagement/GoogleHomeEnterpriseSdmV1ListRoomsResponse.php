@@ -24,9 +24,7 @@ class GoogleHomeEnterpriseSdmV1ListRoomsResponse extends \Google\Collection
   protected $roomsDataType = 'array';
 
   /**
-   * The list of rooms.
-   *
-   * @param GoogleHomeEnterpriseSdmV1Room[] $rooms
+   * @param GoogleHomeEnterpriseSdmV1Room[]
    */
   public function setRooms($rooms)
   {

@@ -23,17 +23,12 @@ class ListMaterializedViewsResponse extends \Google\Collection
   protected $materializedViewsType = MaterializedView::class;
   protected $materializedViewsDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of requested materialized views.
-   *
-   * @param MaterializedView[] $materializedViews
+   * @param MaterializedView[]
    */
   public function setMaterializedViews($materializedViews)
   {
@@ -47,10 +42,7 @@ class ListMaterializedViewsResponse extends \Google\Collection
     return $this->materializedViews;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

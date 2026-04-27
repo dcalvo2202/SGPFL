@@ -23,10 +23,7 @@ class OptionalColor extends \Google\Model
   protected $opaqueColorDataType = '';
 
   /**
-   * If set, this will be used as an opaque color. If unset, this represents a
-   * transparent color.
-   *
-   * @param OpaqueColor $opaqueColor
+   * @param OpaqueColor
    */
   public function setOpaqueColor(OpaqueColor $opaqueColor)
   {

@@ -19,31 +19,20 @@ namespace Google\Service\YouTube;
 
 class LiveStreamHealthStatus extends \Google\Collection
 {
-  public const STATUS_good = 'good';
-  public const STATUS_ok = 'ok';
-  public const STATUS_bad = 'bad';
-  public const STATUS_noData = 'noData';
-  public const STATUS_revoked = 'revoked';
   protected $collection_key = 'configurationIssues';
   protected $configurationIssuesType = LiveStreamConfigurationIssue::class;
   protected $configurationIssuesDataType = 'array';
   /**
-   * The last time this status was updated (in seconds)
-   *
    * @var string
    */
   public $lastUpdateTimeSeconds;
   /**
-   * The status code of this stream
-   *
    * @var string
    */
   public $status;
 
   /**
-   * The configurations issues on this stream
-   *
-   * @param LiveStreamConfigurationIssue[] $configurationIssues
+   * @param LiveStreamConfigurationIssue[]
    */
   public function setConfigurationIssues($configurationIssues)
   {
@@ -57,9 +46,7 @@ class LiveStreamHealthStatus extends \Google\Collection
     return $this->configurationIssues;
   }
   /**
-   * The last time this status was updated (in seconds)
-   *
-   * @param string $lastUpdateTimeSeconds
+   * @param string
    */
   public function setLastUpdateTimeSeconds($lastUpdateTimeSeconds)
   {
@@ -73,18 +60,14 @@ class LiveStreamHealthStatus extends \Google\Collection
     return $this->lastUpdateTimeSeconds;
   }
   /**
-   * The status code of this stream
-   *
-   * Accepted values: good, ok, bad, noData, revoked
-   *
-   * @param self::STATUS_* $status
+   * @param string
    */
   public function setStatus($status)
   {
     $this->status = $status;
   }
   /**
-   * @return self::STATUS_*
+   * @return string
    */
   public function getStatus()
   {

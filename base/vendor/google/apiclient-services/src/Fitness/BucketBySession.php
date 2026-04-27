@@ -20,18 +20,12 @@ namespace Google\Service\Fitness;
 class BucketBySession extends \Google\Model
 {
   /**
-   * Specifies that only sessions of duration longer than minDurationMillis are
-   * considered and used as a container for aggregated data.
-   *
    * @var string
    */
   public $minDurationMillis;
 
   /**
-   * Specifies that only sessions of duration longer than minDurationMillis are
-   * considered and used as a container for aggregated data.
-   *
-   * @param string $minDurationMillis
+   * @param string
    */
   public function setMinDurationMillis($minDurationMillis)
   {

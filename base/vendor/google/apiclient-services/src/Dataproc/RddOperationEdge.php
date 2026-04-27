@@ -29,7 +29,7 @@ class RddOperationEdge extends \Google\Model
   public $toId;
 
   /**
-   * @param int $fromId
+   * @param int
    */
   public function setFromId($fromId)
   {
@@ -43,7 +43,7 @@ class RddOperationEdge extends \Google\Model
     return $this->fromId;
   }
   /**
-   * @param int $toId
+   * @param int
    */
   public function setToId($toId)
   {

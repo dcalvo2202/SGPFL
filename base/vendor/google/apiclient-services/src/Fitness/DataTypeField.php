@@ -19,23 +19,11 @@ namespace Google\Service\Fitness;
 
 class DataTypeField extends \Google\Model
 {
-  public const FORMAT_integer = 'integer';
-  public const FORMAT_floatPoint = 'floatPoint';
-  public const FORMAT_string = 'string';
-  public const FORMAT_map = 'map';
-  public const FORMAT_integerList = 'integerList';
-  public const FORMAT_floatList = 'floatList';
-  public const FORMAT_blob = 'blob';
   /**
-   * The different supported formats for each field in a data type.
-   *
    * @var string
    */
   public $format;
   /**
-   * Defines the name and format of data. Unlike data type names, field names
-   * are not namespaced, and only need to be unique within the data type.
-   *
    * @var string
    */
   public $name;
@@ -45,29 +33,21 @@ class DataTypeField extends \Google\Model
   public $optional;
 
   /**
-   * The different supported formats for each field in a data type.
-   *
-   * Accepted values: integer, floatPoint, string, map, integerList, floatList,
-   * blob
-   *
-   * @param self::FORMAT_* $format
+   * @param string
    */
   public function setFormat($format)
   {
     $this->format = $format;
   }
   /**
-   * @return self::FORMAT_*
+   * @return string
    */
   public function getFormat()
   {
     return $this->format;
   }
   /**
-   * Defines the name and format of data. Unlike data type names, field names
-   * are not namespaced, and only need to be unique within the data type.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -81,7 +61,7 @@ class DataTypeField extends \Google\Model
     return $this->name;
   }
   /**
-   * @param bool $optional
+   * @param bool
    */
   public function setOptional($optional)
   {

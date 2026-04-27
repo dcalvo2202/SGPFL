@@ -25,9 +25,7 @@ class GoogleMapsPlacesV1AutocompletePlacesResponseSuggestion extends \Google\Mod
   protected $queryPredictionDataType = '';
 
   /**
-   * A prediction for a Place.
-   *
-   * @param GoogleMapsPlacesV1AutocompletePlacesResponseSuggestionPlacePrediction $placePrediction
+   * @param GoogleMapsPlacesV1AutocompletePlacesResponseSuggestionPlacePrediction
    */
   public function setPlacePrediction(GoogleMapsPlacesV1AutocompletePlacesResponseSuggestionPlacePrediction $placePrediction)
   {
@@ -41,9 +39,7 @@ class GoogleMapsPlacesV1AutocompletePlacesResponseSuggestion extends \Google\Mod
     return $this->placePrediction;
   }
   /**
-   * A prediction for a query.
-   *
-   * @param GoogleMapsPlacesV1AutocompletePlacesResponseSuggestionQueryPrediction $queryPrediction
+   * @param GoogleMapsPlacesV1AutocompletePlacesResponseSuggestionQueryPrediction
    */
   public function setQueryPrediction(GoogleMapsPlacesV1AutocompletePlacesResponseSuggestionQueryPrediction $queryPrediction)
   {

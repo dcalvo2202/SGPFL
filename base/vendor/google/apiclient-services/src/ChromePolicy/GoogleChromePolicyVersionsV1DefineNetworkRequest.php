@@ -21,26 +21,18 @@ class GoogleChromePolicyVersionsV1DefineNetworkRequest extends \Google\Collectio
 {
   protected $collection_key = 'settings';
   /**
-   * Required. Name of the new created network.
-   *
    * @var string
    */
   public $name;
   protected $settingsType = GoogleChromePolicyVersionsV1NetworkSetting::class;
   protected $settingsDataType = 'array';
   /**
-   * Required. The target resource on which this new network will be defined.
-   * The following resources are supported: * Organizational Unit
-   * ("orgunits/{orgunit_id}")
-   *
    * @var string
    */
   public $targetResource;
 
   /**
-   * Required. Name of the new created network.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -54,9 +46,7 @@ class GoogleChromePolicyVersionsV1DefineNetworkRequest extends \Google\Collectio
     return $this->name;
   }
   /**
-   * Required. Detailed network settings.
-   *
-   * @param GoogleChromePolicyVersionsV1NetworkSetting[] $settings
+   * @param GoogleChromePolicyVersionsV1NetworkSetting[]
    */
   public function setSettings($settings)
   {
@@ -70,11 +60,7 @@ class GoogleChromePolicyVersionsV1DefineNetworkRequest extends \Google\Collectio
     return $this->settings;
   }
   /**
-   * Required. The target resource on which this new network will be defined.
-   * The following resources are supported: * Organizational Unit
-   * ("orgunits/{orgunit_id}")
-   *
-   * @param string $targetResource
+   * @param string
    */
   public function setTargetResource($targetResource)
   {

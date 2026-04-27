@@ -25,9 +25,7 @@ class SimulateSecurityHealthAnalyticsCustomModuleRequest extends \Google\Model
   protected $resourceDataType = '';
 
   /**
-   * Required. The custom configuration that you need to test.
-   *
-   * @param GoogleCloudSecuritycenterV1CustomConfig $customConfig
+   * @param GoogleCloudSecuritycenterV1CustomConfig
    */
   public function setCustomConfig(GoogleCloudSecuritycenterV1CustomConfig $customConfig)
   {
@@ -41,9 +39,7 @@ class SimulateSecurityHealthAnalyticsCustomModuleRequest extends \Google\Model
     return $this->customConfig;
   }
   /**
-   * Required. Resource data to simulate custom module against.
-   *
-   * @param SimulatedResource $resource
+   * @param SimulatedResource
    */
   public function setResource(SimulatedResource $resource)
   {

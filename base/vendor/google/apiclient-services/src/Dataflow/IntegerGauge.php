@@ -20,8 +20,6 @@ namespace Google\Service\Dataflow;
 class IntegerGauge extends \Google\Model
 {
   /**
-   * The time at which this value was measured. Measured as msecs from epoch.
-   *
    * @var string
    */
   public $timestamp;
@@ -29,9 +27,7 @@ class IntegerGauge extends \Google\Model
   protected $valueDataType = '';
 
   /**
-   * The time at which this value was measured. Measured as msecs from epoch.
-   *
-   * @param string $timestamp
+   * @param string
    */
   public function setTimestamp($timestamp)
   {
@@ -45,9 +41,7 @@ class IntegerGauge extends \Google\Model
     return $this->timestamp;
   }
   /**
-   * The value of the variable represented by this gauge.
-   *
-   * @param SplitInt64 $value
+   * @param SplitInt64
    */
   public function setValue(SplitInt64 $value)
   {

@@ -20,39 +20,30 @@ namespace Google\Service\SQLAdmin;
 class SqlScheduledMaintenance extends \Google\Model
 {
   /**
-   * @deprecated
    * @var bool
    */
   public $canDefer;
   /**
-   * If the scheduled maintenance can be rescheduled.
-   *
    * @var bool
    */
   public $canReschedule;
   /**
-   * Maintenance cannot be rescheduled to start beyond this deadline.
-   *
    * @var string
    */
   public $scheduleDeadlineTime;
   /**
-   * The start time of any upcoming scheduled maintenance for this instance.
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * @deprecated
-   * @param bool $canDefer
+   * @param bool
    */
   public function setCanDefer($canDefer)
   {
     $this->canDefer = $canDefer;
   }
   /**
-   * @deprecated
    * @return bool
    */
   public function getCanDefer()
@@ -60,9 +51,7 @@ class SqlScheduledMaintenance extends \Google\Model
     return $this->canDefer;
   }
   /**
-   * If the scheduled maintenance can be rescheduled.
-   *
-   * @param bool $canReschedule
+   * @param bool
    */
   public function setCanReschedule($canReschedule)
   {
@@ -76,9 +65,7 @@ class SqlScheduledMaintenance extends \Google\Model
     return $this->canReschedule;
   }
   /**
-   * Maintenance cannot be rescheduled to start beyond this deadline.
-   *
-   * @param string $scheduleDeadlineTime
+   * @param string
    */
   public function setScheduleDeadlineTime($scheduleDeadlineTime)
   {
@@ -92,9 +79,7 @@ class SqlScheduledMaintenance extends \Google\Model
     return $this->scheduleDeadlineTime;
   }
   /**
-   * The start time of any upcoming scheduled maintenance for this instance.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

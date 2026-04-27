@@ -23,9 +23,7 @@ class InstancesTruncateLogRequest extends \Google\Model
   protected $truncateLogContextDataType = '';
 
   /**
-   * Contains details about the truncate log operation.
-   *
-   * @param TruncateLogContext $truncateLogContext
+   * @param TruncateLogContext
    */
   public function setTruncateLogContext(TruncateLogContext $truncateLogContext)
   {

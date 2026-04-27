@@ -21,42 +21,30 @@ class GoogleChromeManagementV1TelemetryUser extends \Google\Collection
 {
   protected $collection_key = 'userDevice';
   /**
-   * G Suite Customer whose enterprise enrolled the device.
-   *
    * @var string
    */
   public $customer;
   /**
-   * Resource name of the user.
-   *
    * @var string
    */
   public $name;
   /**
-   * Organization unit of the user.
-   *
    * @var string
    */
   public $orgUnitId;
   protected $userDeviceType = GoogleChromeManagementV1TelemetryUserDevice::class;
   protected $userDeviceDataType = 'array';
   /**
-   * Email address of the user.
-   *
    * @var string
    */
   public $userEmail;
   /**
-   * Directory ID of the user.
-   *
    * @var string
    */
   public $userId;
 
   /**
-   * G Suite Customer whose enterprise enrolled the device.
-   *
-   * @param string $customer
+   * @param string
    */
   public function setCustomer($customer)
   {
@@ -70,9 +58,7 @@ class GoogleChromeManagementV1TelemetryUser extends \Google\Collection
     return $this->customer;
   }
   /**
-   * Resource name of the user.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -86,9 +72,7 @@ class GoogleChromeManagementV1TelemetryUser extends \Google\Collection
     return $this->name;
   }
   /**
-   * Organization unit of the user.
-   *
-   * @param string $orgUnitId
+   * @param string
    */
   public function setOrgUnitId($orgUnitId)
   {
@@ -102,9 +86,7 @@ class GoogleChromeManagementV1TelemetryUser extends \Google\Collection
     return $this->orgUnitId;
   }
   /**
-   * Telemetry data collected from a managed user and device.
-   *
-   * @param GoogleChromeManagementV1TelemetryUserDevice[] $userDevice
+   * @param GoogleChromeManagementV1TelemetryUserDevice[]
    */
   public function setUserDevice($userDevice)
   {
@@ -118,9 +100,7 @@ class GoogleChromeManagementV1TelemetryUser extends \Google\Collection
     return $this->userDevice;
   }
   /**
-   * Email address of the user.
-   *
-   * @param string $userEmail
+   * @param string
    */
   public function setUserEmail($userEmail)
   {
@@ -134,9 +114,7 @@ class GoogleChromeManagementV1TelemetryUser extends \Google\Collection
     return $this->userEmail;
   }
   /**
-   * Directory ID of the user.
-   *
-   * @param string $userId
+   * @param string
    */
   public function setUserId($userId)
   {

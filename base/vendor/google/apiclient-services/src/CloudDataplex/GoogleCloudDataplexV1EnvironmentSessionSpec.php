@@ -20,31 +20,16 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1EnvironmentSessionSpec extends \Google\Model
 {
   /**
-   * Optional. If True, this causes sessions to be pre-created and available for
-   * faster startup to enable interactive exploration use-cases. This defaults
-   * to False to avoid additional billed charges. These can only be set to True
-   * for the environment with name set to "default", and with default
-   * configuration.
-   *
    * @var bool
    */
   public $enableFastStartup;
   /**
-   * Optional. The idle time configuration of the session. The session will be
-   * auto-terminated at the end of this period.
-   *
    * @var string
    */
   public $maxIdleDuration;
 
   /**
-   * Optional. If True, this causes sessions to be pre-created and available for
-   * faster startup to enable interactive exploration use-cases. This defaults
-   * to False to avoid additional billed charges. These can only be set to True
-   * for the environment with name set to "default", and with default
-   * configuration.
-   *
-   * @param bool $enableFastStartup
+   * @param bool
    */
   public function setEnableFastStartup($enableFastStartup)
   {
@@ -58,10 +43,7 @@ class GoogleCloudDataplexV1EnvironmentSessionSpec extends \Google\Model
     return $this->enableFastStartup;
   }
   /**
-   * Optional. The idle time configuration of the session. The session will be
-   * auto-terminated at the end of this period.
-   *
-   * @param string $maxIdleDuration
+   * @param string
    */
   public function setMaxIdleDuration($maxIdleDuration)
   {

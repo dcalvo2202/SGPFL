@@ -20,16 +20,12 @@ namespace Google\Service\BinaryAuthorization;
 class AllowlistResult extends \Google\Model
 {
   /**
-   * The allowlist pattern that the image matched.
-   *
    * @var string
    */
   public $matchedPattern;
 
   /**
-   * The allowlist pattern that the image matched.
-   *
-   * @param string $matchedPattern
+   * @param string
    */
   public function setMatchedPattern($matchedPattern)
   {

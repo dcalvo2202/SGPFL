@@ -20,22 +20,16 @@ namespace Google\Service\Testing;
 class ToolResultsHistory extends \Google\Model
 {
   /**
-   * Required. A tool results history ID.
-   *
    * @var string
    */
   public $historyId;
   /**
-   * Required. The cloud project that owns the tool results history.
-   *
    * @var string
    */
   public $projectId;
 
   /**
-   * Required. A tool results history ID.
-   *
-   * @param string $historyId
+   * @param string
    */
   public function setHistoryId($historyId)
   {
@@ -49,9 +43,7 @@ class ToolResultsHistory extends \Google\Model
     return $this->historyId;
   }
   /**
-   * Required. The cloud project that owns the tool results history.
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {

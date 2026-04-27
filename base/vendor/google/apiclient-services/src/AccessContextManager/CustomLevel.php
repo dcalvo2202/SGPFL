@@ -23,9 +23,7 @@ class CustomLevel extends \Google\Model
   protected $exprDataType = '';
 
   /**
-   * Required. A Cloud CEL expression evaluating to a boolean.
-   *
-   * @param Expr $expr
+   * @param Expr
    */
   public function setExpr(Expr $expr)
   {

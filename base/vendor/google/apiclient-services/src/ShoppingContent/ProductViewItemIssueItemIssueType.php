@@ -20,22 +20,16 @@ namespace Google\Service\ShoppingContent;
 class ProductViewItemIssueItemIssueType extends \Google\Model
 {
   /**
-   * Canonical attribute name for attribute-specific issues.
-   *
    * @var string
    */
   public $canonicalAttribute;
   /**
-   * Error code of the issue.
-   *
    * @var string
    */
   public $code;
 
   /**
-   * Canonical attribute name for attribute-specific issues.
-   *
-   * @param string $canonicalAttribute
+   * @param string
    */
   public function setCanonicalAttribute($canonicalAttribute)
   {
@@ -49,9 +43,7 @@ class ProductViewItemIssueItemIssueType extends \Google\Model
     return $this->canonicalAttribute;
   }
   /**
-   * Error code of the issue.
-   *
-   * @param string $code
+   * @param string
    */
   public function setCode($code)
   {

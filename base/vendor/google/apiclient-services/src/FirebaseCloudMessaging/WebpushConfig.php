@@ -20,39 +20,22 @@ namespace Google\Service\FirebaseCloudMessaging;
 class WebpushConfig extends \Google\Model
 {
   /**
-   * Arbitrary key/value payload. If present, it will override
-   * google.firebase.fcm.v1.Message.data.
-   *
    * @var string[]
    */
   public $data;
   protected $fcmOptionsType = WebpushFcmOptions::class;
   protected $fcmOptionsDataType = '';
   /**
-   * HTTP headers defined in webpush protocol. Refer to [Webpush
-   * protocol](https://tools.ietf.org/html/rfc8030#section-5) for supported
-   * headers, e.g. "TTL": "15".
-   *
    * @var string[]
    */
   public $headers;
   /**
-   * Web Notification options as a JSON object. Supports Notification instance
-   * properties as defined in [Web Notification
-   * API](https://developer.mozilla.org/en-US/docs/Web/API/Notification). If
-   * present, "title" and "body" fields override
-   * [google.firebase.fcm.v1.Notification.title] and
-   * [google.firebase.fcm.v1.Notification.body].
-   *
    * @var array[]
    */
   public $notification;
 
   /**
-   * Arbitrary key/value payload. If present, it will override
-   * google.firebase.fcm.v1.Message.data.
-   *
-   * @param string[] $data
+   * @param string[]
    */
   public function setData($data)
   {
@@ -66,9 +49,7 @@ class WebpushConfig extends \Google\Model
     return $this->data;
   }
   /**
-   * Options for features provided by the FCM SDK for Web.
-   *
-   * @param WebpushFcmOptions $fcmOptions
+   * @param WebpushFcmOptions
    */
   public function setFcmOptions(WebpushFcmOptions $fcmOptions)
   {
@@ -82,11 +63,7 @@ class WebpushConfig extends \Google\Model
     return $this->fcmOptions;
   }
   /**
-   * HTTP headers defined in webpush protocol. Refer to [Webpush
-   * protocol](https://tools.ietf.org/html/rfc8030#section-5) for supported
-   * headers, e.g. "TTL": "15".
-   *
-   * @param string[] $headers
+   * @param string[]
    */
   public function setHeaders($headers)
   {
@@ -100,14 +77,7 @@ class WebpushConfig extends \Google\Model
     return $this->headers;
   }
   /**
-   * Web Notification options as a JSON object. Supports Notification instance
-   * properties as defined in [Web Notification
-   * API](https://developer.mozilla.org/en-US/docs/Web/API/Notification). If
-   * present, "title" and "body" fields override
-   * [google.firebase.fcm.v1.Notification.title] and
-   * [google.firebase.fcm.v1.Notification.body].
-   *
-   * @param array[] $notification
+   * @param array[]
    */
   public function setNotification($notification)
   {

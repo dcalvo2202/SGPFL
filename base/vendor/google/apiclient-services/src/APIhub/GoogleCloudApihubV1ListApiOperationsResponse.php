@@ -23,17 +23,12 @@ class GoogleCloudApihubV1ListApiOperationsResponse extends \Google\Collection
   protected $apiOperationsType = GoogleCloudApihubV1ApiOperation::class;
   protected $apiOperationsDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The operations corresponding to an API version.
-   *
-   * @param GoogleCloudApihubV1ApiOperation[] $apiOperations
+   * @param GoogleCloudApihubV1ApiOperation[]
    */
   public function setApiOperations($apiOperations)
   {
@@ -47,10 +42,7 @@ class GoogleCloudApihubV1ListApiOperationsResponse extends \Google\Collection
     return $this->apiOperations;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

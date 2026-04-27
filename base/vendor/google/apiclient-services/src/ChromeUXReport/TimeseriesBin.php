@@ -20,27 +20,12 @@ namespace Google\Service\ChromeUXReport;
 class TimeseriesBin extends \Google\Collection
 {
   protected $collection_key = 'densities';
-  /**
-   * The proportion of users that experienced this bin's value for the given
-   * metric in a given collection period; the index for each of these entries
-   * corresponds to an entry in the CollectionPeriods field in the HistoryRecord
-   * message, which describes when the density was observed in the field. Thus,
-   * the length of this list of densities is equal to the length of the
-   * CollectionPeriods field in the HistoryRecord message.
-   *
-   * @var []
-   */
   public $densities;
   /**
-   * End is the end of the data bin. If end is not populated, then the bin has
-   * no end and is valid from start to +inf.
-   *
    * @var array
    */
   public $end;
   /**
-   * Start is the beginning of the data bin.
-   *
    * @var array
    */
   public $start;
@@ -54,10 +39,7 @@ class TimeseriesBin extends \Google\Collection
     return $this->densities;
   }
   /**
-   * End is the end of the data bin. If end is not populated, then the bin has
-   * no end and is valid from start to +inf.
-   *
-   * @param array $end
+   * @param array
    */
   public function setEnd($end)
   {
@@ -71,9 +53,7 @@ class TimeseriesBin extends \Google\Collection
     return $this->end;
   }
   /**
-   * Start is the beginning of the data bin.
-   *
-   * @param array $start
+   * @param array
    */
   public function setStart($start)
   {

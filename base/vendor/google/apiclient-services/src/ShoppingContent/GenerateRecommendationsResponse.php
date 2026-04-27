@@ -23,19 +23,12 @@ class GenerateRecommendationsResponse extends \Google\Collection
   protected $recommendationsType = Recommendation::class;
   protected $recommendationsDataType = 'array';
   /**
-   * Output only. Response token is a string created for each
-   * `GenerateRecommendationsResponse`. This token doesn't expire, and is
-   * globally unique. This token must be used when reporting interactions for
-   * recommendations.
-   *
    * @var string
    */
   public $responseToken;
 
   /**
-   * Recommendations generated for a request.
-   *
-   * @param Recommendation[] $recommendations
+   * @param Recommendation[]
    */
   public function setRecommendations($recommendations)
   {
@@ -49,12 +42,7 @@ class GenerateRecommendationsResponse extends \Google\Collection
     return $this->recommendations;
   }
   /**
-   * Output only. Response token is a string created for each
-   * `GenerateRecommendationsResponse`. This token doesn't expire, and is
-   * globally unique. This token must be used when reporting interactions for
-   * recommendations.
-   *
-   * @param string $responseToken
+   * @param string
    */
   public function setResponseToken($responseToken)
   {

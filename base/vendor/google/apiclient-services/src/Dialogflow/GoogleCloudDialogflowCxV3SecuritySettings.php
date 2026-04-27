@@ -19,12 +19,6 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowCxV3SecuritySettings extends \Google\Collection
 {
-  public const REDACTION_SCOPE_REDACTION_SCOPE_UNSPECIFIED = 'REDACTION_SCOPE_UNSPECIFIED';
-  public const REDACTION_SCOPE_REDACT_DISK_STORAGE = 'REDACT_DISK_STORAGE';
-  public const REDACTION_STRATEGY_REDACTION_STRATEGY_UNSPECIFIED = 'REDACTION_STRATEGY_UNSPECIFIED';
-  public const REDACTION_STRATEGY_REDACT_WITH_SERVICE = 'REDACT_WITH_SERVICE';
-  public const RETENTION_STRATEGY_RETENTION_STRATEGY_UNSPECIFIED = 'RETENTION_STRATEGY_UNSPECIFIED';
-  public const RETENTION_STRATEGY_REMOVE_AFTER_CONVERSATION = 'REMOVE_AFTER_CONVERSATION';
   protected $collection_key = 'purgeDataTypes';
   protected $audioExportSettingsType = GoogleCloudDialogflowCxV3SecuritySettingsAudioExportSettings::class;
   protected $audioExportSettingsDataType = '';
@@ -68,7 +62,7 @@ class GoogleCloudDialogflowCxV3SecuritySettings extends \Google\Collection
   public $retentionWindowDays;
 
   /**
-   * @param GoogleCloudDialogflowCxV3SecuritySettingsAudioExportSettings $audioExportSettings
+   * @param GoogleCloudDialogflowCxV3SecuritySettingsAudioExportSettings
    */
   public function setAudioExportSettings(GoogleCloudDialogflowCxV3SecuritySettingsAudioExportSettings $audioExportSettings)
   {
@@ -82,7 +76,7 @@ class GoogleCloudDialogflowCxV3SecuritySettings extends \Google\Collection
     return $this->audioExportSettings;
   }
   /**
-   * @param string $deidentifyTemplate
+   * @param string
    */
   public function setDeidentifyTemplate($deidentifyTemplate)
   {
@@ -96,7 +90,7 @@ class GoogleCloudDialogflowCxV3SecuritySettings extends \Google\Collection
     return $this->deidentifyTemplate;
   }
   /**
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -110,7 +104,7 @@ class GoogleCloudDialogflowCxV3SecuritySettings extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3SecuritySettingsInsightsExportSettings $insightsExportSettings
+   * @param GoogleCloudDialogflowCxV3SecuritySettingsInsightsExportSettings
    */
   public function setInsightsExportSettings(GoogleCloudDialogflowCxV3SecuritySettingsInsightsExportSettings $insightsExportSettings)
   {
@@ -124,7 +118,7 @@ class GoogleCloudDialogflowCxV3SecuritySettings extends \Google\Collection
     return $this->insightsExportSettings;
   }
   /**
-   * @param string $inspectTemplate
+   * @param string
    */
   public function setInspectTemplate($inspectTemplate)
   {
@@ -138,7 +132,7 @@ class GoogleCloudDialogflowCxV3SecuritySettings extends \Google\Collection
     return $this->inspectTemplate;
   }
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -152,7 +146,7 @@ class GoogleCloudDialogflowCxV3SecuritySettings extends \Google\Collection
     return $this->name;
   }
   /**
-   * @param string[] $purgeDataTypes
+   * @param string[]
    */
   public function setPurgeDataTypes($purgeDataTypes)
   {
@@ -166,49 +160,49 @@ class GoogleCloudDialogflowCxV3SecuritySettings extends \Google\Collection
     return $this->purgeDataTypes;
   }
   /**
-   * @param self::REDACTION_SCOPE_* $redactionScope
+   * @param string
    */
   public function setRedactionScope($redactionScope)
   {
     $this->redactionScope = $redactionScope;
   }
   /**
-   * @return self::REDACTION_SCOPE_*
+   * @return string
    */
   public function getRedactionScope()
   {
     return $this->redactionScope;
   }
   /**
-   * @param self::REDACTION_STRATEGY_* $redactionStrategy
+   * @param string
    */
   public function setRedactionStrategy($redactionStrategy)
   {
     $this->redactionStrategy = $redactionStrategy;
   }
   /**
-   * @return self::REDACTION_STRATEGY_*
+   * @return string
    */
   public function getRedactionStrategy()
   {
     return $this->redactionStrategy;
   }
   /**
-   * @param self::RETENTION_STRATEGY_* $retentionStrategy
+   * @param string
    */
   public function setRetentionStrategy($retentionStrategy)
   {
     $this->retentionStrategy = $retentionStrategy;
   }
   /**
-   * @return self::RETENTION_STRATEGY_*
+   * @return string
    */
   public function getRetentionStrategy()
   {
     return $this->retentionStrategy;
   }
   /**
-   * @param int $retentionWindowDays
+   * @param int
    */
   public function setRetentionWindowDays($retentionWindowDays)
   {

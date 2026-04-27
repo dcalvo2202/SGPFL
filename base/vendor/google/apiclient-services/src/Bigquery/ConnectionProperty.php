@@ -20,22 +20,16 @@ namespace Google\Service\Bigquery;
 class ConnectionProperty extends \Google\Model
 {
   /**
-   * The key of the property to set.
-   *
    * @var string
    */
   public $key;
   /**
-   * The value of the property to set.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * The key of the property to set.
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {
@@ -49,9 +43,7 @@ class ConnectionProperty extends \Google\Model
     return $this->key;
   }
   /**
-   * The value of the property to set.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

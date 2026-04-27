@@ -20,56 +20,28 @@ namespace Google\Service\WorkloadManager;
 class RuleExecutionResult extends \Google\Model
 {
   /**
-   * Unknown state
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Execution completed successfully
-   */
-  public const STATE_STATE_SUCCESS = 'STATE_SUCCESS';
-  /**
-   * Execution completed with failures
-   */
-  public const STATE_STATE_FAILURE = 'STATE_FAILURE';
-  /**
-   * Execution was not executed
-   */
-  public const STATE_STATE_SKIPPED = 'STATE_SKIPPED';
-  /**
-   * Execution message, if any.
-   *
    * @var string
    */
   public $message;
   /**
-   * Number of violations.
-   *
    * @var string
    */
   public $resultCount;
   /**
-   * Rule name as plain text like `sap-hana-configured`.
-   *
    * @var string
    */
   public $rule;
   /**
-   * Number of total scanned resources.
-   *
    * @var string
    */
   public $scannedResourceCount;
   /**
-   * Output only. The execution status.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Execution message, if any.
-   *
-   * @param string $message
+   * @param string
    */
   public function setMessage($message)
   {
@@ -83,9 +55,7 @@ class RuleExecutionResult extends \Google\Model
     return $this->message;
   }
   /**
-   * Number of violations.
-   *
-   * @param string $resultCount
+   * @param string
    */
   public function setResultCount($resultCount)
   {
@@ -99,9 +69,7 @@ class RuleExecutionResult extends \Google\Model
     return $this->resultCount;
   }
   /**
-   * Rule name as plain text like `sap-hana-configured`.
-   *
-   * @param string $rule
+   * @param string
    */
   public function setRule($rule)
   {
@@ -115,9 +83,7 @@ class RuleExecutionResult extends \Google\Model
     return $this->rule;
   }
   /**
-   * Number of total scanned resources.
-   *
-   * @param string $scannedResourceCount
+   * @param string
    */
   public function setScannedResourceCount($scannedResourceCount)
   {
@@ -131,19 +97,14 @@ class RuleExecutionResult extends \Google\Model
     return $this->scannedResourceCount;
   }
   /**
-   * Output only. The execution status.
-   *
-   * Accepted values: STATE_UNSPECIFIED, STATE_SUCCESS, STATE_FAILURE,
-   * STATE_SKIPPED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

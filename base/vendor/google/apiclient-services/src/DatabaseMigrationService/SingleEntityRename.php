@@ -20,16 +20,12 @@ namespace Google\Service\DatabaseMigrationService;
 class SingleEntityRename extends \Google\Model
 {
   /**
-   * Required. The new name of the destination entity
-   *
    * @var string
    */
   public $newName;
 
   /**
-   * Required. The new name of the destination entity
-   *
-   * @param string $newName
+   * @param string
    */
   public function setNewName($newName)
   {

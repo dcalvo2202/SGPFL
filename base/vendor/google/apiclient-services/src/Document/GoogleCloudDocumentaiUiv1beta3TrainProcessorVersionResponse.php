@@ -20,16 +20,12 @@ namespace Google\Service\Document;
 class GoogleCloudDocumentaiUiv1beta3TrainProcessorVersionResponse extends \Google\Model
 {
   /**
-   * The resource name of the processor version produced by training.
-   *
    * @var string
    */
   public $processorVersion;
 
   /**
-   * The resource name of the processor version produced by training.
-   *
-   * @param string $processorVersion
+   * @param string
    */
   public function setProcessorVersion($processorVersion)
   {

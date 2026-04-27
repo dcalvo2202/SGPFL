@@ -23,9 +23,7 @@ class GoogleCloudDatalabelingV1alpha1LabelImagePolylineOperationMetadata extends
   protected $basicConfigDataType = '';
 
   /**
-   * Basic human annotation config used in labeling request.
-   *
-   * @param GoogleCloudDatalabelingV1alpha1HumanAnnotationConfig $basicConfig
+   * @param GoogleCloudDatalabelingV1alpha1HumanAnnotationConfig
    */
   public function setBasicConfig(GoogleCloudDatalabelingV1alpha1HumanAnnotationConfig $basicConfig)
   {

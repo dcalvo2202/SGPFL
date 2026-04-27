@@ -24,9 +24,7 @@ class ListNodePoolsResponse extends \Google\Collection
   protected $nodePoolsDataType = 'array';
 
   /**
-   * A list of node pools for a cluster.
-   *
-   * @param NodePool[] $nodePools
+   * @param NodePool[]
    */
   public function setNodePools($nodePools)
   {

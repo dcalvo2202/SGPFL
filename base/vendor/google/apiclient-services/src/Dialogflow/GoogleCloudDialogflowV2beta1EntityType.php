@@ -19,12 +19,6 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowV2beta1EntityType extends \Google\Collection
 {
-  public const AUTO_EXPANSION_MODE_AUTO_EXPANSION_MODE_UNSPECIFIED = 'AUTO_EXPANSION_MODE_UNSPECIFIED';
-  public const AUTO_EXPANSION_MODE_AUTO_EXPANSION_MODE_DEFAULT = 'AUTO_EXPANSION_MODE_DEFAULT';
-  public const KIND_KIND_UNSPECIFIED = 'KIND_UNSPECIFIED';
-  public const KIND_KIND_MAP = 'KIND_MAP';
-  public const KIND_KIND_LIST = 'KIND_LIST';
-  public const KIND_KIND_REGEXP = 'KIND_REGEXP';
   protected $collection_key = 'entities';
   /**
    * @var string
@@ -50,21 +44,21 @@ class GoogleCloudDialogflowV2beta1EntityType extends \Google\Collection
   public $name;
 
   /**
-   * @param self::AUTO_EXPANSION_MODE_* $autoExpansionMode
+   * @param string
    */
   public function setAutoExpansionMode($autoExpansionMode)
   {
     $this->autoExpansionMode = $autoExpansionMode;
   }
   /**
-   * @return self::AUTO_EXPANSION_MODE_*
+   * @return string
    */
   public function getAutoExpansionMode()
   {
     return $this->autoExpansionMode;
   }
   /**
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -78,7 +72,7 @@ class GoogleCloudDialogflowV2beta1EntityType extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * @param bool $enableFuzzyExtraction
+   * @param bool
    */
   public function setEnableFuzzyExtraction($enableFuzzyExtraction)
   {
@@ -92,7 +86,7 @@ class GoogleCloudDialogflowV2beta1EntityType extends \Google\Collection
     return $this->enableFuzzyExtraction;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1EntityTypeEntity[] $entities
+   * @param GoogleCloudDialogflowV2beta1EntityTypeEntity[]
    */
   public function setEntities($entities)
   {
@@ -106,21 +100,21 @@ class GoogleCloudDialogflowV2beta1EntityType extends \Google\Collection
     return $this->entities;
   }
   /**
-   * @param self::KIND_* $kind
+   * @param string
    */
   public function setKind($kind)
   {
     $this->kind = $kind;
   }
   /**
-   * @return self::KIND_*
+   * @return string
    */
   public function getKind()
   {
     return $this->kind;
   }
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

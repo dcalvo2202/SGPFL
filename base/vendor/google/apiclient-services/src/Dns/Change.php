@@ -19,22 +19,16 @@ namespace Google\Service\Dns;
 
 class Change extends \Google\Collection
 {
-  public const STATUS_pending = 'pending';
-  public const STATUS_done = 'done';
   protected $collection_key = 'deletions';
   protected $additionsType = ResourceRecordSet::class;
   protected $additionsDataType = 'array';
   protected $deletionsType = ResourceRecordSet::class;
   protected $deletionsDataType = 'array';
   /**
-   * Unique identifier for the resource; defined by the server (output only).
-   *
    * @var string
    */
   public $id;
   /**
-   * If the DNS queries for the zone will be served.
-   *
    * @var bool
    */
   public $isServing;
@@ -43,25 +37,16 @@ class Change extends \Google\Collection
    */
   public $kind;
   /**
-   * The time that this operation was started by the server (output only). This
-   * is in RFC3339 text format.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * Status of the operation (output only). A status of "done" means that the
-   * request to update the authoritative servers has been sent, but the servers
-   * might not be updated yet.
-   *
    * @var string
    */
   public $status;
 
   /**
-   * Which ResourceRecordSets to add?
-   *
-   * @param ResourceRecordSet[] $additions
+   * @param ResourceRecordSet[]
    */
   public function setAdditions($additions)
   {
@@ -75,9 +60,7 @@ class Change extends \Google\Collection
     return $this->additions;
   }
   /**
-   * Which ResourceRecordSets to remove? Must match existing data exactly.
-   *
-   * @param ResourceRecordSet[] $deletions
+   * @param ResourceRecordSet[]
    */
   public function setDeletions($deletions)
   {
@@ -91,9 +74,7 @@ class Change extends \Google\Collection
     return $this->deletions;
   }
   /**
-   * Unique identifier for the resource; defined by the server (output only).
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -107,9 +88,7 @@ class Change extends \Google\Collection
     return $this->id;
   }
   /**
-   * If the DNS queries for the zone will be served.
-   *
-   * @param bool $isServing
+   * @param bool
    */
   public function setIsServing($isServing)
   {
@@ -123,7 +102,7 @@ class Change extends \Google\Collection
     return $this->isServing;
   }
   /**
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -137,10 +116,7 @@ class Change extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The time that this operation was started by the server (output only). This
-   * is in RFC3339 text format.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -154,20 +130,14 @@ class Change extends \Google\Collection
     return $this->startTime;
   }
   /**
-   * Status of the operation (output only). A status of "done" means that the
-   * request to update the authoritative servers has been sent, but the servers
-   * might not be updated yet.
-   *
-   * Accepted values: pending, done
-   *
-   * @param self::STATUS_* $status
+   * @param string
    */
   public function setStatus($status)
   {
     $this->status = $status;
   }
   /**
-   * @return self::STATUS_*
+   * @return string
    */
   public function getStatus()
   {

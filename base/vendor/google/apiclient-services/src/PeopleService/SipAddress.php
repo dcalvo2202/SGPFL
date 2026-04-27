@@ -20,34 +20,22 @@ namespace Google\Service\PeopleService;
 class SipAddress extends \Google\Model
 {
   /**
-   * Output only. The type of the SIP address translated and formatted in the
-   * viewer's account locale or the `Accept-Language` HTTP header locale.
-   *
    * @var string
    */
   public $formattedType;
   protected $metadataType = FieldMetadata::class;
   protected $metadataDataType = '';
   /**
-   * The type of the SIP address. The type can be custom or or one of these
-   * predefined values: * `home` * `work` * `mobile` * `other`
-   *
    * @var string
    */
   public $type;
   /**
-   * The SIP address in the [RFC 3261
-   * 19.1](https://tools.ietf.org/html/rfc3261#section-19.1) SIP URI format.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Output only. The type of the SIP address translated and formatted in the
-   * viewer's account locale or the `Accept-Language` HTTP header locale.
-   *
-   * @param string $formattedType
+   * @param string
    */
   public function setFormattedType($formattedType)
   {
@@ -61,9 +49,7 @@ class SipAddress extends \Google\Model
     return $this->formattedType;
   }
   /**
-   * Metadata about the SIP address.
-   *
-   * @param FieldMetadata $metadata
+   * @param FieldMetadata
    */
   public function setMetadata(FieldMetadata $metadata)
   {
@@ -77,10 +63,7 @@ class SipAddress extends \Google\Model
     return $this->metadata;
   }
   /**
-   * The type of the SIP address. The type can be custom or or one of these
-   * predefined values: * `home` * `work` * `mobile` * `other`
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {
@@ -94,10 +77,7 @@ class SipAddress extends \Google\Model
     return $this->type;
   }
   /**
-   * The SIP address in the [RFC 3261
-   * 19.1](https://tools.ietf.org/html/rfc3261#section-19.1) SIP URI format.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

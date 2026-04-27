@@ -23,9 +23,7 @@ class MembershipCreatedEventData extends \Google\Model
   protected $membershipDataType = '';
 
   /**
-   * The new membership.
-   *
-   * @param Membership $membership
+   * @param Membership
    */
   public function setMembership(Membership $membership)
   {

@@ -27,22 +27,12 @@ class OrderedJob extends \Google\Collection
   protected $hiveJobType = HiveJob::class;
   protected $hiveJobDataType = '';
   /**
-   * Optional. The labels to associate with this job.Label keys must be between
-   * 1 and 63 characters long, and must conform to the following regular
-   * expression: \p{Ll}\p{Lo}{0,62}Label values must be between 1 and 63
-   * characters long, and must conform to the following regular expression:
-   * \p{Ll}\p{Lo}\p{N}_-{0,63}No more than 32 labels can be associated with a
-   * given job.
-   *
    * @var string[]
    */
   public $labels;
   protected $pigJobType = PigJob::class;
   protected $pigJobDataType = '';
   /**
-   * Optional. The optional list of prerequisite job step_ids. If not specified,
-   * the job will start at the beginning of workflow.
-   *
    * @var string[]
    */
   public $prerequisiteStepIds;
@@ -59,13 +49,6 @@ class OrderedJob extends \Google\Collection
   protected $sparkSqlJobType = SparkSqlJob::class;
   protected $sparkSqlJobDataType = '';
   /**
-   * Required. The step id. The id must be unique among all jobs within the
-   * template.The step id is used as prefix for job id, as job goog-dataproc-
-   * workflow-step-id label, and in prerequisiteStepIds field from other
-   * steps.The id must contain only letters (a-z, A-Z), numbers (0-9),
-   * underscores (_), and hyphens (-). Cannot begin or end with underscore or
-   * hyphen. Must consist of between 3 and 50 characters.
-   *
    * @var string
    */
   public $stepId;
@@ -73,9 +56,7 @@ class OrderedJob extends \Google\Collection
   protected $trinoJobDataType = '';
 
   /**
-   * Optional. Job is a Flink job.
-   *
-   * @param FlinkJob $flinkJob
+   * @param FlinkJob
    */
   public function setFlinkJob(FlinkJob $flinkJob)
   {
@@ -89,9 +70,7 @@ class OrderedJob extends \Google\Collection
     return $this->flinkJob;
   }
   /**
-   * Optional. Job is a Hadoop job.
-   *
-   * @param HadoopJob $hadoopJob
+   * @param HadoopJob
    */
   public function setHadoopJob(HadoopJob $hadoopJob)
   {
@@ -105,9 +84,7 @@ class OrderedJob extends \Google\Collection
     return $this->hadoopJob;
   }
   /**
-   * Optional. Job is a Hive job.
-   *
-   * @param HiveJob $hiveJob
+   * @param HiveJob
    */
   public function setHiveJob(HiveJob $hiveJob)
   {
@@ -121,14 +98,7 @@ class OrderedJob extends \Google\Collection
     return $this->hiveJob;
   }
   /**
-   * Optional. The labels to associate with this job.Label keys must be between
-   * 1 and 63 characters long, and must conform to the following regular
-   * expression: \p{Ll}\p{Lo}{0,62}Label values must be between 1 and 63
-   * characters long, and must conform to the following regular expression:
-   * \p{Ll}\p{Lo}\p{N}_-{0,63}No more than 32 labels can be associated with a
-   * given job.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -142,9 +112,7 @@ class OrderedJob extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Optional. Job is a Pig job.
-   *
-   * @param PigJob $pigJob
+   * @param PigJob
    */
   public function setPigJob(PigJob $pigJob)
   {
@@ -158,10 +126,7 @@ class OrderedJob extends \Google\Collection
     return $this->pigJob;
   }
   /**
-   * Optional. The optional list of prerequisite job step_ids. If not specified,
-   * the job will start at the beginning of workflow.
-   *
-   * @param string[] $prerequisiteStepIds
+   * @param string[]
    */
   public function setPrerequisiteStepIds($prerequisiteStepIds)
   {
@@ -175,9 +140,7 @@ class OrderedJob extends \Google\Collection
     return $this->prerequisiteStepIds;
   }
   /**
-   * Optional. Job is a Presto job.
-   *
-   * @param PrestoJob $prestoJob
+   * @param PrestoJob
    */
   public function setPrestoJob(PrestoJob $prestoJob)
   {
@@ -191,9 +154,7 @@ class OrderedJob extends \Google\Collection
     return $this->prestoJob;
   }
   /**
-   * Optional. Job is a PySpark job.
-   *
-   * @param PySparkJob $pysparkJob
+   * @param PySparkJob
    */
   public function setPysparkJob(PySparkJob $pysparkJob)
   {
@@ -207,9 +168,7 @@ class OrderedJob extends \Google\Collection
     return $this->pysparkJob;
   }
   /**
-   * Optional. Job scheduling configuration.
-   *
-   * @param JobScheduling $scheduling
+   * @param JobScheduling
    */
   public function setScheduling(JobScheduling $scheduling)
   {
@@ -223,9 +182,7 @@ class OrderedJob extends \Google\Collection
     return $this->scheduling;
   }
   /**
-   * Optional. Job is a Spark job.
-   *
-   * @param SparkJob $sparkJob
+   * @param SparkJob
    */
   public function setSparkJob(SparkJob $sparkJob)
   {
@@ -239,9 +196,7 @@ class OrderedJob extends \Google\Collection
     return $this->sparkJob;
   }
   /**
-   * Optional. Job is a SparkR job.
-   *
-   * @param SparkRJob $sparkRJob
+   * @param SparkRJob
    */
   public function setSparkRJob(SparkRJob $sparkRJob)
   {
@@ -255,9 +210,7 @@ class OrderedJob extends \Google\Collection
     return $this->sparkRJob;
   }
   /**
-   * Optional. Job is a SparkSql job.
-   *
-   * @param SparkSqlJob $sparkSqlJob
+   * @param SparkSqlJob
    */
   public function setSparkSqlJob(SparkSqlJob $sparkSqlJob)
   {
@@ -271,14 +224,7 @@ class OrderedJob extends \Google\Collection
     return $this->sparkSqlJob;
   }
   /**
-   * Required. The step id. The id must be unique among all jobs within the
-   * template.The step id is used as prefix for job id, as job goog-dataproc-
-   * workflow-step-id label, and in prerequisiteStepIds field from other
-   * steps.The id must contain only letters (a-z, A-Z), numbers (0-9),
-   * underscores (_), and hyphens (-). Cannot begin or end with underscore or
-   * hyphen. Must consist of between 3 and 50 characters.
-   *
-   * @param string $stepId
+   * @param string
    */
   public function setStepId($stepId)
   {
@@ -292,9 +238,7 @@ class OrderedJob extends \Google\Collection
     return $this->stepId;
   }
   /**
-   * Optional. Job is a Trino job.
-   *
-   * @param TrinoJob $trinoJob
+   * @param TrinoJob
    */
   public function setTrinoJob(TrinoJob $trinoJob)
   {

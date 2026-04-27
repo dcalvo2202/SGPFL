@@ -20,24 +20,16 @@ namespace Google\Service\APIhub;
 class GoogleCloudApihubV1PluginInstanceActionSource extends \Google\Model
 {
   /**
-   * Output only. The id of the plugin instance action.
-   *
    * @var string
    */
   public $actionId;
   /**
-   * Output only. The resource name of the source plugin instance. Format is `pr
-   * ojects/{project}/locations/{location}/plugins/{plugin}/instances/{instance}
-   * `
-   *
    * @var string
    */
   public $pluginInstance;
 
   /**
-   * Output only. The id of the plugin instance action.
-   *
-   * @param string $actionId
+   * @param string
    */
   public function setActionId($actionId)
   {
@@ -51,11 +43,7 @@ class GoogleCloudApihubV1PluginInstanceActionSource extends \Google\Model
     return $this->actionId;
   }
   /**
-   * Output only. The resource name of the source plugin instance. Format is `pr
-   * ojects/{project}/locations/{location}/plugins/{plugin}/instances/{instance}
-   * `
-   *
-   * @param string $pluginInstance
+   * @param string
    */
   public function setPluginInstance($pluginInstance)
   {

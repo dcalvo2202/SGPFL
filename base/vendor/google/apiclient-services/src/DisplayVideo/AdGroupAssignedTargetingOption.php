@@ -20,8 +20,6 @@ namespace Google\Service\DisplayVideo;
 class AdGroupAssignedTargetingOption extends \Google\Model
 {
   /**
-   * The ID of the ad group the assigned targeting option is assigned to.
-   *
    * @var string
    */
   public $adGroupId;
@@ -29,9 +27,7 @@ class AdGroupAssignedTargetingOption extends \Google\Model
   protected $assignedTargetingOptionDataType = '';
 
   /**
-   * The ID of the ad group the assigned targeting option is assigned to.
-   *
-   * @param string $adGroupId
+   * @param string
    */
   public function setAdGroupId($adGroupId)
   {
@@ -45,9 +41,7 @@ class AdGroupAssignedTargetingOption extends \Google\Model
     return $this->adGroupId;
   }
   /**
-   * The assigned targeting option resource.
-   *
-   * @param AssignedTargetingOption $assignedTargetingOption
+   * @param AssignedTargetingOption
    */
   public function setAssignedTargetingOption(AssignedTargetingOption $assignedTargetingOption)
   {

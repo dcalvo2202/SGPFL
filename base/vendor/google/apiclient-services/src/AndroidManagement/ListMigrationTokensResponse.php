@@ -23,17 +23,12 @@ class ListMigrationTokensResponse extends \Google\Collection
   protected $migrationTokensType = MigrationToken::class;
   protected $migrationTokensDataType = 'array';
   /**
-   * A token, which can be sent as page_token to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The migration tokens from the specified enterprise.
-   *
-   * @param MigrationToken[] $migrationTokens
+   * @param MigrationToken[]
    */
   public function setMigrationTokens($migrationTokens)
   {
@@ -47,10 +42,7 @@ class ListMigrationTokensResponse extends \Google\Collection
     return $this->migrationTokens;
   }
   /**
-   * A token, which can be sent as page_token to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

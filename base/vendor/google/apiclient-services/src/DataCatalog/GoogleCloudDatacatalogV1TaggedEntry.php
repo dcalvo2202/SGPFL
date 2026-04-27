@@ -28,10 +28,7 @@ class GoogleCloudDatacatalogV1TaggedEntry extends \Google\Collection
   protected $v1EntryDataType = '';
 
   /**
-   * Optional. Tags that should be deleted from the Data Catalog. Caller should
-   * populate template name and column only.
-   *
-   * @param GoogleCloudDatacatalogV1Tag[] $absentTags
+   * @param GoogleCloudDatacatalogV1Tag[]
    */
   public function setAbsentTags($absentTags)
   {
@@ -45,10 +42,7 @@ class GoogleCloudDatacatalogV1TaggedEntry extends \Google\Collection
     return $this->absentTags;
   }
   /**
-   * Optional. Tags that should be ingested into the Data Catalog. Caller should
-   * populate template name, column and fields.
-   *
-   * @param GoogleCloudDatacatalogV1Tag[] $presentTags
+   * @param GoogleCloudDatacatalogV1Tag[]
    */
   public function setPresentTags($presentTags)
   {
@@ -62,9 +56,7 @@ class GoogleCloudDatacatalogV1TaggedEntry extends \Google\Collection
     return $this->presentTags;
   }
   /**
-   * Non-encrypted Data Catalog v1 Entry.
-   *
-   * @param GoogleCloudDatacatalogV1Entry $v1Entry
+   * @param GoogleCloudDatacatalogV1Entry
    */
   public function setV1Entry(GoogleCloudDatacatalogV1Entry $v1Entry)
   {

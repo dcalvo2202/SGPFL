@@ -20,23 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1CacheConfig extends \Google\Model
 {
   /**
-   * If set to true, disables GenAI caching. Otherwise caching is enabled.
-   *
    * @var bool
    */
   public $disableCache;
   /**
-   * Identifier. Name of the cache config. Format: -
-   * `projects/{project}/cacheConfig`.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * If set to true, disables GenAI caching. Otherwise caching is enabled.
-   *
-   * @param bool $disableCache
+   * @param bool
    */
   public function setDisableCache($disableCache)
   {
@@ -50,10 +43,7 @@ class GoogleCloudAiplatformV1CacheConfig extends \Google\Model
     return $this->disableCache;
   }
   /**
-   * Identifier. Name of the cache config. Format: -
-   * `projects/{project}/cacheConfig`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

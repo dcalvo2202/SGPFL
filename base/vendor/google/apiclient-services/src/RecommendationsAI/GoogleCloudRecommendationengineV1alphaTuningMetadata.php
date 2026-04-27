@@ -20,22 +20,12 @@ namespace Google\Service\RecommendationsAI;
 class GoogleCloudRecommendationengineV1alphaTuningMetadata extends \Google\Model
 {
   /**
-   * The resource name of the recommendation model that this tune applies to.
-   * Format: projects/{project_number}/locations/{location_id}/catalogs/{catalog
-   * _id}/eventStores/{event_store_id}/recommendationModels/{recommendation_mode
-   * l_id}
-   *
    * @var string
    */
   public $recommendationModel;
 
   /**
-   * The resource name of the recommendation model that this tune applies to.
-   * Format: projects/{project_number}/locations/{location_id}/catalogs/{catalog
-   * _id}/eventStores/{event_store_id}/recommendationModels/{recommendation_mode
-   * l_id}
-   *
-   * @param string $recommendationModel
+   * @param string
    */
   public function setRecommendationModel($recommendationModel)
   {

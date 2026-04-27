@@ -25,9 +25,7 @@ class Replication extends \Google\Model
   protected $userManagedDataType = '';
 
   /**
-   * The Secret will automatically be replicated without any restrictions.
-   *
-   * @param Automatic $automatic
+   * @param Automatic
    */
   public function setAutomatic(Automatic $automatic)
   {
@@ -41,9 +39,7 @@ class Replication extends \Google\Model
     return $this->automatic;
   }
   /**
-   * The Secret will only be replicated into the locations specified.
-   *
-   * @param UserManaged $userManaged
+   * @param UserManaged
    */
   public function setUserManaged(UserManaged $userManaged)
   {

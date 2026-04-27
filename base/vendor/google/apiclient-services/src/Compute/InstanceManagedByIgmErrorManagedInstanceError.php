@@ -20,22 +20,16 @@ namespace Google\Service\Compute;
 class InstanceManagedByIgmErrorManagedInstanceError extends \Google\Model
 {
   /**
-   * Output only. [Output Only] Error code.
-   *
    * @var string
    */
   public $code;
   /**
-   * Output only. [Output Only] Error message.
-   *
    * @var string
    */
   public $message;
 
   /**
-   * Output only. [Output Only] Error code.
-   *
-   * @param string $code
+   * @param string
    */
   public function setCode($code)
   {
@@ -49,9 +43,7 @@ class InstanceManagedByIgmErrorManagedInstanceError extends \Google\Model
     return $this->code;
   }
   /**
-   * Output only. [Output Only] Error message.
-   *
-   * @param string $message
+   * @param string
    */
   public function setMessage($message)
   {

@@ -20,24 +20,16 @@ namespace Google\Service\Docs;
 class SheetsChartReference extends \Google\Model
 {
   /**
-   * The ID of the specific chart in the Google Sheets spreadsheet that's
-   * embedded.
-   *
    * @var int
    */
   public $chartId;
   /**
-   * The ID of the Google Sheets spreadsheet that contains the source chart.
-   *
    * @var string
    */
   public $spreadsheetId;
 
   /**
-   * The ID of the specific chart in the Google Sheets spreadsheet that's
-   * embedded.
-   *
-   * @param int $chartId
+   * @param int
    */
   public function setChartId($chartId)
   {
@@ -51,9 +43,7 @@ class SheetsChartReference extends \Google\Model
     return $this->chartId;
   }
   /**
-   * The ID of the Google Sheets spreadsheet that contains the source chart.
-   *
-   * @param string $spreadsheetId
+   * @param string
    */
   public function setSpreadsheetId($spreadsheetId)
   {

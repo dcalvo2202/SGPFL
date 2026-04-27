@@ -20,16 +20,12 @@ namespace Google\Service\CloudRun;
 class GoogleCloudRunV2ExportImageRequest extends \Google\Model
 {
   /**
-   * Required. The export destination url (the Artifact Registry repo).
-   *
    * @var string
    */
   public $destinationRepo;
 
   /**
-   * Required. The export destination url (the Artifact Registry repo).
-   *
-   * @param string $destinationRepo
+   * @param string
    */
   public function setDestinationRepo($destinationRepo)
   {

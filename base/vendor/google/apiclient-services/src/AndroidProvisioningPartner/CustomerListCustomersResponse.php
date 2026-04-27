@@ -23,17 +23,12 @@ class CustomerListCustomersResponse extends \Google\Collection
   protected $customersType = Company::class;
   protected $customersDataType = 'array';
   /**
-   * A token used to access the next page of results. Omitted if no further
-   * results are available.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The customer accounts the calling user is a member of.
-   *
-   * @param Company[] $customers
+   * @param Company[]
    */
   public function setCustomers($customers)
   {
@@ -47,10 +42,7 @@ class CustomerListCustomersResponse extends \Google\Collection
     return $this->customers;
   }
   /**
-   * A token used to access the next page of results. Omitted if no further
-   * results are available.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

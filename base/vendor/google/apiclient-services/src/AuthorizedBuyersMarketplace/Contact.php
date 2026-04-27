@@ -20,22 +20,16 @@ namespace Google\Service\AuthorizedBuyersMarketplace;
 class Contact extends \Google\Model
 {
   /**
-   * The display_name of the contact.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Email address for the contact.
-   *
    * @var string
    */
   public $email;
 
   /**
-   * The display_name of the contact.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -49,9 +43,7 @@ class Contact extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Email address for the contact.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {

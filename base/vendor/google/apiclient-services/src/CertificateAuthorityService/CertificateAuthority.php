@@ -19,67 +19,6 @@ namespace Google\Service\CertificateAuthorityService;
 
 class CertificateAuthority extends \Google\Collection
 {
-  /**
-   * Not specified.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Certificates can be issued from this CA. CRLs will be generated for this
-   * CA. The CA will be part of the CaPool's trust anchor, and will be used to
-   * issue certificates from the CaPool.
-   */
-  public const STATE_ENABLED = 'ENABLED';
-  /**
-   * Certificates cannot be issued from this CA. CRLs will still be generated.
-   * The CA will be part of the CaPool's trust anchor, but will not be used to
-   * issue certificates from the CaPool.
-   */
-  public const STATE_DISABLED = 'DISABLED';
-  /**
-   * Certificates can be issued from this CA. CRLs will be generated for this
-   * CA. The CA will be part of the CaPool's trust anchor, but will not be used
-   * to issue certificates from the CaPool.
-   */
-  public const STATE_STAGED = 'STAGED';
-  /**
-   * Certificates cannot be issued from this CA. CRLs will not be generated. The
-   * CA will not be part of the CaPool's trust anchor, and will not be used to
-   * issue certificates from the CaPool.
-   */
-  public const STATE_AWAITING_USER_ACTIVATION = 'AWAITING_USER_ACTIVATION';
-  /**
-   * Certificates cannot be issued from this CA. CRLs will not be generated. The
-   * CA may still be recovered by calling
-   * CertificateAuthorityService.UndeleteCertificateAuthority before
-   * expire_time. The CA will not be part of the CaPool's trust anchor, and will
-   * not be used to issue certificates from the CaPool.
-   */
-  public const STATE_DELETED = 'DELETED';
-  /**
-   * Not specified.
-   */
-  public const TIER_TIER_UNSPECIFIED = 'TIER_UNSPECIFIED';
-  /**
-   * Enterprise tier.
-   */
-  public const TIER_ENTERPRISE = 'ENTERPRISE';
-  /**
-   * DevOps tier.
-   */
-  public const TIER_DEVOPS = 'DEVOPS';
-  /**
-   * Not specified.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * Self-signed CA.
-   */
-  public const TYPE_SELF_SIGNED = 'SELF_SIGNED';
-  /**
-   * Subordinate CA. Could be issued by a Private CA CertificateAuthority or an
-   * unmanaged CA.
-   */
-  public const TYPE_SUBORDINATE = 'SUBORDINATE';
   protected $collection_key = 'pemCaCertificates';
   protected $accessUrlsType = AccessUrls::class;
   protected $accessUrlsDataType = '';
@@ -88,104 +27,62 @@ class CertificateAuthority extends \Google\Collection
   protected $configType = CertificateConfig::class;
   protected $configDataType = '';
   /**
-   * Output only. The time at which this CertificateAuthority was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. The time at which this CertificateAuthority was soft deleted,
-   * if it is in the DELETED state.
-   *
    * @var string
    */
   public $deleteTime;
   /**
-   * Output only. The time at which this CertificateAuthority will be
-   * permanently purged, if it is in the DELETED state.
-   *
    * @var string
    */
   public $expireTime;
   /**
-   * Immutable. The name of a Cloud Storage bucket where this
-   * CertificateAuthority will publish content, such as the CA certificate and
-   * CRLs. This must be a bucket name, without any prefixes (such as `gs://`) or
-   * suffixes (such as `.googleapis.com`). For example, to use a bucket named
-   * `my-bucket`, you would simply specify `my-bucket`. If not specified, a
-   * managed bucket will be created.
-   *
    * @var string
    */
   public $gcsBucket;
   protected $keySpecType = KeyVersionSpec::class;
   protected $keySpecDataType = '';
   /**
-   * Optional. Labels with user-defined metadata.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Required. Immutable. The desired lifetime of the CA certificate. Used to
-   * create the "not_before_time" and "not_after_time" fields inside an X.509
-   * certificate.
-   *
    * @var string
    */
   public $lifetime;
   /**
-   * Identifier. The resource name for this CertificateAuthority in the format
-   * `projects/locations/caPools/certificateAuthorities`.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. This CertificateAuthority's certificate chain, including the
-   * current CertificateAuthority's certificate. Ordered such that the root
-   * issuer is the final element (consistent with RFC 5246). For a self-signed
-   * CA, this will only list the current CertificateAuthority's certificate.
-   *
    * @var string[]
    */
   public $pemCaCertificates;
   /**
-   * Output only. Reserved for future use.
-   *
    * @var bool
    */
   public $satisfiesPzi;
   /**
-   * Output only. Reserved for future use.
-   *
    * @var bool
    */
   public $satisfiesPzs;
   /**
-   * Output only. The State for this CertificateAuthority.
-   *
    * @var string
    */
   public $state;
   protected $subordinateConfigType = SubordinateConfig::class;
   protected $subordinateConfigDataType = '';
   /**
-   * Output only. The CaPool.Tier of the CaPool that includes this
-   * CertificateAuthority.
-   *
    * @var string
    */
   public $tier;
   /**
-   * Required. Immutable. The Type of this CertificateAuthority.
-   *
    * @var string
    */
   public $type;
   /**
-   * Output only. The time at which this CertificateAuthority was last updated.
-   *
    * @var string
    */
   public $updateTime;
@@ -193,10 +90,7 @@ class CertificateAuthority extends \Google\Collection
   protected $userDefinedAccessUrlsDataType = '';
 
   /**
-   * Output only. URLs for accessing content published by this CA, such as the
-   * CA certificate and CRLs.
-   *
-   * @param AccessUrls $accessUrls
+   * @param AccessUrls
    */
   public function setAccessUrls(AccessUrls $accessUrls)
   {
@@ -210,10 +104,7 @@ class CertificateAuthority extends \Google\Collection
     return $this->accessUrls;
   }
   /**
-   * Output only. A structured description of this CertificateAuthority's CA
-   * certificate and its issuers. Ordered as self-to-root.
-   *
-   * @param CertificateDescription[] $caCertificateDescriptions
+   * @param CertificateDescription[]
    */
   public function setCaCertificateDescriptions($caCertificateDescriptions)
   {
@@ -227,10 +118,7 @@ class CertificateAuthority extends \Google\Collection
     return $this->caCertificateDescriptions;
   }
   /**
-   * Required. Immutable. The config used to create a self-signed X.509
-   * certificate or CSR.
-   *
-   * @param CertificateConfig $config
+   * @param CertificateConfig
    */
   public function setConfig(CertificateConfig $config)
   {
@@ -244,9 +132,7 @@ class CertificateAuthority extends \Google\Collection
     return $this->config;
   }
   /**
-   * Output only. The time at which this CertificateAuthority was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -260,10 +146,7 @@ class CertificateAuthority extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Output only. The time at which this CertificateAuthority was soft deleted,
-   * if it is in the DELETED state.
-   *
-   * @param string $deleteTime
+   * @param string
    */
   public function setDeleteTime($deleteTime)
   {
@@ -277,10 +160,7 @@ class CertificateAuthority extends \Google\Collection
     return $this->deleteTime;
   }
   /**
-   * Output only. The time at which this CertificateAuthority will be
-   * permanently purged, if it is in the DELETED state.
-   *
-   * @param string $expireTime
+   * @param string
    */
   public function setExpireTime($expireTime)
   {
@@ -294,14 +174,7 @@ class CertificateAuthority extends \Google\Collection
     return $this->expireTime;
   }
   /**
-   * Immutable. The name of a Cloud Storage bucket where this
-   * CertificateAuthority will publish content, such as the CA certificate and
-   * CRLs. This must be a bucket name, without any prefixes (such as `gs://`) or
-   * suffixes (such as `.googleapis.com`). For example, to use a bucket named
-   * `my-bucket`, you would simply specify `my-bucket`. If not specified, a
-   * managed bucket will be created.
-   *
-   * @param string $gcsBucket
+   * @param string
    */
   public function setGcsBucket($gcsBucket)
   {
@@ -315,12 +188,7 @@ class CertificateAuthority extends \Google\Collection
     return $this->gcsBucket;
   }
   /**
-   * Required. Immutable. Used when issuing certificates for this
-   * CertificateAuthority. If this CertificateAuthority is a self-signed
-   * CertificateAuthority, this key is also used to sign the self-signed CA
-   * certificate. Otherwise, it is used to sign a CSR.
-   *
-   * @param KeyVersionSpec $keySpec
+   * @param KeyVersionSpec
    */
   public function setKeySpec(KeyVersionSpec $keySpec)
   {
@@ -334,9 +202,7 @@ class CertificateAuthority extends \Google\Collection
     return $this->keySpec;
   }
   /**
-   * Optional. Labels with user-defined metadata.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -350,11 +216,7 @@ class CertificateAuthority extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Required. Immutable. The desired lifetime of the CA certificate. Used to
-   * create the "not_before_time" and "not_after_time" fields inside an X.509
-   * certificate.
-   *
-   * @param string $lifetime
+   * @param string
    */
   public function setLifetime($lifetime)
   {
@@ -368,10 +230,7 @@ class CertificateAuthority extends \Google\Collection
     return $this->lifetime;
   }
   /**
-   * Identifier. The resource name for this CertificateAuthority in the format
-   * `projects/locations/caPools/certificateAuthorities`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -385,12 +244,7 @@ class CertificateAuthority extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. This CertificateAuthority's certificate chain, including the
-   * current CertificateAuthority's certificate. Ordered such that the root
-   * issuer is the final element (consistent with RFC 5246). For a self-signed
-   * CA, this will only list the current CertificateAuthority's certificate.
-   *
-   * @param string[] $pemCaCertificates
+   * @param string[]
    */
   public function setPemCaCertificates($pemCaCertificates)
   {
@@ -404,9 +258,7 @@ class CertificateAuthority extends \Google\Collection
     return $this->pemCaCertificates;
   }
   /**
-   * Output only. Reserved for future use.
-   *
-   * @param bool $satisfiesPzi
+   * @param bool
    */
   public function setSatisfiesPzi($satisfiesPzi)
   {
@@ -420,9 +272,7 @@ class CertificateAuthority extends \Google\Collection
     return $this->satisfiesPzi;
   }
   /**
-   * Output only. Reserved for future use.
-   *
-   * @param bool $satisfiesPzs
+   * @param bool
    */
   public function setSatisfiesPzs($satisfiesPzs)
   {
@@ -436,30 +286,21 @@ class CertificateAuthority extends \Google\Collection
     return $this->satisfiesPzs;
   }
   /**
-   * Output only. The State for this CertificateAuthority.
-   *
-   * Accepted values: STATE_UNSPECIFIED, ENABLED, DISABLED, STAGED,
-   * AWAITING_USER_ACTIVATION, DELETED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Optional. If this is a subordinate CertificateAuthority, this field will be
-   * set with the subordinate configuration, which describes its issuers. This
-   * may be updated, but this CertificateAuthority must continue to validate.
-   *
-   * @param SubordinateConfig $subordinateConfig
+   * @param SubordinateConfig
    */
   public function setSubordinateConfig(SubordinateConfig $subordinateConfig)
   {
@@ -473,46 +314,35 @@ class CertificateAuthority extends \Google\Collection
     return $this->subordinateConfig;
   }
   /**
-   * Output only. The CaPool.Tier of the CaPool that includes this
-   * CertificateAuthority.
-   *
-   * Accepted values: TIER_UNSPECIFIED, ENTERPRISE, DEVOPS
-   *
-   * @param self::TIER_* $tier
+   * @param string
    */
   public function setTier($tier)
   {
     $this->tier = $tier;
   }
   /**
-   * @return self::TIER_*
+   * @return string
    */
   public function getTier()
   {
     return $this->tier;
   }
   /**
-   * Required. Immutable. The Type of this CertificateAuthority.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, SELF_SIGNED, SUBORDINATE
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * Output only. The time at which this CertificateAuthority was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -526,11 +356,7 @@ class CertificateAuthority extends \Google\Collection
     return $this->updateTime;
   }
   /**
-   * Optional. User-defined URLs for CA certificate and CRLs. The service does
-   * not publish content to these URLs. It is up to the user to mirror content
-   * to these URLs.
-   *
-   * @param UserDefinedAccessUrls $userDefinedAccessUrls
+   * @param UserDefinedAccessUrls
    */
   public function setUserDefinedAccessUrls(UserDefinedAccessUrls $userDefinedAccessUrls)
   {

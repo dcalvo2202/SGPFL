@@ -24,9 +24,7 @@ class GoogleCloudDocumentaiV1DocumentDocumentLayout extends \Google\Collection
   protected $blocksDataType = 'array';
 
   /**
-   * List of blocks in the document.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlock[] $blocks
+   * @param GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlock[]
    */
   public function setBlocks($blocks)
   {

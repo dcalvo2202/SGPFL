@@ -24,9 +24,7 @@ class IssuerListResponse extends \Google\Collection
   protected $resourcesDataType = 'array';
 
   /**
-   * Resources corresponding to the list request.
-   *
-   * @param Issuer[] $resources
+   * @param Issuer[]
    */
   public function setResources($resources)
   {

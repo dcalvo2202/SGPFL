@@ -24,8 +24,6 @@ class InternalResourceMetadata extends \Google\Model
   protected $backupRunType = BackupRun::class;
   protected $backupRunDataType = '';
   /**
-   * Whether deletion protection is enabled for this internal resource.
-   *
    * @var bool
    */
   public $isDeletionProtectionEnabled;
@@ -34,17 +32,12 @@ class InternalResourceMetadata extends \Google\Model
   protected $resourceIdType = DatabaseResourceId::class;
   protected $resourceIdDataType = '';
   /**
-   * Required. internal resource name for spanner this will be database name
-   * e.g."spanner.googleapis.com/projects/123/abc/instances/inst1/databases/db1"
-   *
    * @var string
    */
   public $resourceName;
 
   /**
-   * Backup configuration for this database
-   *
-   * @param BackupConfiguration $backupConfiguration
+   * @param BackupConfiguration
    */
   public function setBackupConfiguration(BackupConfiguration $backupConfiguration)
   {
@@ -58,9 +51,7 @@ class InternalResourceMetadata extends \Google\Model
     return $this->backupConfiguration;
   }
   /**
-   * Information about the last backup attempt for this database
-   *
-   * @param BackupRun $backupRun
+   * @param BackupRun
    */
   public function setBackupRun(BackupRun $backupRun)
   {
@@ -74,9 +65,7 @@ class InternalResourceMetadata extends \Google\Model
     return $this->backupRun;
   }
   /**
-   * Whether deletion protection is enabled for this internal resource.
-   *
-   * @param bool $isDeletionProtectionEnabled
+   * @param bool
    */
   public function setIsDeletionProtectionEnabled($isDeletionProtectionEnabled)
   {
@@ -90,7 +79,7 @@ class InternalResourceMetadata extends \Google\Model
     return $this->isDeletionProtectionEnabled;
   }
   /**
-   * @param Product $product
+   * @param Product
    */
   public function setProduct(Product $product)
   {
@@ -104,7 +93,7 @@ class InternalResourceMetadata extends \Google\Model
     return $this->product;
   }
   /**
-   * @param DatabaseResourceId $resourceId
+   * @param DatabaseResourceId
    */
   public function setResourceId(DatabaseResourceId $resourceId)
   {
@@ -118,10 +107,7 @@ class InternalResourceMetadata extends \Google\Model
     return $this->resourceId;
   }
   /**
-   * Required. internal resource name for spanner this will be database name
-   * e.g."spanner.googleapis.com/projects/123/abc/instances/inst1/databases/db1"
-   *
-   * @param string $resourceName
+   * @param string
    */
   public function setResourceName($resourceName)
   {

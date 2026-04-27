@@ -34,7 +34,7 @@ class TaskResourceRequest extends \Google\Model
     return $this->amount;
   }
   /**
-   * @param string $resourceName
+   * @param string
    */
   public function setResourceName($resourceName)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\Docs;
 class CreateNamedRangeResponse extends \Google\Model
 {
   /**
-   * The ID of the created named range.
-   *
    * @var string
    */
   public $namedRangeId;
 
   /**
-   * The ID of the created named range.
-   *
-   * @param string $namedRangeId
+   * @param string
    */
   public function setNamedRangeId($namedRangeId)
   {

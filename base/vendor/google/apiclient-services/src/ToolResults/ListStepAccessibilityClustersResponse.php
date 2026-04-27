@@ -23,22 +23,12 @@ class ListStepAccessibilityClustersResponse extends \Google\Collection
   protected $clustersType = SuggestionClusterProto::class;
   protected $clustersDataType = 'array';
   /**
-   * A full resource name of the step. For example, projects/my-
-   * project/histories/bh.1234567890abcdef/executions/
-   * 1234567890123456789/steps/bs.1234567890abcdef Always presents.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * A sequence of accessibility suggestions, grouped into clusters. Within the
-   * sequence, clusters that belong to the same SuggestionCategory should be
-   * adjacent. Within each category, clusters should be ordered by their
-   * SuggestionPriority (ERRORs first). The categories should be ordered by
-   * their highest priority cluster.
-   *
-   * @param SuggestionClusterProto[] $clusters
+   * @param SuggestionClusterProto[]
    */
   public function setClusters($clusters)
   {
@@ -52,11 +42,7 @@ class ListStepAccessibilityClustersResponse extends \Google\Collection
     return $this->clusters;
   }
   /**
-   * A full resource name of the step. For example, projects/my-
-   * project/histories/bh.1234567890abcdef/executions/
-   * 1234567890123456789/steps/bs.1234567890abcdef Always presents.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

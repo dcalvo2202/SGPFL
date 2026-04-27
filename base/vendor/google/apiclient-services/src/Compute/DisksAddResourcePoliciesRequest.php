@@ -21,18 +21,12 @@ class DisksAddResourcePoliciesRequest extends \Google\Collection
 {
   protected $collection_key = 'resourcePolicies';
   /**
-   * Full or relative path to the resource policy to be added to this disk. You
-   * can only specify one resource policy.
-   *
    * @var string[]
    */
   public $resourcePolicies;
 
   /**
-   * Full or relative path to the resource policy to be added to this disk. You
-   * can only specify one resource policy.
-   *
-   * @param string[] $resourcePolicies
+   * @param string[]
    */
   public function setResourcePolicies($resourcePolicies)
   {

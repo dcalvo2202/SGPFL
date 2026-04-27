@@ -20,18 +20,12 @@ namespace Google\Service\BigQueryConnectionService;
 class ConnectorConfigurationPrivateServiceConnect extends \Google\Model
 {
   /**
-   * Required. Network Attachment name in the format of `projects/{project}/regi
-   * ons/{region}/networkAttachments/{networkattachment}`.
-   *
    * @var string
    */
   public $networkAttachment;
 
   /**
-   * Required. Network Attachment name in the format of `projects/{project}/regi
-   * ons/{region}/networkAttachments/{networkattachment}`.
-   *
-   * @param string $networkAttachment
+   * @param string
    */
   public function setNetworkAttachment($networkAttachment)
   {

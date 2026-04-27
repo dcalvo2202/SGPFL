@@ -20,30 +20,20 @@ namespace Google\Service\ShoppingContent;
 class PriceCompetitiveness extends \Google\Model
 {
   /**
-   * The price benchmark currency (ISO 4217 code).
-   *
    * @var string
    */
   public $benchmarkPriceCurrencyCode;
   /**
-   * The latest available price benchmark in micros (1 millionth of a standard
-   * unit, 1 USD = 1000000 micros) for the product's catalog in the benchmark
-   * country.
-   *
    * @var string
    */
   public $benchmarkPriceMicros;
   /**
-   * The country of the price benchmark (ISO 3166 code).
-   *
    * @var string
    */
   public $countryCode;
 
   /**
-   * The price benchmark currency (ISO 4217 code).
-   *
-   * @param string $benchmarkPriceCurrencyCode
+   * @param string
    */
   public function setBenchmarkPriceCurrencyCode($benchmarkPriceCurrencyCode)
   {
@@ -57,11 +47,7 @@ class PriceCompetitiveness extends \Google\Model
     return $this->benchmarkPriceCurrencyCode;
   }
   /**
-   * The latest available price benchmark in micros (1 millionth of a standard
-   * unit, 1 USD = 1000000 micros) for the product's catalog in the benchmark
-   * country.
-   *
-   * @param string $benchmarkPriceMicros
+   * @param string
    */
   public function setBenchmarkPriceMicros($benchmarkPriceMicros)
   {
@@ -75,9 +61,7 @@ class PriceCompetitiveness extends \Google\Model
     return $this->benchmarkPriceMicros;
   }
   /**
-   * The country of the price benchmark (ISO 3166 code).
-   *
-   * @param string $countryCode
+   * @param string
    */
   public function setCountryCode($countryCode)
   {

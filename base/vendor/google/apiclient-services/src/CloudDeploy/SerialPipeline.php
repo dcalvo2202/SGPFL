@@ -24,10 +24,7 @@ class SerialPipeline extends \Google\Collection
   protected $stagesDataType = 'array';
 
   /**
-   * Optional. Each stage specifies configuration for a `Target`. The ordering
-   * of this list defines the promotion flow.
-   *
-   * @param Stage[] $stages
+   * @param Stage[]
    */
   public function setStages($stages)
   {

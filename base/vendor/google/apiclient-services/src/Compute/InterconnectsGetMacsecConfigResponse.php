@@ -20,8 +20,6 @@ namespace Google\Service\Compute;
 class InterconnectsGetMacsecConfigResponse extends \Google\Model
 {
   /**
-   * end_interface: MixerGetResponseWithEtagBuilder
-   *
    * @var string
    */
   public $etag;
@@ -29,9 +27,7 @@ class InterconnectsGetMacsecConfigResponse extends \Google\Model
   protected $resultDataType = '';
 
   /**
-   * end_interface: MixerGetResponseWithEtagBuilder
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -45,7 +41,7 @@ class InterconnectsGetMacsecConfigResponse extends \Google\Model
     return $this->etag;
   }
   /**
-   * @param InterconnectMacsecConfig $result
+   * @param InterconnectMacsecConfig
    */
   public function setResult(InterconnectMacsecConfig $result)
   {

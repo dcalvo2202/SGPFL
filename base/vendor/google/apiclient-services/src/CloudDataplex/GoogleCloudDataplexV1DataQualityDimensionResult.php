@@ -22,24 +22,16 @@ class GoogleCloudDataplexV1DataQualityDimensionResult extends \Google\Model
   protected $dimensionType = GoogleCloudDataplexV1DataQualityDimension::class;
   protected $dimensionDataType = '';
   /**
-   * Output only. Whether the dimension passed or failed.
-   *
    * @var bool
    */
   public $passed;
   /**
-   * Output only. The dimension-level data quality score for this data scan job
-   * if and only if the 'dimension' field is set.The score ranges between 0, 100
-   * (up to two decimal points).
-   *
    * @var float
    */
   public $score;
 
   /**
-   * Output only. The dimension config specified in the DataQualitySpec, as is.
-   *
-   * @param GoogleCloudDataplexV1DataQualityDimension $dimension
+   * @param GoogleCloudDataplexV1DataQualityDimension
    */
   public function setDimension(GoogleCloudDataplexV1DataQualityDimension $dimension)
   {
@@ -53,9 +45,7 @@ class GoogleCloudDataplexV1DataQualityDimensionResult extends \Google\Model
     return $this->dimension;
   }
   /**
-   * Output only. Whether the dimension passed or failed.
-   *
-   * @param bool $passed
+   * @param bool
    */
   public function setPassed($passed)
   {
@@ -69,11 +59,7 @@ class GoogleCloudDataplexV1DataQualityDimensionResult extends \Google\Model
     return $this->passed;
   }
   /**
-   * Output only. The dimension-level data quality score for this data scan job
-   * if and only if the 'dimension' field is set.The score ranges between 0, 100
-   * (up to two decimal points).
-   *
-   * @param float $score
+   * @param float
    */
   public function setScore($score)
   {

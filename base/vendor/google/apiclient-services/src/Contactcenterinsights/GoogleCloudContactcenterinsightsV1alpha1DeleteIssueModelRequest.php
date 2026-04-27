@@ -20,16 +20,12 @@ namespace Google\Service\Contactcenterinsights;
 class GoogleCloudContactcenterinsightsV1alpha1DeleteIssueModelRequest extends \Google\Model
 {
   /**
-   * Required. The name of the issue model to delete.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Required. The name of the issue model to delete.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

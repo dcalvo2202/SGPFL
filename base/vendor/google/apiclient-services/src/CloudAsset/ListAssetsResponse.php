@@ -23,24 +23,16 @@ class ListAssetsResponse extends \Google\Collection
   protected $assetsType = Asset::class;
   protected $assetsDataType = 'array';
   /**
-   * Token to retrieve the next page of results. It expires 72 hours after the
-   * page token for the first page is generated. Set to empty if there are no
-   * remaining results.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Time the snapshot was taken.
-   *
    * @var string
    */
   public $readTime;
 
   /**
-   * Assets.
-   *
-   * @param Asset[] $assets
+   * @param Asset[]
    */
   public function setAssets($assets)
   {
@@ -54,11 +46,7 @@ class ListAssetsResponse extends \Google\Collection
     return $this->assets;
   }
   /**
-   * Token to retrieve the next page of results. It expires 72 hours after the
-   * page token for the first page is generated. Set to empty if there are no
-   * remaining results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -72,9 +60,7 @@ class ListAssetsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Time the snapshot was taken.
-   *
-   * @param string $readTime
+   * @param string
    */
   public function setReadTime($readTime)
   {

@@ -19,58 +19,19 @@ namespace Google\Service\Contentwarehouse;
 
 class GoogleCloudContentwarehouseV1UpdateOptions extends \Google\Model
 {
-  /**
-   * Defaults to full replace behavior, ie. FULL_REPLACE.
-   */
-  public const UPDATE_TYPE_UPDATE_TYPE_UNSPECIFIED = 'UPDATE_TYPE_UNSPECIFIED';
-  /**
-   * Fully replace all the fields (including previously linked raw document).
-   * Any field masks will be ignored.
-   */
-  public const UPDATE_TYPE_UPDATE_TYPE_REPLACE = 'UPDATE_TYPE_REPLACE';
-  /**
-   * Merge the fields into the existing entities.
-   */
-  public const UPDATE_TYPE_UPDATE_TYPE_MERGE = 'UPDATE_TYPE_MERGE';
-  /**
-   * Inserts the properties by names.
-   */
-  public const UPDATE_TYPE_UPDATE_TYPE_INSERT_PROPERTIES_BY_NAMES = 'UPDATE_TYPE_INSERT_PROPERTIES_BY_NAMES';
-  /**
-   * Replace the properties by names.
-   */
-  public const UPDATE_TYPE_UPDATE_TYPE_REPLACE_PROPERTIES_BY_NAMES = 'UPDATE_TYPE_REPLACE_PROPERTIES_BY_NAMES';
-  /**
-   * Delete the properties by names.
-   */
-  public const UPDATE_TYPE_UPDATE_TYPE_DELETE_PROPERTIES_BY_NAMES = 'UPDATE_TYPE_DELETE_PROPERTIES_BY_NAMES';
-  /**
-   * For each of the property, replaces the property if the it exists, otherwise
-   * inserts a new property. And for the rest of the fields, merge them based on
-   * update mask and merge fields options.
-   */
-  public const UPDATE_TYPE_UPDATE_TYPE_MERGE_AND_REPLACE_OR_INSERT_PROPERTIES_BY_NAMES = 'UPDATE_TYPE_MERGE_AND_REPLACE_OR_INSERT_PROPERTIES_BY_NAMES';
   protected $mergeFieldsOptionsType = GoogleCloudContentwarehouseV1MergeFieldsOptions::class;
   protected $mergeFieldsOptionsDataType = '';
   /**
-   * Field mask for merging Document fields. For the `FieldMask` definition, see
-   * https://developers.google.com/protocol-
-   * buffers/docs/reference/google.protobuf#fieldmask
-   *
    * @var string
    */
   public $updateMask;
   /**
-   * Type for update.
-   *
    * @var string
    */
   public $updateType;
 
   /**
-   * Options for merging.
-   *
-   * @param GoogleCloudContentwarehouseV1MergeFieldsOptions $mergeFieldsOptions
+   * @param GoogleCloudContentwarehouseV1MergeFieldsOptions
    */
   public function setMergeFieldsOptions(GoogleCloudContentwarehouseV1MergeFieldsOptions $mergeFieldsOptions)
   {
@@ -84,11 +45,7 @@ class GoogleCloudContentwarehouseV1UpdateOptions extends \Google\Model
     return $this->mergeFieldsOptions;
   }
   /**
-   * Field mask for merging Document fields. For the `FieldMask` definition, see
-   * https://developers.google.com/protocol-
-   * buffers/docs/reference/google.protobuf#fieldmask
-   *
-   * @param string $updateMask
+   * @param string
    */
   public function setUpdateMask($updateMask)
   {
@@ -102,22 +59,14 @@ class GoogleCloudContentwarehouseV1UpdateOptions extends \Google\Model
     return $this->updateMask;
   }
   /**
-   * Type for update.
-   *
-   * Accepted values: UPDATE_TYPE_UNSPECIFIED, UPDATE_TYPE_REPLACE,
-   * UPDATE_TYPE_MERGE, UPDATE_TYPE_INSERT_PROPERTIES_BY_NAMES,
-   * UPDATE_TYPE_REPLACE_PROPERTIES_BY_NAMES,
-   * UPDATE_TYPE_DELETE_PROPERTIES_BY_NAMES,
-   * UPDATE_TYPE_MERGE_AND_REPLACE_OR_INSERT_PROPERTIES_BY_NAMES
-   *
-   * @param self::UPDATE_TYPE_* $updateType
+   * @param string
    */
   public function setUpdateType($updateType)
   {
     $this->updateType = $updateType;
   }
   /**
-   * @return self::UPDATE_TYPE_*
+   * @return string
    */
   public function getUpdateType()
   {

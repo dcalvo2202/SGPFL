@@ -25,7 +25,7 @@ class GoogleCloudDialogflowV2beta1IntentMessageBasicCardButtonOpenUriAction exte
   public $uri;
 
   /**
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

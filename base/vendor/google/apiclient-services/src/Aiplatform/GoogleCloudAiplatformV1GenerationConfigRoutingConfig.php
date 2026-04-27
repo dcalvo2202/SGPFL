@@ -25,10 +25,7 @@ class GoogleCloudAiplatformV1GenerationConfigRoutingConfig extends \Google\Model
   protected $manualModeDataType = '';
 
   /**
-   * In this mode, the model is selected automatically based on the content of
-   * the request.
-   *
-   * @param GoogleCloudAiplatformV1GenerationConfigRoutingConfigAutoRoutingMode $autoMode
+   * @param GoogleCloudAiplatformV1GenerationConfigRoutingConfigAutoRoutingMode
    */
   public function setAutoMode(GoogleCloudAiplatformV1GenerationConfigRoutingConfigAutoRoutingMode $autoMode)
   {
@@ -42,9 +39,7 @@ class GoogleCloudAiplatformV1GenerationConfigRoutingConfig extends \Google\Model
     return $this->autoMode;
   }
   /**
-   * In this mode, the model is specified manually.
-   *
-   * @param GoogleCloudAiplatformV1GenerationConfigRoutingConfigManualRoutingMode $manualMode
+   * @param GoogleCloudAiplatformV1GenerationConfigRoutingConfigManualRoutingMode
    */
   public function setManualMode(GoogleCloudAiplatformV1GenerationConfigRoutingConfigManualRoutingMode $manualMode)
   {

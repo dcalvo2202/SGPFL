@@ -20,20 +20,12 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1betaSingleRegionKey extends \Google\Model
 {
   /**
-   * Required. Single-regional kms key resource name which will be used to
-   * encrypt resources `projects/{project}/locations/{location}/keyRings/{keyRin
-   * g}/cryptoKeys/{keyId}`.
-   *
    * @var string
    */
   public $kmsKey;
 
   /**
-   * Required. Single-regional kms key resource name which will be used to
-   * encrypt resources `projects/{project}/locations/{location}/keyRings/{keyRin
-   * g}/cryptoKeys/{keyId}`.
-   *
-   * @param string $kmsKey
+   * @param string
    */
   public function setKmsKey($kmsKey)
   {

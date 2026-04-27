@@ -21,23 +21,16 @@ class ChannelSectionContentDetails extends \Google\Collection
 {
   protected $collection_key = 'playlists';
   /**
-   * The channel ids for type multiple_channels.
-   *
    * @var string[]
    */
   public $channels;
   /**
-   * The playlist ids for type single_playlist and multiple_playlists. For
-   * singlePlaylist, only one playlistId is allowed.
-   *
    * @var string[]
    */
   public $playlists;
 
   /**
-   * The channel ids for type multiple_channels.
-   *
-   * @param string[] $channels
+   * @param string[]
    */
   public function setChannels($channels)
   {
@@ -51,10 +44,7 @@ class ChannelSectionContentDetails extends \Google\Collection
     return $this->channels;
   }
   /**
-   * The playlist ids for type single_playlist and multiple_playlists. For
-   * singlePlaylist, only one playlistId is allowed.
-   *
-   * @param string[] $playlists
+   * @param string[]
    */
   public function setPlaylists($playlists)
   {

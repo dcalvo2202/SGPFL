@@ -20,26 +20,10 @@ namespace Google\Service\AndroidProvisioningPartner;
 class PartnerClaim extends \Google\Model
 {
   /**
-   * Unspecified section type.
-   */
-  public const SECTION_TYPE_SECTION_TYPE_UNSPECIFIED = 'SECTION_TYPE_UNSPECIFIED';
-  /**
-   * SIM-lock section type.
-   */
-  public const SECTION_TYPE_SECTION_TYPE_SIM_LOCK = 'SECTION_TYPE_SIM_LOCK';
-  /**
-   * Zero-touch enrollment section type.
-   */
-  public const SECTION_TYPE_SECTION_TYPE_ZERO_TOUCH = 'SECTION_TYPE_ZERO_TOUCH';
-  /**
-   * Optional. The ID of the configuration applied to the device section.
-   *
    * @var string
    */
   public $configurationId;
   /**
-   * The ID of the customer for whom the device is being claimed.
-   *
    * @var string
    */
   public $customerId;
@@ -48,35 +32,24 @@ class PartnerClaim extends \Google\Model
   protected $deviceMetadataType = DeviceMetadata::class;
   protected $deviceMetadataDataType = '';
   /**
-   * The Google Workspace customer ID.
-   *
    * @var string
    */
   public $googleWorkspaceCustomerId;
   /**
-   * Optional. Must and can only be set for Chrome OS devices.
-   *
    * @var string
    */
   public $preProvisioningToken;
   /**
-   * Required. The section type of the device's provisioning record.
-   *
    * @var string
    */
   public $sectionType;
   /**
-   * Optional. Must and can only be set when DeviceProvisioningSectionType is
-   * SECTION_TYPE_SIM_LOCK. The unique identifier of the SimLock profile.
-   *
    * @var string
    */
   public $simlockProfileId;
 
   /**
-   * Optional. The ID of the configuration applied to the device section.
-   *
-   * @param string $configurationId
+   * @param string
    */
   public function setConfigurationId($configurationId)
   {
@@ -90,9 +63,7 @@ class PartnerClaim extends \Google\Model
     return $this->configurationId;
   }
   /**
-   * The ID of the customer for whom the device is being claimed.
-   *
-   * @param string $customerId
+   * @param string
    */
   public function setCustomerId($customerId)
   {
@@ -106,9 +77,7 @@ class PartnerClaim extends \Google\Model
     return $this->customerId;
   }
   /**
-   * Required. Required. Device identifier of the device.
-   *
-   * @param DeviceIdentifier $deviceIdentifier
+   * @param DeviceIdentifier
    */
   public function setDeviceIdentifier(DeviceIdentifier $deviceIdentifier)
   {
@@ -122,9 +91,7 @@ class PartnerClaim extends \Google\Model
     return $this->deviceIdentifier;
   }
   /**
-   * Required. The metadata to attach to the device at claim.
-   *
-   * @param DeviceMetadata $deviceMetadata
+   * @param DeviceMetadata
    */
   public function setDeviceMetadata(DeviceMetadata $deviceMetadata)
   {
@@ -138,9 +105,7 @@ class PartnerClaim extends \Google\Model
     return $this->deviceMetadata;
   }
   /**
-   * The Google Workspace customer ID.
-   *
-   * @param string $googleWorkspaceCustomerId
+   * @param string
    */
   public function setGoogleWorkspaceCustomerId($googleWorkspaceCustomerId)
   {
@@ -154,9 +119,7 @@ class PartnerClaim extends \Google\Model
     return $this->googleWorkspaceCustomerId;
   }
   /**
-   * Optional. Must and can only be set for Chrome OS devices.
-   *
-   * @param string $preProvisioningToken
+   * @param string
    */
   public function setPreProvisioningToken($preProvisioningToken)
   {
@@ -170,29 +133,21 @@ class PartnerClaim extends \Google\Model
     return $this->preProvisioningToken;
   }
   /**
-   * Required. The section type of the device's provisioning record.
-   *
-   * Accepted values: SECTION_TYPE_UNSPECIFIED, SECTION_TYPE_SIM_LOCK,
-   * SECTION_TYPE_ZERO_TOUCH
-   *
-   * @param self::SECTION_TYPE_* $sectionType
+   * @param string
    */
   public function setSectionType($sectionType)
   {
     $this->sectionType = $sectionType;
   }
   /**
-   * @return self::SECTION_TYPE_*
+   * @return string
    */
   public function getSectionType()
   {
     return $this->sectionType;
   }
   /**
-   * Optional. Must and can only be set when DeviceProvisioningSectionType is
-   * SECTION_TYPE_SIM_LOCK. The unique identifier of the SimLock profile.
-   *
-   * @param string $simlockProfileId
+   * @param string
    */
   public function setSimlockProfileId($simlockProfileId)
   {

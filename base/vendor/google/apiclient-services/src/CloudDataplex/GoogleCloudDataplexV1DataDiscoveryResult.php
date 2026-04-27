@@ -25,9 +25,7 @@ class GoogleCloudDataplexV1DataDiscoveryResult extends \Google\Model
   protected $scanStatisticsDataType = '';
 
   /**
-   * Output only. Configuration for metadata publishing.
-   *
-   * @param GoogleCloudDataplexV1DataDiscoveryResultBigQueryPublishing $bigqueryPublishing
+   * @param GoogleCloudDataplexV1DataDiscoveryResultBigQueryPublishing
    */
   public function setBigqueryPublishing(GoogleCloudDataplexV1DataDiscoveryResultBigQueryPublishing $bigqueryPublishing)
   {
@@ -41,9 +39,7 @@ class GoogleCloudDataplexV1DataDiscoveryResult extends \Google\Model
     return $this->bigqueryPublishing;
   }
   /**
-   * Output only. Describes result statistics of a data scan discovery job.
-   *
-   * @param GoogleCloudDataplexV1DataDiscoveryResultScanStatistics $scanStatistics
+   * @param GoogleCloudDataplexV1DataDiscoveryResultScanStatistics
    */
   public function setScanStatistics(GoogleCloudDataplexV1DataDiscoveryResultScanStatistics $scanStatistics)
   {

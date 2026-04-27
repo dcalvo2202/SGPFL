@@ -23,8 +23,6 @@ class Presentation extends \Google\Collection
   protected $layoutsType = Page::class;
   protected $layoutsDataType = 'array';
   /**
-   * The locale of the presentation, as an IETF BCP 47 language tag.
-   *
    * @var string
    */
   public $locale;
@@ -35,41 +33,22 @@ class Presentation extends \Google\Collection
   protected $pageSizeType = Size::class;
   protected $pageSizeDataType = '';
   /**
-   * The ID of the presentation.
-   *
    * @var string
    */
   public $presentationId;
   /**
-   * Output only. The revision ID of the presentation. Can be used in update
-   * requests to assert the presentation revision hasn't changed since the last
-   * read operation. Only populated if the user has edit access to the
-   * presentation. The revision ID is not a sequential number but a nebulous
-   * string. The format of the revision ID may change over time, so it should be
-   * treated opaquely. A returned revision ID is only guaranteed to be valid for
-   * 24 hours after it has been returned and cannot be shared across users. If
-   * the revision ID is unchanged between calls, then the presentation has not
-   * changed. Conversely, a changed ID (for the same presentation and user)
-   * usually means the presentation has been updated. However, a changed ID can
-   * also be due to internal factors such as ID format changes.
-   *
    * @var string
    */
   public $revisionId;
   protected $slidesType = Page::class;
   protected $slidesDataType = 'array';
   /**
-   * The title of the presentation.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * The layouts in the presentation. A layout is a template that determines how
-   * content is arranged and styled on the slides that inherit from that layout.
-   *
-   * @param Page[] $layouts
+   * @param Page[]
    */
   public function setLayouts($layouts)
   {
@@ -83,9 +62,7 @@ class Presentation extends \Google\Collection
     return $this->layouts;
   }
   /**
-   * The locale of the presentation, as an IETF BCP 47 language tag.
-   *
-   * @param string $locale
+   * @param string
    */
   public function setLocale($locale)
   {
@@ -99,15 +76,7 @@ class Presentation extends \Google\Collection
     return $this->locale;
   }
   /**
-   * The slide masters in the presentation. A slide master contains all common
-   * page elements and the common properties for a set of layouts. They serve
-   * three purposes: - Placeholder shapes on a master contain the default text
-   * styles and shape properties of all placeholder shapes on pages that use
-   * that master. - The master page properties define the common page properties
-   * inherited by its layouts. - Any other shapes on the master slide appear on
-   * all slides using that master, regardless of their layout.
-   *
-   * @param Page[] $masters
+   * @param Page[]
    */
   public function setMasters($masters)
   {
@@ -121,16 +90,7 @@ class Presentation extends \Google\Collection
     return $this->masters;
   }
   /**
-   * The notes master in the presentation. It serves three purposes: -
-   * Placeholder shapes on a notes master contain the default text styles and
-   * shape properties of all placeholder shapes on notes pages. Specifically, a
-   * `SLIDE_IMAGE` placeholder shape contains the slide thumbnail, and a `BODY`
-   * placeholder shape contains the speaker notes. - The notes master page
-   * properties define the common page properties inherited by all notes pages.
-   * - Any other shapes on the notes master appear on all notes pages. The notes
-   * master is read-only.
-   *
-   * @param Page $notesMaster
+   * @param Page
    */
   public function setNotesMaster(Page $notesMaster)
   {
@@ -144,9 +104,7 @@ class Presentation extends \Google\Collection
     return $this->notesMaster;
   }
   /**
-   * The size of pages in the presentation.
-   *
-   * @param Size $pageSize
+   * @param Size
    */
   public function setPageSize(Size $pageSize)
   {
@@ -160,9 +118,7 @@ class Presentation extends \Google\Collection
     return $this->pageSize;
   }
   /**
-   * The ID of the presentation.
-   *
-   * @param string $presentationId
+   * @param string
    */
   public function setPresentationId($presentationId)
   {
@@ -176,19 +132,7 @@ class Presentation extends \Google\Collection
     return $this->presentationId;
   }
   /**
-   * Output only. The revision ID of the presentation. Can be used in update
-   * requests to assert the presentation revision hasn't changed since the last
-   * read operation. Only populated if the user has edit access to the
-   * presentation. The revision ID is not a sequential number but a nebulous
-   * string. The format of the revision ID may change over time, so it should be
-   * treated opaquely. A returned revision ID is only guaranteed to be valid for
-   * 24 hours after it has been returned and cannot be shared across users. If
-   * the revision ID is unchanged between calls, then the presentation has not
-   * changed. Conversely, a changed ID (for the same presentation and user)
-   * usually means the presentation has been updated. However, a changed ID can
-   * also be due to internal factors such as ID format changes.
-   *
-   * @param string $revisionId
+   * @param string
    */
   public function setRevisionId($revisionId)
   {
@@ -202,10 +146,7 @@ class Presentation extends \Google\Collection
     return $this->revisionId;
   }
   /**
-   * The slides in the presentation. A slide inherits properties from a slide
-   * layout.
-   *
-   * @param Page[] $slides
+   * @param Page[]
    */
   public function setSlides($slides)
   {
@@ -219,9 +160,7 @@ class Presentation extends \Google\Collection
     return $this->slides;
   }
   /**
-   * The title of the presentation.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

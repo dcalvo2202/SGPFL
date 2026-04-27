@@ -20,20 +20,12 @@ namespace Google\Service\StreetViewPublish;
 class UploadRef extends \Google\Model
 {
   /**
-   * An upload reference should be unique for each user. It follows the form: "h
-   * ttps://streetviewpublish.googleapis.com/media/user/{account_id}/photo/{uplo
-   * ad_reference}"
-   *
    * @var string
    */
   public $uploadUrl;
 
   /**
-   * An upload reference should be unique for each user. It follows the form: "h
-   * ttps://streetviewpublish.googleapis.com/media/user/{account_id}/photo/{uplo
-   * ad_reference}"
-   *
-   * @param string $uploadUrl
+   * @param string
    */
   public function setUploadUrl($uploadUrl)
   {

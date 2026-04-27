@@ -20,30 +20,20 @@ namespace Google\Service\GKEOnPrem;
 class VmwareAdminControlPlaneNodeConfig extends \Google\Model
 {
   /**
-   * The number of vCPUs for the control-plane node of the admin cluster.
-   *
    * @var string
    */
   public $cpus;
   /**
-   * The number of mebibytes of memory for the control-plane node of the admin
-   * cluster.
-   *
    * @var string
    */
   public $memory;
   /**
-   * The number of control plane nodes for this VMware admin cluster. (default:
-   * 1 replica).
-   *
    * @var string
    */
   public $replicas;
 
   /**
-   * The number of vCPUs for the control-plane node of the admin cluster.
-   *
-   * @param string $cpus
+   * @param string
    */
   public function setCpus($cpus)
   {
@@ -57,10 +47,7 @@ class VmwareAdminControlPlaneNodeConfig extends \Google\Model
     return $this->cpus;
   }
   /**
-   * The number of mebibytes of memory for the control-plane node of the admin
-   * cluster.
-   *
-   * @param string $memory
+   * @param string
    */
   public function setMemory($memory)
   {
@@ -74,10 +61,7 @@ class VmwareAdminControlPlaneNodeConfig extends \Google\Model
     return $this->memory;
   }
   /**
-   * The number of control plane nodes for this VMware admin cluster. (default:
-   * 1 replica).
-   *
-   * @param string $replicas
+   * @param string
    */
   public function setReplicas($replicas)
   {

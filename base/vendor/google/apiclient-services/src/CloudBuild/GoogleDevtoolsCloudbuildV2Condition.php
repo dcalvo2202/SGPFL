@@ -20,72 +20,32 @@ namespace Google\Service\CloudBuild;
 class GoogleDevtoolsCloudbuildV2Condition extends \Google\Model
 {
   /**
-   * Default enum type; should not be used.
-   */
-  public const SEVERITY_SEVERITY_UNSPECIFIED = 'SEVERITY_UNSPECIFIED';
-  /**
-   * Severity is warning.
-   */
-  public const SEVERITY_WARNING = 'WARNING';
-  /**
-   * Severity is informational only.
-   */
-  public const SEVERITY_INFO = 'INFO';
-  /**
-   * Default enum type indicating execution is still ongoing.
-   */
-  public const STATUS_UNKNOWN = 'UNKNOWN';
-  /**
-   * Success
-   */
-  public const STATUS_TRUE = 'TRUE';
-  /**
-   * Failure
-   */
-  public const STATUS_FALSE = 'FALSE';
-  /**
-   * LastTransitionTime is the last time the condition transitioned from one
-   * status to another.
-   *
    * @var string
    */
   public $lastTransitionTime;
   /**
-   * A human readable message indicating details about the transition.
-   *
    * @var string
    */
   public $message;
   /**
-   * The reason for the condition's last transition.
-   *
    * @var string
    */
   public $reason;
   /**
-   * Severity with which to treat failures of this type of condition.
-   *
    * @var string
    */
   public $severity;
   /**
-   * Status of the condition.
-   *
    * @var string
    */
   public $status;
   /**
-   * Type of condition.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * LastTransitionTime is the last time the condition transitioned from one
-   * status to another.
-   *
-   * @param string $lastTransitionTime
+   * @param string
    */
   public function setLastTransitionTime($lastTransitionTime)
   {
@@ -99,9 +59,7 @@ class GoogleDevtoolsCloudbuildV2Condition extends \Google\Model
     return $this->lastTransitionTime;
   }
   /**
-   * A human readable message indicating details about the transition.
-   *
-   * @param string $message
+   * @param string
    */
   public function setMessage($message)
   {
@@ -115,9 +73,7 @@ class GoogleDevtoolsCloudbuildV2Condition extends \Google\Model
     return $this->message;
   }
   /**
-   * The reason for the condition's last transition.
-   *
-   * @param string $reason
+   * @param string
    */
   public function setReason($reason)
   {
@@ -131,45 +87,35 @@ class GoogleDevtoolsCloudbuildV2Condition extends \Google\Model
     return $this->reason;
   }
   /**
-   * Severity with which to treat failures of this type of condition.
-   *
-   * Accepted values: SEVERITY_UNSPECIFIED, WARNING, INFO
-   *
-   * @param self::SEVERITY_* $severity
+   * @param string
    */
   public function setSeverity($severity)
   {
     $this->severity = $severity;
   }
   /**
-   * @return self::SEVERITY_*
+   * @return string
    */
   public function getSeverity()
   {
     return $this->severity;
   }
   /**
-   * Status of the condition.
-   *
-   * Accepted values: UNKNOWN, TRUE, FALSE
-   *
-   * @param self::STATUS_* $status
+   * @param string
    */
   public function setStatus($status)
   {
     $this->status = $status;
   }
   /**
-   * @return self::STATUS_*
+   * @return string
    */
   public function getStatus()
   {
     return $this->status;
   }
   /**
-   * Type of condition.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

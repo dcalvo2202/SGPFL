@@ -19,53 +19,34 @@ namespace Google\Service\Dfareporting;
 
 class AccountPermission extends \Google\Collection
 {
-  public const LEVEL_USER = 'USER';
-  public const LEVEL_ADMINISTRATOR = 'ADMINISTRATOR';
   protected $collection_key = 'accountProfiles';
   /**
-   * Account profiles associated with this account permission. Possible values
-   * are: - "ACCOUNT_PROFILE_BASIC" - "ACCOUNT_PROFILE_STANDARD"
-   *
    * @var string[]
    */
   public $accountProfiles;
   /**
-   * ID of this account permission.
-   *
    * @var string
    */
   public $id;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#accountPermission".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Administrative level required to enable this account permission.
-   *
    * @var string
    */
   public $level;
   /**
-   * Name of this account permission.
-   *
    * @var string
    */
   public $name;
   /**
-   * Permission group of this account permission.
-   *
    * @var string
    */
   public $permissionGroupId;
 
   /**
-   * Account profiles associated with this account permission. Possible values
-   * are: - "ACCOUNT_PROFILE_BASIC" - "ACCOUNT_PROFILE_STANDARD"
-   *
-   * @param string[] $accountProfiles
+   * @param string[]
    */
   public function setAccountProfiles($accountProfiles)
   {
@@ -79,9 +60,7 @@ class AccountPermission extends \Google\Collection
     return $this->accountProfiles;
   }
   /**
-   * ID of this account permission.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -95,10 +74,7 @@ class AccountPermission extends \Google\Collection
     return $this->id;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#accountPermission".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -112,27 +88,21 @@ class AccountPermission extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Administrative level required to enable this account permission.
-   *
-   * Accepted values: USER, ADMINISTRATOR
-   *
-   * @param self::LEVEL_* $level
+   * @param string
    */
   public function setLevel($level)
   {
     $this->level = $level;
   }
   /**
-   * @return self::LEVEL_*
+   * @return string
    */
   public function getLevel()
   {
     return $this->level;
   }
   /**
-   * Name of this account permission.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -146,9 +116,7 @@ class AccountPermission extends \Google\Collection
     return $this->name;
   }
   /**
-   * Permission group of this account permission.
-   *
-   * @param string $permissionGroupId
+   * @param string
    */
   public function setPermissionGroupId($permissionGroupId)
   {

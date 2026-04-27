@@ -20,22 +20,16 @@ namespace Google\Service\Container;
 class AdditionalNodeNetworkConfig extends \Google\Model
 {
   /**
-   * Name of the VPC where the additional interface belongs
-   *
    * @var string
    */
   public $network;
   /**
-   * Name of the subnetwork where the additional interface belongs
-   *
    * @var string
    */
   public $subnetwork;
 
   /**
-   * Name of the VPC where the additional interface belongs
-   *
-   * @param string $network
+   * @param string
    */
   public function setNetwork($network)
   {
@@ -49,9 +43,7 @@ class AdditionalNodeNetworkConfig extends \Google\Model
     return $this->network;
   }
   /**
-   * Name of the subnetwork where the additional interface belongs
-   *
-   * @param string $subnetwork
+   * @param string
    */
   public function setSubnetwork($subnetwork)
   {

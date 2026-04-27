@@ -25,24 +25,12 @@ class GoogleCloudAiplatformV1ExplanationParameters extends \Google\Collection
   protected $integratedGradientsAttributionType = GoogleCloudAiplatformV1IntegratedGradientsAttribution::class;
   protected $integratedGradientsAttributionDataType = '';
   /**
-   * If populated, only returns attributions that have output_index contained in
-   * output_indices. It must be an ndarray of integers, with the same shape of
-   * the output it's explaining. If not populated, returns attributions for
-   * top_k indices of outputs. If neither top_k nor output_indices is populated,
-   * returns the argmax index of the outputs. Only applicable to Models that
-   * predict multiple outputs (e,g, multi-class Models that predict multiple
-   * classes).
-   *
    * @var array[]
    */
   public $outputIndices;
   protected $sampledShapleyAttributionType = GoogleCloudAiplatformV1SampledShapleyAttribution::class;
   protected $sampledShapleyAttributionDataType = '';
   /**
-   * If populated, returns attributions for top K indices of outputs (defaults
-   * to 1). Only applies to Models that predicts more than one outputs (e,g,
-   * multi-class Models). When set to -1, returns explanations for all outputs.
-   *
    * @var int
    */
   public $topK;
@@ -50,10 +38,7 @@ class GoogleCloudAiplatformV1ExplanationParameters extends \Google\Collection
   protected $xraiAttributionDataType = '';
 
   /**
-   * Example-based explanations that returns the nearest neighbors from the
-   * provided dataset.
-   *
-   * @param GoogleCloudAiplatformV1Examples $examples
+   * @param GoogleCloudAiplatformV1Examples
    */
   public function setExamples(GoogleCloudAiplatformV1Examples $examples)
   {
@@ -67,11 +52,7 @@ class GoogleCloudAiplatformV1ExplanationParameters extends \Google\Collection
     return $this->examples;
   }
   /**
-   * An attribution method that computes Aumann-Shapley values taking advantage
-   * of the model's fully differentiable structure. Refer to this paper for more
-   * details: https://arxiv.org/abs/1703.01365
-   *
-   * @param GoogleCloudAiplatformV1IntegratedGradientsAttribution $integratedGradientsAttribution
+   * @param GoogleCloudAiplatformV1IntegratedGradientsAttribution
    */
   public function setIntegratedGradientsAttribution(GoogleCloudAiplatformV1IntegratedGradientsAttribution $integratedGradientsAttribution)
   {
@@ -85,15 +66,7 @@ class GoogleCloudAiplatformV1ExplanationParameters extends \Google\Collection
     return $this->integratedGradientsAttribution;
   }
   /**
-   * If populated, only returns attributions that have output_index contained in
-   * output_indices. It must be an ndarray of integers, with the same shape of
-   * the output it's explaining. If not populated, returns attributions for
-   * top_k indices of outputs. If neither top_k nor output_indices is populated,
-   * returns the argmax index of the outputs. Only applicable to Models that
-   * predict multiple outputs (e,g, multi-class Models that predict multiple
-   * classes).
-   *
-   * @param array[] $outputIndices
+   * @param array[]
    */
   public function setOutputIndices($outputIndices)
   {
@@ -107,12 +80,7 @@ class GoogleCloudAiplatformV1ExplanationParameters extends \Google\Collection
     return $this->outputIndices;
   }
   /**
-   * An attribution method that approximates Shapley values for features that
-   * contribute to the label being predicted. A sampling strategy is used to
-   * approximate the value rather than considering all subsets of features.
-   * Refer to this paper for model details: https://arxiv.org/abs/1306.4265.
-   *
-   * @param GoogleCloudAiplatformV1SampledShapleyAttribution $sampledShapleyAttribution
+   * @param GoogleCloudAiplatformV1SampledShapleyAttribution
    */
   public function setSampledShapleyAttribution(GoogleCloudAiplatformV1SampledShapleyAttribution $sampledShapleyAttribution)
   {
@@ -126,11 +94,7 @@ class GoogleCloudAiplatformV1ExplanationParameters extends \Google\Collection
     return $this->sampledShapleyAttribution;
   }
   /**
-   * If populated, returns attributions for top K indices of outputs (defaults
-   * to 1). Only applies to Models that predicts more than one outputs (e,g,
-   * multi-class Models). When set to -1, returns explanations for all outputs.
-   *
-   * @param int $topK
+   * @param int
    */
   public function setTopK($topK)
   {
@@ -144,16 +108,7 @@ class GoogleCloudAiplatformV1ExplanationParameters extends \Google\Collection
     return $this->topK;
   }
   /**
-   * An attribution method that redistributes Integrated Gradients attribution
-   * to segmented regions, taking advantage of the model's fully differentiable
-   * structure. Refer to this paper for more details:
-   * https://arxiv.org/abs/1906.02825 XRAI currently performs better on natural
-   * images, like a picture of a house or an animal. If the images are taken in
-   * artificial environments, like a lab or manufacturing line, or from
-   * diagnostic equipment, like x-rays or quality-control cameras, use
-   * Integrated Gradients instead.
-   *
-   * @param GoogleCloudAiplatformV1XraiAttribution $xraiAttribution
+   * @param GoogleCloudAiplatformV1XraiAttribution
    */
   public function setXraiAttribution(GoogleCloudAiplatformV1XraiAttribution $xraiAttribution)
   {

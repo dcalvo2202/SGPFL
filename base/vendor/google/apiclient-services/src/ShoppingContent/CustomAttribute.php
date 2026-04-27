@@ -23,24 +23,16 @@ class CustomAttribute extends \Google\Collection
   protected $groupValuesType = CustomAttribute::class;
   protected $groupValuesDataType = 'array';
   /**
-   * The name of the attribute. Underscores will be replaced by spaces upon
-   * insertion.
-   *
    * @var string
    */
   public $name;
   /**
-   * The value of the attribute.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Subattributes within this attribute group. Exactly one of value or
-   * groupValues must be provided.
-   *
-   * @param CustomAttribute[] $groupValues
+   * @param CustomAttribute[]
    */
   public function setGroupValues($groupValues)
   {
@@ -54,10 +46,7 @@ class CustomAttribute extends \Google\Collection
     return $this->groupValues;
   }
   /**
-   * The name of the attribute. Underscores will be replaced by spaces upon
-   * insertion.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -71,9 +60,7 @@ class CustomAttribute extends \Google\Collection
     return $this->name;
   }
   /**
-   * The value of the attribute.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

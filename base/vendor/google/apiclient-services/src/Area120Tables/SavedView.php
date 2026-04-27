@@ -20,22 +20,16 @@ namespace Google\Service\Area120Tables;
 class SavedView extends \Google\Model
 {
   /**
-   * Internal id associated with the saved view.
-   *
    * @var string
    */
   public $id;
   /**
-   * Display name of the saved view.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Internal id associated with the saved view.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -49,9 +43,7 @@ class SavedView extends \Google\Model
     return $this->id;
   }
   /**
-   * Display name of the saved view.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

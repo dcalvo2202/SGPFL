@@ -21,9 +21,6 @@ class PosListResponse extends \Google\Collection
 {
   protected $collection_key = 'resources';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#posListResponse`".
-   *
    * @var string
    */
   public $kind;
@@ -31,10 +28,7 @@ class PosListResponse extends \Google\Collection
   protected $resourcesDataType = 'array';
 
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#posListResponse`".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -48,7 +42,7 @@ class PosListResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * @param PosStore[] $resources
+   * @param PosStore[]
    */
   public function setResources($resources)
   {

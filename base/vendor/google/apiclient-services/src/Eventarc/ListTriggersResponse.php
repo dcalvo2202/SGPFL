@@ -21,26 +21,18 @@ class ListTriggersResponse extends \Google\Collection
 {
   protected $collection_key = 'unreachable';
   /**
-   * A page token that can be sent to `ListTriggers` to request the next page.
-   * If this is empty, then there are no more pages.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $triggersType = Trigger::class;
   protected $triggersDataType = 'array';
   /**
-   * Unreachable resources, if any.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * A page token that can be sent to `ListTriggers` to request the next page.
-   * If this is empty, then there are no more pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -54,9 +46,7 @@ class ListTriggersResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The requested triggers, up to the number specified in `page_size`.
-   *
-   * @param Trigger[] $triggers
+   * @param Trigger[]
    */
   public function setTriggers($triggers)
   {
@@ -70,9 +60,7 @@ class ListTriggersResponse extends \Google\Collection
     return $this->triggers;
   }
   /**
-   * Unreachable resources, if any.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

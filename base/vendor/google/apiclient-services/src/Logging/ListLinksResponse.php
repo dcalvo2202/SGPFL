@@ -23,18 +23,12 @@ class ListLinksResponse extends \Google\Collection
   protected $linksType = Link::class;
   protected $linksDataType = 'array';
   /**
-   * If there might be more results than those appearing in this response, then
-   * nextPageToken is included. To get the next set of results, call the same
-   * method again using the value of nextPageToken as pageToken.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * A list of links.
-   *
-   * @param Link[] $links
+   * @param Link[]
    */
   public function setLinks($links)
   {
@@ -48,11 +42,7 @@ class ListLinksResponse extends \Google\Collection
     return $this->links;
   }
   /**
-   * If there might be more results than those appearing in this response, then
-   * nextPageToken is included. To get the next set of results, call the same
-   * method again using the value of nextPageToken as pageToken.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

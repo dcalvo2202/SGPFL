@@ -20,18 +20,12 @@ namespace Google\Service\WorkflowExecutions;
 class ExportDataResponse extends \Google\Model
 {
   /**
-   * The JSON string with customer data and metadata for an execution with the
-   * given name
-   *
    * @var string
    */
   public $data;
 
   /**
-   * The JSON string with customer data and metadata for an execution with the
-   * given name
-   *
-   * @param string $data
+   * @param string
    */
   public function setData($data)
   {

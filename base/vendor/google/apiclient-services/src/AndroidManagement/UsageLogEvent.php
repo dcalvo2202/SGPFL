@@ -19,138 +19,6 @@ namespace Google\Service\AndroidManagement;
 
 class UsageLogEvent extends \Google\Model
 {
-  /**
-   * This value is not used
-   */
-  public const EVENT_TYPE_EVENT_TYPE_UNSPECIFIED = 'EVENT_TYPE_UNSPECIFIED';
-  /**
-   * Indicates adb_shell_command_event has been set.
-   */
-  public const EVENT_TYPE_ADB_SHELL_COMMAND = 'ADB_SHELL_COMMAND';
-  /**
-   * Indicates adb_shell_interactive_event has been set.
-   */
-  public const EVENT_TYPE_ADB_SHELL_INTERACTIVE = 'ADB_SHELL_INTERACTIVE';
-  /**
-   * Indicates app_process_start_event has been set.
-   */
-  public const EVENT_TYPE_APP_PROCESS_START = 'APP_PROCESS_START';
-  /**
-   * Indicates keyguard_dismissed_event has been set.
-   */
-  public const EVENT_TYPE_KEYGUARD_DISMISSED = 'KEYGUARD_DISMISSED';
-  /**
-   * Indicates keyguard_dismiss_auth_attempt_event has been set.
-   */
-  public const EVENT_TYPE_KEYGUARD_DISMISS_AUTH_ATTEMPT = 'KEYGUARD_DISMISS_AUTH_ATTEMPT';
-  /**
-   * Indicates keyguard_secured_event has been set.
-   */
-  public const EVENT_TYPE_KEYGUARD_SECURED = 'KEYGUARD_SECURED';
-  /**
-   * Indicates file_pulled_event has been set.
-   */
-  public const EVENT_TYPE_FILE_PULLED = 'FILE_PULLED';
-  /**
-   * Indicates file_pushed_event has been set.
-   */
-  public const EVENT_TYPE_FILE_PUSHED = 'FILE_PUSHED';
-  /**
-   * Indicates cert_authority_installed_event has been set.
-   */
-  public const EVENT_TYPE_CERT_AUTHORITY_INSTALLED = 'CERT_AUTHORITY_INSTALLED';
-  /**
-   * Indicates cert_authority_removed_event has been set.
-   */
-  public const EVENT_TYPE_CERT_AUTHORITY_REMOVED = 'CERT_AUTHORITY_REMOVED';
-  /**
-   * Indicates cert_validation_failure_event has been set.
-   */
-  public const EVENT_TYPE_CERT_VALIDATION_FAILURE = 'CERT_VALIDATION_FAILURE';
-  /**
-   * Indicates crypto_self_test_completed_event has been set.
-   */
-  public const EVENT_TYPE_CRYPTO_SELF_TEST_COMPLETED = 'CRYPTO_SELF_TEST_COMPLETED';
-  /**
-   * Indicates key_destruction_event has been set.
-   */
-  public const EVENT_TYPE_KEY_DESTRUCTION = 'KEY_DESTRUCTION';
-  /**
-   * Indicates key_generated_event has been set.
-   */
-  public const EVENT_TYPE_KEY_GENERATED = 'KEY_GENERATED';
-  /**
-   * Indicates key_import_event has been set.
-   */
-  public const EVENT_TYPE_KEY_IMPORT = 'KEY_IMPORT';
-  /**
-   * Indicates key_integrity_violation_event has been set.
-   */
-  public const EVENT_TYPE_KEY_INTEGRITY_VIOLATION = 'KEY_INTEGRITY_VIOLATION';
-  /**
-   * Indicates logging_started_event has been set.
-   */
-  public const EVENT_TYPE_LOGGING_STARTED = 'LOGGING_STARTED';
-  /**
-   * Indicates logging_stopped_event has been set.
-   */
-  public const EVENT_TYPE_LOGGING_STOPPED = 'LOGGING_STOPPED';
-  /**
-   * Indicates log_buffer_size_critical_event has been set.
-   */
-  public const EVENT_TYPE_LOG_BUFFER_SIZE_CRITICAL = 'LOG_BUFFER_SIZE_CRITICAL';
-  /**
-   * Indicates media_mount_event has been set.
-   */
-  public const EVENT_TYPE_MEDIA_MOUNT = 'MEDIA_MOUNT';
-  /**
-   * Indicates media_unmount_event has been set.
-   */
-  public const EVENT_TYPE_MEDIA_UNMOUNT = 'MEDIA_UNMOUNT';
-  /**
-   * Indicates os_shutdown_event has been set.
-   */
-  public const EVENT_TYPE_OS_SHUTDOWN = 'OS_SHUTDOWN';
-  /**
-   * Indicates os_startup_event has been set.
-   */
-  public const EVENT_TYPE_OS_STARTUP = 'OS_STARTUP';
-  /**
-   * Indicates remote_lock_event has been set.
-   */
-  public const EVENT_TYPE_REMOTE_LOCK = 'REMOTE_LOCK';
-  /**
-   * Indicates wipe_failure_event has been set.
-   */
-  public const EVENT_TYPE_WIPE_FAILURE = 'WIPE_FAILURE';
-  /**
-   * Indicates connect_event has been set.
-   */
-  public const EVENT_TYPE_CONNECT = 'CONNECT';
-  /**
-   * Indicates dns_event has been set.
-   */
-  public const EVENT_TYPE_DNS = 'DNS';
-  /**
-   * Indicates stopLostModeUserAttemptEvent has been set.
-   */
-  public const EVENT_TYPE_STOP_LOST_MODE_USER_ATTEMPT = 'STOP_LOST_MODE_USER_ATTEMPT';
-  /**
-   * Indicates lostModeOutgoingPhoneCallEvent has been set.
-   */
-  public const EVENT_TYPE_LOST_MODE_OUTGOING_PHONE_CALL = 'LOST_MODE_OUTGOING_PHONE_CALL';
-  /**
-   * Indicates lostModeLocationEvent has been set.
-   */
-  public const EVENT_TYPE_LOST_MODE_LOCATION = 'LOST_MODE_LOCATION';
-  /**
-   * Indicates enrollment_complete_event has been set.
-   */
-  public const EVENT_TYPE_ENROLLMENT_COMPLETE = 'ENROLLMENT_COMPLETE';
-  /**
-   * Indicates backupServiceToggledEvent has been set.
-   */
-  public const EVENT_TYPE_BACKUP_SERVICE_TOGGLED = 'BACKUP_SERVICE_TOGGLED';
   protected $adbShellCommandEventType = AdbShellCommandEvent::class;
   protected $adbShellCommandEventDataType = '';
   protected $adbShellInteractiveEventType = AdbShellInteractiveEvent::class;
@@ -174,21 +42,14 @@ class UsageLogEvent extends \Google\Model
   protected $enrollmentCompleteEventType = EnrollmentCompleteEvent::class;
   protected $enrollmentCompleteEventDataType = '';
   /**
-   * Unique id of the event.
-   *
    * @var string
    */
   public $eventId;
   /**
-   * Device timestamp when the event was logged.
-   *
    * @var string
    */
   public $eventTime;
   /**
-   * The particular usage log event type that was reported on the device. Use
-   * this to determine which event field to access.
-   *
    * @var string
    */
   public $eventType;
@@ -236,10 +97,7 @@ class UsageLogEvent extends \Google\Model
   protected $wipeFailureEventDataType = '';
 
   /**
-   * A shell command was issued over ADB via “adb shell command”. Part of
-   * SECURITY_LOGS.
-   *
-   * @param AdbShellCommandEvent $adbShellCommandEvent
+   * @param AdbShellCommandEvent
    */
   public function setAdbShellCommandEvent(AdbShellCommandEvent $adbShellCommandEvent)
   {
@@ -253,9 +111,7 @@ class UsageLogEvent extends \Google\Model
     return $this->adbShellCommandEvent;
   }
   /**
-   * An ADB interactive shell was opened via “adb shell”. Part of SECURITY_LOGS.
-   *
-   * @param AdbShellInteractiveEvent $adbShellInteractiveEvent
+   * @param AdbShellInteractiveEvent
    */
   public function setAdbShellInteractiveEvent(AdbShellInteractiveEvent $adbShellInteractiveEvent)
   {
@@ -269,9 +125,7 @@ class UsageLogEvent extends \Google\Model
     return $this->adbShellInteractiveEvent;
   }
   /**
-   * An app process was started. Part of SECURITY_LOGS.
-   *
-   * @param AppProcessStartEvent $appProcessStartEvent
+   * @param AppProcessStartEvent
    */
   public function setAppProcessStartEvent(AppProcessStartEvent $appProcessStartEvent)
   {
@@ -285,9 +139,7 @@ class UsageLogEvent extends \Google\Model
     return $this->appProcessStartEvent;
   }
   /**
-   * An admin has enabled or disabled backup service. Part of SECURITY_LOGS.
-   *
-   * @param BackupServiceToggledEvent $backupServiceToggledEvent
+   * @param BackupServiceToggledEvent
    */
   public function setBackupServiceToggledEvent(BackupServiceToggledEvent $backupServiceToggledEvent)
   {
@@ -301,10 +153,7 @@ class UsageLogEvent extends \Google\Model
     return $this->backupServiceToggledEvent;
   }
   /**
-   * A new root certificate was installed into the system's trusted credential
-   * storage. Part of SECURITY_LOGS.
-   *
-   * @param CertAuthorityInstalledEvent $certAuthorityInstalledEvent
+   * @param CertAuthorityInstalledEvent
    */
   public function setCertAuthorityInstalledEvent(CertAuthorityInstalledEvent $certAuthorityInstalledEvent)
   {
@@ -318,10 +167,7 @@ class UsageLogEvent extends \Google\Model
     return $this->certAuthorityInstalledEvent;
   }
   /**
-   * A root certificate was removed from the system's trusted credential
-   * storage. Part of SECURITY_LOGS.
-   *
-   * @param CertAuthorityRemovedEvent $certAuthorityRemovedEvent
+   * @param CertAuthorityRemovedEvent
    */
   public function setCertAuthorityRemovedEvent(CertAuthorityRemovedEvent $certAuthorityRemovedEvent)
   {
@@ -335,12 +181,7 @@ class UsageLogEvent extends \Google\Model
     return $this->certAuthorityRemovedEvent;
   }
   /**
-   * An X.509v3 certificate failed to validate, currently this validation is
-   * performed on the Wi-FI access point and failure may be due to a mismatch
-   * upon server certificate validation. However it may in the future include
-   * other validation events of an X.509v3 certificate. Part of SECURITY_LOGS.
-   *
-   * @param CertValidationFailureEvent $certValidationFailureEvent
+   * @param CertValidationFailureEvent
    */
   public function setCertValidationFailureEvent(CertValidationFailureEvent $certValidationFailureEvent)
   {
@@ -354,10 +195,7 @@ class UsageLogEvent extends \Google\Model
     return $this->certValidationFailureEvent;
   }
   /**
-   * A TCP connect event was initiated through the standard network stack. Part
-   * of NETWORK_ACTIVITY_LOGS.
-   *
-   * @param ConnectEvent $connectEvent
+   * @param ConnectEvent
    */
   public function setConnectEvent(ConnectEvent $connectEvent)
   {
@@ -371,11 +209,7 @@ class UsageLogEvent extends \Google\Model
     return $this->connectEvent;
   }
   /**
-   * Validates whether Android’s built-in cryptographic library (BoringSSL) is
-   * valid. Should always succeed on device boot, if it fails, the device should
-   * be considered untrusted. Part of SECURITY_LOGS.
-   *
-   * @param CryptoSelfTestCompletedEvent $cryptoSelfTestCompletedEvent
+   * @param CryptoSelfTestCompletedEvent
    */
   public function setCryptoSelfTestCompletedEvent(CryptoSelfTestCompletedEvent $cryptoSelfTestCompletedEvent)
   {
@@ -389,10 +223,7 @@ class UsageLogEvent extends \Google\Model
     return $this->cryptoSelfTestCompletedEvent;
   }
   /**
-   * A DNS lookup event was initiated through the standard network stack. Part
-   * of NETWORK_ACTIVITY_LOGS.
-   *
-   * @param DnsEvent $dnsEvent
+   * @param DnsEvent
    */
   public function setDnsEvent(DnsEvent $dnsEvent)
   {
@@ -406,9 +237,7 @@ class UsageLogEvent extends \Google\Model
     return $this->dnsEvent;
   }
   /**
-   * Device has completed enrollment. Part of AMAPI_LOGS.
-   *
-   * @param EnrollmentCompleteEvent $enrollmentCompleteEvent
+   * @param EnrollmentCompleteEvent
    */
   public function setEnrollmentCompleteEvent(EnrollmentCompleteEvent $enrollmentCompleteEvent)
   {
@@ -422,9 +251,7 @@ class UsageLogEvent extends \Google\Model
     return $this->enrollmentCompleteEvent;
   }
   /**
-   * Unique id of the event.
-   *
-   * @param string $eventId
+   * @param string
    */
   public function setEventId($eventId)
   {
@@ -438,9 +265,7 @@ class UsageLogEvent extends \Google\Model
     return $this->eventId;
   }
   /**
-   * Device timestamp when the event was logged.
-   *
-   * @param string $eventTime
+   * @param string
    */
   public function setEventTime($eventTime)
   {
@@ -454,37 +279,21 @@ class UsageLogEvent extends \Google\Model
     return $this->eventTime;
   }
   /**
-   * The particular usage log event type that was reported on the device. Use
-   * this to determine which event field to access.
-   *
-   * Accepted values: EVENT_TYPE_UNSPECIFIED, ADB_SHELL_COMMAND,
-   * ADB_SHELL_INTERACTIVE, APP_PROCESS_START, KEYGUARD_DISMISSED,
-   * KEYGUARD_DISMISS_AUTH_ATTEMPT, KEYGUARD_SECURED, FILE_PULLED, FILE_PUSHED,
-   * CERT_AUTHORITY_INSTALLED, CERT_AUTHORITY_REMOVED, CERT_VALIDATION_FAILURE,
-   * CRYPTO_SELF_TEST_COMPLETED, KEY_DESTRUCTION, KEY_GENERATED, KEY_IMPORT,
-   * KEY_INTEGRITY_VIOLATION, LOGGING_STARTED, LOGGING_STOPPED,
-   * LOG_BUFFER_SIZE_CRITICAL, MEDIA_MOUNT, MEDIA_UNMOUNT, OS_SHUTDOWN,
-   * OS_STARTUP, REMOTE_LOCK, WIPE_FAILURE, CONNECT, DNS,
-   * STOP_LOST_MODE_USER_ATTEMPT, LOST_MODE_OUTGOING_PHONE_CALL,
-   * LOST_MODE_LOCATION, ENROLLMENT_COMPLETE, BACKUP_SERVICE_TOGGLED
-   *
-   * @param self::EVENT_TYPE_* $eventType
+   * @param string
    */
   public function setEventType($eventType)
   {
     $this->eventType = $eventType;
   }
   /**
-   * @return self::EVENT_TYPE_*
+   * @return string
    */
   public function getEventType()
   {
     return $this->eventType;
   }
   /**
-   * A file was downloaded from the device. Part of SECURITY_LOGS.
-   *
-   * @param FilePulledEvent $filePulledEvent
+   * @param FilePulledEvent
    */
   public function setFilePulledEvent(FilePulledEvent $filePulledEvent)
   {
@@ -498,9 +307,7 @@ class UsageLogEvent extends \Google\Model
     return $this->filePulledEvent;
   }
   /**
-   * A file was uploaded onto the device. Part of SECURITY_LOGS.
-   *
-   * @param FilePushedEvent $filePushedEvent
+   * @param FilePushedEvent
    */
   public function setFilePushedEvent(FilePushedEvent $filePushedEvent)
   {
@@ -514,11 +321,7 @@ class UsageLogEvent extends \Google\Model
     return $this->filePushedEvent;
   }
   /**
-   * A cryptographic key including user installed, admin installed and system
-   * maintained private key is removed from the device either by the user or
-   * management. Part of SECURITY_LOGS.
-   *
-   * @param KeyDestructionEvent $keyDestructionEvent
+   * @param KeyDestructionEvent
    */
   public function setKeyDestructionEvent(KeyDestructionEvent $keyDestructionEvent)
   {
@@ -532,11 +335,7 @@ class UsageLogEvent extends \Google\Model
     return $this->keyDestructionEvent;
   }
   /**
-   * A cryptographic key including user installed, admin installed and system
-   * maintained private key is installed on the device either by the user or
-   * management. Part of SECURITY_LOGS.
-   *
-   * @param KeyGeneratedEvent $keyGeneratedEvent
+   * @param KeyGeneratedEvent
    */
   public function setKeyGeneratedEvent(KeyGeneratedEvent $keyGeneratedEvent)
   {
@@ -550,11 +349,7 @@ class UsageLogEvent extends \Google\Model
     return $this->keyGeneratedEvent;
   }
   /**
-   * A cryptographic key including user installed, admin installed and system
-   * maintained private key is imported on the device either by the user or
-   * management. Part of SECURITY_LOGS.
-   *
-   * @param KeyImportEvent $keyImportEvent
+   * @param KeyImportEvent
    */
   public function setKeyImportEvent(KeyImportEvent $keyImportEvent)
   {
@@ -568,11 +363,7 @@ class UsageLogEvent extends \Google\Model
     return $this->keyImportEvent;
   }
   /**
-   * A cryptographic key including user installed, admin installed and system
-   * maintained private key is determined to be corrupted due to storage
-   * corruption, hardware failure or some OS issue. Part of SECURITY_LOGS.
-   *
-   * @param KeyIntegrityViolationEvent $keyIntegrityViolationEvent
+   * @param KeyIntegrityViolationEvent
    */
   public function setKeyIntegrityViolationEvent(KeyIntegrityViolationEvent $keyIntegrityViolationEvent)
   {
@@ -586,9 +377,7 @@ class UsageLogEvent extends \Google\Model
     return $this->keyIntegrityViolationEvent;
   }
   /**
-   * An attempt was made to unlock the device. Part of SECURITY_LOGS.
-   *
-   * @param KeyguardDismissAuthAttemptEvent $keyguardDismissAuthAttemptEvent
+   * @param KeyguardDismissAuthAttemptEvent
    */
   public function setKeyguardDismissAuthAttemptEvent(KeyguardDismissAuthAttemptEvent $keyguardDismissAuthAttemptEvent)
   {
@@ -602,9 +391,7 @@ class UsageLogEvent extends \Google\Model
     return $this->keyguardDismissAuthAttemptEvent;
   }
   /**
-   * The keyguard was dismissed. Part of SECURITY_LOGS.
-   *
-   * @param KeyguardDismissedEvent $keyguardDismissedEvent
+   * @param KeyguardDismissedEvent
    */
   public function setKeyguardDismissedEvent(KeyguardDismissedEvent $keyguardDismissedEvent)
   {
@@ -618,9 +405,7 @@ class UsageLogEvent extends \Google\Model
     return $this->keyguardDismissedEvent;
   }
   /**
-   * The device was locked either by user or timeout. Part of SECURITY_LOGS.
-   *
-   * @param KeyguardSecuredEvent $keyguardSecuredEvent
+   * @param KeyguardSecuredEvent
    */
   public function setKeyguardSecuredEvent(KeyguardSecuredEvent $keyguardSecuredEvent)
   {
@@ -634,10 +419,7 @@ class UsageLogEvent extends \Google\Model
     return $this->keyguardSecuredEvent;
   }
   /**
-   * The audit log buffer has reached 90% of its capacity, therefore older
-   * events may be dropped. Part of SECURITY_LOGS.
-   *
-   * @param LogBufferSizeCriticalEvent $logBufferSizeCriticalEvent
+   * @param LogBufferSizeCriticalEvent
    */
   public function setLogBufferSizeCriticalEvent(LogBufferSizeCriticalEvent $logBufferSizeCriticalEvent)
   {
@@ -651,9 +433,7 @@ class UsageLogEvent extends \Google\Model
     return $this->logBufferSizeCriticalEvent;
   }
   /**
-   * usageLog policy has been enabled. Part of SECURITY_LOGS.
-   *
-   * @param LoggingStartedEvent $loggingStartedEvent
+   * @param LoggingStartedEvent
    */
   public function setLoggingStartedEvent(LoggingStartedEvent $loggingStartedEvent)
   {
@@ -667,9 +447,7 @@ class UsageLogEvent extends \Google\Model
     return $this->loggingStartedEvent;
   }
   /**
-   * usageLog policy has been disabled. Part of SECURITY_LOGS.
-   *
-   * @param LoggingStoppedEvent $loggingStoppedEvent
+   * @param LoggingStoppedEvent
    */
   public function setLoggingStoppedEvent(LoggingStoppedEvent $loggingStoppedEvent)
   {
@@ -683,9 +461,7 @@ class UsageLogEvent extends \Google\Model
     return $this->loggingStoppedEvent;
   }
   /**
-   * A lost mode location update when a device in lost mode.
-   *
-   * @param LostModeLocationEvent $lostModeLocationEvent
+   * @param LostModeLocationEvent
    */
   public function setLostModeLocationEvent(LostModeLocationEvent $lostModeLocationEvent)
   {
@@ -699,9 +475,7 @@ class UsageLogEvent extends \Google\Model
     return $this->lostModeLocationEvent;
   }
   /**
-   * An outgoing phone call has been made when a device in lost mode.
-   *
-   * @param LostModeOutgoingPhoneCallEvent $lostModeOutgoingPhoneCallEvent
+   * @param LostModeOutgoingPhoneCallEvent
    */
   public function setLostModeOutgoingPhoneCallEvent(LostModeOutgoingPhoneCallEvent $lostModeOutgoingPhoneCallEvent)
   {
@@ -715,9 +489,7 @@ class UsageLogEvent extends \Google\Model
     return $this->lostModeOutgoingPhoneCallEvent;
   }
   /**
-   * Removable media was mounted. Part of SECURITY_LOGS.
-   *
-   * @param MediaMountEvent $mediaMountEvent
+   * @param MediaMountEvent
    */
   public function setMediaMountEvent(MediaMountEvent $mediaMountEvent)
   {
@@ -731,9 +503,7 @@ class UsageLogEvent extends \Google\Model
     return $this->mediaMountEvent;
   }
   /**
-   * Removable media was unmounted. Part of SECURITY_LOGS.
-   *
-   * @param MediaUnmountEvent $mediaUnmountEvent
+   * @param MediaUnmountEvent
    */
   public function setMediaUnmountEvent(MediaUnmountEvent $mediaUnmountEvent)
   {
@@ -747,9 +517,7 @@ class UsageLogEvent extends \Google\Model
     return $this->mediaUnmountEvent;
   }
   /**
-   * Device was shutdown. Part of SECURITY_LOGS.
-   *
-   * @param OsShutdownEvent $osShutdownEvent
+   * @param OsShutdownEvent
    */
   public function setOsShutdownEvent(OsShutdownEvent $osShutdownEvent)
   {
@@ -763,9 +531,7 @@ class UsageLogEvent extends \Google\Model
     return $this->osShutdownEvent;
   }
   /**
-   * Device was started. Part of SECURITY_LOGS.
-   *
-   * @param OsStartupEvent $osStartupEvent
+   * @param OsStartupEvent
    */
   public function setOsStartupEvent(OsStartupEvent $osStartupEvent)
   {
@@ -779,10 +545,7 @@ class UsageLogEvent extends \Google\Model
     return $this->osStartupEvent;
   }
   /**
-   * The device or profile has been remotely locked via the LOCK command. Part
-   * of SECURITY_LOGS.
-   *
-   * @param RemoteLockEvent $remoteLockEvent
+   * @param RemoteLockEvent
    */
   public function setRemoteLockEvent(RemoteLockEvent $remoteLockEvent)
   {
@@ -796,9 +559,7 @@ class UsageLogEvent extends \Google\Model
     return $this->remoteLockEvent;
   }
   /**
-   * An attempt to take a device out of lost mode.
-   *
-   * @param StopLostModeUserAttemptEvent $stopLostModeUserAttemptEvent
+   * @param StopLostModeUserAttemptEvent
    */
   public function setStopLostModeUserAttemptEvent(StopLostModeUserAttemptEvent $stopLostModeUserAttemptEvent)
   {
@@ -812,11 +573,7 @@ class UsageLogEvent extends \Google\Model
     return $this->stopLostModeUserAttemptEvent;
   }
   /**
-   * The work profile or company-owned device failed to wipe when requested.
-   * This could be user initiated or admin initiated e.g. delete was received.
-   * Part of SECURITY_LOGS.
-   *
-   * @param WipeFailureEvent $wipeFailureEvent
+   * @param WipeFailureEvent
    */
   public function setWipeFailureEvent(WipeFailureEvent $wipeFailureEvent)
   {

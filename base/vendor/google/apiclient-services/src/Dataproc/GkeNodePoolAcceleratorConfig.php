@@ -20,30 +20,20 @@ namespace Google\Service\Dataproc;
 class GkeNodePoolAcceleratorConfig extends \Google\Model
 {
   /**
-   * The number of accelerator cards exposed to an instance.
-   *
    * @var string
    */
   public $acceleratorCount;
   /**
-   * The accelerator type resource namename (see GPUs on Compute Engine).
-   *
    * @var string
    */
   public $acceleratorType;
   /**
-   * Size of partitions to create on the GPU. Valid values are described in the
-   * NVIDIA mig user guide (https://docs.nvidia.com/datacenter/tesla/mig-user-
-   * guide/#partitioning).
-   *
    * @var string
    */
   public $gpuPartitionSize;
 
   /**
-   * The number of accelerator cards exposed to an instance.
-   *
-   * @param string $acceleratorCount
+   * @param string
    */
   public function setAcceleratorCount($acceleratorCount)
   {
@@ -57,9 +47,7 @@ class GkeNodePoolAcceleratorConfig extends \Google\Model
     return $this->acceleratorCount;
   }
   /**
-   * The accelerator type resource namename (see GPUs on Compute Engine).
-   *
-   * @param string $acceleratorType
+   * @param string
    */
   public function setAcceleratorType($acceleratorType)
   {
@@ -73,11 +61,7 @@ class GkeNodePoolAcceleratorConfig extends \Google\Model
     return $this->acceleratorType;
   }
   /**
-   * Size of partitions to create on the GPU. Valid values are described in the
-   * NVIDIA mig user guide (https://docs.nvidia.com/datacenter/tesla/mig-user-
-   * guide/#partitioning).
-   *
-   * @param string $gpuPartitionSize
+   * @param string
    */
   public function setGpuPartitionSize($gpuPartitionSize)
   {

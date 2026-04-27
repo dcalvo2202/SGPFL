@@ -20,103 +20,32 @@ namespace Google\Service\MyBusinessLodging;
 class Housekeeping extends \Google\Model
 {
   /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const DAILY_HOUSEKEEPING_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const DAILY_HOUSEKEEPING_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const DAILY_HOUSEKEEPING_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const DAILY_HOUSEKEEPING_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const HOUSEKEEPING_AVAILABLE_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const HOUSEKEEPING_AVAILABLE_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const HOUSEKEEPING_AVAILABLE_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const HOUSEKEEPING_AVAILABLE_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Default unspecified exception. Use this only if a more specific exception
-   * does not match.
-   */
-  public const TURNDOWN_SERVICE_EXCEPTION_EXCEPTION_UNSPECIFIED = 'EXCEPTION_UNSPECIFIED';
-  /**
-   * Amenity or service is unavailable due to ongoing work orders.
-   */
-  public const TURNDOWN_SERVICE_EXCEPTION_UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION';
-  /**
-   * Amenity or service availability is seasonal.
-   */
-  public const TURNDOWN_SERVICE_EXCEPTION_DEPENDENT_ON_SEASON = 'DEPENDENT_ON_SEASON';
-  /**
-   * Amenity or service availability depends on the day of the week.
-   */
-  public const TURNDOWN_SERVICE_EXCEPTION_DEPENDENT_ON_DAY_OF_WEEK = 'DEPENDENT_ON_DAY_OF_WEEK';
-  /**
-   * Daily housekeeping. Guest units are cleaned by hotel staff daily during
-   * guest's stay.
-   *
    * @var bool
    */
   public $dailyHousekeeping;
   /**
-   * Daily housekeeping exception.
-   *
    * @var string
    */
   public $dailyHousekeepingException;
   /**
-   * Housekeeping available. Guest units are cleaned by hotel staff during
-   * guest's stay. Schedule may vary from daily, weekly, or specific days of the
-   * week.
-   *
    * @var bool
    */
   public $housekeepingAvailable;
   /**
-   * Housekeeping available exception.
-   *
    * @var string
    */
   public $housekeepingAvailableException;
   /**
-   * Turndown service. Hotel staff enters guest units to prepare the bed for
-   * sleep use. May or may not include some light housekeeping. May or may not
-   * include an evening snack or candy. Also known as evening service.
-   *
    * @var bool
    */
   public $turndownService;
   /**
-   * Turndown service exception.
-   *
    * @var string
    */
   public $turndownServiceException;
 
   /**
-   * Daily housekeeping. Guest units are cleaned by hotel staff daily during
-   * guest's stay.
-   *
-   * @param bool $dailyHousekeeping
+   * @param bool
    */
   public function setDailyHousekeeping($dailyHousekeeping)
   {
@@ -130,30 +59,21 @@ class Housekeeping extends \Google\Model
     return $this->dailyHousekeeping;
   }
   /**
-   * Daily housekeeping exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::DAILY_HOUSEKEEPING_EXCEPTION_* $dailyHousekeepingException
+   * @param string
    */
   public function setDailyHousekeepingException($dailyHousekeepingException)
   {
     $this->dailyHousekeepingException = $dailyHousekeepingException;
   }
   /**
-   * @return self::DAILY_HOUSEKEEPING_EXCEPTION_*
+   * @return string
    */
   public function getDailyHousekeepingException()
   {
     return $this->dailyHousekeepingException;
   }
   /**
-   * Housekeeping available. Guest units are cleaned by hotel staff during
-   * guest's stay. Schedule may vary from daily, weekly, or specific days of the
-   * week.
-   *
-   * @param bool $housekeepingAvailable
+   * @param bool
    */
   public function setHousekeepingAvailable($housekeepingAvailable)
   {
@@ -167,30 +87,21 @@ class Housekeeping extends \Google\Model
     return $this->housekeepingAvailable;
   }
   /**
-   * Housekeeping available exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::HOUSEKEEPING_AVAILABLE_EXCEPTION_* $housekeepingAvailableException
+   * @param string
    */
   public function setHousekeepingAvailableException($housekeepingAvailableException)
   {
     $this->housekeepingAvailableException = $housekeepingAvailableException;
   }
   /**
-   * @return self::HOUSEKEEPING_AVAILABLE_EXCEPTION_*
+   * @return string
    */
   public function getHousekeepingAvailableException()
   {
     return $this->housekeepingAvailableException;
   }
   /**
-   * Turndown service. Hotel staff enters guest units to prepare the bed for
-   * sleep use. May or may not include some light housekeeping. May or may not
-   * include an evening snack or candy. Also known as evening service.
-   *
-   * @param bool $turndownService
+   * @param bool
    */
   public function setTurndownService($turndownService)
   {
@@ -204,19 +115,14 @@ class Housekeeping extends \Google\Model
     return $this->turndownService;
   }
   /**
-   * Turndown service exception.
-   *
-   * Accepted values: EXCEPTION_UNSPECIFIED, UNDER_CONSTRUCTION,
-   * DEPENDENT_ON_SEASON, DEPENDENT_ON_DAY_OF_WEEK
-   *
-   * @param self::TURNDOWN_SERVICE_EXCEPTION_* $turndownServiceException
+   * @param string
    */
   public function setTurndownServiceException($turndownServiceException)
   {
     $this->turndownServiceException = $turndownServiceException;
   }
   /**
-   * @return self::TURNDOWN_SERVICE_EXCEPTION_*
+   * @return string
    */
   public function getTurndownServiceException()
   {

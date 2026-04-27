@@ -20,22 +20,16 @@ namespace Google\Service\Datastream;
 class GcsProfile extends \Google\Model
 {
   /**
-   * Required. The Cloud Storage bucket name.
-   *
    * @var string
    */
   public $bucket;
   /**
-   * Optional. The root path inside the Cloud Storage bucket.
-   *
    * @var string
    */
   public $rootPath;
 
   /**
-   * Required. The Cloud Storage bucket name.
-   *
-   * @param string $bucket
+   * @param string
    */
   public function setBucket($bucket)
   {
@@ -49,9 +43,7 @@ class GcsProfile extends \Google\Model
     return $this->bucket;
   }
   /**
-   * Optional. The root path inside the Cloud Storage bucket.
-   *
-   * @param string $rootPath
+   * @param string
    */
   public function setRootPath($rootPath)
   {

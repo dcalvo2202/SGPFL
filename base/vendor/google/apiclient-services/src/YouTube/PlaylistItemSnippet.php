@@ -20,42 +20,26 @@ namespace Google\Service\YouTube;
 class PlaylistItemSnippet extends \Google\Model
 {
   /**
-   * The ID that YouTube uses to uniquely identify the user that added the item
-   * to the playlist.
-   *
    * @var string
    */
   public $channelId;
   /**
-   * Channel title for the channel that the playlist item belongs to.
-   *
    * @var string
    */
   public $channelTitle;
   /**
-   * The item's description.
-   *
    * @var string
    */
   public $description;
   /**
-   * The ID that YouTube uses to uniquely identify thGe playlist that the
-   * playlist item is in.
-   *
    * @var string
    */
   public $playlistId;
   /**
-   * The order in which the item appears in the playlist. The value uses a zero-
-   * based index, so the first item has a position of 0, the second item has a
-   * position of 1, and so forth.
-   *
    * @var string
    */
   public $position;
   /**
-   * The date and time that the item was added to the playlist.
-   *
    * @var string
    */
   public $publishedAt;
@@ -64,29 +48,20 @@ class PlaylistItemSnippet extends \Google\Model
   protected $thumbnailsType = ThumbnailDetails::class;
   protected $thumbnailsDataType = '';
   /**
-   * The item's title.
-   *
    * @var string
    */
   public $title;
   /**
-   * Channel id for the channel this video belongs to.
-   *
    * @var string
    */
   public $videoOwnerChannelId;
   /**
-   * Channel title for the channel this video belongs to.
-   *
    * @var string
    */
   public $videoOwnerChannelTitle;
 
   /**
-   * The ID that YouTube uses to uniquely identify the user that added the item
-   * to the playlist.
-   *
-   * @param string $channelId
+   * @param string
    */
   public function setChannelId($channelId)
   {
@@ -100,9 +75,7 @@ class PlaylistItemSnippet extends \Google\Model
     return $this->channelId;
   }
   /**
-   * Channel title for the channel that the playlist item belongs to.
-   *
-   * @param string $channelTitle
+   * @param string
    */
   public function setChannelTitle($channelTitle)
   {
@@ -116,9 +89,7 @@ class PlaylistItemSnippet extends \Google\Model
     return $this->channelTitle;
   }
   /**
-   * The item's description.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -132,10 +103,7 @@ class PlaylistItemSnippet extends \Google\Model
     return $this->description;
   }
   /**
-   * The ID that YouTube uses to uniquely identify thGe playlist that the
-   * playlist item is in.
-   *
-   * @param string $playlistId
+   * @param string
    */
   public function setPlaylistId($playlistId)
   {
@@ -149,11 +117,7 @@ class PlaylistItemSnippet extends \Google\Model
     return $this->playlistId;
   }
   /**
-   * The order in which the item appears in the playlist. The value uses a zero-
-   * based index, so the first item has a position of 0, the second item has a
-   * position of 1, and so forth.
-   *
-   * @param string $position
+   * @param string
    */
   public function setPosition($position)
   {
@@ -167,9 +131,7 @@ class PlaylistItemSnippet extends \Google\Model
     return $this->position;
   }
   /**
-   * The date and time that the item was added to the playlist.
-   *
-   * @param string $publishedAt
+   * @param string
    */
   public function setPublishedAt($publishedAt)
   {
@@ -183,10 +145,7 @@ class PlaylistItemSnippet extends \Google\Model
     return $this->publishedAt;
   }
   /**
-   * The id object contains information that can be used to uniquely identify
-   * the resource that is included in the playlist as the playlist item.
-   *
-   * @param ResourceId $resourceId
+   * @param ResourceId
    */
   public function setResourceId(ResourceId $resourceId)
   {
@@ -200,11 +159,7 @@ class PlaylistItemSnippet extends \Google\Model
     return $this->resourceId;
   }
   /**
-   * A map of thumbnail images associated with the playlist item. For each
-   * object in the map, the key is the name of the thumbnail image, and the
-   * value is an object that contains other information about the thumbnail.
-   *
-   * @param ThumbnailDetails $thumbnails
+   * @param ThumbnailDetails
    */
   public function setThumbnails(ThumbnailDetails $thumbnails)
   {
@@ -218,9 +173,7 @@ class PlaylistItemSnippet extends \Google\Model
     return $this->thumbnails;
   }
   /**
-   * The item's title.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -234,9 +187,7 @@ class PlaylistItemSnippet extends \Google\Model
     return $this->title;
   }
   /**
-   * Channel id for the channel this video belongs to.
-   *
-   * @param string $videoOwnerChannelId
+   * @param string
    */
   public function setVideoOwnerChannelId($videoOwnerChannelId)
   {
@@ -250,9 +201,7 @@ class PlaylistItemSnippet extends \Google\Model
     return $this->videoOwnerChannelId;
   }
   /**
-   * Channel title for the channel this video belongs to.
-   *
-   * @param string $videoOwnerChannelTitle
+   * @param string
    */
   public function setVideoOwnerChannelTitle($videoOwnerChannelTitle)
   {

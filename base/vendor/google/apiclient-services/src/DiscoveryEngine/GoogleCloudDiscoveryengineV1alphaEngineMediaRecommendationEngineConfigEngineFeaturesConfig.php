@@ -25,9 +25,7 @@ class GoogleCloudDiscoveryengineV1alphaEngineMediaRecommendationEngineConfigEngi
   protected $recommendedForYouConfigDataType = '';
 
   /**
-   * Most popular engine feature config.
-   *
-   * @param GoogleCloudDiscoveryengineV1alphaEngineMediaRecommendationEngineConfigMostPopularFeatureConfig $mostPopularConfig
+   * @param GoogleCloudDiscoveryengineV1alphaEngineMediaRecommendationEngineConfigMostPopularFeatureConfig
    */
   public function setMostPopularConfig(GoogleCloudDiscoveryengineV1alphaEngineMediaRecommendationEngineConfigMostPopularFeatureConfig $mostPopularConfig)
   {
@@ -41,9 +39,7 @@ class GoogleCloudDiscoveryengineV1alphaEngineMediaRecommendationEngineConfigEngi
     return $this->mostPopularConfig;
   }
   /**
-   * Recommended for you engine feature config.
-   *
-   * @param GoogleCloudDiscoveryengineV1alphaEngineMediaRecommendationEngineConfigRecommendedForYouFeatureConfig $recommendedForYouConfig
+   * @param GoogleCloudDiscoveryengineV1alphaEngineMediaRecommendationEngineConfigRecommendedForYouFeatureConfig
    */
   public function setRecommendedForYouConfig(GoogleCloudDiscoveryengineV1alphaEngineMediaRecommendationEngineConfigRecommendedForYouFeatureConfig $recommendedForYouConfig)
   {

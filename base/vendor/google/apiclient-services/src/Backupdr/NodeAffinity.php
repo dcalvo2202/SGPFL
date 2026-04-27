@@ -19,42 +19,22 @@ namespace Google\Service\Backupdr;
 
 class NodeAffinity extends \Google\Collection
 {
-  /**
-   * Default value. This value is unused.
-   */
-  public const OPERATOR_OPERATOR_UNSPECIFIED = 'OPERATOR_UNSPECIFIED';
-  /**
-   * Requires Compute Engine to seek for matched nodes.
-   */
-  public const OPERATOR_IN = 'IN';
-  /**
-   * Requires Compute Engine to avoid certain nodes.
-   */
-  public const OPERATOR_NOT_IN = 'NOT_IN';
   protected $collection_key = 'values';
   /**
-   * Optional. Corresponds to the label key of Node resource.
-   *
    * @var string
    */
   public $key;
   /**
-   * Optional. Defines the operation of node selection.
-   *
    * @var string
    */
   public $operator;
   /**
-   * Optional. Corresponds to the label values of Node resource.
-   *
    * @var string[]
    */
   public $values;
 
   /**
-   * Optional. Corresponds to the label key of Node resource.
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {
@@ -68,27 +48,21 @@ class NodeAffinity extends \Google\Collection
     return $this->key;
   }
   /**
-   * Optional. Defines the operation of node selection.
-   *
-   * Accepted values: OPERATOR_UNSPECIFIED, IN, NOT_IN
-   *
-   * @param self::OPERATOR_* $operator
+   * @param string
    */
   public function setOperator($operator)
   {
     $this->operator = $operator;
   }
   /**
-   * @return self::OPERATOR_*
+   * @return string
    */
   public function getOperator()
   {
     return $this->operator;
   }
   /**
-   * Optional. Corresponds to the label values of Node resource.
-   *
-   * @param string[] $values
+   * @param string[]
    */
   public function setValues($values)
   {

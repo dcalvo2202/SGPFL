@@ -24,7 +24,7 @@ class PeoplePromotionCard extends \Google\Collection
   protected $peopleDataType = 'array';
 
   /**
-   * @param PersonCore[] $people
+   * @param PersonCore[]
    */
   public function setPeople($people)
   {

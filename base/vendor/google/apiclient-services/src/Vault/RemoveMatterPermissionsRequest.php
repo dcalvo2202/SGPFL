@@ -20,16 +20,12 @@ namespace Google\Service\Vault;
 class RemoveMatterPermissionsRequest extends \Google\Model
 {
   /**
-   * The account ID.
-   *
    * @var string
    */
   public $accountId;
 
   /**
-   * The account ID.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {

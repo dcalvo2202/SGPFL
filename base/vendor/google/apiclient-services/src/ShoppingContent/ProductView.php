@@ -19,266 +19,136 @@ namespace Google\Service\ShoppingContent;
 
 class ProductView extends \Google\Collection
 {
-  /**
-   * Undefined aggregated status.
-   */
-  public const AGGREGATED_DESTINATION_STATUS_AGGREGATED_STATUS_UNSPECIFIED = 'AGGREGATED_STATUS_UNSPECIFIED';
-  /**
-   * Offer isn't eligible, or is disapproved for all destinations.
-   */
-  public const AGGREGATED_DESTINATION_STATUS_NOT_ELIGIBLE_OR_DISAPPROVED = 'NOT_ELIGIBLE_OR_DISAPPROVED';
-  /**
-   * Offer's status is pending in all destinations.
-   */
-  public const AGGREGATED_DESTINATION_STATUS_PENDING = 'PENDING';
-  /**
-   * Offer is eligible for some (but not all) destinations.
-   */
-  public const AGGREGATED_DESTINATION_STATUS_ELIGIBLE_LIMITED = 'ELIGIBLE_LIMITED';
-  /**
-   * Offer is eligible for all destinations.
-   */
-  public const AGGREGATED_DESTINATION_STATUS_ELIGIBLE = 'ELIGIBLE';
-  /**
-   * Indicates that the channel is unspecified.
-   */
-  public const CHANNEL_CHANNEL_UNSPECIFIED = 'CHANNEL_UNSPECIFIED';
-  /**
-   * Indicates that the channel is local.
-   */
-  public const CHANNEL_LOCAL = 'LOCAL';
-  /**
-   * Indicates that the channel is online.
-   */
-  public const CHANNEL_ONLINE = 'ONLINE';
-  /**
-   * Unknown predicted clicks impact.
-   */
-  public const CLICK_POTENTIAL_CLICK_POTENTIAL_UNSPECIFIED = 'CLICK_POTENTIAL_UNSPECIFIED';
-  /**
-   * Potential to receive a low number of clicks compared to the highest
-   * performing products of the merchant.
-   */
-  public const CLICK_POTENTIAL_LOW = 'LOW';
-  /**
-   * Potential to receive a moderate number of clicks compared to the highest
-   * performing products of the merchant.
-   */
-  public const CLICK_POTENTIAL_MEDIUM = 'MEDIUM';
-  /**
-   * Potential to receive a similar number of clicks as the highest performing
-   * products of the merchant.
-   */
-  public const CLICK_POTENTIAL_HIGH = 'HIGH';
   protected $collection_key = 'itemIssues';
   /**
-   * Aggregated destination status.
-   *
    * @var string
    */
   public $aggregatedDestinationStatus;
   /**
-   * Availability of the product.
-   *
    * @var string
    */
   public $availability;
   /**
-   * Brand of the product.
-   *
    * @var string
    */
   public $brand;
   /**
-   * First level of the product category in [Google's product
-   * taxonomy](https://support.google.com/merchants/answer/6324436).
-   *
    * @var string
    */
   public $categoryL1;
   /**
-   * Second level of the product category in [Google's product
-   * taxonomy](https://support.google.com/merchants/answer/6324436).
-   *
    * @var string
    */
   public $categoryL2;
   /**
-   * Third level of the product category in [Google's product
-   * taxonomy](https://support.google.com/merchants/answer/6324436).
-   *
    * @var string
    */
   public $categoryL3;
   /**
-   * Fourth level of the product category in [Google's product
-   * taxonomy](https://support.google.com/merchants/answer/6324436).
-   *
    * @var string
    */
   public $categoryL4;
   /**
-   * Fifth level of the product category in [Google's product
-   * taxonomy](https://support.google.com/merchants/answer/6324436).
-   *
    * @var string
    */
   public $categoryL5;
   /**
-   * Channel of the product (online versus local).
-   *
    * @var string
    */
   public $channel;
   /**
-   * Estimated performance potential compared to highest performing products of
-   * the merchant.
-   *
    * @var string
    */
   public $clickPotential;
   /**
-   * Normalized click potential of the product. Values range from 1 to 1000,
-   * where 1 is the highest click potential and 1000 is the theoretical lowest.
-   *
    * @var string
    */
   public $clickPotentialRank;
   /**
-   * Condition of the product.
-   *
    * @var string
    */
   public $condition;
   /**
-   * The time the merchant created the product in timestamp seconds.
-   *
    * @var string
    */
   public $creationTime;
   /**
-   * Product price currency code (for example, ISO 4217). Absent if product
-   * price is not available.
-   *
    * @var string
    */
   public $currencyCode;
   protected $expirationDateType = Date::class;
   protected $expirationDateDataType = '';
   /**
-   * GTIN of the product.
-   *
    * @var string[]
    */
   public $gtin;
   /**
-   * The REST ID of the product, in the form of
-   * channel:contentLanguage:targetCountry:offerId. Content API methods that
-   * operate on products take this as their productId parameter. Should always
-   * be included in the SELECT clause.
-   *
    * @var string
    */
   public $id;
   /**
-   * Item group ID provided by the merchant for grouping variants together.
-   *
    * @var string
    */
   public $itemGroupId;
   protected $itemIssuesType = ProductViewItemIssue::class;
   protected $itemIssuesDataType = 'array';
   /**
-   * Language code of the product in BCP 47 format.
-   *
    * @var string
    */
   public $languageCode;
   /**
-   * Merchant-provided id of the product.
-   *
    * @var string
    */
   public $offerId;
   /**
-   * Product price specified as micros (1 millionth of a standard unit, 1 USD =
-   * 1000000 micros) in the product currency. Absent in case the information
-   * about the price of the product is not available.
-   *
    * @var string
    */
   public $priceMicros;
   /**
-   * First level of the product type in merchant's own [product
-   * taxonomy](https://support.google.com/merchants/answer/6324436).
-   *
    * @var string
    */
   public $productTypeL1;
   /**
-   * Second level of the product type in merchant's own [product
-   * taxonomy](https://support.google.com/merchants/answer/6324436).
-   *
    * @var string
    */
   public $productTypeL2;
   /**
-   * Third level of the product type in merchant's own [product
-   * taxonomy](https://support.google.com/merchants/answer/6324436).
-   *
    * @var string
    */
   public $productTypeL3;
   /**
-   * Fourth level of the product type in merchant's own [product
-   * taxonomy](https://support.google.com/merchants/answer/6324436).
-   *
    * @var string
    */
   public $productTypeL4;
   /**
-   * Fifth level of the product type in merchant's own [product
-   * taxonomy](https://support.google.com/merchants/answer/6324436).
-   *
    * @var string
    */
   public $productTypeL5;
   /**
-   * The normalized shipping label specified in the feed
-   *
    * @var string
    */
   public $shippingLabel;
   /**
-   * Title of the product.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * Aggregated destination status.
-   *
-   * Accepted values: AGGREGATED_STATUS_UNSPECIFIED,
-   * NOT_ELIGIBLE_OR_DISAPPROVED, PENDING, ELIGIBLE_LIMITED, ELIGIBLE
-   *
-   * @param self::AGGREGATED_DESTINATION_STATUS_* $aggregatedDestinationStatus
+   * @param string
    */
   public function setAggregatedDestinationStatus($aggregatedDestinationStatus)
   {
     $this->aggregatedDestinationStatus = $aggregatedDestinationStatus;
   }
   /**
-   * @return self::AGGREGATED_DESTINATION_STATUS_*
+   * @return string
    */
   public function getAggregatedDestinationStatus()
   {
     return $this->aggregatedDestinationStatus;
   }
   /**
-   * Availability of the product.
-   *
-   * @param string $availability
+   * @param string
    */
   public function setAvailability($availability)
   {
@@ -292,9 +162,7 @@ class ProductView extends \Google\Collection
     return $this->availability;
   }
   /**
-   * Brand of the product.
-   *
-   * @param string $brand
+   * @param string
    */
   public function setBrand($brand)
   {
@@ -308,10 +176,7 @@ class ProductView extends \Google\Collection
     return $this->brand;
   }
   /**
-   * First level of the product category in [Google's product
-   * taxonomy](https://support.google.com/merchants/answer/6324436).
-   *
-   * @param string $categoryL1
+   * @param string
    */
   public function setCategoryL1($categoryL1)
   {
@@ -325,10 +190,7 @@ class ProductView extends \Google\Collection
     return $this->categoryL1;
   }
   /**
-   * Second level of the product category in [Google's product
-   * taxonomy](https://support.google.com/merchants/answer/6324436).
-   *
-   * @param string $categoryL2
+   * @param string
    */
   public function setCategoryL2($categoryL2)
   {
@@ -342,10 +204,7 @@ class ProductView extends \Google\Collection
     return $this->categoryL2;
   }
   /**
-   * Third level of the product category in [Google's product
-   * taxonomy](https://support.google.com/merchants/answer/6324436).
-   *
-   * @param string $categoryL3
+   * @param string
    */
   public function setCategoryL3($categoryL3)
   {
@@ -359,10 +218,7 @@ class ProductView extends \Google\Collection
     return $this->categoryL3;
   }
   /**
-   * Fourth level of the product category in [Google's product
-   * taxonomy](https://support.google.com/merchants/answer/6324436).
-   *
-   * @param string $categoryL4
+   * @param string
    */
   public function setCategoryL4($categoryL4)
   {
@@ -376,10 +232,7 @@ class ProductView extends \Google\Collection
     return $this->categoryL4;
   }
   /**
-   * Fifth level of the product category in [Google's product
-   * taxonomy](https://support.google.com/merchants/answer/6324436).
-   *
-   * @param string $categoryL5
+   * @param string
    */
   public function setCategoryL5($categoryL5)
   {
@@ -393,47 +246,35 @@ class ProductView extends \Google\Collection
     return $this->categoryL5;
   }
   /**
-   * Channel of the product (online versus local).
-   *
-   * Accepted values: CHANNEL_UNSPECIFIED, LOCAL, ONLINE
-   *
-   * @param self::CHANNEL_* $channel
+   * @param string
    */
   public function setChannel($channel)
   {
     $this->channel = $channel;
   }
   /**
-   * @return self::CHANNEL_*
+   * @return string
    */
   public function getChannel()
   {
     return $this->channel;
   }
   /**
-   * Estimated performance potential compared to highest performing products of
-   * the merchant.
-   *
-   * Accepted values: CLICK_POTENTIAL_UNSPECIFIED, LOW, MEDIUM, HIGH
-   *
-   * @param self::CLICK_POTENTIAL_* $clickPotential
+   * @param string
    */
   public function setClickPotential($clickPotential)
   {
     $this->clickPotential = $clickPotential;
   }
   /**
-   * @return self::CLICK_POTENTIAL_*
+   * @return string
    */
   public function getClickPotential()
   {
     return $this->clickPotential;
   }
   /**
-   * Normalized click potential of the product. Values range from 1 to 1000,
-   * where 1 is the highest click potential and 1000 is the theoretical lowest.
-   *
-   * @param string $clickPotentialRank
+   * @param string
    */
   public function setClickPotentialRank($clickPotentialRank)
   {
@@ -447,9 +288,7 @@ class ProductView extends \Google\Collection
     return $this->clickPotentialRank;
   }
   /**
-   * Condition of the product.
-   *
-   * @param string $condition
+   * @param string
    */
   public function setCondition($condition)
   {
@@ -463,9 +302,7 @@ class ProductView extends \Google\Collection
     return $this->condition;
   }
   /**
-   * The time the merchant created the product in timestamp seconds.
-   *
-   * @param string $creationTime
+   * @param string
    */
   public function setCreationTime($creationTime)
   {
@@ -479,10 +316,7 @@ class ProductView extends \Google\Collection
     return $this->creationTime;
   }
   /**
-   * Product price currency code (for example, ISO 4217). Absent if product
-   * price is not available.
-   *
-   * @param string $currencyCode
+   * @param string
    */
   public function setCurrencyCode($currencyCode)
   {
@@ -496,9 +330,7 @@ class ProductView extends \Google\Collection
     return $this->currencyCode;
   }
   /**
-   * Expiration date for the product. Specified on insertion.
-   *
-   * @param Date $expirationDate
+   * @param Date
    */
   public function setExpirationDate(Date $expirationDate)
   {
@@ -512,9 +344,7 @@ class ProductView extends \Google\Collection
     return $this->expirationDate;
   }
   /**
-   * GTIN of the product.
-   *
-   * @param string[] $gtin
+   * @param string[]
    */
   public function setGtin($gtin)
   {
@@ -528,12 +358,7 @@ class ProductView extends \Google\Collection
     return $this->gtin;
   }
   /**
-   * The REST ID of the product, in the form of
-   * channel:contentLanguage:targetCountry:offerId. Content API methods that
-   * operate on products take this as their productId parameter. Should always
-   * be included in the SELECT clause.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -547,9 +372,7 @@ class ProductView extends \Google\Collection
     return $this->id;
   }
   /**
-   * Item group ID provided by the merchant for grouping variants together.
-   *
-   * @param string $itemGroupId
+   * @param string
    */
   public function setItemGroupId($itemGroupId)
   {
@@ -563,9 +386,7 @@ class ProductView extends \Google\Collection
     return $this->itemGroupId;
   }
   /**
-   * List of item issues for the product.
-   *
-   * @param ProductViewItemIssue[] $itemIssues
+   * @param ProductViewItemIssue[]
    */
   public function setItemIssues($itemIssues)
   {
@@ -579,9 +400,7 @@ class ProductView extends \Google\Collection
     return $this->itemIssues;
   }
   /**
-   * Language code of the product in BCP 47 format.
-   *
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {
@@ -595,9 +414,7 @@ class ProductView extends \Google\Collection
     return $this->languageCode;
   }
   /**
-   * Merchant-provided id of the product.
-   *
-   * @param string $offerId
+   * @param string
    */
   public function setOfferId($offerId)
   {
@@ -611,11 +428,7 @@ class ProductView extends \Google\Collection
     return $this->offerId;
   }
   /**
-   * Product price specified as micros (1 millionth of a standard unit, 1 USD =
-   * 1000000 micros) in the product currency. Absent in case the information
-   * about the price of the product is not available.
-   *
-   * @param string $priceMicros
+   * @param string
    */
   public function setPriceMicros($priceMicros)
   {
@@ -629,10 +442,7 @@ class ProductView extends \Google\Collection
     return $this->priceMicros;
   }
   /**
-   * First level of the product type in merchant's own [product
-   * taxonomy](https://support.google.com/merchants/answer/6324436).
-   *
-   * @param string $productTypeL1
+   * @param string
    */
   public function setProductTypeL1($productTypeL1)
   {
@@ -646,10 +456,7 @@ class ProductView extends \Google\Collection
     return $this->productTypeL1;
   }
   /**
-   * Second level of the product type in merchant's own [product
-   * taxonomy](https://support.google.com/merchants/answer/6324436).
-   *
-   * @param string $productTypeL2
+   * @param string
    */
   public function setProductTypeL2($productTypeL2)
   {
@@ -663,10 +470,7 @@ class ProductView extends \Google\Collection
     return $this->productTypeL2;
   }
   /**
-   * Third level of the product type in merchant's own [product
-   * taxonomy](https://support.google.com/merchants/answer/6324436).
-   *
-   * @param string $productTypeL3
+   * @param string
    */
   public function setProductTypeL3($productTypeL3)
   {
@@ -680,10 +484,7 @@ class ProductView extends \Google\Collection
     return $this->productTypeL3;
   }
   /**
-   * Fourth level of the product type in merchant's own [product
-   * taxonomy](https://support.google.com/merchants/answer/6324436).
-   *
-   * @param string $productTypeL4
+   * @param string
    */
   public function setProductTypeL4($productTypeL4)
   {
@@ -697,10 +498,7 @@ class ProductView extends \Google\Collection
     return $this->productTypeL4;
   }
   /**
-   * Fifth level of the product type in merchant's own [product
-   * taxonomy](https://support.google.com/merchants/answer/6324436).
-   *
-   * @param string $productTypeL5
+   * @param string
    */
   public function setProductTypeL5($productTypeL5)
   {
@@ -714,9 +512,7 @@ class ProductView extends \Google\Collection
     return $this->productTypeL5;
   }
   /**
-   * The normalized shipping label specified in the feed
-   *
-   * @param string $shippingLabel
+   * @param string
    */
   public function setShippingLabel($shippingLabel)
   {
@@ -730,9 +526,7 @@ class ProductView extends \Google\Collection
     return $this->shippingLabel;
   }
   /**
-   * Title of the product.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

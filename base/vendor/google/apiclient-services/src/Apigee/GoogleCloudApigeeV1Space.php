@@ -20,36 +20,24 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1Space extends \Google\Model
 {
   /**
-   * Output only. Create timestamp of the space.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. Display name of the space.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. Identifier. Id of the space. This field is used as the
-   * resource name, and must follow [AIP-122](https://google.aip.dev/122)
-   * guidelines.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Last modified timestamp of the space.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. Create timestamp of the space.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -63,9 +51,7 @@ class GoogleCloudApigeeV1Space extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Optional. Display name of the space.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -79,11 +65,7 @@ class GoogleCloudApigeeV1Space extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Output only. Identifier. Id of the space. This field is used as the
-   * resource name, and must follow [AIP-122](https://google.aip.dev/122)
-   * guidelines.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -97,9 +79,7 @@ class GoogleCloudApigeeV1Space extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Last modified timestamp of the space.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

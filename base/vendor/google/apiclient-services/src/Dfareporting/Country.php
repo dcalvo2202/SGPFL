@@ -17,52 +17,31 @@
 
 namespace Google\Service\Dfareporting;
 
-class Country extends \Google\Collection
+class Country extends \Google\Model
 {
-  protected $collection_key = 'tvDataProviders';
   /**
-   * Country code.
-   *
    * @var string
    */
   public $countryCode;
   /**
-   * DART ID of this country. This is the ID used for targeting and generating
-   * reports.
-   *
    * @var string
    */
   public $dartId;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#country".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Name of this country.
-   *
    * @var string
    */
   public $name;
   /**
-   * Whether ad serving supports secure servers in this country.
-   *
    * @var bool
    */
   public $sslEnabled;
-  /**
-   * Output only. The TV data providers supported in this country.
-   *
-   * @var string[]
-   */
-  public $tvDataProviders;
 
   /**
-   * Country code.
-   *
-   * @param string $countryCode
+   * @param string
    */
   public function setCountryCode($countryCode)
   {
@@ -76,10 +55,7 @@ class Country extends \Google\Collection
     return $this->countryCode;
   }
   /**
-   * DART ID of this country. This is the ID used for targeting and generating
-   * reports.
-   *
-   * @param string $dartId
+   * @param string
    */
   public function setDartId($dartId)
   {
@@ -93,10 +69,7 @@ class Country extends \Google\Collection
     return $this->dartId;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#country".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -110,9 +83,7 @@ class Country extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Name of this country.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -126,9 +97,7 @@ class Country extends \Google\Collection
     return $this->name;
   }
   /**
-   * Whether ad serving supports secure servers in this country.
-   *
-   * @param bool $sslEnabled
+   * @param bool
    */
   public function setSslEnabled($sslEnabled)
   {
@@ -140,22 +109,6 @@ class Country extends \Google\Collection
   public function getSslEnabled()
   {
     return $this->sslEnabled;
-  }
-  /**
-   * Output only. The TV data providers supported in this country.
-   *
-   * @param string[] $tvDataProviders
-   */
-  public function setTvDataProviders($tvDataProviders)
-  {
-    $this->tvDataProviders = $tvDataProviders;
-  }
-  /**
-   * @return string[]
-   */
-  public function getTvDataProviders()
-  {
-    return $this->tvDataProviders;
   }
 }
 

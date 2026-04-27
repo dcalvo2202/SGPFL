@@ -20,62 +20,36 @@ namespace Google\Service\Datastream;
 class MongodbSslConfig extends \Google\Model
 {
   /**
-   * Optional. Input only. PEM-encoded certificate of the CA that signed the
-   * source database server's certificate.
-   *
    * @var string
    */
   public $caCertificate;
   /**
-   * Output only. Indicates whether the ca_certificate field is set.
-   *
    * @var bool
    */
   public $caCertificateSet;
   /**
-   * Optional. Input only. PEM-encoded certificate that will be used by the
-   * replica to authenticate against the source database server. If this field
-   * is used then the 'client_key' and the 'ca_certificate' fields are
-   * mandatory.
-   *
    * @var string
    */
   public $clientCertificate;
   /**
-   * Output only. Indicates whether the client_certificate field is set.
-   *
    * @var bool
    */
   public $clientCertificateSet;
   /**
-   * Optional. Input only. PEM-encoded private key associated with the Client
-   * Certificate. If this field is used then the 'client_certificate' and the
-   * 'ca_certificate' fields are mandatory.
-   *
    * @var string
    */
   public $clientKey;
   /**
-   * Output only. Indicates whether the client_key field is set.
-   *
    * @var bool
    */
   public $clientKeySet;
   /**
-   * Optional. Input only. A reference to a Secret Manager resource name storing
-   * the PEM-encoded private key associated with the Client Certificate. If this
-   * field is used then the 'client_certificate' and the 'ca_certificate' fields
-   * are mandatory. Mutually exclusive with the `client_key` field.
-   *
    * @var string
    */
   public $secretManagerStoredClientKey;
 
   /**
-   * Optional. Input only. PEM-encoded certificate of the CA that signed the
-   * source database server's certificate.
-   *
-   * @param string $caCertificate
+   * @param string
    */
   public function setCaCertificate($caCertificate)
   {
@@ -89,9 +63,7 @@ class MongodbSslConfig extends \Google\Model
     return $this->caCertificate;
   }
   /**
-   * Output only. Indicates whether the ca_certificate field is set.
-   *
-   * @param bool $caCertificateSet
+   * @param bool
    */
   public function setCaCertificateSet($caCertificateSet)
   {
@@ -105,12 +77,7 @@ class MongodbSslConfig extends \Google\Model
     return $this->caCertificateSet;
   }
   /**
-   * Optional. Input only. PEM-encoded certificate that will be used by the
-   * replica to authenticate against the source database server. If this field
-   * is used then the 'client_key' and the 'ca_certificate' fields are
-   * mandatory.
-   *
-   * @param string $clientCertificate
+   * @param string
    */
   public function setClientCertificate($clientCertificate)
   {
@@ -124,9 +91,7 @@ class MongodbSslConfig extends \Google\Model
     return $this->clientCertificate;
   }
   /**
-   * Output only. Indicates whether the client_certificate field is set.
-   *
-   * @param bool $clientCertificateSet
+   * @param bool
    */
   public function setClientCertificateSet($clientCertificateSet)
   {
@@ -140,11 +105,7 @@ class MongodbSslConfig extends \Google\Model
     return $this->clientCertificateSet;
   }
   /**
-   * Optional. Input only. PEM-encoded private key associated with the Client
-   * Certificate. If this field is used then the 'client_certificate' and the
-   * 'ca_certificate' fields are mandatory.
-   *
-   * @param string $clientKey
+   * @param string
    */
   public function setClientKey($clientKey)
   {
@@ -158,9 +119,7 @@ class MongodbSslConfig extends \Google\Model
     return $this->clientKey;
   }
   /**
-   * Output only. Indicates whether the client_key field is set.
-   *
-   * @param bool $clientKeySet
+   * @param bool
    */
   public function setClientKeySet($clientKeySet)
   {
@@ -174,12 +133,7 @@ class MongodbSslConfig extends \Google\Model
     return $this->clientKeySet;
   }
   /**
-   * Optional. Input only. A reference to a Secret Manager resource name storing
-   * the PEM-encoded private key associated with the Client Certificate. If this
-   * field is used then the 'client_certificate' and the 'ca_certificate' fields
-   * are mandatory. Mutually exclusive with the `client_key` field.
-   *
-   * @param string $secretManagerStoredClientKey
+   * @param string
    */
   public function setSecretManagerStoredClientKey($secretManagerStoredClientKey)
   {

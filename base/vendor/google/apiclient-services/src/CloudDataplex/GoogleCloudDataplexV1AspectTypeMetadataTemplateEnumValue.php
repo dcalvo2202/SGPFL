@@ -20,29 +20,20 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1AspectTypeMetadataTemplateEnumValue extends \Google\Model
 {
   /**
-   * Optional. You can set this message if you need to deprecate an enum value.
-   *
    * @var string
    */
   public $deprecated;
   /**
-   * Required. Index for the enum value. It can't be modified.
-   *
    * @var int
    */
   public $index;
   /**
-   * Required. Name of the enumvalue. This is the actual value that the aspect
-   * can contain.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Optional. You can set this message if you need to deprecate an enum value.
-   *
-   * @param string $deprecated
+   * @param string
    */
   public function setDeprecated($deprecated)
   {
@@ -56,9 +47,7 @@ class GoogleCloudDataplexV1AspectTypeMetadataTemplateEnumValue extends \Google\M
     return $this->deprecated;
   }
   /**
-   * Required. Index for the enum value. It can't be modified.
-   *
-   * @param int $index
+   * @param int
    */
   public function setIndex($index)
   {
@@ -72,10 +61,7 @@ class GoogleCloudDataplexV1AspectTypeMetadataTemplateEnumValue extends \Google\M
     return $this->index;
   }
   /**
-   * Required. Name of the enumvalue. This is the actual value that the aspect
-   * can contain.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

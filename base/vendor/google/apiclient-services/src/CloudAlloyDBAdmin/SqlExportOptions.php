@@ -21,37 +21,24 @@ class SqlExportOptions extends \Google\Collection
 {
   protected $collection_key = 'tables';
   /**
-   * Optional. If true, output commands to DROP all the dumped database objects
-   * prior to outputting the commands for creating them.
-   *
    * @var bool
    */
   public $cleanTargetObjects;
   /**
-   * Optional. If true, use DROP ... IF EXISTS commands to check for the
-   * object's existence before dropping it in clean_target_objects mode.
-   *
    * @var bool
    */
   public $ifExistTargetObjects;
   /**
-   * Optional. If true, only export the schema.
-   *
    * @var bool
    */
   public $schemaOnly;
   /**
-   * Optional. Tables to export from.
-   *
    * @var string[]
    */
   public $tables;
 
   /**
-   * Optional. If true, output commands to DROP all the dumped database objects
-   * prior to outputting the commands for creating them.
-   *
-   * @param bool $cleanTargetObjects
+   * @param bool
    */
   public function setCleanTargetObjects($cleanTargetObjects)
   {
@@ -65,10 +52,7 @@ class SqlExportOptions extends \Google\Collection
     return $this->cleanTargetObjects;
   }
   /**
-   * Optional. If true, use DROP ... IF EXISTS commands to check for the
-   * object's existence before dropping it in clean_target_objects mode.
-   *
-   * @param bool $ifExistTargetObjects
+   * @param bool
    */
   public function setIfExistTargetObjects($ifExistTargetObjects)
   {
@@ -82,9 +66,7 @@ class SqlExportOptions extends \Google\Collection
     return $this->ifExistTargetObjects;
   }
   /**
-   * Optional. If true, only export the schema.
-   *
-   * @param bool $schemaOnly
+   * @param bool
    */
   public function setSchemaOnly($schemaOnly)
   {
@@ -98,9 +80,7 @@ class SqlExportOptions extends \Google\Collection
     return $this->schemaOnly;
   }
   /**
-   * Optional. Tables to export from.
-   *
-   * @param string[] $tables
+   * @param string[]
    */
   public function setTables($tables)
   {

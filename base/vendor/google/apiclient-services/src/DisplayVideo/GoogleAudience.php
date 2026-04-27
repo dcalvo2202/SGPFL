@@ -20,66 +20,24 @@ namespace Google\Service\DisplayVideo;
 class GoogleAudience extends \Google\Model
 {
   /**
-   * Default value when type is not specified or is unknown.
-   */
-  public const GOOGLE_AUDIENCE_TYPE_GOOGLE_AUDIENCE_TYPE_UNSPECIFIED = 'GOOGLE_AUDIENCE_TYPE_UNSPECIFIED';
-  /**
-   * Affinity type Google audience.
-   */
-  public const GOOGLE_AUDIENCE_TYPE_GOOGLE_AUDIENCE_TYPE_AFFINITY = 'GOOGLE_AUDIENCE_TYPE_AFFINITY';
-  /**
-   * In-Market type Google audience.
-   */
-  public const GOOGLE_AUDIENCE_TYPE_GOOGLE_AUDIENCE_TYPE_IN_MARKET = 'GOOGLE_AUDIENCE_TYPE_IN_MARKET';
-  /**
-   * Installed-Apps type Google audience.
-   *
-   * @deprecated
-   */
-  public const GOOGLE_AUDIENCE_TYPE_GOOGLE_AUDIENCE_TYPE_INSTALLED_APPS = 'GOOGLE_AUDIENCE_TYPE_INSTALLED_APPS';
-  /**
-   * New-Mobile-Devices type Google audience.
-   *
-   * @deprecated
-   */
-  public const GOOGLE_AUDIENCE_TYPE_GOOGLE_AUDIENCE_TYPE_NEW_MOBILE_DEVICES = 'GOOGLE_AUDIENCE_TYPE_NEW_MOBILE_DEVICES';
-  /**
-   * Life-Event type Google audience.
-   */
-  public const GOOGLE_AUDIENCE_TYPE_GOOGLE_AUDIENCE_TYPE_LIFE_EVENT = 'GOOGLE_AUDIENCE_TYPE_LIFE_EVENT';
-  /**
-   * Extended-Demographic type Google audience.
-   */
-  public const GOOGLE_AUDIENCE_TYPE_GOOGLE_AUDIENCE_TYPE_EXTENDED_DEMOGRAPHIC = 'GOOGLE_AUDIENCE_TYPE_EXTENDED_DEMOGRAPHIC';
-  /**
-   * Output only. The display name of the Google audience. .
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. The unique ID of the Google audience. Assigned by the system.
-   *
    * @var string
    */
   public $googleAudienceId;
   /**
-   * Output only. The type of Google audience. .
-   *
    * @var string
    */
   public $googleAudienceType;
   /**
-   * Output only. The resource name of the google audience.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Output only. The display name of the Google audience. .
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -93,9 +51,7 @@ class GoogleAudience extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Output only. The unique ID of the Google audience. Assigned by the system.
-   *
-   * @param string $googleAudienceId
+   * @param string
    */
   public function setGoogleAudienceId($googleAudienceId)
   {
@@ -109,31 +65,21 @@ class GoogleAudience extends \Google\Model
     return $this->googleAudienceId;
   }
   /**
-   * Output only. The type of Google audience. .
-   *
-   * Accepted values: GOOGLE_AUDIENCE_TYPE_UNSPECIFIED,
-   * GOOGLE_AUDIENCE_TYPE_AFFINITY, GOOGLE_AUDIENCE_TYPE_IN_MARKET,
-   * GOOGLE_AUDIENCE_TYPE_INSTALLED_APPS,
-   * GOOGLE_AUDIENCE_TYPE_NEW_MOBILE_DEVICES, GOOGLE_AUDIENCE_TYPE_LIFE_EVENT,
-   * GOOGLE_AUDIENCE_TYPE_EXTENDED_DEMOGRAPHIC
-   *
-   * @param self::GOOGLE_AUDIENCE_TYPE_* $googleAudienceType
+   * @param string
    */
   public function setGoogleAudienceType($googleAudienceType)
   {
     $this->googleAudienceType = $googleAudienceType;
   }
   /**
-   * @return self::GOOGLE_AUDIENCE_TYPE_*
+   * @return string
    */
   public function getGoogleAudienceType()
   {
     return $this->googleAudienceType;
   }
   /**
-   * Output only. The resource name of the google audience.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

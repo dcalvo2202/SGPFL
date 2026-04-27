@@ -21,91 +21,62 @@ class Volumeannotation extends \Google\Collection
 {
   protected $collection_key = 'pageIds';
   /**
-   * The annotation data id for this volume annotation.
-   *
    * @var string
    */
   public $annotationDataId;
   /**
-   * Link to get data for this annotation.
-   *
    * @var string
    */
   public $annotationDataLink;
   /**
-   * The type of annotation this is.
-   *
    * @var string
    */
   public $annotationType;
   protected $contentRangesType = VolumeannotationContentRanges::class;
   protected $contentRangesDataType = '';
   /**
-   * Data for this annotation.
-   *
    * @var string
    */
   public $data;
   /**
-   * Indicates that this annotation is deleted.
-   *
    * @var bool
    */
   public $deleted;
   /**
-   * Unique id of this volume annotation.
-   *
    * @var string
    */
   public $id;
   /**
-   * Resource Type
-   *
    * @var string
    */
   public $kind;
   /**
-   * The Layer this annotation is for.
-   *
    * @var string
    */
   public $layerId;
   /**
-   * Pages the annotation spans.
-   *
    * @var string[]
    */
   public $pageIds;
   /**
-   * Excerpt from the volume.
-   *
    * @var string
    */
   public $selectedText;
   /**
-   * URL to this resource.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * Timestamp for the last time this anntoation was updated. (RFC 3339 UTC
-   * date-time format).
-   *
    * @var string
    */
   public $updated;
   /**
-   * The Volume this annotation is for.
-   *
    * @var string
    */
   public $volumeId;
 
   /**
-   * The annotation data id for this volume annotation.
-   *
-   * @param string $annotationDataId
+   * @param string
    */
   public function setAnnotationDataId($annotationDataId)
   {
@@ -119,9 +90,7 @@ class Volumeannotation extends \Google\Collection
     return $this->annotationDataId;
   }
   /**
-   * Link to get data for this annotation.
-   *
-   * @param string $annotationDataLink
+   * @param string
    */
   public function setAnnotationDataLink($annotationDataLink)
   {
@@ -135,9 +104,7 @@ class Volumeannotation extends \Google\Collection
     return $this->annotationDataLink;
   }
   /**
-   * The type of annotation this is.
-   *
-   * @param string $annotationType
+   * @param string
    */
   public function setAnnotationType($annotationType)
   {
@@ -151,9 +118,7 @@ class Volumeannotation extends \Google\Collection
     return $this->annotationType;
   }
   /**
-   * The content ranges to identify the selected text.
-   *
-   * @param VolumeannotationContentRanges $contentRanges
+   * @param VolumeannotationContentRanges
    */
   public function setContentRanges(VolumeannotationContentRanges $contentRanges)
   {
@@ -167,9 +132,7 @@ class Volumeannotation extends \Google\Collection
     return $this->contentRanges;
   }
   /**
-   * Data for this annotation.
-   *
-   * @param string $data
+   * @param string
    */
   public function setData($data)
   {
@@ -183,9 +146,7 @@ class Volumeannotation extends \Google\Collection
     return $this->data;
   }
   /**
-   * Indicates that this annotation is deleted.
-   *
-   * @param bool $deleted
+   * @param bool
    */
   public function setDeleted($deleted)
   {
@@ -199,9 +160,7 @@ class Volumeannotation extends \Google\Collection
     return $this->deleted;
   }
   /**
-   * Unique id of this volume annotation.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -215,9 +174,7 @@ class Volumeannotation extends \Google\Collection
     return $this->id;
   }
   /**
-   * Resource Type
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -231,9 +188,7 @@ class Volumeannotation extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The Layer this annotation is for.
-   *
-   * @param string $layerId
+   * @param string
    */
   public function setLayerId($layerId)
   {
@@ -247,9 +202,7 @@ class Volumeannotation extends \Google\Collection
     return $this->layerId;
   }
   /**
-   * Pages the annotation spans.
-   *
-   * @param string[] $pageIds
+   * @param string[]
    */
   public function setPageIds($pageIds)
   {
@@ -263,9 +216,7 @@ class Volumeannotation extends \Google\Collection
     return $this->pageIds;
   }
   /**
-   * Excerpt from the volume.
-   *
-   * @param string $selectedText
+   * @param string
    */
   public function setSelectedText($selectedText)
   {
@@ -279,9 +230,7 @@ class Volumeannotation extends \Google\Collection
     return $this->selectedText;
   }
   /**
-   * URL to this resource.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -295,10 +244,7 @@ class Volumeannotation extends \Google\Collection
     return $this->selfLink;
   }
   /**
-   * Timestamp for the last time this anntoation was updated. (RFC 3339 UTC
-   * date-time format).
-   *
-   * @param string $updated
+   * @param string
    */
   public function setUpdated($updated)
   {
@@ -312,9 +258,7 @@ class Volumeannotation extends \Google\Collection
     return $this->updated;
   }
   /**
-   * The Volume this annotation is for.
-   *
-   * @param string $volumeId
+   * @param string
    */
   public function setVolumeId($volumeId)
   {

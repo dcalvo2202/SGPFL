@@ -21,24 +21,16 @@ class GoogleCloudAiplatformV1PipelineTaskExecutorDetailCustomJobDetail extends \
 {
   protected $collection_key = 'failedJobs';
   /**
-   * Output only. The names of the previously failed CustomJob. The list
-   * includes the all attempts in chronological order.
-   *
    * @var string[]
    */
   public $failedJobs;
   /**
-   * Output only. The name of the CustomJob.
-   *
    * @var string
    */
   public $job;
 
   /**
-   * Output only. The names of the previously failed CustomJob. The list
-   * includes the all attempts in chronological order.
-   *
-   * @param string[] $failedJobs
+   * @param string[]
    */
   public function setFailedJobs($failedJobs)
   {
@@ -52,9 +44,7 @@ class GoogleCloudAiplatformV1PipelineTaskExecutorDetailCustomJobDetail extends \
     return $this->failedJobs;
   }
   /**
-   * Output only. The name of the CustomJob.
-   *
-   * @param string $job
+   * @param string
    */
   public function setJob($job)
   {

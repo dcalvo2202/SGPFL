@@ -20,59 +20,34 @@ namespace Google\Service\Container;
 class SetLegacyAbacRequest extends \Google\Model
 {
   /**
-   * Deprecated. The name of the cluster to update. This field has been
-   * deprecated and replaced by the name field.
-   *
-   * @deprecated
    * @var string
    */
   public $clusterId;
   /**
-   * Required. Whether ABAC authorization will be enabled in the cluster.
-   *
    * @var bool
    */
   public $enabled;
   /**
-   * The name (project, location, cluster name) of the cluster to set legacy
-   * abac. Specified in the format `projects/locations/clusters`.
-   *
    * @var string
    */
   public $name;
   /**
-   * Deprecated. The Google Developers Console [project ID or project
-   * number](https://cloud.google.com/resource-manager/docs/creating-managing-
-   * projects). This field has been deprecated and replaced by the name field.
-   *
-   * @deprecated
    * @var string
    */
   public $projectId;
   /**
-   * Deprecated. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-   * cluster resides. This field has been deprecated and replaced by the name
-   * field.
-   *
-   * @deprecated
    * @var string
    */
   public $zone;
 
   /**
-   * Deprecated. The name of the cluster to update. This field has been
-   * deprecated and replaced by the name field.
-   *
-   * @deprecated
-   * @param string $clusterId
+   * @param string
    */
   public function setClusterId($clusterId)
   {
     $this->clusterId = $clusterId;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getClusterId()
@@ -80,9 +55,7 @@ class SetLegacyAbacRequest extends \Google\Model
     return $this->clusterId;
   }
   /**
-   * Required. Whether ABAC authorization will be enabled in the cluster.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {
@@ -96,10 +69,7 @@ class SetLegacyAbacRequest extends \Google\Model
     return $this->enabled;
   }
   /**
-   * The name (project, location, cluster name) of the cluster to set legacy
-   * abac. Specified in the format `projects/locations/clusters`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -113,19 +83,13 @@ class SetLegacyAbacRequest extends \Google\Model
     return $this->name;
   }
   /**
-   * Deprecated. The Google Developers Console [project ID or project
-   * number](https://cloud.google.com/resource-manager/docs/creating-managing-
-   * projects). This field has been deprecated and replaced by the name field.
-   *
-   * @deprecated
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {
     $this->projectId = $projectId;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getProjectId()
@@ -133,20 +97,13 @@ class SetLegacyAbacRequest extends \Google\Model
     return $this->projectId;
   }
   /**
-   * Deprecated. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-   * cluster resides. This field has been deprecated and replaced by the name
-   * field.
-   *
-   * @deprecated
-   * @param string $zone
+   * @param string
    */
   public function setZone($zone)
   {
     $this->zone = $zone;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getZone()

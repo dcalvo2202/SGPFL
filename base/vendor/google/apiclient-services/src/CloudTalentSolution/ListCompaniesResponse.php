@@ -25,16 +25,12 @@ class ListCompaniesResponse extends \Google\Collection
   protected $metadataType = ResponseMetadata::class;
   protected $metadataDataType = '';
   /**
-   * A token to retrieve the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Companies for the current client.
-   *
-   * @param Company[] $companies
+   * @param Company[]
    */
   public function setCompanies($companies)
   {
@@ -48,10 +44,7 @@ class ListCompaniesResponse extends \Google\Collection
     return $this->companies;
   }
   /**
-   * Additional information for the API invocation, such as the request tracking
-   * id.
-   *
-   * @param ResponseMetadata $metadata
+   * @param ResponseMetadata
    */
   public function setMetadata(ResponseMetadata $metadata)
   {
@@ -65,9 +58,7 @@ class ListCompaniesResponse extends \Google\Collection
     return $this->metadata;
   }
   /**
-   * A token to retrieve the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

@@ -20,77 +20,24 @@ namespace Google\Service\APIhub;
 class GoogleCloudApihubV1Config extends \Google\Model
 {
   /**
-   * Encryption type unspecified.
-   */
-  public const ENCRYPTION_TYPE_ENCRYPTION_TYPE_UNSPECIFIED = 'ENCRYPTION_TYPE_UNSPECIFIED';
-  /**
-   * Default encryption using Google managed encryption key.
-   */
-  public const ENCRYPTION_TYPE_GMEK = 'GMEK';
-  /**
-   * Encryption using customer managed encryption key.
-   */
-  public const ENCRYPTION_TYPE_CMEK = 'CMEK';
-  protected $agentRegistrySyncConfigType = GoogleCloudApihubV1AgentRegistrySyncConfig::class;
-  protected $agentRegistrySyncConfigDataType = '';
-  /**
-   * Optional. The Customer Managed Encryption Key (CMEK) used for data
-   * encryption. The CMEK name should follow the format of
-   * `projects/([^/]+)/locations/([^/]+)/keyRings/([^/]+)/cryptoKeys/([^/]+)`,
-   * where the location must match the instance location. If the CMEK is not
-   * provided, a GMEK will be created for the instance.
-   *
    * @var string
    */
   public $cmekKeyName;
   /**
-   * Optional. If true, the search will be disabled for the instance. The
-   * default value is false.
-   *
    * @var bool
    */
   public $disableSearch;
   /**
-   * Optional. Encryption type for the region. If the encryption type is CMEK,
-   * the cmek_key_name must be provided. If no encryption type is provided, GMEK
-   * will be used.
-   *
    * @var string
    */
   public $encryptionType;
   /**
-   * Optional. The name of the Vertex AI location where the data store is
-   * stored.
-   *
    * @var string
    */
   public $vertexLocation;
 
   /**
-   * Optional. The configuration for syncing MCP data in the API Hub instance to
-   * the Agent Registry.
-   *
-   * @param GoogleCloudApihubV1AgentRegistrySyncConfig $agentRegistrySyncConfig
-   */
-  public function setAgentRegistrySyncConfig(GoogleCloudApihubV1AgentRegistrySyncConfig $agentRegistrySyncConfig)
-  {
-    $this->agentRegistrySyncConfig = $agentRegistrySyncConfig;
-  }
-  /**
-   * @return GoogleCloudApihubV1AgentRegistrySyncConfig
-   */
-  public function getAgentRegistrySyncConfig()
-  {
-    return $this->agentRegistrySyncConfig;
-  }
-  /**
-   * Optional. The Customer Managed Encryption Key (CMEK) used for data
-   * encryption. The CMEK name should follow the format of
-   * `projects/([^/]+)/locations/([^/]+)/keyRings/([^/]+)/cryptoKeys/([^/]+)`,
-   * where the location must match the instance location. If the CMEK is not
-   * provided, a GMEK will be created for the instance.
-   *
-   * @param string $cmekKeyName
+   * @param string
    */
   public function setCmekKeyName($cmekKeyName)
   {
@@ -104,10 +51,7 @@ class GoogleCloudApihubV1Config extends \Google\Model
     return $this->cmekKeyName;
   }
   /**
-   * Optional. If true, the search will be disabled for the instance. The
-   * default value is false.
-   *
-   * @param bool $disableSearch
+   * @param bool
    */
   public function setDisableSearch($disableSearch)
   {
@@ -121,30 +65,21 @@ class GoogleCloudApihubV1Config extends \Google\Model
     return $this->disableSearch;
   }
   /**
-   * Optional. Encryption type for the region. If the encryption type is CMEK,
-   * the cmek_key_name must be provided. If no encryption type is provided, GMEK
-   * will be used.
-   *
-   * Accepted values: ENCRYPTION_TYPE_UNSPECIFIED, GMEK, CMEK
-   *
-   * @param self::ENCRYPTION_TYPE_* $encryptionType
+   * @param string
    */
   public function setEncryptionType($encryptionType)
   {
     $this->encryptionType = $encryptionType;
   }
   /**
-   * @return self::ENCRYPTION_TYPE_*
+   * @return string
    */
   public function getEncryptionType()
   {
     return $this->encryptionType;
   }
   /**
-   * Optional. The name of the Vertex AI location where the data store is
-   * stored.
-   *
-   * @param string $vertexLocation
+   * @param string
    */
   public function setVertexLocation($vertexLocation)
   {

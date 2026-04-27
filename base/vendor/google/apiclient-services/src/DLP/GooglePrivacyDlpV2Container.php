@@ -20,65 +20,36 @@ namespace Google\Service\DLP;
 class GooglePrivacyDlpV2Container extends \Google\Model
 {
   /**
-   * A string representation of the full container name. Examples: - BigQuery:
-   * 'Project:DataSetId.TableId' - Cloud Storage:
-   * 'gs://Bucket/folders/filename.txt'
-   *
    * @var string
    */
   public $fullPath;
   /**
-   * Project where the finding was found. Can be different from the project that
-   * owns the finding.
-   *
    * @var string
    */
   public $projectId;
   /**
-   * The rest of the path after the root. Examples: - For BigQuery table
-   * `project_id:dataset_id.table_id`, the relative path is `table_id` - For
-   * Cloud Storage file `gs://bucket/folder/filename.txt`, the relative path is
-   * `folder/filename.txt`
-   *
    * @var string
    */
   public $relativePath;
   /**
-   * The root of the container. Examples: - For BigQuery table
-   * `project_id:dataset_id.table_id`, the root is `dataset_id` - For Cloud
-   * Storage file `gs://bucket/folder/filename.txt`, the root is `gs://bucket`
-   *
    * @var string
    */
   public $rootPath;
   /**
-   * Container type, for example BigQuery or Cloud Storage.
-   *
    * @var string
    */
   public $type;
   /**
-   * Findings container modification timestamp, if applicable. For Cloud
-   * Storage, this field contains the last file modification timestamp. For a
-   * BigQuery table, this field contains the last_modified_time property. For
-   * Datastore, this field isn't populated.
-   *
    * @var string
    */
   public $updateTime;
   /**
-   * Findings container version, if available ("generation" for Cloud Storage).
-   *
    * @var string
    */
   public $version;
 
   /**
-   * A string representation of the full container name. Examples: - BigQuery:
-   * 'Project:DataSetId.TableId' - Cloud Storage:
-   * 'gs://Bucket/folders/filename.txt'
-   *
-   * @param string $fullPath
+   * @param string
    */
   public function setFullPath($fullPath)
   {
@@ -92,10 +63,7 @@ class GooglePrivacyDlpV2Container extends \Google\Model
     return $this->fullPath;
   }
   /**
-   * Project where the finding was found. Can be different from the project that
-   * owns the finding.
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {
@@ -109,12 +77,7 @@ class GooglePrivacyDlpV2Container extends \Google\Model
     return $this->projectId;
   }
   /**
-   * The rest of the path after the root. Examples: - For BigQuery table
-   * `project_id:dataset_id.table_id`, the relative path is `table_id` - For
-   * Cloud Storage file `gs://bucket/folder/filename.txt`, the relative path is
-   * `folder/filename.txt`
-   *
-   * @param string $relativePath
+   * @param string
    */
   public function setRelativePath($relativePath)
   {
@@ -128,11 +91,7 @@ class GooglePrivacyDlpV2Container extends \Google\Model
     return $this->relativePath;
   }
   /**
-   * The root of the container. Examples: - For BigQuery table
-   * `project_id:dataset_id.table_id`, the root is `dataset_id` - For Cloud
-   * Storage file `gs://bucket/folder/filename.txt`, the root is `gs://bucket`
-   *
-   * @param string $rootPath
+   * @param string
    */
   public function setRootPath($rootPath)
   {
@@ -146,9 +105,7 @@ class GooglePrivacyDlpV2Container extends \Google\Model
     return $this->rootPath;
   }
   /**
-   * Container type, for example BigQuery or Cloud Storage.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {
@@ -162,12 +119,7 @@ class GooglePrivacyDlpV2Container extends \Google\Model
     return $this->type;
   }
   /**
-   * Findings container modification timestamp, if applicable. For Cloud
-   * Storage, this field contains the last file modification timestamp. For a
-   * BigQuery table, this field contains the last_modified_time property. For
-   * Datastore, this field isn't populated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -181,9 +133,7 @@ class GooglePrivacyDlpV2Container extends \Google\Model
     return $this->updateTime;
   }
   /**
-   * Findings container version, if available ("generation" for Cloud Storage).
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

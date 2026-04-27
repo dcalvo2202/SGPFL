@@ -20,22 +20,16 @@ namespace Google\Service\Contactcenterinsights;
 class GoogleCloudContactcenterinsightsV1PhraseMatchData extends \Google\Model
 {
   /**
-   * The human-readable name of the phrase matcher.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * The unique identifier (the resource name) of the phrase matcher.
-   *
    * @var string
    */
   public $phraseMatcher;
 
   /**
-   * The human-readable name of the phrase matcher.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -49,9 +43,7 @@ class GoogleCloudContactcenterinsightsV1PhraseMatchData extends \Google\Model
     return $this->displayName;
   }
   /**
-   * The unique identifier (the resource name) of the phrase matcher.
-   *
-   * @param string $phraseMatcher
+   * @param string
    */
   public function setPhraseMatcher($phraseMatcher)
   {

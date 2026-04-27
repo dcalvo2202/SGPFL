@@ -25,9 +25,7 @@ class GoogleCloudAiplatformV1CometInput extends \Google\Model
   protected $metricSpecDataType = '';
 
   /**
-   * Required. Comet instance.
-   *
-   * @param GoogleCloudAiplatformV1CometInstance $instance
+   * @param GoogleCloudAiplatformV1CometInstance
    */
   public function setInstance(GoogleCloudAiplatformV1CometInstance $instance)
   {
@@ -41,9 +39,7 @@ class GoogleCloudAiplatformV1CometInput extends \Google\Model
     return $this->instance;
   }
   /**
-   * Required. Spec for comet metric.
-   *
-   * @param GoogleCloudAiplatformV1CometSpec $metricSpec
+   * @param GoogleCloudAiplatformV1CometSpec
    */
   public function setMetricSpec(GoogleCloudAiplatformV1CometSpec $metricSpec)
   {

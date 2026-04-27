@@ -20,16 +20,12 @@ namespace Google\Service\AndroidPublisher;
 class OrderDetails extends \Google\Model
 {
   /**
-   * Indicates whether the listed price was tax inclusive or not.
-   *
    * @var bool
    */
   public $taxInclusive;
 
   /**
-   * Indicates whether the listed price was tax inclusive or not.
-   *
-   * @param bool $taxInclusive
+   * @param bool
    */
   public function setTaxInclusive($taxInclusive)
   {

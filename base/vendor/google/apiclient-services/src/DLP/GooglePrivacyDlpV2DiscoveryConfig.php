@@ -19,62 +19,28 @@ namespace Google\Service\DLP;
 
 class GooglePrivacyDlpV2DiscoveryConfig extends \Google\Collection
 {
-  /**
-   * Unused
-   */
-  public const STATUS_STATUS_UNSPECIFIED = 'STATUS_UNSPECIFIED';
-  /**
-   * The discovery config is currently active.
-   */
-  public const STATUS_RUNNING = 'RUNNING';
-  /**
-   * The discovery config is paused temporarily.
-   */
-  public const STATUS_PAUSED = 'PAUSED';
   protected $collection_key = 'targets';
   protected $actionsType = GooglePrivacyDlpV2DataProfileAction::class;
   protected $actionsDataType = 'array';
   /**
-   * Output only. The creation timestamp of a DiscoveryConfig.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Display name (max 100 chars)
-   *
    * @var string
    */
   public $displayName;
   protected $errorsType = GooglePrivacyDlpV2Error::class;
   protected $errorsDataType = 'array';
   /**
-   * Detection logic for profile generation. Not all template features are used
-   * by Discovery. FindingLimits, include_quote and exclude_info_types have no
-   * impact on Discovery. Multiple templates may be provided if there is data in
-   * multiple regions. At most one template must be specified per-region
-   * (including "global"). Each region is scanned using the applicable template.
-   * If no region-specific template is specified, but a "global" template is
-   * specified, it will be copied to that region and used instead. If no global
-   * or region-specific template is provided for a region with data, that
-   * region's data will not be scanned. For more information, see
-   * https://cloud.google.com/sensitive-data-protection/docs/data-profiles#data-
-   * residency.
-   *
    * @var string[]
    */
   public $inspectTemplates;
   /**
-   * Output only. The timestamp of the last time this config was executed.
-   *
    * @var string
    */
   public $lastRunTime;
   /**
-   * Unique resource name for the DiscoveryConfig, assigned by the service when
-   * the DiscoveryConfig is created, for example `projects/dlp-test-
-   * project/locations/global/discoveryConfigs/53234423`.
-   *
    * @var string
    */
   public $name;
@@ -85,24 +51,18 @@ class GooglePrivacyDlpV2DiscoveryConfig extends \Google\Collection
   protected $processingLocationType = GooglePrivacyDlpV2ProcessingLocation::class;
   protected $processingLocationDataType = '';
   /**
-   * Required. A status for this configuration.
-   *
    * @var string
    */
   public $status;
   protected $targetsType = GooglePrivacyDlpV2DiscoveryTarget::class;
   protected $targetsDataType = 'array';
   /**
-   * Output only. The last update timestamp of a DiscoveryConfig.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Actions to execute at the completion of scanning.
-   *
-   * @param GooglePrivacyDlpV2DataProfileAction[] $actions
+   * @param GooglePrivacyDlpV2DataProfileAction[]
    */
   public function setActions($actions)
   {
@@ -116,9 +76,7 @@ class GooglePrivacyDlpV2DiscoveryConfig extends \Google\Collection
     return $this->actions;
   }
   /**
-   * Output only. The creation timestamp of a DiscoveryConfig.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -132,9 +90,7 @@ class GooglePrivacyDlpV2DiscoveryConfig extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Display name (max 100 chars)
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -148,12 +104,7 @@ class GooglePrivacyDlpV2DiscoveryConfig extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Output only. A stream of errors encountered when the config was activated.
-   * Repeated errors may result in the config automatically being paused. Output
-   * only field. Will return the last 100 errors. Whenever the config is
-   * modified this list will be cleared.
-   *
-   * @param GooglePrivacyDlpV2Error[] $errors
+   * @param GooglePrivacyDlpV2Error[]
    */
   public function setErrors($errors)
   {
@@ -167,19 +118,7 @@ class GooglePrivacyDlpV2DiscoveryConfig extends \Google\Collection
     return $this->errors;
   }
   /**
-   * Detection logic for profile generation. Not all template features are used
-   * by Discovery. FindingLimits, include_quote and exclude_info_types have no
-   * impact on Discovery. Multiple templates may be provided if there is data in
-   * multiple regions. At most one template must be specified per-region
-   * (including "global"). Each region is scanned using the applicable template.
-   * If no region-specific template is specified, but a "global" template is
-   * specified, it will be copied to that region and used instead. If no global
-   * or region-specific template is provided for a region with data, that
-   * region's data will not be scanned. For more information, see
-   * https://cloud.google.com/sensitive-data-protection/docs/data-profiles#data-
-   * residency.
-   *
-   * @param string[] $inspectTemplates
+   * @param string[]
    */
   public function setInspectTemplates($inspectTemplates)
   {
@@ -193,9 +132,7 @@ class GooglePrivacyDlpV2DiscoveryConfig extends \Google\Collection
     return $this->inspectTemplates;
   }
   /**
-   * Output only. The timestamp of the last time this config was executed.
-   *
-   * @param string $lastRunTime
+   * @param string
    */
   public function setLastRunTime($lastRunTime)
   {
@@ -209,11 +146,7 @@ class GooglePrivacyDlpV2DiscoveryConfig extends \Google\Collection
     return $this->lastRunTime;
   }
   /**
-   * Unique resource name for the DiscoveryConfig, assigned by the service when
-   * the DiscoveryConfig is created, for example `projects/dlp-test-
-   * project/locations/global/discoveryConfigs/53234423`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -227,9 +160,7 @@ class GooglePrivacyDlpV2DiscoveryConfig extends \Google\Collection
     return $this->name;
   }
   /**
-   * Only set when the parent is an org.
-   *
-   * @param GooglePrivacyDlpV2OrgConfig $orgConfig
+   * @param GooglePrivacyDlpV2OrgConfig
    */
   public function setOrgConfig(GooglePrivacyDlpV2OrgConfig $orgConfig)
   {
@@ -243,9 +174,7 @@ class GooglePrivacyDlpV2DiscoveryConfig extends \Google\Collection
     return $this->orgConfig;
   }
   /**
-   * Must be set only when scanning other clouds.
-   *
-   * @param GooglePrivacyDlpV2OtherCloudDiscoveryStartingLocation $otherCloudStartingLocation
+   * @param GooglePrivacyDlpV2OtherCloudDiscoveryStartingLocation
    */
   public function setOtherCloudStartingLocation(GooglePrivacyDlpV2OtherCloudDiscoveryStartingLocation $otherCloudStartingLocation)
   {
@@ -259,11 +188,7 @@ class GooglePrivacyDlpV2DiscoveryConfig extends \Google\Collection
     return $this->otherCloudStartingLocation;
   }
   /**
-   * Optional. Processing location configuration. Vertex AI dataset scanning
-   * will set processing_location.image_fallback_type to MultiRegionProcessing
-   * by default.
-   *
-   * @param GooglePrivacyDlpV2ProcessingLocation $processingLocation
+   * @param GooglePrivacyDlpV2ProcessingLocation
    */
   public function setProcessingLocation(GooglePrivacyDlpV2ProcessingLocation $processingLocation)
   {
@@ -277,27 +202,21 @@ class GooglePrivacyDlpV2DiscoveryConfig extends \Google\Collection
     return $this->processingLocation;
   }
   /**
-   * Required. A status for this configuration.
-   *
-   * Accepted values: STATUS_UNSPECIFIED, RUNNING, PAUSED
-   *
-   * @param self::STATUS_* $status
+   * @param string
    */
   public function setStatus($status)
   {
     $this->status = $status;
   }
   /**
-   * @return self::STATUS_*
+   * @return string
    */
   public function getStatus()
   {
     return $this->status;
   }
   /**
-   * Target to match against for determining what to scan and how frequently.
-   *
-   * @param GooglePrivacyDlpV2DiscoveryTarget[] $targets
+   * @param GooglePrivacyDlpV2DiscoveryTarget[]
    */
   public function setTargets($targets)
   {
@@ -311,9 +230,7 @@ class GooglePrivacyDlpV2DiscoveryConfig extends \Google\Collection
     return $this->targets;
   }
   /**
-   * Output only. The last update timestamp of a DiscoveryConfig.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

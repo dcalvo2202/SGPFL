@@ -25,9 +25,6 @@ class IamPolicyAnalysis extends \Google\Collection
   protected $analysisResultsType = IamPolicyAnalysisResult::class;
   protected $analysisResultsDataType = 'array';
   /**
-   * Represents whether all entries in the analysis_results have been fully
-   * explored to answer the query.
-   *
    * @var bool
    */
   public $fullyExplored;
@@ -35,9 +32,7 @@ class IamPolicyAnalysis extends \Google\Collection
   protected $nonCriticalErrorsDataType = 'array';
 
   /**
-   * The analysis query.
-   *
-   * @param IamPolicyAnalysisQuery $analysisQuery
+   * @param IamPolicyAnalysisQuery
    */
   public function setAnalysisQuery(IamPolicyAnalysisQuery $analysisQuery)
   {
@@ -51,10 +46,7 @@ class IamPolicyAnalysis extends \Google\Collection
     return $this->analysisQuery;
   }
   /**
-   * A list of IamPolicyAnalysisResult that matches the analysis query, or empty
-   * if no result is found.
-   *
-   * @param IamPolicyAnalysisResult[] $analysisResults
+   * @param IamPolicyAnalysisResult[]
    */
   public function setAnalysisResults($analysisResults)
   {
@@ -68,10 +60,7 @@ class IamPolicyAnalysis extends \Google\Collection
     return $this->analysisResults;
   }
   /**
-   * Represents whether all entries in the analysis_results have been fully
-   * explored to answer the query.
-   *
-   * @param bool $fullyExplored
+   * @param bool
    */
   public function setFullyExplored($fullyExplored)
   {
@@ -85,9 +74,7 @@ class IamPolicyAnalysis extends \Google\Collection
     return $this->fullyExplored;
   }
   /**
-   * A list of non-critical errors happened during the query handling.
-   *
-   * @param IamPolicyAnalysisState[] $nonCriticalErrors
+   * @param IamPolicyAnalysisState[]
    */
   public function setNonCriticalErrors($nonCriticalErrors)
   {

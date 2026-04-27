@@ -23,18 +23,12 @@ class ListConsentArtifactsResponse extends \Google\Collection
   protected $consentArtifactsType = ConsentArtifact::class;
   protected $consentArtifactsDataType = 'array';
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The returned Consent artifacts. The maximum number of artifacts returned is
-   * determined by the value of page_size in the ListConsentArtifactsRequest.
-   *
-   * @param ConsentArtifact[] $consentArtifacts
+   * @param ConsentArtifact[]
    */
   public function setConsentArtifacts($consentArtifacts)
   {
@@ -48,10 +42,7 @@ class ListConsentArtifactsResponse extends \Google\Collection
     return $this->consentArtifacts;
   }
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

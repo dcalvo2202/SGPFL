@@ -20,48 +20,30 @@ namespace Google\Service\PeopleService;
 class ImClient extends \Google\Model
 {
   /**
-   * Output only. The protocol of the IM client formatted in the viewer's
-   * account locale or the `Accept-Language` HTTP header locale.
-   *
    * @var string
    */
   public $formattedProtocol;
   /**
-   * Output only. The type of the IM client translated and formatted in the
-   * viewer's account locale or the `Accept-Language` HTTP header locale.
-   *
    * @var string
    */
   public $formattedType;
   protected $metadataType = FieldMetadata::class;
   protected $metadataDataType = '';
   /**
-   * The protocol of the IM client. The protocol can be custom or one of these
-   * predefined values: * `aim` * `msn` * `yahoo` * `skype` * `qq` *
-   * `googleTalk` * `icq` * `jabber` * `netMeeting`
-   *
    * @var string
    */
   public $protocol;
   /**
-   * The type of the IM client. The type can be custom or one of these
-   * predefined values: * `home` * `work` * `other`
-   *
    * @var string
    */
   public $type;
   /**
-   * The user name used in the IM client.
-   *
    * @var string
    */
   public $username;
 
   /**
-   * Output only. The protocol of the IM client formatted in the viewer's
-   * account locale or the `Accept-Language` HTTP header locale.
-   *
-   * @param string $formattedProtocol
+   * @param string
    */
   public function setFormattedProtocol($formattedProtocol)
   {
@@ -75,10 +57,7 @@ class ImClient extends \Google\Model
     return $this->formattedProtocol;
   }
   /**
-   * Output only. The type of the IM client translated and formatted in the
-   * viewer's account locale or the `Accept-Language` HTTP header locale.
-   *
-   * @param string $formattedType
+   * @param string
    */
   public function setFormattedType($formattedType)
   {
@@ -92,9 +71,7 @@ class ImClient extends \Google\Model
     return $this->formattedType;
   }
   /**
-   * Metadata about the IM client.
-   *
-   * @param FieldMetadata $metadata
+   * @param FieldMetadata
    */
   public function setMetadata(FieldMetadata $metadata)
   {
@@ -108,11 +85,7 @@ class ImClient extends \Google\Model
     return $this->metadata;
   }
   /**
-   * The protocol of the IM client. The protocol can be custom or one of these
-   * predefined values: * `aim` * `msn` * `yahoo` * `skype` * `qq` *
-   * `googleTalk` * `icq` * `jabber` * `netMeeting`
-   *
-   * @param string $protocol
+   * @param string
    */
   public function setProtocol($protocol)
   {
@@ -126,10 +99,7 @@ class ImClient extends \Google\Model
     return $this->protocol;
   }
   /**
-   * The type of the IM client. The type can be custom or one of these
-   * predefined values: * `home` * `work` * `other`
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {
@@ -143,9 +113,7 @@ class ImClient extends \Google\Model
     return $this->type;
   }
   /**
-   * The user name used in the IM client.
-   *
-   * @param string $username
+   * @param string
    */
   public function setUsername($username)
   {

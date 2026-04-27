@@ -19,29 +19,16 @@ namespace Google\Service\CloudRun;
 
 class GoogleCloudRunV2ListServicesResponse extends \Google\Collection
 {
-  protected $collection_key = 'unreachable';
+  protected $collection_key = 'services';
   /**
-   * A token indicating there are more items than page_size. Use it in the next
-   * ListServices request to continue.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $servicesType = GoogleCloudRunV2Service::class;
   protected $servicesDataType = 'array';
-  /**
-   * Output only. For global requests, returns the list of regions that could
-   * not be reached within the deadline.
-   *
-   * @var string[]
-   */
-  public $unreachable;
 
   /**
-   * A token indicating there are more items than page_size. Use it in the next
-   * ListServices request to continue.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -55,9 +42,7 @@ class GoogleCloudRunV2ListServicesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The resulting list of Services.
-   *
-   * @param GoogleCloudRunV2Service[] $services
+   * @param GoogleCloudRunV2Service[]
    */
   public function setServices($services)
   {
@@ -69,23 +54,6 @@ class GoogleCloudRunV2ListServicesResponse extends \Google\Collection
   public function getServices()
   {
     return $this->services;
-  }
-  /**
-   * Output only. For global requests, returns the list of regions that could
-   * not be reached within the deadline.
-   *
-   * @param string[] $unreachable
-   */
-  public function setUnreachable($unreachable)
-  {
-    $this->unreachable = $unreachable;
-  }
-  /**
-   * @return string[]
-   */
-  public function getUnreachable()
-  {
-    return $this->unreachable;
   }
 }
 

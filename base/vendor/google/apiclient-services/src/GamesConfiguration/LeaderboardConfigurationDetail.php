@@ -20,15 +20,10 @@ namespace Google\Service\GamesConfiguration;
 class LeaderboardConfigurationDetail extends \Google\Model
 {
   /**
-   * The icon url of this leaderboard. Writes to this field are ignored.
-   *
    * @var string
    */
   public $iconUrl;
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `gamesConfiguration#leaderboardConfigurationDetail`.
-   *
    * @var string
    */
   public $kind;
@@ -37,16 +32,12 @@ class LeaderboardConfigurationDetail extends \Google\Model
   protected $scoreFormatType = GamesNumberFormatConfiguration::class;
   protected $scoreFormatDataType = '';
   /**
-   * The sort rank of this leaderboard. Writes to this field are ignored.
-   *
    * @var int
    */
   public $sortRank;
 
   /**
-   * The icon url of this leaderboard. Writes to this field are ignored.
-   *
-   * @param string $iconUrl
+   * @param string
    */
   public function setIconUrl($iconUrl)
   {
@@ -60,10 +51,7 @@ class LeaderboardConfigurationDetail extends \Google\Model
     return $this->iconUrl;
   }
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `gamesConfiguration#leaderboardConfigurationDetail`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -77,9 +65,7 @@ class LeaderboardConfigurationDetail extends \Google\Model
     return $this->kind;
   }
   /**
-   * Localized strings for the leaderboard name.
-   *
-   * @param LocalizedStringBundle $name
+   * @param LocalizedStringBundle
    */
   public function setName(LocalizedStringBundle $name)
   {
@@ -93,9 +79,7 @@ class LeaderboardConfigurationDetail extends \Google\Model
     return $this->name;
   }
   /**
-   * The score formatting for the leaderboard.
-   *
-   * @param GamesNumberFormatConfiguration $scoreFormat
+   * @param GamesNumberFormatConfiguration
    */
   public function setScoreFormat(GamesNumberFormatConfiguration $scoreFormat)
   {
@@ -109,9 +93,7 @@ class LeaderboardConfigurationDetail extends \Google\Model
     return $this->scoreFormat;
   }
   /**
-   * The sort rank of this leaderboard. Writes to this field are ignored.
-   *
-   * @param int $sortRank
+   * @param int
    */
   public function setSortRank($sortRank)
   {

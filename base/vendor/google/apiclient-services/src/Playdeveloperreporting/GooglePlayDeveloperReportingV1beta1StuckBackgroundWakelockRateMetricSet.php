@@ -22,17 +22,12 @@ class GooglePlayDeveloperReportingV1beta1StuckBackgroundWakelockRateMetricSet ex
   protected $freshnessInfoType = GooglePlayDeveloperReportingV1beta1FreshnessInfo::class;
   protected $freshnessInfoDataType = '';
   /**
-   * Identifier. The resource name. Format:
-   * apps/{app}/stuckBackgroundWakelockRateMetricSet
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Summary about data freshness in this resource.
-   *
-   * @param GooglePlayDeveloperReportingV1beta1FreshnessInfo $freshnessInfo
+   * @param GooglePlayDeveloperReportingV1beta1FreshnessInfo
    */
   public function setFreshnessInfo(GooglePlayDeveloperReportingV1beta1FreshnessInfo $freshnessInfo)
   {
@@ -46,10 +41,7 @@ class GooglePlayDeveloperReportingV1beta1StuckBackgroundWakelockRateMetricSet ex
     return $this->freshnessInfo;
   }
   /**
-   * Identifier. The resource name. Format:
-   * apps/{app}/stuckBackgroundWakelockRateMetricSet
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

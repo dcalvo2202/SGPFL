@@ -20,41 +20,28 @@ namespace Google\Service\Games;
 class ImageAsset extends \Google\Model
 {
   /**
-   * The height of the asset.
-   *
    * @var int
    */
   public $height;
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#imageAsset`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The name of the asset.
-   *
    * @var string
    */
   public $name;
   /**
-   * The URL of the asset.
-   *
    * @var string
    */
   public $url;
   /**
-   * The width of the asset.
-   *
    * @var int
    */
   public $width;
 
   /**
-   * The height of the asset.
-   *
-   * @param int $height
+   * @param int
    */
   public function setHeight($height)
   {
@@ -68,10 +55,7 @@ class ImageAsset extends \Google\Model
     return $this->height;
   }
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#imageAsset`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -85,9 +69,7 @@ class ImageAsset extends \Google\Model
     return $this->kind;
   }
   /**
-   * The name of the asset.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -101,9 +83,7 @@ class ImageAsset extends \Google\Model
     return $this->name;
   }
   /**
-   * The URL of the asset.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {
@@ -117,9 +97,7 @@ class ImageAsset extends \Google\Model
     return $this->url;
   }
   /**
-   * The width of the asset.
-   *
-   * @param int $width
+   * @param int
    */
   public function setWidth($width)
   {

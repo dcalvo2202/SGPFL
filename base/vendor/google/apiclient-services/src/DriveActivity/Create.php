@@ -27,10 +27,7 @@ class Create extends \Google\Model
   protected $uploadDataType = '';
 
   /**
-   * If present, indicates the object was created by copying an existing Drive
-   * object.
-   *
-   * @param Copy $copy
+   * @param Copy
    */
   public function setCopy(Copy $copy)
   {
@@ -44,10 +41,7 @@ class Create extends \Google\Model
     return $this->copy;
   }
   /**
-   * If present, indicates the object was newly created (e.g. as a blank
-   * document), not derived from a Drive object or external object.
-   *
-   * @param DriveactivityNew $new
+   * @param DriveactivityNew
    */
   public function setNew(DriveactivityNew $new)
   {
@@ -61,10 +55,7 @@ class Create extends \Google\Model
     return $this->new;
   }
   /**
-   * If present, indicates the object originated externally and was uploaded to
-   * Drive.
-   *
-   * @param Upload $upload
+   * @param Upload
    */
   public function setUpload(Upload $upload)
   {

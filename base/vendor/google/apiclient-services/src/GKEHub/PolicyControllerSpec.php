@@ -22,16 +22,12 @@ class PolicyControllerSpec extends \Google\Model
   protected $policyControllerHubConfigType = PolicyControllerHubConfig::class;
   protected $policyControllerHubConfigDataType = '';
   /**
-   * Version of Policy Controller installed.
-   *
    * @var string
    */
   public $version;
 
   /**
-   * Policy Controller configuration for the cluster.
-   *
-   * @param PolicyControllerHubConfig $policyControllerHubConfig
+   * @param PolicyControllerHubConfig
    */
   public function setPolicyControllerHubConfig(PolicyControllerHubConfig $policyControllerHubConfig)
   {
@@ -45,9 +41,7 @@ class PolicyControllerSpec extends \Google\Model
     return $this->policyControllerHubConfig;
   }
   /**
-   * Version of Policy Controller installed.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

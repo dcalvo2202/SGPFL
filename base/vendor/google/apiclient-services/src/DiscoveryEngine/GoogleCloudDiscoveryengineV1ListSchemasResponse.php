@@ -21,9 +21,6 @@ class GoogleCloudDiscoveryengineV1ListSchemasResponse extends \Google\Collection
 {
   protected $collection_key = 'schemas';
   /**
-   * A token that can be sent as ListSchemasRequest.page_token to retrieve the
-   * next page. If this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GoogleCloudDiscoveryengineV1ListSchemasResponse extends \Google\Collection
   protected $schemasDataType = 'array';
 
   /**
-   * A token that can be sent as ListSchemasRequest.page_token to retrieve the
-   * next page. If this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class GoogleCloudDiscoveryengineV1ListSchemasResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The Schemas.
-   *
-   * @param GoogleCloudDiscoveryengineV1Schema[] $schemas
+   * @param GoogleCloudDiscoveryengineV1Schema[]
    */
   public function setSchemas($schemas)
   {

@@ -24,10 +24,7 @@ class Backend extends \Google\Collection
   protected $rulesDataType = 'array';
 
   /**
-   * A list of API backend rules that apply to individual API methods. **NOTE:**
-   * All service configuration rules follow "last one wins" order.
-   *
-   * @param BackendRule[] $rules
+   * @param BackendRule[]
    */
   public function setRules($rules)
   {

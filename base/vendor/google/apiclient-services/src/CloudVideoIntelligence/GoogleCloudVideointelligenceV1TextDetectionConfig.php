@@ -21,29 +21,16 @@ class GoogleCloudVideointelligenceV1TextDetectionConfig extends \Google\Collecti
 {
   protected $collection_key = 'languageHints';
   /**
-   * Language hint can be specified if the language to be detected is known a
-   * priori. It can increase the accuracy of the detection. Language hint must
-   * be language code in BCP-47 format. Automatic language detection is
-   * performed if no hint is provided.
-   *
    * @var string[]
    */
   public $languageHints;
   /**
-   * Model to use for text detection. Supported values: "builtin/stable" (the
-   * default if unset) and "builtin/latest".
-   *
    * @var string
    */
   public $model;
 
   /**
-   * Language hint can be specified if the language to be detected is known a
-   * priori. It can increase the accuracy of the detection. Language hint must
-   * be language code in BCP-47 format. Automatic language detection is
-   * performed if no hint is provided.
-   *
-   * @param string[] $languageHints
+   * @param string[]
    */
   public function setLanguageHints($languageHints)
   {
@@ -57,10 +44,7 @@ class GoogleCloudVideointelligenceV1TextDetectionConfig extends \Google\Collecti
     return $this->languageHints;
   }
   /**
-   * Model to use for text detection. Supported values: "builtin/stable" (the
-   * default if unset) and "builtin/latest".
-   *
-   * @param string $model
+   * @param string
    */
   public function setModel($model)
   {

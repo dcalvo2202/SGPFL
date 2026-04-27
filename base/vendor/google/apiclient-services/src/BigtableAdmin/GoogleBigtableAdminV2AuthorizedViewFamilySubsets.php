@@ -21,28 +21,16 @@ class GoogleBigtableAdminV2AuthorizedViewFamilySubsets extends \Google\Collectio
 {
   protected $collection_key = 'qualifiers';
   /**
-   * Prefixes for qualifiers to be included in the AuthorizedView. Every
-   * qualifier starting with one of these prefixes is included in the
-   * AuthorizedView. To provide access to all qualifiers, include the empty
-   * string as a prefix ("").
-   *
    * @var string[]
    */
   public $qualifierPrefixes;
   /**
-   * Individual exact column qualifiers to be included in the AuthorizedView.
-   *
    * @var string[]
    */
   public $qualifiers;
 
   /**
-   * Prefixes for qualifiers to be included in the AuthorizedView. Every
-   * qualifier starting with one of these prefixes is included in the
-   * AuthorizedView. To provide access to all qualifiers, include the empty
-   * string as a prefix ("").
-   *
-   * @param string[] $qualifierPrefixes
+   * @param string[]
    */
   public function setQualifierPrefixes($qualifierPrefixes)
   {
@@ -56,9 +44,7 @@ class GoogleBigtableAdminV2AuthorizedViewFamilySubsets extends \Google\Collectio
     return $this->qualifierPrefixes;
   }
   /**
-   * Individual exact column qualifiers to be included in the AuthorizedView.
-   *
-   * @param string[] $qualifiers
+   * @param string[]
    */
   public function setQualifiers($qualifiers)
   {

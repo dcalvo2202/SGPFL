@@ -23,9 +23,7 @@ class GoogleCloudDatacatalogV1DataplexFilesetSpec extends \Google\Model
   protected $dataplexSpecDataType = '';
 
   /**
-   * Common Dataplex Universal Catalog fields.
-   *
-   * @param GoogleCloudDatacatalogV1DataplexSpec $dataplexSpec
+   * @param GoogleCloudDatacatalogV1DataplexSpec
    */
   public function setDataplexSpec(GoogleCloudDatacatalogV1DataplexSpec $dataplexSpec)
   {

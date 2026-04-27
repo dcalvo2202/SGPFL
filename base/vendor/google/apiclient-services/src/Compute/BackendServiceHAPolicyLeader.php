@@ -20,14 +20,6 @@ namespace Google\Service\Compute;
 class BackendServiceHAPolicyLeader extends \Google\Model
 {
   /**
-   * A fully-qualified URL (starting with https://www.googleapis.com/) of the
-   * zonal Network Endpoint Group (NEG) with `GCE_VM_IP` endpoints that the
-   * leader is attached to.
-   *
-   * The leader's backendGroup must already be specified as a backend of this
-   * backend service. Removing a backend that is designated as the leader's
-   * backendGroup is not permitted.
-   *
    * @var string
    */
   public $backendGroup;
@@ -35,15 +27,7 @@ class BackendServiceHAPolicyLeader extends \Google\Model
   protected $networkEndpointDataType = '';
 
   /**
-   * A fully-qualified URL (starting with https://www.googleapis.com/) of the
-   * zonal Network Endpoint Group (NEG) with `GCE_VM_IP` endpoints that the
-   * leader is attached to.
-   *
-   * The leader's backendGroup must already be specified as a backend of this
-   * backend service. Removing a backend that is designated as the leader's
-   * backendGroup is not permitted.
-   *
-   * @param string $backendGroup
+   * @param string
    */
   public function setBackendGroup($backendGroup)
   {
@@ -57,14 +41,7 @@ class BackendServiceHAPolicyLeader extends \Google\Model
     return $this->backendGroup;
   }
   /**
-   * The network endpoint within the leader.backendGroup that is designated as
-   * the leader.
-   *
-   * This network endpoint cannot be detached from the NEG specified in the
-   * haPolicy.leader.backendGroup until the leader is updated with another
-   * network endpoint, or the leader is removed from the haPolicy.
-   *
-   * @param BackendServiceHAPolicyLeaderNetworkEndpoint $networkEndpoint
+   * @param BackendServiceHAPolicyLeaderNetworkEndpoint
    */
   public function setNetworkEndpoint(BackendServiceHAPolicyLeaderNetworkEndpoint $networkEndpoint)
   {

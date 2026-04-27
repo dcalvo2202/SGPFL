@@ -20,17 +20,12 @@ namespace Google\Service\ShoppingContent;
 class ShippingsettingsCustomBatchResponseEntry extends \Google\Model
 {
   /**
-   * The ID of the request entry to which this entry responds.
-   *
    * @var string
    */
   public $batchId;
   protected $errorsType = Errors::class;
   protected $errorsDataType = '';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#shippingsettingsCustomBatchResponseEntry`"
-   *
    * @var string
    */
   public $kind;
@@ -38,9 +33,7 @@ class ShippingsettingsCustomBatchResponseEntry extends \Google\Model
   protected $shippingSettingsDataType = '';
 
   /**
-   * The ID of the request entry to which this entry responds.
-   *
-   * @param string $batchId
+   * @param string
    */
   public function setBatchId($batchId)
   {
@@ -54,10 +47,7 @@ class ShippingsettingsCustomBatchResponseEntry extends \Google\Model
     return $this->batchId;
   }
   /**
-   * A list of errors for failed custombatch entries. *Note:* Schema errors fail
-   * the whole request.
-   *
-   * @param Errors $errors
+   * @param Errors
    */
   public function setErrors(Errors $errors)
   {
@@ -71,10 +61,7 @@ class ShippingsettingsCustomBatchResponseEntry extends \Google\Model
     return $this->errors;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#shippingsettingsCustomBatchResponseEntry`"
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -88,9 +75,7 @@ class ShippingsettingsCustomBatchResponseEntry extends \Google\Model
     return $this->kind;
   }
   /**
-   * The retrieved or updated account shipping settings.
-   *
-   * @param ShippingSettings $shippingSettings
+   * @param ShippingSettings
    */
   public function setShippingSettings(ShippingSettings $shippingSettings)
   {

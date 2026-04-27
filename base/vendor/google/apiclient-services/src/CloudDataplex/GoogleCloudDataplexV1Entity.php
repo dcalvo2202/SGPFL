@@ -19,143 +19,73 @@ namespace Google\Service\CloudDataplex;
 
 class GoogleCloudDataplexV1Entity extends \Google\Model
 {
-  /**
-   * Storage system unspecified.
-   */
-  public const SYSTEM_STORAGE_SYSTEM_UNSPECIFIED = 'STORAGE_SYSTEM_UNSPECIFIED';
-  /**
-   * The entity data is contained within a Cloud Storage bucket.
-   */
-  public const SYSTEM_CLOUD_STORAGE = 'CLOUD_STORAGE';
-  /**
-   * The entity data is contained within a BigQuery dataset.
-   */
-  public const SYSTEM_BIGQUERY = 'BIGQUERY';
-  /**
-   * Type unspecified.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * Structured and semi-structured data.
-   */
-  public const TYPE_TABLE = 'TABLE';
-  /**
-   * Unstructured data.
-   */
-  public const TYPE_FILESET = 'FILESET';
   protected $accessType = GoogleCloudDataplexV1StorageAccess::class;
   protected $accessDataType = '';
   /**
-   * Required. Immutable. The ID of the asset associated with the storage
-   * location containing the entity data. The entity must be with in the same
-   * zone with the asset.
-   *
    * @var string
    */
   public $asset;
   /**
-   * Output only. The name of the associated Data Catalog entry.
-   *
    * @var string
    */
   public $catalogEntry;
   protected $compatibilityType = GoogleCloudDataplexV1EntityCompatibilityStatus::class;
   protected $compatibilityDataType = '';
   /**
-   * Output only. The time when the entity was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Required. Immutable. The storage path of the entity data. For Cloud Storage
-   * data, this is the fully-qualified path to the entity, such as
-   * gs://bucket/path/to/data. For BigQuery data, this is the name of the table
-   * resource, such as projects/project_id/datasets/dataset_id/tables/table_id.
-   *
    * @var string
    */
   public $dataPath;
   /**
-   * Optional. The set of items within the data path constituting the data in
-   * the entity, represented as a glob path. Example:
-   * gs://bucket/path/to/data*.csv.
-   *
    * @var string
    */
   public $dataPathPattern;
   /**
-   * Optional. User friendly longer description text. Must be shorter than or
-   * equal to 1024 characters.
-   *
    * @var string
    */
   public $description;
   /**
-   * Optional. Display name must be shorter than or equal to 256 characters.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Optional. The etag associated with the entity, which can be retrieved with
-   * a GetEntity request. Required for update and delete requests.
-   *
    * @var string
    */
   public $etag;
   protected $formatType = GoogleCloudDataplexV1StorageFormat::class;
   protected $formatDataType = '';
   /**
-   * Required. A user-provided entity ID. It is mutable, and will be used as the
-   * published table name. Specifying a new ID in an update entity request will
-   * override the existing value. The ID must contain only letters (a-z, A-Z),
-   * numbers (0-9), and underscores, and consist of 256 or fewer characters.
-   *
    * @var string
    */
   public $id;
   /**
-   * Output only. The resource name of the entity, of the form: projects/{projec
-   * t_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/
-   * {id}.
-   *
    * @var string
    */
   public $name;
   protected $schemaType = GoogleCloudDataplexV1Schema::class;
   protected $schemaDataType = '';
   /**
-   * Required. Immutable. Identifies the storage system of the entity data.
-   *
    * @var string
    */
   public $system;
   /**
-   * Required. Immutable. The type of entity.
-   *
    * @var string
    */
   public $type;
   /**
-   * Output only. System generated unique ID for the Entity. This ID will be
-   * different if the Entity is deleted and re-created with the same name.
-   *
    * @var string
    */
   public $uid;
   /**
-   * Output only. The time when the entity was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. Identifies the access mechanism to the entity. Not user
-   * settable.
-   *
-   * @param GoogleCloudDataplexV1StorageAccess $access
+   * @param GoogleCloudDataplexV1StorageAccess
    */
   public function setAccess(GoogleCloudDataplexV1StorageAccess $access)
   {
@@ -169,11 +99,7 @@ class GoogleCloudDataplexV1Entity extends \Google\Model
     return $this->access;
   }
   /**
-   * Required. Immutable. The ID of the asset associated with the storage
-   * location containing the entity data. The entity must be with in the same
-   * zone with the asset.
-   *
-   * @param string $asset
+   * @param string
    */
   public function setAsset($asset)
   {
@@ -187,9 +113,7 @@ class GoogleCloudDataplexV1Entity extends \Google\Model
     return $this->asset;
   }
   /**
-   * Output only. The name of the associated Data Catalog entry.
-   *
-   * @param string $catalogEntry
+   * @param string
    */
   public function setCatalogEntry($catalogEntry)
   {
@@ -203,9 +127,7 @@ class GoogleCloudDataplexV1Entity extends \Google\Model
     return $this->catalogEntry;
   }
   /**
-   * Output only. Metadata stores that the entity is compatible with.
-   *
-   * @param GoogleCloudDataplexV1EntityCompatibilityStatus $compatibility
+   * @param GoogleCloudDataplexV1EntityCompatibilityStatus
    */
   public function setCompatibility(GoogleCloudDataplexV1EntityCompatibilityStatus $compatibility)
   {
@@ -219,9 +141,7 @@ class GoogleCloudDataplexV1Entity extends \Google\Model
     return $this->compatibility;
   }
   /**
-   * Output only. The time when the entity was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -235,12 +155,7 @@ class GoogleCloudDataplexV1Entity extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Required. Immutable. The storage path of the entity data. For Cloud Storage
-   * data, this is the fully-qualified path to the entity, such as
-   * gs://bucket/path/to/data. For BigQuery data, this is the name of the table
-   * resource, such as projects/project_id/datasets/dataset_id/tables/table_id.
-   *
-   * @param string $dataPath
+   * @param string
    */
   public function setDataPath($dataPath)
   {
@@ -254,11 +169,7 @@ class GoogleCloudDataplexV1Entity extends \Google\Model
     return $this->dataPath;
   }
   /**
-   * Optional. The set of items within the data path constituting the data in
-   * the entity, represented as a glob path. Example:
-   * gs://bucket/path/to/data*.csv.
-   *
-   * @param string $dataPathPattern
+   * @param string
    */
   public function setDataPathPattern($dataPathPattern)
   {
@@ -272,10 +183,7 @@ class GoogleCloudDataplexV1Entity extends \Google\Model
     return $this->dataPathPattern;
   }
   /**
-   * Optional. User friendly longer description text. Must be shorter than or
-   * equal to 1024 characters.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -289,9 +197,7 @@ class GoogleCloudDataplexV1Entity extends \Google\Model
     return $this->description;
   }
   /**
-   * Optional. Display name must be shorter than or equal to 256 characters.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -305,10 +211,7 @@ class GoogleCloudDataplexV1Entity extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Optional. The etag associated with the entity, which can be retrieved with
-   * a GetEntity request. Required for update and delete requests.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -322,10 +225,7 @@ class GoogleCloudDataplexV1Entity extends \Google\Model
     return $this->etag;
   }
   /**
-   * Required. Identifies the storage format of the entity data. It does not
-   * apply to entities with data stored in BigQuery.
-   *
-   * @param GoogleCloudDataplexV1StorageFormat $format
+   * @param GoogleCloudDataplexV1StorageFormat
    */
   public function setFormat(GoogleCloudDataplexV1StorageFormat $format)
   {
@@ -339,12 +239,7 @@ class GoogleCloudDataplexV1Entity extends \Google\Model
     return $this->format;
   }
   /**
-   * Required. A user-provided entity ID. It is mutable, and will be used as the
-   * published table name. Specifying a new ID in an update entity request will
-   * override the existing value. The ID must contain only letters (a-z, A-Z),
-   * numbers (0-9), and underscores, and consist of 256 or fewer characters.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -358,11 +253,7 @@ class GoogleCloudDataplexV1Entity extends \Google\Model
     return $this->id;
   }
   /**
-   * Output only. The resource name of the entity, of the form: projects/{projec
-   * t_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/
-   * {id}.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -376,11 +267,7 @@ class GoogleCloudDataplexV1Entity extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. The description of the data structure and layout. The schema is
-   * not included in list responses. It is only included in SCHEMA and FULL
-   * entity views of a GetEntity response.
-   *
-   * @param GoogleCloudDataplexV1Schema $schema
+   * @param GoogleCloudDataplexV1Schema
    */
   public function setSchema(GoogleCloudDataplexV1Schema $schema)
   {
@@ -394,46 +281,35 @@ class GoogleCloudDataplexV1Entity extends \Google\Model
     return $this->schema;
   }
   /**
-   * Required. Immutable. Identifies the storage system of the entity data.
-   *
-   * Accepted values: STORAGE_SYSTEM_UNSPECIFIED, CLOUD_STORAGE, BIGQUERY
-   *
-   * @param self::SYSTEM_* $system
+   * @param string
    */
   public function setSystem($system)
   {
     $this->system = $system;
   }
   /**
-   * @return self::SYSTEM_*
+   * @return string
    */
   public function getSystem()
   {
     return $this->system;
   }
   /**
-   * Required. Immutable. The type of entity.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, TABLE, FILESET
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * Output only. System generated unique ID for the Entity. This ID will be
-   * different if the Entity is deleted and re-created with the same name.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {
@@ -447,9 +323,7 @@ class GoogleCloudDataplexV1Entity extends \Google\Model
     return $this->uid;
   }
   /**
-   * Output only. The time when the entity was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

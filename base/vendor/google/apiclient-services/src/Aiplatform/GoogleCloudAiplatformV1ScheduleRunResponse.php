@@ -20,22 +20,16 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1ScheduleRunResponse extends \Google\Model
 {
   /**
-   * The response of the scheduled run.
-   *
    * @var string
    */
   public $runResponse;
   /**
-   * The scheduled run time based on the user-specified schedule.
-   *
    * @var string
    */
   public $scheduledRunTime;
 
   /**
-   * The response of the scheduled run.
-   *
-   * @param string $runResponse
+   * @param string
    */
   public function setRunResponse($runResponse)
   {
@@ -49,9 +43,7 @@ class GoogleCloudAiplatformV1ScheduleRunResponse extends \Google\Model
     return $this->runResponse;
   }
   /**
-   * The scheduled run time based on the user-specified schedule.
-   *
-   * @param string $scheduledRunTime
+   * @param string
    */
   public function setScheduledRunTime($scheduledRunTime)
   {

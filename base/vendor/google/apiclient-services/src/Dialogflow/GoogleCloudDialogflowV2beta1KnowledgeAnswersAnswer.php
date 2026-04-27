@@ -19,10 +19,6 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowV2beta1KnowledgeAnswersAnswer extends \Google\Model
 {
-  public const MATCH_CONFIDENCE_LEVEL_MATCH_CONFIDENCE_LEVEL_UNSPECIFIED = 'MATCH_CONFIDENCE_LEVEL_UNSPECIFIED';
-  public const MATCH_CONFIDENCE_LEVEL_LOW = 'LOW';
-  public const MATCH_CONFIDENCE_LEVEL_MEDIUM = 'MEDIUM';
-  public const MATCH_CONFIDENCE_LEVEL_HIGH = 'HIGH';
   /**
    * @var string
    */
@@ -45,7 +41,7 @@ class GoogleCloudDialogflowV2beta1KnowledgeAnswersAnswer extends \Google\Model
   public $source;
 
   /**
-   * @param string $answer
+   * @param string
    */
   public function setAnswer($answer)
   {
@@ -59,7 +55,7 @@ class GoogleCloudDialogflowV2beta1KnowledgeAnswersAnswer extends \Google\Model
     return $this->answer;
   }
   /**
-   * @param string $faqQuestion
+   * @param string
    */
   public function setFaqQuestion($faqQuestion)
   {
@@ -73,7 +69,7 @@ class GoogleCloudDialogflowV2beta1KnowledgeAnswersAnswer extends \Google\Model
     return $this->faqQuestion;
   }
   /**
-   * @param float $matchConfidence
+   * @param float
    */
   public function setMatchConfidence($matchConfidence)
   {
@@ -87,21 +83,21 @@ class GoogleCloudDialogflowV2beta1KnowledgeAnswersAnswer extends \Google\Model
     return $this->matchConfidence;
   }
   /**
-   * @param self::MATCH_CONFIDENCE_LEVEL_* $matchConfidenceLevel
+   * @param string
    */
   public function setMatchConfidenceLevel($matchConfidenceLevel)
   {
     $this->matchConfidenceLevel = $matchConfidenceLevel;
   }
   /**
-   * @return self::MATCH_CONFIDENCE_LEVEL_*
+   * @return string
    */
   public function getMatchConfidenceLevel()
   {
     return $this->matchConfidenceLevel;
   }
   /**
-   * @param string $source
+   * @param string
    */
   public function setSource($source)
   {

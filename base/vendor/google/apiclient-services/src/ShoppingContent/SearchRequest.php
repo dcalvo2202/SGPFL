@@ -20,36 +20,20 @@ namespace Google\Service\ShoppingContent;
 class SearchRequest extends \Google\Model
 {
   /**
-   * Number of ReportRows to retrieve in a single page. Defaults to 1000. Values
-   * above 5000 are coerced to 5000.
-   *
    * @var int
    */
   public $pageSize;
   /**
-   * Token of the page to retrieve. If not specified, the first page of results
-   * is returned. In order to request the next page of results, the value
-   * obtained from `next_page_token` in the previous response should be used.
-   *
    * @var string
    */
   public $pageToken;
   /**
-   * Required. Query that defines performance metrics to retrieve and dimensions
-   * according to which the metrics are to be segmented. For details on how to
-   * construct your query, see the [Query Language
-   * guide](https://developers.google.com/shopping-content/guides/reports/query-
-   * language/overview).
-   *
    * @var string
    */
   public $query;
 
   /**
-   * Number of ReportRows to retrieve in a single page. Defaults to 1000. Values
-   * above 5000 are coerced to 5000.
-   *
-   * @param int $pageSize
+   * @param int
    */
   public function setPageSize($pageSize)
   {
@@ -63,11 +47,7 @@ class SearchRequest extends \Google\Model
     return $this->pageSize;
   }
   /**
-   * Token of the page to retrieve. If not specified, the first page of results
-   * is returned. In order to request the next page of results, the value
-   * obtained from `next_page_token` in the previous response should be used.
-   *
-   * @param string $pageToken
+   * @param string
    */
   public function setPageToken($pageToken)
   {
@@ -81,13 +61,7 @@ class SearchRequest extends \Google\Model
     return $this->pageToken;
   }
   /**
-   * Required. Query that defines performance metrics to retrieve and dimensions
-   * according to which the metrics are to be segmented. For details on how to
-   * construct your query, see the [Query Language
-   * guide](https://developers.google.com/shopping-content/guides/reports/query-
-   * language/overview).
-   *
-   * @param string $query
+   * @param string
    */
   public function setQuery($query)
   {

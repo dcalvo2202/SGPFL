@@ -29,15 +29,11 @@ class SourceObjectIdentifier extends \Google\Model
   protected $postgresqlIdentifierDataType = '';
   protected $salesforceIdentifierType = SalesforceObjectIdentifier::class;
   protected $salesforceIdentifierDataType = '';
-  protected $spannerIdentifierType = SpannerObjectIdentifier::class;
-  protected $spannerIdentifierDataType = '';
   protected $sqlServerIdentifierType = SqlServerObjectIdentifier::class;
   protected $sqlServerIdentifierDataType = '';
 
   /**
-   * MongoDB data source object identifier.
-   *
-   * @param MongodbObjectIdentifier $mongodbIdentifier
+   * @param MongodbObjectIdentifier
    */
   public function setMongodbIdentifier(MongodbObjectIdentifier $mongodbIdentifier)
   {
@@ -51,9 +47,7 @@ class SourceObjectIdentifier extends \Google\Model
     return $this->mongodbIdentifier;
   }
   /**
-   * Mysql data source object identifier.
-   *
-   * @param MysqlObjectIdentifier $mysqlIdentifier
+   * @param MysqlObjectIdentifier
    */
   public function setMysqlIdentifier(MysqlObjectIdentifier $mysqlIdentifier)
   {
@@ -67,9 +61,7 @@ class SourceObjectIdentifier extends \Google\Model
     return $this->mysqlIdentifier;
   }
   /**
-   * Oracle data source object identifier.
-   *
-   * @param OracleObjectIdentifier $oracleIdentifier
+   * @param OracleObjectIdentifier
    */
   public function setOracleIdentifier(OracleObjectIdentifier $oracleIdentifier)
   {
@@ -83,9 +75,7 @@ class SourceObjectIdentifier extends \Google\Model
     return $this->oracleIdentifier;
   }
   /**
-   * PostgreSQL data source object identifier.
-   *
-   * @param PostgresqlObjectIdentifier $postgresqlIdentifier
+   * @param PostgresqlObjectIdentifier
    */
   public function setPostgresqlIdentifier(PostgresqlObjectIdentifier $postgresqlIdentifier)
   {
@@ -99,9 +89,7 @@ class SourceObjectIdentifier extends \Google\Model
     return $this->postgresqlIdentifier;
   }
   /**
-   * Salesforce data source object identifier.
-   *
-   * @param SalesforceObjectIdentifier $salesforceIdentifier
+   * @param SalesforceObjectIdentifier
    */
   public function setSalesforceIdentifier(SalesforceObjectIdentifier $salesforceIdentifier)
   {
@@ -115,25 +103,7 @@ class SourceObjectIdentifier extends \Google\Model
     return $this->salesforceIdentifier;
   }
   /**
-   * Spanner data source object identifier.
-   *
-   * @param SpannerObjectIdentifier $spannerIdentifier
-   */
-  public function setSpannerIdentifier(SpannerObjectIdentifier $spannerIdentifier)
-  {
-    $this->spannerIdentifier = $spannerIdentifier;
-  }
-  /**
-   * @return SpannerObjectIdentifier
-   */
-  public function getSpannerIdentifier()
-  {
-    return $this->spannerIdentifier;
-  }
-  /**
-   * SQLServer data source object identifier.
-   *
-   * @param SqlServerObjectIdentifier $sqlServerIdentifier
+   * @param SqlServerObjectIdentifier
    */
   public function setSqlServerIdentifier(SqlServerObjectIdentifier $sqlServerIdentifier)
   {

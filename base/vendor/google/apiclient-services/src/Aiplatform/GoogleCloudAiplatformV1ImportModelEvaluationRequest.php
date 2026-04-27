@@ -23,9 +23,7 @@ class GoogleCloudAiplatformV1ImportModelEvaluationRequest extends \Google\Model
   protected $modelEvaluationDataType = '';
 
   /**
-   * Required. Model evaluation resource to be imported.
-   *
-   * @param GoogleCloudAiplatformV1ModelEvaluation $modelEvaluation
+   * @param GoogleCloudAiplatformV1ModelEvaluation
    */
   public function setModelEvaluation(GoogleCloudAiplatformV1ModelEvaluation $modelEvaluation)
   {

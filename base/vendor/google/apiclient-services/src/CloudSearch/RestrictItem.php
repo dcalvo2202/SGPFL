@@ -28,14 +28,12 @@ class RestrictItem extends \Google\Model
   protected $driveTimeSpanRestrictType = DriveTimeSpanRestrict::class;
   protected $driveTimeSpanRestrictDataType = '';
   /**
-   * The search restrict (e.g. "after:2017-09-11 before:2017-09-12").
-   *
    * @var string
    */
   public $searchOperator;
 
   /**
-   * @param DriveFollowUpRestrict $driveFollowUpRestrict
+   * @param DriveFollowUpRestrict
    */
   public function setDriveFollowUpRestrict(DriveFollowUpRestrict $driveFollowUpRestrict)
   {
@@ -49,7 +47,7 @@ class RestrictItem extends \Google\Model
     return $this->driveFollowUpRestrict;
   }
   /**
-   * @param DriveLocationRestrict $driveLocationRestrict
+   * @param DriveLocationRestrict
    */
   public function setDriveLocationRestrict(DriveLocationRestrict $driveLocationRestrict)
   {
@@ -63,9 +61,7 @@ class RestrictItem extends \Google\Model
     return $this->driveLocationRestrict;
   }
   /**
-   * Drive Types.
-   *
-   * @param DriveMimeTypeRestrict $driveMimeTypeRestrict
+   * @param DriveMimeTypeRestrict
    */
   public function setDriveMimeTypeRestrict(DriveMimeTypeRestrict $driveMimeTypeRestrict)
   {
@@ -79,7 +75,7 @@ class RestrictItem extends \Google\Model
     return $this->driveMimeTypeRestrict;
   }
   /**
-   * @param DriveTimeSpanRestrict $driveTimeSpanRestrict
+   * @param DriveTimeSpanRestrict
    */
   public function setDriveTimeSpanRestrict(DriveTimeSpanRestrict $driveTimeSpanRestrict)
   {
@@ -93,9 +89,7 @@ class RestrictItem extends \Google\Model
     return $this->driveTimeSpanRestrict;
   }
   /**
-   * The search restrict (e.g. "after:2017-09-11 before:2017-09-12").
-   *
-   * @param string $searchOperator
+   * @param string
    */
   public function setSearchOperator($searchOperator)
   {

@@ -19,126 +19,54 @@ namespace Google\Service\ChromeManagement;
 
 class GoogleChromeManagementVersionsV1ReportingDataExtensionData extends \Google\Collection
 {
-  /**
-   * Represents an unspecified extension type.
-   */
-  public const EXTENSION_TYPE_EXTENSION_TYPE_UNSPECIFIED = 'EXTENSION_TYPE_UNSPECIFIED';
-  /**
-   * Represents an extension.
-   */
-  public const EXTENSION_TYPE_EXTENSION = 'EXTENSION';
-  /**
-   * Represents an app.
-   */
-  public const EXTENSION_TYPE_APP = 'APP';
-  /**
-   * Represents a theme.
-   */
-  public const EXTENSION_TYPE_THEME = 'THEME';
-  /**
-   * Represents a hosted app.
-   */
-  public const EXTENSION_TYPE_HOSTED_APP = 'HOSTED_APP';
-  /**
-   * Represents an unspecified installation type.
-   */
-  public const INSTALLATION_TYPE_INSTALLATION_TYPE_UNSPECIFIED = 'INSTALLATION_TYPE_UNSPECIFIED';
-  /**
-   * Represents instances of the extension having mixed installation types.
-   */
-  public const INSTALLATION_TYPE_MULTIPLE = 'MULTIPLE';
-  /**
-   * Represents a normal installation type.
-   */
-  public const INSTALLATION_TYPE_NORMAL = 'NORMAL';
-  /**
-   * Represents an installation by admin.
-   */
-  public const INSTALLATION_TYPE_ADMIN = 'ADMIN';
-  /**
-   * Represents a development installation type.
-   */
-  public const INSTALLATION_TYPE_DEVELOPMENT = 'DEVELOPMENT';
-  /**
-   * Represents a sideload installation type.
-   */
-  public const INSTALLATION_TYPE_SIDELOAD = 'SIDELOAD';
-  /**
-   * Represents an installation type that is not covered in the other options.
-   */
-  public const INSTALLATION_TYPE_OTHER = 'OTHER';
   protected $collection_key = 'permissions';
   /**
-   * Output only. Description of the extension.
-   *
    * @var string
    */
   public $description;
   /**
-   * Output only. ID of the extension.
-   *
    * @var string
    */
   public $extensionId;
   /**
-   * Output only. Type of the extension.
-   *
    * @var string
    */
   public $extensionType;
   /**
-   * Output only. The URL of the homepage of the extension.
-   *
    * @var string
    */
   public $homepageUri;
   /**
-   * Output only. Installation type of the extension.
-   *
    * @var string
    */
   public $installationType;
   /**
-   * Output only. Represents whether the user disabled the extension.
-   *
    * @var bool
    */
   public $isDisabled;
   /**
-   * Output only. Represents whether the extension is from the webstore.
-   *
    * @var bool
    */
   public $isWebstoreExtension;
   /**
-   * Output only. Manifest version of the extension.
-   *
    * @var int
    */
   public $manifestVersion;
   /**
-   * Output only. Name of the extension.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Permissions requested by the extension.
-   *
    * @var string[]
    */
   public $permissions;
   /**
-   * Output only. Version of the extension.
-   *
    * @var string
    */
   public $version;
 
   /**
-   * Output only. Description of the extension.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -152,9 +80,7 @@ class GoogleChromeManagementVersionsV1ReportingDataExtensionData extends \Google
     return $this->description;
   }
   /**
-   * Output only. ID of the extension.
-   *
-   * @param string $extensionId
+   * @param string
    */
   public function setExtensionId($extensionId)
   {
@@ -168,28 +94,21 @@ class GoogleChromeManagementVersionsV1ReportingDataExtensionData extends \Google
     return $this->extensionId;
   }
   /**
-   * Output only. Type of the extension.
-   *
-   * Accepted values: EXTENSION_TYPE_UNSPECIFIED, EXTENSION, APP, THEME,
-   * HOSTED_APP
-   *
-   * @param self::EXTENSION_TYPE_* $extensionType
+   * @param string
    */
   public function setExtensionType($extensionType)
   {
     $this->extensionType = $extensionType;
   }
   /**
-   * @return self::EXTENSION_TYPE_*
+   * @return string
    */
   public function getExtensionType()
   {
     return $this->extensionType;
   }
   /**
-   * Output only. The URL of the homepage of the extension.
-   *
-   * @param string $homepageUri
+   * @param string
    */
   public function setHomepageUri($homepageUri)
   {
@@ -203,28 +122,21 @@ class GoogleChromeManagementVersionsV1ReportingDataExtensionData extends \Google
     return $this->homepageUri;
   }
   /**
-   * Output only. Installation type of the extension.
-   *
-   * Accepted values: INSTALLATION_TYPE_UNSPECIFIED, MULTIPLE, NORMAL, ADMIN,
-   * DEVELOPMENT, SIDELOAD, OTHER
-   *
-   * @param self::INSTALLATION_TYPE_* $installationType
+   * @param string
    */
   public function setInstallationType($installationType)
   {
     $this->installationType = $installationType;
   }
   /**
-   * @return self::INSTALLATION_TYPE_*
+   * @return string
    */
   public function getInstallationType()
   {
     return $this->installationType;
   }
   /**
-   * Output only. Represents whether the user disabled the extension.
-   *
-   * @param bool $isDisabled
+   * @param bool
    */
   public function setIsDisabled($isDisabled)
   {
@@ -238,9 +150,7 @@ class GoogleChromeManagementVersionsV1ReportingDataExtensionData extends \Google
     return $this->isDisabled;
   }
   /**
-   * Output only. Represents whether the extension is from the webstore.
-   *
-   * @param bool $isWebstoreExtension
+   * @param bool
    */
   public function setIsWebstoreExtension($isWebstoreExtension)
   {
@@ -254,9 +164,7 @@ class GoogleChromeManagementVersionsV1ReportingDataExtensionData extends \Google
     return $this->isWebstoreExtension;
   }
   /**
-   * Output only. Manifest version of the extension.
-   *
-   * @param int $manifestVersion
+   * @param int
    */
   public function setManifestVersion($manifestVersion)
   {
@@ -270,9 +178,7 @@ class GoogleChromeManagementVersionsV1ReportingDataExtensionData extends \Google
     return $this->manifestVersion;
   }
   /**
-   * Output only. Name of the extension.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -286,9 +192,7 @@ class GoogleChromeManagementVersionsV1ReportingDataExtensionData extends \Google
     return $this->name;
   }
   /**
-   * Output only. Permissions requested by the extension.
-   *
-   * @param string[] $permissions
+   * @param string[]
    */
   public function setPermissions($permissions)
   {
@@ -302,9 +206,7 @@ class GoogleChromeManagementVersionsV1ReportingDataExtensionData extends \Google
     return $this->permissions;
   }
   /**
-   * Output only. Version of the extension.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

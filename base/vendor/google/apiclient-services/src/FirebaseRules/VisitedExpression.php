@@ -22,16 +22,12 @@ class VisitedExpression extends \Google\Model
   protected $sourcePositionType = SourcePosition::class;
   protected $sourcePositionDataType = '';
   /**
-   * The evaluated value for the visited expression, e.g. true/false
-   *
    * @var array
    */
   public $value;
 
   /**
-   * Position in the `Source` or `Ruleset` where an expression was visited.
-   *
-   * @param SourcePosition $sourcePosition
+   * @param SourcePosition
    */
   public function setSourcePosition(SourcePosition $sourcePosition)
   {
@@ -45,9 +41,7 @@ class VisitedExpression extends \Google\Model
     return $this->sourcePosition;
   }
   /**
-   * The evaluated value for the visited expression, e.g. true/false
-   *
-   * @param array $value
+   * @param array
    */
   public function setValue($value)
   {

@@ -21,44 +21,30 @@ class UserDataMapping extends \Google\Collection
 {
   protected $collection_key = 'resourceAttributes';
   /**
-   * Output only. Indicates the time when this mapping was archived.
-   *
    * @var string
    */
   public $archiveTime;
   /**
-   * Output only. Indicates whether this mapping is archived.
-   *
    * @var bool
    */
   public $archived;
   /**
-   * Required. A unique identifier for the mapped resource.
-   *
    * @var string
    */
   public $dataId;
   /**
-   * Resource name of the User data mapping, of the form `projects/{project_id}/
-   * locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_
-   * id}/userDataMappings/{user_data_mapping_id}`.
-   *
    * @var string
    */
   public $name;
   protected $resourceAttributesType = Attribute::class;
   protected $resourceAttributesDataType = 'array';
   /**
-   * Required. User's UUID provided by the client.
-   *
    * @var string
    */
   public $userId;
 
   /**
-   * Output only. Indicates the time when this mapping was archived.
-   *
-   * @param string $archiveTime
+   * @param string
    */
   public function setArchiveTime($archiveTime)
   {
@@ -72,9 +58,7 @@ class UserDataMapping extends \Google\Collection
     return $this->archiveTime;
   }
   /**
-   * Output only. Indicates whether this mapping is archived.
-   *
-   * @param bool $archived
+   * @param bool
    */
   public function setArchived($archived)
   {
@@ -88,9 +72,7 @@ class UserDataMapping extends \Google\Collection
     return $this->archived;
   }
   /**
-   * Required. A unique identifier for the mapped resource.
-   *
-   * @param string $dataId
+   * @param string
    */
   public function setDataId($dataId)
   {
@@ -104,11 +86,7 @@ class UserDataMapping extends \Google\Collection
     return $this->dataId;
   }
   /**
-   * Resource name of the User data mapping, of the form `projects/{project_id}/
-   * locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_
-   * id}/userDataMappings/{user_data_mapping_id}`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -122,12 +100,7 @@ class UserDataMapping extends \Google\Collection
     return $this->name;
   }
   /**
-   * Attributes of the resource. Only explicitly set attributes are displayed
-   * here. Attribute definitions with defaults set implicitly apply to these
-   * User data mappings. Attributes listed here must be single valued, that is,
-   * exactly one value is specified for the field "values" in each Attribute.
-   *
-   * @param Attribute[] $resourceAttributes
+   * @param Attribute[]
    */
   public function setResourceAttributes($resourceAttributes)
   {
@@ -141,9 +114,7 @@ class UserDataMapping extends \Google\Collection
     return $this->resourceAttributes;
   }
   /**
-   * Required. User's UUID provided by the client.
-   *
-   * @param string $userId
+   * @param string
    */
   public function setUserId($userId)
   {

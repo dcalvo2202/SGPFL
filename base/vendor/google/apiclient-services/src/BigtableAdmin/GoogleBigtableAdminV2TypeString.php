@@ -23,9 +23,7 @@ class GoogleBigtableAdminV2TypeString extends \Google\Model
   protected $encodingDataType = '';
 
   /**
-   * The encoding to use when converting to or from lower level types.
-   *
-   * @param GoogleBigtableAdminV2TypeStringEncoding $encoding
+   * @param GoogleBigtableAdminV2TypeStringEncoding
    */
   public function setEncoding(GoogleBigtableAdminV2TypeStringEncoding $encoding)
   {

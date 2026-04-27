@@ -20,52 +20,24 @@ namespace Google\Service\DataprocMetastore;
 class LatestBackup extends \Google\Model
 {
   /**
-   * The state of the backup is unknown.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The backup is in progress.
-   */
-  public const STATE_IN_PROGRESS = 'IN_PROGRESS';
-  /**
-   * The backup completed.
-   */
-  public const STATE_SUCCEEDED = 'SUCCEEDED';
-  /**
-   * The backup failed.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * Output only. The ID of an in-progress scheduled backup. Empty if no backup
-   * is in progress.
-   *
    * @var string
    */
   public $backupId;
   /**
-   * Output only. The duration of the backup completion.
-   *
    * @var string
    */
   public $duration;
   /**
-   * Output only. The time when the backup was started.
-   *
    * @var string
    */
   public $startTime;
   /**
-   * Output only. The current state of the backup.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Output only. The ID of an in-progress scheduled backup. Empty if no backup
-   * is in progress.
-   *
-   * @param string $backupId
+   * @param string
    */
   public function setBackupId($backupId)
   {
@@ -79,9 +51,7 @@ class LatestBackup extends \Google\Model
     return $this->backupId;
   }
   /**
-   * Output only. The duration of the backup completion.
-   *
-   * @param string $duration
+   * @param string
    */
   public function setDuration($duration)
   {
@@ -95,9 +65,7 @@ class LatestBackup extends \Google\Model
     return $this->duration;
   }
   /**
-   * Output only. The time when the backup was started.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -111,18 +79,14 @@ class LatestBackup extends \Google\Model
     return $this->startTime;
   }
   /**
-   * Output only. The current state of the backup.
-   *
-   * Accepted values: STATE_UNSPECIFIED, IN_PROGRESS, SUCCEEDED, FAILED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

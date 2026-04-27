@@ -20,24 +20,16 @@ namespace Google\Service\Dataflow;
 class MetricShortId extends \Google\Model
 {
   /**
-   * The index of the corresponding metric in the ReportWorkItemStatusRequest.
-   * Required.
-   *
    * @var int
    */
   public $metricIndex;
   /**
-   * The service-generated short identifier for the metric.
-   *
    * @var string
    */
   public $shortId;
 
   /**
-   * The index of the corresponding metric in the ReportWorkItemStatusRequest.
-   * Required.
-   *
-   * @param int $metricIndex
+   * @param int
    */
   public function setMetricIndex($metricIndex)
   {
@@ -51,9 +43,7 @@ class MetricShortId extends \Google\Model
     return $this->metricIndex;
   }
   /**
-   * The service-generated short identifier for the metric.
-   *
-   * @param string $shortId
+   * @param string
    */
   public function setShortId($shortId)
   {

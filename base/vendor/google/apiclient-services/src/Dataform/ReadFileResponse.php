@@ -20,16 +20,12 @@ namespace Google\Service\Dataform;
 class ReadFileResponse extends \Google\Model
 {
   /**
-   * The file's contents.
-   *
    * @var string
    */
   public $fileContents;
 
   /**
-   * The file's contents.
-   *
-   * @param string $fileContents
+   * @param string
    */
   public function setFileContents($fileContents)
   {

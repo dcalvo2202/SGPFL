@@ -23,18 +23,12 @@ class GoogleSecuritySafebrowsingV5ListHashListsResponse extends \Google\Collecti
   protected $hashListsType = GoogleSecuritySafebrowsingV5HashList::class;
   protected $hashListsDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The hash lists in an arbitrary order. Only metadata about the hash lists
-   * will be included, not the contents.
-   *
-   * @param GoogleSecuritySafebrowsingV5HashList[] $hashLists
+   * @param GoogleSecuritySafebrowsingV5HashList[]
    */
   public function setHashLists($hashLists)
   {
@@ -48,10 +42,7 @@ class GoogleSecuritySafebrowsingV5ListHashListsResponse extends \Google\Collecti
     return $this->hashLists;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

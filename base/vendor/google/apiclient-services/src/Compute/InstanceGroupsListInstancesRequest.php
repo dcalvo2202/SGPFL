@@ -20,37 +20,19 @@ namespace Google\Service\Compute;
 class InstanceGroupsListInstancesRequest extends \Google\Model
 {
   /**
-   * Includes all instances in the generated list regardless of their state.
-   */
-  public const INSTANCE_STATE_ALL = 'ALL';
-  /**
-   * Includes instances in the generated list only if they have a RUNNING state.
-   */
-  public const INSTANCE_STATE_RUNNING = 'RUNNING';
-  /**
-   * A filter for the state of the instances in the instance group. Valid
-   * options are ALL or RUNNING. If you do not specify this parameter the list
-   * includes all instances regardless of their state.
-   *
    * @var string
    */
   public $instanceState;
 
   /**
-   * A filter for the state of the instances in the instance group. Valid
-   * options are ALL or RUNNING. If you do not specify this parameter the list
-   * includes all instances regardless of their state.
-   *
-   * Accepted values: ALL, RUNNING
-   *
-   * @param self::INSTANCE_STATE_* $instanceState
+   * @param string
    */
   public function setInstanceState($instanceState)
   {
     $this->instanceState = $instanceState;
   }
   /**
-   * @return self::INSTANCE_STATE_*
+   * @return string
    */
   public function getInstanceState()
   {

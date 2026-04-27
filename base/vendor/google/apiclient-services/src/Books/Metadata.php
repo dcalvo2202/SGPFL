@@ -23,16 +23,12 @@ class Metadata extends \Google\Collection
   protected $itemsType = MetadataItems::class;
   protected $itemsDataType = 'array';
   /**
-   * Resource type.
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * A list of offline dictionary metadata.
-   *
-   * @param MetadataItems[] $items
+   * @param MetadataItems[]
    */
   public function setItems($items)
   {
@@ -46,9 +42,7 @@ class Metadata extends \Google\Collection
     return $this->items;
   }
   /**
-   * Resource type.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

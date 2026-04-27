@@ -20,9 +20,6 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1UnmanagedContainerModel extends \Google\Model
 {
   /**
-   * The path to the directory containing the Model artifact and any of its
-   * supporting files.
-   *
    * @var string
    */
   public $artifactUri;
@@ -32,10 +29,7 @@ class GoogleCloudAiplatformV1UnmanagedContainerModel extends \Google\Model
   protected $predictSchemataDataType = '';
 
   /**
-   * The path to the directory containing the Model artifact and any of its
-   * supporting files.
-   *
-   * @param string $artifactUri
+   * @param string
    */
   public function setArtifactUri($artifactUri)
   {
@@ -49,10 +43,7 @@ class GoogleCloudAiplatformV1UnmanagedContainerModel extends \Google\Model
     return $this->artifactUri;
   }
   /**
-   * Input only. The specification of the container that is to be used when
-   * deploying this Model.
-   *
-   * @param GoogleCloudAiplatformV1ModelContainerSpec $containerSpec
+   * @param GoogleCloudAiplatformV1ModelContainerSpec
    */
   public function setContainerSpec(GoogleCloudAiplatformV1ModelContainerSpec $containerSpec)
   {
@@ -66,9 +57,7 @@ class GoogleCloudAiplatformV1UnmanagedContainerModel extends \Google\Model
     return $this->containerSpec;
   }
   /**
-   * Contains the schemata used in Model's predictions and explanations
-   *
-   * @param GoogleCloudAiplatformV1PredictSchemata $predictSchemata
+   * @param GoogleCloudAiplatformV1PredictSchemata
    */
   public function setPredictSchemata(GoogleCloudAiplatformV1PredictSchemata $predictSchemata)
   {

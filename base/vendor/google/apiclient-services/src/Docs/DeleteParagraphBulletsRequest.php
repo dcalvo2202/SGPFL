@@ -23,9 +23,7 @@ class DeleteParagraphBulletsRequest extends \Google\Model
   protected $rangeDataType = '';
 
   /**
-   * The range to delete bullets from.
-   *
-   * @param Range $range
+   * @param Range
    */
   public function setRange(Range $range)
   {

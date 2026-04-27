@@ -20,22 +20,16 @@ namespace Google\Service\GKEOnPrem;
 class VmwareControlPlaneVsphereConfig extends \Google\Model
 {
   /**
-   * The Vsphere datastore used by the control plane Node.
-   *
    * @var string
    */
   public $datastore;
   /**
-   * The Vsphere storage policy used by the control plane Node.
-   *
    * @var string
    */
   public $storagePolicyName;
 
   /**
-   * The Vsphere datastore used by the control plane Node.
-   *
-   * @param string $datastore
+   * @param string
    */
   public function setDatastore($datastore)
   {
@@ -49,9 +43,7 @@ class VmwareControlPlaneVsphereConfig extends \Google\Model
     return $this->datastore;
   }
   /**
-   * The Vsphere storage policy used by the control plane Node.
-   *
-   * @param string $storagePolicyName
+   * @param string
    */
   public function setStoragePolicyName($storagePolicyName)
   {

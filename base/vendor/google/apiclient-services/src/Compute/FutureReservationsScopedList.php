@@ -26,9 +26,7 @@ class FutureReservationsScopedList extends \Google\Collection
   protected $warningDataType = '';
 
   /**
-   * A list of future reservations contained in this scope.
-   *
-   * @param FutureReservation[] $futureReservations
+   * @param FutureReservation[]
    */
   public function setFutureReservations($futureReservations)
   {
@@ -42,10 +40,7 @@ class FutureReservationsScopedList extends \Google\Collection
     return $this->futureReservations;
   }
   /**
-   * Informational warning which replaces the list of future reservations when
-   * the list is empty.
-   *
-   * @param FutureReservationsScopedListWarning $warning
+   * @param FutureReservationsScopedListWarning
    */
   public function setWarning(FutureReservationsScopedListWarning $warning)
   {

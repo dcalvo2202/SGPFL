@@ -26,9 +26,7 @@ class InventorySizeTargeting extends \Google\Collection
   protected $targetedInventorySizesDataType = 'array';
 
   /**
-   * A list of inventory sizes to be excluded.
-   *
-   * @param AdSize[] $excludedInventorySizes
+   * @param AdSize[]
    */
   public function setExcludedInventorySizes($excludedInventorySizes)
   {
@@ -42,9 +40,7 @@ class InventorySizeTargeting extends \Google\Collection
     return $this->excludedInventorySizes;
   }
   /**
-   * A list of inventory sizes to be included.
-   *
-   * @param AdSize[] $targetedInventorySizes
+   * @param AdSize[]
    */
   public function setTargetedInventorySizes($targetedInventorySizes)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\Bigquery;
 class SkewSource extends \Google\Model
 {
   /**
-   * Output only. Stage id of the skew source stage.
-   *
    * @var string
    */
   public $stageId;
 
   /**
-   * Output only. Stage id of the skew source stage.
-   *
-   * @param string $stageId
+   * @param string
    */
   public function setStageId($stageId)
   {

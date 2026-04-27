@@ -20,53 +20,24 @@ namespace Google\Service\AndroidEnterprise;
 class ServiceAccountKey extends \Google\Model
 {
   /**
-   * Google Credentials File format.
-   */
-  public const TYPE_googleCredentials = 'googleCredentials';
-  /**
-   * PKCS12 format. The password for the PKCS12 file is 'notasecret'. For more
-   * information, see https://tools.ietf.org/html/rfc7292. The data for keys of
-   * this type are base64 encoded according to RFC 4648 Section 4. See
-   * http://tools.ietf.org/html/rfc4648#section-4.
-   */
-  public const TYPE_pkcs12 = 'pkcs12';
-  /**
-   * The body of the private key credentials file, in string format. This is
-   * only populated when the ServiceAccountKey is created, and is not stored by
-   * Google.
-   *
    * @var string
    */
   public $data;
   /**
-   * An opaque, unique identifier for this ServiceAccountKey. Assigned by the
-   * server.
-   *
    * @var string
    */
   public $id;
   /**
-   * Public key data for the credentials file. This is an X.509 cert. If you are
-   * using the googleCredentials key type, this is identical to the cert that
-   * can be retrieved by using the X.509 cert url inside of the credentials
-   * file.
-   *
    * @var string
    */
   public $publicData;
   /**
-   * The file format of the generated key data.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The body of the private key credentials file, in string format. This is
-   * only populated when the ServiceAccountKey is created, and is not stored by
-   * Google.
-   *
-   * @param string $data
+   * @param string
    */
   public function setData($data)
   {
@@ -80,10 +51,7 @@ class ServiceAccountKey extends \Google\Model
     return $this->data;
   }
   /**
-   * An opaque, unique identifier for this ServiceAccountKey. Assigned by the
-   * server.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -97,12 +65,7 @@ class ServiceAccountKey extends \Google\Model
     return $this->id;
   }
   /**
-   * Public key data for the credentials file. This is an X.509 cert. If you are
-   * using the googleCredentials key type, this is identical to the cert that
-   * can be retrieved by using the X.509 cert url inside of the credentials
-   * file.
-   *
-   * @param string $publicData
+   * @param string
    */
   public function setPublicData($publicData)
   {
@@ -116,18 +79,14 @@ class ServiceAccountKey extends \Google\Model
     return $this->publicData;
   }
   /**
-   * The file format of the generated key data.
-   *
-   * Accepted values: googleCredentials, pkcs12
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

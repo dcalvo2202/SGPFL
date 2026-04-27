@@ -20,10 +20,6 @@ namespace Google\Service\OracleDatabase;
 class DbNode extends \Google\Model
 {
   /**
-   * Identifier. The name of the database node resource in the following format:
-   * projects/{project}/locations/{location}/cloudVmClusters/{cloud_vm_cluster}/
-   * dbNodes/{db_node}
-   *
    * @var string
    */
   public $name;
@@ -31,11 +27,7 @@ class DbNode extends \Google\Model
   protected $propertiesDataType = '';
 
   /**
-   * Identifier. The name of the database node resource in the following format:
-   * projects/{project}/locations/{location}/cloudVmClusters/{cloud_vm_cluster}/
-   * dbNodes/{db_node}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -49,9 +41,7 @@ class DbNode extends \Google\Model
     return $this->name;
   }
   /**
-   * Optional. Various properties of the database node.
-   *
-   * @param DbNodeProperties $properties
+   * @param DbNodeProperties
    */
   public function setProperties(DbNodeProperties $properties)
   {

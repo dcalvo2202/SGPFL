@@ -20,35 +20,6 @@ namespace Google\Service\DisplayVideo;
 class RateDetails extends \Google\Model
 {
   /**
-   * The rate type is not specified or is unknown in this version.
-   */
-  public const INVENTORY_SOURCE_RATE_TYPE_INVENTORY_SOURCE_RATE_TYPE_UNSPECIFIED = 'INVENTORY_SOURCE_RATE_TYPE_UNSPECIFIED';
-  /**
-   * The rate type is CPM (Fixed).
-   */
-  public const INVENTORY_SOURCE_RATE_TYPE_INVENTORY_SOURCE_RATE_TYPE_CPM_FIXED = 'INVENTORY_SOURCE_RATE_TYPE_CPM_FIXED';
-  /**
-   * The rate type is CPM (Floor).
-   */
-  public const INVENTORY_SOURCE_RATE_TYPE_INVENTORY_SOURCE_RATE_TYPE_CPM_FLOOR = 'INVENTORY_SOURCE_RATE_TYPE_CPM_FLOOR';
-  /**
-   * The rate type is Cost per Day.
-   */
-  public const INVENTORY_SOURCE_RATE_TYPE_INVENTORY_SOURCE_RATE_TYPE_CPD = 'INVENTORY_SOURCE_RATE_TYPE_CPD';
-  /**
-   * The rate type is Cost per Hour.
-   */
-  public const INVENTORY_SOURCE_RATE_TYPE_INVENTORY_SOURCE_RATE_TYPE_CPH = 'INVENTORY_SOURCE_RATE_TYPE_CPH';
-  /**
-   * The rate type is Flat.
-   */
-  public const INVENTORY_SOURCE_RATE_TYPE_INVENTORY_SOURCE_RATE_TYPE_FLAT = 'INVENTORY_SOURCE_RATE_TYPE_FLAT';
-  /**
-   * The rate type. Acceptable values are
-   * `INVENTORY_SOURCE_RATE_TYPE_CPM_FIXED`,
-   * `INVENTORY_SOURCE_RATE_TYPE_CPM_FLOOR`, and
-   * `INVENTORY_SOURCE_RATE_TYPE_CPD`.
-   *
    * @var string
    */
   public $inventorySourceRateType;
@@ -57,43 +28,26 @@ class RateDetails extends \Google\Model
   protected $rateType = Money::class;
   protected $rateDataType = '';
   /**
-   * Required for guaranteed inventory sources. The number of impressions
-   * guaranteed by the seller.
-   *
    * @var string
    */
   public $unitsPurchased;
 
   /**
-   * The rate type. Acceptable values are
-   * `INVENTORY_SOURCE_RATE_TYPE_CPM_FIXED`,
-   * `INVENTORY_SOURCE_RATE_TYPE_CPM_FLOOR`, and
-   * `INVENTORY_SOURCE_RATE_TYPE_CPD`.
-   *
-   * Accepted values: INVENTORY_SOURCE_RATE_TYPE_UNSPECIFIED,
-   * INVENTORY_SOURCE_RATE_TYPE_CPM_FIXED, INVENTORY_SOURCE_RATE_TYPE_CPM_FLOOR,
-   * INVENTORY_SOURCE_RATE_TYPE_CPD, INVENTORY_SOURCE_RATE_TYPE_CPH,
-   * INVENTORY_SOURCE_RATE_TYPE_FLAT
-   *
-   * @param self::INVENTORY_SOURCE_RATE_TYPE_* $inventorySourceRateType
+   * @param string
    */
   public function setInventorySourceRateType($inventorySourceRateType)
   {
     $this->inventorySourceRateType = $inventorySourceRateType;
   }
   /**
-   * @return self::INVENTORY_SOURCE_RATE_TYPE_*
+   * @return string
    */
   public function getInventorySourceRateType()
   {
     return $this->inventorySourceRateType;
   }
   /**
-   * Output only. The amount that the buyer has committed to spending on the
-   * inventory source up front. Only applicable for guaranteed inventory
-   * sources.
-   *
-   * @param Money $minimumSpend
+   * @param Money
    */
   public function setMinimumSpend(Money $minimumSpend)
   {
@@ -107,9 +61,7 @@ class RateDetails extends \Google\Model
     return $this->minimumSpend;
   }
   /**
-   * The rate for the inventory source.
-   *
-   * @param Money $rate
+   * @param Money
    */
   public function setRate(Money $rate)
   {
@@ -123,10 +75,7 @@ class RateDetails extends \Google\Model
     return $this->rate;
   }
   /**
-   * Required for guaranteed inventory sources. The number of impressions
-   * guaranteed by the seller.
-   *
-   * @param string $unitsPurchased
+   * @param string
    */
   public function setUnitsPurchased($unitsPurchased)
   {

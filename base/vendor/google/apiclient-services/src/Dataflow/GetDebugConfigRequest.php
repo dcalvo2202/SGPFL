@@ -20,30 +20,20 @@ namespace Google\Service\Dataflow;
 class GetDebugConfigRequest extends \Google\Model
 {
   /**
-   * The internal component id for which debug configuration is requested.
-   *
    * @var string
    */
   public $componentId;
   /**
-   * The [regional endpoint]
-   * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
-   * contains the job specified by job_id.
-   *
    * @var string
    */
   public $location;
   /**
-   * The worker id, i.e., VM hostname.
-   *
    * @var string
    */
   public $workerId;
 
   /**
-   * The internal component id for which debug configuration is requested.
-   *
-   * @param string $componentId
+   * @param string
    */
   public function setComponentId($componentId)
   {
@@ -57,11 +47,7 @@ class GetDebugConfigRequest extends \Google\Model
     return $this->componentId;
   }
   /**
-   * The [regional endpoint]
-   * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
-   * contains the job specified by job_id.
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {
@@ -75,9 +61,7 @@ class GetDebugConfigRequest extends \Google\Model
     return $this->location;
   }
   /**
-   * The worker id, i.e., VM hostname.
-   *
-   * @param string $workerId
+   * @param string
    */
   public function setWorkerId($workerId)
   {

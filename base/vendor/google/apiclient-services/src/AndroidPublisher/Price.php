@@ -20,24 +20,16 @@ namespace Google\Service\AndroidPublisher;
 class Price extends \Google\Model
 {
   /**
-   * 3 letter Currency code, as defined by ISO 4217. See
-   * java/com/google/common/money/CurrencyCode.java
-   *
    * @var string
    */
   public $currency;
   /**
-   * Price in 1/million of the currency base unit, represented as a string.
-   *
    * @var string
    */
   public $priceMicros;
 
   /**
-   * 3 letter Currency code, as defined by ISO 4217. See
-   * java/com/google/common/money/CurrencyCode.java
-   *
-   * @param string $currency
+   * @param string
    */
   public function setCurrency($currency)
   {
@@ -51,9 +43,7 @@ class Price extends \Google\Model
     return $this->currency;
   }
   /**
-   * Price in 1/million of the currency base unit, represented as a string.
-   *
-   * @param string $priceMicros
+   * @param string
    */
   public function setPriceMicros($priceMicros)
   {

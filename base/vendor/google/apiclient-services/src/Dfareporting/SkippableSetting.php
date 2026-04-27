@@ -20,9 +20,6 @@ namespace Google\Service\Dfareporting;
 class SkippableSetting extends \Google\Model
 {
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#skippableSetting".
-   *
    * @var string
    */
   public $kind;
@@ -31,17 +28,12 @@ class SkippableSetting extends \Google\Model
   protected $skipOffsetType = VideoOffset::class;
   protected $skipOffsetDataType = '';
   /**
-   * Whether the user can skip creatives served to this placement.
-   *
    * @var bool
    */
   public $skippable;
 
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#skippableSetting".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -55,10 +47,7 @@ class SkippableSetting extends \Google\Model
     return $this->kind;
   }
   /**
-   * Amount of time to play videos served to this placement before counting a
-   * view. Applicable when skippable is true.
-   *
-   * @param VideoOffset $progressOffset
+   * @param VideoOffset
    */
   public function setProgressOffset(VideoOffset $progressOffset)
   {
@@ -72,10 +61,7 @@ class SkippableSetting extends \Google\Model
     return $this->progressOffset;
   }
   /**
-   * Amount of time to play videos served to this placement before the skip
-   * button should appear. Applicable when skippable is true.
-   *
-   * @param VideoOffset $skipOffset
+   * @param VideoOffset
    */
   public function setSkipOffset(VideoOffset $skipOffset)
   {
@@ -89,9 +75,7 @@ class SkippableSetting extends \Google\Model
     return $this->skipOffset;
   }
   /**
-   * Whether the user can skip creatives served to this placement.
-   *
-   * @param bool $skippable
+   * @param bool
    */
   public function setSkippable($skippable)
   {

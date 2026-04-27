@@ -20,44 +20,30 @@ namespace Google\Service\Datastream;
 class MysqlProfile extends \Google\Model
 {
   /**
-   * Required. Hostname for the MySQL connection.
-   *
    * @var string
    */
   public $hostname;
   /**
-   * Optional. Input only. Password for the MySQL connection. Mutually exclusive
-   * with the `secret_manager_stored_password` field.
-   *
    * @var string
    */
   public $password;
   /**
-   * Port for the MySQL connection, default value is 3306.
-   *
    * @var int
    */
   public $port;
   /**
-   * Optional. A reference to a Secret Manager resource name storing the MySQL
-   * connection password. Mutually exclusive with the `password` field.
-   *
    * @var string
    */
   public $secretManagerStoredPassword;
   protected $sslConfigType = MysqlSslConfig::class;
   protected $sslConfigDataType = '';
   /**
-   * Required. Username for the MySQL connection.
-   *
    * @var string
    */
   public $username;
 
   /**
-   * Required. Hostname for the MySQL connection.
-   *
-   * @param string $hostname
+   * @param string
    */
   public function setHostname($hostname)
   {
@@ -71,10 +57,7 @@ class MysqlProfile extends \Google\Model
     return $this->hostname;
   }
   /**
-   * Optional. Input only. Password for the MySQL connection. Mutually exclusive
-   * with the `secret_manager_stored_password` field.
-   *
-   * @param string $password
+   * @param string
    */
   public function setPassword($password)
   {
@@ -88,9 +71,7 @@ class MysqlProfile extends \Google\Model
     return $this->password;
   }
   /**
-   * Port for the MySQL connection, default value is 3306.
-   *
-   * @param int $port
+   * @param int
    */
   public function setPort($port)
   {
@@ -104,10 +85,7 @@ class MysqlProfile extends \Google\Model
     return $this->port;
   }
   /**
-   * Optional. A reference to a Secret Manager resource name storing the MySQL
-   * connection password. Mutually exclusive with the `password` field.
-   *
-   * @param string $secretManagerStoredPassword
+   * @param string
    */
   public function setSecretManagerStoredPassword($secretManagerStoredPassword)
   {
@@ -121,9 +99,7 @@ class MysqlProfile extends \Google\Model
     return $this->secretManagerStoredPassword;
   }
   /**
-   * SSL configuration for the MySQL connection.
-   *
-   * @param MysqlSslConfig $sslConfig
+   * @param MysqlSslConfig
    */
   public function setSslConfig(MysqlSslConfig $sslConfig)
   {
@@ -137,9 +113,7 @@ class MysqlProfile extends \Google\Model
     return $this->sslConfig;
   }
   /**
-   * Required. Username for the MySQL connection.
-   *
-   * @param string $username
+   * @param string
    */
   public function setUsername($username)
   {

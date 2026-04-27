@@ -21,36 +21,26 @@ class PostList extends \Google\Collection
 {
   protected $collection_key = 'items';
   /**
-   * Etag of the response.
-   *
    * @var string
    */
   public $etag;
   protected $itemsType = Post::class;
   protected $itemsDataType = 'array';
   /**
-   * The kind of this entity. Always blogger#postList.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Pagination token to fetch the next page, if one exists.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Pagination token to fetch the previous page, if one exists.
-   *
    * @var string
    */
   public $prevPageToken;
 
   /**
-   * Etag of the response.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -64,9 +54,7 @@ class PostList extends \Google\Collection
     return $this->etag;
   }
   /**
-   * The list of Posts for this Blog.
-   *
-   * @param Post[] $items
+   * @param Post[]
    */
   public function setItems($items)
   {
@@ -80,9 +68,7 @@ class PostList extends \Google\Collection
     return $this->items;
   }
   /**
-   * The kind of this entity. Always blogger#postList.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -96,9 +82,7 @@ class PostList extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Pagination token to fetch the next page, if one exists.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -112,9 +96,7 @@ class PostList extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Pagination token to fetch the previous page, if one exists.
-   *
-   * @param string $prevPageToken
+   * @param string
    */
   public function setPrevPageToken($prevPageToken)
   {

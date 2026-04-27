@@ -21,8 +21,6 @@ class GoogleCloudDiscoveryengineV1BatchUpdateUserLicensesRequestInlineSource ext
 {
   protected $collection_key = 'userLicenses';
   /**
-   * Optional. The list of fields to update.
-   *
    * @var string
    */
   public $updateMask;
@@ -30,9 +28,7 @@ class GoogleCloudDiscoveryengineV1BatchUpdateUserLicensesRequestInlineSource ext
   protected $userLicensesDataType = 'array';
 
   /**
-   * Optional. The list of fields to update.
-   *
-   * @param string $updateMask
+   * @param string
    */
   public function setUpdateMask($updateMask)
   {
@@ -46,10 +42,7 @@ class GoogleCloudDiscoveryengineV1BatchUpdateUserLicensesRequestInlineSource ext
     return $this->updateMask;
   }
   /**
-   * Required. A list of user licenses to update. Each user license must have a
-   * valid UserLicense.user_principal.
-   *
-   * @param GoogleCloudDiscoveryengineV1UserLicense[] $userLicenses
+   * @param GoogleCloudDiscoveryengineV1UserLicense[]
    */
   public function setUserLicenses($userLicenses)
   {

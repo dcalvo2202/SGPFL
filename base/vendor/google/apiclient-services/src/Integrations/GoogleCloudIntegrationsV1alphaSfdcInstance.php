@@ -21,66 +21,44 @@ class GoogleCloudIntegrationsV1alphaSfdcInstance extends \Google\Collection
 {
   protected $collection_key = 'authConfigId';
   /**
-   * A list of AuthConfigs that can be tried to open the channel to SFDC
-   *
    * @var string[]
    */
   public $authConfigId;
   /**
-   * Output only. Time when the instance is created
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. Time when the instance was deleted. Empty if not deleted.
-   *
    * @var string
    */
   public $deleteTime;
   /**
-   * Optional. A description of the sfdc instance.
-   *
    * @var string
    */
   public $description;
   /**
-   * Optional. User selected unique name/alias to easily reference an instance.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Resource name of the SFDC instance
-   * projects/{project}/locations/{location}/sfdcInstances/{sfdcInstance}.
-   *
    * @var string
    */
   public $name;
   /**
-   * Optional. URL used for API calls after authentication (the login authority
-   * is configured within the referenced AuthConfig).
-   *
    * @var string
    */
   public $serviceAuthority;
   /**
-   * The SFDC Org Id. This is defined in salesforce.
-   *
    * @var string
    */
   public $sfdcOrgId;
   /**
-   * Output only. Time when the instance was last updated
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * A list of AuthConfigs that can be tried to open the channel to SFDC
-   *
-   * @param string[] $authConfigId
+   * @param string[]
    */
   public function setAuthConfigId($authConfigId)
   {
@@ -94,9 +72,7 @@ class GoogleCloudIntegrationsV1alphaSfdcInstance extends \Google\Collection
     return $this->authConfigId;
   }
   /**
-   * Output only. Time when the instance is created
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -110,9 +86,7 @@ class GoogleCloudIntegrationsV1alphaSfdcInstance extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Output only. Time when the instance was deleted. Empty if not deleted.
-   *
-   * @param string $deleteTime
+   * @param string
    */
   public function setDeleteTime($deleteTime)
   {
@@ -126,9 +100,7 @@ class GoogleCloudIntegrationsV1alphaSfdcInstance extends \Google\Collection
     return $this->deleteTime;
   }
   /**
-   * Optional. A description of the sfdc instance.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -142,9 +114,7 @@ class GoogleCloudIntegrationsV1alphaSfdcInstance extends \Google\Collection
     return $this->description;
   }
   /**
-   * Optional. User selected unique name/alias to easily reference an instance.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -158,10 +128,7 @@ class GoogleCloudIntegrationsV1alphaSfdcInstance extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Resource name of the SFDC instance
-   * projects/{project}/locations/{location}/sfdcInstances/{sfdcInstance}.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -175,10 +142,7 @@ class GoogleCloudIntegrationsV1alphaSfdcInstance extends \Google\Collection
     return $this->name;
   }
   /**
-   * Optional. URL used for API calls after authentication (the login authority
-   * is configured within the referenced AuthConfig).
-   *
-   * @param string $serviceAuthority
+   * @param string
    */
   public function setServiceAuthority($serviceAuthority)
   {
@@ -192,9 +156,7 @@ class GoogleCloudIntegrationsV1alphaSfdcInstance extends \Google\Collection
     return $this->serviceAuthority;
   }
   /**
-   * The SFDC Org Id. This is defined in salesforce.
-   *
-   * @param string $sfdcOrgId
+   * @param string
    */
   public function setSfdcOrgId($sfdcOrgId)
   {
@@ -208,9 +170,7 @@ class GoogleCloudIntegrationsV1alphaSfdcInstance extends \Google\Collection
     return $this->sfdcOrgId;
   }
   /**
-   * Output only. Time when the instance was last updated
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

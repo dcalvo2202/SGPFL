@@ -21,20 +21,12 @@ class GoogleCloudIntegrationsV1alphaShareTemplateRequest extends \Google\Collect
 {
   protected $collection_key = 'resourceNames';
   /**
-   * Optional. Project name resources to share the template. The project names
-   * is expected in resource format Ex: projects/{project-number} or
-   * organization/{org-id}
-   *
    * @var string[]
    */
   public $resourceNames;
 
   /**
-   * Optional. Project name resources to share the template. The project names
-   * is expected in resource format Ex: projects/{project-number} or
-   * organization/{org-id}
-   *
-   * @param string[] $resourceNames
+   * @param string[]
    */
   public function setResourceNames($resourceNames)
   {

@@ -20,16 +20,12 @@ namespace Google\Service\GKEOnPrem;
 class BareMetalAdminPortConfig extends \Google\Model
 {
   /**
-   * The port that control plane hosted load balancers will listen on.
-   *
    * @var int
    */
   public $controlPlaneLoadBalancerPort;
 
   /**
-   * The port that control plane hosted load balancers will listen on.
-   *
-   * @param int $controlPlaneLoadBalancerPort
+   * @param int
    */
   public function setControlPlaneLoadBalancerPort($controlPlaneLoadBalancerPort)
   {

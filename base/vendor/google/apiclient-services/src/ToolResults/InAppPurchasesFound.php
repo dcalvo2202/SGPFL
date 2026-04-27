@@ -20,24 +20,16 @@ namespace Google\Service\ToolResults;
 class InAppPurchasesFound extends \Google\Model
 {
   /**
-   * The total number of in-app purchases flows explored: how many times the
-   * robo tries to buy a SKU.
-   *
    * @var int
    */
   public $inAppPurchasesFlowsExplored;
   /**
-   * The total number of in-app purchases flows started.
-   *
    * @var int
    */
   public $inAppPurchasesFlowsStarted;
 
   /**
-   * The total number of in-app purchases flows explored: how many times the
-   * robo tries to buy a SKU.
-   *
-   * @param int $inAppPurchasesFlowsExplored
+   * @param int
    */
   public function setInAppPurchasesFlowsExplored($inAppPurchasesFlowsExplored)
   {
@@ -51,9 +43,7 @@ class InAppPurchasesFound extends \Google\Model
     return $this->inAppPurchasesFlowsExplored;
   }
   /**
-   * The total number of in-app purchases flows started.
-   *
-   * @param int $inAppPurchasesFlowsStarted
+   * @param int
    */
   public function setInAppPurchasesFlowsStarted($inAppPurchasesFlowsStarted)
   {

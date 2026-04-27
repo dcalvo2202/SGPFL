@@ -20,27 +20,16 @@ namespace Google\Service\Bigquery;
 class ExternalCatalogDatasetOptions extends \Google\Model
 {
   /**
-   * Optional. The storage location URI for all tables in the dataset.
-   * Equivalent to hive metastore's database locationUri. Maximum length of 1024
-   * characters.
-   *
    * @var string
    */
   public $defaultStorageLocationUri;
   /**
-   * Optional. A map of key value pairs defining the parameters and properties
-   * of the open source schema. Maximum size of 2MiB.
-   *
    * @var string[]
    */
   public $parameters;
 
   /**
-   * Optional. The storage location URI for all tables in the dataset.
-   * Equivalent to hive metastore's database locationUri. Maximum length of 1024
-   * characters.
-   *
-   * @param string $defaultStorageLocationUri
+   * @param string
    */
   public function setDefaultStorageLocationUri($defaultStorageLocationUri)
   {
@@ -54,10 +43,7 @@ class ExternalCatalogDatasetOptions extends \Google\Model
     return $this->defaultStorageLocationUri;
   }
   /**
-   * Optional. A map of key value pairs defining the parameters and properties
-   * of the open source schema. Maximum size of 2MiB.
-   *
-   * @param string[] $parameters
+   * @param string[]
    */
   public function setParameters($parameters)
   {

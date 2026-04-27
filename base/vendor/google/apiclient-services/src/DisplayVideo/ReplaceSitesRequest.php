@@ -21,24 +21,18 @@ class ReplaceSitesRequest extends \Google\Collection
 {
   protected $collection_key = 'newSites';
   /**
-   * The ID of the advertiser that owns the parent channel.
-   *
    * @var string
    */
   public $advertiserId;
   protected $newSitesType = Site::class;
   protected $newSitesDataType = 'array';
   /**
-   * The ID of the partner that owns the parent channel.
-   *
    * @var string
    */
   public $partnerId;
 
   /**
-   * The ID of the advertiser that owns the parent channel.
-   *
-   * @param string $advertiserId
+   * @param string
    */
   public function setAdvertiserId($advertiserId)
   {
@@ -52,10 +46,7 @@ class ReplaceSitesRequest extends \Google\Collection
     return $this->advertiserId;
   }
   /**
-   * The sites that will replace the existing sites assigned to the channel,
-   * specified as a list of Sites.
-   *
-   * @param Site[] $newSites
+   * @param Site[]
    */
   public function setNewSites($newSites)
   {
@@ -69,9 +60,7 @@ class ReplaceSitesRequest extends \Google\Collection
     return $this->newSites;
   }
   /**
-   * The ID of the partner that owns the parent channel.
-   *
-   * @param string $partnerId
+   * @param string
    */
   public function setPartnerId($partnerId)
   {

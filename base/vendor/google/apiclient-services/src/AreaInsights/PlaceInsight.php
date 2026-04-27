@@ -20,22 +20,12 @@ namespace Google\Service\AreaInsights;
 class PlaceInsight extends \Google\Model
 {
   /**
-   * The unique identifier of the place. This resource name can be used to
-   * retrieve details about the place using the [Places
-   * API](https://developers.google.com/maps/documentation/places/web-
-   * service/reference/rest/v1/places/get).
-   *
    * @var string
    */
   public $place;
 
   /**
-   * The unique identifier of the place. This resource name can be used to
-   * retrieve details about the place using the [Places
-   * API](https://developers.google.com/maps/documentation/places/web-
-   * service/reference/rest/v1/places/get).
-   *
-   * @param string $place
+   * @param string
    */
   public function setPlace($place)
   {

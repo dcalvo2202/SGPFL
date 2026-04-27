@@ -20,22 +20,16 @@ namespace Google\Service\ChromeManagement;
 class GoogleChromeManagementV1TelemetryNetworkSignalStrengthEvent extends \Google\Model
 {
   /**
-   * Unique identifier of the network.
-   *
    * @var string
    */
   public $guid;
   /**
-   * Signal strength RSSI value.
-   *
    * @var int
    */
   public $signalStrengthDbm;
 
   /**
-   * Unique identifier of the network.
-   *
-   * @param string $guid
+   * @param string
    */
   public function setGuid($guid)
   {
@@ -49,9 +43,7 @@ class GoogleChromeManagementV1TelemetryNetworkSignalStrengthEvent extends \Googl
     return $this->guid;
   }
   /**
-   * Signal strength RSSI value.
-   *
-   * @param int $signalStrengthDbm
+   * @param int
    */
   public function setSignalStrengthDbm($signalStrengthDbm)
   {

@@ -20,42 +20,28 @@ namespace Google\Service\PolicySimulator;
 class GoogleCloudPolicysimulatorV1betaOrgPolicyViolationsPreviewResourceCounts extends \Google\Model
 {
   /**
-   * Output only. Number of scanned resources with zero violations.
-   *
    * @var int
    */
   public $compliant;
   /**
-   * Output only. Number of resources that returned an error when scanned.
-   *
    * @var int
    */
   public $errors;
   /**
-   * Output only. Number of scanned resources with at least one violation.
-   *
    * @var int
    */
   public $noncompliant;
   /**
-   * Output only. Number of resources checked for compliance. Must equal:
-   * unenforced + noncompliant + compliant + error
-   *
    * @var int
    */
   public $scanned;
   /**
-   * Output only. Number of resources where the constraint was not enforced,
-   * i.e. the Policy set `enforced: false` for that resource.
-   *
    * @var int
    */
   public $unenforced;
 
   /**
-   * Output only. Number of scanned resources with zero violations.
-   *
-   * @param int $compliant
+   * @param int
    */
   public function setCompliant($compliant)
   {
@@ -69,9 +55,7 @@ class GoogleCloudPolicysimulatorV1betaOrgPolicyViolationsPreviewResourceCounts e
     return $this->compliant;
   }
   /**
-   * Output only. Number of resources that returned an error when scanned.
-   *
-   * @param int $errors
+   * @param int
    */
   public function setErrors($errors)
   {
@@ -85,9 +69,7 @@ class GoogleCloudPolicysimulatorV1betaOrgPolicyViolationsPreviewResourceCounts e
     return $this->errors;
   }
   /**
-   * Output only. Number of scanned resources with at least one violation.
-   *
-   * @param int $noncompliant
+   * @param int
    */
   public function setNoncompliant($noncompliant)
   {
@@ -101,10 +83,7 @@ class GoogleCloudPolicysimulatorV1betaOrgPolicyViolationsPreviewResourceCounts e
     return $this->noncompliant;
   }
   /**
-   * Output only. Number of resources checked for compliance. Must equal:
-   * unenforced + noncompliant + compliant + error
-   *
-   * @param int $scanned
+   * @param int
    */
   public function setScanned($scanned)
   {
@@ -118,10 +97,7 @@ class GoogleCloudPolicysimulatorV1betaOrgPolicyViolationsPreviewResourceCounts e
     return $this->scanned;
   }
   /**
-   * Output only. Number of resources where the constraint was not enforced,
-   * i.e. the Policy set `enforced: false` for that resource.
-   *
-   * @param int $unenforced
+   * @param int
    */
   public function setUnenforced($unenforced)
   {

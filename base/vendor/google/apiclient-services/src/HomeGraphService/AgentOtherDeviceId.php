@@ -20,22 +20,16 @@ namespace Google\Service\HomeGraphService;
 class AgentOtherDeviceId extends \Google\Model
 {
   /**
-   * Project ID for your smart home Action.
-   *
    * @var string
    */
   public $agentId;
   /**
-   * Unique third-party device ID.
-   *
    * @var string
    */
   public $deviceId;
 
   /**
-   * Project ID for your smart home Action.
-   *
-   * @param string $agentId
+   * @param string
    */
   public function setAgentId($agentId)
   {
@@ -49,9 +43,7 @@ class AgentOtherDeviceId extends \Google\Model
     return $this->agentId;
   }
   /**
-   * Unique third-party device ID.
-   *
-   * @param string $deviceId
+   * @param string
    */
   public function setDeviceId($deviceId)
   {

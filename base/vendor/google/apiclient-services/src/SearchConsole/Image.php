@@ -20,24 +20,16 @@ namespace Google\Service\SearchConsole;
 class Image extends \Google\Model
 {
   /**
-   * Image data in format determined by the mime type. Currently, the format
-   * will always be "image/png", but this might change in the future.
-   *
    * @var string
    */
   public $data;
   /**
-   * The mime-type of the image data.
-   *
    * @var string
    */
   public $mimeType;
 
   /**
-   * Image data in format determined by the mime type. Currently, the format
-   * will always be "image/png", but this might change in the future.
-   *
-   * @param string $data
+   * @param string
    */
   public function setData($data)
   {
@@ -51,9 +43,7 @@ class Image extends \Google\Model
     return $this->data;
   }
   /**
-   * The mime-type of the image data.
-   *
-   * @param string $mimeType
+   * @param string
    */
   public function setMimeType($mimeType)
   {

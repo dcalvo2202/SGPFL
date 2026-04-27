@@ -23,18 +23,12 @@ class GoogleFactcheckingFactchecktoolsV1alpha1ListClaimReviewMarkupPagesResponse
   protected $claimReviewMarkupPagesType = GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkupPage::class;
   protected $claimReviewMarkupPagesDataType = 'array';
   /**
-   * The next pagination token in the Search response. It should be used as the
-   * `page_token` for the following request. An empty value means no more
-   * results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The result list of pages of `ClaimReview` markup.
-   *
-   * @param GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkupPage[] $claimReviewMarkupPages
+   * @param GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkupPage[]
    */
   public function setClaimReviewMarkupPages($claimReviewMarkupPages)
   {
@@ -48,11 +42,7 @@ class GoogleFactcheckingFactchecktoolsV1alpha1ListClaimReviewMarkupPagesResponse
     return $this->claimReviewMarkupPages;
   }
   /**
-   * The next pagination token in the Search response. It should be used as the
-   * `page_token` for the following request. An empty value means no more
-   * results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

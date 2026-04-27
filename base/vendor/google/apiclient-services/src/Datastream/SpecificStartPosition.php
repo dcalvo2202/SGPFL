@@ -19,8 +19,6 @@ namespace Google\Service\Datastream;
 
 class SpecificStartPosition extends \Google\Model
 {
-  protected $mongodbChangeStreamPositionType = MongodbChangeStreamPosition::class;
-  protected $mongodbChangeStreamPositionDataType = '';
   protected $mysqlGtidPositionType = MysqlGtidPosition::class;
   protected $mysqlGtidPositionDataType = '';
   protected $mysqlLogPositionType = MysqlLogPosition::class;
@@ -31,25 +29,7 @@ class SpecificStartPosition extends \Google\Model
   protected $sqlServerLsnPositionDataType = '';
 
   /**
-   * MongoDB change stream position to start replicating from.
-   *
-   * @param MongodbChangeStreamPosition $mongodbChangeStreamPosition
-   */
-  public function setMongodbChangeStreamPosition(MongodbChangeStreamPosition $mongodbChangeStreamPosition)
-  {
-    $this->mongodbChangeStreamPosition = $mongodbChangeStreamPosition;
-  }
-  /**
-   * @return MongodbChangeStreamPosition
-   */
-  public function getMongodbChangeStreamPosition()
-  {
-    return $this->mongodbChangeStreamPosition;
-  }
-  /**
-   * MySQL GTID set to start replicating from.
-   *
-   * @param MysqlGtidPosition $mysqlGtidPosition
+   * @param MysqlGtidPosition
    */
   public function setMysqlGtidPosition(MysqlGtidPosition $mysqlGtidPosition)
   {
@@ -63,9 +43,7 @@ class SpecificStartPosition extends \Google\Model
     return $this->mysqlGtidPosition;
   }
   /**
-   * MySQL specific log position to start replicating from.
-   *
-   * @param MysqlLogPosition $mysqlLogPosition
+   * @param MysqlLogPosition
    */
   public function setMysqlLogPosition(MysqlLogPosition $mysqlLogPosition)
   {
@@ -79,9 +57,7 @@ class SpecificStartPosition extends \Google\Model
     return $this->mysqlLogPosition;
   }
   /**
-   * Oracle SCN to start replicating from.
-   *
-   * @param OracleScnPosition $oracleScnPosition
+   * @param OracleScnPosition
    */
   public function setOracleScnPosition(OracleScnPosition $oracleScnPosition)
   {
@@ -95,9 +71,7 @@ class SpecificStartPosition extends \Google\Model
     return $this->oracleScnPosition;
   }
   /**
-   * SqlServer LSN to start replicating from.
-   *
-   * @param SqlServerLsnPosition $sqlServerLsnPosition
+   * @param SqlServerLsnPosition
    */
   public function setSqlServerLsnPosition(SqlServerLsnPosition $sqlServerLsnPosition)
   {

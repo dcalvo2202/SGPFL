@@ -25,9 +25,7 @@ class GoogleCloudDiscoveryengineV1AnswerStepAction extends \Google\Model
   protected $searchActionDataType = '';
 
   /**
-   * Observation.
-   *
-   * @param GoogleCloudDiscoveryengineV1AnswerStepActionObservation $observation
+   * @param GoogleCloudDiscoveryengineV1AnswerStepActionObservation
    */
   public function setObservation(GoogleCloudDiscoveryengineV1AnswerStepActionObservation $observation)
   {
@@ -41,9 +39,7 @@ class GoogleCloudDiscoveryengineV1AnswerStepAction extends \Google\Model
     return $this->observation;
   }
   /**
-   * Search action.
-   *
-   * @param GoogleCloudDiscoveryengineV1AnswerStepActionSearchAction $searchAction
+   * @param GoogleCloudDiscoveryengineV1AnswerStepActionSearchAction
    */
   public function setSearchAction(GoogleCloudDiscoveryengineV1AnswerStepActionSearchAction $searchAction)
   {

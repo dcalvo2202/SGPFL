@@ -21,24 +21,13 @@ class IndexAdvice extends \Google\Collection
 {
   protected $collection_key = 'ddl';
   /**
-   * Optional. DDL statements to add new indexes that will improve the query.
-   *
    * @var string[]
    */
   public $ddl;
-  /**
-   * Optional. Estimated latency improvement factor. For example if the query
-   * currently takes 500 ms to run and the estimated latency with new indexes is
-   * 100 ms this field will be 5.
-   *
-   * @var 
-   */
   public $improvementFactor;
 
   /**
-   * Optional. DDL statements to add new indexes that will improve the query.
-   *
-   * @param string[] $ddl
+   * @param string[]
    */
   public function setDdl($ddl)
   {

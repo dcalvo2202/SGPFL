@@ -20,20 +20,6 @@ namespace Google\Service\Spanner;
 class Metric extends \Google\Model
 {
   /**
-   * Required default value.
-   */
-  public const AGGREGATION_AGGREGATION_UNSPECIFIED = 'AGGREGATION_UNSPECIFIED';
-  /**
-   * Use the maximum of all values.
-   */
-  public const AGGREGATION_MAX = 'MAX';
-  /**
-   * Use the sum of all values.
-   */
-  public const AGGREGATION_SUM = 'SUM';
-  /**
-   * The aggregation function used to aggregate each key bucket
-   *
    * @var string
    */
   public $aggregation;
@@ -44,17 +30,10 @@ class Metric extends \Google\Model
   protected $displayLabelType = LocalizedString::class;
   protected $displayLabelDataType = '';
   /**
-   * Whether the metric has any non-zero data.
-   *
    * @var bool
    */
   public $hasNonzeroData;
   /**
-   * The value that is considered hot for the metric. On a per metric basis
-   * hotness signals high utilization and something that might potentially be a
-   * cause for concern by the end user. hot_value is used to calibrate and scale
-   * visual color scales.
-   *
    * @var float
    */
   public $hotValue;
@@ -69,34 +48,26 @@ class Metric extends \Google\Model
   protected $unitType = LocalizedString::class;
   protected $unitDataType = '';
   /**
-   * Whether the metric is visible to the end user.
-   *
    * @var bool
    */
   public $visible;
 
   /**
-   * The aggregation function used to aggregate each key bucket
-   *
-   * Accepted values: AGGREGATION_UNSPECIFIED, MAX, SUM
-   *
-   * @param self::AGGREGATION_* $aggregation
+   * @param string
    */
   public function setAggregation($aggregation)
   {
     $this->aggregation = $aggregation;
   }
   /**
-   * @return self::AGGREGATION_*
+   * @return string
    */
   public function getAggregation()
   {
     return $this->aggregation;
   }
   /**
-   * The category of the metric, e.g. "Activity", "Alerts", "Reads", etc.
-   *
-   * @param LocalizedString $category
+   * @param LocalizedString
    */
   public function setCategory(LocalizedString $category)
   {
@@ -110,9 +81,7 @@ class Metric extends \Google\Model
     return $this->category;
   }
   /**
-   * The references to numerator and denominator metrics for a derived metric.
-   *
-   * @param DerivedMetric $derived
+   * @param DerivedMetric
    */
   public function setDerived(DerivedMetric $derived)
   {
@@ -126,9 +95,7 @@ class Metric extends \Google\Model
     return $this->derived;
   }
   /**
-   * The displayed label of the metric.
-   *
-   * @param LocalizedString $displayLabel
+   * @param LocalizedString
    */
   public function setDisplayLabel(LocalizedString $displayLabel)
   {
@@ -142,9 +109,7 @@ class Metric extends \Google\Model
     return $this->displayLabel;
   }
   /**
-   * Whether the metric has any non-zero data.
-   *
-   * @param bool $hasNonzeroData
+   * @param bool
    */
   public function setHasNonzeroData($hasNonzeroData)
   {
@@ -158,12 +123,7 @@ class Metric extends \Google\Model
     return $this->hasNonzeroData;
   }
   /**
-   * The value that is considered hot for the metric. On a per metric basis
-   * hotness signals high utilization and something that might potentially be a
-   * cause for concern by the end user. hot_value is used to calibrate and scale
-   * visual color scales.
-   *
-   * @param float $hotValue
+   * @param float
    */
   public function setHotValue($hotValue)
   {
@@ -177,10 +137,7 @@ class Metric extends \Google\Model
     return $this->hotValue;
   }
   /**
-   * The (sparse) mapping from time index to an IndexedHotKey message,
-   * representing those time intervals for which there are hot keys.
-   *
-   * @param IndexedHotKey[] $indexedHotKeys
+   * @param IndexedHotKey[]
    */
   public function setIndexedHotKeys($indexedHotKeys)
   {
@@ -194,11 +151,7 @@ class Metric extends \Google\Model
     return $this->indexedHotKeys;
   }
   /**
-   * The (sparse) mapping from time interval index to an IndexedKeyRangeInfos
-   * message, representing those time intervals for which there are
-   * informational messages concerning key ranges.
-   *
-   * @param IndexedKeyRangeInfos[] $indexedKeyRangeInfos
+   * @param IndexedKeyRangeInfos[]
    */
   public function setIndexedKeyRangeInfos($indexedKeyRangeInfos)
   {
@@ -212,9 +165,7 @@ class Metric extends \Google\Model
     return $this->indexedKeyRangeInfos;
   }
   /**
-   * Information about the metric.
-   *
-   * @param LocalizedString $info
+   * @param LocalizedString
    */
   public function setInfo(LocalizedString $info)
   {
@@ -228,9 +179,7 @@ class Metric extends \Google\Model
     return $this->info;
   }
   /**
-   * The data for the metric as a matrix.
-   *
-   * @param MetricMatrix $matrix
+   * @param MetricMatrix
    */
   public function setMatrix(MetricMatrix $matrix)
   {
@@ -244,9 +193,7 @@ class Metric extends \Google\Model
     return $this->matrix;
   }
   /**
-   * The unit of the metric.
-   *
-   * @param LocalizedString $unit
+   * @param LocalizedString
    */
   public function setUnit(LocalizedString $unit)
   {
@@ -260,9 +207,7 @@ class Metric extends \Google\Model
     return $this->unit;
   }
   /**
-   * Whether the metric is visible to the end user.
-   *
-   * @param bool $visible
+   * @param bool
    */
   public function setVisible($visible)
   {

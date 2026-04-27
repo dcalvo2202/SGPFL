@@ -27,9 +27,7 @@ class PrivacyPolicy extends \Google\Model
   protected $joinRestrictionPolicyDataType = '';
 
   /**
-   * Optional. Policy used for aggregation thresholds.
-   *
-   * @param AggregationThresholdPolicy $aggregationThresholdPolicy
+   * @param AggregationThresholdPolicy
    */
   public function setAggregationThresholdPolicy(AggregationThresholdPolicy $aggregationThresholdPolicy)
   {
@@ -43,9 +41,7 @@ class PrivacyPolicy extends \Google\Model
     return $this->aggregationThresholdPolicy;
   }
   /**
-   * Optional. Policy used for differential privacy.
-   *
-   * @param DifferentialPrivacyPolicy $differentialPrivacyPolicy
+   * @param DifferentialPrivacyPolicy
    */
   public function setDifferentialPrivacyPolicy(DifferentialPrivacyPolicy $differentialPrivacyPolicy)
   {
@@ -59,12 +55,7 @@ class PrivacyPolicy extends \Google\Model
     return $this->differentialPrivacyPolicy;
   }
   /**
-   * Optional. Join restriction policy is outside of the one of policies, since
-   * this policy can be set along with other policies. This policy gives data
-   * providers the ability to enforce joins on the 'join_allowed_columns' when
-   * data is queried from a privacy protected view.
-   *
-   * @param JoinRestrictionPolicy $joinRestrictionPolicy
+   * @param JoinRestrictionPolicy
    */
   public function setJoinRestrictionPolicy(JoinRestrictionPolicy $joinRestrictionPolicy)
   {

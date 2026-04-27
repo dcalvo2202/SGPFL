@@ -20,136 +20,55 @@ namespace Google\Service\GKEHub;
 class ConfigManagementGatekeeperDeploymentState extends \Google\Model
 {
   /**
-   * Deployment's state cannot be determined.
-   */
-  public const GATEKEEPER_AUDIT_DEPLOYMENT_STATE_UNSPECIFIED = 'DEPLOYMENT_STATE_UNSPECIFIED';
-  /**
-   * Deployment is not installed.
-   */
-  public const GATEKEEPER_AUDIT_NOT_INSTALLED = 'NOT_INSTALLED';
-  /**
-   * Deployment is installed.
-   */
-  public const GATEKEEPER_AUDIT_INSTALLED = 'INSTALLED';
-  /**
-   * Deployment was attempted to be installed, but has errors.
-   */
-  public const GATEKEEPER_AUDIT_ERROR = 'ERROR';
-  /**
-   * Deployment is installing or terminating
-   */
-  public const GATEKEEPER_AUDIT_PENDING = 'PENDING';
-  /**
-   * Deployment's state cannot be determined.
-   */
-  public const GATEKEEPER_CONTROLLER_MANAGER_STATE_DEPLOYMENT_STATE_UNSPECIFIED = 'DEPLOYMENT_STATE_UNSPECIFIED';
-  /**
-   * Deployment is not installed.
-   */
-  public const GATEKEEPER_CONTROLLER_MANAGER_STATE_NOT_INSTALLED = 'NOT_INSTALLED';
-  /**
-   * Deployment is installed.
-   */
-  public const GATEKEEPER_CONTROLLER_MANAGER_STATE_INSTALLED = 'INSTALLED';
-  /**
-   * Deployment was attempted to be installed, but has errors.
-   */
-  public const GATEKEEPER_CONTROLLER_MANAGER_STATE_ERROR = 'ERROR';
-  /**
-   * Deployment is installing or terminating
-   */
-  public const GATEKEEPER_CONTROLLER_MANAGER_STATE_PENDING = 'PENDING';
-  /**
-   * Deployment's state cannot be determined.
-   */
-  public const GATEKEEPER_MUTATION_DEPLOYMENT_STATE_UNSPECIFIED = 'DEPLOYMENT_STATE_UNSPECIFIED';
-  /**
-   * Deployment is not installed.
-   */
-  public const GATEKEEPER_MUTATION_NOT_INSTALLED = 'NOT_INSTALLED';
-  /**
-   * Deployment is installed.
-   */
-  public const GATEKEEPER_MUTATION_INSTALLED = 'INSTALLED';
-  /**
-   * Deployment was attempted to be installed, but has errors.
-   */
-  public const GATEKEEPER_MUTATION_ERROR = 'ERROR';
-  /**
-   * Deployment is installing or terminating
-   */
-  public const GATEKEEPER_MUTATION_PENDING = 'PENDING';
-  /**
-   * Status of gatekeeper-audit deployment.
-   *
    * @var string
    */
   public $gatekeeperAudit;
   /**
-   * Status of gatekeeper-controller-manager pod.
-   *
    * @var string
    */
   public $gatekeeperControllerManagerState;
   /**
-   * Status of the pod serving the mutation webhook.
-   *
    * @var string
    */
   public $gatekeeperMutation;
 
   /**
-   * Status of gatekeeper-audit deployment.
-   *
-   * Accepted values: DEPLOYMENT_STATE_UNSPECIFIED, NOT_INSTALLED, INSTALLED,
-   * ERROR, PENDING
-   *
-   * @param self::GATEKEEPER_AUDIT_* $gatekeeperAudit
+   * @param string
    */
   public function setGatekeeperAudit($gatekeeperAudit)
   {
     $this->gatekeeperAudit = $gatekeeperAudit;
   }
   /**
-   * @return self::GATEKEEPER_AUDIT_*
+   * @return string
    */
   public function getGatekeeperAudit()
   {
     return $this->gatekeeperAudit;
   }
   /**
-   * Status of gatekeeper-controller-manager pod.
-   *
-   * Accepted values: DEPLOYMENT_STATE_UNSPECIFIED, NOT_INSTALLED, INSTALLED,
-   * ERROR, PENDING
-   *
-   * @param self::GATEKEEPER_CONTROLLER_MANAGER_STATE_* $gatekeeperControllerManagerState
+   * @param string
    */
   public function setGatekeeperControllerManagerState($gatekeeperControllerManagerState)
   {
     $this->gatekeeperControllerManagerState = $gatekeeperControllerManagerState;
   }
   /**
-   * @return self::GATEKEEPER_CONTROLLER_MANAGER_STATE_*
+   * @return string
    */
   public function getGatekeeperControllerManagerState()
   {
     return $this->gatekeeperControllerManagerState;
   }
   /**
-   * Status of the pod serving the mutation webhook.
-   *
-   * Accepted values: DEPLOYMENT_STATE_UNSPECIFIED, NOT_INSTALLED, INSTALLED,
-   * ERROR, PENDING
-   *
-   * @param self::GATEKEEPER_MUTATION_* $gatekeeperMutation
+   * @param string
    */
   public function setGatekeeperMutation($gatekeeperMutation)
   {
     $this->gatekeeperMutation = $gatekeeperMutation;
   }
   /**
-   * @return self::GATEKEEPER_MUTATION_*
+   * @return string
    */
   public function getGatekeeperMutation()
   {

@@ -20,22 +20,16 @@ namespace Google\Service\Dataproc;
 class BuildInfo extends \Google\Model
 {
   /**
-   * Optional. Build key.
-   *
    * @var string
    */
   public $buildKey;
   /**
-   * Optional. Build value.
-   *
    * @var string
    */
   public $buildValue;
 
   /**
-   * Optional. Build key.
-   *
-   * @param string $buildKey
+   * @param string
    */
   public function setBuildKey($buildKey)
   {
@@ -49,9 +43,7 @@ class BuildInfo extends \Google\Model
     return $this->buildKey;
   }
   /**
-   * Optional. Build value.
-   *
-   * @param string $buildValue
+   * @param string
    */
   public function setBuildValue($buildValue)
   {

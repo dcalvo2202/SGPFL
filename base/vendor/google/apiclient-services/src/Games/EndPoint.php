@@ -20,16 +20,12 @@ namespace Google\Service\Games;
 class EndPoint extends \Google\Model
 {
   /**
-   * A URL suitable for loading in a web browser for the requested endpoint.
-   *
    * @var string
    */
   public $url;
 
   /**
-   * A URL suitable for loading in a web browser for the requested endpoint.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

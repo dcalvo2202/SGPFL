@@ -20,22 +20,16 @@ namespace Google\Service\CloudHealthcare;
 class SchematizedData extends \Google\Model
 {
   /**
-   * JSON output of the parser.
-   *
    * @var string
    */
   public $data;
   /**
-   * The error output of the parser.
-   *
    * @var string
    */
   public $error;
 
   /**
-   * JSON output of the parser.
-   *
-   * @param string $data
+   * @param string
    */
   public function setData($data)
   {
@@ -49,9 +43,7 @@ class SchematizedData extends \Google\Model
     return $this->data;
   }
   /**
-   * The error output of the parser.
-   *
-   * @param string $error
+   * @param string
    */
   public function setError($error)
   {

@@ -24,15 +24,11 @@ class SbomReferenceIntotoPayload extends \Google\Collection
         "type" => "_type",
   ];
   /**
-   * Identifier for the schema of the Statement.
-   *
    * @var string
    */
   public $type;
   protected $predicateDataType = '';
   /**
-   * URI identifying the type of the Predicate.
-   *
    * @var string
    */
   public $predicateType;
@@ -40,9 +36,7 @@ class SbomReferenceIntotoPayload extends \Google\Collection
   protected $subjectDataType = 'array';
 
   /**
-   * Identifier for the schema of the Statement.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {
@@ -56,10 +50,7 @@ class SbomReferenceIntotoPayload extends \Google\Collection
     return $this->type;
   }
   /**
-   * Additional parameters of the Predicate. Includes the actual data about the
-   * SBOM.
-   *
-   * @param SbomReferenceIntotoPredicate $predicate
+   * @param SbomReferenceIntotoPredicate
    */
   public function setPredicate(SbomReferenceIntotoPredicate $predicate)
   {
@@ -73,9 +64,7 @@ class SbomReferenceIntotoPayload extends \Google\Collection
     return $this->predicate;
   }
   /**
-   * URI identifying the type of the Predicate.
-   *
-   * @param string $predicateType
+   * @param string
    */
   public function setPredicateType($predicateType)
   {
@@ -89,10 +78,7 @@ class SbomReferenceIntotoPayload extends \Google\Collection
     return $this->predicateType;
   }
   /**
-   * Set of software artifacts that the attestation applies to. Each element
-   * represents a single software artifact.
-   *
-   * @param Subject[] $subject
+   * @param Subject[]
    */
   public function setSubject($subject)
   {

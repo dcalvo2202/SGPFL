@@ -24,9 +24,7 @@ class GoogleCloudAiplatformV1StructValue extends \Google\Collection
   protected $valuesDataType = 'array';
 
   /**
-   * A list of field values.
-   *
-   * @param GoogleCloudAiplatformV1StructFieldValue[] $values
+   * @param GoogleCloudAiplatformV1StructFieldValue[]
    */
   public function setValues($values)
   {

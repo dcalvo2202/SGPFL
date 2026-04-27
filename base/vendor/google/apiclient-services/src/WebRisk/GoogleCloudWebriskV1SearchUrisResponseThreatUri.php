@@ -21,24 +21,16 @@ class GoogleCloudWebriskV1SearchUrisResponseThreatUri extends \Google\Collection
 {
   protected $collection_key = 'threatTypes';
   /**
-   * The cache lifetime for the returned match. Clients must not cache this
-   * response past this timestamp to avoid false positives.
-   *
    * @var string
    */
   public $expireTime;
   /**
-   * The ThreatList this threat belongs to.
-   *
    * @var string[]
    */
   public $threatTypes;
 
   /**
-   * The cache lifetime for the returned match. Clients must not cache this
-   * response past this timestamp to avoid false positives.
-   *
-   * @param string $expireTime
+   * @param string
    */
   public function setExpireTime($expireTime)
   {
@@ -52,9 +44,7 @@ class GoogleCloudWebriskV1SearchUrisResponseThreatUri extends \Google\Collection
     return $this->expireTime;
   }
   /**
-   * The ThreatList this threat belongs to.
-   *
-   * @param string[] $threatTypes
+   * @param string[]
    */
   public function setThreatTypes($threatTypes)
   {

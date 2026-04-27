@@ -20,16 +20,10 @@ namespace Google\Service\CloudRetail;
 class GoogleCloudRetailV2Catalog extends \Google\Model
 {
   /**
-   * Required. Immutable. The catalog display name. This field must be a UTF-8
-   * encoded string with a length limit of 128 characters. Otherwise, an
-   * INVALID_ARGUMENT error is returned.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Required. Immutable. The fully qualified resource name of the catalog.
-   *
    * @var string
    */
   public $name;
@@ -37,11 +31,7 @@ class GoogleCloudRetailV2Catalog extends \Google\Model
   protected $productLevelConfigDataType = '';
 
   /**
-   * Required. Immutable. The catalog display name. This field must be a UTF-8
-   * encoded string with a length limit of 128 characters. Otherwise, an
-   * INVALID_ARGUMENT error is returned.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -55,9 +45,7 @@ class GoogleCloudRetailV2Catalog extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Required. Immutable. The fully qualified resource name of the catalog.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -71,9 +59,7 @@ class GoogleCloudRetailV2Catalog extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. The product level configuration.
-   *
-   * @param GoogleCloudRetailV2ProductLevelConfig $productLevelConfig
+   * @param GoogleCloudRetailV2ProductLevelConfig
    */
   public function setProductLevelConfig(GoogleCloudRetailV2ProductLevelConfig $productLevelConfig)
   {

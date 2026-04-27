@@ -24,9 +24,7 @@ class Denied extends \Google\Collection
   protected $ipRulesDataType = 'array';
 
   /**
-   * Optional. Optional list of denied IP rules.
-   *
-   * @param IpRule[] $ipRules
+   * @param IpRule[]
    */
   public function setIpRules($ipRules)
   {

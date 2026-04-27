@@ -19,66 +19,36 @@ namespace Google\Service\Looker;
 
 class ExportMetadata extends \Google\Collection
 {
-  /**
-   * Source not specified
-   */
-  public const SOURCE_SOURCE_UNSPECIFIED = 'SOURCE_UNSPECIFIED';
-  /**
-   * Source of export is Looker Core
-   */
-  public const SOURCE_LOOKER_CORE = 'LOOKER_CORE';
-  /**
-   * Source of export is Looker Original
-   */
-  public const SOURCE_LOOKER_ORIGINAL = 'LOOKER_ORIGINAL';
   protected $collection_key = 'filePaths';
   protected $exportEncryptionKeyType = ExportMetadataEncryptionKey::class;
   protected $exportEncryptionKeyDataType = '';
   /**
-   * List of files created as part of export artifact (excluding the metadata).
-   * The paths are relative to the folder containing the metadata.
-   *
    * @var string[]
    */
   public $filePaths;
   /**
-   * Looker encryption key, encrypted with the provided export encryption key.
-   * This value will only be populated if the looker instance uses Looker
-   * managed encryption instead of CMEK.
-   *
    * @var string
    */
   public $lookerEncryptionKey;
   /**
-   * Name of the exported instance. Format:
-   * projects/{project}/locations/{location}/instances/{instance}
-   *
    * @var string
    */
   public $lookerInstance;
   /**
-   * Platform edition of the exported instance.
-   *
    * @var string
    */
   public $lookerPlatformEdition;
   /**
-   * Version of instance when the export was created.
-   *
    * @var string
    */
   public $lookerVersion;
   /**
-   * The source type of the migration.
-   *
    * @var string
    */
   public $source;
 
   /**
-   * Encryption key that was used to encrypt the export artifacts.
-   *
-   * @param ExportMetadataEncryptionKey $exportEncryptionKey
+   * @param ExportMetadataEncryptionKey
    */
   public function setExportEncryptionKey(ExportMetadataEncryptionKey $exportEncryptionKey)
   {
@@ -92,10 +62,7 @@ class ExportMetadata extends \Google\Collection
     return $this->exportEncryptionKey;
   }
   /**
-   * List of files created as part of export artifact (excluding the metadata).
-   * The paths are relative to the folder containing the metadata.
-   *
-   * @param string[] $filePaths
+   * @param string[]
    */
   public function setFilePaths($filePaths)
   {
@@ -109,11 +76,7 @@ class ExportMetadata extends \Google\Collection
     return $this->filePaths;
   }
   /**
-   * Looker encryption key, encrypted with the provided export encryption key.
-   * This value will only be populated if the looker instance uses Looker
-   * managed encryption instead of CMEK.
-   *
-   * @param string $lookerEncryptionKey
+   * @param string
    */
   public function setLookerEncryptionKey($lookerEncryptionKey)
   {
@@ -127,10 +90,7 @@ class ExportMetadata extends \Google\Collection
     return $this->lookerEncryptionKey;
   }
   /**
-   * Name of the exported instance. Format:
-   * projects/{project}/locations/{location}/instances/{instance}
-   *
-   * @param string $lookerInstance
+   * @param string
    */
   public function setLookerInstance($lookerInstance)
   {
@@ -144,9 +104,7 @@ class ExportMetadata extends \Google\Collection
     return $this->lookerInstance;
   }
   /**
-   * Platform edition of the exported instance.
-   *
-   * @param string $lookerPlatformEdition
+   * @param string
    */
   public function setLookerPlatformEdition($lookerPlatformEdition)
   {
@@ -160,9 +118,7 @@ class ExportMetadata extends \Google\Collection
     return $this->lookerPlatformEdition;
   }
   /**
-   * Version of instance when the export was created.
-   *
-   * @param string $lookerVersion
+   * @param string
    */
   public function setLookerVersion($lookerVersion)
   {
@@ -176,18 +132,14 @@ class ExportMetadata extends \Google\Collection
     return $this->lookerVersion;
   }
   /**
-   * The source type of the migration.
-   *
-   * Accepted values: SOURCE_UNSPECIFIED, LOOKER_CORE, LOOKER_ORIGINAL
-   *
-   * @param self::SOURCE_* $source
+   * @param string
    */
   public function setSource($source)
   {
     $this->source = $source;
   }
   /**
-   * @return self::SOURCE_*
+   * @return string
    */
   public function getSource()
   {

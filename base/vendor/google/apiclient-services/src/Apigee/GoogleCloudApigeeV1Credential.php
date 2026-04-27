@@ -25,47 +25,32 @@ class GoogleCloudApigeeV1Credential extends \Google\Collection
   protected $attributesType = GoogleCloudApigeeV1Attribute::class;
   protected $attributesDataType = 'array';
   /**
-   * Consumer key.
-   *
    * @var string
    */
   public $consumerKey;
   /**
-   * Secret key.
-   *
    * @var string
    */
   public $consumerSecret;
   /**
-   * Time the credential will expire in milliseconds since epoch.
-   *
    * @var string
    */
   public $expiresAt;
   /**
-   * Time the credential was issued in milliseconds since epoch.
-   *
    * @var string
    */
   public $issuedAt;
   /**
-   * List of scopes to apply to the app. Specified scopes must already exist on
-   * the API product that you associate with the app.
-   *
    * @var string[]
    */
   public $scopes;
   /**
-   * Status of the credential. Valid values include `approved` or `revoked`.
-   *
    * @var string
    */
   public $status;
 
   /**
-   * List of API products this credential can be used for.
-   *
-   * @param GoogleCloudApigeeV1ApiProductRef[] $apiProducts
+   * @param GoogleCloudApigeeV1ApiProductRef[]
    */
   public function setApiProducts($apiProducts)
   {
@@ -79,9 +64,7 @@ class GoogleCloudApigeeV1Credential extends \Google\Collection
     return $this->apiProducts;
   }
   /**
-   * List of attributes associated with this credential.
-   *
-   * @param GoogleCloudApigeeV1Attribute[] $attributes
+   * @param GoogleCloudApigeeV1Attribute[]
    */
   public function setAttributes($attributes)
   {
@@ -95,9 +78,7 @@ class GoogleCloudApigeeV1Credential extends \Google\Collection
     return $this->attributes;
   }
   /**
-   * Consumer key.
-   *
-   * @param string $consumerKey
+   * @param string
    */
   public function setConsumerKey($consumerKey)
   {
@@ -111,9 +92,7 @@ class GoogleCloudApigeeV1Credential extends \Google\Collection
     return $this->consumerKey;
   }
   /**
-   * Secret key.
-   *
-   * @param string $consumerSecret
+   * @param string
    */
   public function setConsumerSecret($consumerSecret)
   {
@@ -127,9 +106,7 @@ class GoogleCloudApigeeV1Credential extends \Google\Collection
     return $this->consumerSecret;
   }
   /**
-   * Time the credential will expire in milliseconds since epoch.
-   *
-   * @param string $expiresAt
+   * @param string
    */
   public function setExpiresAt($expiresAt)
   {
@@ -143,9 +120,7 @@ class GoogleCloudApigeeV1Credential extends \Google\Collection
     return $this->expiresAt;
   }
   /**
-   * Time the credential was issued in milliseconds since epoch.
-   *
-   * @param string $issuedAt
+   * @param string
    */
   public function setIssuedAt($issuedAt)
   {
@@ -159,10 +134,7 @@ class GoogleCloudApigeeV1Credential extends \Google\Collection
     return $this->issuedAt;
   }
   /**
-   * List of scopes to apply to the app. Specified scopes must already exist on
-   * the API product that you associate with the app.
-   *
-   * @param string[] $scopes
+   * @param string[]
    */
   public function setScopes($scopes)
   {
@@ -176,9 +148,7 @@ class GoogleCloudApigeeV1Credential extends \Google\Collection
     return $this->scopes;
   }
   /**
-   * Status of the credential. Valid values include `approved` or `revoked`.
-   *
-   * @param string $status
+   * @param string
    */
   public function setStatus($status)
   {

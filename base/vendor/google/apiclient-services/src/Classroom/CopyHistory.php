@@ -20,36 +20,24 @@ namespace Google\Service\Classroom;
 class CopyHistory extends \Google\Model
 {
   /**
-   * Immutable. Identifier of the attachment.
-   *
    * @var string
    */
   public $attachmentId;
   /**
-   * Immutable. Identifier of the course.
-   *
    * @var string
    */
   public $courseId;
   /**
-   * Immutable. Identifier of the `Announcement`, `CourseWork`, or
-   * `CourseWorkMaterial` under which the attachment is attached.
-   *
    * @var string
    */
   public $itemId;
   /**
-   * Immutable. Deprecated, use `item_id` instead.
-   *
-   * @deprecated
    * @var string
    */
   public $postId;
 
   /**
-   * Immutable. Identifier of the attachment.
-   *
-   * @param string $attachmentId
+   * @param string
    */
   public function setAttachmentId($attachmentId)
   {
@@ -63,9 +51,7 @@ class CopyHistory extends \Google\Model
     return $this->attachmentId;
   }
   /**
-   * Immutable. Identifier of the course.
-   *
-   * @param string $courseId
+   * @param string
    */
   public function setCourseId($courseId)
   {
@@ -79,10 +65,7 @@ class CopyHistory extends \Google\Model
     return $this->courseId;
   }
   /**
-   * Immutable. Identifier of the `Announcement`, `CourseWork`, or
-   * `CourseWorkMaterial` under which the attachment is attached.
-   *
-   * @param string $itemId
+   * @param string
    */
   public function setItemId($itemId)
   {
@@ -96,17 +79,13 @@ class CopyHistory extends \Google\Model
     return $this->itemId;
   }
   /**
-   * Immutable. Deprecated, use `item_id` instead.
-   *
-   * @deprecated
-   * @param string $postId
+   * @param string
    */
   public function setPostId($postId)
   {
     $this->postId = $postId;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getPostId()

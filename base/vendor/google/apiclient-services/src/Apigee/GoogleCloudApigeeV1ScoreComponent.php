@@ -21,44 +21,30 @@ class GoogleCloudApigeeV1ScoreComponent extends \Google\Collection
 {
   protected $collection_key = 'recommendations';
   /**
-   * Time when score was calculated.
-   *
    * @var string
    */
   public $calculateTime;
   /**
-   * Time in the requested time period when data was last captured to compute
-   * the score.
-   *
    * @var string
    */
   public $dataCaptureTime;
   /**
-   * List of paths for next components.
-   *
    * @var string[]
    */
   public $drilldownPaths;
   protected $recommendationsType = GoogleCloudApigeeV1ScoreComponentRecommendation::class;
   protected $recommendationsDataType = 'array';
   /**
-   * Score for the component.
-   *
    * @var int
    */
   public $score;
   /**
-   * Path of the component. Example:
-   * /org@myorg/envgroup@myenvgroup/proxies/proxy@myproxy
-   *
    * @var string
    */
   public $scorePath;
 
   /**
-   * Time when score was calculated.
-   *
-   * @param string $calculateTime
+   * @param string
    */
   public function setCalculateTime($calculateTime)
   {
@@ -72,10 +58,7 @@ class GoogleCloudApigeeV1ScoreComponent extends \Google\Collection
     return $this->calculateTime;
   }
   /**
-   * Time in the requested time period when data was last captured to compute
-   * the score.
-   *
-   * @param string $dataCaptureTime
+   * @param string
    */
   public function setDataCaptureTime($dataCaptureTime)
   {
@@ -89,9 +72,7 @@ class GoogleCloudApigeeV1ScoreComponent extends \Google\Collection
     return $this->dataCaptureTime;
   }
   /**
-   * List of paths for next components.
-   *
-   * @param string[] $drilldownPaths
+   * @param string[]
    */
   public function setDrilldownPaths($drilldownPaths)
   {
@@ -105,9 +86,7 @@ class GoogleCloudApigeeV1ScoreComponent extends \Google\Collection
     return $this->drilldownPaths;
   }
   /**
-   * List of recommendations to improve API security.
-   *
-   * @param GoogleCloudApigeeV1ScoreComponentRecommendation[] $recommendations
+   * @param GoogleCloudApigeeV1ScoreComponentRecommendation[]
    */
   public function setRecommendations($recommendations)
   {
@@ -121,9 +100,7 @@ class GoogleCloudApigeeV1ScoreComponent extends \Google\Collection
     return $this->recommendations;
   }
   /**
-   * Score for the component.
-   *
-   * @param int $score
+   * @param int
    */
   public function setScore($score)
   {
@@ -137,10 +114,7 @@ class GoogleCloudApigeeV1ScoreComponent extends \Google\Collection
     return $this->score;
   }
   /**
-   * Path of the component. Example:
-   * /org@myorg/envgroup@myenvgroup/proxies/proxy@myproxy
-   *
-   * @param string $scorePath
+   * @param string
    */
   public function setScorePath($scorePath)
   {

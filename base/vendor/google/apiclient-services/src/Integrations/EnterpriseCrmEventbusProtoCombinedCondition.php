@@ -24,9 +24,7 @@ class EnterpriseCrmEventbusProtoCombinedCondition extends \Google\Collection
   protected $conditionsDataType = 'array';
 
   /**
-   * A set of individual constituent conditions.
-   *
-   * @param EnterpriseCrmEventbusProtoCondition[] $conditions
+   * @param EnterpriseCrmEventbusProtoCondition[]
    */
   public function setConditions($conditions)
   {

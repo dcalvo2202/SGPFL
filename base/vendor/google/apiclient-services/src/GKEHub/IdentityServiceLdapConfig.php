@@ -29,10 +29,7 @@ class IdentityServiceLdapConfig extends \Google\Model
   protected $userDataType = '';
 
   /**
-   * Optional. Contains the properties for locating and authenticating groups in
-   * the directory.
-   *
-   * @param IdentityServiceGroupConfig $group
+   * @param IdentityServiceGroupConfig
    */
   public function setGroup(IdentityServiceGroupConfig $group)
   {
@@ -46,9 +43,7 @@ class IdentityServiceLdapConfig extends \Google\Model
     return $this->group;
   }
   /**
-   * Required. Server settings for the external LDAP server.
-   *
-   * @param IdentityServiceServerConfig $server
+   * @param IdentityServiceServerConfig
    */
   public function setServer(IdentityServiceServerConfig $server)
   {
@@ -62,12 +57,7 @@ class IdentityServiceLdapConfig extends \Google\Model
     return $this->server;
   }
   /**
-   * Required. Contains the credentials of the service account which is
-   * authorized to perform the LDAP search in the directory. The credentials can
-   * be supplied by the combination of the DN and password or the client
-   * certificate.
-   *
-   * @param IdentityServiceServiceAccountConfig $serviceAccount
+   * @param IdentityServiceServiceAccountConfig
    */
   public function setServiceAccount(IdentityServiceServiceAccountConfig $serviceAccount)
   {
@@ -81,9 +71,7 @@ class IdentityServiceLdapConfig extends \Google\Model
     return $this->serviceAccount;
   }
   /**
-   * Required. Defines where users exist in the LDAP directory.
-   *
-   * @param IdentityServiceUserConfig $user
+   * @param IdentityServiceUserConfig
    */
   public function setUser(IdentityServiceUserConfig $user)
   {

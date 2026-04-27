@@ -21,9 +21,6 @@ class GoogleCloudKmsInventoryV1SearchProtectedResourcesResponse extends \Google\
 {
   protected $collection_key = 'protectedResources';
   /**
-   * A token that can be sent as `page_token` to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GoogleCloudKmsInventoryV1SearchProtectedResourcesResponse extends \Google\
   protected $protectedResourcesDataType = 'array';
 
   /**
-   * A token that can be sent as `page_token` to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class GoogleCloudKmsInventoryV1SearchProtectedResourcesResponse extends \Google\
     return $this->nextPageToken;
   }
   /**
-   * Protected resources for this page.
-   *
-   * @param GoogleCloudKmsInventoryV1ProtectedResource[] $protectedResources
+   * @param GoogleCloudKmsInventoryV1ProtectedResource[]
    */
   public function setProtectedResources($protectedResources)
   {

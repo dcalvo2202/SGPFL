@@ -20,16 +20,12 @@ namespace Google\Service\FirebaseAppHosting;
 class ContainerSource extends \Google\Model
 {
   /**
-   * Required. A URI representing a container for the backend to use.
-   *
    * @var string
    */
   public $image;
 
   /**
-   * Required. A URI representing a container for the backend to use.
-   *
-   * @param string $image
+   * @param string
    */
   public function setImage($image)
   {

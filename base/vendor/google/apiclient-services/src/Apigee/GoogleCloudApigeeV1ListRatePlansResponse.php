@@ -21,9 +21,6 @@ class GoogleCloudApigeeV1ListRatePlansResponse extends \Google\Collection
 {
   protected $collection_key = 'ratePlans';
   /**
-   * Value that can be sent as `startKey` to retrieve the next page of content.
-   * If this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextStartKey;
@@ -31,10 +28,7 @@ class GoogleCloudApigeeV1ListRatePlansResponse extends \Google\Collection
   protected $ratePlansDataType = 'array';
 
   /**
-   * Value that can be sent as `startKey` to retrieve the next page of content.
-   * If this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextStartKey
+   * @param string
    */
   public function setNextStartKey($nextStartKey)
   {
@@ -48,9 +42,7 @@ class GoogleCloudApigeeV1ListRatePlansResponse extends \Google\Collection
     return $this->nextStartKey;
   }
   /**
-   * List of rate plans in an organization.
-   *
-   * @param GoogleCloudApigeeV1RatePlan[] $ratePlans
+   * @param GoogleCloudApigeeV1RatePlan[]
    */
   public function setRatePlans($ratePlans)
   {

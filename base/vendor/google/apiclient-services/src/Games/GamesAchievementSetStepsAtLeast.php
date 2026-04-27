@@ -20,24 +20,16 @@ namespace Google\Service\Games;
 class GamesAchievementSetStepsAtLeast extends \Google\Model
 {
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#GamesAchievementSetStepsAtLeast`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The minimum number of steps for the achievement to be set to.
-   *
    * @var int
    */
   public $steps;
 
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#GamesAchievementSetStepsAtLeast`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -51,9 +43,7 @@ class GamesAchievementSetStepsAtLeast extends \Google\Model
     return $this->kind;
   }
   /**
-   * The minimum number of steps for the achievement to be set to.
-   *
-   * @param int $steps
+   * @param int
    */
   public function setSteps($steps)
   {

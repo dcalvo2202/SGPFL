@@ -20,38 +20,18 @@ namespace Google\Service\Contactcenterinsights;
 class GoogleCloudContactcenterinsightsV1EntityMentionData extends \Google\Model
 {
   /**
-   * Unspecified.
-   */
-  public const TYPE_MENTION_TYPE_UNSPECIFIED = 'MENTION_TYPE_UNSPECIFIED';
-  /**
-   * Proper noun.
-   */
-  public const TYPE_PROPER = 'PROPER';
-  /**
-   * Common noun (or noun compound).
-   */
-  public const TYPE_COMMON = 'COMMON';
-  /**
-   * The key of this entity in conversation entities. Can be used to retrieve
-   * the exact `Entity` this mention is attached to.
-   *
    * @var string
    */
   public $entityUniqueId;
   protected $sentimentType = GoogleCloudContactcenterinsightsV1SentimentData::class;
   protected $sentimentDataType = '';
   /**
-   * The type of the entity mention.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The key of this entity in conversation entities. Can be used to retrieve
-   * the exact `Entity` this mention is attached to.
-   *
-   * @param string $entityUniqueId
+   * @param string
    */
   public function setEntityUniqueId($entityUniqueId)
   {
@@ -65,9 +45,7 @@ class GoogleCloudContactcenterinsightsV1EntityMentionData extends \Google\Model
     return $this->entityUniqueId;
   }
   /**
-   * Sentiment expressed for this mention of the entity.
-   *
-   * @param GoogleCloudContactcenterinsightsV1SentimentData $sentiment
+   * @param GoogleCloudContactcenterinsightsV1SentimentData
    */
   public function setSentiment(GoogleCloudContactcenterinsightsV1SentimentData $sentiment)
   {
@@ -81,18 +59,14 @@ class GoogleCloudContactcenterinsightsV1EntityMentionData extends \Google\Model
     return $this->sentiment;
   }
   /**
-   * The type of the entity mention.
-   *
-   * Accepted values: MENTION_TYPE_UNSPECIFIED, PROPER, COMMON
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

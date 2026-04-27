@@ -21,36 +21,21 @@ class SubscriptionPurchaseLineItem extends \Google\Model
 {
   protected $autoRenewingPlanType = AutoRenewingPlan::class;
   protected $autoRenewingPlanDataType = '';
-  protected $deferredItemRemovalType = DeferredItemRemoval::class;
-  protected $deferredItemRemovalDataType = '';
   protected $deferredItemReplacementType = DeferredItemReplacement::class;
   protected $deferredItemReplacementDataType = '';
   /**
-   * Time at which the subscription expired or will expire unless the access is
-   * extended (ex. renews).
-   *
    * @var string
    */
   public $expiryTime;
-  protected $itemReplacementType = ItemReplacement::class;
-  protected $itemReplacementDataType = '';
   /**
-   * The order id of the latest successful order associated with this item. Not
-   * present if the item is not owned by the user yet (e.g. the item being
-   * deferred replaced to).
-   *
    * @var string
    */
   public $latestSuccessfulOrderId;
   protected $offerDetailsType = OfferDetails::class;
   protected $offerDetailsDataType = '';
-  protected $offerPhaseType = OfferPhase::class;
-  protected $offerPhaseDataType = '';
   protected $prepaidPlanType = PrepaidPlan::class;
   protected $prepaidPlanDataType = '';
   /**
-   * The purchased product ID (for example, 'monthly001').
-   *
    * @var string
    */
   public $productId;
@@ -58,9 +43,7 @@ class SubscriptionPurchaseLineItem extends \Google\Model
   protected $signupPromotionDataType = '';
 
   /**
-   * The item is auto renewing.
-   *
-   * @param AutoRenewingPlan $autoRenewingPlan
+   * @param AutoRenewingPlan
    */
   public function setAutoRenewingPlan(AutoRenewingPlan $autoRenewingPlan)
   {
@@ -74,25 +57,7 @@ class SubscriptionPurchaseLineItem extends \Google\Model
     return $this->autoRenewingPlan;
   }
   /**
-   * Information for deferred item removal.
-   *
-   * @param DeferredItemRemoval $deferredItemRemoval
-   */
-  public function setDeferredItemRemoval(DeferredItemRemoval $deferredItemRemoval)
-  {
-    $this->deferredItemRemoval = $deferredItemRemoval;
-  }
-  /**
-   * @return DeferredItemRemoval
-   */
-  public function getDeferredItemRemoval()
-  {
-    return $this->deferredItemRemoval;
-  }
-  /**
-   * Information for deferred item replacement.
-   *
-   * @param DeferredItemReplacement $deferredItemReplacement
+   * @param DeferredItemReplacement
    */
   public function setDeferredItemReplacement(DeferredItemReplacement $deferredItemReplacement)
   {
@@ -106,10 +71,7 @@ class SubscriptionPurchaseLineItem extends \Google\Model
     return $this->deferredItemReplacement;
   }
   /**
-   * Time at which the subscription expired or will expire unless the access is
-   * extended (ex. renews).
-   *
-   * @param string $expiryTime
+   * @param string
    */
   public function setExpiryTime($expiryTime)
   {
@@ -123,29 +85,7 @@ class SubscriptionPurchaseLineItem extends \Google\Model
     return $this->expiryTime;
   }
   /**
-   * Details of the item being replaced. This field is only populated if this
-   * item replaced another item in a previous subscription and is only available
-   * for 60 days after the purchase time.
-   *
-   * @param ItemReplacement $itemReplacement
-   */
-  public function setItemReplacement(ItemReplacement $itemReplacement)
-  {
-    $this->itemReplacement = $itemReplacement;
-  }
-  /**
-   * @return ItemReplacement
-   */
-  public function getItemReplacement()
-  {
-    return $this->itemReplacement;
-  }
-  /**
-   * The order id of the latest successful order associated with this item. Not
-   * present if the item is not owned by the user yet (e.g. the item being
-   * deferred replaced to).
-   *
-   * @param string $latestSuccessfulOrderId
+   * @param string
    */
   public function setLatestSuccessfulOrderId($latestSuccessfulOrderId)
   {
@@ -159,9 +99,7 @@ class SubscriptionPurchaseLineItem extends \Google\Model
     return $this->latestSuccessfulOrderId;
   }
   /**
-   * The offer details for this item.
-   *
-   * @param OfferDetails $offerDetails
+   * @param OfferDetails
    */
   public function setOfferDetails(OfferDetails $offerDetails)
   {
@@ -175,25 +113,7 @@ class SubscriptionPurchaseLineItem extends \Google\Model
     return $this->offerDetails;
   }
   /**
-   * Current offer phase details for this item.
-   *
-   * @param OfferPhase $offerPhase
-   */
-  public function setOfferPhase(OfferPhase $offerPhase)
-  {
-    $this->offerPhase = $offerPhase;
-  }
-  /**
-   * @return OfferPhase
-   */
-  public function getOfferPhase()
-  {
-    return $this->offerPhase;
-  }
-  /**
-   * The item is prepaid.
-   *
-   * @param PrepaidPlan $prepaidPlan
+   * @param PrepaidPlan
    */
   public function setPrepaidPlan(PrepaidPlan $prepaidPlan)
   {
@@ -207,9 +127,7 @@ class SubscriptionPurchaseLineItem extends \Google\Model
     return $this->prepaidPlan;
   }
   /**
-   * The purchased product ID (for example, 'monthly001').
-   *
-   * @param string $productId
+   * @param string
    */
   public function setProductId($productId)
   {
@@ -223,10 +141,7 @@ class SubscriptionPurchaseLineItem extends \Google\Model
     return $this->productId;
   }
   /**
-   * Promotion details about this item. Only set if a promotion was applied
-   * during signup.
-   *
-   * @param SignupPromotion $signupPromotion
+   * @param SignupPromotion
    */
   public function setSignupPromotion(SignupPromotion $signupPromotion)
   {

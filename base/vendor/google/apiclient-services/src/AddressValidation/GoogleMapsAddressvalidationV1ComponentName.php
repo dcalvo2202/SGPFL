@@ -20,25 +20,16 @@ namespace Google\Service\AddressValidation;
 class GoogleMapsAddressvalidationV1ComponentName extends \Google\Model
 {
   /**
-   * The BCP-47 language code. This will not be present if the component name is
-   * not associated with a language, such as a street number.
-   *
    * @var string
    */
   public $languageCode;
   /**
-   * The name text. For example, "5th Avenue" for a street name or "1253" for a
-   * street number.
-   *
    * @var string
    */
   public $text;
 
   /**
-   * The BCP-47 language code. This will not be present if the component name is
-   * not associated with a language, such as a street number.
-   *
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {
@@ -52,10 +43,7 @@ class GoogleMapsAddressvalidationV1ComponentName extends \Google\Model
     return $this->languageCode;
   }
   /**
-   * The name text. For example, "5th Avenue" for a street name or "1253" for a
-   * street number.
-   *
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {

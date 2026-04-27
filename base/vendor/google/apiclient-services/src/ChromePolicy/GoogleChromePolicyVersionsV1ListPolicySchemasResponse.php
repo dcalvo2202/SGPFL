@@ -21,8 +21,6 @@ class GoogleChromePolicyVersionsV1ListPolicySchemasResponse extends \Google\Coll
 {
   protected $collection_key = 'policySchemas';
   /**
-   * The page token used to get the next page of policy schemas.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -30,9 +28,7 @@ class GoogleChromePolicyVersionsV1ListPolicySchemasResponse extends \Google\Coll
   protected $policySchemasDataType = 'array';
 
   /**
-   * The page token used to get the next page of policy schemas.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -46,9 +42,7 @@ class GoogleChromePolicyVersionsV1ListPolicySchemasResponse extends \Google\Coll
     return $this->nextPageToken;
   }
   /**
-   * The list of policy schemas that match the query.
-   *
-   * @param GoogleChromePolicyVersionsV1PolicySchema[] $policySchemas
+   * @param GoogleChromePolicyVersionsV1PolicySchema[]
    */
   public function setPolicySchemas($policySchemas)
   {

@@ -21,53 +21,28 @@ class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings extends \Google\C
 {
   protected $collection_key = 'natIpPortRanges';
   /**
-   * Output only. List of all drain IP:port-range mappings assigned to this
-   * interface by this rule. These ranges are inclusive, that is, both the first
-   * and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
-   * "1.1.1.1:2234-2234"].
-   *
    * @var string[]
    */
   public $drainNatIpPortRanges;
   /**
-   * Output only. A list of all IP:port-range mappings assigned to this
-   * interface by this rule. These ranges are inclusive, that is, both the first
-   * and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
-   * "1.1.1.1:2234-2234"].
-   *
    * @var string[]
    */
   public $natIpPortRanges;
   /**
-   * Output only. Total number of drain ports across all NAT IPs allocated to
-   * this interface by this rule. It equals the aggregated port number in the
-   * field drain_nat_ip_port_ranges.
-   *
    * @var int
    */
   public $numTotalDrainNatPorts;
   /**
-   * Output only. Total number of ports across all NAT IPs allocated to this
-   * interface by this rule. It equals the aggregated port number in the field
-   * nat_ip_port_ranges.
-   *
    * @var int
    */
   public $numTotalNatPorts;
   /**
-   * Output only. Rule number of the NAT Rule.
-   *
    * @var int
    */
   public $ruleNumber;
 
   /**
-   * Output only. List of all drain IP:port-range mappings assigned to this
-   * interface by this rule. These ranges are inclusive, that is, both the first
-   * and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
-   * "1.1.1.1:2234-2234"].
-   *
-   * @param string[] $drainNatIpPortRanges
+   * @param string[]
    */
   public function setDrainNatIpPortRanges($drainNatIpPortRanges)
   {
@@ -81,12 +56,7 @@ class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings extends \Google\C
     return $this->drainNatIpPortRanges;
   }
   /**
-   * Output only. A list of all IP:port-range mappings assigned to this
-   * interface by this rule. These ranges are inclusive, that is, both the first
-   * and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
-   * "1.1.1.1:2234-2234"].
-   *
-   * @param string[] $natIpPortRanges
+   * @param string[]
    */
   public function setNatIpPortRanges($natIpPortRanges)
   {
@@ -100,11 +70,7 @@ class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings extends \Google\C
     return $this->natIpPortRanges;
   }
   /**
-   * Output only. Total number of drain ports across all NAT IPs allocated to
-   * this interface by this rule. It equals the aggregated port number in the
-   * field drain_nat_ip_port_ranges.
-   *
-   * @param int $numTotalDrainNatPorts
+   * @param int
    */
   public function setNumTotalDrainNatPorts($numTotalDrainNatPorts)
   {
@@ -118,11 +84,7 @@ class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings extends \Google\C
     return $this->numTotalDrainNatPorts;
   }
   /**
-   * Output only. Total number of ports across all NAT IPs allocated to this
-   * interface by this rule. It equals the aggregated port number in the field
-   * nat_ip_port_ranges.
-   *
-   * @param int $numTotalNatPorts
+   * @param int
    */
   public function setNumTotalNatPorts($numTotalNatPorts)
   {
@@ -136,9 +98,7 @@ class VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings extends \Google\C
     return $this->numTotalNatPorts;
   }
   /**
-   * Output only. Rule number of the NAT Rule.
-   *
-   * @param int $ruleNumber
+   * @param int
    */
   public function setRuleNumber($ruleNumber)
   {

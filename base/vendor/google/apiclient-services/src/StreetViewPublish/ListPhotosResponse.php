@@ -21,9 +21,6 @@ class ListPhotosResponse extends \Google\Collection
 {
   protected $collection_key = 'photos';
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListPhotosResponse extends \Google\Collection
   protected $photosDataType = 'array';
 
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,10 +42,7 @@ class ListPhotosResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * List of photos. The pageSize field in the request determines the number of
-   * items returned.
-   *
-   * @param Photo[] $photos
+   * @param Photo[]
    */
   public function setPhotos($photos)
   {

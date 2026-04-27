@@ -23,20 +23,12 @@ class ReportRequest extends \Google\Collection
   protected $operationsType = AttributeContext::class;
   protected $operationsDataType = 'array';
   /**
-   * Specifies the version of the service configuration that should be used to
-   * process the request. Must not be empty. Set this field to 'latest' to
-   * specify using the latest configuration.
-   *
    * @var string
    */
   public $serviceConfigId;
 
   /**
-   * Describes the list of operations to be reported. Each operation is
-   * represented as an AttributeContext, and contains all attributes around an
-   * API access.
-   *
-   * @param AttributeContext[] $operations
+   * @param AttributeContext[]
    */
   public function setOperations($operations)
   {
@@ -50,11 +42,7 @@ class ReportRequest extends \Google\Collection
     return $this->operations;
   }
   /**
-   * Specifies the version of the service configuration that should be used to
-   * process the request. Must not be empty. Set this field to 'latest' to
-   * specify using the latest configuration.
-   *
-   * @param string $serviceConfigId
+   * @param string
    */
   public function setServiceConfigId($serviceConfigId)
   {

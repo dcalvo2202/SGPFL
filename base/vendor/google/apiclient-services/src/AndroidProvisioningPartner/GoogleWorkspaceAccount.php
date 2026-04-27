@@ -21,22 +21,16 @@ class GoogleWorkspaceAccount extends \Google\Collection
 {
   protected $collection_key = 'preProvisioningTokens';
   /**
-   * Required. The customer ID.
-   *
    * @var string
    */
   public $customerId;
   /**
-   * Output only. The pre-provisioning tokens previously used to claim devices.
-   *
    * @var string[]
    */
   public $preProvisioningTokens;
 
   /**
-   * Required. The customer ID.
-   *
-   * @param string $customerId
+   * @param string
    */
   public function setCustomerId($customerId)
   {
@@ -50,9 +44,7 @@ class GoogleWorkspaceAccount extends \Google\Collection
     return $this->customerId;
   }
   /**
-   * Output only. The pre-provisioning tokens previously used to claim devices.
-   *
-   * @param string[] $preProvisioningTokens
+   * @param string[]
    */
   public function setPreProvisioningTokens($preProvisioningTokens)
   {

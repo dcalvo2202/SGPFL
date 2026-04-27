@@ -26,12 +26,7 @@ class NetworksGetEffectiveFirewallsResponse extends \Google\Collection
   protected $firewallsDataType = 'array';
 
   /**
-   * [Output Only] Effective firewalls from firewall policy. It returns Global
-   * Network Firewall Policies and Hierarchical Firewall Policies.
-   * UseregionNetworkFirewallPolicies.getEffectiveFirewalls to get Regional
-   * Network Firewall Policies as well.
-   *
-   * @param NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy[] $firewallPolicys
+   * @param NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy[]
    */
   public function setFirewallPolicys($firewallPolicys)
   {
@@ -45,9 +40,7 @@ class NetworksGetEffectiveFirewallsResponse extends \Google\Collection
     return $this->firewallPolicys;
   }
   /**
-   * Effective firewalls on the network.
-   *
-   * @param Firewall[] $firewalls
+   * @param Firewall[]
    */
   public function setFirewalls($firewalls)
   {

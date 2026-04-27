@@ -20,16 +20,12 @@ namespace Google\Service\Directory;
 class FanInfo extends \Google\Model
 {
   /**
-   * Output only. Fan speed in RPM.
-   *
    * @var int
    */
   public $speedRpm;
 
   /**
-   * Output only. Fan speed in RPM.
-   *
-   * @param int $speedRpm
+   * @param int
    */
   public function setSpeedRpm($speedRpm)
   {

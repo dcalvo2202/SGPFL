@@ -23,9 +23,7 @@ class ImportDataRequest extends \Google\Model
   protected $inputConfigDataType = '';
 
   /**
-   * Required. The config for the input content.
-   *
-   * @param DatasetInputConfig $inputConfig
+   * @param DatasetInputConfig
    */
   public function setInputConfig(DatasetInputConfig $inputConfig)
   {

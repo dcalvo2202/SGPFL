@@ -20,16 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1FasterDeploymentConfig extends \Google\Model
 {
   /**
-   * If true, enable fast tryout feature for this deployed model.
-   *
    * @var bool
    */
   public $fastTryoutEnabled;
 
   /**
-   * If true, enable fast tryout feature for this deployed model.
-   *
-   * @param bool $fastTryoutEnabled
+   * @param bool
    */
   public function setFastTryoutEnabled($fastTryoutEnabled)
   {

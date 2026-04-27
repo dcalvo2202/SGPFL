@@ -27,9 +27,6 @@ class InfoTypeTransformation extends \Google\Collection
   protected $dateShiftConfigType = DateShiftConfig::class;
   protected $dateShiftConfigDataType = '';
   /**
-   * Optional. InfoTypes to apply this transformation to. If this is not
-   * specified, the transformation applies to any info_type.
-   *
    * @var string[]
    */
   public $infoTypes;
@@ -39,9 +36,7 @@ class InfoTypeTransformation extends \Google\Collection
   protected $replaceWithInfoTypeConfigDataType = '';
 
   /**
-   * Config for character mask.
-   *
-   * @param CharacterMaskConfig $characterMaskConfig
+   * @param CharacterMaskConfig
    */
   public function setCharacterMaskConfig(CharacterMaskConfig $characterMaskConfig)
   {
@@ -55,9 +50,7 @@ class InfoTypeTransformation extends \Google\Collection
     return $this->characterMaskConfig;
   }
   /**
-   * Config for crypto hash.
-   *
-   * @param CryptoHashConfig $cryptoHashConfig
+   * @param CryptoHashConfig
    */
   public function setCryptoHashConfig(CryptoHashConfig $cryptoHashConfig)
   {
@@ -71,9 +64,7 @@ class InfoTypeTransformation extends \Google\Collection
     return $this->cryptoHashConfig;
   }
   /**
-   * Config for date shift.
-   *
-   * @param DateShiftConfig $dateShiftConfig
+   * @param DateShiftConfig
    */
   public function setDateShiftConfig(DateShiftConfig $dateShiftConfig)
   {
@@ -87,10 +78,7 @@ class InfoTypeTransformation extends \Google\Collection
     return $this->dateShiftConfig;
   }
   /**
-   * Optional. InfoTypes to apply this transformation to. If this is not
-   * specified, the transformation applies to any info_type.
-   *
-   * @param string[] $infoTypes
+   * @param string[]
    */
   public function setInfoTypes($infoTypes)
   {
@@ -104,9 +92,7 @@ class InfoTypeTransformation extends \Google\Collection
     return $this->infoTypes;
   }
   /**
-   * Config for text redaction.
-   *
-   * @param RedactConfig $redactConfig
+   * @param RedactConfig
    */
   public function setRedactConfig(RedactConfig $redactConfig)
   {
@@ -120,9 +106,7 @@ class InfoTypeTransformation extends \Google\Collection
     return $this->redactConfig;
   }
   /**
-   * Config for replace with InfoType.
-   *
-   * @param ReplaceWithInfoTypeConfig $replaceWithInfoTypeConfig
+   * @param ReplaceWithInfoTypeConfig
    */
   public function setReplaceWithInfoTypeConfig(ReplaceWithInfoTypeConfig $replaceWithInfoTypeConfig)
   {

@@ -24,7 +24,7 @@ class GoogleCloudDialogflowV2SummarySuggestion extends \Google\Collection
   protected $summarySectionsDataType = 'array';
 
   /**
-   * @param GoogleCloudDialogflowV2SummarySuggestionSummarySection[] $summarySections
+   * @param GoogleCloudDialogflowV2SummarySuggestionSummarySection[]
    */
   public function setSummarySections($summarySections)
   {

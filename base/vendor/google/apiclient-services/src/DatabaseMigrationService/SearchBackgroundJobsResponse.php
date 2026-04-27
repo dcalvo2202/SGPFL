@@ -24,9 +24,7 @@ class SearchBackgroundJobsResponse extends \Google\Collection
   protected $jobsDataType = 'array';
 
   /**
-   * The list of conversion workspace mapping rules.
-   *
-   * @param BackgroundJobLogEntry[] $jobs
+   * @param BackgroundJobLogEntry[]
    */
   public function setJobs($jobs)
   {

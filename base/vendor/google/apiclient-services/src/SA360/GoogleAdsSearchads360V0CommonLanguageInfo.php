@@ -20,16 +20,12 @@ namespace Google\Service\SA360;
 class GoogleAdsSearchads360V0CommonLanguageInfo extends \Google\Model
 {
   /**
-   * The language constant resource name.
-   *
    * @var string
    */
   public $languageConstant;
 
   /**
-   * The language constant resource name.
-   *
-   * @param string $languageConstant
+   * @param string
    */
   public function setLanguageConstant($languageConstant)
   {

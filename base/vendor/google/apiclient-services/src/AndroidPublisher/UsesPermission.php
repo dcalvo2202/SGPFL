@@ -20,22 +20,16 @@ namespace Google\Service\AndroidPublisher;
 class UsesPermission extends \Google\Model
 {
   /**
-   * Optionally, the maximum SDK version for which the permission is required.
-   *
    * @var int
    */
   public $maxSdkVersion;
   /**
-   * The name of the permission requested.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Optionally, the maximum SDK version for which the permission is required.
-   *
-   * @param int $maxSdkVersion
+   * @param int
    */
   public function setMaxSdkVersion($maxSdkVersion)
   {
@@ -49,9 +43,7 @@ class UsesPermission extends \Google\Model
     return $this->maxSdkVersion;
   }
   /**
-   * The name of the permission requested.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

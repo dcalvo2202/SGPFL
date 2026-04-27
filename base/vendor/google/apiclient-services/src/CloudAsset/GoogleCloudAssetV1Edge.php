@@ -20,25 +20,16 @@ namespace Google\Service\CloudAsset;
 class GoogleCloudAssetV1Edge extends \Google\Model
 {
   /**
-   * The source node of the edge. For example, it could be a full resource name
-   * for a resource node or an email of an identity.
-   *
    * @var string
    */
   public $sourceNode;
   /**
-   * The target node of the edge. For example, it could be a full resource name
-   * for a resource node or an email of an identity.
-   *
    * @var string
    */
   public $targetNode;
 
   /**
-   * The source node of the edge. For example, it could be a full resource name
-   * for a resource node or an email of an identity.
-   *
-   * @param string $sourceNode
+   * @param string
    */
   public function setSourceNode($sourceNode)
   {
@@ -52,10 +43,7 @@ class GoogleCloudAssetV1Edge extends \Google\Model
     return $this->sourceNode;
   }
   /**
-   * The target node of the edge. For example, it could be a full resource name
-   * for a resource node or an email of an identity.
-   *
-   * @param string $targetNode
+   * @param string
    */
   public function setTargetNode($targetNode)
   {

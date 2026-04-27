@@ -21,55 +21,34 @@ class Rubric extends \Google\Collection
 {
   protected $collection_key = 'criteria';
   /**
-   * Identifier of the course. Read-only.
-   *
    * @var string
    */
   public $courseId;
   /**
-   * Identifier for the course work this corresponds to. Read-only.
-   *
    * @var string
    */
   public $courseWorkId;
   /**
-   * Output only. Timestamp when this rubric was created. Read-only.
-   *
    * @var string
    */
   public $creationTime;
   protected $criteriaType = Criterion::class;
   protected $criteriaDataType = 'array';
   /**
-   * Classroom-assigned identifier for the rubric. This is unique among rubrics
-   * for the relevant course work. Read-only.
-   *
    * @var string
    */
   public $id;
   /**
-   * Input only. Immutable. Google Sheets ID of the spreadsheet. This
-   * spreadsheet must contain formatted rubric settings. See [Create or reuse a
-   * rubric for an
-   * assignment](https://support.google.com/edu/classroom/answer/9335069). Use
-   * of this field requires the
-   * `https://www.googleapis.com/auth/spreadsheets.readonly` or
-   * `https://www.googleapis.com/auth/spreadsheets` scope.
-   *
    * @var string
    */
   public $sourceSpreadsheetId;
   /**
-   * Output only. Timestamp of the most recent change to this rubric. Read-only.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Identifier of the course. Read-only.
-   *
-   * @param string $courseId
+   * @param string
    */
   public function setCourseId($courseId)
   {
@@ -83,9 +62,7 @@ class Rubric extends \Google\Collection
     return $this->courseId;
   }
   /**
-   * Identifier for the course work this corresponds to. Read-only.
-   *
-   * @param string $courseWorkId
+   * @param string
    */
   public function setCourseWorkId($courseWorkId)
   {
@@ -99,9 +76,7 @@ class Rubric extends \Google\Collection
     return $this->courseWorkId;
   }
   /**
-   * Output only. Timestamp when this rubric was created. Read-only.
-   *
-   * @param string $creationTime
+   * @param string
    */
   public function setCreationTime($creationTime)
   {
@@ -115,10 +90,7 @@ class Rubric extends \Google\Collection
     return $this->creationTime;
   }
   /**
-   * List of criteria. Each criterion is a dimension on which performance is
-   * rated.
-   *
-   * @param Criterion[] $criteria
+   * @param Criterion[]
    */
   public function setCriteria($criteria)
   {
@@ -132,10 +104,7 @@ class Rubric extends \Google\Collection
     return $this->criteria;
   }
   /**
-   * Classroom-assigned identifier for the rubric. This is unique among rubrics
-   * for the relevant course work. Read-only.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -149,15 +118,7 @@ class Rubric extends \Google\Collection
     return $this->id;
   }
   /**
-   * Input only. Immutable. Google Sheets ID of the spreadsheet. This
-   * spreadsheet must contain formatted rubric settings. See [Create or reuse a
-   * rubric for an
-   * assignment](https://support.google.com/edu/classroom/answer/9335069). Use
-   * of this field requires the
-   * `https://www.googleapis.com/auth/spreadsheets.readonly` or
-   * `https://www.googleapis.com/auth/spreadsheets` scope.
-   *
-   * @param string $sourceSpreadsheetId
+   * @param string
    */
   public function setSourceSpreadsheetId($sourceSpreadsheetId)
   {
@@ -171,9 +132,7 @@ class Rubric extends \Google\Collection
     return $this->sourceSpreadsheetId;
   }
   /**
-   * Output only. Timestamp of the most recent change to this rubric. Read-only.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

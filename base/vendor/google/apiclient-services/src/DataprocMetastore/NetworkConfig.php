@@ -24,10 +24,7 @@ class NetworkConfig extends \Google\Collection
   protected $consumersDataType = 'array';
 
   /**
-   * Immutable. The consumer-side network configuration for the Dataproc
-   * Metastore instance.
-   *
-   * @param Consumer[] $consumers
+   * @param Consumer[]
    */
   public function setConsumers($consumers)
   {

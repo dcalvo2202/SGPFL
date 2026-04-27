@@ -21,46 +21,32 @@ class AndroidVersion extends \Google\Collection
 {
   protected $collection_key = 'tags';
   /**
-   * The API level for this Android version. Examples: 18, 19.
-   *
    * @var int
    */
   public $apiLevel;
   /**
-   * The code name for this Android version. Examples: "JellyBean", "KitKat".
-   *
    * @var string
    */
   public $codeName;
   protected $distributionType = Distribution::class;
   protected $distributionDataType = '';
   /**
-   * An opaque id for this Android version. Use this id to invoke the
-   * TestExecutionService.
-   *
    * @var string
    */
   public $id;
   protected $releaseDateType = Date::class;
   protected $releaseDateDataType = '';
   /**
-   * Tags for this dimension. Examples: "default", "preview", "deprecated".
-   *
    * @var string[]
    */
   public $tags;
   /**
-   * A string representing this version of the Android OS. Examples: "4.3",
-   * "4.4".
-   *
    * @var string
    */
   public $versionString;
 
   /**
-   * The API level for this Android version. Examples: 18, 19.
-   *
-   * @param int $apiLevel
+   * @param int
    */
   public function setApiLevel($apiLevel)
   {
@@ -74,9 +60,7 @@ class AndroidVersion extends \Google\Collection
     return $this->apiLevel;
   }
   /**
-   * The code name for this Android version. Examples: "JellyBean", "KitKat".
-   *
-   * @param string $codeName
+   * @param string
    */
   public function setCodeName($codeName)
   {
@@ -90,9 +74,7 @@ class AndroidVersion extends \Google\Collection
     return $this->codeName;
   }
   /**
-   * Market share for this version.
-   *
-   * @param Distribution $distribution
+   * @param Distribution
    */
   public function setDistribution(Distribution $distribution)
   {
@@ -106,10 +88,7 @@ class AndroidVersion extends \Google\Collection
     return $this->distribution;
   }
   /**
-   * An opaque id for this Android version. Use this id to invoke the
-   * TestExecutionService.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -123,9 +102,7 @@ class AndroidVersion extends \Google\Collection
     return $this->id;
   }
   /**
-   * The date this Android version became available in the market.
-   *
-   * @param Date $releaseDate
+   * @param Date
    */
   public function setReleaseDate(Date $releaseDate)
   {
@@ -139,9 +116,7 @@ class AndroidVersion extends \Google\Collection
     return $this->releaseDate;
   }
   /**
-   * Tags for this dimension. Examples: "default", "preview", "deprecated".
-   *
-   * @param string[] $tags
+   * @param string[]
    */
   public function setTags($tags)
   {
@@ -155,10 +130,7 @@ class AndroidVersion extends \Google\Collection
     return $this->tags;
   }
   /**
-   * A string representing this version of the Android OS. Examples: "4.3",
-   * "4.4".
-   *
-   * @param string $versionString
+   * @param string
    */
   public function setVersionString($versionString)
   {

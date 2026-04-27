@@ -21,22 +21,12 @@ class ApigatewayTestIamPermissionsRequest extends \Google\Collection
 {
   protected $collection_key = 'permissions';
   /**
-   * The set of permissions to check for the `resource`. Permissions with
-   * wildcards (such as `*` or `storage.*`) are not allowed. For more
-   * information see [IAM
-   * Overview](https://cloud.google.com/iam/docs/overview#permissions).
-   *
    * @var string[]
    */
   public $permissions;
 
   /**
-   * The set of permissions to check for the `resource`. Permissions with
-   * wildcards (such as `*` or `storage.*`) are not allowed. For more
-   * information see [IAM
-   * Overview](https://cloud.google.com/iam/docs/overview#permissions).
-   *
-   * @param string[] $permissions
+   * @param string[]
    */
   public function setPermissions($permissions)
   {

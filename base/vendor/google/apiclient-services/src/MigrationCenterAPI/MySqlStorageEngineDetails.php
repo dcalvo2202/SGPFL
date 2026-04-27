@@ -20,76 +20,20 @@ namespace Google\Service\MigrationCenterAPI;
 class MySqlStorageEngineDetails extends \Google\Model
 {
   /**
-   * Unspecified storage engine.
-   */
-  public const ENGINE_ENGINE_UNSPECIFIED = 'ENGINE_UNSPECIFIED';
-  /**
-   * InnoDB.
-   */
-  public const ENGINE_INNODB = 'INNODB';
-  /**
-   * MyISAM.
-   */
-  public const ENGINE_MYISAM = 'MYISAM';
-  /**
-   * Memory.
-   */
-  public const ENGINE_MEMORY = 'MEMORY';
-  /**
-   * CSV.
-   */
-  public const ENGINE_CSV = 'CSV';
-  /**
-   * Archive.
-   */
-  public const ENGINE_ARCHIVE = 'ARCHIVE';
-  /**
-   * Blackhole.
-   */
-  public const ENGINE_BLACKHOLE = 'BLACKHOLE';
-  /**
-   * NDB.
-   */
-  public const ENGINE_NDB = 'NDB';
-  /**
-   * Merge.
-   */
-  public const ENGINE_MERGE = 'MERGE';
-  /**
-   * Federated.
-   */
-  public const ENGINE_FEDERATED = 'FEDERATED';
-  /**
-   * Example.
-   */
-  public const ENGINE_EXAMPLE = 'EXAMPLE';
-  /**
-   * Other.
-   */
-  public const ENGINE_OTHER = 'OTHER';
-  /**
-   * Optional. The number of encrypted tables.
-   *
    * @var int
    */
   public $encryptedTableCount;
   /**
-   * Required. The storage engine.
-   *
    * @var string
    */
   public $engine;
   /**
-   * Optional. The number of tables.
-   *
    * @var int
    */
   public $tableCount;
 
   /**
-   * Optional. The number of encrypted tables.
-   *
-   * @param int $encryptedTableCount
+   * @param int
    */
   public function setEncryptedTableCount($encryptedTableCount)
   {
@@ -103,28 +47,21 @@ class MySqlStorageEngineDetails extends \Google\Model
     return $this->encryptedTableCount;
   }
   /**
-   * Required. The storage engine.
-   *
-   * Accepted values: ENGINE_UNSPECIFIED, INNODB, MYISAM, MEMORY, CSV, ARCHIVE,
-   * BLACKHOLE, NDB, MERGE, FEDERATED, EXAMPLE, OTHER
-   *
-   * @param self::ENGINE_* $engine
+   * @param string
    */
   public function setEngine($engine)
   {
     $this->engine = $engine;
   }
   /**
-   * @return self::ENGINE_*
+   * @return string
    */
   public function getEngine()
   {
     return $this->engine;
   }
   /**
-   * Optional. The number of tables.
-   *
-   * @param int $tableCount
+   * @param int
    */
   public function setTableCount($tableCount)
   {

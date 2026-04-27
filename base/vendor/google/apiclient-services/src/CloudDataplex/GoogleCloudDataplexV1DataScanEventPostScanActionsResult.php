@@ -23,9 +23,7 @@ class GoogleCloudDataplexV1DataScanEventPostScanActionsResult extends \Google\Mo
   protected $bigqueryExportResultDataType = '';
 
   /**
-   * The result of BigQuery export post scan action.
-   *
-   * @param GoogleCloudDataplexV1DataScanEventPostScanActionsResultBigQueryExportResult $bigqueryExportResult
+   * @param GoogleCloudDataplexV1DataScanEventPostScanActionsResultBigQueryExportResult
    */
   public function setBigqueryExportResult(GoogleCloudDataplexV1DataScanEventPostScanActionsResultBigQueryExportResult $bigqueryExportResult)
   {

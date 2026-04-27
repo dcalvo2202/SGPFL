@@ -19,206 +19,108 @@ namespace Google\Service\Bigquery;
 
 class ExplainQueryStage extends \Google\Collection
 {
-  /**
-   * ComputeMode type not specified.
-   */
-  public const COMPUTE_MODE_COMPUTE_MODE_UNSPECIFIED = 'COMPUTE_MODE_UNSPECIFIED';
-  /**
-   * This stage was processed using BigQuery slots.
-   */
-  public const COMPUTE_MODE_BIGQUERY = 'BIGQUERY';
-  /**
-   * This stage was processed using BI Engine compute.
-   */
-  public const COMPUTE_MODE_BI_ENGINE = 'BI_ENGINE';
   protected $collection_key = 'steps';
   /**
-   * Number of parallel input segments completed.
-   *
    * @var string
    */
   public $completedParallelInputs;
   /**
-   * Output only. Compute mode for this stage.
-   *
    * @var string
    */
   public $computeMode;
   /**
-   * Milliseconds the average shard spent on CPU-bound tasks.
-   *
    * @var string
    */
   public $computeMsAvg;
   /**
-   * Milliseconds the slowest shard spent on CPU-bound tasks.
-   *
    * @var string
    */
   public $computeMsMax;
-  /**
-   * Relative amount of time the average shard spent on CPU-bound tasks.
-   *
-   * @var 
-   */
   public $computeRatioAvg;
-  /**
-   * Relative amount of time the slowest shard spent on CPU-bound tasks.
-   *
-   * @var 
-   */
   public $computeRatioMax;
   /**
-   * Stage end time represented as milliseconds since the epoch.
-   *
    * @var string
    */
   public $endMs;
   /**
-   * Unique ID for the stage within the plan.
-   *
    * @var string
    */
   public $id;
   /**
-   * IDs for stages that are inputs to this stage.
-   *
    * @var string[]
    */
   public $inputStages;
   /**
-   * Human-readable name for the stage.
-   *
    * @var string
    */
   public $name;
   /**
-   * Number of parallel input segments to be processed
-   *
    * @var string
    */
   public $parallelInputs;
   /**
-   * Milliseconds the average shard spent reading input.
-   *
    * @var string
    */
   public $readMsAvg;
   /**
-   * Milliseconds the slowest shard spent reading input.
-   *
    * @var string
    */
   public $readMsMax;
-  /**
-   * Relative amount of time the average shard spent reading input.
-   *
-   * @var 
-   */
   public $readRatioAvg;
-  /**
-   * Relative amount of time the slowest shard spent reading input.
-   *
-   * @var 
-   */
   public $readRatioMax;
   /**
-   * Number of records read into the stage.
-   *
    * @var string
    */
   public $recordsRead;
   /**
-   * Number of records written by the stage.
-   *
    * @var string
    */
   public $recordsWritten;
   /**
-   * Total number of bytes written to shuffle.
-   *
    * @var string
    */
   public $shuffleOutputBytes;
   /**
-   * Total number of bytes written to shuffle and spilled to disk.
-   *
    * @var string
    */
   public $shuffleOutputBytesSpilled;
   /**
-   * Slot-milliseconds used by the stage.
-   *
    * @var string
    */
   public $slotMs;
   /**
-   * Stage start time represented as milliseconds since the epoch.
-   *
    * @var string
    */
   public $startMs;
   /**
-   * Current status for this stage.
-   *
    * @var string
    */
   public $status;
   protected $stepsType = ExplainQueryStep::class;
   protected $stepsDataType = 'array';
   /**
-   * Milliseconds the average shard spent waiting to be scheduled.
-   *
    * @var string
    */
   public $waitMsAvg;
   /**
-   * Milliseconds the slowest shard spent waiting to be scheduled.
-   *
    * @var string
    */
   public $waitMsMax;
-  /**
-   * Relative amount of time the average shard spent waiting to be scheduled.
-   *
-   * @var 
-   */
   public $waitRatioAvg;
-  /**
-   * Relative amount of time the slowest shard spent waiting to be scheduled.
-   *
-   * @var 
-   */
   public $waitRatioMax;
   /**
-   * Milliseconds the average shard spent on writing output.
-   *
    * @var string
    */
   public $writeMsAvg;
   /**
-   * Milliseconds the slowest shard spent on writing output.
-   *
    * @var string
    */
   public $writeMsMax;
-  /**
-   * Relative amount of time the average shard spent on writing output.
-   *
-   * @var 
-   */
   public $writeRatioAvg;
-  /**
-   * Relative amount of time the slowest shard spent on writing output.
-   *
-   * @var 
-   */
   public $writeRatioMax;
 
   /**
-   * Number of parallel input segments completed.
-   *
-   * @param string $completedParallelInputs
+   * @param string
    */
   public function setCompletedParallelInputs($completedParallelInputs)
   {
@@ -232,27 +134,21 @@ class ExplainQueryStage extends \Google\Collection
     return $this->completedParallelInputs;
   }
   /**
-   * Output only. Compute mode for this stage.
-   *
-   * Accepted values: COMPUTE_MODE_UNSPECIFIED, BIGQUERY, BI_ENGINE
-   *
-   * @param self::COMPUTE_MODE_* $computeMode
+   * @param string
    */
   public function setComputeMode($computeMode)
   {
     $this->computeMode = $computeMode;
   }
   /**
-   * @return self::COMPUTE_MODE_*
+   * @return string
    */
   public function getComputeMode()
   {
     return $this->computeMode;
   }
   /**
-   * Milliseconds the average shard spent on CPU-bound tasks.
-   *
-   * @param string $computeMsAvg
+   * @param string
    */
   public function setComputeMsAvg($computeMsAvg)
   {
@@ -266,9 +162,7 @@ class ExplainQueryStage extends \Google\Collection
     return $this->computeMsAvg;
   }
   /**
-   * Milliseconds the slowest shard spent on CPU-bound tasks.
-   *
-   * @param string $computeMsMax
+   * @param string
    */
   public function setComputeMsMax($computeMsMax)
   {
@@ -298,9 +192,7 @@ class ExplainQueryStage extends \Google\Collection
     return $this->computeRatioMax;
   }
   /**
-   * Stage end time represented as milliseconds since the epoch.
-   *
-   * @param string $endMs
+   * @param string
    */
   public function setEndMs($endMs)
   {
@@ -314,9 +206,7 @@ class ExplainQueryStage extends \Google\Collection
     return $this->endMs;
   }
   /**
-   * Unique ID for the stage within the plan.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -330,9 +220,7 @@ class ExplainQueryStage extends \Google\Collection
     return $this->id;
   }
   /**
-   * IDs for stages that are inputs to this stage.
-   *
-   * @param string[] $inputStages
+   * @param string[]
    */
   public function setInputStages($inputStages)
   {
@@ -346,9 +234,7 @@ class ExplainQueryStage extends \Google\Collection
     return $this->inputStages;
   }
   /**
-   * Human-readable name for the stage.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -362,9 +248,7 @@ class ExplainQueryStage extends \Google\Collection
     return $this->name;
   }
   /**
-   * Number of parallel input segments to be processed
-   *
-   * @param string $parallelInputs
+   * @param string
    */
   public function setParallelInputs($parallelInputs)
   {
@@ -378,9 +262,7 @@ class ExplainQueryStage extends \Google\Collection
     return $this->parallelInputs;
   }
   /**
-   * Milliseconds the average shard spent reading input.
-   *
-   * @param string $readMsAvg
+   * @param string
    */
   public function setReadMsAvg($readMsAvg)
   {
@@ -394,9 +276,7 @@ class ExplainQueryStage extends \Google\Collection
     return $this->readMsAvg;
   }
   /**
-   * Milliseconds the slowest shard spent reading input.
-   *
-   * @param string $readMsMax
+   * @param string
    */
   public function setReadMsMax($readMsMax)
   {
@@ -426,9 +306,7 @@ class ExplainQueryStage extends \Google\Collection
     return $this->readRatioMax;
   }
   /**
-   * Number of records read into the stage.
-   *
-   * @param string $recordsRead
+   * @param string
    */
   public function setRecordsRead($recordsRead)
   {
@@ -442,9 +320,7 @@ class ExplainQueryStage extends \Google\Collection
     return $this->recordsRead;
   }
   /**
-   * Number of records written by the stage.
-   *
-   * @param string $recordsWritten
+   * @param string
    */
   public function setRecordsWritten($recordsWritten)
   {
@@ -458,9 +334,7 @@ class ExplainQueryStage extends \Google\Collection
     return $this->recordsWritten;
   }
   /**
-   * Total number of bytes written to shuffle.
-   *
-   * @param string $shuffleOutputBytes
+   * @param string
    */
   public function setShuffleOutputBytes($shuffleOutputBytes)
   {
@@ -474,9 +348,7 @@ class ExplainQueryStage extends \Google\Collection
     return $this->shuffleOutputBytes;
   }
   /**
-   * Total number of bytes written to shuffle and spilled to disk.
-   *
-   * @param string $shuffleOutputBytesSpilled
+   * @param string
    */
   public function setShuffleOutputBytesSpilled($shuffleOutputBytesSpilled)
   {
@@ -490,9 +362,7 @@ class ExplainQueryStage extends \Google\Collection
     return $this->shuffleOutputBytesSpilled;
   }
   /**
-   * Slot-milliseconds used by the stage.
-   *
-   * @param string $slotMs
+   * @param string
    */
   public function setSlotMs($slotMs)
   {
@@ -506,9 +376,7 @@ class ExplainQueryStage extends \Google\Collection
     return $this->slotMs;
   }
   /**
-   * Stage start time represented as milliseconds since the epoch.
-   *
-   * @param string $startMs
+   * @param string
    */
   public function setStartMs($startMs)
   {
@@ -522,9 +390,7 @@ class ExplainQueryStage extends \Google\Collection
     return $this->startMs;
   }
   /**
-   * Current status for this stage.
-   *
-   * @param string $status
+   * @param string
    */
   public function setStatus($status)
   {
@@ -538,10 +404,7 @@ class ExplainQueryStage extends \Google\Collection
     return $this->status;
   }
   /**
-   * List of operations within the stage in dependency order (approximately
-   * chronological).
-   *
-   * @param ExplainQueryStep[] $steps
+   * @param ExplainQueryStep[]
    */
   public function setSteps($steps)
   {
@@ -555,9 +418,7 @@ class ExplainQueryStage extends \Google\Collection
     return $this->steps;
   }
   /**
-   * Milliseconds the average shard spent waiting to be scheduled.
-   *
-   * @param string $waitMsAvg
+   * @param string
    */
   public function setWaitMsAvg($waitMsAvg)
   {
@@ -571,9 +432,7 @@ class ExplainQueryStage extends \Google\Collection
     return $this->waitMsAvg;
   }
   /**
-   * Milliseconds the slowest shard spent waiting to be scheduled.
-   *
-   * @param string $waitMsMax
+   * @param string
    */
   public function setWaitMsMax($waitMsMax)
   {
@@ -603,9 +462,7 @@ class ExplainQueryStage extends \Google\Collection
     return $this->waitRatioMax;
   }
   /**
-   * Milliseconds the average shard spent on writing output.
-   *
-   * @param string $writeMsAvg
+   * @param string
    */
   public function setWriteMsAvg($writeMsAvg)
   {
@@ -619,9 +476,7 @@ class ExplainQueryStage extends \Google\Collection
     return $this->writeMsAvg;
   }
   /**
-   * Milliseconds the slowest shard spent on writing output.
-   *
-   * @param string $writeMsMax
+   * @param string
    */
   public function setWriteMsMax($writeMsMax)
   {

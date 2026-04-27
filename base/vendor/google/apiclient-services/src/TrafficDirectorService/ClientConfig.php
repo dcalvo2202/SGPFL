@@ -21,10 +21,6 @@ class ClientConfig extends \Google\Collection
 {
   protected $collection_key = 'xdsConfig';
   /**
-   * For xDS clients, the scope in which the data is used. For example, gRPC
-   * indicates the data plane target or that the data is associated with gRPC
-   * server(s).
-   *
    * @var string
    */
   public $clientScope;
@@ -36,11 +32,7 @@ class ClientConfig extends \Google\Collection
   protected $xdsConfigDataType = 'array';
 
   /**
-   * For xDS clients, the scope in which the data is used. For example, gRPC
-   * indicates the data plane target or that the data is associated with gRPC
-   * server(s).
-   *
-   * @param string $clientScope
+   * @param string
    */
   public function setClientScope($clientScope)
   {
@@ -54,10 +46,7 @@ class ClientConfig extends \Google\Collection
     return $this->clientScope;
   }
   /**
-   * Represents generic xDS config and the exact config structure depends on the
-   * type URL (like Cluster if it is CDS)
-   *
-   * @param GenericXdsConfig[] $genericXdsConfigs
+   * @param GenericXdsConfig[]
    */
   public function setGenericXdsConfigs($genericXdsConfigs)
   {
@@ -71,9 +60,7 @@ class ClientConfig extends \Google\Collection
     return $this->genericXdsConfigs;
   }
   /**
-   * Node for a particular client.
-   *
-   * @param Node $node
+   * @param Node
    */
   public function setNode(Node $node)
   {
@@ -87,18 +74,13 @@ class ClientConfig extends \Google\Collection
     return $this->node;
   }
   /**
-   * This field is deprecated in favor of generic_xds_configs which is much
-   * simpler and uniform in structure.
-   *
-   * @deprecated
-   * @param PerXdsConfig[] $xdsConfig
+   * @param PerXdsConfig[]
    */
   public function setXdsConfig($xdsConfig)
   {
     $this->xdsConfig = $xdsConfig;
   }
   /**
-   * @deprecated
    * @return PerXdsConfig[]
    */
   public function getXdsConfig()

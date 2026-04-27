@@ -20,18 +20,12 @@ namespace Google\Service\Compute;
 class NodeGroupsSetNodeTemplateRequest extends \Google\Model
 {
   /**
-   * Full or partial URL of the node template resource to be updated for this
-   * node group.
-   *
    * @var string
    */
   public $nodeTemplate;
 
   /**
-   * Full or partial URL of the node template resource to be updated for this
-   * node group.
-   *
-   * @param string $nodeTemplate
+   * @param string
    */
   public function setNodeTemplate($nodeTemplate)
   {

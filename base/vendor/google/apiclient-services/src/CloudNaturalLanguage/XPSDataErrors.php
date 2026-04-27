@@ -20,43 +20,16 @@ namespace Google\Service\CloudNaturalLanguage;
 class XPSDataErrors extends \Google\Model
 {
   /**
-   * Not specified.
-   */
-  public const ERROR_TYPE_ERROR_TYPE_UNSPECIFIED = 'ERROR_TYPE_UNSPECIFIED';
-  /**
-   * Audio format not in the formats by cloud-speech AutoML. Currently only wav
-   * and flac file formats are supported.
-   */
-  public const ERROR_TYPE_UNSUPPORTED_AUDIO_FORMAT = 'UNSUPPORTED_AUDIO_FORMAT';
-  /**
-   * File format differnt from what is specified in the file name extension.
-   */
-  public const ERROR_TYPE_FILE_EXTENSION_MISMATCH_WITH_AUDIO_FORMAT = 'FILE_EXTENSION_MISMATCH_WITH_AUDIO_FORMAT';
-  /**
-   * File too large. Maximum allowed size is 50 MB.
-   */
-  public const ERROR_TYPE_FILE_TOO_LARGE = 'FILE_TOO_LARGE';
-  /**
-   * Transcript is missing.
-   */
-  public const ERROR_TYPE_MISSING_TRANSCRIPTION = 'MISSING_TRANSCRIPTION';
-  /**
-   * Number of records having errors associated with the enum.
-   *
    * @var int
    */
   public $count;
   /**
-   * Type of the error.
-   *
    * @var string
    */
   public $errorType;
 
   /**
-   * Number of records having errors associated with the enum.
-   *
-   * @param int $count
+   * @param int
    */
   public function setCount($count)
   {
@@ -70,20 +43,14 @@ class XPSDataErrors extends \Google\Model
     return $this->count;
   }
   /**
-   * Type of the error.
-   *
-   * Accepted values: ERROR_TYPE_UNSPECIFIED, UNSUPPORTED_AUDIO_FORMAT,
-   * FILE_EXTENSION_MISMATCH_WITH_AUDIO_FORMAT, FILE_TOO_LARGE,
-   * MISSING_TRANSCRIPTION
-   *
-   * @param self::ERROR_TYPE_* $errorType
+   * @param string
    */
   public function setErrorType($errorType)
   {
     $this->errorType = $errorType;
   }
   /**
-   * @return self::ERROR_TYPE_*
+   * @return string
    */
   public function getErrorType()
   {

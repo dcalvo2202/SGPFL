@@ -19,10 +19,6 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowCxV3ExportIntentsRequest extends \Google\Collection
 {
-  public const DATA_FORMAT_DATA_FORMAT_UNSPECIFIED = 'DATA_FORMAT_UNSPECIFIED';
-  public const DATA_FORMAT_BLOB = 'BLOB';
-  public const DATA_FORMAT_JSON = 'JSON';
-  public const DATA_FORMAT_CSV = 'CSV';
   protected $collection_key = 'intents';
   /**
    * @var string
@@ -42,21 +38,21 @@ class GoogleCloudDialogflowCxV3ExportIntentsRequest extends \Google\Collection
   public $intentsUri;
 
   /**
-   * @param self::DATA_FORMAT_* $dataFormat
+   * @param string
    */
   public function setDataFormat($dataFormat)
   {
     $this->dataFormat = $dataFormat;
   }
   /**
-   * @return self::DATA_FORMAT_*
+   * @return string
    */
   public function getDataFormat()
   {
     return $this->dataFormat;
   }
   /**
-   * @param string[] $intents
+   * @param string[]
    */
   public function setIntents($intents)
   {
@@ -70,7 +66,7 @@ class GoogleCloudDialogflowCxV3ExportIntentsRequest extends \Google\Collection
     return $this->intents;
   }
   /**
-   * @param bool $intentsContentInline
+   * @param bool
    */
   public function setIntentsContentInline($intentsContentInline)
   {
@@ -84,7 +80,7 @@ class GoogleCloudDialogflowCxV3ExportIntentsRequest extends \Google\Collection
     return $this->intentsContentInline;
   }
   /**
-   * @param string $intentsUri
+   * @param string
    */
   public function setIntentsUri($intentsUri)
   {

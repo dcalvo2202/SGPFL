@@ -20,38 +20,16 @@ namespace Google\Service\CloudBuild;
 class TaskResult extends \Google\Model
 {
   /**
-   * Default enum type; should not be used.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * Default
-   */
-  public const TYPE_STRING = 'STRING';
-  /**
-   * Array type
-   */
-  public const TYPE_ARRAY = 'ARRAY';
-  /**
-   * Object type
-   */
-  public const TYPE_OBJECT = 'OBJECT';
-  /**
-   * Description of the result.
-   *
    * @var string
    */
   public $description;
   /**
-   * Name of the result.
-   *
    * @var string
    */
   public $name;
   protected $propertiesType = PropertySpec::class;
   protected $propertiesDataType = 'map';
   /**
-   * The type of data that the result holds.
-   *
    * @var string
    */
   public $type;
@@ -59,9 +37,7 @@ class TaskResult extends \Google\Model
   protected $valueDataType = '';
 
   /**
-   * Description of the result.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -75,9 +51,7 @@ class TaskResult extends \Google\Model
     return $this->description;
   }
   /**
-   * Name of the result.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -91,10 +65,7 @@ class TaskResult extends \Google\Model
     return $this->name;
   }
   /**
-   * When type is OBJECT, this map holds the names of fields inside that object
-   * along with the type of data each field holds.
-   *
-   * @param PropertySpec[] $properties
+   * @param PropertySpec[]
    */
   public function setProperties($properties)
   {
@@ -108,28 +79,21 @@ class TaskResult extends \Google\Model
     return $this->properties;
   }
   /**
-   * The type of data that the result holds.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, STRING, ARRAY, OBJECT
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * Optional. Optionally used to initialize a Task's result with a Step's
-   * result.
-   *
-   * @param ParamValue $value
+   * @param ParamValue
    */
   public function setValue(ParamValue $value)
   {

@@ -24,9 +24,7 @@ class SendWorkerMessagesResponse extends \Google\Collection
   protected $workerMessageResponsesDataType = 'array';
 
   /**
-   * The servers response to the worker messages.
-   *
-   * @param WorkerMessageResponse[] $workerMessageResponses
+   * @param WorkerMessageResponse[]
    */
   public function setWorkerMessageResponses($workerMessageResponses)
   {

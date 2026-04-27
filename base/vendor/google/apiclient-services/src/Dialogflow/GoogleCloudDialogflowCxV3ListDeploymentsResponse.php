@@ -28,7 +28,7 @@ class GoogleCloudDialogflowCxV3ListDeploymentsResponse extends \Google\Collectio
   public $nextPageToken;
 
   /**
-   * @param GoogleCloudDialogflowCxV3Deployment[] $deployments
+   * @param GoogleCloudDialogflowCxV3Deployment[]
    */
   public function setDeployments($deployments)
   {
@@ -42,7 +42,7 @@ class GoogleCloudDialogflowCxV3ListDeploymentsResponse extends \Google\Collectio
     return $this->deployments;
   }
   /**
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

@@ -20,20 +20,12 @@ namespace Google\Service\APIhub;
 class GoogleCloudApihubV1GoogleServiceAccountConfig extends \Google\Model
 {
   /**
-   * Required. The service account to be used for authenticating request. The
-   * `iam.serviceAccounts.getAccessToken` permission should be granted on this
-   * service account to the impersonator service account.
-   *
    * @var string
    */
   public $serviceAccount;
 
   /**
-   * Required. The service account to be used for authenticating request. The
-   * `iam.serviceAccounts.getAccessToken` permission should be granted on this
-   * service account to the impersonator service account.
-   *
-   * @param string $serviceAccount
+   * @param string
    */
   public function setServiceAccount($serviceAccount)
   {

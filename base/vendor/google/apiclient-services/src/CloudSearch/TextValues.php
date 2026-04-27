@@ -21,16 +21,12 @@ class TextValues extends \Google\Collection
 {
   protected $collection_key = 'values';
   /**
-   * The maximum allowable length for text values is 2048 characters.
-   *
    * @var string[]
    */
   public $values;
 
   /**
-   * The maximum allowable length for text values is 2048 characters.
-   *
-   * @param string[] $values
+   * @param string[]
    */
   public function setValues($values)
   {

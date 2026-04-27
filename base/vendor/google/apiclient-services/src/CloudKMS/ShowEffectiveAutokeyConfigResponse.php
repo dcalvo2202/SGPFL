@@ -20,18 +20,12 @@ namespace Google\Service\CloudKMS;
 class ShowEffectiveAutokeyConfigResponse extends \Google\Model
 {
   /**
-   * Name of the key project configured in the resource project's folder
-   * ancestry.
-   *
    * @var string
    */
   public $keyProject;
 
   /**
-   * Name of the key project configured in the resource project's folder
-   * ancestry.
-   *
-   * @param string $keyProject
+   * @param string
    */
   public function setKeyProject($keyProject)
   {

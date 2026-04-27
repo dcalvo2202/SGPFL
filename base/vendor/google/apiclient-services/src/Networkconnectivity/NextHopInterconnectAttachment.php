@@ -20,34 +20,20 @@ namespace Google\Service\Networkconnectivity;
 class NextHopInterconnectAttachment extends \Google\Model
 {
   /**
-   * Indicates whether site-to-site data transfer is allowed for this
-   * interconnect attachment resource. Data transfer is available only in
-   * [supported locations](https://cloud.google.com/network-
-   * connectivity/docs/network-connectivity-center/concepts/locations).
-   *
    * @var bool
    */
   public $siteToSiteDataTransfer;
   /**
-   * The URI of the interconnect attachment resource.
-   *
    * @var string
    */
   public $uri;
   /**
-   * The VPC network where this interconnect attachment is located.
-   *
    * @var string
    */
   public $vpcNetwork;
 
   /**
-   * Indicates whether site-to-site data transfer is allowed for this
-   * interconnect attachment resource. Data transfer is available only in
-   * [supported locations](https://cloud.google.com/network-
-   * connectivity/docs/network-connectivity-center/concepts/locations).
-   *
-   * @param bool $siteToSiteDataTransfer
+   * @param bool
    */
   public function setSiteToSiteDataTransfer($siteToSiteDataTransfer)
   {
@@ -61,9 +47,7 @@ class NextHopInterconnectAttachment extends \Google\Model
     return $this->siteToSiteDataTransfer;
   }
   /**
-   * The URI of the interconnect attachment resource.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {
@@ -77,9 +61,7 @@ class NextHopInterconnectAttachment extends \Google\Model
     return $this->uri;
   }
   /**
-   * The VPC network where this interconnect attachment is located.
-   *
-   * @param string $vpcNetwork
+   * @param string
    */
   public function setVpcNetwork($vpcNetwork)
   {

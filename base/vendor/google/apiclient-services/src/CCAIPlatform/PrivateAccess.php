@@ -28,10 +28,7 @@ class PrivateAccess extends \Google\Collection
   protected $pscSettingDataType = '';
 
   /**
-   * List of egress components that should not be accessed via the Internet. For
-   * more information see go/ccaip-private-path-v2.
-   *
-   * @param Component[] $egressSettings
+   * @param Component[]
    */
   public function setEgressSettings($egressSettings)
   {
@@ -45,10 +42,7 @@ class PrivateAccess extends \Google\Collection
     return $this->egressSettings;
   }
   /**
-   * List of ingress components that should not be accessed via the Internet.
-   * For more information see go/ccaip-private-path-v2.
-   *
-   * @param Component[] $ingressSettings
+   * @param Component[]
    */
   public function setIngressSettings($ingressSettings)
   {
@@ -62,9 +56,7 @@ class PrivateAccess extends \Google\Collection
     return $this->ingressSettings;
   }
   /**
-   * Private service connect settings.
-   *
-   * @param PscSetting $pscSetting
+   * @param PscSetting
    */
   public function setPscSetting(PscSetting $pscSetting)
   {

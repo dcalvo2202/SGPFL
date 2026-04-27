@@ -23,22 +23,12 @@ class ListEntitiesResponse extends \Google\Collection
   protected $entitiesType = Entity::class;
   protected $entitiesDataType = 'array';
   /**
-   * Metadata like service latency, etc.
-   *
-   * @var array[]
-   */
-  public $metadata;
-  /**
-   * Next page token if more records are available.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * List containing entity rows.
-   *
-   * @param Entity[] $entities
+   * @param Entity[]
    */
   public function setEntities($entities)
   {
@@ -52,25 +42,7 @@ class ListEntitiesResponse extends \Google\Collection
     return $this->entities;
   }
   /**
-   * Metadata like service latency, etc.
-   *
-   * @param array[] $metadata
-   */
-  public function setMetadata($metadata)
-  {
-    $this->metadata = $metadata;
-  }
-  /**
-   * @return array[]
-   */
-  public function getMetadata()
-  {
-    return $this->metadata;
-  }
-  /**
-   * Next page token if more records are available.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

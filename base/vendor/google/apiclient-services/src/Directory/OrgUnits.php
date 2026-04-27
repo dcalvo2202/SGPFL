@@ -21,15 +21,10 @@ class OrgUnits extends \Google\Collection
 {
   protected $collection_key = 'organizationUnits';
   /**
-   * ETag of the resource.
-   *
    * @var string
    */
   public $etag;
   /**
-   * The type of the API resource. For Org Unit resources, the type is
-   * `admin#directory#orgUnits`.
-   *
    * @var string
    */
   public $kind;
@@ -37,9 +32,7 @@ class OrgUnits extends \Google\Collection
   protected $organizationUnitsDataType = 'array';
 
   /**
-   * ETag of the resource.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {
@@ -53,10 +46,7 @@ class OrgUnits extends \Google\Collection
     return $this->etag;
   }
   /**
-   * The type of the API resource. For Org Unit resources, the type is
-   * `admin#directory#orgUnits`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -70,9 +60,7 @@ class OrgUnits extends \Google\Collection
     return $this->kind;
   }
   /**
-   * A list of organizational unit objects.
-   *
-   * @param OrgUnit[] $organizationUnits
+   * @param OrgUnit[]
    */
   public function setOrganizationUnits($organizationUnits)
   {

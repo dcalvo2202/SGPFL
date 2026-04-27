@@ -21,22 +21,14 @@ class GoogleChromePolicyVersionsV1PolicySchemaFieldDescription extends \Google\C
 {
   protected $collection_key = 'requiredItems';
   /**
-   * Output only. Client default if the policy is unset.
-   *
    * @var array
    */
   public $defaultValue;
   /**
-   * Deprecated. Use name and field_description instead. The description for the
-   * field.
-   *
-   * @deprecated
    * @var string
    */
   public $description;
   /**
-   * Output only. The name of the field for associated with this description.
-   *
    * @var string
    */
   public $field;
@@ -45,22 +37,16 @@ class GoogleChromePolicyVersionsV1PolicySchemaFieldDescription extends \Google\C
   protected $fieldDependenciesType = GoogleChromePolicyVersionsV1PolicySchemaFieldDependencies::class;
   protected $fieldDependenciesDataType = 'array';
   /**
-   * Output only. The description of the field.
-   *
    * @var string
    */
   public $fieldDescription;
   /**
-   * Output only. Any input constraints associated on the values for the field.
-   *
    * @var string
    */
   public $inputConstraint;
   protected $knownValueDescriptionsType = GoogleChromePolicyVersionsV1PolicySchemaFieldKnownValueDescription::class;
   protected $knownValueDescriptionsDataType = 'array';
   /**
-   * Output only. The name of the field.
-   *
    * @var string
    */
   public $name;
@@ -70,9 +56,7 @@ class GoogleChromePolicyVersionsV1PolicySchemaFieldDescription extends \Google\C
   protected $requiredItemsDataType = 'array';
 
   /**
-   * Output only. Client default if the policy is unset.
-   *
-   * @param array $defaultValue
+   * @param array
    */
   public function setDefaultValue($defaultValue)
   {
@@ -86,18 +70,13 @@ class GoogleChromePolicyVersionsV1PolicySchemaFieldDescription extends \Google\C
     return $this->defaultValue;
   }
   /**
-   * Deprecated. Use name and field_description instead. The description for the
-   * field.
-   *
-   * @deprecated
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
     $this->description = $description;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getDescription()
@@ -105,9 +84,7 @@ class GoogleChromePolicyVersionsV1PolicySchemaFieldDescription extends \Google\C
     return $this->description;
   }
   /**
-   * Output only. The name of the field for associated with this description.
-   *
-   * @param string $field
+   * @param string
    */
   public function setField($field)
   {
@@ -121,10 +98,7 @@ class GoogleChromePolicyVersionsV1PolicySchemaFieldDescription extends \Google\C
     return $this->field;
   }
   /**
-   * Output only. Information on any input constraints associated on the values
-   * for the field.
-   *
-   * @param GoogleChromePolicyVersionsV1FieldConstraints $fieldConstraints
+   * @param GoogleChromePolicyVersionsV1FieldConstraints
    */
   public function setFieldConstraints(GoogleChromePolicyVersionsV1FieldConstraints $fieldConstraints)
   {
@@ -138,11 +112,7 @@ class GoogleChromePolicyVersionsV1PolicySchemaFieldDescription extends \Google\C
     return $this->fieldConstraints;
   }
   /**
-   * Output only. Provides a list of fields and values. At least one of the
-   * fields must have the corresponding value in order for this field to be
-   * allowed to be set.
-   *
-   * @param GoogleChromePolicyVersionsV1PolicySchemaFieldDependencies[] $fieldDependencies
+   * @param GoogleChromePolicyVersionsV1PolicySchemaFieldDependencies[]
    */
   public function setFieldDependencies($fieldDependencies)
   {
@@ -156,9 +126,7 @@ class GoogleChromePolicyVersionsV1PolicySchemaFieldDescription extends \Google\C
     return $this->fieldDependencies;
   }
   /**
-   * Output only. The description of the field.
-   *
-   * @param string $fieldDescription
+   * @param string
    */
   public function setFieldDescription($fieldDescription)
   {
@@ -172,9 +140,7 @@ class GoogleChromePolicyVersionsV1PolicySchemaFieldDescription extends \Google\C
     return $this->fieldDescription;
   }
   /**
-   * Output only. Any input constraints associated on the values for the field.
-   *
-   * @param string $inputConstraint
+   * @param string
    */
   public function setInputConstraint($inputConstraint)
   {
@@ -188,10 +154,7 @@ class GoogleChromePolicyVersionsV1PolicySchemaFieldDescription extends \Google\C
     return $this->inputConstraint;
   }
   /**
-   * Output only. If the field has a set of known values, this field will
-   * provide a description for these values.
-   *
-   * @param GoogleChromePolicyVersionsV1PolicySchemaFieldKnownValueDescription[] $knownValueDescriptions
+   * @param GoogleChromePolicyVersionsV1PolicySchemaFieldKnownValueDescription[]
    */
   public function setKnownValueDescriptions($knownValueDescriptions)
   {
@@ -205,9 +168,7 @@ class GoogleChromePolicyVersionsV1PolicySchemaFieldDescription extends \Google\C
     return $this->knownValueDescriptions;
   }
   /**
-   * Output only. The name of the field.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -221,12 +182,7 @@ class GoogleChromePolicyVersionsV1PolicySchemaFieldDescription extends \Google\C
     return $this->name;
   }
   /**
-   * Output only. Provides the description of the fields nested in this field,
-   * if the field is a message type that defines multiple fields. Fields are
-   * suggested to be displayed by the ordering in this list, not by field
-   * number.
-   *
-   * @param GoogleChromePolicyVersionsV1PolicySchemaFieldDescription[] $nestedFieldDescriptions
+   * @param GoogleChromePolicyVersionsV1PolicySchemaFieldDescription[]
    */
   public function setNestedFieldDescriptions($nestedFieldDescriptions)
   {
@@ -240,10 +196,7 @@ class GoogleChromePolicyVersionsV1PolicySchemaFieldDescription extends \Google\C
     return $this->nestedFieldDescriptions;
   }
   /**
-   * Output only. Provides a list of fields that are required to be set if this
-   * field has a certain value.
-   *
-   * @param GoogleChromePolicyVersionsV1PolicySchemaRequiredItems[] $requiredItems
+   * @param GoogleChromePolicyVersionsV1PolicySchemaRequiredItems[]
    */
   public function setRequiredItems($requiredItems)
   {

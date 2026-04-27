@@ -20,28 +20,16 @@ namespace Google\Service\CloudDeploy;
 class PipelineReadyCondition extends \Google\Model
 {
   /**
-   * True if the Pipeline is in a valid state. Otherwise at least one condition
-   * in `PipelineCondition` is in an invalid state. Iterate over those
-   * conditions and see which condition(s) has status = false to find out what
-   * is wrong with the Pipeline.
-   *
    * @var bool
    */
   public $status;
   /**
-   * Last time the condition was updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * True if the Pipeline is in a valid state. Otherwise at least one condition
-   * in `PipelineCondition` is in an invalid state. Iterate over those
-   * conditions and see which condition(s) has status = false to find out what
-   * is wrong with the Pipeline.
-   *
-   * @param bool $status
+   * @param bool
    */
   public function setStatus($status)
   {
@@ -55,9 +43,7 @@ class PipelineReadyCondition extends \Google\Model
     return $this->status;
   }
   /**
-   * Last time the condition was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

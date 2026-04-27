@@ -23,20 +23,12 @@ class ListBidResponsesWithoutBidsResponse extends \Google\Collection
   protected $bidResponseWithoutBidsStatusRowsType = BidResponseWithoutBidsStatusRow::class;
   protected $bidResponseWithoutBidsStatusRowsDataType = 'array';
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * ListBidResponsesWithoutBidsRequest.pageToken field in the subsequent call
-   * to the bidResponsesWithoutBids.list method to retrieve the next page of
-   * results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * List of rows, with counts of bid responses without bids aggregated by
-   * status.
-   *
-   * @param BidResponseWithoutBidsStatusRow[] $bidResponseWithoutBidsStatusRows
+   * @param BidResponseWithoutBidsStatusRow[]
    */
   public function setBidResponseWithoutBidsStatusRows($bidResponseWithoutBidsStatusRows)
   {
@@ -50,12 +42,7 @@ class ListBidResponsesWithoutBidsResponse extends \Google\Collection
     return $this->bidResponseWithoutBidsStatusRows;
   }
   /**
-   * A token to retrieve the next page of results. Pass this value in the
-   * ListBidResponsesWithoutBidsRequest.pageToken field in the subsequent call
-   * to the bidResponsesWithoutBids.list method to retrieve the next page of
-   * results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

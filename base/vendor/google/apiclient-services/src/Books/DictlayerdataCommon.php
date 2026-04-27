@@ -20,18 +20,12 @@ namespace Google\Service\Books;
 class DictlayerdataCommon extends \Google\Model
 {
   /**
-   * The display title and localized canonical name to use when searching for
-   * this entity on Google search.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * The display title and localized canonical name to use when searching for
-   * this entity on Google search.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

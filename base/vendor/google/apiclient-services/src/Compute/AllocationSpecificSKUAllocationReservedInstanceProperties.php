@@ -25,31 +25,20 @@ class AllocationSpecificSKUAllocationReservedInstanceProperties extends \Google\
   protected $localSsdsType = AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk::class;
   protected $localSsdsDataType = 'array';
   /**
-   * An opaque location hint used to place the allocation close to other
-   * resources. This field is for use by internal tools that use the public API.
-   *
    * @var string
    */
   public $locationHint;
   /**
-   * Specifies type of machine (name only) which has fixed number of vCPUs and
-   * fixed amount of memory. This also includes specifying custom machine type
-   * following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
-   *
    * @var string
    */
   public $machineType;
   /**
-   * Minimum cpu platform the reservation.
-   *
    * @var string
    */
   public $minCpuPlatform;
 
   /**
-   * Specifies accelerator type and count.
-   *
-   * @param AcceleratorConfig[] $guestAccelerators
+   * @param AcceleratorConfig[]
    */
   public function setGuestAccelerators($guestAccelerators)
   {
@@ -63,10 +52,7 @@ class AllocationSpecificSKUAllocationReservedInstanceProperties extends \Google\
     return $this->guestAccelerators;
   }
   /**
-   * Specifies amount of local ssd to reserve with each instance. The type of
-   * disk is local-ssd.
-   *
-   * @param AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk[] $localSsds
+   * @param AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk[]
    */
   public function setLocalSsds($localSsds)
   {
@@ -80,10 +66,7 @@ class AllocationSpecificSKUAllocationReservedInstanceProperties extends \Google\
     return $this->localSsds;
   }
   /**
-   * An opaque location hint used to place the allocation close to other
-   * resources. This field is for use by internal tools that use the public API.
-   *
-   * @param string $locationHint
+   * @param string
    */
   public function setLocationHint($locationHint)
   {
@@ -97,11 +80,7 @@ class AllocationSpecificSKUAllocationReservedInstanceProperties extends \Google\
     return $this->locationHint;
   }
   /**
-   * Specifies type of machine (name only) which has fixed number of vCPUs and
-   * fixed amount of memory. This also includes specifying custom machine type
-   * following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
-   *
-   * @param string $machineType
+   * @param string
    */
   public function setMachineType($machineType)
   {
@@ -115,9 +94,7 @@ class AllocationSpecificSKUAllocationReservedInstanceProperties extends \Google\
     return $this->machineType;
   }
   /**
-   * Minimum cpu platform the reservation.
-   *
-   * @param string $minCpuPlatform
+   * @param string
    */
   public function setMinCpuPlatform($minCpuPlatform)
   {

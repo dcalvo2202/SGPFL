@@ -23,18 +23,12 @@ class ListCseIdentitiesResponse extends \Google\Collection
   protected $cseIdentitiesType = CseIdentity::class;
   protected $cseIdentitiesDataType = 'array';
   /**
-   * Pagination token to be passed to a subsequent ListCseIdentities call in
-   * order to retrieve the next page of identities. If this value is not
-   * returned or is the empty string, then no further pages remain.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * One page of the list of CSE identities configured for the user.
-   *
-   * @param CseIdentity[] $cseIdentities
+   * @param CseIdentity[]
    */
   public function setCseIdentities($cseIdentities)
   {
@@ -48,11 +42,7 @@ class ListCseIdentitiesResponse extends \Google\Collection
     return $this->cseIdentities;
   }
   /**
-   * Pagination token to be passed to a subsequent ListCseIdentities call in
-   * order to retrieve the next page of identities. If this value is not
-   * returned or is the empty string, then no further pages remain.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

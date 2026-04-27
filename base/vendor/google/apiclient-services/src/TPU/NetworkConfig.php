@@ -20,50 +20,28 @@ namespace Google\Service\TPU;
 class NetworkConfig extends \Google\Model
 {
   /**
-   * Allows the TPU node to send and receive packets with non-matching
-   * destination or source IPs. This is required if you plan to use the TPU
-   * workers to forward routes.
-   *
    * @var bool
    */
   public $canIpForward;
   /**
-   * Indicates that external IP addresses would be associated with the TPU
-   * workers. If set to false, the specified subnetwork or network should have
-   * Private Google Access enabled.
-   *
    * @var bool
    */
   public $enableExternalIps;
   /**
-   * The name of the network for the TPU node. It must be a preexisting Google
-   * Compute Engine network. If none is provided, "default" will be used.
-   *
    * @var string
    */
   public $network;
   /**
-   * Optional. Specifies networking queue count for TPU VM instance's network
-   * interface.
-   *
    * @var int
    */
   public $queueCount;
   /**
-   * The name of the subnetwork for the TPU node. It must be a preexisting
-   * Google Compute Engine subnetwork. If none is provided, "default" will be
-   * used.
-   *
    * @var string
    */
   public $subnetwork;
 
   /**
-   * Allows the TPU node to send and receive packets with non-matching
-   * destination or source IPs. This is required if you plan to use the TPU
-   * workers to forward routes.
-   *
-   * @param bool $canIpForward
+   * @param bool
    */
   public function setCanIpForward($canIpForward)
   {
@@ -77,11 +55,7 @@ class NetworkConfig extends \Google\Model
     return $this->canIpForward;
   }
   /**
-   * Indicates that external IP addresses would be associated with the TPU
-   * workers. If set to false, the specified subnetwork or network should have
-   * Private Google Access enabled.
-   *
-   * @param bool $enableExternalIps
+   * @param bool
    */
   public function setEnableExternalIps($enableExternalIps)
   {
@@ -95,10 +69,7 @@ class NetworkConfig extends \Google\Model
     return $this->enableExternalIps;
   }
   /**
-   * The name of the network for the TPU node. It must be a preexisting Google
-   * Compute Engine network. If none is provided, "default" will be used.
-   *
-   * @param string $network
+   * @param string
    */
   public function setNetwork($network)
   {
@@ -112,10 +83,7 @@ class NetworkConfig extends \Google\Model
     return $this->network;
   }
   /**
-   * Optional. Specifies networking queue count for TPU VM instance's network
-   * interface.
-   *
-   * @param int $queueCount
+   * @param int
    */
   public function setQueueCount($queueCount)
   {
@@ -129,11 +97,7 @@ class NetworkConfig extends \Google\Model
     return $this->queueCount;
   }
   /**
-   * The name of the subnetwork for the TPU node. It must be a preexisting
-   * Google Compute Engine subnetwork. If none is provided, "default" will be
-   * used.
-   *
-   * @param string $subnetwork
+   * @param string
    */
   public function setSubnetwork($subnetwork)
   {

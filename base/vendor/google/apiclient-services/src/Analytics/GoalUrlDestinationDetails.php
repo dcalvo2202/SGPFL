@@ -21,38 +21,26 @@ class GoalUrlDestinationDetails extends \Google\Collection
 {
   protected $collection_key = 'steps';
   /**
-   * Determines if the goal URL must exactly match the capitalization of visited
-   * URLs.
-   *
    * @var bool
    */
   public $caseSensitive;
   /**
-   * Determines if the first step in this goal is required.
-   *
    * @var bool
    */
   public $firstStepRequired;
   /**
-   * Match type for the goal URL. Possible values are HEAD, EXACT, or REGEX.
-   *
    * @var string
    */
   public $matchType;
   protected $stepsType = GoalUrlDestinationDetailsSteps::class;
   protected $stepsDataType = 'array';
   /**
-   * URL for this goal.
-   *
    * @var string
    */
   public $url;
 
   /**
-   * Determines if the goal URL must exactly match the capitalization of visited
-   * URLs.
-   *
-   * @param bool $caseSensitive
+   * @param bool
    */
   public function setCaseSensitive($caseSensitive)
   {
@@ -66,9 +54,7 @@ class GoalUrlDestinationDetails extends \Google\Collection
     return $this->caseSensitive;
   }
   /**
-   * Determines if the first step in this goal is required.
-   *
-   * @param bool $firstStepRequired
+   * @param bool
    */
   public function setFirstStepRequired($firstStepRequired)
   {
@@ -82,9 +68,7 @@ class GoalUrlDestinationDetails extends \Google\Collection
     return $this->firstStepRequired;
   }
   /**
-   * Match type for the goal URL. Possible values are HEAD, EXACT, or REGEX.
-   *
-   * @param string $matchType
+   * @param string
    */
   public function setMatchType($matchType)
   {
@@ -98,9 +82,7 @@ class GoalUrlDestinationDetails extends \Google\Collection
     return $this->matchType;
   }
   /**
-   * List of steps configured for this goal funnel.
-   *
-   * @param GoalUrlDestinationDetailsSteps[] $steps
+   * @param GoalUrlDestinationDetailsSteps[]
    */
   public function setSteps($steps)
   {
@@ -114,9 +96,7 @@ class GoalUrlDestinationDetails extends \Google\Collection
     return $this->steps;
   }
   /**
-   * URL for this goal.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

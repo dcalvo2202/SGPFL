@@ -20,23 +20,16 @@ namespace Google\Service\GKEHub;
 class IdentityServiceDiagnosticInterface extends \Google\Model
 {
   /**
-   * Determines whether to enable the diagnostic interface.
-   *
    * @var bool
    */
   public $enabled;
   /**
-   * Determines the expiration time of the diagnostic interface enablement. When
-   * reached, requests to the interface would be automatically rejected.
-   *
    * @var string
    */
   public $expirationTime;
 
   /**
-   * Determines whether to enable the diagnostic interface.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {
@@ -50,10 +43,7 @@ class IdentityServiceDiagnosticInterface extends \Google\Model
     return $this->enabled;
   }
   /**
-   * Determines the expiration time of the diagnostic interface enablement. When
-   * reached, requests to the interface would be automatically rejected.
-   *
-   * @param string $expirationTime
+   * @param string
    */
   public function setExpirationTime($expirationTime)
   {

@@ -23,16 +23,12 @@ class GoogleCloudIntegrationsV1alphaListConnectionsResponse extends \Google\Coll
   protected $connectionsType = GoogleCloudConnectorsV1Connection::class;
   protected $connectionsDataType = 'array';
   /**
-   * Next page token.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Connections.
-   *
-   * @param GoogleCloudConnectorsV1Connection[] $connections
+   * @param GoogleCloudConnectorsV1Connection[]
    */
   public function setConnections($connections)
   {
@@ -46,9 +42,7 @@ class GoogleCloudIntegrationsV1alphaListConnectionsResponse extends \Google\Coll
     return $this->connections;
   }
   /**
-   * Next page token.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

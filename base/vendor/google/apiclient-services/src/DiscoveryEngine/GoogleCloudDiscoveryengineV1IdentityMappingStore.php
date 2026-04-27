@@ -22,29 +22,16 @@ class GoogleCloudDiscoveryengineV1IdentityMappingStore extends \Google\Model
   protected $cmekConfigType = GoogleCloudDiscoveryengineV1CmekConfig::class;
   protected $cmekConfigDataType = '';
   /**
-   * Input only. The KMS key to be used to protect this Identity Mapping Store
-   * at creation time. Must be set for requests that need to comply with CMEK
-   * Org Policy protections. If this field is set and processed successfully,
-   * the Identity Mapping Store will be protected by the KMS key, as indicated
-   * in the cmek_config field.
-   *
    * @var string
    */
   public $kmsKeyName;
   /**
-   * Immutable. The full resource name of the identity mapping store. Format: `p
-   * rojects/{project}/locations/{location}/identityMappingStores/{identity_mapp
-   * ing_store}`. This field must be a UTF-8 encoded string with a length limit
-   * of 1024 characters.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Output only. CMEK-related information for the Identity Mapping Store.
-   *
-   * @param GoogleCloudDiscoveryengineV1CmekConfig $cmekConfig
+   * @param GoogleCloudDiscoveryengineV1CmekConfig
    */
   public function setCmekConfig(GoogleCloudDiscoveryengineV1CmekConfig $cmekConfig)
   {
@@ -58,13 +45,7 @@ class GoogleCloudDiscoveryengineV1IdentityMappingStore extends \Google\Model
     return $this->cmekConfig;
   }
   /**
-   * Input only. The KMS key to be used to protect this Identity Mapping Store
-   * at creation time. Must be set for requests that need to comply with CMEK
-   * Org Policy protections. If this field is set and processed successfully,
-   * the Identity Mapping Store will be protected by the KMS key, as indicated
-   * in the cmek_config field.
-   *
-   * @param string $kmsKeyName
+   * @param string
    */
   public function setKmsKeyName($kmsKeyName)
   {
@@ -78,12 +59,7 @@ class GoogleCloudDiscoveryengineV1IdentityMappingStore extends \Google\Model
     return $this->kmsKeyName;
   }
   /**
-   * Immutable. The full resource name of the identity mapping store. Format: `p
-   * rojects/{project}/locations/{location}/identityMappingStores/{identity_mapp
-   * ing_store}`. This field must be a UTF-8 encoded string with a length limit
-   * of 1024 characters.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

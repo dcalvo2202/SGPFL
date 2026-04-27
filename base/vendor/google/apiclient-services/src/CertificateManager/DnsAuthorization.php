@@ -20,75 +20,38 @@ namespace Google\Service\CertificateManager;
 class DnsAuthorization extends \Google\Model
 {
   /**
-   * Type is unspecified.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * FIXED_RECORD DNS authorization uses DNS-01 validation method.
-   */
-  public const TYPE_FIXED_RECORD = 'FIXED_RECORD';
-  /**
-   * PER_PROJECT_RECORD DNS authorization allows for independent management of
-   * Google-managed certificates with DNS authorization across multiple
-   * projects.
-   */
-  public const TYPE_PER_PROJECT_RECORD = 'PER_PROJECT_RECORD';
-  /**
-   * Output only. The creation timestamp of a DnsAuthorization.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. One or more paragraphs of text description of a DnsAuthorization.
-   *
    * @var string
    */
   public $description;
   protected $dnsResourceRecordType = DnsResourceRecord::class;
   protected $dnsResourceRecordDataType = '';
   /**
-   * Required. Immutable. A domain that is being authorized. A DnsAuthorization
-   * resource covers a single domain and its wildcard, e.g. authorization for
-   * `example.com` can be used to issue certificates for `example.com` and
-   * `*.example.com`.
-   *
    * @var string
    */
   public $domain;
   /**
-   * Optional. Set of labels associated with a DnsAuthorization.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Identifier. A user-defined name of the dns authorization. DnsAuthorization
-   * names must be unique globally and match pattern
-   * `projects/locations/dnsAuthorizations`.
-   *
    * @var string
    */
   public $name;
   /**
-   * Optional. Immutable. Type of DnsAuthorization. If unset during resource
-   * creation the following default will be used: - in location `global`:
-   * FIXED_RECORD, - in other locations: PER_PROJECT_RECORD.
-   *
    * @var string
    */
   public $type;
   /**
-   * Output only. The last update timestamp of a DnsAuthorization.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. The creation timestamp of a DnsAuthorization.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -102,9 +65,7 @@ class DnsAuthorization extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Optional. One or more paragraphs of text description of a DnsAuthorization.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -118,10 +79,7 @@ class DnsAuthorization extends \Google\Model
     return $this->description;
   }
   /**
-   * Output only. DNS Resource Record that needs to be added to DNS
-   * configuration.
-   *
-   * @param DnsResourceRecord $dnsResourceRecord
+   * @param DnsResourceRecord
    */
   public function setDnsResourceRecord(DnsResourceRecord $dnsResourceRecord)
   {
@@ -135,12 +93,7 @@ class DnsAuthorization extends \Google\Model
     return $this->dnsResourceRecord;
   }
   /**
-   * Required. Immutable. A domain that is being authorized. A DnsAuthorization
-   * resource covers a single domain and its wildcard, e.g. authorization for
-   * `example.com` can be used to issue certificates for `example.com` and
-   * `*.example.com`.
-   *
-   * @param string $domain
+   * @param string
    */
   public function setDomain($domain)
   {
@@ -154,9 +107,7 @@ class DnsAuthorization extends \Google\Model
     return $this->domain;
   }
   /**
-   * Optional. Set of labels associated with a DnsAuthorization.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -170,11 +121,7 @@ class DnsAuthorization extends \Google\Model
     return $this->labels;
   }
   /**
-   * Identifier. A user-defined name of the dns authorization. DnsAuthorization
-   * names must be unique globally and match pattern
-   * `projects/locations/dnsAuthorizations`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -188,29 +135,21 @@ class DnsAuthorization extends \Google\Model
     return $this->name;
   }
   /**
-   * Optional. Immutable. Type of DnsAuthorization. If unset during resource
-   * creation the following default will be used: - in location `global`:
-   * FIXED_RECORD, - in other locations: PER_PROJECT_RECORD.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, FIXED_RECORD, PER_PROJECT_RECORD
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * Output only. The last update timestamp of a DnsAuthorization.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

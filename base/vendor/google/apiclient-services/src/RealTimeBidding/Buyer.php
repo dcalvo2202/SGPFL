@@ -21,64 +21,32 @@ class Buyer extends \Google\Collection
 {
   protected $collection_key = 'billingIds';
   /**
-   * Output only. The number of creatives that this buyer submitted through the
-   * API or bid with in the last 30 days. This is counted against the maximum
-   * number of active creatives.
-   *
    * @var string
    */
   public $activeCreativeCount;
   /**
-   * Output only. The name of the bidder resource that is responsible for
-   * receiving bidding traffic for this account. The bidder name must follow the
-   * pattern `bidders/{bidderAccountId}`, where `{bidderAccountId}` is the
-   * account ID of the bidder receiving traffic for this buyer.
-   *
    * @var string
    */
   public $bidder;
   /**
-   * Output only. A list of billing IDs associated with this account. These IDs
-   * appear on: 1. A bid request, to signal which buyers are eligible to bid on
-   * a given opportunity, and which pretargeting configurations were matched for
-   * each eligible buyer. 2. The bid response, to attribute a winning impression
-   * to a specific account for billing, reporting, policy and publisher block
-   * enforcement.
-   *
    * @var string[]
    */
   public $billingIds;
   /**
-   * Output only. The diplay name associated with this buyer account, as visible
-   * to sellers.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. The maximum number of active creatives that this buyer can
-   * have.
-   *
    * @var string
    */
   public $maximumActiveCreativeCount;
   /**
-   * Output only. Name of the buyer resource that must follow the pattern
-   * `buyers/{buyerAccountId}`, where `{buyerAccountId}` is the account ID of
-   * the buyer account whose information is to be received. One can get their
-   * account ID on the Authorized Buyers or Open Bidding UI, or by contacting
-   * their Google account manager.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Output only. The number of creatives that this buyer submitted through the
-   * API or bid with in the last 30 days. This is counted against the maximum
-   * number of active creatives.
-   *
-   * @param string $activeCreativeCount
+   * @param string
    */
   public function setActiveCreativeCount($activeCreativeCount)
   {
@@ -92,12 +60,7 @@ class Buyer extends \Google\Collection
     return $this->activeCreativeCount;
   }
   /**
-   * Output only. The name of the bidder resource that is responsible for
-   * receiving bidding traffic for this account. The bidder name must follow the
-   * pattern `bidders/{bidderAccountId}`, where `{bidderAccountId}` is the
-   * account ID of the bidder receiving traffic for this buyer.
-   *
-   * @param string $bidder
+   * @param string
    */
   public function setBidder($bidder)
   {
@@ -111,14 +74,7 @@ class Buyer extends \Google\Collection
     return $this->bidder;
   }
   /**
-   * Output only. A list of billing IDs associated with this account. These IDs
-   * appear on: 1. A bid request, to signal which buyers are eligible to bid on
-   * a given opportunity, and which pretargeting configurations were matched for
-   * each eligible buyer. 2. The bid response, to attribute a winning impression
-   * to a specific account for billing, reporting, policy and publisher block
-   * enforcement.
-   *
-   * @param string[] $billingIds
+   * @param string[]
    */
   public function setBillingIds($billingIds)
   {
@@ -132,10 +88,7 @@ class Buyer extends \Google\Collection
     return $this->billingIds;
   }
   /**
-   * Output only. The diplay name associated with this buyer account, as visible
-   * to sellers.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -149,10 +102,7 @@ class Buyer extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Output only. The maximum number of active creatives that this buyer can
-   * have.
-   *
-   * @param string $maximumActiveCreativeCount
+   * @param string
    */
   public function setMaximumActiveCreativeCount($maximumActiveCreativeCount)
   {
@@ -166,13 +116,7 @@ class Buyer extends \Google\Collection
     return $this->maximumActiveCreativeCount;
   }
   /**
-   * Output only. Name of the buyer resource that must follow the pattern
-   * `buyers/{buyerAccountId}`, where `{buyerAccountId}` is the account ID of
-   * the buyer account whose information is to be received. One can get their
-   * account ID on the Authorized Buyers or Open Bidding UI, or by contacting
-   * their Google account manager.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

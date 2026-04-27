@@ -20,80 +20,46 @@ namespace Google\Service\DeveloperConnect;
 class GitHubEnterpriseConfig extends \Google\Model
 {
   /**
-   * Optional. ID of the GitHub App created from the manifest.
-   *
    * @var string
    */
   public $appId;
   /**
-   * Optional. ID of the installation of the GitHub App.
-   *
    * @var string
    */
   public $appInstallationId;
   /**
-   * Output only. The URL-friendly name of the GitHub App.
-   *
    * @var string
    */
   public $appSlug;
   /**
-   * Required. The URI of the GitHub Enterprise host this connection is for.
-   *
    * @var string
    */
   public $hostUri;
   /**
-   * Output only. The URI to navigate to in order to manage the installation
-   * associated with this GitHubEnterpriseConfig.
-   *
    * @var string
    */
   public $installationUri;
   /**
-   * Optional. Immutable. GitHub Enterprise organization in which the GitHub App
-   * is created.
-   *
-   * @var string
-   */
-  public $organization;
-  /**
-   * Optional. SecretManager resource containing the private key of the GitHub
-   * App, formatted as `projects/secrets/versions` or
-   * `projects/locations/secrets/versions` (if regional secrets are supported in
-   * that location).
-   *
    * @var string
    */
   public $privateKeySecretVersion;
   /**
-   * Output only. GitHub Enterprise version installed at the host_uri.
-   *
    * @var string
    */
   public $serverVersion;
   protected $serviceDirectoryConfigType = ServiceDirectoryConfig::class;
   protected $serviceDirectoryConfigDataType = '';
   /**
-   * Optional. SSL certificate to use for requests to GitHub Enterprise.
-   *
    * @var string
    */
   public $sslCaCertificate;
   /**
-   * Optional. SecretManager resource containing the webhook secret of the
-   * GitHub App, formatted as `projects/secrets/versions` or
-   * `projects/locations/secrets/versions` (if regional secrets are supported in
-   * that location).
-   *
    * @var string
    */
   public $webhookSecretSecretVersion;
 
   /**
-   * Optional. ID of the GitHub App created from the manifest.
-   *
-   * @param string $appId
+   * @param string
    */
   public function setAppId($appId)
   {
@@ -107,9 +73,7 @@ class GitHubEnterpriseConfig extends \Google\Model
     return $this->appId;
   }
   /**
-   * Optional. ID of the installation of the GitHub App.
-   *
-   * @param string $appInstallationId
+   * @param string
    */
   public function setAppInstallationId($appInstallationId)
   {
@@ -123,9 +87,7 @@ class GitHubEnterpriseConfig extends \Google\Model
     return $this->appInstallationId;
   }
   /**
-   * Output only. The URL-friendly name of the GitHub App.
-   *
-   * @param string $appSlug
+   * @param string
    */
   public function setAppSlug($appSlug)
   {
@@ -139,9 +101,7 @@ class GitHubEnterpriseConfig extends \Google\Model
     return $this->appSlug;
   }
   /**
-   * Required. The URI of the GitHub Enterprise host this connection is for.
-   *
-   * @param string $hostUri
+   * @param string
    */
   public function setHostUri($hostUri)
   {
@@ -155,10 +115,7 @@ class GitHubEnterpriseConfig extends \Google\Model
     return $this->hostUri;
   }
   /**
-   * Output only. The URI to navigate to in order to manage the installation
-   * associated with this GitHubEnterpriseConfig.
-   *
-   * @param string $installationUri
+   * @param string
    */
   public function setInstallationUri($installationUri)
   {
@@ -172,29 +129,7 @@ class GitHubEnterpriseConfig extends \Google\Model
     return $this->installationUri;
   }
   /**
-   * Optional. Immutable. GitHub Enterprise organization in which the GitHub App
-   * is created.
-   *
-   * @param string $organization
-   */
-  public function setOrganization($organization)
-  {
-    $this->organization = $organization;
-  }
-  /**
-   * @return string
-   */
-  public function getOrganization()
-  {
-    return $this->organization;
-  }
-  /**
-   * Optional. SecretManager resource containing the private key of the GitHub
-   * App, formatted as `projects/secrets/versions` or
-   * `projects/locations/secrets/versions` (if regional secrets are supported in
-   * that location).
-   *
-   * @param string $privateKeySecretVersion
+   * @param string
    */
   public function setPrivateKeySecretVersion($privateKeySecretVersion)
   {
@@ -208,9 +143,7 @@ class GitHubEnterpriseConfig extends \Google\Model
     return $this->privateKeySecretVersion;
   }
   /**
-   * Output only. GitHub Enterprise version installed at the host_uri.
-   *
-   * @param string $serverVersion
+   * @param string
    */
   public function setServerVersion($serverVersion)
   {
@@ -224,13 +157,7 @@ class GitHubEnterpriseConfig extends \Google\Model
     return $this->serverVersion;
   }
   /**
-   * Optional. Configuration for using Service Directory to privately connect to
-   * a GitHub Enterprise server. This should only be set if the GitHub
-   * Enterprise server is hosted on-premises and not reachable by public
-   * internet. If this field is left empty, calls to the GitHub Enterprise
-   * server will be made over the public internet.
-   *
-   * @param ServiceDirectoryConfig $serviceDirectoryConfig
+   * @param ServiceDirectoryConfig
    */
   public function setServiceDirectoryConfig(ServiceDirectoryConfig $serviceDirectoryConfig)
   {
@@ -244,9 +171,7 @@ class GitHubEnterpriseConfig extends \Google\Model
     return $this->serviceDirectoryConfig;
   }
   /**
-   * Optional. SSL certificate to use for requests to GitHub Enterprise.
-   *
-   * @param string $sslCaCertificate
+   * @param string
    */
   public function setSslCaCertificate($sslCaCertificate)
   {
@@ -260,12 +185,7 @@ class GitHubEnterpriseConfig extends \Google\Model
     return $this->sslCaCertificate;
   }
   /**
-   * Optional. SecretManager resource containing the webhook secret of the
-   * GitHub App, formatted as `projects/secrets/versions` or
-   * `projects/locations/secrets/versions` (if regional secrets are supported in
-   * that location).
-   *
-   * @param string $webhookSecretSecretVersion
+   * @param string
    */
   public function setWebhookSecretSecretVersion($webhookSecretSecretVersion)
   {

@@ -23,9 +23,6 @@ class FunctionMock extends \Google\Collection
   protected $argsType = Arg::class;
   protected $argsDataType = 'array';
   /**
-   * The name of the function. The function name must match one provided by a
-   * service declaration.
-   *
    * @var string
    */
   public $function;
@@ -33,10 +30,7 @@ class FunctionMock extends \Google\Collection
   protected $resultDataType = '';
 
   /**
-   * The list of `Arg` values to match. The order in which the arguments are
-   * provided is the order in which they must appear in the function invocation.
-   *
-   * @param Arg[] $args
+   * @param Arg[]
    */
   public function setArgs($args)
   {
@@ -50,10 +44,7 @@ class FunctionMock extends \Google\Collection
     return $this->args;
   }
   /**
-   * The name of the function. The function name must match one provided by a
-   * service declaration.
-   *
-   * @param string $function
+   * @param string
    */
   public function setFunction($function)
   {
@@ -67,9 +58,7 @@ class FunctionMock extends \Google\Collection
     return $this->function;
   }
   /**
-   * The mock result of the function call.
-   *
-   * @param Result $result
+   * @param Result
    */
   public function setResult(Result $result)
   {

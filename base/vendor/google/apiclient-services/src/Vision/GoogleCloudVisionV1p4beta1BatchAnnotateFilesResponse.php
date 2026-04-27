@@ -24,10 +24,7 @@ class GoogleCloudVisionV1p4beta1BatchAnnotateFilesResponse extends \Google\Colle
   protected $responsesDataType = 'array';
 
   /**
-   * The list of file annotation responses, each response corresponding to each
-   * AnnotateFileRequest in BatchAnnotateFilesRequest.
-   *
-   * @param GoogleCloudVisionV1p4beta1AnnotateFileResponse[] $responses
+   * @param GoogleCloudVisionV1p4beta1AnnotateFileResponse[]
    */
   public function setResponses($responses)
   {

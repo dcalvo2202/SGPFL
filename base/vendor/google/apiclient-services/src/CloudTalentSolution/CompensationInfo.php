@@ -28,12 +28,7 @@ class CompensationInfo extends \Google\Collection
   protected $entriesDataType = 'array';
 
   /**
-   * Output only. Annualized base compensation range. Computed as base
-   * compensation entry's CompensationEntry.amount times
-   * CompensationEntry.expected_units_per_year. See CompensationEntry for
-   * explanation on compensation annualization.
-   *
-   * @param CompensationRange $annualizedBaseCompensationRange
+   * @param CompensationRange
    */
   public function setAnnualizedBaseCompensationRange(CompensationRange $annualizedBaseCompensationRange)
   {
@@ -47,12 +42,7 @@ class CompensationInfo extends \Google\Collection
     return $this->annualizedBaseCompensationRange;
   }
   /**
-   * Output only. Annualized total compensation range. Computed as all
-   * compensation entries' CompensationEntry.amount times
-   * CompensationEntry.expected_units_per_year. See CompensationEntry for
-   * explanation on compensation annualization.
-   *
-   * @param CompensationRange $annualizedTotalCompensationRange
+   * @param CompensationRange
    */
   public function setAnnualizedTotalCompensationRange(CompensationRange $annualizedTotalCompensationRange)
   {
@@ -66,11 +56,7 @@ class CompensationInfo extends \Google\Collection
     return $this->annualizedTotalCompensationRange;
   }
   /**
-   * Job compensation information. At most one entry can be of type
-   * CompensationInfo.CompensationType.BASE, which is referred as **base
-   * compensation entry** for the job.
-   *
-   * @param CompensationEntry[] $entries
+   * @param CompensationEntry[]
    */
   public function setEntries($entries)
   {

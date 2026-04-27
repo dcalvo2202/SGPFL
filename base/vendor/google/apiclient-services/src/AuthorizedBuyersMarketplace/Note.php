@@ -20,40 +20,20 @@ namespace Google\Service\AuthorizedBuyersMarketplace;
 class Note extends \Google\Model
 {
   /**
-   * A placeholder for an undefined buyer/seller role.
-   */
-  public const CREATOR_ROLE_BUYER_SELLER_ROLE_UNSPECIFIED = 'BUYER_SELLER_ROLE_UNSPECIFIED';
-  /**
-   * Specifies the role as buyer.
-   */
-  public const CREATOR_ROLE_BUYER = 'BUYER';
-  /**
-   * Specifies the role as seller.
-   */
-  public const CREATOR_ROLE_SELLER = 'SELLER';
-  /**
-   * Output only. When this note was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. The role who created the note.
-   *
    * @var string
    */
   public $creatorRole;
   /**
-   * The text of the note. Maximum length is 1024 characters.
-   *
    * @var string
    */
   public $note;
 
   /**
-   * Output only. When this note was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -67,27 +47,21 @@ class Note extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. The role who created the note.
-   *
-   * Accepted values: BUYER_SELLER_ROLE_UNSPECIFIED, BUYER, SELLER
-   *
-   * @param self::CREATOR_ROLE_* $creatorRole
+   * @param string
    */
   public function setCreatorRole($creatorRole)
   {
     $this->creatorRole = $creatorRole;
   }
   /**
-   * @return self::CREATOR_ROLE_*
+   * @return string
    */
   public function getCreatorRole()
   {
     return $this->creatorRole;
   }
   /**
-   * The text of the note. Maximum length is 1024 characters.
-   *
-   * @param string $note
+   * @param string
    */
   public function setNote($note)
   {

@@ -47,7 +47,7 @@ class GoogleCloudDialogflowCxV3beta1TransitionRoute extends \Google\Model
   protected $triggerFulfillmentDataType = '';
 
   /**
-   * @param string $condition
+   * @param string
    */
   public function setCondition($condition)
   {
@@ -61,7 +61,7 @@ class GoogleCloudDialogflowCxV3beta1TransitionRoute extends \Google\Model
     return $this->condition;
   }
   /**
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -75,7 +75,7 @@ class GoogleCloudDialogflowCxV3beta1TransitionRoute extends \Google\Model
     return $this->description;
   }
   /**
-   * @param string $intent
+   * @param string
    */
   public function setIntent($intent)
   {
@@ -89,7 +89,7 @@ class GoogleCloudDialogflowCxV3beta1TransitionRoute extends \Google\Model
     return $this->intent;
   }
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -103,7 +103,7 @@ class GoogleCloudDialogflowCxV3beta1TransitionRoute extends \Google\Model
     return $this->name;
   }
   /**
-   * @param string $targetFlow
+   * @param string
    */
   public function setTargetFlow($targetFlow)
   {
@@ -117,7 +117,7 @@ class GoogleCloudDialogflowCxV3beta1TransitionRoute extends \Google\Model
     return $this->targetFlow;
   }
   /**
-   * @param string $targetPage
+   * @param string
    */
   public function setTargetPage($targetPage)
   {
@@ -131,7 +131,7 @@ class GoogleCloudDialogflowCxV3beta1TransitionRoute extends \Google\Model
     return $this->targetPage;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3beta1Fulfillment $triggerFulfillment
+   * @param GoogleCloudDialogflowCxV3beta1Fulfillment
    */
   public function setTriggerFulfillment(GoogleCloudDialogflowCxV3beta1Fulfillment $triggerFulfillment)
   {

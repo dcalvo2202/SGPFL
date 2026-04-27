@@ -21,24 +21,16 @@ class LoggingConfig extends \Google\Collection
 {
   protected $collection_key = 'logActions';
   /**
-   * Required. States in which Action are logged.If empty, no logs are
-   * generated.
-   *
    * @var string[]
    */
   public $logActionStates;
   /**
-   * Required. Specifies the actions to be logged.
-   *
    * @var string[]
    */
   public $logActions;
 
   /**
-   * Required. States in which Action are logged.If empty, no logs are
-   * generated.
-   *
-   * @param string[] $logActionStates
+   * @param string[]
    */
   public function setLogActionStates($logActionStates)
   {
@@ -52,9 +44,7 @@ class LoggingConfig extends \Google\Collection
     return $this->logActionStates;
   }
   /**
-   * Required. Specifies the actions to be logged.
-   *
-   * @param string[] $logActions
+   * @param string[]
    */
   public function setLogActions($logActions)
   {

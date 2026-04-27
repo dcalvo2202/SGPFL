@@ -23,18 +23,12 @@ class GoogleCloudAiplatformV1SearchFeaturesResponse extends \Google\Collection
   protected $featuresType = GoogleCloudAiplatformV1Feature::class;
   protected $featuresDataType = 'array';
   /**
-   * A token, which can be sent as SearchFeaturesRequest.page_token to retrieve
-   * the next page. If this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The Features matching the request. Fields returned: * `name` *
-   * `description` * `labels` * `create_time` * `update_time`
-   *
-   * @param GoogleCloudAiplatformV1Feature[] $features
+   * @param GoogleCloudAiplatformV1Feature[]
    */
   public function setFeatures($features)
   {
@@ -48,10 +42,7 @@ class GoogleCloudAiplatformV1SearchFeaturesResponse extends \Google\Collection
     return $this->features;
   }
   /**
-   * A token, which can be sent as SearchFeaturesRequest.page_token to retrieve
-   * the next page. If this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

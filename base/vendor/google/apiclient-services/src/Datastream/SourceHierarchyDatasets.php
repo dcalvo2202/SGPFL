@@ -21,18 +21,9 @@ class SourceHierarchyDatasets extends \Google\Model
 {
   protected $datasetTemplateType = DatasetTemplate::class;
   protected $datasetTemplateDataType = '';
-  /**
-   * Optional. The project id of the BigQuery dataset. If not specified, the
-   * project will be inferred from the stream resource.
-   *
-   * @var string
-   */
-  public $projectId;
 
   /**
-   * The dataset template to use for dynamic dataset creation.
-   *
-   * @param DatasetTemplate $datasetTemplate
+   * @param DatasetTemplate
    */
   public function setDatasetTemplate(DatasetTemplate $datasetTemplate)
   {
@@ -44,23 +35,6 @@ class SourceHierarchyDatasets extends \Google\Model
   public function getDatasetTemplate()
   {
     return $this->datasetTemplate;
-  }
-  /**
-   * Optional. The project id of the BigQuery dataset. If not specified, the
-   * project will be inferred from the stream resource.
-   *
-   * @param string $projectId
-   */
-  public function setProjectId($projectId)
-  {
-    $this->projectId = $projectId;
-  }
-  /**
-   * @return string
-   */
-  public function getProjectId()
-  {
-    return $this->projectId;
   }
 }
 

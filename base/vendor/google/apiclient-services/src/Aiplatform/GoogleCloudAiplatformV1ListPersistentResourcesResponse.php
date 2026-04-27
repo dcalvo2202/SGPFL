@@ -21,9 +21,6 @@ class GoogleCloudAiplatformV1ListPersistentResourcesResponse extends \Google\Col
 {
   protected $collection_key = 'persistentResources';
   /**
-   * A token to retrieve next page of results. Pass to
-   * ListPersistentResourcesRequest.page_token to obtain that page.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GoogleCloudAiplatformV1ListPersistentResourcesResponse extends \Google\Col
   protected $persistentResourcesDataType = 'array';
 
   /**
-   * A token to retrieve next page of results. Pass to
-   * ListPersistentResourcesRequest.page_token to obtain that page.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,7 +42,7 @@ class GoogleCloudAiplatformV1ListPersistentResourcesResponse extends \Google\Col
     return $this->nextPageToken;
   }
   /**
-   * @param GoogleCloudAiplatformV1PersistentResource[] $persistentResources
+   * @param GoogleCloudAiplatformV1PersistentResource[]
    */
   public function setPersistentResources($persistentResources)
   {

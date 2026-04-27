@@ -20,55 +20,34 @@ namespace Google\Service\Datapipelines;
 class GoogleCloudDatapipelinesV1LaunchFlexTemplateParameter extends \Google\Model
 {
   /**
-   * Cloud Storage path to a file with a JSON-serialized ContainerSpec as
-   * content.
-   *
    * @var string
    */
   public $containerSpecGcsPath;
   protected $environmentType = GoogleCloudDatapipelinesV1FlexTemplateRuntimeEnvironment::class;
   protected $environmentDataType = '';
   /**
-   * Required. The job name to use for the created job. For an update job
-   * request, the job name should be the same as the existing running job.
-   *
    * @var string
    */
   public $jobName;
   /**
-   * Launch options for this Flex Template job. This is a common set of options
-   * across languages and templates. This should not be used to pass job
-   * parameters.
-   *
    * @var string[]
    */
   public $launchOptions;
   /**
-   * The parameters for the Flex Template. Example: `{"num_workers":"5"}`
-   *
    * @var string[]
    */
   public $parameters;
   /**
-   * Use this to pass transform name mappings for streaming update jobs.
-   * Example: `{"oldTransformName":"newTransformName",...}`
-   *
    * @var string[]
    */
   public $transformNameMappings;
   /**
-   * Set this to true if you are sending a request to update a running streaming
-   * job. When set, the job name should be the same as the running job.
-   *
    * @var bool
    */
   public $update;
 
   /**
-   * Cloud Storage path to a file with a JSON-serialized ContainerSpec as
-   * content.
-   *
-   * @param string $containerSpecGcsPath
+   * @param string
    */
   public function setContainerSpecGcsPath($containerSpecGcsPath)
   {
@@ -82,9 +61,7 @@ class GoogleCloudDatapipelinesV1LaunchFlexTemplateParameter extends \Google\Mode
     return $this->containerSpecGcsPath;
   }
   /**
-   * The runtime environment for the Flex Template job.
-   *
-   * @param GoogleCloudDatapipelinesV1FlexTemplateRuntimeEnvironment $environment
+   * @param GoogleCloudDatapipelinesV1FlexTemplateRuntimeEnvironment
    */
   public function setEnvironment(GoogleCloudDatapipelinesV1FlexTemplateRuntimeEnvironment $environment)
   {
@@ -98,10 +75,7 @@ class GoogleCloudDatapipelinesV1LaunchFlexTemplateParameter extends \Google\Mode
     return $this->environment;
   }
   /**
-   * Required. The job name to use for the created job. For an update job
-   * request, the job name should be the same as the existing running job.
-   *
-   * @param string $jobName
+   * @param string
    */
   public function setJobName($jobName)
   {
@@ -115,11 +89,7 @@ class GoogleCloudDatapipelinesV1LaunchFlexTemplateParameter extends \Google\Mode
     return $this->jobName;
   }
   /**
-   * Launch options for this Flex Template job. This is a common set of options
-   * across languages and templates. This should not be used to pass job
-   * parameters.
-   *
-   * @param string[] $launchOptions
+   * @param string[]
    */
   public function setLaunchOptions($launchOptions)
   {
@@ -133,9 +103,7 @@ class GoogleCloudDatapipelinesV1LaunchFlexTemplateParameter extends \Google\Mode
     return $this->launchOptions;
   }
   /**
-   * The parameters for the Flex Template. Example: `{"num_workers":"5"}`
-   *
-   * @param string[] $parameters
+   * @param string[]
    */
   public function setParameters($parameters)
   {
@@ -149,10 +117,7 @@ class GoogleCloudDatapipelinesV1LaunchFlexTemplateParameter extends \Google\Mode
     return $this->parameters;
   }
   /**
-   * Use this to pass transform name mappings for streaming update jobs.
-   * Example: `{"oldTransformName":"newTransformName",...}`
-   *
-   * @param string[] $transformNameMappings
+   * @param string[]
    */
   public function setTransformNameMappings($transformNameMappings)
   {
@@ -166,10 +131,7 @@ class GoogleCloudDatapipelinesV1LaunchFlexTemplateParameter extends \Google\Mode
     return $this->transformNameMappings;
   }
   /**
-   * Set this to true if you are sending a request to update a running streaming
-   * job. When set, the job name should be the same as the running job.
-   *
-   * @param bool $update
+   * @param bool
    */
   public function setUpdate($update)
   {

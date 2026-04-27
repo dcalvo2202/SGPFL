@@ -20,28 +20,20 @@ namespace Google\Service\DataprocMetastore;
 class MoveTableToDatabaseRequest extends \Google\Model
 {
   /**
-   * Required. The name of the database where the table resides.
-   *
    * @var string
    */
   public $dbName;
   /**
-   * Required. The name of the database where the table should be moved.
-   *
    * @var string
    */
   public $destinationDbName;
   /**
-   * Required. The name of the table to be moved.
-   *
    * @var string
    */
   public $tableName;
 
   /**
-   * Required. The name of the database where the table resides.
-   *
-   * @param string $dbName
+   * @param string
    */
   public function setDbName($dbName)
   {
@@ -55,9 +47,7 @@ class MoveTableToDatabaseRequest extends \Google\Model
     return $this->dbName;
   }
   /**
-   * Required. The name of the database where the table should be moved.
-   *
-   * @param string $destinationDbName
+   * @param string
    */
   public function setDestinationDbName($destinationDbName)
   {
@@ -71,9 +61,7 @@ class MoveTableToDatabaseRequest extends \Google\Model
     return $this->destinationDbName;
   }
   /**
-   * Required. The name of the table to be moved.
-   *
-   * @param string $tableName
+   * @param string
    */
   public function setTableName($tableName)
   {

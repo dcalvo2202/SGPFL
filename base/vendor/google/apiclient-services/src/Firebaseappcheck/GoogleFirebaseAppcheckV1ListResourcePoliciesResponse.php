@@ -21,12 +21,6 @@ class GoogleFirebaseAppcheckV1ListResourcePoliciesResponse extends \Google\Colle
 {
   protected $collection_key = 'resourcePolicies';
   /**
-   * If the result list is too large to fit in a single response, then a token
-   * is returned. If the string is empty or omitted, then this response is the
-   * last page of results. This token can be used in a subsequent call to
-   * ListResourcePolicies to find the next group of ResourcePolicy objects. Page
-   * tokens are short-lived and should not be persisted.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -34,13 +28,7 @@ class GoogleFirebaseAppcheckV1ListResourcePoliciesResponse extends \Google\Colle
   protected $resourcePoliciesDataType = 'array';
 
   /**
-   * If the result list is too large to fit in a single response, then a token
-   * is returned. If the string is empty or omitted, then this response is the
-   * last page of results. This token can be used in a subsequent call to
-   * ListResourcePolicies to find the next group of ResourcePolicy objects. Page
-   * tokens are short-lived and should not be persisted.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -54,9 +42,7 @@ class GoogleFirebaseAppcheckV1ListResourcePoliciesResponse extends \Google\Colle
     return $this->nextPageToken;
   }
   /**
-   * The ResourcePolicy objects retrieved.
-   *
-   * @param GoogleFirebaseAppcheckV1ResourcePolicy[] $resourcePolicies
+   * @param GoogleFirebaseAppcheckV1ResourcePolicy[]
    */
   public function setResourcePolicies($resourcePolicies)
   {

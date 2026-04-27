@@ -20,16 +20,12 @@ namespace Google\Service\GKEOnPrem;
 class ClusterUser extends \Google\Model
 {
   /**
-   * Required. The name of the user, e.g. `my-gcp-id@gmail.com`.
-   *
    * @var string
    */
   public $username;
 
   /**
-   * Required. The name of the user, e.g. `my-gcp-id@gmail.com`.
-   *
-   * @param string $username
+   * @param string
    */
   public function setUsername($username)
   {

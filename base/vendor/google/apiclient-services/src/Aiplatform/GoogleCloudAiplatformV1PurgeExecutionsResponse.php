@@ -21,28 +21,16 @@ class GoogleCloudAiplatformV1PurgeExecutionsResponse extends \Google\Collection
 {
   protected $collection_key = 'purgeSample';
   /**
-   * The number of Executions that this request deleted (or, if `force` is
-   * false, the number of Executions that will be deleted). This can be an
-   * estimate.
-   *
    * @var string
    */
   public $purgeCount;
   /**
-   * A sample of the Execution names that will be deleted. Only populated if
-   * `force` is set to false. The maximum number of samples is 100 (it is
-   * possible to return fewer).
-   *
    * @var string[]
    */
   public $purgeSample;
 
   /**
-   * The number of Executions that this request deleted (or, if `force` is
-   * false, the number of Executions that will be deleted). This can be an
-   * estimate.
-   *
-   * @param string $purgeCount
+   * @param string
    */
   public function setPurgeCount($purgeCount)
   {
@@ -56,11 +44,7 @@ class GoogleCloudAiplatformV1PurgeExecutionsResponse extends \Google\Collection
     return $this->purgeCount;
   }
   /**
-   * A sample of the Execution names that will be deleted. Only populated if
-   * `force` is set to false. The maximum number of samples is 100 (it is
-   * possible to return fewer).
-   *
-   * @param string[] $purgeSample
+   * @param string[]
    */
   public function setPurgeSample($purgeSample)
   {

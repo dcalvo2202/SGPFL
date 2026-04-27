@@ -23,23 +23,16 @@ class AccountsListResponse extends \Google\Collection
   protected $accountsType = Account::class;
   protected $accountsDataType = 'array';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#accountsListResponse".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Pagination token to be used for the next list operation.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Account collection.
-   *
-   * @param Account[] $accounts
+   * @param Account[]
    */
   public function setAccounts($accounts)
   {
@@ -53,10 +46,7 @@ class AccountsListResponse extends \Google\Collection
     return $this->accounts;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#accountsListResponse".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -70,9 +60,7 @@ class AccountsListResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Pagination token to be used for the next list operation.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

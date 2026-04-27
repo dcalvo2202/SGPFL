@@ -23,23 +23,16 @@ class ContentCategoriesListResponse extends \Google\Collection
   protected $contentCategoriesType = ContentCategory::class;
   protected $contentCategoriesDataType = 'array';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#contentCategoriesListResponse".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Pagination token to be used for the next list operation.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Content category collection.
-   *
-   * @param ContentCategory[] $contentCategories
+   * @param ContentCategory[]
    */
   public function setContentCategories($contentCategories)
   {
@@ -53,10 +46,7 @@ class ContentCategoriesListResponse extends \Google\Collection
     return $this->contentCategories;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#contentCategoriesListResponse".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -70,9 +60,7 @@ class ContentCategoriesListResponse extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Pagination token to be used for the next list operation.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

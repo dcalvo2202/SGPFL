@@ -20,18 +20,12 @@ namespace Google\Service\VMMigrationService;
 class ReplicationSync extends \Google\Model
 {
   /**
-   * The most updated snapshot created time in the source that finished
-   * replication.
-   *
    * @var string
    */
   public $lastSyncTime;
 
   /**
-   * The most updated snapshot created time in the source that finished
-   * replication.
-   *
-   * @param string $lastSyncTime
+   * @param string
    */
   public function setLastSyncTime($lastSyncTime)
   {

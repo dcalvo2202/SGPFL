@@ -23,17 +23,12 @@ class ListChannelsResponse extends \Google\Collection
   protected $channelsType = Channel::class;
   protected $channelsDataType = 'array';
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of channels.
-   *
-   * @param Channel[] $channels
+   * @param Channel[]
    */
   public function setChannels($channels)
   {
@@ -47,10 +42,7 @@ class ListChannelsResponse extends \Google\Collection
     return $this->channels;
   }
   /**
-   * A token, which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

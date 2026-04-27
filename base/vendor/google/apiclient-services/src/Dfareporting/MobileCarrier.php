@@ -20,41 +20,28 @@ namespace Google\Service\Dfareporting;
 class MobileCarrier extends \Google\Model
 {
   /**
-   * Country code of the country to which this mobile carrier belongs.
-   *
    * @var string
    */
   public $countryCode;
   /**
-   * DART ID of the country to which this mobile carrier belongs.
-   *
    * @var string
    */
   public $countryDartId;
   /**
-   * ID of this mobile carrier.
-   *
    * @var string
    */
   public $id;
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#mobileCarrier".
-   *
    * @var string
    */
   public $kind;
   /**
-   * Name of this mobile carrier.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Country code of the country to which this mobile carrier belongs.
-   *
-   * @param string $countryCode
+   * @param string
    */
   public function setCountryCode($countryCode)
   {
@@ -68,9 +55,7 @@ class MobileCarrier extends \Google\Model
     return $this->countryCode;
   }
   /**
-   * DART ID of the country to which this mobile carrier belongs.
-   *
-   * @param string $countryDartId
+   * @param string
    */
   public function setCountryDartId($countryDartId)
   {
@@ -84,9 +69,7 @@ class MobileCarrier extends \Google\Model
     return $this->countryDartId;
   }
   /**
-   * ID of this mobile carrier.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -100,10 +83,7 @@ class MobileCarrier extends \Google\Model
     return $this->id;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#mobileCarrier".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -117,9 +97,7 @@ class MobileCarrier extends \Google\Model
     return $this->kind;
   }
   /**
-   * Name of this mobile carrier.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

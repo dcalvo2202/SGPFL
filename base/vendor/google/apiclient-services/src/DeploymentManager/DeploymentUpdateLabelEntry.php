@@ -20,22 +20,16 @@ namespace Google\Service\DeploymentManager;
 class DeploymentUpdateLabelEntry extends \Google\Model
 {
   /**
-   * Key of the label
-   *
    * @var string
    */
   public $key;
   /**
-   * Value of the label
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Key of the label
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {
@@ -49,9 +43,7 @@ class DeploymentUpdateLabelEntry extends \Google\Model
     return $this->key;
   }
   /**
-   * Value of the label
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

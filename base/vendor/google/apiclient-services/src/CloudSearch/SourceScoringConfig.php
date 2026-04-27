@@ -19,29 +19,20 @@ namespace Google\Service\CloudSearch;
 
 class SourceScoringConfig extends \Google\Model
 {
-  public const SOURCE_IMPORTANCE_DEFAULT = 'DEFAULT';
-  public const SOURCE_IMPORTANCE_LOW = 'LOW';
-  public const SOURCE_IMPORTANCE_HIGH = 'HIGH';
   /**
-   * Importance of the source.
-   *
    * @var string
    */
   public $sourceImportance;
 
   /**
-   * Importance of the source.
-   *
-   * Accepted values: DEFAULT, LOW, HIGH
-   *
-   * @param self::SOURCE_IMPORTANCE_* $sourceImportance
+   * @param string
    */
   public function setSourceImportance($sourceImportance)
   {
     $this->sourceImportance = $sourceImportance;
   }
   /**
-   * @return self::SOURCE_IMPORTANCE_*
+   * @return string
    */
   public function getSourceImportance()
   {

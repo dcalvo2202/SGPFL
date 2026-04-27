@@ -21,58 +21,36 @@ class WorkerHealthReport extends \Google\Collection
 {
   protected $collection_key = 'pods';
   /**
-   * Message describing any unusual health reports.
-   *
    * @var string
    */
   public $msg;
   /**
-   * The pods running on the worker. See: http://kubernetes.io/v1.1/docs/api-
-   * reference/v1/definitions.html#_v1_pod This field is used by the worker to
-   * send the status of the indvidual containers running on each worker.
-   *
    * @var array[]
    */
   public $pods;
   /**
-   * The interval at which the worker is sending health reports. The default
-   * value of 0 should be interpreted as the field is not being explicitly set
-   * by the worker.
-   *
    * @var string
    */
   public $reportInterval;
   /**
-   * Code to describe a specific reason, if known, that a VM has reported broken
-   * state.
-   *
    * @var string
    */
   public $vmBrokenCode;
   /**
-   * Whether the VM is in a permanently broken state. Broken VMs should be
-   * abandoned or deleted ASAP to avoid assigning or completing any work.
-   *
    * @var bool
    */
   public $vmIsBroken;
   /**
-   * Whether the VM is currently healthy.
-   *
    * @var bool
    */
   public $vmIsHealthy;
   /**
-   * The time the VM was booted.
-   *
    * @var string
    */
   public $vmStartupTime;
 
   /**
-   * Message describing any unusual health reports.
-   *
-   * @param string $msg
+   * @param string
    */
   public function setMsg($msg)
   {
@@ -86,11 +64,7 @@ class WorkerHealthReport extends \Google\Collection
     return $this->msg;
   }
   /**
-   * The pods running on the worker. See: http://kubernetes.io/v1.1/docs/api-
-   * reference/v1/definitions.html#_v1_pod This field is used by the worker to
-   * send the status of the indvidual containers running on each worker.
-   *
-   * @param array[] $pods
+   * @param array[]
    */
   public function setPods($pods)
   {
@@ -104,11 +78,7 @@ class WorkerHealthReport extends \Google\Collection
     return $this->pods;
   }
   /**
-   * The interval at which the worker is sending health reports. The default
-   * value of 0 should be interpreted as the field is not being explicitly set
-   * by the worker.
-   *
-   * @param string $reportInterval
+   * @param string
    */
   public function setReportInterval($reportInterval)
   {
@@ -122,10 +92,7 @@ class WorkerHealthReport extends \Google\Collection
     return $this->reportInterval;
   }
   /**
-   * Code to describe a specific reason, if known, that a VM has reported broken
-   * state.
-   *
-   * @param string $vmBrokenCode
+   * @param string
    */
   public function setVmBrokenCode($vmBrokenCode)
   {
@@ -139,10 +106,7 @@ class WorkerHealthReport extends \Google\Collection
     return $this->vmBrokenCode;
   }
   /**
-   * Whether the VM is in a permanently broken state. Broken VMs should be
-   * abandoned or deleted ASAP to avoid assigning or completing any work.
-   *
-   * @param bool $vmIsBroken
+   * @param bool
    */
   public function setVmIsBroken($vmIsBroken)
   {
@@ -156,9 +120,7 @@ class WorkerHealthReport extends \Google\Collection
     return $this->vmIsBroken;
   }
   /**
-   * Whether the VM is currently healthy.
-   *
-   * @param bool $vmIsHealthy
+   * @param bool
    */
   public function setVmIsHealthy($vmIsHealthy)
   {
@@ -172,9 +134,7 @@ class WorkerHealthReport extends \Google\Collection
     return $this->vmIsHealthy;
   }
   /**
-   * The time the VM was booted.
-   *
-   * @param string $vmStartupTime
+   * @param string
    */
   public function setVmStartupTime($vmStartupTime)
   {

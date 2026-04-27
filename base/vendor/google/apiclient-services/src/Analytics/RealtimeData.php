@@ -23,14 +23,10 @@ class RealtimeData extends \Google\Collection
   protected $columnHeadersType = RealtimeDataColumnHeaders::class;
   protected $columnHeadersDataType = 'array';
   /**
-   * Unique ID for this data response.
-   *
    * @var string
    */
   public $id;
   /**
-   * Resource type.
-   *
    * @var string
    */
   public $kind;
@@ -39,40 +35,24 @@ class RealtimeData extends \Google\Collection
   protected $queryType = RealtimeDataQuery::class;
   protected $queryDataType = '';
   /**
-   * Real time data rows, where each row contains a list of dimension values
-   * followed by the metric values. The order of dimensions and metrics is same
-   * as specified in the request.
-   *
    * @var string[]
    */
   public $rows;
   /**
-   * Link to this page.
-   *
    * @var string
    */
   public $selfLink;
   /**
-   * The total number of rows for the query, regardless of the number of rows in
-   * the response.
-   *
    * @var int
    */
   public $totalResults;
   /**
-   * Total values for the requested metrics over all the results, not just the
-   * results returned in this response. The order of the metric totals is same
-   * as the metric order specified in the request.
-   *
    * @var string[]
    */
   public $totalsForAllResults;
 
   /**
-   * Column headers that list dimension names followed by the metric names. The
-   * order of dimensions and metrics is same as specified in the request.
-   *
-   * @param RealtimeDataColumnHeaders[] $columnHeaders
+   * @param RealtimeDataColumnHeaders[]
    */
   public function setColumnHeaders($columnHeaders)
   {
@@ -86,9 +66,7 @@ class RealtimeData extends \Google\Collection
     return $this->columnHeaders;
   }
   /**
-   * Unique ID for this data response.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -102,9 +80,7 @@ class RealtimeData extends \Google\Collection
     return $this->id;
   }
   /**
-   * Resource type.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -118,10 +94,7 @@ class RealtimeData extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Information for the view (profile), for which the real time data was
-   * requested.
-   *
-   * @param RealtimeDataProfileInfo $profileInfo
+   * @param RealtimeDataProfileInfo
    */
   public function setProfileInfo(RealtimeDataProfileInfo $profileInfo)
   {
@@ -135,9 +108,7 @@ class RealtimeData extends \Google\Collection
     return $this->profileInfo;
   }
   /**
-   * Real time data request query parameters.
-   *
-   * @param RealtimeDataQuery $query
+   * @param RealtimeDataQuery
    */
   public function setQuery(RealtimeDataQuery $query)
   {
@@ -151,11 +122,7 @@ class RealtimeData extends \Google\Collection
     return $this->query;
   }
   /**
-   * Real time data rows, where each row contains a list of dimension values
-   * followed by the metric values. The order of dimensions and metrics is same
-   * as specified in the request.
-   *
-   * @param string[] $rows
+   * @param string[]
    */
   public function setRows($rows)
   {
@@ -169,9 +136,7 @@ class RealtimeData extends \Google\Collection
     return $this->rows;
   }
   /**
-   * Link to this page.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -185,10 +150,7 @@ class RealtimeData extends \Google\Collection
     return $this->selfLink;
   }
   /**
-   * The total number of rows for the query, regardless of the number of rows in
-   * the response.
-   *
-   * @param int $totalResults
+   * @param int
    */
   public function setTotalResults($totalResults)
   {
@@ -202,11 +164,7 @@ class RealtimeData extends \Google\Collection
     return $this->totalResults;
   }
   /**
-   * Total values for the requested metrics over all the results, not just the
-   * results returned in this response. The order of the metric totals is same
-   * as the metric order specified in the request.
-   *
-   * @param string[] $totalsForAllResults
+   * @param string[]
    */
   public function setTotalsForAllResults($totalsForAllResults)
   {

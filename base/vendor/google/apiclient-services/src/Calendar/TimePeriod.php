@@ -20,22 +20,16 @@ namespace Google\Service\Calendar;
 class TimePeriod extends \Google\Model
 {
   /**
-   * The (exclusive) end of the time period.
-   *
    * @var string
    */
   public $end;
   /**
-   * The (inclusive) start of the time period.
-   *
    * @var string
    */
   public $start;
 
   /**
-   * The (exclusive) end of the time period.
-   *
-   * @param string $end
+   * @param string
    */
   public function setEnd($end)
   {
@@ -49,9 +43,7 @@ class TimePeriod extends \Google\Model
     return $this->end;
   }
   /**
-   * The (inclusive) start of the time period.
-   *
-   * @param string $start
+   * @param string
    */
   public function setStart($start)
   {

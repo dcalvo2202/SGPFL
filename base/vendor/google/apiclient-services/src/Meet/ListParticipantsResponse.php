@@ -21,29 +21,18 @@ class ListParticipantsResponse extends \Google\Collection
 {
   protected $collection_key = 'participants';
   /**
-   * Token to be circulated back for further List call if current List doesn't
-   * include all the participants. Unset if all participants are returned.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $participantsType = Participant::class;
   protected $participantsDataType = 'array';
   /**
-   * Total, exact number of `participants`. By default, this field isn't
-   * included in the response. Set the field mask in
-   * [SystemParameterContext](https://cloud.google.com/apis/docs/system-
-   * parameters) to receive this field in the response.
-   *
    * @var int
    */
   public $totalSize;
 
   /**
-   * Token to be circulated back for further List call if current List doesn't
-   * include all the participants. Unset if all participants are returned.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -57,9 +46,7 @@ class ListParticipantsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * List of participants in one page.
-   *
-   * @param Participant[] $participants
+   * @param Participant[]
    */
   public function setParticipants($participants)
   {
@@ -73,12 +60,7 @@ class ListParticipantsResponse extends \Google\Collection
     return $this->participants;
   }
   /**
-   * Total, exact number of `participants`. By default, this field isn't
-   * included in the response. Set the field mask in
-   * [SystemParameterContext](https://cloud.google.com/apis/docs/system-
-   * parameters) to receive this field in the response.
-   *
-   * @param int $totalSize
+   * @param int
    */
   public function setTotalSize($totalSize)
   {

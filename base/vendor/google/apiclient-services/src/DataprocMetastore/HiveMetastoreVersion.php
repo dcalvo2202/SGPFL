@@ -20,24 +20,16 @@ namespace Google\Service\DataprocMetastore;
 class HiveMetastoreVersion extends \Google\Model
 {
   /**
-   * Whether version will be chosen by the server if a metastore service is
-   * created with a HiveMetastoreConfig that omits the version.
-   *
    * @var bool
    */
   public $isDefault;
   /**
-   * The semantic version of the Hive Metastore software.
-   *
    * @var string
    */
   public $version;
 
   /**
-   * Whether version will be chosen by the server if a metastore service is
-   * created with a HiveMetastoreConfig that omits the version.
-   *
-   * @param bool $isDefault
+   * @param bool
    */
   public function setIsDefault($isDefault)
   {
@@ -51,9 +43,7 @@ class HiveMetastoreVersion extends \Google\Model
     return $this->isDefault;
   }
   /**
-   * The semantic version of the Hive Metastore software.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

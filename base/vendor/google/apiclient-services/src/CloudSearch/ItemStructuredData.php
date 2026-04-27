@@ -20,10 +20,6 @@ namespace Google\Service\CloudSearch;
 class ItemStructuredData extends \Google\Model
 {
   /**
-   * Hashing value provided by the API caller. This can be used with the
-   * items.push method to calculate modified state. The maximum length is 2048
-   * characters.
-   *
    * @var string
    */
   public $hash;
@@ -31,11 +27,7 @@ class ItemStructuredData extends \Google\Model
   protected $objectDataType = '';
 
   /**
-   * Hashing value provided by the API caller. This can be used with the
-   * items.push method to calculate modified state. The maximum length is 2048
-   * characters.
-   *
-   * @param string $hash
+   * @param string
    */
   public function setHash($hash)
   {
@@ -49,10 +41,7 @@ class ItemStructuredData extends \Google\Model
     return $this->hash;
   }
   /**
-   * The structured data object that should conform to a registered object
-   * definition in the schema for the data source.
-   *
-   * @param StructuredDataObject $object
+   * @param StructuredDataObject
    */
   public function setObject(StructuredDataObject $object)
   {

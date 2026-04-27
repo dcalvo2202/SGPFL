@@ -25,9 +25,7 @@ class GoogleCloudRetailLoggingErrorContext extends \Google\Model
   protected $reportLocationDataType = '';
 
   /**
-   * The HTTP request which was processed when the error was triggered.
-   *
-   * @param GoogleCloudRetailLoggingHttpRequestContext $httpRequest
+   * @param GoogleCloudRetailLoggingHttpRequestContext
    */
   public function setHttpRequest(GoogleCloudRetailLoggingHttpRequestContext $httpRequest)
   {
@@ -41,10 +39,7 @@ class GoogleCloudRetailLoggingErrorContext extends \Google\Model
     return $this->httpRequest;
   }
   /**
-   * The location in the source code where the decision was made to report the
-   * error, usually the place where it was logged.
-   *
-   * @param GoogleCloudRetailLoggingSourceLocation $reportLocation
+   * @param GoogleCloudRetailLoggingSourceLocation
    */
   public function setReportLocation(GoogleCloudRetailLoggingSourceLocation $reportLocation)
   {

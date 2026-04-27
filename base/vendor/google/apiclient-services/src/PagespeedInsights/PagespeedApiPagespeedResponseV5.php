@@ -20,27 +20,18 @@ namespace Google\Service\PagespeedInsights;
 class PagespeedApiPagespeedResponseV5 extends \Google\Model
 {
   /**
-   * The UTC timestamp of this analysis.
-   *
    * @var string
    */
   public $analysisUTCTimestamp;
   /**
-   * The captcha verify result
-   *
    * @var string
    */
   public $captchaResult;
   /**
-   * Canonicalized and final URL for the document, after following page
-   * redirects (if any).
-   *
    * @var string
    */
   public $id;
   /**
-   * Kind of result.
-   *
    * @var string
    */
   public $kind;
@@ -54,9 +45,7 @@ class PagespeedApiPagespeedResponseV5 extends \Google\Model
   protected $versionDataType = '';
 
   /**
-   * The UTC timestamp of this analysis.
-   *
-   * @param string $analysisUTCTimestamp
+   * @param string
    */
   public function setAnalysisUTCTimestamp($analysisUTCTimestamp)
   {
@@ -70,9 +59,7 @@ class PagespeedApiPagespeedResponseV5 extends \Google\Model
     return $this->analysisUTCTimestamp;
   }
   /**
-   * The captcha verify result
-   *
-   * @param string $captchaResult
+   * @param string
    */
   public function setCaptchaResult($captchaResult)
   {
@@ -86,10 +73,7 @@ class PagespeedApiPagespeedResponseV5 extends \Google\Model
     return $this->captchaResult;
   }
   /**
-   * Canonicalized and final URL for the document, after following page
-   * redirects (if any).
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -103,9 +87,7 @@ class PagespeedApiPagespeedResponseV5 extends \Google\Model
     return $this->id;
   }
   /**
-   * Kind of result.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -119,9 +101,7 @@ class PagespeedApiPagespeedResponseV5 extends \Google\Model
     return $this->kind;
   }
   /**
-   * Lighthouse response for the audit url as an object.
-   *
-   * @param LighthouseResultV5 $lighthouseResult
+   * @param LighthouseResultV5
    */
   public function setLighthouseResult(LighthouseResultV5 $lighthouseResult)
   {
@@ -135,9 +115,7 @@ class PagespeedApiPagespeedResponseV5 extends \Google\Model
     return $this->lighthouseResult;
   }
   /**
-   * Metrics of end users' page loading experience.
-   *
-   * @param PagespeedApiLoadingExperienceV5 $loadingExperience
+   * @param PagespeedApiLoadingExperienceV5
    */
   public function setLoadingExperience(PagespeedApiLoadingExperienceV5 $loadingExperience)
   {
@@ -151,9 +129,7 @@ class PagespeedApiPagespeedResponseV5 extends \Google\Model
     return $this->loadingExperience;
   }
   /**
-   * Metrics of the aggregated page loading experience of the origin
-   *
-   * @param PagespeedApiLoadingExperienceV5 $originLoadingExperience
+   * @param PagespeedApiLoadingExperienceV5
    */
   public function setOriginLoadingExperience(PagespeedApiLoadingExperienceV5 $originLoadingExperience)
   {
@@ -167,9 +143,7 @@ class PagespeedApiPagespeedResponseV5 extends \Google\Model
     return $this->originLoadingExperience;
   }
   /**
-   * The version of PageSpeed used to generate these results.
-   *
-   * @param PagespeedVersion $version
+   * @param PagespeedVersion
    */
   public function setVersion(PagespeedVersion $version)
   {

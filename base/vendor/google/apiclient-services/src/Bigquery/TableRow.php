@@ -24,10 +24,7 @@ class TableRow extends \Google\Collection
   protected $fDataType = 'array';
 
   /**
-   * Represents a single row in the result set, consisting of one or more
-   * fields.
-   *
-   * @param TableCell[] $f
+   * @param TableCell[]
    */
   public function setF($f)
   {

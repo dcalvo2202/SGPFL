@@ -23,24 +23,16 @@ class HmacKeysMetadata extends \Google\Collection
   protected $itemsType = HmacKeyMetadata::class;
   protected $itemsDataType = 'array';
   /**
-   * The kind of item this is. For lists of hmacKeys, this is always
-   * storage#hmacKeysMetadata.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The continuation token, used to page through large result sets. Provide
-   * this value in a subsequent request to return the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of items.
-   *
-   * @param HmacKeyMetadata[] $items
+   * @param HmacKeyMetadata[]
    */
   public function setItems($items)
   {
@@ -54,10 +46,7 @@ class HmacKeysMetadata extends \Google\Collection
     return $this->items;
   }
   /**
-   * The kind of item this is. For lists of hmacKeys, this is always
-   * storage#hmacKeysMetadata.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -71,10 +60,7 @@ class HmacKeysMetadata extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The continuation token, used to page through large result sets. Provide
-   * this value in a subsequent request to return the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

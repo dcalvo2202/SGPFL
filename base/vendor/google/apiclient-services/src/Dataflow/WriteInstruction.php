@@ -25,9 +25,7 @@ class WriteInstruction extends \Google\Model
   protected $sinkDataType = '';
 
   /**
-   * The input.
-   *
-   * @param InstructionInput $input
+   * @param InstructionInput
    */
   public function setInput(InstructionInput $input)
   {
@@ -41,9 +39,7 @@ class WriteInstruction extends \Google\Model
     return $this->input;
   }
   /**
-   * The sink to write to.
-   *
-   * @param Sink $sink
+   * @param Sink
    */
   public function setSink(Sink $sink)
   {

@@ -24,9 +24,7 @@ class GoogleCloudApigeeV1ListDatastoresResponse extends \Google\Collection
   protected $datastoresDataType = 'array';
 
   /**
-   * A list of datastores
-   *
-   * @param GoogleCloudApigeeV1Datastore[] $datastores
+   * @param GoogleCloudApigeeV1Datastore[]
    */
   public function setDatastores($datastores)
   {

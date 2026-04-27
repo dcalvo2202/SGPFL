@@ -19,63 +19,36 @@ namespace Google\Service\CloudBuild;
 
 class WhenExpression extends \Google\Collection
 {
-  /**
-   * Default enum type; should not be used.
-   */
-  public const EXPRESSION_OPERATOR_EXPRESSION_OPERATOR_UNSPECIFIED = 'EXPRESSION_OPERATOR_UNSPECIFIED';
-  /**
-   * Input is in values.
-   */
-  public const EXPRESSION_OPERATOR_IN = 'IN';
-  /**
-   * Input is not in values.
-   */
-  public const EXPRESSION_OPERATOR_NOT_IN = 'NOT_IN';
   protected $collection_key = 'values';
   /**
-   * Operator that represents an Input's relationship to the values
-   *
    * @var string
    */
   public $expressionOperator;
   /**
-   * Input is the string for guard checking which can be a static input or an
-   * output from a parent Task.
-   *
    * @var string
    */
   public $input;
   /**
-   * Values is an array of strings, which is compared against the input, for
-   * guard checking.
-   *
    * @var string[]
    */
   public $values;
 
   /**
-   * Operator that represents an Input's relationship to the values
-   *
-   * Accepted values: EXPRESSION_OPERATOR_UNSPECIFIED, IN, NOT_IN
-   *
-   * @param self::EXPRESSION_OPERATOR_* $expressionOperator
+   * @param string
    */
   public function setExpressionOperator($expressionOperator)
   {
     $this->expressionOperator = $expressionOperator;
   }
   /**
-   * @return self::EXPRESSION_OPERATOR_*
+   * @return string
    */
   public function getExpressionOperator()
   {
     return $this->expressionOperator;
   }
   /**
-   * Input is the string for guard checking which can be a static input or an
-   * output from a parent Task.
-   *
-   * @param string $input
+   * @param string
    */
   public function setInput($input)
   {
@@ -89,10 +62,7 @@ class WhenExpression extends \Google\Collection
     return $this->input;
   }
   /**
-   * Values is an array of strings, which is compared against the input, for
-   * guard checking.
-   *
-   * @param string[] $values
+   * @param string[]
    */
   public function setValues($values)
   {

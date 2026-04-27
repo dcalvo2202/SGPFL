@@ -25,9 +25,7 @@ class GooglePrivacyDlpV2ImageFallbackLocation extends \Google\Model
   protected $multiRegionProcessingDataType = '';
 
   /**
-   * Processing occurs in the global region.
-   *
-   * @param GooglePrivacyDlpV2GlobalProcessing $globalProcessing
+   * @param GooglePrivacyDlpV2GlobalProcessing
    */
   public function setGlobalProcessing(GooglePrivacyDlpV2GlobalProcessing $globalProcessing)
   {
@@ -41,10 +39,7 @@ class GooglePrivacyDlpV2ImageFallbackLocation extends \Google\Model
     return $this->globalProcessing;
   }
   /**
-   * Processing occurs in a multi-region that contains the current region if
-   * available.
-   *
-   * @param GooglePrivacyDlpV2MultiRegionProcessing $multiRegionProcessing
+   * @param GooglePrivacyDlpV2MultiRegionProcessing
    */
   public function setMultiRegionProcessing(GooglePrivacyDlpV2MultiRegionProcessing $multiRegionProcessing)
   {

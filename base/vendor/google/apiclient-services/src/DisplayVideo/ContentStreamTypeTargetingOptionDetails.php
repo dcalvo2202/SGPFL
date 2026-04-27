@@ -20,40 +20,19 @@ namespace Google\Service\DisplayVideo;
 class ContentStreamTypeTargetingOptionDetails extends \Google\Model
 {
   /**
-   * Content stream type is not specified in this version. This enum is a place
-   * holder for a default value and does not represent a real content stream
-   * type.
-   */
-  public const CONTENT_STREAM_TYPE_CONTENT_STREAM_TYPE_UNSPECIFIED = 'CONTENT_STREAM_TYPE_UNSPECIFIED';
-  /**
-   * The content is being live-streamed.
-   */
-  public const CONTENT_STREAM_TYPE_CONTENT_LIVE_STREAM = 'CONTENT_LIVE_STREAM';
-  /**
-   * The content is viewed on-demand.
-   */
-  public const CONTENT_STREAM_TYPE_CONTENT_ON_DEMAND = 'CONTENT_ON_DEMAND';
-  /**
-   * Output only. The content stream type.
-   *
    * @var string
    */
   public $contentStreamType;
 
   /**
-   * Output only. The content stream type.
-   *
-   * Accepted values: CONTENT_STREAM_TYPE_UNSPECIFIED, CONTENT_LIVE_STREAM,
-   * CONTENT_ON_DEMAND
-   *
-   * @param self::CONTENT_STREAM_TYPE_* $contentStreamType
+   * @param string
    */
   public function setContentStreamType($contentStreamType)
   {
     $this->contentStreamType = $contentStreamType;
   }
   /**
-   * @return self::CONTENT_STREAM_TYPE_*
+   * @return string
    */
   public function getContentStreamType()
   {

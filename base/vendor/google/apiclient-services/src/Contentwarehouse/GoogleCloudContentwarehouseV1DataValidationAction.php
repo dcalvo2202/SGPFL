@@ -20,20 +20,12 @@ namespace Google\Service\Contentwarehouse;
 class GoogleCloudContentwarehouseV1DataValidationAction extends \Google\Model
 {
   /**
-   * Map of (K, V) -> (field, string condition to be evaluated on the field)
-   * E.g., ("age", "age > 18 && age < 60") entry triggers validation of field
-   * age with the given condition. Map entries will be ANDed during validation.
-   *
    * @var string[]
    */
   public $conditions;
 
   /**
-   * Map of (K, V) -> (field, string condition to be evaluated on the field)
-   * E.g., ("age", "age > 18 && age < 60") entry triggers validation of field
-   * age with the given condition. Map entries will be ANDed during validation.
-   *
-   * @param string[] $conditions
+   * @param string[]
    */
   public function setConditions($conditions)
   {

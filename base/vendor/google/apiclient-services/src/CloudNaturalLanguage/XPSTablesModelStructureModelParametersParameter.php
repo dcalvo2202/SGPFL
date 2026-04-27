@@ -19,27 +19,16 @@ namespace Google\Service\CloudNaturalLanguage;
 
 class XPSTablesModelStructureModelParametersParameter extends \Google\Model
 {
-  /**
-   * Float type parameter value.
-   *
-   * @var 
-   */
   public $floatValue;
   /**
-   * Integer type parameter value.
-   *
    * @var string
    */
   public $intValue;
   /**
-   * Parameter name.
-   *
    * @var string
    */
   public $name;
   /**
-   * String type parameter value.
-   *
    * @var string
    */
   public $stringValue;
@@ -53,9 +42,7 @@ class XPSTablesModelStructureModelParametersParameter extends \Google\Model
     return $this->floatValue;
   }
   /**
-   * Integer type parameter value.
-   *
-   * @param string $intValue
+   * @param string
    */
   public function setIntValue($intValue)
   {
@@ -69,9 +56,7 @@ class XPSTablesModelStructureModelParametersParameter extends \Google\Model
     return $this->intValue;
   }
   /**
-   * Parameter name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -85,9 +70,7 @@ class XPSTablesModelStructureModelParametersParameter extends \Google\Model
     return $this->name;
   }
   /**
-   * String type parameter value.
-   *
-   * @param string $stringValue
+   * @param string
    */
   public function setStringValue($stringValue)
   {

@@ -28,7 +28,7 @@ class GoogleCloudDialogflowCxV3BoostSpecs extends \Google\Collection
   protected $specDataType = 'array';
 
   /**
-   * @param string[] $dataStores
+   * @param string[]
    */
   public function setDataStores($dataStores)
   {
@@ -42,7 +42,7 @@ class GoogleCloudDialogflowCxV3BoostSpecs extends \Google\Collection
     return $this->dataStores;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3BoostSpec[] $spec
+   * @param GoogleCloudDialogflowCxV3BoostSpec[]
    */
   public function setSpec($spec)
   {

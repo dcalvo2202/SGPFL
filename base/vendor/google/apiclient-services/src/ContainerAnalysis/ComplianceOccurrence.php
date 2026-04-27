@@ -30,7 +30,7 @@ class ComplianceOccurrence extends \Google\Collection
   protected $versionDataType = '';
 
   /**
-   * @param string $nonComplianceReason
+   * @param string
    */
   public function setNonComplianceReason($nonComplianceReason)
   {
@@ -44,7 +44,7 @@ class ComplianceOccurrence extends \Google\Collection
     return $this->nonComplianceReason;
   }
   /**
-   * @param NonCompliantFile[] $nonCompliantFiles
+   * @param NonCompliantFile[]
    */
   public function setNonCompliantFiles($nonCompliantFiles)
   {
@@ -58,9 +58,7 @@ class ComplianceOccurrence extends \Google\Collection
     return $this->nonCompliantFiles;
   }
   /**
-   * The OS and config version the benchmark was run on.
-   *
-   * @param ComplianceVersion $version
+   * @param ComplianceVersion
    */
   public function setVersion(ComplianceVersion $version)
   {

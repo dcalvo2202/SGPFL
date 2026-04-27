@@ -21,25 +21,16 @@ class InstanceGroupManagersStopInstancesRequest extends \Google\Collection
 {
   protected $collection_key = 'instances';
   /**
-   * If this flag is set to true, the Instance Group Manager will proceed to
-   * stop the instances, skipping initialization on them.
-   *
    * @var bool
    */
   public $forceStop;
   /**
-   * The URLs of one or more instances to stop. This can be a full URL or a
-   * partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
-   *
    * @var string[]
    */
   public $instances;
 
   /**
-   * If this flag is set to true, the Instance Group Manager will proceed to
-   * stop the instances, skipping initialization on them.
-   *
-   * @param bool $forceStop
+   * @param bool
    */
   public function setForceStop($forceStop)
   {
@@ -53,10 +44,7 @@ class InstanceGroupManagersStopInstancesRequest extends \Google\Collection
     return $this->forceStop;
   }
   /**
-   * The URLs of one or more instances to stop. This can be a full URL or a
-   * partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
-   *
-   * @param string[] $instances
+   * @param string[]
    */
   public function setInstances($instances)
   {

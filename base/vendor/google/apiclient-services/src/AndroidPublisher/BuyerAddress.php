@@ -20,31 +20,20 @@ namespace Google\Service\AndroidPublisher;
 class BuyerAddress extends \Google\Model
 {
   /**
-   * Two letter country code based on ISO-3166-1 Alpha-2 (UN country codes).
-   *
    * @var string
    */
   public $buyerCountry;
   /**
-   * Postal code of an address. When Google is the Merchant of Record for the
-   * order, this information is not included.
-   *
    * @var string
    */
   public $buyerPostcode;
   /**
-   * Top-level administrative subdivision of the buyer address country. When
-   * Google is the Merchant of Record for the order, this information is not
-   * included.
-   *
    * @var string
    */
   public $buyerState;
 
   /**
-   * Two letter country code based on ISO-3166-1 Alpha-2 (UN country codes).
-   *
-   * @param string $buyerCountry
+   * @param string
    */
   public function setBuyerCountry($buyerCountry)
   {
@@ -58,10 +47,7 @@ class BuyerAddress extends \Google\Model
     return $this->buyerCountry;
   }
   /**
-   * Postal code of an address. When Google is the Merchant of Record for the
-   * order, this information is not included.
-   *
-   * @param string $buyerPostcode
+   * @param string
    */
   public function setBuyerPostcode($buyerPostcode)
   {
@@ -75,11 +61,7 @@ class BuyerAddress extends \Google\Model
     return $this->buyerPostcode;
   }
   /**
-   * Top-level administrative subdivision of the buyer address country. When
-   * Google is the Merchant of Record for the order, this information is not
-   * included.
-   *
-   * @param string $buyerState
+   * @param string
    */
   public function setBuyerState($buyerState)
   {

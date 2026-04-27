@@ -20,28 +20,16 @@ namespace Google\Service\CloudHealthcare;
 class TimeRange extends \Google\Model
 {
   /**
-   * Optional. The latest consent change time, in format YYYY-MM-
-   * DDThh:mm:ss.sss+zz:zz If not specified, the system uses the time when
-   * ApplyConsents was called.
-   *
    * @var string
    */
   public $end;
   /**
-   * Optional. The earliest consent change time, in format YYYY-MM-
-   * DDThh:mm:ss.sss+zz:zz If not specified, the system uses the FHIR store
-   * creation time.
-   *
    * @var string
    */
   public $start;
 
   /**
-   * Optional. The latest consent change time, in format YYYY-MM-
-   * DDThh:mm:ss.sss+zz:zz If not specified, the system uses the time when
-   * ApplyConsents was called.
-   *
-   * @param string $end
+   * @param string
    */
   public function setEnd($end)
   {
@@ -55,11 +43,7 @@ class TimeRange extends \Google\Model
     return $this->end;
   }
   /**
-   * Optional. The earliest consent change time, in format YYYY-MM-
-   * DDThh:mm:ss.sss+zz:zz If not specified, the system uses the FHIR store
-   * creation time.
-   *
-   * @param string $start
+   * @param string
    */
   public function setStart($start)
   {

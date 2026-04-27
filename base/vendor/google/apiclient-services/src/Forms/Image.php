@@ -20,34 +20,22 @@ namespace Google\Service\Forms;
 class Image extends \Google\Model
 {
   /**
-   * A description of the image that is shown on hover and read by
-   * screenreaders.
-   *
    * @var string
    */
   public $altText;
   /**
-   * Output only. A URI from which you can download the image; this is valid
-   * only for a limited time.
-   *
    * @var string
    */
   public $contentUri;
   protected $propertiesType = MediaProperties::class;
   protected $propertiesDataType = '';
   /**
-   * Input only. The source URI is the URI used to insert the image. The source
-   * URI can be empty when fetched.
-   *
    * @var string
    */
   public $sourceUri;
 
   /**
-   * A description of the image that is shown on hover and read by
-   * screenreaders.
-   *
-   * @param string $altText
+   * @param string
    */
   public function setAltText($altText)
   {
@@ -61,10 +49,7 @@ class Image extends \Google\Model
     return $this->altText;
   }
   /**
-   * Output only. A URI from which you can download the image; this is valid
-   * only for a limited time.
-   *
-   * @param string $contentUri
+   * @param string
    */
   public function setContentUri($contentUri)
   {
@@ -78,9 +63,7 @@ class Image extends \Google\Model
     return $this->contentUri;
   }
   /**
-   * Properties of an image.
-   *
-   * @param MediaProperties $properties
+   * @param MediaProperties
    */
   public function setProperties(MediaProperties $properties)
   {
@@ -94,10 +77,7 @@ class Image extends \Google\Model
     return $this->properties;
   }
   /**
-   * Input only. The source URI is the URI used to insert the image. The source
-   * URI can be empty when fetched.
-   *
-   * @param string $sourceUri
+   * @param string
    */
   public function setSourceUri($sourceUri)
   {

@@ -20,27 +20,10 @@ namespace Google\Service\Slides;
 class UpdatePageElementTransformRequest extends \Google\Model
 {
   /**
-   * Unspecified mode.
-   */
-  public const APPLY_MODE_APPLY_MODE_UNSPECIFIED = 'APPLY_MODE_UNSPECIFIED';
-  /**
-   * Applies the new AffineTransform matrix to the existing one, and replaces
-   * the existing one with the resulting concatenation.
-   */
-  public const APPLY_MODE_RELATIVE = 'RELATIVE';
-  /**
-   * Replaces the existing AffineTransform matrix with the new one.
-   */
-  public const APPLY_MODE_ABSOLUTE = 'ABSOLUTE';
-  /**
-   * The apply mode of the transform update.
-   *
    * @var string
    */
   public $applyMode;
   /**
-   * The object ID of the page element to update.
-   *
    * @var string
    */
   public $objectId;
@@ -48,27 +31,21 @@ class UpdatePageElementTransformRequest extends \Google\Model
   protected $transformDataType = '';
 
   /**
-   * The apply mode of the transform update.
-   *
-   * Accepted values: APPLY_MODE_UNSPECIFIED, RELATIVE, ABSOLUTE
-   *
-   * @param self::APPLY_MODE_* $applyMode
+   * @param string
    */
   public function setApplyMode($applyMode)
   {
     $this->applyMode = $applyMode;
   }
   /**
-   * @return self::APPLY_MODE_*
+   * @return string
    */
   public function getApplyMode()
   {
     return $this->applyMode;
   }
   /**
-   * The object ID of the page element to update.
-   *
-   * @param string $objectId
+   * @param string
    */
   public function setObjectId($objectId)
   {
@@ -82,9 +59,7 @@ class UpdatePageElementTransformRequest extends \Google\Model
     return $this->objectId;
   }
   /**
-   * The input transform matrix used to update the page element.
-   *
-   * @param AffineTransform $transform
+   * @param AffineTransform
    */
   public function setTransform(AffineTransform $transform)
   {

@@ -23,17 +23,12 @@ class ListModelsResponse extends \Google\Collection
   protected $modelsType = Model::class;
   protected $modelsDataType = 'array';
   /**
-   * A token to retrieve next page of results. Pass this token to the page_token
-   * field in the ListModelsRequest to obtain the corresponding page.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The models read.
-   *
-   * @param Model[] $models
+   * @param Model[]
    */
   public function setModels($models)
   {
@@ -47,10 +42,7 @@ class ListModelsResponse extends \Google\Collection
     return $this->models;
   }
   /**
-   * A token to retrieve next page of results. Pass this token to the page_token
-   * field in the ListModelsRequest to obtain the corresponding page.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

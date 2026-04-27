@@ -19,150 +19,86 @@ namespace Google\Service\Compute;
 
 class RouterStatusBgpPeerStatus extends \Google\Collection
 {
-  public const STATUS_DOWN = 'DOWN';
-  public const STATUS_UNKNOWN = 'UNKNOWN';
-  public const STATUS_UP = 'UP';
-  /**
-   * BGP peer disabled because it requires IPv4 but the underlying connection is
-   * IPv6-only.
-   */
-  public const STATUS_REASON_IPV4_PEER_ON_IPV6_ONLY_CONNECTION = 'IPV4_PEER_ON_IPV6_ONLY_CONNECTION';
-  /**
-   * BGP peer disabled because it requires IPv6 but the underlying connection is
-   * IPv4-only.
-   */
-  public const STATUS_REASON_IPV6_PEER_ON_IPV4_ONLY_CONNECTION = 'IPV6_PEER_ON_IPV4_ONLY_CONNECTION';
-  /**
-   * Indicates internal problems with configuration of MD5 authentication. This
-   * particular reason can only be returned when md5AuthEnabled is true and
-   * status is DOWN.
-   */
-  public const STATUS_REASON_MD5_AUTH_INTERNAL_PROBLEM = 'MD5_AUTH_INTERNAL_PROBLEM';
-  public const STATUS_REASON_STATUS_REASON_UNSPECIFIED = 'STATUS_REASON_UNSPECIFIED';
   protected $collection_key = 'advertisedRoutes';
   protected $advertisedRoutesType = Route::class;
   protected $advertisedRoutesDataType = 'array';
   protected $bfdStatusType = BfdStatus::class;
   protected $bfdStatusDataType = '';
   /**
-   * Output only. Enable IPv4 traffic over BGP Peer. It is enabled by default if
-   * the peerIpAddress is version 4.
-   *
    * @var bool
    */
   public $enableIpv4;
   /**
-   * Output only. Enable IPv6 traffic over BGP Peer. It is enabled by default if
-   * the peerIpAddress is version 6.
-   *
    * @var bool
    */
   public $enableIpv6;
   /**
-   * Output only. IP address of the local BGP interface.
-   *
    * @var string
    */
   public $ipAddress;
   /**
-   * Output only. IPv4 address of the local BGP interface.
-   *
    * @var string
    */
   public $ipv4NexthopAddress;
   /**
-   * Output only. IPv6 address of the local BGP interface.
-   *
    * @var string
    */
   public $ipv6NexthopAddress;
   /**
-   * Output only. URL of the VPN tunnel that this BGP peer controls.
-   *
    * @var string
    */
   public $linkedVpnTunnel;
   /**
-   * Informs whether MD5 authentication is enabled on this BGP peer.
-   *
    * @var bool
    */
   public $md5AuthEnabled;
   /**
-   * Output only. Name of this BGP peer. Unique within the Routers resource.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Number of routes learned from the remote BGP Peer.
-   *
    * @var string
    */
   public $numLearnedRoutes;
   /**
-   * Output only. IP address of the remote BGP interface.
-   *
    * @var string
    */
   public $peerIpAddress;
   /**
-   * Output only. IPv4 address of the remote BGP interface.
-   *
    * @var string
    */
   public $peerIpv4NexthopAddress;
   /**
-   * Output only. IPv6 address of the remote BGP interface.
-   *
    * @var string
    */
   public $peerIpv6NexthopAddress;
   /**
-   * Output only. [Output only] URI of the VM instance that is used as third-
-   * party router appliances such as Next Gen Firewalls, Virtual Routers, or
-   * Router Appliances. The VM instance is the peer side of the BGP session.
-   *
    * @var string
    */
   public $routerApplianceInstance;
   /**
-   * Output only. The state of the BGP session. For a list of possible values
-   * for this field, seeBGP session states.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. Status of the BGP peer: {UP, DOWN}
-   *
    * @var string
    */
   public $status;
   /**
-   * Indicates why particular status was returned.
-   *
    * @var string
    */
   public $statusReason;
   /**
-   * Output only. Time this session has been up. Format:  14 years, 51 weeks, 6
-   * days, 23 hours, 59 minutes, 59 seconds
-   *
    * @var string
    */
   public $uptime;
   /**
-   * Output only. Time this session has been up, in seconds. Format:  145
-   *
    * @var string
    */
   public $uptimeSeconds;
 
   /**
-   * Routes that were advertised to the remote BGP peer
-   *
-   * @param Route[] $advertisedRoutes
+   * @param Route[]
    */
   public function setAdvertisedRoutes($advertisedRoutes)
   {
@@ -176,7 +112,7 @@ class RouterStatusBgpPeerStatus extends \Google\Collection
     return $this->advertisedRoutes;
   }
   /**
-   * @param BfdStatus $bfdStatus
+   * @param BfdStatus
    */
   public function setBfdStatus(BfdStatus $bfdStatus)
   {
@@ -190,10 +126,7 @@ class RouterStatusBgpPeerStatus extends \Google\Collection
     return $this->bfdStatus;
   }
   /**
-   * Output only. Enable IPv4 traffic over BGP Peer. It is enabled by default if
-   * the peerIpAddress is version 4.
-   *
-   * @param bool $enableIpv4
+   * @param bool
    */
   public function setEnableIpv4($enableIpv4)
   {
@@ -207,10 +140,7 @@ class RouterStatusBgpPeerStatus extends \Google\Collection
     return $this->enableIpv4;
   }
   /**
-   * Output only. Enable IPv6 traffic over BGP Peer. It is enabled by default if
-   * the peerIpAddress is version 6.
-   *
-   * @param bool $enableIpv6
+   * @param bool
    */
   public function setEnableIpv6($enableIpv6)
   {
@@ -224,9 +154,7 @@ class RouterStatusBgpPeerStatus extends \Google\Collection
     return $this->enableIpv6;
   }
   /**
-   * Output only. IP address of the local BGP interface.
-   *
-   * @param string $ipAddress
+   * @param string
    */
   public function setIpAddress($ipAddress)
   {
@@ -240,9 +168,7 @@ class RouterStatusBgpPeerStatus extends \Google\Collection
     return $this->ipAddress;
   }
   /**
-   * Output only. IPv4 address of the local BGP interface.
-   *
-   * @param string $ipv4NexthopAddress
+   * @param string
    */
   public function setIpv4NexthopAddress($ipv4NexthopAddress)
   {
@@ -256,9 +182,7 @@ class RouterStatusBgpPeerStatus extends \Google\Collection
     return $this->ipv4NexthopAddress;
   }
   /**
-   * Output only. IPv6 address of the local BGP interface.
-   *
-   * @param string $ipv6NexthopAddress
+   * @param string
    */
   public function setIpv6NexthopAddress($ipv6NexthopAddress)
   {
@@ -272,9 +196,7 @@ class RouterStatusBgpPeerStatus extends \Google\Collection
     return $this->ipv6NexthopAddress;
   }
   /**
-   * Output only. URL of the VPN tunnel that this BGP peer controls.
-   *
-   * @param string $linkedVpnTunnel
+   * @param string
    */
   public function setLinkedVpnTunnel($linkedVpnTunnel)
   {
@@ -288,9 +210,7 @@ class RouterStatusBgpPeerStatus extends \Google\Collection
     return $this->linkedVpnTunnel;
   }
   /**
-   * Informs whether MD5 authentication is enabled on this BGP peer.
-   *
-   * @param bool $md5AuthEnabled
+   * @param bool
    */
   public function setMd5AuthEnabled($md5AuthEnabled)
   {
@@ -304,9 +224,7 @@ class RouterStatusBgpPeerStatus extends \Google\Collection
     return $this->md5AuthEnabled;
   }
   /**
-   * Output only. Name of this BGP peer. Unique within the Routers resource.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -320,9 +238,7 @@ class RouterStatusBgpPeerStatus extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. Number of routes learned from the remote BGP Peer.
-   *
-   * @param string $numLearnedRoutes
+   * @param string
    */
   public function setNumLearnedRoutes($numLearnedRoutes)
   {
@@ -336,9 +252,7 @@ class RouterStatusBgpPeerStatus extends \Google\Collection
     return $this->numLearnedRoutes;
   }
   /**
-   * Output only. IP address of the remote BGP interface.
-   *
-   * @param string $peerIpAddress
+   * @param string
    */
   public function setPeerIpAddress($peerIpAddress)
   {
@@ -352,9 +266,7 @@ class RouterStatusBgpPeerStatus extends \Google\Collection
     return $this->peerIpAddress;
   }
   /**
-   * Output only. IPv4 address of the remote BGP interface.
-   *
-   * @param string $peerIpv4NexthopAddress
+   * @param string
    */
   public function setPeerIpv4NexthopAddress($peerIpv4NexthopAddress)
   {
@@ -368,9 +280,7 @@ class RouterStatusBgpPeerStatus extends \Google\Collection
     return $this->peerIpv4NexthopAddress;
   }
   /**
-   * Output only. IPv6 address of the remote BGP interface.
-   *
-   * @param string $peerIpv6NexthopAddress
+   * @param string
    */
   public function setPeerIpv6NexthopAddress($peerIpv6NexthopAddress)
   {
@@ -384,11 +294,7 @@ class RouterStatusBgpPeerStatus extends \Google\Collection
     return $this->peerIpv6NexthopAddress;
   }
   /**
-   * Output only. [Output only] URI of the VM instance that is used as third-
-   * party router appliances such as Next Gen Firewalls, Virtual Routers, or
-   * Router Appliances. The VM instance is the peer side of the BGP session.
-   *
-   * @param string $routerApplianceInstance
+   * @param string
    */
   public function setRouterApplianceInstance($routerApplianceInstance)
   {
@@ -402,10 +308,7 @@ class RouterStatusBgpPeerStatus extends \Google\Collection
     return $this->routerApplianceInstance;
   }
   /**
-   * Output only. The state of the BGP session. For a list of possible values
-   * for this field, seeBGP session states.
-   *
-   * @param string $state
+   * @param string
    */
   public function setState($state)
   {
@@ -419,48 +322,35 @@ class RouterStatusBgpPeerStatus extends \Google\Collection
     return $this->state;
   }
   /**
-   * Output only. Status of the BGP peer: {UP, DOWN}
-   *
-   * Accepted values: DOWN, UNKNOWN, UP
-   *
-   * @param self::STATUS_* $status
+   * @param string
    */
   public function setStatus($status)
   {
     $this->status = $status;
   }
   /**
-   * @return self::STATUS_*
+   * @return string
    */
   public function getStatus()
   {
     return $this->status;
   }
   /**
-   * Indicates why particular status was returned.
-   *
-   * Accepted values: IPV4_PEER_ON_IPV6_ONLY_CONNECTION,
-   * IPV6_PEER_ON_IPV4_ONLY_CONNECTION, MD5_AUTH_INTERNAL_PROBLEM,
-   * STATUS_REASON_UNSPECIFIED
-   *
-   * @param self::STATUS_REASON_* $statusReason
+   * @param string
    */
   public function setStatusReason($statusReason)
   {
     $this->statusReason = $statusReason;
   }
   /**
-   * @return self::STATUS_REASON_*
+   * @return string
    */
   public function getStatusReason()
   {
     return $this->statusReason;
   }
   /**
-   * Output only. Time this session has been up. Format:  14 years, 51 weeks, 6
-   * days, 23 hours, 59 minutes, 59 seconds
-   *
-   * @param string $uptime
+   * @param string
    */
   public function setUptime($uptime)
   {
@@ -474,9 +364,7 @@ class RouterStatusBgpPeerStatus extends \Google\Collection
     return $this->uptime;
   }
   /**
-   * Output only. Time this session has been up, in seconds. Format:  145
-   *
-   * @param string $uptimeSeconds
+   * @param string
    */
   public function setUptimeSeconds($uptimeSeconds)
   {

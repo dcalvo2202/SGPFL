@@ -25,9 +25,6 @@ class RunReportRequest extends \Google\Collection
   protected $comparisonsType = Comparison::class;
   protected $comparisonsDataType = 'array';
   /**
-   * A currency code in ISO4217 format, such as "AED", "USD", "JPY". If the
-   * field is empty, the report uses the property's default currency.
-   *
    * @var string
    */
   public $currencyCode;
@@ -38,37 +35,14 @@ class RunReportRequest extends \Google\Collection
   protected $dimensionsType = Dimension::class;
   protected $dimensionsDataType = 'array';
   /**
-   * If false or unspecified, each row with all metrics equal to 0 will not be
-   * returned. If true, these rows will be returned if they are not separately
-   * removed by a filter. Regardless of this `keep_empty_rows` setting, only
-   * data recorded by the Google Analytics property can be displayed in a
-   * report. For example if a property never logs a `purchase` event, then a
-   * query for the `eventName` dimension and `eventCount` metric will not have a
-   * row eventName: "purchase" and eventCount: 0.
-   *
    * @var bool
    */
   public $keepEmptyRows;
   /**
-   * The number of rows to return. If unspecified, 10,000 rows are returned. The
-   * API returns a maximum of 250,000 rows per request, no matter how many you
-   * ask for. `limit` must be positive. The API can also return fewer rows than
-   * the requested `limit`, if there aren't as many dimension values as the
-   * `limit`. For instance, there are fewer than 300 possible values for the
-   * dimension `country`, so when reporting on only `country`, you can't get
-   * more than 300 rows, even if you set `limit` to a higher value. To learn
-   * more about this pagination parameter, see [Pagination](https://developers.g
-   * oogle.com/analytics/devguides/reporting/data/v1/basics#pagination).
-   *
    * @var string
    */
   public $limit;
   /**
-   * Aggregation of metrics. Aggregated metric values will be shown in rows
-   * where the dimension_values are set to "RESERVED_(MetricAggregation)".
-   * Aggregates including both comparisons and multiple date ranges will be
-   * aggregated based on the date ranges.
-   *
    * @var string[]
    */
   public $metricAggregations;
@@ -77,43 +51,22 @@ class RunReportRequest extends \Google\Collection
   protected $metricsType = Metric::class;
   protected $metricsDataType = 'array';
   /**
-   * The row count of the start row. The first row is counted as row 0. When
-   * paging, the first request does not specify offset; or equivalently, sets
-   * offset to 0; the first request returns the first `limit` of rows. The
-   * second request sets offset to the `limit` of the first request; the second
-   * request returns the second `limit` of rows. To learn more about this
-   * pagination parameter, see [Pagination](https://developers.google.com/analyt
-   * ics/devguides/reporting/data/v1/basics#pagination).
-   *
    * @var string
    */
   public $offset;
   protected $orderBysType = OrderBy::class;
   protected $orderBysDataType = 'array';
   /**
-   * A Google Analytics property identifier whose events are tracked. Specified
-   * in the URL path and not the body. To learn more, see [where to find your
-   * Property ID](https://developers.google.com/analytics/devguides/reporting/da
-   * ta/v1/property-id). Within a batch request, this property should either be
-   * unspecified or consistent with the batch-level property. Example:
-   * properties/1234
-   *
    * @var string
    */
   public $property;
   /**
-   * Toggles whether to return the current state of this Google Analytics
-   * property's quota. Quota is returned in [PropertyQuota](#PropertyQuota).
-   *
    * @var bool
    */
   public $returnPropertyQuota;
 
   /**
-   * Cohort group associated with this request. If there is a cohort group in
-   * the request the 'cohort' dimension must be present.
-   *
-   * @param CohortSpec $cohortSpec
+   * @param CohortSpec
    */
   public function setCohortSpec(CohortSpec $cohortSpec)
   {
@@ -127,11 +80,7 @@ class RunReportRequest extends \Google\Collection
     return $this->cohortSpec;
   }
   /**
-   * Optional. The configuration of comparisons requested and displayed. The
-   * request only requires a comparisons field in order to receive a comparison
-   * column in the response.
-   *
-   * @param Comparison[] $comparisons
+   * @param Comparison[]
    */
   public function setComparisons($comparisons)
   {
@@ -145,10 +94,7 @@ class RunReportRequest extends \Google\Collection
     return $this->comparisons;
   }
   /**
-   * A currency code in ISO4217 format, such as "AED", "USD", "JPY". If the
-   * field is empty, the report uses the property's default currency.
-   *
-   * @param string $currencyCode
+   * @param string
    */
   public function setCurrencyCode($currencyCode)
   {
@@ -162,13 +108,7 @@ class RunReportRequest extends \Google\Collection
     return $this->currencyCode;
   }
   /**
-   * Date ranges of data to read. If multiple date ranges are requested, each
-   * response row will contain a zero based date range index. If two date ranges
-   * overlap, the event data for the overlapping days is included in the
-   * response rows for both date ranges. In a cohort request, this `dateRanges`
-   * must be unspecified.
-   *
-   * @param DateRange[] $dateRanges
+   * @param DateRange[]
    */
   public function setDateRanges($dateRanges)
   {
@@ -182,12 +122,7 @@ class RunReportRequest extends \Google\Collection
     return $this->dateRanges;
   }
   /**
-   * Dimension filters let you ask for only specific dimension values in the
-   * report. To learn more, see [Fundamentals of Dimension Filters](https://deve
-   * lopers.google.com/analytics/devguides/reporting/data/v1/basics#dimension_fi
-   * lters) for examples. Metrics cannot be used in this filter.
-   *
-   * @param FilterExpression $dimensionFilter
+   * @param FilterExpression
    */
   public function setDimensionFilter(FilterExpression $dimensionFilter)
   {
@@ -201,9 +136,7 @@ class RunReportRequest extends \Google\Collection
     return $this->dimensionFilter;
   }
   /**
-   * The dimensions requested and displayed.
-   *
-   * @param Dimension[] $dimensions
+   * @param Dimension[]
    */
   public function setDimensions($dimensions)
   {
@@ -217,15 +150,7 @@ class RunReportRequest extends \Google\Collection
     return $this->dimensions;
   }
   /**
-   * If false or unspecified, each row with all metrics equal to 0 will not be
-   * returned. If true, these rows will be returned if they are not separately
-   * removed by a filter. Regardless of this `keep_empty_rows` setting, only
-   * data recorded by the Google Analytics property can be displayed in a
-   * report. For example if a property never logs a `purchase` event, then a
-   * query for the `eventName` dimension and `eventCount` metric will not have a
-   * row eventName: "purchase" and eventCount: 0.
-   *
-   * @param bool $keepEmptyRows
+   * @param bool
    */
   public function setKeepEmptyRows($keepEmptyRows)
   {
@@ -239,17 +164,7 @@ class RunReportRequest extends \Google\Collection
     return $this->keepEmptyRows;
   }
   /**
-   * The number of rows to return. If unspecified, 10,000 rows are returned. The
-   * API returns a maximum of 250,000 rows per request, no matter how many you
-   * ask for. `limit` must be positive. The API can also return fewer rows than
-   * the requested `limit`, if there aren't as many dimension values as the
-   * `limit`. For instance, there are fewer than 300 possible values for the
-   * dimension `country`, so when reporting on only `country`, you can't get
-   * more than 300 rows, even if you set `limit` to a higher value. To learn
-   * more about this pagination parameter, see [Pagination](https://developers.g
-   * oogle.com/analytics/devguides/reporting/data/v1/basics#pagination).
-   *
-   * @param string $limit
+   * @param string
    */
   public function setLimit($limit)
   {
@@ -263,12 +178,7 @@ class RunReportRequest extends \Google\Collection
     return $this->limit;
   }
   /**
-   * Aggregation of metrics. Aggregated metric values will be shown in rows
-   * where the dimension_values are set to "RESERVED_(MetricAggregation)".
-   * Aggregates including both comparisons and multiple date ranges will be
-   * aggregated based on the date ranges.
-   *
-   * @param string[] $metricAggregations
+   * @param string[]
    */
   public function setMetricAggregations($metricAggregations)
   {
@@ -282,10 +192,7 @@ class RunReportRequest extends \Google\Collection
     return $this->metricAggregations;
   }
   /**
-   * The filter clause of metrics. Applied after aggregating the report's rows,
-   * similar to SQL having-clause. Dimensions cannot be used in this filter.
-   *
-   * @param FilterExpression $metricFilter
+   * @param FilterExpression
    */
   public function setMetricFilter(FilterExpression $metricFilter)
   {
@@ -299,9 +206,7 @@ class RunReportRequest extends \Google\Collection
     return $this->metricFilter;
   }
   /**
-   * The metrics requested and displayed.
-   *
-   * @param Metric[] $metrics
+   * @param Metric[]
    */
   public function setMetrics($metrics)
   {
@@ -315,15 +220,7 @@ class RunReportRequest extends \Google\Collection
     return $this->metrics;
   }
   /**
-   * The row count of the start row. The first row is counted as row 0. When
-   * paging, the first request does not specify offset; or equivalently, sets
-   * offset to 0; the first request returns the first `limit` of rows. The
-   * second request sets offset to the `limit` of the first request; the second
-   * request returns the second `limit` of rows. To learn more about this
-   * pagination parameter, see [Pagination](https://developers.google.com/analyt
-   * ics/devguides/reporting/data/v1/basics#pagination).
-   *
-   * @param string $offset
+   * @param string
    */
   public function setOffset($offset)
   {
@@ -337,11 +234,7 @@ class RunReportRequest extends \Google\Collection
     return $this->offset;
   }
   /**
-   * Specifies how rows are ordered in the response. Requests including both
-   * comparisons and multiple date ranges will have order bys applied on the
-   * comparisons.
-   *
-   * @param OrderBy[] $orderBys
+   * @param OrderBy[]
    */
   public function setOrderBys($orderBys)
   {
@@ -355,14 +248,7 @@ class RunReportRequest extends \Google\Collection
     return $this->orderBys;
   }
   /**
-   * A Google Analytics property identifier whose events are tracked. Specified
-   * in the URL path and not the body. To learn more, see [where to find your
-   * Property ID](https://developers.google.com/analytics/devguides/reporting/da
-   * ta/v1/property-id). Within a batch request, this property should either be
-   * unspecified or consistent with the batch-level property. Example:
-   * properties/1234
-   *
-   * @param string $property
+   * @param string
    */
   public function setProperty($property)
   {
@@ -376,10 +262,7 @@ class RunReportRequest extends \Google\Collection
     return $this->property;
   }
   /**
-   * Toggles whether to return the current state of this Google Analytics
-   * property's quota. Quota is returned in [PropertyQuota](#PropertyQuota).
-   *
-   * @param bool $returnPropertyQuota
+   * @param bool
    */
   public function setReturnPropertyQuota($returnPropertyQuota)
   {

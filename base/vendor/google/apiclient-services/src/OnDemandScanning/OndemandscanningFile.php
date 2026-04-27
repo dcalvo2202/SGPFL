@@ -29,7 +29,7 @@ class OndemandscanningFile extends \Google\Model
   public $name;
 
   /**
-   * @param string[] $digest
+   * @param string[]
    */
   public function setDigest($digest)
   {
@@ -43,7 +43,7 @@ class OndemandscanningFile extends \Google\Model
     return $this->digest;
   }
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

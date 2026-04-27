@@ -23,9 +23,7 @@ class GooglePrivacyDlpV2OtherCloudSingleResourceReference extends \Google\Model
   protected $amazonS3BucketDataType = '';
 
   /**
-   * Amazon S3 bucket.
-   *
-   * @param GooglePrivacyDlpV2AmazonS3Bucket $amazonS3Bucket
+   * @param GooglePrivacyDlpV2AmazonS3Bucket
    */
   public function setAmazonS3Bucket(GooglePrivacyDlpV2AmazonS3Bucket $amazonS3Bucket)
   {

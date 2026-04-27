@@ -24,8 +24,6 @@ class StorageDatabasecenterPartnerapiV1mainInternalResourceMetadata extends \Goo
   protected $backupRunType = StorageDatabasecenterPartnerapiV1mainBackupRun::class;
   protected $backupRunDataType = '';
   /**
-   * Whether deletion protection is enabled for this internal resource.
-   *
    * @var bool
    */
   public $isDeletionProtectionEnabled;
@@ -34,17 +32,12 @@ class StorageDatabasecenterPartnerapiV1mainInternalResourceMetadata extends \Goo
   protected $resourceIdType = StorageDatabasecenterPartnerapiV1mainDatabaseResourceId::class;
   protected $resourceIdDataType = '';
   /**
-   * Required. internal resource name for spanner this will be database name
-   * e.g."spanner.googleapis.com/projects/123/abc/instances/inst1/databases/db1"
-   *
    * @var string
    */
   public $resourceName;
 
   /**
-   * Backup configuration for this database
-   *
-   * @param StorageDatabasecenterPartnerapiV1mainBackupConfiguration $backupConfiguration
+   * @param StorageDatabasecenterPartnerapiV1mainBackupConfiguration
    */
   public function setBackupConfiguration(StorageDatabasecenterPartnerapiV1mainBackupConfiguration $backupConfiguration)
   {
@@ -58,9 +51,7 @@ class StorageDatabasecenterPartnerapiV1mainInternalResourceMetadata extends \Goo
     return $this->backupConfiguration;
   }
   /**
-   * Information about the last backup attempt for this database
-   *
-   * @param StorageDatabasecenterPartnerapiV1mainBackupRun $backupRun
+   * @param StorageDatabasecenterPartnerapiV1mainBackupRun
    */
   public function setBackupRun(StorageDatabasecenterPartnerapiV1mainBackupRun $backupRun)
   {
@@ -74,9 +65,7 @@ class StorageDatabasecenterPartnerapiV1mainInternalResourceMetadata extends \Goo
     return $this->backupRun;
   }
   /**
-   * Whether deletion protection is enabled for this internal resource.
-   *
-   * @param bool $isDeletionProtectionEnabled
+   * @param bool
    */
   public function setIsDeletionProtectionEnabled($isDeletionProtectionEnabled)
   {
@@ -90,7 +79,7 @@ class StorageDatabasecenterPartnerapiV1mainInternalResourceMetadata extends \Goo
     return $this->isDeletionProtectionEnabled;
   }
   /**
-   * @param StorageDatabasecenterProtoCommonProduct $product
+   * @param StorageDatabasecenterProtoCommonProduct
    */
   public function setProduct(StorageDatabasecenterProtoCommonProduct $product)
   {
@@ -104,7 +93,7 @@ class StorageDatabasecenterPartnerapiV1mainInternalResourceMetadata extends \Goo
     return $this->product;
   }
   /**
-   * @param StorageDatabasecenterPartnerapiV1mainDatabaseResourceId $resourceId
+   * @param StorageDatabasecenterPartnerapiV1mainDatabaseResourceId
    */
   public function setResourceId(StorageDatabasecenterPartnerapiV1mainDatabaseResourceId $resourceId)
   {
@@ -118,10 +107,7 @@ class StorageDatabasecenterPartnerapiV1mainInternalResourceMetadata extends \Goo
     return $this->resourceId;
   }
   /**
-   * Required. internal resource name for spanner this will be database name
-   * e.g."spanner.googleapis.com/projects/123/abc/instances/inst1/databases/db1"
-   *
-   * @param string $resourceName
+   * @param string
    */
   public function setResourceName($resourceName)
   {

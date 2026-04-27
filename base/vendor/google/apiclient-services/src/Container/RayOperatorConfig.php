@@ -20,8 +20,6 @@ namespace Google\Service\Container;
 class RayOperatorConfig extends \Google\Model
 {
   /**
-   * Whether the Ray Operator addon is enabled for this cluster.
-   *
    * @var bool
    */
   public $enabled;
@@ -31,9 +29,7 @@ class RayOperatorConfig extends \Google\Model
   protected $rayClusterMonitoringConfigDataType = '';
 
   /**
-   * Whether the Ray Operator addon is enabled for this cluster.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {
@@ -47,9 +43,7 @@ class RayOperatorConfig extends \Google\Model
     return $this->enabled;
   }
   /**
-   * Optional. Logging configuration for Ray clusters.
-   *
-   * @param RayClusterLoggingConfig $rayClusterLoggingConfig
+   * @param RayClusterLoggingConfig
    */
   public function setRayClusterLoggingConfig(RayClusterLoggingConfig $rayClusterLoggingConfig)
   {
@@ -63,9 +57,7 @@ class RayOperatorConfig extends \Google\Model
     return $this->rayClusterLoggingConfig;
   }
   /**
-   * Optional. Monitoring configuration for Ray clusters.
-   *
-   * @param RayClusterMonitoringConfig $rayClusterMonitoringConfig
+   * @param RayClusterMonitoringConfig
    */
   public function setRayClusterMonitoringConfig(RayClusterMonitoringConfig $rayClusterMonitoringConfig)
   {

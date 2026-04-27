@@ -23,9 +23,7 @@ class SourceGetMetadataRequest extends \Google\Model
   protected $sourceDataType = '';
 
   /**
-   * Specification of the source whose metadata should be computed.
-   *
-   * @param Source $source
+   * @param Source
    */
   public function setSource(Source $source)
   {

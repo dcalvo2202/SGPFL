@@ -26,15 +26,7 @@ class DataSourceRestriction extends \Google\Collection
   protected $sourceDataType = '';
 
   /**
-   * Filter options restricting the results. If multiple filters are present,
-   * they are grouped by object type before joining. Filters with the same
-   * object type are joined conjunctively, then the resulting expressions are
-   * joined disjunctively. The maximum number of elements is 20. NOTE: Suggest
-   * API supports only few filters at the moment: "objecttype", "type" and
-   * "mimetype". For now, schema specific filters cannot be used to filter
-   * suggestions.
-   *
-   * @param FilterOptions[] $filterOptions
+   * @param FilterOptions[]
    */
   public function setFilterOptions($filterOptions)
   {
@@ -48,9 +40,7 @@ class DataSourceRestriction extends \Google\Collection
     return $this->filterOptions;
   }
   /**
-   * The source of restriction.
-   *
-   * @param Source $source
+   * @param Source
    */
   public function setSource(Source $source)
   {

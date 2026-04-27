@@ -20,8 +20,6 @@ namespace Google\Service\Books;
 class FamilyInfo extends \Google\Model
 {
   /**
-   * Resource type.
-   *
    * @var string
    */
   public $kind;
@@ -29,9 +27,7 @@ class FamilyInfo extends \Google\Model
   protected $membershipDataType = '';
 
   /**
-   * Resource type.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -45,9 +41,7 @@ class FamilyInfo extends \Google\Model
     return $this->kind;
   }
   /**
-   * Family membership info of the user that made the request.
-   *
-   * @param FamilyInfoMembership $membership
+   * @param FamilyInfoMembership
    */
   public function setMembership(FamilyInfoMembership $membership)
   {

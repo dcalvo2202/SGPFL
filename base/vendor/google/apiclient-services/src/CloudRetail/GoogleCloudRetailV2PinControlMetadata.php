@@ -25,9 +25,7 @@ class GoogleCloudRetailV2PinControlMetadata extends \Google\Model
   protected $droppedPinsDataType = 'map';
 
   /**
-   * Map of all matched pins, keyed by pin position.
-   *
-   * @param GoogleCloudRetailV2PinControlMetadataProductPins[] $allMatchedPins
+   * @param GoogleCloudRetailV2PinControlMetadataProductPins[]
    */
   public function setAllMatchedPins($allMatchedPins)
   {
@@ -41,10 +39,7 @@ class GoogleCloudRetailV2PinControlMetadata extends \Google\Model
     return $this->allMatchedPins;
   }
   /**
-   * Map of pins that were dropped due to overlap with other matching pins,
-   * keyed by pin position.
-   *
-   * @param GoogleCloudRetailV2PinControlMetadataProductPins[] $droppedPins
+   * @param GoogleCloudRetailV2PinControlMetadataProductPins[]
    */
   public function setDroppedPins($droppedPins)
   {

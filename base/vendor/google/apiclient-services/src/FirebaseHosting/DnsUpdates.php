@@ -21,8 +21,6 @@ class DnsUpdates extends \Google\Collection
 {
   protected $collection_key = 'discovered';
   /**
-   * The last time Hosting checked your custom domain's DNS records.
-   *
    * @var string
    */
   public $checkTime;
@@ -32,9 +30,7 @@ class DnsUpdates extends \Google\Collection
   protected $discoveredDataType = 'array';
 
   /**
-   * The last time Hosting checked your custom domain's DNS records.
-   *
-   * @param string $checkTime
+   * @param string
    */
   public function setCheckTime($checkTime)
   {
@@ -48,9 +44,7 @@ class DnsUpdates extends \Google\Collection
     return $this->checkTime;
   }
   /**
-   * The set of DNS records Hosting needs to serve secure content on the domain.
-   *
-   * @param DnsRecordSet[] $desired
+   * @param DnsRecordSet[]
    */
   public function setDesired($desired)
   {
@@ -64,9 +58,7 @@ class DnsUpdates extends \Google\Collection
     return $this->desired;
   }
   /**
-   * The set of DNS records Hosting discovered when inspecting a domain.
-   *
-   * @param DnsRecordSet[] $discovered
+   * @param DnsRecordSet[]
    */
   public function setDiscovered($discovered)
   {

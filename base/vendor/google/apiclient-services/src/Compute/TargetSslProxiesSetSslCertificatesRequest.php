@@ -21,20 +21,12 @@ class TargetSslProxiesSetSslCertificatesRequest extends \Google\Collection
 {
   protected $collection_key = 'sslCertificates';
   /**
-   * New set of URLs to SslCertificate resources to associate with this
-   * TargetSslProxy. At least one SSL certificate must be specified. Currently,
-   * you may specify up to 15 SSL certificates.
-   *
    * @var string[]
    */
   public $sslCertificates;
 
   /**
-   * New set of URLs to SslCertificate resources to associate with this
-   * TargetSslProxy. At least one SSL certificate must be specified. Currently,
-   * you may specify up to 15 SSL certificates.
-   *
-   * @param string[] $sslCertificates
+   * @param string[]
    */
   public function setSslCertificates($sslCertificates)
   {

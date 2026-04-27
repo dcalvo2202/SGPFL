@@ -23,21 +23,12 @@ class ListAccountsResponse extends \Google\Collection
   protected $accountsType = Account::class;
   protected $accountsDataType = 'array';
   /**
-   * If the number of accounts exceeds the requested page size, this field is
-   * populated with a token to fetch the next page of accounts on a subsequent
-   * call to `accounts.list`. If there are no more accounts, this field is not
-   * present in the response.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * A collection of accounts to which the user has access. The personal account
-   * of the user doing the query will always be the first item of the result,
-   * unless it is filtered out.
-   *
-   * @param Account[] $accounts
+   * @param Account[]
    */
   public function setAccounts($accounts)
   {
@@ -51,12 +42,7 @@ class ListAccountsResponse extends \Google\Collection
     return $this->accounts;
   }
   /**
-   * If the number of accounts exceeds the requested page size, this field is
-   * populated with a token to fetch the next page of accounts on a subsequent
-   * call to `accounts.list`. If there are no more accounts, this field is not
-   * present in the response.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

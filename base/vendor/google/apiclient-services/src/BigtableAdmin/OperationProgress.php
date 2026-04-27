@@ -20,31 +20,20 @@ namespace Google\Service\BigtableAdmin;
 class OperationProgress extends \Google\Model
 {
   /**
-   * If set, the time at which this operation failed or was completed
-   * successfully.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * Percent completion of the operation. Values are between 0 and 100
-   * inclusive.
-   *
    * @var int
    */
   public $progressPercent;
   /**
-   * Time the request was received.
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * If set, the time at which this operation failed or was completed
-   * successfully.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -58,10 +47,7 @@ class OperationProgress extends \Google\Model
     return $this->endTime;
   }
   /**
-   * Percent completion of the operation. Values are between 0 and 100
-   * inclusive.
-   *
-   * @param int $progressPercent
+   * @param int
    */
   public function setProgressPercent($progressPercent)
   {
@@ -75,9 +61,7 @@ class OperationProgress extends \Google\Model
     return $this->progressPercent;
   }
   /**
-   * Time the request was received.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

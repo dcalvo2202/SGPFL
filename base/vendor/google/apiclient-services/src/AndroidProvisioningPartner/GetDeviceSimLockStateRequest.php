@@ -23,9 +23,7 @@ class GetDeviceSimLockStateRequest extends \Google\Model
   protected $deviceIdentifierDataType = '';
 
   /**
-   * Required. Required. The device identifier to search for.
-   *
-   * @param DeviceIdentifier $deviceIdentifier
+   * @param DeviceIdentifier
    */
   public function setDeviceIdentifier(DeviceIdentifier $deviceIdentifier)
   {

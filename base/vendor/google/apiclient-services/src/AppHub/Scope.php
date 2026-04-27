@@ -20,37 +20,19 @@ namespace Google\Service\AppHub;
 class Scope extends \Google\Model
 {
   /**
-   * Unspecified type.
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * Regional type.
-   */
-  public const TYPE_REGIONAL = 'REGIONAL';
-  /**
-   * Global type.
-   */
-  public const TYPE_GLOBAL = 'GLOBAL';
-  /**
-   * Required. Scope Type.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Required. Scope Type.
-   *
-   * Accepted values: TYPE_UNSPECIFIED, REGIONAL, GLOBAL
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

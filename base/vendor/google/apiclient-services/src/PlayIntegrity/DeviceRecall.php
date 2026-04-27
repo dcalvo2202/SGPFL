@@ -25,9 +25,7 @@ class DeviceRecall extends \Google\Model
   protected $writeDatesDataType = '';
 
   /**
-   * Required. Contains the recall bits values.
-   *
-   * @param Values $values
+   * @param Values
    */
   public function setValues(Values $values)
   {
@@ -41,9 +39,7 @@ class DeviceRecall extends \Google\Model
     return $this->values;
   }
   /**
-   * Required. Contains the recall bits write dates.
-   *
-   * @param WriteDates $writeDates
+   * @param WriteDates
    */
   public function setWriteDates(WriteDates $writeDates)
   {

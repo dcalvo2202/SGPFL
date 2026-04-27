@@ -20,18 +20,12 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1SiteSearchEngine extends \Google\Model
 {
   /**
-   * The fully qualified resource name of the site search engine. Format:
-   * `projects/locations/dataStores/siteSearchEngine`
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The fully qualified resource name of the site search engine. Format:
-   * `projects/locations/dataStores/siteSearchEngine`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

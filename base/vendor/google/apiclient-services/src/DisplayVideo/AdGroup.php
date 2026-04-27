@@ -20,121 +20,32 @@ namespace Google\Service\DisplayVideo;
 class AdGroup extends \Google\Model
 {
   /**
-   * Format value is not specified or is unknown in this version.
-   */
-  public const AD_GROUP_FORMAT_AD_GROUP_FORMAT_UNSPECIFIED = 'AD_GROUP_FORMAT_UNSPECIFIED';
-  /**
-   * In-stream ads.
-   */
-  public const AD_GROUP_FORMAT_AD_GROUP_FORMAT_IN_STREAM = 'AD_GROUP_FORMAT_IN_STREAM';
-  /**
-   * In-feed ads.
-   */
-  public const AD_GROUP_FORMAT_AD_GROUP_FORMAT_VIDEO_DISCOVERY = 'AD_GROUP_FORMAT_VIDEO_DISCOVERY';
-  /**
-   * Bumper ads.
-   */
-  public const AD_GROUP_FORMAT_AD_GROUP_FORMAT_BUMPER = 'AD_GROUP_FORMAT_BUMPER';
-  /**
-   * Non-skippable in-stream ads.
-   */
-  public const AD_GROUP_FORMAT_AD_GROUP_FORMAT_NON_SKIPPABLE_IN_STREAM = 'AD_GROUP_FORMAT_NON_SKIPPABLE_IN_STREAM';
-  /**
-   * Non-skippable in-stream audio ads.
-   */
-  public const AD_GROUP_FORMAT_AD_GROUP_FORMAT_AUDIO = 'AD_GROUP_FORMAT_AUDIO';
-  /**
-   * Responsive ads.
-   */
-  public const AD_GROUP_FORMAT_AD_GROUP_FORMAT_RESPONSIVE = 'AD_GROUP_FORMAT_RESPONSIVE';
-  /**
-   * [Effective reach ad groups]
-   * (https://support.google.com/displayvideo/answer/9173684), including in-
-   * stream and bumper ads.
-   */
-  public const AD_GROUP_FORMAT_AD_GROUP_FORMAT_REACH = 'AD_GROUP_FORMAT_REACH';
-  /**
-   * Masthead Ad that is surfaced on the top slot on the YouTube homepage.
-   */
-  public const AD_GROUP_FORMAT_AD_GROUP_FORMAT_MASTHEAD = 'AD_GROUP_FORMAT_MASTHEAD';
-  /**
-   * Demand Gen ads. Retrieval and management of Demand Gen resources is
-   * currently in beta. This enum value is only available to allowlisted users.
-   */
-  public const AD_GROUP_FORMAT_AD_GROUP_FORMAT_DEMAND_GEN = 'AD_GROUP_FORMAT_DEMAND_GEN';
-  /**
-   * Default value when status is not specified or is unknown in this version.
-   */
-  public const ENTITY_STATUS_ENTITY_STATUS_UNSPECIFIED = 'ENTITY_STATUS_UNSPECIFIED';
-  /**
-   * The entity is enabled to bid and spend budget.
-   */
-  public const ENTITY_STATUS_ENTITY_STATUS_ACTIVE = 'ENTITY_STATUS_ACTIVE';
-  /**
-   * The entity is archived. Bidding and budget spending are disabled. An entity
-   * can be deleted after archived. Deleted entities cannot be retrieved.
-   */
-  public const ENTITY_STATUS_ENTITY_STATUS_ARCHIVED = 'ENTITY_STATUS_ARCHIVED';
-  /**
-   * The entity is under draft. Bidding and budget spending are disabled.
-   */
-  public const ENTITY_STATUS_ENTITY_STATUS_DRAFT = 'ENTITY_STATUS_DRAFT';
-  /**
-   * Bidding and budget spending are paused for the entity.
-   */
-  public const ENTITY_STATUS_ENTITY_STATUS_PAUSED = 'ENTITY_STATUS_PAUSED';
-  /**
-   * The entity is scheduled for deletion.
-   */
-  public const ENTITY_STATUS_ENTITY_STATUS_SCHEDULED_FOR_DELETION = 'ENTITY_STATUS_SCHEDULED_FOR_DELETION';
-  /**
-   * Required. Immutable. The format of the ads in the ad group.
-   *
    * @var string
    */
   public $adGroupFormat;
   /**
-   * Output only. The unique ID of the ad group. Assigned by the system.
-   *
    * @var string
    */
   public $adGroupId;
-  protected $adGroupInventoryControlType = AdGroupInventoryControl::class;
-  protected $adGroupInventoryControlDataType = '';
   /**
-   * Output only. The unique ID of the advertiser the ad group belongs to.
-   *
    * @var string
    */
   public $advertiserId;
   protected $bidStrategyType = BiddingStrategy::class;
   protected $bidStrategyDataType = '';
   /**
-   * Required. The display name of the ad group. Must be UTF-8 encoded with a
-   * maximum size of 255 bytes.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Required. Controls whether or not the ad group can spend its budget and bid
-   * on inventory. If the ad group's parent line item is not active, the ad
-   * group can't spend its budget even if its own status is
-   * `ENTITY_STATUS_ACTIVE`.
-   *
    * @var string
    */
   public $entityStatus;
   /**
-   * Required. Immutable. The unique ID of the line item that the ad group
-   * belongs to.
-   *
    * @var string
    */
   public $lineItemId;
   /**
-   * Output only. Identifier. The resource name of the ad group.
-   *
    * @var string
    */
   public $name;
@@ -144,31 +55,21 @@ class AdGroup extends \Google\Model
   protected $targetingExpansionDataType = '';
 
   /**
-   * Required. Immutable. The format of the ads in the ad group.
-   *
-   * Accepted values: AD_GROUP_FORMAT_UNSPECIFIED, AD_GROUP_FORMAT_IN_STREAM,
-   * AD_GROUP_FORMAT_VIDEO_DISCOVERY, AD_GROUP_FORMAT_BUMPER,
-   * AD_GROUP_FORMAT_NON_SKIPPABLE_IN_STREAM, AD_GROUP_FORMAT_AUDIO,
-   * AD_GROUP_FORMAT_RESPONSIVE, AD_GROUP_FORMAT_REACH,
-   * AD_GROUP_FORMAT_MASTHEAD, AD_GROUP_FORMAT_DEMAND_GEN
-   *
-   * @param self::AD_GROUP_FORMAT_* $adGroupFormat
+   * @param string
    */
   public function setAdGroupFormat($adGroupFormat)
   {
     $this->adGroupFormat = $adGroupFormat;
   }
   /**
-   * @return self::AD_GROUP_FORMAT_*
+   * @return string
    */
   public function getAdGroupFormat()
   {
     return $this->adGroupFormat;
   }
   /**
-   * Output only. The unique ID of the ad group. Assigned by the system.
-   *
-   * @param string $adGroupId
+   * @param string
    */
   public function setAdGroupId($adGroupId)
   {
@@ -182,26 +83,7 @@ class AdGroup extends \Google\Model
     return $this->adGroupId;
   }
   /**
-   * Optional. Required for Demand Gen ad groups. Specifies the inventory
-   * control of the ad group.
-   *
-   * @param AdGroupInventoryControl $adGroupInventoryControl
-   */
-  public function setAdGroupInventoryControl(AdGroupInventoryControl $adGroupInventoryControl)
-  {
-    $this->adGroupInventoryControl = $adGroupInventoryControl;
-  }
-  /**
-   * @return AdGroupInventoryControl
-   */
-  public function getAdGroupInventoryControl()
-  {
-    return $this->adGroupInventoryControl;
-  }
-  /**
-   * Output only. The unique ID of the advertiser the ad group belongs to.
-   *
-   * @param string $advertiserId
+   * @param string
    */
   public function setAdvertiserId($advertiserId)
   {
@@ -215,11 +97,7 @@ class AdGroup extends \Google\Model
     return $this->advertiserId;
   }
   /**
-   * Optional. The bidding strategy used by the ad group. Only the
-   * youtubeAndPartnersBid and demandGenBid field can be used in the bidding
-   * strategy.
-   *
-   * @param BiddingStrategy $bidStrategy
+   * @param BiddingStrategy
    */
   public function setBidStrategy(BiddingStrategy $bidStrategy)
   {
@@ -233,10 +111,7 @@ class AdGroup extends \Google\Model
     return $this->bidStrategy;
   }
   /**
-   * Required. The display name of the ad group. Must be UTF-8 encoded with a
-   * maximum size of 255 bytes.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -250,33 +125,21 @@ class AdGroup extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Required. Controls whether or not the ad group can spend its budget and bid
-   * on inventory. If the ad group's parent line item is not active, the ad
-   * group can't spend its budget even if its own status is
-   * `ENTITY_STATUS_ACTIVE`.
-   *
-   * Accepted values: ENTITY_STATUS_UNSPECIFIED, ENTITY_STATUS_ACTIVE,
-   * ENTITY_STATUS_ARCHIVED, ENTITY_STATUS_DRAFT, ENTITY_STATUS_PAUSED,
-   * ENTITY_STATUS_SCHEDULED_FOR_DELETION
-   *
-   * @param self::ENTITY_STATUS_* $entityStatus
+   * @param string
    */
   public function setEntityStatus($entityStatus)
   {
     $this->entityStatus = $entityStatus;
   }
   /**
-   * @return self::ENTITY_STATUS_*
+   * @return string
    */
   public function getEntityStatus()
   {
     return $this->entityStatus;
   }
   /**
-   * Required. Immutable. The unique ID of the line item that the ad group
-   * belongs to.
-   *
-   * @param string $lineItemId
+   * @param string
    */
   public function setLineItemId($lineItemId)
   {
@@ -290,9 +153,7 @@ class AdGroup extends \Google\Model
     return $this->lineItemId;
   }
   /**
-   * Output only. Identifier. The resource name of the ad group.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -306,9 +167,7 @@ class AdGroup extends \Google\Model
     return $this->name;
   }
   /**
-   * Optional. The settings of the product feed in this ad group.
-   *
-   * @param ProductFeedData $productFeedData
+   * @param ProductFeedData
    */
   public function setProductFeedData(ProductFeedData $productFeedData)
   {
@@ -322,11 +181,7 @@ class AdGroup extends \Google\Model
     return $this->productFeedData;
   }
   /**
-   * Optional. The [optimized
-   * targeting](//support.google.com/displayvideo/answer/12060859) settings of
-   * the ad group.
-   *
-   * @param TargetingExpansionConfig $targetingExpansion
+   * @param TargetingExpansionConfig
    */
   public function setTargetingExpansion(TargetingExpansionConfig $targetingExpansion)
   {

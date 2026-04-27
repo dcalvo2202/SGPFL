@@ -20,14 +20,10 @@ namespace Google\Service\CloudNaturalLanguage;
 class XPSSpeechPreprocessResponse extends \Google\Model
 {
   /**
-   * Location od shards of sstables (test data) of DataUtterance protos.
-   *
    * @var string
    */
   public $cnsTestDataPath;
   /**
-   * Location of shards of sstables (training data) of DataUtterance protos.
-   *
    * @var string
    */
   public $cnsTrainDataPath;
@@ -37,9 +33,7 @@ class XPSSpeechPreprocessResponse extends \Google\Model
   protected $speechPreprocessStatsDataType = '';
 
   /**
-   * Location od shards of sstables (test data) of DataUtterance protos.
-   *
-   * @param string $cnsTestDataPath
+   * @param string
    */
   public function setCnsTestDataPath($cnsTestDataPath)
   {
@@ -53,9 +47,7 @@ class XPSSpeechPreprocessResponse extends \Google\Model
     return $this->cnsTestDataPath;
   }
   /**
-   * Location of shards of sstables (training data) of DataUtterance protos.
-   *
-   * @param string $cnsTrainDataPath
+   * @param string
    */
   public function setCnsTrainDataPath($cnsTrainDataPath)
   {
@@ -69,10 +61,7 @@ class XPSSpeechPreprocessResponse extends \Google\Model
     return $this->cnsTrainDataPath;
   }
   /**
-   * The metrics for prebuilt speech models. They are included here because
-   * there is no prebuilt speech models stored in the AutoML.
-   *
-   * @param XPSSpeechEvaluationMetrics $prebuiltModelEvaluationMetrics
+   * @param XPSSpeechEvaluationMetrics
    */
   public function setPrebuiltModelEvaluationMetrics(XPSSpeechEvaluationMetrics $prebuiltModelEvaluationMetrics)
   {
@@ -86,9 +75,7 @@ class XPSSpeechPreprocessResponse extends \Google\Model
     return $this->prebuiltModelEvaluationMetrics;
   }
   /**
-   * Stats associated with the data.
-   *
-   * @param XPSSpeechPreprocessStats $speechPreprocessStats
+   * @param XPSSpeechPreprocessStats
    */
   public function setSpeechPreprocessStats(XPSSpeechPreprocessStats $speechPreprocessStats)
   {

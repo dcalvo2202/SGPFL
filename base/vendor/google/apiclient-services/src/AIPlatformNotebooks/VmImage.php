@@ -20,31 +20,20 @@ namespace Google\Service\AIPlatformNotebooks;
 class VmImage extends \Google\Model
 {
   /**
-   * Optional. Use this VM image family to find the image; the newest image in
-   * this family will be used.
-   *
    * @var string
    */
   public $family;
   /**
-   * Optional. Use VM image name to find the image.
-   *
    * @var string
    */
   public $name;
   /**
-   * Required. The name of the Google Cloud project that this VM image belongs
-   * to. Format: `{project_id}`
-   *
    * @var string
    */
   public $project;
 
   /**
-   * Optional. Use this VM image family to find the image; the newest image in
-   * this family will be used.
-   *
-   * @param string $family
+   * @param string
    */
   public function setFamily($family)
   {
@@ -58,9 +47,7 @@ class VmImage extends \Google\Model
     return $this->family;
   }
   /**
-   * Optional. Use VM image name to find the image.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -74,10 +61,7 @@ class VmImage extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. The name of the Google Cloud project that this VM image belongs
-   * to. Format: `{project_id}`
-   *
-   * @param string $project
+   * @param string
    */
   public function setProject($project)
   {

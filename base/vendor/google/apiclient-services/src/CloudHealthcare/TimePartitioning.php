@@ -20,42 +20,16 @@ namespace Google\Service\CloudHealthcare;
 class TimePartitioning extends \Google\Model
 {
   /**
-   * Default unknown time.
-   */
-  public const TYPE_PARTITION_TYPE_UNSPECIFIED = 'PARTITION_TYPE_UNSPECIFIED';
-  /**
-   * Data partitioned by hour.
-   */
-  public const TYPE_HOUR = 'HOUR';
-  /**
-   * Data partitioned by day.
-   */
-  public const TYPE_DAY = 'DAY';
-  /**
-   * Data partitioned by month.
-   */
-  public const TYPE_MONTH = 'MONTH';
-  /**
-   * Data partitioned by year.
-   */
-  public const TYPE_YEAR = 'YEAR';
-  /**
-   * Number of milliseconds for which to keep the storage for a partition.
-   *
    * @var string
    */
   public $expirationMs;
   /**
-   * Type of partitioning.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Number of milliseconds for which to keep the storage for a partition.
-   *
-   * @param string $expirationMs
+   * @param string
    */
   public function setExpirationMs($expirationMs)
   {
@@ -69,18 +43,14 @@ class TimePartitioning extends \Google\Model
     return $this->expirationMs;
   }
   /**
-   * Type of partitioning.
-   *
-   * Accepted values: PARTITION_TYPE_UNSPECIFIED, HOUR, DAY, MONTH, YEAR
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

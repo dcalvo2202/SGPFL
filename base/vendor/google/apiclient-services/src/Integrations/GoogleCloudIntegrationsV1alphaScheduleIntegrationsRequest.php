@@ -27,40 +27,24 @@ class GoogleCloudIntegrationsV1alphaScheduleIntegrationsRequest extends \Google\
   protected $parametersType = EnterpriseCrmEventbusProtoEventParameters::class;
   protected $parametersDataType = '';
   /**
-   * This is used to de-dup incoming request: if the duplicate request was
-   * detected, the response from the previous execution is returned.
-   *
    * @var string
    */
   public $requestId;
   /**
-   * The time that the integration should be executed. If the time is less or
-   * equal to the current time, the integration is executed immediately.
-   *
    * @var string
    */
   public $scheduleTime;
   /**
-   * Required. Matched against all {@link TriggerConfig}s across all
-   * integrations. i.e. TriggerConfig.trigger_id.equals(trigger_id)
-   *
    * @var string
    */
   public $triggerId;
   /**
-   * Optional. This is a unique id provided by the method caller. If provided
-   * this will be used as the execution_id when a new execution info is created.
-   * This is a string representation of a UUID. Must have no more than 36
-   * characters and contain only alphanumeric characters and hyphens.
-   *
    * @var string
    */
   public $userGeneratedExecutionId;
 
   /**
-   * Optional. Input parameters used by integration execution.
-   *
-   * @param GoogleCloudIntegrationsV1alphaValueType[] $inputParameters
+   * @param GoogleCloudIntegrationsV1alphaValueType[]
    */
   public function setInputParameters($inputParameters)
   {
@@ -74,18 +58,13 @@ class GoogleCloudIntegrationsV1alphaScheduleIntegrationsRequest extends \Google\
     return $this->inputParameters;
   }
   /**
-   * Parameters are a part of Event and can be used to communicate between
-   * different tasks that are part of the same integration execution.
-   *
-   * @deprecated
-   * @param EnterpriseCrmFrontendsEventbusProtoParameterEntry[] $parameterEntries
+   * @param EnterpriseCrmFrontendsEventbusProtoParameterEntry[]
    */
   public function setParameterEntries($parameterEntries)
   {
     $this->parameterEntries = $parameterEntries;
   }
   /**
-   * @deprecated
    * @return EnterpriseCrmFrontendsEventbusProtoParameterEntry[]
    */
   public function getParameterEntries()
@@ -93,17 +72,13 @@ class GoogleCloudIntegrationsV1alphaScheduleIntegrationsRequest extends \Google\
     return $this->parameterEntries;
   }
   /**
-   * Passed in as parameters to each integration execution.
-   *
-   * @deprecated
-   * @param EnterpriseCrmEventbusProtoEventParameters $parameters
+   * @param EnterpriseCrmEventbusProtoEventParameters
    */
   public function setParameters(EnterpriseCrmEventbusProtoEventParameters $parameters)
   {
     $this->parameters = $parameters;
   }
   /**
-   * @deprecated
    * @return EnterpriseCrmEventbusProtoEventParameters
    */
   public function getParameters()
@@ -111,10 +86,7 @@ class GoogleCloudIntegrationsV1alphaScheduleIntegrationsRequest extends \Google\
     return $this->parameters;
   }
   /**
-   * This is used to de-dup incoming request: if the duplicate request was
-   * detected, the response from the previous execution is returned.
-   *
-   * @param string $requestId
+   * @param string
    */
   public function setRequestId($requestId)
   {
@@ -128,10 +100,7 @@ class GoogleCloudIntegrationsV1alphaScheduleIntegrationsRequest extends \Google\
     return $this->requestId;
   }
   /**
-   * The time that the integration should be executed. If the time is less or
-   * equal to the current time, the integration is executed immediately.
-   *
-   * @param string $scheduleTime
+   * @param string
    */
   public function setScheduleTime($scheduleTime)
   {
@@ -145,10 +114,7 @@ class GoogleCloudIntegrationsV1alphaScheduleIntegrationsRequest extends \Google\
     return $this->scheduleTime;
   }
   /**
-   * Required. Matched against all {@link TriggerConfig}s across all
-   * integrations. i.e. TriggerConfig.trigger_id.equals(trigger_id)
-   *
-   * @param string $triggerId
+   * @param string
    */
   public function setTriggerId($triggerId)
   {
@@ -162,12 +128,7 @@ class GoogleCloudIntegrationsV1alphaScheduleIntegrationsRequest extends \Google\
     return $this->triggerId;
   }
   /**
-   * Optional. This is a unique id provided by the method caller. If provided
-   * this will be used as the execution_id when a new execution info is created.
-   * This is a string representation of a UUID. Must have no more than 36
-   * characters and contain only alphanumeric characters and hyphens.
-   *
-   * @param string $userGeneratedExecutionId
+   * @param string
    */
   public function setUserGeneratedExecutionId($userGeneratedExecutionId)
   {

@@ -23,8 +23,6 @@ class GooglePrivacyDlpV2StoredInfoType extends \Google\Collection
   protected $currentVersionType = GooglePrivacyDlpV2StoredInfoTypeVersion::class;
   protected $currentVersionDataType = '';
   /**
-   * Resource name.
-   *
    * @var string
    */
   public $name;
@@ -32,9 +30,7 @@ class GooglePrivacyDlpV2StoredInfoType extends \Google\Collection
   protected $pendingVersionsDataType = 'array';
 
   /**
-   * Current version of the stored info type.
-   *
-   * @param GooglePrivacyDlpV2StoredInfoTypeVersion $currentVersion
+   * @param GooglePrivacyDlpV2StoredInfoTypeVersion
    */
   public function setCurrentVersion(GooglePrivacyDlpV2StoredInfoTypeVersion $currentVersion)
   {
@@ -48,9 +44,7 @@ class GooglePrivacyDlpV2StoredInfoType extends \Google\Collection
     return $this->currentVersion;
   }
   /**
-   * Resource name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -64,9 +58,7 @@ class GooglePrivacyDlpV2StoredInfoType extends \Google\Collection
     return $this->name;
   }
   /**
-   * Pending versions of the stored info type. Empty if no versions are pending.
-   *
-   * @param GooglePrivacyDlpV2StoredInfoTypeVersion[] $pendingVersions
+   * @param GooglePrivacyDlpV2StoredInfoTypeVersion[]
    */
   public function setPendingVersions($pendingVersions)
   {

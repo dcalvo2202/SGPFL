@@ -20,16 +20,12 @@ namespace Google\Service\CloudRun;
 class GoogleCloudRunV2NodeSelector extends \Google\Model
 {
   /**
-   * Required. GPU accelerator type to attach to an instance.
-   *
    * @var string
    */
   public $accelerator;
 
   /**
-   * Required. GPU accelerator type to attach to an instance.
-   *
-   * @param string $accelerator
+   * @param string
    */
   public function setAccelerator($accelerator)
   {

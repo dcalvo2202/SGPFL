@@ -20,22 +20,16 @@ namespace Google\Service\WorkloadManager;
 class Product extends \Google\Model
 {
   /**
-   * Optional. Name of the product.
-   *
    * @var string
    */
   public $name;
   /**
-   * Optional. Version of the product.
-   *
    * @var string
    */
   public $version;
 
   /**
-   * Optional. Name of the product.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -49,9 +43,7 @@ class Product extends \Google\Model
     return $this->name;
   }
   /**
-   * Optional. Version of the product.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

@@ -20,32 +20,20 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1NfsMount extends \Google\Model
 {
   /**
-   * Required. Destination mount path. The NFS will be mounted for the user
-   * under /mnt/nfs/
-   *
    * @var string
    */
   public $mountPoint;
   /**
-   * Required. Source path exported from NFS server. Has to start with '/', and
-   * combined with the ip address, it indicates the source mount path in the
-   * form of `server:path`
-   *
    * @var string
    */
   public $path;
   /**
-   * Required. IP address of the NFS server.
-   *
    * @var string
    */
   public $server;
 
   /**
-   * Required. Destination mount path. The NFS will be mounted for the user
-   * under /mnt/nfs/
-   *
-   * @param string $mountPoint
+   * @param string
    */
   public function setMountPoint($mountPoint)
   {
@@ -59,11 +47,7 @@ class GoogleCloudAiplatformV1NfsMount extends \Google\Model
     return $this->mountPoint;
   }
   /**
-   * Required. Source path exported from NFS server. Has to start with '/', and
-   * combined with the ip address, it indicates the source mount path in the
-   * form of `server:path`
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {
@@ -77,9 +61,7 @@ class GoogleCloudAiplatformV1NfsMount extends \Google\Model
     return $this->path;
   }
   /**
-   * Required. IP address of the NFS server.
-   *
-   * @param string $server
+   * @param string
    */
   public function setServer($server)
   {

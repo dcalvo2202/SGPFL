@@ -24,9 +24,7 @@ class GoogleCloudDatacatalogV1CloudBigtableInstanceSpec extends \Google\Collecti
   protected $cloudBigtableClusterSpecsDataType = 'array';
 
   /**
-   * The list of clusters for the Instance.
-   *
-   * @param GoogleCloudDatacatalogV1CloudBigtableInstanceSpecCloudBigtableClusterSpec[] $cloudBigtableClusterSpecs
+   * @param GoogleCloudDatacatalogV1CloudBigtableInstanceSpecCloudBigtableClusterSpec[]
    */
   public function setCloudBigtableClusterSpecs($cloudBigtableClusterSpecs)
   {

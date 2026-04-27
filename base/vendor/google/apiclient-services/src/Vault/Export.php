@@ -19,55 +19,27 @@ namespace Google\Service\Vault;
 
 class Export extends \Google\Model
 {
-  /**
-   * The status is unspecified.
-   */
-  public const STATUS_EXPORT_STATUS_UNSPECIFIED = 'EXPORT_STATUS_UNSPECIFIED';
-  /**
-   * The export completed.
-   */
-  public const STATUS_COMPLETED = 'COMPLETED';
-  /**
-   * The export failed.
-   */
-  public const STATUS_FAILED = 'FAILED';
-  /**
-   * The export is in progress.
-   */
-  public const STATUS_IN_PROGRESS = 'IN_PROGRESS';
   protected $cloudStorageSinkType = CloudStorageSink::class;
   protected $cloudStorageSinkDataType = '';
   /**
-   * Output only. The time when the export was created.
-   *
    * @var string
    */
   public $createTime;
   protected $exportOptionsType = ExportOptions::class;
   protected $exportOptionsDataType = '';
   /**
-   * Output only. The generated export ID.
-   *
    * @var string
    */
   public $id;
   /**
-   * Output only. The matter ID.
-   *
    * @var string
    */
   public $matterId;
   /**
-   * The export name. Don't use special characters (~!$'(),;@:/?) in the name,
-   * they can prevent you from downloading exports.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Identifies the parent export that spawned this child export.
-   * This is only set on child exports.
-   *
    * @var string
    */
   public $parentExportId;
@@ -78,16 +50,12 @@ class Export extends \Google\Model
   protected $statsType = ExportStats::class;
   protected $statsDataType = '';
   /**
-   * Output only. The status of the export.
-   *
    * @var string
    */
   public $status;
 
   /**
-   * Output only. The sink for export files in Cloud Storage.
-   *
-   * @param CloudStorageSink $cloudStorageSink
+   * @param CloudStorageSink
    */
   public function setCloudStorageSink(CloudStorageSink $cloudStorageSink)
   {
@@ -101,9 +69,7 @@ class Export extends \Google\Model
     return $this->cloudStorageSink;
   }
   /**
-   * Output only. The time when the export was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -117,9 +83,7 @@ class Export extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Additional export options.
-   *
-   * @param ExportOptions $exportOptions
+   * @param ExportOptions
    */
   public function setExportOptions(ExportOptions $exportOptions)
   {
@@ -133,9 +97,7 @@ class Export extends \Google\Model
     return $this->exportOptions;
   }
   /**
-   * Output only. The generated export ID.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -149,9 +111,7 @@ class Export extends \Google\Model
     return $this->id;
   }
   /**
-   * Output only. The matter ID.
-   *
-   * @param string $matterId
+   * @param string
    */
   public function setMatterId($matterId)
   {
@@ -165,10 +125,7 @@ class Export extends \Google\Model
     return $this->matterId;
   }
   /**
-   * The export name. Don't use special characters (~!$'(),;@:/?) in the name,
-   * they can prevent you from downloading exports.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -182,10 +139,7 @@ class Export extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Identifies the parent export that spawned this child export.
-   * This is only set on child exports.
-   *
-   * @param string $parentExportId
+   * @param string
    */
   public function setParentExportId($parentExportId)
   {
@@ -199,9 +153,7 @@ class Export extends \Google\Model
     return $this->parentExportId;
   }
   /**
-   * The query parameters used to create the export.
-   *
-   * @param Query $query
+   * @param Query
    */
   public function setQuery(Query $query)
   {
@@ -215,9 +167,7 @@ class Export extends \Google\Model
     return $this->query;
   }
   /**
-   * Output only. The requester of the export.
-   *
-   * @param UserInfo $requester
+   * @param UserInfo
    */
   public function setRequester(UserInfo $requester)
   {
@@ -231,9 +181,7 @@ class Export extends \Google\Model
     return $this->requester;
   }
   /**
-   * Output only. Details about the export progress and size.
-   *
-   * @param ExportStats $stats
+   * @param ExportStats
    */
   public function setStats(ExportStats $stats)
   {
@@ -247,18 +195,14 @@ class Export extends \Google\Model
     return $this->stats;
   }
   /**
-   * Output only. The status of the export.
-   *
-   * Accepted values: EXPORT_STATUS_UNSPECIFIED, COMPLETED, FAILED, IN_PROGRESS
-   *
-   * @param self::STATUS_* $status
+   * @param string
    */
   public function setStatus($status)
   {
     $this->status = $status;
   }
   /**
-   * @return self::STATUS_*
+   * @return string
    */
   public function getStatus()
   {

@@ -20,16 +20,12 @@ namespace Google\Service\MyBusinessBusinessInformation;
 class ChainUri extends \Google\Model
 {
   /**
-   * The uri for this chain.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * The uri for this chain.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

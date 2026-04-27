@@ -23,23 +23,16 @@ class HiddenPlayerList extends \Google\Collection
   protected $itemsType = HiddenPlayer::class;
   protected $itemsDataType = 'array';
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `gamesManagement#hiddenPlayerList`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The pagination token for the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The players.
-   *
-   * @param HiddenPlayer[] $items
+   * @param HiddenPlayer[]
    */
   public function setItems($items)
   {
@@ -53,10 +46,7 @@ class HiddenPlayerList extends \Google\Collection
     return $this->items;
   }
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `gamesManagement#hiddenPlayerList`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -70,9 +60,7 @@ class HiddenPlayerList extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The pagination token for the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

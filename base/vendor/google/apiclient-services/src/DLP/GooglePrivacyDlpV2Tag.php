@@ -20,35 +20,20 @@ namespace Google\Service\DLP;
 class GooglePrivacyDlpV2Tag extends \Google\Model
 {
   /**
-   * The key of a tag key-value pair. For Google Cloud resources, this is the
-   * resource name of the key, for example, "tagKeys/123456".
-   *
    * @var string
    */
   public $key;
   /**
-   * The namespaced name for the tag value to attach to Google Cloud resources.
-   * Must be in the format `{parent_id}/{tag_key_short_name}/{short_name}`, for
-   * example, "123456/environment/prod" for an organization parent, or "my-
-   * project/environment/prod" for a project parent. This is only set for Google
-   * Cloud resources.
-   *
    * @var string
    */
   public $namespacedTagValue;
   /**
-   * The value of a tag key-value pair. For Google Cloud resources, this is the
-   * resource name of the value, for example, "tagValues/123456".
-   *
    * @var string
    */
   public $value;
 
   /**
-   * The key of a tag key-value pair. For Google Cloud resources, this is the
-   * resource name of the key, for example, "tagKeys/123456".
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {
@@ -62,13 +47,7 @@ class GooglePrivacyDlpV2Tag extends \Google\Model
     return $this->key;
   }
   /**
-   * The namespaced name for the tag value to attach to Google Cloud resources.
-   * Must be in the format `{parent_id}/{tag_key_short_name}/{short_name}`, for
-   * example, "123456/environment/prod" for an organization parent, or "my-
-   * project/environment/prod" for a project parent. This is only set for Google
-   * Cloud resources.
-   *
-   * @param string $namespacedTagValue
+   * @param string
    */
   public function setNamespacedTagValue($namespacedTagValue)
   {
@@ -82,10 +61,7 @@ class GooglePrivacyDlpV2Tag extends \Google\Model
     return $this->namespacedTagValue;
   }
   /**
-   * The value of a tag key-value pair. For Google Cloud resources, this is the
-   * resource name of the value, for example, "tagValues/123456".
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

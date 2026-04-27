@@ -20,110 +20,38 @@ namespace Google\Service\GoogleAnalyticsAdmin;
 class GoogleAnalyticsAdminV1betaDataRetentionSettings extends \Google\Model
 {
   /**
-   * Data retention time duration is not specified.
-   */
-  public const EVENT_DATA_RETENTION_RETENTION_DURATION_UNSPECIFIED = 'RETENTION_DURATION_UNSPECIFIED';
-  /**
-   * The data retention time duration is 2 months.
-   */
-  public const EVENT_DATA_RETENTION_TWO_MONTHS = 'TWO_MONTHS';
-  /**
-   * The data retention time duration is 14 months.
-   */
-  public const EVENT_DATA_RETENTION_FOURTEEN_MONTHS = 'FOURTEEN_MONTHS';
-  /**
-   * The data retention time duration is 26 months. Available to 360 properties
-   * only. Available for event data only.
-   */
-  public const EVENT_DATA_RETENTION_TWENTY_SIX_MONTHS = 'TWENTY_SIX_MONTHS';
-  /**
-   * The data retention time duration is 38 months. Available to 360 properties
-   * only. Available for event data only.
-   */
-  public const EVENT_DATA_RETENTION_THIRTY_EIGHT_MONTHS = 'THIRTY_EIGHT_MONTHS';
-  /**
-   * The data retention time duration is 50 months. Available to 360 properties
-   * only. Available for event data only.
-   */
-  public const EVENT_DATA_RETENTION_FIFTY_MONTHS = 'FIFTY_MONTHS';
-  /**
-   * Data retention time duration is not specified.
-   */
-  public const USER_DATA_RETENTION_RETENTION_DURATION_UNSPECIFIED = 'RETENTION_DURATION_UNSPECIFIED';
-  /**
-   * The data retention time duration is 2 months.
-   */
-  public const USER_DATA_RETENTION_TWO_MONTHS = 'TWO_MONTHS';
-  /**
-   * The data retention time duration is 14 months.
-   */
-  public const USER_DATA_RETENTION_FOURTEEN_MONTHS = 'FOURTEEN_MONTHS';
-  /**
-   * The data retention time duration is 26 months. Available to 360 properties
-   * only. Available for event data only.
-   */
-  public const USER_DATA_RETENTION_TWENTY_SIX_MONTHS = 'TWENTY_SIX_MONTHS';
-  /**
-   * The data retention time duration is 38 months. Available to 360 properties
-   * only. Available for event data only.
-   */
-  public const USER_DATA_RETENTION_THIRTY_EIGHT_MONTHS = 'THIRTY_EIGHT_MONTHS';
-  /**
-   * The data retention time duration is 50 months. Available to 360 properties
-   * only. Available for event data only.
-   */
-  public const USER_DATA_RETENTION_FIFTY_MONTHS = 'FIFTY_MONTHS';
-  /**
-   * Required. The length of time that event-level data is retained.
-   *
    * @var string
    */
   public $eventDataRetention;
   /**
-   * Identifier. Resource name for this DataRetentionSetting resource. Format:
-   * properties/{property}/dataRetentionSettings
-   *
    * @var string
    */
   public $name;
   /**
-   * If true, reset the retention period for the user identifier with every
-   * event from that user.
-   *
    * @var bool
    */
   public $resetUserDataOnNewActivity;
   /**
-   * Required. The length of time that user-level data is retained.
-   *
    * @var string
    */
   public $userDataRetention;
 
   /**
-   * Required. The length of time that event-level data is retained.
-   *
-   * Accepted values: RETENTION_DURATION_UNSPECIFIED, TWO_MONTHS,
-   * FOURTEEN_MONTHS, TWENTY_SIX_MONTHS, THIRTY_EIGHT_MONTHS, FIFTY_MONTHS
-   *
-   * @param self::EVENT_DATA_RETENTION_* $eventDataRetention
+   * @param string
    */
   public function setEventDataRetention($eventDataRetention)
   {
     $this->eventDataRetention = $eventDataRetention;
   }
   /**
-   * @return self::EVENT_DATA_RETENTION_*
+   * @return string
    */
   public function getEventDataRetention()
   {
     return $this->eventDataRetention;
   }
   /**
-   * Identifier. Resource name for this DataRetentionSetting resource. Format:
-   * properties/{property}/dataRetentionSettings
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -137,10 +65,7 @@ class GoogleAnalyticsAdminV1betaDataRetentionSettings extends \Google\Model
     return $this->name;
   }
   /**
-   * If true, reset the retention period for the user identifier with every
-   * event from that user.
-   *
-   * @param bool $resetUserDataOnNewActivity
+   * @param bool
    */
   public function setResetUserDataOnNewActivity($resetUserDataOnNewActivity)
   {
@@ -154,19 +79,14 @@ class GoogleAnalyticsAdminV1betaDataRetentionSettings extends \Google\Model
     return $this->resetUserDataOnNewActivity;
   }
   /**
-   * Required. The length of time that user-level data is retained.
-   *
-   * Accepted values: RETENTION_DURATION_UNSPECIFIED, TWO_MONTHS,
-   * FOURTEEN_MONTHS, TWENTY_SIX_MONTHS, THIRTY_EIGHT_MONTHS, FIFTY_MONTHS
-   *
-   * @param self::USER_DATA_RETENTION_* $userDataRetention
+   * @param string
    */
   public function setUserDataRetention($userDataRetention)
   {
     $this->userDataRetention = $userDataRetention;
   }
   /**
-   * @return self::USER_DATA_RETENTION_*
+   * @return string
    */
   public function getUserDataRetention()
   {

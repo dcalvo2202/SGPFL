@@ -20,35 +20,24 @@ namespace Google\Service\ArtifactRegistry;
 class GoModule extends \Google\Model
 {
   /**
-   * Output only. The time when the Go module is created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * The resource name of a Go module.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The time when the Go module is updated.
-   *
    * @var string
    */
   public $updateTime;
   /**
-   * The version of the Go module. Must be a valid canonical version as defined
-   * in https://go.dev/ref/mod#glos-canonical-version.
-   *
    * @var string
    */
   public $version;
 
   /**
-   * Output only. The time when the Go module is created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -62,9 +51,7 @@ class GoModule extends \Google\Model
     return $this->createTime;
   }
   /**
-   * The resource name of a Go module.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -78,9 +65,7 @@ class GoModule extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The time when the Go module is updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -94,10 +79,7 @@ class GoModule extends \Google\Model
     return $this->updateTime;
   }
   /**
-   * The version of the Go module. Must be a valid canonical version as defined
-   * in https://go.dev/ref/mod#glos-canonical-version.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

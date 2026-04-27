@@ -24,8 +24,6 @@ class GoogleMapsPlacesV1PlaceNeighborhoodSummary extends \Google\Model
   protected $disclosureTextType = GoogleTypeLocalizedText::class;
   protected $disclosureTextDataType = '';
   /**
-   * A link where users can flag a problem with the summary.
-   *
    * @var string
    */
   public $flagContentUri;
@@ -33,9 +31,7 @@ class GoogleMapsPlacesV1PlaceNeighborhoodSummary extends \Google\Model
   protected $overviewDataType = '';
 
   /**
-   * A detailed description of the neighborhood.
-   *
-   * @param GoogleMapsPlacesV1ContentBlock $description
+   * @param GoogleMapsPlacesV1ContentBlock
    */
   public function setDescription(GoogleMapsPlacesV1ContentBlock $description)
   {
@@ -49,11 +45,7 @@ class GoogleMapsPlacesV1PlaceNeighborhoodSummary extends \Google\Model
     return $this->description;
   }
   /**
-   * The AI disclosure message "Summarized with Gemini" (and its localized
-   * variants). This will be in the language specified in the request if
-   * available.
-   *
-   * @param GoogleTypeLocalizedText $disclosureText
+   * @param GoogleTypeLocalizedText
    */
   public function setDisclosureText(GoogleTypeLocalizedText $disclosureText)
   {
@@ -67,9 +59,7 @@ class GoogleMapsPlacesV1PlaceNeighborhoodSummary extends \Google\Model
     return $this->disclosureText;
   }
   /**
-   * A link where users can flag a problem with the summary.
-   *
-   * @param string $flagContentUri
+   * @param string
    */
   public function setFlagContentUri($flagContentUri)
   {
@@ -83,9 +73,7 @@ class GoogleMapsPlacesV1PlaceNeighborhoodSummary extends \Google\Model
     return $this->flagContentUri;
   }
   /**
-   * An overview summary of the neighborhood.
-   *
-   * @param GoogleMapsPlacesV1ContentBlock $overview
+   * @param GoogleMapsPlacesV1ContentBlock
    */
   public function setOverview(GoogleMapsPlacesV1ContentBlock $overview)
   {

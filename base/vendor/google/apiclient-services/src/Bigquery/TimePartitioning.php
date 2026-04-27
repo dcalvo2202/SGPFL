@@ -20,46 +20,24 @@ namespace Google\Service\Bigquery;
 class TimePartitioning extends \Google\Model
 {
   /**
-   * Optional. Number of milliseconds for which to keep the storage for a
-   * partition. A wrapper is used here because 0 is an invalid value.
-   *
    * @var string
    */
   public $expirationMs;
   /**
-   * Optional. If not set, the table is partitioned by pseudo column
-   * '_PARTITIONTIME'; if set, the table is partitioned by this field. The field
-   * must be a top-level TIMESTAMP or DATE field. Its mode must be NULLABLE or
-   * REQUIRED. A wrapper is used here because an empty string is an invalid
-   * value.
-   *
    * @var string
    */
   public $field;
   /**
-   * If set to true, queries over this table require a partition filter that can
-   * be used for partition elimination to be specified. This field is
-   * deprecated; please set the field with the same name on the table itself
-   * instead. This field needs a wrapper because we want to output the default
-   * value, false, if the user explicitly set it.
-   *
-   * @deprecated
    * @var bool
    */
   public $requirePartitionFilter;
   /**
-   * Required. The supported types are DAY, HOUR, MONTH, and YEAR, which will
-   * generate one partition per day, hour, month, and year, respectively.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Optional. Number of milliseconds for which to keep the storage for a
-   * partition. A wrapper is used here because 0 is an invalid value.
-   *
-   * @param string $expirationMs
+   * @param string
    */
   public function setExpirationMs($expirationMs)
   {
@@ -73,13 +51,7 @@ class TimePartitioning extends \Google\Model
     return $this->expirationMs;
   }
   /**
-   * Optional. If not set, the table is partitioned by pseudo column
-   * '_PARTITIONTIME'; if set, the table is partitioned by this field. The field
-   * must be a top-level TIMESTAMP or DATE field. Its mode must be NULLABLE or
-   * REQUIRED. A wrapper is used here because an empty string is an invalid
-   * value.
-   *
-   * @param string $field
+   * @param string
    */
   public function setField($field)
   {
@@ -93,21 +65,13 @@ class TimePartitioning extends \Google\Model
     return $this->field;
   }
   /**
-   * If set to true, queries over this table require a partition filter that can
-   * be used for partition elimination to be specified. This field is
-   * deprecated; please set the field with the same name on the table itself
-   * instead. This field needs a wrapper because we want to output the default
-   * value, false, if the user explicitly set it.
-   *
-   * @deprecated
-   * @param bool $requirePartitionFilter
+   * @param bool
    */
   public function setRequirePartitionFilter($requirePartitionFilter)
   {
     $this->requirePartitionFilter = $requirePartitionFilter;
   }
   /**
-   * @deprecated
    * @return bool
    */
   public function getRequirePartitionFilter()
@@ -115,10 +79,7 @@ class TimePartitioning extends \Google\Model
     return $this->requirePartitionFilter;
   }
   /**
-   * Required. The supported types are DAY, HOUR, MONTH, and YEAR, which will
-   * generate one partition per day, hour, month, and year, respectively.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

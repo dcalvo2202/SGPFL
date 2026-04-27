@@ -23,33 +23,16 @@ class ResourceFilter extends \Google\Collection
   protected $groupKindsType = GroupKind::class;
   protected $groupKindsDataType = 'array';
   /**
-   * Optional. This is a [JSONPath] (https://github.com/json-
-   * path/JsonPath/blob/master/README.md) expression that matches specific
-   * fields of candidate resources and it operates as a filtering parameter
-   * (resources that are not matched with this expression will not be candidates
-   * for transformation).
-   *
    * @var string
    */
   public $jsonPath;
   /**
-   * Optional. (Filtering parameter) Any resource subject to transformation must
-   * be contained within one of the listed Kubernetes Namespace in the Backup.
-   * If this field is not provided, no namespace filtering will be performed
-   * (all resources in all Namespaces, including all cluster-scoped resources,
-   * will be candidates for transformation).
-   *
    * @var string[]
    */
   public $namespaces;
 
   /**
-   * Optional. (Filtering parameter) Any resource subject to transformation must
-   * belong to one of the listed "types". If this field is not provided, no type
-   * filtering will be performed (all resources of all types matching previous
-   * filtering parameters will be candidates for transformation).
-   *
-   * @param GroupKind[] $groupKinds
+   * @param GroupKind[]
    */
   public function setGroupKinds($groupKinds)
   {
@@ -63,13 +46,7 @@ class ResourceFilter extends \Google\Collection
     return $this->groupKinds;
   }
   /**
-   * Optional. This is a [JSONPath] (https://github.com/json-
-   * path/JsonPath/blob/master/README.md) expression that matches specific
-   * fields of candidate resources and it operates as a filtering parameter
-   * (resources that are not matched with this expression will not be candidates
-   * for transformation).
-   *
-   * @param string $jsonPath
+   * @param string
    */
   public function setJsonPath($jsonPath)
   {
@@ -83,13 +60,7 @@ class ResourceFilter extends \Google\Collection
     return $this->jsonPath;
   }
   /**
-   * Optional. (Filtering parameter) Any resource subject to transformation must
-   * be contained within one of the listed Kubernetes Namespace in the Backup.
-   * If this field is not provided, no namespace filtering will be performed
-   * (all resources in all Namespaces, including all cluster-scoped resources,
-   * will be candidates for transformation).
-   *
-   * @param string[] $namespaces
+   * @param string[]
    */
   public function setNamespaces($namespaces)
   {

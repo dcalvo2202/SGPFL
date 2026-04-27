@@ -20,16 +20,12 @@ namespace Google\Service\Slides;
 class CreateTableResponse extends \Google\Model
 {
   /**
-   * The object ID of the created table.
-   *
    * @var string
    */
   public $objectId;
 
   /**
-   * The object ID of the created table.
-   *
-   * @param string $objectId
+   * @param string
    */
   public function setObjectId($objectId)
   {

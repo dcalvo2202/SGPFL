@@ -21,8 +21,6 @@ class GooglePrivacyDlpV2ListProjectDataProfilesResponse extends \Google\Collecti
 {
   protected $collection_key = 'projectDataProfiles';
   /**
-   * The next page token.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -30,9 +28,7 @@ class GooglePrivacyDlpV2ListProjectDataProfilesResponse extends \Google\Collecti
   protected $projectDataProfilesDataType = 'array';
 
   /**
-   * The next page token.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -46,9 +42,7 @@ class GooglePrivacyDlpV2ListProjectDataProfilesResponse extends \Google\Collecti
     return $this->nextPageToken;
   }
   /**
-   * List of data profiles.
-   *
-   * @param GooglePrivacyDlpV2ProjectDataProfile[] $projectDataProfiles
+   * @param GooglePrivacyDlpV2ProjectDataProfile[]
    */
   public function setProjectDataProfiles($projectDataProfiles)
   {

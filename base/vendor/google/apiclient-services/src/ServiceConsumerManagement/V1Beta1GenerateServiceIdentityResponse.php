@@ -23,9 +23,7 @@ class V1Beta1GenerateServiceIdentityResponse extends \Google\Model
   protected $identityDataType = '';
 
   /**
-   * ServiceIdentity that was created or retrieved.
-   *
-   * @param V1Beta1ServiceIdentity $identity
+   * @param V1Beta1ServiceIdentity
    */
   public function setIdentity(V1Beta1ServiceIdentity $identity)
   {

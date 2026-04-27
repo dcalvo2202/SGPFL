@@ -19,204 +19,84 @@ namespace Google\Service\Workflows;
 
 class Workflow extends \Google\Collection
 {
-  /**
-   * No call logging level specified.
-   */
-  public const CALL_LOG_LEVEL_CALL_LOG_LEVEL_UNSPECIFIED = 'CALL_LOG_LEVEL_UNSPECIFIED';
-  /**
-   * Log all call steps within workflows, all call returns, and all exceptions
-   * raised.
-   */
-  public const CALL_LOG_LEVEL_LOG_ALL_CALLS = 'LOG_ALL_CALLS';
-  /**
-   * Log only exceptions that are raised from call steps within workflows.
-   */
-  public const CALL_LOG_LEVEL_LOG_ERRORS_ONLY = 'LOG_ERRORS_ONLY';
-  /**
-   * Explicitly log nothing.
-   */
-  public const CALL_LOG_LEVEL_LOG_NONE = 'LOG_NONE';
-  /**
-   * The default/unset value.
-   */
-  public const EXECUTION_HISTORY_LEVEL_EXECUTION_HISTORY_LEVEL_UNSPECIFIED = 'EXECUTION_HISTORY_LEVEL_UNSPECIFIED';
-  /**
-   * Enable execution history basic feature.
-   */
-  public const EXECUTION_HISTORY_LEVEL_EXECUTION_HISTORY_BASIC = 'EXECUTION_HISTORY_BASIC';
-  /**
-   * Enable execution history detailed feature.
-   */
-  public const EXECUTION_HISTORY_LEVEL_EXECUTION_HISTORY_DETAILED = 'EXECUTION_HISTORY_DETAILED';
-  /**
-   * Invalid state.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The workflow has been deployed successfully and is serving.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * Workflow data is unavailable. See the `state_error` field.
-   */
-  public const STATE_UNAVAILABLE = 'UNAVAILABLE';
   protected $collection_key = 'allKmsKeysVersions';
   /**
-   * Output only. A list of all KMS crypto keys used to encrypt or decrypt the
-   * data associated with the workflow.
-   *
    * @var string[]
    */
   public $allKmsKeys;
   /**
-   * Output only. A list of all KMS crypto key versions used to encrypt or
-   * decrypt the data associated with the workflow.
-   *
    * @var string[]
    */
   public $allKmsKeysVersions;
   /**
-   * Optional. Describes the level of platform logging to apply to calls and
-   * call responses during executions of this workflow. If both the workflow and
-   * the execution specify a logging level, the execution level takes
-   * precedence.
-   *
    * @var string
    */
   public $callLogLevel;
   /**
-   * Output only. The timestamp for when the workflow was created. This is a
-   * workflow-wide field and is not tied to a specific revision.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. The resource name of a KMS crypto key used to encrypt or decrypt
-   * the data associated with the workflow. Format: projects/{project}/locations
-   * /{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey} Using `-` as a
-   * wildcard for the `{project}` or not providing one at all will infer the
-   * project from the account. If not provided, data associated with the
-   * workflow will not be CMEK-encrypted.
-   *
    * @var string
    */
   public $cryptoKeyName;
   /**
-   * Output only. The resource name of a KMS crypto key version used to encrypt
-   * or decrypt the data associated with the workflow. Format: projects/{project
-   * }/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}/cryptoKeyV
-   * ersions/{cryptoKeyVersion}
-   *
    * @var string
    */
   public $cryptoKeyVersion;
   /**
-   * Description of the workflow provided by the user. Must be at most 1000
-   * Unicode characters long. This is a workflow-wide field and is not tied to a
-   * specific revision.
-   *
    * @var string
    */
   public $description;
   /**
-   * Optional. Describes the execution history level to apply to this workflow.
-   *
    * @var string
    */
   public $executionHistoryLevel;
   /**
-   * Labels associated with this workflow. Labels can contain at most 64
-   * entries. Keys and values can be no longer than 63 characters and can only
-   * contain lowercase letters, numeric characters, underscores, and dashes.
-   * Label keys must start with a letter. International characters are allowed.
-   * This is a workflow-wide field and is not tied to a specific revision.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * The resource name of the workflow. Format:
-   * projects/{project}/locations/{location}/workflows/{workflow}. This is a
-   * workflow-wide field and is not tied to a specific revision.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The timestamp for the latest revision of the workflow's
-   * creation.
-   *
    * @var string
    */
   public $revisionCreateTime;
   /**
-   * Output only. The revision of the workflow. A new revision of a workflow is
-   * created as a result of updating the following properties of a workflow: -
-   * Service account - Workflow code to be executed The format is "000001-a4d",
-   * where the first six characters define the zero-padded revision ordinal
-   * number. They are followed by a hyphen and three hexadecimal random
-   * characters.
-   *
    * @var string
    */
   public $revisionId;
   /**
-   * The service account associated with the latest workflow version. This
-   * service account represents the identity of the workflow and determines what
-   * permissions the workflow has. Format:
-   * projects/{project}/serviceAccounts/{account} or {account} Using `-` as a
-   * wildcard for the `{project}` or not providing one at all will infer the
-   * project from the account. The `{account}` value can be the `email` address
-   * or the `unique_id` of the service account. If not provided, workflow will
-   * use the project's default service account. Modifying this field for an
-   * existing workflow results in a new workflow revision.
-   *
    * @var string
    */
   public $serviceAccount;
   /**
-   * Workflow code to be executed. The size limit is 128KB.
-   *
    * @var string
    */
   public $sourceContents;
   /**
-   * Output only. State of the workflow deployment.
-   *
    * @var string
    */
   public $state;
   protected $stateErrorType = StateError::class;
   protected $stateErrorDataType = '';
   /**
-   * Optional. Input only. Immutable. Tags associated with this workflow.
-   *
    * @var string[]
    */
   public $tags;
   /**
-   * Output only. The timestamp for when the workflow was last updated. This is
-   * a workflow-wide field and is not tied to a specific revision.
-   *
    * @var string
    */
   public $updateTime;
   /**
-   * Optional. User-defined environment variables associated with this workflow
-   * revision. This map has a maximum length of 20. Each string can take up to
-   * 4KiB. Keys cannot be empty strings and cannot start with "GOOGLE" or
-   * "WORKFLOWS".
-   *
    * @var string[]
    */
   public $userEnvVars;
 
   /**
-   * Output only. A list of all KMS crypto keys used to encrypt or decrypt the
-   * data associated with the workflow.
-   *
-   * @param string[] $allKmsKeys
+   * @param string[]
    */
   public function setAllKmsKeys($allKmsKeys)
   {
@@ -230,10 +110,7 @@ class Workflow extends \Google\Collection
     return $this->allKmsKeys;
   }
   /**
-   * Output only. A list of all KMS crypto key versions used to encrypt or
-   * decrypt the data associated with the workflow.
-   *
-   * @param string[] $allKmsKeysVersions
+   * @param string[]
    */
   public function setAllKmsKeysVersions($allKmsKeysVersions)
   {
@@ -247,32 +124,21 @@ class Workflow extends \Google\Collection
     return $this->allKmsKeysVersions;
   }
   /**
-   * Optional. Describes the level of platform logging to apply to calls and
-   * call responses during executions of this workflow. If both the workflow and
-   * the execution specify a logging level, the execution level takes
-   * precedence.
-   *
-   * Accepted values: CALL_LOG_LEVEL_UNSPECIFIED, LOG_ALL_CALLS,
-   * LOG_ERRORS_ONLY, LOG_NONE
-   *
-   * @param self::CALL_LOG_LEVEL_* $callLogLevel
+   * @param string
    */
   public function setCallLogLevel($callLogLevel)
   {
     $this->callLogLevel = $callLogLevel;
   }
   /**
-   * @return self::CALL_LOG_LEVEL_*
+   * @return string
    */
   public function getCallLogLevel()
   {
     return $this->callLogLevel;
   }
   /**
-   * Output only. The timestamp for when the workflow was created. This is a
-   * workflow-wide field and is not tied to a specific revision.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -286,14 +152,7 @@ class Workflow extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Optional. The resource name of a KMS crypto key used to encrypt or decrypt
-   * the data associated with the workflow. Format: projects/{project}/locations
-   * /{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey} Using `-` as a
-   * wildcard for the `{project}` or not providing one at all will infer the
-   * project from the account. If not provided, data associated with the
-   * workflow will not be CMEK-encrypted.
-   *
-   * @param string $cryptoKeyName
+   * @param string
    */
   public function setCryptoKeyName($cryptoKeyName)
   {
@@ -307,12 +166,7 @@ class Workflow extends \Google\Collection
     return $this->cryptoKeyName;
   }
   /**
-   * Output only. The resource name of a KMS crypto key version used to encrypt
-   * or decrypt the data associated with the workflow. Format: projects/{project
-   * }/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}/cryptoKeyV
-   * ersions/{cryptoKeyVersion}
-   *
-   * @param string $cryptoKeyVersion
+   * @param string
    */
   public function setCryptoKeyVersion($cryptoKeyVersion)
   {
@@ -326,11 +180,7 @@ class Workflow extends \Google\Collection
     return $this->cryptoKeyVersion;
   }
   /**
-   * Description of the workflow provided by the user. Must be at most 1000
-   * Unicode characters long. This is a workflow-wide field and is not tied to a
-   * specific revision.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -344,32 +194,21 @@ class Workflow extends \Google\Collection
     return $this->description;
   }
   /**
-   * Optional. Describes the execution history level to apply to this workflow.
-   *
-   * Accepted values: EXECUTION_HISTORY_LEVEL_UNSPECIFIED,
-   * EXECUTION_HISTORY_BASIC, EXECUTION_HISTORY_DETAILED
-   *
-   * @param self::EXECUTION_HISTORY_LEVEL_* $executionHistoryLevel
+   * @param string
    */
   public function setExecutionHistoryLevel($executionHistoryLevel)
   {
     $this->executionHistoryLevel = $executionHistoryLevel;
   }
   /**
-   * @return self::EXECUTION_HISTORY_LEVEL_*
+   * @return string
    */
   public function getExecutionHistoryLevel()
   {
     return $this->executionHistoryLevel;
   }
   /**
-   * Labels associated with this workflow. Labels can contain at most 64
-   * entries. Keys and values can be no longer than 63 characters and can only
-   * contain lowercase letters, numeric characters, underscores, and dashes.
-   * Label keys must start with a letter. International characters are allowed.
-   * This is a workflow-wide field and is not tied to a specific revision.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -383,11 +222,7 @@ class Workflow extends \Google\Collection
     return $this->labels;
   }
   /**
-   * The resource name of the workflow. Format:
-   * projects/{project}/locations/{location}/workflows/{workflow}. This is a
-   * workflow-wide field and is not tied to a specific revision.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -401,10 +236,7 @@ class Workflow extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. The timestamp for the latest revision of the workflow's
-   * creation.
-   *
-   * @param string $revisionCreateTime
+   * @param string
    */
   public function setRevisionCreateTime($revisionCreateTime)
   {
@@ -418,14 +250,7 @@ class Workflow extends \Google\Collection
     return $this->revisionCreateTime;
   }
   /**
-   * Output only. The revision of the workflow. A new revision of a workflow is
-   * created as a result of updating the following properties of a workflow: -
-   * Service account - Workflow code to be executed The format is "000001-a4d",
-   * where the first six characters define the zero-padded revision ordinal
-   * number. They are followed by a hyphen and three hexadecimal random
-   * characters.
-   *
-   * @param string $revisionId
+   * @param string
    */
   public function setRevisionId($revisionId)
   {
@@ -439,17 +264,7 @@ class Workflow extends \Google\Collection
     return $this->revisionId;
   }
   /**
-   * The service account associated with the latest workflow version. This
-   * service account represents the identity of the workflow and determines what
-   * permissions the workflow has. Format:
-   * projects/{project}/serviceAccounts/{account} or {account} Using `-` as a
-   * wildcard for the `{project}` or not providing one at all will infer the
-   * project from the account. The `{account}` value can be the `email` address
-   * or the `unique_id` of the service account. If not provided, workflow will
-   * use the project's default service account. Modifying this field for an
-   * existing workflow results in a new workflow revision.
-   *
-   * @param string $serviceAccount
+   * @param string
    */
   public function setServiceAccount($serviceAccount)
   {
@@ -463,9 +278,7 @@ class Workflow extends \Google\Collection
     return $this->serviceAccount;
   }
   /**
-   * Workflow code to be executed. The size limit is 128KB.
-   *
-   * @param string $sourceContents
+   * @param string
    */
   public function setSourceContents($sourceContents)
   {
@@ -479,29 +292,21 @@ class Workflow extends \Google\Collection
     return $this->sourceContents;
   }
   /**
-   * Output only. State of the workflow deployment.
-   *
-   * Accepted values: STATE_UNSPECIFIED, ACTIVE, UNAVAILABLE
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. Error regarding the state of the workflow. For example, this
-   * field will have error details if the execution data is unavailable due to
-   * revoked KMS key permissions.
-   *
-   * @param StateError $stateError
+   * @param StateError
    */
   public function setStateError(StateError $stateError)
   {
@@ -515,9 +320,7 @@ class Workflow extends \Google\Collection
     return $this->stateError;
   }
   /**
-   * Optional. Input only. Immutable. Tags associated with this workflow.
-   *
-   * @param string[] $tags
+   * @param string[]
    */
   public function setTags($tags)
   {
@@ -531,10 +334,7 @@ class Workflow extends \Google\Collection
     return $this->tags;
   }
   /**
-   * Output only. The timestamp for when the workflow was last updated. This is
-   * a workflow-wide field and is not tied to a specific revision.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -548,12 +348,7 @@ class Workflow extends \Google\Collection
     return $this->updateTime;
   }
   /**
-   * Optional. User-defined environment variables associated with this workflow
-   * revision. This map has a maximum length of 20. Each string can take up to
-   * 4KiB. Keys cannot be empty strings and cannot start with "GOOGLE" or
-   * "WORKFLOWS".
-   *
-   * @param string[] $userEnvVars
+   * @param string[]
    */
   public function setUserEnvVars($userEnvVars)
   {

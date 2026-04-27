@@ -23,17 +23,12 @@ class ConversionList extends \Google\Collection
   protected $conversionType = Conversion::class;
   protected $conversionDataType = 'array';
   /**
-   * Identifies this as a ConversionList resource. Value: the fixed string
-   * doubleclicksearch#conversionList.
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * The conversions being requested.
-   *
-   * @param Conversion[] $conversion
+   * @param Conversion[]
    */
   public function setConversion($conversion)
   {
@@ -47,10 +42,7 @@ class ConversionList extends \Google\Collection
     return $this->conversion;
   }
   /**
-   * Identifies this as a ConversionList resource. Value: the fixed string
-   * doubleclicksearch#conversionList.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

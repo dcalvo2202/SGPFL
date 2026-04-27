@@ -20,24 +20,16 @@ namespace Google\Service\CloudRedis;
 class Compliance extends \Google\Model
 {
   /**
-   * Industry-wide compliance standards or benchmarks, such as CIS, PCI, and
-   * OWASP.
-   *
    * @var string
    */
   public $standard;
   /**
-   * Version of the standard or benchmark, for example, 1.1
-   *
    * @var string
    */
   public $version;
 
   /**
-   * Industry-wide compliance standards or benchmarks, such as CIS, PCI, and
-   * OWASP.
-   *
-   * @param string $standard
+   * @param string
    */
   public function setStandard($standard)
   {
@@ -51,9 +43,7 @@ class Compliance extends \Google\Model
     return $this->standard;
   }
   /**
-   * Version of the standard or benchmark, for example, 1.1
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

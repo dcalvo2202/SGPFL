@@ -23,25 +23,16 @@ class GclbTarget extends \Google\Collection
   protected $ipConfigsType = IpConfig::class;
   protected $ipConfigsDataType = 'array';
   /**
-   * Output only. This field returns the resource name in the following format:
-   * `//compute.googleapis.com/projects/global/targetHttpsProxies`.
-   *
    * @var string
    */
   public $targetHttpsProxy;
   /**
-   * Output only. This field returns the resource name in the following format:
-   * `//compute.googleapis.com/projects/global/targetSslProxies`.
-   *
    * @var string
    */
   public $targetSslProxy;
 
   /**
-   * Output only. IP configurations for this Target Proxy where the Certificate
-   * Map is serving.
-   *
-   * @param IpConfig[] $ipConfigs
+   * @param IpConfig[]
    */
   public function setIpConfigs($ipConfigs)
   {
@@ -55,10 +46,7 @@ class GclbTarget extends \Google\Collection
     return $this->ipConfigs;
   }
   /**
-   * Output only. This field returns the resource name in the following format:
-   * `//compute.googleapis.com/projects/global/targetHttpsProxies`.
-   *
-   * @param string $targetHttpsProxy
+   * @param string
    */
   public function setTargetHttpsProxy($targetHttpsProxy)
   {
@@ -72,10 +60,7 @@ class GclbTarget extends \Google\Collection
     return $this->targetHttpsProxy;
   }
   /**
-   * Output only. This field returns the resource name in the following format:
-   * `//compute.googleapis.com/projects/global/targetSslProxies`.
-   *
-   * @param string $targetSslProxy
+   * @param string
    */
   public function setTargetSslProxy($targetSslProxy)
   {

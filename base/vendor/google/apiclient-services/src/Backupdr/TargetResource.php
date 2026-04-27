@@ -23,9 +23,7 @@ class TargetResource extends \Google\Model
   protected $gcpResourceDataType = '';
 
   /**
-   * Details of the native Google Cloud resource created as part of restore.
-   *
-   * @param GcpResource $gcpResource
+   * @param GcpResource
    */
   public function setGcpResource(GcpResource $gcpResource)
   {

@@ -21,8 +21,6 @@ class ListDataPointChangesResponse extends \Google\Collection
 {
   protected $collection_key = 'insertedDataPoint';
   /**
-   * The data stream ID of the data source with data point changes.
-   *
    * @var string
    */
   public $dataSourceId;
@@ -31,18 +29,12 @@ class ListDataPointChangesResponse extends \Google\Collection
   protected $insertedDataPointType = DataPoint::class;
   protected $insertedDataPointDataType = 'array';
   /**
-   * The continuation token, which is used to page through large result sets.
-   * Provide this value in a subsequent request to return the next page of
-   * results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The data stream ID of the data source with data point changes.
-   *
-   * @param string $dataSourceId
+   * @param string
    */
   public function setDataSourceId($dataSourceId)
   {
@@ -56,10 +48,7 @@ class ListDataPointChangesResponse extends \Google\Collection
     return $this->dataSourceId;
   }
   /**
-   * Deleted data points for the user. Note, for modifications this should be
-   * parsed before handling insertions.
-   *
-   * @param DataPoint[] $deletedDataPoint
+   * @param DataPoint[]
    */
   public function setDeletedDataPoint($deletedDataPoint)
   {
@@ -73,9 +62,7 @@ class ListDataPointChangesResponse extends \Google\Collection
     return $this->deletedDataPoint;
   }
   /**
-   * Inserted data points for the user.
-   *
-   * @param DataPoint[] $insertedDataPoint
+   * @param DataPoint[]
    */
   public function setInsertedDataPoint($insertedDataPoint)
   {
@@ -89,11 +76,7 @@ class ListDataPointChangesResponse extends \Google\Collection
     return $this->insertedDataPoint;
   }
   /**
-   * The continuation token, which is used to page through large result sets.
-   * Provide this value in a subsequent request to return the next page of
-   * results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

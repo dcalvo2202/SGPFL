@@ -21,26 +21,18 @@ class ListProvidersResponse extends \Google\Collection
 {
   protected $collection_key = 'unreachable';
   /**
-   * A page token that can be sent to `ListProviders` to request the next page.
-   * If this is empty, then there are no more pages.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $providersType = Provider::class;
   protected $providersDataType = 'array';
   /**
-   * Unreachable resources, if any.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * A page token that can be sent to `ListProviders` to request the next page.
-   * If this is empty, then there are no more pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -54,9 +46,7 @@ class ListProvidersResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The requested providers, up to the number specified in `page_size`.
-   *
-   * @param Provider[] $providers
+   * @param Provider[]
    */
   public function setProviders($providers)
   {
@@ -70,9 +60,7 @@ class ListProvidersResponse extends \Google\Collection
     return $this->providers;
   }
   /**
-   * Unreachable resources, if any.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

@@ -23,9 +23,7 @@ class DiffDownloadResponse extends \Google\Model
   protected $objectLocationDataType = '';
 
   /**
-   * # gdata.* are outside protos with mising documentation
-   *
-   * @param CompositeMedia $objectLocation
+   * @param CompositeMedia
    */
   public function setObjectLocation(CompositeMedia $objectLocation)
   {

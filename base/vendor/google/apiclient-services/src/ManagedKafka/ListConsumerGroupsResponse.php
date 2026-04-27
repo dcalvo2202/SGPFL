@@ -23,18 +23,12 @@ class ListConsumerGroupsResponse extends \Google\Collection
   protected $consumerGroupsType = ConsumerGroup::class;
   protected $consumerGroupsDataType = 'array';
   /**
-   * A token that can be sent as `page_token` to retrieve the next page of
-   * results. If this field is omitted, there are no more results.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * The list of consumer group in the requested parent. The order of the
-   * consumer groups is unspecified.
-   *
-   * @param ConsumerGroup[] $consumerGroups
+   * @param ConsumerGroup[]
    */
   public function setConsumerGroups($consumerGroups)
   {
@@ -48,10 +42,7 @@ class ListConsumerGroupsResponse extends \Google\Collection
     return $this->consumerGroups;
   }
   /**
-   * A token that can be sent as `page_token` to retrieve the next page of
-   * results. If this field is omitted, there are no more results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

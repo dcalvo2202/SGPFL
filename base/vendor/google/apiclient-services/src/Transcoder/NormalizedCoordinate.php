@@ -19,17 +19,7 @@ namespace Google\Service\Transcoder;
 
 class NormalizedCoordinate extends \Google\Model
 {
-  /**
-   * Normalized x coordinate.
-   *
-   * @var 
-   */
   public $x;
-  /**
-   * Normalized y coordinate.
-   *
-   * @var 
-   */
   public $y;
 
   public function setX($x)

@@ -25,7 +25,7 @@ class GoogleCloudDialogflowCxV3RestoreAgentRequestGitSource extends \Google\Mode
   public $trackingBranch;
 
   /**
-   * @param string $trackingBranch
+   * @param string
    */
   public function setTrackingBranch($trackingBranch)
   {

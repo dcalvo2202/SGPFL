@@ -20,9 +20,6 @@ namespace Google\Service\Bigquery;
 class RangePartitioning extends \Google\Model
 {
   /**
-   * Required. The name of the column to partition the table on. It must be a
-   * top-level, INT64 column whose mode is NULLABLE or REQUIRED.
-   *
    * @var string
    */
   public $field;
@@ -30,10 +27,7 @@ class RangePartitioning extends \Google\Model
   protected $rangeDataType = '';
 
   /**
-   * Required. The name of the column to partition the table on. It must be a
-   * top-level, INT64 column whose mode is NULLABLE or REQUIRED.
-   *
-   * @param string $field
+   * @param string
    */
   public function setField($field)
   {
@@ -47,9 +41,7 @@ class RangePartitioning extends \Google\Model
     return $this->field;
   }
   /**
-   * [Experimental] Defines the ranges for range partitioning.
-   *
-   * @param RangePartitioningRange $range
+   * @param RangePartitioningRange
    */
   public function setRange(RangePartitioningRange $range)
   {

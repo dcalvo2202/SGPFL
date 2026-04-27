@@ -23,17 +23,13 @@ class GoogleBigtableAdminV2TypeInt64EncodingBigEndianBytes extends \Google\Model
   protected $bytesTypeDataType = '';
 
   /**
-   * Deprecated: ignored if set.
-   *
-   * @deprecated
-   * @param GoogleBigtableAdminV2TypeBytes $bytesType
+   * @param GoogleBigtableAdminV2TypeBytes
    */
   public function setBytesType(GoogleBigtableAdminV2TypeBytes $bytesType)
   {
     $this->bytesType = $bytesType;
   }
   /**
-   * @deprecated
    * @return GoogleBigtableAdminV2TypeBytes
    */
   public function getBytesType()

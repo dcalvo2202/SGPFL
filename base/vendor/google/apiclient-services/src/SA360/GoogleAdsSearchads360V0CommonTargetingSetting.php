@@ -24,10 +24,7 @@ class GoogleAdsSearchads360V0CommonTargetingSetting extends \Google\Collection
   protected $targetRestrictionsDataType = 'array';
 
   /**
-   * The per-targeting-dimension setting to restrict the reach of your campaign
-   * or ad group.
-   *
-   * @param GoogleAdsSearchads360V0CommonTargetRestriction[] $targetRestrictions
+   * @param GoogleAdsSearchads360V0CommonTargetRestriction[]
    */
   public function setTargetRestrictions($targetRestrictions)
   {

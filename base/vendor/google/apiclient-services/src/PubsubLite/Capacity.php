@@ -20,23 +20,16 @@ namespace Google\Service\PubsubLite;
 class Capacity extends \Google\Model
 {
   /**
-   * Publish throughput capacity per partition in MiB/s. Must be >= 4 and <= 16.
-   *
    * @var int
    */
   public $publishMibPerSec;
   /**
-   * Subscribe throughput capacity per partition in MiB/s. Must be >= 4 and <=
-   * 32.
-   *
    * @var int
    */
   public $subscribeMibPerSec;
 
   /**
-   * Publish throughput capacity per partition in MiB/s. Must be >= 4 and <= 16.
-   *
-   * @param int $publishMibPerSec
+   * @param int
    */
   public function setPublishMibPerSec($publishMibPerSec)
   {
@@ -50,10 +43,7 @@ class Capacity extends \Google\Model
     return $this->publishMibPerSec;
   }
   /**
-   * Subscribe throughput capacity per partition in MiB/s. Must be >= 4 and <=
-   * 32.
-   *
-   * @param int $subscribeMibPerSec
+   * @param int
    */
   public function setSubscribeMibPerSec($subscribeMibPerSec)
   {

@@ -20,64 +20,12 @@ namespace Google\Service\Document;
 class GoogleCloudDocumentaiV1ProcessorVersion extends \Google\Model
 {
   /**
-   * The processor version has unspecified model type.
-   */
-  public const MODEL_TYPE_MODEL_TYPE_UNSPECIFIED = 'MODEL_TYPE_UNSPECIFIED';
-  /**
-   * The processor version has generative model type.
-   */
-  public const MODEL_TYPE_MODEL_TYPE_GENERATIVE = 'MODEL_TYPE_GENERATIVE';
-  /**
-   * The processor version has custom model type.
-   */
-  public const MODEL_TYPE_MODEL_TYPE_CUSTOM = 'MODEL_TYPE_CUSTOM';
-  /**
-   * The processor version is in an unspecified state.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The processor version is deployed and can be used for processing.
-   */
-  public const STATE_DEPLOYED = 'DEPLOYED';
-  /**
-   * The processor version is being deployed.
-   */
-  public const STATE_DEPLOYING = 'DEPLOYING';
-  /**
-   * The processor version is not deployed and cannot be used for processing.
-   */
-  public const STATE_UNDEPLOYED = 'UNDEPLOYED';
-  /**
-   * The processor version is being undeployed.
-   */
-  public const STATE_UNDEPLOYING = 'UNDEPLOYING';
-  /**
-   * The processor version is being created.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * The processor version is being deleted.
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * The processor version failed and is in an indeterminate state.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * The processor version is being imported.
-   */
-  public const STATE_IMPORTING = 'IMPORTING';
-  /**
-   * Output only. The time the processor version was created.
-   *
    * @var string
    */
   public $createTime;
   protected $deprecationInfoType = GoogleCloudDocumentaiV1ProcessorVersionDeprecationInfo::class;
   protected $deprecationInfoDataType = '';
   /**
-   * The display name of the processor version.
-   *
    * @var string
    */
   public $displayName;
@@ -86,62 +34,42 @@ class GoogleCloudDocumentaiV1ProcessorVersion extends \Google\Model
   protected $genAiModelInfoType = GoogleCloudDocumentaiV1ProcessorVersionGenAiModelInfo::class;
   protected $genAiModelInfoDataType = '';
   /**
-   * Output only. Denotes that this `ProcessorVersion` is managed by Google.
-   *
    * @var bool
    */
   public $googleManaged;
   /**
-   * Output only. The KMS key name used for encryption.
-   *
    * @var string
    */
   public $kmsKeyName;
   /**
-   * Output only. The KMS key version with which data is encrypted.
-   *
    * @var string
    */
   public $kmsKeyVersionName;
   protected $latestEvaluationType = GoogleCloudDocumentaiV1EvaluationReference::class;
   protected $latestEvaluationDataType = '';
   /**
-   * Output only. The model type of this processor version.
-   *
    * @var string
    */
   public $modelType;
   /**
-   * Identifier. The resource name of the processor version. Format: `projects/{
-   * project}/locations/{location}/processors/{processor}/processorVersions/{pro
-   * cessor_version}`
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Reserved for future use.
-   *
    * @var bool
    */
   public $satisfiesPzi;
   /**
-   * Output only. Reserved for future use.
-   *
    * @var bool
    */
   public $satisfiesPzs;
   /**
-   * Output only. The state of the processor version.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Output only. The time the processor version was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -155,10 +83,7 @@ class GoogleCloudDocumentaiV1ProcessorVersion extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Output only. If set, information about the eventual deprecation of this
-   * version.
-   *
-   * @param GoogleCloudDocumentaiV1ProcessorVersionDeprecationInfo $deprecationInfo
+   * @param GoogleCloudDocumentaiV1ProcessorVersionDeprecationInfo
    */
   public function setDeprecationInfo(GoogleCloudDocumentaiV1ProcessorVersionDeprecationInfo $deprecationInfo)
   {
@@ -172,9 +97,7 @@ class GoogleCloudDocumentaiV1ProcessorVersion extends \Google\Model
     return $this->deprecationInfo;
   }
   /**
-   * The display name of the processor version.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -188,9 +111,7 @@ class GoogleCloudDocumentaiV1ProcessorVersion extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Output only. The schema of the processor version. Describes the output.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentSchema $documentSchema
+   * @param GoogleCloudDocumentaiV1DocumentSchema
    */
   public function setDocumentSchema(GoogleCloudDocumentaiV1DocumentSchema $documentSchema)
   {
@@ -204,10 +125,7 @@ class GoogleCloudDocumentaiV1ProcessorVersion extends \Google\Model
     return $this->documentSchema;
   }
   /**
-   * Output only. Information about Generative AI model-based processor
-   * versions.
-   *
-   * @param GoogleCloudDocumentaiV1ProcessorVersionGenAiModelInfo $genAiModelInfo
+   * @param GoogleCloudDocumentaiV1ProcessorVersionGenAiModelInfo
    */
   public function setGenAiModelInfo(GoogleCloudDocumentaiV1ProcessorVersionGenAiModelInfo $genAiModelInfo)
   {
@@ -221,9 +139,7 @@ class GoogleCloudDocumentaiV1ProcessorVersion extends \Google\Model
     return $this->genAiModelInfo;
   }
   /**
-   * Output only. Denotes that this `ProcessorVersion` is managed by Google.
-   *
-   * @param bool $googleManaged
+   * @param bool
    */
   public function setGoogleManaged($googleManaged)
   {
@@ -237,9 +153,7 @@ class GoogleCloudDocumentaiV1ProcessorVersion extends \Google\Model
     return $this->googleManaged;
   }
   /**
-   * Output only. The KMS key name used for encryption.
-   *
-   * @param string $kmsKeyName
+   * @param string
    */
   public function setKmsKeyName($kmsKeyName)
   {
@@ -253,9 +167,7 @@ class GoogleCloudDocumentaiV1ProcessorVersion extends \Google\Model
     return $this->kmsKeyName;
   }
   /**
-   * Output only. The KMS key version with which data is encrypted.
-   *
-   * @param string $kmsKeyVersionName
+   * @param string
    */
   public function setKmsKeyVersionName($kmsKeyVersionName)
   {
@@ -269,10 +181,7 @@ class GoogleCloudDocumentaiV1ProcessorVersion extends \Google\Model
     return $this->kmsKeyVersionName;
   }
   /**
-   * Output only. The most recently invoked evaluation for the processor
-   * version.
-   *
-   * @param GoogleCloudDocumentaiV1EvaluationReference $latestEvaluation
+   * @param GoogleCloudDocumentaiV1EvaluationReference
    */
   public function setLatestEvaluation(GoogleCloudDocumentaiV1EvaluationReference $latestEvaluation)
   {
@@ -286,30 +195,21 @@ class GoogleCloudDocumentaiV1ProcessorVersion extends \Google\Model
     return $this->latestEvaluation;
   }
   /**
-   * Output only. The model type of this processor version.
-   *
-   * Accepted values: MODEL_TYPE_UNSPECIFIED, MODEL_TYPE_GENERATIVE,
-   * MODEL_TYPE_CUSTOM
-   *
-   * @param self::MODEL_TYPE_* $modelType
+   * @param string
    */
   public function setModelType($modelType)
   {
     $this->modelType = $modelType;
   }
   /**
-   * @return self::MODEL_TYPE_*
+   * @return string
    */
   public function getModelType()
   {
     return $this->modelType;
   }
   /**
-   * Identifier. The resource name of the processor version. Format: `projects/{
-   * project}/locations/{location}/processors/{processor}/processorVersions/{pro
-   * cessor_version}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -323,9 +223,7 @@ class GoogleCloudDocumentaiV1ProcessorVersion extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Reserved for future use.
-   *
-   * @param bool $satisfiesPzi
+   * @param bool
    */
   public function setSatisfiesPzi($satisfiesPzi)
   {
@@ -339,9 +237,7 @@ class GoogleCloudDocumentaiV1ProcessorVersion extends \Google\Model
     return $this->satisfiesPzi;
   }
   /**
-   * Output only. Reserved for future use.
-   *
-   * @param bool $satisfiesPzs
+   * @param bool
    */
   public function setSatisfiesPzs($satisfiesPzs)
   {
@@ -355,19 +251,14 @@ class GoogleCloudDocumentaiV1ProcessorVersion extends \Google\Model
     return $this->satisfiesPzs;
   }
   /**
-   * Output only. The state of the processor version.
-   *
-   * Accepted values: STATE_UNSPECIFIED, DEPLOYED, DEPLOYING, UNDEPLOYED,
-   * UNDEPLOYING, CREATING, DELETING, FAILED, IMPORTING
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

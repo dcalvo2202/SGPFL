@@ -20,47 +20,28 @@ namespace Google\Service\Datastream;
 class UserCredentials extends \Google\Model
 {
   /**
-   * Optional. Password for the Salesforce connection. Mutually exclusive with
-   * the `secret_manager_stored_password` field.
-   *
    * @var string
    */
   public $password;
   /**
-   * Optional. A reference to a Secret Manager resource name storing the
-   * Salesforce connection's password. Mutually exclusive with the `password`
-   * field.
-   *
    * @var string
    */
   public $secretManagerStoredPassword;
   /**
-   * Optional. A reference to a Secret Manager resource name storing the
-   * Salesforce connection's security token. Mutually exclusive with the
-   * `security_token` field.
-   *
    * @var string
    */
   public $secretManagerStoredSecurityToken;
   /**
-   * Optional. Security token for the Salesforce connection. Mutually exclusive
-   * with the `secret_manager_stored_security_token` field.
-   *
    * @var string
    */
   public $securityToken;
   /**
-   * Required. Username for the Salesforce connection.
-   *
    * @var string
    */
   public $username;
 
   /**
-   * Optional. Password for the Salesforce connection. Mutually exclusive with
-   * the `secret_manager_stored_password` field.
-   *
-   * @param string $password
+   * @param string
    */
   public function setPassword($password)
   {
@@ -74,11 +55,7 @@ class UserCredentials extends \Google\Model
     return $this->password;
   }
   /**
-   * Optional. A reference to a Secret Manager resource name storing the
-   * Salesforce connection's password. Mutually exclusive with the `password`
-   * field.
-   *
-   * @param string $secretManagerStoredPassword
+   * @param string
    */
   public function setSecretManagerStoredPassword($secretManagerStoredPassword)
   {
@@ -92,11 +69,7 @@ class UserCredentials extends \Google\Model
     return $this->secretManagerStoredPassword;
   }
   /**
-   * Optional. A reference to a Secret Manager resource name storing the
-   * Salesforce connection's security token. Mutually exclusive with the
-   * `security_token` field.
-   *
-   * @param string $secretManagerStoredSecurityToken
+   * @param string
    */
   public function setSecretManagerStoredSecurityToken($secretManagerStoredSecurityToken)
   {
@@ -110,10 +83,7 @@ class UserCredentials extends \Google\Model
     return $this->secretManagerStoredSecurityToken;
   }
   /**
-   * Optional. Security token for the Salesforce connection. Mutually exclusive
-   * with the `secret_manager_stored_security_token` field.
-   *
-   * @param string $securityToken
+   * @param string
    */
   public function setSecurityToken($securityToken)
   {
@@ -127,9 +97,7 @@ class UserCredentials extends \Google\Model
     return $this->securityToken;
   }
   /**
-   * Required. Username for the Salesforce connection.
-   *
-   * @param string $username
+   * @param string
    */
   public function setUsername($username)
   {

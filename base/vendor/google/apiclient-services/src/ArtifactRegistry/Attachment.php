@@ -21,79 +21,44 @@ class Attachment extends \Google\Collection
 {
   protected $collection_key = 'files';
   /**
-   * Optional. User annotations. These attributes can only be set and used by
-   * the user, and not by Artifact Registry. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
-   *
    * @var string[]
    */
   public $annotations;
   /**
-   * The namespace this attachment belongs to. E.g. If an attachment is created
-   * by artifact analysis, namespace is set to
-   * `artifactanalysis.googleapis.com`.
-   *
    * @var string
    */
   public $attachmentNamespace;
   /**
-   * Output only. The time when the attachment was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Required. The files that belong to this attachment. If the file ID part
-   * contains slashes, they are escaped. E.g. `projects/p1/locations/us-
-   * central1/repositories/repo1/files/sha:`.
-   *
    * @var string[]
    */
   public $files;
   /**
-   * The name of the attachment. E.g.
-   * `projects/p1/locations/us/repositories/repo/attachments/sbom`.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The name of the OCI version that this attachment created. Only
-   * populated for Docker attachments. E.g. `projects/p1/locations/us-
-   * central1/repositories/repo1/packages/p1/versions/v1`.
-   *
    * @var string
    */
   public $ociVersionName;
   /**
-   * Required. The target the attachment is for, can be a Version, Package or
-   * Repository. E.g. `projects/p1/locations/us-
-   * central1/repositories/repo1/packages/p1/versions/v1`.
-   *
    * @var string
    */
   public $target;
   /**
-   * Type of attachment. E.g. `application/vnd.spdx+json`
-   *
    * @var string
    */
   public $type;
   /**
-   * Output only. The time when the attachment was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Optional. User annotations. These attributes can only be set and used by
-   * the user, and not by Artifact Registry. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
-   *
-   * @param string[] $annotations
+   * @param string[]
    */
   public function setAnnotations($annotations)
   {
@@ -107,11 +72,7 @@ class Attachment extends \Google\Collection
     return $this->annotations;
   }
   /**
-   * The namespace this attachment belongs to. E.g. If an attachment is created
-   * by artifact analysis, namespace is set to
-   * `artifactanalysis.googleapis.com`.
-   *
-   * @param string $attachmentNamespace
+   * @param string
    */
   public function setAttachmentNamespace($attachmentNamespace)
   {
@@ -125,9 +86,7 @@ class Attachment extends \Google\Collection
     return $this->attachmentNamespace;
   }
   /**
-   * Output only. The time when the attachment was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -141,11 +100,7 @@ class Attachment extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Required. The files that belong to this attachment. If the file ID part
-   * contains slashes, they are escaped. E.g. `projects/p1/locations/us-
-   * central1/repositories/repo1/files/sha:`.
-   *
-   * @param string[] $files
+   * @param string[]
    */
   public function setFiles($files)
   {
@@ -159,10 +114,7 @@ class Attachment extends \Google\Collection
     return $this->files;
   }
   /**
-   * The name of the attachment. E.g.
-   * `projects/p1/locations/us/repositories/repo/attachments/sbom`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -176,11 +128,7 @@ class Attachment extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. The name of the OCI version that this attachment created. Only
-   * populated for Docker attachments. E.g. `projects/p1/locations/us-
-   * central1/repositories/repo1/packages/p1/versions/v1`.
-   *
-   * @param string $ociVersionName
+   * @param string
    */
   public function setOciVersionName($ociVersionName)
   {
@@ -194,11 +142,7 @@ class Attachment extends \Google\Collection
     return $this->ociVersionName;
   }
   /**
-   * Required. The target the attachment is for, can be a Version, Package or
-   * Repository. E.g. `projects/p1/locations/us-
-   * central1/repositories/repo1/packages/p1/versions/v1`.
-   *
-   * @param string $target
+   * @param string
    */
   public function setTarget($target)
   {
@@ -212,9 +156,7 @@ class Attachment extends \Google\Collection
     return $this->target;
   }
   /**
-   * Type of attachment. E.g. `application/vnd.spdx+json`
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {
@@ -228,9 +170,7 @@ class Attachment extends \Google\Collection
     return $this->type;
   }
   /**
-   * Output only. The time when the attachment was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

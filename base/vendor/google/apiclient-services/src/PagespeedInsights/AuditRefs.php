@@ -21,40 +21,25 @@ class AuditRefs extends \Google\Collection
 {
   protected $collection_key = 'relevantAudits';
   /**
-   * The conventional acronym for the audit/metric.
-   *
    * @var string
    */
   public $acronym;
   /**
-   * The category group that the audit belongs to (optional).
-   *
    * @var string
    */
   public $group;
   /**
-   * The audit ref id.
-   *
    * @var string
    */
   public $id;
   /**
-   * Any audit IDs closely relevant to this one.
-   *
    * @var string[]
    */
   public $relevantAudits;
-  /**
-   * The weight this audit's score has on the overall category score.
-   *
-   * @var 
-   */
   public $weight;
 
   /**
-   * The conventional acronym for the audit/metric.
-   *
-   * @param string $acronym
+   * @param string
    */
   public function setAcronym($acronym)
   {
@@ -68,9 +53,7 @@ class AuditRefs extends \Google\Collection
     return $this->acronym;
   }
   /**
-   * The category group that the audit belongs to (optional).
-   *
-   * @param string $group
+   * @param string
    */
   public function setGroup($group)
   {
@@ -84,9 +67,7 @@ class AuditRefs extends \Google\Collection
     return $this->group;
   }
   /**
-   * The audit ref id.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -100,9 +81,7 @@ class AuditRefs extends \Google\Collection
     return $this->id;
   }
   /**
-   * Any audit IDs closely relevant to this one.
-   *
-   * @param string[] $relevantAudits
+   * @param string[]
    */
   public function setRelevantAudits($relevantAudits)
   {

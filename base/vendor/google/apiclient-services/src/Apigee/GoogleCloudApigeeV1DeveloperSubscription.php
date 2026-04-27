@@ -20,50 +20,32 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1DeveloperSubscription extends \Google\Model
 {
   /**
-   * Name of the API product for which the developer is purchasing a
-   * subscription.
-   *
    * @var string
    */
   public $apiproduct;
   /**
-   * Output only. Time when the API product subscription was created in
-   * milliseconds since epoch.
-   *
    * @var string
    */
   public $createdAt;
   /**
-   * Time when the API product subscription ends in milliseconds since epoch.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * Output only. Time when the API product subscription was last modified in
-   * milliseconds since epoch.
-   *
    * @var string
    */
   public $lastModifiedAt;
   /**
-   * Output only. Name of the API product subscription.
-   *
    * @var string
    */
   public $name;
   /**
-   * Time when the API product subscription starts in milliseconds since epoch.
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * Name of the API product for which the developer is purchasing a
-   * subscription.
-   *
-   * @param string $apiproduct
+   * @param string
    */
   public function setApiproduct($apiproduct)
   {
@@ -77,10 +59,7 @@ class GoogleCloudApigeeV1DeveloperSubscription extends \Google\Model
     return $this->apiproduct;
   }
   /**
-   * Output only. Time when the API product subscription was created in
-   * milliseconds since epoch.
-   *
-   * @param string $createdAt
+   * @param string
    */
   public function setCreatedAt($createdAt)
   {
@@ -94,9 +73,7 @@ class GoogleCloudApigeeV1DeveloperSubscription extends \Google\Model
     return $this->createdAt;
   }
   /**
-   * Time when the API product subscription ends in milliseconds since epoch.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -110,10 +87,7 @@ class GoogleCloudApigeeV1DeveloperSubscription extends \Google\Model
     return $this->endTime;
   }
   /**
-   * Output only. Time when the API product subscription was last modified in
-   * milliseconds since epoch.
-   *
-   * @param string $lastModifiedAt
+   * @param string
    */
   public function setLastModifiedAt($lastModifiedAt)
   {
@@ -127,9 +101,7 @@ class GoogleCloudApigeeV1DeveloperSubscription extends \Google\Model
     return $this->lastModifiedAt;
   }
   /**
-   * Output only. Name of the API product subscription.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -143,9 +115,7 @@ class GoogleCloudApigeeV1DeveloperSubscription extends \Google\Model
     return $this->name;
   }
   /**
-   * Time when the API product subscription starts in milliseconds since epoch.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

@@ -26,9 +26,7 @@ class StoragePoolsScopedList extends \Google\Collection
   protected $warningDataType = '';
 
   /**
-   * [Output Only] A list of storage pool contained in this scope.
-   *
-   * @param StoragePool[] $storagePools
+   * @param StoragePool[]
    */
   public function setStoragePools($storagePools)
   {
@@ -42,10 +40,7 @@ class StoragePoolsScopedList extends \Google\Collection
     return $this->storagePools;
   }
   /**
-   * [Output Only] Informational warning which replaces the list of storage pool
-   * when the list is empty.
-   *
-   * @param StoragePoolsScopedListWarning $warning
+   * @param StoragePoolsScopedListWarning
    */
   public function setWarning(StoragePoolsScopedListWarning $warning)
   {

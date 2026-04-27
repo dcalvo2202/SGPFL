@@ -20,16 +20,12 @@ namespace Google\Service\AndroidEnterprise;
 class AdministratorWebToken extends \Google\Model
 {
   /**
-   * An opaque token to be passed to the Play front-end to generate an iframe.
-   *
    * @var string
    */
   public $token;
 
   /**
-   * An opaque token to be passed to the Play front-end to generate an iframe.
-   *
-   * @param string $token
+   * @param string
    */
   public function setToken($token)
   {

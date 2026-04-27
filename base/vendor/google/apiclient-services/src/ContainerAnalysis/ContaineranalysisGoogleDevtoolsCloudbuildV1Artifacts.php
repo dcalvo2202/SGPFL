@@ -23,12 +23,6 @@ class ContaineranalysisGoogleDevtoolsCloudbuildV1Artifacts extends \Google\Colle
   protected $goModulesType = ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsGoModule::class;
   protected $goModulesDataType = 'array';
   /**
-   * A list of images to be pushed upon the successful completion of all build
-   * steps. The images will be pushed using the builder service account's
-   * credentials. The digests of the pushed images will be stored in the Build
-   * resource's results field. If any of the images fail to be pushed, the build
-   * is marked FAILURE.
-   *
    * @var string[]
    */
   public $images;
@@ -38,17 +32,11 @@ class ContaineranalysisGoogleDevtoolsCloudbuildV1Artifacts extends \Google\Colle
   protected $npmPackagesDataType = 'array';
   protected $objectsType = ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsArtifactObjects::class;
   protected $objectsDataType = '';
-  protected $ociType = ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsOci::class;
-  protected $ociDataType = 'array';
   protected $pythonPackagesType = ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsPythonPackage::class;
   protected $pythonPackagesDataType = 'array';
 
   /**
-   * Optional. A list of Go modules to be uploaded to Artifact Registry upon
-   * successful completion of all build steps. If any objects fail to be pushed,
-   * the build is marked FAILURE.
-   *
-   * @param ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsGoModule[] $goModules
+   * @param ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsGoModule[]
    */
   public function setGoModules($goModules)
   {
@@ -62,13 +50,7 @@ class ContaineranalysisGoogleDevtoolsCloudbuildV1Artifacts extends \Google\Colle
     return $this->goModules;
   }
   /**
-   * A list of images to be pushed upon the successful completion of all build
-   * steps. The images will be pushed using the builder service account's
-   * credentials. The digests of the pushed images will be stored in the Build
-   * resource's results field. If any of the images fail to be pushed, the build
-   * is marked FAILURE.
-   *
-   * @param string[] $images
+   * @param string[]
    */
   public function setImages($images)
   {
@@ -82,13 +64,7 @@ class ContaineranalysisGoogleDevtoolsCloudbuildV1Artifacts extends \Google\Colle
     return $this->images;
   }
   /**
-   * A list of Maven artifacts to be uploaded to Artifact Registry upon
-   * successful completion of all build steps. Artifacts in the workspace
-   * matching specified paths globs will be uploaded to the specified Artifact
-   * Registry repository using the builder service account's credentials. If any
-   * artifacts fail to be pushed, the build is marked FAILURE.
-   *
-   * @param ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsMavenArtifact[] $mavenArtifacts
+   * @param ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsMavenArtifact[]
    */
   public function setMavenArtifacts($mavenArtifacts)
   {
@@ -102,13 +78,7 @@ class ContaineranalysisGoogleDevtoolsCloudbuildV1Artifacts extends \Google\Colle
     return $this->mavenArtifacts;
   }
   /**
-   * A list of npm packages to be uploaded to Artifact Registry upon successful
-   * completion of all build steps. Npm packages in the specified paths will be
-   * uploaded to the specified Artifact Registry repository using the builder
-   * service account's credentials. If any packages fail to be pushed, the build
-   * is marked FAILURE.
-   *
-   * @param ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsNpmPackage[] $npmPackages
+   * @param ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsNpmPackage[]
    */
   public function setNpmPackages($npmPackages)
   {
@@ -122,14 +92,7 @@ class ContaineranalysisGoogleDevtoolsCloudbuildV1Artifacts extends \Google\Colle
     return $this->npmPackages;
   }
   /**
-   * A list of objects to be uploaded to Cloud Storage upon successful
-   * completion of all build steps. Files in the workspace matching specified
-   * paths globs will be uploaded to the specified Cloud Storage location using
-   * the builder service account's credentials. The location and generation of
-   * the uploaded objects will be stored in the Build resource's results field.
-   * If any objects fail to be pushed, the build is marked FAILURE.
-   *
-   * @param ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsArtifactObjects $objects
+   * @param ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsArtifactObjects
    */
   public function setObjects(ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsArtifactObjects $objects)
   {
@@ -143,32 +106,7 @@ class ContaineranalysisGoogleDevtoolsCloudbuildV1Artifacts extends \Google\Colle
     return $this->objects;
   }
   /**
-   * Optional. A list of OCI images to be uploaded to Artifact Registry upon
-   * successful completion of all build steps. OCI images in the specified paths
-   * will be uploaded to the specified Artifact Registry repository using the
-   * builder service account's credentials. If any images fail to be pushed, the
-   * build is marked FAILURE.
-   *
-   * @param ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsOci[] $oci
-   */
-  public function setOci($oci)
-  {
-    $this->oci = $oci;
-  }
-  /**
-   * @return ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsOci[]
-   */
-  public function getOci()
-  {
-    return $this->oci;
-  }
-  /**
-   * A list of Python packages to be uploaded to Artifact Registry upon
-   * successful completion of all build steps. The build service account
-   * credentials will be used to perform the upload. If any objects fail to be
-   * pushed, the build is marked FAILURE.
-   *
-   * @param ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsPythonPackage[] $pythonPackages
+   * @param ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsPythonPackage[]
    */
   public function setPythonPackages($pythonPackages)
   {

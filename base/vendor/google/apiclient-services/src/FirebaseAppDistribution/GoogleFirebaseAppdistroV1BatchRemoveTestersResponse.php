@@ -21,16 +21,12 @@ class GoogleFirebaseAppdistroV1BatchRemoveTestersResponse extends \Google\Collec
 {
   protected $collection_key = 'emails';
   /**
-   * List of deleted tester emails
-   *
    * @var string[]
    */
   public $emails;
 
   /**
-   * List of deleted tester emails
-   *
-   * @param string[] $emails
+   * @param string[]
    */
   public function setEmails($emails)
   {

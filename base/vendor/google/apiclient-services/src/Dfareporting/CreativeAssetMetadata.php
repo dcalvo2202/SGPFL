@@ -27,61 +27,34 @@ class CreativeAssetMetadata extends \Google\Collection
   protected $counterCustomEventsType = CreativeCustomEvent::class;
   protected $counterCustomEventsDataType = 'array';
   /**
-   * List of feature dependencies for the creative asset that are detected by
-   * Campaign Manager. Feature dependencies are features that a browser must be
-   * able to support in order to render your HTML5 creative correctly. This is a
-   * read-only, auto-generated field.
-   *
    * @var string[]
    */
   public $detectedFeatures;
   protected $exitCustomEventsType = CreativeCustomEvent::class;
   protected $exitCustomEventsDataType = 'array';
   /**
-   * Numeric ID of the asset. This is a read-only, auto-generated field.
-   *
    * @var string
    */
   public $id;
   protected $idDimensionValueType = DimensionValue::class;
   protected $idDimensionValueDataType = '';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#creativeAssetMetadata".
-   *
    * @var string
    */
   public $kind;
   /**
-   * True if the uploaded asset is a rich media asset. This is a read-only,
-   * auto-generated field.
-   *
    * @var bool
    */
   public $richMedia;
   protected $timerCustomEventsType = CreativeCustomEvent::class;
   protected $timerCustomEventsDataType = 'array';
   /**
-   * Rules validated during code generation that generated a warning. This is a
-   * read-only, auto-generated field. Possible values are: - "ADMOB_REFERENCED"
-   * - "ASSET_FORMAT_UNSUPPORTED_DCM" - "ASSET_INVALID" - "CLICK_TAG_HARD_CODED"
-   * - "CLICK_TAG_INVALID" - "CLICK_TAG_IN_GWD" - "CLICK_TAG_MISSING" -
-   * "CLICK_TAG_MORE_THAN_ONE" - "CLICK_TAG_NON_TOP_LEVEL" -
-   * "COMPONENT_UNSUPPORTED_DCM" - "ENABLER_UNSUPPORTED_METHOD_DCM" -
-   * "EXTERNAL_FILE_REFERENCED" - "FILE_DETAIL_EMPTY" - "FILE_TYPE_INVALID" -
-   * "GWD_PROPERTIES_INVALID" - "HTML5_FEATURE_UNSUPPORTED" -
-   * "LINKED_FILE_NOT_FOUND" - "MAX_FLASH_VERSION_11" - "MRAID_REFERENCED" -
-   * "NOT_SSL_COMPLIANT" - "ORPHANED_ASSET" - "PRIMARY_HTML_MISSING" -
-   * "SVG_INVALID" - "ZIP_INVALID"
-   *
    * @var string[]
    */
   public $warnedValidationRules;
 
   /**
-   * ID of the creative asset. This is a required field.
-   *
-   * @param CreativeAssetId $assetIdentifier
+   * @param CreativeAssetId
    */
   public function setAssetIdentifier(CreativeAssetId $assetIdentifier)
   {
@@ -95,10 +68,7 @@ class CreativeAssetMetadata extends \Google\Collection
     return $this->assetIdentifier;
   }
   /**
-   * List of detected click tags for assets. This is a read-only, auto-generated
-   * field. This field is empty for a rich media asset.
-   *
-   * @param ClickTag[] $clickTags
+   * @param ClickTag[]
    */
   public function setClickTags($clickTags)
   {
@@ -112,10 +82,7 @@ class CreativeAssetMetadata extends \Google\Collection
     return $this->clickTags;
   }
   /**
-   * List of counter events configured for the asset. This is a read-only, auto-
-   * generated field and only applicable to a rich media asset.
-   *
-   * @param CreativeCustomEvent[] $counterCustomEvents
+   * @param CreativeCustomEvent[]
    */
   public function setCounterCustomEvents($counterCustomEvents)
   {
@@ -129,12 +96,7 @@ class CreativeAssetMetadata extends \Google\Collection
     return $this->counterCustomEvents;
   }
   /**
-   * List of feature dependencies for the creative asset that are detected by
-   * Campaign Manager. Feature dependencies are features that a browser must be
-   * able to support in order to render your HTML5 creative correctly. This is a
-   * read-only, auto-generated field.
-   *
-   * @param string[] $detectedFeatures
+   * @param string[]
    */
   public function setDetectedFeatures($detectedFeatures)
   {
@@ -148,10 +110,7 @@ class CreativeAssetMetadata extends \Google\Collection
     return $this->detectedFeatures;
   }
   /**
-   * List of exit events configured for the asset. This is a read-only, auto-
-   * generated field and only applicable to a rich media asset.
-   *
-   * @param CreativeCustomEvent[] $exitCustomEvents
+   * @param CreativeCustomEvent[]
    */
   public function setExitCustomEvents($exitCustomEvents)
   {
@@ -165,9 +124,7 @@ class CreativeAssetMetadata extends \Google\Collection
     return $this->exitCustomEvents;
   }
   /**
-   * Numeric ID of the asset. This is a read-only, auto-generated field.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -181,10 +138,7 @@ class CreativeAssetMetadata extends \Google\Collection
     return $this->id;
   }
   /**
-   * Dimension value for the numeric ID of the asset. This is a read-only, auto-
-   * generated field.
-   *
-   * @param DimensionValue $idDimensionValue
+   * @param DimensionValue
    */
   public function setIdDimensionValue(DimensionValue $idDimensionValue)
   {
@@ -198,10 +152,7 @@ class CreativeAssetMetadata extends \Google\Collection
     return $this->idDimensionValue;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "dfareporting#creativeAssetMetadata".
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -215,10 +166,7 @@ class CreativeAssetMetadata extends \Google\Collection
     return $this->kind;
   }
   /**
-   * True if the uploaded asset is a rich media asset. This is a read-only,
-   * auto-generated field.
-   *
-   * @param bool $richMedia
+   * @param bool
    */
   public function setRichMedia($richMedia)
   {
@@ -232,10 +180,7 @@ class CreativeAssetMetadata extends \Google\Collection
     return $this->richMedia;
   }
   /**
-   * List of timer events configured for the asset. This is a read-only, auto-
-   * generated field and only applicable to a rich media asset.
-   *
-   * @param CreativeCustomEvent[] $timerCustomEvents
+   * @param CreativeCustomEvent[]
    */
   public function setTimerCustomEvents($timerCustomEvents)
   {
@@ -249,19 +194,7 @@ class CreativeAssetMetadata extends \Google\Collection
     return $this->timerCustomEvents;
   }
   /**
-   * Rules validated during code generation that generated a warning. This is a
-   * read-only, auto-generated field. Possible values are: - "ADMOB_REFERENCED"
-   * - "ASSET_FORMAT_UNSUPPORTED_DCM" - "ASSET_INVALID" - "CLICK_TAG_HARD_CODED"
-   * - "CLICK_TAG_INVALID" - "CLICK_TAG_IN_GWD" - "CLICK_TAG_MISSING" -
-   * "CLICK_TAG_MORE_THAN_ONE" - "CLICK_TAG_NON_TOP_LEVEL" -
-   * "COMPONENT_UNSUPPORTED_DCM" - "ENABLER_UNSUPPORTED_METHOD_DCM" -
-   * "EXTERNAL_FILE_REFERENCED" - "FILE_DETAIL_EMPTY" - "FILE_TYPE_INVALID" -
-   * "GWD_PROPERTIES_INVALID" - "HTML5_FEATURE_UNSUPPORTED" -
-   * "LINKED_FILE_NOT_FOUND" - "MAX_FLASH_VERSION_11" - "MRAID_REFERENCED" -
-   * "NOT_SSL_COMPLIANT" - "ORPHANED_ASSET" - "PRIMARY_HTML_MISSING" -
-   * "SVG_INVALID" - "ZIP_INVALID"
-   *
-   * @param string[] $warnedValidationRules
+   * @param string[]
    */
   public function setWarnedValidationRules($warnedValidationRules)
   {

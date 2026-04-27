@@ -23,34 +23,20 @@ class PolicyTopicEntry extends \Google\Collection
   protected $evidencesType = PolicyTopicEvidence::class;
   protected $evidencesDataType = 'array';
   /**
-   * URL of the help center article describing this policy topic.
-   *
    * @var string
    */
   public $helpCenterUrl;
   /**
-   * Whether or not the policy topic is missing a certificate. Some policy
-   * topics require a certificate to unblock serving in some regions. For more
-   * information about creative certification, refer to:
-   * https://support.google.com/authorizedbuyers/answer/7450776
-   *
    * @var bool
    */
   public $missingCertificate;
   /**
-   * Policy topic this entry refers to. For example, "ALCOHOL",
-   * "TRADEMARKS_IN_AD_TEXT", or "DESTINATION_NOT_WORKING". The set of possible
-   * policy topics is not fixed for a particular API version and may change at
-   * any time. Can be used to filter the response of the creatives.list method
-   *
    * @var string
    */
   public $policyTopic;
 
   /**
-   * Pieces of evidence associated with this policy topic entry.
-   *
-   * @param PolicyTopicEvidence[] $evidences
+   * @param PolicyTopicEvidence[]
    */
   public function setEvidences($evidences)
   {
@@ -64,9 +50,7 @@ class PolicyTopicEntry extends \Google\Collection
     return $this->evidences;
   }
   /**
-   * URL of the help center article describing this policy topic.
-   *
-   * @param string $helpCenterUrl
+   * @param string
    */
   public function setHelpCenterUrl($helpCenterUrl)
   {
@@ -80,12 +64,7 @@ class PolicyTopicEntry extends \Google\Collection
     return $this->helpCenterUrl;
   }
   /**
-   * Whether or not the policy topic is missing a certificate. Some policy
-   * topics require a certificate to unblock serving in some regions. For more
-   * information about creative certification, refer to:
-   * https://support.google.com/authorizedbuyers/answer/7450776
-   *
-   * @param bool $missingCertificate
+   * @param bool
    */
   public function setMissingCertificate($missingCertificate)
   {
@@ -99,12 +78,7 @@ class PolicyTopicEntry extends \Google\Collection
     return $this->missingCertificate;
   }
   /**
-   * Policy topic this entry refers to. For example, "ALCOHOL",
-   * "TRADEMARKS_IN_AD_TEXT", or "DESTINATION_NOT_WORKING". The set of possible
-   * policy topics is not fixed for a particular API version and may change at
-   * any time. Can be used to filter the response of the creatives.list method
-   *
-   * @param string $policyTopic
+   * @param string
    */
   public function setPolicyTopic($policyTopic)
   {

@@ -19,22 +19,12 @@ namespace Google\Service\Compute;
 
 class NodeGroupNode extends \Google\Collection
 {
-  public const CPU_OVERCOMMIT_TYPE_CPU_OVERCOMMIT_TYPE_UNSPECIFIED = 'CPU_OVERCOMMIT_TYPE_UNSPECIFIED';
-  public const CPU_OVERCOMMIT_TYPE_ENABLED = 'ENABLED';
-  public const CPU_OVERCOMMIT_TYPE_NONE = 'NONE';
-  public const STATUS_CREATING = 'CREATING';
-  public const STATUS_DELETING = 'DELETING';
-  public const STATUS_INVALID = 'INVALID';
-  public const STATUS_READY = 'READY';
-  public const STATUS_REPAIRING = 'REPAIRING';
   protected $collection_key = 'instances';
   protected $acceleratorsType = AcceleratorConfig::class;
   protected $acceleratorsDataType = 'array';
   protected $consumedResourcesType = InstanceConsumptionInfo::class;
   protected $consumedResourcesDataType = '';
   /**
-   * CPU overcommit.
-   *
    * @var string
    */
   public $cpuOvercommitType;
@@ -43,34 +33,24 @@ class NodeGroupNode extends \Google\Collection
   protected $instanceConsumptionDataType = InstanceConsumptionData::class;
   protected $instanceConsumptionDataDataType = 'array';
   /**
-   * Instances scheduled on this node.
-   *
    * @var string[]
    */
   public $instances;
   /**
-   * The name of the node.
-   *
    * @var string
    */
   public $name;
   /**
-   * The type of this node.
-   *
    * @var string
    */
   public $nodeType;
   /**
-   * Output only. [Output Only] Reserved for future use.
-   *
    * @var bool
    */
   public $satisfiesPzs;
   protected $serverBindingType = ServerBinding::class;
   protected $serverBindingDataType = '';
   /**
-   * Server ID associated with this node.
-   *
    * @var string
    */
   public $serverId;
@@ -84,9 +64,7 @@ class NodeGroupNode extends \Google\Collection
   protected $upcomingMaintenanceDataType = '';
 
   /**
-   * Accelerators for this node.
-   *
-   * @param AcceleratorConfig[] $accelerators
+   * @param AcceleratorConfig[]
    */
   public function setAccelerators($accelerators)
   {
@@ -100,9 +78,7 @@ class NodeGroupNode extends \Google\Collection
     return $this->accelerators;
   }
   /**
-   * Output only. Node resources that are reserved by all instances.
-   *
-   * @param InstanceConsumptionInfo $consumedResources
+   * @param InstanceConsumptionInfo
    */
   public function setConsumedResources(InstanceConsumptionInfo $consumedResources)
   {
@@ -116,27 +92,21 @@ class NodeGroupNode extends \Google\Collection
     return $this->consumedResources;
   }
   /**
-   * CPU overcommit.
-   *
-   * Accepted values: CPU_OVERCOMMIT_TYPE_UNSPECIFIED, ENABLED, NONE
-   *
-   * @param self::CPU_OVERCOMMIT_TYPE_* $cpuOvercommitType
+   * @param string
    */
   public function setCpuOvercommitType($cpuOvercommitType)
   {
     $this->cpuOvercommitType = $cpuOvercommitType;
   }
   /**
-   * @return self::CPU_OVERCOMMIT_TYPE_*
+   * @return string
    */
   public function getCpuOvercommitType()
   {
     return $this->cpuOvercommitType;
   }
   /**
-   * Local disk configurations.
-   *
-   * @param LocalDisk[] $disks
+   * @param LocalDisk[]
    */
   public function setDisks($disks)
   {
@@ -150,9 +120,7 @@ class NodeGroupNode extends \Google\Collection
     return $this->disks;
   }
   /**
-   * Output only. Instance data that shows consumed resources on the node.
-   *
-   * @param InstanceConsumptionData[] $instanceConsumptionData
+   * @param InstanceConsumptionData[]
    */
   public function setInstanceConsumptionData($instanceConsumptionData)
   {
@@ -166,9 +134,7 @@ class NodeGroupNode extends \Google\Collection
     return $this->instanceConsumptionData;
   }
   /**
-   * Instances scheduled on this node.
-   *
-   * @param string[] $instances
+   * @param string[]
    */
   public function setInstances($instances)
   {
@@ -182,9 +148,7 @@ class NodeGroupNode extends \Google\Collection
     return $this->instances;
   }
   /**
-   * The name of the node.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -198,9 +162,7 @@ class NodeGroupNode extends \Google\Collection
     return $this->name;
   }
   /**
-   * The type of this node.
-   *
-   * @param string $nodeType
+   * @param string
    */
   public function setNodeType($nodeType)
   {
@@ -214,9 +176,7 @@ class NodeGroupNode extends \Google\Collection
     return $this->nodeType;
   }
   /**
-   * Output only. [Output Only] Reserved for future use.
-   *
-   * @param bool $satisfiesPzs
+   * @param bool
    */
   public function setSatisfiesPzs($satisfiesPzs)
   {
@@ -230,9 +190,7 @@ class NodeGroupNode extends \Google\Collection
     return $this->satisfiesPzs;
   }
   /**
-   * Binding properties for the physical server.
-   *
-   * @param ServerBinding $serverBinding
+   * @param ServerBinding
    */
   public function setServerBinding(ServerBinding $serverBinding)
   {
@@ -246,9 +204,7 @@ class NodeGroupNode extends \Google\Collection
     return $this->serverBinding;
   }
   /**
-   * Server ID associated with this node.
-   *
-   * @param string $serverId
+   * @param string
    */
   public function setServerId($serverId)
   {
@@ -262,23 +218,21 @@ class NodeGroupNode extends \Google\Collection
     return $this->serverId;
   }
   /**
-   * @param self::STATUS_* $status
+   * @param string
    */
   public function setStatus($status)
   {
     $this->status = $status;
   }
   /**
-   * @return self::STATUS_*
+   * @return string
    */
   public function getStatus()
   {
     return $this->status;
   }
   /**
-   * Output only. Total amount of available resources on the node.
-   *
-   * @param InstanceConsumptionInfo $totalResources
+   * @param InstanceConsumptionInfo
    */
   public function setTotalResources(InstanceConsumptionInfo $totalResources)
   {
@@ -292,10 +246,7 @@ class NodeGroupNode extends \Google\Collection
     return $this->totalResources;
   }
   /**
-   * Output only. [Output Only] The information about an upcoming maintenance
-   * event.
-   *
-   * @param UpcomingMaintenance $upcomingMaintenance
+   * @param UpcomingMaintenance
    */
   public function setUpcomingMaintenance(UpcomingMaintenance $upcomingMaintenance)
   {

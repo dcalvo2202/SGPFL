@@ -28,7 +28,7 @@ class GoogleCloudDialogflowCxV3ExperimentResult extends \Google\Collection
   protected $versionMetricsDataType = 'array';
 
   /**
-   * @param string $lastUpdateTime
+   * @param string
    */
   public function setLastUpdateTime($lastUpdateTime)
   {
@@ -42,7 +42,7 @@ class GoogleCloudDialogflowCxV3ExperimentResult extends \Google\Collection
     return $this->lastUpdateTime;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3ExperimentResultVersionMetrics[] $versionMetrics
+   * @param GoogleCloudDialogflowCxV3ExperimentResultVersionMetrics[]
    */
   public function setVersionMetrics($versionMetrics)
   {

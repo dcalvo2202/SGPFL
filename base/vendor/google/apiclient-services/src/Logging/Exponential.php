@@ -19,23 +19,11 @@ namespace Google\Service\Logging;
 
 class Exponential extends \Google\Model
 {
-  /**
-   * Must be greater than 1.
-   *
-   * @var 
-   */
   public $growthFactor;
   /**
-   * Must be greater than 0.
-   *
    * @var int
    */
   public $numFiniteBuckets;
-  /**
-   * Must be greater than 0.
-   *
-   * @var 
-   */
   public $scale;
 
   public function setGrowthFactor($growthFactor)
@@ -47,9 +35,7 @@ class Exponential extends \Google\Model
     return $this->growthFactor;
   }
   /**
-   * Must be greater than 0.
-   *
-   * @param int $numFiniteBuckets
+   * @param int
    */
   public function setNumFiniteBuckets($numFiniteBuckets)
   {

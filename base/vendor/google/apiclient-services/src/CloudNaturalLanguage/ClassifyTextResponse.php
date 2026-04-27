@@ -23,26 +23,16 @@ class ClassifyTextResponse extends \Google\Collection
   protected $categoriesType = ClassificationCategory::class;
   protected $categoriesDataType = 'array';
   /**
-   * The language of the text, which will be the same as the language specified
-   * in the request or, if not specified, the automatically-detected language.
-   * See Document.language_code field for more details.
-   *
    * @var string
    */
   public $languageCode;
   /**
-   * Whether the language is officially supported. The API may still return a
-   * response when the language is not supported, but it is on a best effort
-   * basis.
-   *
    * @var bool
    */
   public $languageSupported;
 
   /**
-   * Categories representing the input document.
-   *
-   * @param ClassificationCategory[] $categories
+   * @param ClassificationCategory[]
    */
   public function setCategories($categories)
   {
@@ -56,11 +46,7 @@ class ClassifyTextResponse extends \Google\Collection
     return $this->categories;
   }
   /**
-   * The language of the text, which will be the same as the language specified
-   * in the request or, if not specified, the automatically-detected language.
-   * See Document.language_code field for more details.
-   *
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {
@@ -74,11 +60,7 @@ class ClassifyTextResponse extends \Google\Collection
     return $this->languageCode;
   }
   /**
-   * Whether the language is officially supported. The API may still return a
-   * response when the language is not supported, but it is on a best effort
-   * basis.
-   *
-   * @param bool $languageSupported
+   * @param bool
    */
   public function setLanguageSupported($languageSupported)
   {

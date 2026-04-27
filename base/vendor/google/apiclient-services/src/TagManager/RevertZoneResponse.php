@@ -23,11 +23,7 @@ class RevertZoneResponse extends \Google\Model
   protected $zoneDataType = '';
 
   /**
-   * Zone as it appears in the latest container version since the last workspace
-   * synchronization operation. If no zone is present, that means the zone was
-   * deleted in the latest container version.
-   *
-   * @param Zone $zone
+   * @param Zone
    */
   public function setZone(Zone $zone)
   {

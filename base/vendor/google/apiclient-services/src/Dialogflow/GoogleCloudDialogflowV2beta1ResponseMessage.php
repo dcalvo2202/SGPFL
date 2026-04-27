@@ -35,7 +35,7 @@ class GoogleCloudDialogflowV2beta1ResponseMessage extends \Google\Model
   protected $textDataType = '';
 
   /**
-   * @param GoogleCloudDialogflowV2beta1ResponseMessageEndInteraction $endInteraction
+   * @param GoogleCloudDialogflowV2beta1ResponseMessageEndInteraction
    */
   public function setEndInteraction(GoogleCloudDialogflowV2beta1ResponseMessageEndInteraction $endInteraction)
   {
@@ -49,7 +49,7 @@ class GoogleCloudDialogflowV2beta1ResponseMessage extends \Google\Model
     return $this->endInteraction;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1ResponseMessageLiveAgentHandoff $liveAgentHandoff
+   * @param GoogleCloudDialogflowV2beta1ResponseMessageLiveAgentHandoff
    */
   public function setLiveAgentHandoff(GoogleCloudDialogflowV2beta1ResponseMessageLiveAgentHandoff $liveAgentHandoff)
   {
@@ -63,7 +63,7 @@ class GoogleCloudDialogflowV2beta1ResponseMessage extends \Google\Model
     return $this->liveAgentHandoff;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1ResponseMessageMixedAudio $mixedAudio
+   * @param GoogleCloudDialogflowV2beta1ResponseMessageMixedAudio
    */
   public function setMixedAudio(GoogleCloudDialogflowV2beta1ResponseMessageMixedAudio $mixedAudio)
   {
@@ -77,7 +77,7 @@ class GoogleCloudDialogflowV2beta1ResponseMessage extends \Google\Model
     return $this->mixedAudio;
   }
   /**
-   * @param array[] $payload
+   * @param array[]
    */
   public function setPayload($payload)
   {
@@ -91,7 +91,7 @@ class GoogleCloudDialogflowV2beta1ResponseMessage extends \Google\Model
     return $this->payload;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1ResponseMessageTelephonyTransferCall $telephonyTransferCall
+   * @param GoogleCloudDialogflowV2beta1ResponseMessageTelephonyTransferCall
    */
   public function setTelephonyTransferCall(GoogleCloudDialogflowV2beta1ResponseMessageTelephonyTransferCall $telephonyTransferCall)
   {
@@ -105,7 +105,7 @@ class GoogleCloudDialogflowV2beta1ResponseMessage extends \Google\Model
     return $this->telephonyTransferCall;
   }
   /**
-   * @param GoogleCloudDialogflowV2beta1ResponseMessageText $text
+   * @param GoogleCloudDialogflowV2beta1ResponseMessageText
    */
   public function setText(GoogleCloudDialogflowV2beta1ResponseMessageText $text)
   {

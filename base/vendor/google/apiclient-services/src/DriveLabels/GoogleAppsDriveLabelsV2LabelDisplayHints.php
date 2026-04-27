@@ -20,36 +20,24 @@ namespace Google\Service\DriveLabels;
 class GoogleAppsDriveLabelsV2LabelDisplayHints extends \Google\Model
 {
   /**
-   * Whether the label should be shown in the UI as disabled.
-   *
    * @var bool
    */
   public $disabled;
   /**
-   * This label should be hidden in the search menu when searching for Drive
-   * items.
-   *
    * @var bool
    */
   public $hiddenInSearch;
   /**
-   * The order to display labels in a list.
-   *
    * @var string
    */
   public $priority;
   /**
-   * This label should be shown in the apply menu when applying values to a
-   * Drive item.
-   *
    * @var bool
    */
   public $shownInApply;
 
   /**
-   * Whether the label should be shown in the UI as disabled.
-   *
-   * @param bool $disabled
+   * @param bool
    */
   public function setDisabled($disabled)
   {
@@ -63,10 +51,7 @@ class GoogleAppsDriveLabelsV2LabelDisplayHints extends \Google\Model
     return $this->disabled;
   }
   /**
-   * This label should be hidden in the search menu when searching for Drive
-   * items.
-   *
-   * @param bool $hiddenInSearch
+   * @param bool
    */
   public function setHiddenInSearch($hiddenInSearch)
   {
@@ -80,9 +65,7 @@ class GoogleAppsDriveLabelsV2LabelDisplayHints extends \Google\Model
     return $this->hiddenInSearch;
   }
   /**
-   * The order to display labels in a list.
-   *
-   * @param string $priority
+   * @param string
    */
   public function setPriority($priority)
   {
@@ -96,10 +79,7 @@ class GoogleAppsDriveLabelsV2LabelDisplayHints extends \Google\Model
     return $this->priority;
   }
   /**
-   * This label should be shown in the apply menu when applying values to a
-   * Drive item.
-   *
-   * @param bool $shownInApply
+   * @param bool
    */
   public function setShownInApply($shownInApply)
   {

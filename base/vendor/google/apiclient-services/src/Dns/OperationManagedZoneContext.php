@@ -25,9 +25,7 @@ class OperationManagedZoneContext extends \Google\Model
   protected $oldValueDataType = '';
 
   /**
-   * The post-operation ManagedZone resource.
-   *
-   * @param ManagedZone $newValue
+   * @param ManagedZone
    */
   public function setNewValue(ManagedZone $newValue)
   {
@@ -41,9 +39,7 @@ class OperationManagedZoneContext extends \Google\Model
     return $this->newValue;
   }
   /**
-   * The pre-operation ManagedZone resource.
-   *
-   * @param ManagedZone $oldValue
+   * @param ManagedZone
    */
   public function setOldValue(ManagedZone $oldValue)
   {

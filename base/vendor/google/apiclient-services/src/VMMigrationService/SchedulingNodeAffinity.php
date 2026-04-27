@@ -19,43 +19,22 @@ namespace Google\Service\VMMigrationService;
 
 class SchedulingNodeAffinity extends \Google\Collection
 {
-  /**
-   * An unknown, unexpected behavior.
-   */
-  public const OPERATOR_OPERATOR_UNSPECIFIED = 'OPERATOR_UNSPECIFIED';
-  /**
-   * The node resource group should be in these resources affinity.
-   */
-  public const OPERATOR_IN = 'IN';
-  /**
-   * The node resource group should not be in these resources affinity.
-   */
-  public const OPERATOR_NOT_IN = 'NOT_IN';
   protected $collection_key = 'values';
   /**
-   * The label key of Node resource to reference.
-   *
    * @var string
    */
   public $key;
   /**
-   * The operator to use for the node resources specified in the `values`
-   * parameter.
-   *
    * @var string
    */
   public $operator;
   /**
-   * Corresponds to the label values of Node resource.
-   *
    * @var string[]
    */
   public $values;
 
   /**
-   * The label key of Node resource to reference.
-   *
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {
@@ -69,28 +48,21 @@ class SchedulingNodeAffinity extends \Google\Collection
     return $this->key;
   }
   /**
-   * The operator to use for the node resources specified in the `values`
-   * parameter.
-   *
-   * Accepted values: OPERATOR_UNSPECIFIED, IN, NOT_IN
-   *
-   * @param self::OPERATOR_* $operator
+   * @param string
    */
   public function setOperator($operator)
   {
     $this->operator = $operator;
   }
   /**
-   * @return self::OPERATOR_*
+   * @return string
    */
   public function getOperator()
   {
     return $this->operator;
   }
   /**
-   * Corresponds to the label values of Node resource.
-   *
-   * @param string[] $values
+   * @param string[]
    */
   public function setValues($values)
   {

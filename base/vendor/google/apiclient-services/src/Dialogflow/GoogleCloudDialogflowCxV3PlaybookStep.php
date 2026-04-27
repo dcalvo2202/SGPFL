@@ -28,7 +28,7 @@ class GoogleCloudDialogflowCxV3PlaybookStep extends \Google\Collection
   public $text;
 
   /**
-   * @param GoogleCloudDialogflowCxV3PlaybookStep[] $steps
+   * @param GoogleCloudDialogflowCxV3PlaybookStep[]
    */
   public function setSteps($steps)
   {
@@ -42,7 +42,7 @@ class GoogleCloudDialogflowCxV3PlaybookStep extends \Google\Collection
     return $this->steps;
   }
   /**
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {

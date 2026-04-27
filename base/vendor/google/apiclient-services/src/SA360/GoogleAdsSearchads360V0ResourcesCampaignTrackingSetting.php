@@ -20,16 +20,12 @@ namespace Google\Service\SA360;
 class GoogleAdsSearchads360V0ResourcesCampaignTrackingSetting extends \Google\Model
 {
   /**
-   * Output only. The url used for dynamic tracking.
-   *
    * @var string
    */
   public $trackingUrl;
 
   /**
-   * Output only. The url used for dynamic tracking.
-   *
-   * @param string $trackingUrl
+   * @param string
    */
   public function setTrackingUrl($trackingUrl)
   {

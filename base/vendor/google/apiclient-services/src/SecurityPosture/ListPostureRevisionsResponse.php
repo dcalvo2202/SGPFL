@@ -21,9 +21,6 @@ class ListPostureRevisionsResponse extends \Google\Collection
 {
   protected $collection_key = 'revisions';
   /**
-   * A pagination token. To retrieve the next page of results, call the method
-   * again with this token.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListPostureRevisionsResponse extends \Google\Collection
   protected $revisionsDataType = 'array';
 
   /**
-   * A pagination token. To retrieve the next page of results, call the method
-   * again with this token.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class ListPostureRevisionsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The list of revisions for the Posture.
-   *
-   * @param Posture[] $revisions
+   * @param Posture[]
    */
   public function setRevisions($revisions)
   {

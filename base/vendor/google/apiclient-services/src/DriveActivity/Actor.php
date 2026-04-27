@@ -31,9 +31,7 @@ class Actor extends \Google\Model
   protected $userDataType = '';
 
   /**
-   * An administrator.
-   *
-   * @param Administrator $administrator
+   * @param Administrator
    */
   public function setAdministrator(Administrator $administrator)
   {
@@ -47,9 +45,7 @@ class Actor extends \Google\Model
     return $this->administrator;
   }
   /**
-   * An anonymous user.
-   *
-   * @param AnonymousUser $anonymous
+   * @param AnonymousUser
    */
   public function setAnonymous(AnonymousUser $anonymous)
   {
@@ -63,9 +59,7 @@ class Actor extends \Google\Model
     return $this->anonymous;
   }
   /**
-   * An account acting on behalf of another.
-   *
-   * @param Impersonation $impersonation
+   * @param Impersonation
    */
   public function setImpersonation(Impersonation $impersonation)
   {
@@ -79,9 +73,7 @@ class Actor extends \Google\Model
     return $this->impersonation;
   }
   /**
-   * A non-user actor (i.e. system triggered).
-   *
-   * @param SystemEvent $system
+   * @param SystemEvent
    */
   public function setSystem(SystemEvent $system)
   {
@@ -95,9 +87,7 @@ class Actor extends \Google\Model
     return $this->system;
   }
   /**
-   * An end user.
-   *
-   * @param User $user
+   * @param User
    */
   public function setUser(User $user)
   {

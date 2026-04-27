@@ -21,74 +21,32 @@ class AdUnit extends \Google\Collection
 {
   protected $collection_key = 'adTypes';
   /**
-   * AdFormat of the ad unit. Possible values are as follows: "APP_OPEN" - App
-   * Open ad format. "BANNER" - Banner ad format. "BANNER_INTERSTITIAL" - Legacy
-   * format that can be used as either banner or interstitial. This format can
-   * no longer be created but can be targeted by mediation groups.
-   * "INTERSTITIAL" - A full screen ad. Supported ad types are "RICH_MEDIA" and
-   * "VIDEO". "NATIVE" - Native ad format. "REWARDED" - An ad that, once viewed,
-   * gets a callback verifying the view so that a reward can be given to the
-   * user. Supported ad types are "RICH_MEDIA" (interactive) and video where
-   * video can not be excluded. "REWARDED_INTERSTITIAL" - Rewarded Interstitial
-   * ad format. Only supports video ad type. See
-   * https://support.google.com/admob/answer/9884467.
-   *
    * @var string
    */
   public $adFormat;
   /**
-   * Ad media type supported by this ad unit. Possible values as follows:
-   * "RICH_MEDIA" - Text, image, and other non-video media. "VIDEO" - Video
-   * media.
-   *
    * @var string[]
    */
   public $adTypes;
   /**
-   * The externally visible ID of the ad unit which can be used to integrate
-   * with the AdMob SDK. This is a read only property. Example: ca-app-
-   * pub-9876543210987654/0123456789
-   *
    * @var string
    */
   public $adUnitId;
   /**
-   * The externally visible ID of the app this ad unit is associated with.
-   * Example: ca-app-pub-9876543210987654~0123456789
-   *
    * @var string
    */
   public $appId;
   /**
-   * The display name of the ad unit as shown in the AdMob UI, which is provided
-   * by the user. The maximum length allowed is 80 characters.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Resource name for this ad unit. Format is
-   * accounts/{publisher_id}/adUnits/{ad_unit_id_fragment} Example:
-   * accounts/pub-9876543210987654/adUnits/0123456789
-   *
    * @var string
    */
   public $name;
 
   /**
-   * AdFormat of the ad unit. Possible values are as follows: "APP_OPEN" - App
-   * Open ad format. "BANNER" - Banner ad format. "BANNER_INTERSTITIAL" - Legacy
-   * format that can be used as either banner or interstitial. This format can
-   * no longer be created but can be targeted by mediation groups.
-   * "INTERSTITIAL" - A full screen ad. Supported ad types are "RICH_MEDIA" and
-   * "VIDEO". "NATIVE" - Native ad format. "REWARDED" - An ad that, once viewed,
-   * gets a callback verifying the view so that a reward can be given to the
-   * user. Supported ad types are "RICH_MEDIA" (interactive) and video where
-   * video can not be excluded. "REWARDED_INTERSTITIAL" - Rewarded Interstitial
-   * ad format. Only supports video ad type. See
-   * https://support.google.com/admob/answer/9884467.
-   *
-   * @param string $adFormat
+   * @param string
    */
   public function setAdFormat($adFormat)
   {
@@ -102,11 +60,7 @@ class AdUnit extends \Google\Collection
     return $this->adFormat;
   }
   /**
-   * Ad media type supported by this ad unit. Possible values as follows:
-   * "RICH_MEDIA" - Text, image, and other non-video media. "VIDEO" - Video
-   * media.
-   *
-   * @param string[] $adTypes
+   * @param string[]
    */
   public function setAdTypes($adTypes)
   {
@@ -120,11 +74,7 @@ class AdUnit extends \Google\Collection
     return $this->adTypes;
   }
   /**
-   * The externally visible ID of the ad unit which can be used to integrate
-   * with the AdMob SDK. This is a read only property. Example: ca-app-
-   * pub-9876543210987654/0123456789
-   *
-   * @param string $adUnitId
+   * @param string
    */
   public function setAdUnitId($adUnitId)
   {
@@ -138,10 +88,7 @@ class AdUnit extends \Google\Collection
     return $this->adUnitId;
   }
   /**
-   * The externally visible ID of the app this ad unit is associated with.
-   * Example: ca-app-pub-9876543210987654~0123456789
-   *
-   * @param string $appId
+   * @param string
    */
   public function setAppId($appId)
   {
@@ -155,10 +102,7 @@ class AdUnit extends \Google\Collection
     return $this->appId;
   }
   /**
-   * The display name of the ad unit as shown in the AdMob UI, which is provided
-   * by the user. The maximum length allowed is 80 characters.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -172,11 +116,7 @@ class AdUnit extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Resource name for this ad unit. Format is
-   * accounts/{publisher_id}/adUnits/{ad_unit_id_fragment} Example:
-   * accounts/pub-9876543210987654/adUnits/0123456789
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

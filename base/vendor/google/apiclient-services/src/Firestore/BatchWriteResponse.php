@@ -26,10 +26,7 @@ class BatchWriteResponse extends \Google\Collection
   protected $writeResultsDataType = 'array';
 
   /**
-   * The status of applying the writes. This i-th write status corresponds to
-   * the i-th write in the request.
-   *
-   * @param Status[] $status
+   * @param Status[]
    */
   public function setStatus($status)
   {
@@ -43,10 +40,7 @@ class BatchWriteResponse extends \Google\Collection
     return $this->status;
   }
   /**
-   * The result of applying the writes. This i-th write result corresponds to
-   * the i-th write in the request.
-   *
-   * @param WriteResult[] $writeResults
+   * @param WriteResult[]
    */
   public function setWriteResults($writeResults)
   {

@@ -20,44 +20,28 @@ namespace Google\Service\NetworkSecurity;
 class GatewaySecurityPolicy extends \Google\Model
 {
   /**
-   * Output only. The timestamp when the resource was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. Free-text description of the resource.
-   *
    * @var string
    */
   public $description;
   /**
-   * Required. Name of the resource. Name is of the form projects/{project}/loca
-   * tions/{location}/gatewaySecurityPolicies/{gateway_security_policy}
-   * gateway_security_policy should match the
-   * pattern:(^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$).
-   *
    * @var string
    */
   public $name;
   /**
-   * Optional. Name of a TLS Inspection Policy resource that defines how TLS
-   * inspection will be performed for any rule(s) which enables it.
-   *
    * @var string
    */
   public $tlsInspectionPolicy;
   /**
-   * Output only. The timestamp when the resource was updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. The timestamp when the resource was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -71,9 +55,7 @@ class GatewaySecurityPolicy extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Optional. Free-text description of the resource.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -87,12 +69,7 @@ class GatewaySecurityPolicy extends \Google\Model
     return $this->description;
   }
   /**
-   * Required. Name of the resource. Name is of the form projects/{project}/loca
-   * tions/{location}/gatewaySecurityPolicies/{gateway_security_policy}
-   * gateway_security_policy should match the
-   * pattern:(^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$).
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -106,10 +83,7 @@ class GatewaySecurityPolicy extends \Google\Model
     return $this->name;
   }
   /**
-   * Optional. Name of a TLS Inspection Policy resource that defines how TLS
-   * inspection will be performed for any rule(s) which enables it.
-   *
-   * @param string $tlsInspectionPolicy
+   * @param string
    */
   public function setTlsInspectionPolicy($tlsInspectionPolicy)
   {
@@ -123,9 +97,7 @@ class GatewaySecurityPolicy extends \Google\Model
     return $this->tlsInspectionPolicy;
   }
   /**
-   * Output only. The timestamp when the resource was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

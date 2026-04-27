@@ -20,24 +20,16 @@ namespace Google\Service\ShoppingContent;
 class AlternateDisputeResolution extends \Google\Model
 {
   /**
-   * The label for the alternate dispute resolution link.
-   *
    * @var string
    */
   public $label;
   /**
-   * The URL pointing to a page, where merchant can request alternative dispute
-   * resolution with an [external body](https://support.google.com/european-
-   * union-digital-services-act-redress-options/answer/13535501).
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * The label for the alternate dispute resolution link.
-   *
-   * @param string $label
+   * @param string
    */
   public function setLabel($label)
   {
@@ -51,11 +43,7 @@ class AlternateDisputeResolution extends \Google\Model
     return $this->label;
   }
   /**
-   * The URL pointing to a page, where merchant can request alternative dispute
-   * resolution with an [external body](https://support.google.com/european-
-   * union-digital-services-act-redress-options/answer/13535501).
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

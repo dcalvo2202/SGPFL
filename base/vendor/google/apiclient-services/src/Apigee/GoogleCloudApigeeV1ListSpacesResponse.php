@@ -21,9 +21,6 @@ class GoogleCloudApigeeV1ListSpacesResponse extends \Google\Collection
 {
   protected $collection_key = 'spaces';
   /**
-   * A token that can be sent as `page_token` to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class GoogleCloudApigeeV1ListSpacesResponse extends \Google\Collection
   protected $spacesDataType = 'array';
 
   /**
-   * A token that can be sent as `page_token` to retrieve the next page. If this
-   * field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class GoogleCloudApigeeV1ListSpacesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * List of Apigee organization spaces.
-   *
-   * @param GoogleCloudApigeeV1Space[] $spaces
+   * @param GoogleCloudApigeeV1Space[]
    */
   public function setSpaces($spaces)
   {

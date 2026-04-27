@@ -29,7 +29,7 @@ class GoogleCloudDialogflowCxV3beta1ResponseMessagePlayAudio extends \Google\Mod
   public $audioUri;
 
   /**
-   * @param bool $allowPlaybackInterruption
+   * @param bool
    */
   public function setAllowPlaybackInterruption($allowPlaybackInterruption)
   {
@@ -43,7 +43,7 @@ class GoogleCloudDialogflowCxV3beta1ResponseMessagePlayAudio extends \Google\Mod
     return $this->allowPlaybackInterruption;
   }
   /**
-   * @param string $audioUri
+   * @param string
    */
   public function setAudioUri($audioUri)
   {

@@ -19,52 +19,26 @@ namespace Google\Service\DataFusion;
 
 class Version extends \Google\Collection
 {
-  /**
-   * Version does not have availability yet
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * Version is under development and not considered stable
-   */
-  public const TYPE_TYPE_PREVIEW = 'TYPE_PREVIEW';
-  /**
-   * Version is available for public use
-   */
-  public const TYPE_TYPE_GENERAL_AVAILABILITY = 'TYPE_GENERAL_AVAILABILITY';
-  /**
-   * Version is no longer supported.
-   */
-  public const TYPE_TYPE_DEPRECATED = 'TYPE_DEPRECATED';
   protected $collection_key = 'availableFeatures';
   /**
-   * Represents a list of available feature names for a given version.
-   *
    * @var string[]
    */
   public $availableFeatures;
   /**
-   * Whether this is currently the default version for Cloud Data Fusion
-   *
    * @var bool
    */
   public $defaultVersion;
   /**
-   * Type represents the release availability of the version
-   *
    * @var string
    */
   public $type;
   /**
-   * The version number of the Data Fusion instance, such as '6.0.1.0'.
-   *
    * @var string
    */
   public $versionNumber;
 
   /**
-   * Represents a list of available feature names for a given version.
-   *
-   * @param string[] $availableFeatures
+   * @param string[]
    */
   public function setAvailableFeatures($availableFeatures)
   {
@@ -78,9 +52,7 @@ class Version extends \Google\Collection
     return $this->availableFeatures;
   }
   /**
-   * Whether this is currently the default version for Cloud Data Fusion
-   *
-   * @param bool $defaultVersion
+   * @param bool
    */
   public function setDefaultVersion($defaultVersion)
   {
@@ -94,28 +66,21 @@ class Version extends \Google\Collection
     return $this->defaultVersion;
   }
   /**
-   * Type represents the release availability of the version
-   *
-   * Accepted values: TYPE_UNSPECIFIED, TYPE_PREVIEW, TYPE_GENERAL_AVAILABILITY,
-   * TYPE_DEPRECATED
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * The version number of the Data Fusion instance, such as '6.0.1.0'.
-   *
-   * @param string $versionNumber
+   * @param string
    */
   public function setVersionNumber($versionNumber)
   {

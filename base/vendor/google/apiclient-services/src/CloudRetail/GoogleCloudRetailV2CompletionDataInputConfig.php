@@ -23,11 +23,7 @@ class GoogleCloudRetailV2CompletionDataInputConfig extends \Google\Model
   protected $bigQuerySourceDataType = '';
 
   /**
-   * Required. BigQuery input source. Add the IAM permission "BigQuery Data
-   * Viewer" for cloud-retail-customer-data-access@system.gserviceaccount.com
-   * before using this feature otherwise an error is thrown.
-   *
-   * @param GoogleCloudRetailV2BigQuerySource $bigQuerySource
+   * @param GoogleCloudRetailV2BigQuerySource
    */
   public function setBigQuerySource(GoogleCloudRetailV2BigQuerySource $bigQuerySource)
   {

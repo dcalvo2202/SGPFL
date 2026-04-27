@@ -23,9 +23,6 @@ class DeploymentmanagerResource extends \Google\Collection
   protected $accessControlType = ResourceAccessControl::class;
   protected $accessControlDataType = '';
   /**
-   * Output only. The evaluated properties of the resource with references
-   * expanded. Returned as serialized YAML.
-   *
    * @var string
    */
   public $finalProperties;
@@ -34,49 +31,32 @@ class DeploymentmanagerResource extends \Google\Collection
    */
   public $id;
   /**
-   * Output only. Creation timestamp in RFC3339 text format.
-   *
    * @var string
    */
   public $insertTime;
   /**
-   * Output only. URL of the manifest representing the current configuration of
-   * this resource.
-   *
    * @var string
    */
   public $manifest;
   /**
-   * Output only. The name of the resource as it appears in the YAML config.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The current properties of the resource before any references
-   * have been filled in. Returned as serialized YAML.
-   *
    * @var string
    */
   public $properties;
   /**
-   * Output only. The type of the resource, for example `compute.v1.instance`,
-   * or `cloudfunctions.v1beta1.function`.
-   *
    * @var string
    */
   public $type;
   protected $updateType = ResourceUpdate::class;
   protected $updateDataType = '';
   /**
-   * Output only. Update timestamp in RFC3339 text format.
-   *
    * @var string
    */
   public $updateTime;
   /**
-   * Output only. The URL of the actual resource.
-   *
    * @var string
    */
   public $url;
@@ -84,9 +64,7 @@ class DeploymentmanagerResource extends \Google\Collection
   protected $warningsDataType = 'array';
 
   /**
-   * The Access Control Policy set on this resource.
-   *
-   * @param ResourceAccessControl $accessControl
+   * @param ResourceAccessControl
    */
   public function setAccessControl(ResourceAccessControl $accessControl)
   {
@@ -100,10 +78,7 @@ class DeploymentmanagerResource extends \Google\Collection
     return $this->accessControl;
   }
   /**
-   * Output only. The evaluated properties of the resource with references
-   * expanded. Returned as serialized YAML.
-   *
-   * @param string $finalProperties
+   * @param string
    */
   public function setFinalProperties($finalProperties)
   {
@@ -117,7 +92,7 @@ class DeploymentmanagerResource extends \Google\Collection
     return $this->finalProperties;
   }
   /**
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -131,9 +106,7 @@ class DeploymentmanagerResource extends \Google\Collection
     return $this->id;
   }
   /**
-   * Output only. Creation timestamp in RFC3339 text format.
-   *
-   * @param string $insertTime
+   * @param string
    */
   public function setInsertTime($insertTime)
   {
@@ -147,10 +120,7 @@ class DeploymentmanagerResource extends \Google\Collection
     return $this->insertTime;
   }
   /**
-   * Output only. URL of the manifest representing the current configuration of
-   * this resource.
-   *
-   * @param string $manifest
+   * @param string
    */
   public function setManifest($manifest)
   {
@@ -164,9 +134,7 @@ class DeploymentmanagerResource extends \Google\Collection
     return $this->manifest;
   }
   /**
-   * Output only. The name of the resource as it appears in the YAML config.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -180,10 +148,7 @@ class DeploymentmanagerResource extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. The current properties of the resource before any references
-   * have been filled in. Returned as serialized YAML.
-   *
-   * @param string $properties
+   * @param string
    */
   public function setProperties($properties)
   {
@@ -197,10 +162,7 @@ class DeploymentmanagerResource extends \Google\Collection
     return $this->properties;
   }
   /**
-   * Output only. The type of the resource, for example `compute.v1.instance`,
-   * or `cloudfunctions.v1beta1.function`.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {
@@ -214,10 +176,7 @@ class DeploymentmanagerResource extends \Google\Collection
     return $this->type;
   }
   /**
-   * Output only. If Deployment Manager is currently updating or previewing an
-   * update to this resource, the updated configuration appears here.
-   *
-   * @param ResourceUpdate $update
+   * @param ResourceUpdate
    */
   public function setUpdate(ResourceUpdate $update)
   {
@@ -231,9 +190,7 @@ class DeploymentmanagerResource extends \Google\Collection
     return $this->update;
   }
   /**
-   * Output only. Update timestamp in RFC3339 text format.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -247,9 +204,7 @@ class DeploymentmanagerResource extends \Google\Collection
     return $this->updateTime;
   }
   /**
-   * Output only. The URL of the actual resource.
-   *
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {
@@ -263,10 +218,7 @@ class DeploymentmanagerResource extends \Google\Collection
     return $this->url;
   }
   /**
-   * Output only. If warning messages are generated during processing of this
-   * resource, this field will be populated.
-   *
-   * @param DeploymentmanagerResourceWarnings[] $warnings
+   * @param DeploymentmanagerResourceWarnings[]
    */
   public function setWarnings($warnings)
   {

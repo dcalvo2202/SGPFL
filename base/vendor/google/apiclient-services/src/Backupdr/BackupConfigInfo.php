@@ -19,27 +19,6 @@ namespace Google\Service\Backupdr;
 
 class BackupConfigInfo extends \Google\Model
 {
-  /**
-   * Status not set.
-   */
-  public const LAST_BACKUP_STATE_LAST_BACKUP_STATE_UNSPECIFIED = 'LAST_BACKUP_STATE_UNSPECIFIED';
-  /**
-   * The first backup has not yet completed
-   */
-  public const LAST_BACKUP_STATE_FIRST_BACKUP_PENDING = 'FIRST_BACKUP_PENDING';
-  /**
-   * The most recent backup was successful
-   */
-  public const LAST_BACKUP_STATE_SUCCEEDED = 'SUCCEEDED';
-  /**
-   * The most recent backup failed
-   */
-  public const LAST_BACKUP_STATE_FAILED = 'FAILED';
-  /**
-   * The most recent backup could not be run/failed because of the lack of
-   * permissions
-   */
-  public const LAST_BACKUP_STATE_PERMISSION_DENIED = 'PERMISSION_DENIED';
   protected $backupApplianceBackupConfigType = BackupApplianceBackupConfig::class;
   protected $backupApplianceBackupConfigDataType = '';
   protected $gcpBackupConfigType = GcpBackupConfig::class;
@@ -47,23 +26,20 @@ class BackupConfigInfo extends \Google\Model
   protected $lastBackupErrorType = Status::class;
   protected $lastBackupErrorDataType = '';
   /**
-   * Output only. The status of the last backup to this BackupVault
-   *
    * @var string
    */
   public $lastBackupState;
   /**
-   * Output only. If the last backup were successful, this field has the
-   * consistency date.
-   *
    * @var string
    */
   public $lastSuccessfulBackupConsistencyTime;
+  /**
+   * @var string
+   */
+  public $lastSuccessfulLogBackupConsistencyTime;
 
   /**
-   * Configuration for an application backed up by a Backup Appliance.
-   *
-   * @param BackupApplianceBackupConfig $backupApplianceBackupConfig
+   * @param BackupApplianceBackupConfig
    */
   public function setBackupApplianceBackupConfig(BackupApplianceBackupConfig $backupApplianceBackupConfig)
   {
@@ -77,9 +53,7 @@ class BackupConfigInfo extends \Google\Model
     return $this->backupApplianceBackupConfig;
   }
   /**
-   * Configuration for a Google Cloud resource.
-   *
-   * @param GcpBackupConfig $gcpBackupConfig
+   * @param GcpBackupConfig
    */
   public function setGcpBackupConfig(GcpBackupConfig $gcpBackupConfig)
   {
@@ -93,9 +67,7 @@ class BackupConfigInfo extends \Google\Model
     return $this->gcpBackupConfig;
   }
   /**
-   * Output only. If the last backup failed, this field has the error message.
-   *
-   * @param Status $lastBackupError
+   * @param Status
    */
   public function setLastBackupError(Status $lastBackupError)
   {
@@ -109,29 +81,21 @@ class BackupConfigInfo extends \Google\Model
     return $this->lastBackupError;
   }
   /**
-   * Output only. The status of the last backup to this BackupVault
-   *
-   * Accepted values: LAST_BACKUP_STATE_UNSPECIFIED, FIRST_BACKUP_PENDING,
-   * SUCCEEDED, FAILED, PERMISSION_DENIED
-   *
-   * @param self::LAST_BACKUP_STATE_* $lastBackupState
+   * @param string
    */
   public function setLastBackupState($lastBackupState)
   {
     $this->lastBackupState = $lastBackupState;
   }
   /**
-   * @return self::LAST_BACKUP_STATE_*
+   * @return string
    */
   public function getLastBackupState()
   {
     return $this->lastBackupState;
   }
   /**
-   * Output only. If the last backup were successful, this field has the
-   * consistency date.
-   *
-   * @param string $lastSuccessfulBackupConsistencyTime
+   * @param string
    */
   public function setLastSuccessfulBackupConsistencyTime($lastSuccessfulBackupConsistencyTime)
   {
@@ -143,6 +107,20 @@ class BackupConfigInfo extends \Google\Model
   public function getLastSuccessfulBackupConsistencyTime()
   {
     return $this->lastSuccessfulBackupConsistencyTime;
+  }
+  /**
+   * @param string
+   */
+  public function setLastSuccessfulLogBackupConsistencyTime($lastSuccessfulLogBackupConsistencyTime)
+  {
+    $this->lastSuccessfulLogBackupConsistencyTime = $lastSuccessfulLogBackupConsistencyTime;
+  }
+  /**
+   * @return string
+   */
+  public function getLastSuccessfulLogBackupConsistencyTime()
+  {
+    return $this->lastSuccessfulLogBackupConsistencyTime;
   }
 }
 

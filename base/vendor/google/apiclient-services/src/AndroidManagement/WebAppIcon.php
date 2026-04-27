@@ -20,22 +20,12 @@ namespace Google\Service\AndroidManagement;
 class WebAppIcon extends \Google\Model
 {
   /**
-   * The actual bytes of the image in a base64url encoded string (c.f. RFC4648,
-   * section 5 "Base 64 Encoding with URL and Filename Safe Alphabet"). - The
-   * image type can be png or jpg. - The image should ideally be square. - The
-   * image should ideally have a size of 512x512.
-   *
    * @var string
    */
   public $imageData;
 
   /**
-   * The actual bytes of the image in a base64url encoded string (c.f. RFC4648,
-   * section 5 "Base 64 Encoding with URL and Filename Safe Alphabet"). - The
-   * image type can be png or jpg. - The image should ideally be square. - The
-   * image should ideally have a size of 512x512.
-   *
-   * @param string $imageData
+   * @param string
    */
   public function setImageData($imageData)
   {

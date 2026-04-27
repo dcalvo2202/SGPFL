@@ -21,8 +21,6 @@ class ListProposalsResponse extends \Google\Collection
 {
   protected $collection_key = 'proposals';
   /**
-   * Continuation token for fetching the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -30,9 +28,7 @@ class ListProposalsResponse extends \Google\Collection
   protected $proposalsDataType = 'array';
 
   /**
-   * Continuation token for fetching the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -46,9 +42,7 @@ class ListProposalsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The list of proposals.
-   *
-   * @param Proposal[] $proposals
+   * @param Proposal[]
    */
   public function setProposals($proposals)
   {

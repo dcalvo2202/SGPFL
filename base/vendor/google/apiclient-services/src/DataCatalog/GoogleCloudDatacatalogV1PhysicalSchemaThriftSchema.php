@@ -20,16 +20,12 @@ namespace Google\Service\DataCatalog;
 class GoogleCloudDatacatalogV1PhysicalSchemaThriftSchema extends \Google\Model
 {
   /**
-   * Thrift IDL source of the schema.
-   *
    * @var string
    */
   public $text;
 
   /**
-   * Thrift IDL source of the schema.
-   *
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {

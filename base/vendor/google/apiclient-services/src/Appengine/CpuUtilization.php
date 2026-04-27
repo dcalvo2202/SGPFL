@@ -20,23 +20,13 @@ namespace Google\Service\Appengine;
 class CpuUtilization extends \Google\Model
 {
   /**
-   * Period of time over which CPU utilization is calculated.
-   *
    * @var string
    */
   public $aggregationWindowLength;
-  /**
-   * Target CPU utilization ratio to maintain when scaling. Must be between 0
-   * and 1.
-   *
-   * @var 
-   */
   public $targetUtilization;
 
   /**
-   * Period of time over which CPU utilization is calculated.
-   *
-   * @param string $aggregationWindowLength
+   * @param string
    */
   public function setAggregationWindowLength($aggregationWindowLength)
   {

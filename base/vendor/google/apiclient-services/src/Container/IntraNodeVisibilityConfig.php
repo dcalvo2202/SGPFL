@@ -20,16 +20,12 @@ namespace Google\Service\Container;
 class IntraNodeVisibilityConfig extends \Google\Model
 {
   /**
-   * Enables intra node visibility for this cluster.
-   *
    * @var bool
    */
   public $enabled;
 
   /**
-   * Enables intra node visibility for this cluster.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {

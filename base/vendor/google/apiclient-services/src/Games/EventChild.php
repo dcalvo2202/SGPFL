@@ -20,23 +20,16 @@ namespace Google\Service\Games;
 class EventChild extends \Google\Model
 {
   /**
-   * The ID of the child event.
-   *
    * @var string
    */
   public $childId;
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#eventChild`.
-   *
    * @var string
    */
   public $kind;
 
   /**
-   * The ID of the child event.
-   *
-   * @param string $childId
+   * @param string
    */
   public function setChildId($childId)
   {
@@ -50,10 +43,7 @@ class EventChild extends \Google\Model
     return $this->childId;
   }
   /**
-   * Uniquely identifies the type of this resource. Value is always the fixed
-   * string `games#eventChild`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

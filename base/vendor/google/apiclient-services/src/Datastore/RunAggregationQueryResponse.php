@@ -26,18 +26,12 @@ class RunAggregationQueryResponse extends \Google\Model
   protected $queryType = AggregationQuery::class;
   protected $queryDataType = '';
   /**
-   * The identifier of the transaction that was started as part of this
-   * RunAggregationQuery request. Set only when ReadOptions.new_transaction was
-   * set in RunAggregationQueryRequest.read_options.
-   *
    * @var string
    */
   public $transaction;
 
   /**
-   * A batch of aggregation results. Always present.
-   *
-   * @param AggregationResultBatch $batch
+   * @param AggregationResultBatch
    */
   public function setBatch(AggregationResultBatch $batch)
   {
@@ -51,11 +45,7 @@ class RunAggregationQueryResponse extends \Google\Model
     return $this->batch;
   }
   /**
-   * Query explain metrics. This is only present when the
-   * RunAggregationQueryRequest.explain_options is provided, and it is sent only
-   * once with the last response in the stream.
-   *
-   * @param ExplainMetrics $explainMetrics
+   * @param ExplainMetrics
    */
   public function setExplainMetrics(ExplainMetrics $explainMetrics)
   {
@@ -69,9 +59,7 @@ class RunAggregationQueryResponse extends \Google\Model
     return $this->explainMetrics;
   }
   /**
-   * The parsed form of the `GqlQuery` from the request, if it was set.
-   *
-   * @param AggregationQuery $query
+   * @param AggregationQuery
    */
   public function setQuery(AggregationQuery $query)
   {
@@ -85,11 +73,7 @@ class RunAggregationQueryResponse extends \Google\Model
     return $this->query;
   }
   /**
-   * The identifier of the transaction that was started as part of this
-   * RunAggregationQuery request. Set only when ReadOptions.new_transaction was
-   * set in RunAggregationQueryRequest.read_options.
-   *
-   * @param string $transaction
+   * @param string
    */
   public function setTransaction($transaction)
   {

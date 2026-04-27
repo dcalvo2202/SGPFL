@@ -20,30 +20,20 @@ namespace Google\Service\CloudResourceManager;
 class ProjectCreationStatus extends \Google\Model
 {
   /**
-   * Creation time of the project creation workflow.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * True if the project can be retrieved using GetProject. No other operations
-   * on the project are guaranteed to work until the project creation is
-   * complete.
-   *
    * @var bool
    */
   public $gettable;
   /**
-   * True if the project creation process is complete.
-   *
    * @var bool
    */
   public $ready;
 
   /**
-   * Creation time of the project creation workflow.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -57,11 +47,7 @@ class ProjectCreationStatus extends \Google\Model
     return $this->createTime;
   }
   /**
-   * True if the project can be retrieved using GetProject. No other operations
-   * on the project are guaranteed to work until the project creation is
-   * complete.
-   *
-   * @param bool $gettable
+   * @param bool
    */
   public function setGettable($gettable)
   {
@@ -75,9 +61,7 @@ class ProjectCreationStatus extends \Google\Model
     return $this->gettable;
   }
   /**
-   * True if the project creation process is complete.
-   *
-   * @param bool $ready
+   * @param bool
    */
   public function setReady($ready)
   {

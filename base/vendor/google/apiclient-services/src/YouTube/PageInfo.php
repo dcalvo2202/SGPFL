@@ -20,22 +20,16 @@ namespace Google\Service\YouTube;
 class PageInfo extends \Google\Model
 {
   /**
-   * The number of results included in the API response.
-   *
    * @var int
    */
   public $resultsPerPage;
   /**
-   * The total number of results in the result set.
-   *
    * @var int
    */
   public $totalResults;
 
   /**
-   * The number of results included in the API response.
-   *
-   * @param int $resultsPerPage
+   * @param int
    */
   public function setResultsPerPage($resultsPerPage)
   {
@@ -49,9 +43,7 @@ class PageInfo extends \Google\Model
     return $this->resultsPerPage;
   }
   /**
-   * The total number of results in the result set.
-   *
-   * @param int $totalResults
+   * @param int
    */
   public function setTotalResults($totalResults)
   {

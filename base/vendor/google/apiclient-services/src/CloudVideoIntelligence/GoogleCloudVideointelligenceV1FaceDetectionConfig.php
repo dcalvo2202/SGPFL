@@ -20,31 +20,20 @@ namespace Google\Service\CloudVideoIntelligence;
 class GoogleCloudVideointelligenceV1FaceDetectionConfig extends \Google\Model
 {
   /**
-   * Whether to enable face attributes detection, such as glasses, dark_glasses,
-   * mouth_open etc. Ignored if 'include_bounding_boxes' is set to false.
-   *
    * @var bool
    */
   public $includeAttributes;
   /**
-   * Whether bounding boxes are included in the face annotation output.
-   *
    * @var bool
    */
   public $includeBoundingBoxes;
   /**
-   * Model to use for face detection. Supported values: "builtin/stable" (the
-   * default if unset) and "builtin/latest".
-   *
    * @var string
    */
   public $model;
 
   /**
-   * Whether to enable face attributes detection, such as glasses, dark_glasses,
-   * mouth_open etc. Ignored if 'include_bounding_boxes' is set to false.
-   *
-   * @param bool $includeAttributes
+   * @param bool
    */
   public function setIncludeAttributes($includeAttributes)
   {
@@ -58,9 +47,7 @@ class GoogleCloudVideointelligenceV1FaceDetectionConfig extends \Google\Model
     return $this->includeAttributes;
   }
   /**
-   * Whether bounding boxes are included in the face annotation output.
-   *
-   * @param bool $includeBoundingBoxes
+   * @param bool
    */
   public function setIncludeBoundingBoxes($includeBoundingBoxes)
   {
@@ -74,10 +61,7 @@ class GoogleCloudVideointelligenceV1FaceDetectionConfig extends \Google\Model
     return $this->includeBoundingBoxes;
   }
   /**
-   * Model to use for face detection. Supported values: "builtin/stable" (the
-   * default if unset) and "builtin/latest".
-   *
-   * @param string $model
+   * @param string
    */
   public function setModel($model)
   {

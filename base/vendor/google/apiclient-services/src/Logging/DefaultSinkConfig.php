@@ -19,50 +19,20 @@ namespace Google\Service\Logging;
 
 class DefaultSinkConfig extends \Google\Collection
 {
-  /**
-   * The filter's write mode is unspecified. This mode must not be used.
-   */
-  public const MODE_FILTER_WRITE_MODE_UNSPECIFIED = 'FILTER_WRITE_MODE_UNSPECIFIED';
-  /**
-   * The contents of filter will be appended to the built-in _Default sink
-   * filter. Using the append mode with an empty filter will keep the sink
-   * inclusion filter unchanged.
-   */
-  public const MODE_APPEND = 'APPEND';
-  /**
-   * The contents of filter will overwrite the built-in _Default sink filter.
-   */
-  public const MODE_OVERWRITE = 'OVERWRITE';
   protected $collection_key = 'exclusions';
   protected $exclusionsType = LogExclusion::class;
   protected $exclusionsDataType = 'array';
   /**
-   * Optional. An advanced logs filter
-   * (https://docs.cloud.google.com/logging/docs/view/building-queries#queries-
-   * by-expression). The only exported log entries are those that are in the
-   * resource owning the sink and that match the filter.For
-   * example:logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity>=ERRORTo
-   * match all logs, don't add exclusions and use the following line as the
-   * value of filter:logName:*Cannot be empty or unset when the value of mode is
-   * OVERWRITE.
-   *
    * @var string
    */
   public $filter;
   /**
-   * Required. Determines the behavior to apply to the built-in _Default sink
-   * inclusion filter.Exclusions are always appended, as built-in _Default sinks
-   * have no exclusions.
-   *
    * @var string
    */
   public $mode;
 
   /**
-   * Optional. Specifies the set of exclusions to be added to the _Default sink
-   * in newly created resource containers.
-   *
-   * @param LogExclusion[] $exclusions
+   * @param LogExclusion[]
    */
   public function setExclusions($exclusions)
   {
@@ -76,16 +46,7 @@ class DefaultSinkConfig extends \Google\Collection
     return $this->exclusions;
   }
   /**
-   * Optional. An advanced logs filter
-   * (https://docs.cloud.google.com/logging/docs/view/building-queries#queries-
-   * by-expression). The only exported log entries are those that are in the
-   * resource owning the sink and that match the filter.For
-   * example:logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity>=ERRORTo
-   * match all logs, don't add exclusions and use the following line as the
-   * value of filter:logName:*Cannot be empty or unset when the value of mode is
-   * OVERWRITE.
-   *
-   * @param string $filter
+   * @param string
    */
   public function setFilter($filter)
   {
@@ -99,20 +60,14 @@ class DefaultSinkConfig extends \Google\Collection
     return $this->filter;
   }
   /**
-   * Required. Determines the behavior to apply to the built-in _Default sink
-   * inclusion filter.Exclusions are always appended, as built-in _Default sinks
-   * have no exclusions.
-   *
-   * Accepted values: FILTER_WRITE_MODE_UNSPECIFIED, APPEND, OVERWRITE
-   *
-   * @param self::MODE_* $mode
+   * @param string
    */
   public function setMode($mode)
   {
     $this->mode = $mode;
   }
   /**
-   * @return self::MODE_*
+   * @return string
    */
   public function getMode()
   {

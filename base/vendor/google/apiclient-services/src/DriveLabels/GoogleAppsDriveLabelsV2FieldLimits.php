@@ -26,20 +26,14 @@ class GoogleAppsDriveLabelsV2FieldLimits extends \Google\Model
   protected $longTextLimitsType = GoogleAppsDriveLabelsV2LongTextLimits::class;
   protected $longTextLimitsDataType = '';
   /**
-   * Limits for field description, also called help text.
-   *
    * @var int
    */
   public $maxDescriptionLength;
   /**
-   * Limits for field title.
-   *
    * @var int
    */
   public $maxDisplayNameLength;
   /**
-   * Maximum length for the id.
-   *
    * @var int
    */
   public $maxIdLength;
@@ -51,9 +45,7 @@ class GoogleAppsDriveLabelsV2FieldLimits extends \Google\Model
   protected $userLimitsDataType = '';
 
   /**
-   * Date field limits.
-   *
-   * @param GoogleAppsDriveLabelsV2DateLimits $dateLimits
+   * @param GoogleAppsDriveLabelsV2DateLimits
    */
   public function setDateLimits(GoogleAppsDriveLabelsV2DateLimits $dateLimits)
   {
@@ -67,9 +59,7 @@ class GoogleAppsDriveLabelsV2FieldLimits extends \Google\Model
     return $this->dateLimits;
   }
   /**
-   * Integer field limits.
-   *
-   * @param GoogleAppsDriveLabelsV2IntegerLimits $integerLimits
+   * @param GoogleAppsDriveLabelsV2IntegerLimits
    */
   public function setIntegerLimits(GoogleAppsDriveLabelsV2IntegerLimits $integerLimits)
   {
@@ -83,9 +73,7 @@ class GoogleAppsDriveLabelsV2FieldLimits extends \Google\Model
     return $this->integerLimits;
   }
   /**
-   * Long text field limits.
-   *
-   * @param GoogleAppsDriveLabelsV2LongTextLimits $longTextLimits
+   * @param GoogleAppsDriveLabelsV2LongTextLimits
    */
   public function setLongTextLimits(GoogleAppsDriveLabelsV2LongTextLimits $longTextLimits)
   {
@@ -99,9 +87,7 @@ class GoogleAppsDriveLabelsV2FieldLimits extends \Google\Model
     return $this->longTextLimits;
   }
   /**
-   * Limits for field description, also called help text.
-   *
-   * @param int $maxDescriptionLength
+   * @param int
    */
   public function setMaxDescriptionLength($maxDescriptionLength)
   {
@@ -115,9 +101,7 @@ class GoogleAppsDriveLabelsV2FieldLimits extends \Google\Model
     return $this->maxDescriptionLength;
   }
   /**
-   * Limits for field title.
-   *
-   * @param int $maxDisplayNameLength
+   * @param int
    */
   public function setMaxDisplayNameLength($maxDisplayNameLength)
   {
@@ -131,9 +115,7 @@ class GoogleAppsDriveLabelsV2FieldLimits extends \Google\Model
     return $this->maxDisplayNameLength;
   }
   /**
-   * Maximum length for the id.
-   *
-   * @param int $maxIdLength
+   * @param int
    */
   public function setMaxIdLength($maxIdLength)
   {
@@ -147,9 +129,7 @@ class GoogleAppsDriveLabelsV2FieldLimits extends \Google\Model
     return $this->maxIdLength;
   }
   /**
-   * Selection field limits.
-   *
-   * @param GoogleAppsDriveLabelsV2SelectionLimits $selectionLimits
+   * @param GoogleAppsDriveLabelsV2SelectionLimits
    */
   public function setSelectionLimits(GoogleAppsDriveLabelsV2SelectionLimits $selectionLimits)
   {
@@ -163,9 +143,7 @@ class GoogleAppsDriveLabelsV2FieldLimits extends \Google\Model
     return $this->selectionLimits;
   }
   /**
-   * The relevant limits for the specified Field.Type. Text field limits.
-   *
-   * @param GoogleAppsDriveLabelsV2TextLimits $textLimits
+   * @param GoogleAppsDriveLabelsV2TextLimits
    */
   public function setTextLimits(GoogleAppsDriveLabelsV2TextLimits $textLimits)
   {
@@ -179,9 +157,7 @@ class GoogleAppsDriveLabelsV2FieldLimits extends \Google\Model
     return $this->textLimits;
   }
   /**
-   * User field limits.
-   *
-   * @param GoogleAppsDriveLabelsV2UserLimits $userLimits
+   * @param GoogleAppsDriveLabelsV2UserLimits
    */
   public function setUserLimits(GoogleAppsDriveLabelsV2UserLimits $userLimits)
   {

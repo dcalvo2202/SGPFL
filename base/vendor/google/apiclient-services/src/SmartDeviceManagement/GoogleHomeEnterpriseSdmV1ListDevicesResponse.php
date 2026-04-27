@@ -24,9 +24,7 @@ class GoogleHomeEnterpriseSdmV1ListDevicesResponse extends \Google\Collection
   protected $devicesDataType = 'array';
 
   /**
-   * The list of devices.
-   *
-   * @param GoogleHomeEnterpriseSdmV1Device[] $devices
+   * @param GoogleHomeEnterpriseSdmV1Device[]
    */
   public function setDevices($devices)
   {

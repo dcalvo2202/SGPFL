@@ -20,16 +20,12 @@ namespace Google\Service\Container;
 class ShieldedNodes extends \Google\Model
 {
   /**
-   * Whether Shielded Nodes features are enabled on all nodes in this cluster.
-   *
    * @var bool
    */
   public $enabled;
 
   /**
-   * Whether Shielded Nodes features are enabled on all nodes in this cluster.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {

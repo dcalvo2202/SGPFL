@@ -21,8 +21,6 @@ class GoogleCloudContactcenterinsightsV1CalculateStatsResponseTimeSeries extends
 {
   protected $collection_key = 'points';
   /**
-   * The duration of each interval.
-   *
    * @var string
    */
   public $intervalDuration;
@@ -30,9 +28,7 @@ class GoogleCloudContactcenterinsightsV1CalculateStatsResponseTimeSeries extends
   protected $pointsDataType = 'array';
 
   /**
-   * The duration of each interval.
-   *
-   * @param string $intervalDuration
+   * @param string
    */
   public function setIntervalDuration($intervalDuration)
   {
@@ -46,11 +42,7 @@ class GoogleCloudContactcenterinsightsV1CalculateStatsResponseTimeSeries extends
     return $this->intervalDuration;
   }
   /**
-   * An ordered list of intervals from earliest to latest, where each interval
-   * represents the number of conversations that transpired during the time
-   * window.
-   *
-   * @param GoogleCloudContactcenterinsightsV1CalculateStatsResponseTimeSeriesInterval[] $points
+   * @param GoogleCloudContactcenterinsightsV1CalculateStatsResponseTimeSeriesInterval[]
    */
   public function setPoints($points)
   {

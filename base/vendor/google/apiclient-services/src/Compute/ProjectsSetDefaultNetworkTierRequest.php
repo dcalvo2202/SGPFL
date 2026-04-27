@@ -20,45 +20,19 @@ namespace Google\Service\Compute;
 class ProjectsSetDefaultNetworkTierRequest extends \Google\Model
 {
   /**
-   * Public internet quality with fixed bandwidth.
-   */
-  public const NETWORK_TIER_FIXED_STANDARD = 'FIXED_STANDARD';
-  /**
-   * High quality, Google-grade network tier, support for all networking
-   * products.
-   */
-  public const NETWORK_TIER_PREMIUM = 'PREMIUM';
-  /**
-   * Public internet quality, only limited support for other networking
-   * products.
-   */
-  public const NETWORK_TIER_STANDARD = 'STANDARD';
-  /**
-   * (Output only) Temporary tier for FIXED_STANDARD when fixed standard tier is
-   * expired or not configured.
-   */
-  public const NETWORK_TIER_STANDARD_OVERRIDES_FIXED_STANDARD = 'STANDARD_OVERRIDES_FIXED_STANDARD';
-  /**
-   * Default network tier to be set.
-   *
    * @var string
    */
   public $networkTier;
 
   /**
-   * Default network tier to be set.
-   *
-   * Accepted values: FIXED_STANDARD, PREMIUM, STANDARD,
-   * STANDARD_OVERRIDES_FIXED_STANDARD
-   *
-   * @param self::NETWORK_TIER_* $networkTier
+   * @param string
    */
   public function setNetworkTier($networkTier)
   {
     $this->networkTier = $networkTier;
   }
   /**
-   * @return self::NETWORK_TIER_*
+   * @return string
    */
   public function getNetworkTier()
   {

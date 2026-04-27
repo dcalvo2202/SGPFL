@@ -19,45 +19,8 @@ namespace Google\Service\TagManager;
 
 class Trigger extends \Google\Collection
 {
-  public const TYPE_eventTypeUnspecified = 'eventTypeUnspecified';
-  public const TYPE_pageview = 'pageview';
-  public const TYPE_domReady = 'domReady';
-  public const TYPE_windowLoaded = 'windowLoaded';
-  public const TYPE_customEvent = 'customEvent';
-  public const TYPE_triggerGroup = 'triggerGroup';
-  public const TYPE_init = 'init';
-  public const TYPE_consentInit = 'consentInit';
-  public const TYPE_serverPageview = 'serverPageview';
-  public const TYPE_always = 'always';
-  public const TYPE_firebaseAppException = 'firebaseAppException';
-  public const TYPE_firebaseAppUpdate = 'firebaseAppUpdate';
-  public const TYPE_firebaseCampaign = 'firebaseCampaign';
-  public const TYPE_firebaseFirstOpen = 'firebaseFirstOpen';
-  public const TYPE_firebaseInAppPurchase = 'firebaseInAppPurchase';
-  public const TYPE_firebaseNotificationDismiss = 'firebaseNotificationDismiss';
-  public const TYPE_firebaseNotificationForeground = 'firebaseNotificationForeground';
-  public const TYPE_firebaseNotificationOpen = 'firebaseNotificationOpen';
-  public const TYPE_firebaseNotificationReceive = 'firebaseNotificationReceive';
-  public const TYPE_firebaseOsUpdate = 'firebaseOsUpdate';
-  public const TYPE_firebaseSessionStart = 'firebaseSessionStart';
-  public const TYPE_firebaseUserEngagement = 'firebaseUserEngagement';
-  public const TYPE_formSubmission = 'formSubmission';
-  public const TYPE_click = 'click';
-  public const TYPE_linkClick = 'linkClick';
-  public const TYPE_jsError = 'jsError';
-  public const TYPE_historyChange = 'historyChange';
-  public const TYPE_timer = 'timer';
-  public const TYPE_ampClick = 'ampClick';
-  public const TYPE_ampTimer = 'ampTimer';
-  public const TYPE_ampScroll = 'ampScroll';
-  public const TYPE_ampVisibility = 'ampVisibility';
-  public const TYPE_youTubeVideo = 'youTubeVideo';
-  public const TYPE_scrollDepth = 'scrollDepth';
-  public const TYPE_elementVisibility = 'elementVisibility';
   protected $collection_key = 'parameter';
   /**
-   * GTM Account ID.
-   *
    * @var string
    */
   public $accountId;
@@ -66,8 +29,6 @@ class Trigger extends \Google\Collection
   protected $checkValidationType = Parameter::class;
   protected $checkValidationDataType = '';
   /**
-   * GTM Container ID.
-   *
    * @var string
    */
   public $containerId;
@@ -80,9 +41,6 @@ class Trigger extends \Google\Collection
   protected $filterType = Condition::class;
   protected $filterDataType = 'array';
   /**
-   * The fingerprint of the GTM Trigger as computed at storage time. This value
-   * is recomputed whenever the trigger is modified.
-   *
    * @var string
    */
   public $fingerprint;
@@ -97,50 +55,36 @@ class Trigger extends \Google\Collection
   protected $maxTimerLengthSecondsType = Parameter::class;
   protected $maxTimerLengthSecondsDataType = '';
   /**
-   * Trigger display name.
-   *
    * @var string
    */
   public $name;
   /**
-   * User notes on how to apply this trigger in the container.
-   *
    * @var string
    */
   public $notes;
   protected $parameterType = Parameter::class;
   protected $parameterDataType = 'array';
   /**
-   * Parent folder id.
-   *
    * @var string
    */
   public $parentFolderId;
   /**
-   * GTM Trigger's API relative path.
-   *
    * @var string
    */
   public $path;
   protected $selectorType = Parameter::class;
   protected $selectorDataType = '';
   /**
-   * Auto generated link to the tag manager UI
-   *
    * @var string
    */
   public $tagManagerUrl;
   protected $totalTimeMinMillisecondsType = Parameter::class;
   protected $totalTimeMinMillisecondsDataType = '';
   /**
-   * The Trigger ID uniquely identifies the GTM Trigger.
-   *
    * @var string
    */
   public $triggerId;
   /**
-   * Defines the data layer event that causes this trigger.
-   *
    * @var string
    */
   public $type;
@@ -159,16 +103,12 @@ class Trigger extends \Google\Collection
   protected $waitForTagsTimeoutType = Parameter::class;
   protected $waitForTagsTimeoutDataType = '';
   /**
-   * GTM Workspace ID.
-   *
    * @var string
    */
   public $workspaceId;
 
   /**
-   * GTM Account ID.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -182,9 +122,7 @@ class Trigger extends \Google\Collection
     return $this->accountId;
   }
   /**
-   * Used in the case of auto event tracking.
-   *
-   * @param Condition[] $autoEventFilter
+   * @param Condition[]
    */
   public function setAutoEventFilter($autoEventFilter)
   {
@@ -198,11 +136,7 @@ class Trigger extends \Google\Collection
     return $this->autoEventFilter;
   }
   /**
-   * Whether or not we should only fire tags if the form submit or link click
-   * event is not cancelled by some other event handler (e.g. because of
-   * validation). Only valid for Form Submission and Link Click triggers.
-   *
-   * @param Parameter $checkValidation
+   * @param Parameter
    */
   public function setCheckValidation(Parameter $checkValidation)
   {
@@ -216,9 +150,7 @@ class Trigger extends \Google\Collection
     return $this->checkValidation;
   }
   /**
-   * GTM Container ID.
-   *
-   * @param string $containerId
+   * @param string
    */
   public function setContainerId($containerId)
   {
@@ -232,10 +164,7 @@ class Trigger extends \Google\Collection
     return $this->containerId;
   }
   /**
-   * A visibility trigger minimum continuous visible time (in milliseconds).
-   * Only valid for AMP Visibility trigger.
-   *
-   * @param Parameter $continuousTimeMinMilliseconds
+   * @param Parameter
    */
   public function setContinuousTimeMinMilliseconds(Parameter $continuousTimeMinMilliseconds)
   {
@@ -249,10 +178,7 @@ class Trigger extends \Google\Collection
     return $this->continuousTimeMinMilliseconds;
   }
   /**
-   * Used in the case of custom event, which is fired iff all Conditions are
-   * true.
-   *
-   * @param Condition[] $customEventFilter
+   * @param Condition[]
    */
   public function setCustomEventFilter($customEventFilter)
   {
@@ -266,9 +192,7 @@ class Trigger extends \Google\Collection
     return $this->customEventFilter;
   }
   /**
-   * Name of the GTM event that is fired. Only valid for Timer triggers.
-   *
-   * @param Parameter $eventName
+   * @param Parameter
    */
   public function setEventName(Parameter $eventName)
   {
@@ -282,9 +206,7 @@ class Trigger extends \Google\Collection
     return $this->eventName;
   }
   /**
-   * The trigger will only fire iff all Conditions are true.
-   *
-   * @param Condition[] $filter
+   * @param Condition[]
    */
   public function setFilter($filter)
   {
@@ -298,10 +220,7 @@ class Trigger extends \Google\Collection
     return $this->filter;
   }
   /**
-   * The fingerprint of the GTM Trigger as computed at storage time. This value
-   * is recomputed whenever the trigger is modified.
-   *
-   * @param string $fingerprint
+   * @param string
    */
   public function setFingerprint($fingerprint)
   {
@@ -315,11 +234,7 @@ class Trigger extends \Google\Collection
     return $this->fingerprint;
   }
   /**
-   * List of integer percentage values for scroll triggers. The trigger will
-   * fire when each percentage is reached when the view is scrolled
-   * horizontally. Only valid for AMP scroll triggers.
-   *
-   * @param Parameter $horizontalScrollPercentageList
+   * @param Parameter
    */
   public function setHorizontalScrollPercentageList(Parameter $horizontalScrollPercentageList)
   {
@@ -333,10 +248,7 @@ class Trigger extends \Google\Collection
     return $this->horizontalScrollPercentageList;
   }
   /**
-   * Time between triggering recurring Timer Events (in milliseconds). Only
-   * valid for Timer triggers.
-   *
-   * @param Parameter $interval
+   * @param Parameter
    */
   public function setInterval(Parameter $interval)
   {
@@ -350,10 +262,7 @@ class Trigger extends \Google\Collection
     return $this->interval;
   }
   /**
-   * Time between Timer Events to fire (in seconds). Only valid for AMP Timer
-   * trigger.
-   *
-   * @param Parameter $intervalSeconds
+   * @param Parameter
    */
   public function setIntervalSeconds(Parameter $intervalSeconds)
   {
@@ -367,11 +276,7 @@ class Trigger extends \Google\Collection
     return $this->intervalSeconds;
   }
   /**
-   * Limit of the number of GTM events this Timer Trigger will fire. If no limit
-   * is set, we will continue to fire GTM events until the user leaves the page.
-   * Only valid for Timer triggers.
-   *
-   * @param Parameter $limit
+   * @param Parameter
    */
   public function setLimit(Parameter $limit)
   {
@@ -385,10 +290,7 @@ class Trigger extends \Google\Collection
     return $this->limit;
   }
   /**
-   * Max time to fire Timer Events (in seconds). Only valid for AMP Timer
-   * trigger.
-   *
-   * @param Parameter $maxTimerLengthSeconds
+   * @param Parameter
    */
   public function setMaxTimerLengthSeconds(Parameter $maxTimerLengthSeconds)
   {
@@ -402,9 +304,7 @@ class Trigger extends \Google\Collection
     return $this->maxTimerLengthSeconds;
   }
   /**
-   * Trigger display name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -418,9 +318,7 @@ class Trigger extends \Google\Collection
     return $this->name;
   }
   /**
-   * User notes on how to apply this trigger in the container.
-   *
-   * @param string $notes
+   * @param string
    */
   public function setNotes($notes)
   {
@@ -434,9 +332,7 @@ class Trigger extends \Google\Collection
     return $this->notes;
   }
   /**
-   * Additional parameters.
-   *
-   * @param Parameter[] $parameter
+   * @param Parameter[]
    */
   public function setParameter($parameter)
   {
@@ -450,9 +346,7 @@ class Trigger extends \Google\Collection
     return $this->parameter;
   }
   /**
-   * Parent folder id.
-   *
-   * @param string $parentFolderId
+   * @param string
    */
   public function setParentFolderId($parentFolderId)
   {
@@ -466,9 +360,7 @@ class Trigger extends \Google\Collection
     return $this->parentFolderId;
   }
   /**
-   * GTM Trigger's API relative path.
-   *
-   * @param string $path
+   * @param string
    */
   public function setPath($path)
   {
@@ -482,10 +374,7 @@ class Trigger extends \Google\Collection
     return $this->path;
   }
   /**
-   * A click trigger CSS selector (i.e. "a", "button" etc.). Only valid for AMP
-   * Click trigger.
-   *
-   * @param Parameter $selector
+   * @param Parameter
    */
   public function setSelector(Parameter $selector)
   {
@@ -499,9 +388,7 @@ class Trigger extends \Google\Collection
     return $this->selector;
   }
   /**
-   * Auto generated link to the tag manager UI
-   *
-   * @param string $tagManagerUrl
+   * @param string
    */
   public function setTagManagerUrl($tagManagerUrl)
   {
@@ -515,10 +402,7 @@ class Trigger extends \Google\Collection
     return $this->tagManagerUrl;
   }
   /**
-   * A visibility trigger minimum total visible time (in milliseconds). Only
-   * valid for AMP Visibility trigger.
-   *
-   * @param Parameter $totalTimeMinMilliseconds
+   * @param Parameter
    */
   public function setTotalTimeMinMilliseconds(Parameter $totalTimeMinMilliseconds)
   {
@@ -532,9 +416,7 @@ class Trigger extends \Google\Collection
     return $this->totalTimeMinMilliseconds;
   }
   /**
-   * The Trigger ID uniquely identifies the GTM Trigger.
-   *
-   * @param string $triggerId
+   * @param string
    */
   public function setTriggerId($triggerId)
   {
@@ -548,40 +430,21 @@ class Trigger extends \Google\Collection
     return $this->triggerId;
   }
   /**
-   * Defines the data layer event that causes this trigger.
-   *
-   * Accepted values: eventTypeUnspecified, pageview, domReady, windowLoaded,
-   * customEvent, triggerGroup, init, consentInit, serverPageview, always,
-   * firebaseAppException, firebaseAppUpdate, firebaseCampaign,
-   * firebaseFirstOpen, firebaseInAppPurchase, firebaseNotificationDismiss,
-   * firebaseNotificationForeground, firebaseNotificationOpen,
-   * firebaseNotificationReceive, firebaseOsUpdate, firebaseSessionStart,
-   * firebaseUserEngagement, formSubmission, click, linkClick, jsError,
-   * historyChange, timer, ampClick, ampTimer, ampScroll, ampVisibility,
-   * youTubeVideo, scrollDepth, elementVisibility
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {
     return $this->type;
   }
   /**
-   * Globally unique id of the trigger that auto-generates this (a Form Submit,
-   * Link Click or Timer listener) if any. Used to make incompatible auto-events
-   * work together with trigger filtering based on trigger ids. This value is
-   * populated during output generation since the tags implied by triggers don't
-   * exist until then. Only valid for Form Submit, Link Click and Timer
-   * triggers.
-   *
-   * @param Parameter $uniqueTriggerId
+   * @param Parameter
    */
   public function setUniqueTriggerId(Parameter $uniqueTriggerId)
   {
@@ -595,11 +458,7 @@ class Trigger extends \Google\Collection
     return $this->uniqueTriggerId;
   }
   /**
-   * List of integer percentage values for scroll triggers. The trigger will
-   * fire when each percentage is reached when the view is scrolled vertically.
-   * Only valid for AMP scroll triggers.
-   *
-   * @param Parameter $verticalScrollPercentageList
+   * @param Parameter
    */
   public function setVerticalScrollPercentageList(Parameter $verticalScrollPercentageList)
   {
@@ -613,10 +472,7 @@ class Trigger extends \Google\Collection
     return $this->verticalScrollPercentageList;
   }
   /**
-   * A visibility trigger CSS selector (i.e. "#id"). Only valid for AMP
-   * Visibility trigger.
-   *
-   * @param Parameter $visibilitySelector
+   * @param Parameter
    */
   public function setVisibilitySelector(Parameter $visibilitySelector)
   {
@@ -630,10 +486,7 @@ class Trigger extends \Google\Collection
     return $this->visibilitySelector;
   }
   /**
-   * A visibility trigger maximum percent visibility. Only valid for AMP
-   * Visibility trigger.
-   *
-   * @param Parameter $visiblePercentageMax
+   * @param Parameter
    */
   public function setVisiblePercentageMax(Parameter $visiblePercentageMax)
   {
@@ -647,10 +500,7 @@ class Trigger extends \Google\Collection
     return $this->visiblePercentageMax;
   }
   /**
-   * A visibility trigger minimum percent visibility. Only valid for AMP
-   * Visibility trigger.
-   *
-   * @param Parameter $visiblePercentageMin
+   * @param Parameter
    */
   public function setVisiblePercentageMin(Parameter $visiblePercentageMin)
   {
@@ -664,12 +514,7 @@ class Trigger extends \Google\Collection
     return $this->visiblePercentageMin;
   }
   /**
-   * Whether or not we should delay the form submissions or link opening until
-   * all of the tags have fired (by preventing the default action and later
-   * simulating the default action). Only valid for Form Submission and Link
-   * Click triggers.
-   *
-   * @param Parameter $waitForTags
+   * @param Parameter
    */
   public function setWaitForTags(Parameter $waitForTags)
   {
@@ -683,11 +528,7 @@ class Trigger extends \Google\Collection
     return $this->waitForTags;
   }
   /**
-   * How long to wait (in milliseconds) for tags to fire when 'waits_for_tags'
-   * above evaluates to true. Only valid for Form Submission and Link Click
-   * triggers.
-   *
-   * @param Parameter $waitForTagsTimeout
+   * @param Parameter
    */
   public function setWaitForTagsTimeout(Parameter $waitForTagsTimeout)
   {
@@ -701,9 +542,7 @@ class Trigger extends \Google\Collection
     return $this->waitForTagsTimeout;
   }
   /**
-   * GTM Workspace ID.
-   *
-   * @param string $workspaceId
+   * @param string
    */
   public function setWorkspaceId($workspaceId)
   {

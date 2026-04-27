@@ -20,16 +20,12 @@ namespace Google\Service\Slides;
 class WordArt extends \Google\Model
 {
   /**
-   * The text rendered as word art.
-   *
    * @var string
    */
   public $renderedText;
 
   /**
-   * The text rendered as word art.
-   *
-   * @param string $renderedText
+   * @param string
    */
   public function setRenderedText($renderedText)
   {

@@ -21,16 +21,12 @@ class GoogleCloudIntegrationsV1alphaScheduleIntegrationsResponse extends \Google
 {
   protected $collection_key = 'executionInfoIds';
   /**
-   * The execution info id for the executed integrations.
-   *
    * @var string[]
    */
   public $executionInfoIds;
 
   /**
-   * The execution info id for the executed integrations.
-   *
-   * @param string[] $executionInfoIds
+   * @param string[]
    */
   public function setExecutionInfoIds($executionInfoIds)
   {

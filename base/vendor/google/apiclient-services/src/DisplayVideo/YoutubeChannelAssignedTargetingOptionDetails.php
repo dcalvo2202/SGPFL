@@ -20,22 +20,16 @@ namespace Google\Service\DisplayVideo;
 class YoutubeChannelAssignedTargetingOptionDetails extends \Google\Model
 {
   /**
-   * The YouTube uploader channel id or the channel code of a YouTube channel.
-   *
    * @var string
    */
   public $channelId;
   /**
-   * Indicates if this option is being negatively targeted.
-   *
    * @var bool
    */
   public $negative;
 
   /**
-   * The YouTube uploader channel id or the channel code of a YouTube channel.
-   *
-   * @param string $channelId
+   * @param string
    */
   public function setChannelId($channelId)
   {
@@ -49,9 +43,7 @@ class YoutubeChannelAssignedTargetingOptionDetails extends \Google\Model
     return $this->channelId;
   }
   /**
-   * Indicates if this option is being negatively targeted.
-   *
-   * @param bool $negative
+   * @param bool
    */
   public function setNegative($negative)
   {

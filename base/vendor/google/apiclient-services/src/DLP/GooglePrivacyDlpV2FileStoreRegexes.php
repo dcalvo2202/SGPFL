@@ -24,11 +24,7 @@ class GooglePrivacyDlpV2FileStoreRegexes extends \Google\Collection
   protected $patternsDataType = 'array';
 
   /**
-   * Required. The group of regular expression patterns to match against one or
-   * more file stores. Maximum of 100 entries. The sum of all regular
-   * expression's length can't exceed 10 KiB.
-   *
-   * @param GooglePrivacyDlpV2FileStoreRegex[] $patterns
+   * @param GooglePrivacyDlpV2FileStoreRegex[]
    */
   public function setPatterns($patterns)
   {

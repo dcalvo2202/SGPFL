@@ -25,9 +25,7 @@ class GoogleCloudAiplatformV1SafetyInput extends \Google\Model
   protected $metricSpecDataType = '';
 
   /**
-   * Required. Safety instance.
-   *
-   * @param GoogleCloudAiplatformV1SafetyInstance $instance
+   * @param GoogleCloudAiplatformV1SafetyInstance
    */
   public function setInstance(GoogleCloudAiplatformV1SafetyInstance $instance)
   {
@@ -41,9 +39,7 @@ class GoogleCloudAiplatformV1SafetyInput extends \Google\Model
     return $this->instance;
   }
   /**
-   * Required. Spec for safety metric.
-   *
-   * @param GoogleCloudAiplatformV1SafetySpec $metricSpec
+   * @param GoogleCloudAiplatformV1SafetySpec
    */
   public function setMetricSpec(GoogleCloudAiplatformV1SafetySpec $metricSpec)
   {

@@ -20,38 +20,24 @@ namespace Google\Service\Directory;
 class UserWebsite extends \Google\Model
 {
   /**
-   * Custom Type.
-   *
    * @var string
    */
   public $customType;
   /**
-   * If this is user's primary website or not.
-   *
    * @var bool
    */
   public $primary;
   /**
-   * Each entry can have a type which indicates standard types of that entry.
-   * For example website could be of home work blog etc. In addition to the
-   * standard type an entry can have a custom type and can give it any name.
-   * Such types should have the CUSTOM value as type and also have a customType
-   * value.
-   *
    * @var string
    */
   public $type;
   /**
-   * Website.
-   *
    * @var string
    */
   public $value;
 
   /**
-   * Custom Type.
-   *
-   * @param string $customType
+   * @param string
    */
   public function setCustomType($customType)
   {
@@ -65,9 +51,7 @@ class UserWebsite extends \Google\Model
     return $this->customType;
   }
   /**
-   * If this is user's primary website or not.
-   *
-   * @param bool $primary
+   * @param bool
    */
   public function setPrimary($primary)
   {
@@ -81,13 +65,7 @@ class UserWebsite extends \Google\Model
     return $this->primary;
   }
   /**
-   * Each entry can have a type which indicates standard types of that entry.
-   * For example website could be of home work blog etc. In addition to the
-   * standard type an entry can have a custom type and can give it any name.
-   * Such types should have the CUSTOM value as type and also have a customType
-   * value.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {
@@ -101,9 +79,7 @@ class UserWebsite extends \Google\Model
     return $this->type;
   }
   /**
-   * Website.
-   *
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

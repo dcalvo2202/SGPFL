@@ -31,9 +31,7 @@ class GoogleCloudAiplatformV1RagVectorDbConfig extends \Google\Model
   protected $vertexVectorSearchDataType = '';
 
   /**
-   * Authentication config for the chosen Vector DB.
-   *
-   * @param GoogleCloudAiplatformV1ApiAuth $apiAuth
+   * @param GoogleCloudAiplatformV1ApiAuth
    */
   public function setApiAuth(GoogleCloudAiplatformV1ApiAuth $apiAuth)
   {
@@ -47,9 +45,7 @@ class GoogleCloudAiplatformV1RagVectorDbConfig extends \Google\Model
     return $this->apiAuth;
   }
   /**
-   * The config for the Pinecone.
-   *
-   * @param GoogleCloudAiplatformV1RagVectorDbConfigPinecone $pinecone
+   * @param GoogleCloudAiplatformV1RagVectorDbConfigPinecone
    */
   public function setPinecone(GoogleCloudAiplatformV1RagVectorDbConfigPinecone $pinecone)
   {
@@ -63,9 +59,7 @@ class GoogleCloudAiplatformV1RagVectorDbConfig extends \Google\Model
     return $this->pinecone;
   }
   /**
-   * Optional. Immutable. The embedding model config of the Vector DB.
-   *
-   * @param GoogleCloudAiplatformV1RagEmbeddingModelConfig $ragEmbeddingModelConfig
+   * @param GoogleCloudAiplatformV1RagEmbeddingModelConfig
    */
   public function setRagEmbeddingModelConfig(GoogleCloudAiplatformV1RagEmbeddingModelConfig $ragEmbeddingModelConfig)
   {
@@ -79,9 +73,7 @@ class GoogleCloudAiplatformV1RagVectorDbConfig extends \Google\Model
     return $this->ragEmbeddingModelConfig;
   }
   /**
-   * The config for the RAG-managed Vector DB.
-   *
-   * @param GoogleCloudAiplatformV1RagVectorDbConfigRagManagedDb $ragManagedDb
+   * @param GoogleCloudAiplatformV1RagVectorDbConfigRagManagedDb
    */
   public function setRagManagedDb(GoogleCloudAiplatformV1RagVectorDbConfigRagManagedDb $ragManagedDb)
   {
@@ -95,9 +87,7 @@ class GoogleCloudAiplatformV1RagVectorDbConfig extends \Google\Model
     return $this->ragManagedDb;
   }
   /**
-   * The config for the Vertex Vector Search.
-   *
-   * @param GoogleCloudAiplatformV1RagVectorDbConfigVertexVectorSearch $vertexVectorSearch
+   * @param GoogleCloudAiplatformV1RagVectorDbConfigVertexVectorSearch
    */
   public function setVertexVectorSearch(GoogleCloudAiplatformV1RagVectorDbConfigVertexVectorSearch $vertexVectorSearch)
   {

@@ -20,41 +20,28 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1AnswerReferenceChunkInfoDocumentMetadata extends \Google\Model
 {
   /**
-   * Document resource name.
-   *
    * @var string
    */
   public $document;
   /**
-   * Page identifier.
-   *
    * @var string
    */
   public $pageIdentifier;
   /**
-   * The structured JSON metadata for the document. It is populated from the
-   * struct data from the Chunk in search result.
-   *
    * @var array[]
    */
   public $structData;
   /**
-   * Title.
-   *
    * @var string
    */
   public $title;
   /**
-   * URI for the document.
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * Document resource name.
-   *
-   * @param string $document
+   * @param string
    */
   public function setDocument($document)
   {
@@ -68,9 +55,7 @@ class GoogleCloudDiscoveryengineV1AnswerReferenceChunkInfoDocumentMetadata exten
     return $this->document;
   }
   /**
-   * Page identifier.
-   *
-   * @param string $pageIdentifier
+   * @param string
    */
   public function setPageIdentifier($pageIdentifier)
   {
@@ -84,10 +69,7 @@ class GoogleCloudDiscoveryengineV1AnswerReferenceChunkInfoDocumentMetadata exten
     return $this->pageIdentifier;
   }
   /**
-   * The structured JSON metadata for the document. It is populated from the
-   * struct data from the Chunk in search result.
-   *
-   * @param array[] $structData
+   * @param array[]
    */
   public function setStructData($structData)
   {
@@ -101,9 +83,7 @@ class GoogleCloudDiscoveryengineV1AnswerReferenceChunkInfoDocumentMetadata exten
     return $this->structData;
   }
   /**
-   * Title.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {
@@ -117,9 +97,7 @@ class GoogleCloudDiscoveryengineV1AnswerReferenceChunkInfoDocumentMetadata exten
     return $this->title;
   }
   /**
-   * URI for the document.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

@@ -24,10 +24,7 @@ class CustomListGroup extends \Google\Collection
   protected $settingsDataType = 'array';
 
   /**
-   * Required. All custom list targeting settings in custom list group. Repeated
-   * settings with the same id will be ignored.
-   *
-   * @param CustomListTargetingSetting[] $settings
+   * @param CustomListTargetingSetting[]
    */
   public function setSettings($settings)
   {

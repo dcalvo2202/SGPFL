@@ -23,9 +23,7 @@ class RestoreInstanceRequest extends \Google\Model
   protected $snapshotDataType = '';
 
   /**
-   * Snapshot to be used for restore.
-   *
-   * @param Snapshot $snapshot
+   * @param Snapshot
    */
   public function setSnapshot(Snapshot $snapshot)
   {

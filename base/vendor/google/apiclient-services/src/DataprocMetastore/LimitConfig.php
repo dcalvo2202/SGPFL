@@ -20,25 +20,16 @@ namespace Google\Service\DataprocMetastore;
 class LimitConfig extends \Google\Model
 {
   /**
-   * Optional. The highest scaling factor that the service should be autoscaled
-   * to.
-   *
    * @var float
    */
   public $maxScalingFactor;
   /**
-   * Optional. The lowest scaling factor that the service should be autoscaled
-   * to.
-   *
    * @var float
    */
   public $minScalingFactor;
 
   /**
-   * Optional. The highest scaling factor that the service should be autoscaled
-   * to.
-   *
-   * @param float $maxScalingFactor
+   * @param float
    */
   public function setMaxScalingFactor($maxScalingFactor)
   {
@@ -52,10 +43,7 @@ class LimitConfig extends \Google\Model
     return $this->maxScalingFactor;
   }
   /**
-   * Optional. The lowest scaling factor that the service should be autoscaled
-   * to.
-   *
-   * @param float $minScalingFactor
+   * @param float
    */
   public function setMinScalingFactor($minScalingFactor)
   {

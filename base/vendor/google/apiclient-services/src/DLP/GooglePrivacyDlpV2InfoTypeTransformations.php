@@ -24,10 +24,7 @@ class GooglePrivacyDlpV2InfoTypeTransformations extends \Google\Collection
   protected $transformationsDataType = 'array';
 
   /**
-   * Required. Transformation for each infoType. Cannot specify more than one
-   * for a given infoType.
-   *
-   * @param GooglePrivacyDlpV2InfoTypeTransformation[] $transformations
+   * @param GooglePrivacyDlpV2InfoTypeTransformation[]
    */
   public function setTransformations($transformations)
   {

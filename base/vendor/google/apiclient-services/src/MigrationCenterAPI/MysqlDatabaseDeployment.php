@@ -25,8 +25,6 @@ class MysqlDatabaseDeployment extends \Google\Collection
   protected $propertiesType = MySqlProperty::class;
   protected $propertiesDataType = 'array';
   /**
-   * Optional. Number of resource groups.
-   *
    * @var int
    */
   public $resourceGroupsCount;
@@ -34,9 +32,7 @@ class MysqlDatabaseDeployment extends \Google\Collection
   protected $variablesDataType = 'array';
 
   /**
-   * Optional. List of MySql plugins.
-   *
-   * @param MySqlPlugin[] $plugins
+   * @param MySqlPlugin[]
    */
   public function setPlugins($plugins)
   {
@@ -50,9 +46,7 @@ class MysqlDatabaseDeployment extends \Google\Collection
     return $this->plugins;
   }
   /**
-   * Optional. List of MySql properties.
-   *
-   * @param MySqlProperty[] $properties
+   * @param MySqlProperty[]
    */
   public function setProperties($properties)
   {
@@ -66,9 +60,7 @@ class MysqlDatabaseDeployment extends \Google\Collection
     return $this->properties;
   }
   /**
-   * Optional. Number of resource groups.
-   *
-   * @param int $resourceGroupsCount
+   * @param int
    */
   public function setResourceGroupsCount($resourceGroupsCount)
   {
@@ -82,9 +74,7 @@ class MysqlDatabaseDeployment extends \Google\Collection
     return $this->resourceGroupsCount;
   }
   /**
-   * Optional. List of MySql variables.
-   *
-   * @param MySqlVariable[] $variables
+   * @param MySqlVariable[]
    */
   public function setVariables($variables)
   {

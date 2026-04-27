@@ -23,66 +23,36 @@ class CivicinfoSchemaV2PollingLocation extends \Google\Collection
   protected $addressType = CivicinfoSchemaV2SimpleAddressType::class;
   protected $addressDataType = '';
   /**
-   * The last date that this early vote site or drop off location may be used.
-   * This field is not populated for polling locations.
-   *
    * @var string
    */
   public $endDate;
-  /**
-   * Latitude of the location, in degrees north of the equator. Note this field
-   * may not be available for some locations.
-   *
-   * @var 
-   */
   public $latitude;
-  /**
-   * Longitude of the location, in degrees east of the Prime Meridian. Note this
-   * field may not be available for some locations.
-   *
-   * @var 
-   */
   public $longitude;
   /**
-   * The name of the early vote site or drop off location. This field is not
-   * populated for polling locations.
-   *
    * @var string
    */
   public $name;
   /**
-   * Notes about this location (e.g. accessibility ramp or entrance to use).
-   *
    * @var string
    */
   public $notes;
   /**
-   * A description of when this location is open.
-   *
    * @var string
    */
   public $pollingHours;
   protected $sourcesType = CivicinfoSchemaV2Source::class;
   protected $sourcesDataType = 'array';
   /**
-   * The first date that this early vote site or drop off location may be used.
-   * This field is not populated for polling locations.
-   *
    * @var string
    */
   public $startDate;
   /**
-   * The services provided by this early vote site or drop off location. This
-   * field is not populated for polling locations.
-   *
    * @var string
    */
   public $voterServices;
 
   /**
-   * The address of the location.
-   *
-   * @param CivicinfoSchemaV2SimpleAddressType $address
+   * @param CivicinfoSchemaV2SimpleAddressType
    */
   public function setAddress(CivicinfoSchemaV2SimpleAddressType $address)
   {
@@ -96,10 +66,7 @@ class CivicinfoSchemaV2PollingLocation extends \Google\Collection
     return $this->address;
   }
   /**
-   * The last date that this early vote site or drop off location may be used.
-   * This field is not populated for polling locations.
-   *
-   * @param string $endDate
+   * @param string
    */
   public function setEndDate($endDate)
   {
@@ -129,10 +96,7 @@ class CivicinfoSchemaV2PollingLocation extends \Google\Collection
     return $this->longitude;
   }
   /**
-   * The name of the early vote site or drop off location. This field is not
-   * populated for polling locations.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -146,9 +110,7 @@ class CivicinfoSchemaV2PollingLocation extends \Google\Collection
     return $this->name;
   }
   /**
-   * Notes about this location (e.g. accessibility ramp or entrance to use).
-   *
-   * @param string $notes
+   * @param string
    */
   public function setNotes($notes)
   {
@@ -162,9 +124,7 @@ class CivicinfoSchemaV2PollingLocation extends \Google\Collection
     return $this->notes;
   }
   /**
-   * A description of when this location is open.
-   *
-   * @param string $pollingHours
+   * @param string
    */
   public function setPollingHours($pollingHours)
   {
@@ -178,10 +138,7 @@ class CivicinfoSchemaV2PollingLocation extends \Google\Collection
     return $this->pollingHours;
   }
   /**
-   * A list of sources for this location. If multiple sources are listed the
-   * data has been aggregated from those sources.
-   *
-   * @param CivicinfoSchemaV2Source[] $sources
+   * @param CivicinfoSchemaV2Source[]
    */
   public function setSources($sources)
   {
@@ -195,10 +152,7 @@ class CivicinfoSchemaV2PollingLocation extends \Google\Collection
     return $this->sources;
   }
   /**
-   * The first date that this early vote site or drop off location may be used.
-   * This field is not populated for polling locations.
-   *
-   * @param string $startDate
+   * @param string
    */
   public function setStartDate($startDate)
   {
@@ -212,10 +166,7 @@ class CivicinfoSchemaV2PollingLocation extends \Google\Collection
     return $this->startDate;
   }
   /**
-   * The services provided by this early vote site or drop off location. This
-   * field is not populated for polling locations.
-   *
-   * @param string $voterServices
+   * @param string
    */
   public function setVoterServices($voterServices)
   {

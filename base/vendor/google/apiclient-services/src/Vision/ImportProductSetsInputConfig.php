@@ -23,10 +23,7 @@ class ImportProductSetsInputConfig extends \Google\Model
   protected $gcsSourceDataType = '';
 
   /**
-   * The Google Cloud Storage location for a csv file which preserves a list of
-   * ImportProductSetRequests in each line.
-   *
-   * @param ImportProductSetsGcsSource $gcsSource
+   * @param ImportProductSetsGcsSource
    */
   public function setGcsSource(ImportProductSetsGcsSource $gcsSource)
   {

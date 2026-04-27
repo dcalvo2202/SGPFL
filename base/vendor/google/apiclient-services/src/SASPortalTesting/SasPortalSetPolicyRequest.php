@@ -20,25 +20,18 @@ namespace Google\Service\SASPortalTesting;
 class SasPortalSetPolicyRequest extends \Google\Model
 {
   /**
-   * Optional. Set the field as `true` to disable the onboarding notification.
-   *
    * @var bool
    */
   public $disableNotification;
   protected $policyType = SasPortalPolicy::class;
   protected $policyDataType = '';
   /**
-   * Required. The resource for which the policy is being specified. This policy
-   * replaces any existing policy.
-   *
    * @var string
    */
   public $resource;
 
   /**
-   * Optional. Set the field as `true` to disable the onboarding notification.
-   *
-   * @param bool $disableNotification
+   * @param bool
    */
   public function setDisableNotification($disableNotification)
   {
@@ -52,9 +45,7 @@ class SasPortalSetPolicyRequest extends \Google\Model
     return $this->disableNotification;
   }
   /**
-   * Required. The policy to be applied to the `resource`.
-   *
-   * @param SasPortalPolicy $policy
+   * @param SasPortalPolicy
    */
   public function setPolicy(SasPortalPolicy $policy)
   {
@@ -68,10 +59,7 @@ class SasPortalSetPolicyRequest extends \Google\Model
     return $this->policy;
   }
   /**
-   * Required. The resource for which the policy is being specified. This policy
-   * replaces any existing policy.
-   *
-   * @param string $resource
+   * @param string
    */
   public function setResource($resource)
   {

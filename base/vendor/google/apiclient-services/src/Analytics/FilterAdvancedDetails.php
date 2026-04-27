@@ -20,89 +20,60 @@ namespace Google\Service\Analytics;
 class FilterAdvancedDetails extends \Google\Model
 {
   /**
-   * Indicates if the filter expressions are case sensitive.
-   *
    * @var bool
    */
   public $caseSensitive;
   /**
-   * Expression to extract from field A.
-   *
    * @var string
    */
   public $extractA;
   /**
-   * Expression to extract from field B.
-   *
    * @var string
    */
   public $extractB;
   /**
-   * Field A.
-   *
    * @var string
    */
   public $fieldA;
   /**
-   * The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION.
-   *
    * @var int
    */
   public $fieldAIndex;
   /**
-   * Indicates if field A is required to match.
-   *
    * @var bool
    */
   public $fieldARequired;
   /**
-   * Field B.
-   *
    * @var string
    */
   public $fieldB;
   /**
-   * The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION.
-   *
    * @var int
    */
   public $fieldBIndex;
   /**
-   * Indicates if field B is required to match.
-   *
    * @var bool
    */
   public $fieldBRequired;
   /**
-   * Expression used to construct the output value.
-   *
    * @var string
    */
   public $outputConstructor;
   /**
-   * Output field.
-   *
    * @var string
    */
   public $outputToField;
   /**
-   * The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION.
-   *
    * @var int
    */
   public $outputToFieldIndex;
   /**
-   * Indicates if the existing value of the output field, if any, should be
-   * overridden by the output expression.
-   *
    * @var bool
    */
   public $overrideOutputField;
 
   /**
-   * Indicates if the filter expressions are case sensitive.
-   *
-   * @param bool $caseSensitive
+   * @param bool
    */
   public function setCaseSensitive($caseSensitive)
   {
@@ -116,9 +87,7 @@ class FilterAdvancedDetails extends \Google\Model
     return $this->caseSensitive;
   }
   /**
-   * Expression to extract from field A.
-   *
-   * @param string $extractA
+   * @param string
    */
   public function setExtractA($extractA)
   {
@@ -132,9 +101,7 @@ class FilterAdvancedDetails extends \Google\Model
     return $this->extractA;
   }
   /**
-   * Expression to extract from field B.
-   *
-   * @param string $extractB
+   * @param string
    */
   public function setExtractB($extractB)
   {
@@ -148,9 +115,7 @@ class FilterAdvancedDetails extends \Google\Model
     return $this->extractB;
   }
   /**
-   * Field A.
-   *
-   * @param string $fieldA
+   * @param string
    */
   public function setFieldA($fieldA)
   {
@@ -164,9 +129,7 @@ class FilterAdvancedDetails extends \Google\Model
     return $this->fieldA;
   }
   /**
-   * The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION.
-   *
-   * @param int $fieldAIndex
+   * @param int
    */
   public function setFieldAIndex($fieldAIndex)
   {
@@ -180,9 +143,7 @@ class FilterAdvancedDetails extends \Google\Model
     return $this->fieldAIndex;
   }
   /**
-   * Indicates if field A is required to match.
-   *
-   * @param bool $fieldARequired
+   * @param bool
    */
   public function setFieldARequired($fieldARequired)
   {
@@ -196,9 +157,7 @@ class FilterAdvancedDetails extends \Google\Model
     return $this->fieldARequired;
   }
   /**
-   * Field B.
-   *
-   * @param string $fieldB
+   * @param string
    */
   public function setFieldB($fieldB)
   {
@@ -212,9 +171,7 @@ class FilterAdvancedDetails extends \Google\Model
     return $this->fieldB;
   }
   /**
-   * The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION.
-   *
-   * @param int $fieldBIndex
+   * @param int
    */
   public function setFieldBIndex($fieldBIndex)
   {
@@ -228,9 +185,7 @@ class FilterAdvancedDetails extends \Google\Model
     return $this->fieldBIndex;
   }
   /**
-   * Indicates if field B is required to match.
-   *
-   * @param bool $fieldBRequired
+   * @param bool
    */
   public function setFieldBRequired($fieldBRequired)
   {
@@ -244,9 +199,7 @@ class FilterAdvancedDetails extends \Google\Model
     return $this->fieldBRequired;
   }
   /**
-   * Expression used to construct the output value.
-   *
-   * @param string $outputConstructor
+   * @param string
    */
   public function setOutputConstructor($outputConstructor)
   {
@@ -260,9 +213,7 @@ class FilterAdvancedDetails extends \Google\Model
     return $this->outputConstructor;
   }
   /**
-   * Output field.
-   *
-   * @param string $outputToField
+   * @param string
    */
   public function setOutputToField($outputToField)
   {
@@ -276,9 +227,7 @@ class FilterAdvancedDetails extends \Google\Model
     return $this->outputToField;
   }
   /**
-   * The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION.
-   *
-   * @param int $outputToFieldIndex
+   * @param int
    */
   public function setOutputToFieldIndex($outputToFieldIndex)
   {
@@ -292,10 +241,7 @@ class FilterAdvancedDetails extends \Google\Model
     return $this->outputToFieldIndex;
   }
   /**
-   * Indicates if the existing value of the output field, if any, should be
-   * overridden by the output expression.
-   *
-   * @param bool $overrideOutputField
+   * @param bool
    */
   public function setOverrideOutputField($overrideOutputField)
   {

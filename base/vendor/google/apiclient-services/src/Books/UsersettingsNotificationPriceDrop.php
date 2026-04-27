@@ -28,7 +28,7 @@ class UsersettingsNotificationPriceDrop extends \Google\Model
   public $optedState;
 
   /**
-   * @param string $optedState
+   * @param string
    */
   public function setOptedState($optedState)
   {

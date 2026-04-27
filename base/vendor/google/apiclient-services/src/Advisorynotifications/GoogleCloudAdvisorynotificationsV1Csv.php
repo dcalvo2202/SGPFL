@@ -23,17 +23,12 @@ class GoogleCloudAdvisorynotificationsV1Csv extends \Google\Collection
   protected $dataRowsType = GoogleCloudAdvisorynotificationsV1CsvCsvRow::class;
   protected $dataRowsDataType = 'array';
   /**
-   * The list of headers for data columns in a CSV file.
-   *
    * @var string[]
    */
   public $headers;
 
   /**
-   * The list of data rows in a CSV file, as string arrays rather than as a
-   * single comma-separated string.
-   *
-   * @param GoogleCloudAdvisorynotificationsV1CsvCsvRow[] $dataRows
+   * @param GoogleCloudAdvisorynotificationsV1CsvCsvRow[]
    */
   public function setDataRows($dataRows)
   {
@@ -47,9 +42,7 @@ class GoogleCloudAdvisorynotificationsV1Csv extends \Google\Collection
     return $this->dataRows;
   }
   /**
-   * The list of headers for data columns in a CSV file.
-   *
-   * @param string[] $headers
+   * @param string[]
    */
   public function setHeaders($headers)
   {

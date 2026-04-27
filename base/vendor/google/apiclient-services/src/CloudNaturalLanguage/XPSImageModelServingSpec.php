@@ -22,25 +22,14 @@ class XPSImageModelServingSpec extends \Google\Collection
   protected $collection_key = 'modelThroughputEstimation';
   protected $modelThroughputEstimationType = XPSImageModelServingSpecModelThroughputEstimation::class;
   protected $modelThroughputEstimationDataType = 'array';
-  /**
-   * An estimated value of how much traffic a node can serve. Populated for
-   * AutoMl request only.
-   *
-   * @var 
-   */
   public $nodeQps;
   /**
-   * ## The fields below are only populated under uCAIP request scope.
-   * https://cloud.google.com/ml-engine/docs/runtime-version-list
-   *
    * @var string
    */
   public $tfRuntimeVersion;
 
   /**
-   * Populate under uCAIP request scope.
-   *
-   * @param XPSImageModelServingSpecModelThroughputEstimation[] $modelThroughputEstimation
+   * @param XPSImageModelServingSpecModelThroughputEstimation[]
    */
   public function setModelThroughputEstimation($modelThroughputEstimation)
   {
@@ -62,10 +51,7 @@ class XPSImageModelServingSpec extends \Google\Collection
     return $this->nodeQps;
   }
   /**
-   * ## The fields below are only populated under uCAIP request scope.
-   * https://cloud.google.com/ml-engine/docs/runtime-version-list
-   *
-   * @param string $tfRuntimeVersion
+   * @param string
    */
   public function setTfRuntimeVersion($tfRuntimeVersion)
   {

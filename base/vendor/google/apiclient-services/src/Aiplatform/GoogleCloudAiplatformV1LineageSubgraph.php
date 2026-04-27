@@ -28,9 +28,7 @@ class GoogleCloudAiplatformV1LineageSubgraph extends \Google\Collection
   protected $executionsDataType = 'array';
 
   /**
-   * The Artifact nodes in the subgraph.
-   *
-   * @param GoogleCloudAiplatformV1Artifact[] $artifacts
+   * @param GoogleCloudAiplatformV1Artifact[]
    */
   public function setArtifacts($artifacts)
   {
@@ -44,9 +42,7 @@ class GoogleCloudAiplatformV1LineageSubgraph extends \Google\Collection
     return $this->artifacts;
   }
   /**
-   * The Event edges between Artifacts and Executions in the subgraph.
-   *
-   * @param GoogleCloudAiplatformV1Event[] $events
+   * @param GoogleCloudAiplatformV1Event[]
    */
   public function setEvents($events)
   {
@@ -60,9 +56,7 @@ class GoogleCloudAiplatformV1LineageSubgraph extends \Google\Collection
     return $this->events;
   }
   /**
-   * The Execution nodes in the subgraph.
-   *
-   * @param GoogleCloudAiplatformV1Execution[] $executions
+   * @param GoogleCloudAiplatformV1Execution[]
    */
   public function setExecutions($executions)
   {

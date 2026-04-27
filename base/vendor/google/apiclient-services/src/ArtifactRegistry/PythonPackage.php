@@ -20,53 +20,32 @@ namespace Google\Service\ArtifactRegistry;
 class PythonPackage extends \Google\Model
 {
   /**
-   * Output only. Time the package was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Required. registry_location, project_id, repository_name and python_package
-   * forms a unique package
-   * name:`projects//locations//repository//pythonPackages/`. For example,
-   * "projects/test-project/locations/us-west4/repositories/test-
-   * repo/pythonPackages/ python_package:1.0.0", where "us-west4" is the
-   * registry_location, "test-project" is the project_id, "test-repo" is the
-   * repository_name and python_package:1.0.0" is the python package.
-   *
    * @var string
    */
   public $name;
   /**
-   * Package for the artifact.
-   *
    * @var string
    */
   public $packageName;
   /**
-   * Output only. Time the package was updated.
-   *
    * @var string
    */
   public $updateTime;
   /**
-   * Required. URL to access the package. Example: us-west4-python.pkg.dev/test-
-   * project/test-repo/python_package/file-name-1.0.0.tar.gz
-   *
    * @var string
    */
   public $uri;
   /**
-   * Version of this package.
-   *
    * @var string
    */
   public $version;
 
   /**
-   * Output only. Time the package was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -80,15 +59,7 @@ class PythonPackage extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Required. registry_location, project_id, repository_name and python_package
-   * forms a unique package
-   * name:`projects//locations//repository//pythonPackages/`. For example,
-   * "projects/test-project/locations/us-west4/repositories/test-
-   * repo/pythonPackages/ python_package:1.0.0", where "us-west4" is the
-   * registry_location, "test-project" is the project_id, "test-repo" is the
-   * repository_name and python_package:1.0.0" is the python package.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -102,9 +73,7 @@ class PythonPackage extends \Google\Model
     return $this->name;
   }
   /**
-   * Package for the artifact.
-   *
-   * @param string $packageName
+   * @param string
    */
   public function setPackageName($packageName)
   {
@@ -118,9 +87,7 @@ class PythonPackage extends \Google\Model
     return $this->packageName;
   }
   /**
-   * Output only. Time the package was updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -134,10 +101,7 @@ class PythonPackage extends \Google\Model
     return $this->updateTime;
   }
   /**
-   * Required. URL to access the package. Example: us-west4-python.pkg.dev/test-
-   * project/test-repo/python_package/file-name-1.0.0.tar.gz
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {
@@ -151,9 +115,7 @@ class PythonPackage extends \Google\Model
     return $this->uri;
   }
   /**
-   * Version of this package.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

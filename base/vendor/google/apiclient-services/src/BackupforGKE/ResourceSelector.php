@@ -22,40 +22,20 @@ class ResourceSelector extends \Google\Model
   protected $groupKindType = GroupKind::class;
   protected $groupKindDataType = '';
   /**
-   * Optional. Selects resources using Kubernetes
-   * [labels](https://kubernetes.io/docs/concepts/overview/working-with-
-   * objects/labels/). If specified, a resource will be selected if and only if
-   * the resource has all of the provided labels and all the label values match.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Optional. Selects resources using their resource names. If specified, only
-   * resources with the provided name will be selected.
-   *
    * @var string
    */
   public $name;
   /**
-   * Optional. Selects resources using their namespaces. This only applies to
-   * namespace scoped resources and cannot be used for selecting cluster scoped
-   * resources. If specified, only resources in the provided namespace will be
-   * selected. If not specified, the filter will apply to both cluster scoped
-   * and namespace scoped resources (e.g. name or label). The
-   * [Namespace](https://pkg.go.dev/k8s.io/api/core/v1#Namespace) resource
-   * itself will be restored if and only if any resources within the namespace
-   * are restored.
-   *
    * @var string
    */
   public $namespace;
 
   /**
-   * Optional. Selects resources using their Kubernetes GroupKinds. If
-   * specified, only resources of provided GroupKind will be selected.
-   *
-   * @param GroupKind $groupKind
+   * @param GroupKind
    */
   public function setGroupKind(GroupKind $groupKind)
   {
@@ -69,12 +49,7 @@ class ResourceSelector extends \Google\Model
     return $this->groupKind;
   }
   /**
-   * Optional. Selects resources using Kubernetes
-   * [labels](https://kubernetes.io/docs/concepts/overview/working-with-
-   * objects/labels/). If specified, a resource will be selected if and only if
-   * the resource has all of the provided labels and all the label values match.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -88,10 +63,7 @@ class ResourceSelector extends \Google\Model
     return $this->labels;
   }
   /**
-   * Optional. Selects resources using their resource names. If specified, only
-   * resources with the provided name will be selected.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -105,16 +77,7 @@ class ResourceSelector extends \Google\Model
     return $this->name;
   }
   /**
-   * Optional. Selects resources using their namespaces. This only applies to
-   * namespace scoped resources and cannot be used for selecting cluster scoped
-   * resources. If specified, only resources in the provided namespace will be
-   * selected. If not specified, the filter will apply to both cluster scoped
-   * and namespace scoped resources (e.g. name or label). The
-   * [Namespace](https://pkg.go.dev/k8s.io/api/core/v1#Namespace) resource
-   * itself will be restored if and only if any resources within the namespace
-   * are restored.
-   *
-   * @param string $namespace
+   * @param string
    */
   public function setNamespace($namespace)
   {

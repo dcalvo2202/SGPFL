@@ -20,25 +20,16 @@ namespace Google\Service\ManagedKafka;
 class ConsumerPartitionMetadata extends \Google\Model
 {
   /**
-   * Optional. The associated metadata for this partition, or empty if it does
-   * not exist.
-   *
    * @var string
    */
   public $metadata;
   /**
-   * Required. The current offset for this partition, or 0 if no offset has been
-   * committed.
-   *
    * @var string
    */
   public $offset;
 
   /**
-   * Optional. The associated metadata for this partition, or empty if it does
-   * not exist.
-   *
-   * @param string $metadata
+   * @param string
    */
   public function setMetadata($metadata)
   {
@@ -52,10 +43,7 @@ class ConsumerPartitionMetadata extends \Google\Model
     return $this->metadata;
   }
   /**
-   * Required. The current offset for this partition, or 0 if no offset has been
-   * committed.
-   *
-   * @param string $offset
+   * @param string
    */
   public function setOffset($offset)
   {

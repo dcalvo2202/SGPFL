@@ -20,22 +20,16 @@ namespace Google\Service\Contentwarehouse;
 class GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlockLayoutPageSpan extends \Google\Model
 {
   /**
-   * Page where block ends in the document.
-   *
    * @var int
    */
   public $pageEnd;
   /**
-   * Page where block starts in the document.
-   *
    * @var int
    */
   public $pageStart;
 
   /**
-   * Page where block ends in the document.
-   *
-   * @param int $pageEnd
+   * @param int
    */
   public function setPageEnd($pageEnd)
   {
@@ -49,9 +43,7 @@ class GoogleCloudDocumentaiV1DocumentDocumentLayoutDocumentLayoutBlockLayoutPage
     return $this->pageEnd;
   }
   /**
-   * Page where block starts in the document.
-   *
-   * @param int $pageStart
+   * @param int
    */
   public function setPageStart($pageStart)
   {

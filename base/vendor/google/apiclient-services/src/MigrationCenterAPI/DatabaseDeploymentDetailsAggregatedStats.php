@@ -20,16 +20,12 @@ namespace Google\Service\MigrationCenterAPI;
 class DatabaseDeploymentDetailsAggregatedStats extends \Google\Model
 {
   /**
-   * Output only. The number of databases in the deployment.
-   *
    * @var int
    */
   public $databaseCount;
 
   /**
-   * Output only. The number of databases in the deployment.
-   *
-   * @param int $databaseCount
+   * @param int
    */
   public function setDatabaseCount($databaseCount)
   {

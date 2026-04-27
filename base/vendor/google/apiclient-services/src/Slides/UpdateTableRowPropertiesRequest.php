@@ -21,26 +21,14 @@ class UpdateTableRowPropertiesRequest extends \Google\Collection
 {
   protected $collection_key = 'rowIndices';
   /**
-   * The fields that should be updated. At least one field must be specified.
-   * The root `tableRowProperties` is implied and should not be specified. A
-   * single `"*"` can be used as short-hand for listing every field. For example
-   * to update the minimum row height, set `fields` to `"min_row_height"`. If
-   * '"min_row_height"' is included in the field mask but the property is left
-   * unset, the minimum row height will default to 0.
-   *
    * @var string
    */
   public $fields;
   /**
-   * The object ID of the table.
-   *
    * @var string
    */
   public $objectId;
   /**
-   * The list of zero-based indices specifying which rows to update. If no
-   * indices are provided, all rows in the table will be updated.
-   *
    * @var int[]
    */
   public $rowIndices;
@@ -48,14 +36,7 @@ class UpdateTableRowPropertiesRequest extends \Google\Collection
   protected $tableRowPropertiesDataType = '';
 
   /**
-   * The fields that should be updated. At least one field must be specified.
-   * The root `tableRowProperties` is implied and should not be specified. A
-   * single `"*"` can be used as short-hand for listing every field. For example
-   * to update the minimum row height, set `fields` to `"min_row_height"`. If
-   * '"min_row_height"' is included in the field mask but the property is left
-   * unset, the minimum row height will default to 0.
-   *
-   * @param string $fields
+   * @param string
    */
   public function setFields($fields)
   {
@@ -69,9 +50,7 @@ class UpdateTableRowPropertiesRequest extends \Google\Collection
     return $this->fields;
   }
   /**
-   * The object ID of the table.
-   *
-   * @param string $objectId
+   * @param string
    */
   public function setObjectId($objectId)
   {
@@ -85,10 +64,7 @@ class UpdateTableRowPropertiesRequest extends \Google\Collection
     return $this->objectId;
   }
   /**
-   * The list of zero-based indices specifying which rows to update. If no
-   * indices are provided, all rows in the table will be updated.
-   *
-   * @param int[] $rowIndices
+   * @param int[]
    */
   public function setRowIndices($rowIndices)
   {
@@ -102,9 +78,7 @@ class UpdateTableRowPropertiesRequest extends \Google\Collection
     return $this->rowIndices;
   }
   /**
-   * The table row properties to update.
-   *
-   * @param TableRowProperties $tableRowProperties
+   * @param TableRowProperties
    */
   public function setTableRowProperties(TableRowProperties $tableRowProperties)
   {

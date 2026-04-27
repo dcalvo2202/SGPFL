@@ -20,31 +20,18 @@ namespace Google\Service\ServiceNetworking;
 class RemoveDnsRecordSetRequest extends \Google\Model
 {
   /**
-   * Required. The network that the consumer is using to connect with services.
-   * Must be in the form of projects/{project}/global/networks/{network}
-   * {project} is the project number, as in '12345' {network} is the network
-   * name.
-   *
    * @var string
    */
   public $consumerNetwork;
   protected $dnsRecordSetType = DnsRecordSet::class;
   protected $dnsRecordSetDataType = '';
   /**
-   * Required. The name of the private DNS zone in the shared producer host
-   * project from which the record set will be removed.
-   *
    * @var string
    */
   public $zone;
 
   /**
-   * Required. The network that the consumer is using to connect with services.
-   * Must be in the form of projects/{project}/global/networks/{network}
-   * {project} is the project number, as in '12345' {network} is the network
-   * name.
-   *
-   * @param string $consumerNetwork
+   * @param string
    */
   public function setConsumerNetwork($consumerNetwork)
   {
@@ -58,9 +45,7 @@ class RemoveDnsRecordSetRequest extends \Google\Model
     return $this->consumerNetwork;
   }
   /**
-   * Required. The DNS record set to remove.
-   *
-   * @param DnsRecordSet $dnsRecordSet
+   * @param DnsRecordSet
    */
   public function setDnsRecordSet(DnsRecordSet $dnsRecordSet)
   {
@@ -74,10 +59,7 @@ class RemoveDnsRecordSetRequest extends \Google\Model
     return $this->dnsRecordSet;
   }
   /**
-   * Required. The name of the private DNS zone in the shared producer host
-   * project from which the record set will be removed.
-   *
-   * @param string $zone
+   * @param string
    */
   public function setZone($zone)
   {

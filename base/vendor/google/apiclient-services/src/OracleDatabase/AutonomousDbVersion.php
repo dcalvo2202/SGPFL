@@ -20,78 +20,38 @@ namespace Google\Service\OracleDatabase;
 class AutonomousDbVersion extends \Google\Model
 {
   /**
-   * Default unspecified value.
-   */
-  public const DB_WORKLOAD_DB_WORKLOAD_UNSPECIFIED = 'DB_WORKLOAD_UNSPECIFIED';
-  /**
-   * Autonomous Transaction Processing database.
-   */
-  public const DB_WORKLOAD_OLTP = 'OLTP';
-  /**
-   * Autonomous Data Warehouse database.
-   */
-  public const DB_WORKLOAD_DW = 'DW';
-  /**
-   * Autonomous JSON Database.
-   */
-  public const DB_WORKLOAD_AJD = 'AJD';
-  /**
-   * Autonomous Database with the Oracle APEX Application Development workload
-   * type.
-   */
-  public const DB_WORKLOAD_APEX = 'APEX';
-  /**
-   * Output only. The Autonomous Database workload type.
-   *
    * @var string
    */
   public $dbWorkload;
   /**
-   * Identifier. The name of the Autonomous Database Version resource with the
-   * format: projects/{project}/locations/{region}/autonomousDbVersions/{autonom
-   * ous_db_version}
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. An Oracle Database version for Autonomous Database.
-   *
    * @var string
    */
   public $version;
   /**
-   * Output only. A URL that points to a detailed description of the Autonomous
-   * Database version.
-   *
    * @var string
    */
   public $workloadUri;
 
   /**
-   * Output only. The Autonomous Database workload type.
-   *
-   * Accepted values: DB_WORKLOAD_UNSPECIFIED, OLTP, DW, AJD, APEX
-   *
-   * @param self::DB_WORKLOAD_* $dbWorkload
+   * @param string
    */
   public function setDbWorkload($dbWorkload)
   {
     $this->dbWorkload = $dbWorkload;
   }
   /**
-   * @return self::DB_WORKLOAD_*
+   * @return string
    */
   public function getDbWorkload()
   {
     return $this->dbWorkload;
   }
   /**
-   * Identifier. The name of the Autonomous Database Version resource with the
-   * format: projects/{project}/locations/{region}/autonomousDbVersions/{autonom
-   * ous_db_version}
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -105,9 +65,7 @@ class AutonomousDbVersion extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. An Oracle Database version for Autonomous Database.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {
@@ -121,10 +79,7 @@ class AutonomousDbVersion extends \Google\Model
     return $this->version;
   }
   /**
-   * Output only. A URL that points to a detailed description of the Autonomous
-   * Database version.
-   *
-   * @param string $workloadUri
+   * @param string
    */
   public function setWorkloadUri($workloadUri)
   {

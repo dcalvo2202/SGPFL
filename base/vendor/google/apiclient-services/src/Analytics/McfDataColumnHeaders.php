@@ -20,29 +20,20 @@ namespace Google\Service\Analytics;
 class McfDataColumnHeaders extends \Google\Model
 {
   /**
-   * Column Type. Either DIMENSION or METRIC.
-   *
    * @var string
    */
   public $columnType;
   /**
-   * Data type. Dimension and metric values data types such as INTEGER, DOUBLE,
-   * CURRENCY, MCF_SEQUENCE etc.
-   *
    * @var string
    */
   public $dataType;
   /**
-   * Column name.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Column Type. Either DIMENSION or METRIC.
-   *
-   * @param string $columnType
+   * @param string
    */
   public function setColumnType($columnType)
   {
@@ -56,10 +47,7 @@ class McfDataColumnHeaders extends \Google\Model
     return $this->columnType;
   }
   /**
-   * Data type. Dimension and metric values data types such as INTEGER, DOUBLE,
-   * CURRENCY, MCF_SEQUENCE etc.
-   *
-   * @param string $dataType
+   * @param string
    */
   public function setDataType($dataType)
   {
@@ -73,9 +61,7 @@ class McfDataColumnHeaders extends \Google\Model
     return $this->dataType;
   }
   /**
-   * Column name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

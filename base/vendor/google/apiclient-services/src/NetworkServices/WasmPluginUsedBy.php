@@ -20,20 +20,12 @@ namespace Google\Service\NetworkServices;
 class WasmPluginUsedBy extends \Google\Model
 {
   /**
-   * Output only. Full name of the resource https://google.aip.dev/122#full-
-   * resource-names, for example `//networkservices.googleapis.com/projects/{pro
-   * ject}/locations/{location}/lbRouteExtensions/{extension}`
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Output only. Full name of the resource https://google.aip.dev/122#full-
-   * resource-names, for example `//networkservices.googleapis.com/projects/{pro
-   * ject}/locations/{location}/lbRouteExtensions/{extension}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

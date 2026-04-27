@@ -20,72 +20,36 @@ namespace Google\Service\Container;
 class NodePoolAutoscaling extends \Google\Model
 {
   /**
-   * Not set.
-   */
-  public const LOCATION_POLICY_LOCATION_POLICY_UNSPECIFIED = 'LOCATION_POLICY_UNSPECIFIED';
-  /**
-   * BALANCED is a best effort policy that aims to balance the sizes of
-   * different zones.
-   */
-  public const LOCATION_POLICY_BALANCED = 'BALANCED';
-  /**
-   * ANY policy picks zones that have the highest capacity available.
-   */
-  public const LOCATION_POLICY_ANY = 'ANY';
-  /**
-   * Can this node pool be deleted automatically.
-   *
    * @var bool
    */
   public $autoprovisioned;
   /**
-   * Is autoscaling enabled for this node pool.
-   *
    * @var bool
    */
   public $enabled;
   /**
-   * Location policy used when scaling up a node pool.
-   *
    * @var string
    */
   public $locationPolicy;
   /**
-   * Maximum number of nodes for one location in the node pool. Must be >=
-   * min_node_count. There has to be enough quota to scale up the cluster.
-   *
    * @var int
    */
   public $maxNodeCount;
   /**
-   * Minimum number of nodes for one location in the node pool. Must be greater
-   * than or equal to 0 and less than or equal to max_node_count.
-   *
    * @var int
    */
   public $minNodeCount;
   /**
-   * Maximum number of nodes in the node pool. Must be greater than or equal to
-   * total_min_node_count. There has to be enough quota to scale up the cluster.
-   * The total_*_node_count fields are mutually exclusive with the *_node_count
-   * fields.
-   *
    * @var int
    */
   public $totalMaxNodeCount;
   /**
-   * Minimum number of nodes in the node pool. Must be greater than or equal to
-   * 0 and less than or equal to total_max_node_count. The total_*_node_count
-   * fields are mutually exclusive with the *_node_count fields.
-   *
    * @var int
    */
   public $totalMinNodeCount;
 
   /**
-   * Can this node pool be deleted automatically.
-   *
-   * @param bool $autoprovisioned
+   * @param bool
    */
   public function setAutoprovisioned($autoprovisioned)
   {
@@ -99,9 +63,7 @@ class NodePoolAutoscaling extends \Google\Model
     return $this->autoprovisioned;
   }
   /**
-   * Is autoscaling enabled for this node pool.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {
@@ -115,28 +77,21 @@ class NodePoolAutoscaling extends \Google\Model
     return $this->enabled;
   }
   /**
-   * Location policy used when scaling up a node pool.
-   *
-   * Accepted values: LOCATION_POLICY_UNSPECIFIED, BALANCED, ANY
-   *
-   * @param self::LOCATION_POLICY_* $locationPolicy
+   * @param string
    */
   public function setLocationPolicy($locationPolicy)
   {
     $this->locationPolicy = $locationPolicy;
   }
   /**
-   * @return self::LOCATION_POLICY_*
+   * @return string
    */
   public function getLocationPolicy()
   {
     return $this->locationPolicy;
   }
   /**
-   * Maximum number of nodes for one location in the node pool. Must be >=
-   * min_node_count. There has to be enough quota to scale up the cluster.
-   *
-   * @param int $maxNodeCount
+   * @param int
    */
   public function setMaxNodeCount($maxNodeCount)
   {
@@ -150,10 +105,7 @@ class NodePoolAutoscaling extends \Google\Model
     return $this->maxNodeCount;
   }
   /**
-   * Minimum number of nodes for one location in the node pool. Must be greater
-   * than or equal to 0 and less than or equal to max_node_count.
-   *
-   * @param int $minNodeCount
+   * @param int
    */
   public function setMinNodeCount($minNodeCount)
   {
@@ -167,12 +119,7 @@ class NodePoolAutoscaling extends \Google\Model
     return $this->minNodeCount;
   }
   /**
-   * Maximum number of nodes in the node pool. Must be greater than or equal to
-   * total_min_node_count. There has to be enough quota to scale up the cluster.
-   * The total_*_node_count fields are mutually exclusive with the *_node_count
-   * fields.
-   *
-   * @param int $totalMaxNodeCount
+   * @param int
    */
   public function setTotalMaxNodeCount($totalMaxNodeCount)
   {
@@ -186,11 +133,7 @@ class NodePoolAutoscaling extends \Google\Model
     return $this->totalMaxNodeCount;
   }
   /**
-   * Minimum number of nodes in the node pool. Must be greater than or equal to
-   * 0 and less than or equal to total_max_node_count. The total_*_node_count
-   * fields are mutually exclusive with the *_node_count fields.
-   *
-   * @param int $totalMinNodeCount
+   * @param int
    */
   public function setTotalMinNodeCount($totalMinNodeCount)
   {

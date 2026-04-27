@@ -22,46 +22,26 @@ class TestSuiteOverview extends \Google\Model
   protected $elapsedTimeType = Duration::class;
   protected $elapsedTimeDataType = '';
   /**
-   * Number of test cases in error, typically set by the service by parsing the
-   * xml_source. - In create/response: always set - In update request: never
-   *
    * @var int
    */
   public $errorCount;
   /**
-   * Number of failed test cases, typically set by the service by parsing the
-   * xml_source. May also be set by the user. - In create/response: always set -
-   * In update request: never
-   *
    * @var int
    */
   public $failureCount;
   /**
-   * Number of flaky test cases, set by the service by rolling up flaky test
-   * attempts. Present only for rollup test suite overview at environment level.
-   * A step cannot have flaky test cases.
-   *
    * @var int
    */
   public $flakyCount;
   /**
-   * The name of the test suite. - In create/response: always set - In update
-   * request: never
-   *
    * @var string
    */
   public $name;
   /**
-   * Number of test cases not run, typically set by the service by parsing the
-   * xml_source. - In create/response: always set - In update request: never
-   *
    * @var int
    */
   public $skippedCount;
   /**
-   * Number of test cases, typically set by the service by parsing the
-   * xml_source. - In create/response: always set - In update request: never
-   *
    * @var int
    */
   public $totalCount;
@@ -69,9 +49,7 @@ class TestSuiteOverview extends \Google\Model
   protected $xmlSourceDataType = '';
 
   /**
-   * Elapsed time of test suite.
-   *
-   * @param Duration $elapsedTime
+   * @param Duration
    */
   public function setElapsedTime(Duration $elapsedTime)
   {
@@ -85,10 +63,7 @@ class TestSuiteOverview extends \Google\Model
     return $this->elapsedTime;
   }
   /**
-   * Number of test cases in error, typically set by the service by parsing the
-   * xml_source. - In create/response: always set - In update request: never
-   *
-   * @param int $errorCount
+   * @param int
    */
   public function setErrorCount($errorCount)
   {
@@ -102,11 +77,7 @@ class TestSuiteOverview extends \Google\Model
     return $this->errorCount;
   }
   /**
-   * Number of failed test cases, typically set by the service by parsing the
-   * xml_source. May also be set by the user. - In create/response: always set -
-   * In update request: never
-   *
-   * @param int $failureCount
+   * @param int
    */
   public function setFailureCount($failureCount)
   {
@@ -120,11 +91,7 @@ class TestSuiteOverview extends \Google\Model
     return $this->failureCount;
   }
   /**
-   * Number of flaky test cases, set by the service by rolling up flaky test
-   * attempts. Present only for rollup test suite overview at environment level.
-   * A step cannot have flaky test cases.
-   *
-   * @param int $flakyCount
+   * @param int
    */
   public function setFlakyCount($flakyCount)
   {
@@ -138,10 +105,7 @@ class TestSuiteOverview extends \Google\Model
     return $this->flakyCount;
   }
   /**
-   * The name of the test suite. - In create/response: always set - In update
-   * request: never
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -155,10 +119,7 @@ class TestSuiteOverview extends \Google\Model
     return $this->name;
   }
   /**
-   * Number of test cases not run, typically set by the service by parsing the
-   * xml_source. - In create/response: always set - In update request: never
-   *
-   * @param int $skippedCount
+   * @param int
    */
   public function setSkippedCount($skippedCount)
   {
@@ -172,10 +133,7 @@ class TestSuiteOverview extends \Google\Model
     return $this->skippedCount;
   }
   /**
-   * Number of test cases, typically set by the service by parsing the
-   * xml_source. - In create/response: always set - In update request: never
-   *
-   * @param int $totalCount
+   * @param int
    */
   public function setTotalCount($totalCount)
   {
@@ -189,12 +147,7 @@ class TestSuiteOverview extends \Google\Model
     return $this->totalCount;
   }
   /**
-   * If this test suite was parsed from XML, this is the URI where the original
-   * XML file is stored. Note: Multiple test suites can share the same
-   * xml_source Returns INVALID_ARGUMENT if the uri format is not supported. -
-   * In create/response: optional - In update request: never
-   *
-   * @param FileReference $xmlSource
+   * @param FileReference
    */
   public function setXmlSource(FileReference $xmlSource)
   {

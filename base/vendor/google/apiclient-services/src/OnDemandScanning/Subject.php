@@ -20,9 +20,6 @@ namespace Google\Service\OnDemandScanning;
 class Subject extends \Google\Model
 {
   /**
-   * `"": ""` Algorithms can be e.g. sha256, sha512 See https://github.com/in-
-   * toto/attestation/blob/main/spec/field_types.md#DigestSet
-   *
    * @var string[]
    */
   public $digest;
@@ -32,10 +29,7 @@ class Subject extends \Google\Model
   public $name;
 
   /**
-   * `"": ""` Algorithms can be e.g. sha256, sha512 See https://github.com/in-
-   * toto/attestation/blob/main/spec/field_types.md#DigestSet
-   *
-   * @param string[] $digest
+   * @param string[]
    */
   public function setDigest($digest)
   {
@@ -49,7 +43,7 @@ class Subject extends \Google\Model
     return $this->digest;
   }
   /**
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

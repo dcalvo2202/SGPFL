@@ -21,24 +21,16 @@ class PipelineTask extends \Google\Collection
 {
   protected $collection_key = 'workspaces';
   /**
-   * Name of the task.
-   *
    * @var string
    */
   public $name;
   protected $paramsType = Param::class;
   protected $paramsDataType = 'array';
   /**
-   * Retries represents how many times this task should be retried in case of
-   * task failure.
-   *
    * @var int
    */
   public $retries;
   /**
-   * RunAfter is the list of PipelineTask names that should be executed before
-   * this Task executes. (Used to force a specific ordering in graph execution.)
-   *
    * @var string[]
    */
   public $runAfter;
@@ -47,9 +39,6 @@ class PipelineTask extends \Google\Collection
   protected $taskSpecType = EmbeddedTask::class;
   protected $taskSpecDataType = '';
   /**
-   * Time after which the TaskRun times out. Defaults to 1 hour. Specified
-   * TaskRun timeout should be less than 24h.
-   *
    * @var string
    */
   public $timeout;
@@ -59,9 +48,7 @@ class PipelineTask extends \Google\Collection
   protected $workspacesDataType = 'array';
 
   /**
-   * Name of the task.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -75,9 +62,7 @@ class PipelineTask extends \Google\Collection
     return $this->name;
   }
   /**
-   * Params is a list of parameter names and values.
-   *
-   * @param Param[] $params
+   * @param Param[]
    */
   public function setParams($params)
   {
@@ -91,10 +76,7 @@ class PipelineTask extends \Google\Collection
     return $this->params;
   }
   /**
-   * Retries represents how many times this task should be retried in case of
-   * task failure.
-   *
-   * @param int $retries
+   * @param int
    */
   public function setRetries($retries)
   {
@@ -108,10 +90,7 @@ class PipelineTask extends \Google\Collection
     return $this->retries;
   }
   /**
-   * RunAfter is the list of PipelineTask names that should be executed before
-   * this Task executes. (Used to force a specific ordering in graph execution.)
-   *
-   * @param string[] $runAfter
+   * @param string[]
    */
   public function setRunAfter($runAfter)
   {
@@ -125,9 +104,7 @@ class PipelineTask extends \Google\Collection
     return $this->runAfter;
   }
   /**
-   * Reference to a specific instance of a task.
-   *
-   * @param TaskRef $taskRef
+   * @param TaskRef
    */
   public function setTaskRef(TaskRef $taskRef)
   {
@@ -141,9 +118,7 @@ class PipelineTask extends \Google\Collection
     return $this->taskRef;
   }
   /**
-   * Spec to instantiate this TaskRun.
-   *
-   * @param EmbeddedTask $taskSpec
+   * @param EmbeddedTask
    */
   public function setTaskSpec(EmbeddedTask $taskSpec)
   {
@@ -157,10 +132,7 @@ class PipelineTask extends \Google\Collection
     return $this->taskSpec;
   }
   /**
-   * Time after which the TaskRun times out. Defaults to 1 hour. Specified
-   * TaskRun timeout should be less than 24h.
-   *
-   * @param string $timeout
+   * @param string
    */
   public function setTimeout($timeout)
   {
@@ -174,9 +146,7 @@ class PipelineTask extends \Google\Collection
     return $this->timeout;
   }
   /**
-   * Conditions that need to be true for the task to run.
-   *
-   * @param WhenExpression[] $whenExpressions
+   * @param WhenExpression[]
    */
   public function setWhenExpressions($whenExpressions)
   {
@@ -190,10 +160,7 @@ class PipelineTask extends \Google\Collection
     return $this->whenExpressions;
   }
   /**
-   * Workspaces maps workspaces from the pipeline spec to the workspaces
-   * declared in the Task.
-   *
-   * @param WorkspacePipelineTaskBinding[] $workspaces
+   * @param WorkspacePipelineTaskBinding[]
    */
   public function setWorkspaces($workspaces)
   {

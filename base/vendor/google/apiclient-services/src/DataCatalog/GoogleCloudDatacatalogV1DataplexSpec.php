@@ -20,36 +20,22 @@ namespace Google\Service\DataCatalog;
 class GoogleCloudDatacatalogV1DataplexSpec extends \Google\Model
 {
   /**
-   * Fully qualified resource name of an asset in Dataplex Universal Catalog, to
-   * which the underlying data source (Cloud Storage bucket or BigQuery dataset)
-   * of the entity is attached.
-   *
    * @var string
    */
   public $asset;
   /**
-   * Compression format of the data, e.g., zip, gzip etc.
-   *
    * @var string
    */
   public $compressionFormat;
   protected $dataFormatType = GoogleCloudDatacatalogV1PhysicalSchema::class;
   protected $dataFormatDataType = '';
   /**
-   * Project ID of the underlying Cloud Storage or BigQuery data. Note that this
-   * may not be the same project as the corresponding Dataplex Universal Catalog
-   * lake / zone / asset.
-   *
    * @var string
    */
   public $projectId;
 
   /**
-   * Fully qualified resource name of an asset in Dataplex Universal Catalog, to
-   * which the underlying data source (Cloud Storage bucket or BigQuery dataset)
-   * of the entity is attached.
-   *
-   * @param string $asset
+   * @param string
    */
   public function setAsset($asset)
   {
@@ -63,9 +49,7 @@ class GoogleCloudDatacatalogV1DataplexSpec extends \Google\Model
     return $this->asset;
   }
   /**
-   * Compression format of the data, e.g., zip, gzip etc.
-   *
-   * @param string $compressionFormat
+   * @param string
    */
   public function setCompressionFormat($compressionFormat)
   {
@@ -79,9 +63,7 @@ class GoogleCloudDatacatalogV1DataplexSpec extends \Google\Model
     return $this->compressionFormat;
   }
   /**
-   * Format of the data.
-   *
-   * @param GoogleCloudDatacatalogV1PhysicalSchema $dataFormat
+   * @param GoogleCloudDatacatalogV1PhysicalSchema
    */
   public function setDataFormat(GoogleCloudDatacatalogV1PhysicalSchema $dataFormat)
   {
@@ -95,11 +77,7 @@ class GoogleCloudDatacatalogV1DataplexSpec extends \Google\Model
     return $this->dataFormat;
   }
   /**
-   * Project ID of the underlying Cloud Storage or BigQuery data. Note that this
-   * may not be the same project as the corresponding Dataplex Universal Catalog
-   * lake / zone / asset.
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {

@@ -26,40 +26,22 @@ class BackupSchedule extends \Google\Model
   protected $incrementalBackupSpecType = IncrementalBackupSpec::class;
   protected $incrementalBackupSpecDataType = '';
   /**
-   * Identifier. Output only for the CreateBackupSchedule operation. Required
-   * for the UpdateBackupSchedule operation. A globally unique identifier for
-   * the backup schedule which cannot be changed. Values are of the form
-   * `projects//instances//databases//backupSchedules/a-z*[a-z0-9]` The final
-   * segment of the name must be between 2 and 60 characters in length.
-   *
    * @var string
    */
   public $name;
   /**
-   * Optional. The retention duration of a backup that must be at least 6 hours
-   * and at most 366 days. The backup is eligible to be automatically deleted
-   * once the retention period has elapsed.
-   *
    * @var string
    */
   public $retentionDuration;
   protected $specType = BackupScheduleSpec::class;
   protected $specDataType = '';
   /**
-   * Output only. The timestamp at which the schedule was last updated. If the
-   * schedule has never been updated, this field contains the timestamp when the
-   * schedule was first created.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Optional. The encryption configuration that is used to encrypt the backup.
-   * If this field is not specified, the backup uses the same encryption
-   * configuration as the database.
-   *
-   * @param CreateBackupEncryptionConfig $encryptionConfig
+   * @param CreateBackupEncryptionConfig
    */
   public function setEncryptionConfig(CreateBackupEncryptionConfig $encryptionConfig)
   {
@@ -73,9 +55,7 @@ class BackupSchedule extends \Google\Model
     return $this->encryptionConfig;
   }
   /**
-   * The schedule creates only full backups.
-   *
-   * @param FullBackupSpec $fullBackupSpec
+   * @param FullBackupSpec
    */
   public function setFullBackupSpec(FullBackupSpec $fullBackupSpec)
   {
@@ -89,9 +69,7 @@ class BackupSchedule extends \Google\Model
     return $this->fullBackupSpec;
   }
   /**
-   * The schedule creates incremental backup chains.
-   *
-   * @param IncrementalBackupSpec $incrementalBackupSpec
+   * @param IncrementalBackupSpec
    */
   public function setIncrementalBackupSpec(IncrementalBackupSpec $incrementalBackupSpec)
   {
@@ -105,13 +83,7 @@ class BackupSchedule extends \Google\Model
     return $this->incrementalBackupSpec;
   }
   /**
-   * Identifier. Output only for the CreateBackupSchedule operation. Required
-   * for the UpdateBackupSchedule operation. A globally unique identifier for
-   * the backup schedule which cannot be changed. Values are of the form
-   * `projects//instances//databases//backupSchedules/a-z*[a-z0-9]` The final
-   * segment of the name must be between 2 and 60 characters in length.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -125,11 +97,7 @@ class BackupSchedule extends \Google\Model
     return $this->name;
   }
   /**
-   * Optional. The retention duration of a backup that must be at least 6 hours
-   * and at most 366 days. The backup is eligible to be automatically deleted
-   * once the retention period has elapsed.
-   *
-   * @param string $retentionDuration
+   * @param string
    */
   public function setRetentionDuration($retentionDuration)
   {
@@ -143,10 +111,7 @@ class BackupSchedule extends \Google\Model
     return $this->retentionDuration;
   }
   /**
-   * Optional. The schedule specification based on which the backup creations
-   * are triggered.
-   *
-   * @param BackupScheduleSpec $spec
+   * @param BackupScheduleSpec
    */
   public function setSpec(BackupScheduleSpec $spec)
   {
@@ -160,11 +125,7 @@ class BackupSchedule extends \Google\Model
     return $this->spec;
   }
   /**
-   * Output only. The timestamp at which the schedule was last updated. If the
-   * schedule has never been updated, this field contains the timestamp when the
-   * schedule was first created.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

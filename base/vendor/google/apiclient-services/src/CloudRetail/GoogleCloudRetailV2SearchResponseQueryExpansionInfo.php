@@ -20,24 +20,16 @@ namespace Google\Service\CloudRetail;
 class GoogleCloudRetailV2SearchResponseQueryExpansionInfo extends \Google\Model
 {
   /**
-   * Bool describing whether query expansion has occurred.
-   *
    * @var bool
    */
   public $expandedQuery;
   /**
-   * Number of pinned results. This field will only be set when expansion
-   * happens and SearchRequest.QueryExpansionSpec.pin_unexpanded_results is set
-   * to true.
-   *
    * @var string
    */
   public $pinnedResultCount;
 
   /**
-   * Bool describing whether query expansion has occurred.
-   *
-   * @param bool $expandedQuery
+   * @param bool
    */
   public function setExpandedQuery($expandedQuery)
   {
@@ -51,11 +43,7 @@ class GoogleCloudRetailV2SearchResponseQueryExpansionInfo extends \Google\Model
     return $this->expandedQuery;
   }
   /**
-   * Number of pinned results. This field will only be set when expansion
-   * happens and SearchRequest.QueryExpansionSpec.pin_unexpanded_results is set
-   * to true.
-   *
-   * @param string $pinnedResultCount
+   * @param string
    */
   public function setPinnedResultCount($pinnedResultCount)
   {

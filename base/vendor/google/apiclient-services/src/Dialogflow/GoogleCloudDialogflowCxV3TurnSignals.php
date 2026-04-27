@@ -62,7 +62,7 @@ class GoogleCloudDialogflowCxV3TurnSignals extends \Google\Collection
   public $webhookStatuses;
 
   /**
-   * @param bool $agentEscalated
+   * @param bool
    */
   public function setAgentEscalated($agentEscalated)
   {
@@ -76,7 +76,7 @@ class GoogleCloudDialogflowCxV3TurnSignals extends \Google\Collection
     return $this->agentEscalated;
   }
   /**
-   * @param bool $dtmfUsed
+   * @param bool
    */
   public function setDtmfUsed($dtmfUsed)
   {
@@ -90,7 +90,7 @@ class GoogleCloudDialogflowCxV3TurnSignals extends \Google\Collection
     return $this->dtmfUsed;
   }
   /**
-   * @param string[] $failureReasons
+   * @param string[]
    */
   public function setFailureReasons($failureReasons)
   {
@@ -104,7 +104,7 @@ class GoogleCloudDialogflowCxV3TurnSignals extends \Google\Collection
     return $this->failureReasons;
   }
   /**
-   * @param bool $noMatch
+   * @param bool
    */
   public function setNoMatch($noMatch)
   {
@@ -118,7 +118,7 @@ class GoogleCloudDialogflowCxV3TurnSignals extends \Google\Collection
     return $this->noMatch;
   }
   /**
-   * @param bool $noUserInput
+   * @param bool
    */
   public function setNoUserInput($noUserInput)
   {
@@ -132,7 +132,7 @@ class GoogleCloudDialogflowCxV3TurnSignals extends \Google\Collection
     return $this->noUserInput;
   }
   /**
-   * @param bool $reachedEndPage
+   * @param bool
    */
   public function setReachedEndPage($reachedEndPage)
   {
@@ -146,7 +146,7 @@ class GoogleCloudDialogflowCxV3TurnSignals extends \Google\Collection
     return $this->reachedEndPage;
   }
   /**
-   * @param float $sentimentMagnitude
+   * @param float
    */
   public function setSentimentMagnitude($sentimentMagnitude)
   {
@@ -160,7 +160,7 @@ class GoogleCloudDialogflowCxV3TurnSignals extends \Google\Collection
     return $this->sentimentMagnitude;
   }
   /**
-   * @param float $sentimentScore
+   * @param float
    */
   public function setSentimentScore($sentimentScore)
   {
@@ -174,7 +174,7 @@ class GoogleCloudDialogflowCxV3TurnSignals extends \Google\Collection
     return $this->sentimentScore;
   }
   /**
-   * @param bool $userEscalated
+   * @param bool
    */
   public function setUserEscalated($userEscalated)
   {
@@ -188,7 +188,7 @@ class GoogleCloudDialogflowCxV3TurnSignals extends \Google\Collection
     return $this->userEscalated;
   }
   /**
-   * @param string[] $webhookStatuses
+   * @param string[]
    */
   public function setWebhookStatuses($webhookStatuses)
   {

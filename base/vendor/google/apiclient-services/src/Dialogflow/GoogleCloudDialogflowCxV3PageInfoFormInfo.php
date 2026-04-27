@@ -24,7 +24,7 @@ class GoogleCloudDialogflowCxV3PageInfoFormInfo extends \Google\Collection
   protected $parameterInfoDataType = 'array';
 
   /**
-   * @param GoogleCloudDialogflowCxV3PageInfoFormInfoParameterInfo[] $parameterInfo
+   * @param GoogleCloudDialogflowCxV3PageInfoFormInfoParameterInfo[]
    */
   public function setParameterInfo($parameterInfo)
   {

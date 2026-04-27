@@ -23,29 +23,20 @@ class ListFindingsResponse extends \Google\Collection
   protected $listFindingsResultsType = ListFindingsResult::class;
   protected $listFindingsResultsDataType = 'array';
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Time used for executing the list request.
-   *
    * @var string
    */
   public $readTime;
   /**
-   * The total number of findings matching the query.
-   *
    * @var int
    */
   public $totalSize;
 
   /**
-   * Findings matching the list request.
-   *
-   * @param ListFindingsResult[] $listFindingsResults
+   * @param ListFindingsResult[]
    */
   public function setListFindingsResults($listFindingsResults)
   {
@@ -59,10 +50,7 @@ class ListFindingsResponse extends \Google\Collection
     return $this->listFindingsResults;
   }
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -76,9 +64,7 @@ class ListFindingsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Time used for executing the list request.
-   *
-   * @param string $readTime
+   * @param string
    */
   public function setReadTime($readTime)
   {
@@ -92,9 +78,7 @@ class ListFindingsResponse extends \Google\Collection
     return $this->readTime;
   }
   /**
-   * The total number of findings matching the query.
-   *
-   * @param int $totalSize
+   * @param int
    */
   public function setTotalSize($totalSize)
   {

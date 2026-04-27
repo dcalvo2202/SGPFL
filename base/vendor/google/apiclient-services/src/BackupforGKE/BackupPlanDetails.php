@@ -19,86 +19,37 @@ namespace Google\Service\BackupforGKE;
 
 class BackupPlanDetails extends \Google\Model
 {
-  /**
-   * Default first value for Enums.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Waiting for cluster state to be RUNNING.
-   */
-  public const STATE_CLUSTER_PENDING = 'CLUSTER_PENDING';
-  /**
-   * The BackupPlan is in the process of being created.
-   */
-  public const STATE_PROVISIONING = 'PROVISIONING';
-  /**
-   * The BackupPlan has successfully been created and is ready for Backups.
-   */
-  public const STATE_READY = 'READY';
-  /**
-   * BackupPlan creation has failed.
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * The BackupPlan has been deactivated.
-   */
-  public const STATE_DEACTIVATED = 'DEACTIVATED';
-  /**
-   * The BackupPlan is in the process of being deleted.
-   */
-  public const STATE_DELETING = 'DELETING';
   protected $backupConfigDetailsType = BackupConfigDetails::class;
   protected $backupConfigDetailsDataType = '';
   /**
-   * Output only. The fully qualified name of the last successful Backup created
-   * under this BackupPlan. `projects/locations/backupPlans/backups`
-   *
    * @var string
    */
   public $lastSuccessfulBackup;
   /**
-   * Output only. Completion time of the last successful Backup. This is sourced
-   * from a successful Backup's complete_time field.
-   *
    * @var string
    */
   public $lastSuccessfulBackupTime;
   /**
-   * Output only. Start time of next scheduled backup under this BackupPlan by
-   * either cron_schedule or rpo config. This is sourced from BackupPlan.
-   *
    * @var string
    */
   public $nextScheduledBackupTime;
   /**
-   * Output only. The number of Kubernetes Pods backed up in the last successful
-   * Backup created via this BackupPlan.
-   *
    * @var int
    */
   public $protectedPodCount;
   protected $retentionPolicyDetailsType = RetentionPolicyDetails::class;
   protected $retentionPolicyDetailsDataType = '';
   /**
-   * Output only. A number that represents the current risk level of this
-   * BackupPlan from RPO perspective with 1 being no risk and 5 being highest
-   * risk.
-   *
    * @var int
    */
   public $rpoRiskLevel;
   /**
-   * Output only. State of the BackupPlan.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Output only. Contains details about the BackupConfig of Backups created via
-   * this BackupPlan.
-   *
-   * @param BackupConfigDetails $backupConfigDetails
+   * @param BackupConfigDetails
    */
   public function setBackupConfigDetails(BackupConfigDetails $backupConfigDetails)
   {
@@ -112,10 +63,7 @@ class BackupPlanDetails extends \Google\Model
     return $this->backupConfigDetails;
   }
   /**
-   * Output only. The fully qualified name of the last successful Backup created
-   * under this BackupPlan. `projects/locations/backupPlans/backups`
-   *
-   * @param string $lastSuccessfulBackup
+   * @param string
    */
   public function setLastSuccessfulBackup($lastSuccessfulBackup)
   {
@@ -129,10 +77,7 @@ class BackupPlanDetails extends \Google\Model
     return $this->lastSuccessfulBackup;
   }
   /**
-   * Output only. Completion time of the last successful Backup. This is sourced
-   * from a successful Backup's complete_time field.
-   *
-   * @param string $lastSuccessfulBackupTime
+   * @param string
    */
   public function setLastSuccessfulBackupTime($lastSuccessfulBackupTime)
   {
@@ -146,10 +91,7 @@ class BackupPlanDetails extends \Google\Model
     return $this->lastSuccessfulBackupTime;
   }
   /**
-   * Output only. Start time of next scheduled backup under this BackupPlan by
-   * either cron_schedule or rpo config. This is sourced from BackupPlan.
-   *
-   * @param string $nextScheduledBackupTime
+   * @param string
    */
   public function setNextScheduledBackupTime($nextScheduledBackupTime)
   {
@@ -163,10 +105,7 @@ class BackupPlanDetails extends \Google\Model
     return $this->nextScheduledBackupTime;
   }
   /**
-   * Output only. The number of Kubernetes Pods backed up in the last successful
-   * Backup created via this BackupPlan.
-   *
-   * @param int $protectedPodCount
+   * @param int
    */
   public function setProtectedPodCount($protectedPodCount)
   {
@@ -180,10 +119,7 @@ class BackupPlanDetails extends \Google\Model
     return $this->protectedPodCount;
   }
   /**
-   * Output only. Contains details about the RetentionPolicy of Backups created
-   * via this BackupPlan.
-   *
-   * @param RetentionPolicyDetails $retentionPolicyDetails
+   * @param RetentionPolicyDetails
    */
   public function setRetentionPolicyDetails(RetentionPolicyDetails $retentionPolicyDetails)
   {
@@ -197,11 +133,7 @@ class BackupPlanDetails extends \Google\Model
     return $this->retentionPolicyDetails;
   }
   /**
-   * Output only. A number that represents the current risk level of this
-   * BackupPlan from RPO perspective with 1 being no risk and 5 being highest
-   * risk.
-   *
-   * @param int $rpoRiskLevel
+   * @param int
    */
   public function setRpoRiskLevel($rpoRiskLevel)
   {
@@ -215,19 +147,14 @@ class BackupPlanDetails extends \Google\Model
     return $this->rpoRiskLevel;
   }
   /**
-   * Output only. State of the BackupPlan.
-   *
-   * Accepted values: STATE_UNSPECIFIED, CLUSTER_PENDING, PROVISIONING, READY,
-   * FAILED, DEACTIVATED, DELETING
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

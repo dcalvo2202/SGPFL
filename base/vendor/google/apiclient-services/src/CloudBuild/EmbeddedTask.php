@@ -20,8 +20,6 @@ namespace Google\Service\CloudBuild;
 class EmbeddedTask extends \Google\Model
 {
   /**
-   * User annotations. See https://google.aip.dev/128#annotations
-   *
    * @var string[]
    */
   public $annotations;
@@ -29,9 +27,7 @@ class EmbeddedTask extends \Google\Model
   protected $taskSpecDataType = '';
 
   /**
-   * User annotations. See https://google.aip.dev/128#annotations
-   *
-   * @param string[] $annotations
+   * @param string[]
    */
   public function setAnnotations($annotations)
   {
@@ -45,9 +41,7 @@ class EmbeddedTask extends \Google\Model
     return $this->annotations;
   }
   /**
-   * Spec to instantiate this TaskRun.
-   *
-   * @param TaskSpec $taskSpec
+   * @param TaskSpec
    */
   public function setTaskSpec(TaskSpec $taskSpec)
   {

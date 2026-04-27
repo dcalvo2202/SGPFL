@@ -24,10 +24,7 @@ class GoogleCloudAiplatformV1ImportDataRequest extends \Google\Collection
   protected $importConfigsDataType = 'array';
 
   /**
-   * Required. The desired input locations. The contents of all input locations
-   * will be imported in one batch.
-   *
-   * @param GoogleCloudAiplatformV1ImportDataConfig[] $importConfigs
+   * @param GoogleCloudAiplatformV1ImportDataConfig[]
    */
   public function setImportConfigs($importConfigs)
   {

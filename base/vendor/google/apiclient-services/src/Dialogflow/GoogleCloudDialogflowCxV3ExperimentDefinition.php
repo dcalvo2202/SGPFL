@@ -27,7 +27,7 @@ class GoogleCloudDialogflowCxV3ExperimentDefinition extends \Google\Model
   protected $versionVariantsDataType = '';
 
   /**
-   * @param string $condition
+   * @param string
    */
   public function setCondition($condition)
   {
@@ -41,7 +41,7 @@ class GoogleCloudDialogflowCxV3ExperimentDefinition extends \Google\Model
     return $this->condition;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3VersionVariants $versionVariants
+   * @param GoogleCloudDialogflowCxV3VersionVariants
    */
   public function setVersionVariants(GoogleCloudDialogflowCxV3VersionVariants $versionVariants)
   {

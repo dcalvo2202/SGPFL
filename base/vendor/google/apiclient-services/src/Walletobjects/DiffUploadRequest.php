@@ -24,20 +24,12 @@ class DiffUploadRequest extends \Google\Model
   protected $objectInfoType = CompositeMedia::class;
   protected $objectInfoDataType = '';
   /**
-   * The object version of the object that is the base version the incoming diff
-   * script will be applied to. This field will always be filled in.
-   *
    * @var string
    */
   public $objectVersion;
 
   /**
-   * The location of the checksums for the new object. Agents must clone the
-   * object located here, as the upload server will delete the contents once a
-   * response is received. For details on the format of the checksums, see
-   * http://go/scotty-diff-protocol.
-   *
-   * @param CompositeMedia $checksumsInfo
+   * @param CompositeMedia
    */
   public function setChecksumsInfo(CompositeMedia $checksumsInfo)
   {
@@ -51,10 +43,7 @@ class DiffUploadRequest extends \Google\Model
     return $this->checksumsInfo;
   }
   /**
-   * The location of the new object. Agents must clone the object located here,
-   * as the upload server will delete the contents once a response is received.
-   *
-   * @param CompositeMedia $objectInfo
+   * @param CompositeMedia
    */
   public function setObjectInfo(CompositeMedia $objectInfo)
   {
@@ -68,10 +57,7 @@ class DiffUploadRequest extends \Google\Model
     return $this->objectInfo;
   }
   /**
-   * The object version of the object that is the base version the incoming diff
-   * script will be applied to. This field will always be filled in.
-   *
-   * @param string $objectVersion
+   * @param string
    */
   public function setObjectVersion($objectVersion)
   {

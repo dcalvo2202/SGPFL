@@ -29,7 +29,7 @@ class Uint128 extends \Google\Model
   public $low;
 
   /**
-   * @param string $high
+   * @param string
    */
   public function setHigh($high)
   {
@@ -43,7 +43,7 @@ class Uint128 extends \Google\Model
     return $this->high;
   }
   /**
-   * @param string $low
+   * @param string
    */
   public function setLow($low)
   {

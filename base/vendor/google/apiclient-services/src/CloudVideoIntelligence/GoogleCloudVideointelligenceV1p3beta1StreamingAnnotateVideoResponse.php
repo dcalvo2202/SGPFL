@@ -22,10 +22,6 @@ class GoogleCloudVideointelligenceV1p3beta1StreamingAnnotateVideoResponse extend
   protected $annotationResultsType = GoogleCloudVideointelligenceV1p3beta1StreamingVideoAnnotationResults::class;
   protected $annotationResultsDataType = '';
   /**
-   * Google Cloud Storage URI that stores annotation results of one streaming
-   * session in JSON format. It is the annotation_result_storage_directory from
-   * the request followed by '/cloud_project_number-session_id'.
-   *
    * @var string
    */
   public $annotationResultsUri;
@@ -33,9 +29,7 @@ class GoogleCloudVideointelligenceV1p3beta1StreamingAnnotateVideoResponse extend
   protected $errorDataType = '';
 
   /**
-   * Streaming annotation results.
-   *
-   * @param GoogleCloudVideointelligenceV1p3beta1StreamingVideoAnnotationResults $annotationResults
+   * @param GoogleCloudVideointelligenceV1p3beta1StreamingVideoAnnotationResults
    */
   public function setAnnotationResults(GoogleCloudVideointelligenceV1p3beta1StreamingVideoAnnotationResults $annotationResults)
   {
@@ -49,11 +43,7 @@ class GoogleCloudVideointelligenceV1p3beta1StreamingAnnotateVideoResponse extend
     return $this->annotationResults;
   }
   /**
-   * Google Cloud Storage URI that stores annotation results of one streaming
-   * session in JSON format. It is the annotation_result_storage_directory from
-   * the request followed by '/cloud_project_number-session_id'.
-   *
-   * @param string $annotationResultsUri
+   * @param string
    */
   public function setAnnotationResultsUri($annotationResultsUri)
   {
@@ -67,10 +57,7 @@ class GoogleCloudVideointelligenceV1p3beta1StreamingAnnotateVideoResponse extend
     return $this->annotationResultsUri;
   }
   /**
-   * If set, returns a google.rpc.Status message that specifies the error for
-   * the operation.
-   *
-   * @param GoogleRpcStatus $error
+   * @param GoogleRpcStatus
    */
   public function setError(GoogleRpcStatus $error)
   {

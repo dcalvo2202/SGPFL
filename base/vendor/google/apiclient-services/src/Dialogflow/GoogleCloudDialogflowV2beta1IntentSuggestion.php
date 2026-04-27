@@ -33,7 +33,7 @@ class GoogleCloudDialogflowV2beta1IntentSuggestion extends \Google\Model
   public $intentV2;
 
   /**
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -47,7 +47,7 @@ class GoogleCloudDialogflowV2beta1IntentSuggestion extends \Google\Model
     return $this->description;
   }
   /**
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -61,7 +61,7 @@ class GoogleCloudDialogflowV2beta1IntentSuggestion extends \Google\Model
     return $this->displayName;
   }
   /**
-   * @param string $intentV2
+   * @param string
    */
   public function setIntentV2($intentV2)
   {

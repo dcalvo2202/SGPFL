@@ -25,12 +25,7 @@ class Entity extends \Google\Model
   protected $propertiesDataType = 'map';
 
   /**
-   * The entity's key. An entity must have a key, unless otherwise documented
-   * (for example, an entity in `Value.entity_value` may have no key). An
-   * entity's kind is its key path's last element's kind, or null if it has no
-   * key.
-   *
-   * @param Key $key
+   * @param Key
    */
   public function setKey(Key $key)
   {
@@ -44,12 +39,7 @@ class Entity extends \Google\Model
     return $this->key;
   }
   /**
-   * The entity's properties. The map's keys are property names. A property name
-   * matching regex `__.*__` is reserved. A reserved property name is forbidden
-   * in certain documented contexts. The map keys, represented as UTF-8, must
-   * not exceed 1,500 bytes and cannot be empty.
-   *
-   * @param Value[] $properties
+   * @param Value[]
    */
   public function setProperties($properties)
   {

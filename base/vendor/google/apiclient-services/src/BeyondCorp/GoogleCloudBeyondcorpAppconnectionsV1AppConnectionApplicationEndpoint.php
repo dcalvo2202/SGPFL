@@ -20,22 +20,16 @@ namespace Google\Service\BeyondCorp;
 class GoogleCloudBeyondcorpAppconnectionsV1AppConnectionApplicationEndpoint extends \Google\Model
 {
   /**
-   * Required. Hostname or IP address of the remote application endpoint.
-   *
    * @var string
    */
   public $host;
   /**
-   * Required. Port of the remote application endpoint.
-   *
    * @var int
    */
   public $port;
 
   /**
-   * Required. Hostname or IP address of the remote application endpoint.
-   *
-   * @param string $host
+   * @param string
    */
   public function setHost($host)
   {
@@ -49,9 +43,7 @@ class GoogleCloudBeyondcorpAppconnectionsV1AppConnectionApplicationEndpoint exte
     return $this->host;
   }
   /**
-   * Required. Port of the remote application endpoint.
-   *
-   * @param int $port
+   * @param int
    */
   public function setPort($port)
   {

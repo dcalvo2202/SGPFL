@@ -20,18 +20,12 @@ namespace Google\Service\Cloudbilling;
 class MoveBillingAccountRequest extends \Google\Model
 {
   /**
-   * Required. The resource name of the Organization to move the billing account
-   * under. Must be of the form `organizations/{organization_id}`.
-   *
    * @var string
    */
   public $destinationParent;
 
   /**
-   * Required. The resource name of the Organization to move the billing account
-   * under. Must be of the form `organizations/{organization_id}`.
-   *
-   * @param string $destinationParent
+   * @param string
    */
   public function setDestinationParent($destinationParent)
   {

@@ -21,34 +21,20 @@ class GoogleCloudDocumentaiV1DocumentSchema extends \Google\Collection
 {
   protected $collection_key = 'entityTypes';
   /**
-   * Description of the schema.
-   *
    * @var string
    */
   public $description;
   /**
-   * Display name to show users.
-   *
    * @var string
    */
   public $displayName;
-  /**
-   * Optional. Document level prompt provided by the user. This custom text is
-   * injected into the AI model's prompt to provide extra, document-wide
-   * guidance for processing.
-   *
-   * @var string
-   */
-  public $documentPrompt;
   protected $entityTypesType = GoogleCloudDocumentaiV1DocumentSchemaEntityType::class;
   protected $entityTypesDataType = 'array';
   protected $metadataType = GoogleCloudDocumentaiV1DocumentSchemaMetadata::class;
   protected $metadataDataType = '';
 
   /**
-   * Description of the schema.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -62,9 +48,7 @@ class GoogleCloudDocumentaiV1DocumentSchema extends \Google\Collection
     return $this->description;
   }
   /**
-   * Display name to show users.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -78,27 +62,7 @@ class GoogleCloudDocumentaiV1DocumentSchema extends \Google\Collection
     return $this->displayName;
   }
   /**
-   * Optional. Document level prompt provided by the user. This custom text is
-   * injected into the AI model's prompt to provide extra, document-wide
-   * guidance for processing.
-   *
-   * @param string $documentPrompt
-   */
-  public function setDocumentPrompt($documentPrompt)
-  {
-    $this->documentPrompt = $documentPrompt;
-  }
-  /**
-   * @return string
-   */
-  public function getDocumentPrompt()
-  {
-    return $this->documentPrompt;
-  }
-  /**
-   * Entity types of the schema.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentSchemaEntityType[] $entityTypes
+   * @param GoogleCloudDocumentaiV1DocumentSchemaEntityType[]
    */
   public function setEntityTypes($entityTypes)
   {
@@ -112,9 +76,7 @@ class GoogleCloudDocumentaiV1DocumentSchema extends \Google\Collection
     return $this->entityTypes;
   }
   /**
-   * Metadata of the schema.
-   *
-   * @param GoogleCloudDocumentaiV1DocumentSchemaMetadata $metadata
+   * @param GoogleCloudDocumentaiV1DocumentSchemaMetadata
    */
   public function setMetadata(GoogleCloudDocumentaiV1DocumentSchemaMetadata $metadata)
   {

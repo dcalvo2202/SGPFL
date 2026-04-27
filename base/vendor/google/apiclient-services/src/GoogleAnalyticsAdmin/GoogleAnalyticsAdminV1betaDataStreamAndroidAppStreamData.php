@@ -20,25 +20,16 @@ namespace Google\Service\GoogleAnalyticsAdmin;
 class GoogleAnalyticsAdminV1betaDataStreamAndroidAppStreamData extends \Google\Model
 {
   /**
-   * Output only. ID of the corresponding Android app in Firebase, if any. This
-   * ID can change if the Android app is deleted and recreated.
-   *
    * @var string
    */
   public $firebaseAppId;
   /**
-   * Immutable. The package name for the app being measured. Example:
-   * "com.example.myandroidapp"
-   *
    * @var string
    */
   public $packageName;
 
   /**
-   * Output only. ID of the corresponding Android app in Firebase, if any. This
-   * ID can change if the Android app is deleted and recreated.
-   *
-   * @param string $firebaseAppId
+   * @param string
    */
   public function setFirebaseAppId($firebaseAppId)
   {
@@ -52,10 +43,7 @@ class GoogleAnalyticsAdminV1betaDataStreamAndroidAppStreamData extends \Google\M
     return $this->firebaseAppId;
   }
   /**
-   * Immutable. The package name for the app being measured. Example:
-   * "com.example.myandroidapp"
-   *
-   * @param string $packageName
+   * @param string
    */
   public function setPackageName($packageName)
   {

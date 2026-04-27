@@ -20,204 +20,72 @@ namespace Google\Service\CloudFilestore;
 class Backup extends \Google\Model
 {
   /**
-   * FILE_PROTOCOL_UNSPECIFIED serves a "not set" default value when a
-   * FileProtocol is a separate field in a message.
-   */
-  public const FILE_SYSTEM_PROTOCOL_FILE_PROTOCOL_UNSPECIFIED = 'FILE_PROTOCOL_UNSPECIFIED';
-  /**
-   * NFS 3.0.
-   */
-  public const FILE_SYSTEM_PROTOCOL_NFS_V3 = 'NFS_V3';
-  /**
-   * NFS 4.1.
-   */
-  public const FILE_SYSTEM_PROTOCOL_NFS_V4_1 = 'NFS_V4_1';
-  /**
-   * Not set.
-   */
-  public const SOURCE_INSTANCE_TIER_TIER_UNSPECIFIED = 'TIER_UNSPECIFIED';
-  /**
-   * STANDARD tier. BASIC_HDD is the preferred term for this tier.
-   */
-  public const SOURCE_INSTANCE_TIER_STANDARD = 'STANDARD';
-  /**
-   * PREMIUM tier. BASIC_SSD is the preferred term for this tier.
-   */
-  public const SOURCE_INSTANCE_TIER_PREMIUM = 'PREMIUM';
-  /**
-   * BASIC instances offer a maximum capacity of 63.9 TB. BASIC_HDD is an alias
-   * for STANDARD Tier, offering economical performance backed by HDD.
-   */
-  public const SOURCE_INSTANCE_TIER_BASIC_HDD = 'BASIC_HDD';
-  /**
-   * BASIC instances offer a maximum capacity of 63.9 TB. BASIC_SSD is an alias
-   * for PREMIUM Tier, and offers improved performance backed by SSD.
-   */
-  public const SOURCE_INSTANCE_TIER_BASIC_SSD = 'BASIC_SSD';
-  /**
-   * HIGH_SCALE instances offer expanded capacity and performance scaling
-   * capabilities.
-   */
-  public const SOURCE_INSTANCE_TIER_HIGH_SCALE_SSD = 'HIGH_SCALE_SSD';
-  /**
-   * ENTERPRISE instances offer the features and availability needed for
-   * mission-critical workloads.
-   */
-  public const SOURCE_INSTANCE_TIER_ENTERPRISE = 'ENTERPRISE';
-  /**
-   * ZONAL instances offer expanded capacity and performance scaling
-   * capabilities.
-   */
-  public const SOURCE_INSTANCE_TIER_ZONAL = 'ZONAL';
-  /**
-   * REGIONAL instances offer the features and availability needed for mission-
-   * critical workloads.
-   */
-  public const SOURCE_INSTANCE_TIER_REGIONAL = 'REGIONAL';
-  /**
-   * State not set.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Backup is being created.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * Backup has been taken and the operation is being finalized. At this point,
-   * changes to the file share will not be reflected in the backup.
-   */
-  public const STATE_FINALIZING = 'FINALIZING';
-  /**
-   * Backup is available for use.
-   */
-  public const STATE_READY = 'READY';
-  /**
-   * Backup is being deleted.
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * Backup is not valid and cannot be used for creating new instances or
-   * restoring existing instances.
-   */
-  public const STATE_INVALID = 'INVALID';
-  /**
-   * Output only. Capacity of the source file share when the backup was created.
-   *
    * @var string
    */
   public $capacityGb;
   /**
-   * Output only. The time when the backup was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * A description of the backup with 2048 characters or less. Requests with
-   * longer descriptions will be rejected.
-   *
    * @var string
    */
   public $description;
   /**
-   * Output only. Amount of bytes that will be downloaded if the backup is
-   * restored. This may be different than storage bytes, since sequential
-   * backups of the same disk will share storage.
-   *
    * @var string
    */
   public $downloadBytes;
   /**
-   * Output only. The file system protocol of the source Filestore instance that
-   * this backup is created from.
-   *
    * @var string
    */
   public $fileSystemProtocol;
   /**
-   * Immutable. KMS key name used for data encryption.
-   *
    * @var string
    */
   public $kmsKey;
   /**
-   * Resource labels to represent user provided metadata.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Output only. The resource name of the backup, in the format
-   * `projects/{project_number}/locations/{location_id}/backups/{backup_id}`.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Reserved for future use.
-   *
    * @var bool
    */
   public $satisfiesPzi;
   /**
-   * Output only. Reserved for future use.
-   *
    * @var bool
    */
   public $satisfiesPzs;
   /**
-   * Name of the file share in the source Filestore instance that the backup is
-   * created from.
-   *
    * @var string
    */
   public $sourceFileShare;
   /**
-   * The resource name of the source Filestore instance, in the format `projects
-   * /{project_number}/locations/{location_id}/instances/{instance_id}`, used to
-   * create this backup.
-   *
    * @var string
    */
   public $sourceInstance;
   /**
-   * Output only. The service tier of the source Filestore instance that this
-   * backup is created from.
-   *
    * @var string
    */
   public $sourceInstanceTier;
   /**
-   * Output only. The backup state.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. The size of the storage used by the backup. As backups share
-   * storage, this number is expected to change with backup creation/deletion.
-   *
    * @var string
    */
   public $storageBytes;
   /**
-   * Optional. Input only. Immutable. Tag key-value pairs bound to this
-   * resource. Each key must be a namespaced name and each value a short name.
-   * Example: "123456789012/environment" : "production",
-   * "123456789013/costCenter" : "marketing" See the documentation for more
-   * information: - Namespaced name: https://cloud.google.com/resource-
-   * manager/docs/tags/tags-creating-and-managing#retrieving_tag_key - Short
-   * name: https://cloud.google.com/resource-manager/docs/tags/tags-creating-
-   * and-managing#retrieving_tag_value
-   *
    * @var string[]
    */
   public $tags;
 
   /**
-   * Output only. Capacity of the source file share when the backup was created.
-   *
-   * @param string $capacityGb
+   * @param string
    */
   public function setCapacityGb($capacityGb)
   {
@@ -231,9 +99,7 @@ class Backup extends \Google\Model
     return $this->capacityGb;
   }
   /**
-   * Output only. The time when the backup was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -247,10 +113,7 @@ class Backup extends \Google\Model
     return $this->createTime;
   }
   /**
-   * A description of the backup with 2048 characters or less. Requests with
-   * longer descriptions will be rejected.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -264,11 +127,7 @@ class Backup extends \Google\Model
     return $this->description;
   }
   /**
-   * Output only. Amount of bytes that will be downloaded if the backup is
-   * restored. This may be different than storage bytes, since sequential
-   * backups of the same disk will share storage.
-   *
-   * @param string $downloadBytes
+   * @param string
    */
   public function setDownloadBytes($downloadBytes)
   {
@@ -282,28 +141,21 @@ class Backup extends \Google\Model
     return $this->downloadBytes;
   }
   /**
-   * Output only. The file system protocol of the source Filestore instance that
-   * this backup is created from.
-   *
-   * Accepted values: FILE_PROTOCOL_UNSPECIFIED, NFS_V3, NFS_V4_1
-   *
-   * @param self::FILE_SYSTEM_PROTOCOL_* $fileSystemProtocol
+   * @param string
    */
   public function setFileSystemProtocol($fileSystemProtocol)
   {
     $this->fileSystemProtocol = $fileSystemProtocol;
   }
   /**
-   * @return self::FILE_SYSTEM_PROTOCOL_*
+   * @return string
    */
   public function getFileSystemProtocol()
   {
     return $this->fileSystemProtocol;
   }
   /**
-   * Immutable. KMS key name used for data encryption.
-   *
-   * @param string $kmsKey
+   * @param string
    */
   public function setKmsKey($kmsKey)
   {
@@ -317,9 +169,7 @@ class Backup extends \Google\Model
     return $this->kmsKey;
   }
   /**
-   * Resource labels to represent user provided metadata.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -333,10 +183,7 @@ class Backup extends \Google\Model
     return $this->labels;
   }
   /**
-   * Output only. The resource name of the backup, in the format
-   * `projects/{project_number}/locations/{location_id}/backups/{backup_id}`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -350,9 +197,7 @@ class Backup extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Reserved for future use.
-   *
-   * @param bool $satisfiesPzi
+   * @param bool
    */
   public function setSatisfiesPzi($satisfiesPzi)
   {
@@ -366,9 +211,7 @@ class Backup extends \Google\Model
     return $this->satisfiesPzi;
   }
   /**
-   * Output only. Reserved for future use.
-   *
-   * @param bool $satisfiesPzs
+   * @param bool
    */
   public function setSatisfiesPzs($satisfiesPzs)
   {
@@ -382,10 +225,7 @@ class Backup extends \Google\Model
     return $this->satisfiesPzs;
   }
   /**
-   * Name of the file share in the source Filestore instance that the backup is
-   * created from.
-   *
-   * @param string $sourceFileShare
+   * @param string
    */
   public function setSourceFileShare($sourceFileShare)
   {
@@ -399,11 +239,7 @@ class Backup extends \Google\Model
     return $this->sourceFileShare;
   }
   /**
-   * The resource name of the source Filestore instance, in the format `projects
-   * /{project_number}/locations/{location_id}/instances/{instance_id}`, used to
-   * create this backup.
-   *
-   * @param string $sourceInstance
+   * @param string
    */
   public function setSourceInstance($sourceInstance)
   {
@@ -417,49 +253,35 @@ class Backup extends \Google\Model
     return $this->sourceInstance;
   }
   /**
-   * Output only. The service tier of the source Filestore instance that this
-   * backup is created from.
-   *
-   * Accepted values: TIER_UNSPECIFIED, STANDARD, PREMIUM, BASIC_HDD, BASIC_SSD,
-   * HIGH_SCALE_SSD, ENTERPRISE, ZONAL, REGIONAL
-   *
-   * @param self::SOURCE_INSTANCE_TIER_* $sourceInstanceTier
+   * @param string
    */
   public function setSourceInstanceTier($sourceInstanceTier)
   {
     $this->sourceInstanceTier = $sourceInstanceTier;
   }
   /**
-   * @return self::SOURCE_INSTANCE_TIER_*
+   * @return string
    */
   public function getSourceInstanceTier()
   {
     return $this->sourceInstanceTier;
   }
   /**
-   * Output only. The backup state.
-   *
-   * Accepted values: STATE_UNSPECIFIED, CREATING, FINALIZING, READY, DELETING,
-   * INVALID
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. The size of the storage used by the backup. As backups share
-   * storage, this number is expected to change with backup creation/deletion.
-   *
-   * @param string $storageBytes
+   * @param string
    */
   public function setStorageBytes($storageBytes)
   {
@@ -473,16 +295,7 @@ class Backup extends \Google\Model
     return $this->storageBytes;
   }
   /**
-   * Optional. Input only. Immutable. Tag key-value pairs bound to this
-   * resource. Each key must be a namespaced name and each value a short name.
-   * Example: "123456789012/environment" : "production",
-   * "123456789013/costCenter" : "marketing" See the documentation for more
-   * information: - Namespaced name: https://cloud.google.com/resource-
-   * manager/docs/tags/tags-creating-and-managing#retrieving_tag_key - Short
-   * name: https://cloud.google.com/resource-manager/docs/tags/tags-creating-
-   * and-managing#retrieving_tag_value
-   *
-   * @param string[] $tags
+   * @param string[]
    */
   public function setTags($tags)
   {

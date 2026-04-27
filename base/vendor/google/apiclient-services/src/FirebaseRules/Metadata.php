@@ -21,18 +21,12 @@ class Metadata extends \Google\Collection
 {
   protected $collection_key = 'services';
   /**
-   * Services that this ruleset has declarations for (e.g., "cloud.firestore").
-   * There may be 0+ of these.
-   *
    * @var string[]
    */
   public $services;
 
   /**
-   * Services that this ruleset has declarations for (e.g., "cloud.firestore").
-   * There may be 0+ of these.
-   *
-   * @param string[] $services
+   * @param string[]
    */
   public function setServices($services)
   {

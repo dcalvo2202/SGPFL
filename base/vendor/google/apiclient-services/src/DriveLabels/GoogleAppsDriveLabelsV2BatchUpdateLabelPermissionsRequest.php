@@ -23,19 +23,12 @@ class GoogleAppsDriveLabelsV2BatchUpdateLabelPermissionsRequest extends \Google\
   protected $requestsType = GoogleAppsDriveLabelsV2UpdateLabelPermissionRequest::class;
   protected $requestsDataType = 'array';
   /**
-   * Set to `true` in order to use the user's admin credentials. The server will
-   * verify the user is an admin for the label before allowing access. If this
-   * is set, the `use_admin_access` field in the `UpdateLabelPermissionRequest`
-   * messages must either be empty or match this field.
-   *
    * @var bool
    */
   public $useAdminAccess;
 
   /**
-   * Required. The request message specifying the resources to update.
-   *
-   * @param GoogleAppsDriveLabelsV2UpdateLabelPermissionRequest[] $requests
+   * @param GoogleAppsDriveLabelsV2UpdateLabelPermissionRequest[]
    */
   public function setRequests($requests)
   {
@@ -49,12 +42,7 @@ class GoogleAppsDriveLabelsV2BatchUpdateLabelPermissionsRequest extends \Google\
     return $this->requests;
   }
   /**
-   * Set to `true` in order to use the user's admin credentials. The server will
-   * verify the user is an admin for the label before allowing access. If this
-   * is set, the `use_admin_access` field in the `UpdateLabelPermissionRequest`
-   * messages must either be empty or match this field.
-   *
-   * @param bool $useAdminAccess
+   * @param bool
    */
   public function setUseAdminAccess($useAdminAccess)
   {

@@ -23,16 +23,12 @@ class GooglePlayDeveloperReportingV1beta1ListAnomaliesResponse extends \Google\C
   protected $anomaliesType = GooglePlayDeveloperReportingV1beta1Anomaly::class;
   protected $anomaliesDataType = 'array';
   /**
-   * Continuation token to fetch the next page of data.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Anomalies that were found.
-   *
-   * @param GooglePlayDeveloperReportingV1beta1Anomaly[] $anomalies
+   * @param GooglePlayDeveloperReportingV1beta1Anomaly[]
    */
   public function setAnomalies($anomalies)
   {
@@ -46,9 +42,7 @@ class GooglePlayDeveloperReportingV1beta1ListAnomaliesResponse extends \Google\C
     return $this->anomalies;
   }
   /**
-   * Continuation token to fetch the next page of data.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

@@ -24,46 +24,32 @@ class RealtimeDataQuery extends \Google\Collection
         "maxResults" => "max-results",
   ];
   /**
-   * List of real time dimensions.
-   *
    * @var string
    */
   public $dimensions;
   /**
-   * Comma-separated list of dimension or metric filters.
-   *
    * @var string
    */
   public $filters;
   /**
-   * Unique table ID.
-   *
    * @var string
    */
   public $ids;
   /**
-   * Maximum results per page.
-   *
    * @var int
    */
   public $maxResults;
   /**
-   * List of real time metrics.
-   *
    * @var string[]
    */
   public $metrics;
   /**
-   * List of dimensions or metrics based on which real time data is sorted.
-   *
    * @var string[]
    */
   public $sort;
 
   /**
-   * List of real time dimensions.
-   *
-   * @param string $dimensions
+   * @param string
    */
   public function setDimensions($dimensions)
   {
@@ -77,9 +63,7 @@ class RealtimeDataQuery extends \Google\Collection
     return $this->dimensions;
   }
   /**
-   * Comma-separated list of dimension or metric filters.
-   *
-   * @param string $filters
+   * @param string
    */
   public function setFilters($filters)
   {
@@ -93,9 +77,7 @@ class RealtimeDataQuery extends \Google\Collection
     return $this->filters;
   }
   /**
-   * Unique table ID.
-   *
-   * @param string $ids
+   * @param string
    */
   public function setIds($ids)
   {
@@ -109,9 +91,7 @@ class RealtimeDataQuery extends \Google\Collection
     return $this->ids;
   }
   /**
-   * Maximum results per page.
-   *
-   * @param int $maxResults
+   * @param int
    */
   public function setMaxResults($maxResults)
   {
@@ -125,9 +105,7 @@ class RealtimeDataQuery extends \Google\Collection
     return $this->maxResults;
   }
   /**
-   * List of real time metrics.
-   *
-   * @param string[] $metrics
+   * @param string[]
    */
   public function setMetrics($metrics)
   {
@@ -141,9 +119,7 @@ class RealtimeDataQuery extends \Google\Collection
     return $this->metrics;
   }
   /**
-   * List of dimensions or metrics based on which real time data is sorted.
-   *
-   * @param string[] $sort
+   * @param string[]
    */
   public function setSort($sort)
   {

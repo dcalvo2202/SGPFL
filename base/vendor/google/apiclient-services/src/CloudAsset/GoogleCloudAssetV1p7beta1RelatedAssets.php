@@ -26,9 +26,7 @@ class GoogleCloudAssetV1p7beta1RelatedAssets extends \Google\Collection
   protected $relationshipAttributesDataType = '';
 
   /**
-   * The peer resources of the relationship.
-   *
-   * @param GoogleCloudAssetV1p7beta1RelatedAsset[] $assets
+   * @param GoogleCloudAssetV1p7beta1RelatedAsset[]
    */
   public function setAssets($assets)
   {
@@ -42,9 +40,7 @@ class GoogleCloudAssetV1p7beta1RelatedAssets extends \Google\Collection
     return $this->assets;
   }
   /**
-   * The detailed relation attributes.
-   *
-   * @param GoogleCloudAssetV1p7beta1RelationshipAttributes $relationshipAttributes
+   * @param GoogleCloudAssetV1p7beta1RelationshipAttributes
    */
   public function setRelationshipAttributes(GoogleCloudAssetV1p7beta1RelationshipAttributes $relationshipAttributes)
   {

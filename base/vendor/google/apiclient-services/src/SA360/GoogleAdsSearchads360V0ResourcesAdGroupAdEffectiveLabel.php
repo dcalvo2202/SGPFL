@@ -20,36 +20,24 @@ namespace Google\Service\SA360;
 class GoogleAdsSearchads360V0ResourcesAdGroupAdEffectiveLabel extends \Google\Model
 {
   /**
-   * Immutable. The ad group ad to which the effective label is attached.
-   *
    * @var string
    */
   public $adGroupAd;
   /**
-   * Immutable. The effective label assigned to the ad group ad.
-   *
    * @var string
    */
   public $label;
   /**
-   * Output only. The ID of the Customer which owns the effective label.
-   *
    * @var string
    */
   public $ownerCustomerId;
   /**
-   * Immutable. The resource name of the ad group ad effective label. Ad group
-   * ad effective label resource names have the form: `customers/{owner_customer
-   * _id}/adGroupAdEffectiveLabels/{ad_group_id}~{ad_id}~{label_id}`
-   *
    * @var string
    */
   public $resourceName;
 
   /**
-   * Immutable. The ad group ad to which the effective label is attached.
-   *
-   * @param string $adGroupAd
+   * @param string
    */
   public function setAdGroupAd($adGroupAd)
   {
@@ -63,9 +51,7 @@ class GoogleAdsSearchads360V0ResourcesAdGroupAdEffectiveLabel extends \Google\Mo
     return $this->adGroupAd;
   }
   /**
-   * Immutable. The effective label assigned to the ad group ad.
-   *
-   * @param string $label
+   * @param string
    */
   public function setLabel($label)
   {
@@ -79,9 +65,7 @@ class GoogleAdsSearchads360V0ResourcesAdGroupAdEffectiveLabel extends \Google\Mo
     return $this->label;
   }
   /**
-   * Output only. The ID of the Customer which owns the effective label.
-   *
-   * @param string $ownerCustomerId
+   * @param string
    */
   public function setOwnerCustomerId($ownerCustomerId)
   {
@@ -95,11 +79,7 @@ class GoogleAdsSearchads360V0ResourcesAdGroupAdEffectiveLabel extends \Google\Mo
     return $this->ownerCustomerId;
   }
   /**
-   * Immutable. The resource name of the ad group ad effective label. Ad group
-   * ad effective label resource names have the form: `customers/{owner_customer
-   * _id}/adGroupAdEffectiveLabels/{ad_group_id}~{ad_id}~{label_id}`
-   *
-   * @param string $resourceName
+   * @param string
    */
   public function setResourceName($resourceName)
   {

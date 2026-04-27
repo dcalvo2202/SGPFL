@@ -20,28 +20,16 @@ namespace Google\Service\SecurityPosture;
 class AssetDetails extends \Google\Model
 {
   /**
-   * Information about the Cloud Asset Inventory asset that violated a policy.
-   * The format of this information can change at any time without prior notice.
-   * Your application must not depend on this information in any way.
-   *
    * @var string
    */
   public $asset;
   /**
-   * The type of Cloud Asset Inventory asset. For a list of asset types, see
-   * [Supported asset types](https://cloud.google.com/asset-
-   * inventory/docs/supported-asset-types).
-   *
    * @var string
    */
   public $assetType;
 
   /**
-   * Information about the Cloud Asset Inventory asset that violated a policy.
-   * The format of this information can change at any time without prior notice.
-   * Your application must not depend on this information in any way.
-   *
-   * @param string $asset
+   * @param string
    */
   public function setAsset($asset)
   {
@@ -55,11 +43,7 @@ class AssetDetails extends \Google\Model
     return $this->asset;
   }
   /**
-   * The type of Cloud Asset Inventory asset. For a list of asset types, see
-   * [Supported asset types](https://cloud.google.com/asset-
-   * inventory/docs/supported-asset-types).
-   *
-   * @param string $assetType
+   * @param string
    */
   public function setAssetType($assetType)
   {

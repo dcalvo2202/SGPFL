@@ -20,16 +20,12 @@ namespace Google\Service\WorkloadManager;
 class SqlserverValidationDetails extends \Google\Model
 {
   /**
-   * Required. Collected data is in format.
-   *
    * @var string[]
    */
   public $fields;
 
   /**
-   * Required. Collected data is in format.
-   *
-   * @param string[] $fields
+   * @param string[]
    */
   public function setFields($fields)
   {

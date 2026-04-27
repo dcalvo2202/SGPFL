@@ -20,16 +20,12 @@ namespace Google\Service\OSConfig;
 class OSPolicyResourcePackageResourceAPT extends \Google\Model
 {
   /**
-   * Required. Package name.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * Required. Package name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

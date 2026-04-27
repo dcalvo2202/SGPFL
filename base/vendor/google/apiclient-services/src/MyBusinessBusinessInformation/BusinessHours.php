@@ -24,11 +24,7 @@ class BusinessHours extends \Google\Collection
   protected $periodsDataType = 'array';
 
   /**
-   * Required. A collection of times that this location is open for business.
-   * Each period represents a range of hours when the location is open during
-   * the week.
-   *
-   * @param TimePeriod[] $periods
+   * @param TimePeriod[]
    */
   public function setPeriods($periods)
   {

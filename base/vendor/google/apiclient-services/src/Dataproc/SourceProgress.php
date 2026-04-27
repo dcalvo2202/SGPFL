@@ -47,7 +47,7 @@ class SourceProgress extends \Google\Model
   public $startOffset;
 
   /**
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -61,7 +61,7 @@ class SourceProgress extends \Google\Model
     return $this->description;
   }
   /**
-   * @param string $endOffset
+   * @param string
    */
   public function setEndOffset($endOffset)
   {
@@ -83,7 +83,7 @@ class SourceProgress extends \Google\Model
     return $this->inputRowsPerSecond;
   }
   /**
-   * @param string $latestOffset
+   * @param string
    */
   public function setLatestOffset($latestOffset)
   {
@@ -97,7 +97,7 @@ class SourceProgress extends \Google\Model
     return $this->latestOffset;
   }
   /**
-   * @param string[] $metrics
+   * @param string[]
    */
   public function setMetrics($metrics)
   {
@@ -111,7 +111,7 @@ class SourceProgress extends \Google\Model
     return $this->metrics;
   }
   /**
-   * @param string $numInputRows
+   * @param string
    */
   public function setNumInputRows($numInputRows)
   {
@@ -133,7 +133,7 @@ class SourceProgress extends \Google\Model
     return $this->processedRowsPerSecond;
   }
   /**
-   * @param string $startOffset
+   * @param string
    */
   public function setStartOffset($startOffset)
   {

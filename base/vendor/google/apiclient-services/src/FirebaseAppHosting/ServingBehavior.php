@@ -23,9 +23,7 @@ class ServingBehavior extends \Google\Model
   protected $redirectDataType = '';
 
   /**
-   * Optional. Redirect behavior for a domain, if provided.
-   *
-   * @param Redirect $redirect
+   * @param Redirect
    */
   public function setRedirect(Redirect $redirect)
   {

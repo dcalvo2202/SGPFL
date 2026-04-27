@@ -21,33 +21,20 @@ class GoogleCloudContactcenterinsightsV1ConversationTranscriptTranscriptSegment 
 {
   protected $collection_key = 'words';
   /**
-   * For conversations derived from multi-channel audio, this is the channel
-   * number corresponding to the audio from that channel. For audioChannelCount
-   * = N, its output values can range from '1' to 'N'. A channel tag of 0
-   * indicates that the audio is mono.
-   *
    * @var int
    */
   public $channelTag;
   /**
-   * A confidence estimate between 0.0 and 1.0 of the fidelity of this segment.
-   * A default value of 0.0 indicates that the value is unset.
-   *
    * @var float
    */
   public $confidence;
   protected $dialogflowSegmentMetadataType = GoogleCloudContactcenterinsightsV1ConversationTranscriptTranscriptSegmentDialogflowSegmentMetadata::class;
   protected $dialogflowSegmentMetadataDataType = '';
   /**
-   * The language code of this segment as a [BCP-47](https://www.rfc-
-   * editor.org/rfc/bcp/bcp47.txt) language tag. Example: "en-US".
-   *
    * @var string
    */
   public $languageCode;
   /**
-   * The time that the message occurred, if provided.
-   *
    * @var string
    */
   public $messageTime;
@@ -56,23 +43,14 @@ class GoogleCloudContactcenterinsightsV1ConversationTranscriptTranscriptSegment 
   protected $sentimentType = GoogleCloudContactcenterinsightsV1SentimentData::class;
   protected $sentimentDataType = '';
   /**
-   * The text of this segment.
-   *
    * @var string
    */
   public $text;
-  protected $turnLevelAudioType = GoogleCloudContactcenterinsightsV1ConversationDataSourceTurnLevelAudio::class;
-  protected $turnLevelAudioDataType = '';
   protected $wordsType = GoogleCloudContactcenterinsightsV1ConversationTranscriptTranscriptSegmentWordInfo::class;
   protected $wordsDataType = 'array';
 
   /**
-   * For conversations derived from multi-channel audio, this is the channel
-   * number corresponding to the audio from that channel. For audioChannelCount
-   * = N, its output values can range from '1' to 'N'. A channel tag of 0
-   * indicates that the audio is mono.
-   *
-   * @param int $channelTag
+   * @param int
    */
   public function setChannelTag($channelTag)
   {
@@ -86,10 +64,7 @@ class GoogleCloudContactcenterinsightsV1ConversationTranscriptTranscriptSegment 
     return $this->channelTag;
   }
   /**
-   * A confidence estimate between 0.0 and 1.0 of the fidelity of this segment.
-   * A default value of 0.0 indicates that the value is unset.
-   *
-   * @param float $confidence
+   * @param float
    */
   public function setConfidence($confidence)
   {
@@ -103,9 +78,7 @@ class GoogleCloudContactcenterinsightsV1ConversationTranscriptTranscriptSegment 
     return $this->confidence;
   }
   /**
-   * CCAI metadata relating to the current transcript segment.
-   *
-   * @param GoogleCloudContactcenterinsightsV1ConversationTranscriptTranscriptSegmentDialogflowSegmentMetadata $dialogflowSegmentMetadata
+   * @param GoogleCloudContactcenterinsightsV1ConversationTranscriptTranscriptSegmentDialogflowSegmentMetadata
    */
   public function setDialogflowSegmentMetadata(GoogleCloudContactcenterinsightsV1ConversationTranscriptTranscriptSegmentDialogflowSegmentMetadata $dialogflowSegmentMetadata)
   {
@@ -119,10 +92,7 @@ class GoogleCloudContactcenterinsightsV1ConversationTranscriptTranscriptSegment 
     return $this->dialogflowSegmentMetadata;
   }
   /**
-   * The language code of this segment as a [BCP-47](https://www.rfc-
-   * editor.org/rfc/bcp/bcp47.txt) language tag. Example: "en-US".
-   *
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {
@@ -136,9 +106,7 @@ class GoogleCloudContactcenterinsightsV1ConversationTranscriptTranscriptSegment 
     return $this->languageCode;
   }
   /**
-   * The time that the message occurred, if provided.
-   *
-   * @param string $messageTime
+   * @param string
    */
   public function setMessageTime($messageTime)
   {
@@ -152,9 +120,7 @@ class GoogleCloudContactcenterinsightsV1ConversationTranscriptTranscriptSegment 
     return $this->messageTime;
   }
   /**
-   * The participant of this segment.
-   *
-   * @param GoogleCloudContactcenterinsightsV1ConversationParticipant $segmentParticipant
+   * @param GoogleCloudContactcenterinsightsV1ConversationParticipant
    */
   public function setSegmentParticipant(GoogleCloudContactcenterinsightsV1ConversationParticipant $segmentParticipant)
   {
@@ -168,9 +134,7 @@ class GoogleCloudContactcenterinsightsV1ConversationTranscriptTranscriptSegment 
     return $this->segmentParticipant;
   }
   /**
-   * The sentiment for this transcript segment.
-   *
-   * @param GoogleCloudContactcenterinsightsV1SentimentData $sentiment
+   * @param GoogleCloudContactcenterinsightsV1SentimentData
    */
   public function setSentiment(GoogleCloudContactcenterinsightsV1SentimentData $sentiment)
   {
@@ -184,9 +148,7 @@ class GoogleCloudContactcenterinsightsV1ConversationTranscriptTranscriptSegment 
     return $this->sentiment;
   }
   /**
-   * The text of this segment.
-   *
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {
@@ -200,25 +162,7 @@ class GoogleCloudContactcenterinsightsV1ConversationTranscriptTranscriptSegment 
     return $this->text;
   }
   /**
-   * Turn level audio for this transcript segment.
-   *
-   * @param GoogleCloudContactcenterinsightsV1ConversationDataSourceTurnLevelAudio $turnLevelAudio
-   */
-  public function setTurnLevelAudio(GoogleCloudContactcenterinsightsV1ConversationDataSourceTurnLevelAudio $turnLevelAudio)
-  {
-    $this->turnLevelAudio = $turnLevelAudio;
-  }
-  /**
-   * @return GoogleCloudContactcenterinsightsV1ConversationDataSourceTurnLevelAudio
-   */
-  public function getTurnLevelAudio()
-  {
-    return $this->turnLevelAudio;
-  }
-  /**
-   * A list of the word-specific information for each word in the segment.
-   *
-   * @param GoogleCloudContactcenterinsightsV1ConversationTranscriptTranscriptSegmentWordInfo[] $words
+   * @param GoogleCloudContactcenterinsightsV1ConversationTranscriptTranscriptSegmentWordInfo[]
    */
   public function setWords($words)
   {

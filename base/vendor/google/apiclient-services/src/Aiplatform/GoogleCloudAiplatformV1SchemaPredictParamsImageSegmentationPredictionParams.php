@@ -20,22 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1SchemaPredictParamsImageSegmentationPredictionParams extends \Google\Model
 {
   /**
-   * When the model predicts category of pixels of the image, it will only
-   * provide predictions for pixels that it is at least this much confident
-   * about. All other pixels will be classified as background. Default value is
-   * 0.5.
-   *
    * @var float
    */
   public $confidenceThreshold;
 
   /**
-   * When the model predicts category of pixels of the image, it will only
-   * provide predictions for pixels that it is at least this much confident
-   * about. All other pixels will be classified as background. Default value is
-   * 0.5.
-   *
-   * @param float $confidenceThreshold
+   * @param float
    */
   public function setConfidenceThreshold($confidenceThreshold)
   {

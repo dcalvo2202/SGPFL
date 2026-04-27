@@ -19,74 +19,33 @@ namespace Google\Service\ApigeeRegistry;
 
 class Instance extends \Google\Model
 {
-  /**
-   * The default value. This value is used if the state is omitted.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * The Instance has not been initialized or has been deleted.
-   */
-  public const STATE_INACTIVE = 'INACTIVE';
-  /**
-   * The Instance is being created.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * The Instance has been created and is ready for use.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * The Instance is being updated.
-   */
-  public const STATE_UPDATING = 'UPDATING';
-  /**
-   * The Instance is being deleted.
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * The Instance encountered an error during a state change.
-   */
-  public const STATE_FAILED = 'FAILED';
   protected $buildType = Build::class;
   protected $buildDataType = '';
   protected $configType = Config::class;
   protected $configDataType = '';
   /**
-   * Output only. Creation timestamp.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Format: `projects/locations/instance`. Currently only `locations/global` is
-   * supported.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The current state of the Instance.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. Extra information of Instance.State if the state is `FAILED`.
-   *
    * @var string
    */
   public $stateMessage;
   /**
-   * Output only. Last update timestamp.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. Build info of the Instance if it's in `ACTIVE` state.
-   *
-   * @param Build $build
+   * @param Build
    */
   public function setBuild(Build $build)
   {
@@ -100,9 +59,7 @@ class Instance extends \Google\Model
     return $this->build;
   }
   /**
-   * Required. Config of the Instance.
-   *
-   * @param Config $config
+   * @param Config
    */
   public function setConfig(Config $config)
   {
@@ -116,9 +73,7 @@ class Instance extends \Google\Model
     return $this->config;
   }
   /**
-   * Output only. Creation timestamp.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -132,10 +87,7 @@ class Instance extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Format: `projects/locations/instance`. Currently only `locations/global` is
-   * supported.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -149,28 +101,21 @@ class Instance extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The current state of the Instance.
-   *
-   * Accepted values: STATE_UNSPECIFIED, INACTIVE, CREATING, ACTIVE, UPDATING,
-   * DELETING, FAILED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. Extra information of Instance.State if the state is `FAILED`.
-   *
-   * @param string $stateMessage
+   * @param string
    */
   public function setStateMessage($stateMessage)
   {
@@ -184,9 +129,7 @@ class Instance extends \Google\Model
     return $this->stateMessage;
   }
   /**
-   * Output only. Last update timestamp.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

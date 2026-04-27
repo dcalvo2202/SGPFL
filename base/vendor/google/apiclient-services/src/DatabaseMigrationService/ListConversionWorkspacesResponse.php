@@ -23,23 +23,16 @@ class ListConversionWorkspacesResponse extends \Google\Collection
   protected $conversionWorkspacesType = ConversionWorkspace::class;
   protected $conversionWorkspacesDataType = 'array';
   /**
-   * A token which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * The list of conversion workspace objects.
-   *
-   * @param ConversionWorkspace[] $conversionWorkspaces
+   * @param ConversionWorkspace[]
    */
   public function setConversionWorkspaces($conversionWorkspaces)
   {
@@ -53,10 +46,7 @@ class ListConversionWorkspacesResponse extends \Google\Collection
     return $this->conversionWorkspaces;
   }
   /**
-   * A token which can be sent as `page_token` to retrieve the next page. If
-   * this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -70,9 +60,7 @@ class ListConversionWorkspacesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

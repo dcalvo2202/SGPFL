@@ -20,34 +20,24 @@ namespace Google\Service\Integrations;
 class EnterpriseCrmEventbusProtoBuganizerNotification extends \Google\Model
 {
   /**
-   * Whom to assign the new bug. Optional.
-   *
    * @var string
    */
   public $assigneeEmailAddress;
   /**
-   * ID of the buganizer component within which to create a new issue. Required.
-   *
    * @var string
    */
   public $componentId;
   /**
-   * ID of the buganizer template to use. Optional.
-   *
    * @var string
    */
   public $templateId;
   /**
-   * Title of the issue to be created. Required.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * Whom to assign the new bug. Optional.
-   *
-   * @param string $assigneeEmailAddress
+   * @param string
    */
   public function setAssigneeEmailAddress($assigneeEmailAddress)
   {
@@ -61,9 +51,7 @@ class EnterpriseCrmEventbusProtoBuganizerNotification extends \Google\Model
     return $this->assigneeEmailAddress;
   }
   /**
-   * ID of the buganizer component within which to create a new issue. Required.
-   *
-   * @param string $componentId
+   * @param string
    */
   public function setComponentId($componentId)
   {
@@ -77,9 +65,7 @@ class EnterpriseCrmEventbusProtoBuganizerNotification extends \Google\Model
     return $this->componentId;
   }
   /**
-   * ID of the buganizer template to use. Optional.
-   *
-   * @param string $templateId
+   * @param string
    */
   public function setTemplateId($templateId)
   {
@@ -93,9 +79,7 @@ class EnterpriseCrmEventbusProtoBuganizerNotification extends \Google\Model
     return $this->templateId;
   }
   /**
-   * Title of the issue to be created. Required.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

@@ -20,22 +20,16 @@ namespace Google\Service\Analytics;
 class ProfileParentLink extends \Google\Model
 {
   /**
-   * Link to the web property to which this view (profile) belongs.
-   *
    * @var string
    */
   public $href;
   /**
-   * Value is "analytics#webproperty".
-   *
    * @var string
    */
   public $type;
 
   /**
-   * Link to the web property to which this view (profile) belongs.
-   *
-   * @param string $href
+   * @param string
    */
   public function setHref($href)
   {
@@ -49,9 +43,7 @@ class ProfileParentLink extends \Google\Model
     return $this->href;
   }
   /**
-   * Value is "analytics#webproperty".
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

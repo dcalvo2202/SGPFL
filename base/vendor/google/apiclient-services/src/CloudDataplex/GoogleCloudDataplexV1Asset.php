@@ -20,34 +20,10 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1Asset extends \Google\Model
 {
   /**
-   * State is not specified.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Resource is active, i.e., ready to use.
-   */
-  public const STATE_ACTIVE = 'ACTIVE';
-  /**
-   * Resource is under creation.
-   */
-  public const STATE_CREATING = 'CREATING';
-  /**
-   * Resource is under deletion.
-   */
-  public const STATE_DELETING = 'DELETING';
-  /**
-   * Resource is active but has unresolved actions.
-   */
-  public const STATE_ACTION_REQUIRED = 'ACTION_REQUIRED';
-  /**
-   * Output only. The time when the asset was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Optional. Description of the asset.
-   *
    * @var string
    */
   public $description;
@@ -56,22 +32,14 @@ class GoogleCloudDataplexV1Asset extends \Google\Model
   protected $discoveryStatusType = GoogleCloudDataplexV1AssetDiscoveryStatus::class;
   protected $discoveryStatusDataType = '';
   /**
-   * Optional. User friendly display name.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Optional. User defined labels for the asset.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Output only. The relative resource name of the asset, of the form: projects
-   * /{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/a
-   * ssets/{asset_id}.
-   *
    * @var string
    */
   public $name;
@@ -82,30 +50,20 @@ class GoogleCloudDataplexV1Asset extends \Google\Model
   protected $securityStatusType = GoogleCloudDataplexV1AssetSecurityStatus::class;
   protected $securityStatusDataType = '';
   /**
-   * Output only. Current state of the asset.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. System generated globally unique ID for the asset. This ID
-   * will be different if the asset is deleted and re-created with the same
-   * name.
-   *
    * @var string
    */
   public $uid;
   /**
-   * Output only. The time when the asset was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. The time when the asset was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -119,9 +77,7 @@ class GoogleCloudDataplexV1Asset extends \Google\Model
     return $this->createTime;
   }
   /**
-   * Optional. Description of the asset.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -135,11 +91,7 @@ class GoogleCloudDataplexV1Asset extends \Google\Model
     return $this->description;
   }
   /**
-   * Optional. Specification of the discovery feature applied to data referenced
-   * by this asset. When this spec is left unset, the asset will use the spec
-   * set on the parent zone.
-   *
-   * @param GoogleCloudDataplexV1AssetDiscoverySpec $discoverySpec
+   * @param GoogleCloudDataplexV1AssetDiscoverySpec
    */
   public function setDiscoverySpec(GoogleCloudDataplexV1AssetDiscoverySpec $discoverySpec)
   {
@@ -153,10 +105,7 @@ class GoogleCloudDataplexV1Asset extends \Google\Model
     return $this->discoverySpec;
   }
   /**
-   * Output only. Status of the discovery feature applied to data referenced by
-   * this asset.
-   *
-   * @param GoogleCloudDataplexV1AssetDiscoveryStatus $discoveryStatus
+   * @param GoogleCloudDataplexV1AssetDiscoveryStatus
    */
   public function setDiscoveryStatus(GoogleCloudDataplexV1AssetDiscoveryStatus $discoveryStatus)
   {
@@ -170,9 +119,7 @@ class GoogleCloudDataplexV1Asset extends \Google\Model
     return $this->discoveryStatus;
   }
   /**
-   * Optional. User friendly display name.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -186,9 +133,7 @@ class GoogleCloudDataplexV1Asset extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Optional. User defined labels for the asset.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -202,11 +147,7 @@ class GoogleCloudDataplexV1Asset extends \Google\Model
     return $this->labels;
   }
   /**
-   * Output only. The relative resource name of the asset, of the form: projects
-   * /{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/a
-   * ssets/{asset_id}.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -220,9 +161,7 @@ class GoogleCloudDataplexV1Asset extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. Specification of the resource that is referenced by this asset.
-   *
-   * @param GoogleCloudDataplexV1AssetResourceSpec $resourceSpec
+   * @param GoogleCloudDataplexV1AssetResourceSpec
    */
   public function setResourceSpec(GoogleCloudDataplexV1AssetResourceSpec $resourceSpec)
   {
@@ -236,9 +175,7 @@ class GoogleCloudDataplexV1Asset extends \Google\Model
     return $this->resourceSpec;
   }
   /**
-   * Output only. Status of the resource referenced by this asset.
-   *
-   * @param GoogleCloudDataplexV1AssetResourceStatus $resourceStatus
+   * @param GoogleCloudDataplexV1AssetResourceStatus
    */
   public function setResourceStatus(GoogleCloudDataplexV1AssetResourceStatus $resourceStatus)
   {
@@ -252,10 +189,7 @@ class GoogleCloudDataplexV1Asset extends \Google\Model
     return $this->resourceStatus;
   }
   /**
-   * Output only. Status of the security policy applied to resource referenced
-   * by this asset.
-   *
-   * @param GoogleCloudDataplexV1AssetSecurityStatus $securityStatus
+   * @param GoogleCloudDataplexV1AssetSecurityStatus
    */
   public function setSecurityStatus(GoogleCloudDataplexV1AssetSecurityStatus $securityStatus)
   {
@@ -269,30 +203,21 @@ class GoogleCloudDataplexV1Asset extends \Google\Model
     return $this->securityStatus;
   }
   /**
-   * Output only. Current state of the asset.
-   *
-   * Accepted values: STATE_UNSPECIFIED, ACTIVE, CREATING, DELETING,
-   * ACTION_REQUIRED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Output only. System generated globally unique ID for the asset. This ID
-   * will be different if the asset is deleted and re-created with the same
-   * name.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {
@@ -306,9 +231,7 @@ class GoogleCloudDataplexV1Asset extends \Google\Model
     return $this->uid;
   }
   /**
-   * Output only. The time when the asset was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

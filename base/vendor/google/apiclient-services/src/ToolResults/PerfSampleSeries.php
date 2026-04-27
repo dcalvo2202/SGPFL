@@ -22,40 +22,28 @@ class PerfSampleSeries extends \Google\Model
   protected $basicPerfSampleSeriesType = BasicPerfSampleSeries::class;
   protected $basicPerfSampleSeriesDataType = '';
   /**
-   * A tool results execution ID. @OutputOnly
-   *
    * @var string
    */
   public $executionId;
   /**
-   * A tool results history ID. @OutputOnly
-   *
    * @var string
    */
   public $historyId;
   /**
-   * The cloud project @OutputOnly
-   *
    * @var string
    */
   public $projectId;
   /**
-   * A sample series id @OutputOnly
-   *
    * @var string
    */
   public $sampleSeriesId;
   /**
-   * A tool results step ID. @OutputOnly
-   *
    * @var string
    */
   public $stepId;
 
   /**
-   * Basic series represented by a line chart
-   *
-   * @param BasicPerfSampleSeries $basicPerfSampleSeries
+   * @param BasicPerfSampleSeries
    */
   public function setBasicPerfSampleSeries(BasicPerfSampleSeries $basicPerfSampleSeries)
   {
@@ -69,9 +57,7 @@ class PerfSampleSeries extends \Google\Model
     return $this->basicPerfSampleSeries;
   }
   /**
-   * A tool results execution ID. @OutputOnly
-   *
-   * @param string $executionId
+   * @param string
    */
   public function setExecutionId($executionId)
   {
@@ -85,9 +71,7 @@ class PerfSampleSeries extends \Google\Model
     return $this->executionId;
   }
   /**
-   * A tool results history ID. @OutputOnly
-   *
-   * @param string $historyId
+   * @param string
    */
   public function setHistoryId($historyId)
   {
@@ -101,9 +85,7 @@ class PerfSampleSeries extends \Google\Model
     return $this->historyId;
   }
   /**
-   * The cloud project @OutputOnly
-   *
-   * @param string $projectId
+   * @param string
    */
   public function setProjectId($projectId)
   {
@@ -117,9 +99,7 @@ class PerfSampleSeries extends \Google\Model
     return $this->projectId;
   }
   /**
-   * A sample series id @OutputOnly
-   *
-   * @param string $sampleSeriesId
+   * @param string
    */
   public function setSampleSeriesId($sampleSeriesId)
   {
@@ -133,9 +113,7 @@ class PerfSampleSeries extends \Google\Model
     return $this->sampleSeriesId;
   }
   /**
-   * A tool results step ID. @OutputOnly
-   *
-   * @param string $stepId
+   * @param string
    */
   public function setStepId($stepId)
   {

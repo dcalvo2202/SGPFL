@@ -24,9 +24,7 @@ class WeeklyCycle extends \Google\Collection
   protected $scheduleDataType = 'array';
 
   /**
-   * User can specify multiple windows in a week. Minimum of 1 window.
-   *
-   * @param Schedule[] $schedule
+   * @param Schedule[]
    */
   public function setSchedule($schedule)
   {

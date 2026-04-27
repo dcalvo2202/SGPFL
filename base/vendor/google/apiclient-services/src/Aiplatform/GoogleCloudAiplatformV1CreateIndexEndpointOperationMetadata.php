@@ -23,9 +23,7 @@ class GoogleCloudAiplatformV1CreateIndexEndpointOperationMetadata extends \Googl
   protected $genericMetadataDataType = '';
 
   /**
-   * The operation generic information.
-   *
-   * @param GoogleCloudAiplatformV1GenericOperationMetadata $genericMetadata
+   * @param GoogleCloudAiplatformV1GenericOperationMetadata
    */
   public function setGenericMetadata(GoogleCloudAiplatformV1GenericOperationMetadata $genericMetadata)
   {

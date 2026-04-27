@@ -20,22 +20,16 @@ namespace Google\Service\ContainerAnalysis;
 class TimeSpan extends \Google\Model
 {
   /**
-   * End of time span.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * Start of time span.
-   *
    * @var string
    */
   public $startTime;
 
   /**
-   * End of time span.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -49,9 +43,7 @@ class TimeSpan extends \Google\Model
     return $this->endTime;
   }
   /**
-   * Start of time span.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {

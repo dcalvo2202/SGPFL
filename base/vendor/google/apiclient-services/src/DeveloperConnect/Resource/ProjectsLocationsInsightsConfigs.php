@@ -53,7 +53,7 @@ class ProjectsLocationsInsightsConfigs extends \Google\Service\Resource
     return $this->call('create', [$params], Operation::class);
   }
   /**
-   * Deletes a single Insight. (insightsConfigs.delete)
+   * Delete a single Insight. (insightsConfigs.delete)
    *
    * @param string $name Required. Value for parent.
    * @param array $optParams Optional parameters.

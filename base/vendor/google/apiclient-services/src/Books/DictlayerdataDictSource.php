@@ -29,7 +29,7 @@ class DictlayerdataDictSource extends \Google\Model
   public $url;
 
   /**
-   * @param string $attribution
+   * @param string
    */
   public function setAttribution($attribution)
   {
@@ -43,7 +43,7 @@ class DictlayerdataDictSource extends \Google\Model
     return $this->attribution;
   }
   /**
-   * @param string $url
+   * @param string
    */
   public function setUrl($url)
   {

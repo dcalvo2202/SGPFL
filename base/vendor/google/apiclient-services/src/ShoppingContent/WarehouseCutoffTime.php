@@ -20,28 +20,16 @@ namespace Google\Service\ShoppingContent;
 class WarehouseCutoffTime extends \Google\Model
 {
   /**
-   * Required. Hour (24-hour clock) of the cutoff time until which an order has
-   * to be placed to be processed in the same day by the warehouse. Hour is
-   * based on the timezone of warehouse.
-   *
    * @var int
    */
   public $hour;
   /**
-   * Required. Minute of the cutoff time until which an order has to be placed
-   * to be processed in the same day by the warehouse. Minute is based on the
-   * timezone of warehouse.
-   *
    * @var int
    */
   public $minute;
 
   /**
-   * Required. Hour (24-hour clock) of the cutoff time until which an order has
-   * to be placed to be processed in the same day by the warehouse. Hour is
-   * based on the timezone of warehouse.
-   *
-   * @param int $hour
+   * @param int
    */
   public function setHour($hour)
   {
@@ -55,11 +43,7 @@ class WarehouseCutoffTime extends \Google\Model
     return $this->hour;
   }
   /**
-   * Required. Minute of the cutoff time until which an order has to be placed
-   * to be processed in the same day by the warehouse. Minute is based on the
-   * timezone of warehouse.
-   *
-   * @param int $minute
+   * @param int
    */
   public function setMinute($minute)
   {

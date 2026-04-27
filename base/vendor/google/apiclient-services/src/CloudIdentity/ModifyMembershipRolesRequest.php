@@ -23,12 +23,6 @@ class ModifyMembershipRolesRequest extends \Google\Collection
   protected $addRolesType = MembershipRole::class;
   protected $addRolesDataType = 'array';
   /**
-   * The `name`s of the `MembershipRole`s to be removed. Adding or removing
-   * roles in the same request as updating roles is not supported. It is not
-   * possible to remove the `MEMBER` `MembershipRole`. If you wish to delete a
-   * `Membership`, call MembershipsService.DeleteMembership instead. Must not
-   * contain `MEMBER`. Must not be set if `update_roles_params` is set.
-   *
    * @var string[]
    */
   public $removeRoles;
@@ -36,11 +30,7 @@ class ModifyMembershipRolesRequest extends \Google\Collection
   protected $updateRolesParamsDataType = 'array';
 
   /**
-   * The `MembershipRole`s to be added. Adding or removing roles in the same
-   * request as updating roles is not supported. Must not be set if
-   * `update_roles_params` is set.
-   *
-   * @param MembershipRole[] $addRoles
+   * @param MembershipRole[]
    */
   public function setAddRoles($addRoles)
   {
@@ -54,13 +44,7 @@ class ModifyMembershipRolesRequest extends \Google\Collection
     return $this->addRoles;
   }
   /**
-   * The `name`s of the `MembershipRole`s to be removed. Adding or removing
-   * roles in the same request as updating roles is not supported. It is not
-   * possible to remove the `MEMBER` `MembershipRole`. If you wish to delete a
-   * `Membership`, call MembershipsService.DeleteMembership instead. Must not
-   * contain `MEMBER`. Must not be set if `update_roles_params` is set.
-   *
-   * @param string[] $removeRoles
+   * @param string[]
    */
   public function setRemoveRoles($removeRoles)
   {
@@ -74,11 +58,7 @@ class ModifyMembershipRolesRequest extends \Google\Collection
     return $this->removeRoles;
   }
   /**
-   * The `MembershipRole`s to be updated. Updating roles in the same request as
-   * adding or removing roles is not supported. Must not be set if either
-   * `add_roles` or `remove_roles` is set.
-   *
-   * @param UpdateMembershipRolesParams[] $updateRolesParams
+   * @param UpdateMembershipRolesParams[]
    */
   public function setUpdateRolesParams($updateRolesParams)
   {

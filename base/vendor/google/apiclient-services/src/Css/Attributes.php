@@ -21,152 +21,94 @@ class Attributes extends \Google\Collection
 {
   protected $collection_key = 'sizeTypes';
   /**
-   * Additional URL of images of the item.
-   *
    * @var string[]
    */
   public $additionalImageLinks;
   /**
-   * Set to true if the item is targeted towards adults.
-   *
    * @var bool
    */
   public $adult;
   /**
-   * Target age group of the item.
-   *
    * @var string
    */
   public $ageGroup;
   /**
-   * Product Related Attributes.[14-36] Brand of the item.
-   *
    * @var string
    */
   public $brand;
   protected $certificationsType = Certification::class;
   protected $certificationsDataType = 'array';
   /**
-   * Color of the item.
-   *
    * @var string
    */
   public $color;
   /**
-   * Allows advertisers to override the item URL when the product is shown
-   * within the context of Product Ads.
-   *
    * @var string
    */
   public $cppAdsRedirect;
   /**
-   * URL directly linking to your the Product Detail Page of the CSS.
-   *
    * @var string
    */
   public $cppLink;
   /**
-   * URL for the mobile-optimized version of the Product Detail Page of the CSS.
-   *
    * @var string
    */
   public $cppMobileLink;
   /**
-   * Custom label 0 for custom grouping of items in a Shopping campaign.
-   *
    * @var string
    */
   public $customLabel0;
   /**
-   * Custom label 1 for custom grouping of items in a Shopping campaign.
-   *
    * @var string
    */
   public $customLabel1;
   /**
-   * Custom label 2 for custom grouping of items in a Shopping campaign.
-   *
    * @var string
    */
   public $customLabel2;
   /**
-   * Custom label 3 for custom grouping of items in a Shopping campaign.
-   *
    * @var string
    */
   public $customLabel3;
   /**
-   * Custom label 4 for custom grouping of items in a Shopping campaign.
-   *
    * @var string
    */
   public $customLabel4;
   /**
-   * Description of the item.
-   *
    * @var string
    */
   public $description;
   /**
-   * The list of destinations to exclude for this target (corresponds to
-   * unchecked check boxes in Merchant Center).
-   *
    * @var string[]
    */
   public $excludedDestinations;
   /**
-   * Date on which the item should expire, as specified upon insertion, in [ISO
-   * 8601](http://en.wikipedia.org/wiki/ISO_8601) format. The actual expiration
-   * date is exposed in `productstatuses` as
-   * [googleExpirationDate](https://support.google.com/merchants/answer/6324499)
-   * and might be earlier if `expirationDate` is too far in the future. Note: It
-   * may take 2+ days from the expiration date for the item to actually get
-   * deleted.
-   *
    * @var string
    */
   public $expirationDate;
   /**
-   * Target gender of the item.
-   *
    * @var string
    */
   public $gender;
   /**
-   * Google's category of the item (see [Google product
-   * taxonomy](https://support.google.com/merchants/answer/1705911)). When
-   * querying products, this field will contain the user provided value. There
-   * is currently no way to get back the auto assigned google product categories
-   * through the API.
-   *
    * @var string
    */
   public $googleProductCategory;
   /**
-   * Global Trade Item Number
-   * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
-   * item.
-   *
    * @var string
    */
   public $gtin;
   /**
-   * Condition of the headline offer.
-   *
    * @var string
    */
   public $headlineOfferCondition;
   protected $headlineOfferInstallmentType = HeadlineOfferInstallment::class;
   protected $headlineOfferInstallmentDataType = '';
   /**
-   * Link to the headline offer.
-   *
    * @var string
    */
   public $headlineOfferLink;
   /**
-   * Mobile Link to the headline offer.
-   *
    * @var string
    */
   public $headlineOfferMobileLink;
@@ -179,83 +121,44 @@ class Attributes extends \Google\Collection
   protected $highPriceType = Price::class;
   protected $highPriceDataType = '';
   /**
-   * URL of an image of the item.
-   *
    * @var string
    */
   public $imageLink;
   /**
-   * The list of destinations to include for this target (corresponds to checked
-   * check boxes in Merchant Center). Default destinations are always included
-   * unless provided in `excludedDestinations`.
-   *
    * @var string[]
    */
   public $includedDestinations;
   /**
-   * Whether the item is a merchant-defined bundle. A bundle is a custom
-   * grouping of different products sold by a merchant for a single price.
-   *
    * @var bool
    */
   public $isBundle;
   /**
-   * Shared identifier for all variants of the same product.
-   *
    * @var string
    */
   public $itemGroupId;
   protected $lowPriceType = Price::class;
   protected $lowPriceDataType = '';
   /**
-   * The material of which the item is made.
-   *
    * @var string
    */
   public $material;
   /**
-   * Maximum rating score of the product. Required if `rating` is provided. This
-   * field is for an upcoming feature and is not yet used.
-   *
-   * @var string
-   */
-  public $maxRating;
-  /**
-   * Minimum rating score of the product. Required if `rating` is provided. This
-   * field is for an upcoming feature and is not yet used.
-   *
-   * @var string
-   */
-  public $minRating;
-  /**
-   * Manufacturer Part Number
-   * ([MPN](https://support.google.com/merchants/answer/188494#mpn)) of the
-   * item.
-   *
    * @var string
    */
   public $mpn;
   /**
-   * The number of identical products in a merchant-defined multipack.
-   *
    * @var string
    */
   public $multipack;
   /**
-   * The number of CSS Products.
-   *
    * @var string
    */
   public $numberOfOffers;
   /**
-   * The item's pattern (e.g. polka dots).
-   *
    * @var string
    */
   public $pattern;
   /**
-   * Publication of this item will be temporarily paused.
-   *
    * @var string
    */
   public $pause;
@@ -264,17 +167,12 @@ class Attributes extends \Google\Collection
   protected $productHeightType = ProductDimension::class;
   protected $productHeightDataType = '';
   /**
-   * Bullet points describing the most relevant highlights of a product.
-   *
    * @var string[]
    */
   public $productHighlights;
   protected $productLengthType = ProductDimension::class;
   protected $productLengthDataType = '';
   /**
-   * Categories of the item (formatted as in [products data
-   * specification](https://support.google.com/merchants/answer/6324406)).
-   *
    * @var string[]
    */
   public $productTypes;
@@ -283,56 +181,24 @@ class Attributes extends \Google\Collection
   protected $productWidthType = ProductDimension::class;
   protected $productWidthDataType = '';
   /**
-   * Average rating score of the product. The value must be within the range of
-   * [`min_rating`, `max_rating`], inclusive. When displayed on the product
-   * page, this rating is normalized to a scale of [1, 5] with one decimal
-   * place. If provided, `review_count`, `min_rating`, and `max_rating` are also
-   * required. This field is for an upcoming feature and is not yet used.
-   *
-   * @var 
-   */
-  public $rating;
-  /**
-   * Number of reviews of the product. Required if `rating` is provided. This
-   * field is for an upcoming feature and is not yet used.
-   *
-   * @var string
-   */
-  public $reviewCount;
-  /**
-   * Size of the item. Only one value is allowed. For variants with different
-   * sizes, insert a separate product for each size with the same `itemGroupId`
-   * value (see [https://support.google.com/merchants/answer/6324492](size
-   * definition)).
-   *
    * @var string
    */
   public $size;
   /**
-   * System in which the size is specified. Recommended for apparel items.
-   *
    * @var string
    */
   public $sizeSystem;
   /**
-   * The cut of the item. It can be used to represent combined size types for
-   * apparel items. Maximum two of size types can be provided (see [size
-   * type](https://support.google.com/merchants/answer/6324497).
-   *
    * @var string[]
    */
   public $sizeTypes;
   /**
-   * Title of the item.
-   *
    * @var string
    */
   public $title;
 
   /**
-   * Additional URL of images of the item.
-   *
-   * @param string[] $additionalImageLinks
+   * @param string[]
    */
   public function setAdditionalImageLinks($additionalImageLinks)
   {
@@ -346,9 +212,7 @@ class Attributes extends \Google\Collection
     return $this->additionalImageLinks;
   }
   /**
-   * Set to true if the item is targeted towards adults.
-   *
-   * @param bool $adult
+   * @param bool
    */
   public function setAdult($adult)
   {
@@ -362,9 +226,7 @@ class Attributes extends \Google\Collection
     return $this->adult;
   }
   /**
-   * Target age group of the item.
-   *
-   * @param string $ageGroup
+   * @param string
    */
   public function setAgeGroup($ageGroup)
   {
@@ -378,9 +240,7 @@ class Attributes extends \Google\Collection
     return $this->ageGroup;
   }
   /**
-   * Product Related Attributes.[14-36] Brand of the item.
-   *
-   * @param string $brand
+   * @param string
    */
   public function setBrand($brand)
   {
@@ -394,9 +254,7 @@ class Attributes extends \Google\Collection
     return $this->brand;
   }
   /**
-   * A list of certificates claimed by the CSS for the given product.
-   *
-   * @param Certification[] $certifications
+   * @param Certification[]
    */
   public function setCertifications($certifications)
   {
@@ -410,9 +268,7 @@ class Attributes extends \Google\Collection
     return $this->certifications;
   }
   /**
-   * Color of the item.
-   *
-   * @param string $color
+   * @param string
    */
   public function setColor($color)
   {
@@ -426,10 +282,7 @@ class Attributes extends \Google\Collection
     return $this->color;
   }
   /**
-   * Allows advertisers to override the item URL when the product is shown
-   * within the context of Product Ads.
-   *
-   * @param string $cppAdsRedirect
+   * @param string
    */
   public function setCppAdsRedirect($cppAdsRedirect)
   {
@@ -443,9 +296,7 @@ class Attributes extends \Google\Collection
     return $this->cppAdsRedirect;
   }
   /**
-   * URL directly linking to your the Product Detail Page of the CSS.
-   *
-   * @param string $cppLink
+   * @param string
    */
   public function setCppLink($cppLink)
   {
@@ -459,9 +310,7 @@ class Attributes extends \Google\Collection
     return $this->cppLink;
   }
   /**
-   * URL for the mobile-optimized version of the Product Detail Page of the CSS.
-   *
-   * @param string $cppMobileLink
+   * @param string
    */
   public function setCppMobileLink($cppMobileLink)
   {
@@ -475,9 +324,7 @@ class Attributes extends \Google\Collection
     return $this->cppMobileLink;
   }
   /**
-   * Custom label 0 for custom grouping of items in a Shopping campaign.
-   *
-   * @param string $customLabel0
+   * @param string
    */
   public function setCustomLabel0($customLabel0)
   {
@@ -491,9 +338,7 @@ class Attributes extends \Google\Collection
     return $this->customLabel0;
   }
   /**
-   * Custom label 1 for custom grouping of items in a Shopping campaign.
-   *
-   * @param string $customLabel1
+   * @param string
    */
   public function setCustomLabel1($customLabel1)
   {
@@ -507,9 +352,7 @@ class Attributes extends \Google\Collection
     return $this->customLabel1;
   }
   /**
-   * Custom label 2 for custom grouping of items in a Shopping campaign.
-   *
-   * @param string $customLabel2
+   * @param string
    */
   public function setCustomLabel2($customLabel2)
   {
@@ -523,9 +366,7 @@ class Attributes extends \Google\Collection
     return $this->customLabel2;
   }
   /**
-   * Custom label 3 for custom grouping of items in a Shopping campaign.
-   *
-   * @param string $customLabel3
+   * @param string
    */
   public function setCustomLabel3($customLabel3)
   {
@@ -539,9 +380,7 @@ class Attributes extends \Google\Collection
     return $this->customLabel3;
   }
   /**
-   * Custom label 4 for custom grouping of items in a Shopping campaign.
-   *
-   * @param string $customLabel4
+   * @param string
    */
   public function setCustomLabel4($customLabel4)
   {
@@ -555,9 +394,7 @@ class Attributes extends \Google\Collection
     return $this->customLabel4;
   }
   /**
-   * Description of the item.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -571,10 +408,7 @@ class Attributes extends \Google\Collection
     return $this->description;
   }
   /**
-   * The list of destinations to exclude for this target (corresponds to
-   * unchecked check boxes in Merchant Center).
-   *
-   * @param string[] $excludedDestinations
+   * @param string[]
    */
   public function setExcludedDestinations($excludedDestinations)
   {
@@ -588,15 +422,7 @@ class Attributes extends \Google\Collection
     return $this->excludedDestinations;
   }
   /**
-   * Date on which the item should expire, as specified upon insertion, in [ISO
-   * 8601](http://en.wikipedia.org/wiki/ISO_8601) format. The actual expiration
-   * date is exposed in `productstatuses` as
-   * [googleExpirationDate](https://support.google.com/merchants/answer/6324499)
-   * and might be earlier if `expirationDate` is too far in the future. Note: It
-   * may take 2+ days from the expiration date for the item to actually get
-   * deleted.
-   *
-   * @param string $expirationDate
+   * @param string
    */
   public function setExpirationDate($expirationDate)
   {
@@ -610,9 +436,7 @@ class Attributes extends \Google\Collection
     return $this->expirationDate;
   }
   /**
-   * Target gender of the item.
-   *
-   * @param string $gender
+   * @param string
    */
   public function setGender($gender)
   {
@@ -626,13 +450,7 @@ class Attributes extends \Google\Collection
     return $this->gender;
   }
   /**
-   * Google's category of the item (see [Google product
-   * taxonomy](https://support.google.com/merchants/answer/1705911)). When
-   * querying products, this field will contain the user provided value. There
-   * is currently no way to get back the auto assigned google product categories
-   * through the API.
-   *
-   * @param string $googleProductCategory
+   * @param string
    */
   public function setGoogleProductCategory($googleProductCategory)
   {
@@ -646,11 +464,7 @@ class Attributes extends \Google\Collection
     return $this->googleProductCategory;
   }
   /**
-   * Global Trade Item Number
-   * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
-   * item.
-   *
-   * @param string $gtin
+   * @param string
    */
   public function setGtin($gtin)
   {
@@ -664,9 +478,7 @@ class Attributes extends \Google\Collection
     return $this->gtin;
   }
   /**
-   * Condition of the headline offer.
-   *
-   * @param string $headlineOfferCondition
+   * @param string
    */
   public function setHeadlineOfferCondition($headlineOfferCondition)
   {
@@ -680,9 +492,7 @@ class Attributes extends \Google\Collection
     return $this->headlineOfferCondition;
   }
   /**
-   * Number and amount of installments to pay for an item.
-   *
-   * @param HeadlineOfferInstallment $headlineOfferInstallment
+   * @param HeadlineOfferInstallment
    */
   public function setHeadlineOfferInstallment(HeadlineOfferInstallment $headlineOfferInstallment)
   {
@@ -696,9 +506,7 @@ class Attributes extends \Google\Collection
     return $this->headlineOfferInstallment;
   }
   /**
-   * Link to the headline offer.
-   *
-   * @param string $headlineOfferLink
+   * @param string
    */
   public function setHeadlineOfferLink($headlineOfferLink)
   {
@@ -712,9 +520,7 @@ class Attributes extends \Google\Collection
     return $this->headlineOfferLink;
   }
   /**
-   * Mobile Link to the headline offer.
-   *
-   * @param string $headlineOfferMobileLink
+   * @param string
    */
   public function setHeadlineOfferMobileLink($headlineOfferMobileLink)
   {
@@ -728,9 +534,7 @@ class Attributes extends \Google\Collection
     return $this->headlineOfferMobileLink;
   }
   /**
-   * Headline Price of the CSS Product.
-   *
-   * @param Price $headlineOfferPrice
+   * @param Price
    */
   public function setHeadlineOfferPrice(Price $headlineOfferPrice)
   {
@@ -744,9 +548,7 @@ class Attributes extends \Google\Collection
     return $this->headlineOfferPrice;
   }
   /**
-   * Headline Price of the CSS Product.
-   *
-   * @param Price $headlineOfferShippingPrice
+   * @param Price
    */
   public function setHeadlineOfferShippingPrice(Price $headlineOfferShippingPrice)
   {
@@ -760,10 +562,7 @@ class Attributes extends \Google\Collection
     return $this->headlineOfferShippingPrice;
   }
   /**
-   * Number of periods (months or years) and amount of payment per period for an
-   * item with an associated subscription contract.
-   *
-   * @param HeadlineOfferSubscriptionCost $headlineOfferSubscriptionCost
+   * @param HeadlineOfferSubscriptionCost
    */
   public function setHeadlineOfferSubscriptionCost(HeadlineOfferSubscriptionCost $headlineOfferSubscriptionCost)
   {
@@ -777,9 +576,7 @@ class Attributes extends \Google\Collection
     return $this->headlineOfferSubscriptionCost;
   }
   /**
-   * High Price of the CSS Product.
-   *
-   * @param Price $highPrice
+   * @param Price
    */
   public function setHighPrice(Price $highPrice)
   {
@@ -793,9 +590,7 @@ class Attributes extends \Google\Collection
     return $this->highPrice;
   }
   /**
-   * URL of an image of the item.
-   *
-   * @param string $imageLink
+   * @param string
    */
   public function setImageLink($imageLink)
   {
@@ -809,11 +604,7 @@ class Attributes extends \Google\Collection
     return $this->imageLink;
   }
   /**
-   * The list of destinations to include for this target (corresponds to checked
-   * check boxes in Merchant Center). Default destinations are always included
-   * unless provided in `excludedDestinations`.
-   *
-   * @param string[] $includedDestinations
+   * @param string[]
    */
   public function setIncludedDestinations($includedDestinations)
   {
@@ -827,10 +618,7 @@ class Attributes extends \Google\Collection
     return $this->includedDestinations;
   }
   /**
-   * Whether the item is a merchant-defined bundle. A bundle is a custom
-   * grouping of different products sold by a merchant for a single price.
-   *
-   * @param bool $isBundle
+   * @param bool
    */
   public function setIsBundle($isBundle)
   {
@@ -844,9 +632,7 @@ class Attributes extends \Google\Collection
     return $this->isBundle;
   }
   /**
-   * Shared identifier for all variants of the same product.
-   *
-   * @param string $itemGroupId
+   * @param string
    */
   public function setItemGroupId($itemGroupId)
   {
@@ -860,9 +646,7 @@ class Attributes extends \Google\Collection
     return $this->itemGroupId;
   }
   /**
-   * Low Price of the CSS Product.
-   *
-   * @param Price $lowPrice
+   * @param Price
    */
   public function setLowPrice(Price $lowPrice)
   {
@@ -876,9 +660,7 @@ class Attributes extends \Google\Collection
     return $this->lowPrice;
   }
   /**
-   * The material of which the item is made.
-   *
-   * @param string $material
+   * @param string
    */
   public function setMaterial($material)
   {
@@ -892,45 +674,7 @@ class Attributes extends \Google\Collection
     return $this->material;
   }
   /**
-   * Maximum rating score of the product. Required if `rating` is provided. This
-   * field is for an upcoming feature and is not yet used.
-   *
-   * @param string $maxRating
-   */
-  public function setMaxRating($maxRating)
-  {
-    $this->maxRating = $maxRating;
-  }
-  /**
-   * @return string
-   */
-  public function getMaxRating()
-  {
-    return $this->maxRating;
-  }
-  /**
-   * Minimum rating score of the product. Required if `rating` is provided. This
-   * field is for an upcoming feature and is not yet used.
-   *
-   * @param string $minRating
-   */
-  public function setMinRating($minRating)
-  {
-    $this->minRating = $minRating;
-  }
-  /**
-   * @return string
-   */
-  public function getMinRating()
-  {
-    return $this->minRating;
-  }
-  /**
-   * Manufacturer Part Number
-   * ([MPN](https://support.google.com/merchants/answer/188494#mpn)) of the
-   * item.
-   *
-   * @param string $mpn
+   * @param string
    */
   public function setMpn($mpn)
   {
@@ -944,9 +688,7 @@ class Attributes extends \Google\Collection
     return $this->mpn;
   }
   /**
-   * The number of identical products in a merchant-defined multipack.
-   *
-   * @param string $multipack
+   * @param string
    */
   public function setMultipack($multipack)
   {
@@ -960,9 +702,7 @@ class Attributes extends \Google\Collection
     return $this->multipack;
   }
   /**
-   * The number of CSS Products.
-   *
-   * @param string $numberOfOffers
+   * @param string
    */
   public function setNumberOfOffers($numberOfOffers)
   {
@@ -976,9 +716,7 @@ class Attributes extends \Google\Collection
     return $this->numberOfOffers;
   }
   /**
-   * The item's pattern (e.g. polka dots).
-   *
-   * @param string $pattern
+   * @param string
    */
   public function setPattern($pattern)
   {
@@ -992,9 +730,7 @@ class Attributes extends \Google\Collection
     return $this->pattern;
   }
   /**
-   * Publication of this item will be temporarily paused.
-   *
-   * @param string $pause
+   * @param string
    */
   public function setPause($pause)
   {
@@ -1008,9 +744,7 @@ class Attributes extends \Google\Collection
     return $this->pause;
   }
   /**
-   * Technical specification or additional product details.
-   *
-   * @param ProductDetail[] $productDetails
+   * @param ProductDetail[]
    */
   public function setProductDetails($productDetails)
   {
@@ -1024,10 +758,7 @@ class Attributes extends \Google\Collection
     return $this->productDetails;
   }
   /**
-   * The height of the product in the units provided. The value must be between
-   * 0 (exclusive) and 3000 (inclusive).
-   *
-   * @param ProductDimension $productHeight
+   * @param ProductDimension
    */
   public function setProductHeight(ProductDimension $productHeight)
   {
@@ -1041,9 +772,7 @@ class Attributes extends \Google\Collection
     return $this->productHeight;
   }
   /**
-   * Bullet points describing the most relevant highlights of a product.
-   *
-   * @param string[] $productHighlights
+   * @param string[]
    */
   public function setProductHighlights($productHighlights)
   {
@@ -1057,10 +786,7 @@ class Attributes extends \Google\Collection
     return $this->productHighlights;
   }
   /**
-   * The length of the product in the units provided. The value must be between
-   * 0 (exclusive) and 3000 (inclusive).
-   *
-   * @param ProductDimension $productLength
+   * @param ProductDimension
    */
   public function setProductLength(ProductDimension $productLength)
   {
@@ -1074,10 +800,7 @@ class Attributes extends \Google\Collection
     return $this->productLength;
   }
   /**
-   * Categories of the item (formatted as in [products data
-   * specification](https://support.google.com/merchants/answer/6324406)).
-   *
-   * @param string[] $productTypes
+   * @param string[]
    */
   public function setProductTypes($productTypes)
   {
@@ -1091,10 +814,7 @@ class Attributes extends \Google\Collection
     return $this->productTypes;
   }
   /**
-   * The weight of the product in the units provided. The value must be between
-   * 0 (exclusive) and 2000 (inclusive).
-   *
-   * @param ProductWeight $productWeight
+   * @param ProductWeight
    */
   public function setProductWeight(ProductWeight $productWeight)
   {
@@ -1108,10 +828,7 @@ class Attributes extends \Google\Collection
     return $this->productWeight;
   }
   /**
-   * The width of the product in the units provided. The value must be between 0
-   * (exclusive) and 3000 (inclusive).
-   *
-   * @param ProductDimension $productWidth
+   * @param ProductDimension
    */
   public function setProductWidth(ProductDimension $productWidth)
   {
@@ -1124,38 +841,8 @@ class Attributes extends \Google\Collection
   {
     return $this->productWidth;
   }
-  public function setRating($rating)
-  {
-    $this->rating = $rating;
-  }
-  public function getRating()
-  {
-    return $this->rating;
-  }
   /**
-   * Number of reviews of the product. Required if `rating` is provided. This
-   * field is for an upcoming feature and is not yet used.
-   *
-   * @param string $reviewCount
-   */
-  public function setReviewCount($reviewCount)
-  {
-    $this->reviewCount = $reviewCount;
-  }
-  /**
-   * @return string
-   */
-  public function getReviewCount()
-  {
-    return $this->reviewCount;
-  }
-  /**
-   * Size of the item. Only one value is allowed. For variants with different
-   * sizes, insert a separate product for each size with the same `itemGroupId`
-   * value (see [https://support.google.com/merchants/answer/6324492](size
-   * definition)).
-   *
-   * @param string $size
+   * @param string
    */
   public function setSize($size)
   {
@@ -1169,9 +856,7 @@ class Attributes extends \Google\Collection
     return $this->size;
   }
   /**
-   * System in which the size is specified. Recommended for apparel items.
-   *
-   * @param string $sizeSystem
+   * @param string
    */
   public function setSizeSystem($sizeSystem)
   {
@@ -1185,11 +870,7 @@ class Attributes extends \Google\Collection
     return $this->sizeSystem;
   }
   /**
-   * The cut of the item. It can be used to represent combined size types for
-   * apparel items. Maximum two of size types can be provided (see [size
-   * type](https://support.google.com/merchants/answer/6324497).
-   *
-   * @param string[] $sizeTypes
+   * @param string[]
    */
   public function setSizeTypes($sizeTypes)
   {
@@ -1203,9 +884,7 @@ class Attributes extends \Google\Collection
     return $this->sizeTypes;
   }
   /**
-   * Title of the item.
-   *
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

@@ -20,8 +20,6 @@ namespace Google\Service\Directory;
 class ChangeChromeOsDeviceStatusResult extends \Google\Model
 {
   /**
-   * The unique ID of the ChromeOS device.
-   *
    * @var string
    */
   public $deviceId;
@@ -31,9 +29,7 @@ class ChangeChromeOsDeviceStatusResult extends \Google\Model
   protected $responseDataType = '';
 
   /**
-   * The unique ID of the ChromeOS device.
-   *
-   * @param string $deviceId
+   * @param string
    */
   public function setDeviceId($deviceId)
   {
@@ -47,9 +43,7 @@ class ChangeChromeOsDeviceStatusResult extends \Google\Model
     return $this->deviceId;
   }
   /**
-   * The error result of the operation in case of failure.
-   *
-   * @param Status $error
+   * @param Status
    */
   public function setError(Status $error)
   {
@@ -63,9 +57,7 @@ class ChangeChromeOsDeviceStatusResult extends \Google\Model
     return $this->error;
   }
   /**
-   * The device could change its status successfully.
-   *
-   * @param ChangeChromeOsDeviceStatusSucceeded $response
+   * @param ChangeChromeOsDeviceStatusSucceeded
    */
   public function setResponse(ChangeChromeOsDeviceStatusSucceeded $response)
   {

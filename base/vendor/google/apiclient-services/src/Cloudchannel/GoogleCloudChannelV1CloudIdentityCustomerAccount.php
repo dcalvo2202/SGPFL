@@ -20,64 +20,32 @@ namespace Google\Service\Cloudchannel;
 class GoogleCloudChannelV1CloudIdentityCustomerAccount extends \Google\Model
 {
   /**
-   * Not used.
-   */
-  public const CUSTOMER_TYPE_CUSTOMER_TYPE_UNSPECIFIED = 'CUSTOMER_TYPE_UNSPECIFIED';
-  /**
-   * Domain-owning customer which needs domain verification to use services.
-   */
-  public const CUSTOMER_TYPE_DOMAIN = 'DOMAIN';
-  /**
-   * Team customer which needs email verification to use services.
-   */
-  public const CUSTOMER_TYPE_TEAM = 'TEAM';
-  /**
-   * If existing = true, and is 2-tier customer, the channel partner of the
-   * customer.
-   *
    * @var string
    */
   public $channelPartnerCloudIdentityId;
   /**
-   * If existing = true, the Cloud Identity ID of the customer.
-   *
    * @var string
    */
   public $customerCloudIdentityId;
   /**
-   * If owned = true, the name of the customer that owns the Cloud Identity
-   * account. Customer_name uses the format:
-   * accounts/{account_id}/customers/{customer_id}
-   *
    * @var string
    */
   public $customerName;
   /**
-   * If existing = true, the type of the customer.
-   *
    * @var string
    */
   public $customerType;
   /**
-   * Returns true if a Cloud Identity account exists for a specific domain.
-   *
    * @var bool
    */
   public $existing;
   /**
-   * Returns true if the Cloud Identity account is associated with a customer of
-   * the Channel Services partner (with active subscriptions or purchase
-   * consents).
-   *
    * @var bool
    */
   public $owned;
 
   /**
-   * If existing = true, and is 2-tier customer, the channel partner of the
-   * customer.
-   *
-   * @param string $channelPartnerCloudIdentityId
+   * @param string
    */
   public function setChannelPartnerCloudIdentityId($channelPartnerCloudIdentityId)
   {
@@ -91,9 +59,7 @@ class GoogleCloudChannelV1CloudIdentityCustomerAccount extends \Google\Model
     return $this->channelPartnerCloudIdentityId;
   }
   /**
-   * If existing = true, the Cloud Identity ID of the customer.
-   *
-   * @param string $customerCloudIdentityId
+   * @param string
    */
   public function setCustomerCloudIdentityId($customerCloudIdentityId)
   {
@@ -107,11 +73,7 @@ class GoogleCloudChannelV1CloudIdentityCustomerAccount extends \Google\Model
     return $this->customerCloudIdentityId;
   }
   /**
-   * If owned = true, the name of the customer that owns the Cloud Identity
-   * account. Customer_name uses the format:
-   * accounts/{account_id}/customers/{customer_id}
-   *
-   * @param string $customerName
+   * @param string
    */
   public function setCustomerName($customerName)
   {
@@ -125,27 +87,21 @@ class GoogleCloudChannelV1CloudIdentityCustomerAccount extends \Google\Model
     return $this->customerName;
   }
   /**
-   * If existing = true, the type of the customer.
-   *
-   * Accepted values: CUSTOMER_TYPE_UNSPECIFIED, DOMAIN, TEAM
-   *
-   * @param self::CUSTOMER_TYPE_* $customerType
+   * @param string
    */
   public function setCustomerType($customerType)
   {
     $this->customerType = $customerType;
   }
   /**
-   * @return self::CUSTOMER_TYPE_*
+   * @return string
    */
   public function getCustomerType()
   {
     return $this->customerType;
   }
   /**
-   * Returns true if a Cloud Identity account exists for a specific domain.
-   *
-   * @param bool $existing
+   * @param bool
    */
   public function setExisting($existing)
   {
@@ -159,11 +115,7 @@ class GoogleCloudChannelV1CloudIdentityCustomerAccount extends \Google\Model
     return $this->existing;
   }
   /**
-   * Returns true if the Cloud Identity account is associated with a customer of
-   * the Channel Services partner (with active subscriptions or purchase
-   * consents).
-   *
-   * @param bool $owned
+   * @param bool
    */
   public function setOwned($owned)
   {

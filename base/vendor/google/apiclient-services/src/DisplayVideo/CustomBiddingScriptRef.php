@@ -20,20 +20,12 @@ namespace Google\Service\DisplayVideo;
 class CustomBiddingScriptRef extends \Google\Model
 {
   /**
-   * A resource name to be used in media.download to Download the script files.
-   * Or media.upload to Upload the script files. Resource names have the format
-   * `customBiddingAlgorithms/{custom_bidding_algorithm_id}/scriptRef/{ref_id}`.
-   *
    * @var string
    */
   public $resourceName;
 
   /**
-   * A resource name to be used in media.download to Download the script files.
-   * Or media.upload to Upload the script files. Resource names have the format
-   * `customBiddingAlgorithms/{custom_bidding_algorithm_id}/scriptRef/{ref_id}`.
-   *
-   * @param string $resourceName
+   * @param string
    */
   public function setResourceName($resourceName)
   {

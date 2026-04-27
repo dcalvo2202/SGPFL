@@ -20,35 +20,24 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1alphaBatchUpdateUserLicensesMetadata extends \Google\Model
 {
   /**
-   * Operation create time.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Count of user licenses that failed to be updated.
-   *
    * @var string
    */
   public $failureCount;
   /**
-   * Count of user licenses successfully updated.
-   *
    * @var string
    */
   public $successCount;
   /**
-   * Operation last update time. If the operation is done, this is also the
-   * finish time.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Operation create time.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -62,9 +51,7 @@ class GoogleCloudDiscoveryengineV1alphaBatchUpdateUserLicensesMetadata extends \
     return $this->createTime;
   }
   /**
-   * Count of user licenses that failed to be updated.
-   *
-   * @param string $failureCount
+   * @param string
    */
   public function setFailureCount($failureCount)
   {
@@ -78,9 +65,7 @@ class GoogleCloudDiscoveryengineV1alphaBatchUpdateUserLicensesMetadata extends \
     return $this->failureCount;
   }
   /**
-   * Count of user licenses successfully updated.
-   *
-   * @param string $successCount
+   * @param string
    */
   public function setSuccessCount($successCount)
   {
@@ -94,10 +79,7 @@ class GoogleCloudDiscoveryengineV1alphaBatchUpdateUserLicensesMetadata extends \
     return $this->successCount;
   }
   /**
-   * Operation last update time. If the operation is done, this is also the
-   * finish time.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

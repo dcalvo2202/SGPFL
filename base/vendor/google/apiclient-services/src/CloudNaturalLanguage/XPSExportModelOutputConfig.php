@@ -26,23 +26,14 @@ class XPSExportModelOutputConfig extends \Google\Model
   protected $edgeTpuTfLiteFormatType = XPSEdgeTpuTfLiteFormat::class;
   protected $edgeTpuTfLiteFormatDataType = '';
   /**
-   * For any model and format: If true, will additionally export
-   * FirebaseExportedModelInfo in a firebase.txt file.
-   *
    * @var bool
    */
   public $exportFirebaseAuxiliaryInfo;
   /**
-   * The Google Contained Registry path the exported files to be pushed to. This
-   * location is set if the exported format is DOCKDER.
-   *
    * @var string
    */
   public $outputGcrUri;
   /**
-   * The Google Cloud Storage directory where XPS will output the exported
-   * models and related files. Format: gs://bucket/directory
-   *
    * @var string
    */
   public $outputGcsUri;
@@ -54,7 +45,7 @@ class XPSExportModelOutputConfig extends \Google\Model
   protected $tfSavedModelFormatDataType = '';
 
   /**
-   * @param XPSCoreMlFormat $coreMlFormat
+   * @param XPSCoreMlFormat
    */
   public function setCoreMlFormat(XPSCoreMlFormat $coreMlFormat)
   {
@@ -68,7 +59,7 @@ class XPSExportModelOutputConfig extends \Google\Model
     return $this->coreMlFormat;
   }
   /**
-   * @param XPSDockerFormat $dockerFormat
+   * @param XPSDockerFormat
    */
   public function setDockerFormat(XPSDockerFormat $dockerFormat)
   {
@@ -82,7 +73,7 @@ class XPSExportModelOutputConfig extends \Google\Model
     return $this->dockerFormat;
   }
   /**
-   * @param XPSEdgeTpuTfLiteFormat $edgeTpuTfLiteFormat
+   * @param XPSEdgeTpuTfLiteFormat
    */
   public function setEdgeTpuTfLiteFormat(XPSEdgeTpuTfLiteFormat $edgeTpuTfLiteFormat)
   {
@@ -96,10 +87,7 @@ class XPSExportModelOutputConfig extends \Google\Model
     return $this->edgeTpuTfLiteFormat;
   }
   /**
-   * For any model and format: If true, will additionally export
-   * FirebaseExportedModelInfo in a firebase.txt file.
-   *
-   * @param bool $exportFirebaseAuxiliaryInfo
+   * @param bool
    */
   public function setExportFirebaseAuxiliaryInfo($exportFirebaseAuxiliaryInfo)
   {
@@ -113,10 +101,7 @@ class XPSExportModelOutputConfig extends \Google\Model
     return $this->exportFirebaseAuxiliaryInfo;
   }
   /**
-   * The Google Contained Registry path the exported files to be pushed to. This
-   * location is set if the exported format is DOCKDER.
-   *
-   * @param string $outputGcrUri
+   * @param string
    */
   public function setOutputGcrUri($outputGcrUri)
   {
@@ -130,10 +115,7 @@ class XPSExportModelOutputConfig extends \Google\Model
     return $this->outputGcrUri;
   }
   /**
-   * The Google Cloud Storage directory where XPS will output the exported
-   * models and related files. Format: gs://bucket/directory
-   *
-   * @param string $outputGcsUri
+   * @param string
    */
   public function setOutputGcsUri($outputGcsUri)
   {
@@ -147,7 +129,7 @@ class XPSExportModelOutputConfig extends \Google\Model
     return $this->outputGcsUri;
   }
   /**
-   * @param XPSTfJsFormat $tfJsFormat
+   * @param XPSTfJsFormat
    */
   public function setTfJsFormat(XPSTfJsFormat $tfJsFormat)
   {
@@ -161,7 +143,7 @@ class XPSExportModelOutputConfig extends \Google\Model
     return $this->tfJsFormat;
   }
   /**
-   * @param XPSTfLiteFormat $tfLiteFormat
+   * @param XPSTfLiteFormat
    */
   public function setTfLiteFormat(XPSTfLiteFormat $tfLiteFormat)
   {
@@ -175,7 +157,7 @@ class XPSExportModelOutputConfig extends \Google\Model
     return $this->tfLiteFormat;
   }
   /**
-   * @param XPSTfSavedModelFormat $tfSavedModelFormat
+   * @param XPSTfSavedModelFormat
    */
   public function setTfSavedModelFormat(XPSTfSavedModelFormat $tfSavedModelFormat)
   {

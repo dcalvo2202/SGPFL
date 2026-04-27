@@ -20,16 +20,12 @@ namespace Google\Service\Container;
 class AutopilotConfig extends \Google\Model
 {
   /**
-   * Denotes that nodes belonging to this node pool are Autopilot nodes.
-   *
    * @var bool
    */
   public $enabled;
 
   /**
-   * Denotes that nodes belonging to this node pool are Autopilot nodes.
-   *
-   * @param bool $enabled
+   * @param bool
    */
   public function setEnabled($enabled)
   {

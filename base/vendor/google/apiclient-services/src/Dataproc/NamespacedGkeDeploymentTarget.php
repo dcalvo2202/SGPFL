@@ -20,23 +20,16 @@ namespace Google\Service\Dataproc;
 class NamespacedGkeDeploymentTarget extends \Google\Model
 {
   /**
-   * Optional. A namespace within the GKE cluster to deploy into.
-   *
    * @var string
    */
   public $clusterNamespace;
   /**
-   * Optional. The target GKE cluster to deploy to. Format:
-   * 'projects/{project}/locations/{location}/clusters/{cluster_id}'
-   *
    * @var string
    */
   public $targetGkeCluster;
 
   /**
-   * Optional. A namespace within the GKE cluster to deploy into.
-   *
-   * @param string $clusterNamespace
+   * @param string
    */
   public function setClusterNamespace($clusterNamespace)
   {
@@ -50,10 +43,7 @@ class NamespacedGkeDeploymentTarget extends \Google\Model
     return $this->clusterNamespace;
   }
   /**
-   * Optional. The target GKE cluster to deploy to. Format:
-   * 'projects/{project}/locations/{location}/clusters/{cluster_id}'
-   *
-   * @param string $targetGkeCluster
+   * @param string
    */
   public function setTargetGkeCluster($targetGkeCluster)
   {

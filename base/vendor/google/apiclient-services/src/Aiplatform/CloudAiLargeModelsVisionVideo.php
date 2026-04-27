@@ -20,40 +20,28 @@ namespace Google\Service\Aiplatform;
 class CloudAiLargeModelsVisionVideo extends \Google\Model
 {
   /**
-   * Base 64 encoded video bytes.
-   *
    * @var string
    */
   public $encodedVideo;
   /**
-   * Video encoding, for example "video/mp4".
-   *
    * @var string
    */
   public $encoding;
   /**
-   * Text/Expanded text input for Help Me Write.
-   *
    * @var string
    */
   public $text;
   /**
-   * Path to another storage (typically Google Cloud Storage).
-   *
    * @var string
    */
   public $uri;
   /**
-   * Raw bytes.
-   *
    * @var string
    */
   public $video;
 
   /**
-   * Base 64 encoded video bytes.
-   *
-   * @param string $encodedVideo
+   * @param string
    */
   public function setEncodedVideo($encodedVideo)
   {
@@ -67,9 +55,7 @@ class CloudAiLargeModelsVisionVideo extends \Google\Model
     return $this->encodedVideo;
   }
   /**
-   * Video encoding, for example "video/mp4".
-   *
-   * @param string $encoding
+   * @param string
    */
   public function setEncoding($encoding)
   {
@@ -83,9 +69,7 @@ class CloudAiLargeModelsVisionVideo extends \Google\Model
     return $this->encoding;
   }
   /**
-   * Text/Expanded text input for Help Me Write.
-   *
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {
@@ -99,9 +83,7 @@ class CloudAiLargeModelsVisionVideo extends \Google\Model
     return $this->text;
   }
   /**
-   * Path to another storage (typically Google Cloud Storage).
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {
@@ -115,9 +97,7 @@ class CloudAiLargeModelsVisionVideo extends \Google\Model
     return $this->uri;
   }
   /**
-   * Raw bytes.
-   *
-   * @param string $video
+   * @param string
    */
   public function setVideo($video)
   {

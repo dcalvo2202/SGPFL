@@ -21,36 +21,26 @@ class Certificate extends \Google\Collection
 {
   protected $collection_key = 'subjectAlternativeName';
   /**
-   * The certificate expire time.
-   *
    * @var string
    */
   public $expireTime;
   protected $issuingCertificateType = Certificate::class;
   protected $issuingCertificateDataType = '';
   /**
-   * The certificate subject.
-   *
    * @var string
    */
   public $subject;
   /**
-   * The additional hostnames for the domain.
-   *
    * @var string[]
    */
   public $subjectAlternativeName;
   /**
-   * The certificate thumbprint which uniquely identifies the certificate.
-   *
    * @var string
    */
   public $thumbprint;
 
   /**
-   * The certificate expire time.
-   *
-   * @param string $expireTime
+   * @param string
    */
   public function setExpireTime($expireTime)
   {
@@ -64,9 +54,7 @@ class Certificate extends \Google\Collection
     return $this->expireTime;
   }
   /**
-   * The issuer of this certificate.
-   *
-   * @param Certificate $issuingCertificate
+   * @param Certificate
    */
   public function setIssuingCertificate(Certificate $issuingCertificate)
   {
@@ -80,9 +68,7 @@ class Certificate extends \Google\Collection
     return $this->issuingCertificate;
   }
   /**
-   * The certificate subject.
-   *
-   * @param string $subject
+   * @param string
    */
   public function setSubject($subject)
   {
@@ -96,9 +82,7 @@ class Certificate extends \Google\Collection
     return $this->subject;
   }
   /**
-   * The additional hostnames for the domain.
-   *
-   * @param string[] $subjectAlternativeName
+   * @param string[]
    */
   public function setSubjectAlternativeName($subjectAlternativeName)
   {
@@ -112,9 +96,7 @@ class Certificate extends \Google\Collection
     return $this->subjectAlternativeName;
   }
   /**
-   * The certificate thumbprint which uniquely identifies the certificate.
-   *
-   * @param string $thumbprint
+   * @param string
    */
   public function setThumbprint($thumbprint)
   {

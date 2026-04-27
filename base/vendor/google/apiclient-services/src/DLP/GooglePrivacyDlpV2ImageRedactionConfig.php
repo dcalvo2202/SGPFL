@@ -22,9 +22,6 @@ class GooglePrivacyDlpV2ImageRedactionConfig extends \Google\Model
   protected $infoTypeType = GooglePrivacyDlpV2InfoType::class;
   protected $infoTypeDataType = '';
   /**
-   * If true, all text found in the image, regardless whether it matches an
-   * info_type, is redacted. Only one should be provided.
-   *
    * @var bool
    */
   public $redactAllText;
@@ -32,12 +29,7 @@ class GooglePrivacyDlpV2ImageRedactionConfig extends \Google\Model
   protected $redactionColorDataType = '';
 
   /**
-   * Only one per info_type should be provided per request. If not specified,
-   * and redact_all_text is false, the DLP API will redact all text that it
-   * matches against all info_types that are found, but not specified in another
-   * ImageRedactionConfig.
-   *
-   * @param GooglePrivacyDlpV2InfoType $infoType
+   * @param GooglePrivacyDlpV2InfoType
    */
   public function setInfoType(GooglePrivacyDlpV2InfoType $infoType)
   {
@@ -51,10 +43,7 @@ class GooglePrivacyDlpV2ImageRedactionConfig extends \Google\Model
     return $this->infoType;
   }
   /**
-   * If true, all text found in the image, regardless whether it matches an
-   * info_type, is redacted. Only one should be provided.
-   *
-   * @param bool $redactAllText
+   * @param bool
    */
   public function setRedactAllText($redactAllText)
   {
@@ -68,10 +57,7 @@ class GooglePrivacyDlpV2ImageRedactionConfig extends \Google\Model
     return $this->redactAllText;
   }
   /**
-   * The color to use when redacting content from an image. If not specified,
-   * the default is black.
-   *
-   * @param GooglePrivacyDlpV2Color $redactionColor
+   * @param GooglePrivacyDlpV2Color
    */
   public function setRedactionColor(GooglePrivacyDlpV2Color $redactionColor)
   {

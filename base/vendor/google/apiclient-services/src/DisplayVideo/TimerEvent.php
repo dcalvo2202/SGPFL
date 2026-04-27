@@ -20,22 +20,16 @@ namespace Google\Service\DisplayVideo;
 class TimerEvent extends \Google\Model
 {
   /**
-   * Required. The name of the timer event.
-   *
    * @var string
    */
   public $name;
   /**
-   * Required. The name used to identify this timer event in reports.
-   *
    * @var string
    */
   public $reportingName;
 
   /**
-   * Required. The name of the timer event.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -49,9 +43,7 @@ class TimerEvent extends \Google\Model
     return $this->name;
   }
   /**
-   * Required. The name used to identify this timer event in reports.
-   *
-   * @param string $reportingName
+   * @param string
    */
   public function setReportingName($reportingName)
   {

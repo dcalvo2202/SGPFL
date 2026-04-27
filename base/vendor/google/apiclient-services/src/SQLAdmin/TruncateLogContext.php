@@ -20,23 +20,16 @@ namespace Google\Service\SQLAdmin;
 class TruncateLogContext extends \Google\Model
 {
   /**
-   * This is always `sql#truncateLogContext`.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The type of log to truncate. Valid values are `MYSQL_GENERAL_TABLE` and
-   * `MYSQL_SLOW_TABLE`.
-   *
    * @var string
    */
   public $logType;
 
   /**
-   * This is always `sql#truncateLogContext`.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -50,10 +43,7 @@ class TruncateLogContext extends \Google\Model
     return $this->kind;
   }
   /**
-   * The type of log to truncate. Valid values are `MYSQL_GENERAL_TABLE` and
-   * `MYSQL_SLOW_TABLE`.
-   *
-   * @param string $logType
+   * @param string
    */
   public function setLogType($logType)
   {

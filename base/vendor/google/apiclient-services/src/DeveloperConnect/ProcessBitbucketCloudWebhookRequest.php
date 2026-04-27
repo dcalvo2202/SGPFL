@@ -23,9 +23,7 @@ class ProcessBitbucketCloudWebhookRequest extends \Google\Model
   protected $bodyDataType = '';
 
   /**
-   * Required. HTTP request body.
-   *
-   * @param HttpBody $body
+   * @param HttpBody
    */
   public function setBody(HttpBody $body)
   {

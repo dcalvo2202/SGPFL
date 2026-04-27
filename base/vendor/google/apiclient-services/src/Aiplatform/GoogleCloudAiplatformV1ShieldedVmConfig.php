@@ -20,24 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1ShieldedVmConfig extends \Google\Model
 {
   /**
-   * Defines whether the instance has [Secure
-   * Boot](https://cloud.google.com/compute/shielded-vm/docs/shielded-vm#secure-
-   * boot) enabled. Secure Boot helps ensure that the system only runs authentic
-   * software by verifying the digital signature of all boot components, and
-   * halting the boot process if signature verification fails.
-   *
    * @var bool
    */
   public $enableSecureBoot;
 
   /**
-   * Defines whether the instance has [Secure
-   * Boot](https://cloud.google.com/compute/shielded-vm/docs/shielded-vm#secure-
-   * boot) enabled. Secure Boot helps ensure that the system only runs authentic
-   * software by verifying the digital signature of all boot components, and
-   * halting the boot process if signature verification fails.
-   *
-   * @param bool $enableSecureBoot
+   * @param bool
    */
   public function setEnableSecureBoot($enableSecureBoot)
   {

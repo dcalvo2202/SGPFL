@@ -20,44 +20,30 @@ namespace Google\Service\DLP;
 class GooglePrivacyDlpV2DeidentifyTemplate extends \Google\Model
 {
   /**
-   * Output only. The creation timestamp of an inspectTemplate.
-   *
    * @var string
    */
   public $createTime;
   protected $deidentifyConfigType = GooglePrivacyDlpV2DeidentifyConfig::class;
   protected $deidentifyConfigDataType = '';
   /**
-   * Short description (max 256 chars).
-   *
    * @var string
    */
   public $description;
   /**
-   * Display name (max 256 chars).
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. The template name. The template will have one of the following
-   * formats: `projects/PROJECT_ID/deidentifyTemplates/TEMPLATE_ID` OR
-   * `organizations/ORGANIZATION_ID/deidentifyTemplates/TEMPLATE_ID`
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. The last update timestamp of an inspectTemplate.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Output only. The creation timestamp of an inspectTemplate.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -71,9 +57,7 @@ class GooglePrivacyDlpV2DeidentifyTemplate extends \Google\Model
     return $this->createTime;
   }
   /**
-   * The core content of the template.
-   *
-   * @param GooglePrivacyDlpV2DeidentifyConfig $deidentifyConfig
+   * @param GooglePrivacyDlpV2DeidentifyConfig
    */
   public function setDeidentifyConfig(GooglePrivacyDlpV2DeidentifyConfig $deidentifyConfig)
   {
@@ -87,9 +71,7 @@ class GooglePrivacyDlpV2DeidentifyTemplate extends \Google\Model
     return $this->deidentifyConfig;
   }
   /**
-   * Short description (max 256 chars).
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -103,9 +85,7 @@ class GooglePrivacyDlpV2DeidentifyTemplate extends \Google\Model
     return $this->description;
   }
   /**
-   * Display name (max 256 chars).
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -119,11 +99,7 @@ class GooglePrivacyDlpV2DeidentifyTemplate extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Output only. The template name. The template will have one of the following
-   * formats: `projects/PROJECT_ID/deidentifyTemplates/TEMPLATE_ID` OR
-   * `organizations/ORGANIZATION_ID/deidentifyTemplates/TEMPLATE_ID`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -137,9 +113,7 @@ class GooglePrivacyDlpV2DeidentifyTemplate extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. The last update timestamp of an inspectTemplate.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

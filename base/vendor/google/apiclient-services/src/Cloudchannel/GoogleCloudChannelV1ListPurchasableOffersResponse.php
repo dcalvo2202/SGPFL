@@ -21,8 +21,6 @@ class GoogleCloudChannelV1ListPurchasableOffersResponse extends \Google\Collecti
 {
   protected $collection_key = 'purchasableOffers';
   /**
-   * A token to retrieve the next page of results.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -30,9 +28,7 @@ class GoogleCloudChannelV1ListPurchasableOffersResponse extends \Google\Collecti
   protected $purchasableOffersDataType = 'array';
 
   /**
-   * A token to retrieve the next page of results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -46,9 +42,7 @@ class GoogleCloudChannelV1ListPurchasableOffersResponse extends \Google\Collecti
     return $this->nextPageToken;
   }
   /**
-   * The list of Offers requested.
-   *
-   * @param GoogleCloudChannelV1PurchasableOffer[] $purchasableOffers
+   * @param GoogleCloudChannelV1PurchasableOffer[]
    */
   public function setPurchasableOffers($purchasableOffers)
   {

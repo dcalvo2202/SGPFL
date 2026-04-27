@@ -27,9 +27,7 @@ class ArtifactConfig extends \Google\Model
   protected $transcriptionConfigDataType = '';
 
   /**
-   * Configuration for recording.
-   *
-   * @param RecordingConfig $recordingConfig
+   * @param RecordingConfig
    */
   public function setRecordingConfig(RecordingConfig $recordingConfig)
   {
@@ -43,9 +41,7 @@ class ArtifactConfig extends \Google\Model
     return $this->recordingConfig;
   }
   /**
-   * Configuration for auto-smart-notes.
-   *
-   * @param SmartNotesConfig $smartNotesConfig
+   * @param SmartNotesConfig
    */
   public function setSmartNotesConfig(SmartNotesConfig $smartNotesConfig)
   {
@@ -59,9 +55,7 @@ class ArtifactConfig extends \Google\Model
     return $this->smartNotesConfig;
   }
   /**
-   * Configuration for auto-transcript.
-   *
-   * @param TranscriptionConfig $transcriptionConfig
+   * @param TranscriptionConfig
    */
   public function setTranscriptionConfig(TranscriptionConfig $transcriptionConfig)
   {

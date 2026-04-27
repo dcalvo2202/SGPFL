@@ -24,9 +24,7 @@ class WorkloadOnboardingState extends \Google\Collection
   protected $onboardingStepsDataType = 'array';
 
   /**
-   * List of workload onboarding steps.
-   *
-   * @param WorkloadOnboardingStep[] $onboardingSteps
+   * @param WorkloadOnboardingStep[]
    */
   public function setOnboardingSteps($onboardingSteps)
   {

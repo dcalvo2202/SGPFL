@@ -28,7 +28,7 @@ class GoogleCloudDialogflowCxV3ListIntentsResponse extends \Google\Collection
   public $nextPageToken;
 
   /**
-   * @param GoogleCloudDialogflowCxV3Intent[] $intents
+   * @param GoogleCloudDialogflowCxV3Intent[]
    */
   public function setIntents($intents)
   {
@@ -42,7 +42,7 @@ class GoogleCloudDialogflowCxV3ListIntentsResponse extends \Google\Collection
     return $this->intents;
   }
   /**
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

@@ -20,41 +20,18 @@ namespace Google\Service\Walletobjects;
 class PurchaseDetails extends \Google\Model
 {
   /**
-   * ID of the account used to purchase the ticket.
-   *
    * @var string
    */
   public $accountId;
   /**
-   * The confirmation code for the purchase. This may be the same for multiple
-   * different tickets and is used to group tickets together.
-   *
    * @var string
    */
   public $confirmationCode;
   /**
-   * The purchase date/time of the ticket. This is an ISO 8601 extended format
-   * date/time, with or without an offset. Time may be specified up to
-   * nanosecond precision. Offsets may be specified with seconds precision (even
-   * though offset seconds is not part of ISO 8601). For example:
-   * `1985-04-12T23:20:50.52Z` would be 20 minutes and 50.52 seconds after the
-   * 23rd hour of April 12th, 1985 in UTC. `1985-04-12T19:20:50.52-04:00` would
-   * be 20 minutes and 50.52 seconds after the 19th hour of April 12th, 1985, 4
-   * hours before UTC (same instant in time as the above example). If the event
-   * were in New York, this would be the equivalent of Eastern Daylight Time
-   * (EDT). Remember that offset varies in regions that observe Daylight Saving
-   * Time (or Summer Time), depending on the time of the year.
-   * `1985-04-12T19:20:50.52` would be 20 minutes and 50.52 seconds after the
-   * 19th hour of April 12th, 1985 with no offset information. Without offset
-   * information, some rich features may not be available.
-   *
    * @var string
    */
   public $purchaseDateTime;
   /**
-   * Receipt number/identifier for tracking the ticket purchase via the body
-   * that sold the ticket.
-   *
    * @var string
    */
   public $purchaseReceiptNumber;
@@ -62,9 +39,7 @@ class PurchaseDetails extends \Google\Model
   protected $ticketCostDataType = '';
 
   /**
-   * ID of the account used to purchase the ticket.
-   *
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
@@ -78,10 +53,7 @@ class PurchaseDetails extends \Google\Model
     return $this->accountId;
   }
   /**
-   * The confirmation code for the purchase. This may be the same for multiple
-   * different tickets and is used to group tickets together.
-   *
-   * @param string $confirmationCode
+   * @param string
    */
   public function setConfirmationCode($confirmationCode)
   {
@@ -95,22 +67,7 @@ class PurchaseDetails extends \Google\Model
     return $this->confirmationCode;
   }
   /**
-   * The purchase date/time of the ticket. This is an ISO 8601 extended format
-   * date/time, with or without an offset. Time may be specified up to
-   * nanosecond precision. Offsets may be specified with seconds precision (even
-   * though offset seconds is not part of ISO 8601). For example:
-   * `1985-04-12T23:20:50.52Z` would be 20 minutes and 50.52 seconds after the
-   * 23rd hour of April 12th, 1985 in UTC. `1985-04-12T19:20:50.52-04:00` would
-   * be 20 minutes and 50.52 seconds after the 19th hour of April 12th, 1985, 4
-   * hours before UTC (same instant in time as the above example). If the event
-   * were in New York, this would be the equivalent of Eastern Daylight Time
-   * (EDT). Remember that offset varies in regions that observe Daylight Saving
-   * Time (or Summer Time), depending on the time of the year.
-   * `1985-04-12T19:20:50.52` would be 20 minutes and 50.52 seconds after the
-   * 19th hour of April 12th, 1985 with no offset information. Without offset
-   * information, some rich features may not be available.
-   *
-   * @param string $purchaseDateTime
+   * @param string
    */
   public function setPurchaseDateTime($purchaseDateTime)
   {
@@ -124,10 +81,7 @@ class PurchaseDetails extends \Google\Model
     return $this->purchaseDateTime;
   }
   /**
-   * Receipt number/identifier for tracking the ticket purchase via the body
-   * that sold the ticket.
-   *
-   * @param string $purchaseReceiptNumber
+   * @param string
    */
   public function setPurchaseReceiptNumber($purchaseReceiptNumber)
   {
@@ -141,9 +95,7 @@ class PurchaseDetails extends \Google\Model
     return $this->purchaseReceiptNumber;
   }
   /**
-   * The cost of the ticket.
-   *
-   * @param TicketCost $ticketCost
+   * @param TicketCost
    */
   public function setTicketCost(TicketCost $ticketCost)
   {

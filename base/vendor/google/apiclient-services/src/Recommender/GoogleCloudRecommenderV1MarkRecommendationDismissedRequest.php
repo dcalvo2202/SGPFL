@@ -20,16 +20,12 @@ namespace Google\Service\Recommender;
 class GoogleCloudRecommenderV1MarkRecommendationDismissedRequest extends \Google\Model
 {
   /**
-   * Fingerprint of the Recommendation. Provides optimistic locking.
-   *
    * @var string
    */
   public $etag;
 
   /**
-   * Fingerprint of the Recommendation. Provides optimistic locking.
-   *
-   * @param string $etag
+   * @param string
    */
   public function setEtag($etag)
   {

@@ -22,23 +22,16 @@ class UserIdentifier extends \Google\Model
   protected $addressInfoType = OfflineUserAddressInfo::class;
   protected $addressInfoDataType = '';
   /**
-   * Hashed email address using SHA-256 hash function after normalization.
-   *
    * @var string
    */
   public $hashedEmail;
   /**
-   * Hashed phone number using SHA-256 hash function after normalization (E164
-   * standard).
-   *
    * @var string
    */
   public $hashedPhoneNumber;
 
   /**
-   * Address information.
-   *
-   * @param OfflineUserAddressInfo $addressInfo
+   * @param OfflineUserAddressInfo
    */
   public function setAddressInfo(OfflineUserAddressInfo $addressInfo)
   {
@@ -52,9 +45,7 @@ class UserIdentifier extends \Google\Model
     return $this->addressInfo;
   }
   /**
-   * Hashed email address using SHA-256 hash function after normalization.
-   *
-   * @param string $hashedEmail
+   * @param string
    */
   public function setHashedEmail($hashedEmail)
   {
@@ -68,10 +59,7 @@ class UserIdentifier extends \Google\Model
     return $this->hashedEmail;
   }
   /**
-   * Hashed phone number using SHA-256 hash function after normalization (E164
-   * standard).
-   *
-   * @param string $hashedPhoneNumber
+   * @param string
    */
   public function setHashedPhoneNumber($hashedPhoneNumber)
   {

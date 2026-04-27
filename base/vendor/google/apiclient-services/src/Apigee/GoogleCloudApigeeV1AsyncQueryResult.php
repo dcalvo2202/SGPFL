@@ -20,25 +20,16 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1AsyncQueryResult extends \Google\Model
 {
   /**
-   * Query result will be unaccessable after this time.
-   *
    * @var string
    */
   public $expires;
   /**
-   * Self link of the query results. Example: `/organizations/myorg/environments
-   * /myenv/queries/9cfc0d85-0f30-46d6-ae6f-318d0cb961bd/result` or following
-   * format if query is running at host level: `/organizations/myorg/hostQueries
-   * /9cfc0d85-0f30-46d6-ae6f-318d0cb961bd/result`
-   *
    * @var string
    */
   public $self;
 
   /**
-   * Query result will be unaccessable after this time.
-   *
-   * @param string $expires
+   * @param string
    */
   public function setExpires($expires)
   {
@@ -52,12 +43,7 @@ class GoogleCloudApigeeV1AsyncQueryResult extends \Google\Model
     return $this->expires;
   }
   /**
-   * Self link of the query results. Example: `/organizations/myorg/environments
-   * /myenv/queries/9cfc0d85-0f30-46d6-ae6f-318d0cb961bd/result` or following
-   * format if query is running at host level: `/organizations/myorg/hostQueries
-   * /9cfc0d85-0f30-46d6-ae6f-318d0cb961bd/result`
-   *
-   * @param string $self
+   * @param string
    */
   public function setSelf($self)
   {

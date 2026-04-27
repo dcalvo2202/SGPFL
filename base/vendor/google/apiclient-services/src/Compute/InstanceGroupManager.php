@@ -19,143 +19,76 @@ namespace Google\Service\Compute;
 
 class InstanceGroupManager extends \Google\Collection
 {
-  /**
-   * (Default) Pagination is disabled for the group'slistManagedInstances API
-   * method. maxResults and pageToken query parameters are ignored and all
-   * instances are returned in a single response.
-   */
-  public const LIST_MANAGED_INSTANCES_RESULTS_PAGELESS = 'PAGELESS';
-  /**
-   * Pagination is enabled for the group's listManagedInstances API method.
-   * maxResults and pageToken query parameters are respected.
-   */
-  public const LIST_MANAGED_INSTANCES_RESULTS_PAGINATED = 'PAGINATED';
   protected $collection_key = 'versions';
   protected $allInstancesConfigType = InstanceGroupManagerAllInstancesConfig::class;
   protected $allInstancesConfigDataType = '';
   protected $autoHealingPoliciesType = InstanceGroupManagerAutoHealingPolicy::class;
   protected $autoHealingPoliciesDataType = 'array';
   /**
-   * The base instance name is a prefix that you want to attach to the names of
-   * all VMs in a MIG. The maximum character length is 58 and the name must
-   * comply with RFC1035 format.
-   *
-   * When a VM is created in the group, the MIG appends a hyphen and a random
-   * four-character string to the base instance name. If you want the MIG to
-   * assign sequential numbers instead of a random string, then end the base
-   * instance name with a hyphen followed by one or more hash symbols. The hash
-   * symbols indicate the number of digits. For example, a base instance name of
-   * "vm-###" results in "vm-001" as a VM name. @pattern
-   * [a-z](([-a-z0-9]{0,57})|([-a-z0-9]{0,51}-#{1,10}(\\[[0-9]{1,10}\\])?))
-   *
    * @var string
    */
   public $baseInstanceName;
   /**
-   * Output only. The creation timestamp for this managed instance group
-   * inRFC3339 text format.
-   *
    * @var string
    */
   public $creationTimestamp;
   protected $currentActionsType = InstanceGroupManagerActionsSummary::class;
   protected $currentActionsDataType = '';
   /**
-   * An optional description of this resource.
-   *
    * @var string
    */
   public $description;
   protected $distributionPolicyType = DistributionPolicy::class;
   protected $distributionPolicyDataType = '';
   /**
-   * Fingerprint of this resource. This field may be used in optimistic locking.
-   * It will be ignored when inserting an InstanceGroupManager. An up-to-date
-   * fingerprint must be provided in order to update the InstanceGroupManager,
-   * otherwise the request will fail with error412 conditionNotMet.
-   *
-   * To see the latest fingerprint, make a get() request to retrieve an
-   * InstanceGroupManager.
-   *
    * @var string
    */
   public $fingerprint;
   /**
-   * Output only. A unique identifier for this resource type. The server
-   * generates this identifier.
-   *
    * @var string
    */
   public $id;
   protected $instanceFlexibilityPolicyType = InstanceGroupManagerInstanceFlexibilityPolicy::class;
   protected $instanceFlexibilityPolicyDataType = '';
   /**
-   * Output only. The URL of the Instance Group resource.
-   *
    * @var string
    */
   public $instanceGroup;
   protected $instanceLifecyclePolicyType = InstanceGroupManagerInstanceLifecyclePolicy::class;
   protected $instanceLifecyclePolicyDataType = '';
   /**
-   * The URL of the instance template that is specified for this managed
-   * instance group. The group uses this template to create all new instances in
-   * the managed instance group. The templates for existing instances in the
-   * group do not change unless you run recreateInstances,
-   * runapplyUpdatesToInstances, or set the group'supdatePolicy.type to
-   * PROACTIVE.
-   *
    * @var string
    */
   public $instanceTemplate;
   /**
-   * Output only. The resource type, which is alwayscompute#instanceGroupManager
-   * for managed instance groups.
-   *
    * @var string
    */
   public $kind;
   /**
-   * Pagination behavior of the listManagedInstances API method for this managed
-   * instance group.
-   *
    * @var string
    */
   public $listManagedInstancesResults;
   /**
-   * The name of the managed instance group. The name must be 1-63 characters
-   * long, and comply withRFC1035.
-   *
    * @var string
    */
   public $name;
   protected $namedPortsType = NamedPort::class;
   protected $namedPortsDataType = 'array';
   /**
-   * Output only. [Output Only] The URL of theregion where the managed instance
-   * group resides (for regional resources).
-   *
    * @var string
    */
   public $region;
   protected $resourcePoliciesType = InstanceGroupManagerResourcePolicies::class;
   protected $resourcePoliciesDataType = '';
   /**
-   * Output only. Reserved for future use.
-   *
    * @var bool
    */
   public $satisfiesPzi;
   /**
-   * Output only. Reserved for future use.
-   *
    * @var bool
    */
   public $satisfiesPzs;
   /**
-   * Output only. The URL for this managed instance group. The server defines
-   * this URL.
-   *
    * @var string
    */
   public $selfLink;
@@ -166,40 +99,18 @@ class InstanceGroupManager extends \Google\Collection
   protected $statusType = InstanceGroupManagerStatus::class;
   protected $statusDataType = '';
   /**
-   * The URLs for all TargetPool resources to which instances in
-   * theinstanceGroup field are added. The target pools automatically apply to
-   * all of the instances in the managed instance group.
-   *
    * @var string[]
    */
   public $targetPools;
   /**
-   * The target number of running instances for this managed instance group. You
-   * can reduce this number by using the instanceGroupManager deleteInstances or
-   * abandonInstances methods. Resizing the group also changes this number.
-   *
    * @var int
    */
   public $targetSize;
-  protected $targetSizePolicyType = InstanceGroupManagerTargetSizePolicy::class;
-  protected $targetSizePolicyDataType = '';
   /**
-   * The target number of stopped instances for this managed instance group.
-   * This number changes when you:         - Stop instance using the
-   * stopInstances    method or start instances using the startInstances
-   * method.    - Manually change the targetStoppedSize using the update
-   * method.
-   *
    * @var int
    */
   public $targetStoppedSize;
   /**
-   * The target number of suspended instances for this managed instance group.
-   * This number changes when you:         - Suspend instance using the
-   * suspendInstances    method or resume instances using the resumeInstances
-   * method.    - Manually change the targetSuspendedSize using the update
-   * method.
-   *
    * @var int
    */
   public $targetSuspendedSize;
@@ -208,18 +119,12 @@ class InstanceGroupManager extends \Google\Collection
   protected $versionsType = InstanceGroupManagerVersion::class;
   protected $versionsDataType = 'array';
   /**
-   * Output only. The URL of azone where the managed instance group is located
-   * (for zonal resources).
-   *
    * @var string
    */
   public $zone;
 
   /**
-   * Specifies configuration that overrides the instance template configuration
-   * for the group.
-   *
-   * @param InstanceGroupManagerAllInstancesConfig $allInstancesConfig
+   * @param InstanceGroupManagerAllInstancesConfig
    */
   public function setAllInstancesConfig(InstanceGroupManagerAllInstancesConfig $allInstancesConfig)
   {
@@ -233,10 +138,7 @@ class InstanceGroupManager extends \Google\Collection
     return $this->allInstancesConfig;
   }
   /**
-   * The autohealing policy for this managed instance group. You can specify
-   * only one value.
-   *
-   * @param InstanceGroupManagerAutoHealingPolicy[] $autoHealingPolicies
+   * @param InstanceGroupManagerAutoHealingPolicy[]
    */
   public function setAutoHealingPolicies($autoHealingPolicies)
   {
@@ -250,19 +152,7 @@ class InstanceGroupManager extends \Google\Collection
     return $this->autoHealingPolicies;
   }
   /**
-   * The base instance name is a prefix that you want to attach to the names of
-   * all VMs in a MIG. The maximum character length is 58 and the name must
-   * comply with RFC1035 format.
-   *
-   * When a VM is created in the group, the MIG appends a hyphen and a random
-   * four-character string to the base instance name. If you want the MIG to
-   * assign sequential numbers instead of a random string, then end the base
-   * instance name with a hyphen followed by one or more hash symbols. The hash
-   * symbols indicate the number of digits. For example, a base instance name of
-   * "vm-###" results in "vm-001" as a VM name. @pattern
-   * [a-z](([-a-z0-9]{0,57})|([-a-z0-9]{0,51}-#{1,10}(\\[[0-9]{1,10}\\])?))
-   *
-   * @param string $baseInstanceName
+   * @param string
    */
   public function setBaseInstanceName($baseInstanceName)
   {
@@ -276,10 +166,7 @@ class InstanceGroupManager extends \Google\Collection
     return $this->baseInstanceName;
   }
   /**
-   * Output only. The creation timestamp for this managed instance group
-   * inRFC3339 text format.
-   *
-   * @param string $creationTimestamp
+   * @param string
    */
   public function setCreationTimestamp($creationTimestamp)
   {
@@ -293,10 +180,7 @@ class InstanceGroupManager extends \Google\Collection
     return $this->creationTimestamp;
   }
   /**
-   * Output only. The list of instance actions and the number of instances in
-   * this managed instance group that are scheduled for each of those actions.
-   *
-   * @param InstanceGroupManagerActionsSummary $currentActions
+   * @param InstanceGroupManagerActionsSummary
    */
   public function setCurrentActions(InstanceGroupManagerActionsSummary $currentActions)
   {
@@ -310,9 +194,7 @@ class InstanceGroupManager extends \Google\Collection
     return $this->currentActions;
   }
   /**
-   * An optional description of this resource.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -326,10 +208,7 @@ class InstanceGroupManager extends \Google\Collection
     return $this->description;
   }
   /**
-   * Policy specifying the intended distribution of managed instances across
-   * zones in a regional managed instance group.
-   *
-   * @param DistributionPolicy $distributionPolicy
+   * @param DistributionPolicy
    */
   public function setDistributionPolicy(DistributionPolicy $distributionPolicy)
   {
@@ -343,15 +222,7 @@ class InstanceGroupManager extends \Google\Collection
     return $this->distributionPolicy;
   }
   /**
-   * Fingerprint of this resource. This field may be used in optimistic locking.
-   * It will be ignored when inserting an InstanceGroupManager. An up-to-date
-   * fingerprint must be provided in order to update the InstanceGroupManager,
-   * otherwise the request will fail with error412 conditionNotMet.
-   *
-   * To see the latest fingerprint, make a get() request to retrieve an
-   * InstanceGroupManager.
-   *
-   * @param string $fingerprint
+   * @param string
    */
   public function setFingerprint($fingerprint)
   {
@@ -365,10 +236,7 @@ class InstanceGroupManager extends \Google\Collection
     return $this->fingerprint;
   }
   /**
-   * Output only. A unique identifier for this resource type. The server
-   * generates this identifier.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -382,11 +250,7 @@ class InstanceGroupManager extends \Google\Collection
     return $this->id;
   }
   /**
-   * Instance flexibility allowing MIG to create VMs from multiple types of
-   * machines. Instance flexibility configuration on MIG overrides instance
-   * template configuration.
-   *
-   * @param InstanceGroupManagerInstanceFlexibilityPolicy $instanceFlexibilityPolicy
+   * @param InstanceGroupManagerInstanceFlexibilityPolicy
    */
   public function setInstanceFlexibilityPolicy(InstanceGroupManagerInstanceFlexibilityPolicy $instanceFlexibilityPolicy)
   {
@@ -400,9 +264,7 @@ class InstanceGroupManager extends \Google\Collection
     return $this->instanceFlexibilityPolicy;
   }
   /**
-   * Output only. The URL of the Instance Group resource.
-   *
-   * @param string $instanceGroup
+   * @param string
    */
   public function setInstanceGroup($instanceGroup)
   {
@@ -416,9 +278,7 @@ class InstanceGroupManager extends \Google\Collection
     return $this->instanceGroup;
   }
   /**
-   * The repair policy for this managed instance group.
-   *
-   * @param InstanceGroupManagerInstanceLifecyclePolicy $instanceLifecyclePolicy
+   * @param InstanceGroupManagerInstanceLifecyclePolicy
    */
   public function setInstanceLifecyclePolicy(InstanceGroupManagerInstanceLifecyclePolicy $instanceLifecyclePolicy)
   {
@@ -432,14 +292,7 @@ class InstanceGroupManager extends \Google\Collection
     return $this->instanceLifecyclePolicy;
   }
   /**
-   * The URL of the instance template that is specified for this managed
-   * instance group. The group uses this template to create all new instances in
-   * the managed instance group. The templates for existing instances in the
-   * group do not change unless you run recreateInstances,
-   * runapplyUpdatesToInstances, or set the group'supdatePolicy.type to
-   * PROACTIVE.
-   *
-   * @param string $instanceTemplate
+   * @param string
    */
   public function setInstanceTemplate($instanceTemplate)
   {
@@ -453,10 +306,7 @@ class InstanceGroupManager extends \Google\Collection
     return $this->instanceTemplate;
   }
   /**
-   * Output only. The resource type, which is alwayscompute#instanceGroupManager
-   * for managed instance groups.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -470,29 +320,21 @@ class InstanceGroupManager extends \Google\Collection
     return $this->kind;
   }
   /**
-   * Pagination behavior of the listManagedInstances API method for this managed
-   * instance group.
-   *
-   * Accepted values: PAGELESS, PAGINATED
-   *
-   * @param self::LIST_MANAGED_INSTANCES_RESULTS_* $listManagedInstancesResults
+   * @param string
    */
   public function setListManagedInstancesResults($listManagedInstancesResults)
   {
     $this->listManagedInstancesResults = $listManagedInstancesResults;
   }
   /**
-   * @return self::LIST_MANAGED_INSTANCES_RESULTS_*
+   * @return string
    */
   public function getListManagedInstancesResults()
   {
     return $this->listManagedInstancesResults;
   }
   /**
-   * The name of the managed instance group. The name must be 1-63 characters
-   * long, and comply withRFC1035.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -506,10 +348,7 @@ class InstanceGroupManager extends \Google\Collection
     return $this->name;
   }
   /**
-   * [Output Only] Named ports configured on the Instance Groups complementary
-   * to this Instance Group Manager.
-   *
-   * @param NamedPort[] $namedPorts
+   * @param NamedPort[]
    */
   public function setNamedPorts($namedPorts)
   {
@@ -523,10 +362,7 @@ class InstanceGroupManager extends \Google\Collection
     return $this->namedPorts;
   }
   /**
-   * Output only. [Output Only] The URL of theregion where the managed instance
-   * group resides (for regional resources).
-   *
-   * @param string $region
+   * @param string
    */
   public function setRegion($region)
   {
@@ -540,9 +376,7 @@ class InstanceGroupManager extends \Google\Collection
     return $this->region;
   }
   /**
-   * Resource policies for this managed instance group.
-   *
-   * @param InstanceGroupManagerResourcePolicies $resourcePolicies
+   * @param InstanceGroupManagerResourcePolicies
    */
   public function setResourcePolicies(InstanceGroupManagerResourcePolicies $resourcePolicies)
   {
@@ -556,9 +390,7 @@ class InstanceGroupManager extends \Google\Collection
     return $this->resourcePolicies;
   }
   /**
-   * Output only. Reserved for future use.
-   *
-   * @param bool $satisfiesPzi
+   * @param bool
    */
   public function setSatisfiesPzi($satisfiesPzi)
   {
@@ -572,9 +404,7 @@ class InstanceGroupManager extends \Google\Collection
     return $this->satisfiesPzi;
   }
   /**
-   * Output only. Reserved for future use.
-   *
-   * @param bool $satisfiesPzs
+   * @param bool
    */
   public function setSatisfiesPzs($satisfiesPzs)
   {
@@ -588,10 +418,7 @@ class InstanceGroupManager extends \Google\Collection
     return $this->satisfiesPzs;
   }
   /**
-   * Output only. The URL for this managed instance group. The server defines
-   * this URL.
-   *
-   * @param string $selfLink
+   * @param string
    */
   public function setSelfLink($selfLink)
   {
@@ -605,9 +432,7 @@ class InstanceGroupManager extends \Google\Collection
     return $this->selfLink;
   }
   /**
-   * Standby policy for stopped and suspended instances.
-   *
-   * @param InstanceGroupManagerStandbyPolicy $standbyPolicy
+   * @param InstanceGroupManagerStandbyPolicy
    */
   public function setStandbyPolicy(InstanceGroupManagerStandbyPolicy $standbyPolicy)
   {
@@ -621,9 +446,7 @@ class InstanceGroupManager extends \Google\Collection
     return $this->standbyPolicy;
   }
   /**
-   * Stateful configuration for this Instanced Group Manager
-   *
-   * @param StatefulPolicy $statefulPolicy
+   * @param StatefulPolicy
    */
   public function setStatefulPolicy(StatefulPolicy $statefulPolicy)
   {
@@ -637,9 +460,7 @@ class InstanceGroupManager extends \Google\Collection
     return $this->statefulPolicy;
   }
   /**
-   * Output only. The status of this managed instance group.
-   *
-   * @param InstanceGroupManagerStatus $status
+   * @param InstanceGroupManagerStatus
    */
   public function setStatus(InstanceGroupManagerStatus $status)
   {
@@ -653,11 +474,7 @@ class InstanceGroupManager extends \Google\Collection
     return $this->status;
   }
   /**
-   * The URLs for all TargetPool resources to which instances in
-   * theinstanceGroup field are added. The target pools automatically apply to
-   * all of the instances in the managed instance group.
-   *
-   * @param string[] $targetPools
+   * @param string[]
    */
   public function setTargetPools($targetPools)
   {
@@ -671,11 +488,7 @@ class InstanceGroupManager extends \Google\Collection
     return $this->targetPools;
   }
   /**
-   * The target number of running instances for this managed instance group. You
-   * can reduce this number by using the instanceGroupManager deleteInstances or
-   * abandonInstances methods. Resizing the group also changes this number.
-   *
-   * @param int $targetSize
+   * @param int
    */
   public function setTargetSize($targetSize)
   {
@@ -689,30 +502,7 @@ class InstanceGroupManager extends \Google\Collection
     return $this->targetSize;
   }
   /**
-   * The policy that specifies how the MIG creates its VMs to achieve the target
-   * size.
-   *
-   * @param InstanceGroupManagerTargetSizePolicy $targetSizePolicy
-   */
-  public function setTargetSizePolicy(InstanceGroupManagerTargetSizePolicy $targetSizePolicy)
-  {
-    $this->targetSizePolicy = $targetSizePolicy;
-  }
-  /**
-   * @return InstanceGroupManagerTargetSizePolicy
-   */
-  public function getTargetSizePolicy()
-  {
-    return $this->targetSizePolicy;
-  }
-  /**
-   * The target number of stopped instances for this managed instance group.
-   * This number changes when you:         - Stop instance using the
-   * stopInstances    method or start instances using the startInstances
-   * method.    - Manually change the targetStoppedSize using the update
-   * method.
-   *
-   * @param int $targetStoppedSize
+   * @param int
    */
   public function setTargetStoppedSize($targetStoppedSize)
   {
@@ -726,13 +516,7 @@ class InstanceGroupManager extends \Google\Collection
     return $this->targetStoppedSize;
   }
   /**
-   * The target number of suspended instances for this managed instance group.
-   * This number changes when you:         - Suspend instance using the
-   * suspendInstances    method or resume instances using the resumeInstances
-   * method.    - Manually change the targetSuspendedSize using the update
-   * method.
-   *
-   * @param int $targetSuspendedSize
+   * @param int
    */
   public function setTargetSuspendedSize($targetSuspendedSize)
   {
@@ -746,9 +530,7 @@ class InstanceGroupManager extends \Google\Collection
     return $this->targetSuspendedSize;
   }
   /**
-   * The update policy for this managed instance group.
-   *
-   * @param InstanceGroupManagerUpdatePolicy $updatePolicy
+   * @param InstanceGroupManagerUpdatePolicy
    */
   public function setUpdatePolicy(InstanceGroupManagerUpdatePolicy $updatePolicy)
   {
@@ -762,17 +544,7 @@ class InstanceGroupManager extends \Google\Collection
     return $this->updatePolicy;
   }
   /**
-   * Specifies the instance templates used by this managed instance group to
-   * create instances.
-   *
-   * Each version is defined by an instanceTemplate and aname. Every version can
-   * appear at most once per instance group. This field overrides the top-level
-   * instanceTemplate field. Read more about therelationships between these
-   * fields. Exactly one version must leave thetargetSize field unset. That
-   * version will be applied to all remaining instances. For more information,
-   * read aboutcanary updates.
-   *
-   * @param InstanceGroupManagerVersion[] $versions
+   * @param InstanceGroupManagerVersion[]
    */
   public function setVersions($versions)
   {
@@ -786,10 +558,7 @@ class InstanceGroupManager extends \Google\Collection
     return $this->versions;
   }
   /**
-   * Output only. The URL of azone where the managed instance group is located
-   * (for zonal resources).
-   *
-   * @param string $zone
+   * @param string
    */
   public function setZone($zone)
   {

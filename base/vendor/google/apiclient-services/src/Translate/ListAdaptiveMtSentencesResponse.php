@@ -23,16 +23,12 @@ class ListAdaptiveMtSentencesResponse extends \Google\Collection
   protected $adaptiveMtSentencesType = AdaptiveMtSentence::class;
   protected $adaptiveMtSentencesDataType = 'array';
   /**
-   * Optional.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * Output only. The list of AdaptiveMtSentences.
-   *
-   * @param AdaptiveMtSentence[] $adaptiveMtSentences
+   * @param AdaptiveMtSentence[]
    */
   public function setAdaptiveMtSentences($adaptiveMtSentences)
   {
@@ -46,9 +42,7 @@ class ListAdaptiveMtSentencesResponse extends \Google\Collection
     return $this->adaptiveMtSentences;
   }
   /**
-   * Optional.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

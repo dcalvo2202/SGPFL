@@ -24,9 +24,7 @@ class EdgeConfigstoreBundleBadBundle extends \Google\Collection
   protected $violationsDataType = 'array';
 
   /**
-   * Describes all precondition violations.
-   *
-   * @param EdgeConfigstoreBundleBadBundleViolation[] $violations
+   * @param EdgeConfigstoreBundleBadBundleViolation[]
    */
   public function setViolations($violations)
   {

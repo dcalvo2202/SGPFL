@@ -19,59 +19,24 @@ namespace Google\Service\Bigquery;
 
 class BinaryConfusionMatrix extends \Google\Model
 {
-  /**
-   * The fraction of predictions given the correct label.
-   *
-   * @var 
-   */
   public $accuracy;
-  /**
-   * The equally weighted average of recall and precision.
-   *
-   * @var 
-   */
   public $f1Score;
   /**
-   * Number of false samples predicted as false.
-   *
    * @var string
    */
   public $falseNegatives;
   /**
-   * Number of false samples predicted as true.
-   *
    * @var string
    */
   public $falsePositives;
-  /**
-   * Threshold value used when computing each of the following metric.
-   *
-   * @var 
-   */
   public $positiveClassThreshold;
-  /**
-   * The fraction of actual positive predictions that had positive actual
-   * labels.
-   *
-   * @var 
-   */
   public $precision;
-  /**
-   * The fraction of actual positive labels that were given a positive
-   * prediction.
-   *
-   * @var 
-   */
   public $recall;
   /**
-   * Number of true samples predicted as false.
-   *
    * @var string
    */
   public $trueNegatives;
   /**
-   * Number of true samples predicted as true.
-   *
    * @var string
    */
   public $truePositives;
@@ -93,9 +58,7 @@ class BinaryConfusionMatrix extends \Google\Model
     return $this->f1Score;
   }
   /**
-   * Number of false samples predicted as false.
-   *
-   * @param string $falseNegatives
+   * @param string
    */
   public function setFalseNegatives($falseNegatives)
   {
@@ -109,9 +72,7 @@ class BinaryConfusionMatrix extends \Google\Model
     return $this->falseNegatives;
   }
   /**
-   * Number of false samples predicted as true.
-   *
-   * @param string $falsePositives
+   * @param string
    */
   public function setFalsePositives($falsePositives)
   {
@@ -149,9 +110,7 @@ class BinaryConfusionMatrix extends \Google\Model
     return $this->recall;
   }
   /**
-   * Number of true samples predicted as false.
-   *
-   * @param string $trueNegatives
+   * @param string
    */
   public function setTrueNegatives($trueNegatives)
   {
@@ -165,9 +124,7 @@ class BinaryConfusionMatrix extends \Google\Model
     return $this->trueNegatives;
   }
   /**
-   * Number of true samples predicted as true.
-   *
-   * @param string $truePositives
+   * @param string
    */
   public function setTruePositives($truePositives)
   {

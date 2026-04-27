@@ -29,7 +29,7 @@ class EnvironmentDimensionValueEntry extends \Google\Model
   public $value;
 
   /**
-   * @param string $key
+   * @param string
    */
   public function setKey($key)
   {
@@ -43,7 +43,7 @@ class EnvironmentDimensionValueEntry extends \Google\Model
     return $this->key;
   }
   /**
-   * @param string $value
+   * @param string
    */
   public function setValue($value)
   {

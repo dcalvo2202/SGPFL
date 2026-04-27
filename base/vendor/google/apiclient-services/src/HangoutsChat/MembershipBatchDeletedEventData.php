@@ -24,9 +24,7 @@ class MembershipBatchDeletedEventData extends \Google\Collection
   protected $membershipsDataType = 'array';
 
   /**
-   * A list of deleted memberships.
-   *
-   * @param MembershipDeletedEventData[] $memberships
+   * @param MembershipDeletedEventData[]
    */
   public function setMemberships($memberships)
   {

@@ -19,27 +19,10 @@ namespace Google\Service\Appengine;
 
 class Version extends \Google\Collection
 {
-  /**
-   * Not specified.
-   */
-  public const SERVING_STATUS_SERVING_STATUS_UNSPECIFIED = 'SERVING_STATUS_UNSPECIFIED';
-  /**
-   * Currently serving. Instances are created according to the scaling settings
-   * of the version.
-   */
-  public const SERVING_STATUS_SERVING = 'SERVING';
-  /**
-   * Disabled. No instances will be created and the scaling settings are ignored
-   * until the state of the version changes to SERVING.
-   */
-  public const SERVING_STATUS_STOPPED = 'STOPPED';
   protected $collection_key = 'zones';
   protected $apiConfigType = ApiConfigHandler::class;
   protected $apiConfigDataType = '';
   /**
-   * Allows App Engine second generation runtimes to access the legacy bundled
-   * services.
-   *
    * @var bool
    */
   public $appEngineApis;
@@ -48,48 +31,28 @@ class Version extends \Google\Collection
   protected $basicScalingType = BasicScaling::class;
   protected $basicScalingDataType = '';
   /**
-   * Metadata settings that are supplied to this version to enable beta runtime
-   * features.
-   *
    * @var string[]
    */
   public $betaSettings;
   /**
-   * Environment variables available to the build environment.Only returned in
-   * GET requests if view=FULL is set.
-   *
    * @var string[]
    */
   public $buildEnvVariables;
   /**
-   * Time that this version was created.@OutputOnly
-   *
    * @var string
    */
   public $createTime;
   /**
-   * Output only. Email address of the user who created this version.@OutputOnly
-   *
    * @var string
    */
   public $createdBy;
   /**
-   * Duration that static files should be cached by web proxies and browsers.
-   * Only applicable if the corresponding StaticFilesHandler
-   * (https://cloud.google.com/appengine/docs/admin-
-   * api/reference/rest/v1/apps.services.versions#StaticFilesHandler) does not
-   * specify its own expiration time.Only returned in GET requests if view=FULL
-   * is set.
-   *
    * @var string
    */
   public $defaultExpiration;
   protected $deploymentType = Deployment::class;
   protected $deploymentDataType = '';
   /**
-   * Output only. Total size in bytes of all the files that are included in this
-   * version and currently hosted on the App Engine disk.@OutputOnly
-   *
    * @var string
    */
   public $diskUsageBytes;
@@ -98,15 +61,10 @@ class Version extends \Google\Collection
   protected $entrypointType = Entrypoint::class;
   protected $entrypointDataType = '';
   /**
-   * App Engine execution environment for this version.Defaults to standard.
-   *
    * @var string
    */
   public $env;
   /**
-   * Environment variables available to the application.Only returned in GET
-   * requests if view=FULL is set.
-   *
    * @var string[]
    */
   public $envVariables;
@@ -115,10 +73,6 @@ class Version extends \Google\Collection
   protected $flexibleRuntimeSettingsType = FlexibleRuntimeSettings::class;
   protected $flexibleRuntimeSettingsDataType = '';
   /**
-   * Additional Google Generated Customer Metadata, this field won't be provided
-   * by default and can be requested by setting the IncludeExtraData field in
-   * GetVersionRequest
-   *
    * @var array[]
    */
   public $generatedCustomerMetadata;
@@ -127,26 +81,14 @@ class Version extends \Google\Collection
   protected $healthCheckType = HealthCheck::class;
   protected $healthCheckDataType = '';
   /**
-   * Relative name of the version within the service. Example: v1. Version names
-   * can contain only lowercase letters, numbers, or hyphens. Reserved names:
-   * "default", "latest", and any name with the prefix "ah-".
-   *
    * @var string
    */
   public $id;
   /**
-   * Before an application can receive email or XMPP messages, the application
-   * must be configured to enable the service.
-   *
    * @var string[]
    */
   public $inboundServices;
   /**
-   * Instance class that is used to run this version. Valid values are:
-   * AutomaticScaling: F1, F2, F4, F4_1G ManualScaling or BasicScaling: B1, B2,
-   * B4, B8, B4_1GDefaults to F1 for AutomaticScaling and B1 for ManualScaling
-   * or BasicScaling.
-   *
    * @var string
    */
   public $instanceClass;
@@ -157,19 +99,12 @@ class Version extends \Google\Collection
   protected $manualScalingType = ManualScaling::class;
   protected $manualScalingDataType = '';
   /**
-   * Output only. Full path to the Version resource in the API. Example:
-   * apps/myapp/services/default/versions/v1.@OutputOnly
-   *
    * @var string
    */
   public $name;
   protected $networkType = Network::class;
   protected $networkDataType = '';
   /**
-   * Files that match this pattern will not be built into this version. Only
-   * applicable for Go runtimes.Only returned in GET requests if view=FULL is
-   * set.
-   *
    * @var string
    */
   public $nobuildFilesRegex;
@@ -178,91 +113,56 @@ class Version extends \Google\Collection
   protected $resourcesType = Resources::class;
   protected $resourcesDataType = '';
   /**
-   * Desired runtime. Example: python27.
-   *
    * @var string
    */
   public $runtime;
   /**
-   * The version of the API in the given runtime environment. Please see the
-   * app.yaml reference for valid values at
-   * https://cloud.google.com/appengine/docs/standard//config/appref
-   *
    * @var string
    */
   public $runtimeApiVersion;
   /**
-   * The channel of the runtime to use. Only available for some runtimes.
-   * Defaults to the default channel.
-   *
    * @var string
    */
   public $runtimeChannel;
   /**
-   * The path or name of the app's main executable.
-   *
    * @var string
    */
   public $runtimeMainExecutablePath;
   /**
-   * The identity that the deployed version will run as. Admin API will use the
-   * App Engine Appspot service account as default if this field is neither
-   * provided in app.yaml file nor through CLI flag.
-   *
    * @var string
    */
   public $serviceAccount;
   /**
-   * Current serving status of this version. Only the versions with a SERVING
-   * status create instances and can be billed.SERVING_STATUS_UNSPECIFIED is an
-   * invalid value. Defaults to SERVING.
-   *
    * @var string
    */
   public $servingStatus;
   /**
-   * Whether multiple requests can be dispatched to this version at once.
-   *
    * @var bool
    */
   public $threadsafe;
   /**
-   * Output only. Serving URL for this version. Example: "https://myversion-dot-
-   * myservice-dot-myapp.appspot.com"@OutputOnly
-   *
    * @var string
    */
   public $versionUrl;
   /**
-   * Whether to deploy this version in a container on a virtual machine.
-   *
    * @var bool
    */
   public $vm;
   protected $vpcAccessConnectorType = VpcAccessConnector::class;
   protected $vpcAccessConnectorDataType = '';
   /**
-   * The Google Compute Engine zones that are supported by this version in the
-   * App Engine flexible environment. Deprecated.
-   *
    * @var string[]
    */
   public $zones;
 
   /**
-   * Serving configuration for Google Cloud Endpoints
-   * (https://cloud.google.com/endpoints).Only returned in GET requests if
-   * view=FULL is set.
-   *
-   * @deprecated
-   * @param ApiConfigHandler $apiConfig
+   * @param ApiConfigHandler
    */
   public function setApiConfig(ApiConfigHandler $apiConfig)
   {
     $this->apiConfig = $apiConfig;
   }
   /**
-   * @deprecated
    * @return ApiConfigHandler
    */
   public function getApiConfig()
@@ -270,10 +170,7 @@ class Version extends \Google\Collection
     return $this->apiConfig;
   }
   /**
-   * Allows App Engine second generation runtimes to access the legacy bundled
-   * services.
-   *
-   * @param bool $appEngineApis
+   * @param bool
    */
   public function setAppEngineApis($appEngineApis)
   {
@@ -287,11 +184,7 @@ class Version extends \Google\Collection
     return $this->appEngineApis;
   }
   /**
-   * Automatic scaling is based on request rate, response latencies, and other
-   * application metrics. Instances are dynamically created and destroyed as
-   * needed in order to handle traffic.
-   *
-   * @param AutomaticScaling $automaticScaling
+   * @param AutomaticScaling
    */
   public function setAutomaticScaling(AutomaticScaling $automaticScaling)
   {
@@ -305,12 +198,7 @@ class Version extends \Google\Collection
     return $this->automaticScaling;
   }
   /**
-   * A service with basic scaling will create an instance when the application
-   * receives a request. The instance will be turned down when the app becomes
-   * idle. Basic scaling is ideal for work that is intermittent or driven by
-   * user activity.
-   *
-   * @param BasicScaling $basicScaling
+   * @param BasicScaling
    */
   public function setBasicScaling(BasicScaling $basicScaling)
   {
@@ -324,10 +212,7 @@ class Version extends \Google\Collection
     return $this->basicScaling;
   }
   /**
-   * Metadata settings that are supplied to this version to enable beta runtime
-   * features.
-   *
-   * @param string[] $betaSettings
+   * @param string[]
    */
   public function setBetaSettings($betaSettings)
   {
@@ -341,10 +226,7 @@ class Version extends \Google\Collection
     return $this->betaSettings;
   }
   /**
-   * Environment variables available to the build environment.Only returned in
-   * GET requests if view=FULL is set.
-   *
-   * @param string[] $buildEnvVariables
+   * @param string[]
    */
   public function setBuildEnvVariables($buildEnvVariables)
   {
@@ -358,9 +240,7 @@ class Version extends \Google\Collection
     return $this->buildEnvVariables;
   }
   /**
-   * Time that this version was created.@OutputOnly
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -374,9 +254,7 @@ class Version extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Output only. Email address of the user who created this version.@OutputOnly
-   *
-   * @param string $createdBy
+   * @param string
    */
   public function setCreatedBy($createdBy)
   {
@@ -390,14 +268,7 @@ class Version extends \Google\Collection
     return $this->createdBy;
   }
   /**
-   * Duration that static files should be cached by web proxies and browsers.
-   * Only applicable if the corresponding StaticFilesHandler
-   * (https://cloud.google.com/appengine/docs/admin-
-   * api/reference/rest/v1/apps.services.versions#StaticFilesHandler) does not
-   * specify its own expiration time.Only returned in GET requests if view=FULL
-   * is set.
-   *
-   * @param string $defaultExpiration
+   * @param string
    */
   public function setDefaultExpiration($defaultExpiration)
   {
@@ -411,10 +282,7 @@ class Version extends \Google\Collection
     return $this->defaultExpiration;
   }
   /**
-   * Code and application artifacts that make up this version.Only returned in
-   * GET requests if view=FULL is set.
-   *
-   * @param Deployment $deployment
+   * @param Deployment
    */
   public function setDeployment(Deployment $deployment)
   {
@@ -428,10 +296,7 @@ class Version extends \Google\Collection
     return $this->deployment;
   }
   /**
-   * Output only. Total size in bytes of all the files that are included in this
-   * version and currently hosted on the App Engine disk.@OutputOnly
-   *
-   * @param string $diskUsageBytes
+   * @param string
    */
   public function setDiskUsageBytes($diskUsageBytes)
   {
@@ -445,11 +310,7 @@ class Version extends \Google\Collection
     return $this->diskUsageBytes;
   }
   /**
-   * Cloud Endpoints configuration.If endpoints_api_service is set, the Cloud
-   * Endpoints Extensible Service Proxy will be provided to serve the API
-   * implemented by the app.
-   *
-   * @param EndpointsApiService $endpointsApiService
+   * @param EndpointsApiService
    */
   public function setEndpointsApiService(EndpointsApiService $endpointsApiService)
   {
@@ -463,9 +324,7 @@ class Version extends \Google\Collection
     return $this->endpointsApiService;
   }
   /**
-   * The entrypoint for the application.
-   *
-   * @param Entrypoint $entrypoint
+   * @param Entrypoint
    */
   public function setEntrypoint(Entrypoint $entrypoint)
   {
@@ -479,9 +338,7 @@ class Version extends \Google\Collection
     return $this->entrypoint;
   }
   /**
-   * App Engine execution environment for this version.Defaults to standard.
-   *
-   * @param string $env
+   * @param string
    */
   public function setEnv($env)
   {
@@ -495,10 +352,7 @@ class Version extends \Google\Collection
     return $this->env;
   }
   /**
-   * Environment variables available to the application.Only returned in GET
-   * requests if view=FULL is set.
-   *
-   * @param string[] $envVariables
+   * @param string[]
    */
   public function setEnvVariables($envVariables)
   {
@@ -512,10 +366,7 @@ class Version extends \Google\Collection
     return $this->envVariables;
   }
   /**
-   * Custom static error pages. Limited to 10KB per page.Only returned in GET
-   * requests if view=FULL is set.
-   *
-   * @param ErrorHandler[] $errorHandlers
+   * @param ErrorHandler[]
    */
   public function setErrorHandlers($errorHandlers)
   {
@@ -529,9 +380,7 @@ class Version extends \Google\Collection
     return $this->errorHandlers;
   }
   /**
-   * Settings for App Engine flexible runtimes.
-   *
-   * @param FlexibleRuntimeSettings $flexibleRuntimeSettings
+   * @param FlexibleRuntimeSettings
    */
   public function setFlexibleRuntimeSettings(FlexibleRuntimeSettings $flexibleRuntimeSettings)
   {
@@ -545,11 +394,7 @@ class Version extends \Google\Collection
     return $this->flexibleRuntimeSettings;
   }
   /**
-   * Additional Google Generated Customer Metadata, this field won't be provided
-   * by default and can be requested by setting the IncludeExtraData field in
-   * GetVersionRequest
-   *
-   * @param array[] $generatedCustomerMetadata
+   * @param array[]
    */
   public function setGeneratedCustomerMetadata($generatedCustomerMetadata)
   {
@@ -563,12 +408,7 @@ class Version extends \Google\Collection
     return $this->generatedCustomerMetadata;
   }
   /**
-   * An ordered list of URL-matching patterns that should be applied to incoming
-   * requests. The first matching URL handles the request and other request
-   * handlers are not attempted.Only returned in GET requests if view=FULL is
-   * set.
-   *
-   * @param UrlMap[] $handlers
+   * @param UrlMap[]
    */
   public function setHandlers($handlers)
   {
@@ -582,11 +422,7 @@ class Version extends \Google\Collection
     return $this->handlers;
   }
   /**
-   * Configures health checking for instances. Unhealthy instances are stopped
-   * and replaced with new instances. Only applicable in the App Engine flexible
-   * environment.
-   *
-   * @param HealthCheck $healthCheck
+   * @param HealthCheck
    */
   public function setHealthCheck(HealthCheck $healthCheck)
   {
@@ -600,11 +436,7 @@ class Version extends \Google\Collection
     return $this->healthCheck;
   }
   /**
-   * Relative name of the version within the service. Example: v1. Version names
-   * can contain only lowercase letters, numbers, or hyphens. Reserved names:
-   * "default", "latest", and any name with the prefix "ah-".
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -618,10 +450,7 @@ class Version extends \Google\Collection
     return $this->id;
   }
   /**
-   * Before an application can receive email or XMPP messages, the application
-   * must be configured to enable the service.
-   *
-   * @param string[] $inboundServices
+   * @param string[]
    */
   public function setInboundServices($inboundServices)
   {
@@ -635,12 +464,7 @@ class Version extends \Google\Collection
     return $this->inboundServices;
   }
   /**
-   * Instance class that is used to run this version. Valid values are:
-   * AutomaticScaling: F1, F2, F4, F4_1G ManualScaling or BasicScaling: B1, B2,
-   * B4, B8, B4_1GDefaults to F1 for AutomaticScaling and B1 for ManualScaling
-   * or BasicScaling.
-   *
-   * @param string $instanceClass
+   * @param string
    */
   public function setInstanceClass($instanceClass)
   {
@@ -654,10 +478,7 @@ class Version extends \Google\Collection
     return $this->instanceClass;
   }
   /**
-   * Configuration for third-party Python runtime libraries that are required by
-   * the application.Only returned in GET requests if view=FULL is set.
-   *
-   * @param Library[] $libraries
+   * @param Library[]
    */
   public function setLibraries($libraries)
   {
@@ -671,10 +492,7 @@ class Version extends \Google\Collection
     return $this->libraries;
   }
   /**
-   * Configures liveness health checking for instances. Unhealthy instances are
-   * stopped and replaced with new instances
-   *
-   * @param LivenessCheck $livenessCheck
+   * @param LivenessCheck
    */
   public function setLivenessCheck(LivenessCheck $livenessCheck)
   {
@@ -688,11 +506,7 @@ class Version extends \Google\Collection
     return $this->livenessCheck;
   }
   /**
-   * A service with manual scaling runs continuously, allowing you to perform
-   * complex initialization and rely on the state of its memory over time.
-   * Manually scaled versions are sometimes referred to as "backends".
-   *
-   * @param ManualScaling $manualScaling
+   * @param ManualScaling
    */
   public function setManualScaling(ManualScaling $manualScaling)
   {
@@ -706,10 +520,7 @@ class Version extends \Google\Collection
     return $this->manualScaling;
   }
   /**
-   * Output only. Full path to the Version resource in the API. Example:
-   * apps/myapp/services/default/versions/v1.@OutputOnly
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -723,10 +534,7 @@ class Version extends \Google\Collection
     return $this->name;
   }
   /**
-   * Extra network settings. Only applicable in the App Engine flexible
-   * environment.
-   *
-   * @param Network $network
+   * @param Network
    */
   public function setNetwork(Network $network)
   {
@@ -740,11 +548,7 @@ class Version extends \Google\Collection
     return $this->network;
   }
   /**
-   * Files that match this pattern will not be built into this version. Only
-   * applicable for Go runtimes.Only returned in GET requests if view=FULL is
-   * set.
-   *
-   * @param string $nobuildFilesRegex
+   * @param string
    */
   public function setNobuildFilesRegex($nobuildFilesRegex)
   {
@@ -758,10 +562,7 @@ class Version extends \Google\Collection
     return $this->nobuildFilesRegex;
   }
   /**
-   * Configures readiness health checking for instances. Unhealthy instances are
-   * not put into the backend traffic rotation.
-   *
-   * @param ReadinessCheck $readinessCheck
+   * @param ReadinessCheck
    */
   public function setReadinessCheck(ReadinessCheck $readinessCheck)
   {
@@ -775,10 +576,7 @@ class Version extends \Google\Collection
     return $this->readinessCheck;
   }
   /**
-   * Machine resources for this version. Only applicable in the App Engine
-   * flexible environment.
-   *
-   * @param Resources $resources
+   * @param Resources
    */
   public function setResources(Resources $resources)
   {
@@ -792,9 +590,7 @@ class Version extends \Google\Collection
     return $this->resources;
   }
   /**
-   * Desired runtime. Example: python27.
-   *
-   * @param string $runtime
+   * @param string
    */
   public function setRuntime($runtime)
   {
@@ -808,11 +604,7 @@ class Version extends \Google\Collection
     return $this->runtime;
   }
   /**
-   * The version of the API in the given runtime environment. Please see the
-   * app.yaml reference for valid values at
-   * https://cloud.google.com/appengine/docs/standard//config/appref
-   *
-   * @param string $runtimeApiVersion
+   * @param string
    */
   public function setRuntimeApiVersion($runtimeApiVersion)
   {
@@ -826,10 +618,7 @@ class Version extends \Google\Collection
     return $this->runtimeApiVersion;
   }
   /**
-   * The channel of the runtime to use. Only available for some runtimes.
-   * Defaults to the default channel.
-   *
-   * @param string $runtimeChannel
+   * @param string
    */
   public function setRuntimeChannel($runtimeChannel)
   {
@@ -843,9 +632,7 @@ class Version extends \Google\Collection
     return $this->runtimeChannel;
   }
   /**
-   * The path or name of the app's main executable.
-   *
-   * @param string $runtimeMainExecutablePath
+   * @param string
    */
   public function setRuntimeMainExecutablePath($runtimeMainExecutablePath)
   {
@@ -859,11 +646,7 @@ class Version extends \Google\Collection
     return $this->runtimeMainExecutablePath;
   }
   /**
-   * The identity that the deployed version will run as. Admin API will use the
-   * App Engine Appspot service account as default if this field is neither
-   * provided in app.yaml file nor through CLI flag.
-   *
-   * @param string $serviceAccount
+   * @param string
    */
   public function setServiceAccount($serviceAccount)
   {
@@ -877,29 +660,21 @@ class Version extends \Google\Collection
     return $this->serviceAccount;
   }
   /**
-   * Current serving status of this version. Only the versions with a SERVING
-   * status create instances and can be billed.SERVING_STATUS_UNSPECIFIED is an
-   * invalid value. Defaults to SERVING.
-   *
-   * Accepted values: SERVING_STATUS_UNSPECIFIED, SERVING, STOPPED
-   *
-   * @param self::SERVING_STATUS_* $servingStatus
+   * @param string
    */
   public function setServingStatus($servingStatus)
   {
     $this->servingStatus = $servingStatus;
   }
   /**
-   * @return self::SERVING_STATUS_*
+   * @return string
    */
   public function getServingStatus()
   {
     return $this->servingStatus;
   }
   /**
-   * Whether multiple requests can be dispatched to this version at once.
-   *
-   * @param bool $threadsafe
+   * @param bool
    */
   public function setThreadsafe($threadsafe)
   {
@@ -913,10 +688,7 @@ class Version extends \Google\Collection
     return $this->threadsafe;
   }
   /**
-   * Output only. Serving URL for this version. Example: "https://myversion-dot-
-   * myservice-dot-myapp.appspot.com"@OutputOnly
-   *
-   * @param string $versionUrl
+   * @param string
    */
   public function setVersionUrl($versionUrl)
   {
@@ -930,9 +702,7 @@ class Version extends \Google\Collection
     return $this->versionUrl;
   }
   /**
-   * Whether to deploy this version in a container on a virtual machine.
-   *
-   * @param bool $vm
+   * @param bool
    */
   public function setVm($vm)
   {
@@ -946,9 +716,7 @@ class Version extends \Google\Collection
     return $this->vm;
   }
   /**
-   * Enables VPC connectivity for standard apps.
-   *
-   * @param VpcAccessConnector $vpcAccessConnector
+   * @param VpcAccessConnector
    */
   public function setVpcAccessConnector(VpcAccessConnector $vpcAccessConnector)
   {
@@ -962,10 +730,7 @@ class Version extends \Google\Collection
     return $this->vpcAccessConnector;
   }
   /**
-   * The Google Compute Engine zones that are supported by this version in the
-   * App Engine flexible environment. Deprecated.
-   *
-   * @param string[] $zones
+   * @param string[]
    */
   public function setZones($zones)
   {

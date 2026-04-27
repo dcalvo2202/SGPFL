@@ -20,14 +20,10 @@ namespace Google\Service\CloudSearch;
 class EnterpriseTopazSidekickGap extends \Google\Model
 {
   /**
-   * Localized time string in the format: 1 hour 15 minutes
-   *
    * @var string
    */
   public $displayRemainingTime;
   /**
-   * Localized time string in the format:(Locale CZ) 8:30 odp.
-   *
    * @var string
    */
   public $endTime;
@@ -40,8 +36,6 @@ class EnterpriseTopazSidekickGap extends \Google\Model
    */
   public $remainingTime;
   /**
-   * Localized time string in the format:(Locale CZ) 8:30 odp.
-   *
    * @var string
    */
   public $startTime;
@@ -51,9 +45,7 @@ class EnterpriseTopazSidekickGap extends \Google\Model
   public $startTimeMs;
 
   /**
-   * Localized time string in the format: 1 hour 15 minutes
-   *
-   * @param string $displayRemainingTime
+   * @param string
    */
   public function setDisplayRemainingTime($displayRemainingTime)
   {
@@ -67,9 +59,7 @@ class EnterpriseTopazSidekickGap extends \Google\Model
     return $this->displayRemainingTime;
   }
   /**
-   * Localized time string in the format:(Locale CZ) 8:30 odp.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -83,7 +73,7 @@ class EnterpriseTopazSidekickGap extends \Google\Model
     return $this->endTime;
   }
   /**
-   * @param string $endTimeMs
+   * @param string
    */
   public function setEndTimeMs($endTimeMs)
   {
@@ -97,7 +87,7 @@ class EnterpriseTopazSidekickGap extends \Google\Model
     return $this->endTimeMs;
   }
   /**
-   * @param string $remainingTime
+   * @param string
    */
   public function setRemainingTime($remainingTime)
   {
@@ -111,9 +101,7 @@ class EnterpriseTopazSidekickGap extends \Google\Model
     return $this->remainingTime;
   }
   /**
-   * Localized time string in the format:(Locale CZ) 8:30 odp.
-   *
-   * @param string $startTime
+   * @param string
    */
   public function setStartTime($startTime)
   {
@@ -127,7 +115,7 @@ class EnterpriseTopazSidekickGap extends \Google\Model
     return $this->startTime;
   }
   /**
-   * @param string $startTimeMs
+   * @param string
    */
   public function setStartTimeMs($startTimeMs)
   {

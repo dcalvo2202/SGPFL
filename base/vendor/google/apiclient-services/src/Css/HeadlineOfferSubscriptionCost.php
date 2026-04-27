@@ -19,38 +19,19 @@ namespace Google\Service\Css;
 
 class HeadlineOfferSubscriptionCost extends \Google\Model
 {
-  /**
-   * Indicates that the subscription period is unspecified.
-   */
-  public const PERIOD_SUBSCRIPTION_PERIOD_UNSPECIFIED = 'SUBSCRIPTION_PERIOD_UNSPECIFIED';
-  /**
-   * Indicates that the subscription period is month.
-   */
-  public const PERIOD_MONTH = 'MONTH';
-  /**
-   * Indicates that the subscription period is year.
-   */
-  public const PERIOD_YEAR = 'YEAR';
   protected $amountType = Price::class;
   protected $amountDataType = '';
   /**
-   * The type of subscription period. Supported values are: * "`month`" *
-   * "`year`"
-   *
    * @var string
    */
   public $period;
   /**
-   * The number of subscription periods the buyer has to pay.
-   *
    * @var string
    */
   public $periodLength;
 
   /**
-   * The amount the buyer has to pay per subscription period.
-   *
-   * @param Price $amount
+   * @param Price
    */
   public function setAmount(Price $amount)
   {
@@ -64,28 +45,21 @@ class HeadlineOfferSubscriptionCost extends \Google\Model
     return $this->amount;
   }
   /**
-   * The type of subscription period. Supported values are: * "`month`" *
-   * "`year`"
-   *
-   * Accepted values: SUBSCRIPTION_PERIOD_UNSPECIFIED, MONTH, YEAR
-   *
-   * @param self::PERIOD_* $period
+   * @param string
    */
   public function setPeriod($period)
   {
     $this->period = $period;
   }
   /**
-   * @return self::PERIOD_*
+   * @return string
    */
   public function getPeriod()
   {
     return $this->period;
   }
   /**
-   * The number of subscription periods the buyer has to pay.
-   *
-   * @param string $periodLength
+   * @param string
    */
   public function setPeriodLength($periodLength)
   {

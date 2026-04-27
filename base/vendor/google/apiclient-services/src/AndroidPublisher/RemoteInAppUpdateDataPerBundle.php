@@ -20,29 +20,20 @@ namespace Google\Service\AndroidPublisher;
 class RemoteInAppUpdateDataPerBundle extends \Google\Model
 {
   /**
-   * Total number of devices which have been rescued.
-   *
    * @var string
    */
   public $recoveredDeviceCount;
   /**
-   * Total number of devices affected by this recovery action associated with
-   * bundle of the app.
-   *
    * @var string
    */
   public $totalDeviceCount;
   /**
-   * Version Code corresponding to the target bundle.
-   *
    * @var string
    */
   public $versionCode;
 
   /**
-   * Total number of devices which have been rescued.
-   *
-   * @param string $recoveredDeviceCount
+   * @param string
    */
   public function setRecoveredDeviceCount($recoveredDeviceCount)
   {
@@ -56,10 +47,7 @@ class RemoteInAppUpdateDataPerBundle extends \Google\Model
     return $this->recoveredDeviceCount;
   }
   /**
-   * Total number of devices affected by this recovery action associated with
-   * bundle of the app.
-   *
-   * @param string $totalDeviceCount
+   * @param string
    */
   public function setTotalDeviceCount($totalDeviceCount)
   {
@@ -73,9 +61,7 @@ class RemoteInAppUpdateDataPerBundle extends \Google\Model
     return $this->totalDeviceCount;
   }
   /**
-   * Version Code corresponding to the target bundle.
-   *
-   * @param string $versionCode
+   * @param string
    */
   public function setVersionCode($versionCode)
   {

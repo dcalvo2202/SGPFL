@@ -23,9 +23,7 @@ class GoogleCloudAssuredworkloadsV1ApplyWorkloadUpdateResponse extends \Google\M
   protected $appliedUpdateDataType = '';
 
   /**
-   * The update that was applied.
-   *
-   * @param GoogleCloudAssuredworkloadsV1WorkloadUpdate $appliedUpdate
+   * @param GoogleCloudAssuredworkloadsV1WorkloadUpdate
    */
   public function setAppliedUpdate(GoogleCloudAssuredworkloadsV1WorkloadUpdate $appliedUpdate)
   {

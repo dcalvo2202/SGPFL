@@ -23,19 +23,12 @@ class EnterpriseTopazSidekickPeopleAnswerDisambiguationInfo extends \Google\Coll
   protected $disambiguationType = EnterpriseTopazSidekickPeopleAnswerDisambiguationInfoDisambiguationPerson::class;
   protected $disambiguationDataType = 'array';
   /**
-   * The name that was extracted from the query. This may be in the form of the
-   * given name, last name, full name, LDAP, or email address. This name can be
-   * considered suitable for displaying to the user and can largely be
-   * considered to be normalized (e.g. "Bob's" -> "Bob").
-   *
    * @var string
    */
   public $name;
 
   /**
-   * A list of people that also matched the query. This list is not complete.
-   *
-   * @param EnterpriseTopazSidekickPeopleAnswerDisambiguationInfoDisambiguationPerson[] $disambiguation
+   * @param EnterpriseTopazSidekickPeopleAnswerDisambiguationInfoDisambiguationPerson[]
    */
   public function setDisambiguation($disambiguation)
   {
@@ -49,12 +42,7 @@ class EnterpriseTopazSidekickPeopleAnswerDisambiguationInfo extends \Google\Coll
     return $this->disambiguation;
   }
   /**
-   * The name that was extracted from the query. This may be in the form of the
-   * given name, last name, full name, LDAP, or email address. This name can be
-   * considered suitable for displaying to the user and can largely be
-   * considered to be normalized (e.g. "Bob's" -> "Bob").
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

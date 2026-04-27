@@ -20,56 +20,36 @@ namespace Google\Service\BigQueryConnectionService;
 class AzureProperties extends \Google\Model
 {
   /**
-   * Output only. The name of the Azure Active Directory Application.
-   *
    * @var string
    */
   public $application;
   /**
-   * Output only. The client id of the Azure Active Directory Application.
-   *
    * @var string
    */
   public $clientId;
   /**
-   * The id of customer's directory that host the data.
-   *
    * @var string
    */
   public $customerTenantId;
   /**
-   * The client ID of the user's Azure Active Directory Application used for a
-   * federated connection.
-   *
    * @var string
    */
   public $federatedApplicationClientId;
   /**
-   * Output only. A unique Google-owned and Google-generated identity for the
-   * Connection. This identity will be used to access the user's Azure Active
-   * Directory Application.
-   *
    * @var string
    */
   public $identity;
   /**
-   * Output only. The object id of the Azure Active Directory Application.
-   *
    * @var string
    */
   public $objectId;
   /**
-   * The URL user will be redirected to after granting consent during connection
-   * setup.
-   *
    * @var string
    */
   public $redirectUri;
 
   /**
-   * Output only. The name of the Azure Active Directory Application.
-   *
-   * @param string $application
+   * @param string
    */
   public function setApplication($application)
   {
@@ -83,9 +63,7 @@ class AzureProperties extends \Google\Model
     return $this->application;
   }
   /**
-   * Output only. The client id of the Azure Active Directory Application.
-   *
-   * @param string $clientId
+   * @param string
    */
   public function setClientId($clientId)
   {
@@ -99,9 +77,7 @@ class AzureProperties extends \Google\Model
     return $this->clientId;
   }
   /**
-   * The id of customer's directory that host the data.
-   *
-   * @param string $customerTenantId
+   * @param string
    */
   public function setCustomerTenantId($customerTenantId)
   {
@@ -115,10 +91,7 @@ class AzureProperties extends \Google\Model
     return $this->customerTenantId;
   }
   /**
-   * The client ID of the user's Azure Active Directory Application used for a
-   * federated connection.
-   *
-   * @param string $federatedApplicationClientId
+   * @param string
    */
   public function setFederatedApplicationClientId($federatedApplicationClientId)
   {
@@ -132,11 +105,7 @@ class AzureProperties extends \Google\Model
     return $this->federatedApplicationClientId;
   }
   /**
-   * Output only. A unique Google-owned and Google-generated identity for the
-   * Connection. This identity will be used to access the user's Azure Active
-   * Directory Application.
-   *
-   * @param string $identity
+   * @param string
    */
   public function setIdentity($identity)
   {
@@ -150,9 +119,7 @@ class AzureProperties extends \Google\Model
     return $this->identity;
   }
   /**
-   * Output only. The object id of the Azure Active Directory Application.
-   *
-   * @param string $objectId
+   * @param string
    */
   public function setObjectId($objectId)
   {
@@ -166,10 +133,7 @@ class AzureProperties extends \Google\Model
     return $this->objectId;
   }
   /**
-   * The URL user will be redirected to after granting consent during connection
-   * setup.
-   *
-   * @param string $redirectUri
+   * @param string
    */
   public function setRedirectUri($redirectUri)
   {

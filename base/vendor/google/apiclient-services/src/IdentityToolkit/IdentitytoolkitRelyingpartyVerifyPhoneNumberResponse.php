@@ -61,7 +61,7 @@ class IdentitytoolkitRelyingpartyVerifyPhoneNumberResponse extends \Google\Model
   public $verificationProofExpiresIn;
 
   /**
-   * @param string $expiresIn
+   * @param string
    */
   public function setExpiresIn($expiresIn)
   {
@@ -75,7 +75,7 @@ class IdentitytoolkitRelyingpartyVerifyPhoneNumberResponse extends \Google\Model
     return $this->expiresIn;
   }
   /**
-   * @param string $idToken
+   * @param string
    */
   public function setIdToken($idToken)
   {
@@ -89,7 +89,7 @@ class IdentitytoolkitRelyingpartyVerifyPhoneNumberResponse extends \Google\Model
     return $this->idToken;
   }
   /**
-   * @param bool $isNewUser
+   * @param bool
    */
   public function setIsNewUser($isNewUser)
   {
@@ -103,7 +103,7 @@ class IdentitytoolkitRelyingpartyVerifyPhoneNumberResponse extends \Google\Model
     return $this->isNewUser;
   }
   /**
-   * @param string $localId
+   * @param string
    */
   public function setLocalId($localId)
   {
@@ -117,7 +117,7 @@ class IdentitytoolkitRelyingpartyVerifyPhoneNumberResponse extends \Google\Model
     return $this->localId;
   }
   /**
-   * @param string $phoneNumber
+   * @param string
    */
   public function setPhoneNumber($phoneNumber)
   {
@@ -131,7 +131,7 @@ class IdentitytoolkitRelyingpartyVerifyPhoneNumberResponse extends \Google\Model
     return $this->phoneNumber;
   }
   /**
-   * @param string $refreshToken
+   * @param string
    */
   public function setRefreshToken($refreshToken)
   {
@@ -145,7 +145,7 @@ class IdentitytoolkitRelyingpartyVerifyPhoneNumberResponse extends \Google\Model
     return $this->refreshToken;
   }
   /**
-   * @param string $temporaryProof
+   * @param string
    */
   public function setTemporaryProof($temporaryProof)
   {
@@ -159,7 +159,7 @@ class IdentitytoolkitRelyingpartyVerifyPhoneNumberResponse extends \Google\Model
     return $this->temporaryProof;
   }
   /**
-   * @param string $temporaryProofExpiresIn
+   * @param string
    */
   public function setTemporaryProofExpiresIn($temporaryProofExpiresIn)
   {
@@ -173,7 +173,7 @@ class IdentitytoolkitRelyingpartyVerifyPhoneNumberResponse extends \Google\Model
     return $this->temporaryProofExpiresIn;
   }
   /**
-   * @param string $verificationProof
+   * @param string
    */
   public function setVerificationProof($verificationProof)
   {
@@ -187,7 +187,7 @@ class IdentitytoolkitRelyingpartyVerifyPhoneNumberResponse extends \Google\Model
     return $this->verificationProof;
   }
   /**
-   * @param string $verificationProofExpiresIn
+   * @param string
    */
   public function setVerificationProofExpiresIn($verificationProofExpiresIn)
   {

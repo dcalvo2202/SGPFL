@@ -20,34 +20,24 @@ namespace Google\Service\VMMigrationService;
 class ApplianceVersion extends \Google\Model
 {
   /**
-   * Determine whether it's critical to upgrade the appliance to this version.
-   *
    * @var bool
    */
   public $critical;
   /**
-   * Link to a page that contains the version release notes.
-   *
    * @var string
    */
   public $releaseNotesUri;
   /**
-   * A link for downloading the version.
-   *
    * @var string
    */
   public $uri;
   /**
-   * The appliance version.
-   *
    * @var string
    */
   public $version;
 
   /**
-   * Determine whether it's critical to upgrade the appliance to this version.
-   *
-   * @param bool $critical
+   * @param bool
    */
   public function setCritical($critical)
   {
@@ -61,9 +51,7 @@ class ApplianceVersion extends \Google\Model
     return $this->critical;
   }
   /**
-   * Link to a page that contains the version release notes.
-   *
-   * @param string $releaseNotesUri
+   * @param string
    */
   public function setReleaseNotesUri($releaseNotesUri)
   {
@@ -77,9 +65,7 @@ class ApplianceVersion extends \Google\Model
     return $this->releaseNotesUri;
   }
   /**
-   * A link for downloading the version.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {
@@ -93,9 +79,7 @@ class ApplianceVersion extends \Google\Model
     return $this->uri;
   }
   /**
-   * The appliance version.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

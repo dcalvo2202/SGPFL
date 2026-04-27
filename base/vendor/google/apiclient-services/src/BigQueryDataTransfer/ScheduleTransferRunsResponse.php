@@ -24,9 +24,7 @@ class ScheduleTransferRunsResponse extends \Google\Collection
   protected $runsDataType = 'array';
 
   /**
-   * The transfer runs that were scheduled.
-   *
-   * @param TransferRun[] $runs
+   * @param TransferRun[]
    */
   public function setRuns($runs)
   {

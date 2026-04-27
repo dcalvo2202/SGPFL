@@ -19,18 +19,6 @@ namespace Google\Service\Dataflow;
 
 class GetTemplateResponse extends \Google\Model
 {
-  /**
-   * Unknown Template Type.
-   */
-  public const TEMPLATE_TYPE_UNKNOWN = 'UNKNOWN';
-  /**
-   * Legacy Template.
-   */
-  public const TEMPLATE_TYPE_LEGACY = 'LEGACY';
-  /**
-   * Flex Template.
-   */
-  public const TEMPLATE_TYPE_FLEX = 'FLEX';
   protected $metadataType = TemplateMetadata::class;
   protected $metadataDataType = '';
   protected $runtimeMetadataType = RuntimeMetadata::class;
@@ -38,17 +26,12 @@ class GetTemplateResponse extends \Google\Model
   protected $statusType = Status::class;
   protected $statusDataType = '';
   /**
-   * Template Type.
-   *
    * @var string
    */
   public $templateType;
 
   /**
-   * The template metadata describing the template name, available parameters,
-   * etc.
-   *
-   * @param TemplateMetadata $metadata
+   * @param TemplateMetadata
    */
   public function setMetadata(TemplateMetadata $metadata)
   {
@@ -62,9 +45,7 @@ class GetTemplateResponse extends \Google\Model
     return $this->metadata;
   }
   /**
-   * Describes the runtime metadata with SDKInfo and available parameters.
-   *
-   * @param RuntimeMetadata $runtimeMetadata
+   * @param RuntimeMetadata
    */
   public function setRuntimeMetadata(RuntimeMetadata $runtimeMetadata)
   {
@@ -78,10 +59,7 @@ class GetTemplateResponse extends \Google\Model
     return $this->runtimeMetadata;
   }
   /**
-   * The status of the get template request. Any problems with the request will
-   * be indicated in the error_details.
-   *
-   * @param Status $status
+   * @param Status
    */
   public function setStatus(Status $status)
   {
@@ -95,18 +73,14 @@ class GetTemplateResponse extends \Google\Model
     return $this->status;
   }
   /**
-   * Template Type.
-   *
-   * Accepted values: UNKNOWN, LEGACY, FLEX
-   *
-   * @param self::TEMPLATE_TYPE_* $templateType
+   * @param string
    */
   public function setTemplateType($templateType)
   {
     $this->templateType = $templateType;
   }
   /**
-   * @return self::TEMPLATE_TYPE_*
+   * @return string
    */
   public function getTemplateType()
   {

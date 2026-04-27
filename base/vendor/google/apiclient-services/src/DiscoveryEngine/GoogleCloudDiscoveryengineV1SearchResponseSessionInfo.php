@@ -20,29 +20,16 @@ namespace Google\Service\DiscoveryEngine;
 class GoogleCloudDiscoveryengineV1SearchResponseSessionInfo extends \Google\Model
 {
   /**
-   * Name of the session. If the auto-session mode is used (when
-   * SearchRequest.session ends with "-"), this field holds the newly generated
-   * session name.
-   *
    * @var string
    */
   public $name;
   /**
-   * Query ID that corresponds to this search API call. One session can have
-   * multiple turns, each with a unique query ID. By specifying the session name
-   * and this query ID in the Answer API call, the answer generation happens in
-   * the context of the search results from this search call.
-   *
    * @var string
    */
   public $queryId;
 
   /**
-   * Name of the session. If the auto-session mode is used (when
-   * SearchRequest.session ends with "-"), this field holds the newly generated
-   * session name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -56,12 +43,7 @@ class GoogleCloudDiscoveryengineV1SearchResponseSessionInfo extends \Google\Mode
     return $this->name;
   }
   /**
-   * Query ID that corresponds to this search API call. One session can have
-   * multiple turns, each with a unique query ID. By specifying the session name
-   * and this query ID in the Answer API call, the answer generation happens in
-   * the context of the search results from this search call.
-   *
-   * @param string $queryId
+   * @param string
    */
   public function setQueryId($queryId)
   {

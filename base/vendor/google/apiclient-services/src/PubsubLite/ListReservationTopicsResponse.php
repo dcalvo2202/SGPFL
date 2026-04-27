@@ -21,25 +21,16 @@ class ListReservationTopicsResponse extends \Google\Collection
 {
   protected $collection_key = 'topics';
   /**
-   * A token that can be sent as `page_token` to retrieve the next page of
-   * results. If this field is omitted, there are no more results.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * The names of topics attached to the reservation. The order of the topics is
-   * unspecified.
-   *
    * @var string[]
    */
   public $topics;
 
   /**
-   * A token that can be sent as `page_token` to retrieve the next page of
-   * results. If this field is omitted, there are no more results.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -53,10 +44,7 @@ class ListReservationTopicsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * The names of topics attached to the reservation. The order of the topics is
-   * unspecified.
-   *
-   * @param string[] $topics
+   * @param string[]
    */
   public function setTopics($topics)
   {

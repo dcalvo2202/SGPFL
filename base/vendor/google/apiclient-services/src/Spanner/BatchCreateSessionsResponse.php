@@ -24,9 +24,7 @@ class BatchCreateSessionsResponse extends \Google\Collection
   protected $sessionDataType = 'array';
 
   /**
-   * The freshly created sessions.
-   *
-   * @param Session[] $session
+   * @param Session[]
    */
   public function setSession($session)
   {

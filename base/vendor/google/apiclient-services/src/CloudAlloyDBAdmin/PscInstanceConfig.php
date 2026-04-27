@@ -21,37 +21,24 @@ class PscInstanceConfig extends \Google\Collection
 {
   protected $collection_key = 'pscInterfaceConfigs';
   /**
-   * Optional. List of consumer projects that are allowed to create PSC
-   * endpoints to service-attachments to this instance.
-   *
    * @var string[]
    */
   public $allowedConsumerProjects;
   protected $pscAutoConnectionsType = PscAutoConnectionConfig::class;
   protected $pscAutoConnectionsDataType = 'array';
   /**
-   * Output only. The DNS name of the instance for PSC connectivity. Name
-   * convention: ...alloydb-psc.goog
-   *
    * @var string
    */
   public $pscDnsName;
   protected $pscInterfaceConfigsType = PscInterfaceConfig::class;
   protected $pscInterfaceConfigsDataType = 'array';
   /**
-   * Output only. The service attachment created when Private Service Connect
-   * (PSC) is enabled for the instance. The name of the resource will be in the
-   * format of `projects//regions//serviceAttachments/`
-   *
    * @var string
    */
   public $serviceAttachmentLink;
 
   /**
-   * Optional. List of consumer projects that are allowed to create PSC
-   * endpoints to service-attachments to this instance.
-   *
-   * @param string[] $allowedConsumerProjects
+   * @param string[]
    */
   public function setAllowedConsumerProjects($allowedConsumerProjects)
   {
@@ -65,9 +52,7 @@ class PscInstanceConfig extends \Google\Collection
     return $this->allowedConsumerProjects;
   }
   /**
-   * Optional. Configurations for setting up PSC service automation.
-   *
-   * @param PscAutoConnectionConfig[] $pscAutoConnections
+   * @param PscAutoConnectionConfig[]
    */
   public function setPscAutoConnections($pscAutoConnections)
   {
@@ -81,10 +66,7 @@ class PscInstanceConfig extends \Google\Collection
     return $this->pscAutoConnections;
   }
   /**
-   * Output only. The DNS name of the instance for PSC connectivity. Name
-   * convention: ...alloydb-psc.goog
-   *
-   * @param string $pscDnsName
+   * @param string
    */
   public function setPscDnsName($pscDnsName)
   {
@@ -98,12 +80,7 @@ class PscInstanceConfig extends \Google\Collection
     return $this->pscDnsName;
   }
   /**
-   * Optional. Configurations for setting up PSC interfaces attached to the
-   * instance which are used for outbound connectivity. Only primary instances
-   * can have PSC interface attached. Currently we only support 0 or 1 PSC
-   * interface.
-   *
-   * @param PscInterfaceConfig[] $pscInterfaceConfigs
+   * @param PscInterfaceConfig[]
    */
   public function setPscInterfaceConfigs($pscInterfaceConfigs)
   {
@@ -117,11 +94,7 @@ class PscInstanceConfig extends \Google\Collection
     return $this->pscInterfaceConfigs;
   }
   /**
-   * Output only. The service attachment created when Private Service Connect
-   * (PSC) is enabled for the instance. The name of the resource will be in the
-   * format of `projects//regions//serviceAttachments/`
-   *
-   * @param string $serviceAttachmentLink
+   * @param string
    */
   public function setServiceAttachmentLink($serviceAttachmentLink)
   {

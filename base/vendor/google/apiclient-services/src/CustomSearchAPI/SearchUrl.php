@@ -20,25 +20,16 @@ namespace Google\Service\CustomSearchAPI;
 class SearchUrl extends \Google\Model
 {
   /**
-   * The actual [OpenSearch template](http://www.opensearch.org/specifications/o
-   * pensearch/1.1#opensearch_url_template_syntax) for this API.
-   *
    * @var string
    */
   public $template;
   /**
-   * The MIME type of the OpenSearch URL template for the Custom Search JSON
-   * API.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The actual [OpenSearch template](http://www.opensearch.org/specifications/o
-   * pensearch/1.1#opensearch_url_template_syntax) for this API.
-   *
-   * @param string $template
+   * @param string
    */
   public function setTemplate($template)
   {
@@ -52,10 +43,7 @@ class SearchUrl extends \Google\Model
     return $this->template;
   }
   /**
-   * The MIME type of the OpenSearch URL template for the Custom Search JSON
-   * API.
-   *
-   * @param string $type
+   * @param string
    */
   public function setType($type)
   {

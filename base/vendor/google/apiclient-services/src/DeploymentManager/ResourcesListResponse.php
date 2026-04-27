@@ -21,8 +21,6 @@ class ResourcesListResponse extends \Google\Collection
 {
   protected $collection_key = 'resources';
   /**
-   * A token used to continue a truncated list request.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -30,9 +28,7 @@ class ResourcesListResponse extends \Google\Collection
   protected $resourcesDataType = 'array';
 
   /**
-   * A token used to continue a truncated list request.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -46,9 +42,7 @@ class ResourcesListResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Resources contained in this list response.
-   *
-   * @param DeploymentmanagerResource[] $resources
+   * @param DeploymentmanagerResource[]
    */
   public function setResources($resources)
   {

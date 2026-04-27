@@ -21,9 +21,6 @@ class ListAutoscalingPoliciesResponse extends \Google\Collection
 {
   protected $collection_key = 'policies';
   /**
-   * Output only. This token is included in the response if there are more
-   * results to fetch.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListAutoscalingPoliciesResponse extends \Google\Collection
   protected $policiesDataType = 'array';
 
   /**
-   * Output only. This token is included in the response if there are more
-   * results to fetch.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,9 +42,7 @@ class ListAutoscalingPoliciesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Output only. Autoscaling policies list.
-   *
-   * @param AutoscalingPolicy[] $policies
+   * @param AutoscalingPolicy[]
    */
   public function setPolicies($policies)
   {

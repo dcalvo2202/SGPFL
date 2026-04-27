@@ -21,20 +21,12 @@ class PatientScope extends \Google\Collection
 {
   protected $collection_key = 'patientIds';
   /**
-   * Optional. The list of patient IDs whose Consent resources will be enforced.
-   * At most 10,000 patients can be specified. An empty list is equivalent to
-   * all patients (meaning the entire FHIR store).
-   *
    * @var string[]
    */
   public $patientIds;
 
   /**
-   * Optional. The list of patient IDs whose Consent resources will be enforced.
-   * At most 10,000 patients can be specified. An empty list is equivalent to
-   * all patients (meaning the entire FHIR store).
-   *
-   * @param string[] $patientIds
+   * @param string[]
    */
   public function setPatientIds($patientIds)
   {

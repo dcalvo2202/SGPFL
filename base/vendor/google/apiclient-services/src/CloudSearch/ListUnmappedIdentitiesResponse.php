@@ -21,9 +21,6 @@ class ListUnmappedIdentitiesResponse extends \Google\Collection
 {
   protected $collection_key = 'unmappedIdentities';
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
@@ -31,10 +28,7 @@ class ListUnmappedIdentitiesResponse extends \Google\Collection
   protected $unmappedIdentitiesDataType = 'array';
 
   /**
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -48,7 +42,7 @@ class ListUnmappedIdentitiesResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * @param UnmappedIdentity[] $unmappedIdentities
+   * @param UnmappedIdentity[]
    */
   public function setUnmappedIdentities($unmappedIdentities)
   {

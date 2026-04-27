@@ -20,53 +20,36 @@ namespace Google\Service\NetworkManagement;
 class OperationMetadata extends \Google\Model
 {
   /**
-   * API version.
-   *
    * @var string
    */
   public $apiVersion;
   /**
-   * Specifies if cancellation was requested for the operation.
-   *
    * @var bool
    */
   public $cancelRequested;
   /**
-   * The time the operation was created.
-   *
    * @var string
    */
   public $createTime;
   /**
-   * The time the operation finished running.
-   *
    * @var string
    */
   public $endTime;
   /**
-   * Human-readable status of the operation, if any.
-   *
    * @var string
    */
   public $statusDetail;
   /**
-   * Target of the operation - for example
-   * projects/project-1/locations/global/connectivityTests/test-1
-   *
    * @var string
    */
   public $target;
   /**
-   * Name of the verb executed by the operation.
-   *
    * @var string
    */
   public $verb;
 
   /**
-   * API version.
-   *
-   * @param string $apiVersion
+   * @param string
    */
   public function setApiVersion($apiVersion)
   {
@@ -80,9 +63,7 @@ class OperationMetadata extends \Google\Model
     return $this->apiVersion;
   }
   /**
-   * Specifies if cancellation was requested for the operation.
-   *
-   * @param bool $cancelRequested
+   * @param bool
    */
   public function setCancelRequested($cancelRequested)
   {
@@ -96,9 +77,7 @@ class OperationMetadata extends \Google\Model
     return $this->cancelRequested;
   }
   /**
-   * The time the operation was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -112,9 +91,7 @@ class OperationMetadata extends \Google\Model
     return $this->createTime;
   }
   /**
-   * The time the operation finished running.
-   *
-   * @param string $endTime
+   * @param string
    */
   public function setEndTime($endTime)
   {
@@ -128,9 +105,7 @@ class OperationMetadata extends \Google\Model
     return $this->endTime;
   }
   /**
-   * Human-readable status of the operation, if any.
-   *
-   * @param string $statusDetail
+   * @param string
    */
   public function setStatusDetail($statusDetail)
   {
@@ -144,10 +119,7 @@ class OperationMetadata extends \Google\Model
     return $this->statusDetail;
   }
   /**
-   * Target of the operation - for example
-   * projects/project-1/locations/global/connectivityTests/test-1
-   *
-   * @param string $target
+   * @param string
    */
   public function setTarget($target)
   {
@@ -161,9 +133,7 @@ class OperationMetadata extends \Google\Model
     return $this->target;
   }
   /**
-   * Name of the verb executed by the operation.
-   *
-   * @param string $verb
+   * @param string
    */
   public function setVerb($verb)
   {

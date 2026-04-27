@@ -20,60 +20,26 @@ namespace Google\Service\WorkloadManager;
 class HealthCheck extends \Google\Model
 {
   /**
-   * Unspecified
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * passed
-   */
-  public const STATE_PASSED = 'PASSED';
-  /**
-   * failed
-   */
-  public const STATE_FAILED = 'FAILED';
-  /**
-   * degraded
-   */
-  public const STATE_DEGRADED = 'DEGRADED';
-  /**
-   * skipped
-   */
-  public const STATE_SKIPPED = 'SKIPPED';
-  /**
-   * unsupported
-   */
-  public const STATE_UNSUPPORTED = 'UNSUPPORTED';
-  /**
-   * Output only. The message of the health check.
-   *
    * @var string
    */
   public $message;
   /**
-   * Output only. The health check source metric name.
-   *
    * @var string
    */
   public $metric;
   protected $resourceType = CloudResource::class;
   protected $resourceDataType = '';
   /**
-   * Output only. The source of the health check.
-   *
    * @var string
    */
   public $source;
   /**
-   * Output only. The state of the health check.
-   *
    * @var string
    */
   public $state;
 
   /**
-   * Output only. The message of the health check.
-   *
-   * @param string $message
+   * @param string
    */
   public function setMessage($message)
   {
@@ -87,9 +53,7 @@ class HealthCheck extends \Google\Model
     return $this->message;
   }
   /**
-   * Output only. The health check source metric name.
-   *
-   * @param string $metric
+   * @param string
    */
   public function setMetric($metric)
   {
@@ -103,9 +67,7 @@ class HealthCheck extends \Google\Model
     return $this->metric;
   }
   /**
-   * Output only. The resource the check performs on.
-   *
-   * @param CloudResource $resource
+   * @param CloudResource
    */
   public function setResource(CloudResource $resource)
   {
@@ -119,9 +81,7 @@ class HealthCheck extends \Google\Model
     return $this->resource;
   }
   /**
-   * Output only. The source of the health check.
-   *
-   * @param string $source
+   * @param string
    */
   public function setSource($source)
   {
@@ -135,19 +95,14 @@ class HealthCheck extends \Google\Model
     return $this->source;
   }
   /**
-   * Output only. The state of the health check.
-   *
-   * Accepted values: STATE_UNSPECIFIED, PASSED, FAILED, DEGRADED, SKIPPED,
-   * UNSUPPORTED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {

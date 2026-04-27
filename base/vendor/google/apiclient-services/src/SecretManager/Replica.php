@@ -22,21 +22,12 @@ class Replica extends \Google\Model
   protected $customerManagedEncryptionType = CustomerManagedEncryption::class;
   protected $customerManagedEncryptionDataType = '';
   /**
-   * The canonical IDs of the location to replicate data. For example: `"us-
-   * east1"`.
-   *
    * @var string
    */
   public $location;
 
   /**
-   * Optional. The customer-managed encryption configuration of the User-Managed
-   * Replica. If no configuration is provided, Google-managed default encryption
-   * is used. Updates to the Secret encryption configuration only apply to
-   * SecretVersions added afterwards. They do not apply retroactively to
-   * existing SecretVersions.
-   *
-   * @param CustomerManagedEncryption $customerManagedEncryption
+   * @param CustomerManagedEncryption
    */
   public function setCustomerManagedEncryption(CustomerManagedEncryption $customerManagedEncryption)
   {
@@ -50,10 +41,7 @@ class Replica extends \Google\Model
     return $this->customerManagedEncryption;
   }
   /**
-   * The canonical IDs of the location to replicate data. For example: `"us-
-   * east1"`.
-   *
-   * @param string $location
+   * @param string
    */
   public function setLocation($location)
   {

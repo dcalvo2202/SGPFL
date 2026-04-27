@@ -23,23 +23,16 @@ class ListCutoverJobsResponse extends \Google\Collection
   protected $cutoverJobsType = CutoverJob::class;
   protected $cutoverJobsDataType = 'array';
   /**
-   * Output only. A token, which can be sent as `page_token` to retrieve the
-   * next page. If this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Output only. Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * Output only. The list of cutover jobs response.
-   *
-   * @param CutoverJob[] $cutoverJobs
+   * @param CutoverJob[]
    */
   public function setCutoverJobs($cutoverJobs)
   {
@@ -53,10 +46,7 @@ class ListCutoverJobsResponse extends \Google\Collection
     return $this->cutoverJobs;
   }
   /**
-   * Output only. A token, which can be sent as `page_token` to retrieve the
-   * next page. If this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -70,9 +60,7 @@ class ListCutoverJobsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Output only. Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

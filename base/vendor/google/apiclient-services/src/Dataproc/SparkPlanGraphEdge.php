@@ -29,7 +29,7 @@ class SparkPlanGraphEdge extends \Google\Model
   public $toId;
 
   /**
-   * @param string $fromId
+   * @param string
    */
   public function setFromId($fromId)
   {
@@ -43,7 +43,7 @@ class SparkPlanGraphEdge extends \Google\Model
     return $this->fromId;
   }
   /**
-   * @param string $toId
+   * @param string
    */
   public function setToId($toId)
   {

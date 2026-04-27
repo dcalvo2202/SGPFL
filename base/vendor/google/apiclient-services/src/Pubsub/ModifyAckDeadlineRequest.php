@@ -21,36 +21,16 @@ class ModifyAckDeadlineRequest extends \Google\Collection
 {
   protected $collection_key = 'ackIds';
   /**
-   * Required. The new ack deadline with respect to the time this request was
-   * sent to the Pub/Sub system. For example, if the value is 10, the new ack
-   * deadline will expire 10 seconds after the `ModifyAckDeadline` call was
-   * made. Specifying zero might immediately make the message available for
-   * delivery to another subscriber client. This typically results in an
-   * increase in the rate of message redeliveries (that is, duplicates). The
-   * minimum deadline you can specify is 0 seconds. The maximum deadline you can
-   * specify in a single request is 600 seconds (10 minutes).
-   *
    * @var int
    */
   public $ackDeadlineSeconds;
   /**
-   * Required. List of acknowledgment IDs.
-   *
    * @var string[]
    */
   public $ackIds;
 
   /**
-   * Required. The new ack deadline with respect to the time this request was
-   * sent to the Pub/Sub system. For example, if the value is 10, the new ack
-   * deadline will expire 10 seconds after the `ModifyAckDeadline` call was
-   * made. Specifying zero might immediately make the message available for
-   * delivery to another subscriber client. This typically results in an
-   * increase in the rate of message redeliveries (that is, duplicates). The
-   * minimum deadline you can specify is 0 seconds. The maximum deadline you can
-   * specify in a single request is 600 seconds (10 minutes).
-   *
-   * @param int $ackDeadlineSeconds
+   * @param int
    */
   public function setAckDeadlineSeconds($ackDeadlineSeconds)
   {
@@ -64,9 +44,7 @@ class ModifyAckDeadlineRequest extends \Google\Collection
     return $this->ackDeadlineSeconds;
   }
   /**
-   * Required. List of acknowledgment IDs.
-   *
-   * @param string[] $ackIds
+   * @param string[]
    */
   public function setAckIds($ackIds)
   {

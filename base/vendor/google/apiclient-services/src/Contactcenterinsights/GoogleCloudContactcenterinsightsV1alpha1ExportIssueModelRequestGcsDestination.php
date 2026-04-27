@@ -20,16 +20,12 @@ namespace Google\Service\Contactcenterinsights;
 class GoogleCloudContactcenterinsightsV1alpha1ExportIssueModelRequestGcsDestination extends \Google\Model
 {
   /**
-   * Required. Format: `gs:`
-   *
    * @var string
    */
   public $objectUri;
 
   /**
-   * Required. Format: `gs:`
-   *
-   * @param string $objectUri
+   * @param string
    */
   public function setObjectUri($objectUri)
   {

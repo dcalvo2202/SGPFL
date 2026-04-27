@@ -20,22 +20,16 @@ namespace Google\Service\TrafficDirectorService;
 class StaticRouteConfig extends \Google\Model
 {
   /**
-   * The timestamp when the Route was last updated.
-   *
    * @var string
    */
   public $lastUpdated;
   /**
-   * The route config.
-   *
    * @var array[]
    */
   public $routeConfig;
 
   /**
-   * The timestamp when the Route was last updated.
-   *
-   * @param string $lastUpdated
+   * @param string
    */
   public function setLastUpdated($lastUpdated)
   {
@@ -49,9 +43,7 @@ class StaticRouteConfig extends \Google\Model
     return $this->lastUpdated;
   }
   /**
-   * The route config.
-   *
-   * @param array[] $routeConfig
+   * @param array[]
    */
   public function setRouteConfig($routeConfig)
   {

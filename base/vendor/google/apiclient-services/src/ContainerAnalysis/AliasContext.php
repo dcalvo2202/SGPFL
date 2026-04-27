@@ -20,57 +20,30 @@ namespace Google\Service\ContainerAnalysis;
 class AliasContext extends \Google\Model
 {
   /**
-   * Unknown.
-   */
-  public const KIND_KIND_UNSPECIFIED = 'KIND_UNSPECIFIED';
-  /**
-   * Git tag.
-   */
-  public const KIND_FIXED = 'FIXED';
-  /**
-   * Git branch.
-   */
-  public const KIND_MOVABLE = 'MOVABLE';
-  /**
-   * Used to specify non-standard aliases. For example, if a Git repo has a ref
-   * named "refs/foo/bar".
-   */
-  public const KIND_OTHER = 'OTHER';
-  /**
-   * The alias kind.
-   *
    * @var string
    */
   public $kind;
   /**
-   * The alias name.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The alias kind.
-   *
-   * Accepted values: KIND_UNSPECIFIED, FIXED, MOVABLE, OTHER
-   *
-   * @param self::KIND_* $kind
+   * @param string
    */
   public function setKind($kind)
   {
     $this->kind = $kind;
   }
   /**
-   * @return self::KIND_*
+   * @return string
    */
   public function getKind()
   {
     return $this->kind;
   }
   /**
-   * The alias name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

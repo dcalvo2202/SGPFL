@@ -22,8 +22,6 @@ class NetworkConfiguration extends \Google\Model
   protected $downRuleType = TrafficRule::class;
   protected $downRuleDataType = '';
   /**
-   * The unique opaque id for this network traffic configuration.
-   *
    * @var string
    */
   public $id;
@@ -31,9 +29,7 @@ class NetworkConfiguration extends \Google\Model
   protected $upRuleDataType = '';
 
   /**
-   * The emulation rule applying to the download traffic.
-   *
-   * @param TrafficRule $downRule
+   * @param TrafficRule
    */
   public function setDownRule(TrafficRule $downRule)
   {
@@ -47,9 +43,7 @@ class NetworkConfiguration extends \Google\Model
     return $this->downRule;
   }
   /**
-   * The unique opaque id for this network traffic configuration.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -63,9 +57,7 @@ class NetworkConfiguration extends \Google\Model
     return $this->id;
   }
   /**
-   * The emulation rule applying to the upload traffic.
-   *
-   * @param TrafficRule $upRule
+   * @param TrafficRule
    */
   public function setUpRule(TrafficRule $upRule)
   {

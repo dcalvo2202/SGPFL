@@ -22,41 +22,28 @@ class BitbucketDataCenterConfig extends \Google\Model
   protected $authorizerCredentialType = UserCredential::class;
   protected $authorizerCredentialDataType = '';
   /**
-   * Required. The URI of the Bitbucket Data Center instance or cluster this
-   * connection is for.
-   *
    * @var string
    */
   public $hostUri;
   protected $readAuthorizerCredentialType = UserCredential::class;
   protected $readAuthorizerCredentialDataType = '';
   /**
-   * Output only. Version of the Bitbucket Data Center running on the
-   * `host_uri`.
-   *
    * @var string
    */
   public $serverVersion;
   protected $serviceDirectoryConfigType = GoogleDevtoolsCloudbuildV2ServiceDirectoryConfig::class;
   protected $serviceDirectoryConfigDataType = '';
   /**
-   * Optional. SSL certificate to use for requests to the Bitbucket Data Center.
-   *
    * @var string
    */
   public $sslCa;
   /**
-   * Required. Immutable. SecretManager resource containing the webhook secret
-   * used to verify webhook events, formatted as `projects/secrets/versions`.
-   *
    * @var string
    */
   public $webhookSecretSecretVersion;
 
   /**
-   * Required. A http access token with the `REPO_ADMIN` scope access.
-   *
-   * @param UserCredential $authorizerCredential
+   * @param UserCredential
    */
   public function setAuthorizerCredential(UserCredential $authorizerCredential)
   {
@@ -70,10 +57,7 @@ class BitbucketDataCenterConfig extends \Google\Model
     return $this->authorizerCredential;
   }
   /**
-   * Required. The URI of the Bitbucket Data Center instance or cluster this
-   * connection is for.
-   *
-   * @param string $hostUri
+   * @param string
    */
   public function setHostUri($hostUri)
   {
@@ -87,9 +71,7 @@ class BitbucketDataCenterConfig extends \Google\Model
     return $this->hostUri;
   }
   /**
-   * Required. A http access token with the `REPO_READ` access.
-   *
-   * @param UserCredential $readAuthorizerCredential
+   * @param UserCredential
    */
   public function setReadAuthorizerCredential(UserCredential $readAuthorizerCredential)
   {
@@ -103,10 +85,7 @@ class BitbucketDataCenterConfig extends \Google\Model
     return $this->readAuthorizerCredential;
   }
   /**
-   * Output only. Version of the Bitbucket Data Center running on the
-   * `host_uri`.
-   *
-   * @param string $serverVersion
+   * @param string
    */
   public function setServerVersion($serverVersion)
   {
@@ -120,13 +99,7 @@ class BitbucketDataCenterConfig extends \Google\Model
     return $this->serverVersion;
   }
   /**
-   * Optional. Configuration for using Service Directory to privately connect to
-   * a Bitbucket Data Center. This should only be set if the Bitbucket Data
-   * Center is hosted on-premises and not reachable by public internet. If this
-   * field is left empty, calls to the Bitbucket Data Center will be made over
-   * the public internet.
-   *
-   * @param GoogleDevtoolsCloudbuildV2ServiceDirectoryConfig $serviceDirectoryConfig
+   * @param GoogleDevtoolsCloudbuildV2ServiceDirectoryConfig
    */
   public function setServiceDirectoryConfig(GoogleDevtoolsCloudbuildV2ServiceDirectoryConfig $serviceDirectoryConfig)
   {
@@ -140,9 +113,7 @@ class BitbucketDataCenterConfig extends \Google\Model
     return $this->serviceDirectoryConfig;
   }
   /**
-   * Optional. SSL certificate to use for requests to the Bitbucket Data Center.
-   *
-   * @param string $sslCa
+   * @param string
    */
   public function setSslCa($sslCa)
   {
@@ -156,10 +127,7 @@ class BitbucketDataCenterConfig extends \Google\Model
     return $this->sslCa;
   }
   /**
-   * Required. Immutable. SecretManager resource containing the webhook secret
-   * used to verify webhook events, formatted as `projects/secrets/versions`.
-   *
-   * @param string $webhookSecretSecretVersion
+   * @param string
    */
   public function setWebhookSecretSecretVersion($webhookSecretSecretVersion)
   {

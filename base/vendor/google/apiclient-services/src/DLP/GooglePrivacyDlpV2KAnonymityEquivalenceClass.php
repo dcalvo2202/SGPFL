@@ -21,9 +21,6 @@ class GooglePrivacyDlpV2KAnonymityEquivalenceClass extends \Google\Collection
 {
   protected $collection_key = 'quasiIdsValues';
   /**
-   * Size of the equivalence class, for example number of rows with the above
-   * set of values.
-   *
    * @var string
    */
   public $equivalenceClassSize;
@@ -31,10 +28,7 @@ class GooglePrivacyDlpV2KAnonymityEquivalenceClass extends \Google\Collection
   protected $quasiIdsValuesDataType = 'array';
 
   /**
-   * Size of the equivalence class, for example number of rows with the above
-   * set of values.
-   *
-   * @param string $equivalenceClassSize
+   * @param string
    */
   public function setEquivalenceClassSize($equivalenceClassSize)
   {
@@ -48,11 +42,7 @@ class GooglePrivacyDlpV2KAnonymityEquivalenceClass extends \Google\Collection
     return $this->equivalenceClassSize;
   }
   /**
-   * Set of values defining the equivalence class. One value per quasi-
-   * identifier column in the original KAnonymity metric message. The order is
-   * always the same as the original request.
-   *
-   * @param GooglePrivacyDlpV2Value[] $quasiIdsValues
+   * @param GooglePrivacyDlpV2Value[]
    */
   public function setQuasiIdsValues($quasiIdsValues)
   {

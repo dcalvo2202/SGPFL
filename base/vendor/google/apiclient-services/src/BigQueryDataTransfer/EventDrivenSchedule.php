@@ -20,20 +20,12 @@ namespace Google\Service\BigQueryDataTransfer;
 class EventDrivenSchedule extends \Google\Model
 {
   /**
-   * Pub/Sub subscription name used to receive events. Only Google Cloud Storage
-   * data source support this option. Format:
-   * projects/{project}/subscriptions/{subscription}
-   *
    * @var string
    */
   public $pubsubSubscription;
 
   /**
-   * Pub/Sub subscription name used to receive events. Only Google Cloud Storage
-   * data source support this option. Format:
-   * projects/{project}/subscriptions/{subscription}
-   *
-   * @param string $pubsubSubscription
+   * @param string
    */
   public function setPubsubSubscription($pubsubSubscription)
   {

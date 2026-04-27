@@ -20,28 +20,20 @@ namespace Google\Service\TPU;
 class SchedulingConfig extends \Google\Model
 {
   /**
-   * Defines whether the node is preemptible.
-   *
    * @var bool
    */
   public $preemptible;
   /**
-   * Whether the node is created under a reservation.
-   *
    * @var bool
    */
   public $reserved;
   /**
-   * Optional. Defines whether the node is Spot VM.
-   *
    * @var bool
    */
   public $spot;
 
   /**
-   * Defines whether the node is preemptible.
-   *
-   * @param bool $preemptible
+   * @param bool
    */
   public function setPreemptible($preemptible)
   {
@@ -55,9 +47,7 @@ class SchedulingConfig extends \Google\Model
     return $this->preemptible;
   }
   /**
-   * Whether the node is created under a reservation.
-   *
-   * @param bool $reserved
+   * @param bool
    */
   public function setReserved($reserved)
   {
@@ -71,9 +61,7 @@ class SchedulingConfig extends \Google\Model
     return $this->reserved;
   }
   /**
-   * Optional. Defines whether the node is Spot VM.
-   *
-   * @param bool $spot
+   * @param bool
    */
   public function setSpot($spot)
   {

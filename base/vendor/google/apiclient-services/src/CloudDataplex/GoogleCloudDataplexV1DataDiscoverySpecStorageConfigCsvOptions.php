@@ -20,46 +20,28 @@ namespace Google\Service\CloudDataplex;
 class GoogleCloudDataplexV1DataDiscoverySpecStorageConfigCsvOptions extends \Google\Model
 {
   /**
-   * Optional. The delimiter that is used to separate values. The default is ,
-   * (comma).
-   *
    * @var string
    */
   public $delimiter;
   /**
-   * Optional. The character encoding of the data. The default is UTF-8.
-   *
    * @var string
    */
   public $encoding;
   /**
-   * Optional. The number of rows to interpret as header rows that should be
-   * skipped when reading data rows.
-   *
    * @var int
    */
   public $headerRows;
   /**
-   * Optional. The character used to quote column values. Accepts " (double
-   * quotation mark) or ' (single quotation mark). If unspecified, defaults to "
-   * (double quotation mark).
-   *
    * @var string
    */
   public $quote;
   /**
-   * Optional. Whether to disable the inference of data types for CSV data. If
-   * true, all columns are registered as strings.
-   *
    * @var bool
    */
   public $typeInferenceDisabled;
 
   /**
-   * Optional. The delimiter that is used to separate values. The default is ,
-   * (comma).
-   *
-   * @param string $delimiter
+   * @param string
    */
   public function setDelimiter($delimiter)
   {
@@ -73,9 +55,7 @@ class GoogleCloudDataplexV1DataDiscoverySpecStorageConfigCsvOptions extends \Goo
     return $this->delimiter;
   }
   /**
-   * Optional. The character encoding of the data. The default is UTF-8.
-   *
-   * @param string $encoding
+   * @param string
    */
   public function setEncoding($encoding)
   {
@@ -89,10 +69,7 @@ class GoogleCloudDataplexV1DataDiscoverySpecStorageConfigCsvOptions extends \Goo
     return $this->encoding;
   }
   /**
-   * Optional. The number of rows to interpret as header rows that should be
-   * skipped when reading data rows.
-   *
-   * @param int $headerRows
+   * @param int
    */
   public function setHeaderRows($headerRows)
   {
@@ -106,11 +83,7 @@ class GoogleCloudDataplexV1DataDiscoverySpecStorageConfigCsvOptions extends \Goo
     return $this->headerRows;
   }
   /**
-   * Optional. The character used to quote column values. Accepts " (double
-   * quotation mark) or ' (single quotation mark). If unspecified, defaults to "
-   * (double quotation mark).
-   *
-   * @param string $quote
+   * @param string
    */
   public function setQuote($quote)
   {
@@ -124,10 +97,7 @@ class GoogleCloudDataplexV1DataDiscoverySpecStorageConfigCsvOptions extends \Goo
     return $this->quote;
   }
   /**
-   * Optional. Whether to disable the inference of data types for CSV data. If
-   * true, all columns are registered as strings.
-   *
-   * @param bool $typeInferenceDisabled
+   * @param bool
    */
   public function setTypeInferenceDisabled($typeInferenceDisabled)
   {

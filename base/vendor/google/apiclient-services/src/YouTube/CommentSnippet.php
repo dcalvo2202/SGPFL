@@ -19,133 +19,71 @@ namespace Google\Service\YouTube;
 
 class CommentSnippet extends \Google\Model
 {
-  /**
-   * The comment is available for public display.
-   */
-  public const MODERATION_STATUS_published = 'published';
-  /**
-   * The comment is awaiting review by a moderator.
-   */
-  public const MODERATION_STATUS_heldForReview = 'heldForReview';
-  public const MODERATION_STATUS_likelySpam = 'likelySpam';
-  /**
-   * The comment is unfit for display.
-   */
-  public const MODERATION_STATUS_rejected = 'rejected';
-  public const VIEWER_RATING_none = 'none';
-  /**
-   * The entity is liked.
-   */
-  public const VIEWER_RATING_like = 'like';
-  /**
-   * The entity is disliked.
-   */
-  public const VIEWER_RATING_dislike = 'dislike';
   protected $authorChannelIdType = CommentSnippetAuthorChannelId::class;
   protected $authorChannelIdDataType = '';
   /**
-   * Link to the author's YouTube channel, if any.
-   *
    * @var string
    */
   public $authorChannelUrl;
   /**
-   * The name of the user who posted the comment.
-   *
    * @var string
    */
   public $authorDisplayName;
   /**
-   * The URL for the avatar of the user who posted the comment.
-   *
    * @var string
    */
   public $authorProfileImageUrl;
   /**
-   * Whether the current viewer can rate this comment.
-   *
    * @var bool
    */
   public $canRate;
   /**
-   * The id of the corresponding YouTube channel. In case of a channel comment
-   * this is the channel the comment refers to. In case of a video or post
-   * comment it's the video/post's channel.
-   *
    * @var string
    */
   public $channelId;
   /**
-   * The total number of likes this comment has received.
-   *
    * @var string
    */
   public $likeCount;
   /**
-   * The comment's moderation status. Will not be set if the comments were
-   * requested through the id filter.
-   *
    * @var string
    */
   public $moderationStatus;
   /**
-   * The unique id of the top-level comment, only set for replies.
-   *
    * @var string
    */
   public $parentId;
   /**
-   * The ID of the post the comment refers to, if any.
-   *
    * @var string
    */
   public $postId;
   /**
-   * The date and time when the comment was originally published.
-   *
    * @var string
    */
   public $publishedAt;
   /**
-   * The comment's text. The format is either plain text or HTML dependent on
-   * what has been requested. Even the plain text representation may differ from
-   * the text originally posted in that it may replace video links with video
-   * titles etc.
-   *
    * @var string
    */
   public $textDisplay;
   /**
-   * The comment's original raw text as initially posted or last updated. The
-   * original text will only be returned if it is accessible to the viewer,
-   * which is only guaranteed if the viewer is the comment's author.
-   *
    * @var string
    */
   public $textOriginal;
   /**
-   * The date and time when the comment was last updated.
-   *
    * @var string
    */
   public $updatedAt;
   /**
-   * The ID of the video the comment refers to, if any.
-   *
    * @var string
    */
   public $videoId;
   /**
-   * The rating the viewer has given to this comment. For the time being this
-   * will never return RATE_TYPE_DISLIKE and instead return RATE_TYPE_NONE. This
-   * may change in the future.
-   *
    * @var string
    */
   public $viewerRating;
 
   /**
-   * @param CommentSnippetAuthorChannelId $authorChannelId
+   * @param CommentSnippetAuthorChannelId
    */
   public function setAuthorChannelId(CommentSnippetAuthorChannelId $authorChannelId)
   {
@@ -159,9 +97,7 @@ class CommentSnippet extends \Google\Model
     return $this->authorChannelId;
   }
   /**
-   * Link to the author's YouTube channel, if any.
-   *
-   * @param string $authorChannelUrl
+   * @param string
    */
   public function setAuthorChannelUrl($authorChannelUrl)
   {
@@ -175,9 +111,7 @@ class CommentSnippet extends \Google\Model
     return $this->authorChannelUrl;
   }
   /**
-   * The name of the user who posted the comment.
-   *
-   * @param string $authorDisplayName
+   * @param string
    */
   public function setAuthorDisplayName($authorDisplayName)
   {
@@ -191,9 +125,7 @@ class CommentSnippet extends \Google\Model
     return $this->authorDisplayName;
   }
   /**
-   * The URL for the avatar of the user who posted the comment.
-   *
-   * @param string $authorProfileImageUrl
+   * @param string
    */
   public function setAuthorProfileImageUrl($authorProfileImageUrl)
   {
@@ -207,9 +139,7 @@ class CommentSnippet extends \Google\Model
     return $this->authorProfileImageUrl;
   }
   /**
-   * Whether the current viewer can rate this comment.
-   *
-   * @param bool $canRate
+   * @param bool
    */
   public function setCanRate($canRate)
   {
@@ -223,11 +153,7 @@ class CommentSnippet extends \Google\Model
     return $this->canRate;
   }
   /**
-   * The id of the corresponding YouTube channel. In case of a channel comment
-   * this is the channel the comment refers to. In case of a video or post
-   * comment it's the video/post's channel.
-   *
-   * @param string $channelId
+   * @param string
    */
   public function setChannelId($channelId)
   {
@@ -241,9 +167,7 @@ class CommentSnippet extends \Google\Model
     return $this->channelId;
   }
   /**
-   * The total number of likes this comment has received.
-   *
-   * @param string $likeCount
+   * @param string
    */
   public function setLikeCount($likeCount)
   {
@@ -257,28 +181,21 @@ class CommentSnippet extends \Google\Model
     return $this->likeCount;
   }
   /**
-   * The comment's moderation status. Will not be set if the comments were
-   * requested through the id filter.
-   *
-   * Accepted values: published, heldForReview, likelySpam, rejected
-   *
-   * @param self::MODERATION_STATUS_* $moderationStatus
+   * @param string
    */
   public function setModerationStatus($moderationStatus)
   {
     $this->moderationStatus = $moderationStatus;
   }
   /**
-   * @return self::MODERATION_STATUS_*
+   * @return string
    */
   public function getModerationStatus()
   {
     return $this->moderationStatus;
   }
   /**
-   * The unique id of the top-level comment, only set for replies.
-   *
-   * @param string $parentId
+   * @param string
    */
   public function setParentId($parentId)
   {
@@ -292,9 +209,7 @@ class CommentSnippet extends \Google\Model
     return $this->parentId;
   }
   /**
-   * The ID of the post the comment refers to, if any.
-   *
-   * @param string $postId
+   * @param string
    */
   public function setPostId($postId)
   {
@@ -308,9 +223,7 @@ class CommentSnippet extends \Google\Model
     return $this->postId;
   }
   /**
-   * The date and time when the comment was originally published.
-   *
-   * @param string $publishedAt
+   * @param string
    */
   public function setPublishedAt($publishedAt)
   {
@@ -324,12 +237,7 @@ class CommentSnippet extends \Google\Model
     return $this->publishedAt;
   }
   /**
-   * The comment's text. The format is either plain text or HTML dependent on
-   * what has been requested. Even the plain text representation may differ from
-   * the text originally posted in that it may replace video links with video
-   * titles etc.
-   *
-   * @param string $textDisplay
+   * @param string
    */
   public function setTextDisplay($textDisplay)
   {
@@ -343,11 +251,7 @@ class CommentSnippet extends \Google\Model
     return $this->textDisplay;
   }
   /**
-   * The comment's original raw text as initially posted or last updated. The
-   * original text will only be returned if it is accessible to the viewer,
-   * which is only guaranteed if the viewer is the comment's author.
-   *
-   * @param string $textOriginal
+   * @param string
    */
   public function setTextOriginal($textOriginal)
   {
@@ -361,9 +265,7 @@ class CommentSnippet extends \Google\Model
     return $this->textOriginal;
   }
   /**
-   * The date and time when the comment was last updated.
-   *
-   * @param string $updatedAt
+   * @param string
    */
   public function setUpdatedAt($updatedAt)
   {
@@ -377,9 +279,7 @@ class CommentSnippet extends \Google\Model
     return $this->updatedAt;
   }
   /**
-   * The ID of the video the comment refers to, if any.
-   *
-   * @param string $videoId
+   * @param string
    */
   public function setVideoId($videoId)
   {
@@ -393,20 +293,14 @@ class CommentSnippet extends \Google\Model
     return $this->videoId;
   }
   /**
-   * The rating the viewer has given to this comment. For the time being this
-   * will never return RATE_TYPE_DISLIKE and instead return RATE_TYPE_NONE. This
-   * may change in the future.
-   *
-   * Accepted values: none, like, dislike
-   *
-   * @param self::VIEWER_RATING_* $viewerRating
+   * @param string
    */
   public function setViewerRating($viewerRating)
   {
     $this->viewerRating = $viewerRating;
   }
   /**
-   * @return self::VIEWER_RATING_*
+   * @return string
    */
   public function getViewerRating()
   {

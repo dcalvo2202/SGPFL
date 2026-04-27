@@ -20,20 +20,12 @@ namespace Google\Service\Container;
 class HorizontalPodAutoscaling extends \Google\Model
 {
   /**
-   * Whether the Horizontal Pod Autoscaling feature is enabled in the cluster.
-   * When enabled, it ensures that metrics are collected into Stackdriver
-   * Monitoring.
-   *
    * @var bool
    */
   public $disabled;
 
   /**
-   * Whether the Horizontal Pod Autoscaling feature is enabled in the cluster.
-   * When enabled, it ensures that metrics are collected into Stackdriver
-   * Monitoring.
-   *
-   * @param bool $disabled
+   * @param bool
    */
   public function setDisabled($disabled)
   {

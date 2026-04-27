@@ -25,7 +25,7 @@ class ManagedZoneReverseLookupConfig extends \Google\Model
   public $kind;
 
   /**
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {

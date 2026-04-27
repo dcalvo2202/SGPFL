@@ -20,74 +20,16 @@ namespace Google\Service\AnalyticsData;
 class MetricHeader extends \Google\Model
 {
   /**
-   * Unspecified type.
-   */
-  public const TYPE_METRIC_TYPE_UNSPECIFIED = 'METRIC_TYPE_UNSPECIFIED';
-  /**
-   * Integer type.
-   */
-  public const TYPE_TYPE_INTEGER = 'TYPE_INTEGER';
-  /**
-   * Floating point type.
-   */
-  public const TYPE_TYPE_FLOAT = 'TYPE_FLOAT';
-  /**
-   * A duration of seconds; a special floating point type.
-   */
-  public const TYPE_TYPE_SECONDS = 'TYPE_SECONDS';
-  /**
-   * A duration in milliseconds; a special floating point type.
-   */
-  public const TYPE_TYPE_MILLISECONDS = 'TYPE_MILLISECONDS';
-  /**
-   * A duration in minutes; a special floating point type.
-   */
-  public const TYPE_TYPE_MINUTES = 'TYPE_MINUTES';
-  /**
-   * A duration in hours; a special floating point type.
-   */
-  public const TYPE_TYPE_HOURS = 'TYPE_HOURS';
-  /**
-   * A custom metric of standard type; a special floating point type.
-   */
-  public const TYPE_TYPE_STANDARD = 'TYPE_STANDARD';
-  /**
-   * An amount of money; a special floating point type.
-   */
-  public const TYPE_TYPE_CURRENCY = 'TYPE_CURRENCY';
-  /**
-   * A length in feet; a special floating point type.
-   */
-  public const TYPE_TYPE_FEET = 'TYPE_FEET';
-  /**
-   * A length in miles; a special floating point type.
-   */
-  public const TYPE_TYPE_MILES = 'TYPE_MILES';
-  /**
-   * A length in meters; a special floating point type.
-   */
-  public const TYPE_TYPE_METERS = 'TYPE_METERS';
-  /**
-   * A length in kilometers; a special floating point type.
-   */
-  public const TYPE_TYPE_KILOMETERS = 'TYPE_KILOMETERS';
-  /**
-   * The metric's name.
-   *
    * @var string
    */
   public $name;
   /**
-   * The metric's data type.
-   *
    * @var string
    */
   public $type;
 
   /**
-   * The metric's name.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -101,20 +43,14 @@ class MetricHeader extends \Google\Model
     return $this->name;
   }
   /**
-   * The metric's data type.
-   *
-   * Accepted values: METRIC_TYPE_UNSPECIFIED, TYPE_INTEGER, TYPE_FLOAT,
-   * TYPE_SECONDS, TYPE_MILLISECONDS, TYPE_MINUTES, TYPE_HOURS, TYPE_STANDARD,
-   * TYPE_CURRENCY, TYPE_FEET, TYPE_MILES, TYPE_METERS, TYPE_KILOMETERS
-   *
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

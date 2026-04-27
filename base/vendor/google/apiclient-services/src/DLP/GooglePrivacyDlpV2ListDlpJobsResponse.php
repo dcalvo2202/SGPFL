@@ -23,16 +23,12 @@ class GooglePrivacyDlpV2ListDlpJobsResponse extends \Google\Collection
   protected $jobsType = GooglePrivacyDlpV2DlpJob::class;
   protected $jobsDataType = 'array';
   /**
-   * The standard List next-page token.
-   *
    * @var string
    */
   public $nextPageToken;
 
   /**
-   * A list of DlpJobs that matches the specified filter in the request.
-   *
-   * @param GooglePrivacyDlpV2DlpJob[] $jobs
+   * @param GooglePrivacyDlpV2DlpJob[]
    */
   public function setJobs($jobs)
   {
@@ -46,9 +42,7 @@ class GooglePrivacyDlpV2ListDlpJobsResponse extends \Google\Collection
     return $this->jobs;
   }
   /**
-   * The standard List next-page token.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {

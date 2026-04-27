@@ -24,10 +24,7 @@ class BatchUpdateAssetsRequest extends \Google\Collection
   protected $requestsDataType = 'array';
 
   /**
-   * Required. The request message specifying the resources to update. A maximum
-   * of 1000 assets can be modified in a batch.
-   *
-   * @param UpdateAssetRequest[] $requests
+   * @param UpdateAssetRequest[]
    */
   public function setRequests($requests)
   {

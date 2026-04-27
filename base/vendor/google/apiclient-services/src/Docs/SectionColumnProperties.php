@@ -25,9 +25,7 @@ class SectionColumnProperties extends \Google\Model
   protected $widthDataType = '';
 
   /**
-   * The padding at the end of the column.
-   *
-   * @param Dimension $paddingEnd
+   * @param Dimension
    */
   public function setPaddingEnd(Dimension $paddingEnd)
   {
@@ -41,9 +39,7 @@ class SectionColumnProperties extends \Google\Model
     return $this->paddingEnd;
   }
   /**
-   * Output only. The width of the column.
-   *
-   * @param Dimension $width
+   * @param Dimension
    */
   public function setWidth(Dimension $width)
   {

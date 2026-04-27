@@ -23,32 +23,16 @@ class GoogleCloudAiplatformV1TunedModel extends \Google\Collection
   protected $checkpointsType = GoogleCloudAiplatformV1TunedModelCheckpoint::class;
   protected $checkpointsDataType = 'array';
   /**
-   * Output only. A resource name of an Endpoint. Format:
-   * `projects/{project}/locations/{location}/endpoints/{endpoint}`.
-   *
    * @var string
    */
   public $endpoint;
   /**
-   * Output only. The resource name of the TunedModel. Format:
-   * `projects/{project}/locations/{location}/models/{model}@{version_id}` When
-   * tuning from a base model, the version ID will be 1. For continuous tuning,
-   * if the provided tuned_model_display_name is set and different from parent
-   * model's display name, the tuned model will have a new parent model with
-   * version 1. Otherwise the version id will be incremented by 1 from the last
-   * version ID in the parent model. E.g.,
-   * `projects/{project}/locations/{location}/models/{model}@{last_version_id +
-   * 1}`
-   *
    * @var string
    */
   public $model;
 
   /**
-   * Output only. The checkpoints associated with this TunedModel. This field is
-   * only populated for tuning jobs that enable intermediate checkpoints.
-   *
-   * @param GoogleCloudAiplatformV1TunedModelCheckpoint[] $checkpoints
+   * @param GoogleCloudAiplatformV1TunedModelCheckpoint[]
    */
   public function setCheckpoints($checkpoints)
   {
@@ -62,10 +46,7 @@ class GoogleCloudAiplatformV1TunedModel extends \Google\Collection
     return $this->checkpoints;
   }
   /**
-   * Output only. A resource name of an Endpoint. Format:
-   * `projects/{project}/locations/{location}/endpoints/{endpoint}`.
-   *
-   * @param string $endpoint
+   * @param string
    */
   public function setEndpoint($endpoint)
   {
@@ -79,17 +60,7 @@ class GoogleCloudAiplatformV1TunedModel extends \Google\Collection
     return $this->endpoint;
   }
   /**
-   * Output only. The resource name of the TunedModel. Format:
-   * `projects/{project}/locations/{location}/models/{model}@{version_id}` When
-   * tuning from a base model, the version ID will be 1. For continuous tuning,
-   * if the provided tuned_model_display_name is set and different from parent
-   * model's display name, the tuned model will have a new parent model with
-   * version 1. Otherwise the version id will be incremented by 1 from the last
-   * version ID in the parent model. E.g.,
-   * `projects/{project}/locations/{location}/models/{model}@{last_version_id +
-   * 1}`
-   *
-   * @param string $model
+   * @param string
    */
   public function setModel($model)
   {

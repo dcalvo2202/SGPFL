@@ -20,22 +20,16 @@ namespace Google\Service\MapsPlaces;
 class GoogleMapsPlacesV1AutocompletePlacesResponseSuggestionStringRange extends \Google\Model
 {
   /**
-   * Zero-based offset of the last Unicode character (exclusive).
-   *
    * @var int
    */
   public $endOffset;
   /**
-   * Zero-based offset of the first Unicode character of the string (inclusive).
-   *
    * @var int
    */
   public $startOffset;
 
   /**
-   * Zero-based offset of the last Unicode character (exclusive).
-   *
-   * @param int $endOffset
+   * @param int
    */
   public function setEndOffset($endOffset)
   {
@@ -49,9 +43,7 @@ class GoogleMapsPlacesV1AutocompletePlacesResponseSuggestionStringRange extends 
     return $this->endOffset;
   }
   /**
-   * Zero-based offset of the first Unicode character of the string (inclusive).
-   *
-   * @param int $startOffset
+   * @param int
    */
   public function setStartOffset($startOffset)
   {

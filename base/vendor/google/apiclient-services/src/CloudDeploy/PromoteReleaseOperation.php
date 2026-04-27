@@ -20,36 +20,24 @@ namespace Google\Service\CloudDeploy;
 class PromoteReleaseOperation extends \Google\Model
 {
   /**
-   * Output only. The starting phase of the rollout created by this operation.
-   *
    * @var string
    */
   public $phase;
   /**
-   * Output only. The name of the rollout that initiates the `AutomationRun`.
-   *
    * @var string
    */
   public $rollout;
   /**
-   * Output only. The ID of the target that represents the promotion stage to
-   * which the release will be promoted. The value of this field is the last
-   * segment of a target name.
-   *
    * @var string
    */
   public $targetId;
   /**
-   * Output only. How long the operation will be paused.
-   *
    * @var string
    */
   public $wait;
 
   /**
-   * Output only. The starting phase of the rollout created by this operation.
-   *
-   * @param string $phase
+   * @param string
    */
   public function setPhase($phase)
   {
@@ -63,9 +51,7 @@ class PromoteReleaseOperation extends \Google\Model
     return $this->phase;
   }
   /**
-   * Output only. The name of the rollout that initiates the `AutomationRun`.
-   *
-   * @param string $rollout
+   * @param string
    */
   public function setRollout($rollout)
   {
@@ -79,11 +65,7 @@ class PromoteReleaseOperation extends \Google\Model
     return $this->rollout;
   }
   /**
-   * Output only. The ID of the target that represents the promotion stage to
-   * which the release will be promoted. The value of this field is the last
-   * segment of a target name.
-   *
-   * @param string $targetId
+   * @param string
    */
   public function setTargetId($targetId)
   {
@@ -97,9 +79,7 @@ class PromoteReleaseOperation extends \Google\Model
     return $this->targetId;
   }
   /**
-   * Output only. How long the operation will be paused.
-   *
-   * @param string $wait
+   * @param string
    */
   public function setWait($wait)
   {

@@ -20,36 +20,20 @@ namespace Google\Service\DataLabeling;
 class GoogleCloudDatalabelingV1beta1AnnotationSpec extends \Google\Model
 {
   /**
-   * Optional. User-provided description of the annotation specification. The
-   * description can be up to 10,000 characters long.
-   *
    * @var string
    */
   public $description;
   /**
-   * Required. The display name of the AnnotationSpec. Maximum of 64 characters.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. This is the integer index of the AnnotationSpec. The index for
-   * the whole AnnotationSpecSet is sequential starting from 0. For example, an
-   * AnnotationSpecSet with classes `dog` and `cat`, might contain one
-   * AnnotationSpec with `{ display_name: "dog", index: 0 }` and one
-   * AnnotationSpec with `{ display_name: "cat", index: 1 }`. This is especially
-   * useful for model training as it encodes the string labels into numeric
-   * values.
-   *
    * @var int
    */
   public $index;
 
   /**
-   * Optional. User-provided description of the annotation specification. The
-   * description can be up to 10,000 characters long.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -63,9 +47,7 @@ class GoogleCloudDatalabelingV1beta1AnnotationSpec extends \Google\Model
     return $this->description;
   }
   /**
-   * Required. The display name of the AnnotationSpec. Maximum of 64 characters.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -79,15 +61,7 @@ class GoogleCloudDatalabelingV1beta1AnnotationSpec extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Output only. This is the integer index of the AnnotationSpec. The index for
-   * the whole AnnotationSpecSet is sequential starting from 0. For example, an
-   * AnnotationSpecSet with classes `dog` and `cat`, might contain one
-   * AnnotationSpec with `{ display_name: "dog", index: 0 }` and one
-   * AnnotationSpec with `{ display_name: "cat", index: 1 }`. This is especially
-   * useful for model training as it encodes the string labels into numeric
-   * values.
-   *
-   * @param int $index
+   * @param int
    */
   public function setIndex($index)
   {

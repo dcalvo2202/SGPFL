@@ -21,38 +21,20 @@ class CivicinfoApiprotosV2DivisionSearchResult extends \Google\Collection
 {
   protected $collection_key = 'aliases';
   /**
-   * Other Open Civic Data identifiers that refer to the same division -- for
-   * example, those that refer to other political divisions whose boundaries are
-   * defined to be coterminous with this one. For example, ocd-
-   * division/country:us/state:wy will include an alias of ocd-
-   * division/country:us/state:wy/cd:1, since Wyoming has only one Congressional
-   * district.
-   *
    * @var string[]
    */
   public $aliases;
   /**
-   * The name of the division.
-   *
    * @var string
    */
   public $name;
   /**
-   * The unique Open Civic Data identifier for this division
-   *
    * @var string
    */
   public $ocdId;
 
   /**
-   * Other Open Civic Data identifiers that refer to the same division -- for
-   * example, those that refer to other political divisions whose boundaries are
-   * defined to be coterminous with this one. For example, ocd-
-   * division/country:us/state:wy will include an alias of ocd-
-   * division/country:us/state:wy/cd:1, since Wyoming has only one Congressional
-   * district.
-   *
-   * @param string[] $aliases
+   * @param string[]
    */
   public function setAliases($aliases)
   {
@@ -66,9 +48,7 @@ class CivicinfoApiprotosV2DivisionSearchResult extends \Google\Collection
     return $this->aliases;
   }
   /**
-   * The name of the division.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -82,9 +62,7 @@ class CivicinfoApiprotosV2DivisionSearchResult extends \Google\Collection
     return $this->name;
   }
   /**
-   * The unique Open Civic Data identifier for this division
-   *
-   * @param string $ocdId
+   * @param string
    */
   public function setOcdId($ocdId)
   {

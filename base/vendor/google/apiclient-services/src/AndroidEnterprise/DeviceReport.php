@@ -23,18 +23,12 @@ class DeviceReport extends \Google\Collection
   protected $appStateType = AppState::class;
   protected $appStateDataType = 'array';
   /**
-   * The timestamp of the last report update in milliseconds since epoch. This
-   * field will always be present.
-   *
    * @var string
    */
   public $lastUpdatedTimestampMillis;
 
   /**
-   * List of app states set by managed apps on the device. App states are
-   * defined by the app's developers. This field will always be present.
-   *
-   * @param AppState[] $appState
+   * @param AppState[]
    */
   public function setAppState($appState)
   {
@@ -48,10 +42,7 @@ class DeviceReport extends \Google\Collection
     return $this->appState;
   }
   /**
-   * The timestamp of the last report update in milliseconds since epoch. This
-   * field will always be present.
-   *
-   * @param string $lastUpdatedTimestampMillis
+   * @param string
    */
   public function setLastUpdatedTimestampMillis($lastUpdatedTimestampMillis)
   {

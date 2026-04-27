@@ -20,22 +20,12 @@ namespace Google\Service\Contentwarehouse;
 class GoogleCloudContentwarehouseV1DataUpdateAction extends \Google\Model
 {
   /**
-   * Map of (K, V) -> (valid name of the field, new value of the field) E.g.,
-   * ("age", "60") entry triggers update of field age with a value of 60. If the
-   * field is not present then new entry is added. During update action
-   * execution, value strings will be casted to appropriate types.
-   *
    * @var string[]
    */
   public $entries;
 
   /**
-   * Map of (K, V) -> (valid name of the field, new value of the field) E.g.,
-   * ("age", "60") entry triggers update of field age with a value of 60. If the
-   * field is not present then new entry is added. During update action
-   * execution, value strings will be casted to appropriate types.
-   *
-   * @param string[] $entries
+   * @param string[]
    */
   public function setEntries($entries)
   {

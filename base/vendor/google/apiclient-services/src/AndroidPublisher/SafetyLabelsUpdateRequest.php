@@ -20,28 +20,12 @@ namespace Google\Service\AndroidPublisher;
 class SafetyLabelsUpdateRequest extends \Google\Model
 {
   /**
-   * Required. Contents of the CSV file containing Data Safety responses. For
-   * the format of this file, see the Help Center documentation at
-   * https://support.google.com/googleplay/android-
-   * developer/answer/10787469?#zippy=%2Cunderstand-the-csv-format To download
-   * an up to date template, follow the steps at
-   * https://support.google.com/googleplay/android-
-   * developer/answer/10787469?#zippy=%2Cexport-to-a-csv-file
-   *
    * @var string
    */
   public $safetyLabels;
 
   /**
-   * Required. Contents of the CSV file containing Data Safety responses. For
-   * the format of this file, see the Help Center documentation at
-   * https://support.google.com/googleplay/android-
-   * developer/answer/10787469?#zippy=%2Cunderstand-the-csv-format To download
-   * an up to date template, follow the steps at
-   * https://support.google.com/googleplay/android-
-   * developer/answer/10787469?#zippy=%2Cexport-to-a-csv-file
-   *
-   * @param string $safetyLabels
+   * @param string
    */
   public function setSafetyLabels($safetyLabels)
   {

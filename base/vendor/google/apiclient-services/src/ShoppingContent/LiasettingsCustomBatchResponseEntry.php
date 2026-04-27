@@ -21,8 +21,6 @@ class LiasettingsCustomBatchResponseEntry extends \Google\Collection
 {
   protected $collection_key = 'posDataProviders';
   /**
-   * The ID of the request entry to which this entry responds.
-   *
    * @var string
    */
   public $batchId;
@@ -31,9 +29,6 @@ class LiasettingsCustomBatchResponseEntry extends \Google\Collection
   protected $gmbAccountsType = GmbAccounts::class;
   protected $gmbAccountsDataType = '';
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#liasettingsCustomBatchResponseEntry`"
-   *
    * @var string
    */
   public $kind;
@@ -45,9 +40,7 @@ class LiasettingsCustomBatchResponseEntry extends \Google\Collection
   protected $posDataProvidersDataType = 'array';
 
   /**
-   * The ID of the request entry to which this entry responds.
-   *
-   * @param string $batchId
+   * @param string
    */
   public function setBatchId($batchId)
   {
@@ -61,9 +54,7 @@ class LiasettingsCustomBatchResponseEntry extends \Google\Collection
     return $this->batchId;
   }
   /**
-   * A list of errors defined if, and only if, the request failed.
-   *
-   * @param Errors $errors
+   * @param Errors
    */
   public function setErrors(Errors $errors)
   {
@@ -77,9 +68,7 @@ class LiasettingsCustomBatchResponseEntry extends \Google\Collection
     return $this->errors;
   }
   /**
-   * The list of accessible Business Profiles.
-   *
-   * @param GmbAccounts $gmbAccounts
+   * @param GmbAccounts
    */
   public function setGmbAccounts(GmbAccounts $gmbAccounts)
   {
@@ -93,10 +82,7 @@ class LiasettingsCustomBatchResponseEntry extends \Google\Collection
     return $this->gmbAccounts;
   }
   /**
-   * Identifies what kind of resource this is. Value: the fixed string
-   * "`content#liasettingsCustomBatchResponseEntry`"
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -110,9 +96,7 @@ class LiasettingsCustomBatchResponseEntry extends \Google\Collection
     return $this->kind;
   }
   /**
-   * The retrieved or updated Lia settings.
-   *
-   * @param LiaSettings $liaSettings
+   * @param LiaSettings
    */
   public function setLiaSettings(LiaSettings $liaSettings)
   {
@@ -126,9 +110,7 @@ class LiasettingsCustomBatchResponseEntry extends \Google\Collection
     return $this->liaSettings;
   }
   /**
-   * The updated omnichannel experience for a country.
-   *
-   * @param LiaOmnichannelExperience $omnichannelExperience
+   * @param LiaOmnichannelExperience
    */
   public function setOmnichannelExperience(LiaOmnichannelExperience $omnichannelExperience)
   {
@@ -142,9 +124,7 @@ class LiasettingsCustomBatchResponseEntry extends \Google\Collection
     return $this->omnichannelExperience;
   }
   /**
-   * The list of POS data providers.
-   *
-   * @param PosDataProviders[] $posDataProviders
+   * @param PosDataProviders[]
    */
   public function setPosDataProviders($posDataProviders)
   {

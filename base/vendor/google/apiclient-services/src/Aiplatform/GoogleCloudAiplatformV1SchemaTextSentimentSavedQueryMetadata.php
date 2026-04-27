@@ -20,16 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1SchemaTextSentimentSavedQueryMetadata extends \Google\Model
 {
   /**
-   * The maximum sentiment of sentiment Anntoation in this SavedQuery.
-   *
    * @var int
    */
   public $sentimentMax;
 
   /**
-   * The maximum sentiment of sentiment Anntoation in this SavedQuery.
-   *
-   * @param int $sentimentMax
+   * @param int
    */
   public function setSentimentMax($sentimentMax)
   {

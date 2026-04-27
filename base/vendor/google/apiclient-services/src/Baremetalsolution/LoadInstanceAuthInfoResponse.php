@@ -26,9 +26,7 @@ class LoadInstanceAuthInfoResponse extends \Google\Collection
   protected $userAccountsDataType = 'map';
 
   /**
-   * List of ssh keys.
-   *
-   * @param SSHKey[] $sshKeys
+   * @param SSHKey[]
    */
   public function setSshKeys($sshKeys)
   {
@@ -42,9 +40,7 @@ class LoadInstanceAuthInfoResponse extends \Google\Collection
     return $this->sshKeys;
   }
   /**
-   * Map of username to the user account info.
-   *
-   * @param UserAccount[] $userAccounts
+   * @param UserAccount[]
    */
   public function setUserAccounts($userAccounts)
   {

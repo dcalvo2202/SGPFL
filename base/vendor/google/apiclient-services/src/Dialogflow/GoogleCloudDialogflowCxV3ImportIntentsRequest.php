@@ -19,16 +19,6 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowCxV3ImportIntentsRequest extends \Google\Model
 {
-  public const MERGE_OPTION_MERGE_OPTION_UNSPECIFIED = 'MERGE_OPTION_UNSPECIFIED';
-  /**
-   * @deprecated
-   */
-  public const MERGE_OPTION_REJECT = 'REJECT';
-  public const MERGE_OPTION_REPLACE = 'REPLACE';
-  public const MERGE_OPTION_MERGE = 'MERGE';
-  public const MERGE_OPTION_RENAME = 'RENAME';
-  public const MERGE_OPTION_REPORT_CONFLICT = 'REPORT_CONFLICT';
-  public const MERGE_OPTION_KEEP = 'KEEP';
   protected $intentsContentType = GoogleCloudDialogflowCxV3InlineSource::class;
   protected $intentsContentDataType = '';
   /**
@@ -41,7 +31,7 @@ class GoogleCloudDialogflowCxV3ImportIntentsRequest extends \Google\Model
   public $mergeOption;
 
   /**
-   * @param GoogleCloudDialogflowCxV3InlineSource $intentsContent
+   * @param GoogleCloudDialogflowCxV3InlineSource
    */
   public function setIntentsContent(GoogleCloudDialogflowCxV3InlineSource $intentsContent)
   {
@@ -55,7 +45,7 @@ class GoogleCloudDialogflowCxV3ImportIntentsRequest extends \Google\Model
     return $this->intentsContent;
   }
   /**
-   * @param string $intentsUri
+   * @param string
    */
   public function setIntentsUri($intentsUri)
   {
@@ -69,14 +59,14 @@ class GoogleCloudDialogflowCxV3ImportIntentsRequest extends \Google\Model
     return $this->intentsUri;
   }
   /**
-   * @param self::MERGE_OPTION_* $mergeOption
+   * @param string
    */
   public function setMergeOption($mergeOption)
   {
     $this->mergeOption = $mergeOption;
   }
   /**
-   * @return self::MERGE_OPTION_*
+   * @return string
    */
   public function getMergeOption()
   {

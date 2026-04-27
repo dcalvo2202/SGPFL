@@ -20,70 +20,44 @@ namespace Google\Service\Apigee;
 class GoogleCloudApigeeV1Export extends \Google\Model
 {
   /**
-   * Output only. Time the export job was created.
-   *
    * @var string
    */
   public $created;
   /**
-   * Name of the datastore that is the destination of the export job [datastore]
-   *
    * @var string
    */
   public $datastoreName;
   /**
-   * Description of the export job.
-   *
    * @var string
    */
   public $description;
   /**
-   * Output only. Error is set when export fails
-   *
    * @var string
    */
   public $error;
   /**
-   * Output only. Execution time for this export job. If the job is still in
-   * progress, it will be set to the amount of time that has elapsed
-   * since`created`, in seconds. Else, it will set to (`updated` - `created`),
-   * in seconds.
-   *
    * @var string
    */
   public $executionTime;
   /**
-   * Display name of the export job.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Self link of the export job. A URI that can be used to
-   * retrieve the status of an export job. Example: `/organizations/myorg/enviro
-   * nments/myenv/analytics/exports/9cfc0d85-0f30-46d6-ae6f-318d0cb961bd`
-   *
    * @var string
    */
   public $self;
   /**
-   * Output only. Status of the export job. Valid values include `enqueued`,
-   * `running`, `completed`, and `failed`.
-   *
    * @var string
    */
   public $state;
   /**
-   * Output only. Time the export job was last updated.
-   *
    * @var string
    */
   public $updated;
 
   /**
-   * Output only. Time the export job was created.
-   *
-   * @param string $created
+   * @param string
    */
   public function setCreated($created)
   {
@@ -97,9 +71,7 @@ class GoogleCloudApigeeV1Export extends \Google\Model
     return $this->created;
   }
   /**
-   * Name of the datastore that is the destination of the export job [datastore]
-   *
-   * @param string $datastoreName
+   * @param string
    */
   public function setDatastoreName($datastoreName)
   {
@@ -113,9 +85,7 @@ class GoogleCloudApigeeV1Export extends \Google\Model
     return $this->datastoreName;
   }
   /**
-   * Description of the export job.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -129,9 +99,7 @@ class GoogleCloudApigeeV1Export extends \Google\Model
     return $this->description;
   }
   /**
-   * Output only. Error is set when export fails
-   *
-   * @param string $error
+   * @param string
    */
   public function setError($error)
   {
@@ -145,12 +113,7 @@ class GoogleCloudApigeeV1Export extends \Google\Model
     return $this->error;
   }
   /**
-   * Output only. Execution time for this export job. If the job is still in
-   * progress, it will be set to the amount of time that has elapsed
-   * since`created`, in seconds. Else, it will set to (`updated` - `created`),
-   * in seconds.
-   *
-   * @param string $executionTime
+   * @param string
    */
   public function setExecutionTime($executionTime)
   {
@@ -164,9 +127,7 @@ class GoogleCloudApigeeV1Export extends \Google\Model
     return $this->executionTime;
   }
   /**
-   * Display name of the export job.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -180,11 +141,7 @@ class GoogleCloudApigeeV1Export extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Self link of the export job. A URI that can be used to
-   * retrieve the status of an export job. Example: `/organizations/myorg/enviro
-   * nments/myenv/analytics/exports/9cfc0d85-0f30-46d6-ae6f-318d0cb961bd`
-   *
-   * @param string $self
+   * @param string
    */
   public function setSelf($self)
   {
@@ -198,10 +155,7 @@ class GoogleCloudApigeeV1Export extends \Google\Model
     return $this->self;
   }
   /**
-   * Output only. Status of the export job. Valid values include `enqueued`,
-   * `running`, `completed`, and `failed`.
-   *
-   * @param string $state
+   * @param string
    */
   public function setState($state)
   {
@@ -215,9 +169,7 @@ class GoogleCloudApigeeV1Export extends \Google\Model
     return $this->state;
   }
   /**
-   * Output only. Time the export job was last updated.
-   *
-   * @param string $updated
+   * @param string
    */
   public function setUpdated($updated)
   {

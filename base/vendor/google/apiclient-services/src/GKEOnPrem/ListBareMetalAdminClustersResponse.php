@@ -23,24 +23,16 @@ class ListBareMetalAdminClustersResponse extends \Google\Collection
   protected $bareMetalAdminClustersType = BareMetalAdminCluster::class;
   protected $bareMetalAdminClustersDataType = 'array';
   /**
-   * A token identifying a page of results the server should return. If the
-   * token is not empty this means that more results are available and should be
-   * retrieved by repeating the request with the provided page token.
-   *
    * @var string
    */
   public $nextPageToken;
   /**
-   * Locations that could not be reached.
-   *
    * @var string[]
    */
   public $unreachable;
 
   /**
-   * The list of bare metal admin cluster.
-   *
-   * @param BareMetalAdminCluster[] $bareMetalAdminClusters
+   * @param BareMetalAdminCluster[]
    */
   public function setBareMetalAdminClusters($bareMetalAdminClusters)
   {
@@ -54,11 +46,7 @@ class ListBareMetalAdminClustersResponse extends \Google\Collection
     return $this->bareMetalAdminClusters;
   }
   /**
-   * A token identifying a page of results the server should return. If the
-   * token is not empty this means that more results are available and should be
-   * retrieved by repeating the request with the provided page token.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -72,9 +60,7 @@ class ListBareMetalAdminClustersResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Locations that could not be reached.
-   *
-   * @param string[] $unreachable
+   * @param string[]
    */
   public function setUnreachable($unreachable)
   {

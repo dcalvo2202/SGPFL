@@ -33,10 +33,7 @@ class ImpressionMetricsRow extends \Google\Model
   protected $successfulResponsesDataType = '';
 
   /**
-   * The number of impressions available to the buyer on Ad Exchange. In some
-   * cases this value may be unavailable.
-   *
-   * @param MetricValue $availableImpressions
+   * @param MetricValue
    */
   public function setAvailableImpressions(MetricValue $availableImpressions)
   {
@@ -50,10 +47,7 @@ class ImpressionMetricsRow extends \Google\Model
     return $this->availableImpressions;
   }
   /**
-   * The number of impressions for which Ad Exchange sent the buyer a bid
-   * request.
-   *
-   * @param MetricValue $bidRequests
+   * @param MetricValue
    */
   public function setBidRequests(MetricValue $bidRequests)
   {
@@ -67,9 +61,7 @@ class ImpressionMetricsRow extends \Google\Model
     return $this->bidRequests;
   }
   /**
-   * The number of impressions that match the buyer's inventory pretargeting.
-   *
-   * @param MetricValue $inventoryMatches
+   * @param MetricValue
    */
   public function setInventoryMatches(MetricValue $inventoryMatches)
   {
@@ -83,10 +75,7 @@ class ImpressionMetricsRow extends \Google\Model
     return $this->inventoryMatches;
   }
   /**
-   * The number of impressions for which Ad Exchange received a response from
-   * the buyer that contained at least one applicable bid.
-   *
-   * @param MetricValue $responsesWithBids
+   * @param MetricValue
    */
   public function setResponsesWithBids(MetricValue $responsesWithBids)
   {
@@ -100,9 +89,7 @@ class ImpressionMetricsRow extends \Google\Model
     return $this->responsesWithBids;
   }
   /**
-   * The values of all dimensions associated with metric values in this row.
-   *
-   * @param RowDimensions $rowDimensions
+   * @param RowDimensions
    */
   public function setRowDimensions(RowDimensions $rowDimensions)
   {
@@ -116,10 +103,7 @@ class ImpressionMetricsRow extends \Google\Model
     return $this->rowDimensions;
   }
   /**
-   * The number of impressions for which the buyer successfully sent a response
-   * to Ad Exchange.
-   *
-   * @param MetricValue $successfulResponses
+   * @param MetricValue
    */
   public function setSuccessfulResponses(MetricValue $successfulResponses)
   {

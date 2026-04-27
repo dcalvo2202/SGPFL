@@ -21,35 +21,20 @@ class ReimageInstanceRequest extends \Google\Collection
 {
   protected $collection_key = 'sshKeys';
   /**
-   * Optional. Name of the KMS crypto key version used to encrypt the initial
-   * passwords. The key has to have ASYMMETRIC_DECRYPT purpose. Format is `proje
-   * cts/{project}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}/cryp
-   * toKeyVersions/{version}`.
-   *
    * @var string
    */
   public $kmsKeyVersion;
   /**
-   * Required. The OS image code of the image which will be used in the reimage
-   * operation.
-   *
    * @var string
    */
   public $osImage;
   /**
-   * Optional. List of SSH Keys used during reimaging an instance.
-   *
    * @var string[]
    */
   public $sshKeys;
 
   /**
-   * Optional. Name of the KMS crypto key version used to encrypt the initial
-   * passwords. The key has to have ASYMMETRIC_DECRYPT purpose. Format is `proje
-   * cts/{project}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}/cryp
-   * toKeyVersions/{version}`.
-   *
-   * @param string $kmsKeyVersion
+   * @param string
    */
   public function setKmsKeyVersion($kmsKeyVersion)
   {
@@ -63,10 +48,7 @@ class ReimageInstanceRequest extends \Google\Collection
     return $this->kmsKeyVersion;
   }
   /**
-   * Required. The OS image code of the image which will be used in the reimage
-   * operation.
-   *
-   * @param string $osImage
+   * @param string
    */
   public function setOsImage($osImage)
   {
@@ -80,9 +62,7 @@ class ReimageInstanceRequest extends \Google\Collection
     return $this->osImage;
   }
   /**
-   * Optional. List of SSH Keys used during reimaging an instance.
-   *
-   * @param string[] $sshKeys
+   * @param string[]
    */
   public function setSshKeys($sshKeys)
   {

@@ -24,9 +24,7 @@ class GoogleCloudAiplatformV1FeatureValueList extends \Google\Collection
   protected $valuesDataType = 'array';
 
   /**
-   * A list of feature values. All of them should be the same data type.
-   *
-   * @param GoogleCloudAiplatformV1FeatureValue[] $values
+   * @param GoogleCloudAiplatformV1FeatureValue[]
    */
   public function setValues($values)
   {

@@ -34,8 +34,6 @@ class Notification extends \Google\Collection
    */
   public $body;
   /**
-   * The list of crm experiment ids.
-   *
    * @var string[]
    */
   public $crmExperimentIds;
@@ -60,8 +58,6 @@ class Notification extends \Google\Collection
    */
   public $isDocumentMature;
   /**
-   * Resource type.
-   *
    * @var string
    */
   public $kind;
@@ -99,7 +95,7 @@ class Notification extends \Google\Collection
   public $title;
 
   /**
-   * @param string $body
+   * @param string
    */
   public function setBody($body)
   {
@@ -113,9 +109,7 @@ class Notification extends \Google\Collection
     return $this->body;
   }
   /**
-   * The list of crm experiment ids.
-   *
-   * @param string[] $crmExperimentIds
+   * @param string[]
    */
   public function setCrmExperimentIds($crmExperimentIds)
   {
@@ -129,7 +123,7 @@ class Notification extends \Google\Collection
     return $this->crmExperimentIds;
   }
   /**
-   * @param string $docId
+   * @param string
    */
   public function setDocId($docId)
   {
@@ -143,7 +137,7 @@ class Notification extends \Google\Collection
     return $this->docId;
   }
   /**
-   * @param string $docType
+   * @param string
    */
   public function setDocType($docType)
   {
@@ -157,7 +151,7 @@ class Notification extends \Google\Collection
     return $this->docType;
   }
   /**
-   * @param bool $dontShowNotification
+   * @param bool
    */
   public function setDontShowNotification($dontShowNotification)
   {
@@ -171,7 +165,7 @@ class Notification extends \Google\Collection
     return $this->dontShowNotification;
   }
   /**
-   * @param string $iconUrl
+   * @param string
    */
   public function setIconUrl($iconUrl)
   {
@@ -185,7 +179,7 @@ class Notification extends \Google\Collection
     return $this->iconUrl;
   }
   /**
-   * @param bool $isDocumentMature
+   * @param bool
    */
   public function setIsDocumentMature($isDocumentMature)
   {
@@ -199,9 +193,7 @@ class Notification extends \Google\Collection
     return $this->isDocumentMature;
   }
   /**
-   * Resource type.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -215,7 +207,7 @@ class Notification extends \Google\Collection
     return $this->kind;
   }
   /**
-   * @param string $notificationGroup
+   * @param string
    */
   public function setNotificationGroup($notificationGroup)
   {
@@ -229,7 +221,7 @@ class Notification extends \Google\Collection
     return $this->notificationGroup;
   }
   /**
-   * @param string $notificationType
+   * @param string
    */
   public function setNotificationType($notificationType)
   {
@@ -243,7 +235,7 @@ class Notification extends \Google\Collection
     return $this->notificationType;
   }
   /**
-   * @param string $pcampaignId
+   * @param string
    */
   public function setPcampaignId($pcampaignId)
   {
@@ -257,7 +249,7 @@ class Notification extends \Google\Collection
     return $this->pcampaignId;
   }
   /**
-   * @param string $reason
+   * @param string
    */
   public function setReason($reason)
   {
@@ -271,7 +263,7 @@ class Notification extends \Google\Collection
     return $this->reason;
   }
   /**
-   * @param bool $showNotificationSettingsAction
+   * @param bool
    */
   public function setShowNotificationSettingsAction($showNotificationSettingsAction)
   {
@@ -285,7 +277,7 @@ class Notification extends \Google\Collection
     return $this->showNotificationSettingsAction;
   }
   /**
-   * @param string $targetUrl
+   * @param string
    */
   public function setTargetUrl($targetUrl)
   {
@@ -299,7 +291,7 @@ class Notification extends \Google\Collection
     return $this->targetUrl;
   }
   /**
-   * @param string $timeToExpireMs
+   * @param string
    */
   public function setTimeToExpireMs($timeToExpireMs)
   {
@@ -313,7 +305,7 @@ class Notification extends \Google\Collection
     return $this->timeToExpireMs;
   }
   /**
-   * @param string $title
+   * @param string
    */
   public function setTitle($title)
   {

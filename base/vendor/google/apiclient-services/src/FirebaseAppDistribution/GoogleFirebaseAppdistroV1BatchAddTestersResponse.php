@@ -24,9 +24,7 @@ class GoogleFirebaseAppdistroV1BatchAddTestersResponse extends \Google\Collectio
   protected $testersDataType = 'array';
 
   /**
-   * The testers which are created and/or already exist
-   *
-   * @param GoogleFirebaseAppdistroV1Tester[] $testers
+   * @param GoogleFirebaseAppdistroV1Tester[]
    */
   public function setTesters($testers)
   {

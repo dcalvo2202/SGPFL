@@ -20,56 +20,24 @@ namespace Google\Service\AdExchangeBuyerII;
 class ClientUser extends \Google\Model
 {
   /**
-   * A placeholder for an undefined user status.
-   */
-  public const STATUS_USER_STATUS_UNSPECIFIED = 'USER_STATUS_UNSPECIFIED';
-  /**
-   * A user who was already created but hasn't accepted the invitation yet.
-   */
-  public const STATUS_PENDING = 'PENDING';
-  /**
-   * A user that is currently active.
-   */
-  public const STATUS_ACTIVE = 'ACTIVE';
-  /**
-   * A user that is currently disabled.
-   */
-  public const STATUS_DISABLED = 'DISABLED';
-  /**
-   * Numerical account ID of the client buyer with which the user is associated;
-   * the buyer must be a client of the current sponsor buyer. The value of this
-   * field is ignored in an update operation.
-   *
    * @var string
    */
   public $clientAccountId;
   /**
-   * User's email address. The value of this field is ignored in an update
-   * operation.
-   *
    * @var string
    */
   public $email;
   /**
-   * The status of the client user.
-   *
    * @var string
    */
   public $status;
   /**
-   * The unique numerical ID of the client user that has accepted an invitation.
-   * The value of this field is ignored in an update operation.
-   *
    * @var string
    */
   public $userId;
 
   /**
-   * Numerical account ID of the client buyer with which the user is associated;
-   * the buyer must be a client of the current sponsor buyer. The value of this
-   * field is ignored in an update operation.
-   *
-   * @param string $clientAccountId
+   * @param string
    */
   public function setClientAccountId($clientAccountId)
   {
@@ -83,10 +51,7 @@ class ClientUser extends \Google\Model
     return $this->clientAccountId;
   }
   /**
-   * User's email address. The value of this field is ignored in an update
-   * operation.
-   *
-   * @param string $email
+   * @param string
    */
   public function setEmail($email)
   {
@@ -100,28 +65,21 @@ class ClientUser extends \Google\Model
     return $this->email;
   }
   /**
-   * The status of the client user.
-   *
-   * Accepted values: USER_STATUS_UNSPECIFIED, PENDING, ACTIVE, DISABLED
-   *
-   * @param self::STATUS_* $status
+   * @param string
    */
   public function setStatus($status)
   {
     $this->status = $status;
   }
   /**
-   * @return self::STATUS_*
+   * @return string
    */
   public function getStatus()
   {
     return $this->status;
   }
   /**
-   * The unique numerical ID of the client user that has accepted an invitation.
-   * The value of this field is ignored in an update operation.
-   *
-   * @param string $userId
+   * @param string
    */
   public function setUserId($userId)
   {

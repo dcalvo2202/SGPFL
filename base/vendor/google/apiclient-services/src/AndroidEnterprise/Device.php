@@ -19,87 +19,49 @@ namespace Google\Service\AndroidEnterprise;
 
 class Device extends \Google\Model
 {
-  public const MANAGEMENT_TYPE_managedDevice = 'managedDevice';
-  public const MANAGEMENT_TYPE_managedProfile = 'managedProfile';
-  public const MANAGEMENT_TYPE_containerApp = 'containerApp';
-  public const MANAGEMENT_TYPE_unmanagedProfile = 'unmanagedProfile';
   /**
-   * The Google Play Services Android ID for the device encoded as a lowercase
-   * hex string. For example, "123456789abcdef0".
-   *
    * @var string
    */
   public $androidId;
   /**
-   * The internal hardware codename of the device. This comes from
-   * android.os.Build.DEVICE. (field named "device" per
-   * logs/wireless/android/android_checkin.proto)
-   *
    * @var string
    */
   public $device;
   /**
-   * The build fingerprint of the device if known.
-   *
    * @var string
    */
   public $latestBuildFingerprint;
   /**
-   * The manufacturer of the device. This comes from
-   * android.os.Build.MANUFACTURER.
-   *
    * @var string
    */
   public $maker;
   /**
-   * Identifies the extent to which the device is controlled by a managed Google
-   * Play EMM in various deployment configurations. Possible values include: -
-   * "managedDevice", a device that has the EMM's device policy controller (DPC)
-   * as the device owner. - "managedProfile", a device that has a profile
-   * managed by the DPC (DPC is profile owner) in addition to a separate,
-   * personal profile that is unavailable to the DPC. - "containerApp", no
-   * longer used (deprecated). - "unmanagedProfile", a device that has been
-   * allowed (by the domain's admin, using the Admin Console to enable the
-   * privilege) to use managed Google Play, but the profile is itself not owned
-   * by a DPC.
-   *
    * @var string
    */
   public $managementType;
   /**
-   * The model name of the device. This comes from android.os.Build.MODEL.
-   *
    * @var string
    */
   public $model;
   protected $policyType = Policy::class;
   protected $policyDataType = '';
   /**
-   * The product name of the device. This comes from android.os.Build.PRODUCT.
-   *
    * @var string
    */
   public $product;
   protected $reportType = DeviceReport::class;
   protected $reportDataType = '';
   /**
-   * Retail brand for the device, if set. See android.os.Build.BRAND
-   *
    * @var string
    */
   public $retailBrand;
   /**
-   * API compatibility version.
-   *
    * @var int
    */
   public $sdkVersion;
 
   /**
-   * The Google Play Services Android ID for the device encoded as a lowercase
-   * hex string. For example, "123456789abcdef0".
-   *
-   * @param string $androidId
+   * @param string
    */
   public function setAndroidId($androidId)
   {
@@ -113,11 +75,7 @@ class Device extends \Google\Model
     return $this->androidId;
   }
   /**
-   * The internal hardware codename of the device. This comes from
-   * android.os.Build.DEVICE. (field named "device" per
-   * logs/wireless/android/android_checkin.proto)
-   *
-   * @param string $device
+   * @param string
    */
   public function setDevice($device)
   {
@@ -131,9 +89,7 @@ class Device extends \Google\Model
     return $this->device;
   }
   /**
-   * The build fingerprint of the device if known.
-   *
-   * @param string $latestBuildFingerprint
+   * @param string
    */
   public function setLatestBuildFingerprint($latestBuildFingerprint)
   {
@@ -147,10 +103,7 @@ class Device extends \Google\Model
     return $this->latestBuildFingerprint;
   }
   /**
-   * The manufacturer of the device. This comes from
-   * android.os.Build.MANUFACTURER.
-   *
-   * @param string $maker
+   * @param string
    */
   public function setMaker($maker)
   {
@@ -164,37 +117,21 @@ class Device extends \Google\Model
     return $this->maker;
   }
   /**
-   * Identifies the extent to which the device is controlled by a managed Google
-   * Play EMM in various deployment configurations. Possible values include: -
-   * "managedDevice", a device that has the EMM's device policy controller (DPC)
-   * as the device owner. - "managedProfile", a device that has a profile
-   * managed by the DPC (DPC is profile owner) in addition to a separate,
-   * personal profile that is unavailable to the DPC. - "containerApp", no
-   * longer used (deprecated). - "unmanagedProfile", a device that has been
-   * allowed (by the domain's admin, using the Admin Console to enable the
-   * privilege) to use managed Google Play, but the profile is itself not owned
-   * by a DPC.
-   *
-   * Accepted values: managedDevice, managedProfile, containerApp,
-   * unmanagedProfile
-   *
-   * @param self::MANAGEMENT_TYPE_* $managementType
+   * @param string
    */
   public function setManagementType($managementType)
   {
     $this->managementType = $managementType;
   }
   /**
-   * @return self::MANAGEMENT_TYPE_*
+   * @return string
    */
   public function getManagementType()
   {
     return $this->managementType;
   }
   /**
-   * The model name of the device. This comes from android.os.Build.MODEL.
-   *
-   * @param string $model
+   * @param string
    */
   public function setModel($model)
   {
@@ -208,9 +145,7 @@ class Device extends \Google\Model
     return $this->model;
   }
   /**
-   * The policy enforced on the device.
-   *
-   * @param Policy $policy
+   * @param Policy
    */
   public function setPolicy(Policy $policy)
   {
@@ -224,9 +159,7 @@ class Device extends \Google\Model
     return $this->policy;
   }
   /**
-   * The product name of the device. This comes from android.os.Build.PRODUCT.
-   *
-   * @param string $product
+   * @param string
    */
   public function setProduct($product)
   {
@@ -240,9 +173,7 @@ class Device extends \Google\Model
     return $this->product;
   }
   /**
-   * The device report updated with the latest app states.
-   *
-   * @param DeviceReport $report
+   * @param DeviceReport
    */
   public function setReport(DeviceReport $report)
   {
@@ -256,9 +187,7 @@ class Device extends \Google\Model
     return $this->report;
   }
   /**
-   * Retail brand for the device, if set. See android.os.Build.BRAND
-   *
-   * @param string $retailBrand
+   * @param string
    */
   public function setRetailBrand($retailBrand)
   {
@@ -272,9 +201,7 @@ class Device extends \Google\Model
     return $this->retailBrand;
   }
   /**
-   * API compatibility version.
-   *
-   * @param int $sdkVersion
+   * @param int
    */
   public function setSdkVersion($sdkVersion)
   {

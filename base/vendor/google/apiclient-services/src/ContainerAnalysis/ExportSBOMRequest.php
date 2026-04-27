@@ -23,10 +23,7 @@ class ExportSBOMRequest extends \Google\Model
   protected $cloudStorageLocationDataType = '';
 
   /**
-   * Optional. Empty placeholder to denote that this is a Google Cloud Storage
-   * export request.
-   *
-   * @param CloudStorageLocation $cloudStorageLocation
+   * @param CloudStorageLocation
    */
   public function setCloudStorageLocation(CloudStorageLocation $cloudStorageLocation)
   {

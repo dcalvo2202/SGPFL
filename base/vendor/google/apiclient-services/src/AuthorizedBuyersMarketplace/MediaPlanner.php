@@ -17,110 +17,26 @@
 
 namespace Google\Service\AuthorizedBuyersMarketplace;
 
-class MediaPlanner extends \Google\Collection
+class MediaPlanner extends \Google\Model
 {
-  protected $collection_key = 'ancestorNames';
   /**
-   * Output only. Account ID of the media planner.
-   *
-   * @deprecated
    * @var string
    */
   public $accountId;
-  /**
-   * Output only. The ancestor names of the media planner. Format:
-   * `mediaPlanners/{mediaPlannerAccountId}` Can be used to filter the response
-   * of the mediaPlanners.list method.
-   *
-   * @var string[]
-   */
-  public $ancestorNames;
-  /**
-   * Output only. The display name of the media planner. Can be used to filter
-   * the response of the mediaPlanners.list method.
-   *
-   * @var string
-   */
-  public $displayName;
-  /**
-   * Identifier. The unique resource name of the media planner. Format:
-   * `mediaPlanners/{mediaPlannerAccountId}` Can be used to filter the response
-   * of the mediaPlanners.list method.
-   *
-   * @var string
-   */
-  public $name;
 
   /**
-   * Output only. Account ID of the media planner.
-   *
-   * @deprecated
-   * @param string $accountId
+   * @param string
    */
   public function setAccountId($accountId)
   {
     $this->accountId = $accountId;
   }
   /**
-   * @deprecated
    * @return string
    */
   public function getAccountId()
   {
     return $this->accountId;
-  }
-  /**
-   * Output only. The ancestor names of the media planner. Format:
-   * `mediaPlanners/{mediaPlannerAccountId}` Can be used to filter the response
-   * of the mediaPlanners.list method.
-   *
-   * @param string[] $ancestorNames
-   */
-  public function setAncestorNames($ancestorNames)
-  {
-    $this->ancestorNames = $ancestorNames;
-  }
-  /**
-   * @return string[]
-   */
-  public function getAncestorNames()
-  {
-    return $this->ancestorNames;
-  }
-  /**
-   * Output only. The display name of the media planner. Can be used to filter
-   * the response of the mediaPlanners.list method.
-   *
-   * @param string $displayName
-   */
-  public function setDisplayName($displayName)
-  {
-    $this->displayName = $displayName;
-  }
-  /**
-   * @return string
-   */
-  public function getDisplayName()
-  {
-    return $this->displayName;
-  }
-  /**
-   * Identifier. The unique resource name of the media planner. Format:
-   * `mediaPlanners/{mediaPlannerAccountId}` Can be used to filter the response
-   * of the mediaPlanners.list method.
-   *
-   * @param string $name
-   */
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  /**
-   * @return string
-   */
-  public function getName()
-  {
-    return $this->name;
   }
 }
 

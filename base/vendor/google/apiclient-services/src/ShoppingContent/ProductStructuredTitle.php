@@ -20,23 +20,16 @@ namespace Google\Service\ShoppingContent;
 class ProductStructuredTitle extends \Google\Model
 {
   /**
-   * Required. The title text. Maximum length is 150 characters.
-   *
    * @var string
    */
   public $content;
   /**
-   * Optional. The digital source type. Acceptable values are: -
-   * "`trained_algorithmic_media`" - "`default`"
-   *
    * @var string
    */
   public $digitalSourceType;
 
   /**
-   * Required. The title text. Maximum length is 150 characters.
-   *
-   * @param string $content
+   * @param string
    */
   public function setContent($content)
   {
@@ -50,10 +43,7 @@ class ProductStructuredTitle extends \Google\Model
     return $this->content;
   }
   /**
-   * Optional. The digital source type. Acceptable values are: -
-   * "`trained_algorithmic_media`" - "`default`"
-   *
-   * @param string $digitalSourceType
+   * @param string
    */
   public function setDigitalSourceType($digitalSourceType)
   {

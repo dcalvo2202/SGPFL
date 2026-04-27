@@ -20,16 +20,12 @@ namespace Google\Service\Transcoder;
 class AnimationEnd extends \Google\Model
 {
   /**
-   * The time to end overlay object, in seconds. Default: 0
-   *
    * @var string
    */
   public $startTimeOffset;
 
   /**
-   * The time to end overlay object, in seconds. Default: 0
-   *
-   * @param string $startTimeOffset
+   * @param string
    */
   public function setStartTimeOffset($startTimeOffset)
   {

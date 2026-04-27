@@ -21,8 +21,6 @@ class GoogleCloudApigeeV1Point extends \Google\Collection
 {
   protected $collection_key = 'results';
   /**
-   * Name of a step in the transaction.
-   *
    * @var string
    */
   public $id;
@@ -30,9 +28,7 @@ class GoogleCloudApigeeV1Point extends \Google\Collection
   protected $resultsDataType = 'array';
 
   /**
-   * Name of a step in the transaction.
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -46,9 +42,7 @@ class GoogleCloudApigeeV1Point extends \Google\Collection
     return $this->id;
   }
   /**
-   * List of results extracted from a given debug point.
-   *
-   * @param GoogleCloudApigeeV1Result[] $results
+   * @param GoogleCloudApigeeV1Result[]
    */
   public function setResults($results)
   {
